@@ -1,0 +1,69 @@
+{
+  "source": "reports/cardrpg-look/validation/l5/compression/remaining-six-512-256-q80/sorrel-preview.glb",
+  "sourceSha256": "a65b82f2a08395209231b66dd92ed58643731bc1e1395b9fd6d8bf8b7a603060",
+  "scriptSha256": "fcf28f65b2253c7db48aee79b6b1436477eea464875b24e85f3b9739359ba610",
+  "renderer": "4.5.3 LTS",
+  "seed": 20261107,
+  "samples": 40,
+  "size": [
+    512,
+    640
+  ],
+  "camera": {
+    "position": [
+      1.25,
+      -5.800000190734863,
+      1.7400000095367432
+    ],
+    "target": [
+      0.0,
+      0.0,
+      1.090000033378601
+    ],
+    "orthoScale": 2.6500000953674316
+  },
+  "turntable": false,
+  "rows": [
+    {
+      "index": 0,
+      "yaw": 0,
+      "file": "000.png",
+      "projectedBounds": [
+        0.2260339856147766,
+        0.07402226328849792,
+        0.8534222841262817,
+        0.7897998690605164
+      ],
+      "sha256": "33aee6d75fcb9bdb56aea9926f28f3d6da4cee00fc23744ad6d5ad664b5b6eb5",
+      "framingPass": true
+    },
+    {
+      "index": 1,
+      "yaw": 1.5707963267948966,
+      "file": "001.png",
+      "projectedBounds": [
+        0.2502257525920868,
+        0.07210182398557663,
+        0.7579021453857422,
+        0.808478057384491
+      ],
+      "sha256": "c57faf1c06285288731d25a6ffa9ede0f57563bb8f998c75ba076c35c852d805",
+      "framingPass": true
+    },
+    {
+      "index": 2,
+      "yaw": 3.141592653589793,
+      "file": "002.png",
+      "projectedBounds": [
+        0.14657773077487946,
+        0.08295121788978577,
+        0.7739660143852234,
+        0.7992171049118042
+      ],
+      "sha256": "ba5953e337b5c7560ad71d2cb5e080c25507e9038b06327bbdf922337e27d85c",
+      "framingPass": true
+    }
+  ],
+  "original": true,
+  "method": "Fixed studio/camera/scale across before and after. Bounds are diagnostics, never used to reframe silently."
+}

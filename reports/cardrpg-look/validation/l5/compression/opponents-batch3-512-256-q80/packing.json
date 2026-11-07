@@ -1,0 +1,208 @@
+{
+  "quality": 80,
+  "size": 512,
+  "detail": 256,
+  "scriptSha256": "83322913d3e0e418622cd6233ac08b3f0a7b4b2ef3801d28b2c21885dcb74251",
+  "method": "From raw GLB: resize textures, optionally resize normal/metallic-roughness separately, encode WebP, then meshopt high. No geometry simplification. Preview GLB retains uncompressed geometry for studio comparison.",
+  "rows": [
+    {
+      "owner": "pollen-scout",
+      "input": "reports/cardrpg-look/rounds/opponents/exports/batch3/round-2/models/pollen-scout.glb",
+      "output": "reports/cardrpg-look/validation/l5/compression/opponents-batch3-512-256-q80/pollen-scout.glb",
+      "preview": "reports/cardrpg-look/validation/l5/compression/opponents-batch3-512-256-q80/pollen-scout-preview.glb",
+      "parameters": [
+        [
+          "resize",
+          "reports/cardrpg-look/rounds/opponents/exports/batch3/round-2/models/pollen-scout.glb",
+          "reports/cardrpg-look/validation/l5/compression/opponents-batch3-512-256-q80/pollen-scout-resized.glb",
+          "--width",
+          "512",
+          "--height",
+          "512"
+        ],
+        [
+          "resize",
+          "reports/cardrpg-look/validation/l5/compression/opponents-batch3-512-256-q80/pollen-scout-resized.glb",
+          "reports/cardrpg-look/validation/l5/compression/opponents-batch3-512-256-q80/pollen-scout-normal-sized.glb",
+          "--width",
+          "256",
+          "--height",
+          "256",
+          "--pattern",
+          "*normal"
+        ],
+        [
+          "resize",
+          "reports/cardrpg-look/validation/l5/compression/opponents-batch3-512-256-q80/pollen-scout-normal-sized.glb",
+          "reports/cardrpg-look/validation/l5/compression/opponents-batch3-512-256-q80/pollen-scout-material-sized.glb",
+          "--width",
+          "256",
+          "--height",
+          "256",
+          "--pattern",
+          "*roughness"
+        ],
+        [
+          "webp",
+          "reports/cardrpg-look/validation/l5/compression/opponents-batch3-512-256-q80/pollen-scout-material-sized.glb",
+          "reports/cardrpg-look/validation/l5/compression/opponents-batch3-512-256-q80/pollen-scout-preview.glb",
+          "--quality",
+          "80",
+          "--effort",
+          "100",
+          "--lossless",
+          "false",
+          "--near-lossless",
+          "false"
+        ],
+        [
+          "meshopt",
+          "reports/cardrpg-look/validation/l5/compression/opponents-batch3-512-256-q80/pollen-scout-preview.glb",
+          "reports/cardrpg-look/validation/l5/compression/opponents-batch3-512-256-q80/pollen-scout.glb",
+          "--level",
+          "high"
+        ]
+      ],
+      "before": 2742180,
+      "after": 173080,
+      "gzipBefore": 2609868,
+      "gzipAfter": 135626,
+      "sourceSha256": "1fd258bf6d5efc7acf7b67be0a4c4664d1d942969a74379cb27bbe0bea2996c4",
+      "sha256": "eddeaec8700fe1638a5fe91b146e028ca39f2a83544cf49f4706ba9760bf704f",
+      "previewSha256": "6027d0e88a03e5473d959efd220bdeb9da9bd85f8155456dc655af3f5d92ee80"
+    },
+    {
+      "owner": "rain-spool",
+      "input": "reports/cardrpg-look/rounds/opponents/exports/batch3/round-2/models/rain-spool.glb",
+      "output": "reports/cardrpg-look/validation/l5/compression/opponents-batch3-512-256-q80/rain-spool.glb",
+      "preview": "reports/cardrpg-look/validation/l5/compression/opponents-batch3-512-256-q80/rain-spool-preview.glb",
+      "parameters": [
+        [
+          "resize",
+          "reports/cardrpg-look/rounds/opponents/exports/batch3/round-2/models/rain-spool.glb",
+          "reports/cardrpg-look/validation/l5/compression/opponents-batch3-512-256-q80/rain-spool-resized.glb",
+          "--width",
+          "512",
+          "--height",
+          "512"
+        ],
+        [
+          "resize",
+          "reports/cardrpg-look/validation/l5/compression/opponents-batch3-512-256-q80/rain-spool-resized.glb",
+          "reports/cardrpg-look/validation/l5/compression/opponents-batch3-512-256-q80/rain-spool-normal-sized.glb",
+          "--width",
+          "256",
+          "--height",
+          "256",
+          "--pattern",
+          "*normal"
+        ],
+        [
+          "resize",
+          "reports/cardrpg-look/validation/l5/compression/opponents-batch3-512-256-q80/rain-spool-normal-sized.glb",
+          "reports/cardrpg-look/validation/l5/compression/opponents-batch3-512-256-q80/rain-spool-material-sized.glb",
+          "--width",
+          "256",
+          "--height",
+          "256",
+          "--pattern",
+          "*roughness"
+        ],
+        [
+          "webp",
+          "reports/cardrpg-look/validation/l5/compression/opponents-batch3-512-256-q80/rain-spool-material-sized.glb",
+          "reports/cardrpg-look/validation/l5/compression/opponents-batch3-512-256-q80/rain-spool-preview.glb",
+          "--quality",
+          "80",
+          "--effort",
+          "100",
+          "--lossless",
+          "false",
+          "--near-lossless",
+          "false"
+        ],
+        [
+          "meshopt",
+          "reports/cardrpg-look/validation/l5/compression/opponents-batch3-512-256-q80/rain-spool-preview.glb",
+          "reports/cardrpg-look/validation/l5/compression/opponents-batch3-512-256-q80/rain-spool.glb",
+          "--level",
+          "high"
+        ]
+      ],
+      "before": 2544008,
+      "after": 203032,
+      "gzipBefore": 2390787,
+      "gzipAfter": 154926,
+      "sourceSha256": "c508d2273dafcf23d91dfde5701749478f6ae43d85943b37c5c654ea2182594e",
+      "sha256": "4c4beb62f08a3a9132c86d60b685a530c4b7f9cda2bb5295136dc10c7f7d6e46",
+      "previewSha256": "723332000ff0ead78329ec8fd6f42c5128c10e39813cc46de5840b518557a603"
+    },
+    {
+      "owner": "binding-thread",
+      "input": "reports/cardrpg-look/rounds/opponents/exports/batch3/round-2/models/binding-thread.glb",
+      "output": "reports/cardrpg-look/validation/l5/compression/opponents-batch3-512-256-q80/binding-thread.glb",
+      "preview": "reports/cardrpg-look/validation/l5/compression/opponents-batch3-512-256-q80/binding-thread-preview.glb",
+      "parameters": [
+        [
+          "resize",
+          "reports/cardrpg-look/rounds/opponents/exports/batch3/round-2/models/binding-thread.glb",
+          "reports/cardrpg-look/validation/l5/compression/opponents-batch3-512-256-q80/binding-thread-resized.glb",
+          "--width",
+          "512",
+          "--height",
+          "512"
+        ],
+        [
+          "resize",
+          "reports/cardrpg-look/validation/l5/compression/opponents-batch3-512-256-q80/binding-thread-resized.glb",
+          "reports/cardrpg-look/validation/l5/compression/opponents-batch3-512-256-q80/binding-thread-normal-sized.glb",
+          "--width",
+          "256",
+          "--height",
+          "256",
+          "--pattern",
+          "*normal"
+        ],
+        [
+          "resize",
+          "reports/cardrpg-look/validation/l5/compression/opponents-batch3-512-256-q80/binding-thread-normal-sized.glb",
+          "reports/cardrpg-look/validation/l5/compression/opponents-batch3-512-256-q80/binding-thread-material-sized.glb",
+          "--width",
+          "256",
+          "--height",
+          "256",
+          "--pattern",
+          "*roughness"
+        ],
+        [
+          "webp",
+          "reports/cardrpg-look/validation/l5/compression/opponents-batch3-512-256-q80/binding-thread-material-sized.glb",
+          "reports/cardrpg-look/validation/l5/compression/opponents-batch3-512-256-q80/binding-thread-preview.glb",
+          "--quality",
+          "80",
+          "--effort",
+          "100",
+          "--lossless",
+          "false",
+          "--near-lossless",
+          "false"
+        ],
+        [
+          "meshopt",
+          "reports/cardrpg-look/validation/l5/compression/opponents-batch3-512-256-q80/binding-thread-preview.glb",
+          "reports/cardrpg-look/validation/l5/compression/opponents-batch3-512-256-q80/binding-thread.glb",
+          "--level",
+          "high"
+        ]
+      ],
+      "before": 2709480,
+      "after": 193416,
+      "gzipBefore": 2587751,
+      "gzipAfter": 162837,
+      "sourceSha256": "5222c6b4212e3b5f9445f2e0580df06968df42fa61ae793ab912342d96094594",
+      "sha256": "28a2d4c16bd6d8651d276f3ee756924a63edda172e8455e1449ccc299ac4d54b",
+      "previewSha256": "bfd305533630e9a457d3f434ddfe78b4f0b18ffa933ebfafbe73b1be2351d774"
+    }
+  ],
+  "status": "Visual comparison required"
+}

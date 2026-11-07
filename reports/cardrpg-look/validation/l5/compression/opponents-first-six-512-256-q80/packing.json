@@ -1,0 +1,406 @@
+{
+  "quality": 80,
+  "size": 512,
+  "detail": 256,
+  "scriptSha256": "83322913d3e0e418622cd6233ac08b3f0a7b4b2ef3801d28b2c21885dcb74251",
+  "method": "From raw GLB: resize textures, optionally resize normal/metallic-roughness separately, encode WebP, then meshopt high. No geometry simplification. Preview GLB retains uncompressed geometry for studio comparison.",
+  "rows": [
+    {
+      "owner": "button-guard",
+      "input": "assets/cardrpg-look/models/button-guard.glb",
+      "output": "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/button-guard.glb",
+      "preview": "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/button-guard-preview.glb",
+      "parameters": [
+        [
+          "resize",
+          "assets/cardrpg-look/models/button-guard.glb",
+          "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/button-guard-resized.glb",
+          "--width",
+          "512",
+          "--height",
+          "512"
+        ],
+        [
+          "resize",
+          "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/button-guard-resized.glb",
+          "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/button-guard-normal-sized.glb",
+          "--width",
+          "256",
+          "--height",
+          "256",
+          "--pattern",
+          "*normal"
+        ],
+        [
+          "resize",
+          "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/button-guard-normal-sized.glb",
+          "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/button-guard-material-sized.glb",
+          "--width",
+          "256",
+          "--height",
+          "256",
+          "--pattern",
+          "*roughness"
+        ],
+        [
+          "webp",
+          "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/button-guard-material-sized.glb",
+          "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/button-guard-preview.glb",
+          "--quality",
+          "80",
+          "--effort",
+          "100",
+          "--lossless",
+          "false",
+          "--near-lossless",
+          "false"
+        ],
+        [
+          "meshopt",
+          "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/button-guard-preview.glb",
+          "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/button-guard.glb",
+          "--level",
+          "high"
+        ]
+      ],
+      "before": 2479648,
+      "after": 143576,
+      "gzipBefore": 2361263,
+      "gzipAfter": 113862,
+      "sourceSha256": "0eda616ebad83a7d1a1c7b49f0810f34ea6a7b6256e840d0062d71a19426b80a",
+      "sha256": "7f8745ff7ad9f61e487198633b3d534b2c009fb7211b7d96643472b1ef35d080",
+      "previewSha256": "158966ec87526b0f2fe87a7f6f849d1fedea088b9a655eb560680b42066e9d2a"
+    },
+    {
+      "owner": "sock-skipper",
+      "input": "assets/cardrpg-look/models/sock-skipper.glb",
+      "output": "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/sock-skipper.glb",
+      "preview": "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/sock-skipper-preview.glb",
+      "parameters": [
+        [
+          "resize",
+          "assets/cardrpg-look/models/sock-skipper.glb",
+          "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/sock-skipper-resized.glb",
+          "--width",
+          "512",
+          "--height",
+          "512"
+        ],
+        [
+          "resize",
+          "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/sock-skipper-resized.glb",
+          "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/sock-skipper-normal-sized.glb",
+          "--width",
+          "256",
+          "--height",
+          "256",
+          "--pattern",
+          "*normal"
+        ],
+        [
+          "resize",
+          "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/sock-skipper-normal-sized.glb",
+          "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/sock-skipper-material-sized.glb",
+          "--width",
+          "256",
+          "--height",
+          "256",
+          "--pattern",
+          "*roughness"
+        ],
+        [
+          "webp",
+          "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/sock-skipper-material-sized.glb",
+          "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/sock-skipper-preview.glb",
+          "--quality",
+          "80",
+          "--effort",
+          "100",
+          "--lossless",
+          "false",
+          "--near-lossless",
+          "false"
+        ],
+        [
+          "meshopt",
+          "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/sock-skipper-preview.glb",
+          "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/sock-skipper.glb",
+          "--level",
+          "high"
+        ]
+      ],
+      "before": 2729424,
+      "after": 139576,
+      "gzipBefore": 2602666,
+      "gzipAfter": 106717,
+      "sourceSha256": "9bee654e87f2f698464aba71db1506eddbba135f0de8edb75452c62d33b41202",
+      "sha256": "f1cecfb4d8de84123e3e99a74a5e4118c7d9a8c83d1d9de2ba889c88e6ca078d",
+      "previewSha256": "a2e11c5f70674775221b4f9f201ec7556cc106865d91f799807a5195be7c8a29"
+    },
+    {
+      "owner": "spool-ram",
+      "input": "assets/cardrpg-look/models/spool-ram.glb",
+      "output": "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/spool-ram.glb",
+      "preview": "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/spool-ram-preview.glb",
+      "parameters": [
+        [
+          "resize",
+          "assets/cardrpg-look/models/spool-ram.glb",
+          "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/spool-ram-resized.glb",
+          "--width",
+          "512",
+          "--height",
+          "512"
+        ],
+        [
+          "resize",
+          "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/spool-ram-resized.glb",
+          "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/spool-ram-normal-sized.glb",
+          "--width",
+          "256",
+          "--height",
+          "256",
+          "--pattern",
+          "*normal"
+        ],
+        [
+          "resize",
+          "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/spool-ram-normal-sized.glb",
+          "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/spool-ram-material-sized.glb",
+          "--width",
+          "256",
+          "--height",
+          "256",
+          "--pattern",
+          "*roughness"
+        ],
+        [
+          "webp",
+          "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/spool-ram-material-sized.glb",
+          "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/spool-ram-preview.glb",
+          "--quality",
+          "80",
+          "--effort",
+          "100",
+          "--lossless",
+          "false",
+          "--near-lossless",
+          "false"
+        ],
+        [
+          "meshopt",
+          "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/spool-ram-preview.glb",
+          "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/spool-ram.glb",
+          "--level",
+          "high"
+        ]
+      ],
+      "before": 2513076,
+      "after": 177784,
+      "gzipBefore": 2370111,
+      "gzipAfter": 130770,
+      "sourceSha256": "54d7a09dd156177ab307099e52c45dd3fddfaa66b73006606c2b94e1e2e5fbf9",
+      "sha256": "532d18b6e1cc4da52b46d68cd4df2914d6e11983ad284febc52f5cc7ab9c0524",
+      "previewSha256": "f49bea50082a2719f14495beedb0e8b7f3de9f25b2f0235ff4ba285d10b8e200"
+    },
+    {
+      "owner": "needle-moth",
+      "input": "assets/cardrpg-look/models/needle-moth.glb",
+      "output": "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/needle-moth.glb",
+      "preview": "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/needle-moth-preview.glb",
+      "parameters": [
+        [
+          "resize",
+          "assets/cardrpg-look/models/needle-moth.glb",
+          "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/needle-moth-resized.glb",
+          "--width",
+          "512",
+          "--height",
+          "512"
+        ],
+        [
+          "resize",
+          "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/needle-moth-resized.glb",
+          "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/needle-moth-normal-sized.glb",
+          "--width",
+          "256",
+          "--height",
+          "256",
+          "--pattern",
+          "*normal"
+        ],
+        [
+          "resize",
+          "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/needle-moth-normal-sized.glb",
+          "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/needle-moth-material-sized.glb",
+          "--width",
+          "256",
+          "--height",
+          "256",
+          "--pattern",
+          "*roughness"
+        ],
+        [
+          "webp",
+          "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/needle-moth-material-sized.glb",
+          "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/needle-moth-preview.glb",
+          "--quality",
+          "80",
+          "--effort",
+          "100",
+          "--lossless",
+          "false",
+          "--near-lossless",
+          "false"
+        ],
+        [
+          "meshopt",
+          "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/needle-moth-preview.glb",
+          "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/needle-moth.glb",
+          "--level",
+          "high"
+        ]
+      ],
+      "before": 2749132,
+      "after": 149384,
+      "gzipBefore": 2627616,
+      "gzipAfter": 114084,
+      "sourceSha256": "39e7e8eb7b311d94a637f8e2652b6c724d2894f2041cf2b075cf8462b5ba5009",
+      "sha256": "b57e508276f4d357660797d4b85fe7fd0c0a21cb1135f8da74f985a118dbd90e",
+      "previewSha256": "704dda22b064019913cd66be05f7dca0fb70de680d13501cdd2c48262595dbbf"
+    },
+    {
+      "owner": "teacup-healer",
+      "input": "assets/cardrpg-look/models/teacup-healer.glb",
+      "output": "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/teacup-healer.glb",
+      "preview": "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/teacup-healer-preview.glb",
+      "parameters": [
+        [
+          "resize",
+          "assets/cardrpg-look/models/teacup-healer.glb",
+          "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/teacup-healer-resized.glb",
+          "--width",
+          "512",
+          "--height",
+          "512"
+        ],
+        [
+          "resize",
+          "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/teacup-healer-resized.glb",
+          "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/teacup-healer-normal-sized.glb",
+          "--width",
+          "256",
+          "--height",
+          "256",
+          "--pattern",
+          "*normal"
+        ],
+        [
+          "resize",
+          "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/teacup-healer-normal-sized.glb",
+          "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/teacup-healer-material-sized.glb",
+          "--width",
+          "256",
+          "--height",
+          "256",
+          "--pattern",
+          "*roughness"
+        ],
+        [
+          "webp",
+          "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/teacup-healer-material-sized.glb",
+          "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/teacup-healer-preview.glb",
+          "--quality",
+          "80",
+          "--effort",
+          "100",
+          "--lossless",
+          "false",
+          "--near-lossless",
+          "false"
+        ],
+        [
+          "meshopt",
+          "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/teacup-healer-preview.glb",
+          "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/teacup-healer.glb",
+          "--level",
+          "high"
+        ]
+      ],
+      "before": 2214640,
+      "after": 123692,
+      "gzipBefore": 2105829,
+      "gzipAfter": 95908,
+      "sourceSha256": "c6c25713995641313e488422335934f83338216825885ef9fc29cf375cefa803",
+      "sha256": "6a04dc6f5a4f8ea1ad327a3da614abf71aec953c2efa7bdae96ed6d20c67e1f4",
+      "previewSha256": "a264be459330369a7d68174ed2a8aab28a424dfa293a7cf1002c725c1018bbc1"
+    },
+    {
+      "owner": "crumb-sentinel",
+      "input": "assets/cardrpg-look/models/crumb-sentinel.glb",
+      "output": "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/crumb-sentinel.glb",
+      "preview": "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/crumb-sentinel-preview.glb",
+      "parameters": [
+        [
+          "resize",
+          "assets/cardrpg-look/models/crumb-sentinel.glb",
+          "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/crumb-sentinel-resized.glb",
+          "--width",
+          "512",
+          "--height",
+          "512"
+        ],
+        [
+          "resize",
+          "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/crumb-sentinel-resized.glb",
+          "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/crumb-sentinel-normal-sized.glb",
+          "--width",
+          "256",
+          "--height",
+          "256",
+          "--pattern",
+          "*normal"
+        ],
+        [
+          "resize",
+          "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/crumb-sentinel-normal-sized.glb",
+          "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/crumb-sentinel-material-sized.glb",
+          "--width",
+          "256",
+          "--height",
+          "256",
+          "--pattern",
+          "*roughness"
+        ],
+        [
+          "webp",
+          "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/crumb-sentinel-material-sized.glb",
+          "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/crumb-sentinel-preview.glb",
+          "--quality",
+          "80",
+          "--effort",
+          "100",
+          "--lossless",
+          "false",
+          "--near-lossless",
+          "false"
+        ],
+        [
+          "meshopt",
+          "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/crumb-sentinel-preview.glb",
+          "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/crumb-sentinel.glb",
+          "--level",
+          "high"
+        ]
+      ],
+      "before": 2593880,
+      "after": 138496,
+      "gzipBefore": 2469712,
+      "gzipAfter": 105809,
+      "sourceSha256": "7fbee134cc6ab26d5ea2f024c0a505fb0c6eeb9d78ded3bf2d30eb47a459192b",
+      "sha256": "a579a78c1db3b1033cf2885a1e40c2fc5925903c07aaa54f52da068bea9d9018",
+      "previewSha256": "f71da5329a4c1b2bfbfe23502fb8a154c12b3083dbb75f63a29aecee6ffe8bf4"
+    }
+  ],
+  "status": "Visual comparison required"
+}
