@@ -1,0 +1,70 @@
+{
+  "artifact": "/Users/bao/taskbar-hero-cardrpg-big-delivery/docs/cardrpg3/index.html",
+  "sha256": "9a5f6ebbb04af56c19f11cf43cf2763b35df2bde3b7a8dcd943060e878d793d3",
+  "rows": [
+    {
+      "name": "studio",
+      "script": "tools/cardrpg-big2/studio-check.mjs",
+      "log": "reports/cardrpg-big/integration/delivery/studio.log",
+      "exit": 0,
+      "started": "2026-11-07T01:13:00.377Z",
+      "ended": "2026-11-07T01:14:48.495Z"
+    },
+    {
+      "name": "gallery",
+      "script": "tools/cardrpg-big2/gallery-controls-check.mjs",
+      "log": "reports/cardrpg-big/integration/delivery/gallery.log",
+      "exit": 0,
+      "started": "2026-11-07T01:14:55.511Z",
+      "ended": "2026-11-07T01:15:59.677Z"
+    },
+    {
+      "name": "comparisons",
+      "script": "tools/cardrpg-big/comparison-check.mjs",
+      "log": "reports/cardrpg-big/integration/delivery/comparisons.log",
+      "exit": 0,
+      "started": "2026-11-07T01:16:06.706Z",
+      "ended": "2026-11-07T01:18:01.485Z"
+    },
+    {
+      "name": "lab",
+      "script": "tools/cardrpg-big/lab-check.mjs",
+      "log": "reports/cardrpg-big/integration/delivery/lab.log",
+      "exit": 0,
+      "started": "2026-11-07T01:18:08.503Z",
+      "ended": "2026-11-07T01:25:39.688Z"
+    },
+    {
+      "name": "meta",
+      "script": "tools/cardrpg-big/meta-check.mjs",
+      "log": "reports/cardrpg-big/integration/delivery/meta.log",
+      "exit": 0,
+      "started": "2026-11-07T01:25:46.703Z",
+      "ended": "2026-11-07T01:28:56.825Z"
+    },
+    {
+      "name": "reveal",
+      "script": "tools/cardrpg-big/reveal-check.mjs",
+      "log": "reports/cardrpg-big/integration/delivery/reveal.log",
+      "exit": 0,
+      "started": "2026-11-07T01:29:03.839Z",
+      "ended": "2026-11-07T01:30:27.497Z"
+    },
+    {
+      "name": "invitations",
+      "script": "tools/cardrpg-big/invitation-check.mjs",
+      "log": "reports/cardrpg-big/integration/delivery/invitations.log",
+      "exit": 0,
+      "started": "2026-11-07T01:30:34.531Z",
+      "ended": "2026-11-07T01:32:14.951Z"
+    },
+    {
+      "name": "designs",
+      "script": "tools/cardrpg-big/design-check.mjs",
+      "log": "reports/cardrpg-big/integration/delivery/designs.log",
+      "exit": 0,
+      "started": "2026-11-07T01:32:21.981Z",
+      "ended": "2026-11-07T01:32:27.917Z"
+    }
+  ]
+}
