@@ -2,11 +2,11 @@
 ## NOW
 P7 claimed eefddfa5 and22staged tools adopted, branchcodex/cardrpg-a4-p7-2026-11-08 fromP6publication48b470ed. ACTUAL WORKDIR /Users/bao/taskbar-hero-cardrpg-a4. Runtime rules andofflineHTML unchanged fromP6; no B adoption.
 ## NEXT
-Run tools/cardrpg-big/a4-p7-series.mjs once from committed source; reuse p7/series.json and child manifests on interruption. It owns5gates/build/one204pack/new120screens/real-clickjourney/guide/cold/evidenceaudit/report/scope. Resume unfinished or failed groups only, atmost2corrections; neverrecapture successfulgroups. Numeric P6misses remain; finish draftP7/ledger/sync after evidence/visual review. Read RESUME-A4.md for active PID/session.
+Continue existing coordinator23136/session45202; no new launch. Fivegates/build/full204/new120 allPASS and personally reviewed. Next earned journey,offlineguide,14performancewindows,evidenceaudit/report/scope; then draftP7stacked375/ledger/sync. Resume unfinished/failed groups only,atmost2corrections; no successful recaptures/P6reruns. Read RESUME-A4.md.
 ## DONE
 P1–P5 drafts367/369/370/372/373. P6 five source gates accepted in validation/a4-p6-accepted.json:1106rules/1735web/421E2E/type/lint/build; originals retained. All5x1timing receipts complete:ordinary21.340s/elite33.785s/boss57.546s,64.807s,58.680s. Boss outcomes all enemy; timings are to crew defeat, not victorious finish.
 ## GATES
-3625cells×500seeds/sample registered; train and heldout each COMPLETE1,812,500outcomes; raw sample-audit.json PASS on all3625cells/sample and38source hashes. Known pilot88ppoutlier/cat/set misses remain provisional. Artifact unchanged while samples run. P7 full204pack UNRUN; startup/current-main cold comparison pending. No B adoption or protected edits.
+P6 acceptance13PASS/5MISS;train+heldout3,625,000outcomes,38source hashes exact. P7fivegatesPASS1106rules/1735web/421E2E;full204andnew120PASS. Only gallery retried for missing Python; original retained. Artifact067d2062 unchanged; earnedjourney/guide/startup/cold pending. Main340f88b9 verified againstorigin22:45UTC. No B adoption/protected edits.
 ## DECISIONS (append-only)
 - Keep the one-agent constraint, automatic battles, strict A/B ownership, and isolated worktree.
 ## MEASUREMENTS
