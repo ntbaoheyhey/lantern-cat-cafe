@@ -1,3 +1,4 @@
+import { existsSync } from 'node:fs';
 // Execute only inside with-timing-lock.mjs. Artifacts are captured before queuing.
 import { spawn } from 'node:child_process';
 import { readFile, cp, access } from 'node:fs/promises';
@@ -35,6 +36,9 @@ await run('tools/cardrpg-big2/gallery-filmstrips.mjs', [], { BIG_BEFORE_OUT: `${
 await run('tools/cardrpg-big2/motion-measure.mjs', [], { BIG_MOTION_OUT: `${out}/motion`, BIG_FILMSTRIP_OUT: `${out}/filmstrips`, BIG_PROVENANCE: `assets/provenance/cardrpg-big2-motion-${phase}.json` });
 await run('tools/cardrpg-big2/effect-measure.mjs', [], { BIG_EFFECT_OUT: `${out}/effects` });
 await run('tools/cardrpg-big2/measure.mjs', [], { BIG_OUT: `${out}/cold`, BIG_CAPTURE: '0' });
+if (!existsSync('/tmp/cardrpg-big2-defer-matrices')) {
 await run('tools/cardrpg-big2/skill-measure.mjs', [], { BIG_SKILL_OUT: `${out}/skills` });
 await run('tools/cardrpg-big/skill-report.mjs', [`${out}/skills`]);
 await run('tools/cardrpg-big/profile-skills.mjs', [`${out}/skills`]);
+
+} else console.log(JSON.stringify({matrixDeferred: true, artifact, out, phase: typeof phase === 'undefined' ? 'b3' : phase}));

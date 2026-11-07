@@ -1,3 +1,4 @@
+import { existsSync } from 'node:fs';
 // REFERENCE: tools/cardrpg-big2/{with-timing-lock,measure,skill-measure}.mjs
 import {spawn} from 'node:child_process';
 import {cp} from 'node:fs/promises';
@@ -16,6 +17,9 @@ await run('tools/cardrpg-big2/layout-measure.mjs',[],{BIG_LAYOUT_OUT:`${out}/lay
 await run('tools/cardrpg-big2/measure.mjs',[],{BIG_OUT:`${out}/cold`,BIG_CAPTURE:'0'});
 await run('tools/cardrpg-big2/lifecycle.mjs',[],{BIG_LIFECYCLE_OUT:`${out}/lifecycle`});
 await run('tools/cardrpg-big/meta-lifecycle.mjs',[],{BIG_LIFECYCLE_OUT:`${out}/navigation`});
+if (!existsSync('/tmp/cardrpg-big2-defer-matrices')) {
 await run('tools/cardrpg-big2/skill-measure.mjs',[],{BIG_SKILL_OUT:`${out}/skills`});
 await run('tools/cardrpg-big/skill-report.mjs',[`${out}/skills`]);
 await run('tools/cardrpg-big/profile-skills.mjs',[`${out}/skills`]);
+
+} else console.log(JSON.stringify({matrixDeferred: true, artifact, out, phase: typeof phase === 'undefined' ? 'b3' : phase}));

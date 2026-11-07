@@ -1,3 +1,4 @@
+import { existsSync } from 'node:fs';
 // Pinned enemy-batch source/browser proof. Execute only under with-timing-lock.mjs.
 import {spawn} from 'node:child_process';
 import {cp} from 'node:fs/promises';
@@ -15,6 +16,9 @@ await run('tools/cardrpg-big2/gallery-filmstrips.mjs',[],{BIG_NEW_OWNERS:owners,
 await run('tools/cardrpg-big2/motion-measure.mjs',[],{BIG_MOTION_OUT:`${out}/motion`,BIG_FILMSTRIP_OUT:`${out}/filmstrips`,BIG_PROVENANCE:`assets/provenance/cardrpg-big2-motion-${phase}.json`});
 await run('tools/cardrpg-big2/effect-measure.mjs',[],{BIG_EFFECT_OUT:`${out}/effects`});
 await run('tools/cardrpg-big2/measure.mjs',[],{BIG_OUT:`${out}/cold`,BIG_CAPTURE:'0'});
+if (!existsSync('/tmp/cardrpg-big2-defer-matrices')) {
 await run('tools/cardrpg-big2/skill-measure.mjs',[],{BIG_SKILL_OUT:`${out}/skills`});
 await run('tools/cardrpg-big/skill-report.mjs',[`${out}/skills`]);
 await run('tools/cardrpg-big/profile-skills.mjs',[`${out}/skills`]);
+
+} else console.log(JSON.stringify({matrixDeferred: true, artifact, out, phase: typeof phase === 'undefined' ? 'b3' : phase}));

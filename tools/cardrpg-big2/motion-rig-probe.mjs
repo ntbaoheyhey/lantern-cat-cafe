@@ -15,7 +15,7 @@ try {
     const { ROSTER_SKILL_CLIPS } = await server.ssrLoadModule('/src/game/squad/turn3d/card-roster-motion.ts');
     for (const path of process.env.BIG_DRAFT_MOTION.split(',')) {
       const definitions = await server.ssrLoadModule('/@fs' + path);
-      for (const value of Object.values(definitions)) Object.assign(ROSTER_SKILL_CLIPS, value);
+      for (const value of Object.values(definitions)) for (const [owner, clips] of Object.entries(value)) ROSTER_SKILL_CLIPS[owner] = [...(ROSTER_SKILL_CLIPS[owner] ?? []), ...clips];
       draftSources[path] = createHash('sha256').update(await readFile(path)).digest('hex');
     }
   }
