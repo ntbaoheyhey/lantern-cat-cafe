@@ -19,8 +19,10 @@ try {
     await page.getByRole('button', { name: 'Mechanics lab', exact: true }).click();
     const account = await page.evaluate(() => JSON.stringify(window.__depthReview.state));
     assert.equal(await page.locator('.b2-lab input[type=checkbox]:checked').count(), 0);
-    await page.getByLabel('Team', { exact: true }).selectOption('starter');
-    await page.getByLabel('Chapter', { exact: true }).selectOption(String(chapter));
+    // The wrapping labels also contain option text in their accessible names.
+    // Scope the two real selects to the existing preparation panel.
+    await page.locator('.b2-lab-settings select').nth(0).selectOption('starter');
+    await page.locator('.b2-lab-settings select').nth(1).selectOption(String(chapter));
     await page.getByLabel('Seed', { exact: true }).fill('4011');
     await page.getByRole('button', { name: 'Fight experiment', exact: true }).click();
     await page.getByLabel('Playback speed', { exact: true }).selectOption('1');

@@ -1,7 +1,7 @@
 # Sequential Lane B visual review
 REFERENCE: gallery-controls/1280-focused.png; gallery-controls/1024-gallery.png; mechanics; ../stage/SHARPNESS-REVIEW.md; ../cats; ../enemies
 
-One agent reviewed the saved images sequentially through the four perspectives below. This is a self-review, not independent user testing. Current UI images are from standalone HTML734d301c; phase filmstrips retain their original source/artifact hashes. Full x1 recordings and integrated timing evidence are still being completed. Still strips establish shapes and poses, not perceived animation smoothness or listening quality.
+One agent reviewed the saved images sequentially through the four perspectives below. This is a self-review, not independent user testing. Current UI images are from standalone HTML734d301c; phase filmstrips retain their original source/artifact hashes. All fifteen x1 gallery recordings are complete, with 66 full-stage midpoint samples reviewed in video/REVIEW.md. Integrated timing evidence and continuous-play review are still being completed. Still strips establish shapes and poses, not perceived animation smoothness or listening quality.
 
 ## First-time player
 REFERENCE: gallery-controls/1024-gallery.png; gallery-controls/1280-focused.png; mechanics/1280-720-cpu1-prep.png; mechanics/1024-600-cpu1-result.png
@@ -42,7 +42,7 @@ REFERENCE: ../cats/*/filmstrips; ../enemies/boss/filmstrips; hitstop/REVIEW.md; 
 1. Panko's oven outline and Cinnamon's serving bell communicate their themes; many other effects rely on similarly pale floating silhouettes.
 2. The new back-row motions are subtle relative to the foreground guardian. A distinct sampled trajectory need not read distinctly during a fight.
 3. Yarn Giant and Pantry Crown share the large round body and jump/compression language; their secondary shapes differ more than their overall physical identity.
-4. Caster crops omit distant target impacts, notably Biscuit's procession. Full-stage video is required before grading complete actions.
+4. Caster crops omit distant target impacts, notably Biscuit's procession. Full-stage video samples now show the procession crossing toward its target; large pale impact shapes remain.
 5. The measured impact hold freezes the action clip, while facing/ambient adjustments can continue. Audio has numeric uniqueness evidence only; no listening verdict.
 
 Verified repairs already present: authored skill poses/effect compositions, fixed animation hold behavior, reduced-motion shake suppression, per-skill audio and user-gesture audio startup. Forty-two natural actor actions obey presentation budgets and HP waits for impact. Integrated full-roster timing remains outstanding.
@@ -50,4 +50,4 @@ Verified repairs already present: authored skill poses/effect compositions, fixe
 ## Provisional grades after viewed repairs
 REFERENCE: ../CARDRPG-BIG2-REPORT.md; gallery-focus/CHECKPOINT.md; flow/CHECKPOINT.md
 
-Effects/identity6.5; sharpness5; layout/scale/faces6; turn clarity/smoothness6 (opening gate miss); overall feel6.5; stage life6; automatic-only controls9; Mechanics lab7. These are self-grades, below the8.5 target where stated. The worst viewport inspection defects have been repaired and rechecked; artwork similarity, scale, sparse staging and opening hitches remain explicit misses. Full x1 video review may change these grades; no extra credit is assigned for authored file counts or uniqueness matrices alone.
+Effects/identity6.5; sharpness5; layout/scale/faces6; turn clarity/smoothness6 (opening gate miss); overall feel6.5; stage life6; automatic-only controls9; Mechanics lab7. These are self-grades, below the8.5 target where stated. The worst viewport inspection defects have been repaired and rechecked; artwork similarity, scale, sparse staging and opening hitches remain explicit misses. The 66 reviewed full-stage video samples retain these grades; continuous-play review may still change them. No extra credit is assigned for authored file counts or uniqueness matrices alone.
