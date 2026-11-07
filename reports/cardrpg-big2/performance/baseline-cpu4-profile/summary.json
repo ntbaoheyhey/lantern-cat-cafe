@@ -1,0 +1,173 @@
+{
+  "date": "2026-11-06T16:32:41.327Z",
+  "artifact": "/Users/bao/taskbar-hero-cardrpg-big2/docs/cardrpg3/index.html",
+  "sha256": "9ed1953f02adcede5af9ee3483d29a8c42f7d95a9804fbccadfbe43c29f87ade",
+  "captureScreenshots": false,
+  "method": "Inherited full-page harness with each scenario traced. Fresh file URL, fresh browser context, cache disabled, RAF and trace begin before navigation. Real mouse clicks. CPU throttle affects CPU only. Raw load frames are retained.",
+  "rows": [
+    {
+      "width": 1280,
+      "height": 720,
+      "dpr": 1,
+      "throttle": 4,
+      "errors": [],
+      "marks": [
+        {
+          "label": "hub-interactive",
+          "at": 1720.5999999940395
+        },
+        {
+          "label": "fight-click",
+          "at": 2154.5
+        },
+        {
+          "label": "scene-ready",
+          "at": 4550.199999988079
+        },
+        {
+          "label": "measurement-end",
+          "at": 11158.29999999702
+        }
+      ],
+      "last": 11154.8,
+      "stats": {
+        "frames": 400,
+        "calls": 189,
+        "triangles": 71432,
+        "geometries": 617,
+        "textures": 120,
+        "particles": 0,
+        "estimatedGpuBytes": 4973744,
+        "loaded": 5,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "labelAudit": {
+        "heads": [
+          {
+            "x": 912.8457872689139,
+            "y": 190.3592761304206,
+            "width": 82.90281243842435,
+            "height": 99.48280757373982
+          },
+          {
+            "x": 374.0335127233096,
+            "y": 109.90018575917313,
+            "width": 200.0250354961977,
+            "height": 220.34800931177958
+          },
+          {
+            "x": 152.7688800812573,
+            "y": 249.6849168150164,
+            "width": 182.84822293805172,
+            "height": 197.31733713897162
+          },
+          {
+            "x": 198.95143052554516,
+            "y": 169.12315310902375,
+            "width": 221.09244094029896,
+            "height": 219.43259452822076
+          }
+        ],
+        "cards": [
+          {
+            "x": 891.3162270469088,
+            "y": 128.94308454264475,
+            "width": 138,
+            "height": 48
+          }
+        ],
+        "missing": [],
+        "overlaps": 0
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Pro, Unspecified Version)",
+      "pixelRatio": 1,
+      "canvas": {
+        "width": 1280,
+        "height": 568,
+        "cssWidth": 1280,
+        "cssHeight": 568
+      },
+      "stageFraction": 0.7888888888888889,
+      "heap": 31200000,
+      "post": {
+        "width": 1280,
+        "height": 568,
+        "samples": 4
+      },
+      "result": null,
+      "actions": 4,
+      "audit": {
+        "width": 1280,
+        "height": 568,
+        "units": [
+          {
+            "id": "mochi",
+            "side": "party",
+            "role": "guardian",
+            "yaw": 0.43837682102453424,
+            "box": {
+              "x": 373.54132252133894,
+              "y": 109.97129628176683,
+              "width": 199.67613171370857,
+              "height": 220.13144350454306
+            }
+          },
+          {
+            "id": "soot",
+            "side": "party",
+            "role": "witch",
+            "yaw": 0.4363323129985824,
+            "box": {
+              "x": 152.99839283661356,
+              "y": 249.8017109990118,
+              "width": 182.69681396648969,
+              "height": 197.0949183768637
+            }
+          },
+          {
+            "id": "clover",
+            "side": "party",
+            "role": "alchemist",
+            "yaw": 0.4363323129985824,
+            "box": {
+              "x": 199.32216481201175,
+              "y": 169.29842212252643,
+              "width": 220.52658956825377,
+              "height": 219.21443803014913
+            }
+          },
+          {
+            "id": "foe-1-sock-skipper",
+            "side": "enemy",
+            "role": "flanker",
+            "yaw": -0.43837682102453424,
+            "box": {
+              "x": 912.129827358377,
+              "y": 190.47908081588687,
+              "width": 82.83778104625617,
+              "height": 99.12499192585196
+            }
+          }
+        ],
+        "overlaps": [
+          [
+            "mochi",
+            "clover"
+          ],
+          [
+            "soot",
+            "clover"
+          ]
+        ],
+        "outside": []
+      },
+      "max": 116.70000000000005,
+      "p95": 16.799999999999955,
+      "p99": 50,
+      "above25": 14,
+      "above50": 5,
+      "within20": 0.9778830963665087
+    }
+  ]
+}

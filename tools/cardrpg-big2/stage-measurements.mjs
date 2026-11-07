@@ -1,19 +1,25 @@
 import { existsSync } from 'node:fs';
 // REFERENCE: tools/cardrpg-big2/{with-timing-lock,measure,skill-measure}.mjs
 import {spawn} from 'node:child_process';
-import {cp} from 'node:fs/promises';
+import {cp,readFile} from 'node:fs/promises';
+import assert from 'node:assert/strict';
 const artifact='/tmp/cardrpg-big2-b3-index.html', out='reports/cardrpg-big2/stage';
 async function run(script,args=[],env={},cwd=process.cwd()) {
  const code=await new Promise((resolve,reject)=>{const c=spawn(process.execPath,[script,...args],{cwd,env:{...process.env,BIG_ARTIFACT:artifact,...env},stdio:'inherit'});c.once('error',reject);c.once('close',resolve)});
  if(code!==0)throw Error(`${script}: ${code}`);
 }
 const validation='/tmp/cardrpg-big2-stage-validation';
-await run('tools/cardrpg-big2/validate.mjs',['b3-e2e'],{BIG_VALIDATE_STEPS:'e2e'},validation);
+if (process.env.BIG_STAGE_RESUME === '1') {
+ const prior = JSON.parse(await readFile(`${validation}/reports/cardrpg-big2/validation/b3-e2e.json`, 'utf8'));
+ assert.ok(prior.some(r => r.name === 'e2e' && r.exit === 0 && r.counts.some(c => /421 passed/.test(c))));
+} else await run('tools/cardrpg-big2/validate.mjs',['b3-e2e'],{BIG_VALIDATE_STEPS:'e2e'},validation);
 for(const file of ['b3-e2e.json','b3-e2e-e2e.log'])await cp(`${validation}/reports/cardrpg-big2/validation/${file}`,`reports/cardrpg-big2/validation/${file}`);
-await run('tools/cardrpg-big/inspect.mjs',[],{BIG_ARTIFACT:'/tmp/cardrpg-big2-b2c-index.html',BIG_CROP_OUT:`${out}/before`});
-await run('tools/cardrpg-big/inspect.mjs',[],{BIG_CROP_OUT:`${out}/after`});
+await run('tools/cardrpg-big2/sharpness-measure.mjs',[],{BIG_ARTIFACT:'/tmp/cardrpg-big2-b2c-index.html',BIG_CROP_OUT:`${out}/before`});
+await run('tools/cardrpg-big2/sharpness-measure.mjs',[],{BIG_CROP_OUT:`${out}/after`});
 await run('tools/cardrpg-big2/sharpness-check.mjs');
+await new Promise((done,reject)=>{const c=spawn('/tmp/cardrpg-big-tools/bin/python',['tools/cardrpg-big2/sharpness-report.py'],{stdio:'inherit'});c.once('error',reject);c.once('close',code=>code===0?done():reject(Error('Sharpness metric failed')));});
 await run('tools/cardrpg-big2/layout-measure.mjs',[],{BIG_LAYOUT_OUT:`${out}/layout`});
+await run('tools/cardrpg-big2/stage-life-check.mjs');
 await run('tools/cardrpg-big2/measure.mjs',[],{BIG_OUT:`${out}/cold`,BIG_CAPTURE:'0'});
 await run('tools/cardrpg-big2/lifecycle.mjs',[],{BIG_LIFECYCLE_OUT:`${out}/lifecycle`});
 await run('tools/cardrpg-big/meta-lifecycle.mjs',[],{BIG_LIFECYCLE_OUT:`${out}/navigation`});

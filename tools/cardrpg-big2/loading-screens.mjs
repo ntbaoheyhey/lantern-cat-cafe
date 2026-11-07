@@ -5,7 +5,7 @@ import { resolve } from 'node:path';
 import { createHash } from 'node:crypto';
 import assert from 'node:assert/strict';
 const artifact = resolve(process.env.BIG_ARTIFACT || 'docs/cardrpg3b/index.html');
-const output = 'reports/cardrpg-big2/performance/screens';
+const output = process.env.BIG_LOADING_OUT || 'reports/cardrpg-big2/performance/screens';
 await mkdir(output, { recursive: true });
 const rows = [], browser = await chromium.launch({ channel: 'chromium', args: ['--use-angle=metal'] });
 try {

@@ -1,0 +1,657 @@
+{
+  "artifact": "/tmp/cardrpg-big2-b1-index.html",
+  "sha256": "28da85ec36d0f217a0d0f14b77a446cc2c79a7871479869ad0d1b8652e195344",
+  "rows": [
+    {
+      "original": {
+        "name": "1280x720-dpr1-cpu1-medium-soot-passive",
+        "action": {
+          "id": "soot-passive",
+          "owner": "soot",
+          "name": "Soot · Ash reader",
+          "ultimate": false,
+          "enemy": false
+        },
+        "width": 1280,
+        "height": 720,
+        "dpr": 1,
+        "cpu": 1,
+        "quality": "medium",
+        "errors": [],
+        "casts": [
+          {
+            "use": "first",
+            "duration": 1289,
+            "before": {
+              "at": 8453.20000000298,
+              "frames": 4,
+              "calls": 187,
+              "triangles": 72636,
+              "geometries": 659,
+              "textures": 120,
+              "particles": 0,
+              "estimatedGpuBytes": 4973744,
+              "loaded": 4,
+              "hiddenFrames": 0,
+              "quality": "medium",
+              "gpuObjects": {
+                "geometries": 659,
+                "textures": 120
+              },
+              "heap": 56866848,
+              "heapDetail": {
+                "usedSize": 56866848,
+                "totalSize": 98205696,
+                "embedderHeapUsedSize": 4370936,
+                "backingStorageSize": 35226065
+              }
+            },
+            "after": {
+              "at": 9752.60000000894,
+              "frames": 82,
+              "calls": 189,
+              "triangles": 72796,
+              "geometries": 659,
+              "textures": 120,
+              "particles": 0,
+              "estimatedGpuBytes": 4785972,
+              "loaded": 4,
+              "hiddenFrames": 0,
+              "quality": "medium",
+              "gpuObjects": {
+                "geometries": 659,
+                "textures": 120
+              },
+              "heap": 48520704,
+              "heapDetail": {
+                "usedSize": 48520704,
+                "totalSize": 99254272,
+                "embedderHeapUsedSize": 4395560,
+                "backingStorageSize": 35226075
+              }
+            },
+            "summary": {
+              "frames": 78,
+              "max": 16.80000000000109,
+              "p95": 16.799999999999272,
+              "above25": 0,
+              "above50": 0,
+              "within20": 1,
+              "calls": 192,
+              "triangles": 74316,
+              "particles": 7
+            }
+          },
+          {
+            "use": "repeat",
+            "duration": 1289,
+            "before": {
+              "at": 9753.29999999702,
+              "frames": 82,
+              "calls": 189,
+              "triangles": 72796,
+              "geometries": 659,
+              "textures": 120,
+              "particles": 0,
+              "estimatedGpuBytes": 4785972,
+              "loaded": 4,
+              "hiddenFrames": 0,
+              "quality": "medium",
+              "gpuObjects": {
+                "geometries": 659,
+                "textures": 120
+              },
+              "heap": 48530968,
+              "heapDetail": {
+                "usedSize": 48530968,
+                "totalSize": 99254272,
+                "embedderHeapUsedSize": 4395560,
+                "backingStorageSize": 35226075
+              }
+            },
+            "after": {
+              "at": 11054.20000000298,
+              "frames": 160,
+              "calls": 189,
+              "triangles": 72796,
+              "geometries": 659,
+              "textures": 120,
+              "particles": 0,
+              "estimatedGpuBytes": 4785972,
+              "loaded": 4,
+              "hiddenFrames": 0,
+              "quality": "medium",
+              "gpuObjects": {
+                "geometries": 659,
+                "textures": 120
+              },
+              "heap": 37292580,
+              "heapDetail": {
+                "usedSize": 37292580,
+                "totalSize": 100564992,
+                "embedderHeapUsedSize": 4818520,
+                "backingStorageSize": 35226075
+              }
+            },
+            "summary": {
+              "frames": 78,
+              "max": 16.799999999999272,
+              "p95": 16.700000000000728,
+              "above25": 0,
+              "above50": 0,
+              "within20": 1,
+              "calls": 192,
+              "triangles": 74316,
+              "particles": 7
+            }
+          }
+        ],
+        "pageOpen": {
+          "frames": 623,
+          "max": 150,
+          "p95": 16.799999999999272,
+          "above25": 9,
+          "above50": 4,
+          "within20": 0.985553772070626
+        }
+      },
+      "profiled": {
+        "name": "1280x720-dpr1-cpu1-medium-soot-passive",
+        "action": {
+          "id": "soot-passive",
+          "owner": "soot",
+          "name": "Soot · Ash reader",
+          "ultimate": false,
+          "enemy": false
+        },
+        "width": 1280,
+        "height": 720,
+        "dpr": 1,
+        "cpu": 1,
+        "quality": "medium",
+        "errors": [],
+        "casts": [
+          {
+            "use": "first",
+            "duration": 1289,
+            "before": {
+              "at": 6629.9000000059605,
+              "frames": 4,
+              "calls": 187,
+              "triangles": 72636,
+              "geometries": 659,
+              "textures": 120,
+              "particles": 0,
+              "estimatedGpuBytes": 4973744,
+              "loaded": 4,
+              "hiddenFrames": 0,
+              "quality": "medium",
+              "gpuObjects": {
+                "geometries": 659,
+                "textures": 120
+              },
+              "heap": 51682704,
+              "heapDetail": {
+                "usedSize": 51682704,
+                "totalSize": 97681408,
+                "embedderHeapUsedSize": 4818360,
+                "backingStorageSize": 35226230
+              }
+            },
+            "after": {
+              "at": 7931.4000000059605,
+              "frames": 82,
+              "calls": 189,
+              "triangles": 72796,
+              "geometries": 659,
+              "textures": 120,
+              "particles": 0,
+              "estimatedGpuBytes": 4785972,
+              "loaded": 4,
+              "hiddenFrames": 0,
+              "quality": "medium",
+              "gpuObjects": {
+                "geometries": 659,
+                "textures": 120
+              },
+              "heap": 43577920,
+              "heapDetail": {
+                "usedSize": 43577920,
+                "totalSize": 98205696,
+                "embedderHeapUsedSize": 4948808,
+                "backingStorageSize": 35226240
+              }
+            },
+            "summary": {
+              "frames": 78,
+              "max": 16.800000000000182,
+              "p95": 16.800000000000182,
+              "above25": 0,
+              "above50": 0,
+              "within20": 1,
+              "calls": 192,
+              "triangles": 74316,
+              "particles": 7
+            }
+          },
+          {
+            "use": "repeat",
+            "duration": 1289,
+            "before": {
+              "at": 7932.20000000298,
+              "frames": 82,
+              "calls": 189,
+              "triangles": 72796,
+              "geometries": 659,
+              "textures": 120,
+              "particles": 0,
+              "estimatedGpuBytes": 4785972,
+              "loaded": 4,
+              "hiddenFrames": 0,
+              "quality": "medium",
+              "gpuObjects": {
+                "geometries": 659,
+                "textures": 120
+              },
+              "heap": 43588184,
+              "heapDetail": {
+                "usedSize": 43588184,
+                "totalSize": 98205696,
+                "embedderHeapUsedSize": 4948808,
+                "backingStorageSize": 35226240
+              }
+            },
+            "after": {
+              "at": 9231,
+              "frames": 160,
+              "calls": 189,
+              "triangles": 72796,
+              "geometries": 659,
+              "textures": 120,
+              "particles": 0,
+              "estimatedGpuBytes": 4785972,
+              "loaded": 4,
+              "hiddenFrames": 0,
+              "quality": "medium",
+              "gpuObjects": {
+                "geometries": 659,
+                "textures": 120
+              },
+              "heap": 58572288,
+              "heapDetail": {
+                "usedSize": 58572288,
+                "totalSize": 98467840,
+                "embedderHeapUsedSize": 5229240,
+                "backingStorageSize": 35226240
+              }
+            },
+            "summary": {
+              "frames": 78,
+              "max": 16.799999999999272,
+              "p95": 16.700000000000728,
+              "above25": 0,
+              "above50": 0,
+              "within20": 1,
+              "calls": 192,
+              "triangles": 74316,
+              "particles": 7
+            }
+          }
+        ],
+        "pageOpen": {
+          "frames": 553,
+          "max": 16.800000000000182,
+          "p95": 16.799999999999272,
+          "above25": 0,
+          "above50": 0,
+          "within20": 1
+        },
+        "postInteractive": {
+          "frames": 519,
+          "max": 16.800000000000182,
+          "p95": 16.799999999999272,
+          "above25": 0,
+          "above50": 0,
+          "within20": 1
+        },
+        "postReady": {
+          "frames": 161,
+          "max": 16.800000000000182,
+          "p95": 16.799999999999272,
+          "above25": 0,
+          "above50": 0,
+          "within20": 1
+        },
+        "firstInteractiveAt": 576.8,
+        "sceneReadyAt": 6543.2
+      },
+      "evidence": "reports/cardrpg-big2/performance/b1-opening-profiles/1280x720-dpr1-cpu1-medium-soot-passive/trace-attribution.json"
+    },
+    {
+      "original": {
+        "name": "1280x720-dpr1-cpu4-medium-marigold-4",
+        "action": {
+          "id": "marigold-4",
+          "owner": "marigold",
+          "name": "Marigold · First tea blossom",
+          "ultimate": true,
+          "enemy": false
+        },
+        "width": 1280,
+        "height": 720,
+        "dpr": 1,
+        "cpu": 4,
+        "quality": "medium",
+        "errors": [],
+        "casts": [
+          {
+            "use": "first",
+            "duration": 1360,
+            "before": {
+              "at": 10967.79999999702,
+              "frames": 5,
+              "calls": 186,
+              "triangles": 70838,
+              "geometries": 657,
+              "textures": 120,
+              "particles": 0,
+              "estimatedGpuBytes": 4973744,
+              "loaded": 4,
+              "hiddenFrames": 0,
+              "quality": "medium",
+              "gpuObjects": {
+                "geometries": 657,
+                "textures": 120
+              },
+              "heap": 40269524,
+              "heapDetail": {
+                "usedSize": 40269524,
+                "totalSize": 103972864,
+                "embedderHeapUsedSize": 4623072,
+                "backingStorageSize": 35272976
+              }
+            },
+            "after": {
+              "at": 12329.89999999106,
+              "frames": 87,
+              "calls": 192,
+              "triangles": 71318,
+              "geometries": 657,
+              "textures": 120,
+              "particles": 0,
+              "estimatedGpuBytes": 4571340,
+              "loaded": 4,
+              "hiddenFrames": 0,
+              "quality": "medium",
+              "gpuObjects": {
+                "geometries": 657,
+                "textures": 120
+              },
+              "heap": 59878360,
+              "heapDetail": {
+                "usedSize": 59878360,
+                "totalSize": 104759296,
+                "embedderHeapUsedSize": 4836496,
+                "backingStorageSize": 35273004
+              }
+            },
+            "summary": {
+              "frames": 82,
+              "max": 16.80000000000109,
+              "p95": 16.700000000000728,
+              "above25": 0,
+              "above50": 0,
+              "within20": 1,
+              "calls": 194,
+              "triangles": 71318,
+              "particles": 0
+            }
+          },
+          {
+            "use": "repeat",
+            "duration": 1360,
+            "before": {
+              "at": 12331.39999999106,
+              "frames": 87,
+              "calls": 192,
+              "triangles": 71318,
+              "geometries": 657,
+              "textures": 120,
+              "particles": 0,
+              "estimatedGpuBytes": 4571340,
+              "loaded": 4,
+              "hiddenFrames": 0,
+              "quality": "medium",
+              "gpuObjects": {
+                "geometries": 657,
+                "textures": 120
+              },
+              "heap": 59888624,
+              "heapDetail": {
+                "usedSize": 59888624,
+                "totalSize": 104759296,
+                "embedderHeapUsedSize": 4836496,
+                "backingStorageSize": 35273004
+              }
+            },
+            "after": {
+              "at": 13697.89999999106,
+              "frames": 169,
+              "calls": 192,
+              "triangles": 71318,
+              "geometries": 657,
+              "textures": 120,
+              "particles": 0,
+              "estimatedGpuBytes": 4571340,
+              "loaded": 4,
+              "hiddenFrames": 0,
+              "quality": "medium",
+              "gpuObjects": {
+                "geometries": 657,
+                "textures": 120
+              },
+              "heap": 50455508,
+              "heapDetail": {
+                "usedSize": 50455508,
+                "totalSize": 104759296,
+                "embedderHeapUsedSize": 4999064,
+                "backingStorageSize": 35273004
+              }
+            },
+            "summary": {
+              "frames": 82,
+              "max": 16.80000000000109,
+              "p95": 16.799999999999272,
+              "above25": 0,
+              "above50": 0,
+              "within20": 1,
+              "calls": 194,
+              "triangles": 71318,
+              "particles": 0
+            }
+          }
+        ],
+        "pageOpen": {
+          "frames": 741,
+          "max": 300,
+          "p95": 33.29999999999927,
+          "above25": 43,
+          "above50": 6,
+          "within20": 0.941970310391363
+        }
+      },
+      "profiled": {
+        "name": "1280x720-dpr1-cpu4-medium-marigold-4",
+        "action": {
+          "id": "marigold-4",
+          "owner": "marigold",
+          "name": "Marigold · First tea blossom",
+          "ultimate": true,
+          "enemy": false
+        },
+        "width": 1280,
+        "height": 720,
+        "dpr": 1,
+        "cpu": 4,
+        "quality": "medium",
+        "errors": [],
+        "casts": [
+          {
+            "use": "first",
+            "duration": 1360,
+            "before": {
+              "at": 9134.199999988079,
+              "frames": 5,
+              "calls": 186,
+              "triangles": 70838,
+              "geometries": 657,
+              "textures": 120,
+              "particles": 0,
+              "estimatedGpuBytes": 4973744,
+              "loaded": 4,
+              "hiddenFrames": 0,
+              "quality": "medium",
+              "gpuObjects": {
+                "geometries": 657,
+                "textures": 120
+              },
+              "heap": 60583600,
+              "heapDetail": {
+                "usedSize": 60583600,
+                "totalSize": 104235008,
+                "embedderHeapUsedSize": 4927128,
+                "backingStorageSize": 35273340
+              }
+            },
+            "after": {
+              "at": 10500.29999999702,
+              "frames": 87,
+              "calls": 192,
+              "triangles": 71318,
+              "geometries": 657,
+              "textures": 120,
+              "particles": 0,
+              "estimatedGpuBytes": 4571340,
+              "loaded": 4,
+              "hiddenFrames": 0,
+              "quality": "medium",
+              "gpuObjects": {
+                "geometries": 657,
+                "textures": 120
+              },
+              "heap": 54424364,
+              "heapDetail": {
+                "usedSize": 54424364,
+                "totalSize": 105283584,
+                "embedderHeapUsedSize": 5132760,
+                "backingStorageSize": 35273368
+              }
+            },
+            "summary": {
+              "frames": 82,
+              "max": 16.80000000000109,
+              "p95": 16.799999999999272,
+              "above25": 0,
+              "above50": 0,
+              "within20": 1,
+              "calls": 194,
+              "triangles": 71318,
+              "particles": 0
+            }
+          },
+          {
+            "use": "repeat",
+            "duration": 1360,
+            "before": {
+              "at": 10502.09999999404,
+              "frames": 87,
+              "calls": 192,
+              "triangles": 71318,
+              "geometries": 657,
+              "textures": 120,
+              "particles": 0,
+              "estimatedGpuBytes": 4571340,
+              "loaded": 4,
+              "hiddenFrames": 0,
+              "quality": "medium",
+              "gpuObjects": {
+                "geometries": 657,
+                "textures": 120
+              },
+              "heap": 54434628,
+              "heapDetail": {
+                "usedSize": 54434628,
+                "totalSize": 105283584,
+                "embedderHeapUsedSize": 5132760,
+                "backingStorageSize": 35273368
+              }
+            },
+            "after": {
+              "at": 11865.39999999106,
+              "frames": 169,
+              "calls": 192,
+              "triangles": 71318,
+              "geometries": 657,
+              "textures": 120,
+              "particles": 0,
+              "estimatedGpuBytes": 4571340,
+              "loaded": 4,
+              "hiddenFrames": 0,
+              "quality": "medium",
+              "gpuObjects": {
+                "geometries": 657,
+                "textures": 120
+              },
+              "heap": 45064156,
+              "heapDetail": {
+                "usedSize": 45064156,
+                "totalSize": 106070016,
+                "embedderHeapUsedSize": 5441928,
+                "backingStorageSize": 35273368
+              }
+            },
+            "summary": {
+              "frames": 82,
+              "max": 16.80000000000109,
+              "p95": 16.700000000000728,
+              "above25": 0,
+              "above50": 0,
+              "within20": 1,
+              "calls": 194,
+              "triangles": 71318,
+              "particles": 0
+            }
+          }
+        ],
+        "pageOpen": {
+          "frames": 678,
+          "max": 116.60000000000014,
+          "p95": 16.80000000000001,
+          "above25": 18,
+          "above50": 3,
+          "within20": 0.9734513274336283
+        },
+        "postInteractive": {
+          "frames": 600,
+          "max": 50,
+          "p95": 16.799999999999727,
+          "above25": 12,
+          "above50": 0,
+          "within20": 0.98
+        },
+        "postReady": {
+          "frames": 171,
+          "max": 33.399999999999636,
+          "p95": 16.799999999999272,
+          "above25": 1,
+          "above50": 0,
+          "within20": 0.9941520467836257
+        },
+        "firstInteractiveAt": 1624.7,
+        "sceneReadyAt": 8991.1
+      },
+      "evidence": "reports/cardrpg-big2/performance/b1-opening-profiles/1280x720-dpr1-cpu4-medium-marigold-4/trace-attribution.json"
+    }
+  ],
+  "method": "Worst native and CPU4 whole-page cases selected from completed B1 matrix. Traced cold reruns add explicit first-interactive and scene-ready frame windows. Tracing perturbs timing; no substitution of rerun values for original maxima."
+}

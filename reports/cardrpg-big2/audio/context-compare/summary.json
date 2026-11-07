@@ -1,0 +1,194 @@
+{
+  "artifact": "/tmp/cardrpg-big2-b4-index.html",
+  "sha256": "f03b6ff13472a5164874ea64285b4199bf531406c69d254553a8923f5abdd90f",
+  "source": {
+    "root": "/tmp/cardrpg-big2-b4-validation",
+    "head": "690a070f703a67fd83c25184973c88ad75dad5f1",
+    "artifact": "/tmp/cardrpg-big2-b4-index.html",
+    "sha256": "f03b6ff13472a5164874ea64285b4199bf531406c69d254553a8923f5abdd90f"
+  },
+  "method": "Six fresh Chromium browser processes at native CPU/DPR1. Alternating forced/native sample-rate constructor options on identical pinned HTML; real sound click followed by automatic x4 battle. No screenshots or tracing in sampled window. This comparison does not prove an OS-cold audio service restart.",
+  "rows": [
+    {
+      "index": 1,
+      "mode": "forced",
+      "max": 150,
+      "p95": 16.700000000000728,
+      "constructors": [
+        {
+          "at": 7170.79999999702,
+          "ms": 144.1000000089407,
+          "originalOptions": {
+            "sampleRate": 44100
+          },
+          "options": {
+            "sampleRate": 44100
+          },
+          "sampleRate": 44100,
+          "baseLatency": 0.005351473922902495,
+          "outputLatency": 0
+        }
+      ],
+      "marks": [
+        {
+          "label": "sound-click-start",
+          "at": 7143
+        },
+        {
+          "label": "sound-enabled",
+          "at": 7326.79999999702
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "mode": "native",
+      "max": 133.39999999999964,
+      "p95": 16.700000000000728,
+      "constructors": [
+        {
+          "at": 7172.100000008941,
+          "ms": 127.5,
+          "originalOptions": {
+            "sampleRate": 44100
+          },
+          "options": {},
+          "sampleRate": 48000,
+          "baseLatency": 0.005333333333333333,
+          "outputLatency": 0
+        }
+      ],
+      "marks": [
+        {
+          "label": "sound-click-start",
+          "at": 7142.20000000298
+        },
+        {
+          "label": "sound-enabled",
+          "at": 7307.29999999702
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "mode": "native",
+      "max": 133.30000000000018,
+      "p95": 16.799999999999272,
+      "constructors": [
+        {
+          "at": 7150.0999999940395,
+          "ms": 131.29999999701977,
+          "originalOptions": {
+            "sampleRate": 44100
+          },
+          "options": {},
+          "sampleRate": 48000,
+          "baseLatency": 0.005333333333333333,
+          "outputLatency": 0
+        }
+      ],
+      "marks": [
+        {
+          "label": "sound-click-start",
+          "at": 7120.0999999940395
+        },
+        {
+          "label": "sound-enabled",
+          "at": 7288.899999991059
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "mode": "forced",
+      "max": 133.39999999999964,
+      "p95": 16.800000000000182,
+      "constructors": [
+        {
+          "at": 7155.20000000298,
+          "ms": 134.8999999910593,
+          "originalOptions": {
+            "sampleRate": 44100
+          },
+          "options": {
+            "sampleRate": 44100
+          },
+          "sampleRate": 44100,
+          "baseLatency": 0.005351473922902495,
+          "outputLatency": 0
+        }
+      ],
+      "marks": [
+        {
+          "label": "sound-click-start",
+          "at": 7125
+        },
+        {
+          "label": "sound-enabled",
+          "at": 7297.79999999702
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "mode": "forced",
+      "max": 133.40000000000055,
+      "p95": 16.700000000000728,
+      "constructors": [
+        {
+          "at": 7150.4000000059605,
+          "ms": 135.8999999910593,
+          "originalOptions": {
+            "sampleRate": 44100
+          },
+          "options": {
+            "sampleRate": 44100
+          },
+          "sampleRate": 44100,
+          "baseLatency": 0.005351473922902495,
+          "outputLatency": 0
+        }
+      ],
+      "marks": [
+        {
+          "label": "sound-click-start",
+          "at": 7120.5
+        },
+        {
+          "label": "sound-enabled",
+          "at": 7294.29999999702
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "mode": "native",
+      "max": 133.39999999999964,
+      "p95": 16.799999999999272,
+      "constructors": [
+        {
+          "at": 7153.5999999940395,
+          "ms": 130.1000000089407,
+          "originalOptions": {
+            "sampleRate": 44100
+          },
+          "options": {},
+          "sampleRate": 48000,
+          "baseLatency": 0.005333333333333333,
+          "outputLatency": 0
+        }
+      ],
+      "marks": [
+        {
+          "label": "sound-click-start",
+          "at": 7124.20000000298
+        },
+        {
+          "label": "sound-enabled",
+          "at": 7291.20000000298
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

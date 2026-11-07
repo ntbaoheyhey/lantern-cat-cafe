@@ -1,0 +1,19 @@
+{"timingLock":"acquired","pid":16957,"command":"node","args":["reports/cardrpg-big2/review/evidence-check.mjs"]}
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+0 !== 93
+
+    at file:///Users/bao/taskbar-hero-cardrpg-big2/reports/cardrpg-big2/review/evidence-check.mjs:23:9 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 0,
+  expected: 93,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.22.2

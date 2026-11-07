@@ -19,6 +19,7 @@ async function run(script, args = [], environment = {}, cwd = process.cwd()) {
 // Quick isolated lab proof before the long batch1 matrix. A failure is recorded
 // without discarding this unrelated cat phase's measurement queue.
 if (phase === 'batch1') {
+  await run('tools/cardrpg-big2/opening-profile.mjs');
   const labArtifact = '/tmp/cardrpg-big2-b5-index.html';
   if (await access(labArtifact).then(() => true, () => false)) {
     try { await run('tools/cardrpg-big2/mechanics-check.mjs', [], { BIG_ARTIFACT: labArtifact }); }
