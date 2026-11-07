@@ -18,7 +18,7 @@ const captureOne=async(name,selector='.cr-content')=>{
  await page.locator('.cr-content img').evaluateAll(images=>Promise.all(images.map(i=>i.decode().catch(()=>{}))));
  const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
  assert.equal(overflow,0);
- const samples=await page.locator('.dp-v4-loadouts,.dp-v4-utility,.cr-panel:has(h2:text-is("Pantry preparation"))').evaluateAll(panels=>{
+ const samples=await page.locator('.dp-v4-loadouts,.dp-v4-utility,.dp-v4-pantry').evaluateAll(panels=>{
   const rgb=value=>(value.match(/[\d.]+/g)||[]).map(Number);
   const luminance=c=>c.slice(0,3).map(v=>v/255).map(v=>v<=.04045?v/12.92:((v+.055)/1.055)**2.4).reduce((n,v,i)=>n+v*[.2126,.7152,.0722][i],0);
   return panels.flatMap(panel=>[...panel.querySelectorAll('*')].filter(el=>el.children.length===0&&el.textContent.trim()&&el.tagName!=='OPTION'&&el.getClientRects().length).map(el=>{
@@ -28,7 +28,7 @@ const captureOne=async(name,selector='.cr-content')=>{
    return {text:el.textContent.slice(0,80),ratio:(Math.max(a,b)+.05)/(Math.min(a,b)+.05)};
   }));
  });
- contrasts.push({name,samples});assert(samples.every(s=>s.ratio>=4.5),JSON.stringify(samples.filter(s=>s.ratio<4.5)));
+ contrasts.push({name,samples});await page.screenshot({path:`${out}/${name}.png`});assert(samples.every(s=>s.ratio>=4.5),JSON.stringify(samples.filter(s=>s.ratio<4.5)));
  await page.screenshot({path:`${out}/${name}.png`});captures.push({name,overflow});
 };
 const capture=async(name,selector)=>{
@@ -83,7 +83,7 @@ try{
  await page.getByLabel('Pantry supply',{exact:true}).selectOption('cleanse-tea');
  await page.getByRole('button',{name:'Confirm packed supply',exact:true}).click();
  assert.equal((await read()).state.account.inventory.stacks['shield-biscuit'],2);
- await capture('pantry','.cr-panel:has(h2:text-is("Pantry preparation"))');
+ await capture('pantry','.dp-v4-pantry');
  await page.getByRole('button',{name:'Return packed supply',exact:true}).click();
  assert.equal((await read()).state.account.inventory.stacks['cleanse-tea'],1);
  // A legacy over-cap import must retain all pieces and reject a voluntary acquisition atomically.

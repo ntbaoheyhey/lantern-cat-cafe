@@ -1,12 +1,12 @@
 # A4 living state
 ## NOW
-P2 active on codex/cardrpg-a4-p2-2026-11-07. Equipment utility comparison, three atomic presets, pantry reservations,240 cap and THC9 adapters integrated; verification in progress. P1 draft367 remains base de5d8a7b.
+P2 functional acceptance complete on codex/cardrpg-a4-p2-2026-11-07; draft publication next. Exact artifact dc965427 /26,198,406bytes. P3 staging only at /tmp/cardrpg-a4-p3; not yet applied.
 ## NEXT
-Finish P2 headless UI safety paths/contrast, existing pilot/OFF/gates, report residual balance and publish draft. Then P3–P7. Do not repeat R/D/G0/P1 or duplicate running jobs.
+Publish P2 draft/checkpoint and mirror report/state. Claim P3, implement boss lifecycle/bands, measure actual x1 pacing, then P4–P7. Do not repeat completed G0/R/D/P1/P2 gates or pilot.
 ## DONE
-P1 rules/UI,3000 functional encounters,8250 OFF routes,30 three-size Classic/Look captures. G0 45day max2.1948×. P1 checkpoint and P2 CLAIM published628c81c7.
+P2 atomic presets, utility comparisons, supply reservations,240shelf,THC9;24captures/3sizes/2themes,minimum contrast8.877. Pilot1500 replay/save cases;OFF8250routes exact47477251.
 ## GATES
-P1 type/lint/build,1735web/1035rules(+2expectedfail/11skip),421E2E PASS. P2 implementation NOT VERIFIED; P2–P7 balance/pacing/startup remain pending.
+P2 type/lint/build/1735web/1054rules(+2expectedfail/11skip)/421E2E PASS; retained first failures and retries in p2/acceptance.json. Balance MISS/NOT VERIFIED:6positive18ties0reversals train;level6saturated. Startup bytes+8164 vsP1;CPU unmeasured.
 ## DECISIONS (append-only)
 - Keep the one-agent constraint, automatic battles, strict A/B ownership, and isolated worktree.
 ## MEASUREMENTS
@@ -100,3 +100,12 @@ P1 type/lint/build,1735web/1035rules(+2expectedfail/11skip),421E2E PASS. P2 impl
 - Resumed existing gates35492, train pilot36133, OFF36150; no duplicate sims. Corrected gear-trigger fixture focused19 tests PASS (p2-trigger-retry1.log), original full-suite failure retained. Full-suite retry queued96245.
 - Added a4-p2-browser.mjs real-click loadout/transfer/salvage/missing-piece/export-import/pantry/full-shelf checks. Safety inventory fixtures enter through Import, no debug-state writes. First1280 run queued95435. Three sizes and both themes required.
 - Existing frozen rules source pilot1500 encounters is train-only, not acceptance. Full balance including intended challenge bands remains unverified until P3/P6. Native/headless, no B/protected edits.
+
+- P2 five gates now PASS:1,735web/1,054rules(+2expectedfail/11skip)/421E2E, type/lint/build. OFF8250 routes exact47477251. Original suite failed only an isolated healing-fixture expectation; retry passed.
+- UI first attempt exact label timeout fixed with aria-labels. Next found dark text on Classic dark inherited panel; explicit paired surfaces added. Contrast build/browser retry2 queued. Original log/checks preserved. Pilot36133 still queued; do not duplicate.
+- Owned temporary ledger worktree /tmp/cardrpg-a4-ledger at origin1cbff3f4 avoids disturbing pre-existing dirty shared ledger worktree. Mirror only STATE/report after phase acceptance.
+
+## P2 functional closure
+- 1280 retry2,1440 and1024 real-click paths passed;24captures zerooverflow/errors. Personally inspected Look compare and1024preset. Label and contrast failures retained; no full204pack.
+- Existing suites/pilot/OFF reused, no duplicated jobs. B17:04 window request acknowledged f7452380; two-minute gap between remaining A browser windows.
+- P3 draft staging prepared outside checkout only; no B/protected edits.

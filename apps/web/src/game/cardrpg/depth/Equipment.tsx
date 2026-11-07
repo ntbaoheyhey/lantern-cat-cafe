@@ -56,20 +56,20 @@ export function Inventory({ m }: { m: DepthModel }) {
     {category === 'Equipment' && <>
       {v4&&<><ShiftLoadouts m={m}/><p>All equipment is account-bound. At 240 pieces, further route drops become salvage threads within the daily reward cap. Voluntary acquisitions require room for the entire batch.</p><details><summary>Rarity and sources</summary>{RARITY_ORDER.map(r=><p key={r}><b>{r}</b> · {R.rarityMeaningV4(r)}</p>)}<p>First six eligible won encounters per day: ordinary 65/30/5/0%, elite 0/70/27/3%, boss 0/20/70/10% (Common/Rare/Epic/Legendary). After six drops: 0%.</p></details></>}
       <div className="cr-filter">
-        <label>Equip for<select value={cardId} onChange={event => { m.cardId = event.target.value; m.notify(false); }}>
+        <label>Equip for<select aria-label="Equip for" value={cardId} onChange={event => { m.cardId = event.target.value; m.notify(false); }}>
           {state.account.cards.map(card => <option key={card.cardId} value={card.cardId}>{R.CAT_BY_ID[card.cardId]!.name}</option>)}
         </select></label>
-        <label>Slot<select value={slot} onChange={event => setSlot(event.target.value)}>
+        <label>Slot<select aria-label="Slot" value={slot} onChange={event => setSlot(event.target.value)}>
           <option value="all">All slots</option>{EQUIPMENT_SLOTS.map(value => <option key={value}>{value}</option>)}
         </select></label>
-        <label>Rarity<select value={rarity} onChange={event => setRarity(event.target.value)}>
+        <label>Rarity<select aria-label="Rarity" value={rarity} onChange={event => setRarity(event.target.value)}>
           <option value="all">All rarities</option>{RARITY_ORDER.map(value => <option key={value}>{value}</option>)}
         </select></label>
-        <label>Set<select value={setId} onChange={event => setSetId(event.target.value)}>
+        <label>Set<select aria-label="Set" value={setId} onChange={event => setSetId(event.target.value)}>
           <option value="all">All sets</option>{R.SETS.map(set => <option key={set.id} value={set.id}>{set.name}</option>)}
         </select></label>
-        {v4&&<label>Ownership<select value={ownership} onChange={e=>setOwnership(e.target.value)}><option value="all">All owned</option><option value="equipped">Equipped</option><option value="available">Available</option></select></label>}
-        <label>Sort<select value={sort} onChange={event => setSort(event.target.value)}>
+        {v4&&<label>Ownership<select aria-label="Ownership" value={ownership} onChange={e=>setOwnership(e.target.value)}><option value="all">All owned</option><option value="equipped">Equipped</option><option value="available">Available</option></select></label>}
+        <label>Sort<select aria-label="Sort" value={sort} onChange={event => setSort(event.target.value)}>
           <option value="rarity">Rarity</option><option value="enhancement">Enhancement</option><option value="name">Name</option>{v4&&<><option value="new">Newest</option><option value="utility">Utility estimate</option></>}
         </select></label>
       </div>
@@ -137,7 +137,7 @@ export function Inventory({ m }: { m: DepthModel }) {
             </div>
             {item.affixes.map(id => <p key={id}>{R.AFFIX_BY_ID[id]!.name} · {R.gearAffixRoll(item, id)} · {v4?(R.AFFIX_TEXT_V4[R.AFFIX_BY_ID[id]!.stat]??R.AFFIX_BY_ID[id]!.description):R.AFFIX_BY_ID[id]!.description}</p>)}
             {item.affixes.length > 0 && <div className="cr-actions"><label>Replace first affix
-              <select value={chosenAffix ?? ''} onChange={event => setAffix(event.target.value)}>
+              <select aria-label="Replace first affix" value={chosenAffix ?? ''} onChange={event => setAffix(event.target.value)}>
                 {compatible.map(candidate => <option key={candidate.id} value={candidate.id}>{candidate.name} · {candidate.tiers[item.tier - 1]!.join('–')}</option>)}
               </select></label><button disabled={locked || !chosenAffix}
                 onClick={() => { if (chosenAffix) act(R.reforgeGear(state, item.id, 0, chosenAffix), 'The selected affix has been stitched into this piece.'); }}>Reforge · 90 fish / 15 threads</button></div>}
@@ -145,7 +145,7 @@ export function Inventory({ m }: { m: DepthModel }) {
         </div>
       </div>
       <section className="cr-panel"><h2>Choose a tailoring project</h2><label>Template
-        <select value={craftId} onChange={event => setCraftId(event.target.value)}>
+        <select aria-label="Template" value={craftId} onChange={event => setCraftId(event.target.value)}>
           {R.GEAR.map(spec => <option key={spec.id} value={spec.id}>{spec.name} · {spec.rarity} · chapter {spec.chapter}</option>)}
         </select></label><p>{v4?R.gearStoryV4(craftId):R.GEAR_BY_ID[craftId]!.story}</p>{v4&&<><CostView cost={R.gearCostV4(craftId)}/><p>{R.GEAR_BY_ID[craftId]!.rarity==='legendary'?'Also requires Pantry clear, 20 mastery materials and 1 boss seal.':'Reach the source chapter before tailoring.'}</p></>}
         <button disabled={locked} onClick={() => act(R.craftGear(state, craftId), 'Chosen piece crafted. Look for it in your equipment.')}>Craft chosen piece</button>

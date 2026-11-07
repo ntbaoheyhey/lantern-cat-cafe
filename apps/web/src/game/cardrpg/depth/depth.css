@@ -168,3 +168,12 @@
 .dp-v4-loadouts p,.dp-v4-utility p{color:#413647}
 .dp-v4-utility{padding:12px;border:1px solid #ad9985;border-radius:10px;background:#fff7e8}
 .dp-v4-loadouts .cr-filter{grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+
+.dp-app[data-look-v2="true"] .dp-cafe .dp-v4-utility{background:#21332e;border-color:#8baa97;color:#f5ebdc}
+.dp-app[data-look-v2="true"] .dp-cafe :is(.dp-v4-loadouts,.dp-v4-utility) p{color:#f5ebdc}
+
+/* Explicit paired surfaces keep new estimate/preset panels readable in both themes. */
+.dp-app :is(.dp-v4-loadouts,.dp-v4-utility){background:#fff7e8;color:#302835}
+.dp-app :is(.dp-v4-loadouts,.dp-v4-utility) :is(h2,h3,p,summary,label){color:#302835}
+.dp-app[data-look-v2="true"] .dp-cafe :is(.dp-v4-loadouts,.dp-v4-utility){background:#21332e;color:#f5ebdc}
+.dp-app[data-look-v2="true"] .dp-cafe :is(.dp-v4-loadouts,.dp-v4-utility) :is(h2,h3,p,summary,label){color:#f5ebdc}

@@ -1,0 +1,21 @@
+{"lock":"acquired","lane":"A","pid":41500,"startedAt":"2026-11-07T17:04:20.237Z","task":"A4 P2 browser 1280 retry1"}
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: [{"text":"Save three crews with their rows, standing plan and equipment. Saving and applyi","ratio":1.4870393508870854},{"text":"Mochi · Soot · Clover · finish/steady","ratio":1.4870393508870854},{"text":"Approximate crew score: 758.1 → 758.1","ratio":1.4870393508870854},{"text":"No equipment transfers.","ratio":1.4870393508870854},{"text":"Set and unique effects stay the same.","ratio":1.4870393508870854},{"text":"What this changes","ratio":1.1079961990158755},{"text":"How the estimate works","ratio":1.5857375826733096}]
+    at captureOne (file:///Users/bao/taskbar-hero-cardrpg-a4/tools/cardrpg-big/a4-p2-browser.mjs:31:33)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at process.processImmediate (node:internal/timers:541:9)
+    at async capture (file:///Users/bao/taskbar-hero-cardrpg-a4/tools/cardrpg-big/a4-p2-browser.mjs:35:2)
+    at async file:///Users/bao/taskbar-hero-cardrpg-a4/tools/cardrpg-big/a4-p2-browser.mjs:55:2 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
+
+Node.js v24.22.2
+{"lock":"released","pid":41500,"task":"A4 P2 browser 1280 retry1"}
