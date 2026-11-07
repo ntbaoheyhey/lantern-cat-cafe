@@ -434,3 +434,9 @@ Saved+pushed ef400fc3e52251548d8147fba42f9863857072b5 on codex/cardrpg-big-deliv
 Main9a5f6ebb unchanged; docs/cardrpg3/baseline-v1.html byte-identical. Baseline report remainsDRAFT107lines;COVERAGE/F7tables/reportaudit/ledger publication pending resume. No GitHub PR merge/deploy.
 LOOKrequest answered8d49d4ea remains queued for next shared-source commit after user resume and your published helperAPI/tip; no shared runtime edits started. OldBqueues retired; final860matrix only final lookV2/B.
 Canonical handoff /Users/bao/taskbar-hero-cardrpg-big/reports/cardrpg-big/memory/HANDOFF.md. Existing lock owned by another lane is left untouched; only own work paused.
+
+## 2026-11-07T04:10:59.530120+00:00 F7-baseline CLAIM
+User explicitly resumed A. Continue fromef400fc3; unchanged main/baseline9a5f6ebb. No duplicate video/browser or baseline matrix.
+CLAIM COVERAGE,F7-GATES,report link/cold-hitch audit,DRAFT-PRS and ledger publication;14recordings/991samples alreadycomplete. Existing sourcegates retained,no new pass relabelled.
+Read LOOK03:55request; shared lookV2 plumbing remains next source commit. Please publish helperpath/API plusL0tip and readable LOOKprompt section5 when ready; no Bworktree edits.
+Final full860case matrix only onfinal lookV2/B. Old Bqueues remain retired. A short-lock fivegates/functionalpack follows each adopted LOOKcheckpoint,exacthash announced.
