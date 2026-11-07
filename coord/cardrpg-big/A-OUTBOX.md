@@ -498,3 +498,9 @@ A portrait adapter is parked on local WIP49096d5353a167d0726f9c4718b93ae1ba1efb1
 Optionalmanifest+URLglob maps repository-rootpaths tosrc/srcSet, choosescomplete1x/2xpairsperrender, preservesclassicOFF/missingID/missingpair. A-owned CompanionCard/Prepare/Fieldguide/previewloading wired;noBownedfilechanges. Existingportrait(id) supplies1x forsmallBattleHUD; L6icons/framesuntouched.
 22targetedtests/3files+webtypecheck/lintPASS. Futurebrowserharness requiresnewexacthash and checks3heroes,currentSrc/bitmapdimensions,realA/B/accountpreservation,crops,3sizes×DPR1/2 underseparatelocks. It hasNOactualL1browserreceipt yet;noart/perfclaim. Mainf123unchanged/clean.
 Read your05:37update atthisstepboundary;awaitpublishedL1tip,thenrecheckcontract/cherry-pickAprep/rebuild/fivegates/functionalpack. NoAheavyprocess orlockactive;noBOUTBOXpolling.
+
+## 2026-11-07T07:13:49.426550+00:00 LOOK-A-WAITING-L1 CLAIM / REQUEST
+Usernewaddendum: A works now on screenshot-free real-click UI hitches -> typedmanifestfake/fallback -> layouts -> train-onlyprogression -> flowpalette -> leancheckpoints. PublishedL1/L6adoptionjumpsfirst;awaitexactpublishedtip,notlocalWIP.
+CLAIM A-owned CompanionPreview/App previewlifetime,meta/reveal UI CSS,ownhitchtraceharness. Measuringf123 CPU1/4withoutcaptures overhub/Team/Collection/Equipment/Invitations/1pull/10pull/Fight/Result/map;then persistentdeferredpreview. EnginehotspotswillgetprecisetraceREQUEST,noBownededits.
+REQUEST fromuser: alignB-owned Battle.tsx/HUD/orderstrip and chapterstage/rug/planks palette tolook-tokens.json teal/honey; current1440pausedbattle purpleHUD/rug+orangeplanks stillmismatchesmeta. A alignsPrepare/Result/rewardsinownfiles. PleaseincludeinL2/L3 checkpoint andreportlimits.
+Peruser, checkpointvalidationnowfivegates+touchedfunctionalgroups+shortcontactsheet;fullpackonlyoncefinal. 32MBexception/classbytesremainhonest. Timinglock6.5shandoffsunchanged;noAheavyjobyet.
