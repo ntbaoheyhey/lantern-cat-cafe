@@ -3,16 +3,17 @@ PROMPT.md bytes (wc -c) = 58535
 PROMPT.md SHA-256 = 73b26c7629b6fe0830a94091611f50fa1943a90979cdadc03b0935e3c28a1572
 REFERENCE: reports/cardrpg-big/memory/PROMPT.md
 ## NOW
-ACTIVE 2026-11-07T07:13:29.257210+00:00: WAITING-L1 addendum saved; step1 screenshot-free hitch baseline/trace then persistent deferred preview. A has independent work; do not stop awaitingB.
+ACTIVE 2026-11-07T07:24:03.622264+00:00: WAIT1 baseline+CPU4tracecomplete; persistentpreview/revealfixWIP in delivery,20targetedtestsPASS; build/aftermeasurementnext. Parent8a2e56e38847.
 Canonical /Users/bao/taskbar-hero-cardrpg-big · ai/codex-cardrpg-big-2026-11-06 · parent9f41453b. Delivery /Users/bao/taskbar-hero-cardrpg-big-delivery · codex/cardrpg-big-delivery-2026-11-07 ·86005b84/draft358 OPEN/DRAFT.
 Mainf1234525fb744d0b318c2ea65727256cfb71fc6cc31c2380cf6fac93941a0f56/24026508bytes;baseline9a5f6ebb/23937000bytes immutable. No new quality/performance pass.
 Syncf91bc0e7/B06:58: L1sourceb9c521e3 unpublished; E2E23network/fontfailuresretrying. Candidateeadac6b2/20287129bytes notadopted. PublishedL1/L6takespriority.
 A portraitprep local49096d5353a167d0726f9c4718b93ae1ba1efb16 in /Users/bao/taskbar-hero-cardrpg-portrait-prep;not358. Ledgerreport6e1245ea/mirror84718776.
 ## NEXT
-1. Build screenshot-free click-route RAF/longtask/trace harness; measure frozenf123 CPU1/4 frompageopen incl1/10pull/Fight/Result/map;trace actualcauses. Timinglock+6.5shandoffs.
-2. Fix A preview lifetime/deferredmount/Reactisolation/preload and measureagain; B enginehotspots getpreciseREQUEST. Then extendtypedL1/fakemanifest/fallback6surfaces×3sizes.
+1. Finish preview-runtime/App/CompanionPreview/revealWIP: build newartifact and screenshot-freeCPU1/4route; current20testsPASS,typespending. Baselinealreadycomplete,donotduplicate.
+2. PostBengineREQUEST constructor76.346ms/warmstage84.111ms trace; fivegates+touchedgroups thenpublish. L1publishedadoptionjumpsfirst; otherwise typedmanifest/fakefallback6surfaces×3sizesnext.
 3. Layoutfirstviewport/contactsheet → training-onlyprogressionsims+isolatedrulescommit → tokenflow+Bpaletterequest →5gates+touchedgroups/shortreport. Fullpackonlyfinal;L1/L6publishedadoptionjumpsfirst.
 ## DONE
+WAIT1baseline ·deliveryuncommittedevidenceui-hitch/BASELINE.md;CPU1MAX33.3ms/CPU4MAX116.6ms/6previewscenes;complete15stages+diagnostictrace. Noafterpassyet.
 L1prep ·localWIP49096d53/outside358;22tests/3files+webtypes/lintPASS;look-ui/portrait-prep/checks.json inprepworktree. Optionalmanifest/srcset/liveOFFfallback+futureexacthashbrowserharness;noL1assets/browserpass.
 LOOK L0 checkpoint ·86005b84/draft358;10groups/204screens/1177sourceinputs PASS,5gates1731web/1020rules/421E2E;look-ui/L0-CHECKPOINT.md,l0-checkpoint-audit.json. Report115lines/9Vietnamese, ledger6e1245ea;syncf6512a83;358bodyupdated.
 LOOK Meshopt source ·365c2928/receipts1933d944 published;conditionalCSP uncompressedf123unchanged,all5gates1731web/1020rules/421E2E PASS. validation/look-l0-wasmhook.json;1177sourceinputs hashmatch.
@@ -40,7 +41,7 @@ G ·a75ae753/draft344, invitations/PERFORMANCE.md and recovery-verification.json
 M-followup ·5d1c2c47/draft345, meta-followup/CHECKPOINT.md,6before/aftercases+33screensPASS.
 F7 preparation ·1c188a46/draft348, demo/screens/checks.json, fivegates/18capturesPASS;fullintegrationpending.
 ## PHASE GATES · WAITING-L1 step1
-NOTYET “measure it screenshot-free by real clicks (hub -> Team -> Companions -> Equipment -> Invitations -> 1 pull -> 10 pull -> Fight -> Result -> map), trace it”:f123beforebaselinepending;200ms remainsfailure,notexcused.
+PASS measure/trace requestedrealclickroute:f123 CPU1/4,15stages,9066rawframes+4540diagnosticframes;ui-hitch/before/{cpu1,cpu4,cpu4-trace}. ColdCPU4MAX116.6msFAIL100;200mshistoricalmissretained.
 NOTYET “ONE persistent preview renderer/scene...lazy/deferred mount...React state split”:implementationpending;BownedengineonlyREQUESTs.
 NOTYET “every screen transition and every pull/10-pull reveal...max frame <=50ms(CPU1)...<=100ms(CPU4)...raw arrays...per-screen table”:newroutearrayspending.
 NOTYET WAIT5typedmanifest/fallback6surfaces×3sizes;WAIT4layouts/contactsheet;WAIT3traincurve/caps;WAIT2palette/flow;WAIT6leancheckpoint. SeePROMPTlatestaddendumexactrequirements.
@@ -72,6 +73,7 @@ I caps PASS25rules/2UI/12screens,localcounter/binding/help;designonly,0battle st
 G/M PASS earnedceremony/odds/pity/history andmain68reveal/invitationcaptures;Mpreview+70px,height300px,6before/after+33screens. OpeningGMAX316.6msMISS.
 F1/F2 FAILscale/sharpness:stage78.889%PASS,2745posesPASS;sharpness2/10PASS8MISS. F3/F4 varietyPASS30motionpairs/465effectpairs;historicalopening566.7/266.7msMISS.
 ## DECISIONS · append-only archive
+2026-11-07T07:24:03.622264+00:00 · Screenshot-freebaselinecomplete;Aownsapp-lifetimepreview+revealscroll,CSSvisibility;engineconstructor/stagedecorationhotspotsrequestB. Preserveallf123rawandhistorical200msmiss;noafterpassyet.
 2026-11-07T07:13:29.257323+00:00 · NewWAITING-L1useraddendum overrideswaiting/fullpackpercheckpoint;workonAissuesimmediately,leanchecks,trainingonlybalance. Oldpromptprefix53562bytespreserved.
 2026-11-07T05:43:36.249632+00:00 · Parkedlocal49096d53outside358pendingpublishedL1;22tests/types/lintPASS,sparsefailurepreserved.Nobrowser/L1artproofclaimed;f123mainunchanged.NoautomaticresumeorBpollerstarted.
 2026-11-07T05:37:49.162314+00:00 · L0publicationcomplete delivery86005b84/syncf6512a83/ledger6e1245ea;358open/draftbodyupdated. IsolateL1adapterWIPoutsidePRuntilBpublishedsource;observedpartialmanifestcontractonly.
@@ -81,6 +83,7 @@ F1/F2 FAILscale/sharpness:stage78.889%PASS,2745posesPASS;sharpness2/10PASS8MISS.
 2026-11-07T05:15:57.404630+00:00 · Resume audit found canonical state behind live delivery. Preserve active70538/74695,365c2928 conditional Meshopt CSP;f123 unchanged. B05:12 portrait contract256x320/512x640 prepared only;no publishedL1tip.
 All earlier decisions retained verbatim in DECISIONS.md and archive/state-before-portrait-prep-handoff.md; never delete them. Historical worktrees inHISTORY.md.
 ## MEASUREMENTS
+WAIT1 ·f123CPU1 4529frames/MAX33.3ms/2>25/0>50;CPU4 4537/MAX116.6/36>25/5>50/1>100;6scenes. TraceMAX116.7,constructor76.346ms,warmstage84.111ms/Layout47.793ms;ui-hitch/before/cpu4-trace/{task,profile}-analysis.json.
 L1prep ·22targetedtests/3filesPASS;webtypecheck/lintPASS;unboundhashguardfailsbeforebrowserasexpected. portrait-prep/checks.json;actualL1DPRproofNOTYET.
 LOOK L0 ·f1234525/24026508bytes;10groups/204screens/1177inputs;5sourcegates1731web/1020rules/421E2EPASS. look-ui/l0-checkpoint-audit.json;new report115lines/9Vietnamese;no new performance claim.
 LOOK diagnostic ·InvitationsCPU4MAX200ms/p9516.8ms,23>25/10>50;nativeMAX33.4ms. Raw inlook-ui/functional-l0-reviewfix/invitations/checks.json;includes screenshots,notcontrolledcoldacceptance. Sevenvisualsamples/hashes inlook-ui/l0-visual-review.json.
