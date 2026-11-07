@@ -4,7 +4,7 @@ P2 functional acceptance complete on codex/cardrpg-a4-p2-2026-11-07; draft publi
 ## NEXT
 Publish P2 draft/checkpoint and mirror report/state. Claim P3, implement boss lifecycle/bands, measure actual x1 pacing, then P4–P7. Do not repeat completed G0/R/D/P1/P2 gates or pilot.
 ## DONE
-P2 atomic presets, utility comparisons, supply reservations,240shelf,THC9;24captures/3sizes/2themes,minimum contrast8.877. Pilot1500 replay/save cases;OFF8250routes exact47477251.
+P2 atomic presets, utility comparisons, supply reservations,240shelf,THC9;24captures/3sizes/2themes,minimum contrast8.572. Pilot1500 replay/save cases;OFF8250routes exact47477251.
 ## GATES
 P2 type/lint/build/1735web/1054rules(+2expectedfail/11skip)/421E2E PASS; retained first failures and retries in p2/acceptance.json. Balance MISS/NOT VERIFIED:6positive18ties0reversals train;level6saturated. Startup bytes+8164 vsP1;CPU unmeasured.
 ## DECISIONS (append-only)

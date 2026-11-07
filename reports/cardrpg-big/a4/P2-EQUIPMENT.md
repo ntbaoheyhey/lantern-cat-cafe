@@ -8,7 +8,7 @@ The shared240-piece shelf rejects voluntary batch acquisitions before spending. 
 ## Verification
 
 - Focused19 equipment/supply cases PASS, including missing preset items, whole-batch full-shelf rejection, daily conversion caps, over-cap imports, reversible reservations and exactly-once Fight consumption.
-- Typecheck/lint/build PASS;1,735 web/1,054 rules tests (+2 expected failures/11 skips) and421 existing E2E PASS. 24 targeted captures across1280×720,1440×900,1024×600 and Classic/Look PASS;0 page errors/overflow; minimum measured contrast8.877:1. Receipt: p2/acceptance.json.
+- Typecheck/lint/build PASS;1,735 web/1,054 rules tests (+2 expected failures/11 skips) and421 existing E2E PASS. 24 targeted captures across1280×720,1440×900,1024×600 and Classic/Look PASS;0 page errors/overflow; minimum measured contrast8.572:1. Receipt: p2/acceptance.json.
 - The first full-suite failure came from an effect fixture that inherited a healing multiplier; the isolated fixture now measures the intended8/25 HP effect. Original failures and the passing retry are retained.
 - Train-only1500-encounter pilot PASS for exact replay, preset/save roundtrip and absent legacy meters. Its24 adjacent steps contain6 increases,18 ties,0 reversals; fixed-content level6 remains saturated. These are residual balance misses, not500-seed heldout acceptance. OFF165cells/8250routes exactly match47477251b3d20ab602bee5c55a56cdd661e111b1386e298e0c9bc67737fecfa3.
 
