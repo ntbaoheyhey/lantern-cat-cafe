@@ -1,0 +1,82 @@
+{
+  "artifactSha256": "266d71ac3109698a93cddf6ad2caa016c567b0e5d98cedfb9f053e290a2ecef6",
+  "bytes": 26200314,
+  "rows": [
+    {
+      "chapter": 1,
+      "kind": "ordinary",
+      "width": 1280,
+      "seconds": 14.48719999999553,
+      "postBossSeconds": null,
+      "actions": 6,
+      "outcome": "party",
+      "gate": "MISS",
+      "receipt": "reports/cardrpg-big/a4/p3/retry1/browser-1-ordinary-1280/checks.json",
+      "sha256": "266d71ac3109698a93cddf6ad2caa016c567b0e5d98cedfb9f053e290a2ecef6",
+      "minimumContrast": null
+    },
+    {
+      "chapter": 2,
+      "kind": "elite",
+      "width": 1440,
+      "seconds": 33.579,
+      "postBossSeconds": null,
+      "actions": 19,
+      "outcome": "party",
+      "gate": "PASS",
+      "receipt": "reports/cardrpg-big/a4/p3/retry1/browser-2-elite-1440/checks.json",
+      "sha256": "266d71ac3109698a93cddf6ad2caa016c567b0e5d98cedfb9f053e290a2ecef6",
+      "minimumContrast": 14.358253556218784
+    },
+    {
+      "chapter": 1,
+      "kind": "boss",
+      "width": 1024,
+      "seconds": 57.8925,
+      "postBossSeconds": 1.183,
+      "actions": 36,
+      "outcome": "party",
+      "gate": "PASS",
+      "receipt": "reports/cardrpg-big/a4/p3/retry1/browser-1-boss-1024/checks.json",
+      "sha256": "266d71ac3109698a93cddf6ad2caa016c567b0e5d98cedfb9f053e290a2ecef6",
+      "minimumContrast": 14.358253556218784
+    },
+    {
+      "chapter": 2,
+      "kind": "boss",
+      "width": 1440,
+      "seconds": 74.57369999999553,
+      "postBossSeconds": 1.1815999999940396,
+      "actions": 47,
+      "outcome": "party",
+      "gate": "PASS",
+      "receipt": "reports/cardrpg-big/a4/p3/retry1/browser-2-boss-1440/checks.json",
+      "sha256": "266d71ac3109698a93cddf6ad2caa016c567b0e5d98cedfb9f053e290a2ecef6",
+      "minimumContrast": 14.358253556218784
+    },
+    {
+      "chapter": 3,
+      "kind": "boss",
+      "width": 1280,
+      "seconds": 81.80830000000446,
+      "postBossSeconds": 1.4832000000029801,
+      "actions": 52,
+      "outcome": "party",
+      "gate": "PASS",
+      "receipt": "reports/cardrpg-big/a4/p3/retry1/browser-3-boss-1280/checks.json",
+      "sha256": "266d71ac3109698a93cddf6ad2caa016c567b0e5d98cedfb9f053e290a2ecef6",
+      "minimumContrast": 14.358253556218784
+    }
+  ],
+  "captures": 25,
+  "minimumContrast": 14.358253556218784,
+  "ordinaryContrast": "First receipt predates contrast instrumentation. Remaining1280/1440/1024 captures measure the same pacing surfaces.",
+  "functionalEncounters": 1800,
+  "balanceAcceptance": "NOT VERIFIED",
+  "offBehavior": {
+    "offBehavior": "PASS",
+    "sha256": "47477251b3d20ab602bee5c55a56cdd661e111b1386e298e0c9bc67737fecfa3",
+    "cells": 165,
+    "routes": 8250
+  }
+}

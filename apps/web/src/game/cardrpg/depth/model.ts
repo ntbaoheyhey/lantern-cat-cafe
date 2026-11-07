@@ -224,7 +224,7 @@ export class DepthModel {
     const shieldBefore = actor.shield;
     const intent = battle.intents.find(candidate => candidate.actorId === actor.id);
     const softened = intent?.interrupted || actor.statuses.some(status => status.id === 'drowsy');
-    const utility = ['heal', 'shield'].includes(R.ENEMY_BY_ID[actor.catalogId]?.mechanic ?? '')
+    const utility = !battle.v4 && ['heal', 'shield'].includes(R.ENEMY_BY_ID[actor.catalogId]?.mechanic ?? '')
       && !actor.statuses.some(status => status.id === 'hush');
     const signature = !softened && (intent?.signature || utility);
     const selected = actor.side === 'party' ? choice ?? R.chooseAction(battle, 'auto') : null;

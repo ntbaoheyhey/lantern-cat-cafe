@@ -271,7 +271,7 @@ function setIntents(b: Battle) {
     const front=party.filter(p=>p.row==='front');
     const reachable=b.v4&&front.length?front:party;
     const target = spec.mechanic==='steal' && rear.length ? weakest(rear) : b.v4&&spec.mechanic==='snare'?weakest(reachable):reachable[roll(b,reachable.length)]!;
-    return {actorId:a.id,targetId:target.id,label:signature?(b.v4?enemyGuideV4(a.catalogId).intent:spec.intent):`${a.name} · ${spec.mechanic==='heal'?'Cup refill':'basic pressure'}`,counter:b.v4?enemyGuideV4(a.catalogId).counter:spec.counter,power:signature?175:100,status:signature?spec.status:undefined,signature,interrupted:false};
+    return {actorId:a.id,targetId:target.id,label:signature?(b.v4?enemyGuideV4(a.catalogId).intent:spec.intent):`${a.name} · ${!b.v4&&spec.mechanic==='heal'?'Cup refill':'basic pressure'}`,counter:b.v4?enemyGuideV4(a.catalogId).counter:spec.counter,power:signature?175:100,status:signature?spec.status:undefined,signature,interrupted:false};
   });
 }
 function beginRound(b: Battle) {
@@ -493,8 +493,8 @@ export function enemyAct(b: Battle): boolean {
     if(controller?.bonuses.crewSuppress&&!controller.bonuses.crewSuppressed){controller.bonuses.crewSuppressed=1;heal(b,controller,controller,controller.bonuses.crewSuppress);}
   }
   if (impaired) damage(b,actor,target,40,0,b.v4&&spec.mechanic!=='steal');
-  else if (spec.mechanic==='heal'&&!quiet) heal(b,actor,weakest(living(b,'enemy')),65);
-  else if (spec.mechanic==='shield'&&!quiet) for (const a of living(b,'enemy').filter(a=>a.row===actor.row)) shield(b,actor,a,45);
+  else if (spec.mechanic==='heal'&&!quiet&&(!b.v4||signature)) heal(b,actor,weakest(living(b,'enemy')),65);
+  else if (spec.mechanic==='shield'&&!quiet&&(!b.v4||signature)) for (const a of living(b,'enemy').filter(a=>a.row===actor.row)) shield(b,actor,a,45);
   else {
     let affected=[target];
     if(signature&&['charge','bind','storm','banquet','dot'].includes(spec.mechanic)) affected=party.filter(a=>actor.phase===2||a.row===(spec.mechanic==='dot'?'rear':'front'));

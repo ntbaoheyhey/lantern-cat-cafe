@@ -74,6 +74,15 @@ describe('gameplay v4 encounter bands and boss lifecycle',()=>{
    expect(R.importSave(R.exportSave(run))).toEqual(run);expect(R.exportSave(run)).toMatch(/^THC10\./);
   }
  });
+ it('paces utility signatures every third round with basic pressure between',()=>{
+  for(const enemy of ['button-guard','teacup-healer'])for(const round of [1,3]){
+   const b=R.createBattle({seed:7,chapter:1,gameplayV4:true,challengeLevel:1,cats:R.battleCats(account()),enemies:[enemy]});
+   const e=b.actors.at(-1)!;e.hp=Math.floor(e.maxHp/2);b.round=round;b.queue=[e.id];b.intents[0]!.signature=round===3;
+   const offset=b.log.length;expect(R.enemyAct(b)).toBe(true);const logs=b.log.slice(offset);
+   expect(logs.some(x=>x.actorId===e.id&&x.kind===(enemy==='button-guard'?'shield':'heal'))).toBe(round===3);
+   expect(logs.some(x=>x.actorId===e.id&&x.kind==='damage')).toBe(round===1);
+  }
+ });
  it('keeps OFF encounters free of new band and link fields',()=>{
   const s=R.startRun(R.createDepthAccount(),1,7).state;expect(s.run!.challengeLevel).toBeUndefined();
   const b=R.createBattle({seed:7,chapter:1,cats:R.battleCats(s),enemies:['yarn-giant','binding-thread']});

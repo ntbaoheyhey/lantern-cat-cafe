@@ -95,3 +95,6 @@ Research-only verification: current legal applicability in China and any enacted
 - Whole-number gear bases round upward before the 1/1.25/1.5/1.75 rarity ladder, with a minimum 4 in the slot stat, then clamp the actual enhanced main stat to 8% of naked core. This avoids low-level integer ties without changing the displayed-only score. Balance acceptance remains pending.
 - Clearleaf Tea packs one first-debuff cleanse: current routes preserve HP, not between-node debuffs. Pantry reservation is shown before Prepare, survives prepare rebuilds, returns on uncommitted abandonment and is consumed when Fight commits.
 - Utility coefficients are explicit three-round estimates pending train calibration; the UI labels them approximate. No measured agreement is claimed.
+
+## A4 P3 — 2026-11-08 pacing correction
+The first training pilot exposed repeat shield/heal stalls (up to 251 actions); the built two-guard ordinary encounter measured 67.553 seconds at x1. In v4, utility enemies now use their disclosed 65-HP heal / 45-shield brace on the existing third-round signature cadence, and basic attacks between. Ordinary HP is 23%, elite 30%, bosses 30% (Pantry 25%) of the legacy catalogue before explicit level growth. OFF is unchanged. This is a training correction, not heldout acceptance; real x1 and replay checks follow.

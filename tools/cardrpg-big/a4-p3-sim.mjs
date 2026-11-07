@@ -4,7 +4,7 @@ import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {execFileSync} from 'node:child_process';
 import assert from 'node:assert/strict';
-const out='reports/cardrpg-big/a4/p3/sim';await mkdir(out,{recursive:true});
+const out=process.env.BIG_PACING_OUT||'reports/cardrpg-big/a4/p3/sim';await mkdir(out,{recursive:true});
 const paths=execFileSync('git',['ls-files','-co','--exclude-standard','packages/game-rules/src/cardrpg'],{encoding:'utf8'}).trim().split('\n');
 const source=Object.fromEntries(await Promise.all([...new Set(paths)].filter(p=>p.endsWith('.ts')&&!p.endsWith('.test.ts')).sort().map(async p=>[p,createHash('sha256').update(await readFile(p)).digest('hex')])));
 const checkpoint=JSON.parse(await readFile(`${out}/partial.json`,'utf8').catch(()=>'{}'));

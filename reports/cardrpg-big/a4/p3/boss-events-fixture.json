@@ -1,0 +1,27 @@
+[
+  {
+    "kind": "boss-phase",
+    "actorId": "foe-0-pantry-crown",
+    "bossId": "pantry-crown",
+    "from": 1,
+    "to": 2,
+    "threshold": 0.5,
+    "text": "Pantry Crown: closing phase. The next signature reaches both rows.",
+    "version": 1,
+    "sequence": 18,
+    "round": 6
+  },
+  {
+    "kind": "boss-finish",
+    "actorId": "foe-0-pantry-crown",
+    "bossId": "pantry-crown",
+    "retiredIds": [
+      "foe-6-binding-thread"
+    ],
+    "outcome": "party",
+    "text": "Pantry Crown is defeated; 1 linked helpers leave. The crew wins.",
+    "version": 1,
+    "sequence": 40,
+    "round": 13
+  }
+]

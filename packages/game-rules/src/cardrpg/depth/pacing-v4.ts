@@ -7,7 +7,7 @@ export function challengeStatsV4(level:number): NonNullable<BattleSetup['enemySt
  if(!Number.isSafeInteger(level)||level<1||level>50)throw Error('Choose a challenge band from 1 to 50.');
  const growth=(1+(level-1)*.012)*(level>=6?1.12:1);
  return Object.fromEntries(Object.values(ENEMY_BY_ID).map(e=>{
-  const hp=e.tier==='boss'?.42:e.tier==='elite'?.52:.42;
+  const hp=e.tier==='boss'?(e.chapter===3?.25:.30):e.tier==='elite'?.30:.23;
   return [e.id,{hp:Math.max(1,Math.round(e.hp*hp*growth)),attack:Math.max(1,Math.round(e.attack*growth)),defense:e.defense}];
  }));
 }

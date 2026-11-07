@@ -1,12 +1,12 @@
 # A4 living state
 ## NOW
-P2 published draft369/a6be71a6. P3 active on codex/cardrpg-a4-p3-2026-11-08. Exact artifact dc965427 /26,198,406bytes. P3 lifecycle and explicit bands applied;12focused tests PASS, type helper corrected after first tsc failure.
+P3 functional closure on codex/cardrpg-a4-p3-2026-11-08; five gates PASS, draft publication next. P2 draft369 stays published. No B adoption.
 ## NEXT
-P2 mirror eaa8e6dc published. P3 pilot28948/OFF29181/build50097 running; no duplicate. Add actual x1 browser timing and remaining gates, then P4–P7. Do not repeat completed G0/R/D/P1/P2 gates or pilot.
+Publish P3 report/draft/ledger and claim P4. Apply reviewed /tmp/cardrpg-a4-p4/apply.py then copy staged P4 tools. P4–P7 remain. Existing timing coordinator47125 has all five results; no duplicate runs.
 ## DONE
-P2 atomic presets, utility comparisons, supply reservations,240shelf,THC9;24captures/3sizes/2themes,minimum contrast8.572. Pilot1500 replay/save cases;OFF8250routes exact47477251.
+P3 boss samples all45–90s; elite33.579s PASS; ordinary14.487s MISS. Train1800 replay/lifecycle PASS, OFF8250 exact47477251. Newsave/full balance still NOT VERIFIED.
 ## GATES
-P2 type/lint/build/1735web/1054rules(+2expectedfail/11skip)/421E2E PASS; retained first failures and retries in p2/acceptance.json. Balance MISS/NOT VERIFIED:6positive18ties0reversals train;level6saturated. Startup bytes+8164 vsP1;CPU unmeasured.
+P3 type/lint/build PASS, post-tuning1067rules(+2expectedfail/11skip)/1735web/421E2E PASS.25captures/3sizes zeroerrors/overflow. Startup bytes MISS+1908vsP2, coldCPU UNMEASURED. P3 report/acceptance contain exact data.
 ## DECISIONS (append-only)
 - Keep the one-agent constraint, automatic battles, strict A/B ownership, and isolated worktree.
 ## MEASUREMENTS
@@ -114,3 +114,7 @@ P2 type/lint/build/1735web/1054rules(+2expectedfail/11skip)/421E2E PASS; retaine
 - P2 draft369/a6be71a6 and ledger eaa8e6dc published; sync CLAIM43b752b7.
 - Gear-independent band snapshots, half-HP phase, linked helpers retire at action boundary, simultaneous defeat loss priority.12focused testsPASS; first tsc failed only structuredClone test-global, changed to existing clone helper.
 - Pilot1800 train andOFF8250 started with sharedlock/slices; never change rules until pilot/source-hash snapshot completes. Offline build50097 in progress; browser timing not started.
+
+## P3 restored after compaction
+- Recovered active jobs rather than duplicating. P3 first ordinary44actions/67.553s; rule correction13focused and1800trainPASS. Source stable for remaining timing/gates.
+- P4 files staged OUTSIDE checkout only; no claim/integration before P3 closes. No agents/Docker/CUA/model requests.
