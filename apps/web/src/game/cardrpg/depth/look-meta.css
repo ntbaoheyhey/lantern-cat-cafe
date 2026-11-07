@@ -177,3 +177,18 @@
   background: var(--look-honey);
   border-color: var(--look-cream);
 }
+
+/* Unknown companion marker has its own backing instead of crossing pale artwork. */
+.dp-app[data-look-v2="true"] .dp-cafe .dp-cat .dp-question {
+  inset: 30% auto auto 50%;
+  transform: translateX(-50%);
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 52px;
+  border-radius: 12px;
+  color: var(--look-cream);
+  background: var(--look-ink);
+  font-size: 32px;
+  z-index: 3;
+}
