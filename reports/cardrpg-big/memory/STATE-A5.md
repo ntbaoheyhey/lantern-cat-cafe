@@ -13,3 +13,5 @@ H0 unrun. A4 inherited13PASS/5MISS, day7defeat55.151s,26,215,694bytes/CPU4max166
 ## MEASUREMENTS
 - PROMPT-A5.md: 27941 bytes; SHA-256 8df468d17c0d6c59c9a3457345c0ceeab9b4055d4560cfb802368aae5003857c (verbatim user attachment).
 - A4 game SHA067d2062f6836a6d0bb9f6753ece1b2f3ca923688f241866a7f42806c8f7b6a1; guideSHA9dca8fe648d6e101de89ffa02099249327615648989b1207f7e7183c6c0d0482.
+
+- H0 resume: original session PID36287 stopped via owned lease36308 after detecting no-spare-gear interlude loop. Attempt1 retained. Policy correction permits route play without a spare; visible word count excludes unopened select options. Original day7 coordinator36643 is retained, not duplicated.

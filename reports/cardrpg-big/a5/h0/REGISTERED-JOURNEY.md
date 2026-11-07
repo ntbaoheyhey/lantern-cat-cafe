@@ -12,3 +12,6 @@ Dead time is reported conservatively: x1 combat time offers no gameplay decision
 Day7 reproduction is a separate real-click x1 journey using the unchanged public-command-earned P6 day7 save (SHA62b7006757b7c325ea0bc6e7d0ad20fe358caafc4568b539525d42e0b3e0efac), matching the A4 first-node/reward/event path. Record complete battle logs, rows, crew/gear/plan, first death and damage attribution. An import reproduces an earned fixture; it is not a claim that this browser played seven elapsed days.
 
 No new acceptance seed from20001–20500 or30001–30500 is used by H0. These metrics are proxies, not a human playtest. Keep original failed harness receipts.
+
+## Harness correction before the valid sample
+Attempt 1 stopped after detecting a policy loop: the script required equipping an unowned spare item before entering a route, but all six starter items were already equipped. It revisited menus without advancing. Its complete available receipts are retained under `session-attempt-1/` and are excluded from baseline metrics. The corrected script visits equipment once, then continues to earn gear through routes; it does not alter the game. Visible word counts now exclude unselected dropdown options and collapsed text. Both corrections precede the valid sample and apply unchanged to AFTER measurements.

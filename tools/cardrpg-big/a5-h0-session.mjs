@@ -24,8 +24,14 @@ const record=(kind,data={})=>{const row={index:timeline.length,atMs:elapsed(),wa
 const persist=async()=>{await writeFile(`${out}/timeline.json`,JSON.stringify({complete,artifact,artifactSha256,started,activeMs:elapsed(),method:'60 active elapsed minutes, one persistent headless page, real UI clicks, x1 battles, no skip or clock acceleration. Shared-lock handoffs excluded from active time and retained as wall time. Deterministic automation reading pauses are explicit. These are proxy metrics, not a human playtest.',timeline,encounters,captures,errors,remote},null,2));};
 async function snapshot(label,{capture=false}={}){
  const m=await read();const facts=await page.evaluate(()=>{
-  const text=document.querySelector('.cr-content')?.innerText||'';
   const visible=e=>!!e.getClientRects().length&&getComputedStyle(e).visibility!=='hidden';
+  const root=document.querySelector('.cr-content'),parts=[];
+  if(root){const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);let node;
+   while((node=walker.nextNode())){const parent=node.parentElement;if(!parent||parent.closest('option,script,style')||!visible(parent))continue;
+    const range=document.createRange();range.selectNodeContents(node);if(range.getClientRects().length)parts.push(node.textContent.trim());}
+   for(const select of root.querySelectorAll('select'))if(visible(select))parts.push(select.selectedOptions[0]?.textContent||'');
+  }
+  const text=parts.filter(Boolean).join('\n');
   const buttons=[...document.querySelectorAll('button')].filter(visible).map(e=>({text:e.innerText.trim(),label:e.getAttribute('aria-label'),disabled:e.disabled}));
   const dev=buttons.filter(x=>/Feel lab|Review studio|Mechanics lab|Frame meter|Look A\/B|Before \/ after/.test(x.text));
   return {text,words:text.trim().split(/\s+/).filter(Boolean).length,buttons,debugControls:dev,seedLabels:(text.match(/seed\s+\d+/gi)||[]),overflow:document.documentElement.scrollWidth-innerWidth};
@@ -96,7 +102,7 @@ async function advance(){
  let m=await read();
  if(m.screen==='prepare'&&m.battle&&!m.battle.result){await preparation();return;}
  if(m.state.tutorial<3){await nav('Cafe');await click(page.getByRole('button',{name:/Try the practice table/}),'practice table');return;}
- if(!m.state.freeInvite||betweenPending||!firstEquip){await interlude();return;}
+ if(!m.state.freeInvite||betweenPending||step===0){await interlude();return;}
  if(!m.state.run||m.state.run.complete){if(m.state.run?.complete&&!betweenPending){await interlude();}await nav('Cafe');await click(page.getByRole('button',{name:/Tangled Cafe/}).first(),'start Tangled Cafe');return;}
  await nav('Night route');m=await read();const run=m.state.run;
  if(run.rewardChoices.length){await snapshot('reward-choice',{capture:step<3});await reading();await click(page.locator('.dp-reward').first(),'choose first offered boon');return;}
