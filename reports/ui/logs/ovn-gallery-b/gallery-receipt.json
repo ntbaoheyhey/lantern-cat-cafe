@@ -1,0 +1,61 @@
+{
+  "head": "e161f0686efb7e81b14a7761568bcfab8bc5096b",
+  "checks": [
+    {
+      "label": "generate",
+      "exit": 0,
+      "command": [
+        "python3",
+        "reports/ui/build-gallery.py"
+      ]
+    },
+    {
+      "label": "generated-clean",
+      "exit": 0,
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "--",
+        "reports/ui",
+        "docs/ui"
+      ]
+    },
+    {
+      "label": "standalone-1280x720",
+      "exit": 0,
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "--config",
+        "/Users/bao/taskbar-hero-ovn-ui-gallery-b/reports/ui/gallery.config.mjs",
+        "--repeat-each=3",
+        "--workers=1",
+        "--retries=0",
+        "--reporter=line"
+      ]
+    },
+    {
+      "label": "standalone-1600x900",
+      "exit": 0,
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "--config",
+        "/Users/bao/taskbar-hero-ovn-ui-gallery-b/reports/ui/gallery.config.mjs",
+        "--repeat-each=3",
+        "--workers=1",
+        "--retries=0",
+        "--reporter=line"
+      ]
+    }
+  ]
+}
