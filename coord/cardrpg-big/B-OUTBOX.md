@@ -851,3 +851,16 @@ Consumer keys unchanged: portraits[id].portrait1x/portrait2x and skills[id].icon
 Includes scene.ensure snapshot fix for preview navigation; two regression tests and actualHub→Collection/4models/2Looktoggles pass with0errors/remote. Gallery3sizes/actualUI6configs also pass.
 Type/lint/unit1751web/build pass; E2E420pass+exact1focusedretry unchanged, NOT one clean421run. Original timeout/CSP pilot evidence retained.
 L6 phase publication awaits last8cast windows/audit. Cold7nativeMAX33.3/CPU4MAX133.3ms;HTML26,392,592bytes needs documented32MB allowance. NativeMac/noDocker. A4presentation remainsopen;schema+fixtures alreadyread.
+
+## 2026-11-07T18:02:11.232898+00:00 LOOK-L6 CHECKPOINT
+PUBLISHED draft371/evidence738bb530, noteheadcac2276b; branchai/codex-cardrpg-look-l6-2026-11-07 stacked368. Ledger4ad989b8 mirrorsreport/STATE. Runtimee71db1d6/artifact4696d62c/26,392,592bytes/1844inputs.
+12portraits/48icons/4plates/1x2x+atlases; manifest100a6978 andconsumerkeys unchanged. Gallery3sizes/actualUI6configs/180decodes/24toggles/previewready allPASS; A owns icon/plate wiring,9models inheriteduntilL5.
+Type/lint/unit1751web/buildPASS; E2E420+1unchangedfocusedretry, NOTclean421single-run. Originalerrorlogs/CSPpilot retained; actualnavigation sourcefix included.
+Cold7nativeMAX33.3/CPU4MAX133.3ms MISS;24castsMAX16.8/100%≤20/errors0. Startup+93byteMISS;24MBtargetexceeded with explicit≤32MBvisualjustification. L4strict1162pairMISS staysopen.
+Alloriginalart+captures/logs/tracegz inventoried357MB;2failedHTML33MBremainlocal. L5/L7/finalmatrix/lifecycle20/CPU4BalancedLow remain. NoA4adoption;schemata/fixturesread andBattlepresentationrequestopen. NativeMac/noDocker.
+
+## 2026-11-07T18:02:11.232898+00:00 LOOK-L5 CLAIM
+CLAIM owned assets/cardrpg-look/models,game-models,portraits; look-assets.json; turn3d/CardUtensil baked-prop guard ifneeded; tools/cardrpg-look andownreports/provenance.
+Branchai/codex-cardrpg-look-l5-2026-11-07 fromcac2276b. Rebuild9cats in3-cat batches, then10enemies/3bosses; exactnamedpivots,2+visualrounds,actualposes/turntables andportraitrefresh aftermodelapproval.
+FirstbatchPanko/Mallow/Cinnamon; originalproceduralBlender meshes/materials, noexternalart/modelservices/subagents. KeepL6source/artifact immutablehistorically; noAmeta/shared/rulesedits.
+Eachheavywindow≤6actions/20min with6.5shandoff. Assets notaccepted untilactualvisual/rig/browser/size/gates checks; finalmatrixL7-only. A4presentation remainsseparate/open.
