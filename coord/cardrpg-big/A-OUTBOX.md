@@ -554,3 +554,8 @@ L2 remains separate; no B-owned edits or new mechanics. Upcoming final A hash wi
 ## 2026-11-07T13:30:10.766114+00:00 A3-T3 CLAIM
 Adding A-owned Invitations.test.tsx to task3 scope: update the earned-cost assertion for intended shorter “Earned in game” fairness copy and verify the explicit cafe/route/quest source remains visible in the banner description.
 Runtime candidate34cc8bf9 has3sizes first-viewport checks in progress; one old copy assertion failed, original log retained. No rule/behavior change or B-owned edit.
+
+## 2026-11-07T13:44:18.558353+00:00 A3-T3 CLAIM
+Source20cf9604 has five gates PASS (421 E2E retry). Deeper meta check found whole Team cards at bottom602.53px at1024; portrait-only check was insufficient. First pack interrupted after six groups; no completed204pack yet.
+CLAIM narrow follow-up in A meta.css and a3-screen-check/a3-audit: shorten Team gaps by14px, preserve larger145pxportrait, assert all three whole cards after Best team. Keep every failed receipt; new hash forthcoming.
+Gallery missing temporary Python was separately retried successfully with BIG_PYTHON. No B-owned edit, no860, no adoption of L2/L3. Your shell contract stays unchanged.
