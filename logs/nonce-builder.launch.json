@@ -1,0 +1,21 @@
+{
+  "pid": 21347,
+  "cwd": "/Users/bao/taskbar-hero-single2-tooling",
+  "command": [
+    "npx",
+    "-y",
+    "pnpm@10.28.0",
+    "--filter",
+    "@taskbar-hero/supabase-tests",
+    "exec",
+    "vitest",
+    "run",
+    "src/auth-availability.test.ts",
+    "src/auth-nonce-failure-modes.test.ts",
+    "src/auth-wrappers.test.ts",
+    "src/deno-imports.test.ts",
+    "src/live-schema.test.ts"
+  ],
+  "started": "2026-11-04T07:48:24.516298+00:00",
+  "log": "/Users/bao/taskbar-hero-single2-tooling/logs/nonce-builder.log"
+}

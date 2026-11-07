@@ -1,0 +1,21 @@
+✔ explicit root and nested index imports resolve to their exact files (8.44925ms)
+✔ directory aliases coexist with explicit indexes and ordinary modules (1.977041ms)
+✔ test modules, fixture folders and non-TypeScript files stay out of deployment maps (2.428375ms)
+✔ output order is stable regardless of file creation order (4.291958ms)
+✔ generation preserves auth mappings and ignores shared or non-function directories (3.96125ms)
+✔ auth health HTTP 200 exits correctly without leaking response data (26.0525ms)
+✔ auth health HTTP 429 exits correctly without leaking response data (15.639333ms)
+✔ auth health HTTP 500 exits correctly without leaking response data (13.656625ms)
+✔ auth health HTTP 502 exits correctly without leaking response data (15.12475ms)
+✔ auth health HTTP 503 exits correctly without leaking response data (14.13025ms)
+✔ auth health fails closed when the transport is unavailable (13.362375ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 166.480667
+
+exit=0

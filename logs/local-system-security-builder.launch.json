@@ -1,0 +1,16 @@
+{
+  "pid": 51058,
+  "cwd": "/Users/bao/taskbar-hero-single2-tooling",
+  "command": [
+    "env",
+    "NODE_OPTIONS=--import=/Users/bao/taskbar-hero-single2-tooling/scripts/release-ports.mjs",
+    "E2E_PORT_CLASSIC=5360",
+    "E2E_PORT_V2=5361",
+    "E2E_PORT_SERVER=5362",
+    "E2E_PORT_API=5363",
+    "node",
+    "scripts/rehearse-cutover.mjs"
+  ],
+  "started": "2026-11-04T09:03:07.042848+00:00",
+  "log": "/Users/bao/taskbar-hero-single2-tooling/logs/local-system-security-builder.log"
+}

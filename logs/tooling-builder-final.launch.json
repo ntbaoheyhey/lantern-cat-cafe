@@ -1,0 +1,11 @@
+{
+  "pid": 49235,
+  "cwd": "/Users/bao/taskbar-hero-single2-tooling",
+  "command": [
+    "python3",
+    "-c",
+    "import subprocess,sys; commands=[[\"python3\",\"-B\",\"scripts/repo-functions-rehearsal.test.py\"],[\"python3\",\"-B\",\"scripts/release-stack.test.py\"],[\"node\",\"--check\",\"scripts/release-smoke.mjs\"],[\"node\",\"--check\",\"scripts/rehearse-cutover.mjs\"],[\"node\",\"scripts/check-links.mjs\",\"reports/sys/single2/RELEASE-RUNBOOK.md\",\"reports/sys/single2/repo-source-restore.md\"]]; codes=[subprocess.call(c) for c in commands]; print(codes); sys.exit(any(codes))"
+  ],
+  "started": "2026-11-04T09:01:57.267062+00:00",
+  "log": "/Users/bao/taskbar-hero-single2-tooling/logs/tooling-builder-final.log"
+}
