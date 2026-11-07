@@ -54,7 +54,7 @@ The integrated1× videos, full boss recording, final screenshot inspection and r
 ## Mochi recording review
 REFERENCE: video/mochi/captures.json, video/mochi/review/sampling.json, integration/controls/CHECKPOINT.md
 
-Fifty frames at0.5s intervals across the25s clip were viewed in chronological order on three sheets. sampling.json records source SHA and extraction intervals. The four authored actions repeat the dash, circular guard, apron and lantern motifs. Amber trails and pale rings share the rug palette, and broad lantern flashes briefly cover much of the trio. The wide camera leaves a large central rug around small figures. The1024gallery controls fit within the viewport, and Hide controls exposes the full playback stage. The remaining hero/boss/ultimate review remains open.
+Fifty frames at0.5s intervals across the25s clip were viewed in chronological order on three sheets. sampling-original.json records the first extraction; sampling.json records the repeatable video-sheets.py output with identical source SHA and50half-second samples. The four authored actions repeat the dash, circular guard, apron and lantern motifs. Amber trails and pale rings share the rug palette, and broad lantern flashes briefly cover much of the trio. The wide camera leaves a large central rug around small figures. The1024gallery controls fit within the viewport, and Hide controls exposes the full playback stage. The remaining hero/boss/ultimate review remains open.
 
 ## Short viewport follow-up
 REFERENCE: integration/reveal-fit/fixed-v5/1024-cpu1-legendary-settled.png, integration/reveal-fit/invitations-v5/1024x600-cpu1-welcome-result.png, validation/lab-header-focused.log
