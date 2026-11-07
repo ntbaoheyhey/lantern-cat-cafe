@@ -3,17 +3,17 @@ PROMPT.md bytes (wc -c) = 53562
 PROMPT.md SHA-256 = bba8c53418413298018f714aa35ebd60ed3d49d9df32f2027c90ba9b279dcc37
 REFERENCE: reports/cardrpg-big/memory/PROMPT.md
 ## NOW
-ACTIVE 2026-11-07T05:36:06.162068+00:00: LOOK-A L0 published at86005b84ba25072c36eb5571b231d52de98ab299;10/10functionalPASS/204screens verified. Completing sync/ledger/PR metadata, then L1 adapter preparation.
+ACTIVE 2026-11-07T05:36:06.162068+00:00: LOOK-A L0 published at86005b84ba25072c36eb5571b231d52de98ab299;10/10functionalPASS/204screens verified. Sync f6512a83/draft358 metadata/ledger6e1245ea published. Beginning isolated L1 portrait adapter preparation; no upstreamL1adoption.
 Delivery /Users/bao/taskbar-hero-cardrpg-big-delivery · codex/cardrpg-big-delivery-2026-11-07 · draft358 OPEN/DRAFT verified. Main f1234525fb744d0b318c2ea65727256cfb71fc6cc31c2380cf6fac93941a0f56/24,026,508bytes accepted for integration checks only, not art/performance.
 Baseline9a5f6ebb/23,937,000bytes immutable;14videos/report b092ed0c and ledger a2728798 published. Visual complaint remains open; L1 upstream not published at last boundary.
-Canonical /Users/bao/taskbar-hero-cardrpg-big · ai/codex-cardrpg-big-2026-11-06 · memory parent7d8bc733. A drafts333–341,344–345,348,358;359/360closed via containment (no merge API).
-Sync /Users/bao/taskbar-hero-cardrpg-sync · ai/codex-cardrpg-big-sync · f521a6bf; last B05:24correctingMochi6/Soot4/Clover5. No A browser/test process active on resume.
+Canonical /Users/bao/taskbar-hero-cardrpg-big · ai/codex-cardrpg-big-2026-11-06 · memory parente7ce837c. A drafts333–341,344–345,348,358;359/360closed via containment (no merge API).
+Sync /Users/bao/taskbar-hero-cardrpg-sync · ai/codex-cardrpg-big-sync · f6512a83; last B05:24correctingMochi6/Soot4/Clover5. No A browser/test process active on resume.
 ## NEXT
-1. Publish exact f123 A CHECKPOINT to sync; update draft358 body and mirror report/STATE/HANDOFF to ledger. No new test run needed for docs-only publication; existing logs/hash receipts verified.
-2. Prepare portrait adapter/targeted checks on separate WIP branch, preserve classic fallback and default startup. Adopt only B published L1 tip; no reading unpublished art as accepted.
+1. Prepare portrait adapter and contract/browser checks in /Users/bao/taskbar-hero-cardrpg-portrait-prep on codex/cardrpg-look-a-portrait-prep-2026-11-07. No publishedL1yet; keepWIPoutside358.
+2. Verify adapter fallback/live rerender/1x2x selection without importing unpublishedBassets. Save WIPcommit+checks; readBOUTBOXatphaseend, notpolling.
 3. On L1 adoption: new HTML hash, five gates, portrait DPR1/2 and10group functional pack in short locks; publish A CHECKPOINT. Final860matrix onlyB on final lookV2.
 ## DONE
-LOOK L0 checkpoint ·86005b84/draft358;10groups/204screens/1177sourceinputs PASS,5gates1731web/1020rules/421E2E;look-ui/L0-CHECKPOINT.md,l0-checkpoint-audit.json. Report115lines/9Vietnamese, ledger mirror pending.
+LOOK L0 checkpoint ·86005b84/draft358;10groups/204screens/1177sourceinputs PASS,5gates1731web/1020rules/421E2E;look-ui/L0-CHECKPOINT.md,l0-checkpoint-audit.json. Report115lines/9Vietnamese, ledger6e1245ea;syncf6512a83;358bodyupdated.
 LOOK Meshopt source ·365c2928/receipts1933d944 published;conditionalCSP uncompressedf123unchanged,all5gates1731web/1020rules/421E2E PASS. validation/look-l0-wasmhook.json;1177sourceinputs hashmatch.
 LOOK L0 source ·3934ffe2pushed;App/offline/build/CompanionPreview requestswired;3originaltextures+4rarities;1024live10toggles/10screens/386textrects0fails. look-ui/l0/1024/checks.json;notfullcheckpoint.
 Baseline publication ·b092ed0c/draft358, ledgera2728798831acc86619e6772205c7fefb4b58fcf;delivery/baseline-report-audit.json verifies204screens,14clips,57sheets,5gatelogs,13,125rawframes;105line report/9Vietnamese/6routes. Runtime delta0.
@@ -44,7 +44,7 @@ PASS “lookV2 plumbing...App.tsx, depth.css, build.mjs, offline wrapper...defau
 PASS implementation/PARTIAL cohesion “restyle ONLY meta screens/cards/panels/typography...real foil/gloss...panel textures”:3originaltiles105652bytes,4rarities;foil25291/58647pixelschanged/reduced0. Classic3D art remains.
 PASS scoped check “Playwright before/after screenshots, contrast checks”:f12330toggles/30screens/1494textrects0activefails,min5.60834:1;8inactivefails retained. look-ui/l0-reviewfix and l0-visual-review.json.
 PASS “rebuild main HTML...newhash...five gates and functional pack...short lock windows”:f1234525/24026508bytes/1177sourcehashes;5gates1731web/1020rules/421E2E;10groups/204screens. look-ui/l0-checkpoint-audit.json.
-PASS checkpoint commit/PENDING sync “publish an A CHECKPOINT with the exact HTML hash...previous hash’s receipts”:86005b84 pushed;9a5f6ebb and rejecteda1ae receipts retained;no relabeledpass.
+PASS checkpoint+sync “publish an A CHECKPOINT with the exact HTML hash...previous hash’s receipts”:86005b84 and syncf6512a83 pushed;9a5f6ebb and rejecteda1ae receipts retained;no relabeledpass.
 PARTIAL “Final...Look lane...before/after...rubric scores...UI restyle”:report includesUIproof/9Vietnamese lines; B art rubric unpublished. 24MBgateFAIL26508bytes,exacthash32MBexception;InvitationsCPU4MAX200ms diagnosticMISS.
 NOTYET “hero portraits(L1)...full portrait/icon/frame set...look-assets.json(L6)”:upstreamnotpublished at05:24;L1-ADOPTION.md contract prepared, no runtimeadoption.
 ## PRIOR F7 GATES
@@ -66,6 +66,7 @@ I caps PASS25rules/2UI/12screens,localcounter/binding/help;designonly,0battle st
 G/M PASS earnedceremony/odds/pity/history andmain68reveal/invitationcaptures;Mpreview+70px,height300px,6before/after+33screens. OpeningGMAX316.6msMISS.
 F1/F2 FAILscale/sharpness:stage78.889%PASS,2745posesPASS;sharpness2/10PASS8MISS. F3/F4 varietyPASS30motionpairs/465effectpairs;historicalopening566.7/266.7msMISS.
 ## DECISIONS · append-only archive
+2026-11-07T05:37:49.162314+00:00 · L0publicationcomplete delivery86005b84/syncf6512a83/ledger6e1245ea;358open/draftbodyupdated. IsolateL1adapterWIPoutsidePRuntilBpublishedsource;observedpartialmanifestcontractonly.
 2026-11-07T05:36:06.162068+00:00 · Resume verified86005b84alreadyremote and fullL0packcomplete;no duplicatedbrowser/audit. CloseL0withhonestart/hitch/24MBmisses;nextportraitadaptermayprepareonWIPonlyuntilpublishedBtip.
 2026-11-07T05:28:12.048632+00:00 · SevenactualL0screens reviewed;classicMarigoldcrowncrop/smallteamcards retained. InvitationsfunctionalCPU4MAX200ms includescaptures,notcoldacceptance;rawreported. B05:24correctingMochi6/Soot4/Clover5,unpublished;candidate20.092MBnotaccepted.
 2026-11-07T05:19:01.981816+00:00 · Meshopt source365c2928 and fresh5gates published1933d944;1177buildinputs0mismatches. L1adapter preparation only, unpublishedBmanifest neveradopted. Source1933commit excluded sparse docs;include them in next checkpoint with gitadd--sparse.

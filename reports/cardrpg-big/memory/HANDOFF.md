@@ -16,7 +16,7 @@ L0 Invitiations CPU4 diagnosticMAX200ms/p9516.8ms/23>25ms/10>50ms includes scree
 ## Continue next
 REFERENCE: STATE.md NEXT; delivery/reports/cardrpg-big/look-ui/L1-ADOPTION.md
 
-1. Finish L0 sync exacthash CHECKPOINT, draft358 description, ledger report+STATE+HANDOFF mirror; STATE records publication SHAs when done. Delivery docs already committed; do not rerun /tmp/cardrpg-a-l0-publish-docs-1933.py (not idempotent).
+1. L0 exacthash CHECKPOINT published syncf6512a83 and draft358 description updated; ledger6e1245ea published. L1 prepworktree /Users/bao/taskbar-hero-cardrpg-portrait-prep on codex/cardrpg-look-a-portrait-prep-2026-11-07 starts from86005b84, outside358. Delivery docs already committed; do not rerun /tmp/cardrpg-a-l0-publish-docs-1933.py (not idempotent).
 2. Read B-OUTBOX at phase boundary only. Last knownB05:24correctingMochi6/Soot4/Clover5, noL1publishedtip. Prepare adapter/checks on separate WIP branch; do not adopt uncommittedBworktree/assets. Partialmanifestcontract: mochi/soot/clover, repo-root256x320/512x640WebP; off/missingIDclassicfallback.
 3. When B publishes L1, rebase-copy publishedsource onto A-owned integration without making originalBPRtip ancestor (360wasclosedvia containment). PreserveBbranch/worktree. WireportraitcurrentSrc/DPR2/live-toggle, rebuild/hash, fivegates+tenfunctionalgroup shortlocks, then exacthashCHECKPOINT. Final860matrix onlyB/final lookV2. L6fullassets and B art rubric remain pending.
 
