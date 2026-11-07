@@ -34,6 +34,6 @@ Whole-page native/CPU4 MAX33.4/116.6ms. Post-interactive MAX100.1ms. The100ms pa
 ## Validation and artifact
 REFERENCE: ../../validation/e3-source.json; ../../validation/e3-e2e-retry-receipt.json; ../../validation/pinned-source-audit.json
 
-Typecheck, lint and build pass. Web tests1694, rules935 plus2 expected failures and11 skips, Supabase581, chain32, auth24 andAPI-contract16 pass. 420 distinct E2E tests pass. One expired-session test remains unresolved after external-font ECONNRESET and a later web-server startup timeout. A focused retry is pending. Original failed logs remain.
+Typecheck, lint and build pass. Web tests1694, rules935 plus2 expected failures and11 skips, Supabase581, chain32, auth24 andAPI-contract16 pass. 421 distinct E2E tests pass across the original run and focused retries. The remaining expired-session case passes in the recovered original-source archive. Earlier font/network and startup failures remain recorded. Original failed logs remain.
 
 Archived source`1f41cf7170c0995b3e00d928a3381a78a2763040`. HTML SHA256`99b68a554f57e16396aea67dd5324e4c17c2f6253d3d5ea1a7ac05f7f01c5c7a`. Source and HTML receipts identify the measured bytes.
