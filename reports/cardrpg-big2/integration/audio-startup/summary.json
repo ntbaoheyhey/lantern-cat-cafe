@@ -1,0 +1,268 @@
+{
+  "artifact": "/tmp/cardrpg-big2-integrated-index.html",
+  "sha256": "9a5f6ebbb04af56c19f11cf43cf2763b35df2bde3b7a8dcd943060e878d793d3",
+  "source": {
+    "recordedAt": "2026-11-07T01:16:55.895800+00:00",
+    "integrationHead": "a106dfcac755d42f91b2467adf6d888ca0b41a9c",
+    "artifact": "/tmp/cardrpg-big2-integrated-index.html",
+    "sha256": "9a5f6ebbb04af56c19f11cf43cf2763b35df2bde3b7a8dcd943060e878d793d3",
+    "bytes": 23937000,
+    "sourceAccepted": true,
+    "sourceGatesVerifiedFromGit": [
+      {
+        "name": "typecheck",
+        "log": "reports/cardrpg-big/validation/delivery-v1-typecheck.log",
+        "sha256": "4382815b223977700715bfbc4f1b37c90bfa79047b8b284431321a9c1f429c93",
+        "exit": 0,
+        "counts": []
+      },
+      {
+        "name": "lint",
+        "log": "reports/cardrpg-big/validation/delivery-v1-lint.log",
+        "sha256": "2207e2551c61f95cc4c585b04f436de731c4644ffb98d25343be1847265077a5",
+        "exit": 0,
+        "counts": []
+      },
+      {
+        "name": "tests",
+        "log": "reports/cardrpg-big/validation/delivery-v1-tests.log",
+        "sha256": "5fef67678c7174f53ff908299cb31139c6b9a1fbbcda45cdc4dad78741dcf46b",
+        "exit": 0,
+        "counts": [
+          "packages/chain test:  Test Files  3 passed (3)",
+          "packages/chain test:       Tests  32 passed (32)",
+          "packages/auth test:  Test Files  1 passed (1)",
+          "packages/auth test:       Tests  24 passed (24)",
+          "supabase/tests test:  Test Files  34 passed (34)",
+          "supabase/tests test:       Tests  581 passed (581)",
+          "packages/game-rules test:  Test Files  55 passed | 3 skipped (58)",
+          "packages/game-rules test:       Tests  1020 passed | 2 expected fail | 11 skipped (1033)",
+          "packages/api-contract test:  Test Files  1 passed (1)",
+          "packages/api-contract test:       Tests  16 passed (16)",
+          "apps/web test:  Test Files  173 passed (173)",
+          "apps/web test:       Tests  1730 passed (1730)"
+        ]
+      },
+      {
+        "name": "build",
+        "log": "reports/cardrpg-big/validation/delivery-v1-build.log",
+        "sha256": "9ffa784bf726e63193b1384b1e866e20924ffcc05e9b96d0c2d3e57f573b3f6c",
+        "exit": 0,
+        "counts": []
+      },
+      {
+        "name": "e2e",
+        "log": "reports/cardrpg-big/validation/delivery-v1-e2e.log",
+        "sha256": "bf9a31620b43ec10c58b44e21fcb973b6f241250e8bed20a0673c9535392cb6a",
+        "exit": 0,
+        "counts": [
+          "  421 passed (2.0m)"
+        ]
+      }
+    ],
+    "laneBRuntimeDelta": [],
+    "method": "Pinned published integrated HTML directly from Git. Verified every source-gate log hash and zero delta in owned renderer, Battle, stage and default-OFF rules. Integrated browser/performance evidence remains separate."
+  },
+  "method": "Six fresh Chromium processes at DPR1, native/CPU4. Real Sound click invokes the shipped CafeAudio without interception. Constructor timing instrumentation only. Entire enable wait and natural fight remain inside raw RAF. No context before click. No screenshots/tracing; not an OS-cold restart or perceptual-quality measurement.",
+  "rows": [
+    {
+      "index": 1,
+      "mode": "source",
+      "cpu": 1,
+      "media": [],
+      "max": 16.80000000000291,
+      "p95": 16.700000000000728,
+      "constructors": [
+        {
+          "at": 7687.0999999996275,
+          "ms": 11.5,
+          "originalOptions": {
+            "sampleRate": 44100
+          },
+          "options": {
+            "sampleRate": 44100
+          },
+          "sampleRate": 44100,
+          "baseLatency": 0.005804988662131519,
+          "outputLatency": 0
+        }
+      ],
+      "marks": [
+        {
+          "label": "sound-click-start",
+          "at": 7457.199999999255
+        },
+        {
+          "label": "sound-enabled",
+          "at": 7772
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "mode": "source",
+      "cpu": 4,
+      "media": [],
+      "max": 16.80000000000291,
+      "p95": 16.700000000000728,
+      "constructors": [
+        {
+          "at": 8961,
+          "ms": 2,
+          "originalOptions": {
+            "sampleRate": 44100
+          },
+          "options": {
+            "sampleRate": 44100
+          },
+          "sampleRate": 44100,
+          "baseLatency": 0.005804988662131519,
+          "outputLatency": 0
+        }
+      ],
+      "marks": [
+        {
+          "label": "sound-click-start",
+          "at": 8755.5
+        },
+        {
+          "label": "sound-enabled",
+          "at": 8982
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "mode": "source",
+      "cpu": 1,
+      "media": [],
+      "max": 16.80000000000291,
+      "p95": 16.799999999999272,
+      "constructors": [
+        {
+          "at": 7642.299999998882,
+          "ms": 0.8000000007450581,
+          "originalOptions": {
+            "sampleRate": 44100
+          },
+          "options": {
+            "sampleRate": 44100
+          },
+          "sampleRate": 44100,
+          "baseLatency": 0.005804988662131519,
+          "outputLatency": 0
+        }
+      ],
+      "marks": [
+        {
+          "label": "sound-click-start",
+          "at": 7424.5
+        },
+        {
+          "label": "sound-enabled",
+          "at": 7740.39999999851
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "mode": "source",
+      "cpu": 4,
+      "media": [],
+      "max": 33.29999999999927,
+      "p95": 16.799999999999272,
+      "constructors": [
+        {
+          "at": 9010,
+          "ms": 26,
+          "originalOptions": {
+            "sampleRate": 44100
+          },
+          "options": {
+            "sampleRate": 44100
+          },
+          "sampleRate": 44100,
+          "baseLatency": 0.005804988662131519,
+          "outputLatency": 0
+        }
+      ],
+      "marks": [
+        {
+          "label": "sound-click-start",
+          "at": 8806.099999999627
+        },
+        {
+          "label": "sound-enabled",
+          "at": 9055.400000000373
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "mode": "source",
+      "cpu": 1,
+      "media": [],
+      "max": 16.80000000000291,
+      "p95": 16.700000000000728,
+      "constructors": [
+        {
+          "at": 7598.5,
+          "ms": 26.90000000037253,
+          "originalOptions": {
+            "sampleRate": 44100
+          },
+          "options": {
+            "sampleRate": 44100
+          },
+          "sampleRate": 44100,
+          "baseLatency": 0.005804988662131519,
+          "outputLatency": 0
+        }
+      ],
+      "marks": [
+        {
+          "label": "sound-click-start",
+          "at": 7368.0999999996275
+        },
+        {
+          "label": "sound-enabled",
+          "at": 7684.800000000745
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "mode": "source",
+      "cpu": 4,
+      "media": [],
+      "max": 16.80000000000291,
+      "p95": 16.799999999999272,
+      "constructors": [
+        {
+          "at": 8952.5,
+          "ms": 1.800000000745058,
+          "originalOptions": {
+            "sampleRate": 44100
+          },
+          "options": {
+            "sampleRate": 44100
+          },
+          "sampleRate": 44100,
+          "baseLatency": 0.005804988662131519,
+          "outputLatency": 0
+        }
+      ],
+      "marks": [
+        {
+          "label": "sound-click-start",
+          "at": 8739.900000000373
+        },
+        {
+          "label": "sound-enabled",
+          "at": 8975.099999999627
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

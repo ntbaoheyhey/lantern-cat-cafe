@@ -1,98 +1,107 @@
-# Taskbar Hero · Bản đang kiểm chứng
-REFERENCE: memory/PROMPT.md, memory/STATE.md, COVERAGE.md
+# Card RPG — baseline v1 · 7/11/2026
+REFERENCE: memory/PROMPT.md; COVERAGE.md; integration/F7-GATES.md; video/delivery/audit.json
 
-Game giữ phần sưu tập thẻ, xếp đội, trang bị và bản đồ bên ngoài trận đấu.  
-Khi bấm Fight, đội tự chiến đấu bằng bộ điều khiển đã được mô phỏng.  
-Sân đấu đã tăng từ 57,120% lên 78,889% chiều cao màn hình 1280×720.  
-Giao diện đội, bộ sưu tập, trang bị và năm nhóm vật phẩm đã có bằng chứng kiểm thử.  
-Cân bằng hiện có 26/48 bước nâng độ hiếm tăng tỉ lệ thắng, 22 bước còn ngang nhau.  
-Mô phỏng 45 ngày cho tỉ lệ tài nguyên người chơi nhiều/chơi ít tối đa 2,1948×.  
-Giới hạn sức mạnh hiển thị của một món huyền thoại đạt 9,6306%, trong ngưỡng 10%.  
-Độ nét mới đạt 2/10 cặp mục tiêu ở F2, khựng lúc mở trang vẫn còn ở các mốc đã đo.  
-Gacha đã có màn lật thẻ, xuất hiện 3D, lịch sử và kết quả vừa màn hình 1024×600.
+Trạng thái: bản nháp được lưu khi người dùng yêu cầu dừng; COVERAGE/F7-GATES và xuất bản ledger còn chờ.
 
-## Tình trạng bản ghép
-REFERENCE: integration/PREPARE.md, integration/RUNNER.md, validation/integration-runner-test.log
+Đây là baseline v1 để so sánh với đợt LOOK; chất lượng hình ảnh vẫn là phàn nàn chưa giải quyết của bạn.  
+Bạn chuẩn bị thẻ, đội hình và trang bị; trận đấu tự chọn toàn bộ kỹ năng và mục tiêu.  
+Đã ghép đủ 12 mèo, 13 đối thủ, 86 hành động và toàn bộ phần chơi ngoài trận.  
+Cả 10 nhóm chức năng đạt; đã đối chiếu 204 hash ảnh ở ba kích thước màn hình.  
+Đã lưu đủ 14 video, giải mã 12.385 frame và review 991 mẫu ảnh theo trình tự.  
+Nhân vật còn nhỏ, giữa sân còn trống và nhiều mảng sáng che đội hình; chưa đạt mục tiêu đẹp.  
+Mở trang CPU 4× còn MAX 116,7 ms, vượt cổng 100 ms; độ nét chỉ đạt 2/10 mục tiêu cũ.  
+Gacha chỉ dùng tem kiếm được; vật phẩm ngẫu nhiên account-bound, Relic chỉ là thiết kế chưa mint.  
+Lane LOOK sẽ cải thiện art; A đồng bộ giao diện và tích hợp từng mốc. Không merge PR, deploy hay đẩy main.
 
-Bản ghép a106dfca trong draft #358 đã chứa toàn bộ nguồn hai lane: 12 mèo, 10 địch thường, 3 boss, màn hình ngoài trận và các lab. Demo9a5f6ebb có23.937.000byte. Năm cổng nguồn đạt1.730test web,1.020test luật và421E2E;TypeScript của demo cũng đạt. 258lượt chọn kỹ năng và93mục so sánh/160ảnh giải mã offline không lỗi. Luồng chơi ở3kích thước đã đạt: trận tự động,replay,phần thưởng,lưu/khôi phục15.378byte;27ảnh,0lỗi. Meta39,reveal32,invitation36,design12ảnh đã đạt. Mechanics lab đạt4cấu hình/8ảnh,0lỗi và giữ nguyên tài khoản. Cả10nhóm chức năng đã đạt;đối chiếu204hashảnh.14video và phép đo hiệu năng cuối đang tiếp tục; đây chưa phải nghiệm thu F7.
+## Kết luận và sáu nơi nên xem
+REFERENCE: integration/delivery/functional-complete.md; FRESH-EYES.md; docs/cardrpg3/README.md
 
-## Sáu nơi nên xem
-REFERENCE: apps/web/src/game/cardrpg/depth/LabEvidence.tsx, demo/PLAN.md
+Bản này chơi được và có đủ bằng chứng chức năng, nhưng chưa đạt yêu cầu hình ảnh/hiệu năng tổng thể. Năm cổng nguồn đã đạt: typecheck, lint, build, 1.730 web/1.020 rules tests và 421 E2E, cộng demo types; rules giữ 2 expected failures/11 skips. Đóng gói baseline chỉ thêm bằng chứng/báo cáo: hash log kiểm tra lại, không nhận là chạy lại test. [Nguồn](integration/delivery/baseline-v1-source-audit.json), [review bốn vai](FRESH-EYES.md).
 
-1. Hiệu ứng và chuyển động — Feel lab → Skill gallery, chọn mèo hoặc đòn của địch.
-2. Độ nét — Feel lab → Before / after, xem crop DPR 1/2 và số đo F2.
-3. Bố cục và góc mặt — Watch a battle now, đổi camera A/B/C, xem overlay F1 trong lab.
-4. Nhịp trận và khựng — Fight ở tốc độ 1×, mở Performance để thấy frame lớn nhất và số khựng.
-5. Phần chơi ngoài trận — Team & cards → Companions → Equipment → Night route.
-6. Độ hiếm và giá trị vật phẩm — Invitations xem odds/pity/history, Collectibles xem giới hạn thiết kế.
+1. Kỹ năng: Feel lab → Skill gallery; chọn mèo/địch, hành động và Focus stage.
+2. Độ nét: Review studio → Before / after → Sharpness; xem crop DPR 1/2.
+3. Bố cục/góc mặt: Watch a battle now → camera A/B/C; so nhân vật với sân.
+4. Nhịp/khựng: Fight tốc độ 1×, mở Frame meter; phân biệt số đo raw với overhead chụp ảnh.
+5. Ngoài trận: Team & cards → Companions → Equipment → Night route.
+6. Độ hiếm/giới hạn: Invitations xem odds/pity/history; Collectibles xem effort và cap.
 
 ## Mở và chơi
-REFERENCE: docs/cardrpg3/index.html, tools/cardrpg-big/build.mjs
+REFERENCE: docs/cardrpg3/{index,baseline-v1}.html; tools/cardrpg-big/build.mjs
 
-Bản ghép đang kiểm chứng nằm tại `/Users/bao/taskbar-hero-cardrpg-big-delivery/docs/cardrpg3/index.html`. Mở trực tiếp bằng trình duyệt. Feel lab mở từ trang đầu và trong trận. Đường đi thường là Cafe → đội/trang bị → Prepare → Fight → Result → bản đồ. Watch a battle now mở ngay trận chương 1. Demo cũ vẫn ở `docs/cardrpg2/index.html`.
+Mở trực tiếp `/Users/bao/taskbar-hero-cardrpg-big-delivery/docs/cardrpg3/baseline-v1.html`. Bản chính hiện cùng nội dung ở `/Users/bao/taskbar-hero-cardrpg-big-delivery/docs/cardrpg3/index.html`; Feel lab có trên trang đầu và trong trận. Luồng: Cafe → đội/trang bị → Prepare → Fight tự động → Result → bản đồ. Watch a battle now mở ngay trận chương 1. Demo cũ vẫn ở `docs/cardrpg2/index.html`.
 
-## Đối chiếu toàn bộ brief
-REFERENCE: COVERAGE.md, baseline/COVERAGE.md, memory/STATE.md
+Baseline 23.937.000 byte, SHA-256 `9a5f6ebbb04af56c19f11cf43cf2763b35df2bde3b7a8dcd943060e878d793d3`. Giữ nguyên file baseline khi bản chính nhận LOOK. Video ở [video/delivery](video/delivery/); mỗi mèo và ultimate 25 s/1×, boss 170,4 s gồm chuẩn bị và kết quả. Boss dùng nút unlock nhìn thấy được để cấp level 10/3 sao; không phải bằng chứng cân bằng đội mới. Video không tiếng; review ảnh mỗi 0,5 s không xác minh chuyển động liên tục hay chất lượng âm thanh.
 
-| Yêu cầu | Trước | Mốc đã đo | Còn phải xác minh |
-| --- | --- | --- | --- |
-| Kỹ năng có bản sắc | Nhiều động tác và công thức dùng chung | Starter đạt 30 cặp chuyển động, 31 hiệu ứng và 465 cặp ảnh |Đủ12mèo/13địch đã ghép,86hiệu ứng/3.655cặp;video1×đang chờ |
-| Ảnh sắc nét | F0 có crop DPR 1/2 |2/10 cặp đạt ở F2,icon +366,30/+421,26% |8 mục tiêu còn thiếu và ảnh ghép |
-| Bố cục, góc mặt | Sân 57,120% |78,889%,2.745 tư thế có 0 che/cắt, góc mặt ≤55° |Dải kích thước nhân vật và mọi model mới |
-| Nhịp lượt, khựng | Điều khiển thủ công |F5 cast MAX 33,4/16,8 ms, mở trang 300 ms |Cổng mở trang 100 ms và B đo lại |
-| Phần chơi ngoài trận | Chức năng hiện hữu khó thấy |Bản ghép có39ảnh meta ở3kích thước |Preview hẹp tăng70px;luồng chơi3kích thước đạt |
-| Trang bị đầy đủ | Nhiều hình cùng họ |384 ca model/trang bị, 0 lỗi |Socket của model mới |
-| Vật phẩm đầy đủ | Hệ thống đã có trong luật |5 nhóm, bảng nguồn/drop/sink |Bản ghép3kích thước đạt;giữ giới hạn cân bằng |
-| Tầng độ hiếm | Trần một món 10,4575% |9,6306% hiển thị, 4 khung và 12 hình huyền thoại |Tác dụng thực chiến lớn ở một số ca |
-| Cân bằng tự động | Nhiều ô thắng 100% |26/48 bước tăng, 22 hòa, 0 giảm |Level 6 bão hòa, độ chênh set/mèo |
-| Gacha | Odds và pity đã có |13 test ceremony;69b994eb có68ảnh,3D entrance và421E2E |1024resultbottom599,375px đạt;reviewvideo bản ghép đang chờ |
-| Giới hạn collectible | Thiết kế giới hạn đã có |25 test biên, 2 UI, 12 ảnh, 0 lỗi/network |Scope và12ảnh design bản ghép đạt;counter chỉ trong save |
-| Bản sắc có nghiên cứu |34 game được nghiên cứu trước |Tái dùng nghiên cứu, art procedural có provenance |Đánh giá hình ảnh ghép |
+## Trước và baseline v1
+REFERENCE: COVERAGE.md; baseline/COVERAGE.md; integration/delivery; FRESH-EYES.md
 
-Ảnh và dữ liệu nằm trong `layout/`, `sharpness/`, `motion/`, `effects/`, `flow/`, `meta/screens/`, `meta/gear/` và `items/screens/`.
+| Điểm brief | Trước | Baseline đã đo và ảnh | Chưa đạt |
+|---|---|---|---|
+| Kỹ năng/chuyển động | Nhiều công thức chung | 86 hiệu ứng/3.655 cặp grayscale; [14 video](video/delivery/audit.json) | Mảng sáng phẳng, che mặt; mọi mèo chỉ “improved” |
+| Độ nét | Crop F0 DPR 1/2 | F2 icon +366,30/+421,26%; [cổng](sharpness/GATES.md) | 8/10 mục tiêu thiếu |
+| Bố cục/góc mặt | Sân 57,120% | 78,889%; 2.745 tư thế không cắt/che ở F1; [ảnh](integration/delivery/path-resume/1440-paused.png) | Band thân 24–30%, margin A và nhóm phía sau |
+| Nhịp/khựng | Điều khiển thủ công | Tự động, replay bằng nhau; main cold MAX 33,3/116,7 ms | CPU4 >100 ms; matrix cuối chưa chạy |
+| Ngoài trận | Chức năng khó thấy | 39 ảnh meta/3 kích thước; preview hẹp tăng70px; [Team](integration/delivery/meta/1024-team.png) | Chrome/scene thiếu đồng nhất, cuộn nhiều |
+| Trang bị | Nhiều hình cùng họ | 384 ca model,0lỗi ở M; [equip/compare](integration/delivery/meta/1280-equipment-compare.png) | Socket toàn bộ model mới chưa đo lại384ca |
+| Vật phẩm | Luật có nhưng khó thấy | 5 nhóm, nguồn/drop/sink; [bảng](../../docs/design/cardrpg/ITEM-TIERS.md) | Giao diện còn thô |
+| Độ hiếm | Legendary10,4575%power | Trần9,6306%≤10%;4khung/12hình legendary | Thực chiến một món +34pp heldout |
+| Cân bằng auto | Nhiều ô thắng100% | 26/48 bước tier tăng,22hòa,0giảm; 45ngày≤2,1948× | Bão hòa level6, chênh set/mèo |
+| Gacha | Odds/pity có sẵn | 32reveal+36invitation ảnh main; [10pull](integration/delivery/invitations/1280x720-cpu1-ten-pull-results.png) | Crown crop, trình diễn chưa đẹp |
+| Collectible | Thiết kế giới hạn | 25test cap+2UI;12ảnh main; [help](integration/delivery/designs/1024x600-help.png) | Counter cục bộ, không phải global enforcement |
+| Bản sắc gốc | Nghiên cứu34game đã có | Tái dùng nghiên cứu; procedural art có provenance | Cần LOOK cải thiện vật liệu/ánh sáng |
 
-## Cổng hiệu năng
-REFERENCE: invitations/PERFORMANCE.md, invitations/recovery-verification.json, integration/scope-header/proof.json
+## Hiệu năng và giới hạn bằng chứng
+REFERENCE: ../cardrpg-big2/integration/{cold,lifecycle,audio-startup,flag-off}; invitations/PERFORMANCE.md
 
-| Cổng | Mốc đo | Kết quả |
-| --- | --- | --- |
-| Cast MAX ≤50 ms, first/repeat |G 33,4/16,8 ms, 720 ca |Đạt ở G; bản ghép chờ |
-| Mở trang/MAX 4× ≤100 ms |Main cold7: native33,3ms/CPU4 116,7ms |Chưa đạt; matrix860đang chờ |
-|≥99% frame ≤20 ms ở DPR 1/2 |Bản ghép chưa có bộ số liệu |Chờ |
-|4× p95 ≤33 ms |Bản ghép chưa có bộ số liệu |Chờ |
-|≤250 draw calls, ≤150k triangles |G 207/93.802 |Đạt ở G; bản ghép chờ |
-| Heap/GPU ổn định 20 trận |Main +1.858.320byte; geometry/texture/program tăng0 |Đạt ngưỡng2MiB,0lỗi (B03:24) |
-| Flag-off startup tách3D |Static closure2.319.608byte, 0three/modelmodule |Đạt graph toàn nguồn ghép; browser chờ |
+| Cổng | Số đo có nguồn | Trạng thái |
+|---|---|---|
+| Page-open/CPU4 MAX≤100ms | Main cold7,13.125rawframes:33,3native/116,7CPU4 | MISS100 |
+| CPU4 p95≤33ms | Main cold7:16,8ms | Đạt mẫu cold, chưa phải toàn matrix |
+| Cast MAX≤50ms/≥99%≤20ms | G first/repeat33,4/16,8ms;720ca | Lịch sử G; main chưa có matrix |
+| Draw≤250/triangles≤150k | G207/93.802; Mechanics main242/116.868 | Mẫu đo đạt; chưa toàn86action |
+| Heap/GPU sau20trận | Main+1.858.320byte≤2MiB, GPU tăng0/0/0 | Đạt,0lỗi |
+| Sound startup | Main6ca/5.286rawframes,MAX33,3ms; enable226,5–316,7ms | Chức năng đạt; chưa nghe/chấm chất lượng |
+| Flag-off không tải3D | 11JS/3.522.500byte,0Three/GLB/lỗi | Đạt browser; graph2.319.608byte là phép đo khác |
+| Ma trận toàn roster | 25unit,86action×10config=860ca | Chưa chạy; chỉ chạy final lookV2 bởi LOOK B |
 
-G giữ263.056frame từ720ca,4.640frame>25ms/1.330frame>50ms,0lỗi trang;cast>50ms bằng0. Năm profile và toàn bộ mảng raw đã được kiểm tra lại. G fresh unit có1timeout5s;filefocused11/11và421E2Eđạt,không gọi là fullsuite sạch. Header invitation CPU4 có MAX266,7ms trong bài kiểm tra chức năng;không thay thế ma trận hiệu năng riêng.
+[Cold raw/audit](../cardrpg-big2/integration/cold/raw-audit.json), [audio raw/audit](../cardrpg-big2/integration/audio-startup/raw-audit.json), [lifecycle](../cardrpg-big2/integration/lifecycle/summary.json). G lịch sử giữ263.056frames,4.640>25ms/1.330>50ms,MAX316,6ms;cast>50ms=0. Main cold không thay thế G hay matrix. Hàng đợi cũ của B đã nghỉ theo addendum7/11, không còn “chờ video A”.
 
-## Vật phẩm, cân bằng và lời mời
-REFERENCE: docs/design/cardrpg/ITEM-TIERS.md, items/ENCOUNTER-BALANCE.md, items/ENCOUNTERS.md, invitations/PLAN.md
+## Đồ, cân bằng, lời mời và luật tự động
+REFERENCE: items/ENCOUNTER-BALANCE.md; items/ENCOUNTERS.md; integration/extras/README.md; auto/A1.md
 
-Heldout dùng level 1, 50 route mỗi ô. Thứ tự bare/common/rare/epic/legendary có số thắng lần lượt là 0, 33, 40, 48, 50 ở chương 1, 0, 16, 29, 41, 50 ở chương 2 và 0, 4, 11, 33, 49 ở chương 3. Level 6 còn nhiều ô 100%. Độ chênh set lớn nhất 8–92%, mèo 49,15–83,76%. Một món có thể tăng thắng boss 34 điểm phần trăm trên heldout, dù đạt trần power hiển thị.
+Heldout level1,50route/ô: bare/common/rare/epic/legendary thắng chương1 là0/33/40/48/50, chương2 là0/16/29/41/50, chương3 là0/4/11/33/49. Đây là fixture theo tier, khác đội starter trong thí nghiệm A1. Chênh set lớn nhất8–92%, mèo49,15–83,76%; một món tăng thắng boss tối đa34ppheldout dù đạt trần power hiển thị.
 
-Mô phỏng 45 ngày với 90 tài khoản cho tỉ lệ heavy/casual ≤2,1948×. Cả ba nhóm còn mục tiêu bộ sưu tập mở. Gacha dùng tem kiếm được, công bố odds, pity và lịch sử. Các kết quả ngẫu nhiên có nhãn Account-bound. Chỉ thiết kế Relic xác định trước, đủ công sức và nằm trong trần mùa/toàn bộ mới có điều kiện collectible. Giao diện ghi Design only - not minted.
+Mô phỏng45ngày/90tài khoản: heavy/casual≤2,194775696×OFF,≤2,189801700×ON. Extras ON có27/48bước tier tăng so26/48OFF,0đảo chiều/mất lợi thế; tất cả extras mặc định OFF. Gacha dùng tem kiếm được, odds/pity/history công khai, kết quả ngẫu nhiên Account-bound. Chỉ Relic xác định trước, effort-gated, trần mùa/toàn bộ mới collectible-eligible; giao diện ghi Design only - not minted, không cộng battle stats.
 
-## Tự động hóa và phạm vi
-REFERENCE: auto/A1.md, auto/A2.md, auto/A3.md, integration/scope/rules-commits.txt, integration/runner-parity.json
+Bộ điều khiển đánh giá một hành động hợp lệ theo trạng thái, ưu tiên cứu đồng đội và kết liễu địch; tie-break ổn định giúp replay xác định và giới hạn công mỗi lượt. Người chơi chỉ chuẩn bị trước Fight. Chương1starter có median51,411s train/53,569s heldout,48/50 và44/50 trong45–90s;5trận browser46,5327–57,2778s,replay khớp. Boss170,4s nêu trên không nằm trong mẫu encounter này.
 
-Người chơi chọn ba mèo, hàng và trang bị trước trận. Bộ điều khiển tự dùng toàn bộ kỹ năng đã mở. Trong trận có tốc độ, pause, skip, camera, sound. Thời lượng chương 1 ước tính bằng kế hoạch trình diễn có trung vị 51,411 s training và 53,569 s heldout. 48/50 và 44/50 nằm trong 45–90 s. Năm ca trình duyệt đo 46,5327–57,2778 s, cả năm replay trùng kết quả. Các ca có 0 lỗi HP hoặc vượt ngân sách hành động.
+## Phạm vi và Lane B delivered
+REFERENCE: integration/delivery/scope/proof.json; integration/scope/rules-commits.txt; ../cardrpg-big2/CARDRPG-BIG2-REPORT.md
 
-Diff luật nằm trong `cardrpg/depth`, gồm A1–A3, cân bằng I, sửa save và hook runner được addendum yêu cầu. Các đường dẫn live/chain được bảo vệ có 0 thay đổi. Hash logic và panel đọc Fuji bằng nhau. Runner mặc định khớp 300 route/900 encounter. So sánh autoExtras ON/OFF đã chạy đủ50seed training và heldout, cùng90tài khoản trong45ngày. Số bước tăng tier là26/48OFF và27/48ON,0bước mất lợi thế hoặc đảo chiều. Tỉ lệ tài nguyên tối đa2,194775696×OFF và2,189801700×ON. Bảng ở integration/extras/README.md. Các tùy chọn thử nghiệm giữ mặc định OFF.
+Nguồn ghép có0thay đổi đường dẫn live/chain được bảo vệ, hash panel/logic đọc Fuji bằng nhau; runner mặc định khớp300route/900encounter. Thay đổi luật A1–A3, I, bugfix và default-off extras được addendum cho phép đã tách commit/sim; không nói toàn diff chỉ có A1–A3. Không đổi save âm thầm, không on-chain.
 
-## Lane B delivered
-REFERENCE: coord/cardrpg-big/B-OUTBOX.md trên nhánh ai/codex-cardrpg-big-sync
+B cũ cung cấp9mèo còn lại,10quái thường/3boss,stage/audio,wrapper/Mechanics lab và18.000trận biến thể+3.600tham chiếu. #359/7e1b54b0 chỉ thêm315đường dẫn reports/tools;18nhóm chức năng standalone và các phép đo main cold/lifecycle/audio/flag-off ở trên. Không có full matrix cũ hoàn tất. Các nhận xét B về8mục tiêu nét/body band/opening misses vẫn giữ.
 
-B1 tại 7006f109/draft342 có 720 ca, 0 lỗi, cast MAX first/repeat 33,4/16,8 ms, page MAX 150 ms native và 300 ms CPU4. B2c tại 4b2d5df0/draft347 đã bổ sung cả 9 mèo còn lại, 48 clip GLB/336 cặp bắt buộc và 76 hiệu ứng/2.850 cặp grayscale đạt ngưỡng. Cold7 của B2c đo page MAX 133,3 ms, post-interactive MAX 83,3 ms và p95 16,8 ms. Cổng mở trang 100 ms còn thiếu. B3 đạt405mẫu camera có0cắt/che, giữ8mục tiêu độ nét còn thiếu, coldCPU4MAX116,6ms. B5 có18.000trận biến thể và3.600tham chiếu, defaultOFF khớp toàn trạng thái. B4 có79bufferâm thanh hữu hạn/khác nhau và4ca thao tác, nhưng bật âm thanh lần đầu133,5ms và coldCPU4MAX183,3ms. E1/E2 bổ sung6địch,12clip/30cặp bắt buộc và78hiệu ứng/3.003cặp grayscale. ColdCPU4MAX lần lượt116,7/133,3ms. E3/E4/boss và wrapper đã ghép:25unit/86action,86hiệu ứng/3.655cặp grayscale. B xác nhận15video standalone24s và20replay có0tăng geometry/texture/program;đây là artifact734d301c,còn main9a5f6ebb đang đo lại. Ma trận lịch sử710ca chưa hoàn tất được giữ trạng thái thiếu. Matrix860ca cuối vẫn chờ videoA. Bằng chứng ở `../cardrpg-big2/cats/batch3/CHECKPOINT.md` và `../cardrpg-big2/performance/b1-skills/`.
+## Look lane — yêu cầu hình ảnh còn mở
+REFERENCE: memory/PROMPT.md ADDENDUM LOOK 2026-11-07; coord/cardrpg-big/B-OUTBOX.md trên nhánh sync
 
-## Các điểm còn thiếu và tự chấm
-REFERENCE: memory/STATE.md, COVERAGE.md, demo/PLAN.md
+Trước LOOK là baseline9a5f6ebb với góc rộng, sân trống, bề mặt sáng phẳng và chrome/meta thiếu cùng phong cách với3D. LOOK B sở hữu model Blender,diorama,lighting,post,VFX,portraits/icons; A sở hữu meta restyle từ tokens và tích hợp. Chưa có checkpoint LOOK được nhận vào baseline này; chưa có after hoặc rubric B để chép, tuyệt đối không tự đặt điểm B. Bảng before/after của art và UI sẽ được thêm cùng hash mới, screenshot/contrast và năm cổng+functional pack sau từng lần nhận. Bằng chứng baseline giữ nguyên.
 
-Các cổng còn thiếu gồm khựng mở trang100ms,8mục tiêu độ nét,dải kích thước nhân vật,tầng trang bị ởlevel6,chênh lệch set/mèo,tác dụng thực chiến của một món,và bằng chứng trên toàn bản ghép. Kết quả gacha hẹp và nút Feel lab che thẻ đã được sửa/kiểm chứng. Mochi có25svideo/50frame lấy đều toàn clip ởmốc trước. Đã xem tuần tự qua4vai và ghi20điểm trong FRESH-EYES.md;video12mèo,boss,ultimate cùng lượt chấm lại vẫn chờ bản ghép đủ hình ảnh. [F7 acceptance](integration/F7-GATES.md).
+## Tự chấm và những việc chưa sửa
+REFERENCE: FRESH-EYES.md; integration/F7-GATES.md; video/delivery/review/observations.json
 
-11 mục tự chấm đang chờ review gồm hiệu ứng, độ nét, bố cục/góc mặt, nhịp/khựng, cảm giác chơi, sân trống, tự động hoàn toàn, phần ngoài trận, trang bị/cân bằng, gacha và giới hạn collectible. Mục tiêu là 8,5/10 mỗi mục. Bản báo cáo bàn giao sẽ ghi điểm thực tế và từng cổng thiếu.
+| Tiêu chí | /10 | Tiêu chí | /10 |
+|---|---:|---|---:|
+| Hiệu ứng/bản sắc |6,5|Độ nét |5,0|
+| Bố cục/scale/facing |6,5|Nhịp/khựng |6,0|
+| Cảm giác chơi |6,5|Sân còn trống |5,0|
+| Tự động hoàn toàn |9,0|Ngoài trận đầy đủ |7,5|
+| Đồ/độ hiếm/cân bằng |6,5|Gacha thú vị/công bằng |7,5|
+| Giới hạn collectible |8,5|Mục tiêu mỗi mục |8,5|
 
-## Draft PR
-REFERENCE: memory/STATE.md
+Đây là tự chấm có giới hạn, không phải nghiệm thu của bạn.9/11mục dưới8,5. Chưa sửa:8mục tiêu nét,bodyband/margin,các mảng VFX che mặt,sân trống,pacing boss,opening100ms,tier ties/set-cat spread/utility,crop crown và UI cohesion. Worst visual fixes chuyển sang LOOK đúng ownership; không tô lại số baseline. Full matrix cuối chưa chạy; chất lượng âm thanh chưa nghe. [20điểm yếu qua4vai](FRESH-EYES.md).
 
-F0 #333, A #334, F1 #335, F2 #336, F3 #337, F4 #338, F5 #339, M #340, I #341, G #344, M follow-up #345 và F7 preparation #348 đều là draft. B đã công bố #342,#343,#346,#347,#349,#350,#351,#352,#353,#354,#355,#356,#357. Integration #358 đã mở draft trên #332;nguồn đã đạt,nội dung/hình ảnh/hiệu năng đang nghiệm thu. Báo cáo và STATE sẽ được chép sang ledger ở bước bàn giao.
+## Draft PR và báo cáo ledger
+REFERENCE: DRAFT-PRS.md; memory/STATE.md
+
+[Integration#358](https://github.com/ntbaoheyhey/taskbar-hero/pull/358) là draft trên#332. A:#333–341,#344–345,#348; B:#342–343,#346–347,#349–357,#359. [Danh sách/link từng PR](DRAFT-PRS.md). #359 được ghép nguồn vào nhánh integration; không merge PR GitHub. Báo cáo còn chờ xuất bản baseline v1 và chép sang ledger `ai/codex-ui-ledger`; STATE/handoff được lưu riêng khi dừng; mọi checkpoint LOOK sau này vẫn dùng draft PR.

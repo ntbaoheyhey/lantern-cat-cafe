@@ -95,3 +95,65 @@ The three named screenshots were inspected at native size. The 1440 paused battl
 REFERENCE: integration/delivery/mechanics-resume/1280-720-cpu1-prep.png, integration/delivery/mechanics-resume/1280-720-cpu1-result.png, integration/delivery/mechanics-resume/1024-600-cpu1-result.png, integration/delivery/mechanics-resume/summary.json
 
 The three named captures were inspected. Entry clearly explains the isolated account and default-off experiments; all four switches start unchecked. Result text fits even at1024×600, while the lower configuration/actions require scrolling. The sidebar still highlights Before/after during this separate lab, which is a navigation-label weakness. This fixture loses after20rounds and57companion turns; that is a functional result, not evidence of a balanced experimental team. Four cases pass account preservation, watched/skip equality, reduced-motion inheritance and visible cue/target agreement, with0errors. The post-ready timing sample excludes page opening and must not replace the F6 performance gate.
+
+## Baseline v1 — completed chronological review, 2026-11-07
+REFERENCE: video/delivery/{captures,audit}.json; video/delivery/review/{sampling,observations}.json; integration/delivery/functional-audit.json
+
+One reviewer completed the four roles below sequentially, without agents. All14clips belong to HTML9a5f6ebb: twelve heroes and one ultimate at25s/x1, plus the170.4s chapter1boss recording. The full decode audit counts12,385frames;991half-second samples in57sheets were inspected, including the final Victory screen. Samples are320×180 and silent. They establish composition and broad action/state changes, not continuous motion, exact fast contacts, sound quality or native sharpness. Existing native screenshots and raw frame arrays support those separate topics. The boss fixture visibly unlocks level10/3star cats; it is not starter win-rate evidence.
+
+### First-time player — five remaining weaknesses
+REFERENCE: video/delivery/review/boss-{01,17,18}.webp; integration/delivery/{meta,reveal,mechanics-resume}
+
+1. First boss entry spends approximately0–3s on preparation text before the rendered scene at3.5s. It communicates progress but still delays the spectacle; LOOK B owns renderer work.
+2. Equipment/collection controls require scrolling at1024×600. The large preview is clearer than before, but the next action is distant; A meta restyle must retain usable transactions.
+3. The Result MVP panel consumes most of the first viewport, so individual contribution details are below it. The170s result sample and settled path screenshot show the imbalance; A owns this layout.
+4. Mechanics lab still highlights Before/after in the sidebar. It is functional but the screen identity is confusing; A owns lab wrapper navigation.
+5. Legendary reveal crops the crown in the native1024capture. The whole card/action fits, but the portrait composition feels accidental; LOOK portraits plus A wiring must address it.
+
+### Skeptical three-minute judge — five remaining weaknesses
+REFERENCE: video/delivery/review/observations.json; ../cardrpg-big2/integration/cold/raw-audit.json; COVERAGE.md
+
+1. Small actors on a broad rug remain the immediate impression despite the measured78.889%stage share. More viewport area did not solve character scale.
+2. The170.4s boss recording uses many repeated attack/return cycles; the large boss disappears around153.5s and small adds occupy the remaining cleanup. It lacks a strong finishing beat.
+3. ColdCPU4MAX116.7ms still exceeds100ms. The short7case pass on other metrics cannot substitute for the unrun full matrix.
+4. Different spell silhouettes are visible, yet broad bright planes and thin lines often feel like a technical demonstration. Numerical uniqueness is not sufficient artistic polish.
+5. The game has all major menu destinations, but dark rectangular UI chrome and the warm toy-like scene do not share convincing materials. This is the user's open complaint, not a completed improvement.
+
+### Art director — five remaining weaknesses
+REFERENCE: video/delivery/review/{brioche-01,velvet-01,marigold-01,boss-04}.webp; integration/delivery/meta/1024-team.png
+
+1. Empty rug center dominates; repeated shelf props do not add enough focal depth. LOOK B owns diorama/camera work.
+2. Dark/slim cats merge at rear left. Soot and Clover overlap in the natural boss projection; distinct model silhouettes need more readable spacing/light.
+3. Brioche's apron/constellation, Velvet's curtain and Marigold's teapots have recognizable motifs but broad pale faces look flat. LOOK materials/VFX must improve surface response.
+4. Clover/Mochi group peaks cover nearby faces and bodies, including31,69,108,144.5and150.5s in boss samples. Keep these as acceptance comparisons, not only effect-isolation shots.
+5. Cards, panels, rarity treatments and scene lighting use inconsistent surface language. A will adopt B tokens and add original generated textures/foil/gloss with before/after and contrast proof.
+
+### Motion/VFX director — five remaining weaknesses
+REFERENCE: video/delivery/review/{observations,sampling}.json; ../cardrpg-big2/integration/audio-startup
+
+1. Basic actions repeatedly move out and return to a ring. Distinct attack shapes still share a similar stage rhythm; sampled clips cannot establish subtle anticipation/follow-through.
+2. Ultimate forms contribute more screen presence than the small body gestures behind them. Weight and expression remain difficult to read.
+3. Group VFX saturation obscures the actors at exactly the moments that should emphasize them; natural battle examples are listed above.
+4. Thin target lines and pale impact marks compete with patterned floor/labels. Boss/add labels accumulate at the right edge after summons.
+5. Silent recordings cannot support a sound-quality grade. B's buffer/count/startup checks prove functionality only; click-to-enabled226.5–316.7ms remains noticeable latency to investigate.
+
+### Baseline self-grades after existing repairs
+REFERENCE: integration/delivery/functional-audit.json; integration/F7-GATES.md; video/delivery/review/observations.json; COVERAGE.md
+
+These are one reviewer's conservative scores, not user approval or B's future LOOK rubric. Existing repaired issues are header/card obstruction, reveal overflow, narrow collection width and selected-tab contrast; their measurements stay at their original hashes. No new visual repair is claimed on9a5f6ebb. Worst remaining art defects belong to the user-directed LOOK pass; baseline remains unchanged for comparison.
+
+| User complaint | Baseline v1 /10 | Missing for8.5 |
+|---|---:|---|
+| Effects/skill identity |6.5|Distinct motifs, but flat bright planes/overlap and modest body presence|
+| Sharpness |5.0|Eight of ten quantitative crop targets still miss; no thumbnail-based claim|
+| Layout/scale/facing |6.5|Stage area improved; body-size bands and rear readability still miss|
+| Turn flow/smoothness |6.0|Automatic sequence readable; openingMAX116.7ms and repetitive boss cleanup|
+| Overall gameplay feel |6.5|Preparation/rewards work; spectacle, pacing and finish lack polish|
+| Sparse stage |5.0|Large empty center and repetitive props remain|
+| Fully automatic battle |9.0|No manual action/target controls; natural fight and replay verified|
+| Complete game outside battle |7.5|Ten destinations work; scrolling/layout/material cohesion still weak|
+| Equipment/items/rarity/balance |6.5|Full transaction set;22tier ties,cat/set spreads and single-piece utility miss|
+| Gacha exciting/fair |7.5|Earned-only odds/pity/binding work; portrait crop and ceremony polish remain|
+| NFT-value limits |8.5|Local cap boundaries and labels tested; offline counters cannot enforce global issuance|
+
+No character is promoted to “slice-quality” by this review. All12cats remain improved; final LOOK reviews must use their own artifact hash and measurements. Nine of eleven self-grades miss8.5. F7 review/report evidence can close as baseline v1 while visual/performance acceptance remains open.

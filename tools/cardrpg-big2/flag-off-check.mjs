@@ -9,23 +9,30 @@ import { resolve, relative, extname } from 'node:path';
 import assert from 'node:assert/strict';
 
 const root=resolve(import.meta.dirname,'../..');
+const source=resolve(process.env.BIG_FLAG_OFF_SOURCE || root);
 const directory=resolve(process.env.BIG_FLAG_OFF_DIST || '/tmp/cardrpg-big2-flag-off-dist');
 const output=resolve(root,process.env.BIG_FLAG_OFF_OUT || 'reports/cardrpg-big2/delivery/flag-off');
 await mkdir(output,{recursive:true});
 if(process.argv.includes('--prepare')){
  const chunks={};
- await build({root:resolve(root,'apps/web'),configFile:resolve(root,'apps/web/vite.config.ts'),envDir:false,logLevel:'error',
-  build:{outDir:directory,emptyOutDir:true},
-  plugins:[{name:'lane-b-runtime-receipt',generateBundle(_options,bundle){
-   for(const [name,file]of Object.entries(bundle))if(file.type==='chunk')chunks[name]={
-    bytes:Buffer.byteLength(file.code),sha256:createHash('sha256').update(file.code).digest('hex'),
-    imports:file.imports,dynamicImports:file.dynamicImports,modules:Object.keys(file.modules).map(id=>relative(root,id)),
-   };
-  }}]});
- await writeFile(`${directory}/build-receipt.json`,JSON.stringify({head:process.env.BIG_FLAG_OFF_HEAD || execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),chunks},null,2));
+ const result=await build({root:resolve(source,'apps/web'),configFile:resolve(source,'apps/web/vite.config.ts'),envDir:false,logLevel:'error',
+  build:{outDir:directory,emptyOutDir:true}});
+ // Vite can inject preload maps and rename chunks after generateBundle.
+ // Inventory the final returned output, and prove it matches bytes on disk.
+ for(const bundle of Array.isArray(result)?result:[result])for(const file of bundle.output){
+  if(file.type!=='chunk')continue;
+  const emitted=await readFile(resolve(directory,file.fileName));
+  assert.ok(emitted.equals(Buffer.from(file.code)),`Final output differs on disk: ${file.fileName}`);
+  chunks[file.fileName]={bytes:emitted.length,sha256:createHash('sha256').update(emitted).digest('hex'),
+   imports:file.imports,dynamicImports:file.dynamicImports,modules:Object.keys(file.modules).map(id=>relative(source,id))};
+ }
+ assert.ok(Object.keys(chunks).length>0);
+ await writeFile(`${directory}/build-receipt.json`,JSON.stringify({head:process.env.BIG_FLAG_OFF_HEAD || execFileSync('git',['rev-parse','HEAD'],{cwd:source,encoding:'utf8'}).trim(),source,method:'Final Vite build output, verified byte-for-byte against written chunks',harnessSha256:createHash('sha256').update(await readFile(import.meta.filename)).digest('hex'),chunks},null,2));
  console.log(JSON.stringify({prepared:true,chunks:Object.keys(chunks).length,directory}));
 }else{
- const receipt=JSON.parse(await readFile(`${directory}/build-receipt.json`,'utf8'));
+ const receiptBytes=await readFile(`${directory}/build-receipt.json`);
+ const receipt=JSON.parse(receiptBytes);
+ const harnessSha256=createHash('sha256').update(await readFile(import.meta.filename)).digest('hex');
  const mime={'.js':'text/javascript','.css':'text/css','.html':'text/html','.png':'image/png','.svg':'image/svg+xml','.webp':'image/webp','.json':'application/json'};
  const server=createServer(async(req,res)=>{
   try{
@@ -37,9 +44,9 @@ if(process.argv.includes('--prepare')){
  });
  await new Promise((done,reject)=>{server.once('error',reject);server.listen(5923,'127.0.0.1',done);});
  const browser=await chromium.launch({channel:'chromium',args:['--use-angle=metal']});
- const requests=[],external=[],errors=[];let result;
+ const requests=[],external=[],errors=[];let result,page;
  try{
-  const page=await browser.newPage({viewport:{width:1280,height:720}});
+  page=await browser.newPage({viewport:{width:1280,height:720}});
   await page.route('**/*',route=>{
    const url=new URL(route.request().url());
    if(url.protocol.startsWith('http')&&url.origin!=='http://127.0.0.1:5923'){
@@ -49,19 +56,30 @@ if(process.argv.includes('--prepare')){
   });
   page.on('request',r=>requests.push(new URL(r.url()).pathname));page.on('pageerror',e=>errors.push(String(e)));
   await page.goto('http://127.0.0.1:5923/');
+  // A fresh profile opens onboarding, which makes the underlying app inert and
+  // excludes its heading from the accessibility tree. Exercise the real entry.
+  await page.getByRole('heading',{name:'How to play',exact:true}).waitFor();
+  await page.screenshot({path:`${output}/default-onboarding.png`});
+  const requestsBeforeOnboardingDismissal=[...requests];
+  await page.getByRole('button',{name:'Start playing',exact:true}).click();
   await page.getByRole('heading',{name:'Taskbar Hero',exact:true}).waitFor();
   await page.waitForTimeout(5000);
   await page.screenshot({path:`${output}/default-entry.png`});
   const loaded=[...new Set(requests.filter(path=>path.endsWith('.js')))];
   const chunks=loaded.map(path=>({path,...receipt.chunks[path.slice(1)]}));
   assert.ok(chunks.length>0);assert.ok(chunks.every(chunk=>chunk.modules),'Every loaded script must map to the measured production build');
+  for(const chunk of chunks)assert.equal(createHash('sha256').update(await readFile(resolve(directory,'.'+chunk.path))).digest('hex'),chunk.sha256,'Loaded chunk must still match its build inventory');
   const prohibitedModules=[...new Set(chunks.flatMap(c=>c.modules).filter(id=>/node_modules[\\/]three[\\/]|game[\\/]squad[\\/]turn3d[\\/]|\.glb(?:\?|$)/.test(id)))];
   const modelRequests=requests.filter(path=>/\.glb$|\/art\/turn3d\//.test(path));
-  result={method:'Fresh production default URL with no demo/squad query; real legacy heading plus five seconds of initial runtime. Every requested JS chunk mapped to Vite module inventory. External network blocked. This proves three/model exclusion in this startup observation, not byte-identical application behavior.',buildHead:receipt.head,requests,externalBlocked:external,errors,chunks,prohibitedModules,modelRequests};
+  result={method:'Fresh production default URL with no demo/squad query; visible first-run How to play dialog, real Start playing click, visible app heading and five seconds of runtime. Every requested JS chunk hash-checked against its Vite module inventory. External network blocked. This proves three/model exclusion across this startup observation, not byte-identical application behavior.',harnessSha256,buildReceiptSha256:createHash('sha256').update(receiptBytes).digest('hex'),buildHead:receipt.head,requestsBeforeOnboardingDismissal,requests,externalBlocked:external,errors,chunks,prohibitedModules,modelRequests};
   assert.deepEqual(prohibitedModules,[]);assert.deepEqual(modelRequests,[]);assert.deepEqual(errors,[]);
   console.log(JSON.stringify({scripts:chunks.length,prohibitedModules,modelRequests,errors}));
  }finally{
+  if(page){
+   await writeFile(`${output}/readiness-dom.json`,JSON.stringify(await page.evaluate(()=>({title:document.title,text:document.body.innerText,headings:[...document.querySelectorAll('h1,h2,h3')].map(el=>({tag:el.tagName,text:el.textContent})),buttons:[...document.querySelectorAll('button')].map(el=>el.textContent)})).catch(error=>({error:String(error)})),null,2));
+   await page.screenshot({path:`${output}/readiness.png`}).catch(()=>{});
+  }
   await browser.close();await new Promise(done=>server.close(done));
-  await writeFile(`${output}/checks.json`,JSON.stringify(result??{requests,externalBlocked:external,errors,incomplete:true},null,2));
+  await writeFile(`${output}/checks.json`,JSON.stringify(result??{harnessSha256,requests,externalBlocked:external,errors,incomplete:true},null,2));
  }
 }

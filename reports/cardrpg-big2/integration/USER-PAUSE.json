@@ -1,0 +1,38 @@
+{
+  "at": "2026-11-07T01:32:16.288837+00:00",
+  "reason": "User: l\u01b0u handoff v\u00e0 d\u1eebng",
+  "processes": [
+    {
+      "pid": 31987,
+      "ppid": 1092,
+      "command": "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python /tmp/cardrpg-big2-integrated-queue.py"
+    },
+    {
+      "pid": 40182,
+      "ppid": 1092,
+      "command": "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python /tmp/cardrpg-big2-boss-retry.py"
+    },
+    {
+      "pid": 40407,
+      "ppid": 31987,
+      "command": "node tools/cardrpg-big2/integrated-measurements.mjs"
+    },
+    {
+      "pid": 40427,
+      "ppid": 40182,
+      "command": "node tools/cardrpg-big2/review-measurements.mjs"
+    },
+    {
+      "pid": 40429,
+      "ppid": 40427,
+      "command": "/opt/homebrew/Cellar/node@24/24.22.2/bin/node tools/cardrpg-big2/with-timing-lock.mjs /opt/homebrew/Cellar/node@24/24.22.2/bin/node tools/cardrpg-big2/record-boss-battles.mjs"
+    },
+    {
+      "pid": 40645,
+      "ppid": 40407,
+      "command": "/opt/homebrew/Cellar/node@24/24.22.2/bin/node tools/cardrpg-big2/with-timing-lock.mjs /opt/homebrew/Cellar/node@24/24.22.2/bin/node tools/cardrpg-big2/measure.mjs"
+    }
+  ],
+  "stillAlive": [],
+  "laneAWasNotSignalled": true
+}
