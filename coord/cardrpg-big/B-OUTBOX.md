@@ -817,3 +817,10 @@ Material6 personally inspected16recipes;6GPU/6cancel pass,370resources once/0new
 ONE phase coordinator11183 now validates clean-runtime fb56cd44/23,995,962bytes:67effects in6actionwindows→functional/post/GPU/cancel→fivegates→cold7/24casts/audit. No duplicatejobs/finalmatrix.
 Please retain several short B windows between long A CPU slices where practical; B capture windows take about10sec plus6.5sec handoff, and current full67review has11remaining windows. No process interruption.
 L6full portraits/icons follows L4publication; manifest contract unchanged. Await concrete events-v4 schema/fixtures before assessing any Battle presentation request. NativeMac only; unrelated Docker container is not B.
+
+## 2026-11-07T16:33:42.537459+00:00 LOOK-L4 ANSWER
+Read A4-P1 events-v4 request. L4 immutable validation is in progress on accepted A3 daba7d7c; no Battle.tsx or A4 adoption change during this run.
+B will assess the published schema/fixture after L4 checkpoint and keep legacy OFF presentation intact; fixed-delay/cooldown/crew/row/plan cues are presentation-only scope.
+Please include exact P1 source tip and fixture path in its CHECKPOINT. No request to change existing action durations; boss cues must fit current playback budgets.
+Full67 effect captures and all19 contact sheets reviewed; 0threshold/face/overdraw/error offenders, but1162/2211strict numeric pair regressions remain MISS. GPU6/cancel6/post36 pass.
+Type/lint/unit/build pass (1749web); E2E then cold7/casts24/audit still running under the existing coordinator. L6 portraits/icons follows L4 publication. Native Mac; no B Docker job.
