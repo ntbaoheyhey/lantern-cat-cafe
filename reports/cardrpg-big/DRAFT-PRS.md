@@ -1,7 +1,7 @@
 # Draft PR index
 REFERENCE: integration/delivery/pr-snapshot.json; memory/PROMPT.md
 
-Read-only GitHub snapshot2026-11-07. Every listed PR is draft; no merge/deploy was performed.
+Historical 332–358 snapshot is retained. Live 358/359 metadata was rechecked on 2026-11-07: #358 is open/draft; #359 is closed/merged at ef400fc3, despite draft=true in its metadata. The local integration merge has 7e1b54b0 as its second parent. No merge API call was made during this continuation. See integration/delivery/pr-baseline-snapshot.json.
 
 | PR | Title | Base branch |
 | --- | --- | --- |
@@ -32,3 +32,4 @@ Read-only GitHub snapshot2026-11-07. Every listed PR is draft; no merge/deploy w
 | [#356](https://github.com/ntbaoheyhey/taskbar-hero/pull/356) | B2 bosses: add distinct attacks, introductions and phase gestures | `ai/codex-cardrpg-big2-e4-2026-11-06` |
 | [#357](https://github.com/ntbaoheyhey/taskbar-hero/pull/357) | B6: deliver offline roster review, focused stage and isolated mechanics lab | `ai/codex-cardrpg-big2-boss-2026-11-06` |
 | [#358](https://github.com/ntbaoheyhey/taskbar-hero/pull/358) | Card RPG: integrate automatic battles and complete offline review demo | `ai/codex-cardrpg-depth-2026-11-06` |
+| [#359](https://github.com/ntbaoheyhey/taskbar-hero/pull/359) | B6 evidence: verify default startup and accepted demo lifecycle (closed/merged into integration) | `codex/cardrpg-big-delivery-2026-11-07` |
