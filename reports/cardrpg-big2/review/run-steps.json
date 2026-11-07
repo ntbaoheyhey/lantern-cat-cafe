@@ -100,31 +100,55 @@
       "ended": "2026-11-07T01:24:37.240Z"
     },
     "boss-battles": {
-      "started": "2026-11-07T01:31:02.965Z",
-      "status": "interrupted_by_user",
+      "started": "2026-11-07T03:09:49.983Z",
+      "status": "passed",
       "attempts": [
         {
           "started": "2026-11-07T01:24:37.240Z",
           "status": "failed",
           "error": "Error: tools/cardrpg-big2/with-timing-lock.mjs /opt/homebrew/Cellar/node@24/24.22.2/bin/node tools/cardrpg-big2/record-boss-battles.mjs exited 1",
           "ended": "2026-11-07T01:29:29.162Z"
+        },
+        {
+          "started": "2026-11-07T01:31:02.965Z",
+          "status": "interrupted_by_user",
+          "ended": "2026-11-07T01:32:16.288837+00:00",
+          "note": "User explicitly requested saving a handoff and stopping. Do not count this step as passed."
         }
       ],
-      "ended": "2026-11-07T01:32:16.288837+00:00",
-      "note": "User explicitly requested saving a handoff and stopping. Do not count this step as passed."
+      "ended": "2026-11-07T03:17:05.216Z"
     },
     "flag-off-prepare": {
-      "started": "2026-11-07T01:29:29.163Z",
+      "started": "2026-11-07T03:30:01.350Z",
       "status": "passed",
-      "attempts": [],
-      "ended": "2026-11-07T01:29:30.093Z"
+      "attempts": [
+        {
+          "started": "2026-11-07T01:29:29.163Z",
+          "status": "invalid_receipt",
+          "ended": "2026-11-07T01:29:30.093Z",
+          "reason": "generateBundle inventory preceded Vite preload injection and final chunk renaming; final disk bytes failed hash check. Rebuild original archived source with final-output inventory."
+        }
+      ],
+      "ended": "2026-11-07T03:30:02.929Z"
     },
     "flag-off-browser": {
-      "started": "2026-11-07T01:29:30.093Z",
-      "status": "failed",
-      "attempts": [],
-      "error": "Error: tools/cardrpg-big2/with-timing-lock.mjs /opt/homebrew/Cellar/node@24/24.22.2/bin/node /tmp/cardrpg-big2-review-validation/tools/cardrpg-big2/flag-off-check.mjs exited 1",
-      "ended": "2026-11-07T01:31:01.054Z"
+      "started": "2026-11-07T03:30:02.939Z",
+      "status": "passed",
+      "attempts": [
+        {
+          "started": "2026-11-07T01:29:30.093Z",
+          "status": "failed",
+          "error": "Error: tools/cardrpg-big2/with-timing-lock.mjs /opt/homebrew/Cellar/node@24/24.22.2/bin/node /tmp/cardrpg-big2-review-validation/tools/cardrpg-big2/flag-off-check.mjs exited 1",
+          "ended": "2026-11-07T01:31:01.054Z"
+        },
+        {
+          "started": "2026-11-07T03:23:12.289Z",
+          "status": "failed",
+          "error": "Error: tools/cardrpg-big2/with-timing-lock.mjs /opt/homebrew/Cellar/node@24/24.22.2/bin/node tools/cardrpg-big2/flag-off-check.mjs exited 1",
+          "ended": "2026-11-07T03:27:08.541Z"
+        }
+      ],
+      "ended": "2026-11-07T03:31:45.699Z"
     }
   }
 }

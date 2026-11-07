@@ -10,11 +10,46 @@
       "ended": "2026-11-07T01:31:34.151Z"
     },
     "cold": {
-      "started": "2026-11-07T01:31:40.678Z",
-      "status": "interrupted_by_user",
+      "started": "2026-11-07T03:08:59.256Z",
+      "status": "passed",
+      "attempts": [
+        {
+          "started": "2026-11-07T01:31:40.678Z",
+          "status": "interrupted_by_user",
+          "ended": "2026-11-07T01:32:16.288837+00:00",
+          "note": "User explicitly requested saving a handoff and stopping. Do not count this step as passed."
+        }
+      ],
+      "exit": 0,
+      "ended": "2026-11-07T03:13:38.661Z"
+    },
+    "lifecycle": {
+      "started": "2026-11-07T03:13:45.194Z",
+      "status": "passed",
       "attempts": [],
-      "ended": "2026-11-07T01:32:16.288837+00:00",
-      "note": "User explicitly requested saving a handoff and stopping. Do not count this step as passed."
+      "exit": 0,
+      "ended": "2026-11-07T03:22:17.042Z"
+    },
+    "audio-startup": {
+      "started": "2026-11-07T03:22:23.580Z",
+      "status": "passed",
+      "attempts": [],
+      "exit": 0,
+      "ended": "2026-11-07T03:30:00.055Z"
+    },
+    "flag-off-prepare": {
+      "started": "2026-11-07T03:30:06.591Z",
+      "status": "passed",
+      "attempts": [],
+      "exit": 0,
+      "ended": "2026-11-07T03:30:07.809Z"
+    },
+    "flag-off-browser": {
+      "started": "2026-11-07T03:30:14.350Z",
+      "status": "passed",
+      "attempts": [],
+      "exit": 0,
+      "ended": "2026-11-07T03:30:35.539Z"
     }
   }
 }

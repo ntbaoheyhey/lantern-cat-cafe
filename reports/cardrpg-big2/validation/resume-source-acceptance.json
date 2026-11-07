@@ -1,0 +1,110 @@
+{
+  "recordedAt": "2026-11-07T03:35:37.158183+00:00",
+  "headBeforeEvidenceCommit": "fb54fca7a9f5226b79d58e035ce2ba68e3837861",
+  "acceptedBase": "a106dfcac755d42f91b2467adf6d888ca0b41a9c",
+  "accepted": true,
+  "runtimeAssetAndMainBuilderDelta": [],
+  "rows": [
+    {
+      "name": "typecheck",
+      "args": [
+        "typecheck"
+      ],
+      "exit": 0,
+      "started": "2026-11-07T03:24:56.722Z",
+      "ended": "2026-11-07T03:25:06.883Z",
+      "log": "reports/cardrpg-big2/validation/resume-source-typecheck.log",
+      "sha256": "a4eb6423ec3f2507f58d916f3f3aacb2223122f5332582f84f5c816fc8ebab35",
+      "counts": []
+    },
+    {
+      "name": "demo-types",
+      "args": [
+        "--filter",
+        "@taskbar-hero/web",
+        "exec",
+        "tsc",
+        "-p",
+        "../../tools/cardrpg-big2/tsconfig.json",
+        "--noEmit"
+      ],
+      "exit": 0,
+      "started": "2026-11-07T03:25:06.884Z",
+      "ended": "2026-11-07T03:25:13.382Z",
+      "log": "reports/cardrpg-big2/validation/resume-source-demo-types.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "counts": []
+    },
+    {
+      "name": "lint",
+      "args": [
+        "lint"
+      ],
+      "exit": 0,
+      "started": "2026-11-07T03:25:13.382Z",
+      "ended": "2026-11-07T03:25:22.836Z",
+      "log": "reports/cardrpg-big2/validation/resume-source-lint.log",
+      "sha256": "0b7737e3ef44ade6b91201f7a417fa907cc2b8d55bf2b309012b74c73ec0cdb7",
+      "counts": []
+    },
+    {
+      "name": "build",
+      "args": [
+        "build"
+      ],
+      "exit": 0,
+      "started": "2026-11-07T03:31:20.531Z",
+      "ended": "2026-11-07T03:31:31.049Z",
+      "log": "reports/cardrpg-big2/validation/resume-source-fixtures-build.log",
+      "sha256": "447b5d4550a004c897852d6d761ce62838409a42eb197233c8f27ddf8f714d77",
+      "counts": []
+    },
+    {
+      "name": "e2e",
+      "args": [
+        "--filter",
+        "@taskbar-hero/web",
+        "test:e2e",
+        "--workers=4"
+      ],
+      "exit": 0,
+      "started": "2026-11-07T03:32:36.618Z",
+      "ended": "2026-11-07T03:34:45.995Z",
+      "log": "reports/cardrpg-big2/validation/resume-e2e-e2e.log",
+      "sha256": "89c1777bd82c8f344d8118f6ccad76edae47b122e5b28b43c9b37730dba656e7",
+      "counts": [
+        "  421 passed (2.1m)"
+      ]
+    },
+    {
+      "name": "tests",
+      "exit": 0,
+      "method": "All non-web packages pass in root retry; its sole web-suite failure was an omitted original help-strings.json fixture. Full web suite then passes after restoring the exact Git blob. Original failed log is retained.",
+      "logs": [
+        {
+          "path": "reports/cardrpg-big2/validation/resume-source-fixtures-tests.log",
+          "sha256": "4df552769e8a9ed6eab1052f4910e2c1a7cc80aec903148de3a28eb3bab71643"
+        },
+        {
+          "path": "reports/cardrpg-big2/validation/resume-web-fixture-retry.log",
+          "sha256": "11a7ffc4502f72b41c319440735e974f692307ed54dd6aef5ff4be92241f9c06"
+        }
+      ],
+      "packageTests": {
+        "web": 1730,
+        "gameRules": 1020,
+        "supabase": 581,
+        "chain": 32,
+        "auth": 24,
+        "apiContract": 16
+      },
+      "expectedFailures": 2,
+      "skipped": 11
+    }
+  ],
+  "sourceInputAudit": "resume-source-input-audit.json",
+  "originalFailedAttempts": [
+    "resume-source.json",
+    "resume-source-fixtures.json"
+  ]
+}

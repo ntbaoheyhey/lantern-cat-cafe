@@ -2,12 +2,12 @@
 PROMPT bytes=17237; SHA256=ed11ec911a0f53018e557a6b65d76f4b17189495a16f40dfa06333abe5c93e07
 REFERENCE: reports/cardrpg-big2/memory/PROMPT.md
 ## NOW
-ACTIVE after explicit user resume 2026-11-07. Own sparse worktree recovered from WIP5210857a; 106 historical untracked evidence files restored from backup7335e337. No old PID resumed. Runtime/assets/main-builder delta against accepted a106dfca is zero.
-Pinned standalone734d301c and accepted main9a5f6ebb hashes verified; all five accepted source-gate log hashes match. Dependencies restored with frozen lockfile. A resumed; shared timing lock enforced.
+ACTIVE after explicit user resume 2026-11-07. Own integrated branch; no runtime/assets/main-builder delta against accepted a106dfca. Main9a5f6ebb and standalone734d301c remain pinned.
+All18 standalone functional steps accepted. Integrated cold7/lifecycle20/audio6/flag-off complete; opening116.7ms still MISS. Matrix runner13873 waits exact A video-complete marker, then860cases in six-action lock batches.
 ## NEXT
-1. Diagnose default production readiness via DOM/screenshot; preserve failed heading locator evidence. Resume standalone natural-boss and corrected flag-off checks, then functional acceptance.
-2. Integrated runner resumes cold7, lifecycle20, audio6 and flag-off; only accepted9a5f6ebb supplies integrated claims. Long860matrix waits actual A video receipt. No gate pass inferred from harness completion.
-3. Recompute raw arrays, inspect evidence, update report/ledger/drafts with every remaining miss. No runtime change planned.
+1. Source revalidation accepted: type/demo-types/lint/build,1730web/1020rules/421E2E PASS; validation/resume-source-acceptance.json binds every log. Original missing-fixture failures retained.
+2. Let existing integrated runner finish860matrix; independently audit every array and inspect current per-unit/configuration hitch gates. Do not duplicate runner or infer PASS from completion.
+3. Update report/ledger/draft with raw evidence and every miss. Named WIP stays outside publishedPRs. No runtime changes planned.
 ## DONE
 Verified remote #340;created own worktree;exact prompt saved.
 ## GATES
@@ -135,3 +135,9 @@ Review runner PID6992: studio258 actions/3sizes, Focus actualpixels, packedRGBA,
 Retired waiting-only710historical queue14542: batchfilmstrips/uniqueness/cold7/fivegates already delivered; final860coversfullcurrent86actions×10configs. Partialhistoricalrawkept; no historical full-matrix claim. Acceptance verifier PID25305 (/tmp/cardrpg-big2-accept-review.py, session44224) waits6992 and releases only after all required steps/log hashes pass: runner's original source-step failure remains even though separate source acceptance passes. Preserve failure, bind acceptance; do not rerun passed checks unnecessarily.
 
 - 2026-11-07T03:09:51.112785+00:00: user resumed; recovery/source/hash audits passed. Diagnostic, boss and integrated runners launched with new PIDs and shared lock; read current process table before signalling. See /tmp/cardrpg-big2-{flag-off-diagnostic,boss-resume,integrated-resume}.log.
+
+- Resume checkpoint fb54fca7 is a local named WIP, not published. Integrated cold7 independently audits13125frames, native33.3/CPU4116.7ms/postinteractive116.7MISS; resizeToHost appears in worst-frame sampled stacks. Lifecycle20PASS:heap+1858320bytes,GPU0growth. Three naturalbosses/2160decodedframes/accountunchangedPASS;24samplesviewed,tiers remain improved. Flag-off diagnostic now proves first-run modal makes app heading inert; corrected harness clicks Start playing. Retry queued; no application change.
+
+- 2026-11-07T03:32Z: all18 standalone functional steps accepted via tools/cardrpg-big2/accept-review.mjs. Production startup11JS/3522500bytes,0three/models/errors on bothsourcevariants. Vite generateBundle hashes proved premature; final-output inventory fixes tool, old distribution retained. 3259source/input files compare to originalGit with0differences. Integratedaudio6/5286frames MAX33.3ms,enable226.5–316.7ms; no listeningclaim. Source fixture omissions restored verbatim; freshweb/E2E pending.
+
+- 2026-11-07T03:35Z: current source revalidation complete,1730web/1020rules(+2expectedfail/11skip)/421E2E PASS; all other packages pass, no app/assets/main-builder delta. Accepted log hashes in validation/resume-source-acceptance.json; original missing-fixture failures retained. Existing13873 alone waits A video complete then860matrix.

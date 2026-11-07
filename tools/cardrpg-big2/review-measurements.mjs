@@ -93,9 +93,9 @@ await step('flow', () => locked('tools/cardrpg-big/flow-measure.mjs', { BIG_FLOW
 await step('video', () => locked('tools/cardrpg-big2/record-gallery.mjs', { BIG_VIDEO_OUT: `${out}/video` }));
 await step('boss-battles', () => locked('tools/cardrpg-big2/record-boss-battles.mjs', { BIG_BOSS_VIDEO_OUT: `${out}/boss-battles` }));
 const flagOff = { BIG_FLAG_OFF_DIST: '/tmp/cardrpg-big2-review-flag-off-dist', BIG_FLAG_OFF_OUT: resolve(out, 'flag-off'), BIG_FLAG_OFF_HEAD: receipt.head };
-await step('flag-off-prepare', () => run([`${source}/tools/cardrpg-big2/flag-off-check.mjs`, '--prepare'], flagOff, source, true));
-// Keep the original archived production build; use the corrected measurement
-// harness explicitly. checks.json records both harness and build receipt hashes.
+await step('flag-off-prepare', () => run(['tools/cardrpg-big2/flag-off-check.mjs', '--prepare'], { ...flagOff, BIG_FLAG_OFF_SOURCE: source }, process.cwd(), true));
+// Rebuild only from the original archived source with the corrected final-output
+// inventory. Prior builds/failures remain archived by the step runner.
 await step('flag-off-browser', () => locked('tools/cardrpg-big2/flag-off-check.mjs', flagOff));
 if (failures.length) {
   console.error(JSON.stringify({ failures }));
