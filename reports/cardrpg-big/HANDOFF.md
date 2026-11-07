@@ -1,12 +1,13 @@
-# Lane A3 handoff
-REFERENCE: PROMPT-A3.md (current user brief), STATE.md, ../CARDRPG-BIG-REPORT.md
+# Resume Lane A4 — P7 evidence complete
+Workdir /Users/bao/taskbar-hero-cardrpg-a4; branch codex/cardrpg-a4-p7-2026-11-08. The Documents checkout is stale.
+Read RULES-A4.md, STATE-A4.md first20 lines and both latest sync outboxes. One agent, native/headless; no B/protected edits, main changes, merge or deployment.
 
-The explicit A3 brief superseded the older pause, preserved in HANDOFF-BEFORE-A3.md. Three requested tasks are implemented and audited; no runtime rerun or extra feature is queued by this brief.
-Worktree /Users/bao/taskbar-hero-cardrpg-big-delivery; branch codex/cardrpg-big-delivery-2026-11-07; draft #358. Source830f64f8. Main32a727afc547520fa65eb8dccf4453d1a78b8d5b3403f5a78d91d265f3c3a06d /26,120,329bytes. Do not rebuild merely to update reports.
-Task1 and2 checkpoints published0eb729b5/4d525a8a. Task3 five gates PASS1735web/1020rules/421E2E;10functional groups/204images/27layout samples; audit in a3/task3-fixed/audit.json. PackPID52172 exited. Historical partial/failed runs remain preserved; do not start another fullpack.
-Publication destinations: the delivery draft, A report/STATE/HANDOFF paths on ai/codex-ui-ledger, and append-only A-OUTBOX. Exact publication commit tips are recorded in that outbox. Preserve unrelated ledger files.
+All acceptance work is complete: five source gates, byte-identical offline rebuild, 204 accepted full-pack captures, 120 new screens, 16 journey and nine guide captures, 14 performance steps, evidence audit and scope. Source/video/receipt history is retained. Coordinators17925/23136 and sessions60441/45202 are finished; do not restart them or rerun P6 simulations/accepted screenshots.
 
-Baseline-v1 remains byte-identical9a5f6ebb/23,937,000bytes.91 L1 copies match original eb568fda; no B ancestry adoption. No A3 rules/protected changes. No subagents/model calls,860matrix,merge/deploy/main push; no B-worktree changes.
-Misses:24MB gate/32MB exception, startup+4bytes, historical coldCPU4>100ms; current invitation capture diagnostic183.4ms does not certify cold/cast. Portrait/action viewport checks do not place the separate3D viewer entirely above fold or certify all-roster crowns/art.
-B14:09 published L3 draft363/checkpoint9b1a04a4/runtime71da901f with allocation slicing but own coldCPU4 133.3ms/startup+44bytes misses. B rebased L1/L2 refs to914a991f/82cf6d5c; original L1 receipt and A copy stay unchanged. B L4 claimed. L2/L3 remain outside this A3 artifact; future cold/art/860 work belongs to B under the published shell bounds.
-Read PROMPT-A3/STATE and last40lines of sync ownership/outboxes before any new authorized phase. Never checkout/reset/stash main or modify B worktrees. Timing lock/ports5910–5913; kill only own PIDs.
+Published draft376 https://github.com/ntbaoheyhey/taskbar-hero/pull/376 at evidence head ed32af1883c5f690e9014a09a7ede7f046b86a16, stacked on draft375. No additional runtime task is queued by this delivery. Final reports/STATE/HANDOFF are mirrored to ai/codex-ui-ledger; exact source, ledger and sync publication tips are recorded by the append-only A-OUTBOX checkpoint. Read that checkpoint to verify publication rather than restarting work. Preserve unrelated ledger work.
+
+13 PASS/5 MISS target rows remain explicit. Four numeric balance misses plus startup/size are not fixed. Default app JS +552,596 bytes vs main340f88b9; one CPU observation/configuration is descriptive. Offline native max33.4ms/CPU4 max166.6ms. Earned day7 boss55.151s ends in crew defeat. No human playtest or victorious boss-finishing claim.
+
+Game docs/cardrpg3/index.html:26,215,694 bytes/SHA067d2062f6836a6d0bb9f6753ece1b2f3ca923688f241866a7f42806c8f7b6a1.
+Guide docs/cardrpg3/gameplay-v4.html:1,314,680 bytes/SHA9dca8fe648d6e101de89ffa02099249327615648989b1207f7e7183c6c0d0482.
+Reports a4/A4-GAMEPLAY-REPORT.md and CARDRPG-BIG-REPORT.md; authoritative p7/audit.json, p7/series.json, p7/performance/summary.json. Full source hashes remain exact; do not rebuild merely to update publication links.

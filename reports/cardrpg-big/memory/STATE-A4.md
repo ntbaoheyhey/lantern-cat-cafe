@@ -1,12 +1,13 @@
 # A4 living state
 ## NOW
-P6 published draft375 at1e8f4950; all six registered samples COMPLETE, original closure finished. Branchcodex/cardrpg-a4-p6-2026-11-08; ACTUAL WORKDIR /Users/bao/taskbar-hero-cardrpg-a4. Final report P6-BALANCE.md:13PASS/5MISS rows; numeric assertions3PASS/4FAIL retained. No balance promotion claim.
+P7 measurements and review complete on codex/cardrpg-a4-p7-2026-11-08. Actual workdir /Users/bao/taskbar-hero-cardrpg-a4. Runtime and offline game remain byte-identical to P6; draft376 is published at ed32af18. All coordinator processes exited.
 ## NEXT
-Mirror P6 STATE/report to ui-ledger and append sync CHECKPOINT, then claim P7, branch from this P6 tip, adopt22staged tools from /tmp/cardrpg-a4-p7/adoption-manifest.json after verifying hashes, commit source, run a4-p7-series.mjs once and resume failed groups only. P7 full204/new120/journey/guide/cold remains UNRUN. Original85496 is only finishing its final idle handoff;92853 closure exited.
+P7 implementation, measurements and draft publication are complete. No runtime task remains queued for this delivery. Publication destinations are the P7 branch, ai/codex-ui-ledger and append-only A-OUTBOX, which records exact publication tips. Future balance/startup fixes and B presentation integration are follow-up work; do not rerun accepted simulations/captures.
 ## DONE
-P1–P5 drafts367/369/370/372/373. P6 five source gates accepted in validation/a4-p6-accepted.json:1106rules/1735web/421E2E/type/lint/build; originals retained. All5x1timing receipts complete:ordinary21.340s/elite33.785s/boss57.546s,64.807s,58.680s. Boss outcomes all enemy; timings are to crew defeat, not victorious finish.
+G0/R/D/P1–P6 drafts364/365/366/367/369/370/372/373/375. P7 five source gates PASS: type/lint/build, 1,106 rules (+2 expected failures/11 skips), 1,735 web, 421 E2E. Accepted 204 full-pack +120 new-screen +16 journey +9 guide captures reviewed; source/log/artifact hashes audited.
 ## GATES
-3625cells×500seeds/sample registered; train and heldout each COMPLETE1,812,500outcomes; raw sample-audit.json PASS on all3625cells/sample and38source hashes. Known pilot88ppoutlier/cat/set misses remain provisional. Artifact unchanged while samples run. P7 full204pack UNRUN; startup/current-main cold comparison pending. No B adoption or protected edits.
+13 PASS /5 MISS target rows retained. MISS: fourth-slot gain93.4pp; sets67.03–79.60%; cats31.38–64.66%; crew47.73pp; artifact/startup. Offline26,215,694 bytes/SHA067d2062; native max33.4ms, CPU4 max166.6ms. Default JS +552,596 bytes vs main340f88b9; CPU observations also MISS (one observation/configuration). Day7 boss55.151s is crew defeat, not a victorious finish.
+Guide1,314,680 bytes/SHA9dca8fe6; mincontrast7.211. Baseline-v1 and13 historic sims exact, OFF8250routes digest47477251 unchanged. No B adoption/protected changes/merge/deploy. P1/P3/P4 presentation requests remain open.
 ## DECISIONS (append-only)
 - Keep the one-agent constraint, automatic battles, strict A/B ownership, and isolated worktree.
 ## MEASUREMENTS
@@ -260,3 +261,22 @@ P1–P5 drafts367/369/370/372/373. P6 five source gates accepted in validation/a
 
 ## P6 published
 - Draft375 https://github.com/ntbaoheyhey/taskbar-hero/pull/375 at1e8f4950, stacked373.13PASS/5MISS measured rows. No merge/deploy; P7next.
+
+## P7 integration boundary
+- P6draft375 source1e8f4950/publication48b470ed, ledger00a37224, syncP6CHECKPOINT/P7CLAIMeefddfa5 allpushed.22selectedstagedfiles hash-verified andadopted; no runtime sourcechanges.
+- Sharedlock and30secondbrowserhandoffs;120seconds afterheavysuites. Full204/new120/journey/cold stillUNRUN until original coordinator starts. No B/protectedpaths touched.
+
+## P7 source gates in progress
+- Original coordinator17925 / session60441, childvalidate17949. Type/lint andentireunit suitePASS; P7actual rules1106passed/2expectedfail/11skipped,web1735passed. P6original18skipped andafter-relocation11skipped receipts bothretained; do not rewrite historical logs.
+- Heavytest handoff120seconds beforebuild/E2E; browserfullpacknotstarted. Source760d0c5a pushed, onlyreport recoverypointersdirty. No duplicate jobs.
+
+## P7 five source gates complete
+- Original attempt1 completed all5gatesPASS: type/lint/build;1106rules/2expectedfail/11skipped;1735web;421E2E singlecleanrun. Receipt validation/a4-p7-attempt-1.json andall5original loghashes independently verified.
+- Coordinator17925/session60441 continues its final120secondhandoff beforeofflinebuild/fullpack. No retries or duplicatejobs; runtime rules andHTML unchanged.
+
+## 2026-11-07T23:20:50.236431+00:00 P7 evidence closure
+- Existing coordinator completed all remaining performance, audit, report and scope steps with exit0. Gallery alone retried for missing Python; original failure retained. No successful group or simulation repeated.
+- Final publication preserves 13PASS/5MISS and seven offline cold observations; the default-app/main comparison is separate. See a4/A4-GAMEPLAY-REPORT.md and p7/performance/summary.json.
+
+## P7 published
+- Draft376 https://github.com/ntbaoheyhey/taskbar-hero/pull/376 at evidence head ed32af1883c5f690e9014a09a7ede7f046b86a16, stacked on P6 draft375. Final publication links are report-only; game and guide hashes unchanged.

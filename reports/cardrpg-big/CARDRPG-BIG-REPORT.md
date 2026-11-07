@@ -1,43 +1,62 @@
-Đã nhận chân dung L1 Mochi, Soot, Clover qua adapter đủ cặp 1×/2×; thiếu cặp sẽ dùng hình cũ.\
-Nav, HUD và Look A/B hiện trong trận; sân chiếm 74,65–81,21% vùng nội dung ở ba kích thước.\
-Đã đưa nút chính lên cùng chân dung ở Collection, Invitations, Team, Equipment, Prepare và Result.\
-Cả ba task đạt năm cổng; Task 3 đạt 10 nhóm chức năng, đủ 204 ảnh đúng hash và 27/27 mẫu bố cục.\
-Bản bàn giao giữ PR draft; dung lượng 24 MB, startup +4 byte và cold CPU4 >100 ms vẫn chưa đạt.
+Bản thử nghiệm có đội hình, chiến thuật trước trận, trang bị và vật phẩm dùng giữa các trận.
+Cafe, nhiệm vụ, bộ sưu tập và đổi thưởng bằng dấu mời đã thành các vòng chơi có phần thưởng.
+P6 đã đo train/heldout tách biệt; các mục cân bằng chưa đạt vẫn ghi MISS, không coi kiểm thử chức năng là cân bằng đạt.
+Demo chạy offline; kết quả browser và bảng số liệu bên dưới gắn với đúng SHA của bản thử nghiệm.
+Đây là bản nháp để đánh giá; còn lệch cân bằng, chi phí tải trang và yêu cầu trình diễn cho Lane B.
 
-# Lane A3 · 7/11/2026
-REFERENCE: memory/PROMPT-A3.md; a3/task1/CHECKPOINT.md; a3/task2-fixed/CHECKPOINT.md; a3/task3-fixed/CHECKPOINT.md
+# A4 gameplay delivery
+REFERENCE: [Gameplay v4](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/cardrpg-a4-p7-2026-11-08/docs/design/cardrpg/GAMEPLAY-V4.md); [research](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/cardrpg-a4-p7-2026-11-08/docs/design/cardrpg/RESEARCH-GAMEPLAY-V4.md); [NFT boundary](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/cardrpg-a4-p7-2026-11-08/docs/design/cardrpg/NFT-VALUE-SPEC.md).
 
-[Demo HTML](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/cardrpg-big-delivery-2026-11-07/docs/cardrpg3/index.html) · đường dẫn: `/Users/bao/taskbar-hero-cardrpg-big-delivery/docs/cardrpg3/index.html`.
-Main HTML SHA-256: `32a727afc547520fa65eb8dccf4453d1a78b8d5b3403f5a78d91d265f3c3a06d` · **26.120.329 byte**.
-[Draft #358](https://github.com/ntbaoheyhey/taskbar-hero/pull/358). L1 [#361](https://github.com/ntbaoheyhey/taskbar-hero/pull/361) được sao chép 91 file đúng byte, không lấy ancestry để giữ draft B; L2 [#362](https://github.com/ntbaoheyhey/taskbar-hero/pull/362) vẫn riêng, chưa nhận vào bản này.
-
-| Việc | Trước → sau | Bằng chứng |
+| Brief | What the player sees | Before → after / 10 |
 |---|---|---|
-| 1 · L1 | Portrait cũ → cặp 256×320 / 512×640 ở chín bề mặt, bật/tắt LOOK có fallback | [Checkpoint/ảnh](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/cardrpg-big-delivery-2026-11-07/reports/cardrpg-big/a3/task1/CHECKPOINT.md); 3 kích thước × DPR1/2, 24 đổi LOOK giữ state; năm cổng đạt |
-| 2 · Shell | Nav/HUD/Look bị ẩn → luôn hiện; chỉ khóa điều hướng làm gián đoạn trận | [Ảnh trước/sau](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/cardrpg-big-delivery-2026-11-07/reports/cardrpg-big/a3/task2-fixed/shell-contact.png); 7 ca shell/practice/route đạt; năm cổng đạt |
-| 3 · Màn hình đầu | Level up/Begin/Equip nằm sâu bên dưới; Invitations thẻ sau chữ → nút cạnh nội dung, thẻ lớn hơn, phần giải thích gọn | [1024](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/cardrpg-big-delivery-2026-11-07/reports/cardrpg-big/a3/task3-fixed/layout-1024.png) · [1280](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/cardrpg-big-delivery-2026-11-07/reports/cardrpg-big/a3/task3-fixed/layout-1280.png); 27/27 màn ở ba kích thước đạt nút/chân dung trong viewport đầu |
+| Gameplay before battle | Prepare: rows, counted crew jobs, standing plan, opponent signatures; Result: observed causes | 5–6 → 7 |
+| Complete equipment/items | 128 templates, 8 sets, utility compare, exact 3 shifts, pantry, 240 shelf, capacity-safe transactions | 6–8 → 8 |
+| Balance and rarity | Explicit rarity effects and source odds; heldout outliers remain visible | 6.5 → 6.5 |
+| Invitations and choice | Earned banners, conditional odds, pity, duplicate shards, 60-mark choice | 8–9 → 9 |
+| Scarcity and future NFT value | Replayable local issuance, effort consumption, cap races, zero combat power; scope labelled local | 4 → 7 |
+| Features beyond battle | Elapsed cafe service, daily board, persistent journal and one lesson at a time | 5–7 → 8 |
+| Pacing and bosses | Gear-independent bands, half-HP phase and linked-add retirement; actual x1 outcomes reported | 6.5 → 7 |
+Scores are this agent’s sequential design assessment, not a human playtest or measured retention. Existing G0 surface scores supply the before ranges; no higher balance score is claimed.
 
-Shell `.dp-app` công bố `--dp-shell-left/top/width/height` theo CSS px; B đọc trực tiếp để đặt Battle trong `.cr-content`.
-1024×600: `160/87.09375/864/512.90625`; 1280×720: `184/91.09375/1096/628.90625`; 1440×900: `184/91.09375/1256/808.90625`.
-Tỷ lệ sân tương ứng **74,65% / 75,83% / 81,21%**, không overlap/overflow trong Task 2; trận vẫn tự động hoàn toàn.
+## Measured targets
+| Target | Before | After | Gate |
+|---|---|---|---|
+| Adjacent tiers ≥44/48, zero reversals | 26 positive / 22 ties / 0 reversals (50 seeds/cell) | 46/48 gain≥2pp; 0 reversals | PASS |
+| Intended bands: ≥15pp spread; no saturation | Level6 saturation; max50 dominated | 33/33 bands; minimum spread 16.80pp | PASS |
+| One piece ≤12pp; utility-aware share ≤10% | +34pp heldout; old displayed score omitted utility | Worst 93.40pp (hearthloom-charm-legendary, mochi, chapter3); share≤4.80% | MISS |
+| Every set 35–75% and leads a common situation | 8–92% heldout | 67.03–79.60% | MISS |
+| Every cat 55–75% and a top pick | 49.15–83.76% heldout | 31.38–64.66% | MISS |
+| Coherent crew +10–25pp at matched power | Not measured under v4 protocol | 47.73pp | MISS |
+| Matched-power tolerance ±2% | Not measured under v4 protocol | 0.99438–1.00569 ratio | PASS |
+| Wall time ordinary, chapter1 | 52.477–63.705s | 21.340s / party | PASS |
+| Wall time elite, chapter2 | Not measured at G0 | 33.785s / party | PASS |
+| Wall time boss, chapter1 | 177.346s (different earned day7 fixture) | 57.546s / enemy | PASS |
+| Wall time boss, chapter2 | Not measured at G0 | 64.807s / enemy | PASS |
+| Wall time boss, chapter3 | Not measured at G0 | 58.680s / enemy | PASS |
+| 45day heavy/casual ≤3×: every currency and paid draws | Max2.1948×; 90 accounts | paidPulls 1.0000×; fish 1.2069×; threads 1.4098×; stamps 1.0000×; essence 2.7260× | PASS |
+| Invitations: conditional CDF deviation ≤1pp | P4 max0.640337pp | 30,000accounts /1.8Mdraws; max0.640337pp | PASS |
+| Collectible paired win gain ≤3pp | Local counters; no enforcement layer | 500 races; 6000 encounters; 0pp | PASS |
+| OFF behavior exact | Frozen G0 digest47477251 | 8,250 routes exact47477251 | PASS |
+| Source gates | G0 passed | Type/lint/build PASS; 1,106 rules (+2 expected failures/11 skipped), 1,735 web, 421 E2E; numeric tests separate | PASS |
+| Offline artifact and startup | G0 A3 26,120,329 bytes | 26,215,694 bytes; +95,365 vs G0; P7 default JS +552,596 bytes vs main; offline CPU4 max 166.6 ms | MISS |
 
-Task 3: **năm cổng mới đạt** — 1.735 web / 1.020 rules (+2 expected failures/11 skips), 421 E2E; [log và retry](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/cardrpg-big-delivery-2026-11-07/reports/cardrpg-big/validation/a3-task3-fixed.json), [hình học](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/cardrpg-big-delivery-2026-11-07/reports/cardrpg-big/a3/task3-fixed/functional.json), [toàn bộ chức năng](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/cardrpg-big-delivery-2026-11-07/reports/cardrpg-big/a3/task3-pack/functional.json), [audit](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/cardrpg-big-delivery-2026-11-07/reports/cardrpg-big/a3/task3-fixed/audit.json).
-Ảnh trước/sau là Playwright thật; 27/27 màn đạt, 2.631 vùng chữ có 0 lỗi active (min 5,589:1), 9 vùng disabled báo riêng. Collection đo portrait trong grid, Equipment đo portrait tiêu đề; khung 3D riêng còn dưới fold ở màn thấp. Đã sửa thêm đáy thẻ Team602,53→588,53px; lượt pack cũ dừng sau6nhóm, giữ nguyên chứng cứ. Gallery cũ thiếu Python đã retry đạt.
-Unit retry sửa assertion câu chữ cũ; E2E idle-clock cũ timeout, retry riêng và toàn bộ421 đều đạt, không sửa logic. Baseline-v1 giữ nguyên **23.937.000 byte**, SHA-256 `9a5f6ebbb04af56c19f11cf43cf2763b35df2bde3b7a8dcd943060e878d793d3`.
-Phạm vi A3: không đổi rules/config/contracts/Supabase/wallet/SIWE/Relic/Fuji; không sửa file B ngoài bản sao L1 đã công bố. Không merge, deploy hay push main.
+Residual item map: [31fourth-slot outliers](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/cardrpg-a4-p7-2026-11-08/reports/cardrpg-big/a4/P6-RESIDUALS.md). Full protocol, per-seed outcomes, Wilson intervals, floor cells, utility-score residuals, earned-day censoring and retained failures: [P6 balance](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/cardrpg-a4-p7-2026-11-08/reports/cardrpg-big/a4/P6-BALANCE.md). 3,625 cells × 500 seeds for each of train1–500 and heldout10001–10500; source fixed before heldout. G0 uses a different historical fixture, not a paired causal comparison.
 
-| Cổng chưa đạt / chưa đo lại | Kết quả và giới hạn |
-|---|---|
-| HTML ≤24 MB | Vượt **2.120.329 byte**; dùng [ngoại lệ tối đa 32 MB gắn hash/ảnh](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/cardrpg-big-delivery-2026-11-07/reports/cardrpg-big/a3/task3-fixed/size-exception.json), không suy ra tải nhanh |
-| Startup bằng đúng baseline | T1: 11 JS / 3.522.504 byte / 686 module, **+4 byte**; 0 Three/model/lỗi; chưa coi là parity |
-| Cold CPU4 MAX≤100 ms | Baseline116,7 ms, main trước L1 116,5 ms; B L1 standalone133,3 ms. Chưa đo cold main mới; yêu cầu L3 còn mở |
-| Hitch Invitations | Task3 CPU4 MAX183,4 ms/p95 16,8 ms,17 frame>25 ms/7>50 ms; L0 200/T1 166,7 ms. Các ca có chụp ảnh vượt100 ms, không thay phép đo cold/cast chuẩn |
-| Toàn roster/cast/performance mới | **860 ca chưa chạy**, chỉ B chạy một lần ở LOOK cuối; số cast L1 của B không phải chứng nhận main này |
-| Hình ảnh/độ nét tổng thể | Chưa chấm lại art; lịch sử còn8/10 mục tiêu nét, body band24–30%/margin A, VFX che mặt, sân trống/Soot tối và UI chưa đồng nhất;9/11 tự chấm dưới8,5 |
-| Cân bằng/nhịp cũ | Boss fixture170,4 s ngoài45–90 s;22/48 tier hòa, level6 bão hòa, set/mèo chênh, một món +34pp; A3 không đổi cơ chế/luật |
-| Chứng cứ khác | Âm thanh chưa nghe/chấm;384 socket ca model mới chưa đo lại; collectible global cap chỉ là thiết kế, chưa enforcement |
+## Demo and validation
+- [Offline game](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/cardrpg-a4-p7-2026-11-08/docs/cardrpg3/index.html): 26,215,694 bytes; SHA-256 `067d2062f6836a6d0bb9f6753ece1b2f3ca923688f241866a7f42806c8f7b6a1`.
+- [Offline guide](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/cardrpg-a4-p7-2026-11-08/docs/cardrpg3/gameplay-v4.html): 1,314,680 bytes; SHA-256 `9dca8fe648d6e101de89ffa02099249327615648989b1207f7e7183c6c0d0482`.
+- P7 source gates / full 204 pack: PASS; 204 captures in ten groups plus 120 new-screen captures at three sizes/two themes, exact source and artifact hashes; [audit](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/cardrpg-a4-p7-2026-11-08/reports/cardrpg-big/a4/p7/audit.json).
+- [Real-click journey](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/cardrpg-a4-p7-2026-11-08/reports/cardrpg-big/a4/p7/journey/checks.json): 16 captures; fresh save, compressed first hour, public-command day7 import, boss, invitations, equipment, local ledger and save round-trip. [Contact sheet](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/cardrpg-a4-p7-2026-11-08/reports/cardrpg-big/a4/p7/journey/contact.png).
+- Guide readability: three desktop widths, keyboard entry and embedded image decode PASS; minimum sampled contrast 7.211:1.
+- Research adds 46 source records, 9 games, 6 papers and 3 talk abstracts. Sources remain in research files; no reference art is imported. No independent human playtest is claimed.
+- [Startup comparison](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/cardrpg-a4-p7-2026-11-08/reports/cardrpg-big/a4/p7/performance/summary.json): default app vs main340f88b9; JS byte deltas 1280/CPU1: +552596, 1280/CPU4: +552596, 1440/CPU1: +552596. CPU observations 1280/CPU1: 0.475→0.476s (MISS), 1280/CPU4: 0.651→0.677s (MISS), 1440/CPU1: 0.485→0.490s (MISS). One cold observation/configuration; no statistical guarantee.
+- Offline cold separately: native MAX 33.4ms; CPU4 MAX 166.6ms. Current main has no equivalent offline cardrpg artifact; the default app is a separate comparison. File size above24MB uses the documented32MB preview exception, not a startup PASS.
+- Earned day7 boss 55.151s at x1, outcome enemy. Fixed P6 benchmarks separately report victories or defeats; defeat duration does not prove victorious finishing time.
 
-Chi tiết lịch sử và mọi số đo cũ giữ tại [báo cáo trước A3](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/cardrpg-big-delivery-2026-11-07/reports/cardrpg-big/a3/REPORT-BEFORE-A3.md), [F7](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/cardrpg-big-delivery-2026-11-07/reports/cardrpg-big/integration/F7-GATES.md), [review](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/cardrpg-big-delivery-2026-11-07/reports/cardrpg-big/FRESH-EYES.md); không nhận các phép đo đó là chạy lại trên main mới.
-B đã công bố [L3 draft#363](https://github.com/ntbaoheyhey/taskbar-hero/pull/363), checkpoint9b1a04a4/runtime71da901f, đã tách allocation; cold CPU4 vẫn133,3 ms và startup+44 byte trên artifact riêng, chưa nhận vào A. Yêu cầu còn: giảm peak cold, giữ shell bounds khi tiếp tục Battle/HUD; sân/palette L2–L3 cần checkpoint tích hợp riêng.
-Yêu cầu art còn cho B: L6 icons/frames và các portrait tiếp theo theo manifest cặp đủ; kiểm tra crown của roster/reveal còn lại; xử lý Soot tối/độ nét/VFX/camera, công bố rubric và ma trận860 khi LOOK sẵn sàng.
-Ledger: [bản sao báo cáo](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-ui-ledger/reports/cardrpg-big/CARDRPG-BIG-REPORT.md), STATE và HANDOFF trên `ai/codex-ui-ledger`; sync chỉ append A-OUTBOX.
+## Open work and delivery boundaries
+- Numeric MISS rows above remain blockers to promotion. Max-enhancement +12 combat balance is unverified; +12 checks cover displayed share only. Historical timing/functional receipts are never relabelled as this build’s evidence.
+- Lane B requests remain open: P1 fixed-delay/cooldown + crew/row/plan cues, P3 phase ≤400ms / finish ≤800ms within existing action budgets, P4 earned-reveal receipts. Schema: events-v4.ts; published P1/P3/P4 fixtures. A provides readable fallback; no B checkpoint adopted.
+- Native/headless, one agent, shared timing lock and handoffs. No protected/B file changes; baseline-v1 and 13 historical sim files exact. Gameplay flag OFF retains 8,250-route digest47477251. No merge, deployment or on-chain issuance.
+- Decisions for the user: review residual balance and preview; promotion to live and any future authoritative/on-chain issuance remain separate decisions.
+- Earlier A3 delivery: [historical report](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/cardrpg-a4-p7-2026-11-08/reports/cardrpg-big/a4/REPORT-BEFORE-A4.md).
+- Draft stack: [G0 #364](https://github.com/ntbaoheyhey/taskbar-hero/pull/364), [R #365](https://github.com/ntbaoheyhey/taskbar-hero/pull/365), [D #366](https://github.com/ntbaoheyhey/taskbar-hero/pull/366), [P1 #367](https://github.com/ntbaoheyhey/taskbar-hero/pull/367), [P2 #369](https://github.com/ntbaoheyhey/taskbar-hero/pull/369), [P3 #370](https://github.com/ntbaoheyhey/taskbar-hero/pull/370), [P4 #372](https://github.com/ntbaoheyhey/taskbar-hero/pull/372), [P5 #373](https://github.com/ntbaoheyhey/taskbar-hero/pull/373), [P6 #375](https://github.com/ntbaoheyhey/taskbar-hero/pull/375), [P7 #376](https://github.com/ntbaoheyhey/taskbar-hero/pull/376).
