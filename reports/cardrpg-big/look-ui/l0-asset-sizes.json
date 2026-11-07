@@ -1,0 +1,85 @@
+{
+  "artifact": "/tmp/cardrpg-a-look-l0-contrastfix/index.html",
+  "sha256": "f1234525fb744d0b318c2ea65727256cfb71fc6cc31c2380cf6fac93941a0f56",
+  "bytes": 24026508,
+  "method": "Classify every embedded asset by original manifest key/MIME; decode base64+gzip. CSS tiles belong to JS/CSS payload and are listed separately.",
+  "groups": {
+    "Portraits": {
+      "count": 41,
+      "decodedBytes": 2976280,
+      "gzipBytes": 2916325,
+      "base64Bytes": 3888484
+    },
+    "3D models": {
+      "count": 25,
+      "decodedBytes": 15650856,
+      "gzipBytes": 6433548,
+      "base64Bytes": 8578096
+    },
+    "Other art": {
+      "count": 71,
+      "decodedBytes": 6081366,
+      "gzipBytes": 6034564,
+      "base64Bytes": 8046172
+    },
+    "Icons": {
+      "count": 52,
+      "decodedBytes": 19256,
+      "gzipBytes": 15153,
+      "base64Bytes": 20280
+    }
+  },
+  "assetCount": 189,
+  "baselineSource": "b092ed0c:docs/cardrpg3/build.json",
+  "changedManifestSourcesVersusBaseline": [],
+  "tiles": [
+    {
+      "path": "assets/art/cardrpg-look-meta/paper.png",
+      "width": 256,
+      "height": 256,
+      "bytes": 29802,
+      "sha256": "cd8597c4f84e5c49db759fd3a062c39000855cf4ad8984b04bf007fcb7e9d56f",
+      "alphaMax": 18,
+      "alphaMean": 3.65673828125,
+      "rgbaRoundTripExact": true,
+      "seam": {
+        "x": 1.1875,
+        "y": 1.578125,
+        "ordinaryX": 1.375765931372549,
+        "ordinaryY": 1.7201899509803922
+      }
+    },
+    {
+      "path": "assets/art/cardrpg-look-meta/felt.png",
+      "width": 256,
+      "height": 256,
+      "bytes": 37339,
+      "sha256": "70dd569305db666c57b1757b305cf829dd5d80a81e853b727e1da1cf42648389",
+      "alphaMax": 16,
+      "alphaMean": 2.9468841552734375,
+      "rgbaRoundTripExact": true,
+      "seam": {
+        "x": 2.97265625,
+        "y": 2.44921875,
+        "ordinaryX": 2.7996476715686276,
+        "ordinaryY": 2.8215839460784315
+      }
+    },
+    {
+      "path": "assets/art/cardrpg-look-meta/grain.png",
+      "width": 256,
+      "height": 256,
+      "bytes": 38511,
+      "sha256": "8457b70a12827ddb3ee7e5b5d7507a3dc4283fda2d985001f0de107ec80f9936",
+      "alphaMax": 10,
+      "alphaMean": 2.835601806640625,
+      "rgbaRoundTripExact": true,
+      "seam": {
+        "x": 3.81640625,
+        "y": 3.52734375,
+        "ordinaryX": 3.5324908088235296,
+        "ordinaryY": 3.544776348039216
+      }
+    }
+  ]
+}

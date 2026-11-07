@@ -1,0 +1,19 @@
+{"lock":"acquired","lane":"A","pid":62799,"startedAt":"2026-11-07T04:47:40.935Z","task":"A LOOK L0 web units retry after sparse fixture restore"}
+
+> @taskbar-hero/web@0.0.0 test /Users/bao/taskbar-hero-cardrpg-big-delivery/apps/web
+> vitest run --maxWorkers=2
+
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-big-delivery/apps/web
+
+
+ Test Files  174 passed (174)
+      Tests  1731 passed (1731)
+   Start at  11:50:19
+   Duration  59.27s (environment 48%, tests 39%, import 11%, transform 2%)
+
+Environment  jsdom was created 174 times · 50.85s total, 48% of tracked time
+             create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+             learn more: https://vitest.dev/guide/improving-performance#test-environments
+
+{"lock":"released","pid":62799,"task":"A LOOK L0 web units retry after sparse fixture restore"}

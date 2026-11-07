@@ -1,0 +1,19 @@
+{
+  "baselineSha256": "9a5f6ebbb04af56c19f11cf43cf2763b35df2bde3b7a8dcd943060e878d793d3",
+  "candidate": {
+    "sha256": "a1ae7ea4177e056eebba62561d6e9f97b438e5f5a68622ece26bd995a21ed010",
+    "bytes": 24026376,
+    "evidenceRows": 93,
+    "evidenceFiles": 160,
+    "source": "f3091a44fd5d04a34bafcc1f272263472aeadb67",
+    "lookV2": true,
+    "accepted": false
+  },
+  "rejected": [
+    {
+      "sha256": "1419b72e7a1b1f72fed2607d13101ff2f7c6397e84c58b0af8780f817ce1b9c1",
+      "bytes": 21568652,
+      "reason": "Sparse checkout silently omitted81comparisonrows;build now guards93rows/160files. Runtime toggle pilot valid only for its recorded artifact."
+    }
+  ]
+}

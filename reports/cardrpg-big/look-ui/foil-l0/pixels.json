@@ -1,0 +1,20 @@
+{
+  "sha256": "f1234525fb744d0b318c2ea65727256cfb71fc6cc31c2380cf6fac93941a0f56",
+  "method": "Exact pixel differences between actual rendered card crops, not a synthetic overlay. Animated mode sampled 2.25s apart; reduced motion should be identical.",
+  "rows": [
+    {
+      "mode": "animated",
+      "pixels": 58647,
+      "changedPixels": 25291,
+      "maxChannelDifference": 64,
+      "meanAbsoluteDifference": 8.588157393671743
+    },
+    {
+      "mode": "reduced",
+      "pixels": 58647,
+      "changedPixels": 0,
+      "maxChannelDifference": 0,
+      "meanAbsoluteDifference": 0.0
+    }
+  ]
+}

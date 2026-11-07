@@ -1,0 +1,56 @@
+{
+  "sha256": "f1234525fb744d0b318c2ea65727256cfb71fc6cc31c2380cf6fac93941a0f56",
+  "bytes": 24026508,
+  "defaultLimitBytes": 24000000,
+  "limitBytes": 32000000,
+  "baselineBytes": 23937000,
+  "deltaBytes": 89508,
+  "deltaPercent": 0.37393157037222124,
+  "promptReference": "reports/cardrpg-look/memory/PROMPT.md at f3091a44, section2 compression bullet and section6 size gate",
+  "reason": "Three original seamless paper/felt/grain tiles and token-derived rarity surfaces make the meta chrome use the published LOOK palette/material language. Exact-hash real toggle captures show the change. The increase is 89508 bytes (0.374%); baseline assets and all 93 comparisons/160 images are retained. This adopts the explicit LOOK exception; the original24MB target remains missed. No art-quality or loading-performance pass is inferred.",
+  "beforeAfter": [
+    {
+      "path": "reports/cardrpg-big/look-ui/l0-reviewfix/1024/team-off.png",
+      "sha256": "249d75bc94d0e8410e733c32d27ad25a06c92084a617932b90157f7ea1ef390d",
+      "screen": "team",
+      "mode": "off",
+      "artifactSha256": "f1234525fb744d0b318c2ea65727256cfb71fc6cc31c2380cf6fac93941a0f56"
+    },
+    {
+      "path": "reports/cardrpg-big/look-ui/l0-reviewfix/1024/team-on.png",
+      "sha256": "4225fdd14a8013865b21612de774fd61a2352392682895111cec767a4911ff6d",
+      "screen": "team",
+      "mode": "on",
+      "artifactSha256": "f1234525fb744d0b318c2ea65727256cfb71fc6cc31c2380cf6fac93941a0f56"
+    },
+    {
+      "path": "reports/cardrpg-big/look-ui/l0-reviewfix/1024/collection-off.png",
+      "sha256": "f0255aa5fb9b58656d054ee92731ddbb1a9a96c81b575e51efcd5bfc4f4df3bf",
+      "screen": "collection",
+      "mode": "off",
+      "artifactSha256": "f1234525fb744d0b318c2ea65727256cfb71fc6cc31c2380cf6fac93941a0f56"
+    },
+    {
+      "path": "reports/cardrpg-big/look-ui/l0-reviewfix/1024/collection-on.png",
+      "sha256": "f2e958789bba5a8d6ab1cfdbe1ef58f012ed25389c183bfc609aff6d64ec7540",
+      "screen": "collection",
+      "mode": "on",
+      "artifactSha256": "f1234525fb744d0b318c2ea65727256cfb71fc6cc31c2380cf6fac93941a0f56"
+    },
+    {
+      "path": "reports/cardrpg-big/look-ui/l0-reviewfix/1024/equipment-off.png",
+      "sha256": "613b862c1ecccf5a13970b2a87d0cf15848ee62e6f749bf29a6ba3bd1d235e42",
+      "screen": "equipment",
+      "mode": "off",
+      "artifactSha256": "f1234525fb744d0b318c2ea65727256cfb71fc6cc31c2380cf6fac93941a0f56"
+    },
+    {
+      "path": "reports/cardrpg-big/look-ui/l0-reviewfix/1024/equipment-on.png",
+      "sha256": "888dff3250e479533cfc483f0281c1d9d0dd376c9baca6f269d0e6cfc970ef26",
+      "screen": "equipment",
+      "mode": "on",
+      "artifactSha256": "f1234525fb744d0b318c2ea65727256cfb71fc6cc31c2380cf6fac93941a0f56"
+    }
+  ],
+  "loadingPerformance": "Fresh controlled cold-open and slice first/repeat measurements remain LOOK B-owned after A accepts this checkpoint; historical timings are not relabelled."
+}

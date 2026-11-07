@@ -1,0 +1,50 @@
+{
+  "artifact": "/tmp/cardrpg-a-look-l0-contrastfix/index.html",
+  "sha256": "f1234525fb744d0b318c2ea65727256cfb71fc6cc31c2380cf6fac93941a0f56",
+  "method": "Actual UI unlock fixture and legendary filter, two rendered card crops 2.25 seconds apart; repeat with system reduced motion. Screenshot deltas are visual evidence, not timing measurements.",
+  "errors": [],
+  "requests": [],
+  "rows": [
+    {
+      "mode": "animated",
+      "style": {
+        "opacity": "0.28",
+        "animation": "dp-look-foil",
+        "duration": "9s",
+        "zIndex": "0",
+        "portraitZ": "1"
+      },
+      "captures": [
+        {
+          "path": "reports/cardrpg-big/look-ui/foil-l0/animated-0.png",
+          "sha256": "6392d0e906345ccfb82218c0f13c5a6691a13499adba4ca575dc5c4287e236a2"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/foil-l0/animated-1.png",
+          "sha256": "9aa33584441ac8e60b4e756af3aa7eafa37362983039aaf56364343657f144e9"
+        }
+      ]
+    },
+    {
+      "mode": "reduced",
+      "style": {
+        "opacity": "0.28",
+        "animation": "none",
+        "duration": "0s",
+        "zIndex": "0",
+        "portraitZ": "1"
+      },
+      "captures": [
+        {
+          "path": "reports/cardrpg-big/look-ui/foil-l0/reduced-0.png",
+          "sha256": "0e6daa68e6a74cde60cef4a30ace1f6d1e663f68ee212b73007fd5960dc543d5"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/foil-l0/reduced-1.png",
+          "sha256": "0e6daa68e6a74cde60cef4a30ace1f6d1e663f68ee212b73007fd5960dc543d5"
+        }
+      ]
+    }
+  ],
+  "accountUnchanged": true
+}
