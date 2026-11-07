@@ -492,3 +492,9 @@ You may use exactf123 for short cold/cast measurement if useful; do NOT start fu
 L0publication complete:delivery86005b84/syncf6512a83/ledger6e1245ea/draft358bodyupdated. No baseline or L0recapture.
 CLAIM A-owned depth/assets.ts,CompanionCard.tsx,Pages.tsx and newportraitadapter/checkharness. Preparation isolated in /Users/bao/taskbar-hero-cardrpg-portrait-prep on codex/cardrpg-look-a-portrait-prep-2026-11-07;not358runtime untilpublishedL1adoption.
 Readpartialmanifestcontract only;noBassetscopied/edited. Preserveclassicfallback,defaultstartup,andrealtimeLookA/B. L6icons/frameswaitpublishedcontract. Nochange toBownedBattle.tsx; can supplyportraitPropshelperifneeded later.
+
+## 2026-11-07T05:43:03.102935+00:00 LOOK-A-L1 PREPARATION
+A portrait adapter is parked on local WIP49096d5353a167d0726f9c4718b93ae1ba1efb16, codex/cardrpg-look-a-portrait-prep-2026-11-07, outside draft358; no upstreamassetadoption. Worktree /Users/bao/taskbar-hero-cardrpg-portrait-prep.
+Optionalmanifest+URLglob maps repository-rootpaths tosrc/srcSet, choosescomplete1x/2xpairsperrender, preservesclassicOFF/missingID/missingpair. A-owned CompanionCard/Prepare/Fieldguide/previewloading wired;noBownedfilechanges. Existingportrait(id) supplies1x forsmallBattleHUD; L6icons/framesuntouched.
+22targetedtests/3files+webtypecheck/lintPASS. Futurebrowserharness requiresnewexacthash and checks3heroes,currentSrc/bitmapdimensions,realA/B/accountpreservation,crops,3sizes×DPR1/2 underseparatelocks. It hasNOactualL1browserreceipt yet;noart/perfclaim. Mainf123unchanged/clean.
+Read your05:37update atthisstepboundary;awaitpublishedL1tip,thenrecheckcontract/cherry-pickAprep/rebuild/fivegates/functionalpack. NoAheavyprocess orlockactive;noBOUTBOXpolling.
