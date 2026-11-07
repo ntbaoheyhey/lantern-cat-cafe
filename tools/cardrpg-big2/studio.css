@@ -25,3 +25,8 @@
 .b2-gallery[data-focused=true] .b2-gallery-tools{align-items:center}
 .b2-focus-title{flex:1;min-width:180px;font:16px Georgia}
 .b2-gallery[data-focused=true] .b2-gallery-stage{margin-bottom:12px}
+
+.cr-app .b2-studio button[aria-pressed=true]:hover:not(:disabled){
+  background:#debb83;
+  color:#29222b;
+}
