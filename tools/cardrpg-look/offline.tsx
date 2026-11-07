@@ -9,14 +9,16 @@ import { ReviewStudio, FrameMeter } from '../cardrpg-big2/ReviewStudio';
 import '../cardrpg-big/demo-tools.css';
 import '../../apps/web/src/game/cardrpg/look-tokens.css';
 import { isLookV2, setLookV2, subscribeLookV2 } from '../../apps/web/src/game/squad/turn3d/look-v2';
+import { LookAtelier } from './LookAtelier';
 setLookV2(true);
 
-type Panel = { host: HTMLElement; kind: 'mechanics' | 'studio'; close: () => void };
+type Panel = { host: HTMLElement; kind: 'mechanics' | 'studio' | 'atelier'; close: () => void };
 
 function DemoTools({ open }: { open: (kind: Panel['kind']) => void }) {
   const model = window.__depthReview;
   useSyncExternalStore(model?.subscribe ?? (() => () => {}), model?.snapshot ?? (() => 0));
-  return <><button disabled={model?.showBattle} onClick={() => open('studio')}>Review studio</button>
+  return <><button disabled={model?.showBattle} onClick={() => open('atelier')}>Look atelier</button>
+    <button disabled={model?.showBattle} onClick={() => open('studio')}>Review studio</button>
     <button disabled={model?.showBattle} onClick={() => open('mechanics')}>Mechanics lab</button></>;
 }
 
@@ -64,6 +66,7 @@ function Demo() {
     {meter && <FrameMeter />}
     {panel && createPortal(panel.kind === 'mechanics'
       ? <MechanicsLab close={panel.close} />
+      : panel.kind === 'atelier' ? <LookAtelier close={panel.close} openSkills={() => setPanel({ ...panel, kind: 'studio' })} />
       : <ReviewStudio close={panel.close} openMechanics={() => setPanel({ ...panel, kind: 'mechanics' })}
         go={(screen: Screen) => { panel.close(); window.__depthReview?.go(screen); }} />, panel.host)}
   </div>;
