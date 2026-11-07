@@ -1,4 +1,5 @@
 import type { AccountState, Slot, Rarity, Stats } from '../contract';
+import type { BattleV4State, GameplayV4State, StandingPlan } from './gameplay-v4';
 
 /** Battle snapshots retain enemy stats across later balance changes. */
 export const CONTRACT_VERSION = '0.7.0' as const;
@@ -39,12 +40,14 @@ export interface Intent { actorId: string; targetId: string; label: string; coun
 export interface Choice { actorId: string; skillId: string; targetId: string }
 export interface BattleEvent { round: number; actorId: string; targetId: string; skillId: string; kind: string; amount: number; text: string }
 export interface Battle {
+  v4?: BattleV4State;
   version: typeof CONTRACT_VERSION; seed: number; rng: number; chapter: number; actors: Actor[];
   round: number; queue: string[]; acted: string[]; energy: number; maxEnergy: number; intents: Intent[];
   log: BattleEvent[]; choices: Choice[]; result: 'party' | 'enemy' | null; firstDeath: string | null;
   boons: Record<string, number>; procRounds: Record<string, number>; mutator: string; initial: BattleSetup;
 }
 export interface BattleSetup {
+  gameplayV4?: boolean; plan?: StandingPlan;
   seed: number; chapter: number; cats: Array<{ id: string; stats: Stats; skills: string[]; row: Row; equipment?: string[]; effects?: string[]; bonuses?: Record<string, number> }>;
   enemies: string[]; upgrades?: Record<string, number>; hp?: Record<string, number>; boons?: Record<string, number>; mutator?: string; tutorial?: boolean;
   enemyStats?: Record<string, Pick<Enemy, 'hp' | 'attack' | 'defense'>>;
@@ -53,6 +56,7 @@ export type NodeKind = 'battle' | 'elite' | 'campfire' | 'shop' | 'event' | 'tre
 export interface RunNode { id: string; depth: number; lane: number; kind: NodeKind; next: string[]; enemies: string[]; eventId?: string }
 export interface Boon { id: string; name: string; archetype: string; description: string; cap: number; trigger: string; value: number }
 export interface Run {
+  gameplayV4?: boolean;
   id: number; seed: number; chapter: number; mode: 'campaign' | 'daily' | 'tower'; nodes: RunNode[];
   visited: string[]; current: string | null; points: number; boons: Record<string, number>;
   hp: Record<string, number>; upgrades: Record<string, number>; rewardChoices: string[];
@@ -66,6 +70,7 @@ export interface GearTemplate {
 export interface AffixRule { id: string; name: string; slots: Slot[]; stat: string; tiers: [number, number][]; description: string }
 export interface GearInstance { id: string; templateId: string; enhancement: number; tier: 1 | 2 | 3; affixes: string[]; rolls: Record<string, number> }
 export interface DepthAccount {
+  gameplayV4?: boolean; v4?: GameplayV4State;
   version: typeof CONTRACT_VERSION; account: AccountState; team: string[]; rows: Record<string, Row>; skills: Record<string, string[]>;
   run: Run | null; nextRunId: number; cleared: number[]; towerBest: number; lastBattle: BattleSetup | null; lastChoices: Choice[];
   gear: GearInstance[]; equipment: Record<string, Partial<Record<Slot, string>>>; awakened: Record<string, number>;

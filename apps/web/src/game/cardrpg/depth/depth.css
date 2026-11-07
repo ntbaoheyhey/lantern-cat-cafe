@@ -146,3 +146,14 @@
 @keyframes dp-map-glow { 50% { color: #fff2c7; } }
 .dp-reduced-motion *, .dp-reduced-motion *::before, .dp-reduced-motion *::after { animation: none !important; transition: none !important; }
 @media (prefers-reduced-motion: reduce) { .dp-app *, .dp-app *::before, .dp-app *::after { animation: none !important; transition: none !important; } }
+
+/* A4 preparation and result panels, outside the battle presentation. */
+.dp-v4-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px}
+.dp-v4-grid>*{min-width:0}
+.dp-v4-prepare label,.dp-v4-prepare select{display:block;width:100%;box-sizing:border-box}
+.dp-v4-prepare label{margin:8px 0}
+.dp-v4-crews article{padding:12px;border:1px solid #c7b49c;border-radius:10px;background:#fff8ed;color:#342a36}
+.dp-v4-crews article[data-active=true]{border-color:#65502e;background:#f1dfb7}
+.dp-v4-crews small,.dp-v4-prepare small{color:#4f4552}
+.dp-v4-outcome li{margin:8px 0;overflow-wrap:anywhere}
+.dp-v4-outcome details{max-height:300px;overflow:auto}

@@ -1,8 +1,8 @@
 # A4 living state
 ## NOW
-D specification committed3f2c7efe; D five gates PASS. R draft365. No runtime changes yet; P1 code staged outside checkout until this boundary. G0 economy continues from immutable snapshot.
+Fresh-session P1 recovery on codex/cardrpg-a4-p1-2026-11-07 at94b54197. Unpublished P1 present in checkout; preserving named WIP. G0 economy closed at16:00:26UTC, all prior A PIDs dead; timing lock absent.
 ## NEXT
-Publish D draft, CLAIM P1 then implement crew/formation/plans plus ON-only resource removal and THC8 extension. Retain G0 coordinator89663; no screen research.
+Fix A-owned preparation method name collision, verify P1, publish stacked draft; close G0 audit from completed receipt. Continue P2-P7 without research/design restart.
 ## DONE
 Prompt preserved verbatim before A4 work. No gameplay edits yet. Disk 296 GiB available. Existing B L3 DONE read; no adoption planned during G0.
 ## GATES
@@ -72,3 +72,8 @@ G0 source gates PASS (typecheck, lint, build, 1735 web, 1020 rules, 421 E2E); ba
 ## D five-gate checkpoint
 - Type/lint/build PASS;1735 web/1020 rules (+2 expectedfail/11skip)/421 E2E PASS. Source still byte-identical to179-file G0 snapshot; off digest47477251b3d20ab602bee5c55a56cdd661e111b1386e298e0c9bc67737fecfa3.
 - D design3f2c7efe includes4 sequential reviewer roles; no runtime code yet. P1 staging at /tmp/cardrpg-a4-p1 is incomplete and NOT applied/tested.
+
+## Fresh-session v2 recovery
+- Prompt-v2 bytes: 26460; SHA-256: 465b40d699ce5c4e4376d22eb70b0ef27a5fb17256ec1878b270c395868e4bd4.
+- Existing unpublished P1 retained; original web typecheck failure is inherited MechanicsModel.prepare signature collision. Rename A method only.
+- Native/headless; no agents/models/Docker/CUA. Disk255GiB available. Simulation slices<=2–3min with B handoff.

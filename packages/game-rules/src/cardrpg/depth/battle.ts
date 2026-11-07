@@ -1,4 +1,6 @@
 import { clone } from '../internal';
+import { DEFAULT_PLAN, crewThresholds, enemyGuideV4, openingCrewBonus, validPlan } from './gameplay-v4';
+import { emitGameplayEvent } from './events-v4';
 import { boonValue } from './boons';
 import { Rng, deriveSeed } from '../../rng';
 import { CAT_BY_ID, ENEMY_BY_ID, hasAdvantage, SKILLS, STATUS_BY_ID, teamCombos } from './catalog';
@@ -88,12 +90,12 @@ function loseHp(b: Battle, source: Actor, target: Actor, amount: number, kind: s
   if (target.hp === 0) {
     if (target.side === 'party' && b.firstDeath === null) b.firstDeath = target.role;
     record(b, source, target, 'defeat');
-    if (source.catalogId === 'velvet') source.charge = Math.min(100, source.charge + 15);
+    if (source.catalogId === 'velvet') { if (b.v4) heal(b,source,source,6); else source.charge = Math.min(100, source.charge + 15); }
     if (source.side === 'party' && source.hp > 0) heal(b,source,source,boonValue(b,'killHeal'));
   }
   return actual;
 }
-function damage(b: Battle, source: Actor, target: Actor, power: number, pressure: number) {
+function damage(b: Battle, source: Actor, target: Actor, power: number, pressure: number, cover = false) {
   if (target.hp <= 0) return;
   if (stacks(target, 'decoy')) {
     target.statuses = target.statuses.filter(s => s.id !== 'decoy');
@@ -101,6 +103,7 @@ function damage(b: Battle, source: Actor, target: Actor, power: number, pressure
     return;
   }
   const variance = (9200 + roll(b, 1601)) / 10000;
+  if (!b.v4) {
   const weak = hasAdvantage(source.flavour, target.flavour) ? 1 : 0;
   const extraPressure = source.side === 'party' && source.bonuses.pressureRound !== b.round ? boonValue(b,'breakPressure') : 0;
   source.bonuses.pressureRound = b.round;
@@ -115,41 +118,53 @@ function damage(b: Battle, source: Actor, target: Actor, power: number, pressure
       b.procRounds.breakEnergy = b.round;
     }
   }
+  }
   const extraDamage = source.side === 'party' ? (source.shield > 0 ? boonValue(b,'shieldStrike') : 0) + (source.row === 'rear' ? boonValue(b,'rearDamage') : 0) : 0;
   const bonus=source.bonuses;
   const conditional=(source.row==='front'?bonus.frontDamage??0:bonus.rearDamage??0)
     +(ENEMY_BY_ID[target.catalogId]?.tier==='boss'?bonus.bossDamage??0:0)
     +(ENEMY_BY_ID[target.catalogId]?.tier==='elite'?bonus.eliteDamage??0:0)
     +(stacks(target,'scald')?bonus.scaldDamage??0:0)+(stacks(target,'scent')?bonus.markedDamage??0:0)
-    +(target.break>=target.breakCap?bonus.brokenDamage??0:0)+(source.shield>0?bonus.shieldedDamage??0:0)
+    +((b.v4?stacks(target,'scent')>0:target.break>=target.breakCap)?bonus.brokenDamage??0:0)+(source.shield>0?bonus.shieldedDamage??0:0)
     +(source.hp<source.maxHp/2?bonus.lowHpDamage??0:0);
-  const attack = source.attack * power / 100 + extraDamage + conditional;
+  const marked = b.v4 && stacks(target,'scent') ? (hasEffect(source,'marked-break')?3:0)+boonValue(b,'markedDirect') : 0;
+  const attack = source.attack * power / 100 + extraDamage + conditional + marked;
   const critical=(bonus.critBp??0)>0&&roll(b)<bonus.critBp! ? 1+(bonus.critDamageBp??5000)/10000 : 1;
   const mitigation = 80 / (80 + target.defense);
   const cozy = 1 - stacks(target, 'cozy') * .1;
   const rattled = 1 - stacks(source, 'rattled') * .15;
   const scent = stacks(target, 'scent') ? 1.2 : 1;
-  const broken = target.break >= target.breakCap ? 1.2 : 1;
-  const amount = Math.max(1, Math.round(attack * mitigation * cozy * rattled * scent * broken * variance * critical));
+  const broken = !b.v4 && target.break >= target.breakCap ? 1.2 : 1;
+  const tangled = b.v4 ? 1-stacks(source,'tangle')*.04 : 1;
+  let amount = Math.max(1, Math.round(attack * mitigation * cozy * rattled * scent * broken * variance * critical * tangled));
+  if (b.v4 && cover && target.row==='rear' && living(b,target.side).some(a=>a.row==='front')) {
+    const prevented = amount - Math.max(1,Math.round(amount*.9)); amount -= prevented;
+    if (prevented) emitGameplayEvent(b,{kind:'formation-cover',actorId:source.id,targetId:target.id,amount:prevented,text:`Front cover prevented ${prevented} damage to ${target.name}.`});
+  }
   target.shield = Math.max(0, target.shield - stacks(target, 'brittle') * 15);
   const absorbed = Math.min(target.shield, amount);
   target.shield -= absorbed;
+  if (b.v4 && absorbed) record(b,source,target,'absorbed',absorbed,'Shield absorbed direct damage');
   let hpDamage = amount - absorbed;
   const link = target.statuses.find(s => s.id === 'link');
   const protector = link && b.actors.find(a => a.id === link.source && a.hp > 0 && a.id !== target.id);
   if (protector) {
-    const shared = Math.floor(hpDamage * .3);
+    const shared = Math.floor(hpDamage * (b.v4 && hasEffect(protector,'defend-link') ? .15 : .3));
     hpDamage -= shared;
     loseHp(b, source, protector, shared, 'shared');
   }
   loseHp(b, source, target, hpDamage, 'damage');
-  if(target.break>=target.breakCap)shield(b,source,source,source.bonuses.breakShield??0);
+  if((b.v4?stacks(target,'scent')>0:target.break>=target.breakCap))shield(b,source,source,source.bonuses.breakShield??0);
   if(hasEffect(source,'third-crumb')&&(source.turns+1)%3===0)applyStatus(b,source,target,'crumb');
-  if(hasEffect(source,'unique:nightglass')&&stacks(target,'scent')&&source.bonuses.nightglassRound!==b.round){b.energy=Math.min(10,b.energy+1);source.bonuses.nightglassRound=b.round;}
+  if(hasEffect(source,'unique:nightglass')&&stacks(target,'scent')&&source.bonuses.nightglassRound!==b.round){if(b.v4)shield(b,source,source,6);else b.energy=Math.min(10,b.energy+1);source.bonuses.nightglassRound=b.round;}
+  if (!b.v4) {
   source.charge = Math.min(100, source.charge + 8);
   target.charge = Math.min(100, target.charge + 7);
   if (source.side === 'party' && stacks(target,'scald')) source.charge = Math.min(100,source.charge + boonValue(b,'scaldCharge'));
   if (source.catalogId === 'mallow' && stacks(target, 'scald')) source.charge = Math.min(100, source.charge + 8);
+  } else if (source.catalogId==='mallow' && stacks(target,'scald') && source.bonuses.mallowRound!==b.round) { source.bonuses.mallowRound=b.round; heal(b,source,source,4); }
+  if(b.v4&&stacks(target,'scald')&&source.bonuses.scaldHealRound!==b.round){source.bonuses.scaldHealRound=b.round;heal(b,source,source,boonValue(b,'scaldHeal'));}
+  if(b.v4&&stacks(target,'scent')&&source.bonuses.markShieldRound!==b.round){source.bonuses.markShieldRound=b.round;shield(b,source,source,boonValue(b,'markedShield'));}
   if (source.catalogId === 'biscuit' && source.hp < source.maxHp / 2 && !source.passiveUsed) {
     source.passiveUsed = true; shield(b, source, source, 30);
   }
@@ -161,7 +176,7 @@ export function tickStatuses(b: Battle, actor: Actor) {
   for (const s of [...actor.statuses]) {
     const rule = STATUS_BY_ID[s.id], source = b.actors.find(a => a.id === s.source) ?? actor;
     if (rule.tick === 'damage') loseHp(b, source, actor, (rule.strength + (source.side === 'party' ? boonValue(b,'scaldPower')+(source.bonuses.dotPower??0) : 0)) * s.stacks, 'dot');
-    if(rule.tick==='damage'&&hasEffect(source,'scald-charge'))source.charge=Math.min(100,source.charge+3);
+    if(!b.v4&&rule.tick==='damage'&&hasEffect(source,'scald-charge'))source.charge=Math.min(100,source.charge+3);
     if (actor.hp <= 0) break;
     if (rule.tick === 'heal') {
       heal(b, source, actor, (rule.strength + (actor.side === 'party' ? boonValue(b,'steepPower') : 0)) * s.stacks);
@@ -185,6 +200,10 @@ function enemyActor(id: string, index: number, chapter: number, tutorial = false
 }
 export function createBattle(setup: BattleSetup): Battle {
   const initial = clone(setup);
+  if(setup.gameplayV4) {
+    if(setup.plan && !validPlan(setup.plan)) throw Error('Invalid standing plan');
+    initial.plan = clone(setup.plan ?? DEFAULT_PLAN);
+  }
   initial.enemyStats ??= Object.fromEntries(Object.values(ENEMY_BY_ID).map(({ id, hp, attack, defense }) => [id, { hp, attack, defense }]));
   const actors: Actor[] = setup.cats.map((c,index) => {
     const cat = CAT_BY_ID[c.id];
@@ -193,24 +212,32 @@ export function createBattle(setup: BattleSetup): Battle {
   });
   actors.push(...setup.enemies.map((id,i) => enemyActor(id,i,setup.chapter,setup.tutorial,initial.enemyStats)));
   const b: Battle = {version:CONTRACT_VERSION,seed:setup.seed,rng:setup.seed,chapter:setup.chapter,actors,round:0,queue:[],acted:[],energy:0,maxEnergy:5,intents:[],log:[],choices:[],result:null,firstDeath:null,procRounds:{},boons:{...setup.boons},mutator:setup.mutator??'',initial};
-  const combos = teamCombos(setup.cats.map(c => c.id));
+  if (setup.gameplayV4) {
+    b.v4={version:1,plan:clone(initial.plan!),events:[],committed:false};
+    b.maxEnergy=0;
+    for(const actor of actors) actor.charge=0;
+    for(const crew of crewThresholds(setup.cats.map(c=>c.id))) if(crew.threshold) emitGameplayEvent(b,{kind:'crew-active',crew:crew.id,marks:crew.marks,contributors:crew.contributors,threshold:crew.threshold,text:`${crew.name}: ${crew.description}.`});
+  }
+  const combos = setup.gameplayV4 ? [] : teamCombos(setup.cats.map(c => c.id));
   for (const actor of living(b,'party')) {
     actor.shield += boonValue(b,'openingShield')+(actor.bonuses.openingShield??0);
-    actor.charge = Math.min(100,actor.charge+boonValue(b,'openingCharge')+(actor.bonuses.openingCharge??0));
-    if(hasEffect(actor,'opening-decoy'))applyStatus(b,actor,actor,'decoy');
-    if(hasEffect(actor,'unique:softcollar'))applyStatus(b,actor,actor,'sprout');
+    if(b.v4) { openingCrewBonus(setup.cats.map(c=>c.id),actor); actor.shield+=actor.bonuses.openingCharge??0; }
+    else actor.charge = Math.min(100,actor.charge+boonValue(b,'openingCharge')+(actor.bonuses.openingCharge??0));
+    if(hasEffect(actor,'opening-decoy')) { if(b.v4) actor.shield+=12; else applyStatus(b,actor,actor,'decoy'); }
+    if(hasEffect(actor,'unique:softcollar')) { if(b.v4) actor.shield+=15; else applyStatus(b,actor,actor,'sprout'); }
     if (boonValue(b,'openingSteep')) applyStatus(b,actor,actor,'steep',boonValue(b,'openingSteep'));
     if (combos.some(c => c.id==='warm-table')) actor.shield += 20;
     if (combos.some(c => c.id==='night-garden')) actor.charge += 10;
     if (actor.catalogId==='inkcap') applyStatus(b,actor,actor,'decoy');
   }
-  if (setup.mutator === 'thin-pot') b.maxEnergy = 4;
+  if (setup.mutator === 'thin-pot' && !b.v4) b.maxEnergy = 4;
   for (const actor of b.actors) {
+    if(b.v4 && setup.mutator==='thin-pot' && actor.side==='party'){actor.shield+=12;actor.bonuses.healingBp=(actor.bonuses.healingBp??0)-1000;}
     if (setup.mutator === 'rainy' && actor.side === 'enemy') actor.shield += 20;
     if (setup.mutator === 'warm-floor' && actor.row === 'front') applyStatus(b,actor,actor,'cozy');
     if (setup.mutator === 'late-shift') {
       if (actor.side === 'enemy') actor.attack = Math.round(actor.attack * 1.1);
-      else actor.charge += 15;
+      else if(b.v4)actor.shield+=15;else actor.charge += 15;
     }
   }
   beginRound(b);
@@ -225,21 +252,23 @@ function setIntents(b: Battle) {
     const spec = ENEMY_BY_ID[a.catalogId]!;
     const signature = b.round % 3 === 0;
     const rear = party.filter(p => p.row==='rear');
-    const target = spec.mechanic==='steal' && rear.length ? weakest(rear) : party[roll(b,party.length)]!;
-    return {actorId:a.id,targetId:target.id,label:signature?spec.intent:`${a.name} · ${spec.mechanic==='heal'?'Cup refill':'basic pressure'}`,counter:spec.counter,power:signature?175:100,status:signature?spec.status:undefined,signature,interrupted:false};
+    const front=party.filter(p=>p.row==='front');
+    const reachable=b.v4&&front.length?front:party;
+    const target = spec.mechanic==='steal' && rear.length ? weakest(rear) : b.v4&&spec.mechanic==='snare'?weakest(reachable):reachable[roll(b,reachable.length)]!;
+    return {actorId:a.id,targetId:target.id,label:signature?(b.v4?enemyGuideV4(a.catalogId).intent:spec.intent):`${a.name} · ${spec.mechanic==='heal'?'Cup refill':'basic pressure'}`,counter:b.v4?enemyGuideV4(a.catalogId).counter:spec.counter,power:signature?175:100,status:signature?spec.status:undefined,signature,interrupted:false};
   });
 }
 function beginRound(b: Battle) {
   b.round++;
   b.acted=[];
-  b.energy=Math.min(10,b.maxEnergy+boonValue(b,'roundEnergy'));
+  b.energy=b.v4?0:Math.min(10,b.maxEnergy+boonValue(b,'roundEnergy'));
   b.queue=b.actors.filter(a=>a.hp>0).sort((a,c)=>c.initiative-a.initiative||a.id.localeCompare(c.id)).map(a=>a.id);
   for (const a of b.actors) {
     for (const id of Object.keys(a.cooldowns)) a.cooldowns[id]=Math.max(0,a.cooldowns[id]!-1);
     if (a.hp>0 && a.side==='party' && a.row==='front') shield(b,a,a,boonValue(b,'roundShield'));
     if(a.hp>0&&a.side==='party')heal(b,a,a,(a.bonuses.roundHeal??0)+(hasEffect(a,'rear-heal')&&a.row==='rear'?16:0));
     if (a.hp>0 && a.catalogId==='brioche') shield(b,a,a,12);
-    if (a.hp>0 && a.catalogId==='sorrel' && b.round%2===1) b.energy++;
+    if (a.hp>0 && a.catalogId==='sorrel' && b.round%2===1) { if(b.v4)shield(b,a,weakest(living(b,'party')),6);else b.energy++; }
     const enemy = ENEMY_BY_ID[a.catalogId];
     if (enemy?.tier==='boss' && a.hp<=a.maxHp/2 && a.phase===1) { a.phase=2; record(b,a,a,'phase',2,enemy.phases[1]); }
   }
@@ -269,9 +298,9 @@ export function energyCost(actor: Actor, skill: Skill) { return skill.cost + (sk
 export function legalChoices(b: Battle): Choice[] {
   const actor=currentActor(b);
   if (!actor||actor.side!=='party'||b.result) return [];
-  return [...actor.skills,'defend','wait'].flatMap(id=>{
+  return [...actor.skills,'defend',...(b.v4?[]:['wait'])].flatMap(id=>{
     const skill=skillById(id)!;
-    if (energyCost(actor,skill)>b.energy || skill.charge>actor.charge || (actor.cooldowns[id]??0)>0 || skill.effects.some(e=>e.kind==='revive')&&actor.passiveUsed) return [];
+    if ((!b.v4&&(energyCost(actor,skill)>b.energy || skill.charge>actor.charge)) || (b.v4&&skill.type==='ultimate'&&actor.turns<2) || (actor.cooldowns[id]??0)>0 || skill.effects.some(e=>e.kind==='revive')&&actor.passiveUsed) return [];
     return targets(b,actor,skill).map(t=>({actorId:actor.id,skillId:id,targetId:t.id}));
   });
 }
@@ -282,18 +311,18 @@ function executeEffect(b: Battle, actor: Actor, target: Actor, effect: Effect, s
     case 'shield': shield(b,actor,target,power+(actor.bonuses.shieldFlat??0));if(boonValue(b,'shieldHeal'))heal(b,actor,target,boonValue(b,'shieldHeal'));break;
     case 'heal':
       heal(b,actor,target,power+boonValue(b,'healing')+(actor.bonuses.healFlat??0));
-      if(hasEffect(actor,'unique:seedcup')&&!actor.bonuses.seedcupUsed){applyStatus(b,actor,target,'sprout');actor.bonuses.seedcupUsed=1;}
+      if(hasEffect(actor,'unique:seedcup')&&!actor.bonuses.seedcupUsed){if(b.v4)shield(b,actor,target,12);else applyStatus(b,actor,target,'sprout');actor.bonuses.seedcupUsed=1;}
       if (boonValue(b,'healCleanse')||hasEffect(actor,'healing-cleanse')) {
         const debuff=target.statuses.find(s=>STATUS_BY_ID[s.id].kind==='debuff'&&STATUS_BY_ID[s.id].dispellable);
         if(debuff)target.statuses=target.statuses.filter(s=>s!==debuff);
       }
-      if(!actor.bonuses.healProc){actor.charge=Math.min(100,actor.charge+boonValue(b,'healCharge'));actor.bonuses.healProc=1;}
+      if(!actor.bonuses.healProc){if(b.v4)shield(b,actor,target,boonValue(b,'healShield'));else actor.charge=Math.min(100,actor.charge+boonValue(b,'healCharge'));actor.bonuses.healProc=1;}
       break;
     case 'cleanse': {
       const before=target.statuses.length;
       dispel(b,actor,target,'debuff');
       if(before>target.statuses.length){shield(b,actor,target,actor.bonuses.cleanseShield??0);if(hasEffect(actor,'unique:gardenkey'))heal(b,actor,target,25);}
-      if(before>target.statuses.length&&!actor.bonuses.cleanseProc){b.energy=Math.min(10,b.energy+boonValue(b,'cleanseEnergy'));actor.bonuses.cleanseProc=1;}
+      if(before>target.statuses.length&&!actor.bonuses.cleanseProc){if(b.v4){shield(b,actor,target,boonValue(b,'cleanseExtraShield'));if(actor.bonuses.crewCleanse&&!actor.bonuses.crewCleansed){actor.bonuses.crewCleansed=1;shield(b,actor,target,actor.bonuses.crewCleanse);}}else b.energy=Math.min(10,b.energy+boonValue(b,'cleanseEnergy'));actor.bonuses.cleanseProc=1;}
       break;
     }
     case 'dispel': dispel(b,actor,target,'buff'); break;
@@ -302,9 +331,9 @@ function executeEffect(b: Battle, actor: Actor, target: Actor, effect: Effect, s
       loseHp(b,actor,target,count*(24+boonValue(b,'detonatePower'))*power/100,'detonate');
       target.statuses=target.statuses.filter(s=>s.id!=='crumb'&&s.id!=='scald');
       if(count&&boonValue(b,'detonateSplash'))for(const other of living(b,target.side).filter(a=>a.id!==target.id))loseHp(b,actor,other,boonValue(b,'detonateSplash'),'detonate');
-      if(count&&hasEffect(actor,'detonate-energy'))b.energy=Math.min(10,b.energy+1);
+      if(count&&hasEffect(actor,'detonate-energy')){if(b.v4)shield(b,actor,actor,8);else b.energy=Math.min(10,b.energy+1);}
       if(count&&hasEffect(actor,'unique:crumbbook'))shield(b,actor,actor,35);
-      if (count && actor.catalogId==='soot') actor.charge=Math.min(100,actor.charge+10);
+      if (count && actor.catalogId==='soot') {if(b.v4)shield(b,actor,actor,6);else actor.charge=Math.min(100,actor.charge+10);}
       break;
     }
     case 'transfer': { const amount=actor.shield;actor.shield=0;shield(b,actor,target,amount);break; }
@@ -315,18 +344,18 @@ function executeEffect(b: Battle, actor: Actor, target: Actor, effect: Effect, s
       for (const [i,t] of [target,...others].slice(0,3).entries()) damage(b,actor,t,power*(1-i*.15),skill.breakPower);
       break;
     }
-    case 'energy': b.energy=Math.min(10,b.energy+power);record(b,actor,actor,'energy',power);break;
+    case 'energy': if(b.v4)shield(b,actor,weakest(living(b,actor.side)),Math.min(18,power*6));else {b.energy=Math.min(10,b.energy+power);record(b,actor,actor,'energy',power);}break;
     case 'swap': { const row=actor.row;actor.row=target.row;target.row=row;shield(b,actor,actor,boonValue(b,'swapShield')+(hasEffect(actor,'swap-shield')?25:0));shield(b,actor,target,boonValue(b,'swapShield')+(hasEffect(actor,'swap-shield')?25:0));if(hasEffect(actor,'unique:rainbell'))dispel(b,actor,actor,'debuff');break; }
     case 'drain': heal(b,actor,actor,actor.attack*power/100);break;
     case 'consume': { const count=stacks(actor,'cozy');actor.statuses=actor.statuses.filter(s=>s.id!=='cozy');if(count)damage(b,actor,target,count*power,0);break; }
-    case 'break': target.break=Math.min(target.breakCap,target.break+power);if(target.break>=target.breakCap){const i=b.intents.find(i=>i.actorId===target.id);if(i)i.interrupted=true;}break;
+    case 'break': if(b.v4){applyStatus(b,actor,target,'rattled',1);break;}target.break=Math.min(target.breakCap,target.break+power);if(target.break>=target.breakCap){const i=b.intents.find(i=>i.actorId===target.id);if(i)i.interrupted=true;}break;
     case 'rally': break;
   }
   if (effect.status) applyStatus(b,actor,target,effect.status,effect.stacks??1);
 }
 function finishAction(b: Battle, actor: Actor) {
   actor.turns++;
-  actor.charge=Math.min(100,actor.charge+6);
+  if(b.v4){b.energy=0;for(const a of b.actors){a.charge=0;a.break=0;}}else actor.charge=Math.min(100,actor.charge+6);
   b.acted.push(actor.id);
   b.queue=b.queue.filter(id=>id!==actor.id&&b.actors.some(a=>a.id===id&&a.hp>0));
   checkResult(b);
@@ -359,7 +388,10 @@ export function act(b: Battle, choice: Choice): boolean {
   const description = actionDescription(b, actor, target, skill);
   b.choices.push({...choice});
   actor.bonuses.healProc=0;actor.bonuses.cleanseProc=0;
-  b.energy-=energyCost(actor,skill);actor.charge-=skill.charge;
+  if(b.v4) {
+    b.v4.committed=true;
+    emitGameplayEvent(b,{kind:'plan-target',actorId:actor.id,targetId:target.id,plan:{...b.v4.plan},reason:description,text:`${b.v4.plan.focus}/${b.v4.plan.care} plan: ${description}`});
+  } else {b.energy-=energyCost(actor,skill);actor.charge-=skill.charge;}
   actor.cooldowns[skill.id]=skill.cooldown+1;
   shield(b,actor,actor,stacks(actor,'glaze')*20);
   const affected=skill.target==='foes'?living(b,'enemy'):skill.target==='allies'?living(b,'party'):skill.target==='row'?living(b,target.side).filter(a=>a.row===target.row):[target];
@@ -376,14 +408,16 @@ export function act(b: Battle, choice: Choice): boolean {
     if(hasEffect(actor,'unique:doorstop'))heal(b,actor,actor,25);
   }
   if(skill.id==='wait'&&hasEffect(actor,'unique:tidetray'))shield(b,actor,weakest(living(b,'party')),30);
-  if(skill.charge){
+  if(skill.charge&&!b.v4){
     actor.charge=Math.min(100,actor.charge+(actor.bonuses.ultimateCharge??0)+(hasEffect(actor,'ultimate-refund')?20:0));
     if(hasEffect(actor,'unique:starladle')&&!actor.bonuses.starladleUsed){actor.charge=Math.min(100,actor.charge+25);actor.bonuses.starladleUsed=1;}
     if(hasEffect(actor,'unique:silkspool')&&!actor.bonuses.silkspoolUsed){applyStatus(b,actor,actor,'decoy');actor.bonuses.silkspoolUsed=1;}
   }
-  if (skill.id==='defend') actor.charge=Math.min(100,actor.charge+boonValue(b,'defendCharge'));
+  if (skill.id==='defend'&&!b.v4) actor.charge=Math.min(100,actor.charge+boonValue(b,'defendCharge'));
   if (skill.id==='wait') heal(b,actor,actor,boonValue(b,'waitHeal'));
-  if (skill.charge) b.energy=Math.min(10,b.energy+boonValue(b,'ultimateEnergy'));
+  if (skill.charge&&!b.v4) b.energy=Math.min(10,b.energy+boonValue(b,'ultimateEnergy'));
+  if(b.v4&&skill.id==='defend')heal(b,actor,actor,boonValue(b,'defendHeal'));
+  if(b.v4&&skill.type==='ultimate')shield(b,actor,actor,boonValue(b,'ultimateShield'));
   record(b,actor,target,'action',0,description,skill.id);
   finishAction(b,actor);
   return true;
@@ -401,13 +435,20 @@ export function enemyAct(b: Battle): boolean {
   const spec=ENEMY_BY_ID[actor.catalogId]!;
   const party=living(b,'party');
   const shelter=party.find(a=>stacks(a,'shelter'));
-  const target=shelter??party.find(a=>a.id===intent.targetId)??weakest(party);
+  const front=party.filter(a=>a.row==='front');
+  const reachable=b.v4&&front.length&&spec.mechanic!=='steal'?front:party;
+  const target=shelter??reachable.find(a=>a.id===intent.targetId)??weakest(reachable);
   if (!target) {checkResult(b);return false;}
   shield(b,actor,actor,stacks(actor,'glaze')*20);
   const impaired=intent.interrupted||stacks(actor,'drowsy')>0;
   const quiet=stacks(actor,'hush')>0;
   const signature=intent.signature&&!impaired;
-  if (impaired) damage(b,actor,target,40,0);
+  if(b.v4 && (impaired || quiet&&['heal','shield','summon','bind','banquet'].includes(spec.mechanic))) {
+    record(b,actor,actor,'suppressed',1,'Control suppressed enemy utility');
+    const controller=b.actors.find(a=>a.id===actor.statuses.find(s=>s.id===(impaired?'drowsy':'hush'))?.source);
+    if(controller?.bonuses.crewSuppress&&!controller.bonuses.crewSuppressed){controller.bonuses.crewSuppressed=1;heal(b,controller,controller,controller.bonuses.crewSuppress);}
+  }
+  if (impaired) damage(b,actor,target,40,0,b.v4&&spec.mechanic!=='steal');
   else if (spec.mechanic==='heal'&&!quiet) heal(b,actor,weakest(living(b,'enemy')),65);
   else if (spec.mechanic==='shield'&&!quiet) for (const a of living(b,'enemy').filter(a=>a.row===actor.row)) shield(b,actor,a,45);
   else {
@@ -416,15 +457,16 @@ export function enemyAct(b: Battle): boolean {
     if (!affected.length) affected=[target];
     for (const t of affected) {
       if (signature&&spec.mechanic==='storm') t.shield=0;
-      damage(b,actor,t,signature?intent.power:100,0);
+      const wide=signature&&['charge','bind','storm','banquet','dot'].includes(spec.mechanic);
+      damage(b,actor,t,signature?intent.power:100,0,!!b.v4&&!wide&&spec.mechanic!=='steal');
       if (spec.status&&(signature||['dot','snare','bomb'].includes(spec.mechanic))) applyStatus(b,actor,t,spec.status);
       if (signature&&spec.mechanic==='bomb') {loseHp(b,actor,t,stacks(t,'crumb')*35,'detonate');t.statuses=t.statuses.filter(s=>s.id!=='crumb');}
     }
-    if (spec.mechanic==='steal'||signature&&spec.mechanic==='banquet') b.energy=Math.max(0,b.energy-1);
+    if (spec.mechanic==='steal'||signature&&spec.mechanic==='banquet') {if(b.v4){const removed=Math.min(6,target.shield);target.shield-=removed;record(b,actor,target,'strip-shield',removed);}else b.energy=Math.max(0,b.energy-1);}
     if (signature&&!quiet&&(spec.mechanic==='summon'||spec.mechanic==='banquet'&&actor.phase===2||spec.mechanic==='bind')) spawnThread(b,actor);
     if (spec.mechanic==='reflect'&&actor.turns===0) {shield(b,actor,actor,70);applyStatus(b,actor,actor,'cozy');}
   }
-  record(b,actor,target,'enemy-action',0,impaired?'Broken intent · softened basic':intent.label);
+  record(b,actor,target,'enemy-action',0,impaired?(b.v4?'Drowsy intent · softened basic':'Broken intent · softened basic'):intent.label);
   actor.break=0;
   finishAction(b,actor);
   return true;

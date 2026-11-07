@@ -5,6 +5,7 @@ import { depthStats, equipmentEffects, equippedItems, initializeEquipment, makeG
 import { clone, grant, requireRule, RuleFailure } from '../internal';
 import type { Command } from '../contract';
 import { CAT_BY_ID, SKILLS } from './catalog';
+import { crewStats, gameplayV4 } from './gameplay-v4';
 import { CONTRACT_VERSION, type DepthAccount, type Row, type RuleResult } from './contract';
 export const DEPTH_CAPS = {fish:420,threads:90,stamps:180,essence:6};
 export function createDepthAccount(seed=11, now=0): DepthAccount {
@@ -33,7 +34,7 @@ export function configureTeam(state: DepthAccount, team: string[], rows: Record<
     requireHome(s);
     requireRule(team.length===3&&new Set(team).size===3&&team.every(id=>s.account.cards.some(c=>c.cardId===id)),'INVALID_TEAM','Choose three different collected cats.');
     requireRule(team.some(id=>rows[id]==='front')&&team.every(id=>['front','rear'].includes(rows[id]!)),'INVALID_TEAM','Keep at least one cat in the front row.');
-    for(const id of team){const chosen=skills[id]??[],unlocked=availableSkills(s,id);requireRule(chosen.length===3&&new Set(chosen).size===3&&chosen.every(skill=>unlocked.some(u=>u.id===skill)&&SKILLS[skill]!.catId===id),'INVALID_TEAM','Equip three different unlocked skills per cat.');}
+    if(!gameplayV4(s)) for(const id of team){const chosen=skills[id]??[],unlocked=availableSkills(s,id);requireRule(chosen.length===3&&new Set(chosen).size===3&&chosen.every(skill=>unlocked.some(u=>u.id===skill)&&SKILLS[skill]!.catId===id),'INVALID_TEAM','Equip three different unlocked skills per cat.');}
     s.team=[...team];s.rows={...s.rows,...rows};s.skills={...s.skills,...clone(skills)};
   });
 }
@@ -65,6 +66,7 @@ export function battleCats(state: DepthAccount) {
     const relic = id === state.team[0] && state.relics.includes(state.selectedRelic ?? 0)
       ? RELIC_EFFECTS.find(r => r.id === state.selectedRelic) : undefined;
     if (relic) bonuses[relic.bonus] = (bonuses[relic.bonus] ?? 0) + relic.value;
-    return {id,stats:depthStats(state,id),skills:defaultSkills(state,id),row:state.rows[id]!,equipment:equippedItems(state,id).map(i=>i.templateId),effects,bonuses};
+    const stats = depthStats(state,id);
+    return {id,stats:gameplayV4(state)?crewStats(stats,state.team):stats,skills:defaultSkills(state,id),row:state.rows[id]!,equipment:equippedItems(state,id).map(i=>i.templateId),effects,bonuses};
   });
 }

@@ -8,3 +8,5 @@ export * from './boons';
 export * from './equipment';
 export * from './bridge';
 export * from './save';
+export * from './gameplay-v4';
+export * from './events-v4';
