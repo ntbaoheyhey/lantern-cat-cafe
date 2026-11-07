@@ -1,0 +1,542 @@
+
+> taskbar-hero@0.0.0 test /Users/bao/taskbar-hero-cardrpg-big-reveal-fit
+> node --test scripts/*.test.mjs && pnpm -r test
+
+✔ explicit root and nested index imports resolve to their exact files (7.788708ms)
+✔ directory aliases coexist with explicit indexes and ordinary modules (1.662625ms)
+✔ test modules, fixture folders and non-TypeScript files stay out of deployment maps (1.908042ms)
+✔ output order is stable regardless of file creation order (3.260417ms)
+✔ generation preserves auth mappings and ignores shared or non-function directories (3.895375ms)
+✔ auth health HTTP 200 exits correctly without leaking response data (23.153791ms)
+✔ auth health HTTP 429 exits correctly without leaking response data (14.827667ms)
+✔ auth health HTTP 500 exits correctly without leaking response data (12.962875ms)
+✔ auth health HTTP 502 exits correctly without leaking response data (12.519417ms)
+✔ auth health HTTP 503 exits correctly without leaking response data (13.235541ms)
+✔ auth health fails closed when the transport is unavailable (13.497875ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 151.618583
+Scope: 6 of 7 workspace projects
+packages/auth test$ vitest run
+packages/chain test$ vitest run
+packages/game-rules test$ vitest run
+supabase/tests test$ vitest run
+packages/chain test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-big-reveal-fit/packages/chain
+packages/auth test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-big-reveal-fit/packages/auth
+packages/game-rules test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-big-reveal-fit/packages/game-rules
+supabase/tests test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-big-reveal-fit/supabase/tests
+packages/chain test:  Test Files  3 passed (3)
+packages/chain test:       Tests  32 passed (32)
+packages/chain test:    Start at  06:56:30
+packages/chain test:    Duration  486ms (import 45%, transform 26%, tests 26%, worker 2%)
+packages/chain test: Done
+packages/auth test:  Test Files  1 passed (1)
+packages/auth test:       Tests  24 passed (24)
+packages/auth test:    Start at  06:56:30
+packages/auth test:    Duration  733ms (import 53%, tests 39%, transform 7%, worker 1%)
+packages/auth test: Done
+supabase/tests test:  Test Files  34 passed (34)
+supabase/tests test:       Tests  581 passed (581)
+supabase/tests test:    Start at  06:56:30
+supabase/tests test:    Duration  12.40s (tests 76%, import 15%, transform 9%)
+supabase/tests test: Done
+packages/game-rules test:  Test Files  55 passed | 3 skipped (58)
+packages/game-rules test:       Tests  1020 passed | 2 expected fail | 11 skipped (1033)
+packages/game-rules test:    Start at  06:56:30
+packages/game-rules test:    Duration  32.91s (tests 91%, transform 5%, import 3%)
+packages/game-rules test: Done
+packages/api-contract test$ pnpm --filter @taskbar-hero/game-rules exec vitest run --root ../api-contract
+packages/api-contract test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-big-reveal-fit/packages/api-contract
+packages/api-contract test:  Test Files  1 passed (1)
+packages/api-contract test:       Tests  16 passed (16)
+packages/api-contract test:    Start at  06:57:03
+packages/api-contract test:    Duration  218ms (transform 80%, import 17%, tests 2%, worker 1%)
+packages/api-contract test: Done
+apps/web test$ vitest run
+apps/web test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-big-reveal-fit/apps/web
+apps/web test:  ❯ src/layout/HelpTab.search.test.tsx (4 tests | 1 failed) 242ms
+apps/web test:    × preserves every old answer string, including first-clear configuration and classic content 43ms
+apps/web test:  ❯ src/layout/boss/BossKeyHint.test.tsx (4 tests | 1 failed) 168ms
+apps/web test:    ❯ BossKeyHint (4)
+apps/web test:      × shows the first-clear line when boss.firstClearKeys > 0 15ms
+apps/web test:  ❯ src/layout/HelpTab.keys.test.tsx (2 tests | 1 failed) 133ms
+apps/web test:    ❯ HelpTab key sources (2)
+apps/web test:      × first-clear line is hidden by default and shown when boss.firstClearKeys > 0 43ms
+apps/web test: ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+apps/web test:  FAIL  src/layout/HelpTab.keys.test.tsx > HelpTab key sources > first-clear line is hidden by default and shown when boss.firstClearKeys > 0
+apps/web test: TestingLibraryElementError: Unable to find an element with the text: /First-clear boss chests also award 1 Cat Key/. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+apps/web test: Ignored nodes: comments, script, style
+apps/web test: [36m<body>[39m
+apps/web test:   [36m<div />[39m
+apps/web test:   [36m<div>[39m
+apps/web test:     [36m<div[39m
+apps/web test:       [33mclass[39m=[32m"ui-tabs-host"[39m
+apps/web test:     [36m>[39m
+apps/web test:       [36m<div[39m
+apps/web test:         [33maria-label[39m=[32m"Help sections"[39m
+apps/web test:         [33mclass[39m=[32m"ui-tabs"[39m
+apps/web test:         [33mrole[39m=[32m"tablist"[39m
+apps/web test:       [36m>[39m
+apps/web test:         [36m<button[39m
+apps/web test:           [33maria-controls[39m=[32m"_r_4_-panel-guide"[39m
+apps/web test:           [33maria-selected[39m=[32m"true"[39m
+apps/web test:           [33mid[39m=[32m"_r_4_-tab-guide"[39m
+apps/web test:           [33mrole[39m=[32m"tab"[39m
+apps/web test:           [33mtabindex[39m=[32m"0"[39m
+apps/web test:           [33mtype[39m=[32m"button"[39m
+apps/web test:         [36m>[39m
+apps/web test:           [0mGuide[0m
+apps/web test:         [36m</button>[39m
+apps/web test:       [36m</div>[39m
+apps/web test:       [36m<div[39m
+apps/web test:         [33maria-labelledby[39m=[32m"_r_4_-tab-guide"[39m
+apps/web test:         [33mclass[39m=[32m"ui-tab-content"[39m
+apps/web test:         [33mid[39m=[32m"_r_4_-panel-guide"[39m
+apps/web test:         [33mrole[39m=[32m"tabpanel"[39m
+apps/web test:       [36m>[39m
+apps/web test:         [36m<div[39m
+apps/web test:           [33mclass[39m=[32m"help-v2-container"[39m
+apps/web test:         [36m>[39m
+apps/web test:           [36m<header[39m
+apps/web test:             [33mclass[39m=[32m"help-panel-header"[39m
+apps/web test:           [36m>[39m
+apps/web test:             [36m<div[39m
+apps/web test:               [33mclass[39m=[32m"help-panel-title"[39m
+apps/web test:             [36m>[39m
+apps/web test:               [0mCat Café Guide[0m
+apps/web test:             [36m</div>[39m
+apps/web test:             [36m<p[39m
+apps/web test:               [33mclass[39m=[32m"help-panel-desc"[39m
+apps/web test:             [36m>[39m
+apps/web test:               [0mLearn how Mochi explores, levels up, and finds treasures while you work.[0m
+apps/web test:             [36m</p>[39m
+apps/web test:           [36m</header>[39m
+apps/web test:           [36m<div[39m
+apps/web test:             [33mclass[39m=[32m"help-columns"[39m
+apps/web test:           [36m>[39m
+apps/web test:             [36m<aside[39m
+apps/web test:               [33maria-label[39m=[32m"Help topics"[39m
+apps/web test:               [33mclass[39m=[32m"help-topic-list"[39m
+apps/web test:             [36m>[39m
+apps/web test:               [36m<label[39m
+apps/web test:                 [33mfor[39m=[32m"_r_5_-search"[39m
+apps/web test:               [36m>[39m
+apps/web test:                 [0mSearch help[0m
+apps/web test:               [36m</label>[39m
+apps/web test:               [36m<input[39m
+apps/web test:                 [33mid[39m=[32m"_r_5_-search"[39m
+apps/web test:                 [33mplaceholder[39m=[32m"Search help"[39m
+apps/web test:                 [33mtype[39m=[32m"search"[39m
+apps/web test:                 [33mvalue[39m=[32m""[39m
+apps/web test:               [36m/>[39m
+apps/web test:               [36m<div[39m
+apps/web test:                 [33mclass[39m=[32m"help-topic-count"[39m
+apps/web test:                 [33mrole[39m=[32m"status"[39m
+apps/web test:               [36m>[39m
+apps/web test:                 [0m6[0m
+apps/web test:                 [0m topics[0m
+apps/web test:               [36m</div>[39m
+apps/web test:               [36m<button[39m
+apps/web test:                 [33maria-controls[39m=[32m"_r_5_-getting-started"[39m
+apps/web test:                 [33maria-current[39m=[32m"true"[39m
+apps/web test:                 [33mtype[39m=[32m"button"[39m
+apps/web test:               [36m>[39m
+apps/web test:                 [0mGetting started[0m
+apps/web test:                 [36m<span[39m
+apps/web test:                   [33maria-hidden[39m=[32m"true"[39m
+apps/web test:                 [36m>[39m
+apps/web test:                   [0m›[0m
+apps/web test:                 [36m</span>[39m
+apps/web test:               [36m</button>[39m
+apps/web test:               [36m<button[39m
+apps/web test:                 [33maria-controls[39m=[32m"_r_5_-classes"[39m
+apps/web test:                 [33mtype[39m=[32m"button"[39m
+apps/web test:               [36m>[39m
+apps/web test:                 [0mClasses[0m
+apps/web test:                 [36m<span[39m
+apps/web test:                   [33maria-hidden[39m=[32m"true"[39m
+apps/web test:                 [36m>[39m
+apps/web test:                   [0m›[0m
+apps/web test:                 [36m</span>[39m
+apps/web test:               [36m</button>[39m
+apps/web test:               [36m<button[39m
+apps/web test:                 [33maria-controls[39m=[32m"_r_5_-chapters"[39m
+apps/web test:                 [33mtype[39m=[32m"button"[39m
+apps/web test:               [36m>[39m
+apps/web test:                 [0mChapters and rounds[0m
+apps/web test:                 [36m<span[39m
+apps/web test:                   [33maria-hidden[39m=[32m"true"[39m
+apps/web test:                 [36m>[39m
+apps/web test:                   [0m›[0m
+apps/web test:                 [36m</span>[39m
+apps/web test:               [36m</button>[39m
+apps/web test:               [36m<button[39m
+apps/web test:                 [33maria-controls[39m=[32m"_r_5_-keys"[39m
+apps/web test:                 [33mtype[39m=[32m"button"[39m
+apps/web test:               [36m>[39m
+apps/web test:                 [0mCat Keys and bosses[0m
+apps/web test:                 [36m<span[39m
+apps/web test:                   [33maria-hidden[39m=[32m"true"[39m
+apps/web test:                 [36m>[39m
+apps/web test:                   [0m›[0m
+apps/web test:                 [36m</span>[39m
+apps/web test:               [36m</button>[39m
+apps/web test:               [36m<button[39m
+apps/web test:                 [33maria-controls[39m=[32m"_r_5_-forge"[39m
+apps/web test:                 [33mtype[39m=[32m"button"[39m
+apps/web test:               [36m>[39m
+apps/web test:                 [0mForge[0m
+apps/web test:                 [36m<span[39m
+apps/web test:                   [33maria-hidden[39m=[32m"true"[39m
+apps/web test:                 [36m>[39m
+apps/web test:                   [0m›[0m
+apps/web test:                 [36m</span>[39m
+apps/web test:               [36m</button>[39m
+apps/web test:               [36m<button[39m
+apps/web test:                 [33maria-controls[39m=[32m"_r_5_-drops"[39m
+apps/web test:                 [33mtype[39m=[32m"button"[39m
+apps/web test:               [36m>[39m
+apps/web test:                 [0mDrop rates[0m
+apps/web test:                 [36m<span[39m
+apps/web test:                   [33maria-hidden[39m=[32m"true"[39m
+apps/web test:                 [36m>[39m
+apps/web test:                   [0m›[0m
+apps/web test:                 [36m</span>[39m
+apps/web test:               [36m</button>[39m
+apps/web test:             [36m</aside>[39m
+apps/web test:             [36m<div[39m
+apps/web test:               [33mclass[39m=[32m"help-answer"[39m
+apps/web test:             [36m>[39m
+apps/web test:               [36m<section[39m
+apps/web test:                 [33mclass[39m=[32m"help-v2-section"[39m
+apps/web test:                 [33mid[39m=[32m"_r_5_-getting-started"[39m
+apps/web test:               [36m>[39m
+apps/web test:                 [36m<h3>[39m
+apps/web test:                   [0mGetting started[0m
+apps/web test:                 [36m</h3>[39m
+apps/web test:                 [36m<p>[39m
+apps/web test:                   [0mMochi the cat naps, wanders and fights on the stage while you work. Pick a class to begin; idle claims earn Fish, Yarn, XP and materials.[0m
+apps/web test:                 [36m</p>[39m
+apps/web test:               [36m</section>[39m
+apps/web test:               [36m<section[39m
+apps/web test:                 [33mclass[39m=[32m"help-v2-section"[39m
+apps/web test:                 [33mhidden[39m=[32m""[39m
+apps/web test:                 [33mid[39m=[32m"_r_5_-classes"[39m
+apps/web test:               [36m>[39m
+apps/web test:                 [36m<h3>[39m
+apps/web test:                   [0mClasses[0m
+apps/web test:                 [36m</h3>[39m
+apps/web test:                 [36m<ul[39m
+apps/web test:                   [33mclass[39m=[32m"help-v2-list"[39m
+apps/web test:                 [36m>[39m
+apps/web test:                   [36m<li>[39m
+apps/web test:                     [36m<strong>[39m
+apps/web test:                       [0mWarrior[0m
+apps/web test:                     [36m</strong>[39m
+apps/web test:                     [0m: [0m
+apps/web test:                     [0msword[0m
+apps/web test:                   [36m</li>[39m
+apps/web test:                   [36m<li>[39m
+apps/web test:                     [36m<strong>[39m
+apps/web test:                       [0mGuardian[0m
+apps/web test:                     [36m</strong>[39m
+apps/web test:                     [0m: [0m
+apps/web test:                     [0mhammer[0m
+apps/web test:                   [36m</li>[39m
+apps/web test:                   [36m<li>[39m
+apps/web test:                     [36m<strong>[39m
+apps/web test:                       [0mRogue[0m
+apps/web test:                     [36m</strong>[39m
+apps/web test:                     [0m: [0m
+apps/web test:                     [0mdaggers[0m
+apps/web test:                   [36m</li>[39m
+apps/web test:                   [36m<li>[39m
+apps/web test:                     [36m<strong>[39m
+apps/web test:                       [0mHunter[0m
+apps/web test:                     [36m</strong>[39m
+apps/web test:                     [0m: [0m
+apps/web test:                     [0mspear[0m
+apps/web test:                   [36m</li>[39m
+apps/web test:                   [36m<li>[39m
+apps/web test:                     [36m<strong>[39m
+apps/web test:                       [0mArcher[0m
+apps/web test:                     [36m</strong>[39m
+apps/web test:                     [0m: [0m
+apps/web test:                     [0mbow[0m
+apps/web test:                   [36m</li>[39m
+apps/web test:                   [36m<li>[39m
+apps/web test:                     [36m<strong>[39m
+apps/web test:                       [0mWitch[0m
+apps/web test:                     [36m</strong>[39m
+apps/web test:                     [0m: [0m
+apps/web test:                     [0mstaff[0m
+apps/web test:                   [36m</li>[39m
+apps/web test:                   [36m<li>[39m
+apps/web test:                     [36m<strong>[39m
+apps/web test:                       [0mAlchemist[0m
+apps/web test:                     [36m</strong>[39m
+apps/web test:                     [0m: [0m
+apps/web test:                     [0mflasks[0m
+apps/web test:                   [36m</li>[39m
+apps/web test:                 [36m</ul>[39m
+apps/web test:               [36m</section>[39m
+apps/web test:               [36m<section[39m
+apps/web test:                 [33mclass[39m=[32m"help-v2-section"[39m
+apps/web test:                 [33mhidden[39m=[32m""[39m
+apps/web test:                 [33mid[39m=[32m"_r_5_-chapters"[39m
+apps/web test:               [36m>[39m
+apps/web test:                 [36m<h3>[39m
+apps/web test:                   [0mChapters and rounds[0m
+apps/web test:                 [36m</h3>[39m
+apps/web test:                 [36m<ol[39m
+apps/web test:                   [33mclass[39m=[32m"help-v2-list"[39m
+apps/web test:                 [36m>[39m
+apps/web test:                   [36m<li>[39m
+apps/web test:                     [36m<strong>[39m
+apps/web test:                       [0mLiving Room[0m
+apps/web test:                     [36m</strong>[39m
+apps/web test:                     [0m: [0m
+apps/web test:                     [0m10[0m
+apps/web test:                     [0m rounds of [0m
+apps/web test:                     [0m6[0m
+apps/web test:                     [0m monsters, boss at the last round.[0m
+apps/web test:                   [36m</li>[39m
+apps/web test:                   [36m<li>[39m
+apps/web test:                     [36m<strong>[39m
+apps/web test:                       [0mKitchen[0m
+apps/web test:                     [36m</strong>[39m
+apps/web test:                     [0m: [0m
+apps/web test:                     [0m10[0m
+apps/web test:                     [0m rounds of [0m
+apps/web test:                     [0m10[0m
+apps/web test:                     [0m monsters, boss at the last round.[0m
+apps/web test:                   [36m</li>[39m
+apps/web test:                   [36m<li>[39m
+apps/web test:                     [36m<strong>[39m
+apps/web test:                       [0mBathroom[0m
+apps/web test:                     [36m</strong>[39m
+apps/web test:                     [0m: [0m
+apps/web test:                     [0m10[0m
+apps/web test:                     [0m rounds of [0m
+apps/web test:                     [0m10[0m
+apps/web test:                     [0m monsters, boss at the last round.[0m
+apps/web test:                   [36m</li>[39m
+apps/web test:                   [36m<li>[39m
+apps/web test:                     [36m<strong>[39m
+apps/web test:                       [0mBasement[0m
+apps/web test:                     [36m</strong>[39m
+apps/web test:                     [0m: [0m
+apps/web test:                     [0m10[0m
+apps/web test:                     [0m rounds of [0m
+apps/web test:                     [0m10[0m
+apps/web test:                     [0m monsters, boss at the last round.[0m
+apps/web test:                   [36m</li>[39m
+apps/web test:                   [36m<li>[39m
+apps/web test:                     [36m<strong>[39m
+apps/web test:                       [0mNight Rooftops[0m
+apps/web test:                     [36m</strong>[39m
+apps/web test:                     [0m: [0m
+apps/web test:                     [0m10[0m
+apps/web test:                     [0m rounds of [0m
+apps/web test:                     [0m10[0m
+apps/web test:                     [0m monsters, boss at the last round.[0m
+apps/web test:                   [36m</li>[39m
+apps/web test:                 [36m</ol>[39m
+apps/web test:                 [36m<dl[39m
+apps/web test:                   [33mclass[39m=[32m"help-v2-terms"[39m
+apps/web test:                 [36m>[39m
+apps/web test:                   [36m<dt[39m
+apps/web test:                     [33mclass[39m=[32m"help-v2-term"[39m
+apps/web test:                   [36m>[39m
+apps/web test:                     [0mGated[0m
+apps/web test:                   [36m</dt>[39m
+apps/web test:                   [36m<dd[39m
+apps/web test:                     [33mclass[39m=[32m"help-v2-def"[39m
+apps/web test:                   [36m>[39m
+apps/web test:                     [0mBeing "gated" means the cat needs more power (upgrade gear).[0m
+apps/web test:                   [36m</dd>[39m
+apps/web test:                 [36m</dl>[39m
+apps/web test:               [36m</section>[39m
+apps/web test:               [36m<section[39m
+apps/web test:                 [33mclass[39m=[32m"help-v2-section"[39m
+apps/web test:                 [33mhidden[39m=[32m""[39m
+apps/web test:                 [33mid[39m=[32m"_r_5_-keys"[39m
+apps/web test:               [36m>[39m
+apps/web test:                 [36m<h3>[39m
+apps/web test:                   [0mCat Keys and bosses[0m
+apps/web test:                 [36m</h3>[39m
+apps/web test:                 [36m<p>[39m
+apps/web test:                   [0mYou get [0m
+apps/web test:                   [0m1[0m
+apps/web test:                   [0m [0m
+apps/web test:                   [0mCat Key[0m
+apps/web test:                   [0m with your first claim each day (hold up to [0m
+apps/web test:                   [0m5[0m
+apps/web test:                   [0m). A boss win spends [0m
+apps/web test:                   [0m1[0m
+apps/web test:                   [0m [0m
+apps/web test:                   [0mCat Key[0m
+apps/web test:                   [0m. A loss keeps the key and starts a [0m
+apps/web test:                   [0m60[0m
+apps/web test:                   [0m s catnap (one cooldown for all chapters). Rematch cleared bosses for a smaller chest.[0m
+apps/web test:                 [36m</p>[39m
+apps/web test:                 [36m<ul[39m
+apps/web test:                   [33mclass[39m=[32m"help-key-sources"[39m
+apps/web test:                   [33mdata-testid[39m=[32m"help-key-sources"[39m
+apps/web test:                 [36m>[39m
+apps/web test:                   [36m<li[39m
+apps/web test:                     [33mdata-source[39m=[32m"daily"[39m
+apps/web test:                   [36m>[39m
+apps/web test:                     [0mDaily: 1 Cat Key with your first claim each day.[0m
+apps/web test:                   [36m</li>[39m
+apps/web test:                   [36m<li[39m
+apps/web test:                     [33mdata-source[39m=[32m"drop"[39m
+apps/web test:                   [36m>[39m
+apps/web test:                     [0mRare drop: about 1 in 150 monsters in cleared chapters.[0m
+apps/web test:                   [36m</li>[39m
+apps/web test:                 [36m</ul>[39m
+apps/web test:               [36m</section>[39m
+apps/web test:               [36m<section[39m
+apps/web test:                 [33mclass[39m=[32m"help-v2-section"[39m
+apps/web test:                 [33mhidden[39m=[32m""[39m
+apps/web test:                 [33mid[39m=[32m"_r_5_-forge"[39m
+apps/web test:               [36m>[39m
+apps/web test:                 [36m<h3>[39m
+apps/web test:                   [0mForge[0m
+apps/web test:                 [36m</h3>[39m
+apps/web test:                 [36m<p>[39m
+apps/web test:                   [0mCraft gear with Fish, Yarn and materials (guaranteed rarity per recipe: [0m
+apps/web test:                   [0mCommon, Uncommon, Rare, Epic, Legendary[0m
+apps/web test:                   [0m). Salvage returns part of the cost (always less than it cost). Lock items to protect them in your bag (holds up to [0m
+apps/web test:                   [0m200[0m
+apps/web test:                   [0m items).[0m
+apps/web test:                 [36m</p>[39m
+apps/web test:                 [36m<p>[39m
+apps/web test:                   [0mThe Relic: [0m
+apps/web test:                   [0m30[0m
+apps/web test:                   [0m [0m
+apps/web test:                   [0mYarn[0m
+apps/web test:                   [0m + [0m
+apps/web test:                   [0m1[0m
+apps/web test:                   [0m [0m
+apps/web test:                   [0mMoon Pearl[0m
+apps/web test:                   [0m, [0m
+apps/web test:                   [0m1[0m
+apps/web test:                   [0m per day, shared with v1.[0m
+apps/web test:                 [36m</p>[39m
+apps/web test:               [36m</section>[39m
+apps/web test:               [36m<section[39m
+apps/web test:                 [33mclass[39m=[32m"help-v2-section"[39m
+apps/web test:                 [33mhidden[39m=[32m""[39m
+apps/web test:                 [33mid[39m=[32m"_r_5_-drops"[39m
+apps/web test:               [36m>[39m
+apps/web test:                 [36m<h3>[39m
+apps/web test:                   [0mDrop rates[0m
+apps/web test:                 [36m</h3>[39m
+apps/web test:                 [36m<p>[39m
+apps/web test:                   [0mFirst-clear chests always give a [0m
+apps/web test:                   [0mMoon Pearl[0m
+apps/web test:                   [0m (100%), while repeat chests give one with 30% chance. Gear drops average 1.5 items per chest on first clear versus 0.95 items on repeats. [0m
+apps/web test:                   [0mCat Key[0m
+apps/web test:                   [0m is absent from chest tables today.[0m
+apps/web test:                 [36m</p>[39m
+apps/web test:                 [36m<p>[39m
+apps/web test:                   [0mFor full tables and probabilities, see [0m
+apps/web test:                   [36m<code[39m
+apps/web test:                     [33mclass[39m=[32m"help-v2-code"[39m
+apps/web test:                   [36m>[39m
+apps/web test:                     [0mdocs/drop-rates-v2.md[0m
+apps/web test:                   [36m</code>[39m
+apps/web test:                   [0m.[0m
+apps/web test:                 [36m</p>[39m
+apps/web test:               [36m</section>[39m
+apps/web test:               [36m<div[39m
+apps/web test:                 [33mclass[39m=[32m"help-v2-action"[39m
+apps/web test:               [36m>[39m
+apps/web test:                 [36m<button[39m
+apps/web test:                   [33mclass[39m=[32m"pixel-btn help-v2-btn"[39m
+apps/web test:                   [33mtype[39m=[32m"button"[39m
+apps/web test:                 [36m>[39m
+apps/web test:                   [0mStart Exploring[0m
+apps/web test:                 [36m</button>[39m
+apps/web test:               [36m</div>[39m
+apps/web test:             [36m</div>[39m
+apps/web test:           [36m</div>[39m
+apps/web test:         [36m</div>[39m
+apps/web test:       [36m</div>[39m
+apps/web test:     [36m</div>[39m
+apps/web test:   [36m</div>[39m
+apps/web test: [36m</body>[39m
+apps/web test:  ❯ Object.getElementError ../../../taskbar-hero-cardrpg-big-integration/node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/config.js:37:19
+apps/web test:  ❯ ../../../taskbar-hero-cardrpg-big-integration/node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+apps/web test:  ❯ ../../../taskbar-hero-cardrpg-big-integration/node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+apps/web test:  ❯ ../../../taskbar-hero-cardrpg-big-integration/node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+apps/web test:  ❯ src/layout/HelpTab.keys.test.tsx:31:21
+apps/web test:      29|     withConfigV2({ boss: { firstClearKeys: 1 } }, () => {
+apps/web test:      30|       render(<HelpTab />);
+apps/web test:      31|       expect(screen.getByText(/First-clear boss chests also award 1 Ca…
+apps/web test:        |                     ^
+apps/web test:      32|     });
+apps/web test:      33|   });
+apps/web test:  ❯ withConfigV2 ../../packages/game-rules/src/v2/sim/config.ts:37:20
+apps/web test:  ❯ src/layout/HelpTab.keys.test.tsx:29:5
+apps/web test: ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+apps/web test:  FAIL  src/layout/HelpTab.search.test.tsx > preserves every old answer string, including first-clear configuration and classic content
+apps/web test: AssertionError: expected [ …(6) ] to deeply equal [ …(6) ]
+apps/web test: - Expected
+apps/web test: + Received
+apps/web test:   [
+apps/web test:     "Getting startedMochi the cat naps, wanders and fights on the stage while you work. Pick a class to begin; idle claims earn Fish, Yarn, XP and materials.",
+apps/web test:     "ClassesWarrior: swordGuardian: hammerRogue: daggersHunter: spearArcher: bowWitch: staffAlchemist: flasks",
+apps/web test:     "Chapters and roundsLiving Room: 10 rounds of 6 monsters, boss at the last round.Kitchen: 10 rounds of 10 monsters, boss at the last round.Bathroom: 10 rounds of 10 monsters, boss at the last round.Basement: 10 rounds of 10 monsters, boss at the last round.Night Rooftops: 10 rounds of 10 monsters, boss at the last round.GatedBeing \"gated\" means the cat needs more power (upgrade gear).",
+apps/web test: -   "Cat Keys and bossesYou get 1 Cat Key with your first claim each day (hold up to 5). A boss win spends 1 Cat Key. A loss keeps the key and starts a 60 s catnap (one cooldown for all chapters). Rematch cleared bosses for a smaller chest.First-clear boss chests also award 1 Cat Key.Daily: 1 Cat Key with your first claim each day.Rare drop: about 1 in 150 monsters in cleared chapters.",
+apps/web test: +   "Cat Keys and bossesYou get 1 Cat Key with your first claim each day (hold up to 5). A boss win spends 1 Cat Key. A loss keeps the key and starts a 60 s catnap (one cooldown for all chapters). Rematch cleared bosses for a smaller chest.Daily: 1 Cat Key with your first claim each day.Rare drop: about 1 in 150 monsters in cleared chapters.",
+apps/web test:     "ForgeCraft gear with Fish, Yarn and materials (guaranteed rarity per recipe: Common, Uncommon, Rare, Epic, Legendary). Salvage returns part of the cost (always less than it cost). Lock items to protect them in your bag (holds up to 200 items).The Relic: 30 Yarn + 1 Moon Pearl, 1 per day, shared with v1.",
+apps/web test:     "Drop ratesFirst-clear chests always give a Moon Pearl (100%), while repeat chests give one with 30% chance. Gear drops average 1.5 items per chest on first clear versus 0.95 items on repeats. Cat Key is absent from chest tables today.For full tables and probabilities, see docs/drop-rates-v2.md.",
+apps/web test:   ]
+apps/web test:  ❯ src/layout/HelpTab.search.test.tsx:15:114
+apps/web test:      13|     withConfigV2({ boss: { firstClearKeys: value } }, () => {
+apps/web test:      14|       const { container, unmount } = render(<HelpTab />);
+apps/web test:      15|       expect(Array.from(container.querySelectorAll('.help-v2-section')…
+apps/web test:        |                                                                                                                  ^
+apps/web test:      16|       unmount();
+apps/web test:      17|     });
+apps/web test:  ❯ withConfigV2 ../../packages/game-rules/src/v2/sim/config.ts:37:20
+apps/web test:  ❯ src/layout/HelpTab.search.test.tsx:13:5
+apps/web test: ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+apps/web test:  FAIL  src/layout/boss/BossKeyHint.test.tsx > BossKeyHint > shows the first-clear line when boss.firstClearKeys > 0
+apps/web test: AssertionError: expected [ 'daily', 'drop' ] to deeply equal [ 'daily', 'drop', 'firstClear' ]
+apps/web test: - Expected
+apps/web test: + Received
+apps/web test:   [
+apps/web test:     "daily",
+apps/web test:     "drop",
+apps/web test: -   "firstClear",
+apps/web test:   ]
+apps/web test:  ❯ src/layout/boss/BossKeyHint.test.tsx:46:65
+apps/web test:      44|       renderPanel(0);
+apps/web test:      45|       const items = within(screen.getByTestId('boss-key-hint-sources')…
+apps/web test:      46|       expect(items.map((li) => li.getAttribute('data-source'))).toEqua…
+apps/web test:        |                                                                 ^
+apps/web test:      47|       expect(items[2]!.textContent).toBe('First clear: a boss chest gi…
+apps/web test:      48|     });
+apps/web test:  ❯ withConfigV2 ../../packages/game-rules/src/v2/sim/config.ts:37:20
+apps/web test:  ❯ src/layout/boss/BossKeyHint.test.tsx:43:5
+apps/web test: ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+apps/web test:  Test Files  3 failed | 167 passed (170)
+apps/web test:       Tests  3 failed | 1719 passed (1722)
+apps/web test:    Start at  06:57:04
+apps/web test:    Duration  19.75s (environment 48%, tests 36%, import 10%, transform 6%)
+apps/web test: Environment  jsdom was created 170 times · 92.60s total, 48% of tracked time
+apps/web test:              create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+apps/web test:              learn more: https://vitest.dev/guide/improving-performance#test-environments
+apps/web test: Failed
+/Users/bao/taskbar-hero-cardrpg-big-reveal-fit/apps/web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/web@0.0.0 test: `vitest run`
+Exit status 1
+ ELIFECYCLE  Test failed. See above for more details.

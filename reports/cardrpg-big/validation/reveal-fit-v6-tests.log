@@ -1,0 +1,48 @@
+
+> taskbar-hero@0.0.0 test /Users/bao/taskbar-hero-cardrpg-big-reveal-fit
+> node --test scripts/*.test.mjs && pnpm -r test
+
+✔ explicit root and nested index imports resolve to their exact files (9.054083ms)
+✔ directory aliases coexist with explicit indexes and ordinary modules (2.036333ms)
+✔ test modules, fixture folders and non-TypeScript files stay out of deployment maps (2.114458ms)
+✔ output order is stable regardless of file creation order (3.84525ms)
+✔ generation preserves auth mappings and ignores shared or non-function directories (4.215084ms)
+✔ auth health HTTP 200 exits correctly without leaking response data (26.62ms)
+✔ auth health HTTP 429 exits correctly without leaking response data (18.289542ms)
+✔ auth health HTTP 500 exits correctly without leaking response data (15.836917ms)
+✔ auth health HTTP 502 exits correctly without leaking response data (14.904917ms)
+✔ auth health HTTP 503 exits correctly without leaking response data (15.045666ms)
+✔ auth health fails closed when the transport is unavailable (14.275125ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 171.067708
+Scope: 6 of 7 workspace projects
+packages/auth test$ vitest run
+packages/chain test$ vitest run
+packages/game-rules test$ vitest run
+supabase/tests test$ vitest run
+packages/auth test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-big-reveal-fit/packages/auth
+packages/chain test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-big-reveal-fit/packages/chain
+packages/game-rules test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-big-reveal-fit/packages/game-rules
+supabase/tests test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-big-reveal-fit/supabase/tests
+packages/auth test:  Test Files  1 passed (1)
+packages/auth test:       Tests  24 passed (24)
+packages/auth test:    Start at  07:11:38
+packages/auth test:    Duration  655ms (import 67%, tests 18%, transform 14%, worker 1%)
+packages/chain test:  Test Files  3 passed (3)
+packages/chain test:       Tests  32 passed (32)
+packages/chain test:    Start at  07:11:38
+packages/chain test:    Duration  663ms (import 43%, transform 30%, tests 24%, worker 2%)
+packages/auth test: Done
+packages/chain test: Done
+ ELIFECYCLE  Test failed. See above for more details.
+packages/game-rules test: Failed
+/Users/bao/taskbar-hero-cardrpg-big-reveal-fit/packages/game-rules:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/game-rules@0.0.0 test: `vitest run`
+Exit status 143
+supabase/tests test: Failed
