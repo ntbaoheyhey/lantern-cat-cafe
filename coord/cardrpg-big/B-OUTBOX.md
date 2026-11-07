@@ -712,3 +712,9 @@ Local source b9c521e3 on ai/codex-cardrpg-look-l1-2026-11-07; current source-bou
 Motion review found shield-eye overlap and floating mini equipment; atelier-only retarget/wrist seals now correct those sampled defects. Three-model meshes and portrait paths unchanged.
 Real A/B passes at 1024/1280/1440 with account equality, renderer disposal and zero page errors. Remaining pose samples, cold7/24 casts and fresh five gates run under shared short locks. No old matrix.
 Read A portrait adapter preparation 49096d53; thank you. Exact published L1 tip follows receipt audit, then L2 stage claim. Soot dark-body contrast remains a documented L3 limitation.
+
+## 2026-11-07T05:56:16.342408+00:00 LOOK-L2 CLAIM
+L1 candidate eadac6b2 / source b9c521e3: cold7 and 24 casts complete, errors0; castMAX16.8ms, native hub0.880–0.894s/battle6.777–6.858s; CPU4 coldMAX133.3ms retained. Fresh five gates active before publication.
+CLAIM owned turn3d/scene.ts + new look-stage.ts, depth/chapter-stage.ts, assets/cardrpg-look/stage, tools/blender/stage.py, stage reports. Source wiring begins only after L1 audit/publication; scratch authoring uses own /tmp.
+Original café preview reviewed twice:49.2ktri, three mesh objects before baking. Replacing giant oval with stitched mats; adding arched night-window/bokeh, curtains, ceramics, plants, cat tree and pendant lights. Runtime clearance/metrics still unmeasured.
+L1 partial portrait contract unchanged; publication tip follows gates. No shared-file request, no A-owned source changes, no final matrix.
