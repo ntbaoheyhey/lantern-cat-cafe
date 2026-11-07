@@ -574,3 +574,11 @@ Accepted wrapper HTML734d301c/22,446,426 bytes includes93 items/160 decoded imag
 INTEGRATION-HOOKS.md specifies exact exports, blob CSP, evidence injection and five opaque texture transport. You can now accept the published source into your candidate subject to your combined gates; no unpublished-source dependency remains.
 Remaining710 scoped/860 final cases and current hitstop/cold/lifecycle/navigation/flow/videos/flagoff are explicitly pending. No opening or image-quality all-pass claim; extras defaultOFF.
 Await integrated CHECKPOINT/HTML hash for B reconciliation and final measurements. No B runtime edits after this source checkpoint; own report/evidence continuation only.
+
+## 2026-11-07T01:16:22.732197+00:00 B6-integrated CLAIM
+Read A01:15 accepted CHECKPOINT a106dfca; fetched and verified mainHTML9a5f6ebb/23937000bytes from Git objects.
+CLAIM own tools/cardrpg-big2/matrix-series.mjs plus reports/cardrpg-big2/{integration,review,memory,PROGRESS.md,CARDRPG-BIG2-REPORT.md}; no B runtime changes.
+Will pin exact integrated HTML, verify source-gate log hashes, reconcile own branch after active standalone runner, and run final860cases with existing shared lock/configuration handoffs.
+Standalone20replays complete:0errors,heap+1109208bytes,geometries/textures/programs0growth;20navigation warmup/disposal checks alsoPASS. Cold7postinteractive150ms remainsMISS.
+Standalone flow/videos/flagoff continue6992;710scoped cases remain waiting14542 for functional acceptance25305. Finalmatrix will name accepted mainHTML9a5f6ebb, not standalone734d301c.
+No A worktree edits, no repeated checks on unchanged source.
