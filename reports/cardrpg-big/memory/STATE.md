@@ -3,19 +3,19 @@ PROMPT.md bytes (wc -c) = 50258
 PROMPT.md SHA-256 = 4d1b88d82407168fd5d395681a3baaf977fb0487bc171543cba22ce328a1cc2d
 REFERENCE: reports/cardrpg-big/memory/PROMPT.md
 ## NOW
-Lane A · Integration/F7. Header162f3d24:lab21/reveal32/invitation36/meta39capturesPASS0errors/remote;path3sizesPASS,replay/save15378bytes. Originalmeta3degclickfailure retained;correctedpaddingcoordinatesgive0degall3sizes. Headerfivegatescontinueparent18881/session7020. New isolateddeliverycandidate /Users/bao/taskbar-hero-cardrpg-big-delivery/codex/cardrpg-big-delivery-2026-11-07 mergedvalidatedLOCALB b6bab0b4 at63d06953,NOTaccepted/published;wrapperbuildinprogress. B00:53upload1.64GB+930MBpending.
+Lane A · Integration/F7. Header recovery COMPLETE: f68e7c2b; 39 meta captures, path/replay/save at3sizes, 1722web/1020rules/421E2E PASS. Delivery worktree /Users/bao/taskbar-hero-cardrpg-big-delivery, branch codex/cardrpg-big-delivery-2026-11-07, tip7499b4e4; wrapper sourceedae4110 merges published B b6bab0b4. HTML9a5f6ebbb04af56c19f11cf43cf2763b35df2bde3b7a8dcd943060e878d793d3; 12wrapper captures PASS0errors/remote, controls fit3sizes, account/defaultOFF restored. Combined fivegates still pending.
 Canonical worktree /Users/bao/taskbar-hero-cardrpg-big; branch ai/codex-cardrpg-big-2026-11-06. Last memory parent2f19248a/source published221ec3a8a462597f55579a319018961cd5cd9d21;rules source db1448e9;I browser checkpoint published. Drafts333/F0,334/A,335/F1,336/F2,337/F3,338/F4,339/F5,340/M,341/I,344/G,345/Mfollowup,348/F7preparation.
 G worktree /Users/bao/taskbar-hero-cardrpg-big-g;codex/cardrpg-big-g-2026-11-06;publisheda75ae753/draft344,source62cb5697. M-followup /Users/bao/taskbar-hero-cardrpg-big-meta;codex/cardrpg-big-meta-2026-11-06;published5d1c2c47/draft345,source72bce95c.
 F7 preparation /Users/bao/taskbar-hero-cardrpg-big-demo;codex/cardrpg-big-demo-2026-11-06 source c984c3673e5f5b2c674653296fd5ddaea0eef6c9. Home lab/checklist/frame overlay6focused and four source gates PASS1698web/903rules. Browser18captures/3sizesPASS,0errors/network/overflow,accountrestored. Visualdecode/narrowdrawer followup onreveal candidate. Published evidence1c188a468480850f04bab09a8fa70debe55bf9dc/draft348;runtime capture pending integrated art. Final integration and report pending.
-Sync /Users/bao/taskbar-hero-cardrpg-sync; ai/codex-cardrpg-big-sync; published c35a3873. Read B through00:44:772093a1 wrapperpending, E3/E4/boss push8873 in flight. B10174 has ended; A header series now active. Source recovery6,780filesmatches7commits; cause of HTML hash differencesunknown, no byteidentity claim. OWNERSHIP.md immutable.
+Sync /Users/bao/taskbar-hero-cardrpg-sync; ai/codex-cardrpg-big-sync. Read B through01:01: publishedb6bab0b4 verified; remote advanced5f915aa2. E3/E4/boss drafts354/355/356. B requests integrated HTML CHECKPOINT for final860cases. OWNERSHIP.md immutable.
 Phase HTML survives in each worktree docs/cardrpg3/index.html (rehash verified): I big6a8e0a42; G big-g284976a9; M big-meta1c331fcd. Old /tmp artifact copies/queues were lost; do not resume obsolete PIDs.
-A integration /Users/bao/taskbar-hero-cardrpg-big-integration;codex/cardrpg-big-integration-2026-11-06; tipb8bc5e89,latestpublished3a173cf5. docs/cardrpg3/index.html SHA162f3d2444e531cee6d6fed2899fe1d283af199f9a0247c71d83969d733f877d. Header series pins this HTML and checks lab/reveal/invitations/meta/path, then fivegates with7s handoffs. Do not rebuild source/artifact while active. ExtrasOFF/ON comparison aa977f0f complete.
+A integration /Users/bao/taskbar-hero-cardrpg-big-integration; codex/cardrpg-big-integration-2026-11-06; tipf68e7c2b, published3a173cf5. HTML162f3d24 complete header evidence retained. Delivery separately merges full B; no rebuild of historical artifact.
 Reveal /Users/bao/taskbar-hero-cardrpg-big-reveal;codex/cardrpg-big-reveal-2026-11-07;bbba4c0d19focusedPASS. Artifact980791a0a52ce56bd6c76ed51e346514804b0797faa7cc2c6eecd64ecd65468c8cases/24capturesPASS. Queue75084 ended onlab2pxoverflow, fivegates skipped. Source merged472d5110;rawcopiedintegration/reveal/viewport-v2 anddemo/readability/pilot-overflow. Old1d3b5a93 diagnostic retained.
 Revealfit /Users/bao/taskbar-hero-cardrpg-big-reveal-fit;codex/cardrpg-big-reveal-fit-2026-11-07;published69b994eb. Source9db6b57e;HTML419fc50d/23,377,025bytes. 68captures,0errors;1024firstresult599.375px,card570.015625px,action582.9375px. FullfivegatesPASS1722web/1020rules/421E2E. integration/reveal-fit/README.md;validation/reveal-fit-v7.json.
 ## NEXT
-1. Complete corrected header-recovery meta/path/fivegates and inspect captures;preserveHTML162f3d24. Originalfailedmeta+diagnostic retained;lab/reveal/invitations alreadyPASS.
-2. At phase boundary read B; integrate published remaining enemies/boss/wrapper after header series ends, then rebuild and verify source-pinned final demo. G merge8c9f01a2 and scope191ad443 already complete.
-3. Complete integrated walkthrough and available hero/boss/ultimate recordings, sequential four-role review, integration draft/report and ledger; explicitly mark unavailable B deliverables.
+1. Finish delivery packing verification and combined fivegates; publish source-pinned integrated draft/checkpoint for B final measurements.
+2. Verify integrated studio all86actions, comparison pack, meta/reveal/normal path; record12hero,boss,ultimate clips with per-clip timing-lock handoffs.
+3. Review every clip sequentially in four roles, update COVERAGE/F7 gates/report with actual scores and misses; mirror report and STATE to ledger.
 ## DONE
 Memory ·62036790 bootstrap/c0f1c72a recovery. Attachment41027-byte prefix verified inside45001-byte PROMPT.
 F0 ·7a49705b/state5f72e4a1/draft333. baseline/GATES.md and README.md,610 cases+5 profiles.
@@ -62,6 +62,7 @@ F2/F1/A ·sharpness2/10 pairs PASS, scale band MISS, stage78.889% PASS, full-pag
 Older decisions retained verbatim in memory/DECISIONS.md.
 
 ## MEASUREMENTS
+Header complete ·1722web/1020rules/421E2EPASS;39metacaptures0errors/network/overflow,3pathcasesPASS/save15378bytes. integration/header-recovery/CHECKPOINT.md atf68e7c2b.
 G complete ·263056frames,4640>25ms/1330>50ms,207calls/93802triangles,cast>50ms0. Gworktree invitations/performance-summary.json.
 G ·720/720,0errors,wholepageMAX316.6ms,casts33.4/16.8ms;5profilescomplete. Gworktree invitations/skills/ranked.json and profiles/,artifact284976a9.
 Extras complete ·aa977f0f;fullOFF/native sixgearand sixeconomygroupsPASS. Tier26/48OFF→27/48ON,0lostgains/reversals. ONheldoutcats51.15–85.52%,sets8–92%,singleitem+24pp,45dayMAX2.189801700×. integration/extras/comparison.json;ITEM-TIERS.md.
@@ -119,5 +120,5 @@ NFT-value limits ·25cap/2UItests and12screens PASS, local counters/help verifie
 Research-based identity ·existing research and original cafe assets used,one-page addendum written.
 ## TOOLING / RESUME
 Use the named worktrees and installed local pnpm dependencies. Chromium ANGLE Metal; Python/Pillow/NumPy at /tmp/cardrpg-big-tools (recreate venv if absent). Never replace B dependencies or touch user main.
-Persistent current queue: integration/reports/cardrpg-big/integration/header-recovery/run.sh;session7020,parentPIDverify. meta→path→fivegates,hashguard162f3d24/7slockgaps. Originalheader/run.sh endedfailure;do not restartcompletedlab/reveal/invitations.
+Header recovery queue COMPLETE; do not rerun. Delivery pilot run.sh parent23379 does wrapper then packing withhashguard9a5f6ebb; verifyPIDbefore use. Full delivery queue follows.
 validate.mjs writes separate raw logs on ports5910–5913. Lock atomic /tmp/cardrpg-big-locks/timing.lock; do not overlap browser timing. Current-source final measurements and video must follow accepted B merge. video-capture.mjs supports BIG_VIDEO_RESUME=1 with exactartifact/cliphash guards; video-sheets.py producesall0.5sframes.
