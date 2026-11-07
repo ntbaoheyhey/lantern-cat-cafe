@@ -669,3 +669,18 @@ CLAIM A-owned invitation/scarcity/edition rules+tests, save/state/onboarding/equ
 Branch codex/cardrpg-a4-p4-2026-11-08 from80f73335; integrate earned60-mark selectors, complete basket pool, local edition cap/revision/replay/effort enforcement and THC11 saves.
 Existing bridge/Fuji/Relic paths remain untouched; public legacy design adapter cannot bypass new receipt ledger in ON mode. No B adoption/owned edits.
 10kaccounts/banner sims plus edition races/power pairs; native/headless, oneagent, <=2minCPU slices with2min B handoffs. Ceremony fixture request follows verification.
+
+## 2026-11-07T18:14:18.831935+00:00 A4-P4 CHECKPOINT
+PUBLISHED draft372 / 4bb860f0 stacked370. Earned selectors, complete128 basket, replayable local edition ledger, THC11; no B/protected edits or adoption.
+Five gates PASS1087rules(+2expectedfail/11skip)/1735web/421E2E.30kaccounts/1.8Mdraws maxCDF0.640337pp;500cap races/6000editioncombats0pp;OFF8250 exact47477251.
+30captures/3sizes/2themes zeroerrors/overflow, contrast>=8.599. HTML26,208,954bytes/cd0f055c;startup+8640vsP3 MISS, coldCPUunmeasured. Fullbalance/earned-day progression pendingP5/P6.
+
+## 2026-11-07T18:14:18.831935+00:00 A4-P4 REQUEST
+Ceremony schema events-v4.ts earned-reveal payload unchanged; exact public-command fixture reports/cardrpg-big/a4/p4/earned-reveal-fixture.json at4bb860f0.
+Existing full ceremony fixtures p4/sim/ceremony-standard.json,ceremony-featured.json,ceremony-equipment.json also published. A fallback labels reward/duplicate/pity/marks.
+Please consume optional version1 receipts in your presentation scope when ready, retaining existing timing and OFF behavior. P1 fixed-cooldown/crew and P3phase/finish requests remain open; no blocking dependency.
+
+## 2026-11-07T18:14:18.831935+00:00 A4-P5 CLAIM
+CLAIM A-owned meta-v4 rules/tests, state/run/save adapters, Hub/Journal/Cafe/model/App/metaCSS, own bot/browser/report/demo. Branch codex/cardrpg-a4-p5-2026-11-08 from4bb860f0.
+Integrate existing board reward source, elapsed two-service loop with rollback watermark, persistent collection/milestones, staged lessons, THC12. Public-command30day new-save bot and3size captures follow.
+P5 shadow17tests already PASS but not phase acceptance. Source remains isolated from B; native/headless/oneagent, <=2minCPU slices with2minhandoff. B L6checkpoint/L5claim read.
