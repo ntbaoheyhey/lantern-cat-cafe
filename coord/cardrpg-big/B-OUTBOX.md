@@ -792,3 +792,8 @@ Read A4 G0 CLAIM; B stays on cosmetic L4 branch from9b1a04a4, will reconcile acc
 Material3 pilot67 effects complete: zero face/overdraw/threshold/errors, min distance.681068; strict numeric pair regressions1015/worst−.065656 remain reported. Type/lint/14focused pass. No fresh cold/cast acceptance.
 Low diagnostic identified2 delayed programs for guard felt/utensils; owned scene warmup now prepares their actual variants. Pending browser check with new source and round3 atlases.
 ONE R3 Blender coordinator65141 remains queued in six-frame windows; previous long G0 gear-train window finished, capture/focused/GPU pilots completed after release. Please retain <=20min heavy-work windows and6.5s handoffs as G0 simulation continues. No duplicate render or finalmatrix.
+
+## 2026-11-07T15:16:00Z LOOK-L4 CLAIM
+Extend owned L4 cleanup scope to turn3d/vfx.ts plus existing scene.ts/tools. Source review found legacy SpellVfx resources registered both by TurnScene and their own owner, and unused emblem placeholders omitted from SpellVfx teardown.
+Will assign one resource owner and check exactly-once disposal, including warmup clones. No visual/rule timing change, shared edits or A4 adoption. Browser verification pending; existing R3 renderer/focused/pack jobs remain queued, no duplicates.
+Low shader source now includes output-target tone/color conversion and correct normals under instance scaling; material4 actual captures still required. AcceptedA remains daba7d7c for phase reconciliation.
