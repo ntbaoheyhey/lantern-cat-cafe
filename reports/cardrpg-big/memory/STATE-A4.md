@@ -2,7 +2,7 @@
 ## NOW
 P6 train/heldout COMPLETE; remaining acceptance running on codex/cardrpg-a4-p6-2026-11-08 (rules56acf66a, report/harness checkpoints through450e6fe2). ACTUAL WORKDIR /Users/bao/taskbar-hero-cardrpg-a4; environment Documents checkout is stale. Read this file before any rediscovery.
 ## NEXT
-Reuse original coordinator85496; train and heldout COMPLETE; remaining45day economy,gacha,editions,OFF. Do not launch duplicate jobs. Closure waiter92853 /tmp/cardrpg-a4-p6-close.mjs (session37397) already owns automatic report generation after all six series steps; do not duplicate it. When series complete: a4-p6-report.mjs, node --test a4-p6-acceptance.test.mjs (retain MISS exit), a4-p6-summary.py, audit/publish P6 draft/ledger/sync. Then P7 claim/branch, adopt staged /tmp/cardrpg-a4-p7 scripts; source gates, one full204pack, journey, cold, guide, report and draft. No P7 browser execution yet.
+Reuse original coordinator85496; train and heldout COMPLETE; 45day economy COMPLETE90accounts/4050days; remaininggacha,editions,OFF. Do not launch duplicate jobs. Closure waiter92853 /tmp/cardrpg-a4-p6-close.mjs (session37397) already owns automatic report generation after all six series steps; do not duplicate it. When series complete: a4-p6-report.mjs, node --test a4-p6-acceptance.test.mjs (retain MISS exit), a4-p6-summary.py, audit/publish P6 draft/ledger/sync. Then P7 claim/branch, adopt staged /tmp/cardrpg-a4-p7 scripts; source gates, one full204pack, journey, cold, guide, report and draft. No P7 browser execution yet.
 ## DONE
 P1–P5 drafts367/369/370/372/373. P6 five source gates accepted in validation/a4-p6-accepted.json:1106rules/1735web/421E2E/type/lint/build; originals retained. All5x1timing receipts complete:ordinary21.340s/elite33.785s/boss57.546s,64.807s,58.680s. Boss outcomes all enemy; timings are to crew defeat, not victorious finish.
 ## GATES
@@ -241,3 +241,9 @@ P1–P5 drafts367/369/370/372/373. P6 five source gates accepted in validation/a
 
 ## P6 source-gate count correction
 - Authoritative validation/a4-p6-accepted.json reports 1,106 rules tests passed, 2 expected failures and 18 skipped; 1,735 web tests and 421 E2E passed. Earlier P6 prose stating 11 skipped is stale and superseded by this accepted receipt. No test rerun.
+
+## 2026-11-07T21:51:16.991158+00:00 P6 economy closure
+- Original economy window completed all 90 accounts / 4,050 days; independent source, cohort, day-sequence, route-total and earned-aggregate audit PASS. Heavy/casual maxima 2.725958x essence; fish1.206871x, threads1.409827x, stamps/draws1x.
+- All 90 earned a Legendary; all 90 chosen rewards are censored at day45 with58paid draws. Do not report chosen reward timing as achieved.
+- Original day30.save filename contains day45 for this parameterized run; byte-identical day45.save alias and save-labels.json clarify it. Earned day7 hash remains62b70067.
+- Original85496 continues gacha→editions→OFF;92853 owns closure. No duplicate run; P7 unrun.

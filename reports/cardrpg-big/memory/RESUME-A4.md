@@ -20,3 +20,7 @@ P6 type/lint/tests/build/E2E via validate.mjs a4-p6. No full204pack yet; P7 stag
 - Selected P7 browser coordinators use a 30-second handoff (configurable BIG_P7_HANDOFF_MS, minimum 6.5 seconds) and the unchanged shared timing lock. Heavy source test gates and all current P6 simulation slices retain 120-second handoffs. This preserves a B acquisition opportunity between short browser windows without two idle minutes after each capture group. No P7 run yet.
 
 - Source-gate count correction from validation/a4-p6-accepted.json: 1,106 rules passed / 2 expected failures / 18 skipped (not the stale 11); 1,735 web and 421 E2E passed. Use receipt counts in P6 PR.
+
+## P6 economy complete
+- 90/90 accounts ×45days, independent audit PASS; max heavy/casual2.725958x. All90Legendary observed; all90chosen rewards censored at45days (58paid draws).
+- Original85496 continues gacha→editions→OFF,92853 closure; no duplicate launch. P7 browser/full204 still UNRUN.
