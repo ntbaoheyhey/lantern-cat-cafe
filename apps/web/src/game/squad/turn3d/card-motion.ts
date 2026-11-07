@@ -250,6 +250,12 @@ async function bakeCardClips(model: T.Object3D, role: string, asset: string) {
           angles[1] -= lag[1] * weight * envelope;
           angles[2] -= lag[2] * weight * envelope;
         }
+        // The atelier shield is deeper and the cheek silhouette broader. Keep
+        // the same authored timing while carrying its arc outside the face.
+        if (model.userData.lookV2 === true && asset === 'mochi' && joint === 'armL') {
+          angles[0] = Math.max(-.90, angles[0] * .65);
+          angles[2] = -Math.abs(angles[2]) * .65;
+        }
         const rotation = new T.Quaternion().setFromEuler(new T.Euler(...angles));
         values.push(...node.quaternion.clone().multiply(rotation).toArray());
       }
@@ -270,7 +276,7 @@ async function bakeCardClips(model: T.Object3D, role: string, asset: string) {
 
 /** Bake once per asset, then let the existing mixer handle playback and blending. */
 export function createCardClips(model: T.Object3D, role: string, asset: string): Promise<T.AnimationClip[]> {
-  const key = `${asset}/${role}`;
+  const key = `${asset}/${role}/${model.userData.lookV2 === true ? 'atelier' : 'classic'}`;
   const cached = clipCache.get(key);
   if (cached) return cached;
   const result = bakeCardClips(model, role, asset);

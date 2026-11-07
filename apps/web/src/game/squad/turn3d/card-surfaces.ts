@@ -33,6 +33,27 @@ export class CardSurfaces {
   }
 
   apply(material: T.MeshStandardMaterial) {
+    if (material.name === 'atelier-baked') {
+      material.normalScale.set(.22, .22);
+      material.dithering = true;
+      material.onBeforeCompile = shader => {
+        shader.fragmentShader = shader.fragmentShader.replace('#include <lights_fragment_end>', `
+          #include <lights_fragment_end>
+          vec3 atelierLight = reflectedLight.directDiffuse + reflectedLight.indirectDiffuse;
+          float atelierY = dot(atelierLight, vec3(.2126, .7152, .0722));
+          float atelierBase = max(.04, dot(diffuseColor.rgb, vec3(.2126, .7152, .0722)));
+          float atelierLevel = atelierY / atelierBase;
+          float atelierRamp = .38 + .30 * smoothstep(.12, .58, atelierLevel)
+            + .32 * smoothstep(.62, 1.55, atelierLevel);
+          vec3 atelierChroma = mix(vec3(1.), atelierLight / max(.001, atelierY), .5);
+          reflectedLight.directDiffuse = diffuseColor.rgb * atelierChroma * atelierRamp * .88;
+          float atelierRim = pow(1. - max(dot(normal, normalize(vViewPosition)), 0.), 3.);
+          reflectedLight.indirectDiffuse = diffuseColor.rgb * vec3(1., .88, .72) * (.10 + atelierRim * .18);
+        `);
+      };
+      material.customProgramCacheKey = () => 'lantern-atelier-ramp-wrap-v1';
+      return;
+    }
     if (!/felt|knit/.test(material.name)) return;
     material.map = this.textures[0]!;
     material.normalMap = this.textures[1]!;

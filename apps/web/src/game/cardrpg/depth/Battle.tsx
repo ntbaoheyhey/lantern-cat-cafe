@@ -1,4 +1,5 @@
-import { useEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
+import { useEffect, useMemo, useRef, useState, useSyncExternalStore, type CSSProperties } from 'react';
+import { isLookV2, subscribeLookV2 } from '../../squad/turn3d/look-v2';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import { TurnScene, type SceneView, type Anchor } from '../../squad/turn3d/scene';
 import { CARD_CAMERAS } from '../../squad/turn3d/card-staging';
@@ -17,6 +18,7 @@ function Statuses({ actor }: { actor: R.Actor }) {
   </span>)}</div>;
 }
 export function BattleView({ m }: { m: DepthModel }) {
+  const lookV2 = useSyncExternalStore(subscribeLookV2, isLookV2);
   const host = useRef<HTMLDivElement>(null);
   const scene = useRef<TurnScene | null>(null);
   const skillBanner = useRef<HTMLDivElement>(null);
@@ -44,6 +46,7 @@ export function BattleView({ m }: { m: DepthModel }) {
     boss: battle.actors.some(actor => R.ENEMY_BY_ID[actor.catalogId]?.tier === 'boss'), quality: m.state.settings.quality };
   useEffect(() => {
     let animation = 0, last = 0, ready = false;
+    m.sceneReady = false;
     const currentAudio = m.audio;
     try {
       const anchorPlates = (anchors: Anchor[]) => {
@@ -80,7 +83,7 @@ export function BattleView({ m }: { m: DepthModel }) {
     };
     animation = requestAnimationFrame(tick);
     return () => { cancelAnimationFrame(animation); scene.current?.dispose(); m.sceneReady = false; delete window.__depthScene; };
-  }, [m]);
+  }, [m, lookV2]);
   useEffect(() => { scene.current?.invalidate(); });
   useEffect(() => {
     if (!m.canAct) return;

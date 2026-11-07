@@ -9,7 +9,7 @@ const rarity={Common:'#bfb5a3',Uncommon:'#9aba8b',Rare:'#8fc2e5',Epic:'#c8a2f0',
 const colors={guardian:['#ebc189','#557b75','#e5a44e','#f3d992'],witch:['#765589','#b595c6','#586791','#9d7ac9'],alchemist:['#80bda2','#4b8f85','#e0b997','#a4cea0']};
 const cardDesigns = new Set(['doorstop', 'nightglass', 'seedcup', 'rainbell', 'crumbbook', 'panlid', 'warmwick', 'silkspool', 'starladle', 'softcollar', 'tidetray', 'gardenkey']);
 interface Piece {group:T.Group;geometry:T.BufferGeometry;material:T.MeshStandardMaterial}
-function createPiece(item:VisualItem,role:string):Piece{
+function createPiece(item:VisualItem,role:string,atelier=false):Piece{
  const group=new T.Group(),parts:T.BufferGeometry[]=[];group.name=`gear_${item.id}`;group.userData.itemId=item.id;
  const color=(colors[role as keyof typeof colors]??colors.guardian)[item.visual%4]!,gold='#e6b875',ivory='#f8e7c5',dark='#3a3043',accent=rarity[item.rarity];
  const add=(g:T.BufferGeometry,c:string,pos=[0,0,0],scale=[1,1,1],rot=[0,0,0])=>{const q=g.index?g.toNonIndexed():g.clone();g.dispose();q.applyMatrix4(new T.Matrix4().compose(new T.Vector3(...pos),new T.Quaternion().setFromEuler(new T.Euler(...rot)),new T.Vector3(...scale)));q.deleteAttribute('uv');const a=new Float32Array(q.attributes.position!.count*3),rgb=new T.Color(c);for(let i=0;i<a.length;i+=3){a[i]=rgb.r;a[i+1]=rgb.g;a[i+2]=rgb.b}q.setAttribute('color',new T.BufferAttribute(a,3));parts.push(q)};
@@ -18,7 +18,24 @@ function createPiece(item:VisualItem,role:string):Piece{
  const ring=(c:string,pos:number[],r:number,t=.025,rot=[0,0,0])=>add(new T.TorusGeometry(r,t,6,24),c,pos,[1,1,1],rot);
  const leaf=(c:string,pos:number[],size:number,angle=0)=>{const sh=new T.Shape();sh.moveTo(0,-size*.4);sh.bezierCurveTo(-size*.6,0,-size*.25,size*.5,0,size*.7);sh.bezierCurveTo(size*.25,size*.5,size*.6,0,0,-size*.4);add(new T.ExtrudeGeometry(sh,{depth:.025,bevelEnabled:true,bevelSize:.012,bevelThickness:.01,bevelSegments:2,steps:1,curveSegments:8}),c,pos,[1,1,1],[0,0,angle])};
  const star=(c:string,pos:number[],r=.15)=>{const s=new T.Shape();for(let i=0;i<10;i++){const a=i*Math.PI/5+Math.PI/2,rr=i%2?r*.45:r;const x=Math.cos(a)*rr,y=Math.sin(a)*rr;i?s.lineTo(x,y):s.moveTo(x,y)}s.closePath();add(new T.ExtrudeGeometry(s,{depth:.04,bevelEnabled:true,bevelSize:.008,bevelThickness:.008,bevelSegments:2,steps:1}),c,pos)};
- if(item.cardDesign && cardDesigns.has(item.cardDesign)){
+ if(atelier && item.slot==='weapon'){
+  // The sculpt already carries its utensil. A fitted wrist seal carries the
+  // equipped item's colour and rarity without a second prop beside the paw.
+  ball(color,[0,0,0],[.052,.061,.018]);
+  ring(gold,[0,0,.015],.044,.007);
+  if(item.visual%2)leaf(accent,[0,-.01,.03],.048,-.3);
+  else star(accent,[0,0,.03],.028);
+  group.position.set(0,-.16,.115);group.userData.cardDesign=item.cardDesign;
+ }else if(atelier && item.slot==='outfit'){
+  // Equipment becomes a fitted enamel brooch, leaving the authored cloth visible.
+  // The visual/rarity identity remains on the actor; inventory and rules are untouched.
+  ball(color,[0,0,0],[.064,.074,.018]);
+  ring(gold,[0,0,.013],.058,.008);
+  if(item.visual%3===0)star(accent,[0,0,.031],.037);
+  else if(item.visual%3===1)leaf(accent,[0,-.012,.031],.058,-.3);
+  else {for(const x of [-.018,.018])ball(ivory,[x,0,.035],[.009,.009,.007]);}
+  group.position.set(-.16,.17,.29);group.userData.cardDesign=item.cardDesign;
+ }else if(item.cardDesign && cardDesigns.has(item.cardDesign)){
   // Each named card-RPG heirloom owns its silhouette. These are original cafe objects.
   const designs: Record<string, () => void> = {
    doorstop: () => {
@@ -137,9 +154,9 @@ function createPiece(item:VisualItem,role:string):Piece{
  * preview must not evict the last gear shader just before the next preview. */
 export class GearResources{
  private items=new Map<string,Piece>();
- acquire(item:VisualItem,role:string):Piece{
-  const key=JSON.stringify([role,item]);let piece=this.items.get(key);
-  if(!piece){piece=createPiece(item,role);this.items.set(key,piece)}
+ acquire(item:VisualItem,role:string,atelier=false):Piece{
+  const key=JSON.stringify([role,item,atelier]);let piece=this.items.get(key);
+  if(!piece){piece=createPiece(item,role,atelier);this.items.set(key,piece)}
   return {...piece,group:piece.group.clone(true)};
  }
  dispose(){for(const piece of this.items.values()){piece.geometry.dispose();piece.material.dispose()}this.items.clear()}
@@ -152,11 +169,16 @@ export class GearAttachments{
   const e=actor.equipment,o=this.lastEquipment;if(this.key&&sameSets&&appearance===this.lastAppearance&&e.weapon===o.weapon&&e.outfit===o.outfit&&e.charm===o.charm&&e.relic===o.relic)return;
   this.lastEquipment={...e};this.lastSets=[...actor.setBonuses];this.lastAppearance=appearance;
   const key=JSON.stringify([actor.equipment,actor.setBonuses,appearance]);if(key===this.key)return;this.clear();this.key=key;
-  // Built-in role props remain available in the immutable before model; here loadouts own the hands.
-  for(const name of ['ladle','wand','lantern','satchel']){const o=this.model.getObjectByName(`${this.role}_${name}`);if(o)o.visible=false}
-  this.model.traverse(o=>{if(o.name.includes('armR_flask'))o.visible=false});
-  for(const [slot,value] of Object.entries(appearance??actor.equipment)){const item=typeof value==='string'?ITEM_BY_ID[value]:value;const id=item?.id;if(!item)continue;const p=this.resources.acquire(item,this.role);const socket=slot==='weapon'?'mainHand':slot==='charm'?'neck':slot==='relic'?'tail':'back';
-   const parent=this.model.getObjectByName(slot==='outfit'?`${this.role}_body`:`${this.role}_socket_${socket}`)??this.model;parent.add(p.group);this.pieces.push(p);
+  const atelier=this.model.userData.lookV2===true;
+  // Atelier props are part of the authored silhouette; fitted equipment tokens
+  // preserve the selected item without replacing the hands with legacy geometry.
+  if(!atelier){
+   for(const name of ['ladle','wand','lantern','satchel']){const o=this.model.getObjectByName(`${this.role}_${name}`);if(o)o.visible=false}
+   this.model.traverse(o=>{if(o.name.includes('armR_flask'))o.visible=false});
+  }
+  for(const [slot,value] of Object.entries(appearance??actor.equipment)){const item=typeof value==='string'?ITEM_BY_ID[value]:value;const id=item?.id;if(!item)continue;const p=this.resources.acquire(item,this.role,atelier);const socket=slot==='weapon'?'mainHand':slot==='charm'?'neck':slot==='relic'?'tail':'back';
+   const parentName=atelier&&slot==='weapon'?`${this.role}_armR`:slot==='outfit'?`${this.role}_body`:`${this.role}_socket_${socket}`;
+   const parent=this.model.getObjectByName(parentName)??this.model;parent.add(p.group);this.pieces.push(p);
    if(slot==='outfit'){
     // Tint the original garment consistently while preserving fur/face vertex color.
     const cloak=this.model.getObjectByName(`${this.role}_hat`);if(cloak)cloak.userData.outfitId=id;

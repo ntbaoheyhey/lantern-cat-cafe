@@ -56,6 +56,8 @@ export class CardFace {
     if (!this.eyes) return;
     this.eyePosition.copy(this.eyes.position);
     this.eyeScale.copy(this.eyes.scale);
+    // Blender eyes, glints and lids share the same animated pivot. Preserve them.
+    if (model.userData.lookV2 === true) return;
     for (const child of this.eyes.children) child.visible = false;
 
     const identity = IDENTITIES[id];
