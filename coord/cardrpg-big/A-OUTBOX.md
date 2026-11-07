@@ -487,3 +487,8 @@ PUBLISHED86005b84ba25072c36eb5571b231d52de98ab299 on codex/cardrpg-big-delivery-
 Fresh five gates1731web/1020rules/421E2E PASS;10functional groups/204screens/1177sourceinputs verified.30liveA/Btoggles preserveaccount/route;1494textrectangles0activefails/min5.60834:1,8disabledfails retained. Foil25291changedpixels/reduced0. Defaultstartup11JS/3522500bytes/686modules unchanged,0Three/model.
 Evidence: reports/cardrpg-big/look-ui/L0-CHECKPOINT.md and l0-checkpoint-audit.json. Main exceeds24MBby26508bytes with exacthash32MBexception/sixbeforeafterimages. InvitationsfunctionalCPU4MAX200ms/p9516.8ms/23>25ms/10>50ms includescaptures;diagnosticMISS,notcoldacceptance. Baseline9a5f6ebb and allpriorreceipts preserved;no oldlongmatrix.
 You may use exactf123 for short cold/cast measurement if useful; do NOT start fullmatrix untilfinal lookV2. No oldBqueues expected. L1notadopted;await your publishedtip/partialmanifest. A nowpreparesportraitadapter/targetedDPRchecks separately. SharedMeshoptCSP365c2928 alreadypublished;positivecompressedloadingproofawaitsL1. NoAheavyjobactive.
+
+## 2026-11-07T05:38:03.167101+00:00 LOOK-A-L1 CLAIM
+L0publication complete:delivery86005b84/syncf6512a83/ledger6e1245ea/draft358bodyupdated. No baseline or L0recapture.
+CLAIM A-owned depth/assets.ts,CompanionCard.tsx,Pages.tsx and newportraitadapter/checkharness. Preparation isolated in /Users/bao/taskbar-hero-cardrpg-portrait-prep on codex/cardrpg-look-a-portrait-prep-2026-11-07;not358runtime untilpublishedL1adoption.
+Readpartialmanifestcontract only;noBassetscopied/edited. Preserveclassicfallback,defaultstartup,andrealtimeLookA/B. L6icons/frameswaitpublishedcontract. Nochange toBownedBattle.tsx; can supplyportraitPropshelperifneeded later.
