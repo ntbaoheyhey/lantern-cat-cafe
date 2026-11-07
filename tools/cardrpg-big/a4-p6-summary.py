@@ -51,6 +51,17 @@ row('Offline artifact and startup','G0 A3 26,120,329 bytes',f'{size:,}bytes; {si
 summary={'method':balance['method'],'artifactSha256':sha,'bytes':size,'rows':rows,'source':balance['source'],'counts':balance['counts'],'timings':timings,'checks':balance['checks'],'utility':balance['utility'],'economy':{'ratios':ratios,'totals':economy['totals'],'status':economy_status},'gacha':[{k:v for k,v in r.items() if k!='cdf'} for r in gacha['summaries']],'editions':{k:v for k,v in editions.items() if k not in ['source','pairs','races']},'off':off}
 (base/'acceptance.json').write_text(json.dumps(summary,indent=2))
 def table(rows):return '| Target | Before | After | Status |\n|---|---|---|---|\n'+'\n'.join('| '+' | '.join(str(x).replace('|',' / ').replace('\n',' ') for x in r)+' |' for r in rows)
+sample_table='| Sample | Worst paired item gain | Set aggregate range | Cat aggregate range | Coherent crew gain |\n|---|---|---|---|---|\n'
+for sample in ['train','heldout']:
+ data=read(f'reports/cardrpg-big/a4/p6/{sample}/results.json');verify_source(data)
+ summaries=data['summaries'];mean=lambda xs:sum(xs)/len(xs)
+ pieces=[r for r in summaries if r['kind'] in ['pieces','pieces-equipped']]
+ worst=max(pieces,key=lambda r:r['gainPp'])
+ sets=[r for r in summaries if r['kind']=='sets'];teams=[r for r in summaries if r['kind']=='teams']
+ set_rates=[mean([r['rate'] for r in sets if r['setId']==sid])*100 for sid in sorted({r['setId'] for r in sets})]
+ cat_rates=[mean([r['rate'] for r in teams if cid in r['team']])*100 for cid in sorted({cid for r in teams for cid in r['team']})]
+ crew_gain=mean([r['gainPp'] for r in summaries if r['kind']=='crew'])
+ sample_table+=f"| {sample} | {worst['gainPp']:.2f}pp: {worst['templateId']}, {worst['cardId']}, chapter{worst['chapter']} ({worst['beforeWins']}→{worst['wins']}/500) | {min(set_rates):.2f}–{max(set_rates):.2f}% | {min(cat_rates):.2f}–{max(cat_rates):.2f}% | {crew_gain:.2f}pp |\n"
 reward_table='| Style | First Legendary observed / censored | Chosen observed / censored | Mean paid draws |\n|---|---|---|---|\n'
 for r in economy['totals']:
  observed=lambda key:', '.join(str(v['day']) for v in r[key] if v) or 'none'
@@ -68,6 +79,10 @@ Full-route tiers are distinct from single-boss band fixtures and easy fixed-band
 Set and cat fixtures normalize party HP/attack/defense to a common utility-aware budget within2%; no gear-dependent enemy scaling. All8sets face the same8situations and all220legal triples face each boss. Tied leaders count and remain disclosed in balance-gates.json. Crew comparison uses a train-selected role-balanced crew and frozen uniform sampling of legal equal-power teams.
 
 The displayed score remains an approximate build estimate, not a win probability. A training-only linear fit and heldout residual/order diagnostics are in balance-gates.json; they do not alter combat or erase single-piece misses. Single-piece all-loss floor cells and informative baselines are explicit. Remaining misses must be addressed before promotion rather than hidden by passing functional tests.
+
+## Separate sample measurements
+{sample_table}
+Training diagnostics are shown separately from heldout acceptance. Both samples use the same registered case list and the same crew selected on training. See p6/sample-audit.json for the independent raw-outcome, case-key, digest and source-integrity audit; an integrity PASS does not imply balance PASS.
 
 ## Earned progression
 {reward_table}
