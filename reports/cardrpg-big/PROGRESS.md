@@ -1,11 +1,11 @@
 # Lane A progress
 REFERENCE: memory/PROMPT.md, memory/STATE.md, COVERAGE.md
-Updated 2026-11-06T20:44:33.810677+00:00
+Updated 2026-11-07T00:04:28.283249+00:00
 
-I five gates and five browser flows pass, with encounters46.5327–57.2778s. Page MAX300ms and round gap400.1ms remain misses. Gear retains26/48 positive tier steps and22ties. Economy heavy/casual maximum2.1947756956×.
+The G timing campaign completed all 720 cases and five profiles. It retained 263,056 frames with zero page errors. Cast MAX is 33.4/16.8 ms for first/repeat use. Whole-page MAX is 316.6 ms, with 4,640 frames above 25 ms and 1,330 above 50 ms. The opening gate remains missed. The report and complete raw evidence await G source validation before publication.
 
-G draft344 has five passing gates and36screens. M follow-up draft345 has six before/after cases,33meta screens and+70px preview width. F7 preparation draft348 has five gates and18control captures. A-only integration at ef54264a has five gates and66captures,0errors. Visual review exposed a pre-render gallery capture and a narrow drawer, corrected in the separate reveal candidate pending browser proof.
+The invitation result correction at 9db6b57e passes 36 interaction captures and 32 rare-entrance captures across three sizes and CPU4. The 1024 result bottom moved from 611.375 to 599.375 px. The full suite found three configuration-identity failures because this auxiliary worktree shares node_modules symlinks with integration. A local script waits for the current E2E pack, restores worktree-local dependencies using the frozen offline lockfile, then rebuilds and repeats browser/source gates. Earlier failures and images are retained.
 
-A+B2b rare-entrance candidate bbba4c0d fixes the first1024×600 viewport failure, with19focused tests and typecheck passing. FrozenHTML980791a0 is20,859,481bytes. Diagnostic74380 and fixed75084 wait for the shared lock. Only G coordinator71979 is paused until these finish, preserving activeconfiguration2. Raw failure evidence remains in integration/reveal/pilot-viewport.
+Integrated controls at 289ffa0e already passed five gates with 1,722 web tests, 1,020 rules tests and 421 E2E tests, plus 81 captures. Paired full gear/economy OFF/ON simulations are complete. Positive tier steps rise from 26/48 to 27/48, with zero lost gains. Heavy/casual resource MAX changes from 2.194775696× to 2.189801700×. Experimental defaults remain off.
 
-Main integration e93f14fb contains publishedA+B2c and opening-progress hooks. Later Bstage/audio/enemy/boss/lab checkpoints are pending publication. ON/OFF sims, integrated five gates, final videos, fresh-eyes review, integration draft and merged report remain open. Exact paths and process handoff are in memory/STATE.md.
+Lane B has finished its remaining opponent captures and is publishing source checkpoints. A requested the validated wrapper source as soon as available to begin combined measurements while longer evidence matrices finish. The final integration draft, twelve-hero/boss/ultimate recordings, four-role rescore and merged Vietnamese-led report remain open. Exact scripts, receipts, branches and next actions are recorded in memory/STATE.md.
