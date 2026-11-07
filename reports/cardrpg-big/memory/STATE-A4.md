@@ -1,12 +1,12 @@
 # A4 living state
 ## NOW
-P5 verified on codex/cardrpg-a4-p5-2026-11-08. Original coordinator completed all five steps; no duplicate jobs. Publication pending immediately below.
+P6 published draft375 at1e8f4950; all six registered samples COMPLETE, original closure finished. Branchcodex/cardrpg-a4-p6-2026-11-08; ACTUAL WORKDIR /Users/bao/taskbar-hero-cardrpg-a4. Final report P6-BALANCE.md:13PASS/5MISS rows; numeric assertions3PASS/4FAIL retained. No balance promotion claim.
 ## NEXT
-Publish P5 draft stacked372, mirror ledger, CLAIM P6. Integrate selected tuning2 and run source-bound train/heldout, economy, gacha, editions, OFF, five gates and real x1 timing. P7 follows.
+Mirror P6 STATE/report to ui-ledger and append sync CHECKPOINT, then claim P7, branch from this P6 tip, adopt22staged tools from /tmp/cardrpg-a4-p7/adoption-manifest.json after verifying hashes, commit source, run a4-p7-series.mjs once and resume failed groups only. P7 full204/new120/journey/guide/cold remains UNRUN. Original85496 is only finishing its final idle handoff;92853 closure exited.
 ## DONE
-P1/P2/P3/P4 drafts367/369/370/372. P5 nine new accounts×30days,36captures/3sizes/2themes minimumcontrast7.327; OFF8250exact47477251.
+P1–P5 drafts367/369/370/372/373. P6 five source gates accepted in validation/a4-p6-accepted.json:1106rules/1735web/421E2E/type/lint/build; originals retained. All5x1timing receipts complete:ordinary21.340s/elite33.785s/boss57.546s,64.807s,58.680s. Boss outcomes all enemy; timings are to crew defeat, not victorious finish.
 ## GATES
-P5 type/lint/build/1104rules(+2expectedfail/11skip)/1735web/421E2E PASS. Two contrast fixes verified. Startup bytes MISS; CPU not measured. P6 known training residuals remain unaccepted; no heldout sampled.
+3625cells×500seeds/sample registered; train and heldout each COMPLETE1,812,500outcomes; raw sample-audit.json PASS on all3625cells/sample and38source hashes. Known pilot88ppoutlier/cat/set misses remain provisional. Artifact unchanged while samples run. P7 full204pack UNRUN; startup/current-main cold comparison pending. No B adoption or protected edits.
 ## DECISIONS (append-only)
 - Keep the one-agent constraint, automatic battles, strict A/B ownership, and isolated worktree.
 ## MEASUREMENTS
@@ -166,3 +166,97 @@ P5 type/lint/build/1104rules(+2expectedfail/11skip)/1735web/421E2E PASS. Two con
 - Original79394 completed1280/progression/OFF/1440/1024. Source hashes verified; no repeat of passed gates. Personally reviewed1440cafe/1024journal.
 - Acceptance artifact206be306a39b7d3623c5f307167a64f91e0353d2f1d2b685111f21ae1b4ed3d8 /26,215,386bytes;36captures mincontrast7.326961;8250OFFroutes exact. Failed first/retry1 browser logs retained.
 - P6 selected candidate is tuning2; bounded-defense rejected with384identical outcome digests. Train-only pilots, no heldout contamination. Full204 remains unrun.
+
+## P6 integration checkpoint
+- P5 published373/dee6d42a;ledger e6d88a8a;sync1c9e7675. Current P6 selectedtuning2 matches inspected four runtime files. Two focused safety tests pass.
+- Protocol/spec/decisions updated before heldout. Immutable acceptance source now starts; no runtime edits while it runs. B/native/headless/oneagent constraints unchanged.
+
+- P6 type/lint first run exposed Node-only receipt-test imports in the browser-typed rules package. Moved the same numeric assertions to tools/cardrpg-big/a4-p6-acceptance.test.mjs (native node:test), with no dependency or runtime-rule change. Original failures preserved; type/lint retry queued, original full unit/build/E2E reused.
+
+## P6 resumed source-gate audit
+- Recovered original85496 balance coordinator,85506 train window and85987 timing coordinator, no duplicates. Existing scope rules/ownership re-read. Type/lint retries completed; rules-relocation receipt1106passed/2expectedfail/11skips; original1735web/421E2E/build reused.
+- P7 staged scripts reviewed only; no runtime/heldout changes and no P7 phase adoption. Current-main snapshot already exists at /tmp/cardrpg-a4-current-main for later startup comparison.
+
+## 2026-11-07T19:26:57.545262+00:00 P6 recovery and P7 staging
+- Resumed original85496/85506 balance and85987 timing; no duplicate work. Ordinary21.3399s/elite33.7848s PASS; boss1 running next. Train crossed826complete cells; no heldout sampled. Runtime source remains immutable.
+- Re-read full v2/rules/outboxes/ownership and pulled clean sync. No B DONE/adoption instruction. Main archive340f88b9 has no cardrpg3offline artifact; compare default-production startup against /tmp/cardrpg-a4-main-dist separately from G0offline history.
+- P7 scripts remain STAGED ONLY under /tmp/cardrpg-a4-p7: existing playthrough/meta/designs/path/functional/guide-check/startup/cold; enriched build-guide.py with eight-set/item tables and routes; new guide-data.mjs, performance.mjs, performance-report.py, receipts.py, contact.py (names prefixed a4-p7- except build-guide.py). Syntax checks only, not executed/adopted.
+- Stage cold harness retains measurements when a shorter v4 battle ends before observation; no scene access crash or gameplay manipulation. P7 full204 pack remains unrun; no desktop, models, agents or dependency changes.
+
+## 2026-11-07T19:37:11.403178+00:00 P6 timing closure / recovery pointer
+- Recovered current lane A thread through app read tools, then reused85496/85506/85987. Thirdboss complete58.6801s/outcomeenemy, no boss death. Original timing coordinator will finish its final handoff. No simulations repeated or runtime edits.
+- Existing accepted source-gate manifest already committedba4dfa2b, do not regenerate or repeat source gates. P7 scripts remain staged only; full204notrun. Read sync through19:37UTC, BstillL5/noDONEadoption.
+
+## 2026-11-07T19:43Z P6 safety checkpoint and staged P7 resilience
+- WIP6642a776 commits completed timing/gates/artifact; syncd8a0219e publishes all5timings with explicit bossdefeats. Rules unchanged.
+- Closure waiter92853 waits for original85496 series, then runs balance report, numeric assertions (retained MISS exit), summary and scope into p6/closure.json. No P6 draft until reviewed.
+- P7 stage functional supports resumable groups; never recaptures a passing group, failed attempts get separate paths, max2corrections. Receipt audit selects passing paths while retaining failures. Guide catalogue now binds source/artifact hashes. Scripts remain outside checkout.
+- Narrow navigation feasibility only (no screenshots/full204): /tmp/cardrpg-a4-p7/path-preflight.log caught legacy all-win assumption. Actual public reviewer shortcut level10/star3 startergear route gives party/party/enemy. Staged path now asserts that explicit defeat plus completed/lost route, retaining balance MISS. Retry1 session49237 completedPASS; preserved in p6/path-preflight. Exact source unchanged. No P7 source adoption or formal pack execution.
+
+## 2026-11-07T19:50Z recovery / P7 new-screen preparation
+- Recovered original85496/85506/92853; no duplicate jobs. Train2319completecells/1,159,749outcomes; still same source. Runtime and registered case set untouched.
+- P7 staging now includes four adapted P1/P2/P4/P5 browser paths with current THC12 export checks, isolated output directories and a resumable12-configuration coordinator. Expected120additional new-screen captures (3sizes×2themes), separate from single204pack. Syntax passed; browser unrun.
+- Staged receipt audit requires all12configs and contrast>=4.5. Startup summary now requires identical measurement harness across main/candidate and verifies viewport/CPU. No P7 runtime/source integration; stage inventory at /tmp/cardrpg-a4-p7/staging-manifest.json.
+
+## P7 staged coordinator (not executed)
+- /tmp/cardrpg-a4-p7/adoption-manifest.json identifies21selected scripts and destinations; do not adopt obsolete guide.mjs/a4-p7-guide.py. Selected source all syntax checked. Master a4-p7-series.mjs preserves per-attempt source-gate receipts, serializes full204/new120/journey/guide/cold, asserts P6source and artifact equality. Must claim P7, copy selected tools, commit source, then start coordinator.
+- Guide/report ordering handles local-link dependency: generate guide and provisional report before guide-link check; audit then rewrite report. Publication and visual review remain manual agent steps. No runtime or P7 source integrated.
+
+## 2026-11-07T20:07:00.110646+00:00 P6 continuation audit
+- Reused original85496/85506/92853; train3420completecells/1710395outcomes. Exact38rule hashes and artifact067d2062/26,215,694bytes verified. No duplicate job or heldout/runtime change.
+- Remote main still340f88b9; cached current-main snapshot is correct despite stale localmain6144d42c. P7 staged performance coordinator now retains failures, accepts successful retries and enforces max2corrections; adoption manifest22files rehashed.
+- Personally viewed G0newsave/P6band1 Prepare local captures for32MBpreview explanation; no desktop control. P7 remains staged and full204unrun.
+
+## Train completion / heldout transition
+- Original coordinator completed train at2026-11-07T20:13:11.675Z:3625cells/1,812,500outcomes. Independent train-audit.json verifies every500-outcome row, summary count, digest and38rule source hashes.
+- Train-only worst is Bellsteel legendary charm as fourth slot on Mochi, band6/chapter3:35→493wins/500 (+91.6pp), displayed share2.9724% (+12display-only3.8918%). This is a residual MISS; do not claim share is calibrated to win probability. Heldout untouched before its registered start.
+- Heldout window97965 began20:15UTC under original85496; closure92853 still waits. No duplicate jobs or source changes. P7 staged archive in p6/p7-staging.
+
+## Heldout continuation / publication preparation
+- P6 current WIPf6b7c8ee preserves completed train and source audit. Original85496/heldout97965/closure92853 retained. Heldout past halfway; no duplicate simulations or source edits.
+- GitHub connector confirmed P5 #373 remains open/draft; correct base is codex/cardrpg-a4-p5-2026-11-08 (not Nov7). Use create_pull_request(repository_full_name,head,base,draft:true,title,body) after P6 receipt review. Structured result payload is in structuredContent.content (JSON string).
+- /tmp/cardrpg-a4-status.py is a read-only progress helper. P7 staged backup remains p6/p7-staging/selected-tools.tar.gz; original22-file manifest in /tmp/cardrpg-a4-p7/adoption-manifest.json.
+- Staged P7 journey now labels encounter routes and records day7BossReached. Receipt audit/report distinguish an earned day7 boss measurement from an early route defeat; syntax checks passed. Manifest and22-file backup refreshed; no P7 run or runtime edits.
+
+## P6 evidence audit preparation
+- Recovered original coordinator85496/heldout97965/closure92853; source and existing sample order unchanged. No duplicate simulations.
+- Added read-only a4-p6-audit.mjs to validate both complete raw samples, paired codes, case keys, digests and source hashes before publication. Syntax passed; run after heldout completes, then retain sample-audit.json.
+- Read current sync through latest B L5 CLAIM; no DONE/adoption instruction. P7 remains staged only.
+
+## 2026-11-07T21:10Z heldout completion
+- Original heldout finished21:09:50.881Z,3625cells/1,812,500outcomes. Combined3,625,000outcomes; independent sample-audit.json/log PASS, including paired codes, digests, source/asset and gate-log hashes. No simulation rerun.
+- Broad P6 build inventory retains original runtimeDirty:true and one documented report-only change, a4-p6-summary.py. Runtime input and assets remain exact; P7 rebuilds after source commit.
+- Original85496 now owns economy/gacha/editions/OFF; closure92853 still owns report/numeric tests/summary/scope. Do not duplicate them.
+
+## P6 earned-day7 navigation preflight
+- Original85496/6738 economy and92853closure retained; 16complete accounts observed, no duplicate acceptance run. Train/heldout source untouched. Sync refreshed; B remains L5 with no DONE/adoption instruction.
+- Exactly one existing day7 save (SHA62b70067, crew levels8/7/7) replayed through the planned public UI command choices. Seed66353: ordinary party/party, then boss enemy (25actions). Boss reached; no timing or browser acceptance claimed. Diagnostic retained in p6/path-preflight/day7-preflight.{mjs,json}.
+- P7 selected22file staging hashes still match. No P7 formal browser/full204 run; next remains P6 economy/gacha/editions/OFF closure and publication.
+
+## 2026-11-07T21:38:51.274820+00:00 P6 resumed economy and equivalent harness
+- Original85496/6738/92853 retained; economy46/90complete observed. No accepted account rerun, no runtime/seed changes.
+- Read-only residual map names31fourth-slot cells >12pp per sample, worst93.4pp heldout at ~3% displayed share. Report distinguishes combined slot/set effect from unproven causal component.
+- Frozen-state parity84complete rankings/equip results PASS; memoize pure utility within each stable sort only.24,900→3,216calls;7.16→0.92s probe. Original harness,7frozen states, receipt/adoption record retained in p6/harness-parity; next original slice loaded equivalent implementation.
+- Read fresh sync throughB L7claim; no DONE/adoption instruction. P7 selected22scripts remain outsidecheckout, manifest/archive refreshed; no P7browser/full204 execution.
+
+## P6 source-gate count correction
+- Authoritative validation/a4-p6-accepted.json reports 1,106 rules tests passed, 2 expected failures and 18 skipped; 1,735 web tests and 421 E2E passed. Earlier P6 prose stating 11 skipped is stale and superseded by this accepted receipt. No test rerun.
+
+## 2026-11-07T21:51:16.991158+00:00 P6 economy closure
+- Original economy window completed all 90 accounts / 4,050 days; independent source, cohort, day-sequence, route-total and earned-aggregate audit PASS. Heavy/casual maxima 2.725958x essence; fish1.206871x, threads1.409827x, stamps/draws1x.
+- All 90 earned a Legendary; all 90 chosen rewards are censored at day45 with58paid draws. Do not report chosen reward timing as achieved.
+- Original day30.save filename contains day45 for this parameterized run; byte-identical day45.save alias and save-labels.json clarify it. Earned day7 hash remains62b70067.
+- Original85496 continues gacha→editions→OFF;92853 owns closure. No duplicate run; P7 unrun.
+
+## P6 gacha and edition acceptance complete
+- Gacha30,000accounts/1.8Mpaid draws: all3banner CDF gates PASS, max0.640337pp vs1pp; firstLegendary median44/p9050/max60. Actual selector redeemed at60 for every account. Controlled bankroll only; earned chosen rewards remain censored atday45.
+- Independent read-only gacha/audit.json verifies source, seed order, cohort/pity-bucket accounting and observed CDF. Featured miss→guarantee1457checks; equipment catalogue128templates.
+- Editions500race orders and1500paired seeds/6000encounters PASS;3variants have identical combat outcomes and zero gain. Original coordinator/closure retained, no source rerun.
+
+## P6 final measured closure
+- All6series steps exited0; OFF165cells/8250routes exactly match G0digest47477251. Original closure generated report, numeric tests, summary and scope. No repeated simulations.
+- 13PASS/5MISS table rows: tiers46/48/no reversals; bands33/33/min16.8pp; matchedpower0.99438–1.00569; timings/economy/gacha/editions/OFF/sourcegates PASS. Numeric misses: item93.4pp, sets67.03–79.60%, cats31.38–64.66%, crew47.73pp. Artifact/startup sizeMISS.
+- Numeric test exit1 is expected evidence of4measured misses, not a source-gate failure. Alloriginal logs preserved. Fullartifact067d2062f6836a6d0bb9f6753ece1b2f3ca923688f241866a7f42806c8f7b6a1/26,215,694bytes.
+
+## P6 published
+- Draft375 https://github.com/ntbaoheyhey/taskbar-hero/pull/375 at1e8f4950, stacked373.13PASS/5MISS measured rows. No merge/deploy; P7next.
