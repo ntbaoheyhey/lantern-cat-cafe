@@ -1,6 +1,6 @@
 # A4 living state
 ## NOW
-P6 train/heldout COMPLETE; remaining acceptance running on codex/cardrpg-a4-p6-2026-11-08 (rules56acf66a / docsba4dfa2b). ACTUAL WORKDIR /Users/bao/taskbar-hero-cardrpg-a4; environment Documents checkout is stale. Read this file before any rediscovery.
+P6 train/heldout COMPLETE; remaining acceptance running on codex/cardrpg-a4-p6-2026-11-08 (rules56acf66a, report/harness checkpoints through450e6fe2). ACTUAL WORKDIR /Users/bao/taskbar-hero-cardrpg-a4; environment Documents checkout is stale. Read this file before any rediscovery.
 ## NEXT
 Reuse original coordinator85496; train and heldout COMPLETE; remaining45day economy,gacha,editions,OFF. Do not launch duplicate jobs. Closure waiter92853 /tmp/cardrpg-a4-p6-close.mjs (session37397) already owns automatic report generation after all six series steps; do not duplicate it. When series complete: a4-p6-report.mjs, node --test a4-p6-acceptance.test.mjs (retain MISS exit), a4-p6-summary.py, audit/publish P6 draft/ledger/sync. Then P7 claim/branch, adopt staged /tmp/cardrpg-a4-p7 scripts; source gates, one full204pack, journey, cold, guide, report and draft. No P7 browser execution yet.
 ## DONE
@@ -232,3 +232,9 @@ P1–P5 drafts367/369/370/372/373. P6 five source gates accepted in validation/a
 - Original85496/6738 economy and92853closure retained; 16complete accounts observed, no duplicate acceptance run. Train/heldout source untouched. Sync refreshed; B remains L5 with no DONE/adoption instruction.
 - Exactly one existing day7 save (SHA62b70067, crew levels8/7/7) replayed through the planned public UI command choices. Seed66353: ordinary party/party, then boss enemy (25actions). Boss reached; no timing or browser acceptance claimed. Diagnostic retained in p6/path-preflight/day7-preflight.{mjs,json}.
 - P7 selected22file staging hashes still match. No P7 formal browser/full204 run; next remains P6 economy/gacha/editions/OFF closure and publication.
+
+## 2026-11-07T21:38:51.274820+00:00 P6 resumed economy and equivalent harness
+- Original85496/6738/92853 retained; economy46/90complete observed. No accepted account rerun, no runtime/seed changes.
+- Read-only residual map names31fourth-slot cells >12pp per sample, worst93.4pp heldout at ~3% displayed share. Report distinguishes combined slot/set effect from unproven causal component.
+- Frozen-state parity84complete rankings/equip results PASS; memoize pure utility within each stable sort only.24,900→3,216calls;7.16→0.92s probe. Original harness,7frozen states, receipt/adoption record retained in p6/harness-parity; next original slice loaded equivalent implementation.
+- Read fresh sync throughB L7claim; no DONE/adoption instruction. P7 selected22scripts remain outsidecheckout, manifest/archive refreshed; no P7browser/full204 execution.
