@@ -2,11 +2,11 @@
 ## NOW
 P6 immutable acceptance running on codex/cardrpg-a4-p6-2026-11-08 (rules56acf66a / docsba4dfa2b). ACTUAL WORKDIR /Users/bao/taskbar-hero-cardrpg-a4; environment Documents checkout is stale. Read this file before any rediscovery.
 ## NEXT
-Reuse original coordinator85496/window85506; train then heldout,45day economy,gacha,editions,OFF. Do not launch duplicate jobs. Closure waiter92853 /tmp/cardrpg-a4-p6-close.mjs (session37397) already owns automatic report generation after all six series steps; do not duplicate it. When series complete: a4-p6-report.mjs, node --test a4-p6-acceptance.test.mjs (retain MISS exit), a4-p6-summary.py, audit/publish P6 draft/ledger/sync. Then P7 claim/branch, adopt staged /tmp/cardrpg-a4-p7 scripts; source gates, one full204pack, journey, cold, guide, report and draft. No P7 browser execution yet.
+Reuse original coordinator85496/heldoutwindow97965; train COMPLETE; heldout then45day economy,gacha,editions,OFF. Do not launch duplicate jobs. Closure waiter92853 /tmp/cardrpg-a4-p6-close.mjs (session37397) already owns automatic report generation after all six series steps; do not duplicate it. When series complete: a4-p6-report.mjs, node --test a4-p6-acceptance.test.mjs (retain MISS exit), a4-p6-summary.py, audit/publish P6 draft/ledger/sync. Then P7 claim/branch, adopt staged /tmp/cardrpg-a4-p7 scripts; source gates, one full204pack, journey, cold, guide, report and draft. No P7 browser execution yet.
 ## DONE
 P1–P5 drafts367/369/370/372/373. P6 five source gates accepted in validation/a4-p6-accepted.json:1106rules/1735web/421E2E/type/lint/build; originals retained. All5x1timing receipts complete:ordinary21.340s/elite33.785s/boss57.546s,64.807s,58.680s. Boss outcomes all enemy; timings are to crew defeat, not victorious finish.
 ## GATES
-3625cells×500seeds/sample registered; last saved train1710395outcomes, heldout pending. Known pilot88ppoutlier/cat/set misses remain provisional. Artifact unchanged while samples run. P7 full204pack UNRUN; startup/current-main cold comparison pending. No B adoption or protected edits.
+3625cells×500seeds/sample registered; train COMPLETE1,812,500outcomes; heldout running on seeds10001–10500. Known pilot88ppoutlier/cat/set misses remain provisional. Artifact unchanged while samples run. P7 full204pack UNRUN; startup/current-main cold comparison pending. No B adoption or protected edits.
 ## DECISIONS (append-only)
 - Keep the one-agent constraint, automatic battles, strict A/B ownership, and isolated worktree.
 ## MEASUREMENTS
@@ -206,3 +206,8 @@ P1–P5 drafts367/369/370/372/373. P6 five source gates accepted in validation/a
 - Reused original85496/85506/92853; train3420completecells/1710395outcomes. Exact38rule hashes and artifact067d2062/26,215,694bytes verified. No duplicate job or heldout/runtime change.
 - Remote main still340f88b9; cached current-main snapshot is correct despite stale localmain6144d42c. P7 staged performance coordinator now retains failures, accepts successful retries and enforces max2corrections; adoption manifest22files rehashed.
 - Personally viewed G0newsave/P6band1 Prepare local captures for32MBpreview explanation; no desktop control. P7 remains staged and full204unrun.
+
+## Train completion / heldout transition
+- Original coordinator completed train at2026-11-07T20:13:11.675Z:3625cells/1,812,500outcomes. Independent train-audit.json verifies every500-outcome row, summary count, digest and38rule source hashes.
+- Train-only worst is Bellsteel legendary charm as fourth slot on Mochi, band6/chapter3:35→493wins/500 (+91.6pp), displayed share2.9724% (+12display-only3.8918%). This is a residual MISS; do not claim share is calibrated to win probability. Heldout untouched before its registered start.
+- Heldout window97965 began20:15UTC under original85496; closure92853 still waits. No duplicate jobs or source changes. P7 staged archive in p6/p7-staging.
