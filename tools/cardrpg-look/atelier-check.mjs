@@ -1,6 +1,6 @@
 // Staged for tools/cardrpg-look. Actual public controls on the isolated LOOK panel.
 import {chromium} from '../../apps/web/node_modules/@playwright/test/index.mjs';
-import {readFile,writeFile,mkdir} from 'node:fs/promises';
+import {readFile,writeFile,mkdir,access} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {resolve} from 'node:path';
 import assert from 'node:assert/strict';
@@ -12,7 +12,17 @@ const hash=bytes=>createHash('sha256').update(bytes).digest('hex');
 const bytes=await readFile(artifact),sha=hash(bytes);
 const selected=JSON.parse(await readFile('reports/cardrpg-look/validation/l5/selection.json'));
 const owners=['mochi','soot','clover',...selected.rows.map(row=>row.owner)];
-const receipt={artifact,sha256:sha,method:'Real panel, selects, range input, A/B buttons and return navigation;4angles on25models,9chapter/camera views and6desktop configurations. No timing claims from captures.',units:[],stages:[],configs:[],windows:[],failures:[]};
+const resume=process.env.LOOK_ATELIER_RESUME==='units-stages';
+const receipt=resume?JSON.parse(await readFile(`${out}/checks.json`)):{artifact,sha256:sha,method:'Real panel, selects, range input, A/B buttons and return navigation;4angles on25models,9chapter/camera views and6desktop configurations. No timing claims from captures.',units:[],stages:[],configs:[],windows:[],failures:[]};
+if(resume){
+ assert.equal(receipt.sha256,sha,'Resume only identical runtime HTML');
+ assert.equal(receipt.units.length,25);assert.equal(receipt.stages.length,9);assert.equal(receipt.configs.length,0);assert.equal(receipt.windows.length,28);assert.deepEqual(receipt.failures,[]);
+ for(const row of [...receipt.units.flatMap(unit=>unit.angles),...receipt.stages])assert.equal(hash(await readFile(`${out}/${row.file}`)),row.sha256,row.file);
+ assert.deepEqual(receipt.units.map(unit=>unit.owner),owners);
+ assert.equal(new Set(receipt.windows.map(row=>row.label)).size,28);
+ for(const row of receipt.windows){assert(row.restoredAccount&&row.restoredScreen&&row.disposed);assert.equal(row.overflow,false);assert.deepEqual(row.errors,[]);assert.deepEqual(row.remote,[]);}
+}else assert(!await access(`${out}/checks.json`).then(()=>true,()=>false),'Preserve existing captures before starting another attempt');
+const completedWindows=new Set(receipt.windows.map(row=>row.label));
 const ready=async page=>{
  await page.waitForFunction(()=>window.__lookAtelierScene?.ready,null,{timeout:120000});
  // The renderer resolves before React's loading label is removed. Evidence
@@ -27,6 +37,7 @@ const range=async(page,label,value)=>{
  },value);await paint(page);
 };
 async function windowCheck(label,config,fn){
+ if(completedWindows.has(label)){console.log(JSON.stringify({retainedWindow:label,sha256:sha}));return;}
  await withTimingLock(label,async()=>{
   assert.equal(hash(await readFile(artifact)),sha);
   const browser=await chromium.launch({channel:'chromium',args:['--use-angle=metal']}),errors=[],remote=[];
@@ -100,7 +111,7 @@ for(const [width,height]of [[1024,600],[1280,720],[1440,900]])for(const dpr of [
   assert.equal(detail.oldDisposed,true);assert(detail.models.every(value=>value===enabled));toggles.push({enabled,...detail});
  }
  await page.screenshot({path:`${out}/ui-${width}-dpr${dpr}-models.png`});
- await page.getByRole('button',{name:'Before / after',exact:true}).click();
+ await page.getByRole('navigation',{name:'Atelier views',exact:true}).getByRole('button',{name:'Before / after',exact:true}).click();
  const pairCount=await page.getByLabel('Atelier comparison',{exact:true}).locator('option').count();assert.equal(pairCount,3);
  const images=await page.locator('.look-reading img').evaluateAll(async images=>{await Promise.all(images.map(image=>image.decode()));return images.map(image=>({width:image.naturalWidth,height:image.naturalHeight}));});assert.equal(images.length,5);assert(images.every(row=>row.width>0&&row.height>0));
  await range(page,'Atelier comparison wipe',25);assert.equal(await page.locator('.look-wipe').evaluate(node=>node.style.getPropertyValue('--wipe')),'25%');
