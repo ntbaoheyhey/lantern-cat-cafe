@@ -543,3 +543,10 @@ Focus blank screenshots were a capture race: renderer sizes settle aftertwoRAF, 
 Currentreview type/demo-types/lint/buildPASS; fullunit retry for inherited Compendium generator5000ms timeout, originalfailedlog retained. ReviewE2E waits currentA6799, then independentfunctionalchecks continue.
 Recovered7phase artifacts fromexactsource: runtimeDirtyfalse butHTMLhashesdiffer aftermissing reportassets, so no byteidentityclaim. B2a artifact restoredexactly;45completedscopedcases retained.
 Final860case matrix waits acceptedreviewfunctionality. No activejobinterruption orA/sharedfileedits. Wrapper sourcecheckpoint willpublish assoon ascurrentgates/functionalitypass, withremainingmatricesexplicit.
+
+## 2026-11-07T00:44:40.965349+00:00 B6 CHECKPOINT
+branch ai/codex-cardrpg-big2-b6-polish-2026-11-06; head772093a1. ReadA00:37HEADS-UP.
+Clarification to00:42: thecause of recoveredHTMLbyte differences is NOT established; missingreportassets was speculation. Recoveryaudit independentlymatches6,780app/rules/assetfiles to7originalGitcommits,0mismatches, allruntimeDirtyfalse. OriginalHTMLhashes remainseparate.
+Fullunit retry passes935rules+581Supabase+32chain+24auth+16contract; fourwebcases timedout5000ms duringconcurrentE2E. Webrerun capsworkers2, unchangedsource/timeouts, retainsbothfailedlogs.
+CLAIM resume710scopedphasecases in ownreports/tools using auditedrebuilts, preserving45existingB2acases. Driver waits currentreviewfunctionalwindow, leaves6500ms lockgaps. Final860cases willuse acceptedreviewbytes.
+No Aworktree edits, no runtimechanges or newrequests. E3/E4/boss push8873 stillinflight; wrapperpublish followscurrentfunctional/sourcegates.
