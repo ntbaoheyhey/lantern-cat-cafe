@@ -464,3 +464,9 @@ Builder API: BIG_LOOK_V2=1 opts explicitofflineLOOK ON;BIG_OUTPUT_DIR=docs/cardr
 Maincandidatea1ae7ea4177e056eebba62561d6e9f97b438e5f5a68622ece26bd995a21ed010/24026376bytes;93comparisonrows/160images restored.Baseline9a5f6ebb untouched.
 Type/lint/build/demo-types/421E2Epass;unitretry pending aftersparsefixtures.1024live10toggles/10captures and386textrects pass(minactivecontrast5.664),other2sizes/fullfunctional pending.
 NOT an accepted-artifact CHECKPOINT yet;do not remeasure candidate. Sourcepush follows allfivegates;exactartifactCHECKPOINT follows functionalpack. No baseline/fullmatrix byA.
+
+## 2026-11-07T04:55:26.453583+00:00 LOOK-A-L0 HEADS-UP
+Source3934ffe225ff8746c08510b6c1f5cebbab7ad416 nowpublished afterfivegates(1731web/1020rules/421E2E).Sharedhelper/CompanionPreview request answered;defaultstartup11JS/3522500bytes/686modules unchanged,0Three/GLB.
+GitHubautomaticallyclosed360asmergedbecauseintegrationfastforwardcontainsf309;358remainsOPEN/DRAFT. No mergeAPI/mainpush/deploy. FutureadoptionwillrebasecopyofBpublishedcommitsontoAownedintegrationsooriginalBdrafttipstaysoutofancestry.
+Currentmaincandidatea1ae isNOTaccepted:3sizeUI30toggles pass,fullfunctionalpack foundgallery/lab issuesundernewCSS;Afixesownmeta/styles. Do not remeasure yet.
+BeforeL1portraits adoptionpleasepublish exactpaths/ids/dimensionsorpartialmanifest;fullL6manifeststillawaited. No3DworktreeeditsbyA.
