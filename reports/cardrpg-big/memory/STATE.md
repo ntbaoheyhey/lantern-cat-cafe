@@ -4,14 +4,14 @@ PROMPT.md SHA-256 = bba8c53418413298018f714aa35ebd60ed3d49d9df32f2027c90ba9b279d
 REFERENCE: reports/cardrpg-big/memory/PROMPT.md
 ## NOW
 ACTIVE 2026-11-07T05:03:32.972257+00:00: LOOK-A L0 reviewfix verification; sources f2a43ad1(selectedcontrols+evidencedsizegate),b173715f(questionbadge),089201e3(receiptaudit) local;notyetpushed/accepted.
-Delivery /Users/bao/taskbar-hero-cardrpg-big-delivery · codex/cardrpg-big-delivery-2026-11-07 · published3934ffe2;local089201e3;358draft. B360closed/mergedbyGitHubcontainmentafterAfastforward;L1pending.
+Delivery /Users/bao/taskbar-hero-cardrpg-big-delivery · codex/cardrpg-big-delivery-2026-11-07 · published3934ffe2;locale056d1fe;358draft. B360closed/mergedbyGitHubcontainmentafterAfastforward;L1pending.
 Baseline runtime a106dfca, HTML9a5f6ebbb04af56c19f11cf43cf2763b35df2bde3b7a8dcd943060e878d793d3/23937000bytes unchanged;14videos/204screens/report b092ed0c and ledger a2728798 published.
 Canonical /Users/bao/taskbar-hero-cardrpg-big · ai/codex-cardrpg-big-2026-11-06 · last memoryc146bf34. Open A drafts333–341,344–345,348,358;359closed/merged,notopen.
 Sync /Users/bao/taskbar-hero-cardrpg-sync · ai/codex-cardrpg-big-sync · e2310482. B L0 helper adopted;L1 CompanionPreview request answered in3934ffe2. Ownership unchanged.
 ## NEXT
 1. Finish queued olda1ae packPID64887 preserving failures;7groupscomplete/5PASS,design/path/mechanicspending. Newcandidatef1234525/24026508bytes at/tmp/cardrpg-a-look-l0-contrastfix/index.html;runtimeDirtyfalse atb173715f.
-2. FivegatesreviewfixPID67508:1731web/1020rules/type/lint/buildPASS,E2Equeued. UIseries55241 onf123 (l0-reviewfix/),flagoff48789 queued;finaltype/lint/demo-types3960. No duplicate tasks.
-3. AfterUIproof write exacthash32MBexception;run new10groupfunctionalpack,then mainrebuild (sameexpectedf123),sourceaudit/publish A CHECKPOINT. AwaitL1/L6 phaseboundary;final860matrix onlyLOOK B.
+2. FivegatesreviewfixALLPASS:1731web/1020rules/421E2E(2.2min)/type/lint/build. UIseries55241 onf123 (l0-reviewfix/),flagoff48789 queued;finaltype/lintPASS,demotypes71380PASS (wrongpathfailure retained). No duplicate tasks.
+3. Exacthash32MBexceptionwritten fromnew1024before/after;new10groupfunctionalpack53114queued;then mainrebuild (sameexpectedf123),sourceaudit/publish A CHECKPOINT. AwaitL1/L6 phaseboundary;final860matrix onlyLOOK B.
 ## DONE
 LOOK L0 source ·3934ffe2pushed;App/offline/build/CompanionPreview requestswired;3originaltextures+4rarities;1024live10toggles/10screens/386textrects0fails. look-ui/l0/1024/checks.json;notfullcheckpoint.
 Baseline publication ·b092ed0c/draft358, ledgera2728798831acc86619e6772205c7fefb4b58fcf;delivery/baseline-report-audit.json verifies204screens,14clips,57sheets,5gatelogs,13,125rawframes;105line report/9Vietnamese/6routes. Runtime delta0.
