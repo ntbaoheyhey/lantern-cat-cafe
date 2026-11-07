@@ -1,0 +1,38 @@
+{
+  "name": "control-errors-writes-without-optin",
+  "kind": "control",
+  "head": "e68eee0be82a085999f565800bf50925046acf18",
+  "cwd": "/Users/bao/.codex/worktrees/mega-base0-resume-mutants/taskbar-hero/apps/web",
+  "args": [
+    "pnpm",
+    "test:e2e",
+    "--workers=1",
+    "e2e/v2/errors-notice.spec.ts",
+    "--project=v2-server",
+    "--grep",
+    "T1-T5"
+  ],
+  "env": {
+    "CI": "true",
+    "SCREENSHOTS": "0",
+    "VITE_SUPABASE_URL": "",
+    "VITE_SUPABASE_ANON_KEY": "",
+    "E2E_PORT_CLASSIC": "4610",
+    "E2E_PORT_V2": "4611",
+    "E2E_PORT_SERVER": "4612",
+    "E2E_PORT_API": "4613",
+    "E2E_VIEWPORT": "1280x720",
+    "SCREENSHOT_DIR": "/Users/bao/.codex/worktrees/mega-deno0/taskbar-hero/reports/scorecard/base0/resume-mutations-e68eee0/errors-writes-without-optin-artifacts"
+  },
+  "start": "2026-11-01T09:55:51.639Z",
+  "portFreeCheckExit": 1,
+  "end": "2026-11-01T09:56:03.242Z",
+  "testExit": 0,
+  "contractExit": 0,
+  "combinedExit": 0,
+  "status": "passed",
+  "reason": "SCREENSHOTS=0 wrote no PNG files",
+  "expectedFailurePattern": null,
+  "signal": null,
+  "error": null
+}

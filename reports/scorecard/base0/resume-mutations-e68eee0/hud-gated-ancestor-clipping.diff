@@ -1,0 +1,17 @@
+diff --git a/apps/web/src/shell/shell.css b/apps/web/src/shell/shell.css
+index b6ec8b3..b2ef2d3 100644
+--- a/apps/web/src/shell/shell.css
++++ b/apps/web/src/shell/shell.css
+@@ -197,11 +197,7 @@
+ }
+ 
+ /* The power warning adds a real text row to the shared HUD layout. */
+-.shell-hud.v2-topbar:has(.hud-power-hint) {
+-  height: auto;
+-  min-height: calc(var(--hud-h, 56px) + var(--sp-5, 24px));
+-  max-height: none;
+-}
++
+ 
+ .shell-hud .hud-power-chip { border-color: var(--border, #72578d); }
+ .shell-hud .hud-xp-fill { background: var(--good, #6be08a); }

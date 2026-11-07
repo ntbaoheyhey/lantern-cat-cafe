@@ -1,0 +1,38 @@
+{
+  "mutants": [
+    {
+      "mutant": "scene-before-ready",
+      "killed": true,
+      "testExit": 1,
+      "combinedExit": 1
+    },
+    {
+      "mutant": "hud-missing-styles",
+      "killed": true,
+      "testExit": 1,
+      "combinedExit": 1
+    },
+    {
+      "mutant": "hud-compact-disabled",
+      "killed": true,
+      "testExit": 1,
+      "combinedExit": 1
+    },
+    {
+      "mutant": "art-write-without-optin",
+      "killed": true,
+      "testExit": 0,
+      "combinedExit": 1
+    },
+    {
+      "mutant": "errors-write-without-optin",
+      "killed": true,
+      "testExit": 0,
+      "combinedExit": 1
+    }
+  ],
+  "controls": [
+    0,
+    0
+  ]
+}

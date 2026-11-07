@@ -1,0 +1,3 @@
+# BASE0 mutation plan
+
+Run in a detached scratch checkout; original bytes and the clean worktree are restored after each case. Six generator mutants are already recorded under the DENO0 logs. Additional behavior checks: remove scene-readiness guard (StageScene regression must fail); omit shared HUD stylesheet (XP visibility must fail); disable compact layout forwarding (unchanged <=72px topbar test must fail); force F3 screenshots on by default and force error screenshots on (test plus no-output contract must fail); ignore effects viewport (captured PNG dimension contract must fail); omit a manifest screen (the effects coverage assertion must fail). Controls run with original source, so a broken runner does not count as a killed mutant. No mutant branch is pushed.
