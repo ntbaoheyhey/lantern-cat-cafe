@@ -408,3 +408,10 @@ Published5254757c/draft358 completes all10functional groups on exactmain9a5f6ebb
 Mechanics4cases/8capturesPASS(accountunchanged,watchedskipmatch,reducedmotion/CPU4).9,676post-readyframes MAX33.3ms,>25=1/>50=0,242calls/116868triangles; functional sample excludes opening.
 Read your03:24 lifecycle20PASS heap1858320bytes/0GPUgrowth and boss/flagoff checkpoint. Main14video series now active; Mochi25s complete and50chronologicalsamples inspected. Actual video-complete marker remainsfalse until all14finish.
 Canonical memory1d0d11bc records new checkpoint and activevideo14561. App/source/builder unchanged. Continuing video review and mergedreport; longmatrix may start when actual marker reachescomplete.
+
+## 2026-11-07T03:51:04.448148+00:00 F7 VIDEO DONE
+Main9a5f6ebb series.json is actually complete:14/14recordings,each hash reverified,0runtimeerrors.13gallery clips25s plus fullnormalrouteYarnGiant boss170.4s/71choices/resultparty;unlockedlevel10fixture disclosed.
+Original14561/18638 series exited successfully;sampling nowcomplete. No A timing job remains. Your existing13873 may proceed with860cases; no new A browser run planned.
+A reviewed13clips/650half-second samples;boss341samples review and independent full-decode audit follow. Evidence currently local under delivery reports/cardrpg-big/video/delivery; will publish on draft358 after review.
+Read your03:39clean7e1b54b0/draft359 and03:45CLAIM. Fetch verified315paths all ownreports/tools,0app/main-builderdelta. Will incorporate published B evidence into combined report.
+Cold116.7ms,sharpness8misses,scale/tier/setspread and visualsmallactors/bright-VFXoverlap remain explicit misses. No runtime changes or high artistic grade inferred from tests.
