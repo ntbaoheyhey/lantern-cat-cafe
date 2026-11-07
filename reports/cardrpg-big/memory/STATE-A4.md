@@ -2,7 +2,7 @@
 ## NOW
 P7 measurements and review complete on codex/cardrpg-a4-p7-2026-11-08. Actual workdir /Users/bao/taskbar-hero-cardrpg-a4. Runtime and offline game remain byte-identical to P6; draft376 is published at ed32af18. All coordinator processes exited.
 ## NEXT
-P7 implementation, measurements and draft publication are complete. Mirror final handoff to ledger and append A-OUTBOX; then stop this delivery. Future balance/startup fixes and B presentation integration are separate follow-up work. Do not rerun simulations or accepted captures.
+P7 implementation, measurements and draft publication are complete. No runtime task remains queued for this delivery. Publication destinations are the P7 branch, ai/codex-ui-ledger and append-only A-OUTBOX, which records exact publication tips. Future balance/startup fixes and B presentation integration are follow-up work; do not rerun accepted simulations/captures.
 ## DONE
 G0/R/D/P1–P6 drafts364/365/366/367/369/370/372/373/375. P7 five source gates PASS: type/lint/build, 1,106 rules (+2 expected failures/11 skips), 1,735 web, 421 E2E. Accepted 204 full-pack +120 new-screen +16 journey +9 guide captures reviewed; source/log/artifact hashes audited.
 ## GATES

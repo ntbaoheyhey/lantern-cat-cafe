@@ -4,7 +4,7 @@ Read RULES-A4.md, STATE-A4.md first20 lines and both latest sync outboxes. One a
 
 All acceptance work is complete: five source gates, byte-identical offline rebuild, 204 accepted full-pack captures, 120 new screens, 16 journey and nine guide captures, 14 performance steps, evidence audit and scope. Source/video/receipt history is retained. Coordinators17925/23136 and sessions60441/45202 are finished; do not restart them or rerun P6 simulations/accepted screenshots.
 
-Published draft376 https://github.com/ntbaoheyhey/taskbar-hero/pull/376 at evidence head ed32af1883c5f690e9014a09a7ede7f046b86a16, stacked on draft375. Finish only ledger mirror and A-OUTBOX checkpoint; no additional runtime task is queued by this delivery. Publication commit tips belong in the append-only A-OUTBOX. Preserve unrelated ledger work.
+Published draft376 https://github.com/ntbaoheyhey/taskbar-hero/pull/376 at evidence head ed32af1883c5f690e9014a09a7ede7f046b86a16, stacked on draft375. No additional runtime task is queued by this delivery. Final reports/STATE/HANDOFF are mirrored to ai/codex-ui-ledger; exact source, ledger and sync publication tips are recorded by the append-only A-OUTBOX checkpoint. Read that checkpoint to verify publication rather than restarting work. Preserve unrelated ledger work.
 
 13 PASS/5 MISS target rows remain explicit. Four numeric balance misses plus startup/size are not fixed. Default app JS +552,596 bytes vs main340f88b9; one CPU observation/configuration is descriptive. Offline native max33.4ms/CPU4 max166.6ms. Earned day7 boss55.151s ends in crew defeat. No human playtest or victorious boss-finishing claim.
 
