@@ -58,6 +58,8 @@ export async function createLookStage(renderer: T.WebGLRenderer) {
       for (const material of Array.isArray(object.material) ? object.material : [object.material]) {
         if (!(material instanceof T.MeshStandardMaterial)) continue;
         material.dithering = true;
+        // The paper itself feeds the HDR threshold, rather than a flat halo sprite.
+        if (material.name === 'lampPaper') material.emissiveIntensity = 2.2;
         if (material.name === 'atelier-stage-baked') {
           material.lightMap = irradiance; material.lightMapIntensity = .32;
           object.geometry.setAttribute('uv1', object.geometry.attributes.uv!.clone());

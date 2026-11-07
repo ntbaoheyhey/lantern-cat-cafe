@@ -1,8 +1,8 @@
 # LOOK state
 ## NOW
-L1 published eb568fda/draft361. L2 source cea0a9df/artifact dac82f01/22,290,293bytes; source-bound audit1,280inputs complete. Five gates421E2E,18pixel-identical stills,9camera/lifetime cases,6AB,7cold/24casts all recorded. CastMAX16.8ms/100%≤20; nativecoldMAX33.4/CPU4MAX166.6 (MISS).
+L2 published1000c0cb/draft362. L3 active on ai/codex-cardrpg-look-l3-2026-11-07; third pilot cee6234f/22,394,373bytes built (dirty source), six loading cancellations PASS. Earlier Classic295/294 failure is harness ownership: cafe-candle-halo Sprite uses Three's shared geometry; originals retained. Round3 captures+post ablations pending shared lock behind A E2E. No L3 acceptance.
 ## NEXT
-Publish L2 owned evidence/report/draft, notify A and mirror ledger. Then L3 branch/claim and integrate durable memory/l3-prep drafts; type/lint/browser/visual3rounds required. Trace points to constructor/resize; startup strictbyteparity remains+4. No finalmatrix/lifecycle20/CPU4Balanced-Low acceptance.
+Finish/view round3 from coordinator /tmp/cardrpg-look-l3-round3-verify.sh (session18815, parent43003, check live state before reuse). Current own offline DemoTools source change is newer than pilot: disable route tools during battle. Save/commit L3, rebase own chain onto accepted A4d525a8a (shell+portraits), rebuild clean source; run fivegates, l3-check shell/9cameras/6actualbattleAB, final post/cancellation, flagoff/cold7/24casts and audit. No final matrix. L4 prep remains design only.
 
 ## DONE
 Read exact user brief twice, old B HANDOFF, both outboxes; verified remote delivery tip and full worktree created.
@@ -66,3 +66,9 @@ L0 five source gates421E2E + flagoff PASS; baseline244/cold7/24casts complete. L
 - 2026-11-07T13:03:10.072735+00:00 Resume after turn interruption: source cea0a9df and dac82f01 unchanged. Original cold batch timed out on third scenario; first2 MAX333.3/250.0ms retained under validation/attempts/l2-interrupted-cold. New perf-only runner uses caffeinate and LOOK_FLAG_CHECK=0, no repeated source/AB/camera gates. L3 drafts durable in memory/l3-prep; unintegrated/untested. A latest08:22claims L1adoption and future shell fix, no new accepted CHECKPOINT.
 
 - 2026-11-07T13:11:23.487176+00:00 L2 complete audit:1,280source hashes; nativehub.908–.948s/battle6.497–6.623s,CPU4hub1.733–1.843s/battle8.631–9.125s. All24casts16.8MAX/100%≤20/errors0. Complete cold7MAX166.6, preserved interrupted333.3/250.0andthirdtimeout; imageBitmap matches18PNGs. L3 drafts remain unintegrated; source tipcea0a9df.
+
+- 2026-11-07T13:14:37.865401+00:00 L2 draft362 published1000c0cb. Read A3-T1 accepted0eb729b5 and task2 shell width request864/1096/1256. L3 will incorporate upstream with fresh validation; old L2 receipts remain exact original source.
+
+- L3 pilot unit5pass (loading and quality/cancellation). High+Balanced browser tier switching123textures/552geometries/52programs unchanged after warming. Actual low/remaining ablations pending. Round1 flaws/rejected screenshots durable under rounds/post/runtime-1.
+
+- 2026-11-07T13:31:57.344016+00:00 L3 continuation: prompt/rules/Aoutbox reread; no live oldB runs. Source types PASS. Harness correctly excludes only Sprite shared geometry; contactTexture added to owned-resource set. Six cancels release0/21/167/0/186/294 resources. Round2 fixes3contact/ramp/relativefocus now in third pilot; no new timing claims. A accepted4d525a8a fetched, pending rebase.

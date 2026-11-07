@@ -1,3 +1,15 @@
+# Active L3 continuation — supersedes historical notes below
+
+User explicitly resumed Lane B; no pause. Read STATE.md first15 and RULES.md, latest A-OUTBOX and original PROMPT.
+- Own branch ai/codex-cardrpg-look-l3-2026-11-07 still based1000c0cb, L2draft362 published. Current source dirty is L3post/environment/slicedloading and cancellation-aware chapter decoration. No new runtime source commit yet.
+- Latest pilot cee6234f273a7bcb465ae437172198289ee4b2e687ed9fad664d8263a11a8241 /22,394,373bytes. Source changes after build: own offline DemoTools disabled during battle; ownl3-check.mjs new. No runtime acceptance.
+- Loading6PASS, original Classic295/294 was THREE.Sprite shared-geometry falsepositive, not a leak. Retain diagnostics; current harness still checks Sprite material and adds contacttexture. Corrected6receipt in rounds/post/runtime-3/cancellation.
+- Third review coordinator /tmp/cardrpg-look-l3-round3-verify.sh, logfile same stem.log, session18815,parent43003. Captures then post/masks; may wait A timing lock. Verify actual process before starting any duplicate. Round1/2 already reviewed with5flaws andtop3fixes; round3 must be viewed when available.
+- A accepted4d525a8a fetched (A3shellandportrait). Reconcile by own-chain rebase after saving L3 source/evidence; do not edit A worktrees. Current L3offline copied A’s DemoTools subscription behavior in ownfile only; A shellcomesviarebase.
+- Next: round3review→sourcecommit/rebase→cleanbuild→fivegates/l3-check/post/cancel/flagoff/cold7/24casts→audit/report/ledger/draft. Finalmatrix/lifecycle/CPU4BalancedLow waitsL7. L4/6/5/7 remain open. No subagents/modelimagecalls.
+
+---
+
 # Active continuation — 2026-11-07 (not a pause)
 
 User resumed Lane B and re-supplied the original brief. The historical pause below is superseded by that explicit resume.

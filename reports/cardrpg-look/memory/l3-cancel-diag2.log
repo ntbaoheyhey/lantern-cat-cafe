@@ -1,0 +1,27 @@
+{"lock":"acquired","lane":"B-LOOK","pid":41927,"startedAt":"2026-11-07T13:28:26.746Z","task":"LOOK L3 six loading cancellations"}
+{"look":true,"boundary":"immediate","atBoundary":true,"resources":0,"released":0,"unreleased":[],"rendererDisposed":1,"contextLost":1,"canvasRemoved":true,"failures":[]}
+{"look":true,"boundary":"post","atBoundary":true,"resources":20,"released":20,"unreleased":[],"rendererDisposed":1,"contextLost":1,"canvasRemoved":true,"failures":[]}
+{"look":true,"boundary":"stage","atBoundary":true,"resources":166,"released":166,"unreleased":[],"rendererDisposed":1,"contextLost":1,"canvasRemoved":true,"failures":[]}
+{"look":false,"boundary":"immediate","atBoundary":true,"resources":0,"released":0,"unreleased":[],"rendererDisposed":1,"contextLost":1,"canvasRemoved":true,"failures":[]}
+{"look":false,"boundary":"stage","atBoundary":true,"resources":186,"released":186,"unreleased":[],"rendererDisposed":1,"contextLost":1,"canvasRemoved":true,"failures":[]}
+{"lock":"released","task":"LOOK L3 six loading cancellations"}
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+294 !== 295
+
+    at file:///Users/bao/taskbar-hero-cardrpg-look/tools/cardrpg-look/loading-check.mjs:41:151
+    at async withTimingLock (file:///Users/bao/taskbar-hero-cardrpg-look/tools/cardrpg-look/lock.mjs:35:16)
+    at async file:///Users/bao/taskbar-hero-cardrpg-look/tools/cardrpg-look/loading-check.mjs:10:5 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 294,
+  expected: 295,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.22.2
