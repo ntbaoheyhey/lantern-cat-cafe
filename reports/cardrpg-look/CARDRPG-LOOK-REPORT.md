@@ -11,7 +11,7 @@ Mái giấy/bình tưới còn nhạt, đèn lồng trong suốt lộ lớp mặ
 
 REFERENCE: docs/cardrpg-look/index.html; reports/cardrpg-look/L4-CHECKPOINT.md; reports/cardrpg-look/validation/l4/checkpoint-audit.json; reports/cardrpg-look/validation/l4/REVIEW.md
 
-Runtime sạch `b5e7c16c` trên checkpoint A3 `daba7d7c`; demo SHA256 `fb56cd44b7472b82670bfd8e9712259c036e2aa49d1911c139c4fe2b2641f494`. Audit xác nhận1.580 đầu vào. Nhánh L1/L2/L3 được đối chiếu lại với A3; số đo cũ vẫn gắn với đúng artifact lịch sử, không dùng thay cho L4.
+Draft [L4 #368](https://github.com/ntbaoheyhey/taskbar-hero/pull/368), evidence commit `e6355178`. Runtime sạch `b5e7c16c` trên checkpoint A3 `daba7d7c`; demo SHA256 `fb56cd44b7472b82670bfd8e9712259c036e2aa49d1911c139c4fe2b2641f494`. Audit xác nhận1.580 đầu vào. Nhánh L1/L2/L3 được đối chiếu lại với A3; số đo cũ vẫn gắn với đúng artifact lịch sử, không dùng thay cho L4.
 
 | User complaint | Before → current | Self-grade /10 | Evidence / limitation |
 |---|---|---:|---|

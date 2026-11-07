@@ -1,8 +1,8 @@
 # LOOK state
 ## NOW
-L4 audited on clean runtime b5e7c16c/acceptedA3 daba7d7c: fb56cd44/23,995,962bytes/1580inputs. All67effects and19sheets reviewed;0threshold/face/overdraw/errors; strict1162/2211pair regressions MISS. Fivegates1749web/421E2E pass; GPU6/cancel6/post36/cameras9/AB6 pass;370resources once. Cold7native50.1/CPU4 183.4ms MISS;24castsMAX16.8/100%≤20/errors0; startup+93byte parity MISS. Coordinator11183 completed; do not rerun.
+L4 audited on clean runtime b5e7c16c/acceptedA3 daba7d7c: fb56cd44/23,995,962bytes/1580inputs. All67effects and19sheets reviewed;0threshold/face/overdraw/errors; strict1162/2211pair regressions MISS. Fivegates1749web/421E2E pass; GPU6/cancel6/post36/cameras9/AB6 pass;370resources once. Cold7native50.1/CPU4 183.4ms MISS;24castsMAX16.8/100%≤20/errors0; startup+93byte parity MISS. Coordinator11183 completed; do not rerun. Published e6355178/draft368; L1/L2/L3 exact-lease refs reconciled and verified. Ledger report8b320327.
 ## NEXT
-Publish compact L4 evidence/draft/ledger, reconcile L1/L2/L3 refs with exact leases, then L6 full12portraits/48icons/4rarity plates→L5→L7. L6 scratch only, no renders/integration. A4P1 presentation request acknowledged; await published schema/fixture, no A4 adoption yet. Fullmatrix/lifecycle20/CPU4BalancedLow unrun.
+L6 claimed sync5d724959: full12portraits/48icons/4rarity plates→L5→L7. First48icons+4plates+Mochi portrait rendered and personally inspected; remaining11portraits coordinator active, no assets/manifest integration. R1 needs real object volume and clearer rarity identity. A4P1 schema/fixture read at published de5d8a7b/draft367; presentation assessment separate, no A4 adoption yet. Fullmatrix/lifecycle20/CPU4BalancedLow unrun.
 
 ## DONE
 Read exact user brief twice, old B HANDOFF, both outboxes; verified remote delivery tip and full worktree created.

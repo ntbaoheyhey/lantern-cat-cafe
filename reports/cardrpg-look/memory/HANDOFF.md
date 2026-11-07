@@ -1,3 +1,13 @@
+# L4 published; L6 original art active — 2026-11-07T17:00:35.651854+00:00
+
+L4 source b5e7c16c, evidence e6355178, draft368 PUBLISHED. Remote L1/L2/L3 verified8579a805/60b78d4d/3a10f569 with exact leases. Two oversized full uploads HTTP500; source-only atomic push then evidence fast-forward succeeded with identical commits, no splitting. memory/l4-publish-chunks.py is UNUSED fallback, do not run. Ledger report/STATE mirrored8b320327 via isolated index; A ledger worktree left untouched. Five gates/cold24/audit already complete, no rerun.
+
+L6 CLAIM5d724959. Native Mac, no Docker job/subagents/modelcalls. ONE active coordinator memory/l6-round1.mjs session48560; log/tmp/cardrpg-look-l6-round1.log. All48icons complete, packed and personally viewed dark+light at64px;4rarity plates packed/viewed;Mochi full1024portrait viewed. Remaining11portraits waits A lock. Do not modify scratch icons.py/portraits.py while this coordinator runs. Initial pilot52168 completed. Source artifacts currently memory/l6-prep; no runtime asset/manifest changes.
+
+R1 icons are too flat/hollow, secondaries tiny; plates too uniform. Authored icon_solids.py for R2 adds original rounded bodies, cloth/veins/glaze/metal details; syntax only, NOT rendered. Promote into tools on L6 branch, keep initial scripts for exact before evidence. Exporter esbuild missing fixed to existing Vite;55forms exported. Baseline12portraits/48SVGicons at rounds/art/before preserved+viewed. Need2rounds all/3heroes,12portrait/48icon/4plate provenance+manifest, browser validation and phase gates before L6 publication. A4P1published de5d8a7b/draft367 read; A4P2 active. No A4 rebase adopted. L5/L7/finalmatrix/lifecycle20/CPU4BalancedLow remain open.
+
+---
+
 # Active L4 publication — 2026-11-07T16:44:14.887169+00:00
 
 User resumed Lane B; Docker question answered: B uses native Mac Node/pnpm/Blender/Playwright. Docker Desktop is running independently; latest docker ps had no running containers. No CUA/subagents/generative calls/shared or A-worktree edits.
