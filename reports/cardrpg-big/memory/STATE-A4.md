@@ -1,8 +1,8 @@
 # A4 living state
 ## NOW
-R published as draft365, five gates PASS. D specification reviewed and ready to commit; no runtime edits. G0 OFF behavior and level curve complete; economy continues from immutable snapshot.
+D specification committed3f2c7efe; D five gates PASS. R draft365. No runtime changes yet; P1 code staged outside checkout until this boundary. G0 economy continues from immutable snapshot.
 ## NEXT
-Commit reviewed D, run D gates, then implement P1 behind gameplayV4. Retain G0 economy coordinator89663; no screen research or visible browser.
+Publish D draft, CLAIM P1 then implement crew/formation/plans plus ON-only resource removal and THC8 extension. Retain G0 coordinator89663; no screen research.
 ## DONE
 Prompt preserved verbatim before A4 work. No gameplay edits yet. Disk 296 GiB available. Existing B L3 DONE read; no adoption planned during G0.
 ## GATES
@@ -68,3 +68,7 @@ G0 source gates PASS (typecheck, lint, build, 1735 web, 1020 rules, 421 E2E); ba
 - R draft365 https://github.com/ntbaoheyhey/taskbar-hero/pull/365 at63f518c1, stacked364. Five research phase gates PASS.
 - Reconfirmed native tools, no Docker; no screen/desktop control. Background text research and headless local acceptance only.
 - OFF behavior and saturation receipts complete against frozen source; economy coordinator89663 remains responsible for closure.
+
+## D five-gate checkpoint
+- Type/lint/build PASS;1735 web/1020 rules (+2 expectedfail/11skip)/421 E2E PASS. Source still byte-identical to179-file G0 snapshot; off digest47477251b3d20ab602bee5c55a56cdd661e111b1386e298e0c9bc67737fecfa3.
+- D design3f2c7efe includes4 sequential reviewer roles; no runtime code yet. P1 staging at /tmp/cardrpg-a4-p1 is incomplete and NOT applied/tested.
