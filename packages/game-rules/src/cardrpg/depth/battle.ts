@@ -176,20 +176,23 @@ export function tickStatuses(b: Battle, actor: Actor) {
 function actorBase(): Pick<Actor, 'shield' | 'charge' | 'break' | 'statuses' | 'cooldowns' | 'passiveUsed' | 'phase' | 'equipment' | 'setEffects' | 'bonuses' | 'turns'> {
   return { shield:0,charge:20,break:0,statuses:[],cooldowns:{},passiveUsed:false,phase:1,equipment:[],setEffects:[],bonuses:{},turns:0 };
 }
-function enemyActor(id: string, index: number, chapter: number, tutorial = false): Actor {
+function enemyActor(id: string, index: number, chapter: number, tutorial = false, enemyStats?: BattleSetup['enemyStats']): Actor {
   const e = ENEMY_BY_ID[id];
   if (!e) throw Error('Unknown enemy');
+  const stats = enemyStats?.[id] ?? e;
   const scale = tutorial ? .55 : 1 + Math.max(0, chapter - e.chapter) * .16;
-  return { ...actorBase(), id:`foe-${index}-${id}`,catalogId:id,name:e.name,side:'enemy',role:e.role,row:e.row,flavour:e.flavour,hp:Math.round(e.hp*scale),maxHp:Math.round(e.hp*scale),attack:Math.round(e.attack*scale*(tutorial ? 1 : [2.7, 1.95, 1.6][chapter - 1]!)),defense:e.defense,initiative:5-index%3,effectHit:0,effectResist:e.tier==='boss'?1200:500,breakCap:e.breakCap,skills:[] };
+  return { ...actorBase(), id:`foe-${index}-${id}`,catalogId:id,name:e.name,side:'enemy',role:e.role,row:e.row,flavour:e.flavour,hp:Math.round(stats.hp*scale),maxHp:Math.round(stats.hp*scale),attack:Math.round(stats.attack*scale*(tutorial ? 1 : [2.7, 1.95, 1.6][chapter - 1]!)),defense:stats.defense,initiative:5-index%3,effectHit:0,effectResist:e.tier==='boss'?1200:500,breakCap:e.breakCap,skills:[] };
 }
 export function createBattle(setup: BattleSetup): Battle {
+  const initial = clone(setup);
+  initial.enemyStats ??= Object.fromEntries(Object.values(ENEMY_BY_ID).map(({ id, hp, attack, defense }) => [id, { hp, attack, defense }]));
   const actors: Actor[] = setup.cats.map((c,index) => {
     const cat = CAT_BY_ID[c.id];
-    if (!cat || c.skills.length !== 3 || new Set(c.skills).size !== 3 || c.skills.some(id => SKILLS[id]?.catId !== c.id)) throw Error('Invalid three-skill loadout');
+    if (!cat || ![3, 4].includes(c.skills.length) || new Set(c.skills).size !== c.skills.length || c.skills.some(id => SKILLS[id]?.catId !== c.id)) throw Error('Invalid cat skill kit');
     return { ...actorBase(),id:c.id,catalogId:c.id,name:cat.name,side:'party',role:cat.role,row:c.row,flavour:cat.flavour,hp:Math.min(c.stats.hp,setup.hp?.[c.id]??c.stats.hp),maxHp:c.stats.hp,attack:c.stats.attack,defense:c.stats.defense,initiative:9-index,effectHit:c.stats.effectHitBp,effectResist:c.stats.effectResistBp,breakCap:6,skills:[...c.skills],equipment:c.equipment??[],setEffects:c.effects??[],bonuses:{...c.bonuses,critBp:c.stats.critBp,critDamageBp:c.stats.critDamageBp,healingBp:c.stats.healingBp,shieldBp:c.stats.shieldBp} };
   });
-  actors.push(...setup.enemies.map((id,i) => enemyActor(id,i,setup.chapter,setup.tutorial)));
-  const b: Battle = {version:CONTRACT_VERSION,seed:setup.seed,rng:setup.seed,chapter:setup.chapter,actors,round:0,queue:[],acted:[],energy:0,maxEnergy:5,intents:[],log:[],choices:[],result:null,firstDeath:null,procRounds:{},boons:{...setup.boons},mutator:setup.mutator??'',initial:clone(setup)};
+  actors.push(...setup.enemies.map((id,i) => enemyActor(id,i,setup.chapter,setup.tutorial,initial.enemyStats)));
+  const b: Battle = {version:CONTRACT_VERSION,seed:setup.seed,rng:setup.seed,chapter:setup.chapter,actors,round:0,queue:[],acted:[],energy:0,maxEnergy:5,intents:[],log:[],choices:[],result:null,firstDeath:null,procRounds:{},boons:{...setup.boons},mutator:setup.mutator??'',initial};
   const combos = teamCombos(setup.cats.map(c => c.id));
   for (const actor of living(b,'party')) {
     actor.shield += boonValue(b,'openingShield')+(actor.bonuses.openingShield??0);
@@ -334,9 +337,26 @@ function finishAction(b: Battle, actor: Actor) {
   }
 }
 /** Mutates only an accepted legal choice. Rejected actions leave the snapshot identical. */
+function actionDescription(b: Battle, actor: Actor, target: Actor, skill: Skill): string {
+  const health = Math.round(target.hp / target.maxHp * 100);
+  if (skill.effects.some(effect => effect.kind === 'revive')) return `${actor.name} revives ${target.name} · ${skill.name}`;
+  if (skill.target === 'allies') {
+    const lowest = Math.min(...living(b, 'party').map(ally => Math.round(ally.hp / ally.maxHp * 100)));
+    return `${actor.name} supports the team (lowest HP ${lowest}%) · ${skill.name}`;
+  }
+  if (target.side === 'enemy') {
+    const weakest = Math.min(...targets(b, actor, skill).map(foe => foe.hp));
+    const reason = target.hp === weakest ? 'focuses the weakest reachable foe' : 'pressures a foe';
+    return `${actor.name} ${reason}, ${target.name} (HP ${health}%) · ${skill.name}`;
+  }
+  const verb = skill.effects.some(effect => effect.kind === 'heal') ? 'heals' : 'protects';
+  if (skill.id === 'wait') return `${actor.name} restores shared energy for the team`;
+  return `${actor.name} ${verb} ${target.name} (HP ${health}%) · ${skill.name}`;
+}
 export function act(b: Battle, choice: Choice): boolean {
   if (!legalChoices(b).some(c=>c.actorId===choice.actorId&&c.skillId===choice.skillId&&c.targetId===choice.targetId)) return false;
   const actor=currentActor(b)!, skill=skillById(choice.skillId)!, target=b.actors.find(a=>a.id===choice.targetId)!;
+  const description = actionDescription(b, actor, target, skill);
   b.choices.push({...choice});
   actor.bonuses.healProc=0;actor.bonuses.cleanseProc=0;
   b.energy-=energyCost(actor,skill);actor.charge-=skill.charge;
@@ -364,13 +384,13 @@ export function act(b: Battle, choice: Choice): boolean {
   if (skill.id==='defend') actor.charge=Math.min(100,actor.charge+boonValue(b,'defendCharge'));
   if (skill.id==='wait') heal(b,actor,actor,boonValue(b,'waitHeal'));
   if (skill.charge) b.energy=Math.min(10,b.energy+boonValue(b,'ultimateEnergy'));
-  record(b,actor,target,'action',0,skill.name,skill.id);
+  record(b,actor,target,'action',0,description,skill.id);
   finishAction(b,actor);
   return true;
 }
 function spawnThread(b: Battle, source: Actor) {
   if (living(b,'enemy').filter(a=>a.catalogId==='binding-thread').length>=2) return;
-  const actor=enemyActor('binding-thread',b.actors.length,b.chapter);
+  const actor=enemyActor('binding-thread',b.actors.length,b.chapter,false,b.initial.enemyStats);
   b.actors.push(actor);
   record(b,source,actor,'summon',0,'Binding Thread joins next round');
 }

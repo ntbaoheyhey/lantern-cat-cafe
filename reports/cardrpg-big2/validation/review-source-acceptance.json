@@ -1,0 +1,112 @@
+{
+  "root": "/tmp/cardrpg-big2-review-validation",
+  "head": "c29564f62a9eeec22aab477de42df24d0e85c420",
+  "artifact": "/tmp/cardrpg-big2-review-index.html",
+  "sha256": "734d301c5dfc192e6e0a74e03311deff2fde93acd673983724813bec96a7cfec",
+  "recordedAt": "2026-11-07T00:48:21.693220+00:00",
+  "accepted": true,
+  "method": "Original pinned-source typecheck/demo-types/lint/build plus complete root unit retry with VITEST_MAX_WORKERS=2 and all421 E2E. Test timeouts and assertions unchanged. Original failed attempts retained, not relabeled. Current runtime/app/rules/assets/tools match pinned source exactly.",
+  "initialFailures": [
+    "review-source-tests.log",
+    "review-unit-retry-tests.log"
+  ],
+  "unitConcurrency": "VITEST_MAX_WORKERS=2",
+  "rows": [
+    {
+      "name": "typecheck",
+      "args": [
+        "typecheck"
+      ],
+      "exit": 0,
+      "started": "2026-11-07T00:37:35.307Z",
+      "ended": "2026-11-07T00:38:18.122Z",
+      "log": "reports/cardrpg-big2/validation/review-source-typecheck.log",
+      "sha256": "42e1219e30d41d9fde9da62209214c4f175a5ff4883808d42f8d91335a217c51",
+      "counts": []
+    },
+    {
+      "name": "demo-types",
+      "args": [
+        "--filter",
+        "@taskbar-hero/web",
+        "exec",
+        "tsc",
+        "-p",
+        "../../tools/cardrpg-big2/tsconfig.json",
+        "--noEmit"
+      ],
+      "exit": 0,
+      "started": "2026-11-07T00:38:18.125Z",
+      "ended": "2026-11-07T00:38:39.604Z",
+      "log": "reports/cardrpg-big2/validation/review-source-demo-types.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "counts": []
+    },
+    {
+      "name": "lint",
+      "args": [
+        "lint"
+      ],
+      "exit": 0,
+      "started": "2026-11-07T00:38:39.605Z",
+      "ended": "2026-11-07T00:39:15.388Z",
+      "log": "reports/cardrpg-big2/validation/review-source-lint.log",
+      "sha256": "bd87a56d4c1ec3e236b65113adbb72f5e212d6bb7892eca153287bbb29a58316",
+      "counts": []
+    },
+    {
+      "name": "build",
+      "args": [
+        "build"
+      ],
+      "exit": 0,
+      "started": "2026-11-07T00:40:24.371Z",
+      "ended": "2026-11-07T00:40:40.762Z",
+      "log": "reports/cardrpg-big2/validation/review-source-build.log",
+      "sha256": "cc288dfe104b0b8e4af9cf0e8713dc9a9b77e6617f09d3e5106880e1619dafa4",
+      "counts": []
+    },
+    {
+      "name": "tests",
+      "args": [
+        "test"
+      ],
+      "exit": 0,
+      "started": "2026-11-07T00:45:45.290Z",
+      "ended": "2026-11-07T00:47:32.200Z",
+      "log": "reports/cardrpg-big2/validation/review-unit-capped-tests.log",
+      "sha256": "b64ac41793ac87dcffa32bed6ab5834704815c36213c93dd28c2f0e328441b54",
+      "counts": [
+        "packages/chain test:  Test Files  3 passed (3)",
+        "packages/chain test:       Tests  32 passed (32)",
+        "packages/auth test:  Test Files  1 passed (1)",
+        "packages/auth test:       Tests  24 passed (24)",
+        "supabase/tests test:  Test Files  34 passed (34)",
+        "supabase/tests test:       Tests  581 passed (581)",
+        "packages/game-rules test:  Test Files  51 passed | 3 skipped (54)",
+        "packages/game-rules test:       Tests  935 passed | 2 expected fail | 11 skipped (948)",
+        "packages/api-contract test:  Test Files  1 passed (1)",
+        "packages/api-contract test:       Tests  16 passed (16)",
+        "apps/web test:  Test Files  169 passed (169)",
+        "apps/web test:       Tests  1702 passed (1702)"
+      ]
+    },
+    {
+      "name": "e2e",
+      "args": [
+        "--filter",
+        "@taskbar-hero/web",
+        "test:e2e",
+        "--workers=4"
+      ],
+      "exit": 0,
+      "started": "2026-11-07T00:44:41.010Z",
+      "ended": "2026-11-07T00:46:56.458Z",
+      "log": "reports/cardrpg-big2/validation/review-e2e-e2e.log",
+      "sha256": "5e4d71434fcd8c0062b4213279fd6d6e16eb87d05b87c4684a7af0f9a4e96147",
+      "counts": [
+        "  421 passed (2.2m)"
+      ]
+    }
+  ]
+}

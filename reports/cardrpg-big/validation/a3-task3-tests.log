@@ -1,0 +1,157 @@
+{"lock":"acquired","lane":"A","pid":42360,"startedAt":"2026-11-07T13:28:52.143Z","task":"a3-task3 tests"}
+
+> taskbar-hero@0.0.0 test /Users/bao/taskbar-hero-cardrpg-big-delivery
+> node --test scripts/*.test.mjs && pnpm -r test
+
+✔ explicit root and nested index imports resolve to their exact files (7.647625ms)
+✔ directory aliases coexist with explicit indexes and ordinary modules (1.686917ms)
+✔ test modules, fixture folders and non-TypeScript files stay out of deployment maps (2.226958ms)
+✔ output order is stable regardless of file creation order (3.376625ms)
+✔ generation preserves auth mappings and ignores shared or non-function directories (3.651542ms)
+✔ auth health HTTP 200 exits correctly without leaking response data (20.761417ms)
+✔ auth health HTTP 429 exits correctly without leaking response data (15.509709ms)
+✔ auth health HTTP 500 exits correctly without leaking response data (13.73275ms)
+✔ auth health HTTP 502 exits correctly without leaking response data (13.155459ms)
+✔ auth health HTTP 503 exits correctly without leaking response data (13.183041ms)
+✔ auth health fails closed when the transport is unavailable (12.958833ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 146.01475
+Scope: 6 of 7 workspace projects
+packages/auth test$ vitest run
+packages/chain test$ vitest run
+packages/game-rules test$ vitest run
+supabase/tests test$ vitest run
+packages/chain test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-big-delivery/packages/chain
+packages/auth test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-big-delivery/packages/auth
+packages/game-rules test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-big-delivery/packages/game-rules
+supabase/tests test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-big-delivery/supabase/tests
+packages/chain test:  Test Files  3 passed (3)
+packages/chain test:       Tests  32 passed (32)
+packages/chain test:    Start at  20:28:52
+packages/chain test:    Duration  412ms (import 47%, tests 39%, transform 12%, worker 2%)
+packages/chain test: Done
+packages/auth test:  Test Files  1 passed (1)
+packages/auth test:       Tests  24 passed (24)
+packages/auth test:    Start at  20:28:52
+packages/auth test:    Duration  635ms (import 51%, tests 40%, transform 8%)
+packages/auth test: Done
+supabase/tests test:  Test Files  34 passed (34)
+supabase/tests test:       Tests  581 passed (581)
+supabase/tests test:    Start at  20:28:52
+supabase/tests test:    Duration  10.00s (tests 80%, import 15%, transform 4%)
+supabase/tests test: Done
+packages/game-rules test:  Test Files  55 passed | 3 skipped (58)
+packages/game-rules test:       Tests  1020 passed | 2 expected fail | 11 skipped (1033)
+packages/game-rules test:    Start at  20:28:52
+packages/game-rules test:    Duration  29.84s (tests 93%, import 4%, transform 2%)
+packages/game-rules test: Done
+packages/api-contract test$ pnpm --filter @taskbar-hero/game-rules exec vitest run --root ../api-contract
+packages/api-contract test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-big-delivery/packages/api-contract
+packages/api-contract test:  Test Files  1 passed (1)
+packages/api-contract test:       Tests  16 passed (16)
+packages/api-contract test:    Start at  20:29:22
+packages/api-contract test:    Duration  121ms (transform 49%, import 41%, tests 6%, worker 3%)
+packages/api-contract test: Done
+apps/web test$ vitest run
+apps/web test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-big-delivery/apps/web
+apps/web test:  ❯ src/game/cardrpg/depth/Invitations.test.tsx (16 tests | 1 failed) 389ms
+apps/web test:    × keeps published odds, earned cost, pity and the latest result together 17ms
+apps/web test: ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+apps/web test:  FAIL  src/game/cardrpg/depth/Invitations.test.tsx > keeps published odds, earned cost, pity and the latest result together
+apps/web test: TestingLibraryElementError: Unable to find an element with the text: /150 stamps each.*Earn stamps from cafe service/. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+apps/web test: Ignored nodes: comments, script, style
+apps/web test: [36m<section[39m
+apps/web test:   [33maria-label[39m=[32m"Invitation fairness"[39m
+apps/web test:   [33mclass[39m=[32m"dp-invitation-fairness"[39m
+apps/web test: [36m>[39m
+apps/web test:   [36m<div[39m
+apps/web test:     [33mclass[39m=[32m"dp-fairness-pity"[39m
+apps/web test:   [36m>[39m
+apps/web test:     [36m<strong>[39m
+apps/web test:       [0mLegendary guaranteed in [0m
+apps/web test:       [0m60[0m
+apps/web test:     [36m</strong>[39m
+apps/web test:     [36m<span>[39m
+apps/web test:       [0m0[0m
+apps/web test:       [0m/[0m
+apps/web test:       [0m60[0m
+apps/web test:       [0m pulls · Next legendary [0m
+apps/web test:       [0m1.00[0m
+apps/web test:       [0m%[0m
+apps/web test:     [36m</span>[39m
+apps/web test:   [36m</div>[39m
+apps/web test:   [36m<div[39m
+apps/web test:     [33mclass[39m=[32m"dp-fairness-odds"[39m
+apps/web test:   [36m>[39m
+apps/web test:     [36m<span>[39m
+apps/web test:       [0mBase odds[0m
+apps/web test:     [36m</span>[39m
+apps/web test:     [36m<span>[39m
+apps/web test:       [0mcommon[0m
+apps/web test:       [0m [0m
+apps/web test:       [0m60[0m
+apps/web test:       [0m%[0m
+apps/web test:     [36m</span>[39m
+apps/web test:     [36m<span>[39m
+apps/web test:       [0mrare[0m
+apps/web test:       [0m [0m
+apps/web test:       [0m30[0m
+apps/web test:       [0m%[0m
+apps/web test:     [36m</span>[39m
+apps/web test:     [36m<span>[39m
+apps/web test:       [0mepic[0m
+apps/web test:       [0m [0m
+apps/web test:       [0m9[0m
+apps/web test:       [0m%[0m
+apps/web test:     [36m</span>[39m
+apps/web test:     [36m<span>[39m
+apps/web test:       [0mlegendary[0m
+apps/web test:       [0m [0m
+apps/web test:       [0m1[0m
+apps/web test:       [0m%[0m
+apps/web test:     [36m</span>[39m
+apps/web test:   [36m</div>[39m
+apps/web test:   [36m<p>[39m
+apps/web test:     [0m150[0m
+apps/web test:     [0m stamps each · Earned in game[0m
+apps/web test:   [36m</p>[39m
+apps/web test:   [36m<a[39m
+apps/web test:     [33mhref[39m=[32m"#invitation-history"[39m
+apps/web test:   [36m>[39m
+apps/web test:     [0mRecent invitations[0m
+apps/web test:     [0m · View history ([0m
+apps/web test:     [0m0[0m
+apps/web test:     [0m)[0m
+apps/web test:   [36m</a>[39m
+apps/web test: [36m</section>[39m
+apps/web test:  ❯ Object.getElementError ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/config.js:37:19
+apps/web test:  ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+apps/web test:  ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+apps/web test:  ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+apps/web test:  ❯ src/game/cardrpg/depth/Invitations.test.tsx:177:19
+apps/web test:     175|   expect(fairness.getByText('Base odds')).toBeTruthy();
+apps/web test:     176|   expect(fairness.getByText(`legendary ${BANNERS[0]!.oddsBp.legendary …
+apps/web test:     177|   expect(fairness.getByText(/150 stamps each.*Earn stamps from cafe se…
+apps/web test:        |                   ^
+apps/web test:     178|   expect(fairness.getByText('Legendary guaranteed in 60')).toBeTruthy(…
+apps/web test:     179|   fireEvent.click(screen.getByRole('button', { name: 'Invite once · 15…
+apps/web test: ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+apps/web test:  Test Files  1 failed | 174 passed (175)
+apps/web test:       Tests  1 failed | 1734 passed (1735)
+apps/web test:    Start at  20:29:23
+apps/web test:    Duration  16.69s (environment 49%, tests 37%, import 11%, transform 3%, worker 1%)
+apps/web test: Environment  jsdom was created 175 times · 78.95s total, 49% of tracked time
+apps/web test:              create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+apps/web test:              learn more: https://vitest.dev/guide/improving-performance#test-environments
+apps/web test: Failed
+/Users/bao/taskbar-hero-cardrpg-big-delivery/apps/web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/web@0.0.0 test: `vitest run`
+Exit status 1
+ ELIFECYCLE  Test failed. See above for more details.
+{"lock":"released","pid":42360,"task":"a3-task3 tests"}

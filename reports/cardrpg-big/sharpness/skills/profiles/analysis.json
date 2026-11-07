@@ -1,0 +1,1496 @@
+[
+  {
+    "name": "1440x900-dpr1-cpu4-medium-sorrel-3",
+    "originalFirstMax": 33.5,
+    "profiledFirstMax": 16.800000000000182,
+    "largestOpening": {
+      "at": 3343.7,
+      "ms": 333.2999999999997,
+      "topSamples": [
+        {
+          "ms": 42.25799999999998,
+          "stack": [
+            {
+              "function": "Se",
+              "script": 16,
+              "line": 3815,
+              "column": 11787
+            },
+            {
+              "function": "le",
+              "script": 16,
+              "line": 3815,
+              "column": 24539
+            },
+            {
+              "function": "j",
+              "script": 16,
+              "line": 3815,
+              "column": 20501
+            },
+            {
+              "function": "bm",
+              "script": 16,
+              "line": 3736,
+              "column": 10338
+            },
+            {
+              "function": "upload",
+              "script": 16,
+              "line": 3736,
+              "column": 14647
+            },
+            {
+              "function": "nt",
+              "script": 16,
+              "line": 3839,
+              "column": 35552
+            },
+            {
+              "function": "renderBufferDirect",
+              "script": 16,
+              "line": 3839,
+              "column": 24757
+            },
+            {
+              "function": "Qe",
+              "script": 16,
+              "line": 3839,
+              "column": 32633
+            },
+            {
+              "function": "Ze",
+              "script": 16,
+              "line": 3839,
+              "column": 32399
+            },
+            {
+              "function": "Ye",
+              "script": 16,
+              "line": 3839,
+              "column": 30641
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3839,
+              "column": 27909
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3868,
+              "column": 2149
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3872,
+              "column": 13468
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3872,
+              "column": 5701
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 26.293000000000003,
+          "stack": [
+            {
+              "function": "g",
+              "script": 16,
+              "line": 3787,
+              "column": 2337
+            },
+            {
+              "function": "$e",
+              "script": 16,
+              "line": 3839,
+              "column": 33088
+            },
+            {
+              "function": "nt",
+              "script": 16,
+              "line": 3839,
+              "column": 35552
+            },
+            {
+              "function": "renderBufferDirect",
+              "script": 16,
+              "line": 3839,
+              "column": 24757
+            },
+            {
+              "function": "Qe",
+              "script": 16,
+              "line": 3839,
+              "column": 32633
+            },
+            {
+              "function": "Ze",
+              "script": 16,
+              "line": 3839,
+              "column": 32399
+            },
+            {
+              "function": "Ye",
+              "script": 16,
+              "line": 3839,
+              "column": 30641
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3839,
+              "column": 27909
+            },
+            {
+              "function": "warm",
+              "script": 16,
+              "line": 3847,
+              "column": 15615
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3872,
+              "column": 5701
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 14.314,
+          "stack": [
+            {
+              "function": "$e",
+              "script": 16,
+              "line": 3839,
+              "column": 33088
+            },
+            {
+              "function": "nt",
+              "script": 16,
+              "line": 3839,
+              "column": 35552
+            },
+            {
+              "function": "renderBufferDirect",
+              "script": 16,
+              "line": 3839,
+              "column": 24757
+            },
+            {
+              "function": "Qe",
+              "script": 16,
+              "line": 3839,
+              "column": 32633
+            },
+            {
+              "function": "Ze",
+              "script": 16,
+              "line": 3839,
+              "column": 32399
+            },
+            {
+              "function": "Ye",
+              "script": 16,
+              "line": 3839,
+              "column": 30641
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3839,
+              "column": 27909
+            },
+            {
+              "function": "warm",
+              "script": 16,
+              "line": 3847,
+              "column": 15615
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3872,
+              "column": 5701
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        }
+      ]
+    },
+    "castHitches": [],
+    "sourceOffsets": {
+      "Mg": {
+        "line": 3868,
+        "column": 3613,
+        "source": "ometry.dispose()}};function Mg(e){let t=document.createElement(`canvas`);t.width=t.height=256;let n=t.getContext(`2d`);if(e===`window`){let e=n.createLinearGradient(0,0,0,256);e.addColorStop(0,`#5b5266`),e.addColorStop(.55,`#b88171`),e.addColorStop(1,`#e8ba86`),n.fillStyle=e,n.fillRect(0,0,256,256),n.fillStyl"
+      },
+      "C": {
+        "line": 3780,
+        "column": 283,
+        "source": "e),i.linkProgram(h);function C(t){if(e.debug.checkShaderErrors){let n=i.getProgramInfoLog(h)||``,r=i.getShaderInfoLog(x)||``,a=i.getShaderInfoLog(S)||``,o=n.trim(),s=r.trim(),c=a.trim(),l=!0,u=!0;if(i.getProgramParameter(h,i.LINK_STATUS)===!1){if(l=!1,typeof e.debug.onShaderError==`function`)e.debug.onShaderE"
+      },
+      "Se": {
+        "line": 3815,
+        "column": 11787,
+        "source": "E.WebGLState:`,e)}}function Se(){try{e.texSubImage2D(...arguments)}catch(e){console.error(`THREE.WebGLState:`,e)}}function Ce(){try{e.texSubImage3D(...arguments)}catch(e){console.error(`THREE.WebGLState:`,e)}}function we(){try{e.compressedTexSubImage2D(...arguments)}catch(e){console.error(`THREE.WebGLState:`,"
+      }
+    }
+  },
+  {
+    "name": "1440x900-dpr2-cpu4-medium-mallow-4",
+    "originalFirstMax": 33.400000000000546,
+    "profiledFirstMax": 16.800000000000182,
+    "largestOpening": {
+      "at": 4357.5,
+      "ms": 333.3000000000002,
+      "topSamples": [
+        {
+          "ms": 41.67799999999999,
+          "stack": [
+            {
+              "function": "Se",
+              "script": 16,
+              "line": 3815,
+              "column": 11787
+            },
+            {
+              "function": "le",
+              "script": 16,
+              "line": 3815,
+              "column": 24539
+            },
+            {
+              "function": "j",
+              "script": 16,
+              "line": 3815,
+              "column": 20501
+            },
+            {
+              "function": "bm",
+              "script": 16,
+              "line": 3736,
+              "column": 10338
+            },
+            {
+              "function": "upload",
+              "script": 16,
+              "line": 3736,
+              "column": 14647
+            },
+            {
+              "function": "nt",
+              "script": 16,
+              "line": 3839,
+              "column": 35552
+            },
+            {
+              "function": "renderBufferDirect",
+              "script": 16,
+              "line": 3839,
+              "column": 24757
+            },
+            {
+              "function": "Qe",
+              "script": 16,
+              "line": 3839,
+              "column": 32633
+            },
+            {
+              "function": "Ze",
+              "script": 16,
+              "line": 3839,
+              "column": 32399
+            },
+            {
+              "function": "Ye",
+              "script": 16,
+              "line": 3839,
+              "column": 30641
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3839,
+              "column": 27909
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3868,
+              "column": 2149
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3872,
+              "column": 13468
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3872,
+              "column": 5701
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 24.47299999999999,
+          "stack": [
+            {
+              "function": "g",
+              "script": 16,
+              "line": 3787,
+              "column": 2337
+            },
+            {
+              "function": "$e",
+              "script": 16,
+              "line": 3839,
+              "column": 33088
+            },
+            {
+              "function": "nt",
+              "script": 16,
+              "line": 3839,
+              "column": 35552
+            },
+            {
+              "function": "renderBufferDirect",
+              "script": 16,
+              "line": 3839,
+              "column": 24757
+            },
+            {
+              "function": "Qe",
+              "script": 16,
+              "line": 3839,
+              "column": 32633
+            },
+            {
+              "function": "Ze",
+              "script": 16,
+              "line": 3839,
+              "column": 32399
+            },
+            {
+              "function": "Ye",
+              "script": 16,
+              "line": 3839,
+              "column": 30641
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3839,
+              "column": 27909
+            },
+            {
+              "function": "warm",
+              "script": 16,
+              "line": 3847,
+              "column": 15615
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3872,
+              "column": 5701
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 16.474999999999998,
+          "stack": [
+            {
+              "function": "renderBufferDirect",
+              "script": 16,
+              "line": 3839,
+              "column": 24757
+            },
+            {
+              "function": "Qe",
+              "script": 16,
+              "line": 3839,
+              "column": 32633
+            },
+            {
+              "function": "Ze",
+              "script": 16,
+              "line": 3839,
+              "column": 32399
+            },
+            {
+              "function": "Ye",
+              "script": 16,
+              "line": 3839,
+              "column": 30641
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3839,
+              "column": 27909
+            },
+            {
+              "function": "warm",
+              "script": 16,
+              "line": 3847,
+              "column": 15615
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3872,
+              "column": 5701
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        }
+      ]
+    },
+    "castHitches": [],
+    "sourceOffsets": {
+      "Mg": {
+        "line": 3868,
+        "column": 3613,
+        "source": "ometry.dispose()}};function Mg(e){let t=document.createElement(`canvas`);t.width=t.height=256;let n=t.getContext(`2d`);if(e===`window`){let e=n.createLinearGradient(0,0,0,256);e.addColorStop(0,`#5b5266`),e.addColorStop(.55,`#b88171`),e.addColorStop(1,`#e8ba86`),n.fillStyle=e,n.fillRect(0,0,256,256),n.fillStyl"
+      },
+      "C": {
+        "line": 3780,
+        "column": 283,
+        "source": "e),i.linkProgram(h);function C(t){if(e.debug.checkShaderErrors){let n=i.getProgramInfoLog(h)||``,r=i.getShaderInfoLog(x)||``,a=i.getShaderInfoLog(S)||``,o=n.trim(),s=r.trim(),c=a.trim(),l=!0,u=!0;if(i.getProgramParameter(h,i.LINK_STATUS)===!1){if(l=!1,typeof e.debug.onShaderError==`function`)e.debug.onShaderE"
+      },
+      "Se": {
+        "line": 3815,
+        "column": 11787,
+        "source": "E.WebGLState:`,e)}}function Se(){try{e.texSubImage2D(...arguments)}catch(e){console.error(`THREE.WebGLState:`,e)}}function Ce(){try{e.texSubImage3D(...arguments)}catch(e){console.error(`THREE.WebGLState:`,e)}}function we(){try{e.compressedTexSubImage2D(...arguments)}catch(e){console.error(`THREE.WebGLState:`,"
+      }
+    }
+  },
+  {
+    "name": "1280x720-dpr2-cpu4-medium-cinnamon-3",
+    "originalFirstMax": 33.400000000000546,
+    "profiledFirstMax": 16.800000000000182,
+    "largestOpening": {
+      "at": 4339.1,
+      "ms": 316.60000000000036,
+      "topSamples": [
+        {
+          "ms": 42.25699999999997,
+          "stack": [
+            {
+              "function": "Se",
+              "script": 16,
+              "line": 3815,
+              "column": 11787
+            },
+            {
+              "function": "le",
+              "script": 16,
+              "line": 3815,
+              "column": 24539
+            },
+            {
+              "function": "j",
+              "script": 16,
+              "line": 3815,
+              "column": 20501
+            },
+            {
+              "function": "bm",
+              "script": 16,
+              "line": 3736,
+              "column": 10338
+            },
+            {
+              "function": "upload",
+              "script": 16,
+              "line": 3736,
+              "column": 14647
+            },
+            {
+              "function": "nt",
+              "script": 16,
+              "line": 3839,
+              "column": 35552
+            },
+            {
+              "function": "renderBufferDirect",
+              "script": 16,
+              "line": 3839,
+              "column": 24757
+            },
+            {
+              "function": "Qe",
+              "script": 16,
+              "line": 3839,
+              "column": 32633
+            },
+            {
+              "function": "Ze",
+              "script": 16,
+              "line": 3839,
+              "column": 32399
+            },
+            {
+              "function": "Ye",
+              "script": 16,
+              "line": 3839,
+              "column": 30641
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3839,
+              "column": 27909
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3868,
+              "column": 2149
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3872,
+              "column": 13468
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3872,
+              "column": 5701
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 24.718,
+          "stack": [
+            {
+              "function": "g",
+              "script": 16,
+              "line": 3787,
+              "column": 2337
+            },
+            {
+              "function": "$e",
+              "script": 16,
+              "line": 3839,
+              "column": 33088
+            },
+            {
+              "function": "nt",
+              "script": 16,
+              "line": 3839,
+              "column": 35552
+            },
+            {
+              "function": "renderBufferDirect",
+              "script": 16,
+              "line": 3839,
+              "column": 24757
+            },
+            {
+              "function": "Qe",
+              "script": 16,
+              "line": 3839,
+              "column": 32633
+            },
+            {
+              "function": "Ze",
+              "script": 16,
+              "line": 3839,
+              "column": 32399
+            },
+            {
+              "function": "Ye",
+              "script": 16,
+              "line": 3839,
+              "column": 30641
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3839,
+              "column": 27909
+            },
+            {
+              "function": "warm",
+              "script": 16,
+              "line": 3847,
+              "column": 15615
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3872,
+              "column": 5701
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 13.503999999999998,
+          "stack": [
+            {
+              "function": "$e",
+              "script": 16,
+              "line": 3839,
+              "column": 33088
+            },
+            {
+              "function": "nt",
+              "script": 16,
+              "line": 3839,
+              "column": 35552
+            },
+            {
+              "function": "renderBufferDirect",
+              "script": 16,
+              "line": 3839,
+              "column": 24757
+            },
+            {
+              "function": "Qe",
+              "script": 16,
+              "line": 3839,
+              "column": 32633
+            },
+            {
+              "function": "Ze",
+              "script": 16,
+              "line": 3839,
+              "column": 32399
+            },
+            {
+              "function": "Ye",
+              "script": 16,
+              "line": 3839,
+              "column": 30641
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3839,
+              "column": 27909
+            },
+            {
+              "function": "warm",
+              "script": 16,
+              "line": 3847,
+              "column": 15615
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3872,
+              "column": 5701
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        }
+      ]
+    },
+    "castHitches": [],
+    "sourceOffsets": {
+      "Mg": {
+        "line": 3868,
+        "column": 3613,
+        "source": "ometry.dispose()}};function Mg(e){let t=document.createElement(`canvas`);t.width=t.height=256;let n=t.getContext(`2d`);if(e===`window`){let e=n.createLinearGradient(0,0,0,256);e.addColorStop(0,`#5b5266`),e.addColorStop(.55,`#b88171`),e.addColorStop(1,`#e8ba86`),n.fillStyle=e,n.fillRect(0,0,256,256),n.fillStyl"
+      },
+      "C": {
+        "line": 3780,
+        "column": 283,
+        "source": "e),i.linkProgram(h);function C(t){if(e.debug.checkShaderErrors){let n=i.getProgramInfoLog(h)||``,r=i.getShaderInfoLog(x)||``,a=i.getShaderInfoLog(S)||``,o=n.trim(),s=r.trim(),c=a.trim(),l=!0,u=!0;if(i.getProgramParameter(h,i.LINK_STATUS)===!1){if(l=!1,typeof e.debug.onShaderError==`function`)e.debug.onShaderE"
+      },
+      "Se": {
+        "line": 3815,
+        "column": 11787,
+        "source": "E.WebGLState:`,e)}}function Se(){try{e.texSubImage2D(...arguments)}catch(e){console.error(`THREE.WebGLState:`,e)}}function Ce(){try{e.texSubImage3D(...arguments)}catch(e){console.error(`THREE.WebGLState:`,e)}}function we(){try{e.compressedTexSubImage2D(...arguments)}catch(e){console.error(`THREE.WebGLState:`,"
+      }
+    }
+  },
+  {
+    "name": "1440x900-dpr2-cpu4-medium-clover-1",
+    "originalFirstMax": 33.400000000000546,
+    "profiledFirstMax": 33.399999999999636,
+    "largestOpening": {
+      "at": 4317.3,
+      "ms": 316.60000000000036,
+      "topSamples": [
+        {
+          "ms": 41.92699999999999,
+          "stack": [
+            {
+              "function": "Se",
+              "script": 16,
+              "line": 3815,
+              "column": 11787
+            },
+            {
+              "function": "le",
+              "script": 16,
+              "line": 3815,
+              "column": 24539
+            },
+            {
+              "function": "j",
+              "script": 16,
+              "line": 3815,
+              "column": 20501
+            },
+            {
+              "function": "bm",
+              "script": 16,
+              "line": 3736,
+              "column": 10338
+            },
+            {
+              "function": "upload",
+              "script": 16,
+              "line": 3736,
+              "column": 14647
+            },
+            {
+              "function": "nt",
+              "script": 16,
+              "line": 3839,
+              "column": 35552
+            },
+            {
+              "function": "renderBufferDirect",
+              "script": 16,
+              "line": 3839,
+              "column": 24757
+            },
+            {
+              "function": "Qe",
+              "script": 16,
+              "line": 3839,
+              "column": 32633
+            },
+            {
+              "function": "Ze",
+              "script": 16,
+              "line": 3839,
+              "column": 32399
+            },
+            {
+              "function": "Ye",
+              "script": 16,
+              "line": 3839,
+              "column": 30641
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3839,
+              "column": 27909
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3868,
+              "column": 2149
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3872,
+              "column": 13468
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3872,
+              "column": 5701
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 27.503000000000004,
+          "stack": [
+            {
+              "function": "g",
+              "script": 16,
+              "line": 3787,
+              "column": 2337
+            },
+            {
+              "function": "$e",
+              "script": 16,
+              "line": 3839,
+              "column": 33088
+            },
+            {
+              "function": "nt",
+              "script": 16,
+              "line": 3839,
+              "column": 35552
+            },
+            {
+              "function": "renderBufferDirect",
+              "script": 16,
+              "line": 3839,
+              "column": 24757
+            },
+            {
+              "function": "Qe",
+              "script": 16,
+              "line": 3839,
+              "column": 32633
+            },
+            {
+              "function": "Ze",
+              "script": 16,
+              "line": 3839,
+              "column": 32399
+            },
+            {
+              "function": "Ye",
+              "script": 16,
+              "line": 3839,
+              "column": 30641
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3839,
+              "column": 27909
+            },
+            {
+              "function": "warm",
+              "script": 16,
+              "line": 3847,
+              "column": 15615
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3872,
+              "column": 5701
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 14.007000000000001,
+          "stack": [
+            {
+              "function": "renderBufferDirect",
+              "script": 16,
+              "line": 3839,
+              "column": 24757
+            },
+            {
+              "function": "Qe",
+              "script": 16,
+              "line": 3839,
+              "column": 32633
+            },
+            {
+              "function": "Ze",
+              "script": 16,
+              "line": 3839,
+              "column": 32399
+            },
+            {
+              "function": "Ye",
+              "script": 16,
+              "line": 3839,
+              "column": 30641
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3839,
+              "column": 27909
+            },
+            {
+              "function": "warm",
+              "script": 16,
+              "line": 3847,
+              "column": 15615
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3872,
+              "column": 5701
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        }
+      ]
+    },
+    "castHitches": [
+      {
+        "at": 4384,
+        "ms": 33.399999999999636,
+        "beforeCastMs": 30.60000000297987,
+        "tasks": [
+          {
+            "name": "RunTask",
+            "start": 4343.815,
+            "ms": 19.946,
+            "overlap": 13.161
+          },
+          {
+            "name": "ProxyMain::BeginMainFrame",
+            "start": 4343.816,
+            "ms": 19.938,
+            "overlap": 13.154
+          },
+          {
+            "name": "FireAnimationFrame",
+            "start": 4347.669,
+            "ms": 14.297,
+            "overlap": 11.366,
+            "data": {
+              "frame": "E26EC3E34DE68925C562EC3FAF1A203D",
+              "id": 489
+            }
+          },
+          {
+            "name": "v8.callFunction",
+            "start": 4347.679,
+            "ms": 14.284,
+            "overlap": 11.363
+          }
+        ],
+        "samples": [
+          {
+            "ms": 7.1949999999999985,
+            "stack": [
+              {
+                "function": "(program)",
+                "script": 0
+              },
+              {
+                "function": "(root)",
+                "script": 0
+              }
+            ]
+          },
+          {
+            "ms": 2.7329999999999997,
+            "stack": [
+              {
+                "function": "(idle)",
+                "script": 0
+              },
+              {
+                "function": "(root)",
+                "script": 0
+              }
+            ]
+          },
+          {
+            "ms": 1.367,
+            "stack": [
+              {
+                "function": "nt",
+                "script": 16,
+                "line": 3839,
+                "column": 35552
+              },
+              {
+                "function": "renderBufferDirect",
+                "script": 16,
+                "line": 3839,
+                "column": 24757
+              },
+              {
+                "function": "Qe",
+                "script": 16,
+                "line": 3839,
+                "column": 32633
+              },
+              {
+                "function": "Ze",
+                "script": 16,
+                "line": 3839,
+                "column": 32399
+              },
+              {
+                "function": "Ye",
+                "script": 16,
+                "line": 3839,
+                "column": 30641
+              },
+              {
+                "function": "render",
+                "script": 16,
+                "line": 3839,
+                "column": 27909
+              },
+              {
+                "function": "render",
+                "script": 16,
+                "line": 3868,
+                "column": 2149
+              },
+              {
+                "function": "render",
+                "script": 16,
+                "line": 3872,
+                "column": 13468
+              },
+              {
+                "function": "loop",
+                "script": 16,
+                "line": 3872,
+                "column": 12776
+              },
+              {
+                "function": "(root)",
+                "script": 0
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "sourceOffsets": {
+      "Mg": {
+        "line": 3868,
+        "column": 3613,
+        "source": "ometry.dispose()}};function Mg(e){let t=document.createElement(`canvas`);t.width=t.height=256;let n=t.getContext(`2d`);if(e===`window`){let e=n.createLinearGradient(0,0,0,256);e.addColorStop(0,`#5b5266`),e.addColorStop(.55,`#b88171`),e.addColorStop(1,`#e8ba86`),n.fillStyle=e,n.fillRect(0,0,256,256),n.fillStyl"
+      },
+      "C": {
+        "line": 3780,
+        "column": 283,
+        "source": "e),i.linkProgram(h);function C(t){if(e.debug.checkShaderErrors){let n=i.getProgramInfoLog(h)||``,r=i.getShaderInfoLog(x)||``,a=i.getShaderInfoLog(S)||``,o=n.trim(),s=r.trim(),c=a.trim(),l=!0,u=!0;if(i.getProgramParameter(h,i.LINK_STATUS)===!1){if(l=!1,typeof e.debug.onShaderError==`function`)e.debug.onShaderE"
+      },
+      "Se": {
+        "line": 3815,
+        "column": 11787,
+        "source": "E.WebGLState:`,e)}}function Se(){try{e.texSubImage2D(...arguments)}catch(e){console.error(`THREE.WebGLState:`,e)}}function Ce(){try{e.texSubImage3D(...arguments)}catch(e){console.error(`THREE.WebGLState:`,e)}}function we(){try{e.compressedTexSubImage2D(...arguments)}catch(e){console.error(`THREE.WebGLState:`,"
+      }
+    }
+  },
+  {
+    "name": "1280x720-dpr1-cpu4-medium-marigold-2",
+    "originalFirstMax": 33.40000000000009,
+    "profiledFirstMax": 33.40000000000009,
+    "largestOpening": {
+      "at": 3315.9,
+      "ms": 316.7000000000003,
+      "topSamples": [
+        {
+          "ms": 42.82399999999997,
+          "stack": [
+            {
+              "function": "Se",
+              "script": 16,
+              "line": 3815,
+              "column": 11787
+            },
+            {
+              "function": "le",
+              "script": 16,
+              "line": 3815,
+              "column": 24539
+            },
+            {
+              "function": "j",
+              "script": 16,
+              "line": 3815,
+              "column": 20501
+            },
+            {
+              "function": "bm",
+              "script": 16,
+              "line": 3736,
+              "column": 10338
+            },
+            {
+              "function": "upload",
+              "script": 16,
+              "line": 3736,
+              "column": 14647
+            },
+            {
+              "function": "nt",
+              "script": 16,
+              "line": 3839,
+              "column": 35552
+            },
+            {
+              "function": "renderBufferDirect",
+              "script": 16,
+              "line": 3839,
+              "column": 24757
+            },
+            {
+              "function": "Qe",
+              "script": 16,
+              "line": 3839,
+              "column": 32633
+            },
+            {
+              "function": "Ze",
+              "script": 16,
+              "line": 3839,
+              "column": 32399
+            },
+            {
+              "function": "Ye",
+              "script": 16,
+              "line": 3839,
+              "column": 30641
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3839,
+              "column": 27909
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3868,
+              "column": 2149
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3872,
+              "column": 13468
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3872,
+              "column": 5701
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 22.601999999999997,
+          "stack": [
+            {
+              "function": "g",
+              "script": 16,
+              "line": 3787,
+              "column": 2337
+            },
+            {
+              "function": "$e",
+              "script": 16,
+              "line": 3839,
+              "column": 33088
+            },
+            {
+              "function": "nt",
+              "script": 16,
+              "line": 3839,
+              "column": 35552
+            },
+            {
+              "function": "renderBufferDirect",
+              "script": 16,
+              "line": 3839,
+              "column": 24757
+            },
+            {
+              "function": "Qe",
+              "script": 16,
+              "line": 3839,
+              "column": 32633
+            },
+            {
+              "function": "Ze",
+              "script": 16,
+              "line": 3839,
+              "column": 32399
+            },
+            {
+              "function": "Ye",
+              "script": 16,
+              "line": 3839,
+              "column": 30641
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3839,
+              "column": 27909
+            },
+            {
+              "function": "warm",
+              "script": 16,
+              "line": 3847,
+              "column": 15615
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3872,
+              "column": 5701
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 15.254999999999997,
+          "stack": [
+            {
+              "function": "$e",
+              "script": 16,
+              "line": 3839,
+              "column": 33088
+            },
+            {
+              "function": "nt",
+              "script": 16,
+              "line": 3839,
+              "column": 35552
+            },
+            {
+              "function": "renderBufferDirect",
+              "script": 16,
+              "line": 3839,
+              "column": 24757
+            },
+            {
+              "function": "Qe",
+              "script": 16,
+              "line": 3839,
+              "column": 32633
+            },
+            {
+              "function": "Ze",
+              "script": 16,
+              "line": 3839,
+              "column": 32399
+            },
+            {
+              "function": "Ye",
+              "script": 16,
+              "line": 3839,
+              "column": 30641
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3839,
+              "column": 27909
+            },
+            {
+              "function": "warm",
+              "script": 16,
+              "line": 3847,
+              "column": 15615
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3872,
+              "column": 5701
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        }
+      ]
+    },
+    "castHitches": [
+      {
+        "at": 3382.6,
+        "ms": 33.40000000000009,
+        "beforeCastMs": 31.500000002980414,
+        "tasks": [
+          {
+            "name": "RunTask",
+            "start": 3343.505,
+            "ms": 17.452,
+            "overlap": 11.757
+          },
+          {
+            "name": "ProxyMain::BeginMainFrame",
+            "start": 3343.507,
+            "ms": 17.443,
+            "overlap": 11.75
+          },
+          {
+            "name": "FireAnimationFrame",
+            "start": 3345.391,
+            "ms": 14.233,
+            "overlap": 10.424,
+            "data": {
+              "frame": "8BACC7598646BA544D9B8829DF6DFCF1",
+              "id": 249
+            }
+          },
+          {
+            "name": "v8.callFunction",
+            "start": 3345.392,
+            "ms": 14.228,
+            "overlap": 10.42
+          }
+        ],
+        "samples": [
+          {
+            "ms": 6.888,
+            "stack": [
+              {
+                "function": "(program)",
+                "script": 0
+              },
+              {
+                "function": "(root)",
+                "script": 0
+              }
+            ]
+          },
+          {
+            "ms": 4.06,
+            "stack": [
+              {
+                "function": "(garbage collector)",
+                "script": 0
+              },
+              {
+                "function": "(root)",
+                "script": 0
+              }
+            ]
+          },
+          {
+            "ms": 2.241,
+            "stack": [
+              {
+                "function": "renderBufferDirect",
+                "script": 16,
+                "line": 3839,
+                "column": 24757
+              },
+              {
+                "function": "Qe",
+                "script": 16,
+                "line": 3839,
+                "column": 32633
+              },
+              {
+                "function": "Ze",
+                "script": 16,
+                "line": 3839,
+                "column": 32399
+              },
+              {
+                "function": "Ye",
+                "script": 16,
+                "line": 3839,
+                "column": 30641
+              },
+              {
+                "function": "render",
+                "script": 16,
+                "line": 3839,
+                "column": 27909
+              },
+              {
+                "function": "render",
+                "script": 16,
+                "line": 3868,
+                "column": 2149
+              },
+              {
+                "function": "render",
+                "script": 16,
+                "line": 3872,
+                "column": 13468
+              },
+              {
+                "function": "loop",
+                "script": 16,
+                "line": 3872,
+                "column": 12776
+              },
+              {
+                "function": "(root)",
+                "script": 0
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "sourceOffsets": {
+      "Mg": {
+        "line": 3868,
+        "column": 3613,
+        "source": "ometry.dispose()}};function Mg(e){let t=document.createElement(`canvas`);t.width=t.height=256;let n=t.getContext(`2d`);if(e===`window`){let e=n.createLinearGradient(0,0,0,256);e.addColorStop(0,`#5b5266`),e.addColorStop(.55,`#b88171`),e.addColorStop(1,`#e8ba86`),n.fillStyle=e,n.fillRect(0,0,256,256),n.fillStyl"
+      },
+      "C": {
+        "line": 3780,
+        "column": 283,
+        "source": "e),i.linkProgram(h);function C(t){if(e.debug.checkShaderErrors){let n=i.getProgramInfoLog(h)||``,r=i.getShaderInfoLog(x)||``,a=i.getShaderInfoLog(S)||``,o=n.trim(),s=r.trim(),c=a.trim(),l=!0,u=!0;if(i.getProgramParameter(h,i.LINK_STATUS)===!1){if(l=!1,typeof e.debug.onShaderError==`function`)e.debug.onShaderE"
+      },
+      "Se": {
+        "line": 3815,
+        "column": 11787,
+        "source": "E.WebGLState:`,e)}}function Se(){try{e.texSubImage2D(...arguments)}catch(e){console.error(`THREE.WebGLState:`,e)}}function Ce(){try{e.texSubImage3D(...arguments)}catch(e){console.error(`THREE.WebGLState:`,e)}}function we(){try{e.compressedTexSubImage2D(...arguments)}catch(e){console.error(`THREE.WebGLState:`,"
+      }
+    }
+  }
+]

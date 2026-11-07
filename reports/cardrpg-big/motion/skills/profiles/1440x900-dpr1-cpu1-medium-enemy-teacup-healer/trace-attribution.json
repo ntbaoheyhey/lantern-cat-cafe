@@ -1,0 +1,2324 @@
+{
+  "source": "1440x900-dpr1-cpu1-medium-enemy-teacup-healer-trace.json.gz",
+  "origin": 82573524807,
+  "mainThread": 2739338,
+  "method": "RAF intervals aligned to navigationStart. Main renderer thread only. Task durations are inclusive. CPU samples are statistical stack evidence, never additive to nested task durations.",
+  "hitches": [
+    {
+      "at": 1082.4,
+      "ms": 50,
+      "calls": 0,
+      "triangles": 0,
+      "particles": 0,
+      "tasks": [
+        {
+          "name": "RunTask",
+          "start": 1019.086,
+          "ms": 71.557,
+          "overlap": 50
+        },
+        {
+          "name": "EventDispatch",
+          "start": 1019.348,
+          "ms": 70.782,
+          "overlap": 50,
+          "data": {
+            "type": "click"
+          }
+        },
+        {
+          "name": "v8.callFunction",
+          "start": 1019.36,
+          "ms": 70.755,
+          "overlap": 50
+        },
+        {
+          "name": "v8.callFunction",
+          "start": 1019.423,
+          "ms": 70.546,
+          "overlap": 50
+        },
+        {
+          "name": "FunctionCall",
+          "start": 1019.423,
+          "ms": 70.541,
+          "overlap": 50,
+          "data": {
+            "columnNumber": 136493,
+            "frame": "06D919EB2574FE92187A6F9447CD2FA4",
+            "functionName": "",
+            "isolate": "7106344880919780940",
+            "lineNumber": 8,
+            "sampleTraceId": 2458039048443816,
+            "scriptId": "16",
+            "url": ""
+          }
+        },
+        {
+          "name": "MinorGC",
+          "start": 1031.773,
+          "ms": 0.652,
+          "overlap": 0.025
+        },
+        {
+          "name": "V8.GCScavenger",
+          "start": 1031.776,
+          "ms": 0.639,
+          "overlap": 0.015
+        },
+        {
+          "name": "MinorGC",
+          "start": 1034.673,
+          "ms": 0.273,
+          "overlap": 0.273
+        },
+        {
+          "name": "V8.GCScavenger",
+          "start": 1034.674,
+          "ms": 0.264,
+          "overlap": 0.264
+        },
+        {
+          "name": "V8.GC_SCAVENGER",
+          "start": 1032.16,
+          "ms": 0.253,
+          "overlap": 0.013
+        },
+        {
+          "name": "V8.GC_SCAVENGER",
+          "start": 1034.685,
+          "ms": 0.251,
+          "overlap": 0.251
+        },
+        {
+          "name": "V8.GC_SCAVENGER_SCAVENGE",
+          "start": 1034.687,
+          "ms": 0.248,
+          "overlap": 0.248
+        }
+      ],
+      "topSamples": [
+        {
+          "ms": 17.659999999999997,
+          "stack": [
+            {
+              "function": "Mg",
+              "script": 16,
+              "line": 3868,
+              "column": 3613
+            },
+            {
+              "function": "makeStage",
+              "script": 16,
+              "line": 3872,
+              "column": 25806
+            },
+            {
+              "function": "Vv",
+              "script": 16,
+              "line": 3872,
+              "column": 21552
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 3872,
+              "column": 61394
+            },
+            {
+              "function": "_l",
+              "script": 16,
+              "line": 7,
+              "column": 95026
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118277
+            },
+            {
+              "function": "Lu",
+              "script": 16,
+              "line": 7,
+              "column": 118136
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118277
+            },
+            {
+              "function": "Lu",
+              "script": 16,
+              "line": 7,
+              "column": 118136
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118277
+            },
+            {
+              "function": "Lu",
+              "script": 16,
+              "line": 7,
+              "column": 118136
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118277
+            },
+            {
+              "function": "mf",
+              "script": 16,
+              "line": 7,
+              "column": 132867
+            },
+            {
+              "function": "pf",
+              "script": 16,
+              "line": 7,
+              "column": 132785
+            },
+            {
+              "function": "df",
+              "script": 16,
+              "line": 7,
+              "column": 131912
+            },
+            {
+              "function": "of",
+              "script": 16,
+              "line": 7,
+              "column": 129809
+            },
+            {
+              "function": "af",
+              "script": 16,
+              "line": 7,
+              "column": 129575
+            },
+            {
+              "function": "Rd",
+              "script": 16,
+              "line": 7,
+              "column": 124560
+            },
+            {
+              "function": "Ld",
+              "script": 16,
+              "line": 7,
+              "column": 123455
+            },
+            {
+              "function": "Ff",
+              "script": 16,
+              "line": 7,
+              "column": 136430
+            },
+            {
+              "function": "Af",
+              "script": 16,
+              "line": 7,
+              "column": 134658
+            },
+            {
+              "function": "Mf",
+              "script": 16,
+              "line": 7,
+              "column": 135074
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 7,
+              "column": 136492
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 2.182,
+          "stack": [
+            {
+              "function": "makeStage",
+              "script": 16,
+              "line": 3872,
+              "column": 25806
+            },
+            {
+              "function": "Vv",
+              "script": 16,
+              "line": 3872,
+              "column": 21552
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 3872,
+              "column": 61394
+            },
+            {
+              "function": "_l",
+              "script": 16,
+              "line": 7,
+              "column": 95026
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118277
+            },
+            {
+              "function": "Lu",
+              "script": 16,
+              "line": 7,
+              "column": 118136
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118277
+            },
+            {
+              "function": "Lu",
+              "script": 16,
+              "line": 7,
+              "column": 118136
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118277
+            },
+            {
+              "function": "Lu",
+              "script": 16,
+              "line": 7,
+              "column": 118136
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118277
+            },
+            {
+              "function": "mf",
+              "script": 16,
+              "line": 7,
+              "column": 132867
+            },
+            {
+              "function": "pf",
+              "script": 16,
+              "line": 7,
+              "column": 132785
+            },
+            {
+              "function": "df",
+              "script": 16,
+              "line": 7,
+              "column": 131912
+            },
+            {
+              "function": "of",
+              "script": 16,
+              "line": 7,
+              "column": 129809
+            },
+            {
+              "function": "af",
+              "script": 16,
+              "line": 7,
+              "column": 129575
+            },
+            {
+              "function": "Rd",
+              "script": 16,
+              "line": 7,
+              "column": 124560
+            },
+            {
+              "function": "Ld",
+              "script": 16,
+              "line": 7,
+              "column": 123455
+            },
+            {
+              "function": "Ff",
+              "script": 16,
+              "line": 7,
+              "column": 136430
+            },
+            {
+              "function": "Af",
+              "script": 16,
+              "line": 7,
+              "column": 134658
+            },
+            {
+              "function": "Mf",
+              "script": 16,
+              "line": 7,
+              "column": 135074
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 7,
+              "column": 136492
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 2.1089999999999995,
+          "stack": [
+            {
+              "function": "e",
+              "script": 16,
+              "line": 47,
+              "column": 68018
+            },
+            {
+              "function": "clone",
+              "script": 16,
+              "line": 8,
+              "column": 313686
+            },
+            {
+              "function": "Vb",
+              "script": 16,
+              "line": 3872,
+              "column": 55704
+            },
+            {
+              "function": "Vv",
+              "script": 16,
+              "line": 3872,
+              "column": 21552
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 3872,
+              "column": 61394
+            },
+            {
+              "function": "_l",
+              "script": 16,
+              "line": 7,
+              "column": 95026
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118277
+            },
+            {
+              "function": "Lu",
+              "script": 16,
+              "line": 7,
+              "column": 118136
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118277
+            },
+            {
+              "function": "Lu",
+              "script": 16,
+              "line": 7,
+              "column": 118136
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118277
+            },
+            {
+              "function": "Lu",
+              "script": 16,
+              "line": 7,
+              "column": 118136
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118277
+            },
+            {
+              "function": "mf",
+              "script": 16,
+              "line": 7,
+              "column": 132867
+            },
+            {
+              "function": "pf",
+              "script": 16,
+              "line": 7,
+              "column": 132785
+            },
+            {
+              "function": "df",
+              "script": 16,
+              "line": 7,
+              "column": 131912
+            },
+            {
+              "function": "of",
+              "script": 16,
+              "line": 7,
+              "column": 129809
+            },
+            {
+              "function": "af",
+              "script": 16,
+              "line": 7,
+              "column": 129575
+            },
+            {
+              "function": "Rd",
+              "script": 16,
+              "line": 7,
+              "column": 124560
+            },
+            {
+              "function": "Ld",
+              "script": 16,
+              "line": 7,
+              "column": 123455
+            },
+            {
+              "function": "Ff",
+              "script": 16,
+              "line": 7,
+              "column": 136430
+            },
+            {
+              "function": "Af",
+              "script": 16,
+              "line": 7,
+              "column": 134658
+            },
+            {
+              "function": "Mf",
+              "script": 16,
+              "line": 7,
+              "column": 135074
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 7,
+              "column": 136492
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 1.884,
+          "stack": [
+            {
+              "function": "(garbage collector)",
+              "script": 0
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 1.218,
+          "stack": [
+            {
+              "function": "getPoint",
+              "script": 16,
+              "line": 47,
+              "column": 41094
+            },
+            {
+              "function": "getLengths",
+              "script": 16,
+              "line": 47,
+              "column": 36937
+            },
+            {
+              "function": "getUtoTmapping",
+              "script": 16,
+              "line": 47,
+              "column": 37313
+            },
+            {
+              "function": "getTangentAt",
+              "script": 16,
+              "line": 47,
+              "column": 37750
+            },
+            {
+              "function": "computeFrenetFrames",
+              "script": 16,
+              "line": 47,
+              "column": 37832
+            },
+            {
+              "function": "e",
+              "script": 16,
+              "line": 47,
+              "column": 70178
+            },
+            {
+              "function": "n",
+              "script": 16,
+              "line": 3847,
+              "column": 1353
+            },
+            {
+              "function": "Tg",
+              "script": 16,
+              "line": 3847,
+              "column": 1338
+            },
+            {
+              "function": "Dg",
+              "script": 16,
+              "line": 3847,
+              "column": 6624
+            },
+            {
+              "function": "Vv",
+              "script": 16,
+              "line": 3872,
+              "column": 21552
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 3872,
+              "column": 61394
+            },
+            {
+              "function": "_l",
+              "script": 16,
+              "line": 7,
+              "column": 95026
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118277
+            },
+            {
+              "function": "Lu",
+              "script": 16,
+              "line": 7,
+              "column": 118136
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118277
+            },
+            {
+              "function": "Lu",
+              "script": 16,
+              "line": 7,
+              "column": 118136
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118277
+            },
+            {
+              "function": "Lu",
+              "script": 16,
+              "line": 7,
+              "column": 118136
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118277
+            },
+            {
+              "function": "mf",
+              "script": 16,
+              "line": 7,
+              "column": 132867
+            },
+            {
+              "function": "pf",
+              "script": 16,
+              "line": 7,
+              "column": 132785
+            },
+            {
+              "function": "df",
+              "script": 16,
+              "line": 7,
+              "column": 131912
+            },
+            {
+              "function": "of",
+              "script": 16,
+              "line": 7,
+              "column": 129809
+            },
+            {
+              "function": "af",
+              "script": 16,
+              "line": 7,
+              "column": 129575
+            },
+            {
+              "function": "Rd",
+              "script": 16,
+              "line": 7,
+              "column": 124560
+            },
+            {
+              "function": "Ld",
+              "script": 16,
+              "line": 7,
+              "column": 123455
+            },
+            {
+              "function": "Ff",
+              "script": 16,
+              "line": 7,
+              "column": 136430
+            },
+            {
+              "function": "Af",
+              "script": 16,
+              "line": 7,
+              "column": 134658
+            },
+            {
+              "function": "Mf",
+              "script": 16,
+              "line": 7,
+              "column": 135074
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 7,
+              "column": 136492
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 0.887,
+          "stack": [
+            {
+              "function": "e",
+              "script": 16,
+              "line": 3839,
+              "column": 49648
+            },
+            {
+              "function": "makeStage",
+              "script": 16,
+              "line": 3872,
+              "column": 25806
+            },
+            {
+              "function": "Vv",
+              "script": 16,
+              "line": 3872,
+              "column": 21552
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 3872,
+              "column": 61394
+            },
+            {
+              "function": "_l",
+              "script": 16,
+              "line": 7,
+              "column": 95026
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118277
+            },
+            {
+              "function": "Lu",
+              "script": 16,
+              "line": 7,
+              "column": 118136
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118277
+            },
+            {
+              "function": "Lu",
+              "script": 16,
+              "line": 7,
+              "column": 118136
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118277
+            },
+            {
+              "function": "Lu",
+              "script": 16,
+              "line": 7,
+              "column": 118136
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118277
+            },
+            {
+              "function": "mf",
+              "script": 16,
+              "line": 7,
+              "column": 132867
+            },
+            {
+              "function": "pf",
+              "script": 16,
+              "line": 7,
+              "column": 132785
+            },
+            {
+              "function": "df",
+              "script": 16,
+              "line": 7,
+              "column": 131912
+            },
+            {
+              "function": "of",
+              "script": 16,
+              "line": 7,
+              "column": 129809
+            },
+            {
+              "function": "af",
+              "script": 16,
+              "line": 7,
+              "column": 129575
+            },
+            {
+              "function": "Rd",
+              "script": 16,
+              "line": 7,
+              "column": 124560
+            },
+            {
+              "function": "Ld",
+              "script": 16,
+              "line": 7,
+              "column": 123455
+            },
+            {
+              "function": "Ff",
+              "script": 16,
+              "line": 7,
+              "column": 136430
+            },
+            {
+              "function": "Af",
+              "script": 16,
+              "line": 7,
+              "column": 134658
+            },
+            {
+              "function": "Mf",
+              "script": 16,
+              "line": 7,
+              "column": 135074
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 7,
+              "column": 136492
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 0.752,
+          "stack": [
+            {
+              "function": "clone",
+              "script": 16,
+              "line": 8,
+              "column": 313686
+            },
+            {
+              "function": "Vb",
+              "script": 16,
+              "line": 3872,
+              "column": 55704
+            },
+            {
+              "function": "Vv",
+              "script": 16,
+              "line": 3872,
+              "column": 21552
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 3872,
+              "column": 61394
+            },
+            {
+              "function": "_l",
+              "script": 16,
+              "line": 7,
+              "column": 95026
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118277
+            },
+            {
+              "function": "Lu",
+              "script": 16,
+              "line": 7,
+              "column": 118136
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118277
+            },
+            {
+              "function": "Lu",
+              "script": 16,
+              "line": 7,
+              "column": 118136
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118277
+            },
+            {
+              "function": "Lu",
+              "script": 16,
+              "line": 7,
+              "column": 118136
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118277
+            },
+            {
+              "function": "mf",
+              "script": 16,
+              "line": 7,
+              "column": 132867
+            },
+            {
+              "function": "pf",
+              "script": 16,
+              "line": 7,
+              "column": 132785
+            },
+            {
+              "function": "df",
+              "script": 16,
+              "line": 7,
+              "column": 131912
+            },
+            {
+              "function": "of",
+              "script": 16,
+              "line": 7,
+              "column": 129809
+            },
+            {
+              "function": "af",
+              "script": 16,
+              "line": 7,
+              "column": 129575
+            },
+            {
+              "function": "Rd",
+              "script": 16,
+              "line": 7,
+              "column": 124560
+            },
+            {
+              "function": "Ld",
+              "script": 16,
+              "line": 7,
+              "column": 123455
+            },
+            {
+              "function": "Ff",
+              "script": 16,
+              "line": 7,
+              "column": 136430
+            },
+            {
+              "function": "Af",
+              "script": 16,
+              "line": 7,
+              "column": 134658
+            },
+            {
+              "function": "Mf",
+              "script": 16,
+              "line": 7,
+              "column": 135074
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 7,
+              "column": 136492
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 0.598,
+          "stack": [
+            {
+              "function": "(program)",
+              "script": 0
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "at": 1382.4,
+      "ms": 33.40000000000009,
+      "calls": 0,
+      "triangles": 0,
+      "particles": 0,
+      "tasks": [
+        {
+          "name": "RunTask",
+          "start": 1345.631,
+          "ms": 44.927,
+          "overlap": 33.4
+        },
+        {
+          "name": "TimerFire",
+          "start": 1345.631,
+          "ms": 44.908,
+          "overlap": 33.4,
+          "data": {
+            "frame": "06D919EB2574FE92187A6F9447CD2FA4",
+            "timerId": 258
+          }
+        },
+        {
+          "name": "v8.callFunction",
+          "start": 1345.637,
+          "ms": 44.898,
+          "overlap": 33.4
+        },
+        {
+          "name": "GLES2Implementation::GetProgramiv",
+          "start": 1365.758,
+          "ms": 8.218,
+          "overlap": 8.218
+        },
+        {
+          "name": "ImplementationBase::WaitForCmd",
+          "start": 1365.759,
+          "ms": 8.216,
+          "overlap": 8.216
+        },
+        {
+          "name": "CommandBufferHelper::Finish",
+          "start": 1365.76,
+          "ms": 8.214,
+          "overlap": 8.214
+        },
+        {
+          "name": "CommandBufferProxyImpl::WaitForGetOffset",
+          "start": 1365.764,
+          "ms": 8.21,
+          "overlap": 8.21
+        },
+        {
+          "name": "GLES2Implementation::GetProgramiv",
+          "start": 1351.879,
+          "ms": 2.26,
+          "overlap": 2.26
+        },
+        {
+          "name": "ImplementationBase::WaitForCmd",
+          "start": 1351.881,
+          "ms": 2.258,
+          "overlap": 2.258
+        },
+        {
+          "name": "CommandBufferHelper::Finish",
+          "start": 1351.882,
+          "ms": 2.257,
+          "overlap": 2.257
+        },
+        {
+          "name": "CommandBufferProxyImpl::WaitForGetOffset",
+          "start": 1351.887,
+          "ms": 2.251,
+          "overlap": 2.251
+        },
+        {
+          "name": "GLES2Implementation::GetProgramiv",
+          "start": 1355.818,
+          "ms": 0.86,
+          "overlap": 0.86
+        }
+      ],
+      "topSamples": [
+        {
+          "ms": 15.772999999999984,
+          "stack": [
+            {
+              "function": "C",
+              "script": 16,
+              "line": 3780,
+              "column": 283
+            },
+            {
+              "function": "Oh.getUniforms",
+              "script": 16,
+              "line": 3787,
+              "column": 297
+            },
+            {
+              "function": "tt",
+              "script": 16,
+              "line": 3839,
+              "column": 35545
+            },
+            {
+              "function": "renderBufferDirect",
+              "script": 16,
+              "line": 3839,
+              "column": 24752
+            },
+            {
+              "function": "Ze",
+              "script": 16,
+              "line": 3839,
+              "column": 32626
+            },
+            {
+              "function": "Xe",
+              "script": 16,
+              "line": 3839,
+              "column": 32392
+            },
+            {
+              "function": "Je",
+              "script": 16,
+              "line": 3839,
+              "column": 30634
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3839,
+              "column": 27902
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3872,
+              "column": 24267
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 0.911,
+          "stack": [
+            {
+              "function": "Qm",
+              "script": 16,
+              "line": 3736,
+              "column": 14879
+            },
+            {
+              "function": "Oh",
+              "script": 16,
+              "line": 3766,
+              "column": 864
+            },
+            {
+              "function": "x",
+              "script": 16,
+              "line": 3787,
+              "column": 11419
+            },
+            {
+              "function": "Qe",
+              "script": 16,
+              "line": 3839,
+              "column": 33081
+            },
+            {
+              "function": "Ve",
+              "script": 16,
+              "line": 3839,
+              "column": 26546
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 3839,
+              "column": 27077
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 271336
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 271336
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 271336
+            },
+            {
+              "function": "compile",
+              "script": 16,
+              "line": 3839,
+              "column": 26723
+            },
+            {
+              "function": "compileAsync",
+              "script": 16,
+              "line": 3839,
+              "column": 27304
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3872,
+              "column": 24267
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 0.902,
+          "stack": [
+            {
+              "function": "xe",
+              "script": 16,
+              "line": 3815,
+              "column": 11786
+            },
+            {
+              "function": "le",
+              "script": 16,
+              "line": 3815,
+              "column": 24536
+            },
+            {
+              "function": "j",
+              "script": 16,
+              "line": 3815,
+              "column": 20498
+            },
+            {
+              "function": "bm",
+              "script": 16,
+              "line": 3736,
+              "column": 10338
+            },
+            {
+              "function": "upload",
+              "script": 16,
+              "line": 3736,
+              "column": 14647
+            },
+            {
+              "function": "tt",
+              "script": 16,
+              "line": 3839,
+              "column": 35545
+            },
+            {
+              "function": "renderBufferDirect",
+              "script": 16,
+              "line": 3839,
+              "column": 24752
+            },
+            {
+              "function": "Ze",
+              "script": 16,
+              "line": 3839,
+              "column": 32626
+            },
+            {
+              "function": "Xe",
+              "script": 16,
+              "line": 3839,
+              "column": 32392
+            },
+            {
+              "function": "Je",
+              "script": 16,
+              "line": 3839,
+              "column": 30634
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3839,
+              "column": 27902
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3872,
+              "column": 24267
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 0.765,
+          "stack": [
+            {
+              "function": "tt",
+              "script": 16,
+              "line": 3839,
+              "column": 35545
+            },
+            {
+              "function": "renderBufferDirect",
+              "script": 16,
+              "line": 3839,
+              "column": 24752
+            },
+            {
+              "function": "Ze",
+              "script": 16,
+              "line": 3839,
+              "column": 32626
+            },
+            {
+              "function": "Xe",
+              "script": 16,
+              "line": 3839,
+              "column": 32392
+            },
+            {
+              "function": "Je",
+              "script": 16,
+              "line": 3839,
+              "column": 30634
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3839,
+              "column": 27902
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3872,
+              "column": 24267
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 0.753,
+          "stack": [
+            {
+              "function": "ph",
+              "script": 16,
+              "line": 3746,
+              "column": 343
+            },
+            {
+              "function": "Oh",
+              "script": 16,
+              "line": 3766,
+              "column": 864
+            },
+            {
+              "function": "x",
+              "script": 16,
+              "line": 3787,
+              "column": 11419
+            },
+            {
+              "function": "Qe",
+              "script": 16,
+              "line": 3839,
+              "column": 33081
+            },
+            {
+              "function": "Ve",
+              "script": 16,
+              "line": 3839,
+              "column": 26546
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 3839,
+              "column": 27077
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 271336
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 271336
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 271336
+            },
+            {
+              "function": "compile",
+              "script": 16,
+              "line": 3839,
+              "column": 26723
+            },
+            {
+              "function": "compileAsync",
+              "script": 16,
+              "line": 3839,
+              "column": 27304
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3872,
+              "column": 24267
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 0.683,
+          "stack": [
+            {
+              "function": "(garbage collector)",
+              "script": 0
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 0.611,
+          "stack": [
+            {
+              "function": "n",
+              "script": 16,
+              "line": 47,
+              "column": 129773
+            },
+            {
+              "function": "o",
+              "script": 16,
+              "line": 47,
+              "column": 131196
+            },
+            {
+              "function": "c",
+              "script": 16,
+              "line": 3736,
+              "column": 2602
+            },
+            {
+              "function": "a",
+              "script": 16,
+              "line": 3736,
+              "column": 6236
+            },
+            {
+              "function": "qe",
+              "script": 16,
+              "line": 3839,
+              "column": 29620
+            },
+            {
+              "function": "qe",
+              "script": 16,
+              "line": 3839,
+              "column": 29620
+            },
+            {
+              "function": "qe",
+              "script": 16,
+              "line": 3839,
+              "column": 29620
+            },
+            {
+              "function": "qe",
+              "script": 16,
+              "line": 3839,
+              "column": 29620
+            },
+            {
+              "function": "qe",
+              "script": 16,
+              "line": 3839,
+              "column": 29620
+            },
+            {
+              "function": "qe",
+              "script": 16,
+              "line": 3839,
+              "column": 29620
+            },
+            {
+              "function": "qe",
+              "script": 16,
+              "line": 3839,
+              "column": 29620
+            },
+            {
+              "function": "qe",
+              "script": 16,
+              "line": 3839,
+              "column": 29620
+            },
+            {
+              "function": "qe",
+              "script": 16,
+              "line": 3839,
+              "column": 29620
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3839,
+              "column": 27902
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3872,
+              "column": 24267
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 0.607,
+          "stack": [
+            {
+              "function": "n",
+              "script": 16,
+              "line": 47,
+              "column": 129773
+            },
+            {
+              "function": "o",
+              "script": 16,
+              "line": 47,
+              "column": 131196
+            },
+            {
+              "function": "c",
+              "script": 16,
+              "line": 3736,
+              "column": 2602
+            },
+            {
+              "function": "a",
+              "script": 16,
+              "line": 3736,
+              "column": 6236
+            },
+            {
+              "function": "qe",
+              "script": 16,
+              "line": 3839,
+              "column": 29620
+            },
+            {
+              "function": "qe",
+              "script": 16,
+              "line": 3839,
+              "column": 29620
+            },
+            {
+              "function": "qe",
+              "script": 16,
+              "line": 3839,
+              "column": 29620
+            },
+            {
+              "function": "qe",
+              "script": 16,
+              "line": 3839,
+              "column": 29620
+            },
+            {
+              "function": "qe",
+              "script": 16,
+              "line": 3839,
+              "column": 29620
+            },
+            {
+              "function": "qe",
+              "script": 16,
+              "line": 3839,
+              "column": 29620
+            },
+            {
+              "function": "qe",
+              "script": 16,
+              "line": 3839,
+              "column": 29620
+            },
+            {
+              "function": "qe",
+              "script": 16,
+              "line": 3839,
+              "column": 29620
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3839,
+              "column": 27902
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3872,
+              "column": 24267
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "at": 1499.1,
+      "ms": 83.39999999999986,
+      "calls": 198,
+      "triangles": 76506,
+      "particles": 0,
+      "tasks": [
+        {
+          "name": "RunTask",
+          "start": 1400.637,
+          "ms": 102.452,
+          "overlap": 83.4
+        },
+        {
+          "name": "TimerFire",
+          "start": 1400.638,
+          "ms": 102.431,
+          "overlap": 83.4,
+          "data": {
+            "frame": "06D919EB2574FE92187A6F9447CD2FA4",
+            "timerId": 259
+          }
+        },
+        {
+          "name": "v8.callFunction",
+          "start": 1400.641,
+          "ms": 102.421,
+          "overlap": 83.4
+        },
+        {
+          "name": "GLES2Implementation::GetProgramiv",
+          "start": 1460.309,
+          "ms": 9.765,
+          "overlap": 9.765
+        },
+        {
+          "name": "ImplementationBase::WaitForCmd",
+          "start": 1460.31,
+          "ms": 9.763,
+          "overlap": 9.763
+        },
+        {
+          "name": "CommandBufferHelper::Finish",
+          "start": 1460.311,
+          "ms": 9.762,
+          "overlap": 9.762
+        },
+        {
+          "name": "CommandBufferProxyImpl::WaitForGetOffset",
+          "start": 1460.317,
+          "ms": 9.755,
+          "overlap": 9.755
+        },
+        {
+          "name": "Decode Image",
+          "start": 1480.618,
+          "ms": 6.544,
+          "overlap": 6.544
+        },
+        {
+          "name": "GLES2Implementation::GetProgramiv",
+          "start": 1488.506,
+          "ms": 6.346,
+          "overlap": 6.346
+        },
+        {
+          "name": "ImplementationBase::WaitForCmd",
+          "start": 1488.507,
+          "ms": 6.344,
+          "overlap": 6.344
+        },
+        {
+          "name": "CommandBufferHelper::Finish",
+          "start": 1488.507,
+          "ms": 6.344,
+          "overlap": 6.344
+        },
+        {
+          "name": "CommandBufferProxyImpl::WaitForGetOffset",
+          "start": 1488.512,
+          "ms": 6.339,
+          "overlap": 6.339
+        }
+      ],
+      "topSamples": [
+        {
+          "ms": 11.337,
+          "stack": [
+            {
+              "function": "C",
+              "script": 16,
+              "line": 3780,
+              "column": 283
+            },
+            {
+              "function": "Oh.getUniforms",
+              "script": 16,
+              "line": 3787,
+              "column": 297
+            },
+            {
+              "function": "tt",
+              "script": 16,
+              "line": 3839,
+              "column": 35545
+            },
+            {
+              "function": "renderBufferDirect",
+              "script": 16,
+              "line": 3839,
+              "column": 24752
+            },
+            {
+              "function": "Ze",
+              "script": 16,
+              "line": 3839,
+              "column": 32626
+            },
+            {
+              "function": "Xe",
+              "script": 16,
+              "line": 3839,
+              "column": 32392
+            },
+            {
+              "function": "Je",
+              "script": 16,
+              "line": 3839,
+              "column": 30634
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3839,
+              "column": 27902
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3868,
+              "column": 2149
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3872,
+              "column": 32218
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3872,
+              "column": 24267
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 10.804999999999994,
+          "stack": [
+            {
+              "function": "C",
+              "script": 16,
+              "line": 3780,
+              "column": 283
+            },
+            {
+              "function": "Oh.getUniforms",
+              "script": 16,
+              "line": 3787,
+              "column": 297
+            },
+            {
+              "function": "tt",
+              "script": 16,
+              "line": 3839,
+              "column": 35545
+            },
+            {
+              "function": "renderBufferDirect",
+              "script": 16,
+              "line": 3839,
+              "column": 24752
+            },
+            {
+              "function": "Ze",
+              "script": 16,
+              "line": 3839,
+              "column": 32626
+            },
+            {
+              "function": "Xe",
+              "script": 16,
+              "line": 3839,
+              "column": 32392
+            },
+            {
+              "function": "Je",
+              "script": 16,
+              "line": 3839,
+              "column": 30634
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3839,
+              "column": 27902
+            },
+            {
+              "function": "warm",
+              "script": 16,
+              "line": 3847,
+              "column": 15615
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3872,
+              "column": 24267
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 9.987999999999994,
+          "stack": [
+            {
+              "function": "xe",
+              "script": 16,
+              "line": 3815,
+              "column": 11786
+            },
+            {
+              "function": "le",
+              "script": 16,
+              "line": 3815,
+              "column": 24536
+            },
+            {
+              "function": "j",
+              "script": 16,
+              "line": 3815,
+              "column": 20498
+            },
+            {
+              "function": "bm",
+              "script": 16,
+              "line": 3736,
+              "column": 10338
+            },
+            {
+              "function": "upload",
+              "script": 16,
+              "line": 3736,
+              "column": 14647
+            },
+            {
+              "function": "tt",
+              "script": 16,
+              "line": 3839,
+              "column": 35545
+            },
+            {
+              "function": "renderBufferDirect",
+              "script": 16,
+              "line": 3839,
+              "column": 24752
+            },
+            {
+              "function": "Ze",
+              "script": 16,
+              "line": 3839,
+              "column": 32626
+            },
+            {
+              "function": "Xe",
+              "script": 16,
+              "line": 3839,
+              "column": 32392
+            },
+            {
+              "function": "Je",
+              "script": 16,
+              "line": 3839,
+              "column": 30634
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3839,
+              "column": 27902
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3868,
+              "column": 2149
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3872,
+              "column": 32218
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3872,
+              "column": 24267
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 4.0889999999999995,
+          "stack": [
+            {
+              "function": "g",
+              "script": 16,
+              "line": 3787,
+              "column": 2337
+            },
+            {
+              "function": "Qe",
+              "script": 16,
+              "line": 3839,
+              "column": 33081
+            },
+            {
+              "function": "tt",
+              "script": 16,
+              "line": 3839,
+              "column": 35545
+            },
+            {
+              "function": "renderBufferDirect",
+              "script": 16,
+              "line": 3839,
+              "column": 24752
+            },
+            {
+              "function": "Ze",
+              "script": 16,
+              "line": 3839,
+              "column": 32626
+            },
+            {
+              "function": "Xe",
+              "script": 16,
+              "line": 3839,
+              "column": 32392
+            },
+            {
+              "function": "Je",
+              "script": 16,
+              "line": 3839,
+              "column": 30634
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3839,
+              "column": 27902
+            },
+            {
+              "function": "warm",
+              "script": 16,
+              "line": 3847,
+              "column": 15615
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3872,
+              "column": 24267
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 3.898999999999999,
+          "stack": [
+            {
+              "function": "tt",
+              "script": 16,
+              "line": 3839,
+              "column": 35545
+            },
+            {
+              "function": "renderBufferDirect",
+              "script": 16,
+              "line": 3839,
+              "column": 24752
+            },
+            {
+              "function": "Ze",
+              "script": 16,
+              "line": 3839,
+              "column": 32626
+            },
+            {
+              "function": "Xe",
+              "script": 16,
+              "line": 3839,
+              "column": 32392
+            },
+            {
+              "function": "Je",
+              "script": 16,
+              "line": 3839,
+              "column": 30634
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3839,
+              "column": 27902
+            },
+            {
+              "function": "warm",
+              "script": 16,
+              "line": 3847,
+              "column": 15615
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3872,
+              "column": 24267
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 3.1420000000000003,
+          "stack": [
+            {
+              "function": "Qe",
+              "script": 16,
+              "line": 3839,
+              "column": 33081
+            },
+            {
+              "function": "tt",
+              "script": 16,
+              "line": 3839,
+              "column": 35545
+            },
+            {
+              "function": "renderBufferDirect",
+              "script": 16,
+              "line": 3839,
+              "column": 24752
+            },
+            {
+              "function": "Ze",
+              "script": 16,
+              "line": 3839,
+              "column": 32626
+            },
+            {
+              "function": "Xe",
+              "script": 16,
+              "line": 3839,
+              "column": 32392
+            },
+            {
+              "function": "Je",
+              "script": 16,
+              "line": 3839,
+              "column": 30634
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3839,
+              "column": 27902
+            },
+            {
+              "function": "warm",
+              "script": 16,
+              "line": 3847,
+              "column": 15615
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3872,
+              "column": 24267
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 1.8339999999999999,
+          "stack": [
+            {
+              "function": "renderBufferDirect",
+              "script": 16,
+              "line": 3839,
+              "column": 24752
+            },
+            {
+              "function": "Ze",
+              "script": 16,
+              "line": 3839,
+              "column": 32626
+            },
+            {
+              "function": "Xe",
+              "script": 16,
+              "line": 3839,
+              "column": 32392
+            },
+            {
+              "function": "Je",
+              "script": 16,
+              "line": 3839,
+              "column": 30634
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3839,
+              "column": 27902
+            },
+            {
+              "function": "warm",
+              "script": 16,
+              "line": 3847,
+              "column": 15615
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3872,
+              "column": 24267
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 1.365,
+          "stack": [
+            {
+              "function": "s",
+              "script": 16,
+              "line": 3586,
+              "column": 10672
+            },
+            {
+              "function": "renderBufferDirect",
+              "script": 16,
+              "line": 3839,
+              "column": 24752
+            },
+            {
+              "function": "Ze",
+              "script": 16,
+              "line": 3839,
+              "column": 32626
+            },
+            {
+              "function": "Xe",
+              "script": 16,
+              "line": 3839,
+              "column": 32392
+            },
+            {
+              "function": "Je",
+              "script": 16,
+              "line": 3839,
+              "column": 30634
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3839,
+              "column": 27902
+            },
+            {
+              "function": "warm",
+              "script": 16,
+              "line": 3847,
+              "column": 15615
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3872,
+              "column": 24267
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

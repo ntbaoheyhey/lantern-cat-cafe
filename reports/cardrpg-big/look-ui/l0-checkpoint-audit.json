@@ -1,0 +1,1259 @@
+{
+  "at": "2026-11-07T05:31:04.492Z",
+  "artifact": "docs/cardrpg3/index.html",
+  "artifactSha256": "f1234525fb744d0b318c2ea65727256cfb71fc6cc31c2380cf6fac93941a0f56",
+  "artifactBytes": 24026508,
+  "sourceHead": "365c29284bf9a8ccf748978c2c723f878035ad80",
+  "verifiedSourceInputs": 1177,
+  "method": "Independent saved-receipt and byte audit. Does not rerun browsers or confer art/performance acceptance.",
+  "gates": [
+    {
+      "name": "typecheck",
+      "args": [
+        "typecheck"
+      ],
+      "exit": 0,
+      "started": "2026-11-07T05:12:46.513Z",
+      "ended": "2026-11-07T05:13:33.056Z",
+      "log": "reports/cardrpg-big/validation/look-l0-wasmhook-typecheck.log",
+      "sha256": "4382815b223977700715bfbc4f1b37c90bfa79047b8b284431321a9c1f429c93",
+      "counts": []
+    },
+    {
+      "name": "lint",
+      "args": [
+        "lint"
+      ],
+      "exit": 0,
+      "started": "2026-11-07T05:13:33.059Z",
+      "ended": "2026-11-07T05:13:54.782Z",
+      "log": "reports/cardrpg-big/validation/look-l0-wasmhook-lint.log",
+      "sha256": "2207e2551c61f95cc4c585b04f436de731c4644ffb98d25343be1847265077a5",
+      "counts": []
+    },
+    {
+      "name": "tests",
+      "args": [
+        "test"
+      ],
+      "exit": 0,
+      "started": "2026-11-07T05:13:54.783Z",
+      "ended": "2026-11-07T05:14:55.082Z",
+      "log": "reports/cardrpg-big/validation/look-l0-wasmhook-tests.log",
+      "sha256": "ad043453b27b8aa60d9a6224c7aae5974c10d62b58ae63145401e735aa996158",
+      "counts": [
+        "packages/auth test:  Test Files  1 passed (1)",
+        "packages/auth test:       Tests  24 passed (24)",
+        "packages/chain test:  Test Files  3 passed (3)",
+        "packages/chain test:       Tests  32 passed (32)",
+        "supabase/tests test:  Test Files  34 passed (34)",
+        "supabase/tests test:       Tests  581 passed (581)",
+        "packages/game-rules test:  Test Files  55 passed | 3 skipped (58)",
+        "packages/game-rules test:       Tests  1020 passed | 2 expected fail | 11 skipped (1033)",
+        "packages/api-contract test:  Test Files  1 passed (1)",
+        "packages/api-contract test:       Tests  16 passed (16)",
+        "apps/web test:  Test Files  174 passed (174)",
+        "apps/web test:       Tests  1731 passed (1731)"
+      ]
+    },
+    {
+      "name": "build",
+      "args": [
+        "build"
+      ],
+      "exit": 0,
+      "started": "2026-11-07T05:15:01.584Z",
+      "ended": "2026-11-07T05:15:15.320Z",
+      "log": "reports/cardrpg-big/validation/look-l0-wasmhook-build.log",
+      "sha256": "d60b7e47df8a59f74bae2ea5c6915781b81e4067e002ae87d62d8a762106b532",
+      "counts": []
+    },
+    {
+      "name": "e2e",
+      "args": [
+        "--filter",
+        "@taskbar-hero/web",
+        "test:e2e",
+        "--workers=4"
+      ],
+      "exit": 0,
+      "started": "2026-11-07T05:15:15.320Z",
+      "ended": "2026-11-07T05:17:53.904Z",
+      "log": "reports/cardrpg-big/validation/look-l0-wasmhook-e2e.log",
+      "sha256": "faf966f79d770230f200ccabb7f3510ac9f961abc316f5e3f7a46ef9ccf80d42",
+      "counts": [
+        "  421 passed (2.4m)"
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "name": "studio",
+      "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/studio/checks.json",
+      "sha256": "e8f39d50cfcfede103314fe2e5dc2bd7e8ac6b97d20212677931e95d84beb435",
+      "rows": 3,
+      "screenshots": [
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/studio/1024-checklist.png",
+          "bytes": 231233,
+          "sha256": "8fbae43c0c6b91b088c5431911f407b28822711886de1271497d0ad09c943817"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/studio/1024-close.png",
+          "bytes": 339730,
+          "sha256": "ec3a631380917894405a8bf700f8b058404e51cf585bb2969dcfaa7788bf9b90"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/studio/1024-comparison.png",
+          "bytes": 293846,
+          "sha256": "3bd01ffab75dd39fa6132ceaa7625eb5007d832ff2a735af8c9e13716fba57c1"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/studio/1024-far.png",
+          "bytes": 339167,
+          "sha256": "cc84bbf2b2c374516ca79709945c2301719bd8cf3ede67f3ae83e3cbd5359042"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/studio/1024-meter.png",
+          "bytes": 343008,
+          "sha256": "04bd24a3ceee92c53ba3a0cdee9c940eb4ab46fd0e4f301a415536a047fa2917"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/studio/1024-wide.png",
+          "bytes": 339675,
+          "sha256": "9ed09f353d8309262c69cbd19a199a530683a2953542363f85dd26e034e7b70c"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/studio/1280-checklist.png",
+          "bytes": 317428,
+          "sha256": "40460234f48b14600609bc29d25ca9bfc5a4dafc52ba2177076791a89bbccf21"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/studio/1280-close.png",
+          "bytes": 512593,
+          "sha256": "bc42331d0302095b900697267b88361538c6fc97b2a3557c1c1a41d62bc0d56d"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/studio/1280-comparison.png",
+          "bytes": 389150,
+          "sha256": "530e34d8e947212266ed2aec5d7a203d61204a33730cb3cf27e966a9da965367"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/studio/1280-far.png",
+          "bytes": 512070,
+          "sha256": "924360357bdd2dc8c81e79afc68ca88f1b339f5d63d256a9b1fcd7a5dc7d5e0b"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/studio/1280-meter.png",
+          "bytes": 516673,
+          "sha256": "737d7cc8e3409842a95808e13a95a313c29fa72e27609199de45d38342ee65f6"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/studio/1280-wide.png",
+          "bytes": 512255,
+          "sha256": "3755781bb8799713178de49de30c759d328d8fdaf48fb3807043e2c46d139dda"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/studio/1440-checklist.png",
+          "bytes": 373461,
+          "sha256": "8ca910a4bec9a860b255e5aef72d89b12881c2c8c3ecaf2cae0b31b07692bfc8"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/studio/1440-close.png",
+          "bytes": 968472,
+          "sha256": "c35dab550967bf45af5e48240296658af885103d8a42d65f03127ab8cec9fb79"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/studio/1440-comparison.png",
+          "bytes": 458560,
+          "sha256": "c08801d332eb32f4feb02b24c4c99993c199f63d7fbdc840297b2276105397c7"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/studio/1440-far.png",
+          "bytes": 901314,
+          "sha256": "64d3b2f418f2bc3a81e608ca71d40a80a741be8b016f1d54b11f2122bd543a86"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/studio/1440-meter.png",
+          "bytes": 906087,
+          "sha256": "1e2d2381b7a968389f3a6f8e1884b579c6dcd1fc36bb52315963001a0dbf4c08"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/studio/1440-wide.png",
+          "bytes": 943096,
+          "sha256": "e5839ed2966cc6eb21c118d74ea767a1d1e72f9b792142852cab7e7eec54c3e3"
+        }
+      ]
+    },
+    {
+      "name": "gallery",
+      "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/gallery/checks.json",
+      "sha256": "190867824aad3b12cf32b556bba7f99f2c038091d2ce3f9cb1c7f283562c619d",
+      "rows": 3,
+      "screenshots": [
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/gallery/1024-focused.png",
+          "bytes": 511940,
+          "sha256": "b92df87ca589adad1caddcba3225d1952993673390249426fb9321de3d122384"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/gallery/1024-gallery.png",
+          "bytes": 332772,
+          "sha256": "a576c436bdbebfb63e42c2a2bd1d44ed60291f4bf6ce08982837b42daa0ad101"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/gallery/1280-focused.png",
+          "bytes": 721671,
+          "sha256": "063be903452fa6b5342055027c5212a9c00f2c5dd6226f0c16d4cfe51faab8cd"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/gallery/1280-gallery.png",
+          "bytes": 498187,
+          "sha256": "6f136f9ff80d2aa623474eb61d0c99f2cc79db7388019cb2b36312e7566ca144"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/gallery/1440-focused.png",
+          "bytes": 1005447,
+          "sha256": "0007ddff8f8e993efe9e0a23cb843d49b7974bfa9f0c23f60c083cfc490a8a1f"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/gallery/1440-gallery.png",
+          "bytes": 908268,
+          "sha256": "d210457a4b3629315512ced693d408b28220503db7a2f6edde4b23269c8a6217"
+        }
+      ]
+    },
+    {
+      "name": "comparisons",
+      "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/comparisons/checks.json",
+      "sha256": "8fbbcacf6f01d202c62865b929d5ed2335b33eb8630ffd00c04c82a46ac1860b",
+      "rows": 93,
+      "screenshots": [
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/comparisons/comparison-0.png",
+          "bytes": 389260,
+          "sha256": "8b5378cd46a35e68f298492221ed7f9968623a9511b52363429f402f41b0b412"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/comparisons/comparison-24.png",
+          "bytes": 481947,
+          "sha256": "dc3b44ecdfaf367e73089e1916fa598921879dbe6771ecd677d1bf739d4901b9"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/comparisons/comparison-48.png",
+          "bytes": 449955,
+          "sha256": "0200c879318a7325cfd181e7a64c2bc3e358407723dd1efeaa8087630e413e87"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/comparisons/comparison-73.png",
+          "bytes": 593262,
+          "sha256": "6c827202f3ded8aecb7bbf92b6c11a4037764435924a392abf9eaec9c11d8c1c"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/comparisons/comparison-92.png",
+          "bytes": 418044,
+          "sha256": "2bb820f7ba4255459ee45090266c2672ba1182f7e3b4b5a97c95b59b2262e094"
+        }
+      ]
+    },
+    {
+      "name": "lab",
+      "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/lab/checks.json",
+      "sha256": "2bf2e63714a6d4ac07b294ad8667d01c3a829acf818333707886979d8ad28a9b",
+      "rows": 3,
+      "screenshots": [
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/lab/1024-checklist.png",
+          "bytes": 335741,
+          "sha256": "aeeb3dc1e1a29e961730fcc14ab25ff56455304ce51ebec042e69e993c74169a"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/lab/1024-comparison.png",
+          "bytes": 450742,
+          "sha256": "ce51c3295ff6c72a56a279cc4ea6f2fa30a67ccb95148c6a47d10f2556aa841a"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/lab/1024-gallery-effect.png",
+          "bytes": 110810,
+          "sha256": "f05a710979916f54f77849c0b346f98b63a73e7e98739be0ecf5e52f8108f77a"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/lab/1024-gallery-home.png",
+          "bytes": 323067,
+          "sha256": "d3071a974a6a377196dc6330d61b6bf8acd07ef0324f6d2a62d19095a07b49ff"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/lab/1024-gallery-stage.png",
+          "bytes": 370650,
+          "sha256": "f88242489a1eef936b5dd642c3ca09f8ecd1aab1884abb7f43d3ef15c3de6039"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/lab/1024-motion.png",
+          "bytes": 467068,
+          "sha256": "c3a8acff8309e1c3e8412ac05802bdd937f059ec82c33dd6884455e01e883c29"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/lab/1024-performance.png",
+          "bytes": 339062,
+          "sha256": "93a4e8d1ff168cc655e9a31ff01393769c1af4e9aa42a74f6c847e840142b41a"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/lab/1280-checklist.png",
+          "bytes": 497644,
+          "sha256": "b289f4314ccbcd97bae67cdea55efadaf832b03de0abc8f07985264e1cf03d59"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/lab/1280-comparison.png",
+          "bytes": 649158,
+          "sha256": "bfe69558d2c6c6aac0bc0770080c5511304add7ee4c2471b85ec280e7e089e13"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/lab/1280-gallery-effect.png",
+          "bytes": 138343,
+          "sha256": "5d2bebce123bb3150a91950ae1271ade18210dffc05e56e5044bb08a140dc2e8"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/lab/1280-gallery-home.png",
+          "bytes": 483035,
+          "sha256": "0c8a506913e50af6e7e6eaa12800a61099e96a155d3c8afdd7b543b949ef4f0d"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/lab/1280-gallery-stage.png",
+          "bytes": 565188,
+          "sha256": "449a0ecce9055ce70dcd8cb17142243d2ac2a3742bcc2caa4919e8d687ec9974"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/lab/1280-motion.png",
+          "bytes": 700819,
+          "sha256": "e8d5b542934c92fd0cd74e3f0cb49497a600dcebe9353bc356d96f2314d9e1f1"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/lab/1280-performance.png",
+          "bytes": 527212,
+          "sha256": "d57ed53d3c700e6bffa1e41c13b58185764a14be1c2d3a17fa80f19b6542788f"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/lab/1440-checklist.png",
+          "bytes": 769214,
+          "sha256": "5dfb6e671b1935fa576734c26b2668ebe0f34901aa0df13d5d2922888a9c7891"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/lab/1440-comparison.png",
+          "bytes": 1036839,
+          "sha256": "0b50ef2cabc0d5fef0162cb5c57e9e63885040c7c967ab6015a27361f0eaaf28"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/lab/1440-gallery-effect.png",
+          "bytes": 153651,
+          "sha256": "bffb7c644db9ff31e337ea3a3eb4462edfce9e537f58cb6f9ed0cfd08d84cd57"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/lab/1440-gallery-home.png",
+          "bytes": 732551,
+          "sha256": "f71327579cb243d31cb6c5ba2fa6625cda965251c186d3e02a6e4555e9921fb8"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/lab/1440-gallery-stage.png",
+          "bytes": 793575,
+          "sha256": "15d44e09e675c7554eaeb4f84170b17dd33c3fa03fcd7e5f5058a582e8eb07ec"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/lab/1440-motion.png",
+          "bytes": 1030935,
+          "sha256": "9bd6de9f9074a9c9583d5bfd200f4efc2a031549ed1c6ac131a65826f88c2da5"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/lab/1440-performance.png",
+          "bytes": 775714,
+          "sha256": "ff25b73e2b39da81c2624084463ac96c17bafa76934f836d38f9777882fc5eed"
+        }
+      ]
+    },
+    {
+      "name": "meta",
+      "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/meta/checks.json",
+      "sha256": "76b448b21cd89604c745811c4a1efb457b47077897e2cd833ab78ddc59dc7322",
+      "rows": 3,
+      "screenshots": [
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/meta/1024-cafe.png",
+          "bytes": 532831,
+          "sha256": "c622e6a4c63ebdba4d29aaa3477394986eeb8cf3be1c7645901268e07e1968b5"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/meta/1024-collectibles.png",
+          "bytes": 573138,
+          "sha256": "3a57433756c2aa935b559e7c0d04051f461ef0a8e00f853386ce08f57eba97af"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/meta/1024-collection-rotation.png",
+          "bytes": 447175,
+          "sha256": "3d51cc5c128728b156dd5dcb7de804b4a77c3e4af5d5b5cde29046527de38a16"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/meta/1024-collection.png",
+          "bytes": 455858,
+          "sha256": "47a2631bfc1423a4db3ca095fd0462215b5a105924ea41d1c626357dc16caef5"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/meta/1024-consumables.png",
+          "bytes": 240726,
+          "sha256": "11ad62c6edd0b1b17df126281b3e160798b64c793126f478ac7b3481ae02108d"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/meta/1024-currencies.png",
+          "bytes": 249797,
+          "sha256": "8c608cedf93fb98758f80b1dd5f379fac3a15b7755502250aef8907f40e97252"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/meta/1024-equipment-compare.png",
+          "bytes": 412191,
+          "sha256": "82767ea1150c6ad500f190280bcaff8173fc6c3ff972100b7e70da58b648b266"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/meta/1024-equipment.png",
+          "bytes": 412640,
+          "sha256": "9dd33937fe91c627e31de9deab6f29146e0c5b9c7499f77f9fa96c43e5d313f2"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/meta/1024-legendary-cards.png",
+          "bytes": 459625,
+          "sha256": "15f2a06c5b8620c31a31b0f8e71c30572ab59208169151ba4c12c4c6968ce961"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/meta/1024-materials.png",
+          "bytes": 255985,
+          "sha256": "aee9603d673ee280988c1d6d1899ff65d7faa481ba5e81872c26498ff4d302ea"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/meta/1024-reduced-motion.png",
+          "bytes": 463878,
+          "sha256": "c16c9d89dcc027e74175ec04ba9758f1f67cce45b4859072f4d070b2411deff4"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/meta/1024-skill-preview.png",
+          "bytes": 509311,
+          "sha256": "2b5b01b09e45c995160568fc079373ad4f95ef4c785a1118ba004953bfe9428a"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/meta/1024-team.png",
+          "bytes": 530351,
+          "sha256": "1acd623c3e85dc8fbe2570d5bcb19e54baaf861900c41ed0a4b3e3953f5d6977"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/meta/1280-cafe.png",
+          "bytes": 688844,
+          "sha256": "5fb0c26beb1fb6cc56d3daa1ab70eb3e4baf4d00542adbe97037ef8fd663d3ff"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/meta/1280-collectibles.png",
+          "bytes": 860916,
+          "sha256": "9aae17a65bc668fc9ad54c4102eccf1a3efcfd45512b09ac628f4214f67b1dc6"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/meta/1280-collection-rotation.png",
+          "bytes": 611549,
+          "sha256": "63a8c08ef29da5aab4db0f7d4ebbcf99ecbe85663209a58155292458711bbe87"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/meta/1280-collection.png",
+          "bytes": 620618,
+          "sha256": "2c99a9d0b5e54bb2e3ea1667d37dce07cf2a5949000347126f884ba584dfaaab"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/meta/1280-consumables.png",
+          "bytes": 319456,
+          "sha256": "04731b49cc08d15bd0cbbad07124be0b3047ed2a477edbdef733c21dca402b97"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/meta/1280-currencies.png",
+          "bytes": 326237,
+          "sha256": "5f456052c2c3eef575cb1f8ed667ec8d109a28e89b0902e8ce7f2f3dc8bcf3b0"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/meta/1280-equipment-compare.png",
+          "bytes": 644792,
+          "sha256": "e61f0a7b29c667398038c2ea67bed9a1d1f58385b6af0bd9f0fa29a35ae6aef8"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/meta/1280-equipment.png",
+          "bytes": 645359,
+          "sha256": "2edaa75cee65694b9321845132cba648a4b6f7f88217c60c50c5a3e730f8a331"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/meta/1280-legendary-cards.png",
+          "bytes": 582320,
+          "sha256": "e0b7c47140310a0693b5c31de5b5680b1b1f827ac537ad893a8a0d1794e35895"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/meta/1280-materials.png",
+          "bytes": 331659,
+          "sha256": "ca3c17f9da629c0046b9bff76816f1ff8f408a7312a8f39e1b74e29da95fd3dc"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/meta/1280-reduced-motion.png",
+          "bytes": 638571,
+          "sha256": "c2e5718e7316809e3037b5cde06d4b0f91210bae2d78e5ce55e70bedb61c461c"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/meta/1280-skill-preview.png",
+          "bytes": 723913,
+          "sha256": "3098e7ddce6fb1f38356844c946dfa21557f86826bfee17d3f96a7a06ff68837"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/meta/1280-team.png",
+          "bytes": 800711,
+          "sha256": "b34eea5f806691fa88333761a60fdf8f87b0ee8d56376251c44bd28c9ab057e4"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/meta/1440-cafe.png",
+          "bytes": 1011839,
+          "sha256": "9b6f519bfd5bc2527a210ae9ccd23273c911ebb5b5cb92e8267f49607140f1c1"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/meta/1440-collectibles.png",
+          "bytes": 1137453,
+          "sha256": "d51ccb4e77e5e65b8a7df5cf64fc83b2986a20e0f56512cdec0853d077af0ff1"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/meta/1440-collection-rotation.png",
+          "bytes": 902244,
+          "sha256": "528ab3866ba4cf84d74447ec392aabe5f5325b39a4aeb5c58467a4b27eb41bbe"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/meta/1440-collection.png",
+          "bytes": 909553,
+          "sha256": "7db3bc22c21659ed14d5d8b30c43b9420dfee4acbc815c6f47638bd84ede8aea"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/meta/1440-consumables.png",
+          "bytes": 378312,
+          "sha256": "e59f8f509d9942134a7bfb5f90963e4326143b7016c3c644a70dce4b3012f0c9"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/meta/1440-currencies.png",
+          "bytes": 383768,
+          "sha256": "159cdaade6708ca296e2235c6317474d1f2b15ba07d0ca699d27939228222a96"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/meta/1440-equipment-compare.png",
+          "bytes": 948868,
+          "sha256": "afba62d2a7977d0e480ac94e59e32ddb5bf526acac414887da0884fbe7e4e7fa"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/meta/1440-equipment.png",
+          "bytes": 949151,
+          "sha256": "0d8aa9f4f77b535e4aa4e583355ccca4af70715a987f9e03b7dd0d6957cbf60a"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/meta/1440-legendary-cards.png",
+          "bytes": 791527,
+          "sha256": "3b02814b095c04165eb47ee5656ef920feb8ce5985c3bf494af06a533476f035"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/meta/1440-materials.png",
+          "bytes": 389195,
+          "sha256": "a08fe6113d451f4e7d0f055e34df6bddbb7e570d4910b55178b91fcc0ef2db33"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/meta/1440-reduced-motion.png",
+          "bytes": 938389,
+          "sha256": "378f3f295144d9654be14882710ff956f78d445d7b6574d09dfea5f121c29e6a"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/meta/1440-skill-preview.png",
+          "bytes": 1039608,
+          "sha256": "6209eaa5b21775985b2b54ed3029938477a94e16ecdf437389efbcc814c77340"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/meta/1440-team.png",
+          "bytes": 1119108,
+          "sha256": "a327248e710b7dd519552d90fbbe97902d1443f275caeb98908942700bddec2e"
+        }
+      ]
+    },
+    {
+      "name": "reveal",
+      "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/reveal/checks.json",
+      "sha256": "3744db744c9359b0ebf2392decf5df0375d74804cecf8c3bc5763f9ddd53cae9",
+      "rows": 8,
+      "screenshots": [
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/reveal/1024-cpu1-epic-before.png",
+          "bytes": 450181,
+          "sha256": "4315418e59285ae41a0553d454f049ec4029a8e3fca07107959f6a80cfbef832"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/reveal/1024-cpu1-epic-entrance.png",
+          "bytes": 554332,
+          "sha256": "fcf47a3a7c1880a01076341cdefc1c6737a786684df7eb43ea5905cd4412df93"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/reveal/1024-cpu1-epic-history.png",
+          "bytes": 468080,
+          "sha256": "05b71167349c6c22ecd80cfa7d66329d4ff6f791e459d933240fafe4a29188f4"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/reveal/1024-cpu1-epic-settled.png",
+          "bytes": 542342,
+          "sha256": "b3eeea0d5762c43d4de97c13d89e945d216c13a173e039fbcbf84169d0e6c33c"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/reveal/1024-cpu1-legendary-before.png",
+          "bytes": 518274,
+          "sha256": "c303147b2e20ff7e0791f8f8c83178d2a8dc6bb8d9dab019c21e88c8aba7967a"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/reveal/1024-cpu1-legendary-entrance.png",
+          "bytes": 559864,
+          "sha256": "23cd7b808655a99e5f70099a932b336ab02492b053362b97c84282bfea3455cb"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/reveal/1024-cpu1-legendary-history.png",
+          "bytes": 469416,
+          "sha256": "8ad231cf151ccd3ed8060570a26e869b84fac6330fadcabb0e2324fa7063f9f3"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/reveal/1024-cpu1-legendary-settled.png",
+          "bytes": 545448,
+          "sha256": "72181036700461a3da9e5c8040d5fd4598053d12f284dd0b9293131984745f33"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/reveal/1280-cpu1-epic-before.png",
+          "bytes": 697830,
+          "sha256": "5b0f750d04683a884b0fade9778ffd81e78c7a281abb153ef425e087936d7a55"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/reveal/1280-cpu1-epic-entrance.png",
+          "bytes": 845752,
+          "sha256": "a5b14f503d95bb268889cae8f22fb544bd4da4d2d3bae70a2a980d0e495951eb"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/reveal/1280-cpu1-epic-history.png",
+          "bytes": 742292,
+          "sha256": "f25eb3f29c25ca568602841c11e1b66dcf8a3441f82feba2b0dd46f3060022ed"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/reveal/1280-cpu1-epic-settled.png",
+          "bytes": 830848,
+          "sha256": "e02200bd4957f7c49244819d0d0ce195b20803ef0a12d1ad4600bf6047c742fb"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/reveal/1280-cpu1-legendary-before.png",
+          "bytes": 811856,
+          "sha256": "f39eb18c9778e5cc4fe70f55c75c478e7dcd4f41a999c0ca55d6fcb28e358f2e"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/reveal/1280-cpu1-legendary-entrance.png",
+          "bytes": 857227,
+          "sha256": "5076b666a6621c038cb49cfabd4cac87291d99e1752c8285d545082cdb8a30a8"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/reveal/1280-cpu1-legendary-history.png",
+          "bytes": 742899,
+          "sha256": "41971844278b7b269f53170e5d0cf3f6b64f5f999eacfb8039f7045ce0a40e50"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/reveal/1280-cpu1-legendary-settled.png",
+          "bytes": 838775,
+          "sha256": "1ef24f1e1cae58c3ffdf77e55164ae84ec79ee4103301ae27de9086ac4f1286b"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/reveal/1280-cpu4-epic-before.png",
+          "bytes": 697605,
+          "sha256": "fc5d40aa9857394cb003dcc712473533a0cf0582232892622cb5c6f7b4f089e2"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/reveal/1280-cpu4-epic-entrance.png",
+          "bytes": 840574,
+          "sha256": "863c29cdeeb9aec24efe606c3acc82035ddae4b380325acc66c80673f34dbe66"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/reveal/1280-cpu4-epic-history.png",
+          "bytes": 742271,
+          "sha256": "8e5ee955024063e9a5db452f97d05a180c3295b936634d475a08032311a39d12"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/reveal/1280-cpu4-epic-settled.png",
+          "bytes": 832208,
+          "sha256": "8d90e6246e3b9af24005cf4119abcceb614464e623667219eef40d35f3e4ac92"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/reveal/1280-cpu4-legendary-before.png",
+          "bytes": 811761,
+          "sha256": "5ccb213383c8617f02075160274ef56c5ca6a6ca66978b286474d2b73667263e"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/reveal/1280-cpu4-legendary-entrance.png",
+          "bytes": 860765,
+          "sha256": "0413a488c5213f3c46f02575fd9ca0366f7693c5e4f1e55e0c8c914312b4184d"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/reveal/1280-cpu4-legendary-history.png",
+          "bytes": 742905,
+          "sha256": "9595d6a65b39adabfd5daa4f1e4636c61569ba48656d04ed729b452fad720875"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/reveal/1280-cpu4-legendary-settled.png",
+          "bytes": 838636,
+          "sha256": "9ca5c602b77ca90d2dad57a52e925fa323a4abcbcea50661e168daf86851c9ca"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/reveal/1440-cpu1-epic-before.png",
+          "bytes": 1007103,
+          "sha256": "920547c98684933192242ff19467190cdb4d0888ba0775cddbdd92c270d33c28"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/reveal/1440-cpu1-epic-entrance.png",
+          "bytes": 1138634,
+          "sha256": "609b7b5d5a6b08e284e5e7ca6412de569d71826fcb2ae42a98e385aebda73812"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/reveal/1440-cpu1-epic-history.png",
+          "bytes": 1066295,
+          "sha256": "d08d40e4a30aff93ea535b751052a6866efe6f762b7a26f1132f9edf3dc0b2a7"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/reveal/1440-cpu1-epic-settled.png",
+          "bytes": 1120147,
+          "sha256": "ff11c84c39a56de971a0193438894aa4732e1f393425fa91d26b989153f89ff8"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/reveal/1440-cpu1-legendary-before.png",
+          "bytes": 1221357,
+          "sha256": "e034332377788af9c723bdc76dcca94d0362494e2b67b872e672a4e7023aa609"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/reveal/1440-cpu1-legendary-entrance.png",
+          "bytes": 1151249,
+          "sha256": "94da7c35c478b803e6052e7598c399dbbd4e9f10fd61865aa523c83e884b3277"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/reveal/1440-cpu1-legendary-history.png",
+          "bytes": 1068301,
+          "sha256": "712135ee032343dfbdc3a07e293b965497a0f4bb36bd1377b69e0a0a270d8fe7"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/reveal/1440-cpu1-legendary-settled.png",
+          "bytes": 1130975,
+          "sha256": "76bb097d54cd60791f9fcfd9116f3085b0c89a4fc29e127c68487610437f3c22"
+        }
+      ]
+    },
+    {
+      "name": "invitations",
+      "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/invitations/checks.json",
+      "sha256": "46412ef0808fccdf076f414ae36440fe0bae175887806396cf5c69b8be4acad9",
+      "rows": 4,
+      "screenshots": [
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/invitations/1024x600-cpu1-equipment.png",
+          "bytes": 542470,
+          "sha256": "da2a16d9a22a3477db389595c04f2af4f623f71410a803eaf6b2898819dd41cf"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/invitations/1024x600-cpu1-featured-guarantee.png",
+          "bytes": 560116,
+          "sha256": "b3df5bda7da584bab8547595038bed6b6b7327fe94e310727e95d006ee90c038"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/invitations/1024x600-cpu1-reduced-history.png",
+          "bytes": 477532,
+          "sha256": "d703c4617a1baaaf9649518cc51c07ffe4f94b689a0bcb7ed470bc70eee5e295"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/invitations/1024x600-cpu1-sealed.png",
+          "bytes": 535963,
+          "sha256": "e119491224a427e3d05cb14324964bdafbe835fcd9bf3f35bce916ab35e7526b"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/invitations/1024x600-cpu1-soft-pity.png",
+          "bytes": 451717,
+          "sha256": "ccbbbad972795046e711b4d92216fed04dfe94b37eb6b2020a0704db0211a0fd"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/invitations/1024x600-cpu1-standard.png",
+          "bytes": 452852,
+          "sha256": "c5407d208da759567d3a97eb281f42606fce5ba6fbf1302cd8c6c20ddf8eecf8"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/invitations/1024x600-cpu1-ten-pull-legendary.png",
+          "bytes": 545244,
+          "sha256": "6c8dbc006cf6d99cfb1b06d26446ae511c5b90c88f5d0a9715aea90e4404dcc3"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/invitations/1024x600-cpu1-ten-pull-results.png",
+          "bytes": 486589,
+          "sha256": "88d8fdf7add261a3b9a06e2afd197d5f40dc5f35031851636632169cb928244b"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/invitations/1024x600-cpu1-welcome-result.png",
+          "bytes": 540215,
+          "sha256": "06d5c42f157902340da3c4c3060e69adf59a416e7bb75191ca6ee6a2ff3a794e"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/invitations/1280x720-cpu1-equipment.png",
+          "bytes": 824713,
+          "sha256": "578c8caae31a995040637506a162e74c0389638bf4437a3b4e12b2254642489d"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/invitations/1280x720-cpu1-featured-guarantee.png",
+          "bytes": 857375,
+          "sha256": "e0cef40ba070fbaa267e2e354a4b3ee1aaa9f7ff9d90a8ca4d39e976649f634e"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/invitations/1280x720-cpu1-reduced-history.png",
+          "bytes": 763601,
+          "sha256": "f762e9c4f384d5674f2ccb8e32e8cb46948c9e7590f007917d43335a19fff37e"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/invitations/1280x720-cpu1-sealed.png",
+          "bytes": 835004,
+          "sha256": "d41335a242ab6cce7fdeda0a7f3c036f8633cc02b135baf052cf0d033c11bcd0"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/invitations/1280x720-cpu1-soft-pity.png",
+          "bytes": 698281,
+          "sha256": "cf60f835897ea937b5e6c6d4feea64326456445556f8d45940504a5f209c9025"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/invitations/1280x720-cpu1-standard.png",
+          "bytes": 708774,
+          "sha256": "c433470f50022ced8e18d636aeb8ffc1983278c6430630e98935cf2285e34a68"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/invitations/1280x720-cpu1-ten-pull-legendary.png",
+          "bytes": 833812,
+          "sha256": "9c9d81de271bfc08f6683b4e73737a00e6f26973afe085507be2bfed9e7312d3"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/invitations/1280x720-cpu1-ten-pull-results.png",
+          "bytes": 750848,
+          "sha256": "c728348785f8ed7b11548b7f35ad9512abf192cd6e018a0d29a4ede95c972d0a"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/invitations/1280x720-cpu1-welcome-result.png",
+          "bytes": 864886,
+          "sha256": "e2b0f443bbedbe32526841701fb376c552bbe69a9a928639e5b24338da6de2cb"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/invitations/1280x720-cpu4-equipment.png",
+          "bytes": 824713,
+          "sha256": "578c8caae31a995040637506a162e74c0389638bf4437a3b4e12b2254642489d"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/invitations/1280x720-cpu4-featured-guarantee.png",
+          "bytes": 859566,
+          "sha256": "eaa2abd9dd1d91832ab6c3771e68be97358e81afefd47d0b58530af46e7c1a72"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/invitations/1280x720-cpu4-reduced-history.png",
+          "bytes": 763601,
+          "sha256": "f762e9c4f384d5674f2ccb8e32e8cb46948c9e7590f007917d43335a19fff37e"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/invitations/1280x720-cpu4-sealed.png",
+          "bytes": 833895,
+          "sha256": "fabef29941658a636e5c6d5aa4f90bd48ee98353e147d15e712975ae51231d52"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/invitations/1280x720-cpu4-soft-pity.png",
+          "bytes": 698166,
+          "sha256": "4ec46693322894423389624050c59c1b31069a1fe509fd782b6292e4cf4358a0"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/invitations/1280x720-cpu4-standard.png",
+          "bytes": 708478,
+          "sha256": "df3381248a401531cf001504f131120a7d942fb968162b2233c0ba17b5d501cd"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/invitations/1280x720-cpu4-ten-pull-legendary.png",
+          "bytes": 830675,
+          "sha256": "a4e791578779cabe9faa87ad76f1a238cfcfce19cb2fabc54fbbef534d2819c0"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/invitations/1280x720-cpu4-ten-pull-results.png",
+          "bytes": 750777,
+          "sha256": "fa50b558dbd6f1ae51fe60f42a5e30ab849852e0dd6fca077edebfb0ba0c4d07"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/invitations/1280x720-cpu4-welcome-result.png",
+          "bytes": 864902,
+          "sha256": "530897586117793d26536d5a9199384defb677dfddbb1b7f8e6c3660011cf111"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/invitations/1440x900-cpu1-equipment.png",
+          "bytes": 1171513,
+          "sha256": "a6fec0d05139b44bd37c64a04a0691a3867e112378652343886133cf6d26acb5"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/invitations/1440x900-cpu1-featured-guarantee.png",
+          "bytes": 1151770,
+          "sha256": "bdd72719319e7a22fe772569fd95f479a57758ddc5b237276eb2959c7b4ec612"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/invitations/1440x900-cpu1-reduced-history.png",
+          "bytes": 1091155,
+          "sha256": "aff3afdc091c23381b356ec0f431ccbcdeeaba16384153f9291575ca46080ba2"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/invitations/1440x900-cpu1-sealed.png",
+          "bytes": 1133710,
+          "sha256": "9c3fd7f1b871d3aebfd67151e99e0fdf0cf9229fd350735399c716d5bf728f24"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/invitations/1440x900-cpu1-soft-pity.png",
+          "bytes": 986419,
+          "sha256": "147b13240c43ece4cd9d2df1f8ba1d9147d9e2b3929a0f83e01b5258283685be"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/invitations/1440x900-cpu1-standard.png",
+          "bytes": 1066139,
+          "sha256": "1fde4d3f59ec94ed29ca3d68057f0df5adfec262c60c7729bb98fab1ea2fb227"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/invitations/1440x900-cpu1-ten-pull-legendary.png",
+          "bytes": 1122788,
+          "sha256": "25b182772095a99ca89b1e90acac58f466b2e9180e3903a23c808256493b4781"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/invitations/1440x900-cpu1-ten-pull-results.png",
+          "bytes": 1066247,
+          "sha256": "1818e61022512e10680a92911259a884019e193bccf28ae01b61baa314edc405"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/invitations/1440x900-cpu1-welcome-result.png",
+          "bytes": 1173226,
+          "sha256": "664a9d4fa7926fdb9ab7e949810e82f23a1933c8cb64a31f9955a686b73a4d9e"
+        }
+      ]
+    },
+    {
+      "name": "designs",
+      "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/designs/checks.json",
+      "sha256": "bbce653cf61d49a56526d0ed8c97351dbccf58336fdf514abf7996ec2ced8843",
+      "rows": 3,
+      "screenshots": [
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/designs/1024x600-effort-locked.png",
+          "bytes": 521338,
+          "sha256": "35114dc9d1ad58d0311bf919056c98814f3f8d1359c19a4679d36d5f9bc7be31"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/designs/1024x600-help.png",
+          "bytes": 593642,
+          "sha256": "484abb37894f5c67386711297baeb9e3f1f7922a051dc718d1cf76417055b5a7"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/designs/1024x600-last-supply-reserved.png",
+          "bytes": 574747,
+          "sha256": "9e04908f0c348b7a4b3eb35c82a6512afdb03d0f334babf01f82f70b9261fcf2"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/designs/1024x600-moon-reserved.png",
+          "bytes": 574269,
+          "sha256": "f3ca7980516b097ebd3a1b2e8ac2fded5c058f3be04e775b80335acf975385cc"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/designs/1280x720-effort-locked.png",
+          "bytes": 862207,
+          "sha256": "7f18cfb0451d25de0cf5df46133d1b21970539b23749435ccac61e04dbe426a5"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/designs/1280x720-help.png",
+          "bytes": 859867,
+          "sha256": "aa70e6bbe85ae6d7495c53c1be627db88f1d53b25106af73d9594c828d77158d"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/designs/1280x720-last-supply-reserved.png",
+          "bytes": 862497,
+          "sha256": "49ca69a0881edf45d9a7bc21b600c4ebfa19aa45240307d69e4b57df8fb928c3"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/designs/1280x720-moon-reserved.png",
+          "bytes": 861937,
+          "sha256": "e02b42fe563141fdda865044323fd3b56ca4f463b6a0b69a69a77612949f437b"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/designs/1440x900-effort-locked.png",
+          "bytes": 1138198,
+          "sha256": "77a10513271d50ec32e31a7fc3f94d1e9af7d2b598d729ea5f8def2d763d2199"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/designs/1440x900-help.png",
+          "bytes": 1266994,
+          "sha256": "07555d47088185b280286f8bab05fa0e97f92e7f2022f50b73d654fa3c01b3d6"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/designs/1440x900-last-supply-reserved.png",
+          "bytes": 1136199,
+          "sha256": "53c4a5c26ecb7d20537e333b128ef80aafbb3f15739eb7026f134fb8faf899b3"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/designs/1440x900-moon-reserved.png",
+          "bytes": 1137454,
+          "sha256": "5a2bc2cb16bb02f9c8ce462579771d5ec8e39e2ce8f0ab5bbac38c1d8a10988d"
+        }
+      ]
+    },
+    {
+      "name": "path",
+      "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/path/checks.json",
+      "sha256": "3d914ece9f2c608ee7e905e7b7843914ef735ad4cc36dad5358a4bca3a92715b",
+      "rows": 3,
+      "screenshots": [
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/path/1024-boss-result.png",
+          "bytes": 444680,
+          "sha256": "ae42a3a7828bfbd0b952f3058d56306be505d8fce9b3e50b571a601347b60460"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/path/1024-hub.png",
+          "bytes": 532804,
+          "sha256": "5ba73922e77aada9cdb31a2bd2626fdd65ca46563dc0eb1220fb8ff6f4ed25c9"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/path/1024-paused.png",
+          "bytes": 500636,
+          "sha256": "5aa3e1e853ec9458867950f555d9d6da8d25c33c3144c8c6c4664c2a3a1909ef"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/path/1024-prepare.png",
+          "bytes": 489629,
+          "sha256": "384bf9737fbf3bfe2a5820ecea09d7301b7a5d9ea1790adcef2439670e36036a"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/path/1024-result.png",
+          "bytes": 381707,
+          "sha256": "0edb1184c9c966f464a712f0e3216d3555cc4b36caaf5648734a7eccb8e10aa9"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/path/1024-route-0-0.png",
+          "bytes": 426756,
+          "sha256": "14eb7aa930320891c7aa16a2219ee33802a7e075963b6efd625cf45016a3e29d"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/path/1024-route-5-0.png",
+          "bytes": 407636,
+          "sha256": "837b217b352f386b2dced42323d9e0fefa14ce61d218cf28a8839aa9b45c1219"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/path/1024-team.png",
+          "bytes": 496154,
+          "sha256": "098140dfbb95dbe0fab715829ad7b6ac79f6f17b7773d5c93082b1c5108cb454"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/path/1024-watched-result.png",
+          "bytes": 521922,
+          "sha256": "9f64e6620b02f1c0a61a25afe5f802dba1de14a53f0aa876f463f5cad2b108c5"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/path/1280-boss-result.png",
+          "bytes": 605013,
+          "sha256": "cf7d2ad80bb314941bb184674ee8f9dd4a6818484b4cc00d41473744446da3e8"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/path/1280-hub.png",
+          "bytes": 688465,
+          "sha256": "b919d1c4f12b347e4a87c2ab9e3316557eef0bab9844759322c9f94bf71bd1d7"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/path/1280-paused.png",
+          "bytes": 714189,
+          "sha256": "b07cc7b61341d730470e2fc883bf85a12843bfaa15f66a97776a56d625514c5a"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/path/1280-prepare.png",
+          "bytes": 677657,
+          "sha256": "28282b1a66cf8ab66042e2c028a3955c34868c1cfb24eed2cde67a76eac2f69b"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/path/1280-result.png",
+          "bytes": 545893,
+          "sha256": "108b75c4947763c15d6704d8d7f8138378ecd170ab328741974c9eac799a97c2"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/path/1280-route-0-0.png",
+          "bytes": 602365,
+          "sha256": "eca4304171f4b5d7b45b78c24c223907ac05713ea43eb4da87d4c748789335a7"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/path/1280-route-5-0.png",
+          "bytes": 575424,
+          "sha256": "927e90e4adcc4fc5942d25b4c7f24686d15db3942b5f494a67a47f7fd39ad03e"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/path/1280-team.png",
+          "bytes": 739613,
+          "sha256": "fd62c16f13877bf593359c6a1a760ebb58821421dc0b2ea92951a57900e3550b"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/path/1280-watched-result.png",
+          "bytes": 714793,
+          "sha256": "4ba1c4d8d562ee0c9b5bdcb42da5c2560e0415bca182ad15b4c67b5ae8b0cbcb"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/path/1440-boss-result.png",
+          "bytes": 858375,
+          "sha256": "00454205b38d39cd6638f809b3aaae485af8c52117c1a27c505ffc70800617db"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/path/1440-hub.png",
+          "bytes": 1011935,
+          "sha256": "f54da3ee2ccf293339e2b622d792ebdd9f1908f033484c5b6d5b0fd210503de6"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/path/1440-paused.png",
+          "bytes": 998444,
+          "sha256": "ea43da8a264df6343c001204ba5547111a96264410d75f1b20968a0dd36e600c"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/path/1440-prepare.png",
+          "bytes": 946464,
+          "sha256": "9d69d7e90555da69bb7d5a688640a5a146d7a5b49f5e17e791c79aba9bd59279"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/path/1440-result.png",
+          "bytes": 755994,
+          "sha256": "66a7ca818f27325e974f5c8746cdeeb9ae28815f9ca446912f65429f0f3f01f8"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/path/1440-route-0-0.png",
+          "bytes": 827856,
+          "sha256": "536c2bdfd667dc01ec8bd455a732e351c4dbcb8efa8e3ff98bf509415bc4d623"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/path/1440-route-5-0.png",
+          "bytes": 791305,
+          "sha256": "5cc5bd50b2136f0119656ec5d7dc081a353abaea6a097c51506e7a3d19f146ae"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/path/1440-team.png",
+          "bytes": 1036016,
+          "sha256": "4ac4327a8b04dc643d87d853037d1d6703139995d534b83facc8d43ce4da3046"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/path/1440-watched-result.png",
+          "bytes": 945203,
+          "sha256": "2d66601171339be94455baf490956ad00edbc594187cc71a0ab53adb5c11e7e8"
+        }
+      ]
+    },
+    {
+      "name": "mechanics",
+      "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/mechanics/checks.json",
+      "sha256": "01ac9660cb36edb0adff60ef846359a5e6d32d6f00eec0bbc1df0d13f6a70fa8",
+      "rows": 4,
+      "screenshots": [
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/mechanics/1024-600-cpu1-prep.png",
+          "bytes": 233838,
+          "sha256": "c7a9511b8c0265b9e8334ad073873d2e8ee858398f164501d6c42c949681afad"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/mechanics/1024-600-cpu1-result.png",
+          "bytes": 234472,
+          "sha256": "eef53355e8c965254d1d383ab52c94c84fa49b97b8f28e4f03118aea0678bdfd"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/mechanics/1280-720-cpu1-prep.png",
+          "bytes": 292823,
+          "sha256": "f4239746e362116815c2d07a8f271f29bd00b87599b13c0f668301372a44d6e4"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/mechanics/1280-720-cpu1-result.png",
+          "bytes": 296017,
+          "sha256": "7f40c8ed6d12a08b6a35b15cbc07b62970be697243bd08d9f1e4dd8ce8837c55"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/mechanics/1280-720-cpu4-prep.png",
+          "bytes": 293845,
+          "sha256": "d112a9c392ba88b2d7ec5e5408c9147f06eab3c52542f461f2a3622ec3d87296"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/mechanics/1280-720-cpu4-result.png",
+          "bytes": 295980,
+          "sha256": "49ced8d761ebbd789170ba21f5ab3655f7c8869bc1a6d2c2e287dcff2d522fa2"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/mechanics/1440-900-cpu1-prep.png",
+          "bytes": 350209,
+          "sha256": "efcda436839a5e2bb40038c131a1c3c268d04793b8f72913c7f555e4849c1ae2"
+        },
+        {
+          "path": "reports/cardrpg-big/look-ui/functional-l0-reviewfix/mechanics/1440-900-cpu1-result.png",
+          "bytes": 361473,
+          "sha256": "e54273159d012b2f0ba6ff0dd9b9c7a36d2976fad5da89c16c9b76e2be825e1c"
+        }
+      ]
+    }
+  ],
+  "screenshotCount": 204,
+  "ui": [
+    {
+      "width": 1024,
+      "path": "reports/cardrpg-big/look-ui/l0-reviewfix/1024/checks.json",
+      "toggles": 10,
+      "screenshots": 10,
+      "textRectangles": 386,
+      "activeFailures": 0,
+      "inactiveFailures": 0,
+      "minimumActiveContrast": 5.663840921957471
+    },
+    {
+      "width": 1280,
+      "path": "reports/cardrpg-big/look-ui/l0-reviewfix/1280/checks.json",
+      "toggles": 10,
+      "screenshots": 10,
+      "textRectangles": 496,
+      "activeFailures": 0,
+      "inactiveFailures": 3,
+      "minimumActiveContrast": 5.608341849498594
+    },
+    {
+      "width": 1440,
+      "path": "reports/cardrpg-big/look-ui/l0-reviewfix/1440/checks.json",
+      "toggles": 10,
+      "screenshots": 10,
+      "textRectangles": 612,
+      "activeFailures": 0,
+      "inactiveFailures": 5,
+      "minimumActiveContrast": 5.608341849498594
+    }
+  ],
+  "flagoff": {
+    "baselineSource": "b092ed0c:reports/cardrpg-big2/integration/flag-off/checks.json",
+    "baselineReceiptSha256": "3729689329364418798189424a9230f36d8973fb428eaba814911cecfa64099d",
+    "currentReceiptSha256": "d7218149f1ed7f9279c0fc450dda95ef23c152760e7cea1b4a4d40c3e509f026",
+    "baselineScripts": 11,
+    "newScripts": 11,
+    "baselineBytes": 3522500,
+    "newBytes": 3522500,
+    "baselineModules": 686,
+    "newModules": 686,
+    "addedModules": [],
+    "removedModules": [],
+    "prohibitedModules": [],
+    "modelRequests": [],
+    "errors": [],
+    "method": "Actual default production startup requested chunks, final Vite module inventory and checked chunk hashes. Compare full recorded relative module IDs without additional normalization. This does not assert all flag-off behavior is byte-identical."
+  },
+  "scope": {
+    "baseline": "a106dfcac755d42f91b2467adf6d888ca0b41a9c",
+    "changed": [
+      "apps/web/src/game/cardrpg/depth/App.tsx",
+      "apps/web/src/game/cardrpg/depth/CompanionPreview.tsx",
+      "apps/web/src/game/cardrpg/depth/look-meta.css",
+      "apps/web/src/game/cardrpg/look-tokens.css",
+      "apps/web/src/game/cardrpg/look-tokens.json",
+      "apps/web/src/game/squad/turn3d/look-v2.test.ts",
+      "apps/web/src/game/squad/turn3d/look-v2.ts"
+    ],
+    "protectedChanges": []
+  },
+  "limits": [
+    "24 MB default size gate missed; artifact-specific LOOK exception in lab receipt",
+    "B L1-L7 visual assets/rubrics and final matrix pending",
+    "Baseline quality/performance/balance misses are unchanged"
+  ]
+}

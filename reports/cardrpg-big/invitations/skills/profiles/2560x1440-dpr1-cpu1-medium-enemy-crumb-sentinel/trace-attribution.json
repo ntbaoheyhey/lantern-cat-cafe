@@ -1,0 +1,1065 @@
+{
+  "source": "2560x1440-dpr1-cpu1-medium-enemy-crumb-sentinel-trace.json.gz",
+  "origin": 130385048941,
+  "mainThread": 4680437,
+  "method": "RAF intervals aligned to navigationStart. Main renderer thread only. Task durations are inclusive. CPU samples are statistical stack evidence, never additive to nested task durations.",
+  "hitches": [
+    {
+      "at": 558,
+      "ms": 33.299999999999955,
+      "tasks": [
+        {
+          "name": "RunTask",
+          "start": 506.817,
+          "ms": 33.133,
+          "overlap": 15.25
+        },
+        {
+          "name": "EvaluateScript",
+          "start": 511.22,
+          "ms": 28.53,
+          "overlap": 15.05,
+          "data": {
+            "columnNumber": 1,
+            "frame": "A09C8F8C53C3CBC12C6E6F35912FB57E",
+            "lineNumber": 1,
+            "scriptId": 0,
+            "url": ""
+          }
+        },
+        {
+          "name": "v8.compile",
+          "start": 511.224,
+          "ms": 19.171,
+          "overlap": 5.695,
+          "data": {
+            "columnNumber": 1,
+            "lineNumber": 1,
+            "notStreamedReason": "inline script",
+            "scriptId": 16,
+            "streamed": false,
+            "url": ""
+          }
+        },
+        {
+          "name": "RunTask",
+          "start": 551.144,
+          "ms": 13.242,
+          "overlap": 6.856
+        },
+        {
+          "name": "ProxyMain::BeginMainFrame",
+          "start": 551.144,
+          "ms": 13.22,
+          "overlap": 6.856
+        },
+        {
+          "name": "Layout",
+          "start": 551.681,
+          "ms": 10.847,
+          "overlap": 6.319
+        },
+        {
+          "name": "RunTask",
+          "start": 540.405,
+          "ms": 10.737,
+          "overlap": 10.737
+        },
+        {
+          "name": "v8.callFunction",
+          "start": 540.441,
+          "ms": 10.668,
+          "overlap": 10.668
+        },
+        {
+          "name": "FunctionCall",
+          "start": 540.441,
+          "ms": 10.505,
+          "overlap": 10.505,
+          "data": {
+            "columnNumber": 1606,
+            "frame": "A09C8F8C53C3CBC12C6E6F35912FB57E",
+            "functionName": "D",
+            "isolate": "7275310819281012779",
+            "lineNumber": 1,
+            "sampleTraceId": 5504551466617820,
+            "scriptId": "16",
+            "url": ""
+          }
+        },
+        {
+          "name": "v8.run",
+          "start": 530.398,
+          "ms": 9.35,
+          "overlap": 9.35
+        },
+        {
+          "name": "UpdateLayoutTree",
+          "start": 551.181,
+          "ms": 0.498,
+          "overlap": 0.498
+        },
+        {
+          "name": "MinorGC",
+          "start": 535.113,
+          "ms": 0.47,
+          "overlap": 0.47
+        }
+      ],
+      "topSamples": [
+        {
+          "ms": 7.605999999999999,
+          "stack": [
+            {
+              "function": "(program)",
+              "script": 0
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 5.826,
+          "stack": [
+            {
+              "function": "(anonymous)",
+              "script": 5,
+              "line": 188,
+              "column": 1,
+              "url": "file:///var/folders/lc/mz_cryms1dx3rc8w3gy5ksfw0000gp/T/cardrpg-big-measure-GkZujR/index.html"
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 5.055999999999998,
+          "stack": [
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 3944,
+              "column": 28062
+            },
+            {
+              "function": "yK",
+              "script": 16,
+              "line": 3944,
+              "column": 25990
+            },
+            {
+              "function": "Yo",
+              "script": 16,
+              "line": 7,
+              "column": 49097
+            },
+            {
+              "function": "Vc",
+              "script": 16,
+              "line": 7,
+              "column": 72007
+            },
+            {
+              "function": "cl",
+              "script": 16,
+              "line": 7,
+              "column": 82341
+            },
+            {
+              "function": "ef",
+              "script": 16,
+              "line": 7,
+              "column": 128356
+            },
+            {
+              "function": "Zd",
+              "script": 16,
+              "line": 7,
+              "column": 127394
+            },
+            {
+              "function": "Xd",
+              "script": 16,
+              "line": 7,
+              "column": 126921
+            },
+            {
+              "function": "Rd",
+              "script": 16,
+              "line": 7,
+              "column": 123505
+            },
+            {
+              "function": "Ff",
+              "script": 16,
+              "line": 7,
+              "column": 136147
+            },
+            {
+              "function": "D",
+              "script": 16,
+              "line": 0,
+              "column": 1605
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 2.4269999999999996,
+          "stack": [
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 0,
+              "column": 9
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 0,
+              "column": 0
+            },
+            {
+              "function": "(anonymous)",
+              "script": 5,
+              "line": 188,
+              "column": 1,
+              "url": "file:///var/folders/lc/mz_cryms1dx3rc8w3gy5ksfw0000gp/T/cardrpg-big-measure-GkZujR/index.html"
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 0.603,
+          "stack": [
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 0,
+              "column": 15444
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 0,
+              "column": 133
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 8,
+              "column": 50492
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 0,
+              "column": 133
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 0,
+              "column": 9
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 0,
+              "column": 0
+            },
+            {
+              "function": "(anonymous)",
+              "script": 5,
+              "line": 188,
+              "column": 1,
+              "url": "file:///var/folders/lc/mz_cryms1dx3rc8w3gy5ksfw0000gp/T/cardrpg-big-measure-GkZujR/index.html"
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 0.474,
+          "stack": [
+            {
+              "function": "(garbage collector)",
+              "script": 0
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 0.45999999999999996,
+          "stack": [
+            {
+              "function": "cp",
+              "script": 16,
+              "line": 8,
+              "column": 5572
+            },
+            {
+              "function": "hl",
+              "script": 16,
+              "line": 7,
+              "column": 87533
+            },
+            {
+              "function": "rf",
+              "script": 16,
+              "line": 7,
+              "column": 129190
+            },
+            {
+              "function": "ef",
+              "script": 16,
+              "line": 7,
+              "column": 128356
+            },
+            {
+              "function": "Zd",
+              "script": 16,
+              "line": 7,
+              "column": 127394
+            },
+            {
+              "function": "Xd",
+              "script": 16,
+              "line": 7,
+              "column": 126921
+            },
+            {
+              "function": "Rd",
+              "script": 16,
+              "line": 7,
+              "column": 123505
+            },
+            {
+              "function": "Ff",
+              "script": 16,
+              "line": 7,
+              "column": 136147
+            },
+            {
+              "function": "D",
+              "script": 16,
+              "line": 0,
+              "column": 1605
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 0.307,
+          "stack": [
+            {
+              "function": "cl",
+              "script": 16,
+              "line": 7,
+              "column": 82341
+            },
+            {
+              "function": "ef",
+              "script": 16,
+              "line": 7,
+              "column": 128356
+            },
+            {
+              "function": "Zd",
+              "script": 16,
+              "line": 7,
+              "column": 127394
+            },
+            {
+              "function": "Xd",
+              "script": 16,
+              "line": 7,
+              "column": 126921
+            },
+            {
+              "function": "Rd",
+              "script": 16,
+              "line": 7,
+              "column": 123505
+            },
+            {
+              "function": "Ff",
+              "script": 16,
+              "line": 7,
+              "column": 136147
+            },
+            {
+              "function": "D",
+              "script": 16,
+              "line": 0,
+              "column": 1605
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "at": 591.3,
+      "ms": 33.299999999999955,
+      "tasks": [
+        {
+          "name": "RunTask",
+          "start": 551.144,
+          "ms": 13.242,
+          "overlap": 6.386
+        },
+        {
+          "name": "ProxyMain::BeginMainFrame",
+          "start": 551.144,
+          "ms": 13.22,
+          "overlap": 6.364
+        },
+        {
+          "name": "Layout",
+          "start": 551.681,
+          "ms": 10.847,
+          "overlap": 4.528
+        },
+        {
+          "name": "RunTask",
+          "start": 564.69,
+          "ms": 1.07,
+          "overlap": 1.07
+        },
+        {
+          "name": "v8.callFunction",
+          "start": 564.704,
+          "ms": 1.052,
+          "overlap": 1.052
+        },
+        {
+          "name": "FunctionCall",
+          "start": 564.705,
+          "ms": 1.047,
+          "overlap": 1.047,
+          "data": {
+            "columnNumber": 1606,
+            "frame": "A09C8F8C53C3CBC12C6E6F35912FB57E",
+            "functionName": "D",
+            "isolate": "7275310819281012779",
+            "lineNumber": 1,
+            "sampleTraceId": 5504551466617733,
+            "scriptId": "16",
+            "url": ""
+          }
+        },
+        {
+          "name": "PrePaint",
+          "start": 562.586,
+          "ms": 1.003,
+          "overlap": 1.003,
+          "data": {
+            "frame": "A09C8F8C53C3CBC12C6E6F35912FB57E",
+            "isMainFrame": true,
+            "isOutermostMainFrame": true,
+            "page": "A09C8F8C53C3CBC12C6E6F35912FB57E"
+          }
+        },
+        {
+          "name": "Paint",
+          "start": 563.608,
+          "ms": 0.615,
+          "overlap": 0.615,
+          "data": {
+            "clip": [
+              0,
+              0,
+              2560,
+              0,
+              2560,
+              1440,
+              0,
+              1440
+            ],
+            "frame": "A09C8F8C53C3CBC12C6E6F35912FB57E",
+            "layerId": 0,
+            "nodeId": 3,
+            "nodeName": "#document"
+          }
+        },
+        {
+          "name": "Paint",
+          "start": 563.616,
+          "ms": 0.607,
+          "overlap": 0.607,
+          "data": {
+            "clip": [
+              0,
+              0,
+              2560,
+              0,
+              2560,
+              1440,
+              0,
+              1440
+            ],
+            "frame": "A09C8F8C53C3CBC12C6E6F35912FB57E",
+            "layerId": 0,
+            "nodeId": 6,
+            "nodeName": "HTML"
+          }
+        },
+        {
+          "name": "EventDispatch",
+          "start": 565.295,
+          "ms": 0.394,
+          "overlap": 0.394,
+          "data": {
+            "type": "focusin"
+          }
+        },
+        {
+          "name": "Paint",
+          "start": 563.891,
+          "ms": 0.331,
+          "overlap": 0.331,
+          "data": {
+            "clip": [
+              -8388608,
+              -8388608,
+              8388607,
+              -8388608,
+              8388607,
+              8388607,
+              -8388608,
+              8388607
+            ],
+            "frame": "A09C8F8C53C3CBC12C6E6F35912FB57E",
+            "layerId": 0,
+            "nodeId": 7,
+            "nodeName": "DIV class='dp-page'"
+          }
+        },
+        {
+          "name": "v8.callFunction",
+          "start": 565.311,
+          "ms": 0.314,
+          "overlap": 0.314
+        }
+      ],
+      "topSamples": [
+        {
+          "ms": 25.21799999999997,
+          "stack": [
+            {
+              "function": "(idle)",
+              "script": 0
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 7.141000000000001,
+          "stack": [
+            {
+              "function": "(program)",
+              "script": 0
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 0.304,
+          "stack": [
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 3944,
+              "column": 26456
+            },
+            {
+              "function": "vl",
+              "script": 16,
+              "line": 7,
+              "column": 95081
+            },
+            {
+              "function": "zu",
+              "script": 16,
+              "line": 7,
+              "column": 118328
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118187
+            },
+            {
+              "function": "zu",
+              "script": 16,
+              "line": 7,
+              "column": 118328
+            },
+            {
+              "function": "hf",
+              "script": 16,
+              "line": 7,
+              "column": 132915
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 7,
+              "column": 130089
+            },
+            {
+              "function": "D",
+              "script": 16,
+              "line": 0,
+              "column": 1605
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 0.155,
+          "stack": [
+            {
+              "function": "wn",
+              "script": 16,
+              "line": 7,
+              "column": 15137
+            },
+            {
+              "function": "Zf",
+              "script": 16,
+              "line": 7,
+              "column": 140080
+            },
+            {
+              "function": "Ch",
+              "script": 16,
+              "line": 8,
+              "column": 42559
+            },
+            {
+              "function": "xh",
+              "script": 16,
+              "line": 8,
+              "column": 42373
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 3944,
+              "column": 26456
+            },
+            {
+              "function": "vl",
+              "script": 16,
+              "line": 7,
+              "column": 95081
+            },
+            {
+              "function": "zu",
+              "script": 16,
+              "line": 7,
+              "column": 118328
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118187
+            },
+            {
+              "function": "zu",
+              "script": 16,
+              "line": 7,
+              "column": 118328
+            },
+            {
+              "function": "hf",
+              "script": 16,
+              "line": 7,
+              "column": 132915
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 7,
+              "column": 130089
+            },
+            {
+              "function": "D",
+              "script": 16,
+              "line": 0,
+              "column": 1605
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 0.154,
+          "stack": [
+            {
+              "function": "qu",
+              "script": 16,
+              "line": 7,
+              "column": 121467
+            },
+            {
+              "function": "hf",
+              "script": 16,
+              "line": 7,
+              "column": 132915
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 7,
+              "column": 130089
+            },
+            {
+              "function": "D",
+              "script": 16,
+              "line": 0,
+              "column": 1605
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 0.153,
+          "stack": [
+            {
+              "function": "vl",
+              "script": 16,
+              "line": 7,
+              "column": 95081
+            },
+            {
+              "function": "zu",
+              "script": 16,
+              "line": 7,
+              "column": 118328
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118187
+            },
+            {
+              "function": "zu",
+              "script": 16,
+              "line": 7,
+              "column": 118328
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118187
+            },
+            {
+              "function": "zu",
+              "script": 16,
+              "line": 7,
+              "column": 118328
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118187
+            },
+            {
+              "function": "zu",
+              "script": 16,
+              "line": 7,
+              "column": 118328
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118187
+            },
+            {
+              "function": "zu",
+              "script": 16,
+              "line": 7,
+              "column": 118328
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118187
+            },
+            {
+              "function": "zu",
+              "script": 16,
+              "line": 7,
+              "column": 118328
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118187
+            },
+            {
+              "function": "zu",
+              "script": 16,
+              "line": 7,
+              "column": 118328
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118187
+            },
+            {
+              "function": "zu",
+              "script": 16,
+              "line": 7,
+              "column": 118328
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118187
+            },
+            {
+              "function": "zu",
+              "script": 16,
+              "line": 7,
+              "column": 118328
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118187
+            },
+            {
+              "function": "zu",
+              "script": 16,
+              "line": 7,
+              "column": 118328
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118187
+            },
+            {
+              "function": "zu",
+              "script": 16,
+              "line": 7,
+              "column": 118328
+            },
+            {
+              "function": "hf",
+              "script": 16,
+              "line": 7,
+              "column": 132915
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 7,
+              "column": 130089
+            },
+            {
+              "function": "D",
+              "script": 16,
+              "line": 0,
+              "column": 1605
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 0.151,
+          "stack": [
+            {
+              "function": "Eh",
+              "script": 16,
+              "line": 8,
+              "column": 43223
+            },
+            {
+              "function": "wh",
+              "script": 16,
+              "line": 8,
+              "column": 43175
+            },
+            {
+              "function": "Ch",
+              "script": 16,
+              "line": 8,
+              "column": 42559
+            },
+            {
+              "function": "xh",
+              "script": 16,
+              "line": 8,
+              "column": 42373
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 3944,
+              "column": 26456
+            },
+            {
+              "function": "vl",
+              "script": 16,
+              "line": 7,
+              "column": 95081
+            },
+            {
+              "function": "zu",
+              "script": 16,
+              "line": 7,
+              "column": 118328
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118187
+            },
+            {
+              "function": "zu",
+              "script": 16,
+              "line": 7,
+              "column": 118328
+            },
+            {
+              "function": "hf",
+              "script": 16,
+              "line": 7,
+              "column": 132915
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 7,
+              "column": 130089
+            },
+            {
+              "function": "D",
+              "script": 16,
+              "line": 0,
+              "column": 1605
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 0.136,
+          "stack": [
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 3944,
+              "column": 26142
+            },
+            {
+              "function": "vl",
+              "script": 16,
+              "line": 7,
+              "column": 95081
+            },
+            {
+              "function": "zu",
+              "script": 16,
+              "line": 7,
+              "column": 118328
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118187
+            },
+            {
+              "function": "zu",
+              "script": 16,
+              "line": 7,
+              "column": 118328
+            },
+            {
+              "function": "hf",
+              "script": 16,
+              "line": 7,
+              "column": 132915
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 7,
+              "column": 130089
+            },
+            {
+              "function": "D",
+              "script": 16,
+              "line": 0,
+              "column": 1605
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

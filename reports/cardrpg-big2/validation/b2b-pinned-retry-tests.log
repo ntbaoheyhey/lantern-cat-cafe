@@ -1,0 +1,69 @@
+
+> taskbar-hero@0.0.0 test /private/tmp/cardrpg-big2-batch2-validation
+> node --test scripts/*.test.mjs && pnpm -r test
+
+✔ explicit root and nested index imports resolve to their exact files (7.927084ms)
+✔ directory aliases coexist with explicit indexes and ordinary modules (1.737167ms)
+✔ test modules, fixture folders and non-TypeScript files stay out of deployment maps (2.030791ms)
+✔ output order is stable regardless of file creation order (3.56ms)
+✔ generation preserves auth mappings and ignores shared or non-function directories (4.728625ms)
+✔ auth health HTTP 200 exits correctly without leaking response data (24.543875ms)
+✔ auth health HTTP 429 exits correctly without leaking response data (16.4675ms)
+✔ auth health HTTP 500 exits correctly without leaking response data (13.441208ms)
+✔ auth health HTTP 502 exits correctly without leaking response data (13.215125ms)
+✔ auth health HTTP 503 exits correctly without leaking response data (14.208ms)
+✔ auth health fails closed when the transport is unavailable (13.466792ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 157.067791
+Scope: 6 of 7 workspace projects
+packages/auth test$ vitest run
+packages/chain test$ vitest run
+packages/game-rules test$ vitest run
+supabase/tests test$ vitest run
+packages/game-rules test:  RUN  v5.0.5 /private/tmp/cardrpg-big2-batch2-validation/packages/game-rules
+packages/chain test:  RUN  v5.0.5 /private/tmp/cardrpg-big2-batch2-validation/packages/chain
+packages/auth test:  RUN  v5.0.5 /private/tmp/cardrpg-big2-batch2-validation/packages/auth
+supabase/tests test:  RUN  v5.0.5 /private/tmp/cardrpg-big2-batch2-validation/supabase/tests
+packages/chain test:  Test Files  3 passed (3)
+packages/chain test:       Tests  32 passed (32)
+packages/chain test:    Start at  02:27:26
+packages/chain test:    Duration  594ms (import 53%, tests 32%, transform 11%, worker 3%)
+packages/chain test: Done
+packages/auth test:  Test Files  1 passed (1)
+packages/auth test:       Tests  24 passed (24)
+packages/auth test:    Start at  02:27:26
+packages/auth test:    Duration  861ms (import 67%, tests 30%, transform 2%, worker 1%)
+packages/auth test: Done
+supabase/tests test:  Test Files  34 passed (34)
+supabase/tests test:       Tests  581 passed (581)
+supabase/tests test:    Start at  02:27:26
+supabase/tests test:    Duration  11.44s (tests 83%, import 15%, transform 2%)
+supabase/tests test: Done
+packages/game-rules test:  Test Files  49 passed | 3 skipped (52)
+packages/game-rules test:       Tests  903 passed | 2 expected fail | 11 skipped (916)
+packages/game-rules test:    Start at  02:27:26
+packages/game-rules test:    Duration  31.89s (tests 96%, import 3%, transform 1%)
+packages/game-rules test: Done
+packages/api-contract test$ pnpm --filter @taskbar-hero/game-rules exec vitest run --root ../api-contract
+packages/api-contract test:  RUN  v5.0.5 /private/tmp/cardrpg-big2-batch2-validation/packages/api-contract
+packages/api-contract test:  Test Files  1 passed (1)
+packages/api-contract test:       Tests  16 passed (16)
+packages/api-contract test:    Start at  02:27:58
+packages/api-contract test:    Duration  126ms (transform 50%, import 41%, tests 6%, worker 3%)
+packages/api-contract test: Done
+apps/web test$ vitest run
+apps/web test:  RUN  v5.0.5 /private/tmp/cardrpg-big2-batch2-validation/apps/web
+apps/web test:  Test Files  162 passed (162)
+apps/web test:       Tests  1684 passed (1684)
+apps/web test:    Start at  02:27:58
+apps/web test:    Duration  15.72s (environment 46%, tests 40%, import 11%, transform 2%, worker 1%)
+apps/web test: Environment  jsdom was created 162 times · 70.56s total, 46% of tracked time
+apps/web test:              create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+apps/web test:              learn more: https://vitest.dev/guide/improving-performance#test-environments
+apps/web test: Done

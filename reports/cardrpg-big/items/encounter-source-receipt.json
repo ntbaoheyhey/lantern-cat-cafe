@@ -1,0 +1,48 @@
+{
+  "artifact": "docs/cardrpg3/index.html",
+  "artifactSha256": "6a8e0a42b6b05be1157119df1b66cd35bbe2716768356327bcca1fe5f3784764",
+  "rulesSource": "db1448e9",
+  "receiptHead": "3263ceced9c625b5ed263a018829099d8aa2a767",
+  "builtBeforeSourceCommit": true,
+  "receiptRuntimeDirty": true,
+  "sourceFilesCompared": 996,
+  "differences": [
+    {
+      "path": "apps/web/src/game/cardrpg/depth/Invitations.test.tsx",
+      "builtSha256": "d84f6d31d82d5d30df08b43de35e8b36d2a37d75598dd92554e9435749df839c",
+      "currentSha256": null,
+      "reason": "Removed disconnected G preparation, restored separately on G sibling"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/depth/Invitations.tsx",
+      "builtSha256": "15f41821ce48a0bd452f0825af9b5b621192740c4e1cb7f04391ccd3f9e3a2b1",
+      "currentSha256": null,
+      "reason": "Removed disconnected G preparation, restored separately on G sibling"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/depth/invitations.css",
+      "builtSha256": "75022e70dbf0e24581280debac017f1890de4bd66ca0106d6423fb0ed4c4b0e5",
+      "currentSha256": null,
+      "reason": "Removed disconnected G preparation, restored separately on G sibling"
+    },
+    {
+      "path": "assets/provenance/cardrpg-big-invitations.json",
+      "builtSha256": "a9eda2ca884678a84dfc732d20abfc906909181b5eec2ddcc18334d030573541",
+      "currentSha256": null,
+      "reason": "Removed disconnected G preparation, restored separately on G sibling"
+    },
+    {
+      "path": "tools/cardrpg-big/invitation-check.mjs",
+      "builtSha256": "f6ebb0ec244017621c8d6bbed3479b2b47943d09c1f3a984bc8a7089dca92749",
+      "currentSha256": null,
+      "reason": "Removed disconnected G preparation, restored separately on G sibling"
+    },
+    {
+      "path": "tools/cardrpg-big/gear-report.mjs",
+      "builtSha256": "a11f032154fc17aa4eb7f040c2bda708e94b63136a4b38b4d355234e50961b5a",
+      "currentSha256": "6ab6e5d2f169fe638d93fb24a8c0ca989934457725723b5d1fe611eecc9bf21b",
+      "reason": "Report-only tool extended with encounter output"
+    }
+  ],
+  "evidence": "All other receipt inputs byte-match current files. The removed G UI was disconnected from Pages.tsx in this I artifact."
+}

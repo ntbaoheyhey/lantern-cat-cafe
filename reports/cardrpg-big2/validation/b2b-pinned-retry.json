@@ -1,0 +1,27 @@
+[
+  {
+    "name": "tests",
+    "args": [
+      "test"
+    ],
+    "exit": 0,
+    "started": "2026-11-06T19:27:25.267Z",
+    "ended": "2026-11-06T19:28:14.308Z",
+    "log": "reports/cardrpg-big2/validation/b2b-pinned-retry-tests.log",
+    "sha256": "5910da4ac3877af2b53fc9fb69278b1cdb42566f7131735594f3f25739881cb6",
+    "counts": [
+      "packages/chain test:  Test Files  3 passed (3)",
+      "packages/chain test:       Tests  32 passed (32)",
+      "packages/auth test:  Test Files  1 passed (1)",
+      "packages/auth test:       Tests  24 passed (24)",
+      "supabase/tests test:  Test Files  34 passed (34)",
+      "supabase/tests test:       Tests  581 passed (581)",
+      "packages/game-rules test:  Test Files  49 passed | 3 skipped (52)",
+      "packages/game-rules test:       Tests  903 passed | 2 expected fail | 11 skipped (916)",
+      "packages/api-contract test:  Test Files  1 passed (1)",
+      "packages/api-contract test:       Tests  16 passed (16)",
+      "apps/web test:  Test Files  162 passed (162)",
+      "apps/web test:       Tests  1684 passed (1684)"
+    ]
+  }
+]

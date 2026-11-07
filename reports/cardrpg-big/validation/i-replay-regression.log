@@ -1,0 +1,44 @@
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-big/packages/game-rules
+
+ ❯ src/cardrpg/depth/save.test.ts (12 tests | 3 failed) 21ms
+   × preserves 0.5.0 active battles, replays and later summons 3ms
+   × preserves 0.6.0 active battles, replays and later summons 1ms
+   × snapshots current enemy stats for new battles and keeps replays independent of catalogue edits 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/cardrpg/depth/save.test.ts > preserves 0.5.0 active battles, replays and later summons
+ FAIL  src/cardrpg/depth/save.test.ts > preserves 0.6.0 active battles, replays and later summons
+TypeError: playBattle is not a function
+ ❯ src/cardrpg/depth/save.test.ts:103:20
+    101|   expect(next).toEqual(state);
+    102|   expect(replayBattle(next.lastBattle!, next.lastChoices)).toEqual(bat…
+    103|   const expected = playBattle(clone(battle), 'auto');
+       |                    ^
+    104|   const original = { ...ENEMY_BY_ID['binding-thread']! };
+    105|   try {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  src/cardrpg/depth/save.test.ts > snapshots current enemy stats for new battles and keeps replays independent of catalogue edits
+TypeError: playBattle is not a function
+ ❯ src/cardrpg/depth/save.test.ts:120:20
+    118|   for (const enemy of ENEMIES) expect(initial.initial.enemyStats![enem…
+    119|     .toEqual({ hp: enemy.hp, attack: enemy.attack, defense: enemy.defe…
+    120|   const expected = playBattle(clone(initial), 'auto');
+       |                    ^
+    121|   const originals = ENEMIES.map(enemy => ({ ...enemy }));
+    122|   try {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+
+ Test Files  1 failed | 2 passed (3)
+      Tests  3 failed | 43 passed (46)
+   Start at  23:57:58
+   Duration  240ms (tests 57%, transform 21%, import 20%, worker 2%)
+
+undefined
+/Users/bao/taskbar-hero-cardrpg-big/packages/game-rules:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: vitest run src/cardrpg/depth/save.test.ts src/cardrpg/depth/save-equipment.test.ts src/cardrpg/depth/run.test.ts

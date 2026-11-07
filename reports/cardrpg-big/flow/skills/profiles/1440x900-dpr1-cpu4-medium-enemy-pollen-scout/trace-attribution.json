@@ -1,0 +1,7031 @@
+{
+  "source": "1440x900-dpr1-cpu4-medium-enemy-pollen-scout-trace.json.gz",
+  "origin": 96480682249,
+  "mainThread": 3247369,
+  "method": "RAF intervals aligned to navigationStart. Main renderer thread only. Task durations are inclusive. CPU samples are statistical stack evidence, never additive to nested task durations.",
+  "hitches": [
+    {
+      "at": 90.3,
+      "ms": 33.3,
+      "tasks": [
+        {
+          "name": "RunTask",
+          "start": 52.953,
+          "ms": 20.194,
+          "overlap": 16.147
+        },
+        {
+          "name": "ProxyMain::BeginMainFrame",
+          "start": 52.954,
+          "ms": 20.186,
+          "overlap": 16.14
+        },
+        {
+          "name": "Layout",
+          "start": 54.985,
+          "ms": 15.946,
+          "overlap": 13.931
+        },
+        {
+          "name": "RunTask",
+          "start": 74.829,
+          "ms": 11.612,
+          "overlap": 11.612
+        },
+        {
+          "name": "ParseHTML",
+          "start": 74.83,
+          "ms": 11.594,
+          "overlap": 11.594
+        },
+        {
+          "name": "RunTask",
+          "start": 88.852,
+          "ms": 10.204,
+          "overlap": 1.448
+        },
+        {
+          "name": "ParseHTML",
+          "start": 88.853,
+          "ms": 10.186,
+          "overlap": 1.447
+        },
+        {
+          "name": "RunTask",
+          "start": 73.151,
+          "ms": 1.638,
+          "overlap": 1.638
+        },
+        {
+          "name": "RunTask",
+          "start": 87.28,
+          "ms": 1.559,
+          "overlap": 1.559
+        },
+        {
+          "name": "RunTask",
+          "start": 86.444,
+          "ms": 0.833,
+          "overlap": 0.833
+        },
+        {
+          "name": "ProxyMain::BeginMainFrame",
+          "start": 86.445,
+          "ms": 0.829,
+          "overlap": 0.829
+        },
+        {
+          "name": "Layerize",
+          "start": 72.423,
+          "ms": 0.646,
+          "overlap": 0.646,
+          "data": {
+            "frame": "9177FBEFD9D5AE4C927883D2AB121C36",
+            "isMainFrame": true,
+            "isOutermostMainFrame": true,
+            "page": "9177FBEFD9D5AE4C927883D2AB121C36"
+          }
+        }
+      ],
+      "topSamples": [
+        {
+          "ms": 33.377,
+          "stack": [
+            {
+              "function": "(program)",
+              "script": 0
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "at": 407,
+      "ms": 150.10000000000002,
+      "tasks": [
+        {
+          "name": "RunTask",
+          "start": 256.185,
+          "ms": 159.485,
+          "overlap": 150.1
+        }
+      ],
+      "topSamples": [
+        {
+          "ms": 149.56599999999992,
+          "stack": [
+            {
+              "function": "(program)",
+              "script": 0
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "at": 1373.6,
+      "ms": 33.299999999999955,
+      "tasks": [
+        {
+          "name": "RunTask",
+          "start": 1336.868,
+          "ms": 43.55,
+          "overlap": 33.3
+        },
+        {
+          "name": "TimerFire",
+          "start": 1336.868,
+          "ms": 24.684,
+          "overlap": 21.252,
+          "data": {
+            "frame": "9177FBEFD9D5AE4C927883D2AB121C36",
+            "timerId": 131
+          }
+        },
+        {
+          "name": "v8.callFunction",
+          "start": 1336.872,
+          "ms": 24.675,
+          "overlap": 21.247
+        }
+      ],
+      "topSamples": [
+        {
+          "ms": 20.473999999999986,
+          "stack": [
+            {
+              "function": "fetch",
+              "script": 0
+            },
+            {
+              "function": "unpack",
+              "script": 5,
+              "line": 193,
+              "column": 23,
+              "url": "file:///var/folders/lc/mz_cryms1dx3rc8w3gy5ksfw0000gp/T/cardrpg-big-measure-3yOSZB/index.html"
+            },
+            {
+              "function": "(anonymous)",
+              "script": 5,
+              "line": 188,
+              "column": 1,
+              "url": "file:///var/folders/lc/mz_cryms1dx3rc8w3gy5ksfw0000gp/T/cardrpg-big-measure-3yOSZB/index.html"
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 11.975000000000007,
+          "stack": [
+            {
+              "function": "(idle)",
+              "script": 0
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 0.793,
+          "stack": [
+            {
+              "function": "unpack",
+              "script": 5,
+              "line": 193,
+              "column": 23,
+              "url": "file:///var/folders/lc/mz_cryms1dx3rc8w3gy5ksfw0000gp/T/cardrpg-big-measure-3yOSZB/index.html"
+            },
+            {
+              "function": "(anonymous)",
+              "script": 5,
+              "line": 188,
+              "column": 1,
+              "url": "file:///var/folders/lc/mz_cryms1dx3rc8w3gy5ksfw0000gp/T/cardrpg-big-measure-3yOSZB/index.html"
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "at": 1406.9,
+      "ms": 33.30000000000018,
+      "tasks": [
+        {
+          "name": "RunTask",
+          "start": 1336.868,
+          "ms": 43.55,
+          "overlap": 6.818
+        },
+        {
+          "name": "RunTask",
+          "start": 1382.09,
+          "ms": 34.986,
+          "overlap": 24.81
+        },
+        {
+          "name": "RunTask",
+          "start": 1380.424,
+          "ms": 1.652,
+          "overlap": 1.652
+        },
+        {
+          "name": "ProxyMain::BeginMainFrame",
+          "start": 1380.426,
+          "ms": 1.643,
+          "overlap": 1.643
+        },
+        {
+          "name": "Commit",
+          "start": 1381.476,
+          "ms": 0.593,
+          "overlap": 0.593
+        },
+        {
+          "name": "LayerTreeHost::DoUpdateLayers",
+          "start": 1381.478,
+          "ms": 0.563,
+          "overlap": 0.563
+        },
+        {
+          "name": "FireAnimationFrame",
+          "start": 1380.448,
+          "ms": 0.453,
+          "overlap": 0.453,
+          "data": {
+            "frame": "9177FBEFD9D5AE4C927883D2AB121C36",
+            "id": 71
+          }
+        },
+        {
+          "name": "v8.callFunction",
+          "start": 1380.455,
+          "ms": 0.445,
+          "overlap": 0.445
+        },
+        {
+          "name": "FunctionCall",
+          "start": 1380.456,
+          "ms": 0.437,
+          "overlap": 0.437,
+          "data": {
+            "columnNumber": 46,
+            "frame": "9177FBEFD9D5AE4C927883D2AB121C36",
+            "functionName": "sample",
+            "isolate": "3431251816951384776",
+            "lineNumber": 10,
+            "sampleTraceId": 3476980725541602,
+            "scriptId": "4",
+            "url": ""
+          }
+        },
+        {
+          "name": "Layout",
+          "start": 1380.929,
+          "ms": 0.407,
+          "overlap": 0.407
+        },
+        {
+          "name": "PrePaint",
+          "start": 1381.351,
+          "ms": 0.031,
+          "overlap": 0.031,
+          "data": {
+            "frame": "9177FBEFD9D5AE4C927883D2AB121C36",
+            "isMainFrame": true,
+            "isOutermostMainFrame": true,
+            "page": "9177FBEFD9D5AE4C927883D2AB121C36"
+          }
+        },
+        {
+          "name": "Paint",
+          "start": 1381.401,
+          "ms": 0.027,
+          "overlap": 0.027,
+          "data": {
+            "clip": [
+              0,
+              0,
+              1440,
+              0,
+              1440,
+              900,
+              0,
+              900
+            ],
+            "frame": "9177FBEFD9D5AE4C927883D2AB121C36",
+            "layerId": 0,
+            "nodeId": 3,
+            "nodeName": "#document"
+          }
+        }
+      ],
+      "topSamples": [
+        {
+          "ms": 19.033999999999995,
+          "stack": [
+            {
+              "function": "(idle)",
+              "script": 0
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 14.046999999999997,
+          "stack": [
+            {
+              "function": "(program)",
+              "script": 0
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 0.027,
+          "stack": [
+            {
+              "function": "requestAnimationFrame",
+              "script": 0
+            },
+            {
+              "function": "sample",
+              "script": 4,
+              "line": 9,
+              "column": 45
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "at": 1440.3,
+      "ms": 33.399999999999864,
+      "tasks": [
+        {
+          "name": "RunTask",
+          "start": 1382.09,
+          "ms": 34.986,
+          "overlap": 10.176
+        },
+        {
+          "name": "RunTask",
+          "start": 1428.144,
+          "ms": 19.888,
+          "overlap": 12.156
+        },
+        {
+          "name": "DecompressionStream Inflate",
+          "start": 1428.156,
+          "ms": 19.215,
+          "overlap": 12.144
+        },
+        {
+          "name": "RunTask",
+          "start": 1417.813,
+          "ms": 10.326,
+          "overlap": 10.326
+        },
+        {
+          "name": "RunTask",
+          "start": 1417.084,
+          "ms": 0.716,
+          "overlap": 0.716
+        },
+        {
+          "name": "ProxyMain::BeginMainFrame",
+          "start": 1417.086,
+          "ms": 0.706,
+          "overlap": 0.706
+        },
+        {
+          "name": "FireAnimationFrame",
+          "start": 1417.112,
+          "ms": 0.6,
+          "overlap": 0.6,
+          "data": {
+            "frame": "9177FBEFD9D5AE4C927883D2AB121C36",
+            "id": 72
+          }
+        },
+        {
+          "name": "v8.callFunction",
+          "start": 1417.122,
+          "ms": 0.589,
+          "overlap": 0.589
+        },
+        {
+          "name": "FunctionCall",
+          "start": 1417.124,
+          "ms": 0.578,
+          "overlap": 0.578,
+          "data": {
+            "columnNumber": 46,
+            "frame": "9177FBEFD9D5AE4C927883D2AB121C36",
+            "functionName": "sample",
+            "isolate": "3431251816951384776",
+            "lineNumber": 10,
+            "sampleTraceId": 3476980725541620,
+            "scriptId": "4",
+            "url": ""
+          }
+        },
+        {
+          "name": "LocalFrameView::ScheduleAnimation",
+          "start": 1417.149,
+          "ms": 0.552,
+          "overlap": 0.552
+        },
+        {
+          "name": "Commit",
+          "start": 1417.757,
+          "ms": 0.035,
+          "overlap": 0.035
+        },
+        {
+          "name": "MainFrameAborted",
+          "start": 1417.783,
+          "ms": 0.009,
+          "overlap": 0.009
+        }
+      ],
+      "topSamples": [
+        {
+          "ms": 21.854,
+          "stack": [
+            {
+              "function": "(program)",
+              "script": 0
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 10.288000000000004,
+          "stack": [
+            {
+              "function": "(idle)",
+              "script": 0
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 0.643,
+          "stack": [
+            {
+              "function": "requestAnimationFrame",
+              "script": 0
+            },
+            {
+              "function": "sample",
+              "script": 4,
+              "line": 9,
+              "column": 45
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "at": 1840.3,
+      "ms": 133.39999999999986,
+      "tasks": [
+        {
+          "name": "RunTask",
+          "start": 1701.727,
+          "ms": 152.854,
+          "overlap": 133.4
+        },
+        {
+          "name": "EvaluateScript",
+          "start": 1723.44,
+          "ms": 129.998,
+          "overlap": 116.86,
+          "data": {
+            "columnNumber": 1,
+            "frame": "9177FBEFD9D5AE4C927883D2AB121C36",
+            "lineNumber": 1,
+            "scriptId": 0,
+            "url": ""
+          }
+        },
+        {
+          "name": "v8.compile",
+          "start": 1723.448,
+          "ms": 89.848,
+          "overlap": 89.848,
+          "data": {
+            "columnNumber": 1,
+            "lineNumber": 1,
+            "notStreamedReason": "inline script",
+            "scriptId": 16,
+            "streamed": false,
+            "url": ""
+          }
+        },
+        {
+          "name": "v8.run",
+          "start": 1813.301,
+          "ms": 40.135,
+          "overlap": 26.999
+        },
+        {
+          "name": "MinorGC",
+          "start": 1834.587,
+          "ms": 1.646,
+          "overlap": 1.646
+        },
+        {
+          "name": "V8.GCScavenger",
+          "start": 1834.59,
+          "ms": 1.628,
+          "overlap": 1.628
+        },
+        {
+          "name": "V8.GC_SCAVENGER",
+          "start": 1834.595,
+          "ms": 1.316,
+          "overlap": 1.316
+        },
+        {
+          "name": "V8.GC_SCAVENGER_SCAVENGE",
+          "start": 1834.599,
+          "ms": 1.309,
+          "overlap": 1.309
+        },
+        {
+          "name": "V8.GC_SCAVENGER_SCAVENGE_PARALLEL_PHASE",
+          "start": 1835.115,
+          "ms": 0.703,
+          "overlap": 0.703
+        },
+        {
+          "name": "V8.GC_SCAVENGER_SCAVENGE_WEAK_GLOBAL_HANDLES_IDENTIFY",
+          "start": 1834.607,
+          "ms": 0.505,
+          "overlap": 0.505
+        },
+        {
+          "name": "V8.GC_SCAVENGER_TRACED_HANDLES_COMPUTE_WEAKNESS_PARALLEL",
+          "start": 1834.613,
+          "ms": 0.497,
+          "overlap": 0.497
+        },
+        {
+          "name": "V8.GC_SCAVENGER_SCAVENGE_PARALLEL",
+          "start": 1835.376,
+          "ms": 0.441,
+          "overlap": 0.441
+        }
+      ],
+      "topSamples": [
+        {
+          "ms": 106.34299999999992,
+          "stack": [
+            {
+              "function": "(anonymous)",
+              "script": 5,
+              "line": 188,
+              "column": 1,
+              "url": "file:///var/folders/lc/mz_cryms1dx3rc8w3gy5ksfw0000gp/T/cardrpg-big-measure-3yOSZB/index.html"
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 10.179000000000004,
+          "stack": [
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 0,
+              "column": 9
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 0,
+              "column": 0
+            },
+            {
+              "function": "(anonymous)",
+              "script": 5,
+              "line": 188,
+              "column": 1,
+              "url": "file:///var/folders/lc/mz_cryms1dx3rc8w3gy5ksfw0000gp/T/cardrpg-big-measure-3yOSZB/index.html"
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 2.267,
+          "stack": [
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 0,
+              "column": 15451
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 0,
+              "column": 133
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 8,
+              "column": 50490
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 0,
+              "column": 133
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 0,
+              "column": 9
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 0,
+              "column": 0
+            },
+            {
+              "function": "(anonymous)",
+              "script": 5,
+              "line": 188,
+              "column": 1,
+              "url": "file:///var/folders/lc/mz_cryms1dx3rc8w3gy5ksfw0000gp/T/cardrpg-big-measure-3yOSZB/index.html"
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 1.9,
+          "stack": [
+            {
+              "function": "(garbage collector)",
+              "script": 0
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 1.4329999999999998,
+          "stack": [
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 8,
+              "column": 129605
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 8,
+              "column": 129592
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 8,
+              "column": 129575
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 0,
+              "column": 9
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 0,
+              "column": 0
+            },
+            {
+              "function": "(anonymous)",
+              "script": 5,
+              "line": 188,
+              "column": 1,
+              "url": "file:///var/folders/lc/mz_cryms1dx3rc8w3gy5ksfw0000gp/T/cardrpg-big-measure-3yOSZB/index.html"
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 1.055,
+          "stack": [
+            {
+              "function": "Ac",
+              "script": 16,
+              "line": 8,
+              "column": 336230
+            },
+            {
+              "function": "jc",
+              "script": 16,
+              "line": 8,
+              "column": 336647
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 0,
+              "column": 9
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 0,
+              "column": 0
+            },
+            {
+              "function": "(anonymous)",
+              "script": 5,
+              "line": 188,
+              "column": 1,
+              "url": "file:///var/folders/lc/mz_cryms1dx3rc8w3gy5ksfw0000gp/T/cardrpg-big-measure-3yOSZB/index.html"
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 0.785,
+          "stack": [
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 8,
+              "column": 90086
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 0,
+              "column": 9
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 0,
+              "column": 0
+            },
+            {
+              "function": "(anonymous)",
+              "script": 5,
+              "line": 188,
+              "column": 1,
+              "url": "file:///var/folders/lc/mz_cryms1dx3rc8w3gy5ksfw0000gp/T/cardrpg-big-measure-3yOSZB/index.html"
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 0.754,
+          "stack": [
+            {
+              "function": "t",
+              "script": 16,
+              "line": 0,
+              "column": 42
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 0,
+              "column": 9
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 0,
+              "column": 0
+            },
+            {
+              "function": "(anonymous)",
+              "script": 5,
+              "line": 188,
+              "column": 1,
+              "url": "file:///var/folders/lc/mz_cryms1dx3rc8w3gy5ksfw0000gp/T/cardrpg-big-measure-3yOSZB/index.html"
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "at": 1956.9,
+      "ms": 116.60000000000014,
+      "tasks": [
+        {
+          "name": "RunTask",
+          "start": 1701.727,
+          "ms": 152.854,
+          "overlap": 14.281
+        },
+        {
+          "name": "EvaluateScript",
+          "start": 1723.44,
+          "ms": 129.998,
+          "overlap": 13.138,
+          "data": {
+            "columnNumber": 1,
+            "frame": "9177FBEFD9D5AE4C927883D2AB121C36",
+            "lineNumber": 1,
+            "scriptId": 0,
+            "url": ""
+          }
+        },
+        {
+          "name": "RunTask",
+          "start": 1900.139,
+          "ms": 61.458,
+          "overlap": 56.761
+        },
+        {
+          "name": "ProxyMain::BeginMainFrame",
+          "start": 1900.14,
+          "ms": 61.446,
+          "overlap": 56.76
+        },
+        {
+          "name": "Layout",
+          "start": 1903.175,
+          "ms": 49.056,
+          "overlap": 49.056
+        },
+        {
+          "name": "RunTask",
+          "start": 1856.226,
+          "ms": 43.066,
+          "overlap": 43.066
+        },
+        {
+          "name": "v8.callFunction",
+          "start": 1856.764,
+          "ms": 42.138,
+          "overlap": 42.138
+        },
+        {
+          "name": "FunctionCall",
+          "start": 1856.765,
+          "ms": 41.093,
+          "overlap": 41.093,
+          "data": {
+            "columnNumber": 1606,
+            "frame": "9177FBEFD9D5AE4C927883D2AB121C36",
+            "functionName": "D",
+            "isolate": "3431251816951384776",
+            "lineNumber": 1,
+            "sampleTraceId": 3476980725544455,
+            "scriptId": "16",
+            "url": ""
+          }
+        },
+        {
+          "name": "v8.run",
+          "start": 1813.301,
+          "ms": 40.135,
+          "overlap": 13.136
+        },
+        {
+          "name": "PrePaint",
+          "start": 1952.926,
+          "ms": 4.352,
+          "overlap": 3.974,
+          "data": {
+            "frame": "9177FBEFD9D5AE4C927883D2AB121C36",
+            "isMainFrame": true,
+            "isOutermostMainFrame": true,
+            "page": "9177FBEFD9D5AE4C927883D2AB121C36"
+          }
+        },
+        {
+          "name": "UpdateLayoutTree",
+          "start": 1900.906,
+          "ms": 2.267,
+          "overlap": 2.267
+        },
+        {
+          "name": "RunTask",
+          "start": 1854.585,
+          "ms": 0.878,
+          "overlap": 0.878
+        }
+      ],
+      "topSamples": [
+        {
+          "ms": 62.853000000000016,
+          "stack": [
+            {
+              "function": "(program)",
+              "script": 0
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 21.778000000000002,
+          "stack": [
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 3944,
+              "column": 28062
+            },
+            {
+              "function": "nK",
+              "script": 16,
+              "line": 3944,
+              "column": 25990
+            },
+            {
+              "function": "Yo",
+              "script": 16,
+              "line": 7,
+              "column": 49088
+            },
+            {
+              "function": "Bc",
+              "script": 16,
+              "line": 7,
+              "column": 71962
+            },
+            {
+              "function": "sl",
+              "script": 16,
+              "line": 7,
+              "column": 82297
+            },
+            {
+              "function": "$d",
+              "script": 16,
+              "line": 7,
+              "column": 128326
+            },
+            {
+              "function": "Xd",
+              "script": 16,
+              "line": 7,
+              "column": 127364
+            },
+            {
+              "function": "Yd",
+              "script": 16,
+              "line": 7,
+              "column": 126890
+            },
+            {
+              "function": "Ld",
+              "script": 16,
+              "line": 7,
+              "column": 123474
+            },
+            {
+              "function": "Pf",
+              "script": 16,
+              "line": 7,
+              "column": 136117
+            },
+            {
+              "function": "D",
+              "script": 16,
+              "line": 0,
+              "column": 1605
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 1.451,
+          "stack": [
+            {
+              "function": "ml",
+              "script": 16,
+              "line": 7,
+              "column": 87492
+            },
+            {
+              "function": "nf",
+              "script": 16,
+              "line": 7,
+              "column": 129160
+            },
+            {
+              "function": "$d",
+              "script": 16,
+              "line": 7,
+              "column": 128326
+            },
+            {
+              "function": "Xd",
+              "script": 16,
+              "line": 7,
+              "column": 127364
+            },
+            {
+              "function": "Yd",
+              "script": 16,
+              "line": 7,
+              "column": 126890
+            },
+            {
+              "function": "Ld",
+              "script": 16,
+              "line": 7,
+              "column": 123474
+            },
+            {
+              "function": "Pf",
+              "script": 16,
+              "line": 7,
+              "column": 136117
+            },
+            {
+              "function": "D",
+              "script": 16,
+              "line": 0,
+              "column": 1605
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 1.37,
+          "stack": [
+            {
+              "function": "sp",
+              "script": 16,
+              "line": 8,
+              "column": 5572
+            },
+            {
+              "function": "ml",
+              "script": 16,
+              "line": 7,
+              "column": 87492
+            },
+            {
+              "function": "nf",
+              "script": 16,
+              "line": 7,
+              "column": 129160
+            },
+            {
+              "function": "$d",
+              "script": 16,
+              "line": 7,
+              "column": 128326
+            },
+            {
+              "function": "Xd",
+              "script": 16,
+              "line": 7,
+              "column": 127364
+            },
+            {
+              "function": "Yd",
+              "script": 16,
+              "line": 7,
+              "column": 126890
+            },
+            {
+              "function": "Ld",
+              "script": 16,
+              "line": 7,
+              "column": 123474
+            },
+            {
+              "function": "Pf",
+              "script": 16,
+              "line": 7,
+              "column": 136117
+            },
+            {
+              "function": "D",
+              "script": 16,
+              "line": 0,
+              "column": 1605
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 1.2890000000000001,
+          "stack": [
+            {
+              "function": "ap",
+              "script": 16,
+              "line": 8,
+              "column": 71
+            },
+            {
+              "function": "sp",
+              "script": 16,
+              "line": 8,
+              "column": 5572
+            },
+            {
+              "function": "ml",
+              "script": 16,
+              "line": 7,
+              "column": 87492
+            },
+            {
+              "function": "nf",
+              "script": 16,
+              "line": 7,
+              "column": 129160
+            },
+            {
+              "function": "$d",
+              "script": 16,
+              "line": 7,
+              "column": 128326
+            },
+            {
+              "function": "Xd",
+              "script": 16,
+              "line": 7,
+              "column": 127364
+            },
+            {
+              "function": "Yd",
+              "script": 16,
+              "line": 7,
+              "column": 126890
+            },
+            {
+              "function": "Ld",
+              "script": 16,
+              "line": 7,
+              "column": 123474
+            },
+            {
+              "function": "Pf",
+              "script": 16,
+              "line": 7,
+              "column": 136117
+            },
+            {
+              "function": "D",
+              "script": 16,
+              "line": 0,
+              "column": 1605
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 1.154,
+          "stack": [
+            {
+              "function": "nf",
+              "script": 16,
+              "line": 7,
+              "column": 129160
+            },
+            {
+              "function": "$d",
+              "script": 16,
+              "line": 7,
+              "column": 128326
+            },
+            {
+              "function": "Xd",
+              "script": 16,
+              "line": 7,
+              "column": 127364
+            },
+            {
+              "function": "Yd",
+              "script": 16,
+              "line": 7,
+              "column": 126890
+            },
+            {
+              "function": "Ld",
+              "script": 16,
+              "line": 7,
+              "column": 123474
+            },
+            {
+              "function": "Pf",
+              "script": 16,
+              "line": 7,
+              "column": 136117
+            },
+            {
+              "function": "D",
+              "script": 16,
+              "line": 0,
+              "column": 1605
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 1.072,
+          "stack": [
+            {
+              "function": "keccak",
+              "script": 16,
+              "line": 3930,
+              "column": 9199
+            },
+            {
+              "function": "finish",
+              "script": 16,
+              "line": 3930,
+              "column": 9500
+            },
+            {
+              "function": "writeInto",
+              "script": 16,
+              "line": 3930,
+              "column": 9661
+            },
+            {
+              "function": "digestInto",
+              "script": 16,
+              "line": 3930,
+              "column": 10071
+            },
+            {
+              "function": "digest",
+              "script": 16,
+              "line": 3930,
+              "column": 10194
+            },
+            {
+              "function": "t",
+              "script": 16,
+              "line": 3930,
+              "column": 7317
+            },
+            {
+              "function": "_H",
+              "script": 16,
+              "line": 3942,
+              "column": 14907
+            },
+            {
+              "function": "gW",
+              "script": 16,
+              "line": 3943,
+              "column": 14170
+            },
+            {
+              "function": "fW",
+              "script": 16,
+              "line": 3943,
+              "column": 12989
+            },
+            {
+              "function": "CW",
+              "script": 16,
+              "line": 3943,
+              "column": 15409
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 0,
+              "column": 9
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 0,
+              "column": 0
+            },
+            {
+              "function": "(anonymous)",
+              "script": 5,
+              "line": 188,
+              "column": 1,
+              "url": "file:///var/folders/lc/mz_cryms1dx3rc8w3gy5ksfw0000gp/T/cardrpg-big-measure-3yOSZB/index.html"
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 1.041,
+          "stack": [
+            {
+              "function": "_",
+              "script": 16,
+              "line": 7,
+              "column": 43399
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 7,
+              "column": 44784
+            },
+            {
+              "function": "kc",
+              "script": 16,
+              "line": 7,
+              "column": 68440
+            },
+            {
+              "function": "sl",
+              "script": 16,
+              "line": 7,
+              "column": 82297
+            },
+            {
+              "function": "$d",
+              "script": 16,
+              "line": 7,
+              "column": 128326
+            },
+            {
+              "function": "Xd",
+              "script": 16,
+              "line": 7,
+              "column": 127364
+            },
+            {
+              "function": "Yd",
+              "script": 16,
+              "line": 7,
+              "column": 126890
+            },
+            {
+              "function": "Ld",
+              "script": 16,
+              "line": 7,
+              "column": 123474
+            },
+            {
+              "function": "Pf",
+              "script": 16,
+              "line": 7,
+              "column": 136117
+            },
+            {
+              "function": "D",
+              "script": 16,
+              "line": 0,
+              "column": 1605
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "at": 2473.6,
+      "ms": 50.09999999999991,
+      "tasks": [
+        {
+          "name": "RunTask",
+          "start": 2413.823,
+          "ms": 33.104,
+          "overlap": 23.427
+        },
+        {
+          "name": "RunTask",
+          "start": 2446.934,
+          "ms": 32.19,
+          "overlap": 26.666
+        },
+        {
+          "name": "ProxyMain::BeginMainFrame",
+          "start": 2446.935,
+          "ms": 32.166,
+          "overlap": 26.665
+        },
+        {
+          "name": "EventDispatch",
+          "start": 2419.602,
+          "ms": 25.074,
+          "overlap": 21.176,
+          "data": {
+            "type": "click"
+          }
+        },
+        {
+          "name": "v8.callFunction",
+          "start": 2419.627,
+          "ms": 25.036,
+          "overlap": 21.163
+        },
+        {
+          "name": "v8.callFunction",
+          "start": 2423.465,
+          "ms": 21.18,
+          "overlap": 21.145
+        },
+        {
+          "name": "FunctionCall",
+          "start": 2423.465,
+          "ms": 21.174,
+          "overlap": 21.139,
+          "data": {
+            "columnNumber": 136511,
+            "frame": "9177FBEFD9D5AE4C927883D2AB121C36",
+            "functionName": "",
+            "isolate": "3431251816951384776",
+            "lineNumber": 8,
+            "sampleTraceId": 3476980725543986,
+            "scriptId": "16",
+            "url": ""
+          }
+        },
+        {
+          "name": "Layout",
+          "start": 2431.436,
+          "ms": 12.379,
+          "overlap": 12.379
+        },
+        {
+          "name": "PrePaint",
+          "start": 2445.375,
+          "ms": 1.515,
+          "overlap": 1.515,
+          "data": {
+            "frame": "9177FBEFD9D5AE4C927883D2AB121C36",
+            "isMainFrame": true,
+            "isOutermostMainFrame": true,
+            "page": "9177FBEFD9D5AE4C927883D2AB121C36"
+          }
+        },
+        {
+          "name": "UpdateLayoutTree",
+          "start": 2428.565,
+          "ms": 0.815,
+          "overlap": 0.815
+        },
+        {
+          "name": "EventDispatch",
+          "start": 2443.918,
+          "ms": 0.621,
+          "overlap": 0.621,
+          "data": {
+            "type": "focus"
+          }
+        },
+        {
+          "name": "UpdateLayoutTree",
+          "start": 2430.931,
+          "ms": 0.503,
+          "overlap": 0.503
+        }
+      ],
+      "topSamples": [
+        {
+          "ms": 28.903,
+          "stack": [
+            {
+              "function": "(program)",
+              "script": 0
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 13.666999999999998,
+          "stack": [
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 3944,
+              "column": 26456
+            },
+            {
+              "function": "_l",
+              "script": 16,
+              "line": 7,
+              "column": 95041
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118296
+            },
+            {
+              "function": "Lu",
+              "script": 16,
+              "line": 7,
+              "column": 118155
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118296
+            },
+            {
+              "function": "mf",
+              "script": 16,
+              "line": 7,
+              "column": 132885
+            },
+            {
+              "function": "pf",
+              "script": 16,
+              "line": 7,
+              "column": 132803
+            },
+            {
+              "function": "df",
+              "script": 16,
+              "line": 7,
+              "column": 131930
+            },
+            {
+              "function": "of",
+              "script": 16,
+              "line": 7,
+              "column": 129827
+            },
+            {
+              "function": "af",
+              "script": 16,
+              "line": 7,
+              "column": 129593
+            },
+            {
+              "function": "Rd",
+              "script": 16,
+              "line": 7,
+              "column": 124579
+            },
+            {
+              "function": "Ld",
+              "script": 16,
+              "line": 7,
+              "column": 123474
+            },
+            {
+              "function": "Ff",
+              "script": 16,
+              "line": 7,
+              "column": 136448
+            },
+            {
+              "function": "Af",
+              "script": 16,
+              "line": 7,
+              "column": 134676
+            },
+            {
+              "function": "Mf",
+              "script": 16,
+              "line": 7,
+              "column": 135092
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 7,
+              "column": 136510
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 1.285,
+          "stack": [
+            {
+              "function": "removeChild",
+              "script": 0
+            },
+            {
+              "function": "bu",
+              "script": 16,
+              "line": 7,
+              "column": 107042
+            },
+            {
+              "function": "Tu",
+              "script": 16,
+              "line": 7,
+              "column": 108974
+            },
+            {
+              "function": "Du",
+              "script": 16,
+              "line": 7,
+              "column": 109461
+            },
+            {
+              "function": "Tu",
+              "script": 16,
+              "line": 7,
+              "column": 108974
+            },
+            {
+              "function": "Du",
+              "script": 16,
+              "line": 7,
+              "column": 109461
+            },
+            {
+              "function": "Tu",
+              "script": 16,
+              "line": 7,
+              "column": 108974
+            },
+            {
+              "function": "Du",
+              "script": 16,
+              "line": 7,
+              "column": 109461
+            },
+            {
+              "function": "Tu",
+              "script": 16,
+              "line": 7,
+              "column": 108974
+            },
+            {
+              "function": "Du",
+              "script": 16,
+              "line": 7,
+              "column": 109461
+            },
+            {
+              "function": "Tu",
+              "script": 16,
+              "line": 7,
+              "column": 108974
+            },
+            {
+              "function": "Du",
+              "script": 16,
+              "line": 7,
+              "column": 109461
+            },
+            {
+              "function": "Tu",
+              "script": 16,
+              "line": 7,
+              "column": 108974
+            },
+            {
+              "function": "Du",
+              "script": 16,
+              "line": 7,
+              "column": 109461
+            },
+            {
+              "function": "lf",
+              "script": 16,
+              "line": 7,
+              "column": 130472
+            },
+            {
+              "function": "of",
+              "script": 16,
+              "line": 7,
+              "column": 129827
+            },
+            {
+              "function": "af",
+              "script": 16,
+              "line": 7,
+              "column": 129593
+            },
+            {
+              "function": "Rd",
+              "script": 16,
+              "line": 7,
+              "column": 124579
+            },
+            {
+              "function": "Ld",
+              "script": 16,
+              "line": 7,
+              "column": 123474
+            },
+            {
+              "function": "Ff",
+              "script": 16,
+              "line": 7,
+              "column": 136448
+            },
+            {
+              "function": "Af",
+              "script": 16,
+              "line": 7,
+              "column": 134676
+            },
+            {
+              "function": "Mf",
+              "script": 16,
+              "line": 7,
+              "column": 135092
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 7,
+              "column": 136510
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 0.897,
+          "stack": [
+            {
+              "function": "Yo",
+              "script": 16,
+              "line": 7,
+              "column": 49088
+            },
+            {
+              "function": "Bc",
+              "script": 16,
+              "line": 7,
+              "column": 71962
+            },
+            {
+              "function": "sl",
+              "script": 16,
+              "line": 7,
+              "column": 82297
+            },
+            {
+              "function": "$d",
+              "script": 16,
+              "line": 7,
+              "column": 128326
+            },
+            {
+              "function": "Xd",
+              "script": 16,
+              "line": 7,
+              "column": 127364
+            },
+            {
+              "function": "Yd",
+              "script": 16,
+              "line": 7,
+              "column": 126890
+            },
+            {
+              "function": "Ld",
+              "script": 16,
+              "line": 7,
+              "column": 123474
+            },
+            {
+              "function": "Ff",
+              "script": 16,
+              "line": 7,
+              "column": 136448
+            },
+            {
+              "function": "Af",
+              "script": 16,
+              "line": 7,
+              "column": 134676
+            },
+            {
+              "function": "Mf",
+              "script": 16,
+              "line": 7,
+              "column": 135092
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 7,
+              "column": 136510
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 0.844,
+          "stack": [
+            {
+              "function": "Gu",
+              "script": 16,
+              "line": 7,
+              "column": 121251
+            },
+            {
+              "function": "Ku",
+              "script": 16,
+              "line": 7,
+              "column": 121435
+            },
+            {
+              "function": "Gu",
+              "script": 16,
+              "line": 7,
+              "column": 121251
+            },
+            {
+              "function": "Ku",
+              "script": 16,
+              "line": 7,
+              "column": 121435
+            },
+            {
+              "function": "Gu",
+              "script": 16,
+              "line": 7,
+              "column": 121251
+            },
+            {
+              "function": "Ku",
+              "script": 16,
+              "line": 7,
+              "column": 121435
+            },
+            {
+              "function": "Gu",
+              "script": 16,
+              "line": 7,
+              "column": 121251
+            },
+            {
+              "function": "Ku",
+              "script": 16,
+              "line": 7,
+              "column": 121435
+            },
+            {
+              "function": "Gu",
+              "script": 16,
+              "line": 7,
+              "column": 121251
+            },
+            {
+              "function": "Ku",
+              "script": 16,
+              "line": 7,
+              "column": 121435
+            },
+            {
+              "function": "Gu",
+              "script": 16,
+              "line": 7,
+              "column": 121251
+            },
+            {
+              "function": "Ku",
+              "script": 16,
+              "line": 7,
+              "column": 121435
+            },
+            {
+              "function": "mf",
+              "script": 16,
+              "line": 7,
+              "column": 132885
+            },
+            {
+              "function": "pf",
+              "script": 16,
+              "line": 7,
+              "column": 132803
+            },
+            {
+              "function": "df",
+              "script": 16,
+              "line": 7,
+              "column": 131930
+            },
+            {
+              "function": "of",
+              "script": 16,
+              "line": 7,
+              "column": 129827
+            },
+            {
+              "function": "af",
+              "script": 16,
+              "line": 7,
+              "column": 129593
+            },
+            {
+              "function": "Rd",
+              "script": 16,
+              "line": 7,
+              "column": 124579
+            },
+            {
+              "function": "Ld",
+              "script": 16,
+              "line": 7,
+              "column": 123474
+            },
+            {
+              "function": "Ff",
+              "script": 16,
+              "line": 7,
+              "column": 136448
+            },
+            {
+              "function": "Af",
+              "script": 16,
+              "line": 7,
+              "column": 134676
+            },
+            {
+              "function": "Mf",
+              "script": 16,
+              "line": 7,
+              "column": 135092
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 7,
+              "column": 136510
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 0.692,
+          "stack": [
+            {
+              "function": "Tu",
+              "script": 16,
+              "line": 7,
+              "column": 108974
+            },
+            {
+              "function": "Du",
+              "script": 16,
+              "line": 7,
+              "column": 109461
+            },
+            {
+              "function": "Tu",
+              "script": 16,
+              "line": 7,
+              "column": 108974
+            },
+            {
+              "function": "Du",
+              "script": 16,
+              "line": 7,
+              "column": 109461
+            },
+            {
+              "function": "Tu",
+              "script": 16,
+              "line": 7,
+              "column": 108974
+            },
+            {
+              "function": "Du",
+              "script": 16,
+              "line": 7,
+              "column": 109461
+            },
+            {
+              "function": "Tu",
+              "script": 16,
+              "line": 7,
+              "column": 108974
+            },
+            {
+              "function": "Du",
+              "script": 16,
+              "line": 7,
+              "column": 109461
+            },
+            {
+              "function": "Tu",
+              "script": 16,
+              "line": 7,
+              "column": 108974
+            },
+            {
+              "function": "Du",
+              "script": 16,
+              "line": 7,
+              "column": 109461
+            },
+            {
+              "function": "Tu",
+              "script": 16,
+              "line": 7,
+              "column": 108974
+            },
+            {
+              "function": "Du",
+              "script": 16,
+              "line": 7,
+              "column": 109461
+            },
+            {
+              "function": "lf",
+              "script": 16,
+              "line": 7,
+              "column": 130472
+            },
+            {
+              "function": "of",
+              "script": 16,
+              "line": 7,
+              "column": 129827
+            },
+            {
+              "function": "af",
+              "script": 16,
+              "line": 7,
+              "column": 129593
+            },
+            {
+              "function": "Rd",
+              "script": 16,
+              "line": 7,
+              "column": 124579
+            },
+            {
+              "function": "Ld",
+              "script": 16,
+              "line": 7,
+              "column": 123474
+            },
+            {
+              "function": "Ff",
+              "script": 16,
+              "line": 7,
+              "column": 136448
+            },
+            {
+              "function": "Af",
+              "script": 16,
+              "line": 7,
+              "column": 134676
+            },
+            {
+              "function": "Mf",
+              "script": 16,
+              "line": 7,
+              "column": 135092
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 7,
+              "column": 136510
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 0.621,
+          "stack": [
+            {
+              "function": "Yd",
+              "script": 16,
+              "line": 7,
+              "column": 126890
+            },
+            {
+              "function": "Ld",
+              "script": 16,
+              "line": 7,
+              "column": 123474
+            },
+            {
+              "function": "Ff",
+              "script": 16,
+              "line": 7,
+              "column": 136448
+            },
+            {
+              "function": "Af",
+              "script": 16,
+              "line": 7,
+              "column": 134676
+            },
+            {
+              "function": "Mf",
+              "script": 16,
+              "line": 7,
+              "column": 135092
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 7,
+              "column": 136510
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 0.511,
+          "stack": [
+            {
+              "function": "h",
+              "script": 16,
+              "line": 7,
+              "column": 42062
+            },
+            {
+              "function": "_",
+              "script": 16,
+              "line": 7,
+              "column": 43399
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 7,
+              "column": 44784
+            },
+            {
+              "function": "kc",
+              "script": 16,
+              "line": 7,
+              "column": 68440
+            },
+            {
+              "function": "sl",
+              "script": 16,
+              "line": 7,
+              "column": 82297
+            },
+            {
+              "function": "$d",
+              "script": 16,
+              "line": 7,
+              "column": 128326
+            },
+            {
+              "function": "Xd",
+              "script": 16,
+              "line": 7,
+              "column": 127364
+            },
+            {
+              "function": "Yd",
+              "script": 16,
+              "line": 7,
+              "column": 126890
+            },
+            {
+              "function": "Ld",
+              "script": 16,
+              "line": 7,
+              "column": 123474
+            },
+            {
+              "function": "Ff",
+              "script": 16,
+              "line": 7,
+              "column": 136448
+            },
+            {
+              "function": "Af",
+              "script": 16,
+              "line": 7,
+              "column": 134676
+            },
+            {
+              "function": "Mf",
+              "script": 16,
+              "line": 7,
+              "column": 135092
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 7,
+              "column": 136510
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "at": 3090.2,
+      "ms": 66.59999999999991,
+      "calls": 0,
+      "triangles": 0,
+      "particles": 0,
+      "tasks": [
+        {
+          "name": "RunTask",
+          "start": 3011.509,
+          "ms": 80.595,
+          "overlap": 66.6
+        },
+        {
+          "name": "EventDispatch",
+          "start": 3014.57,
+          "ms": 75.413,
+          "overlap": 66.383,
+          "data": {
+            "type": "click"
+          }
+        },
+        {
+          "name": "v8.callFunction",
+          "start": 3014.585,
+          "ms": 75.382,
+          "overlap": 66.367
+        },
+        {
+          "name": "v8.callFunction",
+          "start": 3015.032,
+          "ms": 74.49,
+          "overlap": 65.922
+        },
+        {
+          "name": "FunctionCall",
+          "start": 3015.032,
+          "ms": 74.485,
+          "overlap": 65.917,
+          "data": {
+            "columnNumber": 136511,
+            "frame": "9177FBEFD9D5AE4C927883D2AB121C36",
+            "functionName": "",
+            "isolate": "3431251816951384776",
+            "lineNumber": 8,
+            "sampleTraceId": 3476980725543269,
+            "scriptId": "16",
+            "url": ""
+          }
+        },
+        {
+          "name": "Layout",
+          "start": 3077.594,
+          "ms": 6.557,
+          "overlap": 6.557
+        },
+        {
+          "name": "UpdateLayoutTree",
+          "start": 3074.948,
+          "ms": 2.643,
+          "overlap": 2.643
+        },
+        {
+          "name": "GpuChannelHost::CreateViewCommandBuffer",
+          "start": 3029.253,
+          "ms": 1.844,
+          "overlap": 1.844
+        },
+        {
+          "name": "CommandBufferProxyImpl::Initialize",
+          "start": 3029.255,
+          "ms": 1.841,
+          "overlap": 1.841
+        },
+        {
+          "name": "PrePaint",
+          "start": 3090.058,
+          "ms": 1.302,
+          "overlap": 0.142,
+          "data": {
+            "frame": "9177FBEFD9D5AE4C927883D2AB121C36",
+            "isMainFrame": true,
+            "isOutermostMainFrame": true,
+            "page": "9177FBEFD9D5AE4C927883D2AB121C36"
+          }
+        },
+        {
+          "name": "MinorGC",
+          "start": 3064.644,
+          "ms": 1.213,
+          "overlap": 1.213
+        },
+        {
+          "name": "V8.GCScavenger",
+          "start": 3064.646,
+          "ms": 1.196,
+          "overlap": 1.196
+        }
+      ],
+      "topSamples": [
+        {
+          "ms": 11.121999999999996,
+          "stack": [
+            {
+              "function": "he",
+              "script": 16,
+              "line": 3839,
+              "column": 19832
+            },
+            {
+              "function": "vg",
+              "script": 16,
+              "line": 3839,
+              "column": 18598
+            },
+            {
+              "function": "dy",
+              "script": 16,
+              "line": 3910,
+              "column": 28110
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 3910,
+              "column": 73122
+            },
+            {
+              "function": "_l",
+              "script": 16,
+              "line": 7,
+              "column": 95041
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118296
+            },
+            {
+              "function": "Lu",
+              "script": 16,
+              "line": 7,
+              "column": 118155
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118296
+            },
+            {
+              "function": "Lu",
+              "script": 16,
+              "line": 7,
+              "column": 118155
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118296
+            },
+            {
+              "function": "Lu",
+              "script": 16,
+              "line": 7,
+              "column": 118155
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118296
+            },
+            {
+              "function": "mf",
+              "script": 16,
+              "line": 7,
+              "column": 132885
+            },
+            {
+              "function": "pf",
+              "script": 16,
+              "line": 7,
+              "column": 132803
+            },
+            {
+              "function": "df",
+              "script": 16,
+              "line": 7,
+              "column": 131930
+            },
+            {
+              "function": "of",
+              "script": 16,
+              "line": 7,
+              "column": 129827
+            },
+            {
+              "function": "af",
+              "script": 16,
+              "line": 7,
+              "column": 129593
+            },
+            {
+              "function": "Rd",
+              "script": 16,
+              "line": 7,
+              "column": 124579
+            },
+            {
+              "function": "Ld",
+              "script": 16,
+              "line": 7,
+              "column": 123474
+            },
+            {
+              "function": "Ff",
+              "script": 16,
+              "line": 7,
+              "column": 136448
+            },
+            {
+              "function": "Af",
+              "script": 16,
+              "line": 7,
+              "column": 134676
+            },
+            {
+              "function": "Mf",
+              "script": 16,
+              "line": 7,
+              "column": 135092
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 7,
+              "column": 136510
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 9.246,
+          "stack": [
+            {
+              "function": "resizeToHost",
+              "script": 16,
+              "line": 3910,
+              "column": 36231
+            },
+            {
+              "function": "dy",
+              "script": 16,
+              "line": 3910,
+              "column": 28110
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 3910,
+              "column": 73122
+            },
+            {
+              "function": "_l",
+              "script": 16,
+              "line": 7,
+              "column": 95041
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118296
+            },
+            {
+              "function": "Lu",
+              "script": 16,
+              "line": 7,
+              "column": 118155
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118296
+            },
+            {
+              "function": "Lu",
+              "script": 16,
+              "line": 7,
+              "column": 118155
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118296
+            },
+            {
+              "function": "Lu",
+              "script": 16,
+              "line": 7,
+              "column": 118155
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118296
+            },
+            {
+              "function": "mf",
+              "script": 16,
+              "line": 7,
+              "column": 132885
+            },
+            {
+              "function": "pf",
+              "script": 16,
+              "line": 7,
+              "column": 132803
+            },
+            {
+              "function": "df",
+              "script": 16,
+              "line": 7,
+              "column": 131930
+            },
+            {
+              "function": "of",
+              "script": 16,
+              "line": 7,
+              "column": 129827
+            },
+            {
+              "function": "af",
+              "script": 16,
+              "line": 7,
+              "column": 129593
+            },
+            {
+              "function": "Rd",
+              "script": 16,
+              "line": 7,
+              "column": 124579
+            },
+            {
+              "function": "Ld",
+              "script": 16,
+              "line": 7,
+              "column": 123474
+            },
+            {
+              "function": "Ff",
+              "script": 16,
+              "line": 7,
+              "column": 136448
+            },
+            {
+              "function": "Af",
+              "script": 16,
+              "line": 7,
+              "column": 134676
+            },
+            {
+              "function": "Mf",
+              "script": 16,
+              "line": 7,
+              "column": 135092
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 7,
+              "column": 136510
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 4.787000000000001,
+          "stack": [
+            {
+              "function": "e",
+              "script": 16,
+              "line": 47,
+              "column": 69620
+            },
+            {
+              "function": "dy",
+              "script": 16,
+              "line": 3910,
+              "column": 28110
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 3910,
+              "column": 73122
+            },
+            {
+              "function": "_l",
+              "script": 16,
+              "line": 7,
+              "column": 95041
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118296
+            },
+            {
+              "function": "Lu",
+              "script": 16,
+              "line": 7,
+              "column": 118155
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118296
+            },
+            {
+              "function": "Lu",
+              "script": 16,
+              "line": 7,
+              "column": 118155
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118296
+            },
+            {
+              "function": "Lu",
+              "script": 16,
+              "line": 7,
+              "column": 118155
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118296
+            },
+            {
+              "function": "mf",
+              "script": 16,
+              "line": 7,
+              "column": 132885
+            },
+            {
+              "function": "pf",
+              "script": 16,
+              "line": 7,
+              "column": 132803
+            },
+            {
+              "function": "df",
+              "script": 16,
+              "line": 7,
+              "column": 131930
+            },
+            {
+              "function": "of",
+              "script": 16,
+              "line": 7,
+              "column": 129827
+            },
+            {
+              "function": "af",
+              "script": 16,
+              "line": 7,
+              "column": 129593
+            },
+            {
+              "function": "Rd",
+              "script": 16,
+              "line": 7,
+              "column": 124579
+            },
+            {
+              "function": "Ld",
+              "script": 16,
+              "line": 7,
+              "column": 123474
+            },
+            {
+              "function": "Ff",
+              "script": 16,
+              "line": 7,
+              "column": 136448
+            },
+            {
+              "function": "Af",
+              "script": 16,
+              "line": 7,
+              "column": 134676
+            },
+            {
+              "function": "Mf",
+              "script": 16,
+              "line": 7,
+              "column": 135092
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 7,
+              "column": 136510
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 4.202,
+          "stack": [
+            {
+              "function": "n",
+              "script": 16,
+              "line": 3736,
+              "column": 947
+            },
+            {
+              "function": "init",
+              "script": 16,
+              "line": 3736,
+              "column": 1814
+            },
+            {
+              "function": "Fe",
+              "script": 16,
+              "line": 3839,
+              "column": 20541
+            },
+            {
+              "function": "vg",
+              "script": 16,
+              "line": 3839,
+              "column": 18598
+            },
+            {
+              "function": "dy",
+              "script": 16,
+              "line": 3910,
+              "column": 28110
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 3910,
+              "column": 73122
+            },
+            {
+              "function": "_l",
+              "script": 16,
+              "line": 7,
+              "column": 95041
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118296
+            },
+            {
+              "function": "Lu",
+              "script": 16,
+              "line": 7,
+              "column": 118155
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118296
+            },
+            {
+              "function": "Lu",
+              "script": 16,
+              "line": 7,
+              "column": 118155
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118296
+            },
+            {
+              "function": "Lu",
+              "script": 16,
+              "line": 7,
+              "column": 118155
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118296
+            },
+            {
+              "function": "mf",
+              "script": 16,
+              "line": 7,
+              "column": 132885
+            },
+            {
+              "function": "pf",
+              "script": 16,
+              "line": 7,
+              "column": 132803
+            },
+            {
+              "function": "df",
+              "script": 16,
+              "line": 7,
+              "column": 131930
+            },
+            {
+              "function": "of",
+              "script": 16,
+              "line": 7,
+              "column": 129827
+            },
+            {
+              "function": "af",
+              "script": 16,
+              "line": 7,
+              "column": 129593
+            },
+            {
+              "function": "Rd",
+              "script": 16,
+              "line": 7,
+              "column": 124579
+            },
+            {
+              "function": "Ld",
+              "script": 16,
+              "line": 7,
+              "column": 123474
+            },
+            {
+              "function": "Ff",
+              "script": 16,
+              "line": 7,
+              "column": 136448
+            },
+            {
+              "function": "Af",
+              "script": 16,
+              "line": 7,
+              "column": 134676
+            },
+            {
+              "function": "Mf",
+              "script": 16,
+              "line": 7,
+              "column": 135092
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 7,
+              "column": 136510
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 3.8099999999999996,
+          "stack": [
+            {
+              "function": "setSize",
+              "script": 16,
+              "line": 3839,
+              "column": 21646
+            },
+            {
+              "function": "resizeToHost",
+              "script": 16,
+              "line": 3910,
+              "column": 36231
+            },
+            {
+              "function": "dy",
+              "script": 16,
+              "line": 3910,
+              "column": 28110
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 3910,
+              "column": 73122
+            },
+            {
+              "function": "_l",
+              "script": 16,
+              "line": 7,
+              "column": 95041
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118296
+            },
+            {
+              "function": "Lu",
+              "script": 16,
+              "line": 7,
+              "column": 118155
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118296
+            },
+            {
+              "function": "Lu",
+              "script": 16,
+              "line": 7,
+              "column": 118155
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118296
+            },
+            {
+              "function": "Lu",
+              "script": 16,
+              "line": 7,
+              "column": 118155
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118296
+            },
+            {
+              "function": "mf",
+              "script": 16,
+              "line": 7,
+              "column": 132885
+            },
+            {
+              "function": "pf",
+              "script": 16,
+              "line": 7,
+              "column": 132803
+            },
+            {
+              "function": "df",
+              "script": 16,
+              "line": 7,
+              "column": 131930
+            },
+            {
+              "function": "of",
+              "script": 16,
+              "line": 7,
+              "column": 129827
+            },
+            {
+              "function": "af",
+              "script": 16,
+              "line": 7,
+              "column": 129593
+            },
+            {
+              "function": "Rd",
+              "script": 16,
+              "line": 7,
+              "column": 124579
+            },
+            {
+              "function": "Ld",
+              "script": 16,
+              "line": 7,
+              "column": 123474
+            },
+            {
+              "function": "Ff",
+              "script": 16,
+              "line": 7,
+              "column": 136448
+            },
+            {
+              "function": "Af",
+              "script": 16,
+              "line": 7,
+              "column": 134676
+            },
+            {
+              "function": "Mf",
+              "script": 16,
+              "line": 7,
+              "column": 135092
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 7,
+              "column": 136510
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 3.5909999999999997,
+          "stack": [
+            {
+              "function": "dy",
+              "script": 16,
+              "line": 3910,
+              "column": 28110
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 3910,
+              "column": 73122
+            },
+            {
+              "function": "_l",
+              "script": 16,
+              "line": 7,
+              "column": 95041
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118296
+            },
+            {
+              "function": "Lu",
+              "script": 16,
+              "line": 7,
+              "column": 118155
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118296
+            },
+            {
+              "function": "Lu",
+              "script": 16,
+              "line": 7,
+              "column": 118155
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118296
+            },
+            {
+              "function": "Lu",
+              "script": 16,
+              "line": 7,
+              "column": 118155
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118296
+            },
+            {
+              "function": "mf",
+              "script": 16,
+              "line": 7,
+              "column": 132885
+            },
+            {
+              "function": "pf",
+              "script": 16,
+              "line": 7,
+              "column": 132803
+            },
+            {
+              "function": "df",
+              "script": 16,
+              "line": 7,
+              "column": 131930
+            },
+            {
+              "function": "of",
+              "script": 16,
+              "line": 7,
+              "column": 129827
+            },
+            {
+              "function": "af",
+              "script": 16,
+              "line": 7,
+              "column": 129593
+            },
+            {
+              "function": "Rd",
+              "script": 16,
+              "line": 7,
+              "column": 124579
+            },
+            {
+              "function": "Ld",
+              "script": 16,
+              "line": 7,
+              "column": 123474
+            },
+            {
+              "function": "Ff",
+              "script": 16,
+              "line": 7,
+              "column": 136448
+            },
+            {
+              "function": "Af",
+              "script": 16,
+              "line": 7,
+              "column": 134676
+            },
+            {
+              "function": "Mf",
+              "script": 16,
+              "line": 7,
+              "column": 135092
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 7,
+              "column": 136510
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 1.6649999999999998,
+          "stack": [
+            {
+              "function": "Fe",
+              "script": 16,
+              "line": 3839,
+              "column": 20541
+            },
+            {
+              "function": "vg",
+              "script": 16,
+              "line": 3839,
+              "column": 18598
+            },
+            {
+              "function": "dy",
+              "script": 16,
+              "line": 3910,
+              "column": 28110
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 3910,
+              "column": 73122
+            },
+            {
+              "function": "_l",
+              "script": 16,
+              "line": 7,
+              "column": 95041
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118296
+            },
+            {
+              "function": "Lu",
+              "script": 16,
+              "line": 7,
+              "column": 118155
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118296
+            },
+            {
+              "function": "Lu",
+              "script": 16,
+              "line": 7,
+              "column": 118155
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118296
+            },
+            {
+              "function": "Lu",
+              "script": 16,
+              "line": 7,
+              "column": 118155
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118296
+            },
+            {
+              "function": "mf",
+              "script": 16,
+              "line": 7,
+              "column": 132885
+            },
+            {
+              "function": "pf",
+              "script": 16,
+              "line": 7,
+              "column": 132803
+            },
+            {
+              "function": "df",
+              "script": 16,
+              "line": 7,
+              "column": 131930
+            },
+            {
+              "function": "of",
+              "script": 16,
+              "line": 7,
+              "column": 129827
+            },
+            {
+              "function": "af",
+              "script": 16,
+              "line": 7,
+              "column": 129593
+            },
+            {
+              "function": "Rd",
+              "script": 16,
+              "line": 7,
+              "column": 124579
+            },
+            {
+              "function": "Ld",
+              "script": 16,
+              "line": 7,
+              "column": 123474
+            },
+            {
+              "function": "Ff",
+              "script": 16,
+              "line": 7,
+              "column": 136448
+            },
+            {
+              "function": "Af",
+              "script": 16,
+              "line": 7,
+              "column": 134676
+            },
+            {
+              "function": "Mf",
+              "script": 16,
+              "line": 7,
+              "column": 135092
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 7,
+              "column": 136510
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 1.654,
+          "stack": [
+            {
+              "function": "sg",
+              "script": 16,
+              "line": 3815,
+              "column": 4559
+            },
+            {
+              "function": "Fe",
+              "script": 16,
+              "line": 3839,
+              "column": 20541
+            },
+            {
+              "function": "vg",
+              "script": 16,
+              "line": 3839,
+              "column": 18598
+            },
+            {
+              "function": "dy",
+              "script": 16,
+              "line": 3910,
+              "column": 28110
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 3910,
+              "column": 73122
+            },
+            {
+              "function": "_l",
+              "script": 16,
+              "line": 7,
+              "column": 95041
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118296
+            },
+            {
+              "function": "Lu",
+              "script": 16,
+              "line": 7,
+              "column": 118155
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118296
+            },
+            {
+              "function": "Lu",
+              "script": 16,
+              "line": 7,
+              "column": 118155
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118296
+            },
+            {
+              "function": "Lu",
+              "script": 16,
+              "line": 7,
+              "column": 118155
+            },
+            {
+              "function": "Ru",
+              "script": 16,
+              "line": 7,
+              "column": 118296
+            },
+            {
+              "function": "mf",
+              "script": 16,
+              "line": 7,
+              "column": 132885
+            },
+            {
+              "function": "pf",
+              "script": 16,
+              "line": 7,
+              "column": 132803
+            },
+            {
+              "function": "df",
+              "script": 16,
+              "line": 7,
+              "column": 131930
+            },
+            {
+              "function": "of",
+              "script": 16,
+              "line": 7,
+              "column": 129827
+            },
+            {
+              "function": "af",
+              "script": 16,
+              "line": 7,
+              "column": 129593
+            },
+            {
+              "function": "Rd",
+              "script": 16,
+              "line": 7,
+              "column": 124579
+            },
+            {
+              "function": "Ld",
+              "script": 16,
+              "line": 7,
+              "column": 123474
+            },
+            {
+              "function": "Ff",
+              "script": 16,
+              "line": 7,
+              "column": 136448
+            },
+            {
+              "function": "Af",
+              "script": 16,
+              "line": 7,
+              "column": 134676
+            },
+            {
+              "function": "Mf",
+              "script": 16,
+              "line": 7,
+              "column": 135092
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 7,
+              "column": 136510
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "at": 3423.5,
+      "ms": 50,
+      "calls": 0,
+      "triangles": 0,
+      "particles": 0,
+      "tasks": [
+        {
+          "name": "RunTask",
+          "start": 3367.693,
+          "ms": 68.665,
+          "overlap": 50
+        },
+        {
+          "name": "TimerFire",
+          "start": 3367.693,
+          "ms": 68.627,
+          "overlap": 50,
+          "data": {
+            "frame": "9177FBEFD9D5AE4C927883D2AB121C36",
+            "timerId": 287
+          }
+        },
+        {
+          "name": "v8.callFunction",
+          "start": 3367.695,
+          "ms": 68.621,
+          "overlap": 50
+        },
+        {
+          "name": "MinorGC",
+          "start": 3380.628,
+          "ms": 1.207,
+          "overlap": 1.207
+        },
+        {
+          "name": "V8.GCScavenger",
+          "start": 3380.631,
+          "ms": 1.185,
+          "overlap": 1.185
+        },
+        {
+          "name": "V8.GC_SCAVENGER",
+          "start": 3380.66,
+          "ms": 1.153,
+          "overlap": 1.153
+        },
+        {
+          "name": "V8.GC_SCAVENGER_SCAVENGE",
+          "start": 3380.665,
+          "ms": 1.145,
+          "overlap": 1.145
+        },
+        {
+          "name": "V8.GC_SCAVENGER_SCAVENGE_PARALLEL_PHASE",
+          "start": 3380.703,
+          "ms": 0.727,
+          "overlap": 0.727
+        },
+        {
+          "name": "V8.GC_HEAP_EXTERNAL_EPILOGUE",
+          "start": 3411.083,
+          "ms": 0.699,
+          "overlap": 0.699
+        },
+        {
+          "name": "MinorGC",
+          "start": 3410.558,
+          "ms": 0.525,
+          "overlap": 0.525
+        },
+        {
+          "name": "V8.DeoptimizeCode",
+          "start": 3400.238,
+          "ms": 0.52,
+          "overlap": 0.52
+        },
+        {
+          "name": "V8.GCScavenger",
+          "start": 3410.559,
+          "ms": 0.509,
+          "overlap": 0.509
+        }
+      ],
+      "topSamples": [
+        {
+          "ms": 3.7950000000000004,
+          "stack": [
+            {
+              "function": "clone",
+              "script": 16,
+              "line": 8,
+              "column": 330130
+            },
+            {
+              "function": "dx",
+              "script": 16,
+              "line": 3910,
+              "column": 65208
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3910,
+              "column": 30864
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 3.5140000000000002,
+          "stack": [
+            {
+              "function": "dx",
+              "script": 16,
+              "line": 3910,
+              "column": 65208
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3910,
+              "column": 30864
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 3.241,
+          "stack": [
+            {
+              "function": "makeStage",
+              "script": 16,
+              "line": 3910,
+              "column": 33688
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3910,
+              "column": 30864
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 3.171,
+          "stack": [
+            {
+              "function": "e",
+              "script": 16,
+              "line": 47,
+              "column": 68445
+            },
+            {
+              "function": "clone",
+              "script": 16,
+              "line": 8,
+              "column": 330130
+            },
+            {
+              "function": "dx",
+              "script": 16,
+              "line": 3910,
+              "column": 65208
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3910,
+              "column": 30864
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 2.673,
+          "stack": [
+            {
+              "function": "bg",
+              "script": 16,
+              "line": 3839,
+              "column": 49436
+            },
+            {
+              "function": "e",
+              "script": 16,
+              "line": 3839,
+              "column": 49660
+            },
+            {
+              "function": "makeStage",
+              "script": 16,
+              "line": 3910,
+              "column": 33688
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3910,
+              "column": 30864
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 2.162,
+          "stack": [
+            {
+              "function": "applyMatrix4",
+              "script": 16,
+              "line": 8,
+              "column": 318390
+            },
+            {
+              "function": "applyMatrix4",
+              "script": 16,
+              "line": 8,
+              "column": 321885
+            },
+            {
+              "function": "dx",
+              "script": 16,
+              "line": 3910,
+              "column": 65208
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3910,
+              "column": 30864
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 2.075,
+          "stack": [
+            {
+              "function": "(garbage collector)",
+              "script": 0
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 1.7890000000000001,
+          "stack": [
+            {
+              "function": "e",
+              "script": 16,
+              "line": 3839,
+              "column": 49660
+            },
+            {
+              "function": "makeStage",
+              "script": 16,
+              "line": 3910,
+              "column": 33688
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3910,
+              "column": 30864
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "at": 4123.5,
+      "ms": 33.40000000000009,
+      "calls": 0,
+      "triangles": 0,
+      "particles": 0,
+      "tasks": [
+        {
+          "name": "RunTask",
+          "start": 4082.77,
+          "ms": 49.049,
+          "overlap": 33.4
+        },
+        {
+          "name": "TimerFire",
+          "start": 4082.771,
+          "ms": 49.04,
+          "overlap": 33.4,
+          "data": {
+            "frame": "9177FBEFD9D5AE4C927883D2AB121C36",
+            "timerId": 409
+          }
+        },
+        {
+          "name": "v8.callFunction",
+          "start": 4082.772,
+          "ms": 49.036,
+          "overlap": 33.4
+        },
+        {
+          "name": "V8.DeoptimizeCode",
+          "start": 4108.054,
+          "ms": 0.005,
+          "overlap": 0.005
+        },
+        {
+          "name": "V8.DeoptimizeCode",
+          "start": 4094.755,
+          "ms": 0.002,
+          "overlap": 0.002
+        },
+        {
+          "name": "V8.DeoptimizeCode",
+          "start": 4109.717,
+          "ms": 0.002,
+          "overlap": 0.002
+        },
+        {
+          "name": "V8.DeoptimizeCode",
+          "start": 4110.481,
+          "ms": 0.001,
+          "overlap": 0.001
+        },
+        {
+          "name": "V8.DeoptimizeCode",
+          "start": 4110.583,
+          "ms": 0.001,
+          "overlap": 0.001
+        },
+        {
+          "name": "V8.DeoptimizeCode",
+          "start": 4113.027,
+          "ms": 0.001,
+          "overlap": 0.001
+        },
+        {
+          "name": "V8.DeoptimizeCode",
+          "start": 4113.105,
+          "ms": 0.001,
+          "overlap": 0.001
+        },
+        {
+          "name": "V8.DeoptimizeCode",
+          "start": 4113.881,
+          "ms": 0.001,
+          "overlap": 0.001
+        },
+        {
+          "name": "V8.DeoptimizeCode",
+          "start": 4114.254,
+          "ms": 0.001,
+          "overlap": 0.001
+        }
+      ],
+      "topSamples": [
+        {
+          "ms": 2.737,
+          "stack": [
+            {
+              "function": "kg",
+              "script": 16,
+              "line": 3839,
+              "column": 58973
+            },
+            {
+              "function": "acquire",
+              "script": 16,
+              "line": 3839,
+              "column": 63989
+            },
+            {
+              "function": "update",
+              "script": 16,
+              "line": 3839,
+              "column": 64390
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3910,
+              "column": 30864
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 2.378,
+          "stack": [
+            {
+              "function": "t",
+              "script": 16,
+              "line": 8,
+              "column": 328370
+            },
+            {
+              "function": "toNonIndexed",
+              "script": 16,
+              "line": 8,
+              "column": 328357
+            },
+            {
+              "function": "e",
+              "script": 16,
+              "line": 3839,
+              "column": 49660
+            },
+            {
+              "function": "clone",
+              "script": 16,
+              "line": 8,
+              "column": 330130
+            },
+            {
+              "function": "l",
+              "script": 16,
+              "line": 3839,
+              "column": 59134
+            },
+            {
+              "function": "kg",
+              "script": 16,
+              "line": 3839,
+              "column": 58973
+            },
+            {
+              "function": "acquire",
+              "script": 16,
+              "line": 3839,
+              "column": 63989
+            },
+            {
+              "function": "update",
+              "script": 16,
+              "line": 3839,
+              "column": 64390
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3910,
+              "column": 30864
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 2.345,
+          "stack": [
+            {
+              "function": "e",
+              "script": 16,
+              "line": 47,
+              "column": 32389
+            },
+            {
+              "function": "d",
+              "script": 16,
+              "line": 3839,
+              "column": 59551
+            },
+            {
+              "function": "kg",
+              "script": 16,
+              "line": 3839,
+              "column": 58973
+            },
+            {
+              "function": "acquire",
+              "script": 16,
+              "line": 3839,
+              "column": 63989
+            },
+            {
+              "function": "update",
+              "script": 16,
+              "line": 3839,
+              "column": 64390
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3910,
+              "column": 30864
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 1.376,
+          "stack": [
+            {
+              "function": "oc",
+              "script": 16,
+              "line": 8,
+              "column": 320832
+            },
+            {
+              "function": "e",
+              "script": 16,
+              "line": 8,
+              "column": 335015
+            },
+            {
+              "function": "e",
+              "script": 16,
+              "line": 3839,
+              "column": 49660
+            },
+            {
+              "function": "kg",
+              "script": 16,
+              "line": 3839,
+              "column": 58973
+            },
+            {
+              "function": "acquire",
+              "script": 16,
+              "line": 3839,
+              "column": 63989
+            },
+            {
+              "function": "update",
+              "script": 16,
+              "line": 3839,
+              "column": 64390
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3910,
+              "column": 30864
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 0.955,
+          "stack": [
+            {
+              "function": "angleTo",
+              "script": 16,
+              "line": 8,
+              "column": 236666
+            },
+            {
+              "function": "bg",
+              "script": 16,
+              "line": 3839,
+              "column": 49436
+            },
+            {
+              "function": "e",
+              "script": 16,
+              "line": 3839,
+              "column": 49660
+            },
+            {
+              "function": "clone",
+              "script": 16,
+              "line": 8,
+              "column": 330130
+            },
+            {
+              "function": "l",
+              "script": 16,
+              "line": 3839,
+              "column": 59134
+            },
+            {
+              "function": "kg",
+              "script": 16,
+              "line": 3839,
+              "column": 58973
+            },
+            {
+              "function": "acquire",
+              "script": 16,
+              "line": 3839,
+              "column": 63989
+            },
+            {
+              "function": "update",
+              "script": 16,
+              "line": 3839,
+              "column": 64390
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3910,
+              "column": 30864
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 0.9049999999999999,
+          "stack": [
+            {
+              "function": "clone",
+              "script": 16,
+              "line": 8,
+              "column": 330130
+            },
+            {
+              "function": "l",
+              "script": 16,
+              "line": 3839,
+              "column": 59134
+            },
+            {
+              "function": "kg",
+              "script": 16,
+              "line": 3839,
+              "column": 58973
+            },
+            {
+              "function": "acquire",
+              "script": 16,
+              "line": 3839,
+              "column": 63989
+            },
+            {
+              "function": "update",
+              "script": 16,
+              "line": 3839,
+              "column": 64390
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3910,
+              "column": 30864
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 0.821,
+          "stack": [
+            {
+              "function": "Sg",
+              "script": 16,
+              "line": 3839,
+              "column": 51084
+            },
+            {
+              "function": "kg",
+              "script": 16,
+              "line": 3839,
+              "column": 58973
+            },
+            {
+              "function": "acquire",
+              "script": 16,
+              "line": 3839,
+              "column": 63989
+            },
+            {
+              "function": "update",
+              "script": 16,
+              "line": 3839,
+              "column": 64390
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3910,
+              "column": 30864
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 0.82,
+          "stack": [
+            {
+              "function": "v",
+              "script": 16,
+              "line": 47,
+              "column": 33344
+            },
+            {
+              "function": "e",
+              "script": 16,
+              "line": 47,
+              "column": 32389
+            },
+            {
+              "function": "d",
+              "script": 16,
+              "line": 3839,
+              "column": 59551
+            },
+            {
+              "function": "kg",
+              "script": 16,
+              "line": 3839,
+              "column": 58973
+            },
+            {
+              "function": "acquire",
+              "script": 16,
+              "line": 3839,
+              "column": 63989
+            },
+            {
+              "function": "update",
+              "script": 16,
+              "line": 3839,
+              "column": 64390
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3910,
+              "column": 30864
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "at": 4206.8,
+      "ms": 66.69999999999982,
+      "calls": 0,
+      "triangles": 0,
+      "particles": 0,
+      "tasks": [
+        {
+          "name": "RunTask",
+          "start": 4136.667,
+          "ms": 77.967,
+          "overlap": 66.7
+        },
+        {
+          "name": "TimerFire",
+          "start": 4136.667,
+          "ms": 77.949,
+          "overlap": 66.7,
+          "data": {
+            "frame": "9177FBEFD9D5AE4C927883D2AB121C36",
+            "timerId": 410
+          }
+        },
+        {
+          "name": "v8.callFunction",
+          "start": 4136.67,
+          "ms": 77.942,
+          "overlap": 66.7
+        },
+        {
+          "name": "CommandBufferHelper::Flush",
+          "start": 4151.985,
+          "ms": 0.017,
+          "overlap": 0.017
+        },
+        {
+          "name": "CommandBufferHelper::Flush",
+          "start": 4170.795,
+          "ms": 0.013,
+          "overlap": 0.013
+        },
+        {
+          "name": "CommandBufferProxyImpl::Flush",
+          "start": 4151.989,
+          "ms": 0.012,
+          "overlap": 0.012
+        },
+        {
+          "name": "CommandBufferProxyImpl::Flush",
+          "start": 4170.798,
+          "ms": 0.01,
+          "overlap": 0.01
+        },
+        {
+          "name": "CommandBufferHelper::Flush",
+          "start": 4176.884,
+          "ms": 0.01,
+          "overlap": 0.01
+        },
+        {
+          "name": "CommandBufferProxyImpl::Flush",
+          "start": 4176.885,
+          "ms": 0.009,
+          "overlap": 0.009
+        },
+        {
+          "name": "CommandBufferHelper::Flush",
+          "start": 4156.167,
+          "ms": 0.008,
+          "overlap": 0.008
+        },
+        {
+          "name": "CommandBufferHelper::Flush",
+          "start": 4187.712,
+          "ms": 0.008,
+          "overlap": 0.008
+        },
+        {
+          "name": "CommandBufferProxyImpl::Flush",
+          "start": 4187.712,
+          "ms": 0.008,
+          "overlap": 0.008
+        }
+      ],
+      "topSamples": [
+        {
+          "ms": 5.680000000000001,
+          "stack": [
+            {
+              "function": "uh",
+              "script": 16,
+              "line": 3736,
+              "column": 14879
+            },
+            {
+              "function": "Bh",
+              "script": 16,
+              "line": 3766,
+              "column": 864
+            },
+            {
+              "function": "x",
+              "script": 16,
+              "line": 3787,
+              "column": 11427
+            },
+            {
+              "function": "et",
+              "script": 16,
+              "line": 3839,
+              "column": 33093
+            },
+            {
+              "function": "Ue",
+              "script": 16,
+              "line": 3839,
+              "column": 26557
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 3839,
+              "column": 27088
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "compile",
+              "script": 16,
+              "line": 3839,
+              "column": 26734
+            },
+            {
+              "function": "compileAsync",
+              "script": 16,
+              "line": 3839,
+              "column": 27315
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3910,
+              "column": 30864
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 4.211,
+          "stack": [
+            {
+              "function": "Th",
+              "script": 16,
+              "line": 3746,
+              "column": 343
+            },
+            {
+              "function": "Bh",
+              "script": 16,
+              "line": 3766,
+              "column": 864
+            },
+            {
+              "function": "x",
+              "script": 16,
+              "line": 3787,
+              "column": 11427
+            },
+            {
+              "function": "et",
+              "script": 16,
+              "line": 3839,
+              "column": 33093
+            },
+            {
+              "function": "Ue",
+              "script": 16,
+              "line": 3839,
+              "column": 26557
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 3839,
+              "column": 27088
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "compile",
+              "script": 16,
+              "line": 3839,
+              "column": 26734
+            },
+            {
+              "function": "compileAsync",
+              "script": 16,
+              "line": 3839,
+              "column": 27315
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3910,
+              "column": 30864
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 3.0770000000000004,
+          "stack": [
+            {
+              "function": "et",
+              "script": 16,
+              "line": 3839,
+              "column": 33093
+            },
+            {
+              "function": "Ue",
+              "script": 16,
+              "line": 3839,
+              "column": 26557
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 3839,
+              "column": 27088
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "compile",
+              "script": 16,
+              "line": 3839,
+              "column": 26734
+            },
+            {
+              "function": "compileAsync",
+              "script": 16,
+              "line": 3839,
+              "column": 27315
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3910,
+              "column": 30864
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 2.9850000000000003,
+          "stack": [
+            {
+              "function": "Ac",
+              "script": 16,
+              "line": 8,
+              "column": 336230
+            },
+            {
+              "function": "b",
+              "script": 16,
+              "line": 3787,
+              "column": 11327
+            },
+            {
+              "function": "et",
+              "script": 16,
+              "line": 3839,
+              "column": 33093
+            },
+            {
+              "function": "Ue",
+              "script": 16,
+              "line": 3839,
+              "column": 26557
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 3839,
+              "column": 27088
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "compile",
+              "script": 16,
+              "line": 3839,
+              "column": 26734
+            },
+            {
+              "function": "compileAsync",
+              "script": 16,
+              "line": 3839,
+              "column": 27315
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3910,
+              "column": 30864
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 2.646,
+          "stack": [
+            {
+              "function": "Bh",
+              "script": 16,
+              "line": 3766,
+              "column": 864
+            },
+            {
+              "function": "x",
+              "script": 16,
+              "line": 3787,
+              "column": 11427
+            },
+            {
+              "function": "et",
+              "script": 16,
+              "line": 3839,
+              "column": 33093
+            },
+            {
+              "function": "Ue",
+              "script": 16,
+              "line": 3839,
+              "column": 26557
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 3839,
+              "column": 27088
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "compile",
+              "script": 16,
+              "line": 3839,
+              "column": 26734
+            },
+            {
+              "function": "compileAsync",
+              "script": 16,
+              "line": 3839,
+              "column": 27315
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3910,
+              "column": 30864
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 2.629,
+          "stack": [
+            {
+              "function": "g",
+              "script": 16,
+              "line": 3787,
+              "column": 2337
+            },
+            {
+              "function": "et",
+              "script": 16,
+              "line": 3839,
+              "column": 33093
+            },
+            {
+              "function": "Ue",
+              "script": 16,
+              "line": 3839,
+              "column": 26557
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 3839,
+              "column": 27088
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "compile",
+              "script": 16,
+              "line": 3839,
+              "column": 26734
+            },
+            {
+              "function": "compileAsync",
+              "script": 16,
+              "line": 3839,
+              "column": 27315
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3910,
+              "column": 30864
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 2.5280000000000005,
+          "stack": [
+            {
+              "function": "Ac",
+              "script": 16,
+              "line": 8,
+              "column": 336230
+            },
+            {
+              "function": "b",
+              "script": 16,
+              "line": 3787,
+              "column": 11327
+            },
+            {
+              "function": "et",
+              "script": 16,
+              "line": 3839,
+              "column": 33093
+            },
+            {
+              "function": "Ue",
+              "script": 16,
+              "line": 3839,
+              "column": 26557
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 3839,
+              "column": 27088
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "compile",
+              "script": 16,
+              "line": 3839,
+              "column": 26734
+            },
+            {
+              "function": "compileAsync",
+              "script": 16,
+              "line": 3839,
+              "column": 27315
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3910,
+              "column": 30864
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 2.327,
+          "stack": [
+            {
+              "function": "g",
+              "script": 16,
+              "line": 3787,
+              "column": 2337
+            },
+            {
+              "function": "et",
+              "script": 16,
+              "line": 3839,
+              "column": 33093
+            },
+            {
+              "function": "Ue",
+              "script": 16,
+              "line": 3839,
+              "column": 26557
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 3839,
+              "column": 27088
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "compile",
+              "script": 16,
+              "line": 3839,
+              "column": 26734
+            },
+            {
+              "function": "compileAsync",
+              "script": 16,
+              "line": 3839,
+              "column": 27315
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3910,
+              "column": 30864
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "at": 4273.5,
+      "ms": 33.399999999999636,
+      "calls": 0,
+      "triangles": 0,
+      "particles": 0,
+      "tasks": [
+        {
+          "name": "RunTask",
+          "start": 4225.156,
+          "ms": 52.033,
+          "overlap": 33.4
+        },
+        {
+          "name": "TimerFire",
+          "start": 4225.157,
+          "ms": 51.84,
+          "overlap": 33.4,
+          "data": {
+            "frame": "9177FBEFD9D5AE4C927883D2AB121C36",
+            "timerId": 411
+          }
+        },
+        {
+          "name": "v8.callFunction",
+          "start": 4225.16,
+          "ms": 51.833,
+          "overlap": 33.4
+        },
+        {
+          "name": "GLES2Implementation::GetProgramiv",
+          "start": 4242.1,
+          "ms": 0.779,
+          "overlap": 0.779
+        },
+        {
+          "name": "ImplementationBase::WaitForCmd",
+          "start": 4242.101,
+          "ms": 0.777,
+          "overlap": 0.777
+        },
+        {
+          "name": "CommandBufferHelper::Finish",
+          "start": 4242.102,
+          "ms": 0.776,
+          "overlap": 0.776
+        },
+        {
+          "name": "CommandBufferProxyImpl::WaitForGetOffset",
+          "start": 4242.108,
+          "ms": 0.77,
+          "overlap": 0.77
+        },
+        {
+          "name": "GLES2Implementation::GetProgramiv",
+          "start": 4272.111,
+          "ms": 0.714,
+          "overlap": 0.714
+        },
+        {
+          "name": "ImplementationBase::WaitForCmd",
+          "start": 4272.112,
+          "ms": 0.713,
+          "overlap": 0.713
+        },
+        {
+          "name": "CommandBufferHelper::Finish",
+          "start": 4272.112,
+          "ms": 0.713,
+          "overlap": 0.713
+        },
+        {
+          "name": "CommandBufferProxyImpl::WaitForGetOffset",
+          "start": 4272.117,
+          "ms": 0.707,
+          "overlap": 0.707
+        },
+        {
+          "name": "GLES2Implementation::GetProgramiv",
+          "start": 4267.262,
+          "ms": 0.7,
+          "overlap": 0.7
+        }
+      ],
+      "topSamples": [
+        {
+          "ms": 10.506999999999998,
+          "stack": [
+            {
+              "function": "C",
+              "script": 16,
+              "line": 3780,
+              "column": 283
+            },
+            {
+              "function": "Bh.getUniforms",
+              "script": 16,
+              "line": 3787,
+              "column": 297
+            },
+            {
+              "function": "rt",
+              "script": 16,
+              "line": 3839,
+              "column": 35557
+            },
+            {
+              "function": "renderBufferDirect",
+              "script": 16,
+              "line": 3839,
+              "column": 24761
+            },
+            {
+              "function": "$e",
+              "script": 16,
+              "line": 3839,
+              "column": 32638
+            },
+            {
+              "function": "Qe",
+              "script": 16,
+              "line": 3839,
+              "column": 32404
+            },
+            {
+              "function": "Xe",
+              "script": 16,
+              "line": 3839,
+              "column": 30646
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3839,
+              "column": 27913
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3910,
+              "column": 30864
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 3.479,
+          "stack": [
+            {
+              "function": "renderBufferDirect",
+              "script": 16,
+              "line": 3839,
+              "column": 24761
+            },
+            {
+              "function": "$e",
+              "script": 16,
+              "line": 3839,
+              "column": 32638
+            },
+            {
+              "function": "Qe",
+              "script": 16,
+              "line": 3839,
+              "column": 32404
+            },
+            {
+              "function": "Xe",
+              "script": 16,
+              "line": 3839,
+              "column": 30646
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3839,
+              "column": 27913
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3910,
+              "column": 30864
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 1.686,
+          "stack": [
+            {
+              "function": "rt",
+              "script": 16,
+              "line": 3839,
+              "column": 35557
+            },
+            {
+              "function": "renderBufferDirect",
+              "script": 16,
+              "line": 3839,
+              "column": 24761
+            },
+            {
+              "function": "$e",
+              "script": 16,
+              "line": 3839,
+              "column": 32638
+            },
+            {
+              "function": "Qe",
+              "script": 16,
+              "line": 3839,
+              "column": 32404
+            },
+            {
+              "function": "Xe",
+              "script": 16,
+              "line": 3839,
+              "column": 30646
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3839,
+              "column": 27913
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3910,
+              "column": 30864
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 1.478,
+          "stack": [
+            {
+              "function": "s",
+              "script": 16,
+              "line": 3586,
+              "column": 10672
+            },
+            {
+              "function": "renderBufferDirect",
+              "script": 16,
+              "line": 3839,
+              "column": 24761
+            },
+            {
+              "function": "$e",
+              "script": 16,
+              "line": 3839,
+              "column": 32638
+            },
+            {
+              "function": "Qe",
+              "script": 16,
+              "line": 3839,
+              "column": 32404
+            },
+            {
+              "function": "Xe",
+              "script": 16,
+              "line": 3839,
+              "column": 30646
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3839,
+              "column": 27913
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3910,
+              "column": 30864
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 1.3079999999999998,
+          "stack": [
+            {
+              "function": "ue",
+              "script": 16,
+              "line": 3815,
+              "column": 24552
+            },
+            {
+              "function": "j",
+              "script": 16,
+              "line": 3815,
+              "column": 20510
+            },
+            {
+              "function": "Mm",
+              "script": 16,
+              "line": 3736,
+              "column": 10338
+            },
+            {
+              "function": "upload",
+              "script": 16,
+              "line": 3736,
+              "column": 14647
+            },
+            {
+              "function": "rt",
+              "script": 16,
+              "line": 3839,
+              "column": 35557
+            },
+            {
+              "function": "renderBufferDirect",
+              "script": 16,
+              "line": 3839,
+              "column": 24761
+            },
+            {
+              "function": "$e",
+              "script": 16,
+              "line": 3839,
+              "column": 32638
+            },
+            {
+              "function": "Qe",
+              "script": 16,
+              "line": 3839,
+              "column": 32404
+            },
+            {
+              "function": "Xe",
+              "script": 16,
+              "line": 3839,
+              "column": 30646
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3839,
+              "column": 27913
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3910,
+              "column": 30864
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 1.16,
+          "stack": [
+            {
+              "function": "Qe",
+              "script": 16,
+              "line": 3839,
+              "column": 32404
+            },
+            {
+              "function": "Xe",
+              "script": 16,
+              "line": 3839,
+              "column": 30646
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3839,
+              "column": 27913
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3910,
+              "column": 30864
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 1.127,
+          "stack": [
+            {
+              "function": "lh",
+              "script": 16,
+              "line": 3736,
+              "column": 14332
+            },
+            {
+              "function": "C",
+              "script": 16,
+              "line": 3780,
+              "column": 283
+            },
+            {
+              "function": "Bh.getUniforms",
+              "script": 16,
+              "line": 3787,
+              "column": 297
+            },
+            {
+              "function": "rt",
+              "script": 16,
+              "line": 3839,
+              "column": 35557
+            },
+            {
+              "function": "renderBufferDirect",
+              "script": 16,
+              "line": 3839,
+              "column": 24761
+            },
+            {
+              "function": "$e",
+              "script": 16,
+              "line": 3839,
+              "column": 32638
+            },
+            {
+              "function": "Qe",
+              "script": 16,
+              "line": 3839,
+              "column": 32404
+            },
+            {
+              "function": "Xe",
+              "script": 16,
+              "line": 3839,
+              "column": 30646
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3839,
+              "column": 27913
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3910,
+              "column": 30864
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 1.118,
+          "stack": [
+            {
+              "function": "j",
+              "script": 16,
+              "line": 3815,
+              "column": 20510
+            },
+            {
+              "function": "Mm",
+              "script": 16,
+              "line": 3736,
+              "column": 10338
+            },
+            {
+              "function": "upload",
+              "script": 16,
+              "line": 3736,
+              "column": 14647
+            },
+            {
+              "function": "rt",
+              "script": 16,
+              "line": 3839,
+              "column": 35557
+            },
+            {
+              "function": "renderBufferDirect",
+              "script": 16,
+              "line": 3839,
+              "column": 24761
+            },
+            {
+              "function": "$e",
+              "script": 16,
+              "line": 3839,
+              "column": 32638
+            },
+            {
+              "function": "Qe",
+              "script": 16,
+              "line": 3839,
+              "column": 32404
+            },
+            {
+              "function": "Xe",
+              "script": 16,
+              "line": 3839,
+              "column": 30646
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3839,
+              "column": 27913
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3910,
+              "column": 30864
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "at": 4556.8,
+      "ms": 50,
+      "calls": 0,
+      "triangles": 0,
+      "particles": 0,
+      "tasks": [
+        {
+          "name": "RunTask",
+          "start": 4491.628,
+          "ms": 80.027,
+          "overlap": 50
+        },
+        {
+          "name": "TimerFire",
+          "start": 4491.629,
+          "ms": 79.573,
+          "overlap": 50,
+          "data": {
+            "frame": "9177FBEFD9D5AE4C927883D2AB121C36",
+            "timerId": 436
+          }
+        },
+        {
+          "name": "v8.callFunction",
+          "start": 4491.632,
+          "ms": 79.567,
+          "overlap": 50
+        },
+        {
+          "name": "MinorGC",
+          "start": 4515.444,
+          "ms": 4.13,
+          "overlap": 4.13
+        },
+        {
+          "name": "V8.GCScavenger",
+          "start": 4515.447,
+          "ms": 4.114,
+          "overlap": 4.114
+        },
+        {
+          "name": "V8.GC_SCAVENGER",
+          "start": 4515.451,
+          "ms": 4.108,
+          "overlap": 4.108
+        },
+        {
+          "name": "V8.GC_SCAVENGER_SCAVENGE",
+          "start": 4515.457,
+          "ms": 4.099,
+          "overlap": 4.099
+        },
+        {
+          "name": "V8.GC_SCAVENGER_SCAVENGE_PARALLEL_PHASE",
+          "start": 4515.58,
+          "ms": 3.73,
+          "overlap": 3.73
+        },
+        {
+          "name": "V8.GC_SCAVENGER_SCAVENGE_PARALLEL",
+          "start": 4515.621,
+          "ms": 3.687,
+          "overlap": 3.687
+        },
+        {
+          "name": "GLES2Implementation::GetProgramiv",
+          "start": 4556.6,
+          "ms": 0.912,
+          "overlap": 0.2
+        },
+        {
+          "name": "ImplementationBase::WaitForCmd",
+          "start": 4556.6,
+          "ms": 0.912,
+          "overlap": 0.2
+        },
+        {
+          "name": "CommandBufferHelper::Finish",
+          "start": 4556.601,
+          "ms": 0.911,
+          "overlap": 0.199
+        }
+      ],
+      "topSamples": [
+        {
+          "ms": 4.357,
+          "stack": [
+            {
+              "function": "(garbage collector)",
+              "script": 0
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 3.7409999999999997,
+          "stack": [
+            {
+              "function": "g",
+              "script": 16,
+              "line": 3787,
+              "column": 2337
+            },
+            {
+              "function": "et",
+              "script": 16,
+              "line": 3839,
+              "column": 33093
+            },
+            {
+              "function": "Ue",
+              "script": 16,
+              "line": 3839,
+              "column": 26557
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 3839,
+              "column": 27088
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "compile",
+              "script": 16,
+              "line": 3839,
+              "column": 26734
+            },
+            {
+              "function": "compileAsync",
+              "script": 16,
+              "line": 3839,
+              "column": 27315
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3910,
+              "column": 30864
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 3.488,
+          "stack": [
+            {
+              "function": "uh",
+              "script": 16,
+              "line": 3736,
+              "column": 14879
+            },
+            {
+              "function": "Bh",
+              "script": 16,
+              "line": 3766,
+              "column": 864
+            },
+            {
+              "function": "x",
+              "script": 16,
+              "line": 3787,
+              "column": 11427
+            },
+            {
+              "function": "et",
+              "script": 16,
+              "line": 3839,
+              "column": 33093
+            },
+            {
+              "function": "Ue",
+              "script": 16,
+              "line": 3839,
+              "column": 26557
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 3839,
+              "column": 27088
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "compile",
+              "script": 16,
+              "line": 3839,
+              "column": 26734
+            },
+            {
+              "function": "compileAsync",
+              "script": 16,
+              "line": 3839,
+              "column": 27315
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3910,
+              "column": 30864
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 3.4789999999999996,
+          "stack": [
+            {
+              "function": "g",
+              "script": 16,
+              "line": 3787,
+              "column": 2337
+            },
+            {
+              "function": "et",
+              "script": 16,
+              "line": 3839,
+              "column": 33093
+            },
+            {
+              "function": "Ue",
+              "script": 16,
+              "line": 3839,
+              "column": 26557
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 3839,
+              "column": 27088
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "compile",
+              "script": 16,
+              "line": 3839,
+              "column": 26734
+            },
+            {
+              "function": "compileAsync",
+              "script": 16,
+              "line": 3839,
+              "column": 27315
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3910,
+              "column": 30864
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 3.1110000000000007,
+          "stack": [
+            {
+              "function": "C",
+              "script": 16,
+              "line": 3780,
+              "column": 283
+            },
+            {
+              "function": "Bh.getUniforms",
+              "script": 16,
+              "line": 3787,
+              "column": 297
+            },
+            {
+              "function": "rt",
+              "script": 16,
+              "line": 3839,
+              "column": 35557
+            },
+            {
+              "function": "renderBufferDirect",
+              "script": 16,
+              "line": 3839,
+              "column": 24761
+            },
+            {
+              "function": "$e",
+              "script": 16,
+              "line": 3839,
+              "column": 32638
+            },
+            {
+              "function": "Qe",
+              "script": 16,
+              "line": 3839,
+              "column": 32404
+            },
+            {
+              "function": "Xe",
+              "script": 16,
+              "line": 3839,
+              "column": 30646
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3839,
+              "column": 27913
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3910,
+              "column": 30864
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 2.797,
+          "stack": [
+            {
+              "function": "et",
+              "script": 16,
+              "line": 3839,
+              "column": 33093
+            },
+            {
+              "function": "Ue",
+              "script": 16,
+              "line": 3839,
+              "column": 26557
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 3839,
+              "column": 27088
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "compile",
+              "script": 16,
+              "line": 3839,
+              "column": 26734
+            },
+            {
+              "function": "compileAsync",
+              "script": 16,
+              "line": 3839,
+              "column": 27315
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3910,
+              "column": 30864
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 2.011,
+          "stack": [
+            {
+              "function": "Th",
+              "script": 16,
+              "line": 3746,
+              "column": 343
+            },
+            {
+              "function": "Bh",
+              "script": 16,
+              "line": 3766,
+              "column": 864
+            },
+            {
+              "function": "x",
+              "script": 16,
+              "line": 3787,
+              "column": 11427
+            },
+            {
+              "function": "et",
+              "script": 16,
+              "line": 3839,
+              "column": 33093
+            },
+            {
+              "function": "Ue",
+              "script": 16,
+              "line": 3839,
+              "column": 26557
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 3839,
+              "column": 27088
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "compile",
+              "script": 16,
+              "line": 3839,
+              "column": 26734
+            },
+            {
+              "function": "compileAsync",
+              "script": 16,
+              "line": 3839,
+              "column": 27315
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3910,
+              "column": 30864
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 1.9620000000000002,
+          "stack": [
+            {
+              "function": "uh",
+              "script": 16,
+              "line": 3736,
+              "column": 14879
+            },
+            {
+              "function": "Bh",
+              "script": 16,
+              "line": 3766,
+              "column": 864
+            },
+            {
+              "function": "x",
+              "script": 16,
+              "line": 3787,
+              "column": 11427
+            },
+            {
+              "function": "et",
+              "script": 16,
+              "line": 3839,
+              "column": 33093
+            },
+            {
+              "function": "Ue",
+              "script": 16,
+              "line": 3839,
+              "column": 26557
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 3839,
+              "column": 27088
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "traverse",
+              "script": 16,
+              "line": 8,
+              "column": 287785
+            },
+            {
+              "function": "compile",
+              "script": 16,
+              "line": 3839,
+              "column": 26734
+            },
+            {
+              "function": "compileAsync",
+              "script": 16,
+              "line": 3839,
+              "column": 27315
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3910,
+              "column": 30864
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "at": 5790.1,
+      "ms": 100,
+      "calls": 198,
+      "triangles": 76506,
+      "particles": 0,
+      "tasks": [
+        {
+          "name": "RunTask",
+          "start": 5686.238,
+          "ms": 94.061,
+          "overlap": 90.199
+        },
+        {
+          "name": "TimerFire",
+          "start": 5686.239,
+          "ms": 94.04,
+          "overlap": 90.179,
+          "data": {
+            "frame": "9177FBEFD9D5AE4C927883D2AB121C36",
+            "timerId": 626
+          }
+        },
+        {
+          "name": "v8.callFunction",
+          "start": 5686.242,
+          "ms": 94.033,
+          "overlap": 90.175
+        },
+        {
+          "name": "Decode Image",
+          "start": 5722.982,
+          "ms": 29.059,
+          "overlap": 29.059
+        },
+        {
+          "name": "RunTask",
+          "start": 5780.303,
+          "ms": 14.118,
+          "overlap": 9.797
+        },
+        {
+          "name": "ProxyMain::BeginMainFrame",
+          "start": 5780.304,
+          "ms": 14.108,
+          "overlap": 9.796
+        },
+        {
+          "name": "FireAnimationFrame",
+          "start": 5780.73,
+          "ms": 7.531,
+          "overlap": 7.531,
+          "data": {
+            "frame": "9177FBEFD9D5AE4C927883D2AB121C36",
+            "id": 755
+          }
+        },
+        {
+          "name": "v8.callFunction",
+          "start": 5780.732,
+          "ms": 7.527,
+          "overlap": 7.527
+        },
+        {
+          "name": "FunctionCall",
+          "start": 5780.732,
+          "ms": 7.488,
+          "overlap": 7.488,
+          "data": {
+            "columnNumber": 39450,
+            "frame": "9177FBEFD9D5AE4C927883D2AB121C36",
+            "functionName": "loop",
+            "isolate": "3431251816951384776",
+            "lineNumber": 3911,
+            "sampleTraceId": 3476980725533567,
+            "scriptId": "16",
+            "url": ""
+          }
+        },
+        {
+          "name": "Decode Image",
+          "start": 5709.322,
+          "ms": 7.316,
+          "overlap": 7.316
+        },
+        {
+          "name": "GLES2Implementation::GetProgramiv",
+          "start": 5769.823,
+          "ms": 2.62,
+          "overlap": 2.62
+        },
+        {
+          "name": "FireAnimationFrame",
+          "start": 5788.262,
+          "ms": 2.62,
+          "overlap": 1.838,
+          "data": {
+            "frame": "9177FBEFD9D5AE4C927883D2AB121C36",
+            "id": 756
+          }
+        }
+      ],
+      "topSamples": [
+        {
+          "ms": 47.760000000000005,
+          "stack": [
+            {
+              "function": "Ce",
+              "script": 16,
+              "line": 3815,
+              "column": 11795
+            },
+            {
+              "function": "ue",
+              "script": 16,
+              "line": 3815,
+              "column": 24552
+            },
+            {
+              "function": "j",
+              "script": 16,
+              "line": 3815,
+              "column": 20510
+            },
+            {
+              "function": "Mm",
+              "script": 16,
+              "line": 3736,
+              "column": 10338
+            },
+            {
+              "function": "upload",
+              "script": 16,
+              "line": 3736,
+              "column": 14647
+            },
+            {
+              "function": "rt",
+              "script": 16,
+              "line": 3839,
+              "column": 35557
+            },
+            {
+              "function": "renderBufferDirect",
+              "script": 16,
+              "line": 3839,
+              "column": 24761
+            },
+            {
+              "function": "$e",
+              "script": 16,
+              "line": 3839,
+              "column": 32638
+            },
+            {
+              "function": "Qe",
+              "script": 16,
+              "line": 3839,
+              "column": 32404
+            },
+            {
+              "function": "Xe",
+              "script": 16,
+              "line": 3839,
+              "column": 30646
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3839,
+              "column": 27913
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3879,
+              "column": 2389
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3910,
+              "column": 40141
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3910,
+              "column": 30864
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 7.923000000000001,
+          "stack": [
+            {
+              "function": "C",
+              "script": 16,
+              "line": 3780,
+              "column": 283
+            },
+            {
+              "function": "Bh.getUniforms",
+              "script": 16,
+              "line": 3787,
+              "column": 297
+            },
+            {
+              "function": "rt",
+              "script": 16,
+              "line": 3839,
+              "column": 35557
+            },
+            {
+              "function": "renderBufferDirect",
+              "script": 16,
+              "line": 3839,
+              "column": 24761
+            },
+            {
+              "function": "$e",
+              "script": 16,
+              "line": 3839,
+              "column": 32638
+            },
+            {
+              "function": "Qe",
+              "script": 16,
+              "line": 3839,
+              "column": 32404
+            },
+            {
+              "function": "Xe",
+              "script": 16,
+              "line": 3839,
+              "column": 30646
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3839,
+              "column": 27913
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3879,
+              "column": 2389
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3910,
+              "column": 40141
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3910,
+              "column": 30864
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 4.9079999999999995,
+          "stack": [
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3910,
+              "column": 40141
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3910,
+              "column": 30864
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 2.6,
+          "stack": [
+            {
+              "function": "g",
+              "script": 16,
+              "line": 3787,
+              "column": 2337
+            },
+            {
+              "function": "et",
+              "script": 16,
+              "line": 3839,
+              "column": 33093
+            },
+            {
+              "function": "rt",
+              "script": 16,
+              "line": 3839,
+              "column": 35557
+            },
+            {
+              "function": "renderBufferDirect",
+              "script": 16,
+              "line": 3839,
+              "column": 24761
+            },
+            {
+              "function": "$e",
+              "script": 16,
+              "line": 3839,
+              "column": 32638
+            },
+            {
+              "function": "Qe",
+              "script": 16,
+              "line": 3839,
+              "column": 32404
+            },
+            {
+              "function": "Xe",
+              "script": 16,
+              "line": 3839,
+              "column": 30646
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3839,
+              "column": 27913
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3879,
+              "column": 2389
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3910,
+              "column": 40141
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3910,
+              "column": 30864
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 1.9400000000000002,
+          "stack": [
+            {
+              "function": "(program)",
+              "script": 0
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 1.725,
+          "stack": [
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 3879,
+              "column": 49250
+            },
+            {
+              "function": "traverseVisible",
+              "script": 16,
+              "line": 8,
+              "column": 287880
+            },
+            {
+              "function": "traverseVisible",
+              "script": 16,
+              "line": 8,
+              "column": 287880
+            },
+            {
+              "function": "traverseVisible",
+              "script": 16,
+              "line": 8,
+              "column": 287880
+            },
+            {
+              "function": "traverseVisible",
+              "script": 16,
+              "line": 8,
+              "column": 287880
+            },
+            {
+              "function": "traverseVisible",
+              "script": 16,
+              "line": 8,
+              "column": 287880
+            },
+            {
+              "function": "traverseVisible",
+              "script": 16,
+              "line": 8,
+              "column": 287880
+            },
+            {
+              "function": "traverseVisible",
+              "script": 16,
+              "line": 8,
+              "column": 287880
+            },
+            {
+              "function": "Q_",
+              "script": 16,
+              "line": 3879,
+              "column": 49150
+            },
+            {
+              "function": "(anonymous)",
+              "script": 16,
+              "line": 3910,
+              "column": 49843
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3910,
+              "column": 40141
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3910,
+              "column": 30864
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 1.212,
+          "stack": [
+            {
+              "function": "setValue",
+              "script": 16,
+              "line": 3736,
+              "column": 14513
+            },
+            {
+              "function": "rt",
+              "script": 16,
+              "line": 3839,
+              "column": 35557
+            },
+            {
+              "function": "renderBufferDirect",
+              "script": 16,
+              "line": 3839,
+              "column": 24761
+            },
+            {
+              "function": "$e",
+              "script": 16,
+              "line": 3839,
+              "column": 32638
+            },
+            {
+              "function": "Qe",
+              "script": 16,
+              "line": 3839,
+              "column": 32404
+            },
+            {
+              "function": "Xe",
+              "script": 16,
+              "line": 3839,
+              "column": 30646
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3839,
+              "column": 27913
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3879,
+              "column": 2389
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3910,
+              "column": 40141
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3910,
+              "column": 30864
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        },
+        {
+          "ms": 1.211,
+          "stack": [
+            {
+              "function": "et",
+              "script": 16,
+              "line": 3839,
+              "column": 33093
+            },
+            {
+              "function": "rt",
+              "script": 16,
+              "line": 3839,
+              "column": 35557
+            },
+            {
+              "function": "renderBufferDirect",
+              "script": 16,
+              "line": 3839,
+              "column": 24761
+            },
+            {
+              "function": "$e",
+              "script": 16,
+              "line": 3839,
+              "column": 32638
+            },
+            {
+              "function": "Qe",
+              "script": 16,
+              "line": 3839,
+              "column": 32404
+            },
+            {
+              "function": "Xe",
+              "script": 16,
+              "line": 3839,
+              "column": 30646
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3839,
+              "column": 27913
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3879,
+              "column": 2389
+            },
+            {
+              "function": "render",
+              "script": 16,
+              "line": 3910,
+              "column": 40141
+            },
+            {
+              "function": "warmModels",
+              "script": 16,
+              "line": 3910,
+              "column": 30864
+            },
+            {
+              "function": "(root)",
+              "script": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "mode": {
+    "mode": "off",
+    "modulePath": "packages/game-rules/src/cardrpg/depth/auto-extras/runner.ts",
+    "options": {
+      "autoExtras": false,
+      "teaCloud": false,
+      "frontRelay": false,
+      "intentLens": false
+    }
+  },
+  "native": "reports/cardrpg-big/sim/gear-encounter-train.json",
+  "candidate": "reports/cardrpg-big/sim/gear-extras-off-train.json",
+  "parity": {
+    "rows": true,
+    "sets": true,
+    "teams": true,
+    "cats": true,
+    "singleItems": true,
+    "powerBounds": true
+  }
+}

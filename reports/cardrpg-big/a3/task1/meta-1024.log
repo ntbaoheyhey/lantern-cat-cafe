@@ -1,0 +1,28 @@
+{"lock":"acquired","lane":"A","pid":31289,"startedAt":"2026-11-07T11:31:23.250Z","task":"A3 task1 meta-1024"}
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+locator.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('button', { name: 'Use shift 1', exact: true })[22m
+[2m    - locator resolved to <button>Use shift 1</button>[22m
+[2m  - attempting click action[22m
+[2m    - waiting for element to be visible, enabled and stable[22m
+[2m    - element is visible, enabled and stable[22m
+[2m    - scrolling into view if needed[22m
+
+    at /Users/bao/taskbar-hero-cardrpg-big-delivery/tools/cardrpg-big/meta-check.mjs:60:74 {
+  log: [
+    "  - waiting for getByRole('button', { name: 'Use shift 1', exact: true })",
+    '    - locator resolved to <button>Use shift 1</button>',
+    '  - attempting click action',
+    '    - waiting for element to be visible, enabled and stable',
+    '    - element is visible, enabled and stable',
+    '    - scrolling into view if needed'
+  ],
+  name: 'TimeoutError'
+}
+
+Node.js v24.22.2
+{"lock":"released","pid":31289,"task":"A3 task1 meta-1024"}

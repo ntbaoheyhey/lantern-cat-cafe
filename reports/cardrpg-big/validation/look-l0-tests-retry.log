@@ -1,0 +1,124 @@
+
+> taskbar-hero@0.0.0 test /Users/bao/taskbar-hero-cardrpg-big-delivery
+> node --test scripts/*.test.mjs && pnpm -r test
+
+✔ explicit root and nested index imports resolve to their exact files (9.508167ms)
+✔ directory aliases coexist with explicit indexes and ordinary modules (1.740125ms)
+✔ test modules, fixture folders and non-TypeScript files stay out of deployment maps (1.814333ms)
+✔ output order is stable regardless of file creation order (3.2745ms)
+✔ generation preserves auth mappings and ignores shared or non-function directories (4.2865ms)
+✔ auth health HTTP 200 exits correctly without leaking response data (27.79325ms)
+✔ auth health HTTP 429 exits correctly without leaking response data (16.63075ms)
+✔ auth health HTTP 500 exits correctly without leaking response data (14.520125ms)
+✔ auth health HTTP 502 exits correctly without leaking response data (13.678708ms)
+✔ auth health HTTP 503 exits correctly without leaking response data (13.590208ms)
+✔ auth health fails closed when the transport is unavailable (14.050125ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 175.269375
+Scope: 6 of 7 workspace projects
+packages/auth test$ vitest run
+packages/game-rules test$ vitest run
+packages/chain test$ vitest run
+supabase/tests test$ vitest run
+packages/chain test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-big-delivery/packages/chain
+packages/game-rules test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-big-delivery/packages/game-rules
+packages/auth test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-big-delivery/packages/auth
+supabase/tests test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-big-delivery/supabase/tests
+packages/chain test:  Test Files  3 passed (3)
+packages/chain test:       Tests  32 passed (32)
+packages/chain test:    Start at  11:45:45
+packages/chain test:    Duration  820ms (import 62%, tests 29%, transform 6%, worker 2%)
+packages/chain test: Done
+packages/auth test:  Test Files  1 passed (1)
+packages/auth test:       Tests  24 passed (24)
+packages/auth test:    Start at  11:45:45
+packages/auth test:    Duration  1.03s (import 73%, tests 17%, worker 5%, transform 5%)
+packages/auth test: Done
+supabase/tests test:  Test Files  34 passed (34)
+supabase/tests test:       Tests  581 passed (581)
+supabase/tests test:    Start at  11:45:45
+supabase/tests test:    Duration  17.06s (tests 83%, import 14%, transform 3%)
+supabase/tests test: Done
+packages/game-rules test:  Test Files  55 passed | 3 skipped (58)
+packages/game-rules test:       Tests  1020 passed | 2 expected fail | 11 skipped (1033)
+packages/game-rules test:    Start at  11:45:45
+packages/game-rules test:    Duration  39.65s (tests 94%, import 4%, transform 1%)
+packages/game-rules test: Done
+packages/api-contract test$ pnpm --filter @taskbar-hero/game-rules exec vitest run --root ../api-contract
+packages/api-contract test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-big-delivery/packages/api-contract
+packages/api-contract test:  Test Files  1 passed (1)
+packages/api-contract test:       Tests  16 passed (16)
+packages/api-contract test:    Start at  11:46:25
+packages/api-contract test:    Duration  408ms (transform 86%, import 12%, tests 1%, worker 1%)
+packages/api-contract test: Done
+apps/web test$ vitest run
+apps/web test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-big-delivery/apps/web
+apps/web test:  ❯ src/layout/HelpTab.search.test.tsx (0 test)
+apps/web test:  ❯ src/layout/StageLayout.test.tsx (11 tests | 2 failed) 26704ms
+apps/web test:    × boss request opens the replay, then the victory chest 5917ms
+apps/web test:    × holds every boss-sensitive panel at the pre-request state, then releases with the confirmed banner 5456ms
+apps/web test:  ❯ src/game/stage/relicWiring.ui.test.tsx (9 tests | 1 failed) 26888ms
+apps/web test:    × reuses confirmation reporting after a confirmed chain mint, without another mint call 5353ms
+apps/web test: ⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+apps/web test:  FAIL  src/layout/HelpTab.search.test.tsx [ src/layout/HelpTab.search.test.tsx ]
+apps/web test: Error: ENOENT: no such file or directory, open '../../reports/redesign/CXU4/help-strings.json'
+apps/web test:  ❯ src/layout/HelpTab.search.test.tsx:7:30
+apps/web test:       5| import { withConfigV2 } from '../../../../packages/game-rules/src/v2/s…
+apps/web test:       6| import { HelpTab } from './HelpTab';
+apps/web test:       7| const inventory = JSON.parse(readFileSync('../../reports/redesign/CXU4…
+apps/web test:        |                              ^
+apps/web test:       8| beforeEach(() => vi.stubEnv('VITE_GAME_V2', '1'));
+apps/web test:       9| afterEach(() => { cleanup(); vi.unstubAllEnvs(); });
+apps/web test: ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+apps/web test: ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+apps/web test:  FAIL  src/layout/StageLayout.test.tsx > boss request opens the replay, then the victory chest
+apps/web test: Error: Test timed out in 5000ms.
+apps/web test: If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+apps/web test:  ❯ src/layout/StageLayout.test.tsx:115:1
+apps/web test:     113|   expect(screen.getByTestId('game-canvas')).toBeTruthy();
+apps/web test:     114| });
+apps/web test:     115| it('boss request opens the replay, then the victory chest', async () =…
+apps/web test:        | ^
+apps/web test:     116|   render(<App />);
+apps/web test:     117|   fireEvent.click(screen.getByRole('tab', { name: 'Map' }));
+apps/web test: ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+apps/web test:  FAIL  src/layout/StageLayout.test.tsx > holds every boss-sensitive panel at the pre-request state, then releases with the confirmed banner
+apps/web test: Error: Test timed out in 5000ms.
+apps/web test: If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+apps/web test:  ❯ src/layout/StageLayout.test.tsx:177:1
+apps/web test:     175|
+apps/web test:     176|
+apps/web test:     177| it('holds every boss-sensitive panel at the pre-request state, then re…
+apps/web test:        | ^
+apps/web test:     178|   const before = stageState;
+apps/web test:     179|   const result = ARENA_FIXTURES[0]!.result;
+apps/web test: ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+apps/web test:  FAIL  src/game/stage/relicWiring.ui.test.tsx > reuses confirmation reporting after a confirmed chain mint, without another mint call
+apps/web test: Error: Test timed out in 5000ms.
+apps/web test: If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+apps/web test:  ❯ src/game/stage/relicWiring.ui.test.tsx:90:1
+apps/web test:      88|   expect(screen.queryByTestId('mint-flow')).toBeNull(); expect(fake.re…
+apps/web test:      89| });
+apps/web test:      90| it('reuses confirmation reporting after a confirmed chain mint, withou…
+apps/web test:        | ^
+apps/web test:      91|   fake.demo = false; forgePanel(); await forge();
+apps/web test:      92|   const mint = { nonce: voucher.nonce, hash: ('0x' + '1'.repeat(64)) a…
+apps/web test: ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+apps/web test:  Test Files  3 failed | 171 passed (174)
+apps/web test:       Tests  3 failed | 1724 passed (1727)
+apps/web test:    Start at  11:46:26
+apps/web test:    Duration  51.50s (environment 55%, tests 30%, import 10%, transform 5%)
+apps/web test: Environment  jsdom was created 174 times · 259.96s total, 55% of tracked time
+apps/web test:              create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+apps/web test:              learn more: https://vitest.dev/guide/improving-performance#test-environments
+apps/web test: Failed
+/Users/bao/taskbar-hero-cardrpg-big-delivery/apps/web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/web@0.0.0 test: `vitest run`
+Exit status 1
+ ELIFECYCLE  Test failed. See above for more details.

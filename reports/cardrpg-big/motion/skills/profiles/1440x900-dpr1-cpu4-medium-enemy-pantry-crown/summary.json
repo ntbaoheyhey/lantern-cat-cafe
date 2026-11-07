@@ -1,0 +1,160 @@
+{
+  "artifact": "/tmp/cardrpg-big-f3-index.html",
+  "sha256": "71192cc4983f43affa14eab1fb250eacabee7ce6ceee221901a1fc105ef73eee",
+  "started": "2026-11-06T10:07:34.485Z",
+  "rows": [
+    {
+      "name": "1440x900-dpr1-cpu4-medium-enemy-pantry-crown",
+      "action": {
+        "id": "enemy:pantry-crown",
+        "owner": "pantry-crown",
+        "name": "Pantry Crown · Every third round Empty banquet drains energy and silences the table.",
+        "ultimate": false,
+        "enemy": true
+      },
+      "width": 1440,
+      "height": 900,
+      "dpr": 1,
+      "cpu": 4,
+      "quality": "medium",
+      "errors": [],
+      "casts": [
+        {
+          "use": "first",
+          "duration": 1526,
+          "before": {
+            "at": 3735.7000000029802,
+            "frames": 4,
+            "calls": 199,
+            "triangles": 91210,
+            "geometries": 582,
+            "textures": 120,
+            "particles": 0,
+            "estimatedGpuBytes": 3762352,
+            "loaded": 4,
+            "hiddenFrames": 0,
+            "quality": "medium",
+            "gpuObjects": {
+              "geometries": 582,
+              "textures": 120
+            },
+            "heap": 43264152,
+            "heapDetail": {
+              "usedSize": 43264152,
+              "totalSize": 60194816,
+              "embedderHeapUsedSize": 3011456,
+              "backingStorageSize": 33483287
+            }
+          },
+          "after": {
+            "at": 5275.79999999702,
+            "frames": 96,
+            "calls": 205,
+            "triangles": 92756,
+            "geometries": 583,
+            "textures": 120,
+            "particles": 45,
+            "estimatedGpuBytes": 3989828,
+            "loaded": 4,
+            "hiddenFrames": 0,
+            "quality": "medium",
+            "gpuObjects": {
+              "geometries": 583,
+              "textures": 120
+            },
+            "heap": 42827164,
+            "heapDetail": {
+              "usedSize": 42827164,
+              "totalSize": 71467008,
+              "embedderHeapUsedSize": 3152808,
+              "backingStorageSize": 33483311
+            }
+          },
+          "summary": {
+            "frames": 92,
+            "max": 16.800000000000182,
+            "p95": 16.800000000000182,
+            "above25": 0,
+            "above50": 0,
+            "within20": 1,
+            "calls": 207,
+            "triangles": 93802,
+            "particles": 45
+          }
+        },
+        {
+          "use": "repeat",
+          "duration": 1526,
+          "before": {
+            "at": 5277.5,
+            "frames": 96,
+            "calls": 205,
+            "triangles": 92756,
+            "geometries": 583,
+            "textures": 120,
+            "particles": 45,
+            "estimatedGpuBytes": 3989828,
+            "loaded": 4,
+            "hiddenFrames": 0,
+            "quality": "medium",
+            "gpuObjects": {
+              "geometries": 583,
+              "textures": 120
+            },
+            "heap": 42837428,
+            "heapDetail": {
+              "usedSize": 42837428,
+              "totalSize": 71467008,
+              "embedderHeapUsedSize": 3152808,
+              "backingStorageSize": 33483311
+            }
+          },
+          "after": {
+            "at": 6807,
+            "frames": 188,
+            "calls": 205,
+            "triangles": 92756,
+            "geometries": 583,
+            "textures": 120,
+            "particles": 45,
+            "estimatedGpuBytes": 3989828,
+            "loaded": 4,
+            "hiddenFrames": 0,
+            "quality": "medium",
+            "gpuObjects": {
+              "geometries": 583,
+              "textures": 120
+            },
+            "heap": 36246820,
+            "heapDetail": {
+              "usedSize": 36246820,
+              "totalSize": 83263488,
+              "embedderHeapUsedSize": 3522312,
+              "backingStorageSize": 33483311
+            }
+          },
+          "summary": {
+            "frames": 92,
+            "max": 16.800000000000182,
+            "p95": 16.799999999999272,
+            "above25": 0,
+            "above50": 0,
+            "within20": 1,
+            "calls": 207,
+            "triangles": 93802,
+            "particles": 45
+          }
+        }
+      ],
+      "pageOpen": {
+        "frames": 331,
+        "max": 383.4000000000001,
+        "p95": 16.800000000000182,
+        "above25": 13,
+        "above50": 7,
+        "within20": 0.9607250755287009
+      }
+    }
+  ],
+  "ended": "2026-11-06T10:07:43.715Z"
+}

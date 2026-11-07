@@ -1,0 +1,70 @@
+
+> taskbar-hero@0.0.0 test /Users/bao/taskbar-hero-cardrpg-big-delivery
+> node --test scripts/*.test.mjs && pnpm -r test
+
+✔ explicit root and nested index imports resolve to their exact files (8.597833ms)
+✔ directory aliases coexist with explicit indexes and ordinary modules (1.733166ms)
+✔ test modules, fixture folders and non-TypeScript files stay out of deployment maps (1.923625ms)
+✔ output order is stable regardless of file creation order (3.14075ms)
+✔ generation preserves auth mappings and ignores shared or non-function directories (3.798792ms)
+✔ auth health HTTP 200 exits correctly without leaking response data (24.712459ms)
+✔ auth health HTTP 429 exits correctly without leaking response data (15.308542ms)
+✔ auth health HTTP 500 exits correctly without leaking response data (13.695833ms)
+✔ auth health HTTP 502 exits correctly without leaking response data (13.243209ms)
+✔ auth health HTTP 503 exits correctly without leaking response data (13.219ms)
+✔ auth health fails closed when the transport is unavailable (13.7675ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 156.226958
+Scope: 6 of 7 workspace projects
+packages/auth test$ vitest run
+packages/chain test$ vitest run
+packages/game-rules test$ vitest run
+supabase/tests test$ vitest run
+packages/auth test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-big-delivery/packages/auth
+packages/game-rules test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-big-delivery/packages/game-rules
+packages/chain test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-big-delivery/packages/chain
+supabase/tests test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-big-delivery/supabase/tests
+packages/chain test:  Test Files  3 passed (3)
+packages/chain test:       Tests  32 passed (32)
+packages/chain test:    Start at  11:44:13
+packages/chain test:    Duration  565ms (import 46%, transform 30%, tests 22%, worker 2%)
+packages/chain test: Done
+packages/auth test:  Test Files  1 passed (1)
+packages/auth test:       Tests  24 passed (24)
+packages/auth test:    Start at  11:44:13
+packages/auth test:    Duration  878ms (import 52%, tests 36%, transform 11%, worker 1%)
+packages/auth test: Done
+packages/game-rules test:  ❯ src/v2/codex/generator.test.mjs (3 tests | 1 failed) 1077ms
+packages/game-rules test:    ❯ offline Compendium generator and provenance (3)
+packages/game-rules test:      × runs outside the repo root, twice with all Node network entry points disabled, and writes identical JSON 3ms
+supabase/tests test:  Test Files  34 passed (34)
+supabase/tests test:       Tests  581 passed (581)
+supabase/tests test:    Start at  11:44:13
+supabase/tests test:    Duration  15.02s (tests 76%, import 13%, transform 10%)
+supabase/tests test: Done
+packages/game-rules test: ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+packages/game-rules test:  FAIL  src/v2/codex/generator.test.mjs > offline Compendium generator and provenance > runs outside the repo root, twice with all Node network entry points disabled, and writes identical JSON
+packages/game-rules test: Error: ENOENT: no such file or directory, mkdtemp '/Users/bao/taskbar-hero-cardrpg-big-delivery/reports/scorecard/CXL1/generator-XXXXXX'
+packages/game-rules test:  ❯ src/v2/codex/generator.test.mjs:25:21
+packages/game-rules test:      23|
+packages/game-rules test:      24|   it('runs outside the repo root, twice with all Node network entry po…
+packages/game-rules test:      25|     const scratch = mkdtempSync(join(root, 'reports/scorecard/CXL1/gen…
+packages/game-rules test:        |                     ^
+packages/game-rules test:      26|     try {
+packages/game-rules test:      27|       const guard = join(scratch, 'offline.cjs');
+packages/game-rules test: ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+packages/game-rules test:  Test Files  1 failed | 54 passed | 3 skipped (58)
+packages/game-rules test:       Tests  1 failed | 1019 passed | 2 expected fail | 11 skipped (1033)
+packages/game-rules test:    Start at  11:44:13
+packages/game-rules test:    Duration  36.14s (tests 92%, transform 6%, import 2%)
+packages/game-rules test: Failed
+/Users/bao/taskbar-hero-cardrpg-big-delivery/packages/game-rules:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/game-rules@0.0.0 test: `vitest run`
+Exit status 1
+ ELIFECYCLE  Test failed. See above for more details.

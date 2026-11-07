@@ -1,0 +1,36 @@
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-big/packages/game-rules
+
+ ❯ src/cardrpg/depth/equipment-balance.test.ts (35 tests | 1 failed) 28ms
+   × reads and displays old saved affix rolls within current bounds without rewriting the save 3ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/cardrpg/depth/equipment-balance.test.ts > reads and displays old saved affix rolls within current bounds without rewriting the save
+Error: Save code has an unsupported or damaged structure.
+ ❯ fail src/cardrpg/depth/save.ts:19:32
+     17|   return (hash >>> 0).toString(16).padStart(8, '0');
+     18| }
+     19| function fail(): never { throw new Error('Save code has an unsupported…
+       |                                ^
+     20| function record(value: unknown): value is Record<string, unknown> {
+     21|   return value !== null && typeof value === 'object' && !Array.isArray…
+ ❯ shape src/cardrpg/depth/save.ts:42:47
+ ❯ shape src/cardrpg/depth/save.ts:41:57
+ ❯ shape src/cardrpg/depth/save.ts:41:57
+ ❯ shape src/cardrpg/depth/save.ts:41:57
+ ❯ validateDepth src/cardrpg/depth/save.ts:69:3
+ ❯ exportSave src/cardrpg/depth/save.ts:95:3
+ ❯ src/cardrpg/depth/equipment-balance.test.ts:64:31
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 3 passed (4)
+      Tests  1 failed | 119 passed (120)
+   Start at  23:16:13
+   Duration  198ms (transform 45%, import 31%, tests 21%, worker 3%)
+
+undefined
+/Users/bao/taskbar-hero-cardrpg-big/packages/game-rules:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: vitest run src/cardrpg/depth/equipment-balance.test.ts src/cardrpg/depth/equipment.test.ts src/cardrpg/depth/builds.test.ts src/cardrpg/depth/design-caps.test.ts

@@ -1,0 +1,71 @@
+{"lock":"acquired","lane":"A","pid":50565,"startedAt":"2026-11-07T13:45:25.493Z","task":"a3-task3-fixed tests"}
+
+> taskbar-hero@0.0.0 test /Users/bao/taskbar-hero-cardrpg-big-delivery
+> node --test scripts/*.test.mjs && pnpm -r test
+
+✔ explicit root and nested index imports resolve to their exact files (8.428333ms)
+✔ directory aliases coexist with explicit indexes and ordinary modules (1.904417ms)
+✔ test modules, fixture folders and non-TypeScript files stay out of deployment maps (2.121083ms)
+✔ output order is stable regardless of file creation order (3.082708ms)
+✔ generation preserves auth mappings and ignores shared or non-function directories (4.561208ms)
+✔ auth health HTTP 200 exits correctly without leaking response data (22.341625ms)
+✔ auth health HTTP 429 exits correctly without leaking response data (16.255417ms)
+✔ auth health HTTP 500 exits correctly without leaking response data (14.072542ms)
+✔ auth health HTTP 502 exits correctly without leaking response data (13.068084ms)
+✔ auth health HTTP 503 exits correctly without leaking response data (13.943083ms)
+✔ auth health fails closed when the transport is unavailable (12.765ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 158.793375
+Scope: 6 of 7 workspace projects
+packages/auth test$ vitest run
+packages/chain test$ vitest run
+packages/game-rules test$ vitest run
+supabase/tests test$ vitest run
+packages/chain test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-big-delivery/packages/chain
+packages/auth test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-big-delivery/packages/auth
+packages/game-rules test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-big-delivery/packages/game-rules
+supabase/tests test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-big-delivery/supabase/tests
+packages/chain test:  Test Files  3 passed (3)
+packages/chain test:       Tests  32 passed (32)
+packages/chain test:    Start at  20:45:48
+packages/chain test:    Duration  633ms (import 54%, tests 31%, transform 9%, worker 6%)
+packages/chain test: Done
+packages/auth test:  Test Files  1 passed (1)
+packages/auth test:       Tests  24 passed (24)
+packages/auth test:    Start at  20:45:48
+packages/auth test:    Duration  805ms (import 67%, tests 30%, transform 2%, worker 1%)
+packages/auth test: Done
+supabase/tests test:  Test Files  34 passed (34)
+supabase/tests test:       Tests  581 passed (581)
+supabase/tests test:    Start at  20:45:48
+supabase/tests test:    Duration  11.63s (tests 80%, import 17%, transform 2%)
+supabase/tests test: Done
+packages/game-rules test:  Test Files  55 passed | 3 skipped (58)
+packages/game-rules test:       Tests  1020 passed | 2 expected fail | 11 skipped (1033)
+packages/game-rules test:    Start at  20:45:48
+packages/game-rules test:    Duration  31.74s (tests 95%, import 4%, transform 1%)
+packages/game-rules test: Done
+packages/api-contract test$ pnpm --filter @taskbar-hero/game-rules exec vitest run --root ../api-contract
+packages/api-contract test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-big-delivery/packages/api-contract
+packages/api-contract test:  Test Files  1 passed (1)
+packages/api-contract test:       Tests  16 passed (16)
+packages/api-contract test:    Start at  20:46:20
+packages/api-contract test:    Duration  134ms (transform 50%, import 41%, tests 6%, worker 3%)
+packages/api-contract test: Done
+apps/web test$ vitest run
+apps/web test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-big-delivery/apps/web
+apps/web test:  Test Files  175 passed (175)
+apps/web test:       Tests  1735 passed (1735)
+apps/web test:    Start at  20:46:20
+apps/web test:    Duration  17.44s (environment 48%, tests 38%, import 11%, transform 3%, worker 1%)
+apps/web test: Environment  jsdom was created 175 times · 81.12s total, 48% of tracked time
+apps/web test:              create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+apps/web test:              learn more: https://vitest.dev/guide/improving-performance#test-environments
+apps/web test: Done
+{"lock":"released","pid":50565,"task":"a3-task3-fixed tests"}

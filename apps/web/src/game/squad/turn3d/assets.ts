@@ -1,6 +1,7 @@
 import { GLTFLoader, type GLTF } from 'three/addons/loaders/GLTFLoader.js';
+import { isLookV2 } from './look-v2';
 
-declare global { interface Window { __TURN3D_MODELS__?: Record<string, string> } }
+declare global { interface Window { __TURN3D_MODELS__?: Record<string, string>; __LOOK_PACKED__?: boolean } }
 const sources = new Map<string, string>();
 /** Optional assets registered only by the opt-in depth entry. */
 export function registerModelSources(entries: Record<string, string>) {
@@ -9,16 +10,30 @@ export function registerModelSources(entries: Record<string, string>) {
 const cache = new Map<string, Promise<GLTF>>();
 /** Same GLBs in the app and offline document. No fetch is needed for file://. */
 export function loadModel(role: string): Promise<GLTF> {
-  const cached = cache.get(role); if (cached) return cached;
+  const look = isLookV2();
+  const key = `${look ? 'atelier' : 'classic'}/${role}`;
+  const cached = cache.get(key); if (cached) return cached;
   const loader = new GLTFLoader();
+  const prepare = look || window.__LOOK_PACKED__
+    ? import('three/addons/libs/meshopt_decoder.module.js').then(({ MeshoptDecoder }) => {
+      loader.setMeshoptDecoder(MeshoptDecoder);
+      return MeshoptDecoder.ready;
+    }) : Promise.resolve();
   const embedded = window.__TURN3D_MODELS__?.[role];
-  const result = embedded
+  const original = () => embedded
     ? new Promise<GLTF>((resolve, reject) => {
       const bytes = Uint8Array.from(atob(embedded), c => c.charCodeAt(0));
       loader.parse(bytes.buffer, '', resolve, reject);
     })
     : loader.loadAsync(sources.get(role) ?? `${import.meta.env.BASE_URL}art/turn3d/${role}.glb`);
-  cache.set(role, result);
-  void result.catch(() => { cache.delete(role); });
+  const result = prepare.then(() => look ? import('./look-models').then(async ({ lookModelSources }) => {
+    const url = lookModelSources[role];
+    if (!url) return original();
+    const model = await loader.loadAsync(url);
+    model.scene.userData.lookV2 = true;
+    return model;
+  }) : original());
+  cache.set(key, result);
+  void result.catch(() => { cache.delete(key); });
   return result;
 }

@@ -2,8 +2,8 @@ export interface Rect {x:number;y:number;width:number;height:number}
 export interface LabelInput {id:string;x:number;y:number;head:Rect;height:number}
 export const intersects=(a:Rect,b:Rect,pad=3)=>a.x<b.x+b.width+pad&&a.x+a.width+pad>b.x&&a.y<b.y+b.height+pad&&a.y+a.height+pad>b.y;
 /** Choose the nearest legal screen-space box; avoid all silhouettes and other labels. */
-export function layoutLabels(input:LabelInput[],width:number,height:number,labelWidth=114){
- const placed:Rect[]=[],result=new Map<string,Rect>(),heads=input.map(p=>p.head);
+export function layoutLabels(input:LabelInput[],width:number,height:number,labelWidth=114,obstacles:Rect[]=[]){
+ const placed:Rect[]=[],result=new Map<string,Rect>(),heads=[...input.map(p=>p.head),...obstacles];
  for(const p of [...input].sort((a,b)=>a.y-b.y||a.x-b.x||a.id.localeCompare(b.id))){
   let best:Rect|undefined,bestCost=Infinity;
   const consider=(x:number,y:number)=>{

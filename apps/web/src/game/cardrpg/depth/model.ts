@@ -1,28 +1,47 @@
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import { firstInvitation } from '@taskbar-hero/game-rules/src/cardrpg/depth/onboarding';
 import { CARDS, type Command } from '@taskbar-hero/game-rules/cardrpg';
-import { createActionPlan, sampleActionPlan, type EffectPlan } from '../../squad/turn3d/effects';
+import { sampleActionPlan, type EffectPlan } from '../../squad/turn3d/effects';
 import type { TurnEvent } from '@taskbar-hero/game-rules/src/squad/turn/types';
+import { galleryFixture, GALLERY_ACTIONS } from './feel-lab';
 import { CafeAudio } from '../../squad/turn3d/audio';
+import { createCardActionPlan } from './card-action-plan';
+import { snapshotBattle, splitPresentation } from './battle-presentation';
+import { readTeamPresets, TEAM_PRESETS_KEY, type TeamPreset } from './meta-presentation';
 
-export type Screen = 'hub' | 'team' | 'collection' | 'inventory' | 'gacha' | 'map' | 'codex' | 'relics' | 'save' | 'evidence';
+export type Screen = 'hub' | 'team' | 'collection' | 'inventory' | 'gacha' | 'map' | 'codex' | 'relics' | 'save' | 'evidence' | 'prepare' | 'result';
 export class DepthModel {
   state: R.DepthAccount;
   screen: Screen = 'hub';
   cardId = 'mochi';
   itemId = '';
-  notice = 'Your next step is a short lesson at the practice table.';
+  notice = 'Build your team, press Fight, then watch your companions take the lead.';
   error = false;
-  auto = false;
+  teamPresets: Array<TeamPreset | null> = [null, null, null];
+  galleryBattle: R.Battle | null = null;
+  galleryId = GALLERY_ACTIONS[0]!.id;
+  galleryEffectOnly = false;
+  gallerySpeed = 1;
+  labOpen = false;
+  labPanel: 'gallery' | 'compare' | 'motion' | 'performance' | 'checklist' = 'gallery';
+  labPerformance = false;
+  private galleryReturn?: { plan: EffectPlan | null; animationAt: number; paused: boolean };
+  readonly galleryActions = GALLERY_ACTIONS;
+  watching = false;
+  camera: 'wide' | 'close' | 'far' = 'wide';
   paused = false;
-  selectedSkill = '';
-  selectedTarget = '';
   tutorialBattle: R.Battle | null = null;
   replay: R.Battle | null = null;
   replayChoices: R.Choice[] = [];
   replayIndex = 0;
+  replayReturn: Screen = 'save';
   plan: EffectPlan | null = null;
   animationAt = 0;
+  momentNote = '';
+  private beforeImpact: R.Battle | null = null;
+  private afterImpact: R.Battle | null = null;
+  private roundPlan: EffectPlan | null = null;
+  private impactApplied = false;
   sceneStarted = false;
   sceneReady = false;
   sceneError = '';
@@ -51,7 +70,32 @@ export class DepthModel {
       this.liveRelicNote = 'Read connected wallet or choose fixture mode';
     }
     this.itemId = this.state.gear[0]?.id ?? '';
-    this.sceneStarted = !!this.battle;
+    if (!offline) {
+      try { this.teamPresets = readTeamPresets(localStorage.getItem(TEAM_PRESETS_KEY)); } catch { /* Preferences remain available for this visit. */ }
+    }
+    this.restoreEncounter();
+  }
+  saveTeamPreset(index: number) {
+    if (!Number.isInteger(index) || index < 0 || index >= 3) return;
+    this.teamPresets[index] = { name: `Shift ${index + 1}`, team: [...this.state.team],
+      rows: Object.fromEntries(this.state.team.map(id => [id, this.state.rows[id]!])) };
+    if (this.offline) {
+      this.notice = `Shift ${index + 1} saved for this offline visit.`;
+      this.error = false;
+      this.notify(false);
+      return;
+    }
+    try {
+      localStorage.setItem(TEAM_PRESETS_KEY, JSON.stringify({ version: 1, slots: this.teamPresets }));
+      this.notice = `Shift ${index + 1} saved in this browser.`;
+    } catch { this.notice = `Shift ${index + 1} saved for this visit. Browser storage is unavailable.`; }
+    this.error = false;
+    this.notify(false);
+  }
+  loadTeamPreset(index: number) {
+    const preset = this.teamPresets[index];
+    if (!preset) return;
+    this.apply(R.configureTeam(this.state, preset.team, preset.rows, this.state.skills), `${preset.name} restored.`);
   }
   snapshot = () => this.revision;
   subscribe = (listener: () => void) => { this.listeners.add(listener); return () => this.listeners.delete(listener); };
@@ -63,11 +107,37 @@ export class DepthModel {
     this.revision++;
     for (const listener of this.listeners) listener();
   }
-  get battle() { return this.replay ?? this.tutorialBattle ?? this.state.run?.battle ?? null; }
+  get battle() { return this.galleryBattle ?? this.replay ?? this.tutorialBattle ?? this.state.run?.battle ?? null; }
+  get visualBattle() {
+    if (this.galleryBattle || !this.plan || this.plan.skillId === 'round-status') return this.battle;
+    return (this.impactApplied ? this.afterImpact : this.beforeImpact) ?? this.battle;
+  }
+  get impactVisible() { return !!this.plan && this.animationAt >= this.plan.beats[2]!.start; }
+  get showBattle() { return !!this.battle && (!!this.galleryBattle || this.watching); }
   get saveStatus() { return this.offline ? 'Export to keep progress' : this.storageFailed ? 'Export to keep progress · local saving unavailable' : 'Saved locally'; }
   get busy() { return !!this.plan; }
-  get canAct() { return !!this.battle && !this.battle.result && !this.busy && !this.paused && (this.sceneReady || !!this.sceneError); }
+  get canAct() { return !this.galleryBattle && this.showBattle && !!this.battle && !this.battle.result && !this.busy && !this.paused && (this.sceneReady || !!this.sceneError); }
   get frame() { return this.plan ? sampleActionPlan(this.plan, this.animationAt, this.state.settings.reducedMotion) : null; }
+  inspect(id: string, progress = 0, play = false) {
+    const fixture = galleryFixture(id);
+    if (!this.galleryBattle) this.galleryReturn = { plan: this.plan, animationAt: this.animationAt, paused: this.paused };
+    this.galleryId = id;
+    this.galleryBattle = fixture.battle;
+    this.plan = progress < 0 ? null : fixture.plan;
+    this.animationAt = fixture.plan.duration * Math.max(0, Math.min(1, progress));
+    this.paused = !play;
+    this.sceneStarted = true;
+    this.notify(false);
+  }
+  closeGallery() {
+    this.galleryBattle = null;
+    this.plan = this.galleryReturn?.plan ?? null;
+    this.animationAt = this.galleryReturn?.animationAt ?? 0;
+    this.paused = this.galleryReturn?.paused ?? false;
+    this.galleryReturn = undefined;
+    this.galleryEffectOnly = false;
+    this.notify(false);
+  }
   apply(result: R.RuleResult<R.DepthAccount>, message = 'Saved to your cafe account.') {
     this.error = !result.ok;
     if (result.ok) { this.state = result.state; this.notice = message; this.audio.ui(); }
@@ -76,6 +146,7 @@ export class DepthModel {
     return result.ok;
   }
   go(screen: Screen) {
+    if (screen === 'map' && this.battle && !this.watching) screen = this.battle.result ? 'result' : 'prepare';
     if (screen === 'hub' && (!this.state.run || this.state.run.complete)) this.sceneStarted = false;
     this.screen = screen; this.error = false; this.notify(false); }
   command(command: Command) { this.apply(R.metaCommand(this.state, command)); }
@@ -83,60 +154,126 @@ export class DepthModel {
     if (this.apply(R.startRun(this.state, chapter, this.state.account.seed + this.state.nextRunId * 7919, mode, this.offline ? '2026-11-06' : new Date().toISOString().slice(0, 10)), 'Choose the first stop on your route.')) this.go('map');
   }
   enter(id: string) {
-    if (this.apply(R.enterNode(this.state, id), 'Read the intent, then choose your response.')) {
-      this.selectedSkill = ''; this.selectedTarget = ''; this.auto = false;
-      if (this.battle) this.sceneStarted = true;
+    if (this.apply(R.enterNode(this.state, id), 'Prepare your companions, then press Fight.')) {
+      this.plan = null; this.paused = false; this.watching = false;
+      if (this.battle) this.screen = 'prepare';
       this.notify(false);
     }
   }
   tutorial() {
     this.tutorialBattle = R.createBattle({ seed: 7, chapter: 1, cats: R.battleCats(this.state), enemies: ['practice-cushion'], tutorial: true });
-    this.sceneStarted = true; this.auto = false; this.paused = false; this.selectedSkill = ''; this.go('map');
+    this.plan = null; this.watching = false; this.paused = false; this.go('prepare');
   }
-  choose(skillId: string) {
-    this.selectedSkill = skillId;
-    this.selectedTarget = R.legalChoices(this.battle!).find(c => c.skillId === skillId)?.targetId ?? '';
+  fight() {
+    if (!this.battle || this.battle.result) return;
+    this.watching = true; this.paused = false; this.sceneStarted = true; this.screen = 'map';
     this.notify(false);
+  }
+  watchNow() {
+    if (!this.state.run || this.state.run.complete) {
+      this.start(1);
+      const node = R.availableNodes(this.state.run!)[0];
+      if (node) this.enter(node.id);
+    }
+    this.go('map');
+    this.fight();
+  }
+  private restoreEncounter() {
+    this.watching = !!this.battle && !this.battle.result && this.battle.choices.length > 0;
+    this.sceneStarted = this.watching;
+    this.screen = this.battle ? this.battle.result ? 'result' : this.watching ? 'map' : 'prepare' : 'hub';
+  }
+  private showResult() {
+    this.watching = false; this.paused = false; this.plan = null; this.screen = 'result'; this.notify();
+  }
+  skip() {
+    if (!this.battle || this.galleryBattle) return;
+    if (this.replay) {
+      this.replay = R.replayBattle(this.replay.initial, this.replayChoices);
+      this.replayIndex = this.replayChoices.length;
+    } else R.playBattle(this.battle, 'auto');
+    this.showResult();
   }
   act(choice?: R.Choice) {
     const battle = this.battle;
     if (!battle || !this.canAct) return;
     const actor = R.currentActor(battle);
     if (!actor) return;
+    const snapshot = snapshotBattle(battle);
     const before = battle.log.length;
-    let skillId = choice?.skillId ?? this.selectedSkill;
-    const targetId = choice?.targetId ?? this.selectedTarget;
+    const passiveBefore = actor.passiveUsed;
+    const shieldBefore = actor.shield;
+    const intent = battle.intents.find(candidate => candidate.actorId === actor.id);
+    const softened = intent?.interrupted || actor.statuses.some(status => status.id === 'drowsy');
+    const utility = ['heal', 'shield'].includes(R.ENEMY_BY_ID[actor.catalogId]?.mechanic ?? '')
+      && !actor.statuses.some(status => status.id === 'hush');
+    const signature = !softened && (intent?.signature || utility);
+    const selected = actor.side === 'party' ? choice ?? R.chooseAction(battle, 'auto') : null;
+    let skillId = selected?.skillId ?? '';
     let accepted = false;
     if (actor.side === 'enemy') {
       skillId = `${R.ENEMY_BY_ID[actor.catalogId]!.role}Attack`;
       accepted = R.enemyAct(battle);
-    } else accepted = R.act(battle, choice ?? { actorId: actor.id, skillId, targetId });
-    if (!accepted) { this.notice = 'Choose an available skill and one of its highlighted targets.'; this.notify(false); return; }
-    const targets = [...new Set(battle.log.slice(before).map(e => e.targetId))];
-    const events: TurnEvent[] = [{ version: 3, seq: 0, turn: actor.turns, round: battle.round,
-      actionId: battle.log.length, beat: 0, type: 'action_start', actorId: actor.id, skillId, targetIds: targets, amount: 0 }];
-    for (const event of battle.log.slice(before)) {
-      const type = ({ damage: 'damage', dot: 'damage', detonate: 'damage', heal: 'heal', shield: 'shield', defeat: 'death', status: 'status_apply' } as const)[event.kind as 'damage'];
-      if (type) events.push({ version: 3, seq: events.length, turn: actor.turns, round: event.round,
-        actionId: battle.log.length, beat: 2, type, actorId: event.actorId, skillId,
-        targetIds: [event.targetId], amount: event.amount });
-    }
-    this.plan = createActionPlan(events);
+    } else accepted = R.act(battle, selected!);
+    if (!accepted) { this.notice = 'This recorded action could not be resolved.'; this.error = true; this.showResult(); return; }
+    const presentation = splitPresentation(snapshot, battle, skillId);
+    const targets = [...new Set(presentation.events.flatMap(event => event.targetIds))];
+    if (!targets.length) targets.push(selected?.targetId ?? intent?.targetId ?? actor.id);
+    const events: TurnEvent[] = [{ version: 3, seq: 0, turn: actor.turns, round: snapshot.round,
+      actionId: battle.log.length, beat: 0, type: 'action_start', actorId: actor.id, skillId, targetIds: targets, amount: 0 },
+      ...presentation.events];
+    this.beforeImpact = snapshot;
+    this.afterImpact = presentation.impact;
+    this.roundPlan = presentation.roundPlan;
+    this.impactApplied = false;
+    const identity = actor.side === 'enemy'
+      ? `enemy:${actor.catalogId}${signature ? '' : ':basic'}` : skillId;
+    const savingHeal = events.find(event => event.type === 'heal' && event.amount > 0
+      && snapshot.actors.some(target => event.targetIds.includes(target.id) && target.hp / target.maxHp <= .25)
+      && presentation.impact.actors.some(target => event.targetIds.includes(target.id) && target.hp / target.maxHp > .25));
+    const lastHit = events.some(event => event.type === 'death')
+      && presentation.impact.actors.filter(target => target.side === 'enemy').every(target => target.hp <= 0);
+    this.momentNote = savingHeal ? 'Clutch heal' : lastHit ? 'Last hit' : '';
+    if (savingHeal) savingHeal.note = 'Clutch heal';
+    this.plan = createCardActionPlan(events, identity);
+    const actionEvents = battle.log.slice(before);
+    const mochiShield = actor.catalogId === 'mochi' && actor.shield > shieldBefore
+      && actionEvents.some(event => event.kind === 'shield' && event.targetId !== actor.id);
+    const sootDetonation = actor.catalogId === 'soot'
+      && actionEvents.some(event => event.kind === 'detonate' && event.amount > 0);
+    const cloverCleanse = actor.catalogId === 'clover' && !passiveBefore && actor.passiveUsed;
+    if (mochiShield || sootDetonation || cloverCleanse) this.plan.presentationCues = [`${actor.catalogId}-passive`];
     this.animationAt = 0;
-    this.selectedSkill = ''; this.selectedTarget = '';
     this.notify();
   }
   tick(milliseconds: number) {
-    if (this.paused || !this.plan) return;
-    this.animationAt += milliseconds * this.state.settings.speed;
-    if (this.animationAt >= this.plan.duration) { this.plan = null; this.notify(false); }
+    if (this.paused || !this.showBattle) return;
+    if (!this.plan) { if (this.battle?.result && !this.galleryBattle) this.showResult(); return; }
+    this.animationAt += milliseconds * (this.galleryBattle ? this.gallerySpeed : this.state.settings.speed);
+    if (!this.galleryBattle && !this.impactApplied && this.impactVisible) {
+      this.impactApplied = true;
+      this.notify(false);
+    }
+    if (this.animationAt >= this.plan.duration) this.finishMoment();
+  }
+  finishMoment() {
+    if (this.galleryBattle) { this.plan = null; this.notify(false); return; }
+    this.momentNote = '';
+    this.plan = this.roundPlan;
+    this.roundPlan = null;
+    this.animationAt = 0;
+    this.beforeImpact = null;
+    this.afterImpact = null;
+    this.impactApplied = true;
+    if (this.battle?.result && !this.plan) this.showResult();
+    else this.notify(false);
   }
   step(policy: R.Policy = 'auto') {
     if (!this.canAct || !this.battle) return;
     this.act(R.currentActor(this.battle)?.side === 'party' ? R.chooseAction(this.battle, policy) : undefined);
   }
   finish() {
-    if (this.replay) { this.replay = null; this.plan = null; this.go('save'); return; }
+    if (this.replay) { this.replay = null; this.plan = null; this.watching = false; this.go(this.replayReturn); return; }
     if (this.tutorialBattle?.result) {
       this.tutorialBattle = null;
       this.sceneStarted = false;
@@ -144,18 +281,34 @@ export class DepthModel {
       this.notice = 'A welcome invitation is ready. Then equip your first piece.';
       this.go('gacha'); this.notify(); return;
     }
-    this.apply(R.finishEncounter(this.state), 'Choose a charm or strengthen one equipped skill.');
+    if (this.apply(R.finishEncounter(this.state), 'Choose a charm or strengthen one unlocked skill.')) this.go('map');
+  }
+  improveTeam() {
+    this.finish();
+    if (this.state.run && !this.state.run.complete) this.apply(R.abandonRun(this.state), 'Route rewards kept. Improve your team for the next route.');
+    this.go('team');
+  }
+  leave() {
+    if (this.galleryBattle) { this.closeGallery(); return; }
+    if (this.replay) { this.finish(); return; }
+    this.paused = false; this.plan = null; this.watching = false;
+    if (this.tutorialBattle) { this.tutorialBattle = null; this.state.tutorial = 3; }
+    else this.apply(R.abandonRun(this.state), 'Partial route rewards kept.');
+    this.go('hub'); this.notify();
   }
   invite(free = false) {
     const seed = this.state.account.seed + this.state.account.history.length * 101 + 39;
     this.apply(free ? firstInvitation(this.state, 4) : R.metaCommand(this.state, { type: 'pull', bannerId: 'standard', seed }), 'Your invitation is open. Every companion has their own kit.');
   }
   replayLast() {
-    if (!this.state.lastBattle) return;
-    this.replay = R.createBattle(this.state.lastBattle);
-    this.replayChoices = this.state.lastChoices;
+    const completed = this.screen === 'result' ? this.battle : null;
+    const setup = completed?.initial ?? this.state.lastBattle;
+    if (!setup) return;
+    this.replayReturn = this.screen;
+    this.replayChoices = [...(completed?.choices ?? this.state.lastChoices)];
+    this.replay = R.createBattle(setup);
     this.replayIndex = 0;
-    this.sceneStarted = true; this.auto = false; this.paused = false; this.go('map');
+    this.sceneStarted = true; this.watching = true; this.paused = false; this.plan = null; this.go('map');
   }
   replayStep() {
     if (!this.replay || !this.canAct) return;
@@ -163,26 +316,24 @@ export class DepthModel {
     else {
       const choice = this.replayChoices[this.replayIndex++];
       if (choice) this.act(choice);
-      else { this.notice = 'Replay reached its last recorded action.'; this.paused = true; this.notify(false); }
+      else { this.notice = 'Replay reached its last recorded action.'; this.showResult(); }
     }
   }
   import(code: string) {
     try {
       const next = R.importSave(code, this.offline ? 0 : Date.now());
       if (!this.offline) { next.relics = []; next.selectedRelic = null; }
-      this.state = next; this.tutorialBattle = null; this.replay = null; this.plan = null;
-      this.sceneStarted = !!this.battle;
+      this.state = next; this.tutorialBattle = null; this.replay = null; this.plan = null; this.galleryBattle = null;
+      this.restoreEncounter();
       this.paused = false;
-      this.selectedSkill = ''; this.selectedTarget = '';
       this.cardId = next.team[0]!; this.itemId = next.gear[0]?.id ?? '';
       this.storageFailed = false; this.notice = 'Save imported and checksum verified.'; this.error = false; this.notify();
     } catch (error) { this.error = true; this.notice = String(error); this.notify(false); }
   }
   reset() {
     this.state = R.createDepthAccount(11, this.offline ? 0 : Date.now());
-    this.tutorialBattle = null; this.replay = null; this.plan = null;
-    this.paused = false; this.auto = false;
-    this.selectedSkill = ''; this.selectedTarget = '';
+    this.tutorialBattle = null; this.replay = null; this.plan = null; this.galleryBattle = null;
+    this.paused = false; this.watching = false;
     this.cardId = this.state.team[0]!; this.itemId = this.state.gear[0]?.id ?? '';
     this.storageFailed = false; this.notice = 'A fresh cafe is ready.'; this.go('hub'); this.notify();
   }

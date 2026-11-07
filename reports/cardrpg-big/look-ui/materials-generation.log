@@ -1,0 +1,71 @@
+{
+  "method": "Original seeded periodic scalar fields, wrapped pulp fibres and woven sinusoidal relief; alpha-only black/white overlays.",
+  "seed": 20261107,
+  "tileSize": 256,
+  "source": "tools/cardrpg-big/look-surfaces.py",
+  "sourceSha256": "4339dd28f42f65c66a3ef76f4cad2610b3bb8b95e09234627ef71fef4f6aa053",
+  "tools": {
+    "python": "3.9.6",
+    "pillow": "11.3.0",
+    "numpy": "2.0.2"
+  },
+  "externalReferences": [],
+  "modelCalls": 0,
+  "usage": "Static DOM backgrounds behind content, recoloured by LOOK tokens; no changes to 3D or flag-off styling.",
+  "acceptance": "Prepared assets only; browser rendering, real-text contrast and visual before/after still pending.",
+  "assets": [
+    {
+      "path": "assets/art/cardrpg-look-meta/paper.png",
+      "width": 256,
+      "height": 256,
+      "bytes": 29802,
+      "sha256": "cd8597c4f84e5c49db759fd3a062c39000855cf4ad8984b04bf007fcb7e9d56f",
+      "alphaMax": 18,
+      "alphaMean": 3.65673828125,
+      "rgbaRoundTripExact": true,
+      "seam": {
+        "x": 1.1875,
+        "y": 1.578125,
+        "ordinaryX": 1.375765931372549,
+        "ordinaryY": 1.7201899509803922
+      }
+    },
+    {
+      "path": "assets/art/cardrpg-look-meta/felt.png",
+      "width": 256,
+      "height": 256,
+      "bytes": 37339,
+      "sha256": "70dd569305db666c57b1757b305cf829dd5d80a81e853b727e1da1cf42648389",
+      "alphaMax": 16,
+      "alphaMean": 2.9468841552734375,
+      "rgbaRoundTripExact": true,
+      "seam": {
+        "x": 2.97265625,
+        "y": 2.44921875,
+        "ordinaryX": 2.7996476715686276,
+        "ordinaryY": 2.8215839460784315
+      }
+    },
+    {
+      "path": "assets/art/cardrpg-look-meta/grain.png",
+      "width": 256,
+      "height": 256,
+      "bytes": 38511,
+      "sha256": "8457b70a12827ddb3ee7e5b5d7507a3dc4283fda2d985001f0de107ec80f9936",
+      "alphaMax": 10,
+      "alphaMean": 2.835601806640625,
+      "rgbaRoundTripExact": true,
+      "seam": {
+        "x": 3.81640625,
+        "y": 3.52734375,
+        "ordinaryX": 3.5324908088235296,
+        "ordinaryY": 3.544776348039216
+      }
+    }
+  ],
+  "totalBytes": 105652,
+  "preview": {
+    "path": "reports/cardrpg-big/look-ui/materials-preview.png",
+    "sha256": "dcc1274792d1719d9e3a4f4c4f08ada0099b2c6134adb00abed52fe4d866e64b"
+  }
+}

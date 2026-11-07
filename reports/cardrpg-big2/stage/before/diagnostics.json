@@ -1,0 +1,995 @@
+{
+  "artifact": "/tmp/cardrpg-big2-b2c-index.html",
+  "sha256": "e116b0d15b267a7b27547d1a7cbe2b44e6d7173df501969094a18806570c29de",
+  "errors": [],
+  "requests": [],
+  "method": "Fixed idle time 1s, 1280x720, native DPR crops, face center projected from original model head node. Scene paused for repeatable capture. Portrait measured on Team at actual CSS size, not a temporary loading placeholder. F0 home portrait composition differs; no perceptual-equivalence claim.",
+  "rows": [
+    {
+      "dpr": 1,
+      "crops": [
+        {
+          "label": "hud-text",
+          "path": "reports/cardrpg-big2/stage/before/dpr1-hud-text.png",
+          "clip": {
+            "x": 210,
+            "y": 14.328125,
+            "width": 131.46875,
+            "height": 33.4375
+          }
+        },
+        {
+          "label": "portrait",
+          "path": "reports/cardrpg-big2/stage/before/dpr1-portrait.png",
+          "clip": {
+            "x": 337.796875,
+            "y": 388.25,
+            "width": 181,
+            "height": 145
+          }
+        },
+        {
+          "label": "hero-face",
+          "path": "reports/cardrpg-big2/stage/before/dpr1-hero-face.png",
+          "clip": {
+            "x": 429.5006286857998,
+            "y": 258.3974564118345,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "label": "enemy",
+          "path": "reports/cardrpg-big2/stage/before/dpr1-enemy.png",
+          "clip": {
+            "x": 919.9603915132528,
+            "y": 285.17102795253163,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "label": "skill-icon",
+          "path": "reports/cardrpg-big2/stage/before/dpr1-skill-icon.png",
+          "clip": {
+            "x": 232,
+            "y": 401.84375,
+            "width": 44,
+            "height": 44
+          }
+        }
+      ],
+      "faces": [
+        {
+          "id": "mochi",
+          "angle": 16.381972049980075,
+          "x": 461.5006286857998,
+          "y": 290.3974564118345
+        },
+        {
+          "id": "soot",
+          "angle": 20.524353977437347,
+          "x": 234.42680402273893,
+          "y": 419.2599902612781
+        },
+        {
+          "id": "clover",
+          "angle": 17.894539991224402,
+          "x": 298.2164633699006,
+          "y": 347.50417398440356
+        },
+        {
+          "id": "foe-0-teacup-healer",
+          "angle": 16.762300555650413,
+          "x": 951.9603915132528,
+          "y": 317.17102795253163
+        },
+        {
+          "id": "foe-1-sock-skipper",
+          "angle": 19.738921279295642,
+          "x": 1054.6325995313982,
+          "y": 402.86445423106375
+        }
+      ],
+      "audit": {
+        "width": 1280,
+        "height": 568,
+        "units": [
+          {
+            "id": "mochi",
+            "side": "party",
+            "role": "guardian",
+            "yaw": 0.4363323129985824,
+            "box": {
+              "x": 377.7440238446596,
+              "y": 134.55192613750071,
+              "width": 165.7899180437717,
+              "height": 173.8672019912465
+            }
+          },
+          {
+            "id": "soot",
+            "side": "party",
+            "role": "witch",
+            "yaw": 0.4363323129985824,
+            "box": {
+              "x": 163.59791163790482,
+              "y": 262.0285463150949,
+              "width": 144.81969856731047,
+              "height": 178.27034234992408
+            }
+          },
+          {
+            "id": "clover",
+            "side": "party",
+            "role": "alchemist",
+            "yaw": 0.4363323129985824,
+            "box": {
+              "x": 207.33216308752793,
+              "y": 189.4564933731028,
+              "width": 183.31061446052314,
+              "height": 182.44297515777222
+            }
+          },
+          {
+            "id": "foe-0-teacup-healer",
+            "side": "enemy",
+            "role": "healer",
+            "yaw": -0.4363323129985824,
+            "box": {
+              "x": 910.4329714895563,
+              "y": 193.15284652646736,
+              "width": 89.23114301915996,
+              "height": 97.2653070397694
+            }
+          },
+          {
+            "id": "foe-1-sock-skipper",
+            "side": "enemy",
+            "role": "flanker",
+            "yaw": -0.4363323129985824,
+            "box": {
+              "x": 994.4166759349197,
+              "y": 301.9971142246107,
+              "width": 100.21187135177286,
+              "height": 114.13868863595764
+            }
+          }
+        ],
+        "overlaps": [
+          [
+            "mochi",
+            "clover"
+          ],
+          [
+            "soot",
+            "clover"
+          ]
+        ],
+        "outside": []
+      },
+      "stageFraction": 0.7888888888888889,
+      "stage": {
+        "x": 0,
+        "y": 76,
+        "width": 1280,
+        "height": 568
+      },
+      "textures": [
+        {
+          "name": "original_baked_stage_wood_256",
+          "width": 256,
+          "height": 256,
+          "anisotropy": 4,
+          "mipmaps": true
+        },
+        {
+          "name": "original_baked_stage_cloth_256",
+          "width": 256,
+          "height": 256,
+          "anisotropy": 4,
+          "mipmaps": true
+        },
+        {
+          "name": "",
+          "width": 64,
+          "height": 64,
+          "anisotropy": 1,
+          "mipmaps": true
+        },
+        {
+          "name": "original_baked_stage_window_256",
+          "width": 256,
+          "height": 256,
+          "anisotropy": 4,
+          "mipmaps": true
+        },
+        {
+          "name": "original_card_felt_color_1024",
+          "width": 1024,
+          "height": 1024,
+          "anisotropy": 16,
+          "mipmaps": true
+        },
+        {
+          "name": "original_card_felt_normal_1024",
+          "width": 1024,
+          "height": 1024,
+          "anisotropy": 16,
+          "mipmaps": true
+        },
+        {
+          "name": "original_gloss_albedo_128",
+          "width": 128,
+          "height": 128,
+          "anisotropy": 16,
+          "mipmaps": true
+        },
+        {
+          "name": "original_gloss_normal_128",
+          "width": 128,
+          "height": 128,
+          "anisotropy": 16,
+          "mipmaps": true
+        },
+        {
+          "name": "original_brass_albedo_128",
+          "width": 128,
+          "height": 128,
+          "anisotropy": 16,
+          "mipmaps": true
+        },
+        {
+          "name": "original_brass_normal_128",
+          "width": 128,
+          "height": 128,
+          "anisotropy": 16,
+          "mipmaps": true
+        },
+        {
+          "name": "original_gloss_albedo_128",
+          "width": 128,
+          "height": 128,
+          "anisotropy": 16,
+          "mipmaps": true
+        },
+        {
+          "name": "original_gloss_normal_128",
+          "width": 128,
+          "height": 128,
+          "anisotropy": 16,
+          "mipmaps": true
+        },
+        {
+          "name": "original_brass_albedo_128",
+          "width": 128,
+          "height": 128,
+          "anisotropy": 16,
+          "mipmaps": true
+        },
+        {
+          "name": "original_brass_normal_128",
+          "width": 128,
+          "height": 128,
+          "anisotropy": 16,
+          "mipmaps": true
+        },
+        {
+          "name": "original_gloss_albedo_128",
+          "width": 128,
+          "height": 128,
+          "anisotropy": 16,
+          "mipmaps": true
+        },
+        {
+          "name": "original_gloss_normal_128",
+          "width": 128,
+          "height": 128,
+          "anisotropy": 16,
+          "mipmaps": true
+        },
+        {
+          "name": "original_ceramic_albedo_128",
+          "width": 128,
+          "height": 128,
+          "anisotropy": 16,
+          "mipmaps": true
+        },
+        {
+          "name": "original_ceramic_normal_128",
+          "width": 128,
+          "height": 128,
+          "anisotropy": 16,
+          "mipmaps": true
+        },
+        {
+          "name": "original_gloss_albedo_128",
+          "width": 128,
+          "height": 128,
+          "anisotropy": 16,
+          "mipmaps": true
+        },
+        {
+          "name": "original_gloss_normal_128",
+          "width": 128,
+          "height": 128,
+          "anisotropy": 16,
+          "mipmaps": true
+        },
+        {
+          "name": "original_gloss_albedo_128",
+          "width": 128,
+          "height": 128,
+          "anisotropy": 16,
+          "mipmaps": true
+        },
+        {
+          "name": "original_gloss_normal_128",
+          "width": 128,
+          "height": 128,
+          "anisotropy": 16,
+          "mipmaps": true
+        }
+      ],
+      "post": {
+        "samples": 4,
+        "width": 1280,
+        "height": 568
+      },
+      "pixelRatio": 1,
+      "labels": {
+        "heads": [
+          {
+            "x": 910.4329714895563,
+            "y": 193.15284652646736,
+            "width": 89.23114301915996,
+            "height": 97.2653070397694
+          },
+          {
+            "x": 994.4166759349197,
+            "y": 301.9971142246107,
+            "width": 100.21187135177286,
+            "height": 114.13868863595764
+          },
+          {
+            "x": 377.7440238446596,
+            "y": 134.55192613750071,
+            "width": 165.7899180437717,
+            "height": 173.8672019912465
+          },
+          {
+            "x": 163.59791163790482,
+            "y": 262.0285463150949,
+            "width": 144.81969856731047,
+            "height": 178.27034234992408
+          },
+          {
+            "x": 207.33216308752793,
+            "y": 189.4564933731028,
+            "width": 183.31061446052314,
+            "height": 182.44297515777222
+          }
+        ],
+        "cards": [
+          {
+            "x": 889.3832848982265,
+            "y": 132.64501125778386,
+            "width": 138,
+            "height": 48
+          },
+          {
+            "x": 1008.2882634277973,
+            "y": 239.54916186269958,
+            "width": 138,
+            "height": 48
+          }
+        ],
+        "missing": [],
+        "overlaps": 0
+      },
+      "displayedImages": [
+        {
+          "src": "blob:null/5646e6b2-7a91-4903-870c-4676430730ab",
+          "naturalWidth": 800,
+          "naturalHeight": 960,
+          "displayWidth": 181,
+          "displayHeight": 145
+        },
+        {
+          "src": "blob:null/52d37f0c-c647-473b-a872-2ed72aaad402",
+          "naturalWidth": 800,
+          "naturalHeight": 960,
+          "displayWidth": 181,
+          "displayHeight": 145
+        },
+        {
+          "src": "blob:null/f143e579-ec04-4806-9fd2-3973bb79e023",
+          "naturalWidth": 800,
+          "naturalHeight": 960,
+          "displayWidth": 181,
+          "displayHeight": 145
+        },
+        {
+          "src": "blob:null/0b185752-b8db-42d5-a291-6732bbbec68e",
+          "naturalWidth": 64,
+          "naturalHeight": 60,
+          "displayWidth": 44,
+          "displayHeight": 44
+        },
+        {
+          "src": "blob:null/9cfc362e-1ffc-4f5c-9b30-43978deaabee",
+          "naturalWidth": 64,
+          "naturalHeight": 60,
+          "displayWidth": 44,
+          "displayHeight": 44
+        },
+        {
+          "src": "blob:null/606455cf-60f0-4c2f-ac4c-b416537a9f2c",
+          "naturalWidth": 64,
+          "naturalHeight": 60,
+          "displayWidth": 44,
+          "displayHeight": 44
+        },
+        {
+          "src": "blob:null/a8b2c6ef-5a10-4b07-8c22-eba6cc20f873",
+          "naturalWidth": 64,
+          "naturalHeight": 60,
+          "displayWidth": 44,
+          "displayHeight": 44
+        },
+        {
+          "src": "blob:null/22fd27d9-2025-4a87-8599-e7dd69e87c4a",
+          "naturalWidth": 64,
+          "naturalHeight": 60,
+          "displayWidth": 44,
+          "displayHeight": 44
+        },
+        {
+          "src": "blob:null/f30a80fe-4525-48a1-be95-2d4f45d0b59a",
+          "naturalWidth": 64,
+          "naturalHeight": 60,
+          "displayWidth": 44,
+          "displayHeight": 44
+        },
+        {
+          "src": "blob:null/1ce52386-6fa0-412b-9d83-2e1590284e00",
+          "naturalWidth": 64,
+          "naturalHeight": 60,
+          "displayWidth": 44,
+          "displayHeight": 44
+        },
+        {
+          "src": "blob:null/83fa1a10-40fb-44ff-b3e9-8bd94ff86cbc",
+          "naturalWidth": 64,
+          "naturalHeight": 60,
+          "displayWidth": 44,
+          "displayHeight": 44
+        },
+        {
+          "src": "blob:null/fb780e30-5cbc-4e24-8204-dd0647cd9a27",
+          "naturalWidth": 64,
+          "naturalHeight": 60,
+          "displayWidth": 44,
+          "displayHeight": 44
+        }
+      ],
+      "cardImages": [
+        {
+          "naturalWidth": 800,
+          "naturalHeight": 960,
+          "displayWidth": 181,
+          "displayHeight": 145
+        },
+        {
+          "naturalWidth": 800,
+          "naturalHeight": 960,
+          "displayWidth": 181,
+          "displayHeight": 145
+        },
+        {
+          "naturalWidth": 800,
+          "naturalHeight": 960,
+          "displayWidth": 181,
+          "displayHeight": 145
+        }
+      ],
+      "compositionChanges": [
+        "Portrait: real team-card image replaces removed home image; its display size/layout differ from F0.",
+        "Skill icon: same skill asset in the automatic-kit summary replaces F0 manual controls."
+      ]
+    },
+    {
+      "dpr": 2,
+      "crops": [
+        {
+          "label": "hud-text",
+          "path": "reports/cardrpg-big2/stage/before/dpr2-hud-text.png",
+          "clip": {
+            "x": 210,
+            "y": 14.328125,
+            "width": 131.46875,
+            "height": 33.4375
+          }
+        },
+        {
+          "label": "portrait",
+          "path": "reports/cardrpg-big2/stage/before/dpr2-portrait.png",
+          "clip": {
+            "x": 337.796875,
+            "y": 388.25,
+            "width": 181,
+            "height": 145
+          }
+        },
+        {
+          "label": "hero-face",
+          "path": "reports/cardrpg-big2/stage/before/dpr2-hero-face.png",
+          "clip": {
+            "x": 429.5006286857998,
+            "y": 258.3974564118345,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "label": "enemy",
+          "path": "reports/cardrpg-big2/stage/before/dpr2-enemy.png",
+          "clip": {
+            "x": 919.9603915132528,
+            "y": 285.17102795253163,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "label": "skill-icon",
+          "path": "reports/cardrpg-big2/stage/before/dpr2-skill-icon.png",
+          "clip": {
+            "x": 232,
+            "y": 401.84375,
+            "width": 44,
+            "height": 44
+          }
+        }
+      ],
+      "faces": [
+        {
+          "id": "mochi",
+          "angle": 16.381972049980075,
+          "x": 461.5006286857998,
+          "y": 290.3974564118345
+        },
+        {
+          "id": "soot",
+          "angle": 20.524353977437347,
+          "x": 234.42680402273893,
+          "y": 419.2599902612781
+        },
+        {
+          "id": "clover",
+          "angle": 17.894539991224402,
+          "x": 298.2164633699006,
+          "y": 347.50417398440356
+        },
+        {
+          "id": "foe-0-teacup-healer",
+          "angle": 16.762300555650413,
+          "x": 951.9603915132528,
+          "y": 317.17102795253163
+        },
+        {
+          "id": "foe-1-sock-skipper",
+          "angle": 19.738921279295642,
+          "x": 1054.6325995313982,
+          "y": 402.86445423106375
+        }
+      ],
+      "audit": {
+        "width": 1280,
+        "height": 568,
+        "units": [
+          {
+            "id": "mochi",
+            "side": "party",
+            "role": "guardian",
+            "yaw": 0.4363323129985824,
+            "box": {
+              "x": 377.7440238446596,
+              "y": 134.55192613750071,
+              "width": 165.7899180437717,
+              "height": 173.8672019912465
+            }
+          },
+          {
+            "id": "soot",
+            "side": "party",
+            "role": "witch",
+            "yaw": 0.4363323129985824,
+            "box": {
+              "x": 163.59791163790482,
+              "y": 262.0285463150949,
+              "width": 144.81969856731047,
+              "height": 178.27034234992408
+            }
+          },
+          {
+            "id": "clover",
+            "side": "party",
+            "role": "alchemist",
+            "yaw": 0.4363323129985824,
+            "box": {
+              "x": 207.33216308752793,
+              "y": 189.4564933731028,
+              "width": 183.31061446052314,
+              "height": 182.44297515777222
+            }
+          },
+          {
+            "id": "foe-0-teacup-healer",
+            "side": "enemy",
+            "role": "healer",
+            "yaw": -0.4363323129985824,
+            "box": {
+              "x": 910.4329714895563,
+              "y": 193.15284652646736,
+              "width": 89.23114301915996,
+              "height": 97.2653070397694
+            }
+          },
+          {
+            "id": "foe-1-sock-skipper",
+            "side": "enemy",
+            "role": "flanker",
+            "yaw": -0.4363323129985824,
+            "box": {
+              "x": 994.4166759349197,
+              "y": 301.9971142246107,
+              "width": 100.21187135177286,
+              "height": 114.13868863595764
+            }
+          }
+        ],
+        "overlaps": [
+          [
+            "mochi",
+            "clover"
+          ],
+          [
+            "soot",
+            "clover"
+          ]
+        ],
+        "outside": []
+      },
+      "stageFraction": 0.7888888888888889,
+      "stage": {
+        "x": 0,
+        "y": 76,
+        "width": 1280,
+        "height": 568
+      },
+      "textures": [
+        {
+          "name": "original_baked_stage_wood_256",
+          "width": 256,
+          "height": 256,
+          "anisotropy": 4,
+          "mipmaps": true
+        },
+        {
+          "name": "original_baked_stage_cloth_256",
+          "width": 256,
+          "height": 256,
+          "anisotropy": 4,
+          "mipmaps": true
+        },
+        {
+          "name": "",
+          "width": 64,
+          "height": 64,
+          "anisotropy": 1,
+          "mipmaps": true
+        },
+        {
+          "name": "original_baked_stage_window_256",
+          "width": 256,
+          "height": 256,
+          "anisotropy": 4,
+          "mipmaps": true
+        },
+        {
+          "name": "original_card_felt_color_1024",
+          "width": 1024,
+          "height": 1024,
+          "anisotropy": 16,
+          "mipmaps": true
+        },
+        {
+          "name": "original_card_felt_normal_1024",
+          "width": 1024,
+          "height": 1024,
+          "anisotropy": 16,
+          "mipmaps": true
+        },
+        {
+          "name": "original_gloss_albedo_128",
+          "width": 128,
+          "height": 128,
+          "anisotropy": 16,
+          "mipmaps": true
+        },
+        {
+          "name": "original_gloss_normal_128",
+          "width": 128,
+          "height": 128,
+          "anisotropy": 16,
+          "mipmaps": true
+        },
+        {
+          "name": "original_brass_albedo_128",
+          "width": 128,
+          "height": 128,
+          "anisotropy": 16,
+          "mipmaps": true
+        },
+        {
+          "name": "original_brass_normal_128",
+          "width": 128,
+          "height": 128,
+          "anisotropy": 16,
+          "mipmaps": true
+        },
+        {
+          "name": "original_gloss_albedo_128",
+          "width": 128,
+          "height": 128,
+          "anisotropy": 16,
+          "mipmaps": true
+        },
+        {
+          "name": "original_gloss_normal_128",
+          "width": 128,
+          "height": 128,
+          "anisotropy": 16,
+          "mipmaps": true
+        },
+        {
+          "name": "original_brass_albedo_128",
+          "width": 128,
+          "height": 128,
+          "anisotropy": 16,
+          "mipmaps": true
+        },
+        {
+          "name": "original_brass_normal_128",
+          "width": 128,
+          "height": 128,
+          "anisotropy": 16,
+          "mipmaps": true
+        },
+        {
+          "name": "original_gloss_albedo_128",
+          "width": 128,
+          "height": 128,
+          "anisotropy": 16,
+          "mipmaps": true
+        },
+        {
+          "name": "original_gloss_normal_128",
+          "width": 128,
+          "height": 128,
+          "anisotropy": 16,
+          "mipmaps": true
+        },
+        {
+          "name": "original_ceramic_albedo_128",
+          "width": 128,
+          "height": 128,
+          "anisotropy": 16,
+          "mipmaps": true
+        },
+        {
+          "name": "original_ceramic_normal_128",
+          "width": 128,
+          "height": 128,
+          "anisotropy": 16,
+          "mipmaps": true
+        },
+        {
+          "name": "original_gloss_albedo_128",
+          "width": 128,
+          "height": 128,
+          "anisotropy": 16,
+          "mipmaps": true
+        },
+        {
+          "name": "original_gloss_normal_128",
+          "width": 128,
+          "height": 128,
+          "anisotropy": 16,
+          "mipmaps": true
+        },
+        {
+          "name": "original_gloss_albedo_128",
+          "width": 128,
+          "height": 128,
+          "anisotropy": 16,
+          "mipmaps": true
+        },
+        {
+          "name": "original_gloss_normal_128",
+          "width": 128,
+          "height": 128,
+          "anisotropy": 16,
+          "mipmaps": true
+        }
+      ],
+      "post": {
+        "samples": 4,
+        "width": 2560,
+        "height": 1136
+      },
+      "pixelRatio": 2,
+      "labels": {
+        "heads": [
+          {
+            "x": 910.4329714895563,
+            "y": 193.15284652646736,
+            "width": 89.23114301915996,
+            "height": 97.2653070397694
+          },
+          {
+            "x": 994.4166759349197,
+            "y": 301.9971142246107,
+            "width": 100.21187135177286,
+            "height": 114.13868863595764
+          },
+          {
+            "x": 377.7440238446596,
+            "y": 134.55192613750071,
+            "width": 165.7899180437717,
+            "height": 173.8672019912465
+          },
+          {
+            "x": 163.59791163790482,
+            "y": 262.0285463150949,
+            "width": 144.81969856731047,
+            "height": 178.27034234992408
+          },
+          {
+            "x": 207.33216308752793,
+            "y": 189.4564933731028,
+            "width": 183.31061446052314,
+            "height": 182.44297515777222
+          }
+        ],
+        "cards": [
+          {
+            "x": 889.3832848982265,
+            "y": 132.64501125778386,
+            "width": 138,
+            "height": 48
+          },
+          {
+            "x": 1008.2882634277973,
+            "y": 239.54916186269958,
+            "width": 138,
+            "height": 48
+          }
+        ],
+        "missing": [],
+        "overlaps": 0
+      },
+      "displayedImages": [
+        {
+          "src": "blob:null/4f44eeaa-3862-46c1-9b45-2addcdb5634c",
+          "naturalWidth": 800,
+          "naturalHeight": 960,
+          "displayWidth": 181,
+          "displayHeight": 145
+        },
+        {
+          "src": "blob:null/c2cdcbbc-f637-44fe-a7e3-3b9b3b4581ae",
+          "naturalWidth": 800,
+          "naturalHeight": 960,
+          "displayWidth": 181,
+          "displayHeight": 145
+        },
+        {
+          "src": "blob:null/effc7473-3c6c-455f-909d-3cabfe7b0294",
+          "naturalWidth": 800,
+          "naturalHeight": 960,
+          "displayWidth": 181,
+          "displayHeight": 145
+        },
+        {
+          "src": "blob:null/51b43b97-a2e7-438d-b23f-19d4b4be9c39",
+          "naturalWidth": 64,
+          "naturalHeight": 60,
+          "displayWidth": 44,
+          "displayHeight": 44
+        },
+        {
+          "src": "blob:null/e822e7b6-37e5-48f5-a90b-2d871ac4c126",
+          "naturalWidth": 64,
+          "naturalHeight": 60,
+          "displayWidth": 44,
+          "displayHeight": 44
+        },
+        {
+          "src": "blob:null/47644407-06ac-4a1c-8980-748a6b8569df",
+          "naturalWidth": 64,
+          "naturalHeight": 60,
+          "displayWidth": 44,
+          "displayHeight": 44
+        },
+        {
+          "src": "blob:null/f24cee38-c3f8-4e9d-a697-ef7618a497bf",
+          "naturalWidth": 64,
+          "naturalHeight": 60,
+          "displayWidth": 44,
+          "displayHeight": 44
+        },
+        {
+          "src": "blob:null/0f284c30-d1cb-437d-a7e9-a3937c8800a7",
+          "naturalWidth": 64,
+          "naturalHeight": 60,
+          "displayWidth": 44,
+          "displayHeight": 44
+        },
+        {
+          "src": "blob:null/870c07b1-1644-4896-b071-edf9f4c9b813",
+          "naturalWidth": 64,
+          "naturalHeight": 60,
+          "displayWidth": 44,
+          "displayHeight": 44
+        },
+        {
+          "src": "blob:null/3b7bf9e8-4610-4dc3-9c72-2efe7268b592",
+          "naturalWidth": 64,
+          "naturalHeight": 60,
+          "displayWidth": 44,
+          "displayHeight": 44
+        },
+        {
+          "src": "blob:null/ccafb7dc-15a1-477e-a089-23bdedb596fb",
+          "naturalWidth": 64,
+          "naturalHeight": 60,
+          "displayWidth": 44,
+          "displayHeight": 44
+        },
+        {
+          "src": "blob:null/84049136-1f9e-41e4-bb17-07b65fa4642e",
+          "naturalWidth": 64,
+          "naturalHeight": 60,
+          "displayWidth": 44,
+          "displayHeight": 44
+        }
+      ],
+      "cardImages": [
+        {
+          "naturalWidth": 800,
+          "naturalHeight": 960,
+          "displayWidth": 181,
+          "displayHeight": 145
+        },
+        {
+          "naturalWidth": 800,
+          "naturalHeight": 960,
+          "displayWidth": 181,
+          "displayHeight": 145
+        },
+        {
+          "naturalWidth": 800,
+          "naturalHeight": 960,
+          "displayWidth": 181,
+          "displayHeight": 145
+        }
+      ],
+      "compositionChanges": [
+        "Portrait: real team-card image replaces removed home image; its display size/layout differ from F0.",
+        "Skill icon: same skill asset in the automatic-kit summary replaces F0 manual controls."
+      ]
+    }
+  ]
+}

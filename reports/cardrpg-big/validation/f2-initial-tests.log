@@ -1,0 +1,91 @@
+
+> taskbar-hero@0.0.0 test /Users/bao/taskbar-hero-cardrpg-big
+> node --test scripts/*.test.mjs && pnpm -r test
+
+✔ explicit root and nested index imports resolve to their exact files (7.717084ms)
+✔ directory aliases coexist with explicit indexes and ordinary modules (1.673417ms)
+✔ test modules, fixture folders and non-TypeScript files stay out of deployment maps (2.165125ms)
+✔ output order is stable regardless of file creation order (3.300083ms)
+✔ generation preserves auth mappings and ignores shared or non-function directories (3.718459ms)
+✔ auth health HTTP 200 exits correctly without leaking response data (22.026708ms)
+✔ auth health HTTP 429 exits correctly without leaking response data (13.453042ms)
+✔ auth health HTTP 500 exits correctly without leaking response data (11.546833ms)
+✔ auth health HTTP 502 exits correctly without leaking response data (10.911459ms)
+✔ auth health HTTP 503 exits correctly without leaking response data (11.239334ms)
+✔ auth health fails closed when the transport is unavailable (10.742125ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 134.955791
+Scope: 6 of 7 workspace projects
+packages/auth test$ vitest run
+packages/chain test$ vitest run
+packages/game-rules test$ vitest run
+supabase/tests test$ vitest run
+packages/auth test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-big/packages/auth
+packages/game-rules test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-big/packages/game-rules
+packages/chain test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-big/packages/chain
+supabase/tests test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-big/supabase/tests
+packages/chain test:  Test Files  3 passed (3)
+packages/chain test:       Tests  32 passed (32)
+packages/chain test:    Start at  14:35:26
+packages/chain test:    Duration  502ms (import 51%, tests 39%, transform 7%, worker 2%)
+packages/chain test: Done
+packages/auth test:  Test Files  1 passed (1)
+packages/auth test:       Tests  24 passed (24)
+packages/auth test:    Start at  14:35:26
+packages/auth test:    Duration  655ms (import 60%, tests 35%, transform 5%, worker 1%)
+packages/auth test: Done
+supabase/tests test:  Test Files  34 passed (34)
+supabase/tests test:       Tests  581 passed (581)
+supabase/tests test:    Start at  14:35:26
+supabase/tests test:    Duration  9.54s (tests 81%, import 14%, transform 5%)
+supabase/tests test: Done
+packages/game-rules test:  Test Files  49 passed | 3 skipped (52)
+packages/game-rules test:       Tests  903 passed | 2 expected fail | 11 skipped (916)
+packages/game-rules test:    Start at  14:35:26
+packages/game-rules test:    Duration  29.36s (tests 96%, import 3%, transform 1%)
+packages/game-rules test: Done
+packages/api-contract test$ pnpm --filter @taskbar-hero/game-rules exec vitest run --root ../api-contract
+packages/api-contract test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-big/packages/api-contract
+packages/api-contract test:  Test Files  1 passed (1)
+packages/api-contract test:       Tests  16 passed (16)
+packages/api-contract test:    Start at  14:35:56
+packages/api-contract test:    Duration  122ms (transform 52%, import 39%, tests 6%, worker 3%)
+packages/api-contract test: Done
+apps/web test$ vitest run
+apps/web test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-big/apps/web
+apps/web test:  ❯ src/game/squad/turn3d/card-face.test.ts (2 tests | 1 failed) 7ms
+apps/web test:    ❯ card face expressions (2)
+apps/web test:      × maps battle clips to all six distinct expressions 4ms
+apps/web test: ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+apps/web test:  FAIL  src/game/squad/turn3d/card-face.test.ts > card face expressions > maps battle clips to all six distinct expressions
+apps/web test: AssertionError: expected 5 to be 6 // Object.is equality
+apps/web test: - Expected
+apps/web test: + Received
+apps/web test: - 6
+apps/web test: + 5
+apps/web test:  ❯ src/game/squad/turn3d/card-face.test.ts:8:53
+apps/web test:       6|   it('maps battle clips to all six distinct expressions', () => {
+apps/web test:       7|     const clips = ['idle', 'victory', 'heavy-hit', 'guard', 'ultimate'…
+apps/web test:       8|     expect(new Set(clips.map(cardExpression)).size).toBe(6);
+apps/web test:        |                                                     ^
+apps/web test:       9|     expect(new Set(Object.values(CARD_EXPRESSIONS).map(shape => JSON.s…
+apps/web test:      10|     expect(cardExpression('mochi-1', true)).toBe('casting');
+apps/web test: ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+apps/web test:  Test Files  1 failed | 152 passed (153)
+apps/web test:       Tests  1 failed | 1645 passed (1646)
+apps/web test:    Start at  14:35:56
+apps/web test:    Duration  14.36s (environment 47%, tests 39%, import 11%, transform 2%, worker 1%)
+apps/web test: Environment  jsdom was created 153 times · 65.68s total, 47% of tracked time
+apps/web test:              create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+apps/web test:              learn more: https://vitest.dev/guide/improving-performance#test-environments
+apps/web test: Failed
+/Users/bao/taskbar-hero-cardrpg-big/apps/web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/web@0.0.0 test: `vitest run`
+Exit status 1
+ ELIFECYCLE  Test failed. See above for more details.

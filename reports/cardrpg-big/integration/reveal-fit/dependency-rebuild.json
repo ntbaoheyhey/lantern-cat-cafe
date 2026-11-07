@@ -1,0 +1,11 @@
+{
+  "artifactSha256": "419fc50dc6d9ce518d9a847807cf6f35b8d7bf3f830ef2ffb8671bc979655d95",
+  "source": "9db6b57e69a23732b4333285181d44f04292f043",
+  "beforeArtifact": "/tmp/cardrpg-big-reveal-fit-v5-index.html",
+  "localDependenciesArtifact": "/tmp/cardrpg-big-reveal-fit-v6-index.html",
+  "byteIdentical": true,
+  "focusedTestsPassed": 26,
+  "invitations": "invitations-v5/checks.json",
+  "reveal": "fixed-v5/checks.json",
+  "reason": "Worktree-local dependencies fix configuration-object identity in the unit runner. The rebuilt offline HTML is byte-identical, so browser evidence is reused. All five source gates are rerun with local dependencies."
+}

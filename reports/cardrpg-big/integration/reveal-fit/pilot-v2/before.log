@@ -1,0 +1,18 @@
+{"lock":"acquired","lane":"A","pid":3253,"startedAt":"2026-11-06T21:49:31.044Z","task":"A-reveal-fit-diagnosis"}
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: The entire reveal, including its next action, fits in the viewport
+    at capture (file:///Users/bao/taskbar-hero-cardrpg-big-reveal-fit/tools/cardrpg-big/reveal-check.mjs:87:11)
+    at async file:///Users/bao/taskbar-hero-cardrpg-big-reveal-fit/tools/cardrpg-big/reveal-check.mjs:110:7 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
+
+Node.js v24.22.2
+{"lock":"released","pid":3253,"task":"A-reveal-fit-diagnosis"}

@@ -1,0 +1,23 @@
+{
+  "date": "2026-11-07T00:45:28.379758+00:00",
+  "source": "3806ad2c",
+  "artifactSha256": "284976a9db6da0cbca0f1e5272959281bf87f9263a20e18c17fd79e9d176598d",
+  "sourceGates": "g-evidence-resume.json",
+  "cleanFullSuite": false,
+  "fullSuiteWeb": {
+    "passed": 1691,
+    "failed": 1,
+    "cause": "StageLayout pre-request-state test exceeded unchanged 5000ms timeout"
+  },
+  "focusedRetry": {
+    "log": "g-evidence-stage-layout-retry.log",
+    "sha256": "b3cd33ba2299208f16957742890d04221b34a6e6db4f81fa869f8223c2c813db",
+    "passed": 11,
+    "failed": 0,
+    "changedSource": false,
+    "changedTimeout": false
+  },
+  "rulesPassed": 903,
+  "e2ePassed": 421,
+  "allDistinctWebCasesPassedAcrossRuns": true
+}

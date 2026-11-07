@@ -1,0 +1,18 @@
+The request id "/private/tmp/cardrpg-big2-b4-validation/apps/web/src/game/squad/turn3d/audio.ts" is outside of Vite serving allow list.
+
+- /tmp/cardrpg-big2-b4-validation
+- /private/tmp/cardrpg-big2-b4-validation/node_modules/.pnpm/vite@8.3.5_@types+node@22.20.5/node_modules/vite/dist/client
+
+Refer to docs https://vite.dev/config/server-options.html#server-fs-allow for configurations and more details.
+
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+page.evaluate: TypeError: Failed to fetch dynamically imported module: http://127.0.0.1:5920/src/game/squad/turn3d/audio.ts
+    at /Users/bao/taskbar-hero-cardrpg-big2/tools/cardrpg-big2/audio-check.mjs:18:27 {
+  log: []
+}
+
+Node.js v24.22.2
+{"audioCheckFailed":"Error: tools/cardrpg-big2/audio-check.mjs exited 1"}

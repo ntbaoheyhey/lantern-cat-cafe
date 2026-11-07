@@ -1,11 +1,24 @@
 import { loadRules } from '../cardrpg-sim/load.mjs';
-import { mkdir, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { dirname } from 'node:path';
+import { execFileSync } from 'node:child_process';
+import { createHash } from 'node:crypto';
+import { simulationBattleRunner } from '../cardrpg-big/sim-battle-runner.mjs';
+const policy = process.env.BIG_ECONOMY_POLICY;
+if (policy && !['auto', 'smart', 'random'].includes(policy)) throw Error('Unknown economy battle policy');
+const output = process.env.BIG_ECONOMY_OUT || 'reports/cardrpg-depth/sim/economy-45.json';
 const { load, vite, rules: legacy } = await loadRules();
 const R = await load('packages/game-rules/src/cardrpg/depth/index.ts');
 const { firstInvitation } = await load('packages/game-rules/src/cardrpg/depth/onboarding.ts');
 const { playRun } = await load('packages/game-rules/src/cardrpg/depth/run-bot.ts');
+const simulation = await simulationBattleRunner(load, R.playBattle, process.env.BIG_AUTO_EXTRAS);
 const accounts = [], styles = [{ id: 'casual', runs: 1, service: 1, policy: 'auto' }, { id: 'regular', runs: 2, service: 2, policy: 'smart' }, { id: 'heavy', runs: 6, service: 2, policy: 'smart' }];
+if (policy) for (const style of styles) style.policy = policy;
+const paths = execFileSync('git', ['ls-files', 'packages/game-rules/src/cardrpg'], { encoding: 'utf8' }).trim().split('\n');
+const sourceHashes = Object.fromEntries(await Promise.all(paths.map(async path =>
+  [path, createHash('sha256').update(await readFile(path)).digest('hex')])));
 const average = values => values.reduce((sum, value) => sum + value, 0) / values.length;
+const totalPulls = state => Object.values(state.account.pity).reduce((sum, pity) => sum + pity.totalPulls, 0);
 try {
   for (const style of styles) for (let index = 0; index < 30; index++) {
     let state = firstInvitation(R.createDepthAccount(3001 + index), 4).state;
@@ -17,11 +30,11 @@ try {
       for (let run = 0; run < style.runs; run++) {
         const chapter = Math.min(3, state.cleared.length + 1);
         state = R.startRun(state, chapter, 100000 + index * 7919 + day * 71 + run, 'campaign').state;
-        state = playRun(state, style.policy);
+        state = playRun(state, style.policy, undefined, simulation.runBattle);
       }
       for (const quest of legacy.QUESTS) state = R.metaCommand(state, { type: 'claimQuest', questId: quest.id }).state;
       while (state.account.currencies.stamps >= 150) {
-        const drawn = R.metaCommand(state, { type: 'pull', bannerId: 'standard', seed: index * 9349 + day * 97 + state.account.history.length });
+        const drawn = R.metaCommand(state, { type: 'pull', bannerId: 'standard', seed: index * 9349 + day * 97 + totalPulls(state) });
         if (!drawn.ok) break;
         state = drawn.state;
       }
@@ -53,7 +66,7 @@ try {
       if (tailored.ok) state = tailored.state;
       days.push({ day, cards: state.account.cards.length, gearTemplates: new Set(state.gear.map(g => g.templateId)).size,
         currencies: { ...state.account.currencies }, earned: { ...state.account.daily.earned }, materials: state.materials,
-        totalPulls: state.account.history.length, gear: state.gear.length, seals: state.seals, clear: state.cleared.length,
+        totalPulls: totalPulls(state), gear: state.gear.length, seals: state.seals, clear: state.cleared.length,
         awakening: Object.values(state.awakened).reduce((a, b) => a + b, 0) });
     }
     accounts.push({ style: style.id, index, firstEpic, firstLegendary, firstSet, saturation, days });
@@ -79,7 +92,16 @@ try {
     });
     weekly.push({ week: week + 1, values, heavyCasual: Object.fromEntries(['draws', 'fish', 'threads', 'stamps', 'essence'].map(id => [id, id === 'draws' ? values[2].draws / values[0].draws : values[2].earned[id] / values[0].earned[id]])) });
   }
-  await mkdir('reports/cardrpg-depth/sim', { recursive: true });
-  await writeFile('reports/cardrpg-depth/sim/economy-45.json', JSON.stringify({ method: '90 accounts, 30 per style, 45 days. Actual pure run, draw, daily-cap, enhancement, tailoring and awakening commands. Casual 1 Auto run/day, regular 2 smart runs/day, heavy 6 smart runs/day. No live grants. Missing first-drop milestones are censored at day 46.', summary, weekly, accounts }, null, 2));
-  console.log(JSON.stringify({ summary, weekly }, null, 2));
+  const totals = styles.map(style => {
+    const cohort = accounts.filter(account => account.style === style.id);
+    return { style: style.id,
+      pulls: average(cohort.map(account => account.days.at(-1).totalPulls - 1)),
+      earned: Object.fromEntries(['fish', 'threads', 'stamps', 'essence'].map(id => [id,
+        average(cohort.map(account => account.days.reduce((sum, day) => sum + day.earned[id], 0)))])) };
+  });
+  const heavyCasual45 = { pulls: totals[2].pulls / totals[0].pulls,
+    ...Object.fromEntries(['fish', 'threads', 'stamps', 'essence'].map(id => [id, totals[2].earned[id] / totals[0].earned[id]])) };
+  await mkdir(dirname(output), { recursive: true });
+  await writeFile(output, JSON.stringify({ method: '90 accounts, 30 per style, 45 days. Actual pure run, draw, daily-cap, enhancement, tailoring and awakening commands. Policies and daily runs are recorded in styles. No live grants. Missing first-drop milestones are censored at day 46. Total earned ratios include all45 days and exclude opening balances. Paid pulls exclude the one welcome invitation.', styles, sourceHashes, battleRunner: simulation.evidence, summary, weekly, totals, heavyCasual45, accounts }, null, 2));
+  console.log(JSON.stringify({ summary, weekly, totals, heavyCasual45 }, null, 2));
 } finally { await vite.close(); }

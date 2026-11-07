@@ -1,0 +1,129 @@
+
+> taskbar-hero@0.0.0 build /Users/bao/taskbar-hero-cardrpg-big
+> pnpm -r build
+
+Scope: 6 of 7 workspace projects
+packages/auth build$ tsc --noEmit
+packages/chain build$ tsc --noEmit
+packages/game-rules build$ tsc --noEmit
+supabase/tests build$ tsc --noEmit
+packages/chain build: Done
+packages/auth build: Done
+packages/game-rules build: Done
+supabase/tests build: Done
+packages/api-contract build$ tsc --noEmit
+packages/api-contract build: Done
+apps/web build$ tsc --noEmit && vite build
+apps/web build: vite v8.3.5 building client environment for production...
+apps/web build: transforming...
+apps/web build: [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-cardrpg-big/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+apps/web build: ✓ 2099 modules transformed.
+apps/web build: rendering chunks...
+apps/web build: computing gzip size...
+apps/web build: dist/index.html                                1.98 kB │ gzip:   0.73 kB
+apps/web build: dist/assets/sheet-B8UIec1E.png                 4.55 kB
+apps/web build: dist/assets/teacup-healer-BCDAjZaG.png        34.37 kB
+apps/web build: dist/assets/inkcap-l3vLXecv.png               35.14 kB
+apps/web build: dist/assets/sock-skipper-CZWIuqav.png         37.91 kB
+apps/web build: dist/assets/mallow-Cg82I5Ds.png               39.00 kB
+apps/web build: dist/assets/binding-thread-Cio-urhV.png       40.75 kB
+apps/web build: dist/assets/practice-cushion-CeeR9YFG.png     41.46 kB
+apps/web build: dist/assets/button-guard-BQ0UcktV.png         44.53 kB
+apps/web build: dist/assets/panko-2bwHczzk.png                45.89 kB
+apps/web build: dist/assets/velvet-i3wzksEf.png               48.41 kB
+apps/web build: dist/assets/kettle-knight-Duk3VkxK.png        49.71 kB
+apps/web build: dist/assets/clover-DMfRQKBP.png               50.65 kB
+apps/web build: dist/assets/crumb-sentinel-C38UMI-r.png       52.65 kB
+apps/web build: dist/assets/soot-Chi5h2J-.png                 54.75 kB
+apps/web build: dist/assets/needle-moth-DAdqx7KX.png          55.72 kB
+apps/web build: dist/assets/spool-ram-Dpq6RK03.png            58.94 kB
+apps/web build: dist/assets/pollen-scout-Bo0LRrxB.png         59.49 kB
+apps/web build: dist/assets/cinnamon-BDG8GUV8.png             59.84 kB
+apps/web build: dist/assets/biscuit-CBPDXt2s.png              62.01 kB
+apps/web build: dist/assets/mochi-BPxZzhek.png                63.08 kB
+apps/web build: dist/assets/brioche-Dem0_VAg.png              65.37 kB
+apps/web build: dist/assets/marigold-CROoipXn.png             66.59 kB
+apps/web build: dist/assets/rain-spool-UhK_oas-.png           69.55 kB
+apps/web build: dist/assets/sorrel-oDDrgGSV.png               73.16 kB
+apps/web build: dist/assets/soot-BSXaDuel.png                148.31 kB
+apps/web build: dist/assets/clover-CrzEHM6s.png              148.96 kB
+apps/web build: dist/assets/sorrel-BRvWT8dz.png              151.61 kB
+apps/web build: dist/assets/mallow-Bj4iVmD3.png              152.55 kB
+apps/web build: dist/assets/cinnamon-D2CVatjc.png            157.78 kB
+apps/web build: dist/assets/inkcap-PfvOTGGr.png              158.32 kB
+apps/web build: dist/assets/marigold-D5Ix9U4F.png            159.89 kB
+apps/web build: dist/assets/velvet-DEJKycIV.png              160.79 kB
+apps/web build: dist/assets/mochi-CqqpGwHA.png               163.63 kB
+apps/web build: dist/assets/biscuit-CQSPgItR.png             171.74 kB
+apps/web build: dist/assets/panko-Cnartubd.png               173.64 kB
+apps/web build: dist/assets/pantry-crown-BX_cAxQZ.png        174.68 kB
+apps/web build: dist/assets/brioche-BkNkUxI2.png             177.52 kB
+apps/web build: dist/assets/yarn-giant-D7L8YdxG.png          192.57 kB
+apps/web build: dist/assets/spool-ram-DETF3Lh3.glb           357.19 kB
+apps/web build: dist/assets/rain-spool-TxUE30Fm.glb          367.65 kB
+apps/web build: dist/assets/sock-skipper-_hYrxupk.glb        378.76 kB
+apps/web build: dist/assets/teacup-healer-CUPasW0T.glb       387.18 kB
+apps/web build: dist/assets/binding-thread-qY88yoU1.glb      404.30 kB
+apps/web build: dist/assets/button-guard-oHLKN9do.glb        431.43 kB
+apps/web build: dist/assets/needle-moth-3JUN0d7d.glb         433.98 kB
+apps/web build: dist/assets/crumb-sentinel-BVW2tmY9.glb      446.08 kB
+apps/web build: dist/assets/pollen-scout-Bx5A0JDl.glb        456.58 kB
+apps/web build: dist/assets/practice-cushion-ohULnBr7.glb    467.77 kB
+apps/web build: dist/assets/kettle-knight-C_F7G4t6.glb       517.79 kB
+apps/web build: dist/assets/biscuit-DryCo2-T.glb             691.92 kB
+apps/web build: dist/assets/velvet-Cr0ksRRO.glb              692.04 kB
+apps/web build: dist/assets/mallow-B8X_B6_I.glb              693.75 kB
+apps/web build: dist/assets/panko-BUVqJlIa.glb               699.82 kB
+apps/web build: dist/assets/brioche-tujP1NUo.glb             708.14 kB
+apps/web build: dist/assets/inkcap-BxrK2JzN.glb              710.40 kB
+apps/web build: dist/assets/cinnamon-DzHgCwMe.glb            826.75 kB
+apps/web build: dist/assets/yarn-giant-D-k_SjO6.glb          828.46 kB
+apps/web build: dist/assets/sorrel-CZutb-2v.glb              831.08 kB
+apps/web build: dist/assets/clover-C7jZqP-M.glb              836.77 kB
+apps/web build: dist/assets/pantry-crown-Dw-ipmcg.glb        838.25 kB
+apps/web build: dist/assets/mochi-XJdpVarr.glb               845.06 kB
+apps/web build: dist/assets/soot-CCKLQv0Z.glb                899.16 kB
+apps/web build: dist/assets/marigold-BBja_cQT.glb            900.47 kB
+apps/web build: dist/assets/entry-Jne0GINi.css                 0.10 kB │ gzip:   0.10 kB
+apps/web build: dist/assets/FeatureSamples-BG4xVUCy.css        2.75 kB │ gzip:   0.86 kB
+apps/web build: dist/assets/OriginalCatalog-BqG91EfA.css       5.04 kB │ gzip:   1.28 kB
+apps/web build: dist/assets/entry-D2piSQXu.css                11.11 kB │ gzip:   3.17 kB
+apps/web build: dist/assets/squad-BkwI8O9K.css                12.79 kB │ gzip:   3.27 kB
+apps/web build: dist/assets/CafeAdventure--Ys12J6X.css        13.23 kB │ gzip:   3.47 kB
+apps/web build: dist/assets/cardrpg-BkoesOeX.css              18.56 kB │ gzip:   4.95 kB
+apps/web build: dist/assets/TurnApp-DoqPeQCr.css              29.53 kB │ gzip:   6.87 kB
+apps/web build: dist/assets/legacy-entry-DlaB5hnQ.css        194.17 kB │ gzip:  32.81 kB
+apps/web build: dist/assets/entry-DfZg8cno.js                  0.31 kB │ gzip:   0.23 kB
+apps/web build: dist/assets/rng-Cfw1Pt4b.js                    0.55 kB │ gzip:   0.33 kB
+apps/web build: dist/assets/rolldown-runtime-XKyaHtl9.js       0.72 kB │ gzip:   0.42 kB
+apps/web build: dist/assets/managedGame-B-Ra4VQQ.js            0.75 kB │ gzip:   0.40 kB
+apps/web build: dist/assets/Art2Preview-Dcc67j4j.js            1.35 kB │ gzip:   0.62 kB
+apps/web build: dist/assets/assets-CMm4Ee7b.js                 3.36 kB │ gzip:   1.63 kB
+apps/web build: dist/assets/FeatureSamples-DLauRUwv.js         6.29 kB │ gzip:   2.10 kB
+apps/web build: dist/assets/OriginalArt-BEHMgaIL.js            6.67 kB │ gzip:   1.08 kB
+apps/web build: dist/assets/createGame-CYG5tCgZ.js             8.45 kB │ gzip:   3.48 kB
+apps/web build: dist/assets/OriginalCatalog-ClEkugde.js        8.93 kB │ gzip:   2.72 kB
+apps/web build: dist/assets/ArenaScene-CmGD4neb.js             9.39 kB │ gzip:   3.45 kB
+apps/web build: dist/assets/src-Cg9nhPRH.js                   14.27 kB │ gzip:   2.02 kB
+apps/web build: dist/assets/SquadScene-D9Nm38Ht.js            16.87 kB │ gzip:   6.14 kB
+apps/web build: dist/assets/StageScene-2WFrDzz3.js            17.25 kB │ gzip:   6.26 kB
+apps/web build: dist/assets/index-DAvi3rgh.js                 27.39 kB │ gzip:  10.59 kB
+apps/web build: dist/assets/CafeAdventure-dA2IaSsU.js         27.80 kB │ gzip:   8.70 kB
+apps/web build: dist/assets/entry-DuTe9ZMu.js                 32.83 kB │ gzip:  10.97 kB
+apps/web build: dist/assets/cardrpg-XUfdFRqN.js               40.26 kB │ gzip:  14.21 kB
+apps/web build: dist/assets/src-D_i_O3zF.js                   46.96 kB │ gzip:  15.66 kB
+apps/web build: dist/assets/TurnApp-BH73V1Ov.js               52.21 kB │ gzip:  16.56 kB
+apps/web build: dist/assets/entry-y3dfkF7o.js                 59.54 kB │ gzip:  12.96 kB
+apps/web build: dist/assets/entry-Cfo54hsw.js                150.23 kB │ gzip:  43.14 kB
+apps/web build: dist/assets/react-trdGxmaQ.js                218.75 kB │ gzip:  68.27 kB
+apps/web build: dist/assets/web3-CL82WhgN.js                 364.00 kB │ gzip: 108.66 kB
+apps/web build: dist/assets/scene-DalkoJGY.js                729.44 kB │ gzip: 197.76 kB
+apps/web build: dist/assets/phaser-CS_hOpYn.js             1,194.43 kB │ gzip: 318.49 kB
+apps/web build: dist/assets/legacy-entry-BXBco5Fm.js       1,646.12 kB │ gzip: 176.01 kB
+apps/web build: ✓ built in 547ms
+apps/web build: [plugin builtin:vite-reporter] 
+apps/web build: (!) Some chunks are larger than 1500 kB after minification. Consider:
+apps/web build: - Using dynamic import() to code-split the application
+apps/web build: - Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+apps/web build: - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+apps/web build: Done
