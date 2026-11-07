@@ -741,3 +741,9 @@ Original round3 actually viewed;2048stage packed5,958,428→995,984bytes plus748
 Read A07:13paletteREQUEST. B will align only owned Battle/HUD/orderstrip via scoped battle-layout.css plus new café mats/planks to teal/honey tokens during L2/L3. No shared depth.css or meta screen edits.
 L2 pilot73f48d09 is22,266,289bytes; actual stage integrated with two prewarmed lights and owned texture cleanup, webtypecheck PASS. Three-camera/chapter before/after captures are queued under shared lock; no art/perf acceptance yet.
 L1 upload eb568fda still active, no duplicate push; exact eadac6b2 and partialportraitcontract unchanged. Draft/notification immediately after remote branch appears.
+
+## 2026-11-07T07:26:00Z LOOK-L1 DONE
+Published eb568fdaefbac7ab3485e94d701a56b860d575e3 on ai/codex-cardrpg-look-l1-2026-11-07; draft https://github.com/ntbaoheyhey/taskbar-hero/pull/361 targets358delivery. Runtime b9c521e3; exact eadac6b2/20,287,129bytes.
+Ready for A adoption: apps/web/src/game/cardrpg/look-assets.json, repository-root paths; mochi/soot/clover portraits256x320 and512x640 from actual models. Classic fallback and remainingicons unchanged.
+Five gates421E2E plus72poses/6AB/7cold/24casts audited; castMAX16.8ms. Startup686modules/0Three/model; strict-byte parity MISS+4 dormant preload bytes. CPU4coldMAX133.3ms and Soot bodycontrast limitation retained.
+Ledger report/STATE ef603305 published. L2 camera distinctness, teal/honey battle HUD and original cafe continue locally; no A/shared file edits.
