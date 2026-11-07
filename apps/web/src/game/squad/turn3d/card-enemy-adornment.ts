@@ -1,7 +1,7 @@
 import * as T from 'three';
 /** Original sewing-room silhouettes. Two merged draws per actor, owned by CardUtensil. */
 export function enemyAdornment(asset: string): { parts: T.BufferGeometry[][]; colors: string[]; hand: 'armL' | 'armR' } | undefined {
-  if (!['button-guard', 'sock-skipper', 'spool-ram', 'needle-moth', 'teacup-healer', 'kettle-knight', 'binding-thread', 'practice-cushion', 'pollen-scout', 'crumb-sentinel'].includes(asset)) return;
+  if (!['button-guard', 'sock-skipper', 'spool-ram', 'needle-moth', 'teacup-healer', 'kettle-knight', 'binding-thread', 'practice-cushion', 'pollen-scout', 'crumb-sentinel', 'yarn-giant', 'rain-spool', 'pantry-crown'].includes(asset)) return;
   const body: T.BufferGeometry[] = [], trim: T.BufferGeometry[] = [];
   const box = (x: number, y: number, z: number, p: [number, number, number], group = body) => {
     const g = new T.BoxGeometry(x, y, z); g.translate(...p); group.push(g);
@@ -47,6 +47,16 @@ export function enemyAdornment(asset: string): { parts: T.BufferGeometry[][]; co
     box(.26,.20,.14,[0,-.41,.03]);
     const lid=new T.CylinderGeometry(.16,.17,.045,12);lid.translate(0,-.28,.03);trim.push(lid);
     for(const x of [-.08,0,.08]){const sugar=new T.BoxGeometry(.035,.035,.025);sugar.rotateZ(x*8);sugar.translate(x,-.4,.12);trim.push(sugar);}
+  } else if (asset === 'yarn-giant') {
+    box(.44,.045,.065,[0,-.50,.03]);for(const x of [-.21,.21])box(.045,.42,.065,[x,-.30,.03]);
+    for(const x of [-.12,-.06,0,.06,.12])box(.012,.32,.025,[x,-.30,.05],trim);
+  } else if (asset === 'rain-spool') {
+    const cloud=new T.SphereGeometry(.15,12,8);cloud.scale(1.4,.7,.5);cloud.translate(0,-.28,.04);body.push(cloud);
+    for(const x of [-.12,0,.12]){const drop=new T.SphereGeometry(.035,8,6);drop.scale(1,1.6,.7);drop.translate(x,-.46-Math.abs(x)*.4,.04);trim.push(drop);}
+  } else if (asset === 'pantry-crown') {
+    const tray=new T.CylinderGeometry(.27,.24,.035,18);tray.translate(0,-.49,.03);body.push(tray);
+    for(const x of [-.13,.13]){const cup=new T.CylinderGeometry(.075,.055,.12,10);cup.translate(x,-.41,.03);trim.push(cup);}
+    box(.36,.025,.03,[0,-.25,.03],trim);
   } else {
     const axle = new T.CylinderGeometry(.10, .10, .30, 14); axle.rotateZ(Math.PI / 2); axle.translate(0, -.40, .02); body.push(axle);
     for (const x of [-.18, .18]) { const rim = new T.CylinderGeometry(.19, .19, .04, 14); rim.rotateZ(Math.PI / 2); rim.translate(x, -.40, .02); trim.push(rim); }

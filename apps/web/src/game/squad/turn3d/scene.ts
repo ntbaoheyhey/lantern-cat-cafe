@@ -1,3 +1,5 @@
+import { CardEnemyExpression } from './card-enemy-expression';
+import { CardBossAtmosphere, BOSS_STYLES, bossPerformance } from './card-boss-performance';
 /** Presentation only: projected snapshots and effect frames in, pixels/anchors out. */
 import * as T from 'three';
 import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
@@ -37,11 +39,12 @@ export interface SceneView {
   models?: Record<string,string>; warmModelIds?: string[];
   appearance?:ActorAppearance; actors: TurnActor[]; currentId: string | null; frame: EffectFrame | null;
   targetIds: string[]; legalIds: string[]; reducedMotion: boolean; paused: boolean; suspended?: boolean;
+  bossPhases?: Record<string, number>;
   boss: boolean; model?: { role: TurnActor['role']; clip: string; angle: number };
   modelProgress?:number; quality?:Quality; autoQuality?:boolean; fixedTime?: number; camera?: 'wide' | 'close' | 'overhead' | 'far';
 }
 export interface Anchor { id: string; x: number; y: number; labelX: number; labelY: number; footY: number; visible: boolean }
-interface Puppet { enteredAt:number; utensil?:CardUtensil; face?:CardFace; head?:T.Object3D; headRest:T.Quaternion; headPose:T.Quaternion; gaze:{yaw:number;pitch:number}; asset:string; height:number; baseColors:T.Color[]; gear:GearAttachments; root: T.Group; model: T.Group; mixer: T.AnimationMixer; actions: Map<string,T.AnimationAction>; clip: string; base: T.Vector3; shadow: T.Mesh; role: string; materials: T.Material[]; guard:T.Mesh; snare:T.Group }
+interface Puppet { bossPhase:number; phaseAt:number; enteredAt:number; utensil?:CardUtensil; face?:CardFace|CardEnemyExpression; head?:T.Object3D; headRest:T.Quaternion; headPose:T.Quaternion; gaze:{yaw:number;pitch:number}; asset:string; height:number; baseColors:T.Color[]; gear:GearAttachments; root: T.Group; model: T.Group; mixer: T.AnimationMixer; actions: Map<string,T.AnimationAction>; clip: string; base: T.Vector3; shadow: T.Mesh; role: string; materials: T.Material[]; guard:T.Mesh; snare:T.Group }
 const GOLD = '#f5cb7b', VIOLET = '#c3a4ff', TEAL = '#8adcc2';
 const roleColor = (role: string) => role === 'guardian' ? GOLD : role === 'witch' ? VIOLET : role === 'alchemist' ? TEAL : '#f1a295';
 const ease = (x: number) => 1 - (1 - Math.max(0, Math.min(1, x))) ** 3;
@@ -88,6 +91,7 @@ export class TurnScene {
   private targetLines:T.Line<T.BufferGeometry,T.LineBasicMaterial>[]=[];
   private stage = new T.Group();
   private bossBackdrop: T.Group;
+  private bossAtmosphere?: CardBossAtmosphere;
   private cameraTarget = new T.Vector3(0,.65,0);
   private blobMaterial: T.MeshBasicMaterial;
   private geometryOwned = new Set<T.BufferGeometry>();
@@ -125,6 +129,7 @@ export class TurnScene {
     this.bossBackdrop=new T.Group();
     for(let i=0;i<7;i++){const t=new T.Mesh(new T.TorusGeometry(2.5+i*.24,.025,4,60),new T.MeshBasicMaterial({color:'#d77889',transparent:true,opacity:.18}));t.rotation.x=Math.PI/2;t.position.set(2.3,.035+i*.004,0);this.bossBackdrop.add(t);}
     this.scene.add(this.bossBackdrop);
+    if(this.view().autoBattle){this.bossAtmosphere=new CardBossAtmosphere();this.scene.add(this.bossAtmosphere.root);}
     const makeRing=(color:string)=>{const m=new T.Mesh(new T.RingGeometry(.54,.60,40),new T.MeshBasicMaterial({color,transparent:true,opacity:.8,side:T.DoubleSide,depthWrite:false}));m.rotation.x=-Math.PI/2;m.position.y=.04;this.scene.add(m);return m;};
     this.activeRing=makeRing(GOLD);
     for(let i=0;i<12;i++){const r=makeRing(TEAL);r.visible=false;this.targetRings.push(r);}
@@ -135,7 +140,7 @@ export class TurnScene {
     this.spells=new SpellVfx(this.scene,!!this.view().autoBattle);
     if(this.view().autoBattle)this.cardEffects=new CardEffects(this.scene);
     this.warming = this.warmModels();
-    this.scene.traverse(o=>{if(o instanceof T.Mesh||o instanceof T.Line||o instanceof T.Points){this.geometryOwned.add(o.geometry);const ms=Array.isArray(o.material)?o.material:[o.material];ms.forEach(m=>this.materialOwned.add(m));}if(o instanceof T.Sprite)this.materialOwned.add(o.material);});
+    this.scene.traverse(o=>{if(o.parent===this.bossAtmosphere?.root)return;if(o instanceof T.Mesh||o instanceof T.Line||o instanceof T.Points){this.geometryOwned.add(o.geometry);const ms=Array.isArray(o.material)?o.material:[o.material];ms.forEach(m=>this.materialOwned.add(m));}if(o instanceof T.Sprite)this.materialOwned.add(o.material);});
     this.resize=new ResizeObserver(()=>this.resizeToHost());this.resize.observe(host);this.resizeToHost();
     this.renderer.domElement.addEventListener('pointerup',this.pick);
     this.renderer.domElement.addEventListener('webglcontextlost',this.lost);
@@ -276,9 +281,9 @@ export class TurnScene {
       const snare=new T.Group();for(let i=0;i<2;i++){const thread=new T.Mesh(new T.TorusGeometry(.47+i*.08,.018,5,32),new T.MeshBasicMaterial({color:VIOLET,transparent:true,opacity:.85}));thread.rotation.x=Math.PI/2+i*.35;thread.position.y=.2+i*.22;snare.add(thread);}snare.visible=false;root.add(snare);
       const base=point(a,boss);root.position.copy(base);model.rotation.y=restYaw(a.side);this.scene.add(root);
       const head = model.getObjectByName(`${a.role}_head`);
-      const face = this.view().autoBattle && a.side === 'party' ? new CardFace(model, a.role, asset) : undefined;
+      const face = this.view().autoBattle ? a.side === 'party' ? new CardFace(model, a.role, asset) : new CardEnemyExpression(model, a.role, asset) : undefined;
       const utensil = this.view().autoBattle ? new CardUtensil(model, a.role, asset) : undefined;
-      this.puppets.set(a.id,{utensil,enteredAt:this.time,face,head,headRest:head?.quaternion.clone() ?? new T.Quaternion(),headPose:head?.quaternion.clone() ?? new T.Quaternion(),gaze:{yaw:0,pitch:0},asset,height,baseColors:materials.map(m=>m instanceof T.MeshStandardMaterial?m.color.clone():new T.Color()),gear:new GearAttachments(model,a.role,this.gearResources),root,model,mixer,actions,clip:'',base,shadow,role:a.role,materials,guard,snare});this.stats.loaded=this.puppets.size;this.dirty=true;
+      this.puppets.set(a.id,{bossPhase:this.view().bossPhases?.[a.id]??1,phaseAt:-100,utensil,enteredAt:this.time,face,head,headRest:head?.quaternion.clone() ?? new T.Quaternion(),headPose:head?.quaternion.clone() ?? new T.Quaternion(),gaze:{yaw:0,pitch:0},asset,height,baseColors:materials.map(m=>m instanceof T.MeshStandardMaterial?m.color.clone():new T.Color()),gear:new GearAttachments(model,a.role,this.gearResources),root,model,mixer,actions,clip:'',base,shadow,role:a.role,materials,guard,snare});this.stats.loaded=this.puppets.size;this.dirty=true;
     }catch(error){if(!this.disposed)this.onFailure(`Model unavailable: ${a.name}. Turn controls remain available. ${String(error).slice(0,120)}`);}
     finally{this.pending.delete(a.id);}
   }
@@ -355,6 +360,12 @@ export class TurnScene {
         p.model.rotation.y = cardBodyYaw('party', 0, 0) + entrance.turn;
         if (entrance.finished) this.entrance = undefined;
       }
+      const phase=view.bossPhases?.[a.id]??1;
+      if(phase!==p.bossPhase){p.phaseAt=phase>p.bossPhase?this.time:-100;p.bossPhase=phase;}
+      if(view.autoBattle&&!view.model&&BOSS_STYLES[p.asset]&&a.hp>0){
+        const cue=bossPerformance(this.time-p.enteredAt,this.time-p.phaseAt,view.reducedMotion);
+        if(cue&&(!frame||frame.plan.skillId==='round-status'||source!==p&&!targets.includes(p))){clip=cue.clip;progress=cue.progress;}
+      }
       // Restore the last mixer pose before gaze. PropertyMixer skips unchanged values.
       if(view.autoBattle && p.head) p.head.quaternion.copy(p.headPose);
       this.animatePuppet(p,clip,view.fixedTime!==undefined?0:delta,view.fixedTime!==undefined?(view.modelProgress??progress??(clip==='idle'?.35:.45)):progress);
@@ -370,7 +381,11 @@ export class TurnScene {
       const knot=p.model.getObjectByName(`${a.role}_exposed_knot`);if(knot)knot.scale.setScalar(a.statuses.some(s=>s.kind==='exposed')?1.25:1);
     }
     if(view.autoBattle && this.litChapter!==(view.chapter??1)){this.litChapter=view.chapter??1;applyCardLighting(this.scene,this.renderer,this.litChapter);}
-    this.bossBackdrop.visible=view.boss&&!view.model;this.stage.visible=!view.model;
+    this.bossBackdrop.visible=view.boss&&!view.model&&!view.autoBattle;this.stage.visible=!view.model;
+    const boss=view.actors.find(a=>a.hp>0&&BOSS_STYLES[this.puppets.get(a.id)?.asset??'']);
+    const bossPuppet=boss?this.puppets.get(boss.id):undefined;
+    const bossCue=bossPuppet?bossPerformance(this.time-bossPuppet.enteredAt,this.time-bossPuppet.phaseAt,view.reducedMotion):null;
+    this.bossAtmosphere?.update(view.model?undefined:bossPuppet?.asset,bossPuppet?.base,bossPuppet?.bossPhase??1,bossCue?.progress??0,view.reducedMotion);
     for (const group of this.stage.children) {
       if (group.userData.chapter) group.visible = group.userData.chapter === view.chapter;
     }
@@ -393,6 +408,7 @@ export class TurnScene {
     if(frame&&!view.reducedMotion&&!view.model){const shot=cardRecipe?.shot??EFFECT_DIRECTION[frame.plan.skillId]?.shot,motion=frame.plan.ultimate?.22:.08,phase=Math.sin(frame.actionProgress*Math.PI);if(shot==='left'||shot==='right')this.camera.position.x+=phase*motion*(shot==='left'?-1:1);if(shot==='rise')this.camera.position.y+=phase*motion;}
     if(frame?.plan.skillId==='victory'&&!view.reducedMotion){this.camera.position.x=Math.sin(frame.actionProgress*Math.PI)*1.25;this.camera.position.y+=Math.sin(frame.actionProgress*Math.PI)*.3;}
     if (this.entrance && !frame) this.camera.zoom += cardEntrancePose(this.time - this.entrance.startedAt, view.reducedMotion).zoom;
+    if(bossCue&&!view.model&&!view.reducedMotion){const pulse=Math.sin(bossCue.progress*Math.PI);this.camera.zoom+=pulse*.03;this.cameraTarget.y+=pulse*.08;}
     this.camera.lookAt(this.cameraTarget);this.camera.updateProjectionMatrix();this.camera.updateMatrixWorld();
     if(view.autoBattle && !view.model) {
       for(const actor of view.actors) {
@@ -480,6 +496,7 @@ export class TurnScene {
     this.spells.dispose();
     this.cardEffects?.dispose();
     this.cardSurfaces?.dispose();
+    this.bossAtmosphere?.dispose();
     this.post.dispose();
     this.renderer.dispose();
     this.renderer.forceContextLoss();

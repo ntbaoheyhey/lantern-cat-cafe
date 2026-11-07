@@ -1,3 +1,4 @@
+import { BOSS_EFFECTS } from './card-boss-effects';
 import { ENEMY_BATCH4_EFFECTS } from './card-enemy-batch4-effects';
 import { ENEMY_BATCH3_EFFECTS } from './card-enemy-batch3-effects';
 import { ENEMY_BATCH2_EFFECTS } from './card-enemy-batch2-effects';
@@ -248,3 +249,5 @@ Object.assign(CARD_EFFECT_RECIPES, ENEMY_BATCH2_EFFECTS);
 Object.assign(CARD_EFFECT_RECIPES, ENEMY_BATCH3_EFFECTS);
 
 Object.assign(CARD_EFFECT_RECIPES, ENEMY_BATCH4_EFFECTS);
+
+Object.assign(CARD_EFFECT_RECIPES, BOSS_EFFECTS);
