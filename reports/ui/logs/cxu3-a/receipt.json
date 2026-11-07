@@ -1,0 +1,208 @@
+{
+  "head": "2e1f83ba0a437aac88d8f13e685d1832d8f123b3",
+  "pass": "cxu3-a",
+  "pid": 57251,
+  "cwd": "/Users/bao/taskbar-hero-ui",
+  "ports": [
+    5310,
+    5311,
+    5312,
+    5313
+  ],
+  "checks": [
+    {
+      "label": "typecheck",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "typecheck"
+      ],
+      "started": "2026-11-03T04:46:57.925510+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxu3-a/typecheck.log"
+    },
+    {
+      "label": "lint",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "lint"
+      ],
+      "started": "2026-11-03T04:47:06.468587+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxu3-a/lint.log"
+    },
+    {
+      "label": "scripts",
+      "command": [
+        "node",
+        "--test",
+        "scripts/gen-deno-json.test.mjs"
+      ],
+      "started": "2026-11-03T04:47:14.097360+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxu3-a/scripts.log"
+    },
+    {
+      "label": "packages",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "--filter",
+        "!@taskbar-hero/web",
+        "-r",
+        "--workspace-concurrency=1",
+        "test"
+      ],
+      "started": "2026-11-03T04:47:14.205609+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxu3-a/packages.log"
+    },
+    {
+      "label": "web-units",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "vitest",
+        "run",
+        "--maxWorkers=2"
+      ],
+      "started": "2026-11-03T04:47:51.480893+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxu3-a/web-units.log"
+    },
+    {
+      "label": "build",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "build"
+      ],
+      "started": "2026-11-03T04:48:34.725354+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxu3-a/build.log"
+    },
+    {
+      "label": "changed-1280x720",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "e2e/ui/cxu3-forge.spec.ts",
+        "e2e/ui/cxu3-market.spec.ts",
+        "e2e/layout/character-bag.spec.ts",
+        "e2e/ui/merged-redesign.spec.ts",
+        "--repeat-each=3",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "started": "2026-11-03T04:48:42.692448+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxu3-a/changed-1280x720.log"
+    },
+    {
+      "label": "changed-1600x900",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "e2e/ui/cxu3-forge.spec.ts",
+        "e2e/ui/cxu3-market.spec.ts",
+        "e2e/layout/character-bag.spec.ts",
+        "e2e/ui/merged-redesign.spec.ts",
+        "--repeat-each=3",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "started": "2026-11-03T04:49:36.856436+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxu3-a/changed-1600x900.log"
+    },
+    {
+      "label": "full-1280x720",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "started": "2026-11-03T04:50:25.952226+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxu3-a/full-1280x720.log"
+    },
+    {
+      "label": "full-1600x900",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "started": "2026-11-03T04:53:45.510811+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxu3-a/full-1600x900.log"
+    },
+    {
+      "label": "resize-five-1280x720",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "e2e/layout/resize-burst.spec.ts",
+        "--repeat-each=5",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "started": "2026-11-03T04:56:58.874044+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxu3-a/resize-five-1280x720.log"
+    },
+    {
+      "label": "resize-five-1600x900",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "e2e/layout/resize-burst.spec.ts",
+        "--repeat-each=5",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "started": "2026-11-03T04:57:17.799701+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxu3-a/resize-five-1600x900.log"
+    }
+  ]
+}

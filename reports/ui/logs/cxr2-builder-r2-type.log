@@ -1,0 +1,30 @@
+
+> taskbar-hero@0.0.0 typecheck /Users/bao/taskbar-hero-ui
+> pnpm -r typecheck
+
+Scope: 6 of 7 workspace projects
+packages/auth typecheck$ tsc --noEmit
+packages/chain typecheck$ tsc --noEmit
+packages/game-rules typecheck$ tsc --noEmit
+supabase/tests typecheck$ tsc --noEmit
+packages/chain typecheck: Done
+packages/auth typecheck: Done
+packages/game-rules typecheck: Done
+supabase/tests typecheck: Done
+packages/api-contract typecheck$ tsc --noEmit
+packages/api-contract typecheck: Done
+apps/web typecheck$ tsc --noEmit
+apps/web typecheck: src/layout/StageLayout.tsx(579,18): error TS2322: Type 'Element | { loadingNotice: Element | null; }' is not assignable to type 'ReactNode'.
+apps/web typecheck:   Object literal may only specify known properties, and 'loadingNotice' does not exist in type 'ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<...>'.
+apps/web typecheck: src/layout/StageLayout.tsx(611,18): error TS2322: Type 'Element | { loadingNotice: Element | null; }' is not assignable to type 'ReactNode'.
+apps/web typecheck:   Object literal may only specify known properties, and 'loadingNotice' does not exist in type 'ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<...>'.
+apps/web typecheck: src/layout/StageLayout.tsx(641,18): error TS2322: Type 'Element | { loadingNotice: Element | null; }' is not assignable to type 'ReactNode'.
+apps/web typecheck:   Object literal may only specify known properties, and 'loadingNotice' does not exist in type 'ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<...>'.
+apps/web typecheck: src/layout/StageLayout.tsx(713,18): error TS2322: Type 'Element | { loadingNotice: Element | null; }' is not assignable to type 'ReactNode'.
+apps/web typecheck:   Object literal may only specify known properties, and 'loadingNotice' does not exist in type 'ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<...>'.
+apps/web typecheck: Failed
+/Users/bao/taskbar-hero-ui/apps/web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/web@0.0.0 typecheck: `tsc --noEmit`
+Exit status 2
+ ELIFECYCLE  Command failed with exit code 2.
+exit=2

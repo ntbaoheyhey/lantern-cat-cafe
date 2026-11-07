@@ -1,0 +1,112 @@
+{
+  "head": "6ef93c0b6959aa470665613616781211225d15bd",
+  "pass": "cxr2-lock",
+  "pid": 54443,
+  "cwd": "/Users/bao/taskbar-hero-ui",
+  "ports": [
+    5310,
+    5311,
+    5312,
+    5313
+  ],
+  "checks": [
+    {
+      "label": "typecheck",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "typecheck"
+      ],
+      "started": "2026-11-03T12:28:54.410860+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxr2-lock/typecheck.log"
+    },
+    {
+      "label": "lint",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "lint"
+      ],
+      "started": "2026-11-03T12:29:02.843382+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxr2-lock/lint.log"
+    },
+    {
+      "label": "build",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "build"
+      ],
+      "started": "2026-11-03T12:29:10.671347+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxr2-lock/build.log"
+    },
+    {
+      "label": "changed-1280x720",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "e2e/a11y.spec.ts",
+        "e2e/layout/character-bag.spec.ts",
+        "e2e/ui/cxc2-proof.spec.ts",
+        "e2e/ui/cxr2-dialogs.spec.ts",
+        "e2e/ui/cxr2-market-states.spec.ts",
+        "e2e/ui/cxr2-state-matrix.spec.ts",
+        "e2e/ui/cxr2-returning-guest.spec.ts",
+        "e2e/server/cxr2-class-states.spec.ts",
+        "e2e/server/cxr2-load-states.spec.ts",
+        "e2e/v2/t2-player-loop.spec.ts",
+        "e2e/ui/cxu3-forge.spec.ts",
+        "e2e/ui/cxu3-market.spec.ts",
+        "e2e/ui/merged-redesign.spec.ts",
+        "--repeat-each=1",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "started": "2026-11-03T12:29:19.169484+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxr2-lock/changed-1280x720.log"
+    },
+    {
+      "label": "changed-1600x900",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "e2e/a11y.spec.ts",
+        "e2e/layout/character-bag.spec.ts",
+        "e2e/ui/cxc2-proof.spec.ts",
+        "e2e/ui/cxr2-dialogs.spec.ts",
+        "e2e/ui/cxr2-market-states.spec.ts",
+        "e2e/ui/cxr2-state-matrix.spec.ts",
+        "e2e/ui/cxr2-returning-guest.spec.ts",
+        "e2e/server/cxr2-class-states.spec.ts",
+        "e2e/server/cxr2-load-states.spec.ts",
+        "e2e/v2/t2-player-loop.spec.ts",
+        "e2e/ui/cxu3-forge.spec.ts",
+        "e2e/ui/cxu3-market.spec.ts",
+        "e2e/ui/merged-redesign.spec.ts",
+        "--repeat-each=1",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "started": "2026-11-03T12:30:33.663378+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxr2-lock/changed-1600x900.log"
+    }
+  ]
+}

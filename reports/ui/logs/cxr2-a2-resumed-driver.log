@@ -1,0 +1,4 @@
+  File "/Users/bao/taskbar-hero-ui/reports/ui/resume-cxr2-a.py", line 20
+    with (out/(label+'.log')).open('w') as f:\n  result=subprocess.run(cmd,cwd=root/'apps/web',env=env,stdout=f,stderr=subprocess.STDOUT);f.write('\nexit='+str(result.returncode)+'\n')
+                                                                                                                                                                                       ^
+SyntaxError: unexpected character after line continuation character

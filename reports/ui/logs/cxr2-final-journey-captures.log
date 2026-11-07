@@ -1,0 +1,139 @@
+[WebServer] (node:30579) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:30595) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-ui/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+[WebServer] (node:30606) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+
+[WebServer] (node:30645) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:30646) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-ui/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] (node:30652) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+[WebServer] (node:30722) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+
+[WebServer] (node:30761) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:30763) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-ui/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] (node:30770) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-ui/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] (node:30771) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 10 tests using 2 workers
+
+(node:30784) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+(node:30785) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/10] [stage-layout] › e2e/ui/cxr2-dialogs.spec.ts:31:7 › CXR2 1280 no-preference › first-visit Help uses shared keyboard and background isolation
+[2/10] [stage-layout] › e2e/ui/merged-redesign.spec.ts:20:5 › merged redesign journey 1280x720 › guest landing to class, Home, populated Bag and equip
+[3/10] [stage-layout] › e2e/ui/cxr2-dialogs.spec.ts:49:7 › CXR2 1280 no-preference › offline welcome and real boss chest retain actions, art and exclusive focus
+[4/10] [stage-layout] › e2e/ui/merged-redesign.spec.ts:20:5 › merged redesign journey 1600x900 › guest landing to class, Home, populated Bag and equip
+  1) [stage-layout] › e2e/ui/cxr2-dialogs.spec.ts:49:7 › CXR2 1280 no-preference › offline welcome and real boss chest retain actions, art and exclusive focus 
+
+    Error: expect(locator).toBeFocused() failed
+
+    Locator:  getByTestId('nav-map')
+    Expected: focused
+    Received: inactive
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeFocused" getByTestId('nav-map') with timeout 5000ms
+      - waiting for getByTestId('nav-map')
+        14 × locator resolved to <button role="tab" id="tab-map" tabindex="0" aria-label="Map" aria-current="page" data-screen-id="map" aria-selected="true" data-testid="nav-map" class="rail-item active" aria-controls="panel-map">…</button>
+           - unexpected value "inactive"
+
+
+      90 |         await capture(page, `chest-${size.width}-${motion}`);
+      91 |         await collect.click(); await restored(page);
+    > 92 |         await expect(page.getByTestId('nav-map')).toBeFocused();
+         |                                                   ^
+      93 |         await expect(page.getByTestId('nav-home')).toBeEnabled();
+      94 |         expect(errors).toEqual([]);
+      95 |       });
+        at /Users/bao/taskbar-hero-ui/apps/web/e2e/ui/cxr2-dialogs.spec.ts:92:51
+
+    Error Context: test-results/5310-5311/ui-cxr2-dialogs-CXR2-1280--790f3-ons-art-and-exclusive-focus-stage-layout/error-context.md
+
+
+(node:30835) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[5/10] [stage-layout] › e2e/ui/cxr2-dialogs.spec.ts:31:7 › CXR2 1280 reduce › first-visit Help uses shared keyboard and background isolation
+[6/10] [stage-layout] › e2e/ui/cxr2-dialogs.spec.ts:49:7 › CXR2 1280 reduce › offline welcome and real boss chest retain actions, art and exclusive focus
+[7/10] [stage-layout] › e2e/ui/cxr2-dialogs.spec.ts:31:7 › CXR2 1600 no-preference › first-visit Help uses shared keyboard and background isolation
+[8/10] [stage-layout] › e2e/ui/cxr2-dialogs.spec.ts:49:7 › CXR2 1600 no-preference › offline welcome and real boss chest retain actions, art and exclusive focus
+  2) [stage-layout] › e2e/ui/cxr2-dialogs.spec.ts:49:7 › CXR2 1600 no-preference › offline welcome and real boss chest retain actions, art and exclusive focus 
+
+    Error: expect(locator).toBeFocused() failed
+
+    Locator:  getByTestId('nav-map')
+    Expected: focused
+    Received: inactive
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeFocused" getByTestId('nav-map') with timeout 5000ms
+      - waiting for getByTestId('nav-map')
+        14 × locator resolved to <button role="tab" id="tab-map" tabindex="0" aria-label="Map" aria-current="page" data-screen-id="map" aria-selected="true" data-testid="nav-map" class="rail-item active" aria-controls="panel-map">…</button>
+           - unexpected value "inactive"
+
+
+      90 |         await capture(page, `chest-${size.width}-${motion}`);
+      91 |         await collect.click(); await restored(page);
+    > 92 |         await expect(page.getByTestId('nav-map')).toBeFocused();
+         |                                                   ^
+      93 |         await expect(page.getByTestId('nav-home')).toBeEnabled();
+      94 |         expect(errors).toEqual([]);
+      95 |       });
+        at /Users/bao/taskbar-hero-ui/apps/web/e2e/ui/cxr2-dialogs.spec.ts:92:51
+
+    Error Context: test-results/5310-5311/ui-cxr2-dialogs-CXR2-1600--4d721-ons-art-and-exclusive-focus-stage-layout/error-context.md
+
+
+(node:30860) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[9/10] [stage-layout] › e2e/ui/cxr2-dialogs.spec.ts:31:7 › CXR2 1600 reduce › first-visit Help uses shared keyboard and background isolation
+[10/10] [stage-layout] › e2e/ui/cxr2-dialogs.spec.ts:49:7 › CXR2 1600 reduce › offline welcome and real boss chest retain actions, art and exclusive focus
+  2 failed
+    [stage-layout] › e2e/ui/cxr2-dialogs.spec.ts:49:7 › CXR2 1280 no-preference › offline welcome and real boss chest retain actions, art and exclusive focus 
+    [stage-layout] › e2e/ui/cxr2-dialogs.spec.ts:49:7 › CXR2 1600 no-preference › offline welcome and real boss chest retain actions, art and exclusive focus 
+  8 passed (31.6s)
+exit=1

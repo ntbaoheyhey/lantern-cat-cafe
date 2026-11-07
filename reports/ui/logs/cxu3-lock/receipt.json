@@ -1,0 +1,90 @@
+{
+  "head": "2e1f83ba0a437aac88d8f13e685d1832d8f123b3",
+  "pass": "cxu3-lock",
+  "pid": 68880,
+  "cwd": "/Users/bao/taskbar-hero-ui",
+  "ports": [
+    5310,
+    5311,
+    5312,
+    5313
+  ],
+  "checks": [
+    {
+      "label": "typecheck",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "typecheck"
+      ],
+      "started": "2026-11-03T05:05:00.118422+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxu3-lock/typecheck.log"
+    },
+    {
+      "label": "lint",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "lint"
+      ],
+      "started": "2026-11-03T05:05:08.928523+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxu3-lock/lint.log"
+    },
+    {
+      "label": "build",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "build"
+      ],
+      "started": "2026-11-03T05:05:16.292348+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxu3-lock/build.log"
+    },
+    {
+      "label": "changed-1280x720",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "e2e/ui/cxu3-forge.spec.ts",
+        "e2e/ui/cxu3-market.spec.ts",
+        "--repeat-each=1",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "started": "2026-11-03T05:05:23.949699+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxu3-lock/changed-1280x720.log"
+    },
+    {
+      "label": "changed-1600x900",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "e2e/ui/cxu3-forge.spec.ts",
+        "e2e/ui/cxu3-market.spec.ts",
+        "--repeat-each=1",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "started": "2026-11-03T05:05:47.068560+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/cxu3-lock/changed-1600x900.log"
+    }
+  ]
+}

@@ -1,0 +1,2348 @@
+diff --git a/apps/web/e2e/fixtures/market-view.html b/apps/web/e2e/fixtures/market-view.html
+new file mode 100644
+index 0000000..f97d68f
+--- /dev/null
++++ b/apps/web/e2e/fixtures/market-view.html
+@@ -0,0 +1,12 @@
++<!doctype html>
++<html lang="en">
++  <head>
++    <meta charset="utf-8" />
++    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
++    <title>Local Market view fixture</title>
++    <link rel="preconnect" href="https://fonts.googleapis.com" />
++    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
++    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap" />
++  </head>
++  <body><div id="root"></div><script type="module" src="./market-view.tsx"></script></body>
++</html>
+diff --git a/apps/web/e2e/fixtures/market-view.tsx b/apps/web/e2e/fixtures/market-view.tsx
+new file mode 100644
+index 0000000..fd92976
+--- /dev/null
++++ b/apps/web/e2e/fixtures/market-view.tsx
+@@ -0,0 +1,55 @@
++import { useState } from 'react';
++import { createRoot } from 'react-dom/client';
++import { getAddresses, FUJI_CHAIN_ID } from '@taskbar-hero/chain';
++import { v2 } from '@taskbar-hero/game-rules';
++import { parseEther } from 'viem';
++import { ScreenFrame } from '../../src/shell';
++import { WalletProvider } from '../../src/wallet/WalletProvider';
++import { sampleStateV2 } from '../../src/layout/sampleState';
++import { MarketView } from '../../src/market/MarketView';
++import type { Listing } from '../../src/market/marketViewModel';
++import '../../src/styles.css';
++import '../../src/theme.css';
++import '../../src/motion.css';
++import '../../src/layout/layout.css';
++import '../../src/forge/forge.css';
++
++type Scenario = 'populated' | 'empty' | 'error' | 'loading';
++interface Call { kind: 'buy' | 'cancel' | 'list'; id: string; amount: string; price: string }
++declare global { interface Window { __cxu3Market: { calls: Call[]; scenario: (value: Scenario) => void } } }
++const calls: Call[] = [];
++const me = `0x${'ab'.repeat(20)}` as const;
++const other = `0x${'cd'.repeat(20)}` as const;
++const listings: Listing[] = [
++  { id: 7n, seller: other, relicId: 2n, amount: 1n, price: parseEther('0.05') },
++  { id: 9n, seller: me, relicId: 1n, amount: 2n, price: parseEther('0.25') },
++  { id: 11n, seller: other, relicId: 4n, amount: 1n, price: parseEther('0.5') },
++];
++const holdings = [
++  { rarity: 'common' as const, relicId: 1n, balance: 3n, listed: 2n },
++  { rarity: 'legendary' as const, relicId: 4n, balance: 1n, listed: 0n },
++];
++const state = sampleStateV2();
++const stats = v2.deriveStats({ classId: state.cat.classId!, level: state.cat.level }, state.inventory.filter(item => item.equipped).map(item => ({ itemId: item.itemKey, level: item.level, bonusLines: item.bonus })));
++const addresses = getAddresses(FUJI_CHAIN_ID);
++function Fixture() {
++  const [scenario, setScenario] = useState<Scenario>('populated');
++  const [id, setId] = useState(''); const [amount, setAmount] = useState('1'); const [price, setPrice] = useState('');
++  const [message, setMessage] = useState<string | null>(null);
++  window.__cxu3Market = { calls, scenario: setScenario };
++  const record = (kind: 'buy' | 'cancel', listing: Listing) => { calls.push({ kind, id: listing.id.toString(), amount: listing.amount.toString(), price: listing.price.toString() }); setMessage('Mock wallet request captured; no transaction sent.'); };
++  return <ScreenFrame activeScreen="market" onSelectScreen={() => {}} dataLayout="desktop" hudProps={{ state, power: Math.round(v2.powerRating(stats)) }}>
++    <div className="shell-panel-container"><div className="shell-panel-view screen-market" style={{ display: 'flex' }}><div className="v2-tabpanel">
++      <h2 className="v2-tabpanel-title" data-testid="market-fixture-disclaimer">Local Market fixture — mock wallet data, no transactions</h2>
++      <div className="v2-panel-body-inner"><MarketView nft={addresses.RelicNFT!} market={addresses.RelicMarket!} address={me}
++        listings={scenario === 'empty' ? [] : listings} holdings={scenario === 'empty' ? [] : holdings} sellable={holdings}
++        loadingHoldings={scenario === 'loading'} loadingListings={scenario === 'loading'} holdingsFailed={scenario === 'error'} readFailed={scenario === 'error'} busy={null} message={message}
++        form={{ relicId: id, amount, price, canList: Boolean(id && amount && price) }}
++        onRelicId={setId} onAmount={setAmount} onPrice={setPrice} onRetry={() => setScenario('populated')}
++        onBuy={listing => record('buy', listing)} onCancel={listing => record('cancel', listing)}
++        onList={() => { calls.push({ kind: 'list', id, amount, price }); setMessage('Mock wallet request captured; no transaction sent.'); }} />
++      </div>
++    </div></div></div>
++  </ScreenFrame>;
++}
++createRoot(document.getElementById('root')!).render(<WalletProvider><Fixture /></WalletProvider>);
+diff --git a/apps/web/e2e/support/market-build.mjs b/apps/web/e2e/support/market-build.mjs
+new file mode 100644
+index 0000000..2f67f06
+--- /dev/null
++++ b/apps/web/e2e/support/market-build.mjs
+@@ -0,0 +1,13 @@
++// Test-only sidecar bundle. Never writes to the production dist directory.
++import { resolve } from 'node:path';
++import { build } from 'vite';
++const directory = process.argv[2];
++if (!/^dist-v2\/e2e-[1-9]\d*$/.test(directory ?? '')) throw new Error('Market fixture requires an isolated E2E output directory');
++await build({
++  configFile: resolve('vite.config.ts'), envDir: false, publicDir: false,
++  base: '/market-fixture/',
++  build: {
++    outDir: `${directory}/market-fixture`, emptyOutDir: true,
++    rollupOptions: { input: resolve('e2e/fixtures/market-view.html') },
++  },
++});
+diff --git a/apps/web/e2e/ui/cxu3-forge.spec.ts b/apps/web/e2e/ui/cxu3-forge.spec.ts
+new file mode 100644
+index 0000000..df13d2f
+--- /dev/null
++++ b/apps/web/e2e/ui/cxu3-forge.spec.ts
+@@ -0,0 +1,99 @@
++import { expect, test, type Page } from '../support/test';
++import { mockV2Save } from '../../src/api/mockV2Fixtures';
++import fs from 'node:fs';
++import path from 'node:path';
++const storageKey = fs.readFileSync('src/api/MockGameApiV2.ts', 'utf8').match(/export const MOCK_V2_STORAGE_KEY = '([^']+)'/)![1]!;
++
++async function geometry(page: Page) {
++  expect(await page.evaluate(() => ({ x: document.documentElement.scrollWidth > innerWidth, y: document.documentElement.scrollHeight > innerHeight }))).toEqual({ x: false, y: false });
++  const clipped = await page.locator('.forge-panel button:visible, .forge-panel input:visible').evaluateAll(elements => elements.filter(element => {
++    const rect = element.getBoundingClientRect();
++    if (rect.x < 0 || rect.y < 0 || rect.right > innerWidth + 1 || rect.bottom > innerHeight + 1) return true;
++    for (let parent = element.parentElement; parent; parent = parent.parentElement) {
++      const style = getComputedStyle(parent), bounds = parent.getBoundingClientRect();
++      if (/(hidden|clip|auto|scroll)/.test(style.overflowY) && (rect.y < bounds.y - 1 || rect.bottom > bounds.bottom + 1)) return true;
++      if (/(hidden|clip|auto|scroll)/.test(style.overflowX) && (rect.x < bounds.x - 1 || rect.right > bounds.right + 1)) return true;
++    }
++    return false;
++  }).map(element => element.textContent || element.getAttribute('aria-label')));
++  expect(clipped).toEqual([]);
++}
++async function screenshot(page: Page, name: string) {
++  if (!process.env.CXU3_SCREENSHOTS) return;
++  await page.locator('.forge-panel').evaluate(root => Promise.all(root.getAnimations({ subtree: true }).filter(animation => animation.effect?.getComputedTiming().iterations !== Infinity).map(animation => animation.finished.catch(() => {}))));
++  const dir = path.resolve(process.env.CXU3_SCREENSHOTS); fs.mkdirSync(dir, { recursive: true });
++  await page.screenshot({ path: path.join(dir, name + '.png') });
++}
++for (const size of [{ width: 1280, height: 720 }, { width: 1600, height: 900 }]) {
++  for (const reducedMotion of ['no-preference', 'reduce'] as const) {
++    test(`CXU3 Forge costs, confirmation, one-shot reveal and tabs ${size.width} ${reducedMotion}`, async ({ page }) => {
++      const errors: string[] = [];
++      page.on('pageerror', error => errors.push(error.message));
++      page.on('console', message => { if (message.type() === 'error') errors.push(message.text()); });
++      await page.setViewportSize(size); await page.emulateMedia({ reducedMotion });
++      const save = mockV2Save('forgeRich', { nowMs: Date.now(), classId: 'warrior' });
++      await page.addInitScript(({ key, save }) => { localStorage.setItem(key, save); localStorage.setItem('taskbar-hero.howToPlaySeen', '1'); }, { key: storageKey, save: JSON.stringify(save) });
++      await page.goto('/'); await page.getByRole('tab', { name: 'Forge', exact: true }).click();
++      await expect(page.getByTestId('craft-panel')).toBeVisible(); await page.evaluate(() => document.fonts.ready);
++      await expect(page.getByTestId('cost-yarn')).toContainText(`${save.state.stacks.yarn} / 10`);
++      await expect(page.getByTestId('cost-fluffTuft')).toContainText(`${save.state.stacks.fluffTuft} / 4`);
++      await expect(page.getByTestId('cost-fish')).toContainText(`${save.state.stacks.fish} / 50`);
++      await expect(page.getByRole('table', { name: 'Crafting chances' })).toContainText('Common gear100'); await geometry(page);
++      await page.getByTestId('rarity-legendary').click(); await expect(page.getByTestId('craft-btn')).toBeDisabled();
++      await expect(page.getByRole('table', { name: 'Crafting chances' })).toContainText('Legendary gear100');
++      await page.getByTestId('rarity-common').click(); await page.getByTestId('slot-helmet').click();
++      const animations = await page.evaluateHandle(() => {
++        const count = { starts: 0, ends: 0 };
++        document.addEventListener('animationstart', event => { if (event.animationName === 'forgeFlash') count.starts++; });
++        document.addEventListener('animationend', event => { if (event.animationName === 'forgeFlash') count.ends++; });
++        return count;
++      });
++      await page.getByTestId('craft-btn').focus(); await page.keyboard.press('Enter');
++      await expect(page.getByTestId('craft-confirm-box')).toContainText('Common Helmet'); await geometry(page);
++      expect(await page.getByTestId('craft-cancel-btn').evaluate(node => getComputedStyle(node).backgroundColor)).not.toBe(await page.getByTestId('craft-confirm-btn').evaluate(node => getComputedStyle(node).backgroundColor));
++      const contrast = await page.getByTestId('craft-cancel-btn').evaluate(node => {
++        const style = getComputedStyle(node);
++        const luminance = (rgb: string) => rgb.match(/[\d.]+/g)!.slice(0, 3).map(Number).map(value => value / 255).map(value => value <= 0.04045 ? value / 12.92 : ((value + 0.055) / 1.055) ** 2.4).reduce((sum, value, index) => sum + value * [0.2126, 0.7152, 0.0722][index]!, 0);
++        const light = luminance(style.color), dark = luminance(style.backgroundColor);
++        return (Math.max(light, dark) + 0.05) / (Math.min(light, dark) + 0.05);
++      });
++      expect(contrast).toBeGreaterThanOrEqual(4.5);
++      await screenshot(page, `craft-confirm-${size.width}-${reducedMotion}`);
++      await page.getByTestId('craft-cancel-btn').click(); await expect(page.getByTestId('craft-confirm-box')).toHaveCount(0);
++      await page.getByTestId('craft-btn').click(); await page.getByTestId('craft-confirm-btn').click();
++      await expect(page.getByTestId('craft-result')).toContainText('Crafted: Common');
++      const reveal = await page.getByTestId('forge-in-place-reveal').elementHandle();
++      if (reducedMotion === 'reduce') await expect(page.getByTestId('forge-in-place-reveal')).toHaveCSS('animation-name', 'none');
++      else await expect.poll(() => animations.evaluate(count => count.ends)).toBe(1);
++      await geometry(page); await screenshot(page, `craft-result-${size.width}-${reducedMotion}`);
++      await page.evaluate(() => window.__g1Loop.claimNow());
++      expect(await reveal!.evaluate(node => node === document.querySelector('[data-testid="forge-in-place-reveal"]'))).toBe(true);
++      expect(await animations.evaluate(count => count.starts)).toBe(reducedMotion === 'reduce' ? 0 : 1);
++      await page.getByTestId('slot-boots').click(); await page.getByTestId('craft-btn').click(); await page.getByTestId('craft-confirm-btn').click();
++      await expect(page.getByTestId('craft-result')).toContainText('Crafted: Common');
++      if (reducedMotion === 'no-preference') await expect.poll(() => animations.evaluate(count => count.ends)).toBe(2);
++      expect(await reveal!.evaluate(node => node.isConnected)).toBe(false);
++      await page.getByTestId('tab-salvage').click(); await expect(page.getByTestId('salvage-panel')).toBeVisible();
++      await expect(page.getByTestId('salvage-check-fx:forgeRich:0')).toBeDisabled();
++      await expect(page.getByTestId('salvage-check-fx:forgeRich:4')).toBeDisabled();
++      await page.getByTestId('salvage-check-fx:forgeRich:1').check();
++      await expect(page.getByTestId('salvage-btn')).toBeEnabled(); await screenshot(page, `salvage-${size.width}-${reducedMotion}`);
++      await page.getByTestId('tab-relic').click(); await expect(page.getByTestId('relic-panel')).toBeVisible();
++      await expect(page.getByTestId('relic-forge-btn')).toBeDisabled(); await geometry(page);
++      await screenshot(page, `relic-${size.width}-${reducedMotion}`);
++      expect(errors).toEqual([]); await animations.dispose(); await reveal!.dispose();
++    });
++  }
++}
++
++
++test('CXU3 preserves the compact Forge action without scrolling', async ({ page }) => {
++  await page.setViewportSize({ width: 320, height: 568 });
++  const save = mockV2Save('forgeRich', { nowMs: Date.now() });
++  await page.addInitScript(({ key, save }) => { localStorage.setItem(key, save); localStorage.setItem('taskbar-hero.howToPlaySeen', '1'); }, { key: storageKey, save: JSON.stringify(save) });
++  await page.goto('/'); await page.getByRole('tab', { name: 'Forge', exact: true }).click();
++  await expect(page.getByTestId('craft-btn')).toBeInViewport({ ratio: 1 });
++  await page.getByTestId('craft-btn').click();
++  await expect(page.getByTestId('craft-confirm-btn')).toBeInViewport({ ratio: 1 });
++  await expect(page.getByTestId('craft-cancel-btn')).toBeInViewport({ ratio: 1 });
++});
+diff --git a/apps/web/e2e/ui/cxu3-market.spec.ts b/apps/web/e2e/ui/cxu3-market.spec.ts
+new file mode 100644
+index 0000000..8f7615f
+--- /dev/null
++++ b/apps/web/e2e/ui/cxu3-market.spec.ts
+@@ -0,0 +1,63 @@
++import { test, expect, type Page } from '../support/test';
++import type {} from '../fixtures/market-view';
++import fs from 'node:fs';
++import path from 'node:path';
++
++async function geometry(page: Page) {
++  const issues = await page.locator('.market').evaluate(root => {
++    const bad: string[] = [];
++    for (const node of root.querySelectorAll<HTMLElement>('button,input,select,a')) {
++      const rect = node.getBoundingClientRect(); if (!rect.width || !rect.height) continue;
++      if (rect.left < 0 || rect.top < 0 || rect.right > innerWidth + 1 || rect.bottom > innerHeight + 1) bad.push(node.textContent ?? node.tagName);
++    }
++    if (document.documentElement.scrollWidth > innerWidth || document.documentElement.scrollHeight > innerHeight) bad.push('document scroll');
++    return bad;
++  });
++  expect(issues).toEqual([]);
++}
++async function screenshot(page: Page, name: string) {
++  if (!process.env.CXU3_SCREENSHOTS) return;
++  const dir = path.resolve(process.env.CXU3_SCREENSHOTS); fs.mkdirSync(dir, { recursive: true });
++  await page.screenshot({ path: path.join(dir, name + '.png') });
++}
++for (const size of [{ width: 1280, height: 720 }, { width: 1600, height: 900 }]) {
++  test(`CXU3 real MarketView with mocked wallet callbacks ${size.width}`, async ({ page }) => {
++    await page.setViewportSize(size);
++    const errors: string[] = []; const writes: string[] = [];
++    page.on('console', message => { if (message.type() === 'error') errors.push(message.text()); });
++    page.on('pageerror', error => errors.push(error.message));
++    page.on('request', request => { if (request.method() !== 'GET') writes.push(request.method() + ' ' + new URL(request.url()).pathname); });
++    await page.goto('/market-fixture/e2e/fixtures/market-view.html');
++    await expect(page.getByTestId('market-fixture-disclaimer')).toBeVisible(); await page.evaluate(() => document.fonts.ready);
++    expect(await page.evaluate(() => ['14px "DM Sans"', '700 14px "Pixelify Sans"', '500 14px "JetBrains Mono"'].every(font => document.fonts.check(font)))).toBe(true);
++    const table = page.getByRole('table', { name: 'Relic market listings' });
++    await expect(table.getByRole('row')).toHaveCount(4); await geometry(page); await screenshot(page, `market-inspect-${size.width}`);
++    const sort = page.getByRole('button', { name: 'Sort by quantity' }); await sort.focus(); await page.keyboard.press('Enter'); await page.keyboard.press('Enter');
++    await expect(table.getByRole('row').nth(1)).toHaveAttribute('data-testid', 'listing-9');
++    await page.getByRole('group', { name: 'Filter listings' }).getByRole('button', { name: 'Rare', exact: true }).click(); await expect(table.getByRole('row')).toHaveCount(2);
++    const row = page.getByTestId('listing-7'); await row.getByRole('button').focus(); await page.keyboard.press('Enter');
++    const detail = page.getByRole('region', { name: 'Listing details' }); await expect(detail).toContainText('Quantity1');
++    await expect(row.getByRole('button', { name: 'Buy', exact: true })).toHaveCount(0);
++    await detail.getByRole('button', { name: 'Buy', exact: true }).click();
++    expect(await page.evaluate(() => window.__cxu3Market.calls)).toEqual([{ kind: 'buy', id: '7', amount: '1', price: '50000000000000000' }]);
++    await page.getByRole('button', { name: 'Sell a Relic', exact: true }).click();
++    await page.getByLabel('Relic', { exact: true }).selectOption('1'); await page.getByLabel('Amount', { exact: true }).fill('2'); await page.getByLabel('Price (AVAX)', { exact: true }).fill('0.25');
++    await geometry(page); await screenshot(page, `market-sell-${size.width}`); await page.getByRole('button', { name: 'List', exact: true }).click();
++    expect(await page.evaluate(() => window.__cxu3Market.calls.at(-1))).toEqual({ kind: 'list', id: '1', amount: '2', price: '0.25' });
++    await page.getByRole('group', { name: 'Filter listings' }).getByRole('button', { name: 'Your listings', exact: true }).click();
++    await page.getByRole('button', { name: 'Inspect listing' }).click();
++    await detail.getByRole('button', { name: 'Cancel', exact: true }).click();
++    expect(await page.evaluate(() => window.__cxu3Market.calls.at(-1))).toEqual({ kind: 'cancel', id: '9', amount: '2', price: '250000000000000000' });
++    await page.evaluate(() => window.__cxu3Market.scenario('error')); await expect(page.getByRole('alert')).toContainText("couldn't read");
++    await expect(page.getByRole('button', { name: 'Buy', exact: true })).toHaveCount(0); await geometry(page);
++    await page.getByRole('button', { name: 'Retry', exact: true }).click();
++    await page.getByRole('group', { name: 'Filter listings' }).getByRole('button', { name: 'All Relics', exact: true }).click(); await page.evaluate(() => window.__cxu3Market.scenario('empty'));
++    await expect(page.getByTestId('listings-empty')).toContainText('No Relics for sale'); await geometry(page);
++    await page.evaluate(() => window.__cxu3Market.scenario('loading'));
++    await expect(page.getByRole('status').filter({ hasText: 'Loading listings' })).toBeVisible();
++    await expect(page.getByRole('button', { name: 'Buy', exact: true })).toHaveCount(0);
++    await page.getByRole('button', { name: 'Sell a Relic', exact: true }).click();
++    await expect(page.getByRole('button', { name: 'List', exact: true })).toBeDisabled();
++    expect(writes).toEqual([]); expect(errors).toEqual([]);
++  });
++}
+diff --git a/apps/web/playwright.config.ts b/apps/web/playwright.config.ts
+index dcd367c..cee6e56 100644
+--- a/apps/web/playwright.config.ts
++++ b/apps/web/playwright.config.ts
+@@ -43,7 +43,7 @@ export default defineConfig({
+       timeout: 120_000,
+     },
+     {
+-      command: `npx -y pnpm@10.28.0 exec vite build --mode g1-perf --outDir ${v2Dist} && node e2e/support/serve.mjs ${v2Dist} ${v2Port}`,
++      command: `npx -y pnpm@10.28.0 exec vite build --mode g1-perf --outDir ${v2Dist} && node e2e/support/market-build.mjs ${v2Dist} && node e2e/support/serve.mjs ${v2Dist} ${v2Port}`,
+       env: { ...demoEnv, VITE_GAME_V2: '1' },
+       url: v2URL,
+       reuseExistingServer: false,
+diff --git a/apps/web/src/layout/StageLayout.tsx b/apps/web/src/layout/StageLayout.tsx
+index e340029..5fbbfd2 100644
+--- a/apps/web/src/layout/StageLayout.tsx
++++ b/apps/web/src/layout/StageLayout.tsx
+@@ -686,6 +686,7 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
+                       });
+                       setNotice(message ?? 'Relic voucher ready. Confirm minting below.');
+                     }}
++                    craftResultId={crafted?.id}
+                     craftResult={
+                       crafted ? (
+                         <div className="forge-reveal" role="status" data-testid="craft-result">
+diff --git a/apps/web/src/layout/forge/ForgePanel.css b/apps/web/src/layout/forge/ForgePanel.css
+index 57c25c5..ac3d628 100644
+--- a/apps/web/src/layout/forge/ForgePanel.css
++++ b/apps/web/src/layout/forge/ForgePanel.css
+@@ -1,5 +1,115 @@
+ /* Cat Café Quest v2 - ForgePanel styles (Craft, Salvage, Relic) */
+ 
++/* 3-column desktop layout (AGR3 Redesign) */
++.forge-cols {
++  display: grid;
++  grid-template-columns: 300px 1fr 320px;
++  gap: var(--sp-3, 14px);
++  height: 100%;
++  min-height: 0;
++  align-items: stretch;
++  box-sizing: border-box;
++}
++
++
++.forge-col-left,
++.forge-col-centre,
++.forge-col-right {
++  min-width: 0;
++  min-height: 0;
++  box-sizing: border-box;
++}
++
++.forge-col-left {
++  display: flex;
++  flex-direction: column;
++  gap: 12px;
++  overflow-y: auto;
++}
++
++.forge-col-centre {
++  background: radial-gradient(circle at 50% 45%, #5a3560, var(--surface, #2a1f36) 70%) !important;
++  display: flex;
++  flex-direction: column;
++  align-items: center;
++  justify-content: center;
++  text-align: center;
++  padding: 20px;
++  position: relative;
++  overflow: hidden;
++  border: 2px solid var(--border, #5b4572);
++  box-shadow: var(--pixel-shadow, 3px 3px 0 #000);
++}
++
++.forge-col-right {
++  display: flex;
++  flex-direction: column;
++  gap: 14px;
++  overflow-y: auto;
++}
++
++.forge-preview-slot {
++  width: 120px;
++  height: 120px;
++  background: var(--bg, #1a1220);
++  border: 2px solid var(--border, #72578d);
++  box-shadow: var(--pixel-shadow, 3px 3px 0 #000);
++  display: grid;
++  place-items: center;
++  position: relative;
++  margin-bottom: 8px;
++}
++
++.forge-candidate-preview {
++  margin-top: 8px;
++  display: flex;
++  flex-direction: column;
++  gap: 4px;
++}
++
++.forge-chances-table {
++  width: 100%;
++  border-collapse: collapse;
++  font-size: 13px;
++  margin-top: 4px;
++}
++
++.forge-chances-table th {
++  text-align: left;
++  font-family: var(--font-display, 'Pixelify Sans', monospace);
++  font-size: 11px;
++  font-weight: 700;
++  letter-spacing: 0.07em;
++  text-transform: uppercase;
++  color: var(--muted, #c3aed0);
++  padding: 6px 8px;
++  border-bottom: 2px solid var(--border, #72578d);
++}
++
++.forge-chances-table td {
++  padding: 6px 8px;
++  border-bottom: 1px dashed var(--border, #72578d);
++}
++
++/* In-place reveal & flash */
++@keyframes forgeFlash {
++  0% {
++    filter: brightness(2.2) drop-shadow(0 0 16px var(--accent, #ffb86b));
++    transform: scale(1.05);
++  }
++  50% {
++    filter: brightness(1.6) drop-shadow(0 0 8px var(--gold, #ffd34e));
++  }
++  100% {
++    filter: brightness(1);
++    transform: scale(1);
++  }
++}
++
++.forge-flash {
++  animation: forgeFlash 0.6s ease-out;
++}
++
+ .forge-panel {
+   display: flex;
+   flex-direction: column;
+@@ -18,7 +128,7 @@
+ .forge-content {
+   display: flex;
+   flex-direction: column;
+-  height: 100%;
++  flex: 1 1 0;
+   min-height: 0;
+   overflow: hidden;
+ }
+@@ -48,6 +158,7 @@
+ 
+ /* Panel Header */
+ .forge-panel-header {
++  flex: none;
+   display: flex;
+   flex-direction: column;
+   gap: var(--sp-1, 4px);
+@@ -73,6 +184,7 @@
+ 
+ /* Segmented Control (Craft / Salvage / Relic) */
+ .forge-nav {
++  flex: none;
+   display: flex;
+   flex-direction: row;
+   align-items: stretch;
+@@ -496,7 +608,7 @@
+   box-shadow: var(--pixel-shadow, 3px 3px 0 #000);
+ }
+ 
+-.forge-btn-cancel {
++.forge-panel .forge-btn.forge-btn-cancel {
+   flex: 1 1 100px;
+   background: var(--surface, #2a1f36);
+   color: var(--text, #fff3e0);
+@@ -854,8 +966,11 @@
+ }
+ 
+ @media (prefers-reduced-motion: reduce) {
++  .forge-flash,
+   .forge-confirm-box {
+-    animation: none;
++    animation: none !important;
++    transition: none !important;
++    filter: none !important;
+   }
+   .forge-tab-btn,
+   .forge-btn,
+@@ -865,3 +980,14 @@
+     transform: none !important;
+   }
+ }
++
++.forge-preview-art { position:relative; display:grid; place-items:center; }
++.forge-preview-glyph { position:absolute; display:grid; place-items:center; }
++
++/* Preserve the compact panel's immediately reachable action while its choices scroll. */
++@media (max-width: 960px) {
++  .forge-cols { display: flex; flex-direction: column; height: auto; overflow: visible; }
++  .forge-col-left, .forge-col-centre, .forge-col-right { flex: none; overflow: visible; }
++  .forge-col-centre { order: -1; padding: var(--sp-3, 12px); }
++  .forge-col-centre .forge-action-area { order: -1; margin-top: 0 !important; margin-bottom: var(--sp-3, 12px); }
++}
+diff --git a/apps/web/src/layout/forge/ForgePanel.test.tsx b/apps/web/src/layout/forge/ForgePanel.test.tsx
+index 387e7a9..8adf5ac 100644
+--- a/apps/web/src/layout/forge/ForgePanel.test.tsx
++++ b/apps/web/src/layout/forge/ForgePanel.test.tsx
+@@ -1,11 +1,13 @@
+ // @vitest-environment jsdom
+ import { readFileSync } from 'node:fs';
+ import { resolve } from 'node:path';
+-import { cleanup, fireEvent, render, screen } from '@testing-library/react';
++import { cleanup, fireEvent, render, screen, within } from '@testing-library/react';
+ import { afterEach, describe, expect, it, vi } from 'vitest';
+ import type { ItemV2 } from '../../api/GameApiV2';
+ import type { RelicVoucher, TodayRelic } from '@taskbar-hero/api-contract';
+ import { ForgePanel, type ForgePanelProps } from './ForgePanel';
++import { v2 } from '@taskbar-hero/game-rules';
++import { mockV2Save } from '../../api/mockV2Fixtures';
+ 
+ const RICH_STACKS = {
+   yarn: 10_000,
+@@ -594,3 +596,64 @@ it('disables starter salvage, shows the hint and keeps ordinary items salvageabl
+   fireEvent.click(screen.getByTestId('salvage-confirm-btn'));
+   expect(props.onSalvage).toHaveBeenCalledExactlyOnceWith([ordinary.id]);
+ });
++
++
++describe('CXU3 displayed recipe contract', () => {
++  afterEach(cleanup);
++  it.each(v2.RECIPES)('$id shows the actual costs and guaranteed rarity from the crafting rules', recipe => {
++    render(<ForgePanel {...createDefaultProps()} defaultRarity={recipe.rarity} />);
++    const chances = within(screen.getByRole('table', { name: 'Crafting chances' }));
++    expect(chances.getAllByRole('row')).toHaveLength(2);
++    expect(chances.getAllByRole('cell').map(cell => cell.textContent)).toEqual([
++      `${recipe.rarity[0]!.toUpperCase()}${recipe.rarity.slice(1)} gear`, '100',
++    ]);
++    const costs = { ...recipe.materials, fish: recipe.fish };
++    for (const [id, cost] of Object.entries(costs)) {
++      expect(screen.getByTestId(`cost-${id}`).textContent).toContain(`${RICH_STACKS[id as keyof typeof RICH_STACKS]} / ${cost}`);
++      expect(screen.getByTestId(`cost-${id}`).getAttribute('data-met')).toBe('true');
++    }
++    expect(within(screen.getByRole('list', { name: 'Required materials' })).getAllByRole('listitem')).toHaveLength(Object.keys(costs).length);
++    const state = mockV2Save('forgeRich', { nowMs: 0 }).state;
++    state.stacks = { ...RICH_STACKS };
++    for (const slot of ['weapon', 'helmet', 'armor', 'gloves', 'boots'] as const) {
++      for (const seed of [1, 17, 999]) {
++        const result = v2.applyCraft(state, recipe.id, slot, seed, 0);
++        expect(result.ok).toBe(true);
++        if (!result.ok) throw new Error(result.code);
++        expect(result.item.rarity).toBe(recipe.rarity);
++        for (const [id, cost] of Object.entries(costs)) {
++          const key = id as v2.StateStackIdV2;
++          expect(state.stacks[key]! - result.state.stacks[key]!).toBe(cost);
++        }
++      }
++    }
++  });
++});
++
++
++it('reads the daily Relic cost and limit from the same recipe as its guard', () => {
++  const { unmount } = render(<ForgePanel {...createDefaultProps()} defaultTab="relic" />);
++  expect(screen.getByTestId('relic-cost-yarn').textContent).toBe(`Yarn${v2.RELIC_RECIPE.materials.yarn} Yarn (You have ${RICH_STACKS.yarn})`);
++  expect(screen.getByTestId('relic-cost-pearl').textContent).toBe(`Moon Pearl${v2.RELIC_RECIPE.materials.moonPearl} Moon Pearl (You have ${RICH_STACKS.moonPearl})`);
++  expect(screen.getByText(`Avalanche Fuji testnet · Limit: ${v2.RELIC_RECIPE.perDay} per day`)).toBeTruthy();
++  fireEvent.click(screen.getByTestId('relic-forge-btn'));
++  expect(screen.getByTestId('relic-confirm-box').textContent).toContain(`${v2.RELIC_RECIPE.materials.yarn} Yarn + ${v2.RELIC_RECIPE.materials.moonPearl} Moon Pearl`);
++  unmount();
++});
++
++
++it('blocks crafting at exact bag capacity and enables it when one slot opens', () => {
++  const items = Array.from({ length: v2.V2_CONFIG.bag.limit }, (_, index) => ({ ...SAMPLE_ITEMS[0]!, id: `full-${index}` }));
++  const props = createDefaultProps({ items });
++  const { rerender, unmount } = render(<ForgePanel {...props} />);
++  expect((screen.getByTestId('craft-btn') as HTMLButtonElement).disabled).toBe(true);
++  expect(screen.getByTestId('craft-block-reason').textContent).toMatch(/bag.*full/i);
++  fireEvent.click(screen.getByTestId('craft-btn'));
++  expect(screen.queryByTestId('craft-confirm-btn')).toBeNull();
++  expect(props.onCraft).not.toHaveBeenCalled();
++  rerender(<ForgePanel {...props} items={items.slice(1)} />);
++  expect((screen.getByTestId('craft-btn') as HTMLButtonElement).disabled).toBe(false);
++  fireEvent.click(screen.getByTestId('craft-btn'));
++  expect(screen.getByTestId('craft-confirm-btn')).toBeTruthy();
++  unmount();
++});
+diff --git a/apps/web/src/layout/forge/ForgePanel.tsx b/apps/web/src/layout/forge/ForgePanel.tsx
+index 624753e..5f95513 100644
+--- a/apps/web/src/layout/forge/ForgePanel.tsx
++++ b/apps/web/src/layout/forge/ForgePanel.tsx
+@@ -45,6 +45,8 @@ export interface ForgePanelProps {
+   defaultSelectedItems?: string[];
+   defaultConfirm?: boolean;
+   craftResult?: ReactNode;
++  /** Stable item identity for the one-shot result reveal. */
++  craftResultId?: string;
+   relicFooter?: ReactNode;
+ }
+ 
+@@ -109,6 +111,7 @@ export function ForgePanel({
+   defaultSelectedItems = [],
+   defaultConfirm = false,
+   craftResult,
++  craftResultId,
+   relicFooter,
+ }: ForgePanelProps) {
+   const panelId = useId();
+@@ -291,7 +294,7 @@ export function ForgePanel({
+         </button>
+       </nav>
+ 
+-      {/* CRAFT TAB */}
++      {/* CRAFT TAB (Desktop 3-Column: Left gear picker, centre preview with result reveal, right materials & chances) */}
+       {activeTab === 'craft' && (
+         <section
+           role="tabpanel"
+@@ -301,208 +304,249 @@ export function ForgePanel({
+           data-testid="craft-panel"
+         >
+           <div className="forge-craft-scroll">
+-            <div className="forge-selector-group">
+-            <span className="forge-selector-label" id={`${panelId}-slot-label`}>
+-              Choose Slot
+-            </span>
+-            <div className="forge-options-grid" role="group" aria-labelledby={`${panelId}-slot-label`}>
+-              {MAIN_SLOTS.map((slot) => {
+-                const isSelected = selectedSlot === slot;
+-                const iconName = getSlotIconName(slot, classWeaponType);
+-                const title =
+-                  slot === 'weapon'
+-                    ? `Weapon (${capitalize(classWeaponType)})`
+-                    : capitalize(slot);
+-                return (
+-                  <button
+-                    key={slot}
+-                    type="button"
+-                    role="button"
+-                    aria-pressed={isSelected}
+-                    className="forge-slot-btn"
+-                    data-testid={`slot-${slot}`}
+-                    onClick={() => {
+-                      setSelectedSlot(slot);
+-                      setConfirmCraft(false);
+-                    }}
+-                  >
+-                    <V2PixelIcon name={iconName} size={3} title={title} />
+-                    <span className="forge-option-name">{title}</span>
+-                  </button>
+-                );
+-              })}
+-            </div>
+-          </div>
++            <div className="forge-cols">
++              {/* Left Column: 1 · Pick gear */}
++              <div className="forge-col-left">
++                <div className="forge-card">
++                  <p className="forge-section-title">1 · Pick gear</p>
++                  <div className="forge-selector-group">
++                    <span className="forge-selector-label" id={`${panelId}-slot-label`}>
++                      Choose Slot
++                    </span>
++                    <div className="forge-options-grid" role="group" aria-labelledby={`${panelId}-slot-label`}>
++                      {MAIN_SLOTS.map((slot) => {
++                        const isSelected = selectedSlot === slot;
++                        const iconName = getSlotIconName(slot, classWeaponType);
++                        const title =
++                          slot === 'weapon'
++                            ? `Weapon (${capitalize(classWeaponType)})`
++                            : capitalize(slot);
++                        return (
++                          <button
++                            key={slot}
++                            type="button"
++                            role="button"
++                            aria-pressed={isSelected}
++                            className="forge-slot-btn"
++                            data-testid={`slot-${slot}`}
++                            onClick={() => {
++                              setSelectedSlot(slot);
++                              setConfirmCraft(false);
++                            }}
++                          >
++                            <V2PixelIcon name={iconName} size={3} title={title} />
++                            <span className="forge-option-name">{title}</span>
++                          </button>
++                        );
++                      })}
++                    </div>
++                  </div>
+ 
+-          <div className="forge-selector-group">
+-            <span className="forge-selector-label" id={`${panelId}-rarity-label`}>
+-              Choose Rarity
+-            </span>
+-            <div className="forge-options-grid" role="group" aria-labelledby={`${panelId}-rarity-label`}>
+-              {GEAR_RARITIES.map((rarity) => {
+-                const isSelected = selectedRarity === rarity;
+-                const frameName = `frame${capitalize(rarity)}` as V2FrameName;
+-                return (
+-                  <button
+-                    key={rarity}
+-                    type="button"
+-                    role="button"
+-                    aria-pressed={isSelected}
+-                    className={`forge-rarity-btn rarity-${rarity}`}
+-                    data-testid={`rarity-${rarity}`}
+-                    onClick={() => {
+-                      setSelectedRarity(rarity);
+-                      setConfirmCraft(false);
+-                    }}
++                  <div className="forge-selector-group">
++                    <span className="forge-selector-label" id={`${panelId}-rarity-label`}>
++                      Choose Rarity
++                    </span>
++                    <div className="forge-options-grid" role="group" aria-labelledby={`${panelId}-rarity-label`}>
++                      {GEAR_RARITIES.map((rarity) => {
++                        const isSelected = selectedRarity === rarity;
++                        const frameName = `frame${capitalize(rarity)}` as V2FrameName;
++                        return (
++                          <button
++                            key={rarity}
++                            type="button"
++                            role="button"
++                            aria-pressed={isSelected}
++                            className={`forge-rarity-btn rarity-${rarity}`}
++                            data-testid={`rarity-${rarity}`}
++                            onClick={() => {
++                              setSelectedRarity(rarity);
++                              setConfirmCraft(false);
++                            }}
++                          >
++                            <V2PixelFrame name={frameName} size={2} title={capitalize(rarity)} />
++                            <span className="forge-option-name">{capitalize(rarity)}</span>
++                          </button>
++                        );
++                      })}
++                    </div>
++                  </div>
++                </div>
++              </div>
++
++              {/* Centre Column: Preview with in-place reveal (short flash, no modal) */}
++              <div className="forge-col-centre" data-testid="forge-centre-card">
++                <div
++                  className="forge-preview-slot"
++                  data-testid="forge-centre-preview"
++                >
++                  <div className="forge-preview-art">
++                    <V2PixelFrame name={`frame${capitalize(selectedRarity)}` as V2FrameName} size={4} className="forge-frame" />
++                    <span className="forge-preview-glyph"><V2PixelIcon name={getSlotIconName(selectedSlot, classWeaponType)} size={3} title={slotLabel} /></span>
++                  </div>
++                </div>
++                <div className="forge-candidate-preview">
++                  <h3 className={`forge-preview-name rarity-${selectedRarity}`} style={{ margin: 0 }}>
++                    {capitalize(selectedRarity)} {slotLabel}
++                  </h3>
++                  <div className="num muted" style={{ fontSize: '12px' }}>
++                    Recipe fixes the rarity; bonus lines still roll.
++                  </div>
++                  <p className="forge-preview-meta" style={{ margin: '4px 0 0' }}>
++                    Guaranteed {capitalize(selectedRarity)} • Bonus lines: {rarityDef.bonusLines} • Max Lv. {rarityDef.maxLevel}
++                  </p>
++                </div>
++
++                {/* In-place result reveal */}
++                {craftResult && (
++                  <div
++                    key={craftResultId}
++                    className="forge-result-reveal forge-flash"
++                    data-testid="forge-in-place-reveal"
++                    style={{ marginTop: '12px', width: '100%' }}
+                   >
+-                    <V2PixelFrame name={frameName} size={2} title={capitalize(rarity)} />
+-                    <span className="forge-option-name">{capitalize(rarity)}</span>
+-                  </button>
+-                );
+-              })}
+-            </div>
+-          </div>
++                    {craftResult}
++                  </div>
++                )}
+ 
+-          {/* Recipe Details & Balance */}
+-          <div className="forge-craft-details">
+-            <div className="forge-preview-card">
+-              <div className="forge-preview-icon-wrap">
+-                <V2PixelIcon
+-                  name={getSlotIconName(selectedSlot, classWeaponType)}
+-                  size={3}
+-                  title={slotLabel}
+-                />
+-                <V2PixelFrame
+-                  name={`frame${capitalize(selectedRarity)}` as V2FrameName}
+-                  size={3.5}
+-                  className="forge-frame"
+-                />
+-              </div>
+-              <div className="forge-preview-info">
+-                <h3 className={`forge-preview-name rarity-${selectedRarity}`}>
+-                  {capitalize(selectedRarity)} {slotLabel}
+-                </h3>
+-                <p className="forge-preview-meta">
+-                  Guaranteed {capitalize(selectedRarity)} • Bonus lines: {rarityDef.bonusLines} • Max Lv. {rarityDef.maxLevel}
+-                </p>
++                {/* Action & Confirm Area */}
++                <div className="forge-action-area" style={{ marginTop: '14px', width: '100%' }}>
++                  {disabledCraftReason ? (
++                    <>
++                      <button
++                        type="button"
++                        className="forge-btn"
++                        disabled
++                        aria-disabled="true"
++                        data-testid="craft-btn"
++                      >
++                        {disabledCraftReason}
++                      </button>
++                      <p className="forge-note forge-block-reason" data-testid="craft-block-reason">
++                        <span data-testid="block-reason-craft">{disabledCraftReason}</span>
++                      </p>
++                      {!anyRecipeAffordable && (
++                        <p className="forge-note forge-empty-hint" data-testid="forge-empty-hint">
++                          No recipe affordable. Defeat monsters and bosses to collect Fish and Yarn.
++                        </p>
++                      )}
++                    </>
++                  ) : confirmCraft ? (
++                    <div className="forge-confirm-box" data-testid="craft-confirm-box" role="alert">
++                      <p className="forge-confirm-text">
++                        Confirm crafting <strong>{capitalize(selectedRarity)} {slotLabel}</strong>?
++                      </p>
++                      <div className="forge-confirm-actions">
++                        <button
++                          type="button"
++                          className="forge-btn forge-btn-confirm pixel-btn"
++                          disabled={isLoopBusy}
++                          aria-busy={isBusyCraft ? 'true' : 'false'}
++                          onClick={() => void handleCraftConfirm()}
++                          data-testid="craft-confirm-btn"
++                        >
++                          {isBusyCraft && <span className="btn-spinner" aria-hidden="true" />}
++                          {isBusyCraft ? 'Crafting...' : 'Confirm Craft'}
++                        </button>
++                        <button
++                          type="button"
++                          className="forge-btn forge-btn-cancel"
++                          disabled={isLoopBusy}
++                          onClick={() => setConfirmCraft(false)}
++                          data-testid="craft-cancel-btn"
++                        >
++                          Cancel
++                        </button>
++                      </div>
++                    </div>
++                  ) : (
++                    <button
++                      type="button"
++                      className="forge-btn forge-btn-craft forge-btn-primary pixel-btn"
++                      disabled={isLoopBusy}
++                      aria-busy={isBusyCraft ? 'true' : 'false'}
++                      onClick={() => setConfirmCraft(true)}
++                      data-testid="craft-btn"
++                    >
++                      {isBusyCraft && <span className="btn-spinner" aria-hidden="true" />}
++                      {isBusyCraft ? 'Crafting...' : `Craft ${capitalize(selectedRarity)} ${slotLabel}`}
++                    </button>
++                  )}
++                </div>
+               </div>
+-            </div>
+ 
+-            <div className="forge-costs">
+-              <h4 className="forge-cost-title">Recipe Cost & Balance</h4>
+-              <ul className="forge-cost-list" aria-label="Required materials">
+-                {COST_ORDER.map((matId) => {
+-                  const req = recipe.materials[matId];
+-                  if (!req || req <= 0) return null;
+-                  const current = stacks[matId] ?? 0;
+-                  const def = v2.MATERIALS.find((m) => m.id === matId);
+-                  const name = def ? def.name : matId;
+-                  const met = current >= req;
+-                  return (
++              {/* Right Column: 2 · Materials & Chances Table */}
++              <div className="forge-col-right">
++                <div className="forge-card" data-testid="forge-materials-card">
++                  <h4 className="forge-section-title">Recipe Cost &amp; Balance</h4>
++                  <ul className="forge-cost-list" aria-label="Required materials" style={{ padding: 0, margin: '8px 0 0', listStyle: 'none' }}>
++                    {COST_ORDER.map((matId) => {
++                      const req = recipe.materials[matId];
++                      if (!req || req <= 0) return null;
++                      const current = stacks[matId] ?? 0;
++                      const def = v2.MATERIALS.find((m) => m.id === matId);
++                      const name = def ? def.name : matId;
++                      const met = current >= req;
++                      return (
++                        <li
++                          key={matId}
++                          className="forge-cost-item"
++                          data-testid={`cost-${matId}`}
++                          data-met={met}
++                        >
++                          <div className="forge-cost-item-left">
++                            <MaterialOrCurrencyIcon id={matId} size={2} title={name} />
++                            <span className="forge-cost-item-name">{name}</span>
++                          </div>
++                          <span className={`forge-cost-ratio num ${met ? 'met' : 'unmet'}`}>
++                            {current} / {req}
++                          </span>
++                        </li>
++                      );
++                    })}
+                     <li
+-                      key={matId}
++                      key="fish"
+                       className="forge-cost-item"
+-                      data-testid={`cost-${matId}`}
+-                      data-met={met}
++                      data-testid="cost-fish"
++                      data-met={(stacks.fish ?? 0) >= recipe.fish}
+                     >
+                       <div className="forge-cost-item-left">
+-                        <MaterialOrCurrencyIcon id={matId} size={2} title={name} />
+-                        <span className="forge-cost-item-name">{name}</span>
++                        <MaterialOrCurrencyIcon id="fish" size={2} title="Fish" />
++                        <span className="forge-cost-item-name">Fish</span>
+                       </div>
+-                      <span className={`forge-cost-ratio ${met ? 'met' : 'unmet'}`}>
+-                        {current} / {req}
++                      <span
++                        className={`forge-cost-ratio num ${
++                          (stacks.fish ?? 0) >= recipe.fish ? 'met' : 'unmet'
++                        }`}
++                      >
++                        {stacks.fish ?? 0} / {recipe.fish}
+                       </span>
+                     </li>
+-                  );
+-                })}
+-                <li
+-                  key="fish"
+-                  className="forge-cost-item"
+-                  data-testid="cost-fish"
+-                  data-met={(stacks.fish ?? 0) >= recipe.fish}
+-                >
+-                  <div className="forge-cost-item-left">
+-                    <MaterialOrCurrencyIcon id="fish" size={2} title="Fish" />
+-                    <span className="forge-cost-item-name">Fish</span>
+-                  </div>
+-                  <span
+-                    className={`forge-cost-ratio ${
+-                      (stacks.fish ?? 0) >= recipe.fish ? 'met' : 'unmet'
+-                    }`}
+-                  >
+-                    {stacks.fish ?? 0} / {recipe.fish}
+-                  </span>
+-                </li>
+-              </ul>
+-            </div>
+-          </div>
+-        </div>
++                  </ul>
++                </div>
+ 
+-          {/* Action & Confirm Area */}
+-          <div className="forge-action-area">
+-            {disabledCraftReason ? (
+-              <>
+-                <button
+-                  type="button"
+-                  className="forge-btn"
+-                  disabled
+-                  aria-disabled="true"
+-                  data-testid="craft-btn"
+-                >
+-                  {disabledCraftReason}
+-                </button>
+-                <p className="forge-note forge-block-reason" data-testid="craft-block-reason">
+-                  <span data-testid="block-reason-craft">{disabledCraftReason}</span>
+-                </p>
+-                {!anyRecipeAffordable && (
+-                  <p className="forge-note forge-empty-hint" data-testid="forge-empty-hint">
+-                    No recipe affordable. Defeat monsters and bosses to collect Fish and Yarn.
++                <div className="forge-card" data-testid="forge-chances-card">
++                  <h4 className="forge-section-title">Chances</h4>
++                  <table className="forge-chances-table" aria-label="Crafting chances">
++                    <thead>
++                      <tr>
++                        <th>Outcome</th>
++                        <th style={{ textAlign: 'right' }}>%</th>
++                      </tr>
++                    </thead>
++                    <tbody>
++                      <tr>
++                        <td>{capitalize(recipe.rarity)} gear</td>
++                        <td className="num" style={{ textAlign: 'right' }}>100</td>
++                      </tr>
++                    </tbody>
++                  </table>
++                  <p className="muted" style={{ fontSize: '11px', margin: '8px 0 0' }}>
++                    Bonus lines, when present, scale with item level.
+                   </p>
+-                )}
+-              </>
+-            ) : confirmCraft ? (
+-              <div className="forge-confirm-box" data-testid="craft-confirm-box" role="alert">
+-                <p className="forge-confirm-text">
+-                  Confirm crafting <strong>{capitalize(selectedRarity)} {slotLabel}</strong>?
+-                </p>
+-                <div className="forge-confirm-actions">
+-                  <button
+-                    type="button"
+-                    className="forge-btn forge-btn-confirm pixel-btn"
+-                    disabled={isLoopBusy}
+-                    aria-busy={isBusyCraft ? 'true' : 'false'}
+-                    onClick={() => void handleCraftConfirm()}
+-                    data-testid="craft-confirm-btn"
+-                  >
+-                    {isBusyCraft && <span className="btn-spinner" aria-hidden="true" />}
+-                    {isBusyCraft ? 'Crafting...' : 'Confirm Craft'}
+-                  </button>
+-                  <button
+-                    type="button"
+-                    className="forge-btn forge-btn-cancel"
+-                    disabled={isLoopBusy}
+-                    onClick={() => setConfirmCraft(false)}
+-                    data-testid="craft-cancel-btn"
+-                  >
+-                    Cancel
+-                  </button>
+                 </div>
+               </div>
+-            ) : (
+-              <button
+-                type="button"
+-                className="forge-btn forge-btn-craft forge-btn-primary pixel-btn"
+-                disabled={isLoopBusy}
+-                aria-busy={isBusyCraft ? 'true' : 'false'}
+-                onClick={() => setConfirmCraft(true)}
+-                data-testid="craft-btn"
+-              >
+-                {isBusyCraft && <span className="btn-spinner" aria-hidden="true" />}
+-                {isBusyCraft ? 'Crafting...' : `Craft ${capitalize(selectedRarity)} ${slotLabel}`}
+-              </button>
+-            )}
++            </div>
+           </div>
+-          {craftResult}
+         </section>
+       )}
+ 
+@@ -714,7 +758,7 @@ export function ForgePanel({
+         </section>
+       )}
+ 
+-      {/* RELIC TAB */}
++      {/* RELIC TAB (Desktop 3-Column: Left today's relic, centre preview, right materials & chances table) */}
+       {activeTab === 'relic' && (
+         <section
+           role="tabpanel"
+@@ -724,165 +768,191 @@ export function ForgePanel({
+           data-testid="relic-panel"
+         >
+           <div className="forge-relic-scroll">
+-            {/* Pending voucher state if unminted */}
+-          {relic.pending ? (
+-            <div className="forge-pending-voucher" data-testid="forge-pending" aria-live="polite">
+-              <div className={`relic-tile rarity-${relic.pending.rarityName}`}>
+-                <img
+-                  src={relicImageUrl(BigInt(relic.pending.relicId))}
+-                  alt=""
+-                  width={64}
+-                  height={64}
+-                />
+-              </div>
+-              <p>
+-                You have an unminted{' '}
+-                <strong className={`rarity-${relic.pending.rarityName}`}>
+-                  {relicName(relic.pending.rarityName)}
+-                </strong>
+-                .{' '}
+-                <span className={`forge-tag rarity-${relic.pending.rarityName}`}>
+-                  {LABELS.rarities[relic.pending.rarityName]}
+-                </span>
+-              </p>
+-              <p className="forge-note">
+-                {relic.pending.signature === null
+-                  ? 'Your paid Relic can be recovered when the server is ready.'
+-                  : 'Your daily Relic voucher is forged and ready to be minted to your wallet on the Avalanche Fuji testnet (free testnet, costs no real money).'}
+-              </p>
+-            </div>
+-          ) : relic.today ? (
+-            <TodayRelicCard
+-              today={relic.today}
+-              mintable={false}
+-              canReissue={relicBlockedReason === null}
+-            />
+-          ) : (
+-            <div className="forge-empty-state" data-testid="relic-empty-state">
+-              <div className="forge-empty-icon" aria-hidden="true">
+-                <MaterialOrCurrencyIcon id="moonPearl" size={4} />
++            <div className="forge-cols">
++              {/* Left Column: 1 · Today's Relic */}
++              <div className="forge-col-left">
++                <div className="forge-card">
++                  <h3 className="forge-section-title">1 · Today's Relic</h3>
++                  {relic.pending ? (
++                    <div className="forge-pending-voucher" data-testid="forge-pending" aria-live="polite">
++                      <div className={`relic-tile rarity-${relic.pending.rarityName}`}>
++                        <img
++                          src={relicImageUrl(BigInt(relic.pending.relicId))}
++                          alt=""
++                          width={64}
++                          height={64}
++                        />
++                      </div>
++                      <p>
++                        You have an unminted{' '}
++                        <strong className={`rarity-${relic.pending.rarityName}`}>
++                          {relicName(relic.pending.rarityName)}
++                        </strong>
++                        .{' '}
++                        <span className={`forge-tag rarity-${relic.pending.rarityName}`}>
++                          {LABELS.rarities[relic.pending.rarityName]}
++                        </span>
++                      </p>
++                      <p className="forge-note">
++                        {relic.pending.signature === null
++                          ? 'Your paid Relic can be recovered when the server is ready.'
++                          : 'Your daily Relic voucher is forged and ready to be minted to your wallet on the Avalanche Fuji testnet (free testnet, costs no real money).'}
++                      </p>
++                    </div>
++                  ) : relic.today ? (
++                    <TodayRelicCard
++                      today={relic.today}
++                      mintable={false}
++                      canReissue={relicBlockedReason === null}
++                    />
++                  ) : (
++                    <div className="forge-empty-state" data-testid="relic-empty-state">
++                      <div className="forge-empty-icon" aria-hidden="true">
++                        <MaterialOrCurrencyIcon id="moonPearl" size={4} />
++                      </div>
++                      <p className="forge-empty-note">No Relic voucher forged today yet.</p>
++                    </div>
++                  )}
++                </div>
+               </div>
+-              <p className="forge-empty-note">No Relic voucher forged today yet.</p>
+-            </div>
+-          )}
+ 
+-          {/* Relic Forge Card */}
+-          <div className="forge-relic-card">
+-            <div className="forge-relic-header">
+-              <div className="forge-relic-icon-wrap">
+-                <MaterialOrCurrencyIcon id="moonPearl" size={4} title="Moon Pearl" />
+-              </div>
+-              <div className="forge-relic-info">
+-                <h3 className="forge-section-title">Daily Relic Forge</h3>
+-                <p className="forge-section-desc">
+-                  Forge a collectible Relic NFT on the Avalanche Fuji testnet (free testnet, costs no real money). Limit: 1 per day across v1 and v2.
+-                </p>
+-              </div>
+-            </div>
++              {/* Centre Column: Relic Forge Preview & Actions */}
++              <div className="forge-col-centre">
++                <div
++                  className="forge-preview-slot"
++                  data-testid="relic-centre-preview"
++                >
++                  <MaterialOrCurrencyIcon id="moonPearl" size={6} title="Daily Relic" />
++                </div>
++                <div className="forge-candidate-preview">
++                  <h3 className="forge-section-title" style={{ margin: 0 }}>Daily Relic Forge</h3>
++                  <p className="num muted" style={{ fontSize: '12px', margin: '4px 0 0' }}>
++                    Avalanche Fuji testnet · Limit: {v2.RELIC_RECIPE.perDay} per day
++                  </p>
++                </div>
+ 
+-            <div className="forge-relic-cost-box">
+-              <span className="forge-cost-title">Cost:</span>
+-              <span className="chip" data-testid="relic-cost-yarn">
+-                <MaterialOrCurrencyIcon id="yarn" size={2} title="Yarn" />
+-                30 Yarn (You have {stacks.yarn ?? 0})
+-              </span>
+-              <span className="chip" data-testid="relic-cost-pearl">
+-                <MaterialOrCurrencyIcon id="moonPearl" size={2} title="Moon Pearl" />
+-                1 Moon Pearl (You have {stacks.moonPearl ?? 0})
+-              </span>
+-            </div>
++                {/* Action / Confirmation Area */}
++                <div className="forge-action-area" style={{ marginTop: '16px', width: '100%' }}>
++                  {relicBlockedReason ? (
++                    <>
++                      <button
++                        type="button"
++                        className="forge-btn"
++                        disabled
++                        aria-disabled="true"
++                        data-testid="relic-forge-btn"
++                      >
++                        {relicButtonText}
++                      </button>
++                      <p className="forge-note forge-block-reason" data-testid="relic-blocked-reason">
++                        <span data-testid="block-reason-relic">{relicBlockedText}</span>
++                      </p>
++                    </>
++                  ) : relic.pending ? (
++                    <>
++                      <button
++                        type="button"
++                        className="forge-btn"
++                        disabled
++                        aria-disabled="true"
++                        data-testid="relic-forge-btn"
++                      >
++                        Voucher Pending Mint
++                      </button>
++                      <p className="forge-note forge-block-reason" data-testid="block-reason-relic">
++                        {RELIC_WAITING_TEXT}
++                      </p>
++                    </>
++                  ) : confirmRelic ? (
++                    <div className="forge-confirm-box" data-testid="relic-confirm-box" role="alert">
++                      <p className="forge-confirm-text">
++                        Confirm forging daily Relic for <strong>{v2.RELIC_RECIPE.materials.yarn} Yarn + {v2.RELIC_RECIPE.materials.moonPearl} Moon Pearl</strong>?
++                      </p>
++                      <div className="forge-confirm-actions">
++                        <button
++                          type="button"
++                          className="forge-btn forge-btn-confirm pixel-btn"
++                          disabled={isLoopBusy}
++                          aria-busy={isBusyRelic ? 'true' : 'false'}
++                          onClick={() => void handleRelicConfirm()}
++                          data-testid="relic-confirm-btn"
++                        >
++                          {isBusyRelic && <span className="btn-spinner" aria-hidden="true" />}
++                          {isBusyRelic ? 'Forging...' : 'Confirm Forge'}
++                        </button>
++                        <button
++                          type="button"
++                          className="forge-btn forge-btn-cancel"
++                          disabled={isLoopBusy}
++                          onClick={() => setConfirmRelic(false)}
++                          data-testid="relic-cancel-btn"
++                        >
++                          Cancel
++                        </button>
++                      </div>
++                    </div>
++                  ) : (
++                    <button
++                      type="button"
++                      className={`forge-btn ${relicBlockedReason || relic.pending ? '' : 'forge-btn-relic forge-btn-primary pixel-btn'}`}
++                      disabled={Boolean(relicBlockedReason || relic.pending || isLoopBusy)}
++                      aria-busy={isBusyRelic ? 'true' : 'false'}
++                      onClick={() => setConfirmRelic(true)}
++                      data-testid="relic-forge-btn"
++                    >
++                      {isBusyRelic && <span className="btn-spinner" aria-hidden="true" />}
++                      {isBusyRelic ? 'Forging...' : 'Forge Relic'}
++                    </button>
++                  )}
++                </div>
++                {relicFooter}
++              </div>
+ 
+-            <div className="forge-selector-group">
+-              <span className="forge-selector-label">Relic Odds</span>
+-              <ul className="forge-odds-list" aria-label="Relic drop probabilities">
+-                {oddsRows().map(({ rarity, percent }) => (
+-                  <li key={rarity} className="forge-odds-item">
+-                    <span className={`rarity-${rarity}`}>{LABELS.rarities[rarity]}</span>
+-                    <span>{percent}</span>
+-                  </li>
+-                ))}
+-              </ul>
+-            </div>
+-          </div>
++              {/* Right Column: Materials & Plain Chances Table from Game-Rules */}
++              <div className="forge-col-right">
++                <div className="forge-card" data-testid="relic-materials-card">
++                  <h3 className="forge-section-title">2 · Materials</h3>
++                  <div className="forge-relic-cost-box" style={{ display: 'flex', flexDirection: 'column', gap: '8px', margin: '8px 0 0' }}>
++                    <span className="chip" data-testid="relic-cost-yarn" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
++                      <MaterialOrCurrencyIcon id="yarn" size={2} title="Yarn" />
++                      {v2.RELIC_RECIPE.materials.yarn} Yarn (You have {stacks.yarn ?? 0})
++                    </span>
++                    <span className="chip" data-testid="relic-cost-pearl" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
++                      <MaterialOrCurrencyIcon id="moonPearl" size={2} title="Moon Pearl" />
++                      {v2.RELIC_RECIPE.materials.moonPearl} Moon Pearl (You have {stacks.moonPearl ?? 0})
++                    </span>
++                  </div>
++                </div>
+ 
+-          {/* Action / Confirmation Area */}
+-          <div className="forge-action-area">
+-            {relicBlockedReason ? (
+-              <>
+-                <button
+-                  type="button"
+-                  className="forge-btn"
+-                  disabled
+-                  aria-disabled="true"
+-                  data-testid="relic-forge-btn"
+-                >
+-                  {relicButtonText}
+-                </button>
+-                <p className="forge-note forge-block-reason" data-testid="relic-blocked-reason">
+-                  <span data-testid="block-reason-relic">{relicBlockedText}</span>
+-                </p>
+-              </>
+-            ) : relic.pending ? (
+-              <>
+-                <button
+-                  type="button"
+-                  className="forge-btn"
+-                  disabled
+-                  aria-disabled="true"
+-                  data-testid="relic-forge-btn"
+-                >
+-                  Voucher Pending Mint
+-                </button>
+-                <p className="forge-note forge-block-reason" data-testid="block-reason-relic">
+-                  {RELIC_WAITING_TEXT}
+-                </p>
+-              </>
+-            ) : confirmRelic ? (
+-              <div className="forge-confirm-box" data-testid="relic-confirm-box" role="alert">
+-                <p className="forge-confirm-text">
+-                  Confirm forging daily Relic for <strong>30 Yarn + 1 Moon Pearl</strong>?
+-                </p>
+-                <div className="forge-confirm-actions">
+-                  <button
+-                    type="button"
+-                    className="forge-btn forge-btn-confirm pixel-btn"
+-                    disabled={isLoopBusy}
+-                    aria-busy={isBusyRelic ? 'true' : 'false'}
+-                    onClick={() => void handleRelicConfirm()}
+-                    data-testid="relic-confirm-btn"
+-                  >
+-                    {isBusyRelic && <span className="btn-spinner" aria-hidden="true" />}
+-                    {isBusyRelic ? 'Forging...' : 'Confirm Forge'}
+-                  </button>
+-                  <button
+-                    type="button"
+-                    className="forge-btn forge-btn-cancel"
+-                    disabled={isLoopBusy}
+-                    onClick={() => setConfirmRelic(false)}
+-                    data-testid="relic-cancel-btn"
+-                  >
+-                    Cancel
+-                  </button>
++                <div className="forge-card" data-testid="relic-chances-card">
++                  <h3 className="forge-section-title">Chances</h3>
++                  <table className="forge-chances-table" aria-label="Relic drop probabilities">
++                    <thead>
++                      <tr>
++                        <th>Rarity</th>
++                        <th style={{ textAlign: 'right' }}>%</th>
++                      </tr>
++                    </thead>
++                    <tbody>
++                      {oddsRows().map(({ rarity, percent }) => (
++                        <tr key={rarity}>
++                          <td>
++                            <span className={`rarity-pill ${rarity}`}>{LABELS.rarities[rarity]}</span>
++                          </td>
++                          <td className="num" style={{ textAlign: 'right' }}>{percent}</td>
++                        </tr>
++                      ))}
++                    </tbody>
++                  </table>
++                  <p className="muted" style={{ fontSize: '11px', margin: '8px 0 0' }}>
++                    Odds read directly from game-rules configuration.
++                  </p>
+                 </div>
+               </div>
+-            ) : (
+-              <button
+-                type="button"
+-                className={`forge-btn ${relicBlockedReason || relic.pending ? '' : 'forge-btn-relic forge-btn-primary pixel-btn'}`}
+-                disabled={Boolean(relicBlockedReason || relic.pending || isLoopBusy)}
+-                aria-busy={isBusyRelic ? 'true' : 'false'}
+-                onClick={() => setConfirmRelic(true)}
+-                data-testid="relic-forge-btn"
+-              >
+-                {isBusyRelic && <span className="btn-spinner" aria-hidden="true" />}
+-                {isBusyRelic ? 'Forging...' : 'Forge Relic'}
+-              </button>
+-            )}
++            </div>
+           </div>
+-          {relicFooter}
+-        </div>
+-      </section>
+-    )}
++        </section>
++      )}
+     </div>
+   );
+ }
+diff --git a/apps/web/src/market/MarketTab.test.tsx b/apps/web/src/market/MarketTab.test.tsx
+index 3ed5fe4..1de9b96 100644
+--- a/apps/web/src/market/MarketTab.test.tsx
++++ b/apps/web/src/market/MarketTab.test.tsx
+@@ -23,6 +23,7 @@ const chain = vi.hoisted(() => ({
+   switchChain: vi.fn(),
+   invalidateQueries: vi.fn(),
+   readFailed: false,
++  hasClient: true,
+   refetch: vi.fn(),
+ }));
+ 
+@@ -30,7 +31,7 @@ vi.mock('wagmi', () => ({
+   useAccount: () => ({ isConnected: chain.isConnected, chainId: chain.chainId, address: chain.isConnected ? ME : undefined }),
+   useSwitchChain: () => ({ switchChain: chain.switchChain, isPending: false }),
+   useWriteContract: () => ({ writeContractAsync: chain.writeContractAsync }),
+-  usePublicClient: () => ({ waitForTransactionReceipt: chain.waitForTransactionReceipt }),
++  usePublicClient: () => chain.hasClient ? ({ waitForTransactionReceipt: chain.waitForTransactionReceipt }) : undefined,
+   useReadContract: ({ functionName }: { functionName: string }) => {
+     const data =
+       functionName === 'balanceOfBatch' ? chain.balances
+@@ -59,6 +60,7 @@ beforeEach(() => {
+   chain.approved = false;
+   chain.listings = [];
+   chain.readFailed = false;
++  chain.hasClient = true;
+   chain.refetch.mockReset().mockResolvedValue(undefined);
+   chain.writeContractAsync.mockReset().mockResolvedValue(HASH);
+   chain.waitForTransactionReceipt.mockReset().mockResolvedValue({ status: 'success' });
+@@ -68,6 +70,10 @@ beforeEach(() => {
+ 
+ afterEach(cleanup);
+ 
++afterEach(() => {
++  for (const [call] of chain.writeContractAsync.mock.calls) expect(call.chainId).toBe(FUJI_CHAIN_ID);
++});
++
+ it('shows My Relics counts per rarity', () => {
+   chain.balances = [3n, 0n, 1n, 0n];
+   render(<MarketTab />);
+@@ -108,11 +114,15 @@ it('renders listings; own listing has Cancel, others have Buy', () => {
+   const other = screen.getByTestId('listing-7');
+   expect(other.textContent).toContain('Golden Maneki × 2');
+   expect(other.textContent).toContain('0.25 AVAX');
+-  expect(within(other).getByRole('button', { name: 'Buy' })).toBeTruthy();
++  const detail = within(screen.getByRole('region', { name: 'Listing details' }));
++  expect(detail.getByRole('button', { name: 'Buy' })).toBeTruthy();
++  expect(within(other).queryByRole('button', { name: 'Buy' })).toBeNull();
+   const mine = screen.getByTestId('listing-9');
+   expect(mine.textContent).toContain('You');
+-  expect(within(mine).getByRole('button', { name: 'Cancel' })).toBeTruthy();
+-  expect(within(mine).queryByRole('button', { name: 'Buy' })).toBeNull();
++  fireEvent.click(mine);
++  expect(detail.getByRole('button', { name: 'Cancel' })).toBeTruthy();
++  expect(detail.queryByRole('button', { name: 'Buy' })).toBeNull();
++  expect(within(mine).queryByRole('button', { name: 'Cancel' })).toBeNull();
+   expect(screen.getAllByText(/Fuji testnet, test AVAX/).length).toBeGreaterThan(0);
+ });
+ 
+@@ -138,6 +148,7 @@ it('explains ListingNotActive when someone bought first', async () => {
+ });
+ 
+ function fillList(relicId: string, amount: string, price: string) {
++  fireEvent.click(screen.getByRole('button', { name: 'Sell a Relic' }));
+   fireEvent.change(screen.getByLabelText('Relic'), { target: { value: relicId } });
+   fireEvent.change(screen.getByLabelText('Amount'), { target: { value: amount } });
+   fireEvent.change(screen.getByLabelText('Price (AVAX)'), { target: { value: price } });
+@@ -146,6 +157,7 @@ function fillList(relicId: string, amount: string, price: string) {
+ it('approves the market first when needed, then lists with parseEther(price)', async () => {
+   chain.balances = [0n, 2n, 0n, 0n];
+   render(<MarketTab />);
++  fireEvent.click(screen.getByRole('button', { name: 'Sell a Relic' }));
+   expect(screen.getByText('Approving lets the market contract transfer all Relics in your wallet, including future Relics, until you revoke approval.')).toBeTruthy();
+   expect(chain.writeContractAsync).not.toHaveBeenCalled();
+   fillList('2', '2', '0.5');
+@@ -209,3 +221,83 @@ it('a failed chain read shows a plain message and Retry, not an empty shelf', ()
+   fireEvent.click(screen.getByRole('button', { name: 'Retry' }));
+   expect(chain.refetch).toHaveBeenCalledTimes(3);
+ });
++
++it('survives disconnected, connected and wrong-chain transitions without changing hook order', () => {
++  chain.isConnected = false;
++  const errors = vi.spyOn(console, 'error').mockImplementation(() => {});
++  try {
++    const { rerender } = render(<MarketTab />);
++    chain.isConnected = true; rerender(<MarketTab />);
++    expect(screen.getByTestId('listings-empty')).toBeTruthy();
++    chain.chainId = 1; rerender(<MarketTab />);
++    expect(screen.getByRole('button', { name: 'Switch to Fuji' })).toBeTruthy();
++    chain.chainId = FUJI_CHAIN_ID; rerender(<MarketTab />);
++    chain.isConnected = false; rerender(<MarketTab />);
++    expect(screen.getByText(/Connect your wallet/)).toBeTruthy();
++    expect(errors).not.toHaveBeenCalled(); expect(chain.writeContractAsync).not.toHaveBeenCalled();
++  } finally { errors.mockRestore(); }
++});
++
++it('does not report a reverted buy as success', async () => {
++  chain.listings = [[7n, { seller: OTHER, relicId: 2n, amount: 1n, price: 1n }]];
++  chain.waitForTransactionReceipt.mockResolvedValue({ status: 'reverted' });
++  render(<MarketTab />); fireEvent.click(screen.getByRole('button', { name: 'Buy' }));
++  expect((await screen.findByTestId('market-message')).textContent).toBe('Transaction failed. Please try again.');
++  expect(screen.queryByText('Bought! The Relic is in your wallet.')).toBeNull();
++});
++
++it('does not list after a reverted approval and does not write without the Fuji client', async () => {
++  chain.balances = [2n, 0n, 0n, 0n];
++  chain.waitForTransactionReceipt.mockResolvedValue({ status: 'reverted' });
++  const { unmount } = render(<MarketTab />); fillList('1', '1', '0.1');
++  fireEvent.click(screen.getByRole('button', { name: 'List' })); await screen.findByTestId('market-message');
++  expect(chain.writeContractAsync.mock.calls.map(([call]) => call.functionName)).toEqual(['setApprovalForAll']);
++  unmount(); chain.hasClient = false; chain.writeContractAsync.mockClear();
++  chain.listings = [[7n, { seller: OTHER, relicId: 2n, amount: 1n, price: 1n }]];
++  render(<MarketTab />); fireEvent.click(screen.getByRole('button', { name: 'Buy' }));
++  await screen.findByTestId('market-message'); expect(chain.writeContractAsync).not.toHaveBeenCalled();
++});
++
++it('sorts, filters and selects real listing details while keeping trade actions outside rows', () => {
++  chain.listings = [
++    [3n, { seller: OTHER, relicId: 4n, amount: 10n, price: 20n }],
++    [9n, { seller: ME, relicId: 1n, amount: 2n, price: 10n }],
++  ];
++  render(<MarketTab />);
++  const rowIds = () => within(screen.getByTestId('listings')).getAllByRole('row').slice(1).map(row => row.getAttribute('data-testid'));
++  expect(rowIds()).toEqual(['listing-9', 'listing-3']);
++  fireEvent.click(screen.getByRole('button', { name: 'Sort by quantity' }));
++  expect(rowIds()).toEqual(['listing-9', 'listing-3']);
++  fireEvent.click(screen.getByRole('button', { name: 'Sort by quantity' }));
++  expect(rowIds()).toEqual(['listing-3', 'listing-9']);
++  fireEvent.click(screen.getByTestId('listing-3'));
++  expect(screen.getByRole('region', { name: 'Listing details' }).textContent).toContain('Quantity10');
++  expect(within(screen.getByTestId('listing-3')).queryByRole('button', { name: 'Buy' })).toBeNull();
++  fireEvent.click(within(screen.getByRole('group', { name: 'Filter listings' })).getByRole('button', { name: 'Your listings' }));
++  expect(rowIds()).toEqual(['listing-9']);
++  expect(screen.getByRole('button', { name: 'Cancel' })).toBeTruthy();
++  expect(screen.queryByRole('columnheader', { name: /power/i })).toBeNull();
++  expect(chain.writeContractAsync).not.toHaveBeenCalled();
++});
++
++it('cancels only the selected owned listing through the existing Fuji call', async () => {
++  chain.listings = [[9n, { seller: ME, relicId: 1n, amount: 1n, price: 1n }]];
++  render(<MarketTab />); fireEvent.click(screen.getByRole('button', { name: 'Cancel' }));
++  await screen.findByText('Listing cancelled. The Relic is back in your wallet.');
++  expect(chain.writeContractAsync).toHaveBeenCalledWith(expect.objectContaining({ address: RelicMarket, functionName: 'cancel', args: [9n], chainId: FUJI_CHAIN_ID }));
++});
++
++
++it('hides stale trading actions and disables a filled sell form after a read failure', () => {
++  chain.balances = [3n, 0n, 0n, 0n];
++  chain.listings = [[7n, { seller: OTHER, relicId: 2n, amount: 1n, price: parseEther('0.05') }]];
++  const { rerender } = render(<MarketTab />);
++  fillList('1', '1', '0.1');
++  expect(screen.getByRole<HTMLButtonElement>('button', { name: 'List' }).disabled).toBe(false);
++  chain.readFailed = true; rerender(<MarketTab />);
++  expect(screen.getByRole<HTMLButtonElement>('button', { name: 'List' }).disabled).toBe(true);
++  fireEvent.click(screen.getByRole('button', { name: 'List' }));
++  fireEvent.click(screen.getByRole('button', { name: 'Inspect listing' }));
++  expect(screen.queryByRole('button', { name: 'Buy' })).toBeNull();
++  expect(chain.writeContractAsync).not.toHaveBeenCalled();
++});
+diff --git a/apps/web/src/market/MarketTab.tsx b/apps/web/src/market/MarketTab.tsx
+index 7cbfd38..02fbe86 100644
+--- a/apps/web/src/market/MarketTab.tsx
++++ b/apps/web/src/market/MarketTab.tsx
+@@ -1,27 +1,18 @@
+ import { FUJI_CHAIN_ID, getAddresses, relicMarketAbi, relicNftAbi } from '@taskbar-hero/chain';
+ import { useQueryClient } from '@tanstack/react-query';
+ import { useState } from 'react';
+-import { formatEther, parseEther } from 'viem';
++import { parseEther } from 'viem';
+ import { useAccount, usePublicClient, useReadContract, useReadContracts, useSwitchChain, useWriteContract } from 'wagmi';
+-import { PixelIcon } from '../art/pixelIcons';
+-import { relicName } from '../forge/forgeText';
+-import { RELIC_IDS, rarityOf, relicImageUrl, shortAddress, txErrorText } from './marketText';
+-import { ErrorNote } from '../game/LoadNotice';
++import { RELIC_IDS, txErrorText } from './marketText';
++import { MarketGate, MarketView } from './MarketView';
++import type { Listing } from './marketViewModel';
+ import '../forge/forge.css';
+ import '../inventory/inventory.css';
+ import './market.css';
+ 
+ const PAGE = 50n;
+-const TESTNET = 'Fuji testnet, test AVAX';
+ 
+ type Address = `0x${string}`;
+-interface Listing {
+-  id: bigint;
+-  seller: Address;
+-  relicId: bigint;
+-  amount: bigint;
+-  price: bigint;
+-}
+ 
+ /** Parses a positive AVAX amount; undefined for anything invalid or zero. */
+ function parsePrice(text: string): bigint | undefined {
+@@ -93,16 +84,16 @@ export function MarketTab() {
+     return <p className="forge-note">The Relic contracts are not deployed on Fuji yet, so the market is not available.</p>;
+   }
+   if (!isConnected || !address) {
+-    return <p className="forge-note">Connect your wallet to see your Relics and the market.</p>;
++    return <MarketGate nft={nft} market={market}><p className="forge-note">Connect your wallet to see your Relics and the market.</p></MarketGate>;
+   }
+   if (chainId !== FUJI_CHAIN_ID) {
+     return (
+-      <div className="forge-mint">
++      <MarketGate nft={nft} market={market}>
+         <p className="forge-note" role="alert">Wrong network. Switch to Avalanche Fuji to use the market.</p>
+         <button type="button" className="forge-btn" disabled={switching} onClick={() => switchChain({ chainId: FUJI_CHAIN_ID })}>
+           Switch to Fuji
+         </button>
+-      </div>
++      </MarketGate>
+     );
+   }
+ 
+@@ -189,114 +180,10 @@ export function MarketTab() {
+     });
+   };
+ 
+-  return (
+-    <div className="market">
+-      {readFailed && (
+-        <ErrorNote text="Mochi couldn't read the Relic shelf from Fuji just now. Check your connection and try again." onRetry={retryReads} />
+-      )}
+-      <section aria-labelledby="my-relics">
+-        <h3 id="my-relics">My Relics</h3>
+-        {balances.isLoading ? (
+-          <p>Loading…</p>
+-        ) : balances.isError ? null : holdings.length === 0 ? (
+-          <p data-testid="relics-empty">No Relics yet. Forge one in the Forge tab.</p>
+-        ) : (
+-          <ul className="market-relics" data-testid="my-relics">
+-            {holdings.map((r) => (
+-              <li key={r.rarity} className={`pixel-card rarity-${r.rarity}`}>
+-                <img src={relicImageUrl(r.relicId)} alt={relicName(r.rarity)} width={40} height={40} />
+-                <span>
+-                  {relicName(r.rarity)}
+-                  {r.balance > 0n && <> × {r.balance.toString()}</>}
+-                  {r.listed > 0n && <small> × {r.listed.toString()} listed</small>}
+-                </span>
+-              </li>
+-            ))}
+-          </ul>
+-        )}
+-      </section>
+-
+-      <section aria-labelledby="market-listings">
+-        <h3 id="market-listings">Market</h3>
+-        <p className="market-hint">Prices are in {TESTNET}.</p>
+-        {readFailed ? null : listings.length === 0 ? (
+-          <p data-testid="listings-empty">No Relics for sale right now.</p>
+-        ) : (
+-          <ul className="market-listings" data-testid="listings">
+-            {listings.map((l) => {
+-              const rarity = rarityOf(l.relicId);
+-              return (
+-                <li key={l.id.toString()} className="pixel-card market-listing" data-testid={`listing-${l.id}`}>
+-                  <span className={`market-relic${rarity ? ` rarity-${rarity}` : ''}`}>
+-                    <span className="market-art">
+-                      {rarity ? (
+-                        <img src={relicImageUrl(l.relicId)} alt={relicName(rarity)} width={56} height={56} />
+-                      ) : (
+-                        <PixelIcon name="bag" size={5} />
+-                      )}
+-                    </span>
+-                    <span className="market-relic-info">
+-                      <strong>{rarity ? relicName(rarity) : `Relic #${l.relicId}`}</strong>
+-                      <small> × {l.amount.toString()} listed</small>
+-                    </span>
+-                  </span>
+-                  <span className="market-price">
+-                    <PixelIcon name="shop" size={2} />
+-                    <span>{formatEther(l.price)} AVAX</span>
+-                  </span>
+-                  <span className="market-seller">Seller · {isMine(l) ? 'You' : shortAddress(l.seller)}</span>
+-                  {isMine(l) ? (
+-                    <button type="button" className="forge-btn" disabled={!!busy} onClick={() => void cancel(l)}>
+-                      Cancel
+-                    </button>
+-                  ) : (
+-                    <button type="button" className="forge-btn pixel-btn" disabled={!!busy} onClick={() => void buy(l)}>
+-                      Buy
+-                    </button>
+-                  )}
+-                </li>
+-              );
+-            })}
+-          </ul>
+-        )}
+-      </section>
+-
+-      <section aria-labelledby="market-sell">
+-        <h3 id="market-sell">Sell a Relic</h3>
+-        <div className="market-form">
+-          <label>
+-            Relic
+-            <select value={listId} onChange={(e) => setListId(e.target.value)}>
+-              <option value="">Choose…</option>
+-              {sellable.map((r) => (
+-                <option key={r.rarity} value={r.relicId.toString()}>
+-                  {relicName(r.rarity)} (you have {r.balance.toString()})
+-                </option>
+-              ))}
+-            </select>
+-          </label>
+-          <label>
+-            Amount
+-            <input inputMode="numeric" value={listAmount} onChange={(e) => setListAmount(e.target.value)} />
+-          </label>
+-          <label>
+-            Price (AVAX)
+-            <input inputMode="decimal" placeholder="0.1" value={listPrice} onChange={(e) => setListPrice(e.target.value)} />
+-          </label>
+-          <button type="button" className="forge-btn" disabled={!canList} onClick={list}>
+-            List
+-          </button>
+-        </div>
+-        <p className="market-hint">{TESTNET}. The total price covers all copies in the listing.</p>
+-        <p className="market-hint">Approving lets the market contract transfer all Relics in your wallet, including future Relics, until you revoke approval.</p>
+-      </section>
+-
+-      {busy && <p role="status">{busy}</p>}
+-      {message && !busy && (
+-        <p className="forge-note" role="status" data-testid="market-message">
+-          {message}
+-        </p>
+-      )}
+-    </div>
+-  );
++  return <MarketView nft={nft} market={market} address={address} listings={listings} holdings={holdings} sellable={sellable}
++    loadingHoldings={balances.isLoading} holdingsFailed={balances.isError} readFailed={readFailed}
++    loadingListings={count.isLoading || listingPages.isLoading} busy={busy} message={message}
++    form={{ relicId: listId, amount: listAmount, price: listPrice, canList }}
++    onRelicId={setListId} onAmount={setListAmount} onPrice={setListPrice} onList={list}
++    onBuy={listing => { void buy(listing); }} onCancel={listing => { void cancel(listing); }} onRetry={retryReads} />;
+ }
+diff --git a/apps/web/src/market/MarketView.tsx b/apps/web/src/market/MarketView.tsx
+new file mode 100644
+index 0000000..9d8b09e
+--- /dev/null
++++ b/apps/web/src/market/MarketView.tsx
+@@ -0,0 +1,130 @@
++import { useId, useState, type ReactNode } from 'react';
++import type { Rarity } from '@taskbar-hero/game-rules';
++import { formatEther } from 'viem';
++import { PixelIcon } from '../art/pixelIcons';
++import { capitalize, relicName } from '../forge/forgeText';
++import { ErrorNote } from '../game/LoadNotice';
++import { EmptyState } from '../ui';
++import { RELIC_IDS, rarityOf, relicImageUrl, shortAddress } from './marketText';
++import { fujiContractUrl, isOwnListing, listingName, visibleListings, type Listing, type ListingFilter, type ListingSort, type SortDirection } from './marketViewModel';
++import './market.css';
++
++export const MARKET_TESTNET = 'Fuji testnet, test AVAX';
++export interface RelicHolding { rarity: Rarity; relicId: bigint; balance: bigint; listed: bigint }
++export interface MarketViewProps {
++  nft: string;
++  market: string;
++  address: string;
++  listings: readonly Listing[];
++  holdings: readonly RelicHolding[];
++  sellable: readonly RelicHolding[];
++  loadingHoldings: boolean;
++  holdingsFailed: boolean;
++  readFailed: boolean;
++  loadingListings: boolean;
++  busy: string | null;
++  message: string | null;
++  form: { relicId: string; amount: string; price: string; canList: boolean };
++  onRelicId: (id: string) => void;
++  onAmount: (amount: string) => void;
++  onPrice: (price: string) => void;
++  onList: () => void;
++  onBuy: (listing: Listing) => void;
++  onCancel: (listing: Listing) => void;
++  onRetry: () => void;
++}
++const columns: readonly { key: ListingSort; label: string }[] = [
++  { key: 'name', label: 'Relic' }, { key: 'rarity', label: 'Rarity' },
++  { key: 'quantity', label: 'Quantity' }, { key: 'seller', label: 'Seller' },
++  { key: 'price', label: 'Total price (AVAX)' },
++];
++function ContractLinks({ nft, market }: { nft: string; market: string }) {
++  return <div className="market-contract-links">
++    <a href={fujiContractUrl(nft)} target="_blank" rel="noopener noreferrer" title={nft}>RelicNFT on Routescan</a>
++    <a href={fujiContractUrl(market)} target="_blank" rel="noopener noreferrer" title={market}>RelicMarket on Routescan</a>
++  </div>;
++}
++export function MarketGate({ nft, market, children }: { nft: string; market: string; children: ReactNode }) {
++  return <div className="market market-gate"><div className="market-cols">
++    <section className="market-card market-list-card"><h2>Relic market</h2><p className="market-hint">{MARKET_TESTNET}. On-chain Relics only.</p>
++      <EmptyState title="Your Relic shelf" illustration={<PixelIcon name="shop" size={6} />}>{children}</EmptyState>
++    </section>
++    <aside className="market-card"><h3>Avalanche Fuji</h3><p className="market-hint">Chain 43113</p>
++      <p>Relics are ERC-1155 collectibles. Equipment stays in your Bag.</p>
++      <dl className="market-facts"><div><dt>RelicNFT</dt><dd title={nft}>{shortAddress(nft)}</dd></div><div><dt>RelicMarket</dt><dd title={market}>{shortAddress(market)}</dd></div></dl>
++      <ContractLinks nft={nft} market={market} />
++    </aside>
++  </div></div>;
++}
++
++/** Actual chain rows and existing transaction callbacks; no invented stats or wallet calls. */
++export function MarketView(props: MarketViewProps) {
++  const relicLabelId = useId();
++  const [filter, setFilter] = useState<ListingFilter>('all');
++  const [sort, setSort] = useState<ListingSort>('price');
++  const [direction, setDirection] = useState<SortDirection>('asc');
++  const [selectedId, setSelectedId] = useState<bigint | null>(null);
++  const [mode, setMode] = useState<'inspect' | 'sell'>('inspect');
++  const rows = props.readFailed || props.loadingListings ? [] : visibleListings(props.listings, filter, sort, direction, props.address);
++  const selected = rows.find(row => row.id === selectedId) ?? rows[0];
++  const mine = props.listings.filter(row => isOwnListing(row, props.address));
++  const select = (row: Listing) => { setSelectedId(row.id); setMode('inspect'); };
++  const sortBy = (key: ListingSort) => { if (sort === key) setDirection(value => value === 'asc' ? 'desc' : 'asc'); else { setSort(key); setDirection('asc'); } };
++  const rarity = selected ? rarityOf(selected.relicId) : undefined;
++  return <div className="market">
++    {props.readFailed && <ErrorNote text="Mochi couldn't read the Relic shelf from Fuji just now. Check your connection and try again." onRetry={props.onRetry} />}
++    <div className="market-cols">
++      <div className="market-col-main">
++        <section className="market-card market-list-card" aria-labelledby="market-listings">
++          <div className="market-header-row"><h2 id="market-listings">Relic market</h2>
++          </div>
++          <div className="market-filters" role="group" aria-label="Filter listings">
++            {([{ id: 'all', label: 'All Relics' }, ...RELIC_IDS.map(row => ({ id: row.rarity, label: capitalize(row.rarity) })), { id: 'mine', label: 'Your listings' }] as const).map(option =>
++              <button key={option.id} type="button" aria-pressed={filter === option.id} onClick={() => setFilter(option.id as ListingFilter)}>{option.label}</button>)}
++          </div>
++          <p className="market-hint">Prices are in {MARKET_TESTNET}. Select a listing to inspect it.</p>
++          {props.readFailed ? null : props.loadingListings ? <p role="status">Loading listings…</p> : rows.length === 0 ?
++            <EmptyState title={filter === 'all' ? 'No active listings' : 'No matching listings'}><p data-testid="listings-empty">{filter === 'all' ? 'No Relics for sale right now.' : 'Try another rarity or show all Relics.'}</p></EmptyState> :
++            <div className="market-table-wrap"><table className="market-table" data-testid="listings" aria-label="Relic market listings">
++              <thead><tr><th scope="col" aria-label="Artwork" />{columns.map(column => <th key={column.key} scope="col" aria-sort={sort === column.key ? direction === 'asc' ? 'ascending' : 'descending' : 'none'}>
++                <button type="button" className="market-sort" aria-label={`Sort by ${column.label.toLowerCase()}`} onClick={() => sortBy(column.key)}>{column.label}{sort === column.key && <span aria-hidden="true"> {direction === 'asc' ? '↑' : '↓'}</span>}</button>
++              </th>)}</tr></thead>
++              <tbody>{rows.map(row => { const quality = rarityOf(row.relicId); return <tr key={row.id.toString()} data-testid={`listing-${row.id}`} className={selected?.id === row.id ? 'selected' : ''} onClick={() => select(row)}>
++                <td>{quality ? <img src={relicImageUrl(row.relicId)} alt={relicName(quality)} width={32} height={32} /> : <PixelIcon name="bag" size={3} />}</td>
++                <td><button type="button" className="market-select" aria-label={`Select ${listingName(row)} listing ${row.id}`} aria-pressed={selected?.id === row.id} onClick={() => select(row)}>{listingName(row)}{row.amount > 1n && ` × ${row.amount}`}</button></td>
++                <td>{quality ? capitalize(quality) : 'Unknown'}</td><td className="num">{row.amount.toString()}</td>
++                <td className="num" title={row.seller}>{isOwnListing(row, props.address) ? 'You' : shortAddress(row.seller)}</td><td className="num market-price">{formatEther(row.price)} AVAX</td>
++              </tr>; })}</tbody>
++            </table></div>}
++        </section>
++        <section className="market-card market-holdings" aria-labelledby="my-relics"><h3 id="my-relics">My Relics</h3>
++          {props.loadingHoldings ? <p>Loading…</p> : props.holdingsFailed ? null : props.holdings.length === 0 ? <p data-testid="relics-empty">No Relics yet. Forge one in the Forge tab.</p> :
++            <ul className="market-relics" data-testid="my-relics">{props.holdings.map(row => <li key={row.rarity}><img src={relicImageUrl(row.relicId)} alt={relicName(row.rarity)} width={32} height={32} /><span>{relicName(row.rarity)}{row.balance > 0n && <> × {row.balance.toString()}</>}{row.listed > 0n && <small> × {row.listed.toString()} listed</small>}</span></li>)}</ul>}
++        </section>
++      </div>
++      <aside className="market-col-side">
++        <div className="market-modes" role="group" aria-label="Market action">
++          <button type="button" aria-pressed={mode === 'inspect'} onClick={() => setMode('inspect')}>Inspect listing</button>
++          <button type="button" aria-pressed={mode === 'sell'} onClick={() => setMode('sell')}>Sell a Relic</button>
++        </div>
++        {mode === 'inspect' ? <section className="market-card market-detail-card" aria-label="Listing details">
++          {selected ? <><div className="market-detail-hero">{rarity ? <img src={relicImageUrl(selected.relicId)} alt={listingName(selected)} width={64} height={64} /> : <PixelIcon name="bag" size={6} />}<div><h3>{listingName(selected)}</h3><p>{rarity ? capitalize(rarity) : 'Unknown Relic'}</p></div></div>
++            <dl className="market-facts"><div><dt>Listing</dt><dd>#{selected.id.toString()}</dd></div><div><dt>Token</dt><dd data-testid="token-id">#{selected.relicId.toString()}</dd></div><div><dt>Quantity</dt><dd>{selected.amount.toString()}</dd></div><div><dt>Total price</dt><dd data-testid="market-detail-price">{formatEther(selected.price)} AVAX</dd></div><div><dt>Seller</dt><dd title={selected.seller}>{isOwnListing(selected, props.address) ? 'You' : shortAddress(selected.seller)}</dd></div><div><dt>RelicNFT</dt><dd title={props.nft} data-testid="contract-addr">{shortAddress(props.nft)}</dd></div></dl>
++            {isOwnListing(selected, props.address) ? <button type="button" className="forge-btn" disabled={!!props.busy} onClick={() => props.onCancel(selected)}>Cancel</button> : <button type="button" className="forge-btn pixel-btn" disabled={!!props.busy} onClick={() => props.onBuy(selected)}>Buy</button>}
++          </> : <EmptyState title="Inspect a Relic">Select a listing to see its on-chain details.</EmptyState>}
++          <ContractLinks nft={props.nft} market={props.market} />
++        </section> : <section className="market-card" aria-labelledby="market-sell"><h3 id="market-sell">Sell a Relic</h3>
++          <div className="market-form"><label><span id={relicLabelId}>Relic</span><select aria-labelledby={relicLabelId} value={props.form.relicId} onChange={event => props.onRelicId(event.target.value)}><option value="">Choose…</option>{props.sellable.map(row => <option key={row.rarity} value={row.relicId.toString()}>{relicName(row.rarity)} (you have {row.balance.toString()})</option>)}</select></label>
++            <div className="market-form-amounts"><label>Amount<input inputMode="numeric" value={props.form.amount} onChange={event => props.onAmount(event.target.value)} /></label><label>Price (AVAX)<input inputMode="decimal" placeholder="0.1" value={props.form.price} onChange={event => props.onPrice(event.target.value)} /></label></div>
++            <button type="button" className="forge-btn pixel-btn" disabled={!props.form.canList || props.readFailed || props.loadingHoldings} onClick={props.onList}>List</button>
++          </div><p className="market-hint">{MARKET_TESTNET}. The total price covers all copies in the listing.</p><p className="market-hint">Approving lets the market contract transfer all Relics in your wallet, including future Relics, until you revoke approval.</p>
++        </section>}
++        <section className="market-card market-your-listings" aria-labelledby="your-listings"><h3 id="your-listings">Your listings</h3>
++          {props.readFailed ? <p>Listings are unavailable until the chain read succeeds.</p> : mine.length ? <ul>{mine.map(row => <li key={row.id.toString()}><button type="button" className="market-select" onClick={() => { setFilter('all'); select(row); }}>{listingName(row)} · {formatEther(row.price)} AVAX</button></li>)}</ul> : <p data-testid="your-listings-empty">Nothing listed. Use Sell a Relic to create a listing.</p>}
++        </section>
++      </aside>
++    </div>
++    {props.busy && <p role="status" className="market-status">{props.busy}</p>}
++    {props.message && !props.busy && <p className="forge-note market-status" role="status" data-testid="market-message">{props.message}</p>}
++  </div>;
++}
+diff --git a/apps/web/src/market/market.css b/apps/web/src/market/market.css
+index a393659..315e34e 100644
+--- a/apps/web/src/market/market.css
++++ b/apps/web/src/market/market.css
+@@ -1,357 +1,53 @@
+-/* Cat Café Quest - Relic Market styles */
+-
+-.market {
+-  display: flex;
+-  flex-direction: column;
+-  gap: var(--sp-4, 16px);
+-  max-width: 65ch;
+-  min-width: 0;
+-  color: var(--text, #fff3e0);
+-  box-sizing: border-box;
+-}
+-
+-.market section {
+-  min-width: 0;
+-  background: var(--surface, #2a1f36);
+-  border: 2px solid var(--border, #5b4572);
+-  box-shadow: var(--pixel-shadow, 3px 3px 0 #000);
+-  border-radius: 0;
+-  padding: var(--sp-3, 12px) var(--sp-4, 16px);
+-  box-sizing: border-box;
+-}
+-
+-.market h3 {
+-  margin: 0 0 var(--sp-1, 4px) 0;
+-  font-family: var(--font-display, 'Pixelify Sans', monospace);
+-  font-size: var(--fs-md, 1rem);
+-  color: var(--gold, #ffb86b);
+-  letter-spacing: 0.02em;
+-}
+-
+-.market-hint {
+-  font-family: var(--font-body, 'DM Sans', sans-serif);
+-  font-size: var(--fs-xs, .75rem);
+-  color: var(--muted, #c3aed0);
+-  margin: 0 0 var(--sp-2, 8px) 0;
+-}
+-
+-/* My Relics list */
+-.market-relics {
+-  display: flex;
+-  flex-wrap: wrap;
+-  gap: var(--sp-2, 8px);
+-  margin: var(--sp-2, 8px) 0 0 0;
+-  padding: 0;
+-  list-style: none;
+-}
+-
+-.market-relics li {
+-  display: flex;
+-  align-items: center;
+-  gap: var(--sp-2, 8px);
+-  padding: var(--sp-1, 4px) var(--sp-2, 8px);
+-  background: var(--surface-2, #3a2c4a);
+-  border: 1px solid var(--border, #5b4572);
+-  border-radius: 0;
+-  box-shadow: none;
+-  font-size: var(--fs-xs, .75rem);
+-}
+-
+-.market-relics img {
+-  image-rendering: pixelated;
+-  flex: none;
+-}
+-
+-.market-relics li > span {
+-  min-width: 0;
+-  color: var(--text, #fff3e0);
+-  overflow-wrap: anywhere;
+-}
+-
+-.market-relics small {
+-  color: var(--muted, #c3aed0);
+-  font-family: var(--font-num, 'JetBrains Mono', monospace);
+-}
+-
+-/* Market listings: list rows */
+-.market-listings {
+-  display: flex;
+-  flex-direction: column;
+-  gap: var(--sp-2, 8px);
+-  margin: var(--sp-2, 8px) 0 0 0;
+-  padding: 0;
+-  list-style: none;
+-}
+-
+-.market-listings li.market-listing {
+-  display: grid;
+-  grid-template-columns: auto 1fr auto auto;
+-  align-items: center;
+-  gap: var(--sp-3, 12px);
+-  padding: var(--sp-2, 8px) var(--sp-3, 12px);
+-  background: var(--surface-2, #3a2c4a);
+-  border: 1px solid var(--border, #5b4572);
+-  border-radius: 0;
+-  box-shadow: none;
+-  min-width: 0;
+-  box-sizing: border-box;
+-}
+-
+-@media (max-width: 600px) {
+-  .market-listings li.market-listing {
+-    grid-template-columns: auto 1fr;
+-    gap: var(--sp-2, 8px);
+-  }
+-  .market-price {
+-    grid-column: 1 / -1;
+-    justify-content: flex-start !important;
+-    margin-left: 0 !important;
+-  }
+-  .market-seller {
+-    grid-column: 1 / 2;
+-  }
+-  .market-listing .forge-btn {
+-    grid-column: 2 / 3;
+-    justify-self: end;
+-  }
+-}
+-
+-.market-relic {
+-  display: flex;
+-  align-items: center;
+-  gap: var(--sp-2, 8px);
+-  min-width: 0;
+-  --market-glow: var(--rarity-common, #b9b6c9);
+-}
+-
+-.market-relic.rarity-rare {
+-  --market-glow: var(--rarity-rare, #4aa8ff);
+-}
+-
+-.market-relic.rarity-epic {
+-  --market-glow: var(--rarity-epic, #bb74ff);
+-}
+-
+-.market-relic.rarity-legendary {
+-  --market-glow: var(--rarity-legendary, #ff9a3c);
+-}
+-
+-.market-art {
+-  display: grid;
+-  place-items: center;
+-  flex: none;
+-  width: 44px;
+-  height: 44px;
+-  background: var(--bg, #1a1220);
+-  border: var(--pixel-border, 2px solid #000);
+-  box-shadow: var(--pixel-shadow, 3px 3px 0 #000);
+-  border-radius: 0;
+-}
+-
+-.market-art img {
+-  image-rendering: pixelated;
+-  image-rendering: crisp-edges;
+-}
+-
+-.market-relic-info {
+-  display: flex;
+-  flex-direction: column;
+-  gap: 2px;
+-  min-width: 0;
+-  color: var(--text, #fff3e0);
+-  overflow-wrap: anywhere;
+-}
+-
+-.market-relic-info strong {
+-  font-family: var(--font-display, 'Pixelify Sans', monospace);
+-  font-size: var(--fs-sm, .875rem);
+-}
+-
+-.market-relic-info small {
+-  font-family: var(--font-num, 'JetBrains Mono', monospace);
+-  font-size: var(--fs-xs, .75rem);
+-  color: var(--muted, #c3aed0);
+-}
+-
+-.market-seller {
+-  font-family: var(--font-body, 'DM Sans', sans-serif);
+-  font-size: var(--fs-xs, .75rem);
+-  color: var(--muted, #c3aed0);
+-  white-space: nowrap;
+-}
+-
+-/* Price in --font-num right aligned */
+-.market-price {
+-  display: inline-flex;
+-  align-items: center;
+-  gap: var(--sp-1, 4px);
+-  font-family: var(--font-num, 'JetBrains Mono', monospace);
+-  font-size: var(--fs-sm, .875rem);
+-  font-weight: 700;
+-  color: var(--gold, #ffb86b);
+-  margin-left: auto;
+-  text-align: right;
+-  justify-content: flex-end;
+-  white-space: nowrap;
+-}
+-
+-.market-price svg {
+-  flex: none;
+-}
+-
+-/* Actions: Secondary View/Cancel, Primary Buy */
+-.market-listing .forge-btn {
+-  font-family: var(--font-display, 'Pixelify Sans', monospace);
+-  font-size: var(--fs-xs, .75rem);
+-  font-weight: 700;
+-  letter-spacing: 0.03em;
+-  text-transform: uppercase;
+-  min-height: 36px;
+-  padding: var(--sp-1, 4px) var(--sp-3, 12px);
+-  cursor: pointer;
+-  box-sizing: border-box;
+-  text-align: center;
+-  border-radius: 0;
+-}
+-
+-@media (max-width: 600px) {
+-  .market-listing .forge-btn {
+-    min-height: var(--tap, 44px);
+-    padding: var(--sp-2, 8px) var(--sp-3, 12px);
+-  }
+-}
+-
+-.market-listing .forge-btn:not(.pixel-btn) {
+-  color: var(--text, #fff3e0);
+-  background: var(--surface-2, #3a2c4a);
+-  border: 1px solid var(--border, #5b4572);
+-  box-shadow: none;
+-}
+-
+-.market-listing .forge-btn.pixel-btn {
+-  color: var(--on-accent, #1a1200);
+-  background: var(--accent, #ffb86b);
+-  border: var(--pixel-border, 2px solid #000);
+-  box-shadow: var(--pixel-shadow, 3px 3px 0 #000);
+-  font-weight: 800;
+-}
+-
+-.market-listing .forge-btn:disabled {
+-  opacity: 0.55;
+-  cursor: not-allowed;
+-}
+-
+-/* Sell Form */
+-.market-form {
+-  display: flex;
+-  flex-wrap: wrap;
+-  align-items: end;
+-  gap: var(--sp-2, 8px) var(--sp-3, 12px);
+-  margin-top: var(--sp-2, 8px);
+-}
+-
+-.market-form label {
+-  display: flex;
+-  flex-direction: column;
+-  gap: var(--sp-1, 4px);
+-  min-width: 0;
+-  font-family: var(--font-body, 'DM Sans', sans-serif);
+-  font-size: var(--fs-xs, .75rem);
+-  color: var(--muted, #c3aed0);
+-}
+-
+-.market-form input,
+-.market-form select {
+-  box-sizing: border-box;
+-  min-width: 0;
+-  min-height: 36px;
+-  max-width: 140px;
+-  color: var(--text, #fff3e0);
+-  background: var(--surface-2, #3a2c4a);
+-  border: 1px solid var(--border, #5b4572);
+-  border-radius: 0;
+-  padding: 0 var(--sp-2, 8px);
+-  font-family: var(--font-num, 'JetBrains Mono', monospace);
+-  font-size: var(--fs-xs, .75rem);
+-}
+-
+-@media (max-width: 600px) {
+-  .market-form input,
+-  .market-form select {
+-    min-height: var(--tap, 44px);
+-  }
+-}
+-
+-.market-form input::placeholder {
+-  color: var(--muted, #c3aed0);
+-  opacity: 0.7;
+-}
+-
+-.market-form .forge-btn {
+-  min-height: 36px;
+-  font-family: var(--font-display, 'Pixelify Sans', monospace);
+-  font-size: var(--fs-xs, .75rem);
+-  font-weight: 700;
+-  padding: 0 var(--sp-3, 12px);
+-  background: var(--surface-2, #3a2c4a);
+-  border: 1px solid var(--border, #5b4572);
+-  border-radius: 0;
+-  color: var(--text, #fff3e0);
+-  cursor: pointer;
+-}
+-
+-@media (max-width: 600px) {
+-  .market-form .forge-btn {
+-    min-height: var(--tap, 44px);
+-    padding: var(--sp-2, 8px) var(--sp-3, 12px);
+-  }
+-}
+-
+-.market-form .forge-btn:disabled {
+-  opacity: 0.55;
+-  cursor: not-allowed;
+-}
+-
+-/* Empty states: 32px muted icon + one sentence */
+-[data-testid='relics-empty'],
+-[data-testid='listings-empty'] {
+-  display: flex;
+-  flex-direction: column;
+-  align-items: center;
+-  justify-content: center;
+-  gap: var(--sp-2, 8px);
+-  padding: var(--sp-4, 16px);
+-  background: var(--surface-2, #3a2c4a);
+-  border: 2px dashed var(--border, #5b4572);
+-  border-radius: 0;
+-  color: var(--muted, #c3aed0);
+-  text-align: center;
+-  font-family: var(--font-body, 'DM Sans', sans-serif);
+-  font-size: var(--fs-sm, .875rem);
+-  margin: var(--sp-2, 8px) 0 0 0;
+-}
+-
+-[data-testid='relics-empty']::before,
+-[data-testid='listings-empty']::before {
+-  content: '';
+-  display: block;
+-  width: 32px;
+-  height: 32px;
+-  background: var(--muted, #c3aed0);
+-  opacity: 0.6;
+-  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 2h8v2H4V2zm-2 3h12v9H2V5zm2 2v5h8V7H4z'/%3E%3C/svg%3E");
+-  mask-repeat: no-repeat;
+-  mask-position: center;
+-  mask-size: contain;
+-  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 2h8v2H4V2zm-2 3h12v9H2V5zm2 2v5h8V7H4z'/%3E%3C/svg%3E");
+-  -webkit-mask-repeat: no-repeat;
+-  -webkit-mask-position: center;
+-  -webkit-mask-size: contain;
+-}
+-
+-@media (prefers-reduced-motion: reduce) {
+-  .market-listings li.market-listing {
+-    transition: none !important;
+-    transform: none !important;
+-  }
+-}
++/* CXU3: selection and trading actions are separate; all figures are chain data. */
++.market { display:flex; flex-direction:column; gap:var(--sp-3,12px); width:100%; height:100%; min-height:0; min-width:0; color:var(--text); font:var(--fs-sm,.875rem)/1.4 var(--font-body); }
++.market p { margin:0; }
++.market-cols { display:grid; grid-template-columns:minmax(0,1fr) 340px; gap:var(--sp-4,16px); flex:1; min-height:0; min-width:0; }
++.market-col-main,.market-col-side { display:flex; flex-direction:column; gap:var(--sp-3,12px); min-height:0; min-width:0; }
++.market-card { display:flex; flex-direction:column; gap:var(--sp-2,8px); padding:var(--sp-3,12px); min-width:0; box-sizing:border-box; border:2px solid var(--border); box-shadow:var(--pixel-shadow); background:var(--surface); }
++.market-card h2,.market-card h3 { margin:0; font:700 var(--fs-md,1rem)/1.2 var(--font-display); color:var(--text); }
++.market-list-card { flex:1; min-height:0; }
++.market-header-row { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:var(--sp-2,8px); }
++.market-filters { display:flex; flex-wrap:wrap; gap:var(--sp-1,4px); }
++.market-filters button { padding:6px 10px; min-height:32px; border:1px solid var(--border); color:var(--muted); background:var(--bg); font:inherit; font-size:var(--fs-xs,.75rem); cursor:pointer; }
++.market-filters button[aria-pressed=true] { color:var(--on-accent); background:var(--accent); border-color:var(--accent); }
++.market select,.market input { box-sizing:border-box; min-width:0; padding:var(--sp-2,8px); border:1px solid var(--border); color:var(--text); background:var(--bg); font:inherit; }
++.market-hint { color:var(--muted); font-size:var(--fs-xs,.75rem); line-height:1.4; }
++.market-table-wrap { min-height:0; overflow:auto; flex:1; border:1px solid var(--border); }
++.market-table { width:100%; border-collapse:collapse; text-align:left; font-size:var(--fs-xs,.75rem); }
++.market-table th { position:sticky; top:0; z-index:1; padding:var(--sp-2,8px); color:var(--muted); background:var(--bg); border-bottom:1px solid var(--border); }
++.market-table td { padding:var(--sp-2,8px); border-bottom:1px solid var(--border); vertical-align:middle; }
++.market-table th:first-child { width:32px; }
++.market-sort,.market-select { border:0; padding:0; color:inherit; background:transparent; font:inherit; text-align:left; cursor:pointer; }
++.market-sort { font-family:var(--font-display); font-weight:700; }
++.market-sort:hover,.market-select:hover { color:var(--accent); }
++.market-table tr.selected { background:var(--surface-2); outline:1px solid var(--accent); outline-offset:-1px; }
++.market-table .market-select { font-weight:700; }
++.market-price { text-align:right; overflow-wrap:anywhere; }
++.market img { display:block; image-rendering:pixelated; flex:none; }
++.market-holdings { flex:none; }
++.market-relics { display:flex; flex-wrap:wrap; gap:var(--sp-2,8px); list-style:none; padding:0; margin:0; }
++.market-relics li { display:flex; align-items:center; gap:var(--sp-2,8px); padding:var(--sp-1,4px); font-size:var(--fs-xs,.75rem); }
++.market-relics small { display:block; color:var(--muted); }
++.market-modes { display:flex; gap:var(--sp-2,8px); flex:none; }
++.market-modes button { flex:1; padding:var(--sp-2,8px); border:1px solid var(--border); background:var(--surface); color:var(--text); font:700 var(--fs-sm,.875rem) var(--font-display); cursor:pointer; }
++.market-modes button[aria-pressed=true] { border-color:var(--accent); box-shadow:inset 0 -2px var(--accent); }
++.market-detail-card { flex:none; }
++.market-detail-hero { display:flex; align-items:center; gap:var(--sp-3,12px); }
++.market-detail-hero p { color:var(--muted); font-size:var(--fs-xs,.75rem); }
++.market-facts { display:grid; gap:2px; padding:var(--sp-1,4px) 0; margin:var(--sp-1,4px) 0; border-block:1px dashed var(--border); font-size:var(--fs-xs,.75rem); }
++.market-facts > div { display:grid; grid-template-columns:auto minmax(0,1fr); gap:var(--sp-2,8px); }
++.market-facts dt { color:var(--muted); }
++.market-facts dd { margin:0; text-align:right; overflow-wrap:anywhere; font-family:var(--font-num); }
++.market-contract-links { display:grid; gap:2px; font-size:var(--fs-xs,.75rem); }
++.market-contract-links a { color:var(--accent); text-underline-offset:3px; }
++.market-your-listings { flex:1; min-height:72px; }
++.market-your-listings ul { overflow:auto; min-height:0; padding:0; margin:0; list-style:none; display:grid; gap:var(--sp-2,8px); }
++.market-your-listings p { color:var(--muted); font-size:var(--fs-xs,.75rem); }
++.market-form { display:grid; gap:var(--sp-3,12px); }
++.market-form label { display:grid; gap:var(--sp-1,4px); min-width:0; }
++.market-form-amounts { display:grid; grid-template-columns:1fr 1fr; gap:var(--sp-2,8px); }
++.market-status { flex:none; padding:var(--sp-2,8px); border:1px solid var(--border); background:var(--surface); }
++.market-gate .market-card { align-self:stretch; }
++.market-gate .ui-empty { flex:1; }
++@media(max-width:900px) { .market { height:auto; } .market-cols { grid-template-columns:1fr; } .market-list-card { min-height:280px; } .market-your-listings { min-height:100px; } }
++@media(prefers-reduced-motion:reduce) { .market * { animation:none!important; transition:none!important; } }
+diff --git a/apps/web/src/market/marketViewModel.test.ts b/apps/web/src/market/marketViewModel.test.ts
+new file mode 100644
+index 0000000..baeb34f
+--- /dev/null
++++ b/apps/web/src/market/marketViewModel.test.ts
+@@ -0,0 +1,32 @@
++import { describe, expect, it } from 'vitest';
++import { visibleListings, isOwnListing, fujiContractUrl, type Listing } from './marketViewModel';
++
++const me = `0x${'ab'.repeat(20)}` as const;
++const other = `0x${'cd'.repeat(20)}` as const;
++const rows: Listing[] = [
++  { id: 9n, seller: me, relicId: 1n, amount: 2n, price: 9007199254740993n },
++  { id: 3n, seller: other, relicId: 4n, amount: 10n, price: 9007199254740992n },
++  { id: 7n, seller: other, relicId: 2n, amount: 1n, price: 5n },
++];
++describe('truthful market presentation', () => {
++  it('sorts full-precision prices and quantities without mutating query data', () => {
++    expect(visibleListings(rows, 'all', 'price', 'asc', me).map(row => row.id)).toEqual([7n, 3n, 9n]);
++    expect(visibleListings(rows, 'all', 'price', 'desc', me).map(row => row.id)).toEqual([9n, 3n, 7n]);
++    expect(visibleListings(rows, 'all', 'quantity', 'asc', me).map(row => row.id)).toEqual([7n, 9n, 3n]);
++    expect(rows.map(row => row.id)).toEqual([9n, 3n, 7n]);
++  });
++  it('filters actual rarity and case-insensitive ownership, not invented equipment categories', () => {
++    expect(visibleListings(rows, 'rare', 'price', 'asc', me).map(row => row.id)).toEqual([7n]);
++    expect(visibleListings(rows, 'mine', 'price', 'asc', me).map(row => row.id)).toEqual([9n]);
++    expect(isOwnListing(rows[0]!, `0x${'AB'.repeat(20)}`)).toBe(true);
++    expect(visibleListings(rows, 'epic', 'price', 'asc', me)).toEqual([]);
++  });
++  it('uses a stable listing-id tie break and the configured rarity order', () => {
++    const tied = rows.map(row => ({ ...row, price: 1n }));
++    expect(visibleListings(tied, 'all', 'price', 'desc', me).map(row => row.id)).toEqual([3n, 7n, 9n]);
++    expect(visibleListings(rows, 'all', 'rarity', 'asc', me).map(row => row.id)).toEqual([9n, 7n, 3n]);
++  });
++  it('links to the Fuji contract explorer without inventing a token-detail route', () => {
++    expect(fujiContractUrl(me)).toBe(`https://testnet.snowtrace.io/address/${me}`);
++  });
++});
+diff --git a/apps/web/src/market/marketViewModel.ts b/apps/web/src/market/marketViewModel.ts
+new file mode 100644
+index 0000000..d6a7ac7
+--- /dev/null
++++ b/apps/web/src/market/marketViewModel.ts
+@@ -0,0 +1,37 @@
++import type { Rarity } from '@taskbar-hero/game-rules';
++import { relicName } from '../forge/forgeText';
++import { RELIC_IDS, rarityOf } from './marketText';
++
++export interface Listing {
++  id: bigint;
++  seller: `0x${string}`;
++  relicId: bigint;
++  amount: bigint;
++  price: bigint;
++}
++export type ListingFilter = 'all' | 'mine' | Rarity;
++export type ListingSort = 'name' | 'rarity' | 'quantity' | 'seller' | 'price';
++export type SortDirection = 'asc' | 'desc';
++export const listingName = (listing: Listing) => {
++  const rarity = rarityOf(listing.relicId);
++  return rarity ? relicName(rarity) : `Relic #${listing.relicId}`;
++};
++export const isOwnListing = (listing: Listing, address: string) => listing.seller.toLowerCase() === address.toLowerCase();
++const compare = (a: bigint, b: bigint) => a < b ? -1 : a > b ? 1 : 0;
++
++/** Presentation only. Keep amounts/prices as bigint and never mutate the queried rows. */
++export function visibleListings(listings: readonly Listing[], filter: ListingFilter, sort: ListingSort, direction: SortDirection, address: string): Listing[] {
++  return listings.filter(listing => filter === 'all' || (filter === 'mine'
++    ? isOwnListing(listing, address) : rarityOf(listing.relicId) === filter)).sort((a, b) => {
++    let order: number;
++    if (sort === 'price') order = compare(a.price, b.price);
++    else if (sort === 'quantity') order = compare(a.amount, b.amount);
++    else if (sort === 'name') order = listingName(a).localeCompare(listingName(b));
++    else if (sort === 'seller') order = a.seller.toLowerCase().localeCompare(b.seller.toLowerCase());
++    else order = RELIC_IDS.findIndex(row => row.relicId === a.relicId) - RELIC_IDS.findIndex(row => row.relicId === b.relicId);
++    return order === 0 ? compare(a.id, b.id) : direction === 'asc' ? order : -order;
++  });
++}
++
++/** Snowtrace is Routescan's Fuji explorer; use its established contract route. */
++export const fujiContractUrl = (address: string) => `https://testnet.snowtrace.io/address/${address}`;

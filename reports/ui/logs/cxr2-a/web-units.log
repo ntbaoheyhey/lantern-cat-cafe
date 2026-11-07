@@ -1,0 +1,39 @@
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-ui/apps/web
+
+ ❯ src/layout/bag/BagPanel.redesign.test.tsx (3 tests | 1 failed) 224ms
+   × empty slot frames are decorative and cannot enter the keyboard tab sequence 14ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/layout/bag/BagPanel.redesign.test.tsx > empty slot frames are decorative and cannot enter the keyboard tab sequence
+AssertionError: expected …(193) to have a length of 200 but got 193
+
+- Expected
++ Received
+
+- 200
++ 193
+
+ ❯ src/layout/bag/BagPanel.redesign.test.tsx:41:17
+     39|   render(<BagPanel state={{ ...state, inventory: state.inventory.filte…
+     40|   const empty = screen.getByRole('list', { name: 'Bag items' }).queryS…
+     41|   expect(empty).toHaveLength(state.bagLimit);
+       |                 ^
+     42|   for (const slot of empty) {
+     43|     expect(slot.getAttribute('aria-hidden')).toBe('true');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 124 passed (125)
+      Tests  1 failed | 1447 passed (1448)
+   Start at  16:57:07
+   Duration  40.82s (environment 49%, tests 39%, import 11%, transform 1%)
+
+Environment  jsdom was created 125 times · 35.36s total, 49% of tracked time
+             create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+             learn more: https://vitest.dev/guide/improving-performance#test-environments
+
+
+exit=1

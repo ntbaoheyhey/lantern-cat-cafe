@@ -1,0 +1,413 @@
+[WebServer] (node:81126) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:81127) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-ui/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+[WebServer] (node:81130) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+
+[WebServer] (node:81157) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:81158) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-ui/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] (node:81190) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+[WebServer] (node:81195) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+
+[WebServer] (node:81229) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:81230) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-ui/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] (node:81239) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-ui/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] (node:81240) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 45 tests using 2 workers
+
+(node:81246) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+(node:81245) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/45] [stage-layout] › e2e/ui/cxu3-market.spec.ts:24:3 › CXU3 real MarketView with mocked wallet callbacks 1280
+[2/45] [stage-layout] › e2e/ui/cxu3-forge.spec.ts:29:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1280 no-preference
+  1) [stage-layout] › e2e/ui/cxu3-forge.spec.ts:29:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1280 no-preference 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "rgb(74, 168, 255)"
+    Received: null
+
+      58 |             return colored ? getComputedStyle(colored).fill : null;
+      59 |           }, quality);
+    > 60 |           expect(fill).toBe(quality === 'rare' ? 'rgb(74, 168, 255)' : 'rgb(187, 116, 255)');
+         |                        ^
+      61 |         }
+      62 |       }
+      63 |       await page.getByTestId('rarity-legendary').click(); await expect(page.getByTestId('craft-btn')).toBeDisabled();
+        at /Users/bao/taskbar-hero-ui/apps/web/e2e/ui/cxu3-forge.spec.ts:60:24
+
+    Error Context: test-results/5310-5311/ui-cxu3-forge-CXU3-Forge-c-70fcb-and-tabs-1280-no-preference-stage-layout/error-context.md
+
+
+[3/45] [stage-layout] › e2e/ui/cxu3-market.spec.ts:24:3 › CXU3 real MarketView with mocked wallet callbacks 1600
+(node:81262) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[4/45] [stage-layout] › e2e/ui/cxu3-forge.spec.ts:29:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1280 reduce
+[5/45] [stage-layout] › e2e/ui/u1-tokens.spec.ts:38:3 › 1280px tokens › computed tokens, real button target and no overflow
+  2) [stage-layout] › e2e/ui/cxu3-forge.spec.ts:29:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1280 reduce 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "rgb(74, 168, 255)"
+    Received: null
+
+      58 |             return colored ? getComputedStyle(colored).fill : null;
+      59 |           }, quality);
+    > 60 |           expect(fill).toBe(quality === 'rare' ? 'rgb(74, 168, 255)' : 'rgb(187, 116, 255)');
+         |                        ^
+      61 |         }
+      62 |       }
+      63 |       await page.getByTestId('rarity-legendary').click(); await expect(page.getByTestId('craft-btn')).toBeDisabled();
+        at /Users/bao/taskbar-hero-ui/apps/web/e2e/ui/cxu3-forge.spec.ts:60:24
+
+    Error Context: test-results/5310-5311/ui-cxu3-forge-CXU3-Forge-c-3b98a-reveal-and-tabs-1280-reduce-stage-layout/error-context.md
+
+
+(node:81270) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[6/45] [stage-layout] › e2e/ui/cxu3-forge.spec.ts:29:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1600 no-preference
+[7/45] [stage-layout] › e2e/ui/u1-tokens.spec.ts:38:3 › 390px tokens › computed tokens, real button target and no overflow
+  3) [stage-layout] › e2e/ui/cxu3-forge.spec.ts:29:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1600 no-preference 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "rgb(74, 168, 255)"
+    Received: null
+
+      58 |             return colored ? getComputedStyle(colored).fill : null;
+      59 |           }, quality);
+    > 60 |           expect(fill).toBe(quality === 'rare' ? 'rgb(74, 168, 255)' : 'rgb(187, 116, 255)');
+         |                        ^
+      61 |         }
+      62 |       }
+      63 |       await page.getByTestId('rarity-legendary').click(); await expect(page.getByTestId('craft-btn')).toBeDisabled();
+        at /Users/bao/taskbar-hero-ui/apps/web/e2e/ui/cxu3-forge.spec.ts:60:24
+
+    Error Context: test-results/5310-5311/ui-cxu3-forge-CXU3-Forge-c-5adae-and-tabs-1600-no-preference-stage-layout/error-context.md
+
+
+(node:81278) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[8/45] [stage-layout] › e2e/ui/u1-tokens.spec.ts:57:3 › evidence 1600x900 light › stage screenshot
+[9/45] [stage-layout] › e2e/ui/cxu3-forge.spec.ts:29:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1600 reduce
+[10/45] [stage-layout] › e2e/ui/u1-tokens.spec.ts:57:3 › evidence 1280x720 light › stage screenshot
+  4) [stage-layout] › e2e/ui/cxu3-forge.spec.ts:29:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1600 reduce 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "rgb(74, 168, 255)"
+    Received: null
+
+      58 |             return colored ? getComputedStyle(colored).fill : null;
+      59 |           }, quality);
+    > 60 |           expect(fill).toBe(quality === 'rare' ? 'rgb(74, 168, 255)' : 'rgb(187, 116, 255)');
+         |                        ^
+      61 |         }
+      62 |       }
+      63 |       await page.getByTestId('rarity-legendary').click(); await expect(page.getByTestId('craft-btn')).toBeDisabled();
+        at /Users/bao/taskbar-hero-ui/apps/web/e2e/ui/cxu3-forge.spec.ts:60:24
+
+    Error Context: test-results/5310-5311/ui-cxu3-forge-CXU3-Forge-c-76dab-reveal-and-tabs-1600-reduce-stage-layout/error-context.md
+
+
+(node:81287) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[11/45] [stage-layout] › e2e/ui/cxu3-forge.spec.ts:111:1 › CXU3 preserves the compact Forge action without scrolling
+[12/45] [stage-layout] › e2e/ui/u1-tokens.spec.ts:57:3 › evidence 390x844 light › stage screenshot
+(node:81295) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[13/45] [stage-layout] › e2e/ui/cxu3-forge.spec.ts:29:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1280 no-preference
+[14/45] [stage-layout] › e2e/ui/u1-tokens.spec.ts:57:3 › evidence 320x568 light › stage screenshot
+[15/45] [stage-layout] › e2e/ui/u1-tokens.spec.ts:57:3 › evidence 1280x720 dark › stage screenshot
+  5) [stage-layout] › e2e/ui/cxu3-forge.spec.ts:29:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1280 no-preference 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "rgb(74, 168, 255)"
+    Received: null
+
+      58 |             return colored ? getComputedStyle(colored).fill : null;
+      59 |           }, quality);
+    > 60 |           expect(fill).toBe(quality === 'rare' ? 'rgb(74, 168, 255)' : 'rgb(187, 116, 255)');
+         |                        ^
+      61 |         }
+      62 |       }
+      63 |       await page.getByTestId('rarity-legendary').click(); await expect(page.getByTestId('craft-btn')).toBeDisabled();
+        at /Users/bao/taskbar-hero-ui/apps/web/e2e/ui/cxu3-forge.spec.ts:60:24
+
+    Error Context: test-results/5310-5311/ui-cxu3-forge-CXU3-Forge-c-70fcb-and-tabs-1280-no-preference-stage-layout-repeat1/error-context.md
+
+
+(node:81304) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[16/45] [stage-layout] › e2e/ui/cxu3-forge.spec.ts:29:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1280 reduce
+[17/45] [stage-layout] › e2e/ui/u1-tokens.spec.ts:57:3 › evidence 390x844 dark › stage screenshot
+  6) [stage-layout] › e2e/ui/cxu3-forge.spec.ts:29:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1280 reduce 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "rgb(74, 168, 255)"
+    Received: null
+
+      58 |             return colored ? getComputedStyle(colored).fill : null;
+      59 |           }, quality);
+    > 60 |           expect(fill).toBe(quality === 'rare' ? 'rgb(74, 168, 255)' : 'rgb(187, 116, 255)');
+         |                        ^
+      61 |         }
+      62 |       }
+      63 |       await page.getByTestId('rarity-legendary').click(); await expect(page.getByTestId('craft-btn')).toBeDisabled();
+        at /Users/bao/taskbar-hero-ui/apps/web/e2e/ui/cxu3-forge.spec.ts:60:24
+
+    Error Context: test-results/5310-5311/ui-cxu3-forge-CXU3-Forge-c-3b98a-reveal-and-tabs-1280-reduce-stage-layout-repeat1/error-context.md
+
+
+(node:81319) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[18/45] [stage-layout] › e2e/ui/cxu3-market.spec.ts:24:3 › CXU3 real MarketView with mocked wallet callbacks 1280
+(node:81320) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[19/45] [stage-layout] › e2e/ui/cxu3-forge.spec.ts:29:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1600 no-preference
+  7) [stage-layout] › e2e/ui/cxu3-forge.spec.ts:29:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1600 no-preference 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "rgb(74, 168, 255)"
+    Received: null
+
+      58 |             return colored ? getComputedStyle(colored).fill : null;
+      59 |           }, quality);
+    > 60 |           expect(fill).toBe(quality === 'rare' ? 'rgb(74, 168, 255)' : 'rgb(187, 116, 255)');
+         |                        ^
+      61 |         }
+      62 |       }
+      63 |       await page.getByTestId('rarity-legendary').click(); await expect(page.getByTestId('craft-btn')).toBeDisabled();
+        at /Users/bao/taskbar-hero-ui/apps/web/e2e/ui/cxu3-forge.spec.ts:60:24
+
+    Error Context: test-results/5310-5311/ui-cxu3-forge-CXU3-Forge-c-5adae-and-tabs-1600-no-preference-stage-layout-repeat1/error-context.md
+
+
+[20/45] [stage-layout] › e2e/ui/cxu3-market.spec.ts:24:3 › CXU3 real MarketView with mocked wallet callbacks 1600
+(node:81334) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[21/45] [stage-layout] › e2e/ui/cxu3-forge.spec.ts:29:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1600 reduce
+[22/45] [stage-layout] › e2e/ui/u1-tokens.spec.ts:38:3 › 1280px tokens › computed tokens, real button target and no overflow
+  8) [stage-layout] › e2e/ui/cxu3-forge.spec.ts:29:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1600 reduce 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "rgb(74, 168, 255)"
+    Received: null
+
+      58 |             return colored ? getComputedStyle(colored).fill : null;
+      59 |           }, quality);
+    > 60 |           expect(fill).toBe(quality === 'rare' ? 'rgb(74, 168, 255)' : 'rgb(187, 116, 255)');
+         |                        ^
+      61 |         }
+      62 |       }
+      63 |       await page.getByTestId('rarity-legendary').click(); await expect(page.getByTestId('craft-btn')).toBeDisabled();
+        at /Users/bao/taskbar-hero-ui/apps/web/e2e/ui/cxu3-forge.spec.ts:60:24
+
+    Error Context: test-results/5310-5311/ui-cxu3-forge-CXU3-Forge-c-76dab-reveal-and-tabs-1600-reduce-stage-layout-repeat1/error-context.md
+
+
+(node:81342) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[23/45] [stage-layout] › e2e/ui/cxu3-forge.spec.ts:111:1 › CXU3 preserves the compact Forge action without scrolling
+[24/45] [stage-layout] › e2e/ui/u1-tokens.spec.ts:38:3 › 390px tokens › computed tokens, real button target and no overflow
+(node:81348) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[25/45] [stage-layout] › e2e/ui/cxu3-forge.spec.ts:29:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1280 no-preference
+[26/45] [stage-layout] › e2e/ui/u1-tokens.spec.ts:57:3 › evidence 1600x900 light › stage screenshot
+[27/45] [stage-layout] › e2e/ui/u1-tokens.spec.ts:57:3 › evidence 1280x720 light › stage screenshot
+  9) [stage-layout] › e2e/ui/cxu3-forge.spec.ts:29:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1280 no-preference 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "rgb(74, 168, 255)"
+    Received: null
+
+      58 |             return colored ? getComputedStyle(colored).fill : null;
+      59 |           }, quality);
+    > 60 |           expect(fill).toBe(quality === 'rare' ? 'rgb(74, 168, 255)' : 'rgb(187, 116, 255)');
+         |                        ^
+      61 |         }
+      62 |       }
+      63 |       await page.getByTestId('rarity-legendary').click(); await expect(page.getByTestId('craft-btn')).toBeDisabled();
+        at /Users/bao/taskbar-hero-ui/apps/web/e2e/ui/cxu3-forge.spec.ts:60:24
+
+    Error Context: test-results/5310-5311/ui-cxu3-forge-CXU3-Forge-c-70fcb-and-tabs-1280-no-preference-stage-layout-repeat2/error-context.md
+
+
+(node:81355) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[28/45] [stage-layout] › e2e/ui/cxu3-forge.spec.ts:29:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1280 reduce
+  10) [stage-layout] › e2e/ui/cxu3-forge.spec.ts:29:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1280 reduce 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "rgb(74, 168, 255)"
+    Received: null
+
+      58 |             return colored ? getComputedStyle(colored).fill : null;
+      59 |           }, quality);
+    > 60 |           expect(fill).toBe(quality === 'rare' ? 'rgb(74, 168, 255)' : 'rgb(187, 116, 255)');
+         |                        ^
+      61 |         }
+      62 |       }
+      63 |       await page.getByTestId('rarity-legendary').click(); await expect(page.getByTestId('craft-btn')).toBeDisabled();
+        at /Users/bao/taskbar-hero-ui/apps/web/e2e/ui/cxu3-forge.spec.ts:60:24
+
+    Error Context: test-results/5310-5311/ui-cxu3-forge-CXU3-Forge-c-3b98a-reveal-and-tabs-1280-reduce-stage-layout-repeat2/error-context.md
+
+
+(node:81362) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[29/45] [stage-layout] › e2e/ui/u1-tokens.spec.ts:57:3 › evidence 390x844 light › stage screenshot
+[30/45] [stage-layout] › e2e/ui/cxu3-forge.spec.ts:29:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1600 no-preference
+[31/45] [stage-layout] › e2e/ui/u1-tokens.spec.ts:57:3 › evidence 320x568 light › stage screenshot
+  11) [stage-layout] › e2e/ui/cxu3-forge.spec.ts:29:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1600 no-preference 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "rgb(74, 168, 255)"
+    Received: null
+
+      58 |             return colored ? getComputedStyle(colored).fill : null;
+      59 |           }, quality);
+    > 60 |           expect(fill).toBe(quality === 'rare' ? 'rgb(74, 168, 255)' : 'rgb(187, 116, 255)');
+         |                        ^
+      61 |         }
+      62 |       }
+      63 |       await page.getByTestId('rarity-legendary').click(); await expect(page.getByTestId('craft-btn')).toBeDisabled();
+        at /Users/bao/taskbar-hero-ui/apps/web/e2e/ui/cxu3-forge.spec.ts:60:24
+
+    Error Context: test-results/5310-5311/ui-cxu3-forge-CXU3-Forge-c-5adae-and-tabs-1600-no-preference-stage-layout-repeat2/error-context.md
+
+
+(node:81369) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[32/45] [stage-layout] › e2e/ui/cxu3-forge.spec.ts:29:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1600 reduce
+[33/45] [stage-layout] › e2e/ui/u1-tokens.spec.ts:57:3 › evidence 1280x720 dark › stage screenshot
+[34/45] [stage-layout] › e2e/ui/u1-tokens.spec.ts:57:3 › evidence 390x844 dark › stage screenshot
+  12) [stage-layout] › e2e/ui/cxu3-forge.spec.ts:29:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1600 reduce 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "rgb(74, 168, 255)"
+    Received: null
+
+      58 |             return colored ? getComputedStyle(colored).fill : null;
+      59 |           }, quality);
+    > 60 |           expect(fill).toBe(quality === 'rare' ? 'rgb(74, 168, 255)' : 'rgb(187, 116, 255)');
+         |                        ^
+      61 |         }
+      62 |       }
+      63 |       await page.getByTestId('rarity-legendary').click(); await expect(page.getByTestId('craft-btn')).toBeDisabled();
+        at /Users/bao/taskbar-hero-ui/apps/web/e2e/ui/cxu3-forge.spec.ts:60:24
+
+    Error Context: test-results/5310-5311/ui-cxu3-forge-CXU3-Forge-c-76dab-reveal-and-tabs-1600-reduce-stage-layout-repeat2/error-context.md
+
+
+(node:81377) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[35/45] [stage-layout] › e2e/ui/cxu3-forge.spec.ts:111:1 › CXU3 preserves the compact Forge action without scrolling
+(node:81378) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[36/45] [stage-layout] › e2e/ui/cxu3-market.spec.ts:24:3 › CXU3 real MarketView with mocked wallet callbacks 1280
+[37/45] [stage-layout] › e2e/ui/u1-tokens.spec.ts:38:3 › 1280px tokens › computed tokens, real button target and no overflow
+[38/45] [stage-layout] › e2e/ui/u1-tokens.spec.ts:38:3 › 390px tokens › computed tokens, real button target and no overflow
+[39/45] [stage-layout] › e2e/ui/cxu3-market.spec.ts:24:3 › CXU3 real MarketView with mocked wallet callbacks 1600
+[40/45] [stage-layout] › e2e/ui/u1-tokens.spec.ts:57:3 › evidence 1600x900 light › stage screenshot
+[41/45] [stage-layout] › e2e/ui/u1-tokens.spec.ts:57:3 › evidence 1280x720 light › stage screenshot
+[42/45] [stage-layout] › e2e/ui/u1-tokens.spec.ts:57:3 › evidence 390x844 light › stage screenshot
+[43/45] [stage-layout] › e2e/ui/u1-tokens.spec.ts:57:3 › evidence 320x568 light › stage screenshot
+[44/45] [stage-layout] › e2e/ui/u1-tokens.spec.ts:57:3 › evidence 1280x720 dark › stage screenshot
+[45/45] [stage-layout] › e2e/ui/u1-tokens.spec.ts:57:3 › evidence 390x844 dark › stage screenshot
+  12 failed
+    [stage-layout] › e2e/ui/cxu3-forge.spec.ts:29:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1280 no-preference 
+    [stage-layout] › e2e/ui/cxu3-forge.spec.ts:29:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1280 reduce 
+    [stage-layout] › e2e/ui/cxu3-forge.spec.ts:29:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1600 no-preference 
+    [stage-layout] › e2e/ui/cxu3-forge.spec.ts:29:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1600 reduce 
+    [stage-layout] › e2e/ui/cxu3-forge.spec.ts:29:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1280 no-preference 
+    [stage-layout] › e2e/ui/cxu3-forge.spec.ts:29:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1280 reduce 
+    [stage-layout] › e2e/ui/cxu3-forge.spec.ts:29:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1600 no-preference 
+    [stage-layout] › e2e/ui/cxu3-forge.spec.ts:29:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1600 reduce 
+    [stage-layout] › e2e/ui/cxu3-forge.spec.ts:29:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1280 no-preference 
+    [stage-layout] › e2e/ui/cxu3-forge.spec.ts:29:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1280 reduce 
+    [stage-layout] › e2e/ui/cxu3-forge.spec.ts:29:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1600 no-preference 
+    [stage-layout] › e2e/ui/cxu3-forge.spec.ts:29:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1600 reduce 
+  33 passed (35.4s)
+
+exit=1

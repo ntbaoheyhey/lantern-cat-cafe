@@ -1,0 +1,122 @@
+[WebServer] (node:15130) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:15219) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-ui/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+[WebServer] (node:15234) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+
+[WebServer] (node:15271) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:15272) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-ui/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] (node:15279) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+[WebServer] (node:15281) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+
+[WebServer] (node:15312) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:15313) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-ui/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] (node:15319) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-ui/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] (node:15320) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 2 tests using 1 worker
+
+(node:15323) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/2] [v2-server] › e2e/server/cxr2-class-states.spec.ts:5:35 › CXR2 first class stays visible during save and can recover 1280
+  1) [v2-server] › e2e/server/cxr2-class-states.spec.ts:5:35 › CXR2 first class stays visible during save and can recover 1280 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator:  getByTestId('class-picker')
+    Expected: visible
+    Received: hidden
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeVisible" getByTestId('class-picker') with timeout 5000ms
+      - waiting for getByTestId('class-picker')
+        14 × locator resolved to <div class="class-picker" data-testid="class-picker">…</div>
+           - unexpected value "hidden"
+
+
+      25 |     const started = page.waitForRequest(request => request.url().endsWith('/v2-choose-class') && request.method() === 'POST');
+      26 |     await page.getByTestId('class-picker-confirm-button').click(); await started;
+    > 27 |     await expect(page.getByTestId('class-picker')).toBeVisible();
+         |                                                    ^
+      28 |     await expect(page.getByTestId('class-picker-choose-button')).toBeDisabled();
+      29 |     await expect(page.getByTestId('class-picker')).not.toContainText('during boss fights');
+      30 |     await capture('saving');
+        at /Users/bao/taskbar-hero-ui/apps/web/e2e/server/cxr2-class-states.spec.ts:27:52
+
+    Error Context: test-results/5310-5311/server-cxr2-class-states-C-459e0-g-save-and-can-recover-1280-v2-server/error-context.md
+
+
+(node:15426) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[2/2] [v2-server] › e2e/server/cxr2-class-states.spec.ts:5:35 › CXR2 first class stays visible during save and can recover 1600
+  2) [v2-server] › e2e/server/cxr2-class-states.spec.ts:5:35 › CXR2 first class stays visible during save and can recover 1600 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator:  getByTestId('class-picker')
+    Expected: visible
+    Received: hidden
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeVisible" getByTestId('class-picker') with timeout 5000ms
+      - waiting for getByTestId('class-picker')
+        14 × locator resolved to <div class="class-picker" data-testid="class-picker">…</div>
+           - unexpected value "hidden"
+
+
+      25 |     const started = page.waitForRequest(request => request.url().endsWith('/v2-choose-class') && request.method() === 'POST');
+      26 |     await page.getByTestId('class-picker-confirm-button').click(); await started;
+    > 27 |     await expect(page.getByTestId('class-picker')).toBeVisible();
+         |                                                    ^
+      28 |     await expect(page.getByTestId('class-picker-choose-button')).toBeDisabled();
+      29 |     await expect(page.getByTestId('class-picker')).not.toContainText('during boss fights');
+      30 |     await capture('saving');
+        at /Users/bao/taskbar-hero-ui/apps/web/e2e/server/cxr2-class-states.spec.ts:27:52
+
+    Error Context: test-results/5310-5311/server-cxr2-class-states-C-b8d8c-g-save-and-can-recover-1600-v2-server/error-context.md
+
+
+  2 failed
+    [v2-server] › e2e/server/cxr2-class-states.spec.ts:5:35 › CXR2 first class stays visible during save and can recover 1280 
+    [v2-server] › e2e/server/cxr2-class-states.spec.ts:5:35 › CXR2 first class stays visible during save and can recover 1600 
+exit=1

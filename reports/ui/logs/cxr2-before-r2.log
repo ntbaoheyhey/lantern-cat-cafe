@@ -1,0 +1,145 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+ExpectError: expect(locator).toBeVisible() failed
+
+Locator: getByRole('dialog', { name: 'Welcome back!' })
+Expected: visible
+Timeout: 5000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" getByRole('dialog', { name: 'Welcome back!' }) with timeout 5000ms
+  - waiting for getByRole('dialog', { name: 'Welcome back!' })
+
+    at captureRawStack (/Users/bao/taskbar-hero-ui/node_modules/.pnpm/playwright-core@1.64.1/node_modules/playwright-core/lib/coreBundle.js:9282:17)
+    at callMatcherAsStep (/Users/bao/taskbar-hero-ui/node_modules/.pnpm/playwright@1.64.1/node_modules/playwright/lib/matchers/expect.js:13316:57)
+    at Object.toBeVisible (/Users/bao/taskbar-hero-ui/node_modules/.pnpm/playwright@1.64.1/node_modules/playwright/lib/matchers/expect.js:13308:23)
+    at /Users/bao/taskbar-hero-ui/reports/ui/capture-dialog-baseline.mjs:43:27 {
+  matcherResult: {
+    message: 'expect(locator).toBeVisible() failed\n' +
+      '\n' +
+      "Locator: getByRole('dialog', { name: 'Welcome back!' })\n" +
+      'Expected: visible\n' +
+      'Timeout: 5000ms\n' +
+      'Error: element(s) not found\n' +
+      '\n' +
+      'Call log:\n' +
+      `  - Expect "toBeVisible" getByRole('dialog', { name: 'Welcome back!' }) with timeout 5000ms\n` +
+      "  - waiting for getByRole('dialog', { name: 'Welcome back!' })\n",
+    pass: false,
+    actual: undefined,
+    name: 'toBeVisible',
+    expected: 'visible',
+    log: [
+      `  - Expect "toBeVisible" getByRole('dialog', { name: 'Welcome back!' }) with timeout 5000ms`,
+      "  - waiting for getByRole('dialog', { name: 'Welcome back!' })"
+    ],
+    timeout: 5000,
+    ariaSnapshot: '- navigation "Game menu":\n' +
+      '  - button "Taskbar Hero home":\n' +
+      '    - img "Portrait of Mochi the cat"\n' +
+      '  - tablist "Game panel tabs":\n' +
+      '    - tab "Home" [selected]\n' +
+      '    - tab "Bag"\n' +
+      '    - tab "Map"\n' +
+      '    - tab "Forge"\n' +
+      '    - tab "Market"\n' +
+      '    - tab "Hero"\n' +
+      '    - tab "Help"\n' +
+      '  - text: Fuji\n' +
+      '- banner:\n' +
+      '  - region "Cat status":\n' +
+      '    - list "Currencies and keys":\n' +
+      '      - listitem "Fish 12,678"\n' +
+      '      - listitem "Yarn 498"\n' +
+      '      - listitem "Cat Keys 2 of 5"\n' +
+      '    - text: Lv 60\n' +
+      '    - progressbar "Experience"\n' +
+      '    - group "Chapter 1 Living Room, round 10 of 10, 6 of 6 monsters"\n' +
+      '    - text: Power 10,429\n' +
+      '  - status: Live\n' +
+      '  - link "Get a browser wallet":\n' +
+      '    - /url: https://core.app\n' +
+      '- heading "Taskbar Hero" [level=1]\n' +
+      '- button "Boss ready"\n' +
+      '- main:\n' +
+      '  - tabpanel "Home":\n' +
+      '    - region "Game stage":\n' +
+      '      - text: Chapter 1 · Round 10 / 10 6 / 6\n' +
+      '      - status:\n' +
+      '        - button "Fight the boss"\n' +
+      '      - text: Boss ready\n' +
+      '    - region "Event log": Battle Log › Mochi gathered 12678 Fish and 498 Yarn (+36 gear)\n' +
+      '    - img "Portrait of Mochi the cat"\n' +
+      '    - heading "Mochi" [level=2]\n' +
+      '    - text: "Warrior Lv. 60 Power:"\n' +
+      '    - strong: 10,429\n' +
+      '    - heading "Core Stats" [level=3]\n' +
+      '    - term: HP\n' +
+      '    - definition: "4104"\n' +
+      '    - term: ATK\n' +
+      '    - definition: "467"\n' +
+      '    - term: Crit chance\n' +
+      '    - definition: 75%\n' +
+      '    - term: DEF\n' +
+      '    - definition: "241"\n' +
+      '    - term: Speed\n' +
+      '    - definition: 2.00/s\n' +
+      '    - heading "Next Goal" [level=2]\n' +
+      '    - text: Ch. 1 · Round 10 Boss Encounter Ready! 6 / 6\n' +
+      '    - progressbar "Progress to boss"\n' +
+      '    - paragraph: The chapter boss awaits your challenge.\n' +
+      '    - button "Go to map"\n' +
+      '    - heading "Recent loot" [level=2]\n' +
+      '    - region "Recent finds":\n' +
+      '      - heading "Recent finds" [level=3]\n' +
+      '      - list "Loot lines":\n' +
+      '        - listitem: +12,678 Fish\n' +
+      '        - listitem: +498 Yarn\n' +
+      '        - listitem: +1 Cat Key\n' +
+      '        - listitem: +526 Fluff Tuft\n' +
+      '        - listitem: +10 Catnip Crystal\n' +
+      '      - list "Items":\n' +
+      '        - listitem: Snug Knit Beanie Uncommon · Lv 10\n' +
+      '        - listitem: Patched Fuzzy Booties Common · Lv 10\n' +
+      '        - listitem: Polished Ribbon Collar Uncommon · Lv 10\n' +
+      '        - listitem: Twig Sword Common · Lv 10\n' +
+      '        - listitem: Woolly Fuzzy Booties Rare · Lv 10\n' +
+      '        - listitem: Polished Fishhook Earring Uncommon · Lv 10\n' +
+      '        - listitem: Plain Lucky Ring Common · Lv 10\n' +
+      '        - listitem: Snug Cozy Sweater Uncommon · Lv 10\n' +
+      '        - listitem: Willow Bow Common · Lv 10\n' +
+      '        - listitem: Patched Cozy Sweater Common · Lv 10\n' +
+      '        - listitem: Plain Bell Collar Common · Lv 10\n' +
+      '        - listitem: Fine Lucky Ring Rare · Lv 10\n' +
+      '        - listitem: Fine Pearl Stud Rare · Lv 10\n' +
+      '        - listitem: Patched Fuzzy Booties Common · Lv 10\n' +
+      '        - listitem: Plain Ribbon Collar Common · Lv 10\n' +
+      '        - listitem: Snug Cozy Sweater Uncommon · Lv 10\n' +
+      '        - listitem: Patched Cozy Sweater Common · Lv 10\n' +
+      '        - listitem: Polished Ribbon Collar Uncommon · Lv 10\n' +
+      '        - listitem: Yarnstring Bow Uncommon · Lv 10\n' +
+      '        - listitem: Patched Cozy Sweater Common · Lv 10\n' +
+      '        - listitem: Polished Fishhook Earring Uncommon · Lv 10\n' +
+      '        - listitem: Snug Fuzzy Booties Uncommon · Lv 10\n' +
+      '        - listitem: Patched Cozy Sweater Common · Lv 10\n' +
+      '        - listitem: Patched Cozy Sweater Common · Lv 10\n' +
+      '        - listitem: Patched Mitten Paws Common · Lv 10\n' +
+      '        - listitem: Fine Feather Earring Rare · Lv 10\n' +
+      '        - listitem: Patched Fuzzy Booties Common · Lv 10\n' +
+      '        - listitem: Plain Lucky Ring Common · Lv 10\n' +
+      '        - listitem: Snug Knit Beanie Uncommon · Lv 10\n' +
+      '        - listitem: Plain Ribbon Collar Common · Lv 10\n' +
+      '        - listitem: Plain Catnip Charm Common · Lv 10\n' +
+      "        - listitem: Plain Hunter's Ring Common · Lv 10\n" +
+      '        - listitem: Patched Knit Beanie Common · Lv 10\n' +
+      '        - listitem: Plain Bell Collar Common · Lv 10\n' +
+      '        - listitem: Patched Knit Beanie Common · Lv 10\n' +
+      '        - listitem: Patched Fuzzy Booties Common · Lv 10'
+  }
+}
+
+Node.js v24.22.2
+exit=1
