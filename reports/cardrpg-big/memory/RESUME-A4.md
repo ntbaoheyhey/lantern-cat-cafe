@@ -15,3 +15,6 @@ P6 type/lint/tests/build/E2E via validate.mjs a4-p6. No full204pack yet; P7 stag
 ## P6 residual map and harness parity
 - Read-only residual map:31fourth-slot cells >12pp per sample; worst heldout93.4pp with ~3% displayed share. P6-RESIDUALS.md plus hashed raw input map preserved. No gameplay/seed changes.
 - Economy pure item-utility scoring memoized per slot sort after84complete rankings/equip results matched;24,900→3,216score calls and7.16→0.92seconds in recorded probe. Original harness,7frozen states and receipt in p6/harness-parity. Original coordinator85496/6738 continues checkpoint; source hashes unchanged. Next slice uses equivalent harness; no account replay.
+
+## P7 staged short-window handoffs
+- Selected P7 browser coordinators use a 30-second handoff (configurable BIG_P7_HANDOFF_MS, minimum 6.5 seconds) and the unchanged shared timing lock. Heavy source test gates and all current P6 simulation slices retain 120-second handoffs. This preserves a B acquisition opportunity between short browser windows without two idle minutes after each capture group. No P7 run yet.
