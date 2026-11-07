@@ -61,12 +61,17 @@ try {
         };
       });
       const capture = async name => {
+        await page.locator('.cr-content img').evaluateAll(images => Promise.all(images.map(image => image.decode())));
         const layout = await page.evaluate(() => {
           const fairness = document.querySelector('.dp-invitation-fairness');
           const bounds = fairness.getBoundingClientRect();
           return { fairness: bounds.toJSON(), text: fairness.textContent,
             overflow: document.documentElement.scrollWidth - innerWidth,
-            canvas: document.querySelector('.dp-invitation-preview canvas')?.getBoundingClientRect().toJSON() };
+            canvas: document.querySelector('.dp-invitation-preview canvas')?.getBoundingClientRect().toJSON(),
+            result: document.querySelector('.dp-flip-result')?.getBoundingClientRect().toJSON(),
+            card: document.querySelector('.dp-flip-result > .dp-cat')?.getBoundingClientRect().toJSON(),
+            next: document.querySelector('.dp-flip-result > button:not(.dp-cat)')?.getBoundingClientRect().toJSON(),
+            nextText: document.querySelector('.dp-flip-result > button:not(.dp-cat)')?.textContent };
         });
         const path = `${output}/${width}-cpu${cpu}-${rarity}-${name}.png`;
         await page.screenshot({ path });
@@ -77,6 +82,14 @@ try {
         if (name === 'entrance') {
           assert(layout.canvas && layout.canvas.top >= layout.fairness.bottom && layout.canvas.bottom <= height,
             'The rare companion entrance fits below the fairness summary');
+        }
+        if (name === 'settled') {
+          assert(layout.card && layout.card.top >= layout.fairness.bottom && layout.card.bottom <= height,
+            'The revealed card fits below the fairness summary');
+          assert(layout.result && layout.result.top >= layout.fairness.bottom && layout.result.bottom <= height,
+            'The entire reveal, including its next action, fits in the viewport');
+          assert(layout.next && layout.next.bottom <= height, 'The next invitation action stays visible');
+          assert.equal(layout.nextText, 'View results');
         }
       };
       await capture('before');
@@ -94,6 +107,10 @@ try {
       assert.equal(entrance.active?.asset, entrance.result.cardId);
       assert(entrance.models.includes(entrance.result.cardId));
       await capture('entrance');
+      await page.locator('.dp-flip-result').evaluate(async node => {
+        await Promise.all(node.getAnimations().map(animation => animation.finished));
+      });
+      await capture('settled');
       const committed = await page.evaluate(() => JSON.stringify(window.__depthReview.state));
       await page.getByRole('button', { name: 'Skip reveal', exact: true }).click();
       assert.equal(await page.evaluate(() => JSON.stringify(window.__depthReview.state)), committed);

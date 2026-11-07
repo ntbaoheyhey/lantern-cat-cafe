@@ -199,21 +199,22 @@ it.each(['funds', 'daily-cap', 'active-route'])('disables invitations at the %s 
 });
 
 
-it('brings the ceremony below the visible fairness summary once per pull', () => {
+it('includes the scroll container padding when revealing cards and results below fairness', () => {
   vi.useFakeTimers();
   const model = paidAccount();
-  render(<Invitations m={model} />);
+  render(<div className="cr-content" style={{ paddingTop: 20 }}><Invitations m={model} /></div>);
   const fairness = screen.getByRole('region', { name: 'Invitation fairness' });
   const stage = screen.getByRole('region', { name: 'Invitation reveal' });
   Object.defineProperty(fairness, 'offsetHeight', { value: 130 });
   const scroll = vi.fn();
   stage.scrollIntoView = scroll;
   fireEvent.click(screen.getByRole('button', { name: 'Invite once · 150 stamps' }));
-  expect(stage.style.scrollMarginTop).toBe('142px');
+  expect(stage.style.scrollMarginTop).toBe('162px');
   expect(scroll).toHaveBeenCalledWith({ block: 'start', behavior: 'instant' });
   act(() => vi.advanceTimersByTime(550));
   act(() => vi.advanceTimersByTime(500));
   expect(scroll).toHaveBeenCalledTimes(1);
   fireEvent.click(screen.getByRole('button', { name: 'Skip reveal' }));
   expect(scroll).toHaveBeenCalledTimes(1);
+  expect(screen.getByRole('region', { name: 'Invitation results' }).style.scrollMarginTop).toBe('162px');
 });

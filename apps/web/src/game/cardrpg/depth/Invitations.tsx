@@ -16,6 +16,7 @@ const resultName = (result: GachaResult) => result.cardId
 export function Invitations({ m }: { m: DepthModel }) {
   const fairness = useRef<HTMLElement>(null);
   const stage = useRef<HTMLElement>(null);
+  const summary = useRef<HTMLElement>(null);
   const [systemReducedMotion, setSystemReducedMotion] = useState(false);
   const [bannerId, setBannerId] = useState('standard');
   const [results, setResults] = useState<GachaResult[]>([]);
@@ -40,10 +41,13 @@ export function Invitations({ m }: { m: DepthModel }) {
   const previewVisible = !revealing || !!entranceKey;
 
   useLayoutEffect(() => {
-    if (!revealing || !stage.current) return;
-    stage.current.style.scrollMarginTop = `${(fairness.current?.offsetHeight ?? 0) + 12}px`;
-    stage.current.scrollIntoView?.({ block: 'start', behavior: 'instant' });
-  }, [revealing]);
+    const destination = revealing ? stage.current : summary.current;
+    if (!results.length || !destination) return;
+    const content = destination.closest('.cr-content');
+    const padding = content ? Number.parseFloat(getComputedStyle(content).paddingTop) || 0 : 0;
+    destination.style.scrollMarginTop = `${(fairness.current?.offsetHeight ?? 0) + padding + 12}px`;
+    destination.scrollIntoView?.({ block: 'start', behavior: 'instant' });
+  }, [revealing, results.length]);
 
   useEffect(() => {
     const preference = window.matchMedia?.('(prefers-reduced-motion: reduce)');
@@ -158,7 +162,7 @@ export function Invitations({ m }: { m: DepthModel }) {
         </div>}
       </section>
     </div>
-    {results.length > 0 && !revealing && <section className="cr-panel dp-batch-results" aria-label="Invitation results">
+    {results.length > 0 && !revealing && <section ref={summary} className="cr-panel dp-batch-results" aria-label="Invitation results">
       <h2>Your invitations</h2><p>Every result is account-bound. Duplicate companions grant matching shards.</p>
       <div className="dp-batch-grid">{results.map((result, resultIndex) => <article key={`${result.index}-${resultIndex}`} style={rarityStyle(result.rarity)}>
         {result.cardId ? <CompanionCard id={result.cardId} m={m} />
