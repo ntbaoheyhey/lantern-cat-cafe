@@ -1,8 +1,11 @@
 # LOOK state
 ## NOW
-L6 audited immutablee71db1d6/4696d62c/26392592bytes/1844inputs.12portraits/48icons/4plates delivered;all art/sixUI configs reviewed. Type/lint/unit1751web/build pass;E2E420+1focusedretry (not single421pass),attempts retained. Previewready4models/2toggles/0errors. Cold7MAX133.3;24castsMAX16.8;startup+93bytes. Audit lists misses;L6 published evidence738bb530/draft371;ledger/finalsync pending.
+L5 source committed c5048bee, branch ai/codex-cardrpg-look-l5-2026-11-07. Native macOS; DockerDesktop open, docker ps empty. No subagents/generative calls/CUA. All22 raw/packed models and nine refreshed portraits committed; only owned paths.
+Fresh framing pilot1171b9ec/31,367,423bytes: all36 Pollen/Yarn/Rain basic+special samples personally viewed,0projected-bound failures/0errors; prior foot crops preserved. Brioche/Marigold48poses reviewed with0framefail. Sock/Rain24poses reviewed; Rain oldcrop fixed in freshpilot.
 ## NEXT
-Mirrorreport/STATE and finalsync; claimL5ninecats+13opponents→L7. L6evidence738bb530/draft371 published, no repeatcoordinators. L4strict1162pairMISS remains;L6size>24MB justified≤32MB;CPU4cold/startupparity misses. Finalmatrix/lifecycle20/CPU4BalancedLow unrun. A4schema/fixtures read,optionalpresentationrequestopen;acceptedbaseA3daba7d7c.
+L5 measurements and independent audit COMPLETE on immutable c5048bee/artifact1171b9ec. All1913inputs,22models/turntables,66stills,372poses,6portraitUIconfigs verified. Type/lint/unit1761web/build PASS. E2E420initial passes+1focused unchanged-source pass, not a clean421run; original timeout retained. Cold7 nativeMAX33.3/CPU4MAX133.3;casts24MAX16.8/100%≤20/errors0. Flagoff0Three/model;startup+93bytes MISS. HTML31,367,423bytes:24MBMISS/documented32MBallowance. HistoricalL4strict1162pairMISS remains.
+Selective evidence inventory and report generated; explicit publication list /tmp/cardrpg-look-l5-publication-extra.txt. Next l5-publish.py→draftPR stacked371→ledger mirror→BOUTBOX checkpoint. No active B timing job; original6591/session8230 exited0. Do not repeat L5 measurements.
+L7 still staged ONLY in memory/l7-prep. Promote afterL5publication, then committedUI/sourcegates→personalreview→freeze→videos5/lifecycle20/860matrix once. Prepared9review-sheet aids in memory/l7-review-sheets.py. Finalmatrix/lifecycle/CPU4BalancedLow remainunrun. NoA4adoption/shared/rules edits; latestA21:13 read.
 
 ## DONE
 Read exact user brief twice, old B HANDOFF, both outboxes; verified remote delivery tip and full worktree created.
@@ -82,3 +85,23 @@ L0 five source gates421E2E + flagoff PASS; baseline244/cold7/24casts complete. L
 - 2026-11-07T17:57:55.740647+00:00 L6 audit completed; seeL6-CHECKPOINT andvalidation/l6/audit.json. NativeMac;noDocker/subagents/generativecalls. Source immutable; all original failures preserved.
 
 - 2026-11-07T18:01:07.918099+00:00 L6draft371 published/remote738bb530 verified. Sourcee71db1d6 immutable;allgates/measurements unchanged.
+
+- 2026-11-07T18:49:40.096136+00:00 Panko24correctedposes personallyreviewed; Mallow regression expanded to actualwitchrole and11testsPASS. Wrongpilot2Mallow capture stopped outside lock after6frames, preserved CANCELLED receipt. Panko/Mallow six-angle turntable samples reviewed. Six newportraits viewed bothbackgrounds. NativeMac, dockerps empty.
+
+- 2026-11-07T19:03:32.500072+00:00 Resumed; confirmed Docker has zero running containers. Viewed48 corrected Mallow/Cinnamon samples + full-resolution failure locations; wrote reviews. First3 compression accepted after nine studio pairs (minSSIM.989905) plus prior six runtime pairs. Added generic hash-bound compression studio comparison tooling. OpponentR2 addresses rain identity, open binding silhouette and pollen basket.
+
+- 2026-11-07T19:22:15.899046+00:00 Continued native. Reviewed opponentR2/CrumbR3, fixed eye/knob/support geometry and authored correctionrounds. Reopened Biscuit/Sorrel/Brioche hand clearance. No push/phasegate claims; original rejected art andpilot retained.
+
+- 2026-11-07T19:28:51.724745+00:00 Docker question answered from actual empty dockerps; continued one agent/native. Reviewed24Marigold/24Velvet/remaining12Brioche poses and12packed opponent pairs; source fixes and additional pilots recorded above. No phase acceptance/push.
+
+- 2026-11-07T20:04:32.841871+00:00 Resumedfromhandoff; dockerps empty. Yarnpackedreview+delivery done; inspected6remainingopponentspecials and3turntables; foundPollenfaceobscuration andSockheelpins. Pollenfitted/14testsPASS, SockR5active, RainR4rawselected. Fresh3ec3pilot containsnewframing/Pollenfit butoldSock/Raingamefiles. No phaseacceptance.
+
+- 2026-11-07T20:41:17.754243+00:00 Resumed native/noDocker. Verified1913sourceinputs unchanged; completed22freshstill reviews andfirst4cats96motion samples. L7panel/evidence/check/matrix/video/lifecycle staged outside frozenroots; syntaxonly, no promotion/run.
+
+- 2026-11-07T21:02:30.162833+00:00: Continued original99102 coordinator without restart. All13 opponent sheets/156poses personally viewed; review documents five limits per unit. Clip/look/framing/errors PASS156. Size31,367,423bytes,32MBheadroom632,577; L5sizejustification written with verified visual evidence. NativeMac/dockerps empty. No runtime/source change.
+
+- 2026-11-07T21:11:46.378275+00:00: E2E420pass/1timeout s3-walkthrough:52 XP0. Originalcoordinator exited;not restarted. memory/l5-resume-checks.mjs explicitly retries only that case under sharedlock and then executes unrun flagoff/cold7/casts24/audit. Runtime/test/timeout unchanged. Report generator records aggregate420+1 only if retry actually passes.
+
+- 2026-11-07T21:14:39.269472+00:00: Resumed native; docker ps empty. Retry1passed, original420pass/1timeout preserved; no source/test/timeout edits. Existing6591/6884 coordinator continues flagoff/cold7/casts24/audit. Read latestA21:13 train+heldout completion with numericMISS; noA4adoption. L7staged tools reviewed, stillunpromoted/unrun.
+
+- 2026-11-07T21:25:09.702169+00:00: L5audit complete; source/artifact unchanged. Selectivepublication/report stage active; allmisses and originalE2E failure retained.

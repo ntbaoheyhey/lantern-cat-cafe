@@ -1,3 +1,134 @@
+# L5 audited publication — 2026-11-07T21:25:09.702169+00:00
+
+Original6591/session8230 exited0 after all7cold/24casts/audit. No live Btiming job. Sourcec5048bee/artifact1171b9ec/31,367,423bytes/1913inputs unchanged. Type/lint/unit1761web/buildPASS;E2E420+1unchangedretry,notclean421single-run. NativecoldMAX33.3/CPU4MAX133.3MISS;castsMAX16.8/100%≤20/errors0;startup+93MISS;24MBMISS/32MBjustified;L4strict1162pairMISS remains.
+
+Inventory+report+all4batchfollowups generated. Explicit19extras at/tmp/cardrpg-look-l5-publication-extra.txt. NEXT l5-publish.py bounded48MBfast-forwards→draftstacked371→mirror-ledger.pyL5→BOUTBOX. Verify remote/local after any upload failure; neverbulkstageL4raw/L7prep. LastA21:13numericMISS, noA4adoption. L7stillstaged/unrun; see PLAN and previous notes. Dockerempty/native; no subagents/generative/CUA.
+
+---
+
+# L5 measurement continuation — 2026-11-07T21:23:05.245953+00:00
+
+Native macOS; Docker Desktop open but docker ps empty. User Docker question answered. One agent, no generative calls/subagents/CUA. Branch ai/codex-cardrpg-look-l5-2026-11-07 at c5048bee; all1913 source hashes and artifact1171b9ec unchanged.
+
+Original continuation PID6591/session8230 remains alive; child6884 phase-measure.mjs l5, logfile /tmp/cardrpg-look-l5-resume-checks.log. E2E retry passed1 unchanged-source case; original420pass/1timeout retained. Flagoff PASS (11scripts/0Three-model). All7cold complete (nativeMAX33.3/CPU4MAX133.3 MISS). Mochi+Soot16cast windows completeMAX16.8/errors0; Clover8 queued under sharedlock, then audit. Verify actual process/log; never restart completed work.
+
+Read all current L5 helpers; report parser1761web/420initial E2E verified. l5-write-checkpoint.py now appends audited phase follow-up to all4batch checkpoints. Explicit19-file publication extras prepared at /tmp/cardrpg-look-l5-publication-extra.txt. After audit: inventory→reportgenerator→updateSTATE/PROGRESS/HANDOFF→l5-publish.py→draftPR stacked371→ledger→BOUTBOX. GitHub connector create_pull_request is available. Existing371 draft/headcac2276b verified. Selective evidence only, no bulkadd L4raw/L7prep. Latest A21:13 P6train+heldout completed with numericMISS; noA4adoption.
+
+L7 remains ONLY staged in memory/l7-prep. New l7-validate.mjs queues committedbuild/demo-types/correctedartgallery/34atelierwindows/fivegates then stops for personalreview+freeze. Atelier checks also follow Open skill gallery at6configs, select0.25x/effectonly, wait actualscene and startpreview; audit verifies fields. Staged showcase notes use acceptedL5 performance and hash audit/selection as buildinputs. memory/l7-review-sheets.py builds9reviewaids from verifiedcapturehashes; no autoapproval. All new JS syntaxchecked, not promoted/browserrun. Existing PLAN has details. Next L7 integration/sourcegates→freeze→fivevideos/lifecycle20/860matrix ONCE still outstanding.
+
+---
+
+# L5 E2E continuation — 2026-11-07T21:12Z
+
+Original99102/session36776 EXITED after fullE2E420pass/1legacy idle-loop XP timeout at s3-walkthrough:52. Original logs/gates/testresults preserved in validation/l5/attempts/e2e-1. No source/test/timeout edits. ONE explicit continuation PID6591/session8230 runs memory/l5-resume-checks.mjs;log/tmp/cardrpg-look-l5-resume-checks.log. It retries exactly one failed case under lock, then ONLY unrun flagoff/cold7/casts24/audit. Verify actual log;do not restart original or duplicate metrics. Sourcec5048bee/artifact1171b9ec/1913inputs immutable.
+
+All372poses/22turntables/66stills personallyreviewed. PortraitUI6configs PASS;type/lint/unit1761web/build PASS. New memory/l5-write-checkpoint.py includes420+1retry language onlyafteracceptance;memory/l5-publish.py prepares bounded48MBfast-forward evidence chunks, syntaxchecked/notrun. Need audit→evidenceinventory→reportgenerator→explicit/tmp/cardrpg-look-l5-publication-extra.txt→publish→draftstacked371→ledger→outbox. Selectivepublish only;neverbulkadduntrackedL4raw/L7prep. Sizejustification written. L7stillstaged/unrun;footerfixandlifecyclebudgetreportfixprepared. Read STATE andoldhandoffsectionsbelowforotherdetails.
+
+---
+
+# L5 fresh review continuation — 2026-11-07T21:06:05.669104+00:00
+
+Native macOS. DockerDesktop open;dockerps has no running containers; user Docker question answered. No Docker jobs/subagents/generative calls/CUA. Own branch ai/codex-cardrpg-look-l5-2026-11-07 atc5048bee. Source roots/artifact remain immutable.
+
+ONE original L5coordinator PID99102/session36776, log/tmp/cardrpg-look-l5-validation.log. Fresh stills66,cat216,opponent156 complete/personally reviewed. Reviews include all22units/5limits each;no continuous clearance claim. Portraitgallery3sizes andactualUI6configs PASS;personally viewed representative images. Type/lint/unit1761web PASS;build/E2E/flagoff/cold7/casts24 next in SAMEcoordinator. Verify actual log;neverrestart.
+
+Written validation/l5/size-justification.json (31,367,423bytes;headroom632,577;verifiedbeforeafter/compression). New memory/l5-write-checkpoint.py runs only afteraudit+evidenceinventory;syntax checked;not yet executed. Needtools/cardrpg-look/l5-audit.mjs→memory/l5-evidence-inventory.py→reportgenerator→selective stage docs/report/newL5evidence/helpers only→phase draft stacked371→mirror-ledger.pyL5→BOUTBOX. Do not bulkadd4.8GBL4raw orL7prep. Source push onlyafterfivegates;prior remoteL6cac2276b/baseA3daba7d7cverified.
+
+L7 prep untouchedruntime in memory/l7-prep. Added corrected art-gallery.mjs for obsolete L6footer (“nine inherited”) discovered inL5gallery. ExistingL5label defect recorded inART-REVIEW;fixonlyafterL5audit. Stagedlifecycle nowrecords budget misses separately,continues tofinalmatrix aftercompleteevidence;integrity/errorsstillfail. AllL7 unpromoted/unrun. PLAN.md lists UI/sourcegates/freeze/videos20lifecycle/860matrix remaining. A4 optionalpresentation remainsunadopted. LatestAread19:38P6;A timinglock stillshared. No repeatedoldqueues.
+
+---
+
+# L5 validation continuation — 2026-11-07T20:41:17.754243+00:00
+
+Native macOS. Docker Desktop open; docker ps confirmed no running containers. No Docker jobs, subagents, generative calls or CUA. Branch ai/codex-cardrpg-look-l5-2026-11-07 at c5048bee.
+
+ONE live coordinator PID99102/session36776, log /tmp/cardrpg-look-l5-validation.log. Child PID129 captures cat poses, using shared lock with A4P6. All66 committed stills finished; cats progressing (read actual log before continuing), opponents/portrait checks/fivegates/cold7/casts24 still queued in SAME coordinator. Do not restart. Artifact1171b9ec/31,367,423bytes; all1913 source hashes reverified unchanged during preparation.
+
+All22 turntables already complete/audited/six-angle reviewed, selection.json generated. All22 fresh1280 still overview models personally viewed; phase-stills/REVIEW.md written. First4cats Panko/Mallow/Cinnamon/Biscuit all24fresh poses each viewed; phase-cat-poses/REVIEW.md records results/limits. Use memory/l5-pose-sheets.py with ~/tools/cardrpg-look/venv/bin/python to produce ONLY newly completed sheets, then personally view remaining5cats/13opponents. All original screenshot evidence preserved.
+
+L7 preparation lives ONLY in reports/cardrpg-look/memory/l7-prep: LookAtelier.tsx/CSS, showcase-evidence.mjs, atelier-check.mjs, skill-measure.mjs, final-matrix.mjs, lifecycle.mjs, record-showcase.mjs. TSX transpile and MJS syntax passed; NOT typechecked, promoted or browser-tested. Imports expect eventual tools/cardrpg-look location. Small9thumbnail payload measured121,123bytes with source hashes verified. No frozen source/runtime file changed.
+
+Staged final matrix fixes tier and records per-frame quality,25owners/86validactions×10configs=860cases/1720casts, six-action lock windows, acceptedfreeze required. Unrun. Lifecycle suspends renderer/sampler while waiting for A, drains recorder beforeheapGC,20replays in4-battle windows; unrun. Five25s showcase targets prepared; unrun. Read PLAN.md for integration/QA remaining. AllA4optionalpresentation requests still open/unadopted.
+
+Next finish originalL5coordinator and personal reviews→sizejustification/audit→batch/checkpoint/mainreport→selectiveevidence publication/draftstacked371/ledger/outbox. memory/l5-evidence-inventory.py requires audit and preserves localintermediateGLB/pilotHTML/rawpose images; publishes allauthorrounds/turntables/phase66stills/phasecontact sheets +eachaction36% sample. No inventory yet; do NOT bulkadduntracked4.8GBL4raw. L7promotion onlyafterL5publication, thenUI/sourcegates→freeze→videos/lifecycle/finalmatrix once. Historicalstrict1162pair/startup+93/cold/24MBmisses remain explicit.
+
+---
+
+# L5 continuation — 2026-11-07T19:28:51.724745+00:00
+
+Read STATE first15 for newest actual process state; historical sections below are stale. NativeMac, DockerDesktop only, dockerps empty. No subagents/generative calls/CUA. Branch ai/codex-cardrpg-look-l5-2026-11-07 atcac2276b; dirty ownedsource/assets/evidence preserved.
+
+BossR3 coordinator90635/session53546, log/tmp/cardrpg-look-l5-boss-correction-r3.log, sourcesFROZEN. Paws movedin .16 and upperarmsshrouded; Pantry tie attachesplate/sealraised. Yarnnewraw289d51c0/19764tri, unreviewedyet. KettleR2 threeanglespersonallyviewed, acceptedstaticwithglaze limitations; CushionR2reviewconfirmed. Both exactrigPASS/rawinstalled; pack→studiosession82790. CrumbR3+Pollen/Rain/Binding12rawpackedpairsviewed/minSSIM.990731; gamecandidatescopied, oldCrumbbackup retained.
+
+All144sixcatpilot1poses captured/viewed; Marigold4@18flaskcutscheek. Added rightarmfit; session22842tests pending. Biscuit/Sorrel/Brioche freshpilot2 coordinator90648/session7972 artifact96d8d190/30,542,664bytes, 12skills queued; Marigoldfreshpilot3session18153 chains nextfour opponentposes. Original84193→firstsixopponentposes stillrunning onold3b6artifact; olderCrumb muststaylabelled. Neverrestartcompletedjobs.
+
+81760/88710 turntablecoordinators RESUMED (SIGCONT) withreceipt validation/l5/turntable-priority-resume-2.json. NextfivePollen/Rain/Binding/Cushion/Kettle turntablessession56688, separate l5-opponents directory. Preserve current models while renders run.
+
+Next finishreviews/newbosses/packing/runtime/turntables; selection22/checkpointbatches; commitownedsource→L5phasegates/audit/draft, thenL7/fullmatrixonce/lifecycle20/CPU4BalancedLow. New l5validate/audit still unrun. NoA4adoptionor sharededits. No bulkadd4.8GBL4raw. Original brief still PROMPT.md. A4P6 train/x1 probes running separate, respectsharedlock.
+
+---
+
+# L5 continuation — 2026-11-07T18:55:19.712207+00:00
+
+NativeMac;dockerps empty;DockerDesktop only. Worktree /Users/bao/taskbar-hero-cardrpg-look, branch ai/codex-cardrpg-look-l5-2026-11-07 atcac2276b, dirtyownedwork. No subagents/generativecalls/CUA.
+
+Panko pilot2 a596905d/28,546,804bytes: all24 correctedposes personallyviewed; plate/cheek cleared atsampledposes. Mallow correction was newer thanpilot2; accidentallyqueued oldartifactcapture81070 was stopped outside lock afterfirst6frames, preserved CANCELLED.json. Correct newpilot3 coordinator81324/session58619 usesb8bbfca2/28,691,240bytes. Cinnamon original3/18flask intersects cheek, so fittedLookrightarmtoo; pilot4 coordinator81846/session83624 sameb8artifact. Both hashpairschecked; newmotion0b9629d9. Focused12testsPASS; priorwrongtesttablefailurepreserved. Ninecats realrigprobe36clips/198requiredpairs/0offenders (notcollisionproof).
+
+Firstbatchoriginal73570/pose74492finishingbaseline; do NOTrestart. Turntable74581finishingCinnamon; Panko+Mallow48frameseachdone, sixangleseachpersonallyreviewed. Compression80337/sessionfrompriorcontext uses512/256q80candidatef565846e/27,290,264bytes; all6runtimecomparisonsviewed, SSIMmin.978488/bounds0/saving1,256,540; studio3pending, no promotionyet. RUNTIME-REVIEW written.
+
+TEMPORARILY SIGSTOPPED only own queued secondarycoordinators tofinishfirstbatch:81407/session53791 sixcatpacking;81698/session99085 first6opponentpacking;81760/session11753 remaining6turntables. MUSTRESUME viaSIGCONT afterpriorityreviews; exactcommands andreceipt validation/l5/paused-secondary-coordinators.json. They ownedno lock whenstopped. Never restartthem.
+
+Opponentfirst6staticselected+rigPASS (7770–7790tri); rawmodels copiedownedassets only, gameplaynotpromoted. SpoolR3personallyreviewed. Batch3R1coordinator80971/session88174 runningpollen-scout/rain-spool/binding-thread, /tmp/cardrpg-look-l5-opponents-batch3-r1.log; authorfilesFROZEN. PollenR1reviewwritten: fixraisedeyes, ballbasket, copperpollen, rearwingseams inR2 aftercoordinatorends. Fourmore(cushion/yarn/kettle/pantry)stillneedrounds.
+
+SixremainingcatportraitsR5doneanddeliveredlocally; personallyviewedbothbackgrounds, metadataimproved. Existing handoff oldeststatusunderneathstale. New opponent-pose-capture.mjs syntaxcheckedonly; actual2galleryactionsperopponent andassertactiveclip/lookmodel. roster-pilot.mjs nowcopiesartifact+receiptINSIDEbuildlock (oldrunningcoordinatorsloadedoldversion;allcompletedpairsverified). No phasegates/push/A4adoption. A latestreadrequest18:37forwindow; actualAprocessesgotseveralwindows, nottouched. L5batchcheckpoints/gates/draftthenL7/finalmatrix/lifecycle20/CPU4stillremain. No bulkadd4.8GBL4raw.
+
+---
+
+# L5 continuation — 2026-11-07T18:30:10.504385+00:00
+
+Native macOS; no Lane B Docker (docker ps empty), no subagents/generative calls/CUA. Docker Desktop only is open. Branch ai/codex-cardrpg-look-l5-2026-11-07 still cac2276b; L6 published371 unchanged. A4 P5/P6 work remains separate; latest published A4P4 4bb860f0, optional presentation requests open.
+
+Firstbatch source/game candidates now installed: PankoR3, MallowR4, CinnamonR3. Pilot built d34263ae/28,462,540bytes at validation/l5/batch1/pilot-1 (dirty, NOT phase acceptance). Coordinator PID73570, childpose74492 still waiting shared lock; do not restart. 12runtime clips/30required trajectory pairs pass in batch1/rig-motion (transform check only). PortraitR4 all3 rendered, packed539234bytes/6files and personally viewed dark/light, review written; not yet delivered to manifest. Round4 author snapshot archived. Turntables PID74581/session82850 active (48frames/cat,6framewindows); no restart.
+
+Batch2 cats R2 biscuit/inkcap/sorrel reviewed three angles, reviews written, exact26/26/28rig and11759/11756/11759triangles pass. Packed candidates583780/530756/574468bytes; no promotion yet. Batch3R1 completed+viewed all3, concrete reviews written. New batch3R2 coordinator session71985 (log/tmp/cardrpg-look-l5-batch3-round2.log): rounded Velvet cap/light bell; Brioche ivory spoon/lower spoon/ruffle; Marigold smaller lower collar/largerflower.
+
+Opponents batch1R2 andbatch2R1 completed+viewed. ButtonGuardR2 fixed silhouette/legs but radial shading; SockR2 cuff/legs fixed but toe/eye/stitch issues; SpoolR2 radialflanges/eyes. NeedleMothR1 eyes/needle; TeacupR1 eyes/vines/steam; CrumbR1 genericbody/eyes. Allreviews preserved. New batch1R3 session99362 andbatch2R2 session70966 active, logs/tmp/cardrpg-look-l5-opponents-batch1-r3.log andbatch2-r2.log. Smooth ellipsoid disks, seatedeyes, socktoe, separatecrossstitches, cupcurves andbiscuitdimples. Authorfiles immutable while these run. Seven otheropponents still need rounds.
+
+Compression q92 study FAILED size: CLI decoded meshopt and retainedlargertextures. Outputs/receipt/correction/originalscript preserved at validation/l5/compression/q92; neverpromoted. New pack-roster.mjs starts rawGLBs→resize512→WebPq92→meshopt, retainsuncompressedpreviewGLB. Session87139/log/tmp/cardrpg-look-l5-compression-512-q92.log active. Need ownstudio+browsercomparison beforeanyadoption. Existingfirst3alreadypushHTML28.46MB; 22full1024modelswouldexceed32MB. No unsupportedquality/sizeclaim.
+
+NEXT: finish firstbatchpilot and inspect72poses; compressionvisualproof; portraitrefresh preservingL6receipts; actualturntables/batchcheckpoint. Reviewbatch3R2/opponentR3R2; finish7otheropponents. L5gates/draftthenL7/finalmatrix/lifecycle20/CPU4BalancedLow. Historicalmissesstay. No bulk gitadd (4.8GBL4rawframes remain untracked). Newtools/reviewsowneduntracked. No phasepush/gates repeated.
+
+---
+
+# L5 art iterations active — 2026-11-07T18:17:48.019948+00:00
+
+Native Mac/no Docker job; no subagents/generative calls/CUA. L6 publication fully done (draft371/cac2276b/ledger4ad989b8/sync CHECKPOINT). Own L5 branch at cac2276b. User Docker question answered. A latest A4P4 published4bb860f0/P5claimed; presentation fixtures available, no A4adoption.
+
+Completed: firstbatch Panko/Mallow/Cinnamon R1(unbaked geometry pilot), R2/R3(baked) personally viewed all angles. R3 rig exact26/26/28, triangles11769/11758/11751. R1 color-loss export rejected; all future rounds default bake. R3 packed3models ~562–576KB each; no model promoted to assets yet. Mallow shawl still floated in side view, R4 fitting correction active. Panko/CinnamonR3 candidate for runtime. CardUtensil guard avoids baked-model duplicate props,4focusedtestsPASS; dirty source not phaseaccepted. Metrics tool outputs images/120px/masks/SSIM; do not call SSIM beauty proof.
+
+Active independent coordinators serialized by shared lock (verify actual process before any restart):
+- session40673: LOOK_ROSTER_BATCH=batch2 node tools/cardrpg-look/roster-round.mjs 2 biscuit,inkcap,sorrel; /tmp/cardrpg-look-l5-batch2-round2.log. R1 all3 personallyreviewed; R2 glaze/leaf/collar fixes.
+- session22672: node tools/cardrpg-look/roster-round.mjs 4 mallow; /tmp/cardrpg-look-l5-mallow4.log.
+- session2543: LOOK_ROSTER_BATCH=batch3 node tools/cardrpg-look/roster-round.mjs 1 brioche,velvet,marigold; /tmp/cardrpg-look-l5-batch3-round1.log.
+- session55901: LOOK_OPPONENT_BATCH=batch1 node tools/cardrpg-look/opponent-round.mjs 1 button-guard,sock-skipper,spool-ram; /tmp/cardrpg-look-l5-opponents-batch1-r1.log.
+Completed sessions88093(R1),53127(R2),8368(R3),45868(batch2R1),14915(packR3). Never rerun. Runtime/baseline L6 untouched except pending CardUtensil source guard.
+
+Author files immutable while their relevant coordinators run. Cats use roster-author.py/roster_sculpt.py/roster-render.py. Opponents use separate opponent-author.py/opponent_sculpt.py plus same renderer; all original code shapes, no modelservices. Opponent tooling syntactically passed, first ButtonGuard personally viewed: R1 is aesthetically WORSE (generic rectangular tabard, floating eyes in side view). Must revise into round four-hole button torso, bring faceplate forward to actual eyes and link legs to body; preserve R1. No enemy approval. Other12 still require rounds. Opponent author copy uses budget7800 ordinary/19800boss; shared rig-audit currently asserts12000 so add boss-specific cap when needed.
+
+NEXT: inspect MallowR4 then pack/copy only approved PankoR3/CinnamonR3/MallowR4 sources+compressedgameGLBs; preserve oldpacking.json, add perbatchreceipt. Build pilot (not phaseacceptance) and all12skills×6poses/motionprobe; actualturntables/portraitsrefresh and batchcheckpoint. Review batch2R2/batch3R1, worst3fixes andsecondround. Finish13opponents similarly. L5gates/PR thenL7; finalmatrix/lifecycle20/CPU4BalancedLow stillunrun. HistoricalL4pair/startup/cold/size misses retained. No bulk gitadd:4.8GBL4rawframes remainuntracked.
+
+---
+
+# L5 first batch active — 2026-11-07T18:09:07.634503+00:00
+
+Native macOS; no B Docker use (docker ps empty), no subagents/generative calls. User Docker question answered. Own branch ai/codex-cardrpg-look-l5-2026-11-07 at cac2276b; L6 draft371, ledger4ad989b8, final sync and L5 CLAIM already published. Do not repeat L6 publication or completed measurements.
+
+ONE coordinator PID70087/session88093: node tools/cardrpg-look/roster-round.mjs 1 panko,mallow,cinnamon; log /tmp/cardrpg-look-l5-round1.log. Three fixed-camera baseline angles then procedural sculpture and three after angles per cat. No runtime assets promoted. Author sources frozen during coordinator; snapshots in rounds/roster/exports/round-1/sources. Python failures now nonzero and existing candidates refuse overwrite. No acceptance until own image review/rig/runtime checks.
+
+Next inspect actual R1 images, five defects/fix worst three, R2+, bake/pack, exact pivot audit and real motion/turntables, refresh portraits, checkpoint batch; then remaining six cats and thirteen opponents. L5/L7/finalmatrix/lifecycle20/CPU4BalancedLow pending. A4P4 active, schema/fixtures known, optional presentation request open. Historical misses stay explicit in STATE/report.
+
+---
+
 # L6 draft published — 2026-11-07T18:01:07.918099+00:00
 
 L6evidence738bb530 remoteverified, draft371 stacked368. Sourcee71db1d6/artifact4696d62c/26,392,592bytes. Allmeasurements completed, no rerun. NativeMac/noDocker. Report+STATE publicationnote beingpushed; ledger/finalB-OUTBOX andL5CLAIM stillnext. Fullportable893files357MB includes~212MB tracegz;2failedHTML33MB localonly;noL4rawstage. Originalfailurelogs/test-results preservedbyte-for-byte despite whitespace. L5noauthoring/render yet;onlyPLAN/TECHNICAL-NOTES. NoA4adoption,optionalpresentationopen.
