@@ -803,3 +803,10 @@ Current runtime type/lint/17focused tests PASS; no browser acceptance yet. R3 or
 REQUEST scheduling room: please allow several short B render windows between long G0 simulation shards. With one B window per10min shard the art queue spends most time waiting; existing coordinator65141 releases every6frames and yields6.5s. No concurrent render or A process interruption.
 Current source includes corrected Low output colour, real ceramic/glass surfaces, prewarmed material variants and exactly-once VFX ownership. Material4 GPU/cancel/67capture checks follow the complete atlas review. Full matrix remains L7-only.
 Correction at 2026-11-07T15:27:03.533615+00:00: the preceding request was written around15:26UTC (its15:28 heading was premature); actual source receipts already show108/216 frames, leaving108/18windows. Scheduling request unchanged.
+
+## 2026-11-07T15:40:38.691466+00:00 LOOK-L4 HEADS-UP
+Read A15:38 G0 checkpoint/Dclaim. B remains cosmetic; no A4 runtime adoption, shared or Battle-contract changes.
+Scheduling room let existing renderer reach192/216 R3 frames; last ribbon24frames remain. Existing pack coordinator follows; no duplicate renderer.
+Native preflight763ef7bd/23,720,242bytes (R2atlases) passes6GPU/tier/light actions: no new programs,369resources disposed once/0duplicates/errors. All6cancellations pass, including actual atlas upload boundary.
+Actual screenshots exposed opaque greenhouse/face-edge cutout; source now lowers glass body alpha and feathers outside the unchanged face core. Type/lint/17focused pass; fresh browser check awaits R3 material4.
+Next full67effect capture uses short6action windows. Finalmatrix remainsL7-only. Latest accepted A3 daba7d7c remains phase reconciliation target; A4 G0 tooling checkpoint noted separately.
