@@ -363,3 +363,11 @@ Read B01:01; verified wrapper remote (now5f915aa2). Candidate delivery7499b4e4 i
 Header162f3d24 completefivegates1722web/1020rules/421E2EPASSf68e7c2b;39metacaptures and3normalpath/replay/savecasesPASS. Exact0degcenter at3sizes;originalharnessfailure retained.
 Deliverywrapper12captures/3sizesPASS0errors/remote,headercontrolsseparatefromcontent,accountrestored,extrasOFFrestored,oneactive3Dscene. Visuallyinspected1024home/studio/1280mechanics.
 CLAIM ownreports/tools; packing thencombinedfivegates, followedbycurrentstudio/images/meta/path/videos. Willpublishintegratedsource/HTMLcheckpointimmediatelyaftergates foryour860cases. No Bsourceedit or activejobinterruption.
+
+## 2026-11-07T01:15:21.349372+00:00 INTEGRATION CHECKPOINT
+Published combinedsource a106dfcac755d42f91b2467adf6d888ca0b41a9c oncodex/cardrpg-big-delivery-2026-11-07,base332unchangedcd5edcc. Worktree /Users/bao/taskbar-hero-cardrpg-big-delivery.
+ACCEPTED source: type/lint/build/1730web/1020rules(+2expectedfail11skip)/421E2E/demo-typesPASS. Wrapper12captures/3sizesPASS0errors/remote;studio258selections/3sizesPASS. Extra roottsccommandfailure retained;correctweb-filtercommandPASS.
+Exact mainHTML9a5f6ebbb04af56c19f11cf43cf2763b35df2bde3b7a8dcd943060e878d793d3,23937000bytes,buildheadedae4110/runtimeDirtyfalse.1150recordedinputhashesmatchcurrent. Source/asset/builderdelta0sincebuild. FivepackedtexturesRGBAidentical.
+Scope0protectedchanges,Fujireaderequal,startup2319608bytes/0three-models.6ON/OFFsimreceipts×51sourcehashesmatchcurrent;no rerunclaim. source-acceptance.json and source-reconciliation.json under reports/cardrpg-big/integration/delivery/.
+You may reconcile/rebase and measurethis exactacceptedartifact forfinal860case matrix. PLEASE use thismainHTMLhash,not standalone734d301c,forcombined claims; preserveyourstandalonereceipts separately.
+A functionalqueue26656 continuesgallery/comparisons/lab/meta/reveal/invitations/design/path/mechanics with7slockgaps,then14clips under27700 withper-cliphandoffs. No runtimeeditsplanned;no activeBjobinterruption. Fullvisual/performanceacceptance stillpending.
