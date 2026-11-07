@@ -1,8 +1,8 @@
 # LOOK state
 ## NOW
-L2 published1000c0cb/draft362. L3 active on ai/codex-cardrpg-look-l3-2026-11-07; third pilot cee6234f/22,394,373bytes built (dirty source), six loading cancellations PASS. Earlier Classic295/294 failure is harness ownership: cafe-candle-halo Sprite uses Three's shared geometry; originals retained. Round3 captures+post ablations pending shared lock behind A E2E. No L3 acceptance.
+L3 audited: source71da901f on acceptedA4d525a8a; exact02ffd9cb/22,578,111bytes; all1301inputs verified. Fivegates421E2E/1740web pass;9camera/6battleAB/36face/6cancel pass. Cold7nativeMAX33.4/CPU4MAX133.3ms;24castsMAX16.8/100%≤20/errors0. Startup11JS/3,522,544bytes/686modules/0Three-model; strictparity+44 MISS. Coordinator46983 completed; no duplicatechecks.
 ## NEXT
-Finish/view round3 from coordinator /tmp/cardrpg-look-l3-round3-verify.sh (session18815, parent43003, check live state before reuse). Current own offline DemoTools source change is newer than pilot: disable route tools during battle. Save/commit L3, rebase own chain onto accepted A4d525a8a (shell+portraits), rebuild clean source; run fivegates, l3-check shell/9cameras/6actualbattleAB, final post/cancellation, flagoff/cold7/24casts and audit. No final matrix. L4 prep remains design only.
+Publish auditedL3 and reconcile ownL1/L2branch stack with explicit remote leases, retain historical artifacts and mapping. Mirrorreport/STATE toledger; notifyA then claim/startL4. LatestA13:44 noacceptedcheckpoint beyond4d525a8a. L4 scratch only, no runtime/assetsaccepted. RemainingL4→L6→L5→L7 and finalmatrix/lifecycle/CPU4BalancedLow open.
 
 ## DONE
 Read exact user brief twice, old B HANDOFF, both outboxes; verified remote delivery tip and full worktree created.
@@ -72,3 +72,7 @@ L0 five source gates421E2E + flagoff PASS; baseline244/cold7/24casts complete. L
 - L3 pilot unit5pass (loading and quality/cancellation). High+Balanced browser tier switching123textures/552geometries/52programs unchanged after warming. Actual low/remaining ablations pending. Round1 flaws/rejected screenshots durable under rounds/post/runtime-1.
 
 - 2026-11-07T13:31:57.344016+00:00 L3 continuation: prompt/rules/Aoutbox reread; no live oldB runs. Source types PASS. Harness correctly excludes only Sprite shared geometry; contactTexture added to owned-resource set. Six cancels release0/21/167/0/186/294 resources. Round2 fixes3contact/ramp/relativefocus now in third pilot; no new timing claims. A accepted4d525a8a fetched, pending rebase.
+
+- 2026-11-07T13:48Z continuation: actual1280 integrated battle and three post tiers viewed; nav/HUD/control clarity retained, weak Soot contrast/mirrored props/inherited VFX still recorded. Fresh36face masks0offenders and6cancelsallresourcesreleased. Unit1740web; no source changes since build. L4preparation only, no asset renders/modelrequests.
+
+- 2026-11-07T14:02:33.458295+00:00 L3 phase audit complete:1301inputs, allfreshfivegates/9camera/6AB/36faces/6cancels/7cold/24casts. Startup correction3,522,544/+44, nothistoricalL2+4. Nativecold33.4/CPU4 133.3; slow1440DPR2battle-ready7719ms retained. A13:44requestread; noacceptedtipbeyond4d525a8a.
