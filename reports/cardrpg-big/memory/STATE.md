@@ -1,17 +1,17 @@
 # Taskbar Hero session state
-PROMPT.md bytes (wc -c) = 50258
-PROMPT.md SHA-256 = 4d1b88d82407168fd5d395681a3baaf977fb0487bc171543cba22ce328a1cc2d
+PROMPT.md bytes (wc -c) = 53562
+PROMPT.md SHA-256 = bba8c53418413298018f714aa35ebd60ed3d49d9df32f2027c90ba9b279dcc37
 REFERENCE: reports/cardrpg-big/memory/PROMPT.md
 ## NOW
-ACTIVE 2026-11-07T03:27Z: all10functional groups PASS on unchanged9a5f6ebb; independent audit204screenshot hashes. Mechanics4cases/8captures,0errors,accountunchanged/replayequal.14video series running under original14561 coordinator; Mochi25s complete. Exact receipt video/delivery/series.json.
+ACTIVE 2026-11-07T03:55:29.589535+00:00: F7 baseline v1.14/14clips captured on9a5f6ebb;13reviewed before current resume, boss/result review pending audit. User LOOK addendum preserved verbatim; old B queues retired. No live A capture processes found; do not restart completed series.
 Lane A · Integration/F7. ACCEPTED combinedsource a106dfcac755d42f91b2467adf6d888ca0b41a9c, published draft358 against332; latest evidence 5254757c (all10functional). Worktree /Users/bao/taskbar-hero-cardrpg-big-delivery; branch codex/cardrpg-big-delivery-2026-11-07. HTML9a5f6ebbb04af56c19f11cf43cf2763b35df2bde3b7a8dcd943060e878d793d3/23937000bytes;1150inputhashesmatch,0runtime/builderdelta. All5gatesPASS1730web/1020rules/421E2E+demo-types. Scope0protectedchanges/Fujiequal/startup2319608bytes/0three-models. Wrapper12captures/3sizesPASS;studio258selectionsPASS0errors/remote. FunctionalacceptancePASS; video/performanceacceptance remains open.
 Canonical worktree /Users/bao/taskbar-hero-cardrpg-big; branch ai/codex-cardrpg-big-2026-11-06. Last memory parent1e5af3b5/source published221ec3a8a462597f55579a319018961cd5cd9d21;rules source db1448e9;I browser checkpoint published. Drafts333/F0,334/A,335/F1,336/F2,337/F3,338/F4,339/F5,340/M,341/I,344/G,345/Mfollowup,348/F7preparation.
-Sync /Users/bao/taskbar-hero-cardrpg-sync; ai/codex-cardrpg-big-sync. B03:24 accepted-main lifecycle20PASS,heap+1858320bytes/0GPUgrowth/0errors; standalone3bossclips2160decodedframes. LocalB WIPfb54fca7 unpublished. Maincold116.7msMISS; audio/flagoff pending;860matrixwaitsactualA14videocomplete. OWNERSHIP.md immutable.
+Sync /Users/bao/taskbar-hero-cardrpg-sync; ai/codex-cardrpg-big-sync. B03:32 main audio6/5286frames MAX33.3ms0errors,enable226.5–316.7ms;flagoff11JS/3522500bytes0Three/GLB/errors PASS. Lifecycle20heap+1858320bytes/0GPUgrowth;maincold116.7msMISS.Old B queues retired; final860matrix waits final lookV2 only. OWNERSHIP.md immutable.
 Historical phase/worktree locations are retained in memory/HISTORY.md; most were removed during disk cleanup and remain available in Git.
 ## NEXT
-1. Monitor existing video14561/series script; Mochi onward14clips under per-clip shared lock. Check captures.json/series.json and matching hashes before retrying. Functional-complete.md proves10/10.
-2. Extract chronological0.5s sheets with video-sheets.py after captures; review every clip, then four roles with5weaknesses each and11honest scores. No duplicate video runner.
-3. Coordinate B accepted-main cold/lifecycle/audio/flag-off/860matrix, review all clips in four roles, update COVERAGE/F7/report and ledger with honest misses. Work resumed on user instruction; B03:07also resumed; its longmatrix waits A videos.
+1. Audit14video receipts/review boss+Result; finish four-role20weaknesses and11honest grades; baseline v1 report/coverage and ledger publication.
+2. Notify B old queues retired; final860case matrix only final lookV2/B/six-action batches. Read LOOK section5 when its prompt becomes accessible (given /mnt path absent locally).
+3. At phase boundaries read B-OUTBOX, adopt published LOOK tokens/art/requested plumbing; each checkpoint gets rebuild/hash/five gates+functional pack/A CHECKPOINT; preserve baseline receipts.
 ## DONE
 Functional complete ·5254757c/draft358;10/10groups,204screenshothashes,Mechanics4cases/8captures. delivery/functional-complete.md;no runtime/builder changes.
 Saved-evidence audit ·be40bc91/draft358;9complete receipts,196screenshot hashes,five accepted gate-log hashes. delivery/functional-audit.json;mechanicspending,not a new browser run.
@@ -34,6 +34,7 @@ G ·a75ae753/draft344, invitations/PERFORMANCE.md and recovery-verification.json
 M-followup ·5d1c2c47/draft345, meta-followup/CHECKPOINT.md,6before/aftercases+33screensPASS.
 F7 preparation ·1c188a46/draft348, demo/screens/checks.json, fivegates/18capturesPASS;fullintegrationpending.
 ## PHASE GATES
+PASS LOOK instruction14captures: series.json complete true/14of14 on9a5f6ebb. NOTYET baseline v1 report/coverage/ledger; NOTYET LOOK adoption/final matrix.
 PASS F7 fullnormaljourney/3sizes and isolatedMechanics4cases: tenfunctional groups complete,204screenshothashes. delivery/functional-audit.json;video/visual/performance stillNOTYET.
 PASS F7 “Skill gallery: pick any cat/skill/ultimate/enemy attack, play it on the stage, speed x0.25/x1, scrub, effect-only mode, camera preset A/B/C”;25units86actions×3sizes=258selections. delivery/studio/checks.json.
 PASS F7 “Before/after: baseline screenshots and filmstrips next to current ones”;93items160images decodeoffline/0errors/remote. delivery/comparisons/checks.json;oldHTMLretained.
@@ -50,6 +51,7 @@ F5 ·casts33.4/16.8ms PASS50ms, pageMAX300ms FAIL100ms, first encounters9.306–
 F4/F3 ·starter31 recipes465 pairs and30 motion pairs PASS. Opening266.7/566.7ms FAIL. effects/GATES.md,motion/GATES.md,CHECKPOINT.md.
 F2/F1/A ·sharpness2/10 pairs PASS, scale band MISS, stage78.889% PASS, full-page hitch gates FAIL. sharpness/GATES.md,layout/README.md,auto/GATES.md.
 ## DECISIONS · append only archive
+2026-11-07 · LOOK addendum:9a5f6ebb is baseline v1; old B long queues retired; final lookV2 matrix only by LOOK B. Original receipts retained. Ownership unchanged; PROMPT.md newest section controls.
 2026-11-07T03:13:37.258461+00:00 · After summary, reread RULES/STATE/F7/SCOPE/lanes/HANDOFF and B03:07resume. Continue already-live A14138/14160/14561; B owns current lock. Retain all prior partial evidence; exact main unchanged.
 2026-11-07T03:05:40.129661+00:00 · Resume after disk cleanup: recovered canonical4a5c2c15/deliverye114954b/sync6997cfd2 from retained Git branches; sparse checkout avoids re-expanding16GB history. PROMPT50258/SHA4d1b88d8 andHTML23937000/SHA9a5f6ebb verified. No app/runtime rebuild.
 2026-11-07T01:35:24.911759+00:00 · User requested handoff+stop. A26656/27700 and verified descendants stopped; lock released; B01:33 also paused. 8/10 functional PASS retained at e114954b. No runtime changes; five prior gate-log hashes reverified. Path incomplete, mechanics/videos not started. memory/HANDOFF.md is resume entry.
@@ -57,6 +59,7 @@ F2/F1/A ·sharpness2/10 pairs PASS, scale band MISS, stage78.889% PASS, full-pag
 Older decisions retained verbatim in memory/DECISIONS.md.
 
 ## MEASUREMENTS
+Mainvideo ·10clips25s each/500chronologicalsamples reviewed;exacthashes in video/delivery/captures.json and review/observations.json. Smallactors,emptycenter and pale group-VFX overlap remain;silent2fps320×180review is notperformance/native-sharpness evidence.
 Mechanics ·4cases,9676post-readyframes,MAX33.3ms,>25=1/>50=0,242calls/116868triangles;accountunchanged/watchedskipmatch. delivery/mechanics-resume/summary.json. Excludespageopening.
 B accepted-main cold7 ·B-OUTBOX03:15;9a5f6ebb,13125rawframes,0errors,nativeMAX33.3/CPU4MAX116.7ms MISS100,p9516.8. Hub878.2–914.3/2294.7–2305.1ms,battle7055.9–7162.4/10304–10321.5ms. B integration/cold/raw-audit.json;860matrixpending.
 Resume ·path3sizes/27capturesPASS,9routeencounterwins/save15378bytes,0errors;delivery/path-resume/checks.json. Original8stepsPASS,mechanics pending. 1204uniqueinputs:onlyknowncapture-duration mismatch;resume-source.json.
@@ -91,8 +94,8 @@ F3 ·610/156687frames,pageMAX566.7ms,cast33.4/16.8ms,20actions30jointpairs PASS,
 F2 ·610/156241frames,pageMAX533.4ms,>25=4679/>50=2231,cast33.5/16.8ms. Sharpnessface-53.10/-49.84%,enemy-51.82/-46.28%,HUD0/0%,portrait-0.19/-3.34%,icon+366.30/+421.26%.2/10 targets PASS. sharpness/PERFORMANCE.md,sharpness.json.
 F1 ·stage78.889%,2745poses0failures,faceMAX55deg,hero13.189–32.975% MISS.610/131781frames,pageMAX1583.3ms,>25=5529/>50=3100,cast33.4/16.8ms. layout/README.md,PERFORMANCE.md.
 ## PROBLEMS / PARKED
-Resumed ·Old interrupted path retained; new path3sizesPASS7fc12ff0,Mechanics4PASS5254757c. Remaining14videos,4-role review,Bfinalperformance and report/ledger. No half-wired runtime.
-B historical710matrixqueue retired beforestart; earlier partialfiles retained asINCOMPLETE. Final860onacceptedHTML required; nohistoricalfullmatrixpassclaim. B01:23outbox.
+Resumed ·Old interrupted path retained; new path3sizesPASS7fc12ff0,Mechanics4PASS5254757c. 14videos complete; remaining bossreview/4-rolegrades/baseline report/ledger then LOOK integration. No half-wired runtime.
+B historical710matrixqueue retired beforestart; earlier partialfiles retained asINCOMPLETE. Final860onlyonfinal lookV2/B required; nohistoricalfullmatrixpassclaim. B01:23outbox.
 Integration ·E2E1/421fontnetworkECONNRESET retained,focusedretry2/2PASS. Videopilot label thenblockedtogglefailed;Hidecontrols fix289ffa0e/7focusedPASS, browserqueue98060. OldE2queue94674exitedbeforevalidation;replacementcontrolsqueue recordedabove.
 G reveal ·39.25pxoldoverflow fixedbbba4c0d,8casesPASS. Lab thenfailed2pxhorizontalbodyoverflow, retaineddemo/readability/pilot-overflow. Combinedfix644a0fe0 passes21captures/3sizes0overflow/errors/network;fullnewcontrolsvalidationqueued98060. Allthresholdsunchanged.
 F7 probe ·exact implicit select label included option text,so action locator timed out. Reused existing non-exact label selector inlab/video drivers. Failed5screens+log retained demo/pilot-action-label*. Controlrerun18capturesPASS;blankpre-renderstageimageledtob6630082draw/modelguard.
