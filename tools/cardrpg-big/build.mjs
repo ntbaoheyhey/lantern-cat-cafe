@@ -55,13 +55,18 @@ for (const row of imagePacking) {
 const assetEntries = [...embeddedAssets].sort(([left], [right]) => left.localeCompare(right));
 const manifest = assetEntries.map(([key, asset]) => ({ key, mime: asset.mime }));
 const assetTags = assetEntries.map(([, asset], index) => `<script id="asset-${index}" type="application/octet-stream">${gzipSync(asset.bytes, { level: 9 }).toString('base64')}</script>`).join('\n');
+// Meshopt is embedded; permit WASM only when this artifact actually contains compressed glTFs.
+// Uncompressed L0 and normal default builds keep their existing CSP byte-for-byte.
+const needsMeshoptWasm = assetEntries.some(([, asset]) => asset.mime === 'model/gltf-binary'
+  && asset.bytes.includes(Buffer.from('\"EXT_meshopt_compression\"')));
+const wasmCsp = needsMeshoptWasm ? " 'wasm-unsafe-eval'" : '';
 const performanceMeter = readFileSync(resolve(root, 'tools/cardrpg-big/offline-performance.js'), 'utf8');
 const loader = readFileSync(resolve(root, 'tools/cardrpg-big/offline-loader.js'), 'utf8');
 const evidence = evidencePayload(root);
 if (evidence.rows.length < 93 || evidence.files.length < 160) {
   throw new Error('Offline comparison evidence is incomplete. Restore the tracked baseline report images/JSON from Git before building (sparse checkout may omit them).');
 }
-const html = `<!doctype html>\n<!-- REFERENCE: docs/cardrpg2/index.html | tools/cardrpg-big/build.mjs | apps/web/src/game/cardrpg/depth | packages/game-rules/src/cardrpg/depth -->\n<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none';img-src data: blob:;style-src 'unsafe-inline';script-src 'unsafe-inline' blob:;connect-src data: blob:;media-src data: blob:"><script>${performanceMeter}</script><script>window.__LOOK_V2__=${lookV2};document.documentElement.dataset.lookV2=String(window.__LOOK_V2__);</script><title>The Lantern · Three chapters</title><style>html,body{margin:0;background:#1d1b28;color:#f5ebdc}#loading{margin:0;padding:40px 40px 18px;font:18px system-ui}#opening-progress{display:block;width:min(420px,calc(100% - 80px));margin:0 40px;accent-color:#d8b98a}</style></head><body><div id="root"><p id="loading">Opening the cafe…</p><progress id="opening-progress" aria-label="Opening the cafe" value="0" max="1"></progress></div><script id="asset-manifest" type="application/json">${JSON.stringify(manifest).replace(/</g, '\\u003c')}</script>
+const html = `<!doctype html>\n<!-- REFERENCE: docs/cardrpg2/index.html | tools/cardrpg-big/build.mjs | apps/web/src/game/cardrpg/depth | packages/game-rules/src/cardrpg/depth -->\n<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none';img-src data: blob:;style-src 'unsafe-inline';script-src 'unsafe-inline'${wasmCsp} blob:;connect-src data: blob:;media-src data: blob:"><script>${performanceMeter}</script><script>window.__LOOK_V2__=${lookV2};document.documentElement.dataset.lookV2=String(window.__LOOK_V2__);</script><title>The Lantern · Three chapters</title><style>html,body{margin:0;background:#1d1b28;color:#f5ebdc}#loading{margin:0;padding:40px 40px 18px;font:18px system-ui}#opening-progress{display:block;width:min(420px,calc(100% - 80px));margin:0 40px;accent-color:#d8b98a}</style></head><body><div id="root"><p id="loading">Opening the cafe…</p><progress id="opening-progress" aria-label="Opening the cafe" value="0" max="1"></progress></div><script id="asset-manifest" type="application/json">${JSON.stringify(manifest).replace(/</g, '\\u003c')}</script>
 ${assetTags}
 ${evidence.tags}
 <script>${evidence.script}</script>
@@ -76,7 +81,7 @@ const assetHashes = Object.fromEntries(assetEntries.map(([path, asset]) =>
 const inputPaths = [...sourceRoots, ...Object.keys(assetHashes)];
 const runtimeDirty = !!execFileSync('git', ['diff', 'HEAD', '--', ...inputPaths], { cwd: root, encoding: 'utf8' }).length
   || !!execFileSync('git', ['ls-files', '--others', '--exclude-standard', ...inputPaths], { cwd: root, encoding: 'utf8' }).trim();
-const receipt = { date: new Date().toISOString(), head, dirty, lookV2, outputDirectory: relative(root, outputDirectory), bytes: Buffer.byteLength(html), compressed: true,
+const receipt = { date: new Date().toISOString(), head, dirty, lookV2, needsMeshoptWasm, outputDirectory: relative(root, outputDirectory), bytes: Buffer.byteLength(html), compressed: true,
   imagePacking, evidence: { rows: evidence.rows.length, files: evidence.files, bytes: Buffer.byteLength(evidence.tags) },
   assetCount: manifest.length, scriptBytes: Buffer.byteLength(js), assetBytes: assetEntries.reduce((sum, [, asset]) => sum + asset.bytes.length, 0),
   sha256: createHash('sha256').update(html).digest('hex'), runtimeDirty, sourceRoots, sourceHashes: hashes,
