@@ -1,3 +1,4 @@
+import type { LookVfx } from './look-vfx';
 import { LAB_EFFECT_RECIPES } from './card-lab-effects';
 import * as T from 'three';
 import type { TurnActor } from '@taskbar-hero/game-rules/src/squad/turn/types';
@@ -54,6 +55,8 @@ export function cardRecipeFor(frame: EffectFrame | null, actors: TurnActor[]): C
 interface PrimitivePool {
   mesh: T.InstancedMesh<T.BufferGeometry, T.ShaderMaterial>;
   alpha: T.InstancedBufferAttribute;
+  phase?: T.InstancedBufferAttribute;
+  flash?: T.InstancedBufferAttribute;
 }
 
 /** Pooled geometry compositions. No geometry/material/particle creation during playback. */
@@ -66,6 +69,8 @@ export class CardEffects {
   private material: T.ShaderMaterial;
   private pools = new Map<CardEffectPrimitive, PrimitivePool>();
   private disposed = false;
+  private look?: LookVfx;
+  private flash = 0;
   private position = new T.Vector3();
   private caster = new T.Vector3();
   private focus = new T.Vector3();
@@ -78,7 +83,7 @@ export class CardEffects {
   private accentColor = new T.Color();
   private resolution = new T.Vector2(1, 1);
 
-  constructor(scene: T.Scene) {
+  constructor(private scene: T.Scene, private atelier = false) {
     this.root.name = 'card-effect-compositions';
     scene.add(this.root);
     this.material = new T.ShaderMaterial({
@@ -92,17 +97,32 @@ export class CardEffects {
       },
     });
     this.ready = this.prepare();
+    // Scene preparation awaits this promise; suppress an early unhandled event
+    // if navigation cancels while a texture request is still in flight.
+    void this.ready.catch(() => undefined);
   }
 
   private async prepare() {
+    if (this.atelier) {
+      const { LookVfx } = await import('./look-vfx');
+      if (this.disposed) return;
+      this.look = new LookVfx(this.scene, this.material.uniforms);
+      await this.look.prepare(() => this.disposed);
+      if (this.disposed) return;
+    }
     for (const primitive of CARD_EFFECT_PRIMITIVES) {
       await nextTask();
       if (this.disposed) return;
-      const geometry = createCardPrimitive(primitive);
+      const base = createCardPrimitive(primitive);
+      const geometry = this.look?.geometry(base, primitive) ?? base;
+      const phase = this.look ? new T.InstancedBufferAttribute(new Float32Array(CARD_EFFECT_BUDGET.perPrimitive), 1) : undefined;
+      const flash = this.look ? new T.InstancedBufferAttribute(new Float32Array(CARD_EFFECT_BUDGET.perPrimitive), 1) : undefined;
+      if (flash) {flash.setUsage(T.DynamicDrawUsage);geometry.setAttribute('effectFlash', flash);}
+      if (phase) {phase.setUsage(T.DynamicDrawUsage);geometry.setAttribute('effectPhase', phase);}
       const alpha = new T.InstancedBufferAttribute(new Float32Array(CARD_EFFECT_BUDGET.perPrimitive), 1);
       alpha.setUsage(T.DynamicDrawUsage);
       geometry.setAttribute('effectAlpha', alpha);
-      const mesh = new T.InstancedMesh(geometry, this.material, CARD_EFFECT_BUDGET.perPrimitive);
+      const mesh = new T.InstancedMesh(geometry, this.look?.material(primitive) ?? this.material, CARD_EFFECT_BUDGET.perPrimitive);
       mesh.name = primitive;
       mesh.instanceMatrix.setUsage(T.DynamicDrawUsage);
       mesh.setColorAt(0, this.color.set('#ffffff'));
@@ -111,12 +131,14 @@ export class CardEffects {
       mesh.count = 0;
       mesh.visible = false;
       this.root.add(mesh);
-      this.pools.set(primitive, { mesh, alpha });
+      this.pools.set(primitive, { mesh, alpha, phase, flash });
     }
   }
 
   async warm(renderer: T.WebGLRenderer, camera: T.Camera) {
     await this.ready;
+    if (this.disposed) return;
+    await this.look?.warm(renderer, () => this.disposed);
     if (this.disposed) return;
     const parent = this.root.parent;
     const scene = new T.Scene();
@@ -129,12 +151,14 @@ export class CardEffects {
     this.transform.updateMatrix();
     try {
       renderer.setRenderTarget(target);
-      for (const { mesh, alpha } of this.pools.values()) {
+      for (const { mesh, alpha, phase, flash } of this.pools.values()) {
         if (this.disposed) break;
         mesh.visible = true;
         mesh.count = 1;
         mesh.setMatrixAt(0, this.transform.matrix);
         alpha.setX(0, 1);
+        if (flash) {flash.setX(0, .5);flash.needsUpdate = true;}
+        if (phase) {phase.setX(0, .5);phase.needsUpdate = true;}
         mesh.instanceMatrix.needsUpdate = true;
         alpha.needsUpdate = true;
         for (const destination of [target, null]) {
@@ -156,6 +180,10 @@ export class CardEffects {
     }
   }
 
+  get impactCenter() {return this.look?.impact;}
+  setDepth(texture: T.Texture | null, camera: T.PerspectiveCamera) {this.look?.setDepth(texture, camera);}
+  setLightsEnabled(enabled: boolean) {this.look?.setLightsEnabled(enabled);}
+
   protect(count: number, width: number, height: number) {
     this.material.uniforms.protectedCount!.value = Math.min(CARD_EFFECT_BUDGET.protectedFaces, count);
     this.resolution.set(width, height);
@@ -165,11 +193,13 @@ export class CardEffects {
     positions: Map<string, T.Vector3>, camera: T.Camera, quality: Quality, calm: boolean,
     statuses?: Record<string, readonly string[]>, time = 0) {
     for (const { mesh } of this.pools.values()) { mesh.count = 0; mesh.visible = false; }
+    this.look?.begin();this.flash = 0;
     this.stats.instances = 0;
     this.stats.primitiveCalls = 0;
     this.stats.truncated = 0;
     if (this.disposed) return;
     if (frame && recipe) this.renderAction(frame, recipe, actors, positions, camera, quality, calm);
+    this.flash = 0;
     if (statuses) {
       for (const actor of actors) {
         const position = positions.get(actor.id);
@@ -188,12 +218,14 @@ export class CardEffects {
         }
       }
     }
-    for (const { mesh, alpha } of this.pools.values()) {
+    for (const { mesh, alpha, phase, flash } of this.pools.values()) {
       if (!mesh.count) continue;
       mesh.visible = true;
       mesh.instanceMatrix.needsUpdate = true;
       mesh.instanceColor!.needsUpdate = true;
       alpha.needsUpdate = true;
+      if (phase) phase.needsUpdate = true;
+      if (flash) flash.needsUpdate = true;
     }
   }
 
@@ -211,6 +243,9 @@ export class CardEffects {
     if (!this.targets.length) this.targets.push(this.caster);
     const span = effectBeatSpans[frame.beat.kind];
     const progress = span[0] + (span[1] - span[0]) * frame.progress;
+    // A brief visual accent fits inside the existing impact beat; no timing change.
+    this.flash = !calm && progress > .525 && progress < .558 ? Math.sin((progress - .525) / .033 * Math.PI) : 0;
+    this.look?.illuminate(recipe, progress, this.caster, this.targets, camera, calm);
     this.drawRecipe(recipe, progress, camera, quality, calm);
     for (const id of frame.plan.presentationCues ?? []) {
       const cue = CARD_EFFECT_RECIPES[id] ?? LAB_EFFECT_RECIPES[id];
@@ -335,6 +370,8 @@ export class CardEffects {
     pool.mesh.setColorAt(instance, layer.accent ? this.accentColor : this.baseColor);
     const fade = Math.min(1, phase * 12) * Math.min(1, (1 - phase) * 5);
     pool.alpha.setX(instance, fade * layer.opacity);
+    pool.phase?.setX(instance, phase);
+    pool.flash?.setX(instance, this.flash);
     this.stats.instances++;
   }
 
@@ -347,5 +384,6 @@ export class CardEffects {
     }
     this.pools.clear();
     this.material.dispose();
+    this.look?.dispose();
   }
 }

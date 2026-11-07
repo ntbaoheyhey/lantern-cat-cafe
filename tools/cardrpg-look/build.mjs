@@ -7,6 +7,13 @@ import { gzipSync } from 'node:zlib';
 import { root, web, requireWeb } from '../visual-support.mjs';
 import { evidencePayload } from '../cardrpg-big2/embed-evidence.mjs';
 const { build } = await import(requireWeb.resolve('vite'));
+// Both streams decode to identical bytes. Different asset classes favour
+// different DEFLATE hash-table sizes; keep the smaller stream per payload.
+const gzip = bytes => {
+  const standard = gzipSync(bytes, { level: 9 });
+  const highMemory = gzipSync(bytes, { level: 9, memLevel: 9 });
+  return highMemory.length < standard.length ? highMemory : standard;
+};
 for (const hero of ['mochi', 'soot', 'clover']) {
   if (!existsSync(resolve(root, `assets/cardrpg-look/game-models/${hero}.glb`))) {
     throw new Error(`Missing compressed LOOK hero: ${hero}. Finish authoring and pack-models first.`);
@@ -33,7 +40,7 @@ const result = await build({ configFile: false, root: web, envDir: false, public
 const output = (Array.isArray(result) ? result : [result]).flatMap(r => r.output);
 const js = output.filter(f => f.type === 'chunk').map(f => f.code).join('\n');
 const css = output.filter(f => f.type === 'asset' && f.fileName.endsWith('.css')).map(f => f.source).join('\n');
-const payload = gzipSync(Buffer.from(JSON.stringify({ js, css })), { level: 9 }).toString('base64');
+const payload = gzip(Buffer.from(JSON.stringify({ js, css }))).toString('base64');
 const head = execFileSync('git', ['rev-parse', 'HEAD'], { cwd: root, encoding: 'utf8' }).trim();
 const dirty = !!execFileSync('git', ['status', '--porcelain'], { cwd: root, encoding: 'utf8' }).trim();
 const sourceAssetHashes = Object.fromEntries([...embeddedAssets].map(([path, asset]) =>
@@ -52,7 +59,7 @@ try {
 for (const row of imagePacking) {
   const key = relative(root, row.source), asset = embeddedAssets.get(key), packed = readFileSync(row.packed);
   row.key = key;
-  row.selected = row.opaque && gzipSync(packed, { level: 9 }).length < gzipSync(asset.bytes, { level: 9 }).length;
+  row.selected = row.opaque && gzip(packed).length < gzip(asset.bytes).length;
   if (row.selected) embeddedAssets.set(key, { mime: 'image/webp', bytes: packed });
 }
 const assetEntries = [...embeddedAssets].sort(([left], [right]) => left.localeCompare(right));
@@ -65,12 +72,12 @@ for (const [path, asset] of assetEntries) {
     : path.includes('flipbook') ? 'flipbooks'
     : path.includes('icon') ? 'icons' : 'textures-and-other';
   const row = assetClasses[category] ??= { files: 0, rawBytes: 0, gzipBytes: 0, embeddedBytes: 0 };
-  const compressed = gzipSync(asset.bytes, { level: 9 });
+  const compressed = gzip(asset.bytes);
   row.files++; row.rawBytes += asset.bytes.length; row.gzipBytes += compressed.length;
   row.embeddedBytes += compressed.toString('base64').length;
 }
 const manifest = assetEntries.map(([key, asset]) => ({ key, mime: asset.mime }));
-const assetTags = assetEntries.map(([, asset], index) => `<script id="asset-${index}" type="application/octet-stream">${gzipSync(asset.bytes, { level: 9 }).toString('base64')}</script>`).join('\n');
+const assetTags = assetEntries.map(([, asset], index) => `<script id="asset-${index}" type="application/octet-stream">${gzip(asset.bytes).toString('base64')}</script>`).join('\n');
 const performanceMeter = readFileSync(resolve(root, 'tools/cardrpg-big/offline-performance.js'), 'utf8');
 const loader = readFileSync(resolve(root, 'tools/cardrpg-big/offline-loader.js'), 'utf8');
 const evidence = evidencePayload(root);
@@ -90,6 +97,7 @@ const inputPaths = [...sourceRoots, ...Object.keys(assetHashes)];
 const runtimeDirty = !!execFileSync('git', ['diff', 'HEAD', '--', ...inputPaths], { cwd: root, encoding: 'utf8' }).length
   || !!execFileSync('git', ['ls-files', '--others', '--exclude-standard', ...inputPaths], { cwd: root, encoding: 'utf8' }).trim();
 const receipt = { date: new Date().toISOString(), head, dirty, bytes: Buffer.byteLength(html), compressed: true,
+  compression: { format: 'gzip', level: 9, memLevels: [8, 9], selection: 'smallest stream per payload; decoded bytes unchanged' },
   imagePacking, evidence: { rows: evidence.rows.length, files: evidence.files, bytes: Buffer.byteLength(evidence.tags) },
   assetCount: manifest.length, assetClasses, scriptBytes: Buffer.byteLength(js), assetBytes: assetEntries.reduce((sum, [, asset]) => sum + asset.bytes.length, 0),
   sha256: createHash('sha256').update(html).digest('hex'), runtimeDirty, sourceRoots, sourceHashes: hashes,

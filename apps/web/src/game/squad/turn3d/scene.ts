@@ -131,7 +131,15 @@ export class TurnScene {
   }
 
   private ownSceneResources(){
-    this.scene.traverse(o=>{if(o.parent===this.bossAtmosphere?.root)return;if(o instanceof T.Mesh||o instanceof T.Line||o instanceof T.Points){this.geometryOwned.add(o.geometry);const ms=Array.isArray(o.material)?o.material:[o.material];ms.forEach(m=>this.materialOwned.add(m));}if(o instanceof T.Sprite)this.materialOwned.add(o.material);});
+    // Effect modules own their pools, including placeholders replaced at play.
+    // Registering those here as well would dispose the same resources twice.
+    const own=(o:T.Object3D)=>{
+      if(o===this.spells?.root||o===this.cardEffects?.root||o===this.bossAtmosphere?.root)return;
+      if(o instanceof T.Mesh||o instanceof T.Line||o instanceof T.Points){this.geometryOwned.add(o.geometry);for(const material of Array.isArray(o.material)?o.material:[o.material])this.materialOwned.add(material);}
+      if(o instanceof T.Sprite)this.materialOwned.add(o.material);
+      for(const child of o.children)own(child);
+    };
+    own(this.scene);
   }
 
   private async preparePresentation(){
@@ -164,7 +172,7 @@ export class TurnScene {
     this.ownSceneResources();
     await loadingFrame();if(this.disposed)return;
     this.spells=new SpellVfx(this.scene,!!this.view().autoBattle);
-    if(this.view().autoBattle)this.cardEffects=new CardEffects(this.scene);
+    if(this.view().autoBattle){this.cardEffects=new CardEffects(this.scene,this.lookStageEnabled);if('setEffects' in this.post)this.post.setEffects(this.cardEffects);}
     this.ownSceneResources();
   }
 
@@ -207,8 +215,29 @@ export class TurnScene {
       this.loading.completed=1;this.loading.label='Preparing miniature models';
       await new Promise(resolve=>setTimeout(resolve,0));
       await this.cardSurfaces?.ready;if(this.disposed)return;
+      const warmMaterials=new Map<T.Material,T.Material>();
       for(const role of this.view().warmModelIds ?? ['guardian','witch','alchemist','guard','flanker','charger','ranger','healer','elite','yarn','thread','dummy']){
         const gltf=await loadModel(role);if(this.disposed)return;const model=gltf.scene.clone(true);
+        if(this.lookStageEnabled){
+          // Gallery actors may differ from the initial party. Warm their real
+          // felt/atelier shader and utensils, including the direct Low variant.
+          // Retain these material references until teardown: disposing them
+          // here would evict the programs before the first gallery cast.
+          let rigRole='';const originalNodes=new Set<T.Object3D>();
+          model.traverse(o=>{
+            originalNodes.add(o);if(o.name.endsWith('_head'))rigRole=o.name.slice(0,-5);
+            if(o instanceof T.Mesh){
+              const prepare=(source:T.Material)=>{
+                let material=warmMaterials.get(source);
+                if(!material){material=source.clone();if(material instanceof T.MeshStandardMaterial)this.cardSurfaces?.apply(material);warmMaterials.set(source,material);this.materialOwned.add(material);}
+                return material;
+              };
+              o.material=Array.isArray(o.material)?o.material.map(prepare):prepare(o.material);
+            }
+          });
+          if(rigRole)new CardUtensil(model,rigRole,role);
+          model.traverse(o=>{if(!originalNodes.has(o)&&o instanceof T.Mesh){this.geometryOwned.add(o.geometry);for(const m of Array.isArray(o.material)?o.material:[o.material])this.materialOwned.add(m);}});
+        }
         model.traverse(o=>{o.visible=true;o.frustumCulled=false});warm.add(model);
         await loadingFrame();
       }
@@ -221,6 +250,7 @@ export class TurnScene {
       this.loading.completed=3;this.loading.label='Compiling lighting';
       await new Promise(resolve=>setTimeout(resolve,0));
       if(this.view().autoBattle){this.litChapter=this.view().chapter??1;applyCardLighting(this.scene,this.renderer,this.litChapter);}
+      await this.cardEffects?.ready;if(this.disposed)return;
       this.scene.add(warm);
       // Direct-to-canvas and HDR-to-post use different tone-mapping programs.
       // Prepare both while loading so adaptive quality never links at a hit.
@@ -495,9 +525,9 @@ export class TurnScene {
     this.stats.particles=this.spells.count+(this.cardEffects?.stats.instances??0);
     const display=view.effectOnly?this.effectPreview:this.scene;
     if(this.spells.root.parent!==display)display.add(this.spells.root);
-    if(this.cardEffects&&this.cardEffects.root.parent!==display)display.add(this.cardEffects.root);
+    if(this.cardEffects&&!this.lookStageEnabled&&this.cardEffects.root.parent!==display)display.add(this.cardEffects.root);
     this.renderer.info.reset();this.post.render(display,this.camera,(frame?.shake??0)*.35,frame?.progress??0,frame?.color??'#ffe6d2',view.reducedMotion);this.stats.quality=this.post.effectiveQuality;this.renderer.domElement.dataset.quality=this.stats.quality;this.stats.frames++;const info=this.renderer.info;Object.assign(this.stats,{calls:info.render.calls,triangles:info.render.triangles,geometries:info.memory.geometries,textures:info.memory.textures});
-    if(this.stats.frames%60===1){const geometries=new Set<T.BufferGeometry>();this.scene.traverse(o=>{if(o instanceof T.Mesh||o instanceof T.Line||o instanceof T.Points)geometries.add(o.geometry);});let bytes=64*64*4;for(const g of geometries){for(const attr of Object.values(g.attributes))bytes+=attr.array.byteLength;bytes+=g.index?.array.byteLength??0;}this.stats.estimatedGpuBytes=bytes;}
+    if(this.stats.frames%60===1){const geometries=new Set<T.BufferGeometry>();const collect=(o:T.Object3D)=>{if(o instanceof T.Mesh||o instanceof T.Line||o instanceof T.Points)geometries.add(o.geometry);};this.scene.traverse(collect);if(this.lookStageEnabled)this.cardEffects?.root.traverse(collect);let bytes=64*64*4;for(const g of geometries){for(const attr of Object.values(g.attributes))bytes+=attr.array.byteLength;bytes+=g.index?.array.byteLength??0;}this.stats.estimatedGpuBytes=bytes;}
     // Labels are DOM overlays; do not traverse every mesh at the GPU cadence.
     const now=performance.now();if(view.fixedTime===undefined&&now-this.labelsAt<50)return;this.labelsAt=now;
     const projected:Anchor[]=[],labels:LabelInput[]=[];

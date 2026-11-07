@@ -6,3 +6,10 @@ L1 publishedeb568fda/draft361. L2 evidence publication/ledger next;L3 drafts in 
 
 ## 2026-11-07T14:02:33.458295+00:00 L3 audited
 Freshfivegates421E2E, source1301, camera9/AB6/post36/cancel6 pass. Cold7MAX33.4native/133.3CPU4; cast24MAX16.8/errors0. Startup+44bytes MISS; latestA4d525a8a accepted. L3publication then originalBlenderL4. No finalmatrix repeated.
+
+## 2026-11-07T15:43:57.326650+00:00 L4 preflight verified
+Native pilot763ef7bd/23,720,242bytes usesR2atlases. SixGPU actions:0newprograms,369resources disposedonce/0duplicates/errors; sixcancellation boundaries pass. Personally viewedMochi/CloverHigh andSootLow. Fixed opaquegreenhouse andhardfacemask edge in source,17focused/type/lintPASS; freshbrowser verification pending. R3source1577ff08 has198/216verifiedframes; existingrender/pack continue. Material3strict1015pairregressions remainMISS; nofinalmatrix/cold acceptance orwhole-gamecompletion claim.
+
+## 2026-11-07T16:43:17.557960+00:00 — L4 validation completed
+
+67recipes/2211pairs,19sheets reviewed; zero threshold/face/overdraw/errors. Fivegates1749web/421E2E pass; GPU6/cancel6/post36 pass;370resources exactly once. Cold7native50.1/CPU4 183.4ms;24casts16.8ms/100%≤20/errors0. Audit1580inputs bound tofb56cd44/23,995,962bytes. Strict1162pair regressions/startup+93/cold183.4 remain misses. Publication next, then L6; raw originals retained.

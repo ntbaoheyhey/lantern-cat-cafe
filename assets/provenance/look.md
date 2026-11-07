@@ -39,10 +39,21 @@ Game packing: glTF-Transform4.5.1 `optimize --compress meshopt --flatten false -
 
 Round4 (source9e22199f) lowers fabric top below the existing .044m contact plane, uses neutral walnut #60534C and token teal walls, retains separate emissive paper lamps and adds their inner glow rims.50,272tri/4mesh draws; GLB6,027,476→1,015,272bytes, irradiance3,942,787→753,106bytes. Reproducible packing command is now `node tools/cardrpg-look/pack-stage.mjs`. Runtime camera24° pitch/target1.1m, with distinct preset ratios even at short desktop canvas heights. No other game's references used.
 
-## L3 analytic light and post pipeline (in verification)
+## L3 analytic light and post pipeline (audited02ffd9cb)
 
 Three.js0.180.0 (existing dependency), own analytic16-cube grading LUTs from `tools/cardrpg-look/author-lut.mjs`:256x16 RGBA strips, three chapter shadow/highlight/saturation parameter sets recorded in look-luts.json. Own128x64 floating-point reflection generated in look-environment.ts from Gaussian pendant/window lobes; PMREM filtering from Three. No HDRI or artwork input.
 
 High:12-sample depth AO/contact, soft-knee1.25HDR bloom at quarter resolution, face-protected depth focus and screen-depth outline, analytic grade, subtle stationary grain/vignette,2-sample HDR plus SMAA. Balanced: same preallocated targets, no AO/DOF/SMAA. Low: direct sampled canvas with baked materials/rim/light. No claim of temporal AA, GTAO, full shadow maps, or a separate matcap shader. Canvas-only; DOM HUD is outside post.
 
 SMAA implementation and mathematical area/search lookup textures are bundled with the existing Three.js0.180.0 addon. These are algorithm lookup data, not art references. Exact licence copied to assets/provenance/licenses/three-smaa-MIT.txt (MIT, Copyright2010–2025 three.js authors). No external models/textures/brushes or generative calls. Loading prewarms targets, LUTs, lookup samplers, shaders and output variants; browser/profile acceptance remains pending.
+
+
+## L4 original volume / particle / ribbon pipeline (in development)
+
+Source `tools/cardrpg-look/blender/flipbooks.py`, Blender4.5.3 LTS Cycles, deterministic seed71107+familyIndex×131. Six families: smoke/steam/flame/sparkle/yarn-dust/ribbon. Thirty-six256×256 original rendered frames each,6×6atlases, explicit premultiplied encodedRGB and lossless WebP. Analytic volume density nodes, bevelled four-point particle meshes, curled fibre curves and thickened ribbon strips; no imported images/models, no generative tools. Exact source/seed/range/image hashes stored per6-frame receipt. Firstpass is24samples and not visually accepted; reviews underrounds/flipbooks.
+
+Runtime originalshader replaces flat shading while retaining originalrecipe geometry/timing. Existinginstancedpools remain96instances/8primitivecalls. Texturedquad/ribbon additions share thatgeometry; allface/overdraw controls are shared. Two impactlights allocatedbeforewarming; stage renderedonce, depth sampledonlyduringisolatedeffectpass. Newpipeline is being checked, no performance/visualacceptance claimed yet.
+
+Rounds2–3 use64Cycles samples with the same family seeds, not an upscaled or interpolated24-sample render. R3 source1577ff08 uses neutral smoke/steam lighting,2px Gaussian source filtering, radial volume falloff from0.20to0.50, density factors smoke2.3/steam3.8/flame4.0, flame emission4.2 with weak50W/30W key/rim. Sparkles use22bevelled four-point glints, yarn dust22curled nine-point filaments, ribbon3thickened48-segment strips. Per-frame timing and full parameters are in the preserved round scripts; R3 completed216frames and all six contact sheets were personally inspected;1,064,346bytes of lossless atlases, no border alpha. Source review remains provisional until the combined runtime compositions are checked.
+
+The runtime fills the original cup/teapot/greenhouse outlines with authored lathed, spherical and bevelled extruded surfaces within their existing pools. View-dependent ceramic/metal highlights, derivative-filtered paper fibres and glass Fresnel edges are analytic GLSL, with correct instance-scale normals and target-specific tone/colour conversion before premultiplication. Face-core rejection remains unchanged; the outer edge tapers over squared radius1.0–1.6. Glass body alpha0.16 plus rim0.30. Native preflight763ef7bd proves GPU warmup and exactly-once resource cleanup before the last glass/face-edge adjustment; those last changes await fresh browser captures.
