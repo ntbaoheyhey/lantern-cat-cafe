@@ -92,3 +92,6 @@ P1 type/lint/build,1735web/1035rules(+2expectedfail/11skip),421E2E PASS. New-pan
 - Five gates PASS; explicit labels and Look crew surfaces fixed after two retained browser failures. Thirty captures/3sizes/2modes PASS, mincontrast6.2448.
 - OFF165cells/8250routes exact47477251; P1functional3000encounters exact replay/save. G0before90accounts×45days max2.1948×.
 - P1 artifact details and open B request in a4/P1-PREPARATION.md. Full204 remains unrun. No B/protected edits.
+
+## P1 published / P2 boundary
+- P1 draft367 at7dfb7c84 stacked366. Exact artifact d4e5b472fcfb9f70e2d26f953a441893c8ec5b07e7d1ed26a028d12b4a44c51d /26190242bytes; corrected report size delta69913bytes. G0 #364 updated with downstream closure.

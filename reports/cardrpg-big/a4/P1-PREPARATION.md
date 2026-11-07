@@ -19,7 +19,7 @@ Recovered unpublished implementation is preserved at f7bcc760 and wip/a4-p1-stag
 
 Original failed logs retained: save harness compared omitted undefined fields before JSON-normalized equality; build used a stale interpreter then lacked Pillow; browser exact label lookup failed, then Look crew text contrast failed. Corrections are local tooling, explicit accessible names and A-owned panel CSS. The build uses a developer-only /tmp/cardrpg-a4-tools Pillow environment; no runtime dependency changed. Thirty captures are a targeted phase pack, not the reserved204 pack.
 
-Receipts: validation/a4-p1.json; p1/sim.json; p1/events-fixture.json; p1-off/checks.json; p1/browser-*/checks.json; p1-scope.json. Raw simulations are functional evidence, not balance acceptance. P2–P7 numeric balance, pacing, startup/cold CPU and expanded meta loops remain pending. Artifact grew69893bytes against A3; live startup byte parity is NOT VERIFIED at this phase.
+Receipts: validation/a4-p1.json; p1/sim.json; p1/events-fixture.json; p1-off/checks.json; p1/browser-*/checks.json; p1-scope.json. Raw simulations are functional evidence, not balance acceptance. P2–P7 numeric balance, pacing, startup/cold CPU and expanded meta loops remain pending. Artifact grew69913bytes against A3; live startup byte parity is NOT VERIFIED at this phase.
 
 Open B request: hide obsolete charge/energy/break/flavour meters when battle.v4 exists and render typed crew/row/plan cues; A-owned Prepare/Result/event log already explains them. B presentation is not yet adopted. Phase cue≤400ms and finishing cue≤800ms must fit inside existing action duration.
 
