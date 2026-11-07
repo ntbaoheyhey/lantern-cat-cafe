@@ -149,3 +149,10 @@
 
 /* Published LOOK portrait pairs retain their complete transparent frame. */
 .dp-hub-portrait { width: 36px; height: 45px; object-fit: contain; vertical-align: middle; margin-right: 6px; }
+
+/* A-owned shell bounds: fixed children in Battle stay inside the content box. */
+.dp-app .cr-content { flex: 1; }
+.dp-battle-shell { position: fixed; left: var(--dp-shell-left); top: var(--dp-shell-top); width: var(--dp-shell-width); height: var(--dp-shell-height); contain: layout; z-index: 20; pointer-events: none; }
+.dp-app[data-battle-active=true] .dp-battle-shell { pointer-events: auto; }
+.dp-app[data-battle-active=true] .cr-content > .dp-page { visibility: hidden; }
+.dp-app[data-battle-active=true] .cr-sidebar button:disabled { opacity: .75; cursor: default; }

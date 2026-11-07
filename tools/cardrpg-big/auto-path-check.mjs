@@ -11,7 +11,7 @@ await mkdir(output, { recursive: true });
 const browser = await chromium.launch({ channel: 'chromium', args: ['--use-angle=metal'] });
 const rows = [];
 const file = 'file://' + artifact;
-const sizes = [[1280, 720], [1440, 900], [1024, 600]];
+const sizes = JSON.parse(process.env.BIG_PATH_CASES || '[[1280,720],[1440,900],[1024,600]]');
 try {
   for (const [width, height] of sizes) {
     const page = await browser.newPage({ viewport: { width, height } });

@@ -13,6 +13,14 @@ if(phase==='task1') {
  jobs.push(['invitations','invitation-check.mjs',{BIG_INVITE_OUT:`${out}/invitations`}]);
  jobs.push(['reveal','reveal-check.mjs',{BIG_REVEAL_OUT:`${out}/reveal`,BIG_REVEAL_DIAGNOSTIC:'1'}]);
 }
+if(phase==='task2') {
+ for(const [w,h] of [[1024,600],[1280,720],[1440,900]]) jobs.push(['shell-'+w,'a3-shell-check.mjs',{A3_SIZE:`${w},${h}`,A3_STRICT:'1',A3_OUT:`${out}/shell-${w}`}]);
+ jobs.push(['practice-1024','a3-shell-check.mjs',{A3_SIZE:'1024,600',A3_ENTRY:'practice',A3_STRICT:'1',A3_OUT:`${out}/practice-1024`}]);
+ for(const [w,h] of [[1024,600],[1280,720],[1440,900]]) jobs.push(['path-'+w,'auto-path-check.mjs',{BIG_PATH_CASES:JSON.stringify([[w,h]]),BIG_PATH_OUT:`${out}/path-${w}`}]);
+}
+if(phase==='task3') {
+ for(const [w,h] of [[1024,600],[1280,720],[1440,900]]) jobs.push(['screens-'+w,'a3-screen-check.mjs',{A3_SIZE:`${w},${h}`,A3_STRICT:'1',A3_OUT:`${out}/screens-${w}`}]);
+}
 const receipt={sha256:sha,jobs:[]};
 for(const [name,script,env] of jobs){
  if(process.env.A3_ONLY&&!process.env.A3_ONLY.split(',').includes(name))continue;
