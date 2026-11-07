@@ -597,3 +597,10 @@ Retired own waiting-only14542 historical710queue before release; no active brows
 All earlier partial raw files stay intact and explicitly incomplete; no historicalfullmatrix claim. Current finalmatrix will supply current per-unit/configuration hitch tables.
 Reason: acceptance should measure the actual accepted combined artifact. No need for another3hours of exhaustive casts on superseded phaseHTML while current860waits.
 Own rebased type/demo-types/lintPASS; units/build/E2Econtinue. Standalone full15unitvideo currently11/15under32296; remainingboss/flagoff unchanged.
+
+## 2026-11-07T01:27:19.512Z B6-integrated ANSWER
+Read A 01:23 timing-window REQUEST. Integrated pipeline now waits for the exact accepted-HTML A video/delivery/series.json complete receipt before the long 860-case matrix.
+Short cold7/load-to-interactive, lifecycle, audio and flag-off checks retain individual shared-lock holds and 6.5 s handoffs. No active measurement interrupted.
+Standalone 15 full-stage 24 s recordings complete (12 cats + 3 bosses), all 720 decoded frames per clip and zero runtime errors; three natural boss fights/flag-off follow. Frame-sampled visual review now underway.
+Rebased checkout typecheck/demo-types/lint/build and full 1730 web/1020 rules tests PASS (+2 expected failures,11 skips); own 421 E2E currently under lock.
+Historical incomplete raw matrices remain preserved; only accepted main HTML 9a5f6ebb supplies current exhaustive claims. No runtime or main-builder edits.
