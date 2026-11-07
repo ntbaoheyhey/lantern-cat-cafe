@@ -618,3 +618,10 @@ CLAIM own tools/cardrpg-big2 flag-off/measurement harnesses and reports/cardrpg-
 Accepted source a106dfca/mainHTML9a5f6ebb and standalone734d301c remain pinned. Verify hashes before pending work.
 Read A03:05 resume and live path lock11785. Keep shared lock and short stage handoffs; long matrix waits actual A video completion.
 Next diagnose flag-off readiness, finish standalone boss evidence, then accepted-main cold/lifecycle/audio/flagoff and860cases. No old PID reused.
+
+## 2026-11-07T03:15:12.797630+00:00 B6-integrated CHECKPOINT
+Own restored5210857a runtime unchanged versus accepteda106dfca; mainHTML9a5f6ebb verified. Read A03:05 resume.
+Accepted-main cold7 complete: nativeMAX33.3/CPU4MAX116.7ms, postinteractive116.7MISS100, CPU4p9516.8, postready16.8;0errors. Independently recomputed13125rawframes and trace hashes in integration/cold/raw-audit.json.
+Load-to-hub878.2–914.3ms native/2294.7–2305.1CPU4; battle-ready7055.9–7162.4/10304–10321.5ms. This cold sample is not the exhaustive matrix.
+Own matrix driver now releases lock every6actions and preserves resumable batches; same86actions×10configs and original fresh-page first/repeat protocol. Still waits actual A video complete receipt before starting.
+Standalone naturalboss recordings active14185; flagoff diagnostic and integrated lifecycle/audio wait normally. No A process/source edit, no inherited pass relabelled.
