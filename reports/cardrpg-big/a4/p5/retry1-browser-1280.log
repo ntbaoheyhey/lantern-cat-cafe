@@ -1,0 +1,19 @@
+{"lock":"acquired","lane":"A","pid":76020,"startedAt":"2026-11-07T18:27:44.021Z","task":"A4 P5 browser1280"}
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: [{"text":"YOUR NEXT STEP","ratio":1.2349338463392765},{"text":"Today at the cafe","ratio":1.017236347016042},{"text":"Prepare your crew","ratio":2.684255341405259},{"text":"One sturdy front row","ratio":1.0824722876261743},{"text":"Arrange your crew","ratio":2.684255341405259},{"text":"Understood · next tip","ratio":2.684255341405259},{"text":"Cafe shift","ratio":1.0824722876261743},{"text":"Up to 8 hours of away time count. Skipped days do not stack service rewards.","ratio":1.3598228983887939},{"text":"Today's board","ratio":1.0824722876261743},{"text":"Complete two rewarded routes. · daily","ratio":1.3598228983887939},{"text":"Complete this task first.","ratio":1.3598228983887939},{"text":"Complete one ten-minute local cafe service. · daily","ratio":1.3598228983887939},{"text":"Complete this task first.","ratio":1.3598228983887939},{"text":"Win three rewarded routes this week. · weekly","ratio":1.3598228983887939},{"text":"Complete this task first.","ratio":1.3598228983887939},{"text":"Win a campaign. · achievement","ratio":1.3598228983887939},{"text":"Complete this task first.","ratio":1.3598228983887939},{"text":"Enhance equipment six times. · achievement","ratio":1.3598228983887939},{"text":"Complete this task first.","ratio":1.3598228983887939},{"text":"Open collection journal","ratio":2.684255341405259}]
+    at captureOne (file:///Users/bao/taskbar-hero-cardrpg-a4/tools/cardrpg-big/a4-p5-browser.mjs:31:84)
+    at async capture (file:///Users/bao/taskbar-hero-cardrpg-a4/tools/cardrpg-big/a4-p5-browser.mjs:37:2)
+    at async file:///Users/bao/taskbar-hero-cardrpg-a4/tools/cardrpg-big/a4-p5-browser.mjs:50:2 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
+
+Node.js v24.22.2
+{"lock":"released","pid":76020,"task":"A4 P5 browser1280"}

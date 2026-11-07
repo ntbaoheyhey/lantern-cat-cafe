@@ -1,12 +1,12 @@
 # A4 living state
 ## NOW
-P5 integrated on codex/cardrpg-a4-p5-2026-11-08 from4bb860f0. P4 draft372 published; P1/P2/P3 drafts367/369/370 stay open. No B checkpoint adoption.
+P5 verified on codex/cardrpg-a4-p5-2026-11-08. Original coordinator completed all five steps; no duplicate jobs. Publication pending immediately below.
 ## NEXT
-Run focused checks then full five gates, offline build,30day bot,OFF8250 and36captures at3sizes. Staging source /tmp/cardrpg-a4-p5 now integrated. P6 fullbalance/economy and P7 demo/playtest/report remain.
+Publish P5 draft stacked372, mirror ledger, CLAIM P6. Integrate selected tuning2 and run source-bound train/heldout, economy, gacha, editions, OFF, five gates and real x1 timing. P7 follows.
 ## DONE
-P4 verified30kaccounts/1.8Mdraws maxCDF0.640337pp;500cap races/6000combat0pp;OFF8250exact47477251;30captures contrast8.599. Draft372 / ledger / syncb8ea0c1f published.
+P1/P2/P3/P4 drafts367/369/370/372. P5 nine new accounts×30days,36captures/3sizes/2themes minimumcontrast7.327; OFF8250exact47477251.
 ## GATES
-P4 type/lint/build/1087rules(+2expectedfail/11skip)/1735web/421E2E PASS. P5 shadow17tests PASS only; integrated phase checks pending. P3ordinary14.487s MISS; bosses/elite PASS. Startup bytes MISS; coldCPU unmeasured.
+P5 type/lint/build/1104rules(+2expectedfail/11skip)/1735web/421E2E PASS. Two contrast fixes verified. Startup bytes MISS; CPU not measured. P6 known training residuals remain unaccepted; no heldout sampled.
 ## DECISIONS (append-only)
 - Keep the one-agent constraint, automatic battles, strict A/B ownership, and isolated worktree.
 ## MEASUREMENTS
@@ -146,3 +146,23 @@ P4 type/lint/build/1087rules(+2expectedfail/11skip)/1735web/421E2E PASS. P5 shad
 - Recovered original P6 staged pilot3, no duplicate job or heldout sample. No production P6 integration.
 
 - Paused only stagedP6 coordinator75960 (SIGSTOP); its current child finishes/checkpoints normally. Resume with SIGCONT75960 after P5 browser gets a window. No B process touched.
+
+## P5 current continuation / P6 training diagnostics
+- Recovered actual checkout and original P5 coordinator79394; did not duplicate. P5 9accounts×30days completed PASS at18:52UTC, next original OFF and1440/1024 windows. Existing fivegates remain PASS;1280 retry2 artifact206be306/26,215,386bytes, mincontrast7.33.
+- P6 staged clone parity210cells×50seeds exact;600ON/OFF replay parity exact. No production P6 source adopted.
+- New staged AI training recognizes Glaze/Riposte/Tangle/Drowsy/utility suppression in one-action evaluation, OFF untouched. Pilot tuning1 running session58277, /tmp/cardrpg-a4-p6/tuning1*. Training aggregate Inkcap improved.204→.543; residual cats still miss.
+- Expanded pre-heldout single-piece diagnostics to coherent epic kits;384cells×50seeds expose Mossbrew4 fourth-slot gain94pp despite small display share. This invalidates any inference from all-loss bare pairs. Staged tuning2 caps set Cozy to firstSteep/encounter; pilot session43962. No heldout seeds sampled.
+- Reviewed staged balance/report tools /tmp/cardrpg-a4-p6/a4-p6-{balance,report}-reviewed.mjs include3625cells/sample, coherent-kit supplement,+12share and train-fitted score diagnostics. Need integrate only after P5 closes, verify pilot results, then freeze for acceptance.
+- P7 guide generator staged /tmp/cardrpg-a4-p7/build-guide.py (syntax checked only). No P7 artifact generated, no204pack run. Rules/oneagent/native/headless/Bownership unchanged.
+
+## P5 continued after user handoff / P6 diagnostic review
+- Recovered running79394 in /Users/bao/taskbar-hero-cardrpg-a4 despite environment cwd pointing at older Documents checkout. No duplicate P5 jobs; no other worktree touched.
+- Personally reviewed1280 Look cafe service and journal captures: readable, sampledcontrast>=7.33. Existing5gates1104rules/1735web/421E2E reused. OFF originalslice1 checkpoints at110sCPU;1440/1024 follow automatically.
+- Staged tuning1 complete3241cells×50seeds; Inkcap improved, severalcats andsets still outside bands. Tuning2 coherent-kit384cells×50 reveals worst88pp gain, despite lowdisplay share. This is a residual, not acceptance.
+- Extra bounded-defense diagnostic at /tmp/cardrpg-a4-p6/bounded-preview caps repeated defend/detonate procs. All384outcome digests are identical to tuning2; reject the extra changes as unsupported by measured benefit. Preserve diagnostic code/logs. No production change, no heldout contamination.
+- Four staged safety tests pass after fixing fixture cooldown reset; shadowtypecheck passes after adding missing client symlink. They are staged evidence only. Integrate only tests relevant to selected candidate, then run full source gates.
+
+## P5 verification closure
+- Original79394 completed1280/progression/OFF/1440/1024. Source hashes verified; no repeat of passed gates. Personally reviewed1440cafe/1024journal.
+- Acceptance artifact206be306a39b7d3623c5f307167a64f91e0353d2f1d2b685111f21ae1b4ed3d8 /26,215,386bytes;36captures mincontrast7.326961;8250OFFroutes exact. Failed first/retry1 browser logs retained.
+- P6 selected candidate is tuning2; bounded-defense rejected with384identical outcome digests. Train-only pilots, no heldout contamination. Full204 remains unrun.
