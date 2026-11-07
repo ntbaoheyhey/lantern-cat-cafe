@@ -730,3 +730,9 @@ User explicitly resumed Lane B from HANDOFF. Working on clean L1 branch b9c521e3
 Exact eadac6b2 /20,287,129 bytes and all1,263 source inputs rehashed unchanged; no old runners active, no duplicate cold/cast/A-B runs.
 Type/lint/unit/build PASS; E2E resume had23 failures with network/font disconnects and is being retried with original logs retained. Audit/publication follows resolution.
 A86005b84 and parked portrait adapter49096d53 read; no A worktree changes. L2 source remains unintegrated until L1 publication.
+
+## 2026-11-07T07:14:33.528718+00:00 LOOK-L2 CLAIM
+L1 checkpoint eb568fda is immutable locally; large evidence push in progress. Ledger report/STATE ef603305 published. Runtime b9c521e3/eadac6b2 unchanged; five gates421E2E and audit complete.
+Correction: default startup3,522,504bytes (+4 dormant Vite preload metadata),686modules/0Three/model; strict byte parity MISS recorded, default dependency list verified equal.
+L2 local branch ai/codex-cardrpg-look-l2-2026-11-07 stacks on eb568fda. Reaffirm owned scene.ts/look-stage.ts/chapter-stage.ts/stage assets and tools claim; no shared/meta files.
+Original round3 actually viewed;2048stage packed5,958,428→995,984bytes plus748,354byte irradiance. Runtime integration and three-camera/three-chapter reviews now begin. L1 draft/portrait notification follows upload completion.
