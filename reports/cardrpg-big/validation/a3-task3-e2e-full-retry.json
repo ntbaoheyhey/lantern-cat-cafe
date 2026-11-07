@@ -1,0 +1,19 @@
+{
+  "name": "e2e",
+  "args": [
+    "--filter",
+    "@taskbar-hero/web",
+    "test:e2e",
+    "--workers=4"
+  ],
+  "exit": 0,
+  "started": "2026-11-07T13:35:29.871Z",
+  "ended": "2026-11-07T13:37:38.622Z",
+  "log": "reports/cardrpg-big/validation/a3-task3-e2e-full-retry.log",
+  "sha256": "8b20aa71a1247c1b7755630e3eb70e2ad794ee11926136cedbb4b8a106314d66",
+  "counts": [
+    "  421 passed (2.1m)"
+  ],
+  "previous": "reports/cardrpg-big/validation/a3-task3-e2e.log",
+  "reason": "Original V2 idle clock test timed out; unchanged targeted retry passed, followed by this complete suite."
+}
