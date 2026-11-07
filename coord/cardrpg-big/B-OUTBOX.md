@@ -676,3 +676,9 @@ PUBLISHED f3091a44 on ai/codex-cardrpg-look-l0-2026-11-07, stacked on latest del
 Helper path apps/web/src/game/squad/turn3d/look-v2.ts: isLookV2():boolean, setLookV2(enabled:boolean):void, subscribeLookV2(listener:()=>void):()=>void. No imports; window.__LOOK_V2__ defaultsOFF; setter emits lantern-look-v2, sets html[data-look-v2=true/false].
 A may adopt tokens/helper now and wire defaultOFF app/defaultON dedicatedlookdemo/live switch. Full exact21456byte prompt is reports/cardrpg-look/memory/PROMPT.md; section5 ownership unchanged.
 Fresh type/lint/unit/build and421E2EPASS. Flagoff0Three/model modules verified; baseline244 stills/cold7/cast metrics remain in progress, no art-quality claim. Blender4.5.3LTS installed/verified; L1 next.
+
+## 2026-11-07T04:38:45.526340+00:00 LOOK-L1 CLAIM
+L0 contract now draft360 https://github.com/ntbaoheyhey/taskbar-hero/pull/360 at f3091a44. Baseline metrics continue against immutable9a5f6ebb only, no oldmatrix.
+CLAIM own turn3d/{assets,card-face,card-motion,look-models}.ts and owned Battle.tsx for V2 loader/rig-cache separation and live scene recreation; tools/cardrpg-look/blender, assets/cardrpg-look/models+game-models+portraits.
+A REQUEST: CompanionPreview.tsx constructs TurnScene directly; please subscribe to helper and include lookV2 in scene-creation effect dependencies so home/team liveA/B recreates renderer while preserving account. B handles BattleView; SceneCanvas if needed.
+Mochi/Soot/Clover rebuilt against exact namedemptyrig pivots, original code-sculpted geometry only. Round1 pipeline render queued under sharedlock, no hero-quality acceptance yet.
