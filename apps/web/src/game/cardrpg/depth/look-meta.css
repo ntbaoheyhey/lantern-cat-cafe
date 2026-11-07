@@ -169,3 +169,11 @@
 @media (prefers-reduced-motion: reduce) {
   .dp-app[data-look-v2="true"] .dp-cafe .dp-cat .cr-portrait::before { animation: none; }
 }
+
+/* Review controls share the opt-in chrome; selected text and fill change together. */
+.dp-app[data-look-v2="true"] .dp-cafe :is(.b2-studio, .dp-lab-tabs) button[aria-pressed="true"],
+.dp-app[data-look-v2="true"] .dp-cafe :is(.b2-studio, .dp-lab-tabs) button[aria-pressed="true"]:hover:not(:disabled) {
+  color: var(--look-night);
+  background: var(--look-honey);
+  border-color: var(--look-cream);
+}

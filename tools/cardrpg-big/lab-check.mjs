@@ -8,7 +8,22 @@ const artifact = resolve(process.env.BIG_ARTIFACT || 'docs/cardrpg3/index.html')
 const output = process.env.BIG_LAB_OUT || 'reports/cardrpg-big/demo/screens';
 const artifactBytes = await readFile(artifact);
 const sha256 = createHash('sha256').update(artifactBytes).digest('hex');
-assert(artifactBytes.length <= 24_000_000, 'Offline HTML exceeds the 24 MB gate');
+// LOOK brief permits up to 32 MB only with artifact-specific before/after evidence.
+const sizeExceptionPath = process.env.BIG_LAB_SIZE_EXCEPTION;
+let sizeException = null;
+if (sizeExceptionPath) {
+  sizeException = JSON.parse(await readFile(sizeExceptionPath, 'utf8'));
+  assert.equal(sizeException.sha256, sha256, 'Size exception belongs to another HTML');
+  assert.equal(sizeException.bytes, artifactBytes.length);
+  assert(sizeException.limitBytes > 24_000_000 && sizeException.limitBytes <= 32_000_000);
+  assert(sizeException.reason && sizeException.promptReference);
+  assert(sizeException.beforeAfter.length >= 2);
+  for (const evidence of sizeException.beforeAfter) {
+    const bytes = await readFile(evidence.path);
+    assert.equal(createHash('sha256').update(bytes).digest('hex'), evidence.sha256);
+  }
+}
+assert(artifactBytes.length <= (sizeException?.limitBytes ?? 24_000_000), 'Offline HTML exceeds its evidenced size gate');
 const rows = [];
 await mkdir(output, { recursive: true });
 const browser = await chromium.launch({ channel: 'chromium', args: ['--use-angle=metal'] });
@@ -170,6 +185,7 @@ try {
     assert.deepEqual(requests, []);
     rows.push({ width, height, captures, preview, opening, closing, errors, requests, accountRestored: true, controlsHiddenDuringPlayback: true });
     await writeFile(`${output}/checks.json`, JSON.stringify({ artifact, sha256, bytes: artifactBytes.length,
+      sizeGate: { defaultBytes: 24_000_000, exceptionPath: sizeExceptionPath ?? null, exception: sizeException },
       method: 'Fresh offline pages and real lab/gallery/checklist/performance clicks. Screenshots verify layout. Overlay counts include screenshot overhead and are diagnostic only. Controlled performance uses the separate raw-frame harness.', rows }, null, 2));
     console.log(JSON.stringify({ width, captures: captures.length, errors: errors.length, requests: requests.length }));
     await context.close();
