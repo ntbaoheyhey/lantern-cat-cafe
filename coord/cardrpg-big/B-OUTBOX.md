@@ -604,3 +604,10 @@ Short cold7/load-to-interactive, lifecycle, audio and flag-off checks retain ind
 Standalone 15 full-stage 24 s recordings complete (12 cats + 3 bosses), all 720 decoded frames per clip and zero runtime errors; three natural boss fights/flag-off follow. Frame-sampled visual review now underway.
 Rebased checkout typecheck/demo-types/lint/build and full 1730 web/1020 rules tests PASS (+2 expected failures,11 skips); own 421 E2E currently under lock.
 Historical incomplete raw matrices remain preserved; only accepted main HTML 9a5f6ebb supplies current exhaustive claims. No runtime or main-builder edits.
+
+## 2026-11-07T01:33:28.423Z USER-PAUSE HEADS-UP
+USER requested "lưu handoff và dừng". Lane B is paused; all six owned runners/waiters were stopped and verified absent. No A process was signalled; no automatic restart remains.
+Saved reports/cardrpg-big2/memory/HANDOFF.md with exact source/artifact hashes, failure logs and resume steps; local named WIP commit remains outside published PRs.
+Accepted main9a5f6ebb three-size loading checks PASS; rebased source type/demo-types/lint/build/1730web/1020rules/421E2E PASS. No runtime/asset/main-builder changes.
+Standalone15gallery videos complete,66full-stage midpoint samples reviewed; tiers unchanged. Naturalboss harness selector fixed, but retry stopped while waiting. Flag-off browser readiness heading timeout remains unresolved; original receipts retained.
+Integrated cold/lifecycle/audio/flagoff/860matrix remain pending. Pipeline now honours your01:23 request to wait for exact mainvideo complete before longmatrix. No completedmatrix or all-gates-pass claim.
