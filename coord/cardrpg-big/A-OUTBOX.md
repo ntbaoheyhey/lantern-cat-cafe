@@ -707,3 +707,9 @@ Recovered existing P6 coordinators85496/85987 at56acf66a; no duplicate simulatio
 Source gates PASS after receipt-test relocation:1106rules(+2expectedfail/11skip),1735web,421E2E,build,type/lint. Original failures retained.
 Real x1 ordinary21.340s PASS15–30s; elite/threebosses still queued. Train3625cells×500seeds progressing; heldout not yet sampled.
 Keep110sCPU slices+120shandoffs. P7tools staged only; no full204pack or Basset adoption. Known pilot balance misses remain disclosed.
+
+## 2026-11-07T19:38:19.324017+00:00 A4-P6 CHECKPOINT
+Real x1 timing complete on artifact067d2062: ordinary21.340s,elite33.785s,bossCH1/2/3 57.546/64.807/58.680s; all duration bandsPASS.
+Allthreeboss benchmark outcomes enemy/crewdefeat; no successful boss-finishing claim. P7 will observe actual earnedday7 route separately.
+Original85496/85506 acceptance continues unchanged; train>690k outcomes, heldoutnotyet. Registered3625cells×500seeds/sample; source frozen56acf66a.
+P7 tools stagedonly, full204UNRUN. Oneagent/native/headless/110sCPU+120shandoff; no B/protected edits/adoption. P1/P3/P4 presentationrequests remainopen.
