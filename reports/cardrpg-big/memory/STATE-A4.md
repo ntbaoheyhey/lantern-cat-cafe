@@ -1,12 +1,12 @@
 # A4 living state
 ## NOW
-P6 integrated on codex/cardrpg-a4-p6-2026-11-08 fromdee6d42a. P5 draft373,ledger e6d88a8a,sync1c9e7675. No B adoption.
+P6 immutable acceptance running on codex/cardrpg-a4-p6-2026-11-08 at56acf66a. Use /Users/bao/taskbar-hero-cardrpg-a4; environment Documents checkout is stale.
 ## NEXT
-Run existing P6 registered acceptance and five gates on immutable source, then real x1 captures, numeric report/ITEM-TIERS/BALANCE/draft. P7 staged tools remain /tmp/cardrpg-a4-p7.
+Reuse coordinator85496/window85506 and x1 coordinator85987. Train/heldout→45day economy→gacha→editions→OFF. Generate P6 numeric report, draft, ledger. P7 tools staged /tmp/cardrpg-a4-p7 only.
 ## DONE
-P1–P5 drafts367/369/370/372/373. P5 36capturesmincontrast7.327;9accounts×30days;OFF8250exact47477251;1104rules/1735web/421E2E allPASS.
+P1–P5 drafts367/369/370/372/373. P6 source gates now pass: type/lint retry,1106rules/1735web/421E2E/build. Original failed type/lint logs retained; relocated numeric tests separate.
 ## GATES
-P6 focused2testsPASS. Full numeric/source gates pending. Registered3625cells×500seeds/sample; no heldout sampled yet. Pilot88ppoutlier and cat/set misses retained. Startup bytes MISS; CPU unmeasured.
+3625cells×500seeds/sample registered. Train in progress; heldout not started. Pilot88ppoutlier/cat/set misses remain provisional. x1 timing pending; startup byte MISS. Full204pack unrun.
 ## DECISIONS (append-only)
 - Keep the one-agent constraint, automatic battles, strict A/B ownership, and isolated worktree.
 ## MEASUREMENTS
@@ -172,3 +172,7 @@ P6 focused2testsPASS. Full numeric/source gates pending. Registered3625cells×50
 - Protocol/spec/decisions updated before heldout. Immutable acceptance source now starts; no runtime edits while it runs. B/native/headless/oneagent constraints unchanged.
 
 - P6 type/lint first run exposed Node-only receipt-test imports in the browser-typed rules package. Moved the same numeric assertions to tools/cardrpg-big/a4-p6-acceptance.test.mjs (native node:test), with no dependency or runtime-rule change. Original failures preserved; type/lint retry queued, original full unit/build/E2E reused.
+
+## P6 resumed source-gate audit
+- Recovered original85496 balance coordinator,85506 train window and85987 timing coordinator, no duplicates. Existing scope rules/ownership re-read. Type/lint retries completed; rules-relocation receipt1106passed/2expectedfail/11skips; original1735web/421E2E/build reused.
+- P7 staged scripts reviewed only; no runtime/heldout changes and no P7 phase adoption. Current-main snapshot already exists at /tmp/cardrpg-a4-current-main for later startup comparison.
