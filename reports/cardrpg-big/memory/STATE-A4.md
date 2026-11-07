@@ -1,12 +1,12 @@
 # A4 living state
 ## NOW
-P4 active on codex/cardrpg-a4-p4-2026-11-08 from80f73335; P3 published draft370. P2 draft369 stays published. No B adoption.
+P4 published draft #372 at4bb860f0, stacked P3 #370. P1 #367/P2 #369/P3 #370 remain open. No B checkpoint adoption.
 ## NEXT
-P4 CLAIM8384a5a8 published. Apply reviewed /tmp/cardrpg-a4-p4/apply.py and staged tools, then focused tests, five gates, sims, headless screenshots and draft. P4–P7 remain. Existing timing coordinator47125 has all five results; no duplicate runs.
+Publish P4 and mirror ledger, then claim/integrate P5 from /tmp/cardrpg-a4-p5. P6 full balance/economy and P7 demo/playtest/report follow. Do not repeat G0/R/D/P1–P4 checks.
 ## DONE
-P3 boss samples all45–90s; elite33.579s PASS; ordinary14.487s MISS. Train1800 replay/lifecycle PASS, OFF8250 exact47477251. Newsave/full balance still NOT VERIFIED.
+P4 30,000 accounts/1.8M paid draws max conditional CDF deviation0.640337pp PASS;500 supply races/6000 edition combats PASS with0pp gain. OFF8250 routes exact47477251.30captures/3sizes/2themes PASS.
 ## GATES
-P3 type/lint/build PASS, post-tuning1067rules(+2expectedfail/11skip)/1735web/421E2E PASS.25captures/3sizes zeroerrors/overflow. Startup bytes MISS+1908vsP2, coldCPU UNMEASURED. P3 report/acceptance contain exact data.
+P4 type/lint/build PASS;1087rules(+2expectedfail/11skip)/1735web/421E2E PASS. P3 ordinary14.487s MISS; bosses/elite PASS. P4 startup bytes MISS; coldCPU unmeasured. P5 shadow17tests PASS is not integrated phase acceptance.
 ## DECISIONS (append-only)
 - Keep the one-agent constraint, automatic battles, strict A/B ownership, and isolated worktree.
 ## MEASUREMENTS
@@ -118,3 +118,17 @@ P3 type/lint/build PASS, post-tuning1067rules(+2expectedfail/11skip)/1735web/421
 ## P3 restored after compaction
 - Recovered active jobs rather than duplicating. P3 first ordinary44actions/67.553s; rule correction13focused and1800trainPASS. Source stable for remaining timing/gates.
 - P4 files staged OUTSIDE checkout only; no claim/integration before P3 closes. No agents/Docker/CUA/model requests.
+
+## P3 published / P4 integration
+- P3 draft370 at80f73335, ledger ec2579d2, sync8384a5a8. Bosses57.893/74.574/81.808s PASS; ordinary14.487s MISS. No remaining P3 CPU jobs.
+- Applied P4 selectors/complete basket/local ledger/THC11 and reviewed free-welcome zero-mark + disabled-mode guards. Legacy public design adapter refuses v4 bypass without editing bridge/Fuji code.
+- Initial typecheck exposed only a test helper union annotation; corrected to reserve-specific type. Full typecheck and20focused tests PASS. Full gates/sims/browser pending; no acceptance claim yet.
+
+## P4 continuation after user handoff
+- Reused original tests60210/follow60903; all original5gatesPASS1087rules/1735web/421E2E. Original1280 UI failed exact Chosen reward label; log/captures preserved.
+- Explicit aria labels and readable disabled buttons fixed; own loader now exposes actual RNG module required by both pending sims. Final gates and retry1 coordinator are the only P4 jobs; no duplicated sims.
+- P5 meta module, 16unit cases, CafeBoard/Journal UI, integration script, headless browser and30day bot staged ONLY in /tmp/cardrpg-a4-p5. Reviewed stack-cap test needs99 (not20); integrate only after P4 closes. Source must stay immutable through P4 receipts. No agents/Docker/CUA/B edits.
+
+## P4 verification closure
+- Original coordinator reused through all7steps; no duplicate simulations.1280/1440/1024 completed30captures, minimum contrast8.599:1; local screenshots reviewed.
+- P4 report and acceptance source-hash audit PASS; source fixture earned-reveal-fixture.json uses public welcome+paid draw only. Original failed selector-label receipt retained. No B/protected edits.
