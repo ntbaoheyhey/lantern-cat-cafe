@@ -1,0 +1,346 @@
+[
+  {
+    "taskMs": 84.111,
+    "ts": 23328240136,
+    "samples": [
+      {
+        "sampleMs": 5.039,
+        "frame": {
+          "codeType": "JS",
+          "columnNumber": 70521,
+          "functionName": "iC",
+          "lineNumber": 3910,
+          "scriptId": 19,
+          "url": "blob:null/a1218e5c-9bc5-49dd-988a-f8fb1752675d"
+        },
+        "sourceSnippet": ":`#60516e`,trim:`#c7a782`,leaf:`#a392b6`,light:`#e6d2f5`}];function iC(e){e.userData.candle={flame:e.getObjectByName(`cafe-candle-flame`),halo:e.getObjectByName(`cafe-candle-halo`)};for(let[t,n]of rC.entries()){let r=new du;r.userData.chapter=t+1,r.name=`chapter-${t+1}-"
+      },
+      {
+        "sampleMs": 4.781,
+        "frame": {
+          "codeType": "JS",
+          "columnNumber": 414824,
+          "functionName": "clone",
+          "lineNumber": 8,
+          "scriptId": 19,
+          "url": "blob:null/a1218e5c-9bc5-49dd-988a-f8fb1752675d"
+        },
+        "sourceSnippet": "dingSphere;return o!==null&&(e.data.boundingSphere=o.toJSON()),e}clone(){return new this.constructor().copy(this)}copy(e){this.index=null,this.attributes={},this.morphAttributes={},this.groups=[],this.boundingBox=null,this.boundingSphere=null;let t={};this.name=e.name;l"
+      },
+      {
+        "sampleMs": 4.7,
+        "frame": {
+          "codeType": "other",
+          "functionName": "(garbage collector)",
+          "scriptId": 0
+        }
+      },
+      {
+        "sampleMs": 3.798,
+        "frame": {
+          "codeType": "JS",
+          "columnNumber": 68460,
+          "functionName": "e",
+          "lineNumber": 47,
+          "scriptId": 19,
+          "url": "blob:null/a1218e5c-9bc5-49dd-988a-f8fb1752675d"
+        },
+        "sourceSnippet": "gments,t.thetaStart,t.thetaLength)}},cp=class e extends Ml{constructor(e=1,t=32,n=16,r=0,i=Math.PI*2,a=0,o=Math.PI){super(),this.type=`SphereGeometry`,this.parameters={radius:e,widthSegments:t,heightSegments:n,phiStart:r,phiLength:i,thetaStart:a,thetaLength:o},t=Math.ma"
+      },
+      {
+        "sampleMs": 3.502,
+        "frame": {
+          "codeType": "JS",
+          "columnNumber": 34764,
+          "functionName": "makeStage",
+          "lineNumber": 3910,
+          "scriptId": 19,
+          "url": "blob:null/a1218e5c-9bc5-49dd-988a-f8fb1752675d"
+        },
+        "sourceSnippet": "fillRect(0,0,64,64);let r=new Pd(e);return r.colorSpace=Lo,r}makeStage(){let e=new du;this.stageTextures.length||this.stageTextures.push(Av(`wood`),Av(`cloth`),Av(`window`));let[t,n,r]=this.stageTextures,i=e=>new dp({color:e,roughness:e===`#f0ddbe`?.22:.84,metalness:0})"
+      },
+      {
+        "sampleMs": 2.774,
+        "frame": {
+          "codeType": "JS",
+          "columnNumber": 71392,
+          "functionName": "e",
+          "lineNumber": 3839,
+          "scriptId": 19,
+          "url": "blob:null/a1218e5c-9bc5-49dd-988a-f8fb1752675d"
+        },
+        "sourceSnippet": "tv[n])===1?u*l:s/(o+s)+l+l*(1-u)}var rv=class e extends Kl{constructor(e=1,t=1,n=1,r=2,i=.1){let a=r*2+1;if(i=Math.min(e/2,t/2,n/2,i),super(1,1,1,a,a,a),this.type=`RoundedBoxGeometry`,this.parameters={width:e,height:t,depth:n,segments:r,radius:i},a===1)return;let o=this"
+      },
+      {
+        "sampleMs": 1.786,
+        "frame": {
+          "codeType": "JS",
+          "columnNumber": 32399,
+          "functionName": "e",
+          "lineNumber": 47,
+          "scriptId": 19,
+          "url": "blob:null/a1218e5c-9bc5-49dd-988a-f8fb1752675d"
+        },
+        "sourceSnippet": "egments,t.thetaStart,t.thetaLength)}},Y=class e extends Ml{constructor(e=1,t=1,n=1,r=32,i=1,a=!1,o=0,s=Math.PI*2){super(),this.type=`CylinderGeometry`,this.parameters={radiusTop:e,radiusBottom:t,height:n,radialSegments:r,heightSegments:i,openEnded:a,thetaStart:o,thetaLe"
+      },
+      {
+        "sampleMs": 1.66,
+        "frame": {
+          "codeType": "JS",
+          "columnNumber": 405525,
+          "functionName": "wl",
+          "lineNumber": 8,
+          "scriptId": 19,
+          "url": "blob:null/a1218e5c-9bc5-49dd-988a-f8fb1752675d"
+        },
+        "sourceSnippet": "e,t,n){super(new Uint32Array(e),t,n)}},wl=class extends xl{constructor(e,t,n){super(new Float32Array(e),t,n)}},Tl=0,El=new Sc,Dl=new Yc,Ol=new K,kl=new Ys,Al=new Ys,jl=new K,Ml=class e extends Go{constructor(){super(),this.isBufferGeometry=!0,Object.defineProperty(this,"
+      }
+    ]
+  },
+  {
+    "taskMs": 78.773,
+    "ts": 23405028236,
+    "samples": [
+      {
+        "sampleMs": 52.737,
+        "frame": {
+          "codeType": "other",
+          "functionName": "(program)",
+          "scriptId": 0
+        }
+      },
+      {
+        "sampleMs": 7.996,
+        "frame": {
+          "codeType": "JS",
+          "columnNumber": 23,
+          "functionName": "innerSerialize",
+          "lineNumber": 213,
+          "scriptId": 10
+        }
+      },
+      {
+        "sampleMs": 6.432,
+        "frame": {
+          "codeType": "JS",
+          "columnNumber": 21,
+          "functionName": "isTypedArray",
+          "lineNumber": 64,
+          "scriptId": 10
+        }
+      },
+      {
+        "sampleMs": 3.757,
+        "frame": {
+          "codeType": "JS",
+          "columnNumber": 18,
+          "functionName": "serialize",
+          "lineNumber": 202,
+          "scriptId": 10
+        }
+      },
+      {
+        "sampleMs": 1.985,
+        "frame": {
+          "codeType": "JS",
+          "columnNumber": 16,
+          "functionName": "isError",
+          "lineNumber": 56,
+          "scriptId": 10
+        }
+      },
+      {
+        "sampleMs": 1.061,
+        "frame": {
+          "codeType": "JS",
+          "columnNumber": 23,
+          "functionName": "innerSerialize",
+          "lineNumber": 213,
+          "scriptId": 10
+        }
+      },
+      {
+        "sampleMs": 0.971,
+        "frame": {
+          "codeType": "JS",
+          "columnNumber": 18,
+          "functionName": "serialize",
+          "lineNumber": 202,
+          "scriptId": 10
+        }
+      },
+      {
+        "sampleMs": 0.899,
+        "frame": {
+          "codeType": "JS",
+          "columnNumber": 23,
+          "functionName": "innerSerialize",
+          "lineNumber": 213,
+          "scriptId": 10
+        }
+      }
+    ]
+  },
+  {
+    "taskMs": 76.346,
+    "ts": 23328000473,
+    "samples": [
+      {
+        "sampleMs": 10.733,
+        "frame": {
+          "codeType": "JS",
+          "columnNumber": 19831,
+          "functionName": "he",
+          "lineNumber": 3839,
+          "scriptId": 19,
+          "url": "blob:null/a1218e5c-9bc5-49dd-988a-f8fb1752675d"
+        },
+        "sourceSnippet": "Scene:!0},pe=!1;function me(){return C===null?te:1}let N=n;function he(e,n){return t.getContext(e,n)}try{let e={alpha:!0,depth:r,stencil:i,antialias:o,premultipliedAlpha:s,preserveDrawingBuffer:c,powerPreference:l,failIfMajorPerformanceCaveat:u};if(`setAttribute`in t&&t"
+      },
+      {
+        "sampleMs": 6.081,
+        "frame": {
+          "codeType": "JS",
+          "columnNumber": 29224,
+          "functionName": "tx",
+          "lineNumber": 3910,
+          "scriptId": 19,
+          "url": "blob:null/a1218e5c-9bc5-49dd-988a-f8fb1752675d"
+        },
+        "sourceSnippet": "(this.dirty=!0,this.raf=requestAnimationFrame(this.loop))};constructor(e,t,n,r,i){this.host=e,this.view=t,this.onAnchors=n,this.onTarget=r,this.onFailure=i,this.renderer=new P_({antialias:!0,alpha:!1,powerPreference:`low-power`,preserveDrawingBuffer:!0}),this.renderer.s"
+      },
+      {
+        "sampleMs": 3.882,
+        "frame": {
+          "codeType": "JS",
+          "columnNumber": 69635,
+          "functionName": "e",
+          "lineNumber": 47,
+          "scriptId": 19,
+          "url": "blob:null/a1218e5c-9bc5-49dd-988a-f8fb1752675d"
+        },
+        "sourceSnippet": "Length,t.thetaStart,t.thetaLength)}},lp=class e extends Ml{constructor(e=1,t=.4,n=12,r=48,i=Math.PI*2){super(),this.type=`TorusGeometry`,this.parameters={radius:e,tube:t,radialSegments:n,tubularSegments:r,arc:i},n=Math.floor(n),r=Math.floor(r);let a=[],o=[],s=[],c=[],l="
+      },
+      {
+        "sampleMs": 3.73,
+        "frame": {
+          "codeType": "JS",
+          "columnNumber": 947,
+          "functionName": "n",
+          "lineNumber": 3736,
+          "scriptId": 19,
+          "url": "blob:null/a1218e5c-9bc5-49dd-988a-f8fb1752675d"
+        },
+        "sourceSnippet": "e(),n=null)}return{get:r,dispose:o}}function ph(e){let t={};function n(n){if(t[n]!==void 0)return t[n];let r;switch(n){case`WEBGL_depth_texture`:r=e.getExtension(`WEBGL_depth_texture`)||e.getExtension(`MOZ_WEBGL_depth_texture`)||e.getExtension(`WEBKIT_WEBGL_depth_textur"
+      },
+      {
+        "sampleMs": 3.339,
+        "frame": {
+          "codeType": "other",
+          "functionName": "(program)",
+          "scriptId": 0
+        }
+      },
+      {
+        "sampleMs": 3.164,
+        "frame": {
+          "codeType": "other",
+          "functionName": "(garbage collector)",
+          "scriptId": 0
+        }
+      },
+      {
+        "sampleMs": 3.125,
+        "frame": {
+          "codeType": "JS",
+          "columnNumber": 21646,
+          "functionName": "P_.setSize",
+          "lineNumber": 3839,
+          "scriptId": 19,
+          "url": "blob:null/a1218e5c-9bc5-49dd-988a-f8fb1752675d"
+        },
+        "sourceSnippet": "))},this.getSize=function(e){return e.set(j,ee)},this.setSize=function(e,n,r=!0){Fe.isPresenting?console.warn(`THREE.WebGLRenderer: Can't change size while VR device is presenting.`):(j=e,ee=n,t.width=Math.floor(e*te),t.height=Math.floor(n*te),r===!0&&(t.style.width=e+`"
+      },
+      {
+        "sampleMs": 2.409,
+        "frame": {
+          "codeType": "JS",
+          "columnNumber": 41104,
+          "functionName": "getPoint",
+          "lineNumber": 47,
+          "scriptId": 19,
+          "url": "blob:null/a1218e5c-9bc5-49dd-988a-f8fb1752675d"
+        },
+        "sourceSnippet": "`,this.points=e,this.closed=t,this.curveType=n,this.tension=r}getPoint(e,t=new K){let n=t,r=this.points,i=r.length,a=(i-+!this.closed)*e,o=Math.floor(a),s=a-o;this.closed?o+=o>0?0:(Math.floor(Math.abs(o)/i)+1)*i:s===0&&o===i-1&&(o=i-2,s=1);let c,l;this.closed||o>0?c=r[("
+      }
+    ]
+  },
+  {
+    "taskMs": 72.344,
+    "ts": 23327745183,
+    "samples": [
+      {
+        "sampleMs": 70.972,
+        "frame": {
+          "codeType": "other",
+          "functionName": "(program)",
+          "scriptId": 0
+        }
+      },
+      {
+        "sampleMs": 1.427,
+        "frame": {
+          "codeType": "other",
+          "functionName": "(idle)",
+          "scriptId": 0
+        }
+      },
+      {
+        "sampleMs": 0.019,
+        "frame": {
+          "codeType": "JS",
+          "functionName": "requestAnimationFrame",
+          "scriptId": 0
+        }
+      }
+    ]
+  },
+  {
+    "taskMs": 64.843,
+    "ts": 23328921147,
+    "samples": [
+      {
+        "sampleMs": 63.831,
+        "frame": {
+          "codeType": "JS",
+          "columnNumber": 11795,
+          "functionName": "Se",
+          "lineNumber": 3815,
+          "scriptId": 19,
+          "url": "blob:null/a1218e5c-9bc5-49dd-988a-f8fb1752675d"
+        },
+        "sourceSnippet": ".arguments)}catch(e){console.error(`THREE.WebGLState:`,e)}}function Se(){try{e.texSubImage2D(...arguments)}catch(e){console.error(`THREE.WebGLState:`,e)}}function Ce(){try{e.texSubImage3D(...arguments)}catch(e){console.error(`THREE.WebGLState:`,e)}}function we(){try{e.c"
+      },
+      {
+        "sampleMs": 0.786,
+        "frame": {
+          "codeType": "other",
+          "functionName": "(program)",
+          "scriptId": 0
+        }
+      },
+      {
+        "sampleMs": 0.19,
+        "frame": {
+          "codeType": "JS",
+          "columnNumber": 24546,
+          "functionName": "le",
+          "lineNumber": 3815,
+          "scriptId": 19,
+          "url": "blob:null/a1218e5c-9bc5-49dd-988a-f8fb1752675d"
+        },
+        "sourceSnippet": "UNPACK_SKIP_PIXELS,l),e.pixelStorei(e.UNPACK_SKIP_ROWS,u)}}function le(t,o,s){let c=e.TEXTURE_2D;(o.isDataArrayTexture||o.isCompressedArrayTexture)&&(c=e.TEXTURE_2D_ARRAY),o.isData3DTexture&&(c=e.TEXTURE_3D);let l=oe(t,o),u=o.source;n.bindTexture(c,t.__webglTexture,e.TE"
+      }
+    ]
+  }
+]
