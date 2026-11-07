@@ -1,8 +1,8 @@
 # A4 living state
 ## NOW
-P6 train/heldout, 90-account economy, gacha and local editions COMPLETE on codex/cardrpg-a4-p6-2026-11-08. ACTUAL WORKDIR /Users/bao/taskbar-hero-cardrpg-a4; Documents checkout is stale. Rules/artifact remain frozen.
+P6 all six registered samples COMPLETE, original closure finished. Branchcodex/cardrpg-a4-p6-2026-11-08; ACTUAL WORKDIR /Users/bao/taskbar-hero-cardrpg-a4. Final report P6-BALANCE.md:13PASS/5MISS rows; numeric assertions3PASS/4FAIL retained. No balance promotion claim.
 ## NEXT
-Reuse original coordinator85496 for final OFF8250 validation; closure92853 owns report/numeric assertions/summary/scope. Do not launch duplicate jobs. Then review/publish P6 draft/ledger/sync, claim P7, adopt the staged22files, commit source and run its resumable coordinator. P7 browser/full204 remains UNRUN.
+Publish P6 draft stackedP5#373, mirror STATE/report to ui-ledger and append sync CHECKPOINT. Then claim P7, branch from this P6 tip, adopt22staged tools from /tmp/cardrpg-a4-p7/adoption-manifest.json after verifying hashes, commit source, run a4-p7-series.mjs once and resume failed groups only. P7 full204/new120/journey/guide/cold remains UNRUN. Original85496 is only finishing its final idle handoff;92853 closure exited.
 ## DONE
 P1–P5 drafts367/369/370/372/373. P6 five source gates accepted in validation/a4-p6-accepted.json:1106rules/1735web/421E2E/type/lint/build; originals retained. All5x1timing receipts complete:ordinary21.340s/elite33.785s/boss57.546s,64.807s,58.680s. Boss outcomes all enemy; timings are to crew defeat, not victorious finish.
 ## GATES
@@ -252,3 +252,8 @@ P1–P5 drafts367/369/370/372/373. P6 five source gates accepted in validation/a
 - Gacha30,000accounts/1.8Mpaid draws: all3banner CDF gates PASS, max0.640337pp vs1pp; firstLegendary median44/p9050/max60. Actual selector redeemed at60 for every account. Controlled bankroll only; earned chosen rewards remain censored atday45.
 - Independent read-only gacha/audit.json verifies source, seed order, cohort/pity-bucket accounting and observed CDF. Featured miss→guarantee1457checks; equipment catalogue128templates.
 - Editions500race orders and1500paired seeds/6000encounters PASS;3variants have identical combat outcomes and zero gain. Original coordinator/closure retained, no source rerun.
+
+## P6 final measured closure
+- All6series steps exited0; OFF165cells/8250routes exactly match G0digest47477251. Original closure generated report, numeric tests, summary and scope. No repeated simulations.
+- 13PASS/5MISS table rows: tiers46/48/no reversals; bands33/33/min16.8pp; matchedpower0.99438–1.00569; timings/economy/gacha/editions/OFF/sourcegates PASS. Numeric misses: item93.4pp, sets67.03–79.60%, cats31.38–64.66%, crew47.73pp. Artifact/startup sizeMISS.
+- Numeric test exit1 is expected evidence of4measured misses, not a source-gate failure. Alloriginal logs preserved. Fullartifact067d2062f6836a6d0bb9f6753ece1b2f3ca923688f241866a7f42806c8f7b6a1/26,215,694bytes.
