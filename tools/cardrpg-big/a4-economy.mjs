@@ -17,9 +17,11 @@ const checkpointPath=output+'.partial.json';
 const checkpoint=JSON.parse(await readFile(checkpointPath,'utf8').catch(()=>'{}'));
 const accounts=checkpoint.accounts??[], styles = [{ id: 'casual', runs: 1, service: 1, policy: 'auto' }, { id: 'regular', runs: 2, service: 2, policy: 'smart' }, { id: 'heavy', runs: 6, service: 2, policy: 'smart' }];
 if (policy) for (const style of styles) style.policy = policy;
-const paths = execFileSync('git', ['ls-files', 'packages/game-rules/src/cardrpg'], { encoding: 'utf8' }).trim().split('\n');
+const paths = process.env.BIG_RULES_ROOT
+  ? Object.keys(JSON.parse(await readFile(`${process.env.BIG_RULES_ROOT}/source-snapshot.json`, 'utf8')).files).filter(path => path.startsWith('packages/game-rules/src/cardrpg/'))
+  : execFileSync('git', ['ls-files', 'packages/game-rules/src/cardrpg'], { encoding: 'utf8' }).trim().split('\n');
 const sourceHashes = Object.fromEntries(await Promise.all(paths.map(async path =>
-  [path, createHash('sha256').update(await readFile(path)).digest('hex')])));
+  [path, createHash('sha256').update(await readFile(process.env.BIG_RULES_ROOT ? `${process.env.BIG_RULES_ROOT}/${path}` : path)).digest('hex')])));
 if(checkpoint.sourceHashes&&JSON.stringify(checkpoint.sourceHashes)!==JSON.stringify(sourceHashes))throw Error('Rules changed during baseline shards');
 const started=Date.now(), checkpointExit=new Error('Checkpoint');
 const average = values => values.reduce((sum, value) => sum + value, 0) / values.length;

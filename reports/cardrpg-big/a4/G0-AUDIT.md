@@ -37,7 +37,9 @@ Screenshots: [Team](g0/browser/day7-team-cards.png), [Prepare](g0/browser/day7-p
 ## Fresh measurements
 
 <!-- A4_BEFORE_START -->
-Gear train/heldout, complete level curve and 45-day economy are running in checkpointed lock windows. Do not substitute historical values for fresh results.
+Fresh train and heldout: **26/48** adjacent tier steps improve by at least 2 pp; **22 ties**, **0 reversals**. Heldout worst single-piece gain **+34 pp** (emberfelt-weapon-legendary, level 6/chapter 2; raw display share **6.04%**). Chapter-3/level-1 sets **8–92%**; cat participation **49.15–83.76%**. These original fixtures are not normalized to matched power. Raw receipts: gear-before.json and sim/gear-a4-g0-{train,heldout}.json.
+
+**PARTIAL:** the complete level curve, fresh OFF behavior digest and 45-day economy remain queued against an immutable 179-file source snapshot. Shared CPU handoff to lane B delays closure; later source work cannot change these BEFORE rules. Do not substitute historical values for pending results.
 <!-- A4_BEFORE_END -->
 
 Real x1 timings already observed: day-7 chapter-one boss **177.346 s**, boss death **155.331 s**, cleanup **22.015 s**. Separate A3 comparison **171.794 s**, death **154.151 s**, cleanup **17.643 s**. Three new-save boss defeats took **159.598 / 143.874 / 137.218 s**. Ordinary first-session encounters **52.477–63.705 s** and day-7 ordinary **58.881 s**. This supersedes the old 9–16-second ordinary fixture claim for these actual paths. Every sampled ordinary encounter and boss exceeds the requested v4 target; shorter defeat feedback matters too. Elite and chapter-two/three x1 timing are not measured at G0.

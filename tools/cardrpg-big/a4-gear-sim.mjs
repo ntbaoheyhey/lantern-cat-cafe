@@ -32,8 +32,10 @@ const power = state => state.team.reduce((total, id) => {
   return total + Math.round(stats.hp / 5 + stats.attack * 2 + stats.defense * 1.5);
 }, 0);
 const hash = value => createHash('sha256').update(JSON.stringify(value)).digest('hex');
-const paths = execFileSync('git', ['ls-files', 'packages/game-rules/src/cardrpg'], { encoding: 'utf8' }).trim().split('\n');
-const sourceHashes = Object.fromEntries(await Promise.all(paths.map(async path => [path, createHash('sha256').update(await readFile(path)).digest('hex')])));
+const paths = process.env.BIG_RULES_ROOT
+  ? Object.keys(JSON.parse(await readFile(`${process.env.BIG_RULES_ROOT}/source-snapshot.json`, 'utf8')).files).filter(path => path.startsWith('packages/game-rules/src/cardrpg/'))
+  : execFileSync('git', ['ls-files', 'packages/game-rules/src/cardrpg'], { encoding: 'utf8' }).trim().split('\n');
+const sourceHashes = Object.fromEntries(await Promise.all(paths.map(async path => [path, createHash('sha256').update(await readFile(process.env.BIG_RULES_ROOT ? `${process.env.BIG_RULES_ROOT}/${path}` : path)).digest('hex')])));
 const tiers = ['none', ...legacy.RARITY_ORDER];
 const thematic = { guardian: 'hearthloom', witch: 'moonwick', alchemist: 'mossbrew' };
 const fixture = (seed, level, rarity, setId, team = ['mochi', 'soot', 'clover']) => {

@@ -1,8 +1,8 @@
 # A4 living state
 ## NOW
-G0 browser audit and five gates complete; original coordinator 76447 still runs checkpointed baseline sims: dedicated /Users/bao/taskbar-hero-cardrpg-a4 from daba7d7c; branch codex/cardrpg-a4-g0-2026-11-07.
+G0 browser audit, gear train/heldout and five gates complete; remaining numeric receipts use immutable G0 source snapshot: dedicated /Users/bao/taskbar-hero-cardrpg-a4 from daba7d7c; branch codex/cardrpg-a4-g0-2026-11-07.
 ## NEXT
-Finish fresh gear train/heldout, economy, OFF digest and browser paths; inspect screenshots; finish G0 audit and draft PR. Then R gap research.
+Publish G0 PARTIAL checkpoint (remaining OFF curve/economy queued with shared CPU). Commit R evidence, then D specification. Close baseline receipts from frozen source; no screen research.
 ## DONE
 Prompt preserved verbatim before A4 work. No gameplay edits yet. Disk 296 GiB available. Existing B L3 DONE read; no adoption planned during G0.
 ## GATES
@@ -49,3 +49,9 @@ G0 source gates PASS (typecheck, lint, build, 1735 web, 1020 rules, 421 E2E); ba
 ## Shared CPU handoff
 - B requested several render windows between G0 long shards. Sent SIGSTOP to own coordinator76447; current heldout child86503 remains running to checkpoint. DO NOT forget to SIGCONT76447 after several B windows. No B process changed.
 - Sync ANSWER appended/pushed; expected subsequent A baseline scripts should use shorter slices.
+
+## G0 immutable numeric continuation
+- Train and heldout complete: 26/48 positive tier steps, 22 ties, 0 reversals; heldout single item +34 pp; sets 8–92%; cats49.15–83.76%. Raw item share for worst outcome6.04%; maximum display share is a different metric.
+- Heldout child86503 ended and released lock. Stopped paused own coordinator76447 after its child finished; replaced with a4-g0-close.mjs, exact179-file snapshot /tmp/cardrpg-a4-g0-source. Snapshot manifest retained.
+- OFF curve/45day economy remain pending; short ~2minute slices and2minute between-slice handoffs give B several render windows. G0 checkpoint is explicitly PARTIAL until receipts close.
+- No screen research. Text search follow-ups found no additional official equipment coverage; external inventory/binding limits stay unverified.

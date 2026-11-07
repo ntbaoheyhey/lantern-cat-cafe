@@ -1,0 +1,24 @@
+{"lock":"acquired","lane":"A","pid":75825,"startedAt":"2026-11-07T14:51:11.321Z","task":"A4 G0 loader parity"}
+node:internal/modules/cjs/loader:1564
+  const err = new Error(message);
+              ^
+
+Error: Cannot find module 'esbuild'
+Require stack:
+- /Users/bao/taskbar-hero-cardrpg-a4/apps/web/package.json
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1564:15)
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1118:27)
+    at defaultResolve (node:internal/modules/cjs/loader:1199:20)
+    at nextStep (node:internal/modules/customization_hooks:189:26)
+    at customizationHookResolve (file:///Users/bao/taskbar-hero-cardrpg-a4/node_modules/.pnpm/vite@8.3.5_@types+node@22.20.5/node_modules/vite/dist/node/module-runner.js:755:9)
+    at nextStep (node:internal/modules/customization_hooks:189:26)
+    at resolveWithHooks (node:internal/modules/customization_hooks:417:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1212:25)
+    at require.resolve (node:internal/modules/helpers:175:31)
+    at loadRules (file:///Users/bao/taskbar-hero-cardrpg-a4/tools/cardrpg-big/a4-load.mjs:17:42) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [ '/Users/bao/taskbar-hero-cardrpg-a4/apps/web/package.json' ]
+}
+
+Node.js v24.22.2
+{"lock":"released","pid":75825,"task":"A4 G0 loader parity"}
