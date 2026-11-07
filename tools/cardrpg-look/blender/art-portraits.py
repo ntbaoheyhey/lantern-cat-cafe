@@ -102,7 +102,8 @@ for owner in args.owners.split(','):
     receipt = {
         'owner': owner, 'original': True, 'round': args.round,
         'status': 'scratch render; visual review and packing required',
-        'tier': 'look-slice-model' if source == authored else 'inherited-model-new-studio-portrait',
+        'tier': ('look-slice-model' if owner in ('mochi', 'soot', 'clover') else 'improved-roster-model')
+                if source == authored else 'inherited-model-new-studio-portrait',
         'source': str(source.relative_to(ROOT)), 'sourceSha256': sha(source),
         'scriptSha256': sha(Path(__file__)), 'renderer': bpy.app.version_string,
         'seed': 20261107, 'samples': 64, 'renderSize': [1024, 1280],

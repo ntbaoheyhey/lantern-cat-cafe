@@ -482,7 +482,7 @@ export class TurnScene {
     view.targetIds.slice(0,12).forEach((id,i)=>{const p=this.puppets.get(id),r=this.targetRings[i];if(p&&r){r.visible=true;r.position.set(p.base.x,.05,p.base.z);r.scale.setScalar(1.25);r.material.color.set(view.legalIds.includes(id)?TEAL:'#ec8996');}});
     this.camera.position.set(0,7.2,11.6);this.cameraTarget.set(0,.7,0);this.camera.zoom=!view.autoBattle&&view.camera==='close'?1.05:1;
     if(this.lookStageEnabled&&!view.model){this.camera.position.set(0,6.4,12);this.cameraTarget.set(0,1.1,0);}
-    const distance=this.camera.position.distanceTo(this.cameraTarget),frameHeight=view.model?(view.model.role==='yarn'?3.3:2.25):view.tableau?Math.max(4,7.5/this.camera.aspect):view.autoBattle?cardFrameHeight(this.camera.aspect,view.camera==='close'?'close':view.camera==='far'?'far':'wide'):stageHeight(this.camera.aspect);
+    const distance=this.camera.position.distanceTo(this.cameraTarget),frameHeight=view.model?(this.lookStageEnabled?(view.model.role==='yarn'?4.6:3.3):(view.model.role==='yarn'?3.3:2.25)):view.tableau?Math.max(4,7.5/this.camera.aspect):view.autoBattle?cardFrameHeight(this.camera.aspect,view.camera==='close'?'close':view.camera==='far'?'far':'wide'):stageHeight(this.camera.aspect);
     this.camera.fov=T.MathUtils.radToDeg(2*Math.atan(frameHeight/2/distance));
     if(view.model){this.camera.position.set(0,3.7,11.3);this.cameraTarget.y=view.model.role==='yarn'?1.35:.94;this.camera.zoom=1.02;}
     if(view.camera==='overhead')this.camera.position.set(0,13,6);
