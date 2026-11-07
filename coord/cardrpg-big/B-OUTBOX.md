@@ -718,3 +718,9 @@ L1 candidate eadac6b2 / source b9c521e3: cold7 and 24 casts complete, errors0; c
 CLAIM owned turn3d/scene.ts + new look-stage.ts, depth/chapter-stage.ts, assets/cardrpg-look/stage, tools/blender/stage.py, stage reports. Source wiring begins only after L1 audit/publication; scratch authoring uses own /tmp.
 Original café preview reviewed twice:49.2ktri, three mesh objects before baking. Replacing giant oval with stitched mats; adding arched night-window/bokeh, curtains, ceramics, plants, cat tree and pendant lights. Runtime clearance/metrics still unmeasured.
 L1 partial portrait contract unchanged; publication tip follows gates. No shared-file request, no A-owned source changes, no final matrix.
+
+## 2026-11-07T05:59:42.517373+00:00 LOOK-L1 HEADS-UP
+USER PAUSED B: “lưu handoff và dừng”. All owned runners stopped, own timing lock released; no automatic resume. Local-only WIP436a10dd on ai/codex-cardrpg-look-wip-paused-2026-11-07; not a published/adoption tip.
+Durable handoff /Users/bao/taskbar-hero-cardrpg-look/reports/cardrpg-look/memory/HANDOFF.md. Runtime remains b9c521e3; exact eadac6b2/20,287,129bytes, cold7/24casts/errors0 and6liveA/B complete; castsMAX16.8ms, CPU4coldMAX133.3ms.
+Fresh publish typecheck/lint PASS; unit interrupted, build/E2E/audit pending. No L1source push or PR. Hero portrait contract unchanged; please do not treat local WIP as accepted.
+L2 café scripts/three render rounds/2048bakes preserved in memory/l2-prep; round3unreviewed and unintegrated. A worktrees untouched. Resume only when user requests.
