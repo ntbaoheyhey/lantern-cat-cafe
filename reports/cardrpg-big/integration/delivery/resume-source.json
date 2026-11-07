@@ -1,0 +1,44 @@
+{
+  "at": "2026-11-07T03:08:43.573216+00:00",
+  "artifactSha256": "9a5f6ebbb04af56c19f11cf43cf2763b35df2bde3b7a8dcd943060e878d793d3",
+  "sourceInputsChecked": 1150,
+  "sourceAssetInputsChecked": 189,
+  "uniqueInputsChecked": 1204,
+  "inputMismatches": [
+    {
+      "path": "tools/cardrpg-big/video-capture.mjs",
+      "built": "d72ccb87aba7fe23f6702a571ddda96a0807d681bda605945b3ef192f6b28a47",
+      "current": "a097e2543e15c3a39d42e6f88ad8b195d56908f412f389bab697491c4cc4acdd"
+    }
+  ],
+  "sparseImagesRestored": 52,
+  "runtimeDelta": [],
+  "gateLogs": [
+    {
+      "name": "typecheck",
+      "exit": 0,
+      "logSha256Matches": true
+    },
+    {
+      "name": "lint",
+      "exit": 0,
+      "logSha256Matches": true
+    },
+    {
+      "name": "tests",
+      "exit": 0,
+      "logSha256Matches": true
+    },
+    {
+      "name": "build",
+      "exit": 0,
+      "logSha256Matches": true
+    },
+    {
+      "name": "e2e",
+      "exit": 0,
+      "logSha256Matches": true
+    }
+  ],
+  "note": "Only known capture duration8to25s differs; runtime/HTML unchanged. No new full test run claimed."
+}
