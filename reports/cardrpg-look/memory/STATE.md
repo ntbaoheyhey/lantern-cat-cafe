@@ -1,8 +1,8 @@
 # LOOK state
 ## NOW
-L4 audited on clean runtime b5e7c16c/acceptedA3 daba7d7c: fb56cd44/23,995,962bytes/1580inputs. All67effects and19sheets reviewed;0threshold/face/overdraw/errors; strict1162/2211pair regressions MISS. Fivegates1749web/421E2E pass; GPU6/cancel6/post36/cameras9/AB6 pass;370resources once. Cold7native50.1/CPU4 183.4ms MISS;24castsMAX16.8/100%≤20/errors0; startup+93byte parity MISS. Coordinator11183 completed; do not rerun. Published e6355178/draft368; L1/L2/L3 exact-lease refs reconciled and verified. Ledger report8b320327.
+L6 audited immutablee71db1d6/4696d62c/26392592bytes/1844inputs.12portraits/48icons/4plates delivered;all art/sixUI configs reviewed. Type/lint/unit1751web/build pass;E2E420+1focusedretry (not single421pass),attempts retained. Previewready4models/2toggles/0errors. Cold7MAX133.3;24castsMAX16.8;startup+93bytes. Audit lists misses;L6 publication/ledger/sync pending.
 ## NEXT
-L6 claimed sync5d724959: full12portraits/48icons/4rarity plates→L5→L7. First48icons+4plates+Mochi portrait rendered and personally inspected; remaining11portraits coordinator active, no assets/manifest integration. R1 needs real object volume and clearer rarity identity. A4P1 schema/fixture read at published de5d8a7b/draft367; presentation assessment separate, no A4 adoption yet. Fullmatrix/lifecycle20/CPU4BalancedLow unrun.
+Inventory/stage onlyL6art+receipts, publish draft stacked368 afterremotecheck, mirrorreport/STATE and notifyA. ThenL5ninecats+13opponents→L7. L4strict1162pairMISS remains;L6size>24MB justified≤32MB;CPU4cold/startupparity misses. Finalmatrix/lifecycle20/CPU4BalancedLow unrun. A4schema/fixtures read,optionalpresentationrequestopen;acceptedbaseA3daba7d7c.
 
 ## DONE
 Read exact user brief twice, old B HANDOFF, both outboxes; verified remote delivery tip and full worktree created.
@@ -78,3 +78,5 @@ L0 five source gates421E2E + flagoff PASS; baseline244/cold7/24casts complete. L
 - 2026-11-07T14:02:33.458295+00:00 L3 phase audit complete:1301inputs, allfreshfivegates/9camera/6AB/36faces/6cancels/7cold/24casts. Startup correction3,522,544/+44, nothistoricalL2+4. Nativecold33.4/CPU4 133.3; slow1440DPR2battle-ready7719ms retained. A13:44requestread; noacceptedtipbeyond4d525a8a.
 
 - 2026-11-07T16:43:17.557960+00:00 L4 phase audit passed1580source hashes and all receipt bindings; three misses remain explicit (1162pairs/startup+93/cold183.4). All19sheets/four-role self-review completed. Source unchanged during gates. Portable evidence selection retains all raw local originals.
+
+- 2026-11-07T17:57:55.740647+00:00 L6 audit completed; seeL6-CHECKPOINT andvalidation/l6/audit.json. NativeMac;noDocker/subagents/generativecalls. Source immutable; all original failures preserved.

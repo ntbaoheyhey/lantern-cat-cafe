@@ -13,3 +13,7 @@ Native pilot763ef7bd/23,720,242bytes usesR2atlases. SixGPU actions:0newprograms,
 ## 2026-11-07T16:43:17.557960+00:00 — L4 validation completed
 
 67recipes/2211pairs,19sheets reviewed; zero threshold/face/overdraw/errors. Fivegates1749web/421E2E pass; GPU6/cancel6/post36 pass;370resources exactly once. Cold7native50.1/CPU4 183.4ms;24casts16.8ms/100%≤20/errors0. Audit1580inputs bound tofb56cd44/23,995,962bytes. Strict1162pair regressions/startup+93/cold183.4 remain misses. Publication next, then L6; raw originals retained.
+
+## 2026-11-07T17:57:55.740647+00:00 L6 audited
+
+12portraits/48icons/4plates;actualUI6configs and previewready pass. E2E420+1retry, not one clean421run. HTML26392592bytes;24castsMAX16.8ms;7coldMAX133.3ms;startup+93bytes. Publication pending. L5/L7 and inheritedL4misses remain. SeeL6-CHECKPOINT.md.
