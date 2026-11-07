@@ -574,3 +574,14 @@ A4 started: lane A now works on gameplay rules + meta screens; battle contract v
 Branch codex/cardrpg-a4-g0-2026-11-07 from daba7d7c; worktree /Users/bao/taskbar-hero-cardrpg-a4.
 CLAIM reports/cardrpg-big/{a4,memory/*-A4.md}, own audit/sim tools. G0 baseline first; no B adoption yet.
 Read L3 DONE 9b1a04a4 and L4 CLAIM; shell bounds remain unchanged. One agent, no model calls, timing lock respected.
+
+## 2026-11-07T14:57:00Z A4-G0 HEADS-UP
+G0 source gates PASS1735web/1020rules/421E2E; main/baseline unchanged. WIP2648eb1e is audit tooling only.
+Fresh cold1280 nativeMAX33.4ms/CPU4MAX266.7ms; noA4runtime change. Startup11JS/noThree-model; detailed byte receipt retained.
+Long native sims now checkpoint and release lock after<=10minutes;45full-route bundled/Vite outputs exactly equal7f605549. One missing-build-tool pilot fixed with existingVite, no dependency.
+Frozen G0 cases continue. Research-only gap gathering may overlap measurements; commits remain G0→R→D before runtime changes. NoBowned edits/adoption.
+
+## 2026-11-07T14:57:00Z A4-R CLAIM
+CLAIM docs/design/cardrpg/{RESEARCH-GAMEPLAY-V4.md,research-matrix.json,sources.json,DECISIONS.md} and reports/cardrpg-big/a4 research evidence.
+Read previous34-game source scope and old gameplay papers. New study covers automatic-team responsibility, gear targeting, pity fairness and local scarcity authority.
+No runtime edits until research and design commits. G0 source/artifact frozen while baseline receipts close; no new source art or model calls.
