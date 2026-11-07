@@ -199,3 +199,6 @@
 @media (max-height: 650px) {
  .dp-app .dp-invitation-stage .dp-featured-card .cr-portrait { height: 224px; aspect-ratio: auto; }
 }
+
+/* Earned reward controls remain readable while a requirement is unmet. */
+.dp-app .dp-v4-selector button:disabled,.dp-app .dp-v4-editions button:disabled { opacity:1; color:#fff4d5; background:#283f43; }

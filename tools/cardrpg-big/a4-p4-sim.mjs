@@ -18,7 +18,7 @@ try{
    let s=R.setGameplayV4(R.createDepthAccount(seed),true);s.account.currencies.stamps=9000;
    let first=null,firstId=null,guaranteed=false;const results=[];
    for(let batch=0;batch<6;batch++){
-    if(batch===3)s=take(R.metaCommand(s,{type:'advanceDay'}));
+    if(batch===3)s=take(R.metaCommand(s,{type:'advanceLocalDay'}));
     const before=s;s=take(R.metaCommand(s,{type:'pull',bannerId:banner.id,seed:rng.deriveSeed(seed,batch+1700),count:10}));
     if(seed<=10)assert.deepEqual(R.metaCommand(before,{type:'pull',bannerId:banner.id,seed:rng.deriveSeed(seed,batch+1700),count:10}).state,s);
     for(const r of s.account.history.slice(-10)){
@@ -32,6 +32,7 @@ try{
     }
    }
    assert(first!==null&&first<=60);assert.equal(R.selectorMarksV4(s),60);assert.equal(s.account.currencies.stamps,0);
+   if(seed===1)await writeFile(`${out}/ceremony-${banner.id}.json`,JSON.stringify({method:'Controlled acceptance account, seed1, actual committed paid draw receipts; not earned progression.',events:s.v4.reveals},null,2));
    const pity=JSON.stringify(s.account.pity),choice=C.CARDS.find(c=>!s.account.cards.some(o=>o.cardId===c.id))??C.CARDS[0];
    s=take(R.chooseSelectorV4(s,'cat',choice.id));assert.equal(R.selectorMarksV4(s),0);assert.equal(JSON.stringify(s.account.pity),pity);
    if(seed<=25)assert.deepEqual(R.importSave(R.exportSave(s)),s);

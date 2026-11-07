@@ -14,6 +14,7 @@ const paths = {
   depth: 'packages/game-rules/src/cardrpg/depth/index.ts',
   bot: 'packages/game-rules/src/cardrpg/depth/run-bot.ts',
   onboarding: 'packages/game-rules/src/cardrpg/depth/onboarding.ts',
+  rng: 'packages/game-rules/src/rng.ts',
 };
 export async function loadRules() {
   const dir = await mkdtemp('/tmp/cardrpg-a4-rules-');

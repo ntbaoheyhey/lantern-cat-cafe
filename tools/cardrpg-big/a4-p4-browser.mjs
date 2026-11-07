@@ -6,7 +6,7 @@ import { resolve } from 'node:path';
 import { createHash } from 'node:crypto';
 import assert from 'node:assert/strict';
 const width=Number(process.argv[2]||1280),height=width===1440?900:width===1024?600:720;
-const out=`reports/cardrpg-big/a4/p4/browser-${width}`,artifact=resolve('docs/cardrpg3/index.html');
+const out=`${process.env.BIG_P4_BROWSER_OUT||"reports/cardrpg-big/a4/p4"}/browser-${width}`,artifact=resolve('docs/cardrpg3/index.html');
 await mkdir(out,{recursive:true});
 const {load,vite}=await loadRules(), R=await load('packages/game-rules/src/cardrpg/depth/index.ts');
 const browser=await chromium.launch({channel:'chromium',headless:true,args:['--use-angle=metal']});

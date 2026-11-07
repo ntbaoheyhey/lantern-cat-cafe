@@ -2,11 +2,16 @@
 import {loadRules} from './a4-load.mjs';
 import {mkdir,writeFile,readFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
+import {execFileSync} from 'node:child_process';
 import assert from 'node:assert/strict';
 const out='reports/cardrpg-big/a4/p4/editions';await mkdir(out,{recursive:true});
 const {load,vite}=await loadRules(),R=await load('packages/game-rules/src/cardrpg/depth/index.ts'),{Rng}=await load('packages/game-rules/src/rng.ts');
 const digest=v=>createHash('sha256').update(JSON.stringify(v)).digest('hex'),now=Date.UTC(2026,10,8),take=r=>{assert(r.ok,r.error);return r.state;};
 const races=[],pairs=[],cp=JSON.parse(await readFile(`${out}/partial.json`,'utf8').catch(()=>'{}')),start=Date.now(),pause=new Error('checkpoint');
+const files=execFileSync('git',['ls-files','-co','--exclude-standard','packages/game-rules/src/cardrpg'],{encoding:'utf8'}).trim().split('\n');
+files.push('packages/game-rules/src/rng.ts');
+const source=Object.fromEntries(await Promise.all([...new Set(files)].filter(p=>p.endsWith('.ts')&&!p.endsWith('.test.ts')).sort().map(async p=>[p,createHash('sha256').update(await readFile(p)).digest('hex')])));
+if(cp.source)assert.deepEqual(cp.source,source,'Source changed during edition acceptance');
 if(cp.pairs)pairs.push(...cp.pairs);if(cp.races)races.push(...cp.races);
 try{
  for(let seed=races.length+1;seed<=500;seed++){
@@ -34,7 +39,7 @@ try{
   for(const variant of [moon,both,s]){assert.deepEqual(R.battleCats(variant),catStats);assert.equal(digest(R.playBattle(R.createBattle({...setup,cats:R.battleCats(variant)}),'auto')),hash);}
   if(seed===1)assert.deepEqual(R.importSave(R.exportSave(s)),s);
   pairs.push({seed,chapter,outcome:baseline.result,hash,variants:3,gainPp:0});
-  if(Date.now()-start>110000){await writeFile(`${out}/partial.json`,JSON.stringify({races,pairs}));process.exitCode=75;throw pause;}
+  if(Date.now()-start>110000){await writeFile(`${out}/partial.json`,JSON.stringify({source,races,pairs}));process.exitCode=75;throw pause;}
  }
- await writeFile(`${out}/checks.json`,JSON.stringify({method:'500 fixed seeded race orders for last three production lifetime/season slots; 500 paired combat seeds per chapter across Moon, both editions, and fused badge. Controlled effort/level fixtures; no progression claim.',races,pairs,gate:'PASS',maxPairedGainPp:0,encounters:pairs.length*4},null,2));console.log(JSON.stringify({races:races.length,pairedSeeds:pairs.length,encounters:pairs.length*4,maxPairedGainPp:0}));
+ await writeFile(`${out}/checks.json`,JSON.stringify({source,method:'500 fixed seeded race orders for last three production lifetime/season slots; 500 paired combat seeds per chapter across Moon, both editions, and fused badge. Controlled effort/level fixtures; no progression claim.',races,pairs,gate:'PASS',maxPairedGainPp:0,encounters:pairs.length*4},null,2));console.log(JSON.stringify({races:races.length,pairedSeeds:pairs.length,encounters:pairs.length*4,maxPairedGainPp:0}));
 }catch(e){if(e!==pause)throw e;}finally{await vite.close();}
