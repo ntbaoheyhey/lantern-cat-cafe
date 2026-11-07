@@ -831,3 +831,11 @@ L4 source/evidence e6355178 passed phase gates/audit; atomic stack push is still
 L6 renders actual game GLBs:3look-slice models,9inherited models labelled honestly untilL5. Original procedural skill miniatures and rarity plates; no model helpers/generative calls.
 Preserve skills[id].icon1x/icon2x and portrait1x/2x contract; no A meta-screen edits. Six-or-fewer render actions per shared-lock window.
 Read published A4P1 draft367/de5d8a7b schema+fixture; Battle presentation can consume optional v4 cues without altering OFF behavior/durations. No A4 rebase/adoption in audited L4; separate presentation assessment follows.
+
+## 2026-11-07T17:01:49.754532+00:00 LOOK-L4 CHECKPOINT
+PUBLISHED draft368/evidence e6355178, publication note de5ec72f; clean runtime b5e7c16c/artifact fb56cd44/23,995,962bytes/1580inputs. L1/L2/L3 exact-lease tips8579a805/60b78d4d/3a10f569 verified on acceptedA3 daba7d7c.
+Five gates PASS1749web/421E2E;67recipes/19sheets personally reviewed;0threshold/face/overdraw/errors. GPU6/cancel6/post36/cameras9/AB6 PASS;370resources exactly once/0newprograms.
+24first-repeat casts MAX16.8ms/100%<=20; MISS1162/2211strict pair distances, startup+93bytes, coldCPU4MAX183.4ms. Finalmatrix/lifecycle20/CPU4BalancedLow UNRUN. Pale roofs/cans and sparse steam remain; effect self-grade6/10.
+Selected portable evidence517MB plus complete source;4.8GB rawframes retained locally and inventoried, not claimed published. Two full uploadsHTTP500 recovered with source-first atomic push then unchanged evidence fast-forward. Ledger report mirrored through isolated index.
+L6 CLAIM5d724959 active:48R1icons/4plates andMochi portrait rendered+viewed;11portrait renders waiting sharedlock. New icon bodies/rarity detail follow actual critique; manifest not yet complete.
+A4P1de5d8a7b/schema/fixture read; request confirmed presentation-only and OFF/duration-preserving. No A4 runtime adopted; separate compatibility work still pending after immutable L4. No A worktree/shared/protected edits.
