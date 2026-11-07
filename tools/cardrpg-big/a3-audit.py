@@ -1,15 +1,15 @@
 """REFERENCE: reports/cardrpg-big/memory/PROMPT-A3.md. Saved-receipt and source-byte audit; no browsers or timing runs."""
 from pathlib import Path
 import json,hashlib,subprocess
-base=Path('reports/cardrpg-big/a3');out=base/'task3-review';full=base/'task3-full'
+base=Path('reports/cardrpg-big/a3');out=base/'task3-fixed';full=base/'task3-pack'
 def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
 def read(p):return json.loads(Path(p).read_text())
 main=Path('docs/cardrpg3/index.html');hash=sha(main);build=read('docs/cardrpg3/build.json')
-assert hash=='34cc8bf94be87e2e444a8333d2c1309d6f8c838329fa580d5a4155d3a2794801';assert build['sha256']==hash and not build['runtimeDirty']
+assert hash==read(out/'functional.json')['sha256'];assert build['sha256']==hash and not build['runtimeDirty']
 for field in ['sourceHashes','sourceAssetHashes']:
  for p,h in build[field].items():assert sha(p)==h,p
 assert sha('docs/cardrpg3/baseline-v1.html')=='9a5f6ebbb04af56c19f11cf43cf2763b35df2bde3b7a8dcd943060e878d793d3'
-gates=read('reports/cardrpg-big/validation/a3-task3-accepted.json');assert len(gates)==5
+gates=read('reports/cardrpg-big/validation/a3-task3-fixed.json');assert len(gates)==5
 for g in gates:assert g['exit']==0 and sha(g['log'])==g['sha256'],g
 copy=read(base/'task1/l1-copy.json')
 for p in copy['files']:assert sha(p['path'])==p['sha256'],p['path']

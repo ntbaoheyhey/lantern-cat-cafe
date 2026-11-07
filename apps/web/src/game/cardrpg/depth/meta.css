@@ -180,6 +180,8 @@
 .dp-estimate-note summary { cursor: pointer; }
 .dp-result-banner > .dp-cat { width: 190px; }
 @media (max-height: 650px) {
+ .dp-page[data-screen=team] .cr-page-title { margin-bottom: 8px; }
+ .dp-page[data-screen=team] .dp-team-heading { margin-bottom: 8px; padding-block: 6px; }
  .dp-app .dp-formation-card .cr-portrait { height: 145px; }
  .dp-app .dp-formation-card .cr-card-caption { padding: 8px 10px; }
  .dp-formation-row header { margin-bottom: 6px; }

@@ -33,7 +33,8 @@ try {
     for(const r of range.getClientRects())if(r.width>2&&r.height>2&&r.x>=0&&r.y>=0&&r.right<=innerWidth&&r.bottom<=innerHeight&&document.elementsFromPoint(r.x+r.width/2,r.y+r.height/2).includes(e))texts.push({text,tag:e.tagName,className:e.className,colour:s.color,fontSize:s.fontSize,fontWeight:s.fontWeight,opacity,disabled:!!e.closest(':disabled'),bounds:{x:r.x,y:r.y,width:r.width,height:r.height}});
    }
    const sources=[...document.querySelectorAll('.cr-content img')].map(img=>{const id=['mochi','soot','clover'].find(id=>img.src===registry[`assets/cardrpg-look/portraits/${id}-1x.webp`]);return id?{id,pair:img.srcset===`${registry[`assets/cardrpg-look/portraits/${id}-1x.webp`]} 1x, ${registry[`assets/cardrpg-look/portraits/${id}-2x.webp`]} 2x`,fit:getComputedStyle(img).objectFit}:null;}).filter(Boolean);
-   return {texts,sources,overflow:document.documentElement.scrollWidth-innerWidth,rightOverflow:[...document.querySelectorAll('.cr-content button,.cr-content select')].filter(e=>e.getClientRects().length&&e.getBoundingClientRect().right>innerWidth+1).map(e=>e.textContent.slice(0,70))};
+   const teamCards=[...document.querySelectorAll('.dp-formation-card .dp-cat')].map(e=>{const r=e.getBoundingClientRect();return {top:r.top,bottom:r.bottom,visible:r.top>=0&&r.bottom<=innerHeight};});
+   return {texts,sources,teamCards,overflow:document.documentElement.scrollWidth-innerWidth,rightOverflow:[...document.querySelectorAll('.cr-content button,.cr-content select')].filter(e=>e.getClientRects().length&&e.getBoundingClientRect().right>innerWidth+1).map(e=>e.textContent.slice(0,70))};
   });
   const inside=r=>!!r&&r.x>=0&&r.y>=0&&r.x+r.width<=width+1&&r.y+r.height<=height+1;
   const screenshot=`${out}/${screen}.png`;await page.screenshot({path:screenshot});
@@ -42,12 +43,13 @@ try {
   row.background=`${out}/${screen}-text-background.png`;await page.screenshot({path:row.background});row.backgroundSha256=hash(await readFile(row.background));await mask.evaluate(e=>e.remove());
   receipt.rows.push(row);await save();assert.equal(data.overflow,0,screen+' overflow');assert.deepEqual(data.rightOverflow,[],screen+' right overflow');assert(data.sources.every(p=>p.pair&&p.fit==='contain'));
   if(strict)assert(row.firstViewport,screen+' main action and art in first viewport');
+  if(strict&&screen==='team')assert(data.teamCards.length===3&&data.teamCards.every(c=>c.visible),'All three complete Team cards fit after Best team');
  };
  await page.goto('file://'+artifact);await page.getByRole('heading',{name:'A small light. A brave little team.'}).waitFor();await preview();
  await capture('hub',null,page.locator('.dp-hub-portrait'));
  await nav('Field guide');await page.getByRole('button',{name:'companions',exact:true}).click();await capture('guide',null,page.locator('.dp-enemy-portrait'));
  await nav('Companions');await preview();await capture('collection',page.getByRole('button',{name:'Level up',exact:true}),page.locator('.cr-card-grid .cr-portrait img'));
- await nav('Team & cards');await capture('team',page.getByRole('button',{name:'Begin Tangled Cafe',exact:true}),page.locator('.dp-formation-card .cr-portrait img'));
+ await nav('Team & cards');await page.getByRole('button',{name:'Best team',exact:true}).click();await capture('team',page.getByRole('button',{name:'Begin Tangled Cafe',exact:true}),page.locator('.dp-formation-card .cr-portrait img'));
  await nav('Equipment');await preview();await capture('equipment',page.getByRole('button',{name:'Equip selected',exact:true}),page.locator('.dp-paper-doll .dp-cat-heading img'));
  await nav('Invitations');await preview();await capture('invitations',page.getByRole('button',{name:'Open free welcome invitation',exact:true}),page.locator('.dp-featured-card .cr-portrait img'));
  await page.getByRole('button',{name:'Open free welcome invitation',exact:true}).click();if(await page.getByRole('button',{name:'Skip reveal',exact:true}).count())await page.getByRole('button',{name:'Skip reveal',exact:true}).click();await capture('rewards',null,page.locator('.dp-batch-grid .cr-portrait img'));
