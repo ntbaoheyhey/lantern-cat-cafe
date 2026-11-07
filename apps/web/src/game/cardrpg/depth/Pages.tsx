@@ -29,14 +29,14 @@ export function Hub({ m }: { m: DepthModel }) {
         {QUESTS.map(q => { const progress = m.state.account.quests[q.id]!; return <div className="cr-quest-mini" key={q.id}><span>{q.name}<small>{progress.progress}/{q.target} · <CostView cost={q.reward.currencies} /></small><progress aria-label={`${q.name} progress`} value={progress.progress} max={q.target} /></span><button disabled={progress.claimed || progress.progress < q.target || !!active} onClick={() => m.command({ type: 'claimQuest', questId: q.id })}>{progress.claimed ? 'Claimed' : 'Claim'}</button></div>; })}
       </section></div></>;
 }
-export function Codex() {
+export function Codex({ v4 = false }: { v4?: boolean }) {
   const [tab, setTab] = useState('keywords');
   return <><PageTitle eyebrow="Intent, response, outcome" title="Know what matters." /><div className="cr-tabs">{['keywords', 'companions', 'enemies', 'charms', 'sets'].map(id => <button key={id} aria-pressed={tab === id} onClick={() => setTab(id)}>{id}</button>)}</div>
-    <p>{R.FLAVOUR_RULE}</p><div className="dp-codex-grid">
-      {tab === 'keywords' && R.STATUSES.map(status => <article className="cr-panel" key={status.id}><h2>{status.name}</h2><p>{status.description}</p><small>{status.kind} · cap {status.cap} · {status.duration} rounds · {status.dispellable ? 'Dispellable' : 'Protected from dispel'}</small></article>)}
-      {tab === 'companions' && R.CATS.map(cat => <article className="cr-panel" key={cat.id}><img className="dp-enemy-portrait" {...portraitProps(cat.id)} alt={cat.name} /><h2>{cat.name}</h2><small>{cat.role} · {cat.flavour}</small><p><b>{cat.passive.name}</b> · {cat.passive.description}</p></article>)}
-      {tab === 'enemies' && R.ENEMIES.map(enemy => <article className="cr-panel" key={enemy.id}><img className="dp-enemy-portrait" {...portraitProps(enemy.id)} alt={enemy.name} /><h2>{enemy.name}</h2><small>{enemy.tier} · {enemy.flavour} · {enemy.row}</small><p>{enemy.intent}</p><p>{enemy.counter}</p><small>{enemy.phases.join(' · ')}</small></article>)}
-      {tab === 'charms' && R.BOONS.map(boon => <article className="cr-panel" key={boon.id}><h2>{boon.name}</h2><small>{boon.archetype} · stack cap {boon.cap}</small><p>{boon.description}</p></article>)}
+    <p>{v4 ? 'Plan before the fight: crew jobs, rows and standing preferences guide automatic combat. Every unlocked skill joins the kit; ultimates open after two own turns.' : R.FLAVOUR_RULE}</p><div className="dp-codex-grid">
+      {tab === 'keywords' && R.STATUSES.map(status => <article className="cr-panel" key={status.id}><h2>{status.name}</h2><p>{v4 ? R.statusDescriptionV4(status.id) : status.description}</p><small>{status.kind} · cap {status.cap} · {status.duration} rounds · {status.dispellable ? 'Dispellable' : 'Protected from dispel'}</small></article>)}
+      {tab === 'companions' && R.CATS.map(cat => <article className="cr-panel" key={cat.id}><img className="dp-enemy-portrait" {...portraitProps(cat.id)} alt={cat.name} /><h2>{cat.name}</h2><small>{cat.role} · {cat.flavour}</small><p><b>{cat.passive.name}</b> · {v4 ? R.passiveDescriptionV4(cat.id) : cat.passive.description}</p></article>)}
+      {tab === 'enemies' && R.ENEMIES.map(enemy => <article className="cr-panel" key={enemy.id}><img className="dp-enemy-portrait" {...portraitProps(enemy.id)} alt={enemy.name} /><h2>{enemy.name}</h2><small>{enemy.tier} · {enemy.flavour} · {enemy.row}</small><p>{v4 ? R.enemyGuideV4(enemy.id).intent : enemy.intent}</p><p>{v4 ? R.enemyGuideV4(enemy.id).counter : enemy.counter}</p><small>{enemy.phases.join(' · ')}</small></article>)}
+      {tab === 'charms' && R.BOONS.map(boon => <article className="cr-panel" key={boon.id}><h2>{boon.name}</h2><small>{boon.archetype} · stack cap {boon.cap}</small><p>{R.boonForMode(boon.id, v4).description}</p></article>)}
       {tab === 'sets' && R.SETS.map(set => <article className="cr-panel" key={set.id}><h2>{set.name}</h2><p>2 pieces · {set.two}</p><p>4 pieces · {set.four}</p></article>)}
     </div><p>Debuff success is 90% + Effect Hit − Effect Resist, bounded to 10–98%. Boss control lasts one round and grants a short control-resistance window.</p></>;
 }

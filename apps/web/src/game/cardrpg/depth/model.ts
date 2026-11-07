@@ -51,7 +51,7 @@ export class DepthModel {
   private listeners = new Set<() => void>();
   private storageFailed = false;
 
-  constructor(readonly offline: boolean) {
+  constructor(readonly offline: boolean, readonly gameplayMode = false) {
     this.state = R.createDepthAccount(11, offline ? 0 : Date.now());
     if (!offline) {
       try {
@@ -69,6 +69,7 @@ export class DepthModel {
       this.state.selectedRelic = null;
       this.liveRelicNote = 'Read connected wallet or choose fixture mode';
     }
+    this.state = R.setGameplayV4(this.state, gameplayMode);
     this.itemId = this.state.gear[0]?.id ?? '';
     if (!offline) {
       try { this.teamPresets = readTeamPresets(localStorage.getItem(TEAM_PRESETS_KEY)); } catch { /* Preferences remain available for this visit. */ }
@@ -161,13 +162,31 @@ export class DepthModel {
     }
   }
   tutorial() {
-    this.tutorialBattle = R.createBattle({ seed: 7, chapter: 1, cats: R.battleCats(this.state), enemies: ['practice-cushion'], tutorial: true });
+    this.tutorialBattle = R.createBattle({ seed: 7, chapter: 1, cats: R.battleCats(this.state), enemies: ['practice-cushion'], tutorial: true,
+      ...(R.gameplayV4(this.state) ? { gameplayV4: true, plan: this.state.v4?.plan } : {}) });
     this.plan = null; this.watching = false; this.paused = false; this.go('prepare');
   }
   fight() {
     if (!this.battle || this.battle.result) return;
+    if (this.battle.v4 && !this.replay && !this.galleryBattle) {
+      if (this.tutorialBattle) this.tutorialBattle.v4!.committed = true;
+      else if (!this.apply(R.commitPreparation(this.state), 'Preparation committed. Your crew follows its standing plan.')) return;
+    }
     this.watching = true; this.paused = false; this.sceneStarted = true; this.screen = 'map';
-    this.notify(false);
+    this.notify();
+  }
+  prepareCrew(team = this.state.team, rows = this.state.rows, plan = this.battle?.v4?.plan ?? R.DEFAULT_PLAN) {
+    if (this.watching || this.replay || this.galleryBattle) return;
+    if (this.tutorialBattle?.v4) {
+      if (this.tutorialBattle.v4.committed) return;
+      const result = R.configureTeam(this.state, team, rows, this.state.skills);
+      if (!result.ok || !R.validPlan(plan)) { this.apply(result); return; }
+      this.state = result.state;
+      this.state.v4!.plan = { ...plan };
+      this.tutorialBattle = R.createBattle({ ...this.tutorialBattle.initial, cats: R.battleCats(this.state), plan: { ...plan } });
+      this.notice = 'Practice formation updated.'; this.notify(); return;
+    }
+    this.apply(R.configurePreparation(this.state, team, rows, plan), 'Preparation updated. Enemy lineup and encounter seed stay fixed.');
   }
   watchNow() {
     if (!this.state.run || this.state.run.complete) {
@@ -179,7 +198,7 @@ export class DepthModel {
     this.fight();
   }
   private restoreEncounter() {
-    this.watching = !!this.battle && !this.battle.result && this.battle.choices.length > 0;
+    this.watching = !!this.battle && !this.battle.result && (this.battle.choices.length > 0 || !!this.battle.v4?.committed);
     this.sceneStarted = this.watching;
     this.screen = this.battle ? this.battle.result ? 'result' : this.watching ? 'map' : 'prepare' : 'hub';
   }
@@ -323,7 +342,7 @@ export class DepthModel {
     try {
       const next = R.importSave(code, this.offline ? 0 : Date.now());
       if (!this.offline) { next.relics = []; next.selectedRelic = null; }
-      this.state = next; this.tutorialBattle = null; this.replay = null; this.plan = null; this.galleryBattle = null;
+      this.state = R.setGameplayV4(next, this.gameplayMode); this.tutorialBattle = null; this.replay = null; this.plan = null; this.galleryBattle = null;
       this.restoreEncounter();
       this.paused = false;
       this.cardId = next.team[0]!; this.itemId = next.gear[0]?.id ?? '';
@@ -331,7 +350,7 @@ export class DepthModel {
     } catch (error) { this.error = true; this.notice = String(error); this.notify(false); }
   }
   reset() {
-    this.state = R.createDepthAccount(11, this.offline ? 0 : Date.now());
+    this.state = R.setGameplayV4(R.createDepthAccount(11, this.offline ? 0 : Date.now()), this.gameplayMode);
     this.tutorialBattle = null; this.replay = null; this.plan = null; this.galleryBattle = null;
     this.paused = false; this.watching = false;
     this.cardId = this.state.team[0]!; this.itemId = this.state.gear[0]?.id ?? '';

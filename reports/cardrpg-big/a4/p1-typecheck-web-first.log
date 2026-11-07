@@ -1,0 +1,10 @@
+
+> @taskbar-hero/web@0.0.0 typecheck /Users/bao/taskbar-hero-cardrpg-a4/apps/web
+> tsc --noEmit
+
+../../tools/cardrpg-big2/mechanics-model.ts(19,3): error TS2416: Property 'prepare' in type 'MechanicsModel' is not assignable to the same property in base type 'DepthModel'.
+  Type '(team: "garden" | "starter" | "tide", chapter: number, seed: number, options: AutoExtrasOptions) => void' is not assignable to type '(team?: string[], rows?: Record<string, Row>, plan?: StandingPlan) => void'.
+    Target signature provides too few arguments. Expected 4 or more, but got 3.
+/Users/bao/taskbar-hero-cardrpg-a4/apps/web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/web@0.0.0 typecheck: `tsc --noEmit`
+Exit status 2

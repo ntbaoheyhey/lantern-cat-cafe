@@ -1,4 +1,4 @@
-# A4 working rules
+# A4 working rules (v2)
 1. One agent; no subagents, workers, codex exec or generative-model calls.
 2. Battles fully automatic. In-fight input only speed/pause/skip/camera.
 3. Never reintroduce choose-3 skills, energy/break bars, flavour wheels or manual-play advantage.
@@ -15,7 +15,7 @@
 14. Append only A-OUTBOX, max eight lines/entry. Read B at phase boundaries, before PRs, after compaction.
 15. CLAIM before phase. Sync pull --rebase; retry pushes up to four with 2/4/8/16-second delays.
 16. Typed events-v4 plus A fallback for battle mechanics; request B rendering without blocking.
-17. Timing/browser/E2E and long sims use with-timing-lock; <=20-minute windows, 6.5-second handoff.
+17. Timing/browser/E2E and long sims use with-timing-lock; <=2–3-minute CPU slices where possible, 6.5-second minimum handoff.
 18. Ports 5910-5913; temp /tmp/cardrpg-a4-*; kill own PIDs only. Check disk first.
 19. Never run B 860-case matrix; full204 screenshot pack only once on last artifact.
 20. Each phase: typecheck, lint, web unit, rules unit, E2E + build; retain failing logs, at most two fix rounds.

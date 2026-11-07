@@ -2,6 +2,7 @@ import { useEffect, useLayoutEffect, useRef, useState, useSyncExternalStore, typ
 import { isLookV2, setLookV2, subscribeLookV2 } from '../../squad/turn3d/look-v2';
 import lookTokens from '../look-tokens.json';
 import { DepthModel, type Screen } from './model';
+import { gameplayV4 as activeGameplayV4 } from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import { CompanionPreviewProvider } from './CompanionPreview';
 import { preloadPreviewModels } from './preview-runtime';
 import { BattleView } from './Battle';
@@ -23,9 +24,9 @@ const navigation: [Screen, string, string][] = [
   ['inventory', '◇', 'Equipment'], ['gacha', '✉', 'Invitations'], ['codex', '▤', 'Field guide'],
   ['relics', '◈', 'Fuji Relics'], ['save', '⚙', 'Save & settings'], ['evidence', '↔', 'Before / after'],
 ];
-export default function DepthApp({ offline = false }: { offline?: boolean }) {
+export default function DepthApp({ offline = false, gameplayV4 = false }: { offline?: boolean; gameplayV4?: boolean }) {
   const lookV2 = useSyncExternalStore(subscribeLookV2, isLookV2, () => false);
-  const [m] = useState(() => new DepthModel(offline));
+  const [m] = useState(() => new DepthModel(offline, gameplayV4));
   useSyncExternalStore(m.subscribe, m.snapshot);
   const app = useRef<HTMLDivElement>(null);
   const content = useRef<HTMLElement>(null);
@@ -65,7 +66,7 @@ export default function DepthApp({ offline = false }: { offline?: boolean }) {
         {m.screen === 'prepare' && m.battle && <Prepare m={m} />}{m.screen === 'result' && m.battle && <BattleResult m={m} />}
         {m.screen === 'hub' && <Hub m={m} />}{m.screen === 'team' && <Team m={m} />}{m.screen === 'map' && <RunMap m={m} />}
         {m.screen === 'collection' && <Collection m={m} />}{m.screen === 'inventory' && <Inventory m={m} />}{m.screen === 'gacha' && <Invitations m={m} />}
-        {m.screen === 'codex' && <Codex />}{m.screen === 'relics' && <Relics m={m} />}{m.screen === 'save' && <SaveSettings m={m} />}{m.screen === 'evidence' && <Evidence />}
+        {m.screen === 'codex' && <Codex v4={activeGameplayV4(m.state)} />}{m.screen === 'relics' && <Relics m={m} />}{m.screen === 'save' && <SaveSettings m={m} />}{m.screen === 'evidence' && <Evidence />}
       </div></main></div></div>
     {m.sceneStarted && <div className="dp-battle-shell"><BattleView m={m} /></div>}
     {offline && m.labPerformance && <FrameOverlay m={m} />}

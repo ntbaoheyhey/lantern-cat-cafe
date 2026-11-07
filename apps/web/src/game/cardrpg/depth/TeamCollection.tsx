@@ -7,9 +7,11 @@ import { CompanionPreview } from './CompanionPreview';
 import { bestRoleTeam, COMPANION_ROLES, nextChallenge } from './meta-presentation';
 import { skillIcon } from './assets';
 import type { DepthModel } from './model';
+import { CrewPanel } from './PreparationV4';
 
 export function Team({ m }: { m: DepthModel }) {
   const state = m.state;
+  const v4 = R.gameplayV4(state);
   const locked = !!state.run && !state.run.complete;
   const challenge = nextChallenge(state);
   const combos = R.teamCombos(state.team);
@@ -62,10 +64,10 @@ export function Team({ m }: { m: DepthModel }) {
             disabled={card.cardId !== id && state.team.includes(card.cardId)}>{R.CAT_BY_ID[card.cardId]!.name}</option>)}
         </select>
       </label>)}</div>
-      <div className="dp-combos">{R.TEAM_COMBOS.map(combo => <span key={combo.id}
+      {v4 ? <CrewPanel ids={state.team} /> : <div className="dp-combos">{R.TEAM_COMBOS.map(combo => <span key={combo.id}
         className={combos.some(active => active.id === combo.id) ? 'active' : ''} title={combo.description}>
         {combo.name} · {combos.some(active => active.id === combo.id) ? 'active' : combo.tags.join(' + ')}
-      </span>)}</div>
+      </span>)}</div>}
     </section>
     <section className="cr-panel dp-presets"><h2>Saved shifts</h2><div className="dp-three">
       {m.teamPresets.map((preset, index) => <div key={index}>
@@ -75,9 +77,9 @@ export function Team({ m }: { m: DepthModel }) {
       </div>)}
     </div></section>
     <section className="cr-panel"><h2>Automatic kits</h2><div className="dp-three">{state.team.map(id => <div key={id}>
-      <h3>{R.CAT_BY_ID[id]!.name}</h3><p>{R.CAT_BY_ID[id]!.passive.description}</p>
+      <h3>{R.CAT_BY_ID[id]!.name}</h3><p>{v4 ? R.passiveDescriptionV4(id) : R.CAT_BY_ID[id]!.passive.description}</p>
       {R.availableSkills(state, id).map(skill => <div className="dp-skill-summary" key={skill.id}>
-        <img src={skillIcon(skill.id)} alt="" /><span><b>{skill.name}</b><small>{skill.description}</small></span>
+        <img src={skillIcon(skill.id)} alt="" /><span><b>{skill.name}</b><small>{v4 ? R.skillDescriptionV4(skill) : skill.description}</small></span>
       </div>)}
       <small>{R.availableSkills(state, id).length === 4 ? 'Ultimate included.' : 'Level 6 or three stars unlocks the ultimate.'}</small>
     </div>)}</div></section>
@@ -93,6 +95,7 @@ export function Collection({ m }: { m: DepthModel }) {
   const [ownership, setOwnership] = useState('all');
   const [preview, setPreview] = useState('model');
   const cat = R.CAT_BY_ID[m.cardId]!;
+  const v4 = R.gameplayV4(m.state);
   const owned = m.state.account.cards.find(card => card.cardId === cat.id);
   const locked = !!m.state.run && !m.state.run.complete;
   const skill = cat.skills.find(candidate => candidate.id === preview);
@@ -125,7 +128,7 @@ export function Collection({ m }: { m: DepthModel }) {
         {!cards.length && <p>No companions match these filters.</p>}
       </div>
       <section className="cr-panel dp-detail" ref={detail}>
-        <header><small>{CARD_BY_ID[cat.id]!.rarity} · {cat.role} · {cat.flavour}</small><h2>{cat.name}</h2></header>
+        <header><small>{CARD_BY_ID[cat.id]!.rarity} · {cat.role} · {v4 ? R.CAT_CREWS[cat.id]!.map(job => R.CREW_JOBS.find(c => c.id === job)!.name).join(' / ') : cat.flavour}</small><h2>{cat.name}</h2></header>
         {owned ? <>
           <p>Level {owned.level} · {owned.stars} stars · {owned.shards} shards · Awakening {m.state.awakened[cat.id] ?? 0}/3</p>
           <div className="cr-actions">
@@ -139,10 +142,10 @@ export function Collection({ m }: { m: DepthModel }) {
         </> : <button className="cr-primary" onClick={() => m.go('gacha')}>Visit invitations</button>}
         <CompanionPreview m={m} id={cat.id} skillId={skill?.id} />
         <div className="cr-actions"><button aria-pressed={!skill} onClick={() => setPreview('model')}>Rotate model</button></div>
-        <p><b>{cat.passive.name}</b> · {cat.passive.description}</p>
+        <p><b>{cat.passive.name}</b> · {v4 ? R.passiveDescriptionV4(cat.id) : cat.passive.description}</p>
         <div className="dp-preview-skills">{cat.skills.map(action => <button className="dp-skill-summary" key={action.id}
           aria-pressed={action.id === skill?.id} onClick={() => setPreview(action.id)}>
-          <img src={skillIcon(action.id)} alt="" /><span><b>{action.name}</b><small>{action.description}</small></span>
+          <img src={skillIcon(action.id)} alt="" /><span><b>{action.name}</b><small>{v4 ? R.skillDescriptionV4(action) : action.description}</small></span>
         </button>)}</div>
         {skill && <p className="dp-preview-note">Looping preview · {skill.name}</p>}
         {owned && <>

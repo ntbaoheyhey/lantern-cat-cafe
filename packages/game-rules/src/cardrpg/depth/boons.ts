@@ -45,8 +45,24 @@ const groups: Array<[string, Array<[string,string,string,number]>]> = [
 ];
 export const BOONS: Boon[] = groups.flatMap(([archetype,entries])=>entries.map(([name,trigger,description,value],i)=>({id:`${archetype}-${i+1}`,name,trigger,description,value,archetype,cap:2})));
 export const BOON_BY_ID = Object.fromEntries(BOONS.map(b=>[b.id,b])) as Record<string,Boon>;
-export function boonValue(battle: Pick<Battle,'boons'>, trigger: string): number {
+const replacements: Record<string, { trigger: string; value: number; description: string }> = {
+  'shelter-2': { trigger:'defendHeal',value:8,description:'Defend restores up to 8 missing HP.' },
+  'ember-2': { trigger:'scaldHeal',value:4,description:'The first hit each round on a Scalded foe restores 4 HP.' },
+  'trail-2': { trigger:'markedDirect',value:1,description:'Direct hits against marked foes gain 1 raw damage.' },
+  'trail-3': { trigger:'markedShield',value:6,description:'The first marked hit each round grants its user 6 shield.' },
+  'night-1': { trigger:'openingShield',value:12,description:'Start every encounter with 12 extra shield.' },
+  'night-2': { trigger:'ultimateShield',value:6,description:'An automatic ultimate grants its user 6 shield.' },
+  'flow-1': { trigger:'roundShield',value:6,description:'Front-row cats gain 6 shield each round.' },
+  'flow-2': { trigger:'defendHeal',value:11,description:'Defend restores up to 11 missing HP.' },
+  'flow-3': { trigger:'healShield',value:5,description:'The first healed ally per action also gains 5 shield.' },
+  'flow-5': { trigger:'cleanseExtraShield',value:6,description:'The first successful cleanse per action grants 6 shield.' },
+};
+export function boonForMode(id: string, enabled: boolean): Boon {
+  const base=BOON_BY_ID[id]!;
+  return enabled&&replacements[id]?{...base,...replacements[id]}:base;
+}
+export function boonValue(battle: Pick<Battle,'boons'> & Partial<Pick<Battle,'initial'>>, trigger: string): number {
   return Object.entries(battle.boons).reduce((total,[id,count])=>{
-    const b=BOON_BY_ID[id];return total+(b?.trigger===trigger?b.value*Math.min(b.cap,count):0);
+    const b=boonForMode(id,battle.initial?.gameplayV4===true);return total+(b?.trigger===trigger?b.value*Math.min(b.cap,count):0);
   },0);
 }

@@ -5,6 +5,9 @@ import { dropGear } from './equipment';
 import { createBattle } from './battle';
 import { battleCats, defaultSkills, grantDepth, requireHome, transactDepth } from './state';
 import type { DepthAccount, NodeKind, RuleResult, Run, RunNode } from './contract';
+import type { Row } from './contract';
+import { CAT_BY_ID } from './catalog';
+import { DEFAULT_PLAN, validPlan, type StandingPlan } from './gameplay-v4';
 export const CHAPTERS = [
   {id:1,name:'Tangled Cafe',boss:'yarn-giant',palette:'#d8a76d',ambience:174,pool:['button-guard','sock-skipper','needle-moth','teacup-healer'],elites:['spool-ram','kettle-knight'],reward:'A Yarnkeeper Seal and 80 mastery materials'},
   {id:2,name:'Rooftop Orchard',boss:'rain-spool',palette:'#83b4a6',ambience:220,pool:['needle-moth','teacup-healer','button-guard','sock-skipper'],elites:['pollen-scout','kettle-knight'],reward:'An Orchard Seal and 100 mastery materials'},
@@ -47,6 +50,7 @@ export function startRun(state: DepthAccount, chapter: number, seed: number, mod
     const challenge=calendarChallenge(date),actualSeed=mode==='daily'?challenge.seed:seed;
     const cats=battleCats(s);
     s.run={id:s.nextRunId++,seed:actualSeed,chapter,mode,nodes:generateMap(actualSeed,chapter),visited:[],current:null,points:35,boons:{},hp:Object.fromEntries(cats.map(c=>[c.id,c.stats.hp])),upgrades:{},rewardChoices:[],battle:null,complete:false,won:false,floor:1,mutator:mode==='campaign'?'':challenge.mutator.id,supplies:1,earnedItems:[],date};
+    if(s.gameplayV4) s.run.gameplayV4=true;
   });
 }
 export function enterNode(state: DepthAccount, id: string): RuleResult<DepthAccount> {
@@ -55,9 +59,36 @@ export function enterNode(state: DepthAccount, id: string): RuleResult<DepthAcco
     const node=availableNodes(run).find(n=>n.id===id);requireRule(node,'NOT_READY','Choose a connected node on the map.');
     run.current=id;
     if(node.enemies.length){
-      const setup={seed:deriveSeed(run.seed,run.visited.length+run.floor*100),chapter:run.chapter,cats:battleCats(s),enemies:node.enemies,hp:run.hp,boons:run.boons,upgrades:run.upgrades,mutator:run.mutator};
+      const setup={seed:deriveSeed(run.seed,run.visited.length+run.floor*100),chapter:run.chapter,cats:battleCats(s),enemies:node.enemies,hp:run.hp,boons:run.boons,upgrades:run.upgrades,mutator:run.mutator,...(run.gameplayV4?{gameplayV4:true,plan:clone(s.v4?.plan??DEFAULT_PLAN)}:{})};
       run.battle=createBattle(setup);s.lastBattle=clone(run.battle.initial);s.lastChoices=[];
     }
+  });
+}
+/** Only the untouched preparation can be rebuilt; seed and carried HP never reroll. */
+export function configurePreparation(state: DepthAccount, team: string[], rows: Record<string,Row>, plan: StandingPlan): RuleResult<DepthAccount> {
+  return transactDepth(state,s=>{
+    const run=s.run,battle=run?.battle;
+    requireRule(run&&battle?.v4&&!run.complete&&!battle.result&&!battle.v4.committed&&battle.choices.length===0&&battle.actors.every(a=>a.turns===0),'NOT_READY','Preparation is locked after Fight.');
+    requireRule(validPlan(plan),'INVALID_AMOUNT','Choose a valid standing plan.');
+    requireRule(team.length===3&&new Set(team).size===3&&team.every(id=>s.account.cards.some(c=>c.cardId===id)),'INVALID_TEAM','Choose three collected companions.');
+    requireRule(team.every(id=>['front','rear'].includes(rows[id]!))&&team.some(id=>rows[id]==='front'&&(run.hp[id]??1)>0),'INVALID_TEAM','Keep at least one living companion in front.');
+    const changed=team.some((id,i)=>id!==s.team[i]);
+    requireRule(!changed||run.visited.length===0&&run.floor===1,'NOT_READY','The roster stays together after the first stop; change rows or plans here.');
+    s.team=[...team]; s.rows={...s.rows,...rows};
+    for(const id of team) s.skills[id]??=CAT_BY_ID[id]!.skills.slice(0,3).map(skill=>skill.id);
+    s.v4??={version:1,plan:{...DEFAULT_PLAN}};
+    s.v4.plan={...plan};
+    const cats=battleCats(s);
+    for(const cat of cats) run.hp[cat.id]=Math.min(run.hp[cat.id]??cat.stats.hp,cat.stats.hp);
+    run.battle=createBattle({...battle.initial,cats,hp:clone(run.hp),plan:{...plan}});
+    s.lastBattle=clone(run.battle.initial); s.lastChoices=[];
+  });
+}
+export function commitPreparation(state: DepthAccount): RuleResult<DepthAccount> {
+  return transactDepth(state,s=>{
+    const battle=s.run?.battle;
+    requireRule(battle?.v4&&!battle.result,'NOT_READY','Open an automatic preparation first.');
+    battle.v4.committed=true;
   });
 }
 function addBoon(run: Run, id: string) {

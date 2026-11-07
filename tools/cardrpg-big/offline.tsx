@@ -9,6 +9,8 @@ import { MechanicsLab } from '../cardrpg-big2/MechanicsLab';
 import { ReviewStudio, FrameMeter } from '../cardrpg-big2/ReviewStudio';
 import './demo-tools.css';
 
+declare const __GAMEPLAY_V4__: boolean;
+
 type Panel = { host: HTMLElement; kind: 'mechanics' | 'studio'; close: () => void };
 
 function DemoTools({ open }: { open: (kind: Panel['kind']) => void }) {
@@ -53,7 +55,7 @@ function Demo() {
     } });
   };
   return <div className={`dp-offline-demo ${panel ? 'b2-demo-lab-open' : ''}`}>
-    <DepthApp offline />
+    <DepthApp offline gameplayV4={typeof __GAMEPLAY_V4__ !== 'undefined' && __GAMEPLAY_V4__} />
     {header && createPortal(<div className="dp-demo-tools" aria-label="Demo tools">
       {!panel && <DemoTools open={open} />}
       <button aria-pressed={meter} onClick={() => setMeter(!meter)}>Frame meter</button>

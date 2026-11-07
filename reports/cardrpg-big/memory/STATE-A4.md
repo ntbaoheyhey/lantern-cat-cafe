@@ -1,12 +1,12 @@
 # A4 living state
 ## NOW
-D specification committed3f2c7efe; D five gates PASS. R draft365. No runtime changes yet; P1 code staged outside checkout until this boundary. G0 economy continues from immutable snapshot.
+P1 verified in owned worktree; publishing stacked draft on #366. Recovered WIP f7bcc760 preserved. G0 closure complete. No active A simulation/browser jobs.
 ## NEXT
-Publish D draft, CLAIM P1 then implement crew/formation/plans plus ON-only resource removal and THC8 extension. Retain G0 coordinator89663; no screen research.
+Publish P1, mirror ledger and claim P2. Apply staged equipment/loadout/item work from /tmp/cardrpg-a4-p2, then P3-P7. Do not repeat R/D/G0.
 ## DONE
-Prompt preserved verbatim before A4 work. No gameplay edits yet. Disk 296 GiB available. Existing B L3 DONE read; no adoption planned during G0.
+P1 rules/UI,3000 functional encounters,8250 OFF routes,30 three-size Classic/Look captures. G0 45day max2.1948×. Prompt-v2 preserved.
 ## GATES
-G0 source gates PASS (typecheck, lint, build, 1735 web, 1020 rules, 421 E2E); baseline sim closure pending. Later phase gates NOT VERIFIED.
+P1 type/lint/build,1735web/1035rules(+2expectedfail/11skip),421E2E PASS. New-panel mincontrast6.2448; zero overflow/errors. P2-P7 balance/pacing/startup NOT VERIFIED.
 ## DECISIONS (append-only)
 - Keep the one-agent constraint, automatic battles, strict A/B ownership, and isolated worktree.
 ## MEASUREMENTS
@@ -72,3 +72,26 @@ G0 source gates PASS (typecheck, lint, build, 1735 web, 1020 rules, 421 E2E); ba
 ## D five-gate checkpoint
 - Type/lint/build PASS;1735 web/1020 rules (+2 expectedfail/11skip)/421 E2E PASS. Source still byte-identical to179-file G0 snapshot; off digest47477251b3d20ab602bee5c55a56cdd661e111b1386e298e0c9bc67737fecfa3.
 - D design3f2c7efe includes4 sequential reviewer roles; no runtime code yet. P1 staging at /tmp/cardrpg-a4-p1 is incomplete and NOT applied/tested.
+
+## Fresh-session v2 recovery
+- Prompt-v2 bytes: 26460; SHA-256: 465b40d699ce5c4e4376d22eb70b0ef27a5fb17256ec1878b270c395868e4bd4.
+- Existing unpublished P1 retained; original web typecheck failure is inherited MechanicsModel.prepare signature collision. Rename A method only.
+- Native/headless; no agents/models/Docker/CUA. Disk255GiB available. Simulation slices<=2–3min with B handoff.
+
+## P1 verification in progress
+- Recovered WIP f7bcc760 and backup wip/a4-p1-staged-2026-11-07 preserve all original files. Prompt-v2 committed.
+- Renamed A-owned prepare→prepareCrew to avoid inherited B signature; no B changes. Type/lint/build and1735web/1035rules pass; E2E queued with timing lock.
+- Full OFF compare uses resumable independent checkpoint p1-off; P1 sim retry1 fixes harness equality for JSON-omitted undefined intent.status, no rules change. Original failure retained.
+- G0 closure report generated:45-day ratios allPASS, max2.1948×. No previous A processes remain.
+
+- P1 3000-encounter functional simPASS (500seeds×6plans), exact replay/serialized save equality. Presentation REQUEST posted2026-11-07T16:19UTC.
+- Offline build failed twice due stale Python interpreter and missing Pillow; logs kept. Created own /tmp/cardrpg-a4-tools with Pillow11.3.0, copied lossless packing algorithm into A tool with A cache. Retry2 queued; no runtime dependency changes. Premature browser jobs explicitly cancelled before execution.
+- P2 isolated staging only at /tmp/cardrpg-a4-p2/{equipment-v4,loadouts-v4}.ts; not applied to P1 checkout. Await P1 phase publication before claiming/applying.
+
+## P1 phase closure
+- Five gates PASS; explicit labels and Look crew surfaces fixed after two retained browser failures. Thirty captures/3sizes/2modes PASS, mincontrast6.2448.
+- OFF165cells/8250routes exact47477251; P1functional3000encounters exact replay/save. G0before90accounts×45days max2.1948×.
+- P1 artifact details and open B request in a4/P1-PREPARATION.md. Full204 remains unrun. No B/protected edits.
+
+## P1 published / P2 boundary
+- P1 draft367 at7dfb7c84 stacked366. Exact artifact d4e5b472fcfb9f70e2d26f953a441893c8ec5b07e7d1ed26a028d12b4a44c51d /26190242bytes; corrected report size delta69913bytes. G0 #364 updated with downstream closure.

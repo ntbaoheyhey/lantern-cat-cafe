@@ -9,9 +9,12 @@ const { playRun } = await load('packages/game-rules/src/cardrpg/depth/run-bot.ts
 const { firstInvitation } = await load('packages/game-rules/src/cardrpg/depth/onboarding.ts');
 const out = 'reports/cardrpg-big/a4/g0';
 const hash = value => createHash('sha256').update(JSON.stringify(value)).digest('hex');
-const checkpointPath=`${out}/off.partial.json`;
+const check = process.argv.includes('--check');
+const checkOut = process.env.BIG_OFF_OUT || 'reports/cardrpg-big/a4/off-current';
+await mkdir(checkOut,{recursive:true});
+const checkpointPath=check?`${checkOut}/off.partial.json`:`${out}/off.partial.json`;
 const checkpoint=JSON.parse(await readFile(checkpointPath,'utf8').catch(()=>'{}'));
-const {rows=[],saturation=[]}=process.argv.includes('--check')?{}:checkpoint;
+const {rows=[],saturation=[]}=checkpoint;
 const started=Date.now(), checkpointExit=new Error('Checkpoint');
 try {
   if(!process.argv.includes('--day7'))for (const level of [1,2,3,4,5,6,7,8,9,10,50]) for (const chapter of [1,2,3]) for (const rarity of ['none', ...legacy.RARITY_ORDER]) {
@@ -41,15 +44,16 @@ try {
     }
     saturation.push({level,chapter,rarity,count:runs.length,wins:runs.filter(r=>r.won).length});
     rows.push({level,chapter,rarity,runs});
-    if(!process.argv.includes('--check'))await writeFile(checkpointPath,JSON.stringify({rows,saturation}));
+    await writeFile(checkpointPath,JSON.stringify({rows,saturation}));
     console.log(JSON.stringify(saturation.at(-1)));
-    if(!process.argv.includes('--check')&&Date.now()-started>2*60*1000){process.exitCode=75;throw checkpointExit;}
+    if(Date.now()-started>2*60*1000){process.exitCode=75;throw checkpointExit;}
   }
   await mkdir(out,{recursive:true});
   const receipt = { method:'Actual auto routes, 50 paired seeds per cell; fixed chapters expose original saturation. Current A3 source. No timing fields.', sha256:hash(rows), rows };
   if (process.argv.includes('--check')) {
     const before = JSON.parse(await readFile(`${out}/off-behavior.json`,'utf8'));
     assert.equal(receipt.sha256,before.sha256,'OFF behavior differs from G0');
+    await writeFile(`${checkOut}/checks.json`,JSON.stringify({offBehavior:'PASS',sha256:receipt.sha256,cells:rows.length,routes:rows.reduce((n,r)=>n+r.runs.length,0)},null,2));
     console.log(JSON.stringify({offBehavior:'PASS',sha256:receipt.sha256}));
   } else {
     if(!process.argv.includes('--day7'))await writeFile(`${out}/off-behavior.json`,JSON.stringify(receipt,null,2));

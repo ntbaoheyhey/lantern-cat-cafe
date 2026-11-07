@@ -2,10 +2,11 @@ import { clone } from '../internal';
 import { Rng, deriveSeed } from '../../rng';
 import { act, currentActor, enemyAct, legalChoices, skillById, stacks } from './battle';
 import type { Actor, Battle, Choice } from './contract';
+import { planPreference } from './gameplay-v4';
 export type Policy = 'random' | 'auto' | 'greedy' | 'smart';
 
 function previewCopy(b: Battle): Battle {
-  return {...b,procRounds:{...b.procRounds},actors:clone(b.actors),queue:[...b.queue],acted:[...b.acted],intents:clone(b.intents),log:[],choices:[]};
+  return {...b,...(b.v4?{v4:{...b.v4,plan:{...b.v4.plan},events:[]}}:{}),procRounds:{...b.procRounds},actors:clone(b.actors),queue:[...b.queue],acted:[...b.acted],intents:clone(b.intents),log:[],choices:[]};
 }
 function actorValue(a: Actor): number {
   if(a.hp<=0)return a.side === 'party' ? -300 : -35;
@@ -22,14 +23,14 @@ function value(b: Battle): number {
     const intent=b.intents.find(i=>i.actorId===a.id);
     return n+a.break*(intent?.signature?12:5)+(intent?.interrupted?35:0);
   },0);
-  return party - foes*1.1 + pressure + b.energy*3;
+  return b.v4 ? party - foes*1.1 : party - foes*1.1 + pressure + b.energy*3;
 }
 /** One-action lookahead keeps playback cheap and makes every decision reproducible. */
 function automatic(b: Battle): Choice {
   const scored = legalChoices(b).map(choice => {
     const preview = previewCopy(b);
     act(preview, choice);
-    let score = value(preview);
+    let score = value(preview) + planPreference(b,choice);
     for (const actor of b.actors) {
       const after = preview.actors.find(candidate => candidate.id === actor.id)!;
       // Removing an enemy also removes its future turns, even when little HP remains.
