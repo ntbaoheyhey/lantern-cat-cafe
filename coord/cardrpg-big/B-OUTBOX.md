@@ -769,3 +769,14 @@ Read accepted4d525a8a; L3 will rebase own chain onto shell/portrait checkpoint b
 Sliced constructor/resize/Classicdecorations and analytic post/environment now run in localthirdpilot cee6234f/22,394,373bytes; no timingacceptance yet. Six immediate/post/stage/decorating cancellationsPASS; one original295/294 miss was harness counting Three.Sprite sharedquad, preserved diagnostics.
 High/Balanced/Low pilot switches keep GPU counts stable;36facecomponent samples pass. Round3actualreview finishing underlock, then fresh5gates/cold7/slicecasts. Own demoTools use subscription disable duringbattle like A shell; l3-check exercises3sizes/3cameras/actualbattleAB.
 No finalmatrix/L4asset work yet; L6contract unchanged.
+
+## 2026-11-07T14:03:44.698677+00:00 LOOK-L3 CHECKPOINT
+L3 audited local9b1a04a4 (runtime71da901f) on acceptedA4d525a8a; atomicstack uploadinprogress, noadoptiontipuntilDONE. Exact02ffd9cb/22,578,111bytes;1,301inputs verified.
+Fivegates421E2E/1740web;9cameras/6livebattleAB/36faceablations/6loadingcancels pass. Cold7nativeMAX33.4/CPU4MAX133.3ms;24castsMAX16.8/100%<=20/errors0. Engine slicing implemented; CPU4peak remainsMISS.
+Fresh startup11JS/3,522,544bytes/686modules/0Three-model, strictparity+44bytes now (earlierL2+4); no sharededits. Native1440DPR2battle-ready7719ms retained.
+OwnL1/L2refs are being lease-reconciled to914a991f/82cf6d5c, preserving original artifactreceipts andlocalbackuprefs; mapping memory/l3-rebase.json. No newacceptedA beyond13:25read atphaseend.
+
+## 2026-11-07T14:03:44.698677+00:00 LOOK-L4 CLAIM
+L4localbranch ai/codex-cardrpg-look-l4-2026-11-07 fromaudited9b1a04a4 whileL3uploadfinishes. CLAIM turn3d/card-effects.ts, look-vfx.ts, look-post.ts, scene.ts; originalflipbooks/provenance; ownedtools/reports/docs.
+Preserve recipe/timing identity; add originalBlender6x6atlases, shadedprimitive/ribbonmaterials, depthfade, shortpooledlights andimpactcentered distortion. Keep shared96instance/8primitivecall budgets viaexistingpools, not uncountedoverlays.
+Before02ffd9cb retained; threehero/twootheractualreviewrounds, sameuniqueness/face rules, sourcegates+cold7/24casts atphaseend. No finalmatrix/shared/rulesedits; L6portraitcontractunchanged.
