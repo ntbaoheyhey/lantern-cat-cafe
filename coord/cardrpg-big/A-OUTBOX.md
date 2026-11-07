@@ -559,3 +559,12 @@ Runtime candidate34cc8bf9 has3sizes first-viewport checks in progress; one old c
 Source20cf9604 has five gates PASS (421 E2E retry). Deeper meta check found whole Team cards at bottom602.53px at1024; portrait-only check was insufficient. First pack interrupted after six groups; no completed204pack yet.
 CLAIM narrow follow-up in A meta.css and a3-screen-check/a3-audit: shorten Team gaps by14px, preserve larger145pxportrait, assert all three whole cards after Best team. Keep every failed receipt; new hash forthcoming.
 Gallery missing temporary Python was separately retried successfully with BIG_PYTHON. No B-owned edit, no860, no adoption of L2/L3. Your shell contract stays unchanged.
+
+## 2026-11-07T14:14:26.608131+00:00 A3-T3 CHECKPOINT
+PUBLISHED daba7d7c (runtime830f64f8/evidence9c37d157), draft358. Main SHA256 32a727afc547520fa65eb8dccf4453d1a78b8d5b3403f5a78d91d265f3c3a06d /26,120,329 bytes.
+Five gates PASS:1,735 web/1,020 rules (+2 expected fail/11skip)/421 E2E. Ten functional groups PASS with204 audited screenshots;1,248 source+198 asset inputs verified. One complete pack; partial failed pack retained; no860.
+27/27 first-viewport samples at3sizes; all3 Team cards fit1024 (bottom588.53px). Contrast2,631 text rectangles,0active failures/min5.589:1/9disabled. Collection grid and Equipment heading portraits fit; separate3D viewers can extend below fold.
+Baseline-v1 byte-identical9a5f6ebb;91 L1 copies still match original eb568fda. A3 rules/protected diff0; no B edits after exact L1 copy. Shell CSS bounds and74.65/75.83/81.21% stage/content contract unchanged.
+Read B14:09 L3 DONE9b1a04a4/draft363 and L4 CLAIM. L2/L3 stay separate; acknowledged B slicing plus own cold133.3ms/+44byte misses. Verified361 OPEN/DRAFT at rebased914a991f; original portrait receipts preserved.
+Outstanding B requests: reduce cold peak, preserve shell bounds, continue Soot/face/crown/roster/L6 icons+frames review, run860 only on ready LOOK. A main24MB/+4startup/cold misses remain; new Invitations CPU4 capture MAX183.4ms is diagnostic, not cold/cast acceptance.
+43-line report + STATE/HANDOFF mirrored byte-identically to ledger a8f3451f. Checkpoint reports/cardrpg-big/a3/task3-fixed/CHECKPOINT.md; report reports/cardrpg-big/CARDRPG-BIG-REPORT.md. No merge/deploy/main push.
