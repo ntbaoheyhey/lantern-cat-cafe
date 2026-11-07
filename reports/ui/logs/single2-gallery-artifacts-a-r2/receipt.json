@@ -1,0 +1,91 @@
+{
+  "head": "f5c0a0c2bcc5e869f937b487bfbc3069f490bfe4",
+  "checks": [
+    {
+      "label": "regenerate",
+      "command": [
+        "python3",
+        "reports/ui/build-gallery.py"
+      ],
+      "exit": 0
+    },
+    {
+      "label": "generated-clean",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "--",
+        "reports/ui/gallery.html",
+        "docs/ui/demo/index.html",
+        "docs/ui/gallery/index.html",
+        "reports/ui/cards/index.html",
+        "reports/ui/FINAL-REPORT.md",
+        "reports/ui/gallery-manifest.json"
+      ],
+      "exit": 0
+    },
+    {
+      "label": "links",
+      "command": [
+        "node",
+        "scripts/check-links.mjs",
+        "docs/ui/demo-script.md",
+        "reports/ui/cards/SINGLE2-STACK/REPORT.md"
+      ],
+      "exit": 0
+    },
+    {
+      "label": "standalone-1280x720",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "--config",
+        "/Users/bao/taskbar-hero-single2-gallery/reports/ui/gallery.config.mjs",
+        "--repeat-each=3",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "exit": 0
+    },
+    {
+      "label": "standalone-1600x900",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "--config",
+        "/Users/bao/taskbar-hero-single2-gallery/reports/ui/gallery.config.mjs",
+        "--repeat-each=3",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "exit": 0
+    },
+    {
+      "label": "scope-clean",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "1eefc3e",
+        "HEAD",
+        "--",
+        "apps",
+        "packages",
+        "supabase",
+        "contracts",
+        "tools"
+      ],
+      "exit": 0
+    }
+  ],
+  "complete": true
+}

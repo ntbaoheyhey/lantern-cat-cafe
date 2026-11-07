@@ -1,0 +1,365 @@
+{
+  "head": "68ab4c12cfdb24b107480fa34b3c1c82dd105089",
+  "method": "Isolated local candidate builds; synthetic sessions and provider; all function/RPC traffic mocked; sign/send requests rejected",
+  "cases": [
+    {
+      "width": 1280,
+      "state": "nonce-503",
+      "errors": [],
+      "expectedTransportDiagnostics": [
+        {
+          "text": "Failed to load resource: the server responded with a status of 503 (Service Unavailable)",
+          "url": "http://127.0.0.1:5312/functions/v1/auth-nonce"
+        }
+      ],
+      "requestsMocked": [
+        "/functions/v1/auth-nonce"
+      ],
+      "checks": [
+        "Persistent for5.5s; dismissible; retry remains; one nonce request; no verification"
+      ],
+      "walletMethods": [
+        "wallet_requestPermissions",
+        "eth_requestAccounts",
+        "eth_chainId"
+      ],
+      "geometry": {
+        "overflowX": false,
+        "overflowY": false
+      },
+      "passed": true
+    },
+    {
+      "width": 1280,
+      "state": "expired",
+      "errors": [],
+      "expectedTransportDiagnostics": [
+        {
+          "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+          "url": "http://127.0.0.1:5312/functions/v1/v2-state"
+        }
+      ],
+      "requestsMocked": [
+        "/functions/v1/v2-state"
+      ],
+      "checks": [
+        "Expiry explained; session cleared; Enter/Escape/Cancel preserve focus"
+      ],
+      "walletMethods": [],
+      "geometry": {
+        "overflowX": false,
+        "overflowY": false
+      },
+      "passed": true
+    },
+    {
+      "width": 1280,
+      "state": "wrong-network",
+      "errors": [],
+      "expectedTransportDiagnostics": [],
+      "requestsMocked": [],
+      "checks": [
+        "Network message and action remain visible on Home"
+      ],
+      "walletMethods": [
+        "wallet_requestPermissions",
+        "eth_requestAccounts",
+        "eth_chainId"
+      ],
+      "geometry": {
+        "overflowX": false,
+        "overflowY": false
+      },
+      "passed": true
+    },
+    {
+      "width": 1280,
+      "state": "connected-hud",
+      "errors": [],
+      "expectedTransportDiagnostics": [],
+      "requestsMocked": [
+        "/functions/v1/v2-state"
+      ],
+      "checks": [
+        "Connected Power/Live rectangles do not overlap"
+      ],
+      "walletMethods": [
+        "wallet_requestPermissions",
+        "eth_requestAccounts",
+        "eth_chainId"
+      ],
+      "hud": {
+        "power": {
+          "x": 870.171875,
+          "y": 42,
+          "width": 85.234375,
+          "height": 34
+        },
+        "live": {
+          "x": 963.40625,
+          "y": 29.5,
+          "width": 42.9375,
+          "height": 21
+        }
+      },
+      "geometry": {
+        "overflowX": false,
+        "overflowY": false
+      },
+      "passed": true
+    },
+    {
+      "width": 1280,
+      "state": "connected-unsigned",
+      "errors": [],
+      "expectedTransportDiagnostics": [],
+      "requestsMocked": [],
+      "checks": [
+        "Connected Power/Live rectangles do not overlap"
+      ],
+      "walletMethods": [
+        "wallet_requestPermissions",
+        "eth_requestAccounts",
+        "eth_chainId"
+      ],
+      "hud": {
+        "power": {
+          "x": 871.640625,
+          "y": 42,
+          "width": 85.234375,
+          "height": 34
+        },
+        "live": {
+          "x": 964.875,
+          "y": 29.5,
+          "width": 42.9375,
+          "height": 21
+        }
+      },
+      "geometry": {
+        "overflowX": false,
+        "overflowY": false
+      },
+      "passed": true
+    },
+    {
+      "width": 1280,
+      "state": "offline",
+      "errors": [],
+      "expectedTransportDiagnostics": [],
+      "requestsMocked": [],
+      "checks": [
+        "Offline status visible; guest remains painted"
+      ],
+      "walletMethods": [],
+      "geometry": {
+        "overflowX": false,
+        "overflowY": false
+      },
+      "passed": true
+    },
+    {
+      "width": 1280,
+      "state": "api-503",
+      "errors": [],
+      "expectedTransportDiagnostics": [
+        {
+          "text": "Failed to load resource: the server responded with a status of 503 (Service Unavailable)",
+          "url": "http://127.0.0.1:5312/functions/v1/v2-state"
+        }
+      ],
+      "requestsMocked": [
+        "/functions/v1/v2-state"
+      ],
+      "checks": [
+        "API503 explanation and Retry visible"
+      ],
+      "walletMethods": [],
+      "geometry": {
+        "overflowX": false,
+        "overflowY": false
+      },
+      "passed": true
+    },
+    {
+      "width": 1600,
+      "state": "nonce-503",
+      "errors": [],
+      "expectedTransportDiagnostics": [
+        {
+          "text": "Failed to load resource: the server responded with a status of 503 (Service Unavailable)",
+          "url": "http://127.0.0.1:5312/functions/v1/auth-nonce"
+        }
+      ],
+      "requestsMocked": [
+        "/functions/v1/auth-nonce"
+      ],
+      "checks": [
+        "Persistent for5.5s; dismissible; retry remains; one nonce request; no verification"
+      ],
+      "walletMethods": [
+        "wallet_requestPermissions",
+        "eth_requestAccounts",
+        "eth_chainId"
+      ],
+      "geometry": {
+        "overflowX": false,
+        "overflowY": false
+      },
+      "passed": true
+    },
+    {
+      "width": 1600,
+      "state": "expired",
+      "errors": [],
+      "expectedTransportDiagnostics": [
+        {
+          "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+          "url": "http://127.0.0.1:5312/functions/v1/v2-state"
+        }
+      ],
+      "requestsMocked": [
+        "/functions/v1/v2-state"
+      ],
+      "checks": [
+        "Expiry explained; session cleared; Enter/Escape/Cancel preserve focus"
+      ],
+      "walletMethods": [],
+      "geometry": {
+        "overflowX": false,
+        "overflowY": false
+      },
+      "passed": true
+    },
+    {
+      "width": 1600,
+      "state": "wrong-network",
+      "errors": [],
+      "expectedTransportDiagnostics": [],
+      "requestsMocked": [],
+      "checks": [
+        "Network message and action remain visible on Home"
+      ],
+      "walletMethods": [
+        "wallet_requestPermissions",
+        "eth_requestAccounts",
+        "eth_chainId"
+      ],
+      "geometry": {
+        "overflowX": false,
+        "overflowY": false
+      },
+      "passed": true
+    },
+    {
+      "width": 1600,
+      "state": "connected-hud",
+      "errors": [],
+      "expectedTransportDiagnostics": [],
+      "requestsMocked": [
+        "/functions/v1/v2-state"
+      ],
+      "checks": [
+        "Connected Power/Live rectangles do not overlap"
+      ],
+      "walletMethods": [
+        "wallet_requestPermissions",
+        "eth_requestAccounts",
+        "eth_chainId"
+      ],
+      "hud": {
+        "power": {
+          "x": 1190.171875,
+          "y": 10.5,
+          "width": 85.234375,
+          "height": 34
+        },
+        "live": {
+          "x": 1283.40625,
+          "y": 17,
+          "width": 42.9375,
+          "height": 21
+        }
+      },
+      "geometry": {
+        "overflowX": false,
+        "overflowY": false
+      },
+      "passed": true
+    },
+    {
+      "width": 1600,
+      "state": "connected-unsigned",
+      "errors": [],
+      "expectedTransportDiagnostics": [],
+      "requestsMocked": [],
+      "checks": [
+        "Connected Power/Live rectangles do not overlap"
+      ],
+      "walletMethods": [
+        "wallet_requestPermissions",
+        "eth_requestAccounts",
+        "eth_chainId"
+      ],
+      "hud": {
+        "power": {
+          "x": 1191.640625,
+          "y": 10.5,
+          "width": 85.234375,
+          "height": 34
+        },
+        "live": {
+          "x": 1284.875,
+          "y": 17,
+          "width": 42.9375,
+          "height": 21
+        }
+      },
+      "geometry": {
+        "overflowX": false,
+        "overflowY": false
+      },
+      "passed": true
+    },
+    {
+      "width": 1600,
+      "state": "offline",
+      "errors": [],
+      "expectedTransportDiagnostics": [],
+      "requestsMocked": [],
+      "checks": [
+        "Offline status visible; guest remains painted"
+      ],
+      "walletMethods": [],
+      "geometry": {
+        "overflowX": false,
+        "overflowY": false
+      },
+      "passed": true
+    },
+    {
+      "width": 1600,
+      "state": "api-503",
+      "errors": [],
+      "expectedTransportDiagnostics": [
+        {
+          "text": "Failed to load resource: the server responded with a status of 503 (Service Unavailable)",
+          "url": "http://127.0.0.1:5312/functions/v1/v2-state"
+        }
+      ],
+      "requestsMocked": [
+        "/functions/v1/v2-state"
+      ],
+      "checks": [
+        "API503 explanation and Retry visible"
+      ],
+      "walletMethods": [],
+      "geometry": {
+        "overflowX": false,
+        "overflowY": false
+      },
+      "passed": true
+    }
+  ],
+  "complete": true
+}

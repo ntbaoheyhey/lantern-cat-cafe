@@ -1,0 +1,6 @@
+  File "/Users/bao/taskbar-hero-ui-ledger/reports/ui/single2-artifact-gate.py", line 8
+    with (out/(label+'.log')).open('w') as f:\n  c=subprocess.run(argv,cwd=cwd,env=env,stdout=f,stderr=subprocess.STDOUT);f.write('\nexit='+str(c.returncode)+'\n')
+                                                                                                                                                                  ^
+SyntaxError: unexpected character after line continuation character
+
+exit=1
