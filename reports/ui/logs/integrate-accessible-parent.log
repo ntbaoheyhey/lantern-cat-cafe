@@ -1,0 +1,14 @@
+Merge made by the 'ort' strategy.
+ apps/web/e2e/fixtures/motion-view.tsx      |  2 +-
+ apps/web/e2e/ui/keyboard-regions.spec.ts   | 28 ++++++++++++++++++++++++++++
+ apps/web/src/game/stage/StageCanvas.tsx    |  2 +-
+ apps/web/src/layout/bag/BagPanel.tsx       |  3 ++-
+ apps/web/src/ui/Tabs.tsx                   |  3 ++-
+ apps/web/src/ui/scrollBoundaryKey.ts       | 14 ++++++++++++++
+ reports/ui/cards/MOTION/REPORT.md          |  4 ++++
+ reports/ui/cards/MOTION/changed-specs.json |  4 +++-
+ 8 files changed, 55 insertions(+), 5 deletions(-)
+ create mode 100644 apps/web/e2e/ui/keyboard-regions.spec.ts
+ create mode 100644 apps/web/src/ui/scrollBoundaryKey.ts
+
+exit=0

@@ -1,0 +1,36 @@
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-ui-previews/apps/web
+
+ ❯ src/pets/isolation.test.ts (1 test | 1 failed) 24ms
+   × greps runtime sources: only the preview store and export/mount boundaries may reference pets 23ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/pets/isolation.test.ts > greps runtime sources: only the preview store and export/mount boundaries may reference pets
+AssertionError: expected [ Array(1) ] to deeply equal []
+
+- Expected
++ Received
+
+- []
++ [
++   "apps/web/src/runes/FeatureSamples.tsx",
++ ]
+
+ ❯ src/pets/isolation.test.ts:23:22
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 127 passed (128)
+      Tests  1 failed | 1453 passed (1454)
+   Start at  20:28:26
+   Duration  41.48s (environment 48%, tests 39%, import 10%, transform 2%)
+
+Environment  jsdom was created 128 times · 35.11s total, 48% of tracked time
+             create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+             learn more: https://vitest.dev/guide/improving-performance#test-environments
+
+
+exit=1

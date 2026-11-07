@@ -1,0 +1,52 @@
+Merge made by the 'ort' strategy.
+ apps/web/e2e/ui/baseline-hud.spec.ts               |    7 +-
+ apps/web/src/motion.css                            |    7 +-
+ reports/ui/cards/MOTION/REPORT.md                  |    4 +
+ reports/ui/cards/MOTION/changed-specs.json         |    3 +-
+ .../ui/cards/MOTION/performance-release/fps.json   | 1018 ++++++++++++++++++++
+ .../motion-1280-no-preference.png                  |  Bin 0 -> 69938 bytes
+ .../performance-release/motion-1280-reduce.png     |  Bin 0 -> 69938 bytes
+ .../motion-1600-no-preference.png                  |  Bin 0 -> 77133 bytes
+ .../performance-release/motion-1600-reduce.png     |  Bin 0 -> 77133 bytes
+ .../animation-inventory.json                       |   36 +
+ .../motion-effects-release-1280x720/combat-end.png |  Bin 0 -> 78091 bytes
+ .../motion-effects-release-1280x720/summary.json   |   62 ++
+ .../page@f4b3dba084b5b8bb38102f78fdc0ce87.webm     |  Bin 0 -> 1855122 bytes
+ .../page@71d555a803604607ee3b532755fc83c3.webm     |  Bin 0 -> 3244854 bytes
+ .../page@193dfe625e00a6864c657b96318f8111.webm     |  Bin 0 -> 1927772 bytes
+ .../page@8947764d0f5bab7e14b9290e0fbc10cc.webm     |  Bin 0 -> 3566753 bytes
+ .../animation-inventory.json                       |   36 +
+ .../motion-effects-release-1600x900/combat-end.png |  Bin 0 -> 83100 bytes
+ .../motion-effects-release-1600x900/summary.json   |   62 ++
+ .../page@e98a1dcdc63a646aaac004970d50c8f1.webm     |  Bin 0 -> 2140409 bytes
+ .../page@d488782719ab80072aa8351f99c1b416.webm     |  Bin 0 -> 4779254 bytes
+ .../page@36b2e602c5e2f5c2eabb03e5b521e446.webm     |  Bin 0 -> 2212449 bytes
+ .../page@766d44d7c44d4ab87d1d16364898decf.webm     |  Bin 0 -> 3593498 bytes
+ .../late-hud-1280-1234567.png                      |  Bin 0 -> 133145 bytes
+ .../late-hud-1280-8788.png                         |  Bin 0 -> 132546 bytes
+ .../late-hud-1600-1234567.png                      |  Bin 0 -> 136759 bytes
+ .../late-hud-1600-8788.png                         |  Bin 0 -> 136177 bytes
+ 27 files changed, 1232 insertions(+), 3 deletions(-)
+ create mode 100644 reports/ui/cards/MOTION/performance-release/fps.json
+ create mode 100644 reports/ui/cards/MOTION/performance-release/motion-1280-no-preference.png
+ create mode 100644 reports/ui/cards/MOTION/performance-release/motion-1280-reduce.png
+ create mode 100644 reports/ui/cards/MOTION/performance-release/motion-1600-no-preference.png
+ create mode 100644 reports/ui/cards/MOTION/performance-release/motion-1600-reduce.png
+ create mode 100644 screenshots/ui/motion-effects-release-1280x720/animation-inventory.json
+ create mode 100644 screenshots/ui/motion-effects-release-1280x720/combat-end.png
+ create mode 100644 screenshots/ui/motion-effects-release-1280x720/summary.json
+ create mode 100644 screenshots/ui/motion-effects-release-1280x720/video-boss-ready/page@f4b3dba084b5b8bb38102f78fdc0ce87.webm
+ create mode 100644 screenshots/ui/motion-effects-release-1280x720/video-combat/page@71d555a803604607ee3b532755fc83c3.webm
+ create mode 100644 screenshots/ui/motion-effects-release-1280x720/video-motion-normal/page@193dfe625e00a6864c657b96318f8111.webm
+ create mode 100644 screenshots/ui/motion-effects-release-1280x720/video-motion-reduced/page@8947764d0f5bab7e14b9290e0fbc10cc.webm
+ create mode 100644 screenshots/ui/motion-effects-release-1600x900/animation-inventory.json
+ create mode 100644 screenshots/ui/motion-effects-release-1600x900/combat-end.png
+ create mode 100644 screenshots/ui/motion-effects-release-1600x900/summary.json
+ create mode 100644 screenshots/ui/motion-effects-release-1600x900/video-boss-ready/page@e98a1dcdc63a646aaac004970d50c8f1.webm
+ create mode 100644 screenshots/ui/motion-effects-release-1600x900/video-combat/page@d488782719ab80072aa8351f99c1b416.webm
+ create mode 100644 screenshots/ui/motion-effects-release-1600x900/video-motion-normal/page@36b2e602c5e2f5c2eabb03e5b521e446.webm
+ create mode 100644 screenshots/ui/motion-effects-release-1600x900/video-motion-reduced/page@766d44d7c44d4ab87d1d16364898decf.webm
+ create mode 100644 screenshots/ui/motion-late-hud-captures/late-hud-1280-1234567.png
+ create mode 100644 screenshots/ui/motion-late-hud-captures/late-hud-1280-8788.png
+ create mode 100644 screenshots/ui/motion-late-hud-captures/late-hud-1600-1234567.png
+ create mode 100644 screenshots/ui/motion-late-hud-captures/late-hud-1600-8788.png

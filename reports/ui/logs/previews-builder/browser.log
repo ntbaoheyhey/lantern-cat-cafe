@@ -1,0 +1,259 @@
+[WebServer] (node:84000) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] WebSocket server error: Port 24678 is already in use
+
+[WebServer] (node:84004) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-ui-previews/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+[WebServer] (node:84006) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+
+[WebServer] (node:84043) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:84044) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-ui-previews/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] (node:84050) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+[WebServer] (node:84060) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+
+[WebServer] (node:84091) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:84092) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-ui-previews/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] (node:84100) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-ui-previews/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] (node:84105) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 7 tests using 2 workers
+
+(node:84109) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+(node:84110) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/7] [stage-layout] › e2e/ui/art2-flag-off.spec.ts:5:35 › ART2 flag-off landing and class stay pixel-identical to main 340f88b 1280
+[2/7] [stage-layout] › e2e/ui/feature-samples.spec.ts:7:3 › Conditional samples stay labelled, read-only and bounded 1280 no-preference
+[3/7] [stage-layout] › e2e/ui/art2-flag-off.spec.ts:5:35 › ART2 flag-off landing and class stay pixel-identical to main 340f88b 1600
+  1) [stage-layout] › e2e/ui/feature-samples.spec.ts:7:3 › Conditional samples stay labelled, read-only and bounded 1280 no-preference 
+
+    Error: Expected the v2 build at http://localhost:5371
+
+    expect(locator).toHaveCount(expected) failed
+
+    Locator:  locator('[data-game-v2="stage-v2-enabled"]')
+    Expected: 1
+    Received: 0
+    Timeout:  5000ms
+
+    Call log:
+      - Expected the v2 build at http://localhost:5371 locator('[data-game-v2="stage-v2-enabled"]') with timeout 5000ms
+      - waiting for locator('[data-game-v2="stage-v2-enabled"]')
+        14 × locator resolved to 0 elements
+           - unexpected value "0"
+
+
+       at support/test.ts:37
+
+      35 |         }
+      36 |         await expect(page.locator('[data-game-v2="stage-v2-enabled"]'),
+    > 37 |           `Expected the ${v2 ? 'v2' : 'classic'} build at ${baseURL}`).toHaveCount(v2 ? 1 : 0);
+         |                                                                        ^
+      38 |         checked = true;
+      39 |       }
+      40 |       return response;
+        at _Page.page.goto (/Users/bao/taskbar-hero-ui-previews/apps/web/e2e/support/test.ts:37:72)
+        at /Users/bao/taskbar-hero-ui-previews/apps/web/e2e/ui/feature-samples.spec.ts:20:5
+
+    Error Context: test-results/5370-5371/ui-feature-samples-Conditi-cfbcc--bounded-1280-no-preference-stage-layout/error-context.md
+
+
+(node:84185) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[4/7] [stage-layout] › e2e/ui/feature-samples.spec.ts:7:3 › Conditional samples stay labelled, read-only and bounded 1280 reduce
+  2) [stage-layout] › e2e/ui/feature-samples.spec.ts:7:3 › Conditional samples stay labelled, read-only and bounded 1280 reduce 
+
+    Error: Expected the v2 build at http://localhost:5371
+
+    expect(locator).toHaveCount(expected) failed
+
+    Locator:  locator('[data-game-v2="stage-v2-enabled"]')
+    Expected: 1
+    Received: 0
+    Timeout:  5000ms
+
+    Call log:
+      - Expected the v2 build at http://localhost:5371 locator('[data-game-v2="stage-v2-enabled"]') with timeout 5000ms
+      - waiting for locator('[data-game-v2="stage-v2-enabled"]')
+        14 × locator resolved to 0 elements
+           - unexpected value "0"
+
+
+       at support/test.ts:37
+
+      35 |         }
+      36 |         await expect(page.locator('[data-game-v2="stage-v2-enabled"]'),
+    > 37 |           `Expected the ${v2 ? 'v2' : 'classic'} build at ${baseURL}`).toHaveCount(v2 ? 1 : 0);
+         |                                                                        ^
+      38 |         checked = true;
+      39 |       }
+      40 |       return response;
+        at _Page.page.goto (/Users/bao/taskbar-hero-ui-previews/apps/web/e2e/support/test.ts:37:72)
+        at /Users/bao/taskbar-hero-ui-previews/apps/web/e2e/ui/feature-samples.spec.ts:20:5
+
+    Error Context: test-results/5370-5371/ui-feature-samples-Conditi-bcda1-nly-and-bounded-1280-reduce-stage-layout/error-context.md
+
+
+(node:84195) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[5/7] [stage-layout] › e2e/ui/feature-samples.spec.ts:7:3 › Conditional samples stay labelled, read-only and bounded 1600 no-preference
+  3) [stage-layout] › e2e/ui/feature-samples.spec.ts:7:3 › Conditional samples stay labelled, read-only and bounded 1600 no-preference 
+
+    Error: Expected the v2 build at http://localhost:5371
+
+    expect(locator).toHaveCount(expected) failed
+
+    Locator:  locator('[data-game-v2="stage-v2-enabled"]')
+    Expected: 1
+    Received: 0
+    Timeout:  5000ms
+
+    Call log:
+      - Expected the v2 build at http://localhost:5371 locator('[data-game-v2="stage-v2-enabled"]') with timeout 5000ms
+      - waiting for locator('[data-game-v2="stage-v2-enabled"]')
+        14 × locator resolved to 0 elements
+           - unexpected value "0"
+
+
+       at support/test.ts:37
+
+      35 |         }
+      36 |         await expect(page.locator('[data-game-v2="stage-v2-enabled"]'),
+    > 37 |           `Expected the ${v2 ? 'v2' : 'classic'} build at ${baseURL}`).toHaveCount(v2 ? 1 : 0);
+         |                                                                        ^
+      38 |         checked = true;
+      39 |       }
+      40 |       return response;
+        at _Page.page.goto (/Users/bao/taskbar-hero-ui-previews/apps/web/e2e/support/test.ts:37:72)
+        at /Users/bao/taskbar-hero-ui-previews/apps/web/e2e/ui/feature-samples.spec.ts:20:5
+
+    Error Context: test-results/5370-5371/ui-feature-samples-Conditi-02f6a--bounded-1600-no-preference-stage-layout/error-context.md
+
+
+(node:84209) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[6/7] [stage-layout] › e2e/ui/feature-samples.spec.ts:7:3 › Conditional samples stay labelled, read-only and bounded 1600 reduce
+  4) [stage-layout] › e2e/ui/feature-samples.spec.ts:7:3 › Conditional samples stay labelled, read-only and bounded 1600 reduce 
+
+    Error: Expected the v2 build at http://localhost:5371
+
+    expect(locator).toHaveCount(expected) failed
+
+    Locator:  locator('[data-game-v2="stage-v2-enabled"]')
+    Expected: 1
+    Received: 0
+    Timeout:  5000ms
+
+    Call log:
+      - Expected the v2 build at http://localhost:5371 locator('[data-game-v2="stage-v2-enabled"]') with timeout 5000ms
+      - waiting for locator('[data-game-v2="stage-v2-enabled"]')
+        14 × locator resolved to 0 elements
+           - unexpected value "0"
+
+
+       at support/test.ts:37
+
+      35 |         }
+      36 |         await expect(page.locator('[data-game-v2="stage-v2-enabled"]'),
+    > 37 |           `Expected the ${v2 ? 'v2' : 'classic'} build at ${baseURL}`).toHaveCount(v2 ? 1 : 0);
+         |                                                                        ^
+      38 |         checked = true;
+      39 |       }
+      40 |       return response;
+        at _Page.page.goto (/Users/bao/taskbar-hero-ui-previews/apps/web/e2e/support/test.ts:37:72)
+        at /Users/bao/taskbar-hero-ui-previews/apps/web/e2e/ui/feature-samples.spec.ts:20:5
+
+    Error Context: test-results/5370-5371/ui-feature-samples-Conditi-fd514-nly-and-bounded-1600-reduce-stage-layout/error-context.md
+
+
+(node:84232) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[7/7] [stage-layout] › e2e/ui/feature-samples.spec.ts:61:1 › Conditional samples have no nodes or image requests when the shared flag is off
+  5) [stage-layout] › e2e/ui/feature-samples.spec.ts:61:1 › Conditional samples have no nodes or image requests when the shared flag is off 
+
+    Error: Expected the v2 build at http://localhost:5371
+
+    expect(locator).toHaveCount(expected) failed
+
+    Locator:  locator('[data-game-v2="stage-v2-enabled"]')
+    Expected: 1
+    Received: 0
+    Timeout:  5000ms
+
+    Call log:
+      - Expected the v2 build at http://localhost:5371 locator('[data-game-v2="stage-v2-enabled"]') with timeout 5000ms
+      - waiting for locator('[data-game-v2="stage-v2-enabled"]')
+        14 × locator resolved to 0 elements
+           - unexpected value "0"
+
+
+       at support/test.ts:37
+
+      35 |         }
+      36 |         await expect(page.locator('[data-game-v2="stage-v2-enabled"]'),
+    > 37 |           `Expected the ${v2 ? 'v2' : 'classic'} build at ${baseURL}`).toHaveCount(v2 ? 1 : 0);
+         |                                                                        ^
+      38 |         checked = true;
+      39 |       }
+      40 |       return response;
+        at _Page.page.goto (/Users/bao/taskbar-hero-ui-previews/apps/web/e2e/support/test.ts:37:72)
+        at /Users/bao/taskbar-hero-ui-previews/apps/web/e2e/ui/feature-samples.spec.ts:64:3
+
+    Error Context: test-results/5370-5371/ui-feature-samples-Conditi-75ff3-when-the-shared-flag-is-off-stage-layout/error-context.md
+
+
+  5 failed
+    [stage-layout] › e2e/ui/feature-samples.spec.ts:7:3 › Conditional samples stay labelled, read-only and bounded 1280 no-preference 
+    [stage-layout] › e2e/ui/feature-samples.spec.ts:7:3 › Conditional samples stay labelled, read-only and bounded 1280 reduce 
+    [stage-layout] › e2e/ui/feature-samples.spec.ts:7:3 › Conditional samples stay labelled, read-only and bounded 1600 no-preference 
+    [stage-layout] › e2e/ui/feature-samples.spec.ts:7:3 › Conditional samples stay labelled, read-only and bounded 1600 reduce 
+    [stage-layout] › e2e/ui/feature-samples.spec.ts:61:1 › Conditional samples have no nodes or image requests when the shared flag is off 
+  2 passed (37.5s)
+
+exit=1

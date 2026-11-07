@@ -1,0 +1,274 @@
+{
+  "head": "949cc444472c87c731c22b737748f56b6419ba5e",
+  "pass": "previews-a-accessible",
+  "pid": 74529,
+  "cwd": "/Users/bao/taskbar-hero-ui-previews",
+  "ports": [
+    5320,
+    5321,
+    5322,
+    5323,
+    5324
+  ],
+  "checks": [
+    {
+      "label": "typecheck",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "typecheck"
+      ],
+      "started": "2026-11-03T17:54:27.182069+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/previews-a-accessible/typecheck.log"
+    },
+    {
+      "label": "lint",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "lint"
+      ],
+      "started": "2026-11-03T17:54:37.383766+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/previews-a-accessible/lint.log"
+    },
+    {
+      "label": "scripts",
+      "command": [
+        "node",
+        "--test",
+        "scripts/gen-deno-json.test.mjs"
+      ],
+      "started": "2026-11-03T17:54:46.659157+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/previews-a-accessible/scripts.log"
+    },
+    {
+      "label": "packages",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "--filter",
+        "!@taskbar-hero/web",
+        "-r",
+        "--workspace-concurrency=1",
+        "test"
+      ],
+      "started": "2026-11-03T17:54:46.816729+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/previews-a-accessible/packages.log"
+    },
+    {
+      "label": "web-units",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "vitest",
+        "run",
+        "--maxWorkers=2"
+      ],
+      "started": "2026-11-03T17:55:38.644880+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/previews-a-accessible/web-units.log"
+    },
+    {
+      "label": "art-delivery",
+      "command": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tools/art",
+        "-v"
+      ],
+      "started": "2026-11-03T17:56:35.436238+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/previews-a-accessible/art-delivery.log"
+    },
+    {
+      "label": "art-catalog",
+      "command": [
+        "python3",
+        "tools/art/catalog.py",
+        "--check"
+      ],
+      "started": "2026-11-03T17:56:41.442058+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/previews-a-accessible/art-catalog.log"
+    },
+    {
+      "label": "build",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "build"
+      ],
+      "started": "2026-11-03T17:56:52.725065+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/previews-a-accessible/build.log"
+    },
+    {
+      "label": "changed-1280x720",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "e2e/ui/feature-samples.spec.ts",
+        "e2e/ui/art2-flag-off.spec.ts",
+        "e2e/ui/original-preview.spec.ts",
+        "e2e/ui/cxr2-state-matrix.spec.ts",
+        "e2e/ui/merged-redesign.spec.ts",
+        "e2e/a11y.spec.ts",
+        "e2e/ui/motion.spec.ts",
+        "e2e/ui/cxu3-forge.spec.ts",
+        "--repeat-each=3",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "started": "2026-11-03T17:57:03.874244+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/previews-a-accessible/changed-1280x720.log"
+    },
+    {
+      "label": "changed-1600x900",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "e2e/ui/feature-samples.spec.ts",
+        "e2e/ui/art2-flag-off.spec.ts",
+        "e2e/ui/original-preview.spec.ts",
+        "e2e/ui/cxr2-state-matrix.spec.ts",
+        "e2e/ui/merged-redesign.spec.ts",
+        "e2e/a11y.spec.ts",
+        "e2e/ui/motion.spec.ts",
+        "e2e/ui/cxu3-forge.spec.ts",
+        "--repeat-each=3",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "started": "2026-11-03T17:59:47.358920+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/previews-a-accessible/changed-1600x900.log"
+    },
+    {
+      "label": "full-1280x720",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "started": "2026-11-03T18:02:35.152023+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/previews-a-accessible/full-1280x720.log"
+    },
+    {
+      "label": "full-1600x900",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "started": "2026-11-03T18:07:22.361294+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/previews-a-accessible/full-1600x900.log"
+    },
+    {
+      "label": "resize-five-1280x720",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "e2e/layout/resize-burst.spec.ts",
+        "--repeat-each=5",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "started": "2026-11-03T18:11:47.568609+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/previews-a-accessible/resize-five-1280x720.log"
+    },
+    {
+      "label": "resize-five-1600x900",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "e2e/layout/resize-burst.spec.ts",
+        "--repeat-each=5",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "started": "2026-11-03T18:12:07.083090+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/previews-a-accessible/resize-five-1600x900.log"
+    },
+    {
+      "label": "strict-ui-audit",
+      "command": [
+        "node",
+        "--import",
+        "/Users/bao/taskbar-hero-ui/reports/ui/ports-loader.mjs",
+        "tools/ui-audit.mjs",
+        "/Users/bao/taskbar-hero-ui-previews/screenshots/ui/previews-a-accessible-audit",
+        "bossReadyStrong",
+        "--strict"
+      ],
+      "started": "2026-11-03T18:12:26.038592+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/previews-a-accessible/strict-ui-audit.log"
+    },
+    {
+      "label": "axe-wcag-aa",
+      "command": [
+        "node",
+        "/Users/bao/taskbar-hero-ui-ledger/reports/ui/axe-review.mjs",
+        "/Users/bao/taskbar-hero-ui-previews",
+        "dist-v2/e2e-5321",
+        "5324",
+        "/Users/bao/taskbar-hero-ui-previews/reports/ui/logs/previews-a-accessible/axe",
+        "all"
+      ],
+      "started": "2026-11-03T18:12:44.141740+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/previews-a-accessible/axe-wcag-aa.log"
+    }
+  ]
+}
