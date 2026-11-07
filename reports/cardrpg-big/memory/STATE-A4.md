@@ -1,12 +1,12 @@
 # A4 living state
 ## NOW
-D specification committed3f2c7efe; D five gates PASS. R draft365. No runtime changes yet; P1 code staged outside checkout until this boundary. G0 economy continues from immutable snapshot.
+P2 published draft369/a6be71a6. P3 active on codex/cardrpg-a4-p3-2026-11-08. Exact artifact dc965427 /26,198,406bytes. P3 staging only at /tmp/cardrpg-a4-p3; not yet applied.
 ## NEXT
-Publish D draft, CLAIM P1 then implement crew/formation/plans plus ON-only resource removal and THC8 extension. Retain G0 coordinator89663; no screen research.
+Mirror P2 report/state. Implement boss lifecycle/bands, measure actual x1 pacing, then P4–P7. Do not repeat completed G0/R/D/P1/P2 gates or pilot.
 ## DONE
-Prompt preserved verbatim before A4 work. No gameplay edits yet. Disk 296 GiB available. Existing B L3 DONE read; no adoption planned during G0.
+P2 atomic presets, utility comparisons, supply reservations,240shelf,THC9;24captures/3sizes/2themes,minimum contrast8.572. Pilot1500 replay/save cases;OFF8250routes exact47477251.
 ## GATES
-G0 source gates PASS (typecheck, lint, build, 1735 web, 1020 rules, 421 E2E); baseline sim closure pending. Later phase gates NOT VERIFIED.
+P2 type/lint/build/1735web/1054rules(+2expectedfail/11skip)/421E2E PASS; retained first failures and retries in p2/acceptance.json. Balance MISS/NOT VERIFIED:6positive18ties0reversals train;level6saturated. Startup bytes+8164 vsP1;CPU unmeasured.
 ## DECISIONS (append-only)
 - Keep the one-agent constraint, automatic battles, strict A/B ownership, and isolated worktree.
 ## MEASUREMENTS
@@ -72,3 +72,40 @@ G0 source gates PASS (typecheck, lint, build, 1735 web, 1020 rules, 421 E2E); ba
 ## D five-gate checkpoint
 - Type/lint/build PASS;1735 web/1020 rules (+2 expectedfail/11skip)/421 E2E PASS. Source still byte-identical to179-file G0 snapshot; off digest47477251b3d20ab602bee5c55a56cdd661e111b1386e298e0c9bc67737fecfa3.
 - D design3f2c7efe includes4 sequential reviewer roles; no runtime code yet. P1 staging at /tmp/cardrpg-a4-p1 is incomplete and NOT applied/tested.
+
+## Fresh-session v2 recovery
+- Prompt-v2 bytes: 26460; SHA-256: 465b40d699ce5c4e4376d22eb70b0ef27a5fb17256ec1878b270c395868e4bd4.
+- Existing unpublished P1 retained; original web typecheck failure is inherited MechanicsModel.prepare signature collision. Rename A method only.
+- Native/headless; no agents/models/Docker/CUA. Disk255GiB available. Simulation slices<=2–3min with B handoff.
+
+## P1 verification in progress
+- Recovered WIP f7bcc760 and backup wip/a4-p1-staged-2026-11-07 preserve all original files. Prompt-v2 committed.
+- Renamed A-owned prepare→prepareCrew to avoid inherited B signature; no B changes. Type/lint/build and1735web/1035rules pass; E2E queued with timing lock.
+- Full OFF compare uses resumable independent checkpoint p1-off; P1 sim retry1 fixes harness equality for JSON-omitted undefined intent.status, no rules change. Original failure retained.
+- G0 closure report generated:45-day ratios allPASS, max2.1948×. No previous A processes remain.
+
+- P1 3000-encounter functional simPASS (500seeds×6plans), exact replay/serialized save equality. Presentation REQUEST posted2026-11-07T16:19UTC.
+- Offline build failed twice due stale Python interpreter and missing Pillow; logs kept. Created own /tmp/cardrpg-a4-tools with Pillow11.3.0, copied lossless packing algorithm into A tool with A cache. Retry2 queued; no runtime dependency changes. Premature browser jobs explicitly cancelled before execution.
+- P2 isolated staging only at /tmp/cardrpg-a4-p2/{equipment-v4,loadouts-v4}.ts; not applied to P1 checkout. Await P1 phase publication before claiming/applying.
+
+## P1 phase closure
+- Five gates PASS; explicit labels and Look crew surfaces fixed after two retained browser failures. Thirty captures/3sizes/2modes PASS, mincontrast6.2448.
+- OFF165cells/8250routes exact47477251; P1functional3000encounters exact replay/save. G0before90accounts×45days max2.1948×.
+- P1 artifact details and open B request in a4/P1-PREPARATION.md. Full204 remains unrun. No B/protected edits.
+
+## P1 published / P2 boundary
+- P1 draft367 at7dfb7c84 stacked366. Exact artifact d4e5b472fcfb9f70e2d26f953a441893c8ec5b07e7d1ed26a028d12b4a44c51d /26190242bytes; corrected report size delta69913bytes. G0 #364 updated with downstream closure.
+
+## P2 verification continuation
+- Resumed existing gates35492, train pilot36133, OFF36150; no duplicate sims. Corrected gear-trigger fixture focused19 tests PASS (p2-trigger-retry1.log), original full-suite failure retained. Full-suite retry queued96245.
+- Added a4-p2-browser.mjs real-click loadout/transfer/salvage/missing-piece/export-import/pantry/full-shelf checks. Safety inventory fixtures enter through Import, no debug-state writes. First1280 run queued95435. Three sizes and both themes required.
+- Existing frozen rules source pilot1500 encounters is train-only, not acceptance. Full balance including intended challenge bands remains unverified until P3/P6. Native/headless, no B/protected edits.
+
+- P2 five gates now PASS:1,735web/1,054rules(+2expectedfail/11skip)/421E2E, type/lint/build. OFF8250 routes exact47477251. Original suite failed only an isolated healing-fixture expectation; retry passed.
+- UI first attempt exact label timeout fixed with aria-labels. Next found dark text on Classic dark inherited panel; explicit paired surfaces added. Contrast build/browser retry2 queued. Original log/checks preserved. Pilot36133 still queued; do not duplicate.
+- Owned temporary ledger worktree /tmp/cardrpg-a4-ledger at origin1cbff3f4 avoids disturbing pre-existing dirty shared ledger worktree. Mirror only STATE/report after phase acceptance.
+
+## P2 functional closure
+- 1280 retry2,1440 and1024 real-click paths passed;24captures zerooverflow/errors. Personally inspected Look compare and1024preset. Label and contrast failures retained; no full204pack.
+- Existing suites/pilot/OFF reused, no duplicated jobs. B17:04 window request acknowledged f7452380; two-minute gap between remaining A browser windows.
+- P3 draft staging prepared outside checkout only; no B/protected edits.
