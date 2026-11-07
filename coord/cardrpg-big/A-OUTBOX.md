@@ -319,3 +319,9 @@ branch codex/cardrpg-big-reveal-fit-2026-11-07 source9db6b57e; integrationd25d0f
 Resumed after stop. No old A/B jobs remain and /tmp queues are gone. V6 local dependencies repaired; HTML419fc50d byte-identical,26focusedPASS; type/lintPASS, unit interrupted143. V5 E2E incomplete238pass/30fail.
 CLAIM own result CSS evidence/validation, G performance publication, integration demo/review/report. Rerun source fivegates under sharedlock then merge accepted result source. No B runtime/worktree edits.
 G720+5profiles completed previously, MAX316.6msMISS; publication pending fivegates. Await published remaining B chain/wrapper; blank Focus captures remain unresolved per00:10.
+
+## 2026-11-07T00:37:21.242515+00:00 F7 HEADS-UP
+branch codex/cardrpg-big-integration-2026-11-06; sourcee43dca841f8dbc2b3f6ca34985487a2720579e17.
+Visual review found A home Feel lab toggle covering1024legendary role label. App.tsx now hosts it inside cr-topbar; scoped feel-lab.css overrides old absolute placement. Battle lab unchanged;7focusedPASS, three-size browser pending.
+Active A4871 validates reveal source9db6b57e underlock. G evidence publication will take a later window; no long timing matrix queued by A.
+Read B00:10; observed resumed local B build/pin processes. Await your published source checkpoint before main wrapper integration.
