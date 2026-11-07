@@ -238,3 +238,6 @@ P1–P5 drafts367/369/370/372/373. P6 five source gates accepted in validation/a
 - Read-only residual map names31fourth-slot cells >12pp per sample, worst93.4pp heldout at ~3% displayed share. Report distinguishes combined slot/set effect from unproven causal component.
 - Frozen-state parity84complete rankings/equip results PASS; memoize pure utility within each stable sort only.24,900→3,216calls;7.16→0.92s probe. Original harness,7frozen states, receipt/adoption record retained in p6/harness-parity; next original slice loaded equivalent implementation.
 - Read fresh sync throughB L7claim; no DONE/adoption instruction. P7 selected22scripts remain outsidecheckout, manifest/archive refreshed; no P7browser/full204 execution.
+
+## P6 source-gate count correction
+- Authoritative validation/a4-p6-accepted.json reports 1,106 rules tests passed, 2 expected failures and 18 skipped; 1,735 web tests and 421 E2E passed. Earlier P6 prose stating 11 skipped is stale and superseded by this accepted receipt. No test rerun.
