@@ -1,4 +1,4 @@
-// REFERENCE: gear-sim.mjs. Identical cases with unchanged bundled rules; resumable <=10-minute shards.
+// REFERENCE: gear-sim.mjs. Identical cases with unchanged bundled rules; resumable <=2-minute shards.
 import { loadRules } from './a4-load.mjs';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { execFileSync } from 'node:child_process';
@@ -63,10 +63,20 @@ const checkpointPath = `reports/cardrpg-big/a4/g0/gear-${phase}.partial.json`;
 const checkpoint = JSON.parse(await readFile(checkpointPath, 'utf8').catch(() => '{}'));
 if (checkpoint.sourceHashes && hash(checkpoint.sourceHashes) !== hash(sourceHashes)) throw Error('Rules changed during baseline shards');
 const { rows = [], sets = [], teams = [], singleItems = [], powerBounds = [] } = checkpoint;
+// Every single-piece comparison shares the same bare starter team for its seed,
+// level and chapter. Reuse only already measured identical baseline outcomes;
+// improved builds still execute their real battle independently.
+const bareResults = new Map();
+for (const item of singleItems) for (const outcome of item.outcomes) for (const run of outcome.runs) {
+  const key = `${outcome.level}:${outcome.chapter}:${run.seed}`;
+  const previous = bareResults.get(key);
+  if (previous && hash(previous) !== hash(run.before)) throw Error('Inconsistent paired baseline checkpoint');
+  bareResults.set(key, run.before);
+}
 const started = Date.now();
 async function saveProgress() {
   await writeFile(checkpointPath, JSON.stringify({ sourceHashes, rows, sets, teams, singleItems, powerBounds }));
-  if (Date.now() - started > 10 * 60 * 1000) { console.log('Checkpoint: releasing timing lock'); process.exitCode = 75; throw checkpointExit; }
+  if (Date.now() - started > 2 * 60 * 1000) { console.log('Checkpoint: releasing timing lock'); process.exitCode = 75; throw checkpointExit; }
 }
 const checkpointExit = new Error('Shard checkpoint');
 try {
@@ -139,10 +149,14 @@ try {
         const piece = R.makeGear(improved, template.id, seed);
         improved.gear.push(piece);
         improved.equipment[cardId] = { [template.slot]: piece.id };
-        const results = [baseline, improved].map(account => {
+        const results = [baseline, improved].map((account, comparisonIndex) => {
+          const key = `${level}:${chapter}:${seed}`;
+          if (comparisonIndex === 0 && bareResults.has(key)) return bareResults.get(key);
           const battle = simulation.runBattle(R.createBattle({ seed, chapter, cats: R.battleCats(account),
             enemies: [R.CHAPTERS[chapter - 1].boss] }), 'auto');
-          return { won: battle.result === 'party', actions: battle.choices.length, logHash: hash(battle.log) };
+          const result = { won: battle.result === 'party', actions: battle.choices.length, logHash: hash(battle.log) };
+          if (comparisonIndex === 0) bareResults.set(key, result);
+          return result;
         });
         runs.push({ seed, before: results[0], after: results[1] });
       }

@@ -1,47 +1,63 @@
-# G0 baseline audit (in progress)
-REFERENCE: ../memory/PROMPT-A4.md G0; COVERAGE.md; g0/series.json; ../validation/a4-g0.json.
+# A4 G0: what the current game lets a player decide
+REFERENCE: memory/PROMPT-A4.md; ../../../docs/design/cardrpg/ITEM-TIERS.md; g0/browser/audit.json; g0/before.json.
 
-Baseline source `daba7d7cd7d6cea4b5ce4ee21d11925ef4f9ae5d`. Demo SHA-256 `32a727afc547520fa65eb8dccf4453d1a78b8d5b3403f5a78d91d265f3c3a06d`, 26,120,329 bytes. Baseline-v1 23,937,000 bytes / `9a5f6ebbb04af56c19f11cf43cf2763b35df2bde3b7a8dcd943060e878d793d3`. Both freshly checked. Existing 13 sim file hashes match; this verifies preserved files, not independently reproduced historical outcomes. `a4-baseline.mjs` separately records fresh current-rule behavior for later OFF comparison.
+Baseline: delivery daba7d7c; main demo SHA-256 32a727afc547520fa65eb8dccf4453d1a78b8d5b3403f5a78d91d265f3c3a06d, 26,120,329 bytes. No gameplay change in G0. Automated real-click audit at 1280×720: a new account, three first-session routes, a legally earned day-7 fixture, and a separate level-10/three-star A3 comparison. “First hour” is a compressed path, not sixty elapsed minutes. Unmeasured cells are explicitly pending. Scores below are this agent's sequential design assessment, not a user study.
 
-## Decision inventory
-Source inspection below is provisional until the queued click audit is read. Scores measure clarity/completeness, not measured fun. All decisions occur outside fights.
+## Decisions and visibility
 
-| Decision | Where | Visible effect / missing explanation | Score /10 |
-|---|---|---|---:|
-| Choose three cats | Team & cards, roster select and Best team | Portraits, role stats; aggregate recommendation omits matchup utility | 7 |
-| Front/rear placement | Team, row select and drop area | Row labels update; no Prepare editing or enemy-intent comparison | 6 |
-| Save/restore team | Team, three Shift slots | Restores roster/rows; excludes gear and future tactics | 6 |
-| Level/ascend/awaken a cat | Companions | Costs/stat increase and unlocks; ultimate unlock causes large balance discontinuity | 6 |
-| Inspect role/rarity/skills | Companions filters/detail and skill preview | Actual four-skill catalogue, not a three-skill in-battle choice | 8 |
-| Choose and swap equipment | Equipment, selected wearer/item | Numeric before/after, four slots and set counters; utility unpriced | 6 |
-| Enhance +12 | Equipment | Next main-stat value/cost; failure-free | 8 |
-| Choose reforge stat | Equipment | Affix range and cost; combat consequence only prose | 7 |
-| Salvage | Equipment | Unequipped item removed, threads returned; no richer investment planning | 7 |
-| Target craft | Equipment, tailoring selector | All 128 templates selectable; resource/chapter eligibility via command errors | 6 |
-| Inspect currencies/materials/consumables | Equipment category tabs | Separate totals, weak unified source/sink explanation and sorting | 6 |
-| Choose banner/batch | Invitations | Three banners, earned cost, live odds, pity and duplicate shards | 8 |
-| Save stamps vs draw | Invitations, currency HUD | No deterministic chosen reward independent of rare rolls | 6 |
-| Select chapter/daily/tower | Cafe | Unlock status and reward label, mutator text; content scaling saturates | 6 |
-| Choose map lane/event/reward/shop/heal | Night route | Points and HP tradeoffs, stack-capped charms; results do not attribute value | 7 |
-| Claim service/quest | Cafe, below hero | Capped actual payout; offline demo explicitly uses fixture hour | 6 |
-| Reserve collectible design | Equipment → Collectibles | Effort, local season/global counters, zero stats and not-minted label | 6 |
-| Inspect selected Fuji holding | Fuji Relics | Existing read-only/fixture route; protected and outside A4 mutations | 7 |
-| Read enemy intent/sets/status | Field guide | Useful information is separated from Prepare | 6 |
-| Replay or improve after fight | Result | Damage/heal/shield totals and key moments; no build-specific explanation | 6 |
-| Export/import settings | Save & settings | Checksum and offline portability; browser shortcuts labelled | 8 |
+| Decision / surface | Effect visible now | Score / 10 | Specific gap |
+|---|---|---:|---|
+| Claim bounded cafe service / Cafe | Elapsed service description and currencies | 7 | Demo fixture wording obscures normal offline progress |
+| Pick chapter, daily route or Tower / Cafe | Chapter rewards and unlocks | 7 | No compact daily plan or weekly milestone loop |
+| Pick three collected cats / Team & cards | Cards, roles, power and automatic kits | 7 | “Best team” overweights raw stats; no matchup explanation |
+| Place front/back rows / Team & cards | Row headings and selectors | 6 | Changes cannot be made on Prepare; specific opponent pressure is below fold |
+| Save three shifts / Team & cards | Team presets | 6 | A shift is not a complete equipment and tactics loadout |
+| Discover a combo / Team & cards | Warm table / Night garden activation | 5 | Activation text does not show a counted threshold or contribution after combat |
+| Level, ascend and awaken / Companions | Cost, stats, unlock text | 7 | Level-six ultimate dominates gear distinctions |
+| Compare and equip four slots / Equipment | Before/after numerical stats and 2/4 set text | 7 | Utility effects missing from power; behavior changes are hard to compare |
+| Enhance to +12 / Equipment | Guaranteed next value and cost | 7 | No relative combat-utility indication |
+| Choose replacement affix / Equipment | Compatible chosen affix and cost | 7 | Still needs clearer relation to a role or matchup |
+| Salvage / Equipment | Threads returned; equipped items protected | 7 | No unified capacity forecast or complete saved loadout |
+| Tailor a chosen template / Equipment | Source chapter, cost and mastery gate | 7 | Very long template list; planning a missing piece is awkward |
+| Filter/sort gear / Equipment | Slot, rarity, set and sorting | 8 | Materials, consumables and currencies lack a unified source/sink/binding table |
+| Choose banner, one or ten invitations / Invitations | Cost, daily limit and account binding | 8 | No deterministic chosen reward beyond pity and unowned preference |
+| Inspect odds / Invitations | Base, conditional next draw and item pool | 9 | Add permanent chosen-reward distance beside pity |
+| Choose route branch / Night route | Node kind and connectivity | 7 | Enemy roles and counters need to be actionable before commitment |
+| Choose story tradeoff / route event | HP, points and charm consequences | 8 | Strong existing between-fight decision to retain |
+| Choose charm/skill upgrade / reward, shop, campfire | Description, cap and price | 7 | Some descriptions retain rejected energy/break vocabulary |
+| Spend tonic / between encounters | Healing and remaining supplies | 7 | Keep strictly outside battle |
+| Commit to battle / Prepare | Team stats, enemy HP/row, five-seed estimate | 5 | Only Fight/Return; opponent intent and counter-picking missing |
+| Change a build after defeat / Result | Damage, healing, MVP, biggest hit and return to team | 5 | Does not explain equipment, formation or tactic contribution |
+| Inspect journal/field guide / Field guide | Enemy counters, sets and status rules | 5 | Still explains flavour wheel, break pressure and shared energy; v4 must remove these mechanics/copy from its active rules and guide |
+| Reserve collectible design / Inventory → Collectibles | Local eligibility and design caps | 4 | No authoritative ledger transition or replay/cap-race enforcement |
+| Export/import and settings / Save & settings | Checksum and playback preferences | 8 | New format must preserve legacy saves and OFF behavior |
 
-There is no separate Journal navigation in this checkpoint; quests live on Cafe and reference information in Field guide. The historical brief's screen names are not proof those destinations exist.
+Screenshots: [Team](g0/browser/day7-team-cards.png), [Prepare](g0/browser/day7-prepare-0-6.png), [Equipment](g0/browser/day7-equipment.png), [Invitations](g0/browser/day7-invitations.png). Visual review of Team and Prepare confirms that the three cats occupy the first viewport while opponent information falls below it. Forty-two captured states report zero horizontal overflow and no browser errors; this is not the full three-size/204-image acceptance pack.
 
-## Six numerical failures
-Fresh runs are queued under the shared timing lock. Historical BEFORE values below will be replaced or explicitly compared when receipts arrive.
+## Fresh measurements
 
-| Measure | Historical A3 | Fresh G0 |
-|---|---:|---|
-| Chapter-one x1 boss / death | 170.4 s / ~153.5 s | Pending same visible level10/3star fixture |
-| Adjacent tiers | 26/48 positive, 22 ties | Pending train seeds1–50 and heldout10001–10050 |
-| Saturation | Level6 | Pending levels1–10 and legal max-level roster |
-| Largest single piece | +34pp heldout (+42 training); display share9.6306% | Pending paired real battles |
-| Sets / cats heldout | 8–92% /49.15–83.76% | Pending same roster/set sweep |
-| 45-day heavy/casual | Maximum2.194775696× | Pending90-account actual commands |
+<!-- A4_BEFORE_START -->
+Gear train/heldout, complete level curve and 45-day economy are running in checkpointed lock windows. Do not substitute historical values for fresh results.
+<!-- A4_BEFORE_END -->
 
-`g0/day7.save.txt` is generated by seven legal casual-day reducer loops, not by the all-content unlock. The A3 pacing comparison is labelled separately because its level10/3star shortcut is not day-seven progression. Browser timings include initial Fight loading; screenshots are outside timed sections. No 860-case roster matrix or full204 screenshot pack is part of G0.
+Real x1 timings already observed: day-7 chapter-one boss **177.346 s**, boss death **155.331 s**, cleanup **22.015 s**. Separate A3 comparison **171.794 s**, death **154.151 s**, cleanup **17.643 s**. Three new-save boss defeats took **159.598 / 143.874 / 137.218 s**. Ordinary first-session encounters **52.477–63.705 s** and day-7 ordinary **58.881 s**. This supersedes the old 9–16-second ordinary fixture claim for these actual paths. Every sampled ordinary encounter and boss exceeds the requested v4 target; shorter defeat feedback matters too. Elite and chapter-two/three x1 timing are not measured at G0.
+
+Cold native peak **33.4 ms**, CPU×4 peak **266.7 ms** in the new G0 receipt; the artifact is unchanged, so these are baseline environment observations, not an A4 regression. Full sizes and startup bytes remain in g0/cold/summary.json and g0/startup/checks.json. Source gates pass: typecheck, lint, build, **1,735 web tests / 1,020 rules tests** (+2 expected failures, 11 skipped), **421 E2E**. One missing-tool loader attempt failed; the retry uses existing Vite and proves 45 full-route outputs identical. Original logs are retained. The 13 historical sim files and baseline-v1 bytes are unchanged; fresh behavioral OFF digest is pending.
+
+## Brief coverage driving A4
+
+| User requirement | Current observable loop | Before / 10 | Required phase / acceptance |
+|---|---|---:|---|
+| Good mechanics and retention | Routes, loadouts, automatic outcome | 6.5 | P1/P3/P5: visible preparation responsibility and concise outcome |
+| Complete equipment | 4 slots, 8 sets, enhancements, reforge, tailoring, salvage | 6.5 | P2: utility comparison, real loadouts and meaningful tiers |
+| Complete items | Distributed materials, gear, currencies and designs | 6 | P2: unified source/sink/cap/binding catalogue |
+| Balanced items | Deterministic rules, known utility outlier | 4 | P2/P6: paired heldout utility and tier gates |
+| Rare versus common | Four labels and source gates | 6 | P2: quantified distinction at every intended content band |
+| Distinctness | Set/unique descriptions | 6 | P1/P2: behavioral identities with a documented niche |
+| Gacha | Three earned banners, disclosed odds, pity | 8 | P4: deterministic selector and 10,000-account simulation |
+| More than battle | Cafe, quests, routes, Tower, journal | 6.5 | P5: daily plan, capped idle service, permanent milestones |
+| NFT-value limits | Design caps and local counters | 3 | P4: pure issuance ledger, replay/race tests, zero combat bonus |
+| Research-based original identity | 34-game desk study and cozy cafe | 7 | R/D: verified gap evidence and explicit original principles |
+| Keep proven basics | Progression, synergies, targeting and pity exist | 7 | All phases: extend, retain saves and prove OFF equivalence |
+
+The current product has substantial meta systems, but its screens rarely explain how a preparation decision caused a battle observation. The next design must make those connections visible, remove obsolete manual-system explanations, bound individual-item utility and end a boss encounter when the boss is defeated.

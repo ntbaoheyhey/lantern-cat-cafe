@@ -43,7 +43,7 @@ try {
     rows.push({level,chapter,rarity,runs});
     if(!process.argv.includes('--check'))await writeFile(checkpointPath,JSON.stringify({rows,saturation}));
     console.log(JSON.stringify(saturation.at(-1)));
-    if(!process.argv.includes('--check')&&Date.now()-started>10*60*1000){process.exitCode=75;throw checkpointExit;}
+    if(!process.argv.includes('--check')&&Date.now()-started>2*60*1000){process.exitCode=75;throw checkpointExit;}
   }
   await mkdir(out,{recursive:true});
   const receipt = { method:'Actual auto routes, 50 paired seeds per cell; fixed chapters expose original saturation. Current A3 source. No timing fields.', sha256:hash(rows), rows };

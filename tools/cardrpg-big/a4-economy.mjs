@@ -78,7 +78,7 @@ try {
     accounts.push({ style: style.id, index, firstEpic, firstLegendary, firstSet, saturation, days });
     await writeFile(checkpointPath,JSON.stringify({sourceHashes,accounts}));
     console.log(`${style.id} account ${index+1}/30`);
-    if(Date.now()-started>10*60*1000){process.exitCode=75;throw checkpointExit;}
+    if(Date.now()-started>2*60*1000){process.exitCode=75;throw checkpointExit;}
     if (index === 29) console.log(`${style.id} complete`);
   }
   const summary = styles.map(style => {

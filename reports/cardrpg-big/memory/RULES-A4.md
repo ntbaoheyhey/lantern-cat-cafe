@@ -27,3 +27,4 @@
 26. Do not regress startup bytes/cold CPU; report inherited misses and 32MB exception honestly.
 27. Required phases G0,R,D,P1,P2,P3,P4,P5,P6,P7 in order; research and design committed before implementation.
 28. Every missed gate/request/decision belongs in report; blocked item parked, continue other work.
+29. User update: no screen use for research. Use background web search/text/PDF sources; no CUA/browser interaction. Local app validation stays headless and must not take over the desktop.
