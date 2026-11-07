@@ -12,7 +12,7 @@ export function teamPower(state: R.DepthAccount, team = state.team) {
   return team.reduce((sum, id) => sum + powerScore(R.depthStats(state, id)), 0);
 }
 
-export function nextChallenge(state: R.DepthAccount) {
+export function nextChallenge(state: R.DepthAccount, selectedBand?: number) {
   const active = state.run && !state.run.complete ? state.run : null;
   const chapter = R.CHAPTERS[(active?.chapter ?? Math.min(3, state.cleared.length + 1)) - 1]!;
   const node = active
@@ -20,7 +20,7 @@ export function nextChallenge(state: R.DepthAccount) {
     : R.generateMap(state.account.seed, chapter.id)[0];
   const enemies = node?.enemies ?? chapter.pool.slice(0, 2);
   const battle = active?.battle ?? R.createBattle({ seed: state.account.seed, chapter: chapter.id,
-    cats: [], enemies });
+    cats: [], enemies,...(R.gameplayV4(state)?{gameplayV4:true,...((active?.challengeLevel??(active?undefined:selectedBand??Math.min(...state.team.map(id=>state.account.cards.find(c=>c.cardId===id)!.level))))!==undefined?{challengeLevel:active?.challengeLevel??selectedBand??Math.min(...state.team.map(id=>state.account.cards.find(c=>c.cardId===id)!.level))}:{})}:{}) });
   const enemyPower = Math.round(battle.actors.filter(actor => actor.side === 'enemy')
     .reduce((sum, actor) => sum + powerScore(actor), 0));
   return { chapter, enemyPower, teamPower: teamPower(state), exact: !!active && !!(node || active.battle) };

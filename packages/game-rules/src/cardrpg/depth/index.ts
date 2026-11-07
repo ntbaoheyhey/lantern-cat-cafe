@@ -10,6 +10,7 @@ export * from './bridge';
 export * from './save';
 export * from './gameplay-v4';
 export * from './events-v4';
+export * from './pacing-v4';
 export * from './equipment-v4';
 export * from './loadouts-v4';
 export * from './items-v4';

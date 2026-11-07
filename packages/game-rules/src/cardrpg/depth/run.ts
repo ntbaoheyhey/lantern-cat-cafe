@@ -8,6 +8,7 @@ import type { DepthAccount, NodeKind, RuleResult, Run, RunNode } from './contrac
 import type { Row } from './contract';
 import { CAT_BY_ID } from './catalog';
 import { DEFAULT_PLAN, validPlan, type StandingPlan } from './gameplay-v4';
+import { challengeStatsV4 } from './pacing-v4';
 export const CHAPTERS = [
   {id:1,name:'Tangled Cafe',boss:'yarn-giant',palette:'#d8a76d',ambience:174,pool:['button-guard','sock-skipper','needle-moth','teacup-healer'],elites:['spool-ram','kettle-knight'],reward:'A Yarnkeeper Seal and 80 mastery materials'},
   {id:2,name:'Rooftop Orchard',boss:'rain-spool',palette:'#83b4a6',ambience:220,pool:['needle-moth','teacup-healer','button-guard','sock-skipper'],elites:['pollen-scout','kettle-knight'],reward:'An Orchard Seal and 100 mastery materials'},
@@ -42,7 +43,7 @@ export function availableNodes(run: Run) {
   const last=run.nodes.find(n=>n.id===run.visited.at(-1));
   return run.nodes.filter(n=>last?last.next.includes(n.id):n.depth===0);
 }
-export function startRun(state: DepthAccount, chapter: number, seed: number, mode: Run['mode']='campaign', date='2026-11-06'): RuleResult<DepthAccount> {
+export function startRun(state: DepthAccount, chapter: number, seed: number, mode: Run['mode']='campaign', date='2026-11-06', challengeLevel?: number): RuleResult<DepthAccount> {
   return transactDepth(state,s=>{
     requireHome(s);requireRule(integer(chapter,1,3)&&integer(seed,0,0xffffffff),'INVALID_AMOUNT','Invalid chapter or seed.');
     requireRule(chapter===1||s.cleared.includes(chapter-1),'LOCKED','Clear the preceding chapter first.');
@@ -50,7 +51,12 @@ export function startRun(state: DepthAccount, chapter: number, seed: number, mod
     const challenge=calendarChallenge(date),actualSeed=mode==='daily'?challenge.seed:seed;
     const cats=battleCats(s);
     s.run={id:s.nextRunId++,seed:actualSeed,chapter,mode,nodes:generateMap(actualSeed,chapter),visited:[],current:null,points:35,boons:{},hp:Object.fromEntries(cats.map(c=>[c.id,c.stats.hp])),upgrades:{},rewardChoices:[],battle:null,complete:false,won:false,floor:1,mutator:mode==='campaign'?'':challenge.mutator.id,supplies:1,earnedItems:[],date};
-    if(s.gameplayV4) s.run.gameplayV4=true;
+    if(s.gameplayV4){
+      const ceiling=Math.min(...s.team.map(id=>s.account.cards.find(c=>c.cardId===id)!.level));
+      const band=challengeLevel??ceiling;
+      requireRule(integer(band,1,ceiling),'LOCKED','Choose a challenge band no higher than your lowest-level crew member.');
+      s.run.gameplayV4=true;s.run.challengeLevel=band;
+    }
   });
 }
 export function enterNode(state: DepthAccount, id: string): RuleResult<DepthAccount> {
@@ -59,7 +65,7 @@ export function enterNode(state: DepthAccount, id: string): RuleResult<DepthAcco
     const node=availableNodes(run).find(n=>n.id===id);requireRule(node,'NOT_READY','Choose a connected node on the map.');
     run.current=id;
     if(node.enemies.length){
-      const setup={seed:deriveSeed(run.seed,run.visited.length+run.floor*100),chapter:run.chapter,cats:battleCats(s),enemies:node.enemies,hp:run.hp,boons:run.boons,upgrades:run.upgrades,mutator:run.mutator,...(run.gameplayV4?{gameplayV4:true,plan:clone(s.v4?.plan??DEFAULT_PLAN),...(run.packedSupply?{packedSupply:clone(run.packedSupply)}:{})}:{})};
+      const setup={seed:deriveSeed(run.seed,run.visited.length+run.floor*100),chapter:run.chapter,cats:battleCats(s),enemies:node.enemies,hp:run.hp,boons:run.boons,upgrades:run.upgrades,mutator:run.mutator,...(run.gameplayV4?{gameplayV4:true,...(run.challengeLevel!==undefined?{challengeLevel:run.challengeLevel,enemyStats:challengeStatsV4(run.challengeLevel)}:{}),plan:clone(s.v4?.plan??DEFAULT_PLAN),...(run.packedSupply?{packedSupply:clone(run.packedSupply)}:{})}:{})};
       run.battle=createBattle(setup);s.lastBattle=clone(run.battle.initial);s.lastChoices=[];
     }
   });

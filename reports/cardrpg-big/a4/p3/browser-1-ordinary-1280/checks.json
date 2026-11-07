@@ -1,0 +1,673 @@
+{
+  "artifact": "/Users/bao/taskbar-hero-cardrpg-a4/docs/cardrpg3/index.html",
+  "sha256": "4868160055b08801aad3066c27376529fa2e39a79037a1c38b2b31caab0445a6",
+  "chapter": 1,
+  "kind": "ordinary",
+  "level": 1,
+  "width": 1280,
+  "method": "Controlled level/unlocked-chapter benchmark at seed23; no claim of earned new-save progression. Preceding nodes use public commands, then save import through UI. Fight includes initial load and x1 playback; no skip or nominal speed change. Real browser captures.",
+  "errors": [],
+  "captures": [
+    {
+      "name": "new-hub",
+      "overflow": 0
+    },
+    {
+      "name": "prepare-classic",
+      "overflow": 0
+    },
+    {
+      "name": "prepare-look",
+      "overflow": 0
+    },
+    {
+      "name": "result-look",
+      "overflow": 0
+    },
+    {
+      "name": "result-classic",
+      "overflow": 0
+    }
+  ],
+  "timing": {
+    "start": 1819.2999999970198,
+    "bossDeath": null,
+    "result": 67552.5,
+    "outcome": "party",
+    "rounds": 10,
+    "actions": 44,
+    "initial": {
+      "seed": 1728296884,
+      "chapter": 1,
+      "cats": [
+        {
+          "id": "mochi",
+          "stats": {
+            "hp": 592,
+            "attack": 56,
+            "defense": 34,
+            "critBp": 800,
+            "critDamageBp": 5000,
+            "effectHitBp": 0,
+            "effectResistBp": 0,
+            "healingBp": 400,
+            "shieldBp": 0,
+            "initiative": 8
+          },
+          "skills": [
+            "mochi-1",
+            "mochi-2",
+            "mochi-3"
+          ],
+          "row": "front",
+          "equipment": [
+            "hearthloom-weapon-common",
+            "hearthloom-outfit-common"
+          ],
+          "effects": [
+            "defend-shield"
+          ],
+          "bonuses": {}
+        },
+        {
+          "id": "soot",
+          "stats": {
+            "hp": 460,
+            "attack": 69,
+            "defense": 22,
+            "critBp": 1200,
+            "critDamageBp": 5000,
+            "effectHitBp": 0,
+            "effectResistBp": 0,
+            "healingBp": 400,
+            "shieldBp": 0,
+            "initiative": 6
+          },
+          "skills": [
+            "soot-1",
+            "soot-2",
+            "soot-3"
+          ],
+          "row": "rear",
+          "equipment": [
+            "moonwick-weapon-common",
+            "moonwick-outfit-common"
+          ],
+          "effects": [
+            "marked-break"
+          ],
+          "bonuses": {}
+        },
+        {
+          "id": "clover",
+          "stats": {
+            "hp": 384,
+            "attack": 42,
+            "defense": 20,
+            "critBp": 500,
+            "critDamageBp": 5000,
+            "effectHitBp": 0,
+            "effectResistBp": 0,
+            "healingBp": 400,
+            "shieldBp": 0,
+            "initiative": 4
+          },
+          "skills": [
+            "clover-1",
+            "clover-2",
+            "clover-3"
+          ],
+          "row": "rear",
+          "equipment": [
+            "mossbrew-weapon-common",
+            "mossbrew-outfit-common"
+          ],
+          "effects": [
+            "healing-cleanse"
+          ],
+          "bonuses": {}
+        }
+      ],
+      "enemies": [
+        "button-guard",
+        "button-guard"
+      ],
+      "hp": {
+        "mochi": 592,
+        "soot": 460,
+        "clover": 384
+      },
+      "boons": {},
+      "upgrades": {},
+      "mutator": "",
+      "gameplayV4": true,
+      "challengeLevel": 1,
+      "enemyStats": {
+        "button-guard": {
+          "hp": 202,
+          "attack": 19,
+          "defense": 18
+        },
+        "sock-skipper": {
+          "hp": 294,
+          "attack": 22,
+          "defense": 8
+        },
+        "spool-ram": {
+          "hp": 546,
+          "attack": 30,
+          "defense": 16
+        },
+        "needle-moth": {
+          "hp": 277,
+          "attack": 17,
+          "defense": 6
+        },
+        "teacup-healer": {
+          "hp": 321,
+          "attack": 14,
+          "defense": 10
+        },
+        "kettle-knight": {
+          "hp": 619,
+          "attack": 25,
+          "defense": 35
+        },
+        "yarn-giant": {
+          "hp": 1205,
+          "attack": 32,
+          "defense": 22
+        },
+        "binding-thread": {
+          "hp": 161,
+          "attack": 10,
+          "defense": 0
+        },
+        "practice-cushion": {
+          "hp": 97,
+          "attack": 14,
+          "defense": 0
+        },
+        "pollen-scout": {
+          "hp": 491,
+          "attack": 22,
+          "defense": 10
+        },
+        "rain-spool": {
+          "hp": 1544,
+          "attack": 58,
+          "defense": 24
+        },
+        "crumb-sentinel": {
+          "hp": 655,
+          "attack": 27,
+          "defense": 22
+        },
+        "pantry-crown": {
+          "hp": 1793,
+          "attack": 60,
+          "defense": 25
+        }
+      },
+      "plan": {
+        "focus": "finish",
+        "care": "steady"
+      }
+    },
+    "events": [
+      {
+        "kind": "crew-active",
+        "crew": "door",
+        "marks": 3,
+        "contributors": [
+          "mochi",
+          "clover"
+        ],
+        "threshold": 2,
+        "text": "Door team: +3% maximum HP.",
+        "version": 1,
+        "sequence": 0,
+        "round": 0
+      },
+      {
+        "kind": "crew-active",
+        "crew": "kettle",
+        "marks": 3,
+        "contributors": [
+          "mochi",
+          "clover"
+        ],
+        "threshold": 2,
+        "text": "Kettle team: +4% healing.",
+        "version": 1,
+        "sequence": 1,
+        "round": 0
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "mochi",
+        "targetId": "foe-0-button-guard",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Mochi focuses the weakest reachable foe, Button Guard (HP 100%) · Door knock",
+        "text": "finish/steady plan: Mochi focuses the weakest reachable foe, Button Guard (HP 100%) · Door knock",
+        "version": 1,
+        "sequence": 2,
+        "round": 1
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "soot",
+        "targetId": "foe-0-button-guard",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Soot focuses the weakest reachable foe, Button Guard (HP 79%) · Cocoa spark",
+        "text": "finish/steady plan: Soot focuses the weakest reachable foe, Button Guard (HP 79%) · Cocoa spark",
+        "version": 1,
+        "sequence": 3,
+        "round": 1
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "clover",
+        "targetId": "foe-0-button-guard",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Clover focuses the weakest reachable foe, Button Guard (HP 56%) · Leaf tap",
+        "text": "finish/steady plan: Clover focuses the weakest reachable foe, Button Guard (HP 56%) · Leaf tap",
+        "version": 1,
+        "sequence": 4,
+        "round": 1
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "mochi",
+        "targetId": "clover",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Mochi protects Clover (HP 100%) · Warm welcome",
+        "text": "finish/steady plan: Mochi protects Clover (HP 100%) · Warm welcome",
+        "version": 1,
+        "sequence": 5,
+        "round": 2
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "soot",
+        "targetId": "foe-0-button-guard",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Soot focuses the weakest reachable foe, Button Guard (HP 43%) · Lantern wick",
+        "text": "finish/steady plan: Soot focuses the weakest reachable foe, Button Guard (HP 43%) · Lantern wick",
+        "version": 1,
+        "sequence": 6,
+        "round": 2
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "clover",
+        "targetId": "foe-0-button-guard",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Clover focuses the weakest reachable foe, Button Guard (HP 25%) · Leaf tap",
+        "text": "finish/steady plan: Clover focuses the weakest reachable foe, Button Guard (HP 25%) · Leaf tap",
+        "version": 1,
+        "sequence": 7,
+        "round": 2
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "mochi",
+        "targetId": "soot",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Mochi protects Soot (HP 100%) · Warm welcome",
+        "text": "finish/steady plan: Mochi protects Soot (HP 100%) · Warm welcome",
+        "version": 1,
+        "sequence": 8,
+        "round": 3
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "soot",
+        "targetId": "foe-0-button-guard",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Soot focuses the weakest reachable foe, Button Guard (HP 21%) · Cocoa spark",
+        "text": "finish/steady plan: Soot focuses the weakest reachable foe, Button Guard (HP 21%) · Cocoa spark",
+        "version": 1,
+        "sequence": 9,
+        "round": 3
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "clover",
+        "targetId": "foe-0-button-guard",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Clover focuses the weakest reachable foe, Button Guard (HP 21%) · Leaf tap",
+        "text": "finish/steady plan: Clover focuses the weakest reachable foe, Button Guard (HP 21%) · Leaf tap",
+        "version": 1,
+        "sequence": 10,
+        "round": 3
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "mochi",
+        "targetId": "soot",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Mochi protects Soot (HP 100%) · Warm welcome",
+        "text": "finish/steady plan: Mochi protects Soot (HP 100%) · Warm welcome",
+        "version": 1,
+        "sequence": 11,
+        "round": 4
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "soot",
+        "targetId": "foe-0-button-guard",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Soot focuses the weakest reachable foe, Button Guard (HP 21%) · Lantern wick",
+        "text": "finish/steady plan: Soot focuses the weakest reachable foe, Button Guard (HP 21%) · Lantern wick",
+        "version": 1,
+        "sequence": 12,
+        "round": 4
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "clover",
+        "targetId": "foe-0-button-guard",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Clover focuses the weakest reachable foe, Button Guard (HP 3%) · Leaf tap",
+        "text": "finish/steady plan: Clover focuses the weakest reachable foe, Button Guard (HP 3%) · Leaf tap",
+        "version": 1,
+        "sequence": 13,
+        "round": 4
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "mochi",
+        "targetId": "clover",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Mochi protects Clover (HP 100%) · Warm welcome",
+        "text": "finish/steady plan: Mochi protects Clover (HP 100%) · Warm welcome",
+        "version": 1,
+        "sequence": 14,
+        "round": 5
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "soot",
+        "targetId": "foe-0-button-guard",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Soot focuses the weakest reachable foe, Button Guard (HP 3%) · Cocoa spark",
+        "text": "finish/steady plan: Soot focuses the weakest reachable foe, Button Guard (HP 3%) · Cocoa spark",
+        "version": 1,
+        "sequence": 15,
+        "round": 5
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "clover",
+        "targetId": "foe-0-button-guard",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Clover focuses the weakest reachable foe, Button Guard (HP 3%) · Leaf tap",
+        "text": "finish/steady plan: Clover focuses the weakest reachable foe, Button Guard (HP 3%) · Leaf tap",
+        "version": 1,
+        "sequence": 16,
+        "round": 5
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "mochi",
+        "targetId": "mochi",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Mochi protects Mochi (HP 100%) · Warm welcome",
+        "text": "finish/steady plan: Mochi protects Mochi (HP 100%) · Warm welcome",
+        "version": 1,
+        "sequence": 17,
+        "round": 6
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "soot",
+        "targetId": "foe-0-button-guard",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Soot focuses the weakest reachable foe, Button Guard (HP 3%) · Lantern wick",
+        "text": "finish/steady plan: Soot focuses the weakest reachable foe, Button Guard (HP 3%) · Lantern wick",
+        "version": 1,
+        "sequence": 18,
+        "round": 6
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "clover",
+        "targetId": "clover",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Clover heals Clover (HP 100%) · Patient steep",
+        "text": "finish/steady plan: Clover heals Clover (HP 100%) · Patient steep",
+        "version": 1,
+        "sequence": 19,
+        "round": 6
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "mochi",
+        "targetId": "mochi",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Mochi protects Mochi (HP 100%) · Warm welcome",
+        "text": "finish/steady plan: Mochi protects Mochi (HP 100%) · Warm welcome",
+        "version": 1,
+        "sequence": 20,
+        "round": 7
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "soot",
+        "targetId": "foe-1-button-guard",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Soot focuses the weakest reachable foe, Button Guard (HP 100%) · Cocoa spark",
+        "text": "finish/steady plan: Soot focuses the weakest reachable foe, Button Guard (HP 100%) · Cocoa spark",
+        "version": 1,
+        "sequence": 21,
+        "round": 7
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "clover",
+        "targetId": "clover",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Clover heals Clover (HP 100%) · Patient steep",
+        "text": "finish/steady plan: Clover heals Clover (HP 100%) · Patient steep",
+        "version": 1,
+        "sequence": 22,
+        "round": 7
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "mochi",
+        "targetId": "soot",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Mochi protects Soot (HP 100%) · Warm welcome",
+        "text": "finish/steady plan: Mochi protects Soot (HP 100%) · Warm welcome",
+        "version": 1,
+        "sequence": 23,
+        "round": 8
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "soot",
+        "targetId": "foe-1-button-guard",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Soot focuses the weakest reachable foe, Button Guard (HP 100%) · Lantern wick",
+        "text": "finish/steady plan: Soot focuses the weakest reachable foe, Button Guard (HP 100%) · Lantern wick",
+        "version": 1,
+        "sequence": 24,
+        "round": 8
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "clover",
+        "targetId": "clover",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Clover heals Clover (HP 100%) · Patient steep",
+        "text": "finish/steady plan: Clover heals Clover (HP 100%) · Patient steep",
+        "version": 1,
+        "sequence": 25,
+        "round": 8
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "mochi",
+        "targetId": "foe-1-button-guard",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Mochi focuses the weakest reachable foe, Button Guard (HP 82%) · Door knock",
+        "text": "finish/steady plan: Mochi focuses the weakest reachable foe, Button Guard (HP 82%) · Door knock",
+        "version": 1,
+        "sequence": 26,
+        "round": 9
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "soot",
+        "targetId": "foe-1-button-guard",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Soot focuses the weakest reachable foe, Button Guard (HP 82%) · Cocoa spark",
+        "text": "finish/steady plan: Soot focuses the weakest reachable foe, Button Guard (HP 82%) · Cocoa spark",
+        "version": 1,
+        "sequence": 27,
+        "round": 9
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "clover",
+        "targetId": "foe-1-button-guard",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Clover focuses the weakest reachable foe, Button Guard (HP 79%) · Leaf tap",
+        "text": "finish/steady plan: Clover focuses the weakest reachable foe, Button Guard (HP 79%) · Leaf tap",
+        "version": 1,
+        "sequence": 28,
+        "round": 9
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "mochi",
+        "targetId": "foe-1-button-guard",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Mochi focuses the weakest reachable foe, Button Guard (HP 66%) · Door knock",
+        "text": "finish/steady plan: Mochi focuses the weakest reachable foe, Button Guard (HP 66%) · Door knock",
+        "version": 1,
+        "sequence": 29,
+        "round": 10
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "soot",
+        "targetId": "foe-1-button-guard",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Soot focuses the weakest reachable foe, Button Guard (HP 66%) · Lantern wick",
+        "text": "finish/steady plan: Soot focuses the weakest reachable foe, Button Guard (HP 66%) · Lantern wick",
+        "version": 1,
+        "sequence": 30,
+        "round": 10
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "clover",
+        "targetId": "foe-1-button-guard",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Clover focuses the weakest reachable foe, Button Guard (HP 8%) · Leaf tap",
+        "text": "finish/steady plan: Clover focuses the weakest reachable foe, Button Guard (HP 8%) · Leaf tap",
+        "version": 1,
+        "sequence": 31,
+        "round": 10
+      }
+    ],
+    "targetMs": [
+      15000,
+      30000
+    ],
+    "pacing": "MISS"
+  }
+}

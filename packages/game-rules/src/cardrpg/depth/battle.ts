@@ -3,6 +3,7 @@ import { DEFAULT_PLAN, crewThresholds, enemyGuideV4, openingCrewBonus, validPlan
 import { GEAR_BY_ID, SETS } from './equipment';
 import { emitGameplayEvent } from './events-v4';
 import { boonValue } from './boons';
+import { challengeStatsV4, phaseBossV4, finishBossV4 } from './pacing-v4';
 import { Rng, deriveSeed } from '../../rng';
 import { CAT_BY_ID, ENEMY_BY_ID, hasAdvantage, SKILLS, STATUS_BY_ID, teamCombos } from './catalog';
 import { CONTRACT_VERSION, type Actor, type Battle, type BattleSetup, type Choice, type Effect, type Intent, type Skill, type StatusId } from './contract';
@@ -96,6 +97,7 @@ function loseHp(b: Battle, source: Actor, target: Actor, amount: number, kind: s
     if (source.catalogId === 'velvet') { if (b.v4) heal(b,source,source,6); else source.charge = Math.min(100, source.charge + 15); }
     if (source.side === 'party' && source.hp > 0) heal(b,source,source,boonValue(b,'killHeal'));
   }
+  phaseBossV4(b,target);
   return actual;
 }
 function damage(b: Battle, source: Actor, target: Actor, power: number, pressure: number, cover = false) {
@@ -208,6 +210,7 @@ export function createBattle(setup: BattleSetup): Battle {
     if(setup.plan && !validPlan(setup.plan)) throw Error('Invalid standing plan');
     initial.plan = clone(setup.plan ?? DEFAULT_PLAN);
   }
+  if(setup.gameplayV4&&setup.challengeLevel!==undefined)initial.enemyStats??=challengeStatsV4(setup.challengeLevel);
   initial.enemyStats ??= Object.fromEntries(Object.values(ENEMY_BY_ID).map(({ id, hp, attack, defense }) => [id, { hp, attack, defense }]));
   const actors: Actor[] = setup.cats.map((c,index) => {
     const cat = CAT_BY_ID[c.id];
@@ -219,6 +222,8 @@ export function createBattle(setup: BattleSetup): Battle {
   if (setup.gameplayV4) {
     b.v4={version:1,plan:clone(initial.plan!),events:[],committed:false};
     b.maxEnergy=0;
+    const primary=actors.find(a=>a.side==='enemy'&&ENEMY_BY_ID[a.catalogId]?.tier==='boss');
+    if(primary)for(const a of actors)if(a.side==='enemy'&&a.id!==primary.id&&ENEMY_BY_ID[a.catalogId]?.tier!=='boss')a.linkedBossId=primary.id;
     for(const actor of actors) actor.charge=0;
     for(const crew of crewThresholds(setup.cats.map(c=>c.id))) if(crew.threshold) emitGameplayEvent(b,{kind:'crew-active',crew:crew.id,marks:crew.marks,contributors:crew.contributors,threshold:crew.threshold,text:`${crew.name}: ${crew.description}.`});
   }
@@ -266,7 +271,7 @@ function setIntents(b: Battle) {
     const front=party.filter(p=>p.row==='front');
     const reachable=b.v4&&front.length?front:party;
     const target = spec.mechanic==='steal' && rear.length ? weakest(rear) : b.v4&&spec.mechanic==='snare'?weakest(reachable):reachable[roll(b,reachable.length)]!;
-    return {actorId:a.id,targetId:target.id,label:signature?(b.v4?enemyGuideV4(a.catalogId).intent:spec.intent):`${a.name} · ${spec.mechanic==='heal'?'Cup refill':'basic pressure'}`,counter:b.v4?enemyGuideV4(a.catalogId).counter:spec.counter,power:signature?175:100,status:signature?spec.status:undefined,signature,interrupted:false};
+    return {actorId:a.id,targetId:target.id,label:signature?(b.v4?enemyGuideV4(a.catalogId).intent:spec.intent):`${a.name} · ${!b.v4&&spec.mechanic==='heal'?'Cup refill':'basic pressure'}`,counter:b.v4?enemyGuideV4(a.catalogId).counter:spec.counter,power:signature?175:100,status:signature?spec.status:undefined,signature,interrupted:false};
   });
 }
 function beginRound(b: Battle) {
@@ -281,11 +286,13 @@ function beginRound(b: Battle) {
     if (a.hp>0 && a.catalogId==='brioche') shield(b,a,a,12);
     if (a.hp>0 && a.catalogId==='sorrel' && b.round%2===1) { if(b.v4)shield(b,a,weakest(living(b,'party')),6);else b.energy++; }
     const enemy = ENEMY_BY_ID[a.catalogId];
-    if (enemy?.tier==='boss' && a.hp<=a.maxHp/2 && a.phase===1) { a.phase=2; record(b,a,a,'phase',2,enemy.phases[1]); }
+    if (!b.v4 && enemy?.tier==='boss' && a.hp<=a.maxHp/2 && a.phase===1) { a.phase=2; record(b,a,a,'phase',2,enemy.phases[1]); }
   }
   setIntents(b);
 }
 function checkResult(b: Battle) {
+  if(b.result)return;
+  if(finishBossV4(b))return;
   if (!living(b,'party').length || b.round>50) b.result='enemy';
   else if (!living(b,'enemy').length) b.result='party';
 }
@@ -384,7 +391,7 @@ function finishAction(b: Battle, actor: Actor) {
   b.queue=b.queue.filter(id=>id!==actor.id&&b.actors.some(a=>a.id===id&&a.hp>0));
   checkResult(b);
   if (!b.result && !b.queue.length) {
-    for (const a of b.actors) tickStatuses(b,a);
+    for (const a of b.actors) {tickStatuses(b,a);if(b.v4){checkResult(b);if(b.result)break;}}
     checkResult(b);
     if (!b.result) beginRound(b);
   }
@@ -461,6 +468,7 @@ export function act(b: Battle, choice: Choice): boolean {
 function spawnThread(b: Battle, source: Actor) {
   if (living(b,'enemy').filter(a=>a.catalogId==='binding-thread').length>=2) return;
   const actor=enemyActor('binding-thread',b.actors.length,b.chapter,false,b.initial.enemyStats);
+  if(b.v4)actor.linkedBossId=ENEMY_BY_ID[source.catalogId]?.tier==='boss'?source.id:source.linkedBossId;
   b.actors.push(actor);
   record(b,source,actor,'summon',0,'Binding Thread joins next round');
 }
@@ -485,8 +493,8 @@ export function enemyAct(b: Battle): boolean {
     if(controller?.bonuses.crewSuppress&&!controller.bonuses.crewSuppressed){controller.bonuses.crewSuppressed=1;heal(b,controller,controller,controller.bonuses.crewSuppress);}
   }
   if (impaired) damage(b,actor,target,40,0,b.v4&&spec.mechanic!=='steal');
-  else if (spec.mechanic==='heal'&&!quiet) heal(b,actor,weakest(living(b,'enemy')),65);
-  else if (spec.mechanic==='shield'&&!quiet) for (const a of living(b,'enemy').filter(a=>a.row===actor.row)) shield(b,actor,a,45);
+  else if (spec.mechanic==='heal'&&!quiet&&(!b.v4||signature)) heal(b,actor,weakest(living(b,'enemy')),65);
+  else if (spec.mechanic==='shield'&&!quiet&&(!b.v4||signature)) for (const a of living(b,'enemy').filter(a=>a.row===actor.row)) shield(b,actor,a,45);
   else {
     let affected=[target];
     if(signature&&['charge','bind','storm','banquet','dot'].includes(spec.mechanic)) affected=party.filter(a=>actor.phase===2||a.row===(spec.mechanic==='dot'?'rear':'front'));
@@ -499,7 +507,7 @@ export function enemyAct(b: Battle): boolean {
       if (signature&&spec.mechanic==='bomb') {loseHp(b,actor,t,stacks(t,'crumb')*35,'detonate');t.statuses=t.statuses.filter(s=>s.id!=='crumb');}
     }
     if (spec.mechanic==='steal'||signature&&spec.mechanic==='banquet') {if(b.v4){const removed=Math.min(6,target.shield);target.shield-=removed;record(b,actor,target,'strip-shield',removed);}else b.energy=Math.max(0,b.energy-1);}
-    if (signature&&!quiet&&(spec.mechanic==='summon'||spec.mechanic==='banquet'&&actor.phase===2||spec.mechanic==='bind')) spawnThread(b,actor);
+    if ((!b.v4||actor.hp>0)&&signature&&!quiet&&(spec.mechanic==='summon'||spec.mechanic==='banquet'&&actor.phase===2||spec.mechanic==='bind')) spawnThread(b,actor);
     if (spec.mechanic==='reflect'&&actor.turns===0) {shield(b,actor,actor,70);applyStatus(b,actor,actor,'cozy');}
   }
   record(b,actor,target,'enemy-action',0,impaired?(b.v4?'Drowsy intent · softened basic':'Broken intent · softened basic'):intent.label);

@@ -51,6 +51,7 @@ export function OutcomeV4({ battle }: { battle: R.Battle }) {
     : rearFallen ? 'A rear companion fell. Check for row attacks or rear reach; try a cleanser or the Protect plan.'
       : 'Try a sturdier front or the Protect plan, then compare the next result with this one.';
   return <section className="cr-panel dp-v4-outcome"><h2>What your preparation contributed</h2>
+    {battle.v4!.events.filter(e=>e.kind==='boss-phase'||e.kind==='boss-finish').map(e=><p key={e.sequence}>{e.text}</p>)}
     <ul>{R.battleReasons(battle).map(reason => <li key={reason}>{reason}</li>)}</ul>
     <p>Standing plan: {battle.v4!.plan.focus} / {battle.v4!.plan.care}. These are observed contributions, not proof that one effect decided the fight.</p>
     <p><b>Next adjustment:</b> {suggestion}</p>

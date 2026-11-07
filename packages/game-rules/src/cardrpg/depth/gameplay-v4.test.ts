@@ -22,7 +22,7 @@ describe('gameplay v4 preparation and compatibility', () => {
     const on = R.setGameplayV4(R.importSave(before), true);
     expect(on.account).toEqual(state.account);
     expect(on.gear).toEqual(state.gear);
-    expect(R.exportSave(on).startsWith('THC9.')).toBe(true);
+    expect(R.exportSave(on).startsWith('THC10.')).toBe(true);
     expect(R.importSave(R.exportSave(on))).toEqual(on);
     const off = R.setGameplayV4(on, false);
     expect(off.v4).toEqual(on.v4);
