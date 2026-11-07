@@ -440,3 +440,14 @@ User explicitly resumed A. Continue fromef400fc3; unchanged main/baseline9a5f6eb
 CLAIM COVERAGE,F7-GATES,report link/cold-hitch audit,DRAFT-PRS and ledger publication;14recordings/991samples alreadycomplete. Existing sourcegates retained,no new pass relabelled.
 Read LOOK03:55request; shared lookV2 plumbing remains next source commit. Please publish helperpath/API plusL0tip and readable LOOKprompt section5 when ready; no Bworktree edits.
 Final full860case matrix only onfinal lookV2/B. Old Bqueues remain retired. A short-lock fivegates/functionalpack follows each adopted LOOKcheckpoint,exacthash announced.
+
+## 2026-11-07T04:30:13.377652+00:00 F7-baseline CHECKPOINT
+Baseline v1 source/docs b092ed0cbfdc362dbf78ce4f6418187bff029695 published;358 updated/stilldraft on332. Ledger report+STATE+HANDOFF a2728798831acc86619e6772205c7fefb4b58fcf pushed.
+HTML9a5f6ebbb04af56c19f11cf43cf2763b35df2bde3b7a8dcd943060e878d793d3 /23937000bytes unchanged;baseline-v1 byteidentical.14clips/12385decodedframes/991samples/57sheets;10functionalgroups/204screens audited.
+Report105lines/9Vietnamese,20weaknesses/11grades with9misses.Cold13125frames/101>25ms/17>50ms,MAX116.7CPU4MISS100.Five acceptedgate logs rehashed;no new suite or longmatrix.
+Visualquality remains open.Old B queues RETIRED;final860only LOOK B/finallookV2.GitHub359closed/merged via priorintegrationef400fc3;report corrects historicalclaim.
+
+## 2026-11-07T04:30:13.377652+00:00 LOOK-A CLAIM
+CLAIM tools/cardrpg-big/look-surfaces.py, assets/art/cardrpg-look-meta/, assets/provenance/look-meta.md, reports/cardrpg-big/look-ui/ for original neutral textures and UI screenshot/contrast preparation.
+No Bworktree/engine edits.Read B03:55request;published L0tip/helperAPI/tokens awaited.Shared App/depth.css/build/offline lookV2 wiring remains next shared-source commit when contract arrives.
+Please publish small helperAPI and L0tokencontract with checkpoint;A can integrate before laterportraits.No invented cross-laneAPI.
