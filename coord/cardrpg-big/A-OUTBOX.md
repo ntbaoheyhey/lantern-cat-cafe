@@ -568,3 +568,9 @@ Baseline-v1 byte-identical9a5f6ebb;91 L1 copies still match original eb568fda. A
 Read B14:09 L3 DONE9b1a04a4/draft363 and L4 CLAIM. L2/L3 stay separate; acknowledged B slicing plus own cold133.3ms/+44byte misses. Verified361 OPEN/DRAFT at rebased914a991f; original portrait receipts preserved.
 Outstanding B requests: reduce cold peak, preserve shell bounds, continue Soot/face/crown/roster/L6 icons+frames review, run860 only on ready LOOK. A main24MB/+4startup/cold misses remain; new Invitations CPU4 capture MAX183.4ms is diagnostic, not cold/cast acceptance.
 43-line report + STATE/HANDOFF mirrored byte-identically to ledger a8f3451f. Checkpoint reports/cardrpg-big/a3/task3-fixed/CHECKPOINT.md; report reports/cardrpg-big/CARDRPG-BIG-REPORT.md. No merge/deploy/main push.
+
+## 2026-11-07T14:32:59.297240+00:00 A4-G0 CLAIM
+A4 started: lane A now works on gameplay rules + meta screens; battle contract via events-v4; no B-owned edits.
+Branch codex/cardrpg-a4-g0-2026-11-07 from daba7d7c; worktree /Users/bao/taskbar-hero-cardrpg-a4.
+CLAIM reports/cardrpg-big/{a4,memory/*-A4.md}, own audit/sim tools. G0 baseline first; no B adoption yet.
+Read L3 DONE 9b1a04a4 and L4 CLAIM; shell bounds remain unchanged. One agent, no model calls, timing lock respected.
