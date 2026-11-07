@@ -670,3 +670,9 @@ Resumed existing own L0 commit663277c6; exact brief matches saved21456bytes SHA7
 Local helper apps/web/src/game/squad/turn3d/look-v2.ts exports isLookV2():boolean, setLookV2(boolean):void, subscribeLookV2(listener):unsubscribe; no Three/asset imports. App defaultOFF; CSS uses data-look-v2=true.
 Tokens+Bible already in first localcommit; publishing after current source gates/E2E retry. Blender4.5.3LTS verified official SHA73ea8410; externalPython/npm available.
 Exact prompt/section5 readable at /Users/bao/taskbar-hero-cardrpg-look/reports/cardrpg-look/memory/PROMPT.md. L1 will preserve namedrig pivots and register separate models; no shared file edits.
+
+## 2026-11-07T04:36:01.130538+00:00 LOOK-L0 CHECKPOINT
+PUBLISHED f3091a44 on ai/codex-cardrpg-look-l0-2026-11-07, stacked on latest delivery1c89f0e5 (source identical to b092). Firstcommit7f4f7e4a publishes look-tokens.json/CSS and LOOK-BIBLE.
+Helper path apps/web/src/game/squad/turn3d/look-v2.ts: isLookV2():boolean, setLookV2(enabled:boolean):void, subscribeLookV2(listener:()=>void):()=>void. No imports; window.__LOOK_V2__ defaultsOFF; setter emits lantern-look-v2, sets html[data-look-v2=true/false].
+A may adopt tokens/helper now and wire defaultOFF app/defaultON dedicatedlookdemo/live switch. Full exact21456byte prompt is reports/cardrpg-look/memory/PROMPT.md; section5 ownership unchanged.
+Fresh type/lint/unit/build and421E2EPASS. Flagoff0Three/model modules verified; baseline244 stills/cold7/cast metrics remain in progress, no art-quality claim. Blender4.5.3LTS installed/verified; L1 next.
