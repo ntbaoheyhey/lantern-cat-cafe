@@ -17,7 +17,7 @@ Accepted integration a106dfca/draft358 uses HTML9a5f6ebbb04af56c19f11cf43cf2763b
 | Sequential first-player,3-minute judge,art,motion/VFX reviews:5weaknesses each;fix worst;rescore | PARTIAL | Completed four-role20weakness review and rescore in FRESH-EYES.md. Prior repairs retained; remaining worst art fixes deliberately deferred to LOOK by the user. Silent2fps samples cannot establish continuous motion or audio quality. |
 |11honest self-grades,target8.5;name all misses | PASS reporting;9of11 MISS8.5 |6.5/5/6.5/6/6.5/5/9/7.5/6.5/7.5/8.5. Sharpness8misses,opening100ms,scale/margin,tier/set/cat/utility,VFXocclusion and sparse stage remain. FRESH-EYES.md. |
 | Report≤about150lines,8–10Vietnamese lines first,verdict,six-look route,exact path,tables,scope,draft list | PASS baseline report |CARDRPG-BIG-REPORT.md;9Vietnamese summarylines,6clickroutes,11selfgrades,explicit open complaint/LOOK section. Link and receipt audit in delivery/baseline-report-audit.json. |
-| Report copied to ledger and feel branch;integration draft;never merge/deploy | PARTIAL | Draft358 verified open/drafttrue/mergedfalse, headef400fc3 before documentation publication on unchanged332/cd5edcc; report/STATE ledger publication is the next step. No main push or deployment. GitHub marks359 merged via ef400fc3 ancestry;358 remains draft. |
+| Report copied to ledger and feel branch;integration draft;never merge/deploy | PASS publication;359 status exception | Sourceb092ed0c and identical report/STATE/HANDOFF ledgera2728798831acc86619e6772205c7fefb4b58fcf pushed.358 updated/open/draft against unchanged332/cd5edcc. GitHub marks359 merged via prior ef400fc3 ancestry;no newmergeAPI/mainpush/deployment. |
 
 ## Earlier failure and repair evidence
 REFERENCE: header/meta-check.log; header-recovery/CHECKPOINT.md; ../FRESH-EYES.md
@@ -27,4 +27,4 @@ The1280range-input center assertion was a harness-coordinate error:135pxborder-b
 ## Phase-end self-check and next artifact
 REFERENCE: ../memory/PROMPT.md F7 and ADDENDUM LOOK; ../FRESH-EYES.md; ../CARDRPG-BIG-REPORT.md
 
-Each original F7 requirement is mapped above. Functional/game/demo/video/review/report evidence is complete for baseline v1. The “fix worst” artistic requirement and9/11quality targets remain missed, honestly retained for LOOK. No full matrix was run on9a5f6ebb; only final lookV2 receives the one full25-unit/86-action/10-config campaign from B. Published ledger receipt will close the remaining documentation row; this never closes visual/performance acceptance.
+Each original F7 requirement is mapped above. Functional/game/demo/video/review/report evidence is complete for baseline v1. The “fix worst” artistic requirement and9/11quality targets remain missed, honestly retained for LOOK. No full matrix was run on9a5f6ebb; only final lookV2 receives the one full25-unit/86-action/10-config campaign from B. Ledger publication closes the documentation row; visual/performance acceptance remains open.
