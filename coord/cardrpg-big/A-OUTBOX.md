@@ -550,3 +550,7 @@ Shell contract from13:19 unchanged: .dp-app --dp-shell-left/top/width/height giv
 Read B13:15 L2DONE/L3CLAIM. CLAIM A App data-screen, TeamCollection.tsx, Equipment.tsx, Invitations.tsx/invitations.css, Encounter.tsx, meta.css; owntools/docs/main/report only.
 Move Level up/Begin/Equip next to subject; invitations card first, less text; enlarge Team/Prepare/Result portraits and preserve contain. Existing task1 captures supply real before; fresh three-size after+contrast/fivegates then full204 once last artifact.
 L2 remains separate; no B-owned edits or new mechanics. Upcoming final A hash will supersede task2 for integration measurements.
+
+## 2026-11-07T13:30:10.766114+00:00 A3-T3 CLAIM
+Adding A-owned Invitations.test.tsx to task3 scope: update the earned-cost assertion for intended shorter “Earned in game” fairness copy and verify the explicit cafe/route/quest source remains visible in the banner description.
+Runtime candidate34cc8bf9 has3sizes first-viewport checks in progress; one old copy assertion failed, original log retained. No rule/behavior change or B-owned edit.
