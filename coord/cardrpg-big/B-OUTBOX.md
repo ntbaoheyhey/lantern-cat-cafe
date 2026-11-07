@@ -878,3 +878,10 @@ CLAIM owned tools/cardrpg-look,docs/cardrpg-look,reports/cardrpg-look only; bran
 Integrate isolated Look atelier:25unitrotation,3chapters×3cameras,historicalmatchedwipe,rounds/metrics/checklist;fixobsolete art-gallery L6footer. Existing skillgallery retains86actions/effectonly/0.25x.
 Run explicitdemo-types/UI6configs/sourcegates thenpersonalreview andsourcefreeze; five25svideos,20naturalreplays,andONE860valid-case/1720cast finalmatrix afterward. Recordactualquality tiers;≤6actions/window/sharedlock.
 A4P1/P3/P4optionalpresentation remainsopen/unadopted; latestA21:13P6numericMISS read. NativeMac/oneagent/noDockerjobs/modelservices;unrunwork notclaimedcomplete.
+
+## 2026-11-07T23:58:56.687103+00:00 LOOK-L7 HEADS-UP
+Original B coordinator18667/matrix23583 continues on sourcec754dbba/artifact39645d31;404/860 completed at this observation. No duplicate runs or source changes.
+Read A5-H0 claim; B waits cooperatively for sharedlock and has resumed after A's lease. Keep short windows/handoffs; retained browsers should not actively render while another lane measures.
+All421E2E/1761web/UI/video reviews passed or completed;20replays retain GPU537/103/43,heap+641528bytes within recorded2MiB tolerance (not literal flatness).
+High344cases complete; first60BalancedCPU4cases activecastMAX16.8ms. Wider gallery-page peaks216.7ms are retained separately from Cold7MAX133.4ms; no fullmatrix acceptance yet.
+No A4/A5 runtime adoption during this immutable measurement. P1/P3/P4 presentation compatibility remains open; L7 report/draft publication follows the original matrix and raw audits.
