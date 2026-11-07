@@ -1,6 +1,7 @@
 import { useEffect, useLayoutEffect, useRef, useState, useSyncExternalStore, type CSSProperties } from 'react';
 import { isLookV2, setLookV2, subscribeLookV2 } from '../../squad/turn3d/look-v2';
 import lookTokens from '../look-tokens.json';
+import { CollectionJournalV4 } from './CafeV4';
 import { DepthModel, type Screen } from './model';
 import { gameplayV4 as activeGameplayV4 } from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import { CompanionPreviewProvider } from './CompanionPreview';
@@ -21,7 +22,7 @@ const rarityStyle = Object.fromEntries(Object.entries(lookTokens.rarities).flatM
   Object.entries(values).map(([name, value]) => [`--look-${rarity}-${name}`, String(value)]))) as CSSProperties;
 const navigation: [Screen, string, string][] = [
   ['hub', '⌂', 'Cafe'], ['team', '♧', 'Team & cards'], ['map', '⌁', 'Night route'], ['collection', '♧', 'Companions'],
-  ['inventory', '◇', 'Equipment'], ['gacha', '✉', 'Invitations'], ['codex', '▤', 'Field guide'],
+  ['journal', '▤', 'Collection journal'], ['inventory', '◇', 'Equipment'], ['gacha', '✉', 'Invitations'], ['codex', '▤', 'Field guide'],
   ['relics', '◈', 'Fuji Relics'], ['save', '⚙', 'Save & settings'], ['evidence', '↔', 'Before / after'],
 ];
 export default function DepthApp({ offline = false, gameplayV4 = false }: { offline?: boolean; gameplayV4?: boolean }) {
@@ -60,11 +61,11 @@ export default function DepthApp({ offline = false, gameplayV4 = false }: { offl
     content.current?.querySelector<HTMLElement>('h1')?.focus({ preventScroll: true });
   }, [m.screen]);
   return <CompanionPreviewProvider m={m}><div ref={app} data-look-v2={lookV2} data-battle-active={m.showBattle} style={lookV2 ? rarityStyle : undefined} className={`cr-app dp-app ${m.state.settings.reducedMotion ? 'dp-reduced-motion' : ''}`}><div className="dp-cafe">
-    <a className="cr-skip" href="#depth-main">Skip navigation</a><aside className="cr-sidebar"><button className="cr-brand" disabled={m.showBattle} onClick={() => m.go('hub')}><span>♜</span><b>THE LANTERN<br /><small>CAT CAFE QUEST</small></b></button><p className="cr-sidebar-caption">A little courage, every day.</p><nav aria-label="Cafe screens">{navigation.map(([id, icon, name]) => <button key={id} disabled={m.showBattle} title={m.showBattle ? 'Finish or leave the table to change screens.' : undefined} aria-current={m.screen === id ? 'page' : undefined} onPointerEnter={() => preloadPreviewModels(id === 'gacha' ? ['clover'] : m.state.team)} onFocus={() => preloadPreviewModels(m.state.team)} onClick={() => m.go(id)}><span aria-hidden="true">{icon}</span>{name}</button>)}</nav><div className="cr-sidebar-bottom"><b>THE FIRST LANTERN</b><p>{offline ? 'Offline preview · keep progress with save codes' : 'Local account · automatic saving'}</p><small>Desktop prototype · 0.7.0</small></div></aside>
+    <a className="cr-skip" href="#depth-main">Skip navigation</a><aside className="cr-sidebar"><button className="cr-brand" disabled={m.showBattle} onClick={() => m.go('hub')}><span>♜</span><b>THE LANTERN<br /><small>CAT CAFE QUEST</small></b></button><p className="cr-sidebar-caption">A little courage, every day.</p><nav aria-label="Cafe screens">{navigation.filter(([id])=>id!=='journal'||activeGameplayV4(m.state)).map(([id, icon, name]) => <button key={id} disabled={m.showBattle} title={m.showBattle ? 'Finish or leave the table to change screens.' : undefined} aria-current={m.screen === id ? 'page' : undefined} onPointerEnter={() => preloadPreviewModels(id === 'gacha' ? ['clover'] : m.state.team)} onFocus={() => preloadPreviewModels(m.state.team)} onClick={() => m.go(id)}><span aria-hidden="true">{icon}</span>{name}</button>)}</nav><div className="cr-sidebar-bottom"><b>THE FIRST LANTERN</b><p>{offline ? 'Offline preview · keep progress with save codes' : 'Local account · automatic saving'}</p><small>Desktop prototype · 0.7.0</small></div></aside>
     <div className="cr-main-shell"><header className="cr-topbar"><span>THE EVENING SHIFT<small>Three chapters. Your choices.</small></span>{offline && <FeelLab m={m} home />}<div className="cr-wallet">{Object.entries(m.state.account.currencies).map(([id, amount]) => <div key={id}><b>{amount.toLocaleString('en-US')}<small>{id === 'fish' ? 'fish points' : id}</small></b></div>)}</div><span className="cr-account">Lv. {m.state.account.accountLevel}<small>{m.state.materials} materials</small></span></header><div className={`cr-status ${m.error ? 'error' : ''}`} role={m.error ? 'alert' : 'status'}>{m.notice}<span>{m.saveStatus}</span></div>
       <main className="cr-content" id="depth-main" ref={content}><div className="dp-page" data-screen={m.screen} key={m.screen} aria-hidden={m.showBattle} inert={m.showBattle}>
         {m.screen === 'prepare' && m.battle && <Prepare m={m} />}{m.screen === 'result' && m.battle && <BattleResult m={m} />}
-        {m.screen === 'hub' && <Hub m={m} />}{m.screen === 'team' && <Team m={m} />}{m.screen === 'map' && <RunMap m={m} />}
+        {m.screen === 'journal' && <CollectionJournalV4 m={m} />}{m.screen === 'hub' && <Hub m={m} />}{m.screen === 'team' && <Team m={m} />}{m.screen === 'map' && <RunMap m={m} />}
         {m.screen === 'collection' && <Collection m={m} />}{m.screen === 'inventory' && <Inventory m={m} />}{m.screen === 'gacha' && <Invitations m={m} />}
         {m.screen === 'codex' && <Codex v4={activeGameplayV4(m.state)} />}{m.screen === 'relics' && <Relics m={m} />}{m.screen === 'save' && <SaveSettings m={m} />}{m.screen === 'evidence' && <Evidence />}
       </div></main></div></div>

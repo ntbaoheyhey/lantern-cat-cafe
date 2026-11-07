@@ -18,3 +18,5 @@ export * from './gacha-v4';
 export * from './scarcity';
 export * from './editions-v4';
 export { reserveDesignPreviewV4Guard as reserveDesignPreview } from './editions-v4';
+
+export * from './meta-v4';

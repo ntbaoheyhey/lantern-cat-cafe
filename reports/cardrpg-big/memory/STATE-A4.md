@@ -1,12 +1,12 @@
 # A4 living state
 ## NOW
-P4 verified on codex/cardrpg-a4-p4-2026-11-08; publishing draft stacked P3 #370. P1 #367/P2 #369/P3 #370 remain open. No B checkpoint adoption.
+P5 integrated on codex/cardrpg-a4-p5-2026-11-08 from4bb860f0. P4 draft372 published; P1/P2/P3 drafts367/369/370 stay open. No B checkpoint adoption.
 ## NEXT
-Publish P4 and mirror ledger, then claim/integrate P5 from /tmp/cardrpg-a4-p5. P6 full balance/economy and P7 demo/playtest/report follow. Do not repeat G0/R/D/P1–P4 checks.
+Run focused checks then full five gates, offline build,30day bot,OFF8250 and36captures at3sizes. Staging source /tmp/cardrpg-a4-p5 now integrated. P6 fullbalance/economy and P7 demo/playtest/report remain.
 ## DONE
-P4 30,000 accounts/1.8M paid draws max conditional CDF deviation0.640337pp PASS;500 supply races/6000 edition combats PASS with0pp gain. OFF8250 routes exact47477251.30captures/3sizes/2themes PASS.
+P4 verified30kaccounts/1.8Mdraws maxCDF0.640337pp;500cap races/6000combat0pp;OFF8250exact47477251;30captures contrast8.599. Draft372 / ledger / syncb8ea0c1f published.
 ## GATES
-P4 type/lint/build PASS;1087rules(+2expectedfail/11skip)/1735web/421E2E PASS. P3 ordinary14.487s MISS; bosses/elite PASS. P4 startup bytes MISS; coldCPU unmeasured. P5 shadow17tests PASS is not integrated phase acceptance.
+P4 type/lint/build/1087rules(+2expectedfail/11skip)/1735web/421E2E PASS. P5 shadow17tests PASS only; integrated phase checks pending. P3ordinary14.487s MISS; bosses/elite PASS. Startup bytes MISS; coldCPU unmeasured.
 ## DECISIONS (append-only)
 - Keep the one-agent constraint, automatic battles, strict A/B ownership, and isolated worktree.
 ## MEASUREMENTS
@@ -132,3 +132,17 @@ P4 type/lint/build PASS;1087rules(+2expectedfail/11skip)/1735web/421E2E PASS. P3
 ## P4 verification closure
 - Original coordinator reused through all7steps; no duplicate simulations.1280/1440/1024 completed30captures, minimum contrast8.599:1; local screenshots reviewed.
 - P4 report and acceptance source-hash audit PASS; source fixture earned-reveal-fixture.json uses public welcome+paid draw only. Original failed selector-label receipt retained. No B/protected edits.
+
+## P5 resumed validation
+- Recovered integrated P5 and original17PASS unit receipt. First typecheck found generated initializer `journal | hub`; corrected the default to hub. No original evidence replaced.
+- No prior P5 jobs remain. Five gates and independent progression/browser/OFF chain follow on immutable source; B paths untouched.
+
+## P5 contrast retry / isolated P6 calibration
+- Original5gates allPASS1104rules/1735web/421E2E. Original browser1280 caught CSS specificity/contrast; retained evidence. P5 specificity corrected; retry1 coordinator48399 and finalgates85864 active. No duplicate jobs.
+- Independent staged P6 train-only attack-pressure sweep andpilot1 completed; pilot2 uses3.0/1.9/2.15 boss pressure,regularHP.25. No runtime adoption or heldout sampling. Authoritative resume pointer refreshed.
+
+## P5 contrast round2
+- Original retry1 exposed Look's attribute + :is class specificity winning over component text and buttons. Retained first/retry1 evidence. Round2 scopes paired colors inside the actual page and theme root, without editing B CSS. Final source gates remain passing; new CSS-only build/browser validation pending.
+- Recovered original P6 staged pilot3, no duplicate job or heldout sample. No production P6 integration.
+
+- Paused only stagedP6 coordinator75960 (SIGSTOP); its current child finishes/checkpoints normally. Resume with SIGCONT75960 after P5 browser gets a window. No B process touched.

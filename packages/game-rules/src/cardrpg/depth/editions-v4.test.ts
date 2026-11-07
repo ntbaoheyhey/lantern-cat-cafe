@@ -8,7 +8,7 @@ describe('local edition account adapter',()=>{
  it('charges once, saves replayable ledger and preserves exact combat power',()=>{
   const s=account(),stats=R.battleCats(s),c=command(s),r=R.issueEditionV4(s,c,now);expect(r.ok,r.error).toBe(true);expect(r.state.seals).toBe(7);
   expect(R.issueEditionV4(r.state,c,now).state).toEqual(r.state);expect(R.battleCats(r.state)).toEqual(stats);
-  expect(R.importSave(R.exportSave(r.state))).toEqual(r.state);expect(R.exportSave(r.state)).toMatch(/^THC11\./);
+  expect(R.importSave(R.exportSave(r.state))).toEqual(r.state);expect(R.exportSave(r.state)).toMatch(/^THC12\./);
  });
  it('rejects legacy bypass and disabled-mode issuance without spending',()=>{
   const s=account();expect(R.reserveDesignPreview(s,'moon-collar').state).toBe(s);
