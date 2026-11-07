@@ -1,0 +1,106 @@
+{
+  "version": 2,
+  "profile": {
+    "coins": 50,
+    "xp": 260,
+    "clears": 2,
+    "vacuumClears": 1,
+    "restoration": 1,
+    "recruited": [
+      "guardian",
+      "witch",
+      "alchemist",
+      "rogue",
+      "archer"
+    ],
+    "patterns": [
+      "starter",
+      "plain",
+      "counter",
+      "overflow"
+    ],
+    "team": [
+      {
+        "role": "guardian",
+        "weapon": "counter",
+        "charm": "plain"
+      },
+      {
+        "role": "rogue",
+        "weapon": "starter",
+        "charm": "plain"
+      },
+      {
+        "role": "archer",
+        "weapon": "starter",
+        "charm": "plain"
+      }
+    ],
+    "presets": [
+      {
+        "name": "My squad",
+        "team": [
+          {
+            "role": "guardian",
+            "weapon": "counter",
+            "charm": "plain"
+          },
+          {
+            "role": "witch",
+            "weapon": "starter",
+            "charm": "plain"
+          },
+          {
+            "role": "alchemist",
+            "weapon": "overflow",
+            "charm": "plain"
+          }
+        ]
+      }
+    ],
+    "seen": [
+      "guard",
+      "flanker",
+      "slinger",
+      "charger",
+      "mender",
+      "yarn",
+      "knot",
+      "vacuum"
+    ],
+    "rewardPending": false
+  },
+  "run": {
+    "replay": {
+      "version": 2,
+      "options": {
+        "seed": 1105,
+        "preset": "hunters",
+        "scenario": "vacuum",
+        "team": [
+          {
+            "role": "guardian",
+            "weapon": "counter",
+            "charm": "plain"
+          },
+          {
+            "role": "rogue",
+            "weapon": "starter",
+            "charm": "plain"
+          },
+          {
+            "role": "archer",
+            "weapon": "starter",
+            "charm": "plain"
+          }
+        ],
+        "level": 2,
+        "route": "safe"
+      },
+      "commands": [],
+      "ticks": 335
+    },
+    "eligible": true,
+    "settled": true
+  }
+}

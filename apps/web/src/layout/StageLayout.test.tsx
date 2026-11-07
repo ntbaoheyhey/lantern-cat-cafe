@@ -53,7 +53,7 @@ it('keeps the classic layout when VITE_GAME_V2 is not set', () => {
   expect(screen.queryByRole('button', { name: 'Stage' })).toBeNull();
 });
 
-it('desktop: rail, top HUD, stage, character area and the seven tabs', () => {
+it('desktop: rail, top HUD, stage, character area and the game tabs', () => {
   render(<App />);
   expect(screen.getByTestId('rail')).toBeTruthy();
   expect(screen.getByTestId('hud')).toBeTruthy();
@@ -64,7 +64,7 @@ it('desktop: rail, top HUD, stage, character area and the seven tabs', () => {
   expect(screen.getByLabelText('Currencies and keys').textContent).toContain('Fish');
   expect(screen.queryByRole('region', { name: 'Café board' })).toBeNull();
   expect(screen.getAllByRole('tab').map((t) => t.textContent)).toEqual([
-    'Home', 'Bag', 'Map', 'Forge', 'Market', 'Hero', 'Help',
+    'Home', 'Bag', 'Map', 'Forge', 'Market', 'Hero', 'Squad Lab', 'Help',
   ]);
   expect(screen.getByRole('tab', { name: 'Home' }).getAttribute('aria-selected')).toBe('true');
   fireEvent.click(screen.getByRole('tab', { name: 'Hero' }));

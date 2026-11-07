@@ -13,6 +13,7 @@ export type ScreenId =
   | 'forge'
   | 'market'
   | 'hero'
+  | 'squad'
   | 'help';
 
 export interface ScreenDef<P = any> {
@@ -32,6 +33,7 @@ export const SCREEN_REGISTRY: readonly ScreenDef[] = [
   { id: 'forge', label: 'Forge', icon: 'flask', rail: true },
   { id: 'market', label: 'Market', icon: 'shop', rail: true },
   { id: 'hero', label: 'Hero', icon: 'ears', rail: true },
+  { id: 'squad', label: 'Squad Lab', icon: 'sword', rail: true },
   { id: 'help', label: 'Help', icon: 'help', rail: true },
 ] as const;
 

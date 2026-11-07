@@ -64,6 +64,7 @@ const OriginalCatalog = lazy(() => import('../original-preview/OriginalCatalog')
 const Art2Preview = lazy(() => import('../art/Art2Preview'));
 const FeatureSamples = lazy(() => import('../runes/FeatureSamples'));
 const CafeAdventure = lazy(() => import('../cafe/CafeAdventure'));
+const SquadAdventure = lazy(() => import('../squad/SquadAdventure'));
 
 export type StageTabName = 'Character' | 'Bag' | 'Boss' | 'Forge' | 'Market' | 'Help';
 
@@ -134,7 +135,7 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
     if (initialScreen) {
       setScreen(initialScreen);
     } else if (state && !state.cat.classId) {
-      setScreen((prev) => (prev === 'landing' ? 'landing' : 'class'));
+      setScreen((prev) => (prev === 'landing' || prev === 'squad' ? prev : 'class'));
     } else if (state && state.cat.classId && (screen === 'class' || screen === 'landing')) {
       setScreen('home');
     }
@@ -415,7 +416,7 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
           : null
       }
     >
-      {showChrome && classId && <GuestCoach enabled={newGuest && mode.demo} onNavigate={handleSelectScreen} />}
+      {showChrome && classId && screen !== 'squad' && <GuestCoach enabled={newGuest && mode.demo} onNavigate={handleSelectScreen} />}
       {mode.notice && <Banner tone="warning" data-testid="session-expired-notice">{mode.notice}</Banner>}
       {!state && (screen === 'market' || screen === 'help' || screen === 'class') && loadingNotice}
       {snapshot.loadFailed && (
@@ -465,6 +466,9 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
       {welcome && gains && <WelcomeBack gains={gains} awaySeconds={away} onClose={() => setWelcome(false)} />}
 
       <div className="shell-panel-container">
+        <div id="panel-squad" role="tabpanel" aria-label="Squad Lab" className="shell-panel-view screen-squad" style={{ display: screen === 'squad' ? 'flex' : 'none' }}>
+          {(screen === 'squad' || visited.has('squad')) && <Suspense fallback={<p role="status">Preparing the squad…</p>}><SquadAdventure active={screen === 'squad'} /></Suspense>}
+        </div>
         {/* Landing screen */}
         <div
           id="panel-landing"
@@ -513,7 +517,7 @@ export function StageLayout({ initialScreen }: StageLayoutProps = {}) {
           className="shell-panel-view screen-home"
           style={{ display: screen === 'home' ? 'flex' : 'none' }}
         >
-          {state && classId ? (
+          {screen === 'squad' ? null : state && classId ? (
             adventure && mode.demo && !phone ? (
               <Suspense fallback={<p role="status">Opening the cafe…</p>}><CafeAdventure active={screen === 'home'} onExit={() => setAdventure(false)} /></Suspense>
             ) : phone ? (

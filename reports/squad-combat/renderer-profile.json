@@ -1,0 +1,24 @@
+{
+  "viewport": "1440x900",
+  "maxEnemies": 8,
+  "sampleMs": 6249.5999999940395,
+  "sceneUpdate": {
+    "samples": 175,
+    "meanMs": 0.38228571278708323,
+    "p95Ms": 0.699999988079071,
+    "maxMs": 26.799999982118607
+  },
+  "canvasRender": {
+    "samples": 175,
+    "meanMs": 0.2914285731315613,
+    "p95Ms": 0.5999999940395355,
+    "maxMs": 1.4000000059604645
+  },
+  "sceneFrameInterval": {
+    "samples": 174,
+    "meanMs": 34.791379310447596,
+    "p95Ms": 41.30000001192093,
+    "maxMs": 64.2999999821186
+  },
+  "note": "Headless Chromium on this host, 30 FPS presenter target. CPU callback wall time and Phaser render event interval; excludes GPU/compositor work and battery consumption. Not a player usability or endurance test."
+}

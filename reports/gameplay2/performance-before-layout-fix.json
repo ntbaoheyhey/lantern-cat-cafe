@@ -1,0 +1,46 @@
+{
+  "method": "Production build, one Chromium page, 30s windows, no screenshot during timing. Renderer TaskDuration is not OS CPU or battery. Hidden visibility is synthetic; the rAF observer itself remains active to measure overhead.",
+  "size": {
+    "sha": "ea8080d563349e196892ea34eafa9263b975d0ff",
+    "environment": "VITE_GAME_V2=1, VITE_ALLOW_MOCK_AUTH=1, empty Supabase URL/key, production",
+    "baselineGzipJs": 705612,
+    "gzipJs": 729571,
+    "deltaGzipJs": 23959,
+    "chunks": 19,
+    "newRuntimeImages": 3268,
+    "jsBudget": 150000,
+    "imageBudget": 2000000
+  },
+  "records": [
+    {
+      "width": 1280,
+      "height": 720,
+      "errors": [],
+      "writes": [],
+      "motion": "no-preference",
+      "visible": {
+        "durationMs": 30000,
+        "fps": 60.00233212840033,
+        "p95Ms": 16.700000000000728,
+        "cls": 0.02054211319817437,
+        "rendererTaskPercent": 0.90934,
+        "heapBefore": 12833444,
+        "heapAfter": 11709388,
+        "frames": 1801
+      },
+      "hidden": {
+        "durationMs": 30000,
+        "fps": 60.002532033556115,
+        "p95Ms": 16.700000000004366,
+        "cls": 0,
+        "rendererTaskPercent": 0.3702566666666668,
+        "heapBefore": 12569992,
+        "heapAfter": 12941824,
+        "frames": 1801,
+        "secondsAdvanced": 0,
+        "runningAnimations": 0
+      },
+      "reducedRunningAnimations": null
+    }
+  ]
+}
