@@ -213,3 +213,37 @@ Queue handoff71326 in/tmp/cardrpg-big-g-fair-resume.sh/.log waitsactive70563+8s,
 2026-11-07T01:35:24.911759+00:00 · User requested handoff+stop. A26656/27700 and verified descendants stopped; lock released; B01:33 also paused. 8/10 functional PASS retained at e114954b. No runtime changes; five prior gate-log hashes reverified. Path incomplete, mechanics/videos not started. memory/HANDOFF.md is resume entry.
 2026-11-07T01:30:25.337451+00:00 · Ownc862b757 savesmainlab21/meta39 and5/10functionalPASS;inspectedteam/collection/greencomparison/collectiblecaps;all3sizes0errors/remote. GitHub27PRs332–358drafttrue recordedpr-snapshot.json. B01:27agreeswaitA14clipsbefore860matrix;shortcold/lifecycle/audio/flagoff mayinterleave. Ledgerownreportpathabsent;otheruntrackeduserfilesuntouched.
 2026-11-07T04:25:38.972959+00:00 · Read-only GitHub snapshot contradicts old handoff:359 closed/merged at ef400fc3 (second parent7e1b54b0),358 remains open/draft. Correct report/index/handoff; no merge mutation in this continuation. Evidence delivery/pr-baseline-snapshot.json.
+
+2026-11-07T05:43:36.249632+00:00 · Parkedlocal49096d53outside358pendingpublishedL1;22tests/types/lintPASS,sparsefailurepreserved.Nobrowser/L1artproofclaimed;f123mainunchanged.NoautomaticresumeorBpollerstarted.
+
+2026-11-07T05:37:49.162314+00:00 · L0publicationcomplete delivery86005b84/syncf6512a83/ledger6e1245ea;358open/draftbodyupdated. IsolateL1adapterWIPoutsidePRuntilBpublishedsource;observedpartialmanifestcontractonly.
+
+2026-11-07T05:36:06.162068+00:00 · Resume verified86005b84alreadyremote and fullL0packcomplete;no duplicatedbrowser/audit. CloseL0withhonestart/hitch/24MBmisses;nextportraitadaptermayprepareonWIPonlyuntilpublishedBtip.
+
+2026-11-07T05:28:12.048632+00:00 · SevenactualL0screens reviewed;classicMarigoldcrowncrop/smallteamcards retained. InvitationsfunctionalCPU4MAX200ms includescaptures,notcoldacceptance;rawreported. B05:24correctingMochi6/Soot4/Clover5,unpublished;candidate20.092MBnotaccepted.
+
+2026-11-07T05:19:01.981816+00:00 · Meshopt source365c2928 and fresh5gates published1933d944;1177buildinputs0mismatches. L1adapter preparation only, unpublishedBmanifest neveradopted. Source1933commit excluded sparse docs;include them in next checkpoint with gitadd--sparse.
+
+2026-11-07T05:15:57.404630+00:00 · Resume audit found canonical state behind live delivery. Preserve active70538/74695,365c2928 conditional Meshopt CSP;f123 unchanged. B05:12 portrait contract256x320/512x640 prepared only;no publishedL1tip.
+
+2026-11-07T05:08:30.101584+00:00 · Newf123UIandfoilverified;32MBexceptionpins6off/onimages;default24MBmiss26,508bytesretained. Memorypushtransientremote--stdinfailedonce,sequencedretryPASS;sourcee056published.
+
+2026-11-07T05:00:21.482132+00:00 · Raw1440contrastreceiptcorrectsimplicitallsizepass:3activequestionmarkFAIL2.1089–2.3301;30togglepassesremaintrue. Token-darkbackingfixprepared;oldreceiptretained.
+
+2026-11-07T04:59:06.300231+00:00 · Resumedfromcanonicalmemory;activeAfunctionalPID64887retained,no duplicaterun. a1aegallerycontrast1.07885fails;lab24MBdefaultfails;32MBexceptionallowedbyLOOKbriefsection2/6onlywithbeforeafterevidence. Fixselectedstylesandpinexceptiontohash.
+
+2026-11-07T04:55:09.864037+00:00 · GitHub360closed/merged04:52whenA3934pushcontainedBtipf309;358open/draft. No mergeAPI/mainpush/deploy. FutureBtipadoption:rebasecopyofpublishedcommitstoAownedintegrationbranchsooriginalBPRtipdoesnotbecomeancestor;preserveBbranch. pr-snapshot.json.
+
+2026-11-07T04:52:32.246697+00:00 · Source3934ffe2publishedafterfivegates;sharedrequestANSWERad408c30. Exactmaina1aeunchangedaftercleanruntimebuild;functionalpack50845queued. Newdemo+89376bytes(+0.373%)vsbaseline,24.026MBjustifiedoriginalmetatexturesbelow32MBexception;noqualitygradepromotion.
+
+2026-11-07T04:47:25.416973+00:00 · MainofflineLOOK uses BIG_LOOK_V2=1; normal app/helper and builder withoutflag defaultOFF. BIG_OUTPUT_DIR allows B separateoutput. Firstbuild had12/93comparisonrows fromsparseomissions;addedfail-fast93rows/160filesguardandrestoreGitinputs.
+
+2026-11-07T04:41:17.795557+00:00 · Adopted publishedL0f3091a44;shared App/build/offline and CompanionPreview request accepted. Source integration begins;oldbaseline receipts stay9a5f6ebb.
+
+2026-11-07T04:33:20.562672+00:00 · Read BLOOKpromptsection5/exactlocalhelper;ownershipunchanged. Keep sharedwiring untilpublishedtip. Textureprep isoriginal,neutral,andnotruntimeimported;look-ui/PLAN.md containscontracts/checks.
+
+2026-11-07T04:30:13.377652+00:00 · Baseline publication complete atb092ed0c/ledgera2728798831acc86619e6772205c7fefb4b58fcf;358descriptionupdated. Begin LOOK-A texture prep while L0 helper/tokens pending.
+
+2026-11-07T04:25:38.972959+00:00 · Baseline report uses branch-qualified evidence URLs so identical ledger copy has working links. Audit verifies underlying tracked paths. No baseline recapture or new matrix.
+
+2026-11-07T04:25:38.972959+00:00 · GitHub359 closed/merged viaef400fc3,358open/draft;old “no GitHubmerge”claim corrected. Localmergeparents verified;no mergeAPI action this continuation.

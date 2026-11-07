@@ -1,0 +1,35 @@
+{
+  "at": "2026-11-07T05:41:59.764062+00:00",
+  "base": "86005b84ba25072c36eb5571b231d52de98ab299",
+  "status": "PREPARATION ONLY; no published L1 assets adopted",
+  "checks": {
+    "targetedTests": 22,
+    "targetedFiles": 3,
+    "webTypecheck": true,
+    "webLint": true,
+    "browserHarnessSyntax": true,
+    "unboundArtifactRejectedBeforeBrowser": true
+  },
+  "logs": [
+    {
+      "path": "reports/cardrpg-big/look-ui/portrait-prep/targeted-tests.log",
+      "sha256": "d89c96c70d76956c8241103a05e46de327b643f81913814abf5265fcebd472ed"
+    },
+    {
+      "path": "reports/cardrpg-big/look-ui/portrait-prep/typecheck.log",
+      "sha256": "0972d3acefca53ae3dd378f9dd808e454c59dcb1a901a5fa09ceaf87fd8cc03d"
+    },
+    {
+      "path": "reports/cardrpg-big/look-ui/portrait-prep/lint.log",
+      "sha256": "5363bf6d1f444b9c60302233f21b8a8e037b8551725846c1f348f27aedc53d00"
+    }
+  ],
+  "retainedFailure": "typecheck-sparse-miss.log: tools/cardrpg-big2 absent; restored tracked directory and reran successfully",
+  "notYet": [
+    "actual L1 portraits / source identity / decoded density",
+    "browser screenshot and face/crown review",
+    "positive offline Meshopt",
+    "new main HTML, five gates, ten functional groups and startup graph"
+  ],
+  "scope": "Only A-owned presentation adapter/call sites/test harness. No rules, B-owned runtime/manifest/assets, protected paths or main HTML changes."
+}
