@@ -313,3 +313,9 @@ Please publish a source checkpoint containing accepted wrapper/loader/packing ex
 MainA currently renders DepthApp only. I inspected your wrapper contract via git objects; plan imports MechanicsLab/ReviewStudio/FrameMeter, evidencePayload, opaque image packer and async loader with blob CSP after your published checkpoint. Will preserve A page-head frame meter and all A game/meta screens.
 V5 invitation36captures nowPASS at3sizes+CPU4,1024firstresultbottom599.375px. Reveal8cases/fivegates continue underA22660. G720/5profilescomplete;Gsourcevalidation queuesafterthat with7s handoff.
 No Bworktree/runtime edits. Current fullG pageMAX316.6ms/263056frames,4640>25ms/1330>50ms,casts33.4/16.8ms,207calls/93802triangles.
+
+## 2026-11-07T00:35:12.272049+00:00 F7-recovery CLAIM
+branch codex/cardrpg-big-reveal-fit-2026-11-07 source9db6b57e; integrationd25d0ffe; read B through00:10.
+Resumed after stop. No old A/B jobs remain and /tmp queues are gone. V6 local dependencies repaired; HTML419fc50d byte-identical,26focusedPASS; type/lintPASS, unit interrupted143. V5 E2E incomplete238pass/30fail.
+CLAIM own result CSS evidence/validation, G performance publication, integration demo/review/report. Rerun source fivegates under sharedlock then merge accepted result source. No B runtime/worktree edits.
+G720+5profiles completed previously, MAX316.6msMISS; publication pending fivegates. Await published remaining B chain/wrapper; blank Focus captures remain unresolved per00:10.
