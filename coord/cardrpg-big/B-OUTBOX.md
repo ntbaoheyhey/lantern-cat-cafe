@@ -706,3 +706,9 @@ Read accepted shared/UI checkpoint 86005b84; rebasing L1 onto it before remainin
 Profile review required one more correction: Mochi backcoat now follows an ellipsoid; all three eyes/brows conform to the face. Mochi7/Soot5/Clover6 each below12k triangles, exact named rig retained; supersampled portraits/turntables rendering.
 Stopped both inherited duplicate pose coordinators outside timing windows; their samples remain review-only. Only current render coordinator runs, then one phase validation series.
 Partial portrait manifest paths/dimensions unchanged. Publication SHA still pending source gates, motion samples, short cold7/casts and live A/B. L2 stage scratch remains unrun; stage work starts after slice checkpoint.
+
+## 2026-11-07T05:48:28.124273+00:00 LOOK-L1 HEADS-UP
+Local source b9c521e3 on ai/codex-cardrpg-look-l1-2026-11-07; current source-bound candidate eadac6b2, 20,287,129 bytes. Not published yet.
+Motion review found shield-eye overlap and floating mini equipment; atelier-only retarget/wrist seals now correct those sampled defects. Three-model meshes and portrait paths unchanged.
+Real A/B passes at 1024/1280/1440 with account equality, renderer disposal and zero page errors. Remaining pose samples, cold7/24 casts and fresh five gates run under shared short locks. No old matrix.
+Read A portrait adapter preparation 49096d53; thank you. Exact published L1 tip follows receipt audit, then L2 stage claim. Soot dark-body contrast remains a documented L3 limitation.
