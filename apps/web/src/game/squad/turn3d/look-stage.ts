@@ -10,9 +10,18 @@ void main(){vec3 p=position;float age=fract(seed*.618+time*.16);if(steam>.5){p.x
 vec4 mv=modelViewMatrix*vec4(p,1.);gl_Position=projectionMatrix*mv;gl_PointSize=clamp((steam>.5?130.:15.)*pixelRatio/max(1.,-mv.z),1.,42.);}`;
 const pointFragment = `uniform vec3 color;uniform float steam;varying float opacity;void main(){vec2 p=gl_PointCoord*2.-1.;p.x*=steam>.5?1.8:1.;float a=exp(-dot(p,p)*4.5)*opacity;if(a<.002)discard;gl_FragColor=vec4(color,a);}`;
 
+function ownTexture(texture: T.Texture, textures: Set<T.Texture>) {
+  if (textures.has(texture)) return;
+  textures.add(texture);
+  const bitmap = texture.image;
+  if (typeof ImageBitmap !== 'undefined' && bitmap instanceof ImageBitmap) {
+    texture.addEventListener('dispose', () => bitmap.close());
+  }
+}
+
 /** Also releases a completed load whose scene was disposed while awaiting it. */
 export function disposeLookStage(stage: T.Group, textures = new Set<T.Texture>()) {
-  for (const texture of stage.userData.ownedTextures ?? []) textures.add(texture);
+  for (const texture of stage.userData.ownedTextures ?? []) ownTexture(texture, textures);
   const materials = new Set<T.Material>();
   const geometries = new Set<T.BufferGeometry>();
   stage.traverse(object => {
@@ -20,7 +29,7 @@ export function disposeLookStage(stage: T.Group, textures = new Set<T.Texture>()
     geometries.add(object.geometry);
     for (const material of Array.isArray(object.material) ? object.material : [object.material]) {
       materials.add(material);
-      for (const value of Object.values(material)) if (value instanceof T.Texture) textures.add(value);
+      for (const value of Object.values(material)) if (value instanceof T.Texture) ownTexture(value, textures);
     }
   });
   geometries.forEach(geometry => geometry.dispose());
@@ -34,11 +43,13 @@ export async function createLookStage(renderer: T.WebGLRenderer) {
   const stage = gltf.scene;
   const textures = new Set<T.Texture>();
   try {
-    const irradiance = await new T.TextureLoader().loadAsync(irradianceUrl);
-    irradiance.flipY = false; irradiance.colorSpace = T.SRGBColorSpace; textures.add(irradiance);
-    // load fires before deferred WebP decoding on Chromium. Decode off-thread
-    // before warmScene uploads it, so initTexture cannot stall the main thread.
-    if (irradiance.image instanceof HTMLImageElement) await irradiance.image.decode();
+    // A decoded bitmap avoids Chromium re-decoding HTMLImageElement WebP data
+    // synchronously inside texSubImage2D, even after HTMLImageElement.decode().
+    const bitmap = await new T.ImageBitmapLoader().setOptions({ imageOrientation: 'none',
+      premultiplyAlpha: 'none', colorSpaceConversion: 'none' }).loadAsync(irradianceUrl);
+    const irradiance = new T.Texture(bitmap);
+    irradiance.flipY = false; irradiance.colorSpace = T.SRGBColorSpace; irradiance.needsUpdate = true;
+    ownTexture(irradiance, textures);
     stage.name = 'lantern-atelier-cafe'; stage.userData.lookV2 = true;
     const surfaces = new Set<T.MeshStandardMaterial>();
     stage.traverse(object => {
@@ -53,7 +64,7 @@ export async function createLookStage(renderer: T.WebGLRenderer) {
           surfaces.add(material);
         }
         for (const value of Object.values(material)) if (value instanceof T.Texture) {
-          value.anisotropy = Math.min(8, renderer.capabilities.getMaxAnisotropy()); textures.add(value);
+          value.anisotropy = Math.min(8, renderer.capabilities.getMaxAnisotropy()); ownTexture(value, textures);
         }
       }
     });
