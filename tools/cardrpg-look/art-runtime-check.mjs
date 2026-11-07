@@ -94,6 +94,9 @@ try {
         receipt.portraits.push({ screen, mode, id: 'marigold', fallbackUnchanged: true });
       }
       await page.locator('.cr-content').evaluate(e => e.scrollTo(0, 0));
+      // Collection uses content-visibility:auto. Let the restored viewport
+      // paint before capturing it after visiting offscreen cards.
+      await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
       const overflow = await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1);
       assert.equal(overflow, false, `${screen}/${mode}: horizontal overflow`);
       await capture(`${screen}-${mode}`);

@@ -245,7 +245,7 @@ export class TurnScene {
       // material variant too, before exposing it in the first item picker.
       this.loading.completed=2;this.loading.label='Preparing companion motion';
       const initial={...this.view(),frame:null};
-      for(const actor of initial.actors){await this.ensure(actor,initial.boss);await loadingFrame();if(this.disposed)return;}
+      for(const actor of initial.actors){await this.ensure(actor,initial.boss,initial);await loadingFrame();if(this.disposed)return;}
       for(const a of initial.actors)this.puppets.get(a.id)?.gear.update(a,initial.appearance?.(a));
       this.loading.completed=3;this.loading.label='Compiling lighting';
       await new Promise(resolve=>setTimeout(resolve,0));
@@ -335,33 +335,35 @@ export class TurnScene {
     const view = this.view();
     const actor = view.actors.find(actor => (view.models?.[actor.id] ?? actor.role) === catId);
     if (!actor) return false;
-    await this.ensure(actor, view.boss);
+    await this.ensure(actor, view.boss, view);
     if (this.disposed || !this.puppets.has(actor.id)) return false;
     this.entrance = { asset: catId, startedAt: this.time };
     this.dirty = true;
     return true;
   }
-  private async ensure(a:TurnActor,boss:boolean){
+  private async ensure(a:TurnActor,boss:boolean,sourceView:SceneView){
     if(this.puppets.has(a.id)||this.pending.has(a.id))return;this.pending.add(a.id);
     try{
-      const asset=this.view().models?.[a.id]??a.role;
+      // The persistent preview can navigate while the previous roster is
+      // warming. Resolve its actor against the same view that supplied it.
+      const asset=sourceView.models?.[a.id]??a.role;
       const gltf=await loadModel(asset);if(this.disposed)return;
       const model=gltf.scene.clone(true);const root=new T.Group();root.add(model);root.userData.actorId=a.id;
-      const cardClips=this.view().autoBattle?await createCardClips(model,a.role,asset):[];
+      const cardClips=sourceView.autoBattle?await createCardClips(model,a.role,asset):[];
       if(this.disposed)return;
       const height=new T.Box3().setFromObject(model).max.y;
-      const materials:T.Material[]=[];model.traverse(o=>{if(o instanceof T.Mesh){o.material=Array.isArray(o.material)?o.material.map(m=>m.clone()):o.material.clone();materials.push(...(Array.isArray(o.material)?o.material:[o.material]));for(const m of Array.isArray(o.material)?o.material:[o.material])if(m instanceof T.MeshStandardMaterial){this.cardSurfaces?.apply(m);for(const tex of [m.map,m.normalMap,m.roughnessMap])if(tex){tex.anisotropy=Math.min(this.view().autoBattle?16:8,this.renderer.capabilities.getMaxAnisotropy());tex.generateMipmaps=true;}}}});
+      const materials:T.Material[]=[];model.traverse(o=>{if(o instanceof T.Mesh){o.material=Array.isArray(o.material)?o.material.map(m=>m.clone()):o.material.clone();materials.push(...(Array.isArray(o.material)?o.material:[o.material]));for(const m of Array.isArray(o.material)?o.material:[o.material])if(m instanceof T.MeshStandardMaterial){this.cardSurfaces?.apply(m);for(const tex of [m.map,m.normalMap,m.roughnessMap])if(tex){tex.anisotropy=Math.min(sourceView.autoBattle?16:8,this.renderer.capabilities.getMaxAnisotropy());tex.generateMipmaps=true;}}}});
       const mixer=new T.AnimationMixer(model);
       const clips=new Map([...gltf.animations,...cardClips].map(clip=>[clip.name,clip]));
       const actions=new Map([...clips].map(([name,clip])=>[name,mixer.clipAction(clip)]));
       const shadow=new T.Mesh(new T.PlaneGeometry(a.role==='yarn'?3:1.65,a.role==='yarn'?2.4:1.35),this.blobMaterial);shadow.rotation.x=-Math.PI/2;shadow.position.y=.026;root.add(shadow);
-      const guard=new T.Mesh(this.view().autoBattle?cardShieldGeometry():new T.SphereGeometry(.9,18,10,0,Math.PI*2,0,Math.PI/2),new T.MeshBasicMaterial({color:GOLD,transparent:true,opacity:this.view().autoBattle?.50:.12,depthWrite:false,side:T.DoubleSide}));guard.position.y=.09;guard.visible=false;root.add(guard);
+      const guard=new T.Mesh(sourceView.autoBattle?cardShieldGeometry():new T.SphereGeometry(.9,18,10,0,Math.PI*2,0,Math.PI/2),new T.MeshBasicMaterial({color:GOLD,transparent:true,opacity:sourceView.autoBattle?.50:.12,depthWrite:false,side:T.DoubleSide}));guard.position.y=.09;guard.visible=false;root.add(guard);
       const snare=new T.Group();for(let i=0;i<2;i++){const thread=new T.Mesh(new T.TorusGeometry(.47+i*.08,.018,5,32),new T.MeshBasicMaterial({color:VIOLET,transparent:true,opacity:.85}));thread.rotation.x=Math.PI/2+i*.35;thread.position.y=.2+i*.22;snare.add(thread);}snare.visible=false;root.add(snare);
       const base=point(a,boss);root.position.copy(base);model.rotation.y=restYaw(a.side);this.scene.add(root);
       const head = model.getObjectByName(`${a.role}_head`);
-      const face = this.view().autoBattle ? a.side === 'party' ? new CardFace(model, a.role, asset) : new CardEnemyExpression(model, a.role, asset) : undefined;
-      const utensil = this.view().autoBattle ? new CardUtensil(model, a.role, asset) : undefined;
-      this.puppets.set(a.id,{bossPhase:this.view().bossPhases?.[a.id]??1,phaseAt:-100,utensil,enteredAt:this.time,face,head,headRest:head?.quaternion.clone() ?? new T.Quaternion(),headPose:head?.quaternion.clone() ?? new T.Quaternion(),gaze:{yaw:0,pitch:0},asset,height,baseColors:materials.map(m=>m instanceof T.MeshStandardMaterial?m.color.clone():new T.Color()),gear:new GearAttachments(model,a.role,this.gearResources),root,model,mixer,actions,clip:'',base,shadow,role:a.role,materials,guard,snare});this.stats.loaded=this.puppets.size;this.dirty=true;
+      const face = sourceView.autoBattle ? a.side === 'party' ? new CardFace(model, a.role, asset) : new CardEnemyExpression(model, a.role, asset) : undefined;
+      const utensil = sourceView.autoBattle ? new CardUtensil(model, a.role, asset) : undefined;
+      this.puppets.set(a.id,{bossPhase:sourceView.bossPhases?.[a.id]??1,phaseAt:-100,utensil,enteredAt:this.time,face,head,headRest:head?.quaternion.clone() ?? new T.Quaternion(),headPose:head?.quaternion.clone() ?? new T.Quaternion(),gaze:{yaw:0,pitch:0},asset,height,baseColors:materials.map(m=>m instanceof T.MeshStandardMaterial?m.color.clone():new T.Color()),gear:new GearAttachments(model,a.role,this.gearResources),root,model,mixer,actions,clip:'',base,shadow,role:a.role,materials,guard,snare});this.stats.loaded=this.puppets.size;this.dirty=true;
     }catch(error){if(!this.disposed)this.onFailure(`Model unavailable: ${a.name}. Turn controls remain available. ${String(error).slice(0,120)}`);}
     finally{this.pending.delete(a.id);}
   }
@@ -383,7 +385,7 @@ export class TurnScene {
     const ids=new Set(view.actors.map(a=>a.id));
     for(const [id,p] of this.puppets)if(!ids.has(id)||view.actors.find(a=>a.id===id)?.role!==p.role||(view.models?.[id]??p.role)!==p.asset){this.scene.remove(p.root);this.disposePuppet(p);this.puppets.delete(id);}
     this.stats.loaded=this.puppets.size;
-    for(const a of view.actors)if(!this.puppets.has(a.id)&&!this.pending.has(a.id))void this.ensure(a,view.boss);
+    for(const a of view.actors)if(!this.puppets.has(a.id)&&!this.pending.has(a.id))void this.ensure(a,view.boss,view);
     const frame=view.frame, cardRecipe=view.autoBattle?cardRecipeFor(frame,view.actors):undefined, source=frame?this.puppets.get(frame.plan.actorId):undefined;
     const targets=frame?frame.plan.targetIds.map(id=>this.puppets.get(id)).filter((p):p is Puppet=>!!p):[];
     for(const a of view.actors){const p=this.puppets.get(a.id);if(!p)continue;const slot=view.model?this.zero:view.autoBattle?cardFormation(a,view.rows?.[a.id]):formationPoint(a,view.boss);if(!view.autoBattle||a.hp>0)p.base.set(slot.x,slot.y,slot.z);p.root.position.copy(p.base);p.root.scale.setScalar(view.model?1:figureScale(a.role,a.side));p.model.rotation.y=view.model?view.model.angle:view.autoBattle?cardBodyYaw(a.side,0,0):restYaw(a.side);
