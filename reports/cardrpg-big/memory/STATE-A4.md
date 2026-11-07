@@ -1,8 +1,8 @@
 # A4 living state
 ## NOW
-P6 published draft375 at1e8f4950; all six registered samples COMPLETE, original closure finished. Branchcodex/cardrpg-a4-p6-2026-11-08; ACTUAL WORKDIR /Users/bao/taskbar-hero-cardrpg-a4. Final report P6-BALANCE.md:13PASS/5MISS rows; numeric assertions3PASS/4FAIL retained. No balance promotion claim.
+P7 claimed eefddfa5 and22staged tools adopted, branchcodex/cardrpg-a4-p7-2026-11-08 fromP6publication48b470ed. ACTUAL WORKDIR /Users/bao/taskbar-hero-cardrpg-a4. Runtime rules andofflineHTML unchanged fromP6; no B adoption.
 ## NEXT
-Mirror P6 STATE/report to ui-ledger and append sync CHECKPOINT, then claim P7, branch from this P6 tip, adopt22staged tools from /tmp/cardrpg-a4-p7/adoption-manifest.json after verifying hashes, commit source, run a4-p7-series.mjs once and resume failed groups only. P7 full204/new120/journey/guide/cold remains UNRUN. Original85496 is only finishing its final idle handoff;92853 closure exited.
+Run tools/cardrpg-big/a4-p7-series.mjs once from committed source; reuse p7/series.json and child manifests on interruption. It owns5gates/build/one204pack/new120screens/real-clickjourney/guide/cold/evidenceaudit/report/scope. Resume unfinished or failed groups only, atmost2corrections; neverrecapture successfulgroups. Numeric P6misses remain; finish draftP7/ledger/sync after evidence/visual review. Read RESUME-A4.md for active PID/session.
 ## DONE
 P1–P5 drafts367/369/370/372/373. P6 five source gates accepted in validation/a4-p6-accepted.json:1106rules/1735web/421E2E/type/lint/build; originals retained. All5x1timing receipts complete:ordinary21.340s/elite33.785s/boss57.546s,64.807s,58.680s. Boss outcomes all enemy; timings are to crew defeat, not victorious finish.
 ## GATES
@@ -260,3 +260,7 @@ P1–P5 drafts367/369/370/372/373. P6 five source gates accepted in validation/a
 
 ## P6 published
 - Draft375 https://github.com/ntbaoheyhey/taskbar-hero/pull/375 at1e8f4950, stacked373.13PASS/5MISS measured rows. No merge/deploy; P7next.
+
+## P7 integration boundary
+- P6draft375 source1e8f4950/publication48b470ed, ledger00a37224, syncP6CHECKPOINT/P7CLAIMeefddfa5 allpushed.22selectedstagedfiles hash-verified andadopted; no runtime sourcechanges.
+- Sharedlock and30secondbrowserhandoffs;120seconds afterheavysuites. Full204/new120/journey/cold stillUNRUN until original coordinator starts. No B/protectedpaths touched.
