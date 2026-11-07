@@ -25,7 +25,9 @@ if(process.argv.includes('--prepare')){
  await writeFile(`${directory}/build-receipt.json`,JSON.stringify({head:process.env.BIG_FLAG_OFF_HEAD || execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),chunks},null,2));
  console.log(JSON.stringify({prepared:true,chunks:Object.keys(chunks).length,directory}));
 }else{
- const receipt=JSON.parse(await readFile(`${directory}/build-receipt.json`,'utf8'));
+ const receiptBytes=await readFile(`${directory}/build-receipt.json`);
+ const receipt=JSON.parse(receiptBytes);
+ const harnessSha256=createHash('sha256').update(await readFile(import.meta.filename)).digest('hex');
  const mime={'.js':'text/javascript','.css':'text/css','.html':'text/html','.png':'image/png','.svg':'image/svg+xml','.webp':'image/webp','.json':'application/json'};
  const server=createServer(async(req,res)=>{
   try{
@@ -37,9 +39,9 @@ if(process.argv.includes('--prepare')){
  });
  await new Promise((done,reject)=>{server.once('error',reject);server.listen(5923,'127.0.0.1',done);});
  const browser=await chromium.launch({channel:'chromium',args:['--use-angle=metal']});
- const requests=[],external=[],errors=[];let result;
+ const requests=[],external=[],errors=[];let result,page;
  try{
-  const page=await browser.newPage({viewport:{width:1280,height:720}});
+  page=await browser.newPage({viewport:{width:1280,height:720}});
   await page.route('**/*',route=>{
    const url=new URL(route.request().url());
    if(url.protocol.startsWith('http')&&url.origin!=='http://127.0.0.1:5923'){
@@ -55,13 +57,18 @@ if(process.argv.includes('--prepare')){
   const loaded=[...new Set(requests.filter(path=>path.endsWith('.js')))];
   const chunks=loaded.map(path=>({path,...receipt.chunks[path.slice(1)]}));
   assert.ok(chunks.length>0);assert.ok(chunks.every(chunk=>chunk.modules),'Every loaded script must map to the measured production build');
+  for(const chunk of chunks)assert.equal(createHash('sha256').update(await readFile(resolve(directory,'.'+chunk.path))).digest('hex'),chunk.sha256,'Loaded chunk must still match its build inventory');
   const prohibitedModules=[...new Set(chunks.flatMap(c=>c.modules).filter(id=>/node_modules[\\/]three[\\/]|game[\\/]squad[\\/]turn3d[\\/]|\.glb(?:\?|$)/.test(id)))];
   const modelRequests=requests.filter(path=>/\.glb$|\/art\/turn3d\//.test(path));
-  result={method:'Fresh production default URL with no demo/squad query; real legacy heading plus five seconds of initial runtime. Every requested JS chunk mapped to Vite module inventory. External network blocked. This proves three/model exclusion in this startup observation, not byte-identical application behavior.',buildHead:receipt.head,requests,externalBlocked:external,errors,chunks,prohibitedModules,modelRequests};
+  result={method:'Fresh production default URL with no demo/squad query; visible default entry plus five seconds of initial runtime. Every requested JS chunk hash-checked against its Vite module inventory. External network blocked. This proves three/model exclusion in this startup observation, not byte-identical application behavior.',harnessSha256,buildReceiptSha256:createHash('sha256').update(receiptBytes).digest('hex'),buildHead:receipt.head,requests,externalBlocked:external,errors,chunks,prohibitedModules,modelRequests};
   assert.deepEqual(prohibitedModules,[]);assert.deepEqual(modelRequests,[]);assert.deepEqual(errors,[]);
   console.log(JSON.stringify({scripts:chunks.length,prohibitedModules,modelRequests,errors}));
  }finally{
+  if(page){
+   await writeFile(`${output}/readiness-dom.json`,JSON.stringify(await page.evaluate(()=>({title:document.title,text:document.body.innerText,headings:[...document.querySelectorAll('h1,h2,h3')].map(el=>({tag:el.tagName,text:el.textContent})),buttons:[...document.querySelectorAll('button')].map(el=>el.textContent)})).catch(error=>({error:String(error)})),null,2));
+   await page.screenshot({path:`${output}/readiness.png`}).catch(()=>{});
+  }
   await browser.close();await new Promise(done=>server.close(done));
-  await writeFile(`${output}/checks.json`,JSON.stringify(result??{requests,externalBlocked:external,errors,incomplete:true},null,2));
+  await writeFile(`${output}/checks.json`,JSON.stringify(result??{harnessSha256,requests,externalBlocked:external,errors,incomplete:true},null,2));
  }
 }

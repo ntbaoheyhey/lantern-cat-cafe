@@ -27,9 +27,10 @@ async function step(name, action) {
     return;
   }
   const previous = progress.steps[name];
-  if (previous && await access(`${out}/${name}`).then(() => true, () => false)) {
+  const evidenceDirectory = `${out}/${name.startsWith('flag-off') ? 'flag-off' : name}`;
+  if (previous && await access(evidenceDirectory).then(() => true, () => false)) {
     const stamp = previous.started.replaceAll(':', '-');
-    await cp(`${out}/${name}`, `${out}/attempts/${name}-${stamp}`, { recursive: true });
+    await cp(evidenceDirectory, `${out}/attempts/${name}-${stamp}`, { recursive: true });
   }
   const attempts = previous?.attempts ?? [];
   if (previous) attempts.push({ ...previous, attempts: undefined });
@@ -93,7 +94,9 @@ await step('video', () => locked('tools/cardrpg-big2/record-gallery.mjs', { BIG_
 await step('boss-battles', () => locked('tools/cardrpg-big2/record-boss-battles.mjs', { BIG_BOSS_VIDEO_OUT: `${out}/boss-battles` }));
 const flagOff = { BIG_FLAG_OFF_DIST: '/tmp/cardrpg-big2-review-flag-off-dist', BIG_FLAG_OFF_OUT: resolve(out, 'flag-off'), BIG_FLAG_OFF_HEAD: receipt.head };
 await step('flag-off-prepare', () => run([`${source}/tools/cardrpg-big2/flag-off-check.mjs`, '--prepare'], flagOff, source, true));
-await step('flag-off-browser', () => locked(`${source}/tools/cardrpg-big2/flag-off-check.mjs`, flagOff));
+// Keep the original archived production build; use the corrected measurement
+// harness explicitly. checks.json records both harness and build receipt hashes.
+await step('flag-off-browser', () => locked('tools/cardrpg-big2/flag-off-check.mjs', flagOff));
 if (failures.length) {
   console.error(JSON.stringify({ failures }));
   process.exitCode = 1;

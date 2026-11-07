@@ -1,7 +1,9 @@
-# Lane B handoff — paused by user
+# Lane B handoff — resumed 2026-11-07
 REFERENCE: PROMPT.md; RULES.md; STATE.md; ../integration/USER-PAUSE.json
 
-Người dùng yêu cầu **“lưu handoff và dừng”** lúc 2026-11-07 08:32 giờ Việt Nam. Đã dừng toàn bộ tiến trình Lane B. Chỉ tiếp tục khi người dùng yêu cầu; không có tác vụ tự chạy lại. Không dừng hay sửa Lane A.
+**Current status:** user explicitly resumed. See integration/RESUME.json and STATE.md. Own workspace and106historical files recovered; pinned artifact/source hashes verified. Integrated cold7 completed at03:13UTC: native33.3/CPU4116.7ms, postinteractive116.7msMISS, postready16.8ms;13125rawframes independently audited. Standalone boss and flag-off diagnosis, integrated lifecycle/audio are active or queued. Current log paths end in `-resume.log`; old PIDs below remain historical. Matrix uses six-action lock batches and still waits A video completion.
+
+Historical pause: Người dùng yêu cầu **“lưu handoff và dừng”** lúc 2026-11-07 08:32 giờ Việt Nam. Đã dừng toàn bộ tiến trình Lane B. Chỉ tiếp tục khi người dùng yêu cầu; không có tác vụ tự chạy lại. Không dừng hay sửa Lane A.
 
 ## Workspace and accepted artifacts
 REFERENCE: ../integration/accepted-source.json; ../integration/rebase.json; ../validation/integrated-rebase-acceptance.json
