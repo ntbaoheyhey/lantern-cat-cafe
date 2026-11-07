@@ -1,0 +1,76 @@
+{"lock":"acquired","lane":"A","pid":35855,"startedAt":"2026-11-07T16:55:28.539Z","task":"a4-p2 tests"}
+
+> taskbar-hero@0.0.0 test /Users/bao/taskbar-hero-cardrpg-a4
+> node --test scripts/*.test.mjs && pnpm -r test
+
+✔ explicit root and nested index imports resolve to their exact files (18.750625ms)
+✔ directory aliases coexist with explicit indexes and ordinary modules (5.010291ms)
+✔ test modules, fixture folders and non-TypeScript files stay out of deployment maps (2.147958ms)
+✔ output order is stable regardless of file creation order (6.488208ms)
+✔ generation preserves auth mappings and ignores shared or non-function directories (8.963209ms)
+✔ auth health HTTP 200 exits correctly without leaking response data (55.170125ms)
+✔ auth health HTTP 429 exits correctly without leaking response data (46.951834ms)
+✔ auth health HTTP 500 exits correctly without leaking response data (39.485375ms)
+✔ auth health HTTP 502 exits correctly without leaking response data (40.497875ms)
+✔ auth health HTTP 503 exits correctly without leaking response data (35.153833ms)
+✔ auth health fails closed when the transport is unavailable (32.147667ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 347.394041
+Scope: 6 of 7 workspace projects
+packages/auth test$ vitest run
+packages/chain test$ vitest run
+packages/game-rules test$ vitest run
+supabase/tests test$ vitest run
+packages/game-rules test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-a4/packages/game-rules
+packages/auth test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-a4/packages/auth
+packages/chain test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-a4/packages/chain
+supabase/tests test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-a4/supabase/tests
+packages/game-rules test:  ❯ src/cardrpg/depth/equipment-v4.test.ts (19 tests | 1 failed) 238ms
+packages/game-rules test:    ❯ bounded gear triggers (2)
+packages/game-rules test:      × records the actual v4 Defend gear contribution and preserves the legacy effect 12ms
+packages/auth test:  Test Files  1 passed (1)
+packages/auth test:       Tests  24 passed (24)
+packages/auth test:    Start at  23:55:35
+packages/auth test:    Duration  826ms (import 82%, tests 14%, transform 4%, worker 1%)
+packages/auth test: Done
+packages/chain test:  Test Files  3 passed (3)
+packages/chain test:       Tests  32 passed (32)
+packages/chain test:    Start at  23:55:35
+packages/chain test:    Duration  877ms (import 54%, tests 33%, transform 10%, worker 3%)
+packages/chain test: Done
+supabase/tests test:  Test Files  34 passed (34)
+supabase/tests test:       Tests  581 passed (581)
+supabase/tests test:    Start at  23:55:35
+supabase/tests test:    Duration  21.77s (tests 85%, import 13%, transform 2%)
+supabase/tests test: Done
+packages/game-rules test: ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+packages/game-rules test:  FAIL  src/cardrpg/depth/equipment-v4.test.ts > bounded gear triggers > records the actual v4 Defend gear contribution and preserves the legacy effect
+packages/game-rules test: AssertionError: expected 26 to be 25 // Object.is equality
+packages/game-rules test: - Expected
+packages/game-rules test: + Received
+packages/game-rules test: - 25
+packages/game-rules test: + 26
+packages/game-rules test:  ❯ src/cardrpg/depth/equipment-v4.test.ts:126:35
+packages/game-rules test:     124|    const before=b.actors[0]!.hp;
+packages/game-rules test:     125|    expect(R.act(b,R.legalChoices(b).find(c=>c.actorId==='mochi'&&c.ski…
+packages/game-rules test:     126|    expect(b.actors[0]!.hp-before).toBe(v4?8:25);
+packages/game-rules test:        |                                   ^
+packages/game-rules test:     127|    if(v4)expect(b.v4!.events.filter(e=>e.kind==='gear-trigger').map(e=…
+packages/game-rules test:     128|   }
+packages/game-rules test: ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+packages/game-rules test:  Test Files  1 failed | 56 passed | 3 skipped (60)
+packages/game-rules test:       Tests  1 failed | 1053 passed | 2 expected fail | 11 skipped (1067)
+packages/game-rules test:    Start at  23:55:35
+packages/game-rules test:    Duration  46.78s (tests 94%, import 5%, transform 1%)
+packages/game-rules test: Failed
+/Users/bao/taskbar-hero-cardrpg-a4/packages/game-rules:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/game-rules@0.0.0 test: `vitest run`
+Exit status 1
+ ELIFECYCLE  Test failed. See above for more details.
+{"lock":"released","pid":35855,"task":"a4-p2 tests"}

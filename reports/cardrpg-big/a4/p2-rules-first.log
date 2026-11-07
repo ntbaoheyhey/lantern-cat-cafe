@@ -1,0 +1,54 @@
+{"lock":"acquired","lane":"A","pid":34514,"startedAt":"2026-11-07T16:52:52.064Z","task":"A4 P2 equipment boundary tests"}
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-a4/packages/game-rules
+
+ ❯ src/cardrpg/depth/equipment-v4.test.ts (17 tests | 1 failed) 35ms
+   ❯ v4 equipment safety and compatibility (12)
+     × keeps each main stat bounded at every level and all four rarities strictly ordered 4ms
+ ❯ src/cardrpg/depth/gameplay-v4.test.ts (15 tests | 1 failed) 70ms
+   ❯ gameplay v4 preparation and compatibility (8)
+     × keeps absent/OFF accounts and legacy export byte-identical 8ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/cardrpg/depth/equipment-v4.test.ts > v4 equipment safety and compatibility > keeps each main stat bounded at every level and all four rarities strictly ordered
+AssertionError: expected 5 to be greater than 5
+ ❯ src/cardrpg/depth/equipment-v4.test.ts:16:60
+     14|    const naked=R.rawPowerV4(R.nakedStatsV4(s,'mochi'));let last=-1;
+     15|    for(const rarity of RARITY_ORDER){const item=R.makeGear(s,`hearthlo…
+     16|     const value=R.gearMainV4(s,'mochi',item);expect(value).toBeGreater…
+       |                                                            ^
+     17|     item.enhancement=12;const weight=template.main==='attack'?2:templa…
+     18|     expect(R.gearMainV4(s,'mochi',item)*weight).toBeLessThanOrEqual(na…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  src/cardrpg/depth/gameplay-v4.test.ts > gameplay v4 preparation and compatibility > keeps absent/OFF accounts and legacy export byte-identical
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ src/cardrpg/depth/gameplay-v4.test.ts:25:50
+     23|     expect(on.account).toEqual(state.account);
+     24|     expect(on.gear).toEqual(state.gear);
+     25|     expect(R.exportSave(on).startsWith('THC8.')).toBe(true);
+       |                                                  ^
+     26|     expect(R.importSave(R.exportSave(on))).toEqual(on);
+     27|     const off = R.setGameplayV4(on, false);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  2 failed | 1 passed (3)
+      Tests  2 failed | 39 passed (41)
+   Start at  23:53:34
+   Duration  325ms (transform 62%, tests 20%, import 17%, worker 1%)
+
+undefined
+/Users/bao/taskbar-hero-cardrpg-a4/packages/game-rules:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: vitest run src/cardrpg/depth/equipment-v4.test.ts src/cardrpg/depth/equipment.test.ts src/cardrpg/depth/gameplay-v4.test.ts
+{"lock":"released","pid":34514,"task":"A4 P2 equipment boundary tests"}

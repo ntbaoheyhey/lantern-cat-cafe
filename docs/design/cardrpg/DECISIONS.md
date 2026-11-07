@@ -89,3 +89,9 @@ The user's A4 instruction supersedes the historical manual-battle decisions abov
 | Retire linked adds with boss; measure actual wall time | V4-JAFFE plus G0 day7 22-second post-boss cleanup; typed finishing event request to B |
 
 Research-only verification: current legal applicability in China and any enacted 2026 general Dutch loot-box rule remain NOT VERIFIED. No new purchase/on-chain flow is proposed. Community-only equipment fields stay explicitly limited. This is one agent's design judgement, not independent human playtesting.
+
+## A4 P2 implementation notes — 2026-11-07
+- THC9 carries optional three-slot shift presets and packed-supply snapshots; THC5–8 imports remain supported without trimming over-cap inventories. Legacy-only exports remain THC7.
+- Whole-number gear bases round upward before the 1/1.25/1.5/1.75 rarity ladder, with a minimum 4 in the slot stat, then clamp the actual enhanced main stat to 8% of naked core. This avoids low-level integer ties without changing the displayed-only score. Balance acceptance remains pending.
+- Clearleaf Tea packs one first-debuff cleanse: current routes preserve HP, not between-node debuffs. Pantry reservation is shown before Prepare, survives prepare rebuilds, returns on uncommitted abandonment and is consumed when Fight commits.
+- Utility coefficients are explicit three-round estimates pending train calibration; the UI labels them approximate. No measured agreement is claimed.

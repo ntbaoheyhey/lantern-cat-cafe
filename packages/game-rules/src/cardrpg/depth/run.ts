@@ -59,7 +59,7 @@ export function enterNode(state: DepthAccount, id: string): RuleResult<DepthAcco
     const node=availableNodes(run).find(n=>n.id===id);requireRule(node,'NOT_READY','Choose a connected node on the map.');
     run.current=id;
     if(node.enemies.length){
-      const setup={seed:deriveSeed(run.seed,run.visited.length+run.floor*100),chapter:run.chapter,cats:battleCats(s),enemies:node.enemies,hp:run.hp,boons:run.boons,upgrades:run.upgrades,mutator:run.mutator,...(run.gameplayV4?{gameplayV4:true,plan:clone(s.v4?.plan??DEFAULT_PLAN)}:{})};
+      const setup={seed:deriveSeed(run.seed,run.visited.length+run.floor*100),chapter:run.chapter,cats:battleCats(s),enemies:node.enemies,hp:run.hp,boons:run.boons,upgrades:run.upgrades,mutator:run.mutator,...(run.gameplayV4?{gameplayV4:true,plan:clone(s.v4?.plan??DEFAULT_PLAN),...(run.packedSupply?{packedSupply:clone(run.packedSupply)}:{})}:{})};
       run.battle=createBattle(setup);s.lastBattle=clone(run.battle.initial);s.lastChoices=[];
     }
   });
@@ -74,6 +74,7 @@ export function configurePreparation(state: DepthAccount, team: string[], rows: 
     requireRule(team.every(id=>['front','rear'].includes(rows[id]!))&&team.some(id=>rows[id]==='front'&&(run.hp[id]??1)>0),'INVALID_TEAM','Keep at least one living companion in front.');
     const changed=team.some((id,i)=>id!==s.team[i]);
     requireRule(!changed||run.visited.length===0&&run.floor===1,'NOT_READY','The roster stays together after the first stop; change rows or plans here.');
+    requireRule(!battle.initial.packedSupply||team.includes(battle.initial.packedSupply.catId),'INVALID_TEAM','Keep the companion with the packed supply for this encounter.');
     s.team=[...team]; s.rows={...s.rows,...rows};
     for(const id of team) s.skills[id]??=CAT_BY_ID[id]!.skills.slice(0,3).map(skill=>skill.id);
     s.v4??={version:1,plan:{...DEFAULT_PLAN}};
@@ -89,6 +90,7 @@ export function commitPreparation(state: DepthAccount): RuleResult<DepthAccount>
     const battle=s.run?.battle;
     requireRule(battle?.v4&&!battle.result,'NOT_READY','Open an automatic preparation first.');
     battle.v4.committed=true;
+    delete s.run!.packedSupply;
   });
 }
 function addBoon(run: Run, id: string) {
@@ -134,6 +136,7 @@ export function finishEncounter(state: DepthAccount): RuleResult<DepthAccount> {
   return transactDepth(state,s=>{
     const run=s.run,b=run?.battle;requireRule(run&&b?.result,'NOT_READY','Finish the encounter.');
     const node=run.nodes.find(n=>n.id===run.current);requireRule(node,'NOT_READY','Encounter node missing.');
+    if(run.gameplayV4)delete run.packedSupply;
     run.hp=Object.fromEntries(b.actors.filter(a=>a.side==='party').map(a=>[a.catalogId,a.hp]));s.lastChoices=clone(b.choices);run.battle=null;
     if(b.result==='enemy'){settleRun(s,false);return;}
     run.points+=node.kind==='elite'?65:node.kind==='boss'?100:35;
@@ -167,7 +170,7 @@ export function resolveNode(state: DepthAccount,choice: string,targetId?: string
     } else if(node.kind==='shop') {
       if(choice!=='leave'){
         requireRule(run.points>=45,'INSUFFICIENT_FUNDS','Need 45 earned run points.');
-        if(choice==='tonic'){run.supplies++;}else{requireRule(shopStock(run).includes(choice),'UNKNOWN_ID','Choose a charm from this shop.');addBoon(run,choice);}
+        if(choice==='tonic'){requireRule(!run.gameplayV4||run.supplies<5,'MAX_LEVEL','Carry at most five packed tonics.');run.supplies++;}else{requireRule(shopStock(run).includes(choice),'UNKNOWN_ID','Choose a charm from this shop.');addBoon(run,choice);}
         run.points-=45;
       }
     } else if(node.kind==='treasure') {
@@ -189,6 +192,8 @@ export function useTonic(state: DepthAccount): RuleResult<DepthAccount> {
 export function abandonRun(state: DepthAccount): RuleResult<DepthAccount> {
   return transactDepth(state, s => {
     requireRule(s.run && !s.run.complete, 'NOT_READY', 'No active run.');
+    if(s.run.packedSupply&&!s.run.battle?.v4?.committed){const old=s.run.packedSupply;s.account.inventory.stacks[old.id]=(s.account.inventory.stacks[old.id]??0)+1;}
+    delete s.run.packedSupply;
     if (s.run.battle) s.lastChoices = clone(s.run.battle.choices);
     s.run.battle = null;
     s.run.rewardChoices = [];
