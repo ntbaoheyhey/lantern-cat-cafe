@@ -1,17 +1,17 @@
 # Taskbar Hero session state
-PROMPT.md bytes (wc -c) = 53562
-PROMPT.md SHA-256 = bba8c53418413298018f714aa35ebd60ed3d49d9df32f2027c90ba9b279dcc37
+PROMPT.md bytes (wc -c) = 58535
+PROMPT.md SHA-256 = 73b26c7629b6fe0830a94091611f50fa1943a90979cdadc03b0935e3c28a1572
 REFERENCE: reports/cardrpg-big/memory/PROMPT.md
 ## NOW
-ACTIVE 2026-11-07T05:43:36.249632+00:00: LOOK-A L0 published at86005b84ba25072c36eb5571b231d52de98ab299;10/10functionalPASS/204screens verified. Sync f6512a83/draft358 metadata/ledger6e1245ea published. L1prepcomplete/parkedlocal49096d53;nextintegrationdepends onBpublishedL1,notyetannounced. NoAprocessrunning.
-Delivery /Users/bao/taskbar-hero-cardrpg-big-delivery · codex/cardrpg-big-delivery-2026-11-07 · draft358 OPEN/DRAFT verified. Main f1234525fb744d0b318c2ea65727256cfb71fc6cc31c2380cf6fac93941a0f56/24,026,508bytes accepted for integration checks only, not art/performance.
-Baseline9a5f6ebb/23,937,000bytes immutable;14videos/report b092ed0c and ledger a2728798 published. Visual complaint remains open; L1 upstream not published at last boundary.
-Canonical /Users/bao/taskbar-hero-cardrpg-big · ai/codex-cardrpg-big-2026-11-06 · memory parentfd4cee74. A drafts333–341,344–345,348,358;359/360closed via containment (no merge API).
-Sync /Users/bao/taskbar-hero-cardrpg-sync · ai/codex-cardrpg-big-sync · f0a1ff90;last B05:37Mochi7/Soot5/Clover6rendering/gatespending.NoAheavyjob orlockowned.
+ACTIVE 2026-11-07T07:13:29.257210+00:00: WAITING-L1 addendum saved; step1 screenshot-free hitch baseline/trace then persistent deferred preview. A has independent work; do not stop awaitingB.
+Canonical /Users/bao/taskbar-hero-cardrpg-big · ai/codex-cardrpg-big-2026-11-06 · parent9f41453b. Delivery /Users/bao/taskbar-hero-cardrpg-big-delivery · codex/cardrpg-big-delivery-2026-11-07 ·86005b84/draft358 OPEN/DRAFT.
+Mainf1234525fb744d0b318c2ea65727256cfb71fc6cc31c2380cf6fac93941a0f56/24026508bytes;baseline9a5f6ebb/23937000bytes immutable. No new quality/performance pass.
+Syncf91bc0e7/B06:58: L1sourceb9c521e3 unpublished; E2E23network/fontfailuresretrying. Candidateeadac6b2/20287129bytes notadopted. PublishedL1/L6takespriority.
+A portraitprep local49096d5353a167d0726f9c4718b93ae1ba1efb16 in /Users/bao/taskbar-hero-cardrpg-portrait-prep;not358. Ledgerreport6e1245ea/mirror84718776.
 ## NEXT
-1. At next phase/resume boundary read B-OUTBOX. L1publishedSHA is the external prerequisite; do not adoptunpublishedBfiles,do notpoll. LastB05:37 noSHA;Aprepannouncementf0a1ff90.
-2. Oncepublished, rebase-copyBcommitsontoAintegration preservingBdraft ancestry; recheckmanifest, cherry-picklocalWIP49096d5353a167d0726f9c4718b93ae1ba1efb16 fromcodex/cardrpg-look-a-portrait-prep-2026-11-07. Worktree /Users/bao/taskbar-hero-cardrpg-portrait-prep.
-3. Rebuildmain/newhash;5gates+portrait3sizes×DPR1/2/crop review/defaultstartup+10functionalgroup pack(shortlocks);publish A CHECKPOINT/report/ledger. Final860matrix onlyB/final lookV2.
+1. Build screenshot-free click-route RAF/longtask/trace harness; measure frozenf123 CPU1/4 frompageopen incl1/10pull/Fight/Result/map;trace actualcauses. Timinglock+6.5shandoffs.
+2. Fix A preview lifetime/deferredmount/Reactisolation/preload and measureagain; B enginehotspots getpreciseREQUEST. Then extendtypedL1/fakemanifest/fallback6surfaces×3sizes.
+3. Layoutfirstviewport/contactsheet → training-onlyprogressionsims+isolatedrulescommit → tokenflow+Bpaletterequest →5gates+touchedgroups/shortreport. Fullpackonlyfinal;L1/L6publishedadoptionjumpsfirst.
 ## DONE
 L1prep ·localWIP49096d53/outside358;22tests/3files+webtypes/lintPASS;look-ui/portrait-prep/checks.json inprepworktree. Optionalmanifest/srcset/liveOFFfallback+futureexacthashbrowserharness;noL1assets/browserpass.
 LOOK L0 checkpoint ·86005b84/draft358;10groups/204screens/1177sourceinputs PASS,5gates1731web/1020rules/421E2E;look-ui/L0-CHECKPOINT.md,l0-checkpoint-audit.json. Report115lines/9Vietnamese, ledger6e1245ea;syncf6512a83;358bodyupdated.
@@ -39,10 +39,11 @@ I ·221ec3a8/draft341, items/ENCOUNTER-CHECKPOINT.md, fivegates/5browserflowsPAS
 G ·a75ae753/draft344, invitations/PERFORMANCE.md and recovery-verification.json;720cases/5profiles/raw263056framesverified. Sourcechecks recovered oneunit timeout;421E2EPASS. Integratedresult69b994eb68capturesPASS.
 M-followup ·5d1c2c47/draft345, meta-followup/CHECKPOINT.md,6before/aftercases+33screensPASS.
 F7 preparation ·1c188a46/draft348, demo/screens/checks.json, fivegates/18capturesPASS;fullintegrationpending.
-## PHASE GATES · LOOK-A L1 preparation only
-PARTIAL “hero portraits(L1)...into Collection, Team, Invitations...rewards”:AadapterimplementedonlocalWIP49096d53;22targetedtestsPASS;BpublishedassetsNOTYET. NoactualportraitDPR/facecrop/positivemeshoptacceptance.
-NOTYET “AFTER EACH LOOK CHECKPOINT...rebase/merge...rebuild...new hash...five gates...functional pack...publish”:noL1checkpointadopted. Currentf123L0receiptsremainunchanged;preptype/lint arenotfivegates.
-NOTYET “full portrait/icon/frame set...look-assets.json(L6)” and finalB art rubrics:upstreamnotpublished. KeepclassicsafeandWIPoutof358.
+## PHASE GATES · WAITING-L1 step1
+NOTYET “measure it screenshot-free by real clicks (hub -> Team -> Companions -> Equipment -> Invitations -> 1 pull -> 10 pull -> Fight -> Result -> map), trace it”:f123beforebaselinepending;200ms remainsfailure,notexcused.
+NOTYET “ONE persistent preview renderer/scene...lazy/deferred mount...React state split”:implementationpending;BownedengineonlyREQUESTs.
+NOTYET “every screen transition and every pull/10-pull reveal...max frame <=50ms(CPU1)...<=100ms(CPU4)...raw arrays...per-screen table”:newroutearrayspending.
+NOTYET WAIT5typedmanifest/fallback6surfaces×3sizes;WAIT4layouts/contactsheet;WAIT3traincurve/caps;WAIT2palette/flow;WAIT6leancheckpoint. SeePROMPTlatestaddendumexactrequirements.
 ## PRIOR LOOK-A L0 GATES
 PASS “rebase/merge lane B’s published tip into your integration branch”: f3091a44 adopted;189baselineassets unchanged. look-ui/build-iterations.json.
 PASS “lookV2 plumbing...App.tsx, depth.css, build.mjs, offline wrapper...default startup graph unchanged”:3934ffe2+365c2928;11JS/3522500bytes/686modules0added/removed/Three/GLB;scopedCSS followsdepth.css.
@@ -71,6 +72,7 @@ I caps PASS25rules/2UI/12screens,localcounter/binding/help;designonly,0battle st
 G/M PASS earnedceremony/odds/pity/history andmain68reveal/invitationcaptures;Mpreview+70px,height300px,6before/after+33screens. OpeningGMAX316.6msMISS.
 F1/F2 FAILscale/sharpness:stage78.889%PASS,2745posesPASS;sharpness2/10PASS8MISS. F3/F4 varietyPASS30motionpairs/465effectpairs;historicalopening566.7/266.7msMISS.
 ## DECISIONS · append-only archive
+2026-11-07T07:13:29.257323+00:00 · NewWAITING-L1useraddendum overrideswaiting/fullpackpercheckpoint;workonAissuesimmediately,leanchecks,trainingonlybalance. Oldpromptprefix53562bytespreserved.
 2026-11-07T05:43:36.249632+00:00 · Parkedlocal49096d53outside358pendingpublishedL1;22tests/types/lintPASS,sparsefailurepreserved.Nobrowser/L1artproofclaimed;f123mainunchanged.NoautomaticresumeorBpollerstarted.
 2026-11-07T05:37:49.162314+00:00 · L0publicationcomplete delivery86005b84/syncf6512a83/ledger6e1245ea;358open/draftbodyupdated. IsolateL1adapterWIPoutsidePRuntilBpublishedsource;observedpartialmanifestcontractonly.
 2026-11-07T05:36:06.162068+00:00 · Resume verified86005b84alreadyremote and fullL0packcomplete;no duplicatedbrowser/audit. CloseL0withhonestart/hitch/24MBmisses;nextportraitadaptermayprepareonWIPonlyuntilpublishedBtip.
