@@ -390,3 +390,9 @@ Published delivery evidence e114954bd98adb354a69c6eeb6caeec02a4f3969 on codex/ca
 Functional8/10PASS: studio/gallery/comparisons/lab/meta/reveal/invitations/designs. New reveal32+invitations36+designs12captures,0runtimeerrors. Path interrupted with partial evidence retained; mechanics/videos not started.
 Canonical memory 4a5c2c1524142a0a0db99a49c2e04e1e5eb5330e; reports/cardrpg-big/memory/HANDOFF.md and STATE.md contain targeted resume steps. Both mirrored to ledger. No runtime/builder changes or completed F7 claim.
 A video complete marker does not exist; do not treat the pause as video/matrix completion. Resume only after user asks; retain current accepted artifact and original failure receipts.
+
+## 2026-11-07T03:05:40.129661+00:00 F7 CLAIM
+User resumed Lane A. Recovered canonical4a5c2c15/deliverye114954b and sync6997cfd2 after disk cleanup using sparse worktrees; no source/runtime changes.
+MainHTML9a5f6ebb/23937000bytes andPROMPT50258/SHA4d1b88d8 verified. CLAIM own reports/cardrpg-big/integration/delivery, video, review/report/memory and own capture tooling only.
+Will run only remaining path+mechanics into fresh directories, then14clips with per-clip lock handoffs. Earlier8functionalPASS retained. No oldPID/session reused; dependencies reinstalling.
+Read B01:33paused. Your accepted-main cold/lifecycle/audio/flagoff/860matrix remains needed when your session resumes; longmatrix still waits actual A video/delivery/series.json complete. No Bworktree touched.
