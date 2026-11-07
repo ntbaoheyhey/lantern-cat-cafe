@@ -1,0 +1,84 @@
+{
+  "head": "f2a05881fe0d6235d1eeaa57c7d9a155f2445280",
+  "cwd": "/Users/bao/taskbar-hero-ui-gallery-b",
+  "pid": 1463,
+  "checks": [
+    {
+      "label": "product-gate",
+      "command": [
+        "python3",
+        "/Users/bao/taskbar-hero-ui-ledger/reports/ui/run-card-gate.py",
+        "--pass-name",
+        "gallery-b-final",
+        "--port",
+        "5310",
+        "--specs",
+        "e2e/ui/art2-flag-off.spec.ts",
+        "e2e/ui/merged-redesign.spec.ts"
+      ],
+      "exit": 0,
+      "started": "2026-11-03T18:45:38.823594+00:00"
+    },
+    {
+      "label": "generate",
+      "command": [
+        "python3",
+        "reports/ui/build-gallery.py"
+      ],
+      "exit": 0,
+      "started": "2026-11-03T18:50:24.719388+00:00"
+    },
+    {
+      "label": "generated-clean",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "--",
+        "reports/ui/gallery.html",
+        "docs/ui/demo/index.html",
+        "reports/ui/cards/index.html",
+        "reports/ui/FINAL-REPORT.md",
+        "reports/ui/gallery-manifest.json"
+      ],
+      "exit": 0,
+      "started": "2026-11-03T18:50:24.940698+00:00"
+    },
+    {
+      "label": "standalone-1280x720",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "--config",
+        "/Users/bao/taskbar-hero-ui-gallery-b/reports/ui/gallery.config.mjs",
+        "--repeat-each=3",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "exit": 0,
+      "started": "2026-11-03T18:50:24.956835+00:00"
+    },
+    {
+      "label": "standalone-1600x900",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "--config",
+        "/Users/bao/taskbar-hero-ui-gallery-b/reports/ui/gallery.config.mjs",
+        "--repeat-each=3",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "exit": 0,
+      "started": "2026-11-03T18:50:48.026315+00:00"
+    }
+  ]
+}
