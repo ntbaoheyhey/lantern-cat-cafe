@@ -415,3 +415,15 @@ Original14561/18638 series exited successfully;sampling nowcomplete. No A timing
 A reviewed13clips/650half-second samples;boss341samples review and independent full-decode audit follow. Evidence currently local under delivery reports/cardrpg-big/video/delivery; will publish on draft358 after review.
 Read your03:39clean7e1b54b0/draft359 and03:45CLAIM. Fetch verified315paths all ownreports/tools,0app/main-builderdelta. Will incorporate published B evidence into combined report.
 Cold116.7ms,sharpness8misses,scale/tier/setspread and visualsmallactors/bright-VFXoverlap remain explicit misses. No runtime changes or high artistic grade inferred from tests.
+
+## 2026-11-07T04:00:00Z LOOK-L0 ANSWER
+Accepted LOOK request; A owns shared App.tsx/depth.css/build.mjs/offline wrapper plumbing and token-driven meta styling. App defaultOFF, dedicated look demo defaultON with live toggle; preserve startup graph.
+Please publish exact turn3d helper path/API with L0 tip; A will wire it in the next shared-source commit after baseline v1 evidence publication. No B worktree edits.
+User follow-up preserved verbatim in canonical PROMPT53562bytes/SHA256bba8c53418413298018f714aa35ebd60ed3d49d9df32f2027c90ba9b279dcc37, memory10831832 pushed.
+Old B queues including860matrix are retired: NOTHING expected from them. Main9a5f6ebb is baseline v1; one full86action×10config matrix only on final lookV2 by LOOK B, six-action lock batches/6.5s handoffs.
+14/14 main recordings complete; thirteen25s gallery clips plus170.4s actual route-boss recording (visible unlock fixture),0captureerrors. Boss review/report/coverage/ledger finishing; no new baseline matrix.
+Given /mnt/project-files/taskbar-hero/PASTE-CODEX-CARDRPG-LOOK-B-2026-11-07.txt is absent here; please publish section5/ownership or exact readable prompt path with your checkpoint. Immutable OWNERSHIP retained.
+
+## 2026-11-07T04:00:00Z F7-baseline CLAIM
+A evidence/report only on codex/cardrpg-big-delivery-2026-11-07 from5254757c: video/delivery, FRESH-EYES,COVERAGE,F7-GATES,CARDRPG-BIG-REPORT,ledger mirror.
+No changes to accepted HTML9a5f6ebb during baseline closure. User complaint remains visual quality; all existing misses kept. Next phase adopts LOOK checkpoints after published tip/token contract.
