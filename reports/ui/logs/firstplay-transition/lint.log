@@ -1,0 +1,25 @@
+
+> taskbar-hero@0.0.0 lint /Users/bao/taskbar-hero-ui-firstplay
+> pnpm -r lint
+
+Scope: 6 of 7 workspace projects
+packages/auth lint$ tsc --noEmit
+packages/game-rules lint$ tsc --noEmit
+packages/chain lint$ tsc --noEmit
+supabase/tests lint$ tsc --noEmit
+packages/chain lint: Done
+packages/auth lint: Done
+packages/game-rules lint: Done
+supabase/tests lint: Done
+packages/api-contract lint$ tsc --noEmit
+packages/api-contract lint: Done
+apps/web lint$ tsc --noEmit
+apps/web lint: e2e/ui/firstplay.spec.ts(48,244): error TS2352: Conversion of type 'Window & typeof globalThis' to type 'Window & { __visibleRootGuard: { blankFrames: unknown[]; }; }' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+apps/web lint:   Property '__visibleRootGuard' is missing in type 'Window & typeof globalThis' but required in type '{ __visibleRootGuard: { blankFrames: unknown[]; }; }'.
+apps/web lint: Failed
+/Users/bao/taskbar-hero-ui-firstplay/apps/web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/web@0.0.0 lint: `tsc --noEmit`
+Exit status 2
+ ELIFECYCLE  Command failed with exit code 2.
+
+exit=2
