@@ -43,15 +43,17 @@ export class CardSurfaces {
           float atelierY = dot(atelierLight, vec3(.2126, .7152, .0722));
           float atelierBase = max(.04, dot(diffuseColor.rgb, vec3(.2126, .7152, .0722)));
           float atelierLevel = atelierY / atelierBase;
-          float atelierRamp = .38 + .30 * smoothstep(.12, .58, atelierLevel)
-            + .32 * smoothstep(.62, 1.55, atelierLevel);
+          float atelierRamp = .28 + .36 * smoothstep(.18, .82, atelierLevel)
+            + .38 * smoothstep(.95, 2.05, atelierLevel);
           vec3 atelierChroma = mix(vec3(1.), atelierLight / max(.001, atelierY), .5);
           reflectedLight.directDiffuse = diffuseColor.rgb * atelierChroma * atelierRamp * .88;
           float atelierRim = pow(1. - max(dot(normal, normalize(vViewPosition)), 0.), 3.);
-          reflectedLight.indirectDiffuse = diffuseColor.rgb * vec3(1., .88, .72) * (.10 + atelierRim * .18);
+          float darkFur = 1. - smoothstep(.06, .24, atelierBase);
+          reflectedLight.indirectDiffuse = diffuseColor.rgb * vec3(1., .92, .81) * (.10 + atelierRim * .20)
+            + vec3(.11, .17, .19) * darkFur * (.12 + atelierRim * .48);
         `);
       };
-      material.customProgramCacheKey = () => 'lantern-atelier-ramp-wrap-v1';
+      material.customProgramCacheKey = () => 'lantern-atelier-ramp-wrap-v3';
       return;
     }
     if (!/felt|knit/.test(material.name)) return;

@@ -1,3 +1,39 @@
+# Active L3 publication → L4 — 2026-11-07T14:02:33.458295+00:00
+
+User resumed; continue authorized work. Owncheckout/branch unchanged; RULES/PROMPT remain active. No subagents/generativecalls/rules/sharededits/merge/deploy.
+- L3 coordinator46983 finished successfully. No running B timingchecks. Exact02ffd9cb/22,578,111bytes at source71da901f, acceptedA4d525a8a. Audit1301inputs and allphasechecks PASS. Startup byte parity+44 MISS; CPU4cold133.3ms MISS; cast24MAX16.8/errors0. Do not rerun completed phase tests without changes.
+- Next publishL3, update ownL1/L2rebased refs with explicit leases (originalremoteeb568fda/1000c0cb; mapped914a991f/82cf6d5c), preserve historicalartifactreceipts; ledger mirror; BOUTBOXDONE/L4CLAIM. LatestA13:44 task3fix, noacceptedtip beyond4d525a8a.
+- L4prep remains scratch only. Prefer integrating material/flipbook replacements into existing primitive pools (96instance/8calls budget) to preserve structural recipe shapes; sixoriginalBlender atlases plus taperedribbons, depthfade viaisolatedeffects pass, pooledlights andimpact-centered distortion. Existingdrafts under memory/l4-prep require correction/review beforeactualrun.
+- RemainingL4→L6→L5→L7 and finalmatrix/lifecycle/CPU4BalancedLow stillopen. Keep sourcebound reviews honest.
+
+---
+
+# Active L3 validation — 2026-11-07T13:37Z
+
+This is continued authorized work, not a pause. Original brief remains in PROMPT.md; no subagents/generative calls/shared/rules edits/main push/merge/deploy.
+- Owncheckout `/Users/bao/taskbar-hero-cardrpg-look`, branch ai/codex-cardrpg-look-l3-2026-11-07. Source71da901f rebased onto acceptedA4d525a8a. Before-rebase safetybranch ai/codex-cardrpg-look-l3-before-rebase-2026-11-07 pointsbd838fbb.
+- Ownruntime/ownedtools exactly equal before rebase; Ameta/shared match acceptedA; protectedpaths no diff. Mapping memory/l3-rebase.json. Rebased L1tip914a991f/L2tip82cf6d5c; remote/local phasebranches still originaleb568fda/1000c0cb. Do not blindly forcepush; retain leases and update stack only afterfreshgates, or preserve historicalbranch refs while using rebased bases.
+- Cleanruntime artifact02ffd9cb351fba4984dffac98036a2853bde5fe06e0a1ce503ceccc53655cb70 /22,578,111bytes; buildruntimeDirty=false at71da901f. A shell/portraits now included. No phase acceptance yet.
+- ONE coordinator running: memory/l3-finish-checks.mjs, PID46983/session46377, logfile /tmp/cardrpg-look-l3-finish.log; caffeinate monitor46995. Order build(done)→l3-check(PID47087 waitingA lock at13:37)→post/metrics→loading6→fivegates→flagoff/cold7/24casts→audit. Check actual process tree before any restart. It stops on nonzero, preserveslogs. No duplicate timing/gates.
+- Pilotthirdroundcee6234f fullyreviewed9views;36faceablation samples0offenders; tierGPU123textures552geometries52programs stable. Sixcancels0/21/167/0/186/294pass. OriginalClassic295/294was sharedSpritegeometryharnessfalsepositive; originalreceipts retained. Source stopsClassicdecoration atloadingboundaries. Firstpostattempts from validation/l3/post movedto rounds/post/runtime-1/post-initial-validation before newrun.
+- Soot projectedbox separation.0506 vsL2sameview.0524, stillmiss. WholeframeSSIM.986779 doesnotprovebeauty. Selfgradeslighting/depth6.5,post7,face7.5; floorflatness,paperfibres,shelfmirroring remain. No finishedwholegame claim.
+- LatestAread13:30task3copyassertionfix; no acceptedcheckpointbeyond4d525a8a. Bsync1b96a8c4 sent13:33. Re-readAatphaseend/beforePR; ifnewacceptedA announced, reconcileandfreshgates perbrief. Never touch Aworktrees.
+- Next: watchvalidation,inspectactualshell3sizes,resolve failures; independentlyaudit/report/checkpoint/STATE; publishstackedL3draftandledger mirror. RemainingL4→L6→L5→L7+finalmatrix/lifecycle/CPU4BalancedLow stillopen. L4prepdesignonly.
+
+---
+
+# Active L3 continuation — supersedes historical notes below
+
+User explicitly resumed Lane B; no pause. Read STATE.md first15 and RULES.md, latest A-OUTBOX and original PROMPT.
+- Own branch ai/codex-cardrpg-look-l3-2026-11-07 still based1000c0cb, L2draft362 published. Current source dirty is L3post/environment/slicedloading and cancellation-aware chapter decoration. No new runtime source commit yet.
+- Latest pilot cee6234f273a7bcb465ae437172198289ee4b2e687ed9fad664d8263a11a8241 /22,394,373bytes. Source changes after build: own offline DemoTools disabled during battle; ownl3-check.mjs new. No runtime acceptance.
+- Loading6PASS, original Classic295/294 was THREE.Sprite shared-geometry falsepositive, not a leak. Retain diagnostics; current harness still checks Sprite material and adds contacttexture. Corrected6receipt in rounds/post/runtime-3/cancellation.
+- Third review coordinator /tmp/cardrpg-look-l3-round3-verify.sh, logfile same stem.log, session18815,parent43003. Captures then post/masks; may wait A timing lock. Verify actual process before starting any duplicate. Round1/2 already reviewed with5flaws andtop3fixes; round3 must be viewed when available.
+- A accepted4d525a8a fetched (A3shellandportrait). Reconcile by own-chain rebase after saving L3 source/evidence; do not edit A worktrees. Current L3offline copied A’s DemoTools subscription behavior in ownfile only; A shellcomesviarebase.
+- Next: round3review→sourcecommit/rebase→cleanbuild→fivegates/l3-check/post/cancel/flagoff/cold7/24casts→audit/report/ledger/draft. Finalmatrix/lifecycle/CPU4BalancedLow waitsL7. L4/6/5/7 remain open. No subagents/modelimagecalls.
+
+---
+
 # Active continuation — 2026-11-07 (not a pause)
 
 User resumed Lane B and re-supplied the original brief. The historical pause below is superseded by that explicit resume.

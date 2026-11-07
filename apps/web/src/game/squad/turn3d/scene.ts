@@ -8,6 +8,7 @@ import type { EffectFrame } from './effects';
 import {SpellVfx} from './vfx';
 import {EFFECT_DIRECTION} from './effect-direction';
 import {CafePost,type Quality} from './post';
+import type { LookPost } from './look-post';
 import {stageTexture,prepareStageTexture} from './surfaces';
 import {layoutLabels,intersects,type LabelInput} from './label-layout';
 import {GearAttachments,GearResources} from './gear-visuals';
@@ -29,7 +30,7 @@ import { isLookV2 } from './look-v2';
 import { cardEntrancePose } from './card-entrance';
 
 export interface SceneView {
-  decorateStage?: (stage: T.Group) => void;
+  decorateStage?: (stage: T.Group, cancelled?: () => boolean) => void | Promise<void>;
   animateStage?: (stage: T.Group, time: number, reducedMotion: boolean) => void;
   autoBattle?: boolean;
   tableau?: boolean;
@@ -82,20 +83,21 @@ export class TurnScene {
   private height = 1;
   private resize: ResizeObserver;
   private ray = new T.Raycaster();
-  private glow: T.Texture;
-  private stageTextures:T.Texture[]=[];
-  private post:CafePost;
-  private spells:SpellVfx;
-  private activeRing: T.Mesh<T.RingGeometry,T.MeshBasicMaterial>;
+  private glow!: T.Texture;
+  private contactTexture?: T.Texture;
+  private stageTextures:T.Texture[]=[];private lookEnvironment?:T.WebGLRenderTarget;
+  private post!:CafePost | LookPost;
+  private spells!:SpellVfx;
+  private activeRing!: T.Mesh<T.RingGeometry,T.MeshBasicMaterial>;
   private targetRings: T.Mesh<T.RingGeometry,T.MeshBasicMaterial>[] = [];
-  private aura: T.PointLight;
+  private aura!: T.PointLight;
   private targetLines:T.Line<T.BufferGeometry,T.LineBasicMaterial>[]=[];
   private stage = new T.Group();
   private readonly lookStageEnabled: boolean;
-  private bossBackdrop: T.Group;
+  private bossBackdrop!: T.Group;
   private bossAtmosphere?: CardBossAtmosphere;
   private cameraTarget = new T.Vector3(0,.65,0);
-  private blobMaterial: T.MeshBasicMaterial;
+  private blobMaterial!: T.MeshBasicMaterial;
   private geometryOwned = new Set<T.BufferGeometry>();
   private materialOwned = new Set<T.Material>();
   private pick = (e: PointerEvent) => {
@@ -119,20 +121,39 @@ export class TurnScene {
     this.renderer.setClearColor('#252332'); this.renderer.domElement.setAttribute('aria-label','Original 3D cafe battlefield');
     this.effectPreview.background=new T.Color('#000000');
     this.renderer.domElement.setAttribute('role','img'); host.appendChild(this.renderer.domElement);
+    this.warming = this.warmModels();
+
+    this.resize=new ResizeObserver(()=>this.scheduleResize());this.resize.observe(host);
+    this.renderer.domElement.addEventListener('pointerup',this.pick);
+    this.renderer.domElement.addEventListener('webglcontextlost',this.lost);
+    document.addEventListener('visibilitychange',this.visibility);
+    this.raf=requestAnimationFrame(this.loop);
+  }
+
+  private ownSceneResources(){
+    this.scene.traverse(o=>{if(o.parent===this.bossAtmosphere?.root)return;if(o instanceof T.Mesh||o instanceof T.Line||o instanceof T.Points){this.geometryOwned.add(o.geometry);const ms=Array.isArray(o.material)?o.material:[o.material];ms.forEach(m=>this.materialOwned.add(m));}if(o instanceof T.Sprite)this.materialOwned.add(o.material);});
+  }
+
+  private async preparePresentation(){
     if(this.view().autoBattle)this.cardSurfaces=new CardSurfaces(this.renderer);
-    this.post=new CafePost(this.renderer, this.view().autoBattle);this.post.setQuality(this.view().quality??'high');this.renderer.info.autoReset=false;
+    if(this.lookStageEnabled){const {LookPost}=await import('./look-post');if(this.disposed)return;this.post=new LookPost(this.renderer);}else this.post=new CafePost(this.renderer, this.view().autoBattle);this.post.setQuality(this.view().quality??'high');this.renderer.info.autoReset=false;this.post.resize(this.width,this.height);
     this.glow=this.makeGlow();
-    this.blobMaterial=new T.MeshBasicMaterial({map:this.glow,color:'#151222',transparent:true,opacity:.45,depthWrite:false});
+    if(this.lookStageEnabled)this.contactTexture=this.makeContact();
+    this.blobMaterial=new T.MeshBasicMaterial({map:this.contactTexture??this.glow,color:this.lookStageEnabled?'#172D36':'#151222',transparent:true,opacity:this.lookStageEnabled?.56:.45,depthWrite:false});
     this.scene.fog=new T.Fog('#252332',15,27);
     this.scene.add(new T.HemisphereLight('#f4e9e8','#675166',1.35));
     const key=new T.DirectionalLight('#ffe0ba',3.3); key.name='cafe-key'; key.position.set(-4,8,5); this.scene.add(key);
     const rim=new T.DirectionalLight('#bdd2ff',2.3);rim.name='cafe-rim';rim.position.set(4,4,-5);this.scene.add(rim);
     this.aura=new T.PointLight(GOLD,0,7);this.scene.add(this.aura);
 
+    this.ownSceneResources();
+    await loadingFrame();if(this.disposed)return;
     this.bossBackdrop=new T.Group();
     for(let i=0;i<7;i++){const t=new T.Mesh(new T.TorusGeometry(2.5+i*.24,.025,4,60),new T.MeshBasicMaterial({color:'#d77889',transparent:true,opacity:.18}));t.rotation.x=Math.PI/2;t.position.set(2.3,.035+i*.004,0);this.bossBackdrop.add(t);}
     this.scene.add(this.bossBackdrop);
     if(this.view().autoBattle){this.bossAtmosphere=new CardBossAtmosphere();this.scene.add(this.bossAtmosphere.root);}
+    this.ownSceneResources();
+    await loadingFrame();if(this.disposed)return;
     const makeRing=(color:string)=>{const m=new T.Mesh(new T.RingGeometry(.54,.60,40),new T.MeshBasicMaterial({color,transparent:true,opacity:.8,side:T.DoubleSide,depthWrite:false}));m.rotation.x=-Math.PI/2;m.position.y=.04;this.scene.add(m);return m;};
     this.activeRing=makeRing(GOLD);
     for(let i=0;i<12;i++){const r=makeRing(TEAL);r.visible=false;this.targetRings.push(r);}
@@ -140,20 +161,19 @@ export class TurnScene {
       const g=new T.BufferGeometry();g.setAttribute('position',new T.BufferAttribute(new Float32Array(6),3));
       const line=new T.Line(g,new T.LineBasicMaterial({color:GOLD,transparent:true,opacity:.75,depthTest:false}));line.visible=false;line.frustumCulled=false;line.renderOrder=4;this.targetLines.push(line);this.scene.add(line);
     }
+    this.ownSceneResources();
+    await loadingFrame();if(this.disposed)return;
     this.spells=new SpellVfx(this.scene,!!this.view().autoBattle);
     if(this.view().autoBattle)this.cardEffects=new CardEffects(this.scene);
-    this.warming = this.warmModels();
-    this.scene.traverse(o=>{if(o.parent===this.bossAtmosphere?.root)return;if(o instanceof T.Mesh||o instanceof T.Line||o instanceof T.Points){this.geometryOwned.add(o.geometry);const ms=Array.isArray(o.material)?o.material:[o.material];ms.forEach(m=>this.materialOwned.add(m));}if(o instanceof T.Sprite)this.materialOwned.add(o.material);});
-    this.resize=new ResizeObserver(()=>this.resizeToHost());this.resize.observe(host);this.resizeToHost();
-    this.renderer.domElement.addEventListener('pointerup',this.pick);
-    this.renderer.domElement.addEventListener('webglcontextlost',this.lost);
-    document.addEventListener('visibilitychange',this.visibility);
-    this.raf=requestAnimationFrame(this.loop);
+    this.ownSceneResources();
   }
 
   private async warmModels(){
     const warm=new T.Group();
     try{
+      await loadingFrame();if(this.disposed)return;
+      this.resizeToHost();await loadingFrame();if(this.disposed)return;
+      await this.preparePresentation();if(this.disposed)return;
       await loadingFrame();if(this.disposed)return;
       if(this.view().autoBattle && !this.lookStageEnabled){
         for(const kind of ['wood','cloth','window'] as const){
@@ -171,9 +191,9 @@ export class TurnScene {
         const stage=await createLookStage(this.renderer);
         if(this.disposed){disposeLookStage(stage);return;}
         this.stage=stage;
-      }else this.stage=this.makeStage();
+      }else {for(const step of this.makeStage()){this.stage=step;this.ownStageResources();await loadingFrame();if(this.disposed)return;}}
       this.stageTextures.push(...(this.stage.userData.ownedTextures ?? []));
-      this.view().decorateStage?.(this.stage);this.scene.add(this.stage);
+      await this.view().decorateStage?.(this.stage,()=>this.disposed);this.ownStageResources();if(this.disposed)return;this.scene.add(this.stage);
       this.stage.traverse(object=>{
         if(object instanceof T.Mesh||object instanceof T.Line||object instanceof T.Points){
           this.geometryOwned.add(object.geometry);
@@ -183,6 +203,7 @@ export class TurnScene {
         if(object instanceof T.Sprite)this.materialOwned.add(object.material);
       });
       if(this.disposed)return;
+      if(this.lookStageEnabled){const {createLookEnvironment}=await import('./look-environment');if(this.disposed)return;this.lookEnvironment=await createLookEnvironment(this.renderer,()=>this.disposed);if(this.disposed)return;this.scene.environment=this.lookEnvironment?.texture??null;this.scene.environmentIntensity=.35;}
       this.loading.completed=1;this.loading.label='Preparing miniature models';
       await new Promise(resolve=>setTimeout(resolve,0));
       await this.cardSurfaces?.ready;if(this.disposed)return;
@@ -199,6 +220,7 @@ export class TurnScene {
       for(const a of initial.actors)this.puppets.get(a.id)?.gear.update(a,initial.appearance?.(a));
       this.loading.completed=3;this.loading.label='Compiling lighting';
       await new Promise(resolve=>setTimeout(resolve,0));
+      if(this.view().autoBattle){this.litChapter=this.view().chapter??1;applyCardLighting(this.scene,this.renderer,this.litChapter);}
       this.scene.add(warm);
       // Direct-to-canvas and HDR-to-post use different tone-mapping programs.
       // Prepare both while loading so adaptive quality never links at a hit.
@@ -216,12 +238,21 @@ export class TurnScene {
       this.scene.remove(warm);this.render(initial);this.ready=true;this.host.dataset.ready='true';this.dirty=true;
     }catch(error){this.scene.remove(warm);if(!this.disposed)this.onFailure(`Models could not prepare: ${String(error).slice(0,100)}`)}
   }
+  private makeContact():T.Texture {
+    const c=document.createElement('canvas');c.width=c.height=128;const ctx=c.getContext('2d')!;
+    const gradient=ctx.createRadialGradient(57,68,8,64,64,62);
+    gradient.addColorStop(0,'#ffffff');gradient.addColorStop(.34,'#ffffffc4');gradient.addColorStop(.64,'#ffffff51');gradient.addColorStop(1,'#ffffff00');
+    ctx.fillStyle=gradient;ctx.fillRect(0,0,128,128);const texture=new T.CanvasTexture(c);texture.colorSpace=T.SRGBColorSpace;return texture;
+  }
   private makeGlow():T.Texture {
     const c=document.createElement('canvas');c.width=c.height=64;const ctx=c.getContext('2d')!;
     const g=ctx.createRadialGradient(32,32,0,32,32,32);g.addColorStop(0,'#ffffff');g.addColorStop(.12,'#ffffffe8');g.addColorStop(.42,'#ffffff50');g.addColorStop(1,'#ffffff00');ctx.fillStyle=g;ctx.fillRect(0,0,64,64);
     const tex=new T.CanvasTexture(c);tex.colorSpace=T.SRGBColorSpace;return tex;
   }
-  private makeStage(): T.Group {
+  private ownStageResources(){
+    this.stage.traverse(object=>{if(object instanceof T.Mesh||object instanceof T.Line||object instanceof T.Points){this.geometryOwned.add(object.geometry);for(const material of Array.isArray(object.material)?object.material:[object.material])this.materialOwned.add(material);}if(object instanceof T.Sprite)this.materialOwned.add(object.material);});
+  }
+  private *makeStage(): Generator<T.Group> {
     const group=new T.Group();
     if(!this.stageTextures.length)this.stageTextures.push(stageTexture('wood'),stageTexture('cloth'),stageTexture('window'));
     const [wood,cloth,windowTexture]=this.stageTextures as [T.Texture,T.Texture,T.Texture];
@@ -236,28 +267,33 @@ export class TurnScene {
     const rug=mesh(new T.CylinderGeometry(4.85,4.85,.035,64),clothMat,0,.01,.1);rug.scale.z=.62;
     for(const [r,c] of [[4.7,'#e6b987'],[4.58,'#927489'],[4.4,'#e6b987']] as const){const edge=mesh(new T.TorusGeometry(r,.018,4,80),mat(c),0,.036,.1);edge.rotation.x=Math.PI/2;edge.scale.y=.62;}
     const motifMat=mat('#9d7a87');for(let i=0;i<24;i++){const a=i/24*Math.PI*2;const m=mesh(new T.BoxGeometry(.10,.009,.10),motifMat,Math.cos(a)*4.1,.038,.1+Math.sin(a)*2.5);m.rotation.y=Math.PI/4;}
+    yield group;
     const cup=(x:number,z:number)=>{const c=new T.Group();c.position.set(x,0,z);group.add(c);const white=mat('#f0ddbe');const body=new T.Mesh(new T.CylinderGeometry(.34,.26,.53,20),white);body.position.y=.32;c.add(body);const tea=new T.Mesh(new T.CircleGeometry(.29,20),mat('#9a6248'));tea.rotation.x=-Math.PI/2;tea.position.y=.59;c.add(tea);const handle=new T.Mesh(new T.TorusGeometry(.23,.06,6,16),white);handle.position.set(.36,.34,0);c.add(handle);const saucer=new T.Mesh(new T.CylinderGeometry(.48,.44,.05,24),white);saucer.position.y=.035;c.add(saucer);return c;};
     cup(-5.4,-2.7);cup(5.5,2.8);
     const book=new T.Group();book.position.set(4.85,0,-2.9);book.rotation.y=-.2;group.add(book);
     for(let i=0;i<3;i++){const b=new T.Mesh(new RoundedBoxGeometry(1.45,.20,.86,1,.035),mat(['#b87d78','#718f85','#e0c292'][i]!));b.position.y=.14+i*.23;b.rotation.y=i*.12;book.add(b);}
     const pot=mesh(new T.CylinderGeometry(.33,.23,.5,12),mat('#d2a580'),-5.35,.27,2.65);
     for(let i=0;i<7;i++){const leaf=mesh(new T.SphereGeometry(.2,8,5),mat(i%2?'#7eac8a':'#a6ba8b'),pot.position.x+Math.sin(i*2.4)*.22,.75+(i%3)*.12,2.65+Math.cos(i*2.4)*.18);leaf.scale.set(.5,1.7,.8);leaf.rotation.z=Math.sin(i)*.7;}
+    yield group;
     mesh(new T.CylinderGeometry(.16,.19,.55,16),mat('#f8d6a1'),-1.1,.28,-3.2);
     const flame=mesh(new T.SphereGeometry(.12,8,6),new T.MeshBasicMaterial({color:'#ffe6ad'}),-1.1,.67,-3.2);flame.scale.y=1.7;flame.name='cafe-candle-flame';
     const glow=new T.Sprite(new T.SpriteMaterial({map:this.glow,color:'#ffc27b',transparent:true,opacity:.6,blending:T.AdditiveBlending,depthWrite:false}));glow.position.copy(flame.position);glow.scale.set(1.1,1.1,1);glow.name='cafe-candle-halo';group.add(glow);
+    yield group;
     // Dark cafe backdrop with softly lit panes; props fall into the cool fog.
     mesh(new RoundedBoxGeometry(16,6,.15,2,.12),mat('#342d3c'),0,2.3,-5.7);
     const pane=new T.MeshBasicMaterial({map:windowTexture,color:'#b59491'});
     for(const x of [-4.6,0,4.6]){mesh(new RoundedBoxGeometry(2.8,3,.12,2,.12),mat('#211d2b'),x,2.3,-5.55);mesh(new T.PlaneGeometry(2.55,2.7),pane,x,2.3,-5.47);for(const offset of [-.55,.55])mesh(new T.BoxGeometry(.045,2.72,.04),mat('#3e2e3d'),x+offset,2.3,-5.42);mesh(new T.BoxGeometry(2.6,.05,.04),mat('#3e2e3d'),x,2.15,-5.4);}
     mesh(new RoundedBoxGeometry(15,.14,.6,2,.04),woodMat,0,.7,-5.25);
-    return group;
+    yield group;
   }
+  private resizing=false;
+  private scheduleResize(){if(this.resizing||this.disposed)return;this.resizing=true;void loadingFrame().then(()=>{this.resizing=false;if(!this.disposed)this.resizeToHost();});}
   private resizeToHost(){
     const width=this.host.clientWidth,height=this.host.clientHeight;
     const ratio=Math.min(window.devicePixelRatio||1,2);
     if(!width||!height||(width===this.width&&height===this.height&&ratio===this.renderer.getPixelRatio()))return;
     if(ratio!==this.renderer.getPixelRatio())this.renderer.setPixelRatio(ratio);
-    this.width=width;this.height=height;this.renderer.setSize(width,height,false);this.post.resize(width,height);
+    this.width=width;this.height=height;this.renderer.setSize(width,height,false);this.post?.resize(width,height);
     this.camera.aspect=width/height;this.camera.updateProjectionMatrix();this.dirty=true;
   }
   invalidate(){this.dirty=true;}
@@ -393,6 +429,7 @@ export class TurnScene {
       const knot=p.model.getObjectByName(`${a.role}_exposed_knot`);if(knot)knot.scale.setScalar(a.statuses.some(s=>s.kind==='exposed')?1.25:1);
     }
     if(view.autoBattle && this.litChapter!==(view.chapter??1)){this.litChapter=view.chapter??1;applyCardLighting(this.scene,this.renderer,this.litChapter);}
+    if('setChapter' in this.post)this.post.setChapter(view.chapter??1);
     this.stage.userData.setChapter?.(view.chapter??1);
     this.bossBackdrop.visible=view.boss&&!view.model&&!view.autoBattle;this.stage.visible=!view.model;
     const boss=view.actors.find(a=>a.hp>0&&BOSS_STYLES[this.puppets.get(a.id)?.asset??'']);
@@ -424,6 +461,7 @@ export class TurnScene {
     if (this.entrance && !frame) this.camera.zoom += cardEntrancePose(this.time - this.entrance.startedAt, view.reducedMotion).zoom;
     if(bossCue&&!view.model&&!view.reducedMotion){const pulse=Math.sin(bossCue.progress*Math.PI);this.camera.zoom+=pulse*.03;this.cameraTarget.y+=pulse*.08;}
     this.camera.lookAt(this.cameraTarget);this.camera.updateProjectionMatrix();this.camera.updateMatrixWorld();
+    if('setFocusDistance' in this.post)this.post.setFocusDistance(this.camera.position.distanceTo(this.cameraTarget));
     if(view.autoBattle && !view.model) {
       for(const actor of view.actors) {
         const puppet = this.puppets.get(actor.id);
@@ -499,19 +537,22 @@ export class TurnScene {
   }
 
   private releaseResources() {
+    this.ownStageResources();
     for (const puppet of this.puppets.values()) this.disposePuppet(puppet);
     this.puppets.clear();
     this.gearResources.dispose();
     this.geometryOwned.forEach(geometry => geometry.dispose());
     this.materialOwned.forEach(material => material.dispose());
     this.stageTextures.forEach(texture => texture.dispose());
-    this.glow.dispose();
-    this.blobMaterial.dispose();
-    this.spells.dispose();
+    this.glow?.dispose();
+    this.contactTexture?.dispose();
+    this.blobMaterial?.dispose();
+    this.spells?.dispose();
     this.cardEffects?.dispose();
     this.cardSurfaces?.dispose();
     this.bossAtmosphere?.dispose();
-    this.post.dispose();
+    this.post?.dispose();
+    this.lookEnvironment?.dispose();
     this.renderer.dispose();
     this.renderer.forceContextLoss();
   }

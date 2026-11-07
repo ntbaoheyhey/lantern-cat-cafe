@@ -38,3 +38,11 @@ Game packing: glTF-Transform4.5.1 `optimize --compress meshopt --flatten false -
 `turn3d/look-stage.ts` adds deterministic steam/dust, bounded lantern shafts, chapter tint and two inverse-square point lights. Stage is imported only for atelier automatic battles; load failures and disposed previews release their owned geometry/materials/textures. Actual game camera and performance acceptance remain pending.
 
 Round4 (source9e22199f) lowers fabric top below the existing .044m contact plane, uses neutral walnut #60534C and token teal walls, retains separate emissive paper lamps and adds their inner glow rims.50,272tri/4mesh draws; GLB6,027,476→1,015,272bytes, irradiance3,942,787→753,106bytes. Reproducible packing command is now `node tools/cardrpg-look/pack-stage.mjs`. Runtime camera24° pitch/target1.1m, with distinct preset ratios even at short desktop canvas heights. No other game's references used.
+
+## L3 analytic light and post pipeline (in verification)
+
+Three.js0.180.0 (existing dependency), own analytic16-cube grading LUTs from `tools/cardrpg-look/author-lut.mjs`:256x16 RGBA strips, three chapter shadow/highlight/saturation parameter sets recorded in look-luts.json. Own128x64 floating-point reflection generated in look-environment.ts from Gaussian pendant/window lobes; PMREM filtering from Three. No HDRI or artwork input.
+
+High:12-sample depth AO/contact, soft-knee1.25HDR bloom at quarter resolution, face-protected depth focus and screen-depth outline, analytic grade, subtle stationary grain/vignette,2-sample HDR plus SMAA. Balanced: same preallocated targets, no AO/DOF/SMAA. Low: direct sampled canvas with baked materials/rim/light. No claim of temporal AA, GTAO, full shadow maps, or a separate matcap shader. Canvas-only; DOM HUD is outside post.
+
+SMAA implementation and mathematical area/search lookup textures are bundled with the existing Three.js0.180.0 addon. These are algorithm lookup data, not art references. Exact licence copied to assets/provenance/licenses/three-smaa-MIT.txt (MIT, Copyright2010–2025 three.js authors). No external models/textures/brushes or generative calls. Loading prewarms targets, LUTs, lookup samplers, shaders and output variants; browser/profile acceptance remains pending.

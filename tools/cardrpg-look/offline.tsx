@@ -13,6 +13,13 @@ setLookV2(true);
 
 type Panel = { host: HTMLElement; kind: 'mechanics' | 'studio'; close: () => void };
 
+function DemoTools({ open }: { open: (kind: Panel['kind']) => void }) {
+  const model = window.__depthReview;
+  useSyncExternalStore(model?.subscribe ?? (() => () => {}), model?.snapshot ?? (() => 0));
+  return <><button disabled={model?.showBattle} onClick={() => open('studio')}>Review studio</button>
+    <button disabled={model?.showBattle} onClick={() => open('mechanics')}>Mechanics lab</button></>;
+}
+
 function Demo() {
   const look = useSyncExternalStore(subscribeLookV2, isLookV2);
   const [header, setHeader] = useState<HTMLElement | null>(null);
@@ -50,8 +57,7 @@ function Demo() {
   return <div className={`dp-offline-demo ${panel ? 'b2-demo-lab-open' : ''}`}>
     <DepthApp offline />
     {header && createPortal(<div className="dp-demo-tools" aria-label="Demo tools">
-      {!panel && <><button onClick={() => open('studio')}>Review studio</button>
-        <button onClick={() => open('mechanics')}>Mechanics lab</button></>}
+      {!panel && <DemoTools open={open} />}
       <button aria-label="Look A/B" aria-pressed={look} onClick={() => setLookV2(!look)}>Look: {look ? 'Atelier' : 'Classic'}</button>
       <button aria-pressed={meter} onClick={() => setMeter(!meter)}>Frame meter</button>
     </div>, header)}

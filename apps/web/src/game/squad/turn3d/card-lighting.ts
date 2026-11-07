@@ -6,7 +6,7 @@ export const CARD_LIGHTING = [
   { key: '#f4efc3', rim: '#9fdfd2', fog: '#243239', exposure: 1.02 },
   { key: '#ead9f6', rim: '#b4bdf4', fog: '#2b263c', exposure: 1.00 },
 ] as const;
-/** Reuses existing lights; no additional shader programs or light count. */
+/** Atelier fill is added before prewarm; chapter changes retain a stable light count. */
 export function applyCardLighting(scene: T.Scene, renderer: T.WebGLRenderer, chapter: number) {
   if (isLookV2()) {
     const palette = tokens.chapters[chapter - 1] ?? tokens.chapters[0]!;
@@ -20,6 +20,8 @@ export function applyCardLighting(scene: T.Scene, renderer: T.WebGLRenderer, cha
         light.position.fromArray(spec.position);
       }
     }
+    let fill = scene.getObjectByName('atelier-fill');
+    if(!fill){fill=new T.DirectionalLight(tokens.lighting.fill.color,tokens.lighting.fill.intensity);fill.name='atelier-fill';fill.position.fromArray(tokens.lighting.fill.position);scene.add(fill);}
     scene.traverse(object => {
       if (object instanceof T.HemisphereLight) {
         object.color.set(tokens.lighting.bounce.sky);
