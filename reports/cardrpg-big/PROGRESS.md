@@ -1,4 +1,17 @@
 # Lane A progress
+REFERENCE: memory/PROMPT.md, memory/STATE.md, integration/F7-GATES.md, integration/delivery/functional-audit.json
+Updated 2026-11-07T03:20:08.980411+00:00
+
+Accepted integration a106dfca / draft #358 contains both lanes' complete source. Its offline HTML remains 23,937,000 bytes, SHA-256 9a5f6ebbb04af56c19f11cf43cf2763b35df2bde3b7a8dcd943060e878d793d3. Combined checks passed 1,730 web tests, 1,020 rules tests and 421 E2E, plus typecheck, lint, build and offline-entry TypeScript. Current evidence commits make no runtime changes.
+
+After the user resumed, sparse worktrees and dependencies were recovered. The remaining normal journey now passes at three sizes: 27 captures, exact replay, nine campaign encounter victories and a restored 15,378-byte save. The old interrupted path remains separate. Saved-evidence audit be40bc91 verifies nine complete receipts and196screenshot hashes, plus the five accepted gate-log hashes. Mechanics waits under the shared timing lock, then the existing script records14clips without duplicate jobs.
+
+Lane B's03:15 checkpoint supplies accepted-main cold7 evidence: 13,125 raw frames,0errors,nativeMAX33.3ms andCPU4MAX116.7ms. The100ms opening gate still misses. Its860-case exhaustive matrix waits for the actual A video-complete receipt. Historical partial matrices do not count as passes.
+
+Remaining: Mechanics,14main clips/chronological sheets,four sequential review roles,11honest scores,final B measurements and merged report/ledger. Default-off extras,protected live/chain paths and all earlier sharpness/scale/balance misses remain unchanged.
+
+## Earlier progress checkpoint
+# Lane A progress
 REFERENCE: memory/PROMPT.md, memory/STATE.md, COVERAGE.md, invitations/PERFORMANCE.md, integration/reveal-fit/README.md
 Updated 2026-11-07T00:47:48.790364+00:00
 

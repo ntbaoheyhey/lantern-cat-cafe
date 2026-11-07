@@ -14,7 +14,7 @@ Gacha đã có màn lật thẻ, xuất hiện 3D, lịch sử và kết quả v
 ## Tình trạng bản ghép
 REFERENCE: integration/PREPARE.md, integration/RUNNER.md, validation/integration-runner-test.log
 
-Bản ghép a106dfca trong draft #358 đã chứa toàn bộ nguồn hai lane: 12 mèo, 10 địch thường, 3 boss, màn hình ngoài trận và các lab. Demo9a5f6ebb có23.937.000byte. Năm cổng nguồn đạt1.730test web,1.020test luật và421E2E;TypeScript của demo cũng đạt. 258lượt chọn kỹ năng và93mục so sánh/160ảnh giải mã offline không lỗi. Luồng chơi ở3kích thước đã đạt: trận tự động,replay,phần thưởng,lưu/khôi phục15.378byte;27ảnh,0lỗi. Meta39,reveal32,invitation36,design12ảnh đã đạt. Mechanics lab,14video và phép đo hiệu năng cuối đang tiếp tục; đây chưa phải nghiệm thu F7.
+Bản ghép a106dfca trong draft #358 đã chứa toàn bộ nguồn hai lane: 12 mèo, 10 địch thường, 3 boss, màn hình ngoài trận và các lab. Demo9a5f6ebb có23.937.000byte. Năm cổng nguồn đạt1.730test web,1.020test luật và421E2E;TypeScript của demo cũng đạt. 258lượt chọn kỹ năng và93mục so sánh/160ảnh giải mã offline không lỗi. Luồng chơi ở3kích thước đã đạt: trận tự động,replay,phần thưởng,lưu/khôi phục15.378byte;27ảnh,0lỗi. Meta39,reveal32,invitation36,design12ảnh đã đạt. Mechanics lab đạt4cấu hình/8ảnh,0lỗi và giữ nguyên tài khoản. Cả10nhóm chức năng đã đạt;đối chiếu204hashảnh.14video và phép đo hiệu năng cuối đang tiếp tục; đây chưa phải nghiệm thu F7.
 
 ## Sáu nơi nên xem
 REFERENCE: apps/web/src/game/cardrpg/depth/LabEvidence.tsx, demo/PLAN.md
@@ -57,11 +57,11 @@ REFERENCE: invitations/PERFORMANCE.md, invitations/recovery-verification.json, i
 | Cổng | Mốc đo | Kết quả |
 | --- | --- | --- |
 | Cast MAX ≤50 ms, first/repeat |G 33,4/16,8 ms, 720 ca |Đạt ở G; bản ghép chờ |
-| Mở trang/MAX 4× ≤100 ms |G page316,6ms; B1 exhaustive300msCPU4 |Chưa đạt |
+| Mở trang/MAX 4× ≤100 ms |Main cold7: native33,3ms/CPU4 116,7ms |Chưa đạt; matrix860đang chờ |
 |≥99% frame ≤20 ms ở DPR 1/2 |Bản ghép chưa có bộ số liệu |Chờ |
 |4× p95 ≤33 ms |Bản ghép chưa có bộ số liệu |Chờ |
 |≤250 draw calls, ≤150k triangles |G 207/93.802 |Đạt ở G; bản ghép chờ |
-| Heap/GPU ổn định 20 trận |B1 +1.088.932byte; geometry/texture/program tăng0 |Đạt mốcB1với ngưỡng2MiB; bản ghép chờ |
+| Heap/GPU ổn định 20 trận |Main +1.858.320byte; geometry/texture/program tăng0 |Đạt ngưỡng2MiB,0lỗi (B03:24) |
 | Flag-off startup tách3D |Static closure2.319.608byte, 0three/modelmodule |Đạt graph toàn nguồn ghép; browser chờ |
 
 G giữ263.056frame từ720ca,4.640frame>25ms/1.330frame>50ms,0lỗi trang;cast>50ms bằng0. Năm profile và toàn bộ mảng raw đã được kiểm tra lại. G fresh unit có1timeout5s;filefocused11/11và421E2Eđạt,không gọi là fullsuite sạch. Header invitation CPU4 có MAX266,7ms trong bài kiểm tra chức năng;không thay thế ma trận hiệu năng riêng.

@@ -1,13 +1,11 @@
 {
-  "at": "2026-11-07T03:15:12.009Z",
+  "at": "2026-11-07T03:26:39.628Z",
   "artifact": "docs/cardrpg3/index.html",
   "artifactSha256": "9a5f6ebbb04af56c19f11cf43cf2763b35df2bde3b7a8dcd943060e878d793d3",
   "artifactBytes": 23937000,
   "method": "Audit existing successful receipts and screenshot bytes. This is not a new browser or performance run. Original partial attempts remain separate.",
-  "functionalComplete": false,
-  "pending": [
-    "mechanics-resume"
-  ],
+  "functionalComplete": true,
+  "pending": [],
   "receipts": [
     {
       "name": "studio",
@@ -1060,6 +1058,54 @@
           "sha256": "e5fe9c96c470f3e1ec3ad1096edc721ac905e3dfa2c77adb62247f153ba353d2"
         }
       ]
+    },
+    {
+      "name": "mechanics-resume",
+      "path": "reports/cardrpg-big/integration/delivery/mechanics-resume/checks.json",
+      "sha256": "b6a1d20484a2ff5175d5ba3743f65c5d10fbf0d31258df3a6beca09b475dba7d",
+      "rows": 4,
+      "screenshots": [
+        {
+          "path": "reports/cardrpg-big/integration/delivery/mechanics-resume/1024-600-cpu1-prep.png",
+          "bytes": 97375,
+          "sha256": "3a38cf1b71b745360cfe36893b34728f618044623b73eca4360d9b929eff922f"
+        },
+        {
+          "path": "reports/cardrpg-big/integration/delivery/mechanics-resume/1024-600-cpu1-result.png",
+          "bytes": 98308,
+          "sha256": "23f98421ce057b4c11d8446aa624137575736469f380a10d9249c397256891f9"
+        },
+        {
+          "path": "reports/cardrpg-big/integration/delivery/mechanics-resume/1280-720-cpu1-prep.png",
+          "bytes": 108466,
+          "sha256": "6ce70bd97439274becf9d12144402b132bb588bd93e289400997f6fd78d4567a"
+        },
+        {
+          "path": "reports/cardrpg-big/integration/delivery/mechanics-resume/1280-720-cpu1-result.png",
+          "bytes": 111054,
+          "sha256": "09555f707537c71263fbcc3482c2a7f3aed2e270b0f64ff755260d0c7abc9bcf"
+        },
+        {
+          "path": "reports/cardrpg-big/integration/delivery/mechanics-resume/1280-720-cpu4-prep.png",
+          "bytes": 108056,
+          "sha256": "7f846d2898c3be8f8ddb4304ac10c5d7c23f8bdbcc339d90be96cb7034588274"
+        },
+        {
+          "path": "reports/cardrpg-big/integration/delivery/mechanics-resume/1280-720-cpu4-result.png",
+          "bytes": 111023,
+          "sha256": "e7eb29c9e3855251370046702268e167d4f7d2cebdbc1f617267198b23822f09"
+        },
+        {
+          "path": "reports/cardrpg-big/integration/delivery/mechanics-resume/1440-900-cpu1-prep.png",
+          "bytes": 112023,
+          "sha256": "0583faf991ebc65786bb9ac6771c553b4e55933f0babe4caf533c104af6e5d56"
+        },
+        {
+          "path": "reports/cardrpg-big/integration/delivery/mechanics-resume/1440-900-cpu1-result.png",
+          "bytes": 122652,
+          "sha256": "4b357012214c1c4aba0deae9bcad1946e6cb9db947891a3f73d8f817d9ef5d1c"
+        }
+      ]
     }
   ],
   "sourceGates": [
@@ -1104,5 +1150,5 @@
     "invitations",
     "designs"
   ],
-  "screenshotCount": 196
+  "screenshotCount": 204
 }
