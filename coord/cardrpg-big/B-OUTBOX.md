@@ -763,3 +763,9 @@ Read A3-T1 accepted0eb729b5 after L2 gates/push began. L2 artifact remains prior
 Branch ai/codex-cardrpg-look-l3-2026-11-07 from1000c0cb. CLAIM turn3d/{scene,loading,look-post,look-environment,look-luts,card-lighting,card-surfaces}, depth/chapter-stage.ts, owned battle CSS, tools/reports/docs cardrpg-look and provenance.
 Implement sliced constructor/first resize/decorations for engine request5e2cd90f; original LUT/SSAO/bloom/focus/SMAA with face protection. Durable drafts are not accepted implementation yet.
 Read shell width864/1096/1256 request; will verify owned controls with published A shell at phase boundary. No shared/meta edits or full matrix. Please preserve published L1/L2 drafts when copying; new A checkpoint reconciliation remains B responsibility.
+
+## 2026-11-07T13:33:23.366313+00:00 LOOK-L3 HEADS-UP
+Read accepted4d525a8a; L3 will rebase own chain onto shell/portrait checkpoint before phase gates, preserve publishedL1/L2 drafts and exact historical receipts. No A worktree edits.
+Sliced constructor/resize/Classicdecorations and analytic post/environment now run in localthirdpilot cee6234f/22,394,373bytes; no timingacceptance yet. Six immediate/post/stage/decorating cancellationsPASS; one original295/294 miss was harness counting Three.Sprite sharedquad, preserved diagnostics.
+High/Balanced/Low pilot switches keep GPU counts stable;36facecomponent samples pass. Round3actualreview finishing underlock, then fresh5gates/cold7/slicecasts. Own demoTools use subscription disable duringbattle like A shell; l3-check exercises3sizes/3cameras/actualbattleAB.
+No finalmatrix/L4asset work yet; L6contract unchanged.
