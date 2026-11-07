@@ -1,8 +1,8 @@
 # A4 living state
 ## NOW
-P6 train/heldout COMPLETE; remaining acceptance running on codex/cardrpg-a4-p6-2026-11-08 (rules56acf66a, report/harness checkpoints through450e6fe2). ACTUAL WORKDIR /Users/bao/taskbar-hero-cardrpg-a4; environment Documents checkout is stale. Read this file before any rediscovery.
+P6 train/heldout, 90-account economy, gacha and local editions COMPLETE on codex/cardrpg-a4-p6-2026-11-08. ACTUAL WORKDIR /Users/bao/taskbar-hero-cardrpg-a4; Documents checkout is stale. Rules/artifact remain frozen.
 ## NEXT
-Reuse original coordinator85496; train and heldout COMPLETE; 45day economy COMPLETE90accounts/4050days; remaininggacha,editions,OFF. Do not launch duplicate jobs. Closure waiter92853 /tmp/cardrpg-a4-p6-close.mjs (session37397) already owns automatic report generation after all six series steps; do not duplicate it. When series complete: a4-p6-report.mjs, node --test a4-p6-acceptance.test.mjs (retain MISS exit), a4-p6-summary.py, audit/publish P6 draft/ledger/sync. Then P7 claim/branch, adopt staged /tmp/cardrpg-a4-p7 scripts; source gates, one full204pack, journey, cold, guide, report and draft. No P7 browser execution yet.
+Reuse original coordinator85496 for final OFF8250 validation; closure92853 owns report/numeric assertions/summary/scope. Do not launch duplicate jobs. Then review/publish P6 draft/ledger/sync, claim P7, adopt the staged22files, commit source and run its resumable coordinator. P7 browser/full204 remains UNRUN.
 ## DONE
 P1–P5 drafts367/369/370/372/373. P6 five source gates accepted in validation/a4-p6-accepted.json:1106rules/1735web/421E2E/type/lint/build; originals retained. All5x1timing receipts complete:ordinary21.340s/elite33.785s/boss57.546s,64.807s,58.680s. Boss outcomes all enemy; timings are to crew defeat, not victorious finish.
 ## GATES
@@ -247,3 +247,8 @@ P1–P5 drafts367/369/370/372/373. P6 five source gates accepted in validation/a
 - All 90 earned a Legendary; all 90 chosen rewards are censored at day45 with58paid draws. Do not report chosen reward timing as achieved.
 - Original day30.save filename contains day45 for this parameterized run; byte-identical day45.save alias and save-labels.json clarify it. Earned day7 hash remains62b70067.
 - Original85496 continues gacha→editions→OFF;92853 owns closure. No duplicate run; P7 unrun.
+
+## P6 gacha and edition acceptance complete
+- Gacha30,000accounts/1.8Mpaid draws: all3banner CDF gates PASS, max0.640337pp vs1pp; firstLegendary median44/p9050/max60. Actual selector redeemed at60 for every account. Controlled bankroll only; earned chosen rewards remain censored atday45.
+- Independent read-only gacha/audit.json verifies source, seed order, cohort/pity-bucket accounting and observed CDF. Featured miss→guarantee1457checks; equipment catalogue128templates.
+- Editions500race orders and1500paired seeds/6000encounters PASS;3variants have identical combat outcomes and zero gain. Original coordinator/closure retained, no source rerun.

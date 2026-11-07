@@ -24,3 +24,7 @@ P6 type/lint/tests/build/E2E via validate.mjs a4-p6. No full204pack yet; P7 stag
 ## P6 economy complete
 - 90/90 accounts ×45days, independent audit PASS; max heavy/casual2.725958x. All90Legendary observed; all90chosen rewards censored at45days (58paid draws).
 - Original85496 continues gacha→editions→OFF,92853 closure; no duplicate launch. P7 browser/full204 still UNRUN.
+
+## Recovered P6 final simulations
+- Correct checkout /Users/bao/taskbar-hero-cardrpg-a4, branch codex/cardrpg-a4-p6-2026-11-08. Gacha30kaccounts/1.8Mdraws and500editionraces/6000encounters completePASS; independent gacha audit retained. Original85496 OFF then92853closure; do not relaunch.
+- Read fresh sync through B L7claim; no B adoption. P7 staged22files verified by adoption-manifest before copying, full204stillUNRUN.
