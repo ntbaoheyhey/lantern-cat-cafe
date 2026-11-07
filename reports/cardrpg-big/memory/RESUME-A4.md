@@ -4,3 +4,11 @@ P6 complete and published draft375,source1e8f4950/publication48b470ed; ledger00a
 P7 22selected tools adopted from verified staged manifest. Commit source before starting tools/cardrpg-big/a4-p7-series.mjs. Reuse p7/series.json plus full/functional.json,new-screens/series.json,performance/series.json; never duplicate a passing group or restart all204captures. At most2correction rounds per failure.
 Required:5gates,byte-identicaloffline rebuild,full204,new120,earnedday7journey/contactsheet,offlineguide+checks,current-mainstartup/cold,read-onlyevidenceaudit,report/scope,draftPRstacked375,ledger/sync. Numeric P6 table13PASS/5MISS remains explicitly inreport. No B/protectededits/adoption,nomerge/deploy.
 Read RULES-A4.md,first20STATE-A4,latestoutboxes. Native/headless/noagents/models/Docker/CUA;sharedlock,30secondbrowserhandoffs and120secondheavysuitehandoffs.
+
+## Active P7 coordinator
+- Source760d0c5a pushed. Original coordinator PID17925, execsession60441; source-gates child17949. Logs p7/coordinator.log and p7/source-gates-attempt-1.log. Do not start another coordinator while it exists.
+- P6 original85496 only final idle cleanup (all receipts closed), closure92853 exited. Final P6source/publication andsync/ledger complete.
+- Timing lock may be held by B source gates; wait cooperatively. NoP7runtime edits; report-only recovery pointers do not enter build inputs.
+
+## P7 gates complete
+- Attempt1 all5PASS,421E2E singlecleanrun. Original17925/session60441 continues afterhandoff; do not duplicate. Nextofflinebuild/full204/new120/journey/guide/cold.

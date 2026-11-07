@@ -264,3 +264,11 @@ P1–P5 drafts367/369/370/372/373. P6 five source gates accepted in validation/a
 ## P7 integration boundary
 - P6draft375 source1e8f4950/publication48b470ed, ledger00a37224, syncP6CHECKPOINT/P7CLAIMeefddfa5 allpushed.22selectedstagedfiles hash-verified andadopted; no runtime sourcechanges.
 - Sharedlock and30secondbrowserhandoffs;120seconds afterheavysuites. Full204/new120/journey/cold stillUNRUN until original coordinator starts. No B/protectedpaths touched.
+
+## P7 source gates in progress
+- Original coordinator17925 / session60441, childvalidate17949. Type/lint andentireunit suitePASS; P7actual rules1106passed/2expectedfail/11skipped,web1735passed. P6original18skipped andafter-relocation11skipped receipts bothretained; do not rewrite historical logs.
+- Heavytest handoff120seconds beforebuild/E2E; browserfullpacknotstarted. Source760d0c5a pushed, onlyreport recoverypointersdirty. No duplicate jobs.
+
+## P7 five source gates complete
+- Original attempt1 completed all5gatesPASS: type/lint/build;1106rules/2expectedfail/11skipped;1735web;421E2E singlecleanrun. Receipt validation/a4-p7-attempt-1.json andall5original loghashes independently verified.
+- Coordinator17925/session60441 continues its final120secondhandoff beforeofflinebuild/fullpack. No retries or duplicatejobs; runtime rules andHTML unchanged.

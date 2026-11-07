@@ -1,0 +1,71 @@
+{"lock":"acquired","lane":"A","pid":18308,"startedAt":"2026-11-07T22:04:22.910Z","task":"a4-p7-attempt-1 tests"}
+
+> taskbar-hero@0.0.0 test /Users/bao/taskbar-hero-cardrpg-a4
+> node --test scripts/*.test.mjs && pnpm -r test
+
+✔ explicit root and nested index imports resolve to their exact files (7.796583ms)
+✔ directory aliases coexist with explicit indexes and ordinary modules (1.70875ms)
+✔ test modules, fixture folders and non-TypeScript files stay out of deployment maps (2.089791ms)
+✔ output order is stable regardless of file creation order (3.398875ms)
+✔ generation preserves auth mappings and ignores shared or non-function directories (4.2985ms)
+✔ auth health HTTP 200 exits correctly without leaking response data (20.26275ms)
+✔ auth health HTTP 429 exits correctly without leaking response data (14.271125ms)
+✔ auth health HTTP 500 exits correctly without leaking response data (12.411958ms)
+✔ auth health HTTP 502 exits correctly without leaking response data (11.968625ms)
+✔ auth health HTTP 503 exits correctly without leaking response data (11.4365ms)
+✔ auth health fails closed when the transport is unavailable (11.32975ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 139.849583
+Scope: 6 of 7 workspace projects
+packages/auth test$ vitest run
+packages/chain test$ vitest run
+packages/game-rules test$ vitest run
+supabase/tests test$ vitest run
+packages/auth test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-a4/packages/auth
+packages/game-rules test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-a4/packages/game-rules
+packages/chain test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-a4/packages/chain
+supabase/tests test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-a4/supabase/tests
+packages/chain test:  Test Files  3 passed (3)
+packages/chain test:       Tests  32 passed (32)
+packages/chain test:    Start at  05:04:23
+packages/chain test:    Duration  444ms (import 58%, tests 26%, transform 14%, worker 2%)
+packages/auth test:  Test Files  1 passed (1)
+packages/auth test:       Tests  24 passed (24)
+packages/auth test:    Start at  05:04:23
+packages/auth test:    Duration  633ms (import 63%, tests 30%, transform 7%)
+packages/chain test: Done
+packages/auth test: Done
+supabase/tests test:  Test Files  34 passed (34)
+supabase/tests test:       Tests  581 passed (581)
+supabase/tests test:    Start at  05:04:23
+supabase/tests test:    Duration  10.68s (tests 83%, import 15%, transform 3%)
+supabase/tests test: Done
+packages/game-rules test:  Test Files  63 passed | 3 skipped (66)
+packages/game-rules test:       Tests  1106 passed | 2 expected fail | 11 skipped (1119)
+packages/game-rules test:    Start at  05:04:23
+packages/game-rules test:    Duration  31.12s (tests 93%, import 6%, transform 1%)
+packages/game-rules test: Done
+packages/api-contract test$ pnpm --filter @taskbar-hero/game-rules exec vitest run --root ../api-contract
+packages/api-contract test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-a4/packages/api-contract
+packages/api-contract test:  Test Files  1 passed (1)
+packages/api-contract test:       Tests  16 passed (16)
+packages/api-contract test:    Start at  05:04:55
+packages/api-contract test:    Duration  122ms (transform 51%, import 40%, tests 6%, worker 3%)
+packages/api-contract test: Done
+apps/web test$ vitest run
+apps/web test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-a4/apps/web
+apps/web test:  Test Files  175 passed (175)
+apps/web test:       Tests  1735 passed (1735)
+apps/web test:    Start at  05:04:55
+apps/web test:    Duration  16.53s (environment 48%, tests 38%, import 11%, transform 3%, worker 1%)
+apps/web test: Environment  jsdom was created 175 times · 76.79s total, 48% of tracked time
+apps/web test:              create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+apps/web test:              learn more: https://vitest.dev/guide/improving-performance#test-environments
+apps/web test: Done
+{"lock":"released","pid":18308,"task":"a4-p7-attempt-1 tests"}
