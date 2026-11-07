@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "accessDate": "2026-11-05 UTC",
+  "accessDate": "2026-11-07 UTC",
   "method": "Source-scoped desk research. No reference art downloaded or reused. Unverified fields and estimates are explicit.",
   "games": [
     {
@@ -35,7 +35,8 @@
       "player_friction": "Hypothesis: duplicate demand, equipment randomness and daily obligations",
       "sources": [
         "SW",
-        "SW2"
+        "SW2",
+        "V4-SW-REFINE"
       ],
       "verified_scope": [
         "equipment_slots",
@@ -106,8 +107,11 @@
           ]
         },
         "enhancement": {
-          "status": "unverified synthesis / estimate or not applicable as stated",
-          "sources": []
+          "status": "source-supported mechanism; scope updated in A4",
+          "sources": [
+            "V4-SW-REFINE"
+          ],
+          "note": "A4 publisher update verifies rune refinement and artifact reappraisal; exact current costs unverified."
         },
         "duplicates": {
           "status": "unverified synthesis / estimate or not applicable as stated",
@@ -347,7 +351,8 @@
       "player_praise": "Hypothesis: role combinations and visible power growth",
       "player_friction": "Hypothesis: duplicate demand, equipment randomness and daily obligations",
       "sources": [
-        "HSR"
+        "HSR",
+        "V4-HSR-CRAFT"
       ],
       "verified_scope": [
         "odds",
@@ -408,8 +413,11 @@
           "sources": []
         },
         "enhancement": {
-          "status": "unverified synthesis / estimate or not applicable as stated",
-          "sources": []
+          "status": "source-supported mechanism; scope updated in A4",
+          "sources": [
+            "V4-HSR-CRAFT"
+          ],
+          "note": "A4 historical publisher patch supports targeted relic synthesis and stat recommendations; exact current costs unverified."
         },
         "duplicates": {
           "status": "unverified synthesis / estimate or not applicable as stated",
@@ -481,11 +489,11 @@
       "team_size": "Five; unverified",
       "positions": "Hex-like formation placement",
       "skills_resource_model": "Automatic attacks and energy ultimates",
-      "equipment_slots": "Six pieces per class, shared across the class",
+      "equipment_slots": "Six slots shared by class, including offensive and defensive roles; refreshed specialist guide AFK, 2026-11-07",
       "item_tiers_colours": "Publisher-specific rarity cues; exact colour palette not copied",
       "affixes": "Class equipment progression; do not assume individual random sub-stat items like other squad RPGs",
       "sets": "Class-wide gear sharing is the relevant pattern; conventional sets not verified",
-      "enhancement": "Forge/recycle class gear and ascend heroes; no exact cost table adopted",
+      "enhancement": "Forge with recycled materials; forge level follows Resonance. Exact live costs not audited.",
       "duplicates": "Copies/essence feed ascension; wishlist helps targeting",
       "gacha_banners": "Standard and rotating featured acquisition",
       "odds": "Banner/version dependent; no current exact table verified",
@@ -641,11 +649,11 @@
       "team_size": "Mode-dependent 4-5",
       "positions": "Formation determines leadership, no grid",
       "skills_resource_model": "Basic actions plus cooldown skills; special resource varies",
-      "equipment_slots": "Six artifacts and three accessories; guide covers gear categories",
+      "equipment_slots": "Six artifacts and three accessories; guide covers gear categories; named presets and try-on supported by V4-RAID-PRESETS",
       "item_tiers_colours": "Publisher-specific rarity cues; exact colour palette not copied",
       "affixes": "Main and secondary equipment stats create build tradeoffs",
       "sets": "Combinations of set sizes, including 2-piece and 4-piece",
-      "enhancement": "Gear levels, sub-stat increases, rank/ascension; chance-cost details not verified",
+      "enhancement": "Gear levels, sub-stat increases, rank/ascension; chance-cost details not verified; forge targets a chosen set and bounds batch size by resources/storage (V4-RAID-FORGE)",
       "duplicates": "Duplicates feed development or a conversion currency",
       "gacha_banners": "Standard and rotating featured acquisition",
       "odds": "Banner/version dependent; no current exact table verified",
@@ -660,7 +668,10 @@
       "player_praise": "Hypothesis: role combinations and visible power growth",
       "player_friction": "Hypothesis: duplicate demand, equipment randomness and daily obligations",
       "sources": [
-        "RAID"
+        "RAID",
+        "V4-RAID-GEAR",
+        "V4-RAID-PRESETS",
+        "V4-RAID-FORGE"
       ],
       "verified_scope": [
         "equipment_slots",
@@ -706,10 +717,11 @@
           "sources": []
         },
         "equipment_slots": {
-          "status": "source-supported mechanism",
+          "status": "source-supported mechanism; scope updated in A4",
           "sources": [
-            "RAID"
-          ]
+            "V4-RAID-GEAR"
+          ],
+          "note": "Six artifact kinds and three accessory kinds; one per kind; publisher guide."
         },
         "item_tiers_colours": {
           "status": "unverified synthesis / estimate or not applicable as stated",
@@ -5254,6 +5266,1486 @@
             "MAPLE",
             "MAPLE2"
           ]
+        },
+        "monetisation": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "player_praise": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "player_friction": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        }
+      }
+    },
+    {
+      "game": "Teamfight Tactics",
+      "group": "auto-battler",
+      "core_loop": "Build and equip a team before automatic combat.",
+      "session_minutes": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "battle_format": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "stats": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "damage_formula_style": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "roles": "Role tags explain item compatibility.",
+      "team_size": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "positions": "Publisher describes tanks in front and damage roles behind.",
+      "skills_resource_model": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "equipment_slots": "Not exhaustively verified; source concerns role/item redesign.",
+      "item_tiers_colours": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "affixes": "Role-compatible damage and defense effects; not a persistent randomized substat table.",
+      "sets": "Conditional item effects and stacking tradeoffs.",
+      "enhancement": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "duplicates": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "gacha_banners": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "odds": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "pity_spark": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "currencies": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "daily_weekly": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "pve": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "pvp": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "social": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "retention": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "monetisation": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "player_praise": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "player_friction": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "sources": [
+        "V4-TFT",
+        "V4-TFT-INSPECT"
+      ],
+      "verified_scope": [
+        "core_loop",
+        "roles",
+        "positions",
+        "sets",
+        "equipment_slots",
+        "affixes"
+      ],
+      "other_fields_status": "A4 desk research; supported fields scoped in field_evidence. Inference/UNVERIFIED are not source facts. No live-game playtest.",
+      "field_evidence": {
+        "core_loop": {
+          "status": "source-scoped; limitations explicit",
+          "sources": [
+            "V4-TFT",
+            "V4-TFT-INSPECT"
+          ],
+          "note": "Build and equip a team before automatic combat."
+        },
+        "roles": {
+          "status": "source-scoped; limitations explicit",
+          "sources": [
+            "V4-TFT",
+            "V4-TFT-INSPECT"
+          ],
+          "note": "Role tags explain item compatibility."
+        },
+        "positions": {
+          "status": "source-scoped; limitations explicit",
+          "sources": [
+            "V4-TFT",
+            "V4-TFT-INSPECT"
+          ],
+          "note": "Publisher describes tanks in front and damage roles behind."
+        },
+        "sets": {
+          "status": "source-scoped; limitations explicit",
+          "sources": [
+            "V4-TFT",
+            "V4-TFT-INSPECT"
+          ],
+          "note": "Conditional item effects and stacking tradeoffs."
+        },
+        "equipment_slots": {
+          "status": "source-scoped; limitations explicit",
+          "sources": [
+            "V4-TFT",
+            "V4-TFT-INSPECT"
+          ],
+          "note": "Not exhaustively verified; source concerns role/item redesign."
+        },
+        "affixes": {
+          "status": "source-scoped; limitations explicit",
+          "sources": [
+            "V4-TFT",
+            "V4-TFT-INSPECT"
+          ],
+          "note": "Role-compatible damage and defense effects; not a persistent randomized substat table."
+        },
+        "session_minutes": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "battle_format": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "stats": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "damage_formula_style": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "team_size": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "skills_resource_model": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "item_tiers_colours": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "enhancement": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "duplicates": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "gacha_banners": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "odds": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "pity_spark": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "currencies": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "daily_weekly": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "pve": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "pvp": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "social": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "retention": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "monetisation": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "player_praise": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "player_friction": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        }
+      }
+    },
+    {
+      "game": "Super Auto Pets",
+      "group": "auto-battler",
+      "core_loop": "Build a team, resolve automatic fights, revise in the shop.",
+      "session_minutes": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "battle_format": "Automatic asynchronous arena.",
+      "stats": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "damage_formula_style": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "roles": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "team_size": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "positions": "Community guide describes team rearrangement in shop.",
+      "skills_resource_model": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "equipment_slots": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "item_tiers_colours": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "affixes": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "sets": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "enhancement": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "duplicates": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "gacha_banners": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "odds": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "pity_spark": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "currencies": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "daily_weekly": "Publisher describes weekly pool variants.",
+      "pve": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "pvp": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "social": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "retention": "Inference: untimed preparation encourages deliberate short sessions.",
+      "monetisation": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "player_praise": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "player_friction": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "sources": [
+        "V4-SAP",
+        "V4-SAP-POS"
+      ],
+      "verified_scope": [
+        "core_loop",
+        "battle_format",
+        "positions",
+        "daily_weekly"
+      ],
+      "other_fields_status": "A4 desk research; supported fields scoped in field_evidence. Inference/UNVERIFIED are not source facts. No live-game playtest.",
+      "field_evidence": {
+        "core_loop": {
+          "status": "source-scoped; limitations explicit",
+          "sources": [
+            "V4-SAP",
+            "V4-SAP-POS"
+          ],
+          "note": "Build a team, resolve automatic fights, revise in the shop."
+        },
+        "battle_format": {
+          "status": "source-scoped; limitations explicit",
+          "sources": [
+            "V4-SAP",
+            "V4-SAP-POS"
+          ],
+          "note": "Automatic asynchronous arena."
+        },
+        "positions": {
+          "status": "source-scoped; limitations explicit",
+          "sources": [
+            "V4-SAP",
+            "V4-SAP-POS"
+          ],
+          "note": "Community guide describes team rearrangement in shop."
+        },
+        "daily_weekly": {
+          "status": "source-scoped; limitations explicit",
+          "sources": [
+            "V4-SAP",
+            "V4-SAP-POS"
+          ],
+          "note": "Publisher describes weekly pool variants."
+        },
+        "retention": {
+          "status": "inference",
+          "sources": [
+            "V4-SAP",
+            "V4-SAP-POS"
+          ],
+          "note": "Inference: untimed preparation encourages deliberate short sessions."
+        },
+        "session_minutes": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "stats": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "damage_formula_style": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "roles": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "team_size": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "skills_resource_model": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "equipment_slots": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "item_tiers_colours": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "affixes": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "sets": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "enhancement": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "duplicates": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "gacha_banners": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "odds": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "pity_spark": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "currencies": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "pve": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "pvp": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "social": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "monetisation": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "player_praise": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "player_friction": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        }
+      }
+    },
+    {
+      "game": "Backpack Battles",
+      "group": "inventory auto-battler",
+      "core_loop": "Buy, arrange and combine equipment before automatic fights.",
+      "session_minutes": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "battle_format": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "stats": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "damage_formula_style": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "roles": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "team_size": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "positions": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "skills_resource_model": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "equipment_slots": "Spatial bag arrangement, not body slots.",
+      "item_tiers_colours": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "affixes": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "sets": "Combination recipes; community guide explains adjacency.",
+      "enhancement": "Combine recipe parts; exact current numeric costs unverified.",
+      "duplicates": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "gacha_banners": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "odds": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "pity_spark": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "currencies": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "daily_weekly": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "pve": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "pvp": "Publisher describes counter-building against other builds.",
+      "social": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "retention": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "monetisation": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "player_praise": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "player_friction": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "sources": [
+        "V4-BPB",
+        "V4-BPB-CRAFT"
+      ],
+      "verified_scope": [
+        "core_loop",
+        "equipment_slots",
+        "sets",
+        "pvp"
+      ],
+      "other_fields_status": "A4 desk research; supported fields scoped in field_evidence. Inference/UNVERIFIED are not source facts. No live-game playtest.",
+      "field_evidence": {
+        "core_loop": {
+          "status": "source-scoped; limitations explicit",
+          "sources": [
+            "V4-BPB",
+            "V4-BPB-CRAFT"
+          ],
+          "note": "Buy, arrange and combine equipment before automatic fights."
+        },
+        "equipment_slots": {
+          "status": "source-scoped; limitations explicit",
+          "sources": [
+            "V4-BPB",
+            "V4-BPB-CRAFT"
+          ],
+          "note": "Spatial bag arrangement, not body slots."
+        },
+        "sets": {
+          "status": "source-scoped; limitations explicit",
+          "sources": [
+            "V4-BPB",
+            "V4-BPB-CRAFT"
+          ],
+          "note": "Combination recipes; community guide explains adjacency."
+        },
+        "enhancement": {
+          "status": "source-scoped; limitations explicit",
+          "sources": [
+            "V4-BPB",
+            "V4-BPB-CRAFT"
+          ],
+          "note": "Combine recipe parts; exact current numeric costs unverified."
+        },
+        "pvp": {
+          "status": "source-scoped; limitations explicit",
+          "sources": [
+            "V4-BPB",
+            "V4-BPB-CRAFT"
+          ],
+          "note": "Publisher describes counter-building against other builds."
+        },
+        "session_minutes": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "battle_format": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "stats": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "damage_formula_style": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "roles": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "team_size": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "positions": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "skills_resource_model": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "item_tiers_colours": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "affixes": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "duplicates": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "gacha_banners": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "odds": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "pity_spark": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "currencies": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "daily_weekly": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "pve": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "social": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "retention": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "monetisation": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "player_praise": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "player_friction": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        }
+      }
+    },
+    {
+      "game": "Hearthstone Battlegrounds",
+      "group": "auto-battler",
+      "core_loop": "Recruit/reconfigure then automatic combat.",
+      "session_minutes": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "battle_format": "Preparation separated from automatic resolution.",
+      "stats": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "damage_formula_style": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "roles": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "team_size": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "positions": "Placement decided while recruiting; no numeric positioning advantage copied.",
+      "skills_resource_model": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "equipment_slots": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "item_tiers_colours": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "affixes": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "sets": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "enhancement": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "duplicates": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "gacha_banners": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "odds": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "pity_spark": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "currencies": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "daily_weekly": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "pve": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "pvp": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "social": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "retention": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "monetisation": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "player_praise": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "player_friction": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "sources": [
+        "V4-BG"
+      ],
+      "verified_scope": [
+        "core_loop",
+        "battle_format",
+        "positions"
+      ],
+      "other_fields_status": "A4 desk research; supported fields scoped in field_evidence. Inference/UNVERIFIED are not source facts. No live-game playtest.",
+      "field_evidence": {
+        "core_loop": {
+          "status": "source-scoped; limitations explicit",
+          "sources": [
+            "V4-BG"
+          ],
+          "note": "Recruit/reconfigure then automatic combat."
+        },
+        "battle_format": {
+          "status": "source-scoped; limitations explicit",
+          "sources": [
+            "V4-BG"
+          ],
+          "note": "Preparation separated from automatic resolution."
+        },
+        "positions": {
+          "status": "source-scoped; limitations explicit",
+          "sources": [
+            "V4-BG"
+          ],
+          "note": "Placement decided while recruiting; no numeric positioning advantage copied."
+        },
+        "session_minutes": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "stats": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "damage_formula_style": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "roles": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "team_size": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "skills_resource_model": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "equipment_slots": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "item_tiers_colours": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "affixes": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "sets": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "enhancement": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "duplicates": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "gacha_banners": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "odds": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "pity_spark": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "currencies": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "daily_weekly": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "pve": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "pvp": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "social": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "retention": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "monetisation": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "player_praise": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "player_friction": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        }
+      }
+    },
+    {
+      "game": "AFK Arena",
+      "group": "idle squad RPG",
+      "core_loop": "Collect and arrange heroes; specialist formation guidance.",
+      "session_minutes": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "battle_format": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "stats": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "damage_formula_style": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "roles": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "team_size": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "positions": "Formation matters; exact role/row multipliers unverified.",
+      "skills_resource_model": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "equipment_slots": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "item_tiers_colours": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "affixes": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "sets": "Specialist source supports same-faction formation bonuses, exact live thresholds unverified.",
+      "enhancement": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "duplicates": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "gacha_banners": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "odds": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "pity_spark": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "currencies": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "daily_weekly": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "pve": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "pvp": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "social": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "retention": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "monetisation": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "player_praise": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "player_friction": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "sources": [
+        "V4-AFKA"
+      ],
+      "verified_scope": [
+        "core_loop"
+      ],
+      "other_fields_status": "A4 desk research; supported fields scoped in field_evidence. Inference/UNVERIFIED are not source facts. No live-game playtest.",
+      "field_evidence": {
+        "core_loop": {
+          "status": "source-scoped; limitations explicit",
+          "sources": [
+            "V4-AFKA"
+          ],
+          "note": "Collect and arrange heroes; specialist formation guidance."
+        },
+        "sets": {
+          "status": "source-scoped; limitations explicit",
+          "sources": [
+            "V4-AFKA"
+          ],
+          "note": "Specialist source supports same-faction formation bonuses, exact live thresholds unverified."
+        },
+        "positions": {
+          "status": "source-scoped; limitations explicit",
+          "sources": [
+            "V4-AFKA"
+          ],
+          "note": "Formation matters; exact role/row multipliers unverified."
+        },
+        "session_minutes": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "battle_format": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "stats": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "damage_formula_style": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "roles": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "team_size": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "skills_resource_model": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "equipment_slots": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "item_tiers_colours": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "affixes": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "enhancement": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "duplicates": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "gacha_banners": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "odds": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "pity_spark": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "currencies": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "daily_weekly": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "pve": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "pvp": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "social": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "retention": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "monetisation": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "player_praise": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "player_friction": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        }
+      }
+    },
+    {
+      "game": "Idle Heroes",
+      "group": "idle squad RPG",
+      "core_loop": "Inference: improve roster and equipment between encounters.",
+      "session_minutes": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "battle_format": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "stats": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "damage_formula_style": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "roles": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "team_size": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "positions": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "skills_resource_model": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "equipment_slots": "Equipment guide consulted; complete current slot table unverified.",
+      "item_tiers_colours": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "affixes": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "sets": "Community source supports same-tier equipment bonuses.",
+      "enhancement": "Blacksmith equipment upgrades; exact costs unverified.",
+      "duplicates": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "gacha_banners": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "odds": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "pity_spark": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "currencies": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "daily_weekly": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "pve": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "pvp": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "social": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "retention": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "monetisation": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "player_praise": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "player_friction": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "sources": [
+        "V4-IH"
+      ],
+      "verified_scope": [
+        "sets"
+      ],
+      "other_fields_status": "A4 desk research; supported fields scoped in field_evidence. Inference/UNVERIFIED are not source facts. No live-game playtest.",
+      "field_evidence": {
+        "equipment_slots": {
+          "status": "source-scoped; limitations explicit",
+          "sources": [
+            "V4-IH"
+          ],
+          "note": "Equipment guide consulted; complete current slot table unverified."
+        },
+        "sets": {
+          "status": "source-scoped; limitations explicit",
+          "sources": [
+            "V4-IH"
+          ],
+          "note": "Community source supports same-tier equipment bonuses."
+        },
+        "enhancement": {
+          "status": "source-scoped; limitations explicit",
+          "sources": [
+            "V4-IH"
+          ],
+          "note": "Blacksmith equipment upgrades; exact costs unverified."
+        },
+        "core_loop": {
+          "status": "inference",
+          "sources": [
+            "V4-IH"
+          ],
+          "note": "Inference: improve roster and equipment between encounters."
+        },
+        "session_minutes": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "battle_format": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "stats": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "damage_formula_style": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "roles": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "team_size": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "positions": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "skills_resource_model": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "item_tiers_colours": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "affixes": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "duplicates": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "gacha_banners": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "odds": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "pity_spark": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "currencies": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "daily_weekly": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "pve": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "pvp": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "social": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "retention": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "monetisation": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "player_praise": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "player_friction": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        }
+      }
+    },
+    {
+      "game": "Eversoul",
+      "group": "idle squad RPG",
+      "core_loop": "Inference: low-friction keepsake changes support roster experimentation.",
+      "session_minutes": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "battle_format": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "stats": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "damage_formula_style": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "roles": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "team_size": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "positions": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "skills_resource_model": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "equipment_slots": "Keepsake slots can be switched in the equipment UI.",
+      "item_tiers_colours": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "affixes": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "sets": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "enhancement": "Current costs unverified; only quality-of-life change confirmed.",
+      "duplicates": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "gacha_banners": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "odds": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "pity_spark": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "currencies": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "daily_weekly": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "pve": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "pvp": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "social": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "retention": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "monetisation": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "player_praise": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "player_friction": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "sources": [
+        "V4-EVER"
+      ],
+      "verified_scope": [
+        "equipment_slots"
+      ],
+      "other_fields_status": "A4 desk research; supported fields scoped in field_evidence. Inference/UNVERIFIED are not source facts. No live-game playtest.",
+      "field_evidence": {
+        "equipment_slots": {
+          "status": "source-scoped; limitations explicit",
+          "sources": [
+            "V4-EVER"
+          ],
+          "note": "Keepsake slots can be switched in the equipment UI."
+        },
+        "enhancement": {
+          "status": "source-scoped; limitations explicit",
+          "sources": [
+            "V4-EVER"
+          ],
+          "note": "Current costs unverified; only quality-of-life change confirmed."
+        },
+        "core_loop": {
+          "status": "inference",
+          "sources": [
+            "V4-EVER"
+          ],
+          "note": "Inference: low-friction keepsake changes support roster experimentation."
+        },
+        "session_minutes": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "battle_format": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "stats": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "damage_formula_style": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "roles": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "team_size": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "positions": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "skills_resource_model": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "item_tiers_colours": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "affixes": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "sets": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "duplicates": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "gacha_banners": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "odds": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "pity_spark": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "currencies": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "daily_weekly": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "pve": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "pvp": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "social": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "retention": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "monetisation": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "player_praise": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "player_friction": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        }
+      }
+    },
+    {
+      "game": "Dislyte",
+      "group": "squad RPG",
+      "core_loop": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "session_minutes": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "battle_format": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "stats": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "damage_formula_style": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "roles": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "team_size": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "positions": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "skills_resource_model": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "equipment_slots": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "item_tiers_colours": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "affixes": "Specialist equipment guide describes secondary stats.",
+      "sets": "Equipment sets supply build choices.",
+      "enhancement": "Surplus equipment can be sold; exact current costs unverified.",
+      "duplicates": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "gacha_banners": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "odds": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "pity_spark": "Historical Wish Stone update gives a deterministic event-character path; current odds not inferred.",
+      "currencies": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "daily_weekly": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "pve": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "pvp": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "social": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "retention": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "monetisation": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "player_praise": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "player_friction": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "sources": [
+        "V4-DIS",
+        "V4-DIS-SELECT"
+      ],
+      "verified_scope": [
+        "affixes",
+        "sets",
+        "pity_spark"
+      ],
+      "other_fields_status": "A4 desk research; supported fields scoped in field_evidence. Inference/UNVERIFIED are not source facts. No live-game playtest.",
+      "field_evidence": {
+        "affixes": {
+          "status": "source-scoped; limitations explicit",
+          "sources": [
+            "V4-DIS",
+            "V4-DIS-SELECT"
+          ],
+          "note": "Specialist equipment guide describes secondary stats."
+        },
+        "sets": {
+          "status": "source-scoped; limitations explicit",
+          "sources": [
+            "V4-DIS",
+            "V4-DIS-SELECT"
+          ],
+          "note": "Equipment sets supply build choices."
+        },
+        "enhancement": {
+          "status": "source-scoped; limitations explicit",
+          "sources": [
+            "V4-DIS",
+            "V4-DIS-SELECT"
+          ],
+          "note": "Surplus equipment can be sold; exact current costs unverified."
+        },
+        "pity_spark": {
+          "status": "source-scoped; limitations explicit",
+          "sources": [
+            "V4-DIS",
+            "V4-DIS-SELECT"
+          ],
+          "note": "Historical Wish Stone update gives a deterministic event-character path; current odds not inferred."
+        },
+        "core_loop": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "session_minutes": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "battle_format": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "stats": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "damage_formula_style": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "roles": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "team_size": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "positions": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "skills_resource_model": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "equipment_slots": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "item_tiers_colours": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "duplicates": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "gacha_banners": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "odds": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "currencies": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "daily_weekly": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "pve": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "pvp": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "social": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "retention": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "monetisation": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "player_praise": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "player_friction": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        }
+      }
+    },
+    {
+      "game": "Legend of Keepers",
+      "group": "management / turn-based analogue",
+      "core_loop": "Dungeon management and preparation before encounters.",
+      "session_minutes": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "battle_format": "Turn-based; deliberately NOT treated as proof of fully automatic combat.",
+      "stats": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "damage_formula_style": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "roles": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "team_size": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "positions": "Preparation analogue only; exact rules unverified.",
+      "skills_resource_model": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "equipment_slots": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "item_tiers_colours": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "affixes": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "sets": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "enhancement": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "duplicates": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "gacha_banners": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "odds": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "pity_spark": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "currencies": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "daily_weekly": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "pve": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "pvp": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "social": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "retention": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "monetisation": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "player_praise": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "player_friction": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "sources": [
+        "V4-KEEP"
+      ],
+      "verified_scope": [
+        "core_loop",
+        "battle_format"
+      ],
+      "other_fields_status": "A4 desk research; supported fields scoped in field_evidence. Inference/UNVERIFIED are not source facts. No live-game playtest.",
+      "field_evidence": {
+        "core_loop": {
+          "status": "source-scoped; limitations explicit",
+          "sources": [
+            "V4-KEEP"
+          ],
+          "note": "Dungeon management and preparation before encounters."
+        },
+        "battle_format": {
+          "status": "source-scoped; limitations explicit",
+          "sources": [
+            "V4-KEEP"
+          ],
+          "note": "Turn-based; deliberately NOT treated as proof of fully automatic combat."
+        },
+        "positions": {
+          "status": "source-scoped; limitations explicit",
+          "sources": [
+            "V4-KEEP"
+          ],
+          "note": "Preparation analogue only; exact rules unverified."
+        },
+        "session_minutes": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "stats": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "damage_formula_style": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "roles": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "team_size": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "skills_resource_model": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "equipment_slots": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "item_tiers_colours": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "affixes": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "sets": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "enhancement": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "duplicates": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "gacha_banners": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "odds": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "pity_spark": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "currencies": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "daily_weekly": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "pve": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "pvp": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "social": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
+        },
+        "retention": {
+          "status": "unverified synthesis / estimate or not applicable as stated",
+          "sources": []
         },
         "monetisation": {
           "status": "unverified synthesis / estimate or not applicable as stated",
