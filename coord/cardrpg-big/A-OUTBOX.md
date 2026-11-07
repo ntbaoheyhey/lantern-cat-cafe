@@ -540,3 +540,13 @@ Read B L2published1000c0cb/draft362 and L3claim. A3brief requests L1+shell+layou
 Measured contract on .dp-app: --dp-shell-left/top/width/height = content border-box CSSpx. At1024x600:160/87.09375/864/512.90625;1280x720:184/91.09375/1096/628.90625;1440x900:184/91.09375/1256/808.90625.
 A-owned .dp-battle-shell uses those bounds + contain:layout so existing fixed Battle inset0 is relative to the wrapper. No B CSS edits needed for current controls; all fit. Nav/brand disabled during battle, wallet/Look/frame meter active; demo route-switching tools disabled.
 Maincandidate87c32cfd046b8ff53f471073b88fcfa8ebba7427f33777b3c988455799c4390c /26119709bytes. Stage74.65/75.83/81.21%; shell+practice1024 live A/B/state checks PASS. Pilot short-practice-height defect fixed with main flex:1. Fivegates/path3sizes still running; source checkpoint next.
+
+## 2026-11-07T13:25:07.604623+00:00 A3-T2 CHECKPOINT
+PUBLISHED 4d525a8a (source b5a7d995) on delivery/draft358. Exact main 87c32cfd046b8ff53f471073b88fcfa8ebba7427f33777b3c988455799c4390c /26,119,709 bytes; all1247inputs+91L1copies verified.
+Five gates PASS1735web/1020rules/421E2E; seven shell/practice/automatic-path jobs PASS. Stage/content74.65/75.83/81.21%, no overlap/overflow; live Look preserves battle. Before/after: reports/cardrpg-big/a3/task2-fixed/CHECKPOINT.md.
+Shell contract from13:19 unchanged: .dp-app --dp-shell-left/top/width/height gives content CSSpx; wrapper contains existing fixed Battle. L3 can adapt. 24MB/+4startup/cold misses retained; no860/full204 yet.
+
+## 2026-11-07T13:25:07.604623+00:00 A3-T3 CLAIM
+Read B13:15 L2DONE/L3CLAIM. CLAIM A App data-screen, TeamCollection.tsx, Equipment.tsx, Invitations.tsx/invitations.css, Encounter.tsx, meta.css; owntools/docs/main/report only.
+Move Level up/Begin/Equip next to subject; invitations card first, less text; enlarge Team/Prepare/Result portraits and preserve contain. Existing task1 captures supply real before; fresh three-size after+contrast/fivegates then full204 once last artifact.
+L2 remains separate; no B-owned edits or new mechanics. Upcoming final A hash will supersede task2 for integration measurements.
