@@ -1,0 +1,155 @@
+{
+  "tool": "Runtime procedural keyframe authoring, createCardClips and tools/cardrpg-big2/motion-measure.mjs",
+  "authorship": "Original authored gestures on the existing original Taskbar Hero rigid-node rigs",
+  "artifactSha256": "99b68a554f57e16396aea67dd5324e4c17c2f6253d3d5ea1a7ac05f7f01c5c7a",
+  "buildReceipt": "/tmp/cardrpg-big2-e3-build.json",
+  "sources": {
+    "apps/web/src/game/squad/turn3d/card-enemy-adornment.ts": "ba5066d931083fd012f9e2ac775a2468d7cda7ff711dd1f6c5140e59344a94bb",
+    "apps/web/src/game/squad/turn3d/card-enemy-batch1-effects.ts": "c437666920cabd90b79ddf6fd2754a6b26c11f87a7405fcaae45793b62d72296",
+    "apps/web/src/game/squad/turn3d/card-enemy-batch1-motion.ts": "14fbefc2614ed5a56bce76c72288e12f4e92c3f14f6dae8b0d55feb9954b01a3",
+    "apps/web/src/game/squad/turn3d/card-enemy-batch2-effects.ts": "e2bb1c488212e976f568872ccd4fbf849a813fcd78ceaddff809ddc035884876",
+    "apps/web/src/game/squad/turn3d/card-enemy-batch2-motion.ts": "9ebe983dcaefd7fbec1724cbea4df6e8502e87259aa5d2d8f83f916121a15055",
+    "apps/web/src/game/squad/turn3d/card-enemy-batch3-effects.ts": "fab3a9e51377ab0cabc2688e7cb0dff701f42d3b76716680ad90d3244a6f8729",
+    "apps/web/src/game/squad/turn3d/card-enemy-batch3-motion.ts": "f5fc312da89449a1aa024d352badb82b1d9c21e332c6459e004e9f131918cdf2",
+    "apps/web/src/game/squad/turn3d/card-enemy-motion.ts": "2c82e118d55a0a0c74547880aaf6be5787acc979bb67326fc509b24cb740b41f",
+    "apps/web/src/game/squad/turn3d/card-enemy.test.ts": "3f2f524a8b49773c260cea68418f9bba2b0b58877bce96617b35c5374aa587da",
+    "apps/web/src/game/squad/turn3d/card-motion-data.ts": "b30ed2192fa8bd0cdb49c52452947bf6eeb471e88e3a08b1b92f1c25cb994fe1",
+    "apps/web/src/game/squad/turn3d/card-motion.test.ts": "a665f9dc99865020c08c9732e2f677c0ae77b01672fd3cf032caa1ef0798fc83",
+    "apps/web/src/game/squad/turn3d/card-motion.ts": "4de7f4607cf100d5129b125619c3ee48ed3fe3a4d006210cd20d0f5f645e6ad8",
+    "apps/web/src/game/squad/turn3d/card-roster-batch2-effects.ts": "a90f12b5ed50e815dcb8c3567fd2f3e4ffffaf3c81f8d434860a21464e8439e0",
+    "apps/web/src/game/squad/turn3d/card-roster-batch2-motion.ts": "b33a394c263369b2991626e0a67673cff61a4a1c86d51c8ed43f648d26db2715",
+    "apps/web/src/game/squad/turn3d/card-roster-batch2-primitives.ts": "41efa7340e45993429d96e8aebbe57911ffa6685c3e635b3ad639dbe252b721b",
+    "apps/web/src/game/squad/turn3d/card-roster-batch2-props.ts": "028246b2f92afd414cba7376e9be1cf07c7bf5566ad106da0430ef0f26f79d3a",
+    "apps/web/src/game/squad/turn3d/card-roster-batch3-effects.ts": "ee35aab5ae41ff15e411c586aaef1ea31697de580575b51a781e7fb166203ab2",
+    "apps/web/src/game/squad/turn3d/card-roster-batch3-motion.ts": "a28addfbd6226e607c327463f8e360705d8fe7a65ae6da5816c08546f13e8c36",
+    "apps/web/src/game/squad/turn3d/card-roster-batch3-primitives.ts": "fdbbc8128d3db32873dc479a1b80151e2c1be15e77099fded6e3e52afc06de3c",
+    "apps/web/src/game/squad/turn3d/card-roster-batch3-props.ts": "48a7a0a087ccb1d1962a4f63e1851a965d6cbd2b846aecfa2981fd1f50e86f33",
+    "apps/web/src/game/squad/turn3d/card-roster-effects.ts": "e9c6719af39d5136ebb4905c7941f2110bffd239d1931fb53784b12bf7c9935c",
+    "apps/web/src/game/squad/turn3d/card-roster-motion.ts": "c65f5653d9bd2e8c811f95396b56edaa4e47548b77092c7e4ada2f8dab105612",
+    "apps/web/src/game/squad/turn3d/card-roster-primitives.ts": "b6954d4a0c720916e945ed0b07e63b7be86f016066c6b684aff419f1abed41f7",
+    "apps/web/src/game/squad/turn3d/card-roster.test.ts": "079aee4e8cf3757eec621aa9d0c484bb09e303cb4797180223e8da4ae5650c9d"
+  },
+  "sampledKeys": 41,
+  "interpolation": "Smoothstep between authored pose keys, quaternion tracks",
+  "secondaryMotion": {
+    "lagFraction": 0.06,
+    "weights": {
+      "tailTip": 0.55,
+      "tailMid": 0.4,
+      "other": 0.24
+    }
+  },
+  "fidgets": {
+    "minimumIntervalSeconds": 4,
+    "maximumIntervalSeconds": 8,
+    "durationSeconds": 1.5
+  },
+  "stopDistance": 1.2,
+  "assets": [
+    {
+      "model": "binding-thread",
+      "clip": "enemy:binding-thread:basic",
+      "duration": 1.32,
+      "tracks": [
+        "thread_motion.quaternion",
+        "thread_head.quaternion",
+        "thread_armL.quaternion",
+        "thread_armR.quaternion",
+        "thread_tail.quaternion",
+        "thread_earL.quaternion",
+        "thread_earR.quaternion",
+        "thread_motion.position",
+        "thread_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/enemies/e3/filmstrips/enemy-binding-thread-basic.webp"
+    },
+    {
+      "model": "practice-cushion",
+      "clip": "enemy:practice-cushion:basic",
+      "duration": 1.32,
+      "tracks": [
+        "dummy_motion.quaternion",
+        "dummy_head.quaternion",
+        "dummy_armL.quaternion",
+        "dummy_armR.quaternion",
+        "dummy_footL.quaternion",
+        "dummy_footR.quaternion",
+        "dummy_tail.quaternion",
+        "dummy_earL.quaternion",
+        "dummy_earR.quaternion",
+        "dummy_motion.position",
+        "dummy_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/enemies/e3/filmstrips/enemy-practice-cushion-basic.webp"
+    },
+    {
+      "model": "pollen-scout",
+      "clip": "enemy:pollen-scout:basic",
+      "duration": 1.32,
+      "tracks": [
+        "ranger_motion.quaternion",
+        "ranger_head.quaternion",
+        "ranger_armL.quaternion",
+        "ranger_armR.quaternion",
+        "ranger_tail.quaternion",
+        "ranger_earL.quaternion",
+        "ranger_earR.quaternion",
+        "ranger_motion.position",
+        "ranger_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/enemies/e3/filmstrips/enemy-pollen-scout-basic.webp"
+    },
+    {
+      "model": "binding-thread",
+      "clip": "enemy:binding-thread",
+      "duration": 1.32,
+      "tracks": [
+        "thread_motion.quaternion",
+        "thread_head.quaternion",
+        "thread_armL.quaternion",
+        "thread_armR.quaternion",
+        "thread_tail.quaternion",
+        "thread_earL.quaternion",
+        "thread_earR.quaternion",
+        "thread_motion.position",
+        "thread_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/enemies/e3/filmstrips/enemy-binding-thread.webp"
+    },
+    {
+      "model": "practice-cushion",
+      "clip": "enemy:practice-cushion",
+      "duration": 1.32,
+      "tracks": [
+        "dummy_motion.quaternion",
+        "dummy_head.quaternion",
+        "dummy_armL.quaternion",
+        "dummy_armR.quaternion",
+        "dummy_tail.quaternion",
+        "dummy_earL.quaternion",
+        "dummy_earR.quaternion",
+        "dummy_motion.position",
+        "dummy_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/enemies/e3/filmstrips/enemy-practice-cushion.webp"
+    },
+    {
+      "model": "pollen-scout",
+      "clip": "enemy:pollen-scout",
+      "duration": 1.32,
+      "tracks": [
+        "ranger_motion.quaternion",
+        "ranger_head.quaternion",
+        "ranger_armL.quaternion",
+        "ranger_armR.quaternion",
+        "ranger_footL.quaternion",
+        "ranger_tail.quaternion",
+        "ranger_earL.quaternion",
+        "ranger_earR.quaternion",
+        "ranger_motion.position",
+        "ranger_body.scale"
+      ],
+      "filmstrip": "reports/cardrpg-big2/enemies/e3/filmstrips/enemy-pollen-scout.webp"
+    }
+  ]
+}
