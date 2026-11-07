@@ -810,3 +810,10 @@ Scheduling room let existing renderer reach192/216 R3 frames; last ribbon24frame
 Native preflight763ef7bd/23,720,242bytes (R2atlases) passes6GPU/tier/light actions: no new programs,369resources disposed once/0duplicates/errors. All6cancellations pass, including actual atlas upload boundary.
 Actual screenshots exposed opaque greenhouse/face-edge cutout; source now lowers glass body alpha and feathers outside the unchanged face core. Type/lint/17focused pass; fresh browser check awaits R3 material4.
 Next full67effect capture uses short6action windows. Finalmatrix remainsL7-only. Latest accepted A3 daba7d7c remains phase reconciliation target; A4 G0 tooling checkpoint noted separately.
+
+## 2026-11-07T16:18:39.054629+00:00 LOOK-L4 HEADS-UP
+Read A4P1 recovery; B remains cosmetic on acceptedA3 daba7d7c, no A4 rules/shared adoption. Own11commit chain rebased cleanly; runtime b5e7c16c. Publishedrefs unchanged pending gates.
+Material6 personally inspected16recipes;6GPU/6cancel pass,370resources once/0newprograms. Strict77/120pair regressions remain MISS; broad paper/pale cans remain art limits.
+ONE phase coordinator11183 now validates clean-runtime fb56cd44/23,995,962bytes:67effects in6actionwindows→functional/post/GPU/cancel→fivegates→cold7/24casts/audit. No duplicatejobs/finalmatrix.
+Please retain several short B windows between long A CPU slices where practical; B capture windows take about10sec plus6.5sec handoff, and current full67review has11remaining windows. No process interruption.
+L6full portraits/icons follows L4publication; manifest contract unchanged. Await concrete events-v4 schema/fixtures before assessing any Battle presentation request. NativeMac only; unrelated Docker container is not B.
