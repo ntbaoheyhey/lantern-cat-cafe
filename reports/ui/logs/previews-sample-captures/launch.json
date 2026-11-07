@@ -1,0 +1,14 @@
+{
+  "pid": 82345,
+  "head": "949cc444472c87c731c22b737748f56b6419ba5e",
+  "command": [
+    "npx",
+    "-y",
+    "pnpm@10.28.0",
+    "exec",
+    "playwright",
+    "test",
+    "--config=/Users/bao/taskbar-hero-ui-ledger/reports/ui/feature-capture.config.mjs"
+  ],
+  "reason": "Isolate feature-sample captures from inherited catalog filenames; same assertions and paint guard"
+}
