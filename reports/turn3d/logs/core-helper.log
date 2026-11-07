@@ -1,0 +1,2175 @@
+2026-11-05T09:24:26.130500Z  WARN codex_skills::interface: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-11-05T09:24:26.130846Z  WARN codex_skills::interface: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-11-05T09:24:26.147702Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-11-05T09:24:26.149191Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-11-05T09:24:26.150532Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-11-05T09:24:26.151658Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-11-05T09:24:26.153061Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-11-05T09:24:26.154349Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-11-05T09:24:26.155413Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-11-05T09:24:26.156508Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-11-05T09:24:26.157691Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-11-05T09:24:26.158822Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-11-05T09:24:26.159877Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-11-05T09:24:26.160955Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-11-05T09:24:26.162062Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-11-05T09:24:26.163178Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-11-05T09:24:26.164263Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-11-05T09:24:26.165355Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-11-05T09:24:26.166484Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-11-05T09:24:26.167569Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-11-05T09:24:26.168803Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+OpenAI Codex v0.166.0
+--------
+workdir: /Users/bao/taskbar-hero-turn3d
+model: gpt-6-astra
+provider: codexunlimit
+approval: never
+sandbox: danger-full-access
+reasoning effort: ultra
+reasoning summaries: none
+session id: 01a1ab06-1974-77f1-9126-c2a67610e01d
+--------
+user
+You are the turn-core implementation helper. Work ONLY in /Users/bao/taskbar-hero-turn3d. Read docs/design/turn3d-2026-11-05.md and packages/game-rules/src/squad/turn/types.ts first. Your exclusive edit ownership: packages/game-rules/src/squad/turn/**, the single TURN_CONFIG re-export in packages/game-rules/src/config.ts, tools/turn3d/balance.mjs, reports/turn3d/CORE-NOTES.md and balance.json. Do not edit other files, commit, push, deploy, touch secrets/server/economy, or spawn helpers. Other helpers are editing unrelated files.
+Implement T1+T2 fully against the stable API in types.ts. Pure TS no rendering imports. Keep existing real-time core unmodified for comparison/fallback. Reuse existing cast/role/skill identities and wave compositions; 3 basics + 9 activated + 3 passives, all enemy roles, boss sweep/bind/cross/exposed knot/targetable thread/adds. Sequential deterministic speed initiative, next-8 preview, committed enemy intent before action, legal actions and targets (with reasons), per-actor turn statuses/cooldowns, delay/advance, shields, guard/taunt/cleanse/interrupt and bounded control, once-only local wave settlements. createTurnBattle default campaign = 3 waves then boss; patrol = only 3 waves; boss/group/dummy retained. startTurn waits hero choice; chooseAction locks once; resolveAction then endTurn must be exactly-once. Event types are in contract; all events include seq/turn/actionId/beat/actorId/skillId/targetIds/amount, snapshots as necessary. action_start at beat 0 then travel 1 then damage/heal/status at 2 then reaction/death at 3 then residue/settlement 4. Crucial: boundary/status events from startTurn must form their own sequenced mini plan or use distinct actionId so later beat 0 does not rewind the same action. Record replay action list reproduces entire log; no initial auto decisions unless explicit policy call. Intents must not consume RNG on reads.
+Tests using fast-check (already installed): deterministic preview and replay hash; no duplicate active slot; dead removal; delay/advance no lost actors; taunt/guard/cleanse/interrupt; row/AoE edges; exactly-once settlement; auto legal under arbitrary seeds; repeated API misuse cannot advance twice. No production network/save imports. All numeric tuning in turn/config.ts re-export TURN_CONFIG from main config.ts. TURN_SKILLS and TURN_KITS exports required. Add robust tests not mirrored implementation.
+Run rules typecheck/tests. Write tools/turn3d/balance.mjs (use Vite SSR loader available from apps/web createRequire) and run at least both presets x auto/active x30 seeds x campaign/patrol/boss; report wins, mean actions/turns, deaths, first death role, wave/boss success. Tune only new config to auto wins most patrol seeds and meaningful harder boss without arbitrary auto handicaps. Preserve raw run data. Done when core API + tests and balance evidence are complete. Tell me interface deviations early by writing CORE-NOTES.md; avoid changing shared types unless needed and explain. Be concise and finish within about 75 minutes. Current local time about 16:23; overall deadline 22:17. You may use terminal tools directly; no installed skills required. Main agent will review, commit and integrate.
+
+2026-11-05T09:24:26.431460Z  WARN codex_skills::interface: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-11-05T09:24:26.431507Z  WARN codex_skills::interface: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+codex
+I’ll read the design and turn API first, then implement and test within the owned files. I’ll record any interface deviations in CORE-NOTES.md early.
+exec
+/bin/zsh -lc 'pwd && cat docs/design/turn3d-2026-11-05.md && cat packages/game-rules/src/squad/turn/types.ts' in /Users/bao/taskbar-hero-turn3d
+ succeeded in 0ms:
+/Users/bao/taskbar-hero-turn3d
+# The last lantern · a turn at the table
+
+2026-11-05 · Candidate, not live. Base: pushed squad tip `41a6aa3` (runtime `1604c70`).
+References: `docs/design/squad-combat-review-2026-11-05.md`,
+`docs/design/squad-slice-2026-11-05.md`, `packages/game-rules/src/squad/`,
+`apps/web/src/game/squad/`, `docs/squad/index.html`,
+`docs/proposals/rune-skill-system/demo/index.html`.
+
+## 1. A readable turn, with choices
+
+Use a deterministic speed-based initiative queue, one slot per living actor. Ties use
+seeded initial initiative then stable actor ID. The next eight slots include future
+rounds. Only `startTurn → chooseAction → resolveAction → endTurn` advances combat;
+wall time never advances rules. A hero waits indefinitely for skill + legal target.
+Each cat may opt into Auto. The controller waits for every presentation beat before
+starting another slot, even at ×4 or after Skip. Input locks at action selection.
+
+Retain all three basics, nine activated skills, three passives, six enemy roles, waves,
+both existing loadout presets, and Yarn Giant. The old engine stays available for the
+explicit 2D comparison/fallback; existing consumers and their tests remain unchanged.
+The turn engine shares the cast, role names, encounter compositions and skill identities,
+but has separately tuned numbers. All new tuning is exported from `config.ts`.
+
+Durations and cooldowns use the affected actor's own turns. A newly applied two-turn
+guard protects through two subsequent turns; burn ticks at turn start, then durations
+decrease at turn end. A skill with cooldown 2 is unavailable on the next two own turns.
+Shields expire after their owner's two turns. Taunt redirects hostile single targets;
+cleanse removes harmful effects. Shield Bash interrupts the queued enemy intent and
+delays its slot; Thread Snare delays a selected row. Delay/advance reorders one existing
+slot, never inserts duplicates. Boss control has bounded resistance. Charge comes from
+actions and damage received, never idle time; an ultimate consumes an ordinary action.
+
+Enemy intents are committed before the player chooses: action icon, name, target and
+turn countdown appear both above the actor and in the tactical panel. Invalidated dead
+targets visibly retarget; taunt and interrupt explicitly announce intent changes.
+Boss cycles Sweep → Loose End → Cross Stitch (phase two); countdown is in boss turns.
+Destroy the separate Binding Thread to release its captive and expose the knot for two
+boss turns. A visible stagger meter offers another opening. Enrage prevents stalling.
+
+At 1280×720: retained left navigation and top HUD, eight-slot turn bar, battlefield
+occupying about 72% of combat width, intent panel, party cards, four active-cat skill
+buttons. Current actor + “Choose a skill / Choose a target / Resolving…” is always
+visible. Hotkeys 1–4 select skills; accessible target buttons mirror the scene. Target
+preview marks all affected actors and explains invalid selections. No modal confirms.
+
+## 2. Original miniature diorama and event choreography
+
+Choose three.js, lazy-loaded only inside the guest `squadCombat` entry. An opt-in
+`squad3d=1` sub-flag selects the new runtime; both feature flags default false. Keep DOM
+controls and the pure rules core outside the renderer. No scene module imports an
+engine function. Render snapshots are projected from resolved events; presentation
+never rolls damage. A WebGL failure retains a playable DOM turn battlefield.
+
+Look: a small round cafe rug on a honey-colored wooden table, dusk backdrop, warm key,
+cool rim, soft blob shadows, teacups, stacked books, candle and planter. Rounded low-poly
+geometry with matte/toon-like materials, small rim accents and dark facial marks;
+avoid a full postprocessing chain. Cheap additive glow sprites, rings and ribbons give
+soft bloom within a strict pool. Fixed orthographic three-quarter camera makes the
+silhouettes legible; focus/push/shake/victory orbit are scripted offsets, never free-look.
+Mochi: cream + amber, shield and ladle. Soot: charcoal + violet, hat and floating lantern.
+Clover: mint + teal, flask satchel and leaf collar. Enemies remain household creatures.
+
+Every action maps to data in an effect registry: anticipation, travel, impact, reaction,
+residue. Each resolved event carries sequence, slot, actor ID, action ID, target IDs,
+resolved numbers, beat index and actor snapshots. The presenter consumes only this
+stream. Routine anticipation 250–400ms, ultimate/danger anticipation 850–1100ms;
+impact freeze 60–100ms. Ultimates focus the caster, dim the backdrop, show a name
+flourish and signature light, then restore the wide shot. Timings are data, not skill
+branches in the scene. Reduced motion removes camera offsets, shake and flashes;
+numbers, colors, outlines and statuses remain. ×1/×2/×4, fast mode, pause and skip
+are available. Effects gallery uses fixed event fixtures; model viewer uses the same
+GLBs and clip names as battle. Deterministic seed/time capture is a separate debug mode.
+
+## 3. Pipeline, budgets and delivery gates
+
+No Blender installed. glTF Transform CLI 4.5.1 is available through npx. Use original
+procedural three.js geometry, authored in `tools/art3d/` or a shared source module,
+exported with GLTFExporter to GLB with named part animation tracks. Runtime loads the
+GLBs; offline builder embeds bytes and uses GLTFLoader.parse, with no file:// fetch.
+Commands: `pnpm art:turn3d` builds models + hashes + triangle report;
+`node tools/turn3d/capture.mjs` captures native turnaround/model/effect fixtures;
+`node tools/turn3d/demo.mjs` compiles the actual runtime into `docs/turn3d/index.html`.
+No downloaded models/textures or reference-game art. Tool/script, parameters, date,
+author, output hash, triangle count and license go in `docs/turn3d/ASSET-MANIFEST.json`
+and `assets/provenance/turn3d.md`. Runtime libraries: three.js 0.180.0 (MIT), existing
+React 19.3.1 (MIT). Build-only @types/three 0.180.0 (MIT); existing Vite 8.3.5 (MIT).
+
+| Budget | Target | Measurement |
+|---|---:|---|
+| Cat / small foe / elite / boss | ≤6k / 3k / 8k / 20k triangles | Export geometry inventory |
+| Character GLBs | <6 MB gzip total | Actual bytes + gzip |
+| Textures | Procedural 64–256px; max 1024px | Renderer inventory |
+| Draw calls / visible triangles | <220 / <100k | renderer.info |
+| Concurrent particles / translucent layers | ≤96 / ≤8 intended layers | Pool occupancy; estimate, not GPU counter |
+| DPR | ≤2 (1 for deterministic/perf capture) | Canvas size |
+| Frame time p50 / p95 | ≤16.7 / 25ms at 1280×720 | Browser RAF intervals, not GPU timing |
+| JS heap / estimated GPU assets | <128 MB / <64 MB | CDP + geometry/texture bytes |
+| Idle renderer busy time | <2% paused | CDP TaskDuration |
+| Hidden rendering / rules | Zero frames / zero slots | Visibility lifecycle test |
+| Offline document | <25 MB | File bytes; file:// smoke, zero network |
+
+Initial balance target: 20–35 actions per wave, 60–90 seconds including choices; full
+three waves + boss 6–8 minutes at normal speed with human decisions. This is a design
+target, not a measured claim. Two presets × Auto/active priority × ≥30 seeds will report
+wins, turns, deaths, first death role and boss success. Automated timing excludes human
+thinking; do not manufacture a play-duration result from it. Tune only turn config.
+
+Implement and commit core/tests → skills → effect registry/presenter → scene/models →
+turn UI → proof → offline demo. Draft-only stack, split into focused layers, no merge or
+deploy. Both Vercel roots disable new refs. No saves, API adapters, economy, contracts,
+migrations or secret access. Flag-off network graph must exclude three/models/turn UI.
+Run baseline and final checks, 10-minute soak, both desktop sizes plus 1024×600,
+fallbacks, replay/property tests and four separate self-review passes. Record failed
+gates honestly. Training refinements are cut first; unfinished work never enters PRs.
+/** Local-only turn format. No verified replay, save, economy or renderer dependencies. */
+import type { Hero, Preset, Role, Side, StatusKind } from '../types';
+export type { Hero, Preset, Role, Side, StatusKind } from '../types';
+export type TurnEncounter = 'campaign' | 'patrol' | 'boss' | 'group' | 'dummy';
+export type TurnPhase = 'ready' | 'choose' | 'chosen' | 'resolved' | 'finished';
+export type TurnTargetRule = 'enemy' | 'row' | 'allEnemies' | 'ally' | 'allAllies' | 'self';
+export interface TurnStatus { kind: StatusKind; source: string; turns: number; strength: number; appliedTurn: number }
+export interface TurnActor {
+  id: string; role: Role; name: string; side: Side; slot: number; row: 'front' | 'rear';
+  hp: number; maxHp: number; shield: number; shieldTurns: number; charge: number;
+  attack: number; defense: number; speed: number; crit: number; auto: boolean;
+  statuses: TurnStatus[]; cooldowns: Record<string, number>; turnsTaken: number;
+  break: number; controlCount: number; passiveReady: number; boundAlly?: string;
+}
+export interface TurnSkill {
+  id: string; name: string; description: string; target: TurnTargetRule;
+  power: number; cooldown: number; chargeCost: number; heal?: number; shield?: number;
+  status?: StatusKind; duration?: number; delay?: number; hits?: number; cleanse?: boolean;
+  heavy?: boolean; melee?: boolean; icon: string;
+}
+export interface TurnIntent {
+  actorId: string; skillId: string; targetId: string; targetIds: string[];
+  icon: string; label: string; countdown: number; interrupted: boolean;
+}
+export interface TurnChoice { actorId: string; skillId: string; targetId: string }
+export interface LegalTurnAction { skill: TurnSkill; legal: boolean; reason: string }
+export interface LegalTurnTarget { actorId: string; legal: boolean; reason: string; affectedIds: string[] }
+export interface TimelineSlot { actorId: string; at: number; intent?: TurnIntent }
+export interface TurnResult {
+  winner: Side; turns: number; deaths: string[]; firstDeath: Role | null;
+  wavesCleared: number; fishFound: number; cause: string;
+}
+export type TurnEventKind = 'turn_start' | 'action_start' | 'travel' | 'damage' | 'heal'
+  | 'shield' | 'status_apply' | 'status_expire' | 'interrupt' | 'passive' | 'death'
+  | 'intent' | 'wave_clear' | 'wave_start' | 'boss_phase' | 'victory' | 'defeat'
+  | 'turn_end' | 'charge' | 'delay' | 'spawn' | 'fizzle' | 'snapshot';
+export interface TurnEvent {
+  version: 2; seq: number; turn: number; actionId: number; beat: number;
+  type: TurnEventKind; actorId: string; skillId: string; targetIds: string[];
+  amount: number; critical?: boolean; note?: string; status?: StatusKind;
+  actors?: TurnActor[]; intents?: Record<string, TurnIntent>; wave?: number;
+  bossPhase?: number; result?: TurnResult;
+}
+export interface TurnBattle {
+  version: 2; seed: number; rng: number; encounter: TurnEncounter; preset: Preset;
+  actors: TurnActor[]; queue: TimelineSlot[]; clock: number; turn: number;
+  activeId: string | null; phase: TurnPhase; selected: TurnChoice | null;
+  events: TurnEvent[]; history: TurnChoice[]; intents: Record<string, TurnIntent>;
+  wave: number; bossPhase: number; bossTurns: number; bossCountdown: number;
+  settledWaves: number[]; fishFound: number; deaths: string[]; result: TurnResult | null;
+  totals: Record<string, { damage: number; healing: number; shielding: number }>;
+}
+export interface TurnOptions { seed?: number; preset?: Preset; encounter?: TurnEncounter; wave?: number }
+
+/** Stable integration API implemented in engine.ts:
+ * createTurnBattle(options?), getTimeline(b, n=8), startTurn(b): TurnActor|null,
+ * getLegalActions(b, actorId?), getLegalTargets(b, skillId, actorId?),
+ * chooseAction(b, choice): boolean, resolveAction(b): TurnEvent[], endTurn(b): void,
+ * getAutoAction(b, policy='auto'|'active'): TurnChoice|null,
+ * replayTurns(options, choices): TurnBattle, delayActor(b, id, slots), advanceActor(b,id,slots).
+ * config.ts exports TURN_CONFIG, TURN_SKILLS, TURN_KITS (basic + two skills + ultimate).
+ * Mutating calls are synchronous and deterministic. Only this core writes rules state.
+ */
+
+**Inspecting repository setup**
+exec
+/bin/zsh -lc "rg --files -g AGENTS.md -g package.json -g '*test*' -g '*config*' packages/game-rules tools/turn3d . | head -100" in /Users/bao/taskbar-hero-turn3d
+ succeeded in 0ms:
+packages/game-rules/package.json
+packages/game-rules/src/gameplay.economy.test.ts
+packages/game-rules/src/config.ts
+packages/game-rules/src/original-economy.test.ts
+packages/game-rules/src/properties.test.ts
+packages/game-rules/src/original-economy-doc.test.mjs
+packages/game-rules/src/cafe.test.ts
+packages/game-rules/src/squad/config.ts
+packages/game-rules/src/squad/squad.test.ts
+packages/game-rules/src/gameplay.test.ts
+packages/game-rules/src/v2/levers.test.ts
+packages/game-rules/src/v2/sim/equivalence.test.ts
+packages/game-rules/src/v2/sim/report.write.test.ts
+packages/game-rules/src/v2/sim/config-async.test.ts
+packages/game-rules/src/v2/sim/config.ts
+packages/game-rules/src/v2/sim/diagnosis.test.ts
+packages/game-rules/src/v2/sim/bands.test.ts
+packages/game-rules/src/v2/sim/pacing.test.ts
+packages/game-rules/src/v2/sim/search.test.ts
+packages/game-rules/src/v2/sim/targets.test.ts
+packages/game-rules/src/v2/sim/sim.test.ts
+packages/game-rules/src/v2/bag/bag.test.ts
+packages/game-rules/src/v2/config.test.ts
+packages/game-rules/src/v2/config.ts
+packages/game-rules/src/v2/view/view.test.ts
+packages/game-rules/src/v2/forge/forge.test.ts
+packages/game-rules/src/v2/lootcheck/lootcheck.test.ts
+packages/game-rules/src/v2/state/state.test.ts
+packages/game-rules/src/v2/state/guards.test.ts
+packages/game-rules/src/v2/content/__snapshots__/content.test.ts.snap
+packages/game-rules/src/v2/content/docs.gen.test.ts
+packages/game-rules/src/v2/content/mechanics-doc.test.ts
+packages/game-rules/src/v2/content/content.test.ts
+./docs/test-stability.md
+packages/game-rules/src/v2/meta/pets/pets.test.ts
+packages/game-rules/src/v2/codex/entries.test.ts
+packages/game-rules/src/v2/codex/generator.test.mjs
+packages/game-rules/src/v2/codex/odds.test.ts
+packages/game-rules/src/v2/combat/combat.test.ts
+./docs/prompts/antigravity-responsive-retest.md
+packages/game-rules/src/v2/idle/idle.test.ts
+packages/game-rules/src/edge.test.ts
+packages/game-rules/src/loot.test.ts
+packages/game-rules/src/index.test.ts
+packages/game-rules/src/content.test.ts
+packages/game-rules/tsconfig.json
+./reports/scorecard/fxrb/logs/11-mutation-test-integrity.log
+./reports/scorecard/CXL1/logs/rules-tests.log
+./tsconfig.base.json
+./reports/scorecard/CXL1/logs/rules-tests-current.log
+./docs/security-test-matrix.md
+./docs/onboarding-test.md
+./reports/scorecard/art1/logs/targeted-tests.log
+./docs/effects-testing.md
+./docs/wallet-free-testing.md
+./reports/g1-speed/test.log
+./reports/g1-speed/test-initial.log
+./reports/scorecard/deno0/logs/generator-tests.log
+./reports/ui/gallery.config.mjs
+./tools/effects-test.mjs
+./tools/art/test_pipeline.py
+./tools/art/test_original_icons.py
+./tools/art/test_ui_art2.py
+./tools/art/test_catalog.py
+./reports/s1-infra/test.log
+./reports/scorecard/cxu5/logs/test.log
+./scripts/health-auth.test.mjs
+./scripts/gen-deno-json.test.mjs
+./package.json
+./supabase/config.toml
+./apps/web/src/onboarding/HowToPlay.test.tsx
+./apps/web/src/onboarding/nextStep.test.ts
+./apps/web/src/theme.contrast.test.ts
+./reports/n2-hardening-tests.md
+./apps/web/src/market/MarketTab.test.tsx
+./apps/web/src/market/relicMetadata.test.ts
+./apps/web/src/market/marketViewModel.test.ts
+./apps/web/src/dev/previewGrid.test.ts
+./reports/redesign/CXR0/checks/test-baseline.log
+./reports/redesign/CXR0/checks/compare-test.log
+./reports/redesign/CXR0/checks/test.log
+./reports/redesign/CXR0/checks/test-rerun.log
+./apps/web/src/api/SupabaseGameApi.test.ts
+./apps/web/src/api/GameApiV2.test.ts
+./apps/web/src/api/mockV2Fixtures.test.ts
+./apps/web/src/api/sessionGuardV2.test.ts
+./apps/web/src/api/MockGameApiV2.test.ts
+./apps/web/src/api/MockGameApi.test.ts
+./apps/web/src/api/SupabaseGameApiV2.test.ts
+./apps/web/src/wallet/authApi.test.ts
+./apps/web/src/wallet/wallet.test.tsx
+./apps/web/src/wallet/config.ts
+./apps/web/src/wallet/prodBundle.test.ts
+./supabase/tests/src/voucher-security.test.ts
+./supabase/tests/src/rls.test.ts
+./supabase/tests/src/voucher-cancel.test.ts
+./supabase/tests/src/concurrency-hardening.test.ts
+./supabase/tests/src/deno-imports.test.ts
+./supabase/tests/src/boss.test.ts
+./supabase/tests/src/state.test.ts
+
+exec
+/bin/zsh -lc 'ls -la packages/game-rules/src/squad/turn && cat packages/game-rules/package.json && cat packages/game-rules/src/squad/types.ts && cat packages/game-rules/src/squad/config.ts && cat packages/game-rules/src/config.ts' in /Users/bao/taskbar-hero-turn3d
+ succeeded in 0ms:
+total 16
+drwxr-xr-x@  3 bao  staff    96 Nov  5 16:22 .
+drwxr-xr-x@ 10 bao  staff   320 Nov  5 16:22 ..
+-rw-r--r--@  1 bao  staff  4122 Nov  5 16:22 types.ts
+{
+  "name": "@taskbar-hero/game-rules",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "test": "vitest run",
+    "lint": "tsc --noEmit",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "fast-check": "^4.10.2",
+    "typescript": "5.9.3",
+    "vitest": "5.0.5"
+  }
+}
+/** Local prototype format. Deliberately unrelated to verified v2 save/replay types. */
+export type Hero = 'guardian' | 'witch' | 'alchemist';
+export type Role = Hero | 'guard' | 'flanker' | 'ranger' | 'healer' | 'charger' | 'elite' | 'yarn' | 'thread' | 'dummy';
+export type Side = 'party' | 'enemy';
+export type Preset = 'hearthkeepers' | 'lanternbreakers';
+export type Encounter = 'patrol' | 'boss' | 'dummy' | 'group';
+export type StatusKind = 'stun' | 'snare' | 'taunt' | 'burn' | 'guard' | 'restrain' | 'exposed';
+export type TargetRule = 'front' | 'injured' | 'caster' | 'self' | 'team' | 'rear';
+export type Shape = 'slash' | 'bash' | 'rally' | 'wall' | 'thread' | 'orb' | 'storm' | 'flask' | 'patch' | 'shelter' | 'arrow' | 'charge' | 'sweep' | 'cross' | 'mend';
+export interface Point { x: number; y: number }
+export interface Stats { hp: number; attack: number; defense: number; intervalMs: number; crit: number; speed?: number; cdr?: number }
+export interface Ability {
+  name: string; shape: Shape; target: TargetRule; cooldownMs: number; windupMs: number; travelMs: number;
+  power: number; radius?: number; heal?: number; shield?: number; status?: StatusKind; durationMs?: number;
+  ultimate?: boolean; heavy?: boolean; melee?: boolean; retarget?: boolean; hits?: number; cleanse?: boolean;
+  description: string;
+}
+export interface Status { kind: StatusKind; source: string; until: number; strength: number; nextTick: number }
+export interface Actor extends Point {
+  id: string; role: Role; name: string; side: Side; slot: number; row: 'front' | 'rear';
+  hp: number; maxHp: number; shield: number; stats: Stats; statuses: Status[]; cooldowns: Record<string, number>;
+  charge: number; auto: boolean; castId: number | null; nextBasic: number; controlCount: number;
+  controlUntil: number; immuneUntil: number; passiveAt: number; boundAlly?: string; break: number;
+}
+export interface Cast {
+  id: number; source: string; targets: string[]; skill: string; start: number; release: number; impact: number;
+  origin: Point; zone: Point; released: boolean; canceled: boolean; hit: number;
+}
+export type CommandBody = { type: 'priority'; target: string | null } | { type: 'ultimate'; hero: Hero }
+  | { type: 'auto'; hero: Hero; enabled: boolean } | { type: 'tactic'; value: 'protect' | 'caster' | 'opening' };
+export type Command = CommandBody & { version: 1; tick: number; seq: number };
+export interface Totals { damage: number; healing: number; shielding: number; kills: number }
+export interface Result {
+  winner: Side; durationMs: number; deaths: string[]; firstDeath: string | null; fishFound: number;
+  totals: Record<string, Totals>; cause: string; suggestion: string;
+}
+export type EventKind = 'cast_start' | 'projectile_release' | 'impact' | 'status_applied' | 'status_expired'
+  | 'heal' | 'shield' | 'interrupt' | 'death' | 'wave_transition' | 'boss_phase' | 'passive' | 'reward'
+  | 'command' | 'fizzle' | 'retarget' | 'fight_end' | 'spawn' | 'enrage' | 'break' | 'charge';
+export interface BattleEvent {
+  version: 1; seq: number; tick: number; time: number; type: EventKind;
+  source?: string; target?: string; skill?: string; amount?: number; critical?: boolean; note?: string;
+  actor?: Actor; actors?: Actor[]; cast?: Cast; phase?: number; wave?: number; result?: Result;
+}
+export interface Battle {
+  version: 1; seed: number; rng: number; tick: number; time: number; carry: number;
+  encounter: Encounter; preset: Preset; actors: Actor[]; casts: Cast[]; events: BattleEvent[];
+  commands: Command[]; commandSeq: number; nextCastId: number; priority: string | null;
+  tactic: 'protect' | 'caster' | 'opening'; wave: number; transitionAt: number | null;
+  phase: number; enraged: boolean; nextAddAt: number; nextThreadAt: number; nextChargeAt: number;
+  settled: boolean; fishFound: number; deaths: string[]; totals: Record<string, Totals>;
+  result: Result | null;
+}
+export interface Projection { actors: Record<string, Actor>; casts: Record<number, Cast>; wave: number; phase: number; result: Result | null; fishFound: number; time: number }
+import type { Ability, Hero, Role, Stats } from './types';
+
+/** All squad-only tunables. No member of this object is an economic/server rule. */
+export const SQUAD_CONFIG = {
+  version: 1, tickMs: 50, defaultSeed: 11, maxDurationMs: 180_000, wavePauseMs: 1600,
+  clockTolerance: 10000, stormSpacingMs: 400, threadSlot: 7, addSlots: [2, 3],
+  opening: { guardian: [2100, 50, 0], witch: [1200, 2600, 0], alchemist: [3600, 5300, 0] },
+  trainingRoles: ['guard', 'healer', 'flanker', 'ranger', 'charger', 'elite', 'ranger', 'flanker'] as readonly Role[],
+  maxEnemies: 8, maxHeavyWindups: 1, enemyOffsetMs: 280, initialEnemyMs: 900,
+  defenseScale: 80, minDamage: 1, critMultiplier: 1.5, variance: 0.08,
+  caps: { speed: 0.65, cdr: 0.35, crit: 0.4, attackBuff: 0.3, guard: 0.5, shieldFraction: 0.6, burn: 3 },
+  control: { diminishing: 0.55, minDurationMs: 150, continuousMs: 2200, immuneMs: 1400, bossMultiplier: 0.45 },
+  burn: { tickMs: 1000, damage: 7, durationMs: 3600 },
+  ultimate: { max: 100, perSecond: 2, perHit: 2, initial: 12 },
+  passive: { cooldownMs: 4500, guardianShield: 20, witchCharge: 9, alchemistShield: 24, injuredFraction: 0.65 },
+  healThreshold: 0.82, guardFraction: 0.3, waveFish: 9, bossFish: 15,
+  boss: { phaseFraction: 0.5, enrageMs: 90_000, enrageMultiplier: 1.8, breakMax: 100, bashBreak: 32,
+    ordinaryBreak: 4, guardedBreak: 8, breakMs: 1800, exposedMs: 4000, exposedMultiplier: 1.65,
+    threadEveryMs: 11500, firstThreadMs: 4500, addEveryMs: 19000, firstAddMs: 8000,
+    addsPerPhase: 2, laneHalfWidth: 32, threadDurationMs: 16000 },
+  gear: { pierceMultiplier: 0.55, pierceRadius: 130, afterhealShield: 18, guardedBreak: 8 },
+  presets: {
+    hearthkeepers: { name: 'Hearthkeepers', hp: 1.12, attack: 1, healing: 1.12, shield: 1.15, speed: 0, cdr: 0, gear: 'last-light', tactic: 'protect' },
+    lanternbreakers: { name: 'Lanternbreakers', hp: 0.95, attack: 1.17, healing: 1, shield: 1, speed: 0.15, cdr: 0.08, gear: 'needle-lantern', tactic: 'opening' },
+  },
+  stats: {
+    guardian: { hp: 610, attack: 28, defense: 42, intervalMs: 1550, crit: 0.08 },
+    witch: { hp: 340, attack: 36, defense: 14, intervalMs: 1850, crit: 0.12 },
+    alchemist: { hp: 380, attack: 21, defense: 22, intervalMs: 1950, crit: 0.05 },
+    guard: { hp: 270, attack: 58, defense: 32, intervalMs: 2400, crit: 0.04 },
+    flanker: { hp: 120, attack: 35, defense: 5, intervalMs: 2200, crit: 0.08 },
+    ranger: { hp: 165, attack: 53, defense: 8, intervalMs: 2800, crit: 0.05 },
+    healer: { hp: 245, attack: 12, defense: 12, intervalMs: 2800, crit: 0 },
+    charger: { hp: 245, attack: 93, defense: 20, intervalMs: 4500, crit: 0.05 },
+    elite: { hp: 430, attack: 95, defense: 58, intervalMs: 3100, crit: 0.08 },
+    yarn: { hp: 4300, attack: 170, defense: 28, intervalMs: 4800, crit: 0 },
+    thread: { hp: 78, attack: 7, defense: 0, intervalMs: 3500, crit: 0 },
+    dummy: { hp: 1800, attack: 0, defense: 16, intervalMs: 3000, crit: 0 },
+  } satisfies Record<Role, Stats>,
+  formation: {
+    party: [{ x: 225, y: 206 }, { x: 114, y: 152 }, { x: 110, y: 252 }],
+    enemy: [{ x: 394, y: 201 }, { x: 468, y: 145 }, { x: 443, y: 259 }, { x: 526, y: 223 },
+      { x: 530, y: 111 }, { x: 585, y: 288 }, { x: 606, y: 172 }, { x: 361, y: 302 }],
+    boss: { x: 487, y: 214 },
+    bossAdds: [{ x: 487, y: 214 }, { x: 358, y: 142 }, { x: 357, y: 287 }, { x: 581, y: 294 },
+      { x: 610, y: 144 }, { x: 461, y: 310 }, { x: 587, y: 220 }, { x: 332, y: 222 }],
+    healer: { x: 584, y: 123 },
+  },
+  waves: [
+    { name: 'Doorstep tangle', roles: ['guard', 'flanker', 'flanker', 'charger'], threat: 7, goal: 'Intercept the charger. Hold the pack for Ember Orb.' },
+    { name: 'Teatime trouble', roles: ['guard', 'healer', 'ranger', 'ranger', 'flanker'], threat: 9, goal: 'Mark the Teacup Healer to stop its mending.' },
+    { name: 'Closing patrol', roles: ['elite', 'healer', 'charger', 'ranger', 'flanker', 'flanker'], threat: 12, goal: 'Protect the front. Save a barrier for the heavy windup.' },
+  ] as const,
+  presentation: { width: 680, height: 330, frameMs: 120, idleFrameMs: 280, uiMs: 100,
+    contactDistance: 44, contactLane: 62, contactClearance: 55, contactReach: 108,
+    contactSlots: [[44, 0], [44, -62], [44, 62], [92, -30], [92, 30]],
+    defeatFadeMs: 900, patchHeight: 52, approachMs: 180, returnMs: 260, residueMs: 520, labelMs: 800, hitMs: 180,
+    maxEffects: 32, maxBright: 4, quietEffectAlpha: 0.35, maxLabels: 12, labelLine: 14, hitStopMs: 50, shakePx: 2,
+    maxDeltaMs: 250, fps: 60, calmFps: 20, idleFps: 8, barWidth: 52, barHeight: 4,
+    heroFrame: 80, enemyFrame: 72, bossFrame: 144, heroFoot: 72, enemyFoot: 64, bossFoot: 132,
+    flaskArc: 72, numberRise: 26, sceneInset: 12, minDesktop: 1280, maxSpeed: 4,
+    effect: { sourceX: 22, enemySourceX: -18, sourceY: 38, targetY: 28,
+      markWidth: 46, markHeight: 18, markLine: 2, impactStart: 10, impactGrowth: 27,
+      calmRadius: 18, impactY: 20, shardSize: 4, shardCount: 6, slashLength: 25,
+      laneLeft: 50, laneRight: 600, laneHeight: 48, laneOffset: 28, stripeSpacing: 22 },
+    budgets: { addedGzipBytes: 153600, newImageBytes: 2097152, frameP95Ms: 25,
+      heapBytes: 134217728, idleTaskPercent: 2, hiddenAdvanceMs: 0 },
+    speeds: [1, 2, 4], heroScale: 1, enemyScale: 1, bossScale: 1, logEntries: 18,
+    background: '#1d2335', partyColor: '#8fd8df', dangerColor: '#ff9696', healColor: '#a5d5ad', goldColor: '#f5cb7b' },
+} as const;
+
+export const HEROES: readonly Hero[] = ['guardian', 'witch', 'alchemist'];
+export const NAMES: Record<Role, string> = {
+  guardian: 'Mochi', witch: 'Soot', alchemist: 'Clover', guard: 'Button Guard', flanker: 'Sock Skipper',
+  ranger: 'Needle Moth', healer: 'Teacup Healer', charger: 'Spool Ram', elite: 'Kettle Knight',
+  yarn: 'Yarn Giant', thread: 'Binding Thread', dummy: 'Practice Cushion',
+};
+export const KITS: Record<Hero, readonly string[]> = {
+  guardian: ['shieldBash', 'rally', 'hearthwall'], witch: ['threadSnare', 'emberOrb', 'lanternstorm'],
+  alchemist: ['milkFlask', 'mossFlask', 'nineLives'],
+};
+export const PASSIVES: Record<Hero, { name: string; description: string }> = {
+  guardian: { name: 'Steadfast', description: 'Interrupting an enemy raises a personal shield.' },
+  witch: { name: 'Warm Wick', description: 'Hitting a burning target lights a lantern and charges the ultimate.' },
+  alchemist: { name: 'Last Sip', description: 'Healing an injured ally leaves a small shield.' },
+};
+const routine = { cooldownMs: 0, windupMs: 250, travelMs: 300, power: 1, target: 'front' } as const;
+export const ABILITIES: Record<string, Ability> = {
+  guardianBasic: { ...routine, name: 'Hearthblade', shape: 'slash', melee: true, travelMs: 200, description: 'Approach and cut the front foe.' },
+  witchBasic: { ...routine, name: 'Wick Spark', shape: 'orb', description: 'A small pointed ember seeks the marked foe.' },
+  alchemistBasic: { ...routine, name: 'Sour Drop', shape: 'flask', description: 'A green flask arcs to the front foe.' },
+  shieldBash: { ...routine, name: 'Shield Bash', shape: 'bash', cooldownMs: 5500, power: 1.45, melee: true, travelMs: 200, status: 'stun', durationMs: 900, description: 'Stagger one foe. Interrupting triggers Steadfast.' },
+  rally: { ...routine, name: 'Rally', shape: 'rally', cooldownMs: 9500, target: 'self', power: 0, shield: 28, status: 'guard', durationMs: 4200, description: 'Taunt the enemy line and guard incoming hits.' },
+  hearthwall: { ...routine, name: 'Hearthwall', shape: 'wall', cooldownMs: 14000, ultimate: true, target: 'team', power: 0, shield: 70, status: 'guard', durationMs: 4500, description: 'A broad barrier shields every living ally.' },
+  threadSnare: { ...routine, name: 'Thread Snare', shape: 'thread', cooldownMs: 6400, radius: 100, power: 0.35, status: 'snare', durationMs: 1700, description: 'Hold a nearby group together for the next burst.' },
+  emberOrb: { ...routine, name: 'Ember Orb', shape: 'orb', cooldownMs: 7200, travelMs: 500, radius: 100, power: 2.2, status: 'burn', durationMs: 3600, description: 'Burst on a group. Burn stacks are capped at three.' },
+  lanternstorm: { ...routine, name: 'Lanternstorm', shape: 'storm', cooldownMs: 14000, windupMs: 1000, travelMs: 400, ultimate: true, radius: 135, power: 1.4, hits: 3, description: 'Mark a wide zone, then land three lantern strikes.' },
+  milkFlask: { ...routine, name: 'Milk Flask', shape: 'flask', cooldownMs: 5000, target: 'injured', power: 0, heal: 100, retarget: true, travelMs: 650, description: 'Arc to the most injured ally; retarget if they fall.' },
+  mossFlask: { ...routine, name: 'Moss Flask', shape: 'patch', cooldownMs: 9800, target: 'injured', power: 0, heal: 32, radius: 150, status: 'guard', durationMs: 4500, retarget: true, travelMs: 650, description: 'A marked moss patch protects allies inside its landing zone.' },
+  nineLives: { ...routine, name: 'Nine-Lives Shelter', shape: 'shelter', cooldownMs: 14000, target: 'team', ultimate: true, power: 0, heal: 55, shield: 65, cleanse: true, description: 'Cleanse harmful effects, heal, then shield the whole team.' },
+  guardAttack: { ...routine, name: 'Button Cut', shape: 'slash', melee: true, description: 'A deliberate front-line cut.' },
+  flankerAttack: { ...routine, name: 'Sock Skip', shape: 'slash', target: 'rear', melee: true, description: 'Leap toward the rear; taunt can redirect it.' },
+  rangerAttack: { ...routine, name: 'Needle Shot', shape: 'arrow', target: 'rear', travelMs: 550, description: 'A narrow needle trail aimed at a rear cat.' },
+  healerAttack: { ...routine, name: 'Teacup Mend', shape: 'mend', target: 'injured', power: 0, heal: 85, retarget: true, description: 'Mend the most injured living enemy.' },
+  chargerAttack: { ...routine, name: 'Spool Charge', shape: 'charge', windupMs: 1200, travelMs: 250, power: 1.5, heavy: true, melee: true, description: 'A striped danger lane precedes a heavy charge.' },
+  eliteAttack: { ...routine, name: 'Kettle Crush', shape: 'bash', windupMs: 1000, travelMs: 250, power: 1.4, heavy: true, melee: true, description: 'A heavy lid slam; interrupt before release.' },
+  yarnAttack: { ...routine, name: 'Spindle Sweep', shape: 'sweep', windupMs: 1400, travelMs: 200, power: 1.35, heavy: true, description: 'Sweep the striped lane. Guard its occupants.' },
+  crossSweep: { ...routine, name: 'Cross Stitch', shape: 'cross', windupMs: 1500, travelMs: 200, power: 1.1, heavy: true, target: 'rear', description: 'Phase two: two crossing lanes strike both rows.' },
+  bindThread: { ...routine, name: 'Loose End', shape: 'thread', windupMs: 1000, travelMs: 350, power: 0.3, target: 'rear', heavy: true, description: 'Bind one ally; destroy the thread to free them and expose the knot.' },
+  threadAttack: { ...routine, name: 'Tighten', shape: 'thread', power: 0.5, description: 'A thread tightens around its captive.' },
+  dummyAttack: { ...routine, name: 'Cushion Nudge', shape: 'bash', power: 0, description: 'A harmless practice tell.' },
+};
+import { RARITY_IDS, SLOT_IDS } from './content';
+export { SQUAD_CONFIG } from './squad/config';
+
+/**
+ * Classic tunables were signed off by the user on 2026-10-23
+ * (boss.powerGrowth 1.15 and relic.shardCost 30 changed at sign-off; the rest kept).
+ * Classic time is in seconds. Docs: docs/game-rules.md (keep in sync).
+ * ORIG1 is a separate default-off draft; timing units are explicit in docs/design/original-economy.md.
+ */
+export const CONFIG = {
+  /** ORIG1 gameplay remains OFF. The local catalog uses this default and opts in without changing it. */
+  features: { originalEconomy: false, cafeAdventure: false, squadCombat: false },
+  /** Original draft tables; see docs/design/original-economy.md for units and rationale. */
+  originalEconomy: {
+    revision: 'orig1-2026-11-02',
+    stats: {
+      hp: { name: 'Ninefold Stamina', description: 'How much punishment a cat can carry before resting.', base: 116, cap: null, unit: 'points' },
+      atk: { name: 'Pawprint Force', description: 'The starting strength of one landed hit.', base: 12, cap: null, unit: 'points' },
+      def: { name: 'Quiltguard', description: 'Padding that softens each incoming hit.', base: 7, cap: null, unit: 'rating' },
+      attackSpeed: { name: 'Quickstep Rhythm', description: 'Shortens the pause between ordinary attacks.', base: 0, cap: 0.65, unit: 'fraction' },
+      critChance: { name: 'Glint Focus', description: 'The share of hits that find a bright opening.', base: 0.035, cap: 0.42, unit: 'probability' },
+      critDamage: { name: 'Flare Payoff', description: 'Extra damage above a normal hit when an opening is found.', base: 0.55, cap: 1.1, unit: 'fraction' },
+      dodge: { name: 'Threadstep', description: 'The chance to slip entirely past an incoming hit.', base: 0.02, cap: 0.28, unit: 'probability' },
+      hpRegen: { name: 'Purr Reserve', description: 'The fraction of full stamina restored each second.', base: 0, cap: 0.012, unit: 'fraction/second' },
+      fishBonus: { name: 'Pantry Yield', description: 'Adds a share to fish earned from encounters.', base: 0, cap: 0.24, unit: 'fraction' },
+      xpBonus: { name: 'Trail Memory', description: 'Adds a share to experience earned from encounters.', base: 0, cap: 0.2, unit: 'fraction' },
+      materialFind: { name: 'Pocket Scouting', description: 'Raises material roll chances without changing gear quality.', base: 0, cap: 0.18, unit: 'fraction' },
+      bossDamage: { name: 'Gate Pressure', description: 'Adds a share of damage against the chapter guardian.', base: 0, cap: 0.22, unit: 'fraction' },
+    },
+    combat: { attackIntervalMs: 1250, defenseScale: 90, minDamage: 1 },
+    gear: {
+      maxLevel: 6,
+      levelGrowth: 0.055,
+      /** Fish to buy levels 2..6, before quality cost scaling; round up once. */
+      upgradeFish: [18, 29, 47, 76, 123],
+      /** Quality weights are conditional on receiving gear; basis points total 10000. */
+      qualities: {
+        common: { name: 'Hearthmade', multiplier: 1, costMultiplier: 1, weightBp: 6250 },
+        uncommon: { name: 'Trailstitched', multiplier: 1.22, costMultiplier: 1.18, weightBp: 2520 },
+        rare: { name: 'Lamplit', multiplier: 1.52, costMultiplier: 1.45, weightBp: 940 },
+        epic: { name: 'Aurorawoven', multiplier: 1.95, costMultiplier: 1.85, weightBp: 250 },
+        legendary: { name: 'Daybreakbound', multiplier: 2.45, costMultiplier: 2.3, weightBp: 40 },
+      },
+      items: {
+        seamblade: { name: 'Seamlight Saber', description: 'A curved edge with a stitched grip for steady patrols.', slot: 'weapon', weaponType: 'sword', stats: { atk: 7 } },
+        kettlemaul: { name: 'Kettlebelly Maul', description: 'A hollow workshop head gives every swing a low note.', slot: 'weapon', weaponType: 'hammer', stats: { atk: 9 } },
+        hemknives: { name: 'Hemskip Twins', description: 'Two small blades nest neatly in a folded apron.', slot: 'weapon', weaponType: 'daggers', stats: { atk: 5 } },
+        windowpike: { name: 'Windowline Pike', description: 'A long reach fashioned for narrow rooftop crossings.', slot: 'weapon', weaponType: 'spear', stats: { atk: 7 } },
+        rafterbow: { name: 'Rafterstring Bow', description: 'Its woven cord hums beneath the attic beams.', slot: 'weapon', weaponType: 'bow', stats: { atk: 6 } },
+        lanternrod: { name: 'Lanternwake Rod', description: 'A shaded lamp at the tip guides wandering sparks.', slot: 'weapon', weaponType: 'staff', stats: { atk: 8 } },
+        mossflasks: { name: 'Mossfoam Bottles', description: 'Soft glass sleeves keep the bubbling cargo snug.', slot: 'weapon', weaponType: 'flasks', stats: { atk: 6 } },
+        quiltcap: { name: 'Quiltfold Cap', description: 'A padded brim catches dust from the rafters.', slot: 'helmet', stats: { hp: 10, def: 2 } },
+        porchcoat: { name: 'Porchlight Coat', description: 'Broad patches keep the evening chill outside.', slot: 'armor', stats: { hp: 22, def: 4 } },
+        spoolmitts: { name: 'Spoolgrip Mitts', description: 'Reinforced palms hold fast on wet window ledges.', slot: 'gloves', stats: { hp: 6, def: 1 } },
+        eaveboots: { name: 'Eaveskip Boots', description: 'Quiet soles leave only a faint trail on the tiles.', slot: 'boots', stats: { hp: 8, def: 1 } },
+        chimecollar: { name: 'Firstchime Collar', description: 'A tiny chime marks the start of each watch.', slot: 'collar', stats: { critChance: 0.014 } },
+        pantrystud: { name: 'Pantrygleam Stud', description: 'A polished clasp recalls the promise of supper.', slot: 'earring', stats: { fishBonus: 0.025 } },
+        hemring: { name: 'Hemturn Band', description: 'A smooth loop keeps loose threads from catching.', slot: 'ring', stats: { attackSpeed: 0.018 } },
+        purrcharm: { name: 'Purrwell Token', description: 'A warm keepsake settles against a tired heartbeat.', slot: 'charm', stats: { hpRegen: 0.0015 } },
+      },
+    },
+    skills: {
+      /** Rank prices are incremental fish purchases; rank gates use character level. */
+      rankFish: [24, 58, 126],
+      unlockLevels: [2, 5, 9],
+      entries: {
+        seamsweep: { name: 'Seamlight Sweep', description: 'Draw a bright seam across one nearby foe.', weaponType: 'sword', trigger: 'cooldown', every: 9000, effect: 'damage', hits: 1, perRank: [1.2, 1.5, 1.8] },
+        kettlepulse: { name: 'Kettlefall Pulse', description: 'Release the stored ring of seven deliberate swings.', weaponType: 'hammer', trigger: 'attacks', every: 7, effect: 'damage', hits: 1, perRank: [1.4, 1.7, 2] },
+        hempair: { name: 'Hemskip Pair', description: 'Slip two quick cuts through the same opening.', weaponType: 'daggers', trigger: 'attacks', every: 9, effect: 'damage', hits: 2, perRank: [0.55, 0.68, 0.82] },
+        windowthrust: { name: 'Windowline Thrust', description: 'Place a measured jab beyond the nearest pawhold.', weaponType: 'spear', trigger: 'cooldown', every: 11000, effect: 'damage', hits: 1, perRank: [1.65, 1.95, 2.3] },
+        rafterecho: { name: 'Rafter Echo', description: 'Send a second note along the path of the first arrow.', weaponType: 'bow', trigger: 'attacks', every: 8, effect: 'damage', hits: 2, perRank: [0.6, 0.75, 0.9] },
+        lanternarc: { name: 'Lanternwake Arc', description: 'Gather a patient glow and spill it onto one foe.', weaponType: 'staff', trigger: 'cooldown', every: 12000, effect: 'damage', hits: 1, perRank: [1.9, 2.2, 2.6] },
+        mossparcel: { name: 'Mossfoam Parcel', description: 'Unwrap a cool poultice to mend your own scrapes.', weaponType: 'flasks', trigger: 'cooldown', every: 15000, effect: 'heal', hits: 1, perRank: [0.06, 0.085, 0.11] },
+      },
+    },
+    rewards: {
+      /** Fixed early-loop benchmark, not a replacement for stage/monster rewards. */
+      fishPerSecond: 0.42,
+      killIntervalSeconds: 6,
+      gearDropChance: 0.028,
+      offlineEfficiency: 0.55,
+      offlineCapSeconds: 6 * 3600,
+    },
+  },
+  /** Client presentation only. No grants, drops or server combat rules depend on these. */
+  gameplay: {
+    firstClaimMs: 10_000,
+    claimIntervalMs: 18_000,
+    closeCallHpFraction: 0.2,
+    greatRollThreshold: 0.8,
+    keyStats: 3,
+    coachSteps: 3,
+    juice: { maxParticles: 16, maxTweens: 32, maxLabels: 12, maxProjectiles: 8,
+      critStopMs: 60, maxShakePx: 2, flashMs: 70, chipTrailMs: 650,
+      anticipationMs: 180, settleMs: 480,
+      labelMs: 650, calmLabelMs: 220, shakeMs: 80, resourceGainMs: 900,
+      burstNormal: 3, burstCrit: 6, burstDefeat: 8 },
+    actor: { idleFrameMs: [700, 180, 120, 180, 600, 100, 120, 200], napFrameMs: 1400, equipFrameMs: [100, 140, 140, 180], napAfterMs: 12000 },
+  },
+  /** Default-off, local-only Sample adventure. Never used by server grants or replay. */
+  cafe: {
+    version: 1, seed: 1105, tickMs: 1000, maxStepSeconds: 3600, saveEverySeconds: 5,
+    firstFindSeconds: 8, encounterSeconds: 16, decisionSeconds: 8, bossGate: 8,
+    maxLog: 80, maxItems: 48, maxPatches: 999, startingPatches: 4,
+    gatherPatches: 2, riskPatches: 5, riskChance: 0.6, riskConsolation: 1,
+    encounters: { swiftChance: 0.5, swiftPatches: 7, thiefChance: 0.75, thiefPatches: 4,
+      hazardChance: 0.4, hazardPatches: 7, hazardInsight: 2, armorBonus: 1 },
+    luckyCapPerTour: 6, luckyExtra: 2, itemEvery: 2, maxInsight: 3, insightDamage: 0.08,
+    encounterXp: 2, bossXp: 12, questXp: 6, questPatches: 2,
+    hero: { hp: 160, damage: 13, guard: 0.35, guardCap: 0.7, regenCap: 5, pounceMultiplier: 2.4, pounceCooldown: 8 },
+    gear: { baseDamage: 2, baseHp: 6, chapterDamage: 1, chapterHp: 3, levelDamage: 1, levelHp: 4,
+      maxLevel: 3, keenDamage: 3, cushionedHp: 18, steadyGuard: 0.04, luckyPatches: 1,
+      fineChance: 0.28, brightChance: 0.08, fineMultiplier: 1.2, brightMultiplier: 1.4 },
+    sets: { two: 2, three: 3, four: 4, emberDamage: 0.18, emberCooldown: 2, emberExposure: 0.5,
+      mossHp: 0.2, mossRegen: 2, mossGuard: 0.12, starPatches: 1, starLuck: 0.1 },
+    forge: { craftCost: 8, steadyCost: 6, sparkCost: 3, sparkChance: 0.55, sparkLevels: 2, pityMisses: 3 },
+    boss: { hp: [480, 2200, 3400, 4800, 6600], damage: [25, 38, 49, 63, 78],
+      variance: 0.08, shieldReduction: 0.55, phaseThresholds: [0.67, 0.34], phaseDamage: [1, 1.12, 1.25], windupSeconds: 3, finalWindupSeconds: 2,
+      recoverySeconds: 2, enrageSeconds: 55, enrageDamage: 1.7, maxSeconds: 90,
+      correctExposureSeconds: 2, exposureDamage: 0.4, retrySeconds: 3, closeCallFraction: 0.2,
+      firstRewardPatches: 8, repeatRewardPatches: 2 },
+    tiers: [
+      { id: 'cozy', name: 'Cozy', hp: 1, damage: 1, quality: 0 },
+      { id: 'spirited', name: 'Spirited', hp: 1.25, damage: 1.15, quality: 0.1 },
+      { id: 'daring', name: 'Daring', hp: 1.55, damage: 1.35, quality: 0.2 },
+    ],
+    assist: { afterLosses: 2, damageReduction: 0.15, hpReduction: 0.1 },
+    mastery: { xpPerLevel: 40, maxLevel: 5, damagePerLevel: 0.02, hpPerLevel: 0.03, scoutPatches: 1 },
+    tour: { unlockClears: 3, maxBonusTours: 3, damagePerTour: 0.05 },
+    away: { minSeconds: 60, capSeconds: 7200, secondsPerPatch: 120, maxPatches: 30 },
+    quests: { patrol: 6, variety: 4, counters: 3, crafts: 2, boss: 1, perfect: 1, tour: 1 },
+    debug: { seconds: 60, patches: 80 },
+  },
+  /** Gear slots, in display order (content.ts). */
+  slots: SLOT_IDS,
+  /** Rarity tiers, lowest to highest (content.ts). */
+  rarities: RARITY_IDS,
+
+  hero: {
+    /** Power of a naked hero. */
+    basePower: 10,
+    /** Hero hit points per point of power (boss fight). */
+    hpPerPower: 12,
+    /** Damage per second per point of power (boss fight). */
+    damagePerPower: 1,
+    /** Chance of a critical hit per boss-fight round. */
+    critChance: 0.15,
+    /** Damage multiplier on a critical hit. */
+    critMultiplier: 2,
+  },
+
+  gear: {
+    /** Base stat (power) of a level 1 Common item, per slot. */
+    baseStat: { weapon: 8, helm: 4, armor: 5, ring: 3 },
+    /** Stat multiplier per rarity. */
+    rarityMultiplier: { common: 1, rare: 1.6, epic: 2.6, legendary: 4.2 },
+    /** Extra stat per item level above 1, as a fraction of the base stat. */
+    levelGrowth: 0.12,
+    /** Highest item level (drops and upgrades). */
+    maxLevel: 30,
+    /** Gold to upgrade an item from level 1 to 2. */
+    upgradeBaseCost: 25,
+    /** Cost growth per level. */
+    upgradeCostGrowth: 1.3,
+    /** Gold cost multiplier per rarity (better items cost more to upgrade). */
+    upgradeRarityCostMultiplier: { common: 1, rare: 1.5, epic: 2.5, legendary: 4 },
+  },
+
+  idle: {
+    /** Gold per second with zero power. */
+    baseGoldPerSecond: 1,
+    /** Extra gold per second per point of power. */
+    goldPerSecondPerPower: 0.1,
+    /** Seconds per enemy kill. Drops and shards roll once per kill. */
+    secondsPerKill: 4,
+    /** Maximum seconds of progress counted in one claim. */
+    offlineCapSeconds: 8 * 3600,
+    /** Share of gold/shards/drops earned while offline (0..1). */
+    offlineEfficiency: 0.5,
+    /** Seconds at the start of each claim paid at the full rate; the rest is offline. */
+    onlineWindowSeconds: 5 * 60,
+    /** Chance a kill drops a gear item. */
+    gearDropChance: 0.05,
+    /** Chance a kill drops shards. */
+    shardDropChance: 0.1,
+    /** Shards dropped when a shard drop happens. */
+    shardsPerDrop: 1,
+    /** Max gear items returned from a single claim (best kept). */
+    maxDropsPerClaim: 40,
+    /** Gear drop rarity weights (relative, need not sum to 1). */
+    dropRarityWeights: { common: 70, rare: 22, epic: 7, legendary: 1 },
+  },
+
+  boss: {
+    /** Boss power at level 1. */
+    basePower: 62,
+    /** Boss power growth per level (multiplicative). */
+    powerGrowth: 1.15,
+    /** Boss hit points per point of boss power. */
+    hpPerPower: 14,
+    /** Boss damage per second per point of boss power. */
+    damagePerPower: 1,
+    /** Damage roll spread, each round multiplied by 1 +/- this. */
+    damageSpread: 0.2,
+    /** Fight is lost if the boss survives this many rounds (1 round = 1 s). */
+    maxRounds: 60,
+    /** Highest boss level. */
+    maxLevel: 50,
+    /** Boss fights allowed per day (UTC+7). */
+    maxAttemptsPerDay: 5,
+  },
+
+  relic: {
+    /** Shards needed to forge one Relic. */
+    shardCost: 30,
+    /** Boss Keys needed to forge one Relic. */
+    bossKeyCost: 1,
+    /** Rarity odds in basis points (1/100 of a percent); must sum to 10000. */
+    rarityOddsBp: { common: 6000, rare: 2800, epic: 1000, legendary: 200 },
+  },
+
+  time: {
+    /** Seconds per forge/boss-key day. */
+    secondsPerDay: 86400,
+    /** The day resets at midnight Vietnam time (UTC+7). */
+    dayOffsetSeconds: 7 * 3600,
+  },
+
+  /** Tuning-target check used by tests: active play window in seconds. */
+  tuning: {
+    targetMinSeconds: 10 * 60,
+    targetMaxSeconds: 15 * 60,
+    minWinProbability: 0.5,
+  },
+} as const;
+
+export type Config = typeof CONFIG;
+
+**Reading root AGENTS**
+exec
+/bin/zsh -lc "rg --files -g AGENTS.md -g '"'!node_modules'"' -g '"'!reports'"' . && cat package.json && cat packages/game-rules/tsconfig.json" in /Users/bao/taskbar-hero-turn3d
+ exited 1 in 0ms:
+exec
+/bin/zsh -lc 'cat packages/game-rules/src/squad/engine.ts && cat packages/game-rules/src/squad/squad.test.ts && git status --short' in /Users/bao/taskbar-hero-turn3d
+ succeeded in 0ms:
+import { ABILITIES, HEROES, KITS, NAMES, SQUAD_CONFIG as C } from './config';
+import { alive, clamp, cooldown, has, inArea, interval, mitigated, random, selectTarget, tickCeil } from './rules';
+import type { Ability, Actor, Battle, BattleEvent, Cast, Command, CommandBody, Encounter, Hero, Preset, Role, StatusKind, Totals } from './types';
+
+const copy = <T>(x: T): T => JSON.parse(JSON.stringify(x)) as T;
+const zero = (): Totals => ({ damage: 0, healing: 0, shielding: 0, kills: 0 });
+const hero = (a: Actor): a is Actor & { role: Hero } => a.side === 'party';
+export function emit(b: Battle, event: Omit<BattleEvent, 'version' | 'seq' | 'tick' | 'time'>): void {
+  b.events.push(copy({ version: 1, seq: b.events.length, tick: b.tick, time: b.time, ...event }));
+}
+export function makeActor(role: Role, slot: number, id: string, preset: Preset = 'hearthkeepers'): Actor {
+  const side = HEROES.includes(role as Hero) ? 'party' : 'enemy';
+  const p = C.presets[preset], base = C.stats[role];
+  const stats = { ...base, hp: Math.round(base.hp * (side === 'party' ? p.hp : 1)),
+    attack: Math.round(base.attack * (side === 'party' ? p.attack : 1)),
+    speed: side === 'party' ? p.speed : 0, cdr: side === 'party' ? p.cdr : 0 };
+  const point = role === 'yarn' ? C.formation.boss : role === 'healer' ? C.formation.healer : (side === 'party' ? C.formation.party : C.formation.enemy)[slot]!;
+  return { ...point, id, role, name: NAMES[role], side, slot, row: side === 'party' ? (slot ? 'rear' : 'front')
+    : ['healer', 'ranger'].includes(role) ? 'rear' : 'front', hp: stats.hp, maxHp: stats.hp, shield: 0,
+    stats, statuses: [], cooldowns: {}, charge: C.ultimate.initial, auto: true, castId: null,
+    nextBasic: side === 'enemy' ? C.initialEnemyMs + slot * C.enemyOffsetMs : C.tickMs,
+    controlCount: 0, controlUntil: 0, immuneUntil: 0, passiveAt: 0, break: 0 };
+}
+export function createBattle(options: { seed?: number; preset?: Preset; encounter?: Encounter; wave?: number } = {}): Battle {
+  const seed = (options.seed ?? C.defaultSeed) >>> 0;
+  const b: Battle = { version: 1, seed, rng: seed || 1, tick: 0, time: 0, carry: 0,
+    encounter: options.encounter ?? 'patrol', preset: options.preset ?? 'hearthkeepers',
+    actors: [], casts: [], events: [], commands: [], commandSeq: 0, nextCastId: 1, priority: null,
+    tactic: C.presets[options.preset ?? 'hearthkeepers'].tactic, wave: clamp(Math.floor(options.wave ?? 0), 0, C.waves.length - 1),
+    transitionAt: null, phase: 1, enraged: false, nextAddAt: C.boss.firstAddMs,
+    nextThreadAt: C.boss.firstThreadMs, nextChargeAt: C.burn.tickMs, settled: false,
+    fishFound: 0, deaths: [], totals: {}, result: null };
+  b.actors = HEROES.map((r, i) => makeActor(r, i, r, b.preset));
+  // Author the opening: intercept, snare, orb, then a healing flask.
+  b.actors.forEach(a => {
+    const kit = KITS[a.role as Hero];
+    kit.forEach((id, i) => { a.cooldowns[id] = C.opening[a.role as Hero][i]!; });
+    b.totals[a.id] = zero();
+  });
+  spawnWave(b);
+  return b;
+}
+function spawnWave(b: Battle): void {
+  b.actors = b.actors.filter(a => a.side === 'party');
+  b.casts = []; b.priority = null; b.transitionAt = null;
+  const roles: readonly Role[] = b.encounter === 'boss' ? ['yarn'] : b.encounter === 'dummy' ? ['dummy']
+    : b.encounter === 'group' ? C.trainingRoles : C.waves[b.wave]!.roles;
+  roles.forEach((r, i) => {
+    const a = makeActor(r, i, `w${b.wave}-${r}-${i}`, b.preset);
+    a.nextBasic += b.time; b.actors.push(a); b.totals[a.id] = zero();
+  });
+  b.actors.forEach(a => { a.castId = null; });
+  emit(b, { type: 'wave_transition', wave: b.wave, actors: b.actors });
+}
+export function queueCommand(b: Battle, body: CommandBody, tick = b.tick + 1): Command {
+  const command: Command = { ...body, version: 1, tick: Math.max(b.tick + 1, Math.floor(tick)), seq: b.commandSeq++ };
+  b.commands.push(command); b.commands.sort((a, z) => a.tick - z.tick || a.seq - z.seq);
+  return command;
+}
+function commands(b: Battle): void {
+  for (const c of b.commands.filter(c => c.tick === b.tick)) {
+    const a = 'hero' in c ? b.actors.find(a => a.id === c.hero) : undefined;
+    if (c.type === 'priority') b.priority = b.actors.some(a => a.id === c.target && a.side === 'enemy' && alive(a)) ? c.target : null;
+    if (c.type === 'auto' && a) a.auto = c.enabled;
+    if (c.type === 'tactic') b.tactic = c.value;
+    if (c.type === 'ultimate' && a && hero(a)) beginCast(b, a, KITS[a.role][2]!);
+    emit(b, { type: 'command', source: a?.id, actor: a, target: b.priority ?? undefined, note: c.type });
+  }
+}
+export function shield(b: Battle, source: Actor, target: Actor, amount: number, skill: string): void {
+  if (!alive(target)) return;
+  const before = target.shield;
+  target.shield = Math.min(Math.round(target.maxHp * C.caps.shieldFraction), target.shield + Math.round(amount * (source.side === 'party' ? C.presets[b.preset].shield : 1)));
+  const added = target.shield - before;
+  b.totals[source.id]!.shielding += added;
+  emit(b, { type: 'shield', source: source.id, target: target.id, skill, amount: added, actor: target });
+}
+export function heal(b: Battle, source: Actor, target: Actor, amount: number, skill: string): void {
+  if (!alive(target)) return;
+  const injured = target.hp / target.maxHp < C.passive.injuredFraction;
+  const added = Math.min(target.maxHp - target.hp, Math.round(amount * (source.side === 'party' ? C.presets[b.preset].healing : 1)));
+  target.hp += added; b.totals[source.id]!.healing += added;
+  emit(b, { type: 'heal', source: source.id, target: target.id, amount: added, skill, actor: target });
+  if (source.role === 'alchemist' && injured && added && b.time >= source.passiveAt) {
+    source.passiveAt = b.time + C.passive.cooldownMs;
+    emit(b, { type: 'passive', source: source.id, target: target.id, skill: 'lastSip', actor: source });
+    shield(b, source, target, C.passive.alchemistShield, 'lastSip');
+  }
+  if (source.role === 'alchemist' && b.preset === 'hearthkeepers' && skill === 'milkFlask' && added)
+    shield(b, source, target, C.gear.afterhealShield, 'lastLight');
+}
+export function interrupt(b: Battle, a: Actor, source: Actor): boolean {
+  const cast = b.casts.find(c => c.id === a.castId && !c.released && !c.canceled);
+  if (!cast) return false;
+  cast.canceled = true; a.castId = null;
+  emit(b, { type: 'interrupt', source: source.id, target: a.id, cast, actor: a });
+  if (source.role === 'guardian' && b.time >= source.passiveAt) {
+    source.passiveAt = b.time + C.passive.cooldownMs;
+    emit(b, { type: 'passive', source: source.id, skill: 'steadfast', actor: source });
+    shield(b, source, source, C.passive.guardianShield, 'steadfast');
+  }
+  return true;
+}
+export function applyStatus(b: Battle, source: Actor, a: Actor, kind: StatusKind, duration: number, strength = 1): boolean {
+  if (!alive(a)) return false;
+  if (kind === 'stun' || kind === 'snare') {
+    if (b.time < a.immuneUntil) return false;
+    const initial = b.time >= a.controlUntil;
+    if (initial) a.controlUntil = b.time + C.control.continuousMs;
+    duration = tickCeil(Math.max(C.control.minDurationMs, duration * C.control.diminishing ** a.controlCount * (a.role === 'yarn' ? C.control.bossMultiplier : 1)));
+    duration = Math.min(duration, a.controlUntil - b.time);
+    if (duration <= 0) return false;
+    a.controlCount++;
+    a.immuneUntil = a.controlUntil + C.control.immuneMs;
+    // Existing control may finish; immunity prevents any overlapping chain extension.
+    if (kind === 'stun') interrupt(b, a, source);
+  }
+  const existing = a.statuses.find(s => s.kind === kind);
+  if (existing) {
+    existing.until = b.time + duration;
+    existing.strength = kind === 'burn' ? Math.min(C.caps.burn, existing.strength + strength) : Math.max(existing.strength, strength);
+    existing.source = source.id;
+  } else a.statuses.push({ kind, source: source.id, until: b.time + duration, strength, nextTick: b.time + C.burn.tickMs });
+  emit(b, { type: 'status_applied', source: source.id, target: a.id, note: kind, actor: a });
+  return true;
+}
+export function cleanse(b: Battle, source: Actor, a: Actor): void {
+  for (const s of [...a.statuses]) if (!['guard', 'exposed'].includes(s.kind)) {
+    a.statuses = a.statuses.filter(x => x !== s);
+    emit(b, { type: 'status_expired', source: source.id, target: a.id, note: `cleanse:${s.kind}`, actor: a });
+  }
+}
+function death(b: Battle, source: Actor, a: Actor): void {
+  interrupt(b, a, source); a.castId = null;
+  b.deaths.push(a.id); b.totals[source.id]!.kills++;
+  emit(b, { type: 'death', source: source.id, target: a.id, actor: a });
+  if (a.boundAlly) {
+    const ally = b.actors.find(x => x.id === a.boundAlly);
+    if (ally) cleanse(b, source, ally);
+    const boss = b.actors.find(x => x.role === 'yarn' && alive(x));
+    if (boss) applyStatus(b, source, boss, 'exposed', C.boss.exposedMs);
+  }
+}
+export function damage(b: Battle, source: Actor, target: Actor, raw: number, skill: string, roll = true): void {
+  if (!alive(target)) return;
+  const critical = roll && random(b) < clamp(source.stats.crit, 0, C.caps.crit);
+  const variance = roll ? 1 + (random(b) * 2 - 1) * C.variance : 1;
+  const guard = target.statuses.filter(s => s.kind === 'guard').reduce((n, s) => n + s.strength, 0);
+  const amount = raw <= 0 ? 0 : mitigated(raw * variance * (critical ? C.critMultiplier : 1)
+    * (b.enraged && source.side === 'enemy' ? C.boss.enrageMultiplier : 1)
+    * (has(target, 'exposed') ? C.boss.exposedMultiplier : 1), target.stats.defense, guard);
+  const absorbed = Math.min(target.shield, amount); target.shield -= absorbed;
+  const lost = Math.min(target.hp, amount - absorbed); target.hp -= lost;
+  b.totals[source.id]!.damage += lost + absorbed;
+  source.charge = Math.min(C.ultimate.max, source.charge + C.ultimate.perHit);
+  emit(b, { type: 'impact', source: source.id, target: target.id, amount, skill, critical, actor: target, note: absorbed ? `${absorbed} blocked` : undefined });
+  if (!alive(target)) death(b, source, target);
+  if (source.role === 'witch' && has(target, 'burn') && b.time >= source.passiveAt) {
+    source.passiveAt = b.time + C.passive.cooldownMs; source.charge = Math.min(C.ultimate.max, source.charge + C.passive.witchCharge);
+    emit(b, { type: 'passive', source: source.id, skill: 'warmWick', actor: source });
+  }
+  const boss = target.role === 'yarn' ? target : b.actors.find(a => a.role === 'yarn' && alive(a));
+  if (boss && alive(boss) && !has(boss, 'stun') && !has(boss, 'exposed')) {
+    if (target === boss) boss.break += skill === 'shieldBash' ? C.boss.bashBreak : C.boss.ordinaryBreak;
+    else if (target.role === 'guardian' && guard) boss.break += C.gear.guardedBreak;
+    if (boss.break >= C.boss.breakMax) {
+      boss.break = 0; applyStatus(b, source, boss, 'stun', C.boss.breakMs);
+      applyStatus(b, source, boss, 'exposed', C.boss.exposedMs);
+      emit(b, { type: 'break', source: source.id, target: boss.id, actor: boss });
+    }
+  }
+}
+function targetsFor(b: Battle, source: Actor, ability: Ability, target: Actor): Actor[] {
+  const friends = ['injured', 'team', 'self'].includes(ability.target);
+  const all = b.actors.filter(a => alive(a) && (friends ? a.side === source.side : a.side !== source.side));
+  if (ability.target === 'team') return all;
+  if (ability.shape === 'cross') return all;
+  if (ability.shape === 'sweep') return all.filter(a => Math.abs(a.y - target.y) <= C.boss.laneHalfWidth);
+  if (ability.radius) return all.filter(a => inArea(a, target, ability.radius!));
+  return [target];
+}
+export function beginCast(b: Battle, a: Actor, skill: string): boolean {
+  const ability = ABILITIES[skill];
+  if (!ability || !alive(a) || a.castId !== null || ['stun', 'snare', 'restrain'].some(s => has(a, s))) return false;
+  if ((a.cooldowns[skill] ?? 0) > b.time || (ability.ultimate && a.charge < C.ultimate.max)) return false;
+  if (ability.heavy && b.casts.filter(c => !c.released && !c.canceled && ABILITIES[c.skill]?.heavy).length >= C.maxHeavyWindups) return false;
+  const target = selectTarget(b, a, ability.target);
+  if (!target) return false;
+  const cast: Cast = { id: b.nextCastId++, source: a.id, skill, targets: targetsFor(b, a, ability, target).map(t => t.id),
+    start: b.time, release: b.time + ability.windupMs, impact: b.time + ability.windupMs + ability.travelMs,
+    origin: { x: a.x, y: a.y }, zone: { x: target.x, y: target.y }, released: false, canceled: false, hit: 0 };
+  if (ability.ultimate) a.charge = 0;
+  a.cooldowns[skill] = b.time + cooldown(ability.cooldownMs, a.stats);
+  a.castId = cast.id; a.nextBasic = b.time + interval(a.stats);
+  b.casts.push(cast); emit(b, { type: 'cast_start', source: a.id, target: target.id, skill, cast, actor: a });
+  return true;
+}
+function resolveCast(b: Battle, cast: Cast): void {
+  const source = b.actors.find(a => a.id === cast.source);
+  if (!source) return;
+  const ability = ABILITIES[cast.skill]!;
+  let targets = cast.targets.map(id => b.actors.find(a => a.id === id)).filter((a): a is Actor => !!a && alive(a));
+  if (!targets.length && ability.retarget) {
+    const next = selectTarget(b, source, ability.target);
+    if (next) { targets = [next]; cast.targets = [next.id]; cast.zone = { x: next.x, y: next.y };
+      emit(b, { type: 'retarget', source: source.id, target: next.id, skill: cast.skill, cast }); }
+  }
+  if (!targets.length) emit(b, { type: 'fizzle', source: source.id, skill: cast.skill, cast });
+  for (const target of targets) {
+    if (ability.cleanse) cleanse(b, source, target);
+    if (ability.power) damage(b, source, target, source.stats.attack * ability.power, cast.skill);
+    if (ability.heal) heal(b, source, target, ability.heal, cast.skill);
+    if (ability.shield) shield(b, source, target, ability.shield, cast.skill);
+    if (ability.status) applyStatus(b, source, target, ability.status, ability.durationMs!, ability.status === 'guard' ? C.guardFraction : 1);
+    if (cast.skill === 'rally') for (const enemy of b.actors.filter(a => a.side !== source.side && alive(a))) {
+      applyStatus(b, source, enemy, 'taunt', ability.durationMs!);
+      // Interception redirects unreleased targeted attacks, including the visible charge lane.
+      for (const pending of b.casts.filter(c => c.source === enemy.id && !c.released && !c.canceled)) {
+        const tell = ABILITIES[pending.skill]!;
+        if (['front', 'rear', 'caster'].includes(tell.target) && !tell.radius && !['cross', 'sweep'].includes(tell.shape)) {
+          pending.targets = [source.id]; pending.zone = { x: source.x, y: source.y };
+          emit(b, { type: 'retarget', source: enemy.id, target: source.id, skill: pending.skill, cast: pending });
+        }
+      }
+    }
+    if (cast.skill === 'bindThread' && alive(target)) spawnThread(b, source, target);
+  }
+  if (cast.skill === 'witchBasic' && b.preset === 'lanternbreakers' && targets[0]) {
+    const t = targets[0], next = b.actors.find(a => a.side !== source.side && a.id !== t.id && alive(a) && inArea(a, t, C.gear.pierceRadius));
+    if (next) damage(b, source, next, source.stats.attack * C.gear.pierceMultiplier, 'needleLantern');
+  }
+}
+function spawnThread(b: Battle, boss: Actor, target: Actor): void {
+  const enemies = b.actors.filter(a => a.side === 'enemy' && alive(a));
+  if (enemies.length >= C.maxEnemies || has(target, 'restrain')) return;
+  const slot = [C.threadSlot, ...C.formation.enemy.map((_, i) => i)].find(i => !enemies.some(a => a.slot === i));
+  if (slot === undefined) return;
+  const thread = makeActor('thread', slot, `thread-${b.nextCastId++}`, b.preset);
+  Object.assign(thread, C.formation.bossAdds[slot]);
+  thread.boundAlly = target.id; thread.nextBasic += b.time; b.actors.push(thread); b.totals[thread.id] = zero();
+  applyStatus(b, boss, target, 'restrain', C.boss.threadDurationMs);
+  applyStatus(b, target, boss, 'exposed', C.boss.exposedMs);
+  emit(b, { type: 'spawn', source: boss.id, actor: thread, note: 'Destroy the binding thread to free your ally.' });
+}
+function bossRules(b: Battle): void {
+  const boss = b.actors.find(a => a.role === 'yarn' && alive(a));
+  if (!boss) return;
+  if (b.phase === 1 && boss.hp <= boss.maxHp * C.boss.phaseFraction) {
+    b.phase = 2; emit(b, { type: 'boss_phase', source: boss.id, phase: 2, actor: boss, note: 'Cross Stitch: two lanes, both rows.' });
+  }
+  if (!b.enraged && b.time >= C.boss.enrageMs) {
+    b.enraged = true; emit(b, { type: 'enrage', source: boss.id, actor: boss });
+  }
+  if (b.time >= b.nextAddAt) {
+    const count = b.actors.filter(a => a.side === 'enemy' && alive(a)).length;
+    for (let i = 0; i < Math.min(C.boss.addsPerPhase, C.maxEnemies - count); i++) {
+      const slot = [...C.addSlots, ...C.formation.enemy.map((_, j) => j)].find(j => !b.actors.some(a => a.side === 'enemy' && alive(a) && a.slot === j));
+      if (slot === undefined) break;
+      const a = makeActor('flanker', slot, `add-${b.nextCastId++}`, b.preset);
+      Object.assign(a, C.formation.bossAdds[slot]);
+      a.nextBasic += b.time; b.actors.push(a); b.totals[a.id] = zero();
+      emit(b, { type: 'spawn', source: boss.id, actor: a, note: 'Loose threads join the fight.' });
+    }
+    b.nextAddAt += C.boss.addEveryMs;
+  }
+}
+function autoCast(b: Battle, a: Actor): void {
+  if (hero(a)) {
+    const kit = KITS[a.role];
+    const boss = b.actors.find(a => a.role === 'yarn' && alive(a));
+    const opening = !boss || has(boss, 'exposed');
+    if (a.auto && (b.tactic !== 'opening' || opening || a.role !== 'witch') && beginCast(b, a, kit[2]!)) return;
+    for (const skill of kit.slice(0, 2)) {
+      if (skill === 'milkFlask') {
+        const injured = selectTarget(b, a, 'injured');
+        if (!injured || injured.hp / injured.maxHp > C.healThreshold) continue;
+      }
+      if (beginCast(b, a, skill)) return;
+    }
+    if (b.time >= a.nextBasic) beginCast(b, a, `${a.role}Basic`);
+  } else if (b.time >= a.nextBasic) {
+    if (a.role === 'yarn' && b.time >= b.nextThreadAt && beginCast(b, a, 'bindThread')) {
+      b.nextThreadAt += C.boss.threadEveryMs; return;
+    }
+    beginCast(b, a, a.role === 'yarn' && b.phase === 2 ? 'crossSweep' : `${a.role}Attack`);
+  }
+}
+function finish(b: Battle, winner: 'party' | 'enemy'): void {
+  if (b.result) return;
+  if (winner === 'party' && !b.settled) {
+    b.settled = true; b.fishFound = b.encounter === 'patrol' ? C.waveFish : b.encounter === 'boss' ? C.bossFish : 0;
+    emit(b, { type: 'reward', amount: b.fishFound, note: 'Cosmetic fish found; no save or server grant.' });
+  }
+  const heroesLost = b.deaths.filter(id => HEROES.includes(id as Hero));
+  const rearFirst = heroesLost[0] === 'witch' || heroesLost[0] === 'alchemist';
+  b.result = { winner, durationMs: b.time, deaths: heroesLost, firstDeath: heroesLost[0] ?? null,
+    fishFound: b.fishFound, totals: copy(b.totals),
+    cause: winner === 'party' ? 'The cafe is safe for tonight.' : b.enraged || b.time >= C.maxDurationMs ? 'Not enough damage before enrage.'
+      : rearFirst ? 'Rear cats fell under ranged and flanking pressure.' : 'Front-line healing was exhausted.',
+    suggestion: winner === 'party' ? 'Try the other squad or mark a different opening.' : b.enraged ? 'Try Lanternbreakers and spend Lanternstorm on the exposed knot.'
+      : rearFirst ? 'Use Protect allies and mark the Needle Moth first.' : 'Use Hearthkeepers; hold Nine-Lives Shelter for the heavy windup.' };
+  emit(b, { type: 'fight_end', result: b.result, actors: b.actors });
+}
+export function step(b: Battle): void {
+  if (b.result) return;
+  b.tick++; b.time = b.tick * C.tickMs;
+  commands(b);
+  if (b.transitionAt !== null) { if (b.time >= b.transitionAt) { b.wave++; spawnWave(b); } else return; }
+  for (const a of b.actors.filter(alive)) for (const s of [...a.statuses]) {
+    if (b.time >= s.until) { a.statuses = a.statuses.filter(x => x !== s); emit(b, { type: 'status_expired', target: a.id, note: s.kind, actor: a }); }
+    else if (s.kind === 'burn' && b.time >= s.nextTick) {
+      s.nextTick += C.burn.tickMs; const src = b.actors.find(x => x.id === s.source);
+      if (src) damage(b, src, a, C.burn.damage * s.strength, 'burn', false);
+    }
+  }
+  // Cast insertion order is the deterministic tie-breaker. Released shots survive the caster.
+  for (const cast of b.casts) {
+    if (cast.canceled) continue;
+    if (!cast.released && b.time >= cast.release) {
+      cast.released = true; emit(b, { type: 'projectile_release', source: cast.source, skill: cast.skill, cast });
+    }
+    if (cast.released && b.time >= cast.impact) {
+      resolveCast(b, cast); cast.hit++;
+      if (cast.hit < (ABILITIES[cast.skill]!.hits ?? 1)) cast.impact += C.stormSpacingMs;
+      else { cast.canceled = true; const source = b.actors.find(a => a.id === cast.source); if (source?.castId === cast.id) source.castId = null; }
+    }
+  }
+  b.casts = b.casts.filter(c => !c.canceled);
+  const party = b.actors.filter(a => a.side === 'party' && alive(a));
+  if (!party.length || b.time >= C.maxDurationMs) { finish(b, 'enemy'); return; }
+  const enemies = b.actors.filter(a => a.side === 'enemy' && alive(a));
+  if (!enemies.length || (b.encounter === 'boss' && !enemies.some(a => a.role === 'yarn'))) {
+    if (b.encounter === 'patrol' && b.wave < C.waves.length - 1) { b.transitionAt = b.time + C.wavePauseMs; b.casts = []; }
+    else finish(b, 'party');
+    return;
+  }
+  bossRules(b);
+  if (b.time >= b.nextChargeAt) {
+    b.nextChargeAt += C.burn.tickMs;
+    for (const a of party) { a.charge = Math.min(C.ultimate.max, a.charge + C.ultimate.perSecond); emit(b, { type: 'charge', actor: a }); }
+  }
+  for (const a of b.actors.filter(alive)) autoCast(b, a);
+}
+/** Keep fractional wall-time, never truncate a hitch. Visibility pauses call this with no delta. */
+export function advance(b: Battle, deltaMs: number): BattleEvent[] {
+  const start = b.events.length;
+  if (!Number.isFinite(deltaMs) || deltaMs < 0 || b.result) return [];
+  b.carry += deltaMs;
+  while (b.carry + Number.EPSILON * C.clockTolerance >= C.tickMs && !b.result) {
+    b.carry -= C.tickMs; step(b);
+  }
+  return b.events.slice(start);
+}
+export function run(b: Battle): Battle { while (!b.result) step(b); return b; }
+import { describe, expect, it } from 'vitest';
+import fc from 'fast-check';
+import { CONFIG } from '../config';
+import { ABILITIES, HEROES, KITS, SQUAD_CONFIG as C } from './config';
+import { advance, applyStatus, beginCast, cleanse, createBattle, damage, heal, interrupt, makeActor, queueCommand, run, shield, step } from './engine';
+import { buffedAttack, cooldown, has, inArea, interval, mitigated, selectTarget } from './rules';
+import { createProjection, decodeCommands, encodeCommands, project, replayCommands } from './replay';
+import type { Actor, Battle, Hero, Preset, Role } from './types';
+
+const party = (b: Battle) => b.actors.filter(a => a.side === 'party');
+const foes = (b: Battle) => b.actors.filter(a => a.side === 'enemy');
+const idle = (b: Battle) => { for (const a of b.actors) { a.nextBasic = Infinity; a.auto = false; for (const k of Object.keys(ABILITIES)) a.cooldowns[k] = Infinity; } return b; };
+const ready = (a: Actor, skill: string) => { a.cooldowns[skill] = 0; a.castId = null; };
+
+describe('squad local boundary and content', () => {
+  it('is default off and has a distinct log format', () => {
+    expect(CONFIG.features.squadCombat).toBe(false);
+    expect(createBattle().version).toBe(1);
+    expect(() => decodeCommands('{"version":2,"commands":[]}')).toThrow();
+  });
+  it('has three independent heroes, nine activated skills and five ordinary roles plus elite', () => {
+    const b = createBattle();
+    expect(new Set(b.actors.map(a => a.id)).size).toBe(7);
+    expect(HEROES.flatMap(h => KITS[h])).toHaveLength(9);
+    expect(new Set(C.waves.flatMap(w => [...w.roles]))).toEqual(new Set(['guard', 'flanker', 'ranger', 'healer', 'charger', 'elite']));
+    expect(party(b).map(a => a.hp)).toEqual([683, 381, 426]);
+  });
+  it.each(Object.entries(ABILITIES))('%s has an explicit effect contract', (_id, a) => {
+    expect(a.shape).toBeTruthy(); expect(a.description.length).toBeGreaterThan(10);
+    expect(a.windupMs).toBeGreaterThanOrEqual(a.heavy || a.ultimate && a.shape === 'storm' ? 800 : 150);
+    expect(a.windupMs).toBeLessThanOrEqual(a.heavy || a.shape === 'storm' ? 1500 : 350);
+    expect(a.travelMs).toBeGreaterThan(0);
+    expect(a.windupMs % C.tickMs).toBe(0); expect(a.travelMs % C.tickMs).toBe(0);
+  });
+});
+
+describe('targeting and numerical rules', () => {
+  it('selects nearest front, rear, and the most injured fraction', () => {
+    const b = createBattle(), [g, w, a] = party(b);
+    expect(selectTarget(b, g!, 'front')!.role).toBe('guard');
+    expect(selectTarget(b, foes(b)[0]!, 'rear')!.side).toBe('party');
+    w!.hp = w!.maxHp / 2; a!.hp = a!.maxHp / 3;
+    expect(selectTarget(b, g!, 'injured')!.id).toBe('alchemist');
+  });
+  it('marks a backline caster and lets living taunt override it', () => {
+    const b = createBattle({ wave: 1 }), g = party(b)[0]!, healer = foes(b).find(a => a.role === 'healer')!;
+    b.priority = healer.id; expect(selectTarget(b, g, 'front')!.id).toBe(healer.id);
+    const guard = foes(b)[0]!; applyStatus(b, guard, g, 'taunt', 2000);
+    expect(selectTarget(b, g, 'front')!.id).toBe(guard.id);
+    guard.hp = 0; expect(selectTarget(b, g, 'front')!.id).toBe(healer.id);
+  });
+  it('caster tactic finds healer; protect tactic finds binding thread', () => {
+    const b = createBattle({ wave: 1 }); b.tactic = 'caster';
+    expect(selectTarget(b, party(b)[1]!, 'front')!.role).toBe('healer');
+    const t = makeActor('thread', 7, 'thread'); b.actors.push(t); b.tactic = 'protect';
+    expect(selectTarget(b, party(b)[1]!, 'front')!.id).toBe('thread');
+  });
+  it('includes the exact AoE boundary and excludes the next point', () => {
+    expect(inArea({ x: 3, y: 4 }, { x: 0, y: 0 }, 5)).toBe(true);
+    expect(inArea({ x: 3, y: 4.01 }, { x: 0, y: 0 }, 5)).toBe(false);
+  });
+  it('defense has diminishing returns and guard caps once', () => {
+    expect(mitigated(100, 80)).toBe(50); expect(mitigated(100, 240)).toBe(25);
+    expect(mitigated(100, 80, 10)).toBe(25); expect(mitigated(100, 0)).toBe(100);
+  });
+  it('caps attack speed, cooldown reduction and additive buffs', () => {
+    const s = { ...C.stats.guardian, speed: 900, cdr: 900 };
+    expect(interval(s)).toBe(Math.ceil(s.intervalMs / (1 + C.caps.speed) / C.tickMs) * C.tickMs);
+    expect(cooldown(10000, s)).toBe(6500);
+    expect(buffedAttack(100, [0.2, 0.2, 0.2])).toBe(130);
+    expect(buffedAttack(100, [0.1, 0.1, 0.1])).toBe(130);
+  });
+  it('defense and buffs remain finite for ordinary bounded inputs', () => {
+    fc.assert(fc.property(fc.integer({ min: 0, max: 10000 }), fc.integer({ min: 0, max: 10000 }), (atk, def) => {
+      expect(mitigated(atk, def)).toBeGreaterThanOrEqual(1);
+      expect(mitigated(atk, def)).toBeLessThanOrEqual(Math.max(1, atk));
+    }));
+  });
+});
+
+describe('casts, impacts, support and control', () => {
+  it('fizzles hostile projectiles when their locked target dies', () => {
+    const b = idle(createBattle()), w = party(b)[1]!, t = foes(b)[0]!;
+    ready(w, 'witchBasic'); beginCast(b, w, 'witchBasic'); advance(b, 250); t.hp = 0; advance(b, 300);
+    expect(b.events.some(e => e.type === 'fizzle')).toBe(true);
+    expect(b.events.filter(e => e.type === 'impact')).toHaveLength(0);
+  });
+  it('retargets a healing flask if its injured ally dies in flight', () => {
+    const b = idle(createBattle()), [g, w, a] = party(b); g!.hp = 1; w!.hp = 80;
+    ready(a!, 'milkFlask'); beginCast(b, a!, 'milkFlask'); advance(b, 250); g!.hp = 0; advance(b, 650);
+    expect(b.events.find(e => e.type === 'retarget')?.target).toBe(w!.id);
+    expect(w!.hp).toBeGreaterThan(80);
+  });
+  it('launched attacks survive caster death; unreleased attacks interrupt', () => {
+    const b = idle(createBattle()), w = party(b)[1]!, t = foes(b)[0]!;
+    ready(w, 'witchBasic'); beginCast(b, w, 'witchBasic'); advance(b, 250); w.hp = 0; advance(b, 300);
+    expect(t.hp).toBeLessThan(t.maxHp);
+    ready(t, 'guardAttack'); beginCast(b, t, 'guardAttack');
+    expect(interrupt(b, t, party(b)[0]!)).toBe(true);
+    expect(b.events.some(e => e.type === 'interrupt')).toBe(true);
+  });
+  it('area burst resolves each living actor inside the locked zone', () => {
+    const b = idle(createBattle()), w = party(b)[1]!, [t, inside, outside] = foes(b);
+    inside!.x = t!.x + ABILITIES.emberOrb!.radius!; inside!.y = t!.y;
+    outside!.x = inside!.x + 1; outside!.y = t!.y;
+    ready(w, 'emberOrb'); beginCast(b, w, 'emberOrb'); advance(b, 750);
+    expect(t!.hp).toBeLessThan(t!.maxHp); expect(inside!.hp).toBeLessThan(inside!.maxHp);
+    expect(outside!.hp).toBe(outside!.maxHp);
+  });
+  it('heals HP before granting capped shields; shields absorb before HP', () => {
+    const b = idle(createBattle()), g = party(b)[0]!, a = party(b)[2]!, e = foes(b)[0]!;
+    g.hp = 100; heal(b, a, g, 20, 'milkFlask'); shield(b, a, g, 100000, 'test');
+    expect(g.hp).toBeGreaterThan(100); expect(g.shield).toBe(Math.round(g.maxHp * C.caps.shieldFraction));
+    const hp = g.hp, before = g.shield; damage(b, e, g, 10, 'test', false);
+    expect(g.hp).toBe(hp); expect(g.shield).toBeLessThan(before);
+    expect(b.events.findIndex(e => e.type === 'heal')).toBeLessThan(b.events.findIndex(e => e.type === 'shield'));
+  });
+  it('never revives a dead actor with a heal or shield', () => {
+    const b = createBattle(), [g, , a] = party(b); g!.hp = 0;
+    heal(b, a!, g!, 200, 'test'); shield(b, a!, g!, 200, 'test');
+    expect(g!.hp).toBe(0); expect(g!.shield).toBe(0);
+  });
+  it('caps burn stacks, ticks them, expires them and preserves beneficial guard on cleanse', () => {
+    const b = idle(createBattle()), g = party(b)[0]!, e = foes(b)[0]!;
+    for (let i = 0; i < 8; i++) applyStatus(b, g, e, 'burn', 2500);
+    expect(e.statuses[0]!.strength).toBe(C.caps.burn); const hp = e.hp; advance(b, 1000); expect(e.hp).toBeLessThan(hp);
+    applyStatus(b, g, e, 'guard', 3000, C.guardFraction); cleanse(b, g, e);
+    expect(has(e, 'burn')).toBe(false); expect(has(e, 'guard')).toBe(true); advance(b, 3000); expect(has(e, 'guard')).toBe(false);
+  });
+  it('interrupt triggers Guardian passive and control cannot be chained forever', () => {
+    const b = idle(createBattle()), g = party(b)[0]!, e = foes(b).find(a => a.role === 'charger')!;
+    ready(e, 'chargerAttack'); beginCast(b, e, 'chargerAttack');
+    expect(applyStatus(b, g, e, 'stun', 2000)).toBe(true); expect(g.shield).toBeGreaterThan(0);
+    expect(applyStatus(b, g, e, 'stun', 9000)).toBe(false);
+    advance(b, C.control.continuousMs + C.control.immuneMs);
+    applyStatus(b, g, e, 'stun', 2000);
+    expect(e.statuses.find(s => s.kind === 'stun')!.until - b.time).toBeLessThan(2000);
+  });
+  it('Witch burning-hit passive grants charge; Alchemist injured heal grants shield', () => {
+    const b = createBattle(), [g, w, a] = party(b), e = foes(b)[0]!;
+    applyStatus(b, w!, e, 'burn', 2000); const charge = w!.charge; damage(b, w!, e, 20, 'test', false);
+    expect(w!.charge).toBeGreaterThan(charge + C.ultimate.perHit);
+    g!.hp = 20; heal(b, a!, g!, 30, 'test'); expect(g!.shield).toBeGreaterThan(0);
+    expect(b.events.filter(e => e.type === 'passive').map(e => e.skill)).toEqual(['warmWick', 'lastSip']);
+  });
+  it('Rally redirects an unreleased charge and guards its target', () => {
+    const b = idle(createBattle()), g = party(b)[0]!, e = foes(b).find(a => a.role === 'charger')!;
+    ready(e, 'chargerAttack'); beginCast(b, e, 'chargerAttack');
+    ready(g, 'rally'); beginCast(b, g, 'rally'); advance(b, 550);
+    expect(has(g, 'guard')).toBe(true); expect(has(e, 'taunt')).toBe(true);
+    expect(b.events.some(e => e.type === 'retarget' && e.target === g.id)).toBe(true);
+  });
+  it('taunt cannot collapse a ground sweep into a single-target attack', () => {
+    const b = idle(createBattle({ encounter: 'boss' })), g = party(b)[0]!, boss = foes(b)[0]!;
+    ready(boss, 'crossSweep'); beginCast(b, boss, 'crossSweep');
+    ready(g, 'rally'); beginCast(b, g, 'rally'); advance(b, 550);
+    expect(b.casts.find(c => c.skill === 'crossSweep')!.targets).toHaveLength(3);
+  });
+  it('Nine-Lives cleanses, heals, then shields all living heroes', () => {
+    const b = idle(createBattle()), a = party(b)[2]!, enemy = foes(b)[0]!;
+    for (const h of party(b)) { h.hp = 100; applyStatus(b, enemy, h, 'burn', 5000); }
+    a.charge = C.ultimate.max; ready(a, 'nineLives'); beginCast(b, a, 'nineLives'); advance(b, 550);
+    expect(party(b).every(h => !has(h, 'burn') && h.hp > 100 && h.shield > 0)).toBe(true);
+  });
+  it('Lanternstorm hits three times from a single marked cast', () => {
+    const b = idle(createBattle({ encounter: 'dummy' })), w = party(b)[1]!;
+    w.charge = C.ultimate.max; ready(w, 'lanternstorm'); beginCast(b, w, 'lanternstorm'); advance(b, 2300);
+    expect(b.events.filter(e => e.type === 'impact' && e.skill === 'lanternstorm')).toHaveLength(3);
+    expect(w.charge).toBeLessThan(C.ultimate.max);
+  });
+  it.each(['hearthkeepers', 'lanternbreakers'] as Preset[])('%s gear changes behavior', preset => {
+    const b = idle(createBattle({ preset })), [g, w, a] = party(b);
+    if (preset === 'hearthkeepers') {
+      g!.hp = 100; heal(b, a!, g!, 100, 'milkFlask');
+      expect(b.events.some(e => e.skill === 'lastLight')).toBe(true);
+    } else {
+      ready(w!, 'witchBasic'); beginCast(b, w!, 'witchBasic'); advance(b, 550);
+      expect(b.events.some(e => e.skill === 'needleLantern')).toBe(true);
+    }
+  });
+});
+
+describe('encounters, threat and boss mechanics', () => {
+  it('plays the authored intercept, three-foe snare, burst and injured-Guardian heal', () => {
+    const b = createBattle({ seed: C.defaultSeed }); advance(b, 6500);
+    const snare = b.events.find(e => e.type === 'cast_start' && e.skill === 'threadSnare')!;
+    const orb = b.events.find(e => e.type === 'cast_start' && e.skill === 'emberOrb')!;
+    const charge = b.events.find(e => e.type === 'cast_start' && e.skill === 'chargerAttack')!;
+    expect(snare.cast!.targets.map(id => b.actors.find(a => a.id === id)!.role)).toEqual(['guard', 'flanker', 'flanker']);
+    expect(orb.cast!.targets).toEqual(snare.cast!.targets);
+    expect(charge.target).toBe('guardian');
+    const milk = b.events.find(e => e.type === 'heal' && e.skill === 'milkFlask')!;
+    expect(milk.target).toBe('guardian'); expect(milk.amount).toBeGreaterThan(0);
+    expect(milk.time).toBeGreaterThan(orb.time);
+  });
+  it('persists hero HP across all three waves and settles rewards exactly once', () => {
+    const b = idle(createBattle()), g = party(b)[0]!; g.hp = 123;
+    for (let i = 0; i < 3; i++) {
+      for (const e of foes(b)) e.hp = 0;
+      step(b); advance(b, C.wavePauseMs); expect(g.hp).toBe(123);
+    }
+    expect(b.result?.winner).toBe('party'); expect(b.fishFound).toBe(C.waveFish);
+    advance(b, 100000); step(b);
+    expect(b.events.filter(e => e.type === 'reward')).toHaveLength(1);
+    expect(b.events.filter(e => e.type === 'wave_transition')).toHaveLength(3);
+    expect(createBattle().actors[0]!.hp).toBe(createBattle().actors[0]!.maxHp);
+  });
+  it('offsets routines and caps concurrent heavy windups', () => {
+    const b = createBattle({ encounter: 'group' });
+    expect(new Set(foes(b).map(a => a.nextBasic)).size).toBe(8);
+    for (let i = 0; i < 600; i++) { step(b); expect(b.casts.filter(c => !c.released && ABILITIES[c.skill]!.heavy).length).toBeLessThanOrEqual(1); }
+  });
+  it('accepts auto and tactic commands during the breath between waves', () => {
+    const b = idle(createBattle());
+    for (const a of foes(b)) a.hp = 0;
+    step(b);
+    queueCommand(b, { type: 'auto', hero: 'witch', enabled: false });
+    queueCommand(b, { type: 'tactic', value: 'caster' });
+    advance(b, C.wavePauseMs);
+    expect(b.wave).toBe(1); expect(b.tactic).toBe('caster');
+    expect(party(b)[1]!.auto).toBe(false);
+    expect(b.events.filter(e => e.type === 'command')).toHaveLength(2);
+  });
+  it('phase two introduces cross-lane sweeps and enrage increases pressure', () => {
+    const b = idle(createBattle({ encounter: 'boss' })), boss = foes(b)[0]!;
+    boss.hp = boss.maxHp / 2; step(b); expect(b.phase).toBe(2);
+    b.time = C.boss.enrageMs - C.tickMs; b.tick = b.time / C.tickMs; step(b); expect(b.enraged).toBe(true);
+    expect(b.events.some(e => e.type === 'enrage')).toBe(true);
+    ready(boss, 'crossSweep'); expect(beginCast(b, boss, 'crossSweep')).toBe(true);
+    expect(b.casts.find(c => c.skill === 'crossSweep')!.targets).toHaveLength(3);
+  });
+  it('thread restraint is freed by killing its own actor and exposes the knot', () => {
+    const b = idle(createBattle({ encounter: 'boss' })), boss = foes(b)[0]!;
+    ready(boss, 'bindThread'); beginCast(b, boss, 'bindThread'); advance(b, 1350);
+    const thread = foes(b).find(a => a.role === 'thread')!; expect(thread).toBeTruthy();
+    const ally = b.actors.find(a => a.id === thread.boundAlly)!; expect(has(ally, 'restrain')).toBe(true);
+    damage(b, party(b)[0]!, thread, 9999, 'test', false);
+    expect(has(ally, 'restrain')).toBe(false); expect(has(boss, 'exposed')).toBe(true);
+  });
+  it('break exposes the knot but repeated control meets resistance', () => {
+    const b = createBattle({ encounter: 'boss' }), boss = foes(b)[0]!, g = party(b)[0]!;
+    boss.break = C.boss.breakMax - C.boss.bashBreak;
+    damage(b, g, boss, 1, 'shieldBash', false);
+    expect(has(boss, 'exposed')).toBe(true); expect(boss.break).toBe(0);
+    expect(b.events.some(e => e.type === 'break')).toBe(true);
+  });
+  it('bounds boss adds by the global enemy cap', () => {
+    const b = idle(createBattle({ encounter: 'boss' }));
+    for (let i = 0; i < C.maxDurationMs / C.tickMs; i++) {
+      step(b); const living = foes(b).filter(a => a.hp > 0);
+      expect(living.length).toBeLessThanOrEqual(C.maxEnemies);
+      expect(new Set(living.map(a => `${a.x},${a.y}`)).size).toBe(living.length);
+    }
+  });
+  it('defeat explains the first casualty and provides an adjustment', () => {
+    const b = createBattle(), e = foes(b)[0]!;
+    for (const role of ['witch', 'guardian', 'alchemist'] as Hero[]) damage(b, e, b.actors.find(a => a.id === role)!, 99999, 'test', false);
+    step(b); expect(b.result?.firstDeath).toBe('witch'); expect(b.result?.cause).toContain('Rear'); expect(b.result?.suggestion).toContain('Needle');
+  });
+});
+
+describe('deterministic clocks, event projection and command round-trip', () => {
+  it.each([50, 60, 144])('same log at %iHz as at fixed simulation ticks', hz => {
+    const options = { seed: 47, encounter: 'patrol' as const };
+    const expected = run(createBattle(options)), b = createBattle(options);
+    while (!b.result) advance(b, 1000 / hz);
+    expect(b.events).toEqual(expected.events); expect(b.result).toEqual(expected.result);
+  });
+  it('survives a long-frame hitch and ignores invalid delta input', () => {
+    const b = createBattle({ seed: 7 }); advance(b, NaN); advance(b, -1); expect(b.tick).toBe(0);
+    advance(b, 3749); while (!b.result) advance(b, 1000 / 60);
+    expect(b.events).toEqual(run(createBattle({ seed: 7 })).events);
+  });
+  it('replays resolved events to the identical actor state and result, without simulation', () => {
+    const b = run(createBattle({ encounter: 'boss' })), p = project(createProjection(), b.events);
+    expect(Object.values(p.actors)).toEqual(b.actors); expect(p.result).toEqual(b.result); expect(p.fishFound).toBe(b.fishFound);
+  });
+  it('round-trips ordered commands and rejects malformed versions/actions', () => {
+    const b = createBattle({ seed: 29 });
+    queueCommand(b, { type: 'auto', hero: 'witch', enabled: false }, 1);
+    queueCommand(b, { type: 'priority', target: foes(b)[1]!.id }, 2);
+    queueCommand(b, { type: 'ultimate', hero: 'witch' }, 400);
+    queueCommand(b, { type: 'tactic', value: 'caster' }, 500); run(b);
+    const log = decodeCommands(encodeCommands(b.commands)); expect(log).toEqual(b.commands);
+    expect(replayCommands({ seed: 29 }, log).events).toEqual(b.events);
+    expect(() => decodeCommands('{"format":"squad-local-commands","version":1,"commands":[{"version":1,"tick":1,"seq":0,"type":"grant"}]}')).toThrow();
+  });
+  it('different seeds change rolls; each seed remains reproducible', () => {
+    const a = run(createBattle({ seed: 11 })), b = run(createBattle({ seed: 12 }));
+    expect(a.events).not.toEqual(b.events);
+    expect(a.events).toEqual(run(createBattle({ seed: 11 })).events);
+  });
+  it('property: bounded HP/shield and finite damage for ten seeds in both presets', () => {
+    fc.assert(fc.property(fc.integer({ min: 1, max: 99999 }), fc.constantFrom<Preset>('hearthkeepers', 'lanternbreakers'), (seed, preset) => {
+      const b = run(createBattle({ seed, preset }));
+      for (const a of b.actors) { expect(a.hp).toBeGreaterThanOrEqual(0); expect(a.hp).toBeLessThanOrEqual(a.maxHp); expect(a.shield).toBeLessThanOrEqual(Math.round(a.maxHp * C.caps.shieldFraction)); }
+      expect(b.result).not.toBeNull(); expect(Number.isFinite(b.result!.durationMs)).toBe(true);
+    }), { numRuns: 10 });
+  });
+});
+ M apps/web/package.json
+ M pnpm-lock.yaml
+?? packages/game-rules/src/squad/turn/
+
+**Planning battle engine**
+**Defining turn sequencing**
+**Modeling restrained skip action**
+**Checking stun action handling**
+**Planning actor queue timing**
+**Defining stable tie ordering**
+**Preserving queue tie order**
+**Aligning status durations**
+**Handling forced-skip history**
+**Implementing replay boundary handling**
+**Clarifying active-slot handling**
+codex
+The contract covers the required mechanics without a type change so far. I’m using separate action IDs for turn-boundary events, and keeping auto selection as an explicit policy call so previews and waiting never make decisions or consume RNG.
+exec
+/bin/zsh -lc 'cat package.json && cat packages/game-rules/tsconfig.json && cat tsconfig.base.json && ls reports/turn3d tools/turn3d' in /Users/bao/taskbar-hero-turn3d
+ succeeded in 0ms:
+{
+  "name": "taskbar-hero",
+  "private": true,
+  "version": "0.0.0",
+  "packageManager": "pnpm@10.28.0",
+  "scripts": {
+    "demo": "node tools/gameplay-demo.mjs",
+    "gen:deno": "node scripts/gen-deno-json.mjs",
+    "test": "node --test scripts/*.test.mjs && pnpm -r test",
+    "lint": "pnpm -r lint",
+    "build": "pnpm -r build",
+    "typecheck": "pnpm -r typecheck",
+    "onchain-proof": "node scripts/onchain-proof.mjs",
+    "art:generate": "python3 -B tools/art/visual.py && python3 -B tools/art/gameplay.py && python3 -B tools/art/gameplay-items.py && python3 -B tools/art/gameplay-relics.py && node tools/art/gameplay-sheets.mjs && python3 -B tools/art/gameplay2.py && python3 -B tools/art/squad.py",
+    "art:check": "python3 -B tools/art/visual.py --check && python3 -B tools/art/gameplay.py --check && python3 -B tools/art/gameplay-items.py --check && python3 -B tools/art/gameplay-relics.py --check && node tools/art/gameplay-sheets.mjs --check && python3 -B tools/art/gameplay2.py --check && python3 -B tools/art/squad.py --check"
+  }
+}
+{
+  "extends": "../../tsconfig.base.json",
+  "include": ["src"]
+}
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "lib": ["ES2022"],
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "resolveJsonModule": true,
+    "noEmit": true
+  }
+}
+reports/turn3d:
+BASE-CHECK.md
+PROGRESS.md
+logs
+models
+shots
+
+tools/turn3d:
+
+exec
+/bin/zsh -lc "rg -n 'turn/|getTimeline|startTurn|TURN_CONFIG' apps/web/src/game/squad3d packages/game-rules/src/index.ts" in /Users/bao/taskbar-hero-turn3d
+ exited 2 in 0ms:
+rg: apps/web/src/game/squad3d: No such file or directory (os error 2)
+
+2026-11-05T09:27:14.112895Z  WARN codex_core::responses_retry: stream disconnected - retrying sampling request (1/5 in 2.99630475s)... turn_id=01a1ab06-1a10-78c2-8459-e6e8396ade4e retries=1 max_retries=5 sampling_error=exceeded retry limit, last status: 429 Too Many Requests
+ERROR: Reconnecting... 1/5
+**Implementing queue setup**
+**Building skill config**
+exec
+/bin/zsh -lc "cat > reports/turn3d/CORE-NOTES.md <<'EOF'
+# Turn core integration notes
+
+Work in progress, 2026-11-05. No changes to the stable "'`types.ts` contract planned.
+
+- `createTurnBattle()` defaults to **campaign** (waves 0–2, then boss at wave 3). `patrol` ends after wave 2. `wave` optionally selects the first patrol/campaign wave.
+- `startTurn` removes the active slot from `queue`; the active actor is separate. `getTimeline` includes the current actor first, then future slots, with a default length of eight. Only the next committed enemy occurrence carries an intent; later repeated occurrences have no invented future intent.
+- Both heroes and enemies use explicit `chooseAction` calls. `getAutoAction` is a pure policy query, including for enemy turns; it never selects or resolves an action. Hero `auto` starts false. No create/start call makes a hero decision.
+- Dead, stunned, restrained, or interrupted actors lose their turn at `startTurn`, which returns the actor with phase `resolved`; call `endTurn` once to continue. There is no invented fifth hero button. Replay drains these forced boundaries without recording a decision.
+- Event action IDs are partitioned into three plans per turn: start boundary, selected action, end boundary. Each plan has nondecreasing beats, so burn/status boundary events never rewind into the next action'"'s beat 0. Initialization uses action ID 0.
+- Cooldowns and statuses count the affected actor's own subsequent turns. The applying turn does not shorten a self buff or newly used cooldown. "'`shieldTurns` follows the same convention.
+- `history` records every accepted choice, including enemy choices; replay is for completed choices at API boundaries. Direct debug mutation and standalone queue editing are not replay inputs. Ordinary skill delay/advance effects are reproduced by choices.
+- Cosmetic `fishFound` is local-only and settles once per cleared wave. There are no production save, economy, or network adapters.
+
+Validation and balance results will be appended when complete.
+EOF
+cat > packages/game-rules/src/squad/turn/config.ts <<'"'EOF'
+import { ABILITIES, HEROES, NAMES, PASSIVES, SQUAD_CONFIG } from '../config';
+import type { Hero, Role, TurnSkill } from './types';
+
+export { HEROES, NAMES };
+export const TURN_PASSIVES = PASSIVES;
+
+/** Independent local turn tuning. No real-time numbers or production rewards are changed. */
+export const TURN_CONFIG = {
+  version: 2, defaultSeed: 11, maxTurns: 650, preview: 8,
+  initiative: { unit: 1000, maxMove: 8, minSpeed: 1 },
+  defenseScale: 80, minDamage: 1, variance: 0.08, critMultiplier: 1.5,
+  caps: { crit: 0.4, guard: 0.5, shieldFraction: 0.6, burn: 3 },
+  guardFraction: 0.3, shieldTurns: 2, burnDamage: 12,
+  charge: { max: 100, initial: 15, action: 16, received: 7 },
+  passive: { cooldown: 2, guardianShield: 30, witchCharge: 12, alchemistShield: 30, injuredFraction: 0.65 },
+  control: { normalTurns: 1, bossTurns: 1, recoveryTurns: 1, bossRecoveryTurns: 2, delay: 2, bossDelay: 1 },
+  policy: { healThreshold: 0.78, urgentHeal: 0.45, guardThreshold: 0.7, shelterThreshold: 0.72,
+    priority: { thread: 100, healer: 75, charger: 55, elite: 45, ranger: 40, flanker: 30, guard: 20, yarn: 10, dummy: 0 },
+    activePriority: { thread: 140, healer: 90, charger: 65, elite: 55, ranger: 45, flanker: 35, guard: 20, yarn: 15, dummy: 0 },
+    woundedBonus: 20, killBonus: 100, exposedBonus: 85, threatBonus: 50 },
+  boss: { phaseFraction: 0.5, enrageTurns: 12, enrageMultiplier: 1.7, enrageGrowth: 0.12,
+    breakMax: 100, bashBreak: 30, ordinaryBreak: 7, guardedBreak: 12,
+    exposedTurns: 2, exposedMultiplier: 1.6, bindTurns: 3,
+    addsEvery: 4, addsPerWave: 2, maxEnemies: 8, threadSlot: 7, addSlots: [2, 3, 1, 4, 5, 6],
+    cycleOne: ['yarnAttack', 'bindThread'], cycleTwo: ['yarnAttack', 'bindThread', 'crossSweep'] },
+  gear: { pierceMultiplier: 0.5, afterhealShield: 20 },
+  localFish: { wave: 9, boss: 15 },
+  presets: {
+    hearthkeepers: { name: 'Hearthkeepers', hp: 1.12, attack: 1, healing: 1.12, shield: 1.15, speed: 1, gear: 'last-light' },
+    lanternbreakers: { name: 'Lanternbreakers', hp: 0.95, attack: 1.17, healing: 1, shield: 1, speed: 1.1, gear: 'needle-lantern' },
+  },
+  stats: {
+    guardian: { hp: 610, attack: 52, defense: 42, speed: 104, crit: 0.08 },
+    witch: { hp: 340, attack: 65, defense: 14, speed: 100, crit: 0.12 },
+    alchemist: { hp: 380, attack: 38, defense: 22, speed: 96, crit: 0.05 },
+    guard: { hp: 190, attack: 52, defense: 32, speed: 80, crit: 0.04 },
+    flanker: { hp: 110, attack: 32, defense: 5, speed: 105, crit: 0.08 },
+    ranger: { hp: 135, attack: 48, defense: 8, speed: 85, crit: 0.05 },
+    healer: { hp: 180, attack: 12, defense: 12, speed: 75, crit: 0 },
+    charger: { hp: 190, attack: 80, defense: 20, speed: 65, crit: 0.05 },
+    elite: { hp: 300, attack: 78, defense: 50, speed: 72, crit: 0.08 },
+    yarn: { hp: 2400, attack: 132, defense: 28, speed: 82, crit: 0 },
+    thread: { hp: 85, attack: 18, defense: 0, speed: 80, crit: 0 },
+    dummy: { hp: 1200, attack: 0, defense: 16, speed: 60, crit: 0 },
+  } satisfies Record<Role, { hp: number; attack: number; defense: number; speed: number; crit: number }>,
+  waves: SQUAD_CONFIG.waves,
+  trainingRoles: SQUAD_CONFIG.trainingRoles,
+} as const;
+
+const skill = (id: string, target: TurnSkill['target'], values: Partial<TurnSkill> = {}): TurnSkill => ({
+  id, name: ABILITIES[id]"'!.name, description: ABILITIES[id]!.description,
+  target, power: 1, cooldown: 0, chargeCost: 0, icon: ABILITIES[id]!.shape, ...values,
+});
+
+/** Three basics and nine activated hero skills; enemy identities match the comparison engine. */
+export const TURN_SKILLS: Record<string, TurnSkill> = {
+  guardianBasic: skill('"'guardianBasic', 'enemy', { melee: true }),
+  witchBasic: skill('witchBasic', 'enemy'),
+  alchemistBasic: skill('alchemistBasic', 'enemy'),
+  shieldBash: skill('shieldBash', 'enemy', { power: 1.35, cooldown: 2, status: 'stun', duration: 1, delay: 2, melee: true,
+    description: 'Interrupt one committed intent and delay its slot. Control resistance prevents repeated locks.' }),
+  rally: skill('rally', 'self', { power: 0, cooldown: 3, shield: 45, status: 'guard', duration: 2,
+    description: 'Guard and shield Mochi for two turns; taunt all hostile single-target intents.' }),
+  hearthwall: skill('hearthwall', 'allAllies', { power: 0, cooldown: 3, chargeCost: 100, shield: 95, status: 'guard', duration: 2 }),
+  threadSnare: skill('threadSnare', 'row', { power: 0.55, cooldown: 3, status: 'snare', duration: 1, delay: 2,
+    description: 'Damage and delay every living foe in the chosen row. Does not cancel their actions.' }),
+  emberOrb: skill('emberOrb', 'row', { power: 1.75, cooldown: 2, status: 'burn', duration: 2,
+    description: 'Burst across the chosen row and burn it for two affected-actor turns.' }),
+  lanternstorm: skill('lanternstorm', 'allEnemies', { power: 0.9, cooldown: 3, chargeCost: 100, hits: 3 }),
+  milkFlask: skill('milkFlask', 'ally', { power: 0, cooldown: 1, heal: 140 }),
+  mossFlask: skill('mossFlask', 'allAllies', { power: 0, cooldown: 3, heal: 45, status: 'guard', duration: 2 }),
+  nineLives: skill('nineLives', 'allAllies', { power: 0, cooldown: 3, chargeCost: 100, heal: 95, shield: 90, cleanse: true }),
+  guardAttack: skill('guardAttack', 'enemy', { melee: true }),
+  flankerAttack: skill('flankerAttack', 'enemy', { melee: true }),
+  rangerAttack: skill('rangerAttack', 'enemy'),
+  healerAttack: skill('healerAttack', 'ally', { power: 0, heal: 60 }),
+  chargerAttack: skill('chargerAttack', 'enemy', { power: 1.5, heavy: true, melee: true }),
+  eliteAttack: skill('eliteAttack', 'enemy', { power: 1.4, heavy: true, melee: true }),
+  yarnAttack: skill('yarnAttack', 'row', { power: 1.35, heavy: true }),
+  crossSweep: skill('crossSweep', 'allEnemies', { power: 1.1, heavy: true }),
+  bindThread: skill('bindThread', 'enemy', { power: 0.3, heavy: true }),
+  threadAttack: skill('threadAttack', 'enemy', { power: 0.5 }),
+  dummyAttack: skill('dummyAttack', 'enemy', { power: 0 }),
+};
+export const TURN_KITS: Record<Hero, readonly [string, string, string, string]> = {
+  guardian: ['guardianBasic', 'shieldBash', 'rally', 'hearthwall'],
+  witch: ['witchBasic', 'threadSnare', 'emberOrb', 'lanternstorm'],
+  alchemist: ['alchemistBasic', 'milkFlask', 'mossFlask', 'nineLives'],
+};
+EOF
+python3 - <<'PY'
+p='packages/game-rules/src/config.ts'
+s=open(p).read()
+line=\"export { TURN_CONFIG } from './squad/turn/config';\\n\"
+if line not in s: s=s.replace(\"export { SQUAD_CONFIG } from './squad/config';\\n\", \"export { SQUAD_CONFIG } from './squad/config';\\n\"+line)
+open(p,'w').write(s)
+PY" in /Users/bao/taskbar-hero-turn3d
+ succeeded in 0ms:
+2026-11-05T09:29:05.974264Z  WARN codex_core::responses_retry: stream disconnected - retrying sampling request (1/5 in 2.999898542s)... turn_id=01a1ab06-1a10-78c2-8459-e6e8396ade4e retries=1 max_retries=5 sampling_error=exceeded retry limit, last status: 429 Too Many Requests
+ERROR: Reconnecting... 1/5
+**Designing plan event buffer**
+**Designing plan event IDs**
+**Finalizing actor turn cleanup**
+**Tuning interrupt recovery**
+**Refining restraint cleanup**
+exec
+/bin/zsh -lc "cat > packages/game-rules/src/squad/turn/initiative.ts <<'EOF'
+import { TURN_CONFIG as C } from './config';
+import type { TimelineSlot, TurnActor, TurnBattle } from './types';
+
+export const interval = (a: TurnActor): number => C.initiative.unit / Math.max(C.initiative.minSpeed, a.speed);
+/** Seeded initial tie order. No RNG state is read or consumed by any preview. */
+function tie(seed: number, id: string): number {
+  let h = seed >>> 0;
+  for (let i = 0; i < id.length; i++) h = Math.imul(h "'^ id.charCodeAt(i), 16777619) >>> 0;
+  h ''^= h >>> 16; h = Math.imul(h, 0x85ebca6b); h ''^= h >>> 13;
+  return h >>> 0;
+}
+export function insertSlot(b: TurnBattle, queue: TimelineSlot[], slot: TimelineSlot): void {
+  if (queue.some(s => s.actorId === slot.actorId)) return;
+  const index = queue.findIndex(s => s.at > slot.at || (s.at === slot.at &&
+    (tie(b.seed, s.actorId) > tie(b.seed, slot.actorId) ||
+      (tie(b.seed, s.actorId) === tie(b.seed, slot.actorId) && s.actorId > slot.actorId))));
+  queue.splice(index < 0 ? queue.length : index, 0, slot);
+}
+/** Move one pending slot; active actors cannot be moved or duplicated. */
+export function moveSlot(b: TurnBattle, id: string, slots: number): boolean {
+  if (b.result || id === b.activeId || !Number.isFinite(slots)) return false;
+  const from = b.queue.findIndex(s => s.actorId === id);
+  if (from < 0 || !b.actors.some(a => a.id === id && a.hp > 0)) return false;
+  const to = Math.max(0, Math.min(b.queue.length - 1, from + Math.trunc(slots)));
+  if (from === to) return false;
+  const [entry] = b.queue.splice(from, 1);
+  const left = b.queue[to - 1]?.at ?? b.clock;
+  const right = b.queue[to]?.at;
+  entry!.at = right === undefined ? left + interval(b.actors.find(a => a.id === id)!) : (left + right) / 2;
+  // Queue order is authoritative for equal times created by explicit moves.
+  b.queue.splice(to, 0, entry!);
+  return true;
+}
+export function getTimeline(b: TurnBattle, n: number = C.preview): TimelineSlot[] {
+  if (b.result || !Number.isFinite(n) || n <= 0) return [];
+  const actors = new Map(b.actors.filter(a => a.hp > 0).map(a => [a.id, a]));
+  const queue = b.queue.filter(s => actors.has(s.actorId)).map(s => ({ actorId: s.actorId, at: s.at }));
+  if (b.activeId && actors.has(b.activeId)) queue.unshift({ actorId: b.activeId, at: b.clock });
+  const out: TimelineSlot[] = [], seen = new Set<string>();
+  while (queue.length && out.length < Math.floor(n)) {
+    const slot = queue.shift()!, intent = !seen.has(slot.actorId) ? b.intents[slot.actorId] : undefined;
+    out.push({ ...slot, ...(intent ? { intent: { ...intent, targetIds: [...intent.targetIds] } } : {}) });
+    seen.add(slot.actorId);
+    insertSlot(b, queue, { actorId: slot.actorId, at: slot.at + interval(actors.get(slot.actorId)!) });
+  }
+  return out;
+}
+EOF
+cat > packages/game-rules/src/squad/turn/targeting.ts <<'"'EOF'
+import { TURN_KITS, TURN_SKILLS } from './config';
+import type { Hero, LegalTurnAction, LegalTurnTarget, TurnActor, TurnBattle, TurnSkill } from './types';
+
+export const living = (a: TurnActor): boolean => a.hp > 0;
+export const hasStatus = (a: TurnActor, kind: string): boolean => a.statuses.some(s => s.kind === kind && s.turns > 0);
+export function taunter(b: TurnBattle, source: TurnActor): TurnActor | undefined {
+  const status = source.statuses.find(s => s.kind === 'taunt' && s.turns > 0 &&
+    b.actors.some(a => a.id === s.source && a.hp > 0 && a.side "'!== source.side));
+  return status ? b.actors.find(a => a.id === status.source) : undefined;
+}
+export function affected(b: TurnBattle, source: TurnActor, skill: TurnSkill, target: TurnActor): TurnActor[] {
+  const friendly = ['"'self', 'ally', 'allAllies'].includes(skill.target);
+  const all = b.actors.filter(a => living(a) && (friendly ? a.side === source.side : a.side "'!== source.side));
+  if (skill.target === '"'allAllies' || skill.target === 'allEnemies') return all;
+  if (skill.target === 'row') return all.filter(a => a.row === target.row);
+  return living(target) ? [target] : [];
+}
+export function skillIds(b: TurnBattle, a: TurnActor): readonly string[] {
+  if (a.side === 'party') return TURN_KITS[a.role as Hero];
+  const committed = b.intents[a.id]?.skillId;
+  return [committed ?? "'`${a.role}Attack`];
+}
+/** Target geometry is available before a turn, even when the action is on cooldown. */
+export function getLegalTargets(b: TurnBattle, skillId: string, actorId: string = b.activeId ?? '"''): LegalTurnTarget[] {
+  const source = b.actors.find(a => a.id === actorId), skill = TURN_SKILLS[skillId];
+  const forced = source && skill?.target === 'enemy' ? taunter(b, source) : undefined;
+  return b.actors.map(target => {
+    let reason = '';
+    if ("'!source) reason = '"'Actor does not exist.';
+    else if ("'!living(source)) reason = '"'Actor is defeated.';
+    else if ("'!skill || !skillIds(b, source).includes(skillId)) reason = '"'Skill is not in this actor’s kit or committed intent.';
+    else if ("'!living(target)) reason = '"'Target is defeated.';
+    else if (skill.target === 'self' && source.id "'!== target.id) reason = '"'This skill targets its caster.';
+    else if (['self', 'ally', 'allAllies'].includes(skill.target) && source.side "'!== target.side) reason = '"'Choose a living ally.';
+    else if (['enemy', 'row', 'allEnemies'].includes(skill.target) && source.side === target.side) reason = 'Choose a living opponent.';
+    else if (forced && forced.id "'!== target.id) reason = `Taunted by ${forced.name}; target ${forced.id}.`;
+    return { actorId: target.id, legal: !reason, reason: reason || (skill?.target === '"'row' ? "'`Affects the ${target.row} row.` : '"'Legal target.'),
+      affectedIds: "'!reason && source && skill ? affected(b, source, skill, target).map(a => a.id) : [] };
+  });
+}
+export function getLegalActions(b: TurnBattle, actorId: string = b.activeId ?? '"''): LegalTurnAction[] {
+  const a = b.actors.find(a => a.id === actorId);
+  if ("'!a) return [];
+  return skillIds(b, a).map(id => TURN_SKILLS[id]).filter((s): s is TurnSkill => !!s).map(skill => {
+    let reason = '"'';
+    if (b.result) reason = 'Battle has finished.';
+    else if ("'!living(a)) reason = '"'Actor is defeated.';
+    else if (a.id "'!== b.activeId) reason = '"'It is not this actor’s turn.';
+    else if (b.phase "'!== '"'choose') reason = b.phase === 'chosen' ? 'An action is already locked.' : 'This turn is not accepting a choice.';
+    else if (hasStatus(a, 'stun') || hasStatus(a, 'restrain')) reason = 'This actor cannot act this turn.';
+    else if ((a.cooldowns[skill.id] ?? 0) > 0) reason = "'`Cooldown: ${a.cooldowns[skill.id]} own turn(s).`;
+    else if (a.charge < skill.chargeCost) reason = `Requires ${skill.chargeCost} charge (${a.charge} available).`;
+    else if (!getLegalTargets(b, skill.id, a.id).some(t => t.legal)) reason = '"'No living legal target.';
+    return { skill, legal: "'!reason, reason: reason || '"'Ready.' };
+  });
+}
+EOF" in /Users/bao/taskbar-hero-turn3d
+ succeeded in 0ms:
+2026-11-05T09:30:58.747276Z  WARN codex_core::responses_retry: stream disconnected - retrying sampling request (1/5 in 2.999919667s)... turn_id=01a1ab06-1a10-78c2-8459-e6e8396ade4e retries=1 max_retries=5 sampling_error=exceeded retry limit, last status: 429 Too Many Requests
+ERROR: Reconnecting... 1/5
+**Building engine event sorting**
+**Implementing boss turn logic**
+**Writing encounter resolution**
+exec
+/bin/zsh -lc "cat > packages/game-rules/src/squad/turn/engine.ts <<'EOF'
+import { HEROES, NAMES, TURN_CONFIG as C, TURN_SKILLS } from './config';
+import { getTimeline, insertSlot, interval, moveSlot } from './initiative';
+import { affected, getLegalActions, getLegalTargets, hasStatus, living, taunter } from './targeting';
+import type { Hero, Role, Side, StatusKind, TurnActor, TurnBattle, TurnChoice, TurnEvent, TurnEventKind,
+  TurnIntent, TurnOptions, TurnSkill } from './types';
+
+export { getTimeline, getLegalActions, getLegalTargets };
+export { getAutoAction } from './policy';
+const copy = <T>(x: T): T => JSON.parse(JSON.stringify(x)) as T;
+const find = (b: TurnBattle, id: string): TurnActor | undefined => b.actors.find(a => a.id === id);
+const aliveSide = (b: TurnBattle, side: Side): TurnActor[] => b.actors.filter(a => living(a) && a.side === side);
+const has = hasStatus;
+const zero = () => ({ damage: 0, healing: 0, shielding: 0 });
+interface Plan { from: number; id: number; actorId: string; skillId: string }
+function plan(b: TurnBattle, actorId = '', skillId = ''): Plan {
+  return { from: b.events.length, id: (b.events.at(-1)?.actionId ?? -1) + 1, actorId, skillId };
+}
+function emit(b: TurnBattle, p: Plan, type: TurnEventKind, beat: number,
+  data: Partial<Omit<TurnEvent, 'version' | 'seq' | 'turn' | 'actionId' | 'type' | 'beat'>> = {}): void {
+  const actorId = data.actorId ?? p.actorId, targetIds = data.targetIds ?? [];
+  const actors = data.actors ?? b.actors.filter(a => a.id === actorId || targetIds.includes(a.id));
+  b.events.push(copy({ version: 2, seq: b.events.length, turn: b.turn, actionId: p.id, beat,
+    type, actorId, skillId: p.skillId, targetIds, amount: 0, ...data, actors }));
+}
+/** Batch consequences by presentation beat. Stable sorting preserves same-beat causality. */
+function closePlan(b: TurnBattle, p: Plan): TurnEvent[] {
+  emit(b, p, 'snapshot', 4, { actors: b.actors, intents: b.intents, wave: b.wave, bossPhase: b.bossPhase,
+    ...(b.result ? { result: b.result } : {}) });
+  const events = b.events.splice(p.from).sort((a, z) => a.beat - z.beat);
+  for (const event of events) { event.seq = b.events.length; b.events.push(event); }
+  return events;
+}
+function random(b: TurnBattle): number {
+  let n = b.rng; n "'^= n << 13; n ''^= n >>> 17; n ''^= n << 5;
+  b.rng = n >>> 0; return b.rng / 0x100000000;
+}
+function makeActor(role: Role, slot: number, id: string, b: TurnBattle): TurnActor {
+  const side: Side = HEROES.includes(role as Hero) ? '"'party' : 'enemy', base = C.stats[role], preset = C.presets[b.preset];
+  const hp = Math.round(base.hp * (side === 'party' ? preset.hp : 1));
+  return { id, role, name: NAMES[role], side, slot, row: side === 'party' ? (slot === 0 ? 'front' : 'rear')
+    : ['ranger', 'healer', 'thread'].includes(role) ? 'rear' : 'front',
+    hp, maxHp: hp, shield: 0, shieldTurns: 0, charge: side === 'party' ? C.charge.initial : 0,
+    attack: Math.round(base.attack * (side === 'party' ? preset.attack : 1)), defense: base.defense,
+    speed: base.speed * (side === 'party' ? preset.speed : 1), crit: base.crit, auto: false,
+    statuses: [], cooldowns: {}, turnsTaken: 0, break: 0, controlCount: 0, passiveReady: 0 };
+}
+function enemySkill(b: TurnBattle, a: TurnActor): string {
+  if (a.role "'!== '"'yarn') return "'`${a.role}Attack`;
+  const cycle = b.bossPhase >= 2 ? C.boss.cycleTwo : C.boss.cycleOne;
+  return cycle[b.bossTurns % cycle.length]!;
+}
+function chooseEnemyTarget(b: TurnBattle, source: TurnActor, skill: TurnSkill): TurnActor | undefined {
+  const friendly = ['"'ally', 'allAllies', 'self'].includes(skill.target);
+  const candidates = b.actors.filter(a => living(a) && (friendly ? a.side === source.side : a.side "'!== source.side));
+  if (skill.target === '"'self') return source;
+  if (friendly) return candidates.sort((a, z) => a.hp / a.maxHp - z.hp / z.maxHp || a.slot - z.slot || a.id.localeCompare(z.id))[0];
+  const forced = skill.target === 'enemy' ? taunter(b, source) : undefined;
+  if (forced) return forced;
+  if (source.boundAlly) {
+    const captive = candidates.find(a => a.id === source.boundAlly);
+    if (captive) return captive;
+  }
+  const rear = ['flanker', 'ranger'].includes(source.role) || skill.id === 'bindThread';
+  return candidates.sort((a, z) => {
+    if (skill.id === 'bindThread' && has(a, 'restrain') "'!== has(z, '"'restrain')) return Number(has(a, 'restrain')) - Number(has(z, 'restrain'));
+    const row = rear ? 'rear' : 'front';
+    return Number(z.row === row) - Number(a.row === row) || a.hp / a.maxHp - z.hp / z.maxHp || a.slot - z.slot || a.id.localeCompare(z.id);
+  })[0];
+}
+function commitIntent(b: TurnBattle, p: Plan, a: TurnActor, note = 'Committed next action.'): void {
+  if ("'!living(a) || a.side !== '"'enemy') return;
+  const skill = TURN_SKILLS[enemySkill(b, a)]"'!, target = chooseEnemyTarget(b, a, skill);
+  if (!target) { delete b.intents[a.id]; return; }
+  b.intents[a.id] = { actorId: a.id, skillId: skill.id, targetId: target.id,
+    targetIds: affected(b, a, skill, target).map(t => t.id), icon: skill.icon, label: skill.name,
+    countdown: a.id === b.activeId ? 0 : 1, interrupted: false };
+  emit(b, p, '"'intent', 4, { actorId: a.id, skillId: skill.id, targetIds: b.intents[a.id]"'!.targetIds, note, intents: b.intents });
+}
+function refreshIntents(b: TurnBattle, p: Plan, beat = 4): void {
+  for (const a of aliveSide(b, '"'enemy')) {
+    const intent = b.intents[a.id];
+    if ("'!intent) { commitIntent(b, p, a); continue; }
+    const skill = TURN_SKILLS[intent.skillId]!, old = find(b, intent.targetId);
+    const forced = skill.target === '"'enemy' ? taunter(b, a) : undefined;
+    const target = forced ?? (old && living(old) ? old : chooseEnemyTarget(b, a, skill));
+    if ("'!target) { delete b.intents[a.id]; continue; }
+    const ids = affected(b, a, skill, target).map(t => t.id);
+    const changed = intent.targetId !== target.id || ids.join('"'|') "'!== intent.targetIds.join('"'|');
+    intent.countdown = a.id === b.activeId ? 0 : a.role === 'yarn' ? 1 : b.queue.findIndex(s => s.actorId === a.id) + 1;
+    if (changed) {
+      intent.targetId = target.id; intent.targetIds = ids;
+      emit(b, p, 'intent', beat, { actorId: a.id, skillId: skill.id, targetIds: ids,
+        note: forced ? 'Taunt redirects the committed target.' : 'Target defeated; intent retargets.', intents: b.intents });
+    }
+  }
+  b.bossCountdown = b.activeId && find(b, b.activeId)?.role === 'yarn' ? 0 : 1;
+}
+function spawnWave(b: TurnBattle, p: Plan): void {
+  b.actors = b.actors.filter(a => a.side === 'party');
+  b.queue = b.queue.filter(s => find(b, s.actorId)?.side === 'party'); b.intents = {};
+  const boss = b.encounter === 'boss' || (b.encounter === 'campaign' && b.wave === C.waves.length);
+  const roles: readonly Role[] = boss ? ['yarn'] : b.encounter === 'dummy' ? ['dummy']
+    : b.encounter === 'group' ? C.trainingRoles : C.waves[b.wave]"'!.roles;
+  if (boss) { b.bossPhase = 1; b.bossTurns = 0; b.bossCountdown = 1; }
+  for (const [slot, role] of roles.entries()) {
+    const a = makeActor(role, slot, `w${b.wave}-${role}-${slot}`, b);
+    b.actors.push(a); b.totals[a.id] = zero();
+    insertSlot(b, b.queue, { actorId: a.id, at: b.clock + interval(a) });
+  }
+  emit(b, p, '"'wave_start', 4, { actors: b.actors, wave: b.wave, bossPhase: b.bossPhase });
+  for (const a of aliveSide(b, 'enemy')) commitIntent(b, p, a);
+  refreshIntents(b, p);
+}
+export function createTurnBattle(options: TurnOptions = {}): TurnBattle {
+  const seed = (options.seed ?? C.defaultSeed) >>> 0;
+  const encounter = options.encounter ?? 'campaign';
+  const initialWave = Number.isFinite(options.wave) ? Math.floor(options.wave"'!) : 0;
+  const b: TurnBattle = { version: 2, seed, rng: seed || 1, encounter, preset: options.preset ?? '"'hearthkeepers',
+    actors: [], queue: [], clock: 0, turn: 0, activeId: null, phase: 'ready', selected: null,
+    events: [], history: [], intents: {}, wave: encounter === 'boss' ? C.waves.length : Math.max(0, Math.min(C.waves.length - 1, initialWave)),
+    bossPhase: 0, bossTurns: 0, bossCountdown: 1, settledWaves: [], fishFound: 0, deaths: [], result: null, totals: {} };
+  b.actors = HEROES.map((role, slot) => makeActor(role, slot, role, b));
+  for (const a of b.actors) { b.totals[a.id] = zero(); insertSlot(b, b.queue, { actorId: a.id, at: interval(a) }); }
+  const p = plan(b); spawnWave(b, p); closePlan(b, p);
+  return b;
+}
+function charge(b: TurnBattle, p: Plan, a: TurnActor, amount: number, note: string): void {
+  if ("'!living(a) || a.side !== '"'party') return;
+  const before = a.charge; a.charge = Math.max(0, Math.min(C.charge.max, a.charge + amount));
+  if (before "'!== a.charge) emit(b, p, '"'charge', 2, { targetIds: [a.id], amount: a.charge - before, note });
+}
+function shield(b: TurnBattle, p: Plan, source: TurnActor, target: TurnActor, raw: number, skillId = p.skillId): void {
+  if ("'!living(target)) return;
+  const before = target.shield;
+  target.shield = Math.min(Math.round(target.maxHp * C.caps.shieldFraction), target.shield + Math.round(raw * (source.side === '"'party' ? C.presets[b.preset].shield : 1)));
+  const added = target.shield - before;
+  if (added <= 0) return;
+  target.shieldTurns = C.shieldTurns;
+  (b.totals[source.id] ??= zero()).shielding += added;
+  emit(b, p, 'shield', 2, { actorId: source.id, skillId, targetIds: [target.id], amount: added });
+}
+function passive(b: TurnBattle, p: Plan, source: TurnActor, skillId: string, targets: string[]): boolean {
+  if (source.turnsTaken < source.passiveReady || "'!living(source)) return false;
+  source.passiveReady = source.turnsTaken + C.passive.cooldown;
+  emit(b, p, '"'passive', 2, { actorId: source.id, skillId, targetIds: targets });
+  return true;
+}
+function heal(b: TurnBattle, p: Plan, source: TurnActor, target: TurnActor, raw: number): void {
+  if ("'!living(target)) return;
+  const injured = target.hp / target.maxHp < C.passive.injuredFraction;
+  const added = Math.min(target.maxHp - target.hp, Math.round(raw * (source.side === '"'party' ? C.presets[b.preset].healing : 1)));
+  target.hp += added; (b.totals[source.id] ??= zero()).healing += added;
+  emit(b, p, 'heal', 2, { actorId: source.id, targetIds: [target.id], amount: added });
+  if (source.role === 'alchemist' && injured && added > 0 && passive(b, p, source, 'lastSip', [target.id]))
+    shield(b, p, source, target, C.passive.alchemistShield, 'lastSip');
+  if (source.role === 'alchemist' && b.preset === 'hearthkeepers' && p.skillId === 'milkFlask' && added > 0)
+    shield(b, p, source, target, C.gear.afterhealShield, 'lastLight');
+}
+function expireStatus(b: TurnBattle, p: Plan, target: TurnActor, kind: StatusKind, note: string): void {
+  for (const s of target.statuses.filter(s => s.kind === kind)) {
+    target.statuses = target.statuses.filter(other => other "'!== s);
+    if (kind === '"'restrain') {
+      const thread = find(b, s.source);
+      if (thread?.role === 'thread') delete thread.boundAlly;
+    }
+    emit(b, p, 'status_expire', 2, { targetIds: [target.id], status: kind, note });
+  }
+}
+function cleanse(b: TurnBattle, p: Plan, target: TurnActor): void {
+  for (const s of [...target.statuses]) if (s.kind "'!== '"'guard') expireStatus(b, p, target, s.kind, "'`Cleanse: ${s.kind}.`);
+}
+function status(b: TurnBattle, p: Plan, source: TurnActor, target: TurnActor, kind: StatusKind, turns: number, strength = 1): boolean {
+  if (!living(target)) return false;
+  if (kind === '"'stun' || kind === 'snare') {
+    if (target.controlCount > 0) {
+      emit(b, p, 'fizzle', 2, { targetIds: [target.id], status: kind, note: 'Control resisted during recovery.' }); return false;
+    }
+    turns = Math.min(turns, target.role === 'yarn' ? C.control.bossTurns : C.control.normalTurns);
+    target.controlCount = turns + (target.role === 'yarn' ? C.control.bossRecoveryTurns : C.control.recoveryTurns);
+  }
+  const existing = target.statuses.find(s => s.kind === kind);
+  if (existing) {
+    existing.turns = Math.max(existing.turns, turns); existing.appliedTurn = b.turn; existing.source = source.id;
+    existing.strength = kind === 'burn' ? Math.min(C.caps.burn, existing.strength + strength) : Math.max(existing.strength, strength);
+  } else target.statuses.push({ kind, source: source.id, turns, strength, appliedTurn: b.turn });
+  emit(b, p, 'status_apply', 2, { actorId: source.id, targetIds: [target.id], status: kind, amount: turns });
+  return true;
+}
+function interrupt(b: TurnBattle, p: Plan, source: TurnActor, target: TurnActor): void {
+  const intent = b.intents[target.id];
+  if ("'!intent || intent.interrupted || !living(target)) return;
+  intent.interrupted = true;
+  emit(b, p, '"'interrupt', 2, { actorId: source.id, targetIds: [target.id], note: "'`Canceled ${intent.label}.`, intents: b.intents });
+  emit(b, p, '"'intent', 2, { actorId: target.id, skillId: intent.skillId, targetIds: intent.targetIds, note: 'Interrupted; next slot is lost.', intents: b.intents });
+  if (source.role === 'guardian' && passive(b, p, source, 'steadfast', [source.id])) shield(b, p, source, source, C.passive.guardianShield, 'steadfast');
+}
+function death(b: TurnBattle, p: Plan, source: TurnActor, target: TurnActor): void {
+  if (b.deaths.includes(target.id)) return;
+  b.deaths.push(target.id); b.queue = b.queue.filter(s => s.actorId "'!== target.id); delete b.intents[target.id];
+  target.shield = 0; target.shieldTurns = 0;
+  emit(b, p, '"'death', 3, { actorId: source.id, targetIds: [target.id] });
+  if (target.role === 'thread') {
+    const captive = target.boundAlly ? find(b, target.boundAlly) : undefined;
+    if (captive) {
+      const bound = captive.statuses.some(s => s.kind === 'restrain' && s.source === target.id);
+      if (bound) expireStatus(b, p, captive, 'restrain', 'Binding Thread destroyed; captive released.');
+    }
+    const boss = b.actors.find(a => a.role === 'yarn' && living(a));
+    if (boss) status(b, p, source, boss, 'exposed', C.boss.exposedTurns);
+  }
+  if (target.side === 'party') {
+    for (const thread of b.actors.filter(a => a.role === 'thread' && a.boundAlly === target.id && living(a))) {
+      thread.hp = 0; death(b, p, source, thread);
+    }
+  }
+  if (target.role === 'yarn') {
+    for (const add of aliveSide(b, 'enemy')) { add.hp = 0; death(b, p, source, add); }
+  }
+}
+function stagger(b: TurnBattle, p: Plan, source: TurnActor, boss: TurnActor, amount: number): void {
+  if ("'!living(boss) || has(boss, '"'exposed')) return;
+  boss.break = Math.min(C.boss.breakMax, boss.break + amount);
+  if (boss.break < C.boss.breakMax) return;
+  boss.break = 0; status(b, p, source, boss, 'exposed', C.boss.exposedTurns);
+  // Opening is guaranteed; loss of a boss action still respects its recovery window.
+  if (status(b, p, source, boss, 'stun', C.control.bossTurns)) interrupt(b, p, source, boss);
+  emit(b, p, 'boss_phase', 4, { targetIds: [boss.id], bossPhase: b.bossPhase, note: 'Staggered: the knot is exposed.' });
+}
+function damage(b: TurnBattle, p: Plan, source: TurnActor, target: TurnActor, raw: number, roll = true, skillId = p.skillId): void {
+  if ("'!living(target) || raw <= 0) return;
+  const critical = roll && random(b) < Math.min(C.caps.crit, source.crit);
+  const variance = roll ? 1 + (random(b) * 2 - 1) * C.variance : 1;
+  const guard = Math.min(C.caps.guard, target.statuses.filter(s => s.kind === '"'guard' && s.turns > 0).reduce((n, s) => n + s.strength, 0));
+  const enrage = source.role === 'yarn' && b.bossTurns >= C.boss.enrageTurns
+    ? C.boss.enrageMultiplier + (b.bossTurns - C.boss.enrageTurns) * C.boss.enrageGrowth : 1;
+  const amount = Math.max(C.minDamage, Math.round(raw * variance * (critical ? C.critMultiplier : 1) * enrage *
+    (has(target, 'exposed') ? C.boss.exposedMultiplier : 1) * C.defenseScale / (C.defenseScale + Math.max(0, target.defense)) * (1 - guard)));
+  const absorbed = Math.min(target.shield, amount), lost = Math.min(target.hp, amount - absorbed);
+  target.shield -= absorbed; target.hp -= lost;
+  (b.totals[source.id] ??= zero()).damage += lost + absorbed;
+  emit(b, p, 'damage', 2, { actorId: source.id, skillId, targetIds: [target.id], amount: lost + absorbed, critical,
+    note: absorbed ? "'`${absorbed} absorbed by shield; ${lost} HP lost.` : `${lost} HP lost.` });
+  charge(b, p, target, C.charge.received, '"'Charge from damage received.');
+  if (source.role === 'witch' && has(target, 'burn') && passive(b, p, source, 'warmWick', [target.id]))
+    charge(b, p, source, C.passive.witchCharge, 'Warm Wick.');
+  if ("'!living(target)) death(b, p, source, target);
+  const boss = b.actors.find(a => a.role === '"'yarn' && living(a));
+  if (boss) {
+    if (target === boss) stagger(b, p, source, boss, skillId === 'shieldBash' ? C.boss.bashBreak : C.boss.ordinaryBreak);
+    else if (source === boss && guard > 0) stagger(b, p, target, boss, C.boss.guardedBreak);
+  }
+}
+function spawnThread(b: TurnBattle, p: Plan, source: TurnActor, target: TurnActor): void {
+  if ("'!living(target) || has(target, '"'restrain') || aliveSide(b, 'enemy').length >= C.boss.maxEnemies) return;
+  const used = new Set(aliveSide(b, 'enemy').map(a => a.slot));
+  const slot = [C.boss.threadSlot, ...C.boss.addSlots].find(s => "'!used.has(s));
+  if (slot === undefined) return;
+  const thread = makeActor('"'thread', slot, "'`w${b.wave}-thread-${b.turn}`, b);
+  thread.boundAlly = target.id; b.actors.push(thread); b.totals[thread.id] = zero();
+  insertSlot(b, b.queue, { actorId: thread.id, at: b.clock + interval(thread) });
+  status(b, p, thread, target, '"'restrain', C.boss.bindTurns);
+  emit(b, p, 'spawn', 4, { actorId: source.id, targetIds: [thread.id], note: 'Destroy Binding Thread to release the captive and expose the knot.' });
+  commitIntent(b, p, thread);
+}
+function bossRules(b: TurnBattle, p: Plan, afterBossTurn = false): void {
+  const boss = b.actors.find(a => a.role === 'yarn' && living(a));
+  if ("'!boss) return;
+  if (b.bossPhase === 1 && boss.hp <= boss.maxHp * C.boss.phaseFraction) {
+    b.bossPhase = 2;
+    emit(b, p, '"'boss_phase', 4, { actorId: boss.id, bossPhase: 2, note: 'Cross Stitch joins the boss cycle.' });
+    // Already committed intent remains visible and unchanged; phase applies to the next commitment.
+  }
+  if ("'!afterBossTurn) return;
+  if (b.bossTurns === C.boss.enrageTurns) emit(b, p, '"'boss_phase', 4, { actorId: boss.id, bossPhase: b.bossPhase,
+    note: 'Enrage: each following boss turn increases damage.' });
+  if (b.bossTurns % C.boss.addsEvery "'!== 0) return;
+  for (let i = 0; i < C.boss.addsPerWave; i++) {
+    const enemies = aliveSide(b, '"'enemy');
+    if (enemies.length >= C.boss.maxEnemies) break;
+    const slot = C.boss.addSlots.find(s => "'!enemies.some(a => a.slot === s));
+    if (slot === undefined) break;
+    const add = makeActor('"'flanker', slot, "'`w${b.wave}-add-${b.turn}-${i}`, b);
+    b.actors.push(add); b.totals[add.id] = zero(); insertSlot(b, b.queue, { actorId: add.id, at: b.clock + interval(add) });
+    emit(b, p, '"'spawn', 4, { actorId: boss.id, targetIds: [add.id], note: 'Loose threads join the fight.' });
+    commitIntent(b, p, add);
+  }
+}
+function finish(b: TurnBattle, p: Plan, winner: Side, cause: string): void {
+  if (b.result) return;
+  const lost = b.deaths.filter(id => HEROES.includes(id as Hero));
+  b.result = { winner, turns: b.turn, deaths: lost, firstDeath: (lost[0] as Hero | undefined) ?? null,
+    wavesCleared: b.settledWaves.filter(w => w < C.waves.length).length, fishFound: b.fishFound, cause };
+  b.phase = 'finished'; b.queue = [];
+  emit(b, p, winner === 'party' ? 'victory' : 'defeat', 4, { actors: b.actors, result: b.result, amount: b.fishFound, note: cause });
+}
+function settle(b: TurnBattle, p: Plan): void {
+  if (b.result) return;
+  if ("'!aliveSide(b, '"'party').length) { finish(b, p, 'enemy', 'The party fell under enemy pressure.'); return; }
+  if ("'!aliveSide(b, '"'enemy').length) {
+    if ("'!b.settledWaves.includes(b.wave)) {
+      b.settledWaves.push(b.wave);
+      const fish = b.encounter === '"'group' || b.encounter === 'dummy' ? 0 : b.wave === C.waves.length ? C.localFish.boss : C.localFish.wave;
+      b.fishFound += fish;
+      emit(b, p, 'wave_clear', 4, { wave: b.wave, amount: fish, note: 'Local cosmetic settlement; no save or server grant.' });
+    }
+    const last = b.encounter === 'campaign' ? C.waves.length : C.waves.length - 1;
+    if (['campaign', 'patrol'].includes(b.encounter) && b.wave < last) { b.wave++; spawnWave(b, p); }
+    else { finish(b, p, 'party', 'The cafe is safe for tonight.'); return; }
+  }
+  if (b.turn >= C.maxTurns) finish(b, p, 'enemy', 'The turn limit was reached.');
+}
+/** Open one slot, then wait indefinitely. Forced lost turns resolve without an invented choice. */
+export function startTurn(b: TurnBattle): TurnActor | null {
+  if (b.result) return null;
+  if (b.phase "'!== '"'ready') return b.activeId ? find(b, b.activeId) ?? null : null;
+  b.queue = b.queue.filter(s => find(b, s.actorId)?.hp"'! > 0);
+  const slot = b.queue.shift();
+  if (!slot) return null;
+  const a = find(b, slot.actorId)!;
+  b.activeId = a.id; b.clock = Math.max(b.clock, slot.at); b.turn++; b.selected = null; b.phase = '"'choose';
+  const p = plan(b, a.id);
+  emit(b, p, 'turn_start', 0, { targetIds: [a.id], actors: b.actors });
+  for (const burn of a.statuses.filter(s => s.kind === 'burn' && s.turns > 0 && s.appliedTurn < b.turn)) {
+    const source = find(b, burn.source) ?? a;
+    damage(b, p, source, a, C.burnDamage * burn.strength, false, 'burn');
+  }
+  refreshIntents(b, p);
+  if ("'!living(a) || has(a, '"'stun') || has(a, 'restrain') || b.intents[a.id]?.interrupted) {
+    b.phase = 'resolved';
+    emit(b, p, 'fizzle', 3, { targetIds: [a.id], note: "'!living(a) ? '"'Defeated at turn start.' : has(a, 'restrain') ? 'Restrained; this turn is lost.' : 'Interrupted or stunned; this turn is lost.' });
+  }
+  closePlan(b, p);
+  return a;
+}
+/** Locks a copied choice exactly once. Failed calls do not change RNG, log, or turn. */
+export function chooseAction(b: TurnBattle, choice: TurnChoice): boolean {
+  if (b.phase "'!== '"'choose' || b.result || choice.actorId "'!== b.activeId) return false;
+  if (!getLegalActions(b).some(a => a.legal && a.skill.id === choice.skillId)) return false;
+  if (!getLegalTargets(b, choice.skillId).some(t => t.legal && t.actorId === choice.targetId)) return false;
+  const intent = b.intents[choice.actorId];
+  if (intent && (choice.skillId !== intent.skillId || choice.targetId !== intent.targetId)) return false;
+  b.selected = { ...choice }; b.history.push({ ...choice }); b.phase = '"'chosen';
+  return true;
+}
+export function resolveAction(b: TurnBattle): TurnEvent[] {
+  if (b.phase "'!== '"'chosen' || "'!b.selected || b.result) return [];
+  const choice = b.selected, source = find(b, choice.actorId), skill = TURN_SKILLS[choice.skillId];
+  b.phase = '"'resolved';
+  const p = plan(b, choice.actorId, choice.skillId);
+  const target = find(b, choice.targetId);
+  const targets = source && skill && target ? affected(b, source, skill, target) : [];
+  emit(b, p, 'action_start', 0, { targetIds: targets.map(a => a.id) });
+  emit(b, p, 'travel', 1, { targetIds: targets.map(a => a.id) });
+  if ("'!source || !living(source) || !skill || !target || !living(target)) {
+    emit(b, p, '"'fizzle', 2, { note: 'Locked source or target is no longer living.' });
+    return closePlan(b, p);
+  }
+  source.cooldowns[skill.id] = skill.cooldown;
+  charge(b, p, source, -skill.chargeCost, 'Ultimate cost.');
+  charge(b, p, source, C.charge.action, 'Charge from taking an action.');
+  for (const t of targets) {
+    if (skill.cleanse) cleanse(b, p, t);
+    for (let hit = 0; hit < (skill.hits ?? 1); hit++) if (skill.power > 0) damage(b, p, source, t, source.attack * skill.power);
+    if (skill.heal) heal(b, p, source, t, skill.heal);
+    if (skill.shield) shield(b, p, source, t, skill.shield);
+    const applied = skill.status && status(b, p, source, t, skill.status, skill.duration ?? 1, skill.status === 'guard' ? C.guardFraction : 1);
+    if (applied && skill.status === 'stun') interrupt(b, p, source, t);
+    if (applied && skill.delay) {
+      const slots = t.role === 'yarn' ? C.control.bossDelay : skill.delay;
+      if (moveSlot(b, t.id, slots)) emit(b, p, 'delay', 2, { targetIds: [t.id], amount: slots, note: 'Existing slot delayed.' });
+    }
+    if (skill.id === 'bindThread') spawnThread(b, p, source, t);
+  }
+  if (skill.id === 'rally') {
+    for (const enemy of b.actors.filter(a => living(a) && a.side "'!== source.side)) status(b, p, source, enemy, '"'taunt', skill.duration"'!);
+    refreshIntents(b, p, 2);
+  }
+  if (skill.id === '"'witchBasic' && b.preset === 'lanternbreakers') {
+    const next = b.actors.find(a => living(a) && a.side "'!== source.side && a.row === target.row && a.id !== target.id);
+    if (next) damage(b, p, source, next, source.attack * C.gear.pierceMultiplier, true, '"'needleLantern');
+  }
+  bossRules(b, p); refreshIntents(b, p);
+  return closePlan(b, p);
+}
+export function endTurn(b: TurnBattle): void {
+  if (b.phase "'!== '"'resolved' || "'!b.activeId || b.result) return;
+  const a = find(b, b.activeId)!;
+  const p = plan(b, a.id, b.selected?.skillId ?? '"'');
+  for (const [id, remaining] of Object.entries(a.cooldowns)) {
+    if (id "'!== b.selected?.skillId) a.cooldowns[id] = Math.max(0, remaining - 1);
+  }
+  for (const s of [...a.statuses]) if (s.appliedTurn < b.turn) {
+    s.turns--; if (s.turns <= 0) expireStatus(b, p, a, s.kind, '"'Duration completed on the affected actor’s turn.');
+  }
+  const freshlyShielded = b.events.some(e => e.turn === b.turn && e.type === 'shield' && e.targetIds.includes(a.id) && e.amount > 0);
+  if (a.shieldTurns > 0 && "'!freshlyShielded) {
+    a.shieldTurns--;
+    if (a.shieldTurns === 0) { const expired = a.shield; a.shield = 0; emit(b, p, '"'shield', 2, { targetIds: [a.id], amount: -expired, note: 'Shield expired after two owner turns.' }); }
+  }
+  if ("'!a.statuses.some(s => ['"'stun', 'snare'].includes(s.kind) && s.appliedTurn === b.turn)) a.controlCount = Math.max(0, a.controlCount - 1);
+  a.turnsTaken++;
+  b.activeId = null; b.phase = 'ready'; b.selected = null;
+  if (living(a)) insertSlot(b, b.queue, { actorId: a.id, at: b.clock + interval(a) });
+  if (a.role === 'yarn') { b.bossTurns++; bossRules(b, p, true); }
+  if (a.side === 'enemy' && living(a)) commitIntent(b, p, a);
+  settle(b, p); if ("'!b.result) refreshIntents(b, p);
+  emit(b, p, '"'turn_end', 4, { targetIds: [a.id] });
+  closePlan(b, p);
+}
+function moveActor(b: TurnBattle, id: string, slots: number): void {
+  if ("'!Number.isFinite(slots) || slots === 0) return;
+  const amount = Math.sign(slots) * Math.min(C.initiative.maxMove, Math.abs(Math.trunc(slots)));
+  if (!moveSlot(b, id, amount)) return;
+  const p = plan(b, b.activeId ?? id);
+  emit(b, p, '"'delay', 2, { targetIds: [id], amount, note: amount > 0 ? 'Existing slot delayed.' : 'Existing slot advanced.' });
+  refreshIntents(b, p); closePlan(b, p);
+}
+export function delayActor(b: TurnBattle, id: string, slots: number): void { if (slots > 0) moveActor(b, id, slots); }
+export function advanceActor(b: TurnBattle, id: string, slots: number): void { if (slots > 0) moveActor(b, id, -slots); }
+/** Replay accepted choices, including enemies. Never invent a policy decision. */
+export function replayTurns(options: TurnOptions, choices: readonly TurnChoice[]): TurnBattle {
+  let b = createTurnBattle(options);
+  for (const [index, choice] of choices.entries()) {
+    while ("'!b.result) {
+      startTurn(b);
+      if (b.phase !== '"'resolved') break;
+      endTurn(b);
+    }
+    if ("'!chooseAction(b, choice)) throw new Error(`Invalid replay choice ${index}: ${choice.actorId}/${choice.skillId}/${choice.targetId}`);
+    resolveAction(b); endTurn(b);
+  }
+  // A final forced burn/skip can finish a recording without a final decision. Probe without
+  // committing the next open choice, so empty histories retain the pristine initial log.
+  while (choices.length && !b.result) {
+    const candidate = copy(b); startTurn(candidate);
+    if (candidate.phase !== '"'resolved') break;
+    endTurn(candidate); b = candidate;
+  }
+  return b;
+}
+EOF" in /Users/bao/taskbar-hero-turn3d
+ succeeded in 0ms:

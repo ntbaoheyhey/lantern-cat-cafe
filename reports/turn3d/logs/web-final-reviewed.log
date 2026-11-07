@@ -1,0 +1,17 @@
+
+> @taskbar-hero/web@0.0.0 test /Users/bao/taskbar-hero-turn3d/apps/web
+> vitest run --maxWorkers=2
+
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-turn3d/apps/web
+
+
+ Test Files  140 passed (140)
+      Tests  1556 passed (1556)
+   Start at  19:09:47
+   Duration  51.43s (environment 46%, tests 42%, import 10%, transform 1%)
+
+Environment  jsdom was created 140 times · 42.37s total, 46% of tracked time
+             create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+             learn more: https://vitest.dev/guide/improving-performance#test-environments
+

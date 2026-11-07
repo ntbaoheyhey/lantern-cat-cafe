@@ -1,0 +1,12 @@
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-turn3d/apps/web
+
+
+ Test Files  3 passed (3)
+      Tests  45 passed (45)
+   Start at  18:43:45
+   Duration  1.60s (environment 80%, tests 13%, transform 3%, import 3%, worker 1%)
+
+    Isolate  3 workers spawned · ~685ms startup each (spawn + environment, per file)
+             at least ~343ms faster with isolate: false — reuses workers across files instead of one per file
+

@@ -1,0 +1,85 @@
+{
+  "version": 1,
+  "hero": {
+    "width": 80,
+    "height": 80,
+    "frames": 6,
+    "poses": [
+      "idle",
+      "move",
+      "basic",
+      "cast1",
+      "cast2",
+      "ultimate",
+      "hit",
+      "defeat",
+      "victory"
+    ],
+    "foot": [
+      40,
+      72
+    ],
+    "launch": [
+      61,
+      43
+    ],
+    "impact": [
+      42,
+      42
+    ],
+    "contactFrame": 3,
+    "timingMs": [
+      180,
+      120,
+      100,
+      100,
+      140,
+      180
+    ]
+  },
+  "enemy": {
+    "width": 72,
+    "height": 72,
+    "frames": 6,
+    "poses": [
+      "idle",
+      "move",
+      "attack",
+      "windup",
+      "hit",
+      "defeat",
+      "phase2"
+    ],
+    "foot": [
+      36,
+      64
+    ],
+    "launch": [
+      18,
+      36
+    ],
+    "impact": [
+      36,
+      36
+    ],
+    "contactFrame": 3
+  },
+  "boss": {
+    "width": 144,
+    "height": 144,
+    "frames": 6,
+    "foot": [
+      72,
+      132
+    ],
+    "launch": [
+      24,
+      90
+    ],
+    "impact": [
+      72,
+      85
+    ],
+    "contactFrame": 3
+  }
+}

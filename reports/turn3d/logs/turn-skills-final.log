@@ -1,0 +1,36 @@
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-turn3d/packages/game-rules
+
+ ❯ src/squad/turn/skills.test.ts (15 tests | 1 failed) 14ms
+   × newly applied guard lasts for two subsequent owner turns and shield expires with it 3ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/squad/turn/skills.test.ts > newly applied guard lasts for two subsequent owner turns and shield expires with it
+AssertionError: expected 87 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ 87
+
+ ❯ src/squad/turn/skills.test.ts:39:77
+     37|   const g=b.actors.find(a=>a.id==='guardian')!;expect(g.statuses.find(…
+     38|   for(let i=0;i<2;i++){b.queue.sort((a,z)=>Number(z.actorId==='guardia…
+     39|   expect(g.statuses.some(s=>s.kind==='guard')).toBe(false);expect(g.sh…
+       |                                                                             ^
+     40| });
+     41|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  1 failed | 31 passed (32)
+   Start at  16:40:50
+   Duration  608ms (tests 89%, import 5%, transform 5%, worker 1%)
+
+undefined
+/Users/bao/taskbar-hero-turn3d/packages/game-rules:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: vitest run src/squad/turn --maxWorkers=1

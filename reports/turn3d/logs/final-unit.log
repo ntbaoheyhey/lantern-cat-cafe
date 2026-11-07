@@ -1,0 +1,89 @@
+Scope: 6 of 7 workspace projects
+
+> @taskbar-hero/auth@0.0.0 test /Users/bao/taskbar-hero-turn3d/packages/auth
+> vitest run --maxWorkers=2
+
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-turn3d/packages/auth
+
+
+ Test Files  1 passed (1)
+      Tests  24 passed (24)
+   Start at  18:22:39
+   Duration  664ms (import 67%, tests 22%, transform 10%, worker 1%)
+
+
+> @taskbar-hero/chain@0.0.0 test /Users/bao/taskbar-hero-turn3d/packages/chain
+> vitest run --maxWorkers=2
+
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-turn3d/packages/chain
+
+
+ Test Files  3 passed (3)
+      Tests  32 passed (32)
+   Start at  18:22:40
+   Duration  592ms (import 57%, transform 25%, tests 15%, worker 2%)
+
+
+> @taskbar-hero/game-rules@0.0.0 test /Users/bao/taskbar-hero-turn3d/packages/game-rules
+> vitest run --maxWorkers=2
+
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-turn3d/packages/game-rules
+
+
+ Test Files  36 passed | 3 skipped (39)
+      Tests  578 passed | 2 expected fail | 11 skipped (591)
+   Start at  18:22:41
+   Duration  36.21s (tests 97%, import 2%, transform 1%)
+
+    Isolate  39 workers spawned · ~120ms startup each (spawn + environment, per file)
+             at least ~2.22s faster with isolate: false — reuses workers across files instead of one per file
+
+
+> @taskbar-hero/supabase-tests@0.0.0 test /Users/bao/taskbar-hero-turn3d/supabase/tests
+> vitest run --maxWorkers=2
+
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-turn3d/supabase/tests
+
+
+ Test Files  34 passed (34)
+      Tests  581 passed (581)
+   Start at  18:23:18
+   Duration  23.96s (tests 81%, import 15%, transform 3%)
+
+    Isolate  34 workers spawned · ~118ms startup each (spawn + environment, per file)
+             at least ~1.89s faster with isolate: false — reuses workers across files instead of one per file
+
+
+> @taskbar-hero/api-contract@0.0.0 test /Users/bao/taskbar-hero-turn3d/packages/api-contract
+> pnpm --filter @taskbar-hero/game-rules exec vitest run --root ../api-contract --maxWorkers=2
+
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-turn3d/packages/api-contract
+
+
+ Test Files  1 passed (1)
+      Tests  16 passed (16)
+   Start at  18:23:42
+   Duration  388ms (transform 80%, import 17%, tests 2%, worker 1%)
+
+
+> @taskbar-hero/web@0.0.0 test /Users/bao/taskbar-hero-turn3d/apps/web
+> vitest run --maxWorkers=2
+
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-turn3d/apps/web
+
+
+ Test Files  139 passed (139)
+      Tests  1552 passed (1552)
+   Start at  18:23:43
+   Duration  61.15s (environment 49%, tests 36%, import 12%, transform 3%)
+
+Environment  jsdom was created 139 times · 53.15s total, 49% of tracked time
+             create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+             learn more: https://vitest.dev/guide/improving-performance#test-environments
+

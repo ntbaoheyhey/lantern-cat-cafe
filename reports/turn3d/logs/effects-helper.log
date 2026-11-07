@@ -1,0 +1,2355 @@
+2026-11-05T09:24:28.120729Z  WARN codex_skills::interface: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-11-05T09:24:28.120818Z  WARN codex_skills::interface: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-11-05T09:24:28.125792Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-11-05T09:24:28.128345Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-11-05T09:24:28.129988Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-11-05T09:24:28.131551Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-11-05T09:24:28.133004Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-11-05T09:24:28.134323Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-11-05T09:24:28.136367Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-11-05T09:24:28.137867Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-11-05T09:24:28.139206Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-11-05T09:24:28.165705Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-11-05T09:24:28.167502Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-11-05T09:24:28.168969Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-11-05T09:24:28.170643Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-11-05T09:24:28.172021Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-11-05T09:24:28.173382Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-11-05T09:24:28.174806Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-11-05T09:24:28.176189Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-11-05T09:24:28.177465Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-11-05T09:24:28.178810Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+OpenAI Codex v0.166.0
+--------
+workdir: /Users/bao/taskbar-hero-turn3d
+model: gpt-6-astra
+provider: codexunlimit
+approval: never
+sandbox: danger-full-access
+reasoning effort: ultra
+reasoning summaries: none
+session id: 01a1ab06-2154-7603-9331-544ed543cabc
+--------
+user
+You are the effect-timeline/presenter helper in /Users/bao/taskbar-hero-turn3d. Read docs/design/turn3d-2026-11-05.md and packages/game-rules/src/squad/turn/types.ts. Core helper implements that API; stable TurnEvent types are there. Exclusive ownership: apps/web/src/game/squad/turn3d/effects.ts, presenter.ts, effects.test.ts, presenter.test.ts, reports/turn3d/EFFECT-NOTES.md. Do not edit any other file, commit/push/deploy, touch server/economy/secrets or spawn helpers. Main agent owns Three renderer + UI/controller. No three dependency in your modules; pure data so tests in jsdom need no WebGL.
+Build a detailed EFFECT_REGISTRY data format + sequential event-only TurnPresenter. Exports from effects.ts: EFFECT_REGISTRY, createActionPlan(events:TurnEvent[]):EffectPlan, sampleActionPlan(plan,elapsed,reducedMotion=false):EffectFrame. Types EffectPlan {id:number,actorId:string,skillId:string,targetIds:string[],color:string,accent:string,shape:string,duration:number,ultimate:boolean,beats:EffectBeat[],events:TurnEvent[]}; EffectBeat {kind:'anticipation'|'travel'|'impact'|'reaction'|'residue',start:number,duration:number,camera:number,shake:number,flash:number,clip:string,vfx:string}; EffectFrame {plan:EffectPlan,beat:EffectBeat,progress:number,actionProgress:number,elapsed:number,color:string,camera:number,shake:number,flash:number,clip:string,intensity:number}. Extra fields okay but document. All 3 basics, 9 abilities, 3 passives, enemy moves and 3 boss moves, status apply/expire, death, wave clear, victory have intentional contracts. Warm gold shield motifs / violet ember lanterns / green teal flasks / red thread boss. Routine anticipation 250-400ms; ult/danger 850-1100ms, ult overall ~1.8-2.0s, hit stop60-100. Data driven motion/shape cues renderer will consume; include ribbon, arc, ring, shards, petal/spark/bubble vocabulary and distinct attack poses. Sound-cue data slots optional but don't claim sound playback.
+TurnPresenter exports class with push(events:readonly TurnEvent[]):void, tick(deltaMs:number):void, skip():void, reset(events?:readonly TurnEvent[]):void; public speed=1, fast=false, reducedMotion=false, paused=false; getters busy:boolean, frame:EffectFrame|null, state: {actors:TurnActor[],intents:Record<string,TurnIntent>,wave:number,bossPhase:number,result:TurnResult|null,currentId:string|null,turn:number}. Never reads rules battle directly/imports engine/config. Apply events and snapshots only at proper beat, never expose future HP before impact. Strict event sequence, dedup seq, retain projected currentId. Initialization/spawn snapshots without action can apply instantly. Queue action plans by actionId. Boundary status events can form own mini plan. Large tick and skip drain current plan exactly once; skip never resolves rules or starts extra action. Pause freezes. Bounded queue/history; dispose/reset no leftovers. Fast mode scales but preserves all event beats in order. First frame after push must available immediately.
+Tests: recorded fixture event order, effects all ids, full chain, no future state leaks, duplicates/skip/large tick/pause/speed/reset, no imports engine, no direct rules state references; ensure reduced motion zero shake/flash/camera but colors/numbers/events intact. Use pnpm --filter @taskbar-hero/web exec vitest run src/game/squad/turn3d/effects.test.ts src/game/squad/turn3d/presenter.test.ts --maxWorkers=2. Need effects registry initially usable while core under work: no import new turn/config needed. Done when tests pass and EFFECT-NOTES.md documents integration contract, cue vocabulary/timings and any limits. Finish within ~50 minutes. Main agent will integrate and capture actual visual effects.
+
+2026-11-05T09:24:28.426441Z  WARN codex_skills::interface: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-11-05T09:24:28.426479Z  WARN codex_skills::interface: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+codex
+I’ll read the design and event types, then build the data-only effect registry and sequential presenter in the five assigned files. I’ll test event timing and state projection and document the renderer contract.
+exec
+/bin/zsh -lc "pwd && rg --files -g 'AGENTS.md' -g 'turn3d-2026-11-05.md' -g 'types.ts' -g 'package.json' -g '*vitest*' -g '*turn3d*'" in /Users/bao/taskbar-hero-turn3d
+ succeeded in 0ms:
+/Users/bao/taskbar-hero-turn3d
+package.json
+supabase/tests/vitest.config.ts
+supabase/tests/package.json
+apps/web/src/art/monsters/types.ts
+apps/web/src/art/backdrops/types.ts
+apps/web/src/game/rig/types.ts
+apps/web/package.json
+docs/design/turn3d-2026-11-05.md
+packages/chain/package.json
+packages/auth/package.json
+packages/api-contract/src/types.ts
+packages/api-contract/package.json
+packages/game-rules/package.json
+packages/game-rules/src/types.ts
+packages/game-rules/src/squad/types.ts
+packages/game-rules/src/squad/turn/types.ts
+packages/game-rules/src/v2/view/types.ts
+packages/game-rules/src/v2/codex/types.ts
+packages/game-rules/src/v2/state/types.ts
+packages/game-rules/src/v2/combat/types.ts
+packages/game-rules/src/v2/idle/types.ts
+
+**Reading AGENTS ancestors**
+exec
+/bin/zsh -lc 'for f in /AGENTS.md /Users/AGENTS.md /Users/bao/AGENTS.md /Users/bao/taskbar-hero-turn3d/AGENTS.md; do if [ -f "$f" ]; then cat "$f"; fi; done
+cat docs/design/turn3d-2026-11-05.md
+cat packages/game-rules/src/squad/turn/types.ts' in /Users/bao/taskbar-hero-turn3d
+ succeeded in 0ms:
+# The last lantern · a turn at the table
+
+2026-11-05 · Candidate, not live. Base: pushed squad tip `41a6aa3` (runtime `1604c70`).
+References: `docs/design/squad-combat-review-2026-11-05.md`,
+`docs/design/squad-slice-2026-11-05.md`, `packages/game-rules/src/squad/`,
+`apps/web/src/game/squad/`, `docs/squad/index.html`,
+`docs/proposals/rune-skill-system/demo/index.html`.
+
+## 1. A readable turn, with choices
+
+Use a deterministic speed-based initiative queue, one slot per living actor. Ties use
+seeded initial initiative then stable actor ID. The next eight slots include future
+rounds. Only `startTurn → chooseAction → resolveAction → endTurn` advances combat;
+wall time never advances rules. A hero waits indefinitely for skill + legal target.
+Each cat may opt into Auto. The controller waits for every presentation beat before
+starting another slot, even at ×4 or after Skip. Input locks at action selection.
+
+Retain all three basics, nine activated skills, three passives, six enemy roles, waves,
+both existing loadout presets, and Yarn Giant. The old engine stays available for the
+explicit 2D comparison/fallback; existing consumers and their tests remain unchanged.
+The turn engine shares the cast, role names, encounter compositions and skill identities,
+but has separately tuned numbers. All new tuning is exported from `config.ts`.
+
+Durations and cooldowns use the affected actor's own turns. A newly applied two-turn
+guard protects through two subsequent turns; burn ticks at turn start, then durations
+decrease at turn end. A skill with cooldown 2 is unavailable on the next two own turns.
+Shields expire after their owner's two turns. Taunt redirects hostile single targets;
+cleanse removes harmful effects. Shield Bash interrupts the queued enemy intent and
+delays its slot; Thread Snare delays a selected row. Delay/advance reorders one existing
+slot, never inserts duplicates. Boss control has bounded resistance. Charge comes from
+actions and damage received, never idle time; an ultimate consumes an ordinary action.
+
+Enemy intents are committed before the player chooses: action icon, name, target and
+turn countdown appear both above the actor and in the tactical panel. Invalidated dead
+targets visibly retarget; taunt and interrupt explicitly announce intent changes.
+Boss cycles Sweep → Loose End → Cross Stitch (phase two); countdown is in boss turns.
+Destroy the separate Binding Thread to release its captive and expose the knot for two
+boss turns. A visible stagger meter offers another opening. Enrage prevents stalling.
+
+At 1280×720: retained left navigation and top HUD, eight-slot turn bar, battlefield
+occupying about 72% of combat width, intent panel, party cards, four active-cat skill
+buttons. Current actor + “Choose a skill / Choose a target / Resolving…” is always
+visible. Hotkeys 1–4 select skills; accessible target buttons mirror the scene. Target
+preview marks all affected actors and explains invalid selections. No modal confirms.
+
+## 2. Original miniature diorama and event choreography
+
+Choose three.js, lazy-loaded only inside the guest `squadCombat` entry. An opt-in
+`squad3d=1` sub-flag selects the new runtime; both feature flags default false. Keep DOM
+controls and the pure rules core outside the renderer. No scene module imports an
+engine function. Render snapshots are projected from resolved events; presentation
+never rolls damage. A WebGL failure retains a playable DOM turn battlefield.
+
+Look: a small round cafe rug on a honey-colored wooden table, dusk backdrop, warm key,
+cool rim, soft blob shadows, teacups, stacked books, candle and planter. Rounded low-poly
+geometry with matte/toon-like materials, small rim accents and dark facial marks;
+avoid a full postprocessing chain. Cheap additive glow sprites, rings and ribbons give
+soft bloom within a strict pool. Fixed orthographic three-quarter camera makes the
+silhouettes legible; focus/push/shake/victory orbit are scripted offsets, never free-look.
+Mochi: cream + amber, shield and ladle. Soot: charcoal + violet, hat and floating lantern.
+Clover: mint + teal, flask satchel and leaf collar. Enemies remain household creatures.
+
+Every action maps to data in an effect registry: anticipation, travel, impact, reaction,
+residue. Each resolved event carries sequence, slot, actor ID, action ID, target IDs,
+resolved numbers, beat index and actor snapshots. The presenter consumes only this
+stream. Routine anticipation 250–400ms, ultimate/danger anticipation 850–1100ms;
+impact freeze 60–100ms. Ultimates focus the caster, dim the backdrop, show a name
+flourish and signature light, then restore the wide shot. Timings are data, not skill
+branches in the scene. Reduced motion removes camera offsets, shake and flashes;
+numbers, colors, outlines and statuses remain. ×1/×2/×4, fast mode, pause and skip
+are available. Effects gallery uses fixed event fixtures; model viewer uses the same
+GLBs and clip names as battle. Deterministic seed/time capture is a separate debug mode.
+
+## 3. Pipeline, budgets and delivery gates
+
+No Blender installed. glTF Transform CLI 4.5.1 is available through npx. Use original
+procedural three.js geometry, authored in `tools/art3d/` or a shared source module,
+exported with GLTFExporter to GLB with named part animation tracks. Runtime loads the
+GLBs; offline builder embeds bytes and uses GLTFLoader.parse, with no file:// fetch.
+Commands: `pnpm art:turn3d` builds models + hashes + triangle report;
+`node tools/turn3d/capture.mjs` captures native turnaround/model/effect fixtures;
+`node tools/turn3d/demo.mjs` compiles the actual runtime into `docs/turn3d/index.html`.
+No downloaded models/textures or reference-game art. Tool/script, parameters, date,
+author, output hash, triangle count and license go in `docs/turn3d/ASSET-MANIFEST.json`
+and `assets/provenance/turn3d.md`. Runtime libraries: three.js 0.180.0 (MIT), existing
+React 19.3.1 (MIT). Build-only @types/three 0.180.0 (MIT); existing Vite 8.3.5 (MIT).
+
+| Budget | Target | Measurement |
+|---|---:|---|
+| Cat / small foe / elite / boss | ≤6k / 3k / 8k / 20k triangles | Export geometry inventory |
+| Character GLBs | <6 MB gzip total | Actual bytes + gzip |
+| Textures | Procedural 64–256px; max 1024px | Renderer inventory |
+| Draw calls / visible triangles | <220 / <100k | renderer.info |
+| Concurrent particles / translucent layers | ≤96 / ≤8 intended layers | Pool occupancy; estimate, not GPU counter |
+| DPR | ≤2 (1 for deterministic/perf capture) | Canvas size |
+| Frame time p50 / p95 | ≤16.7 / 25ms at 1280×720 | Browser RAF intervals, not GPU timing |
+| JS heap / estimated GPU assets | <128 MB / <64 MB | CDP + geometry/texture bytes |
+| Idle renderer busy time | <2% paused | CDP TaskDuration |
+| Hidden rendering / rules | Zero frames / zero slots | Visibility lifecycle test |
+| Offline document | <25 MB | File bytes; file:// smoke, zero network |
+
+Initial balance target: 20–35 actions per wave, 60–90 seconds including choices; full
+three waves + boss 6–8 minutes at normal speed with human decisions. This is a design
+target, not a measured claim. Two presets × Auto/active priority × ≥30 seeds will report
+wins, turns, deaths, first death role and boss success. Automated timing excludes human
+thinking; do not manufacture a play-duration result from it. Tune only turn config.
+
+Implement and commit core/tests → skills → effect registry/presenter → scene/models →
+turn UI → proof → offline demo. Draft-only stack, split into focused layers, no merge or
+deploy. Both Vercel roots disable new refs. No saves, API adapters, economy, contracts,
+migrations or secret access. Flag-off network graph must exclude three/models/turn UI.
+Run baseline and final checks, 10-minute soak, both desktop sizes plus 1024×600,
+fallbacks, replay/property tests and four separate self-review passes. Record failed
+gates honestly. Training refinements are cut first; unfinished work never enters PRs.
+/** Local-only turn format. No verified replay, save, economy or renderer dependencies. */
+import type { Hero, Preset, Role, Side, StatusKind } from '../types';
+export type { Hero, Preset, Role, Side, StatusKind } from '../types';
+export type TurnEncounter = 'campaign' | 'patrol' | 'boss' | 'group' | 'dummy';
+export type TurnPhase = 'ready' | 'choose' | 'chosen' | 'resolved' | 'finished';
+export type TurnTargetRule = 'enemy' | 'row' | 'allEnemies' | 'ally' | 'allAllies' | 'self';
+export interface TurnStatus { kind: StatusKind; source: string; turns: number; strength: number; appliedTurn: number }
+export interface TurnActor {
+  id: string; role: Role; name: string; side: Side; slot: number; row: 'front' | 'rear';
+  hp: number; maxHp: number; shield: number; shieldTurns: number; charge: number;
+  attack: number; defense: number; speed: number; crit: number; auto: boolean;
+  statuses: TurnStatus[]; cooldowns: Record<string, number>; turnsTaken: number;
+  break: number; controlCount: number; passiveReady: number; boundAlly?: string;
+}
+export interface TurnSkill {
+  id: string; name: string; description: string; target: TurnTargetRule;
+  power: number; cooldown: number; chargeCost: number; heal?: number; shield?: number;
+  status?: StatusKind; duration?: number; delay?: number; hits?: number; cleanse?: boolean;
+  heavy?: boolean; melee?: boolean; icon: string;
+}
+export interface TurnIntent {
+  actorId: string; skillId: string; targetId: string; targetIds: string[];
+  icon: string; label: string; countdown: number; interrupted: boolean;
+}
+export interface TurnChoice { actorId: string; skillId: string; targetId: string }
+export interface LegalTurnAction { skill: TurnSkill; legal: boolean; reason: string }
+export interface LegalTurnTarget { actorId: string; legal: boolean; reason: string; affectedIds: string[] }
+export interface TimelineSlot { actorId: string; at: number; intent?: TurnIntent }
+export interface TurnResult {
+  winner: Side; turns: number; deaths: string[]; firstDeath: Role | null;
+  wavesCleared: number; fishFound: number; cause: string;
+}
+export type TurnEventKind = 'turn_start' | 'action_start' | 'travel' | 'damage' | 'heal'
+  | 'shield' | 'status_apply' | 'status_expire' | 'interrupt' | 'passive' | 'death'
+  | 'intent' | 'wave_clear' | 'wave_start' | 'boss_phase' | 'victory' | 'defeat'
+  | 'turn_end' | 'charge' | 'delay' | 'spawn' | 'fizzle' | 'snapshot';
+export interface TurnEvent {
+  version: 2; seq: number; turn: number; actionId: number; beat: number;
+  type: TurnEventKind; actorId: string; skillId: string; targetIds: string[];
+  amount: number; critical?: boolean; note?: string; status?: StatusKind;
+  actors?: TurnActor[]; intents?: Record<string, TurnIntent>; wave?: number;
+  bossPhase?: number; result?: TurnResult;
+}
+export interface TurnBattle {
+  version: 2; seed: number; rng: number; encounter: TurnEncounter; preset: Preset;
+  actors: TurnActor[]; queue: TimelineSlot[]; clock: number; turn: number;
+  activeId: string | null; phase: TurnPhase; selected: TurnChoice | null;
+  events: TurnEvent[]; history: TurnChoice[]; intents: Record<string, TurnIntent>;
+  wave: number; bossPhase: number; bossTurns: number; bossCountdown: number;
+  settledWaves: number[]; fishFound: number; deaths: string[]; result: TurnResult | null;
+  totals: Record<string, { damage: number; healing: number; shielding: number }>;
+}
+export interface TurnOptions { seed?: number; preset?: Preset; encounter?: TurnEncounter; wave?: number }
+
+/** Stable integration API implemented in engine.ts:
+ * createTurnBattle(options?), getTimeline(b, n=8), startTurn(b): TurnActor|null,
+ * getLegalActions(b, actorId?), getLegalTargets(b, skillId, actorId?),
+ * chooseAction(b, choice): boolean, resolveAction(b): TurnEvent[], endTurn(b): void,
+ * getAutoAction(b, policy='auto'|'active'): TurnChoice|null,
+ * replayTurns(options, choices): TurnBattle, delayActor(b, id, slots), advanceActor(b,id,slots).
+ * config.ts exports TURN_CONFIG, TURN_SKILLS, TURN_KITS (basic + two skills + ultimate).
+ * Mutating calls are synchronous and deterministic. Only this core writes rules state.
+ */
+
+exec
+/bin/zsh -lc "rg --files apps/web/src/game/squad reports packages/game-rules/src/squad/turn
+cat apps/web/package.json
+cat packages/game-rules/package.json
+rg -n 'vitest|test:' apps/web/vite* apps/web/*config*" in /Users/bao/taskbar-hero-turn3d
+ succeeded in 0ms:
+apps/web/src/game/squad/SquadScene.ts
+apps/web/src/game/squad/controller.ts
+packages/game-rules/src/squad/turn/types.ts
+apps/web/src/game/squad/entry.css
+apps/web/src/game/squad/SquadApp.tsx
+apps/web/src/game/squad/entry.tsx
+apps/web/src/game/squad/presentation.test.ts
+apps/web/src/game/squad/squad.css
+apps/web/src/game/squad/controller.test.ts
+apps/web/src/game/squad/presentation.ts
+apps/web/src/game/squad/assets.ts
+apps/web/src/game/squad/gate.ts
+apps/web/src/game/squad/SquadCanvas.tsx
+reports/u8-backdrops/after-kitchen-390.png
+reports/u8-backdrops/after-livingroom-390.png
+reports/u8-backdrops/after-rooftops-390.png
+reports/u8-backdrops/after-livingroom-1600.png
+reports/u8-backdrops/after-bathroom-390.png
+reports/u8-backdrops/before-kitchen-1600.png
+reports/u8-backdrops/after-basement-1600.png
+reports/u8-backdrops/after-rooftops-1600.png
+reports/u8-backdrops/after-bathroom-1600.png
+reports/u8-backdrops/after-kitchen-1600.png
+reports/u8-backdrops/after-basement-390.png
+reports/perf-idle.md
+reports/s2-fix1-integrity/salvage-1280-dark.png
+reports/s2-fix1-integrity/salvage-1280-light.png
+reports/s2-fix1-integrity/salvage-390-light.png
+reports/s2-fix1-integrity/salvage-390-dark.png
+reports/s2-fix1-integrity/salvage-320-light.png
+reports/s2-fix1-integrity/salvage-1600-light.png
+reports/CXR0-rebase.md
+reports/b5-cx6.md
+reports/b5-ag6.md
+reports/fxrb/checks/browser-errors.log
+reports/fxrb/checks/burst-20-each.log
+reports/fxrb/checks/round1-e2e.log
+reports/fxrb/checks/baseline.log
+reports/fxrb/checks/verify-pr.log
+reports/fxrb/checks/round1-resize-20.log
+reports/fix-resize-hygiene.md
+reports/s2-bag-r2.md
+reports/submission/licensing-review.md
+reports/submission/evidence/6144d42-acceptance.json
+reports/submission/evidence/media-manifest.json
+reports/submission/screenshots/fuji-read-only-1280x720.png
+reports/submission/screenshots/class-1280x720.png
+reports/submission/screenshots/home-1600x900.png
+reports/submission/screenshots/map-locked-1280x720.png
+reports/submission/screenshots/bag-1280x720.png
+reports/submission/screenshots/hero-1280x720.png
+reports/submission/screenshots/landing-1280x720.png
+reports/cxp1.md
+reports/v19b-boss-gate/boss-gate-1280-light.png
+reports/v19b-boss-gate/status-no_class-dark.png
+reports/v19b-boss-gate/status-not_reached-dark.png
+reports/v19b-boss-gate/status-cooldown-dark.png
+reports/v19b-boss-gate/boss-gate-390-dark.png
+reports/v19b-boss-gate/boss-gate-1280-dark.png
+reports/v19b-boss-gate/status-no_key-dark.png
+reports/v19b-boss-gate/boss-gate-390-light.png
+reports/v19b-boss-gate/status-ready-dark.png
+reports/v19c-loot-icons/loot-summary-1280x720.png
+reports/v19c-loot-icons/chest-reveal-ch5-1280x720.png
+reports/v19c-loot-icons/loot-summary-390x844.png
+reports/v19c-loot-icons/forge-salvage-390x844.png
+reports/v19c-loot-icons/chest-reveal-ch1-390x844.png
+reports/v19c-loot-icons/forge-salvage-1280x720.png
+reports/v19c-loot-icons/chest-reveal-ch5-390x844.png
+reports/v19c-loot-icons/chest-reveal-ch1-1280x720.png
+reports/v24d-ch4/mon-windup-robot.png
+reports/v24d-ch4/mon-mouse-trap.png
+reports/v24d-ch4/mon-dust-moth.png
+reports/v24d-ch4/mon-box-fort-knight.png
+reports/v24d-ch4/mon-vacuum-beast.png
+reports/v24d-ch4/ch4-monsters-all.png
+reports/v24d-ch4/ch4-monsters-dark.png
+reports/v24d-ch4/ch4-monsters-light.png
+reports/s3-qa.md
+reports/u2-hud.md
+reports/integrate-v2-stage.md
+reports/n4-submission.md
+reports/v17b-icons-wiring/character-390px.png
+reports/v17b-icons-wiring/bag-390px.png
+reports/v17b-icons-wiring/character-1280px.png
+reports/v17b-icons-wiring/bag-1280px.png
+reports/v17b-icons-wiring/desktop-1280px.png
+reports/v16-stage.md
+reports/ui-redesign/BRIEF.md
+reports/ui-redesign/PLAN.md
+reports/ui-redesign/README.md
+reports/ui-redesign/index.html
+reports/v24e-ch5/ch5-monsters-light.png
+reports/v24e-ch5/mon-laser-dot-phantom.png
+reports/v24e-ch5/ch5-monsters-dark.png
+reports/v24e-ch5/mon-moth-swarm.png
+reports/v24e-ch5/mon-shadow-crow.png
+reports/v24e-ch5/mon-chimney-ghost.png
+reports/v24e-ch5/mon-neon-dot.png
+reports/v24e-ch5/ch5-monsters-all.png
+reports/scorecard/fxrb/build-status.md
+reports/scorecard/fxrb/logs/19-hud-diagnostic-setup.log
+reports/scorecard/fxrb/logs/22-restored-focused-browser.log
+reports/scorecard/fxrb/logs/09-integrity-scope.log
+reports/scorecard/fxrb/logs/m3-wrong-logical-width.patch
+reports/scorecard/fxrb/logs/m1-before-ready.patch
+reports/scorecard/fxrb/logs/08-web-typecheck.log
+reports/scorecard/fxrb/logs/18-m3-wrong-width-browser.log
+reports/scorecard/fxrb/logs/16-m1-before-ready-browser.log
+reports/scorecard/fxrb/logs/15-scratch-harness-prerequisite.log
+reports/scorecard/fxrb/logs/05-mutation-setup.log
+reports/scorecard/fxrb/logs/m2-missing-create-layout.patch
+reports/scorecard/fxrb/logs/hud-diagnostic.patch
+reports/scorecard/fxrb/logs/14-m1-browser-setup-failure.log
+reports/scorecard/fxrb/logs/10-links.log
+reports/scorecard/fxrb/logs/01-base-tooling.log
+reports/scorecard/fxrb/logs/06-m1-before-ready-unit.log
+reports/scorecard/fxrb/logs/03-focused-unit.log
+reports/scorecard/fxrb/logs/07-m2-missing-create-layout-unit.log
+reports/scorecard/fxrb/logs/17-after-m1-ports.log
+reports/scorecard/fxrb/logs/25-cleanup.log
+reports/scorecard/fxrb/logs/24-secret-scan.log
+reports/scorecard/fxrb/logs/26-scope-diff-stat.log
+reports/scorecard/fxrb/logs/12-resize-case-list.log
+reports/scorecard/fxrb/logs/23-command-launch-notes.log
+reports/scorecard/fxrb/logs/20-m1-restored-unit-control.log
+reports/scorecard/fxrb/logs/11-mutation-test-integrity.log
+reports/scorecard/fxrb/logs/13-after-repeat-ports.log
+reports/scorecard/fxrb/logs/04-resize-repeat20.log
+reports/scorecard/fxrb/logs/21-mutation-restoration.log
+reports/scorecard/fxrb/logs/02-install.log
+reports/scorecard/CXL1/cards.md
+reports/scorecard/CXL1/demo-flow.mjs
+reports/scorecard/CXL1/generator-check.py
+reports/scorecard/CXL1/mutate.py
+reports/scorecard/CXL1/logs/repeat-06.log
+reports/scorecard/CXL1/logs/build.log
+reports/scorecard/CXL1/logs/deno-imports.log
+reports/scorecard/CXL1/logs/repeat-07.log
+reports/scorecard/CXL1/logs/repeat-05.log
+reports/scorecard/CXL1/logs/mutation-M1-name.log
+reports/scorecard/CXL1/logs/deno-drift.log
+reports/scorecard/CXL1/logs/links-after.log
+reports/scorecard/CXL1/logs/install.log
+reports/scorecard/CXL1/logs/repeat-04.log
+reports/scorecard/CXL1/logs/repeat-10.log
+reports/scorecard/CXL1/logs/diff-check.json
+reports/scorecard/CXL1/logs/repeat-01.log
+reports/scorecard/CXL1/logs/repeat-03.log
+reports/scorecard/CXL1/logs/baseline-deno-2.log
+reports/scorecard/CXL1/logs/rules-tests.log
+reports/scorecard/CXL1/logs/repeat-02.log
+reports/scorecard/CXL1/logs/mutation-M7-material-source.log
+reports/scorecard/CXL1/logs/gen-deno-current.log
+reports/scorecard/CXL1/logs/demo-flow.log
+reports/scorecard/CXL1/logs/baseline-deno.log
+reports/scorecard/CXL1/logs/targeted-1.log
+reports/scorecard/CXL1/logs/targeted-3.log
+reports/scorecard/CXL1/logs/targeted-2.log
+reports/scorecard/CXL1/logs/rules-tests-current.log
+reports/scorecard/CXL1/logs/mutation-M2-starter-link.log
+reports/scorecard/CXL1/logs/diff-check-current.json
+reports/scorecard/CXL1/logs/audit.log
+reports/scorecard/CXL1/logs/diff-stat.log
+reports/scorecard/CXL1/logs/audit-current.log
+reports/scorecard/CXL1/logs/links-before.log
+reports/scorecard/CXL1/logs/mutation-control.log
+reports/scorecard/CXL1/logs/precondition.log
+reports/scorecard/CXL1/logs/generator-cli.log
+reports/scorecard/CXL1/logs/mutation-M5-chance-gate.log
+reports/scorecard/CXL1/logs/generator-cli-current.log
+reports/scorecard/CXL1/logs/repeats.log
+reports/scorecard/CXL1/logs/typecheck.log
+reports/scorecard/CXL1/logs/mutation-M8-readonly.log
+reports/scorecard/CXL1/logs/mutation-M6-reciprocal.log
+reports/scorecard/CXL1/logs/mutations-current.log
+reports/scorecard/CXL1/logs/lint.log
+reports/scorecard/CXL1/logs/links-touched.log
+reports/scorecard/CXL1/logs/mutations.log
+reports/scorecard/CXL1/logs/typecheck-2.log
+reports/scorecard/CXL1/logs/mutation-M9-aggregate-odds.log
+reports/scorecard/CXL1/logs/mutation-M3-gear-stats.log
+reports/scorecard/CXL1/logs/mutation-M4-weight-total.log
+reports/scorecard/CXL1/logs/links-touched-current.log
+reports/scorecard/CXL1/logs/typecheck-1.log
+reports/scorecard/CXL1/logs/repeat-09.log
+reports/scorecard/CXL1/logs/repeat-08.log
+reports/scorecard/CXL1/logs/gen-deno.log
+reports/scorecard/CXL1/logs/diff-check-current.log
+reports/scorecard/CXL1/repeat.py
+reports/scorecard/CXL1/baseline-deno.py
+reports/scorecard/CXL1/audit.py
+reports/scorecard/CXL1/run.py
+reports/scorecard/cxp1/ui-diff.md
+reports/scorecard/cxp1/cards.md
+reports/s2-security.md
+reports/C2.md
+reports/v19-arena.md
+reports/v24f-backdrops.md
+reports/chain-proof.md
+reports/f1-class-art.md
+reports/b3-cx3.md
+reports/b3-ag3.md
+reports/v26a-fixtures.md
+reports/v17b-icons-wiring.md
+reports/m2-mechanics/block-reasons-1280x720.png
+reports/v19c-loot-icons.md
+reports/t5-judge-pack.md
+reports/v16-stage/stage-1280.png
+reports/v16-stage/stage-390.png
+reports/art1.md
+reports/g2-shell.md
+reports/g4-art-pilot/11-reduced-motion-view.png
+reports/g4-art-pilot/12-mobile-pilot-view.png
+reports/g4-art-pilot/10-silhouettes-1x-readability.png
+reports/g4-art-pilot/04-dust-bunny-frames.png
+reports/g4-art-pilot/07-roomba-scout-frames.png
+reports/g4-art-pilot/03-roster-backdrop-3x.png
+reports/g4-art-pilot/02-old-vs-new-comparison.png
+reports/g4-art-pilot/06-sock-puppet-frames.png
+reports/g4-art-pilot/08-yarn-giant-frames.png
+reports/g4-art-pilot/09-warrior-cat-frames.png
+reports/g4-art-pilot/05-loose-yarn-frames.png
+reports/g4-art-pilot/01-pilot-overview.png
+reports/v25-icons.md
+reports/u4-character-bag/before-390x844-dark.png
+reports/u4-character-bag/after-390x844.png
+reports/u4-character-bag/before-320x568.png
+reports/u4-character-bag/after-1600x900.png
+reports/u4-character-bag/after-1280x720-dark.png
+reports/u4-character-bag/before-1600x900.png
+reports/u4-character-bag/after-1280x720.png
+reports/u4-character-bag/before-1280x720.png
+reports/u4-character-bag/before-1280x720-dark.png
+reports/u4-character-bag/after-390x844-sheet.png
+reports/u4-character-bag/after-390x844-dark.png
+reports/u4-character-bag/after-320x568.png
+reports/u4-character-bag/before-390x844-sheet.png
+reports/u4-character-bag/before-390x844.png
+reports/v6e-levers.md
+reports/cxl1.md
+reports/g5-polish.md
+reports/m2-mechanics/block-reasons-390x844.png
+reports/s4-polish.md
+reports/pitch-v2.md
+reports/v16-hud/hud-gated-false-390x844-light.png
+reports/v16-hud/hud-gated-true-390x844-dark.png
+reports/v16-hud/hud-gated-false-390x844-dark.png
+reports/v16-hud/hud-gated-true-1280x720-dark.png
+reports/v16-hud/hud-gated-false-1280x720-light.png
+reports/v16-hud/hud-gated-true-1280x720-light.png
+reports/v16-hud/hud-gated-false-1280x720-dark.png
+reports/v16-hud/hud-gated-true-390x844-light.png
+reports/v23-gear.md
+reports/scorecard/cxp1/logs/links-baseline-complete-mirror.log
+reports/scorecard/cxp1/logs/bundle-v2.log
+reports/scorecard/cxp1/logs/deno-imports.log
+reports/scorecard/cxp1/logs/links-report-corrected.log
+reports/scorecard/cxp1/logs/mutation-preview-changes-power.log
+reports/scorecard/cxp1/logs/deno-drift.log
+reports/scorecard/cxp1/logs/mutation-hook-never-subscribes.log
+reports/scorecard/cxp1/logs/install.log
+reports/scorecard/cxp1/logs/links-baseline.log
+reports/scorecard/cxp1/logs/demo-review.log
+reports/scorecard/cxp1/logs/bundle-classic.log
+reports/scorecard/cxp1/logs/web-typecheck.log
+reports/scorecard/cxp1/logs/links-current.log
+reports/scorecard/cxp1/logs/versions.log
+reports/scorecard/cxp1/logs/links-baseline-corrected.log
+reports/scorecard/cxp1/logs/mutation-migration-disabled.log
+reports/scorecard/cxp1/logs/integrity-scope-secrets.log
+reports/scorecard/cxp1/logs/persistence-e2e.log
+reports/scorecard/cxp1/logs/diff-stat-continuation.log
+reports/scorecard/cxp1/logs/mutation-summary.json
+reports/scorecard/cxp1/logs/links-corrected.log
+reports/kw2-key-hint/ready-1280x720.png
+reports/scorecard/cxp1/logs/mutation-retired-cleanup-repeats.log
+reports/kw2-key-hint/ready-390x844.png
+reports/kw2-key-hint/no_key-1280x720.png
+reports/kw2-key-hint/no_key-390x844.png
+reports/v25c-item-icons.md
+reports/scorecard/cxp1/logs/rules-handoff.log
+reports/g1-speed.md
+reports/scorecard/cxp1/logs/mutation-corrupt-grants-selection.log
+reports/scorecard/cxp1/logs/README.md
+reports/scorecard/cxp1/logs/mutation-unlock-round-up.log
+reports/scorecard/cxp1/logs/store-handoff.log
+reports/scorecard/cxp1/logs/mutation-baseline-store.log
+reports/scorecard/cxp1/logs/port-check.log
+reports/scorecard/cxp1/logs/links-report.log
+reports/scorecard/cxp1/logs/mutation-persistence-dropped.log
+reports/scorecard/cxp1/logs/diff-check.log
+reports/scorecard/cxp1/logs/mutation-baseline-rules.log
+reports/scorecard/cxp1/logs/mutation-equip-duplicate.log
+reports/scorecard/cxp1/logs/mutations-with-isolation.log
+reports/scorecard/cxp1/logs/links-touched.log
+reports/scorecard/cxp1/logs/persistence-repeat.log
+reports/scorecard/cxp1/logs/mutation-equip-third.log
+reports/scorecard/cxp1/logs/mutations.log
+reports/scorecard/cxp1/logs/mutation-restored-rules.log
+reports/scorecard/cxp1/logs/rules-typecheck.log
+reports/scorecard/cxp1/logs/demo-review-corrected.log
+reports/scorecard/cxp1/logs/rules-targeted.log
+reports/scorecard/cxp1/logs/diff-stat-branch.log
+reports/scorecard/cxp1/logs/store-targeted.log
+reports/scorecard/cxp1/logs/mutation-refresh-delta-retained.log
+reports/scorecard/cxp1/logs/gen-deno.log
+reports/scorecard/cxp1/logs/mutation-restored-store.log
+reports/scorecard/cxp1/demo-1280x720-after.png
+reports/scorecard/cxp1/scope.tsv
+reports/scorecard/cxp1/home-1600x900.png
+reports/scorecard/cxp1/demo-review.json
+reports/scorecard/cxp1/demo-1600x900-after.png
+reports/scorecard/cxp1/demo-1280x720-initial.png
+reports/scorecard/cxp1/home-1280x720.png
+reports/scorecard/cxp1/demo-1600x900-initial.png
+reports/n1-error-screens.md
+reports/u4-character-bag.md
+reports/v27e-help.md
+reports/v24a-ch1.md
+reports/u2-hud/before-390x844-dark.png
+reports/u2-hud/after-390x844.png
+reports/u2-hud/before-320x568.png
+reports/u2-hud/after-1600x900.png
+reports/u2-hud/after-1280x720-dark.png
+reports/u2-hud/before-1600x900.png
+reports/u2-hud/after-1280x720.png
+reports/u2-hud/before-1280x720.png
+reports/u2-hud/before-1280x720-dark.png
+reports/u2-hud/after-390x844-dark.png
+reports/u2-hud/before-390x844-gated.png
+reports/u2-hud/after-320x568.png
+reports/u2-hud/after-390x844-gated.png
+reports/u2-hud/before-390x844.png
+reports/u7-stage-fx.md
+reports/fix-stage-redraw/actors-1600-900.png
+reports/fix-stage-redraw/actors-390-844.png
+reports/fix-stage-redraw/actors-320-568.png
+reports/g3-fix1.md
+reports/v29-runbook.md
+reports/v24e-ch5.md
+reports/u3-layout.md
+reports/v19d-boss-gate-states.md
+reports/v21-map.md
+reports/v20b-relic-wiring.md
+reports/v10-boss-fn.md
+reports/v19b-boss-gate.md
+reports/v27b-docs.md
+reports/v27d-a11y.md
+reports/AGR0-fix.md
+reports/v20-forge/01-craft-1280px-dark.png
+reports/v20-forge/12-relic-blocked-pearl.png
+reports/v20-forge/10-relic-blocked-daily.png
+reports/v20-forge/13-relic-pending-voucher.png
+reports/v20-forge/02-craft-320px-dark.png
+reports/v20-forge/05-salvage-1280px-dark.png
+reports/v20-forge/07-salvage-confirm.png
+reports/v20-forge/15-relic-1280px-light.png
+reports/v20-forge/14-craft-1280px-light.png
+reports/v20-forge/06-salvage-320px-dark.png
+reports/v20-forge/09-relic-320px-dark.png
+reports/v20-forge/08-relic-1280px-dark.png
+reports/v20-forge/04-craft-confirm.png
+reports/v20-forge/03-craft-missing-materials.png
+reports/v20-forge/11-relic-blocked-yarn.png
+reports/g4-art-pilot.md
+reports/v16a-loop.md
+reports/scorecard/cxp1/tools/run_check.py
+reports/scorecard/cxp1/tools/mutate.py
+reports/scorecard/cxp1/tools/review-demo.mjs
+reports/scorecard/cxp1/tools/check-baseline-links.py
+reports/scorecard/cxp1/tools/audit.py
+reports/u5-panels/after-boss-390x844.png
+reports/u5-panels/after-help-390x844.png
+reports/u5-panels/before-forge-390x844.png
+reports/u5-panels/after-market-1280x720.png
+reports/u5-panels/after-forge-390x844.png
+reports/u5-panels/before-market-1280x720.png
+reports/u5-panels/after-forge-1280x720.png
+reports/u5-panels/before-forge-1280x720.png
+reports/u5-panels/before-help-390x844.png
+reports/u5-panels/before-boss-390x844.png
+reports/u5-panels/before-help-1280x720.png
+reports/u5-panels/after-boss-1280x720.png
+reports/u5-panels/before-boss-1280x720.png
+reports/u5-panels/after-help-1280x720.png
+reports/fix-sheet-focus.md
+reports/v27c-guide.md
+reports/ui-audit/forge-relic-390x844.png
+reports/ui-audit/help-390x844.png
+reports/ui-audit/forge-craft-1280x720.png
+reports/ui-audit/character-1280x720.png
+reports/ui-audit/home-390x844.png
+reports/ui-audit/help-1280x720.png
+reports/ui-audit/forge-craft-390x844.png
+reports/ui-audit/forge-salvage-390x844.png
+reports/ui-audit/market-1280x720.png
+reports/ui-audit/boss-390x844.png
+reports/ui-audit/forge-1280x720.png
+reports/ui-audit/boss-1280x720.png
+reports/ui-audit/forge-salvage-1280x720.png
+reports/ui-audit/bag-390x844.png
+reports/ui-audit/character-390x844.png
+reports/ui-audit/home-1280x720.png
+reports/ui-audit/forge-390x844.png
+reports/ui-audit/forge-relic-1280x720.png
+reports/ui-audit/market-390x844.png
+reports/ui-audit/bag-1280x720.png
+reports/v19-cues.md
+reports/v24b-ch2.md
+reports/v18-picker.md
+reports/art/original-economy/generation.json
+reports/scorecard/cxu5/resume-handoff.md
+reports/v6-balance.md
+reports/scorecard/cxu5/ui-diff.md
+reports/s1-infra.md
+reports/C3.md
+reports/cxn3-fix.md
+reports/v23-gear/v23-ranger-set-strip.png
+reports/v23-gear/v23-all-sets-3classes-common-legendary.png
+reports/v23-gear/v23-moon-set-strip.png
+reports/v23-gear/v23-rarity-trim-progression.png
+reports/s2-fix1-integrity.md
+reports/v12-demo.md
+reports/n2-hardening-tests.md
+reports/CXR0-rebase/effects/animation-inventory.json
+reports/CXR0-rebase/effects/summary.json
+reports/v27e-help/help-phone-390x844.png
+reports/v27e-help/help-desktop-1280x720.png
+reports/kw2-key-hint.md
+reports/scorecard/cxu5/audit-signed/findings.json
+reports/v24a-ch1/mon-dust-bunny.png
+reports/v24a-ch1/mon-loose-yarn.png
+reports/v24a-ch1/ch1-monsters-dark.png
+reports/v24a-ch1/ch1-monsters-light.png
+reports/v24a-ch1/ch1-monsters-all.png
+reports/v24a-ch1/mon-yarn-giant.png
+reports/v24a-ch1/mon-sock-puppet.png
+reports/v24a-ch1/mon-roomba-scout.png
+reports/redesign/AGR2-fix.md
+reports/CXR0-rebase/audit/findings.json
+reports/v25-icons/v2-icons-all.png
+reports/v25-icons/v2-icons-size-3.png
+reports/v25-icons/v2-icons-size-5.png
+reports/v19-arena/390-reduced.png
+reports/v25c-item-icons/sheet-light.png
+reports/redesign/AGR1/effects/animation-inventory.json
+reports/v19-arena/1280.png
+reports/fix-stage-redraw.md
+reports/v27a-content-docs.md
+reports/u1-ui-round-1.md
+reports/redesign/AGR1/effects/combat-end.png
+reports/v20-forge.md
+reports/scorecard/cxu5/effects-1600/animation-inventory.json
+reports/v25c-item-icons/sheet-dark.png
+reports/ui/gallery.config.mjs
+reports/ui/gallery.spec.mjs
+reports/ui/build-gallery.py
+reports/ui/gallery.html
+reports/ui/gallery-manifest.json
+reports/v24f-backdrops/rooftops.png
+reports/v24f-backdrops/livingroom.png
+reports/v24f-backdrops/kitchen.png
+reports/v24f-backdrops/bathroom.png
+reports/v24f-backdrops/basement.png
+reports/CXR0-rebase/checks/build.log
+reports/CXR0-rebase/checks/shell-smoke.log
+reports/CXR0-rebase/checks/install.log
+reports/CXR0-rebase/checks/report-links.json
+reports/CXR0-rebase/checks/e2e.log
+reports/CXR0-rebase/checks/unit.log
+reports/CXR0-rebase/checks/shell-smoke-results.json
+reports/CXR0-rebase/checks/typecheck.log
+reports/CXR0-rebase/checks/results.json
+reports/CXR0-rebase/checks/ui-audit.log
+reports/CXR0-rebase/checks/lint.log
+reports/CXR0-rebase/checks/compare.log
+reports/CXR0-rebase/checks/restored-artifacts.json
+reports/CXR0-rebase/checks/effects.log
+reports/u5-panels.md
+reports/v9-functions.md
+reports/cutover-doc-fix.md
+reports/C1.md
+reports/v4-loot.md
+reports/v24d-ch4.md
+reports/redesign/AGR2.md
+reports/scorecard/cxu5/effects-1600/video-boss-ready/page@e93b7552128c72e2e0bb3fddf2fd04ec.webm
+reports/redesign/CXR1/reference/class-1280x720.png
+reports/redesign/CXR1/reference/class-1600x900.png
+reports/redesign/CXR1/reference/home-1600x900.png
+reports/redesign/CXR1/reference/home-1280x720.png
+reports/redesign/CXR1/reference/landing-1600x900.png
+reports/redesign/CXR1/reference/bag-1280x720.png
+reports/redesign/CXR1/reference/bag-1600x900.png
+reports/redesign/CXR1/reference/landing-1280x720.png
+reports/redesign/AGR2-fix-b/audit/findings.json
+reports/redesign/AGR2-fix-b.md
+reports/redesign/AGR1-fix.md
+reports/redesign/AGR1.md
+reports/f2-server-mode/checks.txt
+reports/f2-server-mode/server-run1.log
+reports/f2-server-mode/server-run2.log
+reports/f2-server-mode/rehearsal.log
+reports/v4b-lootcheck.md
+reports/fix-bulk-equip.md
+reports/v25b-frames.md
+reports/scorecard/cxu5/effects-1600/video-combat/page@e68881d8caa9740a08335a0bbea9e61c.webm
+reports/redesign/CXR1/audit/findings.json
+reports/redesign/CXR1/comparison.html
+reports/scorecard/cxu5/effects-1600/video-motion-normal/page@8b292d07405bac5f7e049934f71e1387.webm
+reports/scorecard/cxu5/effects-1600/summary.json
+reports/redesign/CXU5/README.md
+reports/ui/cards/CXR2/gallery.html
+reports/redesign/CXR0/effects/animation-inventory.json
+reports/ui/cards/CXR2/live-accept.md
+reports/redesign/CXR0/effects/combat-end.png
+reports/ui/cards/CXR2/captures.json
+reports/redesign/CXR0/effects/summary.json
+reports/redesign/CXR0/comparison-preview.png
+reports/v19a-loot/chest-reveal-done-1280-light.png
+reports/v19a-loot/loot-summary-390-light.png
+reports/v19a-loot/loot-summary-390-dark.png
+reports/v19a-loot/loot-summary-1280-dark.png
+reports/v19a-loot/loot-summary-1280-light.png
+reports/v19a-loot/sheet-1280-dark.png
+reports/v19a-loot/chest-reveal-done-390-dark.png
+reports/v19a-loot/chest-reveal-mid-1280-light.png
+reports/v19a-loot/chest-reveal-mid-1280-dark.png
+reports/v19a-loot/welcome-back-390-light.png
+reports/v19a-loot/chest-reveal-mid-390-dark.png
+reports/v19a-loot/welcome-back-1280-dark.png
+reports/v19a-loot/chest-reveal-mid-390-light.png
+reports/v19a-loot/chest-reveal-done-1280-dark.png
+reports/v19a-loot/welcome-back-1280-light.png
+reports/v19a-loot/chest-reveal-done-390-light.png
+reports/v19a-loot/sheet-390-dark.png
+reports/v19a-loot/welcome-back-390-dark.png
+reports/redesign/CXU4/help-strings.json
+reports/redesign/AGR0.md
+reports/redesign/CXR1.md
+reports/scorecard/cxu5/effects-1600/video-motion-reduced/page@f8f5e998d84d84b5408bf0971322bbb7.webm
+reports/scorecard/cxu5/map-1280.png
+reports/scorecard/cxu5/secret-scan.json
+reports/redesign/AGR2-fix/bag-selected-1600x900.png
+reports/redesign/AGR2-fix/mockup-bag-1280x720.png
+reports/redesign/AGR2-fix/bag-selected-1280x720.png
+reports/redesign/AGR2-fix/mockup-bag-1600x900.png
+reports/redesign/AGR2-fix/bag-empty-1280x720.png
+reports/redesign/AGR1/effects/video-boss-ready/page@05913f2f987df0d577c2f64d15e98edb.webm
+reports/redesign/AGR1/effects/video-boss-ready/page@c179e9762a7a1c8e36dc89f0a44d7114.webm
+reports/ui/cards/PREVIEWS/grade-b.json
+reports/ui/cards/PREVIEWS/REPORT.md
+reports/ui/cards/PREVIEWS/changed-specs.json
+reports/ui/cards/PREVIEWS/grade-a.json
+reports/ui/cards/PREVIEWS/captures.json
+reports/redesign/CXR1/screens/class-1280x720.png
+reports/redesign/CXR1/screens/class-1600x900.png
+reports/redesign/CXR1/screens/home-1600x900.png
+reports/redesign/CXR1/screens/home-1280x720.png
+reports/redesign/CXR1/screens/landing-1600x900.png
+reports/redesign/CXR1/screens/bag-1280x720.png
+reports/redesign/CXR1/screens/bag-1600x900.png
+reports/redesign/CXR1/screens/landing-1280x720.png
+reports/u3-layout/before-390x844-dark.png
+reports/u3-layout/after-390x844.png
+reports/u3-layout/before-320x568.png
+reports/u3-layout/after-1600x900.png
+reports/u3-layout/after-1280x720-dark.png
+reports/u3-layout/before-1600x900.png
+reports/u3-layout/after-1280x720.png
+reports/u3-layout/before-1280x720.png
+reports/u3-layout/before-1280x720-dark.png
+reports/u3-layout/after-390x844-dark.png
+reports/u3-layout/after-320x568.png
+reports/u3-layout/before-390x844.png
+reports/ui-audit-signed/character-390x844.png
+reports/ui-audit-signed/home-1280x720.png
+reports/ui-audit-signed/forge-390x844.png
+reports/ui-audit-signed/forge-relic-1280x720.png
+reports/ui-audit-signed/market-390x844.png
+reports/ui-audit-signed/bag-1280x720.png
+reports/ui-audit-signed/boss-1280x720.png
+reports/ui-audit-signed/forge-salvage-1280x720.png
+reports/ui-audit-signed/bag-390x844.png
+reports/ui-audit-signed/boss-390x844.png
+reports/ui-audit-signed/forge-1280x720.png
+reports/ui-audit-signed/market-1280x720.png
+reports/redesign/compare.mjs
+reports/redesign/CXU4.md
+reports/redesign/CXR0.md
+reports/redesign/CXU5.md
+reports/scorecard/cxu5/audit/findings.json
+reports/redesign/CXR0/audit/forge-craft-1280x720.png
+reports/redesign/CXR0/audit/forge-craft-1600x900.png
+reports/redesign/CXR0/audit/help-1280x720.png
+reports/redesign/CXR0/audit/map-1280x720.png
+reports/redesign/CXR0/audit/market-1280x720.png
+reports/redesign/CXR0/audit/map-1600x900.png
+reports/redesign/CXR0/audit/findings.json
+reports/redesign/CXR0/audit/help-1600x900.png
+reports/redesign/CXR0/audit/market-1600x900.png
+reports/redesign/CXR0/audit/home-1600x900.png
+reports/redesign/CXR0/audit/home-1280x720.png
+reports/redesign/CXR0/audit/bag-1280x720.png
+reports/redesign/CXR0/audit/hero-1280x720.png
+reports/redesign/CXR0/audit/hero-1600x900.png
+reports/redesign/CXR0/audit/bag-1600x900.png
+reports/redesign/CXR0/comparison.html
+reports/ui-audit-signed/forge-relic-390x844.png
+reports/ui-audit-signed/help-390x844.png
+reports/ui-audit-signed/forge-craft-1280x720.png
+reports/ui-audit-signed/character-1280x720.png
+reports/ui-audit-signed/home-390x844.png
+reports/ui-audit-signed/help-1280x720.png
+reports/ui-audit-signed/forge-craft-390x844.png
+reports/ui-audit-signed/forge-salvage-390x844.png
+reports/ui/cards/ART2/grade-b.json
+reports/ui/cards/ART2/REPORT.md
+reports/ui/cards/ART2/changed-specs.json
+reports/ui/cards/ART2/grade-a.json
+reports/ui/cards/ART2/captures.json
+reports/redesign/CXR1/checks/round1-typecheck.log
+reports/redesign/CXR1/checks/effects-summary.json
+reports/redesign/CXR1/checks/comparison-browser.log
+reports/redesign/CXR1/checks/desktop-e2e.log
+reports/redesign/CXR1/checks/focused-unit.log
+reports/redesign/CXR1/checks/effects-animation-inventory.json
+reports/redesign/CXR1/checks/verify-pr.log
+reports/redesign/CXR1/checks/ui-audit.log
+reports/redesign/CXR1/checks/full-e2e.log
+reports/redesign/CXR1/checks/effects.log
+reports/redesign/AGR2/bag-filtered-weapons-1280x720.png
+reports/redesign/AGR2-fix/audit/forge-craft-1280x720.png
+reports/redesign/AGR2-fix/audit/forge-craft-1600x900.png
+reports/redesign/AGR2-fix/audit/help-1280x720.png
+reports/redesign/AGR2-fix/audit/map-1280x720.png
+reports/redesign/AGR2-fix/audit/market-1280x720.png
+reports/redesign/AGR2-fix/audit/map-1600x900.png
+reports/redesign/AGR2-fix/audit/findings.json
+reports/redesign/AGR2-fix/audit/help-1600x900.png
+reports/redesign/AGR2-fix/audit/market-1600x900.png
+reports/redesign/AGR2-fix/audit/home-1600x900.png
+reports/redesign/AGR2-fix/audit/home-1280x720.png
+reports/redesign/AGR2-fix/audit/bag-1280x720.png
+reports/redesign/AGR2-fix/audit/hero-1280x720.png
+reports/redesign/AGR2-fix/audit/hero-1600x900.png
+reports/redesign/AGR2-fix/audit/bag-1600x900.png
+reports/redesign/AGR2-fix/bag-empty-1600x900.png
+reports/redesign/AGR2-fix/bag-filtered-weapons-1600x900.png
+reports/redesign/AGR2-fix/bag-grid-1280x720.png
+reports/redesign/AGR2-fix/bag-grid-1600x900.png
+reports/redesign/AGR2-fix/bag-filtered-weapons-1280x720.png
+reports/redesign/AGR2/bag-selected-1600x900.png
+reports/v24g-backdrop-view.md
+reports/redesign/AGR1/effects/video-combat/page@83af3cf547d566da1206ccd76a9fa8ac.webm
+reports/redesign/AGR1/effects/video-combat/page@ec1f4407f9637f63cc8264e2ba2a839a.webm
+reports/ui/cards/FIRSTPLAY/grade-b.json
+reports/ui/cards/FIRSTPLAY/timing-builder.json
+reports/ui/cards/FIRSTPLAY/REPORT.md
+reports/ui/cards/FIRSTPLAY/changed-specs.json
+reports/ui/cards/FIRSTPLAY/grade-a.json
+reports/ui/cards/FIRSTPLAY/captures.json
+reports/redesign/AGR1/effects/video-motion-reduced/page@43db3bdc61a5ac6d329f650e3ce659bd.webm
+reports/redesign/AGR1/effects/video-motion-reduced/page@9825bf25566139410ce926cd4196a5ac.webm
+reports/redesign/CXR0/checks/build.log
+reports/redesign/CXR0/checks/classic-build.log
+reports/redesign/CXR0/checks/test-baseline.log
+reports/redesign/CXR0/checks/shell-smoke.log
+reports/redesign/CXR0/checks/install.log
+reports/redesign/CXR0/checks/report-links.json
+reports/redesign/CXR0/checks/e2e.log
+reports/redesign/CXR0/checks/pnpm-version.log
+reports/redesign/CXR0/checks/gen-deno-final.log
+reports/redesign/CXR0/checks/restored-e2e-artifacts.json
+reports/redesign/CXR0/checks/compare-browser.json
+reports/redesign/CXR0/checks/lint-final.log
+reports/redesign/CXR0/checks/shell-smoke-results.json
+reports/redesign/CXR0/checks/compare-test.log
+reports/redesign/CXR0/checks/links.json
+reports/redesign/CXR0/checks/ui-audit.log
+reports/redesign/CXR0/checks/test.log
+reports/redesign/CXR0/checks/compare.log
+reports/redesign/CXR0/checks/typecheck-final.log
+reports/redesign/CXR0/checks/effects.log
+reports/redesign/CXR0/checks/test-rerun.log
+reports/redesign/AGR2/bag-empty-1280x720.png
+reports/redesign/AGR2/bag-selected-1280x720.png
+reports/redesign/AGR2/audit/forge-craft-1280x720.png
+reports/redesign/AGR2/audit/forge-craft-1600x900.png
+reports/redesign/AGR2/audit/help-1280x720.png
+reports/redesign/AGR2/audit/map-1280x720.png
+reports/redesign/AGR2/audit/market-1280x720.png
+reports/redesign/AGR2/audit/map-1600x900.png
+reports/redesign/AGR2/audit/findings.json
+reports/redesign/AGR2/audit/help-1600x900.png
+reports/redesign/AGR2/audit/market-1600x900.png
+reports/redesign/AGR2/audit/home-1600x900.png
+reports/redesign/AGR2/audit/home-1280x720.png
+reports/redesign/AGR2/audit/bag-1280x720.png
+reports/redesign/AGR2/audit/hero-1280x720.png
+reports/redesign/AGR2/audit/hero-1600x900.png
+reports/redesign/AGR2/audit/bag-1600x900.png
+reports/redesign/AGR0/effects/reduced/f005-544ms.png
+reports/redesign/AGR0/effects/reduced/f020-2628ms.png
+reports/redesign/AGR1-fix/mockup-landing-1280x720.png
+reports/redesign/AGR1-fix/class-1280x720.png
+reports/redesign/AGR0/effects/reduced/f025-3313ms.png
+reports/redesign/AGR0/effects/reduced/f015-1964ms.png
+reports/redesign/AGR0/effects/reduced/f005-568ms.png
+reports/redesign/AGR0/effects/reduced/f025-3211ms.png
+reports/redesign/AGR0/effects/reduced/f020-2545ms.png
+reports/redesign/AGR0/effects/reduced/f015-1878ms.png
+reports/redesign/AGR0/effects/reduced/f030-3893ms.png
+reports/redesign/AGR0/effects/reduced/f030-3995ms.png
+reports/redesign/AGR0/effects/reduced/f010-1295ms.png
+reports/redesign/AGR0/effects/reduced/f010-1211ms.png
+reports/redesign/AGR1/effects/video-motion-normal/page@94eadf3b5628dcf2808525899951cb57.webm
+reports/redesign/AGR1/effects/video-motion-normal/page@32390a9ccf923c60181135e5f202e734.webm
+reports/redesign/AGR1/effects/summary.json
+reports/redesign/AGR2/effects/animation-inventory.json
+reports/redesign/AGR2/effects/combat-end.png
+reports/s4-polish/before-market-1280x720-dark.png
+reports/s4-polish/after-inventory-390x844-light.png
+reports/s4-polish/before-classpicker-390x844-dark.png
+reports/s4-polish/after-forge-1280x720-dark.png
+reports/s4-polish/after-market-1280x720-dark.png
+reports/s4-polish/after-classpicker-1280x720-light.png
+reports/s4-polish/before-inventory-1280x720-dark.png
+reports/s4-polish/before-forge-1280x720-dark.png
+reports/s4-polish/before-market-390x844-light.png
+reports/s4-polish/after-inventory-1280x720-dark.png
+reports/s4-polish/after-market-390x844-light.png
+reports/s4-polish/before-inventory-390x844-light.png
+reports/s4-polish/before-forge-390x844-light.png
+reports/s4-polish/after-classpicker-390x844-dark.png
+reports/s4-polish/before-classpicker-1280x720-light.png
+reports/s4-polish/after-forge-390x844-light.png
+reports/redesign/AGR1-fix/effects/animation-inventory.json
+reports/ui/cards/MOTION/performance-release/motion-1280-no-preference.png
+reports/ui/cards/MOTION/performance-release/motion-1600-no-preference.png
+reports/ui/cards/MOTION/performance-release/motion-1280-reduce.png
+reports/ui/cards/MOTION/performance-release/motion-1600-reduce.png
+reports/ui/cards/MOTION/performance-release/fps.json
+reports/ui/cards/MOTION/grade-b.json
+reports/scorecard/cxu5/logs/build.log
+reports/scorecard/cxu5/logs/classic-build.log
+reports/scorecard/cxu5/logs/unit-repeat-8.log
+reports/scorecard/cxu5/logs/unit-repeat-9.log
+reports/scorecard/cxu5/logs/deno-imports.log
+reports/scorecard/cxu5/logs/units-initial.log
+reports/scorecard/cxu5/logs/units-current-r2.log
+reports/scorecard/cxu5/logs/browser-r3.log
+reports/scorecard/cxu5/logs/browser-r2.log
+reports/scorecard/cxu5/logs/install.log
+reports/scorecard/cxu5/logs/browser-repeat10-r2.log
+reports/scorecard/cxu5/logs/browser-r5.log
+reports/scorecard/cxu5/logs/browser-r4.log
+reports/scorecard/cxu5/logs/browser-repeat10.log
+reports/scorecard/cxu5/logs/effects-1600.log
+reports/scorecard/cxu5/logs/bundle.log
+reports/scorecard/cxu5/logs/audit.log
+reports/scorecard/cxu5/logs/typecheck-current.log
+reports/scorecard/cxu5/logs/checks.json
+reports/scorecard/cxu5/logs/audit-signed.log
+reports/redesign/AGR0/effects/combat/f010-1365ms.png
+reports/redesign/AGR0/effects/combat/f055-7294ms.png
+reports/redesign/AGR0/effects/combat/f005-551ms.png
+reports/redesign/AGR0/effects/combat/f020-2787ms.png
+reports/redesign/AGR0/effects/combat/f020-2580ms.png
+reports/redesign/AGR0/effects/combat/f035-4613ms.png
+reports/redesign/AGR0/effects/combat/f030-3946ms.png
+reports/redesign/AGR0/effects/combat/f050-6760ms.png
+reports/redesign/AGR0/effects/combat/f040-5422ms.png
+reports/redesign/AGR0/effects/combat/f055-7426ms.png
+reports/v19d-boss-gate-states/state-a-gated-390-light.png
+reports/v19d-boss-gate-states/state-a-reached-390.png
+reports/v19d-boss-gate-states/state-b-no_key-390.png
+reports/v19d-boss-gate-states/state-d-not_reached-390.png
+reports/v19d-boss-gate-states/state-e-rematch-1280.png
+reports/v19d-boss-gate-states/state-c-cooldown-390.png
+reports/v19d-boss-gate-states/state-a-gated-390.png
+reports/v19d-boss-gate-states/state-a-gated-1280.png
+reports/redesign/AGR0/effects/combat/f040-5854ms.png
+reports/v19d-boss-gate-states/state-e-rematch-390.png
+reports/redesign/AGR0/effects/combat/f035-5069ms.png
+reports/redesign/AGR0/effects/combat/f025-3552ms.png
+reports/redesign/AGR0/effects/combat/f045-6600ms.png
+reports/redesign/AGR0/effects/combat/f045-5963ms.png
+reports/redesign/AGR0/effects/combat/f040-5279ms.png
+reports/redesign/AGR0/effects/combat/f005-545ms.png
+reports/redesign/AGR0/effects/combat/f015-1894ms.png
+reports/redesign/AGR0/effects/combat/f005-578ms.png
+reports/redesign/AGR0/effects/combat/f025-3382ms.png
+reports/redesign/AGR0/effects/combat/f030-4077ms.png
+reports/redesign/AGR0/effects/combat/f010-1269ms.png
+reports/redesign/AGR0/effects/combat/f030-4317ms.png
+reports/redesign/AGR0/effects/combat/f045-6094ms.png
+reports/redesign/AGR0/effects/combat/f050-6628ms.png
+reports/redesign/AGR0/effects/combat/f015-2019ms.png
+reports/redesign/AGR0/effects/combat/f060-7961ms.png
+reports/redesign/AGR0/effects/combat/f010-1228ms.png
+reports/redesign/AGR0/effects/combat/f050-7367ms.png
+reports/redesign/AGR0/effects/combat/f020-2711ms.png
+reports/redesign/AGR0/effects/combat/f015-2047ms.png
+reports/redesign/AGR0/effects/combat/f035-4743ms.png
+reports/redesign/AGR0/effects/combat/f025-3278ms.png
+reports/redesign/AGR0/effects/boss-ready/f015-1882ms.png
+reports/redesign/AGR0/effects/boss-ready/f005-553ms.png
+reports/redesign/AGR0/effects/boss-ready/f030-3881ms.png
+reports/redesign/AGR0/effects/boss-ready/f025-3215ms.png
+reports/redesign/AGR0/effects/boss-ready/f020-2602ms.png
+reports/redesign/AGR0/effects/boss-ready/f020-2542ms.png
+reports/redesign/AGR0/effects/boss-ready/f025-3269ms.png
+reports/redesign/AGR0/effects/boss-ready/f025-3208ms.png
+reports/redesign/AGR0/effects/boss-ready/f005-550ms.png
+reports/redesign/AGR0/effects/boss-ready/f030-3875ms.png
+reports/redesign/AGR0/effects/boss-ready/f020-2549ms.png
+reports/redesign/AGR0/effects/boss-ready/f010-1216ms.png
+reports/redesign/AGR0/effects/boss-ready/f010-1270ms.png
+reports/redesign/AGR0/effects/boss-ready/f010-1208ms.png
+reports/redesign/AGR0/effects/boss-ready/f005-542ms.png
+reports/redesign/AGR0/effects/boss-ready/f015-1936ms.png
+reports/redesign/AGR0/effects/boss-ready/f015-1875ms.png
+reports/redesign/AGR0/effects/boss-ready/f030-3937ms.png
+reports/redesign/AGR0/effects/animation-inventory.json
+reports/redesign/AGR0/effects/combat-end.png
+reports/redesign/AGR0/audit/forge-relic-390x844.png
+reports/redesign/AGR0/audit/forge-craft-1280x720.png
+reports/redesign/AGR0/audit/hero-390x844.png
+reports/redesign/AGR0/audit/home-390x844.png
+reports/redesign/AGR0/audit/forge-craft-1600x900.png
+reports/redesign/AGR0/audit/help-1280x720.png
+reports/redesign/AGR0/audit/forge-craft-390x844.png
+reports/redesign/AGR0/audit/map-1280x720.png
+reports/redesign/AGR0/audit/market-1280x720.png
+reports/redesign/AGR0/audit/map-1600x900.png
+reports/redesign/AGR0/audit/help-1600x900.png
+reports/redesign/AGR0/audit/market-1600x900.png
+reports/redesign/AGR0/audit/home-1600x900.png
+reports/redesign/AGR0/audit/map-390x844.png
+reports/redesign/AGR0/audit/forge-salvage-1280x720.png
+reports/redesign/AGR0/audit/bag-390x844.png
+reports/redesign/AGR0/audit/home-1280x720.png
+reports/redesign/AGR0/audit/forge-salvage-1600x900.png
+reports/redesign/AGR0/audit/forge-relic-1280x720.png
+reports/redesign/AGR0/audit/bag-1280x720.png
+reports/redesign/AGR0/audit/hero-1280x720.png
+reports/redesign/AGR0/audit/hero-1600x900.png
+reports/redesign/AGR0/audit/bag-1600x900.png
+reports/redesign/AGR0/audit/forge-relic-1600x900.png
+reports/redesign/AGR1/audit/home-1600x900.png
+reports/redesign/AGR1/audit/home-1280x720.png
+reports/redesign/AGR1/audit/landing-1600x900.png
+reports/redesign/AGR1/audit/bag-1280x720.png
+reports/redesign/AGR1/audit/hero-1280x720.png
+reports/redesign/AGR1/audit/hero-1600x900.png
+reports/redesign/AGR1/audit/bag-1600x900.png
+reports/redesign/AGR1/audit/landing-1280x720.png
+reports/redesign/AGR1/audit/map-1600x900.png
+reports/redesign/AGR1-fix/effects/video-boss-ready/page@89bdd3237e060670ca5cf8fce7536d68.webm
+reports/redesign/AGR1/audit/findings.json
+reports/redesign/AGR1/audit/help-1600x900.png
+reports/redesign/AGR1/audit/market-1600x900.png
+reports/redesign/AGR1/audit/map-1280x720.png
+reports/redesign/AGR1/audit/market-1280x720.png
+reports/redesign/AGR1/audit/help-1280x720.png
+reports/redesign/AGR1/audit/forge-craft-1600x900.png
+reports/redesign/AGR2/effects/summary.json
+reports/redesign/AGR1/audit/class-1280x720.png
+reports/redesign/AGR2/effects/video-boss-ready/page@57b72e91068fb82aa11062d4af86c82f.webm
+reports/redesign/AGR1/audit/forge-craft-1280x720.png
+reports/redesign/AGR1/audit/class-1600x900.png
+reports/ui/cards/MOTION/performance-final/motion-1280-no-preference.png
+reports/ui/cards/MOTION/performance-final/motion-1600-no-preference.png
+reports/ui/cards/MOTION/performance-final/motion-1280-reduce.png
+reports/ui/cards/MOTION/performance-final/motion-1600-reduce.png
+reports/ui/cards/MOTION/performance-final/fps.json
+reports/redesign/AGR0/effects/video-combat/page@a6da014a14dda0815f2ddb1bcf79553c.webm
+reports/redesign/AGR0/effects/video-combat/page@d43df0fec612bc3f0a47b04af894accb.webm
+reports/redesign/AGR0/effects/video-combat/page@e194b147aa937292820f23192382a0cf.webm
+reports/redesign/AGR0/effects/video-boss-ready/page@8e5d834166d3362d8e6a2d5edad96a37.webm
+reports/redesign/AGR0/effects/video-boss-ready/page@fa76c34c91eda48c48981d9ab59c2c80.webm
+reports/redesign/AGR0/effects/video-boss-ready/page@f747c8cae3bdba8fd17b2de77e34b0b1.webm
+reports/redesign/AGR1-fix/effects/video-combat/page@28129a4709bdd7239da0cb9d48b004b0.webm
+reports/scorecard/cxu5/logs/mutations-r1/history-chapter-leak.log
+reports/scorecard/cxu5/logs/mutations-r1/locked-node-click.log
+reports/scorecard/cxu5/logs/mutations-r1/control.log
+reports/scorecard/cxu5/logs/mutations-r1/wrong-reward-table.log
+reports/scorecard/cxu5/logs/mutations-r1/premature-history.log
+reports/scorecard/cxu5/logs/mutations-r1/results.json
+reports/scorecard/cxu5/logs/mutations-r1/wrong-boss-advice.log
+reports/scorecard/cxu5/logs/mutations-r1/history-account-leak.log
+reports/scorecard/cxu5/logs/mutations-r1/history-unbounded.log
+reports/scorecard/cxu5/logs/typecheck.log
+reports/v26-e2e/forge-390-reduced.png
+reports/v26-e2e/reload-1280.png
+reports/v26-e2e/idle-390.png
+reports/v26-e2e/reload-390.png
+reports/v26-e2e/fresh-390.png
+reports/v26-e2e/loss-390-reduced.png
+reports/v26-e2e/reload-390-reduced.png
+reports/v26-e2e/equip-1280.png
+reports/v26-e2e/win-390-reduced.png
+reports/v26-e2e/idle-1280.png
+reports/v26-e2e/win-1280.png
+reports/v26-e2e/idle-390-reduced.png
+reports/v26-e2e/equip-390.png
+reports/v26-e2e/loss-390.png
+reports/v26-e2e/loss-1280.png
+reports/v26-e2e/equip-390-reduced.png
+reports/v26-e2e/forge-390.png
+reports/v26-e2e/fresh-1280.png
+reports/v26-e2e/fresh-390-reduced.png
+reports/v26-e2e/forge-1280.png
+reports/v26-e2e/win-390.png
+reports/s2-security/csp-classic-320-light.png
+reports/s2-security/csp-classic-1280-light.png
+reports/s2-security/csp-v2-1600-light.png
+reports/s2-security/csp-v2-390-light.png
+reports/s2-security/csp-v2-1280-dark.png
+reports/s2-security/csp-classic-390-dark.png
+reports/s2-security/csp-v2-390-dark.png
+reports/s2-security/csp-classic-1600-light.png
+reports/s2-security/csp-v2-320-light.png
+reports/s2-security/csp-classic-1280-dark.png
+reports/s2-security/csp-v2-1280-light.png
+reports/s2-security/csp-classic-390-light.png
+reports/redesign/AGR2/effects/video-motion-reduced/page@5d6427d574c019151332c0fc990e2f15.webm
+reports/g1-speed/race-before.log
+reports/g1-speed/build.log
+reports/g1-speed/classic-build.log
+reports/g1-speed/focused.log
+reports/g1-speed/deno-drift.log
+reports/g1-speed/install.log
+reports/g1-speed/e2e.log
+reports/g1-speed/1280x720-dark.png
+reports/g1-speed/links-baseline.json
+reports/g1-speed/production-hooks.log
+reports/g1-speed/v2-production-build.log
+reports/g1-speed/pnpm-version.log
+reports/g1-speed/320x568-light.png
+reports/g1-speed/baseline.log
+reports/t2-numbers-e2e.md
+reports/g1-speed/checks.json
+reports/g1-speed/390x844-light.png
+reports/n2-security-docs.md
+reports/g1-speed/390x844-dark.png
+reports/g1-speed/typecheck.log
+reports/g1-speed/perf-after.log
+reports/g1-speed/visual.log
+reports/g1-speed/test.log
+reports/g1-speed/1600x900-light.png
+reports/g1-speed/lint.log
+reports/g1-speed/baseline-instrumentation.patch
+reports/g1-speed/links-after.json
+reports/g1-speed/test-initial.log
+reports/g1-speed/1280x720-light.png
+reports/g1-speed/gen-deno.log
+reports/g1-speed/metrics.json
+reports/redesign/AGR1-fix/effects/video-motion-normal/page@82913eb2006b7e3ae1cd0329ced0be14.webm
+reports/redesign/AGR1-fix/effects/summary.json
+reports/redesign/AGR2/effects/video-motion-normal/page@3141e20afb3cc1329bc2eeb34a677fd7.webm
+reports/v25b-frames/v2-frames-size-3.png
+reports/redesign/AGR0/effects/video-motion-normal/page@4753c16b0e7ff890007047d4fa206eb6.webm
+reports/redesign/AGR0/effects/video-motion-normal/page@827361a2e986761f14b141a92657ebbb.webm
+reports/v25b-frames/v2-frames-size-5.png
+reports/redesign/AGR0/effects/video-motion-normal/page@d96fe2e2801539656cb702556c8498b7.webm
+reports/v25b-frames/v2-frames-all.png
+reports/redesign/AGR0/effects/summary.json
+reports/fix-decorative-key.md
+reports/m3-avalanche-proof.md
+reports/f3-art.md
+reports/ui/cards/MOTION/performance/motion-1280-no-preference.png
+reports/ui/cards/MOTION/performance/motion-1600-no-preference.png
+reports/ui/cards/MOTION/performance/motion-1280-reduce.png
+reports/ui/cards/MOTION/performance/motion-1600-reduce.png
+reports/ui/cards/MOTION/performance/fps.json
+reports/ui/cards/MOTION/REPORT.md
+reports/ui/cards/MOTION/changed-specs.json
+reports/ui/cards/MOTION/grade-a.json
+reports/redesign/AGR2/effects/video-combat/page@43cb3d895c3a404a9cd74378f6b2d127.webm
+reports/m2-mechanics.md
+reports/scorecard/cxu5/logs/mutations/history-chapter-leak.log
+reports/scorecard/cxu5/logs/mutations/locked-node-click.log
+reports/scorecard/cxu5/logs/mutations/control.log
+reports/scorecard/cxu5/logs/mutations/wrong-reward-table.log
+reports/scorecard/cxu5/logs/mutations/premature-history.log
+reports/scorecard/cxu5/logs/mutations/results.json
+reports/scorecard/cxu5/logs/mutations/wrong-boss-advice.log
+reports/scorecard/cxu5/logs/mutations/history-account-leak.log
+reports/scorecard/cxu5/logs/mutations/history-unbounded.log
+reports/scorecard/cxu5/logs/units-current.log
+reports/scorecard/cxu5/logs/test.log
+reports/scorecard/cxu5/logs/unit-repeat-1.log
+reports/scorecard/cxu5/logs/lint.log
+reports/scorecard/cxu5/logs/typecheck-initial.log
+reports/scorecard/cxu5/logs/unit-repeat-2.log
+reports/scorecard/cxu5/logs/unit-repeat-3.log
+reports/scorecard/cxu5/logs/browser-initial.log
+reports/scorecard/cxu5/logs/units.log
+reports/scorecard/cxu5/logs/unit-repeat-7.log
+reports/scorecard/cxu5/logs/unit-repeat-10.log
+reports/scorecard/cxu5/logs/unit-repeat-6.log
+reports/scorecard/cxu5/logs/deno-generation.log
+reports/scorecard/cxu5/logs/unit-repeat-summary.log
+reports/scorecard/cxu5/logs/effects-1280.log
+reports/scorecard/cxu5/logs/links.log
+reports/scorecard/cxu5/logs/unit-repeat-4.log
+reports/scorecard/cxu5/logs/unit-repeat-5.log
+reports/scorecard/cxu5/logs/full-e2e-1280.log
+reports/scorecard/cxu5/reference-map-1600.png
+reports/scorecard/cxu5/run-ui-probes.mjs
+reports/scorecard/cxu5/repeat-units.mjs
+reports/scorecard/cxu5/map-1600.png
+reports/scorecard/cxu5/mutations.mjs
+reports/scorecard/cxu5/full-browser.mjs
+reports/scorecard/cxu5/map-no-key-1280.png
+reports/scorecard/cxu5/reference-map-1280.png
+reports/redesign/AGR1-fix/effects/video-motion-reduced/page@d4ddb9ccec5a67e719863d6d71507226.webm
+reports/redesign/AGR1-fix/mockup-landing-1600x900.png
+reports/redesign/AGR1-fix/class-1600x900.png
+reports/redesign/AGR1-fix/mockup-home-1280x720.png
+reports/n1-relic-recovery/pending-390x844-dark.png
+reports/n1-relic-recovery/pending-390x844-light.png
+reports/n1-relic-recovery/pending-1600x900-light.png
+reports/n1-relic-recovery/pending-1280x720-light.png
+reports/n1-relic-recovery/pending-320x568-light.png
+reports/n1-relic-recovery/pending-1280x720-dark.png
+reports/ui/FINAL-REPORT.md
+reports/ui/CXR2.md
+reports/redesign/AGR0/effects/video-motion-reduced/page@5b88f5c2e6a8ce9a9576c4ccc132e1b2.webm
+reports/redesign/AGR0/effects/video-motion-reduced/page@0a30bc48a213195de31c38cd8c7971cc.webm
+reports/redesign/AGR0/effects/video-motion-reduced/page@7636b71bbff912e72ff3790dcc367d55.webm
+reports/v11-functions.md
+reports/n1-relic-recovery.md
+reports/ui/cards/MOTION/performance-opacity/motion-1280-no-preference.png
+reports/ui/cards/MOTION/performance-opacity/motion-1600-no-preference.png
+reports/ui/cards/MOTION/performance-opacity/motion-1280-reduce.png
+reports/ui/cards/MOTION/performance-opacity/motion-1600-reduce.png
+reports/ui/cards/MOTION/performance-opacity/fps.json
+reports/v21-map/map-1280-dark.png
+reports/v21-map/map-390-light.png
+reports/v21-map/chapter-map-1280-dark.png
+reports/v21-map/map-390-dark.png
+reports/v21-map/map-1280-light.png
+reports/v21-map/chapter-map-390-light.png
+reports/v21-map/chapter-map-1280-light.png
+reports/v21-map/chapter-map-390-dark.png
+reports/cxc1.md
+reports/cxp1/home-1600x900.png
+reports/cxp1/desktop-1600x900.jpg
+reports/cxp1/desktop-1280x720.jpg
+reports/responsive-window/dark-1600-900.png
+reports/responsive-window/dark-390-844.png
+reports/responsive-window/dark-1280-720.png
+reports/responsive-window/light-320-568.png
+reports/responsive-window/light-1280-720.png
+reports/responsive-window/light-1600-900.png
+reports/responsive-window/initial-partial-report.txt
+reports/responsive-window/dark-320-568.png
+reports/responsive-window/light-390-844.png
+reports/ui/cards/GALLERY/REPORT.md
+reports/ui/cards/index.html
+reports/ui/programme.json
+reports/redesign/AGR1-fix/mockup-class-1280x720.png
+reports/redesign/AGR1-fix/home-1280x720.png
+reports/redesign/AGR1-fix/landing-1600x900.png
+reports/redesign/AGR1-fix/landing-1280x720.png
+reports/redesign/AGR1-fix/home-1600x900.png
+reports/redesign/AGR1-fix/mockup-class-1600x900.png
+reports/redesign/AGR1-fix/mockup-home-1600x900.png
+reports/v24b-ch2/ch2-monsters-dark.png
+reports/v3-idle.md
+reports/v24b-ch2/mon-toast-mimic.png
+reports/t3-demo-media.md
+reports/scorecard/cxu5/effects-1280/animation-inventory.json
+reports/v24b-ch2/mon-blender-brute.png
+reports/v24b-ch2/mon-pickle-imp.png
+reports/v24b-ch2/ch2-monsters-all.png
+reports/v24b-ch2/mon-spoon-bug.png
+reports/v24b-ch2/ch2-monsters-light.png
+reports/v24b-ch2/mon-cucumber-scare.png
+reports/t3-demo-media/06-chapter-map.png
+reports/t3-demo-media/08-result.png
+reports/turn3d/PROGRESS.md
+reports/turn3d/BASE-CHECK.md
+reports/g3-combat/frame-metrics.json
+reports/s1-state-r2.md
+reports/v6c-rebalance.md
+reports/g3-combat/melee-1280x720.png
+reports/g3-combat/ranged-1280x720.png
+reports/t3-demo-media/04-bag.png
+reports/g3-combat/ranged-390x844.png
+reports/v19a-loot.md
+reports/base0.md
+reports/u1-ui-round-1/forge-relic-390x844.png
+reports/u1-ui-round-1/forge-craft-1280x720.png
+reports/u1-ui-round-1/character-1280x720.png
+reports/u1-ui-round-1/home-390x844.png
+reports/u1-ui-round-1/help-1280x720.png
+reports/u1-ui-round-1/forge-craft-390x844.png
+reports/u1-ui-round-1/market-1280x720.png
+reports/u1-ui-round-1/boss-390x844.png
+reports/u1-ui-round-1/boss-1280x720.png
+reports/u1-ui-round-1/forge-salvage-1280x720.png
+reports/u1-ui-round-1/bag-390x844.png
+reports/u1-ui-round-1/character-390x844.png
+reports/u1-ui-round-1/home-1280x720.png
+reports/u1-ui-round-1/forge-relic-1280x720.png
+reports/u1-ui-round-1/bag-1280x720.png
+reports/f2-server-mode.md
+reports/v22-class-refs.md
+reports/v26-e2e.md
+reports/t3-demo-media/05-forge-reveal.png
+reports/t3-demo-media/13-idle-loop.gif
+reports/t3-demo-media/07-boss-arena.png
+reports/t3-demo-media/09-phone-stage.png
+reports/t3-demo-media/01-title.png
+reports/g3-combat/gated-1280x720.png
+reports/g3-combat/round-cleared-390x844.png
+reports/g3-combat/reduced-390x844-dark.png
+reports/effects/combat-end.png
+reports/effects/animation-inventory.json
+reports/scorecard/cxu5/effects-1280/video-boss-ready/page@3802e268f903e3ff66316b3ea52b4751.webm
+reports/redesign/AGR1-fix/audit/forge-craft-1280x720.png
+reports/redesign/AGR1-fix/audit/forge-craft-1600x900.png
+reports/redesign/AGR1-fix/audit/help-1280x720.png
+reports/redesign/AGR1-fix/audit/map-1280x720.png
+reports/redesign/AGR1-fix/audit/market-1280x720.png
+reports/redesign/AGR1-fix/audit/map-1600x900.png
+reports/redesign/AGR1-fix/audit/findings.json
+reports/redesign/AGR1-fix/audit/help-1600x900.png
+reports/redesign/AGR1-fix/audit/market-1600x900.png
+reports/redesign/AGR1-fix/audit/home-1600x900.png
+reports/redesign/AGR1-fix/audit/home-1280x720.png
+reports/redesign/AGR1-fix/audit/bag-1280x720.png
+reports/redesign/AGR1-fix/audit/hero-1280x720.png
+reports/redesign/AGR1-fix/audit/hero-1600x900.png
+reports/redesign/AGR1-fix/audit/bag-1600x900.png
+reports/effects/summary.json
+reports/t3-demo-media/13-idle-loop.mp4
+reports/t3-demo-media/03-idle-loop.png
+reports/g3-combat/round-cleared-1280x720.png
+reports/t3-demo-media/11-phone-boss.png
+reports/g3-combat/reduced-1280x720-dark.png
+reports/cxp1/checks/observer-after.log
+reports/cxp1/checks/desktop-e2e.log
+reports/cxp1/checks/round1-e2e.log
+reports/cxp1/checks/observer-before.log
+reports/cxp1/checks/verify-pr.log
+reports/effects/reduced/f005-628ms.png
+reports/cxp1/home-1280x720.png
+reports/effects/reduced/f015-2248ms.png
+reports/effects/reduced/f010-1428ms.png
+reports/effects/reduced/f020-3081ms.png
+reports/effects/reduced/f025-3862ms.png
+reports/v24c-ch3.md
+reports/u8-backdrops.md
+reports/b3-cx2.md
+reports/b3-ag2.md
+reports/responsive-window.md
+reports/asset-provenance.md
+reports/v16-hud.md
+reports/reference-notes/skills-runes.md
+reports/g2-followup.md
+reports/reference-notes/README.md
+reports/reference-notes/items.md
+reports/reference-notes/pets.md
+reports/reference-notes/ui-layout.md
+reports/reference-notes/stats.md
+reports/v6d-rebalance.md
+reports/t4-content.md
+reports/g3-combat.md
+reports/fxrb.md
+reports/t3-demo-media/14-boss-fight.mp4
+reports/g3-combat/gated-390x844.png
+reports/t3-demo-media/02-class-pick.png
+reports/g3-combat/elite-390x844.png
+reports/g3-combat/elite-1280x720.png
+reports/g3-combat/reduced-1600x900-light.png
+reports/t3-demo-media/10-phone-bag.png
+reports/g3-combat/reduced-320x568-light.png
+reports/t3-demo-media/12-phone-forge.png
+reports/g3-combat/melee-390x844.png
+reports/t3-demo-media/14-boss-fight.gif
+reports/v7b-adapter.md
+reports/v24g-backdrop-view/rooftops.png
+reports/v24g-backdrop-view/livingroom.png
+reports/v24g-backdrop-view/kitchen.png
+reports/v24g-backdrop-view/map-1280x720.png
+reports/v24g-backdrop-view/bathroom.png
+reports/v24g-backdrop-view/map-390x844.png
+reports/v24g-backdrop-view/basement.png
+reports/n1-error-screens/offline-390x844-light.png
+reports/n1-error-screens/503-390x844-light.png
+reports/n1-error-screens/wrong-wallet-1280x720-dark.png
+reports/n1-error-screens/429-390x844-light.png
+reports/n1-error-screens/503-1280x720-dark.png
+reports/n1-error-screens/offline-1280x720-dark.png
+reports/n1-error-screens/429-1280x720-dark.png
+reports/n1-error-screens/wrong-wallet-390x844-light.png
+reports/v24c-ch3/mon-sponge-crab.png
+reports/v24c-ch3/ch3-monsters-all.png
+reports/v24c-ch3/ch3-monsters-light.png
+reports/v24c-ch3/mon-soap-slime.png
+reports/v24c-ch3/mon-hair-dryer-wisp.png
+reports/v24c-ch3/mon-rubber-duck.png
+reports/v24c-ch3/mon-bathtub-tyrant.png
+reports/v24c-ch3/ch3-monsters-dark.png
+reports/u7-stage-fx/before-390x844-dark.png
+reports/u7-stage-fx/after-damage-number.png
+reports/u7-stage-fx/after-390x844.png
+reports/u7-stage-fx/before-320x568.png
+reports/u7-stage-fx/after-1600x900.png
+reports/u7-stage-fx/after-1280x720-dark.png
+reports/u7-stage-fx/before-1600x900.png
+reports/u7-stage-fx/after-1280x720.png
+reports/u7-stage-fx/before-1280x720.png
+reports/u7-stage-fx/before-1280x720-dark.png
+reports/u7-stage-fx/after-390x844-dark.png
+reports/u7-stage-fx/after-320x568.png
+reports/u7-stage-fx/before-390x844.png
+reports/t5-judge-pack/explorer-check.json
+reports/t5-judge-pack/proof-failure-check.log
+reports/t5-judge-pack/live-check.txt
+reports/t5-judge-pack/onchain-proof.log
+reports/t5-judge-pack/proof-failure-check.mjs
+reports/effects/boss-ready/f010-1510ms.png
+reports/effects/boss-ready/f015-2277ms.png
+reports/effects/boss-ready/f020-3078ms.png
+reports/effects/boss-ready/f005-684ms.png
+reports/effects/boss-ready/f025-3859ms.png
+reports/u1-tokens.md
+reports/v5-forge.md
+reports/g2-shell/shell-844x390.png
+reports/g2-shell/shell-1024x600.png
+reports/g2-shell/shell-390x844.png
+reports/g2-shell/shell-1280x720.png
+reports/g2-shell/shell-320x568.png
+reports/g2-shell/shell-1440x900.png
+reports/f3-art/stage-ch1-390x844.png
+reports/f3-art/stage-ch1-1280x720.png
+reports/f3-art/stage-ch4-390x844.png
+reports/f3-art/roster-ch1.png
+reports/f3-art/roster-ch3.png
+reports/f3-art/roster-ch2.png
+reports/f3-art/roster-ch5.png
+reports/f3-art/roster-ch4.png
+reports/f3-art/stage-ch2-390x844.png
+reports/f3-art/bake-metrics.json
+reports/f3-art/stage-ch5-390x844.png
+reports/f3-art/stage-ch3-390x844.png
+reports/f3-art/stage-ch4-1280x720.png
+reports/f3-art/stage-ch3-1280x720.png
+reports/f3-art/stage-ch2-1280x720.png
+reports/f3-art/stage-ch5-1280x720.png
+reports/gameplay/ci-final.json
+reports/gameplay/relic-contact.png
+reports/v18-picker/classpicker-320-dark.png
+reports/v18-picker/classpicker-390-dark.png
+reports/v18-picker/classpicker-1280-dark.png
+reports/v18-picker/classpicker-confirm-dark.png
+reports/v18-picker/classpicker-390-light.png
+reports/v18-picker/classpicker-320-light.png
+reports/v18-picker/classpicker-1280-light.png
+reports/v18-picker/classpicker-locked-dark.png
+reports/squad/screens/calm-1280.webp
+reports/squad/screens/group-1280.webp
+reports/squad/screens/group-1920.webp
+reports/squad/screens/boss-1280.webp
+reports/squad/screens/boss-1920.webp
+reports/squad/screens/patrol-1280.webp
+reports/squad/screens/boss-1440.webp
+reports/squad/screens/group-1440.webp
+reports/squad/FRESH-EYES.md
+reports/squad/effects.json
+reports/squad/decisions.json
+reports/visual/effects.json
+reports/squad/proof-images.json
+reports/visual/gallery-manifest.json
+reports/visual/gallery-check.json
+reports/visual/animation-frames.json
+reports/visual/after-captures.json
+reports/visual/before-captures.json
+reports/visual/scores.json
+reports/visual/VISUAL-REPORT.md
+reports/visual/RESEARCH.md
+reports/visual/performance.json
+reports/visual/ART-BIBLE.md
+reports/visual/pull-requests.json
+reports/visual/asset-provenance.md
+reports/scorecard/deno0/logs/import-guard.log
+reports/scorecard/deno0/logs/mutations.json
+reports/scorecard/deno0/logs/results.jsonl
+reports/scorecard/deno0/logs/generator-tests.log
+reports/scorecard/deno0/logs/mutations.log
+reports/effects/combat/f015-2353ms.png
+reports/effects/combat/f050-7977ms.png
+reports/effects/combat/f020-3129ms.png
+reports/effects/combat/f035-5531ms.png
+reports/effects/combat/f040-6365ms.png
+reports/effects/combat/f005-682ms.png
+reports/effects/combat/f045-7197ms.png
+reports/effects/combat/f010-1544ms.png
+reports/effects/combat/f025-3918ms.png
+reports/effects/combat/f030-4747ms.png
+reports/visual/accessibility.json
+reports/visual/HANDOFF.md
+reports/squad/HANDOFF.md
+reports/squad/BASE-CHECK.md
+reports/squad/accessibility.json
+reports/squad/demo-check.json
+reports/gameplay2/base-size-v2.json
+reports/gameplay2/size.json
+reports/gameplay2/BASE-CHECK.md
+reports/gameplay2/asset-provenance.md
+reports/gameplay2/RESEARCH.md
+reports/gameplay2/timeline-summary.json
+reports/gameplay2/FRESH-EYES.md
+reports/gameplay2/decisions.json
+reports/gameplay2/MEASUREMENTS.md
+reports/gameplay2/art-contact.png
+reports/gameplay2/base-prs.json
+reports/squad/fresh-eyes/newcomer-wave-two.webp
+reports/squad/fresh-eyes/skeptic.json
+reports/squad/fresh-eyes/skeptic-first-thread.webp
+reports/squad/fresh-eyes/active-result.webp
+reports/squad/fresh-eyes/newcomer.json
+reports/squad/fresh-eyes/skeptic-phase-pressure.webp
+reports/squad/fresh-eyes/stress-calm.webp
+reports/squad/fresh-eyes/newcomer-resumed-result.webp
+reports/squad/fresh-eyes/newcomer-opening.webp
+reports/squad/fresh-eyes/newcomer-result.webp
+reports/squad/fresh-eyes/active-manual-ultimate.webp
+reports/squad/fresh-eyes/active.json
+reports/squad/fresh-eyes/skeptic-three-minutes.webp
+reports/squad/fresh-eyes/stress-full.webp
+reports/squad/fresh-eyes/skeptic-boss-result.webp
+reports/u1-tokens/build.log
+reports/u1-tokens/contrast-round1.log
+reports/u1-tokens/before-390x844-dark.png
+reports/u1-tokens/e2e.log
+reports/u1-tokens/fix1-lint.log
+reports/u1-tokens/fix1-test.log
+reports/u1-tokens/fix1-install.log
+reports/u1-tokens/after-390x844.png
+reports/u1-tokens/fix1-build.log
+reports/u1-tokens/contrast.log
+reports/u1-tokens/before-320x568.png
+reports/u1-tokens/fix1-e2e.log
+reports/u1-tokens/before-e2e.log
+reports/u1-tokens/after-1600x900.png
+reports/u1-tokens/after-1280x720-dark.png
+reports/u1-tokens/before-1600x900.png
+reports/u1-tokens/after-1280x720.png
+reports/u1-tokens/typecheck.log
+reports/u1-tokens/e2e-round2.log
+reports/u1-tokens/before-1280x720.png
+reports/f1-class-art/build.log
+reports/u1-tokens/before-1280x720-dark.png
+reports/f1-class-art/classic-build.log
+reports/u1-tokens/test.log
+reports/f1-class-art/perf-comparison.json
+reports/f1-class-art/focused.log
+reports/f1-class-art/perf-before.log
+reports/f1-class-art/deno-drift.log
+reports/f1-class-art/links-after.log
+reports/f1-class-art/install.log
+reports/u1-tokens/fix1-typecheck.log
+reports/f1-class-art/guardian-1280x720-light.png
+reports/u1-tokens/lint.log
+reports/visual/logs/first-art-catalog-failure.log
+reports/f1-class-art/e2e.log
+reports/u1-tokens/after-390x844-dark.png
+reports/visual/logs/e2e.log
+reports/f1-class-art/witch-1280x720-light.png
+reports/u1-tokens/test-round2.log
+reports/visual/logs/art-check.log
+reports/f1-class-art/metrics-before.json
+reports/u1-tokens/after-320x568.png
+reports/visual/logs/gallery-check.log
+reports/f1-class-art/finds-1600x900-light.png
+reports/u1-tokens/before-build.log
+reports/f1-class-art/pnpm-version.log
+reports/visual/logs/market-tests.log
+reports/u1-tokens/fix1-contrast.log
+reports/f1-class-art/all-classes-3x.png
+reports/visual/logs/art-tests.log
+reports/u1-tokens/before-390x844.png
+reports/visual/logs/catalog-check.log
+reports/f1-class-art/metrics-after.json
+reports/f1-class-art/finds-390x844-dark.png
+reports/visual/logs/typecheck.log
+reports/f1-class-art/perf-before-5.log
+reports/f1-class-art/e2e-server-loss.log
+reports/visual/logs/workspace-units.log
+reports/f1-class-art/links-before.log
+reports/visual/logs/e2e-full.log.gz
+reports/f1-class-art/guardian-390x844-light.png
+reports/visual/logs/web-units.log
+reports/f1-class-art/checks.json
+reports/visual/logs/accessibility.log
+reports/f1-class-art/all-classes-1x.png
+reports/visual/logs/lint.log
+reports/f1-class-art/full-suite-metrics.json
+reports/gameplay/before-captures.json
+reports/visual/logs/effects.log
+reports/f1-class-art/witch-390x844-light.png
+reports/visual/logs/performance.log
+reports/gameplay/after-minute-1.png
+reports/f1-class-art/finds-320x568-light.png
+reports/gameplay/before-minute-2.png
+reports/f1-class-art/rogue-390x844-light.png
+reports/gameplay/before-minute-3.png
+reports/squad/budgets.json
+reports/f1-class-art/perf-after-5.log
+reports/gameplay/scores.json
+reports/f1-class-art/typecheck.log
+reports/squad/demo-build.json
+reports/gameplay/after-minute-0.png
+reports/f1-class-art/perf-after.log
+reports/squad/asset-provenance.md
+reports/gameplay/gallery-1440.png
+reports/squad/stress.json
+reports/f1-class-art/test.log
+reports/f1-class-art/focused-initial.log
+reports/f1-class-art/rogue-1280x720-light.png
+reports/f1-class-art/evidence-initial.log
+reports/squad/performance.json
+reports/f1-class-art/lint.log
+reports/f1-class-art/typecheck-initial.log
+reports/squad/effects/nineLives-strip.webp
+reports/f1-class-art/evidence-cleanup-initial.log
+reports/squad/base-size.json
+reports/f1-class-art/frame-metrics.json
+reports/squad/verification.json
+reports/f1-class-art/measure.py
+reports/squad/effects/steadfast-strip.webp
+reports/f1-class-art/gen-deno.log
+reports/f1-class-art/evidence.log
+reports/squad/effects/milkFlask-strip.webp
+reports/f1-class-art/finds-1280x720-dark.png
+reports/squad/effects/guardAttack-strip.webp
+reports/squad/effects/emberOrb-strip.webp
+reports/scorecard/base0/hud-resume-handoff.md
+reports/scorecard/cxu5/effects-1280/video-combat/page@5ba3d18ac768ea6164d06026947fc2a0.webm
+reports/squad/balance.json
+reports/v6h-pacing.md
+reports/scorecard/base0/logs-before-geometry.json
+reports/squad/effects/yarnAttack-strip.webp
+reports/squad/effects/shieldBash-strip.webp
+reports/squad/effects/mossFlask-strip.webp
+reports/squad/effects/threadSnare-strip.webp
+reports/squad/effects/hearthwall-strip.webp
+reports/squad/effects/healerAttack-strip.webp
+reports/squad/effects/flankerAttack-strip.webp
+reports/squad/effects/lastSip-strip.webp
+reports/squad/effects/eliteAttack-strip.webp
+reports/squad/effects/bindThread-strip.webp
+reports/squad/effects/lanternstorm-strip.webp
+reports/squad/effects/warmWick-strip.webp
+reports/squad/effects/crossSweep-strip.webp
+reports/squad/effects/rangerAttack-strip.webp
+reports/squad/effects/rally-strip.webp
+reports/squad/effects/chargerAttack-strip.webp
+reports/s3-qa/finding-01-onboarding-v1-modal.png
+reports/s3-qa/console.log
+reports/s3-qa/finding-05-no-class-switch-ui.png
+reports/s3-qa/viewport-390x844-light.png
+reports/s3-qa/finding-03-no-unequip-ui.png
+reports/scorecard/base0/logs/focused-browser.log
+reports/scorecard/base0/logs/results.jsonl
+reports/scorecard/base0/logs/focused-browser-r3.log
+reports/scorecard/base0/logs/focused-browser-r2.log
+reports/scorecard/base0/logs/focused-browser-r4.log
+reports/gameplay/after-special.json
+reports/gameplay/native-delta-1280.json
+reports/gameplay/after-minute-7.png
+reports/gameplay/before-minute-4.png
+reports/gameplay/before-minute-5.png
+reports/gameplay/after-minute-6.png
+reports/gameplay/before-special.json
+reports/gameplay/before-minute-6.png
+reports/gameplay/after-minute-5.png
+reports/gameplay/character-contact.png
+reports/gameplay/gallery-1280.png
+reports/gameplay/after-minute-4.png
+reports/gameplay/before-minute-7.png
+reports/gameplay/forge-debug-320.png
+reports/gameplay/gallery-manifest.json
+reports/gameplay/before-initial.png
+reports/gameplay/gallery-check.json
+reports/gameplay/animation-frames.json
+reports/gameplay/before-corrected-minute-7.png
+reports/gameplay/platform-font-check.mjs
+reports/gameplay/before-corrected-minute-5.png
+reports/scorecard/cxu5/effects-1280/video-motion-normal/page@9c18864eae190705b52a082793a9a826.webm
+reports/scorecard/cxu5/effects-1280/summary.json
+reports/s3-qa/viewport-1280x720-light.png
+reports/s3-qa/viewport-1600x900-light.png
+reports/s3-qa/finding-02-classpicker-focus-trap.png
+reports/s3-qa/viewport-1280x720-dark.png
+reports/s3-qa/viewport-320x568-light.png
+reports/s3-qa/finding-04-away-loot-suppression.png
+reports/s3-qa/findings.json
+reports/s3-qa/viewport-390x844-dark.png
+reports/ui-audit-r2/landing-before-1280.png
+reports/gameplay/g1-first.png
+reports/gameplay/after-minute-2.png
+reports/gameplay/before-minute-1.png
+reports/gameplay/before-minute-0.png
+reports/gameplay/after-minute-3.png
+reports/ui-audit-r2/market-1280.png
+reports/gameplay/class-baseline-1600.png
+reports/gameplay/delivery.json
+reports/gameplay/before-corrected-minute-4.png
+reports/gameplay/after-captures.json
+reports/gameplay/README.md
+reports/gameplay/forge-debug-1280.png
+reports/gameplay/before-corrected-minute-0.png
+reports/gameplay/font-geometry-diagnostic.json
+reports/gameplay/before-corrected-minute-1.png
+reports/gameplay/native-pixel-diff.py
+reports/gameplay/before-corrected-minute-3.png
+reports/gameplay/linux-font-stability.json
+reports/gameplay/after-run.json
+reports/gameplay/before-corrected-minute-2.png
+reports/gameplay/before-corrected-minute-6.png
+reports/scorecard/base0/hud-repair/resume-commands.jsonl
+reports/s1-infra/build.log
+reports/s1-infra/markers-v2.log
+reports/s1-infra/after-1280x720-light.png
+reports/s1-infra/links-after.log
+reports/s1-infra/install.log
+reports/s1-infra/after-390x844-light.png
+reports/s1-infra/after-1600x900-light.png
+reports/s1-infra/links-before.json
+reports/s1-infra/invalid-port.log
+reports/s1-infra/guard-negative-source.txt
+reports/s1-infra/markers-classic.log
+reports/s1-infra/e2e-initial.log
+reports/s1-infra/build-classic.log
+reports/s1-infra/guard-negative.log
+reports/s1-infra/build-v2.log
+reports/s1-infra/after-1280x720-dark.png
+reports/s1-infra/e2e-fixed-override.log
+reports/s1-infra/typecheck.log
+reports/s1-infra/branch-audit.log
+reports/s1-infra/browser-counts.log
+reports/s1-infra/test.log
+reports/s1-infra/image-sizes.log
+reports/s1-infra/throwaway.log
+reports/s1-infra/lint.log
+reports/s1-infra/reports-status.log
+reports/s1-infra/after-390x844-dark.png
+reports/s1-infra/link-checker-cases.log
+reports/s1-infra/e2e-back-to-back-1.log
+reports/s1-infra/e2e-override-final.log
+reports/s1-infra/throwaway-source.txt
+reports/s1-infra/e2e-back-to-back-2.log
+reports/s1-infra/after-320x568-light.png
+reports/s1-infra/e2e-fixed.log
+reports/s1-infra/gen-deno.log
+reports/s1-infra/evidence.log
+reports/scorecard/cxu5/run-checks.mjs
+reports/scorecard/cxu5/source-manifest.json
+reports/scorecard/base0/hud-repair/resume-integrity.json
+reports/scorecard/base0/hud-repair/resume-source.json
+reports/scorecard/base0/hud-repair/run-check.py
+reports/scorecard/base0/screens/after-1280.png
+reports/scorecard/base0/screens/before-1600.png
+reports/scorecard/base0/screens/before-1280.png
+reports/gameplay/performance.json
+reports/gameplay/timeline-metrics.json
+reports/gameplay/RESEARCH.md
+reports/ui-audit-r2/boss-1600.png
+reports/ui-audit-r2/landing-after-1600.png
+reports/ui-audit-r2/help-1024.png
+reports/ui-audit-r2/home-1280.png
+reports/ui-audit-r2/landing-before-1600.png
+reports/ui-audit-r2/README.md
+reports/ui-audit-r2/bag-empty-1280.png
+reports/ui-audit-r2/landing-after-1280.png
+reports/ui-audit-r2/forge-1024.png
+reports/gameplay/pr-bodies/pr-279.md
+reports/gameplay/pr-bodies/pr-281.md
+reports/gameplay/native-font-diagnosis.md
+reports/gameplay/before-corrected-minute-9.png
+reports/gameplay/native-delta-1600.json
+reports/gameplay/before-corrected-run.json
+reports/gameplay/before-corrected-minute-8.png
+reports/gameplay/platform-capture.mjs
+reports/gameplay/asset-provenance.md
+reports/gameplay/delivery-integrity.json
+reports/gameplay/pr-bodies/pr-280.md
+reports/scorecard/cxu5/effects-1280/video-motion-reduced/page@2a70d07d9b9f752280a80175f18a78ae.webm
+reports/squad/art/dummy-real-size.png
+reports/squad/art/healer-real-size.png
+reports/squad/art/flanker-real-size.png
+reports/squad/art/thread-real-size.png
+reports/scorecard/base0/hud-repair/resume-secret-scan.json
+reports/squad/art/ranger-real-size.png
+reports/gameplay/pr-bodies/pr-282.md
+reports/squad/art/yarn-real-size.png
+reports/squad/art/witch-real-size.png
+reports/squad/art/full-wave-first-1280.webp
+reports/squad/art/guardian-crowd-study-1280.png
+reports/squad/art/guard-real-size.png
+reports/squad/art/charger-real-size.png
+reports/squad/art/guardian-real-size.png
+reports/squad/art/GUARDIAN-STUDY.md
+reports/squad/art/alchemist-real-size.png
+reports/squad/art/elite-real-size.png
+reports/gameplay/platform-captures/README.md
+reports/gameplay/before-minute-8.png
+reports/gameplay/before-minute-9.png
+reports/gameplay/class-baseline-1280.png
+reports/gameplay/item-contact.png
+reports/gameplay/HANDOFF.md
+reports/gameplay/after-minute-8.png
+reports/gameplay/accessibility.json
+reports/gameplay/runtime-equivalence.json
+reports/gameplay/after-minute-9.png
+reports/gameplay/gallery-1920.png
+reports/scorecard/base0/hud-repair/logs/resume-focused-1600.log
+reports/scorecard/base0/hud-repair/logs/resume-screens.log
+reports/scorecard/base0/hud-repair/logs/resume-repeat10-1600.log
+reports/scorecard/base0/hud-repair/logs/resume-units.log
+reports/scorecard/base0/hud-repair/logs/resume-lint.log
+reports/scorecard/base0/hud-repair/logs/resume-focused-1280.log
+reports/scorecard/base0/hud-repair/logs/resume-typecheck.log
+reports/scorecard/base0/hud-repair/logs/resume-repeat10-1280.log
+reports/scorecard/art1/logs/whitespace.log
+reports/scorecard/art1/logs/workspace-install.log
+reports/scorecard/art1/logs/pipeline-repeat-06.log
+reports/scorecard/art1/logs/pipeline-repeat-07.log
+reports/scorecard/art1/logs/pipeline-repeat-05.log
+reports/scorecard/art1/logs/pipeline-repeat-04.log
+reports/scorecard/art1/logs/pipeline-repeat-10.log
+reports/scorecard/art1/logs/pipeline-repeat-01.log
+reports/scorecard/art1/logs/pipeline-repeat-03.log
+reports/scorecard/art1/logs/links-current.log
+reports/scorecard/art1/logs/runtime.log
+reports/scorecard/art1/logs/pipeline-repeat-02.log
+reports/scorecard/art1/logs/secret-scan.log
+reports/scorecard/art1/logs/reference-review.log
+reports/scorecard/art1/logs/source-preservation.json
+reports/scorecard/art1/logs/initial-catalog-failures.log
+reports/scorecard/art1/logs/catalog-drift.log
+reports/scorecard/art1/logs/commands.json
+reports/scorecard/art1/logs/handoff-diff-stat.txt
+reports/scorecard/art1/logs/initial-reference-size-failure.log
+reports/scorecard/art1/logs/baseline-docs-unchanged.log
+reports/scorecard/art1/logs/source-audit.log
+reports/scorecard/art1/logs/browser-runtime.log
+reports/scorecard/base0/hud-repair/screens/repaired-1280.png
+reports/scorecard/base0/hud-repair/screens/repaired-1600.png
+reports/scorecard/art1/logs/handoff-files.txt
+reports/scorecard/art1/logs/mutations.log
+reports/scorecard/art1/logs/integrity-scan.json
+reports/scorecard/art1/logs/pipeline-repeat-09.log
+reports/scorecard/art1/logs/pipeline-repeat-08.log
+reports/scorecard/art1/logs/targeted-tests.log
+reports/scorecard/art1/logs/syntax-and-scope.json
+reports/scorecard/art1/logs/links-comparison.json
+reports/scorecard/art1/logs/links-base-docs.log
+reports/gameplay/BRIEF.md
+reports/gameplay/GAMEPLAY-REPORT.md
+reports/gameplay/before-run.json
+reports/scorecard/art1/references/inspection.json
+reports/scorecard/art1/references/rune-demo-1280-2.png
+reports/scorecard/art1/references/redesign-1600-1.png
+reports/scorecard/art1/references/rune-demo-1280-1.png
+reports/scorecard/art1/references/redesign-1600-2.png
+reports/scorecard/art1/references/rune-demo-1600-2.png
+reports/scorecard/art1/references/redesign-1280-1.png
+reports/scorecard/art1/references/rune-demo-1600-1.png
+reports/scorecard/art1/references/redesign-1280-2.png
+reports/gameplay/native-failure-41863629344/flag-off-native/unexpected-landing-1600-0-2.json
+reports/gameplay/native-failure-41863629344/flag-off-native/unexpected-landing-1280-0-0.png
+reports/gameplay/native-failure-41863629344/flag-off-native/unexpected-landing-1600-0-2.png
+reports/gameplay/native-failure-41863629344/flag-off-native/unexpected-landing-1280-0-0.json
+reports/visual/classic-captures.json
+reports/gameplay/platform-captures/darwin-art/landing-1280.png
+reports/gameplay/platform-captures/darwin-art/source.json
+reports/gameplay/platform-captures/darwin-art/class-1600.png
+reports/gameplay/platform-captures/darwin-art/landing-1600.png
+reports/gameplay/platform-captures/darwin-art/class-1280.png
+reports/gameplay/platform-captures/linux-art-pinned/class-1600.png
+reports/gameplay/platform-captures/linux-art-pinned/landing-1600.png
+reports/gameplay/platform-captures/linux-art-pinned/class-1280.png
+reports/gameplay/platform-captures/linux-art-pinned/source.json
+reports/gameplay/platform-captures/linux-art-pinned/landing-1280.png
+reports/gameplay/effects/motion-1280-no-preference.png
+reports/gameplay/effects/motion-1600-no-preference.png
+reports/gameplay/effects/motion-1280-reduce.png
+reports/gameplay/effects/motion-1600-reduce.png
+reports/gameplay/effects/fps.json
+reports/scorecard/art1/logs/mutations/snap-samples-left-edge.log
+reports/scorecard/art1/logs/mutations/atlas-reverses-order.log
+reports/scorecard/art1/logs/mutations/summary.json
+reports/scorecard/art1/logs/mutations/png-accepts-bad-crc.log
+reports/scorecard/art1/logs/mutations/pad-shifts-right.log
+reports/scorecard/art1/logs/mutations/writer-overwrites-existing.log
+reports/scorecard/art1/logs/mutations/palette-chooses-farthest.log
+reports/scorecard/art1/logs/mutations/alpha-threshold-off-by-one.log
+reports/scorecard/art1/logs/mutations/trim-drops-right-column.log
+reports/gameplay/platform-captures/linux-g1-label/class-1600.png
+reports/gameplay/platform-captures/linux-g1-label/landing-1600.png
+reports/gameplay/platform-captures/linux-g1-label/class-1280.png
+reports/gameplay/platform-captures/linux-g1-label/source.json
+reports/gameplay/platform-captures/linux-g1-label/landing-1280.png
+reports/gameplay/platform-captures/darwin-g1-label/class-1600.png
+reports/gameplay/platform-captures/darwin-g1-label/class-1280.png
+reports/gameplay/platform-captures/darwin-g1-label/landing-1600.png
+reports/gameplay/platform-captures/darwin-g1-label/source.json
+reports/gameplay/platform-captures/darwin-g1-label/landing-1280.png
+reports/gameplay/native-failure-41863629344/4173-4174/ui-art2-flag-off-ART2-flag-41f36-viewed-pixel-baselines-1600-stage-layout/error-context.md
+reports/gameplay/logs/platform-linux-capture.log
+reports/gameplay/logs/layer1-e2e.log.gz
+reports/gameplay/logs/e2e-hud-final.log.gz
+reports/gameplay/logs/rig-first.log
+reports/gameplay/logs/effects-build.log
+reports/gameplay/logs/ci-font-platform-local.log
+reports/gameplay/logs/layer2-commits.log.gz
+reports/gameplay/logs/effects.log
+reports/gameplay/logs/art-check-final.log
+reports/gameplay/logs/layer1-typecheck.log
+reports/gameplay/logs/unit-all-second.log.gz
+reports/gameplay/logs/performance.log
+reports/gameplay/logs/ci-final-ui-full.log.gz
+reports/gameplay/logs/layer2-e2e.log
+reports/gameplay/logs/unit-final.log
+reports/gameplay/logs/typecheck-import-relocation.log
+reports/gameplay/logs/art-tests-verified.log
+reports/gameplay/logs/platform-linux-label.log
+reports/gameplay/logs/art-current.log
+reports/gameplay/logs/forge-compact-final.log
+reports/gameplay/logs/baseline-vite.log
+reports/gameplay/logs/layer2-typecheck.log
+reports/gameplay/logs/typecheck-all.log
+reports/gameplay/logs/build-candidate-final.log
+reports/gameplay/logs/e2e-fixes.log.gz
+reports/gameplay/logs/gallery-final-runtime.log
+reports/gameplay/logs/juice-focused.log
+reports/gameplay/logs/layer2-art-complete.log
+reports/gameplay/logs/art-first.log
+reports/gameplay/logs/platform-darwin-capture.log
+reports/gameplay/logs/layer1-forge.log
+reports/gameplay/logs/typecheck-items.log
+reports/gameplay/logs/platform-linux-production.log
+reports/gameplay/logs/ci-label-platform-local.log
+reports/gameplay/native-failure-41863629344/4173-4174/ui-art2-flag-off-ART2-flag-50b4c-viewed-pixel-baselines-1280-stage-layout/error-context.md
+reports/gameplay/logs/native-suite-reproduction.log
+reports/gameplay/logs/art-delivery.log
+reports/gameplay/logs/build-final-platform.log
+reports/gameplay/logs/before-run-failed.log
+reports/gameplay/logs/ci-native-diagnostic-e2e.log.gz
+reports/gameplay/logs/typecheck-delivery.log
+reports/gameplay/logs/layer1-typecheck-import-relocation.log
+reports/gameplay/logs/gallery-final-platform.log
+reports/gameplay/logs/rules-first.log
+reports/gameplay/logs/typecheck-final-candidate.log
+reports/gameplay/logs/layer1-e2e-fixed.log
+reports/gameplay/logs/unit-verified.log
+reports/gameplay/logs/gallery-delivery.log
+reports/gameplay/logs/build-import-relocation-g1.log
+reports/gameplay/logs/build-final-platform-perf.log
+reports/gameplay/logs/build-baseline.log
+reports/gameplay/logs/unit-delivery.log
+reports/gameplay/logs/ci-final-art-failure.log.gz
+reports/gameplay/logs/e2e-second.log.gz
+reports/gameplay/logs/gallery-final-links.log
+reports/gameplay/logs/layer2-art-complete-fixed.log
+reports/gameplay/logs/frames.log
+reports/gameplay/logs/deno-generation-fixed.log
+reports/gameplay/logs/platform-linux-final.log
+reports/gameplay/logs/special-after.log
+reports/gameplay/logs/layer1-tests.log
+reports/gameplay/logs/ui-third.log
+reports/gameplay/logs/rules-economy.log
+reports/gameplay/logs/shots-before.log
+reports/gameplay/logs/ci-final-g1-contracts.log.gz
+reports/gameplay/logs/monsters-second.log
+reports/gameplay/logs/ci-final-ui-platform-local.log
+reports/gameplay/logs/platform-darwin-art-capture.log
+reports/gameplay/logs/ui-first.log
+reports/gameplay/logs/before-run.log
+reports/gameplay/logs/catalog-refresh.log
+reports/gameplay/logs/install.log
+reports/gameplay/logs/layer2-catalog-final.log
+reports/gameplay/logs/typecheck-first.log
+reports/gameplay/logs/platform-linux-pinned-capture.log
+reports/gameplay/logs/after-run-second.log
+reports/gameplay/logs/typecheck-juice.log
+reports/gameplay/logs/platform-linux-font-check.log
+reports/gameplay/logs/rules-import-relocation.log
+reports/gameplay/logs/layer1-install.log
+reports/gameplay/logs/art-check.log
+reports/gameplay/logs/effects-build-fixtures.log
+reports/gameplay/logs/gallery-check.log
+reports/gameplay/logs/platform-darwin-final.log
+reports/gameplay/logs/ci-final-ui-e2e.log.gz
+reports/gameplay/logs/ci-art-e2e-failure.log.gz
+reports/gameplay/logs/layer3-typecheck.log
+reports/gameplay/logs/ci-candidate-label-unit.log
+reports/gameplay/logs/layer2-art.log
+reports/gameplay/logs/ci-final-ui-node.log.gz
+reports/gameplay/logs/before-corrected.log
+reports/gameplay/logs/typecheck-g1.log
+reports/gameplay/logs/archive-manifest.json
+reports/gameplay/logs/lint-delivery.log
+reports/gameplay/logs/special-final.log
+reports/gameplay/logs/shots-after.log
+reports/gameplay/logs/unit-candidate.log
+reports/gameplay/logs/art-tests.log.gz
+reports/gameplay/logs/ci-final-art-e2e.log.gz
+reports/gameplay/logs/ui-complete.log
+reports/gameplay/logs/items-tests.log
+reports/gameplay/logs/ci-g1-e2e-failure.log.gz
+reports/gameplay/logs/ui-second.log
+reports/gameplay/logs/e2e-first.log.gz
+reports/gameplay/logs/layer2-arttests.log
+reports/gameplay/logs/typecheck-art.log
+reports/gameplay/logs/ui-complete-second.log
+reports/gameplay/logs/ci-final-g1-node.log.gz
+reports/gameplay/logs/layer2-install.log
+reports/gameplay/logs/e2e-final.log.gz
+reports/gameplay/logs/build-import-relocation.log
+reports/gameplay/logs/unit-all.log
+reports/gameplay/logs/gallery-ci-label.log
+reports/gameplay/logs/ci-import-map-failure.log
+reports/gameplay/logs/ci-final-art-node.log.gz
+reports/gameplay/logs/ci-final-g1-e2e.log.gz
+reports/gameplay/logs/layer1-rules.log
+reports/gameplay/logs/platform-darwin-label.log
+reports/gameplay/logs/layer2-catalog.log
+reports/gameplay/logs/special-before.log
+reports/gameplay/logs/gallery-final-ci-label.log
+reports/gameplay/logs/ci-font-platform-build.log
+reports/gameplay/logs/build-candidate.log
+reports/gameplay/logs/rig-second.log
+reports/gameplay/logs/ci-art-node-failure.log.gz
+reports/gameplay/logs/ci-native-six-case-failure.log.gz
+reports/gameplay/logs/ci-art-tests-corrected.log
+reports/gameplay/logs/typecheck-polish.log
+reports/gameplay/logs/README.md
+reports/gameplay/logs/shots-final.log
+reports/gameplay/logs/platform-font-geometry.log
+reports/gameplay/logs/a11y-first.log
+reports/gameplay/logs/ci-font-platform-final-local.log
+reports/gameplay/logs/ci-candidate-label-build.log
+reports/gameplay/logs/metrics.log
+reports/gameplay/logs/ci-pinned-preflight-superseded.log.gz
+reports/gameplay/logs/platform-linux-capture-retry.log
+reports/gameplay/logs/ci-final-ui-failure.log.gz
+reports/gameplay/logs/shots-first.log
+reports/gameplay/logs/tests-import-relocation.log
+reports/gameplay/logs/a11y-final.log
+reports/gameplay/logs/after-run.log
+reports/gameplay/logs/layer3-tests.log
+reports/gameplay/logs/typecheck-relic.log
+{
+  "name": "@taskbar-hero/web",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "test": "vitest run",
+    "lint": "tsc --noEmit",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc --noEmit && vite build",
+    "test:e2e": "playwright test"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.104.5",
+    "@taskbar-hero/api-contract": "workspace:*",
+    "@taskbar-hero/chain": "workspace:*",
+    "@taskbar-hero/game-rules": "workspace:*",
+    "phaser": "3.90.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "three": "0.180.0",
+    "viem": "^2.57.10",
+    "wagmi": "^2.19.5"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.1",
+    "@testing-library/react": "16.3.3",
+    "@types/node": "^22.20.5",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@types/three": "0.180.0",
+    "@vitejs/plugin-react": "6.1.2",
+    "jsdom": "30.1.3",
+    "typescript": "5.9.3",
+    "vite": "8.3.5",
+    "vitest": "5.0.5"
+  }
+}
+{
+  "name": "@taskbar-hero/game-rules",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "test": "vitest run",
+    "lint": "tsc --noEmit",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "fast-check": "^4.10.2",
+    "typescript": "5.9.3",
+    "vitest": "5.0.5"
+  }
+}
+apps/web/vite.config.ts:2:import { defineConfig } from 'vitest/config';
+apps/web/vite.config.ts:21:  test: { environment: 'jsdom', include: ['src/**/*.test.{ts,tsx}'] },
+apps/web/vite.config.ts:2:import { defineConfig } from 'vitest/config';
+apps/web/vite.config.ts:21:  test: { environment: 'jsdom', include: ['src/**/*.test.{ts,tsx}'] },
+
+2026-11-05T09:25:05.318016Z  WARN codex_core::responses_retry: stream disconnected - retrying sampling request (1/5 in 2.99916825s)... turn_id=01a1ab06-21a1-7573-8a9d-d9c991758073 retries=1 max_retries=5 sampling_error=exceeded retry limit, last status: 429 Too Many Requests
+ERROR: Reconnecting... 1/5
+**Investigating existing ID types**
+exec
+/bin/zsh -lc "cat packages/game-rules/src/squad/skills.ts
+cat packages/game-rules/src/squad/types.ts
+sed -n '1,220p' apps/web/src/game/squad/presentation.ts
+cat apps/web/tsconfig.json" in /Users/bao/taskbar-hero-turn3d
+ succeeded in 0ms:
+cat: packages/game-rules/src/squad/skills.ts: No such file or directory
+/** Local prototype format. Deliberately unrelated to verified v2 save/replay types. */
+export type Hero = 'guardian' | 'witch' | 'alchemist';
+export type Role = Hero | 'guard' | 'flanker' | 'ranger' | 'healer' | 'charger' | 'elite' | 'yarn' | 'thread' | 'dummy';
+export type Side = 'party' | 'enemy';
+export type Preset = 'hearthkeepers' | 'lanternbreakers';
+export type Encounter = 'patrol' | 'boss' | 'dummy' | 'group';
+export type StatusKind = 'stun' | 'snare' | 'taunt' | 'burn' | 'guard' | 'restrain' | 'exposed';
+export type TargetRule = 'front' | 'injured' | 'caster' | 'self' | 'team' | 'rear';
+export type Shape = 'slash' | 'bash' | 'rally' | 'wall' | 'thread' | 'orb' | 'storm' | 'flask' | 'patch' | 'shelter' | 'arrow' | 'charge' | 'sweep' | 'cross' | 'mend';
+export interface Point { x: number; y: number }
+export interface Stats { hp: number; attack: number; defense: number; intervalMs: number; crit: number; speed?: number; cdr?: number }
+export interface Ability {
+  name: string; shape: Shape; target: TargetRule; cooldownMs: number; windupMs: number; travelMs: number;
+  power: number; radius?: number; heal?: number; shield?: number; status?: StatusKind; durationMs?: number;
+  ultimate?: boolean; heavy?: boolean; melee?: boolean; retarget?: boolean; hits?: number; cleanse?: boolean;
+  description: string;
+}
+export interface Status { kind: StatusKind; source: string; until: number; strength: number; nextTick: number }
+export interface Actor extends Point {
+  id: string; role: Role; name: string; side: Side; slot: number; row: 'front' | 'rear';
+  hp: number; maxHp: number; shield: number; stats: Stats; statuses: Status[]; cooldowns: Record<string, number>;
+  charge: number; auto: boolean; castId: number | null; nextBasic: number; controlCount: number;
+  controlUntil: number; immuneUntil: number; passiveAt: number; boundAlly?: string; break: number;
+}
+export interface Cast {
+  id: number; source: string; targets: string[]; skill: string; start: number; release: number; impact: number;
+  origin: Point; zone: Point; released: boolean; canceled: boolean; hit: number;
+}
+export type CommandBody = { type: 'priority'; target: string | null } | { type: 'ultimate'; hero: Hero }
+  | { type: 'auto'; hero: Hero; enabled: boolean } | { type: 'tactic'; value: 'protect' | 'caster' | 'opening' };
+export type Command = CommandBody & { version: 1; tick: number; seq: number };
+export interface Totals { damage: number; healing: number; shielding: number; kills: number }
+export interface Result {
+  winner: Side; durationMs: number; deaths: string[]; firstDeath: string | null; fishFound: number;
+  totals: Record<string, Totals>; cause: string; suggestion: string;
+}
+export type EventKind = 'cast_start' | 'projectile_release' | 'impact' | 'status_applied' | 'status_expired'
+  | 'heal' | 'shield' | 'interrupt' | 'death' | 'wave_transition' | 'boss_phase' | 'passive' | 'reward'
+  | 'command' | 'fizzle' | 'retarget' | 'fight_end' | 'spawn' | 'enrage' | 'break' | 'charge';
+export interface BattleEvent {
+  version: 1; seq: number; tick: number; time: number; type: EventKind;
+  source?: string; target?: string; skill?: string; amount?: number; critical?: boolean; note?: string;
+  actor?: Actor; actors?: Actor[]; cast?: Cast; phase?: number; wave?: number; result?: Result;
+}
+export interface Battle {
+  version: 1; seed: number; rng: number; tick: number; time: number; carry: number;
+  encounter: Encounter; preset: Preset; actors: Actor[]; casts: Cast[]; events: BattleEvent[];
+  commands: Command[]; commandSeq: number; nextCastId: number; priority: string | null;
+  tactic: 'protect' | 'caster' | 'opening'; wave: number; transitionAt: number | null;
+  phase: number; enraged: boolean; nextAddAt: number; nextThreadAt: number; nextChargeAt: number;
+  settled: boolean; fishFound: number; deaths: string[]; totals: Record<string, Totals>;
+  result: Result | null;
+}
+export interface Projection { actors: Record<string, Actor>; casts: Record<number, Cast>; wave: number; phase: number; result: Result | null; fishFound: number; time: number }
+import { ABILITIES, SQUAD_CONFIG as C } from '@taskbar-hero/game-rules/src/squad/config';
+import type { Actor, BattleEvent, Cast, Point, Projection } from '@taskbar-hero/game-rules/src/squad/types';
+
+const V = C.presentation;
+/** Persistent status icons and defeat poses already communicate those events.
+ * They must not evict a resolved hit from the finite impact-effect pool. */
+export const hasImpactResidue = (event: BattleEvent): boolean =>
+  ['passive', 'break'].includes(event.type)
+  || (['impact', 'heal', 'shield'].includes(event.type) && (event.amount ?? 0) > 0);
+export const firstImpact = (c: Cast) => c.start + ABILITIES[c.skill]!.windupMs + ABILITIES[c.skill]!.travelMs;
+export const lastImpact = (c: Cast) => firstImpact(c) + ((ABILITIES[c.skill]!.hits ?? 1) - 1) * C.stormSpacingMs;
+export const castEnd = (c: Cast) => lastImpact(c) + (c.skill === 'mossFlask' ? ABILITIES[c.skill]!.durationMs! : V.returnMs);
+export const activeCast = (p: Projection, id: string, time: number) => Object.values(p.casts)
+  .filter(c => c.source === id && c.start <= time && time <= lastImpact(c) + V.returnMs)
+  .sort((a, b) => b.id - a.id)[0];
+
+/** Presentation-only anchors. Damage and area membership always come from resolved events. */
+export function actorPosition(p: Projection, a: Actor, time: number, calm: boolean, visited = new Set<string>()): Point {
+  const c = activeCast(p, a.id, time);
+  if (calm || !c || !ABILITIES[c.skill]?.melee || visited.has(a.id)) return { x: a.x, y: a.y };
+  const target = p.actors[c.targets[0] ?? ''];
+  if (!target) return { x: a.x, y: a.y };
+  visited.add(a.id);
+  const other = activeCast(p, target.id, time);
+  const reciprocal = other && other.targets.includes(a.id) && ABILITIES[other.skill]?.melee;
+  const toward = reciprocal ? target : actorPosition(p, target, time, calm, visited);
+  // Several attackers occupy separate contact lanes instead of the same pixels.
+  const peers = Object.values(p.casts).filter(x => x.targets[0] === target.id && ABILITIES[x.skill]?.melee
+    && time <= lastImpact(x) + V.returnMs).sort((x, y) => x.source.localeCompare(y.source));
+  const sign = a.side === 'party' ? -1 : 1;
+  const occupied = Object.values(p.actors).filter(x => x.hp > 0 && x.id !== target.id && x.id !== a.id
+    && !peers.some(peer => peer.source === x.id) && !ABILITIES[activeCast(p, x.id, time)?.skill ?? '']?.melee)
+    .map(x => ({ x: x.x, y: x.y }));
+  let contact: Point = { x: toward.x + sign * V.contactDistance, y: toward.y };
+  for (const peer of peers) {
+    const actor = p.actors[peer.source]!;
+    const candidates = V.contactSlots.map(([dx, dy]) => ({ x: toward.x + sign * dx, y: toward.y + dy }))
+      .filter(q => q.y >= V.heroFrame + V.sceneInset && q.y <= V.height - V.sceneInset)
+      .sort((x, y) => Math.hypot(x.x - toward.x, x.y - toward.y) - Math.hypot(y.x - toward.x, y.y - toward.y)
+        || Math.hypot(x.x - actor.x, x.y - actor.y) - Math.hypot(y.x - actor.x, y.y - actor.y));
+    const chosen = candidates.find(q => occupied.every(x => Math.hypot(x.x - q.x, x.y - q.y) >= V.contactClearance)) ?? candidates[0] ?? contact;
+    occupied.push(chosen);
+    if (peer.id === c.id) contact = chosen;
+  }
+  if (reciprocal) contact = { x: (a.x + target.x) / 2 + sign * V.contactDistance / 2, y: (a.y + target.y) / 2 };
+  const approach = Math.min(1, Math.max(0, (time - c.start) / Math.min(ABILITIES[c.skill]!.windupMs, V.approachMs)));
+  const retreat = time > lastImpact(c) ? Math.max(0, 1 - (time - lastImpact(c)) / V.returnMs) : 1;
+  return { x: a.x + (contact.x - a.x) * approach * retreat, y: a.y + (contact.y - a.y) * approach * retreat };
+}
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "lib": [
+      "ES2022",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "jsx": "react-jsx",
+    "types": [
+      "vite/client",
+      "node"
+    ]
+  },
+  "include": [
+    "src",
+    "e2e",
+    "vite.config.ts",
+    "playwright.config.ts"
+  ]
+}
+
+exec
+/bin/zsh -lc "rg --files apps packages reports/turn3d -g AGENTS.md -g '*turn3d*' -g 'config.ts'
+rg -n 'id:|skillId|passive|sweep|stitch|loose' packages/game-rules/src/squad/config.ts packages/game-rules/src/squad/engine.ts
+ git status --short" in /Users/bao/taskbar-hero-turn3d
+ succeeded in 0ms:
+packages/game-rules/src/config.ts
+packages/game-rules/src/squad/config.ts
+packages/game-rules/src/v2/sim/config.ts
+packages/game-rules/src/v2/config.ts
+apps/web/src/wallet/config.ts
+packages/game-rules/src/squad/config.ts:15:  passive: { cooldownMs: 4500, guardianShield: 20, witchCharge: 9, alchemistShield: 24, injuredFraction: 0.65 },
+packages/game-rules/src/squad/config.ts:107:  yarnAttack: { ...routine, name: 'Spindle Sweep', shape: 'sweep', windupMs: 1400, travelMs: 200, power: 1.35, heavy: true, description: 'Sweep the striped lane. Guard its occupants.' },
+packages/game-rules/src/squad/engine.ts:11:export function makeActor(role: Role, slot: number, id: string, preset: Preset = 'hearthkeepers'): Actor {
+packages/game-rules/src/squad/engine.ts:22:    controlCount: 0, controlUntil: 0, immuneUntil: 0, passiveAt: 0, break: 0 };
+packages/game-rules/src/squad/engine.ts:80:  const injured = target.hp / target.maxHp < C.passive.injuredFraction;
+packages/game-rules/src/squad/engine.ts:84:  if (source.role === 'alchemist' && injured && added && b.time >= source.passiveAt) {
+packages/game-rules/src/squad/engine.ts:85:    source.passiveAt = b.time + C.passive.cooldownMs;
+packages/game-rules/src/squad/engine.ts:86:    emit(b, { type: 'passive', source: source.id, target: target.id, skill: 'lastSip', actor: source });
+packages/game-rules/src/squad/engine.ts:87:    shield(b, source, target, C.passive.alchemistShield, 'lastSip');
+packages/game-rules/src/squad/engine.ts:97:  if (source.role === 'guardian' && b.time >= source.passiveAt) {
+packages/game-rules/src/squad/engine.ts:98:    source.passiveAt = b.time + C.passive.cooldownMs;
+packages/game-rules/src/squad/engine.ts:99:    emit(b, { type: 'passive', source: source.id, skill: 'steadfast', actor: source });
+packages/game-rules/src/squad/engine.ts:100:    shield(b, source, source, C.passive.guardianShield, 'steadfast');
+packages/game-rules/src/squad/engine.ts:158:  if (source.role === 'witch' && has(target, 'burn') && b.time >= source.passiveAt) {
+packages/game-rules/src/squad/engine.ts:159:    source.passiveAt = b.time + C.passive.cooldownMs; source.charge = Math.min(C.ultimate.max, source.charge + C.passive.witchCharge);
+packages/game-rules/src/squad/engine.ts:160:    emit(b, { type: 'passive', source: source.id, skill: 'warmWick', actor: source });
+packages/game-rules/src/squad/engine.ts:178:  if (ability.shape === 'sweep') return all.filter(a => Math.abs(a.y - target.y) <= C.boss.laneHalfWidth);
+packages/game-rules/src/squad/engine.ts:189:  const cast: Cast = { id: b.nextCastId++, source: a.id, skill, targets: targetsFor(b, a, ability, target).map(t => t.id),
+packages/game-rules/src/squad/engine.ts:220:        if (['front', 'rear', 'caster'].includes(tell.target) && !tell.radius && !['cross', 'sweep'].includes(tell.shape)) {
+ M apps/web/package.json
+ M pnpm-lock.yaml
+?? packages/game-rules/src/squad/turn/
+
+ERROR: The gateway connection failed before an outcome could be confirmed. Quota may already have been used. Check the connection, then retry manually. Request: 07efa701-8800-4b64-b202-3ba82f934415
+ERROR: The gateway connection failed before an outcome could be confirmed. Quota may already have been used. Check the connection, then retry manually. Request: 07efa701-8800-4b64-b202-3ba82f934415
+tokens used
+59,139

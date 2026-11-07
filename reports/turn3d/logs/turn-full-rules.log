@@ -1,0 +1,16 @@
+
+> @taskbar-hero/game-rules@0.0.0 test /Users/bao/taskbar-hero-turn3d/packages/game-rules
+> vitest run --maxWorkers=1
+
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-turn3d/packages/game-rules
+
+
+ Test Files  35 passed | 3 skipped (38)
+      Tests  563 passed | 2 expected fail | 11 skipped (576)
+   Start at  16:38:10
+   Duration  37.28s (tests 97%, import 2%, transform 1%)
+
+    Isolate  38 workers spawned · ~67ms startup each (spawn + environment, per file)
+             at least ~2.47s faster with isolate: false — reuses workers across files instead of one per file
+
