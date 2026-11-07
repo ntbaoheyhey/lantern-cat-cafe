@@ -1,14 +1,14 @@
 import { useState } from 'react';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
-import { CARD_BY_ID, QUESTS, getBannerOdds, getDrawPool, emptyPity } from '@taskbar-hero/game-rules/cardrpg';
+import { QUESTS } from '@taskbar-hero/game-rules/cardrpg';
 import { PageTitle, CostView } from '../shared';
 import type { DepthModel } from './model';
-import { CompanionCard as Companion } from './CompanionCard';
 import { CompanionPreview } from './CompanionPreview';
 import { nextChallenge } from './meta-presentation';
 import { portrait } from './assets';
 export { Team, Collection } from './TeamCollection';
 export { Inventory } from './Equipment';
+export { Invitations } from './Invitations';
 
 export function Hub({ m }: { m: DepthModel }) {
   const active = m.state.run && !m.state.run.complete;
@@ -28,16 +28,6 @@ export function Hub({ m }: { m: DepthModel }) {
         <button disabled={!!active || R.idlePreview(m.state, m.offline ? 3600000 : Date.now()).claims === 0} onClick={() => m.apply(R.claimIdleService(m.state, m.offline ? 3600000 : Date.now()), 'Cafe service collected within the daily allowance.')}>{m.offline ? 'Claim fixture hour of service' : 'Claim cafe service'}</button>
         {QUESTS.map(q => { const progress = m.state.account.quests[q.id]!; return <div className="cr-quest-mini" key={q.id}><span>{q.name}<small>{progress.progress}/{q.target} · <CostView cost={q.reward.currencies} /></small><progress aria-label={`${q.name} progress`} value={progress.progress} max={q.target} /></span><button disabled={progress.claimed || progress.progress < q.target || !!active} onClick={() => m.command({ type: 'claimQuest', questId: q.id })}>{progress.claimed ? 'Claimed' : 'Claim'}</button></div>; })}
       </section></div></>;
-}
-export function Invitations({ m }: { m: DepthModel }) {
-  const pity = m.state.account.pity['cats-standard'] ?? emptyPity();
-  const odds = getBannerOdds('standard', pity), last = m.state.account.history.at(-1);
-  return <><PageTitle eyebrow="Earned stamps only" title="A new face at the door." />
-    <section className="cr-panel dp-invitation"><div><h2>Cafe Guestbook</h2><p>Invite a companion for 150 earned stamps. Duplicates grant shards for stars and skill unlocks.</p><div className="cr-actions"><button className="cr-primary" onClick={() => m.invite(!m.state.freeInvite)}>{m.state.freeInvite ? 'Invite once · 150 stamps' : 'Open free welcome invitation'}</button></div>
-      <p>Legendary pity {pity.sinceLegendary}/60 · soft pity begins on draw 41.</p><dl className="dp-odds">{Object.entries(odds).map(([rarity, value]) => <div key={rarity}><dt>{rarity}</dt><dd>{value / 100}%</dd></div>)}</dl>
-      <details><summary>Exact next-draw probabilities</summary>{getDrawPool(m.state.account, 'standard').map(item => <p key={item.id}>{CARD_BY_ID[item.id]?.name ?? item.id} · {(item.probability * 100).toFixed(4)}%</p>)}</details></div>
-      {last?.cardId ? <div className="dp-reveal"><Companion id={last.cardId} m={m} /><h2>{CARD_BY_ID[last.cardId]!.name} arrived.</h2><p>{last.duplicate ? `${last.shards} duplicate shards` : 'A new companion joins the collection.'}</p><button onClick={() => m.go('inventory')}>Equip a first piece</button><button onClick={() => m.go('team')}>Build a team</button></div> : <div className="dp-letter" aria-hidden="true">✉</div>}
-    </section><p>Companions and random equipment are bound to this account. Tradable Relic eligibility uses the effort paths in the Relic panel.</p></>;
 }
 export function Codex() {
   const [tab, setTab] = useState('keywords');

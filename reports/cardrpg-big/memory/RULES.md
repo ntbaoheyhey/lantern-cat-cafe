@@ -23,3 +23,8 @@ REFERENCE: reports/cardrpg-big/memory/PROMPT.md
 21. Update STATE.md after every finished step and at least every 45 minutes. Keep decisions, exact numbers, SHAs, failures and next three actions. PROGRESS.md about every 90 minutes.
 22. Phase-end self-check compares each prompt requirement, records pass/fail/not yet and fixes gaps or labels misses. Park half-wired WIP on a named commit excluded from PRs.
 23. Delivery priorities if constrained are F0, A, F1, F2, hitches, starter F4/F3, checkpoint, F5, M, I, G, remaining cats, F7. Always deliver playable demo and honest report.
+24. Lane A owns I, G, meta screens/CSS, main demo/build, coverage, integration and merged report. Lane B owns 3D/F6, remaining art/audio and default-off auto-extras. Never edit its worktree.
+25. Sync only through append-only A-OUTBOX on ai/codex-cardrpg-big-sync. Read B-OUTBOX at starts/ends, before PR/grey edits and after compaction. CLAIM each phase. OWNERSHIP.md is immutable.
+26. Atomic /tmp/cardrpg-big-locks/timing.lock before timing/matrix/profile/lifecycle/E2E, owner PID/task/time, release in finally. Wait on live lock, stale after3h/dead PID. Other heavy work nice10. Ports5910-5913.
+27. I and G draft branches are siblings from340. Lane A owns grey edits, answers B requests and later merges chains in integration draft, validates five gates, announces CHECKPOINT for B remeasurement.
+28. Phase order I→G→M follow-ups→integration→F7. Ask B for playEntrance(catId)/reveal camera. Final sims extrasON/OFF, defaultOFF retained. Merged report includes Lane B delivered with evidence.
