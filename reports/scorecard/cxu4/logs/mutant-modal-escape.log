@@ -1,0 +1,82 @@
+
+ RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxu4/taskbar-hero/test-results/cxu4-mutations/apps/web
+
+ ❯ src/ui/ui.test.tsx (6 tests | 1 failed) 478ms
+   ❯ shared UI (6)
+     × labels modal, starts on Cancel, traps both directions, ignores disabled and restores opener after Escape 388ms
+
+ Test Files  1 failed | 2 passed (3)
+      Tests  1 failed | 13 passed (14)
+   Start at  16:50:18
+   Duration  2.87s (tests 33%, environment 33%, import 19%, transform 15%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/ui/ui.test.tsx > shared UI > labels modal, starts on Cancel, traps both directions, ignores disabled and restores opener after Escape
+AssertionError: expected <div class="ui-modal" …(4)>…(4)</div> to be null
+
+- Expected:
+null
+
++ Received:
+<div
+  aria-labelledby="_r_0_-title"
+  aria-modal="true"
+  class="ui-modal"
+  role="dialog"
+  tabindex="-1"
+>
+  <div
+    class="ui-modal-heading"
+  >
+    <h2
+      id="_r_0_-title"
+    >
+      Confirm choice
+    </h2>
+    <button
+      aria-label="Close Confirm choice"
+      class="ui-modal-close"
+      type="button"
+    >
+      ×
+    </button>
+  </div>
+  <p>
+    Review choice.
+  </p>
+  <button
+    disabled=""
+  >
+    Unavailable
+  </button>
+  <div
+    class="ui-modal-actions"
+  >
+    <button
+      class="pixel-btn--secondary"
+      type="button"
+    >
+      Cancel
+    </button>
+    <button
+      aria-busy="false"
+      class="pixel-btn"
+      type="button"
+    >
+      Save
+    </button>
+  </div>
+</div>
+
+ ❯ src/ui/ui.test.tsx:27:42
+     25|     opener.focus(); expect(dialog.contains(document.activeElement)).to…
+     26|     fireEvent.keyDown(document, { key: 'Escape' });
+     27|     expect(screen.queryByRole('dialog')).toBeNull(); expect(document.a…
+       |                                          ^
+     28|     expect(opener.closest('[inert]')).toBeNull(); expect(opener.closes…
+     29|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

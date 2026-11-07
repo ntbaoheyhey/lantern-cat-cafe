@@ -1,0 +1,65 @@
+
+ RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxu4/taskbar-hero/test-results/cxu4-mutations/apps/web
+
+ ❯ src/ui/ui.test.tsx (6 tests | 1 failed) 327ms
+   ❯ shared UI (6)
+     × tabs have linked panels and roving automatic activation with wrap, Home and End 23ms
+ ❯ src/layout/HelpTab.search.test.tsx (3 tests | 1 failed) 366ms
+   × supports future Help tabs with independent keyboard navigation 26ms
+
+ Test Files  2 failed | 1 passed (3)
+      Tests  2 failed | 12 passed (14)
+   Start at  16:51:03
+   Duration  2.79s (environment 58%, tests 23%, import 10%, transform 9%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/layout/HelpTab.search.test.tsx > supports future Help tabs with independent keyboard navigation
+AssertionError: expected 'Cat Café GuideLearn how Mochi explore…' to be 'Proof panel' // Object.is equality
+
+Expected: "Proof panel"
+Received: "Cat Café GuideLearn how Mochi explores, levels up, and finds treasures while you work.Search help6 topicsGetting started›Classes›Chapters and rounds›Cat Keys and bosses›Forge›Drop rates›Getting startedMochi the cat naps, wanders and fights on the stage while you work. Pick a class to begin; idle claims earn Fish, Yarn, XP and materials.ClassesWarrior: swordGuardian: hammerRogue: daggersHunter: spearArcher: bowWitch: staffAlchemist: flasksChapters and roundsLiving Room: 10 rounds of 6 monsters, boss at the last round.Kitchen: 10 rounds of 10 monsters, boss at the last round.Bathroom: 10 rounds of 10 monsters, boss at the last round.Basement: 10 rounds of 10 monsters, boss at the last round.Night Rooftops: 10 rounds of 10 monsters, boss at the last round.GatedBeing "gated" means the cat needs more power (upgrade gear).Cat Keys and bossesYou get 1 Cat Key with your first claim each day (hold up to 5). A boss win spends 1 Cat Key. A loss keeps the key and starts a 60 s catnap (one cooldown for all chapters). Rematch cleared bosses for a smaller chest.Daily: 1 Cat Key with your first claim each day.Rare drop: about 1 in 150 monsters in cleared chapters.ForgeCraft gear with Fish, Yarn and materials (guaranteed rarity per recipe: Common, Uncommon, Rare, Epic, Legendary). Salvage returns part of the cost (always less than it cost). Lock items to protect them in your bag (holds up to 200 items).The Relic: 30 Yarn + 1 Moon Pearl, 1 per day, shared with v1.Drop ratesFirst-clear chests always give a Moon Pearl (100%), while repeat chests give one with 30% chance. Gear drops average 1.5 items per chest on first clear versus 0.95 items on repeats. Cat Key is absent from chest tables today.For full tables and probabilities, see docs/drop-rates-v2.md.Start Exploring"
+
+ ❯ src/layout/HelpTab.search.test.tsx:34:52
+     32|   render(<HelpTab additionalTabs={[{ id: 'proof', label: 'On-chain pro…
+     33|   fireEvent.keyDown(screen.getByRole('tab', { name: 'Guide' }), { key:…
+     34|   expect(screen.getByRole('tabpanel').textContent).toBe('Proof panel');
+       |                                                    ^
+     35| });
+     36|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  src/ui/ui.test.tsx > shared UI > tabs have linked panels and roving automatic activation with wrap, Home and End
+AssertionError: expected <button type="button" …(5)></button> to be <button type="button" …(5)></button> // Object.is equality
+
+- Expected
++ Received
+
+  <button
+-   aria-controls="_r_2_-panel-one"
+-   aria-selected="false"
+-   id="_r_2_-tab-one"
++   aria-controls="_r_2_-panel-two"
++   aria-selected="true"
++   id="_r_2_-tab-two"
+    role="tab"
+-   tabindex="-1"
++   tabindex="0"
+    type="button"
+  >
+-   One
++   Two
+  </button>
+
+ ❯ src/ui/ui.test.tsx:61:83
+     59|     fireEvent.keyDown(two, { key: 'Home' }); expect(document.activeEle…
+     60|     fireEvent.keyDown(one, { key: 'End' }); expect(document.activeElem…
+     61|     fireEvent.keyDown(two, { key: 'ArrowRight' }); expect(document.act…
+       |                                                                                   ^
+     62|   });
+     63|   it('banner and empty-state actions announce and invoke their owners'…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+

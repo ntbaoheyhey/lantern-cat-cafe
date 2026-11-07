@@ -1,0 +1,50 @@
+
+> taskbar-hero@0.0.0 test /Users/bao/.codex/worktrees/mega-cxu4/taskbar-hero
+> pnpm -r test -- --maxWorkers=2
+
+Scope: 6 of 7 workspace projects
+packages/auth test$ vitest run -- --maxWorkers=2
+packages/chain test$ vitest run -- --maxWorkers=2
+packages/game-rules test$ vitest run -- --maxWorkers=2
+supabase/tests test$ vitest run -- --maxWorkers=2
+packages/auth test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxu4/taskbar-hero/packages/auth
+packages/game-rules test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxu4/taskbar-hero/packages/game-rules
+packages/chain test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxu4/taskbar-hero/packages/chain
+supabase/tests test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxu4/taskbar-hero/supabase/tests
+packages/chain test:  Test Files  3 passed (3)
+packages/chain test:       Tests  32 passed (32)
+packages/chain test:    Start at  16:53:46
+packages/chain test:    Duration  1.18s (import 54%, tests 39%, transform 6%, worker 2%)
+packages/chain test: Done
+packages/auth test:  Test Files  1 passed (1)
+packages/auth test:       Tests  24 passed (24)
+packages/auth test:    Start at  16:53:46
+packages/auth test:    Duration  1.59s (import 65%, tests 32%, transform 3%)
+packages/auth test: Done
+supabase/tests test:  Test Files  31 passed (31)
+supabase/tests test:       Tests  541 passed | 1 expected fail (542)
+supabase/tests test:    Start at  16:53:46
+supabase/tests test:    Duration  23.79s (tests 84%, import 14%, transform 2%)
+supabase/tests test: Done
+packages/game-rules test:  Test Files  24 passed | 3 skipped (27)
+packages/game-rules test:       Tests  366 passed | 2 expected fail | 11 skipped (379)
+packages/game-rules test:    Start at  16:53:46
+packages/game-rules test:    Duration  50.28s (tests 96%, import 2%, transform 1%)
+packages/game-rules test: Done
+packages/api-contract test$ pnpm --filter @taskbar-hero/game-rules exec vitest run --root ../api-contract -- --maxWorkers=2
+packages/api-contract test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxu4/taskbar-hero/packages/api-contract
+packages/api-contract test:  Test Files  1 passed (1)
+packages/api-contract test:       Tests  16 passed (16)
+packages/api-contract test:    Start at  16:54:37
+packages/api-contract test:    Duration  150ms (transform 50%, import 39%, tests 7%, worker 3%)
+packages/api-contract test: Done
+apps/web test$ vitest run -- --maxWorkers=2
+apps/web test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxu4/taskbar-hero/apps/web
+apps/web test:  Test Files  114 passed (114)
+apps/web test:       Tests  1321 passed (1321)
+apps/web test:    Start at  16:54:37
+apps/web test:    Duration  21.76s (environment 48%, tests 41%, import 9%, transform 1%)
+apps/web test: Environment  jsdom was created 114 times · 104.77s total, 48% of tracked time
+apps/web test:              create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+apps/web test:              learn more: https://vitest.dev/guide/improving-performance#test-environments
+apps/web test: Done

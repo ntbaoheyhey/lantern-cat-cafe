@@ -1,0 +1,33 @@
+
+ RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxu4/taskbar-hero/test-results/cxu4-mutations/apps/web
+
+ ❯ src/layout/character/HeroScreen.test.tsx (5 tests | 1 failed) 2891ms
+   × equipping updates the paper doll and exact shared-rule power, with an additive breakdown 504ms
+
+ Test Files  1 failed | 2 passed (3)
+      Tests  1 failed | 13 passed (14)
+   Start at  16:50:43
+   Duration  7.71s (environment 47%, tests 36%, import 12%, transform 5%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/layout/character/HeroScreen.test.tsx > equipping updates the paper doll and exact shared-rule power, with an additive breakdown
+AssertionError: expected 119 to be 231 // Object.is equality
+
+- Expected
++ Received
+
+- 231
++ 119
+
+ ❯ src/layout/character/HeroScreen.test.tsx:19:126
+     17|   const actual = Number(screen.getByTestId('character-power').textCont…
+     18|   expect(actual).toBe(Math.round(v2.powerRating(stats))); expect(actua…
+     19|   expect(['gear', 'level', 'bonus'].reduce((sum, part) => sum + Number…
+       |                                                                                                                              ^
+     20|   const unequipped = { ...changed, equipped: { ...changed.equipped, we…
+     21|   rerender(<CharacterPanel state={unequipped} />); expect(screen.getBy…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

@@ -1,0 +1,3 @@
+{"kind":"audit-demo","exit":0,"portOnlyAdaptation":{"before":"const port = signedIn ? 4175 : 5199, apiPort = 4176;","after":"const port = 4362, apiPort = 4363;"}}
+{"kind":"audit-local","exit":0,"portOnlyAdaptation":{"before":"const port = signedIn ? 4175 : 5199, apiPort = 4176;","after":"const port = 4362, apiPort = 4363;"}}
+{"kind":"effects","exit":0,"portOnlyAdaptation":{"before":"const port = 5198,","after":"const port = 4362,"}}

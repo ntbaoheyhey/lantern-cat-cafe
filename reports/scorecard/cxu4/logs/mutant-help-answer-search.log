@@ -1,0 +1,25 @@
+
+ RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxu4/taskbar-hero/test-results/cxu4-mutations/apps/web
+
+ ❯ src/layout/HelpTab.search.test.tsx (3 tests | 1 failed) 973ms
+   × searches answer content, selects visible answers and recovers from an empty result 615ms
+
+ Test Files  1 failed | 2 passed (3)
+      Tests  1 failed | 13 passed (14)
+   Start at  16:50:35
+   Duration  5.79s (environment 62%, tests 24%, import 11%, transform 2%, worker 1%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/layout/HelpTab.search.test.tsx > searches answer content, selects visible answers and recovers from an empty result
+AssertionError: expected 'No matching topics' to be 'Cat Keys and bosses' // Object.is equality
+
+Expected: "Cat Keys and bosses"
+Received: "No matching topics"
+
+ ❯ src/layout/HelpTab.search.test.tsx:26:65
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

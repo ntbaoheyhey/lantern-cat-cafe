@@ -1,0 +1,52 @@
+
+ RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxu4/taskbar-hero/test-results/cxu4-mutations/apps/web
+
+ ❯ src/ui/ui.test.tsx (6 tests | 2 failed) 573ms
+   ❯ shared UI (6)
+     × success and warning dismiss on schedule while failure persists and can be closed 13ms
+     × pauses toast while hovered or focused, restarting the interval afterwards 14ms
+
+ Test Files  1 failed | 2 passed (3)
+      Tests  2 failed | 12 passed (14)
+   Start at  16:50:29
+   Duration  4.48s (environment 56%, tests 25%, import 13%, transform 6%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/ui/ui.test.tsx > shared UI > success and warning dismiss on schedule while failure persists and can be closed
+AssertionError: expected [ [ 's' ], [ 'e' ] ] to deeply equal [ [ 's' ], [ 'w' ] ]
+
+- Expected
++ Received
+
+  [
+    [
+      "s",
+    ],
+    [
+-     "w",
++     "e",
+    ],
+  ]
+
+ ❯ src/ui/ui.test.tsx:41:70
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  src/ui/ui.test.tsx > shared UI > pauses toast while hovered or focused, restarting the interval afterwards
+AssertionError: expected "vi.fn()" to be called with arguments: [ 'w' ]
+
+Number of calls: 0
+
+ ❯ src/ui/ui.test.tsx:52:59
+     50|     fireEvent.mouseLeave(toast); fireEvent.focus(screen.getByRole('but…
+     51|     fireEvent.blur(screen.getByRole('button'), { relatedTarget: docume…
+     52|     act(() => vi.advanceTimersByTime(1)); expect(dismiss).toHaveBeenCa…
+       |                                                           ^
+     53|   });
+     54|   it('tabs have linked panels and roving automatic activation with wra…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+

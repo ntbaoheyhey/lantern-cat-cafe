@@ -1,0 +1,7 @@
+{"name":"modal-escape","file":"ui/Modal.tsx","before":"event.key === 'Escape'","after":"event.key === 'BrokenEscape'","exit":1,"assertionsFailed":true,"killed":true}
+{"name":"modal-focus-return","file":"ui/Modal.tsx","before":"if (opener?.isConnected) opener.focus();","after":"if (opener?.isConnected) node.focus();","exit":1,"assertionsFailed":true,"killed":true}
+{"name":"failure-toast-duration","file":"ui/Toast.tsx","before":"toast.tone === 'error' || hovered","after":"toast.tone === 'warning' || hovered","exit":1,"assertionsFailed":true,"killed":true}
+{"name":"help-answer-search","file":"layout/HelpTab.tsx","before":"searchable(topic.content).toLocaleLowerCase()","after":"topic.title.toLocaleLowerCase()","exit":1,"assertionsFailed":true,"killed":true}
+{"name":"power-bonus","file":"layout/character/CharacterPanel.tsx","before":"bonus: power - withoutBonus","after":"bonus: 0","exit":1,"assertionsFailed":true,"killed":true}
+{"name":"class-success","file":"layout/character/HeroScreen.tsx","before":"if (success) setOpen(false);","after":"if (!success) setOpen(false);","exit":1,"assertionsFailed":true,"killed":true}
+{"name":"tab-keyboard","file":"ui/Tabs.tsx","before":"event.key === 'ArrowRight' ? 1","after":"event.key === 'ArrowRight' ? 0","exit":1,"assertionsFailed":true,"killed":true}

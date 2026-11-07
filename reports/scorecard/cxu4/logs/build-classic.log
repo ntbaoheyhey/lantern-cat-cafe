@@ -1,0 +1,24 @@
+
+> @taskbar-hero/web@0.0.0 build /Users/bao/.codex/worktrees/mega-cxu4/taskbar-hero/apps/web
+> tsc --noEmit && vite build
+
+vite v8.3.5 building client environment for production...
+transforming...
+[plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/.codex/worktrees/mega-cxu4/taskbar-hero/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+✓ 1827 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                               2.13 kB │ gzip:   0.77 kB
+dist/assets/index-DRP56F_q.css              148.98 kB │ gzip:  23.47 kB
+dist/assets/rolldown-runtime-XKyaHtl9.js      0.72 kB │ gzip:   0.42 kB
+dist/assets/assets-CpytQ_XT.js                2.39 kB │ gzip:   1.17 kB
+dist/assets/ArenaScene-LfTBtbQn.js            7.04 kB │ gzip:   2.71 kB
+dist/assets/createGame-CYG5tCgZ.js            8.45 kB │ gzip:   3.48 kB
+dist/assets/StageScene-Ces4Y4TD.js           15.73 kB │ gzip:   5.79 kB
+dist/assets/react-C1iE8mnY.js               218.75 kB │ gzip:  68.27 kB
+dist/assets/index-DnSL4hUy.js               249.60 kB │ gzip:  70.30 kB
+dist/assets/web3-CAMfHZNv.js                363.83 kB │ gzip: 108.14 kB
+dist/assets/combat-BSGSpOB2.js              900.61 kB │ gzip:  77.42 kB
+dist/assets/phaser-CS_hOpYn.js            1,194.43 kB │ gzip: 318.49 kB
+
+✓ built in 374ms

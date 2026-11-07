@@ -1,0 +1,169 @@
+{
+  "files": [
+    "apps/web/e2e/server/cxu4-offline.spec.ts",
+    "apps/web/e2e/ui/cxu4-hero-help.spec.ts",
+    "apps/web/src/layout/HelpTab.content.tsx",
+    "apps/web/src/layout/HelpTab.search.test.tsx",
+    "apps/web/src/layout/character/HeroScreen.test.tsx",
+    "apps/web/src/layout/character/HeroScreen.tsx",
+    "apps/web/src/ui/Banner.tsx",
+    "apps/web/src/ui/ConfirmModal.tsx",
+    "apps/web/src/ui/EmptyState.tsx",
+    "apps/web/src/ui/Modal.tsx",
+    "apps/web/src/ui/Tabs.tsx",
+    "apps/web/src/ui/Toast.tsx",
+    "apps/web/src/ui/index.ts",
+    "apps/web/src/ui/ui.css",
+    "apps/web/src/ui/ui.test.tsx",
+    "docs/decisions/cxu4-hero-help.md",
+    "docs/design/decisions.md",
+    "reports/redesign/CXU4/help-strings.json",
+    "reports/redesign/CXU4/plan.md",
+    "reports/scorecard/cxu4/audit-demo/findings.json",
+    "reports/scorecard/cxu4/audit-local/findings.json",
+    "reports/scorecard/cxu4/audit-runs.json",
+    "reports/scorecard/cxu4/capture-reference.mjs",
+    "reports/scorecard/cxu4/effects/animation-inventory.json",
+    "reports/scorecard/cxu4/effects/summary.json",
+    "reports/scorecard/cxu4/integrity.mjs",
+    "reports/scorecard/cxu4/logs/audit-demo.log",
+    "reports/scorecard/cxu4/logs/audit-local.log",
+    "reports/scorecard/cxu4/logs/audits.log",
+    "reports/scorecard/cxu4/logs/browser-classic.log",
+    "reports/scorecard/cxu4/logs/browser-initial.log",
+    "reports/scorecard/cxu4/logs/browser-offline-repeat10.log",
+    "reports/scorecard/cxu4/logs/browser-repeat10.log",
+    "reports/scorecard/cxu4/logs/browser-smoke-fixed.log",
+    "reports/scorecard/cxu4/logs/browser-smoke.log",
+    "reports/scorecard/cxu4/logs/build-classic.log",
+    "reports/scorecard/cxu4/logs/build-v2.log",
+    "reports/scorecard/cxu4/logs/bundle.log",
+    "reports/scorecard/cxu4/logs/components-fixed.log",
+    "reports/scorecard/cxu4/logs/components.log",
+    "reports/scorecard/cxu4/logs/contrast.log",
+    "reports/scorecard/cxu4/logs/deno-imports.log",
+    "reports/scorecard/cxu4/logs/effects.log",
+    "reports/scorecard/cxu4/logs/full-unit-bounded.log",
+    "reports/scorecard/cxu4/logs/full-unit.log",
+    "reports/scorecard/cxu4/logs/gen-deno.log",
+    "reports/scorecard/cxu4/logs/help-baseline-strings.log",
+    "reports/scorecard/cxu4/logs/install.log",
+    "reports/scorecard/cxu4/logs/integrity.log",
+    "reports/scorecard/cxu4/logs/links.log",
+    "reports/scorecard/cxu4/logs/lint.log",
+    "reports/scorecard/cxu4/logs/mutant-class-success.log",
+    "reports/scorecard/cxu4/logs/mutant-failure-toast-duration.log",
+    "reports/scorecard/cxu4/logs/mutant-help-answer-search.log",
+    "reports/scorecard/cxu4/logs/mutant-modal-escape.log",
+    "reports/scorecard/cxu4/logs/mutant-modal-focus-return.log",
+    "reports/scorecard/cxu4/logs/mutant-power-bonus.log",
+    "reports/scorecard/cxu4/logs/mutant-tab-keyboard.log",
+    "reports/scorecard/cxu4/logs/mutation-control.log",
+    "reports/scorecard/cxu4/logs/mutation-restored.log",
+    "reports/scorecard/cxu4/logs/mutations.log",
+    "reports/scorecard/cxu4/logs/reference-capture.log",
+    "reports/scorecard/cxu4/logs/reference.log",
+    "reports/scorecard/cxu4/logs/screenshots.log",
+    "reports/scorecard/cxu4/logs/string-capture.log",
+    "reports/scorecard/cxu4/logs/targeted-initial.log",
+    "reports/scorecard/cxu4/logs/targeted-r2.log",
+    "reports/scorecard/cxu4/logs/typecheck-final.log",
+    "reports/scorecard/cxu4/logs/typecheck-initial.log",
+    "reports/scorecard/cxu4/logs/typecheck.log",
+    "reports/scorecard/cxu4/mutate.mjs",
+    "reports/scorecard/cxu4/mutations.json",
+    "reports/scorecard/cxu4/resume-handoff.md",
+    "reports/scorecard/cxu4/run-audits.mjs",
+    "reports/scorecard/cxu4/ui-diff.md",
+    "apps/web/e2e/layout/character-bag.spec.ts",
+    "apps/web/e2e/ui/u4-character-bag.spec.ts",
+    "apps/web/src/layout/HelpTab.css",
+    "apps/web/src/layout/HelpTab.keys.test.tsx",
+    "apps/web/src/layout/HelpTab.test.tsx",
+    "apps/web/src/layout/HelpTab.tsx",
+    "apps/web/src/layout/StageLayout.tsx",
+    "apps/web/src/layout/character/CharacterPanel.tsx",
+    "apps/web/src/layout/character/character.css",
+    "apps/web/src/layout/notice/ActionNotice.tsx",
+    "apps/web/src/theme.contrast.test.ts",
+    "apps/web/tools/screen-manifest.json"
+  ],
+  "findings": [],
+  "suspiciousAddedDiffLines": [],
+  "changedArtPaths": [],
+  "screenshots": [
+    {
+      "path": "reports/scorecard/cxu4/help-1280.png",
+      "bytes": 78192
+    },
+    {
+      "path": "reports/scorecard/cxu4/help-1600.png",
+      "bytes": 82811
+    },
+    {
+      "path": "reports/scorecard/cxu4/hero-1280.png",
+      "bytes": 144490
+    },
+    {
+      "path": "reports/scorecard/cxu4/hero-1600.png",
+      "bytes": 202072
+    },
+    {
+      "path": "reports/scorecard/cxu4/modal-1280.png",
+      "bytes": 95607
+    },
+    {
+      "path": "reports/scorecard/cxu4/modal-1600.png",
+      "bytes": 129341
+    },
+    {
+      "path": "reports/scorecard/cxu4/ref-char-1280.png",
+      "bytes": 133776
+    },
+    {
+      "path": "reports/scorecard/cxu4/ref-char-1600.png",
+      "bytes": 215082
+    },
+    {
+      "path": "reports/scorecard/cxu4/ref-help-1280.png",
+      "bytes": 56583
+    },
+    {
+      "path": "reports/scorecard/cxu4/ref-help-1600.png",
+      "bytes": 59569
+    },
+    {
+      "path": "reports/scorecard/cxu4/ref-states-1280.png",
+      "bytes": 64132
+    },
+    {
+      "path": "reports/scorecard/cxu4/ref-states-1600.png",
+      "bytes": 69571
+    },
+    {
+      "path": "reports/scorecard/cxu4/reference-char-1280.png",
+      "bytes": 120131
+    },
+    {
+      "path": "reports/scorecard/cxu4/reference-char-1600.png",
+      "bytes": 187983
+    },
+    {
+      "path": "reports/scorecard/cxu4/reference-help-1280.png",
+      "bytes": 56419
+    },
+    {
+      "path": "reports/scorecard/cxu4/reference-help-1600.png",
+      "bytes": 59824
+    },
+    {
+      "path": "reports/scorecard/cxu4/reference-states-1280.png",
+      "bytes": 63534
+    },
+    {
+      "path": "reports/scorecard/cxu4/reference-states-1600.png",
+      "bytes": 69458
+    }
+  ],
+  "screenshotsWithinBudget": false
+}

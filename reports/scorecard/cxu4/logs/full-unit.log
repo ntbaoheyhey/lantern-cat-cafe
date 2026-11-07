@@ -1,0 +1,95 @@
+
+> taskbar-hero@0.0.0 test /Users/bao/.codex/worktrees/mega-cxu4/taskbar-hero
+> pnpm -r test
+
+Scope: 6 of 7 workspace projects
+packages/auth test$ vitest run
+packages/chain test$ vitest run
+packages/game-rules test$ vitest run
+supabase/tests test$ vitest run
+packages/auth test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxu4/taskbar-hero/packages/auth
+packages/chain test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxu4/taskbar-hero/packages/chain
+packages/game-rules test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxu4/taskbar-hero/packages/game-rules
+supabase/tests test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxu4/taskbar-hero/supabase/tests
+packages/chain test:  Test Files  3 passed (3)
+packages/chain test:       Tests  32 passed (32)
+packages/chain test:    Start at  16:50:34
+packages/chain test:    Duration  1.73s (import 52%, tests 33%, transform 14%, worker 2%)
+packages/chain test: Done
+packages/auth test:  Test Files  1 passed (1)
+packages/auth test:       Tests  24 passed (24)
+packages/auth test:    Start at  16:50:34
+packages/auth test:    Duration  2.44s (import 59%, tests 36%, transform 5%)
+packages/auth test: Done
+supabase/tests test:  Test Files  31 passed (31)
+supabase/tests test:       Tests  541 passed | 1 expected fail (542)
+supabase/tests test:    Start at  16:50:35
+supabase/tests test:    Duration  27.14s (tests 79%, import 15%, transform 6%)
+supabase/tests test: Done
+packages/game-rules test:  Test Files  24 passed | 3 skipped (27)
+packages/game-rules test:       Tests  366 passed | 2 expected fail | 11 skipped (379)
+packages/game-rules test:    Start at  16:50:34
+packages/game-rules test:    Duration  71.51s (tests 88%, transform 9%, import 2%)
+packages/game-rules test: Done
+packages/api-contract test$ pnpm --filter @taskbar-hero/game-rules exec vitest run --root ../api-contract
+packages/api-contract test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxu4/taskbar-hero/packages/api-contract
+packages/api-contract test:  Test Files  1 passed (1)
+packages/api-contract test:       Tests  16 passed (16)
+packages/api-contract test:    Start at  16:51:47
+packages/api-contract test:    Duration  505ms (transform 85%, import 13%, tests 2%, worker 1%)
+packages/api-contract test: Done
+apps/web test$ vitest run
+apps/web test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxu4/taskbar-hero/apps/web
+apps/web test:  ❯ src/map/ChapterMap.test.tsx (10 tests | 1 failed) 21668ms
+apps/web test:    ❯ ChapterMap Component (10)
+apps/web test:      × renders five chapters 7413ms
+apps/web test:  ❯ src/game/stage/relicWiring.ui.test.tsx (9 tests | 1 failed) 25507ms
+apps/web test:    × keeps unsigned recovery visible in the Relic footer without mounting MintPanel after the UI merge 6887ms
+apps/web test:  ❯ src/layout/StageLayout.test.tsx (11 tests | 1 failed) 31053ms
+apps/web test:    × desktop: rail, top HUD, stage, character area and the seven tabs 7840ms
+apps/web test: ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+apps/web test:  FAIL  src/layout/StageLayout.test.tsx > desktop: rail, top HUD, stage, character area and the seven tabs
+apps/web test: Error: Test timed out in 5000ms.
+apps/web test: If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+apps/web test:  ❯ src/layout/StageLayout.test.tsx:56:1
+apps/web test:      54| });
+apps/web test:      55|
+apps/web test:      56| it('desktop: rail, top HUD, stage, character area and the seven tabs',…
+apps/web test:        | ^
+apps/web test:      57|   render(<App />);
+apps/web test:      58|   expect(screen.getByTestId('rail')).toBeTruthy();
+apps/web test: ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+apps/web test:  FAIL  src/map/ChapterMap.test.tsx > ChapterMap Component > renders five chapters
+apps/web test: Error: Test timed out in 5000ms.
+apps/web test: If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+apps/web test:  ❯ src/map/ChapterMap.test.tsx:26:3
+apps/web test:      24|   });
+apps/web test:      25|
+apps/web test:      26|   it('renders five chapters', () => {
+apps/web test:        |   ^
+apps/web test:      27|     render(<ChapterMap currentChapter={1} clearedChapters={[]} />);
+apps/web test:      28|
+apps/web test: ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+apps/web test:  FAIL  src/game/stage/relicWiring.ui.test.tsx > keeps unsigned recovery visible in the Relic footer without mounting MintPanel after the UI merge
+apps/web test: Error: Test timed out in 5000ms.
+apps/web test: If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+apps/web test:  ❯ src/game/stage/relicWiring.ui.test.tsx:52:1
+apps/web test:      50|   expect(screen.getByTestId('mint-flow').textContent).toContain('42');
+apps/web test:      51| });
+apps/web test:      52| it('keeps unsigned recovery visible in the Relic footer without mounti…
+apps/web test:        | ^
+apps/web test:      53|   fake.state.forge.pending = { ...voucher, signature: null, recoverabl…
+apps/web test:      54|   fake.state.forge.blockedBy = 'daily_limit';
+apps/web test: ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+apps/web test:  Test Files  3 failed | 111 passed (114)
+apps/web test:       Tests  3 failed | 1314 passed (1317)
+apps/web test:    Start at  16:51:47
+apps/web test:    Duration  40.26s (environment 49%, tests 41%, import 9%, transform 1%)
+apps/web test: Environment  jsdom was created 114 times · 186.07s total, 49% of tracked time
+apps/web test:              create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+apps/web test:              learn more: https://vitest.dev/guide/improving-performance#test-environments
+apps/web test: Failed
+/Users/bao/.codex/worktrees/mega-cxu4/taskbar-hero/apps/web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/web@0.0.0 test: `vitest run`
+Exit status 1
+ ELIFECYCLE  Test failed. See above for more details.
