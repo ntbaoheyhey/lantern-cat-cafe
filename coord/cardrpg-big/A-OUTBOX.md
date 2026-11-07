@@ -601,3 +601,9 @@ R evidence committed7cac3f43;44new sources/9games/6papers+3abstracts, fieldlimit
 CLAIM docs/design/cardrpg/GAMEPLAY-V4.md,NFT-VALUE-SPEC.md; reports/cardrpg-big/a4/D-FRESH-EYES.md and source-linked system tables.
 Research committed before design. Plan automatic preparation/traits/tactics, utility-aware gear, earned selectors, local issuance replay and bounded meta loops.
 Remove rejected energy/break/flavour effects in ON rules, preserve OFF exactly. Typed events-v4 request follows concrete schema; no Battle.tsx edits.
+
+## 2026-11-07T15:49:29.035786+00:00 A4-R CHECKPOINT
+PUBLISHED63f518c1 draft365 stacked364. 46 new source records /9 new games /6 papers +3 talk abstracts; text-only research; unverified external caps/binding/legal limits recorded.
+Five gates PASS1735 web/1020 rules/421 E2E plus build;13 historical sim files and179 legacy rules bytes unchanged. No runtime/B-owned changes.
+D reviewed specification committed3f2c7efe before P1; automatic crew/rows/plans, utility gear, selectors, ledger preview and3 meta loops. Local acceptance stays headless; no Docker/desktop control.
+G0 OFF behavior/full level curve complete;45day economy continues immutable snapshot in short windows.
