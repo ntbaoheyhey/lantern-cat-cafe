@@ -1,23 +1,22 @@
 # Taskbar Hero session state
-PROMPT.md bytes (wc -c) = 50258
-PROMPT.md SHA-256 = 4d1b88d82407168fd5d395681a3baaf977fb0487bc171543cba22ce328a1cc2d
+PROMPT.md bytes (wc -c) = 53562
+PROMPT.md SHA-256 = bba8c53418413298018f714aa35ebd60ed3d49d9df32f2027c90ba9b279dcc37
 REFERENCE: reports/cardrpg-big/memory/PROMPT.md
 ## NOW
-PAUSED BY USER at 2026-11-07T01:35:24.911759+00:00 (“lưu handoff và dừng”). Resume only when asked. Read memory/HANDOFF.md first; A runners stopped/lock released, B separately paused.
-Lane A · Integration/F7. ACCEPTED combinedsource a106dfcac755d42f91b2467adf6d888ca0b41a9c, published draft358 against332; latest evidence e114954bd98adb354a69c6eeb6caeec02a4f3969. Worktree /Users/bao/taskbar-hero-cardrpg-big-delivery; branch codex/cardrpg-big-delivery-2026-11-07. HTML9a5f6ebbb04af56c19f11cf43cf2763b35df2bde3b7a8dcd943060e878d793d3/23937000bytes;1150inputhashesmatch,0runtime/builderdelta. All5gatesPASS1730web/1020rules/421E2E+demo-types. Scope0protectedchanges/Fujiequal/startup2319608bytes/0three-models. Wrapper12captures/3sizesPASS;studio258selectionsPASS0errors/remote. Finalfunctional/video/performanceacceptance remains open.
-Canonical worktree /Users/bao/taskbar-hero-cardrpg-big; branch ai/codex-cardrpg-big-2026-11-06. Last memory parent422e1afe/source published221ec3a8a462597f55579a319018961cd5cd9d21;rules source db1448e9;I browser checkpoint published. Drafts333/F0,334/A,335/F1,336/F2,337/F3,338/F4,339/F5,340/M,341/I,344/G,345/Mfollowup,348/F7preparation.
-G worktree /Users/bao/taskbar-hero-cardrpg-big-g;codex/cardrpg-big-g-2026-11-06;publisheda75ae753/draft344,source62cb5697. M-followup /Users/bao/taskbar-hero-cardrpg-big-meta;codex/cardrpg-big-meta-2026-11-06;published5d1c2c47/draft345,source72bce95c.
-F7 preparation /Users/bao/taskbar-hero-cardrpg-big-demo;codex/cardrpg-big-demo-2026-11-06 source c984c3673e5f5b2c674653296fd5ddaea0eef6c9. Home lab/checklist/frame overlay6focused and four source gates PASS1698web/903rules. Browser18captures/3sizesPASS,0errors/network/overflow,accountrestored. Visualdecode/narrowdrawer followup onreveal candidate. Published evidence1c188a468480850f04bab09a8fa70debe55bf9dc/draft348;runtime capture pending integrated art. Final integration and report pending.
-Sync /Users/bao/taskbar-hero-cardrpg-sync; ai/codex-cardrpg-big-sync. B01:33 USER-PAUSE: all B runners stopped; memory/HANDOFF.md saved. Prior01:27: newintegratedbranchd52c53e3; exact9a5f6ebb final860matrix waitsA14videos. Maincold7/loading/lifecycle/audio/flagoff scheduled;710historicalqueue retired/incomplete. E3/E4/boss drafts354/355/356. A checkpoint3fd37b07 announcesaccepted9a5f6ebb toB forfinal860cases. OWNERSHIP.md immutable.
-Phase HTML survives in each worktree docs/cardrpg3/index.html (rehash verified): I big6a8e0a42; G big-g284976a9; M big-meta1c331fcd. Old /tmp artifact copies/queues were lost; do not resume obsolete PIDs.
-A integration /Users/bao/taskbar-hero-cardrpg-big-integration; codex/cardrpg-big-integration-2026-11-06; tipf68e7c2b, published3a173cf5. HTML162f3d24 complete header evidence retained. Delivery separately merges full B; no rebuild of historical artifact.
-Reveal /Users/bao/taskbar-hero-cardrpg-big-reveal;codex/cardrpg-big-reveal-2026-11-07;bbba4c0d19focusedPASS. Artifact980791a0a52ce56bd6c76ed51e346514804b0797faa7cc2c6eecd64ecd65468c8cases/24capturesPASS. Queue75084 ended onlab2pxoverflow, fivegates skipped. Source merged472d5110;rawcopiedintegration/reveal/viewport-v2 anddemo/readability/pilot-overflow. Old1d3b5a93 diagnostic retained.
-Revealfit /Users/bao/taskbar-hero-cardrpg-big-reveal-fit;codex/cardrpg-big-reveal-fit-2026-11-07;published69b994eb. Source9db6b57e;HTML419fc50d/23,377,025bytes. 68captures,0errors;1024firstresult599.375px,card570.015625px,action582.9375px. FullfivegatesPASS1722web/1020rules/421E2E. integration/reveal-fit/README.md;validation/reveal-fit-v7.json.
-## NEXT
-1. On explicit resume, reread RULES/STATE/PROMPT F7+SCOPE+lanes, HANDOFF.md and B-OUTBOX; verify HTML9a5f6ebb and source hashes. Do not reuse old process IDs.
-2. Complete only path (interrupted; partial retained) and mechanics (not started) in new evidence directories, then 14 clips and filmstrips. Existing 8/10 functional receipts PASS; do not overwrite them.
-3. Coordinate B accepted-main cold/lifecycle/audio/flag-off/860matrix, review all clips in four roles, update COVERAGE/F7/report and ledger with honest misses. No work continues during pause.
+PAUSED by user 2026-11-07T04:03:48.097356+00:00: save handoff and stop. F7 baseline v1 evidence14/14 complete,12,385decodedframes/991samples/57sheets reviewed; four-role20weaknesses and11scores saved. Report is DRAFT,coverage/F7/ledger publication unfinished. No LOOK source adopted; no A jobs active.
+Lane A · Integration/F7. ACCEPTED combinedsource a106dfcac755d42f91b2467adf6d888ca0b41a9c, published draft358 against332; latest pause commit ef400fc3e52251548d8147fba42f9863857072b5 (14videos/review+B359evidence;reportdraft). Worktree /Users/bao/taskbar-hero-cardrpg-big-delivery; branch codex/cardrpg-big-delivery-2026-11-07. HTML9a5f6ebbb04af56c19f11cf43cf2763b35df2bde3b7a8dcd943060e878d793d3/23937000bytes;1150inputhashesmatch,0runtime/builderdelta. All5gatesPASS1730web/1020rules/421E2E+demo-types. Scope0protectedchanges/Fujiequal/startup2319608bytes/0three-models. Wrapper12captures/3sizesPASS;studio258selectionsPASS0errors/remote. Functional+recordingacceptancePASS; visual/performanceacceptance stillMISS/incomplete.
+Canonical worktree /Users/bao/taskbar-hero-cardrpg-big; branch ai/codex-cardrpg-big-2026-11-06. Last memory parent10831832/source published221ec3a8a462597f55579a319018961cd5cd9d21;rules source db1448e9;I browser checkpoint published. Drafts333/F0,334/A,335/F1,336/F2,337/F3,338/F4,339/F5,340/M,341/I,344/G,345/Mfollowup,348/F7preparation.
+Sync /Users/bao/taskbar-hero-cardrpg-sync; ai/codex-cardrpg-big-sync. B03:32 main audio6/5286frames MAX33.3ms0errors,enable226.5–316.7ms;flagoff11JS/3522500bytes0Three/GLB/errors PASS. Lifecycle20heap+1858320bytes/0GPUgrowth;maincold116.7msMISS.Old B queues retired; final860matrix waits final lookV2 only. OWNERSHIP.md immutable.
+Historical worktrees/decisions retained in memory/HISTORY.md and DECISIONS.md; bulk evidence stays in Git after sparse cleanup.
+## NEXT (only after user resumes)
+1. Finish baseline publication: update COVERAGE.md+integration/F7-GATES.md+DRAFT-PRS.md, verify report numbers/links and cold hitch counts, preserve all misses; then publish draft358/report+ledger.
+2. Read B-OUTBOX at resume/phase boundaries; old B queues retired. LOOK L0request answered8d49d4ea: exacthelperAPI/tip requested; wire shared lookV2 appOFF/lookdemoON+live toggle in next shared-source commit.
+3. Adopt published LOOK tokens/art checkpoints with original meta textures/restyle/portraits; rebuild/hash,five gates+functional pack in short locks,exact-hash A CHECKPOINT. Final860matrix only LOOK B/final lookV2.
 ## DONE
+Baseline review ·ef400fc3/draft358;14recordings/12,385decodedframes/991samples/57sheets;video/delivery/{audit,review/observations}.json. FRESH-EYES has20weaknesses/11grades;reportdraft107lines;not baseline publication.
+Functional complete ·5254757c/draft358;10/10groups,204screenshothashes,Mechanics4cases/8captures. delivery/functional-complete.md;no runtime/builder changes.
+Saved-evidence audit ·be40bc91/draft358;9complete receipts,196screenshot hashes,five accepted gate-log hashes. delivery/functional-audit.json;mechanicspending,not a new browser run.
+Resumed path ·7fc12ff0/draft358;3sizes,27captures,9routewins,replay/save15378bytes,0errors. integration/delivery/path-resume/checks.json.
 Pause evidence ·e114954b/draft358;8/10functionalPASS;reveal32+invitations36+designs12captures. delivery/pause-summary.json;pathpartial/mechanics/videospending.
 F7 main meta/lab ·c862b757/draft358;21lab+39metacapturesPASS,0errors/remote/overflow;functional-first5.json. READMEofflineguide/DRAFT-PRS27draftsnapshot andactualstaticreviews included.
 F7 integrated gallery ·10bc7c6a/draft358;25units/86actions×3sizes,93comparisons160imagesdecode,0errors/remote. integration/delivery/{studio,gallery,comparisons}/checks.json.
@@ -36,6 +35,8 @@ G ·a75ae753/draft344, invitations/PERFORMANCE.md and recovery-verification.json
 M-followup ·5d1c2c47/draft345, meta-followup/CHECKPOINT.md,6before/aftercases+33screensPASS.
 F7 preparation ·1c188a46/draft348, demo/screens/checks.json, fivegates/18capturesPASS;fullintegrationpending.
 ## PHASE GATES
+PASS LOOK baseline14recordings+chronologicalreview(991samples);PASS fourroles×5weaknesses+11scores;9/11scoresMISS8.5. NOTYET reportfinalaudit/COVERAGE/F7/ledger publication;NOTYET LOOK adoption/matrix.
+PASS F7 fullnormaljourney/3sizes and isolatedMechanics4cases: tenfunctional groups complete,204screenshothashes. delivery/functional-audit.json;video/visual/performance stillNOTYET.
 PASS F7 “Skill gallery: pick any cat/skill/ultimate/enemy attack, play it on the stage, speed x0.25/x1, scrub, effect-only mode, camera preset A/B/C”;25units86actions×3sizes=258selections. delivery/studio/checks.json.
 PASS F7 “Before/after: baseline screenshots and filmstrips next to current ones”;93items160images decodeoffline/0errors/remote. delivery/comparisons/checks.json;oldHTMLretained.
 PASS draft “ITEM-TIERS.md (max2pages,tables)...every item type...drop rates...sink...power band...account-bound or collectible-eligible...one legendary<=X%.” Single-piece9.63060686%<=10%;table docs/design/cardrpg/ITEM-TIERS.md;items/ENCOUNTER-BALANCE.md.
@@ -45,19 +46,25 @@ PASS “existing Fuji read-only Relic panel stays as is.” A-onlyscope0protecte
 PARTIAL lane encounter target45–90s via existing knobs. Starter ch1 train48/50,heldout44/50 first encounters insideband,medians51.411/53.569s. Full-route starter wins13/50train/10/50heldout. Browser5/5 PASS46.5327–57.2778s,0errors. items/ENCOUNTER-CHECKPOINT.md.
 PASS G presentation “per pull and per10-pull...anticipation...rarity...cardflip...epic/legendary3Dentrance...duplicate shards...skip...odds,pity,history,cost,earned...featured art/skillloop.” Reveal-fit69b994eb fivegates1722web/1020rules/421E2E+68captures0errors;1024firstresultbottom599.375px. Header placement followup21lab+32reveal capturesPASS. Timing openingMAX316.6ms remains MISS. integration/reveal-fit/README.md;integration/header/{lab,reveal}/checks.json.
 PASS M-followup widthgain70px>=60at1024;canvasheight300px;rotationvisible;0overflow/errors/remote.6before/after cases12captures +33metascreens. Fivegates1692web/903rules/421E2E. meta-followup/CHECKPOINT.md.
-NOT YET F7 static offline<=24MB;five labpanels;before/after,filmstrips,matrix,liveframes,briefjumpbuttons;videos/sequences;3sizes;fresh-eyes4roles×5weaknesses;11honestgrades;<=150line report with8–10Vietnamese lines;draftintegration+ledger. Draft98lines/9Vietnamese at integrationd0e5701d,gradespending. demo/PLAN.md.
+PARTIAL F7: offline23,937,000bytes/fivepanels/3sizes/14videos/review4×5/11grades PASS;draftreport107lines/9Vietnamese. NOTYET COVERAGE/F7-GATES/reportaudit/ledger publication. Existing acceptance tables intentionally stale until resume.
 ## PRIOR PHASE GATES
 F5 ·casts33.4/16.8ms PASS50ms, pageMAX300ms FAIL100ms, first encounters9.306–16.195s MISS45–90s, clutch/boss natural evidence pending. flow/GATES.md.
 F4/F3 ·starter31 recipes465 pairs and30 motion pairs PASS. Opening266.7/566.7ms FAIL. effects/GATES.md,motion/GATES.md,CHECKPOINT.md.
 F2/F1/A ·sharpness2/10 pairs PASS, scale band MISS, stage78.889% PASS, full-page hitch gates FAIL. sharpness/GATES.md,layout/README.md,auto/GATES.md.
 ## DECISIONS · append only archive
+2026-11-07T04:03:48.097356+00:00 · User requested stop+handoff. Save evidence-only local merge ofB359/7e1b54b0 with A14videos/reviews; no runtime changes/new matrix. Baseline report remains draft untilcoverage/linkaudit/ledger. Canonical HANDOFF is resume entry.
+2026-11-07 · LOOK addendum:9a5f6ebb is baseline v1; old B long queues retired; final lookV2 matrix only by LOOK B. Original receipts retained. Ownership unchanged; PROMPT.md newest section controls.
+2026-11-07T03:13:37.258461+00:00 · After summary, reread RULES/STATE/F7/SCOPE/lanes/HANDOFF and B03:07resume. Continue already-live A14138/14160/14561; B owns current lock. Retain all prior partial evidence; exact main unchanged.
+2026-11-07T03:05:40.129661+00:00 · Resume after disk cleanup: recovered canonical4a5c2c15/deliverye114954b/sync6997cfd2 from retained Git branches; sparse checkout avoids re-expanding16GB history. PROMPT50258/SHA4d1b88d8 andHTML23937000/SHA9a5f6ebb verified. No app/runtime rebuild.
 2026-11-07T01:35:24.911759+00:00 · User requested handoff+stop. A26656/27700 and verified descendants stopped; lock released; B01:33 also paused. 8/10 functional PASS retained at e114954b. No runtime changes; five prior gate-log hashes reverified. Path incomplete, mechanics/videos not started. memory/HANDOFF.md is resume entry.
 2026-11-07T01:30:25.337451+00:00 · Ownc862b757 savesmainlab21/meta39 and5/10functionalPASS;inspectedteam/collection/greencomparison/collectiblecaps;all3sizes0errors/remote. GitHub27PRs332–358drafttrue recordedpr-snapshot.json. B01:27agreeswaitA14clipsbefore860matrix;shortcold/lifecycle/audio/flagoff mayinterleave. Ledgerownreportpathabsent;otheruntrackeduserfilesuntouched.
-2026-11-07T01:22:36.372962+00:00 · Delivery10bc7c6a publishes3completedfunctional receipts andstaticreview;5source-gateloghashesstillmatch. Postcapture1150inputs=1149match+1capture-onlyduration8→25s;runtime/builder/HTMLunchanged. Sync ecab2dbf requestsBmaincold7/loading/flagoff becausemainloaderdiffers. F7gates updated;fullvideo reviewpending.
 Older decisions retained verbatim in memory/DECISIONS.md.
 
 ## MEASUREMENTS
-Pause ·8/10functionalPASS;reveal8cases32captures/invitations4cases36captures/designs3sizes12captures,0runtimeerrors. Path12capturespartial. delivery/pause-summary.json;no new clean timing claim.
+Mainvideo ·14clips:13×25s +boss170.4s;12,385decodedframes/991samples/57sheets. audit.json/observations.json. Scores6.5/5/6.5/6/6.5/5/9/7.5/6.5/7.5/8.5;9MISS8.5. Silent2fpsreview does not provecontinuousmotion/audio/performance.
+Mechanics ·4cases,9676post-readyframes,MAX33.3ms,>25=1/>50=0,242calls/116868triangles;accountunchanged/watchedskipmatch. delivery/mechanics-resume/summary.json. Excludespageopening.
+B accepted-main cold7 ·B-OUTBOX03:15;9a5f6ebb,13125rawframes,0errors,nativeMAX33.3/CPU4MAX116.7ms MISS100,p9516.8. Hub878.2–914.3/2294.7–2305.1ms,battle7055.9–7162.4/10304–10321.5ms. B integration/cold/raw-audit.json;860matrixpending.
+Resume ·path3sizes/27capturesPASS,9routeencounterwins/save15378bytes,0errors;delivery/path-resume/checks.json. Original8stepsPASS,mechanics pending. 1204uniqueinputs:onlyknowncapture-duration mismatch;resume-source.json.
 Main meta ·39captures/3sizesPASS0errors/remote/overflow;dragdrop/presets/rotation/skillloop/equip-enhance-reforge-salvage and5itemcategoriesPASS. delivery/meta/checks.json;inspected1024team/collection,1280equipment/collectibles.
 Main Feel lab ·21captures/3sizes,0overflow/errors/remote,accountrestored;delivery/lab/checks.json. Viewed1024gallery-home/1280motion/performance;panelscrollrequired,overlaytimingdiagnosticonly.
 Delivery functional ·gallery3sizesPASS;93comparisons/160embeddedimagesdecoded,0errors/remote,accountrestored. integration/delivery/{gallery,comparisons}/checks.json.
@@ -89,8 +96,8 @@ F3 ·610/156687frames,pageMAX566.7ms,cast33.4/16.8ms,20actions30jointpairs PASS,
 F2 ·610/156241frames,pageMAX533.4ms,>25=4679/>50=2231,cast33.5/16.8ms. Sharpnessface-53.10/-49.84%,enemy-51.82/-46.28%,HUD0/0%,portrait-0.19/-3.34%,icon+366.30/+421.26%.2/10 targets PASS. sharpness/PERFORMANCE.md,sharpness.json.
 F1 ·stage78.889%,2745poses0failures,faceMAX55deg,hero13.189–32.975% MISS.610/131781frames,pageMAX1583.3ms,>25=5529/>50=3100,cast33.4/16.8ms. layout/README.md,PERFORMANCE.md.
 ## PROBLEMS / PARKED
-USER PAUSE ·Path check interrupted; partial receipt never counts as full pass. Remainingmechanics,14videos,4-role review,Bmainmeasurements and finalreport pending. Evidence-only commit e114954b,no half-wired runtime.
-B historical710matrixqueue retired beforestart; earlier partialfiles retained asINCOMPLETE. Final860onacceptedHTML required; nohistoricalfullmatrixpassclaim. B01:23outbox.
+Resumed ·Old interrupted path retained; new path3sizesPASS7fc12ff0,Mechanics4PASS5254757c. 14videos complete; remaining bossreview/4-rolegrades/baseline report/ledger then LOOK integration. No half-wired runtime.
+B historical710matrixqueue retired beforestart; earlier partialfiles retained asINCOMPLETE. Final860onlyonfinal lookV2/B required; nohistoricalfullmatrixpassclaim. B01:23outbox.
 Integration ·E2E1/421fontnetworkECONNRESET retained,focusedretry2/2PASS. Videopilot label thenblockedtogglefailed;Hidecontrols fix289ffa0e/7focusedPASS, browserqueue98060. OldE2queue94674exitedbeforevalidation;replacementcontrolsqueue recordedabove.
 G reveal ·39.25pxoldoverflow fixedbbba4c0d,8casesPASS. Lab thenfailed2pxhorizontalbodyoverflow, retaineddemo/readability/pilot-overflow. Combinedfix644a0fe0 passes21captures/3sizes0overflow/errors/network;fullnewcontrolsvalidationqueued98060. Allthresholdsunchanged.
 F7 probe ·exact implicit select label included option text,so action locator timed out. Reused existing non-exact label selector inlab/video drivers. Failed5screens+log retained demo/pilot-action-label*. Controlrerun18capturesPASS;blankpre-renderstageimageledtob6630082draw/modelguard.
@@ -102,7 +109,7 @@ F5 opening and fight-duration gates miss, clutch/boss visual proof pending. F2 s
 Earlier pilots retained at baseline/skills-pilot,baseline/skills-coarse-heap,motion/pilot-zero-weight,flow/pilot-banner. User old/main worktrees contain edits, preserve them. Ledger edits limited to requested report/state.
 ## COVERAGE
 REFERENCE: reports/cardrpg-big/COVERAGE.md;baseline/COVERAGE.md
-Effects/motion ·starter20actions/30motionpairs and31recipes/465effectpairs pass. motion/variety.json,effects/verified/uniqueness.json. B2c all12cats sourceintegrated;finalrenderedreviewpending.
+Effects/motion ·starter20actions/30motionpairs and31recipes/465effectpairs pass. motion/variety.json,effects/verified/uniqueness.json. B2c all12cats sourceintegrated;baseline14clipreviewcomplete,visualqualitymissesretained.
 Image sharpness ·2/10 target crop pairs pass,8miss. sharpness/README.md.
 Layout/scale/faces ·stage78.889%,2745poses0overlap/crop,<=55deg. Scale band partial. layout/README.md.
 Turn clarity/lag ·F5 cold7/full720/profiles5 complete,opening hitch fixes pending. flow/PERFORMANCE.md.
@@ -115,6 +122,6 @@ Gacha ·G344 a75ae753 complete720+5profiles, pageMAX316.6msMISS. Integrated69b99
 NFT-value limits ·25cap/2UItests and12screens PASS, local counters/help verified. Chain paths protected.
 Research-based identity ·existing research and original cafe assets used,one-page addendum written.
 ## TOOLING / RESUME
-PAUSED: old A26656/27700/40925 and descendants verified absent; no owned lock remained. B01:33 confirms its own runners stopped. Do not resume automatically or reuse old PIDs.
-Read memory/HANDOFF.md for targeted resume commands, evidence locations and remaining gates. Preserve path partial receipts; no whole-series replay. Python/Pillow/NumPy /tmp/cardrpg-big-tools may need recreation.
+Own sparse worktrees:canonical memory,sync coord,delivery source+evidence. Use git show/expand sparse paths for historical files. No old PIDs valid; no new browser on resume before receipt audit.
+Read memory/HANDOFF.md before resume. Do NOT replay completevideo/functional series. baseline-v1.html isbyte-identical9a5f6ebb copy. No automatic continuation installed by A.
 Validation ports5910–5913; atomic /tmp/cardrpg-big-locks/timing.lock before any timing-sensitive work. Do not touch Bworktree or user/main edits. Hash guard main9a5f6ebb; videos BIG_VIDEO_RESUME=1 only with matching receipts.
