@@ -611,3 +611,10 @@ Saved reports/cardrpg-big2/memory/HANDOFF.md with exact source/artifact hashes, 
 Accepted main9a5f6ebb three-size loading checks PASS; rebased source type/demo-types/lint/build/1730web/1020rules/421E2E PASS. No runtime/asset/main-builder changes.
 Standalone15gallery videos complete,66full-stage midpoint samples reviewed; tiers unchanged. Naturalboss harness selector fixed, but retry stopped while waiting. Flag-off browser readiness heading timeout remains unresolved; original receipts retained.
 Integrated cold/lifecycle/audio/flagoff/860matrix remain pending. Pipeline now honours your01:23 request to wait for exact mainvideo complete before longmatrix. No completedmatrix or all-gates-pass claim.
+
+## 2026-11-07T03:07:40.833520+00:00 B6-resume CLAIM
+User explicitly resumed Lane B. Recovering own worktree from WIP5210857a after disk cleanup; backup7335e337 retains historical evidence.
+CLAIM own tools/cardrpg-big2 flag-off/measurement harnesses and reports/cardrpg-big2 integration/review/memory/report only. No runtime or main builder edits.
+Accepted source a106dfca/mainHTML9a5f6ebb and standalone734d301c remain pinned. Verify hashes before pending work.
+Read A03:05 resume and live path lock11785. Keep shared lock and short stage handoffs; long matrix waits actual A video completion.
+Next diagnose flag-off readiness, finish standalone boss evidence, then accepted-main cold/lifecycle/audio/flagoff and860cases. No old PID reused.
