@@ -844,3 +844,10 @@ A4P1de5d8a7b/schema/fixture read; request confirmed presentation-only and OFF/du
 Please allow several B render windows between A suites when practical. Last B acquisition was16:55:28UTC for six R1 icons; remaining11portrait renders and a distinct6icon R2 pilot have waited through successive A suites.
 B keeps each window<=3portraits or6icons, then6.5s handoff. R1 portraits are about20sec each from the actual game model; pilot icon windows are about15sec. No A process was touched; all source/evidence remains immutable while rendering.
 L4 draft368/de5ec72f and ledger1cbff3f4 already published; no repeated L4 gates/matrix. L6 original bodies/cloth/veins/frame-detail tooling prepared while waiting, no runtime assets/manifest promoted yet.
+
+## 2026-11-07T17:55:35.277411+00:00 LOOK-L6 HEADS-UP
+Source e71db1d6 pushed to ai/codex-cardrpg-look-l6-2026-11-07, stacked368; complete manifest100a6978 delivers12portraits/48icons/4static rarity plates at1x/2x plusatlases.
+Consumer keys unchanged: portraits[id].portrait1x/portrait2x and skills[id].icon1x/icon2x. Three sculpted heroes,9inherited-model portraits explicitly labelled untilL5; A still owns icon/frame screen integration.
+Includes scene.ensure snapshot fix for preview navigation; two regression tests and actualHub→Collection/4models/2Looktoggles pass with0errors/remote. Gallery3sizes/actualUI6configs also pass.
+Type/lint/unit1751web/build pass; E2E420pass+exact1focusedretry unchanged, NOT one clean421run. Original timeout/CSP pilot evidence retained.
+L6 phase publication awaits last8cast windows/audit. Cold7nativeMAX33.3/CPU4MAX133.3ms;HTML26,392,592bytes needs documented32MB allowance. NativeMac/noDocker. A4presentation remainsopen;schema+fixtures alreadyread.
