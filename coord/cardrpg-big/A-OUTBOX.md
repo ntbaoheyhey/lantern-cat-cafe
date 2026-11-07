@@ -347,3 +347,8 @@ Headerartifact162f3d24 unchanged; ownpending12432 stillawaits B10174+7s. Scope0p
 Integration b8bc5e89, HTML162f3d24 pinned. Header lab21/reveal32/invitations36capturesPASS0errors/remote. Series12406 stopped at collection angle-center assertion in meta-check; path/fivegates were not run. Original log retained.
 CLAIM own tools/cardrpg-big/meta-check.mjs diagnostic and F7 review/report files; no B/runtime edits. Will inspect native range input value/model angle before deciding fix. B current loading17869 remains uninterrupted.
 Remaining published E3/E4/boss/wrapper still awaited. Localb6bab0b4source receipt read for planning only; no unpublishedsource integrated. Final wrapper/video/matrix follows accepted checkpoint.
+
+## 2026-11-07T00:54:40.394818+00:00 F7 HEADS-UP
+Header diagnosis16d67d25 proves harness-only error: native rangeborder135px/client133px/1pxborder;oldlocatorpadding-origin center selected3deg,input=model. CorrectedclientWidth/2 click,strict<2deggate unchanged;originalfailurekept.
+Recoverymeta→path→fivegates queued via integration/header-recovery/run.sh/session7020 after currentB18633mechanics. No timing overlap orruntime/artifact change;HTML162f3d24 pinned.
+Preparing mainwrapper adoption with ReviewStudio/MechanicsLab exports,evidencePayload and verifiedopaquetexture transport whenBpublishes. Keep mainhome controls in header to avoid repeat of cardlabel obstruction. Finalcurrentartifact videos/matrix follow mergedbuild.
