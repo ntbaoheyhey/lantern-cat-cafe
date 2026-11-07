@@ -179,10 +179,10 @@
       "team_size": "Four in ordinary party; unverified",
       "positions": "Front position and target priorities",
       "skills_resource_model": "Basic actions plus cooldown skills; special resource varies",
-      "equipment_slots": "Six gear pieces and artifact; model knowledge",
+      "equipment_slots": "Six gear pieces and one artifact; source-supported specialist guide.",
       "item_tiers_colours": "Publisher-specific rarity cues; exact colour palette not copied",
-      "affixes": "Main and secondary equipment stats create build tradeoffs",
-      "sets": "Matching pieces grant bonuses",
+      "affixes": "Main and substats; item level differs from enhancement.",
+      "sets": "Matching two- or four-piece sets activate bonuses.",
       "enhancement": "Level gear and units; ascend/awaken or limit-break units",
       "duplicates": "Duplicates feed development or a conversion currency",
       "gacha_banners": "Covenant and featured, plus separate special pools",
@@ -198,11 +198,15 @@
       "player_praise": "RPGFan review praises presentation/animation",
       "player_friction": "RPGFan review identifies slowdown during hero leveling/upgrades",
       "sources": [
-        "E7"
+        "E7",
+        "V4-E7-EQUIP"
       ],
       "verified_scope": [
         "player_praise",
-        "player_friction"
+        "player_friction",
+        "equipment_slots",
+        "affixes",
+        "sets"
       ],
       "other_fields_status": "Mechanism synthesis from model knowledge; unverified unless in verified_scope. Session lengths are estimates. Praise/friction are hypotheses unless attributed to a review.",
       "field_evidence": {
@@ -243,20 +247,29 @@
           "sources": []
         },
         "equipment_slots": {
-          "status": "unverified synthesis / estimate or not applicable as stated",
-          "sources": []
+          "status": "source-scoped; specialist text; limitations explicit",
+          "sources": [
+            "V4-E7-EQUIP"
+          ],
+          "note": "Six gear pieces and one artifact; source-supported specialist guide."
         },
         "item_tiers_colours": {
           "status": "unverified synthesis / estimate or not applicable as stated",
           "sources": []
         },
         "affixes": {
-          "status": "unverified synthesis / estimate or not applicable as stated",
-          "sources": []
+          "status": "source-scoped; specialist text; limitations explicit",
+          "sources": [
+            "V4-E7-EQUIP"
+          ],
+          "note": "Main and substats; item level differs from enhancement."
         },
         "sets": {
-          "status": "unverified synthesis / estimate or not applicable as stated",
-          "sources": []
+          "status": "source-scoped; specialist text; limitations explicit",
+          "sources": [
+            "V4-E7-EQUIP"
+          ],
+          "note": "Matching two- or four-piece sets activate bonuses."
         },
         "enhancement": {
           "status": "unverified synthesis / estimate or not applicable as stated",
@@ -332,10 +345,10 @@
       "team_size": "Four",
       "positions": "Team order affects adjacency; no free movement in battle",
       "skills_resource_model": "Shared skill points, basic/skill, individual ultimate energy",
-      "equipment_slots": "Light Cone, four relic pieces, two planar pieces; unverified here",
+      "equipment_slots": "Four relic slots and two planar slots; source-supported specialist guide.",
       "item_tiers_colours": "Publisher-specific rarity cues; exact colour palette not copied",
-      "affixes": "Main and secondary equipment stats create build tradeoffs",
-      "sets": "Relic and planar matching sets",
+      "affixes": "Slot-specific main stat with secondary stats; rarity affects growth.",
+      "sets": "Matching relic/planar pieces activate set bonuses.",
       "enhancement": "Level gear and units; ascend/awaken or limit-break units",
       "duplicates": "Eidolons from matching duplicates; overflow shop currency",
       "gacha_banners": "Standard and rotating featured acquisition",
@@ -352,11 +365,15 @@
       "player_friction": "Hypothesis: duplicate demand, equipment randomness and daily obligations",
       "sources": [
         "HSR",
-        "V4-HSR-CRAFT"
+        "V4-HSR-CRAFT",
+        "V4-HSR-EQUIP"
       ],
       "verified_scope": [
         "odds",
-        "pity_spark"
+        "pity_spark",
+        "equipment_slots",
+        "affixes",
+        "sets"
       ],
       "other_fields_status": "Mechanism synthesis from model knowledge; unverified unless in verified_scope. Session lengths are estimates. Praise/friction are hypotheses unless attributed to a review.",
       "field_evidence": {
@@ -397,20 +414,29 @@
           "sources": []
         },
         "equipment_slots": {
-          "status": "unverified synthesis / estimate or not applicable as stated",
-          "sources": []
+          "status": "source-scoped; specialist text; limitations explicit",
+          "sources": [
+            "V4-HSR-EQUIP"
+          ],
+          "note": "Four relic slots and two planar slots; source-supported specialist guide."
         },
         "item_tiers_colours": {
           "status": "unverified synthesis / estimate or not applicable as stated",
           "sources": []
         },
         "affixes": {
-          "status": "unverified synthesis / estimate or not applicable as stated",
-          "sources": []
+          "status": "source-scoped; specialist text; limitations explicit",
+          "sources": [
+            "V4-HSR-EQUIP"
+          ],
+          "note": "Slot-specific main stat with secondary stats; rarity affects growth."
         },
         "sets": {
-          "status": "unverified synthesis / estimate or not applicable as stated",
-          "sources": []
+          "status": "source-scoped; specialist text; limitations explicit",
+          "sources": [
+            "V4-HSR-EQUIP"
+          ],
+          "note": "Matching relic/planar pieces activate set bonuses."
         },
         "enhancement": {
           "status": "source-supported mechanism; scope updated in A4",
@@ -6448,10 +6474,10 @@
       "team_size": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
       "positions": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
       "skills_resource_model": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
-      "equipment_slots": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
+      "equipment_slots": "Six slots partitioned into four-piece and two-piece sets.",
       "item_tiers_colours": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
-      "affixes": "Specialist equipment guide describes secondary stats.",
-      "sets": "Equipment sets supply build choices.",
+      "affixes": "One main attribute and up to four secondary attributes; enhancement improves/unlocks stats.",
+      "sets": "Four-piece and two-piece set bonuses.",
       "enhancement": "Surplus equipment can be sold; exact current costs unverified.",
       "duplicates": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
       "gacha_banners": "UNVERIFIED in A4 source scope; no exact live numeric claim.",
@@ -6473,25 +6499,24 @@
       "verified_scope": [
         "affixes",
         "sets",
-        "pity_spark"
+        "pity_spark",
+        "equipment_slots"
       ],
       "other_fields_status": "A4 desk research; supported fields scoped in field_evidence. Inference/UNVERIFIED are not source facts. No live-game playtest.",
       "field_evidence": {
         "affixes": {
-          "status": "source-scoped; limitations explicit",
+          "status": "source-scoped; specialist text; limitations explicit",
           "sources": [
-            "V4-DIS",
-            "V4-DIS-SELECT"
+            "V4-DIS"
           ],
-          "note": "Specialist equipment guide describes secondary stats."
+          "note": "One main attribute and up to four secondary attributes; enhancement improves/unlocks stats."
         },
         "sets": {
-          "status": "source-scoped; limitations explicit",
+          "status": "source-scoped; specialist text; limitations explicit",
           "sources": [
-            "V4-DIS",
-            "V4-DIS-SELECT"
+            "V4-DIS"
           ],
-          "note": "Equipment sets supply build choices."
+          "note": "Four-piece and two-piece set bonuses."
         },
         "enhancement": {
           "status": "source-scoped; limitations explicit",
@@ -6546,8 +6571,11 @@
           "sources": []
         },
         "equipment_slots": {
-          "status": "unverified synthesis / estimate or not applicable as stated",
-          "sources": []
+          "status": "source-scoped; specialist text; limitations explicit",
+          "sources": [
+            "V4-DIS"
+          ],
+          "note": "Six slots partitioned into four-piece and two-piece sets."
         },
         "item_tiers_colours": {
           "status": "unverified synthesis / estimate or not applicable as stated",

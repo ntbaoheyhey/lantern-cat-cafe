@@ -1,8 +1,8 @@
 # A4 living state
 ## NOW
-G0 browser audit, gear train/heldout and five gates complete; remaining numeric receipts use immutable G0 source snapshot: dedicated /Users/bao/taskbar-hero-cardrpg-a4 from daba7d7c; branch codex/cardrpg-a4-g0-2026-11-07.
+R research committed and five gates PASS. D specification drafted/reviewed; no runtime edits. G0 long receipts continue from immutable snapshot. Branch codex/cardrpg-a4-r-2026-11-07.
 ## NEXT
-Publish G0 PARTIAL checkpoint (remaining OFF curve/economy queued with shared CPU). Commit R evidence, then D specification. Close baseline receipts from frozen source; no screen research.
+Publish R draft, commit reviewed D specification, run D gates, then implement P1 behind gameplayV4. Continue G0 frozen-source closure/session37631; no screen research.
 ## DONE
 Prompt preserved verbatim before A4 work. No gameplay edits yet. Disk 296 GiB available. Existing B L3 DONE read; no adoption planned during G0.
 ## GATES
@@ -55,3 +55,11 @@ G0 source gates PASS (typecheck, lint, build, 1735 web, 1020 rules, 421 E2E); ba
 - Heldout child86503 ended and released lock. Stopped paused own coordinator76447 after its child finished; replaced with a4-g0-close.mjs, exact179-file snapshot /tmp/cardrpg-a4-g0-source. Snapshot manifest retained.
 - OFF curve/45day economy remain pending; short ~2minute slices and2minute between-slice handoffs give B several render windows. G0 checkpoint is explicitly PARTIAL until receipts close.
 - No screen research. Text search follow-ups found no additional official equipment coverage; external inventory/binding limits stay unverified.
+
+## Published checkpoints
+- G0 draft https://github.com/ntbaoheyhey/taskbar-hero/pull/364 at65cbfa75 stacked358. G0 numeric closure session37631. R committed7cac3f43 before design; R gate session56146.
+
+## R phase checkpoint
+-46 new source records,9 new game rows (43total),6 core papers+3 talk abstracts. Two additional specialist text sources and Dislyte reopen strengthen slots/sets; no screen. Current external caps/binding/ceremony gaps remain explicit.
+- R five gates PASS: type/lint/build,1735web/1020rules (+2expectedfail/11skip),421E2E. Only docs/tooling changed; historical13sim hashes and untouched179rules bytes preserved.
+- D draft includes every system/item table, actual drop odds, numeric acceptance protocol, THC8 migration, fixed-delay automatic ultimates, local ledger limits and4 sequential reviewer hats. B-owned Battle.tsx still shows charge; request needed at P1 contract boundary.
