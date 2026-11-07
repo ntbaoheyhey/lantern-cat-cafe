@@ -1,0 +1,1203 @@
+
+> @taskbar-hero/web@0.0.0 test:e2e /Users/bao/taskbar-hero-cardrpg-big-reveal-fit/apps/web
+> playwright test --workers=4
+
+[WebServer] (node:24480) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:24528) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-cardrpg-big-integration/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[WebServer] [plugin builtin:vite-reporter] 
+[WebServer] (!) Some chunks are larger than 1500 kB after minification. Consider:
+[WebServer] - Using dynamic import() to code-split the application
+[WebServer] - Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+[WebServer] - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+[WebServer] npm warn Unknown env config "npm-globalconfig". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "recursive". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] (node:24574) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+[WebServer] (node:24663) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:24664) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-cardrpg-big-integration/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[WebServer] [plugin builtin:vite-reporter] 
+[WebServer] (!) Some chunks are larger than 1500 kB after minification. Consider:
+[WebServer] - Using dynamic import() to code-split the application
+[WebServer] - Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+[WebServer] - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+[WebServer] (node:24671) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm warn Unknown env config "npm-globalconfig". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "recursive". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] npm warn Unknown env config "_jsr-registry". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+[WebServer] (node:24673) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+[WebServer] (node:24713) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:24714) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-cardrpg-big-integration/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[WebServer] [plugin builtin:vite-reporter] 
+[WebServer] (!) Some chunks are larger than 1500 kB after minification. Consider:
+[WebServer] - Using dynamic import() to code-split the application
+[WebServer] - Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+[WebServer] - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+[WebServer] (node:24732) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] 
+[WebServer] /art/visual/mochi-idle.png referenced in /art/visual/mochi-idle.png didn't resolve at build time, it will remain unchanged to be resolved at runtime
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-cardrpg-big-integration/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[WebServer] 
+[WebServer] /art/visual/mochi-idle.png referenced in /art/visual/mochi-idle.png didn't resolve at build time, it will remain unchanged to be resolved at runtime
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-cardrpg-big-integration/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[WebServer] (node:24733) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 421 tests using 4 workers
+
+(node:24772) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:24771) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:24769) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:24770) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓    3 [v2-server] › e2e/server/cxu4-offline.spec.ts:4:3 › CXU4 unreachable class API preserves state and shows durable failure at 1280 (859ms)
+  ✓    5 [v2-server] › e2e/server/cxu4-offline.spec.ts:4:3 › CXU4 unreachable class API preserves state and shows durable failure at 1600 (615ms)
+  ✓    6 [v2-server] › e2e/server/fixture-clock.spec.ts:3:1 › server fixture freezes at wall time when its clock advances before the pause command (237ms)
+  ✓    7 [v2-server] › e2e/server/journeys.spec.ts:7:1 › choose class and claim through the HTTP transport and migrated SQL (437ms)
+Equip best: 9 HTTP mutations, 0 state reads, 9 changed slots
+  ✓    8 [v2-server] › e2e/server/journeys.spec.ts:28:1 › Equip best makes one mutation per changed slot and no extra reads (701ms)
+  ✓    9 [v2-server] › e2e/server/journeys.spec.ts:43:1 › craft and salvage persist the same UUIDs and balances shown in the UI (652ms)
+  ✓   10 [v2-server] › e2e/server/journeys.spec.ts:64:40 › boss win is concealed until Skip ends replay (719ms)
+  ✓    1 [v2-server] › e2e/server/cxr2-load-states.spec.ts:7:3 › CXR2 home loading, failed load and recovery 1280 (4.6s)
+  ✓   11 [v2-server] › e2e/server/journeys.spec.ts:64:40 › boss loss is concealed until Skip ends replay (680ms)
+  ✓   13 [v2-server] › e2e/server/journeys.spec.ts:92:1 › Relic forge without a wallet refuses before spending or HTTP mutation (515ms)
+  ✓   14 [v2-server] › e2e/server/journeys.spec.ts:105:1 › hide/return makes one claim and keeps SyncStatus in the header (360ms)
+  ✓   15 [v2-server] › e2e/server/journeys.spec.ts:120:1 › two tabs claim the same interval at once with no double reward (570ms)
+  ✓   16 [v2-server] › e2e/server/journeys.spec.ts:144:1 › lost craft response retries the same request id and shows one result (550ms)
+  ✓   17 [v2-server] › e2e/server/journeys.spec.ts:172:1 › local HTTP boundary rejects missing and forged session tokens (34ms)
+  ✓   18 [v2-server] › e2e/server/journeys.spec.ts:179:1 › local controls reject browser origins and game routes retain CORS and JSON validation (36ms)
+  ✓   19 [v2-server] › e2e/server/n1-relic-recovery.spec.ts:14:35 › N1 unsigned pending Relic at 1600x900 light (423ms)
+  ✓   20 [v2-server] › e2e/server/n1-relic-recovery.spec.ts:14:35 › N1 unsigned pending Relic at 1280x720 light (446ms)
+  ✓   12 [v2-server] › e2e/server/cxr2-load-states.spec.ts:7:3 › CXR2 bag loading, failed load and recovery 1280 (3.4s)
+  ✓   21 [v2-server] › e2e/server/n1-relic-recovery.spec.ts:14:35 › N1 unsigned pending Relic at 390x844 light (457ms)
+  ✓   23 [v2-server] › e2e/server/n1-relic-recovery.spec.ts:14:35 › N1 unsigned pending Relic at 320x568 light (455ms)
+  ✓   24 [v2-server] › e2e/server/n1-relic-recovery.spec.ts:14:35 › N1 unsigned pending Relic at 1280x720 dark (425ms)
+  ✓   25 [v2-server] › e2e/server/n1-relic-recovery.spec.ts:14:35 › N1 unsigned pending Relic at 390x844 dark (457ms)
+  ✓   26 [v2-server] › e2e/server/request-body-limits.spec.ts:12:3 › v2-boss-fight: CORS and unsigned body-size refusals over HTTP (39ms)
+  ✓   27 [v2-server] › e2e/server/request-body-limits.spec.ts:12:3 › v2-choose-class: CORS and unsigned body-size refusals over HTTP (37ms)
+  ✓   28 [v2-server] › e2e/server/request-body-limits.spec.ts:12:3 › v2-claim: CORS and unsigned body-size refusals over HTTP (36ms)
+  ✓   29 [v2-server] › e2e/server/request-body-limits.spec.ts:12:3 › v2-craft: CORS and unsigned body-size refusals over HTTP (39ms)
+  ✓   30 [v2-server] › e2e/server/request-body-limits.spec.ts:12:3 › v2-equip: CORS and unsigned body-size refusals over HTTP (38ms)
+  ✓   31 [v2-server] › e2e/server/request-body-limits.spec.ts:12:3 › v2-lock: CORS and unsigned body-size refusals over HTTP (38ms)
+  ✓   32 [v2-server] › e2e/server/request-body-limits.spec.ts:12:3 › v2-relic-forge: CORS and unsigned body-size refusals over HTTP (36ms)
+  ✓   33 [v2-server] › e2e/server/request-body-limits.spec.ts:12:3 › v2-salvage: CORS and unsigned body-size refusals over HTTP (37ms)
+  ✓   34 [v2-server] › e2e/server/request-body-limits.spec.ts:12:3 › v2-state: CORS and unsigned body-size refusals over HTTP (36ms)
+  ✓   35 [v2-server] › e2e/v2/errors-notice.spec.ts:32:1 › T1-T5: 429 on v2-claim shows countdown notice, disables action button, and re-enables at 0 (434ms)
+  ✓   36 [v2-server] › e2e/v2/errors-notice.spec.ts:84:1 › T6: 503 shows cafe kitchen busy and preserves authoritative store state (508ms)
+  ✓   22 [v2-server] › e2e/server/cxr2-load-states.spec.ts:7:3 › CXR2 map loading, failed load and recovery 1280 (3.3s)
+  ✓   37 [v2-server] › e2e/v2/errors-notice.spec.ts:127:1 › T7: context.setOffline shows offline notice and online event clears it (558ms)
+  ✓   39 [v2-server] › e2e/v2/errors-notice.spec.ts:157:1 › T8: wrong wallet displays mint-wrong-wallet and prevents contract call (579ms)
+  ✓    2 [v2-server] › e2e/server/cxr2-class-states.spec.ts:6:35 › CXR2 first class stays visible during save and can recover 1280 (12.6s)
+  ✓   40 [v2-server] › e2e/v2/errors-notice.spec.ts:254:1 › T9: same address different case displays normal Mint button (582ms)
+(node:24910) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘    4 [v2-server] › e2e/server/expired-session-feedback.spec.ts:9:3 › Expired server session explains guest recovery, saved guest false (13.8s)
+(node:24915) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   38 [v2-server] › e2e/server/cxr2-load-states.spec.ts:7:3 › CXR2 forge loading, failed load and recovery 1280 (4.5s)
+  ✓   42 [v2-loop] › e2e/v2/block-reasons.spec.ts:50:3 › v2 disabled action buttons explain why at 1280x720 (13.0s)
+  ✓   44 [v2-server] › e2e/server/cxr2-load-states.spec.ts:7:3 › CXR2 market loading, failed load and recovery 1280 (11.9s)
+  ✓   45 [v2-loop] › e2e/v2/block-reasons.spec.ts:50:3 › v2 disabled action buttons explain why at 390x844 (6.8s)
+  ✓   46 [v2-server] › e2e/server/cxr2-load-states.spec.ts:7:3 › CXR2 hero loading, failed load and recovery 1280 (10.4s)
+  ✘   41 [v2-server] › e2e/server/cxr2-class-states.spec.ts:6:35 › CXR2 first class stays visible during save and can recover 1600 (30.1s)
+(node:24999) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   43 [v2-server] › e2e/server/expired-session-feedback.spec.ts:9:3 › Expired server session explains guest recovery, saved guest true (30.0s)
+(node:25004) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   47 [v2-loop] › e2e/v2/loop.spec.ts:146:63 › 1280px › fresh (16.6s)
+  ✓   48 [v2-server] › e2e/server/cxr2-load-states.spec.ts:7:3 › CXR2 help loading, failed load and recovery 1280 (13.8s)
+  ✓   49 [v2-loop] › e2e/v2/pets-preview.spec.ts:55:5 › local pet preview 1280x720 › counts acknowledged idle claims and persists through reload (12.0s)
+  ✓   51 [v2-loop] › e2e/v2/loop.spec.ts:146:63 › 1280px › idle (7.4s)
+  ✓   50 [v2-loop] › e2e/v2/t2-player-loop.spec.ts:20:38 › continuous stocked demo loop (13.2s)
+  ✓   52 [v2-server] › e2e/server/cxr2-load-states.spec.ts:7:3 › CXR2 home loading, failed load and recovery 1600 (7.2s)
+  ✓   53 [v2-loop] › e2e/v2/pets-preview.spec.ts:82:5 › local pet preview 1280x720 › corrupt local preview falls back to empty without breaking Home (5.3s)
+  ✓   54 [v2-loop] › e2e/v2/loop.spec.ts:146:63 › 1280px › equip (5.7s)
+  ✓   55 [v2-loop] › e2e/v2/t2-player-loop.spec.ts:20:38 › continuous stocked demo loop with reduced motion (6.7s)
+(node:25088) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   56 [v2-server] › e2e/server/cxr2-load-states.spec.ts:7:3 › CXR2 bag loading, failed load and recovery 1600 (6.1s)
+  ✓   57 [v2-loop] › e2e/v2/pets-preview.spec.ts:90:5 › local pet preview 1280x720 › migrates v0 progress and two equipped previews into the versioned key (5.1s)
+  ✓   59 [classic] › e2e/a11y.spec.ts:42:5 › Accessibility at 390px › How to play traps Tab in both directions and Escape returns focus to Menu (920ms)
+  ✓   60 [v2-server] › e2e/server/cxr2-load-states.spec.ts:7:3 › CXR2 map loading, failed load and recovery 1600 (1.3s)
+  ✓   58 [v2-loop] › e2e/v2/loop.spec.ts:146:63 › 1280px › win (4.1s)
+  ✓   61 [v2-loop] › e2e/v2/pets-preview.spec.ts:104:5 › local pet preview 1280x720 › recovers corrupt current data without resurrecting the legacy selection (5.3s)
+  ✓   63 [v2-server] › e2e/server/cxr2-load-states.spec.ts:7:3 › CXR2 forge loading, failed load and recovery 1600 (4.4s)
+  ✓   62 [classic] › e2e/a11y.spec.ts:67:5 › Accessibility at 390px › every tab is reachable with Tab and activates with Enter and Space (5.4s)
+  ✓   64 [v2-loop] › e2e/v2/loop.spec.ts:146:63 › 1280px › loss (4.7s)
+  ✓   65 [v2-loop] › e2e/v2/pets-preview.spec.ts:55:5 › local pet preview 1600x900 › counts acknowledged idle claims and persists through reload (1.7s)
+  ✓   66 [v2-server] › e2e/server/cxr2-load-states.spec.ts:7:3 › CXR2 market loading, failed load and recovery 1600 (1.5s)
+  ✓   67 [classic] › e2e/a11y.spec.ts:90:5 › Accessibility at 390px › buttons and links have accessible names on onboarding and every tab (1.9s)
+  ✓   68 [v2-loop] › e2e/v2/loop.spec.ts:146:63 › 1280px › forge (2.4s)
+  ✓   69 [v2-loop] › e2e/v2/pets-preview.spec.ts:82:5 › local pet preview 1600x900 › corrupt local preview falls back to empty without breaking Home (6.4s)
+  ✓   70 [v2-server] › e2e/server/cxr2-load-states.spec.ts:7:3 › CXR2 hero loading, failed load and recovery 1600 (6.4s)
+  ✓   71 [classic] › e2e/a11y.spec.ts:104:5 › Accessibility at 390px › primary Forge text and background have at least 4.5:1 contrast (6.3s)
+  ✓   72 [v2-loop] › e2e/v2/loop.spec.ts:146:63 › 1280px › reload (5.7s)
+  ✓   73 [v2-loop] › e2e/v2/pets-preview.spec.ts:90:5 › local pet preview 1600x900 › migrates v0 progress and two equipped previews into the versioned key (4.6s)
+  ✓   75 [classic] › e2e/a11y.spec.ts:131:5 › Accessibility at 390px › reduced motion leaves no running CSS animations on the Forge tab (5.1s)
+  ✓   76 [v2-loop] › e2e/v2/loop.spec.ts:146:63 › 390px › fresh (5.1s)
+  ✓   74 [v2-server] › e2e/server/cxr2-load-states.spec.ts:7:3 › CXR2 help loading, failed load and recovery 1600 (6.4s)
+(node:25177) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   77 [v2-loop] › e2e/v2/pets-preview.spec.ts:104:5 › local pet preview 1600x900 › recovers corrupt current data without resurrecting the legacy selection (4.6s)
+  ✓   78 [classic] › e2e/a11y.spec.ts:42:5 › Accessibility at 1280px › How to play traps Tab in both directions and Escape returns focus to Menu (3.9s)
+(node:25186) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   79 [v2-loop] › e2e/v2/loop.spec.ts:146:63 › 390px › idle (4.3s)
+  ✓   80 [classic] › e2e/boss.spec.ts:3:1 › boss tab fights, replays the log and shows the outcome (4.2s)
+  ✓   81 [classic] › e2e/a11y.spec.ts:67:5 › Accessibility at 1280px › every tab is reachable with Tab and activates with Enter and Space (3.6s)
+  ✓   83 [v2-loop] › e2e/v2/loop.spec.ts:146:63 › 390px › equip (4.2s)
+  ✓   82 [classic] › e2e/demo-path.spec.ts:8:5 › Judge demo path at 390px › plays from onboarding through upgrading, a boss fight, Forge and Market (4.9s)
+  ✓   84 [classic] › e2e/forge.spec.ts:3:1 › forge tab shows the cost, odds and why forging is blocked in demo mode (4.5s)
+  ✓   85 [classic] › e2e/a11y.spec.ts:90:5 › Accessibility at 1280px › buttons and links have accessible names on onboarding and every tab (4.5s)
+  ✓   87 [classic] › e2e/demo-path.spec.ts:8:5 › Judge demo path at 1280px › plays from onboarding through upgrading, a boss fight, Forge and Market (3.6s)
+  ✓   86 [v2-loop] › e2e/v2/loop.spec.ts:146:63 › 390px › win (3.9s)
+  ✓   89 [classic] › e2e/a11y.spec.ts:104:5 › Accessibility at 1280px › primary Forge text and background have at least 4.5:1 contrast (4.1s)
+  ✓   90 [classic] › e2e/market.spec.ts:3:1 › market tab asks for a wallet when none is connected (4.2s)
+  ✓   91 [v2-loop] › e2e/v2/loop.spec.ts:146:63 › 390px › loss (4.3s)
+  ✓   88 [classic] › e2e/inventory.spec.ts:3:1 › inventory tab equips a demo item and the power goes up (8.0s)
+  ✓   92 [classic] › e2e/a11y.spec.ts:131:5 › Accessibility at 1280px › reduced motion leaves no running CSS animations on the Forge tab (4.0s)
+  ✓   95 [classic] › e2e/polish.spec.ts:35:3 › 320px: no horizontal scroll and no overlap between the HUD, wallet and Menu (2.2s)
+  ✓   93 [classic] › e2e/onboarding.spec.ts:3:1 › first visit shows How to play; closing it reveals the game and it stays closed (3.5s)
+  ✓   94 [v2-loop] › e2e/v2/loop.spec.ts:146:63 › 390px › forge (3.5s)
+  ✓   96 [classic] › e2e/responsive-screenshots.spec.ts:26:5 › Responsive visual verification & screenshots › renders at 1280px with no horizontal scroll and valid layout (6.1s)
+  ✓   97 [classic] › e2e/polish.spec.ts:35:3 › 390px: no horizontal scroll and no overlap between the HUD, wallet and Menu (8.6s)
+  ✓   99 [v2-loop] › e2e/v2/loop.spec.ts:146:63 › 390px › reload (10.9s)
+  ✓  101 [classic] › e2e/polish.spec.ts:35:3 › 1280px: no horizontal scroll and no overlap between the HUD, wallet and Menu (15.7s)
+  ✓  102 [v2-loop] › e2e/v2/loop.spec.ts:155:1 › full loop at 390px with reduced motion (18.5s)
+(node:25359) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   98 [classic] › e2e/security.spec.ts:13:3 › CSP classic 1600x900 light: painted canvas, zero violations (30.0s)
+(node:25365) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  100 [classic] › e2e/responsive-screenshots.spec.ts:26:5 › Responsive visual verification & screenshots › renders at 390px with no horizontal scroll and valid layout (30.0s)
+(node:25375) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  103 [classic] › e2e/polish.spec.ts:101:3 › reduced motion › the forge reveal shows the Relic without motion (23.3s)
+  ✓  104 [classic] › e2e/smoke.spec.ts:3:1 › strip renders a canvas and the panel opens and closes (18.0s)
+(node:25398) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  108 [stage-layout] › e2e/layout/arena.spec.ts:3:3 › boss arena 390px reduce (8.4s)
+  ✓  107 [classic] › e2e/polish.spec.ts:127:1 › tabs switch with the keyboard (Tab and Enter) (10.3s)
+(node:25484) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  105 [classic] › e2e/security.spec.ts:13:3 › CSP classic 1280x720 light: painted canvas, zero violations (30.0s)
+(node:25492) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  106 [classic] › e2e/responsive-screenshots.spec.ts:26:5 › Responsive visual verification & screenshots › renders at 320px with no horizontal scroll and valid layout (30.0s)
+(node:25572) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  109 [stage-layout] › e2e/layout/arena.spec.ts:3:3 › boss arena 390px no-preference (11.3s)
+  ✓  110 [stage-layout] › e2e/layout/character-bag.spec.ts:63:3 › character panel and bag are visible without horizontal scroll at 320px (11.7s)
+Phaser canvas instances inserted during 100-step drag: 2
+  ✓  112 [stage-layout] › e2e/layout/resize-burst.spec.ts:10:1 › viewport drag limits Phaser recreation and keeps canvas content (1280x720) (4.4s)
+  ✓  113 [stage-layout] › e2e/layout/arena.spec.ts:3:3 › boss arena 1280px reduce (6.7s)
+  ✓  114 [stage-layout] › e2e/layout/character-bag.spec.ts:82:3 › equipping from the bag updates the slot name and locked slots show their level at 320px (8.0s)
+Phaser canvas instances inserted during 100-step drag: 2
+  ✓  115 [stage-layout] › e2e/layout/resize-burst.spec.ts:10:1 › viewport drag limits Phaser recreation and keeps canvas content (1600x900) (8.8s)
+  ✓  117 [stage-layout] › e2e/layout/character-bag.spec.ts:63:3 › character panel and bag are visible without horizontal scroll at 390px (11.9s)
+  ✘  111 [classic] › e2e/security.spec.ts:13:3 › CSP classic 390x844 light: painted canvas, zero violations (30.0s)
+(node:25664) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  118 [stage-layout] › e2e/layout/resize.spec.ts:25:40 › continuous resize preserves state and readable HUD (dark, 1280x720) (11.6s)
+  ✓  119 [stage-layout] › e2e/layout/character-bag.spec.ts:82:3 › equipping from the bag updates the slot name and locked slots show their level at 390px (8.3s)
+  ✓  121 [stage-layout] › e2e/layout/resize.spec.ts:25:40 › continuous resize preserves state and readable HUD (light, 1280x720) (12.7s)
+  ✓  122 [stage-layout] › e2e/layout/character-bag.spec.ts:63:3 › character panel and bag are visible without horizontal scroll at 1280px (6.3s)
+  ✘  116 [stage-layout] › e2e/layout/arena.spec.ts:3:3 › boss arena 1280px no-preference (30.0s)
+(node:25936) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  124 [stage-layout] › e2e/layout/character-bag.spec.ts:82:3 › equipping from the bag updates the slot name and locked slots show their level at 1280px (2.7s)
+  ✓  125 [stage-layout] › e2e/layout/stage-layout.spec.ts:75:5 › stage layout at 320px (2.2s)
+  ✓  123 [stage-layout] › e2e/layout/resize.spec.ts:25:40 › continuous resize preserves state and readable HUD (dark, 1600x900) (3.7s)
+  ✓  126 [stage-layout] › e2e/layout/character-bag.spec.ts:63:3 › character panel and bag are visible without horizontal scroll at 1280x720px (2.3s)
+  ✓  127 [stage-layout] › e2e/layout/stage-layout.spec.ts:75:5 › stage layout at 320px with reduced motion (2.1s)
+  ✓  128 [stage-layout] › e2e/layout/resize.spec.ts:25:40 › continuous resize preserves state and readable HUD (light, 1600x900) (3.5s)
+  ✓  130 [stage-layout] › e2e/layout/stage-layout.spec.ts:75:5 › stage layout at 390px (3.1s)
+  ✓  129 [stage-layout] › e2e/layout/character-bag.spec.ts:82:3 › equipping from the bag updates the slot name and locked slots show their level at 1280x720px (3.3s)
+CSP classic 320x568 light: canvas painted; violations=0; console/page errors=0
+  ✓  120 [classic] › e2e/security.spec.ts:13:3 › CSP classic 320x568 light: painted canvas, zero violations (24.3s)
+  ✓  132 [stage-layout] › e2e/layout/stage-layout.spec.ts:75:5 › stage layout at 390px with reduced motion (3.3s)
+  ✓  133 [stage-layout] › e2e/layout/character-bag.spec.ts:63:3 › character panel and bag are visible without horizontal scroll at 1600x900px (3.4s)
+  ✓  131 [stage-layout] › e2e/layout/resize.spec.ts:85:3 › both sprite bodies survive resize without counting shadows (1280x720, no-preference) (4.8s)
+  ✓  135 [stage-layout] › e2e/layout/stage-layout.spec.ts:75:5 › stage layout at 1280px (12.2s)
+  ✓  137 [stage-layout] › e2e/layout/resize.spec.ts:85:3 › both sprite bodies survive resize without counting shadows (1280x720, reduce) (13.2s)
+  ✓  138 [stage-layout] › e2e/layout/stage-layout.spec.ts:75:5 › stage layout at 1280px with reduced motion (4.3s)
+CSP classic 1280x720 dark: canvas painted; violations=0; console/page errors=0
+  ✓  134 [classic] › e2e/security.spec.ts:13:3 › CSP classic 1280x720 dark: painted canvas, zero violations (18.5s)
+  ✓  139 [stage-layout] › e2e/layout/resize.spec.ts:85:3 › both sprite bodies survive resize without counting shadows (1600x900, no-preference) (4.8s)
+  ✓  142 [stage-layout] › e2e/layout/resize.spec.ts:85:3 › both sprite bodies survive resize without counting shadows (1600x900, reduce) (4.2s)
+  ✓  140 [stage-layout] › e2e/layout/stage-layout.spec.ts:139:3 › desktop tabs › shows Inventory, Boss, Forge, Market and Help; every tab is reachable by keyboard (10.5s)
+  ✘  136 [stage-layout] › e2e/layout/character-bag.spec.ts:82:3 › equipping from the bag updates the slot name and locked slots show their level at 1600x900px (30.0s)
+(node:26559) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  143 [stage-layout] › e2e/layout/stage-redraw.spec.ts:11:67 › both actors survive scene recreation (no-preference) (17.5s)
+  ✓  144 [stage-layout] › e2e/layout/stage-layout.spec.ts:157:3 › desktop tabs › arrow keys move focus along the tabs (16.7s)
+  ✘  141 [classic] › e2e/security.spec.ts:13:3 › CSP classic 390x844 dark: painted canvas, zero violations (30.0s)
+(node:26699) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  146 [stage-layout] › e2e/layout/stage-redraw.spec.ts:11:67 › both actors survive scene recreation (reduce) (12.2s)
+  ✓  147 [stage-layout] › e2e/layout/stage-layout.spec.ts:169:3 › desktop tabs › buttons and links have accessible names on every tab (13.5s)
+  ✓  149 [stage-layout] › e2e/ui/art-pilot.spec.ts:14:3 › Art Pilot Dev View (/?dev=art-pilot) › loads /?dev=art-pilot and renders pilot overview (7.6s)
+  ✘  145 [stage-layout] › e2e/qa/s3-walkthrough.spec.ts:27:3 › Cat RPG v2 QA Regression Suite (Mission S3) › fresh start class choice and initial stage mounting (30.0s)
+(node:26928) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  150 [stage-layout] › e2e/layout/stage-layout.spec.ts:179:3 › desktop tabs › the next-step chip opens the tab it points to (13.7s)
+  ✓  151 [stage-layout] › e2e/ui/art-pilot.spec.ts:33:3 › Art Pilot Dev View (/?dev=art-pilot) › switches tabs and captures detailed inspection views (13.8s)
+  ✓  152 [stage-layout] › e2e/qa/s3-walkthrough.spec.ts:45:3 › Cat RPG v2 QA Regression Suite (Mission S3) › idle loop accrues fish and XP across claims without double-pay (11.0s)
+  ✓  153 [stage-layout] › e2e/layout/stage-layout.spec.ts:191:3 › phone layout and navigation › switches panels via bottom nav and manages focus (4.2s)
+  ✓  154 [stage-layout] › e2e/ui/art-pilot.spec.ts:104:3 › Art Pilot Dev View (/?dev=art-pilot) › mobile viewport rendering (390x844) (4.6s)
+  ✘  148 [classic] › e2e/security.spec.ts:13:3 › CSP v2 1600x900 light: painted canvas, zero violations (30.1s)
+(node:27166) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  156 [stage-layout] › e2e/layout/stage-layout.spec.ts:215:3 › phone layout and navigation › every nav tab is reachable by keyboard (10.8s)
+CSP v2 1280x720 light: canvas painted; violations=0; console/page errors=0
+  ✓  158 [classic] › e2e/security.spec.ts:13:3 › CSP v2 1280x720 light: painted canvas, zero violations (9.6s)
+  ✓  155 [stage-layout] › e2e/qa/s3-walkthrough.spec.ts:68:3 › Cat RPG v2 QA Regression Suite (Mission S3) › bag equip, lock toggle, and bulk equip best upgrades (15.1s)
+  ✓  159 [stage-layout] › e2e/layout/stage-layout.spec.ts:225:3 › phone layout and navigation › the panel does not hide the stage (4.2s)
+  ✓  161 [stage-layout] › e2e/qa/s3-walkthrough.spec.ts:95:3 › Cat RPG v2 QA Regression Suite (Mission S3) › forge crafting, salvage and daily relic status (4.7s)
+  ✓  162 [stage-layout] › e2e/layout/stage-layout.spec.ts:240:3 › v2 class choice and timed claim at 390px (4.2s)
+  ✓  163 [stage-layout] › e2e/qa/s3-walkthrough.spec.ts:114:3 › Cat RPG v2 QA Regression Suite (Mission S3) › boss fight victory, key consumption and chest collection (7.5s)
+CSP v2 390x844 light: canvas painted; violations=0; console/page errors=0
+  ✓  160 [classic] › e2e/security.spec.ts:13:3 › CSP v2 390x844 light: painted canvas, zero violations (13.0s)
+  ✘  157 [stage-layout] › e2e/ui/art2-flag-off.spec.ts:6:35 › ART2 flag-off landing and class match reviewed pixel baselines 1280 (30.0s)
+(node:27564) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  165 [stage-layout] › e2e/qa/s3-walkthrough.spec.ts:145:3 › Cat RPG v2 QA Regression Suite (Mission S3) › responsive mobile bottom navigation at 390x844 (7.3s)
+  ✓  168 [stage-layout] › e2e/ui/art2.spec.ts:6:35 › ART2 decoded sample art, transparent frames and bounded gallery 1280 (356ms)
+  ✓  169 [stage-layout] › e2e/ui/art2.spec.ts:6:35 › ART2 decoded sample art, transparent frames and bounded gallery 1600 (351ms)
+  ✘  164 [stage-layout] › e2e/layout/stage-layout.spec.ts:240:3 › v2 class choice and timed claim at 1280px (17.2s)
+(node:27580) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  170 [stage-layout] › e2e/ui/art2.spec.ts:31:1 › ART2 shared flag remains off and requests no added art in the production app (5.4s)
+  ✓  172 [stage-layout] › e2e/ui/cafe-adventure.spec.ts:23:1 › Sample is off by default and developer jumps are absent in production (4.5s)
+CSP v2 320x568 light: canvas painted; violations=0; console/page errors=0
+  ✓  166 [classic] › e2e/security.spec.ts:13:3 › CSP v2 320x568 light: painted canvas, zero violations (18.8s)
+  ✓  167 [stage-layout] › e2e/ui/art2-flag-off.spec.ts:6:35 › ART2 flag-off landing and class match reviewed pixel baselines 1600 (12.1s)
+  ✓  173 [stage-layout] › e2e/ui/cafe-adventure.spec.ts:30:1 › idle gets the first real local find by eight seconds and route buttons change actual rewards (1.9s)
+  ✓  171 [stage-layout] › e2e/ui/baseline-hud.spec.ts:101:5 › late chapter HUD keeps full balances and sync separate at 1280x720 (8788) (10.0s)
+  ✓  176 [stage-layout] › e2e/ui/cafe-adventure.spec.ts:38:1 › boss keyboard counters work, pounce has cooldown, and the result opens the next room (7.3s)
+  ✓  175 [stage-layout] › e2e/ui/class-confirmation-keyboard.spec.ts:4:1 › keyboard starts the first class directly and later switches require confirmation (12.1s)
+CSP v2 1280x720 dark: canvas painted; violations=0; console/page errors=0
+  ✓  174 [classic] › e2e/security.spec.ts:13:3 › CSP v2 1280x720 dark: painted canvas, zero violations (14.9s)
+  ✓  177 [stage-layout] › e2e/ui/baseline-hud.spec.ts:101:5 › late chapter HUD keeps full balances and sync separate at 1280x720 (1234567) (15.7s)
+  ✓  179 [stage-layout] › e2e/ui/cxc2-proof.spec.ts:60:3 › CXC2 lazy guest proof, bounded read RPC and cache 1280 (5.1s)
+  ✓  178 [stage-layout] › e2e/ui/cafe-adventure.spec.ts:56:1 › unattended route choices keep the arena and controls in place (9.7s)
+  ✓  182 [stage-layout] › e2e/ui/cxc2-proof.spec.ts:84:3 › CXC2 wrong-chain RPC keeps proof unavailable 1280 (6.4s)
+  ✓  183 [stage-layout] › e2e/ui/cafe-adventure.spec.ts:70:1 › recovery only promises bonus damage after a matching counter (6.3s)
+CSP v2 390x844 dark: canvas painted; violations=0; console/page errors=0
+  ✓  180 [classic] › e2e/security.spec.ts:13:3 › CSP v2 390x844 dark: painted canvas, zero violations (12.4s)
+{"viewport":{"width":1280,"height":720},"gated":false,"before":{"xp":{"width":160,"height":10,"fill":38.921875,"inner":156,"now":129,"max":517},"textGeometry":{"text":"Clear round 5 · 5 foes left","fontSize":12,"width":139.921875,"textWidth":139.921875,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":116.765625,"inner":156,"now":387,"max":517},"textGeometry":{"text":"Clear round 5 · 5 foes left","fontSize":12,"width":139.921875,"textWidth":139.921875,"unclipped":true,"allTextInside":true}}}
+  ✓  181 [stage-layout] › e2e/ui/baseline-hud.spec.ts:135:5 › shared HUD keeps XP and every status chip visible at 1280x720 (10.0s)
+  ✓  185 [stage-layout] › e2e/ui/cafe-adventure.spec.ts:76:1 › chosen craft, honest odds, safe stitch, protected loadouts and set collection work end to end (3.4s)
+(node:27743) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  184 [stage-layout] › e2e/ui/cxc2-proof.spec.ts:60:3 › CXC2 lazy guest proof, bounded read RPC and cache 1600 (3.5s)
+  ✓  188 [stage-layout] › e2e/ui/cxc2-proof.spec.ts:84:3 › CXC2 wrong-chain RPC keeps proof unavailable 1600 (5.1s)
+  ✓  187 [stage-layout] › e2e/ui/cafe-adventure.spec.ts:92:1 › away summary is capped and a tour explains, preserves and can undo its reset (5.4s)
+  ✓  189 [stage-layout] › e2e/ui/cxr2-dialogs.spec.ts:31:7 › CXR2 1280 no-preference › guest coach stays nonmodal, dismisses forever and leaves Help available (5.2s)
+  ✓  190 [stage-layout] › e2e/ui/cxr2-market-states.spec.ts:7:3 › CXR2 Market loading, failure and full-width bigint details 1280 (4.3s)
+{"viewport":{"width":1280,"height":720},"gated":true,"before":{"xp":{"width":160,"height":10,"fill":39,"inner":156,"now":15,"max":60},"textGeometry":{"text":"Compare gear to pass this power wall","fontSize":12,"width":208.53125,"textWidth":208.53125,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":117,"inner":156,"now":45,"max":60},"textGeometry":{"text":"Compare gear to pass this power wall","fontSize":12,"width":208.53125,"textWidth":208.53125,"unclipped":true,"allTextInside":true}}}
+  ✓  186 [stage-layout] › e2e/ui/baseline-hud.spec.ts:135:5 › shared HUD keeps XP and every status chip visible at 1280x720 when gated (9.8s)
+  ✓  191 [stage-layout] › e2e/ui/cafe-adventure.spec.ts:101:1 › Spark preview respects the remaining stitch cap and affixes explain their effect (4.3s)
+{"viewport":{"width":1280,"height":720},"state":"normal","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Clear round 1 · 6 foes left","fontSize":12,"width":134.75,"textWidth":134.75,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+  ✓  194 [stage-layout] › e2e/ui/baseline-hud.spec.ts:192:5 › guidance remains readable with fallback fonts and normal at 1280x720 (662ms)
+  ✓  192 [stage-layout] › e2e/ui/cxr2-dialogs.spec.ts:53:7 › CXR2 1280 no-preference › offline welcome and real boss chest retain actions, art and exclusive focus (5.0s)
+{"viewport":{"width":1280,"height":720},"state":"offline","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Clear round 1 · 6 foes left","fontSize":12,"width":134.75,"textWidth":134.75,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+  ✓  196 [stage-layout] › e2e/ui/baseline-hud.spec.ts:192:5 › guidance remains readable with fallback fonts and offline at 1280x720 (656ms)
+{"viewport":{"width":1280,"height":720},"state":"429","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Clear round 1 · 6 foes left","fontSize":12,"width":134.75,"textWidth":134.75,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 429 (Too Many Requests)","url":"http://127.0.0.1:5913/functions/v1/v2-claim"}]}
+  ✓  198 [stage-layout] › e2e/ui/baseline-hud.spec.ts:192:5 › guidance remains readable with fallback fonts and 429 at 1280x720 (813ms)
+  ✓  193 [stage-layout] › e2e/ui/cxr2-market-states.spec.ts:7:3 › CXR2 Market loading, failure and full-width bigint details 1600 (2.4s)
+{"viewport":{"width":1280,"height":720},"state":"503","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Clear round 1 · 6 foes left","fontSize":12,"width":134.75,"textWidth":134.75,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 503 (Service Unavailable)","url":"http://127.0.0.1:5913/functions/v1/v2-claim"}]}
+  ✓  199 [stage-layout] › e2e/ui/baseline-hud.spec.ts:192:5 › guidance remains readable with fallback fonts and 503 at 1280x720 (752ms)
+  ✓  195 [stage-layout] › e2e/ui/cafe-adventure.spec.ts:108:1 › the next room is visible immediately after a win at the minimum desktop size (3.1s)
+  ✓  197 [stage-layout] › e2e/ui/cxr2-dialogs.spec.ts:31:7 › CXR2 1280 reduce › guest coach stays nonmodal, dismisses forever and leaves Help available (3.4s)
+  ✓  202 [stage-layout] › e2e/ui/cafe-adventure.spec.ts:114:1 › difficulty locks during a fight and assist remains explicit and optional (7.9s)
+  ✓  203 [stage-layout] › e2e/ui/cxr2-dialogs.spec.ts:53:7 › CXR2 1280 reduce › offline welcome and real boss chest retain actions, art and exclusive focus (7.9s)
+  ✓  205 [stage-layout] › e2e/ui/cxr2-dialogs.spec.ts:31:7 › CXR2 1600 no-preference › guest coach stays nonmodal, dismisses forever and leaves Help available (6.7s)
+  ✓  204 [stage-layout] › e2e/ui/cafe-adventure.spec.ts:121:1 › Sample choices persist through reload without writing to the main economy (8.0s)
+  ✓  201 [stage-layout] › e2e/ui/baseline-hud.spec.ts:101:5 › late chapter HUD keeps full balances and sync separate at 1600x900 (8788) (25.3s)
+  ✓  206 [stage-layout] › e2e/ui/cxr2-dialogs.spec.ts:53:7 › CXR2 1600 no-preference › offline welcome and real boss chest retain actions, art and exclusive focus (12.0s)
+  ✘  200 [stage-layout] › e2e/ui/cxr2-returning-guest.spec.ts:7:35 › CXR2 returning guest can play again from Landing without losing progress 1280 (30.1s)
+(node:28016) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  207 [stage-layout] › e2e/ui/cafe-adventure.spec.ts:131:77 › all adventure pages fit desktop 1280x720 (19.1s)
+  ✓  209 [stage-layout] › e2e/ui/cxr2-dialogs.spec.ts:31:7 › CXR2 1600 reduce › guest coach stays nonmodal, dismisses forever and leaves Help available (8.0s)
+  ✓  212 [stage-layout] › e2e/ui/cxr2-dialogs.spec.ts:53:7 › CXR2 1600 reduce › offline welcome and real boss chest retain actions, art and exclusive focus (12.8s)
+  ✘  208 [stage-layout] › e2e/ui/baseline-hud.spec.ts:101:5 › late chapter HUD keeps full balances and sync separate at 1600x900 (1234567) (30.1s)
+(node:28115) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  210 [stage-layout] › e2e/ui/cxr2-returning-guest.spec.ts:7:35 › CXR2 returning guest can play again from Landing without losing progress 1600 (30.1s)
+(node:28221) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  211 [stage-layout] › e2e/ui/cafe-adventure.spec.ts:131:77 › all adventure pages fit desktop 1440x900 (30.1s)
+(node:28239) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  213 [stage-layout] › e2e/ui/cxr2-state-matrix.spec.ts:39:5 › CXR2 screen/state review 1280 normal (30.1s)
+(node:28268) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  214 [stage-layout] › e2e/ui/baseline-hud.spec.ts:135:5 › shared HUD keeps XP and every status chip visible at 1600x900 (30.1s)
+(node:28284) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  215 [stage-layout] › e2e/ui/cxu3-forge.spec.ts:29:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1280 no-preference (30.1s)
+(node:28303) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  216 [stage-layout] › e2e/ui/cafe-adventure.spec.ts:131:77 › all adventure pages fit desktop 1920x1080 (30.0s)
+(node:28320) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{"viewport":{"width":1600,"height":900},"gated":true,"before":{"xp":{"width":160,"height":10,"fill":39,"inner":156,"now":15,"max":60},"textGeometry":{"text":"Compare gear to pass this power wall","fontSize":12,"width":208.53125,"textWidth":208.53125,"unclipped":true,"allTextInside":true}},"after":{"xp":{"width":160,"height":10,"fill":117,"inner":156,"now":45,"max":60},"textGeometry":{"text":"Compare gear to pass this power wall","fontSize":12,"width":208.53125,"textWidth":208.53125,"unclipped":true,"allTextInside":true}}}
+  ✓  218 [stage-layout] › e2e/ui/baseline-hud.spec.ts:135:5 › shared HUD keeps XP and every status chip visible at 1600x900 when gated (10.2s)
+  ✓  219 [stage-layout] › e2e/ui/cxu3-forge.spec.ts:29:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1280 reduce (6.0s)
+{"viewport":{"width":1600,"height":900},"state":"normal","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Clear round 1 · 6 foes left","fontSize":12,"width":134.75,"textWidth":134.75,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+  ✓  221 [stage-layout] › e2e/ui/baseline-hud.spec.ts:192:5 › guidance remains readable with fallback fonts and normal at 1600x900 (528ms)
+{"viewport":{"width":1600,"height":900},"state":"offline","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Clear round 1 · 6 foes left","fontSize":12,"width":134.75,"textWidth":134.75,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"}]}
+  ✓  223 [stage-layout] › e2e/ui/baseline-hud.spec.ts:192:5 › guidance remains readable with fallback fonts and offline at 1600x900 (505ms)
+{"viewport":{"width":1600,"height":900},"state":"429","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Clear round 1 · 6 foes left","fontSize":12,"width":134.75,"textWidth":134.75,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 429 (Too Many Requests)","url":"http://127.0.0.1:5913/functions/v1/v2-claim"}]}
+  ✓  224 [stage-layout] › e2e/ui/baseline-hud.spec.ts:192:5 › guidance remains readable with fallback fonts and 429 at 1600x900 (523ms)
+{"viewport":{"width":1600,"height":900},"state":"503","fallback":true,"xp":{"width":160,"height":10,"fill":0,"inner":156,"now":0,"max":60},"textGeometry":{"text":"Clear round 1 · 6 foes left","fontSize":12,"width":134.75,"textWidth":134.75,"unclipped":true,"allTextInside":true},"consoleErrors":[{"message":"Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Pixelify+Sans:wght@500;700&display=swap"},{"message":"Failed to load resource: the server responded with a status of 503 (Service Unavailable)","url":"http://127.0.0.1:5913/functions/v1/v2-claim"}]}
+  ✓  225 [stage-layout] › e2e/ui/baseline-hud.spec.ts:192:5 › guidance remains readable with fallback fonts and 503 at 1600x900 (557ms)
+  ✓  220 [stage-layout] › e2e/ui/cxu3-market.spec.ts:24:3 › CXU3 real MarketView with mocked wallet callbacks 1280 (9.4s)
+  ✘  217 [stage-layout] › e2e/ui/cxr2-state-matrix.spec.ts:39:5 › CXR2 screen/state review 1280 zero-empty (30.0s)
+(node:28363) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  226 [stage-layout] › e2e/ui/cxu4-hero-help.spec.ts:47:3 › CXU4 Hero equipment, power and class confirmation 1280 (12.8s)
+  ✓  222 [stage-layout] › e2e/ui/cxu3-forge.spec.ts:29:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1600 no-preference (24.0s)
+  ✓  227 [stage-layout] › e2e/ui/cxu3-market.spec.ts:24:3 › CXU3 real MarketView with mocked wallet callbacks 1600 (23.2s)
+  ✓  228 [stage-layout] › e2e/ui/cxr2-state-matrix.spec.ts:39:5 › CXR2 screen/state review 1280 maximum-long (29.1s)
+  ✘  229 [stage-layout] › e2e/ui/cxu4-hero-help.spec.ts:92:3 › CXU4 Help keyboard search, selection and offline banner 1280 (30.1s)
+(node:28909) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  231 [stage-layout] › e2e/ui/cxu5-map.spec.ts:19:1 › preserves the compact boss panel and reachable Fight below the desktop breakpoint (16.1s)
+  ✘  230 [stage-layout] › e2e/ui/cxu3-forge.spec.ts:29:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1600 reduce (30.1s)
+(node:28987) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  232 [stage-layout] › e2e/ui/cxr2-state-matrix.spec.ts:39:5 › CXR2 screen/state review 1280 full-bag (17.8s)
+  ✓  233 [stage-layout] › e2e/ui/cxu4-hero-help.spec.ts:47:3 › CXU4 Hero equipment, power and class confirmation 1600 (15.1s)
+  ✓  234 [stage-layout] › e2e/ui/cxu5-map.spec.ts:33:5 › 1280x720 › chapter path, keyboard gates, no nested scroll, unchanged art and reduced motion (12.6s)
+  ✓  235 [stage-layout] › e2e/ui/cxu3-forge.spec.ts:111:1 › CXU3 preserves the compact Forge action without scrolling (9.3s)
+  ✓  239 [stage-layout] › e2e/ui/f1-class-art.spec.ts:30:29 › F1 all seven classes idle, attack and hit at 1x (4.5s)
+  ✓  240 [stage-layout] › e2e/ui/f1-class-art.spec.ts:30:29 › F1 all seven classes idle, attack and hit at 3x (8.9s)
+  ✓  236 [stage-layout] › e2e/ui/cxr2-state-matrix.spec.ts:39:5 › CXR2 screen/state review 1280 offline (21.0s)
+  ✓  237 [stage-layout] › e2e/ui/cxu4-hero-help.spec.ts:92:3 › CXU4 Help keyboard search, selection and offline banner 1600 (21.8s)
+  ✓  241 [stage-layout] › e2e/ui/f1-class-art.spec.ts:80:3 › F1 stage guardian 1280x720 (5.3s)
+  ✓  244 [stage-layout] › e2e/ui/f1-class-art.spec.ts:80:3 › F1 stage guardian 390x844 (3.2s)
+  ✘  238 [stage-layout] › e2e/ui/cxu5-map.spec.ts:68:5 › 1280x720 › no key refuses fight and explains the existing daily claim (30.1s)
+(node:29090) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  245 [stage-layout] › e2e/ui/f1-class-art.spec.ts:80:3 › F1 stage rogue 1280x720 (9.3s)
+  ✓  247 [stage-layout] › e2e/ui/f1-class-art.spec.ts:80:3 › F1 stage rogue 390x844 (9.4s)
+  ✘  242 [stage-layout] › e2e/ui/cxr2-state-matrix.spec.ts:39:5 › CXR2 screen/state review 1600 normal (30.1s)
+  ✓  248 [stage-layout] › e2e/ui/f1-class-art.spec.ts:80:3 › F1 stage witch 1280x720 (6.7s)
+(node:29145) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  243 [stage-layout] › e2e/ui/f3-art.spec.ts:47:3 › F3 chapter 1 roster sheet at 3x scale with distinct silhouettes (30.0s)
+(node:29151) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  249 [stage-layout] › e2e/ui/f1-class-art.spec.ts:80:3 › F1 stage witch 390x844 (3.9s)
+  ✓  246 [stage-layout] › e2e/ui/cxu5-map.spec.ts:82:5 › 1280x720 › chapter five shows every reward and shortcut without clipping (28.0s)
+  ✓  252 [stage-layout] › e2e/ui/f1-class-art.spec.ts:92:3 › F1 recent finds never covers stage 1600x900 light (4.7s)
+  ✓  254 [stage-layout] › e2e/ui/f1-class-art.spec.ts:92:3 › F1 recent finds never covers stage 320x568 light (711ms)
+Measured screenshot roster-ch2.png (75.4 KB)
+  ✓  251 [stage-layout] › e2e/ui/f3-art.spec.ts:47:3 › F3 chapter 2 roster sheet at 3x scale with distinct silhouettes (8.4s)
+  ✓  250 [stage-layout] › e2e/ui/cxr2-state-matrix.spec.ts:39:5 › CXR2 screen/state review 1600 zero-empty (10.7s)
+  ✓  255 [stage-layout] › e2e/ui/f1-class-art.spec.ts:92:3 › F1 recent finds never covers stage 1280x720 dark (3.0s)
+  ✓  258 [stage-layout] › e2e/ui/f1-class-art.spec.ts:92:3 › F1 recent finds never covers stage 390x844 dark (3.0s)
+Measured screenshot roster-ch3.png (75.0 KB)
+  ✓  256 [stage-layout] › e2e/ui/f3-art.spec.ts:47:3 › F3 chapter 3 roster sheet at 3x scale with distinct silhouettes (7.6s)
+  ✓  259 [stage-layout] › e2e/ui/f1-class-art.spec.ts:115:1 › F1 repeated full arena unmounts release real Phaser visibility handlers (5.0s)
+  ✓  253 [stage-layout] › e2e/ui/cxu5-map.spec.ts:94:5 › 1280x720 › replay releases one result into history, selecting nodes updates fight card (12.1s)
+  ✓  261 [stage-layout] › e2e/ui/feature-samples.spec.ts:7:3 › Conditional samples stay labelled, read-only and bounded 1280 no-preference (517ms)
+  ✓  257 [stage-layout] › e2e/ui/cxr2-state-matrix.spec.ts:39:5 › CXR2 screen/state review 1600 maximum-long (9.9s)
+  ✓  263 [stage-layout] › e2e/ui/feature-samples.spec.ts:7:3 › Conditional samples stay labelled, read-only and bounded 1280 reduce (414ms)
+  ✓  265 [stage-layout] › e2e/ui/feature-samples.spec.ts:7:3 › Conditional samples stay labelled, read-only and bounded 1600 no-preference (398ms)
+  ✓  266 [stage-layout] › e2e/ui/feature-samples.spec.ts:7:3 › Conditional samples stay labelled, read-only and bounded 1600 reduce (502ms)
+  ✓  267 [stage-layout] › e2e/ui/feature-samples.spec.ts:61:1 › Conditional samples have no nodes or image requests when the shared flag is off (95ms)
+  ✓  262 [stage-layout] › e2e/ui/cxu5-map.spec.ts:33:5 › 1600x900 › chapter path, keyboard gates, no nested scroll, unchanged art and reduced motion (3.2s)
+  ✘  268 [stage-layout] › e2e/ui/firstplay.spec.ts:43:3 › First play reaches Home and naturally earns without a wallet 1280 (7.0s)
+(node:29304) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  264 [stage-layout] › e2e/ui/cxr2-state-matrix.spec.ts:39:5 › CXR2 screen/state review 1600 full-bag (13.9s)
+Measured screenshot roster-ch4.png (75.5 KB)
+  ✓  260 [stage-layout] › e2e/ui/f3-art.spec.ts:47:3 › F3 chapter 4 roster sheet at 3x scale with distinct silhouettes (19.5s)
+  ✘  272 [stage-layout] › e2e/ui/f3-art.spec.ts:47:3 › F3 chapter 5 roster sheet at 3x scale with distinct silhouettes (10.7s)
+  ✘  270 [stage-layout] › e2e/ui/firstplay.spec.ts:83:3 › Returning guest stays labelled through disconnected wallet and offline recovery 1280 (18.0s)
+  ✘  271 [stage-layout] › e2e/ui/cxr2-state-matrix.spec.ts:39:5 › CXR2 screen/state review 1600 offline (12.9s)
+  ✘  269 [stage-layout] › e2e/ui/cxu5-map.spec.ts:68:5 › 1600x900 › no key refuses fight and explains the existing daily claim (24.0s)
+
+
+  1) [v2-server] › e2e/server/cxr2-class-states.spec.ts:6:35 › CXR2 first class stays visible during save and can recover 1600 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: page.evaluate: Test timeout of 30000ms exceeded.
+
+       9 |   await page.route(/^https:\/\/fonts\.(googleapis|gstatic)\.com\//, route => route.continue());
+      10 |   const session = await load(page, request, 'fresh');
+    > 11 |   await page.evaluate(() => document.fonts.ready);
+         |              ^
+      12 |   let release!: () => void;
+      13 |   const held = new Promise<void>(done => { release = done; });
+      14 |   let refuse = true;
+        at /Users/bao/taskbar-hero-cardrpg-big-reveal-fit/apps/web/e2e/server/cxr2-class-states.spec.ts:11:14
+
+    Error Context: test-results/5910-5911/server-cxr2-class-states-C-b8d8c-g-save-and-can-recover-1600-v2-server/error-context.md
+
+  2) [v2-server] › e2e/server/expired-session-feedback.spec.ts:9:3 › Expired server session explains guest recovery, saved guest false 
+
+    Error: apiRequestContext.get: Client network socket disconnected before secure TLS connection was established (ECONNRESET)
+    Call log:
+      - → GET https://fonts.gstatic.com/s/dmsans/v17/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu0-K6z9mXg.woff2
+        - user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36
+        - accept: */*
+        - accept-encoding: gzip,deflate,br
+
+
+       at support/visual-fonts.ts:28
+
+      26 |   // Fail on unavailable/changed bytes instead of silently accepting a fallback.
+      27 |   for (const font of fonts) {
+    > 28 |     const response = await page.request.get(font.url);
+         |                                         ^
+      29 |     expect(response.ok(), `${font.family}: versioned font request`).toBe(true);
+      30 |     const body = await response.body();
+      31 |     expect(createHash('sha256').update(body).digest('hex'), `${font.family}: baseline font identity`).toBe(font.sha256);
+        at pinVisualFonts (/Users/bao/taskbar-hero-cardrpg-big-reveal-fit/apps/web/e2e/support/visual-fonts.ts:28:41)
+        at /Users/bao/taskbar-hero-cardrpg-big-reveal-fit/apps/web/e2e/server/expired-session-feedback.spec.ts:12:11
+
+    Error Context: test-results/5910-5911/server-expired-session-fee-210e7--recovery-saved-guest-false-v2-server/error-context.md
+
+  3) [v2-server] › e2e/server/expired-session-feedback.spec.ts:9:3 › Expired server session explains guest recovery, saved guest true 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: apiRequestContext.get: Test timeout of 30000ms exceeded.
+    Call log:
+      - → GET https://fonts.gstatic.com/s/dmsans/v17/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu0-K6z9mXg.woff2
+        - user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36
+        - accept: */*
+        - accept-encoding: gzip,deflate,br
+      - ← 200 OK
+        - accept-ranges: bytes
+        - access-control-allow-origin: *
+        - content-security-policy-report-only: require-trusted-types-for 'script'; report-uri https://csp.withgoogle.com/csp/apps-themes
+        - cross-origin-resource-policy: cross-origin
+        - cross-origin-opener-policy: same-origin; report-to="apps-themes"
+        - report-to: {"group":"apps-themes","max_age":2592000,"endpoints":[{"url":"https://csp.withgoogle.com/csp/report-to/apps-themes"}]}
+        - timing-allow-origin: *
+        - content-length: 36980
+        - x-content-type-options: nosniff
+        - server: sffe
+        - x-xss-protection: 0
+        - date: Fri, 06 Nov 2026 20:26:08 GMT
+        - expires: Sat, 06 Nov 2027 20:26:08 GMT
+        - cache-control: public, max-age=31536000
+        - last-modified: Wed, 10 Sep 2025 16:30:06 GMT
+        - content-type: font/woff2
+        - age: 12725
+        - alt-svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+
+
+       at support/visual-fonts.ts:28
+
+      26 |   // Fail on unavailable/changed bytes instead of silently accepting a fallback.
+      27 |   for (const font of fonts) {
+    > 28 |     const response = await page.request.get(font.url);
+         |                                         ^
+      29 |     expect(response.ok(), `${font.family}: versioned font request`).toBe(true);
+      30 |     const body = await response.body();
+      31 |     expect(createHash('sha256').update(body).digest('hex'), `${font.family}: baseline font identity`).toBe(font.sha256);
+        at pinVisualFonts (/Users/bao/taskbar-hero-cardrpg-big-reveal-fit/apps/web/e2e/support/visual-fonts.ts:28:41)
+        at /Users/bao/taskbar-hero-cardrpg-big-reveal-fit/apps/web/e2e/server/expired-session-feedback.spec.ts:12:11
+
+    Error Context: test-results/5910-5911/server-expired-session-fee-20f25-t-recovery-saved-guest-true-v2-server/error-context.md
+
+  4) [classic] › e2e/responsive-screenshots.spec.ts:26:5 › Responsive visual verification & screenshots › renders at 390px with no horizontal scroll and valid layout 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: page.goto: Test timeout of 30000ms exceeded.
+    Call log:
+      - navigating to "http://localhost:5910/", waiting until "load"
+
+
+       at support/test.ts:20
+
+      18 |     let checked = false;
+      19 |     page.goto = async (...args) => {
+    > 20 |       const response = await goto(...args);
+         |                              ^
+      21 |       // The arena and art-pilot developer previews intentionally render outside StageLayout.
+      22 |       // Its project and origin are still checked above. Check the first normal page.
+      23 |       const devParam = new URL(page.url()).searchParams.get('dev');
+        at _Page.goto (/Users/bao/taskbar-hero-cardrpg-big-reveal-fit/apps/web/e2e/support/test.ts:20:30)
+        at /Users/bao/taskbar-hero-cardrpg-big-reveal-fit/apps/web/e2e/responsive-screenshots.spec.ts:28:18
+
+    Error Context: test-results/5910-5911/responsive-screenshots-Res-4f6df-tal-scroll-and-valid-layout-classic/error-context.md
+
+  5) [classic] › e2e/responsive-screenshots.spec.ts:26:5 › Responsive visual verification & screenshots › renders at 320px with no horizontal scroll and valid layout 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: page.goto: Test timeout of 30000ms exceeded.
+    Call log:
+      - navigating to "http://localhost:5910/", waiting until "load"
+
+
+       at support/test.ts:20
+
+      18 |     let checked = false;
+      19 |     page.goto = async (...args) => {
+    > 20 |       const response = await goto(...args);
+         |                              ^
+      21 |       // The arena and art-pilot developer previews intentionally render outside StageLayout.
+      22 |       // Its project and origin are still checked above. Check the first normal page.
+      23 |       const devParam = new URL(page.url()).searchParams.get('dev');
+        at _Page.goto (/Users/bao/taskbar-hero-cardrpg-big-reveal-fit/apps/web/e2e/support/test.ts:20:30)
+        at /Users/bao/taskbar-hero-cardrpg-big-reveal-fit/apps/web/e2e/responsive-screenshots.spec.ts:28:18
+
+    Error Context: test-results/5910-5911/responsive-screenshots-Res-c7f68-tal-scroll-and-valid-layout-classic/error-context.md
+
+  6) [classic] › e2e/security.spec.ts:13:3 › CSP classic 1600x900 light: painted canvas, zero violations 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: page.waitForLoadState: Test timeout of 30000ms exceeded.
+
+      52 |       await page.getByRole('tab', { name: 'Market', exact: true }).click();
+      53 |     }
+    > 54 |     await page.waitForLoadState('networkidle');
+         |                ^
+      55 |     expect(violations).toEqual([]);
+      56 |     expect(errors).toEqual([]);
+      57 |     await page.evaluate(() => window.scrollTo(0, 0));
+        at /Users/bao/taskbar-hero-cardrpg-big-reveal-fit/apps/web/e2e/security.spec.ts:54:16
+
+    Error Context: test-results/5910-5911/security-CSP-classic-1600x-3cca5-nted-canvas-zero-violations-classic/error-context.md
+
+  7) [classic] › e2e/security.spec.ts:13:3 › CSP classic 1280x720 light: painted canvas, zero violations 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: page.waitForLoadState: Test timeout of 30000ms exceeded.
+
+      52 |       await page.getByRole('tab', { name: 'Market', exact: true }).click();
+      53 |     }
+    > 54 |     await page.waitForLoadState('networkidle');
+         |                ^
+      55 |     expect(violations).toEqual([]);
+      56 |     expect(errors).toEqual([]);
+      57 |     await page.evaluate(() => window.scrollTo(0, 0));
+        at /Users/bao/taskbar-hero-cardrpg-big-reveal-fit/apps/web/e2e/security.spec.ts:54:16
+
+    Error Context: test-results/5910-5911/security-CSP-classic-1280x-e05b5-nted-canvas-zero-violations-classic/error-context.md
+
+  8) [classic] › e2e/security.spec.ts:13:3 › CSP classic 390x844 light: painted canvas, zero violations 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: page.waitForLoadState: Test timeout of 30000ms exceeded.
+
+      52 |       await page.getByRole('tab', { name: 'Market', exact: true }).click();
+      53 |     }
+    > 54 |     await page.waitForLoadState('networkidle');
+         |                ^
+      55 |     expect(violations).toEqual([]);
+      56 |     expect(errors).toEqual([]);
+      57 |     await page.evaluate(() => window.scrollTo(0, 0));
+        at /Users/bao/taskbar-hero-cardrpg-big-reveal-fit/apps/web/e2e/security.spec.ts:54:16
+
+    Error Context: test-results/5910-5911/security-CSP-classic-390x8-6d4d4-nted-canvas-zero-violations-classic/error-context.md
+
+  9) [classic] › e2e/security.spec.ts:13:3 › CSP classic 390x844 dark: painted canvas, zero violations 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: page.waitForLoadState: Test timeout of 30000ms exceeded.
+
+      52 |       await page.getByRole('tab', { name: 'Market', exact: true }).click();
+      53 |     }
+    > 54 |     await page.waitForLoadState('networkidle');
+         |                ^
+      55 |     expect(violations).toEqual([]);
+      56 |     expect(errors).toEqual([]);
+      57 |     await page.evaluate(() => window.scrollTo(0, 0));
+        at /Users/bao/taskbar-hero-cardrpg-big-reveal-fit/apps/web/e2e/security.spec.ts:54:16
+
+    Error Context: test-results/5910-5911/security-CSP-classic-390x8-d900a-nted-canvas-zero-violations-classic/error-context.md
+
+  10) [classic] › e2e/security.spec.ts:13:3 › CSP v2 1600x900 light: painted canvas, zero violations 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: page.waitForLoadState: Test timeout of 30000ms exceeded.
+
+      52 |       await page.getByRole('tab', { name: 'Market', exact: true }).click();
+      53 |     }
+    > 54 |     await page.waitForLoadState('networkidle');
+         |                ^
+      55 |     expect(violations).toEqual([]);
+      56 |     expect(errors).toEqual([]);
+      57 |     await page.evaluate(() => window.scrollTo(0, 0));
+        at /Users/bao/taskbar-hero-cardrpg-big-reveal-fit/apps/web/e2e/security.spec.ts:54:16
+
+    Error Context: test-results/5910-5911/security-CSP-v2-1600x900-l-d4be8-nted-canvas-zero-violations-classic/error-context.md
+
+  11) [stage-layout] › e2e/layout/arena.spec.ts:3:3 › boss arena 1280px no-preference ──────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: page.goto: Test timeout of 30000ms exceeded.
+    Call log:
+      - navigating to "http://localhost:5911/?dev=arena&fixture=ch1-loss", waiting until "load"
+
+
+       at support/test.ts:20
+
+      18 |     let checked = false;
+      19 |     page.goto = async (...args) => {
+    > 20 |       const response = await goto(...args);
+         |                              ^
+      21 |       // The arena and art-pilot developer previews intentionally render outside StageLayout.
+      22 |       // Its project and origin are still checked above. Check the first normal page.
+      23 |       const devParam = new URL(page.url()).searchParams.get('dev');
+        at _Page.goto (/Users/bao/taskbar-hero-cardrpg-big-reveal-fit/apps/web/e2e/support/test.ts:20:30)
+        at /Users/bao/taskbar-hero-cardrpg-big-reveal-fit/apps/web/e2e/layout/arena.spec.ts:9:16
+
+    Error Context: test-results/5910-5911/layout-arena-boss-arena-1280px-no-preference-stage-layout/error-context.md
+
+  12) [stage-layout] › e2e/layout/character-bag.spec.ts:82:3 › equipping from the bag updates the slot name and locked slots show their level at 1600x900px 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: page.goto: Test timeout of 30000ms exceeded.
+    Call log:
+      - navigating to "http://localhost:5911/", waiting until "load"
+
+
+       at support/test.ts:20
+
+      18 |     let checked = false;
+      19 |     page.goto = async (...args) => {
+    > 20 |       const response = await goto(...args);
+         |                              ^
+      21 |       // The arena and art-pilot developer previews intentionally render outside StageLayout.
+      22 |       // Its project and origin are still checked above. Check the first normal page.
+      23 |       const devParam = new URL(page.url()).searchParams.get('dev');
+        at _Page.goto (/Users/bao/taskbar-hero-cardrpg-big-reveal-fit/apps/web/e2e/support/test.ts:20:30)
+        at /Users/bao/taskbar-hero-cardrpg-big-reveal-fit/apps/web/e2e/layout/character-bag.spec.ts:86:16
+
+    Error Context: test-results/5910-5911/layout-character-bag-equip-21355-w-their-level-at-1600x900px-stage-layout/error-context.md
+
+  13) [stage-layout] › e2e/layout/stage-layout.spec.ts:240:3 › v2 class choice and timed claim at 1280px 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 3
+
+    - Array []
+    + Array [
+    +   "Failed to load resource: net::ERR_SOCKET_NOT_CONNECTED",
+    + ]
+
+      256 |     await expect(page.getByLabel('Currencies and keys')).toContainText('Fish');
+      257 |     await noHorizontalScroll(page);
+    > 258 |     expect(errors).toEqual([]);
+          |                    ^
+      259 |     await page.evaluate(() => window.scrollTo(0, 0));
+      260 |     if (writeScreenshots) await page.screenshot({ path: path.join(process.env.SCREENSHOT_DIR ?? path.resolve(process.cwd(), '../../reports/v16-stage'), `stage-${width}.png`) });
+      261 |   });
+        at /Users/bao/taskbar-hero-cardrpg-big-reveal-fit/apps/web/e2e/layout/stage-layout.spec.ts:258:20
+
+    Error Context: test-results/5910-5911/layout-stage-layout-v2-cla-6951d-e-and-timed-claim-at-1280px-stage-layout/error-context.md
+
+  14) [stage-layout] › e2e/qa/s3-walkthrough.spec.ts:27:3 › Cat RPG v2 QA Regression Suite (Mission S3) › fresh start class choice and initial stage mounting 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: page.goto: Test timeout of 30000ms exceeded.
+    Call log:
+      - navigating to "http://localhost:5911/", waiting until "load"
+
+
+       at support/test.ts:20
+
+      18 |     let checked = false;
+      19 |     page.goto = async (...args) => {
+    > 20 |       const response = await goto(...args);
+         |                              ^
+      21 |       // The arena and art-pilot developer previews intentionally render outside StageLayout.
+      22 |       // Its project and origin are still checked above. Check the first normal page.
+      23 |       const devParam = new URL(page.url()).searchParams.get('dev');
+        at _Page.goto (/Users/bao/taskbar-hero-cardrpg-big-reveal-fit/apps/web/e2e/support/test.ts:20:30)
+        at load (/Users/bao/taskbar-hero-cardrpg-big-reveal-fit/apps/web/e2e/qa/s3-walkthrough.spec.ts:9:14)
+        at /Users/bao/taskbar-hero-cardrpg-big-reveal-fit/apps/web/e2e/qa/s3-walkthrough.spec.ts:28:11
+
+    Error Context: test-results/5910-5911/qa-s3-walkthrough-Cat-RPG--9528b--and-initial-stage-mounting-stage-layout/error-context.md
+
+  15) [stage-layout] › e2e/ui/art2-flag-off.spec.ts:6:35 › ART2 flag-off landing and class match reviewed pixel baselines 1280 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: apiRequestContext.get: Test timeout of 30000ms exceeded.
+    Call log:
+      - → GET https://fonts.gstatic.com/s/dmsans/v17/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu0-K6z9mXg.woff2
+        - user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.8078.4 Safari/537.36
+        - accept: */*
+        - accept-encoding: gzip,deflate,br
+      - ← 200 OK
+        - accept-ranges: bytes
+        - access-control-allow-origin: *
+        - content-security-policy-report-only: require-trusted-types-for 'script'; report-uri https://csp.withgoogle.com/csp/apps-themes
+        - cross-origin-resource-policy: cross-origin
+        - cross-origin-opener-policy: same-origin; report-to="apps-themes"
+        - report-to: {"group":"apps-themes","max_age":2592000,"endpoints":[{"url":"https://csp.withgoogle.com/csp/report-to/apps-themes"}]}
+        - timing-allow-origin: *
+        - content-length: 36980
+        - x-content-type-options: nosniff
+        - server: sffe
+        - x-xss-protection: 0
+        - date: Fri, 06 Nov 2026 17:01:26 GMT
+        - expires: Sat, 06 Nov 2027 17:01:26 GMT
+        - cache-control: public, max-age=31536000
+        - last-modified: Wed, 10 Sep 2025 16:30:06 GMT
+        - content-type: font/woff2
+        - age: 25288
+        - alt-svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+
+
+       at support/visual-fonts.ts:28
+
+      26 |   // Fail on unavailable/changed bytes instead of silently accepting a fallback.
+      27 |   for (const font of fonts) {
+    > 28 |     const response = await page.request.get(font.url);
+         |                                         ^
+      29 |     expect(response.ok(), `${font.family}: versioned font request`).toBe(true);
+      30 |     const body = await response.body();
+      31 |     expect(createHash('sha256').update(body).digest('hex'), `${font.family}: baseline font identity`).toBe(font.sha256);
+        at pinVisualFonts (/Users/bao/taskbar-hero-cardrpg-big-reveal-fit/apps/web/e2e/support/visual-fonts.ts:28:41)
+        at /Users/bao/taskbar-hero-cardrpg-big-reveal-fit/apps/web/e2e/ui/art2-flag-off.spec.ts:12:9
+
+    Error Context: test-results/5910-5911/ui-art2-flag-off-ART2-flag-50b4c-viewed-pixel-baselines-1280-stage-layout/error-context.md
+
+  16) [stage-layout] › e2e/ui/baseline-hud.spec.ts:101:5 › late chapter HUD keeps full balances and sync separate at 1600x900 (1234567) 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: page.evaluate: Test timeout of 30000ms exceeded.
+
+      116 |       }, { key, save });
+      117 |       await page.goto('/');
+    > 118 |       await page.evaluate(() => document.fonts.ready);
+          |                  ^
+      119 |       await expectReadableChrome(page);
+      120 |       const separation = await page.locator('.shell-hud').evaluate(hud => ({
+      121 |         powerRight: hud.querySelector('.hud-power-chip')!.getBoundingClientRect().right,
+        at /Users/bao/taskbar-hero-cardrpg-big-reveal-fit/apps/web/e2e/ui/baseline-hud.spec.ts:118:18
+
+    Error Context: test-results/5910-5911/ui-baseline-hud-late-chapt-2308b-parate-at-1600x900-1234567--stage-layout/error-context.md
+
+  17) [stage-layout] › e2e/ui/baseline-hud.spec.ts:135:5 › shared HUD keeps XP and every status chip visible at 1600x900 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: page.evaluate: Test timeout of 30000ms exceeded.
+
+      155 |       }, { key, save: JSON.stringify(save) });
+      156 |       await page.goto('/');
+    > 157 |       await page.evaluate(() => document.fonts.ready);
+          |                  ^
+      158 |       const hud = page.getByRole('region', { name: 'Cat status' });
+      159 |       const experience = hud.getByRole('progressbar', { name: 'Experience' });
+      160 |       await expect(experience).toHaveAttribute('aria-valuenow', String(save.state.xp));
+        at /Users/bao/taskbar-hero-cardrpg-big-reveal-fit/apps/web/e2e/ui/baseline-hud.spec.ts:157:18
+
+    Error Context: test-results/5910-5911/ui-baseline-hud-shared-HUD-38c95-us-chip-visible-at-1600x900-stage-layout/error-context.md
+
+  18) [stage-layout] › e2e/ui/cafe-adventure.spec.ts:131:77 › all adventure pages fit desktop 1440x900 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.evaluateAll: Test timeout of 30000ms exceeded.
+
+      134 |     await nav(page,name); await expect(page.getByRole('region',{name:`${name} page`,exact:true})).toBeVisible();
+      135 |     expect(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth||document.documentElement.scrollHeight>innerHeight)).toBe(false);
+    > 136 |     await page.locator('.cafe-shell img').evaluateAll(nodes => Promise.all(nodes.map(n => (n as HTMLImageElement).decode())));
+          |                                           ^
+      137 |     const bad = await page.locator('.cafe-shell img').evaluateAll(nodes => nodes.filter(n => !(n as HTMLImageElement).complete || !(n as HTMLImageElement).naturalWidth).map(n => n.getAttribute('src')));
+      138 |     expect(bad).toEqual([]); await page.getByRole('region',{name:`${name} page`,exact:true}).focus(); await expect(page.getByRole('region',{name:`${name} page`,exact:true})).toBeFocused();
+      139 |   }
+        at /Users/bao/taskbar-hero-cardrpg-big-reveal-fit/apps/web/e2e/ui/cafe-adventure.spec.ts:136:43
+
+    Error Context: test-results/5910-5911/ui-cafe-adventure-all-adventure-pages-fit-desktop-1440x900-stage-layout/error-context.md
+
+  19) [stage-layout] › e2e/ui/cafe-adventure.spec.ts:131:77 › all adventure pages fit desktop 1920x1080 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: page.goto: Test timeout of 30000ms exceeded.
+    Call log:
+      - navigating to "http://localhost:5911/?demo&coach=off&adventure=1&adventureDebug=1#home", waiting until "load"
+
+
+       at support/test.ts:20
+
+      18 |     let checked = false;
+      19 |     page.goto = async (...args) => {
+    > 20 |       const response = await goto(...args);
+         |                              ^
+      21 |       // The arena and art-pilot developer previews intentionally render outside StageLayout.
+      22 |       // Its project and origin are still checked above. Check the first normal page.
+      23 |       const devParam = new URL(page.url()).searchParams.get('dev');
+        at _Page.goto (/Users/bao/taskbar-hero-cardrpg-big-reveal-fit/apps/web/e2e/support/test.ts:20:30)
+        at open (/Users/bao/taskbar-hero-cardrpg-big-reveal-fit/apps/web/e2e/ui/cafe-adventure.spec.ts:17:14)
+        at /Users/bao/taskbar-hero-cardrpg-big-reveal-fit/apps/web/e2e/ui/cafe-adventure.spec.ts:132:98
+
+    Error Context: test-results/5910-5911/ui-cafe-adventure-all-adventure-pages-fit-desktop-1920x1080-stage-layout/error-context.md
+
+  20) [stage-layout] › e2e/ui/cxr2-returning-guest.spec.ts:7:35 › CXR2 returning guest can play again from Landing without losing progress 1280 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: page.evaluate: Test timeout of 30000ms exceeded.
+
+      24 |   expect(await page.evaluate(() => window.__g1Loop.getSnapshot().state)).toEqual(before);
+      25 |   expect(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth || document.documentElement.scrollHeight > innerHeight)).toBe(false);
+    > 26 |   await page.clock.runFor(500); await page.evaluate(() => document.fonts.ready);
+         |                                            ^
+      27 |   if (process.env.CXR2_SCREENSHOTS) {
+      28 |     mkdirSync(process.env.CXR2_SCREENSHOTS, { recursive: true });
+      29 |     await page.screenshot({ path: resolve(process.env.CXR2_SCREENSHOTS, `returning-guest-home-${width}.png`) });
+        at /Users/bao/taskbar-hero-cardrpg-big-reveal-fit/apps/web/e2e/ui/cxr2-returning-guest.spec.ts:26:44
+
+    Error Context: test-results/5910-5911/ui-cxr2-returning-guest-CX-c13e1-ithout-losing-progress-1280-stage-layout/error-context.md
+
+  21) [stage-layout] › e2e/ui/cxr2-returning-guest.spec.ts:7:35 › CXR2 returning guest can play again from Landing without losing progress 1600 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: page.evaluate: Test timeout of 30000ms exceeded.
+
+      24 |   expect(await page.evaluate(() => window.__g1Loop.getSnapshot().state)).toEqual(before);
+      25 |   expect(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth || document.documentElement.scrollHeight > innerHeight)).toBe(false);
+    > 26 |   await page.clock.runFor(500); await page.evaluate(() => document.fonts.ready);
+         |                                            ^
+      27 |   if (process.env.CXR2_SCREENSHOTS) {
+      28 |     mkdirSync(process.env.CXR2_SCREENSHOTS, { recursive: true });
+      29 |     await page.screenshot({ path: resolve(process.env.CXR2_SCREENSHOTS, `returning-guest-home-${width}.png`) });
+        at /Users/bao/taskbar-hero-cardrpg-big-reveal-fit/apps/web/e2e/ui/cxr2-returning-guest.spec.ts:26:44
+
+    Error Context: test-results/5910-5911/ui-cxr2-returning-guest-CX-c53e0-ithout-losing-progress-1600-stage-layout/error-context.md
+
+  22) [stage-layout] › e2e/ui/cxr2-state-matrix.spec.ts:39:5 › CXR2 screen/state review 1280 normal 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: page.evaluate: Test timeout of 30000ms exceeded.
+
+      60 |       await page.goto('/#home');
+      61 |       await expect(page.locator('.v2-stage-canvas canvas')).toBeVisible();
+    > 62 |       await page.evaluate(() => document.fonts.ready);
+         |                  ^
+      63 |       await page.clock.runFor(500);
+      64 |       if (scenario === 'maximum-long') await expect(page.getByTestId('hud-gold')).toHaveAttribute('aria-label', 'Fish 9,007,199,254,740,991');
+      65 |       if (scenario === 'zero-empty') await expect(page.getByTestId('hud-gold')).toHaveAttribute('aria-label', 'Fish 0');
+        at /Users/bao/taskbar-hero-cardrpg-big-reveal-fit/apps/web/e2e/ui/cxr2-state-matrix.spec.ts:62:18
+
+    Error Context: test-results/5910-5911/ui-cxr2-state-matrix-CXR2-screen-state-review-1280-normal-stage-layout/error-context.md
+
+  23) [stage-layout] › e2e/ui/cxr2-state-matrix.spec.ts:39:5 › CXR2 screen/state review 1280 zero-empty 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: page.goto: Test timeout of 30000ms exceeded.
+    Call log:
+      - navigating to "http://localhost:5911/#home", waiting until "load"
+
+
+       at support/test.ts:20
+
+      18 |     let checked = false;
+      19 |     page.goto = async (...args) => {
+    > 20 |       const response = await goto(...args);
+         |                              ^
+      21 |       // The arena and art-pilot developer previews intentionally render outside StageLayout.
+      22 |       // Its project and origin are still checked above. Check the first normal page.
+      23 |       const devParam = new URL(page.url()).searchParams.get('dev');
+        at _Page.goto (/Users/bao/taskbar-hero-cardrpg-big-reveal-fit/apps/web/e2e/support/test.ts:20:30)
+        at /Users/bao/taskbar-hero-cardrpg-big-reveal-fit/apps/web/e2e/ui/cxr2-state-matrix.spec.ts:60:18
+
+    Error Context: test-results/5910-5911/ui-cxr2-state-matrix-CXR2--8dfdf-tate-review-1280-zero-empty-stage-layout/error-context.md
+
+  24) [stage-layout] › e2e/ui/cxr2-state-matrix.spec.ts:39:5 › CXR2 screen/state review 1600 normal 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: page.evaluate: Test timeout of 30000ms exceeded.
+
+      60 |       await page.goto('/#home');
+      61 |       await expect(page.locator('.v2-stage-canvas canvas')).toBeVisible();
+    > 62 |       await page.evaluate(() => document.fonts.ready);
+         |                  ^
+      63 |       await page.clock.runFor(500);
+      64 |       if (scenario === 'maximum-long') await expect(page.getByTestId('hud-gold')).toHaveAttribute('aria-label', 'Fish 9,007,199,254,740,991');
+      65 |       if (scenario === 'zero-empty') await expect(page.getByTestId('hud-gold')).toHaveAttribute('aria-label', 'Fish 0');
+        at /Users/bao/taskbar-hero-cardrpg-big-reveal-fit/apps/web/e2e/ui/cxr2-state-matrix.spec.ts:62:18
+
+    Error Context: test-results/5910-5911/ui-cxr2-state-matrix-CXR2-screen-state-review-1600-normal-stage-layout/error-context.md
+
+  25) [stage-layout] › e2e/ui/cxu3-forge.spec.ts:29:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1280 no-preference 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: page.evaluate: Test timeout of 30000ms exceeded.
+
+      35 |       await page.addInitScript(({ key, save }) => { localStorage.setItem(key, save); localStorage.setItem('taskbar-hero.howToPlaySeen', '1'); }, { key: storageKey, save: JSON.stringify(save) });
+      36 |       await page.goto('/'); await page.getByRole('tab', { name: 'Forge', exact: true }).click();
+    > 37 |       await expect(page.getByTestId('craft-panel')).toBeVisible(); await page.evaluate(() => document.fonts.ready);
+         |                                                                               ^
+      38 |       await expect(page.getByTestId('cost-yarn')).toContainText(`${save.state.stacks.yarn} / 10`);
+      39 |       await expect(page.getByTestId('cost-fluffTuft')).toContainText(`${save.state.stacks.fluffTuft} / 4`);
+      40 |       await expect(page.getByTestId('cost-fish')).toContainText(`${save.state.stacks.fish} / 50`);
+        at /Users/bao/taskbar-hero-cardrpg-big-reveal-fit/apps/web/e2e/ui/cxu3-forge.spec.ts:37:79
+
+    Error Context: test-results/5910-5911/ui-cxu3-forge-CXU3-Forge-c-70fcb-and-tabs-1280-no-preference-stage-layout/error-context.md
+
+  26) [stage-layout] › e2e/ui/cxu3-forge.spec.ts:29:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1600 reduce 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: page.evaluate: Test timeout of 30000ms exceeded.
+
+      35 |       await page.addInitScript(({ key, save }) => { localStorage.setItem(key, save); localStorage.setItem('taskbar-hero.howToPlaySeen', '1'); }, { key: storageKey, save: JSON.stringify(save) });
+      36 |       await page.goto('/'); await page.getByRole('tab', { name: 'Forge', exact: true }).click();
+    > 37 |       await expect(page.getByTestId('craft-panel')).toBeVisible(); await page.evaluate(() => document.fonts.ready);
+         |                                                                               ^
+      38 |       await expect(page.getByTestId('cost-yarn')).toContainText(`${save.state.stacks.yarn} / 10`);
+      39 |       await expect(page.getByTestId('cost-fluffTuft')).toContainText(`${save.state.stacks.fluffTuft} / 4`);
+      40 |       await expect(page.getByTestId('cost-fish')).toContainText(`${save.state.stacks.fish} / 50`);
+        at /Users/bao/taskbar-hero-cardrpg-big-reveal-fit/apps/web/e2e/ui/cxu3-forge.spec.ts:37:79
+
+    Error Context: test-results/5910-5911/ui-cxu3-forge-CXU3-Forge-c-76dab-reveal-and-tabs-1600-reduce-stage-layout/error-context.md
+
+  27) [stage-layout] › e2e/ui/cxu4-hero-help.spec.ts:92:3 › CXU4 Help keyboard search, selection and offline banner 1280 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: page.screenshot: Test timeout of 30000ms exceeded.
+    Call log:
+      - taking page screenshot
+      - waiting for fonts to load...
+      - fonts loaded
+
+
+      31 | async function screenshot(page: Page, name: string) {
+      32 |   // Recompress IDAT losslessly: preserve the exact pixels and the 200 KiB evidence gate.
+    > 33 |   const raw = await page.screenshot(), chunks: Buffer[] = [], data: Buffer[] = [];
+         |                          ^
+      34 |   for (let offset = 8; offset < raw.length;) {
+      35 |     const length = raw.readUInt32BE(offset), chunk = raw.subarray(offset, offset + length + 12);
+      36 |     if (chunk.toString('ascii', 4, 8) === 'IDAT') data.push(chunk.subarray(8, -4)); else chunks.push(chunk);
+        at screenshot (/Users/bao/taskbar-hero-cardrpg-big-reveal-fit/apps/web/e2e/ui/cxu4-hero-help.spec.ts:33:26)
+        at /Users/bao/taskbar-hero-cardrpg-big-reveal-fit/apps/web/e2e/ui/cxu4-hero-help.spec.ts:104:106
+
+    Error Context: test-results/5910-5911/ui-cxu4-hero-help-CXU4-Hel-09401-ion-and-offline-banner-1280-stage-layout/error-context.md
+
+  28) [stage-layout] › e2e/ui/cxu5-map.spec.ts:68:5 › 1280x720 › no key refuses fight and explains the existing daily claim 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: page.evaluate: Test timeout of 30000ms exceeded.
+
+      15 |   await page.getByRole('tab', { name: 'Map', exact: true }).click();
+      16 |   await expect(page.getByRole('region', { name: 'Boss Gate' })).toBeVisible();
+    > 17 |   await page.evaluate(() => document.fonts.ready);
+         |              ^
+      18 | }
+      19 | test('preserves the compact boss panel and reachable Fight below the desktop breakpoint', async ({ page }) => {
+      20 |   for (const size of [{ width: 320, height: 568 }, { width: 390, height: 844 }, { width: 1024, height: 600 }]) {
+        at enter (/Users/bao/taskbar-hero-cardrpg-big-reveal-fit/apps/web/e2e/ui/cxu5-map.spec.ts:17:14)
+        at /Users/bao/taskbar-hero-cardrpg-big-reveal-fit/apps/web/e2e/ui/cxu5-map.spec.ts:69:7
+
+    Error Context: test-results/5910-5911/ui-cxu5-map-1280x720-no-ke-08f2b-ns-the-existing-daily-claim-stage-layout/error-context.md
+
+  29) [stage-layout] › e2e/ui/f3-art.spec.ts:47:3 › F3 chapter 1 roster sheet at 3x scale with distinct silhouettes 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.screenshot: Element is not attached to the DOM
+    Call log:
+      - taking element screenshot
+      - waiting for fonts to load...
+      - fonts loaded
+      - attempting scroll into view action
+        - waiting for element to be stable
+
+
+      37 |   if (writeScreenshots) mkdirSync(output, { recursive: true });
+      38 |   const options = writeScreenshots ? { path: resolve(output, `${name}.png`) } : {};
+    > 39 |   const png = selector ? await page.locator(selector).screenshot(options) : await page.screenshot(options);
+         |                                                       ^
+      40 |   const size = png.byteLength;
+      41 |   expect(size).toBeLessThan(200 * 1024);
+      42 |   console.log(`${writeScreenshots ? 'Saved' : 'Measured'} screenshot ${name}.png (${(size / 1024).toFixed(1)} KB)`);
+        at captureShot (/Users/bao/taskbar-hero-cardrpg-big-reveal-fit/apps/web/e2e/ui/f3-art.spec.ts:39:55)
+        at /Users/bao/taskbar-hero-cardrpg-big-reveal-fit/apps/web/e2e/ui/f3-art.spec.ts:161:11
+
+    Error Context: test-results/5910-5911/ui-f3-art-F3-chapter-1-ros-9eca5-e-with-distinct-silhouettes-stage-layout/error-context.md
+
+  30) [stage-layout] › e2e/ui/firstplay.spec.ts:43:3 › First play reaches Home and naturally earns without a wallet 1280 
+
+    Error: UI interaction path should reach Home well before the reward interval
+
+    expect(received).toBeLessThan(expected)
+
+    Expected: < 5000
+    Received:   6915
+
+      64 |     await page.getByTestId('class-picker-choose-button').click();
+      65 |     await expect(page.getByTestId('home-dashboard')).toBeVisible(); timing.homeMs = Date.now() - start;
+    > 66 |     expect(timing.homeMs, 'UI interaction path should reach Home well before the reward interval').toBeLessThan(5_000);
+         |                                                                                                    ^
+      67 |     await expect(page.getByTestId('guest-coach')).toBeVisible();
+      68 |     const initial = await page.evaluate(() => window.__g1Loop.getSnapshot().state!.currencies.fish);
+      69 |     await expect.poll(() => page.evaluate(() => window.__g1Loop.getSnapshot().state!.currencies.fish), { timeout: 36_000, intervals: [100, 250, 500] }).toBeGreaterThan(initial);
+        at /Users/bao/taskbar-hero-cardrpg-big-reveal-fit/apps/web/e2e/ui/firstplay.spec.ts:66:100
+
+    Error Context: test-results/5910-5911/ui-firstplay-First-play-re-9d592-earns-without-a-wallet-1280-stage-layout/error-context.md
+
+  31) [stage-layout] › e2e/ui/cxr2-state-matrix.spec.ts:39:5 › CXR2 screen/state review 1600 offline 
+
+    Test was interrupted.
+
+    Error: page.evaluate: Test ended.
+
+      60 |       await page.goto('/#home');
+      61 |       await expect(page.locator('.v2-stage-canvas canvas')).toBeVisible();
+    > 62 |       await page.evaluate(() => document.fonts.ready);
+         |                  ^
+      63 |       await page.clock.runFor(500);
+      64 |       if (scenario === 'maximum-long') await expect(page.getByTestId('hud-gold')).toHaveAttribute('aria-label', 'Fish 9,007,199,254,740,991');
+      65 |       if (scenario === 'zero-empty') await expect(page.getByTestId('hud-gold')).toHaveAttribute('aria-label', 'Fish 0');
+        at /Users/bao/taskbar-hero-cardrpg-big-reveal-fit/apps/web/e2e/ui/cxr2-state-matrix.spec.ts:62:18
+
+    Error Context: test-results/5910-5911/ui-cxr2-state-matrix-CXR2-screen-state-review-1600-offline-stage-layout/error-context.md
+
+  32) [stage-layout] › e2e/ui/cxu5-map.spec.ts:68:5 › 1600x900 › no key refuses fight and explains the existing daily claim 
+
+    Test was interrupted.
+
+    Error: page.evaluate: Test ended.
+
+      15 |   await page.getByRole('tab', { name: 'Map', exact: true }).click();
+      16 |   await expect(page.getByRole('region', { name: 'Boss Gate' })).toBeVisible();
+    > 17 |   await page.evaluate(() => document.fonts.ready);
+         |              ^
+      18 | }
+      19 | test('preserves the compact boss panel and reachable Fight below the desktop breakpoint', async ({ page }) => {
+      20 |   for (const size of [{ width: 320, height: 568 }, { width: 390, height: 844 }, { width: 1024, height: 600 }]) {
+        at enter (/Users/bao/taskbar-hero-cardrpg-big-reveal-fit/apps/web/e2e/ui/cxu5-map.spec.ts:17:14)
+        at /Users/bao/taskbar-hero-cardrpg-big-reveal-fit/apps/web/e2e/ui/cxu5-map.spec.ts:69:7
+
+    Error Context: test-results/5910-5911/ui-cxu5-map-1600x900-no-ke-1e870-ns-the-existing-daily-claim-stage-layout/error-context.md
+
+  33) [stage-layout] › e2e/ui/f3-art.spec.ts:47:3 › F3 chapter 5 roster sheet at 3x scale with distinct silhouettes 
+
+    Test was interrupted.
+
+    Error: locator.screenshot: Element is not attached to the DOM
+    Call log:
+      - taking element screenshot
+      - waiting for fonts to load...
+      - fonts loaded
+      - attempting scroll into view action
+        - waiting for element to be stable
+
+
+      37 |   if (writeScreenshots) mkdirSync(output, { recursive: true });
+      38 |   const options = writeScreenshots ? { path: resolve(output, `${name}.png`) } : {};
+    > 39 |   const png = selector ? await page.locator(selector).screenshot(options) : await page.screenshot(options);
+         |                                                       ^
+      40 |   const size = png.byteLength;
+      41 |   expect(size).toBeLessThan(200 * 1024);
+      42 |   console.log(`${writeScreenshots ? 'Saved' : 'Measured'} screenshot ${name}.png (${(size / 1024).toFixed(1)} KB)`);
+        at captureShot (/Users/bao/taskbar-hero-cardrpg-big-reveal-fit/apps/web/e2e/ui/f3-art.spec.ts:39:55)
+        at /Users/bao/taskbar-hero-cardrpg-big-reveal-fit/apps/web/e2e/ui/f3-art.spec.ts:161:11
+
+  34) [stage-layout] › e2e/ui/firstplay.spec.ts:83:3 › Returning guest stays labelled through disconnected wallet and offline recovery 1280 
+
+    Test was interrupted.
+
+    Error: page.evaluate: Test ended.
+
+       7 |
+       8 | async function capture(page: Page, name: string) {
+    >  9 |   await page.evaluate(() => document.fonts.ready);
+         |              ^
+      10 |   await expectVisibleRoot(page);
+      11 |   expect(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth || document.documentElement.scrollHeight > innerHeight)).toBe(false);
+      12 |   if (process.env.FIRSTPLAY_SCREENSHOTS) {
+        at capture (/Users/bao/taskbar-hero-cardrpg-big-reveal-fit/apps/web/e2e/ui/firstplay.spec.ts:9:14)
+        at /Users/bao/taskbar-hero-cardrpg-big-reveal-fit/apps/web/e2e/ui/firstplay.spec.ts:92:74
+
+    Error Context: test-results/5910-5911/ui-firstplay-Returning-gue-7ca19-t-and-offline-recovery-1280-stage-layout/error-context.md
+
+  30 failed
+    [v2-server] › e2e/server/cxr2-class-states.spec.ts:6:35 › CXR2 first class stays visible during save and can recover 1600 
+    [v2-server] › e2e/server/expired-session-feedback.spec.ts:9:3 › Expired server session explains guest recovery, saved guest false 
+    [v2-server] › e2e/server/expired-session-feedback.spec.ts:9:3 › Expired server session explains guest recovery, saved guest true 
+    [classic] › e2e/responsive-screenshots.spec.ts:26:5 › Responsive visual verification & screenshots › renders at 390px with no horizontal scroll and valid layout 
+    [classic] › e2e/responsive-screenshots.spec.ts:26:5 › Responsive visual verification & screenshots › renders at 320px with no horizontal scroll and valid layout 
+    [classic] › e2e/security.spec.ts:13:3 › CSP classic 1600x900 light: painted canvas, zero violations 
+    [classic] › e2e/security.spec.ts:13:3 › CSP classic 1280x720 light: painted canvas, zero violations 
+    [classic] › e2e/security.spec.ts:13:3 › CSP classic 390x844 light: painted canvas, zero violations 
+    [classic] › e2e/security.spec.ts:13:3 › CSP classic 390x844 dark: painted canvas, zero violations 
+    [classic] › e2e/security.spec.ts:13:3 › CSP v2 1600x900 light: painted canvas, zero violations ─
+    [stage-layout] › e2e/layout/arena.spec.ts:3:3 › boss arena 1280px no-preference ────────────────
+    [stage-layout] › e2e/layout/character-bag.spec.ts:82:3 › equipping from the bag updates the slot name and locked slots show their level at 1600x900px 
+    [stage-layout] › e2e/layout/stage-layout.spec.ts:240:3 › v2 class choice and timed claim at 1280px 
+    [stage-layout] › e2e/qa/s3-walkthrough.spec.ts:27:3 › Cat RPG v2 QA Regression Suite (Mission S3) › fresh start class choice and initial stage mounting 
+    [stage-layout] › e2e/ui/art2-flag-off.spec.ts:6:35 › ART2 flag-off landing and class match reviewed pixel baselines 1280 
+    [stage-layout] › e2e/ui/baseline-hud.spec.ts:101:5 › late chapter HUD keeps full balances and sync separate at 1600x900 (1234567) 
+    [stage-layout] › e2e/ui/baseline-hud.spec.ts:135:5 › shared HUD keeps XP and every status chip visible at 1600x900 
+    [stage-layout] › e2e/ui/cafe-adventure.spec.ts:131:77 › all adventure pages fit desktop 1440x900 
+    [stage-layout] › e2e/ui/cafe-adventure.spec.ts:131:77 › all adventure pages fit desktop 1920x1080 
+    [stage-layout] › e2e/ui/cxr2-returning-guest.spec.ts:7:35 › CXR2 returning guest can play again from Landing without losing progress 1280 
+    [stage-layout] › e2e/ui/cxr2-returning-guest.spec.ts:7:35 › CXR2 returning guest can play again from Landing without losing progress 1600 
+    [stage-layout] › e2e/ui/cxr2-state-matrix.spec.ts:39:5 › CXR2 screen/state review 1280 normal ──
+    [stage-layout] › e2e/ui/cxr2-state-matrix.spec.ts:39:5 › CXR2 screen/state review 1280 zero-empty 
+    [stage-layout] › e2e/ui/cxr2-state-matrix.spec.ts:39:5 › CXR2 screen/state review 1600 normal ──
+    [stage-layout] › e2e/ui/cxu3-forge.spec.ts:29:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1280 no-preference 
+    [stage-layout] › e2e/ui/cxu3-forge.spec.ts:29:5 › CXU3 Forge costs, confirmation, one-shot reveal and tabs 1600 reduce 
+    [stage-layout] › e2e/ui/cxu4-hero-help.spec.ts:92:3 › CXU4 Help keyboard search, selection and offline banner 1280 
+    [stage-layout] › e2e/ui/cxu5-map.spec.ts:68:5 › 1280x720 › no key refuses fight and explains the existing daily claim 
+    [stage-layout] › e2e/ui/f3-art.spec.ts:47:3 › F3 chapter 1 roster sheet at 3x scale with distinct silhouettes 
+    [stage-layout] › e2e/ui/firstplay.spec.ts:43:3 › First play reaches Home and naturally earns without a wallet 1280 
+  4 interrupted
+    [stage-layout] › e2e/ui/cxr2-state-matrix.spec.ts:39:5 › CXR2 screen/state review 1600 offline ─
+    [stage-layout] › e2e/ui/cxu5-map.spec.ts:68:5 › 1600x900 › no key refuses fight and explains the existing daily claim 
+    [stage-layout] › e2e/ui/f3-art.spec.ts:47:3 › F3 chapter 5 roster sheet at 3x scale with distinct silhouettes 
+    [stage-layout] › e2e/ui/firstplay.spec.ts:83:3 › Returning guest stays labelled through disconnected wallet and offline recovery 1280 
+  149 did not run
+  238 passed (10.9m)
+/Users/bao/taskbar-hero-cardrpg-big-reveal-fit/apps/web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/web@0.0.0 test:e2e: `playwright test --workers=4`
+Exit status 130
