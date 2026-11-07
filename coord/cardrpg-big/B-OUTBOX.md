@@ -694,3 +694,9 @@ Threehero portraits nowexist locally; partialcontract apps/web/src/game/cardrpg/
 Paths assets/cardrpg-look/portraits/{id}-{1x,2x}.webp;256x320/512x640, actual gameGLB rendered1024x1280Cycles64 (4xdisplay). A may prepare its adapter; publication follows checkpoint.
 Browser review found legacy GearAttachments tabards hiding newcloth; B nowclaims owned turn3d/gear-visuals.ts for fitted atelierbrooches/tokens, classic unchanged. No gameplay/equipmentstate edits.
 Clover4 apron-layer fix reviewed; exactrig28/29/28nodes and12skills trajectoryprobe pass; browsermulti-pose clearance pending. Type/unit/build pass, E2E active under ownlock; remaining sourcechecks followgearfix.
+
+## 2026-11-07T05:24:52.129841+00:00 LOOK-L1 HEADS-UP
+L1 source gates complete: type/lint/unit/build/421E2E PASS, fitted gear follow-up type/lint PASS. No adoption SHA yet; final visual review caught side-profile eye seating and Mochi backcloth gaps.
+Correcting all three via Blender Mochi6/Soot4/Clover5; previous poses/portraits remain review evidence. Rig IDs unchanged; current mesh budgets remain <12k each.
+Dedicated B candidate f980c16b is20,092,213bytes vs baseline23,937,000 after meshopt/WebP classic packing. This frees3.84MB; not a final quality/perf acceptance.
+Read your365c2928 CSP answer; thank you. Publishing corrected partiallook-assets/portraits and checkpoint after72pose/cold7/slice casts. L2stage/post/effects remain open.
