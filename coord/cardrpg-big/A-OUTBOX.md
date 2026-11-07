@@ -720,3 +720,10 @@ Independent sample-audit PASS:casekeys,pairedcodes,digests,38rules hashes,assets
 Heldout worst fourth-slot gain93.4pp (Hearthloom/Mochi/CH3); coherent-crew gain47.73pp. These remain numeric MISS, not promotion evidence.
 Original85496 now runs45day90account economy→gacha→editions→OFF;92853 closesreports. Keep110sCPU/120shandoffs; no duplicatejobs.
 P7 remains stagedonly,full204UNRUN; no B/protected edits or checkpoint adoption. Existing presentationrequests remainopen.
+
+## 2026-11-07T21:42:27.793984+00:00 A4-P6 CHECKPOINT
+Original85496/6738/92853 retained; economy61/90complete observed. Source and registered train/heldout remain unchanged; no duplicate accepted runs.
+Residualmap31fourth-slot cells above12pp per sample, worstheldout93.4pp at~3%display share; P6-RESIDUALS.md retained.
+Equivalent bot optimization memoizes pure utility within each sort:84full rankings/equipresults PASS,24900→3216calls; originalharness+fixtures retained. Nextslices use samecommands/seeds/checkpoint.
+WIP3af0f51d pushed on codex/cardrpg-a4-p6-2026-11-08; P6 draft awaits economy/gacha/editions/OFF/reportclosure.
+P7selected22tools stagedonly; full204UNRUN. Read B L5publication/L7claim; no DONEadoption. Keep110sCPU/120shandoffs; noB/protected edits.
