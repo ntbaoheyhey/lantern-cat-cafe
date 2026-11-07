@@ -1,0 +1,12 @@
+/* REFERENCE: tools/cardrpg-big2/studio.css; apps/web/src/game/cardrpg/depth/feel-lab.css */
+.dp-offline-demo .dp-demo-tools { display: flex; flex: none; align-items: center; gap: 6px; order: 1; }
+.dp-offline-demo .dp-demo-tools button { padding: 7px 8px; font-size: 10px; white-space: nowrap; }
+.dp-offline-demo .cr-topbar .cr-wallet { order: 2; }
+.dp-offline-demo .cr-topbar .cr-account { order: 3; }
+.dp-offline-demo.b2-demo-lab-open .dp-feel-home { visibility: hidden; }
+.dp-offline-demo .dp-demo-tools button[aria-pressed=true] { background: #f4cd93; color: #292332; }
+@media (max-width: 1100px) {
+  .dp-offline-demo .cr-topbar { gap: 9px; }
+  .dp-offline-demo .dp-demo-tools { gap: 4px; }
+  .dp-offline-demo .dp-demo-tools button { padding: 7px 6px; }
+}

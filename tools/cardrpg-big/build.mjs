@@ -1,9 +1,10 @@
-import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, unlinkSync } from 'node:fs';
 import { resolve, relative, extname } from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { gzipSync } from 'node:zlib';
 import { root, web, requireWeb } from '../visual-support.mjs';
+import { evidencePayload } from '../cardrpg-big2/embed-evidence.mjs';
 const { build } = await import(requireWeb.resolve('vite'));
 const embeddedAssets = new Map();
 const mimeTypes = { '.glb': 'model/gltf-binary', '.png': 'image/png', '.webp': 'image/webp', '.svg': 'image/svg+xml' };
@@ -28,13 +29,35 @@ const css = output.filter(f => f.type === 'asset' && f.fileName.endsWith('.css')
 const payload = gzipSync(Buffer.from(JSON.stringify({ js, css })), { level: 9 }).toString('base64');
 const head = execFileSync('git', ['rev-parse', 'HEAD'], { cwd: root, encoding: 'utf8' }).trim();
 const dirty = !!execFileSync('git', ['status', '--porcelain'], { cwd: root, encoding: 'utf8' }).trim();
+const sourceAssetHashes = Object.fromEntries([...embeddedAssets].map(([path, asset]) =>
+  [path, createHash('sha256').update(asset.bytes).digest('hex')]));
+// Keep source PNGs and manifest keys. Only opaque, losslessly packed images
+// with a smaller gzip payload are selected; translucent portraits stay PNG.
+const imageRequest = `/tmp/cardrpg-big-image-pack-${process.pid}.json`;
+writeFileSync(imageRequest, JSON.stringify([...embeddedAssets.keys()]
+  .filter(key => extname(key) === '.png').map(key => resolve(root, key))));
+let imagePacking;
+try {
+  imagePacking = JSON.parse(execFileSync(process.env.BIG_PYTHON || '/tmp/cardrpg-big-tools/bin/python',
+    [resolve(root, 'tools/cardrpg-big2/pack-images.py'), imageRequest],
+    { encoding: 'utf8', maxBuffer: 4 * 1024 * 1024 }));
+} finally { unlinkSync(imageRequest); }
+for (const row of imagePacking) {
+  const key = relative(root, row.source), asset = embeddedAssets.get(key), packed = readFileSync(row.packed);
+  row.key = key;
+  row.selected = row.opaque && gzipSync(packed, { level: 9 }).length < gzipSync(asset.bytes, { level: 9 }).length;
+  if (row.selected) embeddedAssets.set(key, { mime: 'image/webp', bytes: packed });
+}
 const assetEntries = [...embeddedAssets].sort(([left], [right]) => left.localeCompare(right));
 const manifest = assetEntries.map(([key, asset]) => ({ key, mime: asset.mime }));
 const assetTags = assetEntries.map(([, asset], index) => `<script id="asset-${index}" type="application/octet-stream">${gzipSync(asset.bytes, { level: 9 }).toString('base64')}</script>`).join('\n');
 const performanceMeter = readFileSync(resolve(root, 'tools/cardrpg-big/offline-performance.js'), 'utf8');
 const loader = readFileSync(resolve(root, 'tools/cardrpg-big/offline-loader.js'), 'utf8');
-const html = `<!doctype html>\n<!-- REFERENCE: docs/cardrpg2/index.html | tools/cardrpg-big/build.mjs | apps/web/src/game/cardrpg/depth | packages/game-rules/src/cardrpg/depth -->\n<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none';img-src data: blob:;style-src 'unsafe-inline';script-src 'unsafe-inline';connect-src data: blob:;media-src data: blob:"><script>${performanceMeter}</script><title>The Lantern · Three chapters</title><style>html,body{margin:0;background:#1d1b28;color:#f5ebdc}#loading{margin:0;padding:40px 40px 18px;font:18px system-ui}#opening-progress{display:block;width:min(420px,calc(100% - 80px));margin:0 40px;accent-color:#d8b98a}</style></head><body><div id="root"><p id="loading">Opening the cafe…</p><progress id="opening-progress" aria-label="Opening the cafe" value="0" max="1"></progress></div><script id="asset-manifest" type="application/json">${JSON.stringify(manifest).replace(/</g, '\\u003c')}</script>
+const evidence = evidencePayload(root);
+const html = `<!doctype html>\n<!-- REFERENCE: docs/cardrpg2/index.html | tools/cardrpg-big/build.mjs | apps/web/src/game/cardrpg/depth | packages/game-rules/src/cardrpg/depth -->\n<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none';img-src data: blob:;style-src 'unsafe-inline';script-src 'unsafe-inline' blob:;connect-src data: blob:;media-src data: blob:"><script>${performanceMeter}</script><title>The Lantern · Three chapters</title><style>html,body{margin:0;background:#1d1b28;color:#f5ebdc}#loading{margin:0;padding:40px 40px 18px;font:18px system-ui}#opening-progress{display:block;width:min(420px,calc(100% - 80px));margin:0 40px;accent-color:#d8b98a}</style></head><body><div id="root"><p id="loading">Opening the cafe…</p><progress id="opening-progress" aria-label="Opening the cafe" value="0" max="1"></progress></div><script id="asset-manifest" type="application/json">${JSON.stringify(manifest).replace(/</g, '\\u003c')}</script>
 ${assetTags}
+${evidence.tags}
+<script>${evidence.script}</script>
 <script id="payload" type="application/octet-stream">${payload}</script><script>${loader}</script></body></html>`;
 mkdirSync(resolve(root, 'docs/cardrpg3'), { recursive: true });
 writeFileSync(resolve(root, 'docs/cardrpg3/index.html'), html);
@@ -47,8 +70,10 @@ const inputPaths = [...sourceRoots, ...Object.keys(assetHashes)];
 const runtimeDirty = !!execFileSync('git', ['diff', 'HEAD', '--', ...inputPaths], { cwd: root, encoding: 'utf8' }).length
   || !!execFileSync('git', ['ls-files', '--others', '--exclude-standard', ...inputPaths], { cwd: root, encoding: 'utf8' }).trim();
 const receipt = { date: new Date().toISOString(), head, dirty, bytes: Buffer.byteLength(html), compressed: true,
+  imagePacking, evidence: { rows: evidence.rows.length, files: evidence.files, bytes: Buffer.byteLength(evidence.tags) },
   assetCount: manifest.length, scriptBytes: Buffer.byteLength(js), assetBytes: assetEntries.reduce((sum, [, asset]) => sum + asset.bytes.length, 0),
-  sha256: createHash('sha256').update(html).digest('hex'), runtimeDirty, sourceRoots, sourceHashes: hashes, assetHashes,
+  sha256: createHash('sha256').update(html).digest('hex'), runtimeDirty, sourceRoots, sourceHashes: hashes,
+  sourceAssetHashes, assetHashes,
   references: ['docs/cardrpg3/index.html', 'tools/cardrpg-big/build.mjs', 'packages/game-rules/src/cardrpg/depth', 'apps/web/src/game/cardrpg/depth'] };
 writeFileSync(resolve(root, 'docs/cardrpg3/build.json'), JSON.stringify(receipt, null, 2));
 console.log(JSON.stringify({ head, dirty, bytes: receipt.bytes, sha256: receipt.sha256 }));
