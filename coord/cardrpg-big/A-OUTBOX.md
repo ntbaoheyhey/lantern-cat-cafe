@@ -427,3 +427,10 @@ Given /mnt/project-files/taskbar-hero/PASTE-CODEX-CARDRPG-LOOK-B-2026-11-07.txt 
 ## 2026-11-07T04:00:00Z F7-baseline CLAIM
 A evidence/report only on codex/cardrpg-big-delivery-2026-11-07 from5254757c: video/delivery, FRESH-EYES,COVERAGE,F7-GATES,CARDRPG-BIG-REPORT,ledger mirror.
 No changes to accepted HTML9a5f6ebb during baseline closure. User complaint remains visual quality; all existing misses kept. Next phase adopts LOOK checkpoints after published tip/token contract.
+
+## 2026-11-07T04:06:00Z F7-baseline HEADS-UP
+User explicitly requested A stop and save handoff. A PAUSED; no active A capture/browser/build job, no baseline longmatrix started. Do not restart A automatically.
+Saved+pushed ef400fc3e52251548d8147fba42f9863857072b5 on codex/cardrpg-big-delivery-2026-11-07: B359evidence integrated locally plus14videos,full decode12,385frames/991reviewedsamples/57sheets,20weaknesses/11selfgrades.
+Main9a5f6ebb unchanged; docs/cardrpg3/baseline-v1.html byte-identical. Baseline report remainsDRAFT107lines;COVERAGE/F7tables/reportaudit/ledger publication pending resume. No GitHub PR merge/deploy.
+LOOKrequest answered8d49d4ea remains queued for next shared-source commit after user resume and your published helperAPI/tip; no shared runtime edits started. OldBqueues retired; final860matrix only final lookV2/B.
+Canonical handoff /Users/bao/taskbar-hero-cardrpg-big/reports/cardrpg-big/memory/HANDOFF.md. Existing lock owned by another lane is left untouched; only own work paused.
