@@ -1,12 +1,12 @@
 # A4 living state
 ## NOW
-P1 verified in owned worktree; publishing stacked draft on #366. Recovered WIP f7bcc760 preserved. G0 closure complete. No active A simulation/browser jobs.
+P2 active on codex/cardrpg-a4-p2-2026-11-07. Equipment utility comparison, three atomic presets, pantry reservations,240 cap and THC9 adapters integrated; verification in progress. P1 draft367 remains base de5d8a7b.
 ## NEXT
-Publish P1, mirror ledger and claim P2. Apply staged equipment/loadout/item work from /tmp/cardrpg-a4-p2, then P3-P7. Do not repeat R/D/G0.
+Finish P2 headless UI safety paths/contrast, existing pilot/OFF/gates, report residual balance and publish draft. Then P3–P7. Do not repeat R/D/G0/P1 or duplicate running jobs.
 ## DONE
-P1 rules/UI,3000 functional encounters,8250 OFF routes,30 three-size Classic/Look captures. G0 45day max2.1948×. Prompt-v2 preserved.
+P1 rules/UI,3000 functional encounters,8250 OFF routes,30 three-size Classic/Look captures. G0 45day max2.1948×. P1 checkpoint and P2 CLAIM published628c81c7.
 ## GATES
-P1 type/lint/build,1735web/1035rules(+2expectedfail/11skip),421E2E PASS. New-panel mincontrast6.2448; zero overflow/errors. P2-P7 balance/pacing/startup NOT VERIFIED.
+P1 type/lint/build,1735web/1035rules(+2expectedfail/11skip),421E2E PASS. P2 implementation NOT VERIFIED; P2–P7 balance/pacing/startup remain pending.
 ## DECISIONS (append-only)
 - Keep the one-agent constraint, automatic battles, strict A/B ownership, and isolated worktree.
 ## MEASUREMENTS
@@ -95,3 +95,8 @@ P1 type/lint/build,1735web/1035rules(+2expectedfail/11skip),421E2E PASS. New-pan
 
 ## P1 published / P2 boundary
 - P1 draft367 at7dfb7c84 stacked366. Exact artifact d4e5b472fcfb9f70e2d26f953a441893c8ec5b07e7d1ed26a028d12b4a44c51d /26190242bytes; corrected report size delta69913bytes. G0 #364 updated with downstream closure.
+
+## P2 verification continuation
+- Resumed existing gates35492, train pilot36133, OFF36150; no duplicate sims. Corrected gear-trigger fixture focused19 tests PASS (p2-trigger-retry1.log), original full-suite failure retained. Full-suite retry queued96245.
+- Added a4-p2-browser.mjs real-click loadout/transfer/salvage/missing-piece/export-import/pantry/full-shelf checks. Safety inventory fixtures enter through Import, no debug-state writes. First1280 run queued95435. Three sizes and both themes required.
+- Existing frozen rules source pilot1500 encounters is train-only, not acceptance. Full balance including intended challenge bands remains unverified until P3/P6. Native/headless, no B/protected edits.

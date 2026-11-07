@@ -3,8 +3,9 @@ import { clone } from '../internal';
 import { createStarterAccount } from '../state';
 import { CAT_BY_ID, ENEMY_BY_ID, SKILLS } from './catalog';
 import { CONTRACT_VERSION, type BattleSetup, type DepthAccount } from './contract';
-import { GEAR_BY_ID, initializeEquipment } from './equipment';
+import { AFFIX_BY_ID, GEAR_BY_ID, initializeEquipment } from './equipment';
 import { createDepthAccount } from './state';
+import { SUPPLY_IDS_V4 } from './items-v4';
 import { validPlan } from './gameplay-v4';
 
 // Enemy catalogue used by 0.5 and 0.6 save codes. Keep these migration values fixed.
@@ -82,6 +83,7 @@ export function migrateAccount(legacy: AccountState, now = 0): DepthAccount {
   state.tutorial = 3;
   return state;
 }
+function validateSupply(value:unknown):void {if(value===undefined)return;if(!record(value)||!SUPPLY_IDS_V4.includes(value.id as typeof SUPPLY_IDS_V4[number])||value.id==='milk-tonic'||typeof value.catId!=='string'||!CAT_BY_ID[value.catId])fail();}
 function validateEnemySnapshot(value: unknown): void {
   if (!record(value) || !record(value.enemyStats)) fail();
   for (const id of Object.keys(ENEMY_BY_ID)) {
@@ -90,6 +92,7 @@ function validateEnemySnapshot(value: unknown): void {
       || !Number.isInteger(stats.attack) || Number(stats.attack) <= 0
       || !Number.isInteger(stats.defense) || Number(stats.defense) < 0) fail();
   }
+  validateSupply(value.packedSupply);
   if(value.gameplayV4!==undefined&&typeof value.gameplayV4!=='boolean') fail();
   if(value.gameplayV4&&!validPlan(value.plan)) fail();
 }
@@ -103,6 +106,24 @@ export function validateDepth(value: unknown): asserts value is DepthAccount {
   if(state.gameplayV4 !== undefined && typeof state.gameplayV4 !== 'boolean') fail();
   if(state.gameplayV4 && !state.v4) fail();
   if(state.v4 && (state.v4.version!==1 || !validPlan(state.v4.plan))) fail();
+  if(state.v4?.loadouts!==undefined){
+    if(!Array.isArray(state.v4.loadouts)||state.v4.loadouts.length!==3)fail();
+    for(const preset of state.v4.loadouts){
+      if(preset===null)continue;
+      if(!record(preset)||typeof preset.name!=='string'||!preset.name.trim()||preset.name.length>40
+        ||!Array.isArray(preset.team)||preset.team.length!==3||new Set(preset.team).size!==3
+        ||!record(preset.rows)||!record(preset.equipment)||!validPlan(preset.plan))fail();
+      if(preset.team.some(id=>!CAT_BY_ID[id]||!['front','rear'].includes(preset.rows[id]!))||!preset.team.some(id=>preset.rows[id]==='front'))fail();
+      const refs=new Set<string>();
+      for(const [id,slots] of Object.entries(preset.equipment)){
+        if(!preset.team.includes(id)||!record(slots))fail();
+        for(const [slot,ref] of Object.entries(slots)){
+          if(!EQUIPMENT_SLOTS.includes(slot as Slot)||typeof ref!=='string'||!ref||refs.has(ref))fail();
+          refs.add(ref);
+        }
+      }
+    }
+  }
   validateAccount(state.account);
   if (state.version !== CONTRACT_VERSION || state.team.length !== 3 || new Set(state.team).size !== 3) fail();
   for (const id of state.team) {
@@ -111,9 +132,12 @@ export function validateDepth(value: unknown): asserts value is DepthAccount {
     if (!Array.isArray(skills) || skills.length !== 3 || new Set(skills).size !== 3 || skills.some(s => SKILLS[s]?.catId !== id)) fail();
   }
   if (!state.team.some(id => state.rows[id] === 'front')) fail();
+  if(new Set(state.gear.map(g=>g.id)).size!==state.gear.length)fail();
   for (const gear of state.gear) {
     if (!GEAR_BY_ID[gear.templateId] || !Number.isInteger(gear.enhancement) || gear.enhancement < 0
-      || gear.enhancement > 12 || !Array.isArray(gear.affixes) || !record(gear.rolls)) fail();
+      || gear.enhancement > 12 || ![1,2,3].includes(gear.tier) || !Array.isArray(gear.affixes) || !record(gear.rolls)
+      || new Set(gear.affixes).size!==gear.affixes.length || gear.affixes.some(id=>!AFFIX_BY_ID[id]?.slots.includes(GEAR_BY_ID[gear.templateId]!.slot))
+      || Object.values(gear.rolls).some(n=>!Number.isSafeInteger(n)||n<0)) fail();
   }
   const equipped = new Set<string>();
   for (const [cardId, loadout] of Object.entries(state.equipment)) {
@@ -128,6 +152,7 @@ export function validateDepth(value: unknown): asserts value is DepthAccount {
   }
   if (state.run) {
     const run = state.run;
+    validateSupply(run.packedSupply);
     if (!record(run) || !Array.isArray(run.nodes) || !Array.isArray(run.visited) || !Array.isArray(run.rewardChoices)
       || !record(run.hp) || !record(run.boons) || !record(run.upgrades) || ![1, 2, 3].includes(run.chapter)
       || !['campaign', 'daily', 'tower'].includes(run.mode) || typeof run.complete !== 'boolean') fail();
@@ -149,7 +174,7 @@ export function validateDepth(value: unknown): asserts value is DepthAccount {
 export function exportSave(state: DepthAccount): string {
   validateDepth(state);
   const payload = JSON.stringify(state);
-  return `THC${state.v4 ? '8' : '7'}.${saveChecksum(payload)}.${payload}`;
+  return `THC${state.v4 ? '9' : '7'}.${saveChecksum(payload)}.${payload}`;
 }
 function migrateDepth(value: unknown): unknown {
   if (!record(value) || !['0.5.0', '0.6.0'].includes(String(value.version))) fail();
@@ -171,11 +196,11 @@ export function importSave(code: string, now = 0): DepthAccount {
     validateAccount(legacy);
     return migrateAccount(legacy, now);
   }
-  const match = /^THC([5678])\.([a-f0-9]{8})\.([\s\S]+)$/.exec(trimmed);
+  const match = /^THC([56789])\.([a-f0-9]{8})\.([\s\S]+)$/.exec(trimmed);
   if (!match || saveChecksum(match[3]!) !== match[2]) throw new Error('Save checksum failed. Copy the complete code again.');
   const parsed: unknown = JSON.parse(match[3]!);
   safeTree(parsed);
-  const state = ['7','8'].includes(match[1]!) ? parsed : migrateDepth(parsed);
+  const state = ['7','8','9'].includes(match[1]!) ? parsed : migrateDepth(parsed);
   validateDepth(state);
   return state;
 }

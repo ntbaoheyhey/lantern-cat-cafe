@@ -2,11 +2,12 @@ import { clone } from '../internal';
 import type { Stats } from '../contract';
 import { CAT_BY_ID, ENEMY_BY_ID, SKILLS, STATUS_BY_ID } from './catalog';
 import type { Actor, Battle, DepthAccount, Skill } from './contract';
+import type { ShiftLoadoutV4 } from './loadouts-v4';
 import type { GameplayEventV4 } from './events-v4';
 
 export type CrewJob = 'door' | 'kettle' | 'table' | 'lantern';
 export interface StandingPlan { focus: 'finish' | 'support' | 'leader'; care: 'steady' | 'protect' }
-export interface GameplayV4State { version: 1; plan: StandingPlan }
+export interface GameplayV4State { version: 1; plan: StandingPlan; loadouts?: Array<ShiftLoadoutV4 | null> }
 export interface BattleV4State { version: 1; plan: StandingPlan; events: GameplayEventV4[]; committed: boolean }
 export const DEFAULT_PLAN: StandingPlan = { focus: 'finish', care: 'steady' };
 export const CREW_JOBS: { id: CrewJob; name: string; small: string; full: string }[] = [
@@ -69,10 +70,12 @@ export function planPreference(battle: Battle, choice: { skillId: string; target
   if (!target) return 0;
   if (target.side === 'enemy') {
     if (plan.focus === 'finish') return 28 * (1 - target.hp / target.maxHp);
-    if (plan.focus === 'support') return ['heal', 'shield', 'summon'].includes(ENEMY_BY_ID[target.catalogId]?.mechanic ?? '') ? 40 : 0;
+    if (plan.focus === 'support') return ['heal', 'shield', 'summon'].includes(ENEMY_BY_ID[target.catalogId]?.mechanic ?? '') ? 40 + (battle.actors.find(a=>a.id===battle.queue[0])?.setEffects.includes('opening-decoy')?3:0) : 0;
     return ENEMY_BY_ID[target.catalogId]?.tier === 'boss' ? 40 : 0;
   }
   const skill = SKILLS[choice.skillId];
+  const actor=battle.actors.find(a=>a.id===battle.queue[0]);
+  if(actor?.setEffects.includes('unique:tidetray')&&skill?.effects.some(e=>e.kind==='shield'))return 8*(1-target.hp/target.maxHp);
   const care = plan.care === 'protect' ? .65 : .45;
   return target.hp / target.maxHp < care && (skill?.effects.some(e => ['heal', 'shield', 'cleanse', 'transfer'].includes(e.kind)) || choice.skillId === 'defend')
     ? (care - target.hp / target.maxHp) * 100 : 0;

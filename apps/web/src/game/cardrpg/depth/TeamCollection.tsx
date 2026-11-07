@@ -1,3 +1,4 @@
+import { ShiftLoadouts } from './EquipmentV4';
 import { useRef, useState } from 'react';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import { CARD_BY_ID, EQUIPMENT_SLOTS, RARITY_ORDER } from '@taskbar-hero/game-rules/cardrpg';
@@ -69,13 +70,13 @@ export function Team({ m }: { m: DepthModel }) {
         {combo.name} · {combos.some(active => active.id === combo.id) ? 'active' : combo.tags.join(' + ')}
       </span>)}</div>}
     </section>
-    <section className="cr-panel dp-presets"><h2>Saved shifts</h2><div className="dp-three">
+    {v4?<ShiftLoadouts m={m}/>:<section className="cr-panel dp-presets"><h2>Saved shifts</h2><div className="dp-three">
       {m.teamPresets.map((preset, index) => <div key={index}>
         <b>Shift {index + 1}</b><p>{preset ? preset.team.map(id => R.CAT_BY_ID[id]!.name).join(' · ') : 'Ready for a team'}</p>
         <div className="cr-actions"><button disabled={locked} onClick={() => m.saveTeamPreset(index)}>Save shift {index + 1}</button>
           <button disabled={locked || !preset} onClick={() => m.loadTeamPreset(index)}>Use shift {index + 1}</button></div>
       </div>)}
-    </div></section>
+    </div></section>}
     <section className="cr-panel"><h2>Automatic kits</h2><div className="dp-three">{state.team.map(id => <div key={id}>
       <h3>{R.CAT_BY_ID[id]!.name}</h3><p>{v4 ? R.passiveDescriptionV4(id) : R.CAT_BY_ID[id]!.passive.description}</p>
       {R.availableSkills(state, id).map(skill => <div className="dp-skill-summary" key={skill.id}>

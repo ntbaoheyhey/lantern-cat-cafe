@@ -1,3 +1,4 @@
+import type { PackedSupplyV4 } from './items-v4';
 import type { AccountState, Slot, Rarity, Stats } from '../contract';
 import type { BattleV4State, GameplayV4State, StandingPlan } from './gameplay-v4';
 
@@ -47,6 +48,7 @@ export interface Battle {
   boons: Record<string, number>; procRounds: Record<string, number>; mutator: string; initial: BattleSetup;
 }
 export interface BattleSetup {
+  packedSupply?: PackedSupplyV4;
   gameplayV4?: boolean; plan?: StandingPlan;
   seed: number; chapter: number; cats: Array<{ id: string; stats: Stats; skills: string[]; row: Row; equipment?: string[]; effects?: string[]; bonuses?: Record<string, number> }>;
   enemies: string[]; upgrades?: Record<string, number>; hp?: Record<string, number>; boons?: Record<string, number>; mutator?: string; tutorial?: boolean;
@@ -56,6 +58,7 @@ export type NodeKind = 'battle' | 'elite' | 'campfire' | 'shop' | 'event' | 'tre
 export interface RunNode { id: string; depth: number; lane: number; kind: NodeKind; next: string[]; enemies: string[]; eventId?: string }
 export interface Boon { id: string; name: string; archetype: string; description: string; cap: number; trigger: string; value: number }
 export interface Run {
+  packedSupply?: PackedSupplyV4;
   gameplayV4?: boolean;
   id: number; seed: number; chapter: number; mode: 'campaign' | 'daily' | 'tower'; nodes: RunNode[];
   visited: string[]; current: string | null; points: number; boons: Record<string, number>;

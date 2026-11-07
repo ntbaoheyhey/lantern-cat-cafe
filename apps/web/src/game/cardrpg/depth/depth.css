@@ -161,3 +161,10 @@
 .dp-v4-outcome details{max-height:300px;overflow:auto}
 .dp-app[data-look-v2="true"] .dp-cafe .dp-v4-crews article{background:#21332e;color:#f5ebdc;border-color:#8baa97}
 .dp-app[data-look-v2="true"] .dp-cafe .dp-v4-crews article[data-active=true]{background:#345044}
+
+/* A4 gear/pantry panels remain outside the owned battle presentation. */
+.dp-v4-loadouts input{box-sizing:border-box;width:100%;max-width:100%;padding:10px;border:1px solid #84746b;border-radius:8px;background:#fffaf0;color:#302835}
+.dp-v4-loadouts,.dp-v4-utility{overflow-wrap:anywhere;color:#302835}
+.dp-v4-loadouts p,.dp-v4-utility p{color:#413647}
+.dp-v4-utility{padding:12px;border:1px solid #ad9985;border-radius:10px;background:#fff7e8}
+.dp-v4-loadouts .cr-filter{grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}

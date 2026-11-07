@@ -1,3 +1,4 @@
+import { ShiftLoadouts, UtilityComparison, PantryV4 } from './EquipmentV4';
 import { useState } from 'react';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import { CARD_RPG_CONFIG, EQUIPMENT_SLOTS, RARITY_ORDER, STACK_ITEMS, type Stats as CatStats } from '@taskbar-hero/game-rules/cardrpg';
@@ -15,16 +16,19 @@ export function Inventory({ m }: { m: DepthModel }) {
   const [slot, setSlot] = useState('all');
   const [rarity, setRarity] = useState('all');
   const [setId, setSetId] = useState('all');
+  const [ownership,setOwnership]=useState('all');
   const [sort, setSort] = useState('rarity');
   const [craftId, setCraftId] = useState(R.GEAR[0]!.id);
   const [affix, setAffix] = useState('');
   const [feedback, setFeedback] = useState(0);
   const state = m.state;
+  const v4=R.gameplayV4(state);
+  const sets=R.SETS.map(set=>R.setTextV4(set,v4));
   const locked = !!state.run && !state.run.complete;
   const cardId = state.account.cards.some(card => card.cardId === m.cardId) ? m.cardId : state.team[0]!;
   const item = state.gear.find(gear => gear.id === m.itemId) ?? state.gear[0];
   const template = item && R.GEAR_BY_ID[item.templateId]!;
-  const preview = item && R.enhancementPreview(item);
+  const preview = item && R.enhancementPreview(item,state,cardId);
   const compatible = item && template ? R.AFFIXES.filter(candidate => candidate.slots.includes(template.slot) && !item.affixes.includes(candidate.id)) : [];
   const chosenAffix = compatible.find(candidate => candidate.id === affix)?.id ?? compatible[0]?.id;
   const effects = R.equipmentEffects(state, cardId);
@@ -36,18 +40,21 @@ export function Inventory({ m }: { m: DepthModel }) {
   const gear = state.gear.filter(candidate => {
     const spec = R.GEAR_BY_ID[candidate.templateId]!;
     return (slot === 'all' || spec.slot === slot) && (rarity === 'all' || spec.rarity === rarity)
-      && (setId === 'all' || spec.setId === setId);
+      && (setId === 'all' || spec.setId === setId) && (ownership==='all'||Object.values(state.equipment).some(slots=>Object.values(slots).includes(candidate.id))===(ownership==='equipped'));
   }).sort((left, right) => {
     const a = R.GEAR_BY_ID[left.templateId]!, b = R.GEAR_BY_ID[right.templateId]!;
+    if(sort==='utility')return R.itemUtilityV4(state,cardId,right)-R.itemUtilityV4(state,cardId,left);
+    if(sort==='new')return Number(right.id.split('-').at(-1))-Number(left.id.split('-').at(-1));
     if (sort === 'name') return a.name.localeCompare(b.name);
     if (sort === 'enhancement') return right.enhancement - left.enhancement || a.name.localeCompare(b.name);
     return RARITY_ORDER.indexOf(b.rarity) - RARITY_ORDER.indexOf(a.rarity) || a.name.localeCompare(b.name);
   });
   return <>
-    <PageTitle eyebrow={`${state.gear.length} pieces · ${R.GEAR.length} templates`} title="Give your plan a shape." />
+    <PageTitle eyebrow={`${state.gear.length}${v4?' / 240':''} pieces · ${R.GEAR.length} templates`} title="Give your plan a shape." />
     <div className="cr-tabs" aria-label="Inventory types">{categories.map(value => <button key={value}
       aria-pressed={category === value} onClick={() => setCategory(value)}>{value}</button>)}</div>
     {category === 'Equipment' && <>
+      {v4&&<><ShiftLoadouts m={m}/><p>All equipment is account-bound. At 240 pieces, further route drops become salvage threads within the daily reward cap. Voluntary acquisitions require room for the entire batch.</p><details><summary>Rarity and sources</summary>{RARITY_ORDER.map(r=><p key={r}><b>{r}</b> · {R.rarityMeaningV4(r)}</p>)}<p>First six eligible won encounters per day: ordinary 65/30/5/0%, elite 0/70/27/3%, boss 0/20/70/10% (Common/Rare/Epic/Legendary). After six drops: 0%.</p></details></>}
       <div className="cr-filter">
         <label>Equip for<select value={cardId} onChange={event => { m.cardId = event.target.value; m.notify(false); }}>
           {state.account.cards.map(card => <option key={card.cardId} value={card.cardId}>{R.CAT_BY_ID[card.cardId]!.name}</option>)}
@@ -61,8 +68,9 @@ export function Inventory({ m }: { m: DepthModel }) {
         <label>Set<select value={setId} onChange={event => setSetId(event.target.value)}>
           <option value="all">All sets</option>{R.SETS.map(set => <option key={set.id} value={set.id}>{set.name}</option>)}
         </select></label>
+        {v4&&<label>Ownership<select value={ownership} onChange={e=>setOwnership(e.target.value)}><option value="all">All owned</option><option value="equipped">Equipped</option><option value="available">Available</option></select></label>}
         <label>Sort<select value={sort} onChange={event => setSort(event.target.value)}>
-          <option value="rarity">Rarity</option><option value="enhancement">Enhancement</option><option value="name">Name</option>
+          <option value="rarity">Rarity</option><option value="enhancement">Enhancement</option><option value="name">Name</option>{v4&&<><option value="new">Newest</option><option value="utility">Utility estimate</option></>}
         </select></label>
       </div>
       {locked && <p>Finish or abandon the current route to change equipment.</p>}
@@ -87,7 +95,7 @@ export function Inventory({ m }: { m: DepthModel }) {
             </button>;
           })}</div>
           <h3>Set progress</h3>
-          {R.SETS.filter(set => effects.counts[set.id]).map(set => <div className="dp-set-progress" key={set.id}>
+          {sets.filter(set => effects.counts[set.id]).map(set => <div className="dp-set-progress" key={set.id}>
             <b>{set.name} · {effects.counts[set.id]}/4</b><progress aria-label={`${set.name} pieces`} value={effects.counts[set.id]} max={4} />
             <p className={effects.counts[set.id]! >= 2 ? 'active' : ''}>2 pieces · {set.two}</p>
             <p className={effects.counts[set.id]! >= 4 ? 'active' : ''}>4 pieces · {set.four}</p>
@@ -106,7 +114,7 @@ export function Inventory({ m }: { m: DepthModel }) {
           })}</div>
           {!gear.length && <p>No equipment matches these filters.</p>}
           {item && template && preview && <section className="cr-panel dp-gear-detail" style={rarityStyle(template.rarity)} key={`${item.id}-${feedback}`}>
-            <h2>{template.name}</h2><p>{template.rarity} · item level {template.level} · Account-bound</p><p>{template.source}</p><p>{template.story}</p>
+            <h2>{template.name}</h2><p>{template.rarity} · item level {template.level} · Account-bound</p><p>{template.source}</p><p>{v4?R.gearStoryV4(template.id):template.story}</p>
             <h3>Compare on {R.CAT_BY_ID[cardId]!.name}</h3>
             <div className="dp-compare" title="Current stats with the change from equipping this piece. Green raises a stat, red lowers it.">
               <dl className="cr-stats">{Object.entries(R.depthStats(state, cardId)).map(([key, before]) => {
@@ -116,6 +124,7 @@ export function Inventory({ m }: { m: DepthModel }) {
                 </dd></div>;
               })}</dl>
             </div>
+            {v4&&<UtilityComparison state={state} cardId={cardId} instanceId={item.id}/>}
             {comparison?.error && <p>{comparison.error}</p>}
             <p>{template.main} {preview.before}{item.enhancement < 12 ? ` → ${preview.after} at +${item.enhancement + 1}` : ' · maximum +12'}</p>
             <CostView cost={preview.cost} />
@@ -126,7 +135,7 @@ export function Inventory({ m }: { m: DepthModel }) {
               <button disabled={locked || Object.values(state.equipment).some(loadout => Object.values(loadout).includes(item.id))}
                 onClick={() => act(R.salvageGear(state, item.id), `${template.name} salvaged for ${CARD_RPG_CONFIG.rarity[template.rarity].salvage} threads.`)}>Salvage</button>
             </div>
-            {item.affixes.map(id => <p key={id}>{R.AFFIX_BY_ID[id]!.name} · {R.gearAffixRoll(item, id)} · {R.AFFIX_BY_ID[id]!.description}</p>)}
+            {item.affixes.map(id => <p key={id}>{R.AFFIX_BY_ID[id]!.name} · {R.gearAffixRoll(item, id)} · {v4?(R.AFFIX_TEXT_V4[R.AFFIX_BY_ID[id]!.stat]??R.AFFIX_BY_ID[id]!.description):R.AFFIX_BY_ID[id]!.description}</p>)}
             {item.affixes.length > 0 && <div className="cr-actions"><label>Replace first affix
               <select value={chosenAffix ?? ''} onChange={event => setAffix(event.target.value)}>
                 {compatible.map(candidate => <option key={candidate.id} value={candidate.id}>{candidate.name} · {candidate.tiers[item.tier - 1]!.join('–')}</option>)}
@@ -138,23 +147,24 @@ export function Inventory({ m }: { m: DepthModel }) {
       <section className="cr-panel"><h2>Choose a tailoring project</h2><label>Template
         <select value={craftId} onChange={event => setCraftId(event.target.value)}>
           {R.GEAR.map(spec => <option key={spec.id} value={spec.id}>{spec.name} · {spec.rarity} · chapter {spec.chapter}</option>)}
-        </select></label><p>{R.GEAR_BY_ID[craftId]!.story}</p>
+        </select></label><p>{v4?R.gearStoryV4(craftId):R.GEAR_BY_ID[craftId]!.story}</p>{v4&&<><CostView cost={R.gearCostV4(craftId)}/><p>{R.GEAR_BY_ID[craftId]!.rarity==='legendary'?'Also requires Pantry clear, 20 mastery materials and 1 boss seal.':'Reach the source chapter before tailoring.'}</p></>}
         <button disabled={locked} onClick={() => act(R.craftGear(state, craftId), 'Chosen piece crafted. Look for it in your equipment.')}>Craft chosen piece</button>
       </section>
     </>}
     {category === 'Materials' && <div className="cr-stack-grid">
       <article><h2>{state.materials} mastery materials</h2><p>Earn from chapter clears and capped cafe rewards. Spend on awakening.</p><small>Account-bound</small></article>
       <article><h2>{state.seals} boss seals</h2><p>Effort earned from bosses. Reserve an eligible Relic design with seals and chapter progress.</p><small>Account-bound</small></article>
-      {STACK_ITEMS.filter(stack => stack.kind !== 'consumable' && stack.id !== 'boss-proof').map(stack => <article key={stack.id} style={rarityStyle(stack.rarity)}>
-        <h2>{state.account.inventory.stacks[stack.id] ?? 0} {stack.name}</h2><p>{stack.description}</p><small>{stack.rarity} · {stack.source} · Account-bound</small>
+      {(v4?R.itemCatalogueV4():STACK_ITEMS).filter(stack => stack.kind !== 'consumable' && stack.id !== 'boss-proof').map(stack => <article key={stack.id} style={rarityStyle(stack.rarity)}>
+        <h2>{state.account.inventory.stacks[stack.id] ?? 0} {stack.name}</h2><p>{stack.description}</p><small>{stack.rarity} · {stack.source} · Account-bound{v4&&R.stackCapV4(stack.id)<Number.MAX_SAFE_INTEGER?` · cap ${R.stackCapV4(stack.id)}`:''}</small>
       </article>)}
     </div>}
+    {category==='Consumables'&&v4&&<PantryV4 m={m}/>}
     {category === 'Consumables' && <div className="cr-stack-grid"><article><h2>{state.run?.supplies ?? 0} packed milk tonics</h2>
       <p>Restore up to 100 HP to each companion between encounters. Supplies belong to the current route.</p>
       <button disabled={!state.run || state.run.complete || !!state.run.battle || !state.run.supplies}
         onClick={() => act(R.useTonic(state), 'Each companion recovered up to 100 HP.')}>Use packed tonic</button><small>Account-bound</small>
-    </article>{STACK_ITEMS.filter(stack => stack.kind === 'consumable' && (state.account.inventory.stacks[stack.id] ?? 0) > 0).map(stack => <article key={stack.id}>
-      <h2>{state.account.inventory.stacks[stack.id]} {stack.name}</h2><p>Stored in the account pantry.</p><small>{stack.rarity} · Account-bound</small>
+    </article>{(v4?R.itemCatalogueV4():STACK_ITEMS).filter(stack => stack.kind === 'consumable' && (state.account.inventory.stacks[stack.id] ?? 0) > 0).map(stack => <article key={stack.id}>
+      <h2>{state.account.inventory.stacks[stack.id]} {stack.name}</h2><p>{v4?R.SUPPLY_TEXT_V4[stack.id as R.SupplyIdV4]:'Stored in the account pantry.'}</p>{v4&&<small>Cap {R.stackCapV4(stack.id)} · {stack.source}</small>}<small>{stack.rarity} · Account-bound</small>
     </article>)}</div>}
     {category === 'Collectibles' && <CollectibleDesigns m={m} />}
     {category === 'Currencies' && <div className="cr-stack-grid">{Object.entries(state.account.currencies).map(([id, amount]) => <article key={id}>
