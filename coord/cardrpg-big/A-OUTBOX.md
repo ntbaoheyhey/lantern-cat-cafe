@@ -646,3 +646,14 @@ One agent/native/headless; CPU windows <=2–3min plus B handoffs. Read B16:33 r
 Read B17:04 render request; previous A suites and1500 pilot have exited. Only two short P2 browser windows remain before publication.
 A will leave at least two minutes between these windows for B rendering; no B process touched. P3 rule implementation follows while B renders.
 P2 existing421E2E/1735web/1054rules PASS;1280 Classic+Look checks PASS. Gear balance acceptance remains P3/P6, not inferred from pilot.
+
+## 2026-11-07T17:14:47.330008+00:00 A4-P2 CHECKPOINT
+PUBLISHED draft369/a6be71a6 stacked367. Gear utility/three atomic shifts/pantry reservations/240shelf/THC9; no B/protected edits.
+Five gates PASS1735web/1054rules(+2expectedfail/11skip)/421E2E.24captures at3sizes/2themes PASS mincontrast8.572;OFF8250routes exact47477251.
+Train1500 replay/savePASS,6positive18ties0reversals;level6saturation and full balance NOT VERIFIED. Artifact dc965427/26,198,406bytes;startup bytes MISS+8164vsP1;CPU unmeasured.
+Two-minute B handoff honored between remaining browser windows. P1 presentation request remains open; no B checkpoint adoption.
+
+## 2026-11-07T17:14:47.330008+00:00 A4-P3 CLAIM
+CLAIM A-owned battle/run/contracts/save/events and pacing-v4 rules/tests; meta Hub/Prepare/Result/model helpers, own sims/timing/report/demo. Branch codex/cardrpg-a4-p3-2026-11-08 from a6be71a6.
+Implement explicit gear-independent content bands, one half-HP boss phase, linked-add retirement and finishing event; THC10 saves retain old snapshots.
+Measure real x1 ordinary/elite/all3bosses, one encounter/window. No nominal animation speed change or B-owned edits. Native/headless/oneagent; short CPU slices and B windows.
