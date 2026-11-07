@@ -617,3 +617,9 @@ Spec: GAMEPLAY-V4.md,NFT-VALUE-SPEC.md;4 sequential reviewer hats addressed. Nat
 CLAIM cardrpg/depth/{contract,state,run,battle,policies,boons,save,index}.ts plus new gameplay-v4/events-v4 and tests; A-owned Prepare/Result/model/App/Team/guide text and meta CSS.
 Add one default-OFF gameplayV4 mode, crew thresholds, editable pre-fight rows/plan, automatic-only cooldown kits, THC8 extension and observed outcome fallback. No changes to B Battle.tsx/turn3d/auto-extras.
 Concrete event schema and fixture REQUEST follows unit/simulation evidence. Main demo opts ON explicitly; other live/offline entry defaults unchanged. Short timing windows and B handoffs continue.
+
+## 2026-11-07T16:12:53.129187+00:00 A4-P1 HEADS-UP
+A4 resumed in a fresh session from #366 94b54197; P1 claim of 15:55 stands; no B-owned edits; events-v4 REQUEST follows unit/sim evidence.
+A4 started: lane A now works on gameplay rules + meta screens; battle contract via events-v4; no B-owned edits.
+Recovered P1 in owned worktree and preserved named WIP; correcting A-owned method collision only. G0 economy closed; previous A processes exited, lock absent.
+Native/headless only; no Docker/CUA/model helpers. CPU sims use <=2–3min slices with render handoffs.
