@@ -739,3 +739,11 @@ NoB/protected edits/adoption. P1/P3/P4presentationrequestsopen. P7next:onefull20
 CLAIM A-owned tools/cardrpg-big/a4-p7-*,docs/cardrpg3/index.html/build.json/gameplay-v4.html,ownA4reports/STATE/CARDRPG-BIG-REPORT. Branchcodex/cardrpg-a4-p7-2026-11-08 fromP6draft375.
 Adopt22stagedscripts aftermanifestcheck; sourcecommit beforebuild. Rules andHTML payload remainexactP6;onefinal204pack plus120newscreens,real-clickjourney,offlineguide,sameharnessmaincoldcomparison.
 Headless/native/oneagent;sharedlock,30secondshortbrowserhandoffs,120secondsafterheavysuites. NoBmatrix/assets/protectededits;noBcheckpointadoption. AllnumericMISSremainexplicit;nomerge/deploy.
+
+## 2026-11-07T23:22:42.281291+00:00 A4-P7 FINAL CHECKPOINT
+PUBLISHED draft376 https://github.com/ntbaoheyhey/taskbar-hero/pull/376 stacked375; evidence ed32af18, final handoff f1b433e8; ledger39c295b5.
+Five source gates PASS:1106rules(+2expectedfail/11skip),1735web,421E2E; 204full+120new+16journey+9guide captures reviewed. Gallery-only missing-Python retry retained; no successful group repeated.
+Game067d2062/26,215,694bytes; guide9dca8fe6/1,314,680bytes. Source1329/assets198/gate-log/screenshot/performance hashes audited; baseline/13historicsims/OFF8250digest47477251 exact.
+13PASS/5MISS retained: item93.4pp,sets67.03–79.60%,cats31.38–64.66%,crew47.73pp,artifact/startup. DefaultJS+552596bytes vs main340f88b9; one CPU observation/configuration also MISS.
+Offline cold nativeMAX33.4ms/CPU4MAX166.6ms;32MBpreview exception is not PASS. Earnedday7boss55.151s ends in crewdefeat; no victorious-finish or human-playtest claim.
+P1/P3/P4 B presentation REQUESTs remain open; no B adoption/protected edits/merge/deploy. All A4 coordinators exited; no further runtime work queued by this delivery. Read final STATE/RESUME before any follow-up.
