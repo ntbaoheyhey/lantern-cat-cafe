@@ -15,7 +15,7 @@ Chưa gộp nhánh, triển khai hay thay đổi kinh tế, ví hoặc hợp đ�
 ## Verdict and review route
 REFERENCE: tools/cardrpg-big2/{ReviewStudio,MechanicsLab,offline}.tsx; apps/web/src/game/cardrpg/depth/Battle.tsx
 
-Implementation checkpoint, browser validation in progress. Open `docs/cardrpg3b/index.html` directly; no server or external requests are required by the offline design. Exact delivered-byte offline verification is pending.
+Source handoff checkpoint, browser validation in progress. Open `docs/cardrpg3b/index.html` directly; no server or external requests are required by the offline design. The22,446,426-byte candidate embeds93evidence items; its final offline/source checks are running. Three-size Focusstage screenshots now verify settled renderer dimensions and nonempty pixels.
 
 | Complaint | Where to look | Current evidence / limit |
 |---|---|---|
@@ -111,7 +111,7 @@ Tea cloud flips three training and four held-out losses; relay flips none. Each 
 ## Remaining work and self-grades
 REFERENCE: memory/STATE.md; validation; coord/cardrpg-big/B-OUTBOX.md
 
-[B4 audio checkpoint #351](https://github.com/ntbaoheyhey/taskbar-hero/pull/351) retains the original sound-enable133.5ms hitch. The later shipped-source fix passes sixfreshbrowser runs at16.8ms MAX. The full final matrix, listening review and final demo verification remain pending. Opponent captures are complete. B3 sharpness passes only 2/10; all camera presets miss the 24–30% band, and A also misses 8% horizontal margin. Per-crop causes and numeric caveats are in [the image review](stage/SHARPNESS-REVIEW.md). B1 whole-page opening already misses 100 ms. Existing encounter duration/balance and card screens belong to Lane A. Rendered failures will be retained with fixes and reruns, never relabelled as passes.
+[B4 audio checkpoint #351](https://github.com/ntbaoheyhey/taskbar-hero/pull/351) retains the original sound-enable133.5ms hitch. The later shipped-source fix passes sixfreshbrowser runs at16.8ms MAX. The final matrix, listening review and final demo verification remain pending. Current source typecheck/demo-types/lint/build,1,702web/935rules tests (+2expected failures/11skips), and421E2E all pass. A complete unit rerun caps workers at2 after retaining unrelated5000ms timeout logs; source and test timeouts are unchanged. See validation/review-source-acceptance.json. Opponent captures are complete. B3 sharpness passes only 2/10; all camera presets miss the 24–30% band, and A also misses 8% horizontal margin. Per-crop causes and numeric caveats are in [the image review](stage/SHARPNESS-REVIEW.md). B1 whole-page opening already misses 100 ms. Existing encounter duration/balance and card screens belong to Lane A. Rendered failures will be retained with fixes and reruns, never relabelled as passes.
 
 | Complaint | Self-grade /10 |
 |---|---|

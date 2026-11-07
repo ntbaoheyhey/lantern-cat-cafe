@@ -1,0 +1,97 @@
+{
+  "recordedAt": "2026-11-07T00:43:36.054199+00:00",
+  "method": "Recovered artifacts rebuilt from original source commits. Compare all app/rules/asset SHA256 bytes and Git blob object IDs against those immutable commits. Original HTML could not be recovered byte-for-byte, so new artifact hashes apply to resumed matrices; previous cold/visual receipts retain their original hashes. The cause of output-byte differences has not been isolated.",
+  "rows": [
+    {
+      "phase": "b2b",
+      "sourceHead": "cd3b3009",
+      "archive": "/tmp/cardrpg-big2-recovery-b2b",
+      "expected": "d4cec177bac587a8607b27b66e288fe486b9689d858ff6825feb0261648dfada",
+      "actual": "c7ca2cbcf422e00982017d3c787ea83d552b211f3389b2cfb3d0442d1430b395",
+      "restoredExactHtml": false,
+      "buildExit": 0,
+      "log": "reports/cardrpg-big2/validation/recovery-b2b-build.log",
+      "filesCompared": 946,
+      "mismatches": [],
+      "runtimeDirty": false
+    },
+    {
+      "phase": "b2c",
+      "sourceHead": "fad4d1d6c92a975302673c6d8258377423f761b7",
+      "archive": "/tmp/cardrpg-big2-recovery-b2c",
+      "expected": "e116b0d15b267a7b27547d1a7cbe2b44e6d7173df501969094a18806570c29de",
+      "actual": "4e6a010daa5eab008cf9ea2595ec15fafe3dd749c69dfbcc77799b291538347d",
+      "restoredExactHtml": false,
+      "buildExit": 0,
+      "log": "reports/cardrpg-big2/validation/recovery-b2c-build.log",
+      "filesCompared": 951,
+      "mismatches": [],
+      "runtimeDirty": false
+    },
+    {
+      "phase": "e1",
+      "sourceHead": "c86122ad0c78f4fb9ada2bc409ee88aedea83db9",
+      "archive": "/tmp/cardrpg-big2-recovery-e1",
+      "expected": "ca797d87a29beb0a4ffc8b89535d2c22f686e88927efcc8533e07c5f04e19b40",
+      "actual": "928a267ec73546db9a57fd5c6038abfd45f89ce4d03da0e0c158cafbe48114ca",
+      "restoredExactHtml": false,
+      "buildExit": 0,
+      "log": "reports/cardrpg-big2/validation/recovery-e1-build.log",
+      "filesCompared": 970,
+      "mismatches": [],
+      "runtimeDirty": false
+    },
+    {
+      "phase": "e2",
+      "sourceHead": "303d60df18d0b7e06929afca3701604541586441",
+      "archive": "/tmp/cardrpg-big2-recovery-e2",
+      "expected": "12a51d5cac2dfe473bffac12329178e5f54c615b47ff1ae72fb5af8b6003cc18",
+      "actual": "344c03f626ce6aa17ee35116b6a9a45937b570e158455958581d67aac57157d9",
+      "restoredExactHtml": false,
+      "buildExit": 0,
+      "log": "reports/cardrpg-big2/validation/recovery-e2-build.log",
+      "filesCompared": 973,
+      "mismatches": [],
+      "runtimeDirty": false
+    },
+    {
+      "phase": "e3",
+      "sourceHead": "1f41cf7170c0995b3e00d928a3381a78a2763040",
+      "archive": "/tmp/cardrpg-big2-recovery-e3",
+      "expected": "99b68a554f57e16396aea67dd5324e4c17c2f6253d3d5ea1a7ac05f7f01c5c7a",
+      "actual": "3bd54fc6cf6704f001a5398a7d5bf8591177cbee4306a285843f8e52297d39c7",
+      "restoredExactHtml": false,
+      "buildExit": 0,
+      "log": "reports/cardrpg-big2/validation/recovery-e3-build.log",
+      "filesCompared": 976,
+      "mismatches": [],
+      "runtimeDirty": false
+    },
+    {
+      "phase": "e4",
+      "sourceHead": "a5abedfa4b3514e9d8a66e6cf7e477576c706bab",
+      "archive": "/tmp/cardrpg-big2-recovery-e4",
+      "expected": "3b5dbe3d2f5e8e631e9c459df7f2db8cdb03fe6208c19ffe3dd4ceb2c1d14927",
+      "actual": "52bcbfac855feb19ac8e1b4c7d025aaad4a26b789428dc6011763d7b25fa8584",
+      "restoredExactHtml": false,
+      "buildExit": 0,
+      "log": "reports/cardrpg-big2/validation/recovery-e4-build.log",
+      "filesCompared": 979,
+      "mismatches": [],
+      "runtimeDirty": false
+    },
+    {
+      "phase": "boss",
+      "sourceHead": "fa9683e24197de400b1dbdd1d61070a29f818a43",
+      "archive": "/tmp/cardrpg-big2-recovery-boss",
+      "expected": "8c21bc006c0737f566f48df06d46c5497a69979b08871b966c65cc7841f70246",
+      "actual": "8d7a7c124f5657308b5d72deaa3bdc8acb6ca64429cd771630d22da8896e639b",
+      "restoredExactHtml": false,
+      "buildExit": 0,
+      "log": "reports/cardrpg-big2/validation/recovery-boss-build.log",
+      "filesCompared": 985,
+      "mismatches": [],
+      "runtimeDirty": false
+    }
+  ]
+}

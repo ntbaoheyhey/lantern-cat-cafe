@@ -75,3 +75,10 @@ Inspected a frame sequence from the first6.7seconds of the24second x1 Inkcap rec
 REFERENCE: video-review-pilot/captures.json; video-review-pilot/inkcap.webp; tools/cardrpg-big2/video-contact-sheets.py
 
 Extracted the midpoint of each first Inkcap action from its recorded timestamps, verifying the original video SHA. Viewed all five samples: the ultimate reads as a large pale arch at the distant target, while the passive places a small folded shape beside the caster. The rear caster overlaps Soot in this camera, and the wide empty center makes small gestures difficult to read. These still samples confirm composition limits; they cannot judge sound or continuous pacing. The native24s recording remains the source.
+
+## Settled Focus-stage review
+REFERENCE: focus-rendered/checks.json; focus-rendered/1024-focused.png; ../enemies/boss/filmstrips/enemy-yarn-giant.webp
+
+Viewed the evidence-complete734d301c artifact at1024×600. The focused stage displays the actors, tabletop and target plate within the viewport. Earlier blank screenshots captured the backing canvas before its resize; waiting for settled dimensions, a rendered draw and nonempty pixels resolves the proof gap without a scene patch. Show controls has a readable pressed/hover state. The stage still has a broad empty center, and rear companions remain smaller than the front actor.
+
+Viewed Yarn Giant's eight-frame signature strip: the torso coils forward, rises and lands, with woven loops at impact. Its sculpt silhouette reads as yarn, but pale loop effects remain flat and the crop cannot show distant target contact. Keep improved tier; continuous pacing awaits the current x1 recording review.

@@ -2,15 +2,15 @@
 PROMPT bytes=17237; SHA256=ed11ec911a0f53018e557a6b65d76f4b17189495a16f40dfa06333abe5c93e07
 REFERENCE: reports/cardrpg-big2/memory/PROMPT.md
 ## NOW
-Published drafts through E2 #353. Current b6-polish head d46a04c7 plus measured focus HTML and harness correction. No new runtime edits after focus683f33b0, five CPUchecks1702web/935rules PASS.
-Actual shipped audio fix passes sixfresh Chromium processes, native/CPU4MAX16.8ms, constructor15.6–20.9ms. Five opaque images exactChromiumRGBA. Focus3sizesPASS, 1024stage189.4→390.9px. Studio-corrected2 covers258actions/accountrestore/zeroerrors-requestsPASS.
-E3 allcaptures6clips/80effects/cold116.6ms MISS and postinteractive100.1ms MISS. Original419/421, classicretryPASS, fontfailed retries1/2, retry3serverstartup120s timeout. Focusedretry4 usescachednpmoffline butsamepinnedpnpm/testbyte source, awaitinglock.
-E4complete421E2E/2clips/82effects/cold133.3ms MISS. Boss420/421 thenonefocusedfontretryPASS; sixattackclips86effects3655pairs/sixintro-phase strips/calm3PASS. Boss coldwhole/postinteractive133.3ms MISS. Allopponents stayimproved.
-Scopedmatrices resumed under21713→21723 (session8794), exact8phase pinnedartifacts,6500msgaps. Originalpendingobsolete39632/43008/43282/58498 retiredwithreceipt. No duplicate timing jobs.
+Current b6-polish772093a1. Accepted review HTML734d301c/22,446,426bytes includes93evidenceitems. Pinned sourcec29564f6; review runner6992 active, no duplicate browser job.
+E3focusedretryPASS; E3a3235705/E4bc5f31f4/bossc5095a2e push8873 active. Draft creation follows remote verification. All25units/86actions have rendered batch evidence.
+Current sixchecksPASS: type/demo-types/lint/build, fullrootunit1702web/935rules(+2expectedfails11skips),421E2E. Completeunitrerun usesVITEST_MAX_WORKERS=2, source/timeoutsunchanged; twoinitialtimeoutlogsretained. Studio258actions/3sizes/0errors-requestsPASS. Functionalpipelinecontinues.
+Focus rendered3sizesPASS with actualdraw/pixel/resize assertions; blank images were an immediate-capture race. Showcontrols hover contrast fixed. Six actual-source audio runs16.8msMAX are retained.
+Seven phase artifacts rebuilt fromexactsource with newHTMLhashes; audit app/rules/assets0mismatches. OriginalHTMLidentity notclaimed. B2a restoredexactly with45completedcases/3configurations.
 ## NEXT
-1. Publish E3/E4/boss with sourcevalidation/rawcaptures and observednetwork failures. Use /tmp/cardrpg-big2-insert-evidence.py only after trackedWIP committed. ReadAoutbox beforePR. No integrationrebasecheckpoint yet.
-2. Build/pin acceptedreview afterallcaptures, run review-measurements and860casefullmatrix. Preserve completedchecks onfailure, exactartifactreceipts and alloriginalfailedlogs.
-3. Review x1 cat/boss recordings, finishreport/selfgrades/ledger/drafts, hand remainingchain toA and rebase afterits integrationcheckpoint. ReadRules/phase/Aoutbox atphaseboundaries.
+1. Complete currentreview gates/functionality; publish E3/E4/boss, then sourcewrapper checkpoint perA23:57request. No integratedrebasecheckpoint yet.
+2. Resume scoped710case matrix using originalB2a and newlyidentified otherphase artifacts; final860cases use acceptedreview/integratedartifact. Never blend oldcoldhashes with newmatrixhashes.
+3. Review x1cat/boss videos, update report/selfgrades/ledger, publish remaining evidence. Reconcile/revalidate after A integratedCHECKPOINT. ReadRules/phase/Aoutbox at boundaries.
 ## DONE
 Verified remote #340;created own worktree;exact prompt saved.
 ## GATES
@@ -110,3 +110,5 @@ B1published342(partialopening);B2apublished343(improved);B2b/c,B3,B4,B5,enemies,
 
 - Recovery2026-11-07T00:38Z. All prior processes and /tmp archives disappeared after environment restart. Current9b2aa98f includes E3 evidence3e853a37 and boss evidencee87ee760. E3 finalnetworkretry neverran. Original published branches untouched. Recovered currentfocusHTML exactlySHA3d96db56 from committed docs; old phase sourcecommits contain earlierHTML, so rebuild from exact archived source and compareSHA before resuming matrices.
 - Viewed focus screenshots directly and found blankstage. New diagnostic on identical3d96db56 proves screenshot race: immediate backing250px versusCSS451px, aftertwoRAF451px/196draws/75000tris, stablethrough1300ms. Renderer works. Showcontrols hover reallylosescontrast. OwnstudioCSS fix andgallerypixel/draw/resize assertions authored; newbuild/browserproof pending. Originalblankimages retained. CPUprepublish1702web/935rules+2expectedfails11skips andtypecheck/lint/buildPASS beforeCSS-onlyfix.
+
+- Recovery2026-11-07T00:44Z: E3focusedoriginal-source retry passed. Review93items/22.45MB pinned; actualrendering verified. Fullunit retry after inheritedgenerator timeout; originalfailure retained. Sevenrebuiltartifacts match originalsource Gitblobs butHTML differs; outputdifference causeunisolated, correction to earlieroutbox missing-evidence speculation.
