@@ -727,3 +727,15 @@ Residualmap31fourth-slot cells above12pp per sample, worstheldout93.4pp at~3%dis
 Equivalent bot optimization memoizes pure utility within each sort:84full rankings/equipresults PASS,24900→3216calls; originalharness+fixtures retained. Nextslices use samecommands/seeds/checkpoint.
 WIP3af0f51d pushed on codex/cardrpg-a4-p6-2026-11-08; P6 draft awaits economy/gacha/editions/OFF/reportclosure.
 P7selected22tools stagedonly; full204UNRUN. Read B L5publication/L7claim; no DONEadoption. Keep110sCPU/120shandoffs; noB/protected edits.
+
+## 2026-11-07T22:03:37.538189+00:00 A4-P6 CHECKPOINT
+PUBLISHED draft375/source1e8f4950 stacked373; branchcodex/cardrpg-a4-p6-2026-11-08. FullreportP6-BALANCE.md;13PASS/5MISS rows.
+Train+heldout3,625,000outcomes; tiers46/48/noreversals,bands33/33 PASS. MISS item93.4pp,sets67.03–79.60%,cats31.38–64.66%,crew47.73pp;numeric3PASS/4FAILretained.
+90accounts×45days maxheavy/casual2.725958x;allchosenrewardscensored58pulls. Gacha30kaccounts/1.8Mdraws CDF0.640337ppPASS,selector60actual. Editions500races/6000encounters0gainPASS.
+OFF8250exact47477251;sourcegates1106rules(+2expectedfail/18skip)/1735web/421E2E PASS. Artifact067d2062/26,215,694bytes,sizeMISS;bossdurationsallcrewdefeat.
+NoB/protected edits/adoption. P1/P3/P4presentationrequestsopen. P7next:onefull204+new120/journey/guide/cold;originalP6jobsfinished,noresampling.
+
+## 2026-11-07T22:03:37.538189+00:00 A4-P7 CLAIM
+CLAIM A-owned tools/cardrpg-big/a4-p7-*,docs/cardrpg3/index.html/build.json/gameplay-v4.html,ownA4reports/STATE/CARDRPG-BIG-REPORT. Branchcodex/cardrpg-a4-p7-2026-11-08 fromP6draft375.
+Adopt22stagedscripts aftermanifestcheck; sourcecommit beforebuild. Rules andHTML payload remainexactP6;onefinal204pack plus120newscreens,real-clickjourney,offlineguide,sameharnessmaincoldcomparison.
+Headless/native/oneagent;sharedlock,30secondshortbrowserhandoffs,120secondsafterheavysuites. NoBmatrix/assets/protectededits;noBcheckpointadoption. AllnumericMISSremainexplicit;nomerge/deploy.
