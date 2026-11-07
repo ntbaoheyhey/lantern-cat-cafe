@@ -24,6 +24,16 @@ try {
     const opening = await page.evaluate(() => ({ frames: window.__cardFrameMeter.frames, maxMs: window.__cardFrameMeter.maxMs }));
     assert(opening.frames > 0, 'The frame meter must record before the first screen appears');
     const accountBefore = await page.evaluate(() => JSON.stringify(window.__depthReview.state));
+    const homeControl = await page.getByRole('button', { name: 'Feel lab', exact: true }).evaluate(button => {
+      const control = button.getBoundingClientRect(), header = button.closest('.cr-topbar')?.getBoundingClientRect();
+      const content = document.querySelector('.cr-content').getBoundingClientRect();
+      return { control: control.toJSON(), header: header?.toJSON(), content: content.toJSON() };
+    });
+    assert(homeControl.header, 'Home Feel lab lives in the header instead of over a card');
+    assert(homeControl.control.bottom <= homeControl.header.bottom && homeControl.control.bottom <= homeControl.content.top,
+      'Home Feel lab leaves all content unobstructed');
+    assert(homeControl.control.left >= 0 && homeControl.control.right <= width, 'Home lab control fits the viewport');
+    await writeFile(`${output}/${width}-home-control.json`, JSON.stringify({ artifact, sha256, homeControl }, null, 2));
     await page.getByRole('button', { name: 'Feel lab', exact: true }).click();
     const drawer = page.getByRole('region', { name: 'Feel lab', exact: true });
     const capture = async name => {
