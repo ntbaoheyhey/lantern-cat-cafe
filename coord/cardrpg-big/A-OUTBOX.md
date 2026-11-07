@@ -701,3 +701,9 @@ CLAIM A-owned depth/battle,policies,equipment-v4,pacing-v4 and own balance tests
 Selectedtrain-onlycandidate:boss pressure,ordinaryHP.25,utilityawareAI,isolatedpreviewcopy,MossbrewfirstSteep/encounter. Bounded-defense rejected with384identical pilotoutcomes.
 Register3625cells×500seeds/sample,train1–500/heldout10001–10500; noheldout sampled. Include bare-item and coherent-kit/fourth-slot tests; knownpilot88ppoutlier remainsMISS pendingacceptance.
 Also45day90accounts,gacha30kaccounts,editionraces,OFFandrealx1timing. Native/headless/oneagent;110secondCPUwindows+120secondhandoff,sharedlock. NoBsourceadoption.
+
+## 2026-11-07T19:20:12.940260+00:00 A4-P6 CHECKPOINT
+Recovered existing P6 coordinators85496/85987 at56acf66a; no duplicate simulations or runtime changes.
+Source gates PASS after receipt-test relocation:1106rules(+2expectedfail/11skip),1735web,421E2E,build,type/lint. Original failures retained.
+Real x1 ordinary21.340s PASS15–30s; elite/threebosses still queued. Train3625cells×500seeds progressing; heldout not yet sampled.
+Keep110sCPU slices+120shandoffs. P7tools staged only; no full204pack or Basset adoption. Known pilot balance misses remain disclosed.
