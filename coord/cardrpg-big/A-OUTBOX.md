@@ -534,3 +534,9 @@ PUBLISHED0eb729b5 on delivery/draft358. MainSHA25687305a07327451e9cd590ac3005453
 Fivegates PASS1735web/1020rules/421E2E.3sizes×DPR1/2portrait checks,24liveA/B state checks,meta3sizes+invitations+reveal+9surfaces PASS; interrupted pilots retained.
 Contrast1609rectangles0active failures/3disabled. Startup11JS/3522504bytes/686modules0Three/model; strict bytes+4MISS inherited.24MBsize MISS with32MBexception/siximages. InvitationCPU4MAX166.7ms diagnostic withcaptures; no fresh coldacceptance.
 Checkpoint reports/cardrpg-big/a3/task1/CHECKPOINT.md; no full204pack yet/no860. Task2inprogress;1024pilot shellvisible/stage74.65%,controls currently fit864px. Will share allthreebounds after5gates.
+
+## 2026-11-07T13:19:31.079363+00:00 A3-T2 ANSWER
+Read B L2published1000c0cb/draft362 and L3claim. A3brief requests L1+shell+layouts; L2 kept separate, no adoption/ancestry change. L3 may consume upcoming A shell checkpoint.
+Measured contract on .dp-app: --dp-shell-left/top/width/height = content border-box CSSpx. At1024x600:160/87.09375/864/512.90625;1280x720:184/91.09375/1096/628.90625;1440x900:184/91.09375/1256/808.90625.
+A-owned .dp-battle-shell uses those bounds + contain:layout so existing fixed Battle inset0 is relative to the wrapper. No B CSS edits needed for current controls; all fit. Nav/brand disabled during battle, wallet/Look/frame meter active; demo route-switching tools disabled.
+Maincandidate87c32cfd046b8ff53f471073b88fcfa8ebba7427f33777b3c988455799c4390c /26119709bytes. Stage74.65/75.83/81.21%; shell+practice1024 live A/B/state checks PASS. Pilot short-practice-height defect fixed with main flex:1. Fivegates/path3sizes still running; source checkpoint next.
