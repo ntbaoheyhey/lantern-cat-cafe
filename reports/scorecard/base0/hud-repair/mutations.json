@@ -1,0 +1,56 @@
+{
+  "results": [
+    {
+      "mutation": "xp-dot",
+      "path": "apps/web/src/shell/shell.css",
+      "before": "grid-template-columns: auto 160px auto;",
+      "after": "grid-template-columns: auto 8px auto;",
+      "exit": 1,
+      "killed": true
+    },
+    {
+      "mutation": "xp-static-fill",
+      "path": "apps/web/src/shell/shell.css",
+      "before": ".shell-hud .hud-xp-fill { background:",
+      "after": ".shell-hud .hud-xp-fill { width: 24.9516441% !important; background:",
+      "exit": 1,
+      "killed": true
+    },
+    {
+      "mutation": "action-truncated",
+      "path": "apps/web/src/shell/shell.css",
+      "before": ".shell-context .v2-hint { max-width: 100%; }",
+      "after": ".shell-context .v2-hint { max-width: 120px; }",
+      "exit": 1,
+      "killed": true
+    },
+    {
+      "mutation": "action-inert",
+      "path": "apps/web/src/shell/Hud.tsx",
+      "before": "onClick={onHintAction ?? undefined}",
+      "after": "onClick={undefined}",
+      "exit": 1,
+      "killed": true
+    },
+    {
+      "mutation": "gated-ancestor-clip",
+      "path": "apps/web/src/shell/shell.css",
+      "before": "height: auto;\n  min-height: calc(var(--hud-h, 56px) + var(--sp-5, 24px));\n  max-height: none;",
+      "after": "height: 52px;\n  min-height: 52px;\n  max-height: 52px;",
+      "exit": 1,
+      "killed": true
+    },
+    {
+      "mutation": "error-action-collapsed",
+      "path": "apps/web/src/shell/shell.css",
+      "before": ".shell-context .v2-hint { max-width: 100%; }",
+      "after": ".shell-context .v2-hint { max-width: 100%; }\n  .shell-body:has([data-sync-status=\"error\"]) .v2-hint-btn { max-width: 0; overflow: hidden; }",
+      "exit": 1,
+      "killed": true
+    }
+  ],
+  "restored_sha256": {
+    "apps/web/src/shell/shell.css": "9c8536b307196380360d7a10e368a9d0e694ea129ca3f66d5eb0eff6353db5dd",
+    "apps/web/src/shell/Hud.tsx": "ad144cd650104eeda77e97a5dc1b8ac05c03545be37bbe577641730a4503ca84"
+  }
+}
