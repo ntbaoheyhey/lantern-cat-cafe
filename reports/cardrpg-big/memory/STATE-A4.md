@@ -227,3 +227,8 @@ P1–P5 drafts367/369/370/372/373. P6 five source gates accepted in validation/a
 - Original heldout finished21:09:50.881Z,3625cells/1,812,500outcomes. Combined3,625,000outcomes; independent sample-audit.json/log PASS, including paired codes, digests, source/asset and gate-log hashes. No simulation rerun.
 - Broad P6 build inventory retains original runtimeDirty:true and one documented report-only change, a4-p6-summary.py. Runtime input and assets remain exact; P7 rebuilds after source commit.
 - Original85496 now owns economy/gacha/editions/OFF; closure92853 still owns report/numeric tests/summary/scope. Do not duplicate them.
+
+## P6 earned-day7 navigation preflight
+- Original85496/6738 economy and92853closure retained; 16complete accounts observed, no duplicate acceptance run. Train/heldout source untouched. Sync refreshed; B remains L5 with no DONE/adoption instruction.
+- Exactly one existing day7 save (SHA62b70067, crew levels8/7/7) replayed through the planned public UI command choices. Seed66353: ordinary party/party, then boss enemy (25actions). Boss reached; no timing or browser acceptance claimed. Diagnostic retained in p6/path-preflight/day7-preflight.{mjs,json}.
+- P7 selected22file staging hashes still match. No P7 formal browser/full204 run; next remains P6 economy/gacha/editions/OFF closure and publication.
