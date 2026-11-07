@@ -60,3 +60,8 @@ Fifty frames at0.5s intervals across the25s clip were viewed in chronological or
 REFERENCE: integration/reveal-fit/fixed-v5/1024-cpu1-legendary-settled.png, integration/reveal-fit/invitations-v5/1024x600-cpu1-welcome-result.png, validation/lab-header-focused.log
 
 The retained 1024×600 settled legendary capture fits the card and View results button, but the floating Feel lab control covers part of the card role label. Source e43dca84 moves the home control into the existing header; seven focused tests pass. The browser guard now verifies header containment and separation from content at all three sizes. Browser confirmation remains pending. The welcome-result capture shows the first earned card and its caption within the viewport, with odds and pity still visible.
+
+## Integrated static inspection before videos
+REFERENCE: integration/delivery/gallery/1024-focused.png, integration/delivery/gallery/1280-gallery.png, integration/delivery/studio/1280-close.png, integration/delivery/comparisons/comparison-48.png
+
+On accepted mainHTML9a5f6ebb, all four named captures were inspected. The1024focused stage renders and stays within the viewport; Show controls and Return to cafe remain legible. Full controls consume substantial vertical space at1280, so Focus stage materially enlarges the scene. Marigold's teapot motif is recognizable, but a static frame does not establish motion quality. Repeated shelf props and the large empty center of the rug remain visible weaknesses. The comparison page clearly labels Earlier/Current, although its many thumbnails require closer inspection to see limb changes. No final score is assigned from these four stills.
