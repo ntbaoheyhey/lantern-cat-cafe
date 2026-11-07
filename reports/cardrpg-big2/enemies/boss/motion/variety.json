@@ -1,0 +1,1367 @@
+{
+  "artifact": "/tmp/cardrpg-big2-boss-index.html",
+  "sha256": "8c21bc006c0737f566f48df06d46c5497a69979b08871b966c65cc7841f70246",
+  "measuredAt": "2026-11-06T23:38:05.715Z",
+  "joints": [
+    "motion",
+    "head",
+    "armL",
+    "armR",
+    "footL",
+    "footR",
+    "tail"
+  ],
+  "thresholds": {
+    "angleRms": 0.1,
+    "positionRms": 0.012
+  },
+  "errors": [],
+  "rows": [
+    {
+      "action": {
+        "id": "enemy:yarn-giant:basic",
+        "owner": "yarn-giant",
+        "name": "Yarn Giant · Weaver sweep",
+        "ultimate": false,
+        "enemy": true
+      },
+      "height": 2.6,
+      "clip": "enemy:yarn-giant:basic",
+      "duration": 1.38,
+      "clipNames": [
+        "idle",
+        "ready",
+        "walk-in",
+        "attack",
+        "skill1",
+        "skill2",
+        "skill3",
+        "ultimate",
+        "cast",
+        "hit",
+        "heavy-hit",
+        "guard",
+        "heal-receive",
+        "KO",
+        "victory",
+        "telegraph",
+        "spawn",
+        "taunt",
+        "step",
+        "special",
+        "stagger",
+        "down",
+        "idle-listen",
+        "idle-stretch",
+        "idle-tail",
+        "defeat",
+        "hit-left",
+        "hit-front",
+        "hit-right",
+        "heavy-hit-left",
+        "heavy-hit-front",
+        "heavy-hit-right",
+        "enemy:yarn-giant:basic",
+        "enemy:yarn-giant",
+        "yarnAttack",
+        "boss-intro",
+        "boss-phase"
+      ],
+      "tracks": [
+        "yarn_motion.quaternion",
+        "yarn_head.quaternion",
+        "yarn_armL.quaternion",
+        "yarn_armR.quaternion",
+        "yarn_tail.quaternion",
+        "yarn_earL.quaternion",
+        "yarn_earR.quaternion",
+        "yarn_motion.position",
+        "yarn_body.scale"
+      ],
+      "frameChecks": [
+        {
+          "progress": 0,
+          "sourceClip": "enemy:yarn-giant:basic",
+          "clipTime": 0,
+          "casterBounds": {
+            "x": 759.1199446778945,
+            "y": 109.7587606250264,
+            "width": 269.9578742847019,
+            "height": 234.4580400887824
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0
+        },
+        {
+          "progress": 0.14285714285714285,
+          "sourceClip": "enemy:yarn-giant:basic",
+          "clipTime": 0.08796514285714285,
+          "casterBounds": {
+            "x": 760.6672676143507,
+            "y": 107.13691931346187,
+            "width": 253.2055549143995,
+            "height": 240.2289249730312
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0.08796514285714285
+        },
+        {
+          "progress": 0.2857142857142857,
+          "sourceClip": "enemy:yarn-giant:basic",
+          "clipTime": 0.1759302857142857,
+          "casterBounds": {
+            "x": 756.2872825234899,
+            "y": 106.56968019781782,
+            "width": 232.08652768813351,
+            "height": 242.43628297558524
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0.1759302857142857
+        },
+        {
+          "progress": 0.42857142857142855,
+          "sourceClip": "enemy:yarn-giant:basic",
+          "clipTime": 0.26389542857142856,
+          "casterBounds": {
+            "x": 752.7331672143689,
+            "y": 106.08202996217487,
+            "width": 226.46156566192894,
+            "height": 243.74067515145032
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0.26389542857142856
+        },
+        {
+          "progress": 0.5714285714285714,
+          "sourceClip": "enemy:yarn-giant:basic",
+          "clipTime": 0.47133346379647734,
+          "casterBounds": {
+            "x": 733.2602564838015,
+            "y": 105.55374623079759,
+            "width": 259.6744097542967,
+            "height": 244.88402612065875
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0.47133346379647734
+        },
+        {
+          "progress": 0.7142857142857143,
+          "sourceClip": "enemy:yarn-giant:basic",
+          "clipTime": 0.6961114285714285,
+          "casterBounds": {
+            "x": 688.3691975872061,
+            "y": 101.74128277604667,
+            "width": 257.292462096078,
+            "height": 241.5347799065945
+          },
+          "maxHeadAngle": 0.0000024148365394514667,
+          "maxQuaternionLengthError": 3.3580951352973898e-9,
+          "capturedTime": 0.6961114285714285
+        },
+        {
+          "progress": 0.8571428571428571,
+          "sourceClip": "enemy:yarn-giant:basic",
+          "clipTime": 1.1117020408163263,
+          "casterBounds": {
+            "x": 759.0177419026851,
+            "y": 104.11511453992364,
+            "width": 268.21094714714434,
+            "height": 237.89783706452545
+          },
+          "maxHeadAngle": 0.0000017075472925031877,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 1.1117020408163263
+        },
+        {
+          "progress": 1,
+          "sourceClip": "enemy:yarn-giant:basic",
+          "clipTime": 1.37862,
+          "casterBounds": {
+            "x": 759.1204484099813,
+            "y": 109.75225366816525,
+            "width": 269.961250249362,
+            "height": 234.45282851916804
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 1.37862
+        }
+      ],
+      "filmstrip": "reports/cardrpg-big2/enemies/boss/filmstrips/enemy-yarn-giant-basic.webp",
+      "filmstripSha256": "1214d504637c138631b999194f9ea908643cc7c4f7955328c1952d029ad1626b"
+    },
+    {
+      "action": {
+        "id": "enemy:rain-spool:basic",
+        "owner": "rain-spool",
+        "name": "Rain Spool · Rain sling",
+        "ultimate": false,
+        "enemy": true
+      },
+      "height": 1.477587253556229,
+      "clip": "enemy:rain-spool:basic",
+      "duration": 1.38,
+      "clipNames": [
+        "idle",
+        "ready",
+        "walk-in",
+        "attack",
+        "skill1",
+        "skill2",
+        "skill3",
+        "ultimate",
+        "cast",
+        "hit",
+        "heavy-hit",
+        "guard",
+        "heal-receive",
+        "KO",
+        "victory",
+        "telegraph",
+        "spawn",
+        "taunt",
+        "step",
+        "special",
+        "stagger",
+        "down",
+        "idle-listen",
+        "idle-stretch",
+        "idle-tail",
+        "defeat",
+        "hit-left",
+        "hit-front",
+        "hit-right",
+        "heavy-hit-left",
+        "heavy-hit-front",
+        "heavy-hit-right",
+        "enemy:rain-spool:basic",
+        "enemy:rain-spool",
+        "boss-intro",
+        "boss-phase"
+      ],
+      "tracks": [
+        "charger_motion.quaternion",
+        "charger_head.quaternion",
+        "charger_armL.quaternion",
+        "charger_armR.quaternion",
+        "charger_tail.quaternion",
+        "charger_earL.quaternion",
+        "charger_earR.quaternion",
+        "charger_motion.position",
+        "charger_body.scale"
+      ],
+      "frameChecks": [
+        {
+          "progress": 0,
+          "sourceClip": "enemy:rain-spool:basic",
+          "clipTime": 0,
+          "casterBounds": {
+            "x": 743.4590157083744,
+            "y": 170.07706736437274,
+            "width": 139.6614396377347,
+            "height": 123.2239552211268
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0
+        },
+        {
+          "progress": 0.14285714285714285,
+          "sourceClip": "enemy:rain-spool:basic",
+          "clipTime": 0.08796514285714285,
+          "casterBounds": {
+            "x": 745.0852226101069,
+            "y": 172.0976989776246,
+            "width": 140.88450090603487,
+            "height": 124.84479653923302
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0.08796514285714285
+        },
+        {
+          "progress": 0.2857142857142857,
+          "sourceClip": "enemy:rain-spool:basic",
+          "clipTime": 0.1759302857142857,
+          "casterBounds": {
+            "x": 752.7018123090808,
+            "y": 174.9254968242725,
+            "width": 143.17636368691194,
+            "height": 125.6957928956457
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0.1759302857142857
+        },
+        {
+          "progress": 0.42857142857142855,
+          "sourceClip": "enemy:rain-spool:basic",
+          "clipTime": 0.26389542857142856,
+          "casterBounds": {
+            "x": 756.8268013391277,
+            "y": 176.5430220826669,
+            "width": 144.2199481908101,
+            "height": 125.637219347188
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0.26389542857142856
+        },
+        {
+          "progress": 0.5714285714285714,
+          "sourceClip": "enemy:rain-spool:basic",
+          "clipTime": 0.47133346379647734,
+          "casterBounds": {
+            "x": 710.1566456272809,
+            "y": 161.7105581435721,
+            "width": 140.3260962074121,
+            "height": 119.73296491157282
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 0.47133346379647734
+        },
+        {
+          "progress": 0.7142857142857143,
+          "sourceClip": "enemy:rain-spool:basic",
+          "clipTime": 0.6961114285714285,
+          "casterBounds": {
+            "x": 682.9668840750429,
+            "y": 168.2734247512315,
+            "width": 141.98229462735105,
+            "height": 119.11452065456623
+          },
+          "maxHeadAngle": 0.0000017075472925031877,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0.6961114285714285
+        },
+        {
+          "progress": 0.8571428571428571,
+          "sourceClip": "enemy:rain-spool:basic",
+          "clipTime": 1.1117020408163263,
+          "casterBounds": {
+            "x": 742.0771716554211,
+            "y": 167.77190738338285,
+            "width": 139.67853904988488,
+            "height": 124.1088606762286
+          },
+          "maxHeadAngle": 0.0000017075472925031877,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 1.1117020408163263
+        },
+        {
+          "progress": 1,
+          "sourceClip": "enemy:rain-spool:basic",
+          "clipTime": 1.37862,
+          "casterBounds": {
+            "x": 743.4615259451812,
+            "y": 170.06804063070564,
+            "width": 139.66110871682076,
+            "height": 123.22589394127681
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 1.37862
+        }
+      ],
+      "filmstrip": "reports/cardrpg-big2/enemies/boss/filmstrips/enemy-rain-spool-basic.webp",
+      "filmstripSha256": "de13e6910f40133c08d9097a31f0c0fa7a00a3623a74af52d7d02451a32fc742"
+    },
+    {
+      "action": {
+        "id": "enemy:pantry-crown:basic",
+        "owner": "pantry-crown",
+        "name": "Pantry Crown · Cup tally",
+        "ultimate": false,
+        "enemy": true
+      },
+      "height": 2.3920000000000003,
+      "clip": "enemy:pantry-crown:basic",
+      "duration": 1.38,
+      "clipNames": [
+        "idle",
+        "ready",
+        "walk-in",
+        "attack",
+        "skill1",
+        "skill2",
+        "skill3",
+        "ultimate",
+        "cast",
+        "hit",
+        "heavy-hit",
+        "guard",
+        "heal-receive",
+        "KO",
+        "victory",
+        "telegraph",
+        "spawn",
+        "taunt",
+        "step",
+        "special",
+        "stagger",
+        "down",
+        "idle-listen",
+        "idle-stretch",
+        "idle-tail",
+        "defeat",
+        "hit-left",
+        "hit-front",
+        "hit-right",
+        "heavy-hit-left",
+        "heavy-hit-front",
+        "heavy-hit-right",
+        "enemy:pantry-crown:basic",
+        "enemy:pantry-crown",
+        "boss-intro",
+        "boss-phase"
+      ],
+      "tracks": [
+        "yarn_motion.quaternion",
+        "yarn_head.quaternion",
+        "yarn_armL.quaternion",
+        "yarn_armR.quaternion",
+        "yarn_tail.quaternion",
+        "yarn_earL.quaternion",
+        "yarn_earR.quaternion",
+        "yarn_motion.position",
+        "yarn_body.scale"
+      ],
+      "frameChecks": [
+        {
+          "progress": 0,
+          "sourceClip": "enemy:pantry-crown:basic",
+          "clipTime": 0,
+          "casterBounds": {
+            "x": 769.1799683537326,
+            "y": 126.19868127562339,
+            "width": 247.49955791951038,
+            "height": 215.49564629694535
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0
+        },
+        {
+          "progress": 0.14285714285714285,
+          "sourceClip": "enemy:pantry-crown:basic",
+          "clipTime": 0.08796514285714285,
+          "casterBounds": {
+            "x": 769.0148442838417,
+            "y": 123.93241047932295,
+            "width": 236.60560221140986,
+            "height": 220.81111790329507
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0.08796514285714285
+        },
+        {
+          "progress": 0.2857142857142857,
+          "sourceClip": "enemy:pantry-crown:basic",
+          "clipTime": 0.1759302857142857,
+          "casterBounds": {
+            "x": 761.9681241168564,
+            "y": 123.96507747255573,
+            "width": 234.29729671646305,
+            "height": 222.68131712649955
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0.1759302857142857
+        },
+        {
+          "progress": 0.42857142857142855,
+          "sourceClip": "enemy:pantry-crown:basic",
+          "clipTime": 0.26389542857142856,
+          "casterBounds": {
+            "x": 759.3949603493982,
+            "y": 123.67334326129843,
+            "width": 230.4177772792949,
+            "height": 223.66581624402312
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0.26389542857142856
+        },
+        {
+          "progress": 0.5714285714285714,
+          "sourceClip": "enemy:pantry-crown:basic",
+          "clipTime": 0.47133346379647734,
+          "casterBounds": {
+            "x": 793.1803211297499,
+            "y": 120.11908909256601,
+            "width": 215.2248681294992,
+            "height": 224.8905885418983
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580951352973898e-9,
+          "capturedTime": 0.47133346379647734
+        },
+        {
+          "progress": 0.7142857142857143,
+          "sourceClip": "enemy:pantry-crown:basic",
+          "clipTime": 0.6961114285714285,
+          "casterBounds": {
+            "x": 773.6677490229971,
+            "y": 120.62173594737268,
+            "width": 227.83669610359425,
+            "height": 223.63548724001865
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0.6961114285714285
+        },
+        {
+          "progress": 0.8571428571428571,
+          "sourceClip": "enemy:pantry-crown:basic",
+          "clipTime": 1.1117020408163263,
+          "casterBounds": {
+            "x": 775.1152789070733,
+            "y": 121.15617425127495,
+            "width": 240.18994253920482,
+            "height": 219.3860442624295
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 1.1117020408163263
+        },
+        {
+          "progress": 1,
+          "sourceClip": "enemy:pantry-crown:basic",
+          "clipTime": 1.37862,
+          "casterBounds": {
+            "x": 769.1981056003999,
+            "y": 126.19418117861893,
+            "width": 247.4833661872774,
+            "height": 215.49411376819546
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 1.37862
+        }
+      ],
+      "filmstrip": "reports/cardrpg-big2/enemies/boss/filmstrips/enemy-pantry-crown-basic.webp",
+      "filmstripSha256": "ff887d8a7527a2181af5304e7dcae8a77ac263656f40e15b154b1c82ee99d7a6"
+    },
+    {
+      "action": {
+        "id": "enemy:yarn-giant",
+        "owner": "yarn-giant",
+        "name": "Yarn Giant · Every third round Loomfall sweeps the front and Tangled threads appear.",
+        "ultimate": false,
+        "enemy": true
+      },
+      "height": 2.6,
+      "clip": "enemy:yarn-giant",
+      "duration": 1.38,
+      "clipNames": [
+        "idle",
+        "ready",
+        "walk-in",
+        "attack",
+        "skill1",
+        "skill2",
+        "skill3",
+        "ultimate",
+        "cast",
+        "hit",
+        "heavy-hit",
+        "guard",
+        "heal-receive",
+        "KO",
+        "victory",
+        "telegraph",
+        "spawn",
+        "taunt",
+        "step",
+        "special",
+        "stagger",
+        "down",
+        "idle-listen",
+        "idle-stretch",
+        "idle-tail",
+        "defeat",
+        "hit-left",
+        "hit-front",
+        "hit-right",
+        "heavy-hit-left",
+        "heavy-hit-front",
+        "heavy-hit-right",
+        "enemy:yarn-giant:basic",
+        "enemy:yarn-giant",
+        "yarnAttack",
+        "boss-intro",
+        "boss-phase"
+      ],
+      "tracks": [
+        "yarn_motion.quaternion",
+        "yarn_head.quaternion",
+        "yarn_armL.quaternion",
+        "yarn_armR.quaternion",
+        "yarn_tail.quaternion",
+        "yarn_earL.quaternion",
+        "yarn_earR.quaternion",
+        "yarn_motion.position",
+        "yarn_body.scale"
+      ],
+      "frameChecks": [
+        {
+          "progress": 0,
+          "sourceClip": "enemy:yarn-giant",
+          "clipTime": 0,
+          "casterBounds": {
+            "x": 759.1199446778945,
+            "y": 109.7587606250264,
+            "width": 269.9578742847019,
+            "height": 234.4580400887824
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0
+        },
+        {
+          "progress": 0.14285714285714285,
+          "sourceClip": "enemy:yarn-giant",
+          "clipTime": 0.08796514285714285,
+          "casterBounds": {
+            "x": 764.1409378423772,
+            "y": 113.03358855376506,
+            "width": 248.9761487929287,
+            "height": 238.67499997456775
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0.08796514285714285
+        },
+        {
+          "progress": 0.2857142857142857,
+          "sourceClip": "enemy:yarn-giant",
+          "clipTime": 0.1759302857142857,
+          "casterBounds": {
+            "x": 770.694472182799,
+            "y": 123.78526974869487,
+            "width": 232.2596825790456,
+            "height": 236.17589213194418
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0.1759302857142857
+        },
+        {
+          "progress": 0.42857142857142855,
+          "sourceClip": "enemy:yarn-giant",
+          "clipTime": 0.26389542857142856,
+          "casterBounds": {
+            "x": 771.1358160600282,
+            "y": 127.2950715282912,
+            "width": 231.37980840091154,
+            "height": 235.170015899171
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0.26389542857142856
+        },
+        {
+          "progress": 0.5714285714285714,
+          "sourceClip": "enemy:yarn-giant",
+          "clipTime": 0.47133346379647734,
+          "casterBounds": {
+            "x": 777.7309558605368,
+            "y": 66.84452786336074,
+            "width": 229.7256743576163,
+            "height": 250.02930404486744
+          },
+          "maxHeadAngle": 0.0000017075472925031877,
+          "maxQuaternionLengthError": 3.3580951352973898e-9,
+          "capturedTime": 0.47133346379647734
+        },
+        {
+          "progress": 0.7142857142857143,
+          "sourceClip": "enemy:yarn-giant",
+          "clipTime": 0.6961114285714285,
+          "casterBounds": {
+            "x": 684.8273012781646,
+            "y": 140.91397874123678,
+            "width": 255.55802715543132,
+            "height": 239.38386344751987
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0.6961114285714285
+        },
+        {
+          "progress": 0.8571428571428571,
+          "sourceClip": "enemy:yarn-giant",
+          "clipTime": 1.1117020408163263,
+          "casterBounds": {
+            "x": 768.3277293084732,
+            "y": 104.6098317436783,
+            "width": 252.3241876130927,
+            "height": 239.29648083049995
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 1.1117020408163263
+        },
+        {
+          "progress": 1,
+          "sourceClip": "enemy:yarn-giant",
+          "clipTime": 1.37862,
+          "casterBounds": {
+            "x": 759.1166680743032,
+            "y": 109.76813640532181,
+            "width": 269.9565410289464,
+            "height": 234.46242476844662
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 1.37862
+        }
+      ],
+      "filmstrip": "reports/cardrpg-big2/enemies/boss/filmstrips/enemy-yarn-giant.webp",
+      "filmstripSha256": "1db568656c2bdff295484758a08159b039d348e433d2488996d4b944acbbeb99"
+    },
+    {
+      "action": {
+        "id": "enemy:rain-spool",
+        "owner": "rain-spool",
+        "name": "Rain Spool · Every third round Cloudburst washes shields away before a row hit.",
+        "ultimate": false,
+        "enemy": true
+      },
+      "height": 1.477587253556229,
+      "clip": "enemy:rain-spool",
+      "duration": 1.38,
+      "clipNames": [
+        "idle",
+        "ready",
+        "walk-in",
+        "attack",
+        "skill1",
+        "skill2",
+        "skill3",
+        "ultimate",
+        "cast",
+        "hit",
+        "heavy-hit",
+        "guard",
+        "heal-receive",
+        "KO",
+        "victory",
+        "telegraph",
+        "spawn",
+        "taunt",
+        "step",
+        "special",
+        "stagger",
+        "down",
+        "idle-listen",
+        "idle-stretch",
+        "idle-tail",
+        "defeat",
+        "hit-left",
+        "hit-front",
+        "hit-right",
+        "heavy-hit-left",
+        "heavy-hit-front",
+        "heavy-hit-right",
+        "enemy:rain-spool:basic",
+        "enemy:rain-spool",
+        "boss-intro",
+        "boss-phase"
+      ],
+      "tracks": [
+        "charger_motion.quaternion",
+        "charger_head.quaternion",
+        "charger_armL.quaternion",
+        "charger_armR.quaternion",
+        "charger_tail.quaternion",
+        "charger_earL.quaternion",
+        "charger_earR.quaternion",
+        "charger_motion.position",
+        "charger_body.scale"
+      ],
+      "frameChecks": [
+        {
+          "progress": 0,
+          "sourceClip": "enemy:rain-spool",
+          "clipTime": 0,
+          "casterBounds": {
+            "x": 743.4590157083744,
+            "y": 170.07706736437274,
+            "width": 139.6614396377347,
+            "height": 123.2239552211268
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0
+        },
+        {
+          "progress": 0.14285714285714285,
+          "sourceClip": "enemy:rain-spool",
+          "clipTime": 0.08796514285714285,
+          "casterBounds": {
+            "x": 738.0979532102904,
+            "y": 171.7652600687238,
+            "width": 140.69262096961916,
+            "height": 125.92727639671747
+          },
+          "maxHeadAngle": 0.0000017075472925031877,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0.08796514285714285
+        },
+        {
+          "progress": 0.2857142857142857,
+          "sourceClip": "enemy:rain-spool",
+          "clipTime": 0.1759302857142857,
+          "casterBounds": {
+            "x": 732.658602516768,
+            "y": 173.42615894262389,
+            "width": 145.4840960333147,
+            "height": 129.90665550079098
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0.1759302857142857
+        },
+        {
+          "progress": 0.42857142857142855,
+          "sourceClip": "enemy:rain-spool",
+          "clipTime": 0.26389542857142856,
+          "casterBounds": {
+            "x": 729.8260554142278,
+            "y": 174.5369290230008,
+            "width": 146.37761481453185,
+            "height": 131.86229990556276
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0.26389542857142856
+        },
+        {
+          "progress": 0.5714285714285714,
+          "sourceClip": "enemy:rain-spool",
+          "clipTime": 0.47133346379647734,
+          "casterBounds": {
+            "x": 721.2487786296319,
+            "y": 170.02074080300181,
+            "width": 141.8259892089718,
+            "height": 112.01543869952869
+          },
+          "maxHeadAngle": 0.0000017075472925031877,
+          "maxQuaternionLengthError": 3.3580951352973898e-9,
+          "capturedTime": 0.47133346379647734
+        },
+        {
+          "progress": 0.7142857142857143,
+          "sourceClip": "enemy:rain-spool",
+          "clipTime": 0.6961114285714285,
+          "casterBounds": {
+            "x": 655.5139374938688,
+            "y": 184.49977923809328,
+            "width": 147.49212835533058,
+            "height": 126.89802686289167
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0.6961114285714285
+        },
+        {
+          "progress": 0.8571428571428571,
+          "sourceClip": "enemy:rain-spool",
+          "clipTime": 1.1117020408163263,
+          "casterBounds": {
+            "x": 739.3229366525724,
+            "y": 168.62752177094566,
+            "width": 140.07413663212026,
+            "height": 123.79964840717187
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580951352973898e-9,
+          "capturedTime": 1.1117020408163263
+        },
+        {
+          "progress": 1,
+          "sourceClip": "enemy:rain-spool",
+          "clipTime": 1.37862,
+          "casterBounds": {
+            "x": 743.4522924398135,
+            "y": 170.08738705588362,
+            "width": 139.66249465185558,
+            "height": 123.22529955107413
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 1.37862
+        }
+      ],
+      "filmstrip": "reports/cardrpg-big2/enemies/boss/filmstrips/enemy-rain-spool.webp",
+      "filmstripSha256": "286866cd3b417106417229543ad0a6b57cc7cbe44507a4b34079cada61810081"
+    },
+    {
+      "action": {
+        "id": "enemy:pantry-crown",
+        "owner": "pantry-crown",
+        "name": "Pantry Crown · Every third round Empty banquet drains energy and silences the table.",
+        "ultimate": false,
+        "enemy": true
+      },
+      "height": 2.3920000000000003,
+      "clip": "enemy:pantry-crown",
+      "duration": 1.38,
+      "clipNames": [
+        "idle",
+        "ready",
+        "walk-in",
+        "attack",
+        "skill1",
+        "skill2",
+        "skill3",
+        "ultimate",
+        "cast",
+        "hit",
+        "heavy-hit",
+        "guard",
+        "heal-receive",
+        "KO",
+        "victory",
+        "telegraph",
+        "spawn",
+        "taunt",
+        "step",
+        "special",
+        "stagger",
+        "down",
+        "idle-listen",
+        "idle-stretch",
+        "idle-tail",
+        "defeat",
+        "hit-left",
+        "hit-front",
+        "hit-right",
+        "heavy-hit-left",
+        "heavy-hit-front",
+        "heavy-hit-right",
+        "enemy:pantry-crown:basic",
+        "enemy:pantry-crown",
+        "boss-intro",
+        "boss-phase"
+      ],
+      "tracks": [
+        "yarn_motion.quaternion",
+        "yarn_head.quaternion",
+        "yarn_armL.quaternion",
+        "yarn_armR.quaternion",
+        "yarn_tail.quaternion",
+        "yarn_earL.quaternion",
+        "yarn_earR.quaternion",
+        "yarn_motion.position",
+        "yarn_body.scale"
+      ],
+      "frameChecks": [
+        {
+          "progress": 0,
+          "sourceClip": "enemy:pantry-crown",
+          "clipTime": 0,
+          "casterBounds": {
+            "x": 769.1799683537326,
+            "y": 126.19868127562339,
+            "width": 247.49955791951038,
+            "height": 215.49564629694535
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0
+        },
+        {
+          "progress": 0.14285714285714285,
+          "sourceClip": "enemy:pantry-crown",
+          "clipTime": 0.08796514285714285,
+          "casterBounds": {
+            "x": 768.7835572569932,
+            "y": 130.76917153188356,
+            "width": 231.3697307643049,
+            "height": 220.55755062109085
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0.08796514285714285
+        },
+        {
+          "progress": 0.2857142857142857,
+          "sourceClip": "enemy:pantry-crown",
+          "clipTime": 0.1759302857142857,
+          "casterBounds": {
+            "x": 763.7439060336397,
+            "y": 145.18596425698647,
+            "width": 219.147597460293,
+            "height": 219.07074770409602
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0.1759302857142857
+        },
+        {
+          "progress": 0.42857142857142855,
+          "sourceClip": "enemy:pantry-crown",
+          "clipTime": 0.26389542857142856,
+          "casterBounds": {
+            "x": 762.9407493681787,
+            "y": 153.4085704096094,
+            "width": 215.68825359401058,
+            "height": 219.79685031699478
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0.26389542857142856
+        },
+        {
+          "progress": 0.5714285714285714,
+          "sourceClip": "enemy:pantry-crown",
+          "clipTime": 0.47133346379647734,
+          "casterBounds": {
+            "x": 778.0031701961701,
+            "y": 104.50286677875549,
+            "width": 247.00106427218168,
+            "height": 217.1460039829226
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0.47133346379647734
+        },
+        {
+          "progress": 0.7142857142857143,
+          "sourceClip": "enemy:pantry-crown",
+          "clipTime": 0.6961114285714285,
+          "casterBounds": {
+            "x": 793.2565080606638,
+            "y": 104.32585362329466,
+            "width": 203.05197595598008,
+            "height": 218.30253528355757
+          },
+          "maxHeadAngle": 0.0000017075472925031877,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0.6961114285714285
+        },
+        {
+          "progress": 0.8571428571428571,
+          "sourceClip": "enemy:pantry-crown",
+          "clipTime": 1.1117020408163263,
+          "casterBounds": {
+            "x": 763.0778022493039,
+            "y": 141.03709807999874,
+            "width": 237.57021205864896,
+            "height": 218.66140654857517
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 1.1117020408163263
+        },
+        {
+          "progress": 1,
+          "sourceClip": "enemy:pantry-crown",
+          "clipTime": 1.37862,
+          "casterBounds": {
+            "x": 769.1851016563005,
+            "y": 126.184437639918,
+            "width": 247.5016346584557,
+            "height": 215.4891725892102
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 1.37862
+        }
+      ],
+      "filmstrip": "reports/cardrpg-big2/enemies/boss/filmstrips/enemy-pantry-crown.webp",
+      "filmstripSha256": "9aafd54cc950e020c6c305d07cb25ba6a9c12ee11474d53f952963eb0a68282f"
+    }
+  ],
+  "matrix": [
+    [
+      {
+        "angleRms": 2.360181558199769e-8,
+        "positionRms": 0
+      },
+      {
+        "angleRms": 0.4799978182324056,
+        "positionRms": 0.15190951993100066
+      },
+      {
+        "angleRms": 0.3579048225812937,
+        "positionRms": 0.034808150048947745
+      },
+      {
+        "angleRms": 0.4632807787860832,
+        "positionRms": 0.12694194306230683
+      },
+      {
+        "angleRms": 0.544643736672334,
+        "positionRms": 0.14316091459362795
+      },
+      {
+        "angleRms": 0.588739052315261,
+        "positionRms": 0.15006596615030382
+      }
+    ],
+    [
+      {
+        "angleRms": 0.4799978182324056,
+        "positionRms": 0.15190951993100066
+      },
+      {
+        "angleRms": 2.3862617041568473e-8,
+        "positionRms": 0
+      },
+      {
+        "angleRms": 0.348775792607504,
+        "positionRms": 0.12877629235997207
+      },
+      {
+        "angleRms": 0.44299970564605295,
+        "positionRms": 0.13393484653616297
+      },
+      {
+        "angleRms": 0.5608968427975032,
+        "positionRms": 0.17382753294788672
+      },
+      {
+        "angleRms": 0.5807762630741641,
+        "positionRms": 0.1537807874124005
+      }
+    ],
+    [
+      {
+        "angleRms": 0.3579048225812937,
+        "positionRms": 0.034808150048947745
+      },
+      {
+        "angleRms": 0.348775792607504,
+        "positionRms": 0.12877629235997207
+      },
+      {
+        "angleRms": 2.3927373244864043e-8,
+        "positionRms": 0
+      },
+      {
+        "angleRms": 0.4134398556599368,
+        "positionRms": 0.11416927846587731
+      },
+      {
+        "angleRms": 0.47537328265016054,
+        "positionRms": 0.14172867483310655
+      },
+      {
+        "angleRms": 0.6134355384686307,
+        "positionRms": 0.13218794843736867
+      }
+    ],
+    [
+      {
+        "angleRms": 0.4632807787860832,
+        "positionRms": 0.12694194306230683
+      },
+      {
+        "angleRms": 0.44299970564605295,
+        "positionRms": 0.13393484653616297
+      },
+      {
+        "angleRms": 0.4134398556599368,
+        "positionRms": 0.11416927846587731
+      },
+      {
+        "angleRms": 2.175979880310557e-8,
+        "positionRms": 0
+      },
+      {
+        "angleRms": 0.44281778856187076,
+        "positionRms": 0.09267823269530544
+      },
+      {
+        "angleRms": 0.5652584725926376,
+        "positionRms": 0.17024529747622455
+      }
+    ],
+    [
+      {
+        "angleRms": 0.544643736672334,
+        "positionRms": 0.14316091459362795
+      },
+      {
+        "angleRms": 0.5608968427975032,
+        "positionRms": 0.17382753294788672
+      },
+      {
+        "angleRms": 0.47537328265016054,
+        "positionRms": 0.14172867483310655
+      },
+      {
+        "angleRms": 0.44281778856187076,
+        "positionRms": 0.09267823269530544
+      },
+      {
+        "angleRms": 2.175979880310557e-8,
+        "positionRms": 0
+      },
+      {
+        "angleRms": 0.6169367660961357,
+        "positionRms": 0.2039454599702023
+      }
+    ],
+    [
+      {
+        "angleRms": 0.588739052315261,
+        "positionRms": 0.15006596615030382
+      },
+      {
+        "angleRms": 0.5807762630741641,
+        "positionRms": 0.1537807874124005
+      },
+      {
+        "angleRms": 0.6134355384686307,
+        "positionRms": 0.13218794843736867
+      },
+      {
+        "angleRms": 0.5652584725926376,
+        "positionRms": 0.17024529747622455
+      },
+      {
+        "angleRms": 0.6169367660961357,
+        "positionRms": 0.2039454599702023
+      },
+      {
+        "angleRms": 2.1688571774673257e-8,
+        "positionRms": 0
+      }
+    ]
+  ],
+  "pairs": [
+    {
+      "left": "enemy:yarn-giant:basic",
+      "right": "enemy:rain-spool:basic",
+      "required": true,
+      "angleRms": 0.4799978182324056,
+      "positionRms": 0.15190951993100066,
+      "pass": true
+    },
+    {
+      "left": "enemy:yarn-giant:basic",
+      "right": "enemy:pantry-crown:basic",
+      "required": true,
+      "angleRms": 0.3579048225812937,
+      "positionRms": 0.034808150048947745,
+      "pass": true
+    },
+    {
+      "left": "enemy:yarn-giant:basic",
+      "right": "enemy:yarn-giant",
+      "required": true,
+      "angleRms": 0.4632807787860832,
+      "positionRms": 0.12694194306230683,
+      "pass": true
+    },
+    {
+      "left": "enemy:yarn-giant:basic",
+      "right": "enemy:rain-spool",
+      "required": true,
+      "angleRms": 0.544643736672334,
+      "positionRms": 0.14316091459362795,
+      "pass": true
+    },
+    {
+      "left": "enemy:yarn-giant:basic",
+      "right": "enemy:pantry-crown",
+      "required": true,
+      "angleRms": 0.588739052315261,
+      "positionRms": 0.15006596615030382,
+      "pass": true
+    },
+    {
+      "left": "enemy:rain-spool:basic",
+      "right": "enemy:pantry-crown:basic",
+      "required": true,
+      "angleRms": 0.348775792607504,
+      "positionRms": 0.12877629235997207,
+      "pass": true
+    },
+    {
+      "left": "enemy:rain-spool:basic",
+      "right": "enemy:yarn-giant",
+      "required": true,
+      "angleRms": 0.44299970564605295,
+      "positionRms": 0.13393484653616297,
+      "pass": true
+    },
+    {
+      "left": "enemy:rain-spool:basic",
+      "right": "enemy:rain-spool",
+      "required": true,
+      "angleRms": 0.5608968427975032,
+      "positionRms": 0.17382753294788672,
+      "pass": true
+    },
+    {
+      "left": "enemy:rain-spool:basic",
+      "right": "enemy:pantry-crown",
+      "required": true,
+      "angleRms": 0.5807762630741641,
+      "positionRms": 0.1537807874124005,
+      "pass": true
+    },
+    {
+      "left": "enemy:pantry-crown:basic",
+      "right": "enemy:yarn-giant",
+      "required": true,
+      "angleRms": 0.4134398556599368,
+      "positionRms": 0.11416927846587731,
+      "pass": true
+    },
+    {
+      "left": "enemy:pantry-crown:basic",
+      "right": "enemy:rain-spool",
+      "required": true,
+      "angleRms": 0.47537328265016054,
+      "positionRms": 0.14172867483310655,
+      "pass": true
+    },
+    {
+      "left": "enemy:pantry-crown:basic",
+      "right": "enemy:pantry-crown",
+      "required": true,
+      "angleRms": 0.6134355384686307,
+      "positionRms": 0.13218794843736867,
+      "pass": true
+    },
+    {
+      "left": "enemy:yarn-giant",
+      "right": "enemy:rain-spool",
+      "required": true,
+      "angleRms": 0.44281778856187076,
+      "positionRms": 0.09267823269530544,
+      "pass": true
+    },
+    {
+      "left": "enemy:yarn-giant",
+      "right": "enemy:pantry-crown",
+      "required": true,
+      "angleRms": 0.5652584725926376,
+      "positionRms": 0.17024529747622455,
+      "pass": true
+    },
+    {
+      "left": "enemy:rain-spool",
+      "right": "enemy:pantry-crown",
+      "required": true,
+      "angleRms": 0.6169367660961357,
+      "positionRms": 0.2039454599702023,
+      "pass": true
+    }
+  ],
+  "offenders": [],
+  "method": "41 normalized-time samples of actual AnimationMixer tracks on loaded GLB rigs. Joint world transforms are expressed relative to each model, then relative to its unanimated rest pose. Positions are divided by model height. Quaternion distance is geodesic angular RMS. Every same-cat pair and every same-slot pair across selected cats must pass both thresholds. Colour, silhouette and camera do not enter the metric. Filmstrips use the actual gallery render path at eight equally spaced action times."
+}

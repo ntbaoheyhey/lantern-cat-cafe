@@ -2,6 +2,7 @@
 import { EFFECT_REGISTRY } from './effects';
 import type { EffectFrame } from './effects';
 import { cardSoundScore } from './card-audio-score';
+import { warmAudioDevice } from './audio-startup';
 export type AudioFamily = 'swish' | 'thud' | 'chime' | 'flame' | 'glass' | 'whoosh';
 export const AUDIO_SETTINGS = { master: .14, ambient: .018, cue: .14, peakCeiling: .72, notes: [196, 246.94, 293.66, 369.99, 293.66, 246.94, 220, 261.63], sampleRate: 44100 };
 export function cueFamily(shape: string): AudioFamily { return ['slash','arrow'].includes(shape) ? 'swish' : ['bash','charge','sweep','cross'].includes(shape) ? 'thud' : ['mend','shelter','rally','wall'].includes(shape) ? 'chime' : ['orb','storm'].includes(shape) ? 'flame' : ['flask','patch'].includes(shape) ? 'glass' : 'whoosh'; }
@@ -66,6 +67,8 @@ const PREFERENCE_KEY = 'tbh-card-audio-v1';
 export class CafeAudio {
   enabled = false; blocked = false; volume = .7;
   private persist = false;
+  private startup: AbortController | null = null;
+  private starting: Promise<void> | null = null;
   private ctx: AudioContext | null = null; private master: GainNode | null = null; private compressor: DynamicsCompressorNode | null = null;
   private key = ''; private round = 0; private actor = ''; private note = 0; private nextNote = 0;
   useBrowserPreferences(enabled: boolean) {
@@ -81,8 +84,17 @@ export class CafeAudio {
     this.remember();
   }
   async toggle() {
+    if (this.starting) return this.starting;
     if (this.enabled) { this.enabled = false; this.master?.gain.setTargetAtTime(0, this.ctx!.currentTime, .04); this.remember(); return; }
+    const controller = new AbortController(); this.startup = controller;
+    const task = this.enable(controller.signal); this.starting = task;
+    try { await task; } finally { if (this.startup === controller) { this.startup = null; this.starting = null; } }
+  }
+  private async enable(signal: AbortSignal) {
+    let release = () => {};
     try {
+      if (!this.ctx) release = await warmAudioDevice(signal);
+      if (signal.aborted) return;
       this.ctx ??= new AudioContext({ sampleRate: AUDIO_SETTINGS.sampleRate });
       if (!this.master) {
         this.master = this.ctx.createGain(); this.compressor = this.ctx.createDynamicsCompressor();
@@ -90,10 +102,13 @@ export class CafeAudio {
         this.compressor.attack.value = .004; this.compressor.release.value = .12;
         this.master.connect(this.compressor).connect(this.ctx.destination); noiseBuffer(this.ctx);
       }
-      await this.ctx.resume(); this.enabled = this.ctx.state === 'running'; this.blocked = !this.enabled;
+      await this.ctx.resume();
+      if (signal.aborted || !this.ctx || !this.master) return;
+      this.enabled = this.ctx.state === 'running'; this.blocked = !this.enabled;
       this.master.gain.setTargetAtTime(AUDIO_SETTINGS.master * this.volume, this.ctx.currentTime, .04);
       this.nextNote = this.ctx.currentTime; this.key = ''; this.ui(); this.remember();
-    } catch { this.blocked = true; this.enabled = false; }
+    } catch { if (!signal.aborted) { this.blocked = true; this.enabled = false; } }
+    finally { release(); }
   }
   ui() { if (this.enabled && this.ctx && this.master) synthCue(this.ctx, this.master, 'chime', 0, this.ctx.currentTime, 4); }
   update(frame: EffectFrame | null, round: number, actor: string | null, quiet: boolean, ambienceScale = 1) {
@@ -119,5 +134,5 @@ export class CafeAudio {
       tone(this.ctx, this.master, now, frequency, frequency, 1.2, AUDIO_SETTINGS.ambient, 'sine');
     }
   }
-  dispose() { this.enabled = false; this.master?.disconnect(); this.compressor?.disconnect(); void this.ctx?.close(); this.ctx = null; this.master = null; this.compressor = null; }
+  dispose() { this.startup?.abort(); this.startup = null; this.starting = null; this.enabled = false; this.master?.disconnect(); this.compressor?.disconnect(); void this.ctx?.close(); this.ctx = null; this.master = null; this.compressor = null; }
 }

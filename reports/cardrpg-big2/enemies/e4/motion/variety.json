@@ -1,0 +1,405 @@
+{
+  "artifact": "/tmp/cardrpg-big2-e4-index.html",
+  "sha256": "3b5dbe3d2f5e8e631e9c459df7f2db8cdb03fe6208c19ffe3dd4ceb2c1d14927",
+  "measuredAt": "2026-11-06T21:57:48.468Z",
+  "joints": [
+    "motion",
+    "head",
+    "armL",
+    "armR",
+    "footL",
+    "footR",
+    "tail"
+  ],
+  "thresholds": {
+    "angleRms": 0.1,
+    "positionRms": 0.012
+  },
+  "errors": [],
+  "rows": [
+    {
+      "action": {
+        "id": "enemy:crumb-sentinel:basic",
+        "owner": "crumb-sentinel",
+        "name": "Crumb Sentinel · Sugar pinch",
+        "ultimate": false,
+        "enemy": true
+      },
+      "height": 1.7068611201464023,
+      "clip": "enemy:crumb-sentinel:basic",
+      "duration": 1.27,
+      "clipNames": [
+        "idle",
+        "ready",
+        "walk-in",
+        "attack",
+        "skill1",
+        "skill2",
+        "skill3",
+        "ultimate",
+        "cast",
+        "hit",
+        "heavy-hit",
+        "guard",
+        "heal-receive",
+        "KO",
+        "victory",
+        "telegraph",
+        "spawn",
+        "taunt",
+        "step",
+        "special",
+        "stagger",
+        "down",
+        "idle-listen",
+        "idle-stretch",
+        "idle-tail",
+        "defeat",
+        "hit-left",
+        "hit-front",
+        "hit-right",
+        "heavy-hit-left",
+        "heavy-hit-front",
+        "heavy-hit-right",
+        "enemy:crumb-sentinel:basic",
+        "enemy:crumb-sentinel"
+      ],
+      "tracks": [
+        "guard_motion.quaternion",
+        "guard_head.quaternion",
+        "guard_armL.quaternion",
+        "guard_armR.quaternion",
+        "guard_tail.quaternion",
+        "guard_earL.quaternion",
+        "guard_earR.quaternion",
+        "guard_motion.position",
+        "guard_body.scale"
+      ],
+      "frameChecks": [
+        {
+          "progress": 0,
+          "sourceClip": "enemy:crumb-sentinel:basic",
+          "clipTime": 0,
+          "casterBounds": {
+            "x": 772.9392811922729,
+            "y": 169.2566715895553,
+            "width": 79.68557503514978,
+            "height": 118.75163898754516
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0
+        },
+        {
+          "progress": 0.14285714285714285,
+          "sourceClip": "enemy:crumb-sentinel:basic",
+          "clipTime": 0.08220528571428572,
+          "casterBounds": {
+            "x": 770.6547390099245,
+            "y": 168.4998125819468,
+            "width": 79.60143359758422,
+            "height": 120.35556449710884
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0.08220528571428572
+        },
+        {
+          "progress": 0.2857142857142857,
+          "sourceClip": "enemy:crumb-sentinel:basic",
+          "clipTime": 0.16441057142857143,
+          "casterBounds": {
+            "x": 767.1789803479257,
+            "y": 168.96981984676415,
+            "width": 82.02826532700135,
+            "height": 120.45971623043488
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0.16441057142857143
+        },
+        {
+          "progress": 0.42857142857142855,
+          "sourceClip": "enemy:crumb-sentinel:basic",
+          "clipTime": 0.24661585714285716,
+          "casterBounds": {
+            "x": 765.5373376515197,
+            "y": 169.26783924406323,
+            "width": 83.03185696188575,
+            "height": 120.54448362885415
+          },
+          "maxHeadAngle": 0.0000017075472925031877,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0.24661585714285716
+        },
+        {
+          "progress": 0.5714285714285714,
+          "sourceClip": "enemy:crumb-sentinel:basic",
+          "clipTime": 0.4561313111545988,
+          "casterBounds": {
+            "x": 743.9122617486106,
+            "y": 170.53224940817074,
+            "width": 95.5759683596699,
+            "height": 123.59526874644865
+          },
+          "maxHeadAngle": 0.0000017075472925031877,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 0.4561313111545988
+        },
+        {
+          "progress": 0.7142857142857143,
+          "sourceClip": "enemy:crumb-sentinel:basic",
+          "clipTime": 0.749008418367347,
+          "casterBounds": {
+            "x": 703.6388042486492,
+            "y": 171.1748082655775,
+            "width": 88.7057951390018,
+            "height": 120.73831238603782
+          },
+          "maxHeadAngle": 0.0000017075472925031877,
+          "maxQuaternionLengthError": 3.358094913252785e-9,
+          "capturedTime": 0.749008418367347
+        },
+        {
+          "progress": 0.8571428571428571,
+          "sourceClip": "enemy:crumb-sentinel:basic",
+          "clipTime": 1.0590669789227165,
+          "casterBounds": {
+            "x": 772.1517665387647,
+            "y": 165.49595522033636,
+            "width": 80.03131540739469,
+            "height": 120.84725867357898
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 1.0590669789227165
+        },
+        {
+          "progress": 1,
+          "sourceClip": "enemy:crumb-sentinel:basic",
+          "clipTime": 1.26873,
+          "casterBounds": {
+            "x": 772.9402635816161,
+            "y": 169.2510553332718,
+            "width": 79.68714061508012,
+            "height": 118.75222162567698
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 1.26873
+        }
+      ],
+      "filmstrip": "reports/cardrpg-big2/enemies/e4/filmstrips/enemy-crumb-sentinel-basic.webp",
+      "filmstripSha256": "c9fbddb40418d02faf74023d7b24d32abdf561636d90f0775b7572aa85fd43a9"
+    },
+    {
+      "action": {
+        "id": "enemy:crumb-sentinel",
+        "owner": "crumb-sentinel",
+        "name": "Crumb Sentinel · Every third round Sugar burst detonates Crumb trails on cats.",
+        "ultimate": false,
+        "enemy": true
+      },
+      "height": 1.7068611201464023,
+      "clip": "enemy:crumb-sentinel",
+      "duration": 1.36,
+      "clipNames": [
+        "idle",
+        "ready",
+        "walk-in",
+        "attack",
+        "skill1",
+        "skill2",
+        "skill3",
+        "ultimate",
+        "cast",
+        "hit",
+        "heavy-hit",
+        "guard",
+        "heal-receive",
+        "KO",
+        "victory",
+        "telegraph",
+        "spawn",
+        "taunt",
+        "step",
+        "special",
+        "stagger",
+        "down",
+        "idle-listen",
+        "idle-stretch",
+        "idle-tail",
+        "defeat",
+        "hit-left",
+        "hit-front",
+        "hit-right",
+        "heavy-hit-left",
+        "heavy-hit-front",
+        "heavy-hit-right",
+        "enemy:crumb-sentinel:basic",
+        "enemy:crumb-sentinel"
+      ],
+      "tracks": [
+        "guard_motion.quaternion",
+        "guard_head.quaternion",
+        "guard_armL.quaternion",
+        "guard_armR.quaternion",
+        "guard_tail.quaternion",
+        "guard_earL.quaternion",
+        "guard_earR.quaternion",
+        "guard_motion.position",
+        "guard_body.scale"
+      ],
+      "frameChecks": [
+        {
+          "progress": 0,
+          "sourceClip": "enemy:crumb-sentinel",
+          "clipTime": 0,
+          "casterBounds": {
+            "x": 772.9392811922729,
+            "y": 169.2566715895553,
+            "width": 79.68557503514978,
+            "height": 118.75163898754516
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0
+        },
+        {
+          "progress": 0.14285714285714285,
+          "sourceClip": "enemy:crumb-sentinel",
+          "clipTime": 0.08602000000000003,
+          "casterBounds": {
+            "x": 769.7450472644875,
+            "y": 171.45138250736213,
+            "width": 85.79569625777583,
+            "height": 119.7912737742175
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0.08602000000000003
+        },
+        {
+          "progress": 0.2857142857142857,
+          "sourceClip": "enemy:crumb-sentinel",
+          "clipTime": 0.17204000000000005,
+          "casterBounds": {
+            "x": 765.5103481574714,
+            "y": 177.3615794478083,
+            "width": 89.01943788136475,
+            "height": 118.42720202033308
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0.17204000000000005
+        },
+        {
+          "progress": 0.42857142857142855,
+          "sourceClip": "enemy:crumb-sentinel",
+          "clipTime": 0.25806,
+          "casterBounds": {
+            "x": 763.4867424606639,
+            "y": 179.43393758208157,
+            "width": 86.9012836406987,
+            "height": 117.95385542029709
+          },
+          "maxHeadAngle": 0.0000017075472925031877,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0.25806
+        },
+        {
+          "progress": 0.5714285714285714,
+          "sourceClip": "enemy:crumb-sentinel",
+          "clipTime": 0.47731612903225806,
+          "casterBounds": {
+            "x": 770.1422520942667,
+            "y": 154.13279065152085,
+            "width": 78.63910788739474,
+            "height": 122.62955768302055
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0.47731612903225806
+        },
+        {
+          "progress": 0.7142857142857143,
+          "sourceClip": "enemy:crumb-sentinel",
+          "clipTime": 0.7878708074534161,
+          "casterBounds": {
+            "x": 747.3111139913078,
+            "y": 179.68761406947888,
+            "width": 91.44383141944354,
+            "height": 118.06731516468491
+          },
+          "maxHeadAngle": 0.0000017075472925031877,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 0.7878708074534161
+        },
+        {
+          "progress": 0.8571428571428571,
+          "sourceClip": "enemy:crumb-sentinel",
+          "clipTime": 1.1291885714285714,
+          "casterBounds": {
+            "x": 772.6759807395119,
+            "y": 170.01205345556957,
+            "width": 89.38431892859933,
+            "height": 120.09711544416359
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 1.1291885714285714
+        },
+        {
+          "progress": 1,
+          "sourceClip": "enemy:crumb-sentinel",
+          "clipTime": 1.35864,
+          "casterBounds": {
+            "x": 772.9483650987956,
+            "y": 169.2670307318252,
+            "width": 79.70596360009154,
+            "height": 118.74830913368893
+          },
+          "maxHeadAngle": 0,
+          "maxQuaternionLengthError": 3.3580950242750873e-9,
+          "capturedTime": 1.35864
+        }
+      ],
+      "filmstrip": "reports/cardrpg-big2/enemies/e4/filmstrips/enemy-crumb-sentinel.webp",
+      "filmstripSha256": "039b715c80a18d22ef5c825a441b43a5b0e809f9e762d9ff4e6dba4ef3a1d9ce"
+    }
+  ],
+  "matrix": [
+    [
+      {
+        "angleRms": 2.462845654908828e-8,
+        "positionRms": 0
+      },
+      {
+        "angleRms": 0.5271393550928187,
+        "positionRms": 0.09482968133980897
+      }
+    ],
+    [
+      {
+        "angleRms": 0.5271393550928187,
+        "positionRms": 0.09482968133980897
+      },
+      {
+        "angleRms": 2.2459648866722014e-8,
+        "positionRms": 0
+      }
+    ]
+  ],
+  "pairs": [
+    {
+      "left": "enemy:crumb-sentinel:basic",
+      "right": "enemy:crumb-sentinel",
+      "required": true,
+      "angleRms": 0.5271393550928187,
+      "positionRms": 0.09482968133980897,
+      "pass": true
+    }
+  ],
+  "offenders": [],
+  "method": "41 normalized-time samples of actual AnimationMixer tracks on loaded GLB rigs. Joint world transforms are expressed relative to each model, then relative to its unanimated rest pose. Positions are divided by model height. Quaternion distance is geodesic angular RMS. Every same-cat pair and every same-slot pair across selected cats must pass both thresholds. Colour, silhouette and camera do not enter the metric. Filmstrips use the actual gallery render path at eight equally spaced action times."
+}

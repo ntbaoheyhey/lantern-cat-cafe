@@ -32,12 +32,25 @@
   style.textContent = css;
   document.head.append(style);
   const script = document.createElement('script');
-  script.textContent = js;
+  // An inline append synchronously compiles the entire game on the main thread.
+  // A local asynchronous script lets the browser schedule compilation separately.
+  const application = URL.createObjectURL(new Blob([js], { type: 'text/javascript' }));
+  script.src = application;
+  script.async = true;
   loading.textContent = 'Setting the table…';
   progress.value = manifest.length + 1;
   await new Promise(resolve => requestAnimationFrame(() => setTimeout(resolve, 0)));
   timing.scriptStarted = performance.now();
-  document.body.append(script);
+  try {
+    await new Promise((resolve, reject) => {
+      script.onload = resolve;
+      script.onerror = () => reject(new Error('The application script could not load.'));
+      document.body.append(script);
+    });
+    timing.scriptLoaded = performance.now();
+  } finally {
+    URL.revokeObjectURL(application);
+  }
 })().catch(error => {
   document.getElementById('loading').textContent = 'The demo could not open. ' + error.message;
 });

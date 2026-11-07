@@ -1,0 +1,29 @@
+{
+  "tool": "Original handwritten pose keys, Three.js merged props and instanced floor emblems",
+  "units": [
+    "yarn-giant",
+    "rain-spool",
+    "pantry-crown"
+  ],
+  "referenceArtUsed": false,
+  "parameters": {
+    "clipKeys": 41,
+    "interpolation": "smoothstep",
+    "introSeconds": 1.14,
+    "phaseSeconds": 0.3,
+    "emblemDraws": 1,
+    "emblemInstances": 5,
+    "addedFaceDraws": 0,
+    "propDraws": 2,
+    "reducedMotion": "static intro/phase, no gaze drift or blink"
+  },
+  "sources": {
+    "apps/web/src/game/squad/turn3d/card-boss-motion.ts": "19af3ca4872313f1eb6bff8c805b1a6e1363fc85d85276f0bb095bf3ebd4c6a1",
+    "apps/web/src/game/squad/turn3d/card-boss-effects.ts": "202664a5f59553397ea1c7eac6372c399785abffda5dc765a393cd31d7e6ed6a",
+    "apps/web/src/game/squad/turn3d/card-boss-performance.ts": "0aba18e1598e3c74c0b207d7148c142e15ad8ac6baa557aedbf737abe77fbeac",
+    "apps/web/src/game/squad/turn3d/card-enemy-expression.ts": "d7599e4c21371a808e11b3155cbce0b7af801222ba15f3ccc0ff3540b2f7cd7b",
+    "apps/web/src/game/squad/turn3d/card-enemy-adornment.ts": "fe4a0ac1ad4da1501feebe82703b488bbad482d29546fa22047599a2e2f5e34f"
+  },
+  "rig": "reports/cardrpg-big2/enemies/boss/rig/summary.json",
+  "renderedProof": "pending"
+}

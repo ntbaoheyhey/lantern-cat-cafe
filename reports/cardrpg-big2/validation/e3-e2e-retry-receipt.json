@@ -1,0 +1,42 @@
+{
+  "date": "2026-11-07T00:37:39.820460+00:00",
+  "source": {
+    "root": "/tmp/cardrpg-big2-e3-validation",
+    "head": "1f41cf7170c0995b3e00d928a3381a78a2763040",
+    "artifact": "/tmp/cardrpg-big2-e3-index.html",
+    "sha256": "99b68a554f57e16396aea67dd5324e4c17c2f6253d3d5ea1a7ac05f7f01c5c7a"
+  },
+  "distinctPassed": 421,
+  "complete": true,
+  "logs": [
+    {
+      "path": "reports/cardrpg-big2/validation/e3-e2e-network-retry.log",
+      "sha256": "483dd2235743949e982a5b6ee7c5471dce540296d229469504d0b7a92efbf096"
+    },
+    {
+      "path": "reports/cardrpg-big2/validation/e3-e2e-e2e.log",
+      "sha256": "6105c05498199863e1d27fd0e27693149cb3772424af8ce22bb177508205b2d6"
+    },
+    {
+      "path": "reports/cardrpg-big2/validation/e3-e2e-network-retry1-failed.log",
+      "sha256": "483dd2235743949e982a5b6ee7c5471dce540296d229469504d0b7a92efbf096"
+    },
+    {
+      "path": "reports/cardrpg-big2/validation/e3-e2e-network-retry3.log",
+      "sha256": "95ba14f8e154915dca47791e4f77594d892d4c3de1683bd7ea6686452e4ad6a1"
+    },
+    {
+      "path": "reports/cardrpg-big2/validation/e3-e2e-network-retry2.log",
+      "sha256": "650181fda70d0176e2cace5e406a1c7216cab265590b570c95298746e311b0c9"
+    },
+    {
+      "path": "reports/cardrpg-big2/validation/e3-e2e-initial-failed.log",
+      "sha256": "6105c05498199863e1d27fd0e27693149cb3772424af8ce22bb177508205b2d6"
+    },
+    {
+      "path": "reports/cardrpg-big2/validation/e3-e2e-network-retry4.log",
+      "sha256": "b629f1f05d2d912528703f72f34629d3fe2bbb7f846144f4d889025e27b37a5a"
+    }
+  ],
+  "recovery": "Exact original source restored from git after temporary archive deletion. Same pinned pnpm and test source, cached npm offline startup. Original failures retained."
+}

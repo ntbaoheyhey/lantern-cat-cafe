@@ -63,11 +63,18 @@ try {
       await page.getByRole('heading', { name: 'A small light. A brave little team.' }).waitFor({ timeout: 120000 });
       if (!actions) {
         actions = await page.evaluate(() => window.__depthReview.galleryActions);
+        receipt.fullGalleryActions = actions;
+        const owners = process.env.BIG_SKILL_OWNERS?.split(',').filter(Boolean);
+        const ids = process.env.BIG_SKILL_IDS?.split(',').filter(Boolean);
+        if (owners) actions = actions.filter(action => owners.includes(action.owner));
+        if (ids) actions = actions.filter(action => ids.includes(action.id));
+        if (process.env.BIG_SKILL_LIMIT) actions = actions.slice(0, Number(process.env.BIG_SKILL_LIMIT));
+        if (!actions.length) throw new Error('The gallery action filter matched no actions');
         receipt.actions = actions;
+        receipt.selection = { owners: owners ?? null, ids: ids ?? null, limit: process.env.BIG_SKILL_LIMIT ?? null,
+          fullGalleryCount: receipt.fullGalleryActions.length, measuredActionCount: actions.length,
+          scope: owners || ids || process.env.BIG_SKILL_LIMIT ? 'explicit subset' : 'full roster' };
       }
-      if (process.env.BIG_SKILL_IDS) actions = actions.filter(action => process.env.BIG_SKILL_IDS.split(',').includes(action.id));
-      if (!actions.length) throw new Error('The gallery action filter matched no actions');
-      if (process.env.BIG_SKILL_LIMIT) actions = actions.slice(0, Number(process.env.BIG_SKILL_LIMIT));
       const action = actions[index];
       await page.getByRole('button', { name: /Tangled Cafe/ }).click();
       await page.locator('.dp-node:enabled').first().click();

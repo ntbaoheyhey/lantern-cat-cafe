@@ -1,0 +1,239 @@
+{
+  "artifact": "/tmp/cardrpg-big2-b4-index.html",
+  "sha256": "f03b6ff13472a5164874ea64285b4199bf531406c69d254553a8923f5abdd90f",
+  "source": {
+    "root": "/tmp/cardrpg-big2-b4-validation",
+    "head": "690a070f703a67fd83c25184973c88ad75dad5f1",
+    "artifact": "/tmp/cardrpg-big2-b4-index.html",
+    "sha256": "f03b6ff13472a5164874ea64285b4199bf531406c69d254553a8923f5abdd90f"
+  },
+  "method": "Six fresh Chromium browser processes at DPR1, paired native/CPU4. Same44.1kHz rate; compare default device constructor against a silent sink followed by awaited setSinkId(default). Real sound click and automatic x4 playback. Assert output sink selected before enabling sound. Full activation wait remains in RAF window; no screenshots or tracing. This comparison does not prove an OS-cold audio service restart or perceptual sound quality.",
+  "rows": [
+    {
+      "index": 1,
+      "mode": "forced",
+      "cpu": 1,
+      "sinks": [],
+      "max": 149.90000000000055,
+      "p95": 16.700000000000728,
+      "constructors": [
+        {
+          "at": 7147.600000008941,
+          "ms": 141.29999999701977,
+          "originalOptions": {
+            "sampleRate": 44100
+          },
+          "options": {
+            "sampleRate": 44100
+          },
+          "sampleRate": 44100,
+          "baseLatency": 0.005351473922902495,
+          "outputLatency": 0
+        }
+      ],
+      "marks": [
+        {
+          "label": "sound-click-start",
+          "at": 7117.79999999702
+        },
+        {
+          "label": "sound-enabled",
+          "at": 7298.70000000298
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "mode": "silent",
+      "cpu": 1,
+      "sinks": [
+        {
+          "at": 7302.0999999940395,
+          "ms": 5,
+          "sinkId": ""
+        }
+      ],
+      "max": 133.30000000000018,
+      "p95": 16.800000000000182,
+      "constructors": [
+        {
+          "at": 7169.5,
+          "ms": 131.8999999910593,
+          "originalOptions": {
+            "sampleRate": 44100
+          },
+          "options": {
+            "sampleRate": 44100,
+            "sinkId": {
+              "type": "none"
+            }
+          },
+          "sampleRate": 44100,
+          "baseLatency": 0.01,
+          "outputLatency": 0.024
+        }
+      ],
+      "marks": [
+        {
+          "label": "sound-click-start",
+          "at": 7140.79999999702
+        },
+        {
+          "label": "sound-enabled",
+          "at": 7331.5999999940395
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "mode": "silent",
+      "cpu": 4,
+      "sinks": [
+        {
+          "at": 9222.10000000894,
+          "ms": 5.5999999940395355,
+          "sinkId": ""
+        }
+      ],
+      "max": 133.3000000000011,
+      "p95": 16.799999999999272,
+      "constructors": [
+        {
+          "at": 9087.800000011921,
+          "ms": 132.3999999910593,
+          "originalOptions": {
+            "sampleRate": 44100
+          },
+          "options": {
+            "sampleRate": 44100,
+            "sinkId": {
+              "type": "none"
+            }
+          },
+          "sampleRate": 44100,
+          "baseLatency": 0.01,
+          "outputLatency": 0.024
+        }
+      ],
+      "marks": [
+        {
+          "label": "sound-click-start",
+          "at": 9057
+        },
+        {
+          "label": "sound-enabled",
+          "at": 9261.300000011921
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "mode": "forced",
+      "cpu": 4,
+      "sinks": [],
+      "max": 149.89999999999964,
+      "p95": 16.700000000000728,
+      "constructors": [
+        {
+          "at": 9050.59999999404,
+          "ms": 133,
+          "originalOptions": {
+            "sampleRate": 44100
+          },
+          "options": {
+            "sampleRate": 44100
+          },
+          "sampleRate": 44100,
+          "baseLatency": 0.005351473922902495,
+          "outputLatency": 0
+        }
+      ],
+      "marks": [
+        {
+          "label": "sound-click-start",
+          "at": 9010.09999999404
+        },
+        {
+          "label": "sound-enabled",
+          "at": 9209
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "mode": "forced",
+      "cpu": 1,
+      "sinks": [],
+      "max": 133.30000000000018,
+      "p95": 16.700000000000728,
+      "constructors": [
+        {
+          "at": 7149.9000000059605,
+          "ms": 129.59999999403954,
+          "originalOptions": {
+            "sampleRate": 44100
+          },
+          "options": {
+            "sampleRate": 44100
+          },
+          "sampleRate": 44100,
+          "baseLatency": 0.005351473922902495,
+          "outputLatency": 0
+        }
+      ],
+      "marks": [
+        {
+          "label": "sound-click-start",
+          "at": 7119.800000011921
+        },
+        {
+          "label": "sound-enabled",
+          "at": 7287.100000008941
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "mode": "silent",
+      "cpu": 1,
+      "sinks": [
+        {
+          "at": 7301.699999988079,
+          "ms": 1.800000011920929,
+          "sinkId": ""
+        }
+      ],
+      "max": 133.40000000000055,
+      "p95": 16.799999999999272,
+      "constructors": [
+        {
+          "at": 7170.5999999940395,
+          "ms": 130.40000000596046,
+          "originalOptions": {
+            "sampleRate": 44100
+          },
+          "options": {
+            "sampleRate": 44100,
+            "sinkId": {
+              "type": "none"
+            }
+          },
+          "sampleRate": 44100,
+          "baseLatency": 0.01,
+          "outputLatency": 0.024
+        }
+      ],
+      "marks": [
+        {
+          "label": "sound-click-start",
+          "at": 7140.5
+        },
+        {
+          "label": "sound-enabled",
+          "at": 7328
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

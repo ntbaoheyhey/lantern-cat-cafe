@@ -171,14 +171,16 @@ const receipt = { artifact, sha256: createHash('sha256').update(await readFile(a
   method: '41 normalized-time samples of actual AnimationMixer tracks on loaded GLB rigs. Joint world transforms are expressed relative to each model, then relative to its unanimated rest pose. Positions are divided by model height. Quaternion distance is geodesic angular RMS. Every same-cat pair and every same-slot pair across selected cats must pass both thresholds. Colour, silhouette and camera do not enter the metric. Filmstrips use the actual gallery render path at eight equally spaced action times.' };
 await writeFile(`${output}/trajectories.json`, JSON.stringify(receipt));
 await writeFile(`${output}/variety.json`, JSON.stringify({ ...receipt, rows: rows.map(({ samples, rest, ...row }) => row) }, null, 2));
-const motionSources = ['card-motion.ts', 'card-motion-data.ts', 'card-roster-motion.ts', 'card-enemy-motion.ts']
-  .map(file => `apps/web/src/game/squad/turn3d/${file}`);
-const sourceHashes = Object.fromEntries(await Promise.all(motionSources.map(async file =>
-  [file, createHash('sha256').update(await readFile(file)).digest('hex')])));
+const buildPath = process.env.BIG_BUILD_RECEIPT || artifact.replace(/-index\.html$/, '-build.json');
+const build = JSON.parse(await readFile(buildPath, 'utf8'));
+if (build.sha256 !== receipt.sha256) throw new Error('Motion provenance must describe the captured artifact');
+const sourceHashes = Object.fromEntries(Object.entries(build.sourceHashes).filter(([file]) =>
+  /^apps\/web\/src\/game\/squad\/turn3d\/card-(?:motion|roster|enemy|boss).*\.ts$/.test(file)));
 await writeFile(process.env.BIG_PROVENANCE || 'assets/provenance/cardrpg-big2-motion-batch1.json', JSON.stringify({
   tool: 'Runtime procedural keyframe authoring, createCardClips and tools/cardrpg-big2/motion-measure.mjs',
   authorship: 'Original authored gestures on the existing original Taskbar Hero rigid-node rigs',
-  sources: sourceHashes, sampledKeys: 41, interpolation: 'Smoothstep between authored pose keys, quaternion tracks',
+  artifactSha256: receipt.sha256, buildReceipt: buildPath, sources: sourceHashes,
+  sampledKeys: 41, interpolation: 'Smoothstep between authored pose keys, quaternion tracks',
   secondaryMotion: { lagFraction: .06, weights: { tailTip: .55, tailMid: .4, other: .24 } },
   fidgets: { minimumIntervalSeconds: 4, maximumIntervalSeconds: 8, durationSeconds: 1.5 },
   stopDistance: 1.2, assets: rows.map(row => ({ model: row.action.owner, clip: row.clip,

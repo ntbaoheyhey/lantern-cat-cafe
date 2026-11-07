@@ -1,0 +1,79 @@
+[
+  {
+    "name": "typecheck",
+    "args": [
+      "typecheck"
+    ],
+    "exit": 0,
+    "started": "2026-11-07T00:37:35.307Z",
+    "ended": "2026-11-07T00:38:18.122Z",
+    "log": "reports/cardrpg-big2/validation/review-source-typecheck.log",
+    "sha256": "42e1219e30d41d9fde9da62209214c4f175a5ff4883808d42f8d91335a217c51",
+    "counts": []
+  },
+  {
+    "name": "demo-types",
+    "args": [
+      "--filter",
+      "@taskbar-hero/web",
+      "exec",
+      "tsc",
+      "-p",
+      "../../tools/cardrpg-big2/tsconfig.json",
+      "--noEmit"
+    ],
+    "exit": 0,
+    "started": "2026-11-07T00:38:18.125Z",
+    "ended": "2026-11-07T00:38:39.604Z",
+    "log": "reports/cardrpg-big2/validation/review-source-demo-types.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "counts": []
+  },
+  {
+    "name": "lint",
+    "args": [
+      "lint"
+    ],
+    "exit": 0,
+    "started": "2026-11-07T00:38:39.605Z",
+    "ended": "2026-11-07T00:39:15.388Z",
+    "log": "reports/cardrpg-big2/validation/review-source-lint.log",
+    "sha256": "bd87a56d4c1ec3e236b65113adbb72f5e212d6bb7892eca153287bbb29a58316",
+    "counts": []
+  },
+  {
+    "name": "tests",
+    "args": [
+      "test"
+    ],
+    "exit": 1,
+    "started": "2026-11-07T00:39:15.388Z",
+    "ended": "2026-11-07T00:40:24.371Z",
+    "log": "reports/cardrpg-big2/validation/review-source-tests.log",
+    "sha256": "65f77b72c91d2a166317a35654963feb853f8e98e0be74abd177b54a2227a5d5",
+    "counts": [
+      "packages/chain test:  Test Files  3 passed (3)",
+      "packages/chain test:       Tests  32 passed (32)",
+      "packages/auth test:  Test Files  1 passed (1)",
+      "packages/auth test:       Tests  24 passed (24)",
+      "packages/game-rules test:  ❯ src/v2/codex/generator.test.mjs (3 tests | 1 failed) 9258ms",
+      "supabase/tests test:  Test Files  34 passed (34)",
+      "supabase/tests test:       Tests  581 passed (581)",
+      "packages/game-rules test: ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯",
+      "packages/game-rules test:  Test Files  1 failed | 50 passed | 3 skipped (54)",
+      "packages/game-rules test:       Tests  1 failed | 934 passed | 2 expected fail | 11 skipped (948)"
+    ]
+  },
+  {
+    "name": "build",
+    "args": [
+      "build"
+    ],
+    "exit": 0,
+    "started": "2026-11-07T00:40:24.371Z",
+    "ended": "2026-11-07T00:40:40.762Z",
+    "log": "reports/cardrpg-big2/validation/review-source-build.log",
+    "sha256": "cc288dfe104b0b8e4af9cf0e8713dc9a9b77e6617f09d3e5106880e1619dafa4",
+    "counts": []
+  }
+]

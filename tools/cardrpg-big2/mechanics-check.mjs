@@ -16,6 +16,15 @@ try{
   await page.goto('file://'+artifact);
   await page.getByRole('button',{name:'Mechanics lab',exact:true}).click();
   const account=await page.evaluate(()=>JSON.stringify(window.__depthReview.state));
+  const compact=await page.locator('.b2-lab').getAttribute('data-layout')==='compact';
+  if(process.env.BIG_LAB_EXPECT_POLISH==='1')assert.equal(compact,true);
+  let masterAlignment;
+  if(compact){masterAlignment=await page.locator('.b2-master').evaluate(label=>{
+   const box=label.querySelector('input').getBoundingClientRect(),text=document.createRange();
+   text.selectNodeContents([...label.childNodes].find(n=>n.nodeType===Node.TEXT_NODE&&n.textContent.trim()));
+   const t=text.getBoundingClientRect();return{width:box.width,height:box.height,gap:t.left-box.right,centerOffset:Math.abs((box.top+box.height/2)-(t.top+t.height/2))};
+  });assert.ok(masterAlignment.width<=20&&masterAlignment.height<=20&&masterAlignment.gap>=6&&masterAlignment.gap<=16&&masterAlignment.centerOffset<=5,JSON.stringify(masterAlignment));}
+
   const toggles=page.locator('.b2-lab input[type=checkbox]');assert.equal(await toggles.count(),4);
   for(const box of await toggles.all())assert.equal(await box.isChecked(),false);
   assert.equal(await page.getByRole('navigation',{name:'Cafe screens'}).isVisible(),true);
@@ -44,6 +53,8 @@ try{
   assert.equal(result.account,account);assert.equal(result.calm,calm);
   assert.ok(result.cues.length>0);
   for(const cue of result.cues){assert.equal(cue.plan[`auto-extra:${cue.id}`],cue.targetId);assert.ok(cue.visible.includes(cue.label));}
+  let resultBounds;
+  if(compact){resultBounds=await page.locator('.b2-lab-result').boundingBox();assert.ok(resultBounds.y>=0&&resultBounds.y+resultBounds.height<=height,JSON.stringify(resultBounds));}
   await page.screenshot({path:`${out}/${width}-${height}-cpu${cpu}-result.png`});
   await page.getByRole('button',{name:'Fight experiment',exact:true}).click();
   await page.getByRole('button',{name:'Skip to result',exact:true}).click();
@@ -51,7 +62,7 @@ try{
   await page.getByRole('button',{name:'Return to cafe',exact:true}).click();
   assert.equal(await page.evaluate(()=>JSON.stringify(window.__depthReview.state)),account);
   const times=result.frames.map(f=>f.ms).sort((a,b)=>a-b);
-  rows.push({width,height,cpu,calm,frames:result.frames,cues:result.cues,finalHash:createHash('sha256').update(JSON.stringify(result.battle)).digest('hex'),max:times.at(-1),p95:times[Math.floor(times.length*.95)],calls:Math.max(...result.frames.map(f=>f.calls)),triangles:Math.max(...result.frames.map(f=>f.triangles))});
+  rows.push({width,height,cpu,calm,compact,masterAlignment,resultBounds,frames:result.frames,cues:result.cues,finalHash:createHash('sha256').update(JSON.stringify(result.battle)).digest('hex'),max:times.at(-1),p95:times[Math.floor(times.length*.95)],calls:Math.max(...result.frames.map(f=>f.calls)),triangles:Math.max(...result.frames.map(f=>f.triangles))});
   await writeFile(`${out}/checks.json`,JSON.stringify({artifact,sha256:createHash('sha256').update(await readFile(artifact)).digest('hex'),rows,errors},null,2));
   await page.close();
  }

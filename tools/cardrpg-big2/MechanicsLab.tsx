@@ -16,9 +16,10 @@ export function MechanicsLab({ close }: { close: () => void }) {
     return () => { m.audio.dispose(); delete window.__mechanicsLab; };
   }, [m]);
   const active = m.watching, hints = m.battle ? autoIntentHints(m.battle, m.options) : [];
-  return <section className="b2-lab" aria-label="Mechanics lab">
+  return <section className="b2-lab" aria-label="Mechanics lab" data-layout="compact">
     <div className="b2-lab-heading"><div><small>THE LANTERN · EXPERIMENT TABLE</small><h1>Mechanics lab</h1></div><button onClick={close}>Return to cafe</button></div>
     {!active && <div className="b2-lab-prep">
+      {m.battle?.result && <div className="b2-lab-result" role="status"><h2>{m.battle.result === 'party' ? 'Companions win' : 'The night wins'}</h2><p>{m.battle.round} rounds · {m.battle.choices.length} companion turns · {m.battle.log.filter(e => e.kind === 'auto-extra').length} extra triggers</p><details><summary>Experiment log</summary>{m.battle.log.filter(e => e.kind === 'auto-extra').map((e,i) => <p key={i}>Round {e.round}: {e.text}</p>)}</details></div>}
       <p>Prepare three companions, then watch them act. Experiments start off. This table has its own account and grants no rewards.</p>
       <div className="b2-lab-settings"><label>Team<select value={team} onChange={e => setTeam(e.target.value as typeof team)}>{Object.entries(LAB_TEAMS).map(([id, cats]) => <option key={id} value={id}>{cats.join(' · ')}</option>)}</select></label>
         <label>Chapter<select value={chapter} onChange={e => setChapter(Number(e.target.value))}>{[1,2,3].map(n => <option key={n}>{n}</option>)}</select></label>
@@ -31,8 +32,7 @@ export function MechanicsLab({ close }: { close: () => void }) {
         <label><input type="checkbox" checked={options.intentLens} onChange={e => setOptions({ ...options, intentLens: e.target.checked })} /><b>Intent lens</b><span>Read the enemy’s committed target, phase and flavour weakness. Changes no rules.</span></label>
       </fieldset>
       <button className="b2-fight" onClick={() => { m.prepare(team, chapter, seed, options); setEncounter(n => n + 1); m.fight(); }}>Fight experiment</button>
-      {m.battle?.result && <div className="b2-lab-result" role="status"><h2>{m.battle.result === 'party' ? 'Companions win' : 'The night wins'}</h2><p>{m.battle.round} rounds · {m.battle.choices.length} recorded party actions · {m.battle.log.filter(e => e.kind === 'auto-extra').length} extra triggers</p><details><summary>Experiment log</summary>{m.battle.log.filter(e => e.kind === 'auto-extra').map((e,i) => <p key={i}>Round {e.round}: {e.text}</p>)}</details></div>}
-      <small>Evidence: 18,000 variant fights, 50 seeds per cell. Disabled/lens-only state parity: 7,200/7,200. All level 6 reference cells win 100%; no balance conclusion from those ceilings. Changes remain experimental.</small>
+      <small className="b2-lab-note">Try the same team and seed with different ideas enabled. These experiments are optional; your collection and rewards stay unchanged. Detailed comparisons are in the review report.</small>
     </div>}
     {m.sceneStarted && <BattleView key={encounter} m={m} />}
     {active && <aside className="b2-lab-live" aria-label="Experiment cues"><b>Experiment · options locked during Fight</b>

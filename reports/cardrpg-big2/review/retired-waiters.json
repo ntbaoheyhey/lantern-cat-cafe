@@ -1,0 +1,25 @@
+{
+  "date": "2026-11-06T22:30:24.360236+00:00",
+  "rows": [
+    {
+      "pid": 58498,
+      "command": "node tools/cardrpg-big2/await-process.mjs 43282 node tools/cardrpg-big2/matrix-series.mjs b2a b2b b2c e1 e2 e3 e4 boss",
+      "reason": "Pending superseded functional checks consolidated into current review artifact; scoped matrices will resume after review acceptance."
+    },
+    {
+      "pid": 43282,
+      "command": "node tools/cardrpg-big2/await-process.mjs 43008 node tools/cardrpg-big2/with-timing-lock.mjs node tools/cardrpg-big2/flag-off-check.mjs",
+      "reason": "Pending superseded functional checks consolidated into current review artifact; scoped matrices will resume after review acceptance."
+    },
+    {
+      "pid": 43008,
+      "command": "node tools/cardrpg-big2/await-process.mjs 39632 node tools/cardrpg-big2/with-timing-lock.mjs zsh /tmp/cardrpg-big2-hitstop-checks.sh",
+      "reason": "Pending superseded functional checks consolidated into current review artifact; scoped matrices will resume after review acceptance."
+    },
+    {
+      "pid": 39632,
+      "command": "node tools/cardrpg-big2/await-process.mjs 37902 node tools/cardrpg-big2/with-timing-lock.mjs node tools/cardrpg-big2/delivery-measurements.mjs",
+      "reason": "Pending superseded functional checks consolidated into current review artifact; scoped matrices will resume after review acceptance."
+    }
+  ]
+}

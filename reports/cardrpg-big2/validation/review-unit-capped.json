@@ -1,0 +1,27 @@
+[
+  {
+    "name": "tests",
+    "args": [
+      "test"
+    ],
+    "exit": 0,
+    "started": "2026-11-07T00:45:45.290Z",
+    "ended": "2026-11-07T00:47:32.200Z",
+    "log": "reports/cardrpg-big2/validation/review-unit-capped-tests.log",
+    "sha256": "b64ac41793ac87dcffa32bed6ab5834704815c36213c93dd28c2f0e328441b54",
+    "counts": [
+      "packages/chain test:  Test Files  3 passed (3)",
+      "packages/chain test:       Tests  32 passed (32)",
+      "packages/auth test:  Test Files  1 passed (1)",
+      "packages/auth test:       Tests  24 passed (24)",
+      "supabase/tests test:  Test Files  34 passed (34)",
+      "supabase/tests test:       Tests  581 passed (581)",
+      "packages/game-rules test:  Test Files  51 passed | 3 skipped (54)",
+      "packages/game-rules test:       Tests  935 passed | 2 expected fail | 11 skipped (948)",
+      "packages/api-contract test:  Test Files  1 passed (1)",
+      "packages/api-contract test:       Tests  16 passed (16)",
+      "apps/web test:  Test Files  169 passed (169)",
+      "apps/web test:       Tests  1702 passed (1702)"
+    ]
+  }
+]
