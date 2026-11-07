@@ -1,8 +1,8 @@
 # LOOK state
 ## NOW
-L3 audited: source71da901f on acceptedA4d525a8a; exact02ffd9cb/22,578,111bytes; all1301inputs verified. Fivegates421E2E/1740web pass;9camera/6battleAB/36face/6cancel pass. Cold7nativeMAX33.4/CPU4MAX133.3ms;24castsMAX16.8/100%≤20/errors0. Startup11JS/3,522,544bytes/686modules/0Three-model; strictparity+44 MISS. Coordinator46983 completed; no duplicatechecks.
+L4 audited on clean runtime b5e7c16c/acceptedA3 daba7d7c: fb56cd44/23,995,962bytes/1580inputs. All67effects and19sheets reviewed;0threshold/face/overdraw/errors; strict1162/2211pair regressions MISS. Fivegates1749web/421E2E pass; GPU6/cancel6/post36/cameras9/AB6 pass;370resources once. Cold7native50.1/CPU4 183.4ms MISS;24castsMAX16.8/100%≤20/errors0; startup+93byte parity MISS. Coordinator11183 completed; do not rerun.
 ## NEXT
-L3 published9b1a04a4/draft363; ownL1/L2refs atomically reconciled914a991f/82cf6d5c with explicit leases. CurrentL4branch from9b1a04a4; originalflipbook/capture scripts promoted; runtime material/depthpass draft typechecks but no atlasrender/build/acceptance yet. Oneauthor coordinator57138/session14944, log/tmp/cardrpg-look-l4-author.log: before31captures→216Blenderframes→pack. LatestA13:44 noacceptedcheckpoint beyond4d525a8a. L4 scratch only, no runtime/assetsaccepted. RemainingL4→L6→L5→L7 and finalmatrix/lifecycle/CPU4BalancedLow open.
+Publish compact L4 evidence/draft/ledger, reconcile L1/L2/L3 refs with exact leases, then L6 full12portraits/48icons/4rarity plates→L5→L7. L6 scratch only, no renders/integration. A4P1 presentation request acknowledged; await published schema/fixture, no A4 adoption yet. Fullmatrix/lifecycle20/CPU4BalancedLow unrun.
 
 ## DONE
 Read exact user brief twice, old B HANDOFF, both outboxes; verified remote delivery tip and full worktree created.
@@ -76,3 +76,5 @@ L0 five source gates421E2E + flagoff PASS; baseline244/cold7/24casts complete. L
 - 2026-11-07T13:48Z continuation: actual1280 integrated battle and three post tiers viewed; nav/HUD/control clarity retained, weak Soot contrast/mirrored props/inherited VFX still recorded. Fresh36face masks0offenders and6cancelsallresourcesreleased. Unit1740web; no source changes since build. L4preparation only, no asset renders/modelrequests.
 
 - 2026-11-07T14:02:33.458295+00:00 L3 phase audit complete:1301inputs, allfreshfivegates/9camera/6AB/36faces/6cancels/7cold/24casts. Startup correction3,522,544/+44, nothistoricalL2+4. Nativecold33.4/CPU4 133.3; slow1440DPR2battle-ready7719ms retained. A13:44requestread; noacceptedtipbeyond4d525a8a.
+
+- 2026-11-07T16:43:17.557960+00:00 L4 phase audit passed1580source hashes and all receipt bindings; three misses remain explicit (1162pairs/startup+93/cold183.4). All19sheets/four-role self-review completed. Source unchanged during gates. Portable evidence selection retains all raw local originals.
