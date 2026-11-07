@@ -174,12 +174,12 @@ export class SpellVfx{
   for(const m of this.root.children){m.visible=true;m.frustumCulled=false;}this.motes.count=1;
   renderer.setRenderTarget(target);for(const geometry of this.shapes.values()){
    if(this.disposed){renderer.setRenderTarget(null);target.dispose();return;}
-   this.emblems[0]!.geometry=geometry;renderer.render(stage,camera);
+   const emblem=this.emblems[0]!;if(emblem.geometry!==geometry&&emblem.geometry.attributes.position===undefined)emblem.geometry.dispose();emblem.geometry=geometry;renderer.render(stage,camera);
    if(this.cooperative)await new Promise(resolve=>setTimeout(resolve,0));
   }
   // Prepare the direct output with the battlefield's actual fog/light state,
   // as well as its HDR target. A detached no-fog scene is a different shader.
   renderer.setRenderTarget(null);renderer.render(stage,camera);target.dispose();for(const m of this.root.children)m.visible=false;this.motes.visible=true;this.motes.count=0;
  }
- dispose(){this.disposed=true;this.shapes.forEach(g=>g.dispose());this.root.removeFromParent();for(const m of this.ribbons){m.geometry.dispose();m.material.dispose()}for(const m of this.emblems)m.material.dispose();for(const m of this.flames){m.geometry.dispose();m.material.dispose()}for(const m of this.bolts){m.geometry.dispose();m.material.dispose()}this.motes.geometry.dispose();this.motes.material.dispose()}
+ dispose(){if(this.disposed)return;this.disposed=true;this.shapes.forEach(g=>g.dispose());this.root.removeFromParent();for(const m of this.ribbons){m.geometry.dispose();m.material.dispose()}for(const m of this.emblems){if(m.geometry.attributes.position===undefined)m.geometry.dispose();m.material.dispose()}for(const m of this.flames){m.geometry.dispose();m.material.dispose()}for(const m of this.bolts){m.geometry.dispose();m.material.dispose()}this.motes.geometry.dispose();this.motes.material.dispose()}
 }
