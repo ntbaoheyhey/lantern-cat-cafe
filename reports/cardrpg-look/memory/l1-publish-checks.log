@@ -1,0 +1,56 @@
+{"lock":"acquired","lane":"B-LOOK","pid":87651,"startedAt":"2026-11-07T05:46:29.117Z","task":"LOOK source-bound L1 build"}
+[plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-cardrpg-look/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+{"head":"b9c521e31efe1254c88694975f7397d68ce9ed09","dirty":true,"bytes":20287129,"sha256":"eadac6b2394d5c4d378afab38dacf1364004e5cdcdf416ab408282b29ac56fb0"}
+{"lock":"released","task":"LOOK source-bound L1 build"}
+{"lock":"acquired","lane":"B-LOOK","pid":87732,"startedAt":"2026-11-07T05:46:41.684Z","task":"LOOK A/B 1024"}
+{"width":1024,"height":600,"toggles":2,"errors":[]}
+{"lock":"released","task":"LOOK A/B 1024"}
+{"lock":"acquired","lane":"B-LOOK","pid":87732,"startedAt":"2026-11-07T05:47:11.832Z","task":"LOOK A/B 1280"}
+{"width":1280,"height":720,"toggles":2,"errors":[]}
+{"lock":"released","task":"LOOK A/B 1280"}
+{"lock":"acquired","lane":"B-LOOK","pid":87732,"startedAt":"2026-11-07T05:47:41.871Z","task":"LOOK A/B 1440"}
+{"width":1440,"height":900,"toggles":2,"errors":[]}
+{"lock":"released","task":"LOOK A/B 1440"}
+{"lock":"acquired","lane":"B-LOOK","pid":87988,"startedAt":"2026-11-07T05:48:12.144Z","task":"LOOK l1 flag-off build"}
+{"prepared":true,"chunks":29,"directory":"/tmp/cardrpg-look-l1-flag-off"}
+{"lock":"released","task":"LOOK l1 flag-off build"}
+{"lock":"acquired","lane":"B-LOOK","pid":87988,"startedAt":"2026-11-07T05:48:27.441Z","task":"LOOK l1 flag-off browser"}
+{"scripts":11,"prohibitedModules":[],"modelRequests":[],"errors":[]}
+{"lock":"released","task":"LOOK l1 flag-off browser"}
+{"lock":"acquired","lane":"B-LOOK","pid":87988,"startedAt":"2026-11-07T05:48:43.969Z","task":"LOOK l1 cold batch1"}
+{"name":"1280x720-dpr1-cpu1","max":33.39999999999998,"p95":16.799999999999272,"above50":0,"stageFraction":0.7888888888888889,"errors":[]}
+{"name":"1280x720-dpr2-cpu1","max":33.30000000000007,"p95":16.799999999999272,"above50":0,"stageFraction":0.7888888888888889,"errors":[]}
+{"name":"1440x900-dpr1-cpu1","max":16.80000000000291,"p95":16.700000000000728,"above50":0,"stageFraction":0.8311111111111111,"errors":[]}
+{"name":"1440x900-dpr2-cpu1","max":16.80000000000291,"p95":16.700000000000728,"above50":0,"stageFraction":0.8311111111111111,"errors":[]}
+{"name":"1280x720-dpr1-cpu4","max":100,"p95":16.799999999999272,"above50":7,"stageFraction":0.7888888888888889,"errors":[]}
+{"name":"1280x720-dpr2-cpu4","max":133.30000000000018,"p95":16.799999999999272,"above50":6,"stageFraction":0.7888888888888889,"errors":[]}
+{"lock":"released","task":"LOOK l1 cold batch1"}
+{"lock":"acquired","lane":"B-LOOK","pid":87988,"startedAt":"2026-11-07T05:52:44.799Z","task":"LOOK l1 cold batch2"}
+{"name":"2560x1440-dpr1-cpu1","max":16.80000000000291,"p95":16.700000000000728,"above50":0,"stageFraction":0.8944444444444445,"errors":[]}
+{"lock":"released","task":"LOOK l1 cold batch2"}
+{"lock":"acquired","lane":"B-LOOK","pid":87988,"startedAt":"2026-11-07T05:53:28.079Z","task":"LOOK l1 mochi first/repeat"}
+{"name":"1280x720-dpr1-cpu1-high-mochi-1","max":33.299999999999955,"first":16.799999999999272,"repeat":16.80000000000109,"errors":[]}
+{"name":"1280x720-dpr1-cpu1-high-mochi-2","max":33.30000000000001,"first":16.800000000000182,"repeat":16.80000000000109,"errors":[]}
+{"name":"1280x720-dpr1-cpu1-high-mochi-3","max":33.299999999999955,"first":16.799999999999272,"repeat":16.80000000000109,"errors":[]}
+{"name":"1280x720-dpr1-cpu1-high-mochi-4","max":33.400000000000034,"first":16.800000000000182,"repeat":16.80000000000109,"errors":[]}
+{"lock":"released","task":"LOOK l1 mochi first/repeat"}
+{"lock":"acquired","lane":"B-LOOK","pid":87988,"startedAt":"2026-11-07T05:54:26.639Z","task":"LOOK l1 soot first/repeat"}
+{"name":"1280x720-dpr1-cpu1-high-soot-1","max":33.299999999999955,"first":16.80000000000109,"repeat":16.80000000000109,"errors":[]}
+{"name":"1280x720-dpr1-cpu1-high-soot-2","max":33.30000000000007,"first":16.700000000000728,"repeat":16.80000000000109,"errors":[]}
+{"name":"1280x720-dpr1-cpu1-high-soot-3","max":33.299999999999955,"first":16.800000000000182,"repeat":16.80000000000109,"errors":[]}
+{"name":"1280x720-dpr1-cpu1-high-soot-4","max":33.30000000000001,"first":16.799999999999272,"repeat":16.80000000000109,"errors":[]}
+{"lock":"released","task":"LOOK l1 soot first/repeat"}
+{"lock":"acquired","lane":"B-LOOK","pid":87988,"startedAt":"2026-11-07T05:55:15.445Z","task":"LOOK l1 clover first/repeat"}
+{"name":"1280x720-dpr1-cpu1-high-clover-1","max":33.39999999999998,"first":16.799999999999272,"repeat":16.799999999999272,"errors":[]}
+{"name":"1280x720-dpr1-cpu1-high-clover-2","max":33.30000000000007,"first":16.800000000000182,"repeat":16.799999999999272,"errors":[]}
+{"name":"1280x720-dpr1-cpu1-high-clover-3","max":33.299999999999955,"first":16.80000000000109,"repeat":16.80000000000109,"errors":[]}
+{"name":"1280x720-dpr1-cpu1-high-clover-4","max":33.299999999999955,"first":16.80000000000109,"repeat":16.799999999999272,"errors":[]}
+{"lock":"released","task":"LOOK l1 clover first/repeat"}
+{"artifact":"eadac6b2394d5c4d378afab38dacf1364004e5cdcdf416ab408282b29ac56fb0","coldRuns":7,"castWindows":24,"coldInteractiveMs":[894.3000000007451,881.8999999985099,882.6999999992549,894.2999999970198,1627.7999999970198,1662.5999999977648,879.6000000014901],"battleReadyMs":[6776.70000000298,6857.800000000745,6798,6806,8970.29999999702,9098.89999999851,6781],"coldMaxMs":133.30000000000018,"castMaxMs":16.80000000000109,"castP95MaxMs":16.800000000000182,"castWithin20Min":1,"errors":[]}
+{"lock":"acquired","lane":"B-LOOK","pid":89499,"startedAt":"2026-11-07T05:56:03.790Z","task":"LOOK l1-publish typecheck"}
+{"name":"typecheck","code":0,"startedAt":"2026-11-07T05:56:03.791Z","endedAt":"2026-11-07T05:56:13.159Z","log":"reports/cardrpg-look/validation/l1-publish/typecheck-resume.log"}
+{"lock":"released","task":"LOOK l1-publish typecheck"}
+{"lock":"acquired","lane":"B-LOOK","pid":89499,"startedAt":"2026-11-07T05:57:19.719Z","task":"LOOK l1-publish lint"}
+{"name":"lint","code":0,"startedAt":"2026-11-07T05:57:19.721Z","endedAt":"2026-11-07T05:57:29.367Z","log":"reports/cardrpg-look/validation/l1-publish/lint-resume.log"}
+{"lock":"released","task":"LOOK l1-publish lint"}
+{"lock":"acquired","lane":"B-LOOK","pid":89499,"startedAt":"2026-11-07T05:57:35.870Z","task":"LOOK l1-publish unit"}

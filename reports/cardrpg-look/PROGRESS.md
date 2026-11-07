@@ -1,5 +1,7 @@
-# LOOK progress — 2026-11-07
+# LOOK progress — paused at user request, 2026-11-07
 
-L0 contract published; L1 hero slice remains in review. Baseline 244 stills, seven cold opens and 24 starter casts are measured on immutable9a5f6ebb. Three original Blender models preserve exact rig transforms and use 1024px baked color/roughness/metal/AO/curvature/normal maps. Rejected rounds retained.
+User: “lưu handoff và dừng”. All owned active checks stopped; own timing lock released. Durable resume instructions: memory/HANDOFF.md. No automatic resume.
 
-Current limitations: Clover3 vest penetration is being corrected; browser multi-pose clearance, supersampled portraits/turntables, per-phase timing and source gates remain pending. Main stage/post/effects are still the inherited versions. No claim that L2–L7 are complete. Lane A owns shared/meta integration; its published3934ffe2 is available but not yet an accepted artifact checkpoint.
+L1 runtime source b9c521e3 atop accepted A86005b84, artifact eadac6b2394d5c4d378afab38dacf1364004e5cdcdf416ab408282b29ac56fb0,20,287,129bytes. Three original Blender heroes,72reviewedposes,6liveA/Btoggles,7coldopens and24casts/errors0. CastMAX16.8ms. Native hub0.880–0.894s/battle6.777–6.858s;CPU4pageMAX133.3ms. Fresh publish typecheck/lint pass; unit interrupted; build/E2E/audit pending. No L1publication.
+
+Original café scratch round3 finished:49,600tri/3meshes,2048pxcolor/AO/roughness/normal/irradiance. Round1+2 visually reviewed,round3 unreviewed. Durable inputs/outputs in memory/l2-prep; not wired into app. L3–L7 remain open. No generative calls, subagents, merge or deployment.

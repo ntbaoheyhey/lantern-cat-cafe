@@ -1,8 +1,9 @@
 # LOOK state
 ## NOW
-L1 branch ai/codex-cardrpg-look-l1-2026-11-07; publication still f3091a44. Final side review found Mochi6 backcoat buried, brows floating; Mochi7/Soot5/Clover6 authored with fitted eye rotation/brow depth and ellipsoid backcoat.
+L1 checkpoint audited for publication. Runtime b9c521e3; audit-only176493da; eadac6b2 remains20,287,129bytes with1,263verifiedinputs. Type/lint/unit/build/421E2E pass. Startup bytes corrected to3,522,504 (+4preload metadata),686modules/0Three/model.
 ## NEXT
-Single active coordinator PID82767/session54563 /tmp/cardrpg-look-eye-fit.log authors3→packs3→renders3. Earlier controllers80981/82304 and posechildren82593/82683 intentionally terminated while waiting lock. Coordinator83943 was stopped while waiting: A announced accepted86005b84; rebase L1 onto it after render coordinator82767 completes. Single dependent coordinator PID85205/session85494 now waits for82767, then verifies render hashes→source commit/rebase onto86005b84→build→rig/motion→capture6→pose72→ab→phase-measurel1→five source gates l1-publish. Log /tmp/cardrpg-look-l1-rebase-checks.log. Do NOT launch another finish coordinator. a238 after/poses preserved in rounds/game-pilot-4. Review new turntables while this runs; then metrics→slice→checkpoint/PR/ledger. L2 scratch still unclaimed and unrun.
+Commit/push L1 evidence and draft; mirror own report/STATE to ledger and notify A. Then create stacked L2, restore preserved stage from WIP436a10dd, VIEW round3 first, integrate/dispose/prewarm and review three runtime rounds. No duplicate L1 cold7/casts/A-B.
+
 ## DONE
 Read exact user brief twice, old B HANDOFF, both outboxes; verified remote delivery tip and full worktree created.
 Saved verbatim prompt with bytes/SHA. Inventory:377GiB free; ffmpeg,cwebp,pngquant,node present.
@@ -42,3 +43,16 @@ L0 five source gates421E2E + flagoff PASS; baseline244/cold7/24casts complete. L
 - 2026-11-07T05:37Z A announced86005b84 accepted shared/UI checkpoint, artifactf123. Read A OUTBOX. Fetched delivery; rebase before next L1 build. No baseline remeasurement needed.
 
 - 2026-11-07T05:39Z viewed revised Mochi7/Soot5 rear and side frames: buried backcoat and upper cape intersection corrected; brows now seated. Clover6 front also viewed. Pilot 120px squint confirms weak Soot body contrast (L3 limitation); three silhouettes remain distinct. New readability.py records actual crops and three-value views.
+
+- 2026-11-07T05:40Z source commit0a42012a includes L1 art/pipeline and historical baseline/rejected evidence. New build reports runtimeDirty=false and source hashes. Current18-angle orbit validates coat/eye corrections at sampled angles; 72 runtime poses pending.
+
+- 2026-11-07T05:44Z 3204 pose round rejected: Mochi4 shield crosses eye; all3 mini weapon overlays float. Preserved under rounds/motion-pilot-1. Atelier shield arc retarget and fitted weapon wrist seals implemented;30trajectory pairs stillpass. No new cold/perf claims.
+
+- 2026-11-07T05:47Z source fixb9c521e3 committed; candidateeadac pixels unchanged after clean source rebuild. Corrected Mochi2/3/4 sheets viewed: no shield-eye overlap, wristseal staysattached. Two serialized-lock coordinators: correctedpose87424 finishesremainingSoot/Clover; publishsession36199/PID87651 runsAB→flagoff→cold7→casts→fivegates→audit. No duplicate cold/matrix. Metrics/slice regenerated.
+
+- 2026-11-07T05:56Z resumed against actual processes; no duplicate pose/cold/gates. L1cold7 nativehub879.6–894.3ms/battle6776.7–6857.8ms; CPU4hub1627.8–1662.6/battle8970.3–9098.9; pageMAX133.3. All24first-repeat windowsMAX16.8/100%≤20/errors0. Defaultstartup11scripts/3522500bytes/686modules,0Three/model. Slice3sizes images/wipe/nooverflow pass.
+- L2 scratch reviews1+2 viewed, top3fixes implemented: actual original sky/bokeh, quiet woodboards, sewn mat borders. Round3 improves weave/grain/lamps/asymmetry and bakes2048atlases. Unintegrated scratch only, not a runtime acceptance.
+
+- 2026-11-07T05:58:34.323275+00:00 USER PAUSE: owned coordinator87651/gate89499 and live descendants stopped by verified process tree; own lock released (STOP-RECEIPT.json). Stage round3 had already finished49600tri/3meshes/color+AO+roughness+normal+irradiance2048; unreviewed output preserved in memory/l2-prep. No runtime changes after b9c521e3, no L1push/PR, no finalmatrix.
+
+- 2026-11-07T07:02:44.275351+00:00 Resume publication audit: full E2E421pass after network/font failure23 archived; unit1731web/1020rules/581Supabase/32chain/24auth/16contractpass,2expectedfail/11skips retained. Audit first rejected inaccurate startup3522500 claim; measured3522504, +4 dormant preload bytes. Comparison confirms default dependency list/686modules unchanged; strict-byte gate explicitly MISS. Audit-only rebuild leaves HTML eadac6b2 exactly unchanged.
