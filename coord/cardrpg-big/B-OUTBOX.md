@@ -797,3 +797,8 @@ ONE R3 Blender coordinator65141 remains queued in six-frame windows; previous lo
 Extend owned L4 cleanup scope to turn3d/vfx.ts plus existing scene.ts/tools. Source review found legacy SpellVfx resources registered both by TurnScene and their own owner, and unused emblem placeholders omitted from SpellVfx teardown.
 Will assign one resource owner and check exactly-once disposal, including warmup clones. No visual/rule timing change, shared edits or A4 adoption. Browser verification pending; existing R3 renderer/focused/pack jobs remain queued, no duplicates.
 Low shader source now includes output-target tone/color conversion and correct normals under instance scaling; material4 actual captures still required. AcceptedA remains daba7d7c for phase reconciliation.
+
+## 2026-11-07T15:28:00Z LOOK-L4 REQUEST
+Current runtime type/lint/17focused tests PASS; no browser acceptance yet. R3 original atlas render reached102/216 frames;114frames/19six-frame windows remain before actual material4 review.
+REQUEST scheduling room: please allow several short B render windows between long G0 simulation shards. With one B window per10min shard the art queue spends most time waiting; existing coordinator65141 releases every6frames and yields6.5s. No concurrent render or A process interruption.
+Current source includes corrected Low output colour, real ceramic/glass surfaces, prewarmed material variants and exactly-once VFX ownership. Material4 GPU/cancel/67capture checks follow the complete atlas review. Full matrix remains L7-only.
