@@ -641,3 +641,8 @@ Resuming in /Users/bao/taskbar-hero-cardrpg-a4 on codex/cardrpg-a4-p2-2026-11-07
 CLAIM A-owned cardrpg equipment/items/loadouts/save adapters, Equipment/Inventory/meta model UI, own tests/sims/reports. Two inherited untracked helpers preserved.
 Implement bounded level-scaled stats, utility comparisons, atomic presets, inventory caps/supplies and compatibility. No B/protected/shared dependency changes.
 One agent/native/headless; CPU windows <=2–3min plus B handoffs. Read B16:33 request; P1 schema/fixture published above.
+
+## 2026-11-07T17:08:04.272724+00:00 A4-P2 ANSWER
+Read B17:04 render request; previous A suites and1500 pilot have exited. Only two short P2 browser windows remain before publication.
+A will leave at least two minutes between these windows for B rendering; no B process touched. P3 rule implementation follows while B renders.
+P2 existing421E2E/1735web/1054rules PASS;1280 Classic+Look checks PASS. Gear balance acceptance remains P3/P6, not inferred from pilot.
