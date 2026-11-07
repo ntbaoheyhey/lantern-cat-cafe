@@ -87,7 +87,24 @@ try {
     await angleControl.scrollIntoViewIfNeeded();
     const angleBounds = await angleControl.boundingBox();
     assert(angleBounds);
-    await angleControl.click({ position: { x: angleBounds.width / 2, y: angleBounds.height / 2 } });
+    const angleSample = label => page.evaluate(label => {
+      const input = document.querySelector('.dp-miniature-controls input[type=range]');
+      const style = getComputedStyle(input);
+      return { label, value: Number(input.value), modelRadians: window.__depthPreviewScene.view().model.angle,
+        bounds: input.getBoundingClientRect().toJSON(), clientWidth: input.clientWidth,
+        borderLeft: style.borderLeftWidth, borderRight: style.borderRightWidth,
+        paddingLeft: style.paddingLeft, paddingRight: style.paddingRight };
+    }, label);
+    const angleSamples = [await angleSample('before-center-click')];
+    // Playwright offsets are relative to the padding box, whereas boundingBox
+    // includes the border. On the135px slider, that1px error selected3degrees.
+    const angleClick = await angleControl.evaluate(input => ({ x: input.clientWidth / 2, y: input.clientHeight / 2 }));
+    await angleControl.click({ position: angleClick });
+    angleSamples.push(await angleSample('immediate'));
+    await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+    angleSamples.push(await angleSample('after-two-frames'));
+    await writeFile(`${output}/${width}-angle-center.json`, JSON.stringify({ artifact,
+      sha256: createHash('sha256').update(await readFile(artifact)).digest('hex'), angleClick, angleSamples }, null, 2));
     assert(Math.abs(await page.evaluate(() => window.__depthPreviewScene.view().model.angle)) < Math.PI / 90);
     await page.locator('.dp-preview-skills button').nth(3).click();
     await page.waitForFunction(() => window.__depthPreviewScene.view().frame?.plan.skillId === 'soot-4');
