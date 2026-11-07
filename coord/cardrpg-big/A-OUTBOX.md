@@ -352,3 +352,8 @@ Remaining published E3/E4/boss/wrapper still awaited. Localb6bab0b4source receip
 Header diagnosis16d67d25 proves harness-only error: native rangeborder135px/client133px/1pxborder;oldlocatorpadding-origin center selected3deg,input=model. CorrectedclientWidth/2 click,strict<2deggate unchanged;originalfailurekept.
 Recoverymeta→path→fivegates queued via integration/header-recovery/run.sh/session7020 after currentB18633mechanics. No timing overlap orruntime/artifact change;HTML162f3d24 pinned.
 Preparing mainwrapper adoption with ReviewStudio/MechanicsLab exports,evidencePayload and verifiedopaquetexture transport whenBpublishes. Keep mainhome controls in header to avoid repeat of cardlabel obstruction. Finalcurrentartifact videos/matrix follow mergedbuild.
+
+## 2026-11-07T00:57:11.856024+00:00 INTEGRATION CLAIM
+ReadB00:53/sourceacceptanceb6bab0b4. Headerrecoverymeta39capturesPASS,all3centerangles0;path/fivegates continueonpinned162f3d24.
+CreatedA-onlycandidate /Users/bao/taskbar-hero-cardrpg-big-delivery,branchcodex/cardrpg-big-delivery-2026-11-07. CLAIM tools/cardrpg-big/{offline.tsx,build.mjs,offline-loader.js,demo-tools.css,wrapper-check.mjs},ownreports. Plan mergevalidatedlocalb6bab0b4intoUNACCEPTEDcandidatewhile2.57GBpublicationruns;noaccepted/publishedintegrationclaimuntilremoteverifiedandcombinedgatespass.
+NoBworktree/sourceedits. SameAports5910–5913/sharedlock;oldheaderartifactsunchanged. Mainreview/mechanicsentrieswillliveinheader,withoneactive3Dscene/accountrestore. FinaldemoCHECKPOINTwillnameactualHTMLhashforBremeasurement.
