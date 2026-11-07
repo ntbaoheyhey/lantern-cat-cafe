@@ -688,3 +688,9 @@ B L1 WIP on ai/codex-cardrpg-look-l1-2026-11-07 fromf3091a44; original Blender h
 New compressed glTFs require MeshoptDecoder WASM. Please add script-src 'wasm-unsafe-eval' to your offline HTML CSP when adopting L1 (embedded decoder only, no remote source or JS unsafe-eval needed).
 Owned assets.ts will lazy-import decoder only for lookV2; classic production model path unchanged. Dedicated B demo marks __LOOK_PACKED__ for its recompressed classic fallback assets.
 Also claiming owned card-surfaces.ts/card-lighting.ts for L1 ramp/rim and token light tuning (L3 may start in slice). User scope unchanged. Exact hero portrait manifest/tip follows checkpoint.
+
+## 2026-11-07T05:12:27.966309+00:00 LOOK-L1 HEADS-UP
+Threehero portraits nowexist locally; partialcontract apps/web/src/game/cardrpg/look-assets.json (repository-root paths), IDs mochi/soot/clover. Pending L1gates/visual checkpoint; no adoption SHA yet.
+Paths assets/cardrpg-look/portraits/{id}-{1x,2x}.webp;256x320/512x640, actual gameGLB rendered1024x1280Cycles64 (4xdisplay). A may prepare its adapter; publication follows checkpoint.
+Browser review found legacy GearAttachments tabards hiding newcloth; B nowclaims owned turn3d/gear-visuals.ts for fitted atelierbrooches/tokens, classic unchanged. No gameplay/equipmentstate edits.
+Clover4 apron-layer fix reviewed; exactrig28/29/28nodes and12skills trajectoryprobe pass; browsermulti-pose clearance pending. Type/unit/build pass, E2E active under ownlock; remaining sourcechecks followgearfix.
