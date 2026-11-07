@@ -1,0 +1,28 @@
+
+> taskbar-hero@0.0.0 typecheck /Users/bao/taskbar-hero-ui-art2
+> pnpm -r typecheck
+
+Scope: 6 of 7 workspace projects
+packages/auth typecheck$ tsc --noEmit
+packages/chain typecheck$ tsc --noEmit
+supabase/tests typecheck$ tsc --noEmit
+packages/game-rules typecheck$ tsc --noEmit
+packages/chain typecheck: Done
+packages/auth typecheck: Done
+packages/game-rules typecheck: Done
+supabase/tests typecheck: Done
+packages/api-contract typecheck$ tsc --noEmit
+packages/api-contract typecheck: Done
+apps/web typecheck$ tsc --noEmit
+apps/web typecheck: src/art/Art2.test.tsx(14,21): error TS2339: Property 'toBeEmptyDOMElement' does not exist on type 'Assertion<void, HTMLElement>'.
+apps/web typecheck: src/art/Art2.test.tsx(19,72): error TS2339: Property 'toBeVisible' does not exist on type 'Assertion<void, HTMLElement>'.
+apps/web typecheck: src/art/Art2.test.tsx(24,19): error TS2339: Property 'toHaveAttribute' does not exist on type 'Assertion<void, HTMLImageElement>'.
+apps/web typecheck: src/art/Art2.test.tsx(24,61): error TS2339: Property 'toHaveAttribute' does not exist on type 'Assertion<void, HTMLImageElement>'.
+apps/web typecheck: src/art/Art2.test.tsx(25,19): error TS2339: Property 'toHaveAttribute' does not exist on type 'Assertion<void, HTMLImageElement>'.
+apps/web typecheck: src/art/Art2.test.tsx(25,65): error TS2339: Property 'toHaveAttribute' does not exist on type 'Assertion<void, HTMLImageElement>'.
+apps/web typecheck: src/art/Art2.test.tsx(26,19): error TS2339: Property 'toHaveAttribute' does not exist on type 'Assertion<void, HTMLImageElement>'.
+apps/web typecheck: Failed
+/Users/bao/taskbar-hero-ui-art2/apps/web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/web@0.0.0 typecheck: `tsc --noEmit`
+Exit status 2
+ ELIFECYCLE  Command failed with exit code 2.

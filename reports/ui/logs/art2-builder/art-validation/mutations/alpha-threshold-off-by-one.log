@@ -1,0 +1,20 @@
+SCRATCH COPY MUTATION: alpha-threshold-off-by-one
+REPLACE: if p[3] < threshold:
+WITH: if p[3] <= threshold:
+COMMAND: /Applications/Xcode.app/Contents/Developer/usr/bin/python3 -B -m unittest -v test_pipeline.PixelTests.test_palette_distance_tie_and_threshold
+test_palette_distance_tie_and_threshold (test_pipeline.PixelTests) ... FAIL
+
+======================================================================
+FAIL: test_palette_distance_tie_and_threshold (test_pipeline.PixelTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/bao/taskbar-hero-ui-art2/tools/art/mutation-072wrgiz/test_pipeline.py", line 47, in test_palette_distance_tie_and_threshold
+    self.assertEqual(palette_lock(image, palette).pixels, bytes([0, 0, 0, 255]) + CLEAR + bytes([2, 0, 0, 255]) + CLEAR)
+AssertionError: b'\x00\x00\x00\xff\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00' != b'\x00\x00\x00\xff\x00\x00\x00\x00\x02\x00\x00\xff\x00\x00\x00\x00'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (failures=1)
+
+EXIT: 1

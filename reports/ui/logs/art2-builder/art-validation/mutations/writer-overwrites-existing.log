@@ -1,0 +1,20 @@
+SCRATCH COPY MUTATION: writer-overwrites-existing
+REPLACE: with path.open('xb') as stream:
+WITH: with path.open('wb') as stream:
+COMMAND: /Applications/Xcode.app/Contents/Developer/usr/bin/python3 -B -m unittest -v test_pipeline.CliTests.test_exclusive_write_preserves_existing_file
+test_exclusive_write_preserves_existing_file (test_pipeline.CliTests) ... FAIL
+
+======================================================================
+FAIL: test_exclusive_write_preserves_existing_file (test_pipeline.CliTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/bao/taskbar-hero-ui-art2/tools/art/mutation-gorctl6m/test_pipeline.py", line 224, in test_exclusive_write_preserves_existing_file
+    write_new(output, b'changed')
+AssertionError: FileExistsError not raised
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (failures=1)
+
+EXIT: 1

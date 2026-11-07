@@ -1,0 +1,33 @@
+COMMAND: /Applications/Xcode.app/Contents/Developer/usr/bin/python3 -B -m unittest discover -s tools/art -p test_pipeline.py -v
+test_atlas_determinism_permuted_inputs (test_pipeline.AtlasTests) ... ok
+test_invalid_sheet_options (test_pipeline.AtlasTests) ... ok
+test_sorted_sheet_positions_gutters_and_metadata (test_pipeline.AtlasTests) ... ok
+test_trimmed_atlas_reconstructs_source (test_pipeline.AtlasTests) ... ok
+test_exclusive_write_preserves_existing_file (test_pipeline.CliTests) ... ok
+test_whole_cli_chain_twice_and_validation (test_pipeline.CliTests) ... ok
+test_bad_palette (test_pipeline.PixelTests) ... ok
+test_empty_and_single_pixel_trim (test_pipeline.PixelTests) ... ok
+test_locked_palette_has_48_distinct_colors (test_pipeline.PixelTests) ... ok
+test_nearest_centres_not_top_left (test_pipeline.PixelTests) ... ok
+test_odd_resize_and_identity (test_pipeline.PixelTests) ... ok
+test_pad_asymmetric_remainder (test_pipeline.PixelTests) ... ok
+test_palette_distance_tie_and_threshold (test_pipeline.PixelTests) ... ok
+test_palette_file_contract_rejects_malformed_values (test_pipeline.PixelTests) ... ok
+test_palette_nearest_and_idempotent (test_pipeline.PixelTests) ... ok
+test_resize_rejects_bad_grid (test_pipeline.PixelTests) ... ok
+test_trim_includes_last_occupied_row_column (test_pipeline.PixelTests) ... ok
+test_crc_corruption_rejected (test_pipeline.PngTests) ... ok
+test_known_rgba_filters_all_five (test_pipeline.PngTests) ... ok
+test_lossless_rgba_including_hidden_rgb_and_partial_alpha (test_pipeline.PngTests) ... ok
+test_malformed_and_unsupported_rejected (test_pipeline.PngTests) ... ok
+test_more_than_256_colors (test_pipeline.PngTests) ... ok
+test_optimizer_never_grows_and_is_idempotent (test_pipeline.PngTests) ... ok
+test_repeatable_optimized_bytes_and_metadata_removed (test_pipeline.PngTests) ... ok
+test_rgb_gray_grayalpha_indexed_transparency (test_pipeline.PngTests) ... ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 0.700s
+
+OK
+
+EXIT: 0

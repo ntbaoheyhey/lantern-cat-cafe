@@ -1,0 +1,31 @@
+SCRATCH COPY MUTATION: atlas-reverses-order
+REPLACE: sorted(frames.items())
+WITH: sorted(frames.items(), reverse=True)
+COMMAND: /Applications/Xcode.app/Contents/Developer/usr/bin/python3 -B -m unittest -v test_pipeline.AtlasTests.test_sorted_sheet_positions_gutters_and_metadata
+test_sorted_sheet_positions_gutters_and_metadata (test_pipeline.AtlasTests) ... FAIL
+
+======================================================================
+FAIL: test_sorted_sheet_positions_gutters_and_metadata (test_pipeline.AtlasTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/bao/taskbar-hero-ui-art2/tools/art/mutation-m0w728f5/test_pipeline.py", line 178, in test_sorted_sheet_positions_gutters_and_metadata
+    self.assertEqual(atlas['meta']['frameOrder'], ['a', 'm', 'z'])
+AssertionError: Lists differ: ['z', 'm', 'a'] != ['a', 'm', 'z']
+
+First differing element 0:
+'z'
+'a'
+
+- ['z', 'm', 'a']
+?   ^         ^
+
++ ['a', 'm', 'z']
+?   ^         ^
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (failures=1)
+
+EXIT: 1

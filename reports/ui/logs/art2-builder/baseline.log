@@ -1,0 +1,16 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:5390/#landing
+Call log:
+[2m  - navigating to "http://127.0.0.1:5390/#landing", waiting until "load"[22m
+
+    at /Users/bao/taskbar-hero-ui-art2/reports/ui/art2-baseline.mjs:18:99 {
+  log: [
+    '  - navigating to "http://127.0.0.1:5390/#landing", waiting until "load"'
+  ],
+  name: 'Error'
+}
+
+Node.js v24.22.2

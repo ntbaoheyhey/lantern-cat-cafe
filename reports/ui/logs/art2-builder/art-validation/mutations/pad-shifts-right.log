@@ -1,0 +1,20 @@
+SCRATCH COPY MUTATION: pad-shifts-right
+REPLACE: (width - image.width) // 2
+WITH: (width - image.width + 1) // 2
+COMMAND: /Applications/Xcode.app/Contents/Developer/usr/bin/python3 -B -m unittest -v test_pipeline.PixelTests.test_pad_asymmetric_remainder
+test_pad_asymmetric_remainder (test_pipeline.PixelTests) ... FAIL
+
+======================================================================
+FAIL: test_pad_asymmetric_remainder (test_pipeline.PixelTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/bao/taskbar-hero-ui-art2/tools/art/mutation-bmyiwwrz/test_pipeline.py", line 91, in test_pad_asymmetric_remainder
+    self.assertEqual(image.at(1, 1), RED)
+AssertionError: b'\x00\x00\x00\x00' != b'\xff\x00\x00\xff'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (failures=1)
+
+EXIT: 1
