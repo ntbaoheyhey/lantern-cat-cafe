@@ -3,14 +3,14 @@ PROMPT.md bytes (wc -c) = 58535
 PROMPT.md SHA-256 = 73b26c7629b6fe0830a94091611f50fa1943a90979cdadc03b0935e3c28a1572
 REFERENCE: reports/cardrpg-big/memory/PROMPT.md
 ## NOW
-ACTIVE 2026-11-07T07:24:03.622264+00:00: WAIT1 baseline+CPU4tracecomplete; persistentpreview/revealfixWIP in delivery,20targetedtestsPASS; build/aftermeasurementnext. Parent8a2e56e38847.
-Canonical /Users/bao/taskbar-hero-cardrpg-big · ai/codex-cardrpg-big-2026-11-06 · parent9f41453b. Delivery /Users/bao/taskbar-hero-cardrpg-big-delivery · codex/cardrpg-big-delivery-2026-11-07 ·86005b84/draft358 OPEN/DRAFT.
-Mainf1234525fb744d0b318c2ea65727256cfb71fc6cc31c2380cf6fac93941a0f56/24026508bytes;baseline9a5f6ebb/23937000bytes immutable. No new quality/performance pass.
-Syncf91bc0e7/B06:58: L1sourceb9c521e3 unpublished; E2E23network/fontfailuresretrying. Candidateeadac6b2/20287129bytes notadopted. PublishedL1/L6takespriority.
-A portraitprep local49096d5353a167d0726f9c4718b93ae1ba1efb16 in /Users/bao/taskbar-hero-cardrpg-portrait-prep;not358. Ledgerreport6e1245ea/mirror84718776.
+ACTIVE 2026-11-07T07:24:03.622264+00:00: WAIT1 baseline+CPU4tracecomplete; previewsourcef3fbaeb9local,20tests/typesPASS;afterCPU4MAX116.5ms/20>25/4>50/1scene,coldFAIL100ms. CPU1+5gates+leanfunctionalactive. Parent55929aa3.
+Canonical /Users/bao/taskbar-hero-cardrpg-big · ai/codex-cardrpg-big-2026-11-06 · parent55929aa3. Delivery /Users/bao/taskbar-hero-cardrpg-big-delivery · codex/cardrpg-big-delivery-2026-11-07 ·86005b84/draft358 OPEN/DRAFT.
+Maincandidate15b97507d4f34092ca3d80b5df3b5bcef49fd5c6e053e5e5b23ea8275db79fa0/24027200bytes;L0f123/24026508bytes preserved /tmp/cardrpg-a-L0-f123.html;baseline9a5f6ebb/23937000bytes immutable. No new quality/performance pass.
+Syncc59ddc65/B07:26: L1eb568fdaefbac7ab3485e94d701a56b860d575e3 PUBLISHED/draft361,verifiedremote;adoptionpriorityACTIVE. BpaletteL2/L3ANSWER;AengineREQUESTconstructor76.346/warmstage84.111ms. Candidateeadac6b2/20287129bytes notadopted. PublishedL1/L6takespriority.
+Aadoption /Users/bao/taskbar-hero-cardrpg-portrait-prep nowcodex/cardrpg-look-a-l1-adoption-2026-11-07 fromf3fbaeb9;eb568fdasquashstaged+49096adapterconflictCompanionPreview(import)resolving;not358. Original49096WIPbranchpreserved. Ledgerreport6e1245ea/mirror84718776.
 ## NEXT
-1. Finish preview-runtime/App/CompanionPreview/revealWIP: build newartifact and screenshot-freeCPU1/4route; current20testsPASS,typespending. Baselinealreadycomplete,donotduplicate.
-2. PostBengineREQUEST constructor76.346ms/warmstage84.111ms trace; fivegates+touchedgroups thenpublish. L1publishedadoptionjumpsfirst; otherwise typedmanifest/fakefallback6surfaces×3sizesnext.
+1. ResolveAadoptionCompanionPreviewimport,wirepublishedL1+typedadapter/fallback;buildnewhash/freshgates. NevereditBworktree. Existing15b97507 checkscontinuein deliveryunchanged:1732web/1020rulesPASS,E2Eactive;functional1280/1024PASS,1440pending.
+2. EngineREQUESTpublishedsync5e2cd90f. Finishsourceboundbuild/flagoff/report+state;publishonlyafter5gates/touchedgroups. L1publishedadoptionjumpsfirst; otherwise typedmanifest/fakefallback6surfaces×3sizesnext.
 3. Layoutfirstviewport/contactsheet → training-onlyprogressionsims+isolatedrulescommit → tokenflow+Bpaletterequest →5gates+touchedgroups/shortreport. Fullpackonlyfinal;L1/L6publishedadoptionjumpsfirst.
 ## DONE
 WAIT1baseline ·deliveryuncommittedevidenceui-hitch/BASELINE.md;CPU1MAX33.3ms/CPU4MAX116.6ms/6previewscenes;complete15stages+diagnostictrace. Noafterpassyet.
@@ -73,6 +73,7 @@ I caps PASS25rules/2UI/12screens,localcounter/binding/help;designonly,0battle st
 G/M PASS earnedceremony/odds/pity/history andmain68reveal/invitationcaptures;Mpreview+70px,height300px,6before/after+33screens. OpeningGMAX316.6msMISS.
 F1/F2 FAILscale/sharpness:stage78.889%PASS,2745posesPASS;sharpness2/10PASS8MISS. F3/F4 varietyPASS30motionpairs/465effectpairs;historicalopening566.7/266.7msMISS.
 ## DECISIONS · append-only archive
+2026-11-07T07:31:00Z · PublishedL1eb568fda/draft361 jumpsahead. Squash/rebase-copy intoAprepbranch fromf3fbaeb9 toavoidancestor-closing361;adopter49096preserved. Old15b97507checksfinishseparately;no relabeling.
 2026-11-07T07:24:03.622264+00:00 · Screenshot-freebaselinecomplete;Aownsapp-lifetimepreview+revealscroll,CSSvisibility;engineconstructor/stagedecorationhotspotsrequestB. Preserveallf123rawandhistorical200msmiss;noafterpassyet.
 2026-11-07T07:13:29.257323+00:00 · NewWAITING-L1useraddendum overrideswaiting/fullpackpercheckpoint;workonAissuesimmediately,leanchecks,trainingonlybalance. Oldpromptprefix53562bytespreserved.
 2026-11-07T05:43:36.249632+00:00 · Parkedlocal49096d53outside358pendingpublishedL1;22tests/types/lintPASS,sparsefailurepreserved.Nobrowser/L1artproofclaimed;f123mainunchanged.NoautomaticresumeorBpollerstarted.
@@ -83,6 +84,7 @@ F1/F2 FAILscale/sharpness:stage78.889%PASS,2745posesPASS;sharpness2/10PASS8MISS.
 2026-11-07T05:15:57.404630+00:00 · Resume audit found canonical state behind live delivery. Preserve active70538/74695,365c2928 conditional Meshopt CSP;f123 unchanged. B05:12 portrait contract256x320/512x640 prepared only;no publishedL1tip.
 All earlier decisions retained verbatim in DECISIONS.md and archive/state-before-portrait-prep-handoff.md; never delete them. Historical worktrees inHISTORY.md.
 ## MEASUREMENTS
+WAIT1afterpilot ·15b97507CPU4 4549frames/MAX116.5ms/20>25/4>50/1>100;1scene,0errors. Sourcef3fbaeb9local;CPU1pending;ui-hitch/after-pilot/cpu4/checks.json.
 WAIT1 ·f123CPU1 4529frames/MAX33.3ms/2>25/0>50;CPU4 4537/MAX116.6/36>25/5>50/1>100;6scenes. TraceMAX116.7,constructor76.346ms,warmstage84.111ms/Layout47.793ms;ui-hitch/before/cpu4-trace/{task,profile}-analysis.json.
 L1prep ·22targetedtests/3filesPASS;webtypecheck/lintPASS;unboundhashguardfailsbeforebrowserasexpected. portrait-prep/checks.json;actualL1DPRproofNOTYET.
 LOOK L0 ·f1234525/24026508bytes;10groups/204screens/1177inputs;5sourcegates1731web/1020rules/421E2EPASS. look-ui/l0-checkpoint-audit.json;new report115lines/9Vietnamese;no new performance claim.
