@@ -1,0 +1,33 @@
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-single2/apps/web
+
+ ❯ src/layout/StageLayout.test.tsx (11 tests | 1 failed) 14738ms
+   × holds every boss-sensitive panel at the pre-request state, then releases with the confirmed banner 5819ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/layout/StageLayout.test.tsx > holds every boss-sensitive panel at the pre-request state, then releases with the confirmed banner
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/layout/StageLayout.test.tsx:175:1
+    173|
+    174|
+    175| it('holds every boss-sensitive panel at the pre-request state, then re…
+       | ^
+    176|   const before = stageState;
+    177|   const result = ARENA_FIXTURES[0]!.result;
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 127 passed (128)
+      Tests  1 failed | 1466 passed (1467)
+   Start at  15:37:17
+   Duration  52.54s (tests 50%, environment 40%, import 9%, transform 1%)
+
+Environment  jsdom was created 128 times · 37.80s total, 40% of tracked time
+             create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+             learn more: https://vitest.dev/guide/improving-performance#test-environments
+
+
+exit=1

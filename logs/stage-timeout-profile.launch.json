@@ -1,0 +1,17 @@
+{
+  "pid": 41689,
+  "cwd": "/Users/bao/taskbar-hero-single2/apps/web",
+  "command": [
+    "npx",
+    "-y",
+    "pnpm@10.28.0",
+    "exec",
+    "vitest",
+    "run",
+    "src/layout/StageLayout.test.tsx",
+    "--maxWorkers=1",
+    "--reporter=verbose"
+  ],
+  "started": "2026-11-04T08:51:13.628022+00:00",
+  "log": "/Users/bao/taskbar-hero-single2/logs/stage-timeout-profile.log"
+}

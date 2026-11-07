@@ -1,0 +1,61 @@
+{
+  "head": "1eefc3ef6d828b06710c8be18feb08e90b099e3e",
+  "checks": [
+    {
+      "label": "motion-fps",
+      "command": [
+        "node",
+        "tools/effects-test.mjs",
+        "/Users/bao/taskbar-hero-single2/reports/ui/cards/SINGLE2-POLISH/reviewed-1eefc3e/motion",
+        "--port=5350",
+        "--dist=dist-v2/e2e-5301"
+      ],
+      "exit": 0
+    },
+    {
+      "label": "stage-effects-1280x720",
+      "command": [
+        "node",
+        "--import",
+        "/Users/bao/taskbar-hero-ui/reports/ui/ports-loader.mjs",
+        "tools/effects-test.mjs",
+        "/Users/bao/taskbar-hero-single2/reports/ui/cards/SINGLE2-POLISH/reviewed-1eefc3e/effects-1280x720",
+        "--viewport=1280x720"
+      ],
+      "exit": 0
+    },
+    {
+      "label": "stage-effects-1600x900",
+      "command": [
+        "node",
+        "--import",
+        "/Users/bao/taskbar-hero-ui/reports/ui/ports-loader.mjs",
+        "tools/effects-test.mjs",
+        "/Users/bao/taskbar-hero-single2/reports/ui/cards/SINGLE2-POLISH/reviewed-1eefc3e/effects-1600x900",
+        "--viewport=1600x900"
+      ],
+      "exit": 0
+    },
+    {
+      "label": "keyboard-performance",
+      "command": [
+        "node",
+        "/Users/bao/taskbar-hero-ui-ledger/reports/ui/single2-keyboard-performance.mjs",
+        "/Users/bao/taskbar-hero-single2",
+        "/Users/bao/taskbar-hero-single2/reports/ui/cards/SINGLE2-POLISH/reviewed-1eefc3e",
+        "dist-v2/e2e-5301",
+        "5350"
+      ],
+      "exit": 0
+    },
+    {
+      "label": "bundle-guard",
+      "command": [
+        "node",
+        "scripts/check-bundle.mjs"
+      ],
+      "exit": 0
+    }
+  ],
+  "complete": true
+}
