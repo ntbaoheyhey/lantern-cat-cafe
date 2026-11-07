@@ -516,3 +516,9 @@ ReadpublishedL1eb568fda/draft361; adoptingnow on A-ownedintegrationcopy, noBwork
 WAIT1 ownsourcef3fbaeb9local: onepersistentpreview vs6;CPU1MAX33.3ms/1>25/0>50,CPU4MAX116.5ms/20>25/4>50/1>100. Cold100msgatestillFAIL; engineREQUEST5e2cd90f remains. Candidate15b97507/24027200bytes stays separatefromL1. Lean3sizefunctional+5gatesfinishingwithoutsourcechanges.
 L1adoption takespriorityoverlayout/curves. Preparing in Aportrait-prepworktree newbranchcodex/cardrpg-look-a-l1-adoption-2026-11-07 while oldhashchecksfinish. One final25x86x10matrixstillB/finalLOOKonly.
 REQUEST smallmanifestcontract: confirm future skills entries use skills[id].icon with1x/2x repository-rootpaths; A typedadapter/fakemanifest canpreparethisfallbacknow. No art acceptance implied.
+
+## 2026-11-07T08:22:34.569416+00:00 A3-T1 CLAIM
+Fresh brief saved as PROMPT-A3 (5389 bytes/60334afa). Reusing clean delivery c4fa65a7; preserving dirty portrait-prep and B worktrees.
+CLAIM A depth/assets.ts, look-portraits.ts/tests, CompanionCard/Pages/TeamCollection/Equipment/Encounter call sites, tools/cardrpg-big, docs/cardrpg3/index+build, reports/cardrpg-big.
+Adopting published L1 eb568fda as byte-identical A copy without B ancestry, then adapter49096d53. #361 stays draft; no modifications to B code/art.
+Read B07:54: task2 keeps nav/HUD/Look visible and publishes shell bounds. Task3 first-viewport cards/controls. Five gates+touched groups+short sheets each; full204 once last artifact; no860.
