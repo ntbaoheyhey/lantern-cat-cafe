@@ -1,30 +1,23 @@
 # Lane A active continuation handoff
 REFERENCE: PROMPT.md; RULES.md; STATE.md
 
-Read canonical RULES+STATE and PROMPT lines26–37,146–158,188–218 first. This is active work after the user resumed; no automatic restart scheduler was installed. Earlier baseline handoff is preserved in archive/handoff-before-look-l0-reviewfix.md.
+Active after user resume at 2026-11-07T05:15:57.404630+00:00. Canonical memory in /Users/bao/taskbar-hero-cardrpg-big/reports/cardrpg-big/memory wins over delivery embedded older copies. Read RULES+STATE and PROMPT26–37,146–158,188–end after compaction.
 
-Canonical memory: /Users/bao/taskbar-hero-cardrpg-big/reports/cardrpg-big/memory.
-Delivery: /Users/bao/taskbar-hero-cardrpg-big-delivery, branch codex/cardrpg-big-delivery-2026-11-07, draft358. Published3934ffe2; local followups f2a43ad1,b173715f,089201e3. These only fix opted-in review-control contrast/unknown-card question backing and add evidence tools. No rules/3D ownership change.
-Baseline9a5f6ebb/23937000bytes,14videos/204captures and report publication b092ed0c/ledger a2728798 are complete. Do not rerun them. Nine visual scores still miss8.5; no quality promotion. B360 auto-closed by GitHub containment after prior fast-forward; no mergeAPI/mainpush/deploy. Future adoption uses a rebased copy of B published commits on an A-owned branch; preserve original B branch.
+Delivery /Users/bao/taskbar-hero-cardrpg-big-delivery on codex/cardrpg-big-delivery-2026-11-07; HEAD365c2928, published2ea44621, draft358. Baseline publication b092ed0c/ledger a2728798 complete:14videos/204screens, no rerun. Original HTML9a5f6ebb unchanged in baseline-v1.html. User visual complaint open; nine scores miss8.5.
 
-## Active work (verify processes before resuming)
-REFERENCE: STATE.md NEXT; delivery reports/cardrpg-big/look-ui
+## Existing jobs — verify ownership/liveness before resuming
+REFERENCE: tools/cardrpg-big/delivery-functional.mjs; validation/look-l0-wasmhook.json
+Functional PID70538 uses /tmp/cardrpg-a-look-l0-contrastfix/index.html at f1234525fb744d0b318c2ea65727256cfb71fc6cc31c2380cf6fac93941a0f56 /24,026,508bytes. Output look-ui/functional-l0-reviewfix; studio/gallery PASS, comparisons queued at resume. Ten groups with short locks/7s handoff. Do not duplicate it. Olda1aepack stopped after6PASS/2FAIL; keep raw failures. Old path/mechanics tail not required for rejectedartifact.
+Five-gate PID74695 at365c2928: type/lint/unit/build PASS1731web/1020rules, E2E queued. Output validation/look-l0-wasmhook.json. Source conditional CSP adds wasm-unsafe-eval ONLY if embeddedGLB declares EXT_meshopt_compression; uncompressedL0 HTML unchanged. Positive compressed model proof awaits BpublishedL1.
+Main docs/cardrpg3/index.html already rebuilt to same f123; build.json modified with source hashes. Priorbuild saved look-ui/a1ae-build.json. No need to rerun finished UI30toggles/1494textrectangles/0activefailures, foil25291pixels/reduced0, flagoff11JS/3,522,500bytes/686modules unchanged.
 
-Old maina1ae7ea4177e056eebba62561d6e9f97b438e5f5a68622ece26bd995a21ed010 functional runner PID64887 remains alive; no duplicate. Receipt functional-l0/functional.json. Gallery fails selectedtab1.07885contrast; lab fails default24MB. Keep all logs. Do not overwrite docs/cardrpg3/index.html until this runner finishes.
-New candidate /tmp/cardrpg-a-look-l0-contrastfix/index.html is f1234525fb744d0b318c2ea65727256cfb71fc6cc31c2380cf6fac93941a0f56/24026508bytes; source b173715f, runtimeDirtyfalse. New audit script089201e3 does not change HTML. Rebuild main after source commit/finaloldrunner to refresh input hashes; expected sameHTMLhash. Do not accept fca3496c intermediate, which lacks questionbadgefix.
-Current gate driver PID67508 / execsession50694: validation/look-l0-reviewfix.json; fullunit1731web/1020rulesPASS, E2Equeued. Final type/lint/offline types session3960 updates separate final logs. Preserve retries; no baseline pass relabel.
-New three-size UI real-toggle+contrast shell execsession55241: LOOK_META_OUT look-ui/l0-reviewfix/{width}, BIG_ARTIFACT /tmp/cardrpg-a-look-l0-contrastfix/index.html. Legacy a1ae30togglesPASS but1440had3activecontrastfails2.1089–2.3301; summary initially missed them. Raw failures retained; new badge gives opaque token backing.
-New default-entry browser execsession48789 queued under lock; dist /tmp/cardrpg-a-look-l0-reviewfix-flagoff-dist, output look-ui/flagoff-reviewfix. Prepare already passed. Compare actual new11JS/modules against baseline flagoff saved receipt; generate comparison.json.
-
-## Next acceptance steps
-REFERENCE: tools/cardrpg-big/{delivery-functional,audit-look-checkpoint,lab-check}.mjs
-
-After UI captures, create look-ui/l0-size-exception.json matching f123hash+bytes, limitBytes32000000, reason and promptReference (B LOOK brief sections2/6, tracked at publishedf3091a44), beforeAfter:[{path,sha256},...] using exactnewhash off/on captures. Default24MBmiss remains reported; exception requires before/after evidence, not a blanket raised gate.
-Run BIG_FUNCTIONAL_SHA=f123... BIG_FUNCTIONAL_GATES=reports/cardrpg-big/validation/look-l0-reviewfix.json BIG_FUNCTIONAL_OUT=reports/cardrpg-big/look-ui/functional-l0-reviewfix BIG_ARTIFACT=<newHTML> BIG_PYTHON=/tmp/cardrpg-big-resume-tools/bin/python BIG_LAB_SIZE_EXCEPTION=reports/cardrpg-big/look-ui/l0-size-exception.json node tools/cardrpg-big/delivery-functional.mjs. Ten groups use short atomic locks,7secondhandoffs. Do not launch before exactexception exists. Scripts require all5gateexits0.
-Build main with BIG_LOOK_V2=1 BIG_PYTHON=/tmp/cardrpg-big-resume-tools/bin/python node tools/cardrpg-big/build.mjs after oldrunnerdone. Keep baseline-v1.html exact9a5f6ebb. Run audit-look-checkpoint.mjs; verify sourceinputs,5logs,10receipts,204screens,30togglecaptures,allactivecontrast0 and flagoffgraph/protectedpaths. Do not falsifycounts if actualdiffers.
-Write L0 checkpoint/report coverage; copy report+STATE/HANDOFF toledger; publish only after5gates. Read B-OUTBOX atboundary and beforePR, not polling. Answer any next sharedrequest in nextcommit. A CHECKPOINT includes exactHTMLhash so B maymeasureit. Final full25unit/86action/10config matrix onlyLOOK B/finalL7artifact,notL0.
+## Next
+REFERENCE: tools/cardrpg-big/audit-look-checkpoint.mjs; look-ui/l0-size-exception.json
+When E2E passes, publish365c2928 and gate logs. Complete10functional groups. Audit with LOOK_GATE_PATH=reports/cardrpg-big/validation/look-l0-wasmhook.json; main source hashes must match build and runtimeDirtyfalse. Verify10receipts/204screens,30UIcaptures,contrast/foil/defaultstartup/protectedpaths/baseline exacthash. Do not relabel prior receipts as current.
+Publish L0 checkpoint/report/coverage and A-OUTBOX exact f123hash; retain 24MB default miss26,508bytes and per-artifact32MBexception pinned to6before/aftercaptures. Five gates do not confer visual/performance acceptance.
+Read B-OUTBOX at phase boundary, not polling. B05:12 partialportraitcontract: apps/web/src/game/cardrpg/look-assets.json with mochi/soot/clover repo-root paths assets/cardrpg-look/portraits/id-1x.webp (256x320), id-2x.webp (512x640). No published L1tip yet. Can prepare adapter, adopt only publishedcheckpoint. Final860matrix only LOOK B onfinal lookV2.
 
 ## Constraints
-REFERENCE: RULES.md; sync/coord/cardrpg-big/OWNERSHIP.md
-
-Singleagent,no subagents/modelworkers/imagegeneration. Aports5910–5913, B5920–5923; /tmp/cardrpg-big-locks/timing.lock atomic ownership/finallyrelease;6.5shandoffs;nice10non-timingheavywork. Kill only verified ownPIDs,neverbyname. No editBworktree. Sync only A-OUTBOX append-only onai/codex-cardrpg-big-sync; readB atboundaries. Commit/push memory after eachfinishedstep; mirrorledgeronpush. Preserve unrelatedledger/main edits.
+REFERENCE: immutable coord/cardrpg-big/OWNERSHIP.md
+No subagents/modelworkers/imagegen/researchredo/ruleschanges/newcombat/mainpush/deploy/mergeAPI. Drafts only. A owns meta/shared/build; B owns3D/assets. Do not edit Bworktree. Future B adoption rebase-copy published commits on A branch to avoid GitHub closing BPR via containment; keep Bsource unchanged. Aports5910–5913/B5920–5923; atomic timinglock,6.5s handoffs,nice10heavywork,killonlyverifiedownPIDs.
+Sync only append A-OUTBOX with pull--rebase retry. Canonical STATE update eachstep and45min; ledger mirror on reportpush. Never trust oldPIDs without verification. No automatic restart installed by A. Preserve unrelated worktree edits.

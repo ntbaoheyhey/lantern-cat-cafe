@@ -3,15 +3,15 @@ PROMPT.md bytes (wc -c) = 53562
 PROMPT.md SHA-256 = bba8c53418413298018f714aa35ebd60ed3d49d9df32f2027c90ba9b279dcc37
 REFERENCE: reports/cardrpg-big/memory/PROMPT.md
 ## NOW
-ACTIVE 2026-11-07T05:03:32.972257+00:00: LOOK-A L0 reviewfix verification; sources f2a43ad1(selectedcontrols+evidencedsizegate),b173715f(questionbadge),089201e3(receiptaudit) local;sourcepushed;e056d1fe;artifactnotyetaccepted.
-Delivery /Users/bao/taskbar-hero-cardrpg-big-delivery · codex/cardrpg-big-delivery-2026-11-07 · published3934ffe2;locale056d1fe;358draft. B360closed/mergedbyGitHubcontainmentafterAfastforward;L1pending.
-Baseline runtime a106dfca, HTML9a5f6ebbb04af56c19f11cf43cf2763b35df2bde3b7a8dcd943060e878d793d3/23937000bytes unchanged;14videos/204screens/report b092ed0c and ledger a2728798 published.
-Canonical /Users/bao/taskbar-hero-cardrpg-big · ai/codex-cardrpg-big-2026-11-06 · last memory7f189d1a. Open A drafts333–341,344–345,348,358;359closed/merged,notopen.
-Sync /Users/bao/taskbar-hero-cardrpg-sync · ai/codex-cardrpg-big-sync · e2310482. B L0 helper adopted;L1 CompanionPreview request answered in3934ffe2. Ownership unchanged.
+ACTIVE 2026-11-07T05:15:57.404630+00:00: LOOK-A L0 acceptance; resumed saved runtime/evidence, no duplicate runs. Delivery HEAD365c2928 (Meshopt CSP conditional), published2ea44621; draft358.
+Delivery /Users/bao/taskbar-hero-cardrpg-big-delivery · codex/cardrpg-big-delivery-2026-11-07. Main f1234525fb744d0b318c2ea65727256cfb71fc6cc31c2380cf6fac93941a0f56 /24,026,508bytes; not accepted yet.
+Baseline HTML9a5f6ebb/23,937,000bytes immutable;14videos/204screens/report b092ed0c and ledger a2728798 published. Visual complaint remains open.
+Canonical /Users/bao/taskbar-hero-cardrpg-big · ai/codex-cardrpg-big-2026-11-06 · memory parent45c4e797. Open A drafts333–341,344–345,348,358;359/360closed by containment.
+Sync /Users/bao/taskbar-hero-cardrpg-sync · ai/codex-cardrpg-big-sync ·4c50e3ee;05:13ANSWER records Meshopt conditional CSP request. B L1 portraits/manifest unpublished; ownership unchanged.
 ## NEXT
-1. Finish queued olda1ae packPID64887 preserving failures;7groupscomplete/5PASS,design/path/mechanicspending. Newcandidatef1234525/24026508bytes at/tmp/cardrpg-a-look-l0-contrastfix/index.html;runtimeDirtyfalse atb173715f.
-2. FivegatesreviewfixALLPASS:1731web/1020rules/421E2E(2.2min)/type/lint/build. f123UI30toggles/1494textrectangles0activefailsPASS;flagoff11JS/3522500bytes/686modulesunchangedPASS;finaltype/lint/demotypesPASS. No duplicate tasks.
-3. Exacthash32MBexceptionwritten fromnew1024before/after;new10groupfunctionalpack53114queued;then mainrebuild (sameexpectedf123),sourceaudit/publish A CHECKPOINT. AwaitL1/L6 phaseboundary;final860matrix onlyLOOK B.
+1. Continue existing functional PID70538, f123 artifact: studio/gallery PASS, comparisons queued. Preserve old a1ae 6/8PASS,2FAIL; old path/mechanics tail retired. No rerun of baseline videos/functional pack.
+2. Continue existing five-gate PID74695 for365c2928: type/lint/unit/build PASS1731web/1020rules;E2E queued. Rehash logs, publish source after all5PASS. Do not duplicate jobs.
+3. Finish10-group functional pack; audit exact source/HTML/30toggles/foil/flagoff/sizeexception; publish L0 A CHECKPOINT. Then read B boundary and adopt published L1 only. Final860matrix only LOOK B.
 ## DONE
 LOOK L0 source ·3934ffe2pushed;App/offline/build/CompanionPreview requestswired;3originaltextures+4rarities;1024live10toggles/10screens/386textrects0fails. look-ui/l0/1024/checks.json;notfullcheckpoint.
 Baseline publication ·b092ed0c/draft358, ledgera2728798831acc86619e6772205c7fefb4b58fcf;delivery/baseline-report-audit.json verifies204screens,14clips,57sheets,5gatelogs,13,125rawframes;105line report/9Vietnamese/6routes. Runtime delta0.
@@ -63,6 +63,7 @@ I caps PASS25rules/2UI/12screens,localcounter/binding/help;designonly,0battle st
 G/M PASS earnedceremony/odds/pity/history andmain68reveal/invitationcaptures;Mpreview+70px,height300px,6before/after+33screens. OpeningGMAX316.6msMISS.
 F1/F2 FAILscale/sharpness:stage78.889%PASS,2745posesPASS;sharpness2/10PASS8MISS. F3/F4 varietyPASS30motionpairs/465effectpairs;historicalopening566.7/266.7msMISS.
 ## DECISIONS · append-only archive
+2026-11-07T05:15:57.404630+00:00 · Resume audit found canonical state behind live delivery. Preserve active70538/74695,365c2928 conditional Meshopt CSP;f123 unchanged. B05:12 portrait contract256x320/512x640 prepared only;no publishedL1tip.
 2026-11-07T05:08:30.101584+00:00 · Newf123UIandfoilverified;32MBexceptionpins6off/onimages;default24MBmiss26,508bytesretained. Memorypushtransientremote--stdinfailedonce,sequencedretryPASS;sourcee056published.
 2026-11-07T05:00:21.482132+00:00 · Raw1440contrastreceiptcorrectsimplicitallsizepass:3activequestionmarkFAIL2.1089–2.3301;30togglepassesremaintrue. Token-darkbackingfixprepared;oldreceiptretained.
 2026-11-07T04:59:06.300231+00:00 · Resumedfromcanonicalmemory;activeAfunctionalPID64887retained,no duplicaterun. a1aegallerycontrast1.07885fails;lab24MBdefaultfails;32MBexceptionallowedbyLOOKbriefsection2/6onlywithbeforeafterevidence. Fixselectedstylesandpinexceptiontohash.
