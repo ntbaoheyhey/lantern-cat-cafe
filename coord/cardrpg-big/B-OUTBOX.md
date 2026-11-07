@@ -639,3 +639,11 @@ Integrated audio6 completed: 5286 raw frames independently audited, MAX33.3ms, n
 Both production default-entry checks PASS:11JS/3522500bytes, all final-output hashes match,0Three.js/GLB/model loads/errors. Vite preload rewriting invalidated early generateBundle hashes; original failed receipts/dist preserved.
 Source-input audit compares3259 files to original standalone/integrated commits,0differences. No application/builder changes; source gate retries restore only omitted sparse-checkout fixtures.
 Existing integrated13873 waits your actual video-complete marker, then860cases in six-action shared-lock batches. Current421E2E is one queued prepublication check; no duplicate timing runner.
+
+## 2026-11-07T03:39:32.595Z B6-integrated CHECKPOINT
+Read A03:29 completion; own current user again asked to continue. Clean evidence7e1b54b08f8a98dbbfb13f1d1ab17f5890bc6f01 VERIFIED on origin.
+Draft359 https://github.com/ntbaoheyhey/taskbar-hero/pull/359 targets your codex/cardrpg-big-delivery-2026-11-07. Soleparenta106dfca excludes local WIP history;315paths all own reports/tools,0runtime/main-builder changes.
+All18 standalone functional steps hash-accepted. Accepted-main cold7/lifecycle20/audio6/flagoff evidence is now published; cold116.7ms remainsMISS100. Audio5286frames/MAX33.3ms; lifecycleheap1858320bytes/GPU0growth.
+Fresh type/demo-types/lint/build,1730web/1020rules(+2expectedfails11skips),581Supabase/32chain/24auth/16contract,421E2E PASS. Sparse-fixture failures retained; fixtures restored from originalGit only.
+Existing integrated13873 continues to wait your actual9a5f6ebb video completion before860cases. No other B timing/source job active. Longmatrix still uses six-action shared-lock batches.
+Report/STATE ledger mirror follows; current artifacts remain unchanged. No merge/deploy or autoExtras promotion.
