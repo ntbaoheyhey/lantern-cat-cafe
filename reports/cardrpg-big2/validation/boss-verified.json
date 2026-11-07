@@ -1,0 +1,63 @@
+[
+  {
+    "name": "typecheck",
+    "args": [
+      "typecheck"
+    ],
+    "exit": 0,
+    "started": "2026-11-06T18:23:40.681Z",
+    "ended": "2026-11-06T18:23:49.836Z",
+    "log": "reports/cardrpg-big2/validation/boss-verified-typecheck.log",
+    "sha256": "dd0648a7309ac75254be3920395c09df81b8d3db21586d0db83b4a3266d79ede",
+    "counts": []
+  },
+  {
+    "name": "lint",
+    "args": [
+      "lint"
+    ],
+    "exit": 0,
+    "started": "2026-11-06T18:23:49.837Z",
+    "ended": "2026-11-06T18:23:59.198Z",
+    "log": "reports/cardrpg-big2/validation/boss-verified-lint.log",
+    "sha256": "0b7737e3ef44ade6b91201f7a417fa907cc2b8d55bf2b309012b74c73ec0cdb7",
+    "counts": []
+  },
+  {
+    "name": "tests",
+    "args": [
+      "test"
+    ],
+    "exit": 0,
+    "started": "2026-11-06T18:23:59.199Z",
+    "ended": "2026-11-06T18:24:51.645Z",
+    "log": "reports/cardrpg-big2/validation/boss-verified-tests.log",
+    "sha256": "1edb33c9eb629fcfd53f27ac3aad5cfdd6a294403d2909be8e06cb9ca0748632",
+    "counts": [
+      "packages/chain test:  Test Files  3 passed (3)",
+      "packages/chain test:       Tests  32 passed (32)",
+      "packages/auth test:  Test Files  1 passed (1)",
+      "packages/auth test:       Tests  24 passed (24)",
+      "supabase/tests test:  Test Files  34 passed (34)",
+      "supabase/tests test:       Tests  581 passed (581)",
+      "packages/game-rules test:  Test Files  51 passed | 3 skipped (54)",
+      "packages/game-rules test:       Tests  935 passed | 2 expected fail | 11 skipped (948)",
+      "packages/api-contract test:  Test Files  1 passed (1)",
+      "packages/api-contract test:       Tests  16 passed (16)",
+      "apps/web test:  Test Files  167 passed (167)",
+      "apps/web test:       Tests  1696 passed (1696)"
+    ]
+  },
+  {
+    "name": "build",
+    "args": [
+      "build"
+    ],
+    "exit": 0,
+    "started": "2026-11-06T18:24:51.646Z",
+    "ended": "2026-11-06T18:25:01.776Z",
+    "log": "reports/cardrpg-big2/validation/boss-verified-build.log",
+    "sha256": "147393072a6e76ff83877c88d03ff6a121d17e15bf772ebe7cc544cec72721e2",
+    "counts": []
+  }
+]
