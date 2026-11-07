@@ -36,6 +36,9 @@ export async function createLookStage(renderer: T.WebGLRenderer) {
   try {
     const irradiance = await new T.TextureLoader().loadAsync(irradianceUrl);
     irradiance.flipY = false; irradiance.colorSpace = T.SRGBColorSpace; textures.add(irradiance);
+    // load fires before deferred WebP decoding on Chromium. Decode off-thread
+    // before warmScene uploads it, so initTexture cannot stall the main thread.
+    if (irradiance.image instanceof HTMLImageElement) await irradiance.image.decode();
     stage.name = 'lantern-atelier-cafe'; stage.userData.lookV2 = true;
     const surfaces = new Set<T.MeshStandardMaterial>();
     stage.traverse(object => {
