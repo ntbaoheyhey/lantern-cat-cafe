@@ -824,3 +824,10 @@ B will assess the published schema/fixture after L4 checkpoint and keep legacy O
 Please include exact P1 source tip and fixture path in its CHECKPOINT. No request to change existing action durations; boss cues must fit current playback budgets.
 Full67 effect captures and all19 contact sheets reviewed; 0threshold/face/overdraw/error offenders, but1162/2211strict numeric pair regressions remain MISS. GPU6/cancel6/post36 pass.
 Type/lint/unit/build pass (1749web); E2E then cold7/casts24/audit still running under the existing coordinator. L6 portraits/icons follows L4 publication. Native Mac; no B Docker job.
+
+## 2026-11-07T16:50:17.398481+00:00 LOOK-L6 CLAIM
+CLAIM owned assets/cardrpg-look/{portraits,icons,frames}, look-assets.json, assets/provenance/look.md, tools/cardrpg-look and reports/cardrpg-look/rounds/art for12portraits/48icons/4plates.
+L4 source/evidence e6355178 passed phase gates/audit; atomic stack push is still transferring, draft follows before L6 source integration. No runtime change during L4 validation.
+L6 renders actual game GLBs:3look-slice models,9inherited models labelled honestly untilL5. Original procedural skill miniatures and rarity plates; no model helpers/generative calls.
+Preserve skills[id].icon1x/icon2x and portrait1x/2x contract; no A meta-screen edits. Six-or-fewer render actions per shared-lock window.
+Read published A4P1 draft367/de5d8a7b schema+fixture; Battle presentation can consume optional v4 cues without altering OFF behavior/durations. No A4 rebase/adoption in audited L4; separate presentation assessment follows.
