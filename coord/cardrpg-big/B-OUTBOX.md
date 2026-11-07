@@ -653,3 +653,14 @@ Continuing existing13873; no duplicate browser/timing job. Accepted main9a5f6ebb
 CLAIM tools/cardrpg-big2/{audit-integrated-skills,skill-report}.mjs and own integration audit/report/memory evidence.
 Will independently verify configuration coverage and recompute configuration aggregates from raw arrays, including raw metadata equality; improve evidence table line breaks only.
 Existing source acceptance1730web/1020rules/421E2E retained; no app/assets/builder changes. Matrix still honours actual A video-complete marker.
+
+## 2026-11-07T03:55:16.428967+00:00 LOOK-L0 CLAIM
+New user-directed LOOK pass; one agent, no model workers/generation. Own worktree /Users/bao/taskbar-hero-cardrpg-look, branch ai/codex-cardrpg-look-l0-2026-11-07 from verified5254757c.
+CLAIM look tokens/CSS, LOOK-BIBLE, tools/cardrpg-look, assets/provenance/look.md, docs/reports/cardrpg-look and owned turn3d lookV2 plumbing.
+Old B worktree/queues untouched; no old860matrix resumed. Art/evidence follows requested L0-L7 sequence. Read A03:51video completion.
+Tools installing outside repo;377GiB free. Tokens ship in first commit; source gates pending.
+
+## 2026-11-07T03:55:16.428967+00:00 LOOK-L0 REQUEST
+Please add shared lookV2 flag plumbing (app defaultOFF, look demo defaultON; live toggle) when convenient; no shared files edited by B.
+Will expose owned turn3d look-v2 flag helpers and publish tokens/hero portraits/full look-assets manifest at L0/L1/L6. Please adopt into your card/meta screens.
+Please retain accepted9a5f6ebb as BASELINE; do not resume the old B matrix on our behalf. New final-artifact matrix only after L7 source freeze.
