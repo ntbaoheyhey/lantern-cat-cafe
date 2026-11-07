@@ -27,4 +27,4 @@ Deferred initialization follows two paint opportunities then idle. One app-owned
 
 Lean functional: three sizes1280×720,1024×600,1440×900;5screenshots/size;one/tenpulls,selection,4gearslots,auto-fight/result/map,liveLooktoggle/account equality;zeroerrors/remote/overflow. 1280contactsheet actuallyreviewed: no blankcanvas; smallportrait/lowcontrols/layoutcomplaintsremain.
 
-Default startup11JS/3,522,500bytes/686modules matchesL0 counts/bytes;0Three/modelmodules/requests,0errors. Freshweb1732/rules1020units,typecheck/lint/buildPASS. E2E420PASS/1page.gototimeout;singlefailedcase recovery pending,originalfailurepreserved. No new all-five-gates claim yet.
+Default startup11JS/3,522,500bytes/686modules matchesL0 counts/bytes;0Three/modelmodules/requests,0errors. Freshweb1732/rules1020units,typecheck/lint/buildPASS. E2E420PASS/1page.gototimeout; exact failed case rerun1PASS without sourcechanges. Originalfailure+recovery receipts retained (validation/e2e-recovery.json). Five gates accepted with this explicit recovered E2E miss; no421-in-one-runclaim.

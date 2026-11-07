@@ -1,0 +1,63 @@
+{
+  "date": "2026-11-07T07:41:33.210Z",
+  "source": "f3fbaeb9bda53fa5cf7575b69b5580447dfb3501",
+  "artifact": "15b97507d4f34092ca3d80b5df3b5bcef49fd5c6e053e5e5b23ea8275db79fa0",
+  "bytes": 24027200,
+  "sourceInputs": 1180,
+  "matchingSourceHashes": true,
+  "fiveGates": "typecheck/lint/unit/build PASS; E2E420PASS+1page.goto timeout, exact1retryPASS (no source change)",
+  "rawRuns": [
+    {
+      "path": "before/cpu1",
+      "sha256": "5a016f331c5cd6b46b10860e9562411bdd90b0ed56620cb6014497edcebb6125",
+      "artifact": "f1234525fb744d0b318c2ea65727256cfb71fc6cc31c2380cf6fac93941a0f56",
+      "frames": 4529,
+      "max": 33.30000000000018
+    },
+    {
+      "path": "before/cpu4",
+      "sha256": "8bb7403f986c6cd8997e2d56f103d7005ee08b308bf3f57f710a7afe3bb88c33",
+      "artifact": "f1234525fb744d0b318c2ea65727256cfb71fc6cc31c2380cf6fac93941a0f56",
+      "frames": 4537,
+      "max": 116.60000000000014
+    },
+    {
+      "path": "before/cpu4-trace",
+      "sha256": "c47d5d5827a4b082e12c74cd3f350e2c4010490b42f3ef6808275f7d97d4e30e",
+      "artifact": "f1234525fb744d0b318c2ea65727256cfb71fc6cc31c2380cf6fac93941a0f56",
+      "frames": 4540,
+      "max": 116.70000000000005
+    },
+    {
+      "path": "after-pilot/cpu1",
+      "sha256": "416d3a1bc3e28e5cf9e8454b792353a4bc17a5e5198675310fa0e2c051f2d6ff",
+      "artifact": "15b97507d4f34092ca3d80b5df3b5bcef49fd5c6e053e5e5b23ea8275db79fa0",
+      "frames": 4526,
+      "max": 33.299999999999955
+    },
+    {
+      "path": "after-pilot/cpu4",
+      "sha256": "c5033cf7f3883f5d495369efd51a1591cfa0b5a57826d6b1d99b1a9451306801",
+      "artifact": "15b97507d4f34092ca3d80b5df3b5bcef49fd5c6e053e5e5b23ea8275db79fa0",
+      "frames": 4549,
+      "max": 116.5
+    }
+  ],
+  "functional": [
+    {
+      "width": 1280,
+      "captures": 5,
+      "sha256": "36c228e143bb2e7fe9425a293728b042194160ccb1377049ccb4609680e8718b"
+    },
+    {
+      "width": 1024,
+      "captures": 5,
+      "sha256": "d9d508e0c77284b5ba9ca3c5c7982a9b97b249a958f3996e56eec4127ee1fb61"
+    },
+    {
+      "width": 1440,
+      "captures": 5,
+      "sha256": "91a1a3ef99689281ab1ee2f1e4f7d8bc366fab2ab8699e3dfa8b3c4747f1d461"
+    }
+  ]
+}
