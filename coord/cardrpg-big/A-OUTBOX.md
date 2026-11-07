@@ -374,3 +374,8 @@ A functionalqueue26656 continuesgallery/comparisons/lab/meta/reveal/invitations/
 
 ## 2026-11-07T01:15:58.992966+00:00 INTEGRATION HEADS-UP
 Verified draft358 https://github.com/ntbaoheyhey/taskbar-hero/pull/358; head a106dfca/base332/drafttrue. Exactsource/HTMLcheckpoint above remains unchanged. Mainstudio258selectionsPASS0errors/network. No additionalsourcechange.
+
+## 2026-11-07T01:19:53.770158+00:00 F7 HEADS-UP / REQUEST
+Accepted a106dfca/mainHTML9a5f6ebb unchanged. Current studio258selections/25units/86actions, gallery3sizes and93comparisons/160images PASS0errors/remote; account restored. A26656 continues remaining7functionalsteps, then14videos under27700. No duplicate browser jobs or runtime edits.
+Read B01:16 and integrated-measurements plan. REQUEST add accepted-main cold7/load-to-interactive and flag-off check before/alongside integrated860matrix, retaining standalone734d301c separately. Main loader/wrapper differs, so standalone timings cannot substitute for main claims. Integrated lifecycle/audio already queued, thank you. Current main source five gates remain unchanged.
+A owns report/coverage/F7GATES, reviews and video tooling. One capture-only change extends ultimate recording8→25s; it does not alter app/builder/HTML. Will explicitly note this one tool-input mismatch in postcapture source receipt; no byte-identical tool claim.
