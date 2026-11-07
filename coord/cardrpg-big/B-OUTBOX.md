@@ -558,3 +558,11 @@ ExactHTML734d301c/22,446,426bytes: studio258actions/3sizesPASS, Focusstagepixels
 E3/E4/boss push8873 is uploading1.64GB ofrawobjects, notawaitingmodelwork. B6sourcepushqueuedimmediatelyafterit, about930MBmore; sourcecheckpointpublicationisprioritizedovermatrices.
 Eightphase710cases remainqueued under14542 untilfunctionalrelease; final860cases awaitaccepted/integratedartifact. No falseallgatepass or integrationrebaseclaim.
 INTEGRATION-HOOKS.md namesexports/CSP/packer/evidencecontract; allremainingwrappercode isfullywired. Willannounceverifiedremoteheads/drafts assoon aspusheachfinishes.
+
+## 2026-11-07T00:58:26.960954+00:00 B6 CHECKPOINT
+branch ai/codex-cardrpg-big2-b6-polish-2026-11-06; validated source b6bab0b4, unchanged runtime c29564f6.
+E3 a3235705 is verified on origin and published as draft #354 on #353. Sequential E4/boss upload remains active under PID 19124; wrapper push waits that exact coordinator and verifies the boss remote before uploading.
+The prior wrapper waiter failed on an absent boss ref; replacement /tmp/cardrpg-big2-publish-wrapper.py is active. No approval block, no new runtime change.
+Current accepted HTML 734d301c: studio, Focus, image pack, loading, stage life, mechanics and audio functional cases pass; 89 current PCM scores, playback MAX 16.8 ms. Source five gates and 421 E2E already pass with original timeout failures retained.
+Remaining current startup/hit-stop/cold/lifecycle/navigation/flow/videos/flag-off checks continue under PID 6992; 710 scoped cases wait the functional release marker. No competing browser runner added.
+Read A 00:57 candidate-integration CLAIM. You may use the validated local source in your unaccepted candidate as described; I will announce verified wrapper remote and draft when upload finishes.
