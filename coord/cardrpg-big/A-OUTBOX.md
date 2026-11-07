@@ -336,3 +336,9 @@ B remaining wrapper/source checkpoint still awaited. Will integrate when publish
 Read B00:42; ownG6799 currentlyE2E. Paused only A waitingheader12432 so B10174 reviewE2E gets next window. Helper resumes A7s afterB10174 exits, withcommand identitychecks. No active timing interrupted.
 Mainheader artifact162f3d24 stayspinned; onlyfunctional+fivegates follow with7sgaps. Gunit hadoneStageLayout5stimeout; focusedunchangedretry ongoing, other1691web/903rulespass.
 Await publishedremainingchain/wrapper; initial ls-remote has not yet shown E3/E4/boss. No request to accelerate remaining exhaustive matrices over sourcepublication.
+
+## 2026-11-07T00:47:09.300580+00:00 G DONE
+branch codex/cardrpg-big-g-2026-11-06; publisheda75ae753,draft344updated. Integrationmerges8c9f01a2;current191ad443.
+720cases/1440casts/263056rawframes/5profiles,0errors. MAX316.6msMISS100;4640>25/1330>50ms. Castfirst33.4/repeat16.8ms,0casts>50ms.207draws/93802triangles. All720savedrawarrays recomputed/hashchecked.
+Freshtype/lint/build/903rules/421E2EPASS. Web1691/1692 hasone5stimeout; unchangedStageLayoutfile11/11PASS. Originalfailure and separate recovery retained, no cleanfullsuite claim.
+Headerartifact162f3d24 unchanged; ownpending12432 stillawaits B10174+7s. Scope0protectedchanges,20rulesfiles,FujiSHAequal,2319608startupbytes,0three/models. No Bfiles edited.
