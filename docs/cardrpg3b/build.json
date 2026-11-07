@@ -1,8 +1,8 @@
 {
-  "date": "2026-11-06T22:29:51.085Z",
-  "head": "683f33b01bdb0e6ccdbad7ba8b4186a45d43fab0",
+  "date": "2026-11-07T00:36:19.978Z",
+  "head": "c29564f62a9eeec22aab477de42df24d0e85c420",
   "dirty": true,
-  "bytes": 22060373,
+  "bytes": 22446426,
   "compressed": true,
   "imagePacking": [
     {
@@ -174,6 +174,20 @@
       "selected": false
     },
     {
+      "source": "/Users/bao/taskbar-hero-cardrpg-big2/assets/cardrpg3b/textures/stage-window.png",
+      "packed": "/tmp/cardrpg-big2-lossless-images/20dee305fc063077f070b44d97c92de0895f4e003a47dd665ccc5a401dc6adb7-exact-rgba.webp",
+      "width": 1024,
+      "opaque": true,
+      "height": 1024,
+      "sourceBytes": 49841,
+      "packedBytes": 22402,
+      "sourceSha256": "20dee305fc063077f070b44d97c92de0895f4e003a47dd665ccc5a401dc6adb7",
+      "packedSha256": "687640ca5ff730be08cd34914456248bbc8cfb8feb5c062b36393bbb0f4664ec",
+      "rgbaSha256": "72b28ef7c6feab85e81cbf7f2e1d461358f00b18405304b2f8d543f941882ce6",
+      "key": "assets/cardrpg3b/textures/stage-window.png",
+      "selected": true
+    },
+    {
       "source": "/Users/bao/taskbar-hero-cardrpg-big2/assets/cardrpg3b/textures/stage-wood.png",
       "packed": "/tmp/cardrpg-big2-lossless-images/e118429e2b6f12f44975a75c87611c8eca0d7c8f570d2250e1b27c8470a891c9-exact-rgba.webp",
       "width": 1024,
@@ -199,20 +213,6 @@
       "packedSha256": "960911e7b81947d679d8a1df8f2d8d50d5fe3c269858d648ff0c15a8dc673eb8",
       "rgbaSha256": "0bc87886fb2f93383584d3aa6ee402e11497dacfab34da5949f770d917be4cbe",
       "key": "assets/cardrpg3b/textures/stage-cloth.png",
-      "selected": true
-    },
-    {
-      "source": "/Users/bao/taskbar-hero-cardrpg-big2/assets/cardrpg3b/textures/stage-window.png",
-      "packed": "/tmp/cardrpg-big2-lossless-images/20dee305fc063077f070b44d97c92de0895f4e003a47dd665ccc5a401dc6adb7-exact-rgba.webp",
-      "width": 1024,
-      "opaque": true,
-      "height": 1024,
-      "sourceBytes": 49841,
-      "packedBytes": 22402,
-      "sourceSha256": "20dee305fc063077f070b44d97c92de0895f4e003a47dd665ccc5a401dc6adb7",
-      "packedSha256": "687640ca5ff730be08cd34914456248bbc8cfb8feb5c062b36393bbb0f4664ec",
-      "rgbaSha256": "72b28ef7c6feab85e81cbf7f2e1d461358f00b18405304b2f8d543f941882ce6",
-      "key": "assets/cardrpg3b/textures/stage-window.png",
       "selected": true
     },
     {
@@ -245,7 +245,7 @@
     }
   ],
   "evidence": {
-    "rows": 75,
+    "rows": 93,
     "files": [
       {
         "path": "reports/cardrpg-big/filmstrips/clover-1.webp",
@@ -783,6 +783,61 @@
         "thumbnailBytes": 8326
       },
       {
+        "path": "reports/cardrpg-big2/enemies/e3/before/enemy-binding-thread-basic.webp",
+        "sha256": "9d30b18d8282ae5b8d1d55ec937866ab26cd216d8684f1386372a3c0cf806452",
+        "thumbnailBytes": 8102
+      },
+      {
+        "path": "reports/cardrpg-big2/enemies/e3/filmstrips/enemy-binding-thread-basic.webp",
+        "sha256": "dbd87ccbe1b3359db02b266df4b842195a867b121ea89d5a764a63eb0aec49b9",
+        "thumbnailBytes": 7854
+      },
+      {
+        "path": "reports/cardrpg-big2/enemies/e3/before/enemy-binding-thread.webp",
+        "sha256": "744a8b3759240c9f721f9502c8a5b8f414e12466e346d91730c3a28b28b11338",
+        "thumbnailBytes": 8270
+      },
+      {
+        "path": "reports/cardrpg-big2/enemies/e3/filmstrips/enemy-binding-thread.webp",
+        "sha256": "9ab9bef131b5318dae2673fc3f627beeaa457909205cf9b923332245e75967bd",
+        "thumbnailBytes": 8070
+      },
+      {
+        "path": "reports/cardrpg-big2/enemies/e3/filmstrips/enemy-pollen-scout-basic.webp",
+        "sha256": "d6ba32cfb6df8c56c30b8726f8bd1c5b8895cf5d9268b8648557b57276662008",
+        "thumbnailBytes": 9300
+      },
+      {
+        "path": "reports/cardrpg-big2/enemies/e3/before/enemy-pollen-scout.webp",
+        "sha256": "f6b912cdd67b1b1be18e9ceeda88323dda5a6cad6a3552733c9f6a5460276921",
+        "thumbnailBytes": 9584
+      },
+      {
+        "path": "reports/cardrpg-big2/enemies/e3/filmstrips/enemy-pollen-scout.webp",
+        "sha256": "3155ee8f0ddf6698288d24ba49ffae099feb2f4a297349614b052d9328c7e3cd",
+        "thumbnailBytes": 9924
+      },
+      {
+        "path": "reports/cardrpg-big2/enemies/e3/before/enemy-practice-cushion-basic.webp",
+        "sha256": "fffd9d1f75e6ef5906cbdccb07862e5f2a69e683545ff0004d477229b911e151",
+        "thumbnailBytes": 7256
+      },
+      {
+        "path": "reports/cardrpg-big2/enemies/e3/filmstrips/enemy-practice-cushion-basic.webp",
+        "sha256": "954a03afbb69fe4647916abbb8d17926cb6625d51270643bd9690dc6c9d2f95e",
+        "thumbnailBytes": 6764
+      },
+      {
+        "path": "reports/cardrpg-big2/enemies/e3/before/enemy-practice-cushion.webp",
+        "sha256": "e05a9b08935b1bc56e6d0fb016135ff67d89cda7b3810ddb1da22c49334feedb",
+        "thumbnailBytes": 7370
+      },
+      {
+        "path": "reports/cardrpg-big2/enemies/e3/filmstrips/enemy-practice-cushion.webp",
+        "sha256": "43d52ba39480bccaf29aa0ff931b6955c942fd313207e28620c325e6db99205d",
+        "thumbnailBytes": 7696
+      },
+      {
         "path": "reports/cardrpg-big2/enemies/e4/filmstrips/enemy-crumb-sentinel-basic.webp",
         "sha256": "c9fbddb40418d02faf74023d7b24d32abdf561636d90f0775b7572aa85fd43a9",
         "thumbnailBytes": 7256
@@ -796,6 +851,86 @@
         "path": "reports/cardrpg-big2/enemies/e4/filmstrips/enemy-crumb-sentinel.webp",
         "sha256": "039b715c80a18d22ef5c825a441b43a5b0e809f9e762d9ff4e6dba4ef3a1d9ce",
         "thumbnailBytes": 7032
+      },
+      {
+        "path": "reports/cardrpg-big2/enemies/boss/filmstrips/enemy-pantry-crown-basic.webp",
+        "sha256": "ff887d8a7527a2181af5304e7dcae8a77ac263656f40e15b154b1c82ee99d7a6",
+        "thumbnailBytes": 14586
+      },
+      {
+        "path": "reports/cardrpg-big2/enemies/boss/before/enemy-pantry-crown.webp",
+        "sha256": "5a6a11813c343f13951cd5b0063532180bde2a7ecb298a400c50f6797a4ab4af",
+        "thumbnailBytes": 12514
+      },
+      {
+        "path": "reports/cardrpg-big2/enemies/boss/filmstrips/enemy-pantry-crown.webp",
+        "sha256": "9aafd54cc950e020c6c305d07cb25ba6a9c12ee11474d53f952963eb0a68282f",
+        "thumbnailBytes": 15990
+      },
+      {
+        "path": "reports/cardrpg-big2/enemies/boss/filmstrips/enemy-rain-spool-basic.webp",
+        "sha256": "de13e6910f40133c08d9097a31f0c0fa7a00a3623a74af52d7d02451a32fc742",
+        "thumbnailBytes": 8628
+      },
+      {
+        "path": "reports/cardrpg-big2/enemies/boss/before/enemy-rain-spool.webp",
+        "sha256": "006c502041815e85bdec51e2e6d9a24f665b20cf193bcf4715a5ccbe81198422",
+        "thumbnailBytes": 6746
+      },
+      {
+        "path": "reports/cardrpg-big2/enemies/boss/filmstrips/enemy-rain-spool.webp",
+        "sha256": "286866cd3b417106417229543ad0a6b57cc7cbe44507a4b34079cada61810081",
+        "thumbnailBytes": 8148
+      },
+      {
+        "path": "reports/cardrpg-big2/enemies/boss/before/enemy-yarn-giant-basic.webp",
+        "sha256": "749b349607ec2196992db52763fd7adcbc6df102717d67ed930938f78363fd9a",
+        "thumbnailBytes": 12112
+      },
+      {
+        "path": "reports/cardrpg-big2/enemies/boss/filmstrips/enemy-yarn-giant-basic.webp",
+        "sha256": "1214d504637c138631b999194f9ea908643cc7c4f7955328c1952d029ad1626b",
+        "thumbnailBytes": 12780
+      },
+      {
+        "path": "reports/cardrpg-big2/enemies/boss/before/enemy-yarn-giant.webp",
+        "sha256": "71f3c7fce407ad299c0a1327466f803726d77ee7c7be3c49c6a90cc04bfd479d",
+        "thumbnailBytes": 13828
+      },
+      {
+        "path": "reports/cardrpg-big2/enemies/boss/filmstrips/enemy-yarn-giant.webp",
+        "sha256": "1db568656c2bdff295484758a08159b039d348e433d2488996d4b944acbbeb99",
+        "thumbnailBytes": 14294
+      },
+      {
+        "path": "reports/cardrpg-big2/enemies/boss/lifecycle/pantry-crown-intro.webp",
+        "sha256": "1e34df78457f93fca6269445bbbbefe2ff001d23e01e91799873de45866fda85",
+        "thumbnailBytes": 13772
+      },
+      {
+        "path": "reports/cardrpg-big2/enemies/boss/lifecycle/pantry-crown-phase.webp",
+        "sha256": "705e625082d82cfab1367013c07ed9b6c98389549ca16234d7dbc062759f51ef",
+        "thumbnailBytes": 15442
+      },
+      {
+        "path": "reports/cardrpg-big2/enemies/boss/lifecycle/rain-spool-intro.webp",
+        "sha256": "dd23ae755e4962cc2fcf56c12336486b02735f7432ca4817e913b269e30d8e77",
+        "thumbnailBytes": 6880
+      },
+      {
+        "path": "reports/cardrpg-big2/enemies/boss/lifecycle/rain-spool-phase.webp",
+        "sha256": "f1f446f1f76f097ccca69dac23a306703dd9e7f1388c1701156e22d9829ff542",
+        "thumbnailBytes": 7374
+      },
+      {
+        "path": "reports/cardrpg-big2/enemies/boss/lifecycle/yarn-giant-intro.webp",
+        "sha256": "aabecb435d46b0575ca78ba674f2ad95765237c020bf113e3c90fe388726a402",
+        "thumbnailBytes": 15288
+      },
+      {
+        "path": "reports/cardrpg-big2/enemies/boss/lifecycle/yarn-giant-phase.webp",
+        "sha256": "44b933526611ccf71b97343441e8d6c119013e9d435d639c914a139ac2ac17a4",
+        "thumbnailBytes": 14112
       },
       {
         "path": "reports/cardrpg-big/baseline/sharpness/dpr1-hero-face.png",
@@ -913,12 +1048,12 @@
         "thumbnailBytes": 10330
       }
     ],
-    "bytes": 2253527
+    "bytes": 2633005
   },
   "assetCount": 186,
   "scriptBytes": 1773846,
   "assetBytes": 23639800,
-  "sha256": "3d96db56500aeefa266f4a67167d8d637b61ab749085f33ce97806abb1e80c29",
+  "sha256": "734d301c5dfc192e6e0a74e03311deff2fde93acd673983724813bec96a7cfec",
   "runtimeDirty": false,
   "sourceRoots": [
     "packages/game-rules/src",
@@ -1741,8 +1876,10 @@
     "assets/provenance/cardrpg-big2-motion-batch1.json": "06c8147502cb15edc7bba4e2cfcc77d34e284aece317d78cd987fc8ba6d020b4",
     "assets/provenance/cardrpg-big2-motion-batch2.json": "4bd2eeab13b7749f7123474df28b6f4b31e232b5aeb17ed14f58691d9fc5cb49",
     "assets/provenance/cardrpg-big2-motion-batch3.json": "e436662762270e73156bee5fdc60d7060bf8d0389dac445544f0d11f59617ef1",
+    "assets/provenance/cardrpg-big2-motion-boss.json": "d86fe5fa7c59208243de07f132cd7fa34e8cbc92d93887142131f479f4a924aa",
     "assets/provenance/cardrpg-big2-motion-e1.json": "8a373c221e8aece3429310bb65aeba9eec9835cc1a4b2bb6e1a70cc603a55042",
     "assets/provenance/cardrpg-big2-motion-e2.json": "b2f7b9afdbc72009a1fb29b5045fd5564c36aec3bc62bb5a029674447baf25a7",
+    "assets/provenance/cardrpg-big2-motion-e3.json": "8d2a4300c75052580f1b68ed1e82da98c5726f296e2245e7907d3ae3a871b70b",
     "assets/provenance/cardrpg-big2-motion-e4.json": "be8b0d0aec60ec500496d40a3d45eabb1e6c4bfe22418a74e98d482d1c3bc5fd",
     "assets/provenance/cardrpg-big2-stage.json": "a9d0189c01dac93db732cbfa76d75808027d37483d26aaa6ad6afe2a3a8a20ad",
     "assets/provenance/cardrpg-depth-icons.json": "5dcedb9d5129c6d02f643e0cbac36ad18cdf6ffccf9952f6212a7268da43eeb4",
@@ -1980,7 +2117,7 @@
     "tools/cardrpg-big2/evidence-index.mjs": "4e6d19a73718c192c229e58158f9f3314d2a78c49100b3746fe00daa46f3740b",
     "tools/cardrpg-big2/feature-measurements.mjs": "10fd36e756f2827434fb9e976364c390138b652a41bad680e3239f2e052b2c6d",
     "tools/cardrpg-big2/flag-off-check.mjs": "f4e0773fce20b3b35aac2a1c14a1619b5bb59ed2602bb3d572f96ec82a654c84",
-    "tools/cardrpg-big2/gallery-controls-check.mjs": "6a2bfd22682cfbe5a529ad80aaa95f50dee349e295aadc26e67da96328ca7b85",
+    "tools/cardrpg-big2/gallery-controls-check.mjs": "e29f2c8b73943011e055f791bc18f95ae6fa79b2bcb94fb2def5b86ee6f35110",
     "tools/cardrpg-big2/gallery-filmstrips.mjs": "e6775314bdf1b6ce00af722cc101f799ca8c39a23ab14bdad26f1584b32af440",
     "tools/cardrpg-big2/hitstop-check.mjs": "7e99bdad98837e8a9b3cce3530618782852c88bea4674ce517b2766bb025356b",
     "tools/cardrpg-big2/image-pack-check.mjs": "2c12b1e702f79cc4200ec5ac0f4b1c919a3b9775abed0c03032a36493324db91",
@@ -2004,7 +2141,7 @@
     "tools/cardrpg-big2/pin-phase.mjs": "aa81347b08a17cbe59dc3edeb7561327758748fad1f25fd40952aa0481119738",
     "tools/cardrpg-big2/record-boss-battles.mjs": "cf801db6feb7811e8c8f947c8e94b4673b743729552ba735e71bf4c15ac1d099",
     "tools/cardrpg-big2/record-gallery.mjs": "7fecc5c9a29ee1cb7005425f97ac176914efb87f9874da813278d959de56d0e1",
-    "tools/cardrpg-big2/review-measurements.mjs": "3187500cf51c48b1cb292c0684ad42110adb821820d934b3ee90d162d5361bc0",
+    "tools/cardrpg-big2/review-measurements.mjs": "2eff17d693ebd117634c38e38fa64368948c8a3612a9952ddb957cb1c653c068",
     "tools/cardrpg-big2/scope-proof.mjs": "ca195df8fdf30abf4adf173a762dcfa2edc6b8cb1f83c9f7c3a0e3d636b75d17",
     "tools/cardrpg-big2/sharpness-check.mjs": "bf088b2aee189ceb24b84e2b557b737d269bd9245eb426b94eb2edc64c650edb",
     "tools/cardrpg-big2/sharpness-measure.mjs": "5074febc992e366c3a3ebb0aabb792cd3013e63a63438b97fedceee9232415f6",
@@ -2013,8 +2150,8 @@
     "tools/cardrpg-big2/skill-report.mjs": "2fa5b8a4214367eebbbb6e599b755fcbfcdbbd387643253f542d58b48cf313a6",
     "tools/cardrpg-big2/stage-life-check.mjs": "6cad42a13f7186f2d144f41225392aab3066cf7ed0cf8c48c1353652e42151d9",
     "tools/cardrpg-big2/stage-measurements.mjs": "aa15d23659d8f9e448da7132bb6014003c474f957bd0fd5c2dfd5a4786748d54",
-    "tools/cardrpg-big2/studio-check.mjs": "2d5b4dd03fe859ecbc2e31dad2a4887b6c1c5067f213bdd893a4f74ad968132a",
-    "tools/cardrpg-big2/studio.css": "d8e35f278a4913ada0d2f504c75f075133a530aa03ddbdd0cba0d5cc4af50393",
+    "tools/cardrpg-big2/studio-check.mjs": "ed3f3cc678a401c23afde4699cc2d0bd16121b306656dd8c2b718ab64f78aef2",
+    "tools/cardrpg-big2/studio.css": "f375c8e5ddfba5b23b04e6ea45e3af377e24e82bd257a54ee32f3a40155018b6",
     "tools/cardrpg-big2/sync-entry.mjs": "4218a86da8a238b95aa180ce01b0cb381083da7cab0115f7cca8f4c753c17c9c",
     "tools/cardrpg-big2/tsconfig.json": "5f4095dad06ac2ba18eee946e1a47a28c1f7577cc2dfad4957a0f3510aded557",
     "tools/cardrpg-big2/validate.mjs": "1848711b5211a535daefc87ee32d9a834c1f974355b2bd508be197dc791350c7",
