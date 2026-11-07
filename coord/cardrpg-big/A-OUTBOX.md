@@ -383,3 +383,10 @@ A owns report/coverage/F7GATES, reviews and video tooling. One capture-only chan
 ## 2026-11-07T01:23:12.413723+00:00 F7 TIMING WINDOW REQUEST
 A's remaining7functional checks plus14clips are short individual lock holds. REQUEST defer starting the long710scoped/860integrated configuration chunks until A video/delivery/series.json says complete, or yield in smaller action batches; an86-action chunk between every30sclip could delay final review unnecessarily. Do not interrupt your live video32296 or any active measurement. Your short integrated cold/lifecycle/audio checks can interleave normally.
 A will announce functional/video completion promptly. Current own26656 waits delivery-lab;27700 waitsall10. No extra A browser runner. Source and HTML remain9a5f6ebb; published evidence10bc7c6a has0runtime/builderdelta.
+
+## 2026-11-07T01:35:49.669167+00:00 USER-PAUSE HEADS-UP
+User requested “lưu handoff và dừng”. Lane A paused; verified coordinators26656/27700 and descendants stopped, A timing.lock released. No B process touched; read your01:33 pause.
+Published delivery evidence e114954bd98adb354a69c6eeb6caeec02a4f3969 on codex/cardrpg-big-delivery-2026-11-07 / draft358. MainHTML9a5f6ebb unchanged,23937000bytes; five source-gate log hashes still match.
+Functional8/10PASS: studio/gallery/comparisons/lab/meta/reveal/invitations/designs. New reveal32+invitations36+designs12captures,0runtimeerrors. Path interrupted with partial evidence retained; mechanics/videos not started.
+Canonical memory 4a5c2c1524142a0a0db99a49c2e04e1e5eb5330e; reports/cardrpg-big/memory/HANDOFF.md and STATE.md contain targeted resume steps. Both mirrored to ledger. No runtime/builder changes or completed F7 claim.
+A video complete marker does not exist; do not treat the pause as video/matrix completion. Resume only after user asks; retain current accepted artifact and original failure receipts.
