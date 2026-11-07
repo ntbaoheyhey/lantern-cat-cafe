@@ -1,0 +1,148 @@
+{
+  "date": "2026-11-07T23:04:20.700Z",
+  "artifact": "/Users/bao/taskbar-hero-cardrpg-a4/docs/cardrpg3/index.html",
+  "sha256": "067d2062f6836a6d0bb9f6753ece1b2f3ca923688f241866a7f42806c8f7b6a1",
+  "captureScreenshots": false,
+  "method": "Fresh file URL, fresh browser context, cache disabled, RAF and trace begin before navigation. Real mouse clicks. CPU throttle affects CPU only. Raw load frames are retained.",
+  "rows": [
+    {
+      "width": 1280,
+      "height": 720,
+      "dpr": 1,
+      "throttle": 4,
+      "errors": [],
+      "marks": [
+        {
+          "label": "hub-interactive",
+          "at": 2181.5
+        },
+        {
+          "label": "fight-click",
+          "at": 2375.10000000149
+        },
+        {
+          "label": "scene-ready",
+          "at": 9222
+        },
+        {
+          "label": "measurement-end",
+          "at": 32832.10000000149
+        }
+      ],
+      "last": 32825,
+      "stats": {
+        "frames": 893,
+        "calls": 195,
+        "triangles": 74840,
+        "geometries": 708,
+        "textures": 120,
+        "particles": 0,
+        "estimatedGpuBytes": 6499268,
+        "loaded": 5,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "labelAudit": {
+        "heads": [
+          {
+            "x": 311.3406931606008,
+            "y": 140.28764475290316,
+            "width": 151.56021762055872,
+            "height": 104.22627447410972
+          },
+          {
+            "x": 129.15904934720592,
+            "y": 203.8536893738782,
+            "width": 160.3922872110172,
+            "height": 176.42485206662658
+          },
+          {
+            "x": 150.0111500122757,
+            "y": 149.7638976873101,
+            "width": 181.6695953206768,
+            "height": 175.00649859100187
+          }
+        ],
+        "cards": [],
+        "missing": [],
+        "overlaps": 0
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Pro, Unspecified Version)",
+      "pixelRatio": 1,
+      "canvas": {
+        "width": 1096,
+        "height": 477,
+        "cssWidth": 1096,
+        "cssHeight": 476.90625
+      },
+      "stageFraction": 0.6623697916666667,
+      "heap": 37300000,
+      "post": {
+        "width": 1096,
+        "height": 477,
+        "samples": 4
+      },
+      "result": "party",
+      "actions": 8,
+      "audit": {
+        "width": 1096,
+        "height": 477,
+        "units": [
+          {
+            "id": "mochi",
+            "side": "party",
+            "role": "guardian",
+            "yaw": 0.4363323129985824,
+            "box": {
+              "x": 310.7284240223643,
+              "y": 141.05283128468793,
+              "width": 151.0439924197019,
+              "height": 103.53812509580351
+            }
+          },
+          {
+            "id": "soot",
+            "side": "party",
+            "role": "witch",
+            "yaw": 0.4365771485865103,
+            "box": {
+              "x": 129.1364548194287,
+              "y": 204.90465121162103,
+              "width": 159.9973896615217,
+              "height": 175.9962037366524
+            }
+          },
+          {
+            "id": "clover",
+            "side": "party",
+            "role": "alchemist",
+            "yaw": 0.4363323129985824,
+            "box": {
+              "x": 149.72957201742418,
+              "y": 150.17284093523543,
+              "width": 181.22603361417623,
+              "height": 174.55358700551503
+            }
+          }
+        ],
+        "overlaps": [
+          [
+            "mochi",
+            "clover"
+          ],
+          [
+            "soot",
+            "clover"
+          ]
+        ],
+        "outside": []
+      },
+      "max": 149.9000000000001,
+      "p95": 16.799999999999272,
+      "p99": 33.29999999999927,
+      "above25": 20,
+      "above50": 4,
+      "within20": 0.9896319336443753
+    }
+  ]
+}
