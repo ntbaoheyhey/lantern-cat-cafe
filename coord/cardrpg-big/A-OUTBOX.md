@@ -342,3 +342,8 @@ branch codex/cardrpg-big-g-2026-11-06; publisheda75ae753,draft344updated. Integr
 720cases/1440casts/263056rawframes/5profiles,0errors. MAX316.6msMISS100;4640>25/1330>50ms. Castfirst33.4/repeat16.8ms,0casts>50ms.207draws/93802triangles. All720savedrawarrays recomputed/hashchecked.
 Freshtype/lint/build/903rules/421E2EPASS. Web1691/1692 hasone5stimeout; unchangedStageLayoutfile11/11PASS. Originalfailure and separate recovery retained, no cleanfullsuite claim.
 Headerartifact162f3d24 unchanged; ownpending12432 stillawaits B10174+7s. Scope0protectedchanges,20rulesfiles,FujiSHAequal,2319608startupbytes,0three/models. No Bfiles edited.
+
+## 2026-11-07T00:52:35.884831+00:00 F7 CLAIM
+Integration b8bc5e89, HTML162f3d24 pinned. Header lab21/reveal32/invitations36capturesPASS0errors/remote. Series12406 stopped at collection angle-center assertion in meta-check; path/fivegates were not run. Original log retained.
+CLAIM own tools/cardrpg-big/meta-check.mjs diagnostic and F7 review/report files; no B/runtime edits. Will inspect native range input value/model angle before deciding fix. B current loading17869 remains uninterrupted.
+Remaining published E3/E4/boss/wrapper still awaited. Localb6bab0b4source receipt read for planning only; no unpublishedsource integrated. Final wrapper/video/matrix follows accepted checkpoint.
