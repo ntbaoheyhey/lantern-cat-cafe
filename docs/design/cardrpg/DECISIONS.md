@@ -69,3 +69,23 @@ REFERENCE: packages/game-rules/src/cardrpg/depth/bridge.ts; packages/game-rules/
 The three chapter stages share the cafe camera and geometry foundation. Original chapter props, light-facing palettes and transposed synthesized ambience distinguish the route. Skill sounds use unique registry signatures and existing sound synthesis. Audio begins after an explicit user click. Transform-node clips use individually varied rhythm and amplitude on the established rig vocabulary.
 
 REFERENCE: apps/web/src/game/cardrpg/depth/chapter-stage.ts; apps/web/src/game/cardrpg/depth/assets.ts; apps/web/src/game/squad/turn3d/audio.ts; assets/provenance/cardrpg-depth-runtime.json; apps/web/src/game/cardrpg/depth/assets.test.ts.
+
+
+## A4 research decisions — 2026-11-07
+
+REFERENCE: RESEARCH-GAMEPLAY-V4.md; RESEARCH-V4-EQUIPMENT.md; sources.json V4-* records; PROMPT-A4.md.
+
+The user's A4 instruction supersedes the historical manual-battle decisions above. Battles remain automatic; no player skill/target/energy/break/flavour-wheel controls. All new systems are opt-in gameplayV4 rules; live defaults and legacy OFF behavior remain intact.
+
+| Decision entering design | Evidence / verification requirement |
+|---|---|
+| Three cats, primary job = 2 marks + secondary = 1; 2/4-mark thresholds require two distinct cats; visible enemy intent; pre-battle standing plans | V4-TFT/INSPECT, SAP, BG, AFKA; original mechanics, paired same-power synergy test |
+| Keep four slots/eight sets/four gameplay rarities; separate edition prestige | SW, V4-RAID-GEAR, TFT, GU; explicit set niches and zero-stat design editions |
+| Add full loadouts and guaranteed targeted rewards, retain chosen affix reforge | V4-EVER, HSR-CRAFT, DIS-SELECT, SW-REFINE; atomic loadout and selector tests |
+| Pair numeric score with disclosed utility and observed battle events | V4-JAFFE/TFT; display share alone is not evidence of <=12 pp single-piece utility |
+| Permanent earned selector, one-click odds, exact costs, no false urgency | V4-XIAO/ZC/DS/APPLE/GOOGLE/BE-OFFICIAL; gacha distribution and actual browser checks |
+| Replayable local edition ledger, monotonic issuance, no cap reopening after burn | V4-DORMANS/AXIE-SOURCES/SOR/P2E; offline replay is not global/Sybil security |
+| Finish cafe shift, quest board and collection milestones before extra modes | V4-SAP plus existing onboarding studies; each gets a claim loop, cap and day30 check |
+| Retire linked adds with boss; measure actual wall time | V4-JAFFE plus G0 day7 22-second post-boss cleanup; typed finishing event request to B |
+
+Research-only verification: current legal applicability in China and any enacted 2026 general Dutch loot-box rule remain NOT VERIFIED. No new purchase/on-chain flow is proposed. Community-only equipment fields stay explicitly limited. This is one agent's design judgement, not independent human playtesting.

@@ -14,3 +14,6 @@ REFERENCE: ../memory/PROMPT-A4.md; G0-AUDIT.md. Scores are one reviewer's judgem
 | NFT-value limits | Two local design counters; zero minted, no shared ledger authority | 5 | Pure replayable issuance module; cap races/rollover/burn; future spec | Enforcement not implemented |
 | Research-based original identity | 34 researched games; auto-team depth and current economy evidence gaps | 7 | Gap research with >=12 new sources and >=6 papers/talks | Prior research reviewed |
 | Keep proven basics | Full starter team, clear role/gear/route vocabulary, automatic playback, deterministic rewards | 7 | OFF behavior digest, legacy save tests, full real-click pack once | Historical hashes PASS; fresh OFF pending |
+
+## R checkpoint
+Research basis expanded to46source records/9new games/6core papers+3abstracts, with unsupported equipment/legality fields explicitly limited. Preparation responsibility, gear identity, deterministic rewards and local edition accounting now have source-linked design principles. Player-facing before scores remain unchanged: no runtime feature delivered yet. G0 curve/economy still pending; D/P1–P7 gates not claimed.
