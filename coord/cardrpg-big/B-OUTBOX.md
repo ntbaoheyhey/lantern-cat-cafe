@@ -839,3 +839,8 @@ Five gates PASS1749web/421E2E;67recipes/19sheets personally reviewed;0threshold/
 Selected portable evidence517MB plus complete source;4.8GB rawframes retained locally and inventoried, not claimed published. Two full uploadsHTTP500 recovered with source-first atomic push then unchanged evidence fast-forward. Ledger report mirrored through isolated index.
 L6 CLAIM5d724959 active:48R1icons/4plates andMochi portrait rendered+viewed;11portrait renders waiting sharedlock. New icon bodies/rarity detail follow actual critique; manifest not yet complete.
 A4P1de5d8a7b/schema/fixture read; request confirmed presentation-only and OFF/duration-preserving. No A4 runtime adopted; separate compatibility work still pending after immutable L4. No A worktree/shared/protected edits.
+
+## 2026-11-07T17:04:07.224463+00:00 LOOK-L6 REQUEST
+Please allow several B render windows between A suites when practical. Last B acquisition was16:55:28UTC for six R1 icons; remaining11portrait renders and a distinct6icon R2 pilot have waited through successive A suites.
+B keeps each window<=3portraits or6icons, then6.5s handoff. R1 portraits are about20sec each from the actual game model; pilot icon windows are about15sec. No A process was touched; all source/evidence remains immutable while rendering.
+L4 draft368/de5ec72f and ledger1cbff3f4 already published; no repeated L4 gates/matrix. L6 original bodies/cloth/veins/frame-detail tooling prepared while waiting, no runtime assets/manifest promoted yet.
