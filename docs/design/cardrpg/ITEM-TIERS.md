@@ -63,3 +63,29 @@ REFERENCE: ../../../reports/cardrpg-big/integration/extras/README.md, ../../../r
 Paired 50-seed training and heldout samples switch `autoExtras`, `teaCloud`, `frontRelay` and `intentLens` together. OFF matches all six native gear arrays and all six native economy groups. Positive tier steps total 26/48 OFF and 27/48 ON, with zero lost positive gains or new reversals. Level 6 saturation persists. Heldout set rates span 8–92% in both modes, while cat rates span 49.15–83.76% OFF and 51.15–85.52% ON. The largest single-piece boss gain falls from 34 to 24 percentage points heldout, and from 42 to 26 points training. Its displayed share stays 9.6306%.
 
 Across 90 accounts and 45 days, the maximum heavy/casual earned ratio is 2.194775696× OFF and 2.189801700× ON, both within 3×. The combined options pass the measured tier-regression check, while tier saturation and wide utility spreads keep the broader balance gate open. These results assess the combined settings. Default gameplay uses OFF, and promotion remains the user's decision.
+
+<!-- A4_P6_MEASURED -->
+## Gameplay v4 — registered balance results
+
+| Target | Before | After | Status |
+|---|---|---|---|
+| Adjacent tiers ≥44/48, zero reversals | 26 positive / 22 ties / 0 reversals (50 seeds/cell) | 46/48 gain≥2pp; 0 reversals | PASS |
+| Intended bands: ≥15pp spread; no saturation | Level6 saturation; max50 dominated | 33/33 bands; minimum spread 16.80pp | PASS |
+| One piece ≤12pp; utility-aware share ≤10% | +34pp heldout; old displayed score omitted utility | Worst 93.40pp (hearthloom-charm-legendary, mochi, chapter3); share≤4.80% | MISS |
+| Every set 35–75% and leads a common situation | 8–92% heldout | 67.03–79.60% | MISS |
+| Every cat 55–75% and a top pick | 49.15–83.76% heldout | 31.38–64.66% | MISS |
+| Coherent crew +10–25pp at matched power | Not measured under v4 protocol | 47.73pp | MISS |
+| Matched-power tolerance ±2% | Not measured under v4 protocol | 0.99438–1.00569 ratio | PASS |
+| Wall time ordinary, chapter1 | 52.477–63.705s | 21.340s / party | PASS |
+| Wall time elite, chapter2 | Not measured at G0 | 33.785s / party | PASS |
+| Wall time boss, chapter1 | 177.346s (different earned day7 fixture) | 57.546s / enemy | PASS |
+| Wall time boss, chapter2 | Not measured at G0 | 64.807s / enemy | PASS |
+| Wall time boss, chapter3 | Not measured at G0 | 58.680s / enemy | PASS |
+| 45day heavy/casual ≤3×: every currency and paid draws | Max2.1948×; 90 accounts | paidPulls 1.0000×; fish 1.2069×; threads 1.4098×; stamps 1.0000×; essence 2.7260× | PASS |
+| Invitations: conditional CDF deviation ≤1pp | P4 max0.640337pp | 30,000accounts /1.8Mdraws; max0.640337pp | PASS |
+| Collectible paired win gain ≤3pp | Local counters; no enforcement layer | 500 races; 6000 encounters; 0pp | PASS |
+| OFF behavior exact | Frozen G0 digest47477251 | 8,250 routes exact47477251 | PASS |
+| Source gates | G0 passed | Type/lint/build, rules/web/E2E pass; numeric tests reported separately | PASS |
+| Offline artifact and startup | G0 A3 26,120,329 bytes | 26,215,694bytes; +95,365 vs G0; current-main cold comparison belongs to P7 | MISS |
+
+Full source-bound protocol, sample limitations, floor cells and utility diagnostics: [P6 balance report](../../../reports/cardrpg-big/a4/P6-BALANCE.md). Prior sections above remain historical. Local editions add no combat stats. +12 contribution checks are display-only; combat balance at max enhancement is not established. No independent human playtest is claimed.

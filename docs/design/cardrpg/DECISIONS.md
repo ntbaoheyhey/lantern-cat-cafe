@@ -98,3 +98,9 @@ Research-only verification: current legal applicability in China and any enacted
 
 ## A4 P3 — 2026-11-08 pacing correction
 The first training pilot exposed repeat shield/heal stalls (up to 251 actions); the built two-guard ordinary encounter measured 67.553 seconds at x1. In v4, utility enemies now use their disclosed 65-HP heal / 45-shield brace on the existing third-round signature cadence, and basic attacks between. Ordinary HP is 23%, elite 30%, bosses 30% (Pantry 25%) of the legacy catalogue before explicit level growth. OFF is unchanged. This is a training correction, not heldout acceptance; real x1 and replay checks follow.
+
+## A4 P6 — 2026-11-08 pre-heldout candidate
+- Adopt tuning2 only: gear-blind boss pressure3.1/1.9/2.3 (×1.15 at band6+), ordinaryHP.25, bounded one-action utility awareness, isolated preview copies and one Mossbrew Cozy per encounter. No B presentation timing change.
+- Preserve every pilot and residual; do not infer one-piece balance from all-loss bare-party cells. Register coherent-kit/fourth-slot pairs before heldout. Pilot worst88pp remains a miss until the full receipt says otherwise.
+- Reject the extra bounded-defense variant:384 coherent-kit pilot outcome digests unchanged. No unsupported extra runtime change.
+- Acceptance train1–500 and heldout10001–10500 each use3625cells; no heldout sampled before this record. Source hashes bind every resume. Any subsequent tuning based on heldout must disclose contamination and a new reserved block.

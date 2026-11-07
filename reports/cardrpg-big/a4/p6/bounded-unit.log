@@ -1,0 +1,34 @@
+
+ RUN  v5.0.5 /private/tmp/cardrpg-a4-p6/bounded-preview/packages/game-rules
+
+ ❯ src/cardrpg/depth/balance-v4.test.ts (4 tests | 1 failed) 38ms
+   ❯ v4 balance safety (4)
+     × caps renewable defend bonuses once per encounter while keeping OFF repeats 3ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/cardrpg/depth/balance-v4.test.ts > v4 balance safety > caps renewable defend bonuses once per encounter while keeping OFF repeats
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ src/cardrpg/depth/balance-v4.test.ts:23:96
+     21|    for(let attempt=0;attempt<2;attempt++){
+     22|     b.queue=['mochi','soot','clover'];b.actors.forEach(a=>{a.statuses=…
+     23|     const before=actor.hp;expect(R.act(b,{actorId:'mochi',skillId:'def…
+       |                                                                                                ^
+     24|     expect(actor.hp-before).toBe(enabled?(attempt===0?8:0):25);
+     25|     expect(R.stacks(actor,'riposte')>0).toBe(!enabled||attempt===0);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 3 passed (4)
+   Start at  01:58:40
+   Duration  276ms (transform 66%, tests 19%, import 13%, worker 1%)
+

@@ -1,0 +1,95 @@
+▶ registered v4 balance acceptance
+  ✔ tiers (0.31275ms)
+  ✔ bands (0.094541ms)
+  ✖ single-piece (0.425375ms)
+  ✖ sets (0.080667ms)
+  ✖ cats (0.075042ms)
+  ✖ crew (0.064083ms)
+  ✔ matched-power (0.05175ms)
+✖ registered v4 balance acceptance (2.37175ms)
+ℹ tests 7
+ℹ suites 1
+ℹ pass 3
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 51.743416
+
+✖ failing tests:
+
+test at tools/cardrpg-big/a4-p6-acceptance.test.mjs:14:88
+✖ single-piece (0.425375ms)
+  AssertionError [ERR_ASSERTION]: Worst paired heldout gain <=12pp across bare and coherent-kit placements, at least one informative baseline; +0/+12 utility-aware share <=10%; floor cells disclosed
+  Measured: {"worst":{"key":"{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-charm-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}","kind":"pieces-equipped","templateId":"hearthloom-charm-legendary","cardId":"mochi","level":6,"chapter":3,"actions":24751,"minPowerRatio":1,"maxPowerRatio":1,"maxShare":0.030404384867772957,"maxEnhancedShare":0.039648926155519265,"shareSum":14.243613248313501,"complete":true,"digest":"eb08b9f4d2c1bd409c60f3189fbf01d776cd87f10107bfacc17c2153dff1892d","meanShare":0.028487226496627,"wins":478,"n":500,"rate":0.956,"wilson95":[0.9342800855801577,0.9707662623196583],"beforeWins":11,"gainPp":93.4},"maxShare":0.04799819401976039,"bareFloorCells":2304,"informativeCells":320,"equippedCells":384,"cells":2688}
+  
+  'MISS' !== 'PASS'
+  
+      at TestContext.<anonymous> (file:///Users/bao/taskbar-hero-cardrpg-a4/tools/cardrpg-big/a4-p6-acceptance.test.mjs:16:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'MISS',
+    expected: 'PASS',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tools/cardrpg-big/a4-p6-acceptance.test.mjs:14:88
+✖ sets (0.080667ms)
+  AssertionError [ERR_ASSERTION]: Each set aggregate 35–75% at matched power and leads at least one common situation (ties disclosed)
+  Measured: [{"id":"hearthloom","rate":0.681,"leadingSituations":[3,4,5,6,7]},{"id":"moonwick","rate":0.6950000000000001,"leadingSituations":[3,4,5,6,7]},{"id":"mossbrew","rate":0.70275,"leadingSituations":[3,4,5,6,7]},{"id":"rainlace","rate":0.702,"leadingSituations":[3,4,5,6,7]},{"id":"crumbweave","rate":0.796,"leadingSituations":[0,1,3,4,5,6,7]},{"id":"bellsteel","rate":0.6755,"leadingSituations":[3,4,5,6,7]},{"id":"emberfelt","rate":0.67025,"leadingSituations":[3,4,5,6,7]},{"id":"velvetrim","rate":0.7172499999999999,"leadingSituations":[2,3,4,5,6,7]}]
+  
+  'MISS' !== 'PASS'
+  
+      at TestContext.<anonymous> (file:///Users/bao/taskbar-hero-cardrpg-a4/tools/cardrpg-big/a4-p6-acceptance.test.mjs:16:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'MISS',
+    expected: 'PASS',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tools/cardrpg-big/a4-p6-acceptance.test.mjs:14:88
+✖ cats (0.075042ms)
+  AssertionError [ERR_ASSERTION]: Every cat aggregate 55–75% at matched power, and top pick with a fixed pair of partners
+  Measured: [{"id":"mochi","rate":0.4983757575757574,"bestTeam":["mochi","sorrel","cinnamon"],"bestRate":1,"topPickCells":25},{"id":"soot","rate":0.31380606060606053,"bestTeam":["soot","biscuit","cinnamon"],"bestRate":1,"topPickCells":3},{"id":"clover","rate":0.4614909090909093,"bestTeam":["clover","biscuit","cinnamon"],"bestRate":1,"topPickCells":7},{"id":"panko","rate":0.42670303030303014,"bestTeam":["panko","cinnamon","marigold"],"bestRate":1,"topPickCells":6},{"id":"mallow","rate":0.4934424242424241,"bestTeam":["mallow","cinnamon","marigold"],"bestRate":1,"topPickCells":6},{"id":"sorrel","rate":0.44785454545454545,"bestTeam":["mochi","sorrel","cinnamon"],"bestRate":1,"topPickCells":3},{"id":"biscuit","rate":0.6343757575757575,"bestTeam":["mochi","biscuit","velvet"],"bestRate":1,"topPickCells":29},{"id":"inkcap","rate":0.48895757575757565,"bestTeam":["inkcap","cinnamon","marigold"],"bestRate":1,"topPickCells":8},{"id":"cinnamon","rate":0.6372606060606061,"bestTeam":["mochi","sorrel","cinnamon"],"bestRate":1,"topPickCells":60},{"id":"brioche","rate":0.31949090909090916,"bestTeam":["mochi","cinnamon","brioche"],"bestRate":1,"topPickCells":4},{"id":"velvet","rate":0.646618181818182,"bestTeam":["mochi","biscuit","velvet"],"bestRate":1,"topPickCells":46},{"id":"marigold","rate":0.5784969696969697,"bestTeam":["mochi","sorrel","marigold"],"bestRate":1,"topPickCells":37}]
+  
+  'MISS' !== 'PASS'
+  
+      at TestContext.<anonymous> (file:///Users/bao/taskbar-hero-cardrpg-a4/tools/cardrpg-big/a4-p6-acceptance.test.mjs:16:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'MISS',
+    expected: 'PASS',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tools/cardrpg-big/a4-p6-acceptance.test.mjs:14:88
+✖ crew (0.064083ms)
+  AssertionError [ERR_ASSERTION]: Train-selected coherent crew vs frozen random legal equal-power sampling:10–25pp
+  Measured: {"gainPp":47.73333333333333,"chosenOnTrain":["biscuit","cinnamon","velvet"],"rows":[{"key":"{\"kind\":\"crew\",\"chapter\":1,\"team\":[\"biscuit\",\"cinnamon\",\"velvet\"]}","kind":"crew","chapter":1,"team":["biscuit","cinnamon","velvet"],"actions":13500,"minPowerRatio":0.9985824979777106,"maxPowerRatio":1,"maxShare":0,"maxEnhancedShare":0,"shareSum":0,"complete":true,"digest":"831a2ecf1168eda061ebd75012e858b040d599acf1d83db71073d596cbfd8da8","meanShare":0,"wins":498,"n":500,"rate":0.996,"wilson95":[0.9855339859585811,0.9989023924587627],"beforeWins":222,"gainPp":55.2},{"key":"{\"kind\":\"crew\",\"chapter\":2,\"team\":[\"biscuit\",\"cinnamon\",\"velvet\"]}","kind":"crew","chapter":2,"team":["biscuit","cinnamon","velvet"],"actions":14234,"minPowerRatio":0.9985824979777106,"maxPowerRatio":1,"maxShare":0,"maxEnhancedShare":0,"shareSum":0,"complete":true,"digest":"53900b0af82904196b9cedbe83ae691ab678a1f509305025c9e097809b9f04e5","meanShare":0,"wins":499,"n":500,"rate":0.998,"wilson95":[0.9887590072528046,0.9996468726904154],"beforeWins":228,"gainPp":54.2},{"key":"{\"kind\":\"crew\",\"chapter\":3,\"team\":[\"biscuit\",\"cinnamon\",\"velvet\"]}","kind":"crew","chapter":3,"team":["biscuit","cinnamon","velvet"],"actions":13633,"minPowerRatio":0.9985824979777106,"maxPowerRatio":1,"maxShare":0,"maxEnhancedShare":0,"shareSum":0,"complete":true,"digest":"a6014ed7b0a287223ea71f9d6ed4c5d686be21c8019067ad865700e661ca329e","meanShare":0,"wins":500,"n":500,"rate":1,"wilson95":[0.9923753814690964,0.9999999999999999],"beforeWins":331,"gainPp":33.8}]}
+  
+  'MISS' !== 'PASS'
+  
+      at TestContext.<anonymous> (file:///Users/bao/taskbar-hero-cardrpg-a4/tools/cardrpg-big/a4-p6-acceptance.test.mjs:16:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'MISS',
+    expected: 'PASS',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

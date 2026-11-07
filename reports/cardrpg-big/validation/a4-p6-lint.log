@@ -1,0 +1,20 @@
+
+> taskbar-hero@0.0.0 lint /Users/bao/taskbar-hero-cardrpg-a4
+> pnpm -r lint
+
+Scope: 6 of 7 workspace projects
+packages/auth lint$ tsc --noEmit
+packages/chain lint$ tsc --noEmit
+packages/game-rules lint$ tsc --noEmit
+supabase/tests lint$ tsc --noEmit
+packages/chain lint: Done
+packages/auth lint: Done
+packages/game-rules lint: src/cardrpg/depth/balance-acceptance-v4.test.ts(2,28): error TS2307: Cannot find module 'node:fs' or its corresponding type declarations.
+packages/game-rules lint: src/cardrpg/depth/balance-acceptance-v4.test.ts(3,23): error TS2307: Cannot find module 'node:path' or its corresponding type declarations.
+packages/game-rules lint: src/cardrpg/depth/balance-acceptance-v4.test.ts(11,24): error TS2580: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+packages/game-rules lint: src/cardrpg/depth/balance-acceptance-v4.test.ts(13,58): error TS2580: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.
+packages/game-rules lint: Failed
+/Users/bao/taskbar-hero-cardrpg-a4/packages/game-rules:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/game-rules@0.0.0 lint: `tsc --noEmit`
+Exit status 2
+ ELIFECYCLE  Command failed with exit code 2.
