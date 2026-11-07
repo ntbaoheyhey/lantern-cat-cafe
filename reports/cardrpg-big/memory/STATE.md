@@ -3,15 +3,15 @@ PROMPT.md bytes (wc -c) = 53562
 PROMPT.md SHA-256 = bba8c53418413298018f714aa35ebd60ed3d49d9df32f2027c90ba9b279dcc37
 REFERENCE: reports/cardrpg-big/memory/PROMPT.md
 ## NOW
-ACTIVE 2026-11-07T04:25:38.972959+00:00: F7 baseline v1 report committed and pushed b092ed0cbfdc362dbf78ce4f6418187bff029695; ledger published a2728798831acc86619e6772205c7fefb4b58fcf;358 body updated/open/draft. Phase LOOK-A preparation; no baseline long matrix.
-Delivery /Users/bao/taskbar-hero-cardrpg-big-delivery · codex/cardrpg-big-delivery-2026-11-07 · last work commit b092ed0cbfdc362dbf78ce4f6418187bff029695. Draft358 open against332/cd5edcc. Accepted runtime a106dfcac755d42f91b2467adf6d888ca0b41a9c unchanged.
-HTML index/baseline-v1:9a5f6ebbb04af56c19f11cf43cf2763b35df2bde3b7a8dcd943060e878d793d3;23,937,000bytes. Five existing sourcegate logs reverified;1730web/1020rules(+2expectedfail,11skip)/421E2E+demo-types. This documentation audit is not a new suite run.
-Canonical /Users/bao/taskbar-hero-cardrpg-big · ai/codex-cardrpg-big-2026-11-06 · memory parent c0298460;source221ec3a8a462597f55579a319018961cd5cd9d21. A drafts333–341,344–345,348,358.359 is now closed/merged into integration (observed GitHub),not an open draft.
-Sync /Users/bao/taskbar-hero-cardrpg-sync · ai/codex-cardrpg-big-sync ·49727837. B04:30helperAPIreceived:turn3d/look-v2.ts isLookV2/setLookV2/subscribeLookV2;data-look-v2. Local663277c6tokens only;publishedL0tip stillpending. Ledger /Users/bao/taskbar-hero-ui-ledger ·ai/codex-ui-ledger. Never touch other worktrees.
+ACTIVE 2026-11-07T04:41:17.795557+00:00: LOOK-A L0 adopted published f3091a44fd5d04a34bafcc1f272263472aeadb67 by fast-forward; shared plumbing+meta restyle in progress, no accepted new artifact yet.
+Delivery /Users/bao/taskbar-hero-cardrpg-big-delivery · codex/cardrpg-big-delivery-2026-11-07 · HEAD f3091a44fd5d04a34bafcc1f272263472aeadb67;358draft. B360draft published L0;L1 pending.
+Baseline runtime a106dfca, HTML9a5f6ebbb04af56c19f11cf43cf2763b35df2bde3b7a8dcd943060e878d793d3/23937000bytes unchanged;14videos/204screens/report b092ed0c and ledger a2728798 published.
+Canonical /Users/bao/taskbar-hero-cardrpg-big · ai/codex-cardrpg-big-2026-11-06 · last memory1e93684a. Open A drafts333–341,344–345,348,358;359closed/merged,notopen.
+Sync /Users/bao/taskbar-hero-cardrpg-sync · ai/codex-cardrpg-big-sync · eeb09b9c. B L0 helper published;L1 requests CompanionPreview subscribe/recreate. Ownership unchanged.
 ## NEXT
-1. Finish CSS-only prototype1280pilot (unpublishedtoken snapshot663277c6,baseline9a5f6ebb;notartifactadoption). Runner session4388/log/tmp/cardrpg-a-look-meta-pilot.log waitsB-L0coldlock. Inspect matchedscreens,fixcontrast,then3sizes.
-2. At phase boundary read B-OUTBOX; adopt published LOOK L0 helper/tokens. Wire shared appOFF/lookdemoON/live toggle in next source commit, answer exact API. Do not invent B contract.
-3. Meta restyle+original textures and portrait/icon/frame wiring; each adopted B tip gets rebuild/newhash,fivegates+functionalpack,exact-hash checkpoint. Final860matrix only LOOK B/finallookV2.
+1. Finish queued1280CSSpilot PID50205/session4388/log/tmp/cardrpg-a-look-meta-pilot.log after Bcoldlock; review screenshots and contrast,then3sizes.
+2. Wire published helper in App/offline/build and CompanionPreview in next source commit; original textures and token-driven meta CSS. App defaultOFF;explicitlookdemoON/live toggle.
+3. Rebuild main/newhash,run fivegates+functionalpack/flagoff in shortlocks,publish exacthash A CHECKPOINT. AwaitL1/L6 atphaseboundary;final860matrix onlyLOOK B/finallookV2.
 ## DONE
 Baseline publication ·b092ed0c/draft358, ledgera2728798831acc86619e6772205c7fefb4b58fcf;delivery/baseline-report-audit.json verifies204screens,14clips,57sheets,5gatelogs,13,125rawframes;105line report/9Vietnamese/6routes. Runtime delta0.
 Baseline review ·ef400fc3/draft358;14recordings/12,385decodedframes/991samples/57sheets;video/delivery/{audit,review/observations}.json. FRESH-EYES has20weaknesses/11grades;reportdraft107lines;not baseline publication.
@@ -54,6 +54,7 @@ I caps PASS25rules/2UI/12screens,localcounter/binding/help;designonly,0battle st
 G/M PASS earnedceremony/odds/pity/history andmain68reveal/invitationcaptures;Mpreview+70px,height300px,6before/after+33screens. OpeningGMAX316.6msMISS.
 F1/F2 FAILscale/sharpness:stage78.889%PASS,2745posesPASS;sharpness2/10PASS8MISS. F3/F4 varietyPASS30motionpairs/465effectpairs;historicalopening566.7/266.7msMISS.
 ## DECISIONS · append-only archive
+2026-11-07T04:41:17.795557+00:00 · Adopted publishedL0f3091a44;shared App/build/offline and CompanionPreview request accepted. Source integration begins;oldbaseline receipts stay9a5f6ebb.
 2026-11-07T04:33:20.562672+00:00 · Read BLOOKpromptsection5/exactlocalhelper;ownershipunchanged. Keep sharedwiring untilpublishedtip. Textureprep isoriginal,neutral,andnotruntimeimported;look-ui/PLAN.md containscontracts/checks.
 2026-11-07T04:30:13.377652+00:00 · Baseline publication complete atb092ed0c/ledgera2728798831acc86619e6772205c7fefb4b58fcf;358descriptionupdated. Begin LOOK-A texture prep while L0 helper/tokens pending.
 2026-11-07T04:25:38.972959+00:00 · Baseline report uses branch-qualified evidence URLs so identical ledger copy has working links. Audit verifies underlying tracked paths. No baseline recapture or new matrix.
