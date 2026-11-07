@@ -2,12 +2,13 @@ import { clone } from '../internal';
 import type { Stats } from '../contract';
 import { CAT_BY_ID, ENEMY_BY_ID, SKILLS, STATUS_BY_ID } from './catalog';
 import type { Actor, Battle, DepthAccount, Skill } from './contract';
+import type { IssuanceLedger } from './scarcity';
 import type { ShiftLoadoutV4 } from './loadouts-v4';
 import type { GameplayEventV4 } from './events-v4';
 
 export type CrewJob = 'door' | 'kettle' | 'table' | 'lantern';
 export interface StandingPlan { focus: 'finish' | 'support' | 'leader'; care: 'steady' | 'protect' }
-export interface GameplayV4State { version: 1; plan: StandingPlan; loadouts?: Array<ShiftLoadoutV4 | null> }
+export interface GameplayV4State { version: 1; plan: StandingPlan; loadouts?: Array<ShiftLoadoutV4 | null>; selectorMarks?:number; revealSequence?:number; reveals?:GameplayEventV4[]; issuance?:IssuanceLedger; legacySealCount?:number; spentEffortIds?:string[] }
 export interface BattleV4State { version: 1; plan: StandingPlan; events: GameplayEventV4[]; committed: boolean }
 export const DEFAULT_PLAN: StandingPlan = { focus: 'finish', care: 'steady' };
 export const CREW_JOBS: { id: CrewJob; name: string; small: string; full: string }[] = [

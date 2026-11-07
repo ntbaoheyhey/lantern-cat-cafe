@@ -27,6 +27,6 @@ for (const [name, args] of steps) {
   const row = { name, args, exit, started, ended: new Date().toISOString(), log: path.replace(root + '/', ''), sha256: createHash('sha256').update(log).digest('hex'), counts: log.split('\n').filter(line => /Tests |Test Files |\d+ passed|\d+ failed|\d+ skipped|expected fail/.test(line)).map(line => line.replace(/\x1b\[[0-9;]*m/g, '')) };
   results.push(row); console.log(JSON.stringify(row));
   writeFileSync(`${directory}/${phase}.json`, JSON.stringify(results, null, 2));
-  if (name === 'e2e' || name === 'tests') await delay(6500);
+  if (name === 'e2e' || name === 'tests') await delay(Number(process.env.BIG_HANDOFF_MS||6500));
 }
 process.exitCode = results.some(result => result.exit !== 0) ? 1 : 0;

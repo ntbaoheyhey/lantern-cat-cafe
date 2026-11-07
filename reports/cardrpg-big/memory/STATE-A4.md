@@ -1,8 +1,8 @@
 # A4 living state
 ## NOW
-P3 functional closure on codex/cardrpg-a4-p3-2026-11-08; five gates PASS, draft publication next. P2 draft369 stays published. No B adoption.
+P4 active on codex/cardrpg-a4-p4-2026-11-08 from80f73335; P3 published draft370. P2 draft369 stays published. No B adoption.
 ## NEXT
-Publish P3 report/draft/ledger and claim P4. Apply reviewed /tmp/cardrpg-a4-p4/apply.py then copy staged P4 tools. P4–P7 remain. Existing timing coordinator47125 has all five results; no duplicate runs.
+P4 CLAIM8384a5a8 published. Apply reviewed /tmp/cardrpg-a4-p4/apply.py and staged tools, then focused tests, five gates, sims, headless screenshots and draft. P4–P7 remain. Existing timing coordinator47125 has all five results; no duplicate runs.
 ## DONE
 P3 boss samples all45–90s; elite33.579s PASS; ordinary14.487s MISS. Train1800 replay/lifecycle PASS, OFF8250 exact47477251. Newsave/full balance still NOT VERIFIED.
 ## GATES
@@ -118,3 +118,8 @@ P3 type/lint/build PASS, post-tuning1067rules(+2expectedfail/11skip)/1735web/421
 ## P3 restored after compaction
 - Recovered active jobs rather than duplicating. P3 first ordinary44actions/67.553s; rule correction13focused and1800trainPASS. Source stable for remaining timing/gates.
 - P4 files staged OUTSIDE checkout only; no claim/integration before P3 closes. No agents/Docker/CUA/model requests.
+
+## P3 published / P4 integration
+- P3 draft370 at80f73335, ledger ec2579d2, sync8384a5a8. Bosses57.893/74.574/81.808s PASS; ordinary14.487s MISS. No remaining P3 CPU jobs.
+- Applied P4 selectors/complete basket/local ledger/THC11 and reviewed free-welcome zero-mark + disabled-mode guards. Legacy public design adapter refuses v4 bypass without editing bridge/Fuji code.
+- Initial typecheck exposed only a test helper union annotation; corrected to reserve-specific type. Full typecheck and20focused tests PASS. Full gates/sims/browser pending; no acceptance claim yet.

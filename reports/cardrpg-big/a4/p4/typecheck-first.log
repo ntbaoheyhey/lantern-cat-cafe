@@ -1,0 +1,11 @@
+
+> @taskbar-hero/game-rules@0.0.0 typecheck /Users/bao/taskbar-hero-cardrpg-a4/packages/game-rules
+> tsc --noEmit
+
+src/cardrpg/depth/scarcity.test.ts(13,39): error TS2345: Argument of type '{ edition: "golden-maneki"; commandId: string; expectedRevision: number; accountId: string; kind: "reserve"; } | { edition: "golden-maneki"; commandId: string; expectedRevision: number; accountId: string; kind: "burn"; reservationId: string; } | { ...; } | { ...; }' is not assignable to parameter of type 'IssuanceCommand'.
+  Object literal may only specify known properties, and 'edition' does not exist in type '{ commandId: string; expectedRevision: number; accountId: string; } & { kind: "burn"; reservationId: string; }'.
+src/cardrpg/depth/scarcity.test.ts(27,74): error TS2345: Argument of type '{ commandId: string; edition: "golden-maneki"; expectedRevision: number; accountId: string; kind: "reserve"; } | { commandId: string; edition: "golden-maneki"; expectedRevision: number; accountId: string; kind: "burn"; reservationId: string; } | { ...; } | { ...; }' is not assignable to parameter of type 'IssuanceCommand'.
+  Object literal may only specify known properties, and 'edition' does not exist in type '{ commandId: string; expectedRevision: number; accountId: string; } & { kind: "burn"; reservationId: string; }'.
+/Users/bao/taskbar-hero-cardrpg-a4/packages/game-rules:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/game-rules@0.0.0 typecheck: `tsc --noEmit`
+Exit status 2

@@ -1,9 +1,11 @@
+import { EditionLedgerV4 } from './EditionLedgerV4';
 import { SCARCITY } from '@taskbar-hero/game-rules/cardrpg';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import type { DepthModel } from './model';
 
 export function CollectibleDesigns({ m }: { m: DepthModel }) {
   const state = m.state;
+  if(state.gameplayV4)return <EditionLedgerV4 m={m}/>;
   return <section className="cr-panel dp-collectibles">
     <h2>Collectible designs</h2>
     <p><strong>Design only - not minted</strong></p>
