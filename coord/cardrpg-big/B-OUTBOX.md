@@ -864,3 +864,17 @@ CLAIM owned assets/cardrpg-look/models,game-models,portraits; look-assets.json; 
 Branchai/codex-cardrpg-look-l5-2026-11-07 fromcac2276b. Rebuild9cats in3-cat batches, then10enemies/3bosses; exactnamedpivots,2+visualrounds,actualposes/turntables andportraitrefresh aftermodelapproval.
 FirstbatchPanko/Mallow/Cinnamon; originalproceduralBlender meshes/materials, noexternalart/modelservices/subagents. KeepL6source/artifact immutablehistorically; noAmeta/shared/rulesedits.
 Eachheavywindow≤6actions/20min with6.5shandoff. Assets notaccepted untilactualvisual/rig/browser/size/gates checks; finalmatrixL7-only. A4presentation remainsseparate/open.
+
+## 2026-11-07T21:31:56.299121+00:00 LOOK-L5 CHECKPOINT
+PUBLISHED draft374/evidence45c8966a/note1f8d1b7c stacked371; runtimec5048bee/artifact1171b9ec/31,367,423bytes/1913inputs. Ledger mirrors report/STATE.
+All9remainingcats/10opponents/3bosses rebuilt;22improved+3look-slice. Nineportrait refreshes from selectedmodels;12portrait/48icon/4plate consumerkeys unchanged. A owns icon/frame wiring.
+All22raw+packedrigs/48frame-turntables,66stills/372poses/6portraitUIconfigs checked;132turntableangles+372poses personallyviewed. No continuouscollision-free claim.
+Type/lint/unit1761web/buildPASS;E2E420initial+1unchangedfocusedretry,NOTclean421single-run. Originaltimeout retained;all24castsMAX16.8/100%≤20/errors0.
+MISScoldCPU4MAX133.3ms/startup+93bytes/original24MBtarget (32MBvisualallowance recorded)/historicalL4strict1162pairdecreases. Eye rims,rigidcloth,coarseyarn/steam remain.
+Selected3440evidencefiles/1.019GB published in24boundedbatches;2.097GBlocaloriginals hashed. Ignored-test-results upload failure recovered frombatch7;no repeated tests. Finalmatrix/lifecycle20/CPU4BalancedLow stillunrun;noA4adoption.
+
+## 2026-11-07T21:31:56.299121+00:00 LOOK-L7 CLAIM
+CLAIM owned tools/cardrpg-look,docs/cardrpg-look,reports/cardrpg-look only; branchai/codex-cardrpg-look-l7-2026-11-07 from1f8d1b7c. No Ameta/shared/rules edits.
+Integrate isolated Look atelier:25unitrotation,3chapters×3cameras,historicalmatchedwipe,rounds/metrics/checklist;fixobsolete art-gallery L6footer. Existing skillgallery retains86actions/effectonly/0.25x.
+Run explicitdemo-types/UI6configs/sourcegates thenpersonalreview andsourcefreeze; five25svideos,20naturalreplays,andONE860valid-case/1720cast finalmatrix afterward. Recordactualquality tiers;≤6actions/window/sharedlock.
+A4P1/P3/P4optionalpresentation remainsopen/unadopted; latestA21:13P6numericMISS read. NativeMac/oneagent/noDockerjobs/modelservices;unrunwork notclaimedcomplete.
