@@ -1,0 +1,26 @@
+{
+  "pid": 40094,
+  "cwd": "/Users/bao/taskbar-hero-single2-fix/apps/web",
+  "command": [
+    "env",
+    "NODE_OPTIONS=--import=/Users/bao/taskbar-hero-ui-ledger/reports/ui/ports-aux-loader.mjs",
+    "E2E_PORT_CLASSIC=5300",
+    "E2E_PORT_V2=5301",
+    "E2E_PORT_SERVER=5302",
+    "E2E_PORT_API=5303",
+    "ART2_SCREENSHOTS=/Users/bao/taskbar-hero-single2-fix/screenshots/landing-stable-builder",
+    "npx",
+    "-y",
+    "pnpm@10.28.0",
+    "exec",
+    "playwright",
+    "test",
+    "e2e/ui/landing-font-stability.spec.ts",
+    "e2e/ui/art2-flag-off.spec.ts",
+    "--workers=2",
+    "--retries=0",
+    "--reporter=line"
+  ],
+  "started": "2026-11-04T08:43:37.839866+00:00",
+  "log": "/Users/bao/taskbar-hero-single2-fix/logs/landing-pinned-builder.log"
+}

@@ -1,0 +1,120 @@
+[WebServer] (node:40159) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:40184) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-single2-fix/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+[WebServer] (node:40195) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+
+[WebServer] (node:40234) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:40235) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-single2-fix/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] (node:40241) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+[WebServer] (node:40260) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+
+[WebServer] (node:40311) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:40312) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-single2-fix/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] (node:40320) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-single2-fix/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-single2-fix/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] (node:40333) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 6 tests using 2 workers
+
+(node:40344) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+(node:40345) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/6] [stage-layout] › e2e/ui/landing-font-stability.spec.ts:4:3 › Landing stays still when web fonts arrive 1280 no-preference
+[2/6] [stage-layout] › e2e/ui/art2-flag-off.spec.ts:6:35 › ART2 flag-off landing and class stay pixel-identical to main 340f88b 1280
+  1) [stage-layout] › e2e/ui/art2-flag-off.spec.ts:6:35 › ART2 flag-off landing and class stay pixel-identical to main 340f88b 1280 
+
+    Error: landing 1280: default-off pixels changed from accepted main
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      33 |       }
+      34 |     }
+    > 35 |     expect(actual.equals(baseline), `${screen} ${width}: default-off pixels changed from accepted main`).toBe(true);
+         |                                                                                                          ^
+      36 |   }
+      37 | });
+      38 |
+        at /Users/bao/taskbar-hero-single2-fix/apps/web/e2e/ui/art2-flag-off.spec.ts:35:106
+
+    Error Context: test-results/5300-5301/ui-art2-flag-off-ART2-flag-a6ec3-ntical-to-main-340f88b-1280-stage-layout/error-context.md
+
+
+(node:40365) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[3/6] [stage-layout] › e2e/ui/art2-flag-off.spec.ts:6:35 › ART2 flag-off landing and class stay pixel-identical to main 340f88b 1600
+[4/6] [stage-layout] › e2e/ui/landing-font-stability.spec.ts:4:3 › Landing stays still when web fonts arrive 1280 reduce
+  2) [stage-layout] › e2e/ui/art2-flag-off.spec.ts:6:35 › ART2 flag-off landing and class stay pixel-identical to main 340f88b 1600 
+
+    Error: landing 1600: default-off pixels changed from accepted main
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      33 |       }
+      34 |     }
+    > 35 |     expect(actual.equals(baseline), `${screen} ${width}: default-off pixels changed from accepted main`).toBe(true);
+         |                                                                                                          ^
+      36 |   }
+      37 | });
+      38 |
+        at /Users/bao/taskbar-hero-single2-fix/apps/web/e2e/ui/art2-flag-off.spec.ts:35:106
+
+    Error Context: test-results/5300-5301/ui-art2-flag-off-ART2-flag-0d3ce-ntical-to-main-340f88b-1600-stage-layout/error-context.md
+
+
+[5/6] [stage-layout] › e2e/ui/landing-font-stability.spec.ts:4:3 › Landing stays still when web fonts arrive 1600 no-preference
+[6/6] [stage-layout] › e2e/ui/landing-font-stability.spec.ts:4:3 › Landing stays still when web fonts arrive 1600 reduce
+  2 failed
+    [stage-layout] › e2e/ui/art2-flag-off.spec.ts:6:35 › ART2 flag-off landing and class stay pixel-identical to main 340f88b 1280 
+    [stage-layout] › e2e/ui/art2-flag-off.spec.ts:6:35 › ART2 flag-off landing and class stay pixel-identical to main 340f88b 1600 
+  4 passed (20.1s)
+
+exit=1
