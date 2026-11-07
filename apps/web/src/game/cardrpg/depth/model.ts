@@ -151,8 +151,8 @@ export class DepthModel {
     if (screen === 'hub' && (!this.state.run || this.state.run.complete)) this.sceneStarted = false;
     this.screen = screen; this.error = false; this.notify(false); }
   command(command: Command) { this.apply(R.metaCommand(this.state, command)); }
-  start(chapter: number, mode: R.Run['mode'] = 'campaign') {
-    if (this.apply(R.startRun(this.state, chapter, this.state.account.seed + this.state.nextRunId * 7919, mode, this.offline ? '2026-11-06' : new Date().toISOString().slice(0, 10)), 'Choose the first stop on your route.')) this.go('map');
+  start(chapter: number, mode: R.Run['mode'] = 'campaign', challengeLevel?: number) {
+    if (this.apply(R.startRun(this.state, chapter, this.state.account.seed + this.state.nextRunId * 7919, mode, this.offline ? '2026-11-06' : new Date().toISOString().slice(0, 10), challengeLevel), 'Choose the first stop on your route.')) this.go('map');
   }
   enter(id: string) {
     if (this.apply(R.enterNode(this.state, id), 'Prepare your companions, then press Fight.')) {

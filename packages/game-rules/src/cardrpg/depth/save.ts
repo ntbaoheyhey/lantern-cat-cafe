@@ -92,6 +92,7 @@ function validateEnemySnapshot(value: unknown): void {
       || !Number.isInteger(stats.attack) || Number(stats.attack) <= 0
       || !Number.isInteger(stats.defense) || Number(stats.defense) < 0) fail();
   }
+  if(value.challengeLevel!==undefined&&(!Number.isSafeInteger(value.challengeLevel)||Number(value.challengeLevel)<1||Number(value.challengeLevel)>50))fail();
   validateSupply(value.packedSupply);
   if(value.gameplayV4!==undefined&&typeof value.gameplayV4!=='boolean') fail();
   if(value.gameplayV4&&!validPlan(value.plan)) fail();
@@ -152,6 +153,7 @@ export function validateDepth(value: unknown): asserts value is DepthAccount {
   }
   if (state.run) {
     const run = state.run;
+    if(run.challengeLevel!==undefined&&(!Number.isSafeInteger(run.challengeLevel)||run.challengeLevel<1||run.challengeLevel>50))fail();
     validateSupply(run.packedSupply);
     if (!record(run) || !Array.isArray(run.nodes) || !Array.isArray(run.visited) || !Array.isArray(run.rewardChoices)
       || !record(run.hp) || !record(run.boons) || !record(run.upgrades) || ![1, 2, 3].includes(run.chapter)
@@ -174,7 +176,7 @@ export function validateDepth(value: unknown): asserts value is DepthAccount {
 export function exportSave(state: DepthAccount): string {
   validateDepth(state);
   const payload = JSON.stringify(state);
-  return `THC${state.v4 ? '9' : '7'}.${saveChecksum(payload)}.${payload}`;
+  return `THC${state.v4 ? '10' : '7'}.${saveChecksum(payload)}.${payload}`;
 }
 function migrateDepth(value: unknown): unknown {
   if (!record(value) || !['0.5.0', '0.6.0'].includes(String(value.version))) fail();
@@ -196,11 +198,11 @@ export function importSave(code: string, now = 0): DepthAccount {
     validateAccount(legacy);
     return migrateAccount(legacy, now);
   }
-  const match = /^THC([56789])\.([a-f0-9]{8})\.([\s\S]+)$/.exec(trimmed);
+  const match = /^THC(5|6|7|8|9|10)\.([a-f0-9]{8})\.([\s\S]+)$/.exec(trimmed);
   if (!match || saveChecksum(match[3]!) !== match[2]) throw new Error('Save checksum failed. Copy the complete code again.');
   const parsed: unknown = JSON.parse(match[3]!);
   safeTree(parsed);
-  const state = ['7','8','9'].includes(match[1]!) ? parsed : migrateDepth(parsed);
+  const state = ['7','8','9','10'].includes(match[1]!) ? parsed : migrateDepth(parsed);
   validateDepth(state);
   return state;
 }

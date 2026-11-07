@@ -12,7 +12,10 @@ export { Invitations } from './Invitations';
 
 export function Hub({ m }: { m: DepthModel }) {
   const active = m.state.run && !m.state.run.complete;
-  const nextRoute = nextChallenge(m.state);
+  const ceiling=Math.min(...m.state.team.map(id=>m.state.account.cards.find(c=>c.cardId===id)!.level));
+  const [selectedBand,setBand]=useState<number|null>(null);
+  const band=Math.min(selectedBand??ceiling,ceiling);
+  const nextRoute = nextChallenge(m.state,band);
   const next = m.state.tutorial < 3 ? 'Try the practice table.' : !m.state.freeInvite ? 'Open your welcome invitation.' : m.state.tutorial === 3 ? 'Equip your first piece from the equipment shelf.' : m.state.cleared.length === 0 ? 'Prepare your team and visit the Tangled Cafe.' : `Explore ${R.CHAPTERS[Math.min(2, m.state.cleared.length)]!.name}.`;
   return <><PageTitle eyebrow={`Cafe day ${m.state.account.day}`} title="A small light. A brave little team." />
     <section className="cr-hero"><div><small>THE FIRST LANTERN</small><h2>Keep the cafe<br />warm tonight.</h2><p>{next}</p>
@@ -20,7 +23,7 @@ export function Hub({ m }: { m: DepthModel }) {
       <button disabled={!!active} onClick={() => m.watchNow()}>Watch a battle now</button>
       {m.state.tutorial < 3 && <button onClick={() => { m.state.tutorial = 3; m.notify(); }}>Skip lesson</button>}</div>
       <div className="dp-home-team"><CompanionPreview m={m} home /><div className="dp-home-names">{m.state.team.map(id => <button key={id} onClick={() => { m.cardId = id; m.go('collection'); }}><img className="dp-hub-portrait" {...portraitProps(id)} alt="" />{R.CAT_BY_ID[id]!.name}</button>)}</div></div></section>
-    <div className="dp-next-goal"><span>Chapter {nextRoute.chapter.id} · {nextRoute.chapter.name}</span><b>Your team {nextRoute.teamPower} · {nextRoute.exact ? 'Next encounter' : 'Opening estimate'} {nextRoute.enemyPower} power</b><button onClick={() => m.go('team')}>Review team →</button></div><div className="cr-hub-grid"><section className="cr-panel"><h2>Tonight’s route</h2><div className="cr-route-list">{R.CHAPTERS.map(chapter => <button key={chapter.id} disabled={active || chapter.id > 1 && !m.state.cleared.includes(chapter.id - 1)} onClick={() => m.start(chapter.id)}>
+    <div className="dp-next-goal"><span>Chapter {nextRoute.chapter.id} · {nextRoute.chapter.name}</span><b>Your team {nextRoute.teamPower} · {nextRoute.exact ? 'Next encounter' : 'Opening estimate'} {nextRoute.enemyPower} power</b><button onClick={() => m.go('team')}>Review team →</button></div><div className="cr-hub-grid"><section className="cr-panel"><h2>Tonight’s route</h2>{m.state.gameplayV4&&<label>Challenge band<select aria-label="Challenge band" disabled={!!active} value={band} onChange={e=>setBand(Number(e.target.value))}>{Array.from({length:ceiling},(_,i)=><option key={i} value={i+1}>Band {i+1}{i+1===ceiling?' · current crew':''}</option>)}</select><small>Fixed enemies for the chosen band. Lower bands keep the same capped rewards.</small></label>}<div className="cr-route-list">{R.CHAPTERS.map(chapter => <button key={chapter.id} disabled={active || chapter.id > 1 && !m.state.cleared.includes(chapter.id - 1)} onClick={() => m.start(chapter.id,'campaign',m.state.gameplayV4?band:undefined)}>
       <span>{chapter.name}<small>{chapter.reward}</small></span><em>{m.state.cleared.includes(chapter.id) ? 'Cleared ↗' : '→'}</em></button>)}</div>
       <div className="cr-actions"><button disabled={!!active} onClick={() => m.start(Math.max(1, Math.min(3, m.state.cleared.length + 1)), 'daily')}>Daily challenge</button><button disabled={!!active || !m.state.cleared.includes(3)} onClick={() => m.start(1, 'tower')}>Tower · best {m.state.towerBest}</button></div>
       <small>{R.calendarChallenge(m.offline ? '2026-11-06' : new Date().toISOString().slice(0, 10)).mutator.description} Rewards are capped once per date.</small></section>

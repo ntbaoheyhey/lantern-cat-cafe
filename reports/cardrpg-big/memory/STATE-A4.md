@@ -1,8 +1,8 @@
 # A4 living state
 ## NOW
-P2 functional acceptance complete on codex/cardrpg-a4-p2-2026-11-07; draft publication next. Exact artifact dc965427 /26,198,406bytes. P3 staging only at /tmp/cardrpg-a4-p3; not yet applied.
+P2 published draft369/a6be71a6. P3 active on codex/cardrpg-a4-p3-2026-11-08. Exact artifact dc965427 /26,198,406bytes. P3 lifecycle and explicit bands applied;12focused tests PASS, type helper corrected after first tsc failure.
 ## NEXT
-Publish P2 draft/checkpoint and mirror report/state. Claim P3, implement boss lifecycle/bands, measure actual x1 pacing, then P4–P7. Do not repeat completed G0/R/D/P1/P2 gates or pilot.
+P2 mirror eaa8e6dc published. P3 pilot28948/OFF29181/build50097 running; no duplicate. Add actual x1 browser timing and remaining gates, then P4–P7. Do not repeat completed G0/R/D/P1/P2 gates or pilot.
 ## DONE
 P2 atomic presets, utility comparisons, supply reservations,240shelf,THC9;24captures/3sizes/2themes,minimum contrast8.572. Pilot1500 replay/save cases;OFF8250routes exact47477251.
 ## GATES
@@ -109,3 +109,8 @@ P2 type/lint/build/1735web/1054rules(+2expectedfail/11skip)/421E2E PASS; retaine
 - 1280 retry2,1440 and1024 real-click paths passed;24captures zerooverflow/errors. Personally inspected Look compare and1024preset. Label and contrast failures retained; no full204pack.
 - Existing suites/pilot/OFF reused, no duplicated jobs. B17:04 window request acknowledged f7452380; two-minute gap between remaining A browser windows.
 - P3 draft staging prepared outside checkout only; no B/protected edits.
+
+## P3 implementation checkpoint
+- P2 draft369/a6be71a6 and ledger eaa8e6dc published; sync CLAIM43b752b7.
+- Gear-independent band snapshots, half-HP phase, linked helpers retire at action boundary, simultaneous defeat loss priority.12focused testsPASS; first tsc failed only structuredClone test-global, changed to existing clone helper.
+- Pilot1800 train andOFF8250 started with sharedlock/slices; never change rules until pilot/source-hash snapshot completes. Offline build50097 in progress; browser timing not started.

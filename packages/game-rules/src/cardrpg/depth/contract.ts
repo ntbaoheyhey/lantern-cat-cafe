@@ -31,6 +31,7 @@ export interface Enemy {
   intent: string; counter: string; status?: StatusId; phases: string[]; chapter: number;
 }
 export interface Actor {
+  linkedBossId?: string;
   id: string; catalogId: string; name: string; side: 'party' | 'enemy'; role: string; row: Row;
   flavour: Flavour; hp: number; maxHp: number; attack: number; defense: number; initiative: number;
   effectHit: number; effectResist: number; shield: number; charge: number; break: number; breakCap: number;
@@ -48,6 +49,7 @@ export interface Battle {
   boons: Record<string, number>; procRounds: Record<string, number>; mutator: string; initial: BattleSetup;
 }
 export interface BattleSetup {
+  challengeLevel?: number;
   packedSupply?: PackedSupplyV4;
   gameplayV4?: boolean; plan?: StandingPlan;
   seed: number; chapter: number; cats: Array<{ id: string; stats: Stats; skills: string[]; row: Row; equipment?: string[]; effects?: string[]; bonuses?: Record<string, number> }>;
@@ -58,6 +60,7 @@ export type NodeKind = 'battle' | 'elite' | 'campfire' | 'shop' | 'event' | 'tre
 export interface RunNode { id: string; depth: number; lane: number; kind: NodeKind; next: string[]; enemies: string[]; eventId?: string }
 export interface Boon { id: string; name: string; archetype: string; description: string; cap: number; trigger: string; value: number }
 export interface Run {
+  challengeLevel?: number;
   packedSupply?: PackedSupplyV4;
   gameplayV4?: boolean;
   id: number; seed: number; chapter: number; mode: 'campaign' | 'daily' | 'tower'; nodes: RunNode[];
