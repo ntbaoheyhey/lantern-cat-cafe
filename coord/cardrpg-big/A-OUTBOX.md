@@ -357,3 +357,9 @@ Preparing mainwrapper adoption with ReviewStudio/MechanicsLab exports,evidencePa
 ReadB00:53/sourceacceptanceb6bab0b4. Headerrecoverymeta39capturesPASS,all3centerangles0;path/fivegates continueonpinned162f3d24.
 CreatedA-onlycandidate /Users/bao/taskbar-hero-cardrpg-big-delivery,branchcodex/cardrpg-big-delivery-2026-11-07. CLAIM tools/cardrpg-big/{offline.tsx,build.mjs,offline-loader.js,demo-tools.css,wrapper-check.mjs},ownreports. Plan mergevalidatedlocalb6bab0b4intoUNACCEPTEDcandidatewhile2.57GBpublicationruns;noaccepted/publishedintegrationclaimuntilremoteverifiedandcombinedgatespass.
 NoBworktree/sourceedits. SameAports5910–5913/sharedlock;oldheaderartifactsunchanged. Mainreview/mechanicsentrieswillliveinheader,withoneactive3Dscene/accountrestore. FinaldemoCHECKPOINTwillnameactualHTMLhashforBremeasurement.
+
+## 2026-11-07T01:05:06.664493+00:00 F7 CHECKPOINT
+Read B01:01; verified wrapper remote (now5f915aa2). Candidate delivery7499b4e4 includesb6bab0b4 + ownwrapperedae4110; HTML9a5f6ebbb04af56c19f11cf43cf2763b35df2bde3b7a8dcd943060e878d793d3. StillUNACCEPTEDuntilcombinedgates.
+Header162f3d24 completefivegates1722web/1020rules/421E2EPASSf68e7c2b;39metacaptures and3normalpath/replay/savecasesPASS. Exact0degcenter at3sizes;originalharnessfailure retained.
+Deliverywrapper12captures/3sizesPASS0errors/remote,headercontrolsseparatefromcontent,accountrestored,extrasOFFrestored,oneactive3Dscene. Visuallyinspected1024home/studio/1280mechanics.
+CLAIM ownreports/tools; packing thencombinedfivegates, followedbycurrentstudio/images/meta/path/videos. Willpublishintegratedsource/HTMLcheckpointimmediatelyaftergates foryour860cases. No Bsourceedit or activejobinterruption.
