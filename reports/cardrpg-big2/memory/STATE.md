@@ -2,13 +2,13 @@
 PROMPT bytes=17237; SHA256=ed11ec911a0f53018e557a6b65d76f4b17189495a16f40dfa06333abe5c93e07
 REFERENCE: reports/cardrpg-big2/memory/PROMPT.md
 ## NOW
-Published B1/B2a/b/c/B3/B5/B4/E1/E2 draft PRs342/343/346/347/349/350/351/352/353. Current continuation branch b6-polish; runtime through B6, async loader and hitstop fixes is implemented and pinned.
-E2 published f166e0f3. Gallery control probe88227 active; silent audio87349 pending. E3 lockwaiter89899 paused; local dependency session21853 resumes it eightseconds after both probes exit. Downstream queues unchanged.
-No integrated checkpoint/rebase request from A. A has merged through B4 and is running paired gear/economy sims. Do not read or modify A worktrees.
+PAUSED at user request 2026-11-07T01:32:16Z (08:32 Asia/Ho_Chi_Minh): "lưu handoff và dừng". All six owned runners/waiters stopped; no remaining Lane B browser/measurement process. Lane A was not signalled. See HANDOFF.md and integration/USER-PAUSE.json.
+Branch ai/codex-cardrpg-big2-integrated-2026-11-07; runtime still identical to accepted a106dfca. Current changes are evidence and harnesses only. Integrated loading3sizes PASS; cold/matrix not run. Standalone boss retry interrupted while waiting; flag-off browser failed on legacy heading locator.
 ## NEXT
-1. Inspect gallery control and silent audio-sink diagnostics, fix only confirmed issues, pin source and rerun relevant gates. E3 resumes automatically; do not duplicate queues.
-2. Read silent-sink and gallery-control results before source fixes; publish remaining enemy/boss checkpoints in order. No duplicate queued jobs.
-3. After roster captures and fixes, build/pin review; full functional860matrix/20replays/video; report misses and grades. Rebase only after A integrated CHECKPOINT.
+0. Resume only after an explicit user request; read HANDOFF.md, RULES.md and A-OUTBOX before restarting.
+1. Source handoff published/announced (draft #357). A accepted integrated a106dfca/HTML9a5f6ebb at01:15; pinned from Git with fivegate log hashes and zero owned-runtime delta. Branch reconciled on a new branch; original published branches unchanged. Complete current functional evidence.
+2. Finish functional runner; inspect failures, raw metrics and x1 videos; reconcile separate source acceptance, then accept standalone functional receipts. Final860-case matrix must use accepted current/integrated artifact, not superseded bytes.
+3. Publish own report/STATE to ledger, update self-grades with viewed evidence, retain every missed gate. Reconcile/revalidate after A integrated CHECKPOINT. Read RULES/phase/A-OUTBOX at boundaries.
 ## DONE
 Verified remote #340;created own worktree;exact prompt saved.
 ## GATES
@@ -87,3 +87,50 @@ B1published342(partialopening);B2apublished343(improved);B2b/c,B3,B4,B5,enemies,
 - B1clarification7e6e21b0 preserved: >=99.9814%castframes<=20ms perconfiguration passes inheritedaggregation; worstindividualcast98.7654% remainsstrictdiagnostic. No openingpass.
 
 - 21:22Z: E2 f166e0f3/draft353 published on352.6clips15pairs/78effects3003pairs/421E2Epass; cold7page33.4native/133.3CPU4ms MISS,postinteractive100ms,p9516.8. E2runtime303d60df unchanged; onlyearlierprovenance differs. E3pausedwaiter89899 autorestarts after87349/88227 via/tmp/cardrpg-big2-diagnostic-order.py(session21853).
+
+- Recovery21:30Z: read Bprompt/RULES/STATE/Aoutbox and basebrief; noagents. Rejected silent AudioContext sink: first130.4–132.4ms andRAF133.3–133.4ms, setSinkId1.8–5.6ms. Retain rawsixruns; noaudio runtimepatch. B6packclaimed ownbuilder/newpacker to test losslessWebP exactRGBA against PNG assets; source images untouched.
+
+- 21:34Z: B6pack candidate74d0d861 pinned /tmp/cardrpg-big2-lossless-pack-{index.html,build.json}, fileexactRGBA17/17PASS, nativeimagesunchanged. Newaudio diagnostic667fdecd primes audio service using silentHTMLMedia afterrealclick beforeunchangedWebAudio; queuedafter94756, no runtimepatch. RequestedBfunctionalwindow afteractiveA95219; E3/E4/boss/delivery/hitstop/flagoff/matrixqueues unchanged.
+
+- 21:37Z: sourceaudit8132a0e3 fixed ENOBUFS for14,133pathdiff via32MiBbuffer; protectedchanges0/rules4allauto-extras/4immutablehashesidentical. BothA-approved gallery/testfiles recorded. pack-sourceCPUfivechecksPASS1698web/935rules+inherited2expectedfail/11skip; E2E onlyinlockedpipeline. GallerysilentbyhiddenBattlecontrols fixed40a60403 with explicitsound/volume; finalstudio expectscontrols onlyunderBIG_STUDIO_EXPECT_SOUND=1 sooldpinned deliveryqueue remainsvalid.
+
+- Recovery21:49Z: actualbrowserpack rejectedtransparentWebP despitePillowidentity; keepingPNGforalpha<255. 0f0b6f53 includes4audio lifecycle tests, allfiveCPUchecksPASS1702web/935rules. NewpinnedpilotqueuedafterE3; sourcefixnotyetmeasured. Galleryoldstagebottom668at600 confirmedvisually; flexstagecandidateawaitsfitproof.
+
+- 22:04Z: E4cold7complete33.3native/133.3CPU4MAX;postinteractive100ms/p9516.8,0errors.82recipes/3321pairs/2motionsPASS; viewedbothstripsimprovedtier. A3318gotrequestedfunctionalwindow. Pendingboss5816temporarilystoppedonly; localdependencyhelper23023resumesafter3248+5806, noactiveAjobinterrupted.
+
+- Recovery 22:12Z: re-read both briefs, RULES, STATE and A outbox through 21:58. Verified published branch heads and existing process dependencies; no duplicate browser queues. Added offline timestamped video contact-sheet tool; pilot extracted all five first Inkcap actions from the existing native24s recording with matching video SHA. Gallery viewport/source audio acceptance still pending A3318 functional window.
+
+- 2026-11-06T22:17Z: opaque pack5/5 browser RGBA PASS and gallery fit3sizes PASS; studio slider0 assertion retained with instrumented retry queued. E3 retry1 external font ECONNRESET again, classic test passed; single remaining retry2 and captures queued after studio. Boss dependency resumed normally. No source UI patch or audio acceptance yet.
+
+- Recovery22:32Z: read both briefs, RULES/STATE and A outbox through22:26; noagents. Focus source683f33b0 passes fiveCPUchecks1702web/935rules; browserproof pending. A integratedextrasraw copied fromaa977f0f, exactSHA recorded; broadbalance gaps/defaultOFF remain. Boss5816 is actively running archived421E2E; studio9770/E3remaining9938 still pending.
+
+- Recovery2026-11-06T23:51Z: latestuser twiceaskscontinue, objectiveunchanged. All25unitmotion/effectcapturescomplete. Studiofailureprovenharnessfocusheldsliderat.459 acrossselectOption; correctedfocusandscopedReviewpanelsselector,258actions/3sizesPASS. Bossfontretry1PASS, E3retry4awaitslockafterserverstarttimeout. Rawfailuresretained.
+
+- Recovery2026-11-07T00:38Z. All prior processes and /tmp archives disappeared after environment restart. Current9b2aa98f includes E3 evidence3e853a37 and boss evidencee87ee760. E3 finalnetworkretry neverran. Original published branches untouched. Recovered currentfocusHTML exactlySHA3d96db56 from committed docs; old phase sourcecommits contain earlierHTML, so rebuild from exact archived source and compareSHA before resuming matrices.
+- Viewed focus screenshots directly and found blankstage. New diagnostic on identical3d96db56 proves screenshot race: immediate backing250px versusCSS451px, aftertwoRAF451px/196draws/75000tris, stablethrough1300ms. Renderer works. Showcontrols hover reallylosescontrast. OwnstudioCSS fix andgallerypixel/draw/resize assertions authored; newbuild/browserproof pending. Originalblankimages retained. CPUprepublish1702web/935rules+2expectedfails11skips andtypecheck/lint/buildPASS beforeCSS-onlyfix.
+
+- Recovery2026-11-07T00:44Z: E3focusedoriginal-source retry passed. Review93items/22.45MB pinned; actualrendering verified. Fullunit retry after inheritedgenerator timeout; originalfailure retained. Sevenrebuiltartifacts match originalsource Gitblobs butHTML differs; outputdifference causeunisolated, correction to earlieroutbox missing-evidence speculation.
+
+- 2026-11-07T00:54Z: sourceacceptance6checksPASS withsamepinnedsource, rootfullunit1702web/935rules and421E2E. Currentstudio258actions/focus3sizes/93comparisons160embeddedimages/5opaqueRGBA/loading/stage6casesPASS. Combinedphasepush didnotpublishrefs; retrysequentialeachphase andretainlogs. Do notcallthisanapprovalblock.
+
+- 2026-11-07T01:00:36.722903+00:00: Verified sequential E3/E4/boss publication and opened drafts354/355/356. Wrapper replacement waits exact phase coordinator; old waiter failure retained. Current mechanics4cases/audio89scores pass; new startup runs underway. Viewed current1024 Focus and chapter3stage: figures visible, controls fit, tabletop still flat. No runtime/source edits.
+
+- 2026-11-07T01:12:27.650677+00:00: Current cold7 retains 150ms CPU4DPR2 opening/postinteractive MISS, with renderer/context/resize and initTexture stack samples in the same long interval. Existing per-asset yields are already present; proposed async scene-initialization redesign is unimplemented/unmeasured, no guarantee. No runtime edits. Actual hitstop444samples cover74actions;70 hold20ms,4 authoredzero-hold supportskills, all74 reduced-motion advance/no shake.
+
+- Recovery01:20Z: accepted A a106dfca pinned to /tmp/cardrpg-big2-integrated-index.html, exact9a5f6ebb/23937000bytes. Verified five source-gate log hashes from Git, 1730web/1020rules/421E2E, owned runtime delta0. Integrated matrix added with mandatory accepted SHA check; standalone receipts remain separate. Current20replays +1109208heap/GPU0growth and20navigation PASS.
+
+- 01:21Z: viewed current gallery/Focus and lab captures, nine nonstarter ultimate strips, three boss signature strips and chapter stages. FOUR-LENS-REVIEW records20concrete weaknesses; provisional6.5effects/5sharpness/6layout/6flow/6.5feel/6stage/9auto/7lab, no slicepromotion. Flow5receipt:42actions0budgetmisses,controls6.1–53.3ms,wholepage183.4msMISS,oldstandalone9.31–16.29sfights.
+
+- 01:24Z: retired14542 beforefunctionalrelease, identitychecked/noactivebrowser. Historical710matrix was an agent-added extra beyond delivered batchhitch/filmstrip/uniqueness checkpoints. Required final860onaccepted9a5f6ebb remainscomplete-scope; retainpartialhistoricalarrays and markthem incomplete. Rationale in integration/historical-matrix-queue.json.
+
+- Recovery2026-11-07: read RULES/STATE/A-outbox. Completed15 standalone24s gallery recordings,10800decodedframes/66actions/0errors. Viewed all15 contact sheets (66midpoints), documented per-unit strengths/misses in review/video/REVIEW.md; tiers/grades unchanged. Naturalbosses/flagoff continue6992. A01:23handoff request implemented: longmatrix waits exact9a5f6ebb video series complete; shortchecks continue underlock. Added integrated three-size loading proof.
+
+- Boss natural-video first attempt failed beforefight: getByLabel Team exact didnotmatch wrapped select accessibility name. Tool-only fix scopes existing two prepselects; original log/captures retained by retry. /tmp/cardrpg-big2-boss-retry.py waits6992 thenreruns onlyboss+functional acceptance. No runtime change; integrated shortchecks mayinterleave underlock.
+
+## State immediately before user pause (historical)
+Rebased source d52c53e3: all six checks PASS (1730 web/1020 rules/421 E2E); validation/integrated-rebase-acceptance.json verifies log hashes and zero runtime/asset/main-builder delta from a106dfca. Standalone6992 finishes boss/flagoff, then integratedqueue31987 runs loading/cold7/lifecycle/audio/flagoff and waits A video complete before860.
+Validated source b6bab0b4 (runtime matches pinned c29564f6); review HTML 734d301c, 22,446,426 bytes, 93 evidence items.
+E3 a3235705 / E4 bc5f31f4 / boss c5095a2e verified on origin; drafts #354 / #355 / #356. Wrapper b6bab0b4 verified on origin, draft #357 on #356; all source uploads complete.
+Source typecheck/demo-types/lint/build, 1,702 web / 935 rules (+2 expected failures,11 skips),421 E2E PASS. Complete capped-worker unit retry is in validation/review-source-acceptance.json; original failed attempts remain.
+Review runner PID6992: studio258 actions/3sizes, Focus actualpixels, packedRGBA, loading, stage-life, mechanics, audio PASS. Current89 PCM scores/playback MAX16.8ms. Six current fresh-browser startups PASS MAX16.8ms, enable215.0–351.7ms. Hitstop74actions/444samples PASS. Current flow5:wholepage183.4msMISS,42actions/allbudgetsPASS,controls6.1–53.3ms; cold7:native33.4/CPU4150ms,postinteractive150msMISS; CPU4p9516.8/postready16.8ms. Trace/next-candidate note in review/cold/CHECKPOINT.md. Lifecycle20replays PASS heap+1109208bytes/GPU0growth/0errors; navigation20cases PASS. Flow5PASS; videos/flagoff continue sequentially.
+Retired waiting-only710historical queue14542: batchfilmstrips/uniqueness/cold7/fivegates already delivered; final860coversfullcurrent86actions×10configs. Partialhistoricalrawkept; no historical full-matrix claim. Acceptance verifier PID25305 (/tmp/cardrpg-big2-accept-review.py, session44224) waits6992 and releases only after all required steps/log hashes pass: runner's original source-step failure remains even though separate source acceptance passes. Preserve failure, bind acceptance; do not rerun passed checks unnecessarily.
