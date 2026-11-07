@@ -175,7 +175,7 @@ export class DepthModel {
     this.watching = true; this.paused = false; this.sceneStarted = true; this.screen = 'map';
     this.notify();
   }
-  prepare(team = this.state.team, rows = this.state.rows, plan = this.battle?.v4?.plan ?? R.DEFAULT_PLAN) {
+  prepareCrew(team = this.state.team, rows = this.state.rows, plan = this.battle?.v4?.plan ?? R.DEFAULT_PLAN) {
     if (this.watching || this.replay || this.galleryBattle) return;
     if (this.tutorialBattle?.v4) {
       if (this.tutorialBattle.v4.committed) return;

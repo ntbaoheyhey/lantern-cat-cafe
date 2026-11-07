@@ -38,13 +38,13 @@ const sourceAssetHashes = Object.fromEntries([...embeddedAssets].map(([path, ass
   [path, createHash('sha256').update(asset.bytes).digest('hex')]));
 // Keep source PNGs and manifest keys. Only opaque, losslessly packed images
 // with a smaller gzip payload are selected; translucent portraits stay PNG.
-const imageRequest = `/tmp/cardrpg-big-image-pack-${process.pid}.json`;
+const imageRequest = `/tmp/cardrpg-a4-image-pack-${process.pid}.json`;
 writeFileSync(imageRequest, JSON.stringify([...embeddedAssets.keys()]
   .filter(key => extname(key) === '.png').map(key => resolve(root, key))));
 let imagePacking;
 try {
-  imagePacking = JSON.parse(execFileSync(process.env.BIG_PYTHON || '/tmp/cardrpg-big-tools/bin/python',
-    [resolve(root, 'tools/cardrpg-big2/pack-images.py'), imageRequest],
+  imagePacking = JSON.parse(execFileSync(process.env.BIG_PYTHON || '/tmp/cardrpg-a4-tools/bin/python',
+    [resolve(root, 'tools/cardrpg-big/a4-pack-images.py'), imageRequest],
     { encoding: 'utf8', maxBuffer: 4 * 1024 * 1024 }));
 } finally { unlinkSync(imageRequest); }
 for (const row of imagePacking) {

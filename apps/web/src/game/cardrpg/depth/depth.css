@@ -154,6 +154,10 @@
 .dp-v4-prepare label{margin:8px 0}
 .dp-v4-crews article{padding:12px;border:1px solid #c7b49c;border-radius:10px;background:#fff8ed;color:#342a36}
 .dp-v4-crews article[data-active=true]{border-color:#65502e;background:#f1dfb7}
-.dp-v4-crews small,.dp-v4-prepare small{color:#4f4552}
+.dp-v4-crews article h3{color:#342a36}
+.dp-v4-crews small{color:#4f4552}
+.dp-v4-prepare small{color:inherit}
 .dp-v4-outcome li{margin:8px 0;overflow-wrap:anywhere}
 .dp-v4-outcome details{max-height:300px;overflow:auto}
+.dp-app[data-look-v2="true"] .dp-cafe .dp-v4-crews article{background:#21332e;color:#f5ebdc;border-color:#8baa97}
+.dp-app[data-look-v2="true"] .dp-cafe .dp-v4-crews article[data-active=true]{background:#345044}

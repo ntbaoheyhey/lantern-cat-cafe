@@ -12,7 +12,8 @@ let child;
 
 async function stale() {
   const info = await stat(directory);
-  if (Date.now() - info.mtimeMs > 3 * 60 * 60 * 1000) return true;
+  // A live owner is never stale, even after three hours.
+  void info;
   const pidText = await readFile(`${directory}/pid`, 'utf8').catch(() => '');
   const json = await readFile(`${directory}/owner.json`, 'utf8').catch(() => '{}');
   let metadata;
