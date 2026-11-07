@@ -1,7 +1,7 @@
-# Brief coverage — baseline v1
+# Brief coverage — baseline v1 + LOOK L0
 REFERENCE: memory/PROMPT.md, baseline/COVERAGE.md, memory/STATE.md, ../cardrpg-big2/memory/STATE.md
 
-Each measurement belongs to its named checkpoint. Initial scores belong to F0; baseline v1 self-grades and the four-role review are in FRESH-EYES.md. Fourteen recordings/12,385 decoded frames and991 chronological samples are complete at ef400fc3; visual quality remains the user's open complaint, so LOOK follows. Accepted integration a106dfca/draft358 contains A plus the published complete B chain (all12cats,10ordinary opponents,3bosses and wrapper). MainHTML9a5f6ebb is23,937,000bytes. Five combined gates pass1730web/1020rules/421E2E. Evidence10bc7c6a records25units/86actions at3sizes,258selections and93comparisonitems/160decodedimages,0errors/remote. Earlier failures and retries remain preserved. Current functional/video/performance acceptance is tracked in [F7 gates](integration/F7-GATES.md).
+Each measurement belongs to its named checkpoint. Initial scores belong to F0; baseline v1 self-grades and the four-role review are in FRESH-EYES.md. Fourteen recordings/12,385 decoded frames and991 chronological samples are complete at ef400fc3; visual quality remains the user's open complaint, so LOOK follows. Accepted integration a106dfca/draft358 contains A plus the published complete B chain (all12cats,10ordinary opponents,3bosses and wrapper). BaselineHTML9a5f6ebb is23,937,000bytes; current main is LOOK L0 f1234525 (separate receipts below). Five combined gates pass1730web/1020rules/421E2E. Evidence10bc7c6a records25units/86actions at3sizes,258selections and93comparisonitems/160decodedimages,0errors/remote. Earlier failures and retries remain preserved. Current functional/video/performance acceptance is tracked in [F7 gates](integration/F7-GATES.md).
 
 | User point | F0 visible score | Current evidence and entry | Status / remaining work |
 | --- | ---: | --- | --- |
@@ -29,3 +29,8 @@ A-only integration ef54264a has five passing gates with 1700 web, 988 rules and 
 REFERENCE: memory/PROMPT.md ADDENDUM LOOK 2026-11-07; CARDRPG-BIG-REPORT.md; video/delivery/audit.json
 
 The user still finds the demo insufficiently beautiful. Preserve baseline-v1.html and all exact-hash receipts. A adopts published B tokens/portraits/icons/frames and owns only meta styling/shared plumbing; each adopted tip requires a fresh build hash, five gates, functional pack and A CHECKPOINT. No LOOK checkpoint or before/after score is claimed here. No long matrix is run on baseline9a5f6ebb.
+
+## LOOK L0 current artifact
+REFERENCE: look-ui/L0-CHECKPOINT.md; look-ui/l0-checkpoint-audit.json; look-ui/functional-l0-reviewfix/functional.json
+
+f1234525/24,026,508bytes passes fresh five gates1731web/1020rules/421E2E and10functional groups/204screens. Thirty live UI toggles preserve state;1494textrectangles yield0activecontrastfails,8disabledfailures. Foil25291changedpixels/reduced0;defaultstartup11JS/3522500bytes/686modules unchanged. Token-driven original meta materials cover cafe/cards/team/invitations/equipment; prior visual/performance/balance scores remain baseline measurements. Size misses24MB by26508bytes with exact-artifact32MBexception. L1/L6 portraits/icons/frames and B art rubrics are not yet published/adopted. No finalmatrix run.

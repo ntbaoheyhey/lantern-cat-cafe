@@ -28,3 +28,8 @@ The1280range-input center assertion was a harness-coordinate error:135pxborder-b
 REFERENCE: ../memory/PROMPT.md F7 and ADDENDUM LOOK; ../FRESH-EYES.md; ../CARDRPG-BIG-REPORT.md
 
 Each original F7 requirement is mapped above. Functional/game/demo/video/review/report evidence is complete for baseline v1. The “fix worst” artistic requirement and9/11quality targets remain missed, honestly retained for LOOK. No full matrix was run on9a5f6ebb; only final lookV2 receives the one full25-unit/86-action/10-config campaign from B. Ledger publication closes the documentation row; visual/performance acceptance remains open.
+
+## LOOK L0 separate acceptance
+REFERENCE: ../look-ui/L0-CHECKPOINT.md; ../look-ui/l0-checkpoint-audit.json
+
+Current main f1234525/24,026,508bytes has fresh5sourcegates1731web/1020rules/421E2E and10functional groups/204screens PASS.30live toggles/1494textrects/0activecontrastfails and renderedfoil/reducedmotion PASS. Defaultstartup/protectedpaths/baselineimmutability PASS. 24MB size FAIL by26508bytes; documented32MBexception applies only to thishash. Original F7 baseline rows above retain9a5f6ebb provenance. New B art/rubric/positiveMeshopt proof/coldcast measurements/finalmatrix NOTYET; no artistic or performance acceptance is implied.

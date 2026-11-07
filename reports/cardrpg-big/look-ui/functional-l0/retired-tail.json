@@ -1,0 +1,44 @@
+{
+  "at": "2026-11-07T05:12:46.390540+00:00",
+  "artifactSha256": "a1ae7ea4177e056eebba62561d6e9f97b438e5f5a68622ece26bd995a21ed010",
+  "status": "REJECTED / incomplete diagnostics retained",
+  "completedGroups": [
+    [
+      "studio",
+      0
+    ],
+    [
+      "gallery",
+      1
+    ],
+    [
+      "comparisons",
+      0
+    ],
+    [
+      "lab",
+      1
+    ],
+    [
+      "meta",
+      0
+    ],
+    [
+      "reveal",
+      0
+    ],
+    [
+      "invitations",
+      0
+    ],
+    [
+      "designs",
+      0
+    ]
+  ],
+  "cancelledGroups": [
+    "path",
+    "mechanics"
+  ],
+  "reason": "Old candidate already fails gallery contrast and24MB gate. Retire its queued duplicate tail; the full ten-group pack is required and running on corrected f123. Only verified A parent64887 and waiting child73611 were signalled; B lock was untouched."
+}

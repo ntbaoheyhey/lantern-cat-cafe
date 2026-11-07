@@ -20,3 +20,5 @@ REFERENCE: PLAN.md; ../validation/look-l0.json
 
 - Resume raw audit found1440 contrast3activefails on unknown-companion question marks (2.1089–2.3301), previously missed by summary.30toggles/30screens pass;all3sizecontrast was NOT a pass. Added token-dark question backing, preserving original failedreceipt. SelectedReviewstudio hoveredtab1.07885 also corrected with pairedforeground/background rule.
 - LOOK size exception follows actual Bbriefsections2/6: atmost32MB only with before/after evidence. Lab keeps24MBdefault;exception must match exactHTMLhash/bytes,include reason/promptreference,andvalidate everybefore/afterimagehash. Defaultgate miss staysreported.
+
+- Resume visual inspection on exactf123: 1280Collectionoff/on confirms teal felt/paper palette and readable rarity/text; original classic portraits/models remain. 1024Invitationson keeps odds/cost/earnedcopy legible; lower content scrolls. 1440focusedgallery shows expanded stage and readable controls, but sparse center/smallactors/purpleclassic3D remain B-owned pendingL1+. No new grade or timing pass.

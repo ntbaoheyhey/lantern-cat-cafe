@@ -1,20 +1,20 @@
-# Card RPG — baseline v1 · 7/11/2026
+# Card RPG — baseline v1 + LOOK L0 · 7/11/2026
 REFERENCE: memory/PROMPT.md; COVERAGE.md; integration/F7-GATES.md; video/delivery/audit.json
 
-Đây là baseline v1 để so sánh với đợt LOOK; chất lượng hình ảnh vẫn là phàn nàn chưa giải quyết của bạn.  
-Bạn chuẩn bị thẻ, đội hình và trang bị; trận đấu tự chọn toàn bộ kỹ năng và mục tiêu.  
-Đã ghép đủ 12 mèo, 13 đối thủ, 86 hành động và toàn bộ phần chơi ngoài trận.  
-Cả 10 nhóm chức năng đạt; đã đối chiếu 204 hash ảnh ở ba kích thước màn hình.  
-Đã lưu đủ 14 video, giải mã 12.385 frame và review 991 mẫu ảnh theo trình tự.  
-Nhân vật còn nhỏ, giữa sân còn trống và nhiều mảng sáng che đội hình; chưa đạt mục tiêu đẹp.  
-Mở trang CPU 4× còn MAX 116,7 ms, vượt cổng 100 ms; độ nét chỉ đạt 2/10 mục tiêu cũ.  
-Gacha chỉ dùng tem kiếm được; vật phẩm ngẫu nhiên account-bound, Relic chỉ là thiết kế chưa mint.  
-Lane LOOK sẽ cải thiện art; A đồng bộ giao diện và tích hợp từng mốc. Bản tích hợp #358 vẫn draft; không deploy hay đẩy main.
+Giao diện LOOK L0 đã dùng bảng màu và vật liệu mới; chất lượng hình ảnh tổng thể vẫn chưa đạt yêu cầu của bạn.\
+Bạn chuẩn bị thẻ, đội hình và trang bị; trận đấu tự chọn toàn bộ kỹ năng và mục tiêu.\
+Đã ghép đủ 12 mèo, 13 đối thủ, 86 hành động và toàn bộ phần chơi ngoài trận.\
+Cả baseline và LOOK L0 đều đạt 10 nhóm chức năng, mỗi bản có 204 hash ảnh ở ba kích thước.\
+Baseline đã lưu 14 video, giải mã 12.385 frame và review 991 mẫu; video này chưa phải art LOOK mới.\
+Nhân vật còn nhỏ, giữa sân còn trống và nhiều mảng sáng che đội hình; chưa đạt mục tiêu đẹp.\
+Mở trang CPU 4× còn MAX 116,7 ms, vượt cổng 100 ms; độ nét chỉ đạt 2/10 mục tiêu cũ.\
+Gacha chỉ dùng tem kiếm được; vật phẩm ngẫu nhiên account-bound, Relic chỉ là thiết kế chưa mint.\
+LOOK L0 có 30 lượt bật/tắt giữ trạng thái và 0 lỗi tương phản chữ đang hoạt động; model/chân dung mới còn chờ B. #358 vẫn draft.
 
 ## Kết luận và sáu nơi nên xem
 REFERENCE: integration/delivery/functional-complete.md; FRESH-EYES.md; docs/cardrpg3/README.md
 
-Bản này chơi được và có đủ bằng chứng chức năng, nhưng chưa đạt yêu cầu hình ảnh/hiệu năng tổng thể. Năm cổng nguồn đã đạt: typecheck, lint, build, 1.730 web/1.020 rules tests và 421 E2E, cộng demo types; rules giữ 2 expected failures/11 skips. Đóng gói baseline chỉ thêm bằng chứng/báo cáo: hash log kiểm tra lại, không nhận là chạy lại test. [Nguồn](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/cardrpg-big-delivery-2026-11-07/reports/cardrpg-big/integration/delivery/baseline-v1-source-audit.json), [review bốn vai](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/cardrpg-big-delivery-2026-11-07/reports/cardrpg-big/FRESH-EYES.md).
+Bản này chơi được nhưng chưa đạt yêu cầu hình ảnh/hiệu năng tổng thể. Các số đo đoạn này thuộc baseline v1; LOOK L0 có bộ kiểm tra riêng ở mục Look lane. Năm cổng nguồn baseline đã đạt: typecheck, lint, build, 1.730 web/1.020 rules tests và 421 E2E, cộng demo types; rules giữ 2 expected failures/11 skips. Đóng gói baseline chỉ thêm bằng chứng/báo cáo: hash log kiểm tra lại, không nhận là chạy lại test. [Nguồn](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/cardrpg-big-delivery-2026-11-07/reports/cardrpg-big/integration/delivery/baseline-v1-source-audit.json), [review bốn vai](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/cardrpg-big-delivery-2026-11-07/reports/cardrpg-big/FRESH-EYES.md).
 
 1. Kỹ năng: Feel lab → Skill gallery; chọn mèo/địch, hành động và Focus stage.
 2. Độ nét: Review studio → Before / after → Sharpness; xem crop DPR 1/2.
@@ -26,7 +26,7 @@ Bản này chơi được và có đủ bằng chứng chức năng, nhưng chư
 ## Mở và chơi
 REFERENCE: docs/cardrpg3/{index,baseline-v1}.html; tools/cardrpg-big/build.mjs
 
-Mở trực tiếp `/Users/bao/taskbar-hero-cardrpg-big-delivery/docs/cardrpg3/baseline-v1.html`. Bản chính hiện cùng nội dung ở `/Users/bao/taskbar-hero-cardrpg-big-delivery/docs/cardrpg3/index.html`; Feel lab có trên trang đầu và trong trận. Luồng: Cafe → đội/trang bị → Prepare → Fight tự động → Result → bản đồ. Watch a battle now mở ngay trận chương 1. Demo cũ vẫn ở `docs/cardrpg2/index.html`.
+Mở LOOK L0 tại `/Users/bao/taskbar-hero-cardrpg-big-delivery/docs/cardrpg3/index.html`; nút **Look A/B** so giao diện cũ/mới mà giữ trạng thái chơi. Baseline riêng ở `/Users/bao/taskbar-hero-cardrpg-big-delivery/docs/cardrpg3/baseline-v1.html`; Feel lab có trên trang đầu và trong trận. Luồng: Cafe → đội/trang bị → Prepare → Fight tự động → Result → bản đồ. Watch a battle now mở ngay trận chương 1. Demo cũ vẫn ở `docs/cardrpg2/index.html`.
 
 Baseline 23.937.000 byte, SHA-256 `9a5f6ebbb04af56c19f11cf43cf2763b35df2bde3b7a8dcd943060e878d793d3`. Giữ nguyên file baseline khi bản chính nhận LOOK. Video ở [video/delivery](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/cardrpg-big-delivery-2026-11-07/reports/cardrpg-big/video/delivery); mỗi mèo và ultimate 25 s/1×, boss 170,4 s gồm chuẩn bị và kết quả. Boss dùng nút unlock nhìn thấy được để cấp level 10/3 sao; không phải bằng chứng cân bằng đội mới. Video không tiếng; review ảnh mỗi 0,5 s không xác minh chuyển động liên tục hay chất lượng âm thanh.
 
@@ -80,10 +80,20 @@ Nguồn ghép có0thay đổi đường dẫn live/chain được bảo vệ, ha
 
 B cũ cung cấp9mèo còn lại,10quái thường/3boss,stage/audio,wrapper/Mechanics lab và18.000trận biến thể+3.600tham chiếu. #359/7e1b54b0 chỉ thêm315đường dẫn reports/tools;18nhóm chức năng standalone và các phép đo main cold/lifecycle/audio/flag-off ở trên. Không có full matrix cũ hoàn tất. Các nhận xét B về8mục tiêu nét/body band/opening misses vẫn giữ.
 
-## Look lane — yêu cầu hình ảnh còn mở
-REFERENCE: memory/PROMPT.md ADDENDUM LOOK 2026-11-07; coord/cardrpg-big/B-OUTBOX.md trên nhánh sync
+## Look lane — L0 giao diện đã kiểm chứng, art còn mở
+REFERENCE: look-ui/L0-CHECKPOINT.md; look-ui/l0-checkpoint-audit.json; memory/PROMPT.md ADDENDUM LOOK
 
-Trước LOOK là baseline9a5f6ebb với góc rộng, sân trống, bề mặt sáng phẳng và chrome/meta thiếu cùng phong cách với3D. LOOK B sở hữu model Blender,diorama,lighting,post,VFX,portraits/icons; A sở hữu meta restyle từ tokens và tích hợp. Chưa có checkpoint LOOK được nhận vào baseline này; chưa có after hoặc rubric B để chép, tuyệt đối không tự đặt điểm B. Bảng before/after của art và UI sẽ được thêm cùng hash mới, screenshot/contrast và năm cổng+functional pack sau từng lần nhận. Bằng chứng baseline giữ nguyên.
+Main L0 có SHA-256 `f1234525fb744d0b318c2ea65727256cfb71fc6cc31c2380cf6fac93941a0f56`, 24.026.508 byte; lớn hơn baseline 89.508 byte (+0,374%). Vượt mốc 24 MB 26.508 byte; dùng ngoại lệ tối đa 32 MB có sáu ảnh before/after ghim hash. Không suy ra đạt tốc độ tải. [Checkpoint và giới hạn](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/cardrpg-big-delivery-2026-11-07/reports/cardrpg-big/look-ui/L0-CHECKPOINT.md).
+
+| Phần giao diện | Trước | Sau LOOK L0 |
+|---|---|---|
+| Collection, Team, Invitations, Equipment, Cafe | Chrome tím, khung khác bảng màu LOOK | Màu xanh mực/mật ong từ tokens, ba texture gốc, bốn khung độ hiếm cùng vật liệu |
+| Thẻ và chữ | Tab chọn/ô dấu hỏi từng trượt tương phản | 30 lần toggle giữ trạng thái; 1.494 vùng chữ, 0 lỗi đang hoạt động, min 5,608:1; 8 vùng disabled thấp vẫn báo riêng |
+| Foil | Chưa có phép đo chuyển động | 25.291/58.647 pixel thay đổi; reduced-motion đổi 0 pixel |
+
+[Collection trước](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/cardrpg-big-delivery-2026-11-07/reports/cardrpg-big/look-ui/l0-reviewfix/1280/collection-off.png) · [sau](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/cardrpg-big-delivery-2026-11-07/reports/cardrpg-big/look-ui/l0-reviewfix/1280/collection-on.png) · [Invitations sau](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/cardrpg-big-delivery-2026-11-07/reports/cardrpg-big/look-ui/l0-reviewfix/1024/invitations-on.png). Five gates mới đạt 1.731 web/1.020 rules/421 E2E; mười nhóm chức năng và 204 ảnh đúng hash đạt, 0 lỗi/remote/overflow trong phạm vi kiểm tra. Default startup vẫn 11 JS/3.522.500 byte/686 module, 0 Three/model. Meshopt CSP chỉ bật khi artifact chứa model nén; model nén mới chưa được nghiệm thu.
+
+L0 đổi meta UI; model, sân và portrait vẫn là bản cũ. Chưa có rubric art B được công bố để chép; không tự đặt điểm. L1 chân dung ba mèo và L6 toàn bộ icon/frame còn chờ checkpoint, rồi rebuild/hash/five gates/functional riêng. L0 Invitations có MAX200ms (vượt100ms)/p9516,8ms CPU4 và23frame>25ms/10>50ms trong lượt chức năng có chụp ảnh; giữ raw, chưa phải phép đo cold/cast chuẩn. Các số baseline, video và tự chấm giữ đúng nguồn cũ. Full matrix 860 ca chỉ LOOK B chạy trên final lookV2.
 
 ## Tự chấm và những việc chưa sửa
 REFERENCE: FRESH-EYES.md; integration/F7-GATES.md; video/delivery/review/observations.json
@@ -102,4 +112,4 @@ REFERENCE: FRESH-EYES.md; integration/F7-GATES.md; video/delivery/review/observa
 ## Draft PR và báo cáo ledger
 REFERENCE: DRAFT-PRS.md; memory/STATE.md
 
-[Integration#358](https://github.com/ntbaoheyhey/taskbar-hero/pull/358) là draft trên#332. A:#333–341,#344–345,#348; B:#342–343,#346–347,#349–357,#359. [Danh sách/link từng PR](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/cardrpg-big-delivery-2026-11-07/reports/cardrpg-big/DRAFT-PRS.md). Snapshot GitHub lúc 04:23 UTC ghi #359 closed/merged, merge commit `ef400fc3` trên nhánh integration; nhận định handoff cũ “không merge PR GitHub” không còn đúng. Commit có hai parent, gồm tip bằng chứng `7e1b54b0`; #358 vẫn open/draft. Không có thao tác merge API trong lần tiếp tục này. Báo cáo baseline v1 cùng STATE được sao chép sang ledger `ai/codex-ui-ledger`; các checkpoint LOOK tiếp tục dùng draft PR.
+[Integration#358](https://github.com/ntbaoheyhey/taskbar-hero/pull/358) là draft trên#332. A:#333–341,#344–345,#348; B:#342–343,#346–347,#349–357,#359. [Danh sách/link từng PR](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/cardrpg-big-delivery-2026-11-07/reports/cardrpg-big/DRAFT-PRS.md). Snapshot GitHub lúc 04:23 UTC ghi #359 closed/merged, merge commit `ef400fc3` trên nhánh integration; nhận định handoff cũ “không merge PR GitHub” không còn đúng. Commit có hai parent, gồm tip bằng chứng `7e1b54b0`; #358 vẫn open/draft. Không có thao tác merge API trong lần tiếp tục này. Báo cáo và STATE được sao chép sang ledger `ai/codex-ui-ledger`. L0 #360 cũng bị GitHub đóng qua containment khi nhận tip f3091a44; các lần nhận tiếp dùng bản sao commit trên nhánh A để giữ PR B mở. Không gọi merge API hay đẩy main. Các checkpoint LOOK tiếp tục dùng draft PR.

@@ -33,3 +33,5 @@ Historical 332–358 snapshot is retained. Live 358/359 metadata was rechecked o
 | [#357](https://github.com/ntbaoheyhey/taskbar-hero/pull/357) | B6: deliver offline roster review, focused stage and isolated mechanics lab | `ai/codex-cardrpg-big2-boss-2026-11-06` |
 | [#358](https://github.com/ntbaoheyhey/taskbar-hero/pull/358) | Card RPG: integrate automatic battles and complete offline review demo | `ai/codex-cardrpg-depth-2026-11-06` |
 | [#359](https://github.com/ntbaoheyhey/taskbar-hero/pull/359) | B6 evidence: verify default startup and accepted demo lifecycle (closed/merged into integration) | `codex/cardrpg-big-delivery-2026-11-07` |
+
+LOOK L0 [#360](https://github.com/ntbaoheyhey/taskbar-hero/pull/360) was closed by GitHub containment when its f3091a44 tip entered the A integration chain. #358 remains open/draft against unchanged #332; no merge API was called. L0 source snapshot: look-ui/pr-l0-source-snapshot.json. Future B adoption uses A-owned rebased copies.
