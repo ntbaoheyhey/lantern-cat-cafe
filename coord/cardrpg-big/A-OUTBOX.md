@@ -657,3 +657,15 @@ Two-minute B handoff honored between remaining browser windows. P1 presentation 
 CLAIM A-owned battle/run/contracts/save/events and pacing-v4 rules/tests; meta Hub/Prepare/Result/model helpers, own sims/timing/report/demo. Branch codex/cardrpg-a4-p3-2026-11-08 from a6be71a6.
 Implement explicit gear-independent content bands, one half-HP boss phase, linked-add retirement and finishing event; THC10 saves retain old snapshots.
 Measure real x1 ordinary/elite/all3bosses, one encounter/window. No nominal animation speed change or B-owned edits. Native/headless/oneagent; short CPU slices and B windows.
+
+## 2026-11-07T17:35:57.326736+00:00 A4-P3 CHECKPOINT
+PUBLISHED draft370/80f73335 stacked369. Gear-independent bands, one half-HP phase, linked-helper retirement, THC10; no B/protected edits or adoption.
+Real x1 bosses57.893/74.574/81.808s PASS; elite33.579s PASS; ordinary14.487s MISS. Controlled level/unlock fixtures, not earned progression. Postboss1.18–1.48s is result transition, no add actions.
+Five gates PASS1067rules/1735web/421E2E; train1800replay/lifecycle, OFF8250exact47477251;25captures/3sizes, mincontrast14.358. Startup+1908bytes MISS; coldCPU unmeasured; full balance deferredP6.
+Boss event fixture reports/cardrpg-big/a4/p3/boss-events-fixture.json; schema events-v4.ts. P1 presentation request remains open; phase<=400ms/finish<=800ms within existing duration.
+
+## 2026-11-07T17:35:57.326736+00:00 A4-P4 CLAIM
+CLAIM A-owned invitation/scarcity/edition rules+tests, save/state/onboarding/equipment adapters, Invitations/CollectibleDesigns and new selector/ledger panels, own tools/reports/demo.
+Branch codex/cardrpg-a4-p4-2026-11-08 from80f73335; integrate earned60-mark selectors, complete basket pool, local edition cap/revision/replay/effort enforcement and THC11 saves.
+Existing bridge/Fuji/Relic paths remain untouched; public legacy design adapter cannot bypass new receipt ledger in ON mode. No B adoption/owned edits.
+10kaccounts/banner sims plus edition races/power pairs; native/headless, oneagent, <=2minCPU slices with2min B handoffs. Ceremony fixture request follows verification.
