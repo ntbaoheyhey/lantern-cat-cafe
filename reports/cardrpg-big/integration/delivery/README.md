@@ -23,3 +23,10 @@ Combined typecheck/lint/build, 1,730 web tests and 1,020 rules tests pass (2 inh
 REFERENCE: source-reconciliation.json; sim-source-parity.json
 
 All 1,150 inputs recorded by the artifact builder still match their stored SHA256. No runtime, asset or builder paths changed after the build; the two new verification drivers are outside the application import graph. Every one of 51 rules inputs matches in each of the six saved gear/economy ON/OFF receipts. This verifies that the existing completed simulations apply to the combined rules source; it is not a new simulation claim.
+
+## Resumed evidence audit
+REFERENCE: path-resume/checks.json; functional-audit.json; ../../../../tools/cardrpg-big/audit-delivery-evidence.mjs
+
+The resumed normal journey passes at three sizes: 27 screenshots, three route encounter victories per size, replay equality and export/import of a 15,378-byte account save. Its visible unlock fixture tests functionality, not starter balance. The earlier interrupted path receipt remains intact.
+
+The saved-evidence audit currently verifies nine complete receipts and 196 screenshot hashes against exact main HTML9a5f6ebb. Mechanics is explicitly pending. It also rehashes all five accepted source-gate logs; it does not claim another test run. Run the auditor without --allow-pending only after the four Mechanics cases finish.
