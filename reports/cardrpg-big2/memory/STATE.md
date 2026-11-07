@@ -2,13 +2,12 @@
 PROMPT bytes=17237; SHA256=ed11ec911a0f53018e557a6b65d76f4b17189495a16f40dfa06333abe5c93e07
 REFERENCE: reports/cardrpg-big2/memory/PROMPT.md
 ## NOW
-PAUSED at user request 2026-11-07T01:32:16Z (08:32 Asia/Ho_Chi_Minh): "lưu handoff và dừng". All six owned runners/waiters stopped; no remaining Lane B browser/measurement process. Lane A was not signalled. See HANDOFF.md and integration/USER-PAUSE.json.
-Branch ai/codex-cardrpg-big2-integrated-2026-11-07; runtime still identical to accepted a106dfca. Current changes are evidence and harnesses only. Integrated loading3sizes PASS; cold/matrix not run. Standalone boss retry interrupted while waiting; flag-off browser failed on legacy heading locator.
+ACTIVE after explicit user resume 2026-11-07. Own integrated branch; no runtime/assets/main-builder delta against accepted a106dfca. Main9a5f6ebb and standalone734d301c remain pinned.
+All18 standalone functional steps accepted. Integrated cold7/lifecycle20/audio6/flag-off complete; opening116.7ms still MISS. Matrix runner13873 waits exact A video-complete marker, then860cases in six-action lock batches.
 ## NEXT
-0. Resume only after an explicit user request; read HANDOFF.md, RULES.md and A-OUTBOX before restarting.
-1. Source handoff published/announced (draft #357). A accepted integrated a106dfca/HTML9a5f6ebb at01:15; pinned from Git with fivegate log hashes and zero owned-runtime delta. Branch reconciled on a new branch; original published branches unchanged. Complete current functional evidence.
-2. Finish functional runner; inspect failures, raw metrics and x1 videos; reconcile separate source acceptance, then accept standalone functional receipts. Final860-case matrix must use accepted current/integrated artifact, not superseded bytes.
-3. Publish own report/STATE to ledger, update self-grades with viewed evidence, retain every missed gate. Reconcile/revalidate after A integrated CHECKPOINT. Read RULES/phase/A-OUTBOX at boundaries.
+1. Source revalidation accepted: type/demo-types/lint/build,1730web/1020rules/421E2E PASS; validation/resume-source-acceptance.json binds every log. Original missing-fixture failures retained.
+2. Let existing integrated runner finish860matrix; independently audit every array and inspect current per-unit/configuration hitch gates. Do not duplicate runner or infer PASS from completion.
+3. Update report/ledger/draft with raw evidence and every miss. Named WIP stays outside publishedPRs. No runtime changes planned.
 ## DONE
 Verified remote #340;created own worktree;exact prompt saved.
 ## GATES
@@ -134,3 +133,13 @@ E3 a3235705 / E4 bc5f31f4 / boss c5095a2e verified on origin; drafts #354 / #355
 Source typecheck/demo-types/lint/build, 1,702 web / 935 rules (+2 expected failures,11 skips),421 E2E PASS. Complete capped-worker unit retry is in validation/review-source-acceptance.json; original failed attempts remain.
 Review runner PID6992: studio258 actions/3sizes, Focus actualpixels, packedRGBA, loading, stage-life, mechanics, audio PASS. Current89 PCM scores/playback MAX16.8ms. Six current fresh-browser startups PASS MAX16.8ms, enable215.0–351.7ms. Hitstop74actions/444samples PASS. Current flow5:wholepage183.4msMISS,42actions/allbudgetsPASS,controls6.1–53.3ms; cold7:native33.4/CPU4150ms,postinteractive150msMISS; CPU4p9516.8/postready16.8ms. Trace/next-candidate note in review/cold/CHECKPOINT.md. Lifecycle20replays PASS heap+1109208bytes/GPU0growth/0errors; navigation20cases PASS. Flow5PASS; videos/flagoff continue sequentially.
 Retired waiting-only710historical queue14542: batchfilmstrips/uniqueness/cold7/fivegates already delivered; final860coversfullcurrent86actions×10configs. Partialhistoricalrawkept; no historical full-matrix claim. Acceptance verifier PID25305 (/tmp/cardrpg-big2-accept-review.py, session44224) waits6992 and releases only after all required steps/log hashes pass: runner's original source-step failure remains even though separate source acceptance passes. Preserve failure, bind acceptance; do not rerun passed checks unnecessarily.
+
+- 2026-11-07T03:09:51.112785+00:00: user resumed; recovery/source/hash audits passed. Diagnostic, boss and integrated runners launched with new PIDs and shared lock; read current process table before signalling. See /tmp/cardrpg-big2-{flag-off-diagnostic,boss-resume,integrated-resume}.log.
+
+- Resume checkpoint fb54fca7 is a local named WIP, not published. Integrated cold7 independently audits13125frames, native33.3/CPU4116.7ms/postinteractive116.7MISS; resizeToHost appears in worst-frame sampled stacks. Lifecycle20PASS:heap+1858320bytes,GPU0growth. Three naturalbosses/2160decodedframes/accountunchangedPASS;24samplesviewed,tiers remain improved. Flag-off diagnostic now proves first-run modal makes app heading inert; corrected harness clicks Start playing. Retry queued; no application change.
+
+- 2026-11-07T03:32Z: all18 standalone functional steps accepted via tools/cardrpg-big2/accept-review.mjs. Production startup11JS/3522500bytes,0three/models/errors on bothsourcevariants. Vite generateBundle hashes proved premature; final-output inventory fixes tool, old distribution retained. 3259source/input files compare to originalGit with0differences. Integratedaudio6/5286frames MAX33.3ms,enable226.5–316.7ms; no listeningclaim. Source fixture omissions restored verbatim; freshweb/E2E pending.
+
+- 2026-11-07T03:35Z: current source revalidation complete,1730web/1020rules(+2expectedfail/11skip)/421E2E PASS; all other packages pass, no app/assets/main-builder delta. Accepted log hashes in validation/resume-source-acceptance.json; original missing-fixture failures retained. Existing13873 alone waits A video complete then860matrix.
+
+- 2026-11-07T03:39Z: clean evidence7e1b54b0 verified on origin; draft359 on A delivery358. Soleparenta106dfca excludes named WIP history. Source sixgates complete and report includes all18functionalPASS, integrated cold/lifecycle/audio/flagoff plus pending860. Existing13873 waits actual A14video marker; no duplicate job.
