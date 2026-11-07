@@ -1,3 +1,70 @@
+# L6 draft published — 2026-11-07T18:01:07.918099+00:00
+
+L6evidence738bb530 remoteverified, draft371 stacked368. Sourcee71db1d6/artifact4696d62c/26,392,592bytes. Allmeasurements completed, no rerun. NativeMac/noDocker. Report+STATE publicationnote beingpushed; ledger/finalB-OUTBOX andL5CLAIM stillnext. Fullportable893files357MB includes~212MB tracegz;2failedHTML33MB localonly;noL4rawstage. Originalfailurelogs/test-results preservedbyte-for-byte despite whitespace. L5noauthoring/render yet;onlyPLAN/TECHNICAL-NOTES. NoA4adoption,optionalpresentationopen.
+
+---
+
+# L6 audited, publication active — 2026-11-07T17:58:37.030132+00:00
+
+Native macOS; B does NOT use Docker. Last docker ps empty. No model/subagent/CUA/shared/A-worktree changes.
+L6 continuation session91402/PID65072 COMPLETED. Sourcee71db1d6, artifact4696d62c/26,392,592bytes; audit1844inputs. Type/lint/unit1751web/buildPASS; E2E420+exact1retryPASS (not one clean421run), failedattempt retained. Previewready4models/2togglesPASS. Cold7nativeMAX33.3/CPU4MAX133.3ms MISS;24castsMAX16.8/100%≤20/0errors. Startup+93bytes MISS;24MB exceeded,≤32MB visualjustification. Allselectedart+6actualUIconfigs reviewed, REVIEW.md written. Do not rerun completed coordinators.
+L6 sourcee71db1d6 already pushed+verified; syncffed49eb announced12portraits/48icons/4plates andconsumerkeys. L6-CHECKPOINT/mainreport/STATE/PROGRESS generated from exactreceipts. Inventory893portablefiles/357,188,483bytes,2failedHTML32,915,083byteslocalonly. Tracegz files account~212MB; no L4raw4.8GB selected. Art727files55MB already staged; fullselectedevidence commit/push then draftstacked368 pending. Parentremote368de5ec72f,acceptedA3daba7d7c unchanged. Ledger+finaloutbox stillpending.
+L5preponlyPLAN+TECHNICAL-NOTES, noauthoring/renders. NextclaimL5→ninecats/13opponents→L7/finalmatrix/lifecycle20/CPU4BalancedLow. A4P4active; A4schema/fixturesknown,optionalBattlepresentationrequestopen. NoA4adoption.
+
+---
+
+# L6 source checks continuation — 2026-11-07T17:47:14.880276+00:00
+
+Native macOS; B does NOT use Docker; Docker Desktop open but docker ps empty at check. No model/subagent/CUA/shared/A-worktree edits.
+
+Fresh source e71db1d6, artifact4696d62c/26,392,592bytes and gallerya11f3fb5 unchanged. All3 gallery sizes and6 actualCollection/Team size×DPR checks PASS,180portrait decodes/24state-preserving toggles,0errors/remote. Corrected dark/light gallery, actual12unscaled portrait crops,1280Collection/Team,1024Team/1440Collection personally viewed; REVIEW.md written. Locked9cards intentionally grayscale/question badges. Portrait screenshots catch3Dpreview loading; separate full-ready check still pending.
+
+Coordinator25079/PID60527 EXITED after E2E420pass/1legacySquad timer timeout (0.1s never reached3s). Type/lint/unit1751web/build allPASS. Full failure logs/test-results preserved validation/l6/attempts/e2e-1; no test/app source changed or timeout raised.
+ONE new continuation session91402: node reports/cardrpg-look/memory/l6-resume-checks.mjs, log/tmp/cardrpg-look-l6-resume-checks.log. It verifies all frozen source hashes→exact1failedE2E retry undercaffeinate/1worker→explicitaggregate420+1receipt (notclaim421singlecleanrun)→sixactionpreview-ready→flag-off/cold7/casts24→sizejustification/audit. Do not restart either original coordinator. If this fails inspect/preserve before correcting. Source/tools/assets remain immutable.
+
+Remaining: review final preview/cold receipts; L6checkpoint/report/STATE, inventory using memory/l6-evidence-inventory.py; stage selected~60MBart/evidence (noL4raw4.8GB), commit/pushdraftstacked368, ledger andB-OUTBOX. Parent#368 verified headde5ec72f. L5onlyplan+technicalnotes, noassets/renders; thenL5→L7/finalmatrix/lifecycle20/CPU4BalancedLow. A4P3draft370/80f73335 separate, P4claimed; schema/fixture known, presentationrequeststillopen.
+
+---
+
+# L6 navigation fix validating — 2026-11-07T17:38:28.825060+00:00
+
+Native Mac; Docker Desktop open, docker ps empty. No B Docker use/subagents/model calls/CUA/shared/A edits.
+Old coordinator40003 exited after real CSP fetch failure at1280/DPR1. Original failed artifact fc989788 and receipts preserved under validation/l6-pilot-1; never treat them as passed. Prior agent left scene/art preview corrections; reviewed and committed them plus two passing loading regression tests as e71db1d6. ensure() now uses the actor's source snapshot across preview navigation. Art gallery pads portraits16px to avoid plate/accessory overlap; capture waits two paint frames.
+
+ONE fresh coordinator session25079 PID60527, node tools/cardrpg-look/l6-validate.mjs, log/tmp/cardrpg-look-l6-validate-fixed.log. Rebuilt4696d62c/26,392,592bytes; gallerya11f3fb5/6,522,535bytes. May be waiting A timing lock; do not duplicate. Keep source/tools/assets immutable while it runs. Need inspect corrected gallery and actual12card crops; then complete all fivegates/cold7/casts24/audit and publish L6 draft stacked368 with ledger+outbox.
+
+Latest A read P3draft370/80f73335 (boss schema/fixture available), P4claimed. Accepted base remainsA3daba7d7c; no A4 integration yet. Need fix stale mainreport sentence claiming schema missing. Art original58MB can be selectively staged; no L4raw4.8GB bulk add. L5plan only, L5/L7/finalmatrix/lifecycle20/CPU4BalancedLow still open.
+
+---
+
+# L6 delivered-source validation active — 2026-11-07T17:30:53.084847+00:00
+
+Native macOS; Docker Desktop open but docker ps empty at this continuation. User Docker question answered. No Docker job/subagents/generative calls/CUA/shared/A-worktree edits.
+
+L6 source committed c1442f75 on ai/codex-cardrpg-look-l6-2026-11-07. Complete12portraits/48icons/4plates plus two atlases; individual assets2,835,396bytes; manifest100a6978. Selected9R2inherited portraits+3R3heroes/R3icons/R2plates. All selected sheets personally inspected on both backgrounds;9specific portrait reviews and48icon R3reviews added. Existing R3renderer45379/session91987 COMPLETED; packing30068 COMPLETED. Never rerun them. Historical portrait receipts copied to art/before/portrait-receipts, updated runtime receipts now reflectL6.
+
+ONE coordinator: node tools/cardrpg-look/l6-validate.mjs, session40003, log/tmp/cardrpg-look-l6-validate.log. It builds committed source→gallery3sizes→actualCollection12/team3at3sizes×DPR1/2→fivegates→cold7/casts24→audit. Keep all runtime/assets/tools immutable. Art gallery draft6522507bytes/8c663932 exists; browser proof pending. No fresh L6runtime/perf acceptance yet. If errors occur preserve receipts and fix only observed causes. Capture per-card1280/DPR1 crops added for actual UI inspection.
+
+Need inspect browser gallery/runtime crops; finish coordinator and audit; L6checkpoint/mainreport/STATE/PROGRESS+source/evidence inventory; publish draft stacked368, ledger and B-OUTBOX. Originalart evidence~55MB can be staged selectively; avoid unrelated4.8GBL4rawframes. Existing tools __pycache__ removed after renderer; no untracked runtime inputs at source commit.
+
+A latestreadA4P2a6be71a6/draft369/P3claim; accepted A3daba7d7c remains base; A4presentation still open (schema+fixture read, do NOT claim missing). L5plan under memory/l5-prep; L5/L7/finalmatrix/lifecycle20/CPU4BalancedLow remain open. L4strict1162pairs/startup+93/coldCPU4183.4misses stay historical and disclosed.
+
+---
+
+# L6 art continuation — 2026-11-07T17:19:49.940766+00:00
+
+Native macOS; no B Docker use (unrelated lifemate-v16-cpu-production-04 was running). L4 draft368/e6355178 remains published,3misses unchanged. Current branch ai/codex-cardrpg-look-l6-2026-11-07 atde5ec72f. No runtime asset/manifest change yet; tools/art sources untracked and owned. No subagents/modelcalls/CUA/A edits.
+
+All R1 12portraits/48icons/4plates complete. Original coordinator35214 exited; never rerun. Canonical originals copied to rounds/art, scratch originals preserved. R2 all12portraits+48icons+4plates complete, packed and personally viewed at actual1x on dark/light sheets. R2hero height coverage now80–84% vs54–67%; nine inherited models explicitly labelled. R2frames ornament pearl/leaf/flower/sunburst, accepted static plates with limits. R3threehero portraits complete/packed/viewed; source GLBs unchanged, only studio head tilt/light, receipts/source snapshots preserved.
+
+ONE active render: node tools/cardrpg-look/render-art.mjs icons 3, session91987, log/tmp/cardrpg-look-l6-icons-r3.log. Do NOT edit art-icons.py/icon_solids.py/compositions while it runs. R3 tightens field, enlarges modifiers, separates pan/tray and fills crescent. It still needs full48 packing, actual two-background review and metrics. R3portrait session70375 completed. R2sessions51532/89813 completed; no duplicate renders. Archive renderer sources rounds/art/sources/round-2 andround-3.
+
+New owned tools deliver-art.py/art-gallery.mjs/art-browser-check.mjs/art-runtime-check.mjs/l6-validate.mjs/l6-audit.mjs are authored/syntax checked, not run on a delivered manifest. Intended selection portraitsR2 (9)+R3heroes, iconsR3all, framesR2. Need nineR2portrait review notes, finish48R3icon review→selection→deliver→gallery/browser proof→source commit→single l6-validate coordinator (build,72image gallery3sizes,actualCollection12+team3 at3sizes×DPR1/2,5gates,cold7/casts24,audit). No freshL6runtime or perf claim. Size likely exceeds24MB; user allows evidence-backed≤32MB, record exact bytes/classes/visual gain. A adapters own icon/frame wiring; keep skills[id].icon1x/icon2x and version2 portrait contract.
+
+Read latest A4P2published a6be71a6/draft369 andP3claim2026-11-08,17:14:47. A4remains separate from acceptedA3daba7d7c. Battle.v4 presentation request still open; do not claim schema missing (already readP1fixture). L5/L7/finalmatrix/lifecycle20/CPU4BalancedLow remain open. Keep nextsource immutable during gates. Preserve all raw evidence; no git add everything (L4raw4.8GB).
+
+---
+
 # L4 published; L6 original art active — 2026-11-07T17:00:35.651854+00:00
 
 L4 source b5e7c16c, evidence e6355178, draft368 PUBLISHED. Remote L1/L2/L3 verified8579a805/60b78d4d/3a10f569 with exact leases. Two oversized full uploads HTTP500; source-only atomic push then evidence fast-forward succeeded with identical commits, no splitting. memory/l4-publish-chunks.py is UNUSED fallback, do not run. Ledger report/STATE mirrored8b320327 via isolated index; A ledger worktree left untouched. Five gates/cold24/audit already complete, no rerun.
