@@ -2,13 +2,15 @@
 
 Artifact: `067d2062f6836a6d0bb9f6753ece1b2f3ca923688f241866a7f42806c8f7b6a1`.
 
+Review coverage complete: 204 accepted full-pack captures, 120 new-screen captures, 16 journey captures and nine guide captures. Earlier checkpoint notes below are retained chronologically.
+
 This is the agent's inspection of saved screenshots, not an independent human playtest. Functional assertions and sampled contrast are recorded separately.
 
 - Reviewed the 1024 studio screenshot at full size: controls and stage stay inside the viewport; the lower comparison section uses vertical scrolling.
 - Reviewed all five comparison captures and 21 lab captures in a labelled contact sheet. Panels remain inside the screen at all three sizes. The compact lab view is dense; this is a reviewer surface, not evidence that every gameplay control fits above the fold.
 - Reviewed all 39 meta captures in separate 1024, 1280 and 1440 sheets: crew rows, collection, equipment, pantry, currencies and local collectible limits are visible and consistently arranged. At 1024 and 1280, the saved-shift panel places the gear list below the fold; the additional equipment paths must check the scrolled comparison and transfer controls.
 
-Remaining: accepted gallery retry, reveal/invitation/design/path/mechanics captures, new-screen coverage, earned journey and offline guide.
+Remaining at the initial checkpoint: accepted gallery retry, reveal/invitation/design/path/mechanics captures, new-screen coverage, earned journey and offline guide.
 
 - Reviewed all 32 Epic/Legendary reveal captures at three sizes, including CPU4: entrance, settled card and earned-draw history are visible. The source receipts also check currency/history consistency.
 - Invitation functional checks passed, but its CPU4 diagnostic recorded a 166.7 ms maximum frame. This is not a cold-start measurement or a performance PASS; retain it alongside the dedicated P7 performance results.

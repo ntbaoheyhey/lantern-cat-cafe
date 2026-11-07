@@ -1,12 +1,13 @@
 # A4 living state
 ## NOW
-P7 claimed eefddfa5 and22staged tools adopted, branchcodex/cardrpg-a4-p7-2026-11-08 fromP6publication48b470ed. ACTUAL WORKDIR /Users/bao/taskbar-hero-cardrpg-a4. Runtime rules andofflineHTML unchanged fromP6; no B adoption.
+P7 measurements and review complete on codex/cardrpg-a4-p7-2026-11-08. Actual workdir /Users/bao/taskbar-hero-cardrpg-a4. Runtime and offline game remain byte-identical to P6; only evidence/report publication remains. All coordinator processes exited.
 ## NEXT
-Continue existing coordinator23136/session45202; no new launch. Fivegates/build/full204/new120 allPASS and personally reviewed. Next earned journey,offlineguide,14performancewindows,evidenceaudit/report/scope; then draftP7stacked375/ledger/sync. Resume unfinished/failed groups only,atmost2corrections; no successful recaptures/P6reruns. Read RESUME-A4.md.
+Commit final reports, performance receipts and handoff; open draft P7 stacked on draft375; publish ledger and append A-OUTBOX. No simulation, build or screenshot rerun is needed. Numeric/performance misses remain blockers to promotion.
 ## DONE
-P1–P5 drafts367/369/370/372/373. P6 five source gates accepted in validation/a4-p6-accepted.json:1106rules/1735web/421E2E/type/lint/build; originals retained. All5x1timing receipts complete:ordinary21.340s/elite33.785s/boss57.546s,64.807s,58.680s. Boss outcomes all enemy; timings are to crew defeat, not victorious finish.
+G0/R/D/P1–P6 drafts364/365/366/367/369/370/372/373/375. P7 five source gates PASS: type/lint/build, 1,106 rules (+2 expected failures/11 skips), 1,735 web, 421 E2E. Accepted 204 full-pack +120 new-screen +16 journey +9 guide captures reviewed; source/log/artifact hashes audited.
 ## GATES
-P6 acceptance13PASS/5MISS;train+heldout3,625,000outcomes,38source hashes exact. P7fivegatesPASS1106rules/1735web/421E2E;full204andnew120PASS. Only gallery retried for missing Python; original retained. Artifact067d2062 unchanged; earnedjourney/guide/startup/cold pending. Main340f88b9 verified againstorigin22:45UTC. No B adoption/protected edits.
+13 PASS /5 MISS target rows retained. MISS: fourth-slot gain93.4pp; sets67.03–79.60%; cats31.38–64.66%; crew47.73pp; artifact/startup. Offline26,215,694 bytes/SHA067d2062; native max33.4ms, CPU4 max166.6ms. Default JS +552,596 bytes vs main340f88b9; CPU observations also MISS (one observation/configuration). Day7 boss55.151s is crew defeat, not a victorious finish.
+Guide1,314,680 bytes/SHA9dca8fe6; mincontrast7.211. Baseline-v1 and13 historic sims exact, OFF8250routes digest47477251 unchanged. No B adoption/protected changes/merge/deploy. P1/P3/P4 presentation requests remain open.
 ## DECISIONS (append-only)
 - Keep the one-agent constraint, automatic battles, strict A/B ownership, and isolated worktree.
 ## MEASUREMENTS
@@ -272,3 +273,7 @@ P6 acceptance13PASS/5MISS;train+heldout3,625,000outcomes,38source hashes exact. 
 ## P7 five source gates complete
 - Original attempt1 completed all5gatesPASS: type/lint/build;1106rules/2expectedfail/11skipped;1735web;421E2E singlecleanrun. Receipt validation/a4-p7-attempt-1.json andall5original loghashes independently verified.
 - Coordinator17925/session60441 continues its final120secondhandoff beforeofflinebuild/fullpack. No retries or duplicatejobs; runtime rules andHTML unchanged.
+
+## 2026-11-07T23:20:50.236431+00:00 P7 evidence closure
+- Existing coordinator completed all remaining performance, audit, report and scope steps with exit0. Gallery alone retried for missing Python; original failure retained. No successful group or simulation repeated.
+- Final publication preserves 13PASS/5MISS and seven offline cold observations; the default-app/main comparison is separate. See a4/A4-GAMEPLAY-REPORT.md and p7/performance/summary.json.
