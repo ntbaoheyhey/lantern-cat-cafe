@@ -3,16 +3,19 @@ PROMPT.md bytes (wc -c) = 53562
 PROMPT.md SHA-256 = bba8c53418413298018f714aa35ebd60ed3d49d9df32f2027c90ba9b279dcc37
 REFERENCE: reports/cardrpg-big/memory/PROMPT.md
 ## NOW
-ACTIVE 2026-11-07T04:25:38.972959+00:00: F7 baseline v1 report committed and pushed b092ed0cbfdc362dbf78ce4f6418187bff029695; ledger published a2728798831acc86619e6772205c7fefb4b58fcf;358 body updated/open/draft. Phase LOOK-A preparation; no baseline long matrix.
-Delivery /Users/bao/taskbar-hero-cardrpg-big-delivery · codex/cardrpg-big-delivery-2026-11-07 · last work commit b092ed0cbfdc362dbf78ce4f6418187bff029695. Draft358 open against332/cd5edcc. Accepted runtime a106dfcac755d42f91b2467adf6d888ca0b41a9c unchanged.
-HTML index/baseline-v1:9a5f6ebbb04af56c19f11cf43cf2763b35df2bde3b7a8dcd943060e878d793d3;23,937,000bytes. Five existing sourcegate logs reverified;1730web/1020rules(+2expectedfail,11skip)/421E2E+demo-types. This documentation audit is not a new suite run.
-Canonical /Users/bao/taskbar-hero-cardrpg-big · ai/codex-cardrpg-big-2026-11-06 · memory parent c0298460;source221ec3a8a462597f55579a319018961cd5cd9d21. A drafts333–341,344–345,348,358.359 is now closed/merged into integration (observed GitHub),not an open draft.
-Sync /Users/bao/taskbar-hero-cardrpg-sync · ai/codex-cardrpg-big-sync ·49727837. LOOK request03:55/helperAPI+publishedL0tip pending. Ledger /Users/bao/taskbar-hero-ui-ledger ·ai/codex-ui-ledger. Never touch other worktrees.
+ACTIVE 2026-11-07T05:36:06.162068+00:00: LOOK-A L0 published at86005b84ba25072c36eb5571b231d52de98ab299;10/10functionalPASS/204screens verified. Sync checkpoint f6512a83 published and draft358 description updated; ledger mirror now publishing, then L1 adapter preparation.
+Delivery /Users/bao/taskbar-hero-cardrpg-big-delivery · codex/cardrpg-big-delivery-2026-11-07 · draft358 OPEN/DRAFT verified. Main f1234525fb744d0b318c2ea65727256cfb71fc6cc31c2380cf6fac93941a0f56/24,026,508bytes accepted for integration checks only, not art/performance.
+Baseline9a5f6ebb/23,937,000bytes immutable;14videos/report b092ed0c and ledger a2728798 published. Visual complaint remains open; L1 upstream not published at last boundary.
+Canonical /Users/bao/taskbar-hero-cardrpg-big · ai/codex-cardrpg-big-2026-11-06 · memory parente7ce837c. A drafts333–341,344–345,348,358;359/360closed via containment (no merge API).
+Sync /Users/bao/taskbar-hero-cardrpg-sync · ai/codex-cardrpg-big-sync · f6512a83; last B05:24correctingMochi6/Soot4/Clover5. No A browser/test process active on resume.
 ## NEXT
-1. Prepare original neutral paper/felt/grain textures and meta screenshot/contrast plan; preserve baseline bytes. Published LOOK helper/tokens required before shared wiring.
-2. At phase boundary read B-OUTBOX; adopt published LOOK L0 helper/tokens. Wire shared appOFF/lookdemoON/live toggle in next source commit, answer exact API. Do not invent B contract.
-3. Meta restyle+original textures and portrait/icon/frame wiring; each adopted B tip gets rebuild/newhash,fivegates+functionalpack,exact-hash checkpoint. Final860matrix only LOOK B/finallookV2.
+1. Publish exact f123 A CHECKPOINT to sync; update draft358 body and mirror report/STATE/HANDOFF to ledger. No new test run needed for docs-only publication; existing logs/hash receipts verified.
+2. Prepare portrait adapter/targeted checks on separate WIP branch, preserve classic fallback and default startup. Adopt only B published L1 tip; no reading unpublished art as accepted.
+3. On L1 adoption: new HTML hash, five gates, portrait DPR1/2 and10group functional pack in short locks; publish A CHECKPOINT. Final860matrix onlyB on final lookV2.
 ## DONE
+LOOK L0 checkpoint ·86005b84/draft358;10groups/204screens/1177sourceinputs PASS,5gates1731web/1020rules/421E2E;look-ui/L0-CHECKPOINT.md,l0-checkpoint-audit.json. Report115lines/9Vietnamese, ledger mirror pending.
+LOOK Meshopt source ·365c2928/receipts1933d944 published;conditionalCSP uncompressedf123unchanged,all5gates1731web/1020rules/421E2E PASS. validation/look-l0-wasmhook.json;1177sourceinputs hashmatch.
+LOOK L0 source ·3934ffe2pushed;App/offline/build/CompanionPreview requestswired;3originaltextures+4rarities;1024live10toggles/10screens/386textrects0fails. look-ui/l0/1024/checks.json;notfullcheckpoint.
 Baseline publication ·b092ed0c/draft358, ledgera2728798831acc86619e6772205c7fefb4b58fcf;delivery/baseline-report-audit.json verifies204screens,14clips,57sheets,5gatelogs,13,125rawframes;105line report/9Vietnamese/6routes. Runtime delta0.
 Baseline review ·ef400fc3/draft358;14recordings/12,385decodedframes/991samples/57sheets;video/delivery/{audit,review/observations}.json. FRESH-EYES has20weaknesses/11grades;reportdraft107lines;not baseline publication.
 Functional complete ·5254757c/draft358;10/10groups,204screenshothashes,Mechanics4cases/8captures. delivery/functional-complete.md;no runtime/builder changes.
@@ -35,7 +38,16 @@ I ·221ec3a8/draft341, items/ENCOUNTER-CHECKPOINT.md, fivegates/5browserflowsPAS
 G ·a75ae753/draft344, invitations/PERFORMANCE.md and recovery-verification.json;720cases/5profiles/raw263056framesverified. Sourcechecks recovered oneunit timeout;421E2EPASS. Integratedresult69b994eb68capturesPASS.
 M-followup ·5d1c2c47/draft345, meta-followup/CHECKPOINT.md,6before/aftercases+33screensPASS.
 F7 preparation ·1c188a46/draft348, demo/screens/checks.json, fivegates/18capturesPASS;fullintegrationpending.
-## PHASE GATES
+## PHASE GATES · LOOK-A L0 closed, L1 pending
+PASS “rebase/merge lane B’s published tip into your integration branch”: f3091a44 adopted;189baselineassets unchanged. look-ui/build-iterations.json.
+PASS “lookV2 plumbing...App.tsx, depth.css, build.mjs, offline wrapper...default startup graph unchanged”:3934ffe2+365c2928;11JS/3522500bytes/686modules0added/removed/Three/GLB;scopedCSS followsdepth.css.
+PASS implementation/PARTIAL cohesion “restyle ONLY meta screens/cards/panels/typography...real foil/gloss...panel textures”:3originaltiles105652bytes,4rarities;foil25291/58647pixelschanged/reduced0. Classic3D art remains.
+PASS scoped check “Playwright before/after screenshots, contrast checks”:f12330toggles/30screens/1494textrects0activefails,min5.60834:1;8inactivefails retained. look-ui/l0-reviewfix and l0-visual-review.json.
+PASS “rebuild main HTML...newhash...five gates and functional pack...short lock windows”:f1234525/24026508bytes/1177sourcehashes;5gates1731web/1020rules/421E2E;10groups/204screens. look-ui/l0-checkpoint-audit.json.
+PASS checkpoint+sync “publish an A CHECKPOINT with the exact HTML hash...previous hash’s receipts”:86005b84 and syncf6512a83 pushed;9a5f6ebb and rejecteda1ae receipts retained;no relabeledpass.
+PARTIAL “Final...Look lane...before/after...rubric scores...UI restyle”:report includesUIproof/9Vietnamese lines; B art rubric unpublished. 24MBgateFAIL26508bytes,exacthash32MBexception;InvitationsCPU4MAX200ms diagnosticMISS.
+NOTYET “hero portraits(L1)...full portrait/icon/frame set...look-assets.json(L6)”:upstreamnotpublished at05:24;L1-ADOPTION.md contract prepared, no runtimeadoption.
+## PRIOR F7 GATES
 PASS F7 “static,offline...fullgame...REFERENCE...Feel lab”: docs/cardrpg3/index.html23,937,000bytes;wrapper12captures/3sizes/0errors or remote. Olddemo andbyte-identicalbaseline-v1 retained.
 PASS “pick any cat/skill/ultimate/enemy...speed0.25/1,scrub,effect-only,cameraA/B/C”:25units/86actions/258selections;delivery/studio/checks.json.
 PASS “Before/after...screenshots andfilmstrips...sharpnesscrops/layoutoverlays”:93items/160imagesdecodeoffline;delivery/comparisons/checks.json.
@@ -54,11 +66,29 @@ I caps PASS25rules/2UI/12screens,localcounter/binding/help;designonly,0battle st
 G/M PASS earnedceremony/odds/pity/history andmain68reveal/invitationcaptures;Mpreview+70px,height300px,6before/after+33screens. OpeningGMAX316.6msMISS.
 F1/F2 FAILscale/sharpness:stage78.889%PASS,2745posesPASS;sharpness2/10PASS8MISS. F3/F4 varietyPASS30motionpairs/465effectpairs;historicalopening566.7/266.7msMISS.
 ## DECISIONS · append-only archive
+2026-11-07T05:36:06.162068+00:00 · Resume verified86005b84alreadyremote and fullL0packcomplete;no duplicatedbrowser/audit. CloseL0withhonestart/hitch/24MBmisses;nextportraitadaptermayprepareonWIPonlyuntilpublishedBtip.
+2026-11-07T05:28:12.048632+00:00 · SevenactualL0screens reviewed;classicMarigoldcrowncrop/smallteamcards retained. InvitationsfunctionalCPU4MAX200ms includescaptures,notcoldacceptance;rawreported. B05:24correctingMochi6/Soot4/Clover5,unpublished;candidate20.092MBnotaccepted.
+2026-11-07T05:19:01.981816+00:00 · Meshopt source365c2928 and fresh5gates published1933d944;1177buildinputs0mismatches. L1adapter preparation only, unpublishedBmanifest neveradopted. Source1933commit excluded sparse docs;include them in next checkpoint with gitadd--sparse.
+2026-11-07T05:15:57.404630+00:00 · Resume audit found canonical state behind live delivery. Preserve active70538/74695,365c2928 conditional Meshopt CSP;f123 unchanged. B05:12 portrait contract256x320/512x640 prepared only;no publishedL1tip.
+2026-11-07T05:08:30.101584+00:00 · Newf123UIandfoilverified;32MBexceptionpins6off/onimages;default24MBmiss26,508bytesretained. Memorypushtransientremote--stdinfailedonce,sequencedretryPASS;sourcee056published.
+2026-11-07T05:00:21.482132+00:00 · Raw1440contrastreceiptcorrectsimplicitallsizepass:3activequestionmarkFAIL2.1089–2.3301;30togglepassesremaintrue. Token-darkbackingfixprepared;oldreceiptretained.
+2026-11-07T04:59:06.300231+00:00 · Resumedfromcanonicalmemory;activeAfunctionalPID64887retained,no duplicaterun. a1aegallerycontrast1.07885fails;lab24MBdefaultfails;32MBexceptionallowedbyLOOKbriefsection2/6onlywithbeforeafterevidence. Fixselectedstylesandpinexceptiontohash.
+2026-11-07T04:55:09.864037+00:00 · GitHub360closed/merged04:52whenA3934pushcontainedBtipf309;358open/draft. No mergeAPI/mainpush/deploy. FutureBtipadoption:rebasecopyofpublishedcommitstoAownedintegrationbranchsooriginalBPRtipdoesnotbecomeancestor;preserveBbranch. pr-snapshot.json.
+2026-11-07T04:52:32.246697+00:00 · Source3934ffe2publishedafterfivegates;sharedrequestANSWERad408c30. Exactmaina1aeunchangedaftercleanruntimebuild;functionalpack50845queued. Newdemo+89376bytes(+0.373%)vsbaseline,24.026MBjustifiedoriginalmetatexturesbelow32MBexception;noqualitygradepromotion.
+2026-11-07T04:47:25.416973+00:00 · MainofflineLOOK uses BIG_LOOK_V2=1; normal app/helper and builder withoutflag defaultOFF. BIG_OUTPUT_DIR allows B separateoutput. Firstbuild had12/93comparisonrows fromsparseomissions;addedfail-fast93rows/160filesguardandrestoreGitinputs.
+2026-11-07T04:41:17.795557+00:00 · Adopted publishedL0f3091a44;shared App/build/offline and CompanionPreview request accepted. Source integration begins;oldbaseline receipts stay9a5f6ebb.
+2026-11-07T04:33:20.562672+00:00 · Read BLOOKpromptsection5/exactlocalhelper;ownershipunchanged. Keep sharedwiring untilpublishedtip. Textureprep isoriginal,neutral,andnotruntimeimported;look-ui/PLAN.md containscontracts/checks.
 2026-11-07T04:30:13.377652+00:00 · Baseline publication complete atb092ed0c/ledgera2728798831acc86619e6772205c7fefb4b58fcf;358descriptionupdated. Begin LOOK-A texture prep while L0 helper/tokens pending.
 2026-11-07T04:25:38.972959+00:00 · Baseline report uses branch-qualified evidence URLs so identical ledger copy has working links. Audit verifies underlying tracked paths. No baseline recapture or new matrix.
 2026-11-07T04:25:38.972959+00:00 · GitHub359 closed/merged viaef400fc3,358open/draft;old “no GitHubmerge”claim corrected. Localmergeparents verified;no mergeAPI action this continuation.
 All earlier decisions retained verbatim in DECISIONS.md and archive/state-before-baseline-publication.md; never delete them. Historical worktrees inHISTORY.md.
 ## MEASUREMENTS
+LOOK L0 ·f1234525/24026508bytes;10groups/204screens/1177inputs;5sourcegates1731web/1020rules/421E2EPASS. look-ui/l0-checkpoint-audit.json;new report115lines/9Vietnamese;no new performance claim.
+LOOK diagnostic ·InvitationsCPU4MAX200ms/p9516.8ms,23>25/10>50;nativeMAX33.4ms. Raw inlook-ui/functional-l0-reviewfix/invitations/checks.json;includes screenshots,notcontrolledcoldacceptance. Sevenvisualsamples/hashes inlook-ui/l0-visual-review.json.
+LOOK UI ·f12330toggles/30captures/1494textrectangles0activefails,min5.60834:1;8inactivefailuresreportedseparately. foil25291/58647pixelschanged;reducedmotion0. look-ui/{l0-reviewfix,foil-l0/pixels.json}.
+LOOK reviewfix ·f1234525fb744d0b318c2ea65727256cfb71fc6cc31c2380cf6fac93941a0f56/24026508bytes;oldfca3496pilotunused. 3size30togglePASS,a1ae1440contrast3FAIL correctedsource;freshproofqueued.
+LOOK candidate ·a1ae7ea4177e056eebba62561d6e9f97b438e5f5a68622ece26bd995a21ed010/24026376bytes;93comparisonrows/160imagesrestored. Notacceptedpending3sizeUI/functionalpack. look-ui/build-iterations.json.
+LOOK prep ·3original256pxpaper/felt/grain tiles105652bytes;RGBAroundtrip/seamsPASS;look-ui/materials.json. 7palettebounds:3PASS4FAIL4.5threshold;usecream/papertextonraised/darkbacking. Notbrowserproof. No runtimeadoption.
 Baseline raw ·13,125frames,101>25ms/17>50ms,nativeMAX33.3/CPU4MAX116.7ms,p9516.8;delivery/baseline-cold-audit.json. Main100msgateFAIL.
 Video ·14clips/12,385decodedframes/991samples/57sheets;video/delivery/audit.json. Reverified bytes,not newdecode or browser pass.
 Functional ·10groups/204screens,0errors;studio258selections andcomparisons93items/160images;delivery/functional-audit.json.
@@ -69,7 +99,7 @@ Historical per-phase numbers preserved in MEASUREMENTS.md and archive/state-befo
 ## PROBLEMS / PARKED
 Visual quality remains usercomplaint:9/11scores<8.5;smallactors,sparsestage,paleVFXocclusion,sharpness/scale/margin misses. LOOK owns3D fixes;Ameta cohesion next.
 No oldlongmatrix completed. Oldqueuesretired;final860onlyLOOK B/finallookV2. Existing partialraw retained asINCOMPLETE.
-No half-wired runtime. Currentdocs/audit pushed b092ed0c;oldfailurepilots retained inGit. No old PIDs trusted and no automatic continuation installed byA.
+Baseline runtime unchanged; LOOK source/receipts published through86005b84. Rejecteda1ae6of8groupsPASS/2FAIL and retiredtail remain INCOMPLETE; f12310/10PASS is separate. No half-wired runtime or A process active; no automatic continuation installed byA.
 GitHub359state differs priorhandoff;do not list asopen or claim noPRevermerged.358remains draft. See delivery/pr-baseline-snapshot.json.
 Detailed historical pilots preserved in archive/state-before-baseline-publication.md. User/main/ledgerunrelatededits mustremain untouched.
 ## COVERAGE
