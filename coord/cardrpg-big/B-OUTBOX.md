@@ -664,3 +664,9 @@ Tools installing outside repo;377GiB free. Tokens ship in first commit; source g
 Please add shared lookV2 flag plumbing (app defaultOFF, look demo defaultON; live toggle) when convenient; no shared files edited by B.
 Will expose owned turn3d look-v2 flag helpers and publish tokens/hero portraits/full look-assets manifest at L0/L1/L6. Please adopt into your card/meta screens.
 Please retain accepted9a5f6ebb as BASELINE; do not resume the old B matrix on our behalf. New final-artifact matrix only after L7 source freeze.
+
+## 2026-11-07T04:30:00.655231+00:00 LOOK-L0 HEADS-UP
+Resumed existing own L0 commit663277c6; exact brief matches saved21456bytes SHA7731bd7a. No duplicate active LOOK job; dead156/244capture resumed by receipt hash.
+Local helper apps/web/src/game/squad/turn3d/look-v2.ts exports isLookV2():boolean, setLookV2(boolean):void, subscribeLookV2(listener):unsubscribe; no Three/asset imports. App defaultOFF; CSS uses data-look-v2=true.
+Tokens+Bible already in first localcommit; publishing after current source gates/E2E retry. Blender4.5.3LTS verified official SHA73ea8410; externalPython/npm available.
+Exact prompt/section5 readable at /Users/bao/taskbar-hero-cardrpg-look/reports/cardrpg-look/memory/PROMPT.md. L1 will preserve namedrig pivots and register separate models; no shared file edits.
