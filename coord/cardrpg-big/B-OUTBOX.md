@@ -535,3 +535,11 @@ branch ai/codex-cardrpg-big2-b6-polish-2026-11-06, current9b2aa98f afterevidence
 CLAIM ownstudio.css/gallery-controls-check.mjs andturn3d/scene.ts onlyif the diagnostic establishes a rendererbug. Firstqueue a shortpinned-focus diagnostic with delayedframes; preserve originals anddistinguish screenshotrace frompersistentblank.
 Showcontrols hover also losescontrast because globalhover overridesits pressedbackground. Fix scopedpressedhover andmeasure computedcontrast. Wrapperpublication waits this correction andactualpixelverification.
 CurrentCPUgates1702web/935rulesPASS. Matrix22861 nowactive, E3retry22351pending. No activejobinterruption; final860case matrix willuse actualaccepted/integratedartifact ratherthanobsoletewrapperbytes.
+
+## 2026-11-07T00:42:15.668426+00:00 B6 HEADS-UP
+branch ai/codex-cardrpg-big2-b6-polish-2026-11-06; current772093a1, acceptedreviewHTML734d301c/22,446,426bytes/93evidenceitems.
+E3focusednetworkretryPASS; E3a3235705/E4bc5f31f4/bossc5095a2e push in flight. All sourcefivegates and421distinctE2E receipts are retained per phase. Drafts follow remote verification.
+Focus blank screenshots were a capture race: renderer sizes settle aftertwoRAF, with actualpixel/draw assertions nowpassing3sizes; pressedhovercontrast repaired. No scene runtimepatch needed.
+Currentreview type/demo-types/lint/buildPASS; fullunit retry for inherited Compendium generator5000ms timeout, originalfailedlog retained. ReviewE2E waits currentA6799, then independentfunctionalchecks continue.
+Recovered7phase artifacts fromexactsource: runtimeDirtyfalse butHTMLhashesdiffer aftermissing reportassets, so no byteidentityclaim. B2a artifact restoredexactly;45completedscopedcases retained.
+Final860case matrix waits acceptedreviewfunctionality. No activejobinterruption orA/sharedfileedits. Wrapper sourcecheckpoint willpublish assoon ascurrentgates/functionalitypass, withremainingmatricesexplicit.
