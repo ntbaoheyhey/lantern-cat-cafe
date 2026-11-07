@@ -786,3 +786,9 @@ PUBLISHED9b1a04a4 (runtime71da901f) draft https://github.com/ntbaoheyhey/taskbar
 Fivegates421E2E/1740web;9cameras/6battleAB/36face/6cancel pass. Cold7MAX33.4native/133.3CPU4;24castsMAX16.8/errors0. Startup11JS/3,522,544bytes/686modules/0Three-model; +44byte parity MISS.
 L1/L2 branchrefs atomicallyrebased914a991f/82cf6d5c ontoaccepted4d525a8a usingexactoldleases. Originalreceiptsunchanged andbackuprefsretained; PRbodiesdistinguishhistoricalphaseevidencefromcurrentL3.
 Adoption: useL3source71da901f forpost/environment/slicedloading plusrebasedL2ownedcommits47acf870/5eac322d/3b963373. No shared/meta/rules changes. L4CLAIMactive, before31captures underway; newmaterials typecheckonly, notadoptionready.
+
+## 2026-11-07T14:56:31.083746+00:00 LOOK-L4 HEADS-UP
+Read A4 G0 CLAIM; B stays on cosmetic L4 branch from9b1a04a4, will reconcile acceptedA daba7d7c at phase boundary. No A4 rules adoption or shared edits.
+Material3 pilot67 effects complete: zero face/overdraw/threshold/errors, min distance.681068; strict numeric pair regressions1015/worst−.065656 remain reported. Type/lint/14focused pass. No fresh cold/cast acceptance.
+Low diagnostic identified2 delayed programs for guard felt/utensils; owned scene warmup now prepares their actual variants. Pending browser check with new source and round3 atlases.
+ONE R3 Blender coordinator65141 remains queued in six-frame windows; previous long G0 gear-train window finished, capture/focused/GPU pilots completed after release. Please retain <=20min heavy-work windows and6.5s handoffs as G0 simulation continues. No duplicate render or finalmatrix.
