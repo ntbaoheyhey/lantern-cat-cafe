@@ -2,7 +2,7 @@
 
 Read-only residual map from the complete registered train and heldout receipts. Threshold >12 percentage points exactly matches acceptance. Counts describe sampled cells, not item prevalence among real players. No new seeds, battles or gameplay edits.
 
-| Sample | Single-piece cells above12pp /2688 | Bare-build cells where both lose /2304 |
+| Sample | Single-piece cells above 12 pp / 2,688 | Bare-build cells where both lose / 2,304 |
 |---|---|---|
 |train|31|2244|
 |heldout|31|2232|
@@ -45,13 +45,13 @@ The all-loss bare-build cells cannot establish that an item is harmless. The coh
 |emberfelt-weapon-legendary|soot / 1|9 → 77|13.6pp|2.957%|
 
 ## What this establishes
-- All31 heldout outliers occur in the registered fourth-slot comparison: Hearthloom12, Bellsteel12, Crumbweave6 and Emberfelt1. They affect Mochi24cases and Soot7cases. These are sampled cells, not31 distinct items or a player incidence rate.
+- All 31 heldout outliers occur in the registered fourth-slot comparison: Hearthloom 12, Bellsteel 12, Crumbweave 6 and Emberfelt 1. They affect Mochi (24 cases) and Soot (7 cases). These are sampled cells, not 31 distinct items or a player incidence rate.
 - Filling the missing slot changes the main stat, rolled affixes, any unique behavior and the four-piece set threshold together. The paired result establishes their combined effect; it does not isolate which component caused the gain.
 - Hearthloom links an ally on Defend; Bellsteel grants Riposte and Shelter; Crumbweave adds detonation shield; Emberfelt adds first-Scald healing. These interactions are implemented in equipment-v4.ts and battle.ts. A small additive display estimate does not bound the effect of survival thresholds or automatic target choices.
-- Two heldout cells tie at93.4pp: Hearthloom Legendary charm11→478wins and Bellsteel Legendary charm30→497wins. Their maximum displayed contributions are about3%, which is a clear calibration failure despite meeting the separate10% display-share limit.
+- Two heldout cells tie at 93.4 pp: Hearthloom Legendary charm (11 → 478 wins) and Bellsteel Legendary charm (30 → 497 wins). Their maximum displayed contributions are about 3%, which is a clear calibration failure despite meeting the separate 10% display-share limit.
 
 ## Next tuning experiment, not executed here
-On training fixtures, separate main-stat/affix/unique changes from the set-threshold change and inspect the first divergent automatic decision. Compare event counts and survival across the whole paired sample before attributing causality. The previous bounded-defense pilot had384 identical outcome digests; its non-improvement remains evidence against repeating that exact patch.
-Because heldout results are now visible, any tuning informed by this map must be labelled heldout-informed. Register a new, explicitly named unused seed block before the next acceptance sample, as GAMEPLAY-V4 section9 requires. Do not reroll10001–10500 or promote these residuals as a passing balance result.
+On training fixtures, separate main-stat/affix/unique changes from the set-threshold change and inspect the first divergent automatic decision. Compare event counts and survival across the whole paired sample before attributing causality. The previous bounded-defense pilot had 384 identical outcome digests; its non-improvement remains evidence against repeating that exact patch.
+Because heldout results are now visible, any tuning informed by this map must be labelled heldout-informed. Register a new, explicitly named unused seed block before the next acceptance sample, as GAMEPLAY-V4 section 9 requires. Do not reroll 10001–10500 or promote these residuals as a passing balance result.
 
 Raw source paths and SHA-256 digests: [residual-map.json](p6/residual-map.json). Full acceptance and utility diagnostics: [P6 balance](P6-BALANCE.md). Reproduce this read-only map with `python3 tools/cardrpg-big/a4-p6-residuals.py`.
