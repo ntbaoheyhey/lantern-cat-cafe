@@ -13,7 +13,12 @@ const bytes=await readFile(artifact),sha=hash(bytes);
 const selected=JSON.parse(await readFile('reports/cardrpg-look/validation/l5/selection.json'));
 const owners=['mochi','soot','clover',...selected.rows.map(row=>row.owner)];
 const receipt={artifact,sha256:sha,method:'Real panel, selects, range input, A/B buttons and return navigation;4angles on25models,9chapter/camera views and6desktop configurations. No timing claims from captures.',units:[],stages:[],configs:[],windows:[],failures:[]};
-const ready=page=>page.waitForFunction(()=>window.__lookAtelierScene?.ready,null,{timeout:120000});
+const ready=async page=>{
+ await page.waitForFunction(()=>window.__lookAtelierScene?.ready,null,{timeout:120000});
+ // The renderer resolves before React's loading label is removed. Evidence
+ // must show what a player sees after that visible overlay has disappeared.
+ await page.locator('.look-loading').waitFor({state:'hidden',timeout:120000});
+};
 const paint=page=>page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));
 const range=async(page,label,value)=>{
  await page.getByLabel(label,{exact:true}).evaluate((input,value)=>{
@@ -64,6 +69,7 @@ function sceneDetail(){
 for(const owner of owners)await windowCheck(`LOOK atelier4angles ${owner}`,[1280,720,2],async page=>{
  await page.getByLabel('Atelier unit',{exact:true}).selectOption(owner);await ready(page);
  await page.waitForFunction(owner=>[...window.__lookAtelierScene.puppets.values()].some(p=>p.asset===owner),owner);
+ await ready(page);
  const angles=[];
  for(const angle of [0,90,180,270]){
   await range(page,'Atelier angle',angle);
@@ -76,7 +82,7 @@ for(const owner of owners)await windowCheck(`LOOK atelier4angles ${owner}`,[1280
  receipt.units.push({owner,angles});console.log(JSON.stringify({atelierUnit:owner,angles:4}));
 });
 for(const chapter of [1,2,3])await windowCheck(`LOOK atelier chapter${chapter}3cameras`,[1280,720,2],async page=>{
- await page.getByRole('button',{name:'Dioramas',exact:true}).click();await page.waitForFunction(()=>window.__lookAtelierScene?.ready&&!window.__lookAtelierScene.view().model,null,{timeout:120000});await page.getByLabel('Atelier chapter',{exact:true}).selectOption(String(chapter));
+ await page.getByRole('button',{name:'Dioramas',exact:true}).click();await page.waitForFunction(()=>window.__lookAtelierScene?.ready&&!window.__lookAtelierScene.view().model,null,{timeout:120000});await ready(page);await page.getByLabel('Atelier chapter',{exact:true}).selectOption(String(chapter));
  for(const camera of ['close','wide','far']){
   await page.getByLabel('Atelier camera',{exact:true}).selectOption(camera);await paint(page);const detail=await page.evaluate(sceneDetail);
   assert.equal(detail.chapter,chapter);assert.equal(detail.camera,camera);assert.equal(detail.overflow,false);assert(detail.stats.calls<=250);assert(detail.stats.triangles<=150000);
@@ -89,6 +95,7 @@ for(const [width,height]of [[1024,600],[1280,720],[1440,900]])for(const dpr of [
   await page.evaluate(()=>{window.__lookOldAtelier=window.__lookAtelierScene;});
   await page.getByRole('button',{name:'Look A/B',exact:true}).click();
   await page.waitForFunction(enabled=>window.__LOOK_V2__===enabled&&window.__lookAtelierScene!==window.__lookOldAtelier&&window.__lookAtelierScene?.ready,enabled,{timeout:120000});
+  await ready(page);
   const detail=await page.evaluate(()=>({oldDisposed:window.__lookOldAtelier.disposed,models:[...window.__lookAtelierScene.puppets.values()].map(p=>p.model.userData.lookV2===true)}));
   assert.equal(detail.oldDisposed,true);assert(detail.models.every(value=>value===enabled));toggles.push({enabled,...detail});
  }
