@@ -1,0 +1,69 @@
+{
+  "source": "assets/cardrpg2/models/velvet.glb",
+  "sourceSha256": "bebc3f14363a99c4f71c631093a04a1c5c7e940224044037ec93285278a74f7b",
+  "scriptSha256": "fcf28f65b2253c7db48aee79b6b1436477eea464875b24e85f3b9739359ba610",
+  "renderer": "4.5.3 LTS",
+  "seed": 20261107,
+  "samples": 40,
+  "size": [
+    512,
+    640
+  ],
+  "camera": {
+    "position": [
+      1.25,
+      -5.800000190734863,
+      1.7400000095367432
+    ],
+    "target": [
+      0.0,
+      0.0,
+      1.090000033378601
+    ],
+    "orthoScale": 2.6500000953674316
+  },
+  "turntable": false,
+  "rows": [
+    {
+      "index": 0,
+      "yaw": 0,
+      "file": "000.png",
+      "projectedBounds": [
+        0.2315441519021988,
+        0.07799665629863739,
+        0.8211758732795715,
+        0.7002365589141846
+      ],
+      "sha256": "1b88b28b52d5f8cb0926463cfc8d9d0801c7a27caae5c408d85d05540bcf526e",
+      "framingPass": true
+    },
+    {
+      "index": 1,
+      "yaw": 1.5707963267948966,
+      "file": "001.png",
+      "projectedBounds": [
+        0.29028186202049255,
+        0.07555902749300003,
+        0.6924227476119995,
+        0.6907094717025757
+      ],
+      "sha256": "2ad68880f6f83de30ef006929ce6271574bc77aea143eb410bb9562cfaa19414",
+      "framingPass": true
+    },
+    {
+      "index": 2,
+      "yaw": 3.141592653589793,
+      "file": "002.png",
+      "projectedBounds": [
+        0.17882412672042847,
+        0.08362333476543427,
+        0.7684558629989624,
+        0.6967400908470154
+      ],
+      "sha256": "309203b587db8374456de455971f9b6aa3da2ee1471f1bdc3c8b302faf28ab78",
+      "framingPass": true
+    }
+  ],
+  "original": true,
+  "method": "Fixed studio/camera/scale across before and after. Bounds are diagnostics, never used to reframe silently."
+}

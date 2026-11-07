@@ -1,0 +1,69 @@
+{
+  "source": "assets/cardrpg2/models/button-guard.glb",
+  "sourceSha256": "f8373d6882e09b7fe487d7ed8472098f24e0be903ae1232d9c9031a7eb52c619",
+  "scriptSha256": "fcf28f65b2253c7db48aee79b6b1436477eea464875b24e85f3b9739359ba610",
+  "renderer": "4.5.3 LTS",
+  "seed": 20261107,
+  "samples": 40,
+  "size": [
+    512,
+    640
+  ],
+  "camera": {
+    "position": [
+      1.25,
+      -5.800000190734863,
+      1.7400000095367432
+    ],
+    "target": [
+      0.0,
+      0.0,
+      1.090000033378601
+    ],
+    "orthoScale": 2.6500000953674316
+  },
+  "turntable": false,
+  "rows": [
+    {
+      "index": 0,
+      "yaw": 0,
+      "file": "000.png",
+      "projectedBounds": [
+        0.18517908453941345,
+        0.08022856712341309,
+        0.7388331294059753,
+        0.6288498044013977
+      ],
+      "sha256": "cd622a21572c4533cf49ef27958e9534eece52ce1a41f5c86a015b5138ab56ad",
+      "framingPass": true
+    },
+    {
+      "index": 1,
+      "yaw": 1.5707963267948966,
+      "file": "001.png",
+      "projectedBounds": [
+        0.34227848052978516,
+        0.07550302147865295,
+        0.6330035328865051,
+        0.62796950340271
+      ],
+      "sha256": "b34673e4f89cb778840a0e911b98a8cc5733912640dbc77b7e3c3039239a5fb9",
+      "framingPass": true
+    },
+    {
+      "index": 2,
+      "yaw": 3.141592653589793,
+      "file": "002.png",
+      "projectedBounds": [
+        0.26116684079170227,
+        0.08181203156709671,
+        0.8148209452629089,
+        0.6260893940925598
+      ],
+      "sha256": "a68715ba80a37debcb3e610af6c9883216329fd2de456213593608e6a3e58d8d",
+      "framingPass": true
+    }
+  ],
+  "original": true,
+  "method": "Fixed studio/camera/scale across before and after. Bounds are diagnostics, never used to reframe silently."
+}
