@@ -12,7 +12,23 @@ const artifact = resolve(process.env.BIG_ARTIFACT || 'docs/cardrpg3/index.html')
 const output = process.env.BIG_VIDEO_OUT || 'reports/cardrpg-big/video';
 const sha256 = createHash('sha256').update(await readFile(artifact)).digest('hex');
 const temporary = await mkdtemp(resolve(tmpdir(), 'cardrpg-big-video-'));
-const rows = [];
+let rows = [];
+if (process.env.BIG_VIDEO_RESUME === '1') {
+  const previous = await readFile(`${output}/captures.json`, 'utf8').catch(error => {
+    if (error.code === 'ENOENT') return null;
+    throw error;
+  });
+  if (previous) {
+    const receipt = JSON.parse(previous);
+    assert.equal(receipt.sha256, sha256, 'Resume requires the identical offline artifact');
+    for (const row of receipt.rows) {
+      assert.deepEqual(row.errors, []);
+      assert.equal(createHash('sha256').update(await readFile(resolve(row.path))).digest('hex'), row.sha256,
+        `Saved clip changed: ${row.name}`);
+    }
+    rows = receipt.rows;
+  }
+}
 await mkdir(output, { recursive: true });
 const browser = await chromium.launch({ channel: 'chromium', args: ['--use-angle=metal'] });
 
@@ -57,8 +73,9 @@ try {
   const owners = [...new Set(actions.map(action => action.owner))];
   assert.equal(owners.length, 12);
   const requested = process.env.BIG_VIDEO_NAMES?.split(',');
+  assert(!requested || requested.every(name => [...owners, 'clover-ultimate', 'boss'].includes(name)), 'Unknown requested video');
   for (const owner of [...owners, 'clover-ultimate']) {
-    if (requested && !requested.includes(owner)) continue;
+    if ((requested && !requested.includes(owner)) || rows.some(row => row.name === owner)) continue;
     const recording = await open();
     const { page } = recording;
     const skills = owner === 'clover-ultimate'
@@ -92,7 +109,7 @@ try {
     await save(recording, owner, duration, { kind: 'isolated-gallery', speed: 1, played, accountRestored: true });
   }
 
-  if (!requested || requested.includes('boss')) {
+  if ((!requested || requested.includes('boss')) && !rows.some(row => row.name === 'boss')) {
     const recording = await open();
     const { page } = recording;
     const navigation = page.getByRole('navigation', { name: 'Cafe screens' });
