@@ -1,0 +1,119 @@
+{
+  "head": "760c92e4d0a9d655b3074eaa617923eb78a81ea7",
+  "pass": "motion-a-final",
+  "pid": 34286,
+  "cwd": "/Users/bao/taskbar-hero-ui-motion",
+  "ports": [
+    5300,
+    5301,
+    5302,
+    5303
+  ],
+  "checks": [
+    {
+      "label": "typecheck",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "typecheck"
+      ],
+      "started": "2026-11-03T16:59:31.836784+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/motion-a-final/typecheck.log"
+    },
+    {
+      "label": "lint",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "lint"
+      ],
+      "started": "2026-11-03T16:59:45.450552+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/motion-a-final/lint.log"
+    },
+    {
+      "label": "scripts",
+      "command": [
+        "node",
+        "--test",
+        "scripts/gen-deno-json.test.mjs"
+      ],
+      "started": "2026-11-03T16:59:57.512582+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/motion-a-final/scripts.log"
+    },
+    {
+      "label": "packages",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "--filter",
+        "!@taskbar-hero/web",
+        "-r",
+        "--workspace-concurrency=1",
+        "test"
+      ],
+      "started": "2026-11-03T16:59:57.668317+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/motion-a-final/packages.log"
+    },
+    {
+      "label": "web-units",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "vitest",
+        "run",
+        "--maxWorkers=2"
+      ],
+      "started": "2026-11-03T17:00:42.841088+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/motion-a-final/web-units.log"
+    },
+    {
+      "label": "art-delivery",
+      "command": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tools/art",
+        "-v"
+      ],
+      "started": "2026-11-03T17:01:40.920138+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/motion-a-final/art-delivery.log"
+    },
+    {
+      "label": "art-catalog",
+      "command": [
+        "python3",
+        "tools/art/catalog.py",
+        "--check"
+      ],
+      "started": "2026-11-03T17:01:45.364581+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/motion-a-final/art-catalog.log"
+    },
+    {
+      "label": "build",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "build"
+      ],
+      "started": "2026-11-03T17:01:56.794746+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/motion-a-final/build.log"
+    }
+  ]
+}

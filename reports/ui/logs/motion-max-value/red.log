@@ -1,0 +1,123 @@
+[WebServer] (node:8699) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:8700) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-ui-motion/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+[WebServer] (node:8719) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+
+[WebServer] (node:8752) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:8753) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-ui-motion/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] (node:8763) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] npm warn Unknown env config "verify-deps-before-run". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+[WebServer] (node:8765) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] npm warn install-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+
+[WebServer] (node:8796) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:8797) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-ui-motion/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] (node:8803) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-ui-motion/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] [plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-ui-motion/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+
+[WebServer] (node:8828) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 2 tests using 1 worker
+
+(node:8974) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/2] [stage-layout] › e2e/ui/cxr2-state-matrix.spec.ts:39:5 › CXR2 screen/state review 1280 maximum-long
+  1) [stage-layout] › e2e/ui/cxr2-state-matrix.spec.ts:39:5 › CXR2 screen/state review 1280 maximum-long 
+
+    Error: home-maximum-long-1280 HUD numbers must stay inside their chip
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 3
+
+    - Array []
+    + Array [
+    +   "9,007,199,254,740,991",
+    + ]
+
+      20 |     return box.height > 0 && chip && (box.top < chip.top - 1 || box.bottom > chip.bottom + 1);
+      21 |   }).map(node => node.textContent));
+    > 22 |   expect(vertical, label + ' HUD numbers must stay inside their chip').toEqual([]);
+         |                                                                        ^
+      23 |
+      24 |   if (await page.getByTestId('home-dashboard').isVisible()) {
+      25 |     const currencyClip = await page.locator('.home-loot-currencies').evaluateAll(nodes => nodes.some(node => node.scrollWidth > node.clientWidth + 1));
+        at inspect (/Users/bao/taskbar-hero-ui-motion/apps/web/e2e/ui/cxr2-state-matrix.spec.ts:22:72)
+        at /Users/bao/taskbar-hero-ui-motion/apps/web/e2e/ui/cxr2-state-matrix.spec.ts:78:9
+
+    Error Context: test-results/5360-5361/ui-cxr2-state-matrix-CXR2--510be-te-review-1280-maximum-long-stage-layout/error-context.md
+
+
+(node:8990) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[2/2] [stage-layout] › e2e/ui/cxr2-state-matrix.spec.ts:39:5 › CXR2 screen/state review 1600 maximum-long
+  2) [stage-layout] › e2e/ui/cxr2-state-matrix.spec.ts:39:5 › CXR2 screen/state review 1600 maximum-long 
+
+    Error: home-maximum-long-1600 HUD numbers must stay inside their chip
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 3
+
+    - Array []
+    + Array [
+    +   "9,007,199,254,740,991",
+    + ]
+
+      20 |     return box.height > 0 && chip && (box.top < chip.top - 1 || box.bottom > chip.bottom + 1);
+      21 |   }).map(node => node.textContent));
+    > 22 |   expect(vertical, label + ' HUD numbers must stay inside their chip').toEqual([]);
+         |                                                                        ^
+      23 |
+      24 |   if (await page.getByTestId('home-dashboard').isVisible()) {
+      25 |     const currencyClip = await page.locator('.home-loot-currencies').evaluateAll(nodes => nodes.some(node => node.scrollWidth > node.clientWidth + 1));
+        at inspect (/Users/bao/taskbar-hero-ui-motion/apps/web/e2e/ui/cxr2-state-matrix.spec.ts:22:72)
+        at /Users/bao/taskbar-hero-ui-motion/apps/web/e2e/ui/cxr2-state-matrix.spec.ts:78:9
+
+    Error Context: test-results/5360-5361/ui-cxr2-state-matrix-CXR2--d7190-te-review-1600-maximum-long-stage-layout/error-context.md
+
+
+  2 failed
+    [stage-layout] › e2e/ui/cxr2-state-matrix.spec.ts:39:5 › CXR2 screen/state review 1280 maximum-long 
+    [stage-layout] › e2e/ui/cxr2-state-matrix.spec.ts:39:5 › CXR2 screen/state review 1600 maximum-long 
+
+exit=1

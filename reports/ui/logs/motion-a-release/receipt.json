@@ -1,0 +1,192 @@
+{
+  "head": "7b98e2c97043088dff9d19baf73f1cbc9ce62224",
+  "pass": "motion-a-release",
+  "pid": 51049,
+  "cwd": "/Users/bao/taskbar-hero-ui-motion",
+  "ports": [
+    5300,
+    5301,
+    5302,
+    5303
+  ],
+  "checks": [
+    {
+      "label": "typecheck",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "typecheck"
+      ],
+      "started": "2026-11-03T17:26:41.749129+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/motion-a-release/typecheck.log"
+    },
+    {
+      "label": "lint",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "lint"
+      ],
+      "started": "2026-11-03T17:26:52.041038+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/motion-a-release/lint.log"
+    },
+    {
+      "label": "scripts",
+      "command": [
+        "node",
+        "--test",
+        "scripts/gen-deno-json.test.mjs"
+      ],
+      "started": "2026-11-03T17:27:01.944878+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/motion-a-release/scripts.log"
+    },
+    {
+      "label": "packages",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "--filter",
+        "!@taskbar-hero/web",
+        "-r",
+        "--workspace-concurrency=1",
+        "test"
+      ],
+      "started": "2026-11-03T17:27:02.065556+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/motion-a-release/packages.log"
+    },
+    {
+      "label": "web-units",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "vitest",
+        "run",
+        "--maxWorkers=2"
+      ],
+      "started": "2026-11-03T17:27:53.415047+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/motion-a-release/web-units.log"
+    },
+    {
+      "label": "art-delivery",
+      "command": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tools/art",
+        "-v"
+      ],
+      "started": "2026-11-03T17:28:43.568754+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/motion-a-release/art-delivery.log"
+    },
+    {
+      "label": "art-catalog",
+      "command": [
+        "python3",
+        "tools/art/catalog.py",
+        "--check"
+      ],
+      "started": "2026-11-03T17:28:46.883905+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/motion-a-release/art-catalog.log"
+    },
+    {
+      "label": "build",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "build"
+      ],
+      "started": "2026-11-03T17:28:55.997624+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/motion-a-release/build.log"
+    },
+    {
+      "label": "changed-1280x720",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "e2e/ui/motion.spec.ts",
+        "e2e/ui/cxu3-forge.spec.ts",
+        "e2e/ui/cxu3-market.spec.ts",
+        "e2e/ui/cxr2-state-matrix.spec.ts",
+        "e2e/ui/cxr2-returning-guest.spec.ts",
+        "e2e/ui/art2-flag-off.spec.ts",
+        "e2e/ui/merged-redesign.spec.ts",
+        "e2e/a11y.spec.ts",
+        "e2e/server/n1-relic-recovery.spec.ts",
+        "e2e/ui/baseline-hud.spec.ts",
+        "--repeat-each=3",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "started": "2026-11-03T17:29:05.836937+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/motion-a-release/changed-1280x720.log"
+    },
+    {
+      "label": "changed-1600x900",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "e2e/ui/motion.spec.ts",
+        "e2e/ui/cxu3-forge.spec.ts",
+        "e2e/ui/cxu3-market.spec.ts",
+        "e2e/ui/cxr2-state-matrix.spec.ts",
+        "e2e/ui/cxr2-returning-guest.spec.ts",
+        "e2e/ui/art2-flag-off.spec.ts",
+        "e2e/ui/merged-redesign.spec.ts",
+        "e2e/a11y.spec.ts",
+        "e2e/server/n1-relic-recovery.spec.ts",
+        "e2e/ui/baseline-hud.spec.ts",
+        "--repeat-each=3",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "started": "2026-11-03T17:32:05.759959+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/motion-a-release/changed-1600x900.log"
+    },
+    {
+      "label": "full-1280x720",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "started": "2026-11-03T17:35:28.126460+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/motion-a-release/full-1280x720.log"
+    }
+  ]
+}

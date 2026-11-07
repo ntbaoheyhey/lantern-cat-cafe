@@ -1,0 +1,147 @@
+{
+  "head": "7d0427c065c3058fb4eb6c94921ff4c3ad121fa5",
+  "pass": "motion-a",
+  "pid": 86393,
+  "cwd": "/Users/bao/taskbar-hero-ui-motion",
+  "ports": [
+    5300,
+    5301,
+    5302,
+    5303,
+    5304
+  ],
+  "checks": [
+    {
+      "label": "typecheck",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "typecheck"
+      ],
+      "started": "2026-11-03T13:24:54.280303+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/motion-a/typecheck.log"
+    },
+    {
+      "label": "lint",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "lint"
+      ],
+      "started": "2026-11-03T13:25:03.357491+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/motion-a/lint.log"
+    },
+    {
+      "label": "scripts",
+      "command": [
+        "node",
+        "--test",
+        "scripts/gen-deno-json.test.mjs"
+      ],
+      "started": "2026-11-03T13:25:11.953658+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/motion-a/scripts.log"
+    },
+    {
+      "label": "packages",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "--filter",
+        "!@taskbar-hero/web",
+        "-r",
+        "--workspace-concurrency=1",
+        "test"
+      ],
+      "started": "2026-11-03T13:25:12.063735+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/motion-a/packages.log"
+    },
+    {
+      "label": "web-units",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "vitest",
+        "run",
+        "--maxWorkers=2"
+      ],
+      "started": "2026-11-03T13:25:52.452436+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/motion-a/web-units.log"
+    },
+    {
+      "label": "art-delivery",
+      "command": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tools/art",
+        "-v"
+      ],
+      "started": "2026-11-03T13:26:35.917849+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/motion-a/art-delivery.log"
+    },
+    {
+      "label": "art-catalog",
+      "command": [
+        "python3",
+        "tools/art/catalog.py",
+        "--check"
+      ],
+      "started": "2026-11-03T13:26:39.183792+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/motion-a/art-catalog.log"
+    },
+    {
+      "label": "build",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "build"
+      ],
+      "started": "2026-11-03T13:26:47.043033+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/motion-a/build.log"
+    },
+    {
+      "label": "changed-1280x720",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "exec",
+        "playwright",
+        "test",
+        "e2e/ui/motion.spec.ts",
+        "e2e/ui/cxu3-forge.spec.ts",
+        "e2e/ui/cxu3-market.spec.ts",
+        "e2e/ui/cxr2-state-matrix.spec.ts",
+        "e2e/ui/cxr2-returning-guest.spec.ts",
+        "e2e/ui/art2-flag-off.spec.ts",
+        "e2e/ui/merged-redesign.spec.ts",
+        "e2e/a11y.spec.ts",
+        "e2e/server/n1-relic-recovery.spec.ts",
+        "--repeat-each=3",
+        "--workers=2",
+        "--retries=0",
+        "--reporter=line"
+      ],
+      "started": "2026-11-03T13:26:55.096103+00:00",
+      "exit": 1,
+      "log": "reports/ui/logs/motion-a/changed-1280x720.log"
+    }
+  ]
+}
