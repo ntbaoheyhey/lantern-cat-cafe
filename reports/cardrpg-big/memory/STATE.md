@@ -2,7 +2,9 @@
 REFERENCE: PROMPT-A3.md (wins), RULES.md, STATE-BEFORE-A3.md
 PROMPT-A3: 5389 bytes; SHA256 60334afa1fe13c13f1cf577ac2d5b3c6696805edd3c2400ef67e2b15d5d7e767
 ## NOW
-Task 1: adopt published L1 eb568fda as A copy, typed portraits, three-size DPR checks.
+Task 1: L1 copy22da1e49 + typed adapter applied; HTML87305a07327451e9cd590ac3005453edf2820bbf7f0c2517b8773bb073faa13d /26119293 bytes.
+Five gates PASS1735web/1020rules/421E2E. Portrait5/6 configs PASS; 1280DPR2 browser-launch timeout. Meta1440 PASS; meta1280/1024 click timeouts; invitations ready timeout during multi-hour interruption. Raw failures retained; retry targeted now.
+Nine portrait surfaces1280 PASS; six first-viewport passes (three layout misses to task3). Flag-off11JS/0Three/model/errors PASS. Baseline and91B-copy files exact. NoA browser/timing work was left active after runner completed.
 Worktree /Users/bao/taskbar-hero-cardrpg-big-delivery; branch codex/cardrpg-big-delivery-2026-11-07; initial c4fa65a7; draft #358.
 ## NEXT
 1. Copy published L1 without its ancestry; apply adapter 49096d53 and finish A portrait call sites.

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import { PageTitle } from '../shared';
-import { portrait } from './assets';
+import { portraitProps } from './assets';
 import type { DepthModel } from './model';
 import { summarizeBattle } from './battle-summary';
 import { CompanionCard } from './CompanionCard';
@@ -34,13 +34,13 @@ export function Prepare({ m }: { m: DepthModel }) {
     <section className="cr-panel dp-matchup"><div><small>TEAM POWER</small><strong>{power('party')}</strong></div><div><b>{difficulty}</b><small>{prediction ? `${prediction.wins}/5 simulated wins` : 'Trying five seeded fights for this team'}</small></div><div><small>ENEMY POWER</small><strong>{power('enemy')}</strong></div></section>
     <p className="dp-estimate-note">Power combines current HP ÷ 5, attack × 2 and defense × 1.5. Difficulty uses five alternate-seed simulations with your current gear and health.</p>
     <div className="dp-three">{battle.actors.filter(actor => actor.side === 'party').map(actor => <section className="cr-panel" key={actor.id}>
-      <div className="dp-cat-heading"><img src={portrait(actor.catalogId)} alt="" /><div><h2>{actor.name}</h2><small>{actor.row} row · {actor.hp}/{actor.maxHp} HP</small></div></div>
+      <div className="dp-cat-heading"><img {...portraitProps(actor.catalogId)} alt="" /><div><h2>{actor.name}</h2><small>{actor.row} row · {actor.hp}/{actor.maxHp} HP</small></div></div>
       <h3>Equipped</h3><ul className="dp-equipped-list">{(['weapon', 'outfit', 'charm', 'relic'] as const).map(slot => {
         const template = actor.equipment.map(id => R.GEAR_BY_ID[id]!).find(item => item.slot === slot);
         return <li key={slot}><small>{slot}</small><span>{template ? `${template.name} · ${template.rarity}` : 'Empty slot'}</span></li>;
       })}</ul><p>{actor.skills.map(id => R.SKILLS[id]!.name).join(' · ')}</p>
     </section>)}</div>
-    <section className="cr-panel dp-opponents"><h2>At the other end of the table</h2><div>{battle.actors.filter(actor => actor.side === 'enemy').map(actor => <span key={actor.id}><img src={portrait(actor.catalogId)} alt="" /><b>{actor.name}</b><small>{actor.hp} HP · {actor.row} row</small></span>)}</div></section>
+    <section className="cr-panel dp-opponents"><h2>At the other end of the table</h2><div>{battle.actors.filter(actor => actor.side === 'enemy').map(actor => <span key={actor.id}><img {...portraitProps(actor.catalogId)} alt="" /><b>{actor.name}</b><small>{actor.hp} HP · {actor.row} row</small></span>)}</div></section>
   </>;
 }
 

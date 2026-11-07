@@ -2,6 +2,7 @@ import { useState } from 'react';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import { CARD_RPG_CONFIG, EQUIPMENT_SLOTS, RARITY_ORDER, STACK_ITEMS, type Stats as CatStats } from '@taskbar-hero/game-rules/cardrpg';
 import { CostView, ItemIcon, PageTitle, statName, statValue, rarityStyle } from '../shared';
+import { portraitProps } from './assets';
 import { CompanionPreview } from './CompanionPreview';
 import { CollectibleDesigns } from './CollectibleDesigns';
 import { gearComparison } from './meta-presentation';
@@ -66,7 +67,7 @@ export function Inventory({ m }: { m: DepthModel }) {
       </div>
       {locked && <p>Finish or abandon the current route to change equipment.</p>}
       <div className="dp-equipment-workbench">
-        <section className="cr-panel dp-paper-doll"><h2>{R.CAT_BY_ID[cardId]!.name}</h2>
+        <section className="cr-panel dp-paper-doll"><div className="dp-cat-heading"><img {...portraitProps(cardId)} alt="" /><h2>{R.CAT_BY_ID[cardId]!.name}</h2></div>
           <CompanionPreview m={m} id={cardId} />
           <div className="dp-doll-slots">{EQUIPMENT_SLOTS.map(gearSlot => {
             const worn = fitted.find(candidate => R.GEAR_BY_ID[candidate.templateId]!.slot === gearSlot);

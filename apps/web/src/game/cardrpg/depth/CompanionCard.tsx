@@ -1,7 +1,7 @@
 import { CARD_BY_ID } from '@taskbar-hero/game-rules/cardrpg';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import { rarityStyle } from '../shared';
-import { portrait } from './assets';
+import { portraitProps } from './assets';
 import { powerScore } from './meta-presentation';
 import type { DepthModel } from './model';
 
@@ -18,7 +18,7 @@ export function CompanionCard({ id, m, onSelect, selected = false }: {
     style={rarityStyle(card.rarity)} aria-pressed={selected}
     aria-label={`${cat.name}, ${card.rarity}, ${owned ? `level ${owned.level}, power ${power}` : 'not collected'}`}
     onClick={onSelect ?? (() => { m.cardId = id; m.go('collection'); })}>
-    <div className="cr-portrait"><img src={portrait(id)} alt="" />
+    <div className="cr-portrait"><img {...portraitProps(id)} alt="" />
       {!owned && <strong className="dp-question">?</strong>}
       <span className="dp-role" title={cat.role}>{ROLE_ICONS[cat.role]}</span>
       <span className="dp-card-rarity">{card.rarity}</span>

@@ -5,7 +5,7 @@ import { type TurnScene, type SceneView } from '../../squad/turn3d/scene';
 import { galleryFixture } from './feel-lab';
 import { project, appearance } from './scene-actors';
 import { animateChapterStage, decorateChapterStage } from './chapter-stage';
-import { portrait } from './assets';
+import { portraitProps } from './assets';
 import { PreviewRuntime } from './preview-runtime';
 import type { DepthModel } from './model';
 
@@ -63,7 +63,7 @@ export function CompanionPreview({ m, id, skillId, entranceKey, home = false, vi
 
   return <div className={`dp-miniature ${home ? 'dp-miniature-home' : ''}`}>
     <div className="dp-miniature-canvas" ref={host} aria-label={home ? 'Your team at the cafe' : `${R.CAT_BY_ID[id!]!.name} miniature`} />
-    {status && <div className="dp-miniature-loading" role="status"><img src={portrait(id ?? state.team[0]!)} alt="" /><span>{status}</span></div>}
+    {status && <div className="dp-miniature-loading" role="status"><img {...portraitProps(id ?? state.team[0]!)} alt="" /><span>{status}</span></div>}
     {!home && !skillId && !entranceKey && <div className="dp-miniature-controls">
       <button aria-pressed={rotating} onClick={() => setRotating(!rotating)}>{rotating ? 'Pause rotation' : 'Rotate miniature'}</button>
       <label>Angle<input type="range" min={-180} max={180} value={angle * 180 / Math.PI}

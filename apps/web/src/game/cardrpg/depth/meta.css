@@ -146,3 +146,6 @@
   content-visibility: auto;
   contain-intrinsic-size: auto 260px;
 }
+
+/* Published LOOK portrait pairs retain their complete transparent frame. */
+.dp-hub-portrait { width: 36px; height: 45px; object-fit: contain; vertical-align: middle; margin-right: 6px; }
