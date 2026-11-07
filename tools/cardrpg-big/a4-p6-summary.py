@@ -48,7 +48,15 @@ row('Collectible paired win gain ≤3pp','Local counters; no enforcement layer',
 row('OFF behavior exact','Frozen G0 digest47477251','8,250 routes exact47477251',off['offBehavior'])
 row('Source gates','G0 passed','Type/lint/build, rules/web/E2E pass; numeric tests reported separately','PASS')
 row('Offline artifact and startup','G0 A3 26,120,329 bytes',f'{size:,}bytes; {size-26120329:+,} vs G0; current-main cold comparison belongs to P7','MISS' if size>26120329 else 'NOT VERIFIED')
-summary={'method':balance['method'],'artifactSha256':sha,'bytes':size,'rows':rows,'source':balance['source'],'counts':balance['counts'],'timings':timings,'checks':balance['checks'],'utility':balance['utility'],'economy':{'ratios':ratios,'totals':economy['totals'],'status':economy_status},'gacha':[{k:v for k,v in r.items() if k!='cdf'} for r in gacha['summaries']],'editions':{k:v for k,v in editions.items() if k not in ['source','pairs','races']},'off':off}
+def earned_distribution(values):
+ observed=sorted(v['day'] for v in values if v is not None);n=len(values)
+ assert n==30 and all(1<=day<=45 for day in observed)
+ def quantile(p):
+  rank=math.ceil(p*n)
+  return observed[rank-1] if rank<=len(observed) else None
+ return {'accounts':n,'observed':len(observed),'censoredAt45':n-len(observed),'medianDay':quantile(.5),'p90Day':quantile(.9),'reachedByDay':{str(day):sum(value<=day for value in observed)/n for day in [7,14,30,45]}}
+earned_distributions=[{'style':r['style'],'firstLegendary':earned_distribution(r['firstLegendary']),'firstChosen':earned_distribution(r['firstChosen'])} for r in economy['totals']]
+summary={'method':balance['method'],'artifactSha256':sha,'bytes':size,'rows':rows,'source':balance['source'],'counts':balance['counts'],'timings':timings,'checks':balance['checks'],'utility':balance['utility'],'economy':{'ratios':ratios,'totals':economy['totals'],'distributions':earned_distributions,'status':economy_status},'gacha':[{k:v for k,v in r.items() if k!='cdf'} for r in gacha['summaries']],'editions':{k:v for k,v in editions.items() if k not in ['source','pairs','races']},'off':off}
 (base/'acceptance.json').write_text(json.dumps(summary,indent=2))
 def table(rows):return '| Target | Before | After | Status |\n|---|---|---|---|\n'+'\n'.join('| '+' | '.join(str(x).replace('|',' / ').replace('\n',' ') for x in r)+' |' for r in rows)
 sample_table='| Sample | Worst paired item gain | Set aggregate range | Cat aggregate range | Coherent crew gain |\n|---|---|---|---|---|\n'
@@ -62,10 +70,12 @@ for sample in ['train','heldout']:
  cat_rates=[mean([r['rate'] for r in teams if cid in r['team']])*100 for cid in sorted({cid for r in teams for cid in r['team']})]
  crew_gain=mean([r['gainPp'] for r in summaries if r['kind']=='crew'])
  sample_table+=f"| {sample} | {worst['gainPp']:.2f}pp: {worst['templateId']}, {worst['cardId']}, chapter{worst['chapter']} ({worst['beforeWins']}→{worst['wins']}/500) | {min(set_rates):.2f}–{max(set_rates):.2f}% | {min(cat_rates):.2f}–{max(cat_rates):.2f}% | {crew_gain:.2f}pp |\n"
-reward_table='| Style | First Legendary observed / censored | Chosen observed / censored | Mean paid draws |\n|---|---|---|---|\n'
-for r in economy['totals']:
- observed=lambda key:', '.join(str(v['day']) for v in r[key] if v) or 'none'
- reward_table+=f"|{r['style']}|{observed('firstLegendary')} / {r['legendaryCensored']}|{observed('firstChosen')} / {r['chosenCensored']}|{r['paidPulls']:.2f}|\n"
+reward_table='| Style | Reward | Observed / censored at45 | Median / p90 day | Reached by day7 /14 /30 /45 |\n|---|---|---|---|---|\n'
+day_label=lambda day:str(day) if day is not None else '>45 (censored)'
+for r in earned_distributions:
+ for key,label in [('firstLegendary','First Legendary'),('firstChosen','Chosen reward')]:
+  d=r[key];cdf=' / '.join(f'{p*100:.1f}%' for p in d['reachedByDay'].values())
+  reward_table+=f"|{r['style']}|{label}|{d['observed']} / {d['censoredAt45']}|{day_label(d['medianDay'])} / {day_label(d['p90Day'])}|{cdf}|\n"
 text=f'''# A4 P6 — measured gameplay balance
 REFERENCE: GAMEPLAY-V4 section9; registration p6/REGISTERED-METHOD.md.
 
@@ -86,7 +96,7 @@ Training diagnostics are shown separately from heldout acceptance. Both samples 
 
 ## Earned progression
 {reward_table}
-The new-save bot uses public commands for90accounts×45synthetic days: actual elapsed service, routes, quests, journal, invitations, gear, recipes, loadouts and chosen rewards. No levels/currency/unlocks injected. Missing rewards are censored at45days. Observed day lists above are not estimates for censored accounts. Heavy/casual ratios compare total earned resources and paid draws separately; different G0 and v4 policies are not a paired trial. Gacha distribution checks instead use controlled bankrolls and10,000accounts/banner; those draw-count distributions are not earned-day predictions.
+The new-save bot uses public commands for90accounts×45synthetic days: actual elapsed service, routes, quests, journal, invitations, gear, recipes, loadouts and chosen rewards. No levels/currency/unlocks injected. Every cohort contains30accounts; all accounts are observed through day45. Missing rewards are administratively censored at45days. Quantiles use the full30-account denominator; a quantile not reached by45 remains >45, never a median of only successful accounts. Raw account days, reward observations and paid-draw totals remain in p6/economy/progression.json. Heavy/casual ratios compare total earned resources and paid draws separately; different G0 and v4 policies are not a paired trial. Gacha distribution checks instead use controlled bankrolls and10,000accounts/banner; those draw-count distributions are not earned-day predictions.
 
 ## Verification and retained failures
 Five source gates: validation/a4-p6-accepted.json. The first type/lint checks failed because Node-only receipt imports were placed in the browser-typed rules package; the same numeric assertions moved to native node:test tooling with no runtime dependency change. Original logs remain. Numeric assertions are in p6/numeric-tests.log, independently of the source gates. Timing attempts use public-command route setup, explicit imported level/unlock benchmarks and real x1 playback; no nominal speed adjustment or skip. The outcome in every timing row is explicit: an enemy victory measures time to crew defeat, not a successful boss finish. A null boss-death timestamp does not establish victorious finishing/cleanup timing on this build. P3 finishing evidence remains historical; P7 additionally observes the earned day7 route. Any incomplete measurement above is NOT VERIFIED.
