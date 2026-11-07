@@ -1,0 +1,81 @@
+[
+  {
+    "name": "typecheck",
+    "args": [
+      "typecheck"
+    ],
+    "exit": 0,
+    "started": "2026-11-06T18:28:44.018Z",
+    "ended": "2026-11-06T18:28:53.340Z",
+    "log": "reports/cardrpg-big2/validation/b6-source-typecheck.log",
+    "sha256": "a4eb6423ec3f2507f58d916f3f3aacb2223122f5332582f84f5c816fc8ebab35",
+    "counts": []
+  },
+  {
+    "name": "demo-types",
+    "args": [
+      "--filter",
+      "@taskbar-hero/web",
+      "exec",
+      "tsc",
+      "-p",
+      "../../tools/cardrpg-big2/tsconfig.json",
+      "--noEmit"
+    ],
+    "exit": 0,
+    "started": "2026-11-06T18:28:53.341Z",
+    "ended": "2026-11-06T18:29:00.056Z",
+    "log": "reports/cardrpg-big2/validation/b6-source-demo-types.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "counts": []
+  },
+  {
+    "name": "lint",
+    "args": [
+      "lint"
+    ],
+    "exit": 0,
+    "started": "2026-11-06T18:29:00.057Z",
+    "ended": "2026-11-06T18:29:09.313Z",
+    "log": "reports/cardrpg-big2/validation/b6-source-lint.log",
+    "sha256": "0b7737e3ef44ade6b91201f7a417fa907cc2b8d55bf2b309012b74c73ec0cdb7",
+    "counts": []
+  },
+  {
+    "name": "tests",
+    "args": [
+      "test"
+    ],
+    "exit": 0,
+    "started": "2026-11-06T18:29:09.313Z",
+    "ended": "2026-11-06T18:30:01.960Z",
+    "log": "reports/cardrpg-big2/validation/b6-source-tests.log",
+    "sha256": "b8d85d352b2e085054fae8c32ee9988a34c8adabe3d9c1eda9212d34d933ff98",
+    "counts": [
+      "packages/chain test:  Test Files  3 passed (3)",
+      "packages/chain test:       Tests  32 passed (32)",
+      "packages/auth test:  Test Files  1 passed (1)",
+      "packages/auth test:       Tests  24 passed (24)",
+      "supabase/tests test:  Test Files  34 passed (34)",
+      "supabase/tests test:       Tests  581 passed (581)",
+      "packages/game-rules test:  Test Files  51 passed | 3 skipped (54)",
+      "packages/game-rules test:       Tests  935 passed | 2 expected fail | 11 skipped (948)",
+      "packages/api-contract test:  Test Files  1 passed (1)",
+      "packages/api-contract test:       Tests  16 passed (16)",
+      "apps/web test:  Test Files  167 passed (167)",
+      "apps/web test:       Tests  1696 passed (1696)"
+    ]
+  },
+  {
+    "name": "build",
+    "args": [
+      "build"
+    ],
+    "exit": 0,
+    "started": "2026-11-06T18:30:01.960Z",
+    "ended": "2026-11-06T18:30:11.924Z",
+    "log": "reports/cardrpg-big2/validation/b6-source-build.log",
+    "sha256": "131ee53f559c777cfb88cf9138a78e3853eb5c69e18aa51c102649d07cf3895e",
+    "counts": []
+  }
+]

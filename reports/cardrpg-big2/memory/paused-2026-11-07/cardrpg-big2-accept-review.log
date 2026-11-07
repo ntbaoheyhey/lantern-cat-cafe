@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/tmp/cardrpg-big2-accept-review.py", line 16, in <module>
+    assert not failed, failed
+AssertionError: {'boss-battles': {'started': '2026-11-07T01:31:02.965Z', 'status': 'running', 'attempts': [{'started': '2026-11-07T01:24:37.240Z', 'status': 'failed', 'error': 'Error: tools/cardrpg-big2/with-timing-lock.mjs /opt/homebrew/Cellar/node@24/24.22.2/bin/node tools/cardrpg-big2/record-boss-battles.mjs exited 1', 'ended': '2026-11-07T01:29:29.162Z'}]}, 'flag-off-browser': {'started': '2026-11-07T01:29:30.093Z', 'status': 'failed', 'attempts': [], 'error': 'Error: tools/cardrpg-big2/with-timing-lock.mjs /opt/homebrew/Cellar/node@24/24.22.2/bin/node /tmp/cardrpg-big2-review-validation/tools/cardrpg-big2/flag-off-check.mjs exited 1', 'ended': '2026-11-07T01:31:01.054Z'}}
