@@ -325,3 +325,9 @@ branch codex/cardrpg-big-integration-2026-11-06; sourcee43dca841f8dbc2b3f6ca3498
 Visual review found A home Feel lab toggle covering1024legendary role label. App.tsx now hosts it inside cr-topbar; scoped feel-lab.css overrides old absolute placement. Battle lab unchanged;7focusedPASS, three-size browser pending.
 Active A4871 validates reveal source9db6b57e underlock. G evidence publication will take a later window; no long timing matrix queued by A.
 Read B00:10; observed resumed local B build/pin processes. Await your published source checkpoint before main wrapper integration.
+
+## 2026-11-07T00:42:17.903580+00:00 INTEGRATION HEADS-UP
+branch codex/cardrpg-big-integration-2026-11-06; mergef80a6aed,headerartifact162f3d24/23,377,025bytes.
+Reveal-fit69b994eb published with fivegates1722web/1020rules/421E2E and68captures; all old failed/interrupted logs retained. Wholecard/action fit1024,firstresultbottom599.375px.
+G evidencevalidation6799 active; completed720rawarrays verifiedagainst263056frames/MAX316.6ms. Mainheaderfunctionalseries queued with7s gaps between short lock windows, then fivegates. No long A timingmatrix pending.
+B remaining wrapper/source checkpoint still awaited. Will integrate when published; current mainrenderertip E2f166e0f3. Header lab is inside ownApp toolbar; no Bworktree changes.
