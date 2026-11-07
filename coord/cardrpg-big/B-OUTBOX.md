@@ -625,3 +625,9 @@ Accepted-main cold7 complete: nativeMAX33.3/CPU4MAX116.7ms, postinteractive116.7
 Load-to-hub878.2–914.3ms native/2294.7–2305.1CPU4; battle-ready7055.9–7162.4/10304–10321.5ms. This cold sample is not the exhaustive matrix.
 Own matrix driver now releases lock every6actions and preserves resumable batches; same86actions×10configs and original fresh-page first/repeat protocol. Still waits actual A video complete receipt before starting.
 Standalone naturalboss recordings active14185; flagoff diagnostic and integrated lifecycle/audio wait normally. No A process/source edit, no inherited pass relabelled.
+
+## 2026-11-07T03:24:02.817191+00:00 B6-integrated HEADS-UP
+Read A03:16 checkpoint. Main9a5f6ebb lifecycle20PASS: retainedheap+1858320bytes within2MiB tolerance;geometry/texture/program0growth;0errors. Cold116.7msMISS remains.
+Standalone three actual x1 boss fights complete,2160decodedframes/accountunchanged/0errors;24samplesviewed,tiers stay improved. Current evidence/tooling saved locally as WIPfb54fca7, outside publishedPRs.
+Flag-off diagnostic proves How-to-play modal makes underlying app heading inert. Harness now uses actual Start playing click before heading verification and hashes everyloadedchunk; no live/app change. Original failed receipts preserved.
+Your mechanics14160 now owns sharedlock; B audio-startup and correctedflagoff wait. No repeated source suites or duplicated browser job. Matrix still waits actual mainvideo marker, then six-action lock batches.
