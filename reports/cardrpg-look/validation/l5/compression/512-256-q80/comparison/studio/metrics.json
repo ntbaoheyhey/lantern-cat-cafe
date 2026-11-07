@@ -1,0 +1,86 @@
+{
+  "scope": "Fixed studio compression fidelity; not aesthetics or runtime acceptance.",
+  "rows": [
+    {
+      "owner": "panko",
+      "raw": "reports/cardrpg-look/rounds/roster/panko/round-3/views",
+      "packed": "reports/cardrpg-look/validation/l5/compression/512-256-q80/comparison/studio/panko",
+      "sourceSha256": "e654b7fec46c8ad21e54689ff878d489a9b3f7f19c4569116b77b02385f2af5b",
+      "previewSha256": "552fa77896ba78ce14a06b9ec60d8f4616f3b9353fd222536ea9ba76e34a4171",
+      "pairs": [
+        {
+          "angle": 0,
+          "cropSsim": 0.9928794494660388,
+          "meanSubjectChannelError": 1.6444327070600366,
+          "alphaMismatchPixels": 0
+        },
+        {
+          "angle": 90,
+          "cropSsim": 0.992099771688984,
+          "meanSubjectChannelError": 1.5596722118461248,
+          "alphaMismatchPixels": 0
+        },
+        {
+          "angle": 180,
+          "cropSsim": 0.9904370988698306,
+          "meanSubjectChannelError": 1.4064474512911156,
+          "alphaMismatchPixels": 0
+        }
+      ]
+    },
+    {
+      "owner": "mallow",
+      "raw": "reports/cardrpg-look/rounds/roster/mallow/round-4/views",
+      "packed": "reports/cardrpg-look/validation/l5/compression/512-256-q80/comparison/studio/mallow",
+      "sourceSha256": "341001f07f483b312d6014ccb370a5a97d4b02e4930fbec5b98c884260ab2bbc",
+      "previewSha256": "1f3b91cc23ab0c5cd8c009f00ed31d9b45c56e3dbd19c33caafacb84664f0cc3",
+      "pairs": [
+        {
+          "angle": 0,
+          "cropSsim": 0.992258669104074,
+          "meanSubjectChannelError": 1.757910413563982,
+          "alphaMismatchPixels": 0
+        },
+        {
+          "angle": 90,
+          "cropSsim": 0.9938890810149555,
+          "meanSubjectChannelError": 1.399557466965844,
+          "alphaMismatchPixels": 0
+        },
+        {
+          "angle": 180,
+          "cropSsim": 0.9923670057176238,
+          "meanSubjectChannelError": 1.2833470910147053,
+          "alphaMismatchPixels": 0
+        }
+      ]
+    },
+    {
+      "owner": "cinnamon",
+      "raw": "reports/cardrpg-look/rounds/roster/cinnamon/round-3/views",
+      "packed": "reports/cardrpg-look/validation/l5/compression/512-256-q80/comparison/studio/cinnamon",
+      "sourceSha256": "3d34ffbba7668f799ae67fda4a78a5016fe9cb111d064e3ec171784c3cb2b102",
+      "previewSha256": "39c74351942f6b51df70eae96212bc4c2528a368ebe5ed648584f2bc50ae08cc",
+      "pairs": [
+        {
+          "angle": 0,
+          "cropSsim": 0.9924811613643625,
+          "meanSubjectChannelError": 1.643045021578692,
+          "alphaMismatchPixels": 0
+        },
+        {
+          "angle": 90,
+          "cropSsim": 0.9910059061300173,
+          "meanSubjectChannelError": 1.6807780320366132,
+          "alphaMismatchPixels": 0
+        },
+        {
+          "angle": 180,
+          "cropSsim": 0.9899051098204158,
+          "meanSubjectChannelError": 1.449791644186847,
+          "alphaMismatchPixels": 0
+        }
+      ]
+    }
+  ]
+}

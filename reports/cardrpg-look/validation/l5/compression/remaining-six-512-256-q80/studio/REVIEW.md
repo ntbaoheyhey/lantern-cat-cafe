@@ -1,0 +1,3 @@
+# Six roster compressed previews — personal review
+
+Viewed all six front/side/rear comparison sheets (18 pairs), bound to each raw model and packed preview hash. Minimum studio crop SSIM0.989321. Eye glints, brow edges, plate/bottle shapes, button rows, cap trims and Marigold flower survive the reduced maps. Fine cloth/fur grain is softer, most visible on the backs of Brioche and Sorrel. Inkcap remains dark against teal in both versions; compression does not correct that pre-existing value weakness. No new silhouette or colour break is apparent in these samples. Select this packing quality for the six runtime candidates; actual motions still require independent review.

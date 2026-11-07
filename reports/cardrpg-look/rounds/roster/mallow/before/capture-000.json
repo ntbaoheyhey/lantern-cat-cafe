@@ -1,0 +1,69 @@
+{
+  "source": "assets/cardrpg2/models/mallow.glb",
+  "sourceSha256": "7a4148e196c6edec328080d6eadca6939f460a3009dd0dfc08daac6439553e05",
+  "scriptSha256": "fcf28f65b2253c7db48aee79b6b1436477eea464875b24e85f3b9739359ba610",
+  "renderer": "4.5.3 LTS",
+  "seed": 20261107,
+  "samples": 40,
+  "size": [
+    512,
+    640
+  ],
+  "camera": {
+    "position": [
+      1.25,
+      -5.800000190734863,
+      1.7400000095367432
+    ],
+    "target": [
+      0.0,
+      0.0,
+      1.090000033378601
+    ],
+    "orthoScale": 2.6500000953674316
+  },
+  "turntable": false,
+  "rows": [
+    {
+      "index": 0,
+      "yaw": 0,
+      "file": "000.png",
+      "projectedBounds": [
+        0.2980003356933594,
+        0.0802156999707222,
+        0.7215439677238464,
+        0.728833019733429
+      ],
+      "sha256": "12649f35686b3ddd18fd15416162a161acf90ce1d8803a5bf441c0bdf570337b",
+      "framingPass": true
+    },
+    {
+      "index": 1,
+      "yaw": 1.5707963267948966,
+      "file": "001.png",
+      "projectedBounds": [
+        0.3275996446609497,
+        0.07818865031003952,
+        0.6665164828300476,
+        0.7318041324615479
+      ],
+      "sha256": "0c468611561c7584e04c66ef24443132e4d00ef40dd5b8f40b804224e09d7b58",
+      "framingPass": true
+    },
+    {
+      "index": 2,
+      "yaw": 3.141592653589793,
+      "file": "002.png",
+      "projectedBounds": [
+        0.27845609188079834,
+        0.08489473164081573,
+        0.7019996643066406,
+        0.7259204387664795
+      ],
+      "sha256": "3fd210222c68cbcd323553f303f77244e8b9ca4f62aac26a193a1e55003a4d63",
+      "framingPass": true
+    }
+  ],
+  "original": true,
+  "method": "Fixed studio/camera/scale across before and after. Bounds are diagnostics, never used to reframe silently."
+}

@@ -5,12 +5,12 @@ import {resolve} from 'node:path';
 import {createHash} from 'node:crypto';
 import assert from 'node:assert/strict';
 import {withTimingLock} from './lock.mjs';
-const out='reports/cardrpg-look/validation/l6/art-browser';
+const out=process.env.LOOK_ART_BROWSER_OUT||'reports/cardrpg-look/validation/l6/art-browser';
 await mkdir(out,{recursive:true});
 const hash=bytes=>createHash('sha256').update(bytes).digest('hex');
 const source=await readFile('docs/cardrpg-look/art.html');
 const result={artifact:hash(source),manifest:hash(await readFile('apps/web/src/game/cardrpg/look-assets.json')),rows:[]};
-for(const [width,height] of [[1024,600],[1280,720],[1440,900]])await withTimingLock(`LOOK L6 card art ${width}`,async()=>{
+for(const [width,height] of [[1024,600],[1280,720],[1440,900]])await withTimingLock(`LOOK card art ${width}`,async()=>{
  const browser=await chromium.launch({channel:'chromium'});
  const errors=[],requests=[];
  try{

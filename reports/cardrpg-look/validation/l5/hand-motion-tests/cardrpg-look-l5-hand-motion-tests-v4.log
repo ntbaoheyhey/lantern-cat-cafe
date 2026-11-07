@@ -1,0 +1,30 @@
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-look/apps/web
+
+ ❯ src/game/squad/turn3d/card-motion.test.ts (8 tests | 1 failed) 331ms
+   ❯ authored starter motion (8)
+     × preserves cinnamon classic poses and timing while fitting only its Look hand arcs 64ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/game/squad/turn3d/card-motion.test.ts > authored starter motion > preserves cinnamon classic poses and timing while fitting only its Look hand arcs
+TypeError: ROSTER_SKILL_CLIPS[asset] is not iterable
+ ❯ src/game/squad/turn3d/card-motion.test.ts:119:30
+    117|     const classic = await createCardClips(model(false), role, asset);
+    118|     const look = await createCardClips(model(true), role, asset);
+    119|     for (const definition of ROSTER_SKILL_CLIPS[asset]!) {
+       |                              ^
+    120|       const original = classic.find(clip => clip.name === definition.i…
+    121|       const fitted = look.find(clip => clip.name === definition.id)!;
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  1 failed | 11 passed (12)
+   Start at  01:50:38
+   Duration  745ms (environment 55%, tests 34%, import 6%, transform 5%)
+
+undefined
+/Users/bao/taskbar-hero-cardrpg-look/apps/web:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: vitest run src/game/squad/turn3d/card-motion.test.ts src/game/squad/turn3d/card-roster.test.ts

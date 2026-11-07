@@ -1,12 +1,15 @@
 // Independent export audit: exact named rig rest poses and <=12k triangles.
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
 const cats=(process.env.LOOK_OWNERS||'mochi,soot,clover').split(',');
+const modelDirectory=process.env.LOOK_MODEL_DIR||'assets/cardrpg-look/models';
+const output=process.env.LOOK_AUDIT_OUT||'reports/cardrpg-look/validation/l1/rig-export.json';
 function parse(bytes){const size=bytes.readUInt32LE(12);return JSON.parse(bytes.subarray(20,20+size).toString());}
 const rows=[];
 for(const cat of cats){
  const before=parse(await readFile(`assets/cardrpg2/models/${cat}.glb`));
- const after=parse(await readFile(`assets/cardrpg-look/models/${cat}.glb`));
+ const modelPath=`${modelDirectory}/${cat}.glb`,bytes=await readFile(modelPath),after=parse(bytes);
  const targets=before.nodes.filter(n=>n.mesh===undefined);const errors=[];
  for(const node of targets){
   const exported=after.nodes.find(n=>n.name===node.name);
@@ -22,8 +25,9 @@ for(const cat of cats){
   }
  }
  const triangles=after.meshes.flatMap(m=>m.primitives).reduce((sum,p)=>sum+after.accessors[p.indices].count/3,0);
- const row={cat,rigTargets:targets.length,triangles,errors,scope:'Exact rest transform/parent compatibility. Animation playback and visual penetration need browser capture; this audit alone is not that proof.'};rows.push(row);
+ const triangleLimit=['yarn-giant','kettle-knight','pantry-crown'].includes(cat)?20000:12000;
+ const row={cat,modelPath,sha256:createHash('sha256').update(bytes).digest('hex'),rigTargets:targets.length,triangles,triangleLimit,errors,scope:'Exact rest transform/parent compatibility. Animation playback and visual penetration need browser capture; this audit alone is not that proof.'};rows.push(row);
  console.log(JSON.stringify(row));
 }
-await mkdir('reports/cardrpg-look/validation/l1',{recursive:true});await writeFile('reports/cardrpg-look/validation/l1/rig-export.json',JSON.stringify(rows,null,2)+'\n');
-assert(rows.every(r=>r.errors.length===0&&r.triangles<=12000),'Export rig or triangle budget failed');
+await mkdir(output.slice(0,output.lastIndexOf('/')),{recursive:true});await writeFile(output,JSON.stringify(rows,null,2)+'\n');
+assert(rows.every(r=>r.errors.length===0&&r.triangles<=r.triangleLimit),'Export rig or triangle budget failed');

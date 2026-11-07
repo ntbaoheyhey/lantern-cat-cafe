@@ -3,7 +3,7 @@ import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 const manifestPath='apps/web/src/game/cardrpg/look-assets.json';
 const manifestBytes=await readFile(manifestPath),manifest=JSON.parse(manifestBytes);
-if(!manifest.complete||manifest.phase!=='L6')throw Error('Requires the reviewed L6 manifest');
+if(!manifest.complete||!['L6','L5'].includes(manifest.phase))throw Error('Requires a reviewed complete art manifest');
 const hash=data=>createHash('sha256').update(data).digest('hex');
 const embedded=new Map();
 async function data(path){

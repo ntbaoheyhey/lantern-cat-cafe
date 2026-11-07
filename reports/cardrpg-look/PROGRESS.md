@@ -17,3 +17,14 @@ Native pilot763ef7bd/23,720,242bytes usesR2atlases. SixGPU actions:0newprograms,
 ## 2026-11-07T17:57:55.740647+00:00 L6 audited
 
 12portraits/48icons/4plates;actualUI6configs and previewready pass. E2E420+1retry, not one clean421run. HTML26392592bytes;24castsMAX16.8ms;7coldMAX133.3ms;startup+93bytes. Publication pending. L5/L7 and inheritedL4misses remain. SeeL6-CHECKPOINT.md.
+
+## 2026-11-07T19:37:58.030470+00:00 L5 continuation
+
+Native macOS; Docker Desktop is open but docker ps has no running containers. Nine sculpted cats and refreshed portraits are local; batch1 checkpoint remains local, phase gates/publication still pending. Corrected Biscuit24poses reviewed; Marigold12focused motion tests pass, image review in progress. YarnR3 framing passes but its detached rear tail requires R4; PantryR3 is awaiting review. Original queued turntables, packing comparisons and opponent poses continue under the shared timing lock. No duplicate acceptance run, subagents or generative calls. L7/finalmatrix/lifecycle20/CPU4BalancedLow remain unrun.
+
+## 2026-11-07T21:06:05.669104+00:00 L5 fresh motion review
+All372 committed phase poses personally reviewed:216cat/156opponent;all selected Look models/clips/framing/error checks pass. Reviewed fresh gallery dark1024/light1440 andactual1024Collection/Team. Stale separate gallery footer recorded;copy fix staged forL7 only. Type/lint/unit1761web passed;remaining original coordinator99102 continues build/E2E/flagoff/cold7/casts24. Sourcec5048bee andartifact1171b9ec unchanged. Size31,367,423bytes;explicit32MBjustification and632,577byteheadroom. No duplicatejobs/Docker/subagents/modelcalls/sharededits.
+
+## 2026-11-07T21:25:09.702169+00:00 — L5 audit complete
+
+Completed all22 models/turntables, nine portrait refreshes,66stills/372poses. Source gates and420+1 E2E coverage accepted with original timeout preserved; no clean421-run claim. Cold7MAX133.3msMISS;24castMAX16.8ms/100%≤20/errors0. HTML31,367,423bytes uses documented32MBallowance;startup+93bytes and historical1162strict effect-pair regressions remain. Selected evidence publication follows; L7viewer/videos/finalmatrix/lifecycle20/CPU4BalancedLow still unrun.

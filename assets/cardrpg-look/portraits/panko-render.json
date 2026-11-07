@@ -1,12 +1,12 @@
 {
   "owner": "panko",
   "original": true,
-  "round": 2,
-  "status": "Source render selected for L6; runtime validation separate",
-  "tier": "inherited-model-new-studio-portrait",
-  "source": "assets/cardrpg2/models/panko.glb",
-  "sourceSha256": "74127ecfce48c817deba33fbe83a7d4bc0f1e9f406bf6a25189a5e3918cf9e5a",
-  "scriptSha256": "c52bd1f13b2b3aaea5fde956ab56c63306777196da37635e37580b6b5d1188c9",
+  "round": 4,
+  "status": "L5 reviewed static portrait; runtime acceptance separate",
+  "tier": "improved-roster-model",
+  "source": "assets/cardrpg-look/models/panko.glb",
+  "sourceSha256": "e654b7fec46c8ad21e54689ff878d489a9b3f7f19c4569116b77b02385f2af5b",
+  "scriptSha256": "1c32d882e41c679a9e8dbba605803f316808292adbbfecf54c924cff5f4d4f95",
   "renderer": "4.5.3 LTS",
   "seed": 20261107,
   "samples": 64,
@@ -29,16 +29,16 @@
     ]
   ],
   "camera": {
-    "orthoScale": 1.9240000247955322,
+    "orthoScale": 1.850000023841858,
     "target": [
-      0.005093812942504883,
-      0.02083323895931244,
-      0.7961249947547913
+      -0.03436735272407532,
+      -0.0032091736793518066,
+      0.7293534874916077
     ],
     "position": [
-      1.2550938129425049,
-      -5.779167175292969,
-      1.4461250305175781
+      1.215632677078247,
+      -5.80320930480957,
+      1.3793535232543945
     ],
     "minimumBorder": 0.055
   },
@@ -47,25 +47,26 @@
     "look": "AgX - Medium High Contrast"
   },
   "projectedBounds": [
-    0.13187043368816376,
-    0.069891557097435,
-    0.8457446694374084,
-    0.9228918552398682
+    0.09909594058990479,
+    0.0883568599820137,
+    0.9047766923904419,
+    0.9159538149833679
   ],
   "modelBounds": [
     [
-      -0.5174028873443604,
-      -0.42729896306991577,
-      0.00024319440126419067
+      -0.5879980325698853,
+      -0.5008480548858643,
+      -0.0008166804909706116
     ],
     [
-      0.5275905132293701,
-      0.46896544098854065,
-      1.592006802558899
+      0.5192633271217346,
+      0.49442970752716064,
+      1.4595236778259277
     ]
   ],
-  "file": "reports/cardrpg-look/rounds/art/portraits/round-2/panko.png",
-  "sha256": "f71543526b6caab8f99c1ddf368a211d89fbf7017d502bc2e7bfe993b1c76602",
-  "selectedRound": 2,
-  "sourceRender": "reports/cardrpg-look/rounds/art/portraits/round-2/panko.png"
+  "studioPose": null,
+  "file": "reports/cardrpg-look/rounds/art/portraits/round-4/panko.png",
+  "sha256": "08ed250d93eb6a81d823c884a7bcade12a59c4d114054d26f565ec30263b7755",
+  "selectedRound": 4,
+  "sourceRender": "reports/cardrpg-look/rounds/art/portraits/round-4/panko.png"
 }

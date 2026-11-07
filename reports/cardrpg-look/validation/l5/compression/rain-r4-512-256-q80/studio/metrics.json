@@ -1,0 +1,32 @@
+{
+  "scope": "Fixed studio compression fidelity; not aesthetics or runtime acceptance.",
+  "rows": [
+    {
+      "owner": "rain-spool",
+      "raw": "reports/cardrpg-look/rounds/opponents/rain-spool/round-4/views",
+      "packed": "reports/cardrpg-look/validation/l5/compression/rain-r4-512-256-q80/studio/rain-spool",
+      "sourceSha256": "18711c7d32c9494cfad64202e55739718cebdf0d153c2bb66250a4218ed9f4c7",
+      "previewSha256": "2afa7dd6b9a10031ff0e7cc9d40e867b69f44afb6f10fb68106e71ce1ab911db",
+      "pairs": [
+        {
+          "angle": 0,
+          "cropSsim": 0.9905981805757987,
+          "meanSubjectChannelError": 1.8840176422300448,
+          "alphaMismatchPixels": 0
+        },
+        {
+          "angle": 90,
+          "cropSsim": 0.9906396546782318,
+          "meanSubjectChannelError": 1.9018997395006036,
+          "alphaMismatchPixels": 0
+        },
+        {
+          "angle": 180,
+          "cropSsim": 0.9926210420097908,
+          "meanSubjectChannelError": 1.805904414866738,
+          "alphaMismatchPixels": 0
+        }
+      ]
+    }
+  ]
+}
