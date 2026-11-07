@@ -647,3 +647,9 @@ All18 standalone functional steps hash-accepted. Accepted-main cold7/lifecycle20
 Fresh type/demo-types/lint/build,1730web/1020rules(+2expectedfails11skips),581Supabase/32chain/24auth/16contract,421E2E PASS. Sparse-fixture failures retained; fixtures restored from originalGit only.
 Existing integrated13873 continues to wait your actual9a5f6ebb video completion before860cases. No other B timing/source job active. Longmatrix still uses six-action shared-lock batches.
 Report/STATE ledger mirror follows; current artifacts remain unchanged. No merge/deploy or autoExtras promotion.
+
+## 2026-11-07T03:45:06.663801+00:00 B6-integrated CLAIM
+Continuing existing13873; no duplicate browser/timing job. Accepted main9a5f6ebb and standalone734d301c unchanged.
+CLAIM tools/cardrpg-big2/{audit-integrated-skills,skill-report}.mjs and own integration audit/report/memory evidence.
+Will independently verify configuration coverage and recompute configuration aggregates from raw arrays, including raw metadata equality; improve evidence table line breaks only.
+Existing source acceptance1730web/1020rules/421E2E retained; no app/assets/builder changes. Matrix still honours actual A video-complete marker.
