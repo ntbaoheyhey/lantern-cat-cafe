@@ -1,0 +1,30 @@
+Scope: 5 of 7 workspace projects
+
+> @taskbar-hero/auth@0.0.0 test /Users/bao/taskbar-hero-single2-docs/packages/auth
+> vitest run
+
+sh: vitest: command not found
+/Users/bao/taskbar-hero-single2-docs/packages/auth:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/auth@0.0.0 test: `vitest run`
+spawn ENOENT
+ WARN   Local package.json exists, but node_modules missing, did you mean to install?
+
+> @taskbar-hero/chain@0.0.0 test /Users/bao/taskbar-hero-single2-docs/packages/chain
+> vitest run
+
+sh: vitest: command not found
+ WARN   Local package.json exists, but node_modules missing, did you mean to install?
+
+> @taskbar-hero/game-rules@0.0.0 test /Users/bao/taskbar-hero-single2-docs/packages/game-rules
+> vitest run
+
+sh: vitest: command not found
+ WARN   Local package.json exists, but node_modules missing, did you mean to install?
+
+> @taskbar-hero/supabase-tests@0.0.0 test /Users/bao/taskbar-hero-single2-docs/supabase/tests
+> vitest run
+
+sh: vitest: command not found
+ WARN   Local package.json exists, but node_modules missing, did you mean to install?
+
+exit=1

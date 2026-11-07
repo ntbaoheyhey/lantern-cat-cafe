@@ -1,0 +1,43 @@
+{
+  "head": "932b6f7e4dcfbd33e4ff81e9bd967d50cab9b6fd",
+  "pass": "single2-docs-a",
+  "pid": 71414,
+  "cwd": "/Users/bao/taskbar-hero-single2-docs",
+  "ports": [
+    5300,
+    5301,
+    5302,
+    5303,
+    5304
+  ],
+  "checks": [
+    {
+      "label": "scripts",
+      "command": [
+        "node",
+        "--test",
+        "scripts/gen-deno-json.test.mjs",
+        "scripts/health-auth.test.mjs"
+      ],
+      "started": "2026-11-04T09:50:06.514138+00:00",
+      "exit": 0,
+      "log": "reports/ui/logs/single2-docs-a/scripts.log"
+    },
+    {
+      "label": "packages",
+      "command": [
+        "npx",
+        "-y",
+        "pnpm@10.28.0",
+        "--filter",
+        "!@taskbar-hero/web",
+        "-r",
+        "--workspace-concurrency=1",
+        "test"
+      ],
+      "started": "2026-11-04T09:50:06.704673+00:00",
+      "exit": 1,
+      "log": "reports/ui/logs/single2-docs-a/packages.log"
+    }
+  ]
+}
