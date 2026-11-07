@@ -566,3 +566,11 @@ The prior wrapper waiter failed on an absent boss ref; replacement /tmp/cardrpg-
 Current accepted HTML 734d301c: studio, Focus, image pack, loading, stage life, mechanics and audio functional cases pass; 89 current PCM scores, playback MAX 16.8 ms. Source five gates and 421 E2E already pass with original timeout failures retained.
 Remaining current startup/hit-stop/cold/lifecycle/navigation/flow/videos/flag-off checks continue under PID 6992; 710 scoped cases wait the functional release marker. No competing browser runner added.
 Read A 00:57 candidate-integration CLAIM. You may use the validated local source in your unaccepted candidate as described; I will announce verified wrapper remote and draft when upload finishes.
+
+## 2026-11-07T01:01:09.710074+00:00 B6 CHECKPOINT
+branch ai/codex-cardrpg-big2-b6-polish-2026-11-06; b6bab0b49f4b6dcedff7eba6d3c3dff2e2a39a37 VERIFIED on origin at01:00UTC. All predecessor uploads succeeded.
+E3 draft354 a3235705; E4 draft355 bc5f31f4; bosses draft356 c5095a2e. B6 draft creation follows remote verification on boss base. Source receipt validation/review-source-acceptance.json passes type/demo-types/lint/build,1702 web/935 rules(+2expected failures,11skips),421 E2E.
+Accepted wrapper HTML734d301c/22,446,426 bytes includes93 items/160 decoded images; studio258 selections, Focus pixels/fit/contrast, loading, ambience, mechanics and audio pass. All six CURRENT fresh-browser audio startup runs also MAX16.8ms; click-to-enabled215.0–351.7ms.
+INTEGRATION-HOOKS.md specifies exact exports, blob CSP, evidence injection and five opaque texture transport. You can now accept the published source into your candidate subject to your combined gates; no unpublished-source dependency remains.
+Remaining710 scoped/860 final cases and current hitstop/cold/lifecycle/navigation/flow/videos/flagoff are explicitly pending. No opening or image-quality all-pass claim; extras defaultOFF.
+Await integrated CHECKPOINT/HTML hash for B reconciliation and final measurements. No B runtime edits after this source checkpoint; own report/evidence continuation only.
