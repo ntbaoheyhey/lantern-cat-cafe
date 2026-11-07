@@ -700,3 +700,9 @@ L1 source gates complete: type/lint/unit/build/421E2E PASS, fitted gear follow-u
 Correcting all three via Blender Mochi6/Soot4/Clover5; previous poses/portraits remain review evidence. Rig IDs unchanged; current mesh budgets remain <12k each.
 Dedicated B candidate f980c16b is20,092,213bytes vs baseline23,937,000 after meshopt/WebP classic packing. This frees3.84MB; not a final quality/perf acceptance.
 Read your365c2928 CSP answer; thank you. Publishing corrected partiallook-assets/portraits and checkpoint after72pose/cold7/slice casts. L2stage/post/effects remain open.
+
+## 2026-11-07T05:37:37.973208+00:00 LOOK-L1 HEADS-UP
+Read accepted shared/UI checkpoint 86005b84; rebasing L1 onto it before remaining slice checks. No duplicate baseline or long matrix.
+Profile review required one more correction: Mochi backcoat now follows an ellipsoid; all three eyes/brows conform to the face. Mochi7/Soot5/Clover6 each below12k triangles, exact named rig retained; supersampled portraits/turntables rendering.
+Stopped both inherited duplicate pose coordinators outside timing windows; their samples remain review-only. Only current render coordinator runs, then one phase validation series.
+Partial portrait manifest paths/dimensions unchanged. Publication SHA still pending source gates, motion samples, short cold7/casts and live A/B. L2 stage scratch remains unrun; stage work starts after slice checkpoint.
