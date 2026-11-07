@@ -11,3 +11,7 @@ P6 type/lint/tests/build/E2E via validate.mjs a4-p6. No full204pack yet; P7 stag
 ## Earned-reward distribution reporting
 - P6 summary now reports cohort-wide median/p90 and day7/14/30/45 reached fractions, retaining >45day censoring. Boundary checks PASS; no gameplay rules or samples changed. Original closure92853 will consume this report-only extension.
 - Staged P7 guide adds the same earned-day table; journey binds day7save hash and exact public-command outcomes. Selected22-file external manifest and archive refreshed and verified. No P7 browser execution.
+
+## P6 residual map and harness parity
+- Read-only residual map:31fourth-slot cells >12pp per sample; worst heldout93.4pp with ~3% displayed share. P6-RESIDUALS.md plus hashed raw input map preserved. No gameplay/seed changes.
+- Economy pure item-utility scoring memoized per slot sort after84complete rankings/equip results matched;24,900→3,216score calls and7.16→0.92seconds in recorded probe. Original harness,7frozen states and receipt in p6/harness-parity. Original coordinator85496/6738 continues checkpoint; source hashes unchanged. Next slice uses equivalent harness; no account replay.

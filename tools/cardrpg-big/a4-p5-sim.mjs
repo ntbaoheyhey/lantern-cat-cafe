@@ -29,7 +29,7 @@ try{
    while(s.account.currencies.stamps>=150){const result=R.metaCommand(s,{type:'pull',bannerId:'standard',seed:index*9349+day*97+pulls(s)});if(!result.ok)break;s=result.state;if(!row.firstLegendary&&s.account.history.at(-1).rarity==='legendary')row.firstLegendary={day,pulls:pulls(s)-1};}
    if(R.selectorMarksV4(s)>=60){const cat=C.CARDS.find(c=>!s.account.cards.some(o=>o.cardId===c.id))??C.CARDS[0];s=accept(R.chooseSelectorV4(s,'cat',cat.id));row.firstChosen??={day,pulls:pulls(s)-1,id:cat.id};}
    for(const id of s.team){let owned=s.account.cards.find(c=>c.cardId===id);if(owned.level<12)s=R.metaCommand(s,{type:'level',cardId:owned.id}).state;s=R.metaCommand(s,{type:'ascend',cardId:owned.id}).state;
-    for(const slot of C.EQUIPMENT_SLOTS){const other=new Set(Object.entries(s.equipment).filter(([cat])=>cat!==id).flatMap(([,slots])=>Object.values(slots)));const best=s.gear.filter(g=>R.GEAR_BY_ID[g.templateId].slot===slot&&!other.has(g.id)).sort((a,b)=>R.itemUtilityV4(s,id,b)-R.itemUtilityV4(s,id,a))[0];if(best)s=accept(R.equipGear(s,id,best.id));}
+    for(const slot of C.EQUIPMENT_SLOTS){const other=new Set(Object.entries(s.equipment).filter(([cat])=>cat!==id).flatMap(([,slots])=>Object.values(slots)));const best=s.gear.filter(g=>R.GEAR_BY_ID[g.templateId].slot===slot&&!other.has(g.id)).map(item=>({item,utility:R.itemUtilityV4(s,id,item)})).sort((a,b)=>b.utility-a.utility)[0]?.item;if(best)s=accept(R.equipGear(s,id,best.id));}
    }
    if(day===2||day===7){s=accept(R.saveLoadoutV4(s,0,'Evening crew'));s=accept(R.applyLoadoutV4(s,0));row.events.push({day,kind:'loadout'});}
    const crafted=R.craftGear(s,'bellsteel-relic-rare');if(crafted.ok){s=crafted.state;row.events.push({day,kind:'targeted-recipe',id:'bellsteel-relic-rare'});}
