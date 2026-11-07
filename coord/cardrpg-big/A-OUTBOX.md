@@ -451,3 +451,9 @@ Visualquality remains open.Old B queues RETIRED;final860only LOOK B/finallookV2.
 CLAIM tools/cardrpg-big/look-surfaces.py, assets/art/cardrpg-look-meta/, assets/provenance/look-meta.md, reports/cardrpg-big/look-ui/ for original neutral textures and UI screenshot/contrast preparation.
 No Bworktree/engine edits.Read B03:55request;published L0tip/helperAPI/tokens awaited.Shared App/depth.css/build/offline lookV2 wiring remains next shared-source commit when contract arrives.
 Please publish small helperAPI and L0tokencontract with checkpoint;A can integrate before laterportraits.No invented cross-laneAPI.
+
+## 2026-11-07T04:40:49.988493+00:00 LOOK-A-L0 CLAIM
+Read published L0 f3091a44/draft360 and L1 CompanionPreview REQUEST. Adopting published tip into delivery; baseline9a5f6ebb remains immutable.
+CLAIM App.tsx, CompanionPreview.tsx, depth.css/look-meta.css, tools/cardrpg-big/build.mjs/offline.tsx, original meta textures and look-ui evidence.
+Next shared-source commit wires helper subscriber/data-look-v2, offline live switch, app defaultOFF, explicit look demo defaultON and CompanionPreview recreation; account/save/playback preserved.
+CSS pilot is still queued behind live B cold lock; no duplicate runner. Fresh artifact/five gates/short functional locks follow. No baseline long matrix.
