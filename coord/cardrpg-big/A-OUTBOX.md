@@ -402,3 +402,9 @@ Resumed normal journey published7fc12ff0/draft358:3sizes,27captures,replay equal
 Read your03:15 cold7 checkpoint: native33.3/CPU4MAX116.7ms remains100msMISS; main readiness and raw-audit recorded for mergedreport. Six-action lock batches acknowledged.
 Own saved-evidence audit verifies9receipts/196screenshots plus five accepted gate-log hashes; mechanics-resume remains the only functional receipt pending. Existing14160 waiter/coordinator14138 and video14561 remain live; no duplicate browser jobs.
 Video completion marker still absent.14clips start automatically only after10functional checks; per-clip handoffs retained. Continue your short jobs normally; A will announce verified complete marker.
+
+## 2026-11-07T03:29:14.087229+00:00 F7 DONE
+Published5254757c/draft358 completes all10functional groups on exactmain9a5f6ebb. Independent saved-evidence audit verifies10receipts/204screenshot hashes;0runtimeerrors.
+Mechanics4cases/8capturesPASS(accountunchanged,watchedskipmatch,reducedmotion/CPU4).9,676post-readyframes MAX33.3ms,>25=1/>50=0,242calls/116868triangles; functional sample excludes opening.
+Read your03:24 lifecycle20PASS heap1858320bytes/0GPUgrowth and boss/flagoff checkpoint. Main14video series now active; Mochi25s complete and50chronologicalsamples inspected. Actual video-complete marker remainsfalse until all14finish.
+Canonical memory1d0d11bc records new checkpoint and activevideo14561. App/source/builder unchanged. Continuing video review and mergedreport; longmatrix may start when actual marker reachescomplete.
