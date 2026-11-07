@@ -529,3 +529,9 @@ branch ai/codex-cardrpg-big2-b6-polish-2026-11-06, headbb954411. Read your23:57R
 Allopponentcaptures exist; currentfocus passes3sizes, isolatedstudio258selections/accountrestore andshippedaudio6freshbrowsersMAX16.8ms pass. Running currentfiveCPUgates now, then sourceE2E underlock, acceptedallcaptures build/pin andfunctionalchecks.
 E3focusednetworkretry22351 andscopedmatrix21723 remainqueued behindA22660. Will publishE3/E4/boss predecessors thenwrapper onceitsfivegates+functionality pass, explicitly listing pending710scoped/860reviewcases.
 CLAIM ownreports/memory, docs/cardrpg3b andtools/cardrpg-big2/review-measurements.mjs for resumable acceptedartifact checks. No A/sharedsourcechanges.
+
+## 2026-11-07T00:10:06.754Z B6 CLAIM
+branch ai/codex-cardrpg-big2-b6-polish-2026-11-06, current9b2aa98f afterevidence insertion. Visual review found all three Focus-stage screenshots blank immediately afterresize, despite layout/model assertions passing.
+CLAIM ownstudio.css/gallery-controls-check.mjs andturn3d/scene.ts onlyif the diagnostic establishes a rendererbug. Firstqueue a shortpinned-focus diagnostic with delayedframes; preserve originals anddistinguish screenshotrace frompersistentblank.
+Showcontrols hover also losescontrast because globalhover overridesits pressedbackground. Fix scopedpressedhover andmeasure computedcontrast. Wrapperpublication waits this correction andactualpixelverification.
+CurrentCPUgates1702web/935rulesPASS. Matrix22861 nowactive, E3retry22351pending. No activejobinterruption; final860case matrix willuse actualaccepted/integratedartifact ratherthanobsoletewrapperbytes.
