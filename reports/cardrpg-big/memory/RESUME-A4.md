@@ -27,3 +27,5 @@ Read RULES-A4.md,first20STATE-A4,latestoutboxes. Native/headless/noagents/models
 - Journey is queued/running next, then guide and14 performance windows under shared lock. Never restart source gates/full pack/new screens or P6. Reattach45202 and inspect p7/series.json, coordinator-resume.log and child receipts.
 - Main340f88b9 was verified against origin/main at22:45UTC; /tmp/cardrpg-a4-main-dist/build-receipt.json records that source. Local /Users/bao/taskbar-hero main is stale; do not use it for comparison.
 - Finish journey+guide visual review, evidence audit, report, draftPRstacked375, ledger andsync. No runtime edits planned; retain every numeric/performance MISS.
+
+- 22:49UTC: full324screens committed/pushed e49834e5. Real-click journey16captures PASS; day7 reaches boss and loses at55.151s x1. Offlineguide1,314,680bytes/SHA9dca8fe648d6e101de89ffa02099249327615648989b1207f7e7183c6c0d0482; threewidthchecksPASS/mincontrast7.211,visualreviewdone. Existing23136/session45202 now owns14performancewindows; no duplicate launch.

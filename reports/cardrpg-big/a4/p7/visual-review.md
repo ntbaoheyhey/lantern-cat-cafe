@@ -28,3 +28,7 @@ Remaining: accepted gallery retry, reveal/invitation/design/path/mechanics captu
 - Additional P5 coverage: reviewed the 24 captures at 1280/1440 in both themes. Cafe service, the ordered lesson, claimed board rewards, pending cap rejection and once-only journal milestones remain visible. The smaller 1024 capture set is still pending review.
 
 - Additional P5 at 1024: personally reviewed all 12 compact captures. The journal switches to one column and uses vertical scrolling; lesson controls, claimed rewards and cap-rejection copy remain readable. Across P1/P2/P4/P5, all 120 new captures have now been inspected.
+
+- Reviewed the complete 16-image real-click journey sheet. Fresh-save service, earned invitations, equipment, journal, local collectible locks and the day7 route are visible. Both route bosses end in defeat; the day7 x1 observation is 55.151 seconds to crew defeat. Some secondary result-card artwork is caught during its fade; readable outcome observations remain visible.
+
+- Reviewed all nine offline-guide screenshots in a labelled sheet, plus the 1280 intro and 1024 evidence table at full size. The keyboard focus outline, body copy and before/after/MISS table are readable. The guide uses vertical scrolling; the three snapshots at each width sample intro, gear and evidence, not every document line. All six embedded images decode and all local links resolve in the separate functional receipt (minimum sampled contrast 7.211:1).

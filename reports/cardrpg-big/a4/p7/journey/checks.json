@@ -1,0 +1,2838 @@
+{
+  "complete": true,
+  "day7SaveSha256": "62b7006757b7c325ea0bc6e7d0ad20fe358caafc4568b539525d42e0b3e0efac",
+  "day7BossReached": true,
+  "artifact": "/Users/bao/taskbar-hero-cardrpg-a4/docs/cardrpg3/index.html",
+  "sha256": "067d2062f6836a6d0bb9f6753ece1b2f3ca923688f241866a7f42806c8f7b6a1",
+  "method": "Fresh offline page with real UI clicks. Playwright advances one hour for elapsed service, so this is compressed progression, not sixty elapsed wall-clock minutes. Day7 comes from the public-command 45-day economy bot. No unlock shortcuts or injected currencies. The first-hour route uses skip; the day7 route attempts to reach its boss, which uses real x1 playback if reached. An earlier defeat remains recorded and day7BossReached is false; it is not evidence of boss timing. P6 has a separate fixed level6/chapter-unlock timing benchmark. These are different fixtures and outcomes remain explicit.",
+  "captures": [
+    {
+      "name": "new-save-hub",
+      "path": "reports/cardrpg-big/a4/p7/journey/new-save-hub.png",
+      "overflow": 0,
+      "screen": "hub"
+    },
+    {
+      "name": "prepare",
+      "path": "reports/cardrpg-big/a4/p7/journey/prepare.png",
+      "overflow": 0,
+      "screen": "prepare"
+    },
+    {
+      "name": "cafe-hour",
+      "path": "reports/cardrpg-big/a4/p7/journey/cafe-hour.png",
+      "overflow": 0,
+      "screen": "hub"
+    },
+    {
+      "name": "first-hour-battle-0",
+      "path": "reports/cardrpg-big/a4/p7/journey/first-hour-battle-0.png",
+      "overflow": 0,
+      "screen": "result"
+    },
+    {
+      "name": "first-hour-battle-5",
+      "path": "reports/cardrpg-big/a4/p7/journey/first-hour-battle-5.png",
+      "overflow": 0,
+      "screen": "result"
+    },
+    {
+      "name": "first-hour-boss-prepare",
+      "path": "reports/cardrpg-big/a4/p7/journey/first-hour-boss-prepare.png",
+      "overflow": 0,
+      "screen": "prepare"
+    },
+    {
+      "name": "first-hour-boss-6",
+      "path": "reports/cardrpg-big/a4/p7/journey/first-hour-boss-6.png",
+      "overflow": 0,
+      "screen": "result"
+    },
+    {
+      "name": "invitations",
+      "path": "reports/cardrpg-big/a4/p7/journey/invitations.png",
+      "overflow": 0,
+      "screen": "gacha"
+    },
+    {
+      "name": "equipment",
+      "path": "reports/cardrpg-big/a4/p7/journey/equipment.png",
+      "overflow": 0,
+      "screen": "inventory"
+    },
+    {
+      "name": "journal",
+      "path": "reports/cardrpg-big/a4/p7/journey/journal.png",
+      "overflow": 0,
+      "screen": "journal"
+    },
+    {
+      "name": "collectibles",
+      "path": "reports/cardrpg-big/a4/p7/journey/collectibles.png",
+      "overflow": 0,
+      "screen": "relics"
+    },
+    {
+      "name": "earned-day7",
+      "path": "reports/cardrpg-big/a4/p7/journey/earned-day7.png",
+      "overflow": 0,
+      "screen": "hub"
+    },
+    {
+      "name": "day7-battle-0",
+      "path": "reports/cardrpg-big/a4/p7/journey/day7-battle-0.png",
+      "overflow": 0,
+      "screen": "result"
+    },
+    {
+      "name": "day7-battle-5",
+      "path": "reports/cardrpg-big/a4/p7/journey/day7-battle-5.png",
+      "overflow": 0,
+      "screen": "result"
+    },
+    {
+      "name": "day7-boss-prepare",
+      "path": "reports/cardrpg-big/a4/p7/journey/day7-boss-prepare.png",
+      "overflow": 0,
+      "screen": "prepare"
+    },
+    {
+      "name": "day7-boss-6",
+      "path": "reports/cardrpg-big/a4/p7/journey/day7-boss-6.png",
+      "overflow": 0,
+      "screen": "result"
+    }
+  ],
+  "encounters": [
+    {
+      "route": "tutorial",
+      "kind": "practice",
+      "timed": false,
+      "wallMs": 35,
+      "result": "party",
+      "actions": 3,
+      "initial": {
+        "seed": 7,
+        "chapter": 1,
+        "cats": [
+          {
+            "id": "mochi",
+            "stats": {
+              "hp": 592,
+              "attack": 56,
+              "defense": 34,
+              "critBp": 800,
+              "critDamageBp": 5000,
+              "effectHitBp": 0,
+              "effectResistBp": 0,
+              "healingBp": 400,
+              "shieldBp": 0,
+              "initiative": 8
+            },
+            "skills": [
+              "mochi-1",
+              "mochi-2",
+              "mochi-3"
+            ],
+            "row": "front",
+            "equipment": [
+              "hearthloom-weapon-common",
+              "hearthloom-outfit-common"
+            ],
+            "effects": [
+              "defend-shield"
+            ],
+            "bonuses": {}
+          },
+          {
+            "id": "soot",
+            "stats": {
+              "hp": 460,
+              "attack": 69,
+              "defense": 22,
+              "critBp": 1200,
+              "critDamageBp": 5000,
+              "effectHitBp": 0,
+              "effectResistBp": 0,
+              "healingBp": 400,
+              "shieldBp": 0,
+              "initiative": 6
+            },
+            "skills": [
+              "soot-1",
+              "soot-2",
+              "soot-3"
+            ],
+            "row": "rear",
+            "equipment": [
+              "moonwick-weapon-common",
+              "moonwick-outfit-common"
+            ],
+            "effects": [
+              "marked-break"
+            ],
+            "bonuses": {}
+          },
+          {
+            "id": "clover",
+            "stats": {
+              "hp": 384,
+              "attack": 42,
+              "defense": 20,
+              "critBp": 500,
+              "critDamageBp": 5000,
+              "effectHitBp": 0,
+              "effectResistBp": 0,
+              "healingBp": 400,
+              "shieldBp": 0,
+              "initiative": 4
+            },
+            "skills": [
+              "clover-1",
+              "clover-2",
+              "clover-3"
+            ],
+            "row": "rear",
+            "equipment": [
+              "mossbrew-weapon-common",
+              "mossbrew-outfit-common"
+            ],
+            "effects": [
+              "healing-cleanse"
+            ],
+            "bonuses": {}
+          }
+        ],
+        "enemies": [
+          "practice-cushion"
+        ],
+        "tutorial": true,
+        "gameplayV4": true,
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "enemyStats": {
+          "button-guard": {
+            "hp": 480,
+            "attack": 19,
+            "defense": 18
+          },
+          "sock-skipper": {
+            "hp": 701,
+            "attack": 22,
+            "defense": 8
+          },
+          "spool-ram": {
+            "hp": 1050,
+            "attack": 30,
+            "defense": 16
+          },
+          "needle-moth": {
+            "hp": 659,
+            "attack": 17,
+            "defense": 6
+          },
+          "teacup-healer": {
+            "hp": 765,
+            "attack": 14,
+            "defense": 10
+          },
+          "kettle-knight": {
+            "hp": 1190,
+            "attack": 25,
+            "defense": 35
+          },
+          "yarn-giant": {
+            "hp": 2870,
+            "attack": 32,
+            "defense": 22
+          },
+          "binding-thread": {
+            "hp": 383,
+            "attack": 10,
+            "defense": 0
+          },
+          "practice-cushion": {
+            "hp": 230,
+            "attack": 14,
+            "defense": 0
+          },
+          "pollen-scout": {
+            "hp": 945,
+            "attack": 22,
+            "defense": 10
+          },
+          "rain-spool": {
+            "hp": 3675,
+            "attack": 58,
+            "defense": 24
+          },
+          "crumb-sentinel": {
+            "hp": 1260,
+            "attack": 27,
+            "defense": 22
+          },
+          "pantry-crown": {
+            "hp": 4270,
+            "attack": 60,
+            "defense": 25
+          }
+        }
+      },
+      "events": [
+        {
+          "kind": "crew-active",
+          "crew": "door",
+          "marks": 3,
+          "contributors": [
+            "mochi",
+            "clover"
+          ],
+          "threshold": 2,
+          "text": "Door team: +3% maximum HP.",
+          "version": 1,
+          "sequence": 0,
+          "round": 0
+        },
+        {
+          "kind": "crew-active",
+          "crew": "kettle",
+          "marks": 3,
+          "contributors": [
+            "mochi",
+            "clover"
+          ],
+          "threshold": 2,
+          "text": "Kettle team: +4% healing.",
+          "version": 1,
+          "sequence": 1,
+          "round": 0
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "mochi",
+          "targetId": "foe-0-practice-cushion",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Mochi focuses the weakest reachable foe, Practice Cushion (HP 100%) · Door knock",
+          "text": "finish/steady plan: Mochi focuses the weakest reachable foe, Practice Cushion (HP 100%) · Door knock",
+          "version": 1,
+          "sequence": 2,
+          "round": 1
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "soot",
+          "targetId": "foe-0-practice-cushion",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Soot focuses the weakest reachable foe, Practice Cushion (HP 64%) · Cocoa spark",
+          "text": "finish/steady plan: Soot focuses the weakest reachable foe, Practice Cushion (HP 64%) · Cocoa spark",
+          "version": 1,
+          "sequence": 3,
+          "round": 1
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "clover",
+          "targetId": "foe-0-practice-cushion",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Clover focuses the weakest reachable foe, Practice Cushion (HP 20%) · Leaf tap",
+          "text": "finish/steady plan: Clover focuses the weakest reachable foe, Practice Cushion (HP 20%) · Leaf tap",
+          "version": 1,
+          "sequence": 4,
+          "round": 1
+        }
+      ]
+    },
+    {
+      "route": "first-hour",
+      "kind": "battle",
+      "timed": false,
+      "wallMs": 57,
+      "result": "party",
+      "actions": 8,
+      "initial": {
+        "seed": 791576452,
+        "chapter": 1,
+        "cats": [
+          {
+            "id": "mochi",
+            "stats": {
+              "hp": 592,
+              "attack": 56,
+              "defense": 34,
+              "critBp": 800,
+              "critDamageBp": 5000,
+              "effectHitBp": 0,
+              "effectResistBp": 0,
+              "healingBp": 400,
+              "shieldBp": 0,
+              "initiative": 8
+            },
+            "skills": [
+              "mochi-1",
+              "mochi-2",
+              "mochi-3"
+            ],
+            "row": "front",
+            "equipment": [
+              "hearthloom-weapon-common",
+              "hearthloom-outfit-common"
+            ],
+            "effects": [
+              "defend-shield"
+            ],
+            "bonuses": {}
+          },
+          {
+            "id": "soot",
+            "stats": {
+              "hp": 460,
+              "attack": 69,
+              "defense": 22,
+              "critBp": 1200,
+              "critDamageBp": 5000,
+              "effectHitBp": 0,
+              "effectResistBp": 0,
+              "healingBp": 400,
+              "shieldBp": 0,
+              "initiative": 6
+            },
+            "skills": [
+              "soot-1",
+              "soot-2",
+              "soot-3"
+            ],
+            "row": "rear",
+            "equipment": [
+              "moonwick-weapon-common",
+              "moonwick-outfit-common"
+            ],
+            "effects": [
+              "marked-break"
+            ],
+            "bonuses": {}
+          },
+          {
+            "id": "clover",
+            "stats": {
+              "hp": 384,
+              "attack": 42,
+              "defense": 20,
+              "critBp": 500,
+              "critDamageBp": 5000,
+              "effectHitBp": 0,
+              "effectResistBp": 0,
+              "healingBp": 400,
+              "shieldBp": 0,
+              "initiative": 4
+            },
+            "skills": [
+              "clover-1",
+              "clover-2",
+              "clover-3"
+            ],
+            "row": "rear",
+            "equipment": [
+              "mossbrew-weapon-common",
+              "mossbrew-outfit-common"
+            ],
+            "effects": [
+              "healing-cleanse"
+            ],
+            "bonuses": {}
+          }
+        ],
+        "enemies": [
+          "teacup-healer",
+          "sock-skipper"
+        ],
+        "hp": {
+          "mochi": 592,
+          "soot": 460,
+          "clover": 384
+        },
+        "boons": {},
+        "upgrades": {},
+        "mutator": "",
+        "gameplayV4": true,
+        "challengeLevel": 1,
+        "enemyStats": {
+          "button-guard": {
+            "hp": 120,
+            "attack": 19,
+            "defense": 18
+          },
+          "sock-skipper": {
+            "hp": 175,
+            "attack": 22,
+            "defense": 8
+          },
+          "spool-ram": {
+            "hp": 315,
+            "attack": 30,
+            "defense": 16
+          },
+          "needle-moth": {
+            "hp": 165,
+            "attack": 17,
+            "defense": 6
+          },
+          "teacup-healer": {
+            "hp": 191,
+            "attack": 14,
+            "defense": 10
+          },
+          "kettle-knight": {
+            "hp": 357,
+            "attack": 25,
+            "defense": 35
+          },
+          "yarn-giant": {
+            "hp": 861,
+            "attack": 99,
+            "defense": 22
+          },
+          "binding-thread": {
+            "hp": 96,
+            "attack": 10,
+            "defense": 0
+          },
+          "practice-cushion": {
+            "hp": 58,
+            "attack": 14,
+            "defense": 0
+          },
+          "pollen-scout": {
+            "hp": 284,
+            "attack": 22,
+            "defense": 10
+          },
+          "rain-spool": {
+            "hp": 1103,
+            "attack": 110,
+            "defense": 24
+          },
+          "crumb-sentinel": {
+            "hp": 378,
+            "attack": 27,
+            "defense": 22
+          },
+          "pantry-crown": {
+            "hp": 1068,
+            "attack": 138,
+            "defense": 25
+          }
+        },
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        }
+      },
+      "events": [
+        {
+          "kind": "crew-active",
+          "crew": "door",
+          "marks": 3,
+          "contributors": [
+            "mochi",
+            "clover"
+          ],
+          "threshold": 2,
+          "text": "Door team: +3% maximum HP.",
+          "version": 1,
+          "sequence": 0,
+          "round": 0
+        },
+        {
+          "kind": "crew-active",
+          "crew": "kettle",
+          "marks": 3,
+          "contributors": [
+            "mochi",
+            "clover"
+          ],
+          "threshold": 2,
+          "text": "Kettle team: +4% healing.",
+          "version": 1,
+          "sequence": 1,
+          "round": 0
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "mochi",
+          "targetId": "foe-1-sock-skipper",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Mochi focuses the weakest reachable foe, Sock Skipper (HP 100%) · Door knock",
+          "text": "finish/steady plan: Mochi focuses the weakest reachable foe, Sock Skipper (HP 100%) · Door knock",
+          "version": 1,
+          "sequence": 2,
+          "round": 1
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "soot",
+          "targetId": "foe-1-sock-skipper",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Soot focuses the weakest reachable foe, Sock Skipper (HP 59%) · Cocoa spark",
+          "text": "finish/steady plan: Soot focuses the weakest reachable foe, Sock Skipper (HP 59%) · Cocoa spark",
+          "version": 1,
+          "sequence": 3,
+          "round": 1
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "clover",
+          "targetId": "foe-1-sock-skipper",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Clover focuses the weakest reachable foe, Sock Skipper (HP 27%) · Leaf tap",
+          "text": "finish/steady plan: Clover focuses the weakest reachable foe, Sock Skipper (HP 27%) · Leaf tap",
+          "version": 1,
+          "sequence": 4,
+          "round": 1
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "mochi",
+          "targetId": "foe-1-sock-skipper",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Mochi focuses the weakest reachable foe, Sock Skipper (HP 9%) · Door knock",
+          "text": "finish/steady plan: Mochi focuses the weakest reachable foe, Sock Skipper (HP 9%) · Door knock",
+          "version": 1,
+          "sequence": 5,
+          "round": 2
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "soot",
+          "targetId": "foe-0-teacup-healer",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Soot focuses the weakest reachable foe, Teacup Healer (HP 100%) · Cocoa spark",
+          "text": "finish/steady plan: Soot focuses the weakest reachable foe, Teacup Healer (HP 100%) · Cocoa spark",
+          "version": 1,
+          "sequence": 6,
+          "round": 2
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "clover",
+          "targetId": "soot",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Clover heals Soot (HP 91%) · Patient steep",
+          "text": "finish/steady plan: Clover heals Soot (HP 91%) · Patient steep",
+          "version": 1,
+          "sequence": 7,
+          "round": 2
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "mochi",
+          "targetId": "foe-0-teacup-healer",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Mochi focuses the weakest reachable foe, Teacup Healer (HP 74%) · Door knock",
+          "text": "finish/steady plan: Mochi focuses the weakest reachable foe, Teacup Healer (HP 74%) · Door knock",
+          "version": 1,
+          "sequence": 8,
+          "round": 3
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "soot",
+          "targetId": "foe-0-teacup-healer",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Soot focuses the weakest reachable foe, Teacup Healer (HP 51%) · Lantern wick",
+          "text": "finish/steady plan: Soot focuses the weakest reachable foe, Teacup Healer (HP 51%) · Lantern wick",
+          "version": 1,
+          "sequence": 9,
+          "round": 3
+        }
+      ]
+    },
+    {
+      "route": "first-hour",
+      "kind": "battle",
+      "timed": false,
+      "wallMs": 41,
+      "result": "party",
+      "actions": 8,
+      "initial": {
+        "seed": 3778700884,
+        "chapter": 1,
+        "cats": [
+          {
+            "id": "mochi",
+            "stats": {
+              "hp": 592,
+              "attack": 56,
+              "defense": 34,
+              "critBp": 800,
+              "critDamageBp": 5000,
+              "effectHitBp": 0,
+              "effectResistBp": 0,
+              "healingBp": 400,
+              "shieldBp": 0,
+              "initiative": 8
+            },
+            "skills": [
+              "mochi-1",
+              "mochi-2",
+              "mochi-3"
+            ],
+            "row": "front",
+            "equipment": [
+              "hearthloom-weapon-common",
+              "hearthloom-outfit-common"
+            ],
+            "effects": [
+              "defend-shield"
+            ],
+            "bonuses": {}
+          },
+          {
+            "id": "soot",
+            "stats": {
+              "hp": 460,
+              "attack": 69,
+              "defense": 22,
+              "critBp": 1200,
+              "critDamageBp": 5000,
+              "effectHitBp": 0,
+              "effectResistBp": 0,
+              "healingBp": 400,
+              "shieldBp": 0,
+              "initiative": 6
+            },
+            "skills": [
+              "soot-1",
+              "soot-2",
+              "soot-3"
+            ],
+            "row": "rear",
+            "equipment": [
+              "moonwick-weapon-common",
+              "moonwick-outfit-common"
+            ],
+            "effects": [
+              "marked-break"
+            ],
+            "bonuses": {}
+          },
+          {
+            "id": "clover",
+            "stats": {
+              "hp": 384,
+              "attack": 42,
+              "defense": 20,
+              "critBp": 500,
+              "critDamageBp": 5000,
+              "effectHitBp": 0,
+              "effectResistBp": 0,
+              "healingBp": 400,
+              "shieldBp": 0,
+              "initiative": 4
+            },
+            "skills": [
+              "clover-1",
+              "clover-2",
+              "clover-3"
+            ],
+            "row": "rear",
+            "equipment": [
+              "mossbrew-weapon-common",
+              "mossbrew-outfit-common"
+            ],
+            "effects": [
+              "healing-cleanse"
+            ],
+            "bonuses": {}
+          }
+        ],
+        "enemies": [
+          "sock-skipper",
+          "sock-skipper"
+        ],
+        "hp": {
+          "mochi": 592,
+          "soot": 460,
+          "clover": 384
+        },
+        "boons": {
+          "ember-3": 1,
+          "shelter-3": 1
+        },
+        "upgrades": {},
+        "mutator": "",
+        "gameplayV4": true,
+        "challengeLevel": 1,
+        "enemyStats": {
+          "button-guard": {
+            "hp": 120,
+            "attack": 19,
+            "defense": 18
+          },
+          "sock-skipper": {
+            "hp": 175,
+            "attack": 22,
+            "defense": 8
+          },
+          "spool-ram": {
+            "hp": 315,
+            "attack": 30,
+            "defense": 16
+          },
+          "needle-moth": {
+            "hp": 165,
+            "attack": 17,
+            "defense": 6
+          },
+          "teacup-healer": {
+            "hp": 191,
+            "attack": 14,
+            "defense": 10
+          },
+          "kettle-knight": {
+            "hp": 357,
+            "attack": 25,
+            "defense": 35
+          },
+          "yarn-giant": {
+            "hp": 861,
+            "attack": 99,
+            "defense": 22
+          },
+          "binding-thread": {
+            "hp": 96,
+            "attack": 10,
+            "defense": 0
+          },
+          "practice-cushion": {
+            "hp": 58,
+            "attack": 14,
+            "defense": 0
+          },
+          "pollen-scout": {
+            "hp": 284,
+            "attack": 22,
+            "defense": 10
+          },
+          "rain-spool": {
+            "hp": 1103,
+            "attack": 110,
+            "defense": 24
+          },
+          "crumb-sentinel": {
+            "hp": 378,
+            "attack": 27,
+            "defense": 22
+          },
+          "pantry-crown": {
+            "hp": 1068,
+            "attack": 138,
+            "defense": 25
+          }
+        },
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        }
+      },
+      "events": [
+        {
+          "kind": "crew-active",
+          "crew": "door",
+          "marks": 3,
+          "contributors": [
+            "mochi",
+            "clover"
+          ],
+          "threshold": 2,
+          "text": "Door team: +3% maximum HP.",
+          "version": 1,
+          "sequence": 0,
+          "round": 0
+        },
+        {
+          "kind": "crew-active",
+          "crew": "kettle",
+          "marks": 3,
+          "contributors": [
+            "mochi",
+            "clover"
+          ],
+          "threshold": 2,
+          "text": "Kettle team: +4% healing.",
+          "version": 1,
+          "sequence": 1,
+          "round": 0
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "mochi",
+          "targetId": "foe-0-sock-skipper",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Mochi focuses the weakest reachable foe, Sock Skipper (HP 100%) · Door knock",
+          "text": "finish/steady plan: Mochi focuses the weakest reachable foe, Sock Skipper (HP 100%) · Door knock",
+          "version": 1,
+          "sequence": 2,
+          "round": 1
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "soot",
+          "targetId": "foe-0-sock-skipper",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Soot focuses the weakest reachable foe, Sock Skipper (HP 73%) · Lantern wick",
+          "text": "finish/steady plan: Soot focuses the weakest reachable foe, Sock Skipper (HP 73%) · Lantern wick",
+          "version": 1,
+          "sequence": 3,
+          "round": 1
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "clover",
+          "targetId": "foe-0-sock-skipper",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Clover focuses the weakest reachable foe, Sock Skipper (HP 35%) · Leaf tap",
+          "text": "finish/steady plan: Clover focuses the weakest reachable foe, Sock Skipper (HP 35%) · Leaf tap",
+          "version": 1,
+          "sequence": 4,
+          "round": 1
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "mochi",
+          "targetId": "foe-0-sock-skipper",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Mochi focuses the weakest reachable foe, Sock Skipper (HP 16%) · Door knock",
+          "text": "finish/steady plan: Mochi focuses the weakest reachable foe, Sock Skipper (HP 16%) · Door knock",
+          "version": 1,
+          "sequence": 5,
+          "round": 2
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "soot",
+          "targetId": "foe-1-sock-skipper",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Soot focuses the weakest reachable foe, Sock Skipper (HP 100%) · Cocoa spark",
+          "text": "finish/steady plan: Soot focuses the weakest reachable foe, Sock Skipper (HP 100%) · Cocoa spark",
+          "version": 1,
+          "sequence": 6,
+          "round": 2
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "clover",
+          "targetId": "soot",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Clover heals Soot (HP 81%) · Patient steep",
+          "text": "finish/steady plan: Clover heals Soot (HP 81%) · Patient steep",
+          "version": 1,
+          "sequence": 7,
+          "round": 2
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "mochi",
+          "targetId": "foe-1-sock-skipper",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Mochi focuses the weakest reachable foe, Sock Skipper (HP 70%) · Door knock",
+          "text": "finish/steady plan: Mochi focuses the weakest reachable foe, Sock Skipper (HP 70%) · Door knock",
+          "version": 1,
+          "sequence": 8,
+          "round": 3
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "soot",
+          "targetId": "foe-1-sock-skipper",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Soot focuses the weakest reachable foe, Sock Skipper (HP 43%) · Lantern wick",
+          "text": "finish/steady plan: Soot focuses the weakest reachable foe, Sock Skipper (HP 43%) · Lantern wick",
+          "version": 1,
+          "sequence": 9,
+          "round": 3
+        }
+      ]
+    },
+    {
+      "route": "first-hour",
+      "kind": "boss",
+      "timed": false,
+      "wallMs": 42,
+      "result": "enemy",
+      "actions": 17,
+      "initial": {
+        "seed": 3280124206,
+        "chapter": 1,
+        "cats": [
+          {
+            "id": "mochi",
+            "stats": {
+              "hp": 592,
+              "attack": 56,
+              "defense": 34,
+              "critBp": 800,
+              "critDamageBp": 5000,
+              "effectHitBp": 0,
+              "effectResistBp": 0,
+              "healingBp": 400,
+              "shieldBp": 0,
+              "initiative": 8
+            },
+            "skills": [
+              "mochi-1",
+              "mochi-2",
+              "mochi-3"
+            ],
+            "row": "front",
+            "equipment": [
+              "hearthloom-weapon-common",
+              "hearthloom-outfit-common"
+            ],
+            "effects": [
+              "defend-shield"
+            ],
+            "bonuses": {}
+          },
+          {
+            "id": "soot",
+            "stats": {
+              "hp": 460,
+              "attack": 69,
+              "defense": 22,
+              "critBp": 1200,
+              "critDamageBp": 5000,
+              "effectHitBp": 0,
+              "effectResistBp": 0,
+              "healingBp": 400,
+              "shieldBp": 0,
+              "initiative": 6
+            },
+            "skills": [
+              "soot-1",
+              "soot-2",
+              "soot-3"
+            ],
+            "row": "rear",
+            "equipment": [
+              "moonwick-weapon-common",
+              "moonwick-outfit-common"
+            ],
+            "effects": [
+              "marked-break"
+            ],
+            "bonuses": {}
+          },
+          {
+            "id": "clover",
+            "stats": {
+              "hp": 384,
+              "attack": 42,
+              "defense": 20,
+              "critBp": 500,
+              "critDamageBp": 5000,
+              "effectHitBp": 0,
+              "effectResistBp": 0,
+              "healingBp": 400,
+              "shieldBp": 0,
+              "initiative": 4
+            },
+            "skills": [
+              "clover-1",
+              "clover-2",
+              "clover-3"
+            ],
+            "row": "rear",
+            "equipment": [
+              "mossbrew-weapon-common",
+              "mossbrew-outfit-common"
+            ],
+            "effects": [
+              "healing-cleanse"
+            ],
+            "bonuses": {}
+          }
+        ],
+        "enemies": [
+          "yarn-giant"
+        ],
+        "hp": {
+          "mochi": 592,
+          "soot": 383,
+          "clover": 384
+        },
+        "boons": {
+          "ember-3": 1,
+          "shelter-3": 1,
+          "ember-5": 1
+        },
+        "upgrades": {},
+        "mutator": "",
+        "gameplayV4": true,
+        "challengeLevel": 1,
+        "enemyStats": {
+          "button-guard": {
+            "hp": 120,
+            "attack": 19,
+            "defense": 18
+          },
+          "sock-skipper": {
+            "hp": 175,
+            "attack": 22,
+            "defense": 8
+          },
+          "spool-ram": {
+            "hp": 315,
+            "attack": 30,
+            "defense": 16
+          },
+          "needle-moth": {
+            "hp": 165,
+            "attack": 17,
+            "defense": 6
+          },
+          "teacup-healer": {
+            "hp": 191,
+            "attack": 14,
+            "defense": 10
+          },
+          "kettle-knight": {
+            "hp": 357,
+            "attack": 25,
+            "defense": 35
+          },
+          "yarn-giant": {
+            "hp": 861,
+            "attack": 99,
+            "defense": 22
+          },
+          "binding-thread": {
+            "hp": 96,
+            "attack": 10,
+            "defense": 0
+          },
+          "practice-cushion": {
+            "hp": 58,
+            "attack": 14,
+            "defense": 0
+          },
+          "pollen-scout": {
+            "hp": 284,
+            "attack": 22,
+            "defense": 10
+          },
+          "rain-spool": {
+            "hp": 1103,
+            "attack": 110,
+            "defense": 24
+          },
+          "crumb-sentinel": {
+            "hp": 378,
+            "attack": 27,
+            "defense": 22
+          },
+          "pantry-crown": {
+            "hp": 1068,
+            "attack": 138,
+            "defense": 25
+          }
+        },
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        }
+      },
+      "events": [
+        {
+          "kind": "crew-active",
+          "crew": "door",
+          "marks": 3,
+          "contributors": [
+            "mochi",
+            "clover"
+          ],
+          "threshold": 2,
+          "text": "Door team: +3% maximum HP.",
+          "version": 1,
+          "sequence": 0,
+          "round": 0
+        },
+        {
+          "kind": "crew-active",
+          "crew": "kettle",
+          "marks": 3,
+          "contributors": [
+            "mochi",
+            "clover"
+          ],
+          "threshold": 2,
+          "text": "Kettle team: +4% healing.",
+          "version": 1,
+          "sequence": 1,
+          "round": 0
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "mochi",
+          "targetId": "soot",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Mochi protects Soot (HP 83%) · Warm welcome",
+          "text": "finish/steady plan: Mochi protects Soot (HP 83%) · Warm welcome",
+          "version": 1,
+          "sequence": 2,
+          "round": 1
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "soot",
+          "targetId": "foe-0-yarn-giant",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Soot focuses the weakest reachable foe, Yarn Giant (HP 100%) · Cocoa spark",
+          "text": "finish/steady plan: Soot focuses the weakest reachable foe, Yarn Giant (HP 100%) · Cocoa spark",
+          "version": 1,
+          "sequence": 3,
+          "round": 1
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "clover",
+          "targetId": "soot",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Clover heals Soot (HP 85%) · Patient steep",
+          "text": "finish/steady plan: Clover heals Soot (HP 85%) · Patient steep",
+          "version": 1,
+          "sequence": 4,
+          "round": 1
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "mochi",
+          "targetId": "foe-0-yarn-giant",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Mochi focuses the weakest reachable foe, Yarn Giant (HP 95%) · Door knock",
+          "text": "finish/steady plan: Mochi focuses the weakest reachable foe, Yarn Giant (HP 95%) · Door knock",
+          "version": 1,
+          "sequence": 5,
+          "round": 2
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "soot",
+          "targetId": "foe-0-yarn-giant",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Soot focuses the weakest reachable foe, Yarn Giant (HP 90%) · Lantern wick",
+          "text": "finish/steady plan: Soot focuses the weakest reachable foe, Yarn Giant (HP 90%) · Lantern wick",
+          "version": 1,
+          "sequence": 6,
+          "round": 2
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "clover",
+          "targetId": "mochi",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Clover heals Mochi (HP 70%) · Patient steep",
+          "text": "finish/steady plan: Clover heals Mochi (HP 70%) · Patient steep",
+          "version": 1,
+          "sequence": 7,
+          "round": 2
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "mochi",
+          "targetId": "foe-0-yarn-giant",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Mochi focuses the weakest reachable foe, Yarn Giant (HP 80%) · Door knock",
+          "text": "finish/steady plan: Mochi focuses the weakest reachable foe, Yarn Giant (HP 80%) · Door knock",
+          "version": 1,
+          "sequence": 8,
+          "round": 3
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "soot",
+          "targetId": "foe-0-yarn-giant",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Soot focuses the weakest reachable foe, Yarn Giant (HP 75%) · Cocoa spark",
+          "text": "finish/steady plan: Soot focuses the weakest reachable foe, Yarn Giant (HP 75%) · Cocoa spark",
+          "version": 1,
+          "sequence": 9,
+          "round": 3
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "clover",
+          "targetId": "mochi",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Clover heals Mochi (HP 53%) · Patient steep",
+          "text": "finish/steady plan: Clover heals Mochi (HP 53%) · Patient steep",
+          "version": 1,
+          "sequence": 10,
+          "round": 3
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "mochi",
+          "targetId": "mochi",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Mochi protects Mochi (HP 11%) · Warm welcome",
+          "text": "finish/steady plan: Mochi protects Mochi (HP 11%) · Warm welcome",
+          "version": 1,
+          "sequence": 11,
+          "round": 4
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "soot",
+          "targetId": "foe-0-yarn-giant",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Soot focuses the weakest reachable foe, Yarn Giant (HP 70%) · Lantern wick",
+          "text": "finish/steady plan: Soot focuses the weakest reachable foe, Yarn Giant (HP 70%) · Lantern wick",
+          "version": 1,
+          "sequence": 12,
+          "round": 4
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "clover",
+          "targetId": "mochi",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Clover supports the team (lowest HP 12%) · Clearleaf rinse",
+          "text": "finish/steady plan: Clover supports the team (lowest HP 12%) · Clearleaf rinse",
+          "version": 1,
+          "sequence": 13,
+          "round": 4
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "soot",
+          "targetId": "foe-0-yarn-giant",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Soot pressures a foe, Yarn Giant (HP 59%) · Cocoa spark",
+          "text": "finish/steady plan: Soot pressures a foe, Yarn Giant (HP 59%) · Cocoa spark",
+          "version": 1,
+          "sequence": 14,
+          "round": 5
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "clover",
+          "targetId": "foe-0-yarn-giant",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Clover focuses the weakest reachable foe, Yarn Giant (HP 54%) · Leaf tap",
+          "text": "finish/steady plan: Clover focuses the weakest reachable foe, Yarn Giant (HP 54%) · Leaf tap",
+          "version": 1,
+          "sequence": 15,
+          "round": 5
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "soot",
+          "targetId": "foe-0-yarn-giant",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Soot focuses the weakest reachable foe, Yarn Giant (HP 51%) · Lantern wick",
+          "text": "finish/steady plan: Soot focuses the weakest reachable foe, Yarn Giant (HP 51%) · Lantern wick",
+          "version": 1,
+          "sequence": 16,
+          "round": 6
+        },
+        {
+          "kind": "boss-phase",
+          "actorId": "foe-0-yarn-giant",
+          "bossId": "yarn-giant",
+          "from": 1,
+          "to": 2,
+          "threshold": 0.5,
+          "text": "Yarn Giant: closing phase. The next signature reaches both rows.",
+          "version": 1,
+          "sequence": 17,
+          "round": 6
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "clover",
+          "targetId": "soot",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Clover heals Soot (HP 70%) · Patient steep",
+          "text": "finish/steady plan: Clover heals Soot (HP 70%) · Patient steep",
+          "version": 1,
+          "sequence": 18,
+          "round": 6
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "clover",
+          "targetId": "clover",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Clover supports the team (lowest HP 1%) · Clearleaf rinse",
+          "text": "finish/steady plan: Clover supports the team (lowest HP 1%) · Clearleaf rinse",
+          "version": 1,
+          "sequence": 19,
+          "round": 7
+        }
+      ]
+    },
+    {
+      "route": "day7",
+      "kind": "battle",
+      "timed": false,
+      "wallMs": 42,
+      "result": "party",
+      "actions": 11,
+      "initial": {
+        "seed": 1890281468,
+        "chapter": 1,
+        "cats": [
+          {
+            "id": "mochi",
+            "stats": {
+              "hp": 721,
+              "attack": 65,
+              "defense": 45,
+              "critBp": 800,
+              "critDamageBp": 5000,
+              "effectHitBp": 0,
+              "effectResistBp": 0,
+              "healingBp": 400,
+              "shieldBp": 0,
+              "initiative": 8
+            },
+            "skills": [
+              "mochi-1",
+              "mochi-2",
+              "mochi-3",
+              "mochi-4"
+            ],
+            "row": "front",
+            "equipment": [
+              "moonwick-weapon-rare",
+              "moonwick-outfit-rare",
+              "moonwick-charm-rare",
+              "hearthloom-relic-epic"
+            ],
+            "effects": [
+              "marked-break"
+            ],
+            "bonuses": {
+              "attack": 4,
+              "defense": 2,
+              "hp": 8
+            }
+          },
+          {
+            "id": "soot",
+            "stats": {
+              "hp": 564,
+              "attack": 74,
+              "defense": 30,
+              "critBp": 1224,
+              "critDamageBp": 5142,
+              "effectHitBp": 0,
+              "effectResistBp": 65,
+              "healingBp": 400,
+              "shieldBp": 0,
+              "initiative": 6
+            },
+            "skills": [
+              "soot-1",
+              "soot-2",
+              "soot-3",
+              "soot-4"
+            ],
+            "row": "rear",
+            "equipment": [
+              "hearthloom-weapon-common",
+              "hearthloom-outfit-rare",
+              "mossbrew-charm-rare",
+              "mossbrew-relic-epic"
+            ],
+            "effects": [
+              "defend-shield",
+              "healing-cleanse"
+            ],
+            "bonuses": {
+              "hp": 2,
+              "critBp": 24,
+              "critDamageBp": 142,
+              "effectResistBp": 65
+            }
+          },
+          {
+            "id": "clover",
+            "stats": {
+              "hp": 442,
+              "attack": 45,
+              "defense": 25,
+              "critBp": 500,
+              "critDamageBp": 5000,
+              "effectHitBp": 0,
+              "effectResistBp": 0,
+              "healingBp": 400,
+              "shieldBp": 0,
+              "initiative": 4
+            },
+            "skills": [
+              "clover-1",
+              "clover-2",
+              "clover-3",
+              "clover-4"
+            ],
+            "row": "rear",
+            "equipment": [
+              "moonwick-weapon-common",
+              "hearthloom-outfit-common",
+              "mossbrew-charm-common",
+              "mossbrew-relic-common"
+            ],
+            "effects": [
+              "healing-cleanse"
+            ],
+            "bonuses": {}
+          }
+        ],
+        "enemies": [
+          "needle-moth",
+          "teacup-healer"
+        ],
+        "hp": {
+          "mochi": 721,
+          "soot": 564,
+          "clover": 442
+        },
+        "boons": {},
+        "upgrades": {},
+        "mutator": "",
+        "gameplayV4": true,
+        "challengeLevel": 7,
+        "enemyStats": {
+          "button-guard": {
+            "hp": 144,
+            "attack": 23,
+            "defense": 18
+          },
+          "sock-skipper": {
+            "hp": 210,
+            "attack": 26,
+            "defense": 8
+          },
+          "spool-ram": {
+            "hp": 378,
+            "attack": 36,
+            "defense": 16
+          },
+          "needle-moth": {
+            "hp": 198,
+            "attack": 20,
+            "defense": 6
+          },
+          "teacup-healer": {
+            "hp": 230,
+            "attack": 17,
+            "defense": 10
+          },
+          "kettle-knight": {
+            "hp": 429,
+            "attack": 30,
+            "defense": 35
+          },
+          "yarn-giant": {
+            "hp": 1034,
+            "attack": 137,
+            "defense": 22
+          },
+          "binding-thread": {
+            "hp": 115,
+            "attack": 12,
+            "defense": 0
+          },
+          "practice-cushion": {
+            "hp": 69,
+            "attack": 17,
+            "defense": 0
+          },
+          "pollen-scout": {
+            "hp": 340,
+            "attack": 26,
+            "defense": 10
+          },
+          "rain-spool": {
+            "hp": 1324,
+            "attack": 152,
+            "defense": 24
+          },
+          "crumb-sentinel": {
+            "hp": 454,
+            "attack": 32,
+            "defense": 22
+          },
+          "pantry-crown": {
+            "hp": 1282,
+            "attack": 191,
+            "defense": 25
+          }
+        },
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        }
+      },
+      "events": [
+        {
+          "kind": "crew-active",
+          "crew": "door",
+          "marks": 3,
+          "contributors": [
+            "mochi",
+            "clover"
+          ],
+          "threshold": 2,
+          "text": "Door team: +3% maximum HP.",
+          "version": 1,
+          "sequence": 0,
+          "round": 0
+        },
+        {
+          "kind": "crew-active",
+          "crew": "kettle",
+          "marks": 3,
+          "contributors": [
+            "mochi",
+            "clover"
+          ],
+          "threshold": 2,
+          "text": "Kettle team: +4% healing.",
+          "version": 1,
+          "sequence": 1,
+          "round": 0
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "mochi",
+          "targetId": "foe-0-needle-moth",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Mochi focuses the weakest reachable foe, Needle Moth (HP 100%) · Door knock",
+          "text": "finish/steady plan: Mochi focuses the weakest reachable foe, Needle Moth (HP 100%) · Door knock",
+          "version": 1,
+          "sequence": 2,
+          "round": 1
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "soot",
+          "targetId": "foe-0-needle-moth",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Soot focuses the weakest reachable foe, Needle Moth (HP 72%) · Lantern wick",
+          "text": "finish/steady plan: Soot focuses the weakest reachable foe, Needle Moth (HP 72%) · Lantern wick",
+          "version": 1,
+          "sequence": 3,
+          "round": 1
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "clover",
+          "targetId": "foe-0-needle-moth",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Clover focuses the weakest reachable foe, Needle Moth (HP 33%) · Leaf tap",
+          "text": "finish/steady plan: Clover focuses the weakest reachable foe, Needle Moth (HP 33%) · Leaf tap",
+          "version": 1,
+          "sequence": 4,
+          "round": 1
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "mochi",
+          "targetId": "foe-0-needle-moth",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Mochi focuses the weakest reachable foe, Needle Moth (HP 15%) · Door knock",
+          "text": "finish/steady plan: Mochi focuses the weakest reachable foe, Needle Moth (HP 15%) · Door knock",
+          "version": 1,
+          "sequence": 5,
+          "round": 2
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "soot",
+          "targetId": "foe-1-teacup-healer",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Soot focuses the weakest reachable foe, Teacup Healer (HP 100%) · Cocoa spark",
+          "text": "finish/steady plan: Soot focuses the weakest reachable foe, Teacup Healer (HP 100%) · Cocoa spark",
+          "version": 1,
+          "sequence": 6,
+          "round": 2
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "clover",
+          "targetId": "mochi",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Clover heals Mochi (HP 92%) · Patient steep",
+          "text": "finish/steady plan: Clover heals Mochi (HP 92%) · Patient steep",
+          "version": 1,
+          "sequence": 7,
+          "round": 2
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "mochi",
+          "targetId": "clover",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Mochi supports the team (lowest HP 98%) · Last light shelter",
+          "text": "finish/steady plan: Mochi supports the team (lowest HP 98%) · Last light shelter",
+          "version": 1,
+          "sequence": 8,
+          "round": 3
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "soot",
+          "targetId": "foe-1-teacup-healer",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Soot focuses the weakest reachable foe, Teacup Healer (HP 75%) · Midnight service",
+          "text": "finish/steady plan: Soot focuses the weakest reachable foe, Teacup Healer (HP 75%) · Midnight service",
+          "version": 1,
+          "sequence": 9,
+          "round": 3
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "clover",
+          "targetId": "clover",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Clover supports the team (lowest HP 98%) · Greenhouse morning",
+          "text": "finish/steady plan: Clover supports the team (lowest HP 98%) · Greenhouse morning",
+          "version": 1,
+          "sequence": 10,
+          "round": 3
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "mochi",
+          "targetId": "foe-1-teacup-healer",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Mochi focuses the weakest reachable foe, Teacup Healer (HP 28%) · Door knock",
+          "text": "finish/steady plan: Mochi focuses the weakest reachable foe, Teacup Healer (HP 28%) · Door knock",
+          "version": 1,
+          "sequence": 11,
+          "round": 4
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "soot",
+          "targetId": "foe-1-teacup-healer",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Soot focuses the weakest reachable foe, Teacup Healer (HP 4%) · Cocoa spark",
+          "text": "finish/steady plan: Soot focuses the weakest reachable foe, Teacup Healer (HP 4%) · Cocoa spark",
+          "version": 1,
+          "sequence": 12,
+          "round": 4
+        }
+      ]
+    },
+    {
+      "route": "day7",
+      "kind": "battle",
+      "timed": false,
+      "wallMs": 52,
+      "result": "party",
+      "actions": 9,
+      "initial": {
+        "seed": 3933588373,
+        "chapter": 1,
+        "cats": [
+          {
+            "id": "mochi",
+            "stats": {
+              "hp": 721,
+              "attack": 65,
+              "defense": 45,
+              "critBp": 800,
+              "critDamageBp": 5000,
+              "effectHitBp": 0,
+              "effectResistBp": 0,
+              "healingBp": 400,
+              "shieldBp": 0,
+              "initiative": 8
+            },
+            "skills": [
+              "mochi-1",
+              "mochi-2",
+              "mochi-3",
+              "mochi-4"
+            ],
+            "row": "front",
+            "equipment": [
+              "moonwick-weapon-rare",
+              "moonwick-outfit-rare",
+              "moonwick-charm-rare",
+              "hearthloom-relic-epic"
+            ],
+            "effects": [
+              "marked-break"
+            ],
+            "bonuses": {
+              "attack": 4,
+              "defense": 2,
+              "hp": 8
+            }
+          },
+          {
+            "id": "soot",
+            "stats": {
+              "hp": 564,
+              "attack": 74,
+              "defense": 30,
+              "critBp": 1224,
+              "critDamageBp": 5142,
+              "effectHitBp": 0,
+              "effectResistBp": 65,
+              "healingBp": 400,
+              "shieldBp": 0,
+              "initiative": 6
+            },
+            "skills": [
+              "soot-1",
+              "soot-2",
+              "soot-3",
+              "soot-4"
+            ],
+            "row": "rear",
+            "equipment": [
+              "hearthloom-weapon-common",
+              "hearthloom-outfit-rare",
+              "mossbrew-charm-rare",
+              "mossbrew-relic-epic"
+            ],
+            "effects": [
+              "defend-shield",
+              "healing-cleanse"
+            ],
+            "bonuses": {
+              "hp": 2,
+              "critBp": 24,
+              "critDamageBp": 142,
+              "effectResistBp": 65
+            }
+          },
+          {
+            "id": "clover",
+            "stats": {
+              "hp": 442,
+              "attack": 45,
+              "defense": 25,
+              "critBp": 500,
+              "critDamageBp": 5000,
+              "effectHitBp": 0,
+              "effectResistBp": 0,
+              "healingBp": 400,
+              "shieldBp": 0,
+              "initiative": 4
+            },
+            "skills": [
+              "clover-1",
+              "clover-2",
+              "clover-3",
+              "clover-4"
+            ],
+            "row": "rear",
+            "equipment": [
+              "moonwick-weapon-common",
+              "hearthloom-outfit-common",
+              "mossbrew-charm-common",
+              "mossbrew-relic-common"
+            ],
+            "effects": [
+              "healing-cleanse"
+            ],
+            "bonuses": {}
+          }
+        ],
+        "enemies": [
+          "teacup-healer",
+          "sock-skipper"
+        ],
+        "hp": {
+          "mochi": 721,
+          "soot": 564,
+          "clover": 442
+        },
+        "boons": {
+          "garden-5": 2
+        },
+        "upgrades": {},
+        "mutator": "",
+        "gameplayV4": true,
+        "challengeLevel": 7,
+        "enemyStats": {
+          "button-guard": {
+            "hp": 144,
+            "attack": 23,
+            "defense": 18
+          },
+          "sock-skipper": {
+            "hp": 210,
+            "attack": 26,
+            "defense": 8
+          },
+          "spool-ram": {
+            "hp": 378,
+            "attack": 36,
+            "defense": 16
+          },
+          "needle-moth": {
+            "hp": 198,
+            "attack": 20,
+            "defense": 6
+          },
+          "teacup-healer": {
+            "hp": 230,
+            "attack": 17,
+            "defense": 10
+          },
+          "kettle-knight": {
+            "hp": 429,
+            "attack": 30,
+            "defense": 35
+          },
+          "yarn-giant": {
+            "hp": 1034,
+            "attack": 137,
+            "defense": 22
+          },
+          "binding-thread": {
+            "hp": 115,
+            "attack": 12,
+            "defense": 0
+          },
+          "practice-cushion": {
+            "hp": 69,
+            "attack": 17,
+            "defense": 0
+          },
+          "pollen-scout": {
+            "hp": 340,
+            "attack": 26,
+            "defense": 10
+          },
+          "rain-spool": {
+            "hp": 1324,
+            "attack": 152,
+            "defense": 24
+          },
+          "crumb-sentinel": {
+            "hp": 454,
+            "attack": 32,
+            "defense": 22
+          },
+          "pantry-crown": {
+            "hp": 1282,
+            "attack": 191,
+            "defense": 25
+          }
+        },
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        }
+      },
+      "events": [
+        {
+          "kind": "crew-active",
+          "crew": "door",
+          "marks": 3,
+          "contributors": [
+            "mochi",
+            "clover"
+          ],
+          "threshold": 2,
+          "text": "Door team: +3% maximum HP.",
+          "version": 1,
+          "sequence": 0,
+          "round": 0
+        },
+        {
+          "kind": "crew-active",
+          "crew": "kettle",
+          "marks": 3,
+          "contributors": [
+            "mochi",
+            "clover"
+          ],
+          "threshold": 2,
+          "text": "Kettle team: +4% healing.",
+          "version": 1,
+          "sequence": 1,
+          "round": 0
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "mochi",
+          "targetId": "foe-1-sock-skipper",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Mochi focuses the weakest reachable foe, Sock Skipper (HP 100%) · Door knock",
+          "text": "finish/steady plan: Mochi focuses the weakest reachable foe, Sock Skipper (HP 100%) · Door knock",
+          "version": 1,
+          "sequence": 2,
+          "round": 1
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "soot",
+          "targetId": "foe-1-sock-skipper",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Soot focuses the weakest reachable foe, Sock Skipper (HP 75%) · Lantern wick",
+          "text": "finish/steady plan: Soot focuses the weakest reachable foe, Sock Skipper (HP 75%) · Lantern wick",
+          "version": 1,
+          "sequence": 3,
+          "round": 1
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "clover",
+          "targetId": "foe-1-sock-skipper",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Clover focuses the weakest reachable foe, Sock Skipper (HP 39%) · Leaf tap",
+          "text": "finish/steady plan: Clover focuses the weakest reachable foe, Sock Skipper (HP 39%) · Leaf tap",
+          "version": 1,
+          "sequence": 4,
+          "round": 1
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "mochi",
+          "targetId": "foe-1-sock-skipper",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Mochi focuses the weakest reachable foe, Sock Skipper (HP 22%) · Door knock",
+          "text": "finish/steady plan: Mochi focuses the weakest reachable foe, Sock Skipper (HP 22%) · Door knock",
+          "version": 1,
+          "sequence": 5,
+          "round": 2
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "soot",
+          "targetId": "foe-0-teacup-healer",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Soot focuses the weakest reachable foe, Teacup Healer (HP 100%) · Cocoa spark",
+          "text": "finish/steady plan: Soot focuses the weakest reachable foe, Teacup Healer (HP 100%) · Cocoa spark",
+          "version": 1,
+          "sequence": 6,
+          "round": 2
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "clover",
+          "targetId": "foe-0-teacup-healer",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Clover focuses the weakest reachable foe, Teacup Healer (HP 77%) · Leaf tap",
+          "text": "finish/steady plan: Clover focuses the weakest reachable foe, Teacup Healer (HP 77%) · Leaf tap",
+          "version": 1,
+          "sequence": 7,
+          "round": 2
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "mochi",
+          "targetId": "clover",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Mochi supports the team (lowest HP 100%) · Last light shelter",
+          "text": "finish/steady plan: Mochi supports the team (lowest HP 100%) · Last light shelter",
+          "version": 1,
+          "sequence": 8,
+          "round": 3
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "soot",
+          "targetId": "foe-0-teacup-healer",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Soot focuses the weakest reachable foe, Teacup Healer (HP 63%) · Midnight service",
+          "text": "finish/steady plan: Soot focuses the weakest reachable foe, Teacup Healer (HP 63%) · Midnight service",
+          "version": 1,
+          "sequence": 9,
+          "round": 3
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "clover",
+          "targetId": "foe-0-teacup-healer",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Clover focuses the weakest reachable foe, Teacup Healer (HP 12%) · Leaf tap",
+          "text": "finish/steady plan: Clover focuses the weakest reachable foe, Teacup Healer (HP 12%) · Leaf tap",
+          "version": 1,
+          "sequence": 10,
+          "round": 3
+        }
+      ]
+    },
+    {
+      "route": "day7",
+      "kind": "boss",
+      "timed": true,
+      "wallMs": 55151,
+      "result": "enemy",
+      "actions": 25,
+      "initial": {
+        "seed": 963578460,
+        "chapter": 1,
+        "cats": [
+          {
+            "id": "mochi",
+            "stats": {
+              "hp": 721,
+              "attack": 65,
+              "defense": 45,
+              "critBp": 800,
+              "critDamageBp": 5000,
+              "effectHitBp": 0,
+              "effectResistBp": 0,
+              "healingBp": 400,
+              "shieldBp": 0,
+              "initiative": 8
+            },
+            "skills": [
+              "mochi-1",
+              "mochi-2",
+              "mochi-3",
+              "mochi-4"
+            ],
+            "row": "front",
+            "equipment": [
+              "moonwick-weapon-rare",
+              "moonwick-outfit-rare",
+              "moonwick-charm-rare",
+              "hearthloom-relic-epic"
+            ],
+            "effects": [
+              "marked-break"
+            ],
+            "bonuses": {
+              "attack": 4,
+              "defense": 2,
+              "hp": 8
+            }
+          },
+          {
+            "id": "soot",
+            "stats": {
+              "hp": 564,
+              "attack": 74,
+              "defense": 30,
+              "critBp": 1224,
+              "critDamageBp": 5142,
+              "effectHitBp": 0,
+              "effectResistBp": 65,
+              "healingBp": 400,
+              "shieldBp": 0,
+              "initiative": 6
+            },
+            "skills": [
+              "soot-1",
+              "soot-2",
+              "soot-3",
+              "soot-4"
+            ],
+            "row": "rear",
+            "equipment": [
+              "hearthloom-weapon-common",
+              "hearthloom-outfit-rare",
+              "mossbrew-charm-rare",
+              "mossbrew-relic-epic"
+            ],
+            "effects": [
+              "defend-shield",
+              "healing-cleanse"
+            ],
+            "bonuses": {
+              "hp": 2,
+              "critBp": 24,
+              "critDamageBp": 142,
+              "effectResistBp": 65
+            }
+          },
+          {
+            "id": "clover",
+            "stats": {
+              "hp": 442,
+              "attack": 45,
+              "defense": 25,
+              "critBp": 500,
+              "critDamageBp": 5000,
+              "effectHitBp": 0,
+              "effectResistBp": 0,
+              "healingBp": 400,
+              "shieldBp": 0,
+              "initiative": 4
+            },
+            "skills": [
+              "clover-1",
+              "clover-2",
+              "clover-3",
+              "clover-4"
+            ],
+            "row": "rear",
+            "equipment": [
+              "moonwick-weapon-common",
+              "hearthloom-outfit-common",
+              "mossbrew-charm-common",
+              "mossbrew-relic-common"
+            ],
+            "effects": [
+              "healing-cleanse"
+            ],
+            "bonuses": {}
+          }
+        ],
+        "enemies": [
+          "yarn-giant"
+        ],
+        "hp": {
+          "mochi": 721,
+          "soot": 564,
+          "clover": 442
+        },
+        "boons": {
+          "garden-5": 2,
+          "garden-3": 1
+        },
+        "upgrades": {},
+        "mutator": "",
+        "gameplayV4": true,
+        "challengeLevel": 7,
+        "enemyStats": {
+          "button-guard": {
+            "hp": 144,
+            "attack": 23,
+            "defense": 18
+          },
+          "sock-skipper": {
+            "hp": 210,
+            "attack": 26,
+            "defense": 8
+          },
+          "spool-ram": {
+            "hp": 378,
+            "attack": 36,
+            "defense": 16
+          },
+          "needle-moth": {
+            "hp": 198,
+            "attack": 20,
+            "defense": 6
+          },
+          "teacup-healer": {
+            "hp": 230,
+            "attack": 17,
+            "defense": 10
+          },
+          "kettle-knight": {
+            "hp": 429,
+            "attack": 30,
+            "defense": 35
+          },
+          "yarn-giant": {
+            "hp": 1034,
+            "attack": 137,
+            "defense": 22
+          },
+          "binding-thread": {
+            "hp": 115,
+            "attack": 12,
+            "defense": 0
+          },
+          "practice-cushion": {
+            "hp": 69,
+            "attack": 17,
+            "defense": 0
+          },
+          "pollen-scout": {
+            "hp": 340,
+            "attack": 26,
+            "defense": 10
+          },
+          "rain-spool": {
+            "hp": 1324,
+            "attack": 152,
+            "defense": 24
+          },
+          "crumb-sentinel": {
+            "hp": 454,
+            "attack": 32,
+            "defense": 22
+          },
+          "pantry-crown": {
+            "hp": 1282,
+            "attack": 191,
+            "defense": 25
+          }
+        },
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        }
+      },
+      "events": [
+        {
+          "kind": "crew-active",
+          "crew": "door",
+          "marks": 3,
+          "contributors": [
+            "mochi",
+            "clover"
+          ],
+          "threshold": 2,
+          "text": "Door team: +3% maximum HP.",
+          "version": 1,
+          "sequence": 0,
+          "round": 0
+        },
+        {
+          "kind": "crew-active",
+          "crew": "kettle",
+          "marks": 3,
+          "contributors": [
+            "mochi",
+            "clover"
+          ],
+          "threshold": 2,
+          "text": "Kettle team: +4% healing.",
+          "version": 1,
+          "sequence": 1,
+          "round": 0
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "mochi",
+          "targetId": "foe-0-yarn-giant",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Mochi focuses the weakest reachable foe, Yarn Giant (HP 100%) · Door knock",
+          "text": "finish/steady plan: Mochi focuses the weakest reachable foe, Yarn Giant (HP 100%) · Door knock",
+          "version": 1,
+          "sequence": 2,
+          "round": 1
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "soot",
+          "targetId": "foe-0-yarn-giant",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Soot focuses the weakest reachable foe, Yarn Giant (HP 95%) · Lantern wick",
+          "text": "finish/steady plan: Soot focuses the weakest reachable foe, Yarn Giant (HP 95%) · Lantern wick",
+          "version": 1,
+          "sequence": 3,
+          "round": 1
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "clover",
+          "targetId": "foe-0-yarn-giant",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Clover focuses the weakest reachable foe, Yarn Giant (HP 86%) · Leaf tap",
+          "text": "finish/steady plan: Clover focuses the weakest reachable foe, Yarn Giant (HP 86%) · Leaf tap",
+          "version": 1,
+          "sequence": 4,
+          "round": 1
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "mochi",
+          "targetId": "foe-0-yarn-giant",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Mochi focuses the weakest reachable foe, Yarn Giant (HP 84%) · Door knock",
+          "text": "finish/steady plan: Mochi focuses the weakest reachable foe, Yarn Giant (HP 84%) · Door knock",
+          "version": 1,
+          "sequence": 5,
+          "round": 2
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "soot",
+          "targetId": "foe-0-yarn-giant",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Soot focuses the weakest reachable foe, Yarn Giant (HP 79%) · Cocoa spark",
+          "text": "finish/steady plan: Soot focuses the weakest reachable foe, Yarn Giant (HP 79%) · Cocoa spark",
+          "version": 1,
+          "sequence": 6,
+          "round": 2
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "clover",
+          "targetId": "mochi",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Clover heals Mochi (HP 73%) · Patient steep",
+          "text": "finish/steady plan: Clover heals Mochi (HP 73%) · Patient steep",
+          "version": 1,
+          "sequence": 7,
+          "round": 2
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "mochi",
+          "targetId": "clover",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Mochi supports the team (lowest HP 54%) · Last light shelter",
+          "text": "finish/steady plan: Mochi supports the team (lowest HP 54%) · Last light shelter",
+          "version": 1,
+          "sequence": 8,
+          "round": 3
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "soot",
+          "targetId": "foe-0-yarn-giant",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Soot focuses the weakest reachable foe, Yarn Giant (HP 75%) · Midnight service",
+          "text": "finish/steady plan: Soot focuses the weakest reachable foe, Yarn Giant (HP 75%) · Midnight service",
+          "version": 1,
+          "sequence": 9,
+          "round": 3
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "clover",
+          "targetId": "clover",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Clover supports the team (lowest HP 54%) · Greenhouse morning",
+          "text": "finish/steady plan: Clover supports the team (lowest HP 54%) · Greenhouse morning",
+          "version": 1,
+          "sequence": 10,
+          "round": 3
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "mochi",
+          "targetId": "foe-0-yarn-giant",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Mochi focuses the weakest reachable foe, Yarn Giant (HP 64%) · Door knock",
+          "text": "finish/steady plan: Mochi focuses the weakest reachable foe, Yarn Giant (HP 64%) · Door knock",
+          "version": 1,
+          "sequence": 11,
+          "round": 4
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "soot",
+          "targetId": "foe-0-yarn-giant",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Soot focuses the weakest reachable foe, Yarn Giant (HP 60%) · Cocoa spark",
+          "text": "finish/steady plan: Soot focuses the weakest reachable foe, Yarn Giant (HP 60%) · Cocoa spark",
+          "version": 1,
+          "sequence": 12,
+          "round": 4
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "clover",
+          "targetId": "clover",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Clover supports the team (lowest HP 53%) · Clearleaf rinse",
+          "text": "finish/steady plan: Clover supports the team (lowest HP 53%) · Clearleaf rinse",
+          "version": 1,
+          "sequence": 13,
+          "round": 4
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "mochi",
+          "targetId": "foe-0-yarn-giant",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Mochi focuses the weakest reachable foe, Yarn Giant (HP 55%) · Door knock",
+          "text": "finish/steady plan: Mochi focuses the weakest reachable foe, Yarn Giant (HP 55%) · Door knock",
+          "version": 1,
+          "sequence": 14,
+          "round": 5
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "soot",
+          "targetId": "foe-0-yarn-giant",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Soot focuses the weakest reachable foe, Yarn Giant (HP 51%) · Lantern wick",
+          "text": "finish/steady plan: Soot focuses the weakest reachable foe, Yarn Giant (HP 51%) · Lantern wick",
+          "version": 1,
+          "sequence": 15,
+          "round": 5
+        },
+        {
+          "kind": "boss-phase",
+          "actorId": "foe-0-yarn-giant",
+          "bossId": "yarn-giant",
+          "from": 1,
+          "to": 2,
+          "threshold": 0.5,
+          "text": "Yarn Giant: closing phase. The next signature reaches both rows.",
+          "version": 1,
+          "sequence": 16,
+          "round": 5
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "clover",
+          "targetId": "mochi",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Clover heals Mochi (HP 42%) · Patient steep",
+          "text": "finish/steady plan: Clover heals Mochi (HP 42%) · Patient steep",
+          "version": 1,
+          "sequence": 17,
+          "round": 5
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "mochi",
+          "targetId": "foe-0-yarn-giant",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Mochi focuses the weakest reachable foe, Yarn Giant (HP 42%) · Door knock",
+          "text": "finish/steady plan: Mochi focuses the weakest reachable foe, Yarn Giant (HP 42%) · Door knock",
+          "version": 1,
+          "sequence": 18,
+          "round": 6
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "soot",
+          "targetId": "foe-0-yarn-giant",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Soot focuses the weakest reachable foe, Yarn Giant (HP 37%) · Cocoa spark",
+          "text": "finish/steady plan: Soot focuses the weakest reachable foe, Yarn Giant (HP 37%) · Cocoa spark",
+          "version": 1,
+          "sequence": 19,
+          "round": 6
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "clover",
+          "targetId": "mochi",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Clover heals Mochi (HP 21%) · Patient steep",
+          "text": "finish/steady plan: Clover heals Mochi (HP 21%) · Patient steep",
+          "version": 1,
+          "sequence": 20,
+          "round": 6
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "soot",
+          "targetId": "foe-0-yarn-giant",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Soot pressures a foe, Yarn Giant (HP 32%) · Midnight service",
+          "text": "finish/steady plan: Soot pressures a foe, Yarn Giant (HP 32%) · Midnight service",
+          "version": 1,
+          "sequence": 21,
+          "round": 7
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "clover",
+          "targetId": "clover",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Clover supports the team (lowest HP 28%) · Greenhouse morning",
+          "text": "finish/steady plan: Clover supports the team (lowest HP 28%) · Greenhouse morning",
+          "version": 1,
+          "sequence": 22,
+          "round": 7
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "soot",
+          "targetId": "foe-4-binding-thread",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Soot focuses the weakest reachable foe, Binding Thread (HP 29%) · Cocoa spark",
+          "text": "finish/steady plan: Soot focuses the weakest reachable foe, Binding Thread (HP 29%) · Cocoa spark",
+          "version": 1,
+          "sequence": 23,
+          "round": 8
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "clover",
+          "targetId": "soot",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Clover supports the team (lowest HP 11%) · Clearleaf rinse",
+          "text": "finish/steady plan: Clover supports the team (lowest HP 11%) · Clearleaf rinse",
+          "version": 1,
+          "sequence": 24,
+          "round": 8
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "soot",
+          "targetId": "foe-0-yarn-giant",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Soot focuses the weakest reachable foe, Yarn Giant (HP 22%) · Cocoa spark",
+          "text": "finish/steady plan: Soot focuses the weakest reachable foe, Yarn Giant (HP 22%) · Cocoa spark",
+          "version": 1,
+          "sequence": 25,
+          "round": 9
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "clover",
+          "targetId": "soot",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Clover heals Soot (HP 25%) · Patient steep",
+          "text": "finish/steady plan: Clover heals Soot (HP 25%) · Patient steep",
+          "version": 1,
+          "sequence": 26,
+          "round": 9
+        },
+        {
+          "kind": "plan-target",
+          "actorId": "clover",
+          "targetId": "clover",
+          "plan": {
+            "focus": "finish",
+            "care": "steady"
+          },
+          "reason": "Clover heals Clover (HP 25%) · Patient steep",
+          "text": "finish/steady plan: Clover heals Clover (HP 25%) · Patient steep",
+          "version": 1,
+          "sequence": 27,
+          "round": 10
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "remote": []
+}
