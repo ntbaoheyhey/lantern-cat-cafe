@@ -623,3 +623,10 @@ A4 resumed in a fresh session from #366 94b54197; P1 claim of 15:55 stands; no B
 A4 started: lane A now works on gameplay rules + meta screens; battle contract via events-v4; no B-owned edits.
 Recovered P1 in owned worktree and preserved named WIP; correcting A-owned method collision only. G0 economy closed; previous A processes exited, lock absent.
 Native/headless only; no Docker/CUA/model helpers. CPU sims use <=2–3min slices with render handoffs.
+
+## 2026-11-07T16:19:26.473537+00:00 A4-P1 REQUEST
+Schema: packages/game-rules/src/cardrpg/depth/events-v4.ts; battle.v4={version:1,plan,events,committed}; each event hasversion/sequence/round/actorId?/targetId?/text plus discriminated payload.
+Fixture: reports/cardrpg-big/a4/p1/events-fixture.json on A P1 branch after next push; 3000seeded encounters passed exact replay, serialized save and absent-resource checks.
+REQUEST Battle.tsx: when battle.v4 exists, hide legacy charge/energy/break/flavour meters; show fixed-delay/cooldown readiness, crew/row/standing-plan cues. OFF unchanged.
+Future boss-phase cue<=400ms, boss-finish<=800ms within existing action duration; do not extend playback. A Prepare/Result/log fallback already works.
+P1 type/lint/build/1735web/1035rules PASS;421E2E and OFF hash closure in progress. Native/headless only; no B-owned edits.
