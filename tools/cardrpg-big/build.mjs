@@ -7,6 +7,10 @@ import { root, web, requireWeb } from '../visual-support.mjs';
 import { evidencePayload } from '../cardrpg-big2/embed-evidence.mjs';
 const { build } = await import(requireWeb.resolve('vite'));
 const embeddedAssets = new Map();
+// App default stays OFF; explicit LOOK demos opt in before React mounts.
+// A separate output directory lets lane B call this builder without replacing main.
+const lookV2 = process.env.BIG_LOOK_V2 === '1';
+const outputDirectory = resolve(root, process.env.BIG_OUTPUT_DIR || 'docs/cardrpg3');
 const mimeTypes = { '.glb': 'model/gltf-binary', '.png': 'image/png', '.webp': 'image/webp', '.svg': 'image/svg+xml' };
 const result = await build({ configFile: false, root: web, envDir: false, publicDir: false, logLevel: 'warn',
   plugins: [{
@@ -54,13 +58,16 @@ const assetTags = assetEntries.map(([, asset], index) => `<script id="asset-${in
 const performanceMeter = readFileSync(resolve(root, 'tools/cardrpg-big/offline-performance.js'), 'utf8');
 const loader = readFileSync(resolve(root, 'tools/cardrpg-big/offline-loader.js'), 'utf8');
 const evidence = evidencePayload(root);
-const html = `<!doctype html>\n<!-- REFERENCE: docs/cardrpg2/index.html | tools/cardrpg-big/build.mjs | apps/web/src/game/cardrpg/depth | packages/game-rules/src/cardrpg/depth -->\n<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none';img-src data: blob:;style-src 'unsafe-inline';script-src 'unsafe-inline' blob:;connect-src data: blob:;media-src data: blob:"><script>${performanceMeter}</script><title>The Lantern · Three chapters</title><style>html,body{margin:0;background:#1d1b28;color:#f5ebdc}#loading{margin:0;padding:40px 40px 18px;font:18px system-ui}#opening-progress{display:block;width:min(420px,calc(100% - 80px));margin:0 40px;accent-color:#d8b98a}</style></head><body><div id="root"><p id="loading">Opening the cafe…</p><progress id="opening-progress" aria-label="Opening the cafe" value="0" max="1"></progress></div><script id="asset-manifest" type="application/json">${JSON.stringify(manifest).replace(/</g, '\\u003c')}</script>
+if (evidence.rows.length < 93 || evidence.files.length < 160) {
+  throw new Error('Offline comparison evidence is incomplete. Restore the tracked baseline report images/JSON from Git before building (sparse checkout may omit them).');
+}
+const html = `<!doctype html>\n<!-- REFERENCE: docs/cardrpg2/index.html | tools/cardrpg-big/build.mjs | apps/web/src/game/cardrpg/depth | packages/game-rules/src/cardrpg/depth -->\n<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none';img-src data: blob:;style-src 'unsafe-inline';script-src 'unsafe-inline' blob:;connect-src data: blob:;media-src data: blob:"><script>${performanceMeter}</script><script>window.__LOOK_V2__=${lookV2};document.documentElement.dataset.lookV2=String(window.__LOOK_V2__);</script><title>The Lantern · Three chapters</title><style>html,body{margin:0;background:#1d1b28;color:#f5ebdc}#loading{margin:0;padding:40px 40px 18px;font:18px system-ui}#opening-progress{display:block;width:min(420px,calc(100% - 80px));margin:0 40px;accent-color:#d8b98a}</style></head><body><div id="root"><p id="loading">Opening the cafe…</p><progress id="opening-progress" aria-label="Opening the cafe" value="0" max="1"></progress></div><script id="asset-manifest" type="application/json">${JSON.stringify(manifest).replace(/</g, '\\u003c')}</script>
 ${assetTags}
 ${evidence.tags}
 <script>${evidence.script}</script>
 <script id="payload" type="application/octet-stream">${payload}</script><script>${loader}</script></body></html>`;
-mkdirSync(resolve(root, 'docs/cardrpg3'), { recursive: true });
-writeFileSync(resolve(root, 'docs/cardrpg3/index.html'), html);
+mkdirSync(outputDirectory, { recursive: true });
+writeFileSync(resolve(outputDirectory, 'index.html'), html);
 const sourceRoots = ['packages/game-rules/src', 'apps/web/src', 'assets', 'tools/cardrpg-depth', 'tools/cardrpg-big', 'tools/cardrpg-big2', 'tools/cardrpg-demo/verify-delivery.py', 'tools/visual-support.mjs'];
 const files = execFileSync('git', ['ls-files', '--cached', '--others', '--exclude-standard', ...sourceRoots], { cwd: root, encoding: 'utf8' }).trim().split('\n');
 const hashes = Object.fromEntries(files.map(path => [path, createHash('sha256').update(readFileSync(resolve(root, path))).digest('hex')]));
@@ -69,11 +76,11 @@ const assetHashes = Object.fromEntries(assetEntries.map(([path, asset]) =>
 const inputPaths = [...sourceRoots, ...Object.keys(assetHashes)];
 const runtimeDirty = !!execFileSync('git', ['diff', 'HEAD', '--', ...inputPaths], { cwd: root, encoding: 'utf8' }).length
   || !!execFileSync('git', ['ls-files', '--others', '--exclude-standard', ...inputPaths], { cwd: root, encoding: 'utf8' }).trim();
-const receipt = { date: new Date().toISOString(), head, dirty, bytes: Buffer.byteLength(html), compressed: true,
+const receipt = { date: new Date().toISOString(), head, dirty, lookV2, outputDirectory: relative(root, outputDirectory), bytes: Buffer.byteLength(html), compressed: true,
   imagePacking, evidence: { rows: evidence.rows.length, files: evidence.files, bytes: Buffer.byteLength(evidence.tags) },
   assetCount: manifest.length, scriptBytes: Buffer.byteLength(js), assetBytes: assetEntries.reduce((sum, [, asset]) => sum + asset.bytes.length, 0),
   sha256: createHash('sha256').update(html).digest('hex'), runtimeDirty, sourceRoots, sourceHashes: hashes,
   sourceAssetHashes, assetHashes,
   references: ['docs/cardrpg3/index.html', 'tools/cardrpg-big/build.mjs', 'packages/game-rules/src/cardrpg/depth', 'apps/web/src/game/cardrpg/depth'] };
-writeFileSync(resolve(root, 'docs/cardrpg3/build.json'), JSON.stringify(receipt, null, 2));
+writeFileSync(resolve(outputDirectory, 'build.json'), JSON.stringify(receipt, null, 2));
 console.log(JSON.stringify({ head, dirty, bytes: receipt.bytes, sha256: receipt.sha256 }));

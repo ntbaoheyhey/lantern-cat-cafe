@@ -1,8 +1,9 @@
 // REFERENCE: reports/cardrpg-big2/INTEGRATION-HOOKS.md; apps/web/src/game/cardrpg/depth/App.tsx
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useSyncExternalStore } from 'react';
 import { createRoot } from 'react-dom/client';
 import { createPortal } from 'react-dom';
 import DepthApp from '../../apps/web/src/game/cardrpg/depth/App';
+import { isLookV2, setLookV2, subscribeLookV2 } from '../../apps/web/src/game/squad/turn3d/look-v2';
 import type { Screen } from '../../apps/web/src/game/cardrpg/depth/model';
 import { MechanicsLab } from '../cardrpg-big2/MechanicsLab';
 import { ReviewStudio, FrameMeter } from '../cardrpg-big2/ReviewStudio';
@@ -11,6 +12,7 @@ import './demo-tools.css';
 type Panel = { host: HTMLElement; kind: 'mechanics' | 'studio'; close: () => void };
 
 function Demo() {
+  const lookV2 = useSyncExternalStore(subscribeLookV2, isLookV2);
   const [header, setHeader] = useState<HTMLElement | null>(null);
   const [panel, setPanel] = useState<Panel | null>(null);
   const [meter, setMeter] = useState(false);
@@ -49,6 +51,8 @@ function Demo() {
       {!panel && <><button onClick={() => open('studio')}>Review studio</button>
         <button onClick={() => open('mechanics')}>Mechanics lab</button></>}
       <button aria-pressed={meter} onClick={() => setMeter(!meter)}>Frame meter</button>
+      <button aria-pressed={lookV2} title={lookV2 ? 'Showing Look V2. Switch to baseline styling.' : 'Showing baseline styling. Switch to Look V2.'}
+        onClick={() => setLookV2(!lookV2)}>Look A/B</button>
     </div>, header)}
     {meter && <FrameMeter />}
     {panel && createPortal(panel.kind === 'mechanics'

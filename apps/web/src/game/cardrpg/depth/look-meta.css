@@ -1,0 +1,171 @@
+/* REFERENCE: ../look-tokens.json; assets/provenance/look-meta.md.
+   Cosmetic opt-in, limited to the existing meta shell. No battle selectors. */
+.dp-app[data-look-v2="true"] .dp-cafe {
+  --ink: var(--look-cream);
+  --muted: var(--look-paper);
+  --gold: var(--look-honey);
+  --line: color-mix(in srgb, var(--look-wood-light) 55%, var(--look-panel));
+  --look-paper-tile: url('../../../../../../assets/art/cardrpg-look-meta/paper.png');
+  --look-felt-tile: url('../../../../../../assets/art/cardrpg-look-meta/felt.png');
+  --look-grain-tile: url('../../../../../../assets/art/cardrpg-look-meta/grain.png');
+  color: var(--look-cream);
+  background: var(--look-night);
+  font-variant-numeric: tabular-nums;
+}
+.dp-app[data-look-v2="true"] .dp-cafe :is(h1, h2, h3) {
+  color: var(--look-cream);
+  font-family: Georgia, 'Times New Roman', serif;
+  text-wrap: balance;
+}
+.dp-app[data-look-v2="true"] .dp-cafe :is(small, label, .cr-muted) { color: var(--look-paper); }
+.dp-app[data-look-v2="true"] .dp-cafe :is(button, input, select) {
+  color: var(--look-cream);
+  background: var(--look-ink);
+  border-color: var(--line);
+  border-radius: 8px;
+  box-shadow: inset 0 1px rgb(255 240 210 / 7%);
+}
+.dp-app[data-look-v2="true"] .dp-cafe button:hover:not(:disabled) {
+  background: var(--look-panel-raised);
+  border-color: var(--look-honey);
+}
+.dp-app[data-look-v2="true"] .dp-cafe :is(button, input, select, summary, a):focus-visible {
+  outline: 2px solid var(--look-honey);
+  outline-offset: 3px;
+}
+.dp-app[data-look-v2="true"] .dp-cafe .cr-sidebar {
+  background: var(--look-grain-tile), linear-gradient(150deg, var(--look-ink), var(--look-night));
+  border-color: var(--line);
+  box-shadow: 5px 0 20px rgb(5 17 22 / 18%);
+}
+.dp-app[data-look-v2="true"] .dp-cafe .cr-brand { background: none; color: var(--look-honey); box-shadow: none; }
+.dp-app[data-look-v2="true"] .dp-cafe .cr-sidebar nav button { background: transparent; border-color: transparent; box-shadow: none; }
+.dp-app[data-look-v2="true"] .dp-cafe .cr-sidebar nav button[aria-current="page"] {
+  color: var(--look-cream);
+  background: var(--look-felt-tile), var(--look-panel);
+  border-color: var(--look-wood-light);
+  box-shadow: inset 3px 0 var(--look-honey), 0 3px 10px rgb(5 17 22 / 20%);
+}
+.dp-app[data-look-v2="true"] .dp-cafe :is(.cr-sidebar nav button > span, .cr-sidebar-bottom > b, .cr-account, .cr-topbar > span:first-child) { color: var(--look-honey); }
+.dp-app[data-look-v2="true"] .dp-cafe :is(.cr-sidebar-caption, .cr-sidebar-bottom, .cr-wallet small, .cr-status > span) { color: var(--look-muted); }
+.dp-app[data-look-v2="true"] .dp-cafe .cr-topbar {
+  background: var(--look-ink);
+  border-color: var(--line);
+  box-shadow: 0 2px 16px rgb(5 17 22 / 15%);
+}
+.dp-app[data-look-v2="true"] .dp-cafe .cr-status { color: var(--look-paper); background: var(--look-night); border-color: var(--line); }
+.dp-app[data-look-v2="true"] .dp-cafe .cr-status.error { color: var(--look-cream); border-left: 3px solid var(--look-danger); }
+.dp-app[data-look-v2="true"] .dp-cafe .cr-content {
+  background: radial-gradient(ellipse at 75% 0, rgb(156 203 177 / 5%), transparent 60%), var(--look-night);
+  scrollbar-color: var(--look-wood-light) var(--look-night);
+}
+.dp-app[data-look-v2="true"] .dp-cafe :is(.cr-panel, .dp-team-heading, .dp-formation-row, .dp-presets .dp-three > div) {
+  color: var(--look-cream);
+  background: var(--look-felt-tile), linear-gradient(145deg, var(--look-panel), var(--look-ink));
+  border: 1px solid var(--line);
+  border-radius: var(--look-radius);
+  box-shadow: inset 0 1px rgb(255 240 210 / 8%), var(--look-shadow);
+}
+.dp-app[data-look-v2="true"] .dp-cafe .dp-formation-row { border-top: 2px solid var(--look-honey); }
+.dp-app[data-look-v2="true"] .dp-cafe .dp-formation-rear { border-top-color: var(--look-mint); }
+.dp-app[data-look-v2="true"] .dp-cafe :is(.dp-team-heading strong, .dp-card-stars, .dp-stamp-balance strong) { color: var(--look-honey); }
+.dp-app[data-look-v2="true"] .dp-cafe :is(.cr-primary, .cr-primary:hover:not(:disabled)) {
+  color: var(--look-night);
+  background: linear-gradient(160deg, var(--look-cream), var(--look-honey) 70%);
+  border-color: var(--look-cream);
+  box-shadow: inset 0 1px white, 0 4px 12px rgb(5 17 22 / 25%);
+}
+.dp-app[data-look-v2="true"] .dp-cafe .cr-primary :is(small, .cr-cost) { color: var(--look-ink); }
+.dp-app[data-look-v2="true"] .dp-cafe :is(.cr-tabs button[aria-pressed="true"], .dp-preview-skills button[aria-pressed="true"]) {
+  color: var(--look-cream);
+  background: var(--look-panel);
+  border-color: var(--look-honey);
+  box-shadow: inset 0 -2px var(--look-honey);
+}
+.dp-app[data-look-v2="true"] .dp-cafe :is(.cr-hero, .dp-invitation-stage) {
+  background: var(--look-felt-tile), radial-gradient(ellipse at 70% 20%, rgb(243 187 97 / 13%), transparent 60%), var(--look-panel);
+  border-color: var(--line);
+  border-radius: var(--look-radius);
+  box-shadow: inset 0 1px rgb(255 240 210 / 10%), var(--look-shadow);
+}
+.dp-app[data-look-v2="true"] .dp-cafe :is(.cr-hero p, .cr-hero > div > small, .dp-preview-note, .dp-next-goal span, .dp-next-goal b) { color: var(--look-paper); }
+.dp-app[data-look-v2="true"] .dp-cafe :is(.cr-notice, .cr-safety, .dp-next-goal, .cr-invitation) {
+  color: var(--look-paper);
+  background: var(--look-ink);
+  border-color: var(--line);
+  border-left-color: var(--look-honey);
+}
+.dp-app[data-look-v2="true"] .dp-cafe :is(.dp-miniature, .dp-miniature-controls, .dp-miniature-loading) {
+  color: var(--look-cream);
+  background: var(--look-ink);
+  border-color: var(--line);
+}
+.dp-app[data-look-v2="true"] .dp-cafe .dp-miniature { border-radius: var(--look-radius); }
+.dp-app[data-look-v2="true"] .dp-cafe .dp-miniature-home { background: transparent; }
+
+/* Body/edge/foil variables are derived from the published JSON, not duplicated colours. */
+.dp-app[data-look-v2="true"] .dp-cafe .dp-card-common { --look-card-body: var(--look-common-body); --look-card-edge: var(--look-common-edge); --look-card-foil: var(--look-common-foil); }
+.dp-app[data-look-v2="true"] .dp-cafe .dp-card-rare { --look-card-body: var(--look-rare-body); --look-card-edge: var(--look-rare-edge); --look-card-foil: var(--look-rare-foil); }
+.dp-app[data-look-v2="true"] .dp-cafe .dp-card-epic { --look-card-body: var(--look-epic-body); --look-card-edge: var(--look-epic-edge); --look-card-foil: var(--look-epic-foil); }
+.dp-app[data-look-v2="true"] .dp-cafe .dp-card-legendary { --look-card-body: var(--look-legendary-body); --look-card-edge: var(--look-legendary-edge); --look-card-foil: var(--look-legendary-foil); }
+.dp-app[data-look-v2="true"] .dp-cafe .dp-cat {
+  isolation: isolate;
+  overflow: hidden;
+  color: var(--look-cream);
+  background: var(--look-paper-tile), var(--look-ink);
+  border: 2px solid var(--look-card-body);
+  border-radius: 12px;
+  box-shadow: inset 0 0 0 1px var(--look-card-edge), inset 0 0 0 4px rgb(5 17 22 / 45%), 0 7px 18px rgb(5 17 22 / 32%);
+  animation: none;
+}
+.dp-app[data-look-v2="true"] .dp-cafe .dp-cat:hover:not(:disabled) { background: var(--look-paper-tile), var(--look-panel); border-color: var(--look-card-edge); }
+.dp-app[data-look-v2="true"] .dp-cafe .dp-cat::after { content: none; animation: none; }
+.dp-app[data-look-v2="true"] .dp-cafe .dp-cat .cr-portrait {
+  isolation: isolate;
+  background: radial-gradient(ellipse at 50% 38%, color-mix(in srgb, var(--look-card-body) 25%, var(--look-panel)), var(--look-night) 80%);
+  border-bottom: 1px solid var(--look-card-body);
+}
+.dp-app[data-look-v2="true"] .dp-cafe .dp-cat .cr-portrait::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(120deg, transparent 15%, var(--look-card-edge) 35%, transparent 46%, var(--look-card-body) 67%, transparent 82%);
+  opacity: var(--look-card-foil);
+  background-size: 200% 100%;
+  animation: dp-look-foil 9s ease-in-out infinite;
+}
+.dp-app[data-look-v2="true"] .dp-cafe .dp-cat .cr-portrait img { position: relative; z-index: 1; }
+.dp-app[data-look-v2="true"] .dp-cafe .dp-cat .cr-portrait > span { z-index: 2; }
+.dp-app[data-look-v2="true"] .dp-cafe .dp-cat .cr-card-caption { position: relative; background: var(--look-paper-tile), var(--look-ink); }
+.dp-app[data-look-v2="true"] .dp-cafe .dp-cat :is(.cr-card-caption p, .cr-card-caption small, .dp-card-power) { color: var(--look-paper); }
+.dp-app[data-look-v2="true"] .dp-cafe .dp-cat .dp-card-rarity {
+  color: var(--look-card-edge);
+  background: var(--look-night);
+  border: 1px solid var(--look-card-body);
+  padding: 3px 5px;
+  border-radius: 5px;
+}
+.dp-app[data-look-v2="true"] .dp-cafe .dp-cat[aria-pressed="true"] { outline-color: var(--look-honey); }
+.dp-app[data-look-v2="true"] .dp-cafe :is(.dp-invitation-fairness, .dp-history-scroll th) {
+  color: var(--look-paper);
+  background: var(--look-ink);
+  border-color: var(--line);
+  box-shadow: var(--look-shadow);
+}
+.dp-app[data-look-v2="true"] .dp-cafe :is(.dp-fairness-pity strong, .dp-fairness-pity span, .dp-invitation-fairness p, .dp-invitation-fairness a, .dp-fairness-odds > span:first-child, .dp-invitation-odds caption, .dp-pity strong, .dp-flip-result > p, .dp-flip-result > small, .dp-batch-grid article > p) { color: var(--look-paper); }
+.dp-app[data-look-v2="true"] .dp-cafe :is(.dp-invitation-item, .dp-doll-slots button, .dp-set-progress, .cr-stats > div) { border-color: var(--line); }
+.dp-app[data-look-v2="true"] .dp-cafe :is(.cr-stats dt, .dp-set-progress p, .dp-stamp-balance span) { color: var(--look-paper); }
+.dp-app[data-look-v2="true"] .dp-cafe :is(.cr-stats .up, .dp-set-progress p.active) { color: var(--look-mint); }
+.dp-app[data-look-v2="true"] .dp-cafe .cr-stats .down { color: var(--look-cream); text-decoration: underline var(--look-danger); }
+.dp-app[data-look-v2="true"] .dp-cafe progress { accent-color: var(--look-honey); }
+.dp-app[data-look-v2="true"] .dp-cafe progress::-webkit-progress-bar { background: var(--look-night); }
+.dp-app[data-look-v2="true"] .dp-cafe progress::-webkit-progress-value { background: linear-gradient(90deg, var(--look-amber), var(--look-honey)); }
+.dp-app[data-look-v2="true"] .dp-cafe .dp-envelope { background: var(--look-paper-tile), linear-gradient(140deg, var(--look-paper), var(--look-cream)); border-color: var(--look-cream); }
+.dp-app[data-look-v2="true"] .dp-cafe .dp-envelope-seal { color: var(--look-night); background: var(--look-coral); border-color: var(--look-paper); }
+@keyframes dp-look-foil { 0%, 100% { background-position: 100% 0; } 50% { background-position: 0 0; } }
+.dp-app[data-look-v2="true"].dp-reduced-motion .dp-cafe .dp-cat .cr-portrait::before { animation: none; }
+@media (prefers-reduced-motion: reduce) {
+  .dp-app[data-look-v2="true"] .dp-cafe .dp-cat .cr-portrait::before { animation: none; }
+}

@@ -5,9 +5,9 @@ import { createHash } from 'node:crypto';
 import { setTimeout as delay } from 'node:timers/promises';
 import { resolve } from 'node:path';
 import assert from 'node:assert/strict';
-const artifact = resolve('docs/cardrpg3/index.html');
-const out = 'reports/cardrpg-big/integration/delivery';
-const expected = '9a5f6ebbb04af56c19f11cf43cf2763b35df2bde3b7a8dcd943060e878d793d3';
+const artifact = resolve(process.env.BIG_ARTIFACT || 'docs/cardrpg3/index.html');
+const out = process.env.BIG_FUNCTIONAL_OUT || 'reports/cardrpg-big/integration/delivery';
+const expected = process.env.BIG_FUNCTIONAL_SHA || '9a5f6ebbb04af56c19f11cf43cf2763b35df2bde3b7a8dcd943060e878d793d3';
 const hash = async () => createHash('sha256').update(await readFile(artifact)).digest('hex');
 const steps = [
  ['studio','tools/cardrpg-big2/studio-check.mjs',{BIG_STUDIO_OUT:`${out}/studio`,BIG_STUDIO_EXPECT_SOUND:'1'}],
@@ -23,7 +23,7 @@ const steps = [
 ];
 await mkdir(out,{recursive:true});
 while (true) {
- const gates = await readFile('reports/cardrpg-big/validation/delivery-v1.json','utf8').then(JSON.parse).catch(e=>{if(e.code==='ENOENT')return [];throw e;});
+ const gates = await readFile(process.env.BIG_FUNCTIONAL_GATES || 'reports/cardrpg-big/validation/delivery-v1.json','utf8').then(JSON.parse).catch(e=>{if(e.code==='ENOENT')return [];throw e;});
  if (gates.length===5) { assert(gates.every(g=>g.exit===0),'Combined source gates failed');break; }
  await delay(3000);
 }

@@ -5,6 +5,9 @@
 .dp-offline-demo .cr-topbar .cr-account { order: 3; }
 .dp-offline-demo.b2-demo-lab-open .dp-feel-home { visibility: hidden; }
 .dp-offline-demo .dp-demo-tools button[aria-pressed=true] { background: #f4cd93; color: #292332; }
+.dp-offline-demo .dp-app[data-look-v2=true] .dp-demo-tools button[aria-pressed=true] {
+  background: var(--look-honey); color: var(--look-night); border-color: var(--look-cream);
+}
 @media (max-width: 1100px) {
   .dp-offline-demo .cr-topbar { gap: 9px; }
   .dp-offline-demo .dp-demo-tools { gap: 4px; }

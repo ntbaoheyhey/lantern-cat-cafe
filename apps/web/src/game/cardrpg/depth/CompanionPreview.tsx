@@ -1,4 +1,5 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react';
+import { isLookV2, subscribeLookV2 } from '../../squad/turn3d/look-v2';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import { TurnScene, type SceneView } from '../../squad/turn3d/scene';
 import { sampleActionPlan } from '../../squad/turn3d/effects';
@@ -11,6 +12,7 @@ import type { DepthModel } from './model';
 export function CompanionPreview({ m, id, skillId, entranceKey, home = false, visible = true }: {
   m: DepthModel; id?: string; skillId?: string; entranceKey?: string; home?: boolean; visible?: boolean;
 }) {
+  const lookV2 = useSyncExternalStore(subscribeLookV2, isLookV2, () => false);
   const host = useRef<HTMLDivElement>(null);
   const scene = useRef<TurnScene | null>(null);
   const [status, setStatus] = useState('Preparing miniatures…');
@@ -100,7 +102,7 @@ export function CompanionPreview({ m, id, skillId, entranceKey, home = false, vi
       scene.current?.dispose();
       scene.current = null;
     };
-  }, [m]);
+  }, [m, lookV2]);
   useEffect(() => { scene.current?.invalidate(); }, [view, rotating, angle, visible]);
 
   return <div className={`dp-miniature ${home ? 'dp-miniature-home' : ''}`}>
