@@ -176,3 +176,56 @@
 
 /* Automatic card battle sound stays within the compact control row. */
 .dp-battle-top .dp-sound-volume{display:flex;align-items:center;gap:4px;min-width:0;font-size:10px}.dp-battle-top .dp-sound-volume input{width:60px;min-width:0;padding:0;accent-color:#d8b77e}@media(max-width:1100px){.dp-battle-top .dp-sound-volume input{width:45px}}
+
+/* Atelier battle palette shares the card-screen tokens; classic remains opt-out. */
+[data-look-v2="true"] .dp-battle {
+ color:var(--look-cream);background:var(--look-night);
+}
+[data-look-v2="true"] .dp-battle .dp-battle-top,
+[data-look-v2="true"] .dp-battle .dp-party,
+[data-look-v2="true"] .dp-battle .dp-action-caption {
+ background:var(--look-panel);border-color:var(--look-panel-raised);color:var(--look-cream);
+}
+[data-look-v2="true"] .dp-battle .dp-battle-top small,
+[data-look-v2="true"] .dp-battle .dp-battle-top label,
+[data-look-v2="true"] .dp-battle .dp-action-caption > span {color:var(--look-muted)}
+[data-look-v2="true"] .dp-battle :is(button,select) {
+ background:var(--look-panel-raised);border-color:color-mix(in srgb,var(--look-muted),var(--look-panel) 62%);color:var(--look-cream);
+}
+[data-look-v2="true"] .dp-battle button:not(:disabled):hover {
+ background:color-mix(in srgb,var(--look-panel-raised),var(--look-honey) 14%);border-color:var(--look-honey);
+}
+[data-look-v2="true"] .dp-battle :is(button,select,input):focus-visible {
+ outline:2px solid var(--look-honey);outline-offset:2px;
+}
+[data-look-v2="true"] .dp-battle .dp-roundbar {background:var(--look-ink)}
+[data-look-v2="true"] .dp-battle .dp-roundbar > span {
+ color:var(--look-muted);background:var(--look-panel);border-color:var(--look-panel-raised);
+}
+[data-look-v2="true"] .dp-battle .dp-roundbar .current {
+ color:var(--look-cream);border-color:var(--look-honey);background:color-mix(in srgb,var(--look-panel),var(--look-honey) 12%);
+}
+[data-look-v2="true"] .dp-battle .dp-party-card {border-color:var(--look-panel-raised)}
+[data-look-v2="true"] .dp-battle .dp-party-card.current {
+ background:color-mix(in srgb,var(--look-panel),var(--look-honey) 10%);box-shadow:inset 0 2px var(--look-honey);
+}
+[data-look-v2="true"] .dp-battle .dp-party-health > span strong {color:var(--look-paper)}
+[data-look-v2="true"] .dp-battle .dp-party-health progress {accent-color:var(--look-mint)}
+[data-look-v2="true"] .dp-battle .dp-world-plate {
+ background:color-mix(in srgb,var(--look-ink),transparent 6%);border-color:color-mix(in srgb,var(--look-coral),var(--look-panel) 32%);color:var(--look-cream);
+}
+[data-look-v2="true"] .dp-battle .dp-world-plate progress {accent-color:var(--look-coral)}
+[data-look-v2="true"] .dp-battle .dp-statuses > span {
+ background:var(--look-panel-raised);color:var(--look-paper);
+}
+[data-look-v2="true"] .dp-battle .dp-charge {
+ background:conic-gradient(var(--look-honey) var(--charge),var(--look-panel-raised) 0);
+}
+[data-look-v2="true"] .dp-battle .dp-charge small {background:var(--look-ink);color:var(--look-cream)}
+[data-look-v2="true"] .dp-battle .dp-arena {background:var(--look-ink)}
+[data-look-v2="true"] .dp-battle .dp-arena::after {background:none}
+[data-look-v2="true"] .dp-battle .dp-loading {background:var(--look-night);color:var(--look-paper)}
+[data-look-v2="true"] .dp-battle :is(progress,input[type="range"]) {accent-color:var(--look-honey)}
+[data-look-v2="true"] .dp-battle .dp-log {
+ color:var(--look-paper);background:color-mix(in srgb,var(--look-night),transparent 3%);border-color:var(--look-honey);box-shadow:var(--look-shadow);
+}

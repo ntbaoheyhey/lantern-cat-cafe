@@ -58,7 +58,8 @@ for (const row of imagePacking) {
 const assetEntries = [...embeddedAssets].sort(([left], [right]) => left.localeCompare(right));
 const assetClasses = {};
 for (const [path, asset] of assetEntries) {
-  const category = path.includes('cardrpg-look/game-models/') ? 'atelier-models'
+  const category = path.includes('cardrpg-look/stage/') ? 'atelier-stage'
+    : path.includes('cardrpg-look/game-models/') ? 'atelier-models'
     : path.endsWith('.glb') ? 'classic-models'
     : path.includes('portrait') ? 'portraits'
     : path.includes('flipbook') ? 'flipbooks'

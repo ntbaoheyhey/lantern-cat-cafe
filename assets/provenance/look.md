@@ -28,3 +28,13 @@ Blender4.5.3LTS (2025-09-09), glTF-Transform4.5.1, ffmpeg9.0.2, cwebp1.6.0 (shar
 - Turntables: same GLB,48rendered384×480frames/12fps, Cycles16samples, H.264 CRF19; these are preview-resolution videos, not4×portrait renders. Per-asset receipt binds sourceSHA.
 - In-game atelier material adds a smooth three-band diffuse ramp and view rim to the baked PBR material. Fitted gear brooches/tokens replace oversized legacy visual overlays only for atelier models; item state/combat rules unchanged.
 - Runtime motion follow-up: atelier-only Mochi shield-arm retarget scales pitch.65/clamps-.90rad and sends the shield roll outward.65, preserving original clip timing. Equipped weapons become original enamel wrist seals on armR (52×61×18mm ellipsoid +44mm brass ring and visual-index glyph); no duplicate utensil beside the paw. Classic rig/equipment code path unchanged. Reviewed against72 actual runtime samples; see motion-pilot-1 for the rejected candidate.
+
+## L2 original café continuation
+
+Original source `tools/cardrpg-look/blender/stage.py`, Blender4.5.3/Cycles24, seed20261107; preserved round3 has49,600tri/3draw meshes. All geometry, stitched fabrics, lathed ceramics, cat tree, foliage and512px night/bokeh painting authored by code; no imported art. Color/AO/roughness/tangent-normal/irradiance atlases baked2048px. Studio rounds1–3 and review notes under reports/cardrpg-look/rounds/stage.
+
+Game packing: glTF-Transform4.5.1 `optimize --compress meshopt --flatten false --join false --instance false --palette false --simplify false --prune false --texture-compress webp --texture-size 2048`; geometry/UV preserved. Separate irradiance `cwebp -q 90`. Stage5,958,428→995,984bytes; irradiance3,981,654→748,354bytes. Source/output SHA256 and gzip sizes in assets/cardrpg-look/stage/game/packing.json.
+
+`turn3d/look-stage.ts` adds deterministic steam/dust, bounded lantern shafts, chapter tint and two inverse-square point lights. Stage is imported only for atelier automatic battles; load failures and disposed previews release their owned geometry/materials/textures. Actual game camera and performance acceptance remain pending.
+
+Round4 (source9e22199f) lowers fabric top below the existing .044m contact plane, uses neutral walnut #60534C and token teal walls, retains separate emissive paper lamps and adds their inner glow rims.50,272tri/4mesh draws; GLB6,027,476→1,015,272bytes, irradiance3,942,787→753,106bytes. Reproducible packing command is now `node tools/cardrpg-look/pack-stage.mjs`. Runtime camera24° pitch/target1.1m, with distinct preset ratios even at short desktop canvas heights. No other game's references used.
