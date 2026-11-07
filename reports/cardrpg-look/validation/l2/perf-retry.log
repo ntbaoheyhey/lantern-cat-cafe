@@ -1,0 +1,30 @@
+{"lock":"acquired","lane":"B-LOOK","pid":32025,"startedAt":"2026-11-07T13:02:49.662Z","task":"LOOK l2 cold batch1"}
+{"name":"1280x720-dpr1-cpu1","max":33.39999999999998,"p95":16.799999999999272,"above50":0,"stageFraction":0.7888888888888889,"errors":[]}
+{"name":"1280x720-dpr2-cpu1","max":33.30000000000007,"p95":16.700000000000728,"above50":0,"stageFraction":0.7888888888888889,"errors":[]}
+{"name":"1440x900-dpr1-cpu1","max":33.39999999999998,"p95":16.700000000000728,"above50":0,"stageFraction":0.8311111111111111,"errors":[]}
+{"name":"1440x900-dpr2-cpu1","max":33.299999999999955,"p95":16.700000000000728,"above50":0,"stageFraction":0.8311111111111111,"errors":[]}
+{"name":"1280x720-dpr1-cpu4","max":166.5999999999999,"p95":16.799999999999272,"above50":4,"stageFraction":0.7888888888888889,"errors":[]}
+{"name":"1280x720-dpr2-cpu4","max":133.4000000000001,"p95":16.799999999999272,"above50":5,"stageFraction":0.7888888888888889,"errors":[]}
+{"lock":"released","task":"LOOK l2 cold batch1"}
+{"lock":"acquired","lane":"B-LOOK","pid":32025,"startedAt":"2026-11-07T13:06:48.489Z","task":"LOOK l2 cold batch2"}
+{"name":"2560x1440-dpr1-cpu1","max":33.39999999999998,"p95":16.799999999999272,"above50":0,"stageFraction":0.8944444444444445,"errors":[]}
+{"lock":"released","task":"LOOK l2 cold batch2"}
+{"lock":"acquired","lane":"B-LOOK","pid":32025,"startedAt":"2026-11-07T13:07:39.901Z","task":"LOOK l2 mochi first/repeat"}
+{"name":"1280x720-dpr1-cpu1-high-mochi-1","max":33.30000000000018,"first":16.80000000000109,"repeat":16.80000000000109,"errors":[]}
+{"name":"1280x720-dpr1-cpu1-high-mochi-2","max":33.40000000000009,"first":16.80000000000109,"repeat":16.799999999999272,"errors":[]}
+{"name":"1280x720-dpr1-cpu1-high-mochi-3","max":33.39999999999998,"first":16.700000000000728,"repeat":16.799999999999272,"errors":[]}
+{"name":"1280x720-dpr1-cpu1-high-mochi-4","max":33.40000000000009,"first":16.800000000000182,"repeat":16.80000000000109,"errors":[]}
+{"lock":"released","task":"LOOK l2 mochi first/repeat"}
+{"lock":"acquired","lane":"B-LOOK","pid":32025,"startedAt":"2026-11-07T13:09:02.643Z","task":"LOOK l2 soot first/repeat"}
+{"name":"1280x720-dpr1-cpu1-high-soot-1","max":33.39999999999998,"first":16.80000000000109,"repeat":16.80000000000109,"errors":[]}
+{"name":"1280x720-dpr1-cpu1-high-soot-2","max":33.30000000000018,"first":16.800000000000182,"repeat":16.80000000000109,"errors":[]}
+{"name":"1280x720-dpr1-cpu1-high-soot-3","max":33.30000000000018,"first":16.800000000000182,"repeat":16.80000000000109,"errors":[]}
+{"name":"1280x720-dpr1-cpu1-high-soot-4","max":33.30000000000018,"first":16.80000000000109,"repeat":16.80000000000109,"errors":[]}
+{"lock":"released","task":"LOOK l2 soot first/repeat"}
+{"lock":"acquired","lane":"B-LOOK","pid":32025,"startedAt":"2026-11-07T13:09:57.166Z","task":"LOOK l2 clover first/repeat"}
+{"name":"1280x720-dpr1-cpu1-high-clover-1","max":33.40000000000009,"first":16.800000000000182,"repeat":16.80000000000109,"errors":[]}
+{"name":"1280x720-dpr1-cpu1-high-clover-2","max":33.399999999999636,"first":16.800000000000182,"repeat":16.80000000000109,"errors":[]}
+{"name":"1280x720-dpr1-cpu1-high-clover-3","max":33.30000000000018,"first":16.800000000000182,"repeat":16.799999999999272,"errors":[]}
+{"name":"1280x720-dpr1-cpu1-high-clover-4","max":33.40000000000009,"first":16.80000000000109,"repeat":16.80000000000109,"errors":[]}
+{"lock":"released","task":"LOOK l2 clover first/repeat"}
+{"artifact":"dac82f01dfefe213fd24c23a1cab04fe785713060fcac70bc03e16264766abf2","coldRuns":7,"castWindows":24,"coldInteractiveMs":[911.6999999992549,948,909.5,908.4000000022352,1843.2000000029802,1733.1000000014901,917.5],"battleReadyMs":[6582.599999997765,6563.800000000745,6496.699999999255,6527.60000000149,9125.20000000298,8630.70000000298,6622.60000000149],"coldMaxMs":166.5999999999999,"castMaxMs":16.80000000000109,"castP95MaxMs":16.80000000000109,"castWithin20Min":1,"errors":[]}
