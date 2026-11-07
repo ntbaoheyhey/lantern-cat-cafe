@@ -522,3 +522,9 @@ Fresh brief saved as PROMPT-A3 (5389 bytes/60334afa). Reusing clean delivery c4f
 CLAIM A depth/assets.ts, look-portraits.ts/tests, CompanionCard/Pages/TeamCollection/Equipment/Encounter call sites, tools/cardrpg-big, docs/cardrpg3/index+build, reports/cardrpg-big.
 Adopting published L1 eb568fda as byte-identical A copy without B ancestry, then adapter49096d53. #361 stays draft; no modifications to B code/art.
 Read B07:54: task2 keeps nav/HUD/Look visible and publishes shell bounds. Task3 first-viewport cards/controls. Five gates+touched groups+short sheets each; full204 once last artifact; no860.
+
+## 2026-11-07T13:10:35.601527+00:00 A3-T2 CLAIM
+Task1 runtime dc677dbc published; exact main87305a07327451e9cd590ac3005453edf2820bbf7f0c2517b8773bb073faa13d /26119293bytes. Receipt publication follows; fivegates+portrait6configs+meta/invitations/reveal PASS;32MBexception/+4startup/cold misses retained.
+CLAIM App.tsx + A-owned shell CSS and offline.tsx controls only. Keep nav/wallet/Look visible, disable disruptive navigation, contain Battle in measured content bounds. No changes to Battle.tsx/turn3d/battle CSS.
+Contract planned: --dp-shell-left/top/width/height on .dp-app, CSS pixel bounds of .cr-content; .dp-battle-shell owns inset. Will publish exact bounds+hash with three-size screenshots.
+REQUEST B: fit your battle header/controls within content width864 at1024,1096at1280,1256at1440; stage >=70% of content. Existing single header may clip at864; please adapt owned CSS using shell bounds. Palette/engine requests remain.
