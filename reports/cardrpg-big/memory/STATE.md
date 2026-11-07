@@ -7,9 +7,9 @@ ACTIVE 2026-11-07T04:25:38.972959+00:00: F7 baseline v1 report committed and pus
 Delivery /Users/bao/taskbar-hero-cardrpg-big-delivery · codex/cardrpg-big-delivery-2026-11-07 · last work commit b092ed0cbfdc362dbf78ce4f6418187bff029695. Draft358 open against332/cd5edcc. Accepted runtime a106dfcac755d42f91b2467adf6d888ca0b41a9c unchanged.
 HTML index/baseline-v1:9a5f6ebbb04af56c19f11cf43cf2763b35df2bde3b7a8dcd943060e878d793d3;23,937,000bytes. Five existing sourcegate logs reverified;1730web/1020rules(+2expectedfail,11skip)/421E2E+demo-types. This documentation audit is not a new suite run.
 Canonical /Users/bao/taskbar-hero-cardrpg-big · ai/codex-cardrpg-big-2026-11-06 · memory parent c0298460;source221ec3a8a462597f55579a319018961cd5cd9d21. A drafts333–341,344–345,348,358.359 is now closed/merged into integration (observed GitHub),not an open draft.
-Sync /Users/bao/taskbar-hero-cardrpg-sync · ai/codex-cardrpg-big-sync ·49727837. LOOK request03:55/helperAPI+publishedL0tip pending. Ledger /Users/bao/taskbar-hero-ui-ledger ·ai/codex-ui-ledger. Never touch other worktrees.
+Sync /Users/bao/taskbar-hero-cardrpg-sync · ai/codex-cardrpg-big-sync ·49727837. B04:30helperAPIreceived:turn3d/look-v2.ts isLookV2/setLookV2/subscribeLookV2;data-look-v2. Local663277c6tokens only;publishedL0tip stillpending. Ledger /Users/bao/taskbar-hero-ui-ledger ·ai/codex-ui-ledger. Never touch other worktrees.
 ## NEXT
-1. Prepare original neutral paper/felt/grain textures and meta screenshot/contrast plan; preserve baseline bytes. Published LOOK helper/tokens required before shared wiring.
+1. Finish CSS-only prototype1280pilot (unpublishedtoken snapshot663277c6,baseline9a5f6ebb;notartifactadoption). Runner session4388/log/tmp/cardrpg-a-look-meta-pilot.log waitsB-L0coldlock. Inspect matchedscreens,fixcontrast,then3sizes.
 2. At phase boundary read B-OUTBOX; adopt published LOOK L0 helper/tokens. Wire shared appOFF/lookdemoON/live toggle in next source commit, answer exact API. Do not invent B contract.
 3. Meta restyle+original textures and portrait/icon/frame wiring; each adopted B tip gets rebuild/newhash,fivegates+functionalpack,exact-hash checkpoint. Final860matrix only LOOK B/finallookV2.
 ## DONE
@@ -54,11 +54,13 @@ I caps PASS25rules/2UI/12screens,localcounter/binding/help;designonly,0battle st
 G/M PASS earnedceremony/odds/pity/history andmain68reveal/invitationcaptures;Mpreview+70px,height300px,6before/after+33screens. OpeningGMAX316.6msMISS.
 F1/F2 FAILscale/sharpness:stage78.889%PASS,2745posesPASS;sharpness2/10PASS8MISS. F3/F4 varietyPASS30motionpairs/465effectpairs;historicalopening566.7/266.7msMISS.
 ## DECISIONS · append-only archive
+2026-11-07T04:33:20.562672+00:00 · Read BLOOKpromptsection5/exactlocalhelper;ownershipunchanged. Keep sharedwiring untilpublishedtip. Textureprep isoriginal,neutral,andnotruntimeimported;look-ui/PLAN.md containscontracts/checks.
 2026-11-07T04:30:13.377652+00:00 · Baseline publication complete atb092ed0c/ledgera2728798831acc86619e6772205c7fefb4b58fcf;358descriptionupdated. Begin LOOK-A texture prep while L0 helper/tokens pending.
 2026-11-07T04:25:38.972959+00:00 · Baseline report uses branch-qualified evidence URLs so identical ledger copy has working links. Audit verifies underlying tracked paths. No baseline recapture or new matrix.
 2026-11-07T04:25:38.972959+00:00 · GitHub359 closed/merged viaef400fc3,358open/draft;old “no GitHubmerge”claim corrected. Localmergeparents verified;no mergeAPI action this continuation.
 All earlier decisions retained verbatim in DECISIONS.md and archive/state-before-baseline-publication.md; never delete them. Historical worktrees inHISTORY.md.
 ## MEASUREMENTS
+LOOK prep ·3original256pxpaper/felt/grain tiles105652bytes;RGBAroundtrip/seamsPASS;look-ui/materials.json. 7palettebounds:3PASS4FAIL4.5threshold;usecream/papertextonraised/darkbacking. Notbrowserproof. No runtimeadoption.
 Baseline raw ·13,125frames,101>25ms/17>50ms,nativeMAX33.3/CPU4MAX116.7ms,p9516.8;delivery/baseline-cold-audit.json. Main100msgateFAIL.
 Video ·14clips/12,385decodedframes/991samples/57sheets;video/delivery/audit.json. Reverified bytes,not newdecode or browser pass.
 Functional ·10groups/204screens,0errors;studio258selections andcomparisons93items/160images;delivery/functional-audit.json.
@@ -69,7 +71,7 @@ Historical per-phase numbers preserved in MEASUREMENTS.md and archive/state-befo
 ## PROBLEMS / PARKED
 Visual quality remains usercomplaint:9/11scores<8.5;smallactors,sparsestage,paleVFXocclusion,sharpness/scale/margin misses. LOOK owns3D fixes;Ameta cohesion next.
 No oldlongmatrix completed. Oldqueuesretired;final860onlyLOOK B/finallookV2. Existing partialraw retained asINCOMPLETE.
-No half-wired runtime. Currentdocs/audit pushed b092ed0c;oldfailurepilots retained inGit. No old PIDs trusted and no automatic continuation installed byA.
+Baseline runtime unchanged. LOOK candidate look-meta.css,3textures,andprobe are unimported/uncommitted, awaiting publishedBtip;park namedWIP ifstopping. Currentdocs/audit pushed b092ed0c;oldfailurepilots retained inGit. No old PIDs trusted and no automatic continuation installed byA.
 GitHub359state differs priorhandoff;do not list asopen or claim noPRevermerged.358remains draft. See delivery/pr-baseline-snapshot.json.
 Detailed historical pilots preserved in archive/state-before-baseline-publication.md. User/main/ledgerunrelatededits mustremain untouched.
 ## COVERAGE
