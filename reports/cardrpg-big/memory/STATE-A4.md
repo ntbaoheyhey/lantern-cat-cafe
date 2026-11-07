@@ -2,11 +2,11 @@
 ## NOW
 P6 immutable acceptance running on codex/cardrpg-a4-p6-2026-11-08 (rules56acf66a / docsba4dfa2b). ACTUAL WORKDIR /Users/bao/taskbar-hero-cardrpg-a4; environment Documents checkout is stale. Read this file before any rediscovery.
 ## NEXT
-Reuse original coordinator85496/window85506; train then heldout,45day economy,gacha,editions,OFF. Do not launch duplicate jobs. When series complete: a4-p6-report.mjs, node --test a4-p6-acceptance.test.mjs (retain MISS exit), a4-p6-summary.py, audit/publish P6 draft/ledger/sync. Then P7 claim/branch, adopt staged /tmp/cardrpg-a4-p7 scripts; source gates, one full204pack, journey, cold, guide, report and draft. No P7 browser execution yet.
+Reuse original coordinator85496/window85506; train then heldout,45day economy,gacha,editions,OFF. Do not launch duplicate jobs. Closure waiter92853 /tmp/cardrpg-a4-p6-close.mjs (session37397) already owns automatic report generation after all six series steps; do not duplicate it. When series complete: a4-p6-report.mjs, node --test a4-p6-acceptance.test.mjs (retain MISS exit), a4-p6-summary.py, audit/publish P6 draft/ledger/sync. Then P7 claim/branch, adopt staged /tmp/cardrpg-a4-p7 scripts; source gates, one full204pack, journey, cold, guide, report and draft. No P7 browser execution yet.
 ## DONE
 P1–P5 drafts367/369/370/372/373. P6 five source gates accepted in validation/a4-p6-accepted.json:1106rules/1735web/421E2E/type/lint/build; originals retained. All5x1timing receipts complete:ordinary21.340s/elite33.785s/boss57.546s,64.807s,58.680s. Boss outcomes all enemy; timings are to crew defeat, not victorious finish.
 ## GATES
-3625cells×500seeds/sample registered; last saved train690220outcomes, heldout pending. Known pilot88ppoutlier/cat/set misses remain provisional. Artifact unchanged while samples run. P7 full204pack UNRUN; startup/current-main cold comparison pending. No B adoption or protected edits.
+3625cells×500seeds/sample registered; last saved train1159749outcomes, heldout pending. Known pilot88ppoutlier/cat/set misses remain provisional. Artifact unchanged while samples run. P7 full204pack UNRUN; startup/current-main cold comparison pending. No B adoption or protected edits.
 ## DECISIONS (append-only)
 - Keep the one-agent constraint, automatic battles, strict A/B ownership, and isolated worktree.
 ## MEASUREMENTS
@@ -186,3 +186,18 @@ P1–P5 drafts367/369/370/372/373. P6 five source gates accepted in validation/a
 ## 2026-11-07T19:37:11.403178+00:00 P6 timing closure / recovery pointer
 - Recovered current lane A thread through app read tools, then reused85496/85506/85987. Thirdboss complete58.6801s/outcomeenemy, no boss death. Original timing coordinator will finish its final handoff. No simulations repeated or runtime edits.
 - Existing accepted source-gate manifest already committedba4dfa2b, do not regenerate or repeat source gates. P7 scripts remain staged only; full204notrun. Read sync through19:37UTC, BstillL5/noDONEadoption.
+
+## 2026-11-07T19:43Z P6 safety checkpoint and staged P7 resilience
+- WIP6642a776 commits completed timing/gates/artifact; syncd8a0219e publishes all5timings with explicit bossdefeats. Rules unchanged.
+- Closure waiter92853 waits for original85496 series, then runs balance report, numeric assertions (retained MISS exit), summary and scope into p6/closure.json. No P6 draft until reviewed.
+- P7 stage functional supports resumable groups; never recaptures a passing group, failed attempts get separate paths, max2corrections. Receipt audit selects passing paths while retaining failures. Guide catalogue now binds source/artifact hashes. Scripts remain outside checkout.
+- Narrow navigation feasibility only (no screenshots/full204): /tmp/cardrpg-a4-p7/path-preflight.log caught legacy all-win assumption. Actual public reviewer shortcut level10/star3 startergear route gives party/party/enemy. Staged path now asserts that explicit defeat plus completed/lost route, retaining balance MISS. Retry1 session49237 completedPASS; preserved in p6/path-preflight. Exact source unchanged. No P7 source adoption or formal pack execution.
+
+## 2026-11-07T19:50Z recovery / P7 new-screen preparation
+- Recovered original85496/85506/92853; no duplicate jobs. Train2319completecells/1,159,749outcomes; still same source. Runtime and registered case set untouched.
+- P7 staging now includes four adapted P1/P2/P4/P5 browser paths with current THC12 export checks, isolated output directories and a resumable12-configuration coordinator. Expected120additional new-screen captures (3sizes×2themes), separate from single204pack. Syntax passed; browser unrun.
+- Staged receipt audit requires all12configs and contrast>=4.5. Startup summary now requires identical measurement harness across main/candidate and verifies viewport/CPU. No P7 runtime/source integration; stage inventory at /tmp/cardrpg-a4-p7/staging-manifest.json.
+
+## P7 staged coordinator (not executed)
+- /tmp/cardrpg-a4-p7/adoption-manifest.json identifies21selected scripts and destinations; do not adopt obsolete guide.mjs/a4-p7-guide.py. Selected source all syntax checked. Master a4-p7-series.mjs preserves per-attempt source-gate receipts, serializes full204/new120/journey/guide/cold, asserts P6source and artifact equality. Must claim P7, copy selected tools, commit source, then start coordinator.
+- Guide/report ordering handles local-link dependency: generate guide and provisional report before guide-link check; audit then rewrite report. Publication and visual review remain manual agent steps. No runtime or P7 source integrated.
