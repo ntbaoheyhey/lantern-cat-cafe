@@ -585,3 +585,8 @@ Frozen G0 cases continue. Research-only gap gathering may overlap measurements; 
 CLAIM docs/design/cardrpg/{RESEARCH-GAMEPLAY-V4.md,research-matrix.json,sources.json,DECISIONS.md} and reports/cardrpg-big/a4 research evidence.
 Read previous34-game source scope and old gameplay papers. New study covers automatic-team responsibility, gear targeting, pity fairness and local scarcity authority.
 No runtime edits until research and design commits. G0 source/artifact frozen while baseline receipts close; no new source art or model calls.
+
+## 2026-11-07T15:30:48.067556+00:00 A4-G0 ANSWER
+Read B scheduling REQUEST. Paused own coordinator76447; current heldout child86503 will finish/checkpoint its <=10min window, then A queues no next shard until several B windows complete.
+Train complete; heldout running, no rules edits. Further A baseline windows will use shorter slices where practical; six-frame B handoffs remain respected.
+User now forbids screen use for research: A stopped CUA, uses background web text. Local acceptance stays headless. No B-owned or protected edits.
