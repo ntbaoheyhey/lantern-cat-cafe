@@ -202,3 +202,20 @@
 
 /* Earned reward controls remain readable while a requirement is unmet. */
 .dp-app .dp-v4-selector button:disabled,.dp-app .dp-v4-editions button:disabled { opacity:1; color:#fff4d5; background:#283f43; }
+
+/* REFERENCE: GAMEPLAY-V4 section7. Explicit paired surfaces in both themes. */
+.dp-app[data-look-v2] .dp-cafe .dp-page .dp-v4-cafe,.dp-app[data-look-v2] .dp-cafe .dp-page .dp-v4-journal { padding:20px; margin:16px 0; background:#f6efdf; color:#29251f; border:1px solid #a49170; border-radius:12px; }
+.dp-app[data-look-v2] .dp-cafe .dp-page .dp-v4-cafe :is(p,small,span,label,h2,h3,b),.dp-app[data-look-v2] .dp-cafe .dp-page .dp-v4-journal :is(p,small,span,label,h2,h3,b,summary) { color:#29251f; }
+.dp-app[data-look-v2] .dp-cafe .dp-page .dp-v4-cafe button,.dp-app[data-look-v2] .dp-cafe .dp-page .dp-v4-journal button { background:#fffaf0; color:#29251f; border:1px solid #86704b; padding:8px 12px; }
+.dp-app[data-look-v2] .dp-cafe .dp-page .dp-v4-cafe button:disabled,.dp-app[data-look-v2] .dp-cafe .dp-page .dp-v4-journal button:disabled { opacity:1; background:#e0d6c2; color:#453e32; }
+.dp-v4-meta-heading { display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; }
+.dp-v4-meta-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+.dp-app[data-look-v2] .dp-cafe .dp-page .dp-v4-meta-grid article,.dp-app[data-look-v2] .dp-cafe .dp-page .dp-v4-lesson { padding:16px; background:#fffaf0; border:1px solid #c9b99c; border-radius:8px; min-width:0; }
+.dp-app[data-look-v2] .dp-cafe .dp-page .dp-v4-lesson { margin:12px 0; }
+.dp-v4-board-task { display:grid; grid-template-columns:1fr auto; gap:6px 12px; padding:12px 0; border-bottom:1px solid #c9b99c; }
+.dp-v4-board-task :is(b,small,progress,span) { grid-column:1/-1; }
+.dp-v4-board-task progress,.dp-app[data-look-v2] .dp-cafe .dp-page .dp-v4-journal progress { width:100%; accent-color:#506d41; }
+.dp-app[data-look-v2] .dp-cafe .dp-page .dp-v4-journal details { margin:12px 0; overflow-wrap:anywhere; }
+@media(max-width:1100px){.dp-v4-meta-grid { grid-template-columns:1fr; }}
+
+.dp-app[data-look-v2] .dp-cafe .dp-page :is(.dp-v4-cafe,.dp-v4-journal) button:hover:not(:disabled) { background:#eee0bf; color:#29251f; }

@@ -120,6 +120,7 @@ function settleRun(s: DepthAccount, won: boolean) {
   const challengeId=run.mode==='daily'?`daily-${run.date}`:run.mode==='tower'?`tower-${run.date}`:'';
   const rewarded=s.account.daily.battles<6&&(!challengeId||!s.challengeClaims.includes(challengeId));
   if(rewarded){
+    if(run.gameplayV4&&s.v4?.journal)s.v4.journal.rewardedRoutes++;
     s.account.daily.battles++;progress(s.account,'battles');
     grantDepth(s,{fish:won?90:30,threads:won?18:6,stamps:won?40:10,essence:won?2:0},won?60:20);
     const key=`depth-material-${s.account.day}`,earned=s.account.inventory.stacks[key]??0,amount=Math.min(30-earned,run.visited.length*2+(won?5:0));

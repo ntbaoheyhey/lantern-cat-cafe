@@ -1,12 +1,12 @@
 # A4 living state
 ## NOW
-P4 verified on codex/cardrpg-a4-p4-2026-11-08; publishing draft stacked P3 #370. P1 #367/P2 #369/P3 #370 remain open. No B checkpoint adoption.
+P5 verified on codex/cardrpg-a4-p5-2026-11-08. Original coordinator completed all five steps; no duplicate jobs. Publication pending immediately below.
 ## NEXT
-Publish P4 and mirror ledger, then claim/integrate P5 from /tmp/cardrpg-a4-p5. P6 full balance/economy and P7 demo/playtest/report follow. Do not repeat G0/R/D/P1–P4 checks.
+Publish P5 draft stacked372, mirror ledger, CLAIM P6. Integrate selected tuning2 and run source-bound train/heldout, economy, gacha, editions, OFF, five gates and real x1 timing. P7 follows.
 ## DONE
-P4 30,000 accounts/1.8M paid draws max conditional CDF deviation0.640337pp PASS;500 supply races/6000 edition combats PASS with0pp gain. OFF8250 routes exact47477251.30captures/3sizes/2themes PASS.
+P1/P2/P3/P4 drafts367/369/370/372. P5 nine new accounts×30days,36captures/3sizes/2themes minimumcontrast7.327; OFF8250exact47477251.
 ## GATES
-P4 type/lint/build PASS;1087rules(+2expectedfail/11skip)/1735web/421E2E PASS. P3 ordinary14.487s MISS; bosses/elite PASS. P4 startup bytes MISS; coldCPU unmeasured. P5 shadow17tests PASS is not integrated phase acceptance.
+P5 type/lint/build/1104rules(+2expectedfail/11skip)/1735web/421E2E PASS. Two contrast fixes verified. Startup bytes MISS; CPU not measured. P6 known training residuals remain unaccepted; no heldout sampled.
 ## DECISIONS (append-only)
 - Keep the one-agent constraint, automatic battles, strict A/B ownership, and isolated worktree.
 ## MEASUREMENTS
@@ -132,3 +132,37 @@ P4 type/lint/build PASS;1087rules(+2expectedfail/11skip)/1735web/421E2E PASS. P3
 ## P4 verification closure
 - Original coordinator reused through all7steps; no duplicate simulations.1280/1440/1024 completed30captures, minimum contrast8.599:1; local screenshots reviewed.
 - P4 report and acceptance source-hash audit PASS; source fixture earned-reveal-fixture.json uses public welcome+paid draw only. Original failed selector-label receipt retained. No B/protected edits.
+
+## P5 resumed validation
+- Recovered integrated P5 and original17PASS unit receipt. First typecheck found generated initializer `journal | hub`; corrected the default to hub. No original evidence replaced.
+- No prior P5 jobs remain. Five gates and independent progression/browser/OFF chain follow on immutable source; B paths untouched.
+
+## P5 contrast retry / isolated P6 calibration
+- Original5gates allPASS1104rules/1735web/421E2E. Original browser1280 caught CSS specificity/contrast; retained evidence. P5 specificity corrected; retry1 coordinator48399 and finalgates85864 active. No duplicate jobs.
+- Independent staged P6 train-only attack-pressure sweep andpilot1 completed; pilot2 uses3.0/1.9/2.15 boss pressure,regularHP.25. No runtime adoption or heldout sampling. Authoritative resume pointer refreshed.
+
+## P5 contrast round2
+- Original retry1 exposed Look's attribute + :is class specificity winning over component text and buttons. Retained first/retry1 evidence. Round2 scopes paired colors inside the actual page and theme root, without editing B CSS. Final source gates remain passing; new CSS-only build/browser validation pending.
+- Recovered original P6 staged pilot3, no duplicate job or heldout sample. No production P6 integration.
+
+- Paused only stagedP6 coordinator75960 (SIGSTOP); its current child finishes/checkpoints normally. Resume with SIGCONT75960 after P5 browser gets a window. No B process touched.
+
+## P5 current continuation / P6 training diagnostics
+- Recovered actual checkout and original P5 coordinator79394; did not duplicate. P5 9accounts×30days completed PASS at18:52UTC, next original OFF and1440/1024 windows. Existing fivegates remain PASS;1280 retry2 artifact206be306/26,215,386bytes, mincontrast7.33.
+- P6 staged clone parity210cells×50seeds exact;600ON/OFF replay parity exact. No production P6 source adopted.
+- New staged AI training recognizes Glaze/Riposte/Tangle/Drowsy/utility suppression in one-action evaluation, OFF untouched. Pilot tuning1 running session58277, /tmp/cardrpg-a4-p6/tuning1*. Training aggregate Inkcap improved.204→.543; residual cats still miss.
+- Expanded pre-heldout single-piece diagnostics to coherent epic kits;384cells×50seeds expose Mossbrew4 fourth-slot gain94pp despite small display share. This invalidates any inference from all-loss bare pairs. Staged tuning2 caps set Cozy to firstSteep/encounter; pilot session43962. No heldout seeds sampled.
+- Reviewed staged balance/report tools /tmp/cardrpg-a4-p6/a4-p6-{balance,report}-reviewed.mjs include3625cells/sample, coherent-kit supplement,+12share and train-fitted score diagnostics. Need integrate only after P5 closes, verify pilot results, then freeze for acceptance.
+- P7 guide generator staged /tmp/cardrpg-a4-p7/build-guide.py (syntax checked only). No P7 artifact generated, no204pack run. Rules/oneagent/native/headless/Bownership unchanged.
+
+## P5 continued after user handoff / P6 diagnostic review
+- Recovered running79394 in /Users/bao/taskbar-hero-cardrpg-a4 despite environment cwd pointing at older Documents checkout. No duplicate P5 jobs; no other worktree touched.
+- Personally reviewed1280 Look cafe service and journal captures: readable, sampledcontrast>=7.33. Existing5gates1104rules/1735web/421E2E reused. OFF originalslice1 checkpoints at110sCPU;1440/1024 follow automatically.
+- Staged tuning1 complete3241cells×50seeds; Inkcap improved, severalcats andsets still outside bands. Tuning2 coherent-kit384cells×50 reveals worst88pp gain, despite lowdisplay share. This is a residual, not acceptance.
+- Extra bounded-defense diagnostic at /tmp/cardrpg-a4-p6/bounded-preview caps repeated defend/detonate procs. All384outcome digests are identical to tuning2; reject the extra changes as unsupported by measured benefit. Preserve diagnostic code/logs. No production change, no heldout contamination.
+- Four staged safety tests pass after fixing fixture cooldown reset; shadowtypecheck passes after adding missing client symlink. They are staged evidence only. Integrate only tests relevant to selected candidate, then run full source gates.
+
+## P5 verification closure
+- Original79394 completed1280/progression/OFF/1440/1024. Source hashes verified; no repeat of passed gates. Personally reviewed1440cafe/1024journal.
+- Acceptance artifact206be306a39b7d3623c5f307167a64f91e0353d2f1d2b685111f21ae1b4ed3d8 /26,215,386bytes;36captures mincontrast7.326961;8250OFFroutes exact. Failed first/retry1 browser logs retained.
+- P6 selected candidate is tuning2; bounded-defense rejected with384identical outcome digests. Train-only pilots, no heldout contamination. Full204 remains unrun.
