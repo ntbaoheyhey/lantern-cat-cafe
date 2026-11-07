@@ -9,12 +9,12 @@ Cân bằng hiện có 26/48 bước nâng độ hiếm tăng tỉ lệ thắng,
 Mô phỏng 45 ngày cho tỉ lệ tài nguyên người chơi nhiều/chơi ít tối đa 2,1948×.  
 Giới hạn sức mạnh hiển thị của một món huyền thoại đạt 9,6306%, trong ngưỡng 10%.  
 Độ nét mới đạt 2/10 cặp mục tiêu ở F2, khựng lúc mở trang vẫn còn ở các mốc đã đo.  
-Bản ghép cuối, video, kiểm tra lại hình ảnh và báo cáo lane B đang được hoàn tất.
+Gacha đã có màn lật thẻ, xuất hiện 3D, lịch sử và kết quả vừa màn hình 1024×600.
 
 ## Tình trạng bản ghép
 REFERENCE: integration/PREPARE.md, integration/RUNNER.md, validation/integration-runner-test.log
 
-Nguồn lane A tại 35669487 ghép phần vật phẩm, lời mời, bộ sưu tập và Feel lab. Năm cổng đạt, gồm 1.700 test web, 988 test luật và 421 E2E. HTML 20.617.021 byte và 66 ảnh kiểm tra có 0 lỗi. Bản nguồn289ffa0e đã nhận A cùng B2c/B3/B5/B4/E1/E2. HTML23.376.725byte/SHA85592fae đạt năm cổng với1.722test web,1.020test luật và421E2E, cùng21ảnh lab,24ảnh entrance và36ảnh lời mời. VideoMochi25s đã ghi và xem20frame trong10sđầu. E2E420/421 gặp lỗi mạng tải font, chạy lại cả2ca trong spec đã đạt. Các số bên dưới gắn với từng bản đã đo. Tự chấm điểm sẽ dựa trên bản ghép có hình ảnh lane B và bốn lượt xem tuần tự.
+Bản ghép b8bc5e89 chứa I, G, M follow-up, Feel lab và nguồn B đã công bố đến E2. HTML162f3d24 có 23.377.025 byte. Mốc sửa kết quả lời mời69b994eb đạt 1.722 test web, 1.020 test luật và 421 E2E cùng 68 ảnh. Header mới có 21 ảnh lab, 32 ảnh reveal, 36 ảnh invitation và 39 ảnh meta ở ba kích thước, không lỗi trang/network. Meta lần đầu dừng vì điểm nhấp thanh trượt tính cả viền; sửa tọa độ chọn đúng0° ở cả ba kích thước, giữ nguyên ngưỡng kiểm tra và log gốc. Path và năm cổng mới đang chạy. Còn ghép địch/boss/wrapper B, quay video và chấm lại trên bản đó.
 
 ## Sáu nơi nên xem
 REFERENCE: apps/web/src/game/cardrpg/depth/LabEvidence.tsx, demo/PLAN.md
@@ -29,7 +29,7 @@ REFERENCE: apps/web/src/game/cardrpg/depth/LabEvidence.tsx, demo/PLAN.md
 ## Mở và chơi
 REFERENCE: docs/cardrpg3/index.html, tools/cardrpg-big/build.mjs
 
-Bản A đang kiểm chứng nằm tại `/Users/bao/taskbar-hero-cardrpg-big-integration/docs/cardrpg3/index.html`. Mở trực tiếp bằng trình duyệt. Feel lab mở từ trang đầu và trong trận. Đường đi thường là Cafe → đội/trang bị → Prepare → Fight → Result → bản đồ. Watch a battle now mở ngay trận chương 1. Demo cũ vẫn ở `docs/cardrpg2/index.html`.
+Bản ghép đang kiểm chứng nằm tại `/Users/bao/taskbar-hero-cardrpg-big-integration/docs/cardrpg3/index.html`. Mở trực tiếp bằng trình duyệt. Feel lab mở từ trang đầu và trong trận. Đường đi thường là Cafe → đội/trang bị → Prepare → Fight → Result → bản đồ. Watch a battle now mở ngay trận chương 1. Demo cũ vẫn ở `docs/cardrpg2/index.html`.
 
 ## Đối chiếu toàn bộ brief
 REFERENCE: COVERAGE.md, baseline/COVERAGE.md, memory/STATE.md
@@ -45,26 +45,26 @@ REFERENCE: COVERAGE.md, baseline/COVERAGE.md, memory/STATE.md
 | Vật phẩm đầy đủ | Hệ thống đã có trong luật |5 nhóm, bảng nguồn/drop/sink |Đi trọn vòng trong bản ghép |
 | Tầng độ hiếm | Trần một món 10,4575% |9,6306% hiển thị, 4 khung và 12 hình huyền thoại |Tác dụng thực chiến lớn ở một số ca |
 | Cân bằng tự động | Nhiều ô thắng 100% |26/48 bước tăng, 22 hòa, 0 giảm |Level 6 bão hòa, độ chênh set/mèo |
-| Gacha | Odds và pity đã có |13 test ceremony, 36 ảnh và 421 E2E đạt ở G |Bản ghép đạt8ca/24ảnh canvas/fairness,card/footer600px cần kiểm tra thêm |
+| Gacha | Odds và pity đã có |13 test ceremony;69b994eb có68ảnh,3D entrance và421E2E |1024resultbottom599,375px đạt;reviewvideo bản ghép đang chờ |
 | Giới hạn collectible | Thiết kế giới hạn đã có |25 test biên, 2 UI, 12 ảnh, 0 lỗi/network |Scope và walkthrough cuối |
 | Bản sắc có nghiên cứu |34 game được nghiên cứu trước |Tái dùng nghiên cứu, art procedural có provenance |Đánh giá hình ảnh ghép |
 
 Ảnh và dữ liệu nằm trong `layout/`, `sharpness/`, `motion/`, `effects/`, `flow/`, `meta/screens/`, `meta/gear/` và `items/screens/`.
 
 ## Cổng hiệu năng
-REFERENCE: flow/PERFORMANCE.md, meta/PERFORMANCE.md, integration/scope/proof.json
+REFERENCE: invitations/PERFORMANCE.md, invitations/recovery-verification.json, integration/scope-header/proof.json
 
 | Cổng | Mốc đo | Kết quả |
 | --- | --- | --- |
-| Cast MAX ≤50 ms, first/repeat |M 33,4/16,8 ms, 720 ca |Đạt ở M,bản ghép chờ |
-| Mở trang/MAX 4× ≤100 ms |M page 250,1 ms, cold 4× 233,3 ms |Chưa đạt |
+| Cast MAX ≤50 ms, first/repeat |G 33,4/16,8 ms, 720 ca |Đạt ở G; bản ghép chờ |
+| Mở trang/MAX 4× ≤100 ms |G page316,6ms; B1 exhaustive300msCPU4 |Chưa đạt |
 |≥99% frame ≤20 ms ở DPR 1/2 |Bản ghép chưa có bộ số liệu |Chờ |
 |4× p95 ≤33 ms |Bản ghép chưa có bộ số liệu |Chờ |
-|≤250 draw calls, ≤150k triangles |M 207/93.802 |Đạt ở M,bản ghép chờ |
-| Heap/GPU ổn định 20 trận |M có 20 ca điều hướng, bài đo 20 trận đang chờ |Chờ B |
-| Flag-off startup tách3D |Static closure 2.319.565 byte, 0 three/model module |Đạt graph A,browser chờ |
+|≤250 draw calls, ≤150k triangles |G 207/93.802 |Đạt ở G; bản ghép chờ |
+| Heap/GPU ổn định 20 trận |B1 +1.088.932byte; geometry/texture/program tăng0 |Đạt mốcB1với ngưỡng2MiB; bản ghép chờ |
+| Flag-off startup tách3D |Static closure2.319.608byte, 0three/modelmodule |Đạt graph ghép đếnE2; browser chờ |
 
-M giữ 265.761 frame, 4.989 frame >25 ms và 1.367 frame >50 ms từ mở trang. Cast >50 ms bằng 0. Mọi cổng ghép cuối phải gắn với đúng HTML/hash và dữ liệu thô.
+G giữ263.056frame từ720ca,4.640frame>25ms/1.330frame>50ms,0lỗi trang;cast>50ms bằng0. Năm profile và toàn bộ mảng raw đã được kiểm tra lại. G fresh unit có1timeout5s;filefocused11/11và421E2Eđạt,không gọi là fullsuite sạch. Header invitation CPU4 có MAX266,7ms trong bài kiểm tra chức năng;không thay thế ma trận hiệu năng riêng.
 
 ## Vật phẩm, cân bằng và lời mời
 REFERENCE: docs/design/cardrpg/ITEM-TIERS.md, items/ENCOUNTER-BALANCE.md, items/ENCOUNTERS.md, invitations/PLAN.md
@@ -88,7 +88,7 @@ B1 tại 7006f109/draft342 có 720 ca, 0 lỗi, cast MAX first/repeat 33,4/16,8 
 ## Các điểm còn thiếu và tự chấm
 REFERENCE: memory/STATE.md, COVERAGE.md, demo/PLAN.md
 
-Các cổng đang thiếu gồm khựng mở trang, 8 mục tiêu độ nét, dải kích thước nhân vật, tầng trang bị ở level 6, chênh lệch set/mèo, tác dụng thực chiến của một món, kiểm chứng bản ghép và video. Entrance3D đạt8ca/24ảnh trên bản riêng. Tab/checkbox lab đã sửa trong nguồn, 21ảnh lab đo tràn ngang0px. Nút ẩn điều khiển và card/footer600px đang kiểm tra bổ sung. Đã xem ảnh/filmstrip tuần tự qua4vai, ghi20điểm cần kiểm tra trong FRESH-EYES.md. Video12mèo, boss, ultimate và lượt chấm lại chờ bản ghép đủ hình ảnh.
+Các cổng còn thiếu gồm khựng mở trang100ms,8mục tiêu độ nét,dải kích thước nhân vật,tầng trang bị ởlevel6,chênh lệch set/mèo,tác dụng thực chiến của một món,và bằng chứng trên toàn bản ghép. Kết quả gacha hẹp và nút Feel lab che thẻ đã được sửa/kiểm chứng. Mochi có25svideo/50frame lấy đều toàn clip ởmốc trước. Đã xem tuần tự qua4vai và ghi20điểm trong FRESH-EYES.md;video12mèo,boss,ultimate cùng lượt chấm lại vẫn chờ bản ghép đủ hình ảnh. [F7 acceptance](integration/F7-GATES.md).
 
 11 mục tự chấm đang chờ review gồm hiệu ứng, độ nét, bố cục/góc mặt, nhịp/khựng, cảm giác chơi, sân trống, tự động hoàn toàn, phần ngoài trận, trang bị/cân bằng, gacha và giới hạn collectible. Mục tiêu là 8,5/10 mỗi mục. Bản báo cáo bàn giao sẽ ghi điểm thực tế và từng cổng thiếu.
 
