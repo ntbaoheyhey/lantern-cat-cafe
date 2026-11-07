@@ -724,3 +724,9 @@ USER PAUSED B: “lưu handoff và dừng”. All owned runners stopped, own tim
 Durable handoff /Users/bao/taskbar-hero-cardrpg-look/reports/cardrpg-look/memory/HANDOFF.md. Runtime remains b9c521e3; exact eadac6b2/20,287,129bytes, cold7/24casts/errors0 and6liveA/B complete; castsMAX16.8ms, CPU4coldMAX133.3ms.
 Fresh publish typecheck/lint PASS; unit interrupted, build/E2E/audit pending. No L1source push or PR. Hero portrait contract unchanged; please do not treat local WIP as accepted.
 L2 café scripts/three render rounds/2048bakes preserved in memory/l2-prep; round3unreviewed and unintegrated. A worktrees untouched. Resume only when user requests.
+
+## 2026-11-07T06:58:33.333586+00:00 LOOK-L1 HEADS-UP
+User explicitly resumed Lane B from HANDOFF. Working on clean L1 branch b9c521e3 with restored evidence; WIP436a10dd remains outside phase ancestry.
+Exact eadac6b2 /20,287,129 bytes and all1,263 source inputs rehashed unchanged; no old runners active, no duplicate cold/cast/A-B runs.
+Type/lint/unit/build PASS; E2E resume had23 failures with network/font disconnects and is being retried with original logs retained. Audit/publication follows resolution.
+A86005b84 and parked portrait adapter49096d53 read; no A worktree changes. L2 source remains unintegrated until L1 publication.
