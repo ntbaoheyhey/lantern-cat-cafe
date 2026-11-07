@@ -1,12 +1,12 @@
 # A4 living state
 ## NOW
-P6 immutable acceptance running on codex/cardrpg-a4-p6-2026-11-08 at56acf66a. Use /Users/bao/taskbar-hero-cardrpg-a4; environment Documents checkout is stale.
+P6 immutable acceptance running on codex/cardrpg-a4-p6-2026-11-08 (rules56acf66a / docsba4dfa2b). ACTUAL WORKDIR /Users/bao/taskbar-hero-cardrpg-a4; environment Documents checkout is stale. Read this file before any rediscovery.
 ## NEXT
-Reuse coordinator85496/window85506 and x1 coordinator85987. Train/heldout→45day economy→gacha→editions→OFF. Generate P6 numeric report, draft, ledger. P7 tools staged /tmp/cardrpg-a4-p7 only.
+Reuse original coordinator85496/window85506; train then heldout,45day economy,gacha,editions,OFF. Do not launch duplicate jobs. When series complete: a4-p6-report.mjs, node --test a4-p6-acceptance.test.mjs (retain MISS exit), a4-p6-summary.py, audit/publish P6 draft/ledger/sync. Then P7 claim/branch, adopt staged /tmp/cardrpg-a4-p7 scripts; source gates, one full204pack, journey, cold, guide, report and draft. No P7 browser execution yet.
 ## DONE
-P1–P5 drafts367/369/370/372/373. P6 source gates now pass: type/lint retry,1106rules/1735web/421E2E/build. Original failed type/lint logs retained; relocated numeric tests separate.
+P1–P5 drafts367/369/370/372/373. P6 five source gates accepted in validation/a4-p6-accepted.json:1106rules/1735web/421E2E/type/lint/build; originals retained. All5x1timing receipts complete:ordinary21.340s/elite33.785s/boss57.546s,64.807s,58.680s. Boss outcomes all enemy; timings are to crew defeat, not victorious finish.
 ## GATES
-3625cells×500seeds/sample registered. Train in progress; heldout not started. Pilot88ppoutlier/cat/set misses remain provisional. x1 timing pending; startup byte MISS. Full204pack unrun.
+3625cells×500seeds/sample registered; last saved train690220outcomes, heldout pending. Known pilot88ppoutlier/cat/set misses remain provisional. Artifact unchanged while samples run. P7 full204pack UNRUN; startup/current-main cold comparison pending. No B adoption or protected edits.
 ## DECISIONS (append-only)
 - Keep the one-agent constraint, automatic battles, strict A/B ownership, and isolated worktree.
 ## MEASUREMENTS
@@ -176,3 +176,13 @@ P1–P5 drafts367/369/370/372/373. P6 source gates now pass: type/lint retry,110
 ## P6 resumed source-gate audit
 - Recovered original85496 balance coordinator,85506 train window and85987 timing coordinator, no duplicates. Existing scope rules/ownership re-read. Type/lint retries completed; rules-relocation receipt1106passed/2expectedfail/11skips; original1735web/421E2E/build reused.
 - P7 staged scripts reviewed only; no runtime/heldout changes and no P7 phase adoption. Current-main snapshot already exists at /tmp/cardrpg-a4-current-main for later startup comparison.
+
+## 2026-11-07T19:26:57.545262+00:00 P6 recovery and P7 staging
+- Resumed original85496/85506 balance and85987 timing; no duplicate work. Ordinary21.3399s/elite33.7848s PASS; boss1 running next. Train crossed826complete cells; no heldout sampled. Runtime source remains immutable.
+- Re-read full v2/rules/outboxes/ownership and pulled clean sync. No B DONE/adoption instruction. Main archive340f88b9 has no cardrpg3offline artifact; compare default-production startup against /tmp/cardrpg-a4-main-dist separately from G0offline history.
+- P7 scripts remain STAGED ONLY under /tmp/cardrpg-a4-p7: existing playthrough/meta/designs/path/functional/guide-check/startup/cold; enriched build-guide.py with eight-set/item tables and routes; new guide-data.mjs, performance.mjs, performance-report.py, receipts.py, contact.py (names prefixed a4-p7- except build-guide.py). Syntax checks only, not executed/adopted.
+- Stage cold harness retains measurements when a shorter v4 battle ends before observation; no scene access crash or gameplay manipulation. P7 full204 pack remains unrun; no desktop, models, agents or dependency changes.
+
+## 2026-11-07T19:37:11.403178+00:00 P6 timing closure / recovery pointer
+- Recovered current lane A thread through app read tools, then reused85496/85506/85987. Thirdboss complete58.6801s/outcomeenemy, no boss death. Original timing coordinator will finish its final handoff. No simulations repeated or runtime edits.
+- Existing accepted source-gate manifest already committedba4dfa2b, do not regenerate or repeat source gates. P7 scripts remain staged only; full204notrun. Read sync through19:37UTC, BstillL5/noDONEadoption.
