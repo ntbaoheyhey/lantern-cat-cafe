@@ -1,8 +1,8 @@
 # A4 living state
 ## NOW
-R research committed and five gates PASS. D specification drafted/reviewed; no runtime edits. G0 long receipts continue from immutable snapshot. Branch codex/cardrpg-a4-r-2026-11-07.
+D specification committed3f2c7efe; D five gates PASS. R draft365. No runtime changes yet; P1 code staged outside checkout until this boundary. G0 economy continues from immutable snapshot.
 ## NEXT
-Publish R draft, commit reviewed D specification, run D gates, then implement P1 behind gameplayV4. Continue G0 frozen-source closure/session37631; no screen research.
+Publish D draft, CLAIM P1 then implement crew/formation/plans plus ON-only resource removal and THC8 extension. Retain G0 coordinator89663; no screen research.
 ## DONE
 Prompt preserved verbatim before A4 work. No gameplay edits yet. Disk 296 GiB available. Existing B L3 DONE read; no adoption planned during G0.
 ## GATES
@@ -63,3 +63,12 @@ G0 source gates PASS (typecheck, lint, build, 1735 web, 1020 rules, 421 E2E); ba
 -46 new source records,9 new game rows (43total),6 core papers+3 talk abstracts. Two additional specialist text sources and Dislyte reopen strengthen slots/sets; no screen. Current external caps/binding/ceremony gaps remain explicit.
 - R five gates PASS: type/lint/build,1735web/1020rules (+2expectedfail/11skip),421E2E. Only docs/tooling changed; historical13sim hashes and untouched179rules bytes preserved.
 - D draft includes every system/item table, actual drop odds, numeric acceptance protocol, THC8 migration, fixed-delay automatic ultimates, local ledger limits and4 sequential reviewer hats. B-owned Battle.tsx still shows charge; request needed at P1 contract boundary.
+
+## R published / D boundary
+- R draft365 https://github.com/ntbaoheyhey/taskbar-hero/pull/365 at63f518c1, stacked364. Five research phase gates PASS.
+- Reconfirmed native tools, no Docker; no screen/desktop control. Background text research and headless local acceptance only.
+- OFF behavior and saturation receipts complete against frozen source; economy coordinator89663 remains responsible for closure.
+
+## D five-gate checkpoint
+- Type/lint/build PASS;1735 web/1020 rules (+2 expectedfail/11skip)/421 E2E PASS. Source still byte-identical to179-file G0 snapshot; off digest47477251b3d20ab602bee5c55a56cdd661e111b1386e298e0c9bc67737fecfa3.
+- D design3f2c7efe includes4 sequential reviewer roles; no runtime code yet. P1 staging at /tmp/cardrpg-a4-p1 is incomplete and NOT applied/tested.
