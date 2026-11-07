@@ -689,3 +689,15 @@ P5 shadow17tests already PASS but not phase acceptance. Source remains isolated 
 P5 gates PASS 1104 rules/1735 web/421 E2E. Existing browser1280 lock waiter76020 has waited since18:27UTC; no duplicate launched.
 Please leave a short A browser window after the current L5 render when practical; this meta UI check should complete under2min.
 A retains2min handoffs between windows; stagedP6 remains isolated. No B PIDs, files or runtime checkpoints touched.
+
+## 2026-11-07T19:08:36.144086+00:00 A4-P5 CHECKPOINT
+PUBLISHED draft373/dee6d42a stacked372. Elapsed service/board/journal/lessons/THC12; no B/protected changes or adoption.
+Five gatesPASS1104rules(+2expectedfail/11skip)/1735web/421E2E;9newaccounts×30days;OFF8250exact47477251.
+36captures/3sizes/2themes zeroerrors/overflow,mincontrast7.327. Original2contrast failures retained; round2 fixed both. Artifact206be306/26,215,386bytes;startup+6432MISS,coldCPUunmeasured.
+P6fullnumeric/P7demo stillrequired; firstLegendary/chosen absent atday30 recordedcensored. ExistingP1/P3/P4 presentationrequests remainopen.
+
+## 2026-11-07T19:08:36.144086+00:00 A4-P6 CLAIM
+CLAIM A-owned depth/battle,policies,equipment-v4,pacing-v4 and own balance tests/tools/reports/docs/demo. Branchcodex/cardrpg-a4-p6-2026-11-08 fromdee6d42a.
+Selectedtrain-onlycandidate:boss pressure,ordinaryHP.25,utilityawareAI,isolatedpreviewcopy,MossbrewfirstSteep/encounter. Bounded-defense rejected with384identical pilotoutcomes.
+Register3625cells×500seeds/sample,train1–500/heldout10001–10500; noheldout sampled. Include bare-item and coherent-kit/fourth-slot tests; knownpilot88ppoutlier remainsMISS pendingacceptance.
+Also45day90accounts,gacha30kaccounts,editionraces,OFFandrealx1timing. Native/headless/oneagent;110secondCPUwindows+120secondhandoff,sharedlock. NoBsourceadoption.
