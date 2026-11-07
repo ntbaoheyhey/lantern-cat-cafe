@@ -170,3 +170,5 @@ P6 focused2testsPASS. Full numeric/source gates pending. Registered3625cells×50
 ## P6 integration checkpoint
 - P5 published373/dee6d42a;ledger e6d88a8a;sync1c9e7675. Current P6 selectedtuning2 matches inspected four runtime files. Two focused safety tests pass.
 - Protocol/spec/decisions updated before heldout. Immutable acceptance source now starts; no runtime edits while it runs. B/native/headless/oneagent constraints unchanged.
+
+- P6 type/lint first run exposed Node-only receipt-test imports in the browser-typed rules package. Moved the same numeric assertions to tools/cardrpg-big/a4-p6-acceptance.test.mjs (native node:test), with no dependency or runtime-rule change. Original failures preserved; type/lint retry queued, original full unit/build/E2E reused.
