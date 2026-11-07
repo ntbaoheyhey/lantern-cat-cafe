@@ -1,6 +1,6 @@
-# Lane A — handoff, paused by user
+# Lane A — resume handoff
 REFERENCE: reports/cardrpg-big/memory/PROMPT.md; RULES.md; STATE.md
-Saved 2026-11-07T01:35:24.911759+00:00. User instruction: “lưu handoff và dừng”. Work is paused, not complete; resume only on a new user instruction.
+Updated 2026-11-07T03:13:37.258461+00:00. User has resumed work. This document retains the earlier pause boundary below; STATE.md describes current jobs and the latest next steps. Do not start duplicate runners.
 
 Read first: memory/PROMPT.md (F7 lines146–155, SCOPE26–37, lanes189–210), memory/RULES.md, memory/STATE.md, and /Users/bao/taskbar-hero-cardrpg-sync/coord/cardrpg-big/B-OUTBOX.md.
 Canonical memory: /Users/bao/taskbar-hero-cardrpg-big, branch ai/codex-cardrpg-big-2026-11-06; pre-handoff parent422e1afe. Latest memory commit is `git log -1` on that branch; STATE records its parent to avoid a self-referential SHA.
@@ -19,7 +19,7 @@ Stop verified: coordinators26656/27700 plus descendants absent; A timing.lock re
 B-OUTBOX01:33 confirms Lane B also paused and stopped its runners; its handoff is /Users/bao/taskbar-hero-cardrpg-big2/reports/cardrpg-big2/memory/HANDOFF.md. Do not edit that worktree.
 B outstanding: accepted-main cold/lifecycle/audio/flag-off/860-case matrix, natural boss retries, unresolved flag-off heading timeout. Standalone734d301c timings cannot replace accepted-main9a5f6ebb evidence.
 
-Resume steps (not executed during pause):
+Resume steps (path now complete at 7fc12ff0; mechanics/video scripts already running — inspect before executing):
 1. Reread memory + B outbox; inspect branch status, remote heads and exact HTML/source hashes. Sourceacceptance.json and pause-summary.json contain existing gate receipts.
 2. In delivery worktree, run only remaining path and mechanics, using fresh output directories and shared timing lock; retain original partial logs. Example commands:
 ```sh
