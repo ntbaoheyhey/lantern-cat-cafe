@@ -1,8 +1,8 @@
 # LOOK state
 ## NOW
-L2 published 1000c0cb/draft362; exact dac82f01/22,290,293 bytes. Audit1,280inputs,421E2E,24castsMAX16.8ms. Cold CPU4MAX166.6ms remains MISS. A announced accepted 0eb729b5 after L2 gates/publication began; integration due at L3 boundary.
+L3 audited: source71da901f on acceptedA4d525a8a; exact02ffd9cb/22,578,111bytes; all1301inputs verified. Fivegates421E2E/1740web pass;9camera/6battleAB/36face/6cancel pass. Cold7nativeMAX33.4/CPU4MAX133.3ms;24castsMAX16.8/100%≤20/errors0. Startup11JS/3,522,544bytes/686modules/0Three-model; strictparity+44 MISS. Coordinator46983 completed; no duplicatechecks.
 ## NEXT
-L3 branch/claim: apply and review allocation/post drafts, reconcile newest A checkpoint, test three visual rounds and source gates. No final matrix yet. L1 draft361 remains unchanged.
+L3 published9b1a04a4/draft363; ownL1/L2refs atomically reconciled914a991f/82cf6d5c with explicit leases. CurrentL4branch from9b1a04a4; originalflipbook/capture scripts promoted; runtime material/depthpass draft typechecks but no atlasrender/build/acceptance yet. Oneauthor coordinator57138/session14944, log/tmp/cardrpg-look-l4-author.log: before31captures→216Blenderframes→pack. LatestA13:44 noacceptedcheckpoint beyond4d525a8a. L4 scratch only, no runtime/assetsaccepted. RemainingL4→L6→L5→L7 and finalmatrix/lifecycle/CPU4BalancedLow open.
 
 ## DONE
 Read exact user brief twice, old B HANDOFF, both outboxes; verified remote delivery tip and full worktree created.
@@ -68,3 +68,11 @@ L0 five source gates421E2E + flagoff PASS; baseline244/cold7/24casts complete. L
 - 2026-11-07T13:11:23.487176+00:00 L2 complete audit:1,280source hashes; nativehub.908–.948s/battle6.497–6.623s,CPU4hub1.733–1.843s/battle8.631–9.125s. All24casts16.8MAX/100%≤20/errors0. Complete cold7MAX166.6, preserved interrupted333.3/250.0andthirdtimeout; imageBitmap matches18PNGs. L3 drafts remain unintegrated; source tipcea0a9df.
 
 - 2026-11-07T13:14:37.865401+00:00 L2 draft362 published1000c0cb. Read A3-T1 accepted0eb729b5 and task2 shell width request864/1096/1256. L3 will incorporate upstream with fresh validation; old L2 receipts remain exact original source.
+
+- L3 pilot unit5pass (loading and quality/cancellation). High+Balanced browser tier switching123textures/552geometries/52programs unchanged after warming. Actual low/remaining ablations pending. Round1 flaws/rejected screenshots durable under rounds/post/runtime-1.
+
+- 2026-11-07T13:31:57.344016+00:00 L3 continuation: prompt/rules/Aoutbox reread; no live oldB runs. Source types PASS. Harness correctly excludes only Sprite shared geometry; contactTexture added to owned-resource set. Six cancels release0/21/167/0/186/294 resources. Round2 fixes3contact/ramp/relativefocus now in third pilot; no new timing claims. A accepted4d525a8a fetched, pending rebase.
+
+- 2026-11-07T13:48Z continuation: actual1280 integrated battle and three post tiers viewed; nav/HUD/control clarity retained, weak Soot contrast/mirrored props/inherited VFX still recorded. Fresh36face masks0offenders and6cancelsallresourcesreleased. Unit1740web; no source changes since build. L4preparation only, no asset renders/modelrequests.
+
+- 2026-11-07T14:02:33.458295+00:00 L3 phase audit complete:1301inputs, allfreshfivegates/9camera/6AB/36faces/6cancels/7cold/24casts. Startup correction3,522,544/+44, nothistoricalL2+4. Nativecold33.4/CPU4 133.3; slow1440DPR2battle-ready7719ms retained. A13:44requestread; noacceptedtipbeyond4d525a8a.
