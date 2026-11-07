@@ -18,7 +18,15 @@ function createPiece(item:VisualItem,role:string,atelier=false):Piece{
  const ring=(c:string,pos:number[],r:number,t=.025,rot=[0,0,0])=>add(new T.TorusGeometry(r,t,6,24),c,pos,[1,1,1],rot);
  const leaf=(c:string,pos:number[],size:number,angle=0)=>{const sh=new T.Shape();sh.moveTo(0,-size*.4);sh.bezierCurveTo(-size*.6,0,-size*.25,size*.5,0,size*.7);sh.bezierCurveTo(size*.25,size*.5,size*.6,0,0,-size*.4);add(new T.ExtrudeGeometry(sh,{depth:.025,bevelEnabled:true,bevelSize:.012,bevelThickness:.01,bevelSegments:2,steps:1,curveSegments:8}),c,pos,[1,1,1],[0,0,angle])};
  const star=(c:string,pos:number[],r=.15)=>{const s=new T.Shape();for(let i=0;i<10;i++){const a=i*Math.PI/5+Math.PI/2,rr=i%2?r*.45:r;const x=Math.cos(a)*rr,y=Math.sin(a)*rr;i?s.lineTo(x,y):s.moveTo(x,y)}s.closePath();add(new T.ExtrudeGeometry(s,{depth:.04,bevelEnabled:true,bevelSize:.008,bevelThickness:.008,bevelSegments:2,steps:1}),c,pos)};
- if(atelier && item.slot==='outfit'){
+ if(atelier && item.slot==='weapon'){
+  // The sculpt already carries its utensil. A fitted wrist seal carries the
+  // equipped item's colour and rarity without a second prop beside the paw.
+  ball(color,[0,0,0],[.052,.061,.018]);
+  ring(gold,[0,0,.015],.044,.007);
+  if(item.visual%2)leaf(accent,[0,-.01,.03],.048,-.3);
+  else star(accent,[0,0,.03],.028);
+  group.position.set(0,-.16,.115);group.userData.cardDesign=item.cardDesign;
+ }else if(atelier && item.slot==='outfit'){
   // Equipment becomes a fitted enamel brooch, leaving the authored cloth visible.
   // The visual/rarity identity remains on the actor; inventory and rules are untouched.
   ball(color,[0,0,0],[.064,.074,.018]);
@@ -169,8 +177,8 @@ export class GearAttachments{
    this.model.traverse(o=>{if(o.name.includes('armR_flask'))o.visible=false});
   }
   for(const [slot,value] of Object.entries(appearance??actor.equipment)){const item=typeof value==='string'?ITEM_BY_ID[value]:value;const id=item?.id;if(!item)continue;const p=this.resources.acquire(item,this.role,atelier);const socket=slot==='weapon'?'mainHand':slot==='charm'?'neck':slot==='relic'?'tail':'back';
-   if(atelier && slot==='weapon'){p.group.scale.multiplyScalar(.28);p.group.position.add(new T.Vector3(.13,-.12,.12));}
-   const parent=this.model.getObjectByName(slot==='outfit'?`${this.role}_body`:`${this.role}_socket_${socket}`)??this.model;parent.add(p.group);this.pieces.push(p);
+   const parentName=atelier&&slot==='weapon'?`${this.role}_armR`:slot==='outfit'?`${this.role}_body`:`${this.role}_socket_${socket}`;
+   const parent=this.model.getObjectByName(parentName)??this.model;parent.add(p.group);this.pieces.push(p);
    if(slot==='outfit'){
     // Tint the original garment consistently while preserving fur/face vertex color.
     const cloak=this.model.getObjectByName(`${this.role}_hat`);if(cloak)cloak.userData.outfitId=id;

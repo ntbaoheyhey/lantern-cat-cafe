@@ -27,16 +27,7 @@ for(const key of ['prohibitedModules','modelRequests','errors'])assert.deepEqual
 const modules=data=>[...new Set(data.chunks.flatMap(c=>c.modules))].sort();
 assert.deepEqual(modules(flag),modules(old));
 const startup={scripts:flag.chunks.length,bytes:flag.chunks.reduce((s,c)=>s+c.bytes,0),modules:modules(flag).length,threeAndModelModules:0};
-assert.equal(startup.scripts,old.chunks.length);
-startup.baselineBytes=old.chunks.reduce((s,c)=>s+c.bytes,0);
-startup.byteDelta=startup.bytes-startup.baselineBytes;
-startup.strictByteEquality=startup.byteDelta===0;
-if(!startup.strictByteEquality){
- const diff=await json(`${dir}/flag-off/startup-diff.json`);
- assert.equal(diff.beforeBytes,startup.baselineBytes);assert.equal(diff.afterBytes,startup.bytes);
- assert(diff.rows.every(row=>row.moduleSetEqual&&(row.identicalAfterChunkHashNormalization||(row.onlyDormantPreloadMetadataChanged&&row.defaultPreloadEqual))));
- startup.deltaEvidence=`${dir}/flag-off/startup-diff.json`;
-}
+assert.equal(startup.scripts,old.chunks.length);assert.equal(startup.bytes,old.chunks.reduce((s,c)=>s+c.bytes,0));
 const heroes=[];
 for(const id of ['mochi','soot','clover']){
  const model=`assets/cardrpg-look/models/${id}.glb`,modelHash=hash(await readFile(model));
@@ -46,6 +37,6 @@ for(const id of ['mochi','soot','clover']){
  heroes.push({id,triangles:author.triangles,drawMeshes:author.drawMeshes,modelSha256:modelHash,portrait,turntable});
 }
 const protectedChanges=execFileSync('git',['diff','--name-only','86005b84','HEAD','--','packages/game-rules','contracts','supabase','package.json','pnpm-lock.yaml'],{encoding:'utf8'}).trim();assert.equal(protectedChanges,'');
-const receipt={at:new Date().toISOString(),source:build.head,artifactSha256:sha256,bytes:bytes.length,verifiedInputs:Object.keys(build.sourceHashes).length,receipts,gates,performance,startup,heroes,protectedChanges:[],limitations:[...(!startup.strictByteEquality?['Strict default startup byte parity misses by '+startup.byteDelta+' bytes; loaded module graph unchanged.']:[]),'Sampled motion review is separate from exhaustive collision proof.','Stage, post, remaining units and VFX remain inherited at L1.','Final lifecycle/throttle/matrix gates remain unrun.']};
+const receipt={at:new Date().toISOString(),source:build.head,artifactSha256:sha256,bytes:bytes.length,verifiedInputs:Object.keys(build.sourceHashes).length,receipts,gates,performance,startup,heroes,protectedChanges:[],limitations:['Sampled motion review is separate from exhaustive collision proof.','Stage, post, remaining units and VFX remain inherited at L1.','Final lifecycle/throttle/matrix gates remain unrun.']};
 await writeFile(`${dir}/checkpoint-audit.json`,JSON.stringify(receipt,null,2)+'\n');
 console.log(JSON.stringify({sha256,bytes:bytes.length,verifiedInputs:receipt.verifiedInputs,startup}));
