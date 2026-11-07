@@ -1,12 +1,12 @@
 # A4 living state
 ## NOW
-P5 verified on codex/cardrpg-a4-p5-2026-11-08. Original coordinator completed all five steps; no duplicate jobs. Publication pending immediately below.
+P6 integrated on codex/cardrpg-a4-p6-2026-11-08 fromdee6d42a. P5 draft373,ledger e6d88a8a,sync1c9e7675. No B adoption.
 ## NEXT
-Publish P5 draft stacked372, mirror ledger, CLAIM P6. Integrate selected tuning2 and run source-bound train/heldout, economy, gacha, editions, OFF, five gates and real x1 timing. P7 follows.
+Run existing P6 registered acceptance and five gates on immutable source, then real x1 captures, numeric report/ITEM-TIERS/BALANCE/draft. P7 staged tools remain /tmp/cardrpg-a4-p7.
 ## DONE
-P1/P2/P3/P4 drafts367/369/370/372. P5 nine new accounts×30days,36captures/3sizes/2themes minimumcontrast7.327; OFF8250exact47477251.
+P1–P5 drafts367/369/370/372/373. P5 36capturesmincontrast7.327;9accounts×30days;OFF8250exact47477251;1104rules/1735web/421E2E allPASS.
 ## GATES
-P5 type/lint/build/1104rules(+2expectedfail/11skip)/1735web/421E2E PASS. Two contrast fixes verified. Startup bytes MISS; CPU not measured. P6 known training residuals remain unaccepted; no heldout sampled.
+P6 focused2testsPASS. Full numeric/source gates pending. Registered3625cells×500seeds/sample; no heldout sampled yet. Pilot88ppoutlier and cat/set misses retained. Startup bytes MISS; CPU unmeasured.
 ## DECISIONS (append-only)
 - Keep the one-agent constraint, automatic battles, strict A/B ownership, and isolated worktree.
 ## MEASUREMENTS
@@ -166,3 +166,7 @@ P5 type/lint/build/1104rules(+2expectedfail/11skip)/1735web/421E2E PASS. Two con
 - Original79394 completed1280/progression/OFF/1440/1024. Source hashes verified; no repeat of passed gates. Personally reviewed1440cafe/1024journal.
 - Acceptance artifact206be306a39b7d3623c5f307167a64f91e0353d2f1d2b685111f21ae1b4ed3d8 /26,215,386bytes;36captures mincontrast7.326961;8250OFFroutes exact. Failed first/retry1 browser logs retained.
 - P6 selected candidate is tuning2; bounded-defense rejected with384identical outcome digests. Train-only pilots, no heldout contamination. Full204 remains unrun.
+
+## P6 integration checkpoint
+- P5 published373/dee6d42a;ledger e6d88a8a;sync1c9e7675. Current P6 selectedtuning2 matches inspected four runtime files. Two focused safety tests pass.
+- Protocol/spec/decisions updated before heldout. Immutable acceptance source now starts; no runtime edits while it runs. B/native/headless/oneagent constraints unchanged.

@@ -83,7 +83,7 @@ Rarity adds 0/1/2/3 selected-role affixes; Legendary adds one bounded unique beh
 |---|---|---|---|
 | Hearthloom | Defend adds12 shield | Defend links a weak ally, at15% shared damage | Front slams; weak against damage over time |
 | Moonwick | +3 marked-target direct damage | First marked hit each round heals user6 | Single marked leader; poor unmarked swarm |
-| Mossbrew | Healing cleanses one debuff once per own turn | Applying Steep grants one Cozy, once per turn | Attrition; slower burst |
+| Mossbrew | Healing cleanses one debuff once per own turn | First Steep application per encounter grants one Cozy (P6 training revision) | Attrition; slower burst |
 | Rainlace | Row swap shields both cats12 | Rear cats heal6/round | Row threats; less front offense |
 | Crumbweave | Every third attack plants one Crumb | Detonation shields user8, once per turn | Stored damage; weak without setup |
 | Bellsteel | Riposte adds3 damage | Defend adds one Riposte and Shelter | Repeated direct hits; weak versus scald |
@@ -163,7 +163,7 @@ New-save→day30 run-bot exercises real commands, no unlock/grant cheats, includ
 
 Ordinary15–30 s, elite25–45 s, bosses45–90 s at x1 in the actual build, all3 chapters. G0 boss177.346 s and ordinary52.477–63.705 s are measured examples to improve. First target action budgets: ordinary10–18 total actions, elite18–28, boss30–48; these are provisional until renderer timing is measured. Tune actual HP/attack/phase scaling and number of surviving enemies; do not merely accelerate nominal x1 playback.
 
-P3 training correction: utility enemies refill/brace on the existing third-round signature cadence and use basic pressure between; Prepare discloses this. HP multipliers before level growth are regular .23, elite .30, boss .30 (Pantry .25), subject to measured acceptance.
+P3 training correction (historical; P6 revision below): utility enemies refill/brace on the existing third-round signature cadence and use basic pressure between; Prepare discloses this. HP multipliers before level growth are regular .23, elite .30, boss .30 (Pantry .25), subject to measured acceptance.
 
 Bosses have opening and closing phases, triggered immediately when crossing50% HP, once only. Closing phase changes the next signature's target pattern using existing enemy identities. Defeating the primary boss retires its linked adds immediately and emits one finishing event; no adds-only cleanup actions or post-victory damage. Simultaneous defeat resolves party loss consistently; fatal damage/retirement/replay order is tested. Never fabricate a wall-time PASS from turn count.
 
@@ -193,3 +193,9 @@ Intended challenge rating is explicit and based on chosen content band/character
 | Startup/artifact |No startup byte or coldCPU increase over current main; baseline-v1 exact |Report inherited/current misses; main≤32MB exception disclosed |
 
 Numeric gates become rule-test/simulation assertions that load real receipts, not hard-coded desired outcomes. Functional unit tests cover invalid/atomic transitions, RNG determinism and adversarial replay. Long simulations and headless timing use the shared lock, short windows and handoff; one agent, no model calls. A full204-image pack is reserved for the last artifact only; respect the user's no-screen research steering. Every missed or unmeasured gate is listed in A4-GAMEPLAY-REPORT.md. Each phase has a draft PR stacked on the prior one; nothing is merged or deployed.
+
+## P6 registered training revision — 2026-11-08
+
+Before heldout sampling, select the tuning2 candidate: ordinary HP .25 (previous .23), unchanged elite/boss HP, and gear-independent boss attack pressure multipliers3.1/1.9/2.3 by chapter, multiplied1.15 at band6+. The one-action automatic policy values Glaze, exposed Riposte, Tangle and signature suppression; it does not add manual combat input. Preview actor copies isolate mutable lists/maps. Mossbrew four-piece Cozy triggers on the first Steep application per encounter. Its visible description follows the same rule.
+
+Training still contains a coherent-kit fourth-slot outlier of88pp and cat/set misses. These changes are provisional, not an acceptance claim. The extra bounded-defense alternative yielded384 identical outcome digests and was rejected. Full registered acceptance includes3625cells×500seeds for each sample, including384coherent-kit/fourth-slot cells alongside2304bare-item cells. Display shares at+12 are measured separately; combat pairs use+0 and do not prove max-enhancement combat balance. Registration: reports/cardrpg-big/a4/p6/REGISTERED-METHOD.md.

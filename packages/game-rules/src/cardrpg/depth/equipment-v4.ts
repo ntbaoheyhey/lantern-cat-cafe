@@ -10,7 +10,7 @@ export const RARITY_MULTIPLIERS_V4 = { common:1, rare:1.25, epic:1.5, legendary:
 export const SET_TEXT_V4: Record<string, {two:string;four:string}> = {
  hearthloom:{two:'Defend adds 12 shield.',four:'Defend links a weak ally; 15% of HP damage is shared.'},
  moonwick:{two:'Direct hits on marked foes add 3 raw damage.',four:'Your first marked hit each round restores 6 missing HP.'},
- mossbrew:{two:'Healing cleanses one debuff once per own turn.',four:'Applying Steep adds one Cozy once per own turn.'},
+ mossbrew:{two:'Healing cleanses one debuff once per own turn.',four:'Your first Steep application each encounter adds one Cozy.'},
  rainlace:{two:'Row swaps grant both cats 12 shield.',four:'Rear cats restore 6 missing HP per round.'},
  crumbweave:{two:'Every third attack plants one Crumb.',four:'Detonation grants 8 shield once per own turn.'},
  bellsteel:{two:'Riposte deals 3 extra damage.',four:'Defend grants one Riposte and Shelter.'},

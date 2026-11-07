@@ -53,7 +53,7 @@ export function applyStatus(b: Battle, source: Actor, target: Actor, id: StatusI
   if (control) target.bonuses.controlImmuneUntil = b.round + 1;
   record(b, source, target, 'status', status.stacks, rule.name);
   if (source.side === 'party') {
-    if (id === 'steep' && hasEffect(source,'steep-cozy')&&(!b.v4||source.bonuses.steepTurn!==source.turns)){if(b.v4)source.bonuses.steepTurn=source.turns;applyStatus(b,source,target,'cozy');}
+    if (id === 'steep' && hasEffect(source,'steep-cozy')&&(!b.v4||!source.bonuses.steepCozyUsed)){if(b.v4)source.bonuses.steepCozyUsed=1;applyStatus(b,source,target,'cozy');}
     if(id==='scald'&&(!b.v4||source.bonuses.wickRound!==b.round)){if(b.v4)source.bonuses.wickRound=b.round;if(hasEffect(source,'unique:warmwick'))gearGrant(b,source,source,'unique:warmwick','heal',b.v4?4:6);if(b.v4&&hasEffect(source,'scald-charge'))gearGrant(b,source,source,'scald-charge','heal',6);}
     if (id === 'scald' && boonValue(b,'scaldBrittle')) applyStatus(b,source,target,'brittle');
     if (id === 'scald' && boonValue(b,'scaldCrumb')) applyStatus(b,source,target,'crumb');

@@ -3,10 +3,11 @@ import { Rng, deriveSeed } from '../../rng';
 import { act, currentActor, enemyAct, legalChoices, skillById, stacks } from './battle';
 import type { Actor, Battle, Choice } from './contract';
 import { planPreference } from './gameplay-v4';
+import { ENEMY_BY_ID } from './catalog';
 export type Policy = 'random' | 'auto' | 'greedy' | 'smart';
 
 function previewCopy(b: Battle): Battle {
-  return {...b,...(b.v4?{v4:{...b.v4,plan:{...b.v4.plan},events:[]}}:{}),procRounds:{...b.procRounds},actors:clone(b.actors),queue:[...b.queue],acted:[...b.acted],intents:clone(b.intents),log:[],choices:[]};
+  return {...b,...(b.v4?{v4:{...b.v4,plan:{...b.v4.plan},events:[]}}:{}),procRounds:{...b.procRounds},actors:b.v4?b.actors.map(a=>({...a,statuses:a.statuses.map(s=>({...s})),cooldowns:{...a.cooldowns},skills:[...a.skills],equipment:[...a.equipment],setEffects:[...a.setEffects],bonuses:{...a.bonuses}})):clone(b.actors),queue:[...b.queue],acted:[...b.acted],intents:clone(b.intents),log:[],choices:[]};
 }
 function actorValue(a: Actor): number {
   if(a.hp<=0)return a.side === 'party' ? -300 : -35;
@@ -15,10 +16,26 @@ function actorValue(a: Actor): number {
   const harmful=stacks(a,'scald')*27+stacks(a,'crumb')*13+stacks(a,'rattled')*14+stacks(a,'hush')*12;
   return health + Math.min(a.shield,a.maxHp*.35)*.45 + beneficial - harmful;
 }
+/** Bounded one-turn utility: value the prevention already present on an actor. */
+function valueV4(b: Battle, a: Actor): number {
+  let n=actorValue(a);
+  if(a.hp<=0)return n;
+  if(a.side==='party') {
+    const exposed=a.row==='front'||!b.actors.some(x=>x.side==='party'&&x.hp>0&&x.row==='front');
+    n+=stacks(a,'glaze')*9+stacks(a,'riposte')*(exposed?14:5);
+    // Shelter/link redirect damage rather than deleting it; do not count a free heal.
+  } else {
+    const intent=b.intents.find(i=>i.actorId===a.id);
+    n-=stacks(a,'tangle')*a.attack*.04;
+    if(intent?.signature&&stacks(a,'drowsy'))n-=a.attack*.5;
+    if(intent?.signature&&stacks(a,'hush')&&['heal','shield','summon','bind'].includes(ENEMY_BY_ID[a.catalogId]?.mechanic??''))n-=24;
+  }
+  return n;
+}
 function value(b: Battle): number {
-  const party=b.actors.filter(a=>a.side==='party').reduce((n,a)=>n+actorValue(a),0);
+  const party=b.actors.filter(a=>a.side==='party').reduce((n,a)=>n+(b.v4?valueV4(b,a):actorValue(a)),0);
   if (b.result) return b.result === 'party' ? 100000 + party * 2 - b.round * 40 - b.choices.length * 3 : -100000;
-  const foes=b.actors.filter(a=>a.side==='enemy').reduce((n,a)=>n+actorValue(a)*(a.catalogId === 'binding-thread' ? .2 : 1),0);
+  const foes=b.actors.filter(a=>a.side==='enemy').reduce((n,a)=>n+(b.v4?valueV4(b,a):actorValue(a))*(a.catalogId === 'binding-thread' ? .2 : 1),0);
   const pressure=b.actors.filter(a=>a.side==='enemy'&&a.hp>0).reduce((n,a)=>{
     const intent=b.intents.find(i=>i.actorId===a.id);
     return n+a.break*(intent?.signature?12:5)+(intent?.interrupted?35:0);
