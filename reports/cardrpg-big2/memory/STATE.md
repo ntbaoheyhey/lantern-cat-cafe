@@ -2,15 +2,15 @@
 PROMPT bytes=17237; SHA256=ed11ec911a0f53018e557a6b65d76f4b17189495a16f40dfa06333abe5c93e07
 REFERENCE: reports/cardrpg-big2/memory/PROMPT.md
 ## NOW
-Current b6-polish772093a1. Accepted review HTML734d301c/22,446,426bytes includes93evidenceitems. Pinned sourcec29564f6; review runner6992 active, no duplicate browser job.
-E3focusedretryPASS; E3a3235705/E4bc5f31f4/bossc5095a2e push8873 active. Draft creation follows remote verification. All25units/86actions have rendered batch evidence.
-Current sixchecksPASS: type/demo-types/lint/build, fullrootunit1702web/935rules(+2expectedfails11skips),421E2E. Completeunitrerun usesVITEST_MAX_WORKERS=2, source/timeoutsunchanged; twoinitialtimeoutlogsretained. Studio258actions/3sizes/0errors-requestsPASS. Functionalpipelinecontinues.
-Focus rendered3sizesPASS with actualdraw/pixel/resize assertions; blank images were an immediate-capture race. Showcontrols hover contrast fixed. Six actual-source audio runs16.8msMAX are retained.
-Seven phase artifacts rebuilt fromexactsource with newHTMLhashes; audit app/rules/assets0mismatches. OriginalHTMLidentity notclaimed. B2a restoredexactly with45completedcases/3configurations.
+Validated source b6bab0b4 (runtime matches pinned c29564f6); review HTML 734d301c, 22,446,426 bytes, 93 evidence items.
+E3 a3235705 / E4 bc5f31f4 / boss c5095a2e verified on origin; drafts #354 / #355 / #356. Wrapper b6bab0b4 verified on origin, draft #357 on #356; all source uploads complete.
+Source typecheck/demo-types/lint/build, 1,702 web / 935 rules (+2 expected failures,11 skips),421 E2E PASS. Complete capped-worker unit retry is in validation/review-source-acceptance.json; original failed attempts remain.
+Review runner PID6992: studio258 actions/3sizes, Focus actualpixels, packedRGBA, loading, stage-life, mechanics, audio PASS. Current89 PCM scores/playback MAX16.8ms. Six current fresh-browser startups PASS MAX16.8ms, enable215.0–351.7ms. Hitstop, cold, lifecycle, navigation, flow, videos and flagoff continue sequentially.
+Scoped710-case queue PID14542 waits /tmp/cardrpg-big2-review-functional-release. Producer is manual after review acceptance: runner's original source-step failure remains even though separate source acceptance passes. Preserve failure, bind acceptance; do not rerun passed checks unnecessarily.
 ## NEXT
-1. Complete currentreview gates/functionality; publish E3/E4/boss, then sourcewrapper checkpoint perA23:57request. No integratedrebasecheckpoint yet.
-2. Resume scoped710case matrix using originalB2a and newlyidentified otherphase artifacts; final860cases use acceptedreview/integratedartifact. Never blend oldcoldhashes with newmatrixhashes.
-3. Review x1cat/boss videos, update report/selfgrades/ledger, publish remaining evidence. Reconcile/revalidate after A integratedCHECKPOINT. ReadRules/phase/Aoutbox at boundaries.
+1. Source handoff published/announced (draft #357). A's unaccepted candidate adopts b6bab0b4 per00:57 CLAIM; no integrated rebase checkpoint yet. Complete current functional evidence.
+2. Finish functional runner; inspect failures, raw metrics and x1 videos; reconcile separate source acceptance, then release scoped queue. Final860-case matrix must use accepted current/integrated artifact, not superseded bytes.
+3. Publish own report/STATE to ledger, update self-grades with viewed evidence, retain every missed gate. Reconcile/revalidate after A integrated CHECKPOINT. Read RULES/phase/A-OUTBOX at boundaries.
 ## DONE
 Verified remote #340;created own worktree;exact prompt saved.
 ## GATES
@@ -112,3 +112,7 @@ B1published342(partialopening);B2apublished343(improved);B2b/c,B3,B4,B5,enemies,
 - Viewed focus screenshots directly and found blankstage. New diagnostic on identical3d96db56 proves screenshot race: immediate backing250px versusCSS451px, aftertwoRAF451px/196draws/75000tris, stablethrough1300ms. Renderer works. Showcontrols hover reallylosescontrast. OwnstudioCSS fix andgallerypixel/draw/resize assertions authored; newbuild/browserproof pending. Originalblankimages retained. CPUprepublish1702web/935rules+2expectedfails11skips andtypecheck/lint/buildPASS beforeCSS-onlyfix.
 
 - Recovery2026-11-07T00:44Z: E3focusedoriginal-source retry passed. Review93items/22.45MB pinned; actualrendering verified. Fullunit retry after inheritedgenerator timeout; originalfailure retained. Sevenrebuiltartifacts match originalsource Gitblobs butHTML differs; outputdifference causeunisolated, correction to earlieroutbox missing-evidence speculation.
+
+- 2026-11-07T00:54Z: sourceacceptance6checksPASS withsamepinnedsource, rootfullunit1702web/935rules and421E2E. Currentstudio258actions/focus3sizes/93comparisons160embeddedimages/5opaqueRGBA/loading/stage6casesPASS. Combinedphasepush didnotpublishrefs; retrysequentialeachphase andretainlogs. Do notcallthisanapprovalblock.
+
+- 2026-11-07T01:00:36.722903+00:00: Verified sequential E3/E4/boss publication and opened drafts354/355/356. Wrapper replacement waits exact phase coordinator; old waiter failure retained. Current mechanics4cases/audio89scores pass; new startup runs underway. Viewed current1024 Focus and chapter3stage: figures visible, controls fit, tabletop still flat. No runtime/source edits.

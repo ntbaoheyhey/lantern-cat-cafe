@@ -15,16 +15,16 @@ Chưa gộp nhánh, triển khai hay thay đổi kinh tế, ví hoặc hợp đ�
 ## Verdict and review route
 REFERENCE: tools/cardrpg-big2/{ReviewStudio,MechanicsLab,offline}.tsx; apps/web/src/game/cardrpg/depth/Battle.tsx
 
-Source handoff checkpoint, browser validation in progress. Open `docs/cardrpg3b/index.html` directly; no server or external requests are required by the offline design. The22,446,426-byte candidate embeds93evidence items; its final offline/source checks are running. Three-size Focusstage screenshots now verify settled renderer dimensions and nonempty pixels.
+[Published source handoff #357](https://github.com/ntbaoheyhey/taskbar-hero/pull/357), browser validation in progress. Open `docs/cardrpg3b/index.html` directly; no server or external requests are required by the offline design. The 22,446,426-byte candidate embeds 93 evidence items; source gates, 258 gallery selections and all 160 embedded comparison images pass offline checks. Remaining lifecycle and exhaustive timing checks are running. Three-size Focusstage screenshots now verify settled renderer dimensions and nonempty pixels.
 
 | Complaint | Where to look | Current evidence / limit |
 |---|---|---|
 | Repeated motions and crude effects | Home → Review studio → Skill gallery → unit/action; play, scrub, Effect only | 25 units /86 previews rendered, with258 selections/scrubs checked across three desktop sizes |
 | Blurry images | Review studio → Before / after → Sharpness | 2/10 cumulative targets pass; eight misses and crop limitations retained |
 | Large bodies / face angles | Gallery camera A portrait / B balanced / C stage | 405 samples: zero clipping/HUD overlap; all A/B/C body bands miss 24–30% |
-| Chaotic turns / stutter | Watch a battle now; Pause, speed and Frame meter | B1 720 casts checked; whole-page 150/300 ms miss |
+| Chaotic turns / stutter | Watch a battle now; Pause, speed and Frame meter | B1 720 cases / 1,440 casts checked; whole-page 150/300 ms miss |
 | Sparse stage / flat shadows | Chapters 1–3; home companion feet | 12 before/after captures; rug contacts corrected, ambient freeze verified; tabletop remains visually flat |
-| Skills lack sound identity | Battle Sound on and volume | 79 unique PCM buffers. Original startup133.5ms, corrected shipped-source sixfreshbrowser runs MAX16.8ms native/CPU4. Click-to-enabled223.6–232.8ms. Listening quality remains unverified |
+| Skills lack sound identity | Battle Sound on and volume | 89 unique PCM buffers in the current artifact (79 in the earlier audio checkpoint). Original startup133.5ms, corrected shipped-source sixfreshbrowser runs MAX16.8ms native/CPU4. Current six-run click-to-enabled 215.0–351.7 ms; all current sound/playback frames ≤16.8 ms. Listening quality remains unverified |
 | Automatic fights lack preparation choices | Home → Mechanics lab | Tea cloud, Front relay, Intent lens start off; isolated fights grant no rewards |
 
 ## Measurements and gates
@@ -81,7 +81,7 @@ All nine nonstarter cats have rendered batch evidence and remain “improved”:
 | Rain Spool | improved | Rain attacks, 1.14 s intro, 300 ms phase pose |
 | Pantry Crown | improved | Pantry attacks, 1.14 s intro, 300 ms phase pose |
 
-Enemy checkpoints: [E1 #352](https://github.com/ntbaoheyhey/taskbar-hero/pull/352), [E2 #353](https://github.com/ntbaoheyhey/taskbar-hero/pull/353). Both have six clips/15required motion pairs and421E2E; E1/E2 CPU4 page MAX116.7/133.3ms, post-interactive100ms. Scoped cast matrices remain queued.
+Enemy checkpoints: [E1 #352](https://github.com/ntbaoheyhey/taskbar-hero/pull/352), [E2 #353](https://github.com/ntbaoheyhey/taskbar-hero/pull/353). Later drafts: [E3 #354](https://github.com/ntbaoheyhey/taskbar-hero/pull/354), [E4 #355](https://github.com/ntbaoheyhey/taskbar-hero/pull/355), [bosses #356](https://github.com/ntbaoheyhey/taskbar-hero/pull/356). Each checkpoint retains its rendered clips, uniqueness comparisons, source gates and 421 E2E cases. E3/E4/boss cold whole-page MAX is 116.6/133.3/133.3 ms; post-interactive MAX is 100.1/100/133.3 ms. Scoped cast matrices remain queued.
 
 Cat checkpoints: [B2a #343](https://github.com/ntbaoheyhey/taskbar-hero/pull/343), [B2b #346](https://github.com/ntbaoheyhey/taskbar-hero/pull/346), [B2c #347](https://github.com/ntbaoheyhey/taskbar-hero/pull/347). Each passes typecheck/lint/build, 1,684 web / 903 rules tests (+2 expected failures, 11 skips) and 421 archived-source E2E tests. Their ten-configuration scoped cast matrices remain queued.
 
@@ -124,4 +124,4 @@ REFERENCE: memory/STATE.md; validation; coord/cardrpg-big/B-OUTBOX.md
 | Auto-only battles | 9 provisional: B1 controls verified, current isolated lab/account checks pass |
 | Mechanics lab | 7 provisional: four browser cases and sims pass; polish passes, integrated balance remains weak |
 
-Integration hook details: [INTEGRATION-HOOKS.md](INTEGRATION-HOOKS.md). Requests left for Lane A: integrate the remaining published B chain and offline wrapper, then announce the checkpoint for rebase/revalidation; retain encounter-balance ownership. The invitation `playEntrance(catId)` hook is now integrated by A, with eight viewport cases reported passing in A-OUTBOX. No request to promote `autoExtras` or merge/deploy.
+Integration hook details: [INTEGRATION-HOOKS.md](INTEGRATION-HOOKS.md). Requests left for Lane A: integrate the now-published B chain and offline wrapper (#357), then announce the checkpoint for rebase/revalidation; retain encounter-balance ownership. The invitation `playEntrance(catId)` hook is now integrated by A, with eight viewport cases reported passing in A-OUTBOX. No request to promote `autoExtras` or merge/deploy.
