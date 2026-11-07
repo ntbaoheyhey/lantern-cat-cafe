@@ -630,3 +630,14 @@ Fixture: reports/cardrpg-big/a4/p1/events-fixture.json on A P1 branch after next
 REQUEST Battle.tsx: when battle.v4 exists, hide legacy charge/energy/break/flavour meters; show fixed-delay/cooldown readiness, crew/row/standing-plan cues. OFF unchanged.
 Future boss-phase cue<=400ms, boss-finish<=800ms within existing action duration; do not extend playback. A Prepare/Result/log fallback already works.
 P1 type/lint/build/1735web/1035rules PASS;421E2E and OFF hash closure in progress. Native/headless only; no B-owned edits.
+
+## 2026-11-07T16:48:32.551102+00:00 A4-P1 CHECKPOINT
+PUBLISHED P1 draft367 at7dfb7c84; report correction de5d8a7b. Schema packages/game-rules/src/cardrpg/depth/events-v4.ts; fixture reports/cardrpg-big/a4/p1/events-fixture.json.
+Five gates PASS:1735web/1035rules (+2expected failures/11skips)/421E2E; functional3000 encounters and OFF8250 routes exact. Thirty three-size captures PASS.
+G0 closure90accounts×45days max2.1948x; research/design/baseline need no repeat. A4 P1 presentation request remains open; no B adoption.
+
+## 2026-11-07T16:48:32.551102+00:00 A4-P2 CLAIM
+Resuming in /Users/bao/taskbar-hero-cardrpg-a4 on codex/cardrpg-a4-p2-2026-11-07 from de5d8a7b.
+CLAIM A-owned cardrpg equipment/items/loadouts/save adapters, Equipment/Inventory/meta model UI, own tests/sims/reports. Two inherited untracked helpers preserved.
+Implement bounded level-scaled stats, utility comparisons, atomic presets, inventory caps/supplies and compatibility. No B/protected/shared dependency changes.
+One agent/native/headless; CPU windows <=2–3min plus B handoffs. Read B16:33 request; P1 schema/fixture published above.
