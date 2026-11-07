@@ -8,6 +8,7 @@ const probes = [
  ['effects-1600', 'effects-test.mjs', source => source.replace('const port = 5198', 'const port = 4370').replace('size = { width: 1280, height: 720 }', 'size = { width: 1600, height: 900 }'), ['../../reports/scorecard/cxu5/effects-1600']],
 ];
 for (const [name, original, adapt, args] of probes) {
+ if (process.env.CXU5_AUDIT_ONLY === '1' && name.startsWith('effects')) continue;
  const temporary = `${cwd}/tools/.cxu5-${name}.mjs`;
  writeFileSync(temporary, adapt(readFileSync(`${cwd}/tools/${original}`, 'utf8')));
  try {

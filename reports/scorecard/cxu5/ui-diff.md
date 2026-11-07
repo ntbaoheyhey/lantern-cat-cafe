@@ -15,6 +15,6 @@ References read: reports/ui-redesign/{index.html,BRIEF.md,PLAN.md,README.md}, RE
 | Compact map | Prior #226 selected-card mode | Retained default compact API and existing desktopCSS; path opt-in only | Preserved |
 | Motion | Highlighted current node | Static map with explicit focus/selection; reduced motion removes hover movement | No moving path elements needed |
 
-Keyboard: browser coverage uses focused chapter nodes with Enter/Space, locks cannot select; pointer selection after completed fight changes card/rewards/history. Native buttons retain normal tab order and focus token. Full keyboard walk evidence remains in browser logs; no claim that mock placeholders are copied.
+Keyboard: browser coverage uses focused chapter nodes with Enter/Space, locks cannot select; pointer selection after completed fight changes card/rewards/history. Native buttons retain normal tab order and focus token. Keyboard-only Home-to-Map rail, path and shortcut walks pass6/6 in keyboard-capture.json and logs/keyboard-capture.log; no claim that mock placeholders are copied.
 
 New colors use existing theme tokens. Existing full-unit contrast tests exercise token pairs; no new font, token, dependency, remote asset or global primitive. UI audit is heuristic; dedicated geometry assertions additionally cover no-key and chapter5 content. Full G2 remains pending BASE0 and exact-head integration.

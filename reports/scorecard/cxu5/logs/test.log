@@ -1,5 +1,5 @@
-2026-11-01T09:47:08.914Z
-HEAD 1fb25edf4c54ada0d161e3c1dd16a4c4550aafba
+2026-11-01T10:04:33.264Z
+HEAD c5b846ec030be5a0bf6a89c515fe4ecd85514fc3
 Working tree implementation; command: npx -y pnpm@10.28.0 test
 
 > taskbar-hero@0.0.0 test /Users/bao/.codex/worktrees/mega-cxu5/taskbar-hero
@@ -10,46 +10,92 @@ packages/auth test$ vitest run
 packages/chain test$ vitest run
 packages/game-rules test$ vitest run
 supabase/tests test$ vitest run
-packages/auth test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxu5/taskbar-hero/packages/auth
 packages/game-rules test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxu5/taskbar-hero/packages/game-rules
-supabase/tests test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxu5/taskbar-hero/supabase/tests
 packages/chain test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxu5/taskbar-hero/packages/chain
+packages/auth test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxu5/taskbar-hero/packages/auth
+supabase/tests test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxu5/taskbar-hero/supabase/tests
 packages/chain test:  Test Files  3 passed (3)
 packages/chain test:       Tests  32 passed (32)
-packages/chain test:    Start at  16:46:14
-packages/chain test:    Duration  746ms (import 44%, tests 34%, transform 21%, worker 1%)
+packages/chain test:    Start at  17:04:24
+packages/chain test:    Duration  616ms (import 50%, tests 37%, transform 12%, worker 1%)
 packages/chain test: Done
 packages/auth test:  Test Files  1 passed (1)
 packages/auth test:       Tests  24 passed (24)
-packages/auth test:    Start at  16:46:14
-packages/auth test:    Duration  910ms (import 48%, tests 42%, transform 9%)
+packages/auth test:    Start at  17:04:24
+packages/auth test:    Duration  789ms (import 72%, tests 22%, transform 6%)
 packages/auth test: Done
-supabase/tests test:  Test Files  31 passed (31)
-supabase/tests test:       Tests  541 passed | 1 expected fail (542)
-supabase/tests test:    Start at  16:46:14
-supabase/tests test:    Duration  14.64s (tests 80%, import 14%, transform 6%)
-supabase/tests test: Done
-packages/game-rules test:  Test Files  24 passed | 3 skipped (27)
-packages/game-rules test:       Tests  366 passed | 2 expected fail | 11 skipped (379)
-packages/game-rules test:    Start at  16:46:14
-packages/game-rules test:    Duration  36.34s (tests 93%, transform 4%, import 2%)
-packages/game-rules test: Done
-packages/api-contract test$ pnpm --filter @taskbar-hero/game-rules exec vitest run --root ../api-contract
-packages/api-contract test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxu5/taskbar-hero/packages/api-contract
-packages/api-contract test:  Test Files  1 passed (1)
-packages/api-contract test:       Tests  16 passed (16)
-packages/api-contract test:    Start at  16:46:50
-packages/api-contract test:    Duration  270ms (transform 79%, import 17%, tests 3%, worker 2%)
-packages/api-contract test: Done
-apps/web test$ vitest run
-apps/web test:  RUN  v5.0.5 /Users/bao/.codex/worktrees/mega-cxu5/taskbar-hero/apps/web
-apps/web test:  Test Files  113 passed (113)
-apps/web test:       Tests  1312 passed (1312)
-apps/web test:    Start at  16:46:51
-apps/web test:    Duration  17.49s (environment 46%, tests 43%, import 9%, transform 1%)
-apps/web test: Environment  jsdom was created 113 times · 80.16s total, 46% of tracked time
-apps/web test:              create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
-apps/web test:              learn more: https://vitest.dev/guide/improving-performance#test-environments
-apps/web test: Done
+supabase/tests test:  ❯ v2/functions-forge.test.ts (17 tests | 5 failed) 2237ms
+supabase/tests test:    ❯ v2 craft, salvage and lock over migrated SQL (9)
+supabase/tests test:      × refuses a full bag without spending 92ms
+supabase/tests test:      × checks ownership, equipment and locks atomically; returns summed salvage 63ms
+supabase/tests test:      × toggles locks and refuses another player's item 80ms
+supabase/tests test:      × maps SQL refusals after prechecks without changing balances 74ms
+supabase/tests test:    ❯ v2 Relic forge shares the v1 voucher lifecycle (8)
+supabase/tests test:      × uses actual SQL capped salvage credits 6ms
+supabase/tests test: ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 5 ⎯⎯⎯⎯⎯⎯⎯
+supabase/tests test:  FAIL  v2/functions-forge.test.ts > v2 craft, salvage and lock over migrated SQL > refuses a full bag without spending
+supabase/tests test: TypeError: Cannot read properties of null (reading 'items')
+supabase/tests test:  ❯ insert v2/functions-forge.test.ts:41:18
+supabase/tests test:      39|   const before = await raw(p);
+supabase/tests test:      40|   const result = await fn(db).claim(p, { micros: before.lastClaimMicro…
+supabase/tests test:      41|   return result!.items as v2.ItemViewV2[];
+supabase/tests test:        |                  ^
+supabase/tests test:      42| }
+supabase/tests test:      43| async function http(fn: (p: string, body: Record<string, unknown>) => …
+supabase/tests test:  ❯ v2/functions-forge.test.ts:73:5
+supabase/tests test: ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/5]⎯
+supabase/tests test:  FAIL  v2/functions-forge.test.ts > v2 craft, salvage and lock over migrated SQL > checks ownership, equipment and locks atomically; returns summed salvage
+supabase/tests test: TypeError: Cannot read properties of null (reading 'items')
+supabase/tests test:  ❯ insert v2/functions-forge.test.ts:41:18
+supabase/tests test:      39|   const before = await raw(p);
+supabase/tests test:      40|   const result = await fn(db).claim(p, { micros: before.lastClaimMicro…
+supabase/tests test:      41|   return result!.items as v2.ItemViewV2[];
+supabase/tests test:        |                  ^
+supabase/tests test:      42| }
+supabase/tests test:      43| async function http(fn: (p: string, body: Record<string, unknown>) => …
+supabase/tests test:  ❯ v2/functions-forge.test.ts:80:20
+supabase/tests test: ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/5]⎯
+supabase/tests test:  FAIL  v2/functions-forge.test.ts > v2 craft, salvage and lock over migrated SQL > toggles locks and refuses another player's item
+supabase/tests test: TypeError: Cannot read properties of null (reading 'items')
+supabase/tests test:  ❯ insert v2/functions-forge.test.ts:41:18
+supabase/tests test:      39|   const before = await raw(p);
+supabase/tests test:      40|   const result = await fn(db).claim(p, { micros: before.lastClaimMicro…
+supabase/tests test:      41|   return result!.items as v2.ItemViewV2[];
+supabase/tests test:        |                  ^
+supabase/tests test:      42| }
+supabase/tests test:      43| async function http(fn: (p: string, body: Record<string, unknown>) => …
+supabase/tests test:  ❯ v2/functions-forge.test.ts:112:17
+supabase/tests test: ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/5]⎯
+supabase/tests test:  FAIL  v2/functions-forge.test.ts > v2 craft, salvage and lock over migrated SQL > maps SQL refusals after prechecks without changing balances
+supabase/tests test: TypeError: Cannot read properties of null (reading 'items')
+supabase/tests test:  ❯ insert v2/functions-forge.test.ts:41:18
+supabase/tests test:      39|   const before = await raw(p);
+supabase/tests test:      40|   const result = await fn(db).claim(p, { micros: before.lastClaimMicro…
+supabase/tests test:      41|   return result!.items as v2.ItemViewV2[];
+supabase/tests test:        |                  ^
+supabase/tests test:      42| }
+supabase/tests test:      43| async function http(fn: (p: string, body: Record<string, unknown>) => …
+supabase/tests test:  ❯ v2/functions-forge.test.ts:142:17
+supabase/tests test: ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/5]⎯
+supabase/tests test:  FAIL  v2/functions-forge.test.ts > v2 Relic forge shares the v1 voucher lifecycle > uses actual SQL capped salvage credits
+supabase/tests test: TypeError: Cannot read properties of null (reading 'items')
+supabase/tests test:  ❯ insert v2/functions-forge.test.ts:41:18
+supabase/tests test:      39|   const before = await raw(p);
+supabase/tests test:      40|   const result = await fn(db).claim(p, { micros: before.lastClaimMicro…
+supabase/tests test:      41|   return result!.items as v2.ItemViewV2[];
+supabase/tests test:        |                  ^
+supabase/tests test:      42| }
+supabase/tests test:      43| async function http(fn: (p: string, body: Record<string, unknown>) => …
+supabase/tests test:  ❯ v2/functions-forge.test.ts:226:42
+supabase/tests test: ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/5]⎯
+supabase/tests test:  Test Files  1 failed | 30 passed (31)
+supabase/tests test:       Tests  5 failed | 536 passed | 1 expected fail (542)
+supabase/tests test:    Start at  17:04:24
+supabase/tests test:    Duration  9.02s (tests 84%, import 14%, transform 2%)
+supabase/tests test: Failed
+/Users/bao/.codex/worktrees/mega-cxu5/taskbar-hero/supabase/tests:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/supabase-tests@0.0.0 test: `vitest run`
+Exit status 1
+ ELIFECYCLE  Test failed. See above for more details.
 
-EXIT 0
+EXIT 1

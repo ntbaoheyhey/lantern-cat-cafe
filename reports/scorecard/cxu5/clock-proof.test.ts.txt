@@ -1,0 +1,20 @@
+// Diagnostic only: copy beside supabase/tests/v2/helpers.ts, run it, then remove the copy.
+import { expect, it } from 'vitest';
+import { migratedDb } from '../src/game-db.ts';
+import { fn, item, newPlayer } from './helpers.ts';
+it('documents the unchanged SQL fixture clock crossing real database time', async () => {
+ const db = await migratedDb();
+ try {
+  const player = await newPlayer(db); await fn(db).snapshot(player); await fn(db).choose(player, 'warrior', 'sword');
+  const raw = (await fn(db).snapshot(player))!;
+  const fixed = Date.UTC(2026, 10, 1, 10);
+  const databaseTime = Number(raw.lastClaimMicros) / 1000;
+  console.log(JSON.stringify({ fixedFixtureClock: new Date(fixed).toISOString(), databaseClaimClock: new Date(databaseTime).toISOString() }));
+  expect(fixed).toBeLessThan(databaseTime);
+  const input = { micros: raw.lastClaimMicros, rev: raw.progressRev, now: new Date(fixed), items: [item()] };
+  expect(await fn(db).claim(player, input)).toBeNull();
+  // The unchanged SQL requires at least10s; advance11s past the actual snapshot.
+  const advanced = await fn(db).claim(player, { ...input, now: new Date(Math.ceil(databaseTime) + 11000) });
+  expect(advanced?.items).toHaveLength(1);
+ } finally { await db.close(); }
+});
