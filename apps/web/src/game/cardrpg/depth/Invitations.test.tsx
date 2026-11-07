@@ -174,7 +174,8 @@ it('keeps published odds, earned cost, pity and the latest result together', () 
   const fairness = within(screen.getByRole('region', { name: 'Invitation fairness' }));
   expect(fairness.getByText('Base odds')).toBeTruthy();
   expect(fairness.getByText(`legendary ${BANNERS[0]!.oddsBp.legendary / 100}%`)).toBeTruthy();
-  expect(fairness.getByText(/150 stamps each.*Earn stamps from cafe service/)).toBeTruthy();
+  expect(fairness.getByText(/150 stamps each.*Earned in game/)).toBeTruthy();
+  expect(screen.getByText(/Earn stamps from cafe service, routes and quests/)).toBeTruthy();
   expect(fairness.getByText('Legendary guaranteed in 60')).toBeTruthy();
   fireEvent.click(screen.getByRole('button', { name: 'Invite once · 150 stamps' }));
   expect(fairness.getByRole('link').getAttribute('href')).toBe('#invitation-history');

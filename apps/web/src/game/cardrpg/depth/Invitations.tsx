@@ -112,15 +112,14 @@ export function Invitations({ m }: { m: DepthModel }) {
         <span>{pity.sinceLegendary}/{banner.hardPity} pulls · Next legendary {(odds.legendary / 100).toFixed(2)}%</span></div>
       <div className="dp-fairness-odds"><span>Base odds</span>{Object.entries(banner.oddsBp).map(([rarity, value]) =>
         <span key={rarity}>{rarity} {value / 100}%</span>)}</div>
-      <p>{cost} stamps each · Earn stamps from cafe service, routes and quests.</p>
+      <p>{cost} stamps each · Earned in game</p>
       <a href="#invitation-history">{history[0] ? `Latest · ${resultName(history[0])} · ${history[0].rarity}` : 'Recent invitations'}
         {history[0]?.cardId && history[0].duplicate ? ` · ${history[0].shards} shards` : ''} · View history ({history.length})</a>
     </section>
     <div className="dp-invitation-grid">
       <section className="cr-panel dp-banner-info" aria-label="Invitation costs and odds">
-        <h2>{banner.name}</h2><p>{banner.description}</p>
+        <h2>{banner.name}</h2>
         <div className="dp-stamp-balance"><strong>{stamps.toLocaleString('en-US')}</strong><span>earned stamps</span></div>
-        <p>Earn stamps from cafe service, route rewards and quests. {cost} stamps per invitation.</p>
         <div className="cr-actions">
           {bannerId === 'standard' && !m.state.freeInvite && <button className="cr-primary"
             disabled={revealing || inRun || available < 1} onClick={() => invite(1, true)}>Open free welcome invitation</button>}
@@ -130,6 +129,7 @@ export function Invitations({ m }: { m: DepthModel }) {
             onClick={() => invite(10)}>Invite ten · {cost * 10} stamps</button>
         </div>
         <small>{available} invitations left today · Account-bound</small>
+        <p>{banner.description} Earn stamps from cafe service, routes and quests.</p>
         {inRun && <p>Finish your current route to open invitations.</p>}
         <div className="dp-pity"><strong>Legendary pity progress</strong>
           <progress aria-label="Legendary pity" value={pity.sinceLegendary} max={banner.hardPity} />

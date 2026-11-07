@@ -86,3 +86,22 @@
 @media (prefers-reduced-motion: reduce) { .dp-envelope, .dp-envelope-fold, .dp-flip-result { animation: none; transition: none; } }
 
 .dp-invitation-stage, .dp-batch-results { scroll-margin-top: var(--invitation-clearance, 150px); }
+
+/* Keep the featured card and earned-stamp actions together above the fold. */
+.dp-invitation-fairness { gap: 4px 16px; padding: 8px 12px; margin: 8px 0; }
+.dp-fairness-odds { gap: 3px 10px; }
+.dp-fairness-odds > span:first-child { width: auto; }
+.dp-invitation-grid { grid-template-columns: minmax(280px, .85fr) minmax(0, 1.15fr); }
+.dp-invitation-stage { order: -1; }
+.dp-banner-info .dp-stamp-balance { margin-top: 8px; }
+.dp-banner-info .cr-actions { margin: 12px 0; }
+.dp-featured-card { gap: 7px; }
+.dp-featured-card > .dp-cat { width: 220px; }
+.dp-featured-card .cr-card-caption > :not(h3) { display: none; }
+.dp-featured-card .cr-card-caption h3 { margin: 0; }
+@media (max-height: 650px) {
+ .dp-featured-card > .dp-cat { width: 200px; }
+ .dp-app .dp-featured-card .cr-portrait { height: 224px; aspect-ratio: auto; }
+ .dp-app .dp-invitation-stage { padding: 12px; }
+ .dp-app .dp-banner-info { padding: 14px; }
+}

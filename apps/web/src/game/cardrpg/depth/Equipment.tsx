@@ -66,6 +66,13 @@ export function Inventory({ m }: { m: DepthModel }) {
         </select></label>
       </div>
       {locked && <p>Finish or abandon the current route to change equipment.</p>}
+      {item && template && <section className="cr-panel dp-equip-action"><div><small>Selected equipment · {R.CAT_BY_ID[cardId]!.name}</small><h2>{template.name}</h2></div>
+              <button className="cr-primary" disabled={locked || !!comparison?.error} onClick={() => {
+                const result = R.equipGear(state, cardId, item.id);
+                if (result.ok) result.state.tutorial = Math.max(4, result.state.tutorial);
+                act(result, `${template.name} fitted to ${R.CAT_BY_ID[cardId]!.name}.`);
+              }}>Equip selected</button>
+      </section>}
       <div className="dp-equipment-workbench">
         <section className="cr-panel dp-paper-doll"><div className="dp-cat-heading"><img {...portraitProps(cardId)} alt="" /><h2>{R.CAT_BY_ID[cardId]!.name}</h2></div>
           <CompanionPreview m={m} id={cardId} />
@@ -113,11 +120,7 @@ export function Inventory({ m }: { m: DepthModel }) {
             <p>{template.main} {preview.before}{item.enhancement < 12 ? ` → ${preview.after} at +${item.enhancement + 1}` : ' · maximum +12'}</p>
             <CostView cost={preview.cost} />
             <div className="cr-actions">
-              <button className="cr-primary" disabled={locked || !!comparison?.error} onClick={() => {
-                const result = R.equipGear(state, cardId, item.id);
-                if (result.ok) result.state.tutorial = Math.max(4, result.state.tutorial);
-                act(result, `${template.name} fitted to ${R.CAT_BY_ID[cardId]!.name}.`);
-              }}>Equip selected</button>
+
               <button disabled={locked || item.enhancement >= 12} onClick={() => act(R.enhanceGear(state, item.id), `${template.name} enhanced to +${item.enhancement + 1}.`)}>Enhance equipment</button>
               <button disabled={locked || !state.equipment[cardId]?.[template.slot]} onClick={() => act(R.equipGear(state, cardId, null, template.slot), `${template.slot} returned to the shelf.`)}>Unequip slot</button>
               <button disabled={locked || Object.values(state.equipment).some(loadout => Object.values(loadout).includes(item.id))}

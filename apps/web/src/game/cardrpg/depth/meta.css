@@ -156,3 +156,44 @@
 .dp-app[data-battle-active=true] .dp-battle-shell { pointer-events: auto; }
 .dp-app[data-battle-active=true] .cr-content > .dp-page { visibility: hidden; }
 .dp-app[data-battle-active=true] .cr-sidebar button:disabled { opacity: .75; cursor: default; }
+
+/* A3: primary actions sit beside their subject in the first desktop viewport. */
+.dp-page:is([data-screen=collection],[data-screen=team],[data-screen=inventory],[data-screen=gacha],[data-screen=prepare],[data-screen=result]) .cr-page-title { margin-bottom: 12px; }
+.dp-page:is([data-screen=inventory],[data-screen=gacha]) > .cr-tabs { margin: 10px 0; }
+.dp-page:is([data-screen=collection],[data-screen=inventory]) .cr-filter { margin-bottom: 12px; }
+.dp-detail > .cr-actions { margin: 8px 0 12px; gap: 6px; }
+.dp-detail > header { margin-bottom: 8px; }
+.dp-detail > p:first-of-type { margin: 6px 0; }
+.dp-app .dp-team-heading { gap: 12px; padding-block: 8px; }
+.dp-team-heading > button { flex: none; }
+.dp-app .dp-formation-card .cr-portrait { height: 170px; }
+.dp-app .dp-formation-row { padding: 10px 12px; }
+.dp-app .dp-formation-row h2 { font-size: 22px; }
+.dp-equip-action { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+.dp-app .dp-equip-action { padding: 10px 16px; margin-bottom: 12px; }
+.dp-equip-action h2 { margin: 4px 0 0; font-size: 20px; }
+.dp-equip-action > button { flex: none; }
+.dp-page[data-screen=inventory] .dp-cat-heading img { width: 100px; height: 120px; }
+.dp-page[data-screen=prepare] .dp-cat-heading img { width: 110px; height: 132px; flex: none; }
+.dp-page[data-screen=prepare] .dp-cat-heading h2 { font-size: 23px; }
+.dp-page[data-screen=prepare] .dp-estimate-note { margin: 10px 0; }
+.dp-estimate-note summary { cursor: pointer; }
+.dp-result-banner > .dp-cat { width: 190px; }
+@media (max-height: 650px) {
+ .dp-app .dp-formation-card .cr-portrait { height: 145px; }
+ .dp-app .dp-formation-card .cr-card-caption { padding: 8px 10px; }
+ .dp-formation-row header { margin-bottom: 6px; }
+ .dp-page[data-screen=prepare] .dp-cat-heading { gap: 8px; }
+ .dp-page[data-screen=prepare] .dp-cat-heading img { width: 100px; height: 120px; }
+}
+
+.dp-page[data-screen=collection] .cr-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+/* The compact invitation panel retains the full portrait and legible odds. */
+.dp-app .dp-invitation-fairness { padding: 8px 12px; }
+.dp-app .dp-invitation-fairness > p { margin: 0; }
+.dp-app .dp-invitation-stage .dp-featured-card .cr-card-caption { padding: 8px 12px; }
+.dp-app[data-look-v2=true] .dp-cafe .dp-invitation-odds th { color: var(--look-paper); }
+@media (max-height: 650px) {
+ .dp-app .dp-invitation-stage .dp-featured-card .cr-portrait { height: 224px; aspect-ratio: auto; }
+}

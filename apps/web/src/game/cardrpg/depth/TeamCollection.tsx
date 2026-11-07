@@ -33,6 +33,7 @@ export function Team({ m }: { m: DepthModel }) {
           const team = bestRoleTeam(state);
           update(team, { ...state.rows, ...Object.fromEntries(team.map(id => [id, R.CAT_BY_ID[id]!.row])) });
         }}>Best team</button>
+      <button className="cr-primary" disabled={locked} onClick={() => m.start(challenge.chapter.id)}>Begin {challenge.chapter.name}</button>
     </section>
     {locked && <p>Finish or abandon the current route to change the team.</p>}
     <div className="dp-formation" aria-label="Team formation">
@@ -80,7 +81,7 @@ export function Team({ m }: { m: DepthModel }) {
       </div>)}
       <small>{R.availableSkills(state, id).length === 4 ? 'Ultimate included.' : 'Level 6 or three stars unlocks the ultimate.'}</small>
     </div>)}</div></section>
-    <div className="cr-actions">{R.CHAPTERS.map(chapter => <button key={chapter.id}
+    <div className="cr-actions">{R.CHAPTERS.filter(chapter => chapter.id !== challenge.chapter.id).map(chapter => <button key={chapter.id}
       disabled={locked || chapter.id > 1 && !state.cleared.includes(chapter.id - 1)} onClick={() => m.start(chapter.id)}>Begin {chapter.name}</button>)}</div>
   </>;
 }
@@ -125,6 +126,17 @@ export function Collection({ m }: { m: DepthModel }) {
       </div>
       <section className="cr-panel dp-detail" ref={detail}>
         <header><small>{CARD_BY_ID[cat.id]!.rarity} · {cat.role} · {cat.flavour}</small><h2>{cat.name}</h2></header>
+        {owned ? <>
+          <p>Level {owned.level} · {owned.stars} stars · {owned.shards} shards · Awakening {m.state.awakened[cat.id] ?? 0}/3</p>
+          <div className="cr-actions">
+            <button className="cr-primary" disabled={locked} onClick={() => m.command({ type: 'level', cardId: owned.id })}>Level up</button>
+            <button disabled={locked} onClick={() => m.command({ type: 'ascend', cardId: owned.id })}>Add a star</button>
+            <button disabled={locked || (m.state.awakened[cat.id] ?? 0) >= 3}
+              title="Level 10 and two stars required. Each rank adds 3% HP and attack."
+              onClick={() => m.apply(R.awakenCat(m.state, cat.id), 'Awakening raised HP and attack by 3%.')}>Awaken</button>
+            <button onClick={() => m.go('inventory')}>View equipment</button>
+          </div>
+        </> : <button className="cr-primary" onClick={() => m.go('gacha')}>Visit invitations</button>}
         <CompanionPreview m={m} id={cat.id} skillId={skill?.id} />
         <div className="cr-actions"><button aria-pressed={!skill} onClick={() => setPreview('model')}>Rotate model</button></div>
         <p><b>{cat.passive.name}</b> · {cat.passive.description}</p>
@@ -133,23 +145,14 @@ export function Collection({ m }: { m: DepthModel }) {
           <img src={skillIcon(action.id)} alt="" /><span><b>{action.name}</b><small>{action.description}</small></span>
         </button>)}</div>
         {skill && <p className="dp-preview-note">Looping preview · {skill.name}</p>}
-        {owned ? <>
+        {owned && <>
           <Stats stats={R.depthStats(m.state, cat.id)} />
           <ul className="dp-equipped-list">{EQUIPMENT_SLOTS.map(slot => {
             const gear = R.equippedItems(m.state, cat.id).find(item => R.GEAR_BY_ID[item.templateId]!.slot === slot);
             return <li key={slot}><ItemIcon slot={slot} /><small>{slot}</small><span>{gear ? R.GEAR_BY_ID[gear.templateId]!.name : 'Empty slot'}</span></li>;
           })}</ul>
-          <p>Level {owned.level} · {owned.stars} stars · {owned.shards} shards · Awakening {m.state.awakened[cat.id] ?? 0}/3</p>
-          <div className="cr-actions">
-            <button disabled={locked} onClick={() => m.command({ type: 'level', cardId: owned.id })}>Level up</button>
-            <button disabled={locked} onClick={() => m.command({ type: 'ascend', cardId: owned.id })}>Add a star</button>
-            <button disabled={locked || (m.state.awakened[cat.id] ?? 0) >= 3}
-              title="Level 10 and two stars required. Each rank adds 3% HP and attack."
-              onClick={() => m.apply(R.awakenCat(m.state, cat.id), 'Awakening raised HP and attack by 3%.')}>Awaken</button>
-            <button onClick={() => m.go('inventory')}>View equipment</button>
-          </div>
           {(m.state.awakened[cat.id] ?? 0) < 3 && <small>Next awakening uses {30 * ((m.state.awakened[cat.id] ?? 0) + 1)} materials, {300 * ((m.state.awakened[cat.id] ?? 0) + 1)} fish points, {40 * ((m.state.awakened[cat.id] ?? 0) + 1)} threads and {5 * ((m.state.awakened[cat.id] ?? 0) + 1)} essence.</small>}
-        </> : <button className="cr-primary" onClick={() => m.go('gacha')}>Visit invitations</button>}
+        </>}
       </section>
     </div>
   </>;
