@@ -140,3 +140,9 @@
 .dp-design-grid article { padding: 18px; border: 1px solid #b8947866; border-radius: 10px; background: #d9b88208; }
 .dp-design-grid .cr-stats { grid-template-columns: 1fr; }
 .dp-design-grid .cr-stats dt { font-size: 11px; }
+/* Persistent preview host moves between slots without recreating its canvas. */
+.dp-preview-surface { width: 100%; height: 100%; }
+.dp-collection-layout .cr-card-grid > *, .dp-batch-grid > article {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 260px;
+}

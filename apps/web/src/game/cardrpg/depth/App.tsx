@@ -2,6 +2,8 @@ import { useEffect, useRef, useState, useSyncExternalStore, type CSSProperties }
 import { isLookV2, setLookV2, subscribeLookV2 } from '../../squad/turn3d/look-v2';
 import lookTokens from '../look-tokens.json';
 import { DepthModel, type Screen } from './model';
+import { CompanionPreviewProvider } from './CompanionPreview';
+import { preloadPreviewModels } from './preview-runtime';
 import { BattleView } from './Battle';
 import { Hub, Team, Collection, Invitations, Inventory, Codex } from './Pages';
 import { RunMap } from './RunMap';
@@ -39,8 +41,8 @@ export default function DepthApp({ offline = false }: { offline?: boolean }) {
     content.current?.scrollTo(0, 0);
     content.current?.querySelector<HTMLElement>('h1')?.focus({ preventScroll: true });
   }, [m.screen]);
-  return <div data-look-v2={lookV2} style={lookV2 ? rarityStyle : undefined} className={`cr-app dp-app ${m.state.settings.reducedMotion ? 'dp-reduced-motion' : ''}`}><div className={`dp-cafe ${m.showBattle ? 'dp-hidden' : ''}`} aria-hidden={m.showBattle} inert={m.showBattle}>
-    <a className="cr-skip" href="#depth-main">Skip navigation</a><aside className="cr-sidebar"><button className="cr-brand" onClick={() => m.go('hub')}><span>♜</span><b>THE LANTERN<br /><small>CAT CAFE QUEST</small></b></button><p className="cr-sidebar-caption">A little courage, every day.</p><nav aria-label="Cafe screens">{navigation.map(([id, icon, name]) => <button key={id} aria-current={m.screen === id ? 'page' : undefined} onClick={() => m.go(id)}><span aria-hidden="true">{icon}</span>{name}</button>)}</nav><div className="cr-sidebar-bottom"><b>THE FIRST LANTERN</b><p>{offline ? 'Offline preview · keep progress with save codes' : 'Local account · automatic saving'}</p><small>Desktop prototype · 0.7.0</small></div></aside>
+  return <CompanionPreviewProvider m={m}><div data-look-v2={lookV2} style={lookV2 ? rarityStyle : undefined} className={`cr-app dp-app ${m.state.settings.reducedMotion ? 'dp-reduced-motion' : ''}`}><div className={`dp-cafe ${m.showBattle ? 'dp-hidden' : ''}`} aria-hidden={m.showBattle} inert={m.showBattle}>
+    <a className="cr-skip" href="#depth-main">Skip navigation</a><aside className="cr-sidebar"><button className="cr-brand" onClick={() => m.go('hub')}><span>♜</span><b>THE LANTERN<br /><small>CAT CAFE QUEST</small></b></button><p className="cr-sidebar-caption">A little courage, every day.</p><nav aria-label="Cafe screens">{navigation.map(([id, icon, name]) => <button key={id} aria-current={m.screen === id ? 'page' : undefined} onPointerEnter={() => preloadPreviewModels(id === 'gacha' ? ['clover'] : m.state.team)} onFocus={() => preloadPreviewModels(m.state.team)} onClick={() => m.go(id)}><span aria-hidden="true">{icon}</span>{name}</button>)}</nav><div className="cr-sidebar-bottom"><b>THE FIRST LANTERN</b><p>{offline ? 'Offline preview · keep progress with save codes' : 'Local account · automatic saving'}</p><small>Desktop prototype · 0.7.0</small></div></aside>
     <div className="cr-main-shell"><header className="cr-topbar"><span>THE EVENING SHIFT<small>Three chapters. Your choices.</small></span>{offline && <FeelLab m={m} home />}<div className="cr-wallet">{Object.entries(m.state.account.currencies).map(([id, amount]) => <div key={id}><b>{amount.toLocaleString('en-US')}<small>{id === 'fish' ? 'fish points' : id}</small></b></div>)}</div><span className="cr-account">Lv. {m.state.account.accountLevel}<small>{m.state.materials} materials</small></span></header><div className={`cr-status ${m.error ? 'error' : ''}`} role={m.error ? 'alert' : 'status'}>{m.notice}<span>{m.saveStatus}</span></div>
       <main className="cr-content" id="depth-main" ref={content}><div className="dp-page" key={m.screen}>
         {m.screen === 'prepare' && m.battle && <Prepare m={m} />}{m.screen === 'result' && m.battle && <BattleResult m={m} />}
@@ -50,6 +52,6 @@ export default function DepthApp({ offline = false }: { offline?: boolean }) {
       </div></main></div></div>
     {m.sceneStarted && <BattleView m={m} />}
     {offline && m.labPerformance && <FrameOverlay m={m} />}
-  </div>;
+  </div></CompanionPreviewProvider>;
 }
 declare global { interface Window { __depthReview?: DepthModel } }

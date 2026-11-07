@@ -2,7 +2,7 @@
 import { afterEach, beforeEach, expect, it, vi } from 'vitest';
 import { act, cleanup, render } from '@testing-library/react';
 import { DepthModel } from './model';
-import { CompanionPreview } from './CompanionPreview';
+import { CompanionPreview, CompanionPreviewProvider } from './CompanionPreview';
 
 const miniature = vi.hoisted(() => ({
   playEntrance: vi.fn(), dispose: vi.fn(), invalidate: vi.fn(), ready: true,
@@ -56,5 +56,25 @@ it('keeps a hidden reveal inactive and stops its timer on unmount', async () => 
   view.unmount();
   await act(() => vi.advanceTimersByTimeAsync(400));
   expect(miniature.playEntrance).not.toHaveBeenCalled();
+  expect(vi.getTimerCount()).toBe(0);
+});
+
+it('keeps one scene across screen slots and disposes only with the app', async () => {
+  const model = new DepthModel(true);
+  const view = render(<CompanionPreviewProvider m={model}><CompanionPreview key="collection" m={model} id="clover" /></CompanionPreviewProvider>);
+  await act(() => vi.advanceTimersByTimeAsync(400));
+  const scene = window.__depthPreviewScene;
+  expect(scene).toBeTruthy();
+  view.rerender(<CompanionPreviewProvider m={model}><div>Team</div></CompanionPreviewProvider>);
+  await act(() => vi.advanceTimersByTimeAsync(100));
+  expect(miniature.dispose).not.toHaveBeenCalled();
+  view.rerender(<CompanionPreviewProvider m={model}><CompanionPreview key="invitation" m={model} id="mochi" entranceKey="pull-3" /></CompanionPreviewProvider>);
+  await act(() => vi.advanceTimersByTimeAsync(400));
+  expect(window.__depthPreviewScene).toBe(scene);
+  expect(miniature.playEntrance).toHaveBeenCalledExactlyOnceWith('mochi');
+  expect(miniature.dispose).not.toHaveBeenCalled();
+  view.unmount();
+  expect(miniature.dispose).toHaveBeenCalledTimes(1);
+  expect(window.__depthPreviewScene).toBeUndefined();
   expect(vi.getTimerCount()).toBe(0);
 });

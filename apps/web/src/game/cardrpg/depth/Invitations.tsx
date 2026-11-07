@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { BANNERS, CARD_BY_ID, ITEM_BY_ID, CARD_RPG_CONFIG, emptyPity, getBannerOdds, getDrawPool,
   type GachaResult } from '@taskbar-hero/game-rules/cardrpg';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
@@ -40,13 +40,28 @@ export function Invitations({ m }: { m: DepthModel }) {
   const previewId = rareCard ?? featuredId;
   const previewVisible = !revealing || !!entranceKey;
 
-  useLayoutEffect(() => {
+  // Cache sticky-header clearance on resize, never read layout in the pull handler.
+  useEffect(() => {
+    const header = fairness.current;
+    const content = header?.closest<HTMLElement>('.cr-content');
+    if (!header || !content || typeof ResizeObserver === 'undefined') return;
+    const observer = new ResizeObserver(entries => {
+      const height = entries[0]?.borderBoxSize?.[0]?.blockSize;
+      if (height === undefined) return;
+      const padding = Number.parseFloat(getComputedStyle(content).paddingTop) || 0;
+      content.style.setProperty('--invitation-clearance', `${height + padding + 12}px`);
+    });
+    observer.observe(header);
+    return () => { observer.disconnect(); content.style.removeProperty('--invitation-clearance'); };
+  }, []);
+  useEffect(() => {
     const destination = revealing ? stage.current : summary.current;
     if (!results.length || !destination) return;
-    const content = destination.closest('.cr-content');
-    const padding = content ? Number.parseFloat(getComputedStyle(content).paddingTop) || 0 : 0;
-    destination.style.scrollMarginTop = `${(fairness.current?.offsetHeight ?? 0) + padding + 12}px`;
-    destination.scrollIntoView?.({ block: 'start', behavior: 'instant' });
+    let timer = 0;
+    const frame = requestAnimationFrame(() => {
+      timer = window.setTimeout(() => destination.scrollIntoView?.({ block: 'start', behavior: 'instant' }), 0);
+    });
+    return () => { cancelAnimationFrame(frame); clearTimeout(timer); };
   }, [revealing, results.length]);
 
   useEffect(() => {

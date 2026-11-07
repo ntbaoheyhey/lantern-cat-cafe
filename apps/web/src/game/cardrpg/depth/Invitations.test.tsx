@@ -199,22 +199,22 @@ it.each(['funds', 'daily-cap', 'active-route'])('disables invitations at the %s 
 });
 
 
-it('includes the scroll container padding when revealing cards and results below fairness', () => {
+it('defers reveal scrolling until after paint without measuring layout on the click', () => {
   vi.useFakeTimers();
   const model = paidAccount();
   render(<div className="cr-content" style={{ paddingTop: 20 }}><Invitations m={model} /></div>);
   const fairness = screen.getByRole('region', { name: 'Invitation fairness' });
   const stage = screen.getByRole('region', { name: 'Invitation reveal' });
-  Object.defineProperty(fairness, 'offsetHeight', { value: 130 });
+  const readHeight = vi.fn(() => 130);
+  Object.defineProperty(fairness, 'offsetHeight', { get: readHeight });
   const scroll = vi.fn();
   stage.scrollIntoView = scroll;
   fireEvent.click(screen.getByRole('button', { name: 'Invite once · 150 stamps' }));
-  expect(stage.style.scrollMarginTop).toBe('162px');
+  expect(scroll).not.toHaveBeenCalled();
+  expect(readHeight).not.toHaveBeenCalled();
+  act(() => vi.advanceTimersByTime(40));
   expect(scroll).toHaveBeenCalledWith({ block: 'start', behavior: 'instant' });
-  act(() => vi.advanceTimersByTime(550));
-  act(() => vi.advanceTimersByTime(500));
+  act(() => vi.advanceTimersByTime(1050));
   expect(scroll).toHaveBeenCalledTimes(1);
-  fireEvent.click(screen.getByRole('button', { name: 'Skip reveal' }));
-  expect(scroll).toHaveBeenCalledTimes(1);
-  expect(screen.getByRole('region', { name: 'Invitation results' }).style.scrollMarginTop).toBe('162px');
+  expect(readHeight).not.toHaveBeenCalled();
 });

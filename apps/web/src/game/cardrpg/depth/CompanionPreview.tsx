@@ -1,20 +1,31 @@
-import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react';
+import { createContext, useContext, useEffect, useMemo, useRef, useState, useSyncExternalStore, type ReactNode } from 'react';
 import { isLookV2, subscribeLookV2 } from '../../squad/turn3d/look-v2';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
-import { TurnScene, type SceneView } from '../../squad/turn3d/scene';
-import { sampleActionPlan } from '../../squad/turn3d/effects';
+import { type TurnScene, type SceneView } from '../../squad/turn3d/scene';
 import { galleryFixture } from './feel-lab';
 import { project, appearance } from './scene-actors';
 import { animateChapterStage, decorateChapterStage } from './chapter-stage';
 import { portrait } from './assets';
+import { PreviewRuntime } from './preview-runtime';
 import type { DepthModel } from './model';
+
+const PreviewContext = createContext<PreviewRuntime | null>(null);
+
+/** The scene belongs to the app, not to a keyed screen or a reveal phase. */
+export function CompanionPreviewProvider({ m, children }: { m: DepthModel; children: ReactNode }) {
+  const [runtime] = useState(() => new PreviewRuntime(m));
+  useEffect(() => () => runtime.dispose(), [runtime]);
+  return <PreviewContext.Provider value={runtime}>{children}</PreviewContext.Provider>;
+}
 
 export function CompanionPreview({ m, id, skillId, entranceKey, home = false, visible = true }: {
   m: DepthModel; id?: string; skillId?: string; entranceKey?: string; home?: boolean; visible?: boolean;
 }) {
   const lookV2 = useSyncExternalStore(subscribeLookV2, isLookV2, () => false);
   const host = useRef<HTMLDivElement>(null);
-  const scene = useRef<TurnScene | null>(null);
+  const shared = useContext(PreviewContext);
+  const [runtime] = useState(() => shared ?? new PreviewRuntime(m));
+  useEffect(() => shared ? undefined : () => runtime.dispose(), [runtime, shared]);
   const [status, setStatus] = useState('Preparing miniatures…');
   const [rotating, setRotating] = useState(true);
   const [angle, setAngle] = useState(0);
@@ -45,65 +56,10 @@ export function CompanionPreview({ m, id, skillId, entranceKey, home = false, vi
 
   useEffect(() => {
     if (!host.current) return;
-    let stopped = false;
-    let timer = 0;
-    let prepared = false;
-    let elapsed = 0;
-    let last = 0;
-    let playedEntrance: string | undefined;
-    let entrancePending = false;
-    let nextEntranceAttempt = 0;
-    let currentFixture = options.current.fixture;
-    const getView = () => {
-      const current = options.current;
-      if (currentFixture !== current.fixture) { currentFixture = current.fixture; elapsed = 0; }
-      const plan = current.skillId ? current.fixture.plan : null;
-      const actionAt = plan ? elapsed % (plan.duration + 900) : 0;
-      current.view.frame = plan && actionAt < plan.duration ? sampleActionPlan(plan, actionAt, current.view.reducedMotion) : null;
-      current.view.suspended = m.showBattle || !current.visible;
-      if (current.view.model) current.view.model.angle = current.angle + (current.rotating && !current.entranceKey && !current.view.reducedMotion ? elapsed * .00016 : 0);
-      return current.view;
-    };
-    const start = window.setTimeout(() => {
-      if (stopped) return;
-      try {
-        scene.current = new TurnScene(host.current!, getView, () => {}, () => {}, setStatus);
-        if (m.offline || import.meta.env.DEV) window.__depthPreviewScene = scene.current;
-        const tick = (now: number) => {
-          if (stopped) return;
-          if (scene.current?.ready && !m.showBattle && options.current.visible) {
-            elapsed += last ? Math.min(100, now - last) : 0;
-            if (!prepared) { prepared = true; setStatus(''); }
-            const current = options.current;
-            if (current.entranceKey && current.id && current.entranceKey !== playedEntrance
-              && !entrancePending && now >= nextEntranceAttempt) {
-              const key = current.entranceKey;
-              entrancePending = true;
-              nextEntranceAttempt = now + 100;
-              void scene.current.playEntrance(current.id).then(played => {
-                if (!stopped && played && options.current.entranceKey === key) playedEntrance = key;
-              }).catch(() => {
-                if (!stopped) setStatus('The companion portrait is ready. The miniature is unavailable.');
-                playedEntrance = key;
-              }).finally(() => { entrancePending = false; });
-            }
-          }
-          last = now;
-          timer = requestAnimationFrame(tick);
-        };
-        timer = requestAnimationFrame(tick);
-      } catch (error) { setStatus(`Preview unavailable. ${String(error).slice(0, 100)}`); }
-    }, 180);
-    return () => {
-      stopped = true;
-      clearTimeout(start);
-      cancelAnimationFrame(timer);
-      if (window.__depthPreviewScene === scene.current) delete window.__depthPreviewScene;
-      scene.current?.dispose();
-      scene.current = null;
-    };
-  }, [m, lookV2]);
-  useEffect(() => { scene.current?.invalidate(); }, [view, rotating, angle, visible]);
+    return runtime.attach(host.current, () => options.current, setStatus);
+  }, [runtime]);
+  useEffect(() => { runtime.setLook(lookV2); }, [runtime, lookV2]);
+  useEffect(() => { runtime.invalidate(); }, [runtime, view, rotating, angle, visible]);
 
   return <div className={`dp-miniature ${home ? 'dp-miniature-home' : ''}`}>
     <div className="dp-miniature-canvas" ref={host} aria-label={home ? 'Your team at the cafe' : `${R.CAT_BY_ID[id!]!.name} miniature`} />
