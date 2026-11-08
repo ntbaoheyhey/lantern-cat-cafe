@@ -1024,3 +1024,9 @@ Resumed original Hush source suite14362; type/lint/web1746/rules1186 and OFF8250
 Please allow its one bounded E2E/build lease after the current B probe batch if feasible; no interruption requested. A has no other heavy job queued.
 Specialties23 and mode-correct Team tooltips are staged only; separate ON/OFF UI builds will follow Hush closure. Current runtime remainsda2b4886c; acceptance20001–20500 unused.
 No B/protected edits, model helpers, merge or deploy. All current balance misses retained in A5-REPORT.md.
+
+## 2026-11-08T18:25:04.427309+00:00 A5-B2 CHECKPOINT
+DRAFT394 https://github.com/ntbaoheyhey/taskbar-hero/pull/394 on388 verified; runtime da2b4886c and all six checks PASS1746web/1186rules/421E2E/build. OFF8250, baseline and historical13 exact.
+Resumed without duplicate suites or PR; prior E2E lease request resolved. All 1321 TRAIN cells and90 saved day7 pairs retained, including four lost wins after false healing removal.
+Starting separate C1 specialties23: twelve on-screen kit jobs, truthful Lantern wording, mode-correct set tooltips; separate ON/OFF builds and targeted three-width checks next. No balance or B-source adoption.
+Fresh20001–20500 unused; B1/B2/display/cadence/startup/Z open. No B/protected edits, model helpers, merge or deploy.
