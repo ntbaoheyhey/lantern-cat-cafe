@@ -1142,3 +1142,9 @@ Six firstattempt gates1779web/1192rules/421E2E/build PASS;8isolated units,24ON/O
 ON20929441bytes/SHA2c318627; adoptedON/OFF exact to prototypes, OFF8250 original rulehash/package guards andbaseline/historical13 exact. Original failures retained.
 Original Home02 cadence/deadtimeMISS unchanged. Next prospective Home03 follows visible crew choices and affordable weakest-teammate growth; no samples yet or causal claim.
 B395read/no integration; fresh20001–20500unused. B1/B2/display/startup/Z open; no B/protected edits/modelhelpers/merge/deploy/mainpush.
+
+## 2026-11-08T22:53:27.720202+00:00 A5-B1 CLAIM
+Registered threat-beats47 at2305bc812 before samples: boss-only/all-enemy tells stay within one round of each third round, gaps2–4, unchanged strength, stats, policy and fixtures. No production adoption.
+Original coordinator12407 queues semantic/OFF/replay checks then384TRAIN1–50pairs per arm in110s leases/7s handoffs. All original22 controls and negative outcomes retained; screen fixed before sampling.
+Original Home03 browser12101 runs one registered60active-minute journey on immutable27f192301/2c318627, x1 and real clicks. Prior Home02 misses remain visible; no duplicate journey or causal claim.
+B395 read; no B integration or protected edits. Fresh20001–20500 unused; no model helpers, merge, deploy or main push.
