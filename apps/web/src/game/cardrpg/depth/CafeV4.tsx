@@ -11,6 +11,7 @@ export function CafeBoardV4({ m }: { m: DepthModel }) {
   const shift = R.cafeShiftV4(m.state, m.cafeNow);
   const useful = !shift.rollback && shift.claims > 0 && Object.values(shift.reward).some(n => n > 0);
   const lesson = R.currentLessonV4(m.state);
+  const week = R.firstWeekV4(m.state);
   const claimable = QUESTS.map(q => R.boardPreviewV4(m.state, q.id)).find(p => !p.reason);
   const next = active ? { text: 'Your route is waiting.', button: 'Continue your route', screen: 'map' }
     : claimable ? { text: `${claimable.quest.name} is ready to collect.`, button: 'Collect board reward', screen: 'hub' }
@@ -23,6 +24,7 @@ export function CafeBoardV4({ m }: { m: DepthModel }) {
   };
   return <section className="dp-v4-cafe" aria-label="Today's cafe board">
     <div className="dp-v4-meta-heading"><div><small>YOUR NEXT STEP</small><h2>Today at the cafe</h2><p>{next.text}</p></div><button onClick={nextAction}>{next.button}</button></div>
+    {week && <div className="dp-v4-tomorrow"><p><strong>Tonight:</strong> {week.goal}</p><p><strong>Tomorrow:</strong> {week.tomorrow}</p></div>}
     {lesson && <article className="dp-v4-lesson"><h3>{lesson.title}</h3><p>{lesson.text}</p><div className="cr-actions"><button onClick={() => m.go(lesson.screen)}>{lesson.action}</button><button disabled={active} onClick={() => m.apply(R.finishLessonV4(m.state, lesson.id), 'Ready for the next cafe tip.')}>Understood · next tip</button></div></article>}
     <div className="dp-v4-meta-grid"><article><h3>Cafe shift</h3><p>{shift.claims} ready · {shift.remaining}/2 daily services remaining</p><p>Available now: <CostView cost={shift.reward} /></p><p>{shift.rollback ? 'The clock moved backwards. Wait until it catches up.' : useful ? 'Ready when you are.' : shift.remaining === 0 ? 'Both shifts are collected. Come back after midnight UTC.' : `Next useful service in ${Math.max(1, Math.ceil((shift.readyAt - shift.now) / 60000))} minutes.`}</p><small>Up to {shift.capHours} hours count toward your next service.</small><button disabled={active || !useful} onClick={() => m.apply(R.claimCafeShiftV4(m.state, m.cafeNow), 'A warm shift, collected.')}>Claim cafe service</button>{shift.claims > 0 && !useful && !shift.rollback && <p>You’ve earned today’s limit. Your service can wait.</p>}</article>
     <article><h3>Today's board</h3>{QUESTS.map(q => { const p = R.boardPreviewV4(m.state, q.id); return <div className="dp-v4-board-task" key={q.id}><b>{q.name}</b><small>{q.id === 'daily-patrol' ? 'Complete two rewarded routes.' : q.id === 'weekly-wins' ? 'Win three rewarded routes this week.' : q.description} · {q.cadence}</small><progress aria-label={`${q.name} progress`} value={p.progress.progress} max={q.target} /><span>{p.progress.progress}/{q.target} · available <CostView cost={p.reward} />{Object.entries(p.stacks).map(([id,n]) => <span key={id}> · {n} {id}</span>)}</span><button aria-label={`Claim ${q.name}`} disabled={active || !!p.reason} onClick={() => m.command({ type: 'claimQuest', questId: q.id })}>{p.progress.claimed ? 'Collected' : 'Claim reward'}</button>{p.reason && !p.progress.claimed && <small>{p.reason}</small>}</div>; })}</article></div>

@@ -14,7 +14,7 @@ describe('earned invitations and permanent selectors',()=>{
  it('does not grant a mark for the free welcome and keeps v4 commands inactive when disabled',()=>{
   const s=state(),free=firstInvitation(s,11);expect(free.ok).toBe(true);expect(R.selectorMarksV4(free.state)).toBe(0);
   expect(firstInvitation(free.state,12).state).toBe(free.state);
-  s.v4!.selectorMarks=60;const off=R.setGameplayV4(s,false);expect(R.chooseSelectorV4(off,'cat','panko').state).toBe(off);
+  s.v4!.selectorMarks=R.SELECTOR_COST_V4;const off=R.setGameplayV4(s,false);expect(R.chooseSelectorV4(off,'cat','panko').state).toBe(off);
  });
  it('draws from all 128 depth templates and matches the exact disclosed pool',()=>{
   const s=state(),banner=BANNERS.find(b=>b.kind==='equipment')!;
@@ -38,14 +38,14 @@ describe('earned invitations and permanent selectors',()=>{
   for(const b of BANNERS.filter(b=>b.id!=='standard'))expect(s.account.pity[b.pityGroup]?.totalPulls??0).toBe(0);
   const old=R.createDepthAccount(3);expect(R.selectorMarksV4(R.setGameplayV4(old,true))).toBe(0);
  });
- it('spends sixty marks atomically for a chosen unowned cat without changing pity',()=>{
-  const s=state();s.v4!.selectorMarks=60;const id=CARDS.find(c=>!s.account.cards.some(o=>o.cardId===c.id))!.id;
+ it('spends the disclosed marks atomically for a chosen unowned cat without changing pity',()=>{
+  const s=state();s.v4!.selectorMarks=R.SELECTOR_COST_V4;const id=CARDS.find(c=>!s.account.cards.some(o=>o.cardId===c.id))!.id;
   const p=clone(s.account.pity),r=R.chooseSelectorV4(s,'cat',id);expect(r.ok).toBe(true);expect(r.state.account.cards.some(c=>c.cardId===id)).toBe(true);
   expect(r.state.v4!.selectorMarks).toBe(0);expect(r.state.account.pity).toEqual(p);expect(R.chooseSelectorV4(r.state,'cat',id).ok).toBe(false);
   expect(R.chooseSelectorV4(s,'cat',s.team[0]!).state).toBe(s);
  });
  it('enforces source/mastery and shelf gates for a chosen gear template',()=>{
-  const s=state();s.v4!.selectorMarks=60;const item=R.GEAR.find(g=>g.chapter===3&&g.rarity==='legendary')!;
+  const s=state();s.v4!.selectorMarks=R.SELECTOR_COST_V4;const item=R.GEAR.find(g=>g.chapter===3&&g.rarity==='legendary')!;
   expect(R.chooseSelectorV4(s,'gear',item.id).state).toBe(s);s.account.chapter=4;s.masteries=[3];
   const r=R.chooseSelectorV4(s,'gear',item.id);expect(r.ok).toBe(true);expect(r.state.gear.at(-1)!.templateId).toBe(item.id);expect(r.state.v4!.selectorMarks).toBe(0);
  });

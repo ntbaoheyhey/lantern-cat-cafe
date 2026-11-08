@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-P1 source adopted on codex/cardrpg-a5-p1-2026-11-08: lazy07 screens/reviewer boundaries, exact model dictionary/module transport, default build pixel packing. Production combat remains A4; fresh 20001–20500 UNUSED. C1 draft379 unchanged.
+Reward DRAFT382 published on381 (headba58ba326); reward functional/source/browser/OFF checks PASS, B3 remainsPARTIAL on day7 combat. Stat-budget05 original attemptINVALID: /tmp vs/private/tmp prevented every candidate transform. Corrected same-seed execution now asserts applied modules and numeric gear values before sampling; production combat staysA4.
 ## NEXT
-P1 draft381 published on379, source509c88fbf/closure95e1c1c4f. Mirror state and continue B3 reward progress while B1/B2 remain rejected. Preserve corrected90-account parity session59384; no rule adoption before matching all4050days and wiring current odds/caps. No B/protected edits or fresh combat acceptance.
+Finish corrected immutable TRAIN job (session76893; /tmp/cardrpg-a5-stat-budget-05-corrected). Preserve original rejected/invalid receipts. Integrate staged E1 after the snapshot matrix stops enumerating current source; complete rules/worker/browser/source checks. Fresh20001–20500 UNUSED. Stack376→377→379→381→382.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -112,3 +112,13 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - P1 closureattempts1/2 retained missing1024 evidence;3assembledoriginalresults;4adds durableartifact path only. No source-suite or browser rerun. OFF8250 reused with63rulehashparity, baseline/historical13 exact. Originalruntime509c88fbf unchanged; draftreport P1-SIZE-STARTUP.md explicitlyPARTIAL.
 
 - Published P1 DRAFT https://github.com/ntbaoheyhey/taskbar-hero/pull/381 on#379, head95e1c1c4f, no merge/deploy. Stack376→377→379→381. Three trailing-whitespace lines in registeredstartup harness intentionally retained with exactmeasuredhash; PR records this provenance exception. B1/B2remainMISS, not deferred acceptancepassed.
+
+- Resume 2026-11-08T07:48:33.754688+00:00: preserved original reward coordinator61157; all90accounts/4050days completed with exact original hashes. All-source firstLegendary median6/5/5days (casual/regular/heavy), regular100%by7/14, selector11/9/9days; ratios<=2.555857x. Three independent receipt testsPASS. Current source dd216ebf9; tests/build/browser/OFF in progress. Added no saved fields, combat/B/protected edits or acceptance sampling.
+
+- Resume: original source suite completed, no repeated earned cohort/OFF/baseline job. B3 selector settles24→0 exactly once, pity unchanged at all3widths; screenshots reveal1024heading obscured by sticky fairness. Added existing measured clearance to V4 selector, targeted geometry assertion and separate reviewed receipts; no combat/protected/B edits.
+
+- Registered stat-budget05 TRAIN before sampling at /tmp/cardrpg-a5-stat-budget-05 and a5/b1/stat-budget-05: relative main-stat3.5%/5% (cap12%) atop exact pressure500weight2/sig100, all384/210/64/663cases TRAIN1–50. Source copied immutably to /tmp/cardrpg-a5-stat-budget-05/source; coordinator69562/session86963,110slock/7shandoff. No production adoption/acceptance. E1 16-file integration staged under /tmp/cardrpg-a5-e1-integration; untested, not adopted.
+
+- B3 reviewed closure PASS: source06dc9d3ba, three independent numeric receipt tests, all12reviewedcaptures minimumscopedcontrast8.376/nooverflow/errors/remote. Exactearned24→0/pity unchanged; sourcechecks/historical13/baseline/OFF165/8250 PASS. Original type portability and missing temporary-Python build failures retained; currentPillow11.3.0 used. Artifact22ad9eb9/20818233 archived. B3 stillPARTIAL onA4combat; day7retry/collectible/post-B1 gates remain pending.
+
+- Resume 2026-11-08T08:05:35.905036+00:00: verified remoteDRAFT382/headba58ba326, no duplicate reward publication or tests. Originalstat05 completed both variants identically; confirmed realpath mismatch in loader. Original32piece misses/max88pp are NOT candidate outcomes. Correctedexecutorcanonicalizespaths/asserts all executable transforms once and checksgearformula; same source/seeds/cases, separate corrected receipts; no production/acceptance changes.

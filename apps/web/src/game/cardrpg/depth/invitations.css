@@ -86,6 +86,7 @@
 @media (prefers-reduced-motion: reduce) { .dp-envelope, .dp-envelope-fold, .dp-flip-result { animation: none; transition: none; } }
 
 .dp-invitation-stage, .dp-batch-results { scroll-margin-top: var(--invitation-clearance, 150px); }
+.dp-v4-selector { scroll-margin-top: var(--invitation-clearance, 150px); }
 
 /* Keep the featured card and earned-stamp actions together above the fold. */
 .dp-invitation-fairness { gap: 4px 16px; padding: 8px 12px; margin: 8px 0; }

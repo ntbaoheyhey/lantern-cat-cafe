@@ -13,6 +13,8 @@ import { CAT_BY_ID, SKILLS } from './catalog';
 import { crewStats, gameplayV4 } from './gameplay-v4';
 import { CONTRACT_VERSION, type DepthAccount, type Row, type RuleResult } from './contract';
 export const DEPTH_CAPS = {fish:420,threads:90,stamps:180,essence:6};
+export const DEPTH_CAPS_V4 = {...DEPTH_CAPS,stamps:360};
+export const depthCaps = (state:DepthAccount) => gameplayV4(state) ? DEPTH_CAPS_V4 : DEPTH_CAPS;
 export function createDepthAccount(seed=11, now=0): DepthAccount {
   const account=createStarterAccount(seed);
   const team=account.cards.map(c=>c.cardId);
@@ -44,7 +46,7 @@ export function configureTeam(state: DepthAccount, team: string[], rows: Record<
   });
 }
 export function grantDepth(state: DepthAccount, currencies: Partial<typeof DEPTH_CAPS>, xp=0) {
-  const capped=Object.fromEntries(Object.entries(currencies).map(([id,amount])=>[id,Math.max(0,Math.min(amount,DEPTH_CAPS[id as keyof typeof DEPTH_CAPS]-state.account.daily.earned[id as keyof typeof DEPTH_CAPS]))]));
+  const capped=Object.fromEntries(Object.entries(currencies).map(([id,amount])=>[id,Math.max(0,Math.min(amount,depthCaps(state)[id as keyof typeof DEPTH_CAPS]-state.account.daily.earned[id as keyof typeof DEPTH_CAPS]))]));
   return grant(state.account,{currencies:capped,xp});
 }
 export function metaCommand(state: DepthAccount, command: Command): RuleResult<DepthAccount> {
@@ -70,7 +72,9 @@ export function metaCommand(state: DepthAccount, command: Command): RuleResult<D
       s.gear.push(gear);
     }
     for(const id of Object.keys(DEPTH_CAPS) as Array<keyof typeof DEPTH_CAPS>) {
-      const excess=Math.max(0,s.account.daily.earned[id]-DEPTH_CAPS[id]);
+      // Preserve already-earned V4 currency when its owner switches the mode off.
+      const floor=s.v4?Math.max(depthCaps(s)[id],before.daily.earned[id]):depthCaps(s)[id];
+      const excess=Math.max(0,s.account.daily.earned[id]-floor);
       s.account.currencies[id]-=excess;s.account.daily.earned[id]-=excess;
     }
     for(const c of s.account.cards)if(!s.skills[c.cardId]){s.skills[c.cardId]=CAT_BY_ID[c.cardId]!.skills.slice(0,3).map(sk=>sk.id);s.rows[c.cardId]=CAT_BY_ID[c.cardId]!.row;}

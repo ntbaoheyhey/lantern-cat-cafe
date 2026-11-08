@@ -2,13 +2,48 @@
 import { afterEach, expect, it, vi } from 'vitest';
 import { act, cleanup, fireEvent, render, screen, within } from '@testing-library/react';
 import { BANNERS, CARDS, emptyPity } from '@taskbar-hero/game-rules/cardrpg';
-import { GEAR_BY_ID } from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
+import { GEAR_BY_ID, SELECTOR_COST_V4, setGameplayV4 } from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import { DepthModel } from './model';
 import { Invitations } from './Invitations';
 
 vi.mock('./CompanionPreview', () => ({ CompanionPreview: ({ id, entranceKey }: { id: string; entranceKey?: string }) =>
   <div data-testid="invitation-miniature" data-entrance={entranceKey}>Model preview {id}</div> }));
 afterEach(() => { cleanup(); vi.useRealTimers(); vi.unstubAllGlobals(); });
+
+it('discloses the V4 soft curve, cap and selector price alongside the actual next odds', () => {
+  const model = paidAccount();
+  model.state = setGameplayV4(model.state, true);
+  model.state.account.pity['cats-standard'] = { ...emptyPity(), sinceLegendary: 12 };
+  render(<Invitations m={model} />);
+  expect(screen.getByText('Legendary guaranteed in 12')).toBeTruthy();
+  expect(screen.getByText('8.00%')).toBeTruthy();
+  expect(screen.getByText(/Earn up to 360 stamps daily/)).toBeTruthy();
+  expect(screen.getByText(/From draw 13, Legendary chance rises by 7 percentage points/)).toBeTruthy();
+  expect(screen.getByRole('button', { name: `Choose reward · ${SELECTOR_COST_V4} marks` })).toBeTruthy();
+});
+
+it('honours an old over-threshold counter and spends the displayed selector cost once', () => {
+  const model = paidAccount();
+  model.state = setGameplayV4(model.state, true);
+  model.state.settings.reducedMotion = true;
+  model.state.v4!.selectorMarks = SELECTOR_COST_V4;
+  model.state.account.pity['cats-featured'] = { ...emptyPity(), sinceLegendary: 59, featuredGuaranteed: true };
+  const view = render(<Invitations m={model} />);
+  fireEvent.click(screen.getByRole('button', { name: 'Marigold at Closing Time' }));
+  expect(screen.getByText('Legendary guaranteed in 1')).toBeTruthy();
+  fireEvent.click(screen.getByRole('button', { name: 'Invite once · 150 stamps' }));
+  expect(model.state.account.history.at(-1)).toMatchObject({ rarity: 'legendary', cardId: 'marigold', pityBefore: 59 });
+  expect(screen.getByText('Legendary guaranteed in 24')).toBeTruthy();
+  const cat = CARDS.find(c => !model.state.account.cards.some(o => o.cardId === c.id))!;
+  fireEvent.change(screen.getByLabelText('Chosen reward'), { target: { value: cat.id } });
+  const pity = structuredClone(model.state.account.pity);
+  fireEvent.click(screen.getByRole('button', { name: `Choose reward · ${SELECTOR_COST_V4} marks` }));
+  expect(model.state.v4!.selectorMarks).toBe(1);
+  expect(model.state.account.cards.some(c => c.cardId === cat.id)).toBe(true);
+  expect(model.state.account.pity).toEqual(pity);
+  view.rerender(<Invitations m={model} />);
+  expect((screen.getByRole('button', { name: `Choose reward · ${SELECTOR_COST_V4} marks` }) as HTMLButtonElement).disabled).toBe(true);
+});
 
 function paidAccount() {
   const model = new DepthModel(true);

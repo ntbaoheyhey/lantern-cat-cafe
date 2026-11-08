@@ -73,3 +73,29 @@ test('45-day candidate summary is derived from all 90 actual account receipts', 
   assert(heavy.legendary.medianDay < casual.legendary.medianDay);
   assert(regular.chosen.medianDay <= 21 && casual.chosen.medianDay <= 35 && heavy.chosen.censored === 0);
 });
+
+test('corrected caps reproduce all 4050 earned days and include Legendary rewards from every source', () => {
+  const current = read('reward-validation-02/progression.json');
+  const prior = read('reward-confirmation-01/progression.json');
+  const summary = read('reward-validation-02/summary.json');
+  assert.equal(createHash('sha256').update(readFileSync(new URL('reward-validation-02/progression.json', base))).digest('hex'), summary.sourceSha256);
+  assert.equal(current.accounts.length, 90);
+  let count = 0;
+  for (const account of current.accounts) {
+    const original = prior.accounts.find(a => a.style === account.style && a.index === account.index);
+    assert(original); assert.deepEqual(account.days, original.days); count += account.days.length;
+    assert.deepEqual(account.firstLegendary, original.firstLegendary);
+    assert.deepEqual(account.firstChosen, original.firstChosen);
+    assert(account.firstAnyLegendary.day <= account.firstLegendary.day);
+  }
+  assert.equal(count, 4050); assert.equal(summary.matchedDays, count);
+  for (const row of summary.rows) for (const field of ['firstLegendary', 'firstAnyLegendary', 'firstChosen']) {
+    const days = current.accounts.filter(a => a.style === row.style).map(a => a[field]?.day ?? null);
+    assert.deepEqual(row[field].observations, days);
+    assert.equal(row[field].censored, days.filter(d => d === null).length);
+    close(row[field].medianDay, median(days.filter(d => d !== null)));
+    for (const n of [7, 14]) close(row[field][`byDay${n}`], days.filter(d => d !== null && d <= n).length / 30);
+  }
+  assert.deepEqual(current.totals, prior.totals); assert.deepEqual(current.ratios, prior.ratios);
+  assert(Object.values(summary.gates).every(Boolean));
+});
