@@ -324,3 +324,7 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - 2026-11-08T22:47:48.026422+00:00: Published DRAFT404 https://github.com/ntbaoheyhey/taskbar-hero/pull/404 on403; source27f192301/evidence62d3e0a64. Original gates and browser receipts unchanged. No merge/deploy.
 
 - 2026-11-08T22:52:45.039470+00:00: Registered Home03 at742aab9d9 before launch, exact artifact/source/script, one persistent x1 browser, lowest-level affordable teammate growth and first visible crew choice. Registered isolated threat-beats47 at2305bc812 before samples: boss/all-enemy bounded±1-round tells,2–4round spacing, unchanged strength/policy/fixtures,384TRAIN50pairs per arm after semantic checks. Native shared locks only; runtime unchanged.
+
+- 2026-11-08T22:59:41.913846+00:00: resumed original Home03 PID12101 and threat47 PID12407 without restart. First Home lease10.05active minutes and control47 semantics completed. Post-hoc display48 reconstructs original40 and separates forecast combat1–20 from observed21–50 on same30gear rolls: correlations0.439/0.620/0.688. Chapter1 misses0.6; overlapping original0.738/0.754/0.729 remains labelled. Zero new battles, no runtime/acceptance change.
+
+- Scheduling-only guardian tool95114 waits for Home03 lease2 frozen handoff, pauses original12101 with no active lock child, then resumes after diagnostic12407 exits or15min watchdog+7s. Script/method archived underthreat47. No original journey, source, seeds or sampling script changed.

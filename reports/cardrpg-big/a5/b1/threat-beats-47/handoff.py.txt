@@ -1,0 +1,51 @@
+import json, os, signal, subprocess, time
+from pathlib import Path
+from datetime import datetime, timezone
+home_pid, diagnostic_pid = 12101, 12407
+home_expected = 'node tools/cardrpg-big/a5-engagement-informed-session.mjs'
+diagnostic_expected = 'node tools/cardrpg-big/a5-threat-beats-run.mjs'
+root = Path('/Users/bao/taskbar-hero-cardrpg-a4')
+output = root/'reports/cardrpg-big/a5/b1/threat-beats-47/scheduling.json'
+log = root/'reports/cardrpg-big/a5/engagement/home-03/session-attempt-1.log'
+events = []
+
+def command(pid):
+    return subprocess.run(['ps','-p',str(pid),'-o','command='],capture_output=True,text=True,check=False).stdout.strip()
+
+def record(kind, **kw):
+    events.append(dict(at=datetime.now(timezone.utc).isoformat(),kind=kind,**kw))
+    output.write_text(json.dumps(events,indent=2)+'\n')
+    print(json.dumps(events[-1]),flush=True)
+
+def home_lease():
+    listing = subprocess.run(['ps','-axo','pid,ppid,command'],capture_output=True,text=True,check=True).stdout.splitlines()[1:]
+    return [line for line in listing if len(line.split(None,2))==3 and line.split(None,2)[1]==str(home_pid) and 'with-timing-lock.mjs A5 Home engagement03 lease' in line]
+
+assert command(home_pid)==home_expected
+assert command(diagnostic_pid)==diagnostic_expected
+record('waiting-for-frozen-boundary',homePid=home_pid,diagnosticPid=diagnostic_pid,earliestCompletedLease=2)
+paused=False
+try:
+    deadline=time.monotonic()+1000
+    while time.monotonic()<deadline:
+        if command(home_pid)!=home_expected or command(diagnostic_pid)!=diagnostic_expected:
+            record('original-process-ended-before-pause'); break
+        if '"leaseNumber":2,' not in log.read_text() or home_lease():
+            time.sleep(.5); continue
+        # The journey freezes Chromium before printing its lease completion.
+        # The absence of its direct lease child identifies the seven-second handoff.
+        os.kill(home_pid,signal.SIGSTOP); paused=True
+        if home_lease():
+            os.kill(home_pid,signal.SIGCONT); paused=False
+            time.sleep(.5); continue
+        record('paused-at-frozen-handoff',homePid=home_pid)
+        bound=time.monotonic()+900
+        while time.monotonic()<bound and command(diagnostic_pid)==diagnostic_expected:
+            time.sleep(2)
+        record('handoff-finished',reason='diagnostic ended' if command(diagnostic_pid)!=diagnostic_expected else '15 minute watchdog')
+        break
+finally:
+    if paused:
+        time.sleep(7)
+        if command(home_pid)==home_expected:
+            os.kill(home_pid,signal.SIGCONT);record('resumed-original-home',homePid=home_pid)

@@ -1,0 +1,3 @@
+# Scheduling-only handoff
+
+2026-11-08T23:00UTC: original Home03 PID12101 and diagnostic47 PID12407 remain unchanged. A native guardian waits for Home lease2 to finish, its page to freeze and its lock child to exit. It pauses only that original Home coordinator during the seven-second handoff, lets the original diagnostic take bounded leases, then resumes the same Home browser after a seven-second handoff. A 15-minute watchdog guarantees resumption if diagnostic47 takes longer. No active browser interval is interrupted and no samples are restarted. Cafe service still accrues walltime, as disclosed in the original protocol. The guardian receipt is scheduling.json; script archived as handoff.py.txt.

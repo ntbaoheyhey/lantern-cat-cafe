@@ -79,7 +79,7 @@ Remaining work: B1/B2 numeric closure and display calibration; fresh registered 
 
 [Reply-pressure39](b1/reply-pressure-39/RESULTS.md): all three arms rejected under the predeclared screen; worst piece gains32/50/44pp. The middle pressure restores average difficulty but retains99piece misses. No production adoption, extra acceptance samples or wider rerun. [Pressure strata42](b1/pressure-strata-42/RESULTS.md) reconstructs the old spread candidates without new battles: conditional gains still vary within the five registered pressure groups; smaller bins and multiple comparisons limit interpretation.
 
-[Equipment comparison](E1-EQUIPMENT-FORECAST.md): actual whole-crew equip/transfer against a selected boss and band;36browserchecks/24captures, worker stale-delivery/CSP fallback PASS. ON20,927,337bytes/SHA0a2c5f1d; CPU1max79.9ms. Contextual TRAIN correlations0.738/0.754/0.729 overlap seeds and do not close static-display or fresh acceptance gates.
+[Equipment comparison](E1-EQUIPMENT-FORECAST.md): actual whole-crew equip/transfer against a selected boss and band;36browserchecks/24captures, worker stale-delivery/CSP fallback PASS. ON20,927,337bytes/SHA0a2c5f1d; CPU1max79.9ms. Contextual TRAIN correlations0.738/0.754/0.729 overlap seeds and do not close static-display or fresh acceptance gates. Post-hoc [separate combat seeds48](b1/display-split-48/RESULTS.md) fall to0.439/0.620/0.688; chapter1 misses0.6. No additional battles.
 
 [Original Home02 journey](E2-HOME-ENGAGEMENT.md) completed60.78active minutes/58battles/60captures on immutable growth994d84056. Receipt auditPASS; cadence/dead-timeMISS remains. Home01 stays retained separately. No new human retention claim or acceptance sample.
 
