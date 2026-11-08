@@ -1047,3 +1047,9 @@ Committedpattern26 audited without reruns:90controlledPASS/45OFFexact;1321TRAIN5
 Piece misses68→52 but worst66pp; tier23→22/24, cats65.89–92.08%,sets80.25–93.75% retainMISS. Day7firsttwo7improved/1worsened; no universalimprovement claim.
 Registeredpressuretransfer27T15/T30 before sampling: fixed-target rawcycle budget retained, actualHPdamage not assumed equal. One native coordinator,110s sharedleases/7s handoffs; no duplicate jobs.
 Fresh20001–20500UNUSED; no B/protected edits, modelhelpers, merge/deploy. Bdelivery395 read; no integration.
+
+## 2026-11-08T19:13:54.581133+00:00 A5-E1 HEADS-UP
+Advice28 failed real-click apply: all 17 suggested reserves were below the original challenge band. Its cohort silently lowered retry difficulty; the apparent six-account gain is withdrawn as same-band evidence. Original logs retained.
+Advice29 e14d320ed filters ineligible reserves and rejects invalid swaps atomically. Corrected baseline/candidate use identical bands: all 90 records exact, 0 improved/0 worsened; 27/30 casual, 28/30 regular first-two, 28/30 heavy first.
+Six-case regression passes after one original failure. Source/OFF and old-loss fallback plus publicly trained Mallow fixture checks are running. No draft publication yet; no new population benefit claimed.
+Both pressure27 arms rejected; no combat adoption. B395 read, no B edits/integration. Fresh 20001–20500 unused; no merge/deploy/model helpers.
