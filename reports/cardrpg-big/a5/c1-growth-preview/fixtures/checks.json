@@ -1,0 +1,537 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "mode": "on",
+      "name": "level5",
+      "path": "reports/cardrpg-big/a5/c1-growth-preview/fixtures/on-level5.save",
+      "method": "Fresh default balance, four public level commands; no earned-session or clock claim.",
+      "sha256": "f1da2dca3ec977b77d1dc82649b6d430bf4dd1d919bf5715f806879b37d6cfb2",
+      "command": {
+        "type": "level",
+        "cardId": "mochi"
+      },
+      "before": {
+        "card": {
+          "id": "mochi",
+          "cardId": "mochi",
+          "level": 5,
+          "stars": 1,
+          "shards": 0,
+          "soulbound": true
+        },
+        "currencies": {
+          "fish": 350,
+          "threads": 32,
+          "stamps": 600,
+          "essence": 0
+        },
+        "stats": {
+          "hp": 602,
+          "attack": 58,
+          "defense": 36,
+          "critBp": 800,
+          "critDamageBp": 5000,
+          "effectHitBp": 0,
+          "effectResistBp": 0,
+          "healingBp": 0,
+          "shieldBp": 0,
+          "initiative": 8
+        }
+      },
+      "after": {
+        "card": {
+          "id": "mochi",
+          "cardId": "mochi",
+          "level": 6,
+          "stars": 1,
+          "shards": 0,
+          "soulbound": true
+        },
+        "currencies": {
+          "fish": 225,
+          "threads": 30,
+          "stamps": 600,
+          "essence": 0
+        },
+        "stats": {
+          "hp": 609,
+          "attack": 59,
+          "defense": 36,
+          "critBp": 800,
+          "critDamageBp": 5000,
+          "effectHitBp": 0,
+          "effectResistBp": 0,
+          "healingBp": 0,
+          "shieldBp": 0,
+          "initiative": 8
+        },
+        "skills": [
+          "mochi-1",
+          "mochi-2",
+          "mochi-3",
+          "mochi-4"
+        ]
+      },
+      "skillNames": [
+        "Last light shelter"
+      ]
+    },
+    {
+      "mode": "on",
+      "name": "star2",
+      "path": "reports/cardrpg-big/a5/c1-growth-preview/fixtures/on-star2.save",
+      "method": "Synthetic UI edge: Mochi2stars/20shards only; no earned-progression claim.",
+      "sha256": "b6ae3bbd4088e68339b55db7b311e26b25a344efd1c21fa50ca2b81332db2fec",
+      "command": {
+        "type": "ascend",
+        "cardId": "mochi"
+      },
+      "before": {
+        "card": {
+          "id": "mochi",
+          "cardId": "mochi",
+          "level": 1,
+          "stars": 2,
+          "shards": 20,
+          "soulbound": true
+        },
+        "currencies": {
+          "fish": 600,
+          "threads": 40,
+          "stamps": 600,
+          "essence": 0
+        },
+        "stats": {
+          "hp": 590,
+          "attack": 57,
+          "defense": 35,
+          "critBp": 800,
+          "critDamageBp": 5000,
+          "effectHitBp": 0,
+          "effectResistBp": 0,
+          "healingBp": 0,
+          "shieldBp": 0,
+          "initiative": 8
+        }
+      },
+      "after": {
+        "card": {
+          "id": "mochi",
+          "cardId": "mochi",
+          "level": 1,
+          "stars": 3,
+          "shards": 0,
+          "soulbound": true
+        },
+        "currencies": {
+          "fish": 300,
+          "threads": 40,
+          "stamps": 600,
+          "essence": 0
+        },
+        "stats": {
+          "hp": 604,
+          "attack": 59,
+          "defense": 36,
+          "critBp": 800,
+          "critDamageBp": 5000,
+          "effectHitBp": 0,
+          "effectResistBp": 0,
+          "healingBp": 0,
+          "shieldBp": 0,
+          "initiative": 8
+        },
+        "skills": [
+          "mochi-1",
+          "mochi-2",
+          "mochi-3",
+          "mochi-4"
+        ]
+      },
+      "skillNames": [
+        "Last light shelter"
+      ]
+    },
+    {
+      "mode": "on",
+      "name": "poor",
+      "path": "reports/cardrpg-big/a5/c1-growth-preview/fixtures/on-poor.save",
+      "method": "Synthetic insufficient-fish edge.",
+      "sha256": "f5f7e49b74f97f8c44d0fab0d613a1b081e83df8131b436ce34cfe1576045455",
+      "command": null,
+      "before": {
+        "card": {
+          "id": "mochi",
+          "cardId": "mochi",
+          "level": 1,
+          "stars": 1,
+          "shards": 0,
+          "soulbound": true
+        },
+        "currencies": {
+          "fish": 0,
+          "threads": 40,
+          "stamps": 600,
+          "essence": 0
+        },
+        "stats": {
+          "hp": 575,
+          "attack": 56,
+          "defense": 34,
+          "critBp": 800,
+          "critDamageBp": 5000,
+          "effectHitBp": 0,
+          "effectResistBp": 0,
+          "healingBp": 0,
+          "shieldBp": 0,
+          "initiative": 8
+        }
+      },
+      "after": null,
+      "skillNames": []
+    },
+    {
+      "mode": "on",
+      "name": "max",
+      "path": "reports/cardrpg-big/a5/c1-growth-preview/fixtures/on-max.save",
+      "method": "Synthetic level/star-cap edge.",
+      "sha256": "5576d0b51435b9f45278c1ed3de96d31d29d7cd986b259d359b831733f837221",
+      "command": null,
+      "before": {
+        "card": {
+          "id": "mochi",
+          "cardId": "mochi",
+          "level": 20,
+          "stars": 5,
+          "shards": 0,
+          "soulbound": true
+        },
+        "currencies": {
+          "fish": 600,
+          "threads": 40,
+          "stamps": 600,
+          "essence": 0
+        },
+        "stats": {
+          "hp": 763,
+          "attack": 74,
+          "defense": 45,
+          "critBp": 800,
+          "critDamageBp": 5000,
+          "effectHitBp": 0,
+          "effectResistBp": 0,
+          "healingBp": 0,
+          "shieldBp": 0,
+          "initiative": 8
+        }
+      },
+      "after": null,
+      "skillNames": []
+    },
+    {
+      "mode": "on",
+      "name": "active",
+      "path": "reports/cardrpg-big/a5/c1-growth-preview/fixtures/on-active.save",
+      "method": "Public startRun from fresh account; no combat played.",
+      "sha256": "b1095712f79e8f266222ccfeaff06d21fb4eba7f59419e1f47612da8e4c191d1",
+      "command": null,
+      "before": {
+        "card": {
+          "id": "mochi",
+          "cardId": "mochi",
+          "level": 1,
+          "stars": 1,
+          "shards": 0,
+          "soulbound": true
+        },
+        "currencies": {
+          "fish": 600,
+          "threads": 40,
+          "stamps": 600,
+          "essence": 0
+        },
+        "stats": {
+          "hp": 575,
+          "attack": 56,
+          "defense": 34,
+          "critBp": 800,
+          "critDamageBp": 5000,
+          "effectHitBp": 0,
+          "effectResistBp": 0,
+          "healingBp": 0,
+          "shieldBp": 0,
+          "initiative": 8
+        }
+      },
+      "after": null,
+      "skillNames": []
+    },
+    {
+      "mode": "off",
+      "name": "level5",
+      "path": "reports/cardrpg-big/a5/c1-growth-preview/fixtures/off-level5.save",
+      "method": "Fresh default balance, four public level commands; no earned-session or clock claim.",
+      "sha256": "8d68e54c39d5496dedac43500a1c3e8dc9ec560414d709905701071741b530db",
+      "command": {
+        "type": "level",
+        "cardId": "mochi"
+      },
+      "before": {
+        "card": {
+          "id": "mochi",
+          "cardId": "mochi",
+          "level": 5,
+          "stars": 1,
+          "shards": 0,
+          "soulbound": true
+        },
+        "currencies": {
+          "fish": 350,
+          "threads": 32,
+          "stamps": 600,
+          "essence": 0
+        },
+        "stats": {
+          "hp": 600,
+          "attack": 63,
+          "defense": 36,
+          "critBp": 800,
+          "critDamageBp": 5000,
+          "effectHitBp": 0,
+          "effectResistBp": 0,
+          "healingBp": 0,
+          "shieldBp": 0,
+          "initiative": 8
+        }
+      },
+      "after": {
+        "card": {
+          "id": "mochi",
+          "cardId": "mochi",
+          "level": 6,
+          "stars": 1,
+          "shards": 0,
+          "soulbound": true
+        },
+        "currencies": {
+          "fish": 225,
+          "threads": 30,
+          "stamps": 600,
+          "essence": 0
+        },
+        "stats": {
+          "hp": 606,
+          "attack": 64,
+          "defense": 36,
+          "critBp": 800,
+          "critDamageBp": 5000,
+          "effectHitBp": 0,
+          "effectResistBp": 0,
+          "healingBp": 0,
+          "shieldBp": 0,
+          "initiative": 8
+        },
+        "skills": [
+          "mochi-1",
+          "mochi-2",
+          "mochi-3",
+          "mochi-4"
+        ]
+      },
+      "skillNames": [
+        "Last light shelter"
+      ]
+    },
+    {
+      "mode": "off",
+      "name": "star2",
+      "path": "reports/cardrpg-big/a5/c1-growth-preview/fixtures/off-star2.save",
+      "method": "Synthetic UI edge: Mochi2stars/20shards only; no earned-progression claim.",
+      "sha256": "2c077b64ab3ab72e1010188c2ff4938a64b37e913837a515f8f823a152b29a89",
+      "command": {
+        "type": "ascend",
+        "cardId": "mochi"
+      },
+      "before": {
+        "card": {
+          "id": "mochi",
+          "cardId": "mochi",
+          "level": 1,
+          "stars": 2,
+          "shards": 20,
+          "soulbound": true
+        },
+        "currencies": {
+          "fish": 600,
+          "threads": 40,
+          "stamps": 600,
+          "essence": 0
+        },
+        "stats": {
+          "hp": 588,
+          "attack": 62,
+          "defense": 35,
+          "critBp": 800,
+          "critDamageBp": 5000,
+          "effectHitBp": 0,
+          "effectResistBp": 0,
+          "healingBp": 0,
+          "shieldBp": 0,
+          "initiative": 8
+        }
+      },
+      "after": {
+        "card": {
+          "id": "mochi",
+          "cardId": "mochi",
+          "level": 1,
+          "stars": 3,
+          "shards": 0,
+          "soulbound": true
+        },
+        "currencies": {
+          "fish": 300,
+          "threads": 40,
+          "stamps": 600,
+          "essence": 0
+        },
+        "stats": {
+          "hp": 601,
+          "attack": 64,
+          "defense": 36,
+          "critBp": 800,
+          "critDamageBp": 5000,
+          "effectHitBp": 0,
+          "effectResistBp": 0,
+          "healingBp": 0,
+          "shieldBp": 0,
+          "initiative": 8
+        },
+        "skills": [
+          "mochi-1",
+          "mochi-2",
+          "mochi-3",
+          "mochi-4"
+        ]
+      },
+      "skillNames": [
+        "Last light shelter"
+      ]
+    },
+    {
+      "mode": "off",
+      "name": "poor",
+      "path": "reports/cardrpg-big/a5/c1-growth-preview/fixtures/off-poor.save",
+      "method": "Synthetic insufficient-fish edge.",
+      "sha256": "a31dde135d784b2723add44589a31584be6d64528dbeda6c054eee592d5d0c77",
+      "command": null,
+      "before": {
+        "card": {
+          "id": "mochi",
+          "cardId": "mochi",
+          "level": 1,
+          "stars": 1,
+          "shards": 0,
+          "soulbound": true
+        },
+        "currencies": {
+          "fish": 0,
+          "threads": 40,
+          "stamps": 600,
+          "essence": 0
+        },
+        "stats": {
+          "hp": 574,
+          "attack": 61,
+          "defense": 34,
+          "critBp": 800,
+          "critDamageBp": 5000,
+          "effectHitBp": 0,
+          "effectResistBp": 0,
+          "healingBp": 0,
+          "shieldBp": 0,
+          "initiative": 8
+        }
+      },
+      "after": null,
+      "skillNames": []
+    },
+    {
+      "mode": "off",
+      "name": "max",
+      "path": "reports/cardrpg-big/a5/c1-growth-preview/fixtures/off-max.save",
+      "method": "Synthetic level/star-cap edge.",
+      "sha256": "c96ffd9138d73d1bb91db93d9c96967b511421fc51ae35e493f306179ccea639",
+      "command": null,
+      "before": {
+        "card": {
+          "id": "mochi",
+          "cardId": "mochi",
+          "level": 20,
+          "stars": 5,
+          "shards": 0,
+          "soulbound": true
+        },
+        "currencies": {
+          "fish": 600,
+          "threads": 40,
+          "stamps": 600,
+          "essence": 0
+        },
+        "stats": {
+          "hp": 751,
+          "attack": 78,
+          "defense": 45,
+          "critBp": 800,
+          "critDamageBp": 5000,
+          "effectHitBp": 0,
+          "effectResistBp": 0,
+          "healingBp": 0,
+          "shieldBp": 0,
+          "initiative": 8
+        }
+      },
+      "after": null,
+      "skillNames": []
+    },
+    {
+      "mode": "off",
+      "name": "active",
+      "path": "reports/cardrpg-big/a5/c1-growth-preview/fixtures/off-active.save",
+      "method": "Public startRun from fresh account; no combat played.",
+      "sha256": "6b6dc31d07a5d743b6c3f0f2aca8a4e435f58b449dc3411d5a721940eefb44c4",
+      "command": null,
+      "before": {
+        "card": {
+          "id": "mochi",
+          "cardId": "mochi",
+          "level": 1,
+          "stars": 1,
+          "shards": 0,
+          "soulbound": true
+        },
+        "currencies": {
+          "fish": 600,
+          "threads": 40,
+          "stamps": 600,
+          "essence": 0
+        },
+        "stats": {
+          "hp": 574,
+          "attack": 61,
+          "defense": 34,
+          "critBp": 800,
+          "critDamageBp": 5000,
+          "effectHitBp": 0,
+          "effectResistBp": 0,
+          "healingBp": 0,
+          "shieldBp": 0,
+          "initiative": 8
+        }
+      },
+      "after": null,
+      "skillNames": []
+    }
+  ]
+}
