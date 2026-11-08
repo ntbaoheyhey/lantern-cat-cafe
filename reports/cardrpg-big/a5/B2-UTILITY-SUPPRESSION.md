@@ -12,6 +12,10 @@ Registered candidate15 changes one V4 branch: a Hushed, unimpaired heal/shield s
 
 Focused regression attempt 2: original source fails only the two intended V4 suppression cases (14 pass); candidate passes all 16. Attempt 1 mistakenly required positive HP damage from shield-absorbed OFF attacks and is retained. The correction accepts the existing damage event, including zero HP loss, without changing combat source.
 
-Both unchanged TRAIN matrices are registered: 1,840 common-fixture cells and 1,024 single-carrier cells, each with seeds 1–50. Results are pending; the focused checks alone do not establish balance. Original failures and all negative pairs stay visible. No production change, gate relaxation or fresh acceptance sampling.
+Both unchanged TRAIN matrices are registered: 1,840 common-fixture cells and 1,024 single-carrier cells, each with seeds 1–50. The common matrix is complete; the carrier matrix is pending. Original failures and all negative pairs stay visible. No production change, gate relaxation or fresh acceptance sampling.
+
+Common-fixture Inkcap rises54.47%→56.35% (468 paired improvements/56 worsenings); Soot44.16%→47.25%, Sorrel52.31%→53.20%, Cinnamon83.63%→84.00%. The latter three remain outside55–75%. Crew advantage31.00→30.75pp still misses. Velvetrim homogeneous-set wins32.75%→47.50%, but Hearthloom, Bellsteel and Emberfelt stay below35%. All cats retain top-pick cells and every scene retains at least four near-best triples. This repairs one semantic defect; it does not close balance. [Common audit](b2/utility-suppression-15/common/summary.json).
+
+The production regression suite adds19 behavioral cases, including summon/banquet attacks. Before correction only the two V4 heal/shield suppression cases fail; the other17 pass. Current16 separately registers composition with the already-shipped anchored60 curve, the original1,321-cell TRAIN50 matrix and all90 previously earned day7 saves. That saved-input comparison is not a fresh45-day cohort. [Current-source registration](b2/suppression-current-16/REGISTERED-METHOD.md).
 
 [Pre-run method](b2/utility-suppression-15/REGISTERED-METHOD.md) · [focused checks](b2/utility-suppression-15/regression-after-attempt2.json).

@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-DRAFT388 on386, guard runtime db69140eb verified; latest evidence b76fac30b. Carrier12/ablation13 identifies Hush heal/shield suppression falling through to replacement damage. Candidate15 is isolated, not adopted; focused regression14pass/2fail before,16pass after (original harness error retained).
+DRAFT388 on386; production remains guard db69140eb. Suppression15 common matrix complete: Inkcap54.47→56.35%, crew30.75pp MISS; carrier matrix still running. Kit-fit14 complete, crew26.75pp MISS. New19 unit cases fail only2 intended V4 cases before correction; no runtime adoption yet.
 ## NEXT
-Preserve original coordinators: support10 PID64374 (quiet-reach remaining), kit-fit14 tool7880/PID73815, suppression15 tool89997. No duplicate matrices. Candidate15 runs exact common04 and carrier12 TRAIN1–50 fixtures; kit-fit14 is separate fixture-only change. Audit complete receipts before adoption; production still guard-only. B1/B2/display/cadence/startup/Z open; fresh20001–20500 UNUSED. Stack376→377→379→381→382→383→384→385→386→388.
+Preserve original suppression15 PID74225/tool89997; carriers now queued/running. Current16 PID78873/tool39125 registered and queued: current A5+only Hush fix, original1321TRAIN50cells plus90OLD earned day7 snapshots (not fresh45day). Audit both before source adoption. No duplicate matrices. B1/B2/display/cadence/startup/Z open; fresh20001–20500 UNUSED. Stack376→377→379→381→382→383→384→385→386→388.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -188,3 +188,5 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - 2026-11-08T16:57:54.226537+00:00: setcarriers12 complete/audited; all source/replay/ally/plan/staticeligibility checksPASS. Original Emberfelt117/400ineligible differs from Mallow329/400eligible: no causalcrosscontext gainclaim. Matched declaredPantryEmber64%leads, overall82.25%MISS; Bellsteel70%losesmatched but74%leadsfixedcore. Rescue-rest10 Cinnamon83.63→74.70% butcrew31→33.25pp andbottomcatsworse; notadoptedalone. Draft388 and ledger22e4d0945 published; no production/acceptancechange.
 
 - 2026-11-08T17:01:56.991509+00:00: rearutility13 exact600battle ablation: remove reach or Quietspores gives50/50 vsfull21/50 inbotharms; removefourpiece/preference doesnotfix. Seed1round6 HushedTeacup replaces65heal with70shield+39HPdamage; registered suppression15 onebranchfix before sampling. Focused16checks pass candidate; original twoV4casesfail. Harnessattempt1 incorrectlyexpectedpositiveOFFHPdamage retained; attempt2 checks hit events inclzero. New kit-fit14 separate originaltargetbudget/all12semantickits diagnostic. No sourceadoption/acceptance.
+
+- 2026-11-08T17:09:28.291119+00:00: continued from candidate15 handoff. support10 quiet-reach complete/rejected: Inkcap53.22%,44improved/320worsened. kit-fit14 complete: Soot54.03%, Cinnamon86.40%, crew26.75pp; homogeneous3200exact. Suppression15common complete: Inkcap56.35%,Soot47.25%,Sorrel53.20%,Cinnamon84%,crew30.75pp; carrier original job retained. Registered current16 composition before sampling and19-case runtime regression retains2intended pre-fix failures. No source adoption or fresh acceptance.

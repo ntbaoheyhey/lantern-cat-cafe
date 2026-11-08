@@ -1,0 +1,7 @@
+# Eligible Hush17 — register interaction before sampling
+
+Kit-fit14 improves Soot44.16→54.03% and crew31→26.75pp without changing any skill. Suppression15 separately repairs the harmful utility fall-through and brings Inkcap54.47→56.35%. Cinnamon remains overpowered in both. Trial10's one-turn rescue rest lowers Cinnamon83.63→74.70% but worsens other role-kit cats. The interaction has not been measured.
+
+Two arms share the exact semantic gear assignments already declared in14 and the same original starter power budget, eight scenes, enemy stats, AI and TRAIN1–50 seeds. Both include only the proven fatal-followup guard and candidate15 Hush correction. Eligible-rest additionally uses the exact previously registered one-turn Comfort cup cooldown; eligible does not. No extra rear reach, Scent valuation, raw-stat tune, anchored difficulty or new gear mapping. Each arm runs all1,840cells. Compare BOTH against common04, kit-fit14, suppression15 and each other; keep negative pairs. Homogeneous-set controls are allowed to change due to Hush; kit14's original exact3,200controls remain separately archived.
+
+This measures a fixture/kit interaction, not an acceptance revision or automatic adoption. Report every cat/set/crew/diversity gate. Ineligible homogeneous starter sets still do not establish set niches. Unchanged-source hashes, first-seed full replay,110s shared leases and7s handoffs remain required. No fresh acceptance seeds or browser calls.
