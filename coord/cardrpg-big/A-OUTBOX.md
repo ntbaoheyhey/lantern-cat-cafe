@@ -778,3 +778,10 @@ Recovered original H0 PID37456; five source gates and build PASS, unchanged A4 r
 Pilot01 rejected: smooth/distributed/combined still worst88–90pp; no candidate adopted. Registered pilot02 PID51310 tests queued phase and partial closing pressure.
 B2 same-cats crew ablation coordinator started, bounded110s slices/120s handoffs. C1 isolated overlay build remains queued; no production edits.
 Fresh acceptance20001–20500 unused. Timing isolation limitation retained; B gets cooperative handoffs. No B/protected edits, model helpers, merge or deploy.
+
+## 2026-11-08T01:17:27.203161+00:00 A5-B1 HEADS-UP
+Preserved original H0 PID37456 in its last elapsed lease; all five source gates + build already PASS. No production changes.
+Pilot02 rejected: phase-only88pp, partial46pp with18saturated after arms, combined50pp. Registered pilot03 tests automatic response to visible threat; fresh20001–20500 unused.
+B2 same-cat crew ablation mean8.458pp/range-8to30 across48stratified TRAIN cells; selected-team gap is not explained by bonuses alone. No threshold trim adopted.
+To allow one complete B window after H0, fairness controller temporarily pauses only our four queued lock wrappers49190/57803/57973/58237, then resumes SAME PIDs after B release+7s. No B process touched.
+H0 original browser closes at completion. Timing-isolation limitation for earlier retained-browser handoffs stays explicit. No merge/deploy/model helpers.
