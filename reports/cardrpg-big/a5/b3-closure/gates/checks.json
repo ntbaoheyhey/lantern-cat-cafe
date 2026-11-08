@@ -31,5 +31,57 @@
     "sha256": "576b7353ee5ec2414a1c9e04ef66db0049ee6c924d7fbfa3d2230223413c9501",
     "status": "USER_STOPPED",
     "reason": "Explicit user requested save handoff and stop; not a test or gameplay failure."
+  },
+  {
+    "name": "web-unit",
+    "attempt": 2,
+    "code": 0,
+    "head": "b11c345d53cc51c11a1fdf21c73cc28820f4f8c9",
+    "started": "2026-11-08T16:06:50.009Z",
+    "ended": "2026-11-08T16:07:11.874Z",
+    "log": "reports/cardrpg-big/a5/b3-closure/gates/web-unit-attempt-2.log",
+    "sha256": "61d87fdd309d8d15bebb45d8cbd86a7da386d7c403ffc7cbcf9f83a87a90eb04",
+    "counts": [
+      " Test Files  178 passed (178)",
+      "      Tests  1746 passed (1746)"
+    ]
+  },
+  {
+    "name": "rules",
+    "attempt": 1,
+    "code": 0,
+    "head": "b11c345d53cc51c11a1fdf21c73cc28820f4f8c9",
+    "started": "2026-11-08T16:07:18.876Z",
+    "ended": "2026-11-08T16:07:43.887Z",
+    "log": "reports/cardrpg-big/a5/b3-closure/gates/rules-attempt-1.log",
+    "sha256": "897357dbe0d9a54a218092d80fa027052ab6b1b23a4a626cf18650744cbaacf9",
+    "counts": [
+      " Test Files  68 passed | 3 skipped (71)",
+      "      Tests  1133 passed | 2 expected fail | 11 skipped (1146)"
+    ]
+  },
+  {
+    "name": "e2e",
+    "attempt": 1,
+    "code": 0,
+    "head": "b11c345d53cc51c11a1fdf21c73cc28820f4f8c9",
+    "started": "2026-11-08T16:07:50.889Z",
+    "ended": "2026-11-08T16:12:21.536Z",
+    "log": "reports/cardrpg-big/a5/b3-closure/gates/e2e-attempt-1.log",
+    "sha256": "9fec9016ef8ee5ac11da09146ebae8ee139d0092d2206b4af93a51009af6c751",
+    "counts": [
+      "  421 passed (2.3m)"
+    ]
+  },
+  {
+    "name": "build",
+    "attempt": 1,
+    "code": 0,
+    "head": "b11c345d53cc51c11a1fdf21c73cc28820f4f8c9",
+    "started": "2026-11-08T16:12:28.539Z",
+    "ended": "2026-11-08T16:13:35.649Z",
+    "log": "reports/cardrpg-big/a5/b3-closure/gates/build-attempt-1.log",
+    "sha256": "772e6fff96a865b46513ef3ac25411937779fa91a03471895adb0ef675ef76c2",
+    "counts": []
   }
 ]

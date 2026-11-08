@@ -1,0 +1,197 @@
+{
+  "method": "Read-only TRAIN1–50, all55 Soot triples on eight equally weighted calibrated scenes; every battle outcome matches commonfixture04.",
+  "receipts": [
+    {
+      "path": "reports/cardrpg-big/a5/b2/soot-kit-probe-05/results.json",
+      "sha256": "2d3aa85002292aed263a41ea3e2451f3313078fe864588e2f81b7dbc23c999bd"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/b2/common-fixture-04/results.json",
+      "sha256": "5bdc6c838f4ad4e84fc4ed63266a8530c2d104d6fabb746792bd09fd527b5ff2"
+    }
+  ],
+  "overall": {
+    "cells": 440,
+    "battles": 22000,
+    "wins": 9715,
+    "actions": 203598,
+    "skills": {
+      "soot-1": 85385,
+      "soot-3": 70360,
+      "soot-4": 47191,
+      "defend": 662
+    },
+    "moonHealTriggers": 3096
+  },
+  "scenes": [
+    {
+      "scene": 0,
+      "enemies": [
+        "yarn-giant"
+      ],
+      "cells": 55,
+      "battles": 2750,
+      "wins": 1908,
+      "actions": 16905,
+      "skills": {
+        "soot-1": 6921,
+        "soot-3": 6384,
+        "soot-4": 3600
+      },
+      "moonHealTriggers": 290
+    },
+    {
+      "scene": 1,
+      "enemies": [
+        "rain-spool"
+      ],
+      "cells": 55,
+      "battles": 2750,
+      "wins": 1585,
+      "actions": 21429,
+      "skills": {
+        "soot-1": 8532,
+        "soot-3": 8089,
+        "soot-4": 4808
+      },
+      "moonHealTriggers": 481
+    },
+    {
+      "scene": 2,
+      "enemies": [
+        "pantry-crown"
+      ],
+      "cells": 55,
+      "battles": 2750,
+      "wins": 866,
+      "actions": 22068,
+      "skills": {
+        "soot-1": 8995,
+        "soot-3": 8016,
+        "soot-4": 5057
+      },
+      "moonHealTriggers": 413
+    },
+    {
+      "scene": 3,
+      "enemies": [
+        "needle-moth",
+        "pollen-scout"
+      ],
+      "cells": 55,
+      "battles": 2750,
+      "wins": 1106,
+      "actions": 33421,
+      "skills": {
+        "soot-3": 14111,
+        "soot-1": 10992,
+        "soot-4": 7831,
+        "defend": 487
+      },
+      "moonHealTriggers": 374
+    },
+    {
+      "scene": 4,
+      "enemies": [
+        "spool-ram",
+        "button-guard"
+      ],
+      "cells": 55,
+      "battles": 2750,
+      "wins": 811,
+      "actions": 26268,
+      "skills": {
+        "soot-1": 9943,
+        "soot-3": 10108,
+        "soot-4": 6205,
+        "defend": 12
+      },
+      "moonHealTriggers": 70
+    },
+    {
+      "scene": 5,
+      "enemies": [
+        "teacup-healer",
+        "kettle-knight"
+      ],
+      "cells": 55,
+      "battles": 2750,
+      "wins": 647,
+      "actions": 36223,
+      "skills": {
+        "soot-1": 22516,
+        "soot-4": 8639,
+        "soot-3": 5051,
+        "defend": 17
+      },
+      "moonHealTriggers": 696
+    },
+    {
+      "scene": 6,
+      "enemies": [
+        "crumb-sentinel",
+        "binding-thread"
+      ],
+      "cells": 55,
+      "battles": 2750,
+      "wins": 921,
+      "actions": 27777,
+      "skills": {
+        "soot-1": 11134,
+        "soot-3": 9969,
+        "soot-4": 6528,
+        "defend": 146
+      },
+      "moonHealTriggers": 594
+    },
+    {
+      "scene": 7,
+      "enemies": [
+        "sock-skipper",
+        "needle-moth"
+      ],
+      "cells": 55,
+      "battles": 2750,
+      "wins": 1871,
+      "actions": 19507,
+      "skills": {
+        "soot-3": 8632,
+        "soot-1": 6352,
+        "soot-4": 4523
+      },
+      "moonHealTriggers": 178
+    }
+  ],
+  "withVelvet": {
+    "cells": 80,
+    "battles": 4000,
+    "wins": 1731,
+    "actions": 22247,
+    "skills": {
+      "soot-1": 9190,
+      "soot-3": 7622,
+      "soot-4": 5332,
+      "defend": 103
+    },
+    "moonHealTriggers": 3096
+  },
+  "withoutVelvet": {
+    "cells": 360,
+    "battles": 18000,
+    "wins": 7984,
+    "actions": 181351,
+    "skills": {
+      "soot-1": 76195,
+      "soot-3": 62738,
+      "soot-4": 41859,
+      "defend": 559
+    },
+    "moonHealTriggers": 0
+  },
+  "limitations": [
+    "Action counts measure Black cup selection, not successful Scent applications; the registered probe did not count status events.",
+    "The marked-break damage effect emits no gear-trigger event. The named event total measures Moonwick healing, not all Moonwick contribution.",
+    "A zero or low selection rate alone does not show that choosing the skill would improve wins. A paired candidate is still required.",
+    "The source is the registered pre-anchored snapshot; no production edit or fresh acceptance sample."
+  ]
+}

@@ -41,3 +41,16 @@ All four cohort gates and all seven reward gates PASS on TRAIN. Maximum heavy/ca
 The two heavy first losses both lose with advice but win on the paired no-advice route. This remains a measured limitation: the forecast-based recommendation is not a promise. These small TRAIN cohorts do not establish blind acceptance or human engagement. The original balance matrix, source adoption and real x1 verification are still pending.
 
 Evidence: [registered full replay](b3/anchored-validation-03/REGISTERED-METHOD.json), [day7 outcomes](b3/anchored-validation-03/day7-checks/checks.json), [reward summary](b3/anchored-validation-03/summary.json), [paired economy](b3/anchored-validation-03/paired-economy.json), [receipt tests](b3/anchored-validation-03/receipt-tests-attempt1.log).
+
+
+## Adopted anchored progression, reviewed B3 closure
+
+Source 6c0a045924a591797accd83e334847e5698c3463. All six source gates pass; counts and original logs are in [audit](b3/closure/audit.json). The exact registered formula reduces only bands6–9; bands1–5 and10–50 preserve every enemy stat. Old stored enemyStats keep their replay, no new state field or save version. Fresh OFF165cells/8250routes matches the frozen digest; baseline-v1 and13historical sims are exact.
+
+The same earned H0 day7 loss is imported through the UI, then one available recommendation starts the ordinary retry route. Real x1 boss: VICTORY in 64.921s. The chosen plan changes this exact route from loss to win. This is a single paired fixture. This is one fixture. The independent90account TRAIN replay remains casual26/30, regular28/30 first-two wins, heavy28/30 first wins and24/24available suggestions; the heavy paired advice0/2 versus no-advice2/2 limitation remains.
+
+Opening regression at1280/1440/1024: 1280: practice13.139s,11captures; 1440: practice13.067s,11captures; 1024: practice13.074s,11captures. Zero overflow, scoped contrast≥4.5, no page errors or remote requests. The broader screenshot pack is not repeated here.
+
+[Measured offline artifact](b3/closure/artifact/index.html): 20922529bytes, SHA-256 60407a0bd423386c66d86f50b88d867a3a7fe89bee357836a3da1ae6796432a7. Public demo replacement waits for Z.
+
+Balance is NOT closed: TRAIN50 fourth-slot68/384misses, worst88pp; cat61.75–86.65%, set76.75–92.25%,23/24positive tiersteps and two bandspread misses. The displayed single-piece shares still understate combat impact. Fresh20001–20500 remains unused. The separate pressure-spread diagnostic is not adopted.

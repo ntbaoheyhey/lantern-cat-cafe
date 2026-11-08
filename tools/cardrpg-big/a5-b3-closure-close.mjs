@@ -11,14 +11,26 @@ const build=await read('/tmp/cardrpg-a5-b3-closure-artifact/build.json');
 const artifact=await readFile('/tmp/cardrpg-a5-b3-closure-artifact/index.html');
 assert.equal(build.head,source);assert.equal(sha(artifact),build.sha256);assert.equal(artifact.length,build.bytes);
 for(const [path,hash] of Object.entries(build.sourceHashes))assert.equal(sha(await readFile(path)),hash,path);
+// A paused run can resume on an evidence-only commit. Verify its source ancestry
+// and every build input instead of pretending the two Git heads are identical.
+const inputPaths=new Set(Object.keys(build.sourceHashes)),compatibleHeads=new Map();
+function assertSourceHead(head){
+ assert.match(head,/^[0-9a-f]{40}$/);
+ if(compatibleHeads.has(head))return;
+ execFileSync('git',['merge-base','--is-ancestor',source,head]);
+ const changed=execFileSync('git',['diff','--name-only',source,head],{encoding:'utf8'}).trim().split('\n').filter(Boolean);
+ const runtime=changed.filter(p=>inputPaths.has(p)||/^(apps\/|packages\/|scripts\/|package\.json$|pnpm-|tsconfig)/.test(p));
+ assert.deepEqual(runtime,[],`Source changed at receipt head ${head}`);
+ compatibleHeads.set(head,{head,evidenceOnlyChangedFiles:changed.length,changedBuildInputs:0});
+}
 const gates=await read('reports/cardrpg-big/a5/b3-closure/gates/checks.json');
 for(const name of ['typecheck','lint','web-unit','rules','e2e','build']){
- const row=gates.findLast(r=>r.name===name);assert(row&&row.code===0,name);assert.equal(row.head,source);
+ const row=gates.findLast(r=>r.name===name);assert(row&&row.code===0,name);assertSourceHead(row.head);
 }
 for(const row of gates)assert.equal(sha(await readFile(row.log)),row.sha256,row.log);
 const checks=await read(base+'/checks/checks.json');
 for(const name of ['build','day7-x1','paired-route','opening-1280','opening-1440','opening-1024']){
- const row=checks.findLast(r=>r.name===name);assert(row&&row.code===0,name);assert.equal(row.head,source);
+ const row=checks.findLast(r=>r.name===name);assert(row&&row.code===0,name);assertSourceHead(row.head);
 }
 for(const row of checks)assert.equal(sha(await readFile(row.log)),row.sha256,row.log);
 const off=await read(base+'/off/checks.json'),offSource=await read(base+'/off/source.json');
@@ -56,7 +68,7 @@ const audit={status:'B3 TRAIN progression/source/x1 checks PASS; A5 overall PART
  day7:{result:boss.battle.result,wallMs:boss.wallMs,withAdvice:paired.withAdvice.won,withoutAdvice:paired.withoutAdvice.won,interpretation:paired.interpretation},
  progression:{cohorts:cohort.cohorts,gates:cohort.gates,rewardGates:economy.gates,ratios:economy.ratios},
  balance:{pieces:balance.pieces.misses,worstPiecePp:balance.pieces.worst.gainPp,tiers:balance.tiers,bands:balance.bands.filter(r=>r.spreadPp<15||r.saturated),cats:balance.cats,sets:balance.sets,crew:balance.crew},
- scope,receipts,limitations:['TRAIN bot proxies and one x1 case, not a human playtest or fresh acceptance.','Heavy advised retries0/2 versus2/2 with no advice remain a measured limitation.','Original failed candidates and all50seed balance misses retained.','Targeted desktop captures only; full screenshot pack and30minute engagement still await Z.','Public demo unchanged until Z;20001–20500 UNUSED.']};
+ scope,receipts,compatibleHeads:[...compatibleHeads.values()],limitations:['TRAIN bot proxies and one x1 case, not a human playtest or fresh acceptance.','Heavy advised retries0/2 versus2/2 with no advice remain a measured limitation.','Original failed candidates and all50seed balance misses retained.','The interrupted web and queued x1 attempts are USER_STOPPED, not test failures; resumed receipt heads pass explicit build-input and source ancestry checks.','Targeted desktop captures only; full screenshot pack and30minute engagement still await Z.','Public demo unchanged until Z;20001–20500 UNUSED.']};
 await writeFile(base+'/audit.json',JSON.stringify(audit,null,2));
 const summary=`\n\n## Adopted anchored progression, reviewed B3 closure\n\nSource ${source}. All six source gates pass; counts and original logs are in [audit](b3/closure/audit.json). The exact registered formula reduces only bands6–9; bands1–5 and10–50 preserve every enemy stat. Old stored enemyStats keep their replay, no new state field or save version. Fresh OFF165cells/8250routes matches the frozen digest; baseline-v1 and13historical sims are exact.\n\nThe same earned H0 day7 loss is imported through the UI, then one available recommendation starts the ordinary retry route. Real x1 boss: VICTORY in ${(boss.wallMs/1000).toFixed(3)}s. ${paired.interpretation} This is one fixture. The independent90account TRAIN replay remains casual26/30, regular28/30 first-two wins, heavy28/30 first wins and24/24available suggestions; the heavy paired advice0/2 versus no-advice2/2 limitation remains.\n\nOpening regression at1280/1440/1024: ${browser.map(b=>`${b.width}: practice${(b.practiceMs/1000).toFixed(3)}s,${b.captures}captures`).join('; ')}. Zero overflow, scoped contrast≥4.5, no page errors or remote requests. The broader screenshot pack is not repeated here.\n\n[Measured offline artifact](b3/closure/artifact/index.html): ${build.bytes}bytes, SHA-256 ${build.sha256}. Public demo replacement waits for Z.\n\nBalance is NOT closed: TRAIN50 fourth-slot68/384misses, worst88pp; cat61.75–86.65%, set76.75–92.25%,23/24positive tiersteps and two bandspread misses. The displayed single-piece shares still understate combat impact. Fresh20001–20500 remains unused. The separate pressure-spread diagnostic is not adopted.\n`;
 for(const path of ['reports/cardrpg-big/a5/B3-PROGRESSION.md','reports/cardrpg-big/a5/B3-DAY7-RETRY.md']){

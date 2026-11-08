@@ -61,3 +61,18 @@ Typecheck, lint,1739 web tests,1113 rules tests (+2 expected failures/11 skipped
 A public-command account earned24 marks on day11 without injected currency/levels. Real clicks import that earned save, choose once, spend exactly24→0 and leave all pity counters unchanged. Fresh welcome and paid150-stamp draw also pass. Twelve reviewed captures across1280/1440/1024 have zero horizontal overflow, scoped contrast≥4.5 and no page errors or remote requests. The selector heading clears sticky odds; original obscured1024 capture is retained.
 
 Fresh OFF165cells/8250routes matches47477251b3d20ab602bee5c55a56cdd661e111b1386e298e0c9bc67737fecfa3. Reviewed CSS-only correction reuses that receipt with exact63 rule-input hashes. Baseline-v1,13 historical sims, author and protected/B-path guards PASS. See [audit](b3/reviewed/audit.json). No combat or full-acceptance PASS is implied.
+
+
+## Adopted anchored progression, reviewed B3 closure
+
+Source 6c0a045924a591797accd83e334847e5698c3463. All six source gates pass; counts and original logs are in [audit](b3/closure/audit.json). The exact registered formula reduces only bands6–9; bands1–5 and10–50 preserve every enemy stat. Old stored enemyStats keep their replay, no new state field or save version. Fresh OFF165cells/8250routes matches the frozen digest; baseline-v1 and13historical sims are exact.
+
+The same earned H0 day7 loss is imported through the UI, then one available recommendation starts the ordinary retry route. Real x1 boss: VICTORY in 64.921s. The chosen plan changes this exact route from loss to win. This is a single paired fixture. This is one fixture. The independent90account TRAIN replay remains casual26/30, regular28/30 first-two wins, heavy28/30 first wins and24/24available suggestions; the heavy paired advice0/2 versus no-advice2/2 limitation remains.
+
+Opening regression at1280/1440/1024: 1280: practice13.139s,11captures; 1440: practice13.067s,11captures; 1024: practice13.074s,11captures. Zero overflow, scoped contrast≥4.5, no page errors or remote requests. The broader screenshot pack is not repeated here.
+
+[Measured offline artifact](b3/closure/artifact/index.html): 20922529bytes, SHA-256 60407a0bd423386c66d86f50b88d867a3a7fe89bee357836a3da1ae6796432a7. Public demo replacement waits for Z.
+
+Balance is NOT closed: TRAIN50 fourth-slot68/384misses, worst88pp; cat61.75–86.65%, set76.75–92.25%,23/24positive tiersteps and two bandspread misses. The displayed single-piece shares still understate combat impact. Fresh20001–20500 remains unused. The separate pressure-spread diagnostic is not adopted.
+
+Supplemental visual review: the original `retry-prepare.png` captured the brief lazy-loading placeholder. [Ready Prepare](b3/closure/day7-x1/retry-prepare-ready.png) is a separately recorded UI-only capture with the exact same initial battle and standing plan, zero battle actions and zero overflow. The original frame and the failed accessor-serialization attempt remain. [Contact sheet](b3/closure/contact.png) contains all41frames; only the33opening captures carry scoped contrast assertions.
