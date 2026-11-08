@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-B3 anchored progression source6c0a04592 reviewed: six gates PASS1746web/1133rules/421E2E, exactOFF8250, x1boss64.921s VICTORY, same-route oldplanloss. Closureaudit and41capture contact sheet complete; draft publication on385 next. Production combat still otherwise A4.
+B3 anchored progression source6c0a04592 reviewed: six gates PASS1746web/1133rules/421E2E, exactOFF8250, x1boss64.921s VICTORY, same-route oldplanloss. Closureaudit and41capture contact sheet complete; DRAFT386 published on385. Production combat still otherwise A4.
 ## NEXT
-Publish reviewed B3 closure/checkpoint/ledger. B1 spread50 wider09 rejected(cat/set/crew/diversity misses); B2 probe05 proves Blackcup0/203598actions. Isolated Scentpolicy06 original1840commoncells TRAIN1–50 active, no adoption. B1/B2/display/cadence/startup/Z stillopen. Fresh20001–20500 UNUSED. Stack376→377→379→381→382→383→384→385.
+Mirror B3 draft386 checkpoint/ledger. B1 spread50 wider09 rejected(cat/set/crew/diversity misses); B2 probe05 proves Blackcup0/203598actions. Isolated Scentpolicy06 stopped on an existing energy-to-missing-ally crash; registered unchanged-source crash07 reproduction active, no adoption. B1/B2/display/cadence/startup/Z stillopen. Fresh20001–20500 UNUSED. Stack376→377→379→381→382→383→384→385→386.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -172,3 +172,5 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 
 - Resume closure 2026-11-08T16:18:54.811228+00:00: original B3 coordinators completed without duplicate runs. All six gates1746web/1133rules/421E2E/build PASS; source6c0a04592/1715buildinputs unchanged. x1boss64.921s victory, exact pairedroute withadvicewin/oldplanloss. Opening33captures across1280/1440/1024: practice13.067–13.139s, zerooverflow, scopedcontrast6.858. Supplemental readyPrepare retained originalloadingframe; first supplemental attempt failed serialization of getter-based reviewobject, explicit-field retry passed with0battleactions.41capturecontact reviewed. Closureaudit and3earned receipt testsPASS. No broad screenshotpack rerun.
 - B1 wider09 complete: oldspread50tiers24/24/no reversals, all33bandspreadsPASS, cats46.81–68.99%,sets80.25–86.25%,crew35.33pp,bossdiversity3/1/3. Reject adoption;500fourth-slot0miss/max11.2pp remains separately labelled. B2 read-only440cells/22000battles exactcommon04parity: SootBlackcup0of203598actions;3096Moonwickhealevents allwithVelvet. Registered Scentpolicy06 isolated one-policychange, all1840originalcommoncells TRAIN1–50; source/snapshot/matrix archived before sampling, current coordinator /tmp/cardrpg-a5-scent-policy-06/coordinator.log, tool15608. No production/acceptancechange.
+
+- Published B3 DRAFT https://github.com/ntbaoheyhey/taskbar-hero/pull/386 on385, closure5bd68a836/runtime6c0a04592. No merge/deploy. Scentpolicy06slice2 failed in existing energy effect after no living ally remains; original log retained. Registered crash07 captures exact failedTRAIN fixture/legal preview on unchanged candidate source and retained checkpoint; no production candidate adopted.
