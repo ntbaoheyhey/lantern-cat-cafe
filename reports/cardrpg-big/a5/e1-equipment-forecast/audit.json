@@ -1,0 +1,1731 @@
+{
+  "status": "PASS: contextual Equipment forecast UI; A5 balance acceptance remains open",
+  "source": "c0543531ab839b5cb100a29e20066a6780831931",
+  "adoption": {
+    "at": "2026-11-08T21:38:57.606Z",
+    "base": "f99257772730fa61bb82ce7403453b6b6eb7d282",
+    "paths": {
+      "apps/web/src/game/cardrpg/depth/Equipment.tsx": "f8b42ea5a50d1932b7702c8803335d85961a2cefa14d05af0be67c19c2e2323f",
+      "apps/web/src/game/cardrpg/depth/EquipmentForecastV4.tsx": "3d6d5fcb54f1b0a362e4e24dcf8840f40d92753deb5fb80a3583ce1aac137b44",
+      "apps/web/src/game/cardrpg/depth/equipment-forecast.ts": "0941b4b5073c4e8173682e9595da9cfd851f25db34f88336f99b50bb2350cd1c",
+      "apps/web/src/game/cardrpg/depth/ForecastV4.tsx": "e62b7a3e8473b28ae753f523893f9e716d8b5f70530489692b4900eafa666075",
+      "apps/web/src/game/cardrpg/depth/depth.css": "c84b879a43dfbd0b5428b5b49c8f36466b68f67b21977516362abc50857e2b20",
+      "apps/web/src/game/cardrpg/depth/equipment-forecast.test.ts": "4ae5015b565b7c16ee8baf7b28dd30cd7e9a05cd89b092d43c7f2a192cea7ceb",
+      "apps/web/src/game/cardrpg/depth/ForecastV4.test.tsx": "90e3d912e1b6ca3596102262b4056bfc1ea1eba118e1d9d9085f3d2132dea19f"
+    },
+    "prototypeSha256": "3eda7b445c709a7ea6a4c110e700ccbfcfad4da3fa07b68191959c46376f8b1c",
+    "contextualSha256": "2c12bbc03eabdb3760365733e430f75377ac4d236bebcff6e4e5628a53840811",
+    "limits": "Contextual TRAIN screen supports the UI only. Static display and fresh acceptance remain open."
+  },
+  "gates": [
+    {
+      "name": "typecheck",
+      "attempt": 1,
+      "code": 0,
+      "head": "c0543531ab839b5cb100a29e20066a6780831931",
+      "started": "2026-11-08T21:39:08.711Z",
+      "ended": "2026-11-08T21:48:51.201Z",
+      "log": "reports/cardrpg-big/a5/e1-equipment-forecast/gates/typecheck-attempt-1.log",
+      "sha256": "bae5aaae9ed2d7d96b87aa47c630a2b8365d2f491d73e9852cb43f7bf846336d",
+      "counts": []
+    },
+    {
+      "name": "lint",
+      "attempt": 1,
+      "code": 0,
+      "head": "c0543531ab839b5cb100a29e20066a6780831931",
+      "started": "2026-11-08T21:48:58.205Z",
+      "ended": "2026-11-08T21:59:04.147Z",
+      "log": "reports/cardrpg-big/a5/e1-equipment-forecast/gates/lint-attempt-1.log",
+      "sha256": "1e1aaf389e437279824fd1e66b1f35bdf6a2e6c429504be9ce1871598e40d682",
+      "counts": []
+    },
+    {
+      "name": "web-unit",
+      "attempt": 1,
+      "code": 0,
+      "head": "c0543531ab839b5cb100a29e20066a6780831931",
+      "started": "2026-11-08T21:59:11.151Z",
+      "ended": "2026-11-08T21:59:28.092Z",
+      "log": "reports/cardrpg-big/a5/e1-equipment-forecast/gates/web-unit-attempt-1.log",
+      "sha256": "4aa5f3fc27bb198b4c7c9db0d24d1ab0aa9cc581703fc1684154775256d5ec7c",
+      "counts": [
+        " Test Files  183 passed (183)",
+        "      Tests  1768 passed (1768)"
+      ]
+    },
+    {
+      "name": "rules",
+      "attempt": 1,
+      "code": 0,
+      "head": "c0543531ab839b5cb100a29e20066a6780831931",
+      "started": "2026-11-08T21:59:35.096Z",
+      "ended": "2026-11-08T21:59:59.242Z",
+      "log": "reports/cardrpg-big/a5/e1-equipment-forecast/gates/rules-attempt-1.log",
+      "sha256": "f0659e4b6c332042b28b608a99508afcb26a600a92ec9e410f6ae07f814e2ddc",
+      "counts": [
+        " Test Files  71 passed | 3 skipped (74)",
+        "      Tests  1192 passed | 2 expected fail | 11 skipped (1205)"
+      ]
+    },
+    {
+      "name": "e2e",
+      "attempt": 1,
+      "code": 0,
+      "head": "c0543531ab839b5cb100a29e20066a6780831931",
+      "started": "2026-11-08T22:00:06.245Z",
+      "ended": "2026-11-08T22:02:07.112Z",
+      "log": "reports/cardrpg-big/a5/e1-equipment-forecast/gates/e2e-attempt-1.log",
+      "sha256": "eeeeed8509d2c4dfd4e5fc49841f15a1f354c5f77572ad5fb21da99f8b116a70",
+      "counts": [
+        "  421 passed (2.0m)"
+      ]
+    },
+    {
+      "name": "build",
+      "attempt": 1,
+      "code": 0,
+      "head": "c0543531ab839b5cb100a29e20066a6780831931",
+      "started": "2026-11-08T22:02:14.117Z",
+      "ended": "2026-11-08T22:02:23.955Z",
+      "log": "reports/cardrpg-big/a5/e1-equipment-forecast/gates/build-attempt-1.log",
+      "sha256": "d13d9e696d6013b2a24eaf2cb7f94b819ec61de873c962f28f1275da8874cf72",
+      "counts": []
+    }
+  ],
+  "artifacts": [
+    {
+      "mode": "on",
+      "sha256": "0a2c5f1d00ebc7f09fe2d8e928c10f461edbcab9f73f602641e4834a0bc33db8",
+      "bytes": 20927337,
+      "prototypeByteExact": true,
+      "path": "reports/cardrpg-big/a5/e1-equipment-forecast/prototype-on/index.html"
+    },
+    {
+      "mode": "off",
+      "sha256": "15133b26de9b99e545894a53ab92241eb02cccbff67fd7f5977e3a4394f79d30",
+      "bytes": 20927333,
+      "prototypeByteExact": true,
+      "path": "reports/cardrpg-big/a5/e1-equipment-forecast/prototype-off/index.html"
+    }
+  ],
+  "off": {
+    "offBehavior": "PASS",
+    "sha256": "47477251b3d20ab602bee5c55a56cdd661e111b1386e298e0c9bc67737fecfa3",
+    "cells": 165,
+    "routes": 8250,
+    "reusedFrom": "reports/cardrpg-big/a5/e1-crew-advice-band/off",
+    "reason": "Original rule hashes and full packages diff exact."
+  },
+  "browsers": [
+    {
+      "mode": "on",
+      "width": 1280,
+      "checks": [
+        {
+          "look": "baseline",
+          "name": "threshold",
+          "beforeAfterExact": true,
+          "noMutation": true,
+          "keyboard": true,
+          "cache": true,
+          "transfer": false
+        },
+        {
+          "look": "baseline",
+          "name": "transfer",
+          "beforeAfterExact": true,
+          "noMutation": true,
+          "keyboard": true,
+          "cache": true,
+          "transfer": true
+        },
+        {
+          "look": "baseline",
+          "activeLock": true
+        },
+        {
+          "look": "look",
+          "name": "threshold",
+          "beforeAfterExact": true,
+          "noMutation": true,
+          "keyboard": true,
+          "cache": true,
+          "transfer": false
+        },
+        {
+          "look": "look",
+          "name": "transfer",
+          "beforeAfterExact": true,
+          "noMutation": true,
+          "keyboard": true,
+          "cache": true,
+          "transfer": true
+        },
+        {
+          "look": "look",
+          "activeLock": true
+        }
+      ],
+      "forecast400ms": true
+    },
+    {
+      "mode": "on",
+      "width": 1440,
+      "checks": [
+        {
+          "look": "baseline",
+          "name": "threshold",
+          "beforeAfterExact": true,
+          "noMutation": true,
+          "keyboard": true,
+          "cache": true,
+          "transfer": false
+        },
+        {
+          "look": "baseline",
+          "name": "transfer",
+          "beforeAfterExact": true,
+          "noMutation": true,
+          "keyboard": true,
+          "cache": true,
+          "transfer": true
+        },
+        {
+          "look": "baseline",
+          "activeLock": true
+        },
+        {
+          "look": "look",
+          "name": "threshold",
+          "beforeAfterExact": true,
+          "noMutation": true,
+          "keyboard": true,
+          "cache": true,
+          "transfer": false
+        },
+        {
+          "look": "look",
+          "name": "transfer",
+          "beforeAfterExact": true,
+          "noMutation": true,
+          "keyboard": true,
+          "cache": true,
+          "transfer": true
+        },
+        {
+          "look": "look",
+          "activeLock": true
+        }
+      ],
+      "forecast400ms": true
+    },
+    {
+      "mode": "on",
+      "width": 1024,
+      "checks": [
+        {
+          "look": "baseline",
+          "name": "threshold",
+          "beforeAfterExact": true,
+          "noMutation": true,
+          "keyboard": true,
+          "cache": true,
+          "transfer": false
+        },
+        {
+          "look": "baseline",
+          "name": "transfer",
+          "beforeAfterExact": true,
+          "noMutation": true,
+          "keyboard": true,
+          "cache": true,
+          "transfer": true
+        },
+        {
+          "look": "baseline",
+          "activeLock": true
+        },
+        {
+          "look": "look",
+          "name": "threshold",
+          "beforeAfterExact": true,
+          "noMutation": true,
+          "keyboard": true,
+          "cache": true,
+          "transfer": false
+        },
+        {
+          "look": "look",
+          "name": "transfer",
+          "beforeAfterExact": true,
+          "noMutation": true,
+          "keyboard": true,
+          "cache": true,
+          "transfer": true
+        },
+        {
+          "look": "look",
+          "activeLock": true
+        }
+      ],
+      "forecast400ms": true
+    },
+    {
+      "mode": "off",
+      "width": 1280,
+      "checks": [
+        {
+          "look": "baseline",
+          "name": "threshold",
+          "offAbsent": true,
+          "noWorkers": true
+        },
+        {
+          "look": "baseline",
+          "name": "transfer",
+          "offAbsent": true,
+          "noWorkers": true
+        },
+        {
+          "look": "baseline",
+          "activeLock": true
+        },
+        {
+          "look": "look",
+          "name": "threshold",
+          "offAbsent": true,
+          "noWorkers": true
+        },
+        {
+          "look": "look",
+          "name": "transfer",
+          "offAbsent": true,
+          "noWorkers": true
+        },
+        {
+          "look": "look",
+          "activeLock": true
+        }
+      ],
+      "forecast400ms": true
+    },
+    {
+      "mode": "off",
+      "width": 1440,
+      "checks": [
+        {
+          "look": "baseline",
+          "name": "threshold",
+          "offAbsent": true,
+          "noWorkers": true
+        },
+        {
+          "look": "baseline",
+          "name": "transfer",
+          "offAbsent": true,
+          "noWorkers": true
+        },
+        {
+          "look": "baseline",
+          "activeLock": true
+        },
+        {
+          "look": "look",
+          "name": "threshold",
+          "offAbsent": true,
+          "noWorkers": true
+        },
+        {
+          "look": "look",
+          "name": "transfer",
+          "offAbsent": true,
+          "noWorkers": true
+        },
+        {
+          "look": "look",
+          "activeLock": true
+        }
+      ],
+      "forecast400ms": true
+    },
+    {
+      "mode": "off",
+      "width": 1024,
+      "checks": [
+        {
+          "look": "baseline",
+          "name": "threshold",
+          "offAbsent": true,
+          "noWorkers": true
+        },
+        {
+          "look": "baseline",
+          "name": "transfer",
+          "offAbsent": true,
+          "noWorkers": true
+        },
+        {
+          "look": "baseline",
+          "activeLock": true
+        },
+        {
+          "look": "look",
+          "name": "threshold",
+          "offAbsent": true,
+          "noWorkers": true
+        },
+        {
+          "look": "look",
+          "name": "transfer",
+          "offAbsent": true,
+          "noWorkers": true
+        },
+        {
+          "look": "look",
+          "activeLock": true
+        }
+      ],
+      "forecast400ms": true
+    }
+  ],
+  "captures": [
+    {
+      "look": "baseline",
+      "name": "threshold",
+      "path": "reports/cardrpg-big/a5/e1-equipment-forecast/browser-on-1280-attempt-1/baseline-threshold.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Try your gear against a boss",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Yarn Giant",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Rain Spool",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Pantry Crown",
+          "ratio": 6.42428817388733
+        },
+        {
+          "text": "Pantry Crown · Full health, before route rewards. Your current crew, rows and plan.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Current crew",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "ROUGH FORECAST",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "Favoured",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Mochi often falls first. Cleanse Hush and focus the leader; linked threads leave with it.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "A forecast, never a promise.",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "With Rare Bellsteel Keepsake on Mochi",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "ROUGH FORECAST",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "Even",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Mochi often falls first. Cleanse Hush and focus the leader; linked threads leave with it.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "A forecast, never a promise.",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "Compare with the same boss and band. Close results can share a forecast band.",
+          "ratio": 6.858421081163746
+        }
+      ],
+      "text": "Try your gear against a boss\nYarn Giant\nRain Spool\nPantry Crown\nComparison band\nBand 1\nBand 2\nBand 3\nBand 4\nBand 5\nBand 6\n\nPantry Crown · Full health, before route rewards. Your current crew, rows and plan.\n\nCurrent crew\nROUGH FORECAST\nFavoured\n\nMochi often falls first. Cleanse Hush and focus the leader; linked threads leave with it.\n\nA forecast, never a promise.\nWith Rare Bellsteel Keepsake on Mochi\nROUGH FORECAST\nEven\n\nMochi often falls first. Cleanse Hush and focus the leader; linked threads leave with it.\n\nA forecast, never a promise.\nCompare with the same boss and band. Close results can share a forecast band.",
+      "mode": "on",
+      "width": 1280,
+      "sha256": "27e13771399900648fd98974623b68424f803f1be05e62987ba64037f102a5d7"
+    },
+    {
+      "look": "baseline",
+      "name": "transfer",
+      "path": "reports/cardrpg-big/a5/e1-equipment-forecast/browser-on-1280-attempt-1/baseline-transfer.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Try your gear against a boss",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Yarn Giant",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Rain Spool",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Pantry Crown",
+          "ratio": 6.42428817388733
+        },
+        {
+          "text": "Pantry Crown · Full health, before route rewards. Your current crew, rows and plan.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Includes Mochi giving this piece to Soot.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Current crew",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "ROUGH FORECAST",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "Favoured",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Mochi often falls first. Cleanse Hush and focus the leader; linked threads leave with it.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "A forecast, never a promise.",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "With Rare Bellsteel Utensil on Soot",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "ROUGH FORECAST",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "Favoured",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Mochi often falls first. Cleanse Hush and focus the leader; linked threads leave with it.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "A forecast, never a promise.",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "Compare with the same boss and band. Close results can share a forecast band.",
+          "ratio": 6.858421081163746
+        }
+      ],
+      "text": "Try your gear against a boss\nYarn Giant\nRain Spool\nPantry Crown\nComparison band\nBand 1\nBand 2\nBand 3\nBand 4\nBand 5\nBand 6\n\nPantry Crown · Full health, before route rewards. Your current crew, rows and plan.\n\nIncludes Mochi giving this piece to Soot.\n\nCurrent crew\nROUGH FORECAST\nFavoured\n\nMochi often falls first. Cleanse Hush and focus the leader; linked threads leave with it.\n\nA forecast, never a promise.\nWith Rare Bellsteel Utensil on Soot\nROUGH FORECAST\nFavoured\n\nMochi often falls first. Cleanse Hush and focus the leader; linked threads leave with it.\n\nA forecast, never a promise.\nCompare with the same boss and band. Close results can share a forecast band.",
+      "mode": "on",
+      "width": 1280,
+      "sha256": "b1f4cf253e64cce9b0f715de8eec71bff6ea830301359692a30045b3598b321d"
+    },
+    {
+      "look": "look",
+      "name": "threshold",
+      "path": "reports/cardrpg-big/a5/e1-equipment-forecast/browser-on-1280-attempt-1/look-threshold.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Try your gear against a boss",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Yarn Giant",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Rain Spool",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Pantry Crown",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Pantry Crown · Full health, before route rewards. Your current crew, rows and plan.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Current crew",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "ROUGH FORECAST",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Favoured",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Mochi often falls first. Cleanse Hush and focus the leader; linked threads leave with it.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "A forecast, never a promise.",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "With Rare Bellsteel Keepsake on Mochi",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "ROUGH FORECAST",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Even",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Mochi often falls first. Cleanse Hush and focus the leader; linked threads leave with it.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "A forecast, never a promise.",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Compare with the same boss and band. Close results can share a forecast band.",
+          "ratio": 8.028038840639192
+        }
+      ],
+      "text": "Try your gear against a boss\nYarn Giant\nRain Spool\nPantry Crown\nComparison band\nBand 1\nBand 2\nBand 3\nBand 4\nBand 5\nBand 6\n\nPantry Crown · Full health, before route rewards. Your current crew, rows and plan.\n\nCurrent crew\nROUGH FORECAST\nFavoured\n\nMochi often falls first. Cleanse Hush and focus the leader; linked threads leave with it.\n\nA forecast, never a promise.\nWith Rare Bellsteel Keepsake on Mochi\nROUGH FORECAST\nEven\n\nMochi often falls first. Cleanse Hush and focus the leader; linked threads leave with it.\n\nA forecast, never a promise.\nCompare with the same boss and band. Close results can share a forecast band.",
+      "mode": "on",
+      "width": 1280,
+      "sha256": "faff3b3f17c2976f6ed5e168c2b3c507f27a2d1b938f7541973a879f96b32bed"
+    },
+    {
+      "look": "look",
+      "name": "transfer",
+      "path": "reports/cardrpg-big/a5/e1-equipment-forecast/browser-on-1280-attempt-1/look-transfer.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Try your gear against a boss",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Yarn Giant",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Rain Spool",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Pantry Crown",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Pantry Crown · Full health, before route rewards. Your current crew, rows and plan.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Includes Mochi giving this piece to Soot.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Current crew",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "ROUGH FORECAST",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Favoured",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Mochi often falls first. Cleanse Hush and focus the leader; linked threads leave with it.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "A forecast, never a promise.",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "With Rare Bellsteel Utensil on Soot",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "ROUGH FORECAST",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Favoured",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Mochi often falls first. Cleanse Hush and focus the leader; linked threads leave with it.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "A forecast, never a promise.",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Compare with the same boss and band. Close results can share a forecast band.",
+          "ratio": 8.028038840639192
+        }
+      ],
+      "text": "Try your gear against a boss\nYarn Giant\nRain Spool\nPantry Crown\nComparison band\nBand 1\nBand 2\nBand 3\nBand 4\nBand 5\nBand 6\n\nPantry Crown · Full health, before route rewards. Your current crew, rows and plan.\n\nIncludes Mochi giving this piece to Soot.\n\nCurrent crew\nROUGH FORECAST\nFavoured\n\nMochi often falls first. Cleanse Hush and focus the leader; linked threads leave with it.\n\nA forecast, never a promise.\nWith Rare Bellsteel Utensil on Soot\nROUGH FORECAST\nFavoured\n\nMochi often falls first. Cleanse Hush and focus the leader; linked threads leave with it.\n\nA forecast, never a promise.\nCompare with the same boss and band. Close results can share a forecast band.",
+      "mode": "on",
+      "width": 1280,
+      "sha256": "3810e3a41859337e93c603e298739090b304584c9804afd3b9ac00e8b1603dd4"
+    },
+    {
+      "look": "baseline",
+      "name": "threshold",
+      "path": "reports/cardrpg-big/a5/e1-equipment-forecast/browser-on-1440-attempt-1/baseline-threshold.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Try your gear against a boss",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Yarn Giant",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Rain Spool",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Pantry Crown",
+          "ratio": 6.42428817388733
+        },
+        {
+          "text": "Pantry Crown · Full health, before route rewards. Your current crew, rows and plan.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Current crew",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "ROUGH FORECAST",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "Favoured",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Mochi often falls first. Cleanse Hush and focus the leader; linked threads leave with it.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "A forecast, never a promise.",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "With Rare Bellsteel Keepsake on Mochi",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "ROUGH FORECAST",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "Even",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Mochi often falls first. Cleanse Hush and focus the leader; linked threads leave with it.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "A forecast, never a promise.",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "Compare with the same boss and band. Close results can share a forecast band.",
+          "ratio": 6.858421081163746
+        }
+      ],
+      "text": "Try your gear against a boss\nYarn Giant\nRain Spool\nPantry Crown\nComparison band\nBand 1\nBand 2\nBand 3\nBand 4\nBand 5\nBand 6\n\nPantry Crown · Full health, before route rewards. Your current crew, rows and plan.\n\nCurrent crew\nROUGH FORECAST\nFavoured\n\nMochi often falls first. Cleanse Hush and focus the leader; linked threads leave with it.\n\nA forecast, never a promise.\nWith Rare Bellsteel Keepsake on Mochi\nROUGH FORECAST\nEven\n\nMochi often falls first. Cleanse Hush and focus the leader; linked threads leave with it.\n\nA forecast, never a promise.\nCompare with the same boss and band. Close results can share a forecast band.",
+      "mode": "on",
+      "width": 1440,
+      "sha256": "717e1c6551e04078109a4887954694ad591efa3731565124b1fcccc249a7cc4e"
+    },
+    {
+      "look": "baseline",
+      "name": "transfer",
+      "path": "reports/cardrpg-big/a5/e1-equipment-forecast/browser-on-1440-attempt-1/baseline-transfer.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Try your gear against a boss",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Yarn Giant",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Rain Spool",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Pantry Crown",
+          "ratio": 6.42428817388733
+        },
+        {
+          "text": "Pantry Crown · Full health, before route rewards. Your current crew, rows and plan.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Includes Mochi giving this piece to Soot.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Current crew",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "ROUGH FORECAST",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "Favoured",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Mochi often falls first. Cleanse Hush and focus the leader; linked threads leave with it.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "A forecast, never a promise.",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "With Rare Bellsteel Utensil on Soot",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "ROUGH FORECAST",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "Favoured",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Mochi often falls first. Cleanse Hush and focus the leader; linked threads leave with it.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "A forecast, never a promise.",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "Compare with the same boss and band. Close results can share a forecast band.",
+          "ratio": 6.858421081163746
+        }
+      ],
+      "text": "Try your gear against a boss\nYarn Giant\nRain Spool\nPantry Crown\nComparison band\nBand 1\nBand 2\nBand 3\nBand 4\nBand 5\nBand 6\n\nPantry Crown · Full health, before route rewards. Your current crew, rows and plan.\n\nIncludes Mochi giving this piece to Soot.\n\nCurrent crew\nROUGH FORECAST\nFavoured\n\nMochi often falls first. Cleanse Hush and focus the leader; linked threads leave with it.\n\nA forecast, never a promise.\nWith Rare Bellsteel Utensil on Soot\nROUGH FORECAST\nFavoured\n\nMochi often falls first. Cleanse Hush and focus the leader; linked threads leave with it.\n\nA forecast, never a promise.\nCompare with the same boss and band. Close results can share a forecast band.",
+      "mode": "on",
+      "width": 1440,
+      "sha256": "f550fbb5b3d1e8dc12b73ed3bc955de565ab21e441b6a855b01b5c1154f801c6"
+    },
+    {
+      "look": "look",
+      "name": "threshold",
+      "path": "reports/cardrpg-big/a5/e1-equipment-forecast/browser-on-1440-attempt-1/look-threshold.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Try your gear against a boss",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Yarn Giant",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Rain Spool",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Pantry Crown",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Pantry Crown · Full health, before route rewards. Your current crew, rows and plan.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Current crew",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "ROUGH FORECAST",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Favoured",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Mochi often falls first. Cleanse Hush and focus the leader; linked threads leave with it.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "A forecast, never a promise.",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "With Rare Bellsteel Keepsake on Mochi",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "ROUGH FORECAST",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Even",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Mochi often falls first. Cleanse Hush and focus the leader; linked threads leave with it.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "A forecast, never a promise.",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Compare with the same boss and band. Close results can share a forecast band.",
+          "ratio": 8.028038840639192
+        }
+      ],
+      "text": "Try your gear against a boss\nYarn Giant\nRain Spool\nPantry Crown\nComparison band\nBand 1\nBand 2\nBand 3\nBand 4\nBand 5\nBand 6\n\nPantry Crown · Full health, before route rewards. Your current crew, rows and plan.\n\nCurrent crew\nROUGH FORECAST\nFavoured\n\nMochi often falls first. Cleanse Hush and focus the leader; linked threads leave with it.\n\nA forecast, never a promise.\nWith Rare Bellsteel Keepsake on Mochi\nROUGH FORECAST\nEven\n\nMochi often falls first. Cleanse Hush and focus the leader; linked threads leave with it.\n\nA forecast, never a promise.\nCompare with the same boss and band. Close results can share a forecast band.",
+      "mode": "on",
+      "width": 1440,
+      "sha256": "9e2c7451cb905971d165618fbc07ef13fdb6fc9b6bb52baa409f412a1b517ef0"
+    },
+    {
+      "look": "look",
+      "name": "transfer",
+      "path": "reports/cardrpg-big/a5/e1-equipment-forecast/browser-on-1440-attempt-1/look-transfer.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Try your gear against a boss",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Yarn Giant",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Rain Spool",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Pantry Crown",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Pantry Crown · Full health, before route rewards. Your current crew, rows and plan.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Includes Mochi giving this piece to Soot.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Current crew",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "ROUGH FORECAST",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Favoured",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Mochi often falls first. Cleanse Hush and focus the leader; linked threads leave with it.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "A forecast, never a promise.",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "With Rare Bellsteel Utensil on Soot",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "ROUGH FORECAST",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Favoured",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Mochi often falls first. Cleanse Hush and focus the leader; linked threads leave with it.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "A forecast, never a promise.",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Compare with the same boss and band. Close results can share a forecast band.",
+          "ratio": 8.028038840639192
+        }
+      ],
+      "text": "Try your gear against a boss\nYarn Giant\nRain Spool\nPantry Crown\nComparison band\nBand 1\nBand 2\nBand 3\nBand 4\nBand 5\nBand 6\n\nPantry Crown · Full health, before route rewards. Your current crew, rows and plan.\n\nIncludes Mochi giving this piece to Soot.\n\nCurrent crew\nROUGH FORECAST\nFavoured\n\nMochi often falls first. Cleanse Hush and focus the leader; linked threads leave with it.\n\nA forecast, never a promise.\nWith Rare Bellsteel Utensil on Soot\nROUGH FORECAST\nFavoured\n\nMochi often falls first. Cleanse Hush and focus the leader; linked threads leave with it.\n\nA forecast, never a promise.\nCompare with the same boss and band. Close results can share a forecast band.",
+      "mode": "on",
+      "width": 1440,
+      "sha256": "de1be052d1f72c27cae1d20ac9d5fd30617fd0a034e2258ac1e761732f93abc8"
+    },
+    {
+      "look": "baseline",
+      "name": "threshold",
+      "path": "reports/cardrpg-big/a5/e1-equipment-forecast/browser-on-1024-attempt-1/baseline-threshold.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Try your gear against a boss",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Yarn Giant",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Rain Spool",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Pantry Crown",
+          "ratio": 6.42428817388733
+        },
+        {
+          "text": "Pantry Crown · Full health, before route rewards. Your current crew, rows and plan.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Current crew",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "ROUGH FORECAST",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "Favoured",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Mochi often falls first. Cleanse Hush and focus the leader; linked threads leave with it.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "A forecast, never a promise.",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "With Rare Bellsteel Keepsake on Mochi",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "ROUGH FORECAST",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "Even",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Mochi often falls first. Cleanse Hush and focus the leader; linked threads leave with it.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "A forecast, never a promise.",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "Compare with the same boss and band. Close results can share a forecast band.",
+          "ratio": 6.858421081163746
+        }
+      ],
+      "text": "Try your gear against a boss\nYarn Giant\nRain Spool\nPantry Crown\nComparison band\nBand 1\nBand 2\nBand 3\nBand 4\nBand 5\nBand 6\n\nPantry Crown · Full health, before route rewards. Your current crew, rows and plan.\n\nCurrent crew\nROUGH FORECAST\nFavoured\n\nMochi often falls first. Cleanse Hush and focus the leader; linked threads leave with it.\n\nA forecast, never a promise.\nWith Rare Bellsteel Keepsake on Mochi\nROUGH FORECAST\nEven\n\nMochi often falls first. Cleanse Hush and focus the leader; linked threads leave with it.\n\nA forecast, never a promise.\nCompare with the same boss and band. Close results can share a forecast band.",
+      "mode": "on",
+      "width": 1024,
+      "sha256": "bb8b40e02082f02f7224947fb38f4b6f4948bf938ca31c2d5aff74ff1eb9fdf1"
+    },
+    {
+      "look": "baseline",
+      "name": "transfer",
+      "path": "reports/cardrpg-big/a5/e1-equipment-forecast/browser-on-1024-attempt-1/baseline-transfer.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Try your gear against a boss",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Yarn Giant",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Rain Spool",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Pantry Crown",
+          "ratio": 6.42428817388733
+        },
+        {
+          "text": "Pantry Crown · Full health, before route rewards. Your current crew, rows and plan.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Includes Mochi giving this piece to Soot.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Current crew",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "ROUGH FORECAST",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "Favoured",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Mochi often falls first. Cleanse Hush and focus the leader; linked threads leave with it.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "A forecast, never a promise.",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "With Rare Bellsteel Utensil on Soot",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "ROUGH FORECAST",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "Favoured",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Mochi often falls first. Cleanse Hush and focus the leader; linked threads leave with it.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "A forecast, never a promise.",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "Compare with the same boss and band. Close results can share a forecast band.",
+          "ratio": 6.858421081163746
+        }
+      ],
+      "text": "Try your gear against a boss\nYarn Giant\nRain Spool\nPantry Crown\nComparison band\nBand 1\nBand 2\nBand 3\nBand 4\nBand 5\nBand 6\n\nPantry Crown · Full health, before route rewards. Your current crew, rows and plan.\n\nIncludes Mochi giving this piece to Soot.\n\nCurrent crew\nROUGH FORECAST\nFavoured\n\nMochi often falls first. Cleanse Hush and focus the leader; linked threads leave with it.\n\nA forecast, never a promise.\nWith Rare Bellsteel Utensil on Soot\nROUGH FORECAST\nFavoured\n\nMochi often falls first. Cleanse Hush and focus the leader; linked threads leave with it.\n\nA forecast, never a promise.\nCompare with the same boss and band. Close results can share a forecast band.",
+      "mode": "on",
+      "width": 1024,
+      "sha256": "915c4b2530cfad93299fffb1e76db8f65a19e073a7959987ff11544fe8f0159b"
+    },
+    {
+      "look": "look",
+      "name": "threshold",
+      "path": "reports/cardrpg-big/a5/e1-equipment-forecast/browser-on-1024-attempt-1/look-threshold.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Try your gear against a boss",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Yarn Giant",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Rain Spool",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Pantry Crown",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Pantry Crown · Full health, before route rewards. Your current crew, rows and plan.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Current crew",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "ROUGH FORECAST",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Favoured",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Mochi often falls first. Cleanse Hush and focus the leader; linked threads leave with it.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "A forecast, never a promise.",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "With Rare Bellsteel Keepsake on Mochi",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "ROUGH FORECAST",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Even",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Mochi often falls first. Cleanse Hush and focus the leader; linked threads leave with it.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "A forecast, never a promise.",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Compare with the same boss and band. Close results can share a forecast band.",
+          "ratio": 8.028038840639192
+        }
+      ],
+      "text": "Try your gear against a boss\nYarn Giant\nRain Spool\nPantry Crown\nComparison band\nBand 1\nBand 2\nBand 3\nBand 4\nBand 5\nBand 6\n\nPantry Crown · Full health, before route rewards. Your current crew, rows and plan.\n\nCurrent crew\nROUGH FORECAST\nFavoured\n\nMochi often falls first. Cleanse Hush and focus the leader; linked threads leave with it.\n\nA forecast, never a promise.\nWith Rare Bellsteel Keepsake on Mochi\nROUGH FORECAST\nEven\n\nMochi often falls first. Cleanse Hush and focus the leader; linked threads leave with it.\n\nA forecast, never a promise.\nCompare with the same boss and band. Close results can share a forecast band.",
+      "mode": "on",
+      "width": 1024,
+      "sha256": "707baff9987008b37d08d6e04d73155d80c10f0d7ce796bee826d1d6d255a0f9"
+    },
+    {
+      "look": "look",
+      "name": "transfer",
+      "path": "reports/cardrpg-big/a5/e1-equipment-forecast/browser-on-1024-attempt-1/look-transfer.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Try your gear against a boss",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Yarn Giant",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Rain Spool",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Pantry Crown",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Pantry Crown · Full health, before route rewards. Your current crew, rows and plan.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Includes Mochi giving this piece to Soot.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Current crew",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "ROUGH FORECAST",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Favoured",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Mochi often falls first. Cleanse Hush and focus the leader; linked threads leave with it.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "A forecast, never a promise.",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "With Rare Bellsteel Utensil on Soot",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "ROUGH FORECAST",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Favoured",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Mochi often falls first. Cleanse Hush and focus the leader; linked threads leave with it.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "A forecast, never a promise.",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Compare with the same boss and band. Close results can share a forecast band.",
+          "ratio": 8.028038840639192
+        }
+      ],
+      "text": "Try your gear against a boss\nYarn Giant\nRain Spool\nPantry Crown\nComparison band\nBand 1\nBand 2\nBand 3\nBand 4\nBand 5\nBand 6\n\nPantry Crown · Full health, before route rewards. Your current crew, rows and plan.\n\nIncludes Mochi giving this piece to Soot.\n\nCurrent crew\nROUGH FORECAST\nFavoured\n\nMochi often falls first. Cleanse Hush and focus the leader; linked threads leave with it.\n\nA forecast, never a promise.\nWith Rare Bellsteel Utensil on Soot\nROUGH FORECAST\nFavoured\n\nMochi often falls first. Cleanse Hush and focus the leader; linked threads leave with it.\n\nA forecast, never a promise.\nCompare with the same boss and band. Close results can share a forecast band.",
+      "mode": "on",
+      "width": 1024,
+      "sha256": "56dc3ea2bbb55621f7d683d07b940e03b63edc390ae63fdc84195f840e89d658"
+    },
+    {
+      "look": "baseline",
+      "name": "threshold",
+      "path": "reports/cardrpg-big/a5/e1-equipment-forecast/browser-off-1280-attempt-1/baseline-threshold.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Selected equipment · Mochi",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "Rare Bellsteel Keepsake",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Equip selected",
+          "ratio": 9.237546476333335
+        }
+      ],
+      "text": "Selected equipment · Mochi\nRare Bellsteel Keepsake\nEquip selected",
+      "mode": "off",
+      "width": 1280,
+      "sha256": "9e2b5878a33569710829dae22aee66b599383e59c68c43b0532bf25f4db43154"
+    },
+    {
+      "look": "baseline",
+      "name": "transfer",
+      "path": "reports/cardrpg-big/a5/e1-equipment-forecast/browser-off-1280-attempt-1/baseline-transfer.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Selected equipment · Soot",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "Rare Bellsteel Utensil",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Equip selected",
+          "ratio": 9.237546476333335
+        }
+      ],
+      "text": "Selected equipment · Soot\nRare Bellsteel Utensil\nEquip selected",
+      "mode": "off",
+      "width": 1280,
+      "sha256": "f480afd4c0ff9f2964553af4789da5a893f2732931bd14b5979cdcd974107618"
+    },
+    {
+      "look": "look",
+      "name": "threshold",
+      "path": "reports/cardrpg-big/a5/e1-equipment-forecast/browser-off-1280-attempt-1/look-threshold.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Selected equipment · Mochi",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Rare Bellsteel Keepsake",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Equip selected",
+          "ratio": 9.509076954893759
+        }
+      ],
+      "text": "Selected equipment · Mochi\nRare Bellsteel Keepsake\nEquip selected",
+      "mode": "off",
+      "width": 1280,
+      "sha256": "91861a569a98d8f8b9b95004535bf67eea16c02fcd08abc75b4cb95def67719e"
+    },
+    {
+      "look": "look",
+      "name": "transfer",
+      "path": "reports/cardrpg-big/a5/e1-equipment-forecast/browser-off-1280-attempt-1/look-transfer.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Selected equipment · Soot",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Rare Bellsteel Utensil",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Equip selected",
+          "ratio": 9.509076954893759
+        }
+      ],
+      "text": "Selected equipment · Soot\nRare Bellsteel Utensil\nEquip selected",
+      "mode": "off",
+      "width": 1280,
+      "sha256": "2db979309ea4df11894131b0701c5003168c1a6fb333fa04fd5979cb872bee37"
+    },
+    {
+      "look": "baseline",
+      "name": "threshold",
+      "path": "reports/cardrpg-big/a5/e1-equipment-forecast/browser-off-1440-attempt-1/baseline-threshold.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Selected equipment · Mochi",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "Rare Bellsteel Keepsake",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Equip selected",
+          "ratio": 9.237546476333335
+        }
+      ],
+      "text": "Selected equipment · Mochi\nRare Bellsteel Keepsake\nEquip selected",
+      "mode": "off",
+      "width": 1440,
+      "sha256": "5f5eca68667b6573985c24031774603121a905214a9e027bb6d619569b3ab422"
+    },
+    {
+      "look": "baseline",
+      "name": "transfer",
+      "path": "reports/cardrpg-big/a5/e1-equipment-forecast/browser-off-1440-attempt-1/baseline-transfer.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Selected equipment · Soot",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "Rare Bellsteel Utensil",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Equip selected",
+          "ratio": 9.237546476333335
+        }
+      ],
+      "text": "Selected equipment · Soot\nRare Bellsteel Utensil\nEquip selected",
+      "mode": "off",
+      "width": 1440,
+      "sha256": "54db7b4b8034a41056414bf15515a1ef1d3815ad3cec8b7ebc41bb5c94d84f88"
+    },
+    {
+      "look": "look",
+      "name": "threshold",
+      "path": "reports/cardrpg-big/a5/e1-equipment-forecast/browser-off-1440-attempt-1/look-threshold.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Selected equipment · Mochi",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Rare Bellsteel Keepsake",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Equip selected",
+          "ratio": 9.509076954893759
+        }
+      ],
+      "text": "Selected equipment · Mochi\nRare Bellsteel Keepsake\nEquip selected",
+      "mode": "off",
+      "width": 1440,
+      "sha256": "6ba4c242c38921e7c52355959a0f01b08423ca735d62625c7872a99901abf577"
+    },
+    {
+      "look": "look",
+      "name": "transfer",
+      "path": "reports/cardrpg-big/a5/e1-equipment-forecast/browser-off-1440-attempt-1/look-transfer.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Selected equipment · Soot",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Rare Bellsteel Utensil",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Equip selected",
+          "ratio": 9.509076954893759
+        }
+      ],
+      "text": "Selected equipment · Soot\nRare Bellsteel Utensil\nEquip selected",
+      "mode": "off",
+      "width": 1440,
+      "sha256": "a9a41e7171be6aa5f66f82ebb03eb79aeeb3578def572cb2925878a9c2bedc4d"
+    },
+    {
+      "look": "baseline",
+      "name": "threshold",
+      "path": "reports/cardrpg-big/a5/e1-equipment-forecast/browser-off-1024-attempt-1/baseline-threshold.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Selected equipment · Mochi",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "Rare Bellsteel Keepsake",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Equip selected",
+          "ratio": 9.237546476333335
+        }
+      ],
+      "text": "Selected equipment · Mochi\nRare Bellsteel Keepsake\nEquip selected",
+      "mode": "off",
+      "width": 1024,
+      "sha256": "38e8d38e54d0c465d61d2ef5cfdbbb5122c68be7895f93923ddbe2e6399c284d"
+    },
+    {
+      "look": "baseline",
+      "name": "transfer",
+      "path": "reports/cardrpg-big/a5/e1-equipment-forecast/browser-off-1024-attempt-1/baseline-transfer.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Selected equipment · Soot",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "Rare Bellsteel Utensil",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Equip selected",
+          "ratio": 9.237546476333335
+        }
+      ],
+      "text": "Selected equipment · Soot\nRare Bellsteel Utensil\nEquip selected",
+      "mode": "off",
+      "width": 1024,
+      "sha256": "0e80e98780d9be117559174c11fcd5c0b5474c12e44edec6f303b7b25a1b664e"
+    },
+    {
+      "look": "look",
+      "name": "threshold",
+      "path": "reports/cardrpg-big/a5/e1-equipment-forecast/browser-off-1024-attempt-1/look-threshold.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Selected equipment · Mochi",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Rare Bellsteel Keepsake",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Equip selected",
+          "ratio": 9.509076954893759
+        }
+      ],
+      "text": "Selected equipment · Mochi\nRare Bellsteel Keepsake\nEquip selected",
+      "mode": "off",
+      "width": 1024,
+      "sha256": "385f9c2f14a5223b6cfb83d226e116994a705efc733f0bd67e87ea831cdff086"
+    },
+    {
+      "look": "look",
+      "name": "transfer",
+      "path": "reports/cardrpg-big/a5/e1-equipment-forecast/browser-off-1024-attempt-1/look-transfer.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Selected equipment · Soot",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Rare Bellsteel Utensil",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Equip selected",
+          "ratio": 9.509076954893759
+        }
+      ],
+      "text": "Selected equipment · Soot\nRare Bellsteel Utensil\nEquip selected",
+      "mode": "off",
+      "width": 1024,
+      "sha256": "9b5fd039326f22b21ed20930168f58c1b9aa816addc7d33f079832c1fd65813f"
+    }
+  ],
+  "workers": {
+    "passed": true,
+    "artifact": "/tmp/cardrpg-a5-equipment-forecast-on/index.html",
+    "sha256": "0a2c5f1d00ebc7f09fe2d8e928c10f461edbcab9f73f602641e4834a0bc33db8",
+    "checks": [
+      {
+        "scenario": "delayed",
+        "oldKeys": [
+          "{\"cats\":[{\"bonuses\":{\"hp\":27},\"effects\":[\"counter-plus\"],\"equipment\":[\"bellsteel-weapon-rare\",\"bellsteel-outfit-rare\",\"bellsteel-charm-rare\"],\"id\":\"mochi\",\"row\":\"front\",\"skills\":[\"mochi-1\",\"mochi-2\",\"mochi-3\",\"mochi-4\"],\"stats\":{\"attack\":60,\"critBp\":800,\"critDamageBp\":5000,\"defense\":42,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":664,\"initiative\":8,\"shieldBp\":0}},{\"bonuses\":{},\"effects\":[\"marked-break\"],\"equipment\":[\"moonwick-weapon-common\",\"moonwick-outfit-common\"],\"id\":\"soot\",\"row\":\"rear\",\"skills\":[\"soot-1\",\"soot-2\",\"soot-3\",\"soot-4\"],\"stats\":{\"attack\":73,\"critBp\":1200,\"critDamageBp\":5000,\"defense\":23,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":488,\"initiative\":6,\"shieldBp\":0}},{\"bonuses\":{},\"effects\":[\"healing-cleanse\"],\"equipment\":[\"mossbrew-weapon-common\",\"mossbrew-outfit-common\"],\"id\":\"clover\",\"row\":\"rear\",\"skills\":[\"clover-1\",\"clover-2\",\"clover-3\",\"clover-4\"],\"stats\":{\"attack\":44,\"critBp\":500,\"critDamageBp\":5000,\"defense\":21,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":408,\"initiative\":4,\"shieldBp\":0}}],\"challengeLevel\":6,\"chapter\":3,\"enemies\":[\"pantry-crown\"],\"enemyStats\":{\"binding-thread\":{\"attack\":11,\"defense\":0,\"hp\":109},\"button-guard\":{\"attack\":22,\"defense\":18,\"hp\":136},\"crumb-sentinel\":{\"attack\":31,\"defense\":22,\"hp\":430},\"kettle-knight\":{\"attack\":28,\"defense\":35,\"hp\":406},\"needle-moth\":{\"attack\":19,\"defense\":6,\"hp\":187},\"pantry-crown\":{\"attack\":171,\"defense\":25,\"hp\":1213},\"pollen-scout\":{\"attack\":25,\"defense\":10,\"hp\":322},\"practice-cushion\":{\"attack\":16,\"defense\":0,\"hp\":65},\"rain-spool\":{\"attack\":136,\"defense\":24,\"hp\":1253},\"sock-skipper\":{\"attack\":25,\"defense\":8,\"hp\":199},\"spool-ram\":{\"attack\":34,\"defense\":16,\"hp\":358},\"teacup-healer\":{\"attack\":16,\"defense\":10,\"hp\":217},\"yarn-giant\":{\"attack\":123,\"defense\":22,\"hp\":978}},\"gameplayV4\":true,\"plan\":{\"care\":\"steady\",\"focus\":\"finish\"}}",
+          "{\"cats\":[{\"bonuses\":{\"hp\":18},\"effects\":[\"counter-plus\"],\"equipment\":[\"hearthloom-weapon-common\",\"bellsteel-outfit-rare\",\"bellsteel-charm-rare\"],\"id\":\"mochi\",\"row\":\"front\",\"skills\":[\"mochi-1\",\"mochi-2\",\"mochi-3\",\"mochi-4\"],\"stats\":{\"attack\":59,\"critBp\":800,\"critDamageBp\":5000,\"defense\":42,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":655,\"initiative\":8,\"shieldBp\":0}},{\"bonuses\":{},\"effects\":[\"marked-break\"],\"equipment\":[\"moonwick-weapon-common\",\"moonwick-outfit-common\"],\"id\":\"soot\",\"row\":\"rear\",\"skills\":[\"soot-1\",\"soot-2\",\"soot-3\",\"soot-4\"],\"stats\":{\"attack\":73,\"critBp\":1200,\"critDamageBp\":5000,\"defense\":23,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":488,\"initiative\":6,\"shieldBp\":0}},{\"bonuses\":{},\"effects\":[\"healing-cleanse\"],\"equipment\":[\"mossbrew-weapon-common\",\"mossbrew-outfit-common\"],\"id\":\"clover\",\"row\":\"rear\",\"skills\":[\"clover-1\",\"clover-2\",\"clover-3\",\"clover-4\"],\"stats\":{\"attack\":44,\"critBp\":500,\"critDamageBp\":5000,\"defense\":21,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":408,\"initiative\":4,\"shieldBp\":0}}],\"challengeLevel\":6,\"chapter\":3,\"enemies\":[\"pantry-crown\"],\"enemyStats\":{\"binding-thread\":{\"attack\":11,\"defense\":0,\"hp\":109},\"button-guard\":{\"attack\":22,\"defense\":18,\"hp\":136},\"crumb-sentinel\":{\"attack\":31,\"defense\":22,\"hp\":430},\"kettle-knight\":{\"attack\":28,\"defense\":35,\"hp\":406},\"needle-moth\":{\"attack\":19,\"defense\":6,\"hp\":187},\"pantry-crown\":{\"attack\":171,\"defense\":25,\"hp\":1213},\"pollen-scout\":{\"attack\":25,\"defense\":10,\"hp\":322},\"practice-cushion\":{\"attack\":16,\"defense\":0,\"hp\":65},\"rain-spool\":{\"attack\":136,\"defense\":24,\"hp\":1253},\"sock-skipper\":{\"attack\":25,\"defense\":8,\"hp\":199},\"spool-ram\":{\"attack\":34,\"defense\":16,\"hp\":358},\"teacup-healer\":{\"attack\":16,\"defense\":10,\"hp\":217},\"yarn-giant\":{\"attack\":123,\"defense\":22,\"hp\":978}},\"gameplayV4\":true,\"plan\":{\"care\":\"steady\",\"focus\":\"finish\"}}"
+        ],
+        "audit": [
+          {
+            "key": "{\"cats\":[{\"bonuses\":{\"hp\":27},\"effects\":[\"counter-plus\"],\"equipment\":[\"bellsteel-weapon-rare\",\"bellsteel-outfit-rare\",\"bellsteel-charm-rare\"],\"id\":\"mochi\",\"row\":\"front\",\"skills\":[\"mochi-1\",\"mochi-2\",\"mochi-3\",\"mochi-4\"],\"stats\":{\"attack\":60,\"critBp\":800,\"critDamageBp\":5000,\"defense\":42,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":664,\"initiative\":8,\"shieldBp\":0}},{\"bonuses\":{},\"effects\":[\"marked-break\"],\"equipment\":[\"moonwick-weapon-common\",\"moonwick-outfit-common\"],\"id\":\"soot\",\"row\":\"rear\",\"skills\":[\"soot-1\",\"soot-2\",\"soot-3\",\"soot-4\"],\"stats\":{\"attack\":73,\"critBp\":1200,\"critDamageBp\":5000,\"defense\":23,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":488,\"initiative\":6,\"shieldBp\":0}},{\"bonuses\":{},\"effects\":[\"healing-cleanse\"],\"equipment\":[\"mossbrew-weapon-common\",\"mossbrew-outfit-common\"],\"id\":\"clover\",\"row\":\"rear\",\"skills\":[\"clover-1\",\"clover-2\",\"clover-3\",\"clover-4\"],\"stats\":{\"attack\":44,\"critBp\":500,\"critDamageBp\":5000,\"defense\":21,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":408,\"initiative\":4,\"shieldBp\":0}}],\"challengeLevel\":6,\"chapter\":3,\"enemies\":[\"pantry-crown\"],\"enemyStats\":{\"binding-thread\":{\"attack\":11,\"defense\":0,\"hp\":109},\"button-guard\":{\"attack\":22,\"defense\":18,\"hp\":136},\"crumb-sentinel\":{\"attack\":31,\"defense\":22,\"hp\":430},\"kettle-knight\":{\"attack\":28,\"defense\":35,\"hp\":406},\"needle-moth\":{\"attack\":19,\"defense\":6,\"hp\":187},\"pantry-crown\":{\"attack\":171,\"defense\":25,\"hp\":1213},\"pollen-scout\":{\"attack\":25,\"defense\":10,\"hp\":322},\"practice-cushion\":{\"attack\":16,\"defense\":0,\"hp\":65},\"rain-spool\":{\"attack\":136,\"defense\":24,\"hp\":1253},\"sock-skipper\":{\"attack\":25,\"defense\":8,\"hp\":199},\"spool-ram\":{\"attack\":34,\"defense\":16,\"hp\":358},\"teacup-healer\":{\"attack\":16,\"defense\":10,\"hp\":217},\"yarn-giant\":{\"attack\":123,\"defense\":22,\"hp\":978}},\"gameplayV4\":true,\"plan\":{\"care\":\"steady\",\"focus\":\"finish\"}}",
+            "resultKey": "{\"cats\":[{\"bonuses\":{\"hp\":27},\"effects\":[\"counter-plus\"],\"equipment\":[\"bellsteel-weapon-rare\",\"bellsteel-outfit-rare\",\"bellsteel-charm-rare\"],\"id\":\"mochi\",\"row\":\"front\",\"skills\":[\"mochi-1\",\"mochi-2\",\"mochi-3\",\"mochi-4\"],\"stats\":{\"attack\":60,\"critBp\":800,\"critDamageBp\":5000,\"defense\":42,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":664,\"initiative\":8,\"shieldBp\":0}},{\"bonuses\":{},\"effects\":[\"marked-break\"],\"equipment\":[\"moonwick-weapon-common\",\"moonwick-outfit-common\"],\"id\":\"soot\",\"row\":\"rear\",\"skills\":[\"soot-1\",\"soot-2\",\"soot-3\",\"soot-4\"],\"stats\":{\"attack\":73,\"critBp\":1200,\"critDamageBp\":5000,\"defense\":23,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":488,\"initiative\":6,\"shieldBp\":0}},{\"bonuses\":{},\"effects\":[\"healing-cleanse\"],\"equipment\":[\"mossbrew-weapon-common\",\"mossbrew-outfit-common\"],\"id\":\"clover\",\"row\":\"rear\",\"skills\":[\"clover-1\",\"clover-2\",\"clover-3\",\"clover-4\"],\"stats\":{\"attack\":44,\"critBp\":500,\"critDamageBp\":5000,\"defense\":21,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":408,\"initiative\":4,\"shieldBp\":0}}],\"challengeLevel\":6,\"chapter\":3,\"enemies\":[\"pantry-crown\"],\"enemyStats\":{\"binding-thread\":{\"attack\":11,\"defense\":0,\"hp\":109},\"button-guard\":{\"attack\":22,\"defense\":18,\"hp\":136},\"crumb-sentinel\":{\"attack\":31,\"defense\":22,\"hp\":430},\"kettle-knight\":{\"attack\":28,\"defense\":35,\"hp\":406},\"needle-moth\":{\"attack\":19,\"defense\":6,\"hp\":187},\"pantry-crown\":{\"attack\":171,\"defense\":25,\"hp\":1213},\"pollen-scout\":{\"attack\":25,\"defense\":10,\"hp\":322},\"practice-cushion\":{\"attack\":16,\"defense\":0,\"hp\":65},\"rain-spool\":{\"attack\":136,\"defense\":24,\"hp\":1253},\"sock-skipper\":{\"attack\":25,\"defense\":8,\"hp\":199},\"spool-ram\":{\"attack\":34,\"defense\":16,\"hp\":358},\"teacup-healer\":{\"attack\":16,\"defense\":10,\"hp\":217},\"yarn-giant\":{\"attack\":123,\"defense\":22,\"hp\":978}},\"gameplayV4\":true,\"plan\":{\"care\":\"steady\",\"focus\":\"finish\"}}",
+            "terminated": true,
+            "delivered": true
+          },
+          {
+            "key": "{\"cats\":[{\"bonuses\":{\"hp\":18},\"effects\":[\"counter-plus\"],\"equipment\":[\"hearthloom-weapon-common\",\"bellsteel-outfit-rare\",\"bellsteel-charm-rare\"],\"id\":\"mochi\",\"row\":\"front\",\"skills\":[\"mochi-1\",\"mochi-2\",\"mochi-3\",\"mochi-4\"],\"stats\":{\"attack\":59,\"critBp\":800,\"critDamageBp\":5000,\"defense\":42,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":655,\"initiative\":8,\"shieldBp\":0}},{\"bonuses\":{},\"effects\":[\"marked-break\"],\"equipment\":[\"moonwick-weapon-common\",\"moonwick-outfit-common\"],\"id\":\"soot\",\"row\":\"rear\",\"skills\":[\"soot-1\",\"soot-2\",\"soot-3\",\"soot-4\"],\"stats\":{\"attack\":73,\"critBp\":1200,\"critDamageBp\":5000,\"defense\":23,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":488,\"initiative\":6,\"shieldBp\":0}},{\"bonuses\":{},\"effects\":[\"healing-cleanse\"],\"equipment\":[\"mossbrew-weapon-common\",\"mossbrew-outfit-common\"],\"id\":\"clover\",\"row\":\"rear\",\"skills\":[\"clover-1\",\"clover-2\",\"clover-3\",\"clover-4\"],\"stats\":{\"attack\":44,\"critBp\":500,\"critDamageBp\":5000,\"defense\":21,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":408,\"initiative\":4,\"shieldBp\":0}}],\"challengeLevel\":6,\"chapter\":3,\"enemies\":[\"pantry-crown\"],\"enemyStats\":{\"binding-thread\":{\"attack\":11,\"defense\":0,\"hp\":109},\"button-guard\":{\"attack\":22,\"defense\":18,\"hp\":136},\"crumb-sentinel\":{\"attack\":31,\"defense\":22,\"hp\":430},\"kettle-knight\":{\"attack\":28,\"defense\":35,\"hp\":406},\"needle-moth\":{\"attack\":19,\"defense\":6,\"hp\":187},\"pantry-crown\":{\"attack\":171,\"defense\":25,\"hp\":1213},\"pollen-scout\":{\"attack\":25,\"defense\":10,\"hp\":322},\"practice-cushion\":{\"attack\":16,\"defense\":0,\"hp\":65},\"rain-spool\":{\"attack\":136,\"defense\":24,\"hp\":1253},\"sock-skipper\":{\"attack\":25,\"defense\":8,\"hp\":199},\"spool-ram\":{\"attack\":34,\"defense\":16,\"hp\":358},\"teacup-healer\":{\"attack\":16,\"defense\":10,\"hp\":217},\"yarn-giant\":{\"attack\":123,\"defense\":22,\"hp\":978}},\"gameplayV4\":true,\"plan\":{\"care\":\"steady\",\"focus\":\"finish\"}}",
+            "resultKey": "{\"cats\":[{\"bonuses\":{\"hp\":18},\"effects\":[\"counter-plus\"],\"equipment\":[\"hearthloom-weapon-common\",\"bellsteel-outfit-rare\",\"bellsteel-charm-rare\"],\"id\":\"mochi\",\"row\":\"front\",\"skills\":[\"mochi-1\",\"mochi-2\",\"mochi-3\",\"mochi-4\"],\"stats\":{\"attack\":59,\"critBp\":800,\"critDamageBp\":5000,\"defense\":42,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":655,\"initiative\":8,\"shieldBp\":0}},{\"bonuses\":{},\"effects\":[\"marked-break\"],\"equipment\":[\"moonwick-weapon-common\",\"moonwick-outfit-common\"],\"id\":\"soot\",\"row\":\"rear\",\"skills\":[\"soot-1\",\"soot-2\",\"soot-3\",\"soot-4\"],\"stats\":{\"attack\":73,\"critBp\":1200,\"critDamageBp\":5000,\"defense\":23,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":488,\"initiative\":6,\"shieldBp\":0}},{\"bonuses\":{},\"effects\":[\"healing-cleanse\"],\"equipment\":[\"mossbrew-weapon-common\",\"mossbrew-outfit-common\"],\"id\":\"clover\",\"row\":\"rear\",\"skills\":[\"clover-1\",\"clover-2\",\"clover-3\",\"clover-4\"],\"stats\":{\"attack\":44,\"critBp\":500,\"critDamageBp\":5000,\"defense\":21,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":408,\"initiative\":4,\"shieldBp\":0}}],\"challengeLevel\":6,\"chapter\":3,\"enemies\":[\"pantry-crown\"],\"enemyStats\":{\"binding-thread\":{\"attack\":11,\"defense\":0,\"hp\":109},\"button-guard\":{\"attack\":22,\"defense\":18,\"hp\":136},\"crumb-sentinel\":{\"attack\":31,\"defense\":22,\"hp\":430},\"kettle-knight\":{\"attack\":28,\"defense\":35,\"hp\":406},\"needle-moth\":{\"attack\":19,\"defense\":6,\"hp\":187},\"pantry-crown\":{\"attack\":171,\"defense\":25,\"hp\":1213},\"pollen-scout\":{\"attack\":25,\"defense\":10,\"hp\":322},\"practice-cushion\":{\"attack\":16,\"defense\":0,\"hp\":65},\"rain-spool\":{\"attack\":136,\"defense\":24,\"hp\":1253},\"sock-skipper\":{\"attack\":25,\"defense\":8,\"hp\":199},\"spool-ram\":{\"attack\":34,\"defense\":16,\"hp\":358},\"teacup-healer\":{\"attack\":16,\"defense\":10,\"hp\":217},\"yarn-giant\":{\"attack\":123,\"defense\":22,\"hp\":978}},\"gameplayV4\":true,\"plan\":{\"care\":\"steady\",\"focus\":\"finish\"}}",
+            "terminated": true,
+            "delivered": true
+          },
+          {
+            "key": "{\"cats\":[{\"bonuses\":{\"hp\":36},\"effects\":[\"counter-plus\",\"defend-riposte\"],\"equipment\":[\"bellsteel-weapon-rare\",\"bellsteel-outfit-rare\",\"bellsteel-charm-rare\",\"bellsteel-relic-rare\"],\"id\":\"mochi\",\"row\":\"front\",\"skills\":[\"mochi-1\",\"mochi-2\",\"mochi-3\",\"mochi-4\"],\"stats\":{\"attack\":60,\"critBp\":800,\"critDamageBp\":5000,\"defense\":42,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":721,\"initiative\":8,\"shieldBp\":0}},{\"bonuses\":{},\"effects\":[\"marked-break\"],\"equipment\":[\"moonwick-weapon-common\",\"moonwick-outfit-common\"],\"id\":\"soot\",\"row\":\"rear\",\"skills\":[\"soot-1\",\"soot-2\",\"soot-3\",\"soot-4\"],\"stats\":{\"attack\":73,\"critBp\":1200,\"critDamageBp\":5000,\"defense\":23,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":488,\"initiative\":6,\"shieldBp\":0}},{\"bonuses\":{},\"effects\":[\"healing-cleanse\"],\"equipment\":[\"mossbrew-weapon-common\",\"mossbrew-outfit-common\"],\"id\":\"clover\",\"row\":\"rear\",\"skills\":[\"clover-1\",\"clover-2\",\"clover-3\",\"clover-4\"],\"stats\":{\"attack\":44,\"critBp\":500,\"critDamageBp\":5000,\"defense\":21,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":408,\"initiative\":4,\"shieldBp\":0}}],\"challengeLevel\":6,\"chapter\":3,\"enemies\":[\"pantry-crown\"],\"enemyStats\":{\"binding-thread\":{\"attack\":11,\"defense\":0,\"hp\":109},\"button-guard\":{\"attack\":22,\"defense\":18,\"hp\":136},\"crumb-sentinel\":{\"attack\":31,\"defense\":22,\"hp\":430},\"kettle-knight\":{\"attack\":28,\"defense\":35,\"hp\":406},\"needle-moth\":{\"attack\":19,\"defense\":6,\"hp\":187},\"pantry-crown\":{\"attack\":171,\"defense\":25,\"hp\":1213},\"pollen-scout\":{\"attack\":25,\"defense\":10,\"hp\":322},\"practice-cushion\":{\"attack\":16,\"defense\":0,\"hp\":65},\"rain-spool\":{\"attack\":136,\"defense\":24,\"hp\":1253},\"sock-skipper\":{\"attack\":25,\"defense\":8,\"hp\":199},\"spool-ram\":{\"attack\":34,\"defense\":16,\"hp\":358},\"teacup-healer\":{\"attack\":16,\"defense\":10,\"hp\":217},\"yarn-giant\":{\"attack\":123,\"defense\":22,\"hp\":978}},\"gameplayV4\":true,\"plan\":{\"care\":\"steady\",\"focus\":\"finish\"}}",
+            "resultKey": "{\"cats\":[{\"bonuses\":{\"hp\":36},\"effects\":[\"counter-plus\",\"defend-riposte\"],\"equipment\":[\"bellsteel-weapon-rare\",\"bellsteel-outfit-rare\",\"bellsteel-charm-rare\",\"bellsteel-relic-rare\"],\"id\":\"mochi\",\"row\":\"front\",\"skills\":[\"mochi-1\",\"mochi-2\",\"mochi-3\",\"mochi-4\"],\"stats\":{\"attack\":60,\"critBp\":800,\"critDamageBp\":5000,\"defense\":42,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":721,\"initiative\":8,\"shieldBp\":0}},{\"bonuses\":{},\"effects\":[\"marked-break\"],\"equipment\":[\"moonwick-weapon-common\",\"moonwick-outfit-common\"],\"id\":\"soot\",\"row\":\"rear\",\"skills\":[\"soot-1\",\"soot-2\",\"soot-3\",\"soot-4\"],\"stats\":{\"attack\":73,\"critBp\":1200,\"critDamageBp\":5000,\"defense\":23,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":488,\"initiative\":6,\"shieldBp\":0}},{\"bonuses\":{},\"effects\":[\"healing-cleanse\"],\"equipment\":[\"mossbrew-weapon-common\",\"mossbrew-outfit-common\"],\"id\":\"clover\",\"row\":\"rear\",\"skills\":[\"clover-1\",\"clover-2\",\"clover-3\",\"clover-4\"],\"stats\":{\"attack\":44,\"critBp\":500,\"critDamageBp\":5000,\"defense\":21,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":408,\"initiative\":4,\"shieldBp\":0}}],\"challengeLevel\":6,\"chapter\":3,\"enemies\":[\"pantry-crown\"],\"enemyStats\":{\"binding-thread\":{\"attack\":11,\"defense\":0,\"hp\":109},\"button-guard\":{\"attack\":22,\"defense\":18,\"hp\":136},\"crumb-sentinel\":{\"attack\":31,\"defense\":22,\"hp\":430},\"kettle-knight\":{\"attack\":28,\"defense\":35,\"hp\":406},\"needle-moth\":{\"attack\":19,\"defense\":6,\"hp\":187},\"pantry-crown\":{\"attack\":171,\"defense\":25,\"hp\":1213},\"pollen-scout\":{\"attack\":25,\"defense\":10,\"hp\":322},\"practice-cushion\":{\"attack\":16,\"defense\":0,\"hp\":65},\"rain-spool\":{\"attack\":136,\"defense\":24,\"hp\":1253},\"sock-skipper\":{\"attack\":25,\"defense\":8,\"hp\":199},\"spool-ram\":{\"attack\":34,\"defense\":16,\"hp\":358},\"teacup-healer\":{\"attack\":16,\"defense\":10,\"hp\":217},\"yarn-giant\":{\"attack\":123,\"defense\":22,\"hp\":978}},\"gameplayV4\":true,\"plan\":{\"care\":\"steady\",\"focus\":\"finish\"}}",
+            "terminated": true,
+            "delivered": true
+          },
+          {
+            "key": "{\"cats\":[{\"bonuses\":{\"hp\":27},\"effects\":[\"counter-plus\"],\"equipment\":[\"bellsteel-weapon-rare\",\"bellsteel-outfit-rare\",\"bellsteel-charm-rare\"],\"id\":\"mochi\",\"row\":\"front\",\"skills\":[\"mochi-1\",\"mochi-2\",\"mochi-3\",\"mochi-4\"],\"stats\":{\"attack\":60,\"critBp\":800,\"critDamageBp\":5000,\"defense\":42,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":664,\"initiative\":8,\"shieldBp\":0}},{\"bonuses\":{},\"effects\":[\"marked-break\"],\"equipment\":[\"moonwick-weapon-common\",\"moonwick-outfit-common\"],\"id\":\"soot\",\"row\":\"rear\",\"skills\":[\"soot-1\",\"soot-2\",\"soot-3\",\"soot-4\"],\"stats\":{\"attack\":73,\"critBp\":1200,\"critDamageBp\":5000,\"defense\":23,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":488,\"initiative\":6,\"shieldBp\":0}},{\"bonuses\":{},\"effects\":[\"healing-cleanse\"],\"equipment\":[\"mossbrew-weapon-common\",\"mossbrew-outfit-common\"],\"id\":\"clover\",\"row\":\"rear\",\"skills\":[\"clover-1\",\"clover-2\",\"clover-3\",\"clover-4\"],\"stats\":{\"attack\":44,\"critBp\":500,\"critDamageBp\":5000,\"defense\":21,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":408,\"initiative\":4,\"shieldBp\":0}}],\"challengeLevel\":6,\"chapter\":1,\"enemies\":[\"yarn-giant\"],\"enemyStats\":{\"binding-thread\":{\"attack\":11,\"defense\":0,\"hp\":109},\"button-guard\":{\"attack\":22,\"defense\":18,\"hp\":136},\"crumb-sentinel\":{\"attack\":31,\"defense\":22,\"hp\":430},\"kettle-knight\":{\"attack\":28,\"defense\":35,\"hp\":406},\"needle-moth\":{\"attack\":19,\"defense\":6,\"hp\":187},\"pantry-crown\":{\"attack\":171,\"defense\":25,\"hp\":1213},\"pollen-scout\":{\"attack\":25,\"defense\":10,\"hp\":322},\"practice-cushion\":{\"attack\":16,\"defense\":0,\"hp\":65},\"rain-spool\":{\"attack\":136,\"defense\":24,\"hp\":1253},\"sock-skipper\":{\"attack\":25,\"defense\":8,\"hp\":199},\"spool-ram\":{\"attack\":34,\"defense\":16,\"hp\":358},\"teacup-healer\":{\"attack\":16,\"defense\":10,\"hp\":217},\"yarn-giant\":{\"attack\":123,\"defense\":22,\"hp\":978}},\"gameplayV4\":true,\"plan\":{\"care\":\"steady\",\"focus\":\"finish\"}}",
+            "terminated": true,
+            "delivered": false
+          },
+          {
+            "key": "{\"cats\":[{\"bonuses\":{\"hp\":36},\"effects\":[\"counter-plus\",\"defend-riposte\"],\"equipment\":[\"bellsteel-weapon-rare\",\"bellsteel-outfit-rare\",\"bellsteel-charm-rare\",\"bellsteel-relic-rare\"],\"id\":\"mochi\",\"row\":\"front\",\"skills\":[\"mochi-1\",\"mochi-2\",\"mochi-3\",\"mochi-4\"],\"stats\":{\"attack\":60,\"critBp\":800,\"critDamageBp\":5000,\"defense\":42,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":721,\"initiative\":8,\"shieldBp\":0}},{\"bonuses\":{},\"effects\":[\"marked-break\"],\"equipment\":[\"moonwick-weapon-common\",\"moonwick-outfit-common\"],\"id\":\"soot\",\"row\":\"rear\",\"skills\":[\"soot-1\",\"soot-2\",\"soot-3\",\"soot-4\"],\"stats\":{\"attack\":73,\"critBp\":1200,\"critDamageBp\":5000,\"defense\":23,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":488,\"initiative\":6,\"shieldBp\":0}},{\"bonuses\":{},\"effects\":[\"healing-cleanse\"],\"equipment\":[\"mossbrew-weapon-common\",\"mossbrew-outfit-common\"],\"id\":\"clover\",\"row\":\"rear\",\"skills\":[\"clover-1\",\"clover-2\",\"clover-3\",\"clover-4\"],\"stats\":{\"attack\":44,\"critBp\":500,\"critDamageBp\":5000,\"defense\":21,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":408,\"initiative\":4,\"shieldBp\":0}}],\"challengeLevel\":6,\"chapter\":1,\"enemies\":[\"yarn-giant\"],\"enemyStats\":{\"binding-thread\":{\"attack\":11,\"defense\":0,\"hp\":109},\"button-guard\":{\"attack\":22,\"defense\":18,\"hp\":136},\"crumb-sentinel\":{\"attack\":31,\"defense\":22,\"hp\":430},\"kettle-knight\":{\"attack\":28,\"defense\":35,\"hp\":406},\"needle-moth\":{\"attack\":19,\"defense\":6,\"hp\":187},\"pantry-crown\":{\"attack\":171,\"defense\":25,\"hp\":1213},\"pollen-scout\":{\"attack\":25,\"defense\":10,\"hp\":322},\"practice-cushion\":{\"attack\":16,\"defense\":0,\"hp\":65},\"rain-spool\":{\"attack\":136,\"defense\":24,\"hp\":1253},\"sock-skipper\":{\"attack\":25,\"defense\":8,\"hp\":199},\"spool-ram\":{\"attack\":34,\"defense\":16,\"hp\":358},\"teacup-healer\":{\"attack\":16,\"defense\":10,\"hp\":217},\"yarn-giant\":{\"attack\":123,\"defense\":22,\"hp\":978}},\"gameplayV4\":true,\"plan\":{\"care\":\"steady\",\"focus\":\"finish\"}}",
+            "terminated": true,
+            "delivered": false
+          },
+          {
+            "key": "{\"cats\":[{\"bonuses\":{\"hp\":27},\"effects\":[\"counter-plus\"],\"equipment\":[\"bellsteel-weapon-rare\",\"bellsteel-outfit-rare\",\"bellsteel-charm-rare\"],\"id\":\"mochi\",\"row\":\"front\",\"skills\":[\"mochi-1\",\"mochi-2\",\"mochi-3\",\"mochi-4\"],\"stats\":{\"attack\":60,\"critBp\":800,\"critDamageBp\":5000,\"defense\":42,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":664,\"initiative\":8,\"shieldBp\":0}},{\"bonuses\":{},\"effects\":[\"marked-break\"],\"equipment\":[\"moonwick-weapon-common\",\"moonwick-outfit-common\"],\"id\":\"soot\",\"row\":\"rear\",\"skills\":[\"soot-1\",\"soot-2\",\"soot-3\",\"soot-4\"],\"stats\":{\"attack\":73,\"critBp\":1200,\"critDamageBp\":5000,\"defense\":23,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":488,\"initiative\":6,\"shieldBp\":0}},{\"bonuses\":{},\"effects\":[\"healing-cleanse\"],\"equipment\":[\"mossbrew-weapon-common\",\"mossbrew-outfit-common\"],\"id\":\"clover\",\"row\":\"rear\",\"skills\":[\"clover-1\",\"clover-2\",\"clover-3\",\"clover-4\"],\"stats\":{\"attack\":44,\"critBp\":500,\"critDamageBp\":5000,\"defense\":21,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":408,\"initiative\":4,\"shieldBp\":0}}],\"challengeLevel\":1,\"chapter\":1,\"enemies\":[\"yarn-giant\"],\"enemyStats\":{\"binding-thread\":{\"attack\":10,\"defense\":0,\"hp\":96},\"button-guard\":{\"attack\":19,\"defense\":18,\"hp\":120},\"crumb-sentinel\":{\"attack\":27,\"defense\":22,\"hp\":378},\"kettle-knight\":{\"attack\":25,\"defense\":35,\"hp\":357},\"needle-moth\":{\"attack\":17,\"defense\":6,\"hp\":165},\"pantry-crown\":{\"attack\":138,\"defense\":25,\"hp\":1068},\"pollen-scout\":{\"attack\":22,\"defense\":10,\"hp\":284},\"practice-cushion\":{\"attack\":14,\"defense\":0,\"hp\":58},\"rain-spool\":{\"attack\":110,\"defense\":24,\"hp\":1103},\"sock-skipper\":{\"attack\":22,\"defense\":8,\"hp\":175},\"spool-ram\":{\"attack\":30,\"defense\":16,\"hp\":315},\"teacup-healer\":{\"attack\":14,\"defense\":10,\"hp\":191},\"yarn-giant\":{\"attack\":99,\"defense\":22,\"hp\":861}},\"gameplayV4\":true,\"plan\":{\"care\":\"steady\",\"focus\":\"finish\"}}",
+            "resultKey": "{\"cats\":[{\"bonuses\":{\"hp\":27},\"effects\":[\"counter-plus\"],\"equipment\":[\"bellsteel-weapon-rare\",\"bellsteel-outfit-rare\",\"bellsteel-charm-rare\"],\"id\":\"mochi\",\"row\":\"front\",\"skills\":[\"mochi-1\",\"mochi-2\",\"mochi-3\",\"mochi-4\"],\"stats\":{\"attack\":60,\"critBp\":800,\"critDamageBp\":5000,\"defense\":42,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":664,\"initiative\":8,\"shieldBp\":0}},{\"bonuses\":{},\"effects\":[\"marked-break\"],\"equipment\":[\"moonwick-weapon-common\",\"moonwick-outfit-common\"],\"id\":\"soot\",\"row\":\"rear\",\"skills\":[\"soot-1\",\"soot-2\",\"soot-3\",\"soot-4\"],\"stats\":{\"attack\":73,\"critBp\":1200,\"critDamageBp\":5000,\"defense\":23,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":488,\"initiative\":6,\"shieldBp\":0}},{\"bonuses\":{},\"effects\":[\"healing-cleanse\"],\"equipment\":[\"mossbrew-weapon-common\",\"mossbrew-outfit-common\"],\"id\":\"clover\",\"row\":\"rear\",\"skills\":[\"clover-1\",\"clover-2\",\"clover-3\",\"clover-4\"],\"stats\":{\"attack\":44,\"critBp\":500,\"critDamageBp\":5000,\"defense\":21,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":408,\"initiative\":4,\"shieldBp\":0}}],\"challengeLevel\":1,\"chapter\":1,\"enemies\":[\"yarn-giant\"],\"enemyStats\":{\"binding-thread\":{\"attack\":10,\"defense\":0,\"hp\":96},\"button-guard\":{\"attack\":19,\"defense\":18,\"hp\":120},\"crumb-sentinel\":{\"attack\":27,\"defense\":22,\"hp\":378},\"kettle-knight\":{\"attack\":25,\"defense\":35,\"hp\":357},\"needle-moth\":{\"attack\":17,\"defense\":6,\"hp\":165},\"pantry-crown\":{\"attack\":138,\"defense\":25,\"hp\":1068},\"pollen-scout\":{\"attack\":22,\"defense\":10,\"hp\":284},\"practice-cushion\":{\"attack\":14,\"defense\":0,\"hp\":58},\"rain-spool\":{\"attack\":110,\"defense\":24,\"hp\":1103},\"sock-skipper\":{\"attack\":22,\"defense\":8,\"hp\":175},\"spool-ram\":{\"attack\":30,\"defense\":16,\"hp\":315},\"teacup-healer\":{\"attack\":14,\"defense\":10,\"hp\":191},\"yarn-giant\":{\"attack\":99,\"defense\":22,\"hp\":861}},\"gameplayV4\":true,\"plan\":{\"care\":\"steady\",\"focus\":\"finish\"}}",
+            "terminated": true,
+            "delivered": true
+          },
+          {
+            "key": "{\"cats\":[{\"bonuses\":{\"hp\":36},\"effects\":[\"counter-plus\",\"defend-riposte\"],\"equipment\":[\"bellsteel-weapon-rare\",\"bellsteel-outfit-rare\",\"bellsteel-charm-rare\",\"bellsteel-relic-rare\"],\"id\":\"mochi\",\"row\":\"front\",\"skills\":[\"mochi-1\",\"mochi-2\",\"mochi-3\",\"mochi-4\"],\"stats\":{\"attack\":60,\"critBp\":800,\"critDamageBp\":5000,\"defense\":42,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":721,\"initiative\":8,\"shieldBp\":0}},{\"bonuses\":{},\"effects\":[\"marked-break\"],\"equipment\":[\"moonwick-weapon-common\",\"moonwick-outfit-common\"],\"id\":\"soot\",\"row\":\"rear\",\"skills\":[\"soot-1\",\"soot-2\",\"soot-3\",\"soot-4\"],\"stats\":{\"attack\":73,\"critBp\":1200,\"critDamageBp\":5000,\"defense\":23,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":488,\"initiative\":6,\"shieldBp\":0}},{\"bonuses\":{},\"effects\":[\"healing-cleanse\"],\"equipment\":[\"mossbrew-weapon-common\",\"mossbrew-outfit-common\"],\"id\":\"clover\",\"row\":\"rear\",\"skills\":[\"clover-1\",\"clover-2\",\"clover-3\",\"clover-4\"],\"stats\":{\"attack\":44,\"critBp\":500,\"critDamageBp\":5000,\"defense\":21,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":408,\"initiative\":4,\"shieldBp\":0}}],\"challengeLevel\":1,\"chapter\":1,\"enemies\":[\"yarn-giant\"],\"enemyStats\":{\"binding-thread\":{\"attack\":10,\"defense\":0,\"hp\":96},\"button-guard\":{\"attack\":19,\"defense\":18,\"hp\":120},\"crumb-sentinel\":{\"attack\":27,\"defense\":22,\"hp\":378},\"kettle-knight\":{\"attack\":25,\"defense\":35,\"hp\":357},\"needle-moth\":{\"attack\":17,\"defense\":6,\"hp\":165},\"pantry-crown\":{\"attack\":138,\"defense\":25,\"hp\":1068},\"pollen-scout\":{\"attack\":22,\"defense\":10,\"hp\":284},\"practice-cushion\":{\"attack\":14,\"defense\":0,\"hp\":58},\"rain-spool\":{\"attack\":110,\"defense\":24,\"hp\":1103},\"sock-skipper\":{\"attack\":22,\"defense\":8,\"hp\":175},\"spool-ram\":{\"attack\":30,\"defense\":16,\"hp\":315},\"teacup-healer\":{\"attack\":14,\"defense\":10,\"hp\":191},\"yarn-giant\":{\"attack\":99,\"defense\":22,\"hp\":861}},\"gameplayV4\":true,\"plan\":{\"care\":\"steady\",\"focus\":\"finish\"}}",
+            "resultKey": "{\"cats\":[{\"bonuses\":{\"hp\":36},\"effects\":[\"counter-plus\",\"defend-riposte\"],\"equipment\":[\"bellsteel-weapon-rare\",\"bellsteel-outfit-rare\",\"bellsteel-charm-rare\",\"bellsteel-relic-rare\"],\"id\":\"mochi\",\"row\":\"front\",\"skills\":[\"mochi-1\",\"mochi-2\",\"mochi-3\",\"mochi-4\"],\"stats\":{\"attack\":60,\"critBp\":800,\"critDamageBp\":5000,\"defense\":42,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":721,\"initiative\":8,\"shieldBp\":0}},{\"bonuses\":{},\"effects\":[\"marked-break\"],\"equipment\":[\"moonwick-weapon-common\",\"moonwick-outfit-common\"],\"id\":\"soot\",\"row\":\"rear\",\"skills\":[\"soot-1\",\"soot-2\",\"soot-3\",\"soot-4\"],\"stats\":{\"attack\":73,\"critBp\":1200,\"critDamageBp\":5000,\"defense\":23,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":488,\"initiative\":6,\"shieldBp\":0}},{\"bonuses\":{},\"effects\":[\"healing-cleanse\"],\"equipment\":[\"mossbrew-weapon-common\",\"mossbrew-outfit-common\"],\"id\":\"clover\",\"row\":\"rear\",\"skills\":[\"clover-1\",\"clover-2\",\"clover-3\",\"clover-4\"],\"stats\":{\"attack\":44,\"critBp\":500,\"critDamageBp\":5000,\"defense\":21,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":408,\"initiative\":4,\"shieldBp\":0}}],\"challengeLevel\":1,\"chapter\":1,\"enemies\":[\"yarn-giant\"],\"enemyStats\":{\"binding-thread\":{\"attack\":10,\"defense\":0,\"hp\":96},\"button-guard\":{\"attack\":19,\"defense\":18,\"hp\":120},\"crumb-sentinel\":{\"attack\":27,\"defense\":22,\"hp\":378},\"kettle-knight\":{\"attack\":25,\"defense\":35,\"hp\":357},\"needle-moth\":{\"attack\":17,\"defense\":6,\"hp\":165},\"pantry-crown\":{\"attack\":138,\"defense\":25,\"hp\":1068},\"pollen-scout\":{\"attack\":22,\"defense\":10,\"hp\":284},\"practice-cushion\":{\"attack\":14,\"defense\":0,\"hp\":58},\"rain-spool\":{\"attack\":110,\"defense\":24,\"hp\":1103},\"sock-skipper\":{\"attack\":22,\"defense\":8,\"hp\":175},\"spool-ram\":{\"attack\":30,\"defense\":16,\"hp\":315},\"teacup-healer\":{\"attack\":14,\"defense\":10,\"hp\":191},\"yarn-giant\":{\"attack\":99,\"defense\":22,\"hp\":861}},\"gameplayV4\":true,\"plan\":{\"care\":\"steady\",\"focus\":\"finish\"}}",
+            "terminated": true,
+            "delivered": true
+          }
+        ],
+        "latestMatchesFixture": true,
+        "stateUnchanged": true,
+        "allWorkersTerminated": true
+      },
+      {
+        "scenario": "csp",
+        "actualWorkerCspDenied": true,
+        "fallback": true,
+        "stateUnchanged": true
+      }
+    ],
+    "errors": [],
+    "remote": [],
+    "method": "Native worker calculations with delayed message delivery; separate actual worker-src none CSP. Neither changes combat, account or forecast results."
+  },
+  "cpu1Under400ms": true,
+  "cpu1MaxMs": 79.90000000596046,
+  "cpu4MaxMs": 49.599999994039536,
+  "minimumScopedContrast": 6.42428817388733,
+  "receipts": [
+    {
+      "path": "reports/cardrpg-big/a5/e1-equipment-forecast/adoption.json",
+      "sha256": "6dbef844978c4324a32ebbac4c8824b6db96fe97f13abb859aa5b5f3add5fb9f"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/e1-equipment-forecast/prototype-audit.json",
+      "sha256": "3eda7b445c709a7ea6a4c110e700ccbfcfad4da3fa07b68191959c46376f8b1c"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/e1-equipment-forecast/gates/checks.json",
+      "sha256": "2308562981c958d6b0ddb27ced3768416a35c013ae6331ba22650217038c22d1"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/e1-equipment-forecast/adopted-builds/checks.json",
+      "sha256": "717433fb1ad93b7cef6bc5df613d04250a31986f0f10865aedcf4064da9aa13e"
+    },
+    {
+      "path": "/tmp/cardrpg-a5-equipment-adopted-on/build.json",
+      "sha256": "ac0dd582e604fdcb41129ea7eeeb54db7e72d8782ae4aef34726a8297c27a461"
+    },
+    {
+      "path": "/tmp/cardrpg-a5-equipment-adopted-off/build.json",
+      "sha256": "4dc81cbd7fe2021a29430e953edaa22a58189a2a389d0ca491f7a7f84f0a421c"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/e1-crew-advice-band/off/checks.json",
+      "sha256": "b266e345cf77ddcfcdc0772a11a6e690e577fcf2168c09f2316c5fc4d4230e4d"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/e1-crew-advice-band/off/source.json",
+      "sha256": "f54e69f74bb6fa5de3a63298cef1c1218398f5e5498945401520ab83645f949c"
+    }
+  ],
+  "limitations": [
+    "Original prototype browser receipts reused only after exact ON/OFF artifact byte equality.",
+    "Synthetic UI fixtures do not establish earned progression. No account or combat rule changed.",
+    "Contextual TRAIN samples overlap; static display calibration and fresh acceptance remain open.",
+    "CPU4 is page CDP throttling; independent worker CPU throttling is not established.",
+    "Scoped contrast and targeted captures are not the Z screenshot pack. No startup or retention claim."
+  ]
+}

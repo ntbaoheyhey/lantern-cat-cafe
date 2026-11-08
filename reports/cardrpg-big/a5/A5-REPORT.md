@@ -6,7 +6,7 @@ Cân bằng trang bị, một số mèo, nhịp thưởng 30 phút và hiệu n�
 
 # A5 checkpoint — acceptance remains open
 
-Runtime source: `994d84056` (companion growth previews; combat unchanged). Six source checks and the exact OFF digest pass; [source-bound closure](c1-growth-preview/audit.json). Hush correction remains unchanged. This report separates historical evidence from current-source TRAIN diagnostics. Bots are proxies, not a human playtest. Fresh acceptance seeds20001–20500 remain UNUSED; old10001–10500 are contaminated.
+Runtime source: `c0543531a` (actual-equipment boss comparison; combat unchanged). Six source checks and the exact OFF digest pass; [source-bound closure](e1-equipment-forecast/audit.json). Hush correction remains unchanged. This report separates historical evidence from current-source TRAIN diagnostics. Bots are proxies, not a human playtest. Fresh acceptance seeds20001–20500 remain UNUSED; old10001–10500 are contaminated.
 
 ## Play experience and progression
 
@@ -57,7 +57,7 @@ P1 lossless artifact20,816,833bytes; later B3 reviewed artifact20,922,529bytes, 
 
 P1 default CPU median/max ms:1280CPU1 main295.7/368.1 versus candidate298.0/532.6 MISS;1280CPU4 1047.3/1114.4 versus1006.3/1046.8 PASS;1440CPU1 285.4/293.4 versus303.4/329.2 MISS. Three observations each, none discarded. Offline CPU4 full-opening max266.6ms exceeds120ms: MISS. [Individual observations](P1-SIZE-STARTUP.md).
 
-Latest growth-preview source typecheck/lint/web1760/rules1192/E2E421/build PASS; original logs and two expected-failure/eleven skipped rule cases are retained. Latest OFF165cells/8250routes exact digest47477251b3d20ab602bee5c55a56cdd661e111b1386e298e0c9bc67737fecfa3. Baseline-v1 SHA9a5f6ebbb04af56c19f11cf43cf2763b35df2bde3b7a8dcd943060e878d793d3 and13historical sims unchanged. THC7/THC12 migrations and THC13 journal are covered by source tests.
+Latest equipment-preview source typecheck/lint/web1768/rules1192/E2E421/build PASS; original logs and two expected-failure/eleven skipped rule cases are retained. Latest OFF165cells/8250routes exact digest47477251b3d20ab602bee5c55a56cdd661e111b1386e298e0c9bc67737fecfa3. Baseline-v1 SHA9a5f6ebbb04af56c19f11cf43cf2763b35df2bde3b7a8dcd943060e878d793d3 and13historical sims unchanged. THC7/THC12 migrations and THC13 journal are covered by source tests.
 
 Reviewed preview: [B3 game](b3/closure/artifact/index.html), SHA60407a0bd423386c66d86f50b88d867a3a7fe89bee357836a3da1ae6796432a7. It predates the two Hush fixes. [Opening walkthrough](../../../docs/cardrpg3/a5-first-5-minutes.html) uses E3 screenshots/timeline. Public [game](../../../docs/cardrpg3/index.html) and [guide](../../../docs/cardrpg3/gameplay-v4.html) remain A4, SHA067d2062f6836a6d0bb9f6753ece1b2f3ca923688f241866a7f42806c8f7b6a1 /9dca8fe648d6e101de89ffa02099249327615648989b1207f7e7183c6c0d0482. Z will rebuild and replace them only after review.
 
@@ -78,3 +78,5 @@ Remaining work: B1/B2 numeric closure and display calibration; fresh registered 
 [Companion growth](C1-COMPANION-GROWTH.md): actual cost/stats/unlocked skills before Level up/Add a star; exact public-command preview, no rule change. SeparateON/OFF60browserchecks/36captures across3widths/bothlooks PASS; contrast6.858/nooverflow. Preview20,924,425bytes/SHA6c09ce3c5cc1725f54eb91bb4f6b8b4429cb219bd3cee6825593f2bb84b9d4e7. Original test/harness failures retained; no cadence or balance claim.
 
 [Reply-pressure39](b1/reply-pressure-39/RESULTS.md): all three arms rejected under the predeclared screen; worst piece gains32/50/44pp. The middle pressure restores average difficulty but retains99piece misses. No production adoption, extra acceptance samples or wider rerun. [Pressure strata42](b1/pressure-strata-42/RESULTS.md) reconstructs the old spread candidates without new battles: conditional gains still vary within the five registered pressure groups; smaller bins and multiple comparisons limit interpretation.
+
+[Equipment comparison](E1-EQUIPMENT-FORECAST.md): actual whole-crew equip/transfer against a selected boss and band;36browserchecks/24captures, worker stale-delivery/CSP fallback PASS. ON20,927,337bytes/SHA0a2c5f1d; CPU1max79.9ms. Contextual TRAIN correlations0.738/0.754/0.729 overlap seeds and do not close static-display or fresh acceptance gates.
