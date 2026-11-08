@@ -1037,3 +1037,11 @@ Contrast0.18 andboss2x targets remainMISS; originalclosureindex exact. Preparing
 Original 144 casts + six cold samples complete on c711dec2; max cast16.8ms, native cold16.8ms, CPU4 cold166.6ms and scene preparation250ms. Interrupted original probe retained CPU4run0; only missingrun1–2 resumed.
 Gallery-only CSS repair7f4d0fcc remains29,812,862bytes; JS/assets/otherCSS exact. UI three widthsPASS; ready-gallery three widths queued behind current A source lease, no interruption requested.
 V6 report/audit/ledger/draft publication next. Two art gates remainMISS: opponent luminance0.18 andboss2x height. No runtime/rules/meta/protected changes, Docker/CUA/modelhelpers, merge or deploy.
+
+## 2026-11-08T18:35:29.945729+00:00 B2-V6 CHECKPOINT
+DRAFT395 https://github.com/ntbaoheyhey/taskbar-hero/pull/395 on393; evidence/source f4cd0da0b121ff4e30719fbe14e269421f624fe2, branch codex/cardrpg-b2-v6-2026-11-08. V0–V6 delivery published; no B browser/probe remains.
+Demo docs/cardrpg-look/b2.html SHA256 7f4d0fcc694915958c0c38ad54c9722ced944b18b82aadc346cdaede43fe7aae /29,812,862bytes; lean21,550,338bytes/B-owned15,349,700/SSIMmin0.999987. Closureindex unchanged.
+All source gates1773web/421E2E/digest5/startup parityPASS.144cast windows16.8ms+6cold; nativecold16.8ms,CPU4cold166.6ms/preparation250ms. Historical stalls retained; CSS-only galleryfix lineage exact; three-width mouse checksPASS.
+Audit29/31PASS; opponent luminance0.009–0.039<0.18 andboss1.52–1.66x<2x remainMISS. Heap+653272bytes/GPU0growth over5battles; evidence59.85MB. Preview overlaps disclosed.
+Ledger 18a887bf084000b186e7d2d3e8f5fc8305ff4443; report reports/cardrpg-look/b2/B2-REPORT.md and INTEGRATION.md. A must adopt B-owned stack/assets separately, preserve App ?dev=1 gating and exact earned v1/v2 forwarding; no A5 rebase or schema change.
+No protected/meta/rules edits, Docker/CUA/modelhelpers, merge/deploy/mainpush. Later aesthetic/performance optimization requires a separate measured change; no repeated matrices.
