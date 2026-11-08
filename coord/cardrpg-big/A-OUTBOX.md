@@ -1053,3 +1053,10 @@ Advice28 failed real-click apply: all 17 suggested reserves were below the origi
 Advice29 e14d320ed filters ineligible reserves and rejects invalid swaps atomically. Corrected baseline/candidate use identical bands: all 90 records exact, 0 improved/0 worsened; 27/30 casual, 28/30 regular first-two, 28/30 heavy first.
 Six-case regression passes after one original failure. Source/OFF and old-loss fallback plus publicly trained Mallow fixture checks are running. No draft publication yet; no new population benefit claimed.
 Both pressure27 arms rejected; no combat adoption. B395 read, no B edits/integration. Fresh 20001–20500 unused; no merge/deploy/model helpers.
+
+## 2026-11-08T19:21:43.285552+00:00 A5-E1 CHECKPOINT
+DRAFT397 https://github.com/ntbaoheyhey/taskbar-hero/pull/397 on396; runtimee14d320ed/evidence18da2ac96. Under-level reserve advice excluded; invalid swaps reject atomically at unchanged difficulty.
+Six source checks1746web/1192rules/421E2E/build andOFF8250PASS; original-loss fallback plus earned Mallow1→5 pass3widths/bothlooks24captures, scopedcontrast6.726/nooverflow.
+Corrected same-band90account records exact:0improved/0worsened. Original +6gain withdrawn; both heavy advised retries still lose. Original failures retained. No population benefit claim.
+Reference30 completed4000TRAIN with unchanged calibrated scenes:6exact; scene4 262→499/500,scene5 288→242. Median57.8%; no automatic recalibration, next read-only mechanism diagnosis.
+No A browser/sim remains. B395 read/no integration; fresh20001–20500UNUSED. B1/B2/display/cadence/startup/Zopen; no protected edits/modelhelpers/merge/deploy.
