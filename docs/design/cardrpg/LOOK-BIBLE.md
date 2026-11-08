@@ -29,3 +29,8 @@ Effects are craft materials: Mochi folded paper/sunlit brass, Soot ink/velvet sm
 Chapter1: amber supper against teal shadows/coral ceramic. Chapter2: rainy conservatory, moss/mint with pale cream light. Chapter3: moon observatory, blue-grey/iris with warm brass. Keep hero colours stable. Rarity lighting: common paper/silver(.05 foil), rare sky(.12), epic iris(.20), legendary honey(.28); foil stays behind the portrait. No rarity changes to combat or economics. UI plates and48 skill icons are rendered from these same materials; meta screen adoption belongs to Lane A.
 
 B2 camera revision (presentation opt-in): preset B world-width10.6/min-height3.8; low view(0,4.7,12) toward(0,1,0); A9.6/C12.0. Tighter woven mats center±2.6 with plum enemy cloth; preserve night window and hanging lamps. Faces/side identity lead, floor recedes. Drift≤.045world units and ultimate zoom≤6%, disabled for reduced motion and speed≥4x.
+
+### B2 readable battle
+The night café remains the setting. Preset B treats units as the subject: staggered close formations, teal crew mat, dusty rose opponent mat and a slim boss ribbon. Hostility reads through plum bodies, warm eyes and exaggerated object silhouettes; keep the original sculpted models.
+Battle cards use existing portrait1x/skill icons, numeric HP and four focusable cooldown rings. Skill names belong in tooltips/logs. B-owned developer controls require `?dev=1`; the B2 comparison/gallery are review features of the separate offline demo.
+Readable effects reuse fixed mesh/light pools. Preserve each cat's material/motif and face masks; greenhouse ribs are honey, panes green. Camera motion remains capped at6% and disabled for reduced motion/4x. All changes stay inside `lookV2` and do not change event data or action duration.

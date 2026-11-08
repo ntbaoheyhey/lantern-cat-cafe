@@ -96,3 +96,6 @@ Existing original Blender meshes/atlases retained. Body tint #80506c, roughness.
 B2 V2 visual round2 correction after actual1280/1024 capture: body tint #96667e; opposing baked mat vertex multiplier(.85,.48,.58); fallen cup #b88870. Original seed1808 retained.
 
 Kettle Knight remains a rules elite; presentation-only boss emphasis requested by B2:2.1 scale factor (existing elite base.72), .12-unit intro lift, five pooled teapot floor glyphs. No tier/data change.
+
+## B2 V4 HUD
+Existing L1/L5 portrait1x and L6 icon1x WebP reused byte-for-byte. CSS conic cooldown rings, no new bitmap. Display-name receipt card and sequence/discovery.id v2 deduplication use textContent; original v1 semantics retained.

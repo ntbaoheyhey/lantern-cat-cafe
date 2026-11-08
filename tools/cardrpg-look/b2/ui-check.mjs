@@ -23,7 +23,28 @@ try{
  await page.getByRole('button',{name:'B2 before/after',exact:true}).click();await page.waitForFunction(()=>window.__depthScene?.ready&&window.__depthScene!==window.__b2OriginalScene,null,{timeout:120000});
  const comparison=await page.evaluate(()=>({same:JSON.stringify(window.__depthReview.battle),oldDisposed:window.__b2OriginalScene.disposed,before:!document.querySelector('.dp-readable')}));assert.equal(comparison.same,before);assert(comparison.oldDisposed&&comparison.before);
  await page.getByRole('button',{name:'B2 before/after',exact:true}).click();await page.waitForFunction(()=>window.__depthScene?.ready&&!!document.querySelector('.dp-readable'),null,{timeout:120000});assert.equal(await page.evaluate(()=>JSON.stringify(window.__depthReview.battle)),before);
- rows.push({width,height,...metrics,tooltip,comparison:{sameBattle:true,disposed:comparison.oldDisposed}});await page.close();
+
+ const receipt=await page.evaluate(async()=>{
+   const m=window.__depthReview;m.inspect('sorrel-1',-1);
+   await new Promise(resolve=>{const check=()=>m.battle.actors.every(a=>window.__depthScene.puppets.get(a.id)?.asset===a.catalogId)?resolve():requestAnimationFrame(check);check();});
+   const scene=window.__depthScene,account=JSON.stringify(m.state),event={version:2,kind:'earned-reveal',sequence:8,round:0,discovery:{kind:'stars',id:'sorrel:3'},itemId:'sorrel',text:'Sorrel reached three stars.'};
+   const first=await scene.playEntrance('sorrel',event),start=scene.entrance.startedAt;
+   const repeated=await scene.playEntrance('sorrel',event),sameStart=scene.entrance.startedAt===start;
+   const duration=scene.entrance.duration,text=scene.earnedBadge.textContent;
+   scene.render({...scene.view(),fixedTime:start+1.2},0);
+   return {first,repeated,sameStart,duration,text,hidden:scene.earnedBadge.hidden,unchanged:JSON.stringify(m.state)===account};
+ });
+ assert(receipt.first&&receipt.repeated&&receipt.sameStart&&receipt.hidden&&receipt.unchanged);assert.equal(receipt.duration,1.2);assert.match(receipt.text,/Sorrel/);
+ if(width===1280&&await page.getByRole('button',{name:'Battle gallery',exact:true}).count()){
+   await page.evaluate(()=>{const m=window.__depthReview;m.closeGallery();m.leave();});
+   await page.getByRole('button',{name:'Battle gallery',exact:true}).click();
+   assert.equal(await page.locator('.look-b2-pairs figure').count(),6);
+   await page.locator('.look-b2-ultimates button').first().click();
+   await page.getByLabel('Preview speed',{exact:true}).selectOption('0.25');
+   await page.getByLabel('Effect only',{exact:true}).check();
+   assert.deepEqual(await page.evaluate(()=>({speed:window.__depthReview.gallerySpeed,only:window.__depthReview.galleryEffectOnly})),{speed:.25,only:true});
+ }
+ rows.push({width,height,...metrics,tooltip,receipt,comparison:{sameBattle:true,disposed:comparison.oldDisposed}});await page.close();
  }
 }finally{await browser.close()}
 });

@@ -17,7 +17,7 @@ try { for(const [width,height,dpr]of sizes)await withTimingLock(`B2 six shots ${
  const browser=await chromium.launch({channel:'chromium',args:['--use-angle=metal']});
  try{
   const page=await browser.newPage({viewport:{width,height},deviceScaleFactor:dpr}),errors=[];
-  page.on('pageerror',e=>errors.push(String(e)));await page.goto('file://'+frozenArtifact+'?dev=1');
+  page.on('pageerror',e=>errors.push(String(e)));await page.goto('file://'+frozenArtifact+(process.env.B2_DEV==='1'?'?dev=1':''));
   await page.waitForFunction(()=>window.__depthReview);
   await page.evaluate(()=>{const m=window.__depthReview;m.watchNow();m.paused=true;m.camera='wide';m.notify(false)});
   await page.waitForFunction(()=>window.__depthScene?.ready,null,{timeout:120000});

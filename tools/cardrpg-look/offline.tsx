@@ -12,6 +12,7 @@ import { isLookV2, setLookV2, subscribeLookV2 } from '../../apps/web/src/game/sq
 import { isReadableBattle, setReadableBattle, subscribeReadableBattle } from '../../apps/web/src/game/squad/turn3d/look-b2';
 import { LookAtelier } from './LookAtelier';
 setLookV2(true);
+const developer = new URLSearchParams(location.search).get('dev') === '1';
 
 type Panel = { host: HTMLElement; kind: 'mechanics' | 'studio' | 'atelier'; close: () => void };
 
@@ -61,12 +62,12 @@ function Demo() {
   return <div className={`dp-offline-demo ${panel ? 'b2-demo-lab-open' : ''}`}>
     <DepthApp offline />
     {header && createPortal(<div className="dp-demo-tools" aria-label="Demo tools">
-      {!panel && <DemoTools open={open} />}
+      {developer && !panel && <DemoTools open={open} />}
       <button aria-label="B2 before/after" aria-pressed={readable} onClick={() => setReadableBattle(!readable)}>B2: {readable ? 'After' : 'Before'}</button>
-      <button aria-label="Look A/B" aria-pressed={look} onClick={() => setLookV2(!look)}>Look: {look ? 'Atelier' : 'Classic'}</button>
-      <button aria-pressed={meter} onClick={() => setMeter(!meter)}>Frame meter</button>
+      {developer && <button aria-label="Look A/B" aria-pressed={look} onClick={() => setLookV2(!look)}>Look: {look ? 'Atelier' : 'Classic'}</button>}
+      {developer && <button aria-pressed={meter} onClick={() => setMeter(!meter)}>Frame meter</button>}
     </div>, header)}
-    {meter && <FrameMeter />}
+    {developer && meter && <FrameMeter />}
     {panel && createPortal(panel.kind === 'mechanics'
       ? <MechanicsLab close={panel.close} />
       : panel.kind === 'atelier' ? <LookAtelier close={panel.close} openSkills={() => setPanel({ ...panel, kind: 'studio' })} />

@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState, useSyncExternalStore, type CSSProperties } from 'react';
+import { readablePortrait, readableSkillIcon } from '../../squad/turn3d/look-readable-assets';
 import { isReadableBattle, subscribeReadableBattle } from '../../squad/turn3d/look-b2';
 import { isLookV2, subscribeLookV2 } from '../../squad/turn3d/look-v2';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
@@ -30,6 +31,7 @@ export function BattleView({ m }: { m: DepthModel }) {
   const loadingText = useRef<HTMLSpanElement>(null);
   const loadingProgress = useRef<HTMLProgressElement>(null);
   const plates = useRef(new Map<string, HTMLDivElement>());
+  const numbers = useRef(new Map<string, HTMLDivElement>());
   const lastBattle = useRef(m.battle!);
   const view = useRef<SceneView | null>(null);
   const [logOpen, setLogOpen] = useState(false);
@@ -74,6 +76,8 @@ export function BattleView({ m }: { m: DepthModel }) {
           else if (plate.hidden === visible.has(id)) plate.hidden = !visible.has(id);
         }
         for (const anchor of anchors) {
+          const number = numbers.current.get(anchor.id);
+          if (number) number.style.transform = `translate(${Math.max(0, anchor.x - 70)}px, ${Math.max(30, anchor.y - 28)}px)`;
           const plate = plates.current.get(anchor.id);
           if (!plate) continue;
           const transform = `translate(${Math.round(anchor.labelX - 69)}px, ${Math.round(anchor.labelY)}px)`;
@@ -147,22 +151,26 @@ export function BattleView({ m }: { m: DepthModel }) {
       <button onClick={() => setLogOpen(!logOpen)}>Battle log</button><button onClick={() => m.leave()}>Leave table</button>
     </header>
     <div className="dp-roundbar">{battle.queue.map(id => { const queued = battle.actors.find(candidate => candidate.id === id)!; return <span className={id === actor?.id ? 'current' : ''} key={id}><img src={portrait(queued.catalogId)} alt="" />{queued.name}</span>; })}</div>
-    {v4 && <div className="dp-v4-plan" aria-label="Crew and standing plan"><span>{standingPlanText(v4)}</span>
-      {v4.events.filter(event => event.kind === 'crew-active').map(event => <span key={event.sequence} title={event.text}>
-        {event.crew === 'door' ? 'Door' : event.crew === 'kettle' ? 'Kettle' : event.crew === 'table' ? 'Table' : 'Lantern'} team · {event.marks} marks
+    {v4 && <div className="dp-v4-plan" aria-label="Crew and standing plan">
+      {readable ? <span className="dp-plan-chip" tabIndex={0} role="img" aria-label={standingPlanText(v4)} data-tip={standingPlanText(v4)}>◎ <span aria-hidden="true">{v4.plan.focus === 'support' ? 'Support' : v4.plan.focus === 'leader' ? 'Leader' : 'Finish'} · ◇</span></span> : <span>{standingPlanText(v4)}</span>}
+      {v4.events.filter(event => event.kind === 'crew-active').map(event => <span className={readable ? 'dp-plan-chip' : ''} key={event.sequence} tabIndex={readable ? 0 : undefined} role={readable ? 'img' : undefined} aria-label={event.text} data-tip={readable ? event.text : undefined} title={event.text}>
+        {readable ? `${event.crew === 'door' ? '⌂' : event.crew === 'kettle' ? '♨' : event.crew === 'table' ? '▱' : '✦'} ${event.marks}` : `${event.crew === 'door' ? 'Door' : event.crew === 'kettle' ? 'Kettle' : event.crew === 'table' ? 'Table' : 'Lantern'} team · ${event.marks} marks`}
       </span>)}<small>Actions are automatic</small></div>}
-    {m.offline && <FeelLab m={m} />}
+    {m.offline && new URLSearchParams(window.location.search).get('dev') === '1' && <FeelLab m={m} />}
     <div className={`dp-arena chapter-${battle.chapter} ${lowHealth ? 'dp-low-health' : ''} ${m.galleryBattle && m.galleryEffectOnly ? 'dp-effect-only' : ''}`}><div className="dp-canvas" ref={host} />
+      {readable && m.impactVisible && results.map(result => <div className="dp-float-number" key={`${m.plan?.skillId}-${result.id}`} ref={element => { if (element) numbers.current.set(result.id, element); else numbers.current.delete(result.id); }} aria-label={`${result.name} ${result.labels.map(label => `${label.type} ${label.amount}`).join(', ')}`}>
+        {result.labels.map((event, index) => <span className={`dp-number dp-number-${event.type}`} key={index}>{event.type === 'death' ? 'KO' : event.type === 'status_apply' ? event.note : `${event.type === 'heal' ? '+' : event.type === 'shield' ? '◇' : '−'}${event.amount}`}</span>)}
+      </div>)}
       {v4 && <div className="dp-v4-boss-cue" ref={bossCue} role="status" aria-label="Boss event" hidden />}
       {m.plan?.ultimate && actor?.side === 'party' && !m.galleryEffectOnly && <aside className={`dp-ultimate-moment dp-ultimate-${actor.catalogId}`} aria-label={`${actor.name} ultimate`}>
-        <img src={portrait(actor.catalogId)} alt="" /><div><strong>{actor.name}</strong><span>{m.plan.name}</span></div>
+        <img src={readable ? readablePortrait(actor.catalogId) ?? portrait(actor.catalogId) : portrait(actor.catalogId)} alt="" /><div><strong>{actor.name}</strong><span>{m.plan.name}</span></div>
         <button onClick={() => m.finishMoment()}>Skip moment</button>
       </aside>}
       {!m.sceneReady && !m.sceneError && <div className="dp-loading" role="status"><span ref={loadingText}>Preparing the cafe miniatures…</span><progress ref={loadingProgress} max={5} value={0} aria-label="Battle preparation" /></div>}
       {m.sceneError && <div className="dp-loading" role="status">{m.sceneError}</div>}
       {battle.actors.filter(candidate => candidate.side === 'enemy' && candidate.hp > 0).map(enemy => {
         const intent = battle.intents.find(candidate => candidate.actorId === enemy.id);
-        return <div className="dp-world-plate" key={enemy.id} data-actor={enemy.id} data-hp-plate hidden
+        return <div className="dp-world-plate" key={enemy.id} data-actor={enemy.id} data-hp-plate tabIndex={readable ? 0 : undefined} hidden
           ref={element => { if (element) plates.current.set(enemy.id, element); else plates.current.delete(enemy.id); }}>
           <div><b>{enemy.name}</b><small>{enemy.hp}/{enemy.maxHp}</small></div>
           <progress value={enemy.hp} max={enemy.maxHp} aria-label={`${enemy.name} health`} />
@@ -173,13 +181,22 @@ export function BattleView({ m }: { m: DepthModel }) {
       })}
     </div>
     <div className="dp-party">{battle.actors.filter(candidate => candidate.side === 'party').map(cat => <div className={`dp-party-card ${actor?.id === cat.id ? 'current' : ''} ${cat.hp > 0 && cat.hp / cat.maxHp <= .25 ? 'dp-health-critical' : ''}`} key={cat.id} data-hp-plate>
-      <img src={portrait(cat.catalogId)} alt="" />
+      <img src={readable ? readablePortrait(cat.catalogId) ?? portrait(cat.catalogId) : portrait(cat.catalogId)} alt="" />
       <div className="dp-party-health"><span><b>{cat.name}</b><strong>{cat.hp}/{cat.maxHp} HP</strong></span><progress value={cat.hp} max={cat.maxHp} aria-label={`${cat.name} health`} /><Statuses actor={cat} /></div>
-      {v4 ? <div className="dp-v4-readiness" aria-label={`${cat.name} cooldowns`}><small>{cat.row === 'front' ? 'Front row' : 'Back row'}</small>
+      {readable ? <div className="dp-skills-readonly" aria-label={`${cat.name} skills`}>
+        {cat.skills.map(id => { const skill = R.SKILLS[id]; if (!skill) return null;
+          const state = v4 ? skillReadinessV4(cat, skill) : skill.type === 'ultimate' ? cat.charge >= 100 ? 'Ready' : `${cat.charge}/100 charge` : (cat.cooldowns[id] ?? 0) > 0 ? `${cat.cooldowns[id]} turns` : 'Ready';
+          const remaining = v4 || skill.type !== 'ultimate' ? Number.parseInt(state) || 0 : Math.max(0,100-cat.charge);
+          const fraction = state === 'Ready' ? 1 : 1-Math.min(1,remaining / (v4 || skill.type !== 'ultimate' ? Math.max(2,skill.cooldown) : 100));
+          return <span key={id} tabIndex={0} role="img" className={`dp-skill-state ${state === 'Ready' ? 'is-ready' : ''}`} style={{'--cooldown': `${fraction*100}%`} as CSSProperties} aria-label={`${skill.name}: ${state}`} data-tip={`${skill.name} · ${state}`}><img src={readableSkillIcon(id) ?? skillIcon(id)} alt="" />{state !== 'Ready' && <b>{state === 'Used this battle' ? '×' : v4 || skill.type !== 'ultimate' ? remaining : cat.charge}</b>}</span>;
+        })}
+        <span className="dp-row-icon" tabIndex={0} role="img" aria-label={cat.row === 'front' ? 'Front row' : 'Back row'} data-tip={cat.row === 'front' ? 'Front row' : 'Back row'}>{cat.row === 'front' ? '▸' : '▹'}</span>
+      </div> : v4 ? <div className="dp-v4-readiness" aria-label={`${cat.name} cooldowns`}><small>{cat.row === 'front' ? 'Front row' : 'Back row'}</small>
         {cat.skills.map(id => { const skill = R.SKILLS[id]; if (!skill) return null; const ready = skillReadinessV4(cat, skill);
           return <span key={id} className={ready === 'Ready' ? 'is-ready' : ''} title={`${skill.name}: ${ready}`}><span className="dp-v4-skill-name">{skill.name}</span><b>{ready}</b></span>; })}
       </div> : <span className="dp-charge" style={{ '--charge': `${cat.charge}%` } as CSSProperties} title={`Ultimate charge ${cat.charge}/100`}><small>{cat.charge}</small></span>}
     </div>)}</div>
+    {readable ? <div className="dp-action-caption" role="status"><b>{m.paused ? 'Paused' : `${m.state.settings.speed}×`}</b><span>Round {battle.round}</span></div> : <>
     <div className="dp-action-caption" role="status"><b>{m.paused ? 'Paused' : m.impactVisible && !m.galleryBattle && m.momentNote || actor?.name}</b>
       <div className="dp-skill-banner" ref={skillBanner} hidden={!m.plan || m.animationAt >= 600 || m.galleryEffectOnly}>
         {m.plan && <>{skillIcon(m.plan.skillId) && <img src={skillIcon(m.plan.skillId)} alt="" />}<strong>{m.plan.name}</strong></>}
@@ -193,6 +210,7 @@ export function BattleView({ m }: { m: DepthModel }) {
         </span>)}
       </div> : <span>{action?.text ?? 'Your companions choose their actions. Watch, then improve your team.'}</span>}
     </div>
+    </>}
     {logOpen && <aside className="dp-log" aria-label="Battle log"><button onClick={() => setLogOpen(false)}>Close log</button>{battle.log.slice(-100).reverse().map((event, index) => <p key={index}>R{event.round} · {event.text || `${battle.actors.find(candidate => candidate.id === event.actorId)?.name} → ${battle.actors.find(candidate => candidate.id === event.targetId)?.name} · ${event.kind} ${event.amount || ''}`}</p>)}</aside>}
   </section>;
 }
