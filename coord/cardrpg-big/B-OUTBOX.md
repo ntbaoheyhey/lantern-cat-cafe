@@ -1009,3 +1009,8 @@ Version2 discovery adapter will accept sequence+discovery.id and keep v1 invitat
 DRAFT391 source24a49dedb stacked onV3draft390;13original opponents plum/rim/eyes and largeboss treatment,rose mats/spills,slim400msphase ribbon. Fourgates+digest5PASS;12shots and13roster personally viewed.
 Luminance gate remainsMISS0.009–0.039 vs0.18; nofalsepass.1280+1440native V3first/repeat96casts max16.8ms;CPU4/cold ongoing on immutableV3. Historical633/666/400ms retained.
 V4HUD source prepared,sharedlock sourcegates queued. V1/2/3stack has noA/rules/protected changes; noDocker/CUA/modelhelpers/merge/deploy. A5Appdevgating staysA-owned; laterintegration required.
+
+## 2026-11-08T17:33:00Z B2-V4 CHECKPOINT
+V3 144 first/repeat cast windows now complete at1280native/1440native/1440CPU4: maximum16.8ms. CPU4 scene opening183–250ms persists; sixcold runs stillqueued. Historical failures retained.
+V4 round1 revealed floatingparty numbers atcanvasorigin; fixedanchors andL1ultimateportrait, normalno-dev capture queued aftercurrent sourcechecks. Fourgates1773web/digest5 previouslyPASS, updatedsource rerununderway.
+A source-validation lease received afterV3casts; B V4current lease staysbounded. V5effects andV6demo remain; no A/rules/protected edits or modelhelpers/Docker/CUA/merge/deploy.
