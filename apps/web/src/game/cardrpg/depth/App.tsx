@@ -1,19 +1,27 @@
 import { showReviewTools } from "./player-mode";
-import { useEffect, useLayoutEffect, useRef, useState, useSyncExternalStore, type CSSProperties } from 'react';
+import { lazy, Suspense, useEffect, useLayoutEffect, useRef, useState, useSyncExternalStore, type CSSProperties } from 'react';
 import { isLookV2, setLookV2, subscribeLookV2 } from '../../squad/turn3d/look-v2';
 import lookTokens from '../look-tokens.json';
-import { CollectionJournalV4 } from './CafeV4';
+const CollectionJournalV4 = lazy(() => import('./CafeV4').then(m => ({default:m.CollectionJournalV4})));
 import { DepthModel, type Screen } from './model';
 import { gameplayV4 as activeGameplayV4 } from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import { CompanionPreviewProvider } from './CompanionPreview';
 import { preloadPreviewModels } from './preview-runtime';
-import { BattleView } from './Battle';
-import { Hub, Team, Collection, Invitations, Inventory, Codex } from './Pages';
-import { RunMap } from './RunMap';
-import { Prepare, BattleResult } from './Encounter';
-import { Relics, SaveSettings, Evidence } from './Utility';
-import { FeelLab } from './FeelLab';
-import { FrameOverlay } from './FrameOverlay';
+const BattleView = lazy(() => import('./Battle').then(m => ({default:m.BattleView})));
+import { Hub } from './Pages';
+const Team = lazy(() => import('./TeamCollection').then(m => ({default:m.Team})));
+const Collection = lazy(() => import('./TeamCollection').then(m => ({default:m.Collection})));
+const Invitations = lazy(() => import('./Invitations').then(m => ({default:m.Invitations})));
+const Inventory = lazy(() => import('./Equipment').then(m => ({default:m.Inventory})));
+const Codex = lazy(() => import('./Pages').then(m => ({default:m.Codex})));
+const RunMap = lazy(() => import('./RunMap').then(m => ({default:m.RunMap})));
+const Prepare = lazy(() => import('./Encounter').then(m => ({default:m.Prepare})));
+const BattleResult = lazy(() => import('./Encounter').then(m => ({default:m.BattleResult})));
+const Relics = lazy(() => import('./Utility').then(m => ({default:m.Relics})));
+const SaveSettings = lazy(() => import('./Utility').then(m => ({default:m.SaveSettings})));
+const Evidence = lazy(() => import('./Utility').then(m => ({default:m.Evidence})));
+const FeelLab = lazy(() => import('./FeelLab').then(m => ({default:m.FeelLab})));
+const FrameOverlay = lazy(() => import('./FrameOverlay').then(m => ({default:m.FrameOverlay})));
 import '../cardrpg.css';
 import './depth.css';
 import './meta.css';
@@ -64,15 +72,15 @@ export default function DepthApp({ offline = false, gameplayV4 = false }: { offl
   }, [m.screen]);
   return <CompanionPreviewProvider m={m}><div ref={app} data-player-v4={activeGameplayV4(m.state) && !reviewTools} data-look-v2={lookV2} data-battle-active={m.showBattle} style={lookV2 ? rarityStyle : undefined} className={`cr-app dp-app ${m.state.settings.reducedMotion ? 'dp-reduced-motion' : ''}`}><div className="dp-cafe">
     <a className="cr-skip" href="#depth-main">Skip navigation</a><aside className="cr-sidebar"><button className="cr-brand" disabled={m.showBattle} onClick={() => m.go('hub')}><span>♜</span><b>THE LANTERN<br /><small>CAT CAFE QUEST</small></b></button><p className="cr-sidebar-caption">A little courage, every day.</p><nav aria-label="Cafe screens">{navigation.filter(([id])=>(id!=='journal'||activeGameplayV4(m.state))&&(id!=='evidence'||reviewTools)).map(([id, icon, name]) => <button key={id} disabled={m.showBattle} title={m.showBattle ? 'Finish or leave the table to change screens.' : undefined} aria-current={m.screen === id ? 'page' : undefined} onPointerEnter={() => preloadPreviewModels(id === 'gacha' ? ['clover'] : m.state.team)} onFocus={() => preloadPreviewModels(m.state.team)} onClick={() => m.go(id)}><span aria-hidden="true">{icon}</span>{name}</button>)}</nav><div className="cr-sidebar-bottom"><b>THE FIRST LANTERN</b><p>{offline ? 'Offline preview · keep progress with save codes' : 'Local account · automatic saving'}</p><small>Desktop prototype · 0.7.0</small></div></aside>
-    <div className="cr-main-shell"><header className="cr-topbar"><span>THE EVENING SHIFT<small>Three chapters. Your choices.</small></span>{offline && reviewTools && <FeelLab m={m} home />}<div className="cr-wallet">{Object.entries(m.state.account.currencies).map(([id, amount]) => <div key={id}><b>{amount.toLocaleString('en-US')}<small>{id === 'fish' ? 'fish points' : id}</small></b></div>)}</div><span className="cr-account">Lv. {m.state.account.accountLevel}<small>{m.state.materials} materials</small></span></header><div className={`cr-status ${m.error ? 'error' : ''}`} role={m.error ? 'alert' : 'status'}>{m.notice}<span>{m.saveStatus}</span></div>
+    <div className="cr-main-shell"><header className="cr-topbar"><span>THE EVENING SHIFT<small>Three chapters. Your choices.</small></span>{offline && reviewTools && <Suspense fallback={null}><FeelLab m={m} home /></Suspense>}<div className="cr-wallet">{Object.entries(m.state.account.currencies).map(([id, amount]) => <div key={id}><b>{amount.toLocaleString('en-US')}<small>{id === 'fish' ? 'fish points' : id}</small></b></div>)}</div><span className="cr-account">Lv. {m.state.account.accountLevel}<small>{m.state.materials} materials</small></span></header><div className={`cr-status ${m.error ? 'error' : ''}`} role={m.error ? 'alert' : 'status'}>{m.notice}<span>{m.saveStatus}</span></div>
       <main className="cr-content" id="depth-main" ref={content}><div className="dp-page" data-screen={m.screen} key={m.screen} aria-hidden={m.showBattle} inert={m.showBattle}>
-        {m.screen === 'prepare' && m.battle && <Prepare m={m} />}{m.screen === 'result' && m.battle && <BattleResult m={m} />}
+        <Suspense fallback={<p role="status">Opening the table…</p>}>{m.screen === 'prepare' && m.battle && <Prepare m={m} />}{m.screen === 'result' && m.battle && <BattleResult m={m} />}
         {m.screen === 'journal' && <CollectionJournalV4 m={m} />}{m.screen === 'hub' && <Hub m={m} />}{m.screen === 'team' && <Team m={m} />}{m.screen === 'map' && <RunMap m={m} />}
         {m.screen === 'collection' && <Collection m={m} />}{m.screen === 'inventory' && <Inventory m={m} />}{m.screen === 'gacha' && <Invitations m={m} />}
-        {m.screen === 'codex' && <Codex v4={activeGameplayV4(m.state)} />}{m.screen === 'relics' && <Relics m={m} />}{m.screen === 'save' && <SaveSettings m={m} />}{m.screen === 'evidence' && <Evidence />}
+        {m.screen === 'codex' && <Codex v4={activeGameplayV4(m.state)} />}{m.screen === 'relics' && <Relics m={m} />}{m.screen === 'save' && <SaveSettings m={m} />}{m.screen === 'evidence' && <Evidence />}</Suspense>
       </div></main></div></div>
-    {m.sceneStarted && <div className="dp-battle-shell"><BattleView m={m} /></div>}
-    {offline && reviewTools && m.labPerformance && <FrameOverlay m={m} />}
+    {m.sceneStarted && <div className="dp-battle-shell"><Suspense fallback={<p role="status">Preparing the battle…</p>}><BattleView m={m} /></Suspense></div>}
+    {offline && reviewTools && m.labPerformance && <Suspense fallback={null}><FrameOverlay m={m} /></Suspense>}
   </div></CompanionPreviewProvider>;
 }
 declare global { interface Window { __depthReview?: DepthModel } }

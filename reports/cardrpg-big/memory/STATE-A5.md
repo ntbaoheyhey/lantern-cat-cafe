@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-C1draft379 remains unchanged; production combat staysA4. Branch codex/cardrpg-a5-b1-2026-11-08. Expanded03/graded01/graded02 diagnostics completed and rejected. Fresh20001–20500 UNUSED. P1lazy07 overlay built and registered; source adoption waits browser checks.
+P1 source adopted on codex/cardrpg-a5-p1-2026-11-08: lazy07 screens/reviewer boundaries, exact model dictionary/module transport, default build pixel packing. Production combat remains A4; fresh 20001–20500 UNUSED. C1 draft379 unchanged.
 ## NEXT
-Preserve original running response03TRAIN coordinator (two bounded-response variants, full384/tiers/sets/teams) and P1lazy07 threefixedCPU4/browser-flow coordinators. Module05/layout06 original3runs completed; no reruns. Verify lazy07 player/reviewer/battle/resize flows, finish P1 bundle/performance closure independently while balance remainsMISS. No Bsource adoption or protectedchanges.
+Finish original response03 TRAIN coordinator without changing rules. Verify adopted P1 offline artifact parity and six source gates; retain all three fixed lazy07 timings, plus player/reviewer/resize checks at three widths. Register current-main/default startup measurements for adopted source. No B/protected edits.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -101,3 +101,5 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - Registeredresponse03 before sampling: gradedbudget plus originalboundedreplyweights.30/.50, same384/210/64/663TRAIN1–50. Coordinator toolsession78042;110sCPU/7shandoffs afterBcompletion. No acceptance.
 - P1module05 nativeESM preserves198assetbytes; original3cold observations retained. Layout06 registered synchronouslayout ablation preserves actualplayer/reviewerflows1280 but firstcold233.3msMISS; do not claim causalperformanceimprovement. Originalfailed path/registration attempt retained.
 - P1lazy07 registered App/offline Reactlazy overlays; actualbuild9d9335f3/20,816,833bytes, entry311392bytes vs2494678module05entry (totalrequestedgraph NOT YET measured). Deferred Utility/reviewer/other screens, no Bsource/rule/asset mutation. Fixed3CPU4coordinator20761 and realC1flows34936 running.
+
+- Continuation 2026-11-08T07:22:18.128155+00:00: exact lazy07 overlays adopted only after 1280 player/reviewer flow PASS and two original CPU4 Hub observations116.7/116.6ms; third remains pending. Native pixel/model/module parity tests6PASS; all198browserassets exact. Rejectedlayout06 excluded. P1 source/gates/production artifact parity pending; no universal performance PASS claim. Original response03 TRAIN coordinator preserved.
