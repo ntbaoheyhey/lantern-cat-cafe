@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-E2 reviewed closure PASS: six source gates/build, OFF8250, 27 targeted captures, four independent receipt tests and post-stars90account/4050day economy. Artifact8996413d/20,920,957bytes. Published DRAFT384 on383. Day7 cohort COMPLETE: casual10/30 and regular14/30 first-two wins MISS; heavy17/30first PASS. Three losses lack advice. E3 may now change source after this immutable checkpoint.
+E3 source implemented: V4 practice gives one gentle enemy turn; earned existing-recipe choice leads into normal compare/equip and the first route. Focused3tests/typecheck PASS; source gates/build and real-click timing next. E2 DRAFT384 remains delivered; no campaign combat adoption.
 ## NEXT
-Close E2 with three-width UI and post-stars90account economy; measure earned day7 two-attempt cohort and x1 route. E3 opening/cadence, B1/B2 balance and Z remain open. Combat A4; acceptance20001–20500 untouched. Stack376→377→379→381→382→383→384.
+Validate E3 three-width first-five-minute path; write offline illustrated walkthrough. Then elapsed cadence and balance root-cause work. B1tie-noise06 COMPLETE/rejected44/63piece misses; fresh acceptance20001–20500 unused. Stack376→377→379→381→382→383→384.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES

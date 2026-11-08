@@ -1,4 +1,5 @@
 import { EquipmentFiltersV4 } from "./EquipmentFiltersV4";
+import { FirstEquipmentV4 } from './OpeningV4';
 import { ShiftLoadouts, UtilityComparison, PantryV4 } from './EquipmentV4';
 import { useState } from 'react';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
@@ -56,6 +57,7 @@ export function Inventory({ m }: { m: DepthModel }) {
     <div className="cr-tabs" aria-label="Inventory types">{categories.map(value => <button key={value}
       aria-pressed={category === value} onClick={() => setCategory(value)}>{value}</button>)}</div>
     {category === 'Equipment' && <>
+      <FirstEquipmentV4 m={m} reveal={() => { setSlot('all'); setRarity('all'); setSetId('all'); setOwnership('all'); }} />
       {v4&&<><details className="cr-panel dp-v4-saved-shifts"><summary>Saved crews and gear</summary><ShiftLoadouts m={m}/></details><p>Choose a cat, compare a piece, then make it theirs.</p><details><summary>Odds and rules</summary><p>Equipment stays with your account. Your shelf holds 240 pieces.</p><p>At capacity, route drops become threads within today’s cap. Leave room before buying a basket.</p>{RARITY_ORDER.map(r=><p key={r}><b>{r}</b> · {R.rarityMeaningV4(r)}</p>)}<p>First six eligible won encounters per day: ordinary 65/30/5/0%, elite 0/70/27/3%, boss 0/20/70/10% (Common/Rare/Epic/Legendary). After six drops: 0%.</p></details></>}
       {v4 ? <EquipmentFiltersV4 state={state} cardId={cardId} slot={slot} rarity={rarity} setId={setId} ownership={ownership} sort={sort}
         chooseCat={id => { m.cardId=id; m.notify(false); }} chooseSlot={setSlot} chooseRarity={setRarity}

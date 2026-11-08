@@ -1,0 +1,3 @@
+Attempt1 parsed no simulation: surplus closing parenthesis in console summary. Removed one parenthesis only; source, cases, candidates and seeds unchanged. Runner SHA256 dbcb1d73354a09ae0fb0d61a069ca18cc61a268ba8a410591a745a0140eff082
+
+Attempt2 completed practice cases but stopped when an intended craft was chapter-locked. Corrected runner records the locked item as unavailable and continues unchanged four choices, practice variants and seeds. No unlock or currency injected. Repeats exact deterministic practice computations to recover unsaved results. Runner SHA256 35e23913dbff10c5418ba899bc29ef431a6b45f5fc90b68978289833d3641a9f
