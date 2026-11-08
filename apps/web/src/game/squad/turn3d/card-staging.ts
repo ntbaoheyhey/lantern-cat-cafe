@@ -1,4 +1,5 @@
 import * as T from 'three';
+import { isReadableBattle } from './look-b2';
 import { isLookV2 } from './look-v2';
 import type { TurnActor } from '@taskbar-hero/game-rules/src/squad/turn/types';
 import type { Position } from './formation';
@@ -15,6 +16,14 @@ export const HEAD_YAW_LIMIT = 35 * Math.PI / 180;
 /** Front companions stand nearer the opposing half, with staggered depth lanes. */
 export function cardFormation(actor: Pick<TurnActor, 'side' | 'slot' | 'role'>, row = 'front'): Position {
   const side = actor.side === 'party' ? -1 : 1;
+  if (isReadableBattle()) {
+    if (actor.role === 'yarn') return { x: 2.15, y: 0, z: -.6 };
+    const lane = actor.slot % 3;
+    const depth = [-.55, .75, -1.4][lane]!;
+    const distance = actor.side === 'enemy' ? [1.3, 3.05, 2.6][lane]! + (row === 'rear' ? .12 : 0)
+      : row === 'rear' ? [2.8, 3.4, 2.85][lane]! : [1.45, 2.85, 3.1][lane]!;
+    return { x: side * distance, y: 0, z: depth };
+  }
   if (actor.role === 'yarn') return { x: 2.8, y: 0, z: -.55 };
   const lane = actor.slot % 3;
   const depth = [-1.4, 1.15, -.1][lane]!;
@@ -23,6 +32,10 @@ export function cardFormation(actor: Pick<TurnActor, 'side' | 'slot' | 'role'>, 
 }
 
 export function cardFrameHeight(aspect: number, preset: CardCamera) {
+  if (isReadableBattle()) {
+    const widths = { close: 9.6, wide: 10.6, far: 12.0 };
+    return Math.max(3.8, widths.wide / aspect) * widths[preset] / widths.wide;
+  }
   if (isLookV2()) {
     const medium = Math.max(4.8, CARD_CAMERAS.wide.worldWidth / aspect);
     return medium * CARD_CAMERAS[preset].worldWidth / CARD_CAMERAS.wide.worldWidth;

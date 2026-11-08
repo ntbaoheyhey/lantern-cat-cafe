@@ -1,20 +1,22 @@
 import {chromium} from '../../../apps/web/node_modules/@playwright/test/index.mjs';
-import {mkdir,readFile,writeFile} from 'node:fs/promises';
+import {mkdir,readFile,writeFile,mkdtemp,rm} from 'node:fs/promises';
 import {resolve} from 'node:path';
 import {createHash} from 'node:crypto';
 import {withTimingLock} from '../lock.mjs';
 import {coverage} from './coverage.mjs';
 const artifact=resolve(process.env.B2_ARTIFACT||'docs/cardrpg-look/index.html'),out=process.env.B2_OUT||'reports/cardrpg-look/b2/v0';
 await mkdir(out,{recursive:true});
+const snapshot=await mkdtemp('/tmp/cardrpg-b2-shots-'), frozenArtifact=snapshot+'/index.html', artifactBytes=await readFile(artifact);
+await writeFile(frozenArtifact,artifactBytes);
 const earned=JSON.parse(await readFile('tools/cardrpg-look/fixtures/a4-earned.json')).events[0];
 const crew=JSON.parse(await readFile('tools/cardrpg-look/fixtures/a4-events.json'));
-const receipt={artifact,sha256:createHash('sha256').update(await readFile(artifact)).digest('hex'),method:'Fixed camera B, fixedTime3.2, paused presentation fixtures. Round1 watchNow deterministic account; impact at plan impact+70ms; Clover at 62%. No rules edits.',rows:[]};
+const receipt={artifact,sha256:createHash('sha256').update(artifactBytes).digest('hex'),method:'Fixed camera B, fixedTime3.2, paused presentation fixtures. Round1 watchNow deterministic account; impact at plan impact+70ms; Clover at 62%. No rules edits.',rows:[]};
 const sizes=JSON.parse(process.env.B2_SIZES||'[[1280,720,1],[1024,600,1]]');
-for(const [width,height,dpr]of sizes)await withTimingLock(`B2 six shots ${width} ${out}`,async()=>{
+try { for(const [width,height,dpr]of sizes)await withTimingLock(`B2 six shots ${width} ${out}`,async()=>{
  const browser=await chromium.launch({channel:'chromium',args:['--use-angle=metal']});
  try{
   const page=await browser.newPage({viewport:{width,height},deviceScaleFactor:dpr}),errors=[];
-  page.on('pageerror',e=>errors.push(String(e)));await page.goto('file://'+artifact+'?dev=1');
+  page.on('pageerror',e=>errors.push(String(e)));await page.goto('file://'+frozenArtifact+'?dev=1');
   await page.waitForFunction(()=>window.__depthReview);
   await page.evaluate(()=>{const m=window.__depthReview;m.watchNow();m.paused=true;m.camera='wide';m.notify(false)});
   await page.waitForFunction(()=>window.__depthScene?.ready,null,{timeout:120000});
@@ -31,3 +33,5 @@ for(const [width,height,dpr]of sizes)await withTimingLock(`B2 six shots ${width}
   await page.evaluate(async e=>{const s=window.__depthScene;await s.playEntrance(e.itemId,e);s.entrance.startedAt=2.6;s.render({...s.view(),fixedTime:3.2,paused:true},0);s.dirty=false},earned);await shot('6-earned');
  }finally{await browser.close()}
 });
+
+} finally { await rm(snapshot,{recursive:true}); }

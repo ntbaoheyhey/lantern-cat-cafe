@@ -16,6 +16,7 @@ it('keeps atelier camera choices distinct when a short desktop stage reaches the
   const previous = window.__LOOK_V2__;
   try {
     window.__LOOK_V2__ = true;
+    window.__LOOK_B2__ = false;
     for (const aspect of [3.2, 4.5]) {
       const close = cardFrameHeight(aspect, 'close');
       const wide = cardFrameHeight(aspect, 'wide');
@@ -28,7 +29,7 @@ it('keeps atelier camera choices distinct when a short desktop stage reaches the
     for (const preset of ['close', 'wide', 'far'] as const) {
       expect(cardFrameHeight(4.5, preset)).toBe(4.8);
     }
-  } finally { window.__LOOK_V2__ = previous; }
+  } finally { window.__LOOK_V2__ = previous; delete window.__LOOK_B2__; }
 });
 
 it('keeps head yaw bounded and animated face directions inside the 55 degree cone', () => {

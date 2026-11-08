@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState, useSyncExternalStore, type CSSProperties } from 'react';
+import { isReadableBattle, subscribeReadableBattle } from '../../squad/turn3d/look-b2';
 import { isLookV2, subscribeLookV2 } from '../../squad/turn3d/look-v2';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import { TurnScene, type SceneView, type Anchor } from '../../squad/turn3d/scene';
@@ -19,6 +20,7 @@ function Statuses({ actor }: { actor: R.Actor }) {
   </span>)}</div>;
 }
 export function BattleView({ m }: { m: DepthModel }) {
+  const readable = useSyncExternalStore(subscribeReadableBattle, isReadableBattle);
   const lookV2 = useSyncExternalStore(subscribeLookV2, isLookV2);
   const host = useRef<HTMLDivElement>(null);
   const scene = useRef<TurnScene | null>(null);
@@ -55,7 +57,7 @@ export function BattleView({ m }: { m: DepthModel }) {
     autoBattle: true, effectOnly: !!m.galleryBattle && m.galleryEffectOnly,
     cardStatuses: Object.fromEntries(battle.actors.map(actor => [actor.id, actor.statuses.map(status => status.id)])),
     rows: Object.fromEntries(battle.actors.map(actor => [actor.id, actor.row])),
-    chapter: battle.chapter, camera: m.camera,
+    chapter: battle.chapter, camera: m.camera, playbackSpeed: m.state.settings.speed,
     bossPhases: Object.fromEntries(battle.actors.filter(a => R.ENEMY_BY_ID[a.catalogId]?.tier === 'boss').map(a => [a.id, a.phase])),
     targetIds: m.plan?.targetIds ?? [], legalIds: [],
     reducedMotion: m.state.settings.reducedMotion, paused: m.paused, suspended: !m.showBattle,
@@ -105,7 +107,7 @@ export function BattleView({ m }: { m: DepthModel }) {
     };
     animation = requestAnimationFrame(tick);
     return () => { cancelAnimationFrame(animation); scene.current?.dispose(); m.sceneReady = false; delete window.__depthScene; };
-  }, [m, lookV2]);
+  }, [m, lookV2, readable]);
   useEffect(() => { scene.current?.invalidate(); });
   useEffect(() => {
     if (!m.canAct) return;
@@ -129,7 +131,7 @@ export function BattleView({ m }: { m: DepthModel }) {
       && (event.amount > 0 || event.type === 'death')),
   })).filter(result => result.labels.length) : [], [m.plan, battle.actors]);
   const lowHealth = battle.actors.some(candidate => candidate.side === 'party' && candidate.hp > 0 && candidate.hp / candidate.maxHp <= .25);
-  return <section className={`dp-battle ${v4 ? 'dp-battle-v4' : ''} ${m.showBattle ? '' : 'dp-hidden'}`} aria-hidden={!m.showBattle} inert={!m.showBattle}>
+  return <section className={`dp-battle ${readable ? 'dp-readable' : ''} ${v4 ? 'dp-battle-v4' : ''} ${m.showBattle ? '' : 'dp-hidden'}`} aria-hidden={!m.showBattle} inert={!m.showBattle}>
     <header className="dp-battle-top"><div><small>{m.replay ? 'Recorded replay' : m.tutorialBattle ? 'Practice table' : R.CHAPTERS[battle.chapter - 1]!.name}</small><h1>Round {battle.round}</h1></div>
       <label>Speed<select aria-label="Playback speed" value={m.state.settings.speed} onChange={event => { m.state.settings.speed = Number(event.target.value); m.notify(); }}>{[1, 2, 4].map(speed => <option key={speed} value={speed}>{speed}×</option>)}</select></label>
       <button onClick={() => { m.paused = !m.paused; m.notify(false); }}>{m.paused ? 'Resume' : 'Pause'}</button>
