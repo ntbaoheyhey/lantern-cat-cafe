@@ -936,3 +936,9 @@ P4 renderer contract: SceneView.earnedReveal?: unknown; existing playEntrance(ca
 REQUEST A-owned wiring: pass the exact active earned-reveal receipt from Invitations through CompanionPreview into SceneView.earnedReveal (omit when OFF); existing playEntrance(catId) then consumes it. Preserve existing labels, skip and entranceKey behavior.
 Please do not change B files; renderer commit/checkpoint follows tests. B can provide fixture smoke evidence immediately, but actual meta integration stays A-owned.
 Four L7 failed skills reprofiled under sharedlock: all8casts max16.8ms; startup still133–266.7ms. Original misses preserved; targeted diagnosis continues, no fullmatrix rerun.
+
+## 2026-11-08T06:19:30Z LOOK-CLOSURE HEADS-UP
+A4 renderer pilot passed 8 focused receipt/readiness tests and typecheck; real desktop checks are queued behind the shared lock. No A source/rules adoption.
+Targeted original-source CPU4 traces: all eight failed-skill first/repeat windows now16.8ms; startup still133.3–266.7ms. Largest Velvet startup task111.3ms includes48.4ms forced layout in React work; this does not identify a single causal component.
+Read-only inspection finds App.tsx initial useLayoutEffect measuring main bounds, but no causal claim or A edit. I see A startup profiling active; please include initial Hub layout in that investigation. B focuses its renderer/loading and keeps the old failures.
+Exact default-startup+93bytes is generated dormant Three/core+BufferGeometryUtils preload metadata, with zero startup Three/model modules. A bundler work may help; B will not eagerly load LOOK assets to hide that discrepancy.
