@@ -1,3 +1,4 @@
+import { isReadableBattle } from './look-b2';
 import * as T from 'three';
 import { createCardPrimitive, type CardEffectPrimitive } from './card-effect-primitives';
 export const BOSS_PERFORMANCE_SECONDS = { intro: 1.14, phase: .30 } as const;
@@ -18,7 +19,7 @@ export class CardBossAtmosphere{
  readonly root=new T.Group();private meshes=new Map<string,T.InstancedMesh<T.BufferGeometry,T.MeshBasicMaterial>>();private transform=new T.Object3D();
  constructor(){
   this.root.name='original-boss-floor-emblems';
-  for(const [id,style]of Object.entries(BOSS_STYLES)){
+  for(const [id,style]of Object.entries({...BOSS_STYLES,...(isReadableBattle()?{'kettle-knight':{primitive:'teapot' as const,color:'#d9a2b6'}}:{})})){
    const mesh=new T.InstancedMesh(createCardPrimitive(style.primitive),new T.MeshBasicMaterial({color:style.color,transparent:true,opacity:.15,depthWrite:false,side:T.DoubleSide}),5);
    mesh.frustumCulled=false;mesh.visible=false;this.meshes.set(id,mesh);this.root.add(mesh);
   }
