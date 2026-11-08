@@ -1,0 +1,13 @@
+import {readFile} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+import assert from 'node:assert/strict';
+import {loadRules as isolated} from '/tmp/cardrpg-a5-b1-prep/a5-candidate-load.mjs';
+export async function loadRules(){
+ const manifest=JSON.parse(await readFile('/tmp/cardrpg-a5-b1-prep/expanded-01/manifest.json','utf8'));
+ assert.equal(createHash('sha256').update(await readFile(manifest.fixtureSource)).digest('hex'),manifest.fixtureSourceSha256);
+ const variant=manifest.variants[process.env.A5_VARIANT];assert(variant);
+ const transforms={};for(const [path,row] of Object.entries(variant)){assert.equal(createHash('sha256').update(await readFile(row.file)).digest('hex'),row.sha256);transforms[path]=row.file;}
+ const bundle=await isolated({transforms});
+ const names={'packages/game-rules/src/cardrpg/depth/index.ts':'depth','packages/game-rules/src/cardrpg/depth/run-bot.ts':'bot','packages/game-rules/src/rng.ts':'rng'};
+ return {rules:bundle.legacy,vite:{close:bundle.close},load:async path=>{assert(names[path],path);return bundle[names[path]];}};
+}

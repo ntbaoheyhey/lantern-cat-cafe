@@ -2,7 +2,7 @@
 ## NOW
 C1 reviewed runtime c4a883e5: all five source gates + build PASS, three-size targeted browser/copy/equip closure PASS. Artifact restored SHA788ff719/26,217,950bytes exactly after host restart. C1 draft #379 published on H0 #377; public demo remains A4 until Z. Workdir /Users/bao/taskbar-hero-cardrpg-a4.
 ## NEXT
-Keep original expanded02 coordinator PID4640; it combines continuous rescue and response-aware AI on TRAIN1–50 across tiers/equipped/sets/teams, no production adoption. Expanded01 complete and rejected (48/38pp fourth-slot cliffs). Mirror C1 state; continue B1–B3, then E1–E3/P1/Z. Fresh20001–20500 UNUSED. Old pre-restart PIDs below are historical and must not be resumed.
+Keep original expanded02 coordinator PID4640; it combines continuous rescue and response-aware AI on TRAIN1–50 across tiers/equipped/sets/teams, no production adoption. Expanded01 complete and rejected (48/38pp fourth-slot cliffs). C1 state mirrored to ai/codex-ui-ledger5351a23a. Continue B1–B3, then E1–E3/P1/Z. Fresh20001–20500 UNUSED. Old pre-restart PIDs below are historical and must not be resumed.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -86,3 +86,5 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - Resume closure: verified existing reviewed C1 six green source logs, restored browser/copy/equip receipts and exact 63 rule hashes; no source-suite repetition. Original expanded02 coordinator4640 continues unchanged. C1 scope/copy limits explicitly reported, draft publication pending.
 
 - C1 draft published: https://github.com/ntbaoheyhey/taskbar-hero/pull/379 on #377, closure commit1cb68a5c. Four receipt tests PASS; reviewed five source gates+build/three-size browser/copy/equip verified. No runtime changes since c4a883e5, merge or deploy.
+
+- B1 branch codex/cardrpg-a5-b1-2026-11-08 started on C1#379/befed6422. Latest B checkpoint draft378 reviewed; no B adoption during immutable A balance sample. Current expanded02 original PID4640 preserved. Recovered scripts/candidate hashes are archived durably before further implementation.

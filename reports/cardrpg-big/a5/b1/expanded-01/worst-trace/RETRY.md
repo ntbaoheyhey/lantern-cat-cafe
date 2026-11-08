@@ -1,0 +1,1 @@
+Harness-only retry: the original assertion compared a JSON-normalized observed replay to a structuredClone with undefined optional fields. Normalize both sides to JSON, matching the originally registered JSON-parity method. No rules, cases, seeds or outcomes change. Original failure log retained. Original registration retained.

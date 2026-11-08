@@ -1,0 +1,45 @@
+{
+  "registeredAt": "2026-11-08T05:59:20.222921+00:00",
+  "seeds": [
+    1,
+    50
+  ],
+  "scopes": [
+    "tiers",
+    "equipped",
+    "sets",
+    "teams"
+  ],
+  "fixtureSource": "tools/cardrpg-big/a4-p6-balance.mjs",
+  "fixtureSourceSha256": "e90744484647d87ba0e6b8d0f1db387f6b00de424f0efb3df158de4da4efaec9",
+  "variants": {
+    "smooth-aware-latched": {
+      "packages/game-rules/src/cardrpg/depth/policies.ts": {
+        "file": "/tmp/cardrpg-a5-b1-prep/expanded-02/smooth-aware-latched/packages/game-rules/src/cardrpg/depth/policies.ts",
+        "sha256": "31be22cab6e5efeaa0d6838dd8da393f0b3846ec6d5f123e2add7aeaf5407a96"
+      },
+      "packages/game-rules/src/cardrpg/depth/battle.ts": {
+        "file": "/tmp/cardrpg-a5-b1-prep/expanded-02/smooth-aware-latched/packages/game-rules/src/cardrpg/depth/battle.ts",
+        "sha256": "8e98600d21b249db8f8fc70c54f48d2956a6c8e7d8244a8f25d6dfbbce9f5878"
+      },
+      "packages/game-rules/src/cardrpg/depth/contract.ts": {
+        "file": "/tmp/cardrpg-a5-b1-prep/expanded-02/smooth-aware-latched/packages/game-rules/src/cardrpg/depth/contract.ts",
+        "sha256": "63e4227319ed7f4609401585984bf3447eef039578f4f4809a809d2af58a2f23"
+      }
+    },
+    "smooth-aware-distributed": {
+      "packages/game-rules/src/cardrpg/depth/policies.ts": {
+        "file": "/tmp/cardrpg-a5-b1-prep/expanded-02/smooth-aware-distributed/packages/game-rules/src/cardrpg/depth/policies.ts",
+        "sha256": "31be22cab6e5efeaa0d6838dd8da393f0b3846ec6d5f123e2add7aeaf5407a96"
+      },
+      "packages/game-rules/src/cardrpg/depth/battle.ts": {
+        "file": "/tmp/cardrpg-a5-b1-prep/expanded-02/smooth-aware-distributed/packages/game-rules/src/cardrpg/depth/battle.ts",
+        "sha256": "5ef4ad65b475cb60e748622a5d88f53d467474b15ed0dab3121cfe1d92bad229"
+      },
+      "packages/game-rules/src/cardrpg/depth/contract.ts": {
+        "file": "/tmp/cardrpg-a5-b1-prep/expanded-02/smooth-aware-distributed/packages/game-rules/src/cardrpg/depth/contract.ts",
+        "sha256": "63e4227319ed7f4609401585984bf3447eef039578f4f4809a809d2af58a2f23"
+      }
+    }
+  }
+}

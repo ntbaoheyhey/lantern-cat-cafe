@@ -25,4 +25,4 @@ Reviewed browser captures also pass at all three sizes. Personal inspection incl
 
 Still open beyond C1: causal Result guidance/available retries and worker forecast in E1; Hub pull/celebration in E2; display calibration in B1; exact revised reward odds in B3; complete screenshot/contrast pack and rebuilt public offline artifact in Z. No human playtest or balance acceptance claim. Draft only; no merge or deploy.
 
-C1 closure does not claim that every sentence is at most 18 words or that Inventory/RunMap had a paired word reduction: those checks remain unmeasured. The measured comparison is the six screens above. The public docs/cardrpg3/index.html remains the A4 baseline until Z; this phase validates the isolated C1 artifact.
+C1 closure does not claim that every sentence is at most 18 words or that RunMap had a paired word reduction: those checks remain unmeasured. Inventory is the Equipment screen and is included in the six-screen audit. The measured comparison is the six screens above. The public docs/cardrpg3/index.html remains the A4 baseline until Z; this phase validates the isolated C1 artifact.

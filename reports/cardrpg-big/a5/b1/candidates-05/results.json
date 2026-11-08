@@ -1,0 +1,4106 @@
+{
+  "manifest": {
+    "registeredAt": "2026-11-08T01:34:33.083655+00:00",
+    "count": 50,
+    "seedStart": 1,
+    "seedEnd": 50,
+    "source": {
+      "packages/game-rules/src/cardrpg/depth/battle.ts": "7b4ac50d7258546d6700a468efdcb36481e2ccc599907504373d158b11020865",
+      "packages/game-rules/src/cardrpg/depth/policies.ts": "f467781a6a689b280bf4b2f76621a90f0547508b541dfabfa776767fcc121f67",
+      "packages/game-rules/src/cardrpg/depth/pacing-v4.ts": "92357faa9e49cc69795eddd399bfb69c614b61ca4d7c49b5a42a0fcde6d80cbd",
+      "packages/game-rules/src/cardrpg/depth/contract.ts": "0de99399fcc8924d0f9269a59a9e5c73b81140041dca5082b9ead5bdc06a2c03"
+    },
+    "variants": {
+      "baseline": {},
+      "aware-distributed": {
+        "packages/game-rules/src/cardrpg/depth/battle.ts": "5ef4ad65b475cb60e748622a5d88f53d467474b15ed0dab3121cfe1d92bad229",
+        "packages/game-rules/src/cardrpg/depth/policies.ts": "61fc62d1b4fbfa7a05d80f45e8c9c3d5464b03028f48f611d25c46f3a8f90bd6",
+        "packages/game-rules/src/cardrpg/depth/contract.ts": "63e4227319ed7f4609401585984bf3447eef039578f4f4809a809d2af58a2f23"
+      },
+      "aware-distributed-110": {
+        "packages/game-rules/src/cardrpg/depth/battle.ts": "5ef4ad65b475cb60e748622a5d88f53d467474b15ed0dab3121cfe1d92bad229",
+        "packages/game-rules/src/cardrpg/depth/policies.ts": "61fc62d1b4fbfa7a05d80f45e8c9c3d5464b03028f48f611d25c46f3a8f90bd6",
+        "packages/game-rules/src/cardrpg/depth/contract.ts": "63e4227319ed7f4609401585984bf3447eef039578f4f4809a809d2af58a2f23",
+        "packages/game-rules/src/cardrpg/depth/pacing-v4.ts": "cd9ade9239cc7a7ec183f5b2fe568bdff6a659a5d764f2f46a66c04d6a0b95b6"
+      },
+      "aware-distributed-115": {
+        "packages/game-rules/src/cardrpg/depth/battle.ts": "5ef4ad65b475cb60e748622a5d88f53d467474b15ed0dab3121cfe1d92bad229",
+        "packages/game-rules/src/cardrpg/depth/policies.ts": "7753a1c5a39c3a31b0a3392f9e2bfc7dcb26d5abf43e62bce62d3e31d67aafcb",
+        "packages/game-rules/src/cardrpg/depth/contract.ts": "63e4227319ed7f4609401585984bf3447eef039578f4f4809a809d2af58a2f23",
+        "packages/game-rules/src/cardrpg/depth/pacing-v4.ts": "a51ed668294420cf81b10bc87b1a65fd960aab78f79f679747bd8528a0e7f80d"
+      }
+    }
+  },
+  "source": {
+    "packages/game-rules/src/cardrpg/battle.ts": "cf2b02d5cf0d193d7395be8f736e2e4b8dd9cbed6264e37a5d46f2306da393a5",
+    "packages/game-rules/src/cardrpg/catalog.ts": "3a0e7ec530f4d8f4aa5b6bcffc665f6226fb1aafe36b9854c1999b7aedd87145",
+    "packages/game-rules/src/cardrpg/commands.ts": "cb8320136dc7663ced7f2b29b6e107cb1087188e00ef38228d71314d27ca3f7c",
+    "packages/game-rules/src/cardrpg/config.ts": "c3a7f68aac65c19158e3cfe20c0c28ab08b50b0f6da657b2f81bb9db91c088c3",
+    "packages/game-rules/src/cardrpg/contract.ts": "40ffcc72d23ac5ddbf2bf7c3babf48339afcfd7ccf04c0f4c7fed5e3b68d36f0",
+    "packages/game-rules/src/cardrpg/depth/auto-extras/index.ts": "2524db42d4c481b87340d9c0470f99f72b8d418db38a24e5344c0edca35653eb",
+    "packages/game-rules/src/cardrpg/depth/auto-extras/runner.ts": "0fc20f25d2e4523d761700081bd4556cbbe8350ea276e4cf6186e84586a94ee9",
+    "packages/game-rules/src/cardrpg/depth/battle.ts": "7b4ac50d7258546d6700a468efdcb36481e2ccc599907504373d158b11020865",
+    "packages/game-rules/src/cardrpg/depth/boons.ts": "0edbee3debfc189081a89b9d6e3a502a42f8b12b0cd5fcab3219cbe491c5943e",
+    "packages/game-rules/src/cardrpg/depth/bridge.ts": "c3ae46cae953c2421a550a4d2ca370618b7d73b13a0eee8bce644c09d78dcaf4",
+    "packages/game-rules/src/cardrpg/depth/catalog.ts": "1220e3ca2053777cf694a91d75f99d10c1e2522b4896ded689c772fe8d09d8d6",
+    "packages/game-rules/src/cardrpg/depth/contract.ts": "0de99399fcc8924d0f9269a59a9e5c73b81140041dca5082b9ead5bdc06a2c03",
+    "packages/game-rules/src/cardrpg/depth/editions-v4.ts": "dde57882b2d3752b341fa6512ed2909405c80688ba5ba9c95eb05689f9ec4eba",
+    "packages/game-rules/src/cardrpg/depth/equipment-v4.ts": "5b244c29a63ea2a764d17030481f9fb4dd1a53055f893d8cc1f3bf78d36a7ed8",
+    "packages/game-rules/src/cardrpg/depth/equipment.ts": "5b1a98044c772dfad104cf06a137df8ec84263a6e41cf2bd37703aaafe2e6347",
+    "packages/game-rules/src/cardrpg/depth/events-v4.ts": "dbc9faca57e3f62e5fd8e62a262c6cdaa06fc422b3c62db032fcb5b4d0bfb3f2",
+    "packages/game-rules/src/cardrpg/depth/gacha-v4.ts": "1d30e73f193fbc44a708ba467745f0a74385c4d98457a206da30b957cfce71fb",
+    "packages/game-rules/src/cardrpg/depth/gameplay-v4.ts": "06e0ba66203d81586e1500098df4081e0b4f9ce8c3526283b09e8ec575e0a2d0",
+    "packages/game-rules/src/cardrpg/depth/index.ts": "2f37433ab6252777f29044448cfeee82a97c1a946a9ae6c7768f2bbdb2b614e8",
+    "packages/game-rules/src/cardrpg/depth/items-v4.ts": "26b811082f641a212be65167e9396ddaf4bfe3e10bc25037e3e3cb1fadfaf822",
+    "packages/game-rules/src/cardrpg/depth/loadouts-v4.ts": "23b13eaecf5c93ae9950618927484ac06c5e5f3c06c98284567586bc9754c47d",
+    "packages/game-rules/src/cardrpg/depth/meta-v4.ts": "ba4e296020f8b6362f25b20d43b196802ba009fcf3fa347a40a8030cc9ca829e",
+    "packages/game-rules/src/cardrpg/depth/onboarding.ts": "ff6b7b0d1690941e9e5b65c003fe362cd19b44050a9bc75bd2f06f0c56a27d6d",
+    "packages/game-rules/src/cardrpg/depth/pacing-v4.ts": "92357faa9e49cc69795eddd399bfb69c614b61ca4d7c49b5a42a0fcde6d80cbd",
+    "packages/game-rules/src/cardrpg/depth/policies.ts": "f467781a6a689b280bf4b2f76621a90f0547508b541dfabfa776767fcc121f67",
+    "packages/game-rules/src/cardrpg/depth/run-bot.ts": "a6ae62c38c318f36b5043e23b96ccce4cf97789c173579b96e87b95bf61a9753",
+    "packages/game-rules/src/cardrpg/depth/run.ts": "c47820cbd840936a3418657262eb6eb2eae066fec7eadf54d603e8b6415fb07f",
+    "packages/game-rules/src/cardrpg/depth/save.ts": "804d37b49e3b1185871a952036a38a028fa67f65d4218149a32b59f09c855ffc",
+    "packages/game-rules/src/cardrpg/depth/scarcity.ts": "f13fbea286d49d6cff2eb69b7c501bc4284fa0dc07b633a2f99975380db5e461",
+    "packages/game-rules/src/cardrpg/depth/state.ts": "481398eeed6e8040ffa41de5217da77f80897a1bbdb626c83bfea14bd087ed87",
+    "packages/game-rules/src/cardrpg/equipment.ts": "c72b84c5961ea3073eea7ed1fc061f6171329a0982834883e5f34e8a0786f597",
+    "packages/game-rules/src/cardrpg/fixtures/index.ts": "0627a3f89483eee71ff5ccedc2df355cd6530f38ffa0b8e1682720698dc29390",
+    "packages/game-rules/src/cardrpg/gacha.ts": "ace3b76900607785f8a26dc95619bc4411e5cd79491075c37503bf10efa9e09a",
+    "packages/game-rules/src/cardrpg/index.ts": "06d7a8244835dc11ed7908101a312b5b94ec0329924bc4230c671b001725934b",
+    "packages/game-rules/src/cardrpg/internal.ts": "a881bd313e3a1b0401ec08929a92025fc5de54bfe7c5f05c86a150b6e0f23704",
+    "packages/game-rules/src/cardrpg/progression.ts": "dd2afa830bc2ef3328d6dc2e94f21cabc89c1cfc36ae1bec64b9753de485118e",
+    "packages/game-rules/src/cardrpg/state.ts": "09da5dd6df7a88da66a0e2ba842dc3f66b1c5d708bc38cd585085bbfea45d0ea",
+    "packages/game-rules/src/rng.ts": "294a2a0149a7e89cb9b9b6bbf237b11daecd645a49760b8b2c415bfbc2884270"
+  },
+  "rows": [
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-charm-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "10010300031110100101033130011111311001100000001010",
+      "beforeActions": 2002,
+      "afterActions": 2237,
+      "firstDeathRounds": {
+        "6": 44,
+        "10": 2,
+        "12": 1
+      }
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-charm-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "11111311131110111111133131111111311111111111101111",
+      "beforeActions": 2002,
+      "afterActions": 2485,
+      "firstDeathRounds": {
+        "6": 44,
+        "10": 2,
+        "12": 1
+      }
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-charm-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "11111311131111111111123131111111311111111111101111",
+      "beforeActions": 2002,
+      "afterActions": 2474,
+      "firstDeathRounds": {
+        "6": 44,
+        "10": 2,
+        "12": 1
+      }
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-charm-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "11110300031110110101033131111111311111111011001010",
+      "beforeActions": 2002,
+      "afterActions": 2363,
+      "firstDeathRounds": {
+        "6": 44,
+        "10": 2,
+        "12": 1
+      }
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-outfit-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "10010300030110100101033131010111311001110000001010",
+      "beforeActions": 2004,
+      "afterActions": 2241,
+      "firstDeathRounds": {
+        "6": 44,
+        "12": 1
+      }
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-outfit-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "11111311131110111111133131111111311111111111101110",
+      "beforeActions": 2004,
+      "afterActions": 2469,
+      "firstDeathRounds": {
+        "6": 44,
+        "12": 1
+      }
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-outfit-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "11111311131111111111132131111111311111111111101111",
+      "beforeActions": 2004,
+      "afterActions": 2498,
+      "firstDeathRounds": {
+        "6": 44,
+        "12": 1
+      }
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-outfit-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "11110310031110110101033131011111311101111011001010",
+      "beforeActions": 2004,
+      "afterActions": 2352,
+      "firstDeathRounds": {
+        "6": 44,
+        "12": 1
+      }
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-relic-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "31130310131330311313033333111133333113311111003030",
+      "beforeActions": 2227,
+      "afterActions": 2471,
+      "firstDeathRounds": {
+        "6": 27,
+        "10": 1,
+        "12": 6
+      }
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-relic-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "31131311131330311313132333111133333113311111103131",
+      "beforeActions": 2227,
+      "afterActions": 2493,
+      "firstDeathRounds": {
+        "6": 27,
+        "10": 1,
+        "12": 6
+      }
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-relic-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "31131311131331311313132333111133333113311111103131",
+      "beforeActions": 2227,
+      "afterActions": 2499,
+      "firstDeathRounds": {
+        "6": 27,
+        "10": 1,
+        "12": 6
+      }
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-relic-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "31131310131330311313133333111133333113311111003130",
+      "beforeActions": 2227,
+      "afterActions": 2504,
+      "firstDeathRounds": {
+        "6": 27,
+        "10": 1,
+        "12": 6
+      }
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-charm-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "outcomes": "00000003030010013310000013000310310301003010333013",
+      "beforeActions": 1790,
+      "afterActions": 1760,
+      "firstDeathRounds": {
+        "6": 50
+      }
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-relic-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "outcomes": "00000001010000001100000013000100310301001000133001",
+      "beforeActions": 1800,
+      "afterActions": 1789,
+      "firstDeathRounds": {
+        "6": 50
+      }
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-relic-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "outcomes": "00000001010000001100000013000100310301001000123001",
+      "beforeActions": 1800,
+      "afterActions": 1806,
+      "firstDeathRounds": {
+        "6": 50
+      }
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-weapon-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "outcomes": "00000001010000001100000013000100300101001000131001",
+      "beforeActions": 1823,
+      "afterActions": 1797,
+      "firstDeathRounds": {
+        "6": 50
+      }
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-weapon-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "outcomes": "00100101010010011110100013000111310111001010131011",
+      "beforeActions": 1823,
+      "afterActions": 1745,
+      "firstDeathRounds": {
+        "6": 50
+      }
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-weapon-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "outcomes": "00000000000000001000000013000100300100001000131001",
+      "beforeActions": 1823,
+      "afterActions": 1806,
+      "firstDeathRounds": {
+        "6": 50
+      }
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-weapon-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "outcomes": "00000000000001000000010001001000000000000000000001",
+      "beforeActions": 1850,
+      "afterActions": 1837,
+      "firstDeathRounds": {
+        "6": 50
+      }
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-charm-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "00000100010010100100011030000000310001100000000000",
+      "beforeActions": 1975,
+      "afterActions": 2081,
+      "firstDeathRounds": {
+        "6": 48,
+        "12": 1
+      }
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-charm-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "11110100111110110101011131011111311111111011001110",
+      "beforeActions": 1975,
+      "afterActions": 2414,
+      "firstDeathRounds": {
+        "6": 48,
+        "12": 1
+      }
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-charm-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "11111111111110111111011131111111311111111111101110",
+      "beforeActions": 1975,
+      "afterActions": 2494,
+      "firstDeathRounds": {
+        "6": 48,
+        "12": 1
+      }
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-charm-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "10010100010110100101011030000001311001100000001010",
+      "beforeActions": 1975,
+      "afterActions": 2189,
+      "firstDeathRounds": {
+        "6": 48,
+        "12": 1
+      }
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-outfit-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "00000300010110100101013030000000310001100000000000",
+      "beforeActions": 1993,
+      "afterActions": 2103,
+      "firstDeathRounds": {
+        "6": 46,
+        "12": 1
+      }
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-outfit-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "11111310111110110101013131011111311111111011001010",
+      "beforeActions": 1993,
+      "afterActions": 2434,
+      "firstDeathRounds": {
+        "6": 46,
+        "12": 1
+      }
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-outfit-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "11111310111110111111113131111111311111111111001110",
+      "beforeActions": 1993,
+      "afterActions": 2488,
+      "firstDeathRounds": {
+        "6": 46,
+        "12": 1
+      }
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-outfit-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "10010300010110100101013131010011311001100000001010",
+      "beforeActions": 1993,
+      "afterActions": 2227,
+      "firstDeathRounds": {
+        "6": 46,
+        "12": 1
+      }
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-relic-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "10010300030110100101033131011011311001100000000010",
+      "beforeActions": 2025,
+      "afterActions": 2254,
+      "firstDeathRounds": {
+        "6": 44,
+        "12": 2
+      }
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-relic-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "11110310131110111111033131011111311011111101001010",
+      "beforeActions": 2025,
+      "afterActions": 2420,
+      "firstDeathRounds": {
+        "6": 44,
+        "12": 2
+      }
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-relic-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "11111310131110111111033131111111311111111111001110",
+      "beforeActions": 2025,
+      "afterActions": 2456,
+      "firstDeathRounds": {
+        "6": 44,
+        "12": 2
+      }
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-relic-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "10110300031110110101033131011111311001111000001010",
+      "beforeActions": 2025,
+      "afterActions": 2350,
+      "firstDeathRounds": {
+        "6": 44,
+        "12": 2
+      }
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-charm-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333333333333333333333333333333333",
+      "beforeActions": 2580,
+      "afterActions": 2543,
+      "firstDeathRounds": {
+        "10": 9
+      }
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-charm-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333333333333333333333333333333333",
+      "beforeActions": 2580,
+      "afterActions": 2482,
+      "firstDeathRounds": {
+        "10": 9
+      }
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-charm-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333333333333333333333333333333333",
+      "beforeActions": 2580,
+      "afterActions": 2447,
+      "firstDeathRounds": {
+        "10": 9
+      }
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-charm-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333333333333333333333333333333333",
+      "beforeActions": 2580,
+      "afterActions": 2501,
+      "firstDeathRounds": {
+        "10": 9
+      }
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-outfit-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333333333333333333333333333333333",
+      "beforeActions": 2522,
+      "afterActions": 2492,
+      "firstDeathRounds": {
+        "10": 7
+      }
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-outfit-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333333333333333333333333333333333",
+      "beforeActions": 2522,
+      "afterActions": 2471,
+      "firstDeathRounds": {
+        "10": 7
+      }
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-outfit-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333333333333333333333333333333333",
+      "beforeActions": 2522,
+      "afterActions": 2457,
+      "firstDeathRounds": {
+        "10": 7
+      }
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-outfit-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333333333333333333333333333333333",
+      "beforeActions": 2522,
+      "afterActions": 2504,
+      "firstDeathRounds": {
+        "10": 7
+      }
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-relic-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333333333333333333333333333333333",
+      "beforeActions": 2555,
+      "afterActions": 2546,
+      "firstDeathRounds": {
+        "10": 8
+      }
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-relic-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333333333333333333333333333333333",
+      "beforeActions": 2555,
+      "afterActions": 2487,
+      "firstDeathRounds": {
+        "10": 8
+      }
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-relic-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333333333333333333333333333333333",
+      "beforeActions": 2555,
+      "afterActions": 2462,
+      "firstDeathRounds": {
+        "10": 8
+      }
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-relic-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333333333333333333333333333333333",
+      "beforeActions": 2555,
+      "afterActions": 2533,
+      "firstDeathRounds": {
+        "10": 8
+      }
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-charm-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "outcomes": "33230333303030313133223330333200200031333033133330",
+      "beforeActions": 1969,
+      "afterActions": 1911,
+      "firstDeathRounds": {
+        "6": 22,
+        "10": 5
+      }
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-relic-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "outcomes": "33000333303030303133033330333002100030333033033330",
+      "beforeActions": 2015,
+      "afterActions": 1961,
+      "firstDeathRounds": {
+        "6": 21,
+        "9": 1,
+        "10": 6
+      }
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-relic-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "outcomes": "33000333303030303133033330333002100030333033033330",
+      "beforeActions": 2015,
+      "afterActions": 1961,
+      "firstDeathRounds": {
+        "6": 21,
+        "9": 1,
+        "10": 6
+      }
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-weapon-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "outcomes": "33010333303030303231233330333102300032333033033332",
+      "beforeActions": 2111,
+      "afterActions": 1982,
+      "firstDeathRounds": {
+        "6": 17,
+        "10": 11
+      }
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-weapon-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "outcomes": "33110333303030313331323330333003200033333033133333",
+      "beforeActions": 2111,
+      "afterActions": 1898,
+      "firstDeathRounds": {
+        "6": 17,
+        "10": 11
+      }
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-weapon-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "outcomes": "33000333303030303231333330333003300032333033033332",
+      "beforeActions": 2111,
+      "afterActions": 1993,
+      "firstDeathRounds": {
+        "6": 17,
+        "10": 11
+      }
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-weapon-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "outcomes": "33303333303230331331320331333033303333002133033033",
+      "beforeActions": 2373,
+      "afterActions": 2139,
+      "firstDeathRounds": {
+        "6": 13,
+        "9": 2,
+        "10": 14,
+        "12": 1,
+        "13": 3
+      }
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-charm-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333333333331333333333333333333333",
+      "beforeActions": 2634,
+      "afterActions": 2552,
+      "firstDeathRounds": {
+        "10": 9
+      }
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-charm-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333333333331333333333333333333333",
+      "beforeActions": 2634,
+      "afterActions": 2522,
+      "firstDeathRounds": {
+        "10": 9
+      }
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-charm-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333333333331333333333333333333333",
+      "beforeActions": 2634,
+      "afterActions": 2513,
+      "firstDeathRounds": {
+        "10": 9
+      }
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-charm-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333333333331333333333333333333333",
+      "beforeActions": 2634,
+      "afterActions": 2550,
+      "firstDeathRounds": {
+        "10": 9
+      }
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-outfit-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333333333331333333333333333333333",
+      "beforeActions": 2590,
+      "afterActions": 2507,
+      "firstDeathRounds": {
+        "10": 7
+      }
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-outfit-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333333333331333333333333333333333",
+      "beforeActions": 2590,
+      "afterActions": 2525,
+      "firstDeathRounds": {
+        "10": 7
+      }
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-outfit-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333333333331333333333333333333333",
+      "beforeActions": 2590,
+      "afterActions": 2529,
+      "firstDeathRounds": {
+        "10": 7
+      }
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-outfit-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333333333331333333333333333333333",
+      "beforeActions": 2590,
+      "afterActions": 2534,
+      "firstDeathRounds": {
+        "10": 7
+      }
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-relic-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333333333333333333333333333333333",
+      "beforeActions": 2603,
+      "afterActions": 2578,
+      "firstDeathRounds": {
+        "10": 7
+      }
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-relic-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333333333333333333333333333333333",
+      "beforeActions": 2603,
+      "afterActions": 2539,
+      "firstDeathRounds": {
+        "10": 7
+      }
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-relic-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333333333333333333333333333333333",
+      "beforeActions": 2603,
+      "afterActions": 2487,
+      "firstDeathRounds": {
+        "10": 7
+      }
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-relic-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333333333333333333333333333333333",
+      "beforeActions": 2603,
+      "afterActions": 2557,
+      "firstDeathRounds": {
+        "10": 7
+      }
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-charm-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "31113311213333213331111311312123130332323133121331",
+      "beforeActions": 2594,
+      "afterActions": 2661,
+      "firstDeathRounds": {
+        "6": 12,
+        "10": 15,
+        "13": 4,
+        "14": 1
+      }
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-charm-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "31103311312333313331101211312133131333333133131331",
+      "beforeActions": 2594,
+      "afterActions": 2617,
+      "firstDeathRounds": {
+        "6": 12,
+        "10": 15,
+        "13": 4,
+        "14": 1
+      }
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-charm-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "31113311313333313331111211312133131333333133131331",
+      "beforeActions": 2594,
+      "afterActions": 2552,
+      "firstDeathRounds": {
+        "6": 12,
+        "10": 15,
+        "13": 4,
+        "14": 1
+      }
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-charm-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "31113311312333203331101311312123130332333133121330",
+      "beforeActions": 2594,
+      "afterActions": 2631,
+      "firstDeathRounds": {
+        "6": 12,
+        "10": 15,
+        "13": 4,
+        "14": 1
+      }
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-outfit-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33133311113133233333333333332323132332333133123130",
+      "beforeActions": 2601,
+      "afterActions": 2640,
+      "firstDeathRounds": {
+        "6": 8,
+        "10": 13,
+        "12": 1,
+        "13": 2,
+        "14": 2
+      }
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-outfit-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33123311112133333333323233332333133333333133133131",
+      "beforeActions": 2601,
+      "afterActions": 2601,
+      "firstDeathRounds": {
+        "6": 8,
+        "10": 13,
+        "12": 1,
+        "13": 2,
+        "14": 2
+      }
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-outfit-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33123311113133333333333333332333133333333133133131",
+      "beforeActions": 2601,
+      "afterActions": 2584,
+      "firstDeathRounds": {
+        "6": 8,
+        "10": 13,
+        "12": 1,
+        "13": 2,
+        "14": 2
+      }
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-outfit-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33133311113133333333333333332323132332333133123130",
+      "beforeActions": 2601,
+      "afterActions": 2617,
+      "firstDeathRounds": {
+        "6": 8,
+        "10": 13,
+        "12": 1,
+        "13": 2,
+        "14": 2
+      }
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-relic-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33113332333333013333333333332312333331333323303331",
+      "beforeActions": 2711,
+      "afterActions": 2693,
+      "firstDeathRounds": {
+        "6": 1,
+        "10": 23,
+        "13": 2,
+        "14": 1
+      }
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-relic-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33103333332333113333333233332313333331333333313331",
+      "beforeActions": 2711,
+      "afterActions": 2593,
+      "firstDeathRounds": {
+        "6": 1,
+        "10": 23,
+        "13": 2,
+        "14": 1
+      }
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-relic-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33103333332333113333333233333313333331333333313331",
+      "beforeActions": 2711,
+      "afterActions": 2581,
+      "firstDeathRounds": {
+        "6": 1,
+        "10": 23,
+        "13": 2,
+        "14": 1
+      }
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-relic-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33113333333333113333333333333312333331333333213331",
+      "beforeActions": 2711,
+      "afterActions": 2671,
+      "firstDeathRounds": {
+        "6": 1,
+        "10": 23,
+        "13": 2,
+        "14": 1
+      }
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-charm-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "outcomes": "13130030301000301131000010333003033000310332003010",
+      "beforeActions": 1975,
+      "afterActions": 1942,
+      "firstDeathRounds": {
+        "6": 29,
+        "8": 1,
+        "9": 11,
+        "10": 6
+      }
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-relic-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "outcomes": "13030030301000300130000010333203031200330133003000",
+      "beforeActions": 1993,
+      "afterActions": 1951,
+      "firstDeathRounds": {
+        "6": 28,
+        "8": 2,
+        "9": 11,
+        "10": 5
+      }
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-relic-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "outcomes": "13030030301000300130000010333203031200330133003000",
+      "beforeActions": 1993,
+      "afterActions": 1962,
+      "firstDeathRounds": {
+        "6": 28,
+        "8": 2,
+        "9": 11,
+        "10": 5
+      }
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-weapon-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "outcomes": "33030030100000301032202000333203013200320133003002",
+      "beforeActions": 2070,
+      "afterActions": 1974,
+      "firstDeathRounds": {
+        "6": 24,
+        "8": 3,
+        "9": 11,
+        "10": 9
+      }
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-weapon-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "outcomes": "33130031101000301133302010333203013200331132103012",
+      "beforeActions": 2070,
+      "afterActions": 1928,
+      "firstDeathRounds": {
+        "6": 24,
+        "8": 3,
+        "9": 11,
+        "10": 9
+      }
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-weapon-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "outcomes": "33030030100000300032202000333303013200330133003002",
+      "beforeActions": 2070,
+      "afterActions": 1969,
+      "firstDeathRounds": {
+        "6": 24,
+        "8": 3,
+        "9": 11,
+        "10": 9
+      }
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-weapon-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "outcomes": "10030000303031300030000001300000010200000302321030",
+      "beforeActions": 2272,
+      "afterActions": 2092,
+      "firstDeathRounds": {
+        "6": 28,
+        "9": 6,
+        "10": 14,
+        "12": 2
+      }
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-charm-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "31103323113333233331011131311133210332331131123332",
+      "beforeActions": 2606,
+      "afterActions": 2671,
+      "firstDeathRounds": {
+        "6": 10,
+        "9": 1,
+        "10": 18,
+        "12": 1,
+        "13": 5
+      }
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-charm-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "31113332113333233331111131311133311332331121123332",
+      "beforeActions": 2606,
+      "afterActions": 2658,
+      "firstDeathRounds": {
+        "6": 10,
+        "9": 1,
+        "10": 18,
+        "12": 1,
+        "13": 5
+      }
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-charm-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "31113333113333333331111131311133311333331131133333",
+      "beforeActions": 2606,
+      "afterActions": 2649,
+      "firstDeathRounds": {
+        "6": 10,
+        "9": 1,
+        "10": 18,
+        "12": 1,
+        "13": 5
+      }
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-charm-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "31113323013333233331011131311123310332321131123333",
+      "beforeActions": 2606,
+      "afterActions": 2686,
+      "firstDeathRounds": {
+        "6": 10,
+        "9": 1,
+        "10": 18,
+        "12": 1,
+        "13": 5
+      }
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-outfit-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "31133311213333033331133331313123112332323133123331",
+      "beforeActions": 2606,
+      "afterActions": 2718,
+      "firstDeathRounds": {
+        "6": 10,
+        "10": 18,
+        "12": 1,
+        "13": 1,
+        "14": 1
+      }
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-outfit-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "31133311313333033331133331313133113332333123122331",
+      "beforeActions": 2606,
+      "afterActions": 2665,
+      "firstDeathRounds": {
+        "6": 10,
+        "10": 18,
+        "12": 1,
+        "13": 1,
+        "14": 1
+      }
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-outfit-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "31133311313323133331133331313133113333333123033331",
+      "beforeActions": 2606,
+      "afterActions": 2639,
+      "firstDeathRounds": {
+        "6": 10,
+        "10": 18,
+        "12": 1,
+        "13": 1,
+        "14": 1
+      }
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-outfit-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "31133311213333033331133331313123112332333133123331",
+      "beforeActions": 2606,
+      "afterActions": 2679,
+      "firstDeathRounds": {
+        "6": 10,
+        "10": 18,
+        "12": 1,
+        "13": 1,
+        "14": 1
+      }
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-relic-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33323313033333033331333333313323332330333333123133",
+      "beforeActions": 2721,
+      "afterActions": 2693,
+      "firstDeathRounds": {
+        "6": 3,
+        "10": 17,
+        "12": 1,
+        "13": 2,
+        "14": 1
+      }
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-relic-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33323313133333033331333333313333333330333323123133",
+      "beforeActions": 2721,
+      "afterActions": 2628,
+      "firstDeathRounds": {
+        "6": 3,
+        "10": 17,
+        "12": 1,
+        "13": 2,
+        "14": 1
+      }
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-relic-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333313133323033331333333313333333331333323123133",
+      "beforeActions": 2721,
+      "afterActions": 2636,
+      "firstDeathRounds": {
+        "6": 3,
+        "10": 17,
+        "12": 1,
+        "13": 2,
+        "14": 1
+      }
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-relic-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333313133333133331333333313333333330333323123132",
+      "beforeActions": 2721,
+      "afterActions": 2682,
+      "firstDeathRounds": {
+        "6": 3,
+        "10": 17,
+        "12": 1,
+        "13": 2,
+        "14": 1
+      }
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-charm-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33331313333333333333313333333332331213131333133323",
+      "beforeActions": 2893,
+      "afterActions": 2813,
+      "firstDeathRounds": {
+        "6": 1,
+        "10": 7,
+        "12": 3,
+        "13": 8,
+        "14": 8
+      }
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-charm-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33331313333333333333303333333333331313121333133333",
+      "beforeActions": 2893,
+      "afterActions": 2758,
+      "firstDeathRounds": {
+        "6": 1,
+        "10": 7,
+        "12": 3,
+        "13": 8,
+        "14": 8
+      }
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-charm-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33331313333333333333313333333333331313131333133333",
+      "beforeActions": 2893,
+      "afterActions": 2787,
+      "firstDeathRounds": {
+        "6": 1,
+        "10": 7,
+        "12": 3,
+        "13": 8,
+        "14": 8
+      }
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-charm-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33331313333333333233313333333333331212131333132333",
+      "beforeActions": 2893,
+      "afterActions": 2820,
+      "firstDeathRounds": {
+        "6": 1,
+        "10": 7,
+        "12": 3,
+        "13": 8,
+        "14": 8
+      }
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-outfit-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333333333333332333033333333133313",
+      "beforeActions": 2827,
+      "afterActions": 2825,
+      "firstDeathRounds": {
+        "6": 1,
+        "10": 6,
+        "13": 8,
+        "14": 9
+      }
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-outfit-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333333333333333333133333333133313",
+      "beforeActions": 2827,
+      "afterActions": 2772,
+      "firstDeathRounds": {
+        "6": 1,
+        "10": 6,
+        "13": 8,
+        "14": 9
+      }
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-outfit-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333323333333333333133333333133313",
+      "beforeActions": 2827,
+      "afterActions": 2725,
+      "firstDeathRounds": {
+        "6": 1,
+        "10": 6,
+        "13": 8,
+        "14": 9
+      }
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-outfit-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333233333333333333333032333333132313",
+      "beforeActions": 2827,
+      "afterActions": 2798,
+      "firstDeathRounds": {
+        "6": 1,
+        "10": 6,
+        "13": 8,
+        "14": 9
+      }
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-relic-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333333333333333333131333333331333",
+      "beforeActions": 2867,
+      "afterActions": 2827,
+      "firstDeathRounds": {
+        "10": 8,
+        "13": 4,
+        "14": 8
+      }
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-relic-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333323333333333333031333333331333",
+      "beforeActions": 2867,
+      "afterActions": 2781,
+      "firstDeathRounds": {
+        "10": 8,
+        "13": 4,
+        "14": 8
+      }
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-relic-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333323333333333333031333333231333",
+      "beforeActions": 2867,
+      "afterActions": 2789,
+      "firstDeathRounds": {
+        "10": 8,
+        "13": 4,
+        "14": 8
+      }
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-relic-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333333333333333333031333333331333",
+      "beforeActions": 2867,
+      "afterActions": 2844,
+      "firstDeathRounds": {
+        "10": 8,
+        "13": 4,
+        "14": 8
+      }
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-charm-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "outcomes": "33333303320333333030333000323133333330231333023033",
+      "beforeActions": 2242,
+      "afterActions": 2227,
+      "firstDeathRounds": {
+        "6": 9,
+        "9": 16,
+        "10": 15,
+        "12": 1
+      }
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-relic-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "outcomes": "33333303300333313030133000333133313330021333013033",
+      "beforeActions": 2414,
+      "afterActions": 2250,
+      "firstDeathRounds": {
+        "6": 7,
+        "9": 13,
+        "10": 18,
+        "12": 3
+      }
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-relic-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "outcomes": "33333303300333313030133000333133313330031333013033",
+      "beforeActions": 2414,
+      "afterActions": 2269,
+      "firstDeathRounds": {
+        "6": 7,
+        "9": 13,
+        "10": 18,
+        "12": 3
+      }
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-weapon-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "outcomes": "33133303300313313230133000333333313130231333033033",
+      "beforeActions": 2463,
+      "afterActions": 2237,
+      "firstDeathRounds": {
+        "6": 5,
+        "9": 15,
+        "10": 20,
+        "12": 3,
+        "13": 2
+      }
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-weapon-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "outcomes": "33133313310313313230133000323333313130231333133033",
+      "beforeActions": 2463,
+      "afterActions": 2223,
+      "firstDeathRounds": {
+        "6": 5,
+        "9": 15,
+        "10": 20,
+        "12": 3,
+        "13": 2
+      }
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-weapon-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "outcomes": "33133303300313313230133000333333313130231333023033",
+      "beforeActions": 2463,
+      "afterActions": 2315,
+      "firstDeathRounds": {
+        "6": 5,
+        "9": 15,
+        "10": 20,
+        "12": 3,
+        "13": 2
+      }
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-weapon-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "outcomes": "33133311033131330010301003311011313110210131301030",
+      "beforeActions": 2728,
+      "afterActions": 2477,
+      "firstDeathRounds": {
+        "6": 5,
+        "9": 12,
+        "10": 18,
+        "12": 11,
+        "13": 2,
+        "14": 1
+      }
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-charm-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333332333033133333333333333333333213313113031123",
+      "beforeActions": 2992,
+      "afterActions": 2959,
+      "firstDeathRounds": {
+        "9": 1,
+        "10": 7,
+        "12": 4,
+        "13": 14,
+        "14": 10
+      }
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-charm-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333323133133233333333333333333313313113030133",
+      "beforeActions": 2992,
+      "afterActions": 2904,
+      "firstDeathRounds": {
+        "9": 1,
+        "10": 7,
+        "12": 4,
+        "13": 14,
+        "14": 10
+      }
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-charm-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333133133333323333333333333213313113131133",
+      "beforeActions": 2992,
+      "afterActions": 2865,
+      "firstDeathRounds": {
+        "9": 1,
+        "10": 7,
+        "12": 4,
+        "13": 14,
+        "14": 10
+      }
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-charm-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333133133333333333332333333212313113031123",
+      "beforeActions": 2992,
+      "afterActions": 2935,
+      "firstDeathRounds": {
+        "9": 1,
+        "10": 7,
+        "12": 4,
+        "13": 14,
+        "14": 10
+      }
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-outfit-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333332333133333313313313332333333033333333033323",
+      "beforeActions": 2945,
+      "afterActions": 2911,
+      "firstDeathRounds": {
+        "9": 1,
+        "10": 6,
+        "13": 8,
+        "14": 7,
+        "16": 1
+      }
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-outfit-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333133333213313313333333333033333333032333",
+      "beforeActions": 2945,
+      "afterActions": 2871,
+      "firstDeathRounds": {
+        "9": 1,
+        "10": 6,
+        "13": 8,
+        "14": 7,
+        "16": 1
+      }
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-outfit-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333133333313313313333333333033333333033333",
+      "beforeActions": 2945,
+      "afterActions": 2830,
+      "firstDeathRounds": {
+        "9": 1,
+        "10": 6,
+        "13": 8,
+        "14": 7,
+        "16": 1
+      }
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-outfit-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333332333133333313313313332333333032333333033323",
+      "beforeActions": 2945,
+      "afterActions": 2932,
+      "firstDeathRounds": {
+        "9": 1,
+        "10": 6,
+        "13": 8,
+        "14": 7,
+        "16": 1
+      }
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-relic-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333330333333333333333333331333333032333333132333",
+      "beforeActions": 2997,
+      "afterActions": 2931,
+      "firstDeathRounds": {
+        "10": 7,
+        "13": 8,
+        "14": 8,
+        "16": 1
+      }
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-relic-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333331333333333333333333331333333033333333032333",
+      "beforeActions": 2997,
+      "afterActions": 2861,
+      "firstDeathRounds": {
+        "10": 7,
+        "13": 8,
+        "14": 8,
+        "16": 1
+      }
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-relic-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333331333333333233333333331333333133333333133333",
+      "beforeActions": 2997,
+      "afterActions": 2835,
+      "firstDeathRounds": {
+        "10": 7,
+        "13": 8,
+        "14": 8,
+        "16": 1
+      }
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-relic-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333331333333333233333333331333333032333333132333",
+      "beforeActions": 2997,
+      "afterActions": 2944,
+      "firstDeathRounds": {
+        "10": 7,
+        "13": 8,
+        "14": 8,
+        "16": 1
+      }
+    }
+  ],
+  "summaries": [
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-charm-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "10010300031110100101033130011111311001100000001010",
+      "beforeActions": 2002,
+      "afterActions": 2237,
+      "firstDeathRounds": {
+        "6": 44,
+        "10": 2,
+        "12": 1
+      },
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-charm-common",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 6,
+      "wins": 26,
+      "gainPp": 40
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-charm-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "11111311131110111111133131111111311111111111101111",
+      "beforeActions": 2002,
+      "afterActions": 2485,
+      "firstDeathRounds": {
+        "6": 44,
+        "10": 2,
+        "12": 1
+      },
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-charm-epic",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 6,
+      "wins": 48,
+      "gainPp": 84
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-charm-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "11111311131111111111123131111111311111111111101111",
+      "beforeActions": 2002,
+      "afterActions": 2474,
+      "firstDeathRounds": {
+        "6": 44,
+        "10": 2,
+        "12": 1
+      },
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-charm-legendary",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 6,
+      "wins": 48,
+      "gainPp": 84
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-charm-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "11110300031110110101033131111111311111111011001010",
+      "beforeActions": 2002,
+      "afterActions": 2363,
+      "firstDeathRounds": {
+        "6": 44,
+        "10": 2,
+        "12": 1
+      },
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-charm-rare",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 6,
+      "wins": 37,
+      "gainPp": 62
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-outfit-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "10010300030110100101033131010111311001110000001010",
+      "beforeActions": 2004,
+      "afterActions": 2241,
+      "firstDeathRounds": {
+        "6": 44,
+        "12": 1
+      },
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-outfit-common",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 6,
+      "wins": 26,
+      "gainPp": 40
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-outfit-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "11111311131110111111133131111111311111111111101110",
+      "beforeActions": 2004,
+      "afterActions": 2469,
+      "firstDeathRounds": {
+        "6": 44,
+        "12": 1
+      },
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-outfit-epic",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 6,
+      "wins": 47,
+      "gainPp": 82
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-outfit-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "11111311131111111111132131111111311111111111101111",
+      "beforeActions": 2004,
+      "afterActions": 2498,
+      "firstDeathRounds": {
+        "6": 44,
+        "12": 1
+      },
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-outfit-legendary",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 6,
+      "wins": 48,
+      "gainPp": 84
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-outfit-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "11110310031110110101033131011111311101111011001010",
+      "beforeActions": 2004,
+      "afterActions": 2352,
+      "firstDeathRounds": {
+        "6": 44,
+        "12": 1
+      },
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-outfit-rare",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 6,
+      "wins": 36,
+      "gainPp": 60
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-relic-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "31130310131330311313033333111133333113311111003030",
+      "beforeActions": 2227,
+      "afterActions": 2471,
+      "firstDeathRounds": {
+        "6": 27,
+        "10": 1,
+        "12": 6
+      },
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-relic-common",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 23,
+      "wins": 42,
+      "gainPp": 38
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-relic-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "31131311131330311313132333111133333113311111103131",
+      "beforeActions": 2227,
+      "afterActions": 2493,
+      "firstDeathRounds": {
+        "6": 27,
+        "10": 1,
+        "12": 6
+      },
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-relic-epic",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 23,
+      "wins": 47,
+      "gainPp": 48
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-relic-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "31131311131331311313132333111133333113311111103131",
+      "beforeActions": 2227,
+      "afterActions": 2499,
+      "firstDeathRounds": {
+        "6": 27,
+        "10": 1,
+        "12": 6
+      },
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-relic-legendary",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 23,
+      "wins": 48,
+      "gainPp": 50
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-relic-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "31131310131330311313133333111133333113311111003130",
+      "beforeActions": 2227,
+      "afterActions": 2504,
+      "firstDeathRounds": {
+        "6": 27,
+        "10": 1,
+        "12": 6
+      },
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-relic-rare",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 23,
+      "wins": 45,
+      "gainPp": 44
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-charm-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "outcomes": "00000003030010013310000013000310310301003010333013",
+      "beforeActions": 1790,
+      "afterActions": 1760,
+      "firstDeathRounds": {
+        "6": 50
+      },
+      "kind": "pieces-equipped",
+      "templateId": "crumbweave-charm-legendary",
+      "cardId": "soot",
+      "level": 6,
+      "chapter": 1,
+      "beforeWins": 13,
+      "wins": 22,
+      "gainPp": 18
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-relic-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "outcomes": "00000001010000001100000013000100310301001000133001",
+      "beforeActions": 1800,
+      "afterActions": 1789,
+      "firstDeathRounds": {
+        "6": 50
+      },
+      "kind": "pieces-equipped",
+      "templateId": "crumbweave-relic-epic",
+      "cardId": "soot",
+      "level": 6,
+      "chapter": 1,
+      "beforeWins": 5,
+      "wins": 16,
+      "gainPp": 22
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-relic-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "outcomes": "00000001010000001100000013000100310301001000123001",
+      "beforeActions": 1800,
+      "afterActions": 1806,
+      "firstDeathRounds": {
+        "6": 50
+      },
+      "kind": "pieces-equipped",
+      "templateId": "crumbweave-relic-legendary",
+      "cardId": "soot",
+      "level": 6,
+      "chapter": 1,
+      "beforeWins": 5,
+      "wins": 15,
+      "gainPp": 20
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-weapon-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "outcomes": "00000001010000001100000013000100300101001000131001",
+      "beforeActions": 1823,
+      "afterActions": 1797,
+      "firstDeathRounds": {
+        "6": 50
+      },
+      "kind": "pieces-equipped",
+      "templateId": "crumbweave-weapon-epic",
+      "cardId": "soot",
+      "level": 6,
+      "chapter": 1,
+      "beforeWins": 3,
+      "wins": 15,
+      "gainPp": 24
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-weapon-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "outcomes": "00100101010010011110100013000111310111001010131011",
+      "beforeActions": 1823,
+      "afterActions": 1745,
+      "firstDeathRounds": {
+        "6": 50
+      },
+      "kind": "pieces-equipped",
+      "templateId": "crumbweave-weapon-legendary",
+      "cardId": "soot",
+      "level": 6,
+      "chapter": 1,
+      "beforeWins": 3,
+      "wins": 27,
+      "gainPp": 48
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-weapon-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "outcomes": "00000000000000001000000013000100300100001000131001",
+      "beforeActions": 1823,
+      "afterActions": 1806,
+      "firstDeathRounds": {
+        "6": 50
+      },
+      "kind": "pieces-equipped",
+      "templateId": "crumbweave-weapon-rare",
+      "cardId": "soot",
+      "level": 6,
+      "chapter": 1,
+      "beforeWins": 3,
+      "wins": 11,
+      "gainPp": 16
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-weapon-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "outcomes": "00000000000001000000010001001000000000000000000001",
+      "beforeActions": 1850,
+      "afterActions": 1837,
+      "firstDeathRounds": {
+        "6": 50
+      },
+      "kind": "pieces-equipped",
+      "templateId": "emberfelt-weapon-legendary",
+      "cardId": "soot",
+      "level": 6,
+      "chapter": 1,
+      "beforeWins": 0,
+      "wins": 5,
+      "gainPp": 10
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-charm-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "00000100010010100100011030000000310001100000000000",
+      "beforeActions": 1975,
+      "afterActions": 2081,
+      "firstDeathRounds": {
+        "6": 48,
+        "12": 1
+      },
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-charm-common",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 2,
+      "wins": 12,
+      "gainPp": 20
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-charm-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "11110100111110110101011131011111311111111011001110",
+      "beforeActions": 1975,
+      "afterActions": 2414,
+      "firstDeathRounds": {
+        "6": 48,
+        "12": 1
+      },
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-charm-epic",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 2,
+      "wins": 38,
+      "gainPp": 72
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-charm-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "11111111111110111111011131111111311111111111101110",
+      "beforeActions": 1975,
+      "afterActions": 2494,
+      "firstDeathRounds": {
+        "6": 48,
+        "12": 1
+      },
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-charm-legendary",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 2,
+      "wins": 46,
+      "gainPp": 88
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-charm-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "10010100010110100101011030000001311001100000001010",
+      "beforeActions": 1975,
+      "afterActions": 2189,
+      "firstDeathRounds": {
+        "6": 48,
+        "12": 1
+      },
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-charm-rare",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 2,
+      "wins": 20,
+      "gainPp": 36
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-outfit-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "00000300010110100101013030000000310001100000000000",
+      "beforeActions": 1993,
+      "afterActions": 2103,
+      "firstDeathRounds": {
+        "6": 46,
+        "12": 1
+      },
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-outfit-common",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 4,
+      "wins": 14,
+      "gainPp": 20
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-outfit-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "11111310111110110101013131011111311111111011001010",
+      "beforeActions": 1993,
+      "afterActions": 2434,
+      "firstDeathRounds": {
+        "6": 46,
+        "12": 1
+      },
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-outfit-epic",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 4,
+      "wins": 39,
+      "gainPp": 70
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-outfit-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "11111310111110111111113131111111311111111111001110",
+      "beforeActions": 1993,
+      "afterActions": 2488,
+      "firstDeathRounds": {
+        "6": 46,
+        "12": 1
+      },
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-outfit-legendary",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 4,
+      "wins": 45,
+      "gainPp": 82
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-outfit-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "10010300010110100101013131010011311001100000001010",
+      "beforeActions": 1993,
+      "afterActions": 2227,
+      "firstDeathRounds": {
+        "6": 46,
+        "12": 1
+      },
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-outfit-rare",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 4,
+      "wins": 24,
+      "gainPp": 40
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-relic-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "10010300030110100101033131011011311001100000000010",
+      "beforeActions": 2025,
+      "afterActions": 2254,
+      "firstDeathRounds": {
+        "6": 44,
+        "12": 2
+      },
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-relic-common",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 6,
+      "wins": 24,
+      "gainPp": 36
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-relic-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "11110310131110111111033131011111311011111101001010",
+      "beforeActions": 2025,
+      "afterActions": 2420,
+      "firstDeathRounds": {
+        "6": 44,
+        "12": 2
+      },
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-relic-epic",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 6,
+      "wins": 39,
+      "gainPp": 66
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-relic-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "11111310131110111111033131111111311111111111001110",
+      "beforeActions": 2025,
+      "afterActions": 2456,
+      "firstDeathRounds": {
+        "6": 44,
+        "12": 2
+      },
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-relic-legendary",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 6,
+      "wins": 44,
+      "gainPp": 76
+    },
+    {
+      "variant": "baseline",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-relic-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "10110300031110110101033131011111311001111000001010",
+      "beforeActions": 2025,
+      "afterActions": 2350,
+      "firstDeathRounds": {
+        "6": 44,
+        "12": 2
+      },
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-relic-rare",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 6,
+      "wins": 31,
+      "gainPp": 50
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-charm-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333333333333333333333333333333333",
+      "beforeActions": 2580,
+      "afterActions": 2543,
+      "firstDeathRounds": {
+        "10": 9
+      },
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-charm-common",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 50,
+      "wins": 50,
+      "gainPp": 0
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-charm-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333333333333333333333333333333333",
+      "beforeActions": 2580,
+      "afterActions": 2482,
+      "firstDeathRounds": {
+        "10": 9
+      },
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-charm-epic",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 50,
+      "wins": 50,
+      "gainPp": 0
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-charm-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333333333333333333333333333333333",
+      "beforeActions": 2580,
+      "afterActions": 2447,
+      "firstDeathRounds": {
+        "10": 9
+      },
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-charm-legendary",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 50,
+      "wins": 50,
+      "gainPp": 0
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-charm-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333333333333333333333333333333333",
+      "beforeActions": 2580,
+      "afterActions": 2501,
+      "firstDeathRounds": {
+        "10": 9
+      },
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-charm-rare",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 50,
+      "wins": 50,
+      "gainPp": 0
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-outfit-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333333333333333333333333333333333",
+      "beforeActions": 2522,
+      "afterActions": 2492,
+      "firstDeathRounds": {
+        "10": 7
+      },
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-outfit-common",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 50,
+      "wins": 50,
+      "gainPp": 0
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-outfit-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333333333333333333333333333333333",
+      "beforeActions": 2522,
+      "afterActions": 2471,
+      "firstDeathRounds": {
+        "10": 7
+      },
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-outfit-epic",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 50,
+      "wins": 50,
+      "gainPp": 0
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-outfit-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333333333333333333333333333333333",
+      "beforeActions": 2522,
+      "afterActions": 2457,
+      "firstDeathRounds": {
+        "10": 7
+      },
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-outfit-legendary",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 50,
+      "wins": 50,
+      "gainPp": 0
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-outfit-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333333333333333333333333333333333",
+      "beforeActions": 2522,
+      "afterActions": 2504,
+      "firstDeathRounds": {
+        "10": 7
+      },
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-outfit-rare",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 50,
+      "wins": 50,
+      "gainPp": 0
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-relic-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333333333333333333333333333333333",
+      "beforeActions": 2555,
+      "afterActions": 2546,
+      "firstDeathRounds": {
+        "10": 8
+      },
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-relic-common",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 50,
+      "wins": 50,
+      "gainPp": 0
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-relic-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333333333333333333333333333333333",
+      "beforeActions": 2555,
+      "afterActions": 2487,
+      "firstDeathRounds": {
+        "10": 8
+      },
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-relic-epic",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 50,
+      "wins": 50,
+      "gainPp": 0
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-relic-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333333333333333333333333333333333",
+      "beforeActions": 2555,
+      "afterActions": 2462,
+      "firstDeathRounds": {
+        "10": 8
+      },
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-relic-legendary",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 50,
+      "wins": 50,
+      "gainPp": 0
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-relic-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333333333333333333333333333333333",
+      "beforeActions": 2555,
+      "afterActions": 2533,
+      "firstDeathRounds": {
+        "10": 8
+      },
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-relic-rare",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 50,
+      "wins": 50,
+      "gainPp": 0
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-charm-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "outcomes": "33230333303030313133223330333200200031333033133330",
+      "beforeActions": 1969,
+      "afterActions": 1911,
+      "firstDeathRounds": {
+        "6": 22,
+        "10": 5
+      },
+      "kind": "pieces-equipped",
+      "templateId": "crumbweave-charm-legendary",
+      "cardId": "soot",
+      "level": 6,
+      "chapter": 1,
+      "beforeWins": 34,
+      "wins": 33,
+      "gainPp": -2
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-relic-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "outcomes": "33000333303030303133033330333002100030333033033330",
+      "beforeActions": 2015,
+      "afterActions": 1961,
+      "firstDeathRounds": {
+        "6": 21,
+        "9": 1,
+        "10": 6
+      },
+      "kind": "pieces-equipped",
+      "templateId": "crumbweave-relic-epic",
+      "cardId": "soot",
+      "level": 6,
+      "chapter": 1,
+      "beforeWins": 30,
+      "wins": 31,
+      "gainPp": 2
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-relic-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "outcomes": "33000333303030303133033330333002100030333033033330",
+      "beforeActions": 2015,
+      "afterActions": 1961,
+      "firstDeathRounds": {
+        "6": 21,
+        "9": 1,
+        "10": 6
+      },
+      "kind": "pieces-equipped",
+      "templateId": "crumbweave-relic-legendary",
+      "cardId": "soot",
+      "level": 6,
+      "chapter": 1,
+      "beforeWins": 30,
+      "wins": 31,
+      "gainPp": 2
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-weapon-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "outcomes": "33010333303030303231233330333102300032333033033332",
+      "beforeActions": 2111,
+      "afterActions": 1982,
+      "firstDeathRounds": {
+        "6": 17,
+        "10": 11
+      },
+      "kind": "pieces-equipped",
+      "templateId": "crumbweave-weapon-epic",
+      "cardId": "soot",
+      "level": 6,
+      "chapter": 1,
+      "beforeWins": 34,
+      "wins": 32,
+      "gainPp": -4
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-weapon-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "outcomes": "33110333303030313331323330333003200033333033133333",
+      "beforeActions": 2111,
+      "afterActions": 1898,
+      "firstDeathRounds": {
+        "6": 17,
+        "10": 11
+      },
+      "kind": "pieces-equipped",
+      "templateId": "crumbweave-weapon-legendary",
+      "cardId": "soot",
+      "level": 6,
+      "chapter": 1,
+      "beforeWins": 34,
+      "wins": 37,
+      "gainPp": 6
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-weapon-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "outcomes": "33000333303030303231333330333003300032333033033332",
+      "beforeActions": 2111,
+      "afterActions": 1993,
+      "firstDeathRounds": {
+        "6": 17,
+        "10": 11
+      },
+      "kind": "pieces-equipped",
+      "templateId": "crumbweave-weapon-rare",
+      "cardId": "soot",
+      "level": 6,
+      "chapter": 1,
+      "beforeWins": 34,
+      "wins": 32,
+      "gainPp": -4
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-weapon-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "outcomes": "33303333303230331331320331333033303333002133033033",
+      "beforeActions": 2373,
+      "afterActions": 2139,
+      "firstDeathRounds": {
+        "6": 13,
+        "9": 2,
+        "10": 14,
+        "12": 1,
+        "13": 3
+      },
+      "kind": "pieces-equipped",
+      "templateId": "emberfelt-weapon-legendary",
+      "cardId": "soot",
+      "level": 6,
+      "chapter": 1,
+      "beforeWins": 36,
+      "wins": 37,
+      "gainPp": 2
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-charm-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333333333331333333333333333333333",
+      "beforeActions": 2634,
+      "afterActions": 2552,
+      "firstDeathRounds": {
+        "10": 9
+      },
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-charm-common",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 49,
+      "wins": 50,
+      "gainPp": 2
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-charm-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333333333331333333333333333333333",
+      "beforeActions": 2634,
+      "afterActions": 2522,
+      "firstDeathRounds": {
+        "10": 9
+      },
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-charm-epic",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 49,
+      "wins": 50,
+      "gainPp": 2
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-charm-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333333333331333333333333333333333",
+      "beforeActions": 2634,
+      "afterActions": 2513,
+      "firstDeathRounds": {
+        "10": 9
+      },
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-charm-legendary",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 49,
+      "wins": 50,
+      "gainPp": 2
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-charm-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333333333331333333333333333333333",
+      "beforeActions": 2634,
+      "afterActions": 2550,
+      "firstDeathRounds": {
+        "10": 9
+      },
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-charm-rare",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 49,
+      "wins": 50,
+      "gainPp": 2
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-outfit-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333333333331333333333333333333333",
+      "beforeActions": 2590,
+      "afterActions": 2507,
+      "firstDeathRounds": {
+        "10": 7
+      },
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-outfit-common",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 49,
+      "wins": 50,
+      "gainPp": 2
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-outfit-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333333333331333333333333333333333",
+      "beforeActions": 2590,
+      "afterActions": 2525,
+      "firstDeathRounds": {
+        "10": 7
+      },
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-outfit-epic",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 49,
+      "wins": 50,
+      "gainPp": 2
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-outfit-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333333333331333333333333333333333",
+      "beforeActions": 2590,
+      "afterActions": 2529,
+      "firstDeathRounds": {
+        "10": 7
+      },
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-outfit-legendary",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 49,
+      "wins": 50,
+      "gainPp": 2
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-outfit-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333333333331333333333333333333333",
+      "beforeActions": 2590,
+      "afterActions": 2534,
+      "firstDeathRounds": {
+        "10": 7
+      },
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-outfit-rare",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 49,
+      "wins": 50,
+      "gainPp": 2
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-relic-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333333333333333333333333333333333",
+      "beforeActions": 2603,
+      "afterActions": 2578,
+      "firstDeathRounds": {
+        "10": 7
+      },
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-relic-common",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 50,
+      "wins": 50,
+      "gainPp": 0
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-relic-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333333333333333333333333333333333",
+      "beforeActions": 2603,
+      "afterActions": 2539,
+      "firstDeathRounds": {
+        "10": 7
+      },
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-relic-epic",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 50,
+      "wins": 50,
+      "gainPp": 0
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-relic-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333333333333333333333333333333333",
+      "beforeActions": 2603,
+      "afterActions": 2487,
+      "firstDeathRounds": {
+        "10": 7
+      },
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-relic-legendary",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 50,
+      "wins": 50,
+      "gainPp": 0
+    },
+    {
+      "variant": "aware-distributed",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-relic-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333333333333333333333333333333333",
+      "beforeActions": 2603,
+      "afterActions": 2557,
+      "firstDeathRounds": {
+        "10": 7
+      },
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-relic-rare",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 50,
+      "wins": 50,
+      "gainPp": 0
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-charm-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "31113311213333213331111311312123130332323133121331",
+      "beforeActions": 2594,
+      "afterActions": 2661,
+      "firstDeathRounds": {
+        "6": 12,
+        "10": 15,
+        "13": 4,
+        "14": 1
+      },
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-charm-common",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 29,
+      "wins": 42,
+      "gainPp": 26
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-charm-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "31103311312333313331101211312133131333333133131331",
+      "beforeActions": 2594,
+      "afterActions": 2617,
+      "firstDeathRounds": {
+        "6": 12,
+        "10": 15,
+        "13": 4,
+        "14": 1
+      },
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-charm-epic",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 29,
+      "wins": 45,
+      "gainPp": 32
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-charm-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "31113311313333313331111211312133131333333133131331",
+      "beforeActions": 2594,
+      "afterActions": 2552,
+      "firstDeathRounds": {
+        "6": 12,
+        "10": 15,
+        "13": 4,
+        "14": 1
+      },
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-charm-legendary",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 29,
+      "wins": 48,
+      "gainPp": 38
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-charm-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "31113311312333203331101311312123130332333133121330",
+      "beforeActions": 2594,
+      "afterActions": 2631,
+      "firstDeathRounds": {
+        "6": 12,
+        "10": 15,
+        "13": 4,
+        "14": 1
+      },
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-charm-rare",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 29,
+      "wins": 40,
+      "gainPp": 22
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-outfit-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33133311113133233333333333332323132332333133123130",
+      "beforeActions": 2601,
+      "afterActions": 2640,
+      "firstDeathRounds": {
+        "6": 8,
+        "10": 13,
+        "12": 1,
+        "13": 2,
+        "14": 2
+      },
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-outfit-common",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 39,
+      "wins": 43,
+      "gainPp": 8
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-outfit-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33123311112133333333323233332333133333333133133131",
+      "beforeActions": 2601,
+      "afterActions": 2601,
+      "firstDeathRounds": {
+        "6": 8,
+        "10": 13,
+        "12": 1,
+        "13": 2,
+        "14": 2
+      },
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-outfit-epic",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 39,
+      "wins": 45,
+      "gainPp": 12
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-outfit-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33123311113133333333333333332333133333333133133131",
+      "beforeActions": 2601,
+      "afterActions": 2584,
+      "firstDeathRounds": {
+        "6": 8,
+        "10": 13,
+        "12": 1,
+        "13": 2,
+        "14": 2
+      },
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-outfit-legendary",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 39,
+      "wins": 48,
+      "gainPp": 18
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-outfit-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33133311113133333333333333332323132332333133123130",
+      "beforeActions": 2601,
+      "afterActions": 2617,
+      "firstDeathRounds": {
+        "6": 8,
+        "10": 13,
+        "12": 1,
+        "13": 2,
+        "14": 2
+      },
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-outfit-rare",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 39,
+      "wins": 44,
+      "gainPp": 10
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-relic-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33113332333333013333333333332312333331333323303331",
+      "beforeActions": 2711,
+      "afterActions": 2693,
+      "firstDeathRounds": {
+        "6": 1,
+        "10": 23,
+        "13": 2,
+        "14": 1
+      },
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-relic-common",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 42,
+      "wins": 44,
+      "gainPp": 4
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-relic-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33103333332333113333333233332313333331333333313331",
+      "beforeActions": 2711,
+      "afterActions": 2593,
+      "firstDeathRounds": {
+        "6": 1,
+        "10": 23,
+        "13": 2,
+        "14": 1
+      },
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-relic-epic",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 42,
+      "wins": 46,
+      "gainPp": 8
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-relic-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33103333332333113333333233333313333331333333313331",
+      "beforeActions": 2711,
+      "afterActions": 2581,
+      "firstDeathRounds": {
+        "6": 1,
+        "10": 23,
+        "13": 2,
+        "14": 1
+      },
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-relic-legendary",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 42,
+      "wins": 47,
+      "gainPp": 10
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-relic-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33113333333333113333333333333312333331333333213331",
+      "beforeActions": 2711,
+      "afterActions": 2671,
+      "firstDeathRounds": {
+        "6": 1,
+        "10": 23,
+        "13": 2,
+        "14": 1
+      },
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-relic-rare",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 42,
+      "wins": 48,
+      "gainPp": 12
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-charm-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "outcomes": "13130030301000301131000010333003033000310332003010",
+      "beforeActions": 1975,
+      "afterActions": 1942,
+      "firstDeathRounds": {
+        "6": 29,
+        "8": 1,
+        "9": 11,
+        "10": 6
+      },
+      "kind": "pieces-equipped",
+      "templateId": "crumbweave-charm-legendary",
+      "cardId": "soot",
+      "level": 6,
+      "chapter": 1,
+      "beforeWins": 17,
+      "wins": 25,
+      "gainPp": 16
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-relic-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "outcomes": "13030030301000300130000010333203031200330133003000",
+      "beforeActions": 1993,
+      "afterActions": 1951,
+      "firstDeathRounds": {
+        "6": 28,
+        "8": 2,
+        "9": 11,
+        "10": 5
+      },
+      "kind": "pieces-equipped",
+      "templateId": "crumbweave-relic-epic",
+      "cardId": "soot",
+      "level": 6,
+      "chapter": 1,
+      "beforeWins": 18,
+      "wins": 22,
+      "gainPp": 8
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-relic-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "outcomes": "13030030301000300130000010333203031200330133003000",
+      "beforeActions": 1993,
+      "afterActions": 1962,
+      "firstDeathRounds": {
+        "6": 28,
+        "8": 2,
+        "9": 11,
+        "10": 5
+      },
+      "kind": "pieces-equipped",
+      "templateId": "crumbweave-relic-legendary",
+      "cardId": "soot",
+      "level": 6,
+      "chapter": 1,
+      "beforeWins": 18,
+      "wins": 22,
+      "gainPp": 8
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-weapon-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "outcomes": "33030030100000301032202000333203013200320133003002",
+      "beforeActions": 2070,
+      "afterActions": 1974,
+      "firstDeathRounds": {
+        "6": 24,
+        "8": 3,
+        "9": 11,
+        "10": 9
+      },
+      "kind": "pieces-equipped",
+      "templateId": "crumbweave-weapon-epic",
+      "cardId": "soot",
+      "level": 6,
+      "chapter": 1,
+      "beforeWins": 22,
+      "wins": 19,
+      "gainPp": -6
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-weapon-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "outcomes": "33130031101000301133302010333203013200331132103012",
+      "beforeActions": 2070,
+      "afterActions": 1928,
+      "firstDeathRounds": {
+        "6": 24,
+        "8": 3,
+        "9": 11,
+        "10": 9
+      },
+      "kind": "pieces-equipped",
+      "templateId": "crumbweave-weapon-legendary",
+      "cardId": "soot",
+      "level": 6,
+      "chapter": 1,
+      "beforeWins": 22,
+      "wins": 29,
+      "gainPp": 14
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-weapon-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "outcomes": "33030030100000300032202000333303013200330133003002",
+      "beforeActions": 2070,
+      "afterActions": 1969,
+      "firstDeathRounds": {
+        "6": 24,
+        "8": 3,
+        "9": 11,
+        "10": 9
+      },
+      "kind": "pieces-equipped",
+      "templateId": "crumbweave-weapon-rare",
+      "cardId": "soot",
+      "level": 6,
+      "chapter": 1,
+      "beforeWins": 22,
+      "wins": 20,
+      "gainPp": -4
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-weapon-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "outcomes": "10030000303031300030000001300000010200000302321030",
+      "beforeActions": 2272,
+      "afterActions": 2092,
+      "firstDeathRounds": {
+        "6": 28,
+        "9": 6,
+        "10": 14,
+        "12": 2
+      },
+      "kind": "pieces-equipped",
+      "templateId": "emberfelt-weapon-legendary",
+      "cardId": "soot",
+      "level": 6,
+      "chapter": 1,
+      "beforeWins": 13,
+      "wins": 15,
+      "gainPp": 4
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-charm-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "31103323113333233331011131311133210332331131123332",
+      "beforeActions": 2606,
+      "afterActions": 2671,
+      "firstDeathRounds": {
+        "6": 10,
+        "9": 1,
+        "10": 18,
+        "12": 1,
+        "13": 5
+      },
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-charm-common",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 30,
+      "wins": 41,
+      "gainPp": 22
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-charm-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "31113332113333233331111131311133311332331121123332",
+      "beforeActions": 2606,
+      "afterActions": 2658,
+      "firstDeathRounds": {
+        "6": 10,
+        "9": 1,
+        "10": 18,
+        "12": 1,
+        "13": 5
+      },
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-charm-epic",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 30,
+      "wins": 44,
+      "gainPp": 28
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-charm-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "31113333113333333331111131311133311333331131133333",
+      "beforeActions": 2606,
+      "afterActions": 2649,
+      "firstDeathRounds": {
+        "6": 10,
+        "9": 1,
+        "10": 18,
+        "12": 1,
+        "13": 5
+      },
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-charm-legendary",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 30,
+      "wins": 50,
+      "gainPp": 40
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-charm-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "31113323013333233331011131311123310332321131123333",
+      "beforeActions": 2606,
+      "afterActions": 2686,
+      "firstDeathRounds": {
+        "6": 10,
+        "9": 1,
+        "10": 18,
+        "12": 1,
+        "13": 5
+      },
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-charm-rare",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 30,
+      "wins": 41,
+      "gainPp": 22
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-outfit-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "31133311213333033331133331313123112332323133123331",
+      "beforeActions": 2606,
+      "afterActions": 2718,
+      "firstDeathRounds": {
+        "6": 10,
+        "10": 18,
+        "12": 1,
+        "13": 1,
+        "14": 1
+      },
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-outfit-common",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 34,
+      "wins": 43,
+      "gainPp": 18
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-outfit-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "31133311313333033331133331313133113332333123122331",
+      "beforeActions": 2606,
+      "afterActions": 2665,
+      "firstDeathRounds": {
+        "6": 10,
+        "10": 18,
+        "12": 1,
+        "13": 1,
+        "14": 1
+      },
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-outfit-epic",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 34,
+      "wins": 45,
+      "gainPp": 22
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-outfit-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "31133311313323133331133331313133113333333123033331",
+      "beforeActions": 2606,
+      "afterActions": 2639,
+      "firstDeathRounds": {
+        "6": 10,
+        "10": 18,
+        "12": 1,
+        "13": 1,
+        "14": 1
+      },
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-outfit-legendary",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 34,
+      "wins": 47,
+      "gainPp": 26
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-outfit-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "31133311213333033331133331313123112332333133123331",
+      "beforeActions": 2606,
+      "afterActions": 2679,
+      "firstDeathRounds": {
+        "6": 10,
+        "10": 18,
+        "12": 1,
+        "13": 1,
+        "14": 1
+      },
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-outfit-rare",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 34,
+      "wins": 44,
+      "gainPp": 20
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-relic-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33323313033333033331333333313323332330333333123133",
+      "beforeActions": 2721,
+      "afterActions": 2693,
+      "firstDeathRounds": {
+        "6": 3,
+        "10": 17,
+        "12": 1,
+        "13": 2,
+        "14": 1
+      },
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-relic-common",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 42,
+      "wins": 43,
+      "gainPp": 2
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-relic-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33323313133333033331333333313333333330333323123133",
+      "beforeActions": 2721,
+      "afterActions": 2628,
+      "firstDeathRounds": {
+        "6": 3,
+        "10": 17,
+        "12": 1,
+        "13": 2,
+        "14": 1
+      },
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-relic-epic",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 42,
+      "wins": 45,
+      "gainPp": 6
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-relic-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333313133323033331333333313333333331333323123133",
+      "beforeActions": 2721,
+      "afterActions": 2636,
+      "firstDeathRounds": {
+        "6": 3,
+        "10": 17,
+        "12": 1,
+        "13": 2,
+        "14": 1
+      },
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-relic-legendary",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 42,
+      "wins": 46,
+      "gainPp": 8
+    },
+    {
+      "variant": "aware-distributed-110",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-relic-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333313133333133331333333313333333330333323123132",
+      "beforeActions": 2721,
+      "afterActions": 2682,
+      "firstDeathRounds": {
+        "6": 3,
+        "10": 17,
+        "12": 1,
+        "13": 2,
+        "14": 1
+      },
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-relic-rare",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 42,
+      "wins": 46,
+      "gainPp": 8
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-charm-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33331313333333333333313333333332331213131333133323",
+      "beforeActions": 2893,
+      "afterActions": 2813,
+      "firstDeathRounds": {
+        "6": 1,
+        "10": 7,
+        "12": 3,
+        "13": 8,
+        "14": 8
+      },
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-charm-common",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 42,
+      "wins": 47,
+      "gainPp": 10
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-charm-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33331313333333333333303333333333331313121333133333",
+      "beforeActions": 2893,
+      "afterActions": 2758,
+      "firstDeathRounds": {
+        "6": 1,
+        "10": 7,
+        "12": 3,
+        "13": 8,
+        "14": 8
+      },
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-charm-epic",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 42,
+      "wins": 48,
+      "gainPp": 12
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-charm-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33331313333333333333313333333333331313131333133333",
+      "beforeActions": 2893,
+      "afterActions": 2787,
+      "firstDeathRounds": {
+        "6": 1,
+        "10": 7,
+        "12": 3,
+        "13": 8,
+        "14": 8
+      },
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-charm-legendary",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 42,
+      "wins": 50,
+      "gainPp": 16
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-charm-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33331313333333333233313333333333331212131333132333",
+      "beforeActions": 2893,
+      "afterActions": 2820,
+      "firstDeathRounds": {
+        "6": 1,
+        "10": 7,
+        "12": 3,
+        "13": 8,
+        "14": 8
+      },
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-charm-rare",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 42,
+      "wins": 46,
+      "gainPp": 8
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-outfit-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333333333333332333033333333133313",
+      "beforeActions": 2827,
+      "afterActions": 2825,
+      "firstDeathRounds": {
+        "6": 1,
+        "10": 6,
+        "13": 8,
+        "14": 9
+      },
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-outfit-common",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 47,
+      "wins": 48,
+      "gainPp": 2
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-outfit-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333333333333333333133333333133313",
+      "beforeActions": 2827,
+      "afterActions": 2772,
+      "firstDeathRounds": {
+        "6": 1,
+        "10": 6,
+        "13": 8,
+        "14": 9
+      },
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-outfit-epic",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 47,
+      "wins": 50,
+      "gainPp": 6
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-outfit-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333323333333333333133333333133313",
+      "beforeActions": 2827,
+      "afterActions": 2725,
+      "firstDeathRounds": {
+        "6": 1,
+        "10": 6,
+        "13": 8,
+        "14": 9
+      },
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-outfit-legendary",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 47,
+      "wins": 49,
+      "gainPp": 4
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-outfit-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333233333333333333333032333333132313",
+      "beforeActions": 2827,
+      "afterActions": 2798,
+      "firstDeathRounds": {
+        "6": 1,
+        "10": 6,
+        "13": 8,
+        "14": 9
+      },
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-outfit-rare",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 47,
+      "wins": 46,
+      "gainPp": -2
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-relic-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333333333333333333131333333331333",
+      "beforeActions": 2867,
+      "afterActions": 2827,
+      "firstDeathRounds": {
+        "10": 8,
+        "13": 4,
+        "14": 8
+      },
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-relic-common",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 47,
+      "wins": 50,
+      "gainPp": 6
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-relic-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333323333333333333031333333331333",
+      "beforeActions": 2867,
+      "afterActions": 2781,
+      "firstDeathRounds": {
+        "10": 8,
+        "13": 4,
+        "14": 8
+      },
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-relic-epic",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 47,
+      "wins": 48,
+      "gainPp": 2
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-relic-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333323333333333333031333333231333",
+      "beforeActions": 2867,
+      "afterActions": 2789,
+      "firstDeathRounds": {
+        "10": 8,
+        "13": 4,
+        "14": 8
+      },
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-relic-legendary",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 47,
+      "wins": 47,
+      "gainPp": 0
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-relic-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333333333333333333333333333031333333331333",
+      "beforeActions": 2867,
+      "afterActions": 2844,
+      "firstDeathRounds": {
+        "10": 8,
+        "13": 4,
+        "14": 8
+      },
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-relic-rare",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 47,
+      "wins": 49,
+      "gainPp": 4
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-charm-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "outcomes": "33333303320333333030333000323133333330231333023033",
+      "beforeActions": 2242,
+      "afterActions": 2227,
+      "firstDeathRounds": {
+        "6": 9,
+        "9": 16,
+        "10": 15,
+        "12": 1
+      },
+      "kind": "pieces-equipped",
+      "templateId": "crumbweave-charm-legendary",
+      "cardId": "soot",
+      "level": 6,
+      "chapter": 1,
+      "beforeWins": 38,
+      "wins": 36,
+      "gainPp": -4
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-relic-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "outcomes": "33333303300333313030133000333133313330021333013033",
+      "beforeActions": 2414,
+      "afterActions": 2250,
+      "firstDeathRounds": {
+        "6": 7,
+        "9": 13,
+        "10": 18,
+        "12": 3
+      },
+      "kind": "pieces-equipped",
+      "templateId": "crumbweave-relic-epic",
+      "cardId": "soot",
+      "level": 6,
+      "chapter": 1,
+      "beforeWins": 32,
+      "wins": 37,
+      "gainPp": 10
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-relic-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "outcomes": "33333303300333313030133000333133313330031333013033",
+      "beforeActions": 2414,
+      "afterActions": 2269,
+      "firstDeathRounds": {
+        "6": 7,
+        "9": 13,
+        "10": 18,
+        "12": 3
+      },
+      "kind": "pieces-equipped",
+      "templateId": "crumbweave-relic-legendary",
+      "cardId": "soot",
+      "level": 6,
+      "chapter": 1,
+      "beforeWins": 32,
+      "wins": 38,
+      "gainPp": 12
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-weapon-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "outcomes": "33133303300313313230133000333333313130231333033033",
+      "beforeActions": 2463,
+      "afterActions": 2237,
+      "firstDeathRounds": {
+        "6": 5,
+        "9": 15,
+        "10": 20,
+        "12": 3,
+        "13": 2
+      },
+      "kind": "pieces-equipped",
+      "templateId": "crumbweave-weapon-epic",
+      "cardId": "soot",
+      "level": 6,
+      "chapter": 1,
+      "beforeWins": 33,
+      "wins": 38,
+      "gainPp": 10
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-weapon-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "outcomes": "33133313310313313230133000323333313130231333133033",
+      "beforeActions": 2463,
+      "afterActions": 2223,
+      "firstDeathRounds": {
+        "6": 5,
+        "9": 15,
+        "10": 20,
+        "12": 3,
+        "13": 2
+      },
+      "kind": "pieces-equipped",
+      "templateId": "crumbweave-weapon-legendary",
+      "cardId": "soot",
+      "level": 6,
+      "chapter": 1,
+      "beforeWins": 33,
+      "wins": 40,
+      "gainPp": 14
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-weapon-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "outcomes": "33133303300313313230133000333333313130231333023033",
+      "beforeActions": 2463,
+      "afterActions": 2315,
+      "firstDeathRounds": {
+        "6": 5,
+        "9": 15,
+        "10": 20,
+        "12": 3,
+        "13": 2
+      },
+      "kind": "pieces-equipped",
+      "templateId": "crumbweave-weapon-rare",
+      "cardId": "soot",
+      "level": 6,
+      "chapter": 1,
+      "beforeWins": 33,
+      "wins": 37,
+      "gainPp": 8
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-weapon-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "outcomes": "33133311033131330010301003311011313110210131301030",
+      "beforeActions": 2728,
+      "afterActions": 2477,
+      "firstDeathRounds": {
+        "6": 5,
+        "9": 12,
+        "10": 18,
+        "12": 11,
+        "13": 2,
+        "14": 1
+      },
+      "kind": "pieces-equipped",
+      "templateId": "emberfelt-weapon-legendary",
+      "cardId": "soot",
+      "level": 6,
+      "chapter": 1,
+      "beforeWins": 19,
+      "wins": 36,
+      "gainPp": 34
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-charm-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333332333033133333333333333333333213313113031123",
+      "beforeActions": 2992,
+      "afterActions": 2959,
+      "firstDeathRounds": {
+        "9": 1,
+        "10": 7,
+        "12": 4,
+        "13": 14,
+        "14": 10
+      },
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-charm-common",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 41,
+      "wins": 45,
+      "gainPp": 8
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-charm-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333323133133233333333333333333313313113030133",
+      "beforeActions": 2992,
+      "afterActions": 2904,
+      "firstDeathRounds": {
+        "9": 1,
+        "10": 7,
+        "12": 4,
+        "13": 14,
+        "14": 10
+      },
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-charm-epic",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 41,
+      "wins": 46,
+      "gainPp": 10
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-charm-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333133133333323333333333333213313113131133",
+      "beforeActions": 2992,
+      "afterActions": 2865,
+      "firstDeathRounds": {
+        "9": 1,
+        "10": 7,
+        "12": 4,
+        "13": 14,
+        "14": 10
+      },
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-charm-legendary",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 41,
+      "wins": 48,
+      "gainPp": 14
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-charm-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333133133333333333332333333212313113031123",
+      "beforeActions": 2992,
+      "afterActions": 2935,
+      "firstDeathRounds": {
+        "9": 1,
+        "10": 7,
+        "12": 4,
+        "13": 14,
+        "14": 10
+      },
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-charm-rare",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 41,
+      "wins": 45,
+      "gainPp": 8
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-outfit-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333332333133333313313313332333333033333333033323",
+      "beforeActions": 2945,
+      "afterActions": 2911,
+      "firstDeathRounds": {
+        "9": 1,
+        "10": 6,
+        "13": 8,
+        "14": 7,
+        "16": 1
+      },
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-outfit-common",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 44,
+      "wins": 45,
+      "gainPp": 2
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-outfit-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333133333213313313333333333033333333032333",
+      "beforeActions": 2945,
+      "afterActions": 2871,
+      "firstDeathRounds": {
+        "9": 1,
+        "10": 6,
+        "13": 8,
+        "14": 7,
+        "16": 1
+      },
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-outfit-epic",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 44,
+      "wins": 46,
+      "gainPp": 4
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-outfit-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333333333133333313313313333333333033333333033333",
+      "beforeActions": 2945,
+      "afterActions": 2830,
+      "firstDeathRounds": {
+        "9": 1,
+        "10": 6,
+        "13": 8,
+        "14": 7,
+        "16": 1
+      },
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-outfit-legendary",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 44,
+      "wins": 48,
+      "gainPp": 8
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-outfit-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333332333133333313313313332333333032333333033323",
+      "beforeActions": 2945,
+      "afterActions": 2932,
+      "firstDeathRounds": {
+        "9": 1,
+        "10": 6,
+        "13": 8,
+        "14": 7,
+        "16": 1
+      },
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-outfit-rare",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 44,
+      "wins": 44,
+      "gainPp": 0
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-relic-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333330333333333333333333331333333032333333132333",
+      "beforeActions": 2997,
+      "afterActions": 2931,
+      "firstDeathRounds": {
+        "10": 7,
+        "13": 8,
+        "14": 8,
+        "16": 1
+      },
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-relic-common",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 46,
+      "wins": 46,
+      "gainPp": 0
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-relic-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333331333333333333333333331333333033333333032333",
+      "beforeActions": 2997,
+      "afterActions": 2861,
+      "firstDeathRounds": {
+        "10": 7,
+        "13": 8,
+        "14": 8,
+        "16": 1
+      },
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-relic-epic",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 46,
+      "wins": 47,
+      "gainPp": 2
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-relic-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333331333333333233333333331333333133333333133333",
+      "beforeActions": 2997,
+      "afterActions": 2835,
+      "firstDeathRounds": {
+        "10": 7,
+        "13": 8,
+        "14": 8,
+        "16": 1
+      },
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-relic-legendary",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 46,
+      "wins": 49,
+      "gainPp": 6
+    },
+    {
+      "variant": "aware-distributed-115",
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-relic-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "outcomes": "33333331333333333233333333331333333032333333132333",
+      "beforeActions": 2997,
+      "afterActions": 2944,
+      "firstDeathRounds": {
+        "10": 7,
+        "13": 8,
+        "14": 8,
+        "16": 1
+      },
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-relic-rare",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 46,
+      "wins": 46,
+      "gainPp": 0
+    }
+  ],
+  "aggregate": [
+    {
+      "variant": "baseline",
+      "worstPp": 88,
+      "above12": 30,
+      "saturatedBefore": 0,
+      "saturatedAfter": 4,
+      "meanBefore": 0.14193548387096774,
+      "meanAfter": 0.635483870967742
+    },
+    {
+      "variant": "aware-distributed",
+      "worstPp": 6,
+      "above12": 0,
+      "saturatedBefore": 24,
+      "saturatedAfter": 24,
+      "meanBefore": 0.9187096774193548,
+      "meanAfter": 0.9245161290322581
+    },
+    {
+      "variant": "aware-distributed-110",
+      "worstPp": 40,
+      "above12": 15,
+      "saturatedBefore": 0,
+      "saturatedAfter": 4,
+      "meanBefore": 0.6425806451612903,
+      "meanAfter": 0.7916129032258065
+    },
+    {
+      "variant": "aware-distributed-115",
+      "worstPp": 34,
+      "above12": 4,
+      "saturatedBefore": 0,
+      "saturatedAfter": 11,
+      "meanBefore": 0.8309677419354838,
+      "meanAfter": 0.9
+    }
+  ]
+}

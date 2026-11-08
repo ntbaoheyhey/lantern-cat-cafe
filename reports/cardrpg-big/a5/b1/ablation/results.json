@@ -1,0 +1,3078 @@
+{
+  "method": "31 fixed residual twins from A4; only train1–500. Components isolated at BattleSetup boundary; original before/all outcomes verified seed-by-seed against A4 train. No source rule edits, no new acceptance samples. Affix-only uses its marginal production stat deltas and production bonuses; additive reconstruction asserted.",
+  "source": {
+    "packages/game-rules/src/cardrpg/battle.ts": "cf2b02d5cf0d193d7395be8f736e2e4b8dd9cbed6264e37a5d46f2306da393a5",
+    "packages/game-rules/src/cardrpg/catalog.ts": "3a0e7ec530f4d8f4aa5b6bcffc665f6226fb1aafe36b9854c1999b7aedd87145",
+    "packages/game-rules/src/cardrpg/commands.ts": "cb8320136dc7663ced7f2b29b6e107cb1087188e00ef38228d71314d27ca3f7c",
+    "packages/game-rules/src/cardrpg/config.ts": "c3a7f68aac65c19158e3cfe20c0c28ab08b50b0f6da657b2f81bb9db91c088c3",
+    "packages/game-rules/src/cardrpg/contract.ts": "40ffcc72d23ac5ddbf2bf7c3babf48339afcfd7ccf04c0f4c7fed5e3b68d36f0",
+    "packages/game-rules/src/cardrpg/depth/auto-extras/index.ts": "2524db42d4c481b87340d9c0470f99f72b8d418db38a24e5344c0edca35653eb",
+    "packages/game-rules/src/cardrpg/depth/auto-extras/runner.ts": "0fc20f25d2e4523d761700081bd4556cbbe8350ea276e4cf6186e84586a94ee9",
+    "packages/game-rules/src/cardrpg/depth/battle.ts": "7b4ac50d7258546d6700a468efdcb36481e2ccc599907504373d158b11020865",
+    "packages/game-rules/src/cardrpg/depth/boons.ts": "0edbee3debfc189081a89b9d6e3a502a42f8b12b0cd5fcab3219cbe491c5943e",
+    "packages/game-rules/src/cardrpg/depth/bridge.ts": "c3ae46cae953c2421a550a4d2ca370618b7d73b13a0eee8bce644c09d78dcaf4",
+    "packages/game-rules/src/cardrpg/depth/catalog.ts": "1220e3ca2053777cf694a91d75f99d10c1e2522b4896ded689c772fe8d09d8d6",
+    "packages/game-rules/src/cardrpg/depth/contract.ts": "0de99399fcc8924d0f9269a59a9e5c73b81140041dca5082b9ead5bdc06a2c03",
+    "packages/game-rules/src/cardrpg/depth/editions-v4.ts": "dde57882b2d3752b341fa6512ed2909405c80688ba5ba9c95eb05689f9ec4eba",
+    "packages/game-rules/src/cardrpg/depth/equipment-v4.ts": "5b244c29a63ea2a764d17030481f9fb4dd1a53055f893d8cc1f3bf78d36a7ed8",
+    "packages/game-rules/src/cardrpg/depth/equipment.ts": "5b1a98044c772dfad104cf06a137df8ec84263a6e41cf2bd37703aaafe2e6347",
+    "packages/game-rules/src/cardrpg/depth/events-v4.ts": "dbc9faca57e3f62e5fd8e62a262c6cdaa06fc422b3c62db032fcb5b4d0bfb3f2",
+    "packages/game-rules/src/cardrpg/depth/gacha-v4.ts": "1d30e73f193fbc44a708ba467745f0a74385c4d98457a206da30b957cfce71fb",
+    "packages/game-rules/src/cardrpg/depth/gameplay-v4.ts": "06e0ba66203d81586e1500098df4081e0b4f9ce8c3526283b09e8ec575e0a2d0",
+    "packages/game-rules/src/cardrpg/depth/index.ts": "2f37433ab6252777f29044448cfeee82a97c1a946a9ae6c7768f2bbdb2b614e8",
+    "packages/game-rules/src/cardrpg/depth/items-v4.ts": "26b811082f641a212be65167e9396ddaf4bfe3e10bc25037e3e3cb1fadfaf822",
+    "packages/game-rules/src/cardrpg/depth/loadouts-v4.ts": "23b13eaecf5c93ae9950618927484ac06c5e5f3c06c98284567586bc9754c47d",
+    "packages/game-rules/src/cardrpg/depth/meta-v4.ts": "ba4e296020f8b6362f25b20d43b196802ba009fcf3fa347a40a8030cc9ca829e",
+    "packages/game-rules/src/cardrpg/depth/onboarding.ts": "ff6b7b0d1690941e9e5b65c003fe362cd19b44050a9bc75bd2f06f0c56a27d6d",
+    "packages/game-rules/src/cardrpg/depth/pacing-v4.ts": "92357faa9e49cc69795eddd399bfb69c614b61ca4d7c49b5a42a0fcde6d80cbd",
+    "packages/game-rules/src/cardrpg/depth/policies.ts": "f467781a6a689b280bf4b2f76621a90f0547508b541dfabfa776767fcc121f67",
+    "packages/game-rules/src/cardrpg/depth/run-bot.ts": "a6ae62c38c318f36b5043e23b96ccce4cf97789c173579b96e87b95bf61a9753",
+    "packages/game-rules/src/cardrpg/depth/run.ts": "c47820cbd840936a3418657262eb6eb2eae066fec7eadf54d603e8b6415fb07f",
+    "packages/game-rules/src/cardrpg/depth/save.ts": "804d37b49e3b1185871a952036a38a028fa67f65d4218149a32b59f09c855ffc",
+    "packages/game-rules/src/cardrpg/depth/scarcity.ts": "f13fbea286d49d6cff2eb69b7c501bc4284fa0dc07b633a2f99975380db5e461",
+    "packages/game-rules/src/cardrpg/depth/state.ts": "481398eeed6e8040ffa41de5217da77f80897a1bbdb626c83bfea14bd087ed87",
+    "packages/game-rules/src/cardrpg/equipment.ts": "c72b84c5961ea3073eea7ed1fc061f6171329a0982834883e5f34e8a0786f597",
+    "packages/game-rules/src/cardrpg/fixtures/index.ts": "0627a3f89483eee71ff5ccedc2df355cd6530f38ffa0b8e1682720698dc29390",
+    "packages/game-rules/src/cardrpg/gacha.ts": "ace3b76900607785f8a26dc95619bc4411e5cd79491075c37503bf10efa9e09a",
+    "packages/game-rules/src/cardrpg/index.ts": "06d7a8244835dc11ed7908101a312b5b94ec0329924bc4230c671b001725934b",
+    "packages/game-rules/src/cardrpg/internal.ts": "a881bd313e3a1b0401ec08929a92025fc5de54bfe7c5f05c86a150b6e0f23704",
+    "packages/game-rules/src/cardrpg/progression.ts": "dd2afa830bc2ef3328d6dc2e94f21cabc89c1cfc36ae1bec64b9753de485118e",
+    "packages/game-rules/src/cardrpg/state.ts": "09da5dd6df7a88da66a0e2ba842dc3f66b1c5d708bc38cd585085bbfea45d0ea",
+    "packages/game-rules/src/rng.ts": "294a2a0149a7e89cb9b9b6bbf237b11daecd645a49760b8b2c415bfbc2884270"
+  },
+  "count": 500,
+  "keys": [
+    "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-charm-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+    "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-charm-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+    "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-charm-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+    "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-charm-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+    "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-outfit-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+    "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-outfit-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+    "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-outfit-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+    "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-outfit-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+    "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-relic-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+    "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-relic-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+    "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-relic-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+    "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-relic-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+    "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-charm-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+    "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-relic-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+    "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-relic-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+    "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-weapon-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+    "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-weapon-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+    "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-weapon-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+    "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-weapon-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+    "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-charm-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+    "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-charm-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+    "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-charm-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+    "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-charm-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+    "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-outfit-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+    "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-outfit-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+    "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-outfit-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+    "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-outfit-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+    "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-relic-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+    "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-relic-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+    "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-relic-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+    "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-relic-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}"
+  ],
+  "variants": [
+    "none",
+    "main",
+    "affixes",
+    "unique",
+    "set4",
+    "all"
+  ],
+  "summaries": [
+    {
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-charm-common",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 35,
+      "meanShare": 0.014562135544631994,
+      "components": {
+        "none": {
+          "wins": 35,
+          "n": 500,
+          "rate": 0.07,
+          "gainPp": 0,
+          "wilson95": [
+            0.05075944317125315,
+            0.09579772876532376
+          ],
+          "digest": "3f774ba8a28962007125618b70f40792cc70f11a26d9b42d2f1522a3674c24da"
+        },
+        "main": {
+          "wins": 262,
+          "n": 500,
+          "rate": 0.524,
+          "gainPp": 45.4,
+          "wilson95": [
+            0.4802074191766619,
+            0.5674265991338547
+          ],
+          "digest": "eacd3d431ff89665a142862dac57e6496dd53515da65148611195e049e48abb1"
+        },
+        "affixes": {
+          "wins": 35,
+          "n": 500,
+          "rate": 0.07,
+          "gainPp": 0,
+          "wilson95": [
+            0.05075944317125315,
+            0.09579772876532376
+          ],
+          "digest": "3f774ba8a28962007125618b70f40792cc70f11a26d9b42d2f1522a3674c24da"
+        },
+        "unique": {
+          "wins": 35,
+          "n": 500,
+          "rate": 0.07,
+          "gainPp": 0,
+          "wilson95": [
+            0.05075944317125315,
+            0.09579772876532376
+          ],
+          "digest": "3f774ba8a28962007125618b70f40792cc70f11a26d9b42d2f1522a3674c24da"
+        },
+        "set4": {
+          "wins": 35,
+          "n": 500,
+          "rate": 0.07,
+          "gainPp": 0,
+          "wilson95": [
+            0.05075944317125315,
+            0.09579772876532376
+          ],
+          "digest": "3f774ba8a28962007125618b70f40792cc70f11a26d9b42d2f1522a3674c24da"
+        },
+        "all": {
+          "wins": 262,
+          "n": 500,
+          "rate": 0.524,
+          "gainPp": 45.4,
+          "wilson95": [
+            0.4802074191766619,
+            0.5674265991338547
+          ],
+          "digest": "eacd3d431ff89665a142862dac57e6496dd53515da65148611195e049e48abb1"
+        }
+      }
+    },
+    {
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-charm-epic",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 35,
+      "meanShare": 0.023897676220982468,
+      "components": {
+        "none": {
+          "wins": 35,
+          "n": 500,
+          "rate": 0.07,
+          "gainPp": 0,
+          "wilson95": [
+            0.05075944317125315,
+            0.09579772876532376
+          ],
+          "digest": "3f774ba8a28962007125618b70f40792cc70f11a26d9b42d2f1522a3674c24da"
+        },
+        "main": {
+          "wins": 395,
+          "n": 500,
+          "rate": 0.79,
+          "gainPp": 72,
+          "wilson95": [
+            0.7521544200999409,
+            0.8234233011521351
+          ],
+          "digest": "bd9452008b45a3f6472e54c748e26267d23bbbad027b782b15c2fe0684b05c09"
+        },
+        "affixes": {
+          "wins": 156,
+          "n": 500,
+          "rate": 0.312,
+          "gainPp": 24.2,
+          "wilson95": [
+            0.27295226189727373,
+            0.3539145946703459
+          ],
+          "digest": "36e5251a0d62750080f9d6399067e57dc8d76ce6ec4b772aa9915883179524a9"
+        },
+        "unique": {
+          "wins": 35,
+          "n": 500,
+          "rate": 0.07,
+          "gainPp": 0,
+          "wilson95": [
+            0.05075944317125315,
+            0.09579772876532376
+          ],
+          "digest": "3f774ba8a28962007125618b70f40792cc70f11a26d9b42d2f1522a3674c24da"
+        },
+        "set4": {
+          "wins": 35,
+          "n": 500,
+          "rate": 0.07,
+          "gainPp": 0,
+          "wilson95": [
+            0.05075944317125315,
+            0.09579772876532376
+          ],
+          "digest": "3f774ba8a28962007125618b70f40792cc70f11a26d9b42d2f1522a3674c24da"
+        },
+        "all": {
+          "wins": 486,
+          "n": 500,
+          "rate": 0.972,
+          "gainPp": 90.2,
+          "wilson95": [
+            0.9535531794154484,
+            0.9832491806913788
+          ],
+          "digest": "b9cb2cd1b0c07300140845e6c0d25418efe2dc489de723c47fc4107fa956bbf8"
+        }
+      }
+    },
+    {
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-charm-legendary",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 35,
+      "meanShare": 0.02795280702850842,
+      "components": {
+        "none": {
+          "wins": 35,
+          "n": 500,
+          "rate": 0.07,
+          "gainPp": 0,
+          "wilson95": [
+            0.05075944317125315,
+            0.09579772876532376
+          ],
+          "digest": "3f774ba8a28962007125618b70f40792cc70f11a26d9b42d2f1522a3674c24da"
+        },
+        "main": {
+          "wins": 438,
+          "n": 500,
+          "rate": 0.876,
+          "gainPp": 80.6,
+          "wilson95": [
+            0.8442119499943469,
+            0.9020543368704138
+          ],
+          "digest": "5fa0334a9b9decd5f958cdc5ccec178b7db4a29e5b59290880436280a4bee509"
+        },
+        "affixes": {
+          "wins": 156,
+          "n": 500,
+          "rate": 0.312,
+          "gainPp": 24.2,
+          "wilson95": [
+            0.27295226189727373,
+            0.3539145946703459
+          ],
+          "digest": "36e5251a0d62750080f9d6399067e57dc8d76ce6ec4b772aa9915883179524a9"
+        },
+        "unique": {
+          "wins": 36,
+          "n": 500,
+          "rate": 0.072,
+          "gainPp": 0.2,
+          "wilson95": [
+            0.05245772605354006,
+            0.09806894740891321
+          ],
+          "digest": "cd8d4bc29151fa43e3612fd31018c655339228679084cc5adefcc4f942502c4c"
+        },
+        "set4": {
+          "wins": 35,
+          "n": 500,
+          "rate": 0.07,
+          "gainPp": 0,
+          "wilson95": [
+            0.05075944317125315,
+            0.09579772876532376
+          ],
+          "digest": "3f774ba8a28962007125618b70f40792cc70f11a26d9b42d2f1522a3674c24da"
+        },
+        "all": {
+          "wins": 493,
+          "n": 500,
+          "rate": 0.986,
+          "gainPp": 91.6,
+          "wilson95": [
+            0.9713865738597492,
+            0.9932022969282127
+          ],
+          "digest": "b99df43fbd85fb9baede644d193bd64ae4a3c911c67a7df56d6cebd5fa491f11"
+        }
+      }
+    },
+    {
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-charm-rare",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 35,
+      "meanShare": 0.01761966631785826,
+      "components": {
+        "none": {
+          "wins": 35,
+          "n": 500,
+          "rate": 0.07,
+          "gainPp": 0,
+          "wilson95": [
+            0.05075944317125315,
+            0.09579772876532376
+          ],
+          "digest": "3f774ba8a28962007125618b70f40792cc70f11a26d9b42d2f1522a3674c24da"
+        },
+        "main": {
+          "wins": 334,
+          "n": 500,
+          "rate": 0.668,
+          "gainPp": 59.8,
+          "wilson95": [
+            0.6255778658042676,
+            0.707860262369349
+          ],
+          "digest": "e602e612980c7c4dc1d189d9efb43fa5403c7138f5c8a2a7be6aa65c279b4d39"
+        },
+        "affixes": {
+          "wins": 50,
+          "n": 500,
+          "rate": 0.1,
+          "gainPp": 3,
+          "wilson95": [
+            0.07667718662472012,
+            0.1294225082000026
+          ],
+          "digest": "d4afd84453124150d2a5d8e12a0af84b280b8eee16de797ef37572100a115ecd"
+        },
+        "unique": {
+          "wins": 35,
+          "n": 500,
+          "rate": 0.07,
+          "gainPp": 0,
+          "wilson95": [
+            0.05075944317125315,
+            0.09579772876532376
+          ],
+          "digest": "3f774ba8a28962007125618b70f40792cc70f11a26d9b42d2f1522a3674c24da"
+        },
+        "set4": {
+          "wins": 35,
+          "n": 500,
+          "rate": 0.07,
+          "gainPp": 0,
+          "wilson95": [
+            0.05075944317125315,
+            0.09579772876532376
+          ],
+          "digest": "3f774ba8a28962007125618b70f40792cc70f11a26d9b42d2f1522a3674c24da"
+        },
+        "all": {
+          "wins": 377,
+          "n": 500,
+          "rate": 0.754,
+          "gainPp": 68.4,
+          "wilson95": [
+            0.7144070676180768,
+            0.7897196261682243
+          ],
+          "digest": "c8e4189aefd8d81cd6656f84db0f77665add0a16049631e80dee1892f9088011"
+        }
+      }
+    },
+    {
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-outfit-common",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 81,
+      "meanShare": 0.014689573298226769,
+      "components": {
+        "none": {
+          "wins": 81,
+          "n": 500,
+          "rate": 0.162,
+          "gainPp": 0,
+          "wilson95": [
+            0.13230129007093688,
+            0.19685295205595382
+          ],
+          "digest": "db6212cad0a841c35f6328ae2bba7440123dd140506d4dfafb1b8b5b996bb1c3"
+        },
+        "main": {
+          "wins": 278,
+          "n": 500,
+          "rate": 0.556,
+          "gainPp": 39.4,
+          "wilson95": [
+            0.5121860862346299,
+            0.5989599564899091
+          ],
+          "digest": "fdeabf6c0337c7d06978a8bba17f40f65c0fef687944be98eed0ffec61dedcb2"
+        },
+        "affixes": {
+          "wins": 81,
+          "n": 500,
+          "rate": 0.162,
+          "gainPp": 0,
+          "wilson95": [
+            0.13230129007093688,
+            0.19685295205595382
+          ],
+          "digest": "db6212cad0a841c35f6328ae2bba7440123dd140506d4dfafb1b8b5b996bb1c3"
+        },
+        "unique": {
+          "wins": 81,
+          "n": 500,
+          "rate": 0.162,
+          "gainPp": 0,
+          "wilson95": [
+            0.13230129007093688,
+            0.19685295205595382
+          ],
+          "digest": "db6212cad0a841c35f6328ae2bba7440123dd140506d4dfafb1b8b5b996bb1c3"
+        },
+        "set4": {
+          "wins": 81,
+          "n": 500,
+          "rate": 0.162,
+          "gainPp": 0,
+          "wilson95": [
+            0.13230129007093688,
+            0.19685295205595382
+          ],
+          "digest": "db6212cad0a841c35f6328ae2bba7440123dd140506d4dfafb1b8b5b996bb1c3"
+        },
+        "all": {
+          "wins": 278,
+          "n": 500,
+          "rate": 0.556,
+          "gainPp": 39.4,
+          "wilson95": [
+            0.5121860862346299,
+            0.5989599564899091
+          ],
+          "digest": "fdeabf6c0337c7d06978a8bba17f40f65c0fef687944be98eed0ffec61dedcb2"
+        }
+      }
+    },
+    {
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-outfit-epic",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 81,
+      "meanShare": 0.02468238169244672,
+      "components": {
+        "none": {
+          "wins": 81,
+          "n": 500,
+          "rate": 0.162,
+          "gainPp": 0,
+          "wilson95": [
+            0.13230129007093688,
+            0.19685295205595382
+          ],
+          "digest": "db6212cad0a841c35f6328ae2bba7440123dd140506d4dfafb1b8b5b996bb1c3"
+        },
+        "main": {
+          "wins": 391,
+          "n": 500,
+          "rate": 0.782,
+          "gainPp": 62,
+          "wilson95": [
+            0.7437328590676937,
+            0.8159668560808768
+          ],
+          "digest": "27452261e6292223c3f94011a93ec6987f389f66afd3eb8870a9a9e6a66da1be"
+        },
+        "affixes": {
+          "wins": 275,
+          "n": 500,
+          "rate": 0.55,
+          "gainPp": 38.8,
+          "wilson95": [
+            0.5061764115934799,
+            0.5930611265534298
+          ],
+          "digest": "c12b92784649305642e94f5868defe163c4cb5949deb15d5cd6ac3af9d69e265"
+        },
+        "unique": {
+          "wins": 81,
+          "n": 500,
+          "rate": 0.162,
+          "gainPp": 0,
+          "wilson95": [
+            0.13230129007093688,
+            0.19685295205595382
+          ],
+          "digest": "db6212cad0a841c35f6328ae2bba7440123dd140506d4dfafb1b8b5b996bb1c3"
+        },
+        "set4": {
+          "wins": 81,
+          "n": 500,
+          "rate": 0.162,
+          "gainPp": 0,
+          "wilson95": [
+            0.13230129007093688,
+            0.19685295205595382
+          ],
+          "digest": "db6212cad0a841c35f6328ae2bba7440123dd140506d4dfafb1b8b5b996bb1c3"
+        },
+        "all": {
+          "wins": 481,
+          "n": 500,
+          "rate": 0.962,
+          "gainPp": 80,
+          "wilson95": [
+            0.9414147746007343,
+            0.9755400778767108
+          ],
+          "digest": "9c49da552d65e500a0977dbea35dff1343dfb40b0f303d9f1ed674bae06ef8bf"
+        }
+      }
+    },
+    {
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-outfit-legendary",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 81,
+      "meanShare": 0.03010331986098043,
+      "components": {
+        "none": {
+          "wins": 81,
+          "n": 500,
+          "rate": 0.162,
+          "gainPp": 0,
+          "wilson95": [
+            0.13230129007093688,
+            0.19685295205595382
+          ],
+          "digest": "db6212cad0a841c35f6328ae2bba7440123dd140506d4dfafb1b8b5b996bb1c3"
+        },
+        "main": {
+          "wins": 426,
+          "n": 500,
+          "rate": 0.852,
+          "gainPp": 69,
+          "wilson95": [
+            0.818193200072725,
+            0.8804390684815191
+          ],
+          "digest": "5af939f6a81f64f7ff879f705dd14603c540decebabe2caa36b988c1c4a9274f"
+        },
+        "affixes": {
+          "wins": 272,
+          "n": 500,
+          "rate": 0.544,
+          "gainPp": 38.2,
+          "wilson95": [
+            0.5001730702665284,
+            0.5871559633027523
+          ],
+          "digest": "f12caa2b65be35953870a77ea885bd25ae9b148df599ae914fa3eeb5e2b82300"
+        },
+        "unique": {
+          "wins": 143,
+          "n": 500,
+          "rate": 0.286,
+          "gainPp": 12.4,
+          "wilson95": [
+            0.24813939134668292,
+            0.3271239453845436
+          ],
+          "digest": "7893805e958a7669b536ab8eaefdf8f31850c4ed23cbe6fe6552cc60f14749c9"
+        },
+        "set4": {
+          "wins": 81,
+          "n": 500,
+          "rate": 0.162,
+          "gainPp": 0,
+          "wilson95": [
+            0.13230129007093688,
+            0.19685295205595382
+          ],
+          "digest": "db6212cad0a841c35f6328ae2bba7440123dd140506d4dfafb1b8b5b996bb1c3"
+        },
+        "all": {
+          "wins": 495,
+          "n": 500,
+          "rate": 0.99,
+          "gainPp": 82.8,
+          "wilson95": [
+            0.976806564621235,
+            0.9957213092184797
+          ],
+          "digest": "da728a4a4c5702d60d9c8dbe8da83ffa235ec8981398607389ac848e451d602c"
+        }
+      }
+    },
+    {
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-outfit-rare",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 81,
+      "meanShare": 0.017987072277481485,
+      "components": {
+        "none": {
+          "wins": 81,
+          "n": 500,
+          "rate": 0.162,
+          "gainPp": 0,
+          "wilson95": [
+            0.13230129007093688,
+            0.19685295205595382
+          ],
+          "digest": "db6212cad0a841c35f6328ae2bba7440123dd140506d4dfafb1b8b5b996bb1c3"
+        },
+        "main": {
+          "wins": 329,
+          "n": 500,
+          "rate": 0.658,
+          "gainPp": 49.6,
+          "wilson95": [
+            0.6153554148443917,
+            0.698235205699843
+          ],
+          "digest": "c22c161938e485ff39b8143fe9132a11f3cfc376edfa3b72335633d10aa4b797"
+        },
+        "affixes": {
+          "wins": 107,
+          "n": 500,
+          "rate": 0.214,
+          "gainPp": 5.2,
+          "wilson95": [
+            0.18030242285453799,
+            0.25205885894513874
+          ],
+          "digest": "80b34d9cd588adb696977aa87906f05683e88e1648b7fc05b5c626c952d413af"
+        },
+        "unique": {
+          "wins": 81,
+          "n": 500,
+          "rate": 0.162,
+          "gainPp": 0,
+          "wilson95": [
+            0.13230129007093688,
+            0.19685295205595382
+          ],
+          "digest": "db6212cad0a841c35f6328ae2bba7440123dd140506d4dfafb1b8b5b996bb1c3"
+        },
+        "set4": {
+          "wins": 81,
+          "n": 500,
+          "rate": 0.162,
+          "gainPp": 0,
+          "wilson95": [
+            0.13230129007093688,
+            0.19685295205595382
+          ],
+          "digest": "db6212cad0a841c35f6328ae2bba7440123dd140506d4dfafb1b8b5b996bb1c3"
+        },
+        "all": {
+          "wins": 378,
+          "n": 500,
+          "rate": 0.756,
+          "gainPp": 59.4,
+          "wilson95": [
+            0.7164944353121212,
+            0.7916017600000562
+          ],
+          "digest": "3ee8f40fdafa59085a36b55c2e00d83ba9adfe8bf31027e804b6901b9bdc4066"
+        }
+      }
+    },
+    {
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-relic-common",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 202,
+      "meanShare": 0.014723835941681827,
+      "components": {
+        "none": {
+          "wins": 202,
+          "n": 500,
+          "rate": 0.404,
+          "gainPp": 0,
+          "wilson95": [
+            0.3618784697205358,
+            0.44758545703739777
+          ],
+          "digest": "769b0c88b40fb9a68e0a654c9ecd44d99312dcdede157eaec7965c51a77354fe"
+        },
+        "main": {
+          "wins": 426,
+          "n": 500,
+          "rate": 0.852,
+          "gainPp": 44.8,
+          "wilson95": [
+            0.818193200072725,
+            0.8804390684815191
+          ],
+          "digest": "163aa28070884f9f772c3c9db6d4d768a2e1d391b63773f422a68a5c518938aa"
+        },
+        "affixes": {
+          "wins": 202,
+          "n": 500,
+          "rate": 0.404,
+          "gainPp": 0,
+          "wilson95": [
+            0.3618784697205358,
+            0.44758545703739777
+          ],
+          "digest": "769b0c88b40fb9a68e0a654c9ecd44d99312dcdede157eaec7965c51a77354fe"
+        },
+        "unique": {
+          "wins": 202,
+          "n": 500,
+          "rate": 0.404,
+          "gainPp": 0,
+          "wilson95": [
+            0.3618784697205358,
+            0.44758545703739777
+          ],
+          "digest": "769b0c88b40fb9a68e0a654c9ecd44d99312dcdede157eaec7965c51a77354fe"
+        },
+        "set4": {
+          "wins": 202,
+          "n": 500,
+          "rate": 0.404,
+          "gainPp": 0,
+          "wilson95": [
+            0.3618784697205358,
+            0.44758545703739777
+          ],
+          "digest": "769b0c88b40fb9a68e0a654c9ecd44d99312dcdede157eaec7965c51a77354fe"
+        },
+        "all": {
+          "wins": 426,
+          "n": 500,
+          "rate": 0.852,
+          "gainPp": 44.8,
+          "wilson95": [
+            0.818193200072725,
+            0.8804390684815191
+          ],
+          "digest": "163aa28070884f9f772c3c9db6d4d768a2e1d391b63773f422a68a5c518938aa"
+        }
+      }
+    },
+    {
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-relic-epic",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 202,
+      "meanShare": 0.027118368434173395,
+      "components": {
+        "none": {
+          "wins": 202,
+          "n": 500,
+          "rate": 0.404,
+          "gainPp": 0,
+          "wilson95": [
+            0.3618784697205358,
+            0.44758545703739777
+          ],
+          "digest": "769b0c88b40fb9a68e0a654c9ecd44d99312dcdede157eaec7965c51a77354fe"
+        },
+        "main": {
+          "wins": 471,
+          "n": 500,
+          "rate": 0.942,
+          "gainPp": 53.8,
+          "wilson95": [
+            0.9179433020026042,
+            0.9593165352160771
+          ],
+          "digest": "fe3b256b341d4371f1f39a583eace5c2680bf9115a0c331f65f537010cbf15b2"
+        },
+        "affixes": {
+          "wins": 279,
+          "n": 500,
+          "rate": 0.558,
+          "gainPp": 15.4,
+          "wilson95": [
+            0.5141907226350576,
+            0.6009248216153577
+          ],
+          "digest": "2a61fac9fff2b59ec1817ac38760d9ef12deb8f47900ffd883708f4b2bce5a8d"
+        },
+        "unique": {
+          "wins": 202,
+          "n": 500,
+          "rate": 0.404,
+          "gainPp": 0,
+          "wilson95": [
+            0.3618784697205358,
+            0.44758545703739777
+          ],
+          "digest": "769b0c88b40fb9a68e0a654c9ecd44d99312dcdede157eaec7965c51a77354fe"
+        },
+        "set4": {
+          "wins": 202,
+          "n": 500,
+          "rate": 0.404,
+          "gainPp": 0,
+          "wilson95": [
+            0.3618784697205358,
+            0.44758545703739777
+          ],
+          "digest": "769b0c88b40fb9a68e0a654c9ecd44d99312dcdede157eaec7965c51a77354fe"
+        },
+        "all": {
+          "wins": 486,
+          "n": 500,
+          "rate": 0.972,
+          "gainPp": 56.8,
+          "wilson95": [
+            0.9535531794154484,
+            0.9832491806913788
+          ],
+          "digest": "ed74f2e378ca6d4fb39d716076d1710d05cf95decbf5a284d53334ec1d5c5e0d"
+        }
+      }
+    },
+    {
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-relic-legendary",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 202,
+      "meanShare": 0.030696254173910857,
+      "components": {
+        "none": {
+          "wins": 202,
+          "n": 500,
+          "rate": 0.404,
+          "gainPp": 0,
+          "wilson95": [
+            0.3618784697205358,
+            0.44758545703739777
+          ],
+          "digest": "769b0c88b40fb9a68e0a654c9ecd44d99312dcdede157eaec7965c51a77354fe"
+        },
+        "main": {
+          "wins": 484,
+          "n": 500,
+          "rate": 0.968,
+          "gainPp": 56.4,
+          "wilson95": [
+            0.9486546984063574,
+            0.980208658648717
+          ],
+          "digest": "809e288c68717048479fe5ffcbfb252e16e691670107b2bd6feef1d85d10d7f1"
+        },
+        "affixes": {
+          "wins": 275,
+          "n": 500,
+          "rate": 0.55,
+          "gainPp": 14.6,
+          "wilson95": [
+            0.5061764115934799,
+            0.5930611265534298
+          ],
+          "digest": "330be6434f5fc327e1aa2a134616c0f8bf4a3a55e392c3f059c3b2d69b013b6e"
+        },
+        "unique": {
+          "wins": 202,
+          "n": 500,
+          "rate": 0.404,
+          "gainPp": 0,
+          "wilson95": [
+            0.3618784697205358,
+            0.44758545703739777
+          ],
+          "digest": "769b0c88b40fb9a68e0a654c9ecd44d99312dcdede157eaec7965c51a77354fe"
+        },
+        "set4": {
+          "wins": 202,
+          "n": 500,
+          "rate": 0.404,
+          "gainPp": 0,
+          "wilson95": [
+            0.3618784697205358,
+            0.44758545703739777
+          ],
+          "digest": "769b0c88b40fb9a68e0a654c9ecd44d99312dcdede157eaec7965c51a77354fe"
+        },
+        "all": {
+          "wins": 493,
+          "n": 500,
+          "rate": 0.986,
+          "gainPp": 58.2,
+          "wilson95": [
+            0.9713865738597492,
+            0.9932022969282127
+          ],
+          "digest": "b2deba1ca0d81c5dc7164368b4140b541b6ad8f22f541866b151c9f54125ed01"
+        }
+      }
+    },
+    {
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-relic-rare",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 202,
+      "meanShare": 0.018030085770803617,
+      "components": {
+        "none": {
+          "wins": 202,
+          "n": 500,
+          "rate": 0.404,
+          "gainPp": 0,
+          "wilson95": [
+            0.3618784697205358,
+            0.44758545703739777
+          ],
+          "digest": "769b0c88b40fb9a68e0a654c9ecd44d99312dcdede157eaec7965c51a77354fe"
+        },
+        "main": {
+          "wins": 452,
+          "n": 500,
+          "rate": 0.904,
+          "gainPp": 50,
+          "wilson95": [
+            0.8750124461326017,
+            0.9268268620944284
+          ],
+          "digest": "c7bee0a1b8edb56ec599e30f60552bfa645c9a3dd73f53eecb4885dfae52516b"
+        },
+        "affixes": {
+          "wins": 252,
+          "n": 500,
+          "rate": 0.504,
+          "gainPp": 10,
+          "wilson95": [
+            0.4603113571655595,
+            0.5476276458861933
+          ],
+          "digest": "9f5a0820bb4f3a5137eefc4287c05a27f8a2845740ff4b857dcef49dac6109f9"
+        },
+        "unique": {
+          "wins": 202,
+          "n": 500,
+          "rate": 0.404,
+          "gainPp": 0,
+          "wilson95": [
+            0.3618784697205358,
+            0.44758545703739777
+          ],
+          "digest": "769b0c88b40fb9a68e0a654c9ecd44d99312dcdede157eaec7965c51a77354fe"
+        },
+        "set4": {
+          "wins": 202,
+          "n": 500,
+          "rate": 0.404,
+          "gainPp": 0,
+          "wilson95": [
+            0.3618784697205358,
+            0.44758545703739777
+          ],
+          "digest": "769b0c88b40fb9a68e0a654c9ecd44d99312dcdede157eaec7965c51a77354fe"
+        },
+        "all": {
+          "wins": 466,
+          "n": 500,
+          "rate": 0.932,
+          "gainPp": 52.8,
+          "wilson95": [
+            0.9064785429161282,
+            0.9509337866731715
+          ],
+          "digest": "1ab5071ac8da52679d0907285c7ccb4af059966c8c569d10430bb826b9632007"
+        }
+      }
+    },
+    {
+      "kind": "pieces-equipped",
+      "templateId": "crumbweave-charm-legendary",
+      "cardId": "soot",
+      "level": 6,
+      "chapter": 1,
+      "beforeWins": 152,
+      "meanShare": 0.019003019585472954,
+      "components": {
+        "none": {
+          "wins": 152,
+          "n": 500,
+          "rate": 0.304,
+          "gainPp": 0,
+          "wilson95": [
+            0.2653013836201453,
+            0.3456874668439688
+          ],
+          "digest": "28d406603c7c5f26afd38e7be1273c9c7a4e5b731ea013eb6866d7e0ea5e4256"
+        },
+        "main": {
+          "wins": 177,
+          "n": 500,
+          "rate": 0.354,
+          "gainPp": 5,
+          "wilson95": [
+            0.31334158354314207,
+            0.39688480506788165
+          ],
+          "digest": "b6fe18d689fcbe55237614fe3468f90a88d932810137eb19759bf8c064f05721"
+        },
+        "affixes": {
+          "wins": 219,
+          "n": 500,
+          "rate": 0.438,
+          "gainPp": 13.4,
+          "wilson95": [
+            0.39514757119288674,
+            0.48179788150494524
+          ],
+          "digest": "1d8e3641f403758f7ebcd114e9000f3428462635fd597a5676ff69abdfce7c77"
+        },
+        "unique": {
+          "wins": 152,
+          "n": 500,
+          "rate": 0.304,
+          "gainPp": 0,
+          "wilson95": [
+            0.2653013836201453,
+            0.3456874668439688
+          ],
+          "digest": "28d406603c7c5f26afd38e7be1273c9c7a4e5b731ea013eb6866d7e0ea5e4256"
+        },
+        "set4": {
+          "wins": 172,
+          "n": 500,
+          "rate": 0.344,
+          "gainPp": 4,
+          "wilson95": [
+            0.3036922516120669,
+            0.3866866293695749
+          ],
+          "digest": "8aa7b02c32f7c70a0067453ec051028f6e6c8b67d94db778d414d2a143e61da3"
+        },
+        "all": {
+          "wins": 243,
+          "n": 500,
+          "rate": 0.486,
+          "gainPp": 18.2,
+          "wilson95": [
+            0.4424642011735621,
+            0.5297492881453032
+          ],
+          "digest": "b302071997041a77a639dd79d48eae17e4fed2de32c49f3c424437c2d6d0e506"
+        }
+      }
+    },
+    {
+      "kind": "pieces-equipped",
+      "templateId": "crumbweave-relic-epic",
+      "cardId": "soot",
+      "level": 6,
+      "chapter": 1,
+      "beforeWins": 90,
+      "meanShare": 0.014696580751374158,
+      "components": {
+        "none": {
+          "wins": 90,
+          "n": 500,
+          "rate": 0.18,
+          "gainPp": 0,
+          "wilson95": [
+            0.14880438031986262,
+            0.21607537553991554
+          ],
+          "digest": "04e45298077646f7bb77afb72d39892dad3cfc838e3c2b106067d053435866b6"
+        },
+        "main": {
+          "wins": 99,
+          "n": 500,
+          "rate": 0.198,
+          "gainPp": 1.8,
+          "wilson95": [
+            0.16543056787682525,
+            0.23517470171584037
+          ],
+          "digest": "c96875605b05249e60fff03980866f34f9ae90451d1717786a479decc237ec58"
+        },
+        "affixes": {
+          "wins": 152,
+          "n": 500,
+          "rate": 0.304,
+          "gainPp": 12.4,
+          "wilson95": [
+            0.2653013836201453,
+            0.3456874668439688
+          ],
+          "digest": "1f249691abd3df38b4f6253400004b8f4ee2d7d5bade35af3e32914e15adb904"
+        },
+        "unique": {
+          "wins": 90,
+          "n": 500,
+          "rate": 0.18,
+          "gainPp": 0,
+          "wilson95": [
+            0.14880438031986262,
+            0.21607537553991554
+          ],
+          "digest": "04e45298077646f7bb77afb72d39892dad3cfc838e3c2b106067d053435866b6"
+        },
+        "set4": {
+          "wins": 99,
+          "n": 500,
+          "rate": 0.198,
+          "gainPp": 1.8,
+          "wilson95": [
+            0.16543056787682525,
+            0.23517470171584037
+          ],
+          "digest": "c96875605b05249e60fff03980866f34f9ae90451d1717786a479decc237ec58"
+        },
+        "all": {
+          "wins": 175,
+          "n": 500,
+          "rate": 0.35,
+          "gainPp": 17,
+          "wilson95": [
+            0.3094794545296122,
+            0.3928079310296588
+          ],
+          "digest": "595bbfb592588b7bed1672a5f10a9d2d186f2d3645fbcfbfac47ac1c3c7ed9b7"
+        }
+      }
+    },
+    {
+      "kind": "pieces-equipped",
+      "templateId": "crumbweave-relic-legendary",
+      "cardId": "soot",
+      "level": 6,
+      "chapter": 1,
+      "beforeWins": 90,
+      "meanShare": 0.020325532985497996,
+      "components": {
+        "none": {
+          "wins": 90,
+          "n": 500,
+          "rate": 0.18,
+          "gainPp": 0,
+          "wilson95": [
+            0.14880438031986262,
+            0.21607537553991554
+          ],
+          "digest": "04e45298077646f7bb77afb72d39892dad3cfc838e3c2b106067d053435866b6"
+        },
+        "main": {
+          "wins": 99,
+          "n": 500,
+          "rate": 0.198,
+          "gainPp": 1.8,
+          "wilson95": [
+            0.16543056787682525,
+            0.23517470171584037
+          ],
+          "digest": "c96875605b05249e60fff03980866f34f9ae90451d1717786a479decc237ec58"
+        },
+        "affixes": {
+          "wins": 152,
+          "n": 500,
+          "rate": 0.304,
+          "gainPp": 12.4,
+          "wilson95": [
+            0.2653013836201453,
+            0.3456874668439688
+          ],
+          "digest": "1f249691abd3df38b4f6253400004b8f4ee2d7d5bade35af3e32914e15adb904"
+        },
+        "unique": {
+          "wins": 94,
+          "n": 500,
+          "rate": 0.188,
+          "gainPp": 0.8,
+          "wilson95": [
+            0.1561794242435824,
+            0.22457833771970132
+          ],
+          "digest": "f5699afe8b64f1637de1ef2e44379c58807c1ac1eb10d33d2f5d56dca00854d9"
+        },
+        "set4": {
+          "wins": 99,
+          "n": 500,
+          "rate": 0.198,
+          "gainPp": 1.8,
+          "wilson95": [
+            0.16543056787682525,
+            0.23517470171584037
+          ],
+          "digest": "c96875605b05249e60fff03980866f34f9ae90451d1717786a479decc237ec58"
+        },
+        "all": {
+          "wins": 172,
+          "n": 500,
+          "rate": 0.344,
+          "gainPp": 16.4,
+          "wilson95": [
+            0.3036922516120669,
+            0.3866866293695749
+          ],
+          "digest": "7b98bd2cd50c00240e91cfec880d5424da75ea8e0a3e0637da24f96a4fcdde7c"
+        }
+      }
+    },
+    {
+      "kind": "pieces-equipped",
+      "templateId": "crumbweave-weapon-epic",
+      "cardId": "soot",
+      "level": 6,
+      "chapter": 1,
+      "beforeWins": 64,
+      "meanShare": 0.016391648369464676,
+      "components": {
+        "none": {
+          "wins": 64,
+          "n": 500,
+          "rate": 0.128,
+          "gainPp": 0,
+          "wilson95": [
+            0.10152638796079462,
+            0.1601463282261975
+          ],
+          "digest": "e4b3713109ea9e1bdbb55a18232d98a61f915a0fd2899bdd3e30b452fc9ab933"
+        },
+        "main": {
+          "wins": 175,
+          "n": 500,
+          "rate": 0.35,
+          "gainPp": 22.2,
+          "wilson95": [
+            0.3094794545296122,
+            0.3928079310296588
+          ],
+          "digest": "cb7b1a8562495e7b795fa0dc4bb2e2606eed846282b9dad76da0b58e95648c3d"
+        },
+        "affixes": {
+          "wins": 64,
+          "n": 500,
+          "rate": 0.128,
+          "gainPp": 0,
+          "wilson95": [
+            0.10152638796079462,
+            0.1601463282261975
+          ],
+          "digest": "390527408210597e8db26be78a92e1936a58c189a313af7f7c86c13fb07c3c06"
+        },
+        "unique": {
+          "wins": 64,
+          "n": 500,
+          "rate": 0.128,
+          "gainPp": 0,
+          "wilson95": [
+            0.10152638796079462,
+            0.1601463282261975
+          ],
+          "digest": "e4b3713109ea9e1bdbb55a18232d98a61f915a0fd2899bdd3e30b452fc9ab933"
+        },
+        "set4": {
+          "wins": 64,
+          "n": 500,
+          "rate": 0.128,
+          "gainPp": 0,
+          "wilson95": [
+            0.10152638796079462,
+            0.1601463282261975
+          ],
+          "digest": "e4b3713109ea9e1bdbb55a18232d98a61f915a0fd2899bdd3e30b452fc9ab933"
+        },
+        "all": {
+          "wins": 177,
+          "n": 500,
+          "rate": 0.354,
+          "gainPp": 22.6,
+          "wilson95": [
+            0.31334158354314207,
+            0.39688480506788165
+          ],
+          "digest": "b6fe18d689fcbe55237614fe3468f90a88d932810137eb19759bf8c064f05721"
+        }
+      }
+    },
+    {
+      "kind": "pieces-equipped",
+      "templateId": "crumbweave-weapon-legendary",
+      "cardId": "soot",
+      "level": 6,
+      "chapter": 1,
+      "beforeWins": 64,
+      "meanShare": 0.021799411018265647,
+      "components": {
+        "none": {
+          "wins": 64,
+          "n": 500,
+          "rate": 0.128,
+          "gainPp": 0,
+          "wilson95": [
+            0.10152638796079462,
+            0.1601463282261975
+          ],
+          "digest": "e4b3713109ea9e1bdbb55a18232d98a61f915a0fd2899bdd3e30b452fc9ab933"
+        },
+        "main": {
+          "wins": 189,
+          "n": 500,
+          "rate": 0.378,
+          "gainPp": 25,
+          "wilson95": [
+            0.33658005483068504,
+            0.4212803520908554
+          ],
+          "digest": "9e695577ffdf40d2484b77087cd57d989aeb30fce5ca8df2be334bb45aa83659"
+        },
+        "affixes": {
+          "wins": 108,
+          "n": 500,
+          "rate": 0.216,
+          "gainPp": 8.8,
+          "wilson95": [
+            0.18216716501825247,
+            0.2541636183073006
+          ],
+          "digest": "7e6a5f65121144017e6dfa12ab91085fbc748f13b2c8caf5fcd6f0ec0241f529"
+        },
+        "unique": {
+          "wins": 64,
+          "n": 500,
+          "rate": 0.128,
+          "gainPp": 0,
+          "wilson95": [
+            0.10152638796079462,
+            0.1601463282261975
+          ],
+          "digest": "e4b3713109ea9e1bdbb55a18232d98a61f915a0fd2899bdd3e30b452fc9ab933"
+        },
+        "set4": {
+          "wins": 64,
+          "n": 500,
+          "rate": 0.128,
+          "gainPp": 0,
+          "wilson95": [
+            0.10152638796079462,
+            0.1601463282261975
+          ],
+          "digest": "e4b3713109ea9e1bdbb55a18232d98a61f915a0fd2899bdd3e30b452fc9ab933"
+        },
+        "all": {
+          "wins": 273,
+          "n": 500,
+          "rate": 0.546,
+          "gainPp": 41.8,
+          "wilson95": [
+            0.5021734817218153,
+            0.5891250533733416
+          ],
+          "digest": "4d9a6417694fe487d968ad63aa60baa90b95a033f1cff125d7a8875ef08d82c8"
+        }
+      }
+    },
+    {
+      "kind": "pieces-equipped",
+      "templateId": "crumbweave-weapon-rare",
+      "cardId": "soot",
+      "level": 6,
+      "chapter": 1,
+      "beforeWins": 64,
+      "meanShare": 0.012941546879745943,
+      "components": {
+        "none": {
+          "wins": 64,
+          "n": 500,
+          "rate": 0.128,
+          "gainPp": 0,
+          "wilson95": [
+            0.10152638796079462,
+            0.1601463282261975
+          ],
+          "digest": "e4b3713109ea9e1bdbb55a18232d98a61f915a0fd2899bdd3e30b452fc9ab933"
+        },
+        "main": {
+          "wins": 149,
+          "n": 500,
+          "rate": 0.298,
+          "gainPp": 17,
+          "wilson95": [
+            0.25957253815100145,
+            0.3395078077354835
+          ],
+          "digest": "b2f3086e1fc80bc57c4351faef0ef073d46fda6de3fdd70d39b172c9260a9d71"
+        },
+        "affixes": {
+          "wins": 64,
+          "n": 500,
+          "rate": 0.128,
+          "gainPp": 0,
+          "wilson95": [
+            0.10152638796079462,
+            0.1601463282261975
+          ],
+          "digest": "390527408210597e8db26be78a92e1936a58c189a313af7f7c86c13fb07c3c06"
+        },
+        "unique": {
+          "wins": 64,
+          "n": 500,
+          "rate": 0.128,
+          "gainPp": 0,
+          "wilson95": [
+            0.10152638796079462,
+            0.1601463282261975
+          ],
+          "digest": "e4b3713109ea9e1bdbb55a18232d98a61f915a0fd2899bdd3e30b452fc9ab933"
+        },
+        "set4": {
+          "wins": 64,
+          "n": 500,
+          "rate": 0.128,
+          "gainPp": 0,
+          "wilson95": [
+            0.10152638796079462,
+            0.1601463282261975
+          ],
+          "digest": "e4b3713109ea9e1bdbb55a18232d98a61f915a0fd2899bdd3e30b452fc9ab933"
+        },
+        "all": {
+          "wins": 150,
+          "n": 500,
+          "rate": 0.3,
+          "gainPp": 17.2,
+          "wilson95": [
+            0.26148125649400616,
+            0.3415685909183552
+          ],
+          "digest": "fdffe229456175ca582afddc74f9aa6a02bd42054ab9533f0a83735249aa4544"
+        }
+      }
+    },
+    {
+      "kind": "pieces-equipped",
+      "templateId": "emberfelt-weapon-legendary",
+      "cardId": "soot",
+      "level": 6,
+      "chapter": 1,
+      "beforeWins": 7,
+      "meanShare": 0.027223690097821076,
+      "components": {
+        "none": {
+          "wins": 7,
+          "n": 500,
+          "rate": 0.014,
+          "gainPp": 0,
+          "wilson95": [
+            0.006797703071787358,
+            0.02861342614025071
+          ],
+          "digest": "22f26d4d88ae8efed049d579b02c7e14fc34ba2d0e8e0312a607bd870273610f"
+        },
+        "main": {
+          "wins": 37,
+          "n": 500,
+          "rate": 0.074,
+          "gainPp": 6,
+          "wilson95": [
+            0.05416087387750307,
+            0.10033530111082659
+          ],
+          "digest": "f50906cdae14a9bec5cd2f1b35fd4877d0f946472d6fa6834e7474802d51faf0"
+        },
+        "affixes": {
+          "wins": 21,
+          "n": 500,
+          "rate": 0.042,
+          "gainPp": 2.8,
+          "wilson95": [
+            0.027632099334746148,
+            0.06335205123956134
+          ],
+          "digest": "ce8f39078c67f1bb8d68a10acfcf7724efa90bfa6bca458957592c7018c3bda5"
+        },
+        "unique": {
+          "wins": 7,
+          "n": 500,
+          "rate": 0.014,
+          "gainPp": 0,
+          "wilson95": [
+            0.006797703071787358,
+            0.02861342614025071
+          ],
+          "digest": "22f26d4d88ae8efed049d579b02c7e14fc34ba2d0e8e0312a607bd870273610f"
+        },
+        "set4": {
+          "wins": 7,
+          "n": 500,
+          "rate": 0.014,
+          "gainPp": 0,
+          "wilson95": [
+            0.006797703071787358,
+            0.02861342614025071
+          ],
+          "digest": "22f26d4d88ae8efed049d579b02c7e14fc34ba2d0e8e0312a607bd870273610f"
+        },
+        "all": {
+          "wins": 74,
+          "n": 500,
+          "rate": 0.148,
+          "gainPp": 13.4,
+          "wilson95": [
+            0.11956093151848089,
+            0.18180679992727505
+          ],
+          "digest": "720988c3f6da13bec24130faccf2715a73d1b6619f0b0f35abea0eb8f9daa015"
+        }
+      }
+    },
+    {
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-charm-common",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 16,
+      "meanShare": 0.014673404180604378,
+      "components": {
+        "none": {
+          "wins": 16,
+          "n": 500,
+          "rate": 0.032,
+          "gainPp": 0,
+          "wilson95": [
+            0.01979134135128301,
+            0.05134530159364255
+          ],
+          "digest": "751bf77185ad0bde5e239ebf7fb4fa46d1ac2406ba45fb7043ca797a75ff75b4"
+        },
+        "main": {
+          "wins": 134,
+          "n": 500,
+          "rate": 0.268,
+          "gainPp": 23.6,
+          "wilson95": [
+            0.23105333049086763,
+            0.30848449250747156
+          ],
+          "digest": "d802f32e0602e77c70d834e62634e76e728b0c5d26da7eb337801db8abd30c78"
+        },
+        "affixes": {
+          "wins": 16,
+          "n": 500,
+          "rate": 0.032,
+          "gainPp": 0,
+          "wilson95": [
+            0.01979134135128301,
+            0.05134530159364255
+          ],
+          "digest": "751bf77185ad0bde5e239ebf7fb4fa46d1ac2406ba45fb7043ca797a75ff75b4"
+        },
+        "unique": {
+          "wins": 16,
+          "n": 500,
+          "rate": 0.032,
+          "gainPp": 0,
+          "wilson95": [
+            0.01979134135128301,
+            0.05134530159364255
+          ],
+          "digest": "751bf77185ad0bde5e239ebf7fb4fa46d1ac2406ba45fb7043ca797a75ff75b4"
+        },
+        "set4": {
+          "wins": 16,
+          "n": 500,
+          "rate": 0.032,
+          "gainPp": 0,
+          "wilson95": [
+            0.01979134135128301,
+            0.05134530159364255
+          ],
+          "digest": "751bf77185ad0bde5e239ebf7fb4fa46d1ac2406ba45fb7043ca797a75ff75b4"
+        },
+        "all": {
+          "wins": 134,
+          "n": 500,
+          "rate": 0.268,
+          "gainPp": 23.6,
+          "wilson95": [
+            0.23105333049086763,
+            0.30848449250747156
+          ],
+          "digest": "d802f32e0602e77c70d834e62634e76e728b0c5d26da7eb337801db8abd30c78"
+        }
+      }
+    },
+    {
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-charm-epic",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 16,
+      "meanShare": 0.02163856156234315,
+      "components": {
+        "none": {
+          "wins": 16,
+          "n": 500,
+          "rate": 0.032,
+          "gainPp": 0,
+          "wilson95": [
+            0.01979134135128301,
+            0.05134530159364255
+          ],
+          "digest": "751bf77185ad0bde5e239ebf7fb4fa46d1ac2406ba45fb7043ca797a75ff75b4"
+        },
+        "main": {
+          "wins": 262,
+          "n": 500,
+          "rate": 0.524,
+          "gainPp": 49.2,
+          "wilson95": [
+            0.4802074191766619,
+            0.5674265991338547
+          ],
+          "digest": "4f2b0b4b9be1712455f6091e41cedcd2702a3f5938f9c55178e7ad7f629a00d2"
+        },
+        "affixes": {
+          "wins": 39,
+          "n": 500,
+          "rate": 0.078,
+          "gainPp": 4.6,
+          "wilson95": [
+            0.057581071819524224,
+            0.10485410622055823
+          ],
+          "digest": "5bb9fc9bcb57c721ad6bf042a808f5c48021fc584c5983ce318ee24b9feb3416"
+        },
+        "unique": {
+          "wins": 16,
+          "n": 500,
+          "rate": 0.032,
+          "gainPp": 0,
+          "wilson95": [
+            0.01979134135128301,
+            0.05134530159364255
+          ],
+          "digest": "751bf77185ad0bde5e239ebf7fb4fa46d1ac2406ba45fb7043ca797a75ff75b4"
+        },
+        "set4": {
+          "wins": 16,
+          "n": 500,
+          "rate": 0.032,
+          "gainPp": 0,
+          "wilson95": [
+            0.01979134135128301,
+            0.05134530159364255
+          ],
+          "digest": "751bf77185ad0bde5e239ebf7fb4fa46d1ac2406ba45fb7043ca797a75ff75b4"
+        },
+        "all": {
+          "wins": 402,
+          "n": 500,
+          "rate": 0.804,
+          "gainPp": 77.2,
+          "wilson95": [
+            0.7669417867660043,
+            0.8364224451672065
+          ],
+          "digest": "176498db55b256cfff4376eeec3195a24b57c8181315a00270f362110a4ec58f"
+        }
+      }
+    },
+    {
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-charm-legendary",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 16,
+      "meanShare": 0.02848251789813208,
+      "components": {
+        "none": {
+          "wins": 16,
+          "n": 500,
+          "rate": 0.032,
+          "gainPp": 0,
+          "wilson95": [
+            0.01979134135128301,
+            0.05134530159364255
+          ],
+          "digest": "751bf77185ad0bde5e239ebf7fb4fa46d1ac2406ba45fb7043ca797a75ff75b4"
+        },
+        "main": {
+          "wins": 343,
+          "n": 500,
+          "rate": 0.686,
+          "gainPp": 65.4,
+          "wilson95": [
+            0.6440308091059584,
+            0.7251328328005456
+          ],
+          "digest": "3dd1aab0ae9dba296fea8df2745abf12bf92052a2dc4e8e86a2ac05ab375249c"
+        },
+        "affixes": {
+          "wins": 76,
+          "n": 500,
+          "rate": 0.152,
+          "gainPp": 12,
+          "wilson95": [
+            0.12319191165756974,
+            0.186114822839939
+          ],
+          "digest": "99fd3f9c39aeae6b9f366715ebab281a55065ecfb47015a9a10535bdd6c6a667"
+        },
+        "unique": {
+          "wins": 16,
+          "n": 500,
+          "rate": 0.032,
+          "gainPp": 0,
+          "wilson95": [
+            0.01979134135128301,
+            0.05134530159364255
+          ],
+          "digest": "751bf77185ad0bde5e239ebf7fb4fa46d1ac2406ba45fb7043ca797a75ff75b4"
+        },
+        "set4": {
+          "wins": 16,
+          "n": 500,
+          "rate": 0.032,
+          "gainPp": 0,
+          "wilson95": [
+            0.01979134135128301,
+            0.05134530159364255
+          ],
+          "digest": "751bf77185ad0bde5e239ebf7fb4fa46d1ac2406ba45fb7043ca797a75ff75b4"
+        },
+        "all": {
+          "wins": 473,
+          "n": 500,
+          "rate": 0.946,
+          "gainPp": 91.4,
+          "wilson95": [
+            0.9225729387555679,
+            0.9626259015148662
+          ],
+          "digest": "4caa8e2d83c05887984a2612a24c92741b5bbd85d4e300e46b6887fe5691d4f1"
+        }
+      }
+    },
+    {
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-charm-rare",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 16,
+      "meanShare": 0.017018684008020125,
+      "components": {
+        "none": {
+          "wins": 16,
+          "n": 500,
+          "rate": 0.032,
+          "gainPp": 0,
+          "wilson95": [
+            0.01979134135128301,
+            0.05134530159364255
+          ],
+          "digest": "751bf77185ad0bde5e239ebf7fb4fa46d1ac2406ba45fb7043ca797a75ff75b4"
+        },
+        "main": {
+          "wins": 198,
+          "n": 500,
+          "rate": 0.396,
+          "gainPp": 36.4,
+          "wilson95": [
+            0.35408095329434175,
+            0.43950496736008615
+          ],
+          "digest": "4d922e012cdcdd86fd639fff95158371ddc915d1d3304dd39fa41a792e1552a2"
+        },
+        "affixes": {
+          "wins": 19,
+          "n": 500,
+          "rate": 0.038,
+          "gainPp": 0.6,
+          "wilson95": [
+            0.024459922123289107,
+            0.0585852253992656
+          ],
+          "digest": "1941a3977f38da708313d1f6141043ed57375411095472630dc75edc2f5c003b"
+        },
+        "unique": {
+          "wins": 16,
+          "n": 500,
+          "rate": 0.032,
+          "gainPp": 0,
+          "wilson95": [
+            0.01979134135128301,
+            0.05134530159364255
+          ],
+          "digest": "751bf77185ad0bde5e239ebf7fb4fa46d1ac2406ba45fb7043ca797a75ff75b4"
+        },
+        "set4": {
+          "wins": 16,
+          "n": 500,
+          "rate": 0.032,
+          "gainPp": 0,
+          "wilson95": [
+            0.01979134135128301,
+            0.05134530159364255
+          ],
+          "digest": "751bf77185ad0bde5e239ebf7fb4fa46d1ac2406ba45fb7043ca797a75ff75b4"
+        },
+        "all": {
+          "wins": 218,
+          "n": 500,
+          "rate": 0.436,
+          "gainPp": 40.4,
+          "wilson95": [
+            0.393184831180568,
+            0.47979111999138757
+          ],
+          "digest": "04aa525ab562370d56fbc26d15c561d22bc2143900e69bd8d2601a923ce56a4d"
+        }
+      }
+    },
+    {
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-outfit-common",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 30,
+      "meanShare": 0.014870073174511968,
+      "components": {
+        "none": {
+          "wins": 30,
+          "n": 500,
+          "rate": 0.06,
+          "gainPp": 0,
+          "wilson95": [
+            0.042348086000950205,
+            0.08436157830624476
+          ],
+          "digest": "a45f44e471045d71914801d0f4f99c348fb2061603cc13e87341dc89141d0dda"
+        },
+        "main": {
+          "wins": 153,
+          "n": 500,
+          "rate": 0.306,
+          "gainPp": 24.6,
+          "wilson95": [
+            0.26721278242267577,
+            0.3477455695673147
+          ],
+          "digest": "28cc76e1e9d5f0dd7f6f289c75951c7ed4f049b88c5e3cc2a27b48ad6dcb86a0"
+        },
+        "affixes": {
+          "wins": 30,
+          "n": 500,
+          "rate": 0.06,
+          "gainPp": 0,
+          "wilson95": [
+            0.042348086000950205,
+            0.08436157830624476
+          ],
+          "digest": "a45f44e471045d71914801d0f4f99c348fb2061603cc13e87341dc89141d0dda"
+        },
+        "unique": {
+          "wins": 30,
+          "n": 500,
+          "rate": 0.06,
+          "gainPp": 0,
+          "wilson95": [
+            0.042348086000950205,
+            0.08436157830624476
+          ],
+          "digest": "a45f44e471045d71914801d0f4f99c348fb2061603cc13e87341dc89141d0dda"
+        },
+        "set4": {
+          "wins": 30,
+          "n": 500,
+          "rate": 0.06,
+          "gainPp": 0,
+          "wilson95": [
+            0.042348086000950205,
+            0.08436157830624476
+          ],
+          "digest": "a45f44e471045d71914801d0f4f99c348fb2061603cc13e87341dc89141d0dda"
+        },
+        "all": {
+          "wins": 153,
+          "n": 500,
+          "rate": 0.306,
+          "gainPp": 24.6,
+          "wilson95": [
+            0.26721278242267577,
+            0.3477455695673147
+          ],
+          "digest": "28cc76e1e9d5f0dd7f6f289c75951c7ed4f049b88c5e3cc2a27b48ad6dcb86a0"
+        }
+      }
+    },
+    {
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-outfit-epic",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 30,
+      "meanShare": 0.02258356819047436,
+      "components": {
+        "none": {
+          "wins": 30,
+          "n": 500,
+          "rate": 0.06,
+          "gainPp": 0,
+          "wilson95": [
+            0.042348086000950205,
+            0.08436157830624476
+          ],
+          "digest": "a45f44e471045d71914801d0f4f99c348fb2061603cc13e87341dc89141d0dda"
+        },
+        "main": {
+          "wins": 270,
+          "n": 500,
+          "rate": 0.54,
+          "gainPp": 48,
+          "wilson95": [
+            0.4961743505261478,
+            0.5832156799913801
+          ],
+          "digest": "e3dec2cc8d0ea00eda04710cfd7c3990ce4a79991b32e7c8ee240d39504945d9"
+        },
+        "affixes": {
+          "wins": 89,
+          "n": 500,
+          "rate": 0.178,
+          "gainPp": 11.8,
+          "wilson95": [
+            0.14696436225520904,
+            0.2139458920786927
+          ],
+          "digest": "f23f03ec36c9298a545c3acb8a8691994335b2955bf9e22ac518b3d4abc9f525"
+        },
+        "unique": {
+          "wins": 30,
+          "n": 500,
+          "rate": 0.06,
+          "gainPp": 0,
+          "wilson95": [
+            0.042348086000950205,
+            0.08436157830624476
+          ],
+          "digest": "a45f44e471045d71914801d0f4f99c348fb2061603cc13e87341dc89141d0dda"
+        },
+        "set4": {
+          "wins": 30,
+          "n": 500,
+          "rate": 0.06,
+          "gainPp": 0,
+          "wilson95": [
+            0.042348086000950205,
+            0.08436157830624476
+          ],
+          "digest": "a45f44e471045d71914801d0f4f99c348fb2061603cc13e87341dc89141d0dda"
+        },
+        "all": {
+          "wins": 402,
+          "n": 500,
+          "rate": 0.804,
+          "gainPp": 74.4,
+          "wilson95": [
+            0.7669417867660043,
+            0.8364224451672065
+          ],
+          "digest": "25554259911b69549e6c3e0d8a098dca7ce275395b461c2c8214bf7798a4e345"
+        }
+      }
+    },
+    {
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-outfit-legendary",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 30,
+      "meanShare": 0.03107439767025709,
+      "components": {
+        "none": {
+          "wins": 30,
+          "n": 500,
+          "rate": 0.06,
+          "gainPp": 0,
+          "wilson95": [
+            0.042348086000950205,
+            0.08436157830624476
+          ],
+          "digest": "a45f44e471045d71914801d0f4f99c348fb2061603cc13e87341dc89141d0dda"
+        },
+        "main": {
+          "wins": 313,
+          "n": 500,
+          "rate": 0.626,
+          "gainPp": 56.6,
+          "wilson95": [
+            0.582777860120605,
+            0.6673007360096074
+          ],
+          "digest": "1f701969609ea77a00d41a7fc985a5bd4ea5af00d39ce4a492ae663195c41b1c"
+        },
+        "affixes": {
+          "wins": 138,
+          "n": 500,
+          "rate": 0.276,
+          "gainPp": 21.6,
+          "wilson95": [
+            0.23863748141495,
+            0.3167783476868947
+          ],
+          "digest": "a5a44bbfbca85c75637c5956d8ceb18f21e6ac4a7834f75cfa6b92e670f24bda"
+        },
+        "unique": {
+          "wins": 30,
+          "n": 500,
+          "rate": 0.06,
+          "gainPp": 0,
+          "wilson95": [
+            0.042348086000950205,
+            0.08436157830624476
+          ],
+          "digest": "a45f44e471045d71914801d0f4f99c348fb2061603cc13e87341dc89141d0dda"
+        },
+        "set4": {
+          "wins": 30,
+          "n": 500,
+          "rate": 0.06,
+          "gainPp": 0,
+          "wilson95": [
+            0.042348086000950205,
+            0.08436157830624476
+          ],
+          "digest": "a45f44e471045d71914801d0f4f99c348fb2061603cc13e87341dc89141d0dda"
+        },
+        "all": {
+          "wins": 466,
+          "n": 500,
+          "rate": 0.932,
+          "gainPp": 87.2,
+          "wilson95": [
+            0.9064785429161282,
+            0.9509337866731715
+          ],
+          "digest": "430f7b3ce695d8cf9207eafee8531f02b9f9d920691f9b7f69b1ceec8e8de765"
+        }
+      }
+    },
+    {
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-outfit-rare",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 30,
+      "meanShare": 0.017647388420977787,
+      "components": {
+        "none": {
+          "wins": 30,
+          "n": 500,
+          "rate": 0.06,
+          "gainPp": 0,
+          "wilson95": [
+            0.042348086000950205,
+            0.08436157830624476
+          ],
+          "digest": "a45f44e471045d71914801d0f4f99c348fb2061603cc13e87341dc89141d0dda"
+        },
+        "main": {
+          "wins": 213,
+          "n": 500,
+          "rate": 0.426,
+          "gainPp": 36.6,
+          "wilson95": [
+            0.38338181137240096,
+            0.4697466321701727
+          ],
+          "digest": "c81e9f56ad49da00f5e8b0878c7eaba3b45f713fcd0423b342d553304fb22a65"
+        },
+        "affixes": {
+          "wins": 34,
+          "n": 500,
+          "rate": 0.068,
+          "gainPp": 0.8,
+          "wilson95": [
+            0.04906621332682857,
+            0.09352145708387197
+          ],
+          "digest": "1c23720faa7ef3000898820f6d6f862e7adc6df29ce83d382e7bb7db6a838cd6"
+        },
+        "unique": {
+          "wins": 30,
+          "n": 500,
+          "rate": 0.06,
+          "gainPp": 0,
+          "wilson95": [
+            0.042348086000950205,
+            0.08436157830624476
+          ],
+          "digest": "a45f44e471045d71914801d0f4f99c348fb2061603cc13e87341dc89141d0dda"
+        },
+        "set4": {
+          "wins": 30,
+          "n": 500,
+          "rate": 0.06,
+          "gainPp": 0,
+          "wilson95": [
+            0.042348086000950205,
+            0.08436157830624476
+          ],
+          "digest": "a45f44e471045d71914801d0f4f99c348fb2061603cc13e87341dc89141d0dda"
+        },
+        "all": {
+          "wins": 229,
+          "n": 500,
+          "rate": 0.458,
+          "gainPp": 39.8,
+          "wilson95": [
+            0.41481382806562594,
+            0.50182663989097
+          ],
+          "digest": "0805e6a9be5ec883725ec2609db75c5b5ebda79e5e39b8fd795ea552045f46f8"
+        }
+      }
+    },
+    {
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-relic-common",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 65,
+      "meanShare": 0.014897546003339993,
+      "components": {
+        "none": {
+          "wins": 65,
+          "n": 500,
+          "rate": 0.13,
+          "gainPp": 0,
+          "wilson95": [
+            0.10332021037816715,
+            0.16232200733470134
+          ],
+          "digest": "482b64d844bfd0a85d0de2822ed693efd4113390dd7af8cf7e89cf8c52fee8c9"
+        },
+        "main": {
+          "wins": 244,
+          "n": 500,
+          "rate": 0.488,
+          "gainPp": 35.8,
+          "wilson95": [
+            0.4444444444444444,
+            0.5317385464002973
+          ],
+          "digest": "796ef0577fc85bd0bf906ca18996bc890e8d778e0bf530f6226f95e3a1224e84"
+        },
+        "affixes": {
+          "wins": 65,
+          "n": 500,
+          "rate": 0.13,
+          "gainPp": 0,
+          "wilson95": [
+            0.10332021037816715,
+            0.16232200733470134
+          ],
+          "digest": "482b64d844bfd0a85d0de2822ed693efd4113390dd7af8cf7e89cf8c52fee8c9"
+        },
+        "unique": {
+          "wins": 65,
+          "n": 500,
+          "rate": 0.13,
+          "gainPp": 0,
+          "wilson95": [
+            0.10332021037816715,
+            0.16232200733470134
+          ],
+          "digest": "482b64d844bfd0a85d0de2822ed693efd4113390dd7af8cf7e89cf8c52fee8c9"
+        },
+        "set4": {
+          "wins": 65,
+          "n": 500,
+          "rate": 0.13,
+          "gainPp": 0,
+          "wilson95": [
+            0.10332021037816715,
+            0.16232200733470134
+          ],
+          "digest": "482b64d844bfd0a85d0de2822ed693efd4113390dd7af8cf7e89cf8c52fee8c9"
+        },
+        "all": {
+          "wins": 244,
+          "n": 500,
+          "rate": 0.488,
+          "gainPp": 35.8,
+          "wilson95": [
+            0.4444444444444444,
+            0.5317385464002973
+          ],
+          "digest": "796ef0577fc85bd0bf906ca18996bc890e8d778e0bf530f6226f95e3a1224e84"
+        }
+      }
+    },
+    {
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-relic-epic",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 65,
+      "meanShare": 0.02449313754661603,
+      "components": {
+        "none": {
+          "wins": 65,
+          "n": 500,
+          "rate": 0.13,
+          "gainPp": 0,
+          "wilson95": [
+            0.10332021037816715,
+            0.16232200733470134
+          ],
+          "digest": "482b64d844bfd0a85d0de2822ed693efd4113390dd7af8cf7e89cf8c52fee8c9"
+        },
+        "main": {
+          "wins": 365,
+          "n": 500,
+          "rate": 0.73,
+          "gainPp": 60,
+          "wilson95": [
+            0.6894405695613621,
+            0.7670521059144222
+          ],
+          "digest": "7819962a367642eea6ae9301a5fa238a83a25062fc56ab5b94ba3dcdca1cdb13"
+        },
+        "affixes": {
+          "wins": 83,
+          "n": 500,
+          "rate": 0.166,
+          "gainPp": 3.6,
+          "wilson95": [
+            0.13595723820567882,
+            0.20113600697296466
+          ],
+          "digest": "49469a0cc88a86b807cd2c0f47bdb6258fa49c68a7fae3daa206b3622790e03f"
+        },
+        "unique": {
+          "wins": 65,
+          "n": 500,
+          "rate": 0.13,
+          "gainPp": 0,
+          "wilson95": [
+            0.10332021037816715,
+            0.16232200733470134
+          ],
+          "digest": "482b64d844bfd0a85d0de2822ed693efd4113390dd7af8cf7e89cf8c52fee8c9"
+        },
+        "set4": {
+          "wins": 65,
+          "n": 500,
+          "rate": 0.13,
+          "gainPp": 0,
+          "wilson95": [
+            0.10332021037816715,
+            0.16232200733470134
+          ],
+          "digest": "482b64d844bfd0a85d0de2822ed693efd4113390dd7af8cf7e89cf8c52fee8c9"
+        },
+        "all": {
+          "wins": 401,
+          "n": 500,
+          "rate": 0.802,
+          "gainPp": 67.2,
+          "wilson95": [
+            0.7648252982841597,
+            0.8345694321231747
+          ],
+          "digest": "b262b4fa92193c7ab056b508a96000a750dd11290b297a2c944adf37bfdd614d"
+        }
+      }
+    },
+    {
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-relic-legendary",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 65,
+      "meanShare": 0.03248564048043762,
+      "components": {
+        "none": {
+          "wins": 65,
+          "n": 500,
+          "rate": 0.13,
+          "gainPp": 0,
+          "wilson95": [
+            0.10332021037816715,
+            0.16232200733470134
+          ],
+          "digest": "482b64d844bfd0a85d0de2822ed693efd4113390dd7af8cf7e89cf8c52fee8c9"
+        },
+        "main": {
+          "wins": 409,
+          "n": 500,
+          "rate": 0.818,
+          "gainPp": 68.8,
+          "wilson95": [
+            0.7817966571116197,
+            0.8493540855027257
+          ],
+          "digest": "c12255936d8a761cc0d9daf36d7c68a270c9845792d9c04ad7033953b1bd10ba"
+        },
+        "affixes": {
+          "wins": 100,
+          "n": 500,
+          "rate": 0.2,
+          "gainPp": 7,
+          "wilson95": [
+            0.16728494139259462,
+            0.23728982972594745
+          ],
+          "digest": "6e9cea5fddebb44f53c56c241dd2a23d1b6a2b87bf1538f6493fe37ee9ce06f3"
+        },
+        "unique": {
+          "wins": 65,
+          "n": 500,
+          "rate": 0.13,
+          "gainPp": 0,
+          "wilson95": [
+            0.10332021037816715,
+            0.16232200733470134
+          ],
+          "digest": "482b64d844bfd0a85d0de2822ed693efd4113390dd7af8cf7e89cf8c52fee8c9"
+        },
+        "set4": {
+          "wins": 65,
+          "n": 500,
+          "rate": 0.13,
+          "gainPp": 0,
+          "wilson95": [
+            0.10332021037816715,
+            0.16232200733470134
+          ],
+          "digest": "482b64d844bfd0a85d0de2822ed693efd4113390dd7af8cf7e89cf8c52fee8c9"
+        },
+        "all": {
+          "wins": 447,
+          "n": 500,
+          "rate": 0.894,
+          "gainPp": 76.4,
+          "wilson95": [
+            0.8639484611321094,
+            0.9180433394655388
+          ],
+          "digest": "6a08080fff564c47dcb2580dd3674dd7014ea7761607a79deb17bdc3883fe69a"
+        }
+      }
+    },
+    {
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-relic-rare",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "beforeWins": 65,
+      "meanShare": 0.017676260529804564,
+      "components": {
+        "none": {
+          "wins": 65,
+          "n": 500,
+          "rate": 0.13,
+          "gainPp": 0,
+          "wilson95": [
+            0.10332021037816715,
+            0.16232200733470134
+          ],
+          "digest": "482b64d844bfd0a85d0de2822ed693efd4113390dd7af8cf7e89cf8c52fee8c9"
+        },
+        "main": {
+          "wins": 306,
+          "n": 500,
+          "rate": 0.612,
+          "gainPp": 48.2,
+          "wilson95": [
+            0.5685873695673256,
+            0.6537047158817519
+          ],
+          "digest": "e1098ffdeb197487393808c604798074b48fafea4b0d2253131b7010e0f52361"
+        },
+        "affixes": {
+          "wins": 76,
+          "n": 500,
+          "rate": 0.152,
+          "gainPp": 2.2,
+          "wilson95": [
+            0.12319191165756974,
+            0.186114822839939
+          ],
+          "digest": "b770bf6a163d8ee745eb9c53d6b15d3c0b755f1793b164f5934ae513a1e3921a"
+        },
+        "unique": {
+          "wins": 65,
+          "n": 500,
+          "rate": 0.13,
+          "gainPp": 0,
+          "wilson95": [
+            0.10332021037816715,
+            0.16232200733470134
+          ],
+          "digest": "482b64d844bfd0a85d0de2822ed693efd4113390dd7af8cf7e89cf8c52fee8c9"
+        },
+        "set4": {
+          "wins": 65,
+          "n": 500,
+          "rate": 0.13,
+          "gainPp": 0,
+          "wilson95": [
+            0.10332021037816715,
+            0.16232200733470134
+          ],
+          "digest": "482b64d844bfd0a85d0de2822ed693efd4113390dd7af8cf7e89cf8c52fee8c9"
+        },
+        "all": {
+          "wins": 329,
+          "n": 500,
+          "rate": 0.658,
+          "gainPp": 52.8,
+          "wilson95": [
+            0.6153554148443917,
+            0.698235205699843
+          ],
+          "digest": "271c275185fcd8138a745c447696ae0a401c4baf0c811da797f532a53dd143dd"
+        }
+      }
+    }
+  ],
+  "rows": [
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-charm-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-charm-common",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "outcomes": {
+        "none": "00000100010000000000011010000000100000000000000000000000000000000000000000000000000000000000000100000001000000000000000000000000000000000000000000000010000000000000000000000000000000000100000000010000000100000000000000000000000000000001000000000000000000000000000010000100000000000000000010001000000000000000100000000000001000000000000000100000000000000000000000000000000000000110000000000000100000000001000000000110011000000000000000000000110000000000001000000000000000001000000000000100100000100000",
+        "main": "10010100011110100101011110011111111001100000001010000001000001110111011100001010101010110000011110101101100011101101011001100000100100111110111011010010001100010100101000000010000001011110010111011111011101110100011011100100110001111001111011000011111010111000011011001110100110000000011010101100110011111011100111100011001111011101111010101001100101011101011101100011011101001110011011100111101101000001000100110110111010000110010110101010110111100000101010111110100000111010001110111110100111100100",
+        "affixes": "00000100010000000000011010000000100000000000000000000000000000000000000000000000000000000000000100000001000000000000000000000000000000000000000000000010000000000000000000000000000000000100000000010000000100000000000000000000000000000001000000000000000000000000000010000100000000000000000010001000000000000000100000000000001000000000000000100000000000000000000000000000000000000110000000000000100000000001000000000110011000000000000000000000110000000000001000000000000000001000000000000100100000100000",
+        "unique": "00000100010000000000011010000000100000000000000000000000000000000000000000000000000000000000000100000001000000000000000000000000000000000000000000000010000000000000000000000000000000000100000000010000000100000000000000000000000000000001000000000000000000000000000010000100000000000000000010001000000000000000100000000000001000000000000000100000000000000000000000000000000000000110000000000000100000000001000000000110011000000000000000000000110000000000001000000000000000001000000000000100100000100000",
+        "set4": "00000100010000000000011010000000100000000000000000000000000000000000000000000000000000000000000100000001000000000000000000000000000000000000000000000010000000000000000000000000000000000100000000010000000100000000000000000000000000000001000000000000000000000000000010000100000000000000000010001000000000000000100000000000001000000000000000100000000000000000000000000000000000000110000000000000100000000001000000000110011000000000000000000000110000000000001000000000000000001000000000000100100000100000",
+        "all": "10010100011110100101011110011111111001100000001010000001000001110111011100001010101010110000011110101101100011101101011001100000100100111110111011010010001100010100101000000010000001011110010111011111011101110100011011100100110001111001111011000011111010111000011011001110100110000000011010101100110011111011100111100011001111011101111010101001100101011101011101100011011101001110011011100111101101000001000100110110111010000110010110101010110111100000101010111110100000111010001110111110100111100100"
+      },
+      "shareSum": 7.281067772315997,
+      "complete": true
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-charm-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-charm-epic",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "outcomes": {
+        "none": "00000100010000000000011010000000100000000000000000000000000000000000000000000000000000000000000100000001000000000000000000000000000000000000000000000010000000000000000000000000000000000100000000010000000100000000000000000000000000000001000000000000000000000000000010000100000000000000000010001000000000000000100000000000001000000000000000100000000000000000000000000000000000000110000000000000100000000001000000000110011000000000000000000000110000000000001000000000000000001000000000000100100000100000",
+        "main": "11110100011110110111011111111111111111111011001010110111100101110111111100011110101010110110111111111111100111101111111111110011101101111110111111010110101111011100101101111010110111011111111111011111111111111100111011100101110111111101111111001111111011111101111111111110111111101110011011111100111111111011111111100111101111111111111011101101111111011111111111100011111111001111111111111111111101000001001111111111111111000110110110111011111111100001101111111111101111111111011110111111111111110110",
+        "affixes": "00000100010010000101011010000000110001100000000010000000000001000000000100001010000010110000001100101101100011100101011000100000100100100110010000010010001100000100001000000010000001001110010000011110000101100000010011000000010000101001010010000000011010010000000011000110100000000000011010101000110001001011100011100010001011010100111010101001100001000001000101100001011100001110011000100001101101000001000000000110011010000100010110100000110001000000101000001100000000101010000110100110100010100000",
+        "unique": "00000100010000000000011010000000100000000000000000000000000000000000000000000000000000000000000100000001000000000000000000000000000000000000000000000010000000000000000000000000000000000100000000010000000100000000000000000000000000000001000000000000000000000000000010000100000000000000000010001000000000000000100000000000001000000000000000100000000000000000000000000000000000000110000000000000100000000001000000000110011000000000000000000000110000000000001000000000000000001000000000000100100000100000",
+        "set4": "00000100010000000000011010000000100000000000000000000000000000000000000000000000000000000000000100000001000000000000000000000000000000000000000000000010000000000000000000000000000000000100000000010000000100000000000000000000000000000001000000000000000000000000000010000100000000000000000010001000000000000000100000000000001000000000000000100000000000000000000000000000000000000110000000000000100000000001000000000110011000000000000000000000110000000000001000000000000000001000000000000100100000100000",
+        "all": "11111111111110111111111111111111111111111111101111111111111111111111111111111111111111110111111111111111101111111111111111111111111111111110111011111111111111011111101111111111111111111011111111111111111011111111111111110111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111101111111111111111111111111111111111111111111011111111111111111111111111111110111111111111111111"
+      },
+      "shareSum": 11.948838110491234,
+      "complete": true
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-charm-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-charm-legendary",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "outcomes": {
+        "none": "00000100010000000000011010000000100000000000000000000000000000000000000000000000000000000000000100000001000000000000000000000000000000000000000000000010000000000000000000000000000000000100000000010000000100000000000000000000000000000001000000000000000000000000000010000100000000000000000010001000000000000000100000000000001000000000000000100000000000000000000000000000000000000110000000000000100000000001000000000110011000000000000000000000110000000000001000000000000000001000000000000100100000100000",
+        "main": "11110110111110111111011111111111111111111111001110111111111111111111111111111111111011110110111111111111100111101111111111110011111111111110111111011110111111011101101101111010110111011011111111111111111111111101111111110111111111111101111111001111111011111101111111111111111111111110011011111100111111111011111111111111101111111111111011101101111111111111111111101011111111101111111111111111111101100111101111111111111111111111110111111011111111110001101111111111101111111111011110111111111111110110",
+        "affixes": "00000100010010000101011010000000110001100000000010000000000001000000000100001010000010110000001100101101100011100101011000100000100100100110010000010010001100000100001000000010000001001110010000011110000101100000010011000000010000101001010010000000011010010000000011000110100000000000011010101000110001001011100011100010001011010100111010101001100001000001000101100001011100001110011000100001101101000001000000000110011010000100010110100000110001000000101000001100000000101010000110100110100010100000",
+        "unique": "00000100010000000000011010000000100000000000000000000000000000000000000000000000000000000000000100000001000000000000000000000000000000000000000000000010000000000000000000000000000000000100000000010000000100000000000000000000000000000001000000000000000000000000000010000100000000000000000010001000000000000000100000000000001000000000000000100000000000000000000000000000000000000110000000000000100000000001010000000110011000000000000000000000110000000000001000000000000000001000000000000100100000100000",
+        "set4": "00000100010000000000011010000000100000000000000000000000000000000000000000000000000000000000000100000001000000000000000000000000000000000000000000000010000000000000000000000000000000000100000000010000000100000000000000000000000000000001000000000000000000000000000010000100000000000000000010001000000000000000100000000000001000000000000000100000000000000000000000000000000000000110000000000000100000000001000000000110011000000000000000000000110000000000001000000000000000001000000000000100100000100000",
+        "all": "11111111111111111111101111111111111111111111101111111111111111111111111111111111111111111111111111111111111101111111111111111111111111111111111011111111111111011111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111110111111111111111111111111111111111111111011111"
+      },
+      "shareSum": 13.97640351425421,
+      "complete": true
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-charm-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-charm-rare",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "outcomes": {
+        "none": "00000100010000000000011010000000100000000000000000000000000000000000000000000000000000000000000100000001000000000000000000000000000000000000000000000010000000000000000000000000000000000100000000010000000100000000000000000000000000000001000000000000000000000000000010000100000000000000000010001000000000000000100000000000001000000000000000100000000000000000000000000000000000000110000000000000100000000001000000000110011000000000000000000000110000000000001000000000000000001000000000000100100000100000",
+        "main": "10110100011110110101011111011111111001100000001010100001100101110111011100011010101010110100011110111111100011101101111011100010101100111110111111010010101110010100101001110010000001011110010111011111111111111100011011100101110011111101111011000111111010111101011011011110111111000000011011101100111111111011111111100011001111111111111011101101110101011101111101100011111111001111111111100111111101000001000110111111111111000110110110111010110111100100101111111111101111111111011110111111111111110100",
+        "affixes": "00000100010000000000011010000000100000000000000000000000000001000000000000000000000000000000000100000001100000000000000000000000000000000000000000000010000000000100000000000000000001000100010000010000000100000000010010000000000000000001000000000000000010000000000010000100000000000000000010001000010001000000100000100000001000010000000000100000000001000000000000000000000000000110000000000000100001000001000000000110011000000000000000000000110000000000001000000000000000001000000000000100100010100000",
+        "unique": "00000100010000000000011010000000100000000000000000000000000000000000000000000000000000000000000100000001000000000000000000000000000000000000000000000010000000000000000000000000000000000100000000010000000100000000000000000000000000000001000000000000000000000000000010000100000000000000000010001000000000000000100000000000001000000000000000100000000000000000000000000000000000000110000000000000100000000001000000000110011000000000000000000000110000000000001000000000000000001000000000000100100000100000",
+        "set4": "00000100010000000000011010000000100000000000000000000000000000000000000000000000000000000000000100000001000000000000000000000000000000000000000000000010000000000000000000000000000000000100000000010000000100000000000000000000000000000001000000000000000000000000000010000100000000000000000010001000000000000000100000000000001000000000000000100000000000000000000000000000000000000110000000000000100000000001000000000110011000000000000000000000110000000000001000000000000000001000000000000100100000100000",
+        "all": "11110100011110110101011111111111111111111011001010100001100101110111111100011110101010110100111111111111100011101111111111110011101100111110111111010110101110011100101001111010110001011111010111011111111111111100111011100101110111111101111111001111111011111101111111111110111111000010011011111100111111111011111111100111101111111111111011101101111111011101111111100011111111001111111111111111111101000001001111111111111111000110110110111011111111100000101111111111101111111111011110111111111111110110"
+      },
+      "shareSum": 8.80983315892913,
+      "complete": true
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-outfit-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-outfit-common",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "outcomes": {
+        "none": "00000100010000000000011010000000100000000000000000000000000001000000000100001000000010000000000100001001100000000000000000000000100100000100000000000010001000000100001000000010000001001100010000010000000101000000010011000000000000100001000000000000000000000000000010000100100000000000001010101000010001000000100011100000001001010100010010100000000001000001000001000000001000000110000000000000100001000001010000000110011000000000010110100000110000000000001000000000000000001010000000000100100010100000",
+        "main": "10010100010110100101011111010111111001110000001010000001100101010101011100001010101010110000011110111101100011101101011011100000101100101110110011010110101100010100101001000010000001011111010011011111111101110100011011100100110011111001111011000101111010111001011011001110111110000000011011101100110011101011100111100011001011011111111010101001100101011101011101100011111100001110111110100101101101000001010100110110011010000110110110101010111111100000101101101110100010111110011110111111100111110100",
+        "affixes": "00000100010000000000011010000000100000000000000000000000000001000000000100001000000010000000000100001001100000000000000000000000100100000100000000000010001000000100001000000010000001001100010000010000000101000000010011000000000000100001000000000000000000000000000010000100100000000000001010101000010001000000100011100000001001010100010010100000000001000001000001000000001000000110000000000000100001000001010000000110011000000000010110100000110000000000001000000000000000001010000000000100100010100000",
+        "unique": "00000100010000000000011010000000100000000000000000000000000001000000000100001000000010000000000100001001100000000000000000000000100100000100000000000010001000000100001000000010000001001100010000010000000101000000010011000000000000100001000000000000000000000000000010000100100000000000001010101000010001000000100011100000001001010100010010100000000001000001000001000000001000000110000000000000100001000001010000000110011000000000010110100000110000000000001000000000000000001010000000000100100010100000",
+        "set4": "00000100010000000000011010000000100000000000000000000000000001000000000100001000000010000000000100001001100000000000000000000000100100000100000000000010001000000100001000000010000001001100010000010000000101000000010011000000000000100001000000000000000000000000000010000100100000000000001010101000010001000000100011100000001001010100010010100000000001000001000001000000001000000110000000000000100001000001010000000110011000000000010110100000110000000000001000000000000000001010000000000100100010100000",
+        "all": "10010100010110100101011111010111111001110000001010000001100101010101011100001010101010110000011110111101100011101101011011100000101100101110110011010110101100010100101001000010000001011111010011011111111101110100011011100100110011111001111011000101111010111001011011001110111110000000011011101100110011101011100111100011001011011111111010101001100101011101011101100011111100001110111110100101101101000001010100110110011010000110110110101010111111100000101101101110100010111110011110111111100111110100"
+      },
+      "shareSum": 7.344786649113384,
+      "complete": true
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-outfit-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-outfit-epic",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "outcomes": {
+        "none": "00000100010000000000011010000000100000000000000000000000000001000000000100001000000010000000000100001001100000000000000000000000100100000100000000000010001000000100001000000010000001001100010000010000000101000000010011000000000000100001000000000000000000000000000010000100100000000000001010101000010001000000100011100000001001010100010010100000000001000001000001000000001000000110000000000000100001000001010000000110011000000000010110100000110000000000001000000000000000001010000000000100100010100000",
+        "main": "11111110111110110101011111011111111101111011001010001101100101111111011110111111101010110110111111111111100111101111111111100001111101111110111111010110101111010100101101110010110011011011011111111111111111111101111011100101110111111101111111001111111010111101111111111110111111001110011011101100111111111011111111100111101111111111111011101101111111011101111101101111111111001111111111111111111101000111101101111111111111000110110110111011111111100001101111111111101111111111011110111111111111110110",
+        "affixes": "10010100011110100101011111010111111001111000001010000000100101010101011110001010101010110000011110111101100011101101011011100000101100101110110011010110101110010100101001100010000001011110010011011111111101110100011011000100110011111001110011000101111010111001011011001110111110000000011011101100111001101011100111100011001011011111111010101001101101011101011101100011111100001110011110100111101101000001010100100110011110000110010110100000111111100000101101101110100001111010011110101111100111110100",
+        "unique": "00000100010000000000011010000000100000000000000000000000000001000000000100001000000010000000000100001001100000000000000000000000100100000100000000000010001000000100001000000010000001001100010000010000000101000000010011000000000000100001000000000000000000000000000010000100100000000000001010101000010001000000100011100000001001010100010010100000000001000001000001000000001000000110000000000000100001000001010000000110011000000000010110100000110000000000001000000000000000001010000000000100100010100000",
+        "set4": "00000100010000000000011010000000100000000000000000000000000001000000000100001000000010000000000100001001100000000000000000000000100100000100000000000010001000000100001000000010000001001100010000010000000101000000010011000000000000100001000000000000000000000000000010000100100000000000001010101000010001000000100011100000001001010100010010100000000001000001000001000000001000000110000000000000100001000001010000000110011000000000010110100000110000000000001000000000000000001010000000000100100010100000",
+        "all": "11111111111110111111111111111111111111111111101110111111111111111111111111111111111111110111111111111111101111111111111111111111111111111110111011011111111111011111101101111111111111011011111111111111111011111101111111110111111111111111111111101111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111101111111111111111111111111111111111111111111011111111111111111111111111111111111111111111111111"
+      },
+      "shareSum": 12.34119084622336,
+      "complete": true
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-outfit-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-outfit-legendary",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "outcomes": {
+        "none": "00000100010000000000011010000000100000000000000000000000000001000000000100001000000010000000000100001001100000000000000000000000100100000100000000000010001000000100001000000010000001001100010000010000000101000000010011000000000000100001000000000000000000000000000010000100100000000000001010101000010001000000100011100000001001010100010010100000000001000001000001000000001000000110000000000000100001000001010000000110011000000000010110100000110000000000001000000000000000001010000000000100100010100000",
+        "main": "11111110111110111111011111111111111111111011001010111101111111111111011110111111101111110110111111111111100111101111111111100011111101111110111111010110101111011101101101111010110011011011111111111111111111111101111111110111111111111101111111001111111011111101111111111111111111111110011011111100111111111111111111110111101111111111111011101101111111111101111111101111111111001111111111111111111101000111101111111111111111100111110110111011111111110101101111111111101111111111011110111111111111111110",
+        "affixes": "10010100011110100101011111010111111001111000001010000000100101010101011100001010101010110000011110111101100011101101011011100000101100111110110011010010101110010100101001100010000001011110010011011111011101110100011011000100110011111001110011000101111010111001011011001110111110000000011011101100111001101011100111100011001011011101111010101001101101011101011101100011111100001110011110100111101101000001010100100110011110000110010110100000111111100000101101101110100001111010011110101111100111110100",
+        "unique": "00000100010110100101011010000000110000100000000000000000000001000101000100001010000010100000000100001001100000100101011000100000100100100110010011000010001000000100001000000010000001001110010000010111001101100000011011000000000000101001010010000000010010001000000010000100100000000000011010101000110001000010100011100010001001010101010010100001000001011001001101100000011100001110001010000001101001000001010000000110011010000100010110100000110001000000001000001100100000001010000110000110100010100000",
+        "set4": "00000100010000000000011010000000100000000000000000000000000001000000000100001000000010000000000100001001100000000000000000000000100100000100000000000010001000000100001000000010000001001100010000010000000101000000010011000000000000100001000000000000000000000000000010000100100000000000001010101000010001000000100011100000001001010100010010100000000001000001000001000000001000000110000000000000100001000001010000000110011000000000010110100000110000000000001000000000000000001010000000000100100010100000",
+        "all": "11111111111111111111110111111111111111111111101111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111011111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111101111111111111111111111111111111111111111111111111111111111111111111111111111111111111111011111"
+      },
+      "shareSum": 15.051659930490215,
+      "complete": true
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-outfit-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-outfit-rare",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "outcomes": {
+        "none": "00000100010000000000011010000000100000000000000000000000000001000000000100001000000010000000000100001001100000000000000000000000100100000100000000000010001000000100001000000010000001001100010000010000000101000000010011000000000000100001000000000000000000000000000010000100100000000000001010101000010001000000100011100000001001010100010010100000000001000001000001000000001000000110000000000000100001000001010000000110011000000000010110100000110000000000001000000000000000001010000000000100100010100000",
+        "main": "11110110011110110101011111011111111001111001001010000001100101011111011110001110101010110100111111111111100011101111011011100001101100111110110111010110101111010100101001100010000001011111010011011111111111111100011011100101110011111001111011000111111010111001011011011110111111000000011011101100111111111011110111100011101111011111111011101001111101011101011101100011111101001110111110100111101101000001100100110110011111000110110110101011111111100001101101111111101111111111011110111111110111110100",
+        "affixes": "00000100010000000001011010000000100000100000000000000000000001000000000100001010000010000000000100001001100000100101001000100000100100000100000000000010001000000100001000000010000001001110010000010010000101000000010011000000000000101001010010000000000010000000000010000100100000000000011010101000010001000010100011100010001001010100010010100000000001010001000001100000001000000110001000000001101001000001010000000110011010000000010110100000110001000000001000001000000000001010000010000100100010100000",
+        "unique": "00000100010000000000011010000000100000000000000000000000000001000000000100001000000010000000000100001001100000000000000000000000100100000100000000000010001000000100001000000010000001001100010000010000000101000000010011000000000000100001000000000000000000000000000010000100100000000000001010101000010001000000100011100000001001010100010010100000000001000001000001000000001000000110000000000000100001000001010000000110011000000000010110100000110000000000001000000000000000001010000000000100100010100000",
+        "set4": "00000100010000000000011010000000100000000000000000000000000001000000000100001000000010000000000100001001100000000000000000000000100100000100000000000010001000000100001000000010000001001100010000010000000101000000010011000000000000100001000000000000000000000000000010000100100000000000001010101000010001000000100011100000001001010100010010100000000001000001000001000000001000000110000000000000100001000001010000000110011000000000010110100000110000000000001000000000000000001010000000000100100010100000",
+        "all": "11110110011110110101011111011111111101111011001010001001100101111111011110001111101010110110111111111111100111101111011111100001111101111110111111010110101111010100101001100010110001011111011111111111111111111101111011100101110111111101111111001111111010111101111011111110111111001110011011101100111111111011111111100111101111111111111011101101111111011101011101101111111111001111111111111111111101000001101101111110111111000110110110111011111111100001101111111111101111111111011110111111111111110110"
+      },
+      "shareSum": 8.993536138740742,
+      "complete": true
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-relic-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-relic-common",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "outcomes": {
+        "none": "10010100010110100101011111000011111001100000001010000001000001010101010100001010101010110000011110101101000011101101011000100000100100100110010011010010001100000100101000000010000001001110010001011111011101100100011011000000100001111001110011000000011010111000000010000100100000000000111000101000110011001010100111100010001001010101010010001011100101011001011101100010011100001110011010100101101101000001010000010110011010000110010110100000110101000000101000001110100000101010001110100110100010100100",
+        "main": "11110110111110111111011111111111111111111111001010111111111111111111111111111111111011110111111111111111000111101111111111100011111101111110111111010110101111011100101101111010110111011011111111111111111111111101111111100101111111111101111111001111111011111101111111111111111111101110111011111100111111111011111111100111101111111111111011101111111111011111111111101111111111001111111111111111111101100111111111111111111111101111110110111011111111100001101111111111101111111111011110111111111111110110",
+        "affixes": "10010100010110100101011111000011111001100000001010000001000001010101010100001010101010110000011110101101000011101101011000100000100100100110010011010010001100000100101000000010000001001110010001011111011101100100011011000000100001111001110011000000011010111000000010000100100000000000111000101000110011001010100111100010001001010101010010001011100101011001011101100010011100001110011010100101101101000001010000010110011010000110010110100000110101000000101000001110100000101010001110100110100010100100",
+        "unique": "10010100010110100101011111000011111001100000001010000001000001010101010100001010101010110000011110101101000011101101011000100000100100100110010011010010001100000100101000000010000001001110010001011111011101100100011011000000100001111001110011000000011010111000000010000100100000000000111000101000110011001010100111100010001001010101010010001011100101011001011101100010011100001110011010100101101101000001010000010110011010000110010110100000110101000000101000001110100000101010001110100110100010100100",
+        "set4": "10010100010110100101011111000011111001100000001010000001000001010101010100001010101010110000011110101101000011101101011000100000100100100110010011010010001100000100101000000010000001001110010001011111011101100100011011000000100001111001110011000000011010111000000010000100100000000000111000101000110011001010100111100010001001010101010010001011100101011001011101100010011100001110011010100101101101000001010000010110011010000110010110100000110101000000101000001110100000101010001110100110100010100100",
+        "all": "11110110111110111111011111111111111111111111001010111111111111111111111111111111111011110111111111111111000111101111111111100011111101111110111111010110101111011100101101111010110111011011111111111111111111111101111111100101111111111101111111001111111011111101111111111111111111101110111011111100111111111011111111100111101111111111111011101111111111011111111111101111111111001111111111111111111101100111111111111111111111101111110110111011111111100001101111111111101111111111011110111111111111110110"
+      },
+      "shareSum": 7.3619179708409135,
+      "complete": true
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-relic-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-relic-epic",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "outcomes": {
+        "none": "10010100010110100101011111000011111001100000001010000001000001010101010100001010101010110000011110101101000011101101011000100000100100100110010011010010001100000100101000000010000001001110010001011111011101100100011011000000100001111001110011000000011010111000000010000100100000000000111000101000110011001010100111100010001001010101010010001011100101011001011101100010011100001110011010100101101101000001010000010110011010000110010110100000110101000000101000001110100000101010001110100110100010100100",
+        "main": "11111110111110111111111111111111111111111111101110111111111111111111111111111111111111110111111111111111101111111111111111111011111111111110111111011111111111011101101101111111111111011011111111111111111011111101111111110111111111111111111111101111111111111101111111111111111111111110111111111111111111111111111111111111111111111111111011111111111111111111111111111111111111111111111111111111111111110111101111111111111111111111110111111111111111111011111111111111101111111111011111111111111111111110",
+        "affixes": "10010100010110110101011111011111111001100000001010000001100101010111011100001010101010110000011110111101100011101101011000100000101100111110111011010110001100010100101001000010000001011110010011011111111101100100011011100100110011111001110011000101111010111001011011001110111110000000111010101100110011111011110111100011001111011101111010101011100111011101011101100011111101001110011110100111101101000001010101110110011010000110010110100010110111100000101111111110100000111110011110111111100111100100",
+        "unique": "10010100010110100101011111000011111001100000001010000001000001010101010100001010101010110000011110101101000011101101011000100000100100100110010011010010001100000100101000000010000001001110010001011111011101100100011011000000100001111001110011000000011010111000000010000100100000000000111000101000110011001010100111100010001001010101010010001011100101011001011101100010011100001110011010100101101101000001010000010110011010000110010110100000110101000000101000001110100000101010001110100110100010100100",
+        "set4": "10010100010110100101011111000011111001100000001010000001000001010101010100001010101010110000011110101101000011101101011000100000100100100110010011010010001100000100101000000010000001001110010001011111011101100100011011000000100001111001110011000000011010111000000010000100100000000000111000101000110011001010100111100010001001010101010010001011100101011001011101100010011100001110011010100101101101000001010000010110011010000110010110100000110101000000101000001110100000101010001110100110100010100100",
+        "all": "11111111111110111111110111111111111111111111101111111111111111111111111111111111111111111111111111111111101111111111111111111111111111111111111011111111111111011101101111111111111111111011111111111111111011111101111111110111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111101111111111111111111111111111111111111111111011111111111111111111111111111111111111111111111111"
+      },
+      "shareSum": 13.559184217086697,
+      "complete": true
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-relic-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-relic-legendary",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "outcomes": {
+        "none": "10010100010110100101011111000011111001100000001010000001000001010101010100001010101010110000011110101101000011101101011000100000100100100110010011010010001100000100101000000010000001001110010001011111011101100100011011000000100001111001110011000000011010111000000010000100100000000000111000101000110011001010100111100010001001010101010010001011100101011001011101100010011100001110011010100101101101000001010000010110011010000110010110100000110101000000101000001110100000101010001110100110100010100100",
+        "main": "11111111111110111111110111111111111111111111101111111111111111111111111111111111111111110111111111111111101111111111111111111111111111111111111111111111111111011101101111111111111111111011111111111111111011111111111111110111111111111111111111101111111111111111111111111111111111111110111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111110101111111111111111111111111111111111111111111011111111111111111111111111111111111111111111111111",
+        "affixes": "10010100010110110101011111011111111001100000001010000001100101010111011100001010101010110000011110111101100011101101011000100000101100111110111011010010001100010100101001000010000001011110010011011111111101100100011011100100110011111001110011000101111010111001011011001110111110000000111010101100110011111011110111100011001111011101111010101011100101011101011101100011111101001110011110100111101101000001010101110110011010000110010110100000110111000000101111111110100000111110011110111111100111100100",
+        "unique": "10010100010110100101011111000011111001100000001010000001000001010101010100001010101010110000011110101101000011101101011000100000100100100110010011010010001100000100101000000010000001001110010001011111011101100100011011000000100001111001110011000000011010111000000010000100100000000000111000101000110011001010100111100010001001010101010010001011100101011001011101100010011100001110011010100101101101000001010000010110011010000110010110100000110101000000101000001110100000101010001110100110100010100100",
+        "set4": "10010100010110100101011111000011111001100000001010000001000001010101010100001010101010110000011110101101000011101101011000100000100100100110010011010010001100000100101000000010000001001110010001011111011101100100011011000000100001111001110011000000011010111000000010000100100000000000111000101000110011001010100111100010001001010101010010001011100101011001011101100010011100001110011010100101101101000001010000010110011010000110010110100000110101000000101000001110100000101010001110100110100010100100",
+        "all": "11111111111111111111110111111111111111111111101111111111111111111111111111111111111111111111111111111111101111111111111111111111111111111111111011111111111111011111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111101111111111111111111111111111111111111111111011111111111111111111111111111111111111111111111111"
+      },
+      "shareSum": 15.34812708695543,
+      "complete": true
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-relic-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "kind": "pieces-equipped",
+      "templateId": "bellsteel-relic-rare",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "outcomes": {
+        "none": "10010100010110100101011111000011111001100000001010000001000001010101010100001010101010110000011110101101000011101101011000100000100100100110010011010010001100000100101000000010000001001110010001011111011101100100011011000000100001111001110011000000011010111000000010000100100000000000111000101000110011001010100111100010001001010101010010001011100101011001011101100010011100001110011010100101101101000001010000010110011010000110010110100000110101000000101000001110100000101010001110100110100010100100",
+        "main": "11111110111110111111011111111111111111111111001110111111111111111111111111111111111111110111111111111111100111101111111111110011111111111110111111011111111111011101101101111110111111011011111111111111111011111101111111110111111111111101111111101111111011111101111111111111111111111110111011111100111111111111111111111111111111111111111011101111111111111111111111101111111111111111111111111111111101100110101111111111111111111111110111111111111111110011111111111111101111111111011110111111111111110110",
+        "affixes": "10010100010110100101011111011111111001100000001010000001100001010101011100001010101010110000011110111101000011101101011000100000101100101110010011010010001100010100101001000010000001001110010011011111011101100100011011000100110001111001110011000101111010111001011010001110110110000000111000101100110011011011110111100011001011011101111010001011100101011101011101100011111100001110011110100101101101000001010100110110011010000110010110100000110111000000101001111110100000111110011110111111100110100100",
+        "unique": "10010100010110100101011111000011111001100000001010000001000001010101010100001010101010110000011110101101000011101101011000100000100100100110010011010010001100000100101000000010000001001110010001011111011101100100011011000000100001111001110011000000011010111000000010000100100000000000111000101000110011001010100111100010001001010101010010001011100101011001011101100010011100001110011010100101101101000001010000010110011010000110010110100000110101000000101000001110100000101010001110100110100010100100",
+        "set4": "10010100010110100101011111000011111001100000001010000001000001010101010100001010101010110000011110101101000011101101011000100000100100100110010011010010001100000100101000000010000001001110010001011111011101100100011011000000100001111001110011000000011010111000000010000100100000000000111000101000110011001010100111100010001001010101010010001011100101011001011101100010011100001110011010100101101101000001010000010110011010000110010110100000110101000000101000001110100000101010001110100110100010100100",
+        "all": "11111110111110111111111111111111111111111111001110111111111111111111111111111111111111110111111111111111101111111111111111111011111111111110111111011111111111011101101101111111111111011011111111111111111011111101111111110111111111111111111111101111111011111101111111111111111111111110111111111111111111111111111111111111111111111111111011101111111111111111111111101111111111111111111111111111111111110111101111111111111111111111110111111111111111111011111111111111101111111111011110111111111111111110"
+      },
+      "shareSum": 9.015042885401808,
+      "complete": true
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-charm-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "kind": "pieces-equipped",
+      "templateId": "crumbweave-charm-legendary",
+      "cardId": "soot",
+      "level": 6,
+      "chapter": 1,
+      "outcomes": {
+        "none": "00000001010000001100000001000100100100001000111001001000010000001000000000000100100000000100100100010001000001110001100000000000100000011001000000001010000100001100011011100010000101000110110000000000000100100000001010000101100011010000000110010101010010110000010011000101000011000000001010000100000010000010001000101000100000000000001000110110000010001000000100000110000101011110011000010010100000001111110011101011111000000101100101011111100111000011100010100010010011101011001100000000110010000000",
+        "main": "00000001010000001100000011000100100101001000111001001000010000001000010000000100100000000100101100010001000001110001101000100000100000011001000000001010000100011100011011100010010101001110110000001000000100100100001010000111100011010000000110011101010010110001010011000101100011000001001010000100100010100010001000101000100000100000001000110110000010001000000100000110000101011110111000010010100001001111110011101011111000000101100101011111100111100011100110100010010011101011001100000100111010000000",
+        "affixes": "00000001010010011110000001000100110100001010111011001010010000001000000001001100100010100100100110011001100111110011101000000000100111011001000100100010000101011110011011100010010101010110110010001001001101110100001010000101101111010000010110010111010110110101010011000101100011010000001010101100101010000011001000101000101000000010001000110111100010101000000100000111001101111111111000110011100001000111110011101111111000000111100101011101100111001011100010100010010011101011111100010010111010000000",
+        "unique": "00000001010000001100000001000100100100001000111001001000010000001000000000000100100000000100100100010001000001110001100000000000100000011001000000001010000100001100011011100010000101000110110000000000000100100000001010000101100011010000000110010101010010110000010011000101000011000000001010000100000010000010001000101000100000000000001000110110000010001000000100000110000101011110011000010010100000001111110011101011111000000101100101011111100111000011100010100010010011101011001100000000110010000000",
+        "set4": "00000001010000001100000011000100100100001000111001001000010000001000010000000100100000000100101100010001000001110001101000100000100000011001000000001010000100011100011011100010010101001110110000000000000100100100001010000111100011010000000110010101010010110001010011000101100011000001001010000100100010100010001000101000100000000000001000110110000010001000000100000110000101011110111000010010100001001111110011101011111000000101100101011111100111100011100010100010010011101011001100000100111010000000",
+        "all": "00000001010010011110000011000110110101001010111011001010010000001000010001001100100010100100101110011001100111110011101000100000100111011101000100100010000101111110011011100010010101111110110010001001001101110100001010000111101111010000010110011111010110110101010011010101100011110000001011101100101010100011001000101101101000100010001000110111100010101000000100000111001101111111111000110011100001000111110011101111111000000111100101011101100111101011100110100010010111101011111101010110111010000000"
+      },
+      "shareSum": 9.501509792736478,
+      "complete": true
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-relic-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "kind": "pieces-equipped",
+      "templateId": "crumbweave-relic-epic",
+      "cardId": "soot",
+      "level": 6,
+      "chapter": 1,
+      "outcomes": {
+        "none": "00000000000000000000000001000000100100000000011000001000010000001000000000000000100000000100100100010001000000110000100000000000100000000000000000000010000100000000011010000010000100000110110000000000000100100000000010000100000010010000000010010101010000100000000011000100100010000000000000000100000000000010000000101000100000000000000000100010000000001000000100000100000101010110010000010010000000001010100001101010111000000100100100000101100101000000100010000010000000000001001100000000110000000000",
+        "main": "00000000000000000000000011000000100100000000011000001000010000001000000000000000100000000100100100010001000000110001100000000000100000000000000000000010000100010000011010000010000100000110110000000000000100100000000010000101000010010000000010010101010000100001000011000100100010000000000000000100000000100010000000101000100000000000000000100010000000001000000100000100000101010110110000010010000001001010100001101010111000000100100100001101100101000000100010000010000000000001001100000000110000000000",
+        "affixes": "00000001010000001100000001000100110100001000111001001010010000001000000000000000100000000100100100010011000011110011100000000000100000011000000000001010000100000100011011100010000101000110110000000000001101110000001010000101001111010000000110010101010010110000010011000101000011010000001010000100000000000010000000101000100000000000001000100010000010001000000100000100000101011111010000010010100001000111110011101010111000000101100101011101100111000011100010000010010011101011101100000000110010000000",
+        "unique": "00000000000000000000000001000000100100000000011000001000010000001000000000000000100000000100100100010001000000110000100000000000100000000000000000000010000100000000011010000010000100000110110000000000000100100000000010000100000010010000000010010101010000100000000011000100100010000000000000000100000000000010000000101000100000000000000000100010000000001000000100000100000101010110010000010010000000001010100001101010111000000100100100000101100101000000100010000010000000000001001100000000110000000000",
+        "set4": "00000000000000000000000011000000100100000000011000001000010000001000000000000000100000000100100100010001000000110001100000000000100000000000000000000010000100010000011010000010000100000110110000000000000100100000000010000101000010010000000010010101010000100001000011000100100010000000000000000100000000100010000000101000100000000000000000100010000000001000000100000100000101010110110000010010000001001010100001101010111000000100100100001101100101000000100010000010000000000001001100000000110000000000",
+        "all": "00000001010000001100000011000100110101001000111001001010010000001000010000000000100000000100101100010011000011110011101000000000100000011100000000001010000100011100011011100010000101001110110000000000001101110100001010000111001111010000000110010101010010110001010011000101100011010001001011000100100000100010000000101000100000100000001000100010000010001000000100000100000101011111110000010010100001000111110011101010111000000101100101011101100111100011100110000010010011101011101100000100111010000000"
+      },
+      "shareSum": 7.348290375687079,
+      "complete": true
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-relic-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "kind": "pieces-equipped",
+      "templateId": "crumbweave-relic-legendary",
+      "cardId": "soot",
+      "level": 6,
+      "chapter": 1,
+      "outcomes": {
+        "none": "00000000000000000000000001000000100100000000011000001000010000001000000000000000100000000100100100010001000000110000100000000000100000000000000000000010000100000000011010000010000100000110110000000000000100100000000010000100000010010000000010010101010000100000000011000100100010000000000000000100000000000010000000101000100000000000000000100010000000001000000100000100000101010110010000010010000000001010100001101010111000000100100100000101100101000000100010000010000000000001001100000000110000000000",
+        "main": "00000000000000000000000011000000100100000000011000001000010000001000000000000000100000000100100100010001000000110001100000000000100000000000000000000010000100010000011010000010000100000110110000000000000100100000000010000101000010010000000010010101010000100001000011000100100010000000000000000100000000100010000000101000100000000000000000100010000000001000000100000100000101010110110000010010000001001010100001101010111000000100100100001101100101000000100010000010000000000001001100000000110000000000",
+        "affixes": "00000001010000001100000001000100110100001000111001001010010000001000000000000000100000000100100100010011000011110011100000000000100000011000000000001010000100000100011011100010000101000110110000000000001101110000001010000101001111010000000110010101010010110000010011000101000011010000001010000100000000000010000000101000100000000000001000100010000010001000000100000100000101011111010000010010100001000111110011101010111000000101100101011101100111000011100010000010010011101011101100000000110010000000",
+        "unique": "00000000000000000000000011000000100100000000001000001000010000001000000000000000100000000100100100010001000000110000100000000000100000000000000000000010000100000000011010000010000100000110110000000000000100100000000010000101000110010000000010010101010000100000000011000100100010000000000000000100000000000010000000101000100000000000000000100010000000001000000100000100000101010110110000010010000001001010100001101010111000000100000100001101100101000000100010000010000000000001001100000000110000000000",
+        "set4": "00000000000000000000000011000000100100000000011000001000010000001000000000000000100000000100100100010001000000110001100000000000100000000000000000000010000100010000011010000010000100000110110000000000000100100000000010000101000010010000000010010101010000100001000011000100100010000000000000000100000000100010000000101000100000000000000000100010000000001000000100000100000101010110110000010010000001001010100001101010111000000100100100001101100101000000100010000010000000000001001100000000110000000000",
+        "all": "00000001010000001100000011000100110101001000101001001010010000001000010000000000100000000100101100010001000011110011101000000000100000011100000000001010000100011100011011100010000101001110110000000000001101110100001010000111001111010000000110010101010010110001010011000101100011010001001011000100100000100010000000101000100000100000001000100010000010001000000100000100000101011111110000010010100001000111110011101010111000000101000101011101100111100011100110000010010011101011101100000100111010000000"
+      },
+      "shareSum": 10.162766492748998,
+      "complete": true
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-weapon-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "kind": "pieces-equipped",
+      "templateId": "crumbweave-weapon-epic",
+      "cardId": "soot",
+      "level": 6,
+      "chapter": 1,
+      "outcomes": {
+        "none": "00000000000000000000000001000000100000000000010000001000000000001000000000000000100000000100100000010000000000010000100000000000100000000000000000000010000100010000000000000010000000000010110000001000000100100000000010000101000010010000000000000100000000000001000010000100100000000000000000000000000000100010000000001000100000000000000000100010000000001000000000000000000001010110010000010010000001000010100000101010101000000001100000000001000101000000000000000010000001000000000100000000110000000000",
+        "main": "00000001010000001100000011000100100101001000111001001000010000001000010000000100100000000100101100010001000011110001101000100000100000011001000000001010000100011100011011100010010001001110110000001000000100100000001010000111100010010000000110011101010010110001010011000101100011000001001010000100100010100010001000101000100000100000001000110110100010001000000100001110000101011110111000010010100001001111110011101011111000000101100101011111100111000011100110000010010011101011001100000100111010000000",
+        "affixes": "00000000000000000000000001000000100000000000010000001000000000001000000000000000100000000100100000010000000000010000100000000000100000000000000000000010000100010000000000000010000100000010110000001000000100100000000010000101000010010000000000000100000000000001000010000100100000000000000000000000000000100010000000001000100000000000000000100010000000001000000000000000000001010110010000010010000000000010100000101010101000000001100000000001000101000000000000000010000001000000000100000000110000000000",
+        "unique": "00000000000000000000000001000000100000000000010000001000000000001000000000000000100000000100100000010000000000010000100000000000100000000000000000000010000100010000000000000010000000000010110000001000000100100000000010000101000010010000000000000100000000000001000010000100100000000000000000000000000000100010000000001000100000000000000000100010000000001000000000000000000001010110010000010010000001000010100000101010101000000001100000000001000101000000000000000010000001000000000100000000110000000000",
+        "set4": "00000000000000000000000001000000100000000000010000001000000000001000000000000000100000000100100000010000000000010000100000000000100000000000000000000010000100010000000000000010000000000010110000001000000100100000000010000101000010010000000000000100000000000001000010000100100000000000000000000000000000100010000000001000100000000000000000100010000000001000000000000000000001010110010000010010000001000010100000101010101000000001100000000001000101000000000000000010000001000000000100000000110000000000",
+        "all": "00000001010000001100000011000100100101001000111001001000010000001000010000000100100000000100101100010001000001110001101000100000100000011001000000001010000100011100011011100010010101001110110000001000000100100100001010000111100011010000000110011101010010110001010011000101100011000001001010000100100010100010001000101000100000100000001000110110000010001000000100000110000101011110111000010010100001001111110011101011111000000101100101011111100111100011100110100010010011101011001100000100111010000000"
+      },
+      "shareSum": 8.195824184732338,
+      "complete": true
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-weapon-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "kind": "pieces-equipped",
+      "templateId": "crumbweave-weapon-legendary",
+      "cardId": "soot",
+      "level": 6,
+      "chapter": 1,
+      "outcomes": {
+        "none": "00000000000000000000000001000000100000000000010000001000000000001000000000000000100000000100100000010000000000010000100000000000100000000000000000000010000100010000000000000010000000000010110000001000000100100000000010000101000010010000000000000100000000000001000010000100100000000000000000000000000000100010000000001000100000000000000000100010000000001000000000000000000001010110010000010010000001000010100000101010101000000001100000000001000101000000000000000010000001000000000100000000110000000000",
+        "main": "00000001010000001100000011000100110101001000111011001000010000001000010001000100100010100100101100010001000011110001101000100000100000011001000000101010000100011100011011100010010001001110110000001000001100110000001010000111100110010000000110011101010010110001010011000101100011010000001010001100100010100010001000101000100000100000001000110110100010001000000100001110000101111111111000010010100001001111110011101111111000000101000101011111100111000011100110000010010011101011111100000100111010000000",
+        "affixes": "00000000000000001000000011000000100000000000111000001000010000001000010000000000100000000100100000010001000001010001100000000000100000010000000000000010000100011000011010000010000101001110110000000000000100100000000010000101000010010000000010010101010000100001010011000100100010000000000010000100000000100010000000101000100000000000000000100010000000001000000000000100000101010110110000010010000001000010100011101010111000000101100100001101100101000000100010000010000001000001001100000000111000000000",
+        "unique": "00000000000000000000000001000000100000000000010000001000000000001000000000000000100000000100100000010000000000010000100000000000100000000000000000000010000100010000000000000010000000000010110000001000000100100000000010000101000010010000000000000100000000000001000010000100100000000000000000000000000000100010000000001000100000000000000000100010000000001000000000000000000001010110010000010010000001000010100000101010101000000001100000000001000101000000000000000010000001000000000100000000110000000000",
+        "set4": "00000000000000000000000001000000100000000000010000001000000000001000000000000000100000000100100000010000000000010000100000000000100000000000000000000010000100010000000000000010000000000010110000001000000100100000000010000101000010010000000000000100000000000001000010000100100000000000000000000000000000100010000000001000100000000000000000100010000000001000000000000000000001010110010000010010000001000010100000101010101000000001100000000001000101000000000000000010000001000000000100000000110000000000",
+        "all": "00100101010010011110100011000111110111001010111011001010010000001000011001001100101010100100101110011011100111110011111000100000110111011001000100100010000101111110011111100010010101111110110010001001001111110100011010001111101111010000110110011111010110110101010011010111100011110000011111101100111010101011001000101111101000110010001000110111100010101000001100001111001101111111111000110011100001010111110011101111111000000111100101011101100111101011101111100110110111101011111111010110111110000000"
+      },
+      "shareSum": 10.899705509132824,
+      "complete": true
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-weapon-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "kind": "pieces-equipped",
+      "templateId": "crumbweave-weapon-rare",
+      "cardId": "soot",
+      "level": 6,
+      "chapter": 1,
+      "outcomes": {
+        "none": "00000000000000000000000001000000100000000000010000001000000000001000000000000000100000000100100000010000000000010000100000000000100000000000000000000010000100010000000000000010000000000010110000001000000100100000000010000101000010010000000000000100000000000001000010000100100000000000000000000000000000100010000000001000100000000000000000100010000000001000000000000000000001010110010000010010000001000010100000101010101000000001100000000001000101000000000000000010000001000000000100000000110000000000",
+        "main": "00000000000000001000000011000100100100001000111001001000010000001000010000000000100000000100101100010001000001110001101000000000100000011000000000001010000100010100011011100010010001001110110000001000000100100000001010000111000010010000000110010101010010110001010011000101100011000000001010000100000000100010000000101000100000100000001000100010100010001000000100001100000101010110110000010010100001001011110011101010111000000101100101011101100101000011100110000010010011001011001100000000111010000000",
+        "affixes": "00000000000000000000000001000000100000000000010000001000000000001000000000000000100000000100100000010000000000010000100000000000100000000000000000000010000100010000000000000010000100000010110000001000000100100000000010000101000010010000000000000100000000000001000010000100100000000000000000000000000000100010000000001000100000000000000000100010000000001000000000000000000001010110010000010010000000000010100000101010101000000001100000000001000101000000000000000010000001000000000100000000110000000000",
+        "unique": "00000000000000000000000001000000100000000000010000001000000000001000000000000000100000000100100000010000000000010000100000000000100000000000000000000010000100010000000000000010000000000010110000001000000100100000000010000101000010010000000000000100000000000001000010000100100000000000000000000000000000100010000000001000100000000000000000100010000000001000000000000000000001010110010000010010000001000010100000101010101000000001100000000001000101000000000000000010000001000000000100000000110000000000",
+        "set4": "00000000000000000000000001000000100000000000010000001000000000001000000000000000100000000100100000010000000000010000100000000000100000000000000000000010000100010000000000000010000000000010110000001000000100100000000010000101000010010000000000000100000000000001000010000100100000000000000000000000000000100010000000001000100000000000000000100010000000001000000000000000000001010110010000010010000001000010100000101010101000000001100000000001000101000000000000000010000001000000000100000000110000000000",
+        "all": "00000000000000001000000011000100100100001000111001001000010000001000010000000000100000000100101100010001000001110001101000000000100000011000000000001010000100010100011011100010010101001110110000001000000100100000001010000111000011010000000110010101010010110001010011000101100011000000001010000100000000100010000000101000100000100000001000100010000010001000000100000100000101010110110000010010100001001011110011101010111000000101100101011101100101000011100110100010010011001011001100000000111010000000"
+      },
+      "shareSum": 6.470773439872971,
+      "complete": true
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-weapon-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "kind": "pieces-equipped",
+      "templateId": "emberfelt-weapon-legendary",
+      "cardId": "soot",
+      "level": 6,
+      "chapter": 1,
+      "outcomes": {
+        "none": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000101000000000000000000000000000000000000000000000001100001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "main": "00000000000001000000000001001000000100000000000000100000000000000000000000000000000000000000000000000000000000000001100000010000000000000000000000000000000000000000001010000000001000000010010000000000000100100010000010000001000000000000000000000000100100000000000000000001100001000000000000000000000000000000000000000001000000000000000001100000001000000000001100001000000000010000000100000000000000000000000000000000000000000000000000000100010100000000000000000000000000000000000001000000000010000000",
+        "affixes": "00000000000000000000000001000000000000000000000001000000000000000000000000000000100000000000000100000000000000100001000000000000000000000000000000000000000000000000000000000000001000000000010000000000000100100000000010000101000000000000000000000000000100000000000000000001100001000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000001000000000000000000000000000000000100000000000000000000000000000000000000000000000000000010000000",
+        "unique": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000101000000000000000000000000000000000000000000000001100001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "set4": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000101000000000000000000000000000000000000000000000001100001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "all": "00000000000001000000010001001000000000000000000001100000000000000000000000000000000000100000000101000000000000000001101000010110000010001000000000100010000000000010001010000000001100011110010000000000000110100010100010000111000000000001000000000000100100100000000000000001100000000000000000010000000001000000000000000001000001010000000000101000001000001000000100010000000000000100000100100000000001000001000000000000011000000010100100000100010100010000000000000000000000000010100001000000001010000000"
+      },
+      "shareSum": 13.611845048910538,
+      "complete": true
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-charm-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-charm-common",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "outcomes": {
+        "none": "00000000000000000000000010000000100000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000010000000000000000000000000000000000100000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000100000000001010000000000001000000000000000000000100000000000001000000000000000000000000000000100100000100000",
+        "main": "00000100010010100100011010000000110001100000000000000000000001000100000100001010000010100000010100001101100010100101010000100000100100000110010001000010001000000100001000000010000001001100010000011110000101000000010011000000000000101001010010000000010010000000000010000100100000000000111010101000110001001010100011100010001001010100010010101011000001000001000101100000011100000110001010100001101001000001000000000110011010000100010110100000110001000000001000001000100000001010000110000110100010100000",
+        "affixes": "00000000000000000000000010000000100000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000010000000000000000000000000000000000100000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000100000000001010000000000001000000000000000000000100000000000001000000000000000000000000000000100100000100000",
+        "unique": "00000000000000000000000010000000100000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000010000000000000000000000000000000000100000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000100000000001010000000000001000000000000000000000100000000000001000000000000000000000000000000100100000100000",
+        "set4": "00000000000000000000000010000000100000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000010000000000000000000000000000000000100000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000100000000001010000000000001000000000000000000000100000000000001000000000000000000000000000000100100000100000",
+        "all": "00000100010010100100011010000000110001100000000000000000000001000100000100001010000010100000010100001101100010100101010000100000100100000110010001000010001000000100001000000010000001001100010000011110000101000000010011000000000000101001010010000000010010000000000010000100100000000000111010101000110001001010100011100010001001010100010010101011000001000001000101100000011100000110001010100001101001000001000000000110011010000100010110100000110001000000001000001000100000001010000110000110100010100000"
+      },
+      "shareSum": 7.336702090302189,
+      "complete": true
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-charm-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-charm-epic",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "outcomes": {
+        "none": "00000000000000000000000010000000100000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000010000000000000000000000000000000000100000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000100000000001010000000000001000000000000000000000100000000000001000000000000000000000000000000100100000100000",
+        "main": "10010100011110100101011111011111111001100000001010000001000001110111010100001010101010110000011110101101100011101101011001100000100100111110111011010010001100010100101000000010000001011110010111011111111101110100011011100100110001111001111011000010111010111000011011001110100110000000111010101100110011011011100111100011001111011101111010101011110101011101011101100011011101001110011011100101101101000001000100110110011010000110010110101010110111100000101010101110101000111010001110111110100111100100",
+        "affixes": "00000100010000000000011010000000100000000000000000000000000000000000000000000000000000000000000100000001000000000000000000000000000000000000000000000010000000000100000000000000000000000100000000010000000100000000010000000000000000000000000000000000000000000000000010000100000000000000000010001000010001000000100000100000001000000000000000100000000001000000000000000000000000000110000000000000100000000000000000000010011000000000000000000000110000000000001000000000000000001000000000000100100010100000",
+        "unique": "00000000000000000000000010000000100000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000010000000000000000000000000000000000100000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000100000000001010000000000001000000000000000000000100000000000001000000000000000000000000000000100100000100000",
+        "set4": "00000000000000000000000010000000100000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000010000000000000000000000000000000000100000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000100000000001010000000000001000000000000000000000100000000000001000000000000000000000000000000100100000100000",
+        "all": "11110100111110110101011111011111111111111011001110101111111111110111111110011111101011110110111111111111100111101111111111100011111101111110111111010110111110011100101101111010010111011111011111111111111111111101111011110101111111111101111111000111111011111101111111111110111111000010111011101100111111111011111111100111101111111111111011101111111111111101111111101011111111001111111111111111111101000100001111111111111111100110110110111011111111110000101111111111101111111111011110111111111111110110"
+      },
+      "shareSum": 10.819280781171575,
+      "complete": true
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-charm-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-charm-legendary",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "outcomes": {
+        "none": "00000000000000000000000010000000100000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000010000000000000000000000000000000000100000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000100000000001010000000000001000000000000000000000100000000000001000000000000000000000000000000100100000100000",
+        "main": "10110100011110110101011111011111111001101000001010100001100101110111011100011010101010110100011111111111100011101101111011100000101100111110111111010110101110010100101001110010000001011110010111011111111111111100111011100101110111111101111111000111111010111101011011011110111111000000111011101100111111111011111111100111001111111111111011101111110101011101111101100011111111001111111111101111111101000001000110111111111111000110110110111011110111100000101111111111101111111111011110111111111111110100",
+        "affixes": "00000100010000000000011010000000100000000000000000000000000001000000000000000000000000000000000100001001100000100001000000000000000000000100000000000010001000000100001000000010000001001100010000010000000101000000010011000000000000000001010000000000000010000000000010000100000000000000001010001000010001000000100011100000001001010100010000100010000001000000000001000000001000000110000000000000101001000000000000000110011000000100010110100000110000000000001000001000000000001000000000000100100010100000",
+        "unique": "00000000000000000000000010000000100000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000010000000000000000000000000000000000100000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000100000000001010000000000001000000000000000000000100000000000001000000000000000000000000000000100100000100000",
+        "set4": "00000000000000000000000010000000100000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000010000000000000000000000000000000000100000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000100000000001010000000000001000000000000000000000100000000000001000000000000000000000000000000100100000100000",
+        "all": "11111111111110111111011111111111111111111111101110111111111111111111111111111111111111110111111111111111101111111111111111111111111111111110111111011110111111011101101101111110111111111011111111111111111111111101111111110111111111111111111111001111111111111101111111111111111111111111111111111111111111111011111111111111111111111111111111101111111111111111111111111111111111111111111111111111111101111110101111111111111111111111111111111111111111111011111111111111111111111111111110111111111111111111"
+      },
+      "shareSum": 14.24125894906604,
+      "complete": true
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-charm-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-charm-rare",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "outcomes": {
+        "none": "00000000000000000000000010000000100000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000010000000000000000000000000000000000100000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000100000000001010000000000001000000000000000000000100000000000001000000000000000000000000000000100100000100000",
+        "main": "10010100010110100101011010000000111001100000001010000001000001010100000100001010101010100000011110101101100011100101011000100000100100110110110001010010001100000100101000000010000001001110010001011111000101100000011011100000110001111001110010000000011010011000001010000110100000000000111010101000110011001011100111100011001011010101111010101011100001011101010101100010011100001110011010100001101101000001000000000110011010000100010110100000110101000000101000101110100000101010001110100110100010100100",
+        "affixes": "00000100000000000000000010000000100000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000010000000000000000000000000000000000100000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000010000000000000100000000001010000000010001000000000000000000000100000000000001000000000000000000000000000000100100000100000",
+        "unique": "00000000000000000000000010000000100000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000010000000000000000000000000000000000100000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000100000000001010000000000001000000000000000000000100000000000001000000000000000000000000000000100100000100000",
+        "set4": "00000000000000000000000010000000100000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000010000000000000000000000000000000000100000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000100000000001010000000000001000000000000000000000100000000000001000000000000000000000000000000100100000100000",
+        "all": "10010100010110100101011010000001111001100000001010000001000001010101010100001010101010110000011110101101100011100101011000100000100100111110110011010010001100010100101000000010000001011110010001011111001101100100011011100100110001111001110011000000011010111000001011000110100000000000111010101000110011001011100111100011001011010101111010101011100101011101010101100011011100001110011010100001101101000001010100000110011010000100010110100000110111000000101000101110100000111010001110100110100010100100"
+      },
+      "shareSum": 8.509342004010064,
+      "complete": true
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-outfit-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-outfit-common",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "outcomes": {
+        "none": "00000100000000000000001010000000100000000000000000000000000000000000000000000000000000000000000100000001000000000000000000000000000000000000000000000010000000000000000000000000000000000100000000010000000100000000000000000000000000000000000000000000000000000000000000000100000000000000000010001000000000000000100000000000001000000000000000100000000000000000000000000000000000000110000000000000100000000000010000000010011000000000000000000000110000000000001000000000000000001000000000000100100000100000",
+        "main": "00000100010110100101011010000000110001100000000000000000000001000101000100001010000010100000000100001101100000101101011000100000100100100110010011000010001000000100001000000010000001001110010001011111001101100000011011000000100000101001110010000000010010001000000010000100100000000000111010101000110001000010100011100010001001010101010010100011000001011001001101100000011100001110001010000101101001000001010000000110011010000100010110100000110001000000001000001100100000001010000110000110100010100000",
+        "affixes": "00000100000000000000001010000000100000000000000000000000000000000000000000000000000000000000000100000001000000000000000000000000000000000000000000000010000000000000000000000000000000000100000000010000000100000000000000000000000000000000000000000000000000000000000000000100000000000000000010001000000000000000100000000000001000000000000000100000000000000000000000000000000000000110000000000000100000000000010000000010011000000000000000000000110000000000001000000000000000001000000000000100100000100000",
+        "unique": "00000100000000000000001010000000100000000000000000000000000000000000000000000000000000000000000100000001000000000000000000000000000000000000000000000010000000000000000000000000000000000100000000010000000100000000000000000000000000000000000000000000000000000000000000000100000000000000000010001000000000000000100000000000001000000000000000100000000000000000000000000000000000000110000000000000100000000000010000000010011000000000000000000000110000000000001000000000000000001000000000000100100000100000",
+        "set4": "00000100000000000000001010000000100000000000000000000000000000000000000000000000000000000000000100000001000000000000000000000000000000000000000000000010000000000000000000000000000000000100000000010000000100000000000000000000000000000000000000000000000000000000000000000100000000000000000010001000000000000000100000000000001000000000000000100000000000000000000000000000000000000110000000000000100000000000010000000010011000000000000000000000110000000000001000000000000000001000000000000100100000100000",
+        "all": "00000100010110100101011010000000110001100000000000000000000001000101000100001010000010100000000100001101100000101101011000100000100100100110010011000010001000000100001000000010000001001110010001011111001101100000011011000000100000101001110010000000010010001000000010000100100000000000111010101000110001000010100011100010001001010101010010100011000001011001001101100000011100001110001010000101101001000001010000000110011010000100010110100000110001000000001000001100100000001010000110000110100010100000"
+      },
+      "shareSum": 7.4350365872559845,
+      "complete": true
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-outfit-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-outfit-epic",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "outcomes": {
+        "none": "00000100000000000000001010000000100000000000000000000000000000000000000000000000000000000000000100000001000000000000000000000000000000000000000000000010000000000000000000000000000000000100000000010000000100000000000000000000000000000000000000000000000000000000000000000100000000000000000010001000000000000000100000000000001000000000000000100000000000000000000000000000000000000110000000000000100000000000010000000010011000000000000000000000110000000000001000000000000000001000000000000100100000100000",
+        "main": "10010100010110100101011111010111111001100000001010000001100101010101011100001010101010110000011110111101100011101101011001100000101100101110110011010110101110010100101001000010000001011110010011011111111101110100011011100100100011111001111011000101111010111001011011001100101110000000111010101100110011001011100111100011001011011111111010101011100101011101011101100011111100001110111010100101101101000001010100110110011010000110110110101010111111100000101101101110100010111010011110110111100111110100",
+        "affixes": "00000100010000000000011010000000100000100000000000000000000001000000000000001010000000000000000100001001100000100001000000000000100000000100000000000010001000000100001000000010000001000100010000010010000101000000010011000000000000100001010000000000000000000000000010000100000000000000011010101000010001000010100011100010001001010100010010100000000001000001000001100000001000000110000000000000101001000000010000000110011010000000010110100000110000000000001000001000000000001010000010000100100010100000",
+        "unique": "00000100000000000000001010000000100000000000000000000000000000000000000000000000000000000000000100000001000000000000000000000000000000000000000000000010000000000000000000000000000000000100000000010000000100000000000000000000000000000000000000000000000000000000000000000100000000000000000010001000000000000000100000000000001000000000000000100000000000000000000000000000000000000110000000000000100000000000010000000010011000000000000000000000110000000000001000000000000000001000000000000100100000100000",
+        "set4": "00000100000000000000001010000000100000000000000000000000000000000000000000000000000000000000000100000001000000000000000000000000000000000000000000000010000000000000000000000000000000000100000000010000000100000000000000000000000000000000000000000000000000000000000000000100000000000000000010001000000000000000100000000000001000000000000000100000000000000000000000000000000000000110000000000000100000000000010000000010011000000000000000000000110000000000001000000000000000001000000000000100100000100000",
+        "all": "11111110111110110101011111011111111111111011001010001101111111111111011110011111101111110110111111111111100111101111111011100011111101111110111111010110101111010100101101101010010011011111011111111111111111111101111011100101111111111101111111001111111011111101111111111110111111001110111011101100111111111011111111100111101111111111111011101111111111111101111111101111111111001111111111111111111101000100101111111110111111100110110110111011111111110001101111111111101111111111011110111111111111110110"
+      },
+      "shareSum": 11.29178409523718,
+      "complete": true
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-outfit-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-outfit-legendary",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "outcomes": {
+        "none": "00000100000000000000001010000000100000000000000000000000000000000000000000000000000000000000000100000001000000000000000000000000000000000000000000000010000000000000000000000000000000000100000000010000000100000000000000000000000000000000000000000000000000000000000000000100000000000000000010001000000000000000100000000000001000000000000000100000000000000000000000000000000000000110000000000000100000000000010000000010011000000000000000000000110000000000001000000000000000001000000000000100100000100000",
+        "main": "10010110011110110101011111011111111001111000001010001001100101011101011100001110101010110100011111111111100011101111011011100001101100111110110011010110101111010100101001100010000001011111010011011111111111111100011011100100110011111000111011000111111010111001011011001110111110000000111011101100111111111011110111100011001111011111111011101011101101011101011101100011111101001110111110100111101101000000000100110110011110000110110110101011111111100001101101101110101011111111011110111111110111110100",
+        "affixes": "00000100010000100101011010000000110001100000000000000000000001000001000100001010000010100000000100001101100010101101001000100000100100100110010010000010001100000100001000000010000001001110010000010111000101100000011011000000000000101001010011000000010010000000000010000100100000000000111010101000010001000010100011100010001001010100010010100011000001010001001001100000011000001110001000000001101001000001010000000110011010000100010110100000110001000000001000001100000000101010000010100110100010100000",
+        "unique": "00000100000000000000001010000000100000000000000000000000000000000000000000000000000000000000000100000001000000000000000000000000000000000000000000000010000000000000000000000000000000000100000000010000000100000000000000000000000000000000000000000000000000000000000000000100000000000000000010001000000000000000100000000000001000000000000000100000000000000000000000000000000000000110000000000000100000000000010000000010011000000000000000000000110000000000001000000000000000001000000000000100100000100000",
+        "set4": "00000100000000000000001010000000100000000000000000000000000000000000000000000000000000000000000100000001000000000000000000000000000000000000000000000010000000000000000000000000000000000100000000010000000100000000000000000000000000000000000000000000000000000000000000000100000000000000000010001000000000000000100000000000001000000000000000100000000000000000000000000000000000000110000000000000100000000000010000000010011000000000000000000000110000000000001000000000000000001000000000000100100000100000",
+        "all": "11111110111110111111111111111111111111111111001110111111111111111111111111111111111111110111111111111111101111101111111111111111111111111110111111011111111111011101101101111110111111011011111111111111111011111101111111110111111111111111111111101111111111111101111111111111111111111111111111111111111111111111111111111111111111111111111011101111111111111111111111111111111111101111111111111111111101110110101111111111111111101111111110111111111111111011111111111111111111111111111110111111111111111110"
+      },
+      "shareSum": 15.537198835128544,
+      "complete": true
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-outfit-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-outfit-rare",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "outcomes": {
+        "none": "00000100000000000000001010000000100000000000000000000000000000000000000000000000000000000000000100000001000000000000000000000000000000000000000000000010000000000000000000000000000000000100000000010000000100000000000000000000000000000000000000000000000000000000000000000100000000000000000010001000000000000000100000000000001000000000000000100000000000000000000000000000000000000110000000000000100000000000010000000010011000000000000000000000110000000000001000000000000000001000000000000100100000100000",
+        "main": "10010100010110100101011111010001111001100000000010000000100001010101000100001010101010110000011110101101100011101101011000100000101100100110110011010010001100010100101000000010000001011110010001011111001101100100011011000100100001101001110011000100110010101000001010000100100000000000111010101000110001001010100111100011001001011101011010101011100101011101011101100010011100001110011010100101101101000001010100110110011010000110010110100000110101000000001000101100100000111010010110100111100010100100",
+        "affixes": "00000100000000000000001010000000100000000000000000000000000000000000000000000000000000000000000100000001000000000000000000000000000000000000000000000010000000000000000000000000000000000100000000010000000100000000000000000000000000000001000000000000000000000000000010000100000000000000001010001000010000000000100000000000001000000000000000100000000000000000000000000000000000000110000000000000100000000000010000000010011000000000000000000000110000000000001000000000000000001000000000000100100000100000",
+        "unique": "00000100000000000000001010000000100000000000000000000000000000000000000000000000000000000000000100000001000000000000000000000000000000000000000000000010000000000000000000000000000000000100000000010000000100000000000000000000000000000000000000000000000000000000000000000100000000000000000010001000000000000000100000000000001000000000000000100000000000000000000000000000000000000110000000000000100000000000010000000010011000000000000000000000110000000000001000000000000000001000000000000100100000100000",
+        "set4": "00000100000000000000001010000000100000000000000000000000000000000000000000000000000000000000000100000001000000000000000000000000000000000000000000000010000000000000000000000000000000000100000000010000000100000000000000000000000000000000000000000000000000000000000000000100000000000000000010001000000000000000100000000000001000000000000000100000000000000000000000000000000000000110000000000000100000000000010000000010011000000000000000000000110000000000001000000000000000001000000000000100100000100000",
+        "all": "10010100010110100101011111010011111001100000001010000000100001010101001100001010101010110000011110111101100011101101011000100000101100101110110011010010001100010100101000000010000001011110010001011111001101110100011011000100100001111001110011000100111010101001001010001100100000000000111010101100110001001010100111100011001001011101011010101011100101011101011101100010011100001110011010100101101101000001010100110110011010000110010110100000110111000000001001101100100000111010011110110111100110100100"
+      },
+      "shareSum": 8.823694210488894,
+      "complete": true
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-relic-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-relic-common",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "outcomes": {
+        "none": "00000100010000000000011010000000100000000000000000000000000001000000000000001000000000000000000100000001000000000000000000000000100000000000000000000010001000000100001000000010000001000100010000010000000101000000010011000000000000000001010000000000000000000000000010000100100000000000001000101000010001000000100011100000001000000000010010000010000001000000000001000000000000000110000000000000101001000000010000000110011000000000010010000000110000000000001000000000000000001000000000000100100010100000",
+        "main": "10010100010110100101011111011011111001100000000010000001100001010101010100001010101010110000011110111101000011101101011000100000101100111110010011010010001100010100101000000010000001011110010011011111011101100100011011100100110001111001110011000110111010111000011010001100110100000000111000101100110011011011110111100011001011011101111010001011100101011101011101100010011100001110011110100101101101000001010100110110011010000110010110101000110111000000101001101110100000111010011110110111100110100100",
+        "affixes": "00000100010000000000011010000000100000000000000000000000000001000000000000001000000000000000000100000001000000000000000000000000100000000000000000000010001000000100001000000010000001000100010000010000000101000000010011000000000000000001010000000000000000000000000010000100100000000000001000101000010001000000100011100000001000000000010010000010000001000000000001000000000000000110000000000000101001000000010000000110011000000000010010000000110000000000001000000000000000001000000000000100100010100000",
+        "unique": "00000100010000000000011010000000100000000000000000000000000001000000000000001000000000000000000100000001000000000000000000000000100000000000000000000010001000000100001000000010000001000100010000010000000101000000010011000000000000000001010000000000000000000000000010000100100000000000001000101000010001000000100011100000001000000000010010000010000001000000000001000000000000000110000000000000101001000000010000000110011000000000010010000000110000000000001000000000000000001000000000000100100010100000",
+        "set4": "00000100010000000000011010000000100000000000000000000000000001000000000000001000000000000000000100000001000000000000000000000000100000000000000000000010001000000100001000000010000001000100010000010000000101000000010011000000000000000001010000000000000000000000000010000100100000000000001000101000010001000000100011100000001000000000010010000010000001000000000001000000000000000110000000000000101001000000010000000110011000000000010010000000110000000000001000000000000000001000000000000100100010100000",
+        "all": "10010100010110100101011111011011111001100000000010000001100001010101010100001010101010110000011110111101000011101101011000100000101100111110010011010010001100010100101000000010000001011110010011011111011101100100011011100100110001111001110011000110111010111000011010001100110100000000111000101100110011011011110111100011001011011101111010001011100101011101011101100010011100001110011110100101101101000001010100110110011010000110010110101000110111000000101001101110100000111010011110110111100110100100"
+      },
+      "shareSum": 7.448773001669997,
+      "complete": true
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-relic-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-relic-epic",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "outcomes": {
+        "none": "00000100010000000000011010000000100000000000000000000000000001000000000000001000000000000000000100000001000000000000000000000000100000000000000000000010001000000100001000000010000001000100010000010000000101000000010011000000000000000001010000000000000000000000000010000100100000000000001000101000010001000000100011100000001000000000010010000010000001000000000001000000000000000110000000000000101001000000010000000110011000000000010010000000110000000000001000000000000000001000000000000100100010100000",
+        "main": "10110110111110110101011111011111111001111001001010001101110111110111011100111010101011110110111111111111000011101111111011100011101100111110011111010110101111010100101001110010000001011111010111011111111111111100111011100101110111111101111111001111111010111101111011011110111111100110111001101100111111111011111111100011101111111111111011001111111111011101011101100011111111001111111111111111111101000001010111111111111111000110110110111011111111100001101111111111101011111111011110110111111111110110",
+        "affixes": "00000100010000000000011010000000100000000000000000000000000001000000000000001000000010000000000100000001000000100000000000100000100100000000000000000010001000000100001000000010000001001100010000010000000101000000010011000000000000000001010000000000010010000000000010000100100000000000001010101000010001000000100011100000001001010100010010000010000001000000000001000000001000000110000000000000101001000001010000000110011000000000010110100000110000000000001000001000000000001010000010000100100010100000",
+        "unique": "00000100010000000000011010000000100000000000000000000000000001000000000000001000000000000000000100000001000000000000000000000000100000000000000000000010001000000100001000000010000001000100010000010000000101000000010011000000000000000001010000000000000000000000000010000100100000000000001000101000010001000000100011100000001000000000010010000010000001000000000001000000000000000110000000000000101001000000010000000110011000000000010010000000110000000000001000000000000000001000000000000100100010100000",
+        "set4": "00000100010000000000011010000000100000000000000000000000000001000000000000001000000000000000000100000001000000000000000000000000100000000000000000000010001000000100001000000010000001000100010000010000000101000000010011000000000000000001010000000000000000000000000010000100100000000000001000101000010001000000100011100000001000000000010010000010000001000000000001000000000000000110000000000000101001000000010000000110011000000000010010000000110000000000001000000000000000001000000000000100100010100000",
+        "all": "11110110111110111111011111011111111011111101001010111101111111111111111110111110101011110110111111111111000111101111111111100011111101111110011111010110101111010100101101111010010001011111010111111111111111111101111111100101111111111101111111001111111011111101111111011110111111101110011011101100111111111011111111100111101111111111111011001111111111011101111111101011111111001111111111111111111101000101111111111111111111100110110110111011111111100001101111111111101111111111011110111111111111110110"
+      },
+      "shareSum": 12.246568773308015,
+      "complete": true
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-relic-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-relic-legendary",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "outcomes": {
+        "none": "00000100010000000000011010000000100000000000000000000000000001000000000000001000000000000000000100000001000000000000000000000000100000000000000000000010001000000100001000000010000001000100010000010000000101000000010011000000000000000001010000000000000000000000000010000100100000000000001000101000010001000000100011100000001000000000010010000010000001000000000001000000000000000110000000000000101001000000010000000110011000000000010010000000110000000000001000000000000000001000000000000100100010100000",
+        "main": "11110110111110111111011111011111111011111101001010111111111111111111111110111110101011110110111111111111000111101111111111100011111101111110011111010110101111011100101101111010010011011111011111111111111111111101111111100101111111111101111111001111111011111101111111111110111111101110111011101100111111111011111111100111101111111111111011101111111111011111111111101011111111001111111111111111111101000110111111111111111111100110110110111011111111100101101111111111101111111111011110110111111111110110",
+        "affixes": "00000100010000000001011010000000100000000000000000000000000001000000000100001000000010000000000100001001100000100000000000100000100100000000000000000010001000000100001000000010000001001100010001010000000101000000010011000000000000101001010010000000010010000000000010000100100000000000011010101000010001000000100011100010001001010100010010100010000001010001000001000000001000000110001000000001101001000001010000000110011000000000010110100000110000000000001000001000000000001010000110000110100010100000",
+        "unique": "00000100010000000000011010000000100000000000000000000000000001000000000000001000000000000000000100000001000000000000000000000000100000000000000000000010001000000100001000000010000001000100010000010000000101000000010011000000000000000001010000000000000000000000000010000100100000000000001000101000010001000000100011100000001000000000010010000010000001000000000001000000000000000110000000000000101001000000010000000110011000000000010010000000110000000000001000000000000000001000000000000100100010100000",
+        "set4": "00000100010000000000011010000000100000000000000000000000000001000000000000001000000000000000000100000001000000000000000000000000100000000000000000000010001000000100001000000010000001000100010000010000000101000000010011000000000000000001010000000000000000000000000010000100100000000000001000101000010001000000100011100000001000000000010010000010000001000000000001000000000000000110000000000000101001000000010000000110011000000000010010000000110000000000001000000000000000001000000000000100100010100000",
+        "all": "11111110111110111111011111111111111111111111001110111111111111111111111111111111111111110111111111111111100111101111111111110011111111111110111111011110111111011101101101111110111111011011111111111111111111111101111111100111111111111101111111001111111011111101111111111111111111111110111011111100111111111111111111111111111111111111111011101111111111111111111111101111111111001111111111111111111101100111101111111111111111111111110111111011111111110001111111111111101111111111011110111111111111110110"
+      },
+      "shareSum": 16.242820240218812,
+      "complete": true
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-relic-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-relic-rare",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 3,
+      "outcomes": {
+        "none": "00000100010000000000011010000000100000000000000000000000000001000000000000001000000000000000000100000001000000000000000000000000100000000000000000000010001000000100001000000010000001000100010000010000000101000000010011000000000000000001010000000000000000000000000010000100100000000000001000101000010001000000100011100000001000000000010010000010000001000000000001000000000000000110000000000000101001000000010000000110011000000000010010000000110000000000001000000000000000001000000000000100100010100000",
+        "main": "10110100010110110101011111011111111001110000001010000001100101110111011100001010101010110100011110111101000011101111011010100000101100111110011111010110101110010100101001100010000001011110010111011111111101111100011011100100110011111001111111000111111010111101011011011110111110000000111001101100110011111011110111100011001111111111111010001011110101011101011101100011111101001110011110110111111101000001010101111110011011000110110110111011111111100000101111111110101010111110011110110111100111100100",
+        "affixes": "00000100010000000000011010000000100000000000000000000000000001000000000000001000000000000000000100000001000000000000000000100000100100000000000000000010001000000100001000000010000001001100010000010000000101000000010011000000000000000001010000000000000010000000000010000100100000000000001000101000010001000000100011100000001001010100010010000010000001000000000001000000000000000110000000000000101001000000010000000110011000000000010110100000110000000000001000000000000000001010000010000100100010100000",
+        "unique": "00000100010000000000011010000000100000000000000000000000000001000000000000001000000000000000000100000001000000000000000000000000100000000000000000000010001000000100001000000010000001000100010000010000000101000000010011000000000000000001010000000000000000000000000010000100100000000000001000101000010001000000100011100000001000000000010010000010000001000000000001000000000000000110000000000000101001000000010000000110011000000000010010000000110000000000001000000000000000001000000000000100100010100000",
+        "set4": "00000100010000000000011010000000100000000000000000000000000001000000000000001000000000000000000100000001000000000000000000000000100000000000000000000010001000000100001000000010000001000100010000010000000101000000010011000000000000000001010000000000000000000000000010000100100000000000001000101000010001000000100011100000001000000000010010000010000001000000000001000000000000000110000000000000101001000000010000000110011000000000010010000000110000000000001000000000000000001000000000000100100010100000",
+        "all": "10110100011110110101011111011111111001111000001010000001100101110111011100001010101010110110011110111101000011101111011011100000101100111110011111010110101110010100101001100010000001011110010111011111111101111100111011100101110111111101111111000111111010111101111011011110111110000010111001101100111111111011111111100011001111111111111010001111110111011101011101100011111101001111111111110111111101000001010101111111111011000110110110111011111111100000101111111111101010111110011110110111110111110100"
+      },
+      "shareSum": 8.838130264902283,
+      "complete": true
+    }
+  ],
+  "replays": [
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-charm-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "seed": 1,
+      "path": "reports/cardrpg-big/a5/b1/ablation/bellsteel-charm-legendary-ch3-seed1.json",
+      "tracePending": false,
+      "tracePath": "reports/cardrpg-big/a5/b1/ablation/bellsteel-charm-legendary-ch3-seed1-trace.json"
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-charm-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "seed": 1,
+      "path": "reports/cardrpg-big/a5/b1/ablation/bellsteel-charm-rare-ch3-seed1.json",
+      "tracePending": false,
+      "tracePath": "reports/cardrpg-big/a5/b1/ablation/bellsteel-charm-rare-ch3-seed1-trace.json"
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-weapon-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "seed": 3,
+      "path": "reports/cardrpg-big/a5/b1/ablation/crumbweave-weapon-legendary-ch1-seed3.json",
+      "tracePending": false,
+      "tracePath": "reports/cardrpg-big/a5/b1/ablation/crumbweave-weapon-legendary-ch1-seed3-trace.json"
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-weapon-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "seed": 14,
+      "path": "reports/cardrpg-big/a5/b1/ablation/emberfelt-weapon-legendary-ch1-seed14.json",
+      "tracePending": false,
+      "tracePath": "reports/cardrpg-big/a5/b1/ablation/emberfelt-weapon-legendary-ch1-seed14-trace.json"
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-charm-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "seed": 6,
+      "path": "reports/cardrpg-big/a5/b1/ablation/hearthloom-charm-common-ch3-seed6.json",
+      "tracePending": false,
+      "tracePath": "reports/cardrpg-big/a5/b1/ablation/hearthloom-charm-common-ch3-seed6-trace.json"
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-charm-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "seed": 1,
+      "path": "reports/cardrpg-big/a5/b1/ablation/hearthloom-charm-legendary-ch3-seed1.json",
+      "tracePending": false,
+      "tracePath": "reports/cardrpg-big/a5/b1/ablation/hearthloom-charm-legendary-ch3-seed1-trace.json"
+    }
+  ]
+}
