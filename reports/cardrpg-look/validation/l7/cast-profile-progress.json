@@ -1,0 +1,528 @@
+{
+  "at": "2026-11-08T01:30:36.595Z",
+  "artifact": "39645d319c264bac0c1011d0e5370de335281ebf6e1df64de67978e34bcb4133",
+  "complete": false,
+  "cases": 478,
+  "matrixSummarySha256": "ba058d105bb0a1169addbec60a2404f86c0db0c9286fbae2aacf86a4c732bb6c",
+  "decodedJavaScriptSha256": "1f120cfb93c109b3acf85ac1de44285f2764c854721f55867a2e8c923b50849d",
+  "decodedJavaScriptUtf16Length": 2279491,
+  "failedCastWindows": 4,
+  "budgetMisses": {
+    "firstRepeat": 4,
+    "highDpr1": 0,
+    "cpu4BalancedLow": 4,
+    "draws": 0,
+    "triangles": 0
+  },
+  "profiles": [
+    {
+      "case": "1440x900-dpr1-cpu4-medium-panko-1",
+      "use": "repeat",
+      "raw": "reports/cardrpg-look/validation/l7/matrix/config-5/batch-12/1440x900-dpr1-cpu4-medium-panko-1.json",
+      "rawSha256": "a42287849dfad34b009630ab2027e8433edc627757a0c1b0dde6721da439d60b",
+      "configuration": [
+        1440,
+        900,
+        1,
+        4,
+        "medium"
+      ],
+      "misses": [
+        "firstRepeat",
+        "cpu4BalancedLow"
+      ],
+      "summary": {
+        "frames": 56,
+        "max": 150,
+        "p95": 66.70000000000073,
+        "above25": 12,
+        "above50": 4,
+        "within20": 0.7857142857142857,
+        "calls": 92,
+        "qualities": [
+          "medium"
+        ],
+        "triangles": 99159,
+        "particles": 6
+      },
+      "castStart": 11722.90000000596,
+      "castEnd": 13135.59999999404,
+      "peak": {
+        "at": 13126.9,
+        "ms": 150,
+        "calls": 87,
+        "triangles": 98003,
+        "particles": 0,
+        "quality": "medium"
+      },
+      "longTasksOverlappingPeak": [
+        {
+          "name": "self",
+          "entryType": "longtask",
+          "startTime": 12979,
+          "duration": 155,
+          "navigationId": 2890,
+          "attribution": [
+            {
+              "name": "unknown",
+              "entryType": "taskattribution",
+              "startTime": 0,
+              "duration": 0,
+              "navigationId": 2890,
+              "containerType": "window",
+              "containerSrc": "",
+              "containerId": "",
+              "containerName": ""
+            }
+          ]
+        }
+      ],
+      "longFramesOverlappingPeak": [],
+      "longFramesDuringCast": 7,
+      "callbacksDuringCast": [
+        {
+          "function": "loop",
+          "sourceURL": "blob:null/77f49cab-889e-41de-9e9d-18ac4aec8dbb",
+          "sourceCharPosition": 1576126,
+          "count": 8,
+          "maximumRecordedDurationMs": 110,
+          "payloadMapping": "scene-loop-offset-and-body-match",
+          "sourceLocation": {
+            "path": "apps/web/src/game/squad/turn3d/scene.ts",
+            "sha256": "13908197b77ce6b5b50dc6130554b7e70a976e859fcf006fc6af3ac815782570",
+            "line": 375,
+            "anchor": "private loop=(now:number)=>"
+          },
+          "exactPayloadExcerpt": ".update(0)}}else e.mixer.update(n)}loop=e=>{if(this.disposed||document.hidden)return;this.renderer.getPixelRatio()!==Math.min(window.devicePixelRatio||1,2)&&this.resizeToHost(),this.raf=requestAnimationFrame(this.loop);let t=this.view();if(!this.ready||t.suspended){this.last=e,this.renderAt=e;return}let n=this.last?Math.min(100,e-this.last):0;this.last=e,this.post.setQuality(t.quality??`high`),!t.model&&!t.paused&&t.fixedTime===void 0&&this.post.observe(n,t.autoQuality!==!1);let r=t.fixedTime!==void 0||t.paused?1/0:t.reducedMotion?50:16;if(!this.dirty&&e-this.renderAt<r)return;let i=t.paused?0:Math.min(.1,(e-this.renderAt)/1e3||n/1e3);this.renderAt=e,this.dirty=!1,this.time=t.fixedTime??this.time+i,this.render(t,i)};render(e,t=0){e.fixedTime!==void 0&&(this.time=e.fixedTime);let "
+        }
+      ]
+    },
+    {
+      "case": "1440x900-dpr1-cpu4-medium-cinnamon-4",
+      "use": "first",
+      "raw": "reports/cardrpg-look/validation/l7/matrix/config-5/batch-30/1440x900-dpr1-cpu4-medium-cinnamon-4.json",
+      "rawSha256": "0cb70ae59c3b8b79034422ebc408433efcd5aefa9983ceaaf29704592f3499f3",
+      "configuration": [
+        1440,
+        900,
+        1,
+        4,
+        "medium"
+      ],
+      "misses": [
+        "firstRepeat",
+        "cpu4BalancedLow"
+      ],
+      "summary": {
+        "frames": 94,
+        "max": 266.7000000000007,
+        "p95": 33.29999999999927,
+        "above25": 6,
+        "above50": 2,
+        "within20": 0.9361702127659575,
+        "calls": 94,
+        "qualities": [
+          "medium"
+        ],
+        "triangles": 100893,
+        "particles": 10
+      },
+      "castStart": 10970.90000000596,
+      "castEnd": 12918.20000000298,
+      "peak": {
+        "at": 12772.5,
+        "ms": 266.7000000000007,
+        "calls": 93,
+        "triangles": 100549,
+        "particles": 9,
+        "quality": "medium"
+      },
+      "longTasksOverlappingPeak": [
+        {
+          "name": "self",
+          "entryType": "longtask",
+          "startTime": 12507.20000000298,
+          "duration": 267,
+          "navigationId": 6356,
+          "attribution": [
+            {
+              "name": "unknown",
+              "entryType": "taskattribution",
+              "startTime": 0,
+              "duration": 0,
+              "navigationId": 6356,
+              "containerType": "window",
+              "containerSrc": "",
+              "containerId": "",
+              "containerName": ""
+            }
+          ]
+        }
+      ],
+      "longFramesOverlappingPeak": [
+        {
+          "name": "long-animation-frame",
+          "entryType": "long-animation-frame",
+          "startTime": 12501.5,
+          "duration": 272,
+          "navigationId": 6356,
+          "paintTime": 12773.5,
+          "presentationTime": 12776,
+          "renderStart": 12507.20000000298,
+          "styleAndLayoutStart": 12773.29999999702,
+          "firstUIEventTimestamp": 0,
+          "blockingDuration": 216.3,
+          "scripts": [
+            {
+              "name": "script",
+              "entryType": "script",
+              "startTime": 12507.20000000298,
+              "duration": 266.09999999403954,
+              "navigationId": 6356,
+              "invoker": "FrameRequestCallback",
+              "invokerType": "user-callback",
+              "windowAttribution": "self",
+              "executionStart": 12507.20000000298,
+              "forcedStyleAndLayoutDuration": 0,
+              "pauseDuration": 0,
+              "sourceURL": "blob:null/e502cba1-d438-4227-a0bc-a7aa4ad5b30c",
+              "sourceFunctionName": "loop",
+              "sourceCharPosition": 1576126
+            }
+          ]
+        }
+      ],
+      "longFramesDuringCast": 3,
+      "callbacksDuringCast": [
+        {
+          "function": "loop",
+          "sourceURL": "blob:null/e502cba1-d438-4227-a0bc-a7aa4ad5b30c",
+          "sourceCharPosition": 1576126,
+          "count": 3,
+          "maximumRecordedDurationMs": 266.09999999403954,
+          "payloadMapping": "scene-loop-offset-and-body-match",
+          "sourceLocation": {
+            "path": "apps/web/src/game/squad/turn3d/scene.ts",
+            "sha256": "13908197b77ce6b5b50dc6130554b7e70a976e859fcf006fc6af3ac815782570",
+            "line": 375,
+            "anchor": "private loop=(now:number)=>"
+          },
+          "exactPayloadExcerpt": ".update(0)}}else e.mixer.update(n)}loop=e=>{if(this.disposed||document.hidden)return;this.renderer.getPixelRatio()!==Math.min(window.devicePixelRatio||1,2)&&this.resizeToHost(),this.raf=requestAnimationFrame(this.loop);let t=this.view();if(!this.ready||t.suspended){this.last=e,this.renderAt=e;return}let n=this.last?Math.min(100,e-this.last):0;this.last=e,this.post.setQuality(t.quality??`high`),!t.model&&!t.paused&&t.fixedTime===void 0&&this.post.observe(n,t.autoQuality!==!1);let r=t.fixedTime!==void 0||t.paused?1/0:t.reducedMotion?50:16;if(!this.dirty&&e-this.renderAt<r)return;let i=t.paused?0:Math.min(.1,(e-this.renderAt)/1e3||n/1e3);this.renderAt=e,this.dirty=!1,this.time=t.fixedTime??this.time+i,this.render(t,i)};render(e,t=0){e.fixedTime!==void 0&&(this.time=e.fixedTime);let "
+        }
+      ]
+    },
+    {
+      "case": "1440x900-dpr1-cpu4-medium-brioche-4",
+      "use": "repeat",
+      "raw": "reports/cardrpg-look/validation/l7/matrix/config-5/batch-36/1440x900-dpr1-cpu4-medium-brioche-4.json",
+      "rawSha256": "435e498a55d67e4c92352c291037ce22b9ca48472c286e51a2b51d7fa3a1c848",
+      "configuration": [
+        1440,
+        900,
+        1,
+        4,
+        "medium"
+      ],
+      "misses": [
+        "firstRepeat",
+        "cpu4BalancedLow"
+      ],
+      "summary": {
+        "frames": 55,
+        "max": 266.60000000000036,
+        "p95": 200.10000000000036,
+        "above25": 18,
+        "above50": 11,
+        "within20": 0.6727272727272727,
+        "calls": 97,
+        "qualities": [
+          "medium"
+        ],
+        "triangles": 106600,
+        "particles": 21
+      },
+      "castStart": 11769.70000000298,
+      "castEnd": 14254.29999999702,
+      "peak": {
+        "at": 14006.1,
+        "ms": 266.60000000000036,
+        "calls": 93,
+        "triangles": 98458,
+        "particles": 0,
+        "quality": "medium"
+      },
+      "longTasksOverlappingPeak": [
+        {
+          "name": "self",
+          "entryType": "longtask",
+          "startTime": 13741.29999999702,
+          "duration": 460,
+          "navigationId": 3725,
+          "attribution": [
+            {
+              "name": "unknown",
+              "entryType": "taskattribution",
+              "startTime": 0,
+              "duration": 0,
+              "navigationId": 3725,
+              "containerType": "window",
+              "containerSrc": "",
+              "containerId": "",
+              "containerName": ""
+            }
+          ]
+        }
+      ],
+      "longFramesOverlappingPeak": [
+        {
+          "name": "long-animation-frame",
+          "entryType": "long-animation-frame",
+          "startTime": 13729.60000000894,
+          "duration": 176.8999999910593,
+          "navigationId": 3725,
+          "paintTime": 13906.5,
+          "presentationTime": 14208,
+          "renderStart": 13741.29999999702,
+          "styleAndLayoutStart": 13871.60000000894,
+          "firstUIEventTimestamp": 0,
+          "blockingDuration": 115.2,
+          "scripts": [
+            {
+              "name": "script",
+              "entryType": "script",
+              "startTime": 13741.29999999702,
+              "duration": 90.6000000089407,
+              "navigationId": 3725,
+              "invoker": "FrameRequestCallback",
+              "invokerType": "user-callback",
+              "windowAttribution": "self",
+              "executionStart": 13741.29999999702,
+              "forcedStyleAndLayoutDuration": 0,
+              "pauseDuration": 0,
+              "sourceURL": "blob:null/6ab74784-3161-4264-b92a-0bae3262c7ec",
+              "sourceFunctionName": "loop",
+              "sourceCharPosition": 1576126
+            },
+            {
+              "name": "script",
+              "entryType": "script",
+              "startTime": 13831.90000000596,
+              "duration": 29,
+              "navigationId": 3725,
+              "invoker": "FrameRequestCallback",
+              "invokerType": "user-callback",
+              "windowAttribution": "self",
+              "executionStart": 13831.90000000596,
+              "forcedStyleAndLayoutDuration": 0,
+              "pauseDuration": 0,
+              "sourceURL": "blob:null/6ab74784-3161-4264-b92a-0bae3262c7ec",
+              "sourceFunctionName": "f",
+              "sourceCharPosition": 1873895
+            },
+            {
+              "name": "script",
+              "entryType": "script",
+              "startTime": 13863.60000000894,
+              "duration": 8,
+              "navigationId": 3725,
+              "invoker": "FrameRequestCallback",
+              "invokerType": "user-callback",
+              "windowAttribution": "self",
+              "executionStart": 13863.60000000894,
+              "forcedStyleAndLayoutDuration": 0,
+              "pauseDuration": 0,
+              "sourceURL": "",
+              "sourceFunctionName": "",
+              "sourceCharPosition": -1
+            }
+          ]
+        }
+      ],
+      "longFramesDuringCast": 11,
+      "callbacksDuringCast": [
+        {
+          "function": "loop",
+          "sourceURL": "blob:null/6ab74784-3161-4264-b92a-0bae3262c7ec",
+          "sourceCharPosition": 1576126,
+          "count": 10,
+          "maximumRecordedDurationMs": 174.5,
+          "payloadMapping": "scene-loop-offset-and-body-match",
+          "sourceLocation": {
+            "path": "apps/web/src/game/squad/turn3d/scene.ts",
+            "sha256": "13908197b77ce6b5b50dc6130554b7e70a976e859fcf006fc6af3ac815782570",
+            "line": 375,
+            "anchor": "private loop=(now:number)=>"
+          },
+          "exactPayloadExcerpt": ".update(0)}}else e.mixer.update(n)}loop=e=>{if(this.disposed||document.hidden)return;this.renderer.getPixelRatio()!==Math.min(window.devicePixelRatio||1,2)&&this.resizeToHost(),this.raf=requestAnimationFrame(this.loop);let t=this.view();if(!this.ready||t.suspended){this.last=e,this.renderAt=e;return}let n=this.last?Math.min(100,e-this.last):0;this.last=e,this.post.setQuality(t.quality??`high`),!t.model&&!t.paused&&t.fixedTime===void 0&&this.post.observe(n,t.autoQuality!==!1);let r=t.fixedTime!==void 0||t.paused?1/0:t.reducedMotion?50:16;if(!this.dirty&&e-this.renderAt<r)return;let i=t.paused?0:Math.min(.1,(e-this.renderAt)/1e3||n/1e3);this.renderAt=e,this.dirty=!1,this.time=t.fixedTime??this.time+i,this.render(t,i)};render(e,t=0){e.fixedTime!==void 0&&(this.time=e.fixedTime);let "
+        },
+        {
+          "function": "",
+          "sourceURL": "",
+          "sourceCharPosition": -1,
+          "count": 4,
+          "maximumRecordedDurationMs": 189.20000000298023,
+          "payloadMapping": "unattributed",
+          "sourceLocation": null,
+          "exactPayloadExcerpt": null
+        },
+        {
+          "function": "f",
+          "sourceURL": "blob:null/6ab74784-3161-4264-b92a-0bae3262c7ec",
+          "sourceCharPosition": 1873895,
+          "count": 1,
+          "maximumRecordedDurationMs": 29,
+          "payloadMapping": "battle-tick-offset-and-body-match",
+          "sourceLocation": {
+            "path": "apps/web/src/game/cardrpg/depth/Battle.tsx",
+            "sha256": "5d6116f9602cfeb5ce54c5e28ab3e9faa2ffc3c4e9779acb32f306e945a59f0d",
+            "line": 66,
+            "anchor": "const tick = (now: number) =>"
+          },
+          "exactPayloadExcerpt": "lable. ${String(t)}`,e.notify(!1)}let f=n=>{e.tick(c?Math.min(100,n-c):0),c=n,i.current&&(i.current.hidden=!e.plan||e.animationAt>=600||e.galleryEffectOnly);let s=r.current?.loading;s&&a.current&&a.current.textContent!==s.label&&(a.current.textContent=s.label),s&&o.current&&o.current.value!==s.completed&&(o.current.max=s.total,o.current.value=s.completed),r.current?.ready&&!u&&(u=!0,e.sceneReady=!0,e.notify(!1)),d.update(e.frame,e.battle?.round??0,e.battle?En(e.battle)?.id??null:null,e.paused||!e.showBattle,qn[(e.battle?.chapter??1)-1].ambience/174),t=requestAnimationFrame(f)};return t=requestAnimationFrame(f),()=>{cancelAnimationFrame(t),r.current?.dispose(),e.sceneReady=!1,delete window.__depthScene}},[e,t]),(0,f.useEffect)(()=>{r.current?.invalidate()}),(0,f.useEffect)(()=>{if"
+        }
+      ]
+    },
+    {
+      "case": "1440x900-dpr1-cpu4-medium-velvet-1",
+      "use": "first",
+      "raw": "reports/cardrpg-look/validation/l7/matrix/config-5/batch-36/1440x900-dpr1-cpu4-medium-velvet-1.json",
+      "rawSha256": "fa537cd6721f5fce9422edb64dd4968a513444bd9ce2f3c9092b019c14c9c03c",
+      "configuration": [
+        1440,
+        900,
+        1,
+        4,
+        "medium"
+      ],
+      "misses": [
+        "firstRepeat",
+        "cpu4BalancedLow"
+      ],
+      "summary": {
+        "frames": 54,
+        "max": 183.3000000000011,
+        "p95": 33.400000000001455,
+        "above25": 9,
+        "above50": 2,
+        "within20": 0.8333333333333334,
+        "calls": 90,
+        "qualities": [
+          "medium"
+        ],
+        "triangles": 98852,
+        "particles": 5
+      },
+      "castStart": 11383,
+      "castEnd": 12672.39999999106,
+      "peak": {
+        "at": 11843.6,
+        "ms": 183.3000000000011,
+        "calls": 90,
+        "triangles": 98442,
+        "particles": 1,
+        "quality": "medium"
+      },
+      "longTasksOverlappingPeak": [
+        {
+          "name": "self",
+          "entryType": "longtask",
+          "startTime": 11662.5,
+          "duration": 184,
+          "navigationId": 8364,
+          "attribution": [
+            {
+              "name": "unknown",
+              "entryType": "taskattribution",
+              "startTime": 0,
+              "duration": 0,
+              "navigationId": 8364,
+              "containerType": "window",
+              "containerSrc": "",
+              "containerId": "",
+              "containerName": ""
+            }
+          ]
+        }
+      ],
+      "longFramesOverlappingPeak": [
+        {
+          "name": "long-animation-frame",
+          "entryType": "long-animation-frame",
+          "startTime": 11657.89999999106,
+          "duration": 188.1000000089407,
+          "navigationId": 8364,
+          "paintTime": 11846,
+          "presentationTime": 11848,
+          "renderStart": 11662.5,
+          "styleAndLayoutStart": 11845.39999999106,
+          "firstUIEventTimestamp": 0,
+          "blockingDuration": 133.5,
+          "scripts": [
+            {
+              "name": "script",
+              "entryType": "script",
+              "startTime": 11662.5,
+              "duration": 182.8999999910593,
+              "navigationId": 8364,
+              "invoker": "FrameRequestCallback",
+              "invokerType": "user-callback",
+              "windowAttribution": "self",
+              "executionStart": 11662.5,
+              "forcedStyleAndLayoutDuration": 0,
+              "pauseDuration": 0,
+              "sourceURL": "blob:null/358211af-d632-4e0e-aaf3-14a8e700d907",
+              "sourceFunctionName": "loop",
+              "sourceCharPosition": 1576126
+            }
+          ]
+        }
+      ],
+      "longFramesDuringCast": 4,
+      "callbacksDuringCast": [
+        {
+          "function": "loop",
+          "sourceURL": "blob:null/358211af-d632-4e0e-aaf3-14a8e700d907",
+          "sourceCharPosition": 1576126,
+          "count": 4,
+          "maximumRecordedDurationMs": 182.8999999910593,
+          "payloadMapping": "scene-loop-offset-and-body-match",
+          "sourceLocation": {
+            "path": "apps/web/src/game/squad/turn3d/scene.ts",
+            "sha256": "13908197b77ce6b5b50dc6130554b7e70a976e859fcf006fc6af3ac815782570",
+            "line": 375,
+            "anchor": "private loop=(now:number)=>"
+          },
+          "exactPayloadExcerpt": ".update(0)}}else e.mixer.update(n)}loop=e=>{if(this.disposed||document.hidden)return;this.renderer.getPixelRatio()!==Math.min(window.devicePixelRatio||1,2)&&this.resizeToHost(),this.raf=requestAnimationFrame(this.loop);let t=this.view();if(!this.ready||t.suspended){this.last=e,this.renderAt=e;return}let n=this.last?Math.min(100,e-this.last):0;this.last=e,this.post.setQuality(t.quality??`high`),!t.model&&!t.paused&&t.fixedTime===void 0&&this.post.observe(n,t.autoQuality!==!1);let r=t.fixedTime!==void 0||t.paused?1/0:t.reducedMotion?50:16;if(!this.dirty&&e-this.renderAt<r)return;let i=t.paused?0:Math.min(.1,(e-this.renderAt)/1e3||n/1e3);this.renderAt=e,this.dirty=!1,this.time=t.fixedTime??this.time+i,this.render(t,i)};render(e,t=0){e.fixedTime!==void 0&&(this.time=e.fixedTime);let "
+        }
+      ]
+    }
+  ],
+  "verifiedHashes": {
+    "reports/cardrpg-look/validation/l7/matrix/config-5/batch-12/1440x900-dpr1-cpu4-medium-panko-1.json": "a42287849dfad34b009630ab2027e8433edc627757a0c1b0dde6721da439d60b",
+    "reports/cardrpg-look/validation/l7/matrix/config-5/batch-30/1440x900-dpr1-cpu4-medium-cinnamon-4.json": "0cb70ae59c3b8b79034422ebc408433efcd5aefa9983ceaaf29704592f3499f3",
+    "reports/cardrpg-look/validation/l7/matrix/config-5/batch-36/1440x900-dpr1-cpu4-medium-brioche-4.json": "435e498a55d67e4c92352c291037ce22b9ca48472c286e51a2b51d7fa3a1c848",
+    "reports/cardrpg-look/validation/l7/matrix/config-5/batch-36/1440x900-dpr1-cpu4-medium-velvet-1.json": "fa537cd6721f5fce9422edb64dd4968a513444bd9ce2f3c9092b019c14c9c03c"
+  },
+  "sourceLocations": {
+    "sceneLoop": {
+      "path": "apps/web/src/game/squad/turn3d/scene.ts",
+      "sha256": "13908197b77ce6b5b50dc6130554b7e70a976e859fcf006fc6af3ac815782570",
+      "line": 375,
+      "anchor": "private loop=(now:number)=>"
+    },
+    "battleTick": {
+      "path": "apps/web/src/game/cardrpg/depth/Battle.tsx",
+      "sha256": "5d6116f9602cfeb5ce54c5e28ab3e9faa2ffc3c4e9779acb32f306e945a59f0d",
+      "line": 66,
+      "anchor": "const tick = (now: number) =>"
+    }
+  },
+  "limitations": [
+    "This reads retained raw frames and PerformanceObserver entries, not a new browser run or CPU trace.",
+    "Payload excerpts are supplied only for blob callbacks whose recorded UTF-16 offset matches the scene-loop or Battle tick body. Source locations are hash-bound to the frozen input files. Other callbacks remain unattributed.",
+    "Matched callback locations do not identify expensive operations or root causes.",
+    "Callbacks during a cast are separate from entries overlapping its slowest frame; absent entries do not prove absence of work.",
+    "Cross-lane timing isolation remains unverified. Do not causally attribute stalls to rendering or background load.",
+    "All applicable misses remain counted, including p95 values above the exact 33 ms threshold."
+  ]
+}
