@@ -1,0 +1,132 @@
+{
+  "passed": true,
+  "width": 1024,
+  "height": 600,
+  "mode": "off",
+  "artifact": "/tmp/cardrpg-a5-specialties-off/index.html",
+  "sha256": "9ecb20d7b04fd3a8669451b9bf601305429d607dcd3bebb33dcd5812fb04a023",
+  "method": "Headless real clicks and keyboard input; synthetic UI equipment, no earned-path claim; separate ON/OFF builds.",
+  "checks": [
+    "THC12 imports without losing currencies, team or day; build mode off",
+    "baseline: all twelve Collection selections show the correct off description",
+    "baseline: all eight set tooltips follow off; Team jobs absent",
+    "baseline: Prepare has no V4 job panel",
+    "look: all twelve Collection selections show the correct off description",
+    "look: all eight set tooltips follow off; Team jobs absent",
+    "look: Prepare has no V4 job panel"
+  ],
+  "captures": [
+    {
+      "name": "baseline-collection",
+      "path": "reports/cardrpg-big/a5/c1-specialties/browser-off-1024-attempt-1/baseline-collection.png",
+      "overflow": 0,
+      "contrast": []
+    },
+    {
+      "name": "baseline-team-sets",
+      "path": "reports/cardrpg-big/a5/c1-specialties/browser-off-1024-attempt-1/baseline-team-sets.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Hearthloom · 1/4",
+          "ratio": 8.37605029481978
+        },
+        {
+          "text": "Moonwick · 1/4",
+          "ratio": 8.37605029481978
+        },
+        {
+          "text": "Mossbrew · 1/4",
+          "ratio": 8.37605029481978
+        },
+        {
+          "text": "Rainlace · 1/4",
+          "ratio": 8.37605029481978
+        },
+        {
+          "text": "Crumbweave · 1/4",
+          "ratio": 8.37605029481978
+        },
+        {
+          "text": "Bellsteel · 1/4",
+          "ratio": 8.37605029481978
+        },
+        {
+          "text": "Emberfelt · 1/4",
+          "ratio": 8.37605029481978
+        },
+        {
+          "text": "Velvetrim · 1/4",
+          "ratio": 8.37605029481978
+        },
+        {
+          "text": "Mossbrew · 2/4",
+          "ratio": 8.37605029481978
+        }
+      ]
+    },
+    {
+      "name": "baseline-prepare",
+      "path": "reports/cardrpg-big/a5/c1-specialties/browser-off-1024-attempt-1/baseline-prepare.png",
+      "overflow": 0,
+      "contrast": []
+    },
+    {
+      "name": "look-collection",
+      "path": "reports/cardrpg-big/a5/c1-specialties/browser-off-1024-attempt-1/look-collection.png",
+      "overflow": 0,
+      "contrast": []
+    },
+    {
+      "name": "look-team-sets",
+      "path": "reports/cardrpg-big/a5/c1-specialties/browser-off-1024-attempt-1/look-team-sets.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Hearthloom · 1/4",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Moonwick · 1/4",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Mossbrew · 1/4",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Rainlace · 1/4",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Crumbweave · 1/4",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Bellsteel · 1/4",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Emberfelt · 1/4",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Velvetrim · 1/4",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Mossbrew · 2/4",
+          "ratio": 8.028038840639192
+        }
+      ]
+    },
+    {
+      "name": "look-prepare",
+      "path": "reports/cardrpg-big/a5/c1-specialties/browser-off-1024-attempt-1/look-prepare.png",
+      "overflow": 0,
+      "contrast": []
+    }
+  ],
+  "errors": [],
+  "remote": []
+}

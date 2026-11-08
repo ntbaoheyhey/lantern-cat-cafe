@@ -48,6 +48,7 @@ export function PreparationV4({ m }: { m: DepthModel }) {
         </section>)}
       </div>
       <p aria-live="polite">{name} selected. Keep at least one cat in front.</p>
+      <p data-companion-specialty={selected}><b>Best at:</b> {R.CAT_SPECIALTIES_V4[selected]}</p>
       <details><summary>Cover and crew changes</summary>
         <p>Front cats take ordinary single hits. Back cats receive 10% cover while a front cat lives.</p>
         <p>Row attacks and attacks that reach the back ignore cover.</p>

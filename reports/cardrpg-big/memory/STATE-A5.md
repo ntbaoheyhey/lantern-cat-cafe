@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-Hush source da2b4886c and closure audit verified: all six checks PASS1746web/1186rules/421E2E/build; OFF165/8250 exact,45combat hashes/baseline/historical13 verified. Original suite14362 and closure watcher97683 completed without reruns. DRAFT394 on388 is published and verified against remote head93dc81fa8.
+C1 specialties23 adopted from the exact three-file staged manifest on codex/cardrpg-a5-c1-specialties-2026-11-08, stacked on DRAFT394. Twelve cat job lines and mode-correct Team tooltips; source six checks and OFF digest complete. Separate ON/OFF functional checks and supplemental Collection framing pass; published as DRAFT396 on394; all receipts and reviewed copy captures retained. Hush closure remains complete.
 ## NEXT
-Sync and mirror Hush DRAFT394. Then branch for C1/B2 specialties23, adopt three exact staged files with a5-specialties-adopt.mjs and commit source. Run a5-source-batch.mjs under shared lock, a5-off-check.mjs c1-specialties and a5-specialties-checks.mjs (216paired copy replays, two mode builds,12cats/8tooltips/3widths/both looks/THC7+12). Existing runtime remains unchanged until that separate phase. No original TRAIN matrices restart; fresh20001–20500 UNUSED. B1/B2/display/cadence/startup/Z open; stack376→377→379→381→382→383→384→385→386→388→394.
+Mirror C1 draft396 checkpoint, then resume B1/B2 root-cause work on a separate stacked branch; no source tuning during copy verification. Original 216 replay/ON-OFF/12cat/8tooltip/three-width/THC7-12 checks already pass; do not rerun them. No original TRAIN matrix restart; fresh20001–20500 UNUSED. B1/B2/display/cadence/startup/Z open; stack376→377→379→381→382→383→384→385→386→388→394→396.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -214,3 +214,13 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - 2026-11-08T18:22:30.644377+00:00: original Hush suite/closure complete; all six gates1746web/1186rules/421E2E/build PASS. OFF8250/45combat/baseline/historical13 verified. No reruns, source changes or acceptance sampling during the wait. Staged copy checks remain unexecuted.
 
 - 2026-11-08T18:24:41.337800+00:00: resumed from saved handoff. Remote DRAFT394 already exists on388 at93dc81fa8; verified body/head and original six-check/OFF receipts without rerunning suites or creating a duplicate PR. No A coordinator active. Continue separate specialties23 copy phase; no combat tuning or acceptance sampling.
+
+- 2026-11-08T18:25:22.030038+00:00: adopted only specialties23 three-file hash-verified draft after Hush closure and remote394 verification. Capability lines are not measured best-team rankings. Shared-lock targeted checks and source gates start on the committed source; public demo remains unchanged.
+
+- 2026-11-08T18:30Z: specialties source a30757265 passes type/lint/web1746/rules1186; original E2E420pass/1 Squad clock timeout retained with context and exact last-failed selection. One-worker failed-case retry queued; original420 are not rerun. All216 paired battle objects match after only36 exact Lantern text replacements. OFF and ON/OFF UI checks retain original coordinators63104(completed failure),22422,80773; retry58046. No balance/acceptance sampling or runtime change during verification.
+
+- Resume2026-11-08T18:36Z: original OFF8250 completed exact. Source six checks complete; E2E420original+1failed-case retry, no runtime edits. Offline build-on attempt1 missing retired Python preserved; attempt2 uses existing A5 Pillow11.3.0 and passes. Separate ON/OFF all functional checks pass. Visual review found Collection screenshots centered below job text and before preview readiness; supplemental captures use identical artifacts. Original supplemental attempt1 incorrectly scrolled window instead of content and is retained. A premature runner resume was rejected by exclusive log creation before any duplicate sample; original coordinator completed normally. No new acceptance samples.
+
+- 2026-11-08T18:38:18.064417+00:00: C1 closure auditPASS;216paired replays/36text-only differences;OFF8250exact;ON/OFF12cats+8sets+THC7/12+keyboard/threewidths;42functional+12supplemental captures, contrast8.028minimum. Actual copy samples personally reviewed; baseline miniature blank frames disclosed, no renderer claim. Runtime a30757265 unchanged, sixsourcechecks420originalE2E+1retry retained. Bpublished395; no integration/sourceadoption. Freshacceptance unused.
+
+- 2026-11-08T18:39:18.379616+00:00: Published DRAFT396 https://github.com/ntbaoheyhey/taskbar-hero/pull/396 on394, evidencec85716f54. Source gates and UI checks unchanged; no duplicate PR or runtime changes.

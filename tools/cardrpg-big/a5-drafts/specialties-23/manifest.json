@@ -1,0 +1,29 @@
+{
+  "preparedAt": "2026-11-08T18:04:15.266949+00:00",
+  "inputs": {
+    "packages/game-rules/src/cardrpg/depth/gameplay-v4.ts": "2e114d3db5d833e9c5beeda63ae39ced02fb2e149d9c396229ee236d5e18e2ea",
+    "apps/web/src/game/cardrpg/depth/TeamCollection.tsx": "0e9aa299eb9a850043b51108c7ac18252e47e80ed9441d297f72b9fc96cd5ecc",
+    "apps/web/src/game/cardrpg/depth/PreparationV4.tsx": "311dc8696d6c6ba871e156eea9221cf105181a951a631a7aec52fd03ef276fae"
+  },
+  "outputs": {
+    "packages/game-rules/src/cardrpg/depth/gameplay-v4.ts": "5ed0a46b1d3bde886ee0546818892141b2a3f2871c5197de803eaa4b89fecafa",
+    "apps/web/src/game/cardrpg/depth/TeamCollection.tsx": "81aa4cfbbff2625cbf76ae1c0a2f1aa6c0a2f0a43b65cb2be1e7f9e4791004f8",
+    "apps/web/src/game/cardrpg/depth/PreparationV4.tsx": "e9507fac410628c9dc6484d164489509b6ac192de1228657238af95efff270cf"
+  },
+  "status": "STAGED ONLY; adopted Hush source checks remain immutable.",
+  "purpose": "Expose each cat kit job on Collection, Team and selected Prepare card; V4 only.",
+  "limits": "Capability descriptions, not measured best-team rankings. No battle/AI/power/state/asset change.",
+  "adoptionChecks": [
+    "input hashes before adoption",
+    "every named job supported by kit",
+    "V4/OFF browser visibility",
+    "select different cat",
+    "1280/1440/1024 overflow/contrast",
+    "source gates and unchanged combat digest"
+  ],
+  "parent": "/tmp/cardrpg-a5-specialties-18/manifest.json",
+  "extraCorrections": [
+    "Lantern text covers Drowsy basic weakening as well as eligible Hush utility suppression.",
+    "V4 Team set tooltips use the existing V4 effect descriptions; OFF retains original wording."
+  ]
+}
