@@ -797,3 +797,9 @@ Recovered original A coordinators; C1 type/lint PASS and1280 targeted browser PA
 Personal review found hidden filtered equipment still selected; isolated C1 revision prepared before adoption. Paired copy audit will explicitly exclude closed details; original H0 retained.
 B1pilots01–04 rejected; pilot05 registered TRAIN1–50 combines bounded response and sustained pressure with queued-phase latching. Fresh20001–20500 unused.
 B3samecandidate30/style expansion continues110s slices/120s handoffs; initial5/style is exploration only. No B/protected edits, modelhelpers, merge or deploy.
+
+## 2026-11-08T01:49:22.781190+00:00 A5-C1 CHECKPOINT
+Original C1 five gates + build PASS, including 421 E2E and three targeted desktop sizes. Reviewed source c4a883e5 fixes filtered-item actions and collapses secondary preparation details; revised checks continue on artifact788ff719/26,217,950bytes.
+B1 expanded TRAIN uses complete tier/band/fourth-slot/set/team fixtures; first210cells recorded. Earlier residual pilots alone do not establish acceptance. Fresh20001–20500 remains unused.
+B2 shield-link candidate12cells ranges -4 to +10pp; no blanket cat-balance claim. B3 original30/style cohort retained; separate cap-toggle preservation fix passes isolated invariants.
+No B/protected edits, model helpers, merge or deploy. Short simulation windows and cooperative handoffs remain; A4 presentation requests unchanged.
