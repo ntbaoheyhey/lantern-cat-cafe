@@ -1030,3 +1030,9 @@ DRAFT394 https://github.com/ntbaoheyhey/taskbar-hero/pull/394 on388 verified; ru
 Resumed without duplicate suites or PR; prior E2E lease request resolved. All 1321 TRAIN cells and90 saved day7 pairs retained, including four lost wins after false healing removal.
 Starting separate C1 specialties23: twelve on-screen kit jobs, truthful Lantern wording, mode-correct set tooltips; separate ON/OFF builds and targeted three-width checks next. No balance or B-source adoption.
 Fresh20001–20500 unused; B1/B2/display/cadence/startup/Z open. No B/protected edits, model helpers, merge or deploy.
+
+## 2026-11-08T18:39:18.380133+00:00 A5-C1 CHECKPOINT
+DRAFT396 https://github.com/ntbaoheyhey/taskbar-hero/pull/396 on394; sourcea30757265/evidencec85716f54. Twelve companion jobs/eight mode-correct tooltips; no combat or saved-state changes.
+Six source checks PASS; original E2E420pass/1timeout retained, failed-case-only retry1PASS. OFF8250/baseline/historical13exact;216paired replays differ only36Lantern text events.
+SeparateON/OFF12cats/8sets/THC7+12/keyboard/threewidths/bothlooksPASS;42functional+12framedcopy captures, scopedcontrast8.028/nooverflow. Baseline blank miniature frames disclosed; no renderer claim.
+Read Bdelivery395; no Bsourceadoption. A has no browser or sim active. Fresh20001–20500UNUSED; B1/B2/display/cadence/startup/Zremainopen. No merge/deploy/modelhelpers/protected changes.
