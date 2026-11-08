@@ -1032,3 +1032,8 @@ Delivery UI PASS three widths:12icons/82pxHUD/13.8249contrast; startup3522500byt
 Both continuous20s H264 clips recorded1440x900 atx1; identical initial battle hash and9actions each, no cuts. SixDPR2shots complete; five-battle lifecycle/gallery and originalposteffects probe remain queued.
 First48native1280cast windows16.8ms; no duplicate/retried samples. B released after each video; A source/OFF lease currently active. Read da2b4886c, no schema change or A adoption.
 Contrast0.18 andboss2x targets remainMISS; originalclosureindex exact. Preparing report/ledger/draftV6; no protected edits, Docker/CUA/modelhelpers/merge/deploy.
+
+## 2026-11-08T18:26:21.216278+00:00 B2-V6 CHECKPOINT
+Original 144 casts + six cold samples complete on c711dec2; max cast16.8ms, native cold16.8ms, CPU4 cold166.6ms and scene preparation250ms. Interrupted original probe retained CPU4run0; only missingrun1–2 resumed.
+Gallery-only CSS repair7f4d0fcc remains29,812,862bytes; JS/assets/otherCSS exact. UI three widthsPASS; ready-gallery three widths queued behind current A source lease, no interruption requested.
+V6 report/audit/ledger/draft publication next. Two art gates remainMISS: opponent luminance0.18 andboss2x height. No runtime/rules/meta/protected changes, Docker/CUA/modelhelpers, merge or deploy.
