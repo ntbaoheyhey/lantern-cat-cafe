@@ -851,3 +851,10 @@ Three fixed CPU4 Hub intervals 116.7/116.6/133.3 ms; full opening+battle interva
 Typecheck corrected missing build-transform declaration; original failure retained. Type/lint now PASS, remaining source gates, three-config default startup and targeted lazy flows running.
 Original response03 TRAIN complete/rejected: 18/25 piece misses, max26/22pp; crew21.33/16pp but cats reach94.84/95.6%. New continuous-policy TRAIN diagnostic registered; fresh20001–20500 unused.
 No model helpers, merge, deploy or B renderer adoption. Earned receipt forwarding remains queued for E2.
+
+## 2026-11-08T07:40:12.458425+00:00 A5-P1 CHECKPOINT
+Draft381 https://github.com/ntbaoheyhey/taskbar-hero/pull/381 on379; source509c88fbf/closure95e1c1c4f. Offline20,816,833bytes/SHA9d9335f3, all198assets exact; defaultJSdelta149416bytes meets150000.
+Five source gates+buildPASS (1737web/1106rules/421E2E); native6/receipt3PASS;30targeted desktop captures+deferred reviewer/player flowsPASS. OFF8250sourceparity/baseline/historical13exact; originalfailures retained.
+P1 remainsPARTIAL:18defaultcold observations retained, CPU4taskmedian/max improve but bothCPU1configsMISS; offlineopening+battle266.6/249.9/183.3msMISS120. NarrowerHubintervalnever substitutes.
+Continuouspolicy04 TRAIN rejected:39/120 fourthslotmisses,worst90/38pp. Combat remainsA4; fresh20001–20500unused. No B/protected edits/modelhelpers/merge/deploy.
+B3 correctedreward90account replay running originalseeds/4050statehashchecks; odds/cap UI wiring next after parity. Bearnedreceipt forwarding still queuedE2; no B renderer adoption.
