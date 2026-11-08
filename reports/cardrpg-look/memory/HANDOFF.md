@@ -1,3 +1,33 @@
+# Closure measurements complete — 2026-11-08T06:58:00.995297+00:00
+
+Source 8ba0a3879, artifact 7e092b1a /31,494,758 bytes, all 1,944 inputs verified unchanged. Five source gates PASS: 1,770 web/421 E2E; no repeats. Presentation three sizes, startup byte/module parity and reviewed Clover 66/66 improvements complete.
+20 natural replays COMPLETE: 21 GPU snapshots constant 537/103/43, heap +1,116,232 bytes within 2 MiB tolerance, no page errors. Original validator exited; no active B browser or timing job.
+Registered Clover1 ABBA COMPLETE: old 83.3/16.8, current 50.0/183.4, current 16.8/16.8, old 99.9/16.8 ms first/repeat. Collector schema failure preserved; audit-only correction reused exact observations. Stalls in both artifacts; no causal improvement or exclusive-machine claim.
+Current misses: hero 8/24 over 50 ms (max633.3), 11/24 below99% <=20 ms; targeted CPU4 first133.3/100/133.3/216.6 ms; cold666.6 ms/post-ready400 ms/gallerypage716.7 ms; ABBA current1/4max+2/4coverage; heap not literal flat; original24MB target;1140/2211 strict old-pair decreases; timing isolation unverified. Original860/1720 matrix and historical failures retained.
+Audit and report generated; report149 lines. Personal visual acceptance hashes verified. A renderer contract available; actual earned forwarding and icon/frames remain A-owned.
+NEXT: prepare/inspect bounded publication inventory, publish evidence, draft stacked378, publication note, ledger mirror and B-OUTBOX. Do not rerun measurements or alter source. NativeMac/noDocker/subagents/generative/protected edits/merge/deploy.
+
+---
+
+# Closure verification continues — 2026-11-08T06:43:20.747887+00:00
+Source8ba0a3879 is remotely published on codex/cardrpg-look-closure-2026-11-08, stacked on378. Artifact7e092b1a/31,494,758bytes and1944inputs remain unchanged. All5sourcegatesPASS:1770web/421E2E; no repeats needed. Syncf92b625f8 gives A exact earned-receipt renderer contract.
+ONE originalvalidator PID22615/session10243, phasechild25202, log/tmp/cardrpg-look-closure-validate.log. Final effects/presentation/startup checks COMPLETE. Cold7 completed with new worse full-page maxima666.6ms and real post-ready gaps; preserve and disclose. Phase now runs24hero casts, then8previouslyfailedskills and20replays. No fullmatrix restart.
+Final4screens personally viewed again; closure/acceptance.json binds exact hashes. Clover66/66improvements vsL4;1140oldbaselinepairdecreases remain. Final startup-audit executedPASS3,522,500bytes/11scripts/zeroThree-model;8/11binaryequal,allchunkbytecounts/modules andnormalizedentry branches equal.
+Added closure/cold-audit.py and trace-diagnosis.py (retained-trace streaming, under sharedlock, ONEsession50779/log/tmp/cardrpg-look-closure-trace-analysis.log), and write-report.py preserving original131lineL7report with targetedsection capped150. Trace analysis currentlywaiting forlock; do notduplicate. audit.py nowchecksvisualhashes/all21GPUrows/coldrawaudit. SyntaxPASS only, finalaudit stillpending.
+Next: originalvalidatorfinish → cold-audit.py → audit.py → write-report.py; inspect allmisses/tracediagnosis and150linereport; updateREVIEW/PROGRESS/STATE/HANDOFF → publish.py--prepare/inspect boundedmanifest → publish → draftstacked378 → publicationnote/ledger/BOUTBOX. Source alreadypushed, publisher may safelyrepeat no-op sourcepush. Do not modifyhashedsource or runtimerebuild. NativeMac/noDocker/subagents/generative/protectededits/merge/deploy. A earned forwarding/iconframes stillA-owned.
+
+---
+
+# Closure source committed — 2026-11-08T06:32:48.775797+00:00
+
+User requires completing B work. Branch codex/cardrpg-look-closure-2026-11-08; source8ba0a3879, artifact7e092b1a/31,494,758bytes, runtimeDirty=false. L7draft378/raw data preserved. A4fixture adapter, cooldown grid, bounded boss cues, earnedreceipt dedup/cancel, label allocation, static LOOKroute imports and Clover greenhouse1.65height implemented.
+ONE source gates PID21837/session71280 log/tmp/cardrpg-look-closure-gates.log; type/lintPASS, unit currentlyrunning. ONE targeted validator session10243 log/tmp/cardrpg-look-closure-validate.log runs closure/validate.mjs: sixeffects→3sizepresentation→flagoff/cold7/24herocasts→8historicallyfailedskillcasts→20replays. It hashes source/artifact before/after; no source edits or duplicate jobs. Original860matrix must not repeat.
+Focused12testsPASS. Presentation round3all3sizesPASS/personallyviewed; early clipping retained attempt1 and wrong3vs4skillfixture failure round2. Startupcandidatev3 audited3,522,500bytes=baseline,11scripts/zeroThree-model,8/11binaryequal, allchunkbytes/modules andnormalizedentry/preloadbranches equal. Finalvalidator regeneratesflagoff forcurrentgeometryhash; run startup-audit.py against finalpaths afterwards.
+Effects pilots:1.38height65improved/1regressed-.0052683;1.55height65improved/1regressed-.0010028. Final1.65height stillrequires capture/audit/view. effect-pair-audit.py merges onlyClover row against unchanged66L4rows, exactoriginalmetric;1141 originalpairmisses atpilot2remain disclosed. Need run effect-report.py and effect-pair-audit.py on closure/effects/reviewed, viewfinalimages. No claimallgatesPASS.
+Next afterjobs: auditfinalstartup/metrics/perf/lifecycle, inspectfinalpresentation/effectimages, report<=150lines andclosureREVIEW, updateSTATE/PROGRESS/HANDOFF, publishsource+bounded48MB evidencebatches/draftstacked378, mirrorledger, BOUTBOX. A earnedreceiptwiring queued; icon/frame integration alsoA-owned. LatestA06:19read; sync291b14737published. NativeMac; noDocker/subagents/generative/protectededits/merge/deploy.
+
+---
+
 # L7 checkpoint published — 2026-11-08T06:03:35.243866+00:00
 
 Draft [378](https://github.com/ntbaoheyhey/taskbar-hero/pull/378) is stacked on L5 draft374. Evidence commit `9fef56228a68bb5f95db2db96f3960449891238f` and all14 upload batches were remotely verified; 1,325 portable files / 555,982,721bytes. Exact inventory and batch receipts: validation/l7/publication-inventory.json and publication-receipt.json. The inventory describes the evidence commit; later publication notes are prose/receipt additions only.
