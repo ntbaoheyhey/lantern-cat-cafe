@@ -1,6 +1,6 @@
 # B2 STATE
 Base0ce18c085d078a5351c3fe7893302d63b39f3e6e (closure draft380), checkout /Users/bao/taskbar-hero-cardrpg-b2.
-Current V4 round2 validation; branch codex/cardrpg-b2-v4-2026-11-08. Original request PROMPT.txt and A-OUTBOX reread on resume.
+Current V5 procedural effects; branch codex/cardrpg-b2-v5-2026-11-08. Original request PROMPT.txt and A-OUTBOX reread on resume.
 Single agent/nativeMac/headless/noDocker/noCUA/no generative. B-owned presentation only. No rules/meta/protected edits, merge/deploy/main push.
 V0 draft387 source5cde9b9f9: five gates1770web/421E2E, digest5, twelve baseline shots. Index remains exact7e092b1a/31,494,758bytes.
 V1 draft389 sourcee0f2de64b: four personally viewed rounds, four gates/digest5PASS. Cat31–41%arena/15–20%page. Sock label forehead overlap deferredV4.
@@ -20,3 +20,4 @@ Evidence35MB before round2; compress old review rounds after inspection to stay<
 V4round1 fourgates1773web/digest5/twelve shotsPASS; personally viewed four. Found partyfloat anchoredat0,0; fixedpartypositions +L1ultimateportrait +normalURLshots; round2pending. V3 process86485 now has all144casts max16.8ms; sixcold queued on sameimmutableartifact. V4 round2 coordinator87904 active, sourcegates thenfixedshots; do notduplicate.
 
 V4 round2fourgates/digest5/twelvecaptures complete182211e9; personally viewed Mochi/earned/wave. HUD82px; anchorfix works. UIchecks queued, V5 next.
+V4 DRAFT392 bf9213d90; V5glass/ribs/pooledrings/footlights andprojectionboundshake implemented, gates/review pending. V4UI runs immutable182211e9.

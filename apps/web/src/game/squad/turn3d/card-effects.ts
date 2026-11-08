@@ -1,3 +1,4 @@
+import { isReadableBattle } from './look-b2';
 import { LookVfx } from './look-vfx';
 import { LAB_EFFECT_RECIPES } from './card-lab-effects';
 import * as T from 'three';
@@ -37,6 +38,9 @@ const fragmentShader = `
       : vec4(effectColor * 1.45, opacity);
   }
 `;
+const READABLE_GATHER: CardEffectLayer = { primitive:'knock-ring',motion:'pulse',anchor:'caster',count:1,start:0,end:1,size:.9,height:.045,spread:0,turns:0,offset:[0,0,0],aspect:[1,1,1],opacity:.60,ground:true,accent:false };
+const READABLE_IMPACT: CardEffectLayer = {...READABLE_GATHER,motion:'expand',size:1.9,opacity:.85};
+const READABLE_SMALL_IMPACT: CardEffectLayer = {...READABLE_IMPACT,size:.75,opacity:.65};
 const nextTask = () => new Promise<void>(resolve => setTimeout(resolve, 0));
 const ease = (value: number) => value * value * (3 - 2 * value);
 const effectBeatSpans = {
@@ -246,6 +250,21 @@ export class CardEffects {
     this.flash = !calm && progress > .525 && progress < .558 ? Math.sin((progress - .525) / .033 * Math.PI) : 0;
     this.look?.illuminate(recipe, progress, this.caster, this.targets, camera, calm);
     this.drawRecipe(recipe, progress, camera, quality, calm);
+    if (isReadableBattle()) {
+      // Existing pools, fixed action clock. The characteristic recipe stays on top.
+      const gather = (frame.elapsed - frame.plan.beats[0]!.duration + 200) / 200;
+      if (gather > 0 && gather < 1) {
+        this.baseColor.set(recipe.color); this.accentColor.set(recipe.accent);
+        this.focus.copy(this.caster);
+        this.place(READABLE_GATHER, gather, 0, 1, camera, calm);
+      }
+      const after = (frame.elapsed - frame.plan.beats[2]!.start) / Math.min(650, frame.plan.duration-frame.plan.beats[2]!.start);
+      if (after > 0 && after < 1) {
+        this.baseColor.set(recipe.accent);
+        this.focus.copy(recipe.target === 'friendly' ? this.caster : this.targets[0]!);
+        this.place(recipe.ultimate ? READABLE_IMPACT : READABLE_SMALL_IMPACT, after, 0, 1, camera, calm);
+      }
+    }
     for (const id of frame.plan.presentationCues ?? []) {
       const cue = CARD_EFFECT_RECIPES[id] ?? LAB_EFFECT_RECIPES[id];
       if (cue) {

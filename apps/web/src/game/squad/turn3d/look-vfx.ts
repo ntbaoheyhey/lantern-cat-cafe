@@ -1,3 +1,4 @@
+import { isReadableBattle } from './look-b2';
 /** Original atelier effect materials. All resources are allocated during loading. */
 import * as T from 'three';
 import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
@@ -74,7 +75,7 @@ function craftedBody(kind: CardEffectPrimitive): T.BufferGeometry | undefined {
 }
 const vertex = `attribute float effectAlpha,effectPhase,effectPart,effectFlash;uniform float surfaceKind;varying vec3 effectColor,n,localPoint;varying vec2 texUV;varying float opacity,phase,part,viewDepth,flash;
 void main(){effectColor=instanceColor;opacity=effectAlpha;phase=effectPhase;part=effectPart;flash=effectFlash;texUV=uv;
- vec3 p=position;localPoint=p;if(effectPart>1.5){p.y+=sin(uv.x*8.-effectPhase*6.283)*.07*sin(uv.x*3.14159);}
+ vec3 p=position;if(surfaceKind>5.5)p.y=(p.y+.75)*smoothstep(0.,.4,effectPhase)-.75;localPoint=p;if(effectPart>1.5&&effectPart<2.5){p.y+=sin(uv.x*8.-effectPhase*6.283)*.07*sin(uv.x*3.14159);}
  if(effectPart<.5&&surfaceKind>.5&&surfaceKind<1.5){p.z+=sin(p.x*4.8+effectPhase*.8)*.11*(.8+.2*cos(p.y*4.));}
  vec3 surfaceNormal=normal;
  if(effectPart<.5&&surfaceKind>.5&&surfaceKind<1.5){surfaceNormal.x-=cos(p.x*4.8+effectPhase*.8)*.528*(.8+.2*cos(p.y*4.))*normal.z;surfaceNormal.y+=sin(p.x*4.8+effectPhase*.8)*.088*sin(p.y*4.)*normal.z;}
@@ -90,14 +91,18 @@ void main(){vec2 screen=gl_FragCoord.xy/resolution;float faceFade=1.;
   vec4 t=texture2D(atlas,uv);vec3 straight=t.rgb/max(t.a,.0001);vec3 linear=pow(straight,vec3(2.2));float light=mix(dot(linear,vec3(.2126,.7152,.0722)),max(linear.r,max(linear.g,linear.b)),flameVolume);
   a*=mix(t.a*.52,sqrt(t.a)*.72,softVolume);c=mix(effectColor*.55,effectColor*1.75,clamp(light,0.,1.));
   c+=mix(effectColor,vec3(1.,.78,.4),.35)*pow(clamp(light,0.,1.),4.)*1.4*flameVolume;
- }else if(part>1.5){float f=clamp(floor(phase*35.),0.,35.);vec2 cell=vec2(mod(f,6.),5.-floor(f/6.));vec4 silk=texture2D(atlas,(cell+clamp(texUV,vec2(.5/256.),vec2(1.-.5/256.)))/6.);float fibre=dot(silk.rgb,vec3(.2126,.7152,.0722));float edge=1.-abs(texUV.y*2.-1.);a*=pow(max(0.,edge),1.2)*sin(texUV.x*3.14159)*.7;c=mix(effectColor*.55,mix(effectColor,vec3(1.),.3)*3.2,pow(edge,7.)*.65);c*=.95+fibre*.15;additive=.35;
+ }else if(part>1.5&&part<2.5){float f=clamp(floor(phase*35.),0.,35.);vec2 cell=vec2(mod(f,6.),5.-floor(f/6.));vec4 silk=texture2D(atlas,(cell+clamp(texUV,vec2(.5/256.),vec2(1.-.5/256.)))/6.);float fibre=dot(silk.rgb,vec3(.2126,.7152,.0722));float edge=1.-abs(texUV.y*2.-1.);a*=pow(max(0.,edge),1.2)*sin(texUV.x*3.14159)*.7;c=mix(effectColor*.55,mix(effectColor,vec3(1.),.3)*3.2,pow(edge,7.)*.65);c*=.95+fibre*.15;additive=.35;
  }else{float light=.5+.5*dot(normalize(n),normalize(vec3(-.45,.75,.5)));float rim=pow(1.-abs(normalize(n).z),2.);
   a*=mix(1.,mix(.38,.10,flameVolume),softVolume);
   c=effectColor*(.42+light*.48)+mix(effectColor,vec3(.9),.18)*rim*.18;
   if(surfaceKind>.5&&surfaceKind<1.5){vec2 p=localPoint.xy*85.;float detail=1.-smoothstep(.5,2.,max(fwidth(p.x),fwidth(p.y)));float fibre=sin(p.x+sin(p.y*.35))*sin(p.y*1.4);c*=(.96+.04*fibre*detail)*(.94+.06*cos(localPoint.x*5.+phase*.8));}
   if(surfaceKind>1.5&&surfaceKind<2.5){a*=.16+rim*.3;c*=.78;c+=mix(effectColor,vec3(1.),.25)*pow(rim,2.)*2.4;}
   if(surfaceKind>2.5&&surfaceKind<4.5){float shine=pow(max(0.,dot(normalize(n),normalize(vec3(-.25,.42,.88)))),surfaceKind<3.5?14.:28.);c+=mix(effectColor,vec3(1.),surfaceKind<3.5?.65:.22)*shine*(surfaceKind<3.5?.8:2.2);}
-  if(surfaceKind>4.5){float rib=.5+.5*cos(atan(localPoint.z,localPoint.x)*10.);c=effectColor*(1.1+light*.65)*(.82+.18*rib)+vec3(1.,.46,.08)*.32;}
+  if(surfaceKind>4.5&&surfaceKind<5.5){float rib=.5+.5*cos(atan(localPoint.z,localPoint.x)*10.);c=effectColor*(1.1+light*.65)*(.82+.18*rib)+vec3(1.,.46,.08)*.32;}
+  if(surfaceKind>5.5){
+    if(part<.5){c=vec3(1.,.61,.20)*(1.05+light*.55);a*=.94;}
+    else {float shaft=pow(max(0.,sin(localPoint.x*22.+localPoint.y*3.)),16.);c=effectColor*(.65+light*.45)+vec3(1.,.83,.47)*shaft*.36;a*=.46+rim*.18;}
+  }
   c+=effectColor*pow(max(0.,sin(phase*3.14159)),8.)*.08+mix(effectColor,vec3(1.),.3)*flash*.36;
  }
  if(flameVolume>.5)c*=vec3(1.,.48,.18);
@@ -147,7 +152,7 @@ export class LookVfx {
     }
   }
   material(kind: CardEffectPrimitive) {
-    const family = familyFor[kind], finish = kind === 'lantern' ? 5 : paper.has(kind) ? 1 : glass.has(kind) ? 2 : ceramic.has(kind) ? 3 : metal.has(kind) ? 4 : 0;
+    const family = familyFor[kind], finish = kind === 'greenhouse' && isReadableBattle() ? 6 : kind === 'lantern' ? 5 : paper.has(kind) ? 1 : glass.has(kind) ? 2 : ceramic.has(kind) ? 3 : metal.has(kind) ? 4 : 0;
     const key = `${family ?? 'sculpted'}/${finish}`;
     let material = this.materials.get(key);
     if (!material) {
@@ -172,7 +177,7 @@ export class LookVfx {
     if (body) {
       const surface = body.index ? body.toNonIndexed() : body;
       if (surface !== body) body.dispose();
-      surface.setAttribute('effectPart', new T.BufferAttribute(new Float32Array(surface.attributes.position!.count), 1));
+      surface.setAttribute('effectPart', new T.BufferAttribute(new Float32Array(surface.attributes.position!.count).fill(kind === 'greenhouse' && isReadableBattle() ? 3 : 0), 1));
       const sculpted = mergeGeometries([original, surface], false)!;
       original.dispose();surface.dispose();original = sculpted;
     }
@@ -220,7 +225,7 @@ export class LookVfx {
     const focus = targets[0] ?? caster;this.projected.copy(focus);this.projected.y += .3;this.projected.project(camera);
     this.impact.set(this.projected.x * .5 + .5, this.projected.y * .5 + .5);
     const t = (progress - .45) / .43;
-    const power = t > 0 && t < 1 && !calm && this.lightsEnabled ? Math.sin(t * Math.PI) ** 2 * (recipe.ultimate ? .85 : .55) : 0;
+    const power = t > 0 && t < 1 && !calm && this.lightsEnabled ? Math.sin(t * Math.PI) ** 2 * (isReadableBattle() ? recipe.ultimate ? 1.15 : .65 : recipe.ultimate ? .85 : .55) : 0;
     for (let i = 0; i < this.lights.length; i++) {
       const light = this.lights[i]!;light.position.copy(targets[i] ?? focus);light.position.y += .06;
       light.color.set(i ? recipe.accent : recipe.color);light.intensity = i && targets.length < 2 ? 0 : power;
