@@ -36,6 +36,12 @@ for (const [name, root] of Object.entries(roots)) {
 }
 assert.deepEqual(arms.current.registration.savedInputs, arms.eligible.registration.savedInputs);
 assert.deepEqual(arms.current.registration.scopes, arms.eligible.registration.scopes);
+for (const script of ['matrix.mjs', 'cohort.mjs']) {
+  const original = await readFile(`${roots.current}/${script}`, 'utf8');
+  const candidate = await readFile(`${roots.eligible}/${script}`, 'utf8');
+  assert.equal(candidate.replaceAll(roots.eligible, roots.current), original,
+    `${script}: fixture or policy changed beyond its receipt path`);
+}
 const semantic = await read(`${base}/hush-eligibility-21/audit.json`);
 assert.equal(semantic.status, 'PASS');
 assert.equal(semantic.candidatePass, 144);
