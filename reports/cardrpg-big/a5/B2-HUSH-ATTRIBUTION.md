@@ -25,3 +25,7 @@ Candidate21 credits Hush at the skipped heal/shield branch or at a live, eligibl
 The expanded32-case unit suite passes on21; original16 fails13/passes19, and signature19 fails7/passes25. All failures remain retained. Signature20 wider sampling was never started and its registered files remain intact. Eligibility22 prospectively registers the unchanged1321TRAIN50cells and90old earned saves; it waits for the existing bounded source-priority window. No new earned45-day or acceptance claim.
 
 [Prospective extension](b2/hush-eligibility-21/REGISTERED-METHOD.md) · [three-source audit](b2/hush-eligibility-21/audit.json) · [wider composition registration](b2/hush-eligibility-22/REGISTERED-METHOD.md).
+
+## Eligibility22 saved-input comparison
+
+The same90previously earned day7 saves retain every first/first-two win result, recommendation and cost versus current16. All90first-encounter and choice summaries are exact;83post-route state hashes,88retry summaries and85without-advice summaries are exact. Changed states remain retained. Casual26/30,regular28/30 first-two andheavy28/30 first satisfy these saved-input gates; this is not a fresh45-day cohort. [Independent paired audit](b2/hush-eligibility-22/day7-paired.json). Original wider TRAIN matrix remains running.

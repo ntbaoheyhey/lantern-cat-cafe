@@ -1,6 +1,6 @@
 # A5 B2 — utility suppression can create an attack
 
-Status: correction adopted after both registered TRAIN matrices; source/compatibility gates are running. Broader balance remains open.
+Status: correction adopted after both registered TRAIN matrices; all six source checks and OFF compatibility PASS. Original current-source TRAIN composition is still running; broader balance remains open.
 
 Carrier12 found Inkcap's intended Velvetrim matchup winning 21/50, while the other seven sets won 50/50. Diagnostic13 preserves its gear, stats, allies, enemies and seeds, then ablates only setup effects. Removing row reach or Quiet spores restores 50/50 in both normalization arms. Removing the four-piece effect or its extra target preference leaves 21/50. All full-arm outcomes match the prior receipt exactly; twelve seed-1 replays reproduce exactly.
 
@@ -30,3 +30,9 @@ Production adopts only the three-line V4 branch, preserving the current fatal-fo
 All90previously earned saves complete on current16. Casual26/30 and regular28/30 win within two attempts; heavy28/30 win first attempt. All24losses receive an available recommendation. Every first/first-two win outcome, advice and currency cost matches the anchored baseline. Of90first-encounter summaries,81are exact;89retry summaries and85without-advice summaries are exact. The independent audit preserves the changed pairs rather than claiming identical combat logs. Heavy advised retries still win0/2 while the paired without-advice attempts win2/2.
 
 This is a saved-input regression, not a new45-day earned cohort. Source gates, OFF and the original1321-cell balance matrix remain pending. [Paired account audit](b2/suppression-current-16/day7-paired.json).
+
+## Source validation checkpoint
+
+Original source `edd8ac69e` passes typecheck, lint, 1,746 web tests, 1,154 rules tests (2 expected failures and 11 skips retained), all 421 E2E tests and build on their first attempts. All logs and 45 combat-source files were independently hash-verified. OFF remains exact across165cells/8,250routes; baseline-v1 and all13historical receipts remain unchanged. [Source and compatibility audit](b2-suppression/source-checks.json). No source-suite rerun.
+
+The original1,321-cell TRAIN50 composition remains pending. Accurate Hush-credit eligibility is separately isolated in [the attribution review](B2-HUSH-ATTRIBUTION.md); no claim that source tests establish balance closure.
