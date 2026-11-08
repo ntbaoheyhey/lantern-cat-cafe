@@ -306,6 +306,17 @@ export class DepthModel {
     }
     if (this.apply(R.finishEncounter(this.state), 'Choose a charm or strengthen one unlocked skill.')) this.go('map');
   }
+  applyResultAdvice(advice: R.BuildAdviceV4) {
+    if (this.screen !== 'result' || this.replay || this.tutorialBattle || this.galleryBattle) return;
+    const run = this.state.run;
+    if (!run || !this.apply(R.applyResultAdviceV4(this.state, advice), advice.label)) return;
+    this.plan = null; this.watching = false; this.paused = false;
+    this.start(run.chapter, run.mode, run.challengeLevel);
+    if (this.state.run && !this.state.run.complete) {
+      const first = R.availableNodes(this.state.run)[0];
+      if (first) this.enter(first.id);
+    }
+  }
   improveTeam() {
     this.finish();
     if (this.state.run && !this.state.run.complete) this.apply(R.abandonRun(this.state), 'Route rewards kept. Improve your team for the next route.');

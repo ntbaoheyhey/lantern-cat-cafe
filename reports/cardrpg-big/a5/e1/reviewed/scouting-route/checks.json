@@ -1,0 +1,146 @@
+{
+  "passed": true,
+  "artifact": "/tmp/cardrpg-a5-e1-artifact/index.html",
+  "sha256": "bdbdb35aa91930644ff2498437fab60f513e27dda6718938bfe59cfe48b3c667",
+  "timeline": [
+    {
+      "screen": "prepare",
+      "node": "battle",
+      "visited": []
+    },
+    {
+      "screen": "map",
+      "node": "battle",
+      "visited": []
+    },
+    {
+      "screen": "map",
+      "visited": [
+        "0-0"
+      ]
+    },
+    {
+      "screen": "map",
+      "node": "event",
+      "visited": [
+        "0-0"
+      ]
+    },
+    {
+      "screen": "map",
+      "visited": [
+        "0-0",
+        "1-0"
+      ]
+    },
+    {
+      "screen": "map",
+      "node": "treasure",
+      "visited": [
+        "0-0",
+        "1-0"
+      ]
+    },
+    {
+      "screen": "map",
+      "visited": [
+        "0-0",
+        "1-0",
+        "2-0"
+      ]
+    },
+    {
+      "screen": "map",
+      "node": "shop",
+      "visited": [
+        "0-0",
+        "1-0",
+        "2-0"
+      ]
+    },
+    {
+      "screen": "map",
+      "visited": [
+        "0-0",
+        "1-0",
+        "2-0",
+        "3-0"
+      ]
+    },
+    {
+      "screen": "map",
+      "node": "campfire",
+      "visited": [
+        "0-0",
+        "1-0",
+        "2-0",
+        "3-0"
+      ]
+    },
+    {
+      "screen": "map",
+      "visited": [
+        "0-0",
+        "1-0",
+        "2-0",
+        "3-0",
+        "4-0"
+      ]
+    },
+    {
+      "screen": "prepare",
+      "node": "elite",
+      "visited": [
+        "0-0",
+        "1-0",
+        "2-0",
+        "3-0",
+        "4-0"
+      ]
+    },
+    {
+      "screen": "map",
+      "node": "elite",
+      "visited": [
+        "0-0",
+        "1-0",
+        "2-0",
+        "3-0",
+        "4-0"
+      ]
+    },
+    {
+      "screen": "map",
+      "visited": [
+        "0-0",
+        "1-0",
+        "2-0",
+        "3-0",
+        "4-0",
+        "5-1"
+      ]
+    },
+    {
+      "screen": "prepare",
+      "node": "boss",
+      "visited": [
+        "0-0",
+        "1-0",
+        "2-0",
+        "3-0",
+        "4-0",
+        "5-1"
+      ]
+    }
+  ],
+  "forecast": {
+    "text": "ROUGH FORECAST\nRisky\n\nMochi often falls first. Keep a sturdy front, cleanse Tangle, and focus the leader.\n\nA forecast, never a promise.",
+    "elapsedMs": 56.80000000074506,
+    "computeMs": 42.30000000074506
+  },
+  "errors": [],
+  "limitations": [
+    "Uses Skip between preparations; not battle duration or engagement evidence.",
+    "Reaches boss preparation; does not claim boss victory."
+  ]
+}

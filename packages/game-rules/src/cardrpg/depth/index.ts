@@ -20,3 +20,8 @@ export * from './editions-v4';
 export { reserveDesignPreviewV4Guard as reserveDesignPreview } from './editions-v4';
 
 export * from './meta-v4';
+
+export * from './outcome-v4';
+export * from './recommendation-v4';
+export * from './forecast-v4';
+export * from './scouting-v4';

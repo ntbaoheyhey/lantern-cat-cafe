@@ -206,3 +206,11 @@ Sections4/5's invitation values are superseded in gameplayV4 only:360 stamps/day
 Reason: the A4 cohort saturated180 stamps for every style, producing58 paid draws in45 days and no60-mark selector. The registered reward-only candidate produces paid-Legendary medians6/5/5 and selector medians11/9/9 for casual/regular/heavy. Heavy/casual earnings stay≤3 for every currency and paid draw. Source correction is matched against all4050 original account-days; all-source Legendary dates are reported separately. See [B3-PROGRESSION.md](../../../reports/cardrpg-big/a5/B3-PROGRESSION.md) and its original receipts. These are bot proxies on A4 combat, not day7 victory or fresh combat acceptance.
 
 The first-week Hub suggests an available preparation goal and tomorrow's fresh service/earned allowance. Goals do not invent calendar locks or guarantee a drop. Odds, selector cost and displayed caps come from the same rule functions used to settle draws. Existing counters never become a negative countdown. No schema bump is needed for a rule/copy change; tests cover old envelopes and mode-toggle credit preservation.
+
+### A5 revision — named payoff and informed retries, 2026-11-08
+
+Result contributions are exact observed amounts, grouped by actor and effect identifier. They are not counterfactual proof that one item caused a win. E1 keeps the original earned day7 battle exactly equal to H0 while naming its healing, shields, damage and first fallen cat.
+
+The available retry command settles the lost route once, checks the owned/affordable change again, and starts a new route at its first stop. This preserves the existing route economy and avoids resurrecting a settled boss battle. The button explicitly says “Apply and retry route”; it does not promise an immediate boss rematch or victory. Forecasts use20 fixed TRAIN seeds in a worker and qualitative bands; CPU4 page throttle is reported separately because worker slowdown is not calibrated.
+
+Scouting exposes opening, reach and closing separately after the first, story and elite stops. The original opening copy leaked the closing phase; the reviewed artifact fixes this and verifies3/3 at boss preparation. Evidence: reports/cardrpg-big/a5/E1-CHOICE-PAYOFF.md and e1/reviewed/audit.json. No combat tuning, save schema or version1 B event change in E1.

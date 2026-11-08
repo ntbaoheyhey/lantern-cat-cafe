@@ -70,17 +70,12 @@ export function PreparationV4({ m }: { m: DepthModel }) {
 }
 
 export function OutcomeV4({ battle }: { battle: R.Battle }) {
-  const rearFallen = battle.actors.some(a => a.side === 'party' && a.row === 'rear' && a.hp === 0);
-  const suggestion = battle.result === 'party'
-    ? 'Check the next enemy’s plan before choosing your formation.'
-    : rearFallen ? 'A back-row cat fell. Try Protect for earlier healing.'
-      : 'Try a sturdier front cat or Protect for earlier healing.';
+  const outcome = R.outcomeV4(battle);
   return <section className="cr-panel dp-v4-outcome"><h2>Your crew’s turning points</h2>
-    <ul>{R.battleReasons(battle).map(reason => <li key={reason}>{reason}</li>)}</ul>
-    <p><b>Try next:</b> {suggestion}</p>
-    <details><summary>Round-by-round notes</summary>
-      <p>Plan: {battle.v4!.plan.focus} / {battle.v4!.plan.care}.</p>
-      <p>These notes record what happened; they do not isolate one cause of victory.</p>
+    <ul>{outcome.causes.map(cause => <li key={cause.id}>{cause.text}</li>)}</ul>
+    <p>Back row took {outcome.rearShare}% of the damage.</p>
+    {outcome.firstFallen && <p>{outcome.firstFallen.name} fell first, in round {outcome.firstFallen.round}.</p>}
+    <details><summary>Round-by-round notes</summary><p>Plan: {battle.v4!.plan.focus} / {battle.v4!.plan.care}.</p>
       <ol>{battle.v4!.events.map(event => <li key={event.sequence}>Round {event.round} · {event.text}</li>)}</ol>
     </details>
   </section>;
