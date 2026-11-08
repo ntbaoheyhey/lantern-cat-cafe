@@ -1,0 +1,1877 @@
+{
+  "status": "PASS for reviewer-only Settings; A5 acceptance remains open",
+  "source": "dc60280cf48222952650255d77dcabbbd5ae33a7",
+  "gates": [
+    {
+      "name": "typecheck",
+      "attempt": 1,
+      "code": 2,
+      "head": "e87021cfee9c3b984c78c052262587bbbf944494",
+      "scope": "complete",
+      "command": [
+        "pnpm",
+        "typecheck"
+      ],
+      "started": "2026-11-08T20:24:44.753Z",
+      "ended": "2026-11-08T20:24:54.085Z",
+      "log": "reports/cardrpg-big/a5/c1-review-controls/gates/typecheck-attempt-1.log",
+      "sha256": "bffa14539132fedeff41824abbe1bb385037c4b8d14afd0b475ef3ef73d5ff30",
+      "counts": []
+    },
+    {
+      "name": "typecheck",
+      "attempt": 2,
+      "code": 0,
+      "head": "dc60280cf48222952650255d77dcabbbd5ae33a7",
+      "scope": "complete",
+      "command": [
+        "pnpm",
+        "typecheck"
+      ],
+      "started": "2026-11-08T20:25:32.255Z",
+      "ended": "2026-11-08T20:25:41.142Z",
+      "log": "reports/cardrpg-big/a5/c1-review-controls/gates/typecheck-attempt-2.log",
+      "sha256": "51a42e236a32504b0d88a3bf68105a49f4443b7656a01bba4c17d18c75eeb896",
+      "counts": []
+    },
+    {
+      "name": "lint",
+      "attempt": 1,
+      "code": 0,
+      "head": "dc60280cf48222952650255d77dcabbbd5ae33a7",
+      "scope": "complete",
+      "command": [
+        "pnpm",
+        "lint"
+      ],
+      "started": "2026-11-08T20:25:41.143Z",
+      "ended": "2026-11-08T20:25:50.002Z",
+      "log": "reports/cardrpg-big/a5/c1-review-controls/gates/lint-attempt-1.log",
+      "sha256": "a53f38f90231d3f94787cba09e842aed97ef41aed55d1a0351b112aabe7beea1",
+      "counts": []
+    },
+    {
+      "name": "web-unit",
+      "attempt": 1,
+      "code": 0,
+      "head": "dc60280cf48222952650255d77dcabbbd5ae33a7",
+      "scope": "complete",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@taskbar-hero/web",
+        "test"
+      ],
+      "started": "2026-11-08T20:25:50.003Z",
+      "ended": "2026-11-08T20:26:06.348Z",
+      "log": "reports/cardrpg-big/a5/c1-review-controls/gates/web-unit-attempt-1.log",
+      "sha256": "598d962885faf3fd215311ad44b3cb79f1a733db0917b1b0aec9e52deaf04408",
+      "counts": [
+        " Test Files  180 passed (180)",
+        "      Tests  1754 passed (1754)"
+      ]
+    },
+    {
+      "name": "rules",
+      "attempt": 1,
+      "code": 0,
+      "head": "dc60280cf48222952650255d77dcabbbd5ae33a7",
+      "scope": "complete",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@taskbar-hero/game-rules",
+        "test"
+      ],
+      "started": "2026-11-08T20:26:06.348Z",
+      "ended": "2026-11-08T20:26:30.615Z",
+      "log": "reports/cardrpg-big/a5/c1-review-controls/gates/rules-attempt-1.log",
+      "sha256": "f50a27ed67b24ebbc8ff10ba9b8fccea9de287ec865b29fe19be69cd853d695c",
+      "counts": [
+        " Test Files  71 passed | 3 skipped (74)",
+        "      Tests  1192 passed | 2 expected fail | 11 skipped (1205)"
+      ]
+    },
+    {
+      "name": "e2e",
+      "attempt": 1,
+      "code": 0,
+      "head": "dc60280cf48222952650255d77dcabbbd5ae33a7",
+      "scope": "complete",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@taskbar-hero/web",
+        "test:e2e",
+        "--workers=4"
+      ],
+      "started": "2026-11-08T20:26:30.615Z",
+      "ended": "2026-11-08T20:28:32.426Z",
+      "log": "reports/cardrpg-big/a5/c1-review-controls/gates/e2e-attempt-1.log",
+      "sha256": "afb29e804adbd9e6da6394b3f636c34780485d14043e6c46daa0affafd7a994b",
+      "counts": [
+        "  421 passed (2.0m)"
+      ]
+    },
+    {
+      "name": "build",
+      "attempt": 1,
+      "code": 0,
+      "head": "dc60280cf48222952650255d77dcabbbd5ae33a7",
+      "scope": "complete",
+      "command": [
+        "pnpm",
+        "build"
+      ],
+      "started": "2026-11-08T20:28:32.427Z",
+      "ended": "2026-11-08T20:28:42.237Z",
+      "log": "reports/cardrpg-big/a5/c1-review-controls/gates/build-attempt-1.log",
+      "sha256": "054dce9eb9ecee65dc37ad2c4204f34f81ada01308371efedd2c910ec1b07bd6",
+      "counts": []
+    }
+  ],
+  "off": {
+    "offBehavior": "PASS",
+    "sha256": "47477251b3d20ab602bee5c55a56cdd661e111b1386e298e0c9bc67737fecfa3",
+    "cells": 165,
+    "routes": 8250,
+    "reusedFrom": "reports/cardrpg-big/a5/e1-crew-advice-band/off",
+    "reason": "All original rules source hashes and complete package diff remain exact."
+  },
+  "adoption": {
+    "adoptedAt": "2026-11-08T20:24:44.538892+00:00",
+    "inputSha256": "0105b9220831b6aa23696ee563ab94b9cee21a6ac9afe27b9d810ec86a5b86d6",
+    "outputSha256": "25503819fc88eb0dd352958245b7687299233c1f3d52ccde78869a6945865847",
+    "relicsComponentUnchanged": true,
+    "evidenceComponentUnchanged": true,
+    "focusedBefore": "1 failed / 3 passed; ordinary V4 grants unexpectedly visible"
+  },
+  "artifacts": [
+    {
+      "mode": "on",
+      "sha256": "f27ff7dc954d9f8316e20a316ef62c9db96db0be54c13a58db1145d19b49286a",
+      "bytes": 20923753,
+      "path": "/tmp/cardrpg-a5-review-controls-on/index.html"
+    },
+    {
+      "mode": "off",
+      "sha256": "a7c465f6a331af72edcae52a0582f4a9c8d79855b1d0681a46a27bd952decad0",
+      "bytes": 20923753,
+      "path": "/tmp/cardrpg-a5-review-controls-off/index.html"
+    }
+  ],
+  "browsers": [
+    {
+      "before": true,
+      "mode": "on",
+      "width": 1280,
+      "checks": [
+        {
+          "view": "player",
+          "dev": false,
+          "hasTools": true,
+          "grantControls": 4,
+          "saveRoundtrip": true,
+          "keyboardDayAdvance": true
+        },
+        {
+          "view": "reviewer",
+          "dev": true,
+          "hasTools": true,
+          "grantControls": 4,
+          "saveRoundtrip": true,
+          "keyboardDayAdvance": true
+        },
+        {
+          "view": "reviewer-look",
+          "dev": true,
+          "hasTools": true,
+          "grantControls": 4,
+          "saveRoundtrip": true,
+          "keyboardDayAdvance": true
+        }
+      ]
+    },
+    {
+      "before": false,
+      "mode": "on",
+      "width": 1280,
+      "checks": [
+        {
+          "view": "player",
+          "dev": false,
+          "hasTools": false,
+          "grantControls": 0,
+          "saveRoundtrip": true,
+          "keyboardDayAdvance": false
+        },
+        {
+          "view": "reviewer",
+          "dev": true,
+          "hasTools": true,
+          "grantControls": 4,
+          "saveRoundtrip": true,
+          "keyboardDayAdvance": true
+        },
+        {
+          "view": "reviewer-look",
+          "dev": true,
+          "hasTools": true,
+          "grantControls": 4,
+          "saveRoundtrip": true,
+          "keyboardDayAdvance": true
+        }
+      ]
+    },
+    {
+      "before": false,
+      "mode": "on",
+      "width": 1440,
+      "checks": [
+        {
+          "view": "player",
+          "dev": false,
+          "hasTools": false,
+          "grantControls": 0,
+          "saveRoundtrip": true,
+          "keyboardDayAdvance": false
+        },
+        {
+          "view": "reviewer",
+          "dev": true,
+          "hasTools": true,
+          "grantControls": 4,
+          "saveRoundtrip": true,
+          "keyboardDayAdvance": true
+        },
+        {
+          "view": "reviewer-look",
+          "dev": true,
+          "hasTools": true,
+          "grantControls": 4,
+          "saveRoundtrip": true,
+          "keyboardDayAdvance": true
+        }
+      ]
+    },
+    {
+      "before": false,
+      "mode": "on",
+      "width": 1024,
+      "checks": [
+        {
+          "view": "player",
+          "dev": false,
+          "hasTools": false,
+          "grantControls": 0,
+          "saveRoundtrip": true,
+          "keyboardDayAdvance": false
+        },
+        {
+          "view": "reviewer",
+          "dev": true,
+          "hasTools": true,
+          "grantControls": 4,
+          "saveRoundtrip": true,
+          "keyboardDayAdvance": true
+        },
+        {
+          "view": "reviewer-look",
+          "dev": true,
+          "hasTools": true,
+          "grantControls": 4,
+          "saveRoundtrip": true,
+          "keyboardDayAdvance": true
+        }
+      ]
+    },
+    {
+      "before": false,
+      "mode": "off",
+      "width": 1280,
+      "checks": [
+        {
+          "view": "player",
+          "dev": false,
+          "hasTools": true,
+          "grantControls": 4,
+          "saveRoundtrip": true,
+          "keyboardDayAdvance": true
+        },
+        {
+          "view": "reviewer",
+          "dev": true,
+          "hasTools": true,
+          "grantControls": 4,
+          "saveRoundtrip": true,
+          "keyboardDayAdvance": true
+        },
+        {
+          "view": "reviewer-look",
+          "dev": true,
+          "hasTools": true,
+          "grantControls": 4,
+          "saveRoundtrip": true,
+          "keyboardDayAdvance": true
+        }
+      ]
+    },
+    {
+      "before": false,
+      "mode": "off",
+      "width": 1440,
+      "checks": [
+        {
+          "view": "player",
+          "dev": false,
+          "hasTools": true,
+          "grantControls": 4,
+          "saveRoundtrip": true,
+          "keyboardDayAdvance": true
+        },
+        {
+          "view": "reviewer",
+          "dev": true,
+          "hasTools": true,
+          "grantControls": 4,
+          "saveRoundtrip": true,
+          "keyboardDayAdvance": true
+        },
+        {
+          "view": "reviewer-look",
+          "dev": true,
+          "hasTools": true,
+          "grantControls": 4,
+          "saveRoundtrip": true,
+          "keyboardDayAdvance": true
+        }
+      ]
+    },
+    {
+      "before": false,
+      "mode": "off",
+      "width": 1024,
+      "checks": [
+        {
+          "view": "player",
+          "dev": false,
+          "hasTools": true,
+          "grantControls": 4,
+          "saveRoundtrip": true,
+          "keyboardDayAdvance": true
+        },
+        {
+          "view": "reviewer",
+          "dev": true,
+          "hasTools": true,
+          "grantControls": 4,
+          "saveRoundtrip": true,
+          "keyboardDayAdvance": true
+        },
+        {
+          "view": "reviewer-look",
+          "dev": true,
+          "hasTools": true,
+          "grantControls": 4,
+          "saveRoundtrip": true,
+          "keyboardDayAdvance": true
+        }
+      ]
+    }
+  ],
+  "captures": [
+    {
+      "path": "reports/cardrpg-big/a5/c1-review-controls/before-on-1280-attempt-3/player.png",
+      "label": "player",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Offline demo · manual save codes",
+          "ratio": 9.049339025684167
+        },
+        {
+          "text": "Export / import progress",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Export the code before closing. Paste it here after reopening to continue.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Export save code",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Reset account",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Schema 0.7.0. Checksum detects copy errors. Legacy 0.4 JSON and 0.5 save codes migrate on import.",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "Comfort and playback",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Sound off",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Build your team, press Fight, watch, then improve. Space pauses battle playback. Speed and sound controls are at the battle table.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Demo shortcuts",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Reviewer-granted progress lets you inspect the later systems.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Unlock all cats and build materials",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Add 1500 demo stamps",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Unlock chapters and Tower",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Advance fixture day",
+          "ratio": 10.615526804635495
+        }
+      ],
+      "mode": "on",
+      "width": 1280,
+      "before": true,
+      "sha256": "8ddc8d06d0b1157a4a4b14eba0183209680205508c6d342b08fd15b41bdbc352"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/c1-review-controls/before-on-1280-attempt-3/reviewer.png",
+      "label": "reviewer",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Offline demo · manual save codes",
+          "ratio": 9.049339025684167
+        },
+        {
+          "text": "Export / import progress",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Export the code before closing. Paste it here after reopening to continue.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Export save code",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Reset account",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Schema 0.7.0. Checksum detects copy errors. Legacy 0.4 JSON and 0.5 save codes migrate on import.",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "Comfort and playback",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Sound off",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Build your team, press Fight, watch, then improve. Space pauses battle playback. Speed and sound controls are at the battle table.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Demo shortcuts",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Reviewer-granted progress lets you inspect the later systems.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Unlock all cats and build materials",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Add 1500 demo stamps",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Unlock chapters and Tower",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Advance fixture day",
+          "ratio": 10.615526804635495
+        }
+      ],
+      "mode": "on",
+      "width": 1280,
+      "before": true,
+      "sha256": "539a41094f272ba1ff4b8da5c422fb92b4a8e49b9ea129fb327eaf24835b931e"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/c1-review-controls/before-on-1280-attempt-3/reviewer-look.png",
+      "label": "reviewer-look",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Offline demo · manual save codes",
+          "ratio": 11.973870016382282
+        },
+        {
+          "text": "Export / import progress",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Export the code before closing. Paste it here after reopening to continue.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Export save code",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Reset account",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Schema 0.7.0. Checksum detects copy errors. Legacy 0.4 JSON and 0.5 save codes migrate on import.",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Comfort and playback",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Sound off",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Build your team, press Fight, watch, then improve. Space pauses battle playback. Speed and sound controls are at the battle table.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Demo shortcuts",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Reviewer-granted progress lets you inspect the later systems.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Unlock all cats and build materials",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Add 1500 demo stamps",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Unlock chapters and Tower",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Advance fixture day",
+          "ratio": 12.727624984908184
+        }
+      ],
+      "mode": "on",
+      "width": 1280,
+      "before": true,
+      "sha256": "253bbab696f2ff9c6521b9aa4dfdd5fe54339a33994b59cc954400ee819b7481"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/c1-review-controls/after-on-1280-attempt-1/player.png",
+      "label": "player",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Offline demo · manual save codes",
+          "ratio": 9.049339025684167
+        },
+        {
+          "text": "Export / import progress",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Export the code before closing. Paste it here after reopening to continue.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Export save code",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Reset account",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Schema 0.7.0. Checksum detects copy errors. Legacy 0.4 JSON and 0.5 save codes migrate on import.",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "Comfort and playback",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Sound off",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Build your team, press Fight, watch, then improve. Space pauses battle playback. Speed and sound controls are at the battle table.",
+          "ratio": 11.756728459422893
+        }
+      ],
+      "mode": "on",
+      "width": 1280,
+      "before": false,
+      "sha256": "7680acd0a8fa10a25468bdfd8a09ef4be5de67ae76ff1366a86d7db4ed6d9151"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/c1-review-controls/after-on-1280-attempt-1/reviewer.png",
+      "label": "reviewer",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Offline demo · manual save codes",
+          "ratio": 9.049339025684167
+        },
+        {
+          "text": "Export / import progress",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Export the code before closing. Paste it here after reopening to continue.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Export save code",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Reset account",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Schema 0.7.0. Checksum detects copy errors. Legacy 0.4 JSON and 0.5 save codes migrate on import.",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "Comfort and playback",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Sound off",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Build your team, press Fight, watch, then improve. Space pauses battle playback. Speed and sound controls are at the battle table.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Demo shortcuts",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Reviewer-granted progress lets you inspect the later systems.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Unlock all cats and build materials",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Add 1500 demo stamps",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Unlock chapters and Tower",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Advance fixture day",
+          "ratio": 10.615526804635495
+        }
+      ],
+      "mode": "on",
+      "width": 1280,
+      "before": false,
+      "sha256": "539a41094f272ba1ff4b8da5c422fb92b4a8e49b9ea129fb327eaf24835b931e"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/c1-review-controls/after-on-1280-attempt-1/reviewer-look.png",
+      "label": "reviewer-look",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Offline demo · manual save codes",
+          "ratio": 11.973870016382282
+        },
+        {
+          "text": "Export / import progress",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Export the code before closing. Paste it here after reopening to continue.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Export save code",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Reset account",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Schema 0.7.0. Checksum detects copy errors. Legacy 0.4 JSON and 0.5 save codes migrate on import.",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Comfort and playback",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Sound off",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Build your team, press Fight, watch, then improve. Space pauses battle playback. Speed and sound controls are at the battle table.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Demo shortcuts",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Reviewer-granted progress lets you inspect the later systems.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Unlock all cats and build materials",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Add 1500 demo stamps",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Unlock chapters and Tower",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Advance fixture day",
+          "ratio": 12.727624984908184
+        }
+      ],
+      "mode": "on",
+      "width": 1280,
+      "before": false,
+      "sha256": "253bbab696f2ff9c6521b9aa4dfdd5fe54339a33994b59cc954400ee819b7481"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/c1-review-controls/after-on-1440-attempt-1/player.png",
+      "label": "player",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Offline demo · manual save codes",
+          "ratio": 9.049339025684167
+        },
+        {
+          "text": "Export / import progress",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Export the code before closing. Paste it here after reopening to continue.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Export save code",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Reset account",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Schema 0.7.0. Checksum detects copy errors. Legacy 0.4 JSON and 0.5 save codes migrate on import.",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "Comfort and playback",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Sound off",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Build your team, press Fight, watch, then improve. Space pauses battle playback. Speed and sound controls are at the battle table.",
+          "ratio": 11.756728459422893
+        }
+      ],
+      "mode": "on",
+      "width": 1440,
+      "before": false,
+      "sha256": "35e71f2afa6b63cab15dcd3c11890b96fef7cc9f5fbcb406eba4c4c781ee3c85"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/c1-review-controls/after-on-1440-attempt-1/reviewer.png",
+      "label": "reviewer",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Offline demo · manual save codes",
+          "ratio": 9.049339025684167
+        },
+        {
+          "text": "Export / import progress",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Export the code before closing. Paste it here after reopening to continue.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Export save code",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Reset account",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Schema 0.7.0. Checksum detects copy errors. Legacy 0.4 JSON and 0.5 save codes migrate on import.",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "Comfort and playback",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Sound off",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Build your team, press Fight, watch, then improve. Space pauses battle playback. Speed and sound controls are at the battle table.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Demo shortcuts",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Reviewer-granted progress lets you inspect the later systems.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Unlock all cats and build materials",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Add 1500 demo stamps",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Unlock chapters and Tower",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Advance fixture day",
+          "ratio": 10.615526804635495
+        }
+      ],
+      "mode": "on",
+      "width": 1440,
+      "before": false,
+      "sha256": "519c24e67571afe358fc69d9a0e2cfa6a37551fc322f68f0f1164365455613b1"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/c1-review-controls/after-on-1440-attempt-1/reviewer-look.png",
+      "label": "reviewer-look",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Offline demo · manual save codes",
+          "ratio": 11.973870016382282
+        },
+        {
+          "text": "Export / import progress",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Export the code before closing. Paste it here after reopening to continue.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Export save code",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Reset account",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Schema 0.7.0. Checksum detects copy errors. Legacy 0.4 JSON and 0.5 save codes migrate on import.",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Comfort and playback",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Sound off",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Build your team, press Fight, watch, then improve. Space pauses battle playback. Speed and sound controls are at the battle table.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Demo shortcuts",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Reviewer-granted progress lets you inspect the later systems.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Unlock all cats and build materials",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Add 1500 demo stamps",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Unlock chapters and Tower",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Advance fixture day",
+          "ratio": 12.727624984908184
+        }
+      ],
+      "mode": "on",
+      "width": 1440,
+      "before": false,
+      "sha256": "60b965bfafd5a6737af84fa9425bbe6788b549c7c0c641c93e53fb153a8dd7c7"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/c1-review-controls/after-on-1024-attempt-1/player.png",
+      "label": "player",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Offline demo · manual save codes",
+          "ratio": 9.049339025684167
+        },
+        {
+          "text": "Export / import progress",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Export the code before closing. Paste it here after reopening to continue.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Export save code",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Reset account",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Schema 0.7.0. Checksum detects copy errors. Legacy 0.4 JSON and 0.5 save codes migrate on import.",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "Comfort and playback",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Sound off",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Build your team, press Fight, watch, then improve. Space pauses battle playback. Speed and sound controls are at the battle table.",
+          "ratio": 11.756728459422893
+        }
+      ],
+      "mode": "on",
+      "width": 1024,
+      "before": false,
+      "sha256": "de85f862553118688d83923d134b8d630521b2568d18bf2d28af652797a34eef"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/c1-review-controls/after-on-1024-attempt-1/reviewer.png",
+      "label": "reviewer",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Offline demo · manual save codes",
+          "ratio": 9.049339025684167
+        },
+        {
+          "text": "Export / import progress",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Export the code before closing. Paste it here after reopening to continue.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Export save code",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Reset account",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Schema 0.7.0. Checksum detects copy errors. Legacy 0.4 JSON and 0.5 save codes migrate on import.",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "Comfort and playback",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Sound off",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Build your team, press Fight, watch, then improve. Space pauses battle playback. Speed and sound controls are at the battle table.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Demo shortcuts",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Reviewer-granted progress lets you inspect the later systems.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Unlock all cats and build materials",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Add 1500 demo stamps",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Unlock chapters and Tower",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Advance fixture day",
+          "ratio": 10.615526804635495
+        }
+      ],
+      "mode": "on",
+      "width": 1024,
+      "before": false,
+      "sha256": "9ab3b487cb7e9a1111bdcf2d15afd7d0c83a3cc5a733074e4f391598e91bce5e"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/c1-review-controls/after-on-1024-attempt-1/reviewer-look.png",
+      "label": "reviewer-look",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Offline demo · manual save codes",
+          "ratio": 11.973870016382282
+        },
+        {
+          "text": "Export / import progress",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Export the code before closing. Paste it here after reopening to continue.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Export save code",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Reset account",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Schema 0.7.0. Checksum detects copy errors. Legacy 0.4 JSON and 0.5 save codes migrate on import.",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Comfort and playback",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Sound off",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Build your team, press Fight, watch, then improve. Space pauses battle playback. Speed and sound controls are at the battle table.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Demo shortcuts",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Reviewer-granted progress lets you inspect the later systems.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Unlock all cats and build materials",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Add 1500 demo stamps",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Unlock chapters and Tower",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Advance fixture day",
+          "ratio": 12.727624984908184
+        }
+      ],
+      "mode": "on",
+      "width": 1024,
+      "before": false,
+      "sha256": "d228177ee28ae07b3f14ad7a985d046e4a590f2e5f2aeac219e6eb353ca9f0ff"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/c1-review-controls/after-off-1280-attempt-1/player.png",
+      "label": "player",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Offline demo · manual save codes",
+          "ratio": 9.049339025684167
+        },
+        {
+          "text": "Export / import progress",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Export the code before closing. Paste it here after reopening to continue.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Export save code",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Reset account",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Schema 0.7.0. Checksum detects copy errors. Legacy 0.4 JSON and 0.5 save codes migrate on import.",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "Comfort and playback",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Sound off",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Build your team, press Fight, watch, then improve. Space pauses battle playback. Speed and sound controls are at the battle table.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Demo shortcuts",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Reviewer-granted progress lets you inspect the later systems.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Unlock all cats and build materials",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Add 1500 demo stamps",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Unlock chapters and Tower",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Advance fixture day",
+          "ratio": 10.615526804635495
+        }
+      ],
+      "mode": "off",
+      "width": 1280,
+      "before": false,
+      "sha256": "bbae4c32e53ea114545d9e010a90782db215ae05377505e2b2375054ac78e943"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/c1-review-controls/after-off-1280-attempt-1/reviewer.png",
+      "label": "reviewer",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Offline demo · manual save codes",
+          "ratio": 9.049339025684167
+        },
+        {
+          "text": "Export / import progress",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Export the code before closing. Paste it here after reopening to continue.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Export save code",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Reset account",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Schema 0.7.0. Checksum detects copy errors. Legacy 0.4 JSON and 0.5 save codes migrate on import.",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "Comfort and playback",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Sound off",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Build your team, press Fight, watch, then improve. Space pauses battle playback. Speed and sound controls are at the battle table.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Demo shortcuts",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Reviewer-granted progress lets you inspect the later systems.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Unlock all cats and build materials",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Add 1500 demo stamps",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Unlock chapters and Tower",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Advance fixture day",
+          "ratio": 10.615526804635495
+        }
+      ],
+      "mode": "off",
+      "width": 1280,
+      "before": false,
+      "sha256": "bbae4c32e53ea114545d9e010a90782db215ae05377505e2b2375054ac78e943"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/c1-review-controls/after-off-1280-attempt-1/reviewer-look.png",
+      "label": "reviewer-look",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Offline demo · manual save codes",
+          "ratio": 11.973870016382282
+        },
+        {
+          "text": "Export / import progress",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Export the code before closing. Paste it here after reopening to continue.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Export save code",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Reset account",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Schema 0.7.0. Checksum detects copy errors. Legacy 0.4 JSON and 0.5 save codes migrate on import.",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Comfort and playback",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Sound off",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Build your team, press Fight, watch, then improve. Space pauses battle playback. Speed and sound controls are at the battle table.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Demo shortcuts",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Reviewer-granted progress lets you inspect the later systems.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Unlock all cats and build materials",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Add 1500 demo stamps",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Unlock chapters and Tower",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Advance fixture day",
+          "ratio": 12.727624984908184
+        }
+      ],
+      "mode": "off",
+      "width": 1280,
+      "before": false,
+      "sha256": "04d08989c3e8ed8f71243305a5ecd2a4e690b73e6f37be6103ffc2d22fe64029"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/c1-review-controls/after-off-1440-attempt-1/player.png",
+      "label": "player",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Offline demo · manual save codes",
+          "ratio": 9.049339025684167
+        },
+        {
+          "text": "Export / import progress",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Export the code before closing. Paste it here after reopening to continue.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Export save code",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Reset account",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Schema 0.7.0. Checksum detects copy errors. Legacy 0.4 JSON and 0.5 save codes migrate on import.",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "Comfort and playback",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Sound off",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Build your team, press Fight, watch, then improve. Space pauses battle playback. Speed and sound controls are at the battle table.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Demo shortcuts",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Reviewer-granted progress lets you inspect the later systems.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Unlock all cats and build materials",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Add 1500 demo stamps",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Unlock chapters and Tower",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Advance fixture day",
+          "ratio": 10.615526804635495
+        }
+      ],
+      "mode": "off",
+      "width": 1440,
+      "before": false,
+      "sha256": "089a0d9d0fb0b25a084b5ce8332f245362eb6757fdb4ea29b448d3822277eeb2"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/c1-review-controls/after-off-1440-attempt-1/reviewer.png",
+      "label": "reviewer",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Offline demo · manual save codes",
+          "ratio": 9.049339025684167
+        },
+        {
+          "text": "Export / import progress",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Export the code before closing. Paste it here after reopening to continue.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Export save code",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Reset account",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Schema 0.7.0. Checksum detects copy errors. Legacy 0.4 JSON and 0.5 save codes migrate on import.",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "Comfort and playback",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Sound off",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Build your team, press Fight, watch, then improve. Space pauses battle playback. Speed and sound controls are at the battle table.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Demo shortcuts",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Reviewer-granted progress lets you inspect the later systems.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Unlock all cats and build materials",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Add 1500 demo stamps",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Unlock chapters and Tower",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Advance fixture day",
+          "ratio": 10.615526804635495
+        }
+      ],
+      "mode": "off",
+      "width": 1440,
+      "before": false,
+      "sha256": "089a0d9d0fb0b25a084b5ce8332f245362eb6757fdb4ea29b448d3822277eeb2"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/c1-review-controls/after-off-1440-attempt-1/reviewer-look.png",
+      "label": "reviewer-look",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Offline demo · manual save codes",
+          "ratio": 11.973870016382282
+        },
+        {
+          "text": "Export / import progress",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Export the code before closing. Paste it here after reopening to continue.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Export save code",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Reset account",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Schema 0.7.0. Checksum detects copy errors. Legacy 0.4 JSON and 0.5 save codes migrate on import.",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Comfort and playback",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Sound off",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Build your team, press Fight, watch, then improve. Space pauses battle playback. Speed and sound controls are at the battle table.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Demo shortcuts",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Reviewer-granted progress lets you inspect the later systems.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Unlock all cats and build materials",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Add 1500 demo stamps",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Unlock chapters and Tower",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Advance fixture day",
+          "ratio": 12.727624984908184
+        }
+      ],
+      "mode": "off",
+      "width": 1440,
+      "before": false,
+      "sha256": "4617bea8ed1ccae01c7bed0b9966458be75b272598ea6192566cebefa335fde8"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/c1-review-controls/after-off-1024-attempt-1/player.png",
+      "label": "player",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Offline demo · manual save codes",
+          "ratio": 9.049339025684167
+        },
+        {
+          "text": "Export / import progress",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Export the code before closing. Paste it here after reopening to continue.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Export save code",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Reset account",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Schema 0.7.0. Checksum detects copy errors. Legacy 0.4 JSON and 0.5 save codes migrate on import.",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "Comfort and playback",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Sound off",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Build your team, press Fight, watch, then improve. Space pauses battle playback. Speed and sound controls are at the battle table.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Demo shortcuts",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Reviewer-granted progress lets you inspect the later systems.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Unlock all cats and build materials",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Add 1500 demo stamps",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Unlock chapters and Tower",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Advance fixture day",
+          "ratio": 10.615526804635495
+        }
+      ],
+      "mode": "off",
+      "width": 1024,
+      "before": false,
+      "sha256": "54833598f98bd390fc9c44db6c0da45d8d2c0308bb9d9cbbdb2f1b09d8c78c67"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/c1-review-controls/after-off-1024-attempt-1/reviewer.png",
+      "label": "reviewer",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Offline demo · manual save codes",
+          "ratio": 9.049339025684167
+        },
+        {
+          "text": "Export / import progress",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Export the code before closing. Paste it here after reopening to continue.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Export save code",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Reset account",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Schema 0.7.0. Checksum detects copy errors. Legacy 0.4 JSON and 0.5 save codes migrate on import.",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "Comfort and playback",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Sound off",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Build your team, press Fight, watch, then improve. Space pauses battle playback. Speed and sound controls are at the battle table.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Demo shortcuts",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Reviewer-granted progress lets you inspect the later systems.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Unlock all cats and build materials",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Add 1500 demo stamps",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Unlock chapters and Tower",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Advance fixture day",
+          "ratio": 10.615526804635495
+        }
+      ],
+      "mode": "off",
+      "width": 1024,
+      "before": false,
+      "sha256": "54833598f98bd390fc9c44db6c0da45d8d2c0308bb9d9cbbdb2f1b09d8c78c67"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/c1-review-controls/after-off-1024-attempt-1/reviewer-look.png",
+      "label": "reviewer-look",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Offline demo · manual save codes",
+          "ratio": 11.973870016382282
+        },
+        {
+          "text": "Export / import progress",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Export the code before closing. Paste it here after reopening to continue.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Export save code",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Reset account",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Schema 0.7.0. Checksum detects copy errors. Legacy 0.4 JSON and 0.5 save codes migrate on import.",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Comfort and playback",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Sound off",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Build your team, press Fight, watch, then improve. Space pauses battle playback. Speed and sound controls are at the battle table.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Demo shortcuts",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Reviewer-granted progress lets you inspect the later systems.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Unlock all cats and build materials",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Add 1500 demo stamps",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Unlock chapters and Tower",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Advance fixture day",
+          "ratio": 12.727624984908184
+        }
+      ],
+      "mode": "off",
+      "width": 1024,
+      "before": false,
+      "sha256": "7d2c085e8f0446dfc2af4a4cd1bb1fe0d40cbd71e941c3531d17a081fe351b0f"
+    }
+  ],
+  "minimumScopedContrast": 6.858421081163746,
+  "receipts": [
+    {
+      "path": "reports/cardrpg-big/a5/c1-review-controls/gates/checks.json",
+      "sha256": "fb6b49899bee1551b72d6cee2df8f085cd17a7b09ea271fc4e524297a2ae5f28"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/e1-crew-advice-band/off/checks.json",
+      "sha256": "b266e345cf77ddcfcdc0772a11a6e690e577fcf2168c09f2316c5fc4d4230e4d"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/e1-crew-advice-band/off/source.json",
+      "sha256": "f54e69f74bb6fa5de3a63298cef1c1218398f5e5498945401520ab83645f949c"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/c1-review-controls/adoption.json",
+      "sha256": "20c48ea01310c7f76d9104c01982d90cb9dec1cebe636f97445094ca071e1d4c"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/c1-review-controls/ui-checks/checks.json",
+      "sha256": "bd6de00f3385cd1b40cd0ef4a89ac734c89199c76489373312b03407a3c5d77c"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/e2-home/audit.json",
+      "sha256": "14c319ffef830c6e792067651121866d0511d6d0393d5d2a1612ebfed447db70"
+    },
+    {
+      "path": "/tmp/cardrpg-a5-review-controls-on/build.json",
+      "sha256": "e011ffdcda02eff0d01285e3f06a035289e9ccc2fd67a7f1387773e96e7eb797"
+    },
+    {
+      "path": "/tmp/cardrpg-a5-review-controls-off/build.json",
+      "sha256": "27c2cec791bf9ce9fa98e67fee9d7104795fe376fda3165ed7ef269706a6b77a"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/c1-review-controls/before-on-1280-attempt-3/checks.json",
+      "sha256": "f5d7e7797f0a5b5eca017b70f690adc73b533b50f983185e6b544fbdabcd0fed"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/c1-review-controls/after-on-1280-attempt-1/checks.json",
+      "sha256": "ed1f56a89a9b3ae7fd89195a2c943fc7db1464f767b24194249082527a6dc026"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/c1-review-controls/after-on-1440-attempt-1/checks.json",
+      "sha256": "f255b30a3ee2bbf521c700b46238ecb79e6a0a9a30bc430868ab40292f07133f"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/c1-review-controls/after-on-1024-attempt-1/checks.json",
+      "sha256": "ed8dd5c2aef161316a7f108828999514d01f95e40f355f5ceea2d55bd77380a9"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/c1-review-controls/after-off-1280-attempt-1/checks.json",
+      "sha256": "6c5a9d8f706608c145a78ae753dc6eed543b86d3417818d16dfbb5fc45ec0a63"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/c1-review-controls/after-off-1440-attempt-1/checks.json",
+      "sha256": "706beab763e5115ad2b9de994c1a3a8d548bc293e1ecc36b0de2cd0b1d56bbc5"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/c1-review-controls/after-off-1024-attempt-1/checks.json",
+      "sha256": "0406e9069f68dd9abd530da3f900c68ebd0733a517728622e83154cede7cc0d4"
+    }
+  ],
+  "scope": {
+    "scope": "PASS",
+    "baseline": "PASS",
+    "historicalSimFiles": 13
+  },
+  "limitations": [
+    "This change hides offline Settings grants in ordinary GameplayV4. It is not a security boundary or a change to Relic fixtures.",
+    "ON/OFF player, reviewer and reviewer-Look checks retain keyboard grants and save roundtrip. This is not the Z full screenshot pack.",
+    "Before unit1fail/3pass, typed-query and lazy-loading harness failures are retained. No gameplay seed resampling.",
+    "Original 30-minute cadence/dead-time misses remain unchanged; no balance, startup or acceptance claim."
+  ]
+}
