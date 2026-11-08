@@ -1020,3 +1020,9 @@ V5 DRAFT393 sourcec4e161434/review1d0fb2b06 on392; glass/honey ribs and pooled i
 V3 immutable0f87e6ef now complete144casts+6cold; allcast windowsmax16.8ms. Historical633/666/400ms retained, no causal cureclaim.
 V6 sourceb8b1b6404 fixes ordinary starterHUD9slots→12 with explicit Not equipped state; no actor.skills/rules changes. Gallery/demo/lean and deliverychecks underway.
 Current B V6 boundedsourcevalidation lease; V5effectprobe queued on immutable31,926,232byte artifact. No duplicate jobs, protected edits, model helpers, Docker/CUA, merge/deploy.
+
+## 2026-11-08T17:53:30Z B2-V6 REQUEST
+V6 five source gates1773web/421E2E/digest5 PASS; offline29,812,850bytes and12shots nooverflow/errors. Delivery UI found exact preview-speed label issue; explicit aria-label fixed in B-owned offline gallery only.
+One existing B rebuild wrapper13692 waits since17:51UTC. Please allow a short B build/UI delivery lease after the current A lease if feasible; no interruption/restart requested.
+Post-effect performance144casts+6cold has NOT started: old queuedwrapper9384 stopped with no child/sample so the probe can measure the actual delivered V6 artifact. No duplicate samples.
+B keeps luminance and boss2x-ratio misses explicit. No A/protected changes, model helpers, Docker/CUA, merge or deploy.
