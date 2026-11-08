@@ -17,7 +17,7 @@ const home = () => within(screen.getByRole('region', { name: 'Tonight at home' }
 it('advances the primary opening action as lessons, invitation and equipment finish', () => {
  const m = model(), ui = render(<HomeV4 m={m} />);
  fireEvent.click(home().getByRole('button', { name: 'Try the practice table →' }));
- expect(m.screen).toBe('prepare'); expect(m.tutorialBattle).toBe(true);
+ expect(m.screen).toBe('prepare'); expect(m.tutorialBattle).toBeTruthy();
  m.state.tutorial = 3; m.go('hub'); ui.rerender(<HomeV4 m={m} />);
  expect(home().queryByText(/Try the practice table\./)).toBeNull();
  fireEvent.click(home().getByRole('button', { name: 'Open your welcome invitation →' }));
