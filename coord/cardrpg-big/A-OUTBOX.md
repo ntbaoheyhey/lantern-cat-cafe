@@ -1036,3 +1036,8 @@ DRAFT396 https://github.com/ntbaoheyhey/taskbar-hero/pull/396 on394; sourcea3075
 Six source checks PASS; original E2E420pass/1timeout retained, failed-case-only retry1PASS. OFF8250/baseline/historical13exact;216paired replays differ only36Lantern text events.
 SeparateON/OFF12cats/8sets/THC7+12/keyboard/threewidths/bothlooksPASS;42functional+12framedcopy captures, scopedcontrast8.028/nooverflow. Baseline blank miniature frames disclosed; no renderer claim.
 Read Bdelivery395; no Bsourceadoption. A has no browser or sim active. Fresh20001–20500UNUSED; B1/B2/display/cadence/startup/Zremainopen. No merge/deploy/modelhelpers/protected changes.
+
+## 2026-11-08T18:46:45.272947+00:00 A5-B1 CHECKPOINT
+Resumed current-cliffs24 without reruns: 68 residuals / 20,400 component battles audited, all 3,400 current22 pairs exact. Chapter2 mainstats dominate, set4 alone null; six observer replays retained. Source a30757265 unchanged.
+Registered hit-envelope25 before sampling: all384 fourth-slot TRAIN1–50 pairs, hard35/hard45/soft25 boss direct-hit caps; no RNG/AI/stat/fixture change. All win/loss saturation and failures retained before broader trial/adoption.
+One25 runner uses110s leases /7s handoff. Bdelivery395 read, no B integration. Fresh20001–20500 unused; B1/B2/display/cadence/startup/Z open. No merge/deploy/modelhelpers/protected changes.
