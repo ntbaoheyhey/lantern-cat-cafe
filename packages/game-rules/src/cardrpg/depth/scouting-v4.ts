@@ -17,7 +17,9 @@ export function scoutingV4(run: Run | null) {
   const guide = enemyGuideV4(chapter.boss);
   const learned = new Set(run.nodes.filter(node => run.visited.includes(node.id)).map(nodeClueV4));
   const text: Record<ScoutTraitV4, string> = {
-    opening: guide.intent,
+    opening: run.chapter === 1 ? 'Loomfall sweeps the front row and summons threads.'
+      : run.chapter === 2 ? 'Cloudburst removes shields before hitting one row.'
+        : 'Empty Banquet removes shields and applies Hush.',
     closing: run.chapter === 1 ? 'Below half HP, Loomfall reaches both rows and brings threads.'
       : run.chapter === 2 ? 'Below half HP, Cloudburst reaches both rows and removes shields.'
         : 'Below half HP, Empty Banquet reaches both rows and summons threads.',

@@ -38,6 +38,8 @@ describe('choice evidence and forecasts', () => {
   const first=run.nodes.find(n=>n.depth===0)!;run.current=first.id;
   expect(R.scoutingV4(run).found).toBe(0);
   run.visited.push(first.id);expect(R.scoutingV4(run).clues.find(c=>c.id==='opening')?.known).toBe(true);
+  expect(R.scoutingV4(run).clues.find(c=>c.id==='opening')?.text).not.toMatch(/half HP|both rows|closing/i);
+  expect(R.scoutingV4(run).clues.find(c=>c.id==='closing')?.text).toBeNull();
   expect(R.scoutingV4({...run,gameplayV4:false}).found).toBe(0);
  });
 });

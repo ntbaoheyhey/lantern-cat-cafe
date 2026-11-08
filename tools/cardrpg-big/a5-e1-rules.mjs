@@ -26,7 +26,7 @@ try {
   }else throw Error('Unregistered route stop '+node.kind);
  }
  assert.equal(timeline.at(-1).kind,'boss');assert.equal(state.run.battle.result,'enemy');
- assert.deepEqual(state.run.battle,h0.encounters.at(-1).battle,'Same earned A4 combat path before advice');
+ assert.deepEqual(JSON.parse(JSON.stringify(state.run.battle)),h0.encounters.at(-1).battle,'Same earned A4 combat path before advice (JSON receipt normalization)');
  const beforeHash=hash(state),outcome=R.outcomeV4(state.run.battle),settled=R.resultAdviceStateV4(state);assert(settled.ok);
  const began=performance.now(),advice=R.recommendBuildV4(settled.state,state.run.battle.initial),adviceMs=performance.now()-began;
  assert(advice,'Earned day7 loss must have an available named improvement');

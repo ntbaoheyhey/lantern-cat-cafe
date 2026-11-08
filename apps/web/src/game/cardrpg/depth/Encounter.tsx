@@ -46,7 +46,7 @@ export function Prepare({ m }: { m: DepthModel }) {
     <details className="dp-estimate-note"><summary>How difficulty is estimated</summary><p>Power combines current HP ÷ 5, attack × 2 and defense × 1.5. Difficulty uses five alternate-seed simulations with your current gear and health. This small sample is a rough build hint, not a promised win rate.</p></details>
     </>}
     <ScoutingV4 run={m.state.run} />
-    {battle.v4&&<section className="cr-panel dp-v4-pacing"><h2>Challenge band {battle.initial.challengeLevel??'legacy'}</h2><p>Each band has fixed enemies. Choose a lower completed band for a gentler route.</p>{battle.initial.enemies.some(id=>R.ENEMY_BY_ID[id]?.tier==='boss')&&<p>At half health, the boss changes tactics. Defeat the boss and its helpers leave.</p>}</section>}
+    {battle.v4&&battle.initial.challengeLevel!==undefined&&<section className="cr-panel dp-v4-pacing"><h2>Challenge band {battle.initial.challengeLevel}</h2><p>Choose a lower band at the cafe for a gentler route.</p>{battle.initial.enemies.some(id=>R.ENEMY_BY_ID[id]?.tier==='boss')&&<p>At half health, the boss changes tactics. Defeat the boss and its helpers leave.</p>}</section>}
     {battle.v4 && <PreparationV4 m={m} />}
     <CrewDetails v4={!!battle.v4}>
     <div className="dp-three">{battle.actors.filter(actor => actor.side === 'party').map(actor => <section className="cr-panel" key={actor.id}>
