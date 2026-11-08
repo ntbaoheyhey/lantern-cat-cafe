@@ -1,14 +1,14 @@
 # LOOK state
 ## NOW
 L7 measurements and independent audits COMPLETE: 860 cases / 1,720 casts / 134,523 cast frames. Source c754dbba; artifact 39645d31 / 31,493,122 bytes / 1,937 hashed inputs remain unchanged.
-Branch ai/codex-cardrpg-look-l7-2026-11-07. Report and L7-CHECKPOINT generated and reviewed; publication preparation at 2026-11-08T06:00:12.487896+00:00. No measurement restart needed.
+Published draft378 stacked on374: https://github.com/ntbaoheyhey/taskbar-hero/pull/378. Evidence commit9fef5622; 1,325 portable files / 555,982,721 bytes in14 verified batches. No measurement restart needed.
 UI 34 windows: 25 units / 100 angles / 9 stage views / 6 configurations; prior personal image/video reviews retained. Five source gates PASS: 1,761 web tests and 421 E2E in one clean suite.
 Four distinct cast misses remain: Panko repeat 150ms, Cinnamon4 first 266.7ms, Brioche4 repeat 266.6ms, Velvet1 first 183.3ms; all also miss exact CPU4 p95<=33ms. High/DPR1, draws and triangles have zero misses.
 Cold CPU4 maximum 133.4ms; wider matrix page maximum 666.6ms before first cast; startup +93 bytes; original 24MB target missed with documented 32MB allowance; historical L4 1,162 strict pair decreases unresolved.
 Lifecycle20 heap +641,528 bytes within recorded 2MiB tolerance, not literally flat; all 21 snapshots retain 537 geometries / 103 textures / 43 programs. Timing isolation remains unverified.
 Native macOS; Docker daemon currently unavailable, no B Docker work. No subagents/generative calls. Latest A5-C1 ANSWER 02:02 read; no A4/A5 runtime adopted.
 ## NEXT
-Prepare and inspect explicit L7 publication manifest, publish <=48MB fast-forward batches, create draft stacked on374, record publication receipt, mirror report/STATE to ledger, append B-OUTBOX checkpoint.
+L7 demo/report/evidence checkpoint is published. Next work is separate: lane A checkpoint adoption/icon-frame wiring, and optional A4P1/P3/P4 presentation compatibility; no active B measurement.
 Do not rerun completed matrix/source gates or modify frozen inputs. All original failures/raw data retained; historical L4/L5 raw trees excluded from publication.
 Lane A retains icon/frame wiring and merged delivery. Optional A4P1/P3/P4 presentation requests to B remain separate pending compatibility work.
 
@@ -137,3 +137,6 @@ L0 five source gates421E2E + flagoff PASS; baseline244/cold7/24casts complete. L
 
 ## 2026-11-08T06:00:12.487896+00:00 — L7 completed audit review
 Verified complete audit/report and all four missed-cast comparisons. Original measurements ended at 03:16:43 UTC; 134,523 cast and 569,780 full-page frames audited. No new timing runs or source edits. Native macOS; Docker daemon unavailable at continuation. Publication follows explicit manifest review.
+
+## 2026-11-08T06:03:35.243866+00:00 — L7 draft published
+Draft378 stacked on374, evidence9fef5622 remotely verified. All14 bounded fast-forward uploads succeeded; publication-inventory.json hashes1,325 portable files/555,982,721bytes and one retained duplicate HTML. publication-receipt.json records batch commits, report/inventory hashes and artifact39645d31. Subsequent publication notes change prose/receipts only, not frozen sources or measurements. See sync B-OUTBOX for ledger and coordination references.

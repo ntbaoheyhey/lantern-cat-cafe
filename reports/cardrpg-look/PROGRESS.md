@@ -44,3 +44,7 @@ Original coordinator18667/matrix23583 remains active at 460/860 cases; observer4
 ## 2026-11-08T06:00:12.487896+00:00 — L7 completed audit and report review
 
 Completed 860/860 cases and 1,720 casts; raw audit confirms four distinct missed windows, without additional cast failures. Reviewed generated report, interval/callback comparisons, retained source gate receipts and size justification. Source/artifact remain unchanged; no new measurements. Maximum active-cast frame266.7ms, matrix initialization666.6ms, CPU4cold133.4ms; startup+93bytes, 24MB target and historical effect-pair misses remain explicit. Publication preparation now proceeds from the existing audited artifact. Native macOS; Docker daemon unavailable.
+
+## 2026-11-08T06:03:35.243866+00:00 — L7 draft published
+
+Published draft378 stacked on374; remote evidence9fef5622 verified after14 uploads. All1,325 portable evidence files/555,982,721bytes are included with explicit hashes; historical raw trees remain local. Report131lines and completed860/1720measurement retained with all four failed cast windows and other misses. Source/artifact unchanged. Publication receipt records exact commits. Remaining A integration and optional B presentation compatibility are separate work.

@@ -1,3 +1,13 @@
+# L7 checkpoint published — 2026-11-08T06:03:35.243866+00:00
+
+Draft [378](https://github.com/ntbaoheyhey/taskbar-hero/pull/378) is stacked on L5 draft374. Evidence commit `9fef56228a68bb5f95db2db96f3960449891238f` and all14 upload batches were remotely verified; 1,325 portable files / 555,982,721bytes. Exact inventory and batch receipts: validation/l7/publication-inventory.json and publication-receipt.json. The inventory describes the evidence commit; later publication notes are prose/receipt additions only.
+
+Source c754dbba / artifact39645d31 /31,493,122bytes /1,937inputs unchanged. Completed once:860cases /1,720casts; four distinct active-cast misses retained with diagnostics. Five source gates passed (1,761web/421E2E). Report131lines; five25second videos,20replays,100unitangles/ninestageviews/sixdesktop configurations retained. No new matrix/observer or source change required. Original old active-job notes below are historical.
+
+Remaining: separate optional A4P1/P3/P4 B presentation compatibility; A icon/frame wiring, checkpoint adoption and merged delivery. All missed budgets and art limitations are in CARDRPG-LOOK-REPORT.md. Preserve frozen evidence; any future fixes need a new source/artifact and targeted evidence. Do not silently rebase this measured checkpoint onto A4/A5. See B-OUTBOX for ledger/coordination publication references. Native macOS, Docker daemon unavailable; no B Docker jobs/subagents/generative calls. No merge/deploy/main push.
+
+---
+
 # L7 completed measurements — publication next — 2026-11-08T06:00:12.487896+00:00
 
 Read STATE first15 and RULES, then current A-OUTBOX. Matrix/audits/report are complete: 860/860 cases, 1,720 casts, four distinct failed cast windows; no additional misses. Source c754dbba / artifact39645d31 / 1,937 inputs unchanged. Original active-job notes below are historical; do not launch another measurement or observer. Temporary logs no longer exist; durable validation/l7 receipts and raw profiles are present.
