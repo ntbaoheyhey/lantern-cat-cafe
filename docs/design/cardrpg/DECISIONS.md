@@ -146,3 +146,10 @@ This adopts a bounded progression repair, not balance closure. Original TRAIN50 
 ### A5 fatal follow-up guard
 
 A registered TRAIN Scent-policy probe exposed an existing automatic-preview exception: Kettle Knight reflection kills the last party member during Velvet's Stolen flame, then its energy-to-shield follow-up dereferences a missing ally. The V4 effect now skips a missing recipient and preserves the normal12shield if an ally survives. Legacy energy is unchanged. Two unit scenarios fail-before/pass-after for the no-ally case; the captured round10/seed21 state and every legal-action preview replay without throwing. No numeric balance or policy adoption is implied. Evidence: reports/cardrpg-big/a5/b2/fatal-followup/checks.json and scent-policy-crash-07/failure.json.
+
+
+### A5 Hush utility suppression, 2026-11-08
+
+A Hushed V4 heal or shield signature now spends its committed utility turn without replacement damage. Ordinary basic attacks, Drowsy softened attacks, summon/boss damage and OFF retain their existing behavior. No skill power, gear, AI, save field or event schema changes.
+
+The old resolver silently converted the stopped65HP refill into70shield plus39HP damage against Mochi in the captured Inkcap–Velvetrim replay. Removing Quiet spores or rear reach restored50/50 wins, while removing the four-piece threshold did not. The registered branch correction changes the intended matched fixture21/50→48/50 (fixed-core21→49); every other carrier cell and negative pair remains visible. Common-fixture Inkcap54.47→56.35%, but Soot47.25%, Sorrel53.20%, Cinnamon84% and crew30.75pp still miss their gates. This repairs a contradictory mechanic, not broad balance or acceptance. Evidence: reports/cardrpg-big/a5/B2-UTILITY-SUPPRESSION.md and b2/utility-suppression-15/paired-carriers.json.

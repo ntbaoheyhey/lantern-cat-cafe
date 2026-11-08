@@ -500,6 +500,9 @@ export function enemyAct(b: Battle): boolean {
     if(controller?.bonuses.crewSuppress&&!controller.bonuses.crewSuppressed){controller.bonuses.crewSuppressed=1;heal(b,controller,controller,controller.bonuses.crewSuppress);}
   }
   if (impaired) damage(b,actor,target,40,0,b.v4&&spec.mechanic!=='steal');
+  else if (b.v4&&signature&&quiet&&['heal','shield'].includes(spec.mechanic)) {
+    // Suppression spends the committed utility turn; it does not replace it with a hit.
+  }
   else if (spec.mechanic==='heal'&&!quiet&&(!b.v4||signature)) heal(b,actor,weakest(living(b,'enemy')),65);
   else if (spec.mechanic==='shield'&&!quiet&&(!b.v4||signature)) for (const a of living(b,'enemy').filter(a=>a.row===actor.row)) shield(b,actor,a,45);
   else {
