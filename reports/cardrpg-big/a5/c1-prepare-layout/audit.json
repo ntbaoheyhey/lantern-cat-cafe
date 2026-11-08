@@ -1,0 +1,2173 @@
+{
+  "status": "PASS: Prepare formation layout; A5 balance acceptance remains open",
+  "source": "d8eebe8c7c7f3ec30cef0e5e17c5e9a3b9e7bc30",
+  "adoption": {
+    "at": "2026-11-08T22:22:47.639067+00:00",
+    "paths": {
+      "apps/web/src/game/cardrpg/depth/Encounter.tsx": "11c1fa29f1a5d0838826f8a09b2d31b6f638ebed9d728dc90d694eb1703f81f8",
+      "apps/web/src/game/cardrpg/depth/depth.css": "ad506a65bd6bb4308ad6c1f2db7e63f3bc24370358d804ee6a58139ec9a5db63"
+    },
+    "prototypeSha256": "8ba794bb8f3383226512355475c562270b9e62515f1a6c134abb42d633dd174d",
+    "reason": "All three widths/both modes/looks and real worker cancellation/CSP denial pass. Personal visual review of1280 earned,1024 alternate and1440 practice."
+  },
+  "gates": [
+    {
+      "name": "typecheck",
+      "attempt": 1,
+      "code": 0,
+      "head": "d8eebe8c7c7f3ec30cef0e5e17c5e9a3b9e7bc30",
+      "started": "2026-11-08T22:22:49.324Z",
+      "ended": "2026-11-08T22:23:00.522Z",
+      "log": "reports/cardrpg-big/a5/c1-prepare-layout/gates/typecheck-attempt-1.log",
+      "sha256": "33b146d6498e452e571bf684488a16ff4d8d5e831fc09107cece41e3c4a11947",
+      "counts": []
+    },
+    {
+      "name": "lint",
+      "attempt": 1,
+      "code": 0,
+      "head": "d8eebe8c7c7f3ec30cef0e5e17c5e9a3b9e7bc30",
+      "started": "2026-11-08T22:23:07.527Z",
+      "ended": "2026-11-08T22:23:16.313Z",
+      "log": "reports/cardrpg-big/a5/c1-prepare-layout/gates/lint-attempt-1.log",
+      "sha256": "802ffe6d2b9e563cd710dd830df8729f12fc69f51d7f3b6e00dda17a170cac52",
+      "counts": []
+    },
+    {
+      "name": "web-unit",
+      "attempt": 1,
+      "code": 0,
+      "head": "d8eebe8c7c7f3ec30cef0e5e17c5e9a3b9e7bc30",
+      "started": "2026-11-08T22:23:23.315Z",
+      "ended": "2026-11-08T22:23:40.229Z",
+      "log": "reports/cardrpg-big/a5/c1-prepare-layout/gates/web-unit-attempt-1.log",
+      "sha256": "96b4865687ad824da6ce9d22b9f632e695a0ed57a44d2d8a0cd4750fa6a450df",
+      "counts": [
+        " Test Files  183 passed (183)",
+        "      Tests  1771 passed (1771)"
+      ]
+    },
+    {
+      "name": "rules",
+      "attempt": 1,
+      "code": 0,
+      "head": "d8eebe8c7c7f3ec30cef0e5e17c5e9a3b9e7bc30",
+      "started": "2026-11-08T22:23:47.231Z",
+      "ended": "2026-11-08T22:24:11.558Z",
+      "log": "reports/cardrpg-big/a5/c1-prepare-layout/gates/rules-attempt-1.log",
+      "sha256": "4f91e2d2b0e64d4ab65ab4f0a8462ff20fcfac9bee5305fc8691fee62bec3246",
+      "counts": [
+        " Test Files  71 passed | 3 skipped (74)",
+        "      Tests  1192 passed | 2 expected fail | 11 skipped (1205)"
+      ]
+    },
+    {
+      "name": "e2e",
+      "attempt": 1,
+      "code": 0,
+      "head": "d8eebe8c7c7f3ec30cef0e5e17c5e9a3b9e7bc30",
+      "started": "2026-11-08T22:24:18.562Z",
+      "ended": "2026-11-08T22:26:18.750Z",
+      "log": "reports/cardrpg-big/a5/c1-prepare-layout/gates/e2e-attempt-1.log",
+      "sha256": "4c93715448426fdf5b8e6c375dd8f6ff212468a0306e7274d9ec93d0d5d7a607",
+      "counts": [
+        "  421 passed (2.0m)"
+      ]
+    },
+    {
+      "name": "build",
+      "attempt": 1,
+      "code": 0,
+      "head": "d8eebe8c7c7f3ec30cef0e5e17c5e9a3b9e7bc30",
+      "started": "2026-11-08T22:26:25.753Z",
+      "ended": "2026-11-08T22:26:35.600Z",
+      "log": "reports/cardrpg-big/a5/c1-prepare-layout/gates/build-attempt-1.log",
+      "sha256": "7c4955fa6a7f2cdbdda4d5c1d0958794af0c4411381b97187481426d60afd8bf",
+      "counts": []
+    }
+  ],
+  "artifacts": [
+    {
+      "mode": "on",
+      "sha256": "e9c74c38a3bbde96c9d3a5e2ad2780ef4a8e53e068dd11041ea8c0d6d7b954e4",
+      "bytes": 20927769,
+      "prototypeByteExact": true,
+      "path": "reports/cardrpg-big/a5/c1-prepare-layout/prototype-on/index.html"
+    },
+    {
+      "mode": "off",
+      "sha256": "9474eb116a9b7b9720e0630a52ec05898a9ab9644a9db96e8f693d4648d15bcb",
+      "bytes": 20927769,
+      "prototypeByteExact": true,
+      "path": "reports/cardrpg-big/a5/c1-prepare-layout/prototype-off/index.html"
+    }
+  ],
+  "off": {
+    "offBehavior": "PASS",
+    "sha256": "47477251b3d20ab602bee5c55a56cdd661e111b1386e298e0c9bc67737fecfa3",
+    "cells": 165,
+    "routes": 8250,
+    "reusedFrom": "reports/cardrpg-big/a5/e1-crew-advice-band/off",
+    "reason": "Original rule hashes and full packages diff exact."
+  },
+  "browsers": [
+    {
+      "width": 1280,
+      "mode": "on",
+      "checks": [
+        {
+          "look": "baseline",
+          "kind": "keyboard rows, last-front guard, real forecast and standing-plan roundtrip"
+        },
+        {
+          "look": "baseline",
+          "kind": "earned route retains forecast, scouting, stars and exact account"
+        },
+        {
+          "look": "look",
+          "kind": "keyboard rows, last-front guard, real forecast and standing-plan roundtrip"
+        },
+        {
+          "look": "look",
+          "kind": "earned route retains forecast, scouting, stars and exact account"
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "mode": "on",
+      "checks": [
+        {
+          "look": "baseline",
+          "kind": "keyboard rows, last-front guard, real forecast and standing-plan roundtrip"
+        },
+        {
+          "look": "baseline",
+          "kind": "earned route retains forecast, scouting, stars and exact account"
+        },
+        {
+          "look": "look",
+          "kind": "keyboard rows, last-front guard, real forecast and standing-plan roundtrip"
+        },
+        {
+          "look": "look",
+          "kind": "earned route retains forecast, scouting, stars and exact account"
+        }
+      ]
+    },
+    {
+      "width": 1024,
+      "mode": "on",
+      "checks": [
+        {
+          "look": "baseline",
+          "kind": "keyboard rows, last-front guard, real forecast and standing-plan roundtrip"
+        },
+        {
+          "look": "baseline",
+          "kind": "earned route retains forecast, scouting, stars and exact account"
+        },
+        {
+          "look": "look",
+          "kind": "keyboard rows, last-front guard, real forecast and standing-plan roundtrip"
+        },
+        {
+          "look": "look",
+          "kind": "earned route retains forecast, scouting, stars and exact account"
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "mode": "off",
+      "checks": [
+        {
+          "look": "baseline",
+          "kind": "OFF keeps original estimate and controls"
+        },
+        {
+          "look": "look",
+          "kind": "OFF keeps original estimate and controls"
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "mode": "off",
+      "checks": [
+        {
+          "look": "baseline",
+          "kind": "OFF keeps original estimate and controls"
+        },
+        {
+          "look": "look",
+          "kind": "OFF keeps original estimate and controls"
+        }
+      ]
+    },
+    {
+      "width": 1024,
+      "mode": "off",
+      "checks": [
+        {
+          "look": "baseline",
+          "kind": "OFF keeps original estimate and controls"
+        },
+        {
+          "look": "look",
+          "kind": "OFF keeps original estimate and controls"
+        }
+      ]
+    }
+  ],
+  "captures": [
+    {
+      "look": "baseline",
+      "name": "practice",
+      "path": "reports/cardrpg-big/a5/c1-prepare-layout/on-1280-attempt-1/baseline-practice.png",
+      "overflow": 0,
+      "controls": [
+        {
+          "label": "Place Mochi in Front",
+          "top": 402.4375,
+          "bottom": 442.578125,
+          "left": 243,
+          "right": 353.65625,
+          "visible": true
+        },
+        {
+          "label": "Select Mochi for placement",
+          "top": 454.578125,
+          "bottom": 518.578125,
+          "left": 243,
+          "right": 393,
+          "visible": true
+        },
+        {
+          "label": "Place Mochi in Back",
+          "top": 372.046875,
+          "bottom": 412.1875,
+          "left": 752.40625,
+          "right": 861,
+          "visible": true
+        },
+        {
+          "label": "Select Soot for placement",
+          "top": 424.1875,
+          "bottom": 488.1875,
+          "left": 569,
+          "right": 719,
+          "visible": true
+        },
+        {
+          "label": "Select Clover for placement",
+          "top": 500.1875,
+          "bottom": 564.1875,
+          "left": 569,
+          "right": 719,
+          "visible": true
+        }
+      ],
+      "fight": {
+        "label": "Fight",
+        "top": 229.765625,
+        "bottom": 277.65625,
+        "left": 210,
+        "right": 370,
+        "visible": true
+      },
+      "forecast": {
+        "label": "Rough forecast",
+        "top": 295.65625,
+        "bottom": 470.609375,
+        "left": 912,
+        "right": 1254,
+        "visible": true
+      },
+      "contrast": [
+        {
+          "text": "Choose a cat. Choose its place.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Front · protect the crew",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "592/592 HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Back · room to work",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "460/460 HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "384/384 HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Mochi selected. Keep at least one cat in front.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Who needs pressure?",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Finish weak foes",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Stop their support",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Focus the boss",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "When should we help?",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Steady · below 45% HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Protect · below 65% HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Protect favours earlier healing. It can leave less time to attack.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "ROUGH FORECAST",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "Favoured",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Practice Cushion: A gentle third-round bump tests your preparation.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "A forecast, never a promise.",
+          "ratio": 6.858421081163746
+        }
+      ],
+      "width": 1280,
+      "mode": "on",
+      "sha256": "501388c15ad5ee793a56d04e41b45414f32d486e15b1a4c826c1ac1caefc52db"
+    },
+    {
+      "look": "baseline",
+      "name": "earned-route",
+      "path": "reports/cardrpg-big/a5/c1-prepare-layout/on-1280-attempt-1/baseline-earned-route.png",
+      "overflow": 0,
+      "controls": [
+        {
+          "label": "Place Mochi in Front",
+          "top": 370.296875,
+          "bottom": 410.4375,
+          "left": 243,
+          "right": 353.65625,
+          "visible": true
+        },
+        {
+          "label": "Select Mochi for placement",
+          "top": 422.4375,
+          "bottom": 486.4375,
+          "left": 243,
+          "right": 393,
+          "visible": true
+        },
+        {
+          "label": "Place Mochi in Back",
+          "top": 339.90625,
+          "bottom": 380.046875,
+          "left": 752.40625,
+          "right": 861,
+          "visible": true
+        },
+        {
+          "label": "Select Soot for placement",
+          "top": 392.046875,
+          "bottom": 456.046875,
+          "left": 569,
+          "right": 719,
+          "visible": true
+        },
+        {
+          "label": "Select Clover for placement",
+          "top": 468.046875,
+          "bottom": 532.046875,
+          "left": 569,
+          "right": 719,
+          "visible": true
+        }
+      ],
+      "fight": {
+        "label": "Fight",
+        "top": 197.625,
+        "bottom": 245.515625,
+        "left": 210,
+        "right": 370,
+        "visible": true
+      },
+      "forecast": {
+        "label": "Rough forecast",
+        "top": 263.515625,
+        "bottom": 438.46875,
+        "left": 912,
+        "right": 1254,
+        "visible": true
+      },
+      "contrast": [
+        {
+          "text": "Choose a cat. Choose its place.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Front · protect the crew",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "641/641 HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Back · room to work",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "460/460 HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "384/384 HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Mochi selected. Keep at least one cat in front.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Who needs pressure?",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Finish weak foes",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Stop their support",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Focus the boss",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "When should we help?",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Steady · below 45% HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Protect · below 65% HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Protect favours earlier healing. It can leave less time to attack.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "ROUGH FORECAST",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "Favoured",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Needle Moth: Needle rain applies Scald to the rear row.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "A forecast, never a promise.",
+          "ratio": 6.858421081163746
+        }
+      ],
+      "width": 1280,
+      "mode": "on",
+      "sha256": "f5fe3c6d888054d12271b0afef4d4a9828cb6cf366ffc5edb1e5bbd3fec1d8b0"
+    },
+    {
+      "look": "look",
+      "name": "practice",
+      "path": "reports/cardrpg-big/a5/c1-prepare-layout/on-1280-attempt-1/look-practice.png",
+      "overflow": 0,
+      "controls": [
+        {
+          "label": "Place Mochi in Front",
+          "top": 402.4375,
+          "bottom": 442.578125,
+          "left": 243,
+          "right": 353.65625,
+          "visible": true
+        },
+        {
+          "label": "Select Mochi for placement",
+          "top": 454.578125,
+          "bottom": 518.578125,
+          "left": 243,
+          "right": 393,
+          "visible": true
+        },
+        {
+          "label": "Place Mochi in Back",
+          "top": 372.046875,
+          "bottom": 412.1875,
+          "left": 752.40625,
+          "right": 861,
+          "visible": true
+        },
+        {
+          "label": "Select Soot for placement",
+          "top": 424.1875,
+          "bottom": 488.1875,
+          "left": 569,
+          "right": 719,
+          "visible": true
+        },
+        {
+          "label": "Select Clover for placement",
+          "top": 500.1875,
+          "bottom": 564.1875,
+          "left": 569,
+          "right": 719,
+          "visible": true
+        }
+      ],
+      "fight": {
+        "label": "Fight",
+        "top": 229.765625,
+        "bottom": 277.65625,
+        "left": 210,
+        "right": 370,
+        "visible": true
+      },
+      "forecast": {
+        "label": "Rough forecast",
+        "top": 295.65625,
+        "bottom": 470.609375,
+        "left": 912,
+        "right": 1254,
+        "visible": true
+      },
+      "contrast": [
+        {
+          "text": "Choose a cat. Choose its place.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Front · protect the crew",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "592/592 HP",
+          "ratio": 10.131687993918804
+        },
+        {
+          "text": "Back · room to work",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "460/460 HP",
+          "ratio": 10.131687993918804
+        },
+        {
+          "text": "384/384 HP",
+          "ratio": 10.131687993918804
+        },
+        {
+          "text": "Mochi selected. Keep at least one cat in front.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Who needs pressure?",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Finish weak foes",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Stop their support",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Focus the boss",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "When should we help?",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Steady · below 45% HP",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Protect · below 65% HP",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Protect favours earlier healing. It can leave less time to attack.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "ROUGH FORECAST",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Favoured",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Practice Cushion: A gentle third-round bump tests your preparation.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "A forecast, never a promise.",
+          "ratio": 8.028038840639192
+        }
+      ],
+      "width": 1280,
+      "mode": "on",
+      "sha256": "ccf13c570327fb0b12d1b3c41440fb3068b69ff77a435697366d7a0fe8d448b9"
+    },
+    {
+      "look": "look",
+      "name": "earned-route",
+      "path": "reports/cardrpg-big/a5/c1-prepare-layout/on-1280-attempt-1/look-earned-route.png",
+      "overflow": 0,
+      "controls": [
+        {
+          "label": "Place Mochi in Front",
+          "top": 370.296875,
+          "bottom": 410.4375,
+          "left": 243,
+          "right": 353.65625,
+          "visible": true
+        },
+        {
+          "label": "Select Mochi for placement",
+          "top": 422.4375,
+          "bottom": 486.4375,
+          "left": 243,
+          "right": 393,
+          "visible": true
+        },
+        {
+          "label": "Place Mochi in Back",
+          "top": 339.90625,
+          "bottom": 380.046875,
+          "left": 752.40625,
+          "right": 861,
+          "visible": true
+        },
+        {
+          "label": "Select Soot for placement",
+          "top": 392.046875,
+          "bottom": 456.046875,
+          "left": 569,
+          "right": 719,
+          "visible": true
+        },
+        {
+          "label": "Select Clover for placement",
+          "top": 468.046875,
+          "bottom": 532.046875,
+          "left": 569,
+          "right": 719,
+          "visible": true
+        }
+      ],
+      "fight": {
+        "label": "Fight",
+        "top": 197.625,
+        "bottom": 245.515625,
+        "left": 210,
+        "right": 370,
+        "visible": true
+      },
+      "forecast": {
+        "label": "Rough forecast",
+        "top": 263.515625,
+        "bottom": 438.46875,
+        "left": 912,
+        "right": 1254,
+        "visible": true
+      },
+      "contrast": [
+        {
+          "text": "Choose a cat. Choose its place.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Front · protect the crew",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "641/641 HP",
+          "ratio": 10.131687993918804
+        },
+        {
+          "text": "Back · room to work",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "460/460 HP",
+          "ratio": 10.131687993918804
+        },
+        {
+          "text": "384/384 HP",
+          "ratio": 10.131687993918804
+        },
+        {
+          "text": "Mochi selected. Keep at least one cat in front.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Who needs pressure?",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Finish weak foes",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Stop their support",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Focus the boss",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "When should we help?",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Steady · below 45% HP",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Protect · below 65% HP",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Protect favours earlier healing. It can leave less time to attack.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "ROUGH FORECAST",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Favoured",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Needle Moth: Needle rain applies Scald to the rear row.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "A forecast, never a promise.",
+          "ratio": 8.028038840639192
+        }
+      ],
+      "width": 1280,
+      "mode": "on",
+      "sha256": "29bce6ed2dec5ffa23063ef8ccb805df92a46b7c2422dc6161cf4b7735a98ef7"
+    },
+    {
+      "look": "baseline",
+      "name": "practice",
+      "path": "reports/cardrpg-big/a5/c1-prepare-layout/on-1440-attempt-1/baseline-practice.png",
+      "overflow": 0,
+      "controls": [
+        {
+          "label": "Place Mochi in Front",
+          "top": 372.046875,
+          "bottom": 412.1875,
+          "left": 477.671875,
+          "right": 588.328125,
+          "visible": true
+        },
+        {
+          "label": "Select Mochi for placement",
+          "top": 424.1875,
+          "bottom": 488.1875,
+          "left": 243,
+          "right": 393,
+          "visible": true
+        },
+        {
+          "label": "Place Mochi in Back",
+          "top": 372.046875,
+          "bottom": 412.1875,
+          "left": 859.0625,
+          "right": 967.65625,
+          "visible": true
+        },
+        {
+          "label": "Select Soot for placement",
+          "top": 424.1875,
+          "bottom": 488.1875,
+          "left": 622.328125,
+          "right": 772.328125,
+          "visible": true
+        },
+        {
+          "label": "Select Clover for placement",
+          "top": 424.1875,
+          "bottom": 488.1875,
+          "left": 784.328125,
+          "right": 934.328125,
+          "visible": true
+        }
+      ],
+      "fight": {
+        "label": "Fight",
+        "top": 229.765625,
+        "bottom": 277.65625,
+        "left": 210,
+        "right": 370,
+        "visible": true
+      },
+      "forecast": {
+        "label": "Rough forecast",
+        "top": 295.65625,
+        "bottom": 470.609375,
+        "left": 1018.65625,
+        "right": 1414,
+        "visible": true
+      },
+      "contrast": [
+        {
+          "text": "Choose a cat. Choose its place.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Front · protect the crew",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "592/592 HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Back · room to work",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "460/460 HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "384/384 HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Mochi selected. Keep at least one cat in front.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Who needs pressure?",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Finish weak foes",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Stop their support",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Focus the boss",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "When should we help?",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Steady · below 45% HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Protect · below 65% HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Protect favours earlier healing. It can leave less time to attack.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "ROUGH FORECAST",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "Favoured",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Practice Cushion: A gentle third-round bump tests your preparation.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "A forecast, never a promise.",
+          "ratio": 6.858421081163746
+        }
+      ],
+      "width": 1440,
+      "mode": "on",
+      "sha256": "427b65acc3213e747f4cafcf7f8e0eb80965bd80ec3068157e613066e45e070b"
+    },
+    {
+      "look": "baseline",
+      "name": "earned-route",
+      "path": "reports/cardrpg-big/a5/c1-prepare-layout/on-1440-attempt-1/baseline-earned-route.png",
+      "overflow": 0,
+      "controls": [
+        {
+          "label": "Place Mochi in Front",
+          "top": 339.90625,
+          "bottom": 380.046875,
+          "left": 477.671875,
+          "right": 588.328125,
+          "visible": true
+        },
+        {
+          "label": "Select Mochi for placement",
+          "top": 392.046875,
+          "bottom": 456.046875,
+          "left": 243,
+          "right": 393,
+          "visible": true
+        },
+        {
+          "label": "Place Mochi in Back",
+          "top": 339.90625,
+          "bottom": 380.046875,
+          "left": 859.0625,
+          "right": 967.65625,
+          "visible": true
+        },
+        {
+          "label": "Select Soot for placement",
+          "top": 392.046875,
+          "bottom": 456.046875,
+          "left": 622.328125,
+          "right": 772.328125,
+          "visible": true
+        },
+        {
+          "label": "Select Clover for placement",
+          "top": 392.046875,
+          "bottom": 456.046875,
+          "left": 784.328125,
+          "right": 934.328125,
+          "visible": true
+        }
+      ],
+      "fight": {
+        "label": "Fight",
+        "top": 197.625,
+        "bottom": 245.515625,
+        "left": 210,
+        "right": 370,
+        "visible": true
+      },
+      "forecast": {
+        "label": "Rough forecast",
+        "top": 263.515625,
+        "bottom": 418.328125,
+        "left": 1018.65625,
+        "right": 1414,
+        "visible": true
+      },
+      "contrast": [
+        {
+          "text": "Choose a cat. Choose its place.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Front · protect the crew",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "641/641 HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Back · room to work",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "460/460 HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "384/384 HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Mochi selected. Keep at least one cat in front.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Who needs pressure?",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Finish weak foes",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Stop their support",
+          "ratio": 8.158758354664862
+        },
+        {
+          "text": "Focus the boss",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "When should we help?",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Steady · below 45% HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Protect · below 65% HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Protect favours earlier healing. It can leave less time to attack.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "ROUGH FORECAST",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "Favoured",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Needle Moth: Needle rain applies Scald to the rear row.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "A forecast, never a promise.",
+          "ratio": 6.858421081163746
+        }
+      ],
+      "width": 1440,
+      "mode": "on",
+      "sha256": "9bb2b58bb66d2f27b826d845791e30ab8331ae856fcbba2d84c67de713f03dc8"
+    },
+    {
+      "look": "look",
+      "name": "practice",
+      "path": "reports/cardrpg-big/a5/c1-prepare-layout/on-1440-attempt-1/look-practice.png",
+      "overflow": 0,
+      "controls": [
+        {
+          "label": "Place Mochi in Front",
+          "top": 372.046875,
+          "bottom": 412.1875,
+          "left": 477.671875,
+          "right": 588.328125,
+          "visible": true
+        },
+        {
+          "label": "Select Mochi for placement",
+          "top": 424.1875,
+          "bottom": 488.1875,
+          "left": 243,
+          "right": 393,
+          "visible": true
+        },
+        {
+          "label": "Place Mochi in Back",
+          "top": 372.046875,
+          "bottom": 412.1875,
+          "left": 859.0625,
+          "right": 967.65625,
+          "visible": true
+        },
+        {
+          "label": "Select Soot for placement",
+          "top": 424.1875,
+          "bottom": 488.1875,
+          "left": 622.328125,
+          "right": 772.328125,
+          "visible": true
+        },
+        {
+          "label": "Select Clover for placement",
+          "top": 424.1875,
+          "bottom": 488.1875,
+          "left": 784.328125,
+          "right": 934.328125,
+          "visible": true
+        }
+      ],
+      "fight": {
+        "label": "Fight",
+        "top": 229.765625,
+        "bottom": 277.65625,
+        "left": 210,
+        "right": 370,
+        "visible": true
+      },
+      "forecast": {
+        "label": "Rough forecast",
+        "top": 295.65625,
+        "bottom": 470.609375,
+        "left": 1018.65625,
+        "right": 1414,
+        "visible": true
+      },
+      "contrast": [
+        {
+          "text": "Choose a cat. Choose its place.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Front · protect the crew",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "592/592 HP",
+          "ratio": 10.131687993918804
+        },
+        {
+          "text": "Back · room to work",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "460/460 HP",
+          "ratio": 10.131687993918804
+        },
+        {
+          "text": "384/384 HP",
+          "ratio": 10.131687993918804
+        },
+        {
+          "text": "Mochi selected. Keep at least one cat in front.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Who needs pressure?",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Finish weak foes",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Stop their support",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Focus the boss",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "When should we help?",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Steady · below 45% HP",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Protect · below 65% HP",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Protect favours earlier healing. It can leave less time to attack.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "ROUGH FORECAST",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Favoured",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Practice Cushion: A gentle third-round bump tests your preparation.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "A forecast, never a promise.",
+          "ratio": 8.028038840639192
+        }
+      ],
+      "width": 1440,
+      "mode": "on",
+      "sha256": "bbbb13deb6775f88bfe1cd45aa571cb44612013aa32fa6fb0312ddbe2c6d4c37"
+    },
+    {
+      "look": "look",
+      "name": "earned-route",
+      "path": "reports/cardrpg-big/a5/c1-prepare-layout/on-1440-attempt-1/look-earned-route.png",
+      "overflow": 0,
+      "controls": [
+        {
+          "label": "Place Mochi in Front",
+          "top": 339.90625,
+          "bottom": 380.046875,
+          "left": 477.671875,
+          "right": 588.328125,
+          "visible": true
+        },
+        {
+          "label": "Select Mochi for placement",
+          "top": 392.046875,
+          "bottom": 456.046875,
+          "left": 243,
+          "right": 393,
+          "visible": true
+        },
+        {
+          "label": "Place Mochi in Back",
+          "top": 339.90625,
+          "bottom": 380.046875,
+          "left": 859.0625,
+          "right": 967.65625,
+          "visible": true
+        },
+        {
+          "label": "Select Soot for placement",
+          "top": 392.046875,
+          "bottom": 456.046875,
+          "left": 622.328125,
+          "right": 772.328125,
+          "visible": true
+        },
+        {
+          "label": "Select Clover for placement",
+          "top": 392.046875,
+          "bottom": 456.046875,
+          "left": 784.328125,
+          "right": 934.328125,
+          "visible": true
+        }
+      ],
+      "fight": {
+        "label": "Fight",
+        "top": 197.625,
+        "bottom": 245.515625,
+        "left": 210,
+        "right": 370,
+        "visible": true
+      },
+      "forecast": {
+        "label": "Rough forecast",
+        "top": 263.515625,
+        "bottom": 418.328125,
+        "left": 1018.65625,
+        "right": 1414,
+        "visible": true
+      },
+      "contrast": [
+        {
+          "text": "Choose a cat. Choose its place.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Front · protect the crew",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "641/641 HP",
+          "ratio": 10.131687993918804
+        },
+        {
+          "text": "Back · room to work",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "460/460 HP",
+          "ratio": 10.131687993918804
+        },
+        {
+          "text": "384/384 HP",
+          "ratio": 10.131687993918804
+        },
+        {
+          "text": "Mochi selected. Keep at least one cat in front.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Who needs pressure?",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Finish weak foes",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Stop their support",
+          "ratio": 8.16275590590474
+        },
+        {
+          "text": "Focus the boss",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "When should we help?",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Steady · below 45% HP",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Protect · below 65% HP",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Protect favours earlier healing. It can leave less time to attack.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "ROUGH FORECAST",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Favoured",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Needle Moth: Needle rain applies Scald to the rear row.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "A forecast, never a promise.",
+          "ratio": 8.028038840639192
+        }
+      ],
+      "width": 1440,
+      "mode": "on",
+      "sha256": "558ddfbe3f0d20d503f4b3324908e06ce16dd9c0db7ae35c5f9167db578ebbfd"
+    },
+    {
+      "look": "baseline",
+      "name": "practice",
+      "path": "reports/cardrpg-big/a5/c1-prepare-layout/on-1024-attempt-1/baseline-practice.png",
+      "overflow": 0,
+      "controls": [
+        {
+          "label": "Place Mochi in Front",
+          "top": 351.15625,
+          "bottom": 389.75,
+          "left": 469.71875,
+          "right": 575,
+          "visible": true
+        },
+        {
+          "label": "Select Mochi for placement",
+          "top": 401.75,
+          "bottom": 465.75,
+          "left": 206,
+          "right": 356,
+          "visible": true
+        },
+        {
+          "label": "Place Mochi in Back",
+          "top": 351.15625,
+          "bottom": 389.75,
+          "left": 874.6875,
+          "right": 978,
+          "visible": true
+        },
+        {
+          "label": "Select Soot for placement",
+          "top": 401.75,
+          "bottom": 465.75,
+          "left": 609,
+          "right": 759,
+          "visible": true
+        },
+        {
+          "label": "Select Clover for placement",
+          "top": 401.75,
+          "bottom": 465.75,
+          "left": 771,
+          "right": 921,
+          "visible": true
+        }
+      ],
+      "fight": {
+        "label": "Fight",
+        "top": 213.875,
+        "bottom": 261.765625,
+        "left": 178,
+        "right": 338,
+        "visible": true
+      },
+      "forecast": {
+        "label": "Rough forecast",
+        "top": 1309.015625,
+        "bottom": 1449.1875,
+        "left": 178,
+        "right": 1006,
+        "visible": false
+      },
+      "contrast": [
+        {
+          "text": "Choose a cat. Choose its place.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Front · protect the crew",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "592/592 HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Back · room to work",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "460/460 HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "384/384 HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Mochi selected. Keep at least one cat in front.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Who needs pressure?",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Finish weak foes",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Stop their support",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Focus the boss",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "When should we help?",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Steady · below 45% HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Protect · below 65% HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Protect favours earlier healing. It can leave less time to attack.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "ROUGH FORECAST",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "Favoured",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Practice Cushion: A gentle third-round bump tests your preparation.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "A forecast, never a promise.",
+          "ratio": 6.858421081163746
+        }
+      ],
+      "width": 1024,
+      "mode": "on",
+      "sha256": "05976372bc2ed501515e0dd4084fb3b3ebded31c9db4685c4343087bd00f472f"
+    },
+    {
+      "look": "baseline",
+      "name": "earned-route",
+      "path": "reports/cardrpg-big/a5/c1-prepare-layout/on-1024-attempt-1/baseline-earned-route.png",
+      "overflow": 0,
+      "controls": [
+        {
+          "label": "Place Mochi in Front",
+          "top": 320.5625,
+          "bottom": 359.15625,
+          "left": 469.71875,
+          "right": 575,
+          "visible": true
+        },
+        {
+          "label": "Select Mochi for placement",
+          "top": 371.15625,
+          "bottom": 435.15625,
+          "left": 206,
+          "right": 356,
+          "visible": true
+        },
+        {
+          "label": "Place Mochi in Back",
+          "top": 320.5625,
+          "bottom": 359.15625,
+          "left": 874.6875,
+          "right": 978,
+          "visible": true
+        },
+        {
+          "label": "Select Soot for placement",
+          "top": 371.15625,
+          "bottom": 435.15625,
+          "left": 609,
+          "right": 759,
+          "visible": true
+        },
+        {
+          "label": "Select Clover for placement",
+          "top": 371.15625,
+          "bottom": 435.15625,
+          "left": 771,
+          "right": 921,
+          "visible": true
+        }
+      ],
+      "fight": {
+        "label": "Fight",
+        "top": 183.28125,
+        "bottom": 231.171875,
+        "left": 178,
+        "right": 338,
+        "visible": true
+      },
+      "forecast": {
+        "label": "Rough forecast",
+        "top": 1278.421875,
+        "bottom": 1418.59375,
+        "left": 178,
+        "right": 1006,
+        "visible": false
+      },
+      "contrast": [
+        {
+          "text": "Choose a cat. Choose its place.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Front · protect the crew",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "641/641 HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Back · room to work",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "460/460 HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "384/384 HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Mochi selected. Keep at least one cat in front.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Who needs pressure?",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Finish weak foes",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Stop their support",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Focus the boss",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "When should we help?",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Steady · below 45% HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Protect · below 65% HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Protect favours earlier healing. It can leave less time to attack.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "ROUGH FORECAST",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "Favoured",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Needle Moth: Needle rain applies Scald to the rear row.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "A forecast, never a promise.",
+          "ratio": 6.858421081163746
+        }
+      ],
+      "width": 1024,
+      "mode": "on",
+      "sha256": "336b5666fbdaaee5e1d3344509f4e08143ee7cc4e92e47d7045ae6a765f027f4"
+    },
+    {
+      "look": "look",
+      "name": "practice",
+      "path": "reports/cardrpg-big/a5/c1-prepare-layout/on-1024-attempt-1/look-practice.png",
+      "overflow": 0,
+      "controls": [
+        {
+          "label": "Place Mochi in Front",
+          "top": 351.15625,
+          "bottom": 389.75,
+          "left": 469.71875,
+          "right": 575,
+          "visible": true
+        },
+        {
+          "label": "Select Mochi for placement",
+          "top": 401.75,
+          "bottom": 465.75,
+          "left": 206,
+          "right": 356,
+          "visible": true
+        },
+        {
+          "label": "Place Mochi in Back",
+          "top": 351.15625,
+          "bottom": 389.75,
+          "left": 874.6875,
+          "right": 978,
+          "visible": true
+        },
+        {
+          "label": "Select Soot for placement",
+          "top": 401.75,
+          "bottom": 465.75,
+          "left": 609,
+          "right": 759,
+          "visible": true
+        },
+        {
+          "label": "Select Clover for placement",
+          "top": 401.75,
+          "bottom": 465.75,
+          "left": 771,
+          "right": 921,
+          "visible": true
+        }
+      ],
+      "fight": {
+        "label": "Fight",
+        "top": 213.875,
+        "bottom": 261.765625,
+        "left": 178,
+        "right": 338,
+        "visible": true
+      },
+      "forecast": {
+        "label": "Rough forecast",
+        "top": 1309.015625,
+        "bottom": 1449.1875,
+        "left": 178,
+        "right": 1006,
+        "visible": false
+      },
+      "contrast": [
+        {
+          "text": "Choose a cat. Choose its place.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Front · protect the crew",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "592/592 HP",
+          "ratio": 10.131687993918804
+        },
+        {
+          "text": "Back · room to work",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "460/460 HP",
+          "ratio": 10.131687993918804
+        },
+        {
+          "text": "384/384 HP",
+          "ratio": 10.131687993918804
+        },
+        {
+          "text": "Mochi selected. Keep at least one cat in front.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Who needs pressure?",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Finish weak foes",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Stop their support",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Focus the boss",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "When should we help?",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Steady · below 45% HP",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Protect · below 65% HP",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Protect favours earlier healing. It can leave less time to attack.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "ROUGH FORECAST",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Favoured",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Practice Cushion: A gentle third-round bump tests your preparation.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "A forecast, never a promise.",
+          "ratio": 8.028038840639192
+        }
+      ],
+      "width": 1024,
+      "mode": "on",
+      "sha256": "0b13f4576c6e4839137d13fa900ef3983fcd18c465bf14cc128e8b86198eb47a"
+    },
+    {
+      "look": "look",
+      "name": "earned-route",
+      "path": "reports/cardrpg-big/a5/c1-prepare-layout/on-1024-attempt-1/look-earned-route.png",
+      "overflow": 0,
+      "controls": [
+        {
+          "label": "Place Mochi in Front",
+          "top": 320.5625,
+          "bottom": 359.15625,
+          "left": 469.71875,
+          "right": 575,
+          "visible": true
+        },
+        {
+          "label": "Select Mochi for placement",
+          "top": 371.15625,
+          "bottom": 435.15625,
+          "left": 206,
+          "right": 356,
+          "visible": true
+        },
+        {
+          "label": "Place Mochi in Back",
+          "top": 320.5625,
+          "bottom": 359.15625,
+          "left": 874.6875,
+          "right": 978,
+          "visible": true
+        },
+        {
+          "label": "Select Soot for placement",
+          "top": 371.15625,
+          "bottom": 435.15625,
+          "left": 609,
+          "right": 759,
+          "visible": true
+        },
+        {
+          "label": "Select Clover for placement",
+          "top": 371.15625,
+          "bottom": 435.15625,
+          "left": 771,
+          "right": 921,
+          "visible": true
+        }
+      ],
+      "fight": {
+        "label": "Fight",
+        "top": 183.28125,
+        "bottom": 231.171875,
+        "left": 178,
+        "right": 338,
+        "visible": true
+      },
+      "forecast": {
+        "label": "Rough forecast",
+        "top": 1278.421875,
+        "bottom": 1418.59375,
+        "left": 178,
+        "right": 1006,
+        "visible": false
+      },
+      "contrast": [
+        {
+          "text": "Choose a cat. Choose its place.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Front · protect the crew",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "641/641 HP",
+          "ratio": 10.131687993918804
+        },
+        {
+          "text": "Back · room to work",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "460/460 HP",
+          "ratio": 10.131687993918804
+        },
+        {
+          "text": "384/384 HP",
+          "ratio": 10.131687993918804
+        },
+        {
+          "text": "Mochi selected. Keep at least one cat in front.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Who needs pressure?",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Finish weak foes",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Stop their support",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Focus the boss",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "When should we help?",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Steady · below 45% HP",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Protect · below 65% HP",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Protect favours earlier healing. It can leave less time to attack.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "ROUGH FORECAST",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Favoured",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Needle Moth: Needle rain applies Scald to the rear row.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "A forecast, never a promise.",
+          "ratio": 8.028038840639192
+        }
+      ],
+      "width": 1024,
+      "mode": "on",
+      "sha256": "96b35bbdffa7f5302426c65e3ae5984a4673a241aae079301c900df07d31cac0"
+    },
+    {
+      "look": "baseline",
+      "name": "practice-off",
+      "path": "reports/cardrpg-big/a5/c1-prepare-layout/off-1280-attempt-1/baseline-practice-off.png",
+      "overflow": 0,
+      "controls": [],
+      "fight": {
+        "label": "Fight",
+        "top": 197.625,
+        "bottom": 245.515625,
+        "left": 210,
+        "right": 370,
+        "visible": true
+      },
+      "forecast": null,
+      "contrast": [],
+      "width": 1280,
+      "mode": "off",
+      "sha256": "7623d976dea6fe9d9f46842d60faa408a6b4bb2313a734d0dd1cc6e5ea10b475"
+    },
+    {
+      "look": "look",
+      "name": "practice-off",
+      "path": "reports/cardrpg-big/a5/c1-prepare-layout/off-1280-attempt-1/look-practice-off.png",
+      "overflow": 0,
+      "controls": [],
+      "fight": {
+        "label": "Fight",
+        "top": 197.625,
+        "bottom": 245.515625,
+        "left": 210,
+        "right": 370,
+        "visible": true
+      },
+      "forecast": null,
+      "contrast": [],
+      "width": 1280,
+      "mode": "off",
+      "sha256": "55baec9a776f9c7155a5639cb5684402bbfd051c4bd9e8904b83ecccb57f6e4a"
+    },
+    {
+      "look": "baseline",
+      "name": "practice-off",
+      "path": "reports/cardrpg-big/a5/c1-prepare-layout/off-1440-attempt-1/baseline-practice-off.png",
+      "overflow": 0,
+      "controls": [],
+      "fight": {
+        "label": "Fight",
+        "top": 197.625,
+        "bottom": 245.515625,
+        "left": 210,
+        "right": 370,
+        "visible": true
+      },
+      "forecast": null,
+      "contrast": [],
+      "width": 1440,
+      "mode": "off",
+      "sha256": "4684926fbbbb6a29e8dd53aaef72820810acf48d8d052ea6c8728226cee29ff3"
+    },
+    {
+      "look": "look",
+      "name": "practice-off",
+      "path": "reports/cardrpg-big/a5/c1-prepare-layout/off-1440-attempt-1/look-practice-off.png",
+      "overflow": 0,
+      "controls": [],
+      "fight": {
+        "label": "Fight",
+        "top": 197.625,
+        "bottom": 245.515625,
+        "left": 210,
+        "right": 370,
+        "visible": true
+      },
+      "forecast": null,
+      "contrast": [],
+      "width": 1440,
+      "mode": "off",
+      "sha256": "af575dfdc6c75417fe30fd9e3b57c13fa3b6241a57183cc2d71ba808b3c1d9e8"
+    },
+    {
+      "look": "baseline",
+      "name": "practice-off",
+      "path": "reports/cardrpg-big/a5/c1-prepare-layout/off-1024-attempt-1/baseline-practice-off.png",
+      "overflow": 0,
+      "controls": [],
+      "fight": {
+        "label": "Fight",
+        "top": 183.28125,
+        "bottom": 231.171875,
+        "left": 178,
+        "right": 338,
+        "visible": true
+      },
+      "forecast": null,
+      "contrast": [],
+      "width": 1024,
+      "mode": "off",
+      "sha256": "44aaf63791549670bef71d7a2c118bcaa3264c75b50964c049345d0fe6628a0d"
+    },
+    {
+      "look": "look",
+      "name": "practice-off",
+      "path": "reports/cardrpg-big/a5/c1-prepare-layout/off-1024-attempt-1/look-practice-off.png",
+      "overflow": 0,
+      "controls": [],
+      "fight": {
+        "label": "Fight",
+        "top": 183.28125,
+        "bottom": 231.171875,
+        "left": 178,
+        "right": 338,
+        "visible": true
+      },
+      "forecast": null,
+      "contrast": [],
+      "width": 1024,
+      "mode": "off",
+      "sha256": "41debdf668c547fa9881fab19bb12e6facb476ad102948c9788bdc2068afb90b"
+    }
+  ],
+  "workers": {
+    "passed": true,
+    "artifact": "/tmp/cardrpg-a5-prepare-order-on/index.html",
+    "sha256": "e9c74c38a3bbde96c9d3a5e2ad2780ef4a8e53e068dd11041ea8c0d6d7b954e4",
+    "checks": [
+      {
+        "scenario": "delayed",
+        "oldKey": "{\"cats\":[{\"bonuses\":{},\"effects\":[\"defend-shield\"],\"equipment\":[\"hearthloom-weapon-common\",\"hearthloom-outfit-common\"],\"id\":\"mochi\",\"row\":\"front\",\"skills\":[\"mochi-1\",\"mochi-2\",\"mochi-3\"],\"stats\":{\"attack\":56,\"critBp\":800,\"critDamageBp\":5000,\"defense\":34,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":592,\"initiative\":8,\"shieldBp\":0}},{\"bonuses\":{},\"effects\":[\"marked-break\"],\"equipment\":[\"moonwick-weapon-common\",\"moonwick-outfit-common\"],\"id\":\"soot\",\"row\":\"rear\",\"skills\":[\"soot-1\",\"soot-2\",\"soot-3\"],\"stats\":{\"attack\":69,\"critBp\":1200,\"critDamageBp\":5000,\"defense\":22,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":460,\"initiative\":6,\"shieldBp\":0}},{\"bonuses\":{},\"effects\":[\"healing-cleanse\"],\"equipment\":[\"mossbrew-weapon-common\",\"mossbrew-outfit-common\"],\"id\":\"clover\",\"row\":\"rear\",\"skills\":[\"clover-1\",\"clover-2\",\"clover-3\"],\"stats\":{\"attack\":42,\"critBp\":500,\"critDamageBp\":5000,\"defense\":20,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":384,\"initiative\":4,\"shieldBp\":0}}],\"chapter\":1,\"enemies\":[\"practice-cushion\"],\"enemyStats\":{\"practice-cushion\":{\"attack\":60,\"defense\":0,\"hp\":300}},\"gameplayV4\":true,\"plan\":{\"care\":\"steady\",\"focus\":\"finish\"},\"tutorial\":true}",
+        "latestKey": "{\"cats\":[{\"bonuses\":{},\"effects\":[\"defend-shield\"],\"equipment\":[\"hearthloom-weapon-common\",\"hearthloom-outfit-common\"],\"id\":\"mochi\",\"row\":\"front\",\"skills\":[\"mochi-1\",\"mochi-2\",\"mochi-3\"],\"stats\":{\"attack\":56,\"critBp\":800,\"critDamageBp\":5000,\"defense\":34,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":592,\"initiative\":8,\"shieldBp\":0}},{\"bonuses\":{},\"effects\":[\"marked-break\"],\"equipment\":[\"moonwick-weapon-common\",\"moonwick-outfit-common\"],\"id\":\"soot\",\"row\":\"front\",\"skills\":[\"soot-1\",\"soot-2\",\"soot-3\"],\"stats\":{\"attack\":69,\"critBp\":1200,\"critDamageBp\":5000,\"defense\":22,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":460,\"initiative\":6,\"shieldBp\":0}},{\"bonuses\":{},\"effects\":[\"healing-cleanse\"],\"equipment\":[\"mossbrew-weapon-common\",\"mossbrew-outfit-common\"],\"id\":\"clover\",\"row\":\"rear\",\"skills\":[\"clover-1\",\"clover-2\",\"clover-3\"],\"stats\":{\"attack\":42,\"critBp\":500,\"critDamageBp\":5000,\"defense\":20,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":384,\"initiative\":4,\"shieldBp\":0}}],\"chapter\":1,\"enemies\":[\"practice-cushion\"],\"enemyStats\":{\"practice-cushion\":{\"attack\":60,\"defense\":0,\"hp\":300}},\"gameplayV4\":true,\"plan\":{\"care\":\"protect\",\"focus\":\"finish\"},\"tutorial\":true}",
+        "audit": [
+          {
+            "key": "{\"cats\":[{\"bonuses\":{},\"effects\":[\"defend-shield\"],\"equipment\":[\"hearthloom-weapon-common\",\"hearthloom-outfit-common\"],\"id\":\"mochi\",\"row\":\"front\",\"skills\":[\"mochi-1\",\"mochi-2\",\"mochi-3\"],\"stats\":{\"attack\":56,\"critBp\":800,\"critDamageBp\":5000,\"defense\":34,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":592,\"initiative\":8,\"shieldBp\":0}},{\"bonuses\":{},\"effects\":[\"marked-break\"],\"equipment\":[\"moonwick-weapon-common\",\"moonwick-outfit-common\"],\"id\":\"soot\",\"row\":\"rear\",\"skills\":[\"soot-1\",\"soot-2\",\"soot-3\"],\"stats\":{\"attack\":69,\"critBp\":1200,\"critDamageBp\":5000,\"defense\":22,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":460,\"initiative\":6,\"shieldBp\":0}},{\"bonuses\":{},\"effects\":[\"healing-cleanse\"],\"equipment\":[\"mossbrew-weapon-common\",\"mossbrew-outfit-common\"],\"id\":\"clover\",\"row\":\"rear\",\"skills\":[\"clover-1\",\"clover-2\",\"clover-3\"],\"stats\":{\"attack\":42,\"critBp\":500,\"critDamageBp\":5000,\"defense\":20,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":384,\"initiative\":4,\"shieldBp\":0}}],\"chapter\":1,\"enemies\":[\"practice-cushion\"],\"enemyStats\":{\"practice-cushion\":{\"attack\":60,\"defense\":0,\"hp\":300}},\"gameplayV4\":true,\"plan\":{\"care\":\"steady\",\"focus\":\"finish\"},\"tutorial\":true}",
+            "resultKey": "{\"cats\":[{\"bonuses\":{},\"effects\":[\"defend-shield\"],\"equipment\":[\"hearthloom-weapon-common\",\"hearthloom-outfit-common\"],\"id\":\"mochi\",\"row\":\"front\",\"skills\":[\"mochi-1\",\"mochi-2\",\"mochi-3\"],\"stats\":{\"attack\":56,\"critBp\":800,\"critDamageBp\":5000,\"defense\":34,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":592,\"initiative\":8,\"shieldBp\":0}},{\"bonuses\":{},\"effects\":[\"marked-break\"],\"equipment\":[\"moonwick-weapon-common\",\"moonwick-outfit-common\"],\"id\":\"soot\",\"row\":\"rear\",\"skills\":[\"soot-1\",\"soot-2\",\"soot-3\"],\"stats\":{\"attack\":69,\"critBp\":1200,\"critDamageBp\":5000,\"defense\":22,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":460,\"initiative\":6,\"shieldBp\":0}},{\"bonuses\":{},\"effects\":[\"healing-cleanse\"],\"equipment\":[\"mossbrew-weapon-common\",\"mossbrew-outfit-common\"],\"id\":\"clover\",\"row\":\"rear\",\"skills\":[\"clover-1\",\"clover-2\",\"clover-3\"],\"stats\":{\"attack\":42,\"critBp\":500,\"critDamageBp\":5000,\"defense\":20,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":384,\"initiative\":4,\"shieldBp\":0}}],\"chapter\":1,\"enemies\":[\"practice-cushion\"],\"enemyStats\":{\"practice-cushion\":{\"attack\":60,\"defense\":0,\"hp\":300}},\"gameplayV4\":true,\"plan\":{\"care\":\"steady\",\"focus\":\"finish\"},\"tutorial\":true}",
+            "terminated": true,
+            "delivered": true
+          },
+          {
+            "key": "{\"cats\":[{\"bonuses\":{},\"effects\":[\"defend-shield\"],\"equipment\":[\"hearthloom-weapon-common\",\"hearthloom-outfit-common\"],\"id\":\"mochi\",\"row\":\"front\",\"skills\":[\"mochi-1\",\"mochi-2\",\"mochi-3\"],\"stats\":{\"attack\":56,\"critBp\":800,\"critDamageBp\":5000,\"defense\":34,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":592,\"initiative\":8,\"shieldBp\":0}},{\"bonuses\":{},\"effects\":[\"marked-break\"],\"equipment\":[\"moonwick-weapon-common\",\"moonwick-outfit-common\"],\"id\":\"soot\",\"row\":\"front\",\"skills\":[\"soot-1\",\"soot-2\",\"soot-3\"],\"stats\":{\"attack\":69,\"critBp\":1200,\"critDamageBp\":5000,\"defense\":22,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":460,\"initiative\":6,\"shieldBp\":0}},{\"bonuses\":{},\"effects\":[\"healing-cleanse\"],\"equipment\":[\"mossbrew-weapon-common\",\"mossbrew-outfit-common\"],\"id\":\"clover\",\"row\":\"rear\",\"skills\":[\"clover-1\",\"clover-2\",\"clover-3\"],\"stats\":{\"attack\":42,\"critBp\":500,\"critDamageBp\":5000,\"defense\":20,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":384,\"initiative\":4,\"shieldBp\":0}}],\"chapter\":1,\"enemies\":[\"practice-cushion\"],\"enemyStats\":{\"practice-cushion\":{\"attack\":60,\"defense\":0,\"hp\":300}},\"gameplayV4\":true,\"plan\":{\"care\":\"steady\",\"focus\":\"finish\"},\"tutorial\":true}",
+            "resultKey": "{\"cats\":[{\"bonuses\":{},\"effects\":[\"defend-shield\"],\"equipment\":[\"hearthloom-weapon-common\",\"hearthloom-outfit-common\"],\"id\":\"mochi\",\"row\":\"front\",\"skills\":[\"mochi-1\",\"mochi-2\",\"mochi-3\"],\"stats\":{\"attack\":56,\"critBp\":800,\"critDamageBp\":5000,\"defense\":34,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":592,\"initiative\":8,\"shieldBp\":0}},{\"bonuses\":{},\"effects\":[\"marked-break\"],\"equipment\":[\"moonwick-weapon-common\",\"moonwick-outfit-common\"],\"id\":\"soot\",\"row\":\"front\",\"skills\":[\"soot-1\",\"soot-2\",\"soot-3\"],\"stats\":{\"attack\":69,\"critBp\":1200,\"critDamageBp\":5000,\"defense\":22,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":460,\"initiative\":6,\"shieldBp\":0}},{\"bonuses\":{},\"effects\":[\"healing-cleanse\"],\"equipment\":[\"mossbrew-weapon-common\",\"mossbrew-outfit-common\"],\"id\":\"clover\",\"row\":\"rear\",\"skills\":[\"clover-1\",\"clover-2\",\"clover-3\"],\"stats\":{\"attack\":42,\"critBp\":500,\"critDamageBp\":5000,\"defense\":20,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":384,\"initiative\":4,\"shieldBp\":0}}],\"chapter\":1,\"enemies\":[\"practice-cushion\"],\"enemyStats\":{\"practice-cushion\":{\"attack\":60,\"defense\":0,\"hp\":300}},\"gameplayV4\":true,\"plan\":{\"care\":\"steady\",\"focus\":\"finish\"},\"tutorial\":true}",
+            "terminated": true,
+            "delivered": true
+          },
+          {
+            "key": "{\"cats\":[{\"bonuses\":{},\"effects\":[\"defend-shield\"],\"equipment\":[\"hearthloom-weapon-common\",\"hearthloom-outfit-common\"],\"id\":\"mochi\",\"row\":\"front\",\"skills\":[\"mochi-1\",\"mochi-2\",\"mochi-3\"],\"stats\":{\"attack\":56,\"critBp\":800,\"critDamageBp\":5000,\"defense\":34,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":592,\"initiative\":8,\"shieldBp\":0}},{\"bonuses\":{},\"effects\":[\"marked-break\"],\"equipment\":[\"moonwick-weapon-common\",\"moonwick-outfit-common\"],\"id\":\"soot\",\"row\":\"front\",\"skills\":[\"soot-1\",\"soot-2\",\"soot-3\"],\"stats\":{\"attack\":69,\"critBp\":1200,\"critDamageBp\":5000,\"defense\":22,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":460,\"initiative\":6,\"shieldBp\":0}},{\"bonuses\":{},\"effects\":[\"healing-cleanse\"],\"equipment\":[\"mossbrew-weapon-common\",\"mossbrew-outfit-common\"],\"id\":\"clover\",\"row\":\"rear\",\"skills\":[\"clover-1\",\"clover-2\",\"clover-3\"],\"stats\":{\"attack\":42,\"critBp\":500,\"critDamageBp\":5000,\"defense\":20,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":384,\"initiative\":4,\"shieldBp\":0}}],\"chapter\":1,\"enemies\":[\"practice-cushion\"],\"enemyStats\":{\"practice-cushion\":{\"attack\":60,\"defense\":0,\"hp\":300}},\"gameplayV4\":true,\"plan\":{\"care\":\"protect\",\"focus\":\"finish\"},\"tutorial\":true}",
+            "resultKey": "{\"cats\":[{\"bonuses\":{},\"effects\":[\"defend-shield\"],\"equipment\":[\"hearthloom-weapon-common\",\"hearthloom-outfit-common\"],\"id\":\"mochi\",\"row\":\"front\",\"skills\":[\"mochi-1\",\"mochi-2\",\"mochi-3\"],\"stats\":{\"attack\":56,\"critBp\":800,\"critDamageBp\":5000,\"defense\":34,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":592,\"initiative\":8,\"shieldBp\":0}},{\"bonuses\":{},\"effects\":[\"marked-break\"],\"equipment\":[\"moonwick-weapon-common\",\"moonwick-outfit-common\"],\"id\":\"soot\",\"row\":\"front\",\"skills\":[\"soot-1\",\"soot-2\",\"soot-3\"],\"stats\":{\"attack\":69,\"critBp\":1200,\"critDamageBp\":5000,\"defense\":22,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":460,\"initiative\":6,\"shieldBp\":0}},{\"bonuses\":{},\"effects\":[\"healing-cleanse\"],\"equipment\":[\"mossbrew-weapon-common\",\"mossbrew-outfit-common\"],\"id\":\"clover\",\"row\":\"rear\",\"skills\":[\"clover-1\",\"clover-2\",\"clover-3\"],\"stats\":{\"attack\":42,\"critBp\":500,\"critDamageBp\":5000,\"defense\":20,\"effectHitBp\":0,\"effectResistBp\":0,\"healingBp\":400,\"hp\":384,\"initiative\":4,\"shieldBp\":0}}],\"chapter\":1,\"enemies\":[\"practice-cushion\"],\"enemyStats\":{\"practice-cushion\":{\"attack\":60,\"defense\":0,\"hp\":300}},\"gameplayV4\":true,\"plan\":{\"care\":\"protect\",\"focus\":\"finish\"},\"tutorial\":true}",
+            "terminated": true,
+            "delivered": true
+          }
+        ],
+        "staleResultRejected": true,
+        "latestNativeResultShown": true,
+        "stateUnchanged": true,
+        "allWorkersTerminated": true
+      },
+      {
+        "scenario": "csp",
+        "actualWorkerCspDenied": true,
+        "fallback": true,
+        "stateUnchanged": true,
+        "placementAndFightRemainAvailable": true
+      }
+    ],
+    "errors": [],
+    "remote": [],
+    "method": "Native worker calculations with delayed message delivery; separate actual worker-src none CSP. Neither changes combat, account or forecast results."
+  },
+  "minimumScopedContrast": 6.858421081163746,
+  "receipts": [
+    {
+      "path": "reports/cardrpg-big/a5/c1-prepare-layout/adoption.json",
+      "sha256": "4c6ac0890109104f0f1766afe600e347565230ba595b22e5cadd120b7729c77e"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/c1-prepare-layout/prototype-audit.json",
+      "sha256": "8ba794bb8f3383226512355475c562270b9e62515f1a6c134abb42d633dd174d"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/c1-prepare-layout/gates/checks.json",
+      "sha256": "6f12c8d8e152cc8a193b5b79d07fbcba950092b50c582cdb439047797c743486"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/c1-prepare-layout/adopted-builds/checks.json",
+      "sha256": "c723ae7792aa52da22fa2f385a07fcf3284f0323cce7d6238060e143b5cb0248"
+    },
+    {
+      "path": "/tmp/cardrpg-a5-prepare-layout-adopted-on/build.json",
+      "sha256": "073e5cb4d534a6fd0cab140f2d71301e7fdf4edb41f7e7311fddba78325768b7"
+    },
+    {
+      "path": "/tmp/cardrpg-a5-prepare-layout-adopted-off/build.json",
+      "sha256": "f7952580148d5bb1c9dd90160d4418e5af35a8d5a18b89e4568359e5203296d6"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/e1-crew-advice-band/off/checks.json",
+      "sha256": "b266e345cf77ddcfcdc0772a11a6e690e577fcf2168c09f2316c5fc4d4230e4d"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/e1-crew-advice-band/off/source.json",
+      "sha256": "f54e69f74bb6fa5de3a63298cef1c1218398f5e5498945401520ab83645f949c"
+    }
+  ],
+  "limitations": [
+    "Original prototype browser receipts reused only after exact ON/OFF artifact byte equality.",
+    "Original earned Home43 route plus fresh practice; no account/combat/save rule changed.",
+    "Formation and Fight are visible; secondary context stacks below decisions at1024.",
+    "Original Home02 cadence/dead-time MISS remains; no new elapsed sample.",
+    "Scoped contrast and targeted captures are not the Z screenshot pack. No startup or retention claim."
+  ]
+}
