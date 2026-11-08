@@ -753,3 +753,9 @@ A5 started from #376 f1b433e8: lane A works on balance closure, progression, A-o
 Branchcodex/cardrpg-a5-h0-2026-11-08, reuse A4 worktree; H0 real-click x1/no-skip engagement baseline and earnedday7 diagnosis before changes.
 Train1–500 retained; acceptance20001–20500 unused/register before sampling; old10001–10500 contaminated. No modelhelpers/CUA/Docker/merge/deploy.
 Use shared timing lock, short windows and cooperative handoffs; original A4P1/P3/P4 requests unchanged.
+
+## 2026-11-08T00:05:28.882427+00:00 A5-H0 CHECKPOINT
+A4 runtime/artifact unchanged. Original baseline attempt1 retained/excluded: harness waited for a spare before routes; all starter gear was already worn.
+Corrected real-click x1/no-skip session PID37456 now running60active minutes in10minute leases; day7reproduction36643 and six-source-gates38366 queued, no duplicatejobs.
+Fresh Hub/Prepare captures inspected; developercontrols/verbose forms confirmed. Read-only train audit: all8sets100% in5nonboss fixtures; preserve old/new calibration results.
+B1six-component ablation/pairedtrace tools prepared only; no acceptance20001–20500 sampled. No B/protected edits, merge/deploy/modelhelpers.
