@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-DRAFT397 published/mirrored (ledgerd56c262bf,sync1a0a123b6); runtimee14d320ed unchanged. Reference30/31 complete:4,000exact restored calibration outcomes; Hush removal of replacement attacks explains both changed scenes. Every negative pair and15replays retained; no fixture/gate retune.
+Original reply33 runner57328/tool8091 measures fixed source; corrected34 registered, semantic probe queued. No production change. Fatal-choice32 complete:120alternatives,3/6death preventable,4/6alternative wins.
 ## NEXT
-Continue B1 root cause from current24 traces: boss round6 lethal thresholds remain; prior hit caps/committed phases/rawpressure redistribution rejected. Explore only a prospectively registered understandable boss pattern hypothesis; preserve all misses. B2/display/cadence/startup/Zopen; fresh20001–20500UNUSED.
+Finish original33 receipts and corrected34 semantic/cohort/matrix; reject33 for preview boundary violation. Evaluate34 without relaxing gates. B1/B2/display/cadence/startup/Z open; fresh20001–20500 UNUSED.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -240,3 +240,7 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - 2026-11-08T19:21:27.397588+00:00: DRAFT397 verified at18da2ac96 on396; six source checks and24UIcaptures unchanged. No duplicate PR or test rerun. Mirror state/report to ledger and append coordination checkpoint.
 
 - 2026-11-08T19:26:56.009826+00:00: Reference30/31 audited: old enemyAct reproduces4,000calibration outcomes exactly; utility suppression reproduces allcurrent reference outcomes; credit eligibility leaves those outcomes exact. Scene4+237/-0,scene5+87/-133. Five explanatory cases×3arms replay exactly; no production tuning. First isolatedbuild failed before samples due missingtransitive dependencies; exact copies/hashmanifest andfailure retained. Median57.8%, no automatic recalibration.
+
+- 2026-11-08T19:30:50.231582+00:00: resumed latest handoff; no active A workers or duplicate jobs. Registered32 before samples: all legal actions in the first-fatal round of six existing24 traces. Tests whether immediate-action valuation overlooks an available survival choice before another pressure retune. Production unchanged; fresh20001–20500 unused.
+
+- 2026-11-08T19:34:57.267000+00:00: fatal-choice32 complete120alternatives/18decisions/6examples; selected full hashes and all alternate replays exact. First JSON-vs-undefined parity failure retained. Reply33 full-value projection registered,45OFFexact/6replays/18prefixes/immutablelegalPASS. Its90same-band saved inputs give heavy30/30 and one missing advice: fails. Source observer additionally proves a single surviving-party sentinel can die and advance a projected round15→16. No adoption. Original33 matrix kept intact;34 registers all-living-party queue guard and independent complete regression before samples.
