@@ -871,3 +871,10 @@ DRAFT382 https://github.com/ntbaoheyhey/taskbar-hero/pull/382 on381; rewardsourc
 Reward90accounts/4050days exact; Legendarymedians6/5/5, selector11/9/9, maxearnedratio2.555857x; B3stillPARTIAL onday7combat/retry. Publicdemo unchanged.
 Stat-budget05 originalcandidateexecutionINVALID: /tmp canonicalized to/private/tmp, so transforms silently missed. Originalrawresultsretained. Corrected same-source/seeds/cases now requires executedmodule receipts and numericgearparity; noacceptance/productioncombat changes.
 E1 staged independently, adoption/tests next. Fresh20001–20500unused. NoB/protectedchanges/modelhelpers/merge/deploy.
+
+## 2026-11-08T08:30:07.799176+00:00 A5-E1 CHECKPOINT
+DRAFT383 https://github.com/ntbaoheyhey/taskbar-hero/pull/383 on382; source602587b35/closureedb4ac40e. Named results, atomic route retry, worker forecast and distinct boss clues verified.
+Six gates PASS1739web/1121rules/421E2E;18reviewed desktop captures/nooverflow/scopedcontrast;3receipt tests;realclick3/3clues. Artifactbdbdb35a/20,914,389bytes; freshOFF8250/baseline/historical13exact.
+B1/B2/day7 victory remainMISS; correctedstat-budget05 rejected30/55piece misses,max30/38pp. Combat remainsA4; fresh20001–20500unused. Originalfailures retained.
+E2 draft sevenrule tests and corrected snapshot typecheckPASS; missing-client failure retained. Exactversion1forwarding staged; renderer notadopted. Newdiscoveryversion2 request follows adoption.
+No B/protected edits, modelhelpers, merge or deploy.
