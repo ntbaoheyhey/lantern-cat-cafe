@@ -2,7 +2,7 @@
 ## NOW
 Home closure PASS: six source checks,30targeted captures/3widths/bothlooks, minimum contrast6.858; artifact6854ef89/20,923,697bytes. Original engagement01 COMPLETE30.05minutes/51captures; cadence749.2s and dead907.7s remainMISS. No active old browser or simulation.
 ## NEXT
-Publish Home draft with original failed harness attempts and elapsed misses. Then isolate C1 reviewer-only Settings grants37. B1/B2/display/startup/Z remain open; fresh20001–20500 UNUSED.
+Home DRAFT398 published on397 at7609492b5. Continue isolated C1 reviewer-only Settings grants37. B1/B2/display/startup/Z remain open; fresh20001–20500 UNUSED.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -260,3 +260,5 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - 2026-11-08T20:17:01.309140+00:00: resumed exact Home/engagement jobs, no reruns. Verified six firstattempt source checks1750web/1192rules/421E2E/build. Original corrected fixture retry is queued behind original elapsed browser. Staged reviewcontrols37 remains unadopted until Home closure; do not touch protected Relic fixture paths.
 
 - 2026-11-08T20:22:25.489658+00:00: Home source-bound audit PASS after retained gradient/readiness harness correction; all30 captures/zerooverflow/primaryvisible/contrast6.858. Original engagement browser completed30.05active minutes,32encounters/70meaningful offers/20rewards/11celebrations. Largest gap749.235s,combat907.67s vs896.67H0: cadence/deadtimeMISS. Fixed policy levelsMochi8/Soot1/Clover1 and repeatsChapter1; no causal Home benefit claimed. No runtime/acceptance/B change.
+
+- 2026-11-08T20:23:58.075280+00:00: Published DRAFT398 https://github.com/ntbaoheyhey/taskbar-hero/pull/398 on397; evidence7609492b5, source/checks unchanged. All elapsed misses retained. No A browser/sim remains; B395 read, no integration.

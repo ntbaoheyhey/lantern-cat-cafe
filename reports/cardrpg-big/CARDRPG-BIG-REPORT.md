@@ -66,3 +66,5 @@ Residual item map: [31fourth-slot outliers](a4/P6-RESIDUALS.md). Full protocol, 
 A5 reserve-advice checkpoint: [DRAFT397](https://github.com/ntbaoheyhey/taskbar-hero/pull/397) on396; [current report](a5/A5-REPORT.md), [earned same-band retry](a5/E1-RESERVE-ADVICE.md). Six source checks/OFF8250/three-width both-look flows pass. Original confounded +6gain withdrawn; corrected90save arms exact. Balance/cadence/startup/acceptance remain open.
 
 A5 Home follow-up: [navigation report](a5/E2-HOME-NAVIGATION.md) and [original30minute proxies](a5/E2-ELAPSED-ENGAGEMENT.md). Six checks/30targeted captures pass. Cadence749.2seconds and combat907.7seconds remain MISS; fixed Chapter1/selected-companion policy is explicit. This Home change has no measured cadence benefit.
+
+Home follow-up published as[DRAFT398](https://github.com/ntbaoheyhey/taskbar-hero/pull/398), stacked on397. No merge/deploy.
