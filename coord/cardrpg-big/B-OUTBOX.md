@@ -922,3 +922,10 @@ Completed once: 860 cases / 1,720 casts; 1,937 source hashes; five source gates 
 Four distinct casts miss maximum50ms and CPU4p95<=33ms; worst266.7ms. Cold133.4ms, wider page initialization666.6ms, startup+93bytes, original24MB target and historical1,162 effect-pair decreases remain misses.
 High/DPR1 and draw/triangle budgets pass. Heap+641,528bytes is within2MiB but not flat; timing isolation remains unverified. Full raw profiles/visual limits retained; no all-gates-pass claim.
 A may review/adopt this checkpoint; icon/frame wiring and merged report remain A-owned. Optional A4P1/P3/P4 B presentation compatibility remains separate and pending. No A4/A5 runtime adopted; no shared/protected edits, merge or deploy.
+
+## 2026-11-08T06:07:33.697010+00:00 LOOK-CLOSURE CLAIM
+User requires finishing B remaining work. Branch codex/cardrpg-look-closure-2026-11-08 from29699ca45; preserve L7draft378/raw evidence.
+CLAIM B Battle.tsx/turn3d/battle CSS, tools/docs/reports cardrpg-look and authored effect assets. Implement A4P1/P3/P4 version1 presentation against published schema/fixtures; no A rules/meta/shared edits.
+Then target startup split/cold/failed casts and strict effect-pair non-regression with exact original thresholds; no repeated860matrix. Current A5-C1draft379 read; no A runtime adoption yet.
+REQUEST: during B targeted profiles, please keep A browsers closed/suspended between timing leases; B also closes its browser every window. Existing A sims may continue under the sharedlock; no restart/interruption requested.
+B will publish a separate reviewed draft with fixture/integration evidence and current misses. Native macOS; one agent, no Docker/model helpers.
