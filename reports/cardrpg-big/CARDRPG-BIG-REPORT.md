@@ -1,3 +1,5 @@
+Báo cáo tiến độ mới nhất: [A5 checkpoint](a5/A5-REPORT.md). A5 đã cải thiện luồng mở đầu và ngày7; cân bằng, nhịp30phút, startup và nghiệm thu mới vẫn còn mở. Phần A4 bên dưới được giữ nguyên làm mốc lịch sử; không phải số đo của mã A5 hiện tại.
+
 Bản thử nghiệm có đội hình, chiến thuật trước trận, trang bị và vật phẩm dùng giữa các trận.
 Cafe, nhiệm vụ, bộ sưu tập và đổi thưởng bằng dấu mời đã thành các vòng chơi có phần thưởng.
 P6 đã đo train/heldout tách biệt; các mục cân bằng chưa đạt vẫn ghi MISS, không coi kiểm thử chức năng là cân bằng đạt.
@@ -5,7 +7,7 @@ Demo chạy offline; kết quả browser và bảng số liệu bên dưới g�
 Đây là bản nháp để đánh giá; còn lệch cân bằng, chi phí tải trang và yêu cầu trình diễn cho Lane B.
 
 # A4 gameplay delivery
-REFERENCE: [Gameplay v4](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/cardrpg-a4-p7-2026-11-08/docs/design/cardrpg/GAMEPLAY-V4.md); [research](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/cardrpg-a4-p7-2026-11-08/docs/design/cardrpg/RESEARCH-GAMEPLAY-V4.md); [NFT boundary](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/cardrpg-a4-p7-2026-11-08/docs/design/cardrpg/NFT-VALUE-SPEC.md).
+REFERENCE: [Gameplay v4](../../docs/design/cardrpg/GAMEPLAY-V4.md); [research](../../docs/design/cardrpg/RESEARCH-GAMEPLAY-V4.md); [NFT boundary](../../docs/design/cardrpg/NFT-VALUE-SPEC.md).
 
 | Brief | What the player sees | Before → after / 10 |
 |---|---|---|
@@ -40,16 +42,16 @@ Scores are this agent’s sequential design assessment, not a human playtest or 
 | Source gates | G0 passed | Type/lint/build PASS; 1,106 rules (+2 expected failures/11 skipped), 1,735 web, 421 E2E; numeric tests separate | PASS |
 | Offline artifact and startup | G0 A3 26,120,329 bytes | 26,215,694 bytes; +95,365 vs G0; P7 default JS +552,596 bytes vs main; offline CPU4 max 166.6 ms | MISS |
 
-Residual item map: [31fourth-slot outliers](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/cardrpg-a4-p7-2026-11-08/reports/cardrpg-big/a4/P6-RESIDUALS.md). Full protocol, per-seed outcomes, Wilson intervals, floor cells, utility-score residuals, earned-day censoring and retained failures: [P6 balance](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/cardrpg-a4-p7-2026-11-08/reports/cardrpg-big/a4/P6-BALANCE.md). 3,625 cells × 500 seeds for each of train1–500 and heldout10001–10500; source fixed before heldout. G0 uses a different historical fixture, not a paired causal comparison.
+Residual item map: [31fourth-slot outliers](a4/P6-RESIDUALS.md). Full protocol, per-seed outcomes, Wilson intervals, floor cells, utility-score residuals, earned-day censoring and retained failures: [P6 balance](a4/P6-BALANCE.md). 3,625 cells × 500 seeds for each of train1–500 and heldout10001–10500; source fixed before heldout. G0 uses a different historical fixture, not a paired causal comparison.
 
 ## Demo and validation
-- [Offline game](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/cardrpg-a4-p7-2026-11-08/docs/cardrpg3/index.html): 26,215,694 bytes; SHA-256 `067d2062f6836a6d0bb9f6753ece1b2f3ca923688f241866a7f42806c8f7b6a1`.
-- [Offline guide](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/cardrpg-a4-p7-2026-11-08/docs/cardrpg3/gameplay-v4.html): 1,314,680 bytes; SHA-256 `9dca8fe648d6e101de89ffa02099249327615648989b1207f7e7183c6c0d0482`.
-- P7 source gates / full 204 pack: PASS; 204 captures in ten groups plus 120 new-screen captures at three sizes/two themes, exact source and artifact hashes; [audit](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/cardrpg-a4-p7-2026-11-08/reports/cardrpg-big/a4/p7/audit.json).
-- [Real-click journey](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/cardrpg-a4-p7-2026-11-08/reports/cardrpg-big/a4/p7/journey/checks.json): 16 captures; fresh save, compressed first hour, public-command day7 import, boss, invitations, equipment, local ledger and save round-trip. [Contact sheet](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/cardrpg-a4-p7-2026-11-08/reports/cardrpg-big/a4/p7/journey/contact.png).
+- [Offline game](../../docs/cardrpg3/index.html): 26,215,694 bytes; SHA-256 `067d2062f6836a6d0bb9f6753ece1b2f3ca923688f241866a7f42806c8f7b6a1`.
+- [Offline guide](../../docs/cardrpg3/gameplay-v4.html): 1,314,680 bytes; SHA-256 `9dca8fe648d6e101de89ffa02099249327615648989b1207f7e7183c6c0d0482`.
+- P7 source gates / full 204 pack: PASS; 204 captures in ten groups plus 120 new-screen captures at three sizes/two themes, exact source and artifact hashes; [audit](a4/p7/audit.json).
+- [Real-click journey](a4/p7/journey/checks.json): 16 captures; fresh save, compressed first hour, public-command day7 import, boss, invitations, equipment, local ledger and save round-trip. [Contact sheet](a4/p7/journey/contact.png).
 - Guide readability: three desktop widths, keyboard entry and embedded image decode PASS; minimum sampled contrast 7.211:1.
 - Research adds 46 source records, 9 games, 6 papers and 3 talk abstracts. Sources remain in research files; no reference art is imported. No independent human playtest is claimed.
-- [Startup comparison](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/cardrpg-a4-p7-2026-11-08/reports/cardrpg-big/a4/p7/performance/summary.json): default app vs main340f88b9; JS byte deltas 1280/CPU1: +552596, 1280/CPU4: +552596, 1440/CPU1: +552596. CPU observations 1280/CPU1: 0.475→0.476s (MISS), 1280/CPU4: 0.651→0.677s (MISS), 1440/CPU1: 0.485→0.490s (MISS). One cold observation/configuration; no statistical guarantee.
+- [Startup comparison](a4/p7/performance/summary.json): default app vs main340f88b9; JS byte deltas 1280/CPU1: +552596, 1280/CPU4: +552596, 1440/CPU1: +552596. CPU observations 1280/CPU1: 0.475→0.476s (MISS), 1280/CPU4: 0.651→0.677s (MISS), 1440/CPU1: 0.485→0.490s (MISS). One cold observation/configuration; no statistical guarantee.
 - Offline cold separately: native MAX 33.4ms; CPU4 MAX 166.6ms. Current main has no equivalent offline cardrpg artifact; the default app is a separate comparison. File size above24MB uses the documented32MB preview exception, not a startup PASS.
 - Earned day7 boss 55.151s at x1, outcome enemy. Fixed P6 benchmarks separately report victories or defeats; defeat duration does not prove victorious finishing time.
 
@@ -58,5 +60,5 @@ Residual item map: [31fourth-slot outliers](https://github.com/ntbaoheyhey/taskb
 - Lane B requests remain open: P1 fixed-delay/cooldown + crew/row/plan cues, P3 phase ≤400ms / finish ≤800ms within existing action budgets, P4 earned-reveal receipts. Schema: events-v4.ts; published P1/P3/P4 fixtures. A provides readable fallback; no B checkpoint adopted.
 - Native/headless, one agent, shared timing lock and handoffs. No protected/B file changes; baseline-v1 and 13 historical sim files exact. Gameplay flag OFF retains 8,250-route digest47477251. No merge, deployment or on-chain issuance.
 - Decisions for the user: review residual balance and preview; promotion to live and any future authoritative/on-chain issuance remain separate decisions.
-- Earlier A3 delivery: [historical report](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/cardrpg-a4-p7-2026-11-08/reports/cardrpg-big/a4/REPORT-BEFORE-A4.md).
+- Earlier A3 delivery: [historical report](a4/REPORT-BEFORE-A4.md).
 - Draft stack: [G0 #364](https://github.com/ntbaoheyhey/taskbar-hero/pull/364), [R #365](https://github.com/ntbaoheyhey/taskbar-hero/pull/365), [D #366](https://github.com/ntbaoheyhey/taskbar-hero/pull/366), [P1 #367](https://github.com/ntbaoheyhey/taskbar-hero/pull/367), [P2 #369](https://github.com/ntbaoheyhey/taskbar-hero/pull/369), [P3 #370](https://github.com/ntbaoheyhey/taskbar-hero/pull/370), [P4 #372](https://github.com/ntbaoheyhey/taskbar-hero/pull/372), [P5 #373](https://github.com/ntbaoheyhey/taskbar-hero/pull/373), [P6 #375](https://github.com/ntbaoheyhey/taskbar-hero/pull/375), [P7 #376](https://github.com/ntbaoheyhey/taskbar-hero/pull/376).
