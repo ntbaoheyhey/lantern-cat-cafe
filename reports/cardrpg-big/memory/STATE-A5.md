@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-E1 source 602587b35 is verified: six source gates, 18 reviewed desktop captures, 3-clue real-click route, CPU4 observations, fresh OFF 8250 and three receipt tests PASS. Reviewed artifact bdbdb35a / 20,914,181 bytes. E1 draft publication next.
+E1 source 602587b35 is verified: six source gates, 18 reviewed desktop captures, 3-clue real-click route, CPU4 observations, fresh OFF 8250 and three receipt tests PASS. Reviewed artifact bdbdb35a / 20,914,389 bytes. Published DRAFT #383 on #382.
 ## NEXT
-E2 draft at /tmp/cardrpg-a5-e2-integration: seven rule tests PASS; isolated typecheck failed because snapshot omitted existing client files. Restore snapshot dependency, review source and validate before adoption. No active E1 jobs. B1/B2 remain MISS; combat A4; fresh acceptance 20001–20500 unused. Stack 376→377→379→381→382.
+E2 draft at /tmp/cardrpg-a5-e2-integration: seven rule tests PASS; isolated typecheck failed because snapshot omitted existing client files. Restore snapshot dependency, review source and validate before adoption. No active E1 jobs. B1/B2 remain MISS; combat A4; fresh acceptance 20001–20500 unused. Stack 376→377→379→381→382→383.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -130,3 +130,5 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - E2 draft-only: newTHC13 journey schema, independent nodebadges, crew/set/rank/firstLegendary/star-tier discoveries, cappedonce-only3/9/18starclaims,1.2s skippableDOMcards and compactHub. Pure rules source snapshot and tests under /tmp/cardrpg-a5-e2-integration, not adopted. Exactv1receipt forwarding staged to A-owned Invitations/CompanionPreview; B runtime not adopted. Version2 discoverydiscriminator needs B request only on adoption. New rewardcohort remains required.
 
 - Resume 2026-11-08T08:28:34.771342+00:00: E1 closure and three independent receipt tests PASS. All existing jobs completed without duplication. Personal 1024 clue and 1440 retry captures reviewed; opening no longer exposes closing. Boss preparation reaches 3/3 through real clicks; forecast 56.8ms. E2 snapshot tests7PASS; original missing-client typecheck retained. Draft JSX closing tag corrected before adoption.
+
+- Published E1 DRAFT https://github.com/ntbaoheyhey/taskbar-hero/pull/383 (closure edb4ac40e); no merge/deploy. Corrected the state-only byte-count typo to the measured20,914,389. Corrected stat-budget05 matrices are complete and rejected: relative03530piece misses/max30pp; relative05055misses/max38pp, cats20.86–60.48%, crew52.67–53.33pp. All raw attempts retained; no combat adoption or acceptance sampling.
