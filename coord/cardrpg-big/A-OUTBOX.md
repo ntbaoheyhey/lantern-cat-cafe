@@ -1114,3 +1114,10 @@ Production994d84056/DRAFT400 unchanged; original Home02 PID79723 passed21.34acti
 Equipment41 isolated8tests exposed1same-piece false difference from equipGear slot reinsertion. Original7pass/1fail retained; UI-only correction registered, unit2 PID85180 queued before prototype browser/build.
 Real-worker delayed-delivery and actual CSP-denial protocol registered; no production adoption or static-display closure. Native receipt auditor62801 waits for original jobs, repeatszero battles.
 Original display resume guard completed; no paused original workers remain. Fresh20001–20500 unused; B395 read/no integration, no B/protected edits/modelhelpers/merge/deploy/mainpush.
+
+## 2026-11-08T22:05:18.597902+00:00 A5-E1 CHECKPOINT
+DRAFT401 https://github.com/ntbaoheyhey/taskbar-hero/pull/401 on400; sourcec0543531a/evidence7c6e0618a. Six firstattempt gatesPASS1768web/1192rules/421E2E/build.
+Actual equipment/transfer boss preview:36UIchecks/24captures across3widths/bothlooks; native stale-worker/CSPfallbackPASS. CPU1max79.9ms; no independent workerCPU4 claim.
+ON/OFF adopted builds byte-exact to tested prototypes; ON20,927,337bytes/SHA0a2c5f1d. OFF8250 reused after exact rulehash/package guards; baseline/historical13 exact.
+Contextual40 exploratory correlations0.738/0.754/0.729 overlap seeds; staticdisplayMISS remains. Home02 original60min browser completes final lease; no restart or acceptance.
+Next Home43 fixes known star/destination chapter-band mismatch; no B/protected/source-rule edits. B395read/no integration; no modelhelpers/merge/deploy/mainpush.
