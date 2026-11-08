@@ -1,0 +1,68 @@
+{
+  "passed": true,
+  "before": true,
+  "width": 1280,
+  "height": 720,
+  "artifact": "reports/cardrpg-big/a5/c1-growth-preview/artifact/index.html",
+  "sha256": "6c09ce3c5cc1725f54eb91bb4f6b8b4429cb219bd3cee6825593f2bb84b9d4e7",
+  "checks": [
+    {
+      "look": "baseline",
+      "name": "reproduced",
+      "hintChapter": 1,
+      "actualChapter": 3
+    }
+  ],
+  "captures": [
+    {
+      "look": "baseline",
+      "name": "mismatched-star",
+      "path": "reports/cardrpg-big/a5/e2-home-stars/before-browser-1280-attempt-1/baseline-mismatched-star.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "TONIGHT'S LITTLE ADVENTURE",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "Keep the lantern warm.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Your crew is ready. Explore Midnight Pantry and learn the boss’s tricks.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Revisit Midnight Pantry →",
+          "ratio": 9.237546476333335
+        },
+        {
+          "text": "Next star · 49 found",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Tangled Cafe, stop 2: Visit with a four-mark crew job active.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "The kettle",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Ready in 15 minutes.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Tomorrow",
+          "ratio": 6.858421081163746
+        }
+      ],
+      "primaryVisible": true,
+      "text": "TONIGHT'S LITTLE ADVENTURE\nKeep the lantern warm.\n\nYour crew is ready. Explore Midnight Pantry and learn the boss’s tricks.\n\nRevisit Midnight Pantry →\n\nNext star · 49 found\nTangled Cafe, stop 2: Visit with a four-mark crew job active.\n\nThe kettle\nReady in 15 minutes.\n\nTomorrow Compare a spare piece. Equip the one that helps your crew. Two cafe services return; earn up to 360 stamps across tomorrow’s activities.",
+      "loading": 0
+    }
+  ],
+  "errors": [],
+  "remote": [],
+  "method": "Original earned checkpoint continued through public commands; separate explicitly synthetic band/star edge fixtures. Real clicks and keyboard navigation, no injected browser state or cadence claim."
+}

@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-Equipment41 DRAFT401 published and mirrored to ledger229cbd6a2/syncd5976a1a3. Home43 exact registered two-file source adopted: star hint, primary destination and band align; active route and uncleared chapter priority preserved. Full source/UI validation next. Original Home02 PID79723 final lease/auditor85893 preserved, no restart.
+Home43 source96b32a5d3 and exact-artifact closure PASS: six original gates1771web/1192rules/421E2E/build,36UIchecks/42captures plus reproduced old mismatch. Original Home02 finished60.78active minutes; cadence/dead-timeMISS retained. EquipmentDRAFT401 published. Home43 draft publication next. Prepare44 source/geometry protocol staged only; no runtime adoption or prototype run.
 ## NEXT
-Run Home43 seven focused cases, six source checks and registered old/new three-width browser protocol, retain all logs and close source-bound receipts before draft. Collect original Home02 60-minute audit. B1/B2/static-display/startup/Z remain open; fresh20001–20500 UNUSED.
+Publish Home43 draft on401 and checkpoint outbox/ledger. Then run the registered Prepare44 prototype (tools/cardrpg-big/a5-drafts/prepare-order-44); do not adopt before geometry/controls/OFF checks. B1/B2/static-display/cadence/startup/Z remain open; fresh20001–20500 UNUSED.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -302,3 +302,7 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - 2026-11-08T22:05:43.322788+00:00: Home43 exact registered sources/tools adopted after Equipment401 publication. Inputs verified before copy; original earned-minute42 hash preserved. No combat/save/worker change or new elapsed journey.
 
 - 2026-11-08T22:15:18.998855+00:00: Original Home02 completed60.7786active minutes/58battles/60captures; automatic audit and independent receipt hashesPASS. At30min72meaningfuloffers/21rewards/13celebrations, maxgap916.484s andcombat958.568s (+6.90% versusH0): cadence/deadtimeMISS. Day1selectedcatMochi8/Soot1/Clover1 explains policy limits, not a human inference. Home43 source sixchecksPASS1771web/1192rules/421E2E/build; exact old mismatch reproduced, three-width UI active. Prepare44 unadopted draft/tools only; no new acceptance.
+
+- 2026-11-08T22:16:22.649985+00:00: Home43 source-bound closurePASS firstattempt;36UIchecks/42captures, oldchapter1hint→chapter3actual reproduced. Artifact754d3806f31595c168f84e9c17d5c203be144e9abdd602c96e3c907e60dcd761/20927513bytes; contrast6.858421081163746. No new rule simulation, earned journey or acceptance.
+
+- Personal Home43 visual review:1280baseline earned hint/action,1024alternate-look band4,1440baseline active-band2 inspected; primary visible and coherent. Alternate Look explicitly usesdev=1, so reviewer buttons are expected. No all-screen contrast or Z claim.
