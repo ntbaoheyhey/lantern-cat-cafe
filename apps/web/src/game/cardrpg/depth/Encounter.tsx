@@ -1,5 +1,5 @@
 import { showReviewTools } from "./player-mode";
-import { useEffect, useState } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import { PageTitle } from '../shared';
 import { portraitProps } from './assets';
@@ -7,6 +7,10 @@ import type { DepthModel } from './model';
 import { summarizeBattle } from './battle-summary';
 import { CompanionCard } from './CompanionCard';
 import { PreparationV4, OutcomeV4 } from './PreparationV4';
+
+function CrewDetails({ v4, children }: { v4: boolean; children: ReactNode }) {
+  return v4 ? <details className="cr-panel dp-v4-crew-details"><summary>Equipped gear and skills</summary>{children}</details> : <>{children}</>;
+}
 
 export function Prepare({ m }: { m: DepthModel }) {
   const battle = m.battle!;
@@ -37,13 +41,14 @@ export function Prepare({ m }: { m: DepthModel }) {
     <details className="dp-estimate-note"><summary>How difficulty is estimated</summary><p>Power combines current HP ÷ 5, attack × 2 and defense × 1.5. Difficulty uses five alternate-seed simulations with your current gear and health. This small sample is a rough build hint, not a promised win rate.</p></details>
     {battle.v4&&<section className="cr-panel dp-v4-pacing"><h2>Challenge band {battle.initial.challengeLevel??'legacy'}</h2><p>Each band has fixed enemies. Choose a lower completed band for a gentler route.</p>{battle.initial.enemies.some(id=>R.ENEMY_BY_ID[id]?.tier==='boss')&&<p>At half health, the boss changes tactics. Defeat the boss and its helpers leave.</p>}</section>}
     {battle.v4 && <PreparationV4 m={m} />}
+    <CrewDetails v4={!!battle.v4}>
     <div className="dp-three">{battle.actors.filter(actor => actor.side === 'party').map(actor => <section className="cr-panel" key={actor.id}>
       <div className="dp-cat-heading"><img {...portraitProps(actor.catalogId)} alt="" /><div><h2>{actor.name}</h2><small>{actor.row} row · {actor.hp}/{actor.maxHp} HP</small></div></div>
       <h3>Equipped</h3><ul className="dp-equipped-list">{(['weapon', 'outfit', 'charm', 'relic'] as const).map(slot => {
         const template = actor.equipment.map(id => R.GEAR_BY_ID[id]!).find(item => item.slot === slot);
         return <li key={slot}><small>{slot}</small><span>{template ? `${template.name} · ${template.rarity}` : 'Empty slot'}</span></li>;
       })}</ul><p>{actor.skills.map(id => R.SKILLS[id]!.name).join(' · ')}</p>
-    </section>)}</div>
+    </section>)}</div></CrewDetails>
     <section className="cr-panel dp-opponents"><h2>At the other end of the table</h2><div>{battle.actors.filter(actor => actor.side === 'enemy').map(actor => <span key={actor.id}><img {...portraitProps(actor.catalogId)} alt="" /><b>{actor.name}</b><small>{actor.hp} HP · {actor.row} row</small></span>)}</div></section>
     {battle.v4 && <section className="cr-panel"><h2>Read their plan</h2><div className="dp-v4-grid">{battle.actors.filter(a => a.side === 'enemy').map(actor => {
       const guide = R.enemyGuideV4(actor.catalogId);

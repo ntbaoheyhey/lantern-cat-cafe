@@ -27,14 +27,6 @@ export function Inventory({ m }: { m: DepthModel }) {
   const sets=R.SETS.map(set=>R.setTextV4(set,v4));
   const locked = !!state.run && !state.run.complete;
   const cardId = state.account.cards.some(card => card.cardId === m.cardId) ? m.cardId : state.team[0]!;
-  const item = state.gear.find(gear => gear.id === m.itemId) ?? state.gear[0];
-  const template = item && R.GEAR_BY_ID[item.templateId]!;
-  const preview = item && R.enhancementPreview(item,state,cardId);
-  const compatible = item && template ? R.AFFIXES.filter(candidate => candidate.slots.includes(template.slot) && !item.affixes.includes(candidate.id)) : [];
-  const chosenAffix = compatible.find(candidate => candidate.id === affix)?.id ?? compatible[0]?.id;
-  const effects = R.equipmentEffects(state, cardId);
-  const comparison = item ? gearComparison(state, cardId, item.id) : null;
-  const fitted = R.equippedItems(state, cardId);
   const act = (result: R.RuleResult<R.DepthAccount>, message: string) => {
     if (m.apply(result, message)) setFeedback(value => value + 1);
   };
@@ -50,12 +42,21 @@ export function Inventory({ m }: { m: DepthModel }) {
     if (sort === 'enhancement') return right.enhancement - left.enhancement || a.name.localeCompare(b.name);
     return RARITY_ORDER.indexOf(b.rarity) - RARITY_ORDER.indexOf(a.rarity) || a.name.localeCompare(b.name);
   });
+  const visibleGear = v4 ? gear : state.gear;
+  const item = visibleGear.find(piece => piece.id === m.itemId) ?? visibleGear[0];
+  const template = item && R.GEAR_BY_ID[item.templateId]!;
+  const preview = item && R.enhancementPreview(item,state,cardId);
+  const compatible = item && template ? R.AFFIXES.filter(candidate => candidate.slots.includes(template.slot) && !item.affixes.includes(candidate.id)) : [];
+  const chosenAffix = compatible.find(candidate => candidate.id === affix)?.id ?? compatible[0]?.id;
+  const effects = R.equipmentEffects(state, cardId);
+  const comparison = item ? gearComparison(state, cardId, item.id) : null;
+  const fitted = R.equippedItems(state, cardId);
   return <>
     <PageTitle eyebrow={`${state.gear.length}${v4?' / 240':''} pieces · ${R.GEAR.length} templates`} title="Give your plan a shape." />
     <div className="cr-tabs" aria-label="Inventory types">{categories.map(value => <button key={value}
       aria-pressed={category === value} onClick={() => setCategory(value)}>{value}</button>)}</div>
     {category === 'Equipment' && <>
-      {v4&&<><ShiftLoadouts m={m}/><p>Choose a cat, compare a piece, then make it theirs.</p><details><summary>Odds and rules</summary><p>Equipment stays with your account. Your shelf holds 240 pieces.</p><p>At capacity, route drops become threads within today’s cap. Leave room before buying a basket.</p>{RARITY_ORDER.map(r=><p key={r}><b>{r}</b> · {R.rarityMeaningV4(r)}</p>)}<p>First six eligible won encounters per day: ordinary 65/30/5/0%, elite 0/70/27/3%, boss 0/20/70/10% (Common/Rare/Epic/Legendary). After six drops: 0%.</p></details></>}
+      {v4&&<><details className="cr-panel dp-v4-saved-shifts"><summary>Saved crews and gear</summary><ShiftLoadouts m={m}/></details><p>Choose a cat, compare a piece, then make it theirs.</p><details><summary>Odds and rules</summary><p>Equipment stays with your account. Your shelf holds 240 pieces.</p><p>At capacity, route drops become threads within today’s cap. Leave room before buying a basket.</p>{RARITY_ORDER.map(r=><p key={r}><b>{r}</b> · {R.rarityMeaningV4(r)}</p>)}<p>First six eligible won encounters per day: ordinary 65/30/5/0%, elite 0/70/27/3%, boss 0/20/70/10% (Common/Rare/Epic/Legendary). After six drops: 0%.</p></details></>}
       {v4 ? <EquipmentFiltersV4 state={state} cardId={cardId} slot={slot} rarity={rarity} setId={setId} ownership={ownership} sort={sort}
         chooseCat={id => { m.cardId=id; m.notify(false); }} chooseSlot={setSlot} chooseRarity={setRarity}
         chooseSet={setSetId} chooseOwnership={setOwnership} chooseSort={setSort} /> : <>

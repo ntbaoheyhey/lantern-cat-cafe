@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { gearComparison } from './meta-presentation';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import { RECIPES, STACK_ITEMS } from '@taskbar-hero/game-rules/cardrpg';
 import { CostView } from '../shared';
@@ -19,8 +20,12 @@ export function ShiftLoadouts({m}:{m:DepthModel}){
 }
 export function UtilityComparison({state,cardId,instanceId}:{state:R.DepthAccount;cardId:string;instanceId:string}){
  const result=R.comparisonV4(state,cardId,instanceId);if(!result)return null;
- return <div className="dp-v4-utility"><h3>What this changes</h3><p>Approximate build score: {result.before.total.toFixed(1)} → {result.after.total.toFixed(1)}. Core {result.after.core.toFixed(1)} + utility {result.after.utility.toFixed(1)}.</p>
- <p>Crew score: {result.teamBefore.toFixed(1)} → {result.teamAfter.toFixed(1)} · piece contribution {(result.share*100).toFixed(1)}%.</p>
+ const delta=gearComparison(state,cardId,instanceId).delta;
+ const changes=delta?([['hp','HP'],['attack','attack'],['defense','defense']] as const)
+   .filter(([key])=>delta[key]!==0).map(([key,label])=>`${delta[key]>0?'+':''}${delta[key]} ${label}`):[];
+ return <div className="dp-v4-utility"><h3>What this changes</h3>
+ {changes.length>0&&<p>{R.CAT_BY_ID[cardId]!.name}: {changes.join(' · ')}.</p>}
+ <p>Build estimate: {result.before.total.toFixed(1)} → {result.after.total.toFixed(1)}.</p>
  {result.transfer&&<p>Transfers from {R.CAT_BY_ID[result.transfer]!.name}; that companion loses this piece.</p>}
  {result.gained.map(effect => {
    const set=R.SETS.find(s=>s.twoEffect===effect||s.fourEffect===effect);
@@ -28,7 +33,7 @@ export function UtilityComparison({state,cardId,instanceId}:{state:R.DepthAccoun
  })}
  {!result.gained.length&&<p>No new set bonus.</p>}
  {!!result.lost.length&&<p>Loses: {result.lost.map(R.effectTextV4).join(' ')}</p>}
- <details><summary>How the estimate works</summary><p>HP ÷ 5 + 2 × attack + 1.5 × defense, plus shield, healing and conditional effects in a three-round reference. Shield and healing use 0.2 per point; conditional damage 0.36; counter damage 0.3; extended status 2; rear reach 5. This is an approximate build estimate, not a win probability. Matchup calibration is still pending.</p></details></div>;
+ <details><summary>How the estimate works</summary><p>Crew score: {result.teamBefore.toFixed(1)} → {result.teamAfter.toFixed(1)}. Piece share: {(result.share*100).toFixed(1)}%.</p><p>Core {result.after.core.toFixed(1)} + utility {result.after.utility.toFixed(1)}.</p><p>HP ÷ 5 + 2 × attack + 1.5 × defense, plus shield, healing and conditional effects in a three-round reference. Shield and healing use 0.2 per point; conditional damage 0.36; counter damage 0.3; extended status 2; rear reach 5. This is an approximate build estimate, not a win probability. Matchup calibration is still pending.</p></details></div>;
 }
 const supplyName=(id:string)=>STACK_ITEMS.find(item=>item.id===id)?.name??id;
 export function PantryV4({m}:{m:DepthModel}){
@@ -36,7 +41,7 @@ export function PantryV4({m}:{m:DepthModel}){
  const state=m.state,run=state.run,cat=state.team.includes(catId)?catId:state.team[0]!;
  const recipes=RECIPES.filter(r=>r.outputStackId),chosen=recipes.find(r=>r.id===recipe)!;
  return <section className="cr-panel dp-v4-pantry"><h2>Pantry preparation</h2><p>Pack one treat before your next fight. Change your mind and the unused treat returns.</p>
- {run?.packedSupply&&<p role="status">Packed: {supplyName(run.packedSupply.id)} for {R.CAT_BY_ID[run.packedSupply.catId]!.name}. Consumed when Fight commits.</p>}
+ {run?.packedSupply&&<p role="status">Packed: {supplyName(run.packedSupply.id)} for {R.CAT_BY_ID[run.packedSupply.catId]!.name}. Used when the fight begins.</p>}
  <div className="cr-filter"><label>Supply recipient<select aria-label="Supply recipient" value={cat} onChange={e=>setCatId(e.target.value)}>{state.team.map(id=><option value={id} key={id}>{R.CAT_BY_ID[id]!.name}</option>)}</select></label>
  <label>Pantry supply<select aria-label="Pantry supply" value={supply} onChange={e=>setSupply(e.target.value as R.SupplyIdV4)}>{R.SUPPLY_IDS_V4.map(id=><option value={id} key={id}>{supplyName(id)} · {state.account.inventory.stacks[id]??0}/20</option>)}</select></label></div>
  <p>{R.SUPPLY_TEXT_V4[supply]}</p><button disabled={!run||run.complete||!!run.battle} onClick={()=>m.apply(R.packSupplyV4(state,supply,cat),supply==='milk-tonic'?'Milk restored missing HP.':'Supply reserved for the next encounter.')}>{supply==='milk-tonic'?'Use milk tonic':'Confirm packed supply'}</button>
