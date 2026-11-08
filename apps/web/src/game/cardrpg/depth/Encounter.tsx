@@ -44,14 +44,18 @@ export function Prepare({ m }: { m: DepthModel }) {
   return <><PageTitle eyebrow={m.tutorialBattle ? 'Practice table' : R.CHAPTERS[battle.chapter - 1]!.name} title="Prepare your team" />
     {battle.v4 && m.tutorialBattle && <p className="dp-v4-opening-hint">Choose who takes the first bump. Mochi can shield himself; Soot and Clover prefer the back.</p>}
     <div className="cr-actions"><button className="cr-primary dp-fight" onClick={() => m.fight()}>Fight</button><button onClick={() => m.leave()}>Return to cafe</button><span>{battle.v4 ? 'Pick your plan. Your cats take it from here.' : 'Your companions choose their actions. Watch, then improve your team.'}</span></div>
-    {battle.v4 ? <ForecastV4 setup={battle.initial} /> : <>
-    <section className="cr-panel dp-matchup"><div><small>TEAM POWER</small><strong>{power('party')}</strong></div><div><b>{difficulty}</b><small>{battle.v4 ? (prediction ? 'Rough forecast · your current crew' : 'Reading the matchup…') : prediction ? `${prediction.wins}/5 simulated wins` : 'Trying five seeded fights for this team'}</small></div><div><small>ENEMY POWER</small><strong>{power('enemy')}</strong></div></section>
-    <details className="dp-estimate-note"><summary>How difficulty is estimated</summary><p>Power combines current HP ÷ 5, attack × 2 and defense × 1.5. Difficulty uses five alternate-seed simulations with your current gear and health. This small sample is a rough build hint, not a promised win rate.</p></details>
-    </>}
+    {battle.v4 ? <div className="dp-v4-prepare-layout">
+      <div className="dp-v4-prepare-decisions"><PreparationV4 m={m} /></div>
+      <aside className="dp-v4-prepare-context" aria-label="Encounter outlook">
+        <ForecastV4 setup={battle.initial} />
     <ScoutingV4 run={m.state.run} />
     {m.state.run?.gameplayV4&&m.state.run.current&&<section className="cr-panel dp-v4-star-target"><h2>Three stars to chase</h2><NodeStarsV4 m={m} node={m.state.run.nodes.find(n=>n.id===m.state.run!.current)!} goals/></section>}
     {battle.v4&&battle.initial.challengeLevel!==undefined&&<section className="cr-panel dp-v4-pacing"><h2>Challenge band {battle.initial.challengeLevel}</h2><p>Choose a lower band at the cafe for a gentler route.</p>{battle.initial.enemies.some(id=>R.ENEMY_BY_ID[id]?.tier==='boss')&&<p>At half health, the boss changes tactics. Defeat the boss and its helpers leave.</p>}</section>}
-    {battle.v4 && <PreparationV4 m={m} />}
+      </aside>
+    </div> : <>
+    <section className="cr-panel dp-matchup"><div><small>TEAM POWER</small><strong>{power('party')}</strong></div><div><b>{difficulty}</b><small>{battle.v4 ? (prediction ? 'Rough forecast · your current crew' : 'Reading the matchup…') : prediction ? `${prediction.wins}/5 simulated wins` : 'Trying five seeded fights for this team'}</small></div><div><small>ENEMY POWER</small><strong>{power('enemy')}</strong></div></section>
+    <details className="dp-estimate-note"><summary>How difficulty is estimated</summary><p>Power combines current HP ÷ 5, attack × 2 and defense × 1.5. Difficulty uses five alternate-seed simulations with your current gear and health. This small sample is a rough build hint, not a promised win rate.</p></details>
+    </>}
     <CrewDetails v4={!!battle.v4}>
     <div className="dp-three">{battle.actors.filter(actor => actor.side === 'party').map(actor => <section className="cr-panel" key={actor.id}>
       <div className="dp-cat-heading"><img {...portraitProps(actor.catalogId)} alt="" /><div><h2>{actor.name}</h2><small>{actor.row} row · {actor.hp}/{actor.maxHp} HP</small></div></div>

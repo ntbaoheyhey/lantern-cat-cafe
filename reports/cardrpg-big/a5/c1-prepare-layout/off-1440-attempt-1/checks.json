@@ -1,0 +1,61 @@
+{
+  "passed": true,
+  "before": false,
+  "mode": "off",
+  "width": 1440,
+  "height": 900,
+  "artifact": "/tmp/cardrpg-a5-prepare-order-off/index.html",
+  "sha256": "9474eb116a9b7b9720e0630a52ec05898a9ab9644a9db96e8f693d4648d15bcb",
+  "checks": [
+    {
+      "look": "baseline",
+      "kind": "OFF keeps original estimate and controls"
+    },
+    {
+      "look": "look",
+      "kind": "OFF keeps original estimate and controls"
+    }
+  ],
+  "captures": [
+    {
+      "look": "baseline",
+      "name": "practice-off",
+      "path": "reports/cardrpg-big/a5/c1-prepare-layout/off-1440-attempt-1/baseline-practice-off.png",
+      "overflow": 0,
+      "controls": [],
+      "fight": {
+        "label": "Fight",
+        "top": 197.625,
+        "bottom": 245.515625,
+        "left": 210,
+        "right": 370,
+        "visible": true
+      },
+      "forecast": null,
+      "contrast": []
+    },
+    {
+      "look": "look",
+      "name": "practice-off",
+      "path": "reports/cardrpg-big/a5/c1-prepare-layout/off-1440-attempt-1/look-practice-off.png",
+      "overflow": 0,
+      "controls": [],
+      "fight": {
+        "label": "Fight",
+        "top": 197.625,
+        "bottom": 245.515625,
+        "left": 210,
+        "right": 370,
+        "visible": true
+      },
+      "forecast": null,
+      "contrast": []
+    }
+  ],
+  "errors": [],
+  "remote": [],
+  "limitations": [
+    "Targeted layout/real controls only, not new cadence, startup or balance evidence.",
+    "OFF retains the original five-simulation display; v4 shows qualitative forecast only."
+  ]
+}

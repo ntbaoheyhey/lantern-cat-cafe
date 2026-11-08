@@ -241,3 +241,13 @@
 .dp-v4-equipment-forecast-pair .dp-v4-forecast { margin: 0; padding: 12px; }
 .dp-v4-equipment-forecast .cr-tabs { flex-wrap: wrap; }
 @media (max-width: 800px) { .dp-v4-equipment-forecast-pair { grid-template-columns: 1fr; } }
+
+/* A5 Prepare: crew decisions first, with the encounter outlook beside them. */
+.dp-v4-prepare-layout { display: grid; grid-template-columns: minmax(0, 2fr) minmax(250px, 1fr); gap: 18px; align-items: start; }
+.dp-v4-prepare-decisions, .dp-v4-prepare-context { min-width: 0; }
+.dp-v4-prepare-layout .dp-v4-placement { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+.dp-v4-prepare-layout .dp-v4-row { padding: 10px; }
+.dp-v4-prepare-layout .dp-v4-row-heading { align-items: start; }
+.dp-v4-prepare-layout .dp-v4-placement-card { min-width: min(150px, 100%); max-width: 100%; }
+.dp-v4-prepare-layout .dp-v4-scouting .dp-v4-grid { grid-template-columns: 1fr; }
+@media (max-width: 1100px) { .dp-v4-prepare-layout { grid-template-columns: 1fr; } }
