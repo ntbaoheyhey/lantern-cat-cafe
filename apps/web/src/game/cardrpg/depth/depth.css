@@ -233,3 +233,11 @@
 .dp-v4-growth{flex:1 1 180px;min-width:0;padding:10px 0}
 .dp-v4-growth b,.dp-v4-growth small,.dp-v4-growth .cr-cost{display:block;margin-top:6px;font-size:13px;line-height:1.5}
 .dp-v4-growth .cr-cost>span{display:inline-block;margin-right:10px}
+
+/* Gameplay v4 meta-screen boss rehearsal; no battle styles. */
+.dp-v4-equipment-forecast-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.dp-v4-equipment-forecast-pair > div { min-width: 0; }
+.dp-v4-equipment-forecast-pair h3 { font-size: 15px; overflow-wrap: anywhere; }
+.dp-v4-equipment-forecast-pair .dp-v4-forecast { margin: 0; padding: 12px; }
+.dp-v4-equipment-forecast .cr-tabs { flex-wrap: wrap; }
+@media (max-width: 800px) { .dp-v4-equipment-forecast-pair { grid-template-columns: 1fr; } }

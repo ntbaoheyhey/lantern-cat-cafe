@@ -1,3 +1,4 @@
+import { EquipmentForecastV4 } from "./EquipmentForecastV4";
 import { EquipmentFiltersV4 } from "./EquipmentFiltersV4";
 import { FirstEquipmentV4 } from './OpeningV4';
 import { ShiftLoadouts, UtilityComparison, PantryV4 } from './EquipmentV4';
@@ -89,6 +90,7 @@ export function Inventory({ m }: { m: DepthModel }) {
                 act(result, `${template.name} fitted to ${R.CAT_BY_ID[cardId]!.name}.`);
               }}>Equip selected</button>
       </section>}
+      {v4 && item && <EquipmentForecastV4 state={state} cardId={cardId} instanceId={item.id} />}
       <div className="dp-equipment-workbench">
         <section className="cr-panel dp-paper-doll"><div className="dp-cat-heading"><img {...portraitProps(cardId)} alt="" /><h2>{R.CAT_BY_ID[cardId]!.name}</h2></div>
           <CompanionPreview m={m} id={cardId} />
