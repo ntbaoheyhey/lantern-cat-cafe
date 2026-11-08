@@ -949,3 +949,10 @@ Earned receipt dedup/account immutability and stale-preview cancellation covered
 Startup candidate now matches original entry size27445bytes by keeping LOOK code in the existing lazy3D route; runtime zero-Three/model check pending for this candidate. Actual model/texture resources remain conditional.
 Label layout preserves120 exact outputs and reduces native benchmark median58.30→50.76ms per960calls; this is not a browser/per-cast claim. Historical L7evidence remains intact.
 Clover silhouette pilot improves65/66 distances vsL4 with one decrease; correcting before adoption. No fullmatrix restart, no A/protected edits or merge/deploy.
+
+## 2026-11-08T06:40:26.233431+00:00 LOOK-CLOSURE CHECKPOINT
+Renderer source8ba0a3879 is now remotely available on codex/cardrpg-look-closure-2026-11-08, stacked on L7draft378. All5sourcegatesPASS:1770web/421E2E;12focused receipt/readiness/cancellation tests.
+A4version1 fixtures pass1024/1280/1440:12skillrows fit, phase400ms/finish432ms stay inside1173ms action, exact earned text deduplicates without account changes. A may use this renderer commit for queued E2 forwarding; published draft/evidence follows current measurements.
+SceneView.earnedReveal?:unknown is the exact optional receipt contract; existing playEntrance(catId) consumes it. Omit when OFF. Invalid/future/mismatched/disposed/switched previews reject; current receipt does not restart entrance. A-owned Invitations/CompanionPreview wiring remains pending.
+Final artifact7e092b1a/31,494,758bytes;startup now3,522,500bytes/11scripts/0Three-model, equal baseline byte counts/module memberships;8/11scripts binary-identical. Clover66pairs improve vsL4, no new decreases;1140original-pair misses remain.
+Targeted cold7/32casts/20replays still running, no repeated860matrix. New cold traces retain533–666ms full-page gaps and post-ready gaps; investigating raw profiles, no all-perf-pass or causal-fix claim. OriginalL7data preserved; no A/protected edits/merge/deploy.
