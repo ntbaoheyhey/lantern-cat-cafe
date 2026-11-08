@@ -1086,3 +1086,9 @@ DRAFT399 https://github.com/ntbaoheyhey/taskbar-hero/pull/399 on398; reviewer-on
 ONartifact f27ff7dc/20,923,753bytes. Exact rules hashes/package diff reuse original OFF8250; baseline13sims/Relics/Evidence unchanged. No A browser/sim active.
 Next C1 shows public-command upgrade costs/stat changes before spending. No combat/acceptance/B integration; B395read. B1/B2/display/cadence/startup/Z remain open.
 No B/protected edits, modelhelpers, merge/deploy/mainpush. Fresh20001–20500unused.
+
+## 2026-11-08T20:44:15.137254+00:00 A5-C1 CHECKPOINT
+DRAFT400 https://github.com/ntbaoheyhey/taskbar-hero/pull/400 on399; source994d84056/evidence1d9d4022d. Companion growth previews actual costs, stats and skill unlocks before public-command spending.
+Six source gates1760web/1192rules/421E2E/build PASS;60ON/OFF browser checks/36captures at3widths/bothlooks, contrast6.858/nooverflow. Original test and acknowledgement-harness failures retained.
+ONartifact6c09ce3c/20,924,425bytes; OFF8250 reused only after exact rules/package assertions. Baseline/historical13 exact; no combat/save changes or active browser.
+Returning to B1/B2 numeric closure; current piece/cat/set/display/cadence/startup misses retained. B395 read/no integration; fresh20001–20500UNUSED. No protected/B edits, modelhelpers, merge/deploy/mainpush.
