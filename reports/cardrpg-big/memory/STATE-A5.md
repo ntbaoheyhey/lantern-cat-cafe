@@ -2,7 +2,7 @@
 ## NOW
 E3 published DRAFT385, source a99c934d4 / closure6fe045d5d. Six source gates, 32 desktop captures, three independent receipt tests and offline walkthrough PASS. No public demo replacement yet.
 ## NEXT
-Registered early-band02 linear/easeout TRAIN diagnostics run from /tmp/cardrpg-a5-band-ramp-02, session41004, original90 earned day7 saves. Ramp01 rejected heavy30/30 first; retryforecast01 rejected. Continue balance/progression closure, then fresh acceptance and Z. Stack376→377→379→381→382→383→384→385. Fresh20001–20500 unused.
+B3 closure branch998f0f55a. Linear early-band02 passes original90-save day7 pilot: casual23/30,regular24/30 first-two;heavy26/30first;33/33losses advised. Easeout rejected. Fresh90-account/45day earned replay and unchanged original balance TRAIN1–50 scopes registered in b3/linear-validation-01, running immutable /tmp/cardrpg-a5-band-ramp-02/linear (session8450/PID33673). No production adoption. Stack376→377→379→381→382→383→384→385. Fresh20001–20500 unused.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -152,3 +152,5 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - Bandramp01 TRAIN day7 complete: casual/regular30/30 firsttwo, heavy30/30 first (ceilingMISS). Advice7/7losses available. This isolates the challenge6 wall but is too easy for heavy; not adopted. All prior firstsave/seed inputs preserved; no fresh earned45day claim.
 
 - E3 published DRAFT https://github.com/ntbaoheyhey/taskbar-hero/pull/385 after independent receipt3PASS and scope/baseline/historical guards. Restored state correctly records completed ramp01; original old jobs are no longer active. Early-band02 compares two preregistered smooth curves on identical inputs; no source adoption or acceptance.
+
+- B3 early-band02 linear smooths the step across1–10 and passes original90snapshots; fresh economy/day7/matrix required before adoption. Easeout retains regular20/30 and missing advice; ramp01 and retryforecast rejected. E3 mirror c4895e711 and sync ccc1a2607 pushed. Human playtest kit prepared independently; no human responses claimed.
