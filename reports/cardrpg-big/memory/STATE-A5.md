@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-C1 Settings closure PASS on dc60280cf: six source checks,21targeted captures/ON+OFF/3widths/player+reviewer+Look, contrast6.858/nooverflow. Artifactf27ff7dc/20,923,753bytes. No A browser or simulation active.
+Growth38 source994d84056 verified: six source gates PASS1760web/1192rules/421E2E/build; separateON/OFF60browserchecks/36captures, contrast6.858/nooverflow. Exact rules/package reuseOFF8250, baseline/historical13exact. Publishing DRAFT onSettings399; no active jobs.
 ## NEXT
-Settings DRAFT399 published on Home398 at d693705ff. Continue A5 numeric balance/display and player progression clarity; B1/B2/startup/Z remain open. Original30minute cadence749.2s/dead907.7s MISS; fresh20001–20500 UNUSED.
+Resume B1/B2 remaining numeric misses after growth draft/ledger/outbox. Original30minute cadence749.2s/dead907.7s MISS; display/startup/Z remain open. Fresh20001–20500 UNUSED.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -266,3 +266,9 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - 2026-11-08T20:32Z: resumed Settings original source/UI jobs without duplication. All six source gates1754web/1192rules/421E2E/build pass on dc60280cf. Before-browser attempt2 exposed import returning Home; original script/log preserved, attempt3 reopens Settings and passes. All21ON/OFF/player/reviewer/Look captures and save roundtrips pass, contrast6.858. Independent closure verifies every original log, rules hash, OFF8250/package diff, unchanged Relics/Evidence and baseline/historical13. No source retune or fresh acceptance. Reviewer discovery-card overlap disclosed.
 
 - 2026-11-08T20:34Z: DRAFT399 verified on398 at d693705ff; source and all Settings receipts unchanged. Full21capture contact sheet personally inspected. Next independent C1 clarity issue: Companion level/star buttons spend without showing cost or expected stat/skill changes; prepare a V4-only public-command preview and keep OFF exact. No combat/acceptance mutation.
+
+- Growth38: adopted V4-only CompanionGrowthV4/Collection/CSS; preview uses public metaCommand transaction copy, click rechecks current state, OFF buttons unchanged. Six focused cases pass; original failures assumed a zero defense delta should print and wrong shard-price60instead of actual20. Runtime preview already followed real command. Source coordinator38863 and UI40006 active under sharedlock; no combat simulations or acceptance.
+
+- 2026-11-08T20:39:57.285821+00:00: resumed growth38 after original coordinators completed; no active jobs or duplicate suites. Corrected browser-only state expectation to include explicit acknowledgement of queued discoveries, with full-state equality retained. Source994d84056 and original six gates remain exact; fresh acceptance unused.
+
+- 2026-11-08T20:42:34.933566+00:00: Growth38 independent closurePASS. Original six suites reused without reruns; all60ON/OFFbrowserchecks/36captures complete after one retained acknowledgement-only harness fix. Runtime994d84056 unchanged;21MBartifact archived, no rule/acceptance/B change.
