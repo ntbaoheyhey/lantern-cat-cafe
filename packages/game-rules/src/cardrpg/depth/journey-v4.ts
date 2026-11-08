@@ -22,7 +22,8 @@ export const STAR_REWARDS_V4 = [
   { id: 'stars-9', target: 9, name: 'A brighter route', reward: { threads: 20 } },
   { id: 'stars-18', target: 18, name: 'A sky of possibilities', reward: { stamps: 40 } },
 ] as const;
-export const DISCOVERY_IDS_V4 = [
+// Resolve catalog data only after module initialization; equipment imports state, which imports this module.
+export const discoveryIdsV4 = (): string[] => [
   ...['door', 'kettle', 'table', 'lantern'].flatMap(id => [2, 4].map(n => `crew:${id}:${n}`)),
   ...SETS.map(s => `set:${s.id}`),
   ...CARDS.flatMap(c => [2, 3, 4, 5].map(rank => `rank:${c.id}:${rank}`)),
@@ -102,12 +103,13 @@ export function claimStarRewardV4(state: DepthAccount, id: string) {
 
 export function validateJourneyV4(s: DepthAccount): void {
   const j = s.v4?.journey; if (j === undefined) return;
+  const discoveryIds = discoveryIdsV4();
   const valid = (condition: unknown) => requireRule(condition, 'INVALID_AMOUNT', 'Invalid discovery journal.');
   valid(j && j.version === 1 && j.stars && typeof j.stars === 'object' && !Array.isArray(j.stars));
   valid(Number.isSafeInteger(j.sequence) && j.sequence >= 0);
-  valid(Array.isArray(j.found) && j.found.length <= DISCOVERY_IDS_V4.length);
+  valid(Array.isArray(j.found) && j.found.length <= discoveryIds.length);
   valid(new Set(j.found.map(d => d.id)).size === j.found.length);
-  for (const d of j.found) valid(DISCOVERY_IDS_V4.includes(d.id) && Number.isSafeInteger(d.day) && d.day >= 1 && typeof d.text === 'string' && d.text.length <= 180);
+  for (const d of j.found) valid(discoveryIds.includes(d.id) && Number.isSafeInteger(d.day) && d.day >= 1 && typeof d.text === 'string' && d.text.length <= 180);
   valid(Array.isArray(j.pending) && j.pending.length <= 8);
   let previous = -1;
   for (const e of j.pending) {

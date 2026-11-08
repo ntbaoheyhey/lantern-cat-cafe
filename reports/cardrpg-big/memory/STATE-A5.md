@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-E2 source adopted after snapshot typecheck and16focused checks PASS. THC13 stores monotone stars/discoveries and one-time capped claims; compactHome,1.2s skippable celebration and exactv1invitation forwarding. Actual earned route/stars sim PASS; sixgates/build/browser/OFF next.
+E2 original web suite exposed equipment→state→journey circular initialization. Catalog discovery IDs now resolve lazily; original failure and artifact retained. Original OFF165/8250 PASS completed before source correction. Reviewed gates/build/browser/OFF and fresh economy next.
 ## NEXT
-Run E2 sixgates and targeted3widths, retain originals; no B renderer adoption. Need fresh45day economy after added star claims and E3/H0 cadence measurement. B1/B2/day7 victory stillMISS; combat A4; fresh20001–20500 unused. Published stack376→377→379→381→382→383.
+Close E2 with three-width UI and post-stars90account economy; measure earned day7 two-attempt cohort and x1 route. E3 opening/cadence, B1/B2 balance and Z remain open. Combat A4; acceptance20001–20500 untouched. Stack376→377→379→381→382→383.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -132,3 +132,5 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - Resume 2026-11-08T08:28:34.771342+00:00: E1 closure and three independent receipt tests PASS. All existing jobs completed without duplication. Personal 1024 clue and 1440 retry captures reviewed; opening no longer exposes closing. Boss preparation reaches 3/3 through real clicks; forecast 56.8ms. E2 snapshot tests7PASS; original missing-client typecheck retained. Draft JSX closing tag corrected before adoption.
 
 - Published E1 DRAFT https://github.com/ntbaoheyhey/taskbar-hero/pull/383 (closure edb4ac40e); no merge/deploy. Corrected the state-only byte-count typo to the measured20,914,389. Corrected stat-budget05 matrices are complete and rejected: relative03530piece misses/max30pp; relative05055misses/max38pp, cats20.86–60.48%, crew52.67–53.33pp. All raw attempts retained; no combat adoption or acceptance sampling.
+
+- Resume: preserved source61e1ae629/original browser failure90!=140 (incorrect expected cap, actual currencies already matched earned receipt). E2 source suite additionally found import-order failure in unchanged B gear-visuals test; fix is A-owned lazy catalog initialization. Original OFF run completed2slices with exact digest before any source edit. Original artifactee2b6fdc/20,921,145bytes archived; no previous report was overwritten.

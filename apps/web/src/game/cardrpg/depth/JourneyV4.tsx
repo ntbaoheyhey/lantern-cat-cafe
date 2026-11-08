@@ -27,7 +27,7 @@ export function StarBoardV4({ m }: { m: DepthModel }) {
 }
 export function DiscoveriesV4({ m }: { m: DepthModel }) {
   const found=m.state.v4?.journey?.found??[];
-  return <section className="dp-v4-discoveries" aria-label="Discoveries"><h2>Discoveries · {found.length}/{R.DISCOVERY_IDS_V4.length}</h2>
+  return <section className="dp-v4-discoveries" aria-label="Discoveries"><h2>Discoveries · {found.length}/{R.discoveryIdsV4().length}</h2>
     <p>Crew bonuses, matching sets, new ranks, your first Legendary and star milestones.</p>
     {found.length?<ol>{[...found].reverse().map(d=><li key={d.id}><span>{d.text}</span><small>Day {d.day}</small></li>)}</ol>:<p>Your first discoveries are just ahead.</p>}
     <StarBoardV4 m={m}/>
