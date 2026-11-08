@@ -904,3 +904,10 @@ Fresh x1 practice12.775–12.999s; earned equip19.590–26.939s; scouted map41.8
 Artifact26a268aa/20,922,473bytes and offline walkthrough committed. Public demo unchanged untilZ.
 B1/B2/day7/startup remain MISS. Ramp01 rejected heavy30/30first; registered early-band02 linear/easeout on same90earned snapshots, no production adoption or fresh20001–20500.
 B requests unchanged; no B/protected edits, model helpers, merge or deploy.
+
+## 2026-11-08T09:44:02Z A5-B3 CHECKPOINT
+Resumed original linear 90-account validation unchanged. It raises early bands2–5; casual/regular day5 clear means0.13/0.60→0/0. No production adoption.
+Registered anchored03 preserves bands1–5/10–50 exactly; original90 day7 pilot casual25/30, regular27/30 first-two, heavy26/30 first, advice28/28 losses. Heavy advised/unadvised retries0/4 vs4/4 retained.
+Fresh90-account45-day anchored replay and original TRAIN1–50 matrix run in bounded leases. Paired progression reporter keeps early regressions visible.
+B1 encounter-spread07 is a registered TRAIN-only causal diagnostic on prior weight2/sig100: fixed gear-independent seeded boss pressure; original kits/gear/AI unchanged. No production adoption.
+Fresh20001–20500 UNUSED; no B/protected edits, model helpers, merge or deploy. Existing B requests unchanged.
