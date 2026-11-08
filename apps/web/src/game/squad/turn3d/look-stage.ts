@@ -1,6 +1,7 @@
 /** Original Blender café; imported only for the explicitly selected atelier. */
 import * as T from 'three';
 import { isReadableBattle } from './look-b2';
+import { readableEnemyProps } from './look-readable-props';
 import { tightenBattleMats } from './look-battle-mats';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js';
@@ -53,7 +54,7 @@ export async function createLookStage(renderer: T.WebGLRenderer) {
     irradiance.flipY = false; irradiance.colorSpace = T.SRGBColorSpace; irradiance.needsUpdate = true;
     ownTexture(irradiance, textures);
     stage.name = 'lantern-atelier-cafe'; stage.userData.lookV2 = true;
-    if (isReadableBattle()) tightenBattleMats(stage);
+    if (isReadableBattle()) { tightenBattleMats(stage); stage.add(readableEnemyProps()); }
     const surfaces = new Set<T.MeshStandardMaterial>();
     stage.traverse(object => {
       if (!(object instanceof T.Mesh)) return;

@@ -1,24 +1,19 @@
 # B2 STATE
-Base: 0ce18c085d078a5351c3fe7893302d63b39f3e6e (closure draft380); worktree /Users/bao/taskbar-hero-cardrpg-b2.
-Current phase: V3 stutter; branch codex/cardrpg-b2-v3-2026-11-08.
-User request saved verbatim: PROMPT.txt (21868bytes, SHA256 ccc4ac00fe44c96412135d2123984ce1d6e02dd12380894f2c987e5390c81ee6).
-Done: read request twice; df284GiB free; created requested worktree; closure index must stay byte-identical.
-Tools: Blender4.5.3, gltf-transform4.5.1, Node24, ffmpeg; Python numpy2.0.2/Pillow11.3.0/cv2.5.0 available externally; toktx not found yet.
-Now: V0 five gates PASS1770web/421E2E; five seed digests captured. Baseline shots/probe queued at shared lock.
-DoneV0: draft387/source5cde9b9f9; 12six-shots+review; baseline perf stillcollecting on exact closure.
-Next: V1three visual rounds+gates/draft → V3stutter → V2readability → V4HUD → V5VFX → V6demo/report.
-Evidence budget <=60MB; no raw frame dumps in git; <=3×20sH264; no860/2211matrix or20replay runs.
-Hard scope: one agent/nativeMac/headless/noDocker/noCUA/no generative; B-owned presentation only; packages/rules/shared/A files read-only.
-No merge/deploy/main push; phase draft stack from closure, no A5 rebase. Heavy windows use shared lock <=20min,6.5s handoff.
-A latest16:08 resumed shared timing jobs. E2 version2 discovery receipt announced; version1 forwarded in A meta, renderer not adopted.
-Requests: none pending from this pass. Integrate validversion2 display duringV4; B dev tools ?dev=1, ask A only if its files need gating.
-Measurements: closure index7e092b1a/31,494,758bytes retained; no B2 browser measurement yet.
-Jobs: baseline60520 active; V1shots complete; gates67803 all4PASS. Do not duplicate.
-V1: four reviewed rounds; 1280cat31–41%arena/15–20%page; unit/lint/typePASS, digest5PASS. Small1024Sockplate forehead touch remains for V4. BuildPASS; next V3 cause analysis/cache.
-Setup correction: original gate PID55814 was still queued; stopped before duplicate E2E, duplicate build retained in logs. Single E2E421 passed.
-
-V1 published draft389 at e0f2de64b; type/lint/unit/build/digest5PASS; four reviewed rounds.
-V3: inherited prewarm/pooledlights retained; add collision-safe label cache and stable DOM writes. Fresh closure native48casts max16.8ms; historical533GPUwait/250presentation/backpressure retained, no causal cure claim.
-
-V0 probe60520 complete:56cast windows max16.8ms; nativecold16.8/CPU4cold150ms wholepage; CPU4gallery183.4ms. No re-sampling. V3phase72414/72430 queued/running gates; scratch V2/V4/V5 scripts in/tmp, not integrated.
-Resume: original72414/72430 were alive but queued, not measuring; replaced only queued remainder with bounded coordinator75168. Type/lint receipts retained. V2 drafts external until V3 snapshot complete.
+Base0ce18c085d078a5351c3fe7893302d63b39f3e6e (closure draft380), checkout /Users/bao/taskbar-hero-cardrpg-b2.
+Current V4 preparation after V2 readability round2; branch codex/cardrpg-b2-v2-2026-11-08. Original request PROMPT.txt reread on resume.
+Single agent/nativeMac/headless/noDocker/noCUA/no generative. B-owned presentation only. No rules/meta/protected edits, merge/deploy/main push.
+V0 draft387 source5cde9b9f9: five gates1770web/421E2E, digest5, twelve baseline shots. Index remains exact7e092b1a/31,494,758bytes.
+V1 draft389 sourcee0f2de64b: four personally viewed rounds, four gates/digest5PASS. Cat31–41%arena/15–20%page. Sock label forehead overlap deferredV4.
+V3 draft390 sourceb1a85d65b: collision-safe label cache/stable DOM writes. Four gates/digest5PASS; twelve shots personally reviewed, same visual direction.
+V3 immutable /tmp/cardrpg-b2-v3.html SHA0f87e6ef…31,511,278bytes. Probe PID76817/session68857 active; no duplicate jobs. First1280native24actions/48casts max16.8; remaining1440native/CPU4 and6cold pending.
+Baseline fresh56cast windows max16.8; wholepage nativecold16.8/CPU4cold150,CPU4gallery183.4. Historical633cast/666cold/400postready retained; no driver-stall cure claim.
+V2 round1 type/lint/unit/build/digest5PASS, twelve shots +review. Opponents plum, amber eyes;3 yarnballs and toppledcup. Actually reviewed sheet/fullwave. Fixes worst3: lift body value, lighter rose mat, mute cup.
+V2 round2 complete: four sourcegates/digest5/twelve shots PASS. Viewed full1280wave/1024boss; contrast0.009–0.039 MISS0.18, retained honestly. Roster82244 still running on immutable V2.
+Kettle stays rules elite, only boss-sized visual treatment2.1scale and intro lift/floor glyphs. All13 originalGLBs retained, <=19762tri; regular7756–7790tri.
+Next: V4HUD→V5effects→V6demo/report. V6 always deliver, honest misses. V2 roster review when ready.
+V4 prepared outside repo: /tmp/cardrpg-b2-v4-patch.py then v4-finish.py; original assets/css companions in/tmp. Not integrated/tested. V5 similarly /tmp/cardrpg-b2-v5-patch.py.
+V6 prep outside repo gallery TSX/CSS/build helper; own b2 videos/lifecycle/roster/face-review tools added but unrun.
+Requests: App.tsx homeFeelLab/FrameOverlay gating belongs A; requested preserve A5 ?dev=1 in later integration. B own tools will be gated. Version2discovery adapter prepared, v1 unchanged.
+Coord update via /tmp/cardrpg-b2-sync.mjs append-only B-OUTBOX. A latest16:59 sourceb76fac30b; no B source adoption, simulations sharelock. Never edit A worktrees.
+Shared lock windows <=20min;6.5s handoff. Old75168finished; old72414/72430 were queued and replaced, not sampled. Current V3probe uses fixedHTML so source can advance after V2snapshot.
+Evidence35MB before round2; compress old review rounds after inspection to stay<=60MB. No raw traces/frames in git. Raw/tmp/cardrpg-b2-* only.

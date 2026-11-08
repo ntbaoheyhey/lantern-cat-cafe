@@ -4,6 +4,7 @@ import {resolve} from 'node:path';
 import {createHash} from 'node:crypto';
 import {withTimingLock} from '../lock.mjs';
 import {coverage} from './coverage.mjs';
+import {silhouetteContrast} from './readability.mjs';
 const artifact=resolve(process.env.B2_ARTIFACT||'docs/cardrpg-look/index.html'),out=process.env.B2_OUT||'reports/cardrpg-look/b2/v0';
 await mkdir(out,{recursive:true});
 const snapshot=await mkdtemp('/tmp/cardrpg-b2-shots-'), frozenArtifact=snapshot+'/index.html', artifactBytes=await readFile(artifact);
@@ -22,7 +23,7 @@ try { for(const [width,height,dpr]of sizes)await withTimingLock(`B2 six shots ${
   await page.waitForFunction(()=>window.__depthScene?.ready,null,{timeout:120000});
   await page.evaluate(f=>{const m=window.__depthReview;m.battle.v4={version:1,plan:f.initial.plan,events:f.events.filter(e=>e.kind==='crew-active')};for(const c of f.initial.cats){const a=m.battle.actors.find(a=>a.catalogId===c.id);if(a){a.skills=[...c.skills];a.row=c.row}}window.__b2Battle=structuredClone(m.battle);m.notify(false)},crew);
   const settle=async()=>{await page.waitForFunction(()=>window.__depthReview.battle.actors.every(a=>window.__depthScene.puppets.get(a.id)?.asset===a.catalogId));await page.evaluate(()=>{const s=window.__depthScene;s.render({...s.view(),fixedTime:3.2,paused:true},0);s.dirty=false})};
-  const shot=async(name)=>{await settle();const detail=await page.evaluate(coverage),file=`${width}-${name}.png`;await page.screenshot({path:`${out}/${file}`});receipt.rows.push({name,width,height,dpr,file,...detail,errors:[...errors]});console.log(JSON.stringify({name,width,units:detail.units.map(u=>[u.asset,+u.heightPercent.toFixed(1)]),errors}));await writeFile(`${out}/shots.json`,JSON.stringify(receipt,null,2))};
+  const shot=async(name)=>{await settle();const detail=await page.evaluate(coverage);if(process.env.B2_CONTRAST&&width===1280&&['1-round1','4-wave','5-boss'].includes(name)){detail.contrast=await silhouetteContrast(page);await settle();}const file=`${width}-${name}.png`;await page.screenshot({path:`${out}/${file}`});receipt.rows.push({name,width,height,dpr,file,...detail,errors:[...errors]});console.log(JSON.stringify({name,width,units:detail.units.map(u=>[u.asset,+u.heightPercent.toFixed(1)]),errors}));await writeFile(`${out}/shots.json`,JSON.stringify(receipt,null,2))};
   await shot('1-round1');
   await page.evaluate(()=>{const m=window.__depthReview;m.inspect('mochi-4',0);m.galleryBattle=structuredClone(window.__b2Battle);m.animationAt=m.plan.beats[2].start+70;m.notify(false)});await shot('2-mochi');
   await page.evaluate(()=>window.__depthReview.inspect('clover-4',.62));await shot('3-clover');

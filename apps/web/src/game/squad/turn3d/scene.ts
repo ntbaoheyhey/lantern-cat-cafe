@@ -1,3 +1,4 @@
+import { styleReadableEnemy, isReadableBoss } from './look-readable-enemies';
 import { CardEnemyExpression } from './card-enemy-expression';
 import { CardBossAtmosphere, BOSS_STYLES, bossPerformance } from './card-boss-performance';
 /** Presentation only: projected snapshots and effect frames in, pixels/anchors out. */
@@ -247,6 +248,7 @@ export class TurnScene {
               o.material=Array.isArray(o.material)?o.material.map(prepare):prepare(o.material);
             }
           });
+          styleReadableEnemy(model,role);
           if(rigRole)new CardUtensil(model,rigRole,role);
           model.traverse(o=>{if(!originalNodes.has(o)&&o instanceof T.Mesh){this.geometryOwned.add(o.geometry);for(const m of Array.isArray(o.material)?o.material:[o.material])this.materialOwned.add(m);}});
         }
@@ -378,10 +380,14 @@ export class TurnScene {
       if(this.disposed)return;
       const height=new T.Box3().setFromObject(model).max.y;
       const materials:T.Material[]=[];model.traverse(o=>{if(o instanceof T.Mesh){o.material=Array.isArray(o.material)?o.material.map(m=>m.clone()):o.material.clone();materials.push(...(Array.isArray(o.material)?o.material:[o.material]));for(const m of Array.isArray(o.material)?o.material:[o.material])if(m instanceof T.MeshStandardMaterial){this.cardSurfaces?.apply(m);for(const tex of [m.map,m.normalMap,m.roughnessMap])if(tex){tex.anisotropy=Math.min(sourceView.autoBattle?16:8,this.renderer.capabilities.getMaxAnisotropy());tex.generateMipmaps=true;}}}});
+      styleReadableEnemy(model,asset);
       const mixer=new T.AnimationMixer(model);
       const clips=new Map([...gltf.animations,...cardClips].map(clip=>[clip.name,clip]));
       const actions=new Map([...clips].map(([name,clip])=>[name,mixer.clipAction(clip)]));
-      const shadow=new T.Mesh(new T.PlaneGeometry(a.role==='yarn'?3:1.65,a.role==='yarn'?2.4:1.35),this.blobMaterial);shadow.rotation.x=-Math.PI/2;shadow.position.y=.026;root.add(shadow);
+      const bossShadow=isReadableBattle()&&isReadableBoss(asset);
+      const shadowMaterial=bossShadow?this.blobMaterial.clone():this.blobMaterial;
+      if(bossShadow){shadowMaterial.color.set('#49293e');shadowMaterial.opacity=.78;materials.push(shadowMaterial);}
+      const shadow=new T.Mesh(new T.PlaneGeometry(bossShadow||a.role==='yarn'?3:1.65,bossShadow||a.role==='yarn'?2.4:1.35),shadowMaterial);shadow.rotation.x=-Math.PI/2;shadow.position.y=.026;root.add(shadow);
       const guard=new T.Mesh(sourceView.autoBattle?cardShieldGeometry():new T.SphereGeometry(.9,18,10,0,Math.PI*2,0,Math.PI/2),new T.MeshBasicMaterial({color:GOLD,transparent:true,opacity:sourceView.autoBattle?.50:.12,depthWrite:false,side:T.DoubleSide}));guard.position.y=.09;guard.visible=false;root.add(guard);
       const snare=new T.Group();for(let i=0;i<2;i++){const thread=new T.Mesh(new T.TorusGeometry(.47+i*.08,.018,5,32),new T.MeshBasicMaterial({color:VIOLET,transparent:true,opacity:.85}));thread.rotation.x=Math.PI/2+i*.35;thread.position.y=.2+i*.22;snare.add(thread);}snare.visible=false;root.add(snare);
       const base=point(a,boss);root.position.copy(base);model.rotation.y=restYaw(a.side);this.scene.add(root);
@@ -416,7 +422,7 @@ export class TurnScene {
     for(const a of view.actors)if(!this.puppets.has(a.id)&&!this.pending.has(a.id))void this.ensure(a,view.boss,view);
     const frame=view.frame, cardRecipe=view.autoBattle?cardRecipeFor(frame,view.actors):undefined, source=frame?this.puppets.get(frame.plan.actorId):undefined;
     const targets=frame?frame.plan.targetIds.map(id=>this.puppets.get(id)).filter((p):p is Puppet=>!!p):[];
-    for(const a of view.actors){const p=this.puppets.get(a.id);if(!p)continue;const slot=view.model?this.zero:view.autoBattle?cardFormation(a,view.rows?.[a.id]):formationPoint(a,view.boss);if(!view.autoBattle||a.hp>0)p.base.set(slot.x,slot.y,slot.z);p.root.position.copy(p.base);p.root.scale.setScalar(view.model?1:figureScale(a.role,a.side)*(isReadableBattle()&&view.autoBattle?(a.role==='yarn'?1.25:a.side==='party'?1.25:1.38):1));p.model.rotation.y=view.model?view.model.angle:view.autoBattle?cardBodyYaw(a.side,0,0):restYaw(a.side);
+    for(const a of view.actors){const p=this.puppets.get(a.id);if(!p)continue;const slot=view.model?this.zero:view.autoBattle?cardFormation(a,view.rows?.[a.id]):formationPoint(a,view.boss);if(!view.autoBattle||a.hp>0)p.base.set(slot.x,slot.y,slot.z);p.root.position.copy(p.base);p.root.scale.setScalar(view.model?1:figureScale(a.role,a.side)*(isReadableBattle()&&view.autoBattle?(p.asset==='kettle-knight'?2.1:a.role==='yarn'?1.25:a.side==='party'?1.25:1.38):1));p.model.rotation.y=view.model?view.model.angle:view.autoBattle?cardBodyYaw(a.side,0,0):restYaw(a.side);
       if (view.tableau) {
         p.base.set((a.slot - 1) * 2.1, 0, a.slot === 1 ? -.35 : .3);
         p.root.position.copy(p.base);
@@ -470,8 +476,9 @@ export class TurnScene {
       }
       const phase=view.bossPhases?.[a.id]??1;
       if(phase!==p.bossPhase){p.phaseAt=phase>p.bossPhase?this.time:-100;p.bossPhase=phase;}
-      if(view.autoBattle&&!view.model&&BOSS_STYLES[p.asset]&&a.hp>0){
+      if(view.autoBattle&&!view.model&&(BOSS_STYLES[p.asset]||isReadableBattle()&&isReadableBoss(p.asset))&&a.hp>0){
         const cue=bossPerformance(this.time-p.enteredAt,this.time-p.phaseAt,view.reducedMotion);
+        if(cue&&isReadableBattle()&&p.asset==='kettle-knight')p.root.position.y+=Math.sin(cue.progress*Math.PI)*.12;
         if(cue&&(!frame||frame.plan.skillId==='round-status'||source!==p&&!targets.includes(p))){clip=cue.clip;progress=cue.progress;}
       }
       // Restore the last mixer pose before gaze. PropertyMixer skips unchanged values.
@@ -492,7 +499,7 @@ export class TurnScene {
     if('setChapter' in this.post)this.post.setChapter(view.chapter??1);
     this.stage.userData.setChapter?.(view.chapter??1);
     this.bossBackdrop.visible=view.boss&&!view.model&&!view.autoBattle;this.stage.visible=!view.model;
-    const boss=view.actors.find(a=>a.hp>0&&BOSS_STYLES[this.puppets.get(a.id)?.asset??'']);
+    const boss=view.actors.find(a=>a.hp>0&&(BOSS_STYLES[this.puppets.get(a.id)?.asset??'']||isReadableBattle()&&isReadableBoss(this.puppets.get(a.id)?.asset??'')));
     const bossPuppet=boss?this.puppets.get(boss.id):undefined;
     const bossCue=bossPuppet?bossPerformance(this.time-bossPuppet.enteredAt,this.time-bossPuppet.phaseAt,view.reducedMotion):null;
     this.bossAtmosphere?.update(view.model?undefined:bossPuppet?.asset,bossPuppet?.base,bossPuppet?.bossPhase??1,bossCue?.progress??0,view.reducedMotion);

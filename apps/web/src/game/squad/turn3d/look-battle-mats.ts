@@ -17,7 +17,7 @@ export function tightenBattleMats(stage: T.Group) {
     point.x = side * 2.15 + (point.x - side * 2.85) * .9;
     point.z *= .80;
     point.applyMatrix4(inverse); position.setXYZ(i, point.x, point.y, point.z);
-    if (side > 0) color.setXYZ(i, .61, .27, .39);
+    if (side > 0) color.setXYZ(i, .85, .48, .58);
   }
   geometry.setAttribute('position', position); geometry.setAttribute('color', color);
   geometry.computeBoundingBox(); geometry.computeBoundingSphere();

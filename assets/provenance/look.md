@@ -89,3 +89,10 @@ Look-only motion fits move plates, spoons, flasks and Pollen's basket outside th
 ## B2 V1 readable framing — 2026-11-08
 Original code-only changes; no imported artwork, model service or generative call. Three0.180.0 camera B width10.6/min-height3.8, position(0,4.7,12), target(0,1,0); A9.6/C12.0. Formation authored in card-staging.ts; player scale×1.25, regular×1.38, boss×1.5. Deterministic, no random seed.
 The accepted cafe.glb/atlas stay byte-identical. `tools/cardrpg-look/b2/mat-indices.mjs` uses glTF-Transform4.5.1/MeshoptDecoder to identify4158 vertices of original disjoint woven mats/fringes by connected components and world bounds. Runtime retains UVs, narrows mats×.9, shortens depth×.8, centers±2.6; hostile cloth vertex tint(.61,.27,.39). Seed none; original stage seed20261107 retained. All changes gated by lookV2 and B2 comparison. Parameter review continues in b2/v1 rounds.
+
+## B2 V2 readable opponents — native Three.js parameters, seed1808
+Existing original Blender meshes/atlases retained. Body tint #80506c, roughness.84; eye rims #ffe0b2, emissive #ff9d48/.22; plum Fresnel contribution(.27,.025,.065), power2.5. Eye sockets scale1.14/1.2/1.04; handles/cuffs/spindles/needles/wings/crowns/helms/steam scale1.16/1.12/1.08. No imported art. Boss contact pool #49293e/.78. Three sphere yarn spills + original cylinder/torus toppled cup, constructed once during loading. Opponent shader variant also warmed before scene-ready.
+
+B2 V2 visual round2 correction after actual1280/1024 capture: body tint #96667e; opposing baked mat vertex multiplier(.85,.48,.58); fallen cup #b88870. Original seed1808 retained.
+
+Kettle Knight remains a rules elite; presentation-only boss emphasis requested by B2:2.1 scale factor (existing elite base.72), .12-unit intro lift, five pooled teapot floor glyphs. No tier/data change.
