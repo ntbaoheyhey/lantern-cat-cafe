@@ -1,0 +1,35 @@
+[
+  {
+    "name": "typecheck",
+    "attempt": 1,
+    "code": 0,
+    "head": "6c0a045924a591797accd83e334847e5698c3463",
+    "started": "2026-11-08T10:15:30.293Z",
+    "ended": "2026-11-08T10:15:40.910Z",
+    "log": "reports/cardrpg-big/a5/b3-closure/gates/typecheck-attempt-1.log",
+    "sha256": "c833e2a3357ce6ab0c0b36232868455cca875bc743c38117392d287db77bd804",
+    "counts": []
+  },
+  {
+    "name": "lint",
+    "attempt": 1,
+    "code": 0,
+    "head": "6c0a045924a591797accd83e334847e5698c3463",
+    "started": "2026-11-08T10:15:47.913Z",
+    "ended": "2026-11-08T10:17:55.823Z",
+    "log": "reports/cardrpg-big/a5/b3-closure/gates/lint-attempt-1.log",
+    "sha256": "5968df996fffcc0ba99c26f01c8eec4b968def7a578c13af6a5434952d055e93",
+    "counts": []
+  },
+  {
+    "name": "web-unit",
+    "attempt": 1,
+    "head": "6c0a045924a591797accd83e334847e5698c3463",
+    "code": 143,
+    "ended": "2026-11-08T10:20:08.134579+00:00",
+    "log": "reports/cardrpg-big/a5/b3-closure/gates/web-unit-attempt-1.log",
+    "sha256": "576b7353ee5ec2414a1c9e04ef66db0049ee6c924d7fbfa3d2230223413c9501",
+    "status": "USER_STOPPED",
+    "reason": "Explicit user requested save handoff and stop; not a test or gameplay failure."
+  }
+]

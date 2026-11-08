@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-B3 closure: adopted the exact anchored60 TRAIN-tested pacing formula; production source gates, new OFF8250 and real x1 review next. No fresh acceptance sampled. E3 DRAFT385 remains previous published tip.
+PAUSED at user request “lưu handoff và dừng lại” (2026-11-08 10:19UTC). All this-turn A5 coordinators/leases stopped; timing lock released. No browser job remains. Handoff: HANDOFF-A5-2026-11-08.md.
 ## NEXT
-Finish B3 closure evidence and draft on385. Balance source remains A4 except bands6–9; current TRAIN50 matrix68piece misses/worst88pp and cat/set misses remain explicit. Commonfixture04 complete1840cells; calibration report retained. Spread50008 both complete; independent summary next. Fresh20001–20500 UNUSED. Stack376→377→379→381→382→383→384→385.
+Resume only when requested. B3 anchored source6c0a04592: typecheck/lint/off8250/build-artifact PASS; web interrupted143, rules/E2E/appbuild/x1/opening NOT VERIFIED. Restore/resume existing receipts, do not duplicate completed earned cohorts. B1spread50 wider09: tiers complete;sets/teams pending; original isolated source archived. Fresh20001–20500 UNUSED. Stack376→377→379→381→382→383→384→385; no new draft.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -164,3 +164,6 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - Resume 2026-11-08T10:09:09.572098+00:00: fresh anchored day7 casual26/30,regular28/30 firsttwo,heavy28/30first; all24losses receive advice. Heavy paired advised/no-advice0/2 remains limitation. Early1–5 outcomes unchanged; all7rewardgatesPASS. Original validation continues balance; not adopted. Reference calibration03 mean56.9%/median57.3%; commonfixture04 compares all8sets/all220triples on SAME8scenarios, all4elites represented, frozen enemyStats,TRAIN1–50. Numeric thresholds unchanged; not a silent acceptance revision.
 
 - Resume 2026-11-08T10:15:29.336208+00:00: no prior A timing/browser/coordinator remains active; preserved all completed receipts. Adopt exact registered anchored60 after fresh90earned-path gatesPASS. FullTRAIN50 balance misses retained, no balance closure claim. Source/OFF/x1/three-width verification next; no B/protected edits or acceptance.
+
+- User stop 2026-11-08T10:20:08.134579+00:00: all owned coordinator/lease PIDs stopped and timing lock empty. OFF completed before stop and exactly matches frozen165/8250 digest. B3 web interrupted143; queued day7 x1 cancelled without browser invocation; both attempts preserved with USER_STOPPED status. No new PR or acceptance. Built artifact60407a0b/20,922,529bytes archived as UNVERIFIED browser result.
+- Spread50008 independent audit:spread30 11/384miss,max18pp;spread50 0/384miss,max11.2pp,no before/after saturation. Original50seed screening rejection stays visible. New09wider diagnostic registered on EXACT old isolated source, not B3anchored;210tier/band/farm cells complete,64sets/663teams pending at stop. ±50%bossattack predictability cost unresolved, no adoption. Commonfixture04complete/report retained; cats/sets/crew stillMISS.
