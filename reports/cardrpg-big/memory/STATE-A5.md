@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-Reward DRAFT382 published on381 (headba58ba326); reward functional/source/browser/OFF checks PASS, B3 remainsPARTIAL on day7 combat. Stat-budget05 original attemptINVALID: /tmp vs/private/tmp prevented every candidate transform. Corrected same-seed execution now asserts applied modules and numeric gear values before sampling; production combat staysA4.
+E1 source adopted from checked 17-file draft on branch codex/cardrpg-a5-e1-2026-11-08, stacked on reward DRAFT382. Named outcomes, affordable retry advice, worker forecast and route clues pending source/browser validation. Combat remains A4; fresh acceptance unused.
 ## NEXT
-Finish corrected immutable TRAIN job (session76893; /tmp/cardrpg-a5-stat-budget-05-corrected). Preserve original rejected/invalid receipts. Integrate staged E1 after the snapshot matrix stops enumerating current source; complete rules/worker/browser/source checks. Fresh20001–20500 UNUSED. Stack376→377→379→381→382.
+Run E1 rules/worker/browser checks plus five gates/build; preserve original failures. Corrected stat-budget05 TRAIN completed: 3.5% budget30piece misses/max30pp; 5%55miss/max38pp, no saturation. Aggregate all scopes before further combat work; original untransformed attemptINVALID retained. Stack376→377→379→381→382.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -122,3 +122,5 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - B3 reviewed closure PASS: source06dc9d3ba, three independent numeric receipt tests, all12reviewedcaptures minimumscopedcontrast8.376/nooverflow/errors/remote. Exactearned24→0/pity unchanged; sourcechecks/historical13/baseline/OFF165/8250 PASS. Original type portability and missing temporary-Python build failures retained; currentPillow11.3.0 used. Artifact22ad9eb9/20818233 archived. B3 stillPARTIAL onA4combat; day7retry/collectible/post-B1 gates remain pending.
 
 - Resume 2026-11-08T08:05:35.905036+00:00: verified remoteDRAFT382/headba58ba326, no duplicate reward publication or tests. Originalstat05 completed both variants identically; confirmed realpath mismatch in loader. Original32piece misses/max88pp are NOT candidate outcomes. Correctedexecutorcanonicalizespaths/asserts all executable transforms once and checksgearformula; same source/seeds/cases, separate corrected receipts; no production/acceptance changes.
+
+- E1 independent source integration after both immutable stat-budget05 matrices completed; no running snapshot can read new source. Candidate loader regression3PASS (symlink, absent module, missing input). E1 uses existing version1 events and derives scouting from visited nodes; no saved fields or schema bump. New rules do not change combat outcomes; phase remains in verification.
