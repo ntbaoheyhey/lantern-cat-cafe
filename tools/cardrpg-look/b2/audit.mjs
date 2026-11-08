@@ -21,6 +21,13 @@ check('startup parity',results.startup.deltaBytes,results.startup.deltaBytes===0
 const shots=await read('v6/shots/shots.json'),ui=await read('v6/ui/checks.json'),dpr=await read('v6/1440/shots.json');check('12 layout +6 DPR2 shots',[shots.rows.length,dpr.rows.length],shots.rows.length===12&&dpr.rows.length===6&&shots.rows.every(r=>r.errors.length===0&&!r.overflow)&&dpr.rows.every(r=>r.errors.length===0&&!r.overflow));
 check('three-width UI',ui.rows.length,ui.rows.length===3&&ui.errors.length===0&&ui.rows.every(r=>!r.overflow&&r.numberContrast>=4.5&&r.cardOverflow.every(v=>!v)));
 const videos=await read('v6/videos/checks.json');check('paired20sH264 same initial',videos.sameInitial,videos.sameInitial&&videos.rows.every(r=>r.errors.length===0&&r.probe.streams[0].codec_name==='h264'&&Number(r.probe.format.duration)===20));
+const roster=await read('v2/roster/checks.json'),bossIds=['yarn-giant','kettle-knight','pantry-crown'];
+const regularMax=Math.max(...roster.rows.filter(r=>!bossIds.includes(r.id)).map(r=>r.unit.heightPercent));
+const bossRatios=Object.fromEntries(roster.rows.filter(r=>bossIds.includes(r.id)).map(r=>[r.id,r.unit.heightPercent/regularMax]));
+check('boss height >=2x regular (same roster camera)',bossRatios,Object.values(bossRatios).every(v=>v>=2));
+check('boss page height >=24%',roster.rows.filter(r=>bossIds.includes(r.id)).map(r=>[r.id,r.unit.pageHeightPercent]),roster.rows.filter(r=>bossIds.includes(r.id)).every(r=>r.unit.pageHeightPercent>=24));
+check('canonical cats page height >=13%',Math.min(...shots.rows.filter(r=>r.width===1280).flatMap(r=>r.units.filter(u=>u.side==='party').map(u=>u.pageHeightPercent))),shots.rows.filter(r=>r.width===1280).every(r=>r.units.filter(u=>u.side==='party').every(u=>u.pageHeightPercent>=13)));
+check('roster regular page height >=12%',Math.min(...roster.rows.filter(r=>!bossIds.includes(r.id)).map(r=>r.unit.pageHeightPercent)),roster.rows.filter(r=>!bossIds.includes(r.id)).every(r=>r.unit.pageHeightPercent>=12));
 const v2=await read('v2/shots/shots.json'),contrast=v2.rows.flatMap(r=>r.contrast?.rows??[]);checks.opponentContrast={actual:'0.009–0.039 linear luminance, original V2 silhouette/ablation method',pass:false};misses.push({label:'opponent luminance >=0.18',actual:checks.opponentContrast.actual});
 const walk=async p=>(await Promise.all((await readdir(p)).map(async n=>{const f=`${p}/${n}`,s=await stat(f);return s.isDirectory()?walk(f):s.size}))).reduce((a,b)=>a+b,0);const evidence=await walk(root);check('evidence <=60MB',evidence,evidence<=60000000);
 const receipts=[];for(const phase of ['v0','v1','v3','v2','v4','v5','v6']){
