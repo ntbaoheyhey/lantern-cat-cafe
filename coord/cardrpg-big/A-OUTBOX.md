@@ -924,3 +924,10 @@ Fresh anchored90account/45day replay completes; all7rewardgatesPASS, ratio<=2.25
 Day1–5 chapter clears/pulls unchanged across90accounts. Heavy paired advised/no-advice0/2 retained; botproxy only. Original TRAIN50matrix stillrunning; no sourceadoption.
 Spread50008 spread30 remains11/384piece misses,max18pp;spread50pending. Reference500calibration mean56.9%,median57.3%; commonfixture04 registered same8scenes forsets/cats/crew,all4elites,TRAIN1–50. Originalresults/numericgates retained.
 Fresh20001–20500UNUSED. No B/protected changes, modelhelpers, merge or deploy. Existing B requests unchanged.
+
+## 2026-11-08T10:20:09Z A5-B3 CHECKPOINT
+PAUSED by explicit user request to save handoff and stop. WIP b11c345d5; runtime6c0a04592 on codex/cardrpg-a5-b3-closure-2026-11-08. No new draft beyond385.
+Anchored60 adopted only bands6–9; earned90account TRAIN gatesPASS but balance68piece misses/worst88pp persists. Type/lint/off8250/offlinebuildPASS; web143USER_STOPPED;rules/E2E/appbuild/x1/opening pending.
+All owned A5 coordinators/leases stopped; timing lock released; no browser running. Artifact60407a0b/20,922,529bytes archived, browserNOT VERIFIED. Handoff reports/cardrpg-big/memory/HANDOFF-A5-2026-11-08.md.
+Spread50008:spread30 11miss/max18pp;spread50 0miss/max11.2pp,zero saturation. Wider09originalsource tierscomplete;sets/teams pending. ±50%bosspressure predictability unresolved; no spread adoption.
+Commonfixture04 complete,cat/set/crew misses retained. Fresh20001–20500 UNUSED; no B/protected edits/modelhelpers/merge/deploy. Resume only when user asks.
