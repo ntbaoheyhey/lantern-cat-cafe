@@ -5,9 +5,10 @@ import type { Actor, Battle, BattleSetup } from './contract';
 /** Frozen content level: never depends on equipped items or selected editions. */
 export function challengeStatsV4(level:number): NonNullable<BattleSetup['enemyStats']> {
  if(!Number.isSafeInteger(level)||level<1||level>50)throw Error('Choose a challenge band from 1 to 50.');
- const growth=(1+(level-1)*.012)*(level>=6?1.12:1);
+ const training=level<=5?0:Math.min(1,.6+(level-6)*.1);
+ const growth=(1+(level-1)*.012)*(1+.12*training);
  return Object.fromEntries(Object.values(ENEMY_BY_ID).map(e=>{
-  const pressure=e.tier==='boss'?[3.1,1.9,2.3][e.chapter-1]!*(level>=6?1.15:1):1;
+  const pressure=e.tier==='boss'?[3.1,1.9,2.3][e.chapter-1]!*(1+.15*training):1;
   const hp=e.tier==='boss'?(e.chapter===3?.25:.30):e.tier==='elite'?.30:.25;
   return [e.id,{hp:Math.max(1,Math.round(e.hp*hp*growth)),attack:Math.max(1,Math.round(e.attack*growth*pressure)),defense:e.defense}];
  }));

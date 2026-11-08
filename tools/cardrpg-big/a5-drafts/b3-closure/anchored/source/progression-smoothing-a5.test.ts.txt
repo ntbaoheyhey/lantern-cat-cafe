@@ -1,4 +1,4 @@
-import { createHash } from 'node:crypto';
+import historicalStats from './progression-smoothing-a5.fixture.json';
 import { describe, expect, it } from 'vitest';
 import * as R from './index';
 
@@ -7,8 +7,7 @@ describe('A5 early challenge progression', () => {
     const levels = [1, 2, 3, 4, 5, ...Array.from({ length: 41 }, (_, i) => i + 10)];
     const unchanged = levels.map(level => ({ level, stats: R.challengeStatsV4(level) }));
     // Measured from the unchanged production rules at A5 E3, before the B3 adoption.
-    expect(createHash('sha256').update(JSON.stringify(unchanged)).digest('hex'))
-      .toBe('1a3729aa96df2a8ddc04eaa9e2a065f76e03a63f9f1396eca955705b2cad2287');
+    expect(unchanged).toEqual(historicalStats);
   });
 
   it('bounds the former level6 boss attack jump and keeps every band monotonic', () => {

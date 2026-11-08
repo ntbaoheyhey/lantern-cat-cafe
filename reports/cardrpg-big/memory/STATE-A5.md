@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-E3 published DRAFT385, source a99c934d4 / closure6fe045d5d. Six source gates, 32 desktop captures, three independent receipt tests and offline walkthrough PASS. No public demo replacement yet.
+B3 closure: adopted the exact anchored60 TRAIN-tested pacing formula; production source gates, new OFF8250 and real x1 review next. No fresh acceptance sampled. E3 DRAFT385 remains previous published tip.
 ## NEXT
-B3 closure branch7a900fae0. Fresh anchored90account45day replay+day7 completed; all11 progression gates/3receipt testsPASS. Original coordinator36951 continues TRAIN50 balance matrix; no source adoption yet. Spread500 coordinator39464:spread30 11/384miss,worst18pp;spread50 pending. Common-fixture04 registered/running session83502 after original-reference500calibration. Fresh20001–20500 UNUSED. Stack376→377→379→381→382→383→384→385.
+Finish B3 closure evidence and draft on385. Balance source remains A4 except bands6–9; current TRAIN50 matrix68piece misses/worst88pp and cat/set misses remain explicit. Commonfixture04 complete1840cells; calibration report retained. Spread50008 both complete; independent summary next. Fresh20001–20500 UNUSED. Stack376→377→379→381→382→383→384→385.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -162,3 +162,5 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - Resume: original linear fresh cohort meets casual18/30,regular22/30 firsttwo,heavy22/30first but one heavy loss has no advice; early progression regressions retained. Anchored fresh earned replay preserved, no adoption. Registered full500 precision extension of BOTH spread07 variants, same384cases/prefix50 exact; original <=16pp pilot screening rejection stays visible and actual12pp gate unchanged. Registered baseline common-fixture calibration01 to quantify the documented saturated nonboss versus hard boss mismatch before proposing any fixture revision. No fresh acceptance or production change.
 
 - Resume 2026-11-08T10:09:09.572098+00:00: fresh anchored day7 casual26/30,regular28/30 firsttwo,heavy28/30first; all24losses receive advice. Heavy paired advised/no-advice0/2 remains limitation. Early1–5 outcomes unchanged; all7rewardgatesPASS. Original validation continues balance; not adopted. Reference calibration03 mean56.9%/median57.3%; commonfixture04 compares all8sets/all220triples on SAME8scenarios, all4elites represented, frozen enemyStats,TRAIN1–50. Numeric thresholds unchanged; not a silent acceptance revision.
+
+- Resume 2026-11-08T10:15:29.336208+00:00: no prior A timing/browser/coordinator remains active; preserved all completed receipts. Adopt exact registered anchored60 after fresh90earned-path gatesPASS. FullTRAIN50 balance misses retained, no balance closure claim. Source/OFF/x1/three-width verification next; no B/protected edits or acceptance.

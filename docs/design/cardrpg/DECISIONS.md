@@ -132,3 +132,12 @@ The original V4 practice cushion dies in three actions on all50registered TRAIN 
 The opening equipment step offers two existing affordable recipes (Soot’s Moonwick rare weapon or Clover’s Mossbrew rare relic), previews their real180fish/30thread cost, and selects the actual crafted item for the normal comparison/equip command. No reward, unlock, currency or saved field is injected. The registered first-route pair changes Soot’s observed damage202→204 with the wand; Clover’s relic changes HP/targeting and healing43→73 in that exact fixture. These are examples, not guaranteed outcomes. Hearthloom rare outfit has no observed outcome change in this fixture; Bellsteel charm is chapter-locked, so neither is offered in the opening.
 
 Evidence: reports/cardrpg-big/a5/e3/opening-pilot/pilot.json, REGISTERED-METHOD.json and CORRECTION.md. Keep all failed original harness attempts and all tested options. Next: real-click timing, three desktop sizes and the full source gates.
+
+
+## A5 B3 — soften the first training step, 2026-11-08
+
+The old challenge6 combines two abrupt multipliers and raises Yarn Giant attack by30.27% over challenge5. Adopt the registered anchored60 curve only: training weight0 through band5, then .6/.7/.8/.9 at6–9 and1 at10+. All enemy stats in1–5 and10–50 remain exact. Existing saved enemyStats continue to determine replay; no save field or version change.
+
+Fresh90account/4050day TRAIN replay yields casual26/30 and regular28/30 first-two wins, heavy28/30 first wins and advice24/24 losses. Early chapter clears and pulls through day5 are unchanged; reward gates pass. The heavy advised retries lose0/2 against2/2 without advice; recommendations are not guaranteed improvements. Evidence: reports/cardrpg-big/a5/B3-DAY7-RETRY.md and b3/anchored-validation-03.
+
+This adopts a bounded progression repair, not balance closure. Original TRAIN50 matrix still has68 fourth-slot misses, worst88pp, cats61.75–86.65%, sets76.75–92.25%, one flat tier step and two band-spread misses (9/1 and10/1). The latter band10 is source-identical to A4. Keep these failures for B1/B2; fresh20001–20500 is unused. Browser x1 and full source checks follow before draft publication.
