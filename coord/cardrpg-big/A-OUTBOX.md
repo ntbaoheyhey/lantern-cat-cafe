@@ -1154,3 +1154,9 @@ Resumed original Home03 PID12101 and threat47 PID12407 without duplicate samples
 Registered isolated impact-delay49 at2852f623d:25%/50% post-shield boss HP damage settles after next own action; no strength/stats/fixture change. Exact semantics/OFF/replays precede384TRAIN50pairs.
 One native coordinator queues110s sharedleases/7s handoffs; original screen fixed before results, no automatic adoption. Pending-damage UI and broader gates would be required later.
 B395 read/no integration; fresh20001–20500 unused. No B/protected edits, model helpers, merge, deploy or main push.
+
+## 2026-11-08T23:26:25.271690+00:00 A5-B1 CHECKPOINT
+Original Home03/47/49/50 jobs preserved; no duplicate samples. Registered precision50 at3101d4acc keeps384cases, exact1–50 prefixes and extends51–500 against unchanged20seed forecasts.
+Original informed-phase sixchecks PASS: type/lint/web1779/rules1192/E2E421/build. Receipt-only audit tools4e2d744fe bind sources, captures, logs and complete markers; no numeric success claimed yet.
+Home03 retains31.37active minutes at frozenhandoff; original watchdog resumes it within15min. Diagnostic matrices retain original errors/negative pairs; no source adoption.
+Runtime27f192301/DRAFT404 unchanged. B395 read/no integration; fresh20001–20500UNUSED. B1/B2/display/cadence/startup/Z open; no B/protected edits/modelhelpers/merge/deploy/mainpush.
