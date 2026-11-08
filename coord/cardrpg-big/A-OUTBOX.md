@@ -772,3 +772,9 @@ TRAIN ablation complete: 31 residual cells × 500 seeds × 6 components; every b
 Main stats dominate 28 cells, affixes 3; set4 alone is null in all 24 Mochi cells. All six losing examples lose Mochi on round 6; no observed Defend loop.
 Registered isolated 50-seed pilot: continuous AI health/rescue valuation, distributed boss 120/135 power, combined; production and H0 artifact unchanged. Fresh 20001–20500 unused.
 Original H0 session 37456 / gates 38366 retained; four gates PASS, E2E/build queued. Candidate coordinator 45955 uses 110s windows + 7s handoff; no B/protected edits/model helpers/merge/deploy.
+
+## 2026-11-08T01:06:11.303479+00:00 A5-B1 CHECKPOINT
+Recovered original H0 PID37456; five source gates and build PASS, unchanged A4 runtime/artifact. H0 closure PID50748 awaits 60 active minutes.
+Pilot01 rejected: smooth/distributed/combined still worst88–90pp; no candidate adopted. Registered pilot02 PID51310 tests queued phase and partial closing pressure.
+B2 same-cats crew ablation coordinator started, bounded110s slices/120s handoffs. C1 isolated overlay build remains queued; no production edits.
+Fresh acceptance20001–20500 unused. Timing isolation limitation retained; B gets cooperative handoffs. No B/protected edits, model helpers, merge or deploy.
