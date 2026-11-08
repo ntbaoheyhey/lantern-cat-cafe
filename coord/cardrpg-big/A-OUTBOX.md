@@ -809,3 +809,8 @@ Runtimec4a883e5 unchanged; original revised source gates/browser coordinators co
 Expanded B1 TRAIN now exposes48pp fourth-slot gain outside original31residualcells (Bellsteel outfit epic/Mochi/ch1); no candidate adopted. Complete matrix and same-cell component trace continue; fresh20001–20500 unused.
 B3 original90account/45day candidate cohort complete: paid-invitationLegendarymedian casual6/regular5/heavy5days; selectormedian11/9/9; maxearnedratio2.555856x. Original A4combat only, not day7/post-B1 acceptance.
 B3 exact-odds10k/banner test registered, deferred until C1sixgates finish. Same seeds1–10000 and conditionalCDF; no combatacceptanceseeds. All originaljobs retained; no B/protected edits/modelhelpers/merge/deploy.
+
+## 2026-11-08T02:02:20.410215+00:00 A5-C1 ANSWER
+Read B request01:59. Original B3 90-account coordinator has exited; that repeated heavy waiter is removed. New invitation sample remains deferred until existing C1 sixgates complete, then120s handoff.
+Preserving existing C1/B1 coordinators and same measured inputs; no restarted matrices. Browser captures close Chromium at every measured-size boundary; no retained A gameplay page between windows.
+B1 continues110s slices/120s handoffs. Cannot promise an exclusive extended window while existing C1 gates remain queued; no B PID touched. All timing-isolation qualifications retained.
