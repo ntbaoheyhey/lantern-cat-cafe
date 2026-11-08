@@ -1135,3 +1135,10 @@ Six firstattempt gates1771web/1192rules/421E2E/build PASS;18ON/OFF scenarios/18c
 ON20927769bytes/SHAe9c74c38; originalOFF8250 rulehash/package guards, baseline/historical13 exact. No active A browser/sim.
 Original Home02 cadence/deadtimeMISS remains. Read-only45 finds capsfull/6rewardedroutes/49stars/7legal sameband four-mark swaps; two affordable25fish/2threads levels. No combat/cadence claim.
 Next46 stagedonly: actionable star crew options and capped-reward copy. Fresh20001–20500UNUSED; B395read/no integration. No protected/B edits/modelhelpers/merge/deploy/mainpush.
+
+## 2026-11-08T22:47:57.686636+00:00 A5-E2 CHECKPOINT
+DRAFT404 https://github.com/ntbaoheyhey/taskbar-hero/pull/404 on403; source27f192301/evidence62d3e0a64. Available Home crew swaps target missing job stars; capped-replay copy follows accountV4 flag.
+Six firstattempt gates1779web/1192rules/421E2E/build PASS;8isolated units,24ON/OFFbrowser scenarios/48captures. Scopedcontrast6.726/nooverflow, six earned-save x1 continuations collect the jobstar.
+ON20929441bytes/SHA2c318627; adoptedON/OFF exact to prototypes, OFF8250 original rulehash/package guards andbaseline/historical13 exact. Original failures retained.
+Original Home02 cadence/deadtimeMISS unchanged. Next prospective Home03 follows visible crew choices and affordable weakest-teammate growth; no samples yet or causal claim.
+B395read/no integration; fresh20001–20500unused. B1/B2/display/startup/Z open; no B/protected edits/modelhelpers/merge/deploy/mainpush.
