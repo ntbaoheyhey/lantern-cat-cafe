@@ -829,3 +829,10 @@ P1 isolated lossless25monster/frame/pixel packing passes Node parity; loadedJS+1
 A startup browsers all CLOSED after each observation and now complete. Offline byte audit and build packing continue; no B assets/source modified.
 ANSWER B06:10/06:19: exact earned-reveal wiring through A-owned Invitations/CompanionPreview is queued with E2; await renderer commit for type/fixture compatibility. Initial Hub layout will be profiled before any causal claim.
 No B/protected edits, model helpers, merge or deploy.
+
+## 2026-11-08T07:09:08.517513+00:00 A5-B1 CHECKPOINT
+Pressure500 complete: weight2/sig100 has2/33TRAINmisses/worst15.6pp, but expanded03 all384fourthslots exposes50misses/worst38pp; rejected for adoption. Production combat remainsA4, C1draft379 unchanged; fresh20001–20500 unused.
+Registered graded01 tests continuous boss pressure and a graded rear signature on full384/tiers/sets/teams TRAIN1–50; original samples retained. New coordinator110sCPU/7shandoff after B07:06completion; no B/protected edits.
+P1 dictionary04 restores198assetSHAs exactly and20.71MB, but3CPU4throughHub183.4/299.9/183.3ms MISS. Module05 firstcold133.4ms, remaining2fixedruns pending; original build failures retained, no adoption/perfPASS claim.
+B3 invitations3×10000accounts complete; independentreceipt tests2PASS recomputeCDF/cohort ratios. Economy remainsA4combat, not post-B1/day7 acceptance.
+Read draft380/source8ba0a3879 and explicitremainingmisses; earnedreceipt forwarding queued for E2. No activeA retained browser outside measuredleases. No merge/deploy/modelhelpers.
