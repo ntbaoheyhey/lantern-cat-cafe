@@ -1,0 +1,19 @@
+{"lock":"acquired","lane":"A","pid":68454,"startedAt":"2026-11-08T07:56:12.594Z","task":"A5 b3-reviewed lint"}
+
+> taskbar-hero@0.0.0 lint /Users/bao/taskbar-hero-cardrpg-a4
+> pnpm -r lint
+
+Scope: 6 of 7 workspace projects
+packages/auth lint$ tsc --noEmit
+packages/chain lint$ tsc --noEmit
+supabase/tests lint$ tsc --noEmit
+packages/game-rules lint$ tsc --noEmit
+packages/chain lint: Done
+packages/auth lint: Done
+packages/game-rules lint: Done
+supabase/tests lint: Done
+packages/api-contract lint$ tsc --noEmit
+packages/api-contract lint: Done
+apps/web lint$ tsc --noEmit
+apps/web lint: Done
+{"lock":"released","pid":68454,"task":"A5 b3-reviewed lint"}

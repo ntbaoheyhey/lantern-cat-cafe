@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-B3 reward source adopted at dd216ebf9 on codex/cardrpg-a5-b3-2026-11-08 after exact4050/4050 corrected cohort parity. Shared stamps360, selector24, soft13/hard24/+700bp; actual odds/cap/selector UI and truthful tomorrow allowance wired. Combat stays A4; fresh20001–20500 UNUSED.
+Reward-only B3 reviewed source06dc9d3ba closed: six gates PASS (web1739/rules1113/E2E421/build), OFF165/8250 exact, three-width earned24mark selector PASS. Personal1024 capture reviewed; sticky heading clearance corrected. Durableartifact22ad9eb9/20,818,233bytes. Reward draft publication on381 next; B3 overallPARTIAL (day7 combat/retry pending).
 ## NEXT
-Complete existing source gates session52823, fresh OFF165/8250 session95739 and targeted earned-selector/offline-build/three-width UI session23235. Logs under b3-adopted/gates and b3/{off,ui-checks}; do not duplicate or mutate measured rule source while jobs run. Then review captures, preserve receipts, draft reward-only B3 on381; day7 retry and B1/B2 still pending.
+Publish reward draft, mirror STATE and append A-OUTBOX. Original stat-budget05 coordinator69562/session86963 continues immutable snapshot TRAIN; relative035 first384piece cells32miss/max88pp, not adoption. E1 staged17files under /tmp/cardrpg-a5-e1-integration pending source adoption/tests/browser after B3. Fresh20001–20500 UNUSED.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -114,3 +114,9 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - Published P1 DRAFT https://github.com/ntbaoheyhey/taskbar-hero/pull/381 on#379, head95e1c1c4f, no merge/deploy. Stack376→377→379→381. Three trailing-whitespace lines in registeredstartup harness intentionally retained with exactmeasuredhash; PR records this provenance exception. B1/B2remainMISS, not deferred acceptancepassed.
 
 - Resume 2026-11-08T07:48:33.754688+00:00: preserved original reward coordinator61157; all90accounts/4050days completed with exact original hashes. All-source firstLegendary median6/5/5days (casual/regular/heavy), regular100%by7/14, selector11/9/9days; ratios<=2.555857x. Three independent receipt testsPASS. Current source dd216ebf9; tests/build/browser/OFF in progress. Added no saved fields, combat/B/protected edits or acceptance sampling.
+
+- Resume: original source suite completed, no repeated earned cohort/OFF/baseline job. B3 selector settles24→0 exactly once, pity unchanged at all3widths; screenshots reveal1024heading obscured by sticky fairness. Added existing measured clearance to V4 selector, targeted geometry assertion and separate reviewed receipts; no combat/protected/B edits.
+
+- Registered stat-budget05 TRAIN before sampling at /tmp/cardrpg-a5-stat-budget-05 and a5/b1/stat-budget-05: relative main-stat3.5%/5% (cap12%) atop exact pressure500weight2/sig100, all384/210/64/663cases TRAIN1–50. Source copied immutably to /tmp/cardrpg-a5-stat-budget-05/source; coordinator69562/session86963,110slock/7shandoff. No production adoption/acceptance. E1 16-file integration staged under /tmp/cardrpg-a5-e1-integration; untested, not adopted.
+
+- B3 reviewed closure PASS: source06dc9d3ba, three independent numeric receipt tests, all12reviewedcaptures minimumscopedcontrast8.376/nooverflow/errors/remote. Exactearned24→0/pity unchanged; sourcechecks/historical13/baseline/OFF165/8250 PASS. Original type portability and missing temporary-Python build failures retained; currentPillow11.3.0 used. Artifact22ad9eb9/20818233 archived. B3 stillPARTIAL onA4combat; day7retry/collectible/post-B1 gates remain pending.
