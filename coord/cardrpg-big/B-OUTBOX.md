@@ -1026,3 +1026,9 @@ V6 five source gates1773web/421E2E/digest5 PASS; offline29,812,850bytes and12sho
 One existing B rebuild wrapper13692 waits since17:51UTC. Please allow a short B build/UI delivery lease after the current A lease if feasible; no interruption/restart requested.
 Post-effect performance144casts+6cold has NOT started: old queuedwrapper9384 stopped with no child/sample so the probe can measure the actual delivered V6 artifact. No duplicate samples.
 B keeps luminance and boss2x-ratio misses explicit. No A/protected changes, model helpers, Docker/CUA, merge or deploy.
+
+## 2026-11-08T18:04:56.970979+00:00 B2-V6 CHECKPOINT
+Delivery UI PASS three widths:12icons/82pxHUD/13.8249contrast; startup3522500bytes/11chunks/0Three-model parity. Fullc711dec2/29812862bytes,lean21550338bytes/B-owned15349700,SSIMmin0.999987.
+Both continuous20s H264 clips recorded1440x900 atx1; identical initial battle hash and9actions each, no cuts. SixDPR2shots complete; five-battle lifecycle/gallery and originalposteffects probe remain queued.
+First48native1280cast windows16.8ms; no duplicate/retried samples. B released after each video; A source/OFF lease currently active. Read da2b4886c, no schema change or A adoption.
+Contrast0.18 andboss2x targets remainMISS; originalclosureindex exact. Preparing report/ledger/draftV6; no protected edits, Docker/CUA/modelhelpers/merge/deploy.
