@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-DRAFT404 is published on403 and mirrored to sync/ledger. Original Home03 browser PID12101/tool78108 runs its registered60active-minute journey on immutable27f192301/2c318627 artifact. Do not restart. Isolated threat-beats47 coordinator PID12407/tool95798 waits for shared lock; no runtime adoption.
+Runtime27f192301/DRAFT404 unchanged. Original Home03 PID12101 continues its registered60active-minute browser. Threat47 original semantic attempt retained; corrected JSON-only harness retry PID17707/tool76881 queues unchanged arms. Impact-delay49 PID17057/tool55620 passed quarter semantics and queues its384TRAIN50 matrix. Display precision50 PID18122/tool65487 extends original22 prefixes without rerunning1–50; fresh20001–20500 UNUSED.
 ## NEXT
-Retain original Home03 and47 samples. Once complete, run a5-engagement-informed-report.mjs and a5-threat-beats-audit.mjs; review screenshots/negative pairs, update reports and phase evidence. All original cadence/balance/startup misses remain open. Fresh20001–20500 UNUSED. No B integration.
+Retain original jobs. Guardian /tmp/cardrpg-a5-impact-delay-49/handoff.py (tool7708) pauses Home only after frozen lease3, resumes after diagnostics end or15min watchdog+7s. Run the three receipt auditors and original informed-engagement report only after their complete markers; inspect screenshots/negative pairs and update reports. No source adoption is automatic. All B1/B2/display/cadence/startup/Z misses remain open.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -330,3 +330,5 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - Scheduling-only guardian tool95114 waits for Home03 lease2 frozen handoff, pauses original12101 with no active lock child, then resumes after diagnostic12407 exits or15min watchdog+7s. Script/method archived underthreat47. No original journey, source, seeds or sampling script changed.
 
 - 2026-11-08T23:08:52.903386+00:00: Resumed original Home03 PID12101 and threat47 PID12407 without duplication; separate forecast48 remains0.439/0.620/0.688 and chapter1MISS. Registered isolated impact-delay49 before samples:25%/50% post-shield boss HP damage settles after next own action, exact damage/source and OFF/tutorial semantics first, unchanged384TRAIN50pairs and prospective screen. No runtime, B/protected, fixture or acceptance change.
+
+- 2026-11-08T23:16:33.968274+00:00: Registered separate TRAIN precision50 at3101d4acc: unchanged20-seed forecasts against combat/gear51–500,384cases, original50prefix exact/no rerun. Registration guard caught two later copy/advice files; exact original22 snapshot is used and differences archived. No acceptance, score fit or runtime edit. Threat47 semantic harness compares parsed JSON after retaining original undefined-property failure and two no-sample correction-command errors. Quarter49 semantics18replays/45OFF/five controlled invariantsPASS; numeric matrices still queued.
