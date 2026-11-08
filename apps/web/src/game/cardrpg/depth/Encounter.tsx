@@ -11,6 +11,7 @@ import { PreparationV4, OutcomeV4 } from './PreparationV4';
 import { ForecastV4 } from './ForecastV4';
 import { AdviceV4 } from './AdviceV4';
 import { ScoutingV4 } from './ScoutingV4';
+import { PracticePayoffV4 } from './OpeningV4';
 
 function CrewDetails({ v4, children }: { v4: boolean; children: ReactNode }) {
   return v4 ? <details className="cr-panel dp-v4-crew-details"><summary>Equipped gear and skills</summary>{children}</details> : <>{children}</>;
@@ -41,6 +42,7 @@ export function Prepare({ m }: { m: DepthModel }) {
     .reduce((sum, actor) => sum + actor.hp / 5 + actor.attack * 2 + actor.defense * 1.5, 0));
   const difficulty = !prediction ? 'Estimating…' : prediction.wins < 3 ? 'Hard' : prediction.wins === 5 && prediction.remaining > .55 ? 'Easy' : 'Even';
   return <><PageTitle eyebrow={m.tutorialBattle ? 'Practice table' : R.CHAPTERS[battle.chapter - 1]!.name} title="Prepare your team" />
+    {battle.v4 && m.tutorialBattle && <p className="dp-v4-opening-hint">Choose who takes the first bump. Mochi can shield himself; Soot and Clover prefer the back.</p>}
     <div className="cr-actions"><button className="cr-primary dp-fight" onClick={() => m.fight()}>Fight</button><button onClick={() => m.leave()}>Return to cafe</button><span>{battle.v4 ? 'Pick your plan. Your cats take it from here.' : 'Your companions choose their actions. Watch, then improve your team.'}</span></div>
     {battle.v4 ? <ForecastV4 setup={battle.initial} /> : <>
     <section className="cr-panel dp-matchup"><div><small>TEAM POWER</small><strong>{power('party')}</strong></div><div><b>{difficulty}</b><small>{battle.v4 ? (prediction ? 'Rough forecast · your current crew' : 'Reading the matchup…') : prediction ? `${prediction.wins}/5 simulated wins` : 'Trying five seeded fights for this team'}</small></div><div><small>ENEMY POWER</small><strong>{power('enemy')}</strong></div></section>
@@ -74,6 +76,7 @@ export function BattleResult({ m }: { m: DepthModel }) {
   const labels = { damage: 'Damage', healing: 'Healing', taken: 'Damage taken' };
   return <><PageTitle eyebrow={`${m.replay ? 'Replay' : 'Encounter'} · ${battle.round} rounds${showReviewTools(!!battle.v4) ? ` · seed ${battle.seed}` : ''}`} title={battle.result === 'party' ? 'Victory' : battle.result === 'enemy' ? 'Defeat' : 'Recorded segment complete'} />
     <div className="cr-actions"><button className="cr-primary" onClick={() => m.finish()}>{m.replay ? 'Close replay' : m.tutorialBattle ? 'Complete lesson' : 'Continue to rewards'}</button>{!m.replay && <><button onClick={() => m.replayLast()}>Watch replay</button><button onClick={() => m.improveTeam()}>Improve team</button></>}</div>
+    {battle.v4 && m.tutorialBattle && !m.replay && <PracticePayoffV4 battle={battle} />}
     {battle.v4 && <OutcomeV4 battle={battle} />}
     {battle.v4 && battle.result === 'enemy' && !m.replay && !m.tutorialBattle && <AdviceV4 m={m} />}
     <section className={`cr-panel dp-result-banner ${battle.result === 'party' ? 'victory' : ''}`}><CompanionCard id={summary.mvp!.catalogId} m={m} /><div><small>MOST VALUABLE COMPANION</small><h2>{summary.mvp!.name}</h2><p>{summary.mvp!.damage} damage · {summary.mvp!.healing} healing · {summary.mvp!.shielding} shields</p><small>Contribution = damage + healing + ¼ shields.</small></div></section>

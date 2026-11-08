@@ -1,0 +1,19 @@
+{"lock":"acquired","lane":"A","pid":17918,"startedAt":"2026-11-08T08:53:06.708Z","task":"A5 E3 opening TRAIN fixture pilot"}
+file:///private/tmp/cardrpg-a5-e3-prep/pilot.mjs:32
+ await writeFile(root+'/pilot.json',JSON.stringify({method,rows},null,2));console.log(JSON.stringify(rows.map(r=>r.kind==='practice'?{hp:r.hp,formation:r.formation,wins:r.outcomes.filter(o=>o.result==='party').length,maxActions:Math.max(...r.outcomes.map(o=>o.actions)),example:r.outcomes[6]}:{id:r.id,cat:r.cat,before:r.before,after:r.after}))));
+                                                                                                                                                                                                                                                                                                                                                         ^
+
+SyntaxError: Unexpected token ')'
+    at compileSourceTextModule (node:internal/modules/esm/utils:319:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:89:18)
+    at #translate (node:internal/modules/esm/loader:438:20)
+    at afterLoad (node:internal/modules/esm/loader:506:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:511:12)
+    at #getOrCreateModuleJobAfterResolve (node:internal/modules/esm/loader:564:36)
+    at afterResolve (node:internal/modules/esm/loader:611:52)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:617:12)
+    at node:internal/modules/esm/loader:636:32
+    at TracingChannel.tracePromise (node:diagnostics_channel:370:14)
+
+Node.js v24.22.2
+{"lock":"released","pid":17918,"task":"A5 E3 opening TRAIN fixture pilot"}

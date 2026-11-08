@@ -114,6 +114,10 @@ export function Invitations({ m }: { m: DepthModel }) {
   }
 
   return <><PageTitle eyebrow="Earned stamps only" title="A new face at the door." />
+    {m.state.gameplayV4 && m.state.tutorial === 3 && m.state.freeInvite && !inRun && !revealing && <section className="cr-panel dp-v4-opening">
+      <h2>A new friend. A new plan.</h2><p>Choose one piece for your first route, then see what changes.</p>
+      <button className="cr-primary" onClick={() => m.go('inventory')}>Choose your first upgrade</button>
+    </section>}
     <div className="cr-tabs dp-banner-tabs" aria-label="Invitation banners">{BANNERS.map(choice =>
       <button key={choice.id} aria-pressed={bannerId === choice.id} disabled={revealing}
         onClick={() => { setBannerId(choice.id); setResults([]); }}>{choice.name}</button>)}</div>

@@ -1,0 +1,5 @@
+# E3 opening browser method — registered before execution
+
+Fresh save, default player mode, x1, no Skip or time acceleration. Click practice, inspect two row placements, retain Mochi in front, watch the automatic result and its row explanation. Complete the lesson, open the welcome invitation and watch its reveal, choose the existing Soot wand recipe at its actual cost, compare/equip, start chapter1’s normal UI-seeded route, choose its first stop, watch x1, and inspect the first scouted clue. No seed reroll or imported state. Record every click, resource snapshot, full battle and screenshot. Compare the first route battle to the same seed with the actual previous wand using a separate rules replay.
+
+Targets: practice victory≤25s, placement+invitation+equip≤180s, map with one scouted trait≤300s. No reading speed or elapsed30-minute engagement claim follows from this five-minute path. Start1280×720, then repeat targeted flow1440×900 and1024×600; each is a different viewport observation, not a timing retry. Preserve failures. Full screenshot pack waits for Z.

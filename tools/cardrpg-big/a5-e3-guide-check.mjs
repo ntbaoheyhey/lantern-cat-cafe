@@ -1,0 +1,7 @@
+// REFERENCE: E3 offline walkthrough. Targeted static page check, not the Z screenshot pack.
+import {chromium} from '../../apps/web/node_modules/@playwright/test/index.mjs';
+import {mkdir,writeFile} from 'node:fs/promises';
+import {resolve} from 'node:path';
+import assert from 'node:assert/strict';
+const browser=await chromium.launch({channel:'chromium',headless:true}),out='reports/cardrpg-big/a5/e3/guide';await mkdir(out,{recursive:true});const rows=[];
+try{for(const width of [1280,1440,1024]){const page=await browser.newPage({viewport:{width,height:width===1024?600:width===1440?900:720}}),errors=[],remote=[];page.on('pageerror',e=>errors.push(String(e)));page.on('request',r=>{if(/^https?:/.test(r.url()))remote.push(r.url());});await page.goto('file://'+resolve('docs/cardrpg3/a5-first-5-minutes.html'));await page.screenshot({path:`${out}/${width}-top.png`});for(const img of await page.locator('article img').all()){await img.scrollIntoViewIfNeeded();await img.evaluate(e=>e.decode());}assert.equal(await page.locator('article img').count(),6);await page.locator('footer').scrollIntoViewIfNeeded();await page.screenshot({path:`${out}/${width}-evidence.png`});const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);assert.equal(overflow,0);assert.deepEqual(errors,[]);assert.deepEqual(remote,[]);rows.push({width,overflow,images:6,errors,remote});await page.close();}await writeFile(out+'/checks.json',JSON.stringify({passed:true,rows},null,2));console.log(JSON.stringify(rows));}finally{await browser.close();}

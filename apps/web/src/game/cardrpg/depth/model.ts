@@ -167,7 +167,8 @@ export class DepthModel {
   }
   tutorial() {
     this.tutorialBattle = R.createBattle({ seed: 7, chapter: 1, cats: R.battleCats(this.state), enemies: ['practice-cushion'], tutorial: true,
-      ...(R.gameplayV4(this.state) ? { gameplayV4: true, plan: this.state.v4?.plan } : {}) });
+      ...(R.gameplayV4(this.state) ? { gameplayV4: true, plan: this.state.v4?.plan,
+        enemyStats: { 'practice-cushion': { hp: 300, attack: 60, defense: 0 } } } : {}) });
     this.plan = null; this.watching = false; this.paused = false; this.go('prepare');
   }
   fight() {
