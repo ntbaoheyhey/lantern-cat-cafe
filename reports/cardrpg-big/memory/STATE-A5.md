@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-C1 specialties DRAFT396 complete on394; all source/OFF/UI receipts retained. B1 current-cliffs24 registered on codex/cardrpg-a5-b1-cliffs-2026-11-08 before sampling; source remains copy-only a30757265. No production combat change.
+Current-cliffs24 complete and audited:68residuals/20,400component battles,3,400exactcurrent22pairs. Chapter2mainstat survival cliff; set4null. New hit-envelope25 registered on current source before sampling; no runtime change.
 ## NEXT
-Run registered current-cliffs24:68current TRAIN50 misses ×6components; exact original22before/full parity; six observer replays. Analyze current chapter2 failure before choosing any new tuning. Do not rerun completed original matrices or use fresh20001–20500. B1/B2/display/cadence/startup/Z remain open; stack376→377→379→381→382→383→384→385→386→388→394→396.
+Run registered hit-envelope25 all384fourth-slotTRAIN1–50pairs,3isolated bossdamage envelopes; retain saturation and allmisses before deciding broader work. B1/B2/display/cadence/startup/Zopen; fresh20001–20500UNUSED; no priorjobsactive.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -226,3 +226,5 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - 2026-11-08T18:39:18.379616+00:00: Published DRAFT396 https://github.com/ntbaoheyhey/taskbar-hero/pull/396 on394, evidencec85716f54. Source gates and UI checks unchanged; no duplicate PR or runtime changes.
 
 - 2026-11-08T18:41:52.652081+00:00: Registered current-cliffs24 before sampling;68current22misses,20400component battles, six deterministic traceexamples. Worst nowch2(1→45/50), not oldch3. No boss-cap experiment or production retune is registered/adopted. Source unchanged, freshacceptance untouched.
+
+- Resume: preserved completed24receipts; no duplicate simulations. Audited current source and alloriginal22pair outcomes. Three prospective boss-hit envelopes25 registered; source snapshot and exact-once overlay identity required. No production/acceptance change.
