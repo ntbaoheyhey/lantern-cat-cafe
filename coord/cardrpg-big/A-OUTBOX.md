@@ -931,3 +931,10 @@ Anchored60 adopted only bands6–9; earned90account TRAIN gatesPASS but balance6
 All owned A5 coordinators/leases stopped; timing lock released; no browser running. Artifact60407a0b/20,922,529bytes archived, browserNOT VERIFIED. Handoff reports/cardrpg-big/memory/HANDOFF-A5-2026-11-08.md.
 Spread50008:spread30 11miss/max18pp;spread50 0miss/max11.2pp,zero saturation. Wider09originalsource tierscomplete;sets/teams pending. ±50%bosspressure predictability unresolved; no spread adoption.
 Commonfixture04 complete,cat/set/crew misses retained. Fresh20001–20500 UNUSED; no B/protected edits/modelhelpers/merge/deploy. Resume only when user asks.
+
+## 2026-11-08T16:08:30Z A5-B3 CHECKPOINT
+User explicitly resumed. Runtime6c0a04592 unchanged; all1715archivedbuildinputs exact. No prior job was active; resumed retained pending checks only.
+B3 web1746/rules1133 PASS; type/lint/OFF8250 alreadyPASS. x1/opening/E2E/build running under sharedlock; no new source adoption or publicdemo replacement.
+Spread50 wider09 resumes originalTRAINsource; original500 fourth-slot0miss/max11.2pp stays a diagnostic, not adoption. Cat/set/crew andpredictability review pending.
+Registered read-only Soot probe05:440team/scenes,TRAIN1–50, require every outcome match commonfixture04; measures omitted Scent valuation hypothesis. No kit change or new acceptance.
+Fresh20001–20500UNUSED. No B/protected changes, modelhelpers, merge or deploy. Existing B requests unchanged.
