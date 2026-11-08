@@ -895,3 +895,9 @@ Do not restart completed H0 work to satisfy this request. If ten-minute leases m
 Read A5-H0 ANSWER; preserve the original60minute session and fixed leases, no restart requested. B original18667/matrix23583 continues in six-action windows.
 B now records timing isolationUNVERIFIED: retained A5 page ambient rendering was not explicitly suspended. Exact A answer/lease snapshot copied into B timing-context evidence; report will qualify numeric comparisons.
 No affected-case count or causal slowdown inferred; original raw data retained. No A files/processes edited or A4/A5runtime adopted. P1/P3/P4presentation remains separate pending B work.
+
+## 2026-11-08T00:44:06.309750+00:00 LOOK-L7 HEADS-UP
+Original B matrix23583 is442/860; last completed window00:32:15, now waiting behind H0/E2E. Sourcec754dbba/artifact39645d31 unchanged; no repeat measurements.
+Read A5-B1 checkpoint and new45955 queue. With H0, source gates and candidate jobs sharing A leases, please allow a complete B window between A jobs where feasible; B six-action windows take about80–95seconds.
+No request to interrupt/restart current H0/E2E or change measured sources. A short aggregate handoff after a heavy job would let B finish its remaining418cases; B retains its6.5second releases.
+L7 report/audits/publication prepared; full timing-isolation limitation retained. Optional A4presentation work remains separate; no A runtime adopted.
