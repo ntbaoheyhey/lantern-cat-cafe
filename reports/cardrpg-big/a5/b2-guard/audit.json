@@ -1,0 +1,192 @@
+{
+  "source": "db69140eb06a4625d9ec22a977c36444540bd56d",
+  "status": "Guard-only source checks PASS; B1/B2 balance and A5 acceptance remain open.",
+  "change": "V4 energy-to-shield follow-up skips a missing living recipient after fatal reflection. Normal shield and legacy energy stay unchanged.",
+  "gates": [
+    {
+      "name": "typecheck",
+      "attempt": 1,
+      "code": 0,
+      "head": "db69140eb06a4625d9ec22a977c36444540bd56d",
+      "started": "2026-11-08T16:26:27.671Z",
+      "ended": "2026-11-08T16:28:42.051Z",
+      "log": "reports/cardrpg-big/a5/b2-guard/gates/typecheck-attempt-1.log",
+      "sha256": "979dc42ebbab15604180317673b93355e2ce4b05438462ddccef865156a259e5",
+      "counts": []
+    },
+    {
+      "name": "lint",
+      "attempt": 1,
+      "code": 0,
+      "head": "db69140eb06a4625d9ec22a977c36444540bd56d",
+      "started": "2026-11-08T16:28:49.053Z",
+      "ended": "2026-11-08T16:33:25.842Z",
+      "log": "reports/cardrpg-big/a5/b2-guard/gates/lint-attempt-1.log",
+      "sha256": "c3d199ed2c5a0d0facf012751f7a5fec79e523d4b091abe70007258124c63ed7",
+      "counts": []
+    },
+    {
+      "name": "web-unit",
+      "attempt": 1,
+      "code": 0,
+      "head": "db69140eb06a4625d9ec22a977c36444540bd56d",
+      "started": "2026-11-08T16:33:32.844Z",
+      "ended": "2026-11-08T16:33:52.200Z",
+      "log": "reports/cardrpg-big/a5/b2-guard/gates/web-unit-attempt-1.log",
+      "sha256": "0274bfc077b5b03ea41fbba71bf8506f69f8abf33cc83999fe8709fce4cdf137",
+      "counts": [
+        " Test Files  178 passed (178)",
+        "      Tests  1746 passed (1746)"
+      ]
+    },
+    {
+      "name": "rules",
+      "attempt": 1,
+      "code": 0,
+      "head": "db69140eb06a4625d9ec22a977c36444540bd56d",
+      "started": "2026-11-08T16:33:59.203Z",
+      "ended": "2026-11-08T16:34:29.741Z",
+      "log": "reports/cardrpg-big/a5/b2-guard/gates/rules-attempt-1.log",
+      "sha256": "6409b91ef8f08f818a6605e3ca268385f85dfd0f92f33db6ba19e70d0102b452",
+      "counts": [
+        " Test Files  68 passed | 3 skipped (71)",
+        "      Tests  1135 passed | 2 expected fail | 11 skipped (1148)"
+      ]
+    },
+    {
+      "name": "e2e",
+      "attempt": 1,
+      "code": 0,
+      "head": "db69140eb06a4625d9ec22a977c36444540bd56d",
+      "started": "2026-11-08T16:34:36.741Z",
+      "ended": "2026-11-08T16:41:56.322Z",
+      "log": "reports/cardrpg-big/a5/b2-guard/gates/e2e-attempt-1.log",
+      "sha256": "14df6cb4bdd10a9e845414b0526e201bb0f86b84e57671d06c1a1719c20e537f",
+      "counts": [
+        "  421 passed (2.1m)"
+      ]
+    },
+    {
+      "name": "build",
+      "attempt": 1,
+      "code": 0,
+      "head": "db69140eb06a4625d9ec22a977c36444540bd56d",
+      "started": "2026-11-08T16:42:03.325Z",
+      "ended": "2026-11-08T16:49:32.505Z",
+      "log": "reports/cardrpg-big/a5/b2-guard/gates/build-attempt-1.log",
+      "sha256": "8df373d3017aaa8673be373f32f8351137dba89787e3b67318ef151b14b81e6c",
+      "counts": []
+    }
+  ],
+  "off": {
+    "offBehavior": "PASS",
+    "sha256": "47477251b3d20ab602bee5c55a56cdd661e111b1386e298e0c9bc67737fecfa3",
+    "cells": 165,
+    "routes": 8250
+  },
+  "sourceFilesChecked": 45,
+  "followup": {
+    "sourceReceipt": {
+      "path": "reports/cardrpg-big/a5/b2/scent-policy-crash-07/failure.json",
+      "sha256": "426548763d60bf70eaf3342a6201fc6223079018ba0f837639987f55e0dcc4f7"
+    },
+    "exactPrefixReplay": true,
+    "automaticPreviewImmutable": true,
+    "everyLegalActionResolves": true,
+    "fatalFollowupResult": "enemy",
+    "fatalFollowupReplayExact": true,
+    "auto": {
+      "actorId": "velvet",
+      "skillId": "velvet-3",
+      "targetId": "foe-0-teacup-healer"
+    },
+    "outcomes": [
+      {
+        "choice": {
+          "actorId": "velvet",
+          "skillId": "velvet-1",
+          "targetId": "foe-0-teacup-healer"
+        },
+        "result": null
+      },
+      {
+        "choice": {
+          "actorId": "velvet",
+          "skillId": "velvet-1",
+          "targetId": "foe-1-kettle-knight"
+        },
+        "result": "enemy"
+      },
+      {
+        "choice": {
+          "actorId": "velvet",
+          "skillId": "velvet-2",
+          "targetId": "foe-0-teacup-healer"
+        },
+        "result": "enemy"
+      },
+      {
+        "choice": {
+          "actorId": "velvet",
+          "skillId": "velvet-2",
+          "targetId": "foe-1-kettle-knight"
+        },
+        "result": "enemy"
+      },
+      {
+        "choice": {
+          "actorId": "velvet",
+          "skillId": "velvet-3",
+          "targetId": "foe-0-teacup-healer"
+        },
+        "result": null
+      },
+      {
+        "choice": {
+          "actorId": "velvet",
+          "skillId": "velvet-3",
+          "targetId": "foe-1-kettle-knight"
+        },
+        "result": "enemy"
+      },
+      {
+        "choice": {
+          "actorId": "velvet",
+          "skillId": "defend",
+          "targetId": "velvet"
+        },
+        "result": null
+      }
+    ]
+  },
+  "scope": {
+    "scope": "PASS",
+    "baseline": "PASS",
+    "historicalSimFiles": 13,
+    "author": "ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com> 1794156735 +0700"
+  },
+  "receipts": [
+    {
+      "path": "reports/cardrpg-big/a5/b2-guard/gates/checks.json",
+      "sha256": "9b9acf674913b08255b9599113ddc01070814cae408ef9117d40a7488999e84e"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/b2-guard/off/checks.json",
+      "sha256": "b266e345cf77ddcfcdc0772a11a6e690e577fcf2168c09f2316c5fc4d4230e4d"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/b2-guard/off/source.json",
+      "sha256": "326f4a587fe93bbe6dad08553f96b75d90ad572116eb76cdccc956140e6ac772"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/b2/fatal-followup/checks.json",
+      "sha256": "efb58577f90d94092d5c609fe3c6a0a3b3729e20e1a576db62602ae307f0658c"
+    }
+  ],
+  "limitations": [
+    "No Scent policy or kit trial is adopted.",
+    "Fresh acceptance seeds 20001–20500 remain unused.",
+    "The current public offline demo is not rebuilt by this source-only correction; replacement remains scheduled for Z.",
+    "No new screen or flow; existing source E2E checks do not constitute a new screenshot pack or 30-minute engagement measurement."
+  ]
+}

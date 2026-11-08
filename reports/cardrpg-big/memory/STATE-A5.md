@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-B3 draft386 preserved; current branch codex/cardrpg-a5-b2-kit-2026-11-08, runtime db69140eb unchanged. Guard type/lint/web1746/rules1135/OFF8250 PASS; original E2E/build still running. Support08 complete54,400 exact-parity battles; no kit adoption.
+B3 draft386 preserved; branch codex/cardrpg-a5-b2-kit-2026-11-08. Guard-only runtime db69140eb passes all six source gates and closure audit; no Scent/Soot/support kit adopted. Original support10 coordinator PID64374 continues with bounded shared-lock slices.
 ## NEXT
-Preserve guard coordinator PID59851, Soot reach09 PID61962, support10 tool92353. Support10 independently tests Cinnamon rescue cooldown and Inkcap rear suppression; original AI/fixtures, no production edits. Review complete receipts before adoption. Guard closure verifier prepared tools/cardrpg-big/a5-guard-close.mjs. B1/B2/display/cadence/startup/Z remain open; fresh20001–20500 UNUSED. Stack376→377→379→381→382→383→384→385→386.
+Publish guard-only draft on386 after scope/source checks; preserve original support10 jobs and review both complete variants. Register eligible single-carrier set diagnostic before sampling, keeping all eight sets/scenes and old results. B1/B2/display/cadence/startup/Z remain open; fresh20001–20500 UNUSED. Stack376→377→379→381→382→383→384→385→386.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -180,3 +180,5 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - 2026-11-08T16:32:37.523747+00:00: resumed existing Scent06a coordinator without duplicate work; all1840cells complete. Exact63371original06 and76670crash07prefix outcomes preserved. Soot−1.19545pp (1685improved/1948worsened), seven of eight scenes worsen; reject evaluator. Separate missing-recipient fix remains production. Guard six gates/OFF source-bound to db69140eb running under lock. Read-only support08 measures1088original cells with exact baseline parity. Registered reach09 before sampling: rear-target access alone versus access+oneCrumb after successful mark, original AI; two1840cell TRAIN1–50 candidates. No production kit change or acceptance.
 
 - 2026-11-08T16:41:51.913906+00:00: read rules/prompt/outboxes and preserved all live original jobs; no duplicate source suite or OFF run. Support08 exact54,400common04 outcomes; Cinnamon83.63%, Comfort cup286445/403323actions; Inkcap54.47%, Sorrel52.31%. Report B2-SUPPORT-KITS.md retains descriptive limits. Prospectively registered support10 independent rescue-rest and quiet-reach on original common source plus guard; no Soot/anchored combination. Runner tool92353, bounded110s leases/7s handoffs. Guard closure source/hash/scope verifier prepared, not executed while gates pending. Syncf515e10c7 pushed.
+
+- 2026-11-08T16:52:15.174869+00:00: user continued; original guard gates complete1746web/1135rules/421E2E/build. Independent guard closure/source/OFF8250/baseline/historical13 auditPASS. Both Soot reach09 variants exactbaseline outcomes/zeroBlackcup, rejected. Set activation11 proves no Scald eligibility in original starter fixture; no set or threshold changed. Original support10 PID64374 retained, no duplicate jobs.
