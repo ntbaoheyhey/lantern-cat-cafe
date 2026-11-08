@@ -18,7 +18,16 @@ assert(source);
 for (const name of ['typecheck', 'lint', 'web-unit', 'rules', 'e2e', 'build']) {
   const check = gates.findLast(row => row.name === name);
   assert.equal(check?.code, 0, name);
-  assert.equal(check.head, source);
+  execFileSync('git', ['merge-base', '--is-ancestor', source, check.head]);
+  assert.equal(execFileSync('git', ['diff', '--name-only', source, check.head, '--', 'apps', 'packages',
+    'package.json', 'pnpm-lock.yaml', 'pnpm-workspace.yaml'], { encoding: 'utf8' }).trim(), '');
+}
+const e2eAttempts = gates.filter(row => row.name === 'e2e');
+if (e2eAttempts.at(-1).scope?.startsWith('last failed')) {
+  assert(e2eAttempts[0].counts.includes('  420 passed (2.1m)'));
+  assert(e2eAttempts.at(-1).counts.some(line => /^  1 passed \(/.test(line)));
+  const failed = await read(`${root}/gates/e2e-original-failure/last-run.json`);
+  assert.equal(failed.failedTests.length, 1);
 }
 for (const row of gates) assert.equal(sha(await readFile(row.log)), row.sha256, row.log);
 execFileSync('git', ['merge-base', '--is-ancestor', source, 'HEAD']);

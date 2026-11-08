@@ -15,8 +15,18 @@ const steps = [['typecheck', ['typecheck']], ['lint', ['lint']],
   ['web-unit', ['--filter', '@taskbar-hero/web', 'test']], ['rules', ['--filter', '@taskbar-hero/game-rules', 'test']],
   ['e2e', ['--filter', '@taskbar-hero/web', 'test:e2e', '--workers=4']], ['build', ['build']]];
 const deadline = Date.now() + 19 * 60000;
-for (const [name, args] of steps) {
+for (const [name, originalArgs] of steps) {
   if (rows.some(row => row.name === name && row.code === 0)) continue;
+  let args = originalArgs;
+  let scope = 'complete';
+  if (name === 'e2e' && process.env.A5_E2E_LAST_FAILED === '1') {
+    assert(rows.some(row => row.name === name && row.code !== 0), 'Retain the original complete run first');
+    const retained = await readFile(`${out}/e2e-original-failure/last-run.json`, 'utf8');
+    assert.equal(await readFile('apps/web/test-results/5910-5911/.last-run.json', 'utf8'), retained);
+    assert(JSON.parse(retained).failedTests.length > 0);
+    args = ['--filter', '@taskbar-hero/web', 'test:e2e', '--last-failed', '--workers=1'];
+    scope = 'last failed cases only; passed cases retained from the original complete run';
+  }
   assert(Date.now() < deadline, 'Lease deadline');
   const attempt = rows.filter(row => row.name === name).length + 1;
   assert(attempt <= 3, 'Two correction rounds exhausted: ' + name);
@@ -32,7 +42,7 @@ for (const [name, args] of steps) {
     });
   } finally { await fd.close(); }
   const body = await readFile(log, 'utf8');
-  rows.push({ name, attempt, code, head, started, ended: new Date().toISOString(), log,
+  rows.push({ name, attempt, code, head, scope, command: ['pnpm', ...args], started, ended: new Date().toISOString(), log,
     sha256: createHash('sha256').update(body).digest('hex'),
     counts: body.split('\n').filter(line => /Tests |Test Files |\d+ passed|\d+ failed|\d+ skipped|expected fail/.test(line))
       .map(line => line.replace(/\x1b\[[0-9;]*m/g, '')) });
