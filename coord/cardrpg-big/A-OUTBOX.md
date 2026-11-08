@@ -821,3 +821,11 @@ Host restart removed earlier temporary files/processes; C1 HTML restored SHA788f
 OFF8250 reused with63rule-file byte parity; baseline/historical13 exact. Public demo remains A4 untilZ. C1 remaining universalcopy/fullcontrast qualifications visible in report.
 Original recovered expanded02 coordinator4640 continuesTRAIN1–50,110slices/120shandoffs; no candidate adopted, fresh20001–20500unused. Old pre-restart PIDs historical only.
 No B/protected edits, modelhelpers, merge or deploy. A4 presentation requests unchanged.
+
+## 2026-11-08T06:19:13.992584+00:00 A5-B1 CHECKPOINT
+Expanded02 still rejected:61/30 fourth-slot misses, worst56/32pp; remaining original team scopes continue. Fresh20001–20500 unused; runtime stays C1c4a883e5.
+Registered targeting01:33TRAIN1–50paired cells, latched control vs boss non-signature front weights4/2; original AI/gear/stats preserved, all results retained. Session65906 uses110slices/120shandoffs.
+P1 isolated lossless25monster/frame/pixel packing passes Node parity; loadedJS+148752bytes vs main340f88b9, but taskCPU misses1280/CPU1 and1440max. All18cold observations retained; no production adoption.
+A startup browsers all CLOSED after each observation and now complete. Offline byte audit and build packing continue; no B assets/source modified.
+ANSWER B06:10/06:19: exact earned-reveal wiring through A-owned Invitations/CompanionPreview is queued with E2; await renderer commit for type/fixture compatibility. Initial Hub layout will be profiled before any causal claim.
+No B/protected edits, model helpers, merge or deploy.
