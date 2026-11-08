@@ -27,3 +27,7 @@ Source review also exposes a kit limitation: Black cup has target`foe`, so it ca
 The registered reach09 `reach` variant completed all1,840 common-fixture cells ×50TRAINseeds. Every cat rate and paired crew advantage stays unchanged; Soot remains44.16%, with0improved and0worsened battles among22,000Soot cases. Black cup remains0/203,598actions. All eight Soot scene deltas are exactly0pp.
 
 This rejects rear access alone as a balance repair. It leaves the action's existing immediate scoring disadvantage unchanged. The independently registered reach-plus-one-Crumb candidate remains pending; no outcome is inferred for it. [Audited comparison](b2/soot-reach-09/reach/summary.json) · [complete raw results](b2/soot-reach-09/reach/results.json). No production kit or acceptance change.
+
+## Rear access plus a Crumb
+
+The second registered reach09 arm also completed all1,840cells. Every outcome equals the original fixture, with Black cup0/203,598Soot actions and Soot44.16%. This rejects both isolated variants, including rear access plus one Crumb after a successful mark. The earlier pending status above is historical. [Second audited comparison](b2/soot-reach-09/reach-seed/summary.json). No kit was adopted.

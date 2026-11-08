@@ -17,3 +17,9 @@ Inkcap uses Quiet spores 11,392 times and Paper decoy 802 times. Quiet spores ta
 Sorrel uses Decanted moon 6,920 times. Its 413,037 shield events total 6,226,044 shield and its 214,244 heal events total 5,594,309 HP. Those totals include multiple skills, gear and status ticks; they do not isolate transfer or justify increasing it. No Sorrel change is selected from these counts.
 
 Every count comes from [audited summary](b2/support-kit-probe-08/summary.json) and [raw results](b2/support-kit-probe-08/results.json), under the [pre-run registration](b2/support-kit-probe-08/REGISTERED-METHOD.md). Fell-in-battle includes cats later revived. Counts are descriptive, not ablated win contributions. No acceptance seeds, production changes or human-playtest claim.
+
+## Rescue cooldown trial10
+
+The registered rescue-rest arm completes all1,840cells/92,000TRAIN outcomes. Cinnamon falls83.63%→74.70% (474paired improvements/2,438worsenings in22,000Cinnamon battles), but selected-crew advantage rises31.00→33.25pp. Soot falls44.16→41.42%, Sorrel52.31→50.31% and Inkcap54.47→52.86%. Every cat still has a top-pick cell; the aggregate cat/set/crew gates remainMISS. The same best crew is selected before and after. A bounded rescue cooldown fits Cinnamon’s own range but does not close team balance, so it is not adopted alone.
+
+[Independent paired audit](b2/support-kits-10/rescue-rest/summary.json) · [all cells](b2/support-kits-10/rescue-rest/results.json). Quiet-reach continues separately on the unchanged registered source. No fresh acceptance or production change.

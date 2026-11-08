@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-B3 draft386 preserved; branch codex/cardrpg-a5-b2-kit-2026-11-08. Guard-only runtime db69140eb passes all six source gates and closure audit; no Scent/Soot/support kit adopted. Original support10 coordinator PID64374 continues with bounded shared-lock slices.
+B3 draft386 preserved; branch codex/cardrpg-a5-b2-kit-2026-11-08. Guard-only draft388 on386, runtime db69140eb/closurec0dd2eaf6, passes all six source gates and closure audit; no Scent/Soot/support kit adopted. Original support10 coordinator PID64374 continues with bounded shared-lock slices.
 ## NEXT
-Publish guard-only draft on386 after scope/source checks; preserve original support10 jobs and review both complete variants. Register eligible single-carrier set diagnostic before sampling, keeping all eight sets/scenes and old results. B1/B2/display/cadence/startup/Z remain open; fresh20001–20500 UNUSED. Stack376→377→379→381→382→383→384→385→386.
+Preserve original support10 coordinator PID64374; rescue-rest complete, quiet-reach next. Set-carriers12 COMPLETE1024cells/51200battles; independent summary passes. Mallow/Emberfelt Scald2780 and declaredPantry32/50, but aggregate329/400 over75%; Velvetrim/Inkcap declaredscene21/50 versus50/50others in botharms needs causal diagnostic. Review quiet-reach then keep all misses visible. B1/B2/display/cadence/startup/Z remain open; fresh20001–20500 UNUSED. Stack376→377→379→381→382→383→384→385→386→388.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -182,3 +182,7 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - 2026-11-08T16:41:51.913906+00:00: read rules/prompt/outboxes and preserved all live original jobs; no duplicate source suite or OFF run. Support08 exact54,400common04 outcomes; Cinnamon83.63%, Comfort cup286445/403323actions; Inkcap54.47%, Sorrel52.31%. Report B2-SUPPORT-KITS.md retains descriptive limits. Prospectively registered support10 independent rescue-rest and quiet-reach on original common source plus guard; no Soot/anchored combination. Runner tool92353, bounded110s leases/7s handoffs. Guard closure source/hash/scope verifier prepared, not executed while gates pending. Syncf515e10c7 pushed.
 
 - 2026-11-08T16:52:15.174869+00:00: user continued; original guard gates complete1746web/1135rules/421E2E/build. Independent guard closure/source/OFF8250/baseline/historical13 auditPASS. Both Soot reach09 variants exactbaseline outcomes/zeroBlackcup, rejected. Set activation11 proves no Scald eligibility in original starter fixture; no set or threshold changed. Original support10 PID64374 retained, no duplicate jobs.
+
+- 2026-11-08T16:55:25.021245+00:00: published guard-only DRAFT388 on386; runtime/source checks unchanged. Registered set-carriers12:8namedcarriers×8scenes×8sets×2separatebudgetarms before sampling; allies exact, originalcommon source+guard, no production/acceptancechange. Sync c4ca75726 resolves original build-lease request.
+
+- 2026-11-08T16:57:54.226537+00:00: setcarriers12 complete/audited; all source/replay/ally/plan/staticeligibility checksPASS. Original Emberfelt117/400ineligible differs from Mallow329/400eligible: no causalcrosscontext gainclaim. Matched declaredPantryEmber64%leads, overall82.25%MISS; Bellsteel70%losesmatched but74%leadsfixedcore. Rescue-rest10 Cinnamon83.63→74.70% butcrew31→33.25pp andbottomcatsworse; notadoptedalone. Draft388 and ledger22e4d0945 published; no production/acceptancechange.
