@@ -9,6 +9,7 @@ import { bestRoleTeam, COMPANION_ROLES, nextChallenge } from './meta-presentatio
 import { skillIcon } from './assets';
 import type { DepthModel } from './model';
 import { CrewPanel } from './PreparationV4';
+import { CompanionGrowthV4 } from './CompanionGrowthV4';
 
 export function Team({ m }: { m: DepthModel }) {
   const state = m.state;
@@ -134,8 +135,10 @@ export function Collection({ m }: { m: DepthModel }) {
         {owned ? <>
           <p>Level {owned.level} · {owned.stars} stars · {owned.shards} shards · Awakening {m.state.awakened[cat.id] ?? 0}/3</p>
           <div className="cr-actions">
-            <button className="cr-primary" disabled={locked} onClick={() => m.command({ type: 'level', cardId: owned.id })}>Level up</button>
-            <button disabled={locked} onClick={() => m.command({ type: 'ascend', cardId: owned.id })}>Add a star</button>
+            {v4 ? <><CompanionGrowthV4 m={m} catId={cat.id} kind="level" /><CompanionGrowthV4 m={m} catId={cat.id} kind="ascend" /></> : <>
+              <button className="cr-primary" disabled={locked} onClick={() => m.command({ type: 'level', cardId: owned.id })}>Level up</button>
+              <button disabled={locked} onClick={() => m.command({ type: 'ascend', cardId: owned.id })}>Add a star</button>
+            </>}
             <button disabled={locked || (m.state.awakened[cat.id] ?? 0) >= 3}
               title="Level 10 and two stars required. Each rank adds 3% HP and attack."
               onClick={() => m.apply(R.awakenCat(m.state, cat.id), 'Awakening raised HP and attack by 3%.')}>Awaken</button>

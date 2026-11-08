@@ -1,0 +1,146 @@
+{"lock":"acquired","lane":"A","pid":74126,"startedAt":"2026-11-08T20:34:33.417Z","task":"A5 growth focused checks"}
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-a4/apps/web
+
+ ❯ src/game/cardrpg/depth/CompanionGrowthV4.test.tsx (6 tests | 2 failed) 115ms
+   × names the ultimate unlocked by level six and matches the actual stat gains 7ms
+   × shows currency and shard costs for a star that unlocks the same ultimate 2ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/game/cardrpg/depth/CompanionGrowthV4.test.tsx > names the ultimate unlocked by level six and matches the actual stat gains
+TestingLibraryElementError: Unable to find an element with the text: +7 Health · +1 Attack · +0 Defense. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"dp-v4-growth"[39m
+      [33mdata-growth[39m=[32m"level"[39m
+    [36m>[39m
+      [36m<button[39m
+        [33maria-describedby[39m=[32m"_r_1_"[39m
+        [33mclass[39m=[32m"cr-primary"[39m
+      [36m>[39m
+        [0mLevel up[0m
+      [36m</button>[39m
+      [36m<div[39m
+        [33mid[39m=[32m"_r_1_"[39m
+      [36m>[39m
+        [36m<b>[39m
+          [0mMochi[0m
+          [0m → [0m
+          [0mlevel 6[0m
+        [36m</b>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"cr-cost"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [0m125[0m
+            [0m [0m
+            [0mfish points[0m
+          [36m</span>[39m
+          [36m<span>[39m
+            [0m2[0m
+            [0m [0m
+            [0mthreads[0m
+          [36m</span>[39m
+        [36m</span>[39m
+        [36m<small>[39m
+          [0m+7 Health · +1 Attack[0m
+        [36m</small>[39m
+        [36m<small>[39m
+          [0mUnlocks [0m
+          [0mLast light shelter[0m
+          [0m.[0m
+        [36m</small>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/game/cardrpg/depth/CompanionGrowthV4.test.tsx:35:17
+     33|   fireEvent.click(screen.getByRole('button', { name: 'Level up' }));
+     34|   const after = R.depthStats(m.state, 'mochi');
+     35|   expect(screen.getByText(`+${after.hp - before.hp} Health · +${after.…
+       |                 ^
+     36|   expect(R.availableSkills(m.state, 'mochi').map(s => s.id)).toContain…
+     37|   ui.rerender(<CompanionGrowthV4 m={m} catId="mochi" kind="level" />);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  src/game/cardrpg/depth/CompanionGrowthV4.test.tsx > shows currency and shard costs for a star that unlocks the same ultimate
+TestingLibraryElementError: Unable to find an element with the text: 60 matching shards. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"dp-v4-growth"[39m
+      [33mdata-growth[39m=[32m"ascend"[39m
+    [36m>[39m
+      [36m<button[39m
+        [33maria-describedby[39m=[32m"_r_2_"[39m
+      [36m>[39m
+        [0mAdd a star[0m
+      [36m</button>[39m
+      [36m<div[39m
+        [33mid[39m=[32m"_r_2_"[39m
+      [36m>[39m
+        [36m<b>[39m
+          [0mMochi[0m
+          [0m → [0m
+          [0m3 stars[0m
+        [36m</b>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"cr-cost"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [0m300[0m
+            [0m [0m
+            [0mfish points[0m
+          [36m</span>[39m
+        [36m</span>[39m
+        [36m<small>[39m
+          [0m20[0m
+          [0m matching shards[0m
+        [36m</small>[39m
+        [36m<small>[39m
+          [0m+14 Health · +2 Attack · +1 Defense[0m
+        [36m</small>[39m
+        [36m<small>[39m
+          [0mUnlocks [0m
+          [0mLast light shelter[0m
+          [0m.[0m
+        [36m</small>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../../node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/game/cardrpg/depth/CompanionGrowthV4.test.tsx:47:17
+     45|   render(<CompanionGrowthV4 m={m} catId="mochi" kind="ascend" />);
+     46|   expect(screen.getByText('Mochi → 3 stars')).toBeTruthy();
+     47|   expect(screen.getByText('60 matching shards')).toBeTruthy();
+       |                 ^
+     48|   expect(screen.getByText(`Unlocks ${R.CAT_BY_ID.mochi!.skills[3]!.nam…
+     49|   fireEvent.click(screen.getByRole('button', { name: 'Add a star' }));
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 4 passed (6)
+   Start at  03:34:33
+   Duration  855ms (transform 38%, environment 32%, tests 15%, import 15%)
+
+undefined
+/Users/bao/taskbar-hero-cardrpg-a4/apps/web:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: vitest run src/game/cardrpg/depth/CompanionGrowthV4.test.tsx
+{"lock":"released","pid":74126,"task":"A5 growth focused checks"}

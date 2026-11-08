@@ -1,0 +1,7 @@
+# Companion growth preview38
+
+The current Companion screen shows Level up and Add a star without their costs or expected benefit; buttons also stay enabled when the command will reject missing currency or a cap. This is directly observable source behavior. The existing fixed-policy journey spends repeatedly on Mochi, but that bot does not establish a human retention effect or prove the missing preview caused its losses.
+
+V4-only UI change: evaluate the existing public meta command on its transactional copy and display the actual currency/shard cost, next level/stars, changed Health/Attack/Defense and newly unlocked skill. Disable unavailable actions with the command's reason; never grant resources or mutate the account during render. A click invokes the public command again against the current state. OFF retains its exact two buttons. No rules, prices, stats, saves, AI, reward or fixture changes.
+
+Verify preview immutability, exact spend and resulting stats, affordability/caps, route lock, level6 and three-star skill unlock, selected-cat switching and OFF behavior with focused tests. Then six source gates and separate ON/OFF offline artifacts, keyboard/click paths at1280/1440/1024 in both looks; record screenshots, scoped contrast and horizontal overflow. Reuse OFF8250 only after exact package/rules hashes. Retain every failed attempt; at most two correction rounds. This is not balance acceptance, the last-artifact screenshot pack, startup or elapsed engagement evidence. Fresh20001–20500 remains unused.
