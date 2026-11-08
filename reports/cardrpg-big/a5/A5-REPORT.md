@@ -3,9 +3,7 @@ Boss ngày 7 thắng sau một gợi ý cụ thể trong ca chơi đã ghi hình
 Hush đã được sửa để không biến lượt hồi máu thành đòn đánh hoặc ghi nhận hồi máu không có thật.
 Cân bằng trang bị, một số mèo, nhịp thưởng 30 phút và hiệu năng khởi động vẫn còn thiếu hoặc chưa đạt.
 Đây là báo cáo tiến độ A5, chưa phải nghiệm thu; mọi PR vẫn là draft, chưa merge hay deploy.
-
 # A5 checkpoint — acceptance remains open
-
 Runtime source: `27f192301` (available Home star crews; combat unchanged). Six source checks and the exact OFF digest pass; [source-bound closure](e2-star-plans/audit.json). Hush correction remains unchanged. This report separates historical evidence from current-source TRAIN diagnostics. Bots are proxies, not a human playtest. Fresh acceptance seeds20001–20500 remain UNUSED; old10001–10500 are contaminated.
 
 ## Play experience and progression
@@ -31,9 +29,9 @@ Evidence: [H0](H0-FIRST-SESSION.md), [C1](C1-PLAYER-SCREENS.md), [rewards and fi
 
 ## Balance — old acceptance versus current TRAIN, not paired acceptance
 
-|Gate|A4 heldout500|Current Hush22 TRAIN50|Status|
+|Gate|A4 heldout500|Current TRAIN (50 unless stated)|Status|
 |---|---:|---:|---|
-|Single piece ≤12pp including fourth slot|Worst93.4pp;31outliers|68/384fourth-slot misses; worst88pp|MISS; bare2304cells not rerun|
+|Single piece ≤12pp including fourth slot|Worst93.4pp;31outliers|63/384fourth-slot misses; worst88.8pp (500seeds)|MISS; bare2304cells not rerun|
 |Displayed share ≤10%|≤4.80%|≤4.51%|TRAIN PASS alone does not validate impact|
 |Display correlation ≥0.6 per chapter|Not registered in A4|0.644 /0.547 /0.432|MISS, chapters2/3|
 |Adjacent tiers ≥44/48; zero reversals|46/48;0reversals|23/24TRAIN steps;0reversals|PARTIAL; fresh half unmeasured|
@@ -49,7 +47,7 @@ Evidence: [H0](H0-FIRST-SESSION.md), [C1](C1-PLAYER-SCREENS.md), [rewards and fi
 
 [Hush correction](B2-HUSH-ATTRIBUTION.md):144controlled cases PASS;72OFF streams exact. All1,321TRAIN cells are paired with original current16. One Soot/Sorrel/Velvet team falls32→28wins out of50; all other outcome cells are exact. All90previously earned day7 wins/advice/costs remain unchanged, but seven post-route state hashes differ. This is a gameplay timing correction, not only copy.
 
-[Support trials](B2-SUPPORT-KITS.md): eligible gear plus Hush lifts bottom cats; adding rescue rest leaves Cinnamon79.76% and raises crew gain26→27.5pp. Neither the cooldown nor fixture revision is adopted. [Pressure spread](B1-PRESSURE-FOLLOWUP.md) reduces fourth-slot cliffs in500TRAIN seeds but fails other gates and adds predictability cost; rejected. All attempts and negative pairs remain retained.
+[Support trials](B2-SUPPORT-KITS.md): eligible gear plus Hush lifts bottom cats; adding rescue rest leaves Cinnamon79.76% and raises crew gain26→27.5pp. Neither the cooldown nor fixture revision is adopted. [Pressure spread](B1-PRESSURE-FOLLOWUP.md) reduces fourth-slot cliffs in500TRAIN seeds but fails other gates and adds predictability cost; rejected. All attempts and negative pairs remain retained. [Timing47](b1/threat-beats-47/RESULTS.md) and [delayed impact49](b1/impact-delay-49/RESULTS.md) also fail their fixed screens; neither is adopted.
 
 ## Size, compatibility and delivery
 
@@ -88,3 +86,5 @@ Remaining work: B1/B2 numeric closure and display calibration; fresh registered 
 [Prepare layout](C1-PREPARE-LAYOUT.md): formation/Fight visible at3widths,18ON/OFF scenarios/18captures plus2before captures; native stale-worker/CSP checksPASS. Exact prototype/adoptedON20,927,769bytes/SHAe9c74c38. Original cadenceMISS unchanged.
 
 [Home star crews](E2-HOME-CREW-PLANS.md): available one-seat swaps and capped-reward copy;8isolated units,24ON/OFF scenarios/48captures and six gatesPASS. Exact adopted/prototype ON20,929,441bytes/SHA2c318627, scopedcontrast6.726. Six targeted x1 continuations earn the event job star; original Home02 cadenceMISS remains.
+
+[Registered forecast precision50](b1/display-precision-50/RESULTS.md) keeps all384cases and exact1–50prefixes; unchanged20seed forecasts correlate0.850/0.691/0.733 against separateTRAIN51–500. Eachchapter meets0.6, but case averages do not validate per-item percentages or static utility scores. Full500piece results retain63misses/worst88.8pp; no runtime or fresh-acceptance change.
