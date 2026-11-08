@@ -1160,3 +1160,9 @@ Original Home03/47/49/50 jobs preserved; no duplicate samples. Registered precis
 Original informed-phase sixchecks PASS: type/lint/web1779/rules1192/E2E421/build. Receipt-only audit tools4e2d744fe bind sources, captures, logs and complete markers; no numeric success claimed yet.
 Home03 retains31.37active minutes at frozenhandoff; original watchdog resumes it within15min. Diagnostic matrices retain original errors/negative pairs; no source adoption.
 Runtime27f192301/DRAFT404 unchanged. B395 read/no integration; fresh20001–20500UNUSED. B1/B2/display/cadence/startup/Z open; no B/protected edits/modelhelpers/merge/deploy/mainpush.
+
+## 2026-11-08T23:36:40.623655+00:00 A5-B1 CLAIM
+Original47/49/50 audited and preserved at de793ea77; timing47 and delayed-impact49 rejected. Forecast50 separateTRAIN correlations0.850/0.691/0.733; full500piece63misses/worst88.8pp remains open.
+Registered isolated duration52 before samples: exact corrected queue34 plus bossHP1.25/1.5/2, unchanged hit strength;384TRAIN50pairs/arm, semantics first,110s leases/7s handoffs. No automatic adoption.
+Original Home03 PID12101 and receipt watcher20823 preserved; source27f192301/DRAFT404 unchanged. Six informed sourcegates alreadyPASS, no duplicate samples.
+Fresh20001–20500 UNUSED; B395 read/no integration. No B/protected edits, modelhelpers, merge, deploy or mainpush.
