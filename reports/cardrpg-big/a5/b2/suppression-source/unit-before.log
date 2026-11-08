@@ -1,0 +1,39 @@
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-a4/packages/game-rules
+
+ ❯ src/cardrpg/depth/suppression-v4.test.ts (19 tests | 2 failed) 10ms
+   ❯ Hush respects the committed utility action in gameplay v4 (19)
+     × teacup-healer, V4=true, quiet-signature 4ms
+     × button-guard, V4=true, quiet-signature 0ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/cardrpg/depth/suppression-v4.test.ts > Hush respects the committed utility action in gameplay v4 > teacup-healer, V4=true, quiet-signature
+ FAIL  src/cardrpg/depth/suppression-v4.test.ts > Hush respects the committed utility action in gameplay v4 > button-guard, V4=true, quiet-signature
+AssertionError: expected [ { round: 1, …(6) }, …(1) ] to have a length of +0 but got 2
+
+- Expected
++ Received
+
+- 0
++ 2
+
+ ❯ src/cardrpg/depth/suppression-v4.test.ts:32:24
+     30|         const hits = events.filter(event => event.kind === 'damage' ||…
+     31|         if (scenario === 'quiet-signature' && gameplayV4) {
+     32|           expect(hits).toHaveLength(0);
+       |                        ^
+     33|           expect(events.some(event => event.kind === 'heal' || event.k…
+     34|           expect(events.some(event => event.kind === 'suppressed')).to…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 17 passed (19)
+   Start at  00:06:56
+   Duration  167ms (transform 54%, import 32%, tests 12%, worker 2%)
+
+undefined
+/Users/bao/taskbar-hero-cardrpg-a4/packages/game-rules:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: vitest run src/cardrpg/depth/suppression-v4.test.ts

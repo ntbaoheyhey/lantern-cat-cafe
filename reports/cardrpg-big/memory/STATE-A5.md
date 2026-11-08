@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-DRAFT388 on386; production remains guard db69140eb. Suppression15 common matrix complete: Inkcap54.47→56.35%, crew30.75pp MISS; carrier matrix still running. Kit-fit14 complete, crew26.75pp MISS. New19 unit cases fail only2 intended V4 cases before correction; no runtime adoption yet.
+Source edd8ac69e adopts ONLY Hush utility-turn branch after both15matrices complete/audited; 19unit cases PASS after2intended pre-fix failures. On codex/cardrpg-a5-b2-suppression-2026-11-08, stacked on draft388/a4960f363. Source six gates and OFF are queued/running; no new draft yet.
 ## NEXT
-Preserve original suppression15 PID74225/tool89997; carriers now queued/running. Current16 PID78873/tool39125 registered and queued: current A5+only Hush fix, original1321TRAIN50cells plus90OLD earned day7 snapshots (not fresh45day). Audit both before source adoption. No duplicate matrices. B1/B2/display/cadence/startup/Z open; fresh20001–20500 UNUSED. Stack376→377→379→381→382→383→384→385→386→388.
+Preserve current16 tool39125/PID78873 (old90earned day7 +1321TRAIN50matrix), source gates tool48473 and OFF tool60486, eligible17 coordinator newly launched (see ps). No duplicate runs. Suppression15 allcomplete: intended InkcapVelvet21→48/50matched,21→49fixed; full arms321/328worsenings retained. B1/B2/display/cadence/startup/Z remain open; fresh20001–20500 UNUSED. Stack376→377→379→381→382→383→384→385→386→388.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -190,3 +190,5 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - 2026-11-08T17:01:56.991509+00:00: rearutility13 exact600battle ablation: remove reach or Quietspores gives50/50 vsfull21/50 inbotharms; removefourpiece/preference doesnotfix. Seed1round6 HushedTeacup replaces65heal with70shield+39HPdamage; registered suppression15 onebranchfix before sampling. Focused16checks pass candidate; original twoV4casesfail. Harnessattempt1 incorrectlyexpectedpositiveOFFHPdamage retained; attempt2 checks hit events inclzero. New kit-fit14 separate originaltargetbudget/all12semantickits diagnostic. No sourceadoption/acceptance.
 
 - 2026-11-08T17:09:28.291119+00:00: continued from candidate15 handoff. support10 quiet-reach complete/rejected: Inkcap53.22%,44improved/320worsened. kit-fit14 complete: Soot54.03%, Cinnamon86.40%, crew26.75pp; homogeneous3200exact. Suppression15common complete: Inkcap56.35%,Soot47.25%,Sorrel53.20%,Cinnamon84%,crew30.75pp; carrier original job retained. Registered current16 composition before sampling and19-case runtime regression retains2intended pre-fix failures. No source adoption or fresh acceptance.
+
+- 2026-11-08T17:15:27.347153+00:00: both15matrices audited, sourceedd8ac69e applies exact three-line Hush branch; all45current16combat hashes exact.19unit afterPASS; original17pass/2fail retained. Carrier512cells/arm1070/1077improved,321/328worsened; primaryVelvet21→48/49. Six gates/OFF queued, current16 original coordinator preserved. Registered eligible17 before sampling: exact14kits+15Hush versus same+10Cinnamonrest, no other trial or acceptance; original runtime remains Hush-only.
