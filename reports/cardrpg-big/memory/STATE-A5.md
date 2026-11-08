@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-Star plans46 source-bound closure PASS on27f192301: six first-attempt gates1779web/1192rules/421E2E/build,8isolated units,24ON/OFF browser scenarios/48captures. Adopted ON/OFF builds byte-identical to tested prototypes; OFF8250 source hashes and baseline/historical13 exact. Published DRAFT404 on403; evidence62d3e0a64.
+DRAFT404 is published on403 and mirrored to sync/ledger. Original Home03 browser PID12101/tool78108 runs its registered60active-minute journey on immutable27f192301/2c318627 artifact. Do not restart. Isolated threat-beats47 coordinator PID12407/tool95798 waits for shared lock; no runtime adoption.
 ## NEXT
-Sync outbox/ledger, then register/run the staged Home03 elapsed protocol on immutable checked artifact. Original Home02 cadence/dead-time MISS unchanged; no new benefit claim. B1/B2/display/startup/Z open; fresh20001–20500 UNUSED.
+Retain original Home03 and47 samples. Once complete, run a5-engagement-informed-report.mjs and a5-threat-beats-audit.mjs; review screenshots/negative pairs, update reports and phase evidence. All original cadence/balance/startup misses remain open. Fresh20001–20500 UNUSED. No B integration.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -322,3 +322,5 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - 2026-11-08T22:46:57.696091+00:00: Resumed original9317 source coordinator without duplicate suites. All six firstattempt checks and independent source-bound closure PASS; ON20929441bytes/SHA2c318627, OFF prototype exact,48captures, scopedcontrast6.726. Personally reviewed1280crew options and1024Look earned-star page. No combat/save/acceptance/B change.
 
 - 2026-11-08T22:47:48.026422+00:00: Published DRAFT404 https://github.com/ntbaoheyhey/taskbar-hero/pull/404 on403; source27f192301/evidence62d3e0a64. Original gates and browser receipts unchanged. No merge/deploy.
+
+- 2026-11-08T22:52:45.039470+00:00: Registered Home03 at742aab9d9 before launch, exact artifact/source/script, one persistent x1 browser, lowest-level affordable teammate growth and first visible crew choice. Registered isolated threat-beats47 at2305bc812 before samples: boss/all-enemy bounded±1-round tells,2–4round spacing, unchanged strength/policy/fixtures,384TRAIN50pairs per arm after semantic checks. Native shared locks only; runtime unchanged.
