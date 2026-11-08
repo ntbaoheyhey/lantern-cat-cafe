@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-Committed-pattern26 complete/audited; controlled90/90PASS, but heavyday7 firstwins30/30 violates≤95%. Isolated adoption rejected; runtimea30757265 unchanged. New pressure-transfer27 registered, not yet sampled.
+Owned reserve-cat advice28 adopted after registered90saved-input audit: allfirststates/encounters exact; firsttwo6improved/0worsened, allprogressiongatesPASS. Isolatedunit4PASS. New branchE1crew-advice; fullsource/OFF/browser closure next. Combat26/27 remainunadopted.
 ## NEXT
-Run semantic27 then both registered1321TRAIN50+90saved-day7 arms (T15/T30) under boundedlock. Preserve all26/27misses. B1/B2/display/cadence/startup/Zopen; fresh20001–20500UNUSED; no priorjobsactive.
+Finish original27coordinator then audit bothcompletearms; no runtimeadoption. Run advice28sixsourcegates/OFF8250/earnedreal-click apply at3widths; preserve originalattempts. B1/B2/display/cadence/startup/Zopen; fresh20001–20500UNUSED.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES

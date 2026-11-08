@@ -11,6 +11,7 @@ import { gameplayV4, validPlan, type StandingPlan } from './gameplay-v4';
 import type { BattleSetup, DepthAccount, Row, RuleResult } from './contract';
 
 export type BuildChangeV4 =
+  | { kind: 'cat'; catId: string; replacementId: string }
   | { kind: 'row'; catId: string; row: Row }
   | { kind: 'plan'; plan: StandingPlan }
   | { kind: 'equip'; catId: string; gearId: string }
@@ -35,6 +36,14 @@ export function adviceBuildKeyV4(s: DepthAccount): string {
 /** Public atomic build change; checks ownership, affordability and the home boundary. */
 export function changeBuildV4(state: DepthAccount, change: BuildChangeV4): RuleResult<DepthAccount> {
   if (!gameplayV4(state) || !state.v4) return { ok: false, state, error: 'Open a Gameplay v4 crew first.' };
+  if (change.kind === 'cat') {
+    if (!state.team.includes(change.catId) || state.team.includes(change.replacementId)
+      || !state.account.cards.some(card => card.cardId === change.replacementId))
+      return { ok: false, state, error: 'Choose a collected cat outside your current crew.' };
+    // The incoming cat takes the same slot; equipped items stay with their owners.
+    return configureTeam(state, state.team.map(id => id === change.catId ? change.replacementId : id),
+      { ...state.rows, [change.replacementId]: state.rows[change.catId]! }, state.skills);
+  }
   if (change.kind === 'row') {
     if (!state.team.includes(change.catId) || !['front', 'rear'].includes(change.row))
       return { ok: false, state, error: 'Choose a cat in your crew and an available row.' };
@@ -99,6 +108,13 @@ export function recommendBuildV4(state: DepthAccount, encounter: BattleSetup): B
   for (const focus of ['finish', 'support', 'leader'] as const) for (const care of ['steady', 'protect'] as const)
     if (focus !== state.v4.plan.focus || care !== state.v4.plan.care)
       changes.push({ change: { kind: 'plan', plan: { focus, care } }, label: `${names[focus]} · ${care === 'protect' ? 'Protect' : 'Steady'}` });
+  // At most 27 owned-cat alternatives for a three-cat crew and the twelve-cat roster.
+  const reserves = state.account.cards.map(card => card.cardId).filter(id => !state.team.includes(id)).sort();
+  for (const catId of state.team) for (const replacementId of reserves) {
+    const row = state.rows[catId] === 'front' ? 'Front' : 'Back';
+    changes.push({ change: { kind: 'cat', catId, replacementId },
+      label: `Replace ${CAT_BY_ID[catId]!.name} with ${CAT_BY_ID[replacementId]!.name} in ${row}` });
+  }
   const before = sample(setupFor(state, encounter)), expectedBuild = adviceBuildKeyV4(state);
   const options: BuildAdviceV4[] = [];
   for (const { change, label } of changes) {
