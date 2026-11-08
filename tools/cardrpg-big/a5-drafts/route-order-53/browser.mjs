@@ -34,10 +34,10 @@ try {
    const facts=await page.evaluate(()=>{
     const shown=e=>{if(!e.getClientRects().length)return false;for(let p=e;p;p=p.parentElement)if(p.tagName==='DETAILS'&&!p.open&&!p.querySelector(':scope > summary')?.contains(e))return false;return true;};
     const rgb=s=>(s.match(/[\d.]+/g)||[]).map(Number),lum=c=>c.slice(0,3).map(x=>x/255).map(x=>x<=.04045?x/12.92:((x+.055)/1.055)**2.4).reduce((n,x,i)=>n+x*[.2126,.7152,.0722][i],0);
-    const nodes=[...document.querySelectorAll('.cr-content :is(h1,h2,h3,p,small,button,summary)')].filter(e=>!e.children.length&&shown(e)&&!e.matches(':disabled')&&e.textContent.trim());
+    const nodes=[...document.querySelectorAll('.cr-content :is(h1,h2,h3,p,small,button,summary)')].filter(e=>!e.children.length&&shown(e)&&!e.closest(':disabled')&&e.textContent.trim());
     const contrast=nodes.map(e=>{let p=e,bgs;while(p){const style=getComputedStyle(p),stops=[...style.backgroundImage.matchAll(/rgba?\([^)]+\)/g)].map(m=>rgb(m[0]));if(stops.length&&stops.every(c=>c.length===3||c[3]===1)){bgs=stops;break;}const c=rgb(style.backgroundColor);if(c.length===3||c[3]===1){bgs=[c];break;}p=p.parentElement;}
      const a=lum(rgb(getComputedStyle(e).color)),ls=(bgs||[[29,27,40]]).map(lum),b=Math.max(Math.min(...ls),Math.min(Math.max(...ls),a));return{text:e.textContent.trim(),ratio:(Math.max(a,b)+.05)/(Math.min(a,b)+.05)};});
-    const map=document.querySelector('.dp-map'),scouting=document.querySelector('[aria-label="Boss scouting"]'),activity=[...document.querySelectorAll('.cr-content > .cr-panel')].find(e=>e.querySelector('button'));
+    const map=document.querySelector('.dp-map'),scouting=document.querySelector('[aria-label="Boss scouting"]'),activity=[...document.querySelectorAll('.dp-page > .cr-panel')].find(e=>e.querySelector('button'));
     const precedes=(a,b)=>!!a&&!!b&&!!(a.compareDocumentPosition(b)&Node.DOCUMENT_POSITION_FOLLOWING);
     return {overflow:document.documentElement.scrollWidth-innerWidth,contrast,activityBeforeMap:precedes(activity,map),mapBeforeActivity:precedes(map,activity),mapBeforeScouting:precedes(map,scouting)};
    });
