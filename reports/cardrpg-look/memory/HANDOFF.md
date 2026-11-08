@@ -1,3 +1,17 @@
+# B2 delivery published — 2026-11-08T18:36:06.256959+00:00
+
+The active B2 work is in `/Users/bao/taskbar-hero-cardrpg-b2`, branch `codex/cardrpg-b2-v6-2026-11-08`. Draft [395](https://github.com/ntbaoheyhey/taskbar-hero/pull/395) is stacked on393; evidence commit `f4cd0da0b121ff4e30719fbe14e269421f624fe2`. V0–V6 delivery is published. No B browser/probe or unfinished publication remains. Do not restart historical queues below.
+
+Read [B2 STATE](../b2/STATE.md), [report](../b2/B2-REPORT.md), [publication receipt](../b2/PUBLICATION.json) and [integration contract](../b2/INTEGRATION.md). Full HTML `docs/cardrpg-look/b2.html`:29,812,862bytes/SHA7f4d0fcc; lean21,550,338bytes. Original closure index unchanged. Two20second videos, six1440DPR2 frames and compact review evidence remain below60MB.
+
+Type/lint/unit/build,1773web/421E2E,5seed byte parity and flag-off startup parity passed.144 post-VFX cast windows max16.8ms;6cold samples complete. CPU4 preparation250ms and cold166.6ms remain explicit; historical driver spikes are not claimed cured. Interrupted original probe kept completed CPU4run0 and resumed only missingrun1–2.
+
+Audit29/31PASS: opponent luminance0.009–0.039<0.18 and boss/tallest-regular1.52–1.66x<2x remain missed. Sorrel preview occlusion, rear-ally heal-number overlap and gallery controls over the greenhouse tip at1024/1280 are disclosed. Five-battle GPU counts unchanged, heap+653272bytes; no flatness claim. Gallery Pause repair passed real mouse checks at1024/1280/1440; exact CSS-only lineage preserves original performance/video/six-shot hashes.
+
+Ledger `18a887bf084000b186e7d2d3e8f5fc8305ff4443` and B-OUTBOX `8adc94bf2d23c7273e20b640ff9618f92576996f` published. A must adopt B-owned source/assets separately, preserve App ?dev=1 gating and exact earned v1/v2 forwarding. No A5 rebase, rules/meta/protected edits, Docker/CUA/generative calls/subagents, merge/deploy/mainpush. Any later optimization needs a new targeted change and evidence; no repeated matrices.
+
+---
+
 # Closure draft published — 2026-11-08T07:05:05.124686+00:00
 
 Draft [380](https://github.com/ntbaoheyhey/taskbar-hero/pull/380) is stacked on378. Evidence commit `dc296d1250b6f06b3ff8293837b6b2482b36e793` and all24 upload batches are remotely verified. Inventory:721 files/806,391,869bytes; explicit hashes and batch receipts under closure/. Later publication notes are separate from that inventory.
