@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { BANNERS, CARD_BY_ID, ITEM_BY_ID, CARD_RPG_CONFIG, emptyPity, getBannerOdds, getDrawPool,
   type GachaResult } from '@taskbar-hero/game-rules/cardrpg';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
@@ -9,6 +9,10 @@ import { CompanionPreview } from './CompanionPreview';
 import type { DepthModel } from './model';
 import './invitations.css';
 import { SelectorV4 } from './SelectorV4';
+
+function InvitationRules({ v4, children }: { v4: boolean; children: ReactNode }) {
+  return v4 ? <details className="dp-player-odds"><summary>Odds and rules</summary>{children}</details> : <>{children}</>;
+}
 
 type RevealPhase = 'sealed' | 'hint' | 'reveal' | 'summary';
 const resultName = (result: GachaResult) => result.cardId
@@ -99,7 +103,7 @@ export function Invitations({ m }: { m: DepthModel }) {
     const seed = m.state.account.seed + pity.totalPulls * 101 + 39;
     const result = welcome ? firstInvitation(m.state, 4)
       : R.metaCommand(m.state, { type: 'pull', bannerId, count, seed });
-    if (!m.apply(result, 'Invitations opened. Every result is saved in your account history.')) return;
+    if (!m.apply(result, m.state.gameplayV4 ? 'Your invitations are here. Find them in your history.' : 'Invitations opened. Every result is saved in your account history.')) return;
     setResults(m.state.account.history.slice(-count));
     setIndex(0);
     setPhase(reducedMotion ? 'summary' : 'sealed');
@@ -112,8 +116,8 @@ export function Invitations({ m }: { m: DepthModel }) {
     <section ref={fairness} className="dp-invitation-fairness" aria-label="Invitation fairness">
       <div className="dp-fairness-pity"><strong>Legendary guaranteed in {banner.hardPity - pity.sinceLegendary}</strong>
         <span>{pity.sinceLegendary}/{banner.hardPity} pulls · Next legendary {(odds.legendary / 100).toFixed(2)}%</span></div>
-      <div className="dp-fairness-odds"><span>Base odds</span>{Object.entries(banner.oddsBp).map(([rarity, value]) =>
-        <span key={rarity}>{rarity} {value / 100}%</span>)}</div>
+      {!m.state.gameplayV4 && <div className="dp-fairness-odds"><span>Base odds</span>{Object.entries(banner.oddsBp).map(([rarity, value]) =>
+        <span key={rarity}>{rarity} {value / 100}%</span>)}</div>}
       <p>{cost} stamps each · Earned in game</p>
       <a href="#invitation-history">{history[0] ? `Latest · ${resultName(history[0])} · ${history[0].rarity}` : 'Recent invitations'}
         {history[0]?.cardId && history[0].duplicate ? ` · ${history[0].shards} shards` : ''} · View history ({history.length})</a>
@@ -130,10 +134,12 @@ export function Invitations({ m }: { m: DepthModel }) {
           <button disabled={revealing || inRun || stamps < cost * 10 || available < 10 || shelfRoom < 10}
             onClick={() => invite(10)}>Invite ten · {cost * 10} stamps</button>
         </div>
-        <small>{available} invitations left today · Account-bound{m.state.gameplayV4?` · ${R.selectorMarksV4(m.state)} selector marks · shelf ${m.state.gear.length}/240`:''}</small><p>Uncollected rewards are preferred within the rolled rarity and featured partition. Each draw commits before the skippable reveal.</p>
-        <p>{banner.description} Earn stamps from cafe service, routes and quests.</p>
+        <small>{available} invitations left today · Account-bound{m.state.gameplayV4?` · ${R.selectorMarksV4(m.state)} selector marks · shelf ${m.state.gear.length}/240`:''}</small>{!m.state.gameplayV4 && <p>Uncollected rewards are preferred within the rolled rarity and featured partition. Each draw commits before the skippable reveal.</p>}
+        <p>{m.state.gameplayV4 ? 'Your cafe shifts, routes and board earn the stamps for every invitation.' : `${banner.description} Earn stamps from cafe service, routes and quests.`}</p>
         {shelfRoom<10&&<p>{shelfRoom} equipment spaces free. Make room for the whole basket before inviting.</p>}
         {inRun && <p>Finish your current route to open invitations.</p>}
+        <InvitationRules v4={!!m.state.gameplayV4}>
+        {m.state.gameplayV4 && <><p>{banner.description}</p><p>New discoveries come first within your rolled rarity and featured group.</p><p>Skipping the reveal keeps the same saved reward. Invitations use earned stamps only.</p><p>Each banner tracks its own pity. You can open up to 30 invitations daily.</p></>}
         <div className="dp-pity"><strong>Legendary pity progress</strong>
           <progress aria-label="Legendary pity" value={pity.sinceLegendary} max={banner.hardPity} />
           <small>{pity.sinceLegendary}/{banner.hardPity} · Soft pity begins on pull {banner.softPity}</small>
@@ -145,10 +151,11 @@ export function Invitations({ m }: { m: DepthModel }) {
           <tbody>{Object.entries(odds).map(([rarity, value]) => <tr key={rarity}>
             <th scope="row">{rarity}</th><td>{banner.oddsBp[rarity as keyof typeof odds] / 100}%</td><td>{(value / 100).toFixed(2)}%</td>
           </tr>)}</tbody></table>
-        <details className="dp-exact-odds"><summary>Exact next-pull probabilities</summary>
+        <details className="dp-exact-odds" open={m.state.gameplayV4 || undefined}><summary>Exact next-pull probabilities</summary>
           {(m.state.gameplayV4?R.getDrawPoolV4(m.state,bannerId):getDrawPool(m.state.account,bannerId)).map(item => <p key={item.id}>
             {CARD_BY_ID[item.id]?.name ?? R.GEAR_BY_ID[item.id]?.name ?? item.id} · {(item.probability * 100).toFixed(4)}%</p>)}
         </details>
+        </InvitationRules>
       </section>
       <section ref={stage} className={`cr-panel dp-invitation-stage ${revealing ? 'is-revealing' : ''} ${entranceKey ? 'is-rare-reveal' : ''}`} aria-label="Invitation reveal">
         {revealing && active ? <>
@@ -181,7 +188,7 @@ export function Invitations({ m }: { m: DepthModel }) {
       </section>
     </div>
     {results.length > 0 && !revealing && <section ref={summary} className="cr-panel dp-batch-results" aria-label="Invitation results">
-      <h2>Your invitations</h2><p>Every result is account-bound. Duplicate companions grant matching shards.</p>
+      <h2>Your invitations</h2><p>{m.state.gameplayV4 ? 'Yours to keep. Familiar faces bring shards to help them grow.' : 'Every result is account-bound. Duplicate companions grant matching shards.'}</p>
       <div className="dp-batch-grid">{results.map((result, resultIndex) => <article key={`${result.index}-${resultIndex}`} style={rarityStyle(result.rarity)}>
         {result.cardId ? <CompanionCard id={result.cardId} m={m} />
           : <div className="dp-invitation-item"><ItemIcon slot={(R.GEAR_BY_ID[result.itemId!]??ITEM_BY_ID[result.itemId!])!.slot} /><h3>{resultName(result)}</h3><small>{result.rarity} · Account-bound</small></div>}

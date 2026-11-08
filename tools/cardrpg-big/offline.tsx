@@ -1,3 +1,4 @@
+import { showReviewTools } from "../../apps/web/src/game/cardrpg/depth/player-mode";
 // REFERENCE: reports/cardrpg-big2/INTEGRATION-HOOKS.md; apps/web/src/game/cardrpg/depth/App.tsx
 import { useEffect, useState, useSyncExternalStore } from 'react';
 import { createRoot } from 'react-dom/client';
@@ -21,6 +22,7 @@ function DemoTools({ open }: { open: (kind: Panel['kind']) => void }) {
 }
 
 function Demo() {
+  const reviewTools = showReviewTools(typeof __GAMEPLAY_V4__ !== 'undefined' && __GAMEPLAY_V4__);
   const lookV2 = useSyncExternalStore(subscribeLookV2, isLookV2);
   const [header, setHeader] = useState<HTMLElement | null>(null);
   const [panel, setPanel] = useState<Panel | null>(null);
@@ -56,7 +58,7 @@ function Demo() {
   };
   return <div className={`dp-offline-demo ${panel ? 'b2-demo-lab-open' : ''}`}>
     <DepthApp offline gameplayV4={typeof __GAMEPLAY_V4__ !== 'undefined' && __GAMEPLAY_V4__} />
-    {header && createPortal(<div className="dp-demo-tools" aria-label="Demo tools">
+    {reviewTools && header && createPortal(<div className="dp-demo-tools" aria-label="Demo tools">
       {!panel && <DemoTools open={open} />}
       <button aria-pressed={meter} onClick={() => setMeter(!meter)}>Frame meter</button>
       <button aria-pressed={lookV2} title={lookV2 ? 'Showing Look V2. Switch to baseline styling.' : 'Showing baseline styling. Switch to Look V2.'}
