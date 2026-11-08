@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-Advice29 filters reserves below the selected band and rejects invalid result swaps atomically. Both corrected same-band 90-save arms are exact (0 improved/0 worsened); no population benefit claimed. Original28 failures and confounded +6 retained. Unit red-before1/5, after6PASS.
+Advice29 source e14d320ed fully verified: six gates1746web/1192rules/421E2E/build; OFF8250 exact; original-loss fallback and earned Mallow1→5 swap pass3widths/bothlooks24captures. Same-band90records exact, no population benefit. Draft publication next.
 ## NEXT
-Verify advice29 source/OFF/three-width both-look UI: original under-level save must get a legal fallback; separately train Mallow1→5 through affordable public commands and apply owned-cat swap at band5. Preserve source290061918's original gates/UI failures. B1/B2/display/cadence/startup/Zopen; fresh20001–20500UNUSED.
+Publish reserve-advice draft on396; mirror ledger/outbox. Reference30 completed4000TRAIN:6scenes exact, scene4 262→499/500 andscene5 288→242; median57.8% so no automatic recalibration. Investigate changed support scenes, preserve negatives. B1/B2/display/cadence/startup/Zopen; fresh20001–20500UNUSED.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -234,3 +234,5 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - 2026-11-08T19:11:00.491561+00:00: Original28 sixgates1746web/1190rules/421E2E/build and OFF8250 PASS. UI fails baseline/look1280; diagnostic confirms level1 Mallow versus band5. Original cohort omitted retry band, invalidating causal +6 claim. Registered29 two source snapshots and corrected same-band policy before sampling; production still290061918, unshipped. Pressure27 both arms audited/rejected.
 
 - 2026-11-08T19:12:16.454938+00:00: Advice29 both corrected cohorts complete, all90account records identical, original90firststates exact, progression thresholdsPASS27/28firsttwo and28heavyfirst; zeroeligible reserve suggestions in those oldsaves. Adopted exact registered two-guard candidate after supported audit. Controlled regression before1fail/5pass, after6pass. Separate casual2 fixture spends250fish/8threads viafourpubliclevelcommands, keepsfirstcombat/choices exact, then legitimately suggestsMallow atband5. No new population benefit or freshacceptance claim.
+
+- 2026-11-08T19:20:20.430366+00:00: Resumed original advice29 coordinators without reruns; six source gates/OFF/UI closurePASS. Personally inspected baseline1280trainedResult, baseline1440fallback andlook1024Prepare. Reference30 registered snapshot sampled4000TRAIN once; six scenes exact,324improved/133worsened, median57.8%, mean61.675%. Receipt-audit attempt1 used wrong historical digest serialization; corrected attempt2 retains original script/error and no simulation rerun. No combat/acceptance/B change.

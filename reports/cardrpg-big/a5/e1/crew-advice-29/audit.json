@@ -1,8 +1,15 @@
 {
-  "status": "PASS for current-band availability; no population win improvement",
+  "status": "Corrected same-band TRAIN progression audit",
   "accountsExact": 90,
   "originalFirstStatesExact": 90,
+  "improved": 0,
+  "worsened": 0,
   "eligibleCatSuggestions": 0,
+  "original28": {
+    "suggestions": 17,
+    "underLevel": 17,
+    "limitation": "Original retry script omitted challengeLevel. Its +6 comparison is not evidence at unchanged difficulty."
+  },
   "cohorts": [
     {
       "style": "casual",
@@ -91,12 +98,29 @@
   },
   "receipts": [
     {
+      "path": "reports/cardrpg-big/a5/e1/crew-advice-29/baseline/REGISTERED-METHOD.json",
+      "sha256": "d35bd49a7a1d0f00c3136a44d8a3554dd3d190b1a684d68843137ab18d9e6aa1"
+    },
+    {
       "path": "reports/cardrpg-big/a5/e1/crew-advice-29/baseline/day7-checks/checks.json",
       "sha256": "e99e5d5a2179661291dd5bfb323e9a02dca849dade56e63d1f9805c180766406"
     },
     {
+      "path": "reports/cardrpg-big/a5/e1/crew-advice-29/candidate/REGISTERED-METHOD.json",
+      "sha256": "70a85d485a789fd2ad0f1150e27d1df815accf7ebb61f415b0888a015d8462c5"
+    },
+    {
       "path": "reports/cardrpg-big/a5/e1/crew-advice-29/candidate/day7-checks/checks.json",
       "sha256": "4d088dfeec9ea01d81c34238b8bbdf750ca8404b9fb8e81d809330097b69a7c0"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/e1/crew-advice-28/day7-checks/checks.json",
+      "sha256": "37e0d72e9a28699d8c48e4527b33fb447d85adf331d2765f0567af1dfceaf8e4"
     }
+  ],
+  "limitations": [
+    "90 old earned saves, not fresh 45-day acceptance.",
+    "Original first attempts remain exact; the corrected retry policy is explicit in both arms.",
+    "These accounts contain no selected eligible reserve swap, so they do not measure its population benefit."
   ]
 }

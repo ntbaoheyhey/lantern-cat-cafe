@@ -1,0 +1,2216 @@
+{
+  "status": "PASS for the owned-reserve advice phase; A5 acceptance remains open",
+  "source": "e14d320ed38137e2325b784ea5cc325e1ad007f2",
+  "gates": [
+    {
+      "name": "typecheck",
+      "attempt": 1,
+      "code": 0,
+      "head": "e14d320ed38137e2325b784ea5cc325e1ad007f2",
+      "scope": "complete",
+      "command": [
+        "pnpm",
+        "typecheck"
+      ],
+      "started": "2026-11-08T19:12:16.881Z",
+      "ended": "2026-11-08T19:12:28.546Z",
+      "log": "reports/cardrpg-big/a5/e1-crew-advice-band/gates/typecheck-attempt-1.log",
+      "sha256": "51a42e236a32504b0d88a3bf68105a49f4443b7656a01bba4c17d18c75eeb896",
+      "counts": []
+    },
+    {
+      "name": "lint",
+      "attempt": 1,
+      "code": 0,
+      "head": "e14d320ed38137e2325b784ea5cc325e1ad007f2",
+      "scope": "complete",
+      "command": [
+        "pnpm",
+        "lint"
+      ],
+      "started": "2026-11-08T19:12:28.548Z",
+      "ended": "2026-11-08T19:12:38.633Z",
+      "log": "reports/cardrpg-big/a5/e1-crew-advice-band/gates/lint-attempt-1.log",
+      "sha256": "a53f38f90231d3f94787cba09e842aed97ef41aed55d1a0351b112aabe7beea1",
+      "counts": []
+    },
+    {
+      "name": "web-unit",
+      "attempt": 1,
+      "code": 0,
+      "head": "e14d320ed38137e2325b784ea5cc325e1ad007f2",
+      "scope": "complete",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@taskbar-hero/web",
+        "test"
+      ],
+      "started": "2026-11-08T19:12:38.634Z",
+      "ended": "2026-11-08T19:12:56.496Z",
+      "log": "reports/cardrpg-big/a5/e1-crew-advice-band/gates/web-unit-attempt-1.log",
+      "sha256": "ecb1aeac5b59f3d1582cbe5ce8f8021dcf27e060434ca136d41e8ff204d5174a",
+      "counts": [
+        " Test Files  178 passed (178)",
+        "      Tests  1746 passed (1746)"
+      ]
+    },
+    {
+      "name": "rules",
+      "attempt": 1,
+      "code": 0,
+      "head": "e14d320ed38137e2325b784ea5cc325e1ad007f2",
+      "scope": "complete",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@taskbar-hero/game-rules",
+        "test"
+      ],
+      "started": "2026-11-08T19:12:56.496Z",
+      "ended": "2026-11-08T19:13:21.937Z",
+      "log": "reports/cardrpg-big/a5/e1-crew-advice-band/gates/rules-attempt-1.log",
+      "sha256": "291c191866067660f811caeb2af07cde0119d9e2f730f49c8da4b48942cc88cc",
+      "counts": [
+        " Test Files  71 passed | 3 skipped (74)",
+        "      Tests  1192 passed | 2 expected fail | 11 skipped (1205)"
+      ]
+    },
+    {
+      "name": "e2e",
+      "attempt": 1,
+      "code": 0,
+      "head": "e14d320ed38137e2325b784ea5cc325e1ad007f2",
+      "scope": "complete",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@taskbar-hero/web",
+        "test:e2e",
+        "--workers=4"
+      ],
+      "started": "2026-11-08T19:13:21.937Z",
+      "ended": "2026-11-08T19:15:24.003Z",
+      "log": "reports/cardrpg-big/a5/e1-crew-advice-band/gates/e2e-attempt-1.log",
+      "sha256": "9307b7552dd84797a6083e0eb24cee0e272c181745828fdad441d099f41f75bc",
+      "counts": [
+        "  421 passed (2.0m)"
+      ]
+    },
+    {
+      "name": "build",
+      "attempt": 1,
+      "code": 0,
+      "head": "e14d320ed38137e2325b784ea5cc325e1ad007f2",
+      "scope": "complete",
+      "command": [
+        "pnpm",
+        "build"
+      ],
+      "started": "2026-11-08T19:15:24.004Z",
+      "ended": "2026-11-08T19:15:33.794Z",
+      "log": "reports/cardrpg-big/a5/e1-crew-advice-band/gates/build-attempt-1.log",
+      "sha256": "62149481f231cc0653fc20d92b9c0e212770c53b6c3b83f31de7c500220c3113",
+      "counts": []
+    }
+  ],
+  "off": {
+    "offBehavior": "PASS",
+    "sha256": "47477251b3d20ab602bee5c55a56cdd661e111b1386e298e0c9bc67737fecfa3",
+    "cells": 165,
+    "routes": 8250
+  },
+  "artifact": {
+    "path": "/tmp/cardrpg-a5-crew-advice-29/artifact/index.html",
+    "sha256": "4b15da6dbe4701c1383bf296decd30800f582c61e318447fd8f74b952493a665",
+    "bytes": 20923417
+  },
+  "paired": {
+    "accountsExact": 90,
+    "improved": 0,
+    "worsened": 0,
+    "original28": {
+      "suggestions": 17,
+      "underLevel": 17,
+      "limitation": "Original retry script omitted challengeLevel. Its +6 comparison is not evidence at unchanged difficulty."
+    }
+  },
+  "cohorts": [
+    {
+      "style": "casual",
+      "accounts": 30,
+      "chapters": {
+        "1": 6,
+        "2": 24,
+        "3": 0
+      },
+      "firstWins": 17,
+      "firstWinRate": 0.5666666666666667,
+      "firstWilson": [
+        0.3919730700081361,
+        0.7262251442353347
+      ],
+      "twoAttemptWins": 27,
+      "twoAttemptWinRate": 0.9,
+      "twoAttemptWilson": [
+        0.7437891742081593,
+        0.9654001112526658
+      ],
+      "losses": 13,
+      "availableAdvice": 13,
+      "allLossesHaveAdvice": true,
+      "retryWinsWithAdvice": 10,
+      "retryWinsWithoutAdvice": 6
+    },
+    {
+      "style": "regular",
+      "accounts": 30,
+      "chapters": {
+        "1": 6,
+        "2": 10,
+        "3": 14
+      },
+      "firstWins": 21,
+      "firstWinRate": 0.7,
+      "firstWilson": [
+        0.5212421254128504,
+        0.8333525173175619
+      ],
+      "twoAttemptWins": 28,
+      "twoAttemptWinRate": 0.9333333333333333,
+      "twoAttemptWilson": [
+        0.7867654163738308,
+        0.9815229762087295
+      ],
+      "losses": 9,
+      "availableAdvice": 9,
+      "allLossesHaveAdvice": true,
+      "retryWinsWithAdvice": 7,
+      "retryWinsWithoutAdvice": 4
+    },
+    {
+      "style": "heavy",
+      "accounts": 30,
+      "chapters": {
+        "1": 0,
+        "2": 1,
+        "3": 29
+      },
+      "firstWins": 28,
+      "firstWinRate": 0.9333333333333333,
+      "firstWilson": [
+        0.7867654163738308,
+        0.9815229762087295
+      ],
+      "twoAttemptWins": 28,
+      "twoAttemptWinRate": 0.9333333333333333,
+      "twoAttemptWilson": [
+        0.7867654163738308,
+        0.9815229762087295
+      ],
+      "losses": 2,
+      "availableAdvice": 2,
+      "allLossesHaveAdvice": true,
+      "retryWinsWithAdvice": 0,
+      "retryWinsWithoutAdvice": 2
+    }
+  ],
+  "progressionGates": {
+    "casualFirstTwoAtLeast50": true,
+    "regularFirstTwoAtLeast70": true,
+    "heavyFirstAtMost95": true,
+    "everyLossHasAvailableImprovement": true
+  },
+  "ownedCatSuggestions": 0,
+  "fixture": {
+    "style": "casual",
+    "index": 2,
+    "label": "Replace Soot with Mallow in Back",
+    "training": {
+      "commands": [
+        {
+          "type": "level",
+          "cardId": "mallow"
+        },
+        {
+          "type": "level",
+          "cardId": "mallow"
+        },
+        {
+          "type": "level",
+          "cardId": "mallow"
+        },
+        {
+          "type": "level",
+          "cardId": "mallow"
+        }
+      ],
+      "before": {
+        "fish": 300,
+        "threads": 312,
+        "stamps": 270,
+        "essence": 0
+      },
+      "after": {
+        "fish": 50,
+        "threads": 304,
+        "stamps": 270,
+        "essence": 0
+      }
+    },
+    "band": 5
+  },
+  "browsers": [
+    {
+      "width": 1280,
+      "look": "baseline",
+      "checks": [
+        "original-loss: worker selects the expected legal suggestion.",
+        "original-loss: one click applies the predicted change/cost, keeps equipment and challenge band, and opens Prepare with zero combat actions.",
+        "trained-reserve: worker selects the expected legal suggestion.",
+        "trained-reserve: one click applies the predicted change/cost, keeps equipment and challenge band, and opens Prepare with zero combat actions."
+      ],
+      "workerWaitMs": 383
+    },
+    {
+      "width": 1440,
+      "look": "baseline",
+      "checks": [
+        "original-loss: worker selects the expected legal suggestion.",
+        "original-loss: one click applies the predicted change/cost, keeps equipment and challenge band, and opens Prepare with zero combat actions.",
+        "trained-reserve: worker selects the expected legal suggestion.",
+        "trained-reserve: one click applies the predicted change/cost, keeps equipment and challenge band, and opens Prepare with zero combat actions."
+      ],
+      "workerWaitMs": 328
+    },
+    {
+      "width": 1024,
+      "look": "baseline",
+      "checks": [
+        "original-loss: worker selects the expected legal suggestion.",
+        "original-loss: one click applies the predicted change/cost, keeps equipment and challenge band, and opens Prepare with zero combat actions.",
+        "trained-reserve: worker selects the expected legal suggestion.",
+        "trained-reserve: one click applies the predicted change/cost, keeps equipment and challenge band, and opens Prepare with zero combat actions."
+      ],
+      "workerWaitMs": 309
+    },
+    {
+      "width": 1280,
+      "look": "look",
+      "checks": [
+        "original-loss: worker selects the expected legal suggestion.",
+        "original-loss: one click applies the predicted change/cost, keeps equipment and challenge band, and opens Prepare with zero combat actions.",
+        "trained-reserve: worker selects the expected legal suggestion.",
+        "trained-reserve: one click applies the predicted change/cost, keeps equipment and challenge band, and opens Prepare with zero combat actions."
+      ],
+      "workerWaitMs": 311
+    },
+    {
+      "width": 1440,
+      "look": "look",
+      "checks": [
+        "original-loss: worker selects the expected legal suggestion.",
+        "original-loss: one click applies the predicted change/cost, keeps equipment and challenge band, and opens Prepare with zero combat actions.",
+        "trained-reserve: worker selects the expected legal suggestion.",
+        "trained-reserve: one click applies the predicted change/cost, keeps equipment and challenge band, and opens Prepare with zero combat actions."
+      ],
+      "workerWaitMs": 312
+    },
+    {
+      "width": 1024,
+      "look": "look",
+      "checks": [
+        "original-loss: worker selects the expected legal suggestion.",
+        "original-loss: one click applies the predicted change/cost, keeps equipment and challenge band, and opens Prepare with zero combat actions.",
+        "trained-reserve: worker selects the expected legal suggestion.",
+        "trained-reserve: one click applies the predicted change/cost, keeps equipment and challenge band, and opens Prepare with zero combat actions."
+      ],
+      "workerWaitMs": 308
+    }
+  ],
+  "captures": [
+    {
+      "name": "original-loss-suggestion",
+      "path": "reports/cardrpg-big/a5/e1/crew-advice-29/browser-baseline-1280-attempt-1/original-loss-suggestion.png",
+      "selector": ".dp-v4-advice",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "One change for your next try",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Stop their support · Protect",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "No currency needed.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Apply and retry route",
+          "ratio": 9.237546476333335
+        },
+        {
+          "text": "Your earned rewards stay. A fresh route starts at the first stop.",
+          "ratio": 6.858421081163746
+        }
+      ],
+      "width": 1280,
+      "look": "baseline",
+      "sha256": "abc438820d7285b703435b19b6b3d0da8ee0e57c88b9fa57c04df3c45219baf1"
+    },
+    {
+      "name": "original-loss-ready",
+      "path": "reports/cardrpg-big/a5/e1/crew-advice-29/browser-baseline-1280-attempt-1/original-loss-ready.png",
+      "selector": ".dp-v4-prepare",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Choose a cat. Choose its place.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Front · protect the crew",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Place in Front",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Mochi",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "695/695 HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Back · room to work",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Place in Back",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Soot",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "551/551 HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Clover",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "444/444 HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Mochi selected. Keep at least one cat in front.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Best at:",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Cover and crew changes",
+          "ratio": 8.214732745339752
+        },
+        {
+          "text": "Row attacks and attacks that reach the back ignore cover.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Swap Mochi with a companion from your collection.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Sorrel",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Panko",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Mallow",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Who needs pressure?",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Finish weak foes",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Stop their support",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Focus the boss",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "When should we help?",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Steady · below 45% HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Protect · below 65% HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Protect favours earlier healing. It can leave less time to attack.",
+          "ratio": 11.756728459422893
+        }
+      ],
+      "width": 1280,
+      "look": "baseline",
+      "sha256": "5ba10ab5071be638aac6eff063ee546c7b95eabb99c9535ffd9fd51758171819"
+    },
+    {
+      "name": "trained-reserve-suggestion",
+      "path": "reports/cardrpg-big/a5/e1/crew-advice-29/browser-baseline-1280-attempt-1/trained-reserve-suggestion.png",
+      "selector": ".dp-v4-advice",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "One change for your next try",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Replace Soot with Mallow in Back",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "No currency needed.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Apply and retry route",
+          "ratio": 9.237546476333335
+        },
+        {
+          "text": "Your earned rewards stay. A fresh route starts at the first stop.",
+          "ratio": 6.858421081163746
+        }
+      ],
+      "width": 1280,
+      "look": "baseline",
+      "sha256": "811b571354ab153145fad7b2810021a58704f2ba518817683e8ec0ebe4fa6c9f"
+    },
+    {
+      "name": "trained-reserve-ready",
+      "path": "reports/cardrpg-big/a5/e1/crew-advice-29/browser-baseline-1280-attempt-1/trained-reserve-ready.png",
+      "selector": ".dp-v4-prepare",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Choose a cat. Choose its place.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Front · protect the crew",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Place in Front",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Mochi",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "716/716 HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Back · room to work",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Place in Back",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Mallow",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "461/461 HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Clover",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "457/457 HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Mochi selected. Keep at least one cat in front.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Best at:",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Cover and crew changes",
+          "ratio": 8.214732745339752
+        },
+        {
+          "text": "Row attacks and attacks that reach the back ignore cover.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Swap Mochi with a companion from your collection.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Soot",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Sorrel",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Panko",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Who needs pressure?",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Finish weak foes",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Stop their support",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Focus the boss",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "When should we help?",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Steady · below 45% HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Protect · below 65% HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Protect favours earlier healing. It can leave less time to attack.",
+          "ratio": 11.756728459422893
+        }
+      ],
+      "width": 1280,
+      "look": "baseline",
+      "sha256": "9228a13e78c0b7e897993c87247f4ccd57d26df2d7a25a58b12dff887fd6291a"
+    },
+    {
+      "name": "original-loss-suggestion",
+      "path": "reports/cardrpg-big/a5/e1/crew-advice-29/browser-baseline-1440-attempt-1/original-loss-suggestion.png",
+      "selector": ".dp-v4-advice",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "One change for your next try",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Stop their support · Protect",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "No currency needed.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Apply and retry route",
+          "ratio": 9.237546476333335
+        },
+        {
+          "text": "Your earned rewards stay. A fresh route starts at the first stop.",
+          "ratio": 6.858421081163746
+        }
+      ],
+      "width": 1440,
+      "look": "baseline",
+      "sha256": "cc5047e09466d75246bdd8b65e3acb00b5a64f02ecfeb977cc54f142fd5a15a3"
+    },
+    {
+      "name": "original-loss-ready",
+      "path": "reports/cardrpg-big/a5/e1/crew-advice-29/browser-baseline-1440-attempt-1/original-loss-ready.png",
+      "selector": ".dp-v4-prepare",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Choose a cat. Choose its place.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Front · protect the crew",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Place in Front",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Mochi",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "695/695 HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Back · room to work",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Place in Back",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Soot",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "551/551 HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Clover",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "444/444 HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Mochi selected. Keep at least one cat in front.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Best at:",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Cover and crew changes",
+          "ratio": 8.214732745339752
+        },
+        {
+          "text": "Row attacks and attacks that reach the back ignore cover.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Swap Mochi with a companion from your collection.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Sorrel",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Panko",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Mallow",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Who needs pressure?",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Finish weak foes",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Stop their support",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Focus the boss",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "When should we help?",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Steady · below 45% HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Protect · below 65% HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Protect favours earlier healing. It can leave less time to attack.",
+          "ratio": 11.756728459422893
+        }
+      ],
+      "width": 1440,
+      "look": "baseline",
+      "sha256": "ebd34ddf7d32cdec15b5fb7990933e5bb42f772d2ed79f66e6fd8a7a68c0bd68"
+    },
+    {
+      "name": "trained-reserve-suggestion",
+      "path": "reports/cardrpg-big/a5/e1/crew-advice-29/browser-baseline-1440-attempt-1/trained-reserve-suggestion.png",
+      "selector": ".dp-v4-advice",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "One change for your next try",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Replace Soot with Mallow in Back",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "No currency needed.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Apply and retry route",
+          "ratio": 9.237546476333335
+        },
+        {
+          "text": "Your earned rewards stay. A fresh route starts at the first stop.",
+          "ratio": 6.858421081163746
+        }
+      ],
+      "width": 1440,
+      "look": "baseline",
+      "sha256": "e62bb00d1694b87aa26b27df3e6dc6516ea05ca441f6143cc283c6ef020ead43"
+    },
+    {
+      "name": "trained-reserve-ready",
+      "path": "reports/cardrpg-big/a5/e1/crew-advice-29/browser-baseline-1440-attempt-1/trained-reserve-ready.png",
+      "selector": ".dp-v4-prepare",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Choose a cat. Choose its place.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Front · protect the crew",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Place in Front",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Mochi",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "716/716 HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Back · room to work",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Place in Back",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Mallow",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "461/461 HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Clover",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "457/457 HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Mochi selected. Keep at least one cat in front.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Best at:",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Cover and crew changes",
+          "ratio": 8.214732745339752
+        },
+        {
+          "text": "Row attacks and attacks that reach the back ignore cover.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Swap Mochi with a companion from your collection.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Soot",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Sorrel",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Panko",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Who needs pressure?",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Finish weak foes",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Stop their support",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Focus the boss",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "When should we help?",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Steady · below 45% HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Protect · below 65% HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Protect favours earlier healing. It can leave less time to attack.",
+          "ratio": 11.756728459422893
+        }
+      ],
+      "width": 1440,
+      "look": "baseline",
+      "sha256": "4bc81ff14559d64f789b1771a240f820ee1b45fbe5248e79131b42897dfe2426"
+    },
+    {
+      "name": "original-loss-suggestion",
+      "path": "reports/cardrpg-big/a5/e1/crew-advice-29/browser-baseline-1024-attempt-1/original-loss-suggestion.png",
+      "selector": ".dp-v4-advice",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "One change for your next try",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Stop their support · Protect",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "No currency needed.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Apply and retry route",
+          "ratio": 9.237546476333335
+        },
+        {
+          "text": "Your earned rewards stay. A fresh route starts at the first stop.",
+          "ratio": 6.858421081163746
+        }
+      ],
+      "width": 1024,
+      "look": "baseline",
+      "sha256": "5b40c2aebe9185a9905e67d02c234e2aa79834b493d0bd348be1f59937670421"
+    },
+    {
+      "name": "original-loss-ready",
+      "path": "reports/cardrpg-big/a5/e1/crew-advice-29/browser-baseline-1024-attempt-1/original-loss-ready.png",
+      "selector": ".dp-v4-prepare",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Choose a cat. Choose its place.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Front · protect the crew",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Place in Front",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Mochi",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "695/695 HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Back · room to work",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Place in Back",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Soot",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "551/551 HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Clover",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "444/444 HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Mochi selected. Keep at least one cat in front.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Best at:",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Cover and crew changes",
+          "ratio": 8.214732745339752
+        },
+        {
+          "text": "Row attacks and attacks that reach the back ignore cover.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Swap Mochi with a companion from your collection.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Sorrel",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Panko",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Mallow",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Who needs pressure?",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Finish weak foes",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Stop their support",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Focus the boss",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "When should we help?",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Steady · below 45% HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Protect · below 65% HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Protect favours earlier healing. It can leave less time to attack.",
+          "ratio": 11.756728459422893
+        }
+      ],
+      "width": 1024,
+      "look": "baseline",
+      "sha256": "c960eabfe0cfa667f08fd8be17b26ed9126ddc89991648d0072bbea56abffa95"
+    },
+    {
+      "name": "trained-reserve-suggestion",
+      "path": "reports/cardrpg-big/a5/e1/crew-advice-29/browser-baseline-1024-attempt-1/trained-reserve-suggestion.png",
+      "selector": ".dp-v4-advice",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "One change for your next try",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Replace Soot with Mallow in Back",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "No currency needed.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Apply and retry route",
+          "ratio": 9.237546476333335
+        },
+        {
+          "text": "Your earned rewards stay. A fresh route starts at the first stop.",
+          "ratio": 6.858421081163746
+        }
+      ],
+      "width": 1024,
+      "look": "baseline",
+      "sha256": "4e8268ab6fe7ce6943ef189acd0e1dc3818faffad360dfc21c684fe86065ff96"
+    },
+    {
+      "name": "trained-reserve-ready",
+      "path": "reports/cardrpg-big/a5/e1/crew-advice-29/browser-baseline-1024-attempt-1/trained-reserve-ready.png",
+      "selector": ".dp-v4-prepare",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Choose a cat. Choose its place.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Front · protect the crew",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Place in Front",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Mochi",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "716/716 HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Back · room to work",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Place in Back",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Mallow",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "461/461 HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Clover",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "457/457 HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Mochi selected. Keep at least one cat in front.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Best at:",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Cover and crew changes",
+          "ratio": 8.214732745339752
+        },
+        {
+          "text": "Row attacks and attacks that reach the back ignore cover.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Swap Mochi with a companion from your collection.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Soot",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Sorrel",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Panko",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Who needs pressure?",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Finish weak foes",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Stop their support",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Focus the boss",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "When should we help?",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Steady · below 45% HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Protect · below 65% HP",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Protect favours earlier healing. It can leave less time to attack.",
+          "ratio": 11.756728459422893
+        }
+      ],
+      "width": 1024,
+      "look": "baseline",
+      "sha256": "c3f5bf339d47ead5d261608bb16f0b5376103b8c0b3499e92b47726278ee904a"
+    },
+    {
+      "name": "original-loss-suggestion",
+      "path": "reports/cardrpg-big/a5/e1/crew-advice-29/browser-look-1280-attempt-1/original-loss-suggestion.png",
+      "selector": ".dp-v4-advice",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "One change for your next try",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Stop their support · Protect",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "No currency needed.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Apply and retry route",
+          "ratio": 9.509076954893759
+        },
+        {
+          "text": "Your earned rewards stay. A fresh route starts at the first stop.",
+          "ratio": 8.028038840639192
+        }
+      ],
+      "width": 1280,
+      "look": "look",
+      "sha256": "9a6341b22be19f5c658fa81274a542f151e40e229bddbd4501396c9d68f85a92"
+    },
+    {
+      "name": "original-loss-ready",
+      "path": "reports/cardrpg-big/a5/e1/crew-advice-29/browser-look-1280-attempt-1/original-loss-ready.png",
+      "selector": ".dp-v4-prepare",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Choose a cat. Choose its place.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Front · protect the crew",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Place in Front",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Mochi",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "695/695 HP",
+          "ratio": 10.131687993918804
+        },
+        {
+          "text": "Back · room to work",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Place in Back",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Soot",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "551/551 HP",
+          "ratio": 10.131687993918804
+        },
+        {
+          "text": "Clover",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "444/444 HP",
+          "ratio": 10.131687993918804
+        },
+        {
+          "text": "Mochi selected. Keep at least one cat in front.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Best at:",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Cover and crew changes",
+          "ratio": 6.726412472948525
+        },
+        {
+          "text": "Row attacks and attacks that reach the back ignore cover.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Swap Mochi with a companion from your collection.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Sorrel",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Panko",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Mallow",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Who needs pressure?",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Finish weak foes",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Stop their support",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Focus the boss",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "When should we help?",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Steady · below 45% HP",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Protect · below 65% HP",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Protect favours earlier healing. It can leave less time to attack.",
+          "ratio": 10.084979698275495
+        }
+      ],
+      "width": 1280,
+      "look": "look",
+      "sha256": "9a9ab7e6e52db2097acec6f655c1457c4eeb696afd2eb5baae54534ba494e9f9"
+    },
+    {
+      "name": "trained-reserve-suggestion",
+      "path": "reports/cardrpg-big/a5/e1/crew-advice-29/browser-look-1280-attempt-1/trained-reserve-suggestion.png",
+      "selector": ".dp-v4-advice",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "One change for your next try",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Replace Soot with Mallow in Back",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "No currency needed.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Apply and retry route",
+          "ratio": 9.509076954893759
+        },
+        {
+          "text": "Your earned rewards stay. A fresh route starts at the first stop.",
+          "ratio": 8.028038840639192
+        }
+      ],
+      "width": 1280,
+      "look": "look",
+      "sha256": "261753117ec00439293827e4100f99af17201dfb5bbfafc0639c055c368d2c9c"
+    },
+    {
+      "name": "trained-reserve-ready",
+      "path": "reports/cardrpg-big/a5/e1/crew-advice-29/browser-look-1280-attempt-1/trained-reserve-ready.png",
+      "selector": ".dp-v4-prepare",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Choose a cat. Choose its place.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Front · protect the crew",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Place in Front",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Mochi",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "716/716 HP",
+          "ratio": 10.131687993918804
+        },
+        {
+          "text": "Back · room to work",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Place in Back",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Mallow",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "461/461 HP",
+          "ratio": 10.131687993918804
+        },
+        {
+          "text": "Clover",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "457/457 HP",
+          "ratio": 10.131687993918804
+        },
+        {
+          "text": "Mochi selected. Keep at least one cat in front.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Best at:",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Cover and crew changes",
+          "ratio": 6.726412472948525
+        },
+        {
+          "text": "Row attacks and attacks that reach the back ignore cover.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Swap Mochi with a companion from your collection.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Soot",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Sorrel",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Panko",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Who needs pressure?",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Finish weak foes",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Stop their support",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Focus the boss",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "When should we help?",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Steady · below 45% HP",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Protect · below 65% HP",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Protect favours earlier healing. It can leave less time to attack.",
+          "ratio": 10.084979698275495
+        }
+      ],
+      "width": 1280,
+      "look": "look",
+      "sha256": "53d81f7c3836a347c0e2a481f7c60c8ea3dfcc44b59b7f5ecb3541458d98f9f0"
+    },
+    {
+      "name": "original-loss-suggestion",
+      "path": "reports/cardrpg-big/a5/e1/crew-advice-29/browser-look-1440-attempt-1/original-loss-suggestion.png",
+      "selector": ".dp-v4-advice",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "One change for your next try",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Stop their support · Protect",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "No currency needed.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Apply and retry route",
+          "ratio": 9.509076954893759
+        },
+        {
+          "text": "Your earned rewards stay. A fresh route starts at the first stop.",
+          "ratio": 8.028038840639192
+        }
+      ],
+      "width": 1440,
+      "look": "look",
+      "sha256": "b2770a3d76f69a3962ed44e89b2a2449ba7fd0586d0832a669289aa64450db57"
+    },
+    {
+      "name": "original-loss-ready",
+      "path": "reports/cardrpg-big/a5/e1/crew-advice-29/browser-look-1440-attempt-1/original-loss-ready.png",
+      "selector": ".dp-v4-prepare",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Choose a cat. Choose its place.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Front · protect the crew",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Place in Front",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Mochi",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "695/695 HP",
+          "ratio": 10.131687993918804
+        },
+        {
+          "text": "Back · room to work",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Place in Back",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Soot",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "551/551 HP",
+          "ratio": 10.131687993918804
+        },
+        {
+          "text": "Clover",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "444/444 HP",
+          "ratio": 10.131687993918804
+        },
+        {
+          "text": "Mochi selected. Keep at least one cat in front.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Best at:",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Cover and crew changes",
+          "ratio": 6.726412472948525
+        },
+        {
+          "text": "Row attacks and attacks that reach the back ignore cover.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Swap Mochi with a companion from your collection.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Sorrel",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Panko",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Mallow",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Who needs pressure?",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Finish weak foes",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Stop their support",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Focus the boss",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "When should we help?",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Steady · below 45% HP",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Protect · below 65% HP",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Protect favours earlier healing. It can leave less time to attack.",
+          "ratio": 10.084979698275495
+        }
+      ],
+      "width": 1440,
+      "look": "look",
+      "sha256": "b12cb7264101de00ab7449afc98e1dde1e0a32024065626538be3bd8b0946e80"
+    },
+    {
+      "name": "trained-reserve-suggestion",
+      "path": "reports/cardrpg-big/a5/e1/crew-advice-29/browser-look-1440-attempt-1/trained-reserve-suggestion.png",
+      "selector": ".dp-v4-advice",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "One change for your next try",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Replace Soot with Mallow in Back",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "No currency needed.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Apply and retry route",
+          "ratio": 9.509076954893759
+        },
+        {
+          "text": "Your earned rewards stay. A fresh route starts at the first stop.",
+          "ratio": 8.028038840639192
+        }
+      ],
+      "width": 1440,
+      "look": "look",
+      "sha256": "c2e23888eb872163c7095ec144c7d99cb91013dfbaa7b11a4da57f95a69df6ec"
+    },
+    {
+      "name": "trained-reserve-ready",
+      "path": "reports/cardrpg-big/a5/e1/crew-advice-29/browser-look-1440-attempt-1/trained-reserve-ready.png",
+      "selector": ".dp-v4-prepare",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Choose a cat. Choose its place.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Front · protect the crew",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Place in Front",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Mochi",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "716/716 HP",
+          "ratio": 10.131687993918804
+        },
+        {
+          "text": "Back · room to work",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Place in Back",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Mallow",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "461/461 HP",
+          "ratio": 10.131687993918804
+        },
+        {
+          "text": "Clover",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "457/457 HP",
+          "ratio": 10.131687993918804
+        },
+        {
+          "text": "Mochi selected. Keep at least one cat in front.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Best at:",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Cover and crew changes",
+          "ratio": 6.726412472948525
+        },
+        {
+          "text": "Row attacks and attacks that reach the back ignore cover.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Swap Mochi with a companion from your collection.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Soot",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Sorrel",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Panko",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Who needs pressure?",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Finish weak foes",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Stop their support",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Focus the boss",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "When should we help?",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Steady · below 45% HP",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Protect · below 65% HP",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Protect favours earlier healing. It can leave less time to attack.",
+          "ratio": 10.084979698275495
+        }
+      ],
+      "width": 1440,
+      "look": "look",
+      "sha256": "343826516cae0ce333393e532cb3fffcdbfc623a19d0546ad28c52cc32ced156"
+    },
+    {
+      "name": "original-loss-suggestion",
+      "path": "reports/cardrpg-big/a5/e1/crew-advice-29/browser-look-1024-attempt-1/original-loss-suggestion.png",
+      "selector": ".dp-v4-advice",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "One change for your next try",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Stop their support · Protect",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "No currency needed.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Apply and retry route",
+          "ratio": 9.509076954893759
+        },
+        {
+          "text": "Your earned rewards stay. A fresh route starts at the first stop.",
+          "ratio": 8.028038840639192
+        }
+      ],
+      "width": 1024,
+      "look": "look",
+      "sha256": "2c44276c23e9a156c828ab22212f863476ec476da89d7d4d846eceaba6aaf9f1"
+    },
+    {
+      "name": "original-loss-ready",
+      "path": "reports/cardrpg-big/a5/e1/crew-advice-29/browser-look-1024-attempt-1/original-loss-ready.png",
+      "selector": ".dp-v4-prepare",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Choose a cat. Choose its place.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Front · protect the crew",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Place in Front",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Mochi",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "695/695 HP",
+          "ratio": 10.131687993918804
+        },
+        {
+          "text": "Back · room to work",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Place in Back",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Soot",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "551/551 HP",
+          "ratio": 10.131687993918804
+        },
+        {
+          "text": "Clover",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "444/444 HP",
+          "ratio": 10.131687993918804
+        },
+        {
+          "text": "Mochi selected. Keep at least one cat in front.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Best at:",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Cover and crew changes",
+          "ratio": 6.726412472948525
+        },
+        {
+          "text": "Row attacks and attacks that reach the back ignore cover.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Swap Mochi with a companion from your collection.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Sorrel",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Panko",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Mallow",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Who needs pressure?",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Finish weak foes",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Stop their support",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Focus the boss",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "When should we help?",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Steady · below 45% HP",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Protect · below 65% HP",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Protect favours earlier healing. It can leave less time to attack.",
+          "ratio": 10.084979698275495
+        }
+      ],
+      "width": 1024,
+      "look": "look",
+      "sha256": "e0319bb6460066d39c2b1445cfaf540a033776b15095e33ad1856da968a6ba82"
+    },
+    {
+      "name": "trained-reserve-suggestion",
+      "path": "reports/cardrpg-big/a5/e1/crew-advice-29/browser-look-1024-attempt-1/trained-reserve-suggestion.png",
+      "selector": ".dp-v4-advice",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "One change for your next try",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Replace Soot with Mallow in Back",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "No currency needed.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Apply and retry route",
+          "ratio": 9.509076954893759
+        },
+        {
+          "text": "Your earned rewards stay. A fresh route starts at the first stop.",
+          "ratio": 8.028038840639192
+        }
+      ],
+      "width": 1024,
+      "look": "look",
+      "sha256": "0e6e53bc35f3e4be5d4f03b92c803f3ed9b2463ee88e7d04d2b8e90c904740fb"
+    },
+    {
+      "name": "trained-reserve-ready",
+      "path": "reports/cardrpg-big/a5/e1/crew-advice-29/browser-look-1024-attempt-1/trained-reserve-ready.png",
+      "selector": ".dp-v4-prepare",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Choose a cat. Choose its place.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Front · protect the crew",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Place in Front",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Mochi",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "716/716 HP",
+          "ratio": 10.131687993918804
+        },
+        {
+          "text": "Back · room to work",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Place in Back",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Mallow",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "461/461 HP",
+          "ratio": 10.131687993918804
+        },
+        {
+          "text": "Clover",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "457/457 HP",
+          "ratio": 10.131687993918804
+        },
+        {
+          "text": "Mochi selected. Keep at least one cat in front.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Best at:",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Cover and crew changes",
+          "ratio": 6.726412472948525
+        },
+        {
+          "text": "Row attacks and attacks that reach the back ignore cover.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Swap Mochi with a companion from your collection.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Soot",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Sorrel",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Panko",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Who needs pressure?",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Finish weak foes",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Stop their support",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Focus the boss",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "When should we help?",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Steady · below 45% HP",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Protect · below 65% HP",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Protect favours earlier healing. It can leave less time to attack.",
+          "ratio": 10.084979698275495
+        }
+      ],
+      "width": 1024,
+      "look": "look",
+      "sha256": "7bbea109605f5a146089476b94aa577a5beaa19e9a9b7d770676630b28e5f727"
+    }
+  ],
+  "minimumScopedContrast": 6.726412472948525,
+  "scope": {
+    "scope": "PASS",
+    "baseline": "PASS",
+    "historicalSimFiles": 13
+  },
+  "receipts": [
+    {
+      "path": "reports/cardrpg-big/a5/e1-crew-advice-band/gates/checks.json",
+      "sha256": "dc42760415bff8e27f80894ce6b514f5a2e071185fdc7f306611e1095f292ea2"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/e1/crew-advice-29/candidate/REGISTERED-METHOD.json",
+      "sha256": "70a85d485a789fd2ad0f1150e27d1df815accf7ebb61f415b0888a015d8462c5"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/e1/crew-advice-29/candidate/day7-checks/checks.json",
+      "sha256": "4d088dfeec9ea01d81c34238b8bbdf750ca8404b9fb8e81d809330097b69a7c0"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/e1/crew-advice-29/audit.json",
+      "sha256": "c29682d6882d8a9b1b8d50c6be0bbd7d15449da27b90638c6f12d9da3a10d765"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/e1-crew-advice-band/off/checks.json",
+      "sha256": "b266e345cf77ddcfcdc0772a11a6e690e577fcf2168c09f2316c5fc4d4230e4d"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/e1-crew-advice-band/off/source.json",
+      "sha256": "f54e69f74bb6fa5de3a63298cef1c1218398f5e5498945401520ab83645f949c"
+    },
+    {
+      "path": "/tmp/cardrpg-a5-crew-advice-29/artifact/build.json",
+      "sha256": "9041d7771fb269ed6745b7ebebe6c1577c123df9076ddcff7061564ee47881ec"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/e1-crew-advice-band/build/manifest.json",
+      "sha256": "4f47ec21a0490bbd98901be9c8162054fd6d3a00e1cda689a015ee12fbecfa44"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/e1/crew-advice-29/browser-fixture.json",
+      "sha256": "3e8687b128a60b3adf8cec926e65ba7d50762bfe68d1da514eb81137dfdff2db"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/e1/crew-advice-29/fallback-fixture.json",
+      "sha256": "225f3e88a3a1387769845f982229fd68579783220e3aedf7a7f00056466c08c1"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/e1/crew-advice-29/ui-checks.json",
+      "sha256": "531019fb9a1c091a67a8f4c35136dacdd64ddd267d909d9cbd1b910cf142f179"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/e1/crew-advice-29/browser-baseline-1280-attempt-1/checks.json",
+      "sha256": "faade99cd4e97bfe2a99ac1859ba5e2d4460c59e1cdd795a08a4637945fc39e2"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/e1/crew-advice-29/browser-baseline-1440-attempt-1/checks.json",
+      "sha256": "2db5635cbc0501285a7e400ae8ee7d620205219b4ca28a030740ea4be1a88575"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/e1/crew-advice-29/browser-baseline-1024-attempt-1/checks.json",
+      "sha256": "36a1f2698e01b04e66faeb3f2a5977498c42c275fa0ee982a11ecef27a6a00cc"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/e1/crew-advice-29/browser-look-1280-attempt-1/checks.json",
+      "sha256": "ec5435f393238b24445a9868bace645633828a31c8c1ab1646f8427738a511ca"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/e1/crew-advice-29/browser-look-1440-attempt-1/checks.json",
+      "sha256": "eaec6d59439da754470a83c717edfe50ec9d68a009fd99047a2bfa5cb9929813"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/e1/crew-advice-29/browser-look-1024-attempt-1/checks.json",
+      "sha256": "0598c40008cdc713f93328ae5fa3f09b19f3788bb9d62a7eac0bbeb01db894bd"
+    }
+  ],
+  "limitations": [
+    "Previously earned 90 day7 saves, not a fresh 45-day cohort or acceptance block.",
+    "Both heavy losses still lose with advice while both no-advice retries win; forecasts are not guarantees.",
+    "Original-loss fallback and a separately trained reserve fixture at three widths/both looks; not population benefit, full screenshot pack or x1 journey.",
+    "Pressure-transfer27 and phase26 are unadopted; no combat fixture or acceptance gate changed.",
+    "Public game and guide are still the original A4 artifacts."
+  ]
+}
