@@ -46,7 +46,7 @@ describe('v4 permanent collection and shared reward board',()=>{
  });
  it('migrates THC11 and OFF THC7 without inventing historical route counts',()=>{
   const s=fresh(),payload=JSON.stringify(s),old=`THC11.${R.saveChecksum(payload)}.${payload}`;
-  const loaded=R.importSave(old);expect(R.journalV4(loaded).rewardedRoutes).toBe(0);expect(R.journalV4(loaded).cats.length).toBe(3);expect(R.exportSave(loaded)).toMatch(/^THC12\./);
+  const loaded=R.importSave(old);expect(R.journalV4(loaded).rewardedRoutes).toBe(0);expect(R.journalV4(loaded).cats.length).toBe(3);expect(R.exportSave(loaded)).toMatch(/^THC13\./);
   const off=R.createDepthAccount(17);expect(R.importSave(R.exportSave(off))).toEqual(off);expect(R.exportSave(off)).toMatch(/^THC7\./);
  });
  it('rejects malformed histories, duplicates and invalid clocks in saved data',()=>{

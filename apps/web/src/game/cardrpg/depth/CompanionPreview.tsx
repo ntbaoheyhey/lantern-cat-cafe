@@ -18,8 +18,8 @@ export function CompanionPreviewProvider({ m, children }: { m: DepthModel; child
   return <PreviewContext.Provider value={runtime}>{children}</PreviewContext.Provider>;
 }
 
-export function CompanionPreview({ m, id, skillId, entranceKey, home = false, visible = true }: {
-  m: DepthModel; id?: string; skillId?: string; entranceKey?: string; home?: boolean; visible?: boolean;
+export function CompanionPreview({ m, id, skillId, entranceKey, earnedReveal, home = false, visible = true }: {
+  m: DepthModel; id?: string; skillId?: string; entranceKey?: string; earnedReveal?: R.GameplayEventV4; home?: boolean; visible?: boolean;
 }) {
   const lookV2 = useSyncExternalStore(subscribeLookV2, isLookV2, () => false);
   const host = useRef<HTMLDivElement>(null);
@@ -36,11 +36,12 @@ export function CompanionPreview({ m, id, skillId, entranceKey, home = false, vi
     return { battle: R.createBattle({ seed: 11, chapter: 1,
       cats: R.battleCats({ ...state, team: id ? [id] : state.team }), enemies: [] }), plan: null };
   }, [state, id, skillId]);
-  const view = useMemo<SceneView>(() => {
+  const view = useMemo<SceneView & { earnedReveal?: R.GameplayEventV4 }>(() => {
     const actors = project(fixture.battle).filter(actor => home || skillId || actor.cardRpg?.cardId === id);
     const equipment = Object.fromEntries(actors.map(actor => [actor.id, appearance(actor)]));
     return {
       actors, currentId: null, frame: null,
+      ...(R.gameplayV4(state) && entranceKey && earnedReveal ? { earnedReveal } : {}),
       models: Object.fromEntries(actors.map(actor => [actor.id, actor.cardRpg!.cardId])),
       warmModelIds: actors.map(actor => actor.cardRpg!.cardId),
       appearance: actor => equipment[actor.id]!, autoBattle: true, tableau: home,
@@ -50,7 +51,7 @@ export function CompanionPreview({ m, id, skillId, entranceKey, home = false, vi
       model: home || skillId ? undefined : { role: actors[0]!.role, clip: 'idle', angle: 0 },
       decorateStage: decorateChapterStage, animateStage: animateChapterStage,
     };
-  }, [fixture, home, id, skillId, state.settings.reducedMotion, state.settings.quality]);
+  }, [fixture, home, id, skillId, entranceKey, earnedReveal, state, state.settings.reducedMotion, state.settings.quality]);
   const options = useRef({ view, fixture, rotating, angle, skillId, visible, id, entranceKey });
   options.current = { view, fixture, rotating, angle, skillId, visible, id, entranceKey };
 

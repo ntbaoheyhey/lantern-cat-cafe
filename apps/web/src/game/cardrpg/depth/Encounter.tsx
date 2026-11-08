@@ -1,3 +1,4 @@
+import { NodeStarsV4 } from './JourneyV4';
 import { showReviewTools } from "./player-mode";
 import { useEffect, useState, type ReactNode } from 'react';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
@@ -46,6 +47,7 @@ export function Prepare({ m }: { m: DepthModel }) {
     <details className="dp-estimate-note"><summary>How difficulty is estimated</summary><p>Power combines current HP ÷ 5, attack × 2 and defense × 1.5. Difficulty uses five alternate-seed simulations with your current gear and health. This small sample is a rough build hint, not a promised win rate.</p></details>
     </>}
     <ScoutingV4 run={m.state.run} />
+    {m.state.run?.gameplayV4&&m.state.run.current&&<section className="cr-panel dp-v4-star-target"><h2>Three stars to chase</h2><NodeStarsV4 m={m} node={m.state.run.nodes.find(n=>n.id===m.state.run!.current)!} goals/></section>}
     {battle.v4&&battle.initial.challengeLevel!==undefined&&<section className="cr-panel dp-v4-pacing"><h2>Challenge band {battle.initial.challengeLevel}</h2><p>Choose a lower band at the cafe for a gentler route.</p>{battle.initial.enemies.some(id=>R.ENEMY_BY_ID[id]?.tier==='boss')&&<p>At half health, the boss changes tactics. Defeat the boss and its helpers leave.</p>}</section>}
     {battle.v4 && <PreparationV4 m={m} />}
     <CrewDetails v4={!!battle.v4}>

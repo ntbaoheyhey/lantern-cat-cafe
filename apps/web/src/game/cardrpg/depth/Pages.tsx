@@ -1,3 +1,4 @@
+import { HomeV4 } from './HomeV4';
 import { CafeBoardV4 } from './CafeV4';
 import { useState } from 'react';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
@@ -18,6 +19,7 @@ export function Hub({ m }: { m: DepthModel }) {
   const band=Math.min(selectedBand??ceiling,ceiling);
   const nextRoute = nextChallenge(m.state,band);
   const next = m.state.tutorial < 3 ? 'Try the practice table.' : !m.state.freeInvite ? 'Open your welcome invitation.' : m.state.tutorial === 3 ? 'Equip your first piece from the equipment shelf.' : m.state.cleared.length === 0 ? 'Prepare your team and visit the Tangled Cafe.' : `Explore ${R.CHAPTERS[Math.min(2, m.state.cleared.length)]!.name}.`;
+  if (R.gameplayV4(m.state)) return <HomeV4 m={m}/>;
   return <><PageTitle eyebrow={`Cafe day ${m.state.account.day}`} title="A small light. A brave little team." />
     <section className="cr-hero"><div><small>THE FIRST LANTERN</small><h2>Keep the cafe<br />warm tonight.</h2><p>{next}</p>
       <button className="cr-primary" onClick={() => active ? m.go('map') : m.state.tutorial < 3 ? m.tutorial() : m.go('team')}>{active ? 'Continue your route' : m.state.tutorial < 3 ? 'Try the practice table' : 'Prepare your team'} →</button>

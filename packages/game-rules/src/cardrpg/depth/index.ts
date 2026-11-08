@@ -25,3 +25,6 @@ export * from './outcome-v4';
 export * from './recommendation-v4';
 export * from './forecast-v4';
 export * from './scouting-v4';
+
+export * from './journey-v4';
+export * from './stars-v4';

@@ -1,3 +1,4 @@
+import { emptyJourneyV4, type JourneyV4 } from './journey-v4';
 import { clone } from '../internal';
 import type { Stats } from '../contract';
 import { CAT_BY_ID, ENEMY_BY_ID, SKILLS, STATUS_BY_ID } from './catalog';
@@ -9,7 +10,7 @@ import type { GameplayEventV4 } from './events-v4';
 
 export type CrewJob = 'door' | 'kettle' | 'table' | 'lantern';
 export interface StandingPlan { focus: 'finish' | 'support' | 'leader'; care: 'steady' | 'protect' }
-export interface GameplayV4State { version: 1; plan: StandingPlan; loadouts?: Array<ShiftLoadoutV4 | null>; selectorMarks?:number; revealSequence?:number; reveals?:GameplayEventV4[]; issuance?:IssuanceLedger; legacySealCount?:number; spentEffortIds?:string[]; journal?:CollectionJournalV4; clockWatermark?:number; lessons?:string[] }
+export interface GameplayV4State { version: 1; journey?: JourneyV4; plan: StandingPlan; loadouts?: Array<ShiftLoadoutV4 | null>; selectorMarks?:number; revealSequence?:number; reveals?:GameplayEventV4[]; issuance?:IssuanceLedger; legacySealCount?:number; spentEffortIds?:string[]; journal?:CollectionJournalV4; clockWatermark?:number; lessons?:string[] }
 export interface BattleV4State { version: 1; plan: StandingPlan; events: GameplayEventV4[]; committed: boolean }
 export const DEFAULT_PLAN: StandingPlan = { focus: 'finish', care: 'steady' };
 export const CREW_JOBS: { id: CrewJob; name: string; small: string; full: string }[] = [
@@ -45,7 +46,7 @@ export function setGameplayV4(state: DepthAccount, enabled: boolean): DepthAccou
   const next = clone(state);
   if (!enabled && !next.v4 && next.gameplayV4 === undefined) return next;
   next.gameplayV4 = enabled;
-  if (enabled) next.v4 ??= { version: 1, plan: { ...DEFAULT_PLAN } };
+  if (enabled) next.v4 ??= { version: 1, plan: { ...DEFAULT_PLAN }, journey: emptyJourneyV4() };
   return next;
 }
 export function crewStats(stats: Stats, ids: string[]): Stats {

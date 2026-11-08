@@ -1,0 +1,76 @@
+[
+  {
+    "name": "typecheck",
+    "attempt": 1,
+    "code": 0,
+    "head": "cffa5b878c26f664a8282a53a09a8146c2d1c1ef",
+    "started": "2026-11-08T08:38:05.090Z",
+    "ended": "2026-11-08T08:38:16.335Z",
+    "log": "reports/cardrpg-big/a5/e2-reviewed/gates/typecheck-attempt-1.log",
+    "sha256": "2e66a31114ea309785560714bc3ddf7f818268601e92f768ba06064ea7f01df1",
+    "counts": []
+  },
+  {
+    "name": "lint",
+    "attempt": 1,
+    "code": 0,
+    "head": "cffa5b878c26f664a8282a53a09a8146c2d1c1ef",
+    "started": "2026-11-08T08:38:23.337Z",
+    "ended": "2026-11-08T08:40:32.523Z",
+    "log": "reports/cardrpg-big/a5/e2-reviewed/gates/lint-attempt-1.log",
+    "sha256": "5f1801a676d7ff6d96df61503a6ae282ba444fba19409a99f6a81bba2456e659",
+    "counts": []
+  },
+  {
+    "name": "web-unit",
+    "attempt": 1,
+    "code": 0,
+    "head": "cffa5b878c26f664a8282a53a09a8146c2d1c1ef",
+    "started": "2026-11-08T08:40:39.525Z",
+    "ended": "2026-11-08T08:42:11.188Z",
+    "log": "reports/cardrpg-big/a5/e2-reviewed/gates/web-unit-attempt-1.log",
+    "sha256": "154d828933ff82e57801d19043c1bd8e0bec19367f9cfc65cac072c30d0595b0",
+    "counts": [
+      " Test Files  177 passed (177)",
+      "      Tests  1743 passed (1743)"
+    ]
+  },
+  {
+    "name": "rules",
+    "attempt": 1,
+    "code": 0,
+    "head": "cffa5b878c26f664a8282a53a09a8146c2d1c1ef",
+    "started": "2026-11-08T08:42:18.190Z",
+    "ended": "2026-11-08T08:44:38.394Z",
+    "log": "reports/cardrpg-big/a5/e2-reviewed/gates/rules-attempt-1.log",
+    "sha256": "eb391a7bf2434471d66ec1e6bc4662da89283b1ffb96dc64a415893893450a09",
+    "counts": [
+      " Test Files  67 passed | 3 skipped (70)",
+      "      Tests  1130 passed | 2 expected fail | 11 skipped (1143)"
+    ]
+  },
+  {
+    "name": "e2e",
+    "attempt": 1,
+    "code": 0,
+    "head": "cffa5b878c26f664a8282a53a09a8146c2d1c1ef",
+    "started": "2026-11-08T08:44:45.396Z",
+    "ended": "2026-11-08T08:55:25.126Z",
+    "log": "reports/cardrpg-big/a5/e2-reviewed/gates/e2e-attempt-1.log",
+    "sha256": "a903fba00dafb5675619b67fef4c3e71c58809e656d5589b0625199f339ed877",
+    "counts": [
+      "  421 passed (2.3m)"
+    ]
+  },
+  {
+    "name": "build",
+    "attempt": 1,
+    "code": 0,
+    "head": "cffa5b878c26f664a8282a53a09a8146c2d1c1ef",
+    "started": "2026-11-08T08:55:32.130Z",
+    "ended": "2026-11-08T08:55:57.865Z",
+    "log": "reports/cardrpg-big/a5/e2-reviewed/gates/build-attempt-1.log",
+    "sha256": "2368f23dd8f0b84c6e50a14d9924f08c836d906134800944117b284040e7eef6",
+    "counts": []
+  }
+]

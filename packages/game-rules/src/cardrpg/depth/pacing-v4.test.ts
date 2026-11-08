@@ -71,7 +71,7 @@ describe('gameplay v4 encounter bands and boss lifecycle',()=>{
    const s=account(6);s.cleared=[1,2,3];const run=R.startRun(s,chapter,78).state;
    const b=R.playBattle(R.createBattle({seed:78,chapter,gameplayV4:true,challengeLevel:6,cats:R.battleCats(s),enemies:[R.CHAPTERS[chapter-1]!.boss,'binding-thread']}),'auto');
    expect(R.replayBattle(b.initial,b.choices)).toEqual(b);
-   expect(R.importSave(R.exportSave(run))).toEqual(run);expect(R.exportSave(run)).toMatch(/^THC12\./);
+   expect(R.importSave(R.exportSave(run))).toEqual(run);expect(R.exportSave(run)).toMatch(/^THC13\./);
   }
  });
  it('paces utility signatures every third round with basic pressure between',()=>{

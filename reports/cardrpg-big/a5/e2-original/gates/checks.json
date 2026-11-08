@@ -1,0 +1,38 @@
+[
+  {
+    "name": "typecheck",
+    "attempt": 1,
+    "code": 0,
+    "head": "61e1ae629d13f1e2dca772d9b942873d12398de7",
+    "started": "2026-11-08T08:32:56.037Z",
+    "ended": "2026-11-08T08:33:10.941Z",
+    "log": "reports/cardrpg-big/a5/e2-original/gates/typecheck-attempt-1.log",
+    "sha256": "292416ee04abe7549992e8b431370dc4fc7a9dd1395fe7feb25778f09b5c19fd",
+    "counts": []
+  },
+  {
+    "name": "lint",
+    "attempt": 1,
+    "code": 0,
+    "head": "61e1ae629d13f1e2dca772d9b942873d12398de7",
+    "started": "2026-11-08T08:33:17.943Z",
+    "ended": "2026-11-08T08:35:28.433Z",
+    "log": "reports/cardrpg-big/a5/e2-original/gates/lint-attempt-1.log",
+    "sha256": "fcc03bfb303b6972b6efa885556ade8cbc1fc0002b0e14eac99b102b169b81cc",
+    "counts": []
+  },
+  {
+    "name": "web-unit",
+    "attempt": 1,
+    "code": 1,
+    "head": "61e1ae629d13f1e2dca772d9b942873d12398de7",
+    "started": "2026-11-08T08:35:35.435Z",
+    "ended": "2026-11-08T08:36:02.460Z",
+    "log": "reports/cardrpg-big/a5/e2-original/gates/web-unit-attempt-1.log",
+    "sha256": "2cd70c74fae6c3c3c0a7c5e9f81ce8884fadd3f79597079b19be2bca3c53f35d",
+    "counts": [
+      " Test Files  1 failed | 176 passed (177)",
+      "      Tests  1741 passed (1741)"
+    ]
+  }
+]

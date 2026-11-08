@@ -46,6 +46,9 @@ export function Invitations({ m }: { m: DepthModel }) {
   const entranceKey = rareCard && active && phase === 'reveal' ? `${active.bannerId}-${active.index}` : undefined;
   const previewId = rareCard ?? featuredId;
   const previewVisible = !revealing || !!entranceKey;
+  const earnedReveal = m.state.gameplayV4 && entranceKey && active ? [...(m.state.v4?.reveals ?? [])].reverse().find(event =>
+    event.kind === 'earned-reveal' && event.bannerId === active.bannerId && event.draw === active.index
+      && event.itemId === (active.cardId ?? active.itemId)) : undefined;
 
   // Cache sticky-header clearance on resize, never read layout in the pull handler.
   useEffect(() => {
@@ -184,7 +187,7 @@ export function Invitations({ m }: { m: DepthModel }) {
         </div>}
         {previewId && <div className="dp-invitation-preview" hidden={!previewVisible}>
           <CompanionPreview m={m} id={previewId} skillId={rareCard ? undefined : `${previewId}-1`}
-            entranceKey={entranceKey} visible={previewVisible} />
+            entranceKey={entranceKey} earnedReveal={earnedReveal} visible={previewVisible} />
         </div>}
       </section>
     </div>

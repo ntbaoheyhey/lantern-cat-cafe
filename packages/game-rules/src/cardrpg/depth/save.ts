@@ -1,3 +1,4 @@
+import { initializeJourneyV4, validateJourneyV4 } from './journey-v4';
 import { validateJournalV4, LESSONS_V4 } from './meta-v4';
 import { validateIssuance } from './scarcity';
 import { EQUIPMENT_SLOTS, type AccountState, type Slot } from '../contract';
@@ -138,6 +139,7 @@ export function validateDepth(value: unknown): asserts value is DepthAccount {
     }
     if(v.issuance)validateIssuance(v.issuance);
     validateJournalV4(state);
+    validateJourneyV4(state);
     if(v.clockWatermark!==undefined&&(!Number.isSafeInteger(v.clockWatermark)||v.clockWatermark<0))fail();
     if(v.lessons!==undefined&&(!Array.isArray(v.lessons)||new Set(v.lessons).size!==v.lessons.length||v.lessons.some(id=>!LESSONS_V4.some(l=>l.id===id))))fail();
   }
@@ -192,7 +194,7 @@ export function validateDepth(value: unknown): asserts value is DepthAccount {
 export function exportSave(state: DepthAccount): string {
   validateDepth(state);
   const payload = JSON.stringify(state);
-  return `THC${state.v4 ? '12' : '7'}.${saveChecksum(payload)}.${payload}`;
+  return `THC${state.v4?.journey ? '13' : state.v4 ? '12' : '7'}.${saveChecksum(payload)}.${payload}`;
 }
 function migrateDepth(value: unknown): unknown {
   if (!record(value) || !['0.5.0', '0.6.0'].includes(String(value.version))) fail();
@@ -214,11 +216,13 @@ export function importSave(code: string, now = 0): DepthAccount {
     validateAccount(legacy);
     return migrateAccount(legacy, now);
   }
-  const match = /^THC(5|6|7|8|9|10|11|12)\.([a-f0-9]{8})\.([\s\S]+)$/.exec(trimmed);
+  const match = /^THC(5|6|7|8|9|10|11|12|13)\.([a-f0-9]{8})\.([\s\S]+)$/.exec(trimmed);
   if (!match || saveChecksum(match[3]!) !== match[2]) throw new Error('Save checksum failed. Copy the complete code again.');
   const parsed: unknown = JSON.parse(match[3]!);
   safeTree(parsed);
-  const state = ['7','8','9','10','11','12'].includes(match[1]!) ? parsed : migrateDepth(parsed);
+  const state = ['7','8','9','10','11','12','13'].includes(match[1]!) ? parsed : migrateDepth(parsed);
+  validateDepth(state);
+  if (match[1] !== '13') initializeJourneyV4(state);
   validateDepth(state);
   return state;
 }

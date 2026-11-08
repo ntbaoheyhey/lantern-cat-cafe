@@ -2,12 +2,14 @@
 import { afterEach, beforeEach, expect, it, vi } from 'vitest';
 import { act, cleanup, render } from '@testing-library/react';
 import { DepthModel } from './model';
+import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import { CompanionPreview, CompanionPreviewProvider } from './CompanionPreview';
 
 const miniature = vi.hoisted(() => ({
-  playEntrance: vi.fn(), dispose: vi.fn(), invalidate: vi.fn(), ready: true,
+  playEntrance: vi.fn(), dispose: vi.fn(), invalidate: vi.fn(), ready: true, getView: null as null | (()=>{earnedReveal?:unknown}),
 }));
 vi.mock('../../squad/turn3d/scene', () => ({ TurnScene: class {
+  constructor(_host: unknown, getView: ()=>{earnedReveal?:unknown}) { miniature.getView=getView; }
   get ready() { return miniature.ready; }
   playEntrance = miniature.playEntrance;
   dispose = miniature.dispose;
@@ -77,4 +79,15 @@ it('keeps one scene across screen slots and disposes only with the app', async (
   expect(miniature.dispose).toHaveBeenCalledTimes(1);
   expect(window.__depthPreviewScene).toBeUndefined();
   expect(vi.getTimerCount()).toBe(0);
+});
+
+it('forwards the exact active receipt to the scene view only while V4 is enabled', async () => {
+  const model=new DepthModel(true,true);
+  const receipt:R.GameplayEventV4={version:1,kind:'earned-reveal',sequence:0,round:0,bannerId:'standard',draw:1,itemId:'clover',rarity:'epic',duplicate:0,pityBefore:0,pityAfter:1,text:'Earned Clover.'};
+  const view=render(<CompanionPreview m={model} id="clover" entranceKey="standard-1" earnedReveal={receipt}/>);
+  await act(()=>vi.advanceTimersByTimeAsync(400));
+  expect(miniature.getView?.().earnedReveal).toBe(receipt);
+  model.state=R.setGameplayV4(model.state,false);
+  view.rerender(<CompanionPreview m={model} id="clover" entranceKey="standard-1" earnedReveal={receipt}/>);
+  expect(miniature.getView?.()).not.toHaveProperty('earnedReveal');
 });

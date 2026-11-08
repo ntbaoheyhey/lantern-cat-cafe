@@ -1,3 +1,4 @@
+import { observeDiscoveriesV4 } from './journey-v4';
 import { observeCollectionV4, settleBoardV4 } from './meta-v4';
 import { drawInvitationsV4 } from './gacha-v4';
 import { RELIC_EFFECTS } from './bridge';
@@ -24,7 +25,7 @@ export function createDepthAccount(seed=11, now=0): DepthAccount {
 }
 export function transactDepth(state: DepthAccount, fn: (draft: DepthAccount)=>void): RuleResult<DepthAccount> {
   const next=clone(state);
-  try {observeCollectionV4(next);fn(next);observeCollectionV4(next);return {ok:true,state:next};}
+  try {observeCollectionV4(next);observeDiscoveriesV4(next);fn(next);observeCollectionV4(next);observeDiscoveriesV4(next);return {ok:true,state:next};}
   catch(error){if(!(error instanceof RuleFailure))throw error;return {ok:false,state,error:error.message};}
 }
 export function requireHome(state: DepthAccount) {requireRule(!state.run||state.run.complete,'BATTLE_PENDING','Finish or abandon this run before changing its loadout.');}

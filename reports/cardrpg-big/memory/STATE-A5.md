@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-E1 source 602587b35 is verified: six source gates, 18 reviewed desktop captures, 3-clue real-click route, CPU4 observations, fresh OFF 8250 and three receipt tests PASS. Reviewed artifact bdbdb35a / 20,914,389 bytes. Published DRAFT #383 on #382.
+E2 reviewed closure PASS: six source gates/build, OFF8250, 27 targeted captures, four independent receipt tests and post-stars90account/4050day economy. Artifact8996413d/20,920,957bytes. Published DRAFT384 on383. Day7 cohort COMPLETE: casual10/30 and regular14/30 first-two wins MISS; heavy17/30first PASS. Three losses lack advice. E3 may now change source after this immutable checkpoint.
 ## NEXT
-E2 draft at /tmp/cardrpg-a5-e2-integration: seven rule tests PASS; isolated typecheck failed because snapshot omitted existing client files. Restore snapshot dependency, review source and validate before adoption. No active E1 jobs. B1/B2 remain MISS; combat A4; fresh acceptance 20001–20500 unused. Stack 376→377→379→381→382→383.
+Close E2 with three-width UI and post-stars90account economy; measure earned day7 two-attempt cohort and x1 route. E3 opening/cadence, B1/B2 balance and Z remain open. Combat A4; acceptance20001–20500 untouched. Stack376→377→379→381→382→383→384.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -132,3 +132,16 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - Resume 2026-11-08T08:28:34.771342+00:00: E1 closure and three independent receipt tests PASS. All existing jobs completed without duplication. Personal 1024 clue and 1440 retry captures reviewed; opening no longer exposes closing. Boss preparation reaches 3/3 through real clicks; forecast 56.8ms. E2 snapshot tests7PASS; original missing-client typecheck retained. Draft JSX closing tag corrected before adoption.
 
 - Published E1 DRAFT https://github.com/ntbaoheyhey/taskbar-hero/pull/383 (closure edb4ac40e); no merge/deploy. Corrected the state-only byte-count typo to the measured20,914,389. Corrected stat-budget05 matrices are complete and rejected: relative03530piece misses/max30pp; relative05055misses/max38pp, cats20.86–60.48%, crew52.67–53.33pp. All raw attempts retained; no combat adoption or acceptance sampling.
+
+- Resume: preserved source61e1ae629/original browser failure90!=140 (incorrect expected cap, actual currencies already matched earned receipt). E2 source suite additionally found import-order failure in unchanged B gear-visuals test; fix is A-owned lazy catalog initialization. Original OFF run completed2slices with exact digest before any source edit. Original artifactee2b6fdc/20,921,145bytes archived; no previous report was overwritten.
+
+- Resume: original reviewed source rules1130/web1743 PASS; fresh OFF8250 exact. Earned x1 retry reaches VICTORY in69.413s (first/elite28.629/33.008s), one fixture only;90-account check remains pending. Original E2 look-theme contrast failed because harness ignored opaque gradient and compared dark text against an unrelated dark ancestor (ratio1). Screenshot shows dark-on-honey button; fixed harness now conservatively measures the full gradient luminance interval. Original receipt/capture retained; no runtime change or timing reroll.
+
+- Resume: E2 reviewed27captures all three widths PASS after correcting gradient contrast measurement only; personal1024home/1280journal reviewed. Six gates1743web/1130rules/421E2E/build and OFF8250 already green. Day7 paired-route replay matches every browser battle JSON exactly; same route/resources with original plan loses boss, suggested support/protect wins. Single fixture, not90-account acceptance.
+- tie-noise06 attempt1 executed no cells (missing copied transitive source/JSON). Added missing files byte-exact with SOURCE-COMPLETION hashes and fixed undefined checkpoint metadata variable; original matrix/manifest/log kept. Corrected coordinator82231 running sameTRAIN1–50cases/overlays. E3 pilot third attempt records chapter-locked choices as unavailable instead of injecting unlocks; old attempts retained.
+
+- E2 closure attempt1 correctly caught that the artifact manifest included the original browser harness. Exact original harness recovered from cffa5b878 and retained; only gradient measurement differs, all runtime hashes exact. Closure attempt2/four receipt tests PASS. Economy90accounts4050days: Legendary medians6/5/5, selector11/9/9, all seven reward gates PASS, maximum earned ratio2.580314x. No source-suite rerun.
+
+- Registered day7 cohort COMPLETE90accounts: casual10/30, regular14/30 first-two MISS; heavy17/30first PASS. Advice available60/63losses MISS. Paired advised/no-advice retrywins casual5/5,regular9/5,heavy5/7; no general advice improvement claim. B3-DAY7-RETRY.md retains both successful x1 case and broader misses. Fresh acceptance unused.
+
+- E2 published DRAFT https://github.com/ntbaoheyhey/taskbar-hero/pull/384, sourcecffa5b878/receiptsd8ed0972f, all actual gates and remaining day7 misses in body. No merge/deploy. E3 starts on this checkpoint; B1tie-noise TRAIN snapshot remains independent.
