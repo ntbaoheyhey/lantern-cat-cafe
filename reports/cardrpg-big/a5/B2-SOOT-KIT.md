@@ -20,3 +20,10 @@ A separately registered [Scent policy06](b2/scent-policy-06/REGISTERED-METHOD.md
 [Scent06a](b2/scent-policy-06a/RESULTS.md) is rejected: Soot44.16%→42.96%, with1685improved and1948worsened paired battles. Black cup is chosen68064times; more usage alone does not mean better decisions. Seven of eight scenes worsen. Original06/crash07prefixes match exactly after the missing-target guard. The existing crash is fixed independently; no new policy is adopted.
 
 Source review also exposes a kit limitation: Black cup has target`foe`, so it cannot mark a rear enemy while an unmarked front enemy survives. Its advertised reach benefit does not help open that rear target. A separate prospective kit experiment must test this rather than forcing the rejected evaluator into production. No new acceptance seeds sampled.
+
+
+## Rear access alone
+
+The registered reach09 `reach` variant completed all1,840 common-fixture cells ×50TRAINseeds. Every cat rate and paired crew advantage stays unchanged; Soot remains44.16%, with0improved and0worsened battles among22,000Soot cases. Black cup remains0/203,598actions. All eight Soot scene deltas are exactly0pp.
+
+This rejects rear access alone as a balance repair. It leaves the action's existing immediate scoring disadvantage unchanged. The independently registered reach-plus-one-Crumb candidate remains pending; no outcome is inferred for it. [Audited comparison](b2/soot-reach-09/reach/summary.json) · [complete raw results](b2/soot-reach-09/reach/results.json). No production kit or acceptance change.

@@ -52,3 +52,13 @@ Every boss and all four catalog elites have at least four qualifying triples on 
 The reference still uses role-matched sets while each set fixture outfits all three starter cats in the same set, including cats without its supporting actions. This diagnostic does not yet establish whether a missed set niche comes from its effect, its utility-score budget, the carrier choice, or an unsuitable scenario. Do not fix that ambiguity by silently changing the denominator.
 
 [Pre-run registration](b2/common-fixture-04/REGISTERED-METHOD.md) · [independent audited summary](b2/common-fixture-04/summary.json) · [all1840raw cells](b2/common-fixture-04/results.json). Both original and calibrated outcomes are TRAIN proxies. Fresh20001–20500 remains unused.
+
+## Set activation audit11
+
+The read-only audit replays all64original set cells ×50TRAINseeds. All3,200outcomes match common04 exactly, including Emberfelt117/400wins. Every first-seed complete replay also matches. The starter trio's unlocked skill lists contain **no Scald-applying skill**, and successful party Scald applications are **zero in every set's400battles**.
+
+Both Emberfelt set effects require its carrier to apply Scald: extending Scald duration and healing after an application. Neither identity can activate here. Main stats and affixes still work; this is not a claim that the whole equipment item contributes nothing. A win-rate comparison of this trio cannot validate Emberfelt's advertised long-fight Scald niche. This is a demonstrated eligibility defect in the fixture, independent of whether its aggregate passes35–75%.
+
+The next diagnostic must compare sets on a single named carrier with an eligible kit, while holding that context's allies, remaining gear, stats budget and enemies fixed across all eight sets. Contexts must be declared before sampling and include both favorable and unfavorable situations; no best-case-only aggregate or acceptance replacement is authorized by this audit. Old homogeneous-kit results stay visible. The numeric thresholds are unchanged, and fresh20001–20500 remains unused.
+
+[Registration](b2/set-activation-11/REGISTERED-METHOD.md) · [raw64cells](b2/set-activation-11/results.json) · [audited summary](b2/set-activation-11/summary.json). Gear-trigger counts are incomplete for permanent modifiers and must not be relabelled as total causal contributions.
