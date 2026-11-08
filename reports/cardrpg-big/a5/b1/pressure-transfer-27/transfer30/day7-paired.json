@@ -1,0 +1,2767 @@
+{
+  "scope": "Same90 previously earned day7 saves, identical route/retry seeds and advice policy. Not a fresh45-day earned cohort.",
+  "totals": {
+    "accounts": 90,
+    "firstImproved": 4,
+    "firstWorsened": 11,
+    "firstTwoImproved": 6,
+    "firstTwoWorsened": 9,
+    "firstEncountersExact": 5,
+    "firstChoicesExact": 90,
+    "firstStateHashesExact": 0,
+    "adviceExact": 57,
+    "costsExact": 76,
+    "retriesExact": 57,
+    "withoutAdviceExact": 57
+  },
+  "cohorts": [
+    {
+      "style": "casual",
+      "accounts": 30,
+      "firstImproved": 2,
+      "firstWorsened": 5,
+      "firstTwoImproved": 4,
+      "firstTwoWorsened": 7,
+      "firstEncountersExact": 1,
+      "firstChoicesExact": 30,
+      "firstStateHashesExact": 0,
+      "adviceExact": 13,
+      "costsExact": 23,
+      "retriesExact": 13,
+      "withoutAdviceExact": 13,
+      "before": {
+        "style": "casual",
+        "accounts": 30,
+        "chapters": {
+          "1": 6,
+          "2": 24,
+          "3": 0
+        },
+        "firstWins": 17,
+        "firstWinRate": 0.5666666666666667,
+        "firstWilson": [
+          0.3919730700081361,
+          0.7262251442353347
+        ],
+        "twoAttemptWins": 26,
+        "twoAttemptWinRate": 0.8666666666666667,
+        "twoAttemptWilson": [
+          0.703186733179637,
+          0.9469034451594526
+        ],
+        "losses": 13,
+        "availableAdvice": 13,
+        "allLossesHaveAdvice": true,
+        "retryWinsWithAdvice": 9,
+        "retryWinsWithoutAdvice": 6
+      },
+      "after": {
+        "style": "casual",
+        "accounts": 30,
+        "chapters": {
+          "1": 6,
+          "2": 24,
+          "3": 0
+        },
+        "firstWins": 14,
+        "firstWinRate": 0.4666666666666667,
+        "firstWilson": [
+          0.30232388907699753,
+          0.638577003801267
+        ],
+        "twoAttemptWins": 23,
+        "twoAttemptWinRate": 0.7666666666666667,
+        "twoAttemptWilson": [
+          0.5907167384187784,
+          0.8820761185551049
+        ],
+        "losses": 16,
+        "availableAdvice": 14,
+        "allLossesHaveAdvice": false,
+        "retryWinsWithAdvice": 9,
+        "retryWinsWithoutAdvice": 5
+      }
+    },
+    {
+      "style": "regular",
+      "accounts": 30,
+      "firstImproved": 1,
+      "firstWorsened": 4,
+      "firstTwoImproved": 0,
+      "firstTwoWorsened": 1,
+      "firstEncountersExact": 4,
+      "firstChoicesExact": 30,
+      "firstStateHashesExact": 0,
+      "adviceExact": 17,
+      "costsExact": 25,
+      "retriesExact": 17,
+      "withoutAdviceExact": 17,
+      "before": {
+        "style": "regular",
+        "accounts": 30,
+        "chapters": {
+          "1": 6,
+          "2": 10,
+          "3": 14
+        },
+        "firstWins": 21,
+        "firstWinRate": 0.7,
+        "firstWilson": [
+          0.5212421254128504,
+          0.8333525173175619
+        ],
+        "twoAttemptWins": 28,
+        "twoAttemptWinRate": 0.9333333333333333,
+        "twoAttemptWilson": [
+          0.7867654163738308,
+          0.9815229762087295
+        ],
+        "losses": 9,
+        "availableAdvice": 9,
+        "allLossesHaveAdvice": true,
+        "retryWinsWithAdvice": 7,
+        "retryWinsWithoutAdvice": 4
+      },
+      "after": {
+        "style": "regular",
+        "accounts": 30,
+        "chapters": {
+          "1": 6,
+          "2": 10,
+          "3": 14
+        },
+        "firstWins": 18,
+        "firstWinRate": 0.6,
+        "firstWilson": [
+          0.42320360253322475,
+          0.7540937188319815
+        ],
+        "twoAttemptWins": 27,
+        "twoAttemptWinRate": 0.9,
+        "twoAttemptWilson": [
+          0.7437891742081593,
+          0.9654001112526658
+        ],
+        "losses": 12,
+        "availableAdvice": 12,
+        "allLossesHaveAdvice": true,
+        "retryWinsWithAdvice": 9,
+        "retryWinsWithoutAdvice": 4
+      }
+    },
+    {
+      "style": "heavy",
+      "accounts": 30,
+      "firstImproved": 1,
+      "firstWorsened": 2,
+      "firstTwoImproved": 2,
+      "firstTwoWorsened": 1,
+      "firstEncountersExact": 0,
+      "firstChoicesExact": 30,
+      "firstStateHashesExact": 0,
+      "adviceExact": 27,
+      "costsExact": 28,
+      "retriesExact": 27,
+      "withoutAdviceExact": 27,
+      "before": {
+        "style": "heavy",
+        "accounts": 30,
+        "chapters": {
+          "1": 0,
+          "2": 1,
+          "3": 29
+        },
+        "firstWins": 28,
+        "firstWinRate": 0.9333333333333333,
+        "firstWilson": [
+          0.7867654163738308,
+          0.9815229762087295
+        ],
+        "twoAttemptWins": 28,
+        "twoAttemptWinRate": 0.9333333333333333,
+        "twoAttemptWilson": [
+          0.7867654163738308,
+          0.9815229762087295
+        ],
+        "losses": 2,
+        "availableAdvice": 2,
+        "allLossesHaveAdvice": true,
+        "retryWinsWithAdvice": 0,
+        "retryWinsWithoutAdvice": 2
+      },
+      "after": {
+        "style": "heavy",
+        "accounts": 30,
+        "chapters": {
+          "1": 0,
+          "2": 1,
+          "3": 29
+        },
+        "firstWins": 27,
+        "firstWinRate": 0.9,
+        "firstWilson": [
+          0.7437891742081593,
+          0.9654001112526658
+        ],
+        "twoAttemptWins": 29,
+        "twoAttemptWinRate": 0.9666666666666667,
+        "twoAttemptWilson": [
+          0.8332960900859082,
+          0.9940914096183874
+        ],
+        "losses": 3,
+        "availableAdvice": 2,
+        "allLossesHaveAdvice": false,
+        "retryWinsWithAdvice": 2,
+        "retryWinsWithoutAdvice": 1
+      }
+    }
+  ],
+  "rows": [
+    {
+      "style": "casual",
+      "index": 0,
+      "inputSaveSha256": "bb975fd082fd71e3e797516c9177824881a131e91d258924687ada9262add37d",
+      "first": {
+        "before": false,
+        "after": false,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": false,
+      "costsExact": true,
+      "retry": {
+        "before": true,
+        "after": true,
+        "exact": false
+      },
+      "withoutAdvice": {
+        "before": true,
+        "after": true,
+        "exact": false
+      }
+    },
+    {
+      "style": "casual",
+      "index": 1,
+      "inputSaveSha256": "6f90e54cf155bffee3e456f46deab569a44f664ea8076817cf6b5bfd84ae5bf2",
+      "first": {
+        "before": true,
+        "after": false,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": false
+      },
+      "adviceExact": true,
+      "costsExact": true,
+      "retry": {
+        "before": null,
+        "after": null,
+        "exact": true
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": null,
+        "exact": true
+      }
+    },
+    {
+      "style": "casual",
+      "index": 2,
+      "inputSaveSha256": "8760e9ff45a0ef0a92944924ee642c1706bc7d4bab8184133e339ff67f0e10c0",
+      "first": {
+        "before": false,
+        "after": false,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": false,
+      "costsExact": true,
+      "retry": {
+        "before": true,
+        "after": true,
+        "exact": false
+      },
+      "withoutAdvice": {
+        "before": true,
+        "after": true,
+        "exact": false
+      }
+    },
+    {
+      "style": "casual",
+      "index": 3,
+      "inputSaveSha256": "5c665bedd1ea258a8b77c7fdc036e1aeb73a89a1bbbb06e2e09cb8b04806e0a2",
+      "first": {
+        "before": true,
+        "after": false,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": false
+      },
+      "adviceExact": false,
+      "costsExact": false,
+      "retry": {
+        "before": null,
+        "after": false,
+        "exact": false
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": false,
+        "exact": false
+      }
+    },
+    {
+      "style": "casual",
+      "index": 4,
+      "inputSaveSha256": "5ebd820f2564016a0764d38eb0a7bb6f566ba3cb714373e39c2b5e610e45341e",
+      "first": {
+        "before": true,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": true,
+      "costsExact": true,
+      "retry": {
+        "before": null,
+        "after": null,
+        "exact": true
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": null,
+        "exact": true
+      }
+    },
+    {
+      "style": "casual",
+      "index": 5,
+      "inputSaveSha256": "d651b53cefcc2e06d82ca03bc07feee049e9e44e057b41cdae1bfde10f43eeb3",
+      "first": {
+        "before": true,
+        "after": false,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": false,
+      "costsExact": false,
+      "retry": {
+        "before": null,
+        "after": true,
+        "exact": false
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": true,
+        "exact": false
+      }
+    },
+    {
+      "style": "casual",
+      "index": 6,
+      "inputSaveSha256": "1487eea83a578c712a9f78c2231c5f29d032e7fa1cf1831642f310ab524e77ee",
+      "first": {
+        "before": false,
+        "after": false,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": false,
+        "after": true
+      },
+      "adviceExact": false,
+      "costsExact": true,
+      "retry": {
+        "before": false,
+        "after": true,
+        "exact": false
+      },
+      "withoutAdvice": {
+        "before": false,
+        "after": false,
+        "exact": false
+      }
+    },
+    {
+      "style": "casual",
+      "index": 7,
+      "inputSaveSha256": "460f8c2cbec22f0831439dfb38bf11628b1d6675bba16543c22a111deeb6e1e0",
+      "first": {
+        "before": false,
+        "after": false,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": false,
+        "after": true
+      },
+      "adviceExact": false,
+      "costsExact": true,
+      "retry": {
+        "before": false,
+        "after": true,
+        "exact": false
+      },
+      "withoutAdvice": {
+        "before": false,
+        "after": false,
+        "exact": false
+      }
+    },
+    {
+      "style": "casual",
+      "index": 8,
+      "inputSaveSha256": "624efe8254f9d30167edc6044eded06de5999e95a10f2909825f77e3de576def",
+      "first": {
+        "before": true,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": true,
+      "costsExact": true,
+      "retry": {
+        "before": null,
+        "after": null,
+        "exact": true
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": null,
+        "exact": true
+      }
+    },
+    {
+      "style": "casual",
+      "index": 9,
+      "inputSaveSha256": "05b96b45180a070f4eb76df4a62aea4d247d0810e02a66c12c27d2e3348e40d1",
+      "first": {
+        "before": true,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": true,
+      "costsExact": true,
+      "retry": {
+        "before": null,
+        "after": null,
+        "exact": true
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": null,
+        "exact": true
+      }
+    },
+    {
+      "style": "casual",
+      "index": 10,
+      "inputSaveSha256": "b222c600063987f3894989570ae64573cbac0db69fa51bd66cf97f1eb33fa7b8",
+      "first": {
+        "before": false,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": false,
+      "costsExact": false,
+      "retry": {
+        "before": true,
+        "after": null,
+        "exact": false
+      },
+      "withoutAdvice": {
+        "before": false,
+        "after": null,
+        "exact": false
+      }
+    },
+    {
+      "style": "casual",
+      "index": 11,
+      "inputSaveSha256": "1457f51254aa9b20c4fe0813536718cf23f1e1bf323fd7dc5ff63616b51f1869",
+      "first": {
+        "before": true,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": true,
+      "costsExact": true,
+      "retry": {
+        "before": null,
+        "after": null,
+        "exact": true
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": null,
+        "exact": true
+      }
+    },
+    {
+      "style": "casual",
+      "index": 12,
+      "inputSaveSha256": "7f9bbddd5c23866aa3daf4e8abec1d87af12fdf82f22d347c7d7801d0fae4fa3",
+      "first": {
+        "before": false,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": false,
+        "after": true
+      },
+      "adviceExact": false,
+      "costsExact": false,
+      "retry": {
+        "before": false,
+        "after": null,
+        "exact": false
+      },
+      "withoutAdvice": {
+        "before": true,
+        "after": null,
+        "exact": false
+      }
+    },
+    {
+      "style": "casual",
+      "index": 13,
+      "inputSaveSha256": "1a8d7bbd3440a4054d6e18a3737f0a10626baf7dae49e01966014bdff9564a37",
+      "first": {
+        "before": false,
+        "after": false,
+        "encountersExact": true,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": false,
+      "costsExact": true,
+      "retry": {
+        "before": true,
+        "after": true,
+        "exact": false
+      },
+      "withoutAdvice": {
+        "before": false,
+        "after": false,
+        "exact": false
+      }
+    },
+    {
+      "style": "casual",
+      "index": 14,
+      "inputSaveSha256": "13a5b94b5275dc4b5a0ea62181404ba19a3aee0da0320d39ae77db2b1f8cb481",
+      "first": {
+        "before": false,
+        "after": false,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": false
+      },
+      "adviceExact": false,
+      "costsExact": false,
+      "retry": {
+        "before": true,
+        "after": null,
+        "exact": false
+      },
+      "withoutAdvice": {
+        "before": true,
+        "after": null,
+        "exact": false
+      }
+    },
+    {
+      "style": "casual",
+      "index": 15,
+      "inputSaveSha256": "33e68094d778eadafd65ada8c907f8040268c230876f8023ca404c8863d0bf86",
+      "first": {
+        "before": false,
+        "after": false,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": false,
+      "costsExact": true,
+      "retry": {
+        "before": true,
+        "after": true,
+        "exact": false
+      },
+      "withoutAdvice": {
+        "before": false,
+        "after": false,
+        "exact": false
+      }
+    },
+    {
+      "style": "casual",
+      "index": 16,
+      "inputSaveSha256": "d00a77e0dd141101e3446c06795d989afaa2d06eec92fc3f82e454c30687c577",
+      "first": {
+        "before": true,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": true,
+      "costsExact": true,
+      "retry": {
+        "before": null,
+        "after": null,
+        "exact": true
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": null,
+        "exact": true
+      }
+    },
+    {
+      "style": "casual",
+      "index": 17,
+      "inputSaveSha256": "2b3eccd8d11191e037dc5db56f8ff4ff9283833b57124bf7023c5e8372f59592",
+      "first": {
+        "before": true,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": true,
+      "costsExact": true,
+      "retry": {
+        "before": null,
+        "after": null,
+        "exact": true
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": null,
+        "exact": true
+      }
+    },
+    {
+      "style": "casual",
+      "index": 18,
+      "inputSaveSha256": "120d91c905008a51b5899e0865838e817f4dfe5d3a0120d7963c11d4561ca1bb",
+      "first": {
+        "before": true,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": true,
+      "costsExact": true,
+      "retry": {
+        "before": null,
+        "after": null,
+        "exact": true
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": null,
+        "exact": true
+      }
+    },
+    {
+      "style": "casual",
+      "index": 19,
+      "inputSaveSha256": "4a16b3860ecd6b64ede673a0ac4ee4774f6fefe5f69a999612745dc88adcf84e",
+      "first": {
+        "before": false,
+        "after": false,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": false,
+      "costsExact": true,
+      "retry": {
+        "before": true,
+        "after": true,
+        "exact": false
+      },
+      "withoutAdvice": {
+        "before": true,
+        "after": true,
+        "exact": false
+      }
+    },
+    {
+      "style": "casual",
+      "index": 20,
+      "inputSaveSha256": "91c0c3d36a1c40d4e388bbe08fc0df26c2ea0f44becae2c378745aeb24c87751",
+      "first": {
+        "before": true,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": true,
+      "costsExact": true,
+      "retry": {
+        "before": null,
+        "after": null,
+        "exact": true
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": null,
+        "exact": true
+      }
+    },
+    {
+      "style": "casual",
+      "index": 21,
+      "inputSaveSha256": "8c0f3e3e675aa4139ebee5036f2ad228529f21fccc469c7b7c037d5700ecc580",
+      "first": {
+        "before": true,
+        "after": false,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": false
+      },
+      "adviceExact": false,
+      "costsExact": false,
+      "retry": {
+        "before": null,
+        "after": false,
+        "exact": false
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": false,
+        "exact": false
+      }
+    },
+    {
+      "style": "casual",
+      "index": 22,
+      "inputSaveSha256": "6cd561af6a0f96a11fcc8106c58e8cb95ca0244de2aecd36599b7d72f0a7f8af",
+      "first": {
+        "before": false,
+        "after": false,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": false
+      },
+      "adviceExact": false,
+      "costsExact": true,
+      "retry": {
+        "before": true,
+        "after": false,
+        "exact": false
+      },
+      "withoutAdvice": {
+        "before": false,
+        "after": false,
+        "exact": false
+      }
+    },
+    {
+      "style": "casual",
+      "index": 23,
+      "inputSaveSha256": "3b2ff6960e0cb6fb7ffb818f1fa11e076eedff61bc1d33d88c7ccea08ff81bcd",
+      "first": {
+        "before": true,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": true,
+      "costsExact": true,
+      "retry": {
+        "before": null,
+        "after": null,
+        "exact": true
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": null,
+        "exact": true
+      }
+    },
+    {
+      "style": "casual",
+      "index": 24,
+      "inputSaveSha256": "48f98eff2dc5ca9caca076f99b05e6f40347e7b02533a83405838427f8006cca",
+      "first": {
+        "before": false,
+        "after": false,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": false
+      },
+      "adviceExact": false,
+      "costsExact": true,
+      "retry": {
+        "before": true,
+        "after": false,
+        "exact": false
+      },
+      "withoutAdvice": {
+        "before": false,
+        "after": false,
+        "exact": false
+      }
+    },
+    {
+      "style": "casual",
+      "index": 25,
+      "inputSaveSha256": "b4727c362725bf88cf51e450a06233f9a496cfe602b4166e748cb1b52c9111da",
+      "first": {
+        "before": true,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": true,
+      "costsExact": true,
+      "retry": {
+        "before": null,
+        "after": null,
+        "exact": true
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": null,
+        "exact": true
+      }
+    },
+    {
+      "style": "casual",
+      "index": 26,
+      "inputSaveSha256": "a80778d4b5a90b1ed2db5de53d7b843acbd462c5a0969e2bd16320fe17e97ba2",
+      "first": {
+        "before": true,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": true,
+      "costsExact": true,
+      "retry": {
+        "before": null,
+        "after": null,
+        "exact": true
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": null,
+        "exact": true
+      }
+    },
+    {
+      "style": "casual",
+      "index": 27,
+      "inputSaveSha256": "8004931864e0d5e7450b30ab8f9ec99c6199c0da02ac0589f72d1b85652277de",
+      "first": {
+        "before": false,
+        "after": false,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": false,
+        "after": true
+      },
+      "adviceExact": false,
+      "costsExact": true,
+      "retry": {
+        "before": false,
+        "after": true,
+        "exact": false
+      },
+      "withoutAdvice": {
+        "before": true,
+        "after": true,
+        "exact": false
+      }
+    },
+    {
+      "style": "casual",
+      "index": 28,
+      "inputSaveSha256": "38edec839e7bc91effeb9b633f6d4f449c5e89dbff44c506f571ec287af54afd",
+      "first": {
+        "before": true,
+        "after": false,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": false
+      },
+      "adviceExact": false,
+      "costsExact": false,
+      "retry": {
+        "before": null,
+        "after": false,
+        "exact": false
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": false,
+        "exact": false
+      }
+    },
+    {
+      "style": "casual",
+      "index": 29,
+      "inputSaveSha256": "6efb3e3cd07cf52a170ac070fa2b0c68387c8e90ce83e2ecc9397fd0767d076c",
+      "first": {
+        "before": true,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": true,
+      "costsExact": true,
+      "retry": {
+        "before": null,
+        "after": null,
+        "exact": true
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": null,
+        "exact": true
+      }
+    },
+    {
+      "style": "regular",
+      "index": 0,
+      "inputSaveSha256": "db085959f4fc597b224402be81935550bb114807d9915f1931184ff2c7eebed2",
+      "first": {
+        "before": true,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": true,
+      "costsExact": true,
+      "retry": {
+        "before": null,
+        "after": null,
+        "exact": true
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": null,
+        "exact": true
+      }
+    },
+    {
+      "style": "regular",
+      "index": 1,
+      "inputSaveSha256": "e8bd1fef35a0ca50937c119aa4bb265bb7d79da2c20f50b80ef448ed83153ce7",
+      "first": {
+        "before": true,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": true,
+      "costsExact": true,
+      "retry": {
+        "before": null,
+        "after": null,
+        "exact": true
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": null,
+        "exact": true
+      }
+    },
+    {
+      "style": "regular",
+      "index": 2,
+      "inputSaveSha256": "05095e75b42442184ea0d57dbc423476bffe5040217b97375f0e990214336451",
+      "first": {
+        "before": true,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": true,
+      "costsExact": true,
+      "retry": {
+        "before": null,
+        "after": null,
+        "exact": true
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": null,
+        "exact": true
+      }
+    },
+    {
+      "style": "regular",
+      "index": 3,
+      "inputSaveSha256": "40af5ecfeb170d0c6f1e4ef2a7fa667f84ec956a60a717d22d3bd40aa7a0887c",
+      "first": {
+        "before": true,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": true,
+      "costsExact": true,
+      "retry": {
+        "before": null,
+        "after": null,
+        "exact": true
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": null,
+        "exact": true
+      }
+    },
+    {
+      "style": "regular",
+      "index": 4,
+      "inputSaveSha256": "97dc30f736b92f933f04b8a34cc028ad8c9a17079782b121df34dbdd83351bb5",
+      "first": {
+        "before": true,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": true,
+      "costsExact": true,
+      "retry": {
+        "before": null,
+        "after": null,
+        "exact": true
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": null,
+        "exact": true
+      }
+    },
+    {
+      "style": "regular",
+      "index": 5,
+      "inputSaveSha256": "7651ff5590438be2f1bf01166681569a539506384f8d53bb33f9e5e63edb3dc8",
+      "first": {
+        "before": true,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": true,
+      "costsExact": true,
+      "retry": {
+        "before": null,
+        "after": null,
+        "exact": true
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": null,
+        "exact": true
+      }
+    },
+    {
+      "style": "regular",
+      "index": 6,
+      "inputSaveSha256": "eed5ad174ee1290b3bcda9c7fd2e1a2f6f45fc4fc401bf550f0d0720fce7abee",
+      "first": {
+        "before": false,
+        "after": false,
+        "encountersExact": true,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": false,
+        "after": false
+      },
+      "adviceExact": false,
+      "costsExact": true,
+      "retry": {
+        "before": false,
+        "after": false,
+        "exact": false
+      },
+      "withoutAdvice": {
+        "before": false,
+        "after": false,
+        "exact": false
+      }
+    },
+    {
+      "style": "regular",
+      "index": 7,
+      "inputSaveSha256": "cf523b74d2d3c083e9d4d41035c6298ad7ea4c950d83ce5ed60dfb844668b46e",
+      "first": {
+        "before": true,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": true,
+      "costsExact": true,
+      "retry": {
+        "before": null,
+        "after": null,
+        "exact": true
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": null,
+        "exact": true
+      }
+    },
+    {
+      "style": "regular",
+      "index": 8,
+      "inputSaveSha256": "14ee728d263604e033d4a62abc13ee7aa4af1294a63ea75340168610689e8176",
+      "first": {
+        "before": false,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": false,
+      "costsExact": false,
+      "retry": {
+        "before": true,
+        "after": null,
+        "exact": false
+      },
+      "withoutAdvice": {
+        "before": true,
+        "after": null,
+        "exact": false
+      }
+    },
+    {
+      "style": "regular",
+      "index": 9,
+      "inputSaveSha256": "31933e3bc3109563ade6b51aaec2af43ffd151212151c09ed3140a134ad02ae1",
+      "first": {
+        "before": true,
+        "after": false,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": false,
+      "costsExact": false,
+      "retry": {
+        "before": null,
+        "after": true,
+        "exact": false
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": false,
+        "exact": false
+      }
+    },
+    {
+      "style": "regular",
+      "index": 10,
+      "inputSaveSha256": "22bbdc7c6c1138c89c7d60d59f76496ccaefedc65ac622db7d473b408cdf36a7",
+      "first": {
+        "before": false,
+        "after": false,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": false,
+      "costsExact": true,
+      "retry": {
+        "before": true,
+        "after": true,
+        "exact": false
+      },
+      "withoutAdvice": {
+        "before": true,
+        "after": false,
+        "exact": false
+      }
+    },
+    {
+      "style": "regular",
+      "index": 11,
+      "inputSaveSha256": "a47e69b805fda2e60fc53cac5a67549bfc6ad28044ef6e9a86e64cb80291f05a",
+      "first": {
+        "before": true,
+        "after": false,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": false
+      },
+      "adviceExact": false,
+      "costsExact": false,
+      "retry": {
+        "before": null,
+        "after": false,
+        "exact": false
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": false,
+        "exact": false
+      }
+    },
+    {
+      "style": "regular",
+      "index": 12,
+      "inputSaveSha256": "d944115c23ca2252612f3046018d5f7dcab90dea38130f4345f7e7b1608365fc",
+      "first": {
+        "before": true,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": true,
+      "costsExact": true,
+      "retry": {
+        "before": null,
+        "after": null,
+        "exact": true
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": null,
+        "exact": true
+      }
+    },
+    {
+      "style": "regular",
+      "index": 13,
+      "inputSaveSha256": "8b22f9196a9379a418706c08d22ce8aa4142da226334ba13d7dac4fdc59842dd",
+      "first": {
+        "before": false,
+        "after": false,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": false,
+      "costsExact": true,
+      "retry": {
+        "before": true,
+        "after": true,
+        "exact": false
+      },
+      "withoutAdvice": {
+        "before": true,
+        "after": true,
+        "exact": false
+      }
+    },
+    {
+      "style": "regular",
+      "index": 14,
+      "inputSaveSha256": "ebeee32574b28c0deaa11454a440a4c65c9ba52978a8250fd6ac46a2c66c12b3",
+      "first": {
+        "before": true,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": true,
+      "costsExact": true,
+      "retry": {
+        "before": null,
+        "after": null,
+        "exact": true
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": null,
+        "exact": true
+      }
+    },
+    {
+      "style": "regular",
+      "index": 15,
+      "inputSaveSha256": "81ff1ceaa378406d16c20779152ab8df7bacdfbcfc641abc69cbc3ecabcbe4da",
+      "first": {
+        "before": true,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": true,
+      "costsExact": true,
+      "retry": {
+        "before": null,
+        "after": null,
+        "exact": true
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": null,
+        "exact": true
+      }
+    },
+    {
+      "style": "regular",
+      "index": 16,
+      "inputSaveSha256": "e8bed039b29167863c1697feb97b776d397e1aba35594a8cd21b239611998004",
+      "first": {
+        "before": true,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": true,
+      "costsExact": true,
+      "retry": {
+        "before": null,
+        "after": null,
+        "exact": true
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": null,
+        "exact": true
+      }
+    },
+    {
+      "style": "regular",
+      "index": 17,
+      "inputSaveSha256": "5f23c3fab37f032bea2b13ddc901304617404143fa33ec052c1ad9464dcff660",
+      "first": {
+        "before": true,
+        "after": false,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": false,
+      "costsExact": false,
+      "retry": {
+        "before": null,
+        "after": true,
+        "exact": false
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": true,
+        "exact": false
+      }
+    },
+    {
+      "style": "regular",
+      "index": 18,
+      "inputSaveSha256": "16c712ce87ac3ba3ea71c1ed8951368bc940d9586fff61a1a01c57212acdee5f",
+      "first": {
+        "before": false,
+        "after": false,
+        "encountersExact": true,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": false,
+        "after": false
+      },
+      "adviceExact": false,
+      "costsExact": true,
+      "retry": {
+        "before": false,
+        "after": false,
+        "exact": false
+      },
+      "withoutAdvice": {
+        "before": true,
+        "after": true,
+        "exact": false
+      }
+    },
+    {
+      "style": "regular",
+      "index": 19,
+      "inputSaveSha256": "8b76508980f5707901c986653139e4c5cb8e3cf029b89d22d4b808b5a45087ad",
+      "first": {
+        "before": true,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": true,
+      "costsExact": true,
+      "retry": {
+        "before": null,
+        "after": null,
+        "exact": true
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": null,
+        "exact": true
+      }
+    },
+    {
+      "style": "regular",
+      "index": 20,
+      "inputSaveSha256": "59358caebc195caebb94cf0ae4e8635b5f86a7e759eb8ff9c4dab645671f3cfa",
+      "first": {
+        "before": true,
+        "after": false,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": false,
+      "costsExact": false,
+      "retry": {
+        "before": null,
+        "after": true,
+        "exact": false
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": false,
+        "exact": false
+      }
+    },
+    {
+      "style": "regular",
+      "index": 21,
+      "inputSaveSha256": "42521358b92885db75d50b808993be7ac68ba51931024a986c09d66c2123135a",
+      "first": {
+        "before": true,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": true,
+      "costsExact": true,
+      "retry": {
+        "before": null,
+        "after": null,
+        "exact": true
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": null,
+        "exact": true
+      }
+    },
+    {
+      "style": "regular",
+      "index": 22,
+      "inputSaveSha256": "219811d2ae9e7c52506542e1a55d2076871f400166bd41059d66df05b5a1b808",
+      "first": {
+        "before": false,
+        "after": false,
+        "encountersExact": true,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": false,
+      "costsExact": true,
+      "retry": {
+        "before": true,
+        "after": true,
+        "exact": false
+      },
+      "withoutAdvice": {
+        "before": false,
+        "after": false,
+        "exact": false
+      }
+    },
+    {
+      "style": "regular",
+      "index": 23,
+      "inputSaveSha256": "f5d07a211ab9d852dcfe95dd265aec55696a5f62b0aa91a050e00779415ad8bb",
+      "first": {
+        "before": false,
+        "after": false,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": false,
+      "costsExact": true,
+      "retry": {
+        "before": true,
+        "after": true,
+        "exact": false
+      },
+      "withoutAdvice": {
+        "before": false,
+        "after": true,
+        "exact": false
+      }
+    },
+    {
+      "style": "regular",
+      "index": 24,
+      "inputSaveSha256": "da49f24e03cdb2b61c5084d523a8871ca8fea4c853195e2f40a629aacf9740ca",
+      "first": {
+        "before": true,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": true,
+      "costsExact": true,
+      "retry": {
+        "before": null,
+        "after": null,
+        "exact": true
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": null,
+        "exact": true
+      }
+    },
+    {
+      "style": "regular",
+      "index": 25,
+      "inputSaveSha256": "2bc0c45ce9e049050ef9d2b1112bf7dba5a136b6e0577e51ca6ab8f8b07fd5ae",
+      "first": {
+        "before": true,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": true,
+      "costsExact": true,
+      "retry": {
+        "before": null,
+        "after": null,
+        "exact": true
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": null,
+        "exact": true
+      }
+    },
+    {
+      "style": "regular",
+      "index": 26,
+      "inputSaveSha256": "73b4554d5a7d6bb0b70d4eb04e53d4693ed5a928b9330e6ebd20cf34960754b2",
+      "first": {
+        "before": true,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": true,
+      "costsExact": true,
+      "retry": {
+        "before": null,
+        "after": null,
+        "exact": true
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": null,
+        "exact": true
+      }
+    },
+    {
+      "style": "regular",
+      "index": 27,
+      "inputSaveSha256": "1cb1f4cf7ce12003f00c4cdd66cac8cb68acfbcb5b2e59cbce601f2232fa72fa",
+      "first": {
+        "before": true,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": true,
+      "costsExact": true,
+      "retry": {
+        "before": null,
+        "after": null,
+        "exact": true
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": null,
+        "exact": true
+      }
+    },
+    {
+      "style": "regular",
+      "index": 28,
+      "inputSaveSha256": "6db5f7842b753244b8fc412d608265901a78f18d6850eb54db978d9003396cf5",
+      "first": {
+        "before": false,
+        "after": false,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": false,
+      "costsExact": true,
+      "retry": {
+        "before": true,
+        "after": true,
+        "exact": false
+      },
+      "withoutAdvice": {
+        "before": false,
+        "after": false,
+        "exact": false
+      }
+    },
+    {
+      "style": "regular",
+      "index": 29,
+      "inputSaveSha256": "65bcd330b46c5fbe842158062d82d64b317451eb1f7f587f66d053e1e8049152",
+      "first": {
+        "before": false,
+        "after": false,
+        "encountersExact": true,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": false,
+      "costsExact": true,
+      "retry": {
+        "before": true,
+        "after": true,
+        "exact": false
+      },
+      "withoutAdvice": {
+        "before": false,
+        "after": false,
+        "exact": false
+      }
+    },
+    {
+      "style": "heavy",
+      "index": 0,
+      "inputSaveSha256": "3f885f453bc76e65fe38a3e1de9417e9738c9be297673d66a526526080eb3e86",
+      "first": {
+        "before": true,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": true,
+      "costsExact": true,
+      "retry": {
+        "before": null,
+        "after": null,
+        "exact": true
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": null,
+        "exact": true
+      }
+    },
+    {
+      "style": "heavy",
+      "index": 1,
+      "inputSaveSha256": "324c8700fc3081fe3933f5586db9926fa38e3a3e5b3167bdcfdaeadfc62c1b90",
+      "first": {
+        "before": true,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": true,
+      "costsExact": true,
+      "retry": {
+        "before": null,
+        "after": null,
+        "exact": true
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": null,
+        "exact": true
+      }
+    },
+    {
+      "style": "heavy",
+      "index": 2,
+      "inputSaveSha256": "7600fd48fde0ac30c669efc3ed09a7db24326011c85abc46f620d4335da07f13",
+      "first": {
+        "before": true,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": true,
+      "costsExact": true,
+      "retry": {
+        "before": null,
+        "after": null,
+        "exact": true
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": null,
+        "exact": true
+      }
+    },
+    {
+      "style": "heavy",
+      "index": 3,
+      "inputSaveSha256": "96b15c56d0a980f0c5df1932aabca29c6eb204fd3b2004745d2bd85c500b3f07",
+      "first": {
+        "before": true,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": true,
+      "costsExact": true,
+      "retry": {
+        "before": null,
+        "after": null,
+        "exact": true
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": null,
+        "exact": true
+      }
+    },
+    {
+      "style": "heavy",
+      "index": 4,
+      "inputSaveSha256": "62ea1767974e3ba947b6cabe887a2cb513a5b8ff19dd8845270b7e1e80e3be68",
+      "first": {
+        "before": true,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": true,
+      "costsExact": true,
+      "retry": {
+        "before": null,
+        "after": null,
+        "exact": true
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": null,
+        "exact": true
+      }
+    },
+    {
+      "style": "heavy",
+      "index": 5,
+      "inputSaveSha256": "bee03115392a5495398a871a11ba97bcbad3b27cc6c0516010298cbb5cc71d83",
+      "first": {
+        "before": true,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": true,
+      "costsExact": true,
+      "retry": {
+        "before": null,
+        "after": null,
+        "exact": true
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": null,
+        "exact": true
+      }
+    },
+    {
+      "style": "heavy",
+      "index": 6,
+      "inputSaveSha256": "e172bf6a7c6ecc1c224da5eb887bc4d5be5a5aafc28d38d2d1f77cadc01affb5",
+      "first": {
+        "before": true,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": true,
+      "costsExact": true,
+      "retry": {
+        "before": null,
+        "after": null,
+        "exact": true
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": null,
+        "exact": true
+      }
+    },
+    {
+      "style": "heavy",
+      "index": 7,
+      "inputSaveSha256": "4347bfec340cfbbddd3c50bfd3d5ac5d1bac5c5e53c4b1daf5af942f0af330b0",
+      "first": {
+        "before": true,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": true,
+      "costsExact": true,
+      "retry": {
+        "before": null,
+        "after": null,
+        "exact": true
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": null,
+        "exact": true
+      }
+    },
+    {
+      "style": "heavy",
+      "index": 8,
+      "inputSaveSha256": "a238045760887762d5c2c8c3aa3094d67f86b52dca9a27cc33c50ae27af913ec",
+      "first": {
+        "before": true,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": true,
+      "costsExact": true,
+      "retry": {
+        "before": null,
+        "after": null,
+        "exact": true
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": null,
+        "exact": true
+      }
+    },
+    {
+      "style": "heavy",
+      "index": 9,
+      "inputSaveSha256": "37de1a5445d6a63234baf6ed549748e8cecb602f6931b2eb213daf803cd521e1",
+      "first": {
+        "before": true,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": true,
+      "costsExact": true,
+      "retry": {
+        "before": null,
+        "after": null,
+        "exact": true
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": null,
+        "exact": true
+      }
+    },
+    {
+      "style": "heavy",
+      "index": 10,
+      "inputSaveSha256": "d18dd7089dcf519067053105944d740d0d1755a24d78c8c6d7e8ea10ee10d586",
+      "first": {
+        "before": true,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": true,
+      "costsExact": true,
+      "retry": {
+        "before": null,
+        "after": null,
+        "exact": true
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": null,
+        "exact": true
+      }
+    },
+    {
+      "style": "heavy",
+      "index": 11,
+      "inputSaveSha256": "7597c219a2326390af40c23570d83ada88c7559e9fb54b07df911a025a5cec52",
+      "first": {
+        "before": true,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": true,
+      "costsExact": true,
+      "retry": {
+        "before": null,
+        "after": null,
+        "exact": true
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": null,
+        "exact": true
+      }
+    },
+    {
+      "style": "heavy",
+      "index": 12,
+      "inputSaveSha256": "ef202bbaf4811d57dc353d564d32c965b8d47b1a884b6e91503b929093e5b799",
+      "first": {
+        "before": true,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": true,
+      "costsExact": true,
+      "retry": {
+        "before": null,
+        "after": null,
+        "exact": true
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": null,
+        "exact": true
+      }
+    },
+    {
+      "style": "heavy",
+      "index": 13,
+      "inputSaveSha256": "9882f0675c4951d7901cf378dc28873ecf85c8e8645dfe9e19264042ce4ea46f",
+      "first": {
+        "before": true,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": true,
+      "costsExact": true,
+      "retry": {
+        "before": null,
+        "after": null,
+        "exact": true
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": null,
+        "exact": true
+      }
+    },
+    {
+      "style": "heavy",
+      "index": 14,
+      "inputSaveSha256": "98b75a7703cebf0083a09dd27c81437ddc2643f8dc639d2a9f7ae82f3984b3ce",
+      "first": {
+        "before": false,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": false,
+        "after": true
+      },
+      "adviceExact": false,
+      "costsExact": false,
+      "retry": {
+        "before": false,
+        "after": null,
+        "exact": false
+      },
+      "withoutAdvice": {
+        "before": true,
+        "after": null,
+        "exact": false
+      }
+    },
+    {
+      "style": "heavy",
+      "index": 15,
+      "inputSaveSha256": "ce65c7e727b63d79809ddba63b6a8e41e11a77406c2ead5596561f5031b2f70e",
+      "first": {
+        "before": true,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": true,
+      "costsExact": true,
+      "retry": {
+        "before": null,
+        "after": null,
+        "exact": true
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": null,
+        "exact": true
+      }
+    },
+    {
+      "style": "heavy",
+      "index": 16,
+      "inputSaveSha256": "f3b64514370ba0a96e0dc99046bc0a25a5a27dc6b1882ee745af02249c215267",
+      "first": {
+        "before": true,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": true,
+      "costsExact": true,
+      "retry": {
+        "before": null,
+        "after": null,
+        "exact": true
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": null,
+        "exact": true
+      }
+    },
+    {
+      "style": "heavy",
+      "index": 17,
+      "inputSaveSha256": "52d8532abf39be6f58b1bcec61196884491640c5adbed5959a04c183142b9f4f",
+      "first": {
+        "before": true,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": true,
+      "costsExact": true,
+      "retry": {
+        "before": null,
+        "after": null,
+        "exact": true
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": null,
+        "exact": true
+      }
+    },
+    {
+      "style": "heavy",
+      "index": 18,
+      "inputSaveSha256": "30239bd708310a3e2f8dbea40f4e01872cc628cb603e848e5ae7d3769c3286e6",
+      "first": {
+        "before": false,
+        "after": false,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": false,
+        "after": true
+      },
+      "adviceExact": false,
+      "costsExact": true,
+      "retry": {
+        "before": false,
+        "after": true,
+        "exact": false
+      },
+      "withoutAdvice": {
+        "before": true,
+        "after": false,
+        "exact": false
+      }
+    },
+    {
+      "style": "heavy",
+      "index": 19,
+      "inputSaveSha256": "797b2f9ca0ddbd0fc2ee0b8efe4cdf3cc08552c085f0d2e9a6d64ddb3102bc46",
+      "first": {
+        "before": true,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": true,
+      "costsExact": true,
+      "retry": {
+        "before": null,
+        "after": null,
+        "exact": true
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": null,
+        "exact": true
+      }
+    },
+    {
+      "style": "heavy",
+      "index": 20,
+      "inputSaveSha256": "20dac6b1e8bb15fbbef1a8e8cf1745e70a687dc0abd4326ffbae34dd87e442ec",
+      "first": {
+        "before": true,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": true,
+      "costsExact": true,
+      "retry": {
+        "before": null,
+        "after": null,
+        "exact": true
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": null,
+        "exact": true
+      }
+    },
+    {
+      "style": "heavy",
+      "index": 21,
+      "inputSaveSha256": "da43882e0c7a747353689706ada28c1b048ea7e5d918615eb3853d2c22b217c0",
+      "first": {
+        "before": true,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": true,
+      "costsExact": true,
+      "retry": {
+        "before": null,
+        "after": null,
+        "exact": true
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": null,
+        "exact": true
+      }
+    },
+    {
+      "style": "heavy",
+      "index": 22,
+      "inputSaveSha256": "f799db601d4ac5e7eb52b1fa7f771293e3510a103dfd8f77cada7bdd31125e7f",
+      "first": {
+        "before": true,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": true,
+      "costsExact": true,
+      "retry": {
+        "before": null,
+        "after": null,
+        "exact": true
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": null,
+        "exact": true
+      }
+    },
+    {
+      "style": "heavy",
+      "index": 23,
+      "inputSaveSha256": "f05477b524fcc42db1a1fa970620eac6892ca3ee8936322aed164d809e977281",
+      "first": {
+        "before": true,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": true,
+      "costsExact": true,
+      "retry": {
+        "before": null,
+        "after": null,
+        "exact": true
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": null,
+        "exact": true
+      }
+    },
+    {
+      "style": "heavy",
+      "index": 24,
+      "inputSaveSha256": "a34274d8699cb06545b1ba1aa7e29ded4f21c8058e27f08334eeab37c95e836e",
+      "first": {
+        "before": true,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": true,
+      "costsExact": true,
+      "retry": {
+        "before": null,
+        "after": null,
+        "exact": true
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": null,
+        "exact": true
+      }
+    },
+    {
+      "style": "heavy",
+      "index": 25,
+      "inputSaveSha256": "c197ddbd3b715a35393a800f97eccdea2663b791524013276a48e6a28c664818",
+      "first": {
+        "before": true,
+        "after": false,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": false
+      },
+      "adviceExact": true,
+      "costsExact": true,
+      "retry": {
+        "before": null,
+        "after": null,
+        "exact": true
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": null,
+        "exact": true
+      }
+    },
+    {
+      "style": "heavy",
+      "index": 26,
+      "inputSaveSha256": "e158da762cd0416841617558e5986c3911db79ada8463797f00dac8fe1eb13ef",
+      "first": {
+        "before": true,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": true,
+      "costsExact": true,
+      "retry": {
+        "before": null,
+        "after": null,
+        "exact": true
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": null,
+        "exact": true
+      }
+    },
+    {
+      "style": "heavy",
+      "index": 27,
+      "inputSaveSha256": "7d38a41ace7e3891572165d18b7f9ddc6b1ab075eff68a251b04cc97dda69231",
+      "first": {
+        "before": true,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": true,
+      "costsExact": true,
+      "retry": {
+        "before": null,
+        "after": null,
+        "exact": true
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": null,
+        "exact": true
+      }
+    },
+    {
+      "style": "heavy",
+      "index": 28,
+      "inputSaveSha256": "19a9f442e7f69c66d683f5c0ded80c078d4b02107112173236e5a8dffec1831a",
+      "first": {
+        "before": true,
+        "after": false,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": false,
+      "costsExact": false,
+      "retry": {
+        "before": null,
+        "after": true,
+        "exact": false
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": true,
+        "exact": false
+      }
+    },
+    {
+      "style": "heavy",
+      "index": 29,
+      "inputSaveSha256": "b510c623356d3c0eea05b11aed428c921f00b25a29bc8e8f8b250fa51650a897",
+      "first": {
+        "before": true,
+        "after": true,
+        "encountersExact": false,
+        "choicesExact": true,
+        "stateHashExact": false
+      },
+      "firstTwo": {
+        "before": true,
+        "after": true
+      },
+      "adviceExact": true,
+      "costsExact": true,
+      "retry": {
+        "before": null,
+        "after": null,
+        "exact": true
+      },
+      "withoutAdvice": {
+        "before": null,
+        "after": null,
+        "exact": true
+      }
+    }
+  ],
+  "receipts": [
+    {
+      "path": "reports/cardrpg-big/a5/b2/hush-eligibility-22/day7-checks/checks.json",
+      "sha256": "9c49496b3f867c63bcf303d57a7885d3936e455cb35428187b9113246c5b3860"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/b1/pressure-transfer-27/transfer30/day7-checks/checks.json",
+      "sha256": "8fc8a1f3e33be53af0d7703db9ab521cd8e564732288b5d4e4c6f6682505fb4a"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/b1/pressure-transfer-27/transfer30/REGISTERED-METHOD.json",
+      "sha256": "0db3b6d0dafce5699b03bce3fa9207b8d8b76e2b6380b4e0baaab5d22c4f54dd"
+    }
+  ],
+  "gates": {
+    "casualFirstTwoAtLeast50": true,
+    "regularFirstTwoAtLeast70": true,
+    "heavyFirstAtMost95": true,
+    "everyLossHasAvailableImprovement": false
+  },
+  "limitations": [
+    "TRAIN progression proxy. No new acceptance seeds or human playtest.",
+    "Exact encounter summaries do not establish byte-identical full combat logs.",
+    "The heavy cohort may lose more retries with advice than without it; retained in cohort receipts."
+  ]
+}

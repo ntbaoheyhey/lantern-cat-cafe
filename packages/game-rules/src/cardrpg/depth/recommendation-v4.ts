@@ -109,7 +109,8 @@ export function recommendBuildV4(state: DepthAccount, encounter: BattleSetup): B
     if (focus !== state.v4.plan.focus || care !== state.v4.plan.care)
       changes.push({ change: { kind: 'plan', plan: { focus, care } }, label: `${names[focus]} · ${care === 'protect' ? 'Protect' : 'Steady'}` });
   // At most 27 owned-cat alternatives for a three-cat crew and the twelve-cat roster.
-  const reserves = state.account.cards.map(card => card.cardId).filter(id => !state.team.includes(id)).sort();
+  const reserves = state.account.cards.filter(card => card.level >= (encounter.challengeLevel ?? 1))
+    .map(card => card.cardId).filter(id => !state.team.includes(id)).sort();
   for (const catId of state.team) for (const replacementId of reserves) {
     const row = state.rows[catId] === 'front' ? 'Front' : 'Back';
     changes.push({ change: { kind: 'cat', catId, replacementId },
@@ -147,5 +148,9 @@ export function applyResultAdviceV4(state: DepthAccount, advice: BuildAdviceV4):
   const settled = resultAdviceStateV4(state);
   if (!settled.ok) return settled;
   const applied = applyAdviceV4(settled.state, advice);
-  return applied.ok ? applied : { ...applied, state };
+  if (!applied.ok) return { ...applied, state };
+  const band = state.run?.challengeLevel;
+  if (band !== undefined && applied.state.team.some(id => applied.state.account.cards.find(card => card.cardId === id)!.level < band))
+    return { ok: false, state, error: `Choose a companion ready for challenge band ${band}.` };
+  return applied;
 }

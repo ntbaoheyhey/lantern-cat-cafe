@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-Owned reserve-cat advice28 adopted after registered90saved-input audit: allfirststates/encounters exact; firsttwo6improved/0worsened, allprogressiongatesPASS. Isolatedunit4PASS. New branchE1crew-advice; fullsource/OFF/browser closure next. Combat26/27 remainunadopted.
+Advice29 filters reserves below the selected band and rejects invalid result swaps atomically. Both corrected same-band 90-save arms are exact (0 improved/0 worsened); no population benefit claimed. Original28 failures and confounded +6 retained. Unit red-before1/5, after6PASS.
 ## NEXT
-Finish original27coordinator then audit bothcompletearms; no runtimeadoption. Run advice28sixsourcegates/OFF8250/earnedreal-click apply at3widths; preserve originalattempts. B1/B2/display/cadence/startup/Zopen; fresh20001–20500UNUSED.
+Verify advice29 source/OFF/three-width both-look UI: original under-level save must get a legal fallback; separately train Mallow1→5 through affordable public commands and apply owned-cat swap at band5. Preserve source290061918's original gates/UI failures. B1/B2/display/cadence/startup/Zopen; fresh20001–20500UNUSED.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -230,3 +230,7 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - Resume: preserved completed24receipts; no duplicate simulations. Audited current source and alloriginal22pair outcomes. Three prospective boss-hit envelopes25 registered; source snapshot and exact-once overlay identity required. No production/acceptance change.
 
 - 2026-11-08T18:56:26.827993+00:00: resumed26 completed receipts without duplicate simulations. Independent audit90semantic/45OFF/1321TRAIN/90saved inputsPASS; heavyceiling regresses28→30wins, firsttwo7improved/1worsened. Rejected isolatedadoption; no runtime change. Registered27fixed-target rawcycle redistributionT15/T30 before sampling, not equivalent to actualHPdamage.
+
+- 2026-11-08T19:11:00.491561+00:00: Original28 sixgates1746web/1190rules/421E2E/build and OFF8250 PASS. UI fails baseline/look1280; diagnostic confirms level1 Mallow versus band5. Original cohort omitted retry band, invalidating causal +6 claim. Registered29 two source snapshots and corrected same-band policy before sampling; production still290061918, unshipped. Pressure27 both arms audited/rejected.
+
+- 2026-11-08T19:12:16.454938+00:00: Advice29 both corrected cohorts complete, all90account records identical, original90firststates exact, progression thresholdsPASS27/28firsttwo and28heavyfirst; zeroeligible reserve suggestions in those oldsaves. Adopted exact registered two-guard candidate after supported audit. Controlled regression before1fail/5pass, after6pass. Separate casual2 fixture spends250fish/8threads viafourpubliclevelcommands, keepsfirstcombat/choices exact, then legitimately suggestsMallow atband5. No new population benefit or freshacceptance claim.

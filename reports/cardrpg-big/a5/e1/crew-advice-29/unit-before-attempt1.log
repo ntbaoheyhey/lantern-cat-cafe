@@ -1,0 +1,34 @@
+{"lock":"acquired","lane":"A","pid":51096,"startedAt":"2026-11-08T19:10:59.802Z","task":"A5 advice29 regression before fix"}
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-a4/packages/game-rules
+
+ ❯ src/cardrpg/depth/crew-advice-v4.test.ts (6 tests | 1 failed) 167ms
+   ❯ owned reserve cat advice (6)
+     × rejects a reserve below the completed route band without settling or changing the live account 4ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/cardrpg/depth/crew-advice-v4.test.ts > owned reserve cat advice > rejects a reserve below the completed route band without settling or changing the live account
+AssertionError: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ src/cardrpg/depth/crew-advice-v4.test.ts:55:23
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 5 passed (6)
+   Start at  02:11:00
+   Duration  289ms (tests 76%, transform 13%, import 10%, worker 1%)
+
+undefined
+/Users/bao/taskbar-hero-cardrpg-a4/packages/game-rules:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: vitest run src/cardrpg/depth/crew-advice-v4.test.ts
+{"lock":"released","pid":51096,"task":"A5 advice29 regression before fix"}

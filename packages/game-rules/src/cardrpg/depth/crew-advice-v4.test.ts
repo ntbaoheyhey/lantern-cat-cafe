@@ -41,4 +41,30 @@ describe('owned reserve cat advice',()=>{
   expect(a!.after.wins).toBeGreaterThanOrEqual(a!.before.wins);expect(R.applyAdviceV4(s,a!).ok).toBe(true);
   expect(s).toEqual(before);expect(encounter).toEqual(input);
  });
+ it('rejects a reserve below the completed route band without settling or changing the live account',()=>{
+  let s=fresh();
+  for(const card of s.account.cards)card.level=6;
+  s.account.cards.find(card=>card.cardId==='panko')!.level=1;
+  s=R.startRun(s,1,17,'campaign','2026-11-06',6).state;
+  s=R.enterNode(s,R.availableNodes(s.run!)[0]!.id).state;
+  s.run!.battle!.result='enemy'; // Controlled settlement, not earned progression.
+  const before=clone(s),settled=R.resultAdviceStateV4(s);
+  expect(settled.ok).toBe(true);
+  const advice:R.BuildAdviceV4={change:{kind:'cat',catId:'mochi',replacementId:'panko'},label:'Replace Mochi with Panko in Front',cost:{},expectedBuild:R.adviceBuildKeyV4(settled.state),before:{wins:0,margin:0},after:{wins:1,margin:0},samples:10};
+  const rejected=R.applyResultAdviceV4(s,advice);
+  expect(rejected.ok).toBe(false);expect(rejected.state).toBe(s);expect(s).toEqual(before);
+  expect(rejected.error).toContain('challenge band 6');
+ });
+ it('starts a same-band retry with an eligible reserve and keeps settlement exactly once',()=>{
+  let s=fresh();for(const card of s.account.cards)card.level=6;
+  s=R.startRun(s,1,17,'campaign','2026-11-06',6).state;
+  s=R.enterNode(s,R.availableNodes(s.run!)[0]!.id).state;
+  s.run!.battle!.result='enemy';
+  const settled=R.resultAdviceStateV4(s);
+  const advice:R.BuildAdviceV4={change:{kind:'cat',catId:'mochi',replacementId:'panko'},label:'Replace Mochi with Panko in Front',cost:{},expectedBuild:R.adviceBuildKeyV4(settled.state),before:{wins:0,margin:0},after:{wins:1,margin:0},samples:10};
+  const applied=R.applyResultAdviceV4(s,advice);expect(applied.ok).toBe(true);
+  const retry=R.startRun(applied.state,1,18,'campaign','2026-11-06',6);
+  expect(retry.ok).toBe(true);expect(retry.state.run!.challengeLevel).toBe(6);
+  expect(retry.state.team[0]).toBe('panko');expect(R.applyResultAdviceV4(applied.state,advice).ok).toBe(false);
+ });
 });
