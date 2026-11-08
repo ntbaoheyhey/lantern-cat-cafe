@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-E3 source implemented: V4 practice gives one gentle enemy turn; earned existing-recipe choice leads into normal compare/equip and the first route. Focused3tests/typecheck PASS; source gates/build and real-click timing next. E2 DRAFT384 remains delivered; no campaign combat adoption.
+E3 source a99c934d4 passes all six gates and fresh3width x1 opening: practice12.775–12.999s; invitation/equip19.590–26.939s; scoutedmap41.862–49.171s. Paired Soot damage167→172. Walkthrough/audit/3receipt tests/3width static-guide layout PASS; draft publication next.
 ## NEXT
-Validate E3 three-width first-five-minute path; write offline illustrated walkthrough. Then elapsed cadence and balance root-cause work. B1tie-noise06 COMPLETE/rejected44/63piece misses; fresh acceptance20001–20500 unused. Stack376→377→379→381→382→383→384.
+Publish E3 after current evidence checks. Continuousband01 completed and rejected: all styles30/30 first-two, heavy30/30 first exceeds95% ceiling. No active diagnostic process remains. Continue a registered smooth early-band comparison on the same90 earned saves. Retryforecast01 rejected8/30casual,12/30regular. Freshacceptance20001–20500 unused. Stack376→377→379→381→382→383→384.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -145,3 +145,8 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - Registered day7 cohort COMPLETE90accounts: casual10/30, regular14/30 first-two MISS; heavy17/30first PASS. Advice available60/63losses MISS. Paired advised/no-advice retrywins casual5/5,regular9/5,heavy5/7; no general advice improvement claim. B3-DAY7-RETRY.md retains both successful x1 case and broader misses. Fresh acceptance unused.
 
 - E2 published DRAFT https://github.com/ntbaoheyhey/taskbar-hero/pull/384, sourcecffa5b878/receiptsd8ed0972f, all actual gates and remaining day7 misses in body. No merge/deploy. E3 starts on this checkpoint; B1tie-noise TRAIN snapshot remains independent.
+
+- Resume 2026-11-08T09:21:51.333652+00:00: E3 source/gates retained unchanged.32targetedcaptures pass3widths/scopedcontrastminimum6.858/nooverflow; original label/background-geometry/JSONundefined harness failures preserved. OFF reused after exact rulehash equality, practiceOFF unit exact. No publicdemo change.
+- Retryforecast01 complete/rejected: whole-route recommendations8/30casual,12/30regular vs10/14; all90 firstattempts exactly matchE2. Registeredbandramp01 isolates the challenge6 discontinuity: original compoundedbossattack5→6 +30.27%; spread existing12%/15%multipliers over6–10, preserve1–5/10–50. Staged only, no acceptance/production combat adoption.
+
+- Bandramp01 TRAIN day7 complete: casual/regular30/30 firsttwo, heavy30/30 first (ceilingMISS). Advice7/7losses available. This isolates the challenge6 wall but is too easy for heavy; not adopted. All prior firstsave/seed inputs preserved; no fresh earned45day claim.

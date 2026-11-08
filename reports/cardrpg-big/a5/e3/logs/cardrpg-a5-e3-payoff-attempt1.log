@@ -1,0 +1,1639 @@
+{"lock":"acquired","lane":"A","pid":31037,"startedAt":"2026-11-08T09:18:22.634Z","task":"A5 E3 paired gear payoff"}
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Replay matches every observed battle field
++ actual - expected
+... Skipped lines
+
+  {
+    acted: [
+      'mochi',
+      'soot'
+    ],
+...
+        signature: true,
++       status: undefined,
+        targetId: 'mochi'
+      }
+    ],
+    log: [
+      {
+
+    at file:///Users/bao/taskbar-hero-cardrpg-a4/tools/cardrpg-big/a5-e3-payoff.mjs:13:10 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: {
+    version: '0.7.0',
+    seed: 791576452,
+    rng: 3201131011,
+    chapter: 1,
+    actors: [
+      {
+        shield: 18,
+        charge: 0,
+        break: 0,
+        statuses: [],
+        cooldowns: { 'mochi-1': 1 },
+        passiveUsed: false,
+        phase: 1,
+        equipment: [ 'hearthloom-weapon-common', 'hearthloom-outfit-common' ],
+        setEffects: [ 'defend-shield' ],
+        bonuses: {
+          critBp: 800,
+          critDamageBp: 5000,
+          healingBp: 400,
+          shieldBp: 0,
+          healProc: 0,
+          cleanseProc: 0,
+          attackCount: 3
+        },
+        turns: 3,
+        id: 'mochi',
+        catalogId: 'mochi',
+        name: 'Mochi',
+        side: 'party',
+        role: 'guardian',
+        row: 'front',
+        flavour: 'hearth',
+        hp: 576,
+        maxHp: 592,
+        attack: 56,
+        defense: 34,
+        initiative: 9,
+        effectHit: 0,
+        effectResist: 0,
+        breakCap: 6,
+        skills: [ 'mochi-1', 'mochi-2', 'mochi-3' ]
+      },
+      {
+        shield: 6,
+        charge: 0,
+        break: 0,
+        statuses: [
+          {
+            id: 'steep',
+            stacks: 1,
+            remaining: 2,
+            source: 'clover',
+            appliedRound: 2
+          }
+        ],
+        cooldowns: { 'soot-1': 0, 'soot-3': 2 },
+        passiveUsed: false,
+        phase: 1,
+        equipment: [ 'moonwick-weapon-rare', 'moonwick-outfit-common' ],
+        setEffects: [ 'marked-break' ],
+        bonuses: {
+          attack: 1,
+          critBp: 1200,
+          critDamageBp: 5000,
+          healingBp: 400,
+          shieldBp: 0,
+          healProc: 0,
+          cleanseProc: 0,
+          attackCount: 3
+        },
+        turns: 3,
+        id: 'soot',
+        catalogId: 'soot',
+        name: 'Soot',
+        side: 'party',
+        role: 'hexer',
+        row: 'rear',
+        flavour: 'moon',
+        hp: 460,
+        maxHp: 460,
+        attack: 71,
+        defense: 22,
+        initiative: 8,
+        effectHit: 0,
+        effectResist: 0,
+        breakCap: 6,
+        skills: [ 'soot-1', 'soot-2', 'soot-3' ]
+      },
+      {
+        shield: 0,
+        charge: 0,
+        break: 0,
+        statuses: [],
+        cooldowns: { 'clover-1': 0, 'clover-2': 0 },
+        passiveUsed: true,
+        phase: 1,
+        equipment: [ 'mossbrew-weapon-common', 'mossbrew-outfit-common' ],
+        setEffects: [ 'healing-cleanse' ],
+        bonuses: {
+          critBp: 500,
+          critDamageBp: 5000,
+          healingBp: 400,
+          shieldBp: 0,
+          healProc: 1,
+          cleanseProc: 0,
+          attackCount: 1
+        },
+        turns: 2,
+        id: 'clover',
+        catalogId: 'clover',
+        name: 'Clover',
+        side: 'party',
+        role: 'healer',
+        row: 'rear',
+        flavour: 'garden',
+        hp: 384,
+        maxHp: 384,
+        attack: 42,
+        defense: 20,
+        initiative: 7,
+        effectHit: 0,
+        effectResist: 0,
+        breakCap: 6,
+        skills: [ 'clover-1', 'clover-2', 'clover-3' ]
+      },
+      {
+        shield: 0,
+        charge: 0,
+        break: 0,
+        statuses: [],
+        cooldowns: {},
+        passiveUsed: false,
+        phase: 1,
+        equipment: [],
+        setEffects: [],
+        bonuses: {},
+        turns: 2,
+        id: 'foe-0-teacup-healer',
+        catalogId: 'teacup-healer',
+        name: 'Teacup Healer',
+        side: 'enemy',
+        role: 'healer',
+        row: 'rear',
+        flavour: 'garden',
+        hp: 0,
+        maxHp: 191,
+        attack: 38,
+        defense: 10,
+        initiative: 5,
+        effectHit: 0,
+        effectResist: 500,
+        breakCap: 3,
+        skills: []
+      },
+      {
+        shield: 0,
+        charge: 0,
+        break: 0,
+        statuses: [
+          {
+            id: 'crumb',
+            stacks: 1,
+            remaining: 2,
+            source: 'soot',
+            appliedRound: 1
+          }
+        ],
+        cooldowns: {},
+        passiveUsed: false,
+        phase: 1,
+        equipment: [],
+        setEffects: [],
+        bonuses: {},
+        turns: 1,
+        id: 'foe-1-sock-skipper',
+        catalogId: 'sock-skipper',
+        name: 'Sock Skipper',
+        side: 'enemy',
+        role: 'flanker',
+        row: 'rear',
+        flavour: 'ember',
+        hp: 0,
+        maxHp: 175,
+        attack: 59,
+        defense: 8,
+        initiative: 4,
+        effectHit: 0,
+        effectResist: 500,
+        breakCap: 3,
+        skills: []
+      }
+    ],
+    round: 3,
+    queue: [ 'clover' ],
+    acted: [ 'mochi', 'soot' ],
+    energy: 0,
+    maxEnergy: 0,
+    intents: [
+      {
+        actorId: 'foe-0-teacup-healer',
+        targetId: 'mochi',
+        label: 'Every third round restores 65 HP to the most injured foe.',
+        counter: 'Hush prevents the refill; focus support before its next signature.',
+        power: 175,
+        status: undefined,
+        signature: true,
+        interrupted: false
+      }
+    ],
+    log: [
+      {
+        round: 1,
+        actorId: 'mochi',
+        targetId: 'foe-1-sock-skipper',
+        skillId: '',
+        kind: 'damage',
+        amount: 72,
+        text: ''
+      },
+      {
+        round: 1,
+        actorId: 'mochi',
+        targetId: 'mochi',
+        skillId: '',
+        kind: 'shield',
+        amount: 18,
+        text: ''
+      },
+      {
+        round: 1,
+        actorId: 'mochi',
+        targetId: 'foe-1-sock-skipper',
+        skillId: 'mochi-1',
+        kind: 'action',
+        amount: 0,
+        text: 'Mochi focuses the weakest reachable foe, Sock Skipper (HP 100%) · Door knock'
+      },
+      {
+        round: 1,
+        actorId: 'soot',
+        targetId: 'foe-1-sock-skipper',
+        skillId: '',
+        kind: 'damage',
+        amount: 57,
+        text: ''
+      },
+      {
+        round: 1,
+        actorId: 'soot',
+        targetId: 'foe-1-sock-skipper',
+        skillId: '',
+        kind: 'status',
+        amount: 1,
+        text: 'Crumb trail'
+      },
+      {
+        round: 1,
+        actorId: 'soot',
+        targetId: 'foe-1-sock-skipper',
+        skillId: 'soot-1',
+        kind: 'action',
+        amount: 0,
+        text: 'Soot focuses the weakest reachable foe, Sock Skipper (HP 59%) · Cocoa spark'
+      },
+      {
+        round: 1,
+        actorId: 'clover',
+        targetId: 'foe-1-sock-skipper',
+        skillId: '',
+        kind: 'damage',
+        amount: 32,
+        text: ''
+      },
+      {
+        round: 1,
+        actorId: 'clover',
+        targetId: 'clover',
+        skillId: '',
+        kind: 'heal',
+        amount: 0,
+        text: ''
+      },
+      {
+        round: 1,
+        actorId: 'clover',
+        targetId: 'clover',
+        skillId: '',
+        kind: 'dispel',
+        amount: 0,
+        text: 'Removed debuffs'
+      },
+      {
+        round: 1,
+        actorId: 'clover',
+        targetId: 'foe-1-sock-skipper',
+        skillId: 'clover-1',
+        kind: 'action',
+        amount: 0,
+        text: 'Clover focuses the weakest reachable foe, Sock Skipper (HP 26%) · Leaf tap'
+      },
+      {
+        round: 1,
+        actorId: 'foe-0-teacup-healer',
+        targetId: 'mochi',
+        skillId: '',
+        kind: 'absorbed',
+        amount: 18,
+        text: 'Shield absorbed direct damage'
+      },
+      {
+        round: 1,
+        actorId: 'foe-0-teacup-healer',
+        targetId: 'mochi',
+        skillId: '',
+        kind: 'damage',
+        amount: 7,
+        text: ''
+      },
+      {
+        round: 1,
+        actorId: 'foe-0-teacup-healer',
+        targetId: 'mochi',
+        skillId: '',
+        kind: 'enemy-action',
+        amount: 0,
+        text: 'Teacup Healer · basic pressure'
+      },
+      {
+        round: 1,
+        actorId: 'foe-1-sock-skipper',
+        targetId: 'soot',
+        skillId: '',
+        kind: 'damage',
+        amount: 43,
+        text: ''
+      },
+      {
+        round: 1,
+        actorId: 'foe-1-sock-skipper',
+        targetId: 'soot',
+        skillId: '',
+        kind: 'strip-shield',
+        amount: 0,
+        text: ''
+      },
+      {
+        round: 1,
+        actorId: 'foe-1-sock-skipper',
+        targetId: 'soot',
+        skillId: '',
+        kind: 'enemy-action',
+        amount: 0,
+        text: 'Sock Skipper · basic pressure'
+      },
+      {
+        round: 2,
+        actorId: 'mochi',
+        targetId: 'foe-1-sock-skipper',
+        skillId: '',
+        kind: 'damage',
+        amount: 14,
+        text: ''
+      },
+      {
+        round: 2,
+        actorId: 'mochi',
+        targetId: 'foe-1-sock-skipper',
+        skillId: '',
+        kind: 'defeat',
+        amount: 0,
+        text: ''
+      },
+      {
+        round: 2,
+        actorId: 'mochi',
+        targetId: 'mochi',
+        skillId: '',
+        kind: 'shield',
+        amount: 18,
+        text: ''
+      },
+      {
+        round: 2,
+        actorId: 'mochi',
+        targetId: 'foe-1-sock-skipper',
+        skillId: 'mochi-1',
+        kind: 'action',
+        amount: 0,
+        text: 'Mochi focuses the weakest reachable foe, Sock Skipper (HP 8%) · Door knock'
+      },
+      {
+        round: 2,
+        actorId: 'soot',
+        targetId: 'foe-0-teacup-healer',
+        skillId: '',
+        kind: 'damage',
+        amount: 50,
+        text: ''
+      },
+      {
+        round: 2,
+        actorId: 'soot',
+        targetId: 'foe-0-teacup-healer',
+        skillId: '',
+        kind: 'status',
+        amount: 1,
+        text: 'Crumb trail'
+      },
+      {
+        round: 2,
+        actorId: 'soot',
+        targetId: 'foe-0-teacup-healer',
+        skillId: 'soot-1',
+        kind: 'action',
+        amount: 0,
+        text: 'Soot focuses the weakest reachable foe, Teacup Healer (HP 100%) · Cocoa spark'
+      },
+      {
+        round: 2,
+        actorId: 'clover',
+        targetId: 'soot',
+        skillId: '',
+        kind: 'heal',
+        amount: 36,
+        text: ''
+      },
+      {
+        round: 2,
+        actorId: 'clover',
+        targetId: 'soot',
+        skillId: '',
+        kind: 'status',
+        amount: 1,
+        text: 'Steep'
+      },
+      {
+        round: 2,
+        actorId: 'clover',
+        targetId: 'soot',
+        skillId: 'clover-2',
+        kind: 'action',
+        amount: 0,
+        text: 'Clover heals Soot (HP 91%) · Patient steep'
+      },
+      {
+        round: 2,
+        actorId: 'foe-0-teacup-healer',
+        targetId: 'mochi',
+        skillId: '',
+        kind: 'absorbed',
+        amount: 18,
+        text: 'Shield absorbed direct damage'
+      },
+      {
+        round: 2,
+        actorId: 'foe-0-teacup-healer',
+        targetId: 'mochi',
+        skillId: '',
+        kind: 'damage',
+        amount: 9,
+        text: ''
+      },
+      {
+        round: 2,
+        actorId: 'foe-0-teacup-healer',
+        targetId: 'mochi',
+        skillId: '',
+        kind: 'enemy-action',
+        amount: 0,
+        text: 'Teacup Healer · basic pressure'
+      },
+      {
+        round: 2,
+        actorId: 'clover',
+        targetId: 'soot',
+        skillId: '',
+        kind: 'heal',
+        amount: 7,
+        text: ''
+      },
+      {
+        round: 3,
+        actorId: 'mochi',
+        targetId: 'foe-0-teacup-healer',
+        skillId: '',
+        kind: 'damage',
+        amount: 44,
+        text: ''
+      },
+      {
+        round: 3,
+        actorId: 'mochi',
+        targetId: 'mochi',
+        skillId: '',
+        kind: 'shield',
+        amount: 18,
+        text: ''
+      },
+      {
+        round: 3,
+        actorId: 'mochi',
+        targetId: 'foe-0-teacup-healer',
+        skillId: 'mochi-1',
+        kind: 'action',
+        amount: 0,
+        text: 'Mochi focuses the weakest reachable foe, Teacup Healer (HP 74%) · Door knock'
+      },
+      {
+        round: 3,
+        actorId: 'soot',
+        targetId: 'foe-0-teacup-healer',
+        skillId: '',
+        kind: 'damage',
+        amount: 65,
+        text: ''
+      },
+      {
+        round: 3,
+        actorId: 'soot',
+        targetId: 'foe-0-teacup-healer',
+        skillId: '',
+        kind: 'detonate',
+        amount: 32,
+        text: ''
+      },
+      {
+        round: 3,
+        actorId: 'soot',
+        targetId: 'foe-0-teacup-healer',
+        skillId: '',
+        kind: 'defeat',
+        amount: 0,
+        text: ''
+      },
+      {
+        round: 3,
+        actorId: 'soot',
+        targetId: 'soot',
+        skillId: '',
+        kind: 'shield',
+        amount: 6,
+        text: ''
+      },
+      {
+        round: 3,
+        actorId: 'soot',
+        targetId: 'foe-0-teacup-healer',
+        skillId: 'soot-3',
+        kind: 'action',
+        amount: 0,
+        text: 'Soot focuses the weakest reachable foe, Teacup Healer (HP 51%) · Lantern wick'
+      }
+    ],
+    choices: [
+      {
+        actorId: 'mochi',
+        skillId: 'mochi-1',
+        targetId: 'foe-1-sock-skipper'
+      },
+      {
+        actorId: 'soot',
+        skillId: 'soot-1',
+        targetId: 'foe-1-sock-skipper'
+      },
+      {
+        actorId: 'clover',
+        skillId: 'clover-1',
+        targetId: 'foe-1-sock-skipper'
+      },
+      {
+        actorId: 'mochi',
+        skillId: 'mochi-1',
+        targetId: 'foe-1-sock-skipper'
+      },
+      {
+        actorId: 'soot',
+        skillId: 'soot-1',
+        targetId: 'foe-0-teacup-healer'
+      },
+      { actorId: 'clover', skillId: 'clover-2', targetId: 'soot' },
+      {
+        actorId: 'mochi',
+        skillId: 'mochi-1',
+        targetId: 'foe-0-teacup-healer'
+      },
+      {
+        actorId: 'soot',
+        skillId: 'soot-3',
+        targetId: 'foe-0-teacup-healer'
+      }
+    ],
+    result: 'party',
+    firstDeath: null,
+    procRounds: {},
+    boons: {},
+    mutator: '',
+    initial: {
+      seed: 791576452,
+      chapter: 1,
+      cats: [
+        {
+          id: 'mochi',
+          stats: {
+            hp: 592,
+            attack: 56,
+            defense: 34,
+            critBp: 800,
+            critDamageBp: 5000,
+            effectHitBp: 0,
+            effectResistBp: 0,
+            healingBp: 400,
+            shieldBp: 0,
+            initiative: 8
+          },
+          skills: [ 'mochi-1', 'mochi-2', 'mochi-3' ],
+          row: 'front',
+          equipment: [ 'hearthloom-weapon-common', 'hearthloom-outfit-common' ],
+          effects: [ 'defend-shield' ],
+          bonuses: {}
+        },
+        {
+          id: 'soot',
+          stats: {
+            hp: 460,
+            attack: 71,
+            defense: 22,
+            critBp: 1200,
+            critDamageBp: 5000,
+            effectHitBp: 0,
+            effectResistBp: 0,
+            healingBp: 400,
+            shieldBp: 0,
+            initiative: 6
+          },
+          skills: [ 'soot-1', 'soot-2', 'soot-3' ],
+          row: 'rear',
+          equipment: [ 'moonwick-weapon-rare', 'moonwick-outfit-common' ],
+          effects: [ 'marked-break' ],
+          bonuses: { attack: 1 }
+        },
+        {
+          id: 'clover',
+          stats: {
+            hp: 384,
+            attack: 42,
+            defense: 20,
+            critBp: 500,
+            critDamageBp: 5000,
+            effectHitBp: 0,
+            effectResistBp: 0,
+            healingBp: 400,
+            shieldBp: 0,
+            initiative: 4
+          },
+          skills: [ 'clover-1', 'clover-2', 'clover-3' ],
+          row: 'rear',
+          equipment: [ 'mossbrew-weapon-common', 'mossbrew-outfit-common' ],
+          effects: [ 'healing-cleanse' ],
+          bonuses: {}
+        }
+      ],
+      enemies: [ 'teacup-healer', 'sock-skipper' ],
+      hp: { mochi: 592, soot: 460, clover: 384 },
+      boons: {},
+      upgrades: {},
+      mutator: '',
+      gameplayV4: true,
+      challengeLevel: 1,
+      enemyStats: {
+        'button-guard': { hp: 120, attack: 19, defense: 18 },
+        'sock-skipper': { hp: 175, attack: 22, defense: 8 },
+        'spool-ram': { hp: 315, attack: 30, defense: 16 },
+        'needle-moth': { hp: 165, attack: 17, defense: 6 },
+        'teacup-healer': { hp: 191, attack: 14, defense: 10 },
+        'kettle-knight': { hp: 357, attack: 25, defense: 35 },
+        'yarn-giant': { hp: 861, attack: 99, defense: 22 },
+        'binding-thread': { hp: 96, attack: 10, defense: 0 },
+        'practice-cushion': { hp: 58, attack: 14, defense: 0 },
+        'pollen-scout': { hp: 284, attack: 22, defense: 10 },
+        'rain-spool': { hp: 1103, attack: 110, defense: 24 },
+        'crumb-sentinel': { hp: 378, attack: 27, defense: 22 },
+        'pantry-crown': { hp: 1068, attack: 138, defense: 25 }
+      },
+      plan: { focus: 'finish', care: 'steady' }
+    },
+    v4: {
+      version: 1,
+      plan: { focus: 'finish', care: 'steady' },
+      events: [
+        {
+          kind: 'crew-active',
+          crew: 'door',
+          marks: 3,
+          contributors: [ 'mochi', 'clover' ],
+          threshold: 2,
+          text: 'Door team: +3% maximum HP.',
+          version: 1,
+          sequence: 0,
+          round: 0
+        },
+        {
+          kind: 'crew-active',
+          crew: 'kettle',
+          marks: 3,
+          contributors: [ 'mochi', 'clover' ],
+          threshold: 2,
+          text: 'Kettle team: +4% healing.',
+          version: 1,
+          sequence: 1,
+          round: 0
+        },
+        {
+          kind: 'plan-target',
+          actorId: 'mochi',
+          targetId: 'foe-1-sock-skipper',
+          plan: { focus: 'finish', care: 'steady' },
+          reason: 'Mochi focuses the weakest reachable foe, Sock Skipper (HP 100%) · Door knock',
+          text: 'finish/steady plan: Mochi focuses the weakest reachable foe, Sock Skipper (HP 100%) · Door knock',
+          version: 1,
+          sequence: 2,
+          round: 1
+        },
+        {
+          kind: 'plan-target',
+          actorId: 'soot',
+          targetId: 'foe-1-sock-skipper',
+          plan: { focus: 'finish', care: 'steady' },
+          reason: 'Soot focuses the weakest reachable foe, Sock Skipper (HP 59%) · Cocoa spark',
+          text: 'finish/steady plan: Soot focuses the weakest reachable foe, Sock Skipper (HP 59%) · Cocoa spark',
+          version: 1,
+          sequence: 3,
+          round: 1
+        },
+        {
+          kind: 'plan-target',
+          actorId: 'clover',
+          targetId: 'foe-1-sock-skipper',
+          plan: { focus: 'finish', care: 'steady' },
+          reason: 'Clover focuses the weakest reachable foe, Sock Skipper (HP 26%) · Leaf tap',
+          text: 'finish/steady plan: Clover focuses the weakest reachable foe, Sock Skipper (HP 26%) · Leaf tap',
+          version: 1,
+          sequence: 4,
+          round: 1
+        },
+        {
+          kind: 'plan-target',
+          actorId: 'mochi',
+          targetId: 'foe-1-sock-skipper',
+          plan: { focus: 'finish', care: 'steady' },
+          reason: 'Mochi focuses the weakest reachable foe, Sock Skipper (HP 8%) · Door knock',
+          text: 'finish/steady plan: Mochi focuses the weakest reachable foe, Sock Skipper (HP 8%) · Door knock',
+          version: 1,
+          sequence: 5,
+          round: 2
+        },
+        {
+          kind: 'plan-target',
+          actorId: 'soot',
+          targetId: 'foe-0-teacup-healer',
+          plan: { focus: 'finish', care: 'steady' },
+          reason: 'Soot focuses the weakest reachable foe, Teacup Healer (HP 100%) · Cocoa spark',
+          text: 'finish/steady plan: Soot focuses the weakest reachable foe, Teacup Healer (HP 100%) · Cocoa spark',
+          version: 1,
+          sequence: 6,
+          round: 2
+        },
+        {
+          kind: 'plan-target',
+          actorId: 'clover',
+          targetId: 'soot',
+          plan: { focus: 'finish', care: 'steady' },
+          reason: 'Clover heals Soot (HP 91%) · Patient steep',
+          text: 'finish/steady plan: Clover heals Soot (HP 91%) · Patient steep',
+          version: 1,
+          sequence: 7,
+          round: 2
+        },
+        {
+          kind: 'plan-target',
+          actorId: 'mochi',
+          targetId: 'foe-0-teacup-healer',
+          plan: { focus: 'finish', care: 'steady' },
+          reason: 'Mochi focuses the weakest reachable foe, Teacup Healer (HP 74%) · Door knock',
+          text: 'finish/steady plan: Mochi focuses the weakest reachable foe, Teacup Healer (HP 74%) · Door knock',
+          version: 1,
+          sequence: 8,
+          round: 3
+        },
+        {
+          kind: 'plan-target',
+          actorId: 'soot',
+          targetId: 'foe-0-teacup-healer',
+          plan: { focus: 'finish', care: 'steady' },
+          reason: 'Soot focuses the weakest reachable foe, Teacup Healer (HP 51%) · Lantern wick',
+          text: 'finish/steady plan: Soot focuses the weakest reachable foe, Teacup Healer (HP 51%) · Lantern wick',
+          version: 1,
+          sequence: 9,
+          round: 3
+        }
+      ],
+      committed: true
+    }
+  },
+  expected: {
+    version: '0.7.0',
+    seed: 791576452,
+    rng: 3201131011,
+    chapter: 1,
+    actors: [
+      {
+        shield: 18,
+        charge: 0,
+        break: 0,
+        statuses: [],
+        cooldowns: { 'mochi-1': 1 },
+        passiveUsed: false,
+        phase: 1,
+        equipment: [ 'hearthloom-weapon-common', 'hearthloom-outfit-common' ],
+        setEffects: [ 'defend-shield' ],
+        bonuses: {
+          critBp: 800,
+          critDamageBp: 5000,
+          healingBp: 400,
+          shieldBp: 0,
+          healProc: 0,
+          cleanseProc: 0,
+          attackCount: 3
+        },
+        turns: 3,
+        id: 'mochi',
+        catalogId: 'mochi',
+        name: 'Mochi',
+        side: 'party',
+        role: 'guardian',
+        row: 'front',
+        flavour: 'hearth',
+        hp: 576,
+        maxHp: 592,
+        attack: 56,
+        defense: 34,
+        initiative: 9,
+        effectHit: 0,
+        effectResist: 0,
+        breakCap: 6,
+        skills: [ 'mochi-1', 'mochi-2', 'mochi-3' ]
+      },
+      {
+        shield: 6,
+        charge: 0,
+        break: 0,
+        statuses: [
+          {
+            id: 'steep',
+            stacks: 1,
+            remaining: 2,
+            source: 'clover',
+            appliedRound: 2
+          }
+        ],
+        cooldowns: { 'soot-1': 0, 'soot-3': 2 },
+        passiveUsed: false,
+        phase: 1,
+        equipment: [ 'moonwick-weapon-rare', 'moonwick-outfit-common' ],
+        setEffects: [ 'marked-break' ],
+        bonuses: {
+          attack: 1,
+          critBp: 1200,
+          critDamageBp: 5000,
+          healingBp: 400,
+          shieldBp: 0,
+          healProc: 0,
+          cleanseProc: 0,
+          attackCount: 3
+        },
+        turns: 3,
+        id: 'soot',
+        catalogId: 'soot',
+        name: 'Soot',
+        side: 'party',
+        role: 'hexer',
+        row: 'rear',
+        flavour: 'moon',
+        hp: 460,
+        maxHp: 460,
+        attack: 71,
+        defense: 22,
+        initiative: 8,
+        effectHit: 0,
+        effectResist: 0,
+        breakCap: 6,
+        skills: [ 'soot-1', 'soot-2', 'soot-3' ]
+      },
+      {
+        shield: 0,
+        charge: 0,
+        break: 0,
+        statuses: [],
+        cooldowns: { 'clover-1': 0, 'clover-2': 0 },
+        passiveUsed: true,
+        phase: 1,
+        equipment: [ 'mossbrew-weapon-common', 'mossbrew-outfit-common' ],
+        setEffects: [ 'healing-cleanse' ],
+        bonuses: {
+          critBp: 500,
+          critDamageBp: 5000,
+          healingBp: 400,
+          shieldBp: 0,
+          healProc: 1,
+          cleanseProc: 0,
+          attackCount: 1
+        },
+        turns: 2,
+        id: 'clover',
+        catalogId: 'clover',
+        name: 'Clover',
+        side: 'party',
+        role: 'healer',
+        row: 'rear',
+        flavour: 'garden',
+        hp: 384,
+        maxHp: 384,
+        attack: 42,
+        defense: 20,
+        initiative: 7,
+        effectHit: 0,
+        effectResist: 0,
+        breakCap: 6,
+        skills: [ 'clover-1', 'clover-2', 'clover-3' ]
+      },
+      {
+        shield: 0,
+        charge: 0,
+        break: 0,
+        statuses: [],
+        cooldowns: {},
+        passiveUsed: false,
+        phase: 1,
+        equipment: [],
+        setEffects: [],
+        bonuses: {},
+        turns: 2,
+        id: 'foe-0-teacup-healer',
+        catalogId: 'teacup-healer',
+        name: 'Teacup Healer',
+        side: 'enemy',
+        role: 'healer',
+        row: 'rear',
+        flavour: 'garden',
+        hp: 0,
+        maxHp: 191,
+        attack: 38,
+        defense: 10,
+        initiative: 5,
+        effectHit: 0,
+        effectResist: 500,
+        breakCap: 3,
+        skills: []
+      },
+      {
+        shield: 0,
+        charge: 0,
+        break: 0,
+        statuses: [
+          {
+            id: 'crumb',
+            stacks: 1,
+            remaining: 2,
+            source: 'soot',
+            appliedRound: 1
+          }
+        ],
+        cooldowns: {},
+        passiveUsed: false,
+        phase: 1,
+        equipment: [],
+        setEffects: [],
+        bonuses: {},
+        turns: 1,
+        id: 'foe-1-sock-skipper',
+        catalogId: 'sock-skipper',
+        name: 'Sock Skipper',
+        side: 'enemy',
+        role: 'flanker',
+        row: 'rear',
+        flavour: 'ember',
+        hp: 0,
+        maxHp: 175,
+        attack: 59,
+        defense: 8,
+        initiative: 4,
+        effectHit: 0,
+        effectResist: 500,
+        breakCap: 3,
+        skills: []
+      }
+    ],
+    round: 3,
+    queue: [ 'clover' ],
+    acted: [ 'mochi', 'soot' ],
+    energy: 0,
+    maxEnergy: 0,
+    intents: [
+      {
+        actorId: 'foe-0-teacup-healer',
+        targetId: 'mochi',
+        label: 'Every third round restores 65 HP to the most injured foe.',
+        counter: 'Hush prevents the refill; focus support before its next signature.',
+        power: 175,
+        signature: true,
+        interrupted: false
+      }
+    ],
+    log: [
+      {
+        round: 1,
+        actorId: 'mochi',
+        targetId: 'foe-1-sock-skipper',
+        skillId: '',
+        kind: 'damage',
+        amount: 72,
+        text: ''
+      },
+      {
+        round: 1,
+        actorId: 'mochi',
+        targetId: 'mochi',
+        skillId: '',
+        kind: 'shield',
+        amount: 18,
+        text: ''
+      },
+      {
+        round: 1,
+        actorId: 'mochi',
+        targetId: 'foe-1-sock-skipper',
+        skillId: 'mochi-1',
+        kind: 'action',
+        amount: 0,
+        text: 'Mochi focuses the weakest reachable foe, Sock Skipper (HP 100%) · Door knock'
+      },
+      {
+        round: 1,
+        actorId: 'soot',
+        targetId: 'foe-1-sock-skipper',
+        skillId: '',
+        kind: 'damage',
+        amount: 57,
+        text: ''
+      },
+      {
+        round: 1,
+        actorId: 'soot',
+        targetId: 'foe-1-sock-skipper',
+        skillId: '',
+        kind: 'status',
+        amount: 1,
+        text: 'Crumb trail'
+      },
+      {
+        round: 1,
+        actorId: 'soot',
+        targetId: 'foe-1-sock-skipper',
+        skillId: 'soot-1',
+        kind: 'action',
+        amount: 0,
+        text: 'Soot focuses the weakest reachable foe, Sock Skipper (HP 59%) · Cocoa spark'
+      },
+      {
+        round: 1,
+        actorId: 'clover',
+        targetId: 'foe-1-sock-skipper',
+        skillId: '',
+        kind: 'damage',
+        amount: 32,
+        text: ''
+      },
+      {
+        round: 1,
+        actorId: 'clover',
+        targetId: 'clover',
+        skillId: '',
+        kind: 'heal',
+        amount: 0,
+        text: ''
+      },
+      {
+        round: 1,
+        actorId: 'clover',
+        targetId: 'clover',
+        skillId: '',
+        kind: 'dispel',
+        amount: 0,
+        text: 'Removed debuffs'
+      },
+      {
+        round: 1,
+        actorId: 'clover',
+        targetId: 'foe-1-sock-skipper',
+        skillId: 'clover-1',
+        kind: 'action',
+        amount: 0,
+        text: 'Clover focuses the weakest reachable foe, Sock Skipper (HP 26%) · Leaf tap'
+      },
+      {
+        round: 1,
+        actorId: 'foe-0-teacup-healer',
+        targetId: 'mochi',
+        skillId: '',
+        kind: 'absorbed',
+        amount: 18,
+        text: 'Shield absorbed direct damage'
+      },
+      {
+        round: 1,
+        actorId: 'foe-0-teacup-healer',
+        targetId: 'mochi',
+        skillId: '',
+        kind: 'damage',
+        amount: 7,
+        text: ''
+      },
+      {
+        round: 1,
+        actorId: 'foe-0-teacup-healer',
+        targetId: 'mochi',
+        skillId: '',
+        kind: 'enemy-action',
+        amount: 0,
+        text: 'Teacup Healer · basic pressure'
+      },
+      {
+        round: 1,
+        actorId: 'foe-1-sock-skipper',
+        targetId: 'soot',
+        skillId: '',
+        kind: 'damage',
+        amount: 43,
+        text: ''
+      },
+      {
+        round: 1,
+        actorId: 'foe-1-sock-skipper',
+        targetId: 'soot',
+        skillId: '',
+        kind: 'strip-shield',
+        amount: 0,
+        text: ''
+      },
+      {
+        round: 1,
+        actorId: 'foe-1-sock-skipper',
+        targetId: 'soot',
+        skillId: '',
+        kind: 'enemy-action',
+        amount: 0,
+        text: 'Sock Skipper · basic pressure'
+      },
+      {
+        round: 2,
+        actorId: 'mochi',
+        targetId: 'foe-1-sock-skipper',
+        skillId: '',
+        kind: 'damage',
+        amount: 14,
+        text: ''
+      },
+      {
+        round: 2,
+        actorId: 'mochi',
+        targetId: 'foe-1-sock-skipper',
+        skillId: '',
+        kind: 'defeat',
+        amount: 0,
+        text: ''
+      },
+      {
+        round: 2,
+        actorId: 'mochi',
+        targetId: 'mochi',
+        skillId: '',
+        kind: 'shield',
+        amount: 18,
+        text: ''
+      },
+      {
+        round: 2,
+        actorId: 'mochi',
+        targetId: 'foe-1-sock-skipper',
+        skillId: 'mochi-1',
+        kind: 'action',
+        amount: 0,
+        text: 'Mochi focuses the weakest reachable foe, Sock Skipper (HP 8%) · Door knock'
+      },
+      {
+        round: 2,
+        actorId: 'soot',
+        targetId: 'foe-0-teacup-healer',
+        skillId: '',
+        kind: 'damage',
+        amount: 50,
+        text: ''
+      },
+      {
+        round: 2,
+        actorId: 'soot',
+        targetId: 'foe-0-teacup-healer',
+        skillId: '',
+        kind: 'status',
+        amount: 1,
+        text: 'Crumb trail'
+      },
+      {
+        round: 2,
+        actorId: 'soot',
+        targetId: 'foe-0-teacup-healer',
+        skillId: 'soot-1',
+        kind: 'action',
+        amount: 0,
+        text: 'Soot focuses the weakest reachable foe, Teacup Healer (HP 100%) · Cocoa spark'
+      },
+      {
+        round: 2,
+        actorId: 'clover',
+        targetId: 'soot',
+        skillId: '',
+        kind: 'heal',
+        amount: 36,
+        text: ''
+      },
+      {
+        round: 2,
+        actorId: 'clover',
+        targetId: 'soot',
+        skillId: '',
+        kind: 'status',
+        amount: 1,
+        text: 'Steep'
+      },
+      {
+        round: 2,
+        actorId: 'clover',
+        targetId: 'soot',
+        skillId: 'clover-2',
+        kind: 'action',
+        amount: 0,
+        text: 'Clover heals Soot (HP 91%) · Patient steep'
+      },
+      {
+        round: 2,
+        actorId: 'foe-0-teacup-healer',
+        targetId: 'mochi',
+        skillId: '',
+        kind: 'absorbed',
+        amount: 18,
+        text: 'Shield absorbed direct damage'
+      },
+      {
+        round: 2,
+        actorId: 'foe-0-teacup-healer',
+        targetId: 'mochi',
+        skillId: '',
+        kind: 'damage',
+        amount: 9,
+        text: ''
+      },
+      {
+        round: 2,
+        actorId: 'foe-0-teacup-healer',
+        targetId: 'mochi',
+        skillId: '',
+        kind: 'enemy-action',
+        amount: 0,
+        text: 'Teacup Healer · basic pressure'
+      },
+      {
+        round: 2,
+        actorId: 'clover',
+        targetId: 'soot',
+        skillId: '',
+        kind: 'heal',
+        amount: 7,
+        text: ''
+      },
+      {
+        round: 3,
+        actorId: 'mochi',
+        targetId: 'foe-0-teacup-healer',
+        skillId: '',
+        kind: 'damage',
+        amount: 44,
+        text: ''
+      },
+      {
+        round: 3,
+        actorId: 'mochi',
+        targetId: 'mochi',
+        skillId: '',
+        kind: 'shield',
+        amount: 18,
+        text: ''
+      },
+      {
+        round: 3,
+        actorId: 'mochi',
+        targetId: 'foe-0-teacup-healer',
+        skillId: 'mochi-1',
+        kind: 'action',
+        amount: 0,
+        text: 'Mochi focuses the weakest reachable foe, Teacup Healer (HP 74%) · Door knock'
+      },
+      {
+        round: 3,
+        actorId: 'soot',
+        targetId: 'foe-0-teacup-healer',
+        skillId: '',
+        kind: 'damage',
+        amount: 65,
+        text: ''
+      },
+      {
+        round: 3,
+        actorId: 'soot',
+        targetId: 'foe-0-teacup-healer',
+        skillId: '',
+        kind: 'detonate',
+        amount: 32,
+        text: ''
+      },
+      {
+        round: 3,
+        actorId: 'soot',
+        targetId: 'foe-0-teacup-healer',
+        skillId: '',
+        kind: 'defeat',
+        amount: 0,
+        text: ''
+      },
+      {
+        round: 3,
+        actorId: 'soot',
+        targetId: 'soot',
+        skillId: '',
+        kind: 'shield',
+        amount: 6,
+        text: ''
+      },
+      {
+        round: 3,
+        actorId: 'soot',
+        targetId: 'foe-0-teacup-healer',
+        skillId: 'soot-3',
+        kind: 'action',
+        amount: 0,
+        text: 'Soot focuses the weakest reachable foe, Teacup Healer (HP 51%) · Lantern wick'
+      }
+    ],
+    choices: [
+      {
+        actorId: 'mochi',
+        skillId: 'mochi-1',
+        targetId: 'foe-1-sock-skipper'
+      },
+      {
+        actorId: 'soot',
+        skillId: 'soot-1',
+        targetId: 'foe-1-sock-skipper'
+      },
+      {
+        actorId: 'clover',
+        skillId: 'clover-1',
+        targetId: 'foe-1-sock-skipper'
+      },
+      {
+        actorId: 'mochi',
+        skillId: 'mochi-1',
+        targetId: 'foe-1-sock-skipper'
+      },
+      {
+        actorId: 'soot',
+        skillId: 'soot-1',
+        targetId: 'foe-0-teacup-healer'
+      },
+      { actorId: 'clover', skillId: 'clover-2', targetId: 'soot' },
+      {
+        actorId: 'mochi',
+        skillId: 'mochi-1',
+        targetId: 'foe-0-teacup-healer'
+      },
+      {
+        actorId: 'soot',
+        skillId: 'soot-3',
+        targetId: 'foe-0-teacup-healer'
+      }
+    ],
+    result: 'party',
+    firstDeath: null,
+    procRounds: {},
+    boons: {},
+    mutator: '',
+    initial: {
+      seed: 791576452,
+      chapter: 1,
+      cats: [
+        {
+          id: 'mochi',
+          stats: {
+            hp: 592,
+            attack: 56,
+            defense: 34,
+            critBp: 800,
+            critDamageBp: 5000,
+            effectHitBp: 0,
+            effectResistBp: 0,
+            healingBp: 400,
+            shieldBp: 0,
+            initiative: 8
+          },
+          skills: [ 'mochi-1', 'mochi-2', 'mochi-3' ],
+          row: 'front',
+          equipment: [ 'hearthloom-weapon-common', 'hearthloom-outfit-common' ],
+          effects: [ 'defend-shield' ],
+          bonuses: {}
+        },
+        {
+          id: 'soot',
+          stats: {
+            hp: 460,
+            attack: 71,
+            defense: 22,
+            critBp: 1200,
+            critDamageBp: 5000,
+            effectHitBp: 0,
+            effectResistBp: 0,
+            healingBp: 400,
+            shieldBp: 0,
+            initiative: 6
+          },
+          skills: [ 'soot-1', 'soot-2', 'soot-3' ],
+          row: 'rear',
+          equipment: [ 'moonwick-weapon-rare', 'moonwick-outfit-common' ],
+          effects: [ 'marked-break' ],
+          bonuses: { attack: 1 }
+        },
+        {
+          id: 'clover',
+          stats: {
+            hp: 384,
+            attack: 42,
+            defense: 20,
+            critBp: 500,
+            critDamageBp: 5000,
+            effectHitBp: 0,
+            effectResistBp: 0,
+            healingBp: 400,
+            shieldBp: 0,
+            initiative: 4
+          },
+          skills: [ 'clover-1', 'clover-2', 'clover-3' ],
+          row: 'rear',
+          equipment: [ 'mossbrew-weapon-common', 'mossbrew-outfit-common' ],
+          effects: [ 'healing-cleanse' ],
+          bonuses: {}
+        }
+      ],
+      enemies: [ 'teacup-healer', 'sock-skipper' ],
+      hp: { mochi: 592, soot: 460, clover: 384 },
+      boons: {},
+      upgrades: {},
+      mutator: '',
+      gameplayV4: true,
+      challengeLevel: 1,
+      enemyStats: {
+        'button-guard': { hp: 120, attack: 19, defense: 18 },
+        'sock-skipper': { hp: 175, attack: 22, defense: 8 },
+        'spool-ram': { hp: 315, attack: 30, defense: 16 },
+        'needle-moth': { hp: 165, attack: 17, defense: 6 },
+        'teacup-healer': { hp: 191, attack: 14, defense: 10 },
+        'kettle-knight': { hp: 357, attack: 25, defense: 35 },
+        'yarn-giant': { hp: 861, attack: 99, defense: 22 },
+        'binding-thread': { hp: 96, attack: 10, defense: 0 },
+        'practice-cushion': { hp: 58, attack: 14, defense: 0 },
+        'pollen-scout': { hp: 284, attack: 22, defense: 10 },
+        'rain-spool': { hp: 1103, attack: 110, defense: 24 },
+        'crumb-sentinel': { hp: 378, attack: 27, defense: 22 },
+        'pantry-crown': { hp: 1068, attack: 138, defense: 25 }
+      },
+      plan: { focus: 'finish', care: 'steady' }
+    },
+    v4: {
+      version: 1,
+      plan: { focus: 'finish', care: 'steady' },
+      events: [
+        {
+          kind: 'crew-active',
+          crew: 'door',
+          marks: 3,
+          contributors: [ 'mochi', 'clover' ],
+          threshold: 2,
+          text: 'Door team: +3% maximum HP.',
+          version: 1,
+          sequence: 0,
+          round: 0
+        },
+        {
+          kind: 'crew-active',
+          crew: 'kettle',
+          marks: 3,
+          contributors: [ 'mochi', 'clover' ],
+          threshold: 2,
+          text: 'Kettle team: +4% healing.',
+          version: 1,
+          sequence: 1,
+          round: 0
+        },
+        {
+          kind: 'plan-target',
+          actorId: 'mochi',
+          targetId: 'foe-1-sock-skipper',
+          plan: { focus: 'finish', care: 'steady' },
+          reason: 'Mochi focuses the weakest reachable foe, Sock Skipper (HP 100%) · Door knock',
+          text: 'finish/steady plan: Mochi focuses the weakest reachable foe, Sock Skipper (HP 100%) · Door knock',
+          version: 1,
+          sequence: 2,
+          round: 1
+        },
+        {
+          kind: 'plan-target',
+          actorId: 'soot',
+          targetId: 'foe-1-sock-skipper',
+          plan: { focus: 'finish', care: 'steady' },
+          reason: 'Soot focuses the weakest reachable foe, Sock Skipper (HP 59%) · Cocoa spark',
+          text: 'finish/steady plan: Soot focuses the weakest reachable foe, Sock Skipper (HP 59%) · Cocoa spark',
+          version: 1,
+          sequence: 3,
+          round: 1
+        },
+        {
+          kind: 'plan-target',
+          actorId: 'clover',
+          targetId: 'foe-1-sock-skipper',
+          plan: { focus: 'finish', care: 'steady' },
+          reason: 'Clover focuses the weakest reachable foe, Sock Skipper (HP 26%) · Leaf tap',
+          text: 'finish/steady plan: Clover focuses the weakest reachable foe, Sock Skipper (HP 26%) · Leaf tap',
+          version: 1,
+          sequence: 4,
+          round: 1
+        },
+        {
+          kind: 'plan-target',
+          actorId: 'mochi',
+          targetId: 'foe-1-sock-skipper',
+          plan: { focus: 'finish', care: 'steady' },
+          reason: 'Mochi focuses the weakest reachable foe, Sock Skipper (HP 8%) · Door knock',
+          text: 'finish/steady plan: Mochi focuses the weakest reachable foe, Sock Skipper (HP 8%) · Door knock',
+          version: 1,
+          sequence: 5,
+          round: 2
+        },
+        {
+          kind: 'plan-target',
+          actorId: 'soot',
+          targetId: 'foe-0-teacup-healer',
+          plan: { focus: 'finish', care: 'steady' },
+          reason: 'Soot focuses the weakest reachable foe, Teacup Healer (HP 100%) · Cocoa spark',
+          text: 'finish/steady plan: Soot focuses the weakest reachable foe, Teacup Healer (HP 100%) · Cocoa spark',
+          version: 1,
+          sequence: 6,
+          round: 2
+        },
+        {
+          kind: 'plan-target',
+          actorId: 'clover',
+          targetId: 'soot',
+          plan: { focus: 'finish', care: 'steady' },
+          reason: 'Clover heals Soot (HP 91%) · Patient steep',
+          text: 'finish/steady plan: Clover heals Soot (HP 91%) · Patient steep',
+          version: 1,
+          sequence: 7,
+          round: 2
+        },
+        {
+          kind: 'plan-target',
+          actorId: 'mochi',
+          targetId: 'foe-0-teacup-healer',
+          plan: { focus: 'finish', care: 'steady' },
+          reason: 'Mochi focuses the weakest reachable foe, Teacup Healer (HP 74%) · Door knock',
+          text: 'finish/steady plan: Mochi focuses the weakest reachable foe, Teacup Healer (HP 74%) · Door knock',
+          version: 1,
+          sequence: 8,
+          round: 3
+        },
+        {
+          kind: 'plan-target',
+          actorId: 'soot',
+          targetId: 'foe-0-teacup-healer',
+          plan: { focus: 'finish', care: 'steady' },
+          reason: 'Soot focuses the weakest reachable foe, Teacup Healer (HP 51%) · Lantern wick',
+          text: 'finish/steady plan: Soot focuses the weakest reachable foe, Teacup Healer (HP 51%) · Lantern wick',
+          version: 1,
+          sequence: 9,
+          round: 3
+        }
+      ],
+      committed: true
+    }
+  },
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.22.2
+{"lock":"released","pid":31037,"task":"A5 E3 paired gear payoff"}

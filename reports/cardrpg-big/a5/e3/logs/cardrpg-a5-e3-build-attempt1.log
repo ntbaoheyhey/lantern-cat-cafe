@@ -1,0 +1,43 @@
+{"lock":"acquired","lane":"A","pid":26710,"startedAt":"2026-11-08T09:10:13.577Z","task":"A5 E3 offline opening build"}
+[plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-cardrpg-a4/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[33m[INEFFECTIVE_DYNAMIC_IMPORT] [0mapps/web/src/game/cardrpg/depth/Pages.tsx is dynamically imported by apps/web/src/game/cardrpg/depth/App.tsx but also statically imported by apps/web/src/game/cardrpg/depth/App.tsx, dynamic import will not move module into another chunk.
+
+Traceback (most recent call last):
+  File "/Users/bao/taskbar-hero-cardrpg-a4/tools/cardrpg-big/a4-pack-images.py", line 7, in <module>
+    from PIL import Image
+ModuleNotFoundError: No module named 'PIL'
+node:internal/errors:986
+  const err = new Error(message);
+              ^
+
+Error: Command failed: /usr/bin/python3 /Users/bao/taskbar-hero-cardrpg-a4/tools/cardrpg-big/a4-pack-images.py /tmp/cardrpg-a4-image-pack-26855.json
+Traceback (most recent call last):
+  File "/Users/bao/taskbar-hero-cardrpg-a4/tools/cardrpg-big/a4-pack-images.py", line 7, in <module>
+    from PIL import Image
+ModuleNotFoundError: No module named 'PIL'
+
+    at genericNodeError (node:internal/errors:986:15)
+    at wrappedFn (node:internal/errors:540:14)
+    at checkExecSyncError (node:child_process:943:11)
+    at execFileSync (node:child_process:979:15)
+    at file:///Users/bao/taskbar-hero-cardrpg-a4/tools/cardrpg-big/build.mjs:48:29 {
+  status: 1,
+  signal: null,
+  output: [
+    null,
+    '',
+    'Traceback (most recent call last):\n' +
+      '  File "/Users/bao/taskbar-hero-cardrpg-a4/tools/cardrpg-big/a4-pack-images.py", line 7, in <module>\n' +
+      '    from PIL import Image\n' +
+      "ModuleNotFoundError: No module named 'PIL'\n"
+  ],
+  pid: 26896,
+  stdout: '',
+  stderr: 'Traceback (most recent call last):\n' +
+    '  File "/Users/bao/taskbar-hero-cardrpg-a4/tools/cardrpg-big/a4-pack-images.py", line 7, in <module>\n' +
+    '    from PIL import Image\n' +
+    "ModuleNotFoundError: No module named 'PIL'\n"
+}
+
+Node.js v24.22.2
+{"lock":"released","pid":26710,"task":"A5 E3 offline opening build"}
