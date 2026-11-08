@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-B3 draft386 preserved; branch codex/cardrpg-a5-b2-kit-2026-11-08. Guard-only draft388 on386, runtime db69140eb/closurec0dd2eaf6, passes all six source gates and closure audit; no Scent/Soot/support kit adopted. Original support10 coordinator PID64374 continues with bounded shared-lock slices.
+DRAFT388 on386, guard runtime db69140eb verified; latest evidence b76fac30b. Carrier12/ablation13 identifies Hush heal/shield suppression falling through to replacement damage. Candidate15 is isolated, not adopted; focused regression14pass/2fail before,16pass after (original harness error retained).
 ## NEXT
-Preserve original support10 coordinator PID64374; rescue-rest complete, quiet-reach next. Set-carriers12 COMPLETE1024cells/51200battles; independent summary passes. Mallow/Emberfelt Scald2780 and declaredPantry32/50, but aggregate329/400 over75%; Velvetrim/Inkcap declaredscene21/50 versus50/50others in botharms needs causal diagnostic. Review quiet-reach then keep all misses visible. B1/B2/display/cadence/startup/Z remain open; fresh20001–20500 UNUSED. Stack376→377→379→381→382→383→384→385→386→388.
+Preserve original coordinators: support10 PID64374 (quiet-reach remaining), kit-fit14 tool7880/PID73815, suppression15 tool89997. No duplicate matrices. Candidate15 runs exact common04 and carrier12 TRAIN1–50 fixtures; kit-fit14 is separate fixture-only change. Audit complete receipts before adoption; production still guard-only. B1/B2/display/cadence/startup/Z open; fresh20001–20500 UNUSED. Stack376→377→379→381→382→383→384→385→386→388.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -186,3 +186,5 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - 2026-11-08T16:55:25.021245+00:00: published guard-only DRAFT388 on386; runtime/source checks unchanged. Registered set-carriers12:8namedcarriers×8scenes×8sets×2separatebudgetarms before sampling; allies exact, originalcommon source+guard, no production/acceptancechange. Sync c4ca75726 resolves original build-lease request.
 
 - 2026-11-08T16:57:54.226537+00:00: setcarriers12 complete/audited; all source/replay/ally/plan/staticeligibility checksPASS. Original Emberfelt117/400ineligible differs from Mallow329/400eligible: no causalcrosscontext gainclaim. Matched declaredPantryEmber64%leads, overall82.25%MISS; Bellsteel70%losesmatched but74%leadsfixedcore. Rescue-rest10 Cinnamon83.63→74.70% butcrew31→33.25pp andbottomcatsworse; notadoptedalone. Draft388 and ledger22e4d0945 published; no production/acceptancechange.
+
+- 2026-11-08T17:01:56.991509+00:00: rearutility13 exact600battle ablation: remove reach or Quietspores gives50/50 vsfull21/50 inbotharms; removefourpiece/preference doesnotfix. Seed1round6 HushedTeacup replaces65heal with70shield+39HPdamage; registered suppression15 onebranchfix before sampling. Focused16checks pass candidate; original twoV4casesfail. Harnessattempt1 incorrectlyexpectedpositiveOFFHPdamage retained; attempt2 checks hit events inclzero. New kit-fit14 separate originaltargetbudget/all12semantickits diagnostic. No sourceadoption/acceptance.

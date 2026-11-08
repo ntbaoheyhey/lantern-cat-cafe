@@ -10,8 +10,14 @@ assert.deepEqual(data.registration, method);
 assert.equal(data.methodHash, sha(JSON.stringify(method)));
 assert.equal(method.seedOffset, 0); assert.equal(method.count, 50);
 assert.equal(sha(await readFile(root + '/matrix.mjs')), method.matrixSha256);
-for (const [path, hash] of Object.entries(method.source))
-  assert.equal(sha(await readFile(root + '/source-snapshot/' + path)), hash, path);
+const parent = method.parentSuppression ? JSON.parse(await readFile(method.parentSuppression)) : null;
+for (const [path, hash] of Object.entries(method.source)) {
+  const archive = parent ? (parent.changed[path]
+    ? method.parentSuppression.slice(0, method.parentSuppression.lastIndexOf('/')) + '/changed-source'
+    : parent.parentSource.path) : (method.sourceSnapshot ?? root + '/source-snapshot');
+  if (parent) assert.equal(parent.source[path], hash, path);
+  assert.equal(sha(await readFile(archive + '/' + path)), hash, path);
+}
 const originalBytes = await readFile(method.original.path);
 assert.equal(sha(originalBytes), method.original.sha256);
 const original = JSON.parse(originalBytes), before = new Map(original.rows.map(row => [row.key, row]));

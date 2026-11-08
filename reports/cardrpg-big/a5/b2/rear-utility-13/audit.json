@@ -1,0 +1,181 @@
+{
+  "source": "unchanged carrier12 archived source + guard",
+  "checks": "all12cells/digests/full-arm prefixes exact; first-seed replay equality asserted by runner",
+  "pairs": [
+    {
+      "mode": "matched-utility",
+      "firstChoiceIndex": 16,
+      "fullChoice": {
+        "actorId": "inkcap",
+        "skillId": "inkcap-2",
+        "targetId": "foe-0-teacup-healer"
+      },
+      "withoutSporeChoice": {
+        "actorId": "inkcap",
+        "skillId": "inkcap-1",
+        "targetId": "foe-0-teacup-healer"
+      },
+      "round6HealerEvents": {
+        "full": [
+          {
+            "round": 6,
+            "actorId": "foe-0-teacup-healer",
+            "targetId": "foe-0-teacup-healer",
+            "skillId": "",
+            "kind": "suppressed",
+            "amount": 1,
+            "text": "Control suppressed enemy utility"
+          },
+          {
+            "round": 6,
+            "actorId": "foe-0-teacup-healer",
+            "targetId": "mochi",
+            "skillId": "",
+            "kind": "absorbed",
+            "amount": 70,
+            "text": "Shield absorbed direct damage"
+          },
+          {
+            "round": 6,
+            "actorId": "foe-0-teacup-healer",
+            "targetId": "mochi",
+            "skillId": "",
+            "kind": "damage",
+            "amount": 39,
+            "text": ""
+          },
+          {
+            "round": 6,
+            "actorId": "foe-0-teacup-healer",
+            "targetId": "mochi",
+            "skillId": "",
+            "kind": "enemy-action",
+            "amount": 0,
+            "text": "Every third round restores 65 HP to the most injured foe."
+          },
+          {
+            "round": 6,
+            "actorId": "foe-0-teacup-healer",
+            "targetId": "foe-0-teacup-healer",
+            "skillId": "",
+            "kind": "expire",
+            "amount": 0,
+            "text": "Tangle"
+          }
+        ],
+        "no-spores": [
+          {
+            "round": 6,
+            "actorId": "foe-0-teacup-healer",
+            "targetId": "foe-0-teacup-healer",
+            "skillId": "",
+            "kind": "heal",
+            "amount": 65,
+            "text": ""
+          },
+          {
+            "round": 6,
+            "actorId": "foe-0-teacup-healer",
+            "targetId": "mochi",
+            "skillId": "",
+            "kind": "enemy-action",
+            "amount": 0,
+            "text": "Every third round restores 65 HP to the most injured foe."
+          }
+        ]
+      },
+      "results": [
+        "enemy",
+        "party"
+      ]
+    },
+    {
+      "mode": "fixed-core",
+      "firstChoiceIndex": 16,
+      "fullChoice": {
+        "actorId": "inkcap",
+        "skillId": "inkcap-2",
+        "targetId": "foe-0-teacup-healer"
+      },
+      "withoutSporeChoice": {
+        "actorId": "inkcap",
+        "skillId": "inkcap-1",
+        "targetId": "foe-0-teacup-healer"
+      },
+      "round6HealerEvents": {
+        "full": [
+          {
+            "round": 6,
+            "actorId": "foe-0-teacup-healer",
+            "targetId": "foe-0-teacup-healer",
+            "skillId": "",
+            "kind": "suppressed",
+            "amount": 1,
+            "text": "Control suppressed enemy utility"
+          },
+          {
+            "round": 6,
+            "actorId": "foe-0-teacup-healer",
+            "targetId": "mochi",
+            "skillId": "",
+            "kind": "absorbed",
+            "amount": 70,
+            "text": "Shield absorbed direct damage"
+          },
+          {
+            "round": 6,
+            "actorId": "foe-0-teacup-healer",
+            "targetId": "mochi",
+            "skillId": "",
+            "kind": "damage",
+            "amount": 39,
+            "text": ""
+          },
+          {
+            "round": 6,
+            "actorId": "foe-0-teacup-healer",
+            "targetId": "mochi",
+            "skillId": "",
+            "kind": "enemy-action",
+            "amount": 0,
+            "text": "Every third round restores 65 HP to the most injured foe."
+          },
+          {
+            "round": 6,
+            "actorId": "foe-0-teacup-healer",
+            "targetId": "foe-0-teacup-healer",
+            "skillId": "",
+            "kind": "expire",
+            "amount": 0,
+            "text": "Tangle"
+          }
+        ],
+        "no-spores": [
+          {
+            "round": 6,
+            "actorId": "foe-0-teacup-healer",
+            "targetId": "foe-0-teacup-healer",
+            "skillId": "",
+            "kind": "heal",
+            "amount": 65,
+            "text": ""
+          },
+          {
+            "round": 6,
+            "actorId": "foe-0-teacup-healer",
+            "targetId": "mochi",
+            "skillId": "",
+            "kind": "enemy-action",
+            "amount": 0,
+            "text": "Every third round restores 65 HP to the most injured foe."
+          }
+        ]
+      },
+      "results": [
+        "enemy",
+        "party"
+      ]
+    }
+  ],
+  "rawSha256": "9367127a9fc7184501b3e311ae732c036f95d7ddd7999833b67de1acd34d017a"
+}

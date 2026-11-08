@@ -2,14 +2,21 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import assert from 'node:assert/strict';
-const root = 'reports/cardrpg-big/a5/b2/set-carriers-12';
+const root = process.argv[2] ?? 'reports/cardrpg-big/a5/b2/set-carriers-12';
 const sha = data => createHash('sha256').update(data).digest('hex');
 const read = async path => JSON.parse(await readFile(path, 'utf8'));
 const bytes = await readFile(root + '/results.json'), data = JSON.parse(bytes);
 const m = await read(root + '/REGISTERED-METHOD.json');
 assert.deepEqual(data.registration, m); assert.equal(data.methodHash, sha(JSON.stringify(m)));
 assert.equal(m.seedOffset, 0); assert.equal(m.count, 50);
-for (const [path, hash] of Object.entries(m.source)) assert.equal(sha(await readFile(root + '/source-snapshot/' + path)), hash, path);
+const parent = m.parentSuppression ? await read(m.parentSuppression) : null;
+for (const [path, hash] of Object.entries(m.source)) {
+  const archive = parent ? (parent.changed[path]
+    ? m.parentSuppression.slice(0,m.parentSuppression.lastIndexOf('/')) + '/changed-source'
+    : parent.parentSource.path) : root + '/source-snapshot';
+  if (parent) assert.equal(parent.source[path],hash,path);
+  assert.equal(sha(await readFile(archive+'/'+path)),hash,path);
+}
 for (const [path, hash] of Object.entries(m.scripts)) assert.equal(sha(await readFile(path)), hash, path);
 assert.equal(data.rows.length, m.cases); assert.equal(new Set(data.rows.map(row => row.key)).size, m.cases);
 const setIds = ['hearthloom','moonwick','mossbrew','rainlace','crumbweave','bellsteel','emberfelt','velvetrim'];
