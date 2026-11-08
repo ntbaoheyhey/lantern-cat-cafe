@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-Home closure PASS: six source checks,30targeted captures/3widths/bothlooks, minimum contrast6.858; artifact6854ef89/20,923,697bytes. Original engagement01 COMPLETE30.05minutes/51captures; cadence749.2s and dead907.7s remainMISS. No active old browser or simulation.
+C1 Settings closure PASS on dc60280cf: six source checks,21targeted captures/ON+OFF/3widths/player+reviewer+Look, contrast6.858/nooverflow. Artifactf27ff7dc/20,923,753bytes. No A browser or simulation active.
 ## NEXT
-Home DRAFT398 published on397 at7609492b5. Continue isolated C1 reviewer-only Settings grants37. B1/B2/display/startup/Z remain open; fresh20001–20500 UNUSED.
+Publish Settings DRAFT stacked on Home398. Continue A5 numeric balance/display and player progression clarity; B1/B2/startup/Z remain open. Original30minute cadence749.2s/dead907.7s MISS; fresh20001–20500 UNUSED.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -262,3 +262,5 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - 2026-11-08T20:22:25.489658+00:00: Home source-bound audit PASS after retained gradient/readiness harness correction; all30 captures/zerooverflow/primaryvisible/contrast6.858. Original engagement browser completed30.05active minutes,32encounters/70meaningful offers/20rewards/11celebrations. Largest gap749.235s,combat907.67s vs896.67H0: cadence/deadtimeMISS. Fixed policy levelsMochi8/Soot1/Clover1 and repeatsChapter1; no causal Home benefit claimed. No runtime/acceptance/B change.
 
 - 2026-11-08T20:23:58.075280+00:00: Published DRAFT398 https://github.com/ntbaoheyhey/taskbar-hero/pull/398 on397; evidence7609492b5, source/checks unchanged. All elapsed misses retained. No A browser/sim remains; B395 read, no integration.
+
+- 2026-11-08T20:32Z: resumed Settings original source/UI jobs without duplication. All six source gates1754web/1192rules/421E2E/build pass on dc60280cf. Before-browser attempt2 exposed import returning Home; original script/log preserved, attempt3 reopens Settings and passes. All21ON/OFF/player/reviewer/Look captures and save roundtrips pass, contrast6.858. Independent closure verifies every original log, rules hash, OFF8250/package diff, unchanged Relics/Evidence and baseline/historical13. No source retune or fresh acceptance. Reviewer discovery-card overlap disclosed.

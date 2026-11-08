@@ -6,7 +6,7 @@ Cân bằng trang bị, một số mèo, nhịp thưởng 30 phút và hiệu n�
 
 # A5 checkpoint — acceptance remains open
 
-Runtime source: `d305ae33f` (Home navigation, unchanged eligible reserve advice). Six source checks and the exact OFF digest pass; [source-bound closure](e2-home/audit.json). Hush correction remains unchanged. This report separates historical evidence from current-source TRAIN diagnostics. Bots are proxies, not a human playtest. Fresh acceptance seeds20001–20500 remain UNUSED; old10001–10500 are contaminated.
+Runtime source: `dc60280cf` (reviewer-only Settings grants; Home navigation and combat unchanged). Six source checks and the exact OFF digest pass; [source-bound closure](c1-review-controls/audit.json). Hush correction remains unchanged. This report separates historical evidence from current-source TRAIN diagnostics. Bots are proxies, not a human playtest. Fresh acceptance seeds20001–20500 remain UNUSED; old10001–10500 are contaminated.
 
 ## Play experience and progression
 
@@ -57,7 +57,7 @@ P1 lossless artifact20,816,833bytes; later B3 reviewed artifact20,922,529bytes, 
 
 P1 default CPU median/max ms:1280CPU1 main295.7/368.1 versus candidate298.0/532.6 MISS;1280CPU4 1047.3/1114.4 versus1006.3/1046.8 PASS;1440CPU1 285.4/293.4 versus303.4/329.2 MISS. Three observations each, none discarded. Offline CPU4 full-opening max266.6ms exceeds120ms: MISS. [Individual observations](P1-SIZE-STARTUP.md).
 
-Latest Home source typecheck/lint/web1750/rules1192/E2E421/build PASS; original logs and two expected-failure/eleven skipped rule cases are retained. Latest OFF165cells/8250routes exact digest47477251b3d20ab602bee5c55a56cdd661e111b1386e298e0c9bc67737fecfa3. Baseline-v1 SHA9a5f6ebbb04af56c19f11cf43cf2763b35df2bde3b7a8dcd943060e878d793d3 and13historical sims unchanged. THC7/THC12 migrations and THC13 journal are covered by source tests.
+Latest Settings source typecheck/lint/web1754/rules1192/E2E421/build PASS; original logs and two expected-failure/eleven skipped rule cases are retained. Latest OFF165cells/8250routes exact digest47477251b3d20ab602bee5c55a56cdd661e111b1386e298e0c9bc67737fecfa3. Baseline-v1 SHA9a5f6ebbb04af56c19f11cf43cf2763b35df2bde3b7a8dcd943060e878d793d3 and13historical sims unchanged. THC7/THC12 migrations and THC13 journal are covered by source tests.
 
 Reviewed preview: [B3 game](b3/closure/artifact/index.html), SHA60407a0bd423386c66d86f50b88d867a3a7fe89bee357836a3da1ae6796432a7. It predates the two Hush fixes. [Opening walkthrough](../../../docs/cardrpg3/a5-first-5-minutes.html) uses E3 screenshots/timeline. Public [game](../../../docs/cardrpg3/index.html) and [guide](../../../docs/cardrpg3/gameplay-v4.html) remain A4, SHA067d2062f6836a6d0bb9f6753ece1b2f3ca923688f241866a7f42806c8f7b6a1 /9dca8fe648d6e101de89ffa02099249327615648989b1207f7e7183c6c0d0482. Z will rebuild and replace them only after review.
 
@@ -72,3 +72,5 @@ Remaining work: B1/B2 numeric closure and display calibration; fresh registered 
 [Reserve advice](E1-RESERVE-ADVICE.md): under-level reserves excluded, invalid swaps rejected atomically; earned Mallow1→5 costs250fish/8threads and applies at band5 across three widths/bothlooks. Corrected same-band90save arms are exact (0improved/0worsened); original +6gain is withdrawn. Original24losses retain available advice; both heavy advised retries still lose. Latest artifact20,923,417bytes, SHA4b15da6dbe4701c1383bf296decd30800f582c61e318447fd8f74b952493a665; no startup remeasurement.
 
 [Queued-reply trials33–35](B1-QUEUED-REPLIES.md) are rejected: full-value33/34 saturate364before/384after builds; emergency35 retains96piece misses and makes heavy30/30 first wins. Original30minute engagement01 is complete: [audited proxies](E2-ELAPSED-ENGAGEMENT.md),51retainedcaptures; cadence/dead-timeMISS. [Home follow-up](E2-HOME-NAVIGATION.md) passes30targetedcaptures but is not part of that elapsed measurement.
+
+[Settings controls](C1-SETTINGS-CONTROLS.md): four grants hidden for ordinary V4; explicit review and OFF retain them. Save roundtrips/keyboard/21targetedcaptures pass; runtime dc60280cf, preview SHA f27ff7dc954d9f8316e20a316ef62c9db96db0be54c13a58db1145d19b49286a,20,923,753bytes. Harness failures and existing reviewer discovery-card overlap remain disclosed. No new startup/cadence claim.

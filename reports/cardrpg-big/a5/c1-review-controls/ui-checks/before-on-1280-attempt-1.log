@@ -1,0 +1,20 @@
+{"lock":"acquired","lane":"A","pid":69928,"startedAt":"2026-11-08T20:25:03.074Z","task":"A5 settings before-on-1280"}
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Unlock all cats and build materials
+
+0 !== 1
+
+    at file:///Users/bao/taskbar-hero-cardrpg-a4/tools/cardrpg-big/a5-review-controls-browser.mjs:25:35 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 0,
+  expected: 1,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.22.2
+{"lock":"released","pid":69928,"task":"A5 settings before-on-1280"}

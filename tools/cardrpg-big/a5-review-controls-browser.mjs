@@ -30,6 +30,9 @@ try{
   await button('Import save code').click();
   assert.match(await page.locator('.cr-status').innerText(),/checksum verified/);
   assert.equal(await page.evaluate(()=>JSON.stringify(window.__depthReview.state)),original);
+  // Import returns to Home; reopen Settings before checking its controls.
+  await page.getByRole('navigation',{name:'Cafe screens'}).getByRole('button',{name:'Save & settings',exact:true}).click();
+  await page.getByRole('heading',{name:'Export / import progress',exact:true}).waitFor();
   if(hasTools){
    const day=await page.evaluate(()=>window.__depthReview.state.account.day);
    await button('Advance fixture day').focus();await page.keyboard.press('Enter');

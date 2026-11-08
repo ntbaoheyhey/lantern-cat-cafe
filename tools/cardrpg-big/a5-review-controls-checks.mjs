@@ -1,4 +1,4 @@
-// REFERENCE: PROMPT-A5 E2. Targeted Home checks on a separate artifact; preserve elapsed journey01.
+// REFERENCE: PROMPT-A5 C1. Targeted Settings checks on separate ON/OFF artifacts; preserve every attempt.
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import { spawn } from 'node:child_process';
