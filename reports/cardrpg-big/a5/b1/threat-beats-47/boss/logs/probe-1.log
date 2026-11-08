@@ -1,0 +1,2733 @@
+{"lock":"acquired","lane":"A","pid":13565,"startedAt":"2026-11-08T22:58:36.617Z","task":"A5 threat beats47 boss/probe"}
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
++ actual - expected
+... Skipped lines
+
+  {
+    battle: {
+      acted: [
+        'mochi',
+        'soot'
+...
+          signature: false,
++         status: undefined,
+          targetId: 'mochi'
+        }
+      ],
+      log: [
+        {
+
+    at file:///Users/bao/taskbar-hero-cardrpg-a4/tools/cardrpg-big/a5-threat-beats-probe.mjs:63:30 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: {
+    key: '{"kind":"pieces-equipped","templateId":"bellsteel-outfit-legendary","cardId":"mochi","level":6,"chapter":2}',
+    seed: 1,
+    mode: 'off',
+    initialSha256: '1d97b1d4b2fce588bcea97c7a9a48058854f9ecdbac97435cb6816e165c5a767',
+    battleSha256: 'ac5af15d06227385ffafa7c2a459ce3ed5eeaf7dcaf18e0d752e2a85209169a2',
+    won: true,
+    intents: [
+      {
+        round: 1,
+        actorId: 'foe-0-rain-spool',
+        signature: false,
+        power: 100
+      },
+      {
+        round: 2,
+        actorId: 'foe-0-rain-spool',
+        signature: false,
+        power: 100
+      },
+      {
+        round: 3,
+        actorId: 'foe-0-rain-spool',
+        signature: true,
+        power: 175
+      },
+      {
+        round: 4,
+        actorId: 'foe-0-rain-spool',
+        signature: false,
+        power: 100
+      },
+      {
+        round: 5,
+        actorId: 'foe-0-rain-spool',
+        signature: false,
+        power: 100
+      },
+      {
+        round: 6,
+        actorId: 'foe-0-rain-spool',
+        signature: true,
+        power: 175
+      },
+      {
+        round: 7,
+        actorId: 'foe-0-rain-spool',
+        signature: false,
+        power: 100
+      },
+      {
+        round: 8,
+        actorId: 'foe-0-rain-spool',
+        signature: false,
+        power: 100
+      },
+      {
+        round: 9,
+        actorId: 'foe-0-rain-spool',
+        signature: true,
+        power: 175
+      },
+      {
+        round: 10,
+        actorId: 'foe-0-rain-spool',
+        signature: false,
+        power: 100
+      },
+      {
+        round: 11,
+        actorId: 'foe-0-rain-spool',
+        signature: false,
+        power: 100
+      }
+    ],
+    battle: {
+      version: '0.7.0',
+      seed: 1,
+      rng: 674670120,
+      chapter: 2,
+      actors: [
+        {
+          shield: 172,
+          charge: 36,
+          break: 0,
+          statuses: [ [Object], [Object] ],
+          cooldowns: { 'mochi-1': 1, 'mochi-4': 3 },
+          passiveUsed: false,
+          phase: 1,
+          equipment: [
+            'bellsteel-weapon-epic',
+            'bellsteel-charm-epic',
+            'bellsteel-relic-epic'
+          ],
+          setEffects: [ 'counter-plus' ],
+          bonuses: {
+            hp: 29,
+            attack: 6,
+            defense: 3,
+            critBp: 800,
+            critDamageBp: 5000,
+            healingBp: 400,
+            shieldBp: 0,
+            healProc: 0,
+            cleanseProc: 0,
+            pressureRound: 11,
+            sproutUsed: 1
+          },
+          turns: 11,
+          id: 'mochi',
+          catalogId: 'mochi',
+          name: 'Mochi',
+          side: 'party',
+          role: 'guardian',
+          row: 'front',
+          flavour: 'hearth',
+          hp: 261,
+          maxHp: 676,
+          attack: 67,
+          defense: 46,
+          initiative: 9,
+          effectHit: 0,
+          effectResist: 0,
+          breakCap: 6,
+          skills: [ 'mochi-1', 'mochi-2', 'mochi-3', 'mochi-4' ]
+        },
+        {
+          shield: 130,
+          charge: 100,
+          break: 4,
+          statuses: [ [Object] ],
+          cooldowns: { 'soot-1': 1, 'soot-3': 0, 'soot-4': 0 },
+          passiveUsed: false,
+          phase: 1,
+          equipment: [
+            'moonwick-weapon-epic',
+            'moonwick-outfit-epic',
+            'moonwick-charm-epic',
+            'moonwick-relic-epic'
+          ],
+          setEffects: [ 'marked-break', 'ultimate-refund' ],
+          bonuses: {
+            attack: 4,
+            critBp: 1301,
+            defense: 2,
+            effectResistBp: 108,
+            critDamageBp: 5126,
+            healingBp: 400,
+            shieldBp: 0,
+            healProc: 0,
+            cleanseProc: 0,
+            pressureRound: 11
+          },
+          turns: 11,
+          id: 'soot',
+          catalogId: 'soot',
+          name: 'Soot',
+          side: 'party',
+          role: 'hexer',
+          row: 'rear',
+          flavour: 'moon',
+          hp: 232,
+          maxHp: 558,
+          attack: 79,
+          defense: 32,
+          initiative: 8,
+          effectHit: 0,
+          effectResist: 108,
+          breakCap: 6,
+          skills: [ 'soot-1', 'soot-2', 'soot-3', 'soot-4' ]
+        },
+        {
+          shield: 0,
+          charge: 54,
+          break: 0,
+          statuses: [ [Object], [Object] ],
+          cooldowns: {
+            'clover-1': 0,
+            'clover-2': 0,
+            'clover-3': 0,
+            'clover-4': 0
+          },
+          passiveUsed: true,
+          phase: 1,
+          equipment: [
+            'mossbrew-weapon-epic',
+            'mossbrew-outfit-epic',
+            'mossbrew-charm-epic',
+            'mossbrew-relic-epic'
+          ],
+          setEffects: [ 'healing-cleanse', 'steep-cozy' ],
+          bonuses: {
+            critBp: 618,
+            critDamageBp: 5180,
+            effectResistBp: 158,
+            shieldBp: 100,
+            effectHitBp: 86,
+            healingBp: 400,
+            healProc: 1,
+            cleanseProc: 0,
+            pressureRound: 6
+          },
+          turns: 10,
+          id: 'clover',
+          catalogId: 'clover',
+          name: 'Clover',
+          side: 'party',
+          role: 'healer',
+          row: 'rear',
+          flavour: 'garden',
+          hp: 0,
+          maxHp: 458,
+          attack: 46,
+          defense: 27,
+          initiative: 7,
+          effectHit: 86,
+          effectResist: 158,
+          breakCap: 6,
+          skills: [ 'clover-1', 'clover-2', 'clover-3', 'clover-4' ]
+        },
+        {
+          shield: 0,
+          charge: 100,
+          break: 2,
+          statuses: [],
+          cooldowns: {},
+          passiveUsed: false,
+          phase: 2,
+          equipment: [],
+          setEffects: [],
+          bonuses: { pressureRound: 10, controlImmuneUntil: 8 },
+          turns: 10,
+          id: 'foe-0-rain-spool',
+          catalogId: 'rain-spool',
+          name: 'Rain Spool',
+          side: 'enemy',
+          role: 'charger',
+          row: 'front',
+          flavour: 'ember',
+          hp: 0,
+          maxHp: 1253,
+          attack: 265,
+          defense: 24,
+          initiative: 5,
+          effectHit: 0,
+          effectResist: 1200,
+          breakCap: 8,
+          skills: []
+        }
+      ],
+      round: 11,
+      queue: [],
+      acted: [ 'mochi', 'soot' ],
+      energy: 5,
+      maxEnergy: 5,
+      intents: [
+        {
+          actorId: 'foe-0-rain-spool',
+          targetId: 'mochi',
+          label: 'Rain Spool · basic pressure',
+          counter: 'Tide adds break. Use Steep and healing instead of stacking shields.',
+          power: 100,
+          status: undefined,
+          signature: false,
+          interrupted: false
+        }
+      ],
+      log: [
+        {
+          round: 1,
+          actorId: 'mochi',
+          targetId: 'foe-0-rain-spool',
+          skillId: '',
+          kind: 'damage',
+          amount: 43,
+          text: ''
+        },
+        {
+          round: 1,
+          actorId: 'mochi',
+          targetId: 'mochi',
+          skillId: '',
+          kind: 'shield',
+          amount: 18,
+          text: ''
+        },
+        {
+          round: 1,
+          actorId: 'mochi',
+          targetId: 'foe-0-rain-spool',
+          skillId: 'mochi-1',
+          kind: 'action',
+          amount: 0,
+          text: 'Mochi focuses the weakest reachable foe, Rain Spool (HP 100%) · Door knock'
+        },
+        {
+          round: 1,
+          actorId: 'soot',
+          targetId: 'foe-0-rain-spool',
+          skillId: '',
+          kind: 'damage',
+          amount: 51,
+          text: ''
+        },
+        {
+          round: 1,
+          actorId: 'soot',
+          targetId: 'foe-0-rain-spool',
+          skillId: '',
+          kind: 'status',
+          amount: 1,
+          text: 'Crumb trail'
+        },
+        {
+          round: 1,
+          actorId: 'soot',
+          targetId: 'foe-0-rain-spool',
+          skillId: 'soot-1',
+          kind: 'action',
+          amount: 0,
+          text: 'Soot focuses the weakest reachable foe, Rain Spool (HP 97%) · Cocoa spark'
+        },
+        {
+          round: 1,
+          actorId: 'clover',
+          targetId: 'foe-0-rain-spool',
+          skillId: '',
+          kind: 'damage',
+          amount: 28,
+          text: ''
+        },
+        {
+          round: 1,
+          actorId: 'clover',
+          targetId: 'clover',
+          skillId: '',
+          kind: 'heal',
+          amount: 0,
+          text: ''
+        },
+        {
+          round: 1,
+          actorId: 'clover',
+          targetId: 'clover',
+          skillId: '',
+          kind: 'dispel',
+          amount: 0,
+          text: 'Removed debuffs'
+        },
+        {
+          round: 1,
+          actorId: 'clover',
+          targetId: 'foe-0-rain-spool',
+          skillId: 'clover-1',
+          kind: 'action',
+          amount: 0,
+          text: 'Clover focuses the weakest reachable foe, Rain Spool (HP 92%) · Leaf tap'
+        },
+        {
+          round: 1,
+          actorId: 'foe-0-rain-spool',
+          targetId: 'soot',
+          skillId: '',
+          kind: 'damage',
+          amount: 159,
+          text: ''
+        },
+        {
+          round: 1,
+          actorId: 'foe-0-rain-spool',
+          targetId: 'soot',
+          skillId: '',
+          kind: 'enemy-action',
+          amount: 0,
+          text: 'Rain Spool · basic pressure'
+        },
+        {
+          round: 2,
+          actorId: 'mochi',
+          targetId: 'foe-0-rain-spool',
+          skillId: '',
+          kind: 'damage',
+          amount: 43,
+          text: ''
+        },
+        {
+          round: 2,
+          actorId: 'mochi',
+          targetId: 'mochi',
+          skillId: '',
+          kind: 'shield',
+          amount: 18,
+          text: ''
+        },
+        {
+          round: 2,
+          actorId: 'mochi',
+          targetId: 'foe-0-rain-spool',
+          skillId: 'mochi-1',
+          kind: 'action',
+          amount: 0,
+          text: 'Mochi focuses the weakest reachable foe, Rain Spool (HP 90%) · Door knock'
+        },
+        {
+          round: 2,
+          actorId: 'soot',
+          targetId: 'foe-0-rain-spool',
+          skillId: '',
+          kind: 'damage',
+          amount: 91,
+          text: ''
+        },
+        {
+          round: 2,
+          actorId: 'soot',
+          targetId: 'foe-0-rain-spool',
+          skillId: '',
+          kind: 'detonate',
+          amount: 36,
+          text: ''
+        },
+        {
+          round: 2,
+          actorId: 'soot',
+          targetId: 'foe-0-rain-spool',
+          skillId: 'soot-3',
+          kind: 'action',
+          amount: 0,
+          text: 'Soot focuses the weakest reachable foe, Rain Spool (HP 87%) · Lantern wick'
+        },
+        {
+          round: 2,
+          actorId: 'clover',
+          targetId: 'soot',
+          skillId: '',
+          kind: 'heal',
+          amount: 36,
+          text: ''
+        },
+        {
+          round: 2,
+          actorId: 'clover',
+          targetId: 'soot',
+          skillId: '',
+          kind: 'status',
+          amount: 1,
+          text: 'Steep'
+        },
+        {
+          round: 2,
+          actorId: 'clover',
+          targetId: 'soot',
+          skillId: '',
+          kind: 'status',
+          amount: 1,
+          text: 'Cozy'
+        },
+        {
+          round: 2,
+          actorId: 'clover',
+          targetId: 'soot',
+          skillId: 'clover-2',
+          kind: 'action',
+          amount: 0,
+          text: 'Clover heals Soot (HP 72%) · Patient steep'
+        },
+        {
+          round: 2,
+          actorId: 'foe-0-rain-spool',
+          targetId: 'soot',
+          skillId: '',
+          kind: 'damage',
+          amount: 179,
+          text: ''
+        },
+        {
+          round: 2,
+          actorId: 'foe-0-rain-spool',
+          targetId: 'soot',
+          skillId: '',
+          kind: 'enemy-action',
+          amount: 0,
+          text: 'Rain Spool · basic pressure'
+        },
+        {
+          round: 2,
+          actorId: 'clover',
+          targetId: 'soot',
+          skillId: '',
+          kind: 'heal',
+          amount: 19,
+          text: ''
+        },
+        {
+          round: 3,
+          actorId: 'mochi',
+          targetId: 'foe-0-rain-spool',
+          skillId: '',
+          kind: 'damage',
+          amount: 48,
+          text: ''
+        },
+        {
+          round: 3,
+          actorId: 'mochi',
+          targetId: 'mochi',
+          skillId: '',
+          kind: 'shield',
+          amount: 18,
+          text: ''
+        },
+        {
+          round: 3,
+          actorId: 'mochi',
+          targetId: 'foe-0-rain-spool',
+          skillId: 'mochi-1',
+          kind: 'action',
+          amount: 0,
+          text: 'Mochi focuses the weakest reachable foe, Rain Spool (HP 77%) · Door knock'
+        },
+        {
+          round: 3,
+          actorId: 'soot',
+          targetId: 'foe-0-rain-spool',
+          skillId: '',
+          kind: 'damage',
+          amount: 82,
+          text: ''
+        },
+        {
+          round: 3,
+          actorId: 'soot',
+          targetId: 'foe-0-rain-spool',
+          skillId: '',
+          kind: 'detonate',
+          amount: 0,
+          text: ''
+        },
+        {
+          round: 3,
+          actorId: 'soot',
+          targetId: 'foe-0-rain-spool',
+          skillId: '',
+          kind: 'status',
+          amount: 1,
+          text: 'Hush'
+        },
+        {
+          round: 3,
+          actorId: 'soot',
+          targetId: 'foe-0-rain-spool',
+          skillId: 'soot-4',
+          kind: 'action',
+          amount: 0,
+          text: 'Soot focuses the weakest reachable foe, Rain Spool (HP 73%) · Midnight service'
+        },
+        {
+          round: 3,
+          actorId: 'clover',
+          targetId: 'soot',
+          skillId: '',
+          kind: 'heal',
+          amount: 36,
+          text: ''
+        },
+        {
+          round: 3,
+          actorId: 'clover',
+          targetId: 'soot',
+          skillId: '',
+          kind: 'status',
+          amount: 2,
+          text: 'Steep'
+        },
+        {
+          round: 3,
+          actorId: 'clover',
+          targetId: 'soot',
+          skillId: '',
+          kind: 'status',
+          amount: 2,
+          text: 'Cozy'
+        },
+        {
+          round: 3,
+          actorId: 'clover',
+          targetId: 'soot',
+          skillId: 'clover-2',
+          kind: 'action',
+          amount: 0,
+          text: 'Clover heals Soot (HP 49%) · Patient steep'
+        },
+        {
+          round: 3,
+          actorId: 'foe-0-rain-spool',
+          targetId: 'mochi',
+          skillId: '',
+          kind: 'damage',
+          amount: 293,
+          text: ''
+        },
+        {
+          round: 3,
+          actorId: 'foe-0-rain-spool',
+          targetId: 'mochi',
+          skillId: '',
+          kind: 'status',
+          amount: 1,
+          text: 'Rattled'
+        },
+        {
+          round: 3,
+          actorId: 'foe-0-rain-spool',
+          targetId: 'soot',
+          skillId: '',
+          kind: 'enemy-action',
+          amount: 0,
+          text: 'Every third round Cloudburst washes shields away before a row hit.'
+        },
+        {
+          round: 3,
+          actorId: 'clover',
+          targetId: 'soot',
+          skillId: '',
+          kind: 'heal',
+          amount: 37,
+          text: ''
+        },
+        {
+          round: 3,
+          actorId: 'foe-0-rain-spool',
+          targetId: 'foe-0-rain-spool',
+          skillId: '',
+          kind: 'expire',
+          amount: 0,
+          text: 'Hush'
+        },
+        {
+          round: 4,
+          actorId: 'mochi',
+          targetId: 'foe-0-rain-spool',
+          skillId: '',
+          kind: 'damage',
+          amount: 42,
+          text: ''
+        },
+        {
+          round: 4,
+          actorId: 'mochi',
+          targetId: 'mochi',
+          skillId: '',
+          kind: 'shield',
+          amount: 18,
+          text: ''
+        },
+        {
+          round: 4,
+          actorId: 'mochi',
+          targetId: 'foe-0-rain-spool',
+          skillId: 'mochi-1',
+          kind: 'action',
+          amount: 0,
+          text: 'Mochi focuses the weakest reachable foe, Rain Spool (HP 66%) · Door knock'
+        },
+        {
+          round: 4,
+          actorId: 'soot',
+          targetId: 'foe-0-rain-spool',
+          skillId: '',
+          kind: 'damage',
+          amount: 62,
+          text: ''
+        },
+        {
+          round: 4,
+          actorId: 'soot',
+          targetId: 'foe-0-rain-spool',
+          skillId: '',
+          kind: 'detonate',
+          amount: 0,
+          text: ''
+        },
+        {
+          round: 4,
+          actorId: 'soot',
+          targetId: 'foe-0-rain-spool',
+          skillId: 'soot-3',
+          kind: 'action',
+          amount: 0,
+          text: 'Soot focuses the weakest reachable foe, Rain Spool (HP 63%) · Lantern wick'
+        },
+        {
+          round: 4,
+          actorId: 'clover',
+          targetId: 'mochi',
+          skillId: '',
+          kind: 'dispel',
+          amount: 1,
+          text: 'Removed debuffs'
+        },
+        {
+          round: 4,
+          actorId: 'clover',
+          targetId: 'soot',
+          skillId: '',
+          kind: 'dispel',
+          amount: 0,
+          text: 'Removed debuffs'
+        },
+        {
+          round: 4,
+          actorId: 'clover',
+          targetId: 'clover',
+          skillId: '',
+          kind: 'dispel',
+          amount: 0,
+          text: 'Removed debuffs'
+        },
+        {
+          round: 4,
+          actorId: 'clover',
+          targetId: 'mochi',
+          skillId: '',
+          kind: 'heal',
+          amount: 47,
+          text: ''
+        },
+        {
+          round: 4,
+          actorId: 'clover',
+          targetId: 'soot',
+          skillId: '',
+          kind: 'heal',
+          amount: 47,
+          text: ''
+        },
+        {
+          round: 4,
+          actorId: 'clover',
+          targetId: 'clover',
+          skillId: '',
+          kind: 'heal',
+          amount: 0,
+          text: ''
+        },
+        {
+          round: 4,
+          actorId: 'clover',
+          targetId: 'clover',
+          skillId: 'clover-3',
+          kind: 'action',
+          amount: 0,
+          text: 'Clover supports the team (lowest HP 57%) · Clearleaf rinse'
+        },
+        {
+          round: 4,
+          actorId: 'foe-0-rain-spool',
+          targetId: 'clover',
+          skillId: '',
+          kind: 'damage',
+          amount: 191,
+          text: ''
+        },
+        {
+          round: 4,
+          actorId: 'foe-0-rain-spool',
+          targetId: 'clover',
+          skillId: '',
+          kind: 'enemy-action',
+          amount: 0,
+          text: 'Rain Spool · basic pressure'
+        },
+        {
+          round: 4,
+          actorId: 'clover',
+          targetId: 'soot',
+          skillId: '',
+          kind: 'heal',
+          amount: 37,
+          text: ''
+        },
+        {
+          round: 4,
+          actorId: 'soot',
+          targetId: 'soot',
+          skillId: '',
+          kind: 'expire',
+          amount: 0,
+          text: 'Cozy'
+        },
+        {
+          round: 5,
+          actorId: 'mochi',
+          targetId: 'mochi',
+          skillId: '',
+          kind: 'shield',
+          amount: 130,
+          text: ''
+        },
+        {
+          round: 5,
+          actorId: 'mochi',
+          targetId: 'soot',
+          skillId: '',
+          kind: 'shield',
+          amount: 130,
+          text: ''
+        },
+        {
+          round: 5,
+          actorId: 'mochi',
+          targetId: 'clover',
+          skillId: '',
+          kind: 'shield',
+          amount: 130,
+          text: ''
+        },
+        {
+          round: 5,
+          actorId: 'mochi',
+          targetId: 'mochi',
+          skillId: '',
+          kind: 'status',
+          amount: 2,
+          text: 'Cozy'
+        },
+        {
+          round: 5,
+          actorId: 'mochi',
+          targetId: 'soot',
+          skillId: '',
+          kind: 'status',
+          amount: 2,
+          text: 'Cozy'
+        },
+        {
+          round: 5,
+          actorId: 'mochi',
+          targetId: 'clover',
+          skillId: '',
+          kind: 'status',
+          amount: 2,
+          text: 'Cozy'
+        },
+        {
+          round: 5,
+          actorId: 'mochi',
+          targetId: 'clover',
+          skillId: 'mochi-4',
+          kind: 'action',
+          amount: 0,
+          text: 'Mochi supports the team (lowest HP 58%) · Last light shelter'
+        },
+        {
+          round: 5,
+          actorId: 'soot',
+          targetId: 'foe-0-rain-spool',
+          skillId: '',
+          kind: 'damage',
+          amount: 51,
+          text: ''
+        },
+        {
+          round: 5,
+          actorId: 'soot',
+          targetId: 'foe-0-rain-spool',
+          skillId: '',
+          kind: 'status',
+          amount: 1,
+          text: 'Crumb trail'
+        },
+        {
+          round: 5,
+          actorId: 'soot',
+          targetId: 'foe-0-rain-spool',
+          skillId: 'soot-1',
+          kind: 'action',
+          amount: 0,
+          text: 'Soot focuses the weakest reachable foe, Rain Spool (HP 58%) · Cocoa spark'
+        },
+        {
+          round: 5,
+          actorId: 'clover',
+          targetId: 'clover',
+          skillId: '',
+          kind: 'heal',
+          amount: 36,
+          text: ''
+        },
+        {
+          round: 5,
+          actorId: 'clover',
+          targetId: 'clover',
+          skillId: '',
+          kind: 'status',
+          amount: 1,
+          text: 'Steep'
+        },
+        {
+          round: 5,
+          actorId: 'clover',
+          targetId: 'clover',
+          skillId: '',
+          kind: 'status',
+          amount: 3,
+          text: 'Cozy'
+        },
+        {
+          round: 5,
+          actorId: 'clover',
+          targetId: 'clover',
+          skillId: 'clover-2',
+          kind: 'action',
+          amount: 0,
+          text: 'Clover heals Clover (HP 58%) · Patient steep'
+        },
+        {
+          round: 5,
+          actorId: 'foe-0-rain-spool',
+          targetId: 'soot',
+          skillId: '',
+          kind: 'damage',
+          amount: 23,
+          text: ''
+        },
+        {
+          round: 5,
+          actorId: 'foe-0-rain-spool',
+          targetId: 'soot',
+          skillId: '',
+          kind: 'enemy-action',
+          amount: 0,
+          text: 'Rain Spool · basic pressure'
+        },
+        {
+          round: 5,
+          actorId: 'clover',
+          targetId: 'soot',
+          skillId: '',
+          kind: 'heal',
+          amount: 37,
+          text: ''
+        },
+        {
+          round: 5,
+          actorId: 'soot',
+          targetId: 'soot',
+          skillId: '',
+          kind: 'expire',
+          amount: 0,
+          text: 'Steep'
+        },
+        {
+          round: 5,
+          actorId: 'clover',
+          targetId: 'clover',
+          skillId: '',
+          kind: 'heal',
+          amount: 19,
+          text: ''
+        },
+        {
+          round: 6,
+          actorId: 'mochi',
+          targetId: 'foe-0-rain-spool',
+          skillId: '',
+          kind: 'damage',
+          amount: 43,
+          text: ''
+        },
+        {
+          round: 6,
+          actorId: 'mochi',
+          targetId: 'mochi',
+          skillId: '',
+          kind: 'shield',
+          amount: 18,
+          text: ''
+        },
+        {
+          round: 6,
+          actorId: 'mochi',
+          targetId: 'foe-0-rain-spool',
+          skillId: 'mochi-1',
+          kind: 'action',
+          amount: 0,
+          text: 'Mochi focuses the weakest reachable foe, Rain Spool (HP 54%) · Door knock'
+        },
+        {
+          round: 6,
+          actorId: 'soot',
+          targetId: 'foe-0-rain-spool',
+          skillId: '',
+          kind: 'damage',
+          amount: 61,
+          text: ''
+        },
+        {
+          round: 6,
+          actorId: 'soot',
+          targetId: 'foe-0-rain-spool',
+          skillId: '',
+          kind: 'detonate',
+          amount: 36,
+          text: ''
+        },
+        {
+          round: 6,
+          actorId: 'soot',
+          targetId: 'foe-0-rain-spool',
+          skillId: 'soot-3',
+          kind: 'action',
+          amount: 0,
+          text: 'Soot focuses the weakest reachable foe, Rain Spool (HP 51%) · Lantern wick'
+        },
+        {
+          round: 6,
+          actorId: 'clover',
+          targetId: 'foe-0-rain-spool',
+          skillId: '',
+          kind: 'damage',
+          amount: 42,
+          text: ''
+        },
+        {
+          round: 6,
+          actorId: 'clover',
+          targetId: 'clover',
+          skillId: '',
+          kind: 'heal',
+          amount: 19,
+          text: ''
+        },
+        {
+          round: 6,
+          actorId: 'clover',
+          targetId: 'foe-0-rain-spool',
+          skillId: 'clover-1',
+          kind: 'action',
+          amount: 0,
+          text: 'Clover focuses the weakest reachable foe, Rain Spool (HP 43%) · Leaf tap'
+        },
+        {
+          round: 6,
+          actorId: 'foe-0-rain-spool',
+          targetId: 'mochi',
+          skillId: '',
+          kind: 'damage',
+          amount: 244,
+          text: ''
+        },
+        {
+          round: 6,
+          actorId: 'foe-0-rain-spool',
+          targetId: 'mochi',
+          skillId: '',
+          kind: 'status',
+          amount: 1,
+          text: 'Rattled'
+        },
+        {
+          round: 6,
+          actorId: 'foe-0-rain-spool',
+          targetId: 'clover',
+          skillId: '',
+          kind: 'enemy-action',
+          amount: 0,
+          text: 'Every third round Cloudburst washes shields away before a row hit.'
+        },
+        {
+          round: 6,
+          actorId: 'mochi',
+          targetId: 'mochi',
+          skillId: '',
+          kind: 'expire',
+          amount: 0,
+          text: 'Cozy'
+        },
+        {
+          round: 6,
+          actorId: 'soot',
+          targetId: 'soot',
+          skillId: '',
+          kind: 'expire',
+          amount: 0,
+          text: 'Cozy'
+        },
+        {
+          round: 6,
+          actorId: 'clover',
+          targetId: 'clover',
+          skillId: '',
+          kind: 'expire',
+          amount: 0,
+          text: 'Cozy'
+        },
+        {
+          round: 6,
+          actorId: 'clover',
+          targetId: 'clover',
+          skillId: '',
+          kind: 'heal',
+          amount: 19,
+          text: ''
+        },
+        {
+          round: 7,
+          actorId: 'foe-0-rain-spool',
+          targetId: 'foe-0-rain-spool',
+          skillId: '',
+          kind: 'phase',
+          amount: 2,
+          text: 'At 50% HP, Cloudburst targets both rows'
+        },
+        {
+          round: 7,
+          actorId: 'mochi',
+          targetId: 'foe-0-rain-spool',
+          skillId: '',
+          kind: 'damage',
+          amount: 37,
+          text: ''
+        },
+        {
+          round: 7,
+          actorId: 'mochi',
+          targetId: 'mochi',
+          skillId: '',
+          kind: 'shield',
+          amount: 18,
+          text: ''
+        },
+        {
+          round: 7,
+          actorId: 'mochi',
+          targetId: 'foe-0-rain-spool',
+          skillId: 'mochi-1',
+          kind: 'action',
+          amount: 0,
+          text: 'Mochi focuses the weakest reachable foe, Rain Spool (HP 39%) · Door knock'
+        },
+        {
+          round: 7,
+          actorId: 'soot',
+          targetId: 'foe-0-rain-spool',
+          skillId: '',
+          kind: 'damage',
+          amount: 72,
+          text: ''
+        },
+        {
+          round: 7,
+          actorId: 'soot',
+          targetId: 'foe-0-rain-spool',
+          skillId: '',
+          kind: 'detonate',
+          amount: 0,
+          text: ''
+        },
+        {
+          round: 7,
+          actorId: 'soot',
+          targetId: 'foe-0-rain-spool',
+          skillId: '',
+          kind: 'status',
+          amount: 1,
+          text: 'Hush'
+        },
+        ... 74 more items
+      ],
+      choices: [
+        {
+          actorId: 'mochi',
+          skillId: 'mochi-1',
+          targetId: 'foe-0-rain-spool'
+        },
+        {
+          actorId: 'soot',
+          skillId: 'soot-1',
+          targetId: 'foe-0-rain-spool'
+        },
+        {
+          actorId: 'clover',
+          skillId: 'clover-1',
+          targetId: 'foe-0-rain-spool'
+        },
+        {
+          actorId: 'mochi',
+          skillId: 'mochi-1',
+          targetId: 'foe-0-rain-spool'
+        },
+        {
+          actorId: 'soot',
+          skillId: 'soot-3',
+          targetId: 'foe-0-rain-spool'
+        },
+        { actorId: 'clover', skillId: 'clover-2', targetId: 'soot' },
+        {
+          actorId: 'mochi',
+          skillId: 'mochi-1',
+          targetId: 'foe-0-rain-spool'
+        },
+        {
+          actorId: 'soot',
+          skillId: 'soot-4',
+          targetId: 'foe-0-rain-spool'
+        },
+        { actorId: 'clover', skillId: 'clover-2', targetId: 'soot' },
+        {
+          actorId: 'mochi',
+          skillId: 'mochi-1',
+          targetId: 'foe-0-rain-spool'
+        },
+        {
+          actorId: 'soot',
+          skillId: 'soot-3',
+          targetId: 'foe-0-rain-spool'
+        },
+        { actorId: 'clover', skillId: 'clover-3', targetId: 'clover' },
+        { actorId: 'mochi', skillId: 'mochi-4', targetId: 'clover' },
+        {
+          actorId: 'soot',
+          skillId: 'soot-1',
+          targetId: 'foe-0-rain-spool'
+        },
+        { actorId: 'clover', skillId: 'clover-2', targetId: 'clover' },
+        {
+          actorId: 'mochi',
+          skillId: 'mochi-1',
+          targetId: 'foe-0-rain-spool'
+        },
+        {
+          actorId: 'soot',
+          skillId: 'soot-3',
+          targetId: 'foe-0-rain-spool'
+        },
+        {
+          actorId: 'clover',
+          skillId: 'clover-1',
+          targetId: 'foe-0-rain-spool'
+        },
+        {
+          actorId: 'mochi',
+          skillId: 'mochi-1',
+          targetId: 'foe-0-rain-spool'
+        },
+        {
+          actorId: 'soot',
+          skillId: 'soot-4',
+          targetId: 'foe-0-rain-spool'
+        },
+        { actorId: 'clover', skillId: 'clover-4', targetId: 'clover' },
+        {
+          actorId: 'mochi',
+          skillId: 'mochi-1',
+          targetId: 'foe-0-rain-spool'
+        },
+        {
+          actorId: 'soot',
+          skillId: 'soot-1',
+          targetId: 'foe-0-rain-spool'
+        },
+        { actorId: 'clover', skillId: 'clover-3', targetId: 'clover' },
+        {
+          actorId: 'mochi',
+          skillId: 'mochi-1',
+          targetId: 'foe-0-rain-spool'
+        },
+        {
+          actorId: 'soot',
+          skillId: 'soot-3',
+          targetId: 'foe-0-rain-spool'
+        },
+        { actorId: 'clover', skillId: 'clover-2', targetId: 'mochi' },
+        { actorId: 'mochi', skillId: 'mochi-4', targetId: 'clover' },
+        {
+          actorId: 'soot',
+          skillId: 'soot-1',
+          targetId: 'foe-0-rain-spool'
+        },
+        { actorId: 'clover', skillId: 'clover-2', targetId: 'mochi' },
+        {
+          actorId: 'mochi',
+          skillId: 'mochi-1',
+          targetId: 'foe-0-rain-spool'
+        },
+        {
+          actorId: 'soot',
+          skillId: 'soot-1',
+          targetId: 'foe-0-rain-spool'
+        }
+      ],
+      result: 'party',
+      firstDeath: 'healer',
+      procRounds: {},
+      boons: {},
+      mutator: '',
+      initial: {
+        seed: 1,
+        chapter: 2,
+        challengeLevel: 6,
+        cats: [
+          {
+            id: 'mochi',
+            stats: [Object],
+            skills: [Array],
+            row: 'front',
+            equipment: [Array],
+            effects: [Array],
+            bonuses: [Object]
+          },
+          {
+            id: 'soot',
+            stats: [Object],
+            skills: [Array],
+            row: 'rear',
+            equipment: [Array],
+            effects: [Array],
+            bonuses: [Object]
+          },
+          {
+            id: 'clover',
+            stats: [Object],
+            skills: [Array],
+            row: 'rear',
+            equipment: [Array],
+            effects: [Array],
+            bonuses: [Object]
+          }
+        ],
+        enemies: [ 'rain-spool' ],
+        gameplayV4: false,
+        plan: { focus: 'finish', care: 'steady' },
+        enemyStats: {
+          'button-guard': { hp: 136, attack: 22, defense: 18 },
+          'sock-skipper': { hp: 199, attack: 25, defense: 8 },
+          'spool-ram': { hp: 358, attack: 34, defense: 16 },
+          'needle-moth': { hp: 187, attack: 19, defense: 6 },
+          'teacup-healer': { hp: 217, attack: 16, defense: 10 },
+          'kettle-knight': { hp: 406, attack: 28, defense: 35 },
+          'yarn-giant': { hp: 978, attack: 123, defense: 22 },
+          'binding-thread': { hp: 109, attack: 11, defense: 0 },
+          'practice-cushion': { hp: 65, attack: 16, defense: 0 },
+          'pollen-scout': { hp: 322, attack: 25, defense: 10 },
+          'rain-spool': { hp: 1253, attack: 136, defense: 24 },
+          'crumb-sentinel': { hp: 430, attack: 31, defense: 22 },
+          'pantry-crown': { hp: 1213, attack: 171, defense: 25 }
+        }
+      }
+    }
+  },
+  expected: {
+    key: '{"kind":"pieces-equipped","templateId":"bellsteel-outfit-legendary","cardId":"mochi","level":6,"chapter":2}',
+    seed: 1,
+    mode: 'off',
+    initialSha256: '1d97b1d4b2fce588bcea97c7a9a48058854f9ecdbac97435cb6816e165c5a767',
+    battleSha256: 'ac5af15d06227385ffafa7c2a459ce3ed5eeaf7dcaf18e0d752e2a85209169a2',
+    won: true,
+    intents: [
+      {
+        round: 1,
+        actorId: 'foe-0-rain-spool',
+        signature: false,
+        power: 100
+      },
+      {
+        round: 2,
+        actorId: 'foe-0-rain-spool',
+        signature: false,
+        power: 100
+      },
+      {
+        round: 3,
+        actorId: 'foe-0-rain-spool',
+        signature: true,
+        power: 175
+      },
+      {
+        round: 4,
+        actorId: 'foe-0-rain-spool',
+        signature: false,
+        power: 100
+      },
+      {
+        round: 5,
+        actorId: 'foe-0-rain-spool',
+        signature: false,
+        power: 100
+      },
+      {
+        round: 6,
+        actorId: 'foe-0-rain-spool',
+        signature: true,
+        power: 175
+      },
+      {
+        round: 7,
+        actorId: 'foe-0-rain-spool',
+        signature: false,
+        power: 100
+      },
+      {
+        round: 8,
+        actorId: 'foe-0-rain-spool',
+        signature: false,
+        power: 100
+      },
+      {
+        round: 9,
+        actorId: 'foe-0-rain-spool',
+        signature: true,
+        power: 175
+      },
+      {
+        round: 10,
+        actorId: 'foe-0-rain-spool',
+        signature: false,
+        power: 100
+      },
+      {
+        round: 11,
+        actorId: 'foe-0-rain-spool',
+        signature: false,
+        power: 100
+      }
+    ],
+    battle: {
+      version: '0.7.0',
+      seed: 1,
+      rng: 674670120,
+      chapter: 2,
+      actors: [
+        {
+          shield: 172,
+          charge: 36,
+          break: 0,
+          statuses: [ [Object], [Object] ],
+          cooldowns: { 'mochi-1': 1, 'mochi-4': 3 },
+          passiveUsed: false,
+          phase: 1,
+          equipment: [
+            'bellsteel-weapon-epic',
+            'bellsteel-charm-epic',
+            'bellsteel-relic-epic'
+          ],
+          setEffects: [ 'counter-plus' ],
+          bonuses: {
+            hp: 29,
+            attack: 6,
+            defense: 3,
+            critBp: 800,
+            critDamageBp: 5000,
+            healingBp: 400,
+            shieldBp: 0,
+            healProc: 0,
+            cleanseProc: 0,
+            pressureRound: 11,
+            sproutUsed: 1
+          },
+          turns: 11,
+          id: 'mochi',
+          catalogId: 'mochi',
+          name: 'Mochi',
+          side: 'party',
+          role: 'guardian',
+          row: 'front',
+          flavour: 'hearth',
+          hp: 261,
+          maxHp: 676,
+          attack: 67,
+          defense: 46,
+          initiative: 9,
+          effectHit: 0,
+          effectResist: 0,
+          breakCap: 6,
+          skills: [ 'mochi-1', 'mochi-2', 'mochi-3', 'mochi-4' ]
+        },
+        {
+          shield: 130,
+          charge: 100,
+          break: 4,
+          statuses: [ [Object] ],
+          cooldowns: { 'soot-1': 1, 'soot-3': 0, 'soot-4': 0 },
+          passiveUsed: false,
+          phase: 1,
+          equipment: [
+            'moonwick-weapon-epic',
+            'moonwick-outfit-epic',
+            'moonwick-charm-epic',
+            'moonwick-relic-epic'
+          ],
+          setEffects: [ 'marked-break', 'ultimate-refund' ],
+          bonuses: {
+            attack: 4,
+            critBp: 1301,
+            defense: 2,
+            effectResistBp: 108,
+            critDamageBp: 5126,
+            healingBp: 400,
+            shieldBp: 0,
+            healProc: 0,
+            cleanseProc: 0,
+            pressureRound: 11
+          },
+          turns: 11,
+          id: 'soot',
+          catalogId: 'soot',
+          name: 'Soot',
+          side: 'party',
+          role: 'hexer',
+          row: 'rear',
+          flavour: 'moon',
+          hp: 232,
+          maxHp: 558,
+          attack: 79,
+          defense: 32,
+          initiative: 8,
+          effectHit: 0,
+          effectResist: 108,
+          breakCap: 6,
+          skills: [ 'soot-1', 'soot-2', 'soot-3', 'soot-4' ]
+        },
+        {
+          shield: 0,
+          charge: 54,
+          break: 0,
+          statuses: [ [Object], [Object] ],
+          cooldowns: {
+            'clover-1': 0,
+            'clover-2': 0,
+            'clover-3': 0,
+            'clover-4': 0
+          },
+          passiveUsed: true,
+          phase: 1,
+          equipment: [
+            'mossbrew-weapon-epic',
+            'mossbrew-outfit-epic',
+            'mossbrew-charm-epic',
+            'mossbrew-relic-epic'
+          ],
+          setEffects: [ 'healing-cleanse', 'steep-cozy' ],
+          bonuses: {
+            critBp: 618,
+            critDamageBp: 5180,
+            effectResistBp: 158,
+            shieldBp: 100,
+            effectHitBp: 86,
+            healingBp: 400,
+            healProc: 1,
+            cleanseProc: 0,
+            pressureRound: 6
+          },
+          turns: 10,
+          id: 'clover',
+          catalogId: 'clover',
+          name: 'Clover',
+          side: 'party',
+          role: 'healer',
+          row: 'rear',
+          flavour: 'garden',
+          hp: 0,
+          maxHp: 458,
+          attack: 46,
+          defense: 27,
+          initiative: 7,
+          effectHit: 86,
+          effectResist: 158,
+          breakCap: 6,
+          skills: [ 'clover-1', 'clover-2', 'clover-3', 'clover-4' ]
+        },
+        {
+          shield: 0,
+          charge: 100,
+          break: 2,
+          statuses: [],
+          cooldowns: {},
+          passiveUsed: false,
+          phase: 2,
+          equipment: [],
+          setEffects: [],
+          bonuses: { pressureRound: 10, controlImmuneUntil: 8 },
+          turns: 10,
+          id: 'foe-0-rain-spool',
+          catalogId: 'rain-spool',
+          name: 'Rain Spool',
+          side: 'enemy',
+          role: 'charger',
+          row: 'front',
+          flavour: 'ember',
+          hp: 0,
+          maxHp: 1253,
+          attack: 265,
+          defense: 24,
+          initiative: 5,
+          effectHit: 0,
+          effectResist: 1200,
+          breakCap: 8,
+          skills: []
+        }
+      ],
+      round: 11,
+      queue: [],
+      acted: [ 'mochi', 'soot' ],
+      energy: 5,
+      maxEnergy: 5,
+      intents: [
+        {
+          actorId: 'foe-0-rain-spool',
+          targetId: 'mochi',
+          label: 'Rain Spool · basic pressure',
+          counter: 'Tide adds break. Use Steep and healing instead of stacking shields.',
+          power: 100,
+          signature: false,
+          interrupted: false
+        }
+      ],
+      log: [
+        {
+          round: 1,
+          actorId: 'mochi',
+          targetId: 'foe-0-rain-spool',
+          skillId: '',
+          kind: 'damage',
+          amount: 43,
+          text: ''
+        },
+        {
+          round: 1,
+          actorId: 'mochi',
+          targetId: 'mochi',
+          skillId: '',
+          kind: 'shield',
+          amount: 18,
+          text: ''
+        },
+        {
+          round: 1,
+          actorId: 'mochi',
+          targetId: 'foe-0-rain-spool',
+          skillId: 'mochi-1',
+          kind: 'action',
+          amount: 0,
+          text: 'Mochi focuses the weakest reachable foe, Rain Spool (HP 100%) · Door knock'
+        },
+        {
+          round: 1,
+          actorId: 'soot',
+          targetId: 'foe-0-rain-spool',
+          skillId: '',
+          kind: 'damage',
+          amount: 51,
+          text: ''
+        },
+        {
+          round: 1,
+          actorId: 'soot',
+          targetId: 'foe-0-rain-spool',
+          skillId: '',
+          kind: 'status',
+          amount: 1,
+          text: 'Crumb trail'
+        },
+        {
+          round: 1,
+          actorId: 'soot',
+          targetId: 'foe-0-rain-spool',
+          skillId: 'soot-1',
+          kind: 'action',
+          amount: 0,
+          text: 'Soot focuses the weakest reachable foe, Rain Spool (HP 97%) · Cocoa spark'
+        },
+        {
+          round: 1,
+          actorId: 'clover',
+          targetId: 'foe-0-rain-spool',
+          skillId: '',
+          kind: 'damage',
+          amount: 28,
+          text: ''
+        },
+        {
+          round: 1,
+          actorId: 'clover',
+          targetId: 'clover',
+          skillId: '',
+          kind: 'heal',
+          amount: 0,
+          text: ''
+        },
+        {
+          round: 1,
+          actorId: 'clover',
+          targetId: 'clover',
+          skillId: '',
+          kind: 'dispel',
+          amount: 0,
+          text: 'Removed debuffs'
+        },
+        {
+          round: 1,
+          actorId: 'clover',
+          targetId: 'foe-0-rain-spool',
+          skillId: 'clover-1',
+          kind: 'action',
+          amount: 0,
+          text: 'Clover focuses the weakest reachable foe, Rain Spool (HP 92%) · Leaf tap'
+        },
+        {
+          round: 1,
+          actorId: 'foe-0-rain-spool',
+          targetId: 'soot',
+          skillId: '',
+          kind: 'damage',
+          amount: 159,
+          text: ''
+        },
+        {
+          round: 1,
+          actorId: 'foe-0-rain-spool',
+          targetId: 'soot',
+          skillId: '',
+          kind: 'enemy-action',
+          amount: 0,
+          text: 'Rain Spool · basic pressure'
+        },
+        {
+          round: 2,
+          actorId: 'mochi',
+          targetId: 'foe-0-rain-spool',
+          skillId: '',
+          kind: 'damage',
+          amount: 43,
+          text: ''
+        },
+        {
+          round: 2,
+          actorId: 'mochi',
+          targetId: 'mochi',
+          skillId: '',
+          kind: 'shield',
+          amount: 18,
+          text: ''
+        },
+        {
+          round: 2,
+          actorId: 'mochi',
+          targetId: 'foe-0-rain-spool',
+          skillId: 'mochi-1',
+          kind: 'action',
+          amount: 0,
+          text: 'Mochi focuses the weakest reachable foe, Rain Spool (HP 90%) · Door knock'
+        },
+        {
+          round: 2,
+          actorId: 'soot',
+          targetId: 'foe-0-rain-spool',
+          skillId: '',
+          kind: 'damage',
+          amount: 91,
+          text: ''
+        },
+        {
+          round: 2,
+          actorId: 'soot',
+          targetId: 'foe-0-rain-spool',
+          skillId: '',
+          kind: 'detonate',
+          amount: 36,
+          text: ''
+        },
+        {
+          round: 2,
+          actorId: 'soot',
+          targetId: 'foe-0-rain-spool',
+          skillId: 'soot-3',
+          kind: 'action',
+          amount: 0,
+          text: 'Soot focuses the weakest reachable foe, Rain Spool (HP 87%) · Lantern wick'
+        },
+        {
+          round: 2,
+          actorId: 'clover',
+          targetId: 'soot',
+          skillId: '',
+          kind: 'heal',
+          amount: 36,
+          text: ''
+        },
+        {
+          round: 2,
+          actorId: 'clover',
+          targetId: 'soot',
+          skillId: '',
+          kind: 'status',
+          amount: 1,
+          text: 'Steep'
+        },
+        {
+          round: 2,
+          actorId: 'clover',
+          targetId: 'soot',
+          skillId: '',
+          kind: 'status',
+          amount: 1,
+          text: 'Cozy'
+        },
+        {
+          round: 2,
+          actorId: 'clover',
+          targetId: 'soot',
+          skillId: 'clover-2',
+          kind: 'action',
+          amount: 0,
+          text: 'Clover heals Soot (HP 72%) · Patient steep'
+        },
+        {
+          round: 2,
+          actorId: 'foe-0-rain-spool',
+          targetId: 'soot',
+          skillId: '',
+          kind: 'damage',
+          amount: 179,
+          text: ''
+        },
+        {
+          round: 2,
+          actorId: 'foe-0-rain-spool',
+          targetId: 'soot',
+          skillId: '',
+          kind: 'enemy-action',
+          amount: 0,
+          text: 'Rain Spool · basic pressure'
+        },
+        {
+          round: 2,
+          actorId: 'clover',
+          targetId: 'soot',
+          skillId: '',
+          kind: 'heal',
+          amount: 19,
+          text: ''
+        },
+        {
+          round: 3,
+          actorId: 'mochi',
+          targetId: 'foe-0-rain-spool',
+          skillId: '',
+          kind: 'damage',
+          amount: 48,
+          text: ''
+        },
+        {
+          round: 3,
+          actorId: 'mochi',
+          targetId: 'mochi',
+          skillId: '',
+          kind: 'shield',
+          amount: 18,
+          text: ''
+        },
+        {
+          round: 3,
+          actorId: 'mochi',
+          targetId: 'foe-0-rain-spool',
+          skillId: 'mochi-1',
+          kind: 'action',
+          amount: 0,
+          text: 'Mochi focuses the weakest reachable foe, Rain Spool (HP 77%) · Door knock'
+        },
+        {
+          round: 3,
+          actorId: 'soot',
+          targetId: 'foe-0-rain-spool',
+          skillId: '',
+          kind: 'damage',
+          amount: 82,
+          text: ''
+        },
+        {
+          round: 3,
+          actorId: 'soot',
+          targetId: 'foe-0-rain-spool',
+          skillId: '',
+          kind: 'detonate',
+          amount: 0,
+          text: ''
+        },
+        {
+          round: 3,
+          actorId: 'soot',
+          targetId: 'foe-0-rain-spool',
+          skillId: '',
+          kind: 'status',
+          amount: 1,
+          text: 'Hush'
+        },
+        {
+          round: 3,
+          actorId: 'soot',
+          targetId: 'foe-0-rain-spool',
+          skillId: 'soot-4',
+          kind: 'action',
+          amount: 0,
+          text: 'Soot focuses the weakest reachable foe, Rain Spool (HP 73%) · Midnight service'
+        },
+        {
+          round: 3,
+          actorId: 'clover',
+          targetId: 'soot',
+          skillId: '',
+          kind: 'heal',
+          amount: 36,
+          text: ''
+        },
+        {
+          round: 3,
+          actorId: 'clover',
+          targetId: 'soot',
+          skillId: '',
+          kind: 'status',
+          amount: 2,
+          text: 'Steep'
+        },
+        {
+          round: 3,
+          actorId: 'clover',
+          targetId: 'soot',
+          skillId: '',
+          kind: 'status',
+          amount: 2,
+          text: 'Cozy'
+        },
+        {
+          round: 3,
+          actorId: 'clover',
+          targetId: 'soot',
+          skillId: 'clover-2',
+          kind: 'action',
+          amount: 0,
+          text: 'Clover heals Soot (HP 49%) · Patient steep'
+        },
+        {
+          round: 3,
+          actorId: 'foe-0-rain-spool',
+          targetId: 'mochi',
+          skillId: '',
+          kind: 'damage',
+          amount: 293,
+          text: ''
+        },
+        {
+          round: 3,
+          actorId: 'foe-0-rain-spool',
+          targetId: 'mochi',
+          skillId: '',
+          kind: 'status',
+          amount: 1,
+          text: 'Rattled'
+        },
+        {
+          round: 3,
+          actorId: 'foe-0-rain-spool',
+          targetId: 'soot',
+          skillId: '',
+          kind: 'enemy-action',
+          amount: 0,
+          text: 'Every third round Cloudburst washes shields away before a row hit.'
+        },
+        {
+          round: 3,
+          actorId: 'clover',
+          targetId: 'soot',
+          skillId: '',
+          kind: 'heal',
+          amount: 37,
+          text: ''
+        },
+        {
+          round: 3,
+          actorId: 'foe-0-rain-spool',
+          targetId: 'foe-0-rain-spool',
+          skillId: '',
+          kind: 'expire',
+          amount: 0,
+          text: 'Hush'
+        },
+        {
+          round: 4,
+          actorId: 'mochi',
+          targetId: 'foe-0-rain-spool',
+          skillId: '',
+          kind: 'damage',
+          amount: 42,
+          text: ''
+        },
+        {
+          round: 4,
+          actorId: 'mochi',
+          targetId: 'mochi',
+          skillId: '',
+          kind: 'shield',
+          amount: 18,
+          text: ''
+        },
+        {
+          round: 4,
+          actorId: 'mochi',
+          targetId: 'foe-0-rain-spool',
+          skillId: 'mochi-1',
+          kind: 'action',
+          amount: 0,
+          text: 'Mochi focuses the weakest reachable foe, Rain Spool (HP 66%) · Door knock'
+        },
+        {
+          round: 4,
+          actorId: 'soot',
+          targetId: 'foe-0-rain-spool',
+          skillId: '',
+          kind: 'damage',
+          amount: 62,
+          text: ''
+        },
+        {
+          round: 4,
+          actorId: 'soot',
+          targetId: 'foe-0-rain-spool',
+          skillId: '',
+          kind: 'detonate',
+          amount: 0,
+          text: ''
+        },
+        {
+          round: 4,
+          actorId: 'soot',
+          targetId: 'foe-0-rain-spool',
+          skillId: 'soot-3',
+          kind: 'action',
+          amount: 0,
+          text: 'Soot focuses the weakest reachable foe, Rain Spool (HP 63%) · Lantern wick'
+        },
+        {
+          round: 4,
+          actorId: 'clover',
+          targetId: 'mochi',
+          skillId: '',
+          kind: 'dispel',
+          amount: 1,
+          text: 'Removed debuffs'
+        },
+        {
+          round: 4,
+          actorId: 'clover',
+          targetId: 'soot',
+          skillId: '',
+          kind: 'dispel',
+          amount: 0,
+          text: 'Removed debuffs'
+        },
+        {
+          round: 4,
+          actorId: 'clover',
+          targetId: 'clover',
+          skillId: '',
+          kind: 'dispel',
+          amount: 0,
+          text: 'Removed debuffs'
+        },
+        {
+          round: 4,
+          actorId: 'clover',
+          targetId: 'mochi',
+          skillId: '',
+          kind: 'heal',
+          amount: 47,
+          text: ''
+        },
+        {
+          round: 4,
+          actorId: 'clover',
+          targetId: 'soot',
+          skillId: '',
+          kind: 'heal',
+          amount: 47,
+          text: ''
+        },
+        {
+          round: 4,
+          actorId: 'clover',
+          targetId: 'clover',
+          skillId: '',
+          kind: 'heal',
+          amount: 0,
+          text: ''
+        },
+        {
+          round: 4,
+          actorId: 'clover',
+          targetId: 'clover',
+          skillId: 'clover-3',
+          kind: 'action',
+          amount: 0,
+          text: 'Clover supports the team (lowest HP 57%) · Clearleaf rinse'
+        },
+        {
+          round: 4,
+          actorId: 'foe-0-rain-spool',
+          targetId: 'clover',
+          skillId: '',
+          kind: 'damage',
+          amount: 191,
+          text: ''
+        },
+        {
+          round: 4,
+          actorId: 'foe-0-rain-spool',
+          targetId: 'clover',
+          skillId: '',
+          kind: 'enemy-action',
+          amount: 0,
+          text: 'Rain Spool · basic pressure'
+        },
+        {
+          round: 4,
+          actorId: 'clover',
+          targetId: 'soot',
+          skillId: '',
+          kind: 'heal',
+          amount: 37,
+          text: ''
+        },
+        {
+          round: 4,
+          actorId: 'soot',
+          targetId: 'soot',
+          skillId: '',
+          kind: 'expire',
+          amount: 0,
+          text: 'Cozy'
+        },
+        {
+          round: 5,
+          actorId: 'mochi',
+          targetId: 'mochi',
+          skillId: '',
+          kind: 'shield',
+          amount: 130,
+          text: ''
+        },
+        {
+          round: 5,
+          actorId: 'mochi',
+          targetId: 'soot',
+          skillId: '',
+          kind: 'shield',
+          amount: 130,
+          text: ''
+        },
+        {
+          round: 5,
+          actorId: 'mochi',
+          targetId: 'clover',
+          skillId: '',
+          kind: 'shield',
+          amount: 130,
+          text: ''
+        },
+        {
+          round: 5,
+          actorId: 'mochi',
+          targetId: 'mochi',
+          skillId: '',
+          kind: 'status',
+          amount: 2,
+          text: 'Cozy'
+        },
+        {
+          round: 5,
+          actorId: 'mochi',
+          targetId: 'soot',
+          skillId: '',
+          kind: 'status',
+          amount: 2,
+          text: 'Cozy'
+        },
+        {
+          round: 5,
+          actorId: 'mochi',
+          targetId: 'clover',
+          skillId: '',
+          kind: 'status',
+          amount: 2,
+          text: 'Cozy'
+        },
+        {
+          round: 5,
+          actorId: 'mochi',
+          targetId: 'clover',
+          skillId: 'mochi-4',
+          kind: 'action',
+          amount: 0,
+          text: 'Mochi supports the team (lowest HP 58%) · Last light shelter'
+        },
+        {
+          round: 5,
+          actorId: 'soot',
+          targetId: 'foe-0-rain-spool',
+          skillId: '',
+          kind: 'damage',
+          amount: 51,
+          text: ''
+        },
+        {
+          round: 5,
+          actorId: 'soot',
+          targetId: 'foe-0-rain-spool',
+          skillId: '',
+          kind: 'status',
+          amount: 1,
+          text: 'Crumb trail'
+        },
+        {
+          round: 5,
+          actorId: 'soot',
+          targetId: 'foe-0-rain-spool',
+          skillId: 'soot-1',
+          kind: 'action',
+          amount: 0,
+          text: 'Soot focuses the weakest reachable foe, Rain Spool (HP 58%) · Cocoa spark'
+        },
+        {
+          round: 5,
+          actorId: 'clover',
+          targetId: 'clover',
+          skillId: '',
+          kind: 'heal',
+          amount: 36,
+          text: ''
+        },
+        {
+          round: 5,
+          actorId: 'clover',
+          targetId: 'clover',
+          skillId: '',
+          kind: 'status',
+          amount: 1,
+          text: 'Steep'
+        },
+        {
+          round: 5,
+          actorId: 'clover',
+          targetId: 'clover',
+          skillId: '',
+          kind: 'status',
+          amount: 3,
+          text: 'Cozy'
+        },
+        {
+          round: 5,
+          actorId: 'clover',
+          targetId: 'clover',
+          skillId: 'clover-2',
+          kind: 'action',
+          amount: 0,
+          text: 'Clover heals Clover (HP 58%) · Patient steep'
+        },
+        {
+          round: 5,
+          actorId: 'foe-0-rain-spool',
+          targetId: 'soot',
+          skillId: '',
+          kind: 'damage',
+          amount: 23,
+          text: ''
+        },
+        {
+          round: 5,
+          actorId: 'foe-0-rain-spool',
+          targetId: 'soot',
+          skillId: '',
+          kind: 'enemy-action',
+          amount: 0,
+          text: 'Rain Spool · basic pressure'
+        },
+        {
+          round: 5,
+          actorId: 'clover',
+          targetId: 'soot',
+          skillId: '',
+          kind: 'heal',
+          amount: 37,
+          text: ''
+        },
+        {
+          round: 5,
+          actorId: 'soot',
+          targetId: 'soot',
+          skillId: '',
+          kind: 'expire',
+          amount: 0,
+          text: 'Steep'
+        },
+        {
+          round: 5,
+          actorId: 'clover',
+          targetId: 'clover',
+          skillId: '',
+          kind: 'heal',
+          amount: 19,
+          text: ''
+        },
+        {
+          round: 6,
+          actorId: 'mochi',
+          targetId: 'foe-0-rain-spool',
+          skillId: '',
+          kind: 'damage',
+          amount: 43,
+          text: ''
+        },
+        {
+          round: 6,
+          actorId: 'mochi',
+          targetId: 'mochi',
+          skillId: '',
+          kind: 'shield',
+          amount: 18,
+          text: ''
+        },
+        {
+          round: 6,
+          actorId: 'mochi',
+          targetId: 'foe-0-rain-spool',
+          skillId: 'mochi-1',
+          kind: 'action',
+          amount: 0,
+          text: 'Mochi focuses the weakest reachable foe, Rain Spool (HP 54%) · Door knock'
+        },
+        {
+          round: 6,
+          actorId: 'soot',
+          targetId: 'foe-0-rain-spool',
+          skillId: '',
+          kind: 'damage',
+          amount: 61,
+          text: ''
+        },
+        {
+          round: 6,
+          actorId: 'soot',
+          targetId: 'foe-0-rain-spool',
+          skillId: '',
+          kind: 'detonate',
+          amount: 36,
+          text: ''
+        },
+        {
+          round: 6,
+          actorId: 'soot',
+          targetId: 'foe-0-rain-spool',
+          skillId: 'soot-3',
+          kind: 'action',
+          amount: 0,
+          text: 'Soot focuses the weakest reachable foe, Rain Spool (HP 51%) · Lantern wick'
+        },
+        {
+          round: 6,
+          actorId: 'clover',
+          targetId: 'foe-0-rain-spool',
+          skillId: '',
+          kind: 'damage',
+          amount: 42,
+          text: ''
+        },
+        {
+          round: 6,
+          actorId: 'clover',
+          targetId: 'clover',
+          skillId: '',
+          kind: 'heal',
+          amount: 19,
+          text: ''
+        },
+        {
+          round: 6,
+          actorId: 'clover',
+          targetId: 'foe-0-rain-spool',
+          skillId: 'clover-1',
+          kind: 'action',
+          amount: 0,
+          text: 'Clover focuses the weakest reachable foe, Rain Spool (HP 43%) · Leaf tap'
+        },
+        {
+          round: 6,
+          actorId: 'foe-0-rain-spool',
+          targetId: 'mochi',
+          skillId: '',
+          kind: 'damage',
+          amount: 244,
+          text: ''
+        },
+        {
+          round: 6,
+          actorId: 'foe-0-rain-spool',
+          targetId: 'mochi',
+          skillId: '',
+          kind: 'status',
+          amount: 1,
+          text: 'Rattled'
+        },
+        {
+          round: 6,
+          actorId: 'foe-0-rain-spool',
+          targetId: 'clover',
+          skillId: '',
+          kind: 'enemy-action',
+          amount: 0,
+          text: 'Every third round Cloudburst washes shields away before a row hit.'
+        },
+        {
+          round: 6,
+          actorId: 'mochi',
+          targetId: 'mochi',
+          skillId: '',
+          kind: 'expire',
+          amount: 0,
+          text: 'Cozy'
+        },
+        {
+          round: 6,
+          actorId: 'soot',
+          targetId: 'soot',
+          skillId: '',
+          kind: 'expire',
+          amount: 0,
+          text: 'Cozy'
+        },
+        {
+          round: 6,
+          actorId: 'clover',
+          targetId: 'clover',
+          skillId: '',
+          kind: 'expire',
+          amount: 0,
+          text: 'Cozy'
+        },
+        {
+          round: 6,
+          actorId: 'clover',
+          targetId: 'clover',
+          skillId: '',
+          kind: 'heal',
+          amount: 19,
+          text: ''
+        },
+        {
+          round: 7,
+          actorId: 'foe-0-rain-spool',
+          targetId: 'foe-0-rain-spool',
+          skillId: '',
+          kind: 'phase',
+          amount: 2,
+          text: 'At 50% HP, Cloudburst targets both rows'
+        },
+        {
+          round: 7,
+          actorId: 'mochi',
+          targetId: 'foe-0-rain-spool',
+          skillId: '',
+          kind: 'damage',
+          amount: 37,
+          text: ''
+        },
+        {
+          round: 7,
+          actorId: 'mochi',
+          targetId: 'mochi',
+          skillId: '',
+          kind: 'shield',
+          amount: 18,
+          text: ''
+        },
+        {
+          round: 7,
+          actorId: 'mochi',
+          targetId: 'foe-0-rain-spool',
+          skillId: 'mochi-1',
+          kind: 'action',
+          amount: 0,
+          text: 'Mochi focuses the weakest reachable foe, Rain Spool (HP 39%) · Door knock'
+        },
+        {
+          round: 7,
+          actorId: 'soot',
+          targetId: 'foe-0-rain-spool',
+          skillId: '',
+          kind: 'damage',
+          amount: 72,
+          text: ''
+        },
+        {
+          round: 7,
+          actorId: 'soot',
+          targetId: 'foe-0-rain-spool',
+          skillId: '',
+          kind: 'detonate',
+          amount: 0,
+          text: ''
+        },
+        {
+          round: 7,
+          actorId: 'soot',
+          targetId: 'foe-0-rain-spool',
+          skillId: '',
+          kind: 'status',
+          amount: 1,
+          text: 'Hush'
+        },
+        ... 74 more items
+      ],
+      choices: [
+        {
+          actorId: 'mochi',
+          skillId: 'mochi-1',
+          targetId: 'foe-0-rain-spool'
+        },
+        {
+          actorId: 'soot',
+          skillId: 'soot-1',
+          targetId: 'foe-0-rain-spool'
+        },
+        {
+          actorId: 'clover',
+          skillId: 'clover-1',
+          targetId: 'foe-0-rain-spool'
+        },
+        {
+          actorId: 'mochi',
+          skillId: 'mochi-1',
+          targetId: 'foe-0-rain-spool'
+        },
+        {
+          actorId: 'soot',
+          skillId: 'soot-3',
+          targetId: 'foe-0-rain-spool'
+        },
+        { actorId: 'clover', skillId: 'clover-2', targetId: 'soot' },
+        {
+          actorId: 'mochi',
+          skillId: 'mochi-1',
+          targetId: 'foe-0-rain-spool'
+        },
+        {
+          actorId: 'soot',
+          skillId: 'soot-4',
+          targetId: 'foe-0-rain-spool'
+        },
+        { actorId: 'clover', skillId: 'clover-2', targetId: 'soot' },
+        {
+          actorId: 'mochi',
+          skillId: 'mochi-1',
+          targetId: 'foe-0-rain-spool'
+        },
+        {
+          actorId: 'soot',
+          skillId: 'soot-3',
+          targetId: 'foe-0-rain-spool'
+        },
+        { actorId: 'clover', skillId: 'clover-3', targetId: 'clover' },
+        { actorId: 'mochi', skillId: 'mochi-4', targetId: 'clover' },
+        {
+          actorId: 'soot',
+          skillId: 'soot-1',
+          targetId: 'foe-0-rain-spool'
+        },
+        { actorId: 'clover', skillId: 'clover-2', targetId: 'clover' },
+        {
+          actorId: 'mochi',
+          skillId: 'mochi-1',
+          targetId: 'foe-0-rain-spool'
+        },
+        {
+          actorId: 'soot',
+          skillId: 'soot-3',
+          targetId: 'foe-0-rain-spool'
+        },
+        {
+          actorId: 'clover',
+          skillId: 'clover-1',
+          targetId: 'foe-0-rain-spool'
+        },
+        {
+          actorId: 'mochi',
+          skillId: 'mochi-1',
+          targetId: 'foe-0-rain-spool'
+        },
+        {
+          actorId: 'soot',
+          skillId: 'soot-4',
+          targetId: 'foe-0-rain-spool'
+        },
+        { actorId: 'clover', skillId: 'clover-4', targetId: 'clover' },
+        {
+          actorId: 'mochi',
+          skillId: 'mochi-1',
+          targetId: 'foe-0-rain-spool'
+        },
+        {
+          actorId: 'soot',
+          skillId: 'soot-1',
+          targetId: 'foe-0-rain-spool'
+        },
+        { actorId: 'clover', skillId: 'clover-3', targetId: 'clover' },
+        {
+          actorId: 'mochi',
+          skillId: 'mochi-1',
+          targetId: 'foe-0-rain-spool'
+        },
+        {
+          actorId: 'soot',
+          skillId: 'soot-3',
+          targetId: 'foe-0-rain-spool'
+        },
+        { actorId: 'clover', skillId: 'clover-2', targetId: 'mochi' },
+        { actorId: 'mochi', skillId: 'mochi-4', targetId: 'clover' },
+        {
+          actorId: 'soot',
+          skillId: 'soot-1',
+          targetId: 'foe-0-rain-spool'
+        },
+        { actorId: 'clover', skillId: 'clover-2', targetId: 'mochi' },
+        {
+          actorId: 'mochi',
+          skillId: 'mochi-1',
+          targetId: 'foe-0-rain-spool'
+        },
+        {
+          actorId: 'soot',
+          skillId: 'soot-1',
+          targetId: 'foe-0-rain-spool'
+        }
+      ],
+      result: 'party',
+      firstDeath: 'healer',
+      procRounds: {},
+      boons: {},
+      mutator: '',
+      initial: {
+        seed: 1,
+        chapter: 2,
+        challengeLevel: 6,
+        cats: [
+          {
+            id: 'mochi',
+            stats: [Object],
+            skills: [Array],
+            row: 'front',
+            equipment: [Array],
+            effects: [Array],
+            bonuses: [Object]
+          },
+          {
+            id: 'soot',
+            stats: [Object],
+            skills: [Array],
+            row: 'rear',
+            equipment: [Array],
+            effects: [Array],
+            bonuses: [Object]
+          },
+          {
+            id: 'clover',
+            stats: [Object],
+            skills: [Array],
+            row: 'rear',
+            equipment: [Array],
+            effects: [Array],
+            bonuses: [Object]
+          }
+        ],
+        enemies: [ 'rain-spool' ],
+        gameplayV4: false,
+        plan: { focus: 'finish', care: 'steady' },
+        enemyStats: {
+          'button-guard': { hp: 136, attack: 22, defense: 18 },
+          'sock-skipper': { hp: 199, attack: 25, defense: 8 },
+          'spool-ram': { hp: 358, attack: 34, defense: 16 },
+          'needle-moth': { hp: 187, attack: 19, defense: 6 },
+          'teacup-healer': { hp: 217, attack: 16, defense: 10 },
+          'kettle-knight': { hp: 406, attack: 28, defense: 35 },
+          'yarn-giant': { hp: 978, attack: 123, defense: 22 },
+          'binding-thread': { hp: 109, attack: 11, defense: 0 },
+          'practice-cushion': { hp: 65, attack: 16, defense: 0 },
+          'pollen-scout': { hp: 322, attack: 25, defense: 10 },
+          'rain-spool': { hp: 1253, attack: 136, defense: 24 },
+          'crumb-sentinel': { hp: 430, attack: 31, defense: 22 },
+          'pantry-crown': { hp: 1213, attack: 171, defense: 25 }
+        }
+      }
+    }
+  },
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.22.2
+{"lock":"released","pid":13565,"task":"A5 threat beats47 boss/probe"}
