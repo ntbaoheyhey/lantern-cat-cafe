@@ -21,7 +21,9 @@ try {
    const done=R.finishEncounter(state);assert(done.ok);state=done.state;
    if(state.run.rewardChoices.length){const pick=R.chooseReward(state,state.run.rewardChoices[0]);assert(pick.ok);state=pick.state;}
   }else if(node.kind==='event'){const choice=R.resolveNode(state,R.EVENTS.find(e=>e.id===node.eventId).choices.find(c=>c.cost<=state.run.points).id);assert(choice.ok);state=choice.state;}
-  else throw Error('Unregistered route stop '+node.kind);
+  else if(['treasure','shop','campfire'].includes(node.kind)){
+   const choice=R.resolveNode(state,{treasure:'points',shop:'leave',campfire:'heal'}[node.kind]);assert(choice.ok);state=choice.state;
+  }else throw Error('Unregistered route stop '+node.kind);
  }
  assert.equal(timeline.at(-1).kind,'boss');assert.equal(state.run.battle.result,'enemy');
  assert.deepEqual(state.run.battle,h0.encounters.at(-1).battle,'Same earned A4 combat path before advice');

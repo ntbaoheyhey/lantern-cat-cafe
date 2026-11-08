@@ -14,9 +14,9 @@ export interface ForecastV4 {
 }
 
 /** Fixed training seeds only. No state is changed, no acceptance seed is sampled. */
-export function forecastV4(setup: BattleSetup): ForecastV4 {
+export function forecastV4(setup: BattleSetup, now: () => number = Date.now): ForecastV4 {
   if (!setup.gameplayV4) throw Error('Forecast requires Gameplay v4.');
-  const started = performance.now();
+  const started = now();
   let wins = 0;
   const fallen = new Map<string, { name: string; count: number }>();
   for (let seed = 1; seed <= 20; seed++) {
@@ -33,7 +33,7 @@ export function forecastV4(setup: BattleSetup): ForecastV4 {
   const danger = enemyGuideV4(enemy.id);
   const risk = likely ? `${likely[1].name} often falls first. ${danger.counter}` : `${enemy.name}: ${danger.intent}`;
   return { band: wins < 8 ? 'Risky' : wins < 15 ? 'Even' : 'Favoured', risk,
-    samples: 20, wins, firstFallen: likely?.[0] ?? null, computeMs: performance.now() - started };
+    samples: 20, wins, firstFallen: likely?.[0] ?? null, computeMs: now() - started };
 }
 
 export { forecastKeyV4 } from './forecast-key-v4';
