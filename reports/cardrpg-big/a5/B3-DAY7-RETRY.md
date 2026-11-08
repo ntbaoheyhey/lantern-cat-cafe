@@ -8,4 +8,14 @@ The independent paired replay asserts every recorded browser battle JSON, then r
 
 Evidence: [registered method](b3/day7-x1-e2-METHOD.md), [real-click receipt](b3/day7-x1-e2/checks.json), [both exact-route replays](b3/day7-x1-e2/paired-route.json). The source is cffa5b878 and the artifact SHA-256 is 8996413dc6201c568a7fdd3040acaeb7b8ac5f9cc1bee64d02138ed7134f04ed.
 
-The separately registered 90-account, two-attempt cohort is still in progress. B1/B2 balance and the fresh acceptance block remain open. No broad day-7 PASS is claimed from this fixture.
+The separately registered 90-account cohort is complete. It starts from the exact earned day7 saves, tests the next uncleared chapter (or replays chapter3), and counts any loss before the boss as a failure. One available suggested change is allowed before the second attempt. The paired no-advice attempt uses exactly that second route seed.
+
+|Style|First wins|Wins within two attempts|Target|Status|Losses with an available suggestion|
+|---|---:|---:|---:|---|---:|
+|Casual|5/30|10/30 (33.3%)|≥50%|MISS|24/25|
+|Regular|5/30|14/30 (46.7%)|≥70%|MISS|23/25|
+|Heavy|17/30 (56.7%)|22/30 (73.3%)|First attempt≤95%|PASS|13/13|
+
+Advice availability is MISS: three losses have no qualifying available change. Suggested/no-advice retry wins are casual5/5, regular9/5, heavy5/7. Advice helps some accounts and harms others; the single real-click success does not erase those results. Wilson intervals, every account and the pre-run method remain in [cohort receipts](b3/day7-e2/checks.json). This is a synthetic TRAIN progression proxy, not a human playtest or fresh acceptance.
+
+B1/B2 balance, general day7 difficulty and fresh acceptance remain open. Combat remains A4; no seed was rerolled and no gate moved.
