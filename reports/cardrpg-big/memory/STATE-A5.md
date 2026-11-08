@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-E3 source a99c934d4 passes all six gates and fresh3width x1 opening: practice12.775–12.999s; invitation/equip19.590–26.939s; scoutedmap41.862–49.171s. Paired Soot damage167→172. Walkthrough/audit/3receipt tests/3width static-guide layout PASS; draft publication next.
+E3 published DRAFT385, source a99c934d4 / closure6fe045d5d. Six source gates, 32 desktop captures, three independent receipt tests and offline walkthrough PASS. No public demo replacement yet.
 ## NEXT
-Publish E3 after current evidence checks. Continuousband01 completed and rejected: all styles30/30 first-two, heavy30/30 first exceeds95% ceiling. No active diagnostic process remains. Continue a registered smooth early-band comparison on the same90 earned saves. Retryforecast01 rejected8/30casual,12/30regular. Freshacceptance20001–20500 unused. Stack376→377→379→381→382→383→384.
+Registered early-band02 linear/easeout TRAIN diagnostics run from /tmp/cardrpg-a5-band-ramp-02, session41004, original90 earned day7 saves. Ramp01 rejected heavy30/30 first; retryforecast01 rejected. Continue balance/progression closure, then fresh acceptance and Z. Stack376→377→379→381→382→383→384→385. Fresh20001–20500 unused.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -150,3 +150,5 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - Retryforecast01 complete/rejected: whole-route recommendations8/30casual,12/30regular vs10/14; all90 firstattempts exactly matchE2. Registeredbandramp01 isolates the challenge6 discontinuity: original compoundedbossattack5→6 +30.27%; spread existing12%/15%multipliers over6–10, preserve1–5/10–50. Staged only, no acceptance/production combat adoption.
 
 - Bandramp01 TRAIN day7 complete: casual/regular30/30 firsttwo, heavy30/30 first (ceilingMISS). Advice7/7losses available. This isolates the challenge6 wall but is too easy for heavy; not adopted. All prior firstsave/seed inputs preserved; no fresh earned45day claim.
+
+- E3 published DRAFT https://github.com/ntbaoheyhey/taskbar-hero/pull/385 after independent receipt3PASS and scope/baseline/historical guards. Restored state correctly records completed ramp01; original old jobs are no longer active. Early-band02 compares two preregistered smooth curves on identical inputs; no source adoption or acceptance.
