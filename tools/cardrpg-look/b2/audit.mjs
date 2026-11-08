@@ -16,9 +16,14 @@ check('demo <=31.5MB',results.bytes,results.bytes<=31500000);
 const budget=await read('v6/asset-budget.json');check('lean B bytes stretch <=18MB',budget.rows[1].bOwnedEmbeddedBytes,budget.rows[1].bOwnedEmbeddedBytes<=18000000);
 const protectedPaths=['packages/game-rules','contracts','supabase','.github','package.json','pnpm-lock.yaml','apps/web/package.json','apps/web/src/game/cardrpg/depth/App.tsx','apps/web/src/game/cardrpg/depth/depth.css','apps/web/src/game/cardrpg/depth/shared.tsx','tools/cardrpg-big','docs/cardrpg3','reports/cardrpg-big'];
 const diff=execFileSync('git',['diff','--name-only','0ce18c085','--',...protectedPaths],{encoding:'utf8'}).trim();check('protected scope unchanged',diff,!diff);
+const changed=execFileSync('git',['diff','--name-only','0ce18c085'],{encoding:'utf8'}).trim().split('\n');
+const outOfScope=changed.filter(p=>!(/^(apps\/web\/src\/game\/squad\/turn3d\/|tools\/cardrpg-look\/|docs\/cardrpg-look\/|reports\/cardrpg-look\/)/.test(p)||['apps/web/src/game/cardrpg/depth/Battle.tsx','assets/provenance/look.md','docs/design/cardrpg/LOOK-BIBLE.md'].includes(p)));
+check('B-owned changed paths only',outOfScope,outOfScope.length===0);
 const bytes=await readFile('docs/cardrpg-look/index.html'),sha=createHash('sha256').update(bytes).digest('hex');check('closure index exact',sha,sha==='7e092b1a18b2a4af1dcdcc51e6a24f38bc5e674580d2ecddca33c3de306aff34');
 check('startup parity',results.startup.deltaBytes,results.startup.deltaBytes===0);
 const shots=await read('v6/shots/shots.json'),ui=await read('v6/ui/checks.json'),dpr=await read('v6/1440/shots.json');check('12 layout +6 DPR2 shots',[shots.rows.length,dpr.rows.length],shots.rows.length===12&&dpr.rows.length===6&&shots.rows.every(r=>r.errors.length===0&&!r.overflow)&&dpr.rows.every(r=>r.errors.length===0&&!r.overflow));
+const demo=await readFile('docs/cardrpg-look/b2.html'),demoSha=createHash('sha256').update(demo).digest('hex');
+check('delivery receipts bind the measured HTML',[results.sha256,perf.sha256,shots.sha256,ui.sha256,dpr.sha256], [results.sha256,perf.sha256,shots.sha256,ui.sha256,dpr.sha256].every(v=>v===demoSha));
 check('three-width UI',ui.rows.length,ui.rows.length===3&&ui.errors.length===0&&ui.rows.every(r=>!r.overflow&&r.numberContrast>=4.5&&r.cardOverflow.every(v=>!v)));
 const videos=await read('v6/videos/checks.json');check('paired20sH264 same initial',videos.sameInitial,videos.sameInitial&&videos.rows.every(r=>r.errors.length===0&&r.probe.streams[0].codec_name==='h264'&&Number(r.probe.format.duration)===20));
 const roster=await read('v2/roster/checks.json'),bossIds=['yarn-giant','kettle-knight','pantry-crown'];
@@ -35,4 +40,8 @@ const receipts=[];for(const phase of ['v0','v1','v3','v2','v4','v5','v6']){
  const latest=Object.fromEntries(gates.map(g=>[g.name,g.code]));receipts.push({phase,gates:latest,digest:await read(`digests-${phase}.json`)});
 }
 check('phase source gates',receipts.map(r=>({phase:r.phase,gates:r.gates})),receipts.every(r=>Object.values(r.gates).every(c=>c===0)));
+check('five-seed full-battle and log parity each phase',receipts.map(r=>({phase:r.phase,seeds:r.digest.map(v=>v.seed)})),receipts.every(r=>JSON.stringify(r.digest)===JSON.stringify(receipts[0].digest)&&r.digest.length===5));
+const gallery=await read('v6/gallery/checks.json'),life=await read('v6/lifecycle/checks.json');
+check('ready gallery and effect-only preview',gallery.rows,gallery.sha256===demoSha&&gallery.errors.length===0&&gallery.rows.length===2&&gallery.rows.every(r=>r.ready&&r.speed===.25&&r.paused)&&gallery.rows[0].effectOnly===false&&gallery.rows[1].effectOnly===true);
+check('five natural battles retain one scene',life.rows.map(r=>({index:r.index,retained:r.retained})),life.sha256===demoSha&&life.errors.length===0&&life.rows.length===5&&life.rows.every(r=>r.retained));
 await writeFile(`${root}/AUDIT.json`,JSON.stringify({at:new Date().toISOString(),checks,misses,receipts},null,2));console.log(JSON.stringify({checks:Object.keys(checks).length,misses}));
