@@ -1,4 +1,4 @@
-import type { LookVfx } from './look-vfx';
+import { LookVfx } from './look-vfx';
 import { LAB_EFFECT_RECIPES } from './card-lab-effects';
 import * as T from 'three';
 import type { TurnActor } from '@taskbar-hero/game-rules/src/squad/turn/types';
@@ -104,7 +104,6 @@ export class CardEffects {
 
   private async prepare() {
     if (this.atelier) {
-      const { LookVfx } = await import('./look-vfx');
       if (this.disposed) return;
       this.look = new LookVfx(this.scene, this.material.uniforms);
       await this.look.prepare(() => this.disposed);

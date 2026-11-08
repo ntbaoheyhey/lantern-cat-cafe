@@ -8,7 +8,12 @@ import type { EffectFrame } from './effects';
 import {SpellVfx} from './vfx';
 import {EFFECT_DIRECTION} from './effect-direction';
 import {CafePost,type Quality} from './post';
-import type { LookPost } from './look-post';
+import { LookPost } from './look-post';
+// Keep the visual stack in the existing lazy 3D route. Splitting each pass
+// hoists shared Three utilities into extra default-entry preload metadata.
+// Resources are still created only when the atelier is enabled.
+import { createLookStage, disposeLookStage } from './look-stage';
+import { createLookEnvironment } from './look-environment';
 import {stageTexture,prepareStageTexture} from './surfaces';
 import {layoutLabels,intersects,type LabelInput} from './label-layout';
 import {GearAttachments,GearResources} from './gear-visuals';
@@ -28,8 +33,10 @@ import { loadingFrame, warmScene } from './loading';
 import { CardUtensil } from './card-utensils';
 import { isLookV2 } from './look-v2';
 import { cardEntrancePose } from './card-entrance';
+import { earnedRevealV4 } from './card-v4-presentation';
 
 export interface SceneView {
+  earnedReveal?: unknown;
   decorateStage?: (stage: T.Group, cancelled?: () => boolean) => void | Promise<void>;
   animateStage?: (stage: T.Group, time: number, reducedMotion: boolean) => void;
   autoBattle?: boolean;
@@ -79,6 +86,8 @@ export class TurnScene {
   private time = 0;
   private litChapter = 0;
   private entrance?: { asset: string; startedAt: number };
+  private earnedBadge?: HTMLDivElement;
+  private earnedKey?: string;
   private width = 1;
   private height = 1;
   private resize: ResizeObserver;
@@ -144,7 +153,7 @@ export class TurnScene {
 
   private async preparePresentation(){
     if(this.view().autoBattle)this.cardSurfaces=new CardSurfaces(this.renderer);
-    if(this.lookStageEnabled){const {LookPost}=await import('./look-post');if(this.disposed)return;this.post=new LookPost(this.renderer);}else this.post=new CafePost(this.renderer, this.view().autoBattle);this.post.setQuality(this.view().quality??'high');this.renderer.info.autoReset=false;this.post.resize(this.width,this.height);
+    if(this.lookStageEnabled){if(this.disposed)return;this.post=new LookPost(this.renderer);}else this.post=new CafePost(this.renderer, this.view().autoBattle);this.post.setQuality(this.view().quality??'high');this.renderer.info.autoReset=false;this.post.resize(this.width,this.height);
     this.glow=this.makeGlow();
     if(this.lookStageEnabled)this.contactTexture=this.makeContact();
     this.blobMaterial=new T.MeshBasicMaterial({map:this.contactTexture??this.glow,color:this.lookStageEnabled?'#172D36':'#151222',transparent:true,opacity:this.lookStageEnabled?.56:.45,depthWrite:false});
@@ -194,7 +203,6 @@ export class TurnScene {
         }
       }
       if(this.lookStageEnabled){
-        const {createLookStage,disposeLookStage}=await import('./look-stage');
         if(this.disposed)return;
         const stage=await createLookStage(this.renderer);
         if(this.disposed){disposeLookStage(stage);return;}
@@ -211,7 +219,7 @@ export class TurnScene {
         if(object instanceof T.Sprite)this.materialOwned.add(object.material);
       });
       if(this.disposed)return;
-      if(this.lookStageEnabled){const {createLookEnvironment}=await import('./look-environment');if(this.disposed)return;this.lookEnvironment=await createLookEnvironment(this.renderer,()=>this.disposed);if(this.disposed)return;this.scene.environment=this.lookEnvironment?.texture??null;this.scene.environmentIntensity=.35;}
+      if(this.lookStageEnabled){if(this.disposed)return;this.lookEnvironment=await createLookEnvironment(this.renderer,()=>this.disposed);if(this.disposed)return;this.scene.environment=this.lookEnvironment?.texture??null;this.scene.environmentIntensity=.35;}
       this.loading.completed=1;this.loading.label='Preparing miniature models';
       await new Promise(resolve=>setTimeout(resolve,0));
       await this.cardSurfaces?.ready;if(this.disposed)return;
@@ -329,15 +337,28 @@ export class TurnScene {
   invalidate(){this.dirty=true;}
   /** Call after setting the preview's selected cat. Resolves false on teardown,
    * failed preparation, or absent cat; no controls or account state are changed. */
-  async playEntrance(catId: string): Promise<boolean> {
+  async playEntrance(catId: string, receipt: unknown = this.view().earnedReveal): Promise<boolean> {
+    const earned = earnedRevealV4(receipt);
+    if (receipt !== undefined && (!earned || earned.itemId !== catId)) return false;
     await this.warming;
     if (this.disposed || !this.ready) return false;
     const view = this.view();
     const actor = view.actors.find(actor => (view.models?.[actor.id] ?? actor.role) === catId);
     if (!actor) return false;
     await this.ensure(actor, view.boss, view);
-    if (this.disposed || !this.puppets.has(actor.id)) return false;
+    if (this.disposed || !this.puppets.has(actor.id)
+      || !this.view().actors.some(candidate => candidate.id === actor.id
+        && (this.view().models?.[candidate.id] ?? candidate.role) === catId)) return false;
+    if (earned && this.earnedKey === earned.key) return true;
     this.entrance = { asset: catId, startedAt: this.time };
+    if (earned) {
+      this.earnedKey = earned.key;
+      const badge = this.earnedBadge ??= document.createElement('div');
+      badge.className = 'dp-earned-receipt'; badge.setAttribute('role', 'status');
+      badge.setAttribute('aria-label', 'Earned invitation');
+      badge.textContent = earned.text; badge.dataset.rarity = earned.rarity;
+      badge.hidden = false; this.host.appendChild(badge);
+    } else if (this.earnedBadge) this.earnedBadge.hidden = true;
     this.dirty = true;
     return true;
   }
@@ -382,6 +403,9 @@ export class TurnScene {
   };
   render(view:SceneView,delta=0){
     if(view.fixedTime!==undefined)this.time=view.fixedTime;
+    if(this.entrance&&!view.actors.some(actor=>(view.models?.[actor.id]??actor.role)===this.entrance!.asset)){
+      this.entrance=undefined;if(this.earnedBadge)this.earnedBadge.hidden=true;
+    }
     const ids=new Set(view.actors.map(a=>a.id));
     for(const [id,p] of this.puppets)if(!ids.has(id)||view.actors.find(a=>a.id===id)?.role!==p.role||(view.models?.[id]??p.role)!==p.asset){this.scene.remove(p.root);this.disposePuppet(p);this.puppets.delete(id);}
     this.stats.loaded=this.puppets.size;
@@ -438,7 +462,7 @@ export class TurnScene {
         if (p.actions.has('victory')) { clip = 'victory'; progress = entrance.progress; }
         p.root.position.y += entrance.lift;
         p.model.rotation.y = cardBodyYaw('party', 0, 0) + entrance.turn;
-        if (entrance.finished) this.entrance = undefined;
+        if (entrance.finished) { this.entrance = undefined; if (this.earnedBadge) this.earnedBadge.hidden = true; }
       }
       const phase=view.bossPhases?.[a.id]??1;
       if(phase!==p.bossPhase){p.phaseAt=phase>p.bossPhase?this.time:-100;p.bossPhase=phase;}
@@ -585,6 +609,7 @@ export class TurnScene {
     this.bossAtmosphere?.dispose();
     this.post?.dispose();
     this.lookEnvironment?.dispose();
+    this.earnedBadge?.remove(); this.earnedBadge = undefined;
     this.renderer.dispose();
     this.renderer.forceContextLoss();
   }

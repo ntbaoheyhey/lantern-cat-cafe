@@ -176,6 +176,14 @@ export class LookVfx {
       const sculpted = mergeGeometries([original, surface], false)!;
       original.dispose();surface.dispose();original = sculpted;
     }
+    if (kind === 'greenhouse') {
+      // A tall conservatory arch distinguishes Clover's garden from broad
+      // shields and bread covers. Keep the feet at the authored ground line.
+      original.computeBoundingBox();
+      const foot = original.boundingBox!.min.y;
+      original.scale(.82, 1.65, 1);
+      original.translate(0, foot * (1 - 1.65), 0);
+    }
     if (!family) return original;
     let addition: T.BufferGeometry;
     if (ribbons.has(kind)) {

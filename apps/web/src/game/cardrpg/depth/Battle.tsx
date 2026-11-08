@@ -8,6 +8,7 @@ import type { DepthModel } from './model';
 import { animateChapterStage, decorateChapterStage } from './chapter-stage';
 import { FeelLab } from './FeelLab';
 import { impactLabels } from '../../squad/turn3d/impact-labels';
+import { bossCueV4, presentationV4, skillReadinessV4, standingPlanText, type PresentationEventV4 } from '../../squad/turn3d/card-v4-presentation';
 import { project, appearance } from './scene-actors';
 import '../../squad/turn3d/battle-layout.css';
 
@@ -22,6 +23,8 @@ export function BattleView({ m }: { m: DepthModel }) {
   const host = useRef<HTMLDivElement>(null);
   const scene = useRef<TurnScene | null>(null);
   const skillBanner = useRef<HTMLDivElement>(null);
+  const bossCue = useRef<HTMLDivElement>(null);
+  const cueHistory = useRef<{ initial: unknown; plan: DepthModel['plan']; sequence: number; events: PresentationEventV4[] }>({ initial: null, plan: null, sequence: -1, events: [] });
   const loadingText = useRef<HTMLSpanElement>(null);
   const loadingProgress = useRef<HTMLProgressElement>(null);
   const plates = useRef(new Map<string, HTMLDivElement>());
@@ -33,8 +36,21 @@ export function BattleView({ m }: { m: DepthModel }) {
   useEffect(() => { m.audio.useBrowserPreferences(!m.offline); setVolume(m.audio.volume); }, [m]);
   const battle = m.visualBattle ?? lastBattle.current;
   lastBattle.current = battle;
-  view.current = { actors: project(battle), currentId: m.plan?.actorId ?? R.currentActor(battle)?.id ?? null, frame: null,
-    models: Object.fromEntries(battle.actors.map(actor => [actor.id, actor.catalogId])), warmModelIds: MODEL_IDS, appearance,
+  const v4 = presentationV4(battle);
+  const history = cueHistory.current;
+  if (history.initial !== battle.initial) {
+    history.initial = battle.initial; history.sequence = v4?.events.at(-1)?.sequence ?? -1;
+    history.events = []; history.plan = m.plan;
+  } else if (history.plan !== m.plan) {
+    history.events = m.plan ? v4?.events.filter(event => event.sequence > history.sequence) ?? [] : [];
+    history.sequence = v4?.events.at(-1)?.sequence ?? -1; history.plan = m.plan;
+  }
+  // Resolve costume metadata when React receives a battle snapshot. The GPU
+  // loop otherwise repeats catalog filters and object copies for every cat.
+  const actors = project(battle);
+  const appearances = new Map(actors.map(actor => [actor.id, appearance(actor)]));
+  view.current = { actors, currentId: m.plan?.actorId ?? R.currentActor(battle)?.id ?? null, frame: null,
+    models: Object.fromEntries(battle.actors.map(actor => [actor.id, actor.catalogId])), warmModelIds: MODEL_IDS, appearance: actor => appearances.get(actor.id) ?? {},
     decorateStage: decorateChapterStage, animateStage: animateChapterStage,
     autoBattle: true, effectOnly: !!m.galleryBattle && m.galleryEffectOnly,
     cardStatuses: Object.fromEntries(battle.actors.map(actor => [actor.id, actor.statuses.map(status => status.id)])),
@@ -67,6 +83,12 @@ export function BattleView({ m }: { m: DepthModel }) {
       m.tick(last ? Math.min(100, now - last) : 0); last = now;
       if (skillBanner.current) {
         skillBanner.current.hidden = !m.plan || m.animationAt >= 600 || m.galleryEffectOnly;
+      }
+      if (bossCue.current) {
+        const cue = m.plan && !m.galleryEffectOnly ? bossCueV4(cueHistory.current.events, m.animationAt,
+          m.plan.beats[2]!.start, m.plan.duration) : undefined;
+        bossCue.current.hidden = !cue;
+        if (cue && bossCue.current.textContent !== cue.event.text) bossCue.current.textContent = cue.event.text;
       }
       const loading = scene.current?.loading;
       if (loading && loadingText.current && loadingText.current.textContent !== loading.label) {
@@ -107,7 +129,7 @@ export function BattleView({ m }: { m: DepthModel }) {
       && (event.amount > 0 || event.type === 'death')),
   })).filter(result => result.labels.length) : [], [m.plan, battle.actors]);
   const lowHealth = battle.actors.some(candidate => candidate.side === 'party' && candidate.hp > 0 && candidate.hp / candidate.maxHp <= .25);
-  return <section className={`dp-battle ${m.showBattle ? '' : 'dp-hidden'}`} aria-hidden={!m.showBattle} inert={!m.showBattle}>
+  return <section className={`dp-battle ${v4 ? 'dp-battle-v4' : ''} ${m.showBattle ? '' : 'dp-hidden'}`} aria-hidden={!m.showBattle} inert={!m.showBattle}>
     <header className="dp-battle-top"><div><small>{m.replay ? 'Recorded replay' : m.tutorialBattle ? 'Practice table' : R.CHAPTERS[battle.chapter - 1]!.name}</small><h1>Round {battle.round}</h1></div>
       <label>Speed<select aria-label="Playback speed" value={m.state.settings.speed} onChange={event => { m.state.settings.speed = Number(event.target.value); m.notify(); }}>{[1, 2, 4].map(speed => <option key={speed} value={speed}>{speed}×</option>)}</select></label>
       <button onClick={() => { m.paused = !m.paused; m.notify(false); }}>{m.paused ? 'Resume' : 'Pause'}</button>
@@ -118,8 +140,13 @@ export function BattleView({ m }: { m: DepthModel }) {
       <button onClick={() => setLogOpen(!logOpen)}>Battle log</button><button onClick={() => m.leave()}>Leave table</button>
     </header>
     <div className="dp-roundbar">{battle.queue.map(id => { const queued = battle.actors.find(candidate => candidate.id === id)!; return <span className={id === actor?.id ? 'current' : ''} key={id}><img src={portrait(queued.catalogId)} alt="" />{queued.name}</span>; })}</div>
+    {v4 && <div className="dp-v4-plan" aria-label="Crew and standing plan"><span>{standingPlanText(v4)}</span>
+      {v4.events.filter(event => event.kind === 'crew-active').map(event => <span key={event.sequence} title={event.text}>
+        {event.crew === 'door' ? 'Door' : event.crew === 'kettle' ? 'Kettle' : event.crew === 'table' ? 'Table' : 'Lantern'} team · {event.marks} marks
+      </span>)}<small>Actions are automatic</small></div>}
     {m.offline && <FeelLab m={m} />}
     <div className={`dp-arena chapter-${battle.chapter} ${lowHealth ? 'dp-low-health' : ''} ${m.galleryBattle && m.galleryEffectOnly ? 'dp-effect-only' : ''}`}><div className="dp-canvas" ref={host} />
+      {v4 && <div className="dp-v4-boss-cue" ref={bossCue} role="status" aria-label="Boss event" hidden />}
       {m.plan?.ultimate && actor?.side === 'party' && !m.galleryEffectOnly && <aside className={`dp-ultimate-moment dp-ultimate-${actor.catalogId}`} aria-label={`${actor.name} ultimate`}>
         <img src={portrait(actor.catalogId)} alt="" /><div><strong>{actor.name}</strong><span>{m.plan.name}</span></div>
         <button onClick={() => m.finishMoment()}>Skip moment</button>
@@ -141,7 +168,10 @@ export function BattleView({ m }: { m: DepthModel }) {
     <div className="dp-party">{battle.actors.filter(candidate => candidate.side === 'party').map(cat => <div className={`dp-party-card ${actor?.id === cat.id ? 'current' : ''} ${cat.hp > 0 && cat.hp / cat.maxHp <= .25 ? 'dp-health-critical' : ''}`} key={cat.id} data-hp-plate>
       <img src={portrait(cat.catalogId)} alt="" />
       <div className="dp-party-health"><span><b>{cat.name}</b><strong>{cat.hp}/{cat.maxHp} HP</strong></span><progress value={cat.hp} max={cat.maxHp} aria-label={`${cat.name} health`} /><Statuses actor={cat} /></div>
-      <span className="dp-charge" style={{ '--charge': `${cat.charge}%` } as CSSProperties} title={`Ultimate charge ${cat.charge}/100`}><small>{cat.charge}</small></span>
+      {v4 ? <div className="dp-v4-readiness" aria-label={`${cat.name} cooldowns`}><small>{cat.row === 'front' ? 'Front row' : 'Back row'}</small>
+        {cat.skills.map(id => { const skill = R.SKILLS[id]; if (!skill) return null; const ready = skillReadinessV4(cat, skill);
+          return <span key={id} className={ready === 'Ready' ? 'is-ready' : ''} title={`${skill.name}: ${ready}`}><span className="dp-v4-skill-name">{skill.name}</span><b>{ready}</b></span>; })}
+      </div> : <span className="dp-charge" style={{ '--charge': `${cat.charge}%` } as CSSProperties} title={`Ultimate charge ${cat.charge}/100`}><small>{cat.charge}</small></span>}
     </div>)}</div>
     <div className="dp-action-caption" role="status"><b>{m.paused ? 'Paused' : m.impactVisible && !m.galleryBattle && m.momentNote || actor?.name}</b>
       <div className="dp-skill-banner" ref={skillBanner} hidden={!m.plan || m.animationAt >= 600 || m.galleryEffectOnly}>

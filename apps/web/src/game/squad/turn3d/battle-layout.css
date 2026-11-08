@@ -229,3 +229,18 @@
 [data-look-v2="true"] .dp-battle .dp-log {
  color:var(--look-paper);background:color-mix(in srgb,var(--look-night),transparent 3%);border-color:var(--look-honey);box-shadow:var(--look-shadow);
 }
+
+/* A4 presentation receipts: these never schedule or resolve an action. */
+.dp-v4-plan{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:8px 12px;color:#f7e9ca;background:#172e36;border:1px solid #6f807d;border-radius:8px;font-size:12px}
+.dp-v4-plan>span:not(:first-child){color:#c6e4d8}.dp-v4-plan>small{margin-left:auto;color:#d5ded9}
+.dp-battle-v4 .dp-party{height:auto;min-height:105px;flex:none}
+.dp-battle-v4 .dp-party-card{display:grid;grid-template-columns:32px minmax(0,1fr);height:auto;align-content:start;align-items:center;gap:4px 8px;padding:7px 10px}
+.dp-battle-v4 .dp-party-card>img{width:32px;height:32px}
+.dp-battle-v4 .dp-party-health{min-width:0}
+.dp-v4-readiness{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:3px 10px;min-width:0;font-size:10px;line-height:1.35;color:#d5ded9}
+.dp-v4-readiness>small{grid-column:1/-1;font-size:9px;color:#ebd5aa}
+.dp-v4-readiness>span{display:flex;gap:4px;min-width:0;white-space:nowrap}.dp-v4-readiness .dp-v4-skill-name{overflow:hidden;text-overflow:ellipsis;min-width:0}.dp-v4-readiness b{flex:none}.dp-v4-readiness .is-ready{color:#bde8ce}
+.dp-v4-boss-cue{position:absolute;top:16px;left:50%;transform:translateX(-50%);width:min(560px,85%);box-sizing:border-box;padding:10px 16px;text-align:center;color:#fff2d6;background:#172e36f2;border:1px solid #efbf70;border-radius:10px;pointer-events:none;z-index:4;font-size:14px;line-height:1.4}
+.dp-v4-boss-cue[hidden]{display:none}
+@media(max-width:1100px){.dp-v4-readiness{font-size:9px;gap:3px 6px}.dp-v4-plan{font-size:11px}.dp-battle-v4 .dp-party-card{padding:5px 7px}.dp-battle-v4 .dp-party{min-height:98px}}
+.dp-earned-receipt{position:absolute;inset:auto 12px 12px;z-index:3;padding:10px 14px;color:#fff2d6;background:#172e36f2;border:1px solid #efbf70;border-radius:8px;pointer-events:none;font-size:12px;line-height:1.4;text-align:center}.dp-earned-receipt[hidden]{display:none}
