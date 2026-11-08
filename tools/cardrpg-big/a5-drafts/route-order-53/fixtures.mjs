@@ -27,7 +27,7 @@ try {
   await save(mode,'route',s,'enter','.dp-node:enabled',accept(R.enterNode(s,R.availableNodes(s.run)[0].id)));
   for(let i=0;i<30&&!s.run.complete;i++) {
    const run=s.run;
-   if(run.battle) {s=accept(R.commitPreparation(s));s.run.battle=R.playBattle(s.run.battle,'auto');commands.push({mode,kind:'automatic-fixture-battle',seed:run.battle.initial.seed,result:s.run.battle.result});s=ack(accept(R.finishEncounter(s)));continue;}
+   if(run.battle) {if(run.gameplayV4)s=accept(R.commitPreparation(s));s.run.battle=R.playBattle(s.run.battle,'auto');commands.push({mode,kind:'automatic-fixture-battle',seed:run.battle.initial.seed,result:s.run.battle.result});s=ack(accept(R.finishEncounter(s)));continue;}
    if(run.rewardChoices.length) {const next=accept(R.chooseReward(s,run.rewardChoices[0]));if(!fixtures.some(f=>f.mode===mode&&f.name==='reward'))await save(mode,'reward',s,'reward','.dp-reward',next);s=ack(next);continue;}
    if(run.current) {
     const node=run.nodes.find(n=>n.id===run.current);let choice,selector;

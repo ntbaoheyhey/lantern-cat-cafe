@@ -1,0 +1,1 @@
+Fixture attempt1 completed ON route generation but called V4-only commitPreparation for an OFF battle. Original source/log retained. Retry only guards this command by run.gameplayV4, as production DepthModel.fight does. No runtime, registered input, seed, rule, numeric gate or UI draft changed. Fixture generation is not acceptance sampling.

@@ -88,3 +88,5 @@ Remaining work: B1/B2 numeric closure and display calibration; fresh registered 
 [Home star crews](E2-HOME-CREW-PLANS.md): available one-seat swaps and capped-reward copy;8isolated units,24ON/OFF scenarios/48captures and six gatesPASS. Exact adopted/prototype ON20,929,441bytes/SHA2c318627, scopedcontrast6.726. Six targeted x1 continuations earn the event job star; original Home02 cadenceMISS remains.
 
 [Registered forecast precision50](b1/display-precision-50/RESULTS.md) keeps all384cases and exact1–50prefixes; unchanged20seed forecasts correlate0.850/0.691/0.733 against separateTRAIN51–500. Eachchapter meets0.6, but case averages do not validate per-item percentages or static utility scores. Full500piece results retain63misses/worst88.8pp; no runtime or fresh-acceptance change.
+
+[Duration52](b1/reply-duration-52/RESULTS.md): corrected reply policy with bossHP1.25/1.5/2 remains rejected: worst piece gains42/78/44pp; after-arm median17/20/27rounds. All384TRAIN50pairs perarm and original negative pairs retained. No adoption or fresh acceptance.
