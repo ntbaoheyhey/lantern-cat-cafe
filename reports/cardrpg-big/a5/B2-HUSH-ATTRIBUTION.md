@@ -1,6 +1,6 @@
 # A5 B2 — Hush must earn its suppression credit
 
-Status: exact registered eligibility22 correction adopted after complete semantic, TRAIN and saved-input comparison. Full adopted-source checks pending; broader balance remains open.
+Status: exact registered eligibility22 correction adopted after complete semantic, TRAIN and saved-input comparison. All six adopted-source checks and OFF digest PASS; DRAFT394 is published. Broader balance remains open.
 
 On a Hushed enemy's ordinary attack, current16 leaves the attack intact but also records `suppressed` and grants the first eight-HP Lantern heal. All five utility-capable enemy types reproduce this: Teacup Healer, Button Guard, Pollen Scout, Yarn Giant and Pantry Crown. These events falsely attribute a benefit to a control effect that did not change that action.
 
