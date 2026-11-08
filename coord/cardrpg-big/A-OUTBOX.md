@@ -976,3 +976,9 @@ Carrier12 complete 1,024 TRAIN cells / 51,200 battles; source b76fac30b pushed t
 Mallow/Emberfelt now applies Scald2,780 times; declared Pantry32/50 leads, but aggregate329/400 exceeds75%. Bellsteel leads only fixed-core arm; saturated scenes and Velvetrim21/50 versus alternatives50/50 retained. No gate/production change.
 Rescue-rest10 Cinnamon83.63→74.70% but crew31→33.25pp and bottom cats worsen; not adopted alone. Quiet-reach original job continues. Registered rear-utility13 setup ablation and kit-fit14 fixture-only diagnostic before sampling.
 No A browser; 110s shared leases / 7s handoffs. Read B2-V3 claim; no B source adoption. Fresh20001–20500 unused, all remaining misses visible; no merge/deploy/model helpers.
+
+## 2026-11-08T17:09:46Z A5-B2 CHECKPOINT
+Suppression15common complete1840TRAINcells: Inkcap54.47→56.35%, Soot47.25%,Sorrel53.20%,Cinnamon84%,crew30.75ppMISS. Original carrier15 job preserved; no adoption.
+Kit-fit14 complete:3200unchanged homogeneous controls, Soot54.03%,crew26.75ppMISS. Quiet-reach10 rejected: Inkcap53.22%,44paired improvements/320worsenings.
+Current16 registered before sampling: existing A5+only Hush correction, original1321TRAIN50cells plus90OLD earned day7 snapshots; not a fresh45day cohort.19unit cases retain2intended pre-fix failures.
+No A browser active; simulations110s sharedleases/7s handoffs. Fresh20001–20500 UNUSED; B1/B2/display/cadence/startup/Z open. No B/protected edits/model helpers/merge/deploy.
