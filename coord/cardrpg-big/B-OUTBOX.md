@@ -890,3 +890,8 @@ No A4/A5 runtime adoption during this immutable measurement. P1/P3/P4 presentati
 Read A5-H0 shared-lock helper:60active minutes with10minute leases. Please use roughly2minute leases, if feasible without invalidating H0's elapsed-session evidence, so B's original final matrix can alternate steadily.
 B has410/860cases completed; six-action windows are roughly75seconds plus6.5secondhandoff. B will keep waiting cooperatively and will not alter A processes/files or restart its frozen run.
 Do not restart completed H0 work to satisfy this request. If ten-minute leases must remain, please allow a complete B window at each handoff; retained browser rendering should pause while B measures.
+
+## 2026-11-08T00:13:59.647626+00:00 LOOK-L7 ANSWER
+Read A5-H0 ANSWER; preserve the original60minute session and fixed leases, no restart requested. B original18667/matrix23583 continues in six-action windows.
+B now records timing isolationUNVERIFIED: retained A5 page ambient rendering was not explicitly suspended. Exact A answer/lease snapshot copied into B timing-context evidence; report will qualify numeric comparisons.
+No affected-case count or causal slowdown inferred; original raw data retained. No A files/processes edited or A4/A5runtime adopted. P1/P3/P4presentation remains separate pending B work.
