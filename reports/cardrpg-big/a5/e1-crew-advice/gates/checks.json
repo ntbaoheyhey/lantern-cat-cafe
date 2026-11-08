@@ -1,0 +1,113 @@
+[
+  {
+    "name": "typecheck",
+    "attempt": 1,
+    "code": 0,
+    "head": "290061918636c89d98790a6fdd7174c1221a4404",
+    "scope": "complete",
+    "command": [
+      "pnpm",
+      "typecheck"
+    ],
+    "started": "2026-11-08T19:02:00.675Z",
+    "ended": "2026-11-08T19:02:10.233Z",
+    "log": "reports/cardrpg-big/a5/e1-crew-advice/gates/typecheck-attempt-1.log",
+    "sha256": "51a42e236a32504b0d88a3bf68105a49f4443b7656a01bba4c17d18c75eeb896",
+    "counts": []
+  },
+  {
+    "name": "lint",
+    "attempt": 1,
+    "code": 0,
+    "head": "290061918636c89d98790a6fdd7174c1221a4404",
+    "scope": "complete",
+    "command": [
+      "pnpm",
+      "lint"
+    ],
+    "started": "2026-11-08T19:02:10.234Z",
+    "ended": "2026-11-08T19:02:19.164Z",
+    "log": "reports/cardrpg-big/a5/e1-crew-advice/gates/lint-attempt-1.log",
+    "sha256": "a53f38f90231d3f94787cba09e842aed97ef41aed55d1a0351b112aabe7beea1",
+    "counts": []
+  },
+  {
+    "name": "web-unit",
+    "attempt": 1,
+    "code": 0,
+    "head": "290061918636c89d98790a6fdd7174c1221a4404",
+    "scope": "complete",
+    "command": [
+      "pnpm",
+      "--filter",
+      "@taskbar-hero/web",
+      "test"
+    ],
+    "started": "2026-11-08T19:02:19.164Z",
+    "ended": "2026-11-08T19:02:35.807Z",
+    "log": "reports/cardrpg-big/a5/e1-crew-advice/gates/web-unit-attempt-1.log",
+    "sha256": "c72a28005ac9d390392e091c4b80dde2d6d472713277a72ecda5b2d3c23a77cf",
+    "counts": [
+      " Test Files  178 passed (178)",
+      "      Tests  1746 passed (1746)"
+    ]
+  },
+  {
+    "name": "rules",
+    "attempt": 1,
+    "code": 0,
+    "head": "290061918636c89d98790a6fdd7174c1221a4404",
+    "scope": "complete",
+    "command": [
+      "pnpm",
+      "--filter",
+      "@taskbar-hero/game-rules",
+      "test"
+    ],
+    "started": "2026-11-08T19:02:35.808Z",
+    "ended": "2026-11-08T19:02:59.970Z",
+    "log": "reports/cardrpg-big/a5/e1-crew-advice/gates/rules-attempt-1.log",
+    "sha256": "47aebbab884376a9b1f3d519af3dc6827912a1f700079c6b2e75b72fde4ffb3b",
+    "counts": [
+      " Test Files  71 passed | 3 skipped (74)",
+      "      Tests  1190 passed | 2 expected fail | 11 skipped (1203)"
+    ]
+  },
+  {
+    "name": "e2e",
+    "attempt": 1,
+    "code": 0,
+    "head": "290061918636c89d98790a6fdd7174c1221a4404",
+    "scope": "complete",
+    "command": [
+      "pnpm",
+      "--filter",
+      "@taskbar-hero/web",
+      "test:e2e",
+      "--workers=4"
+    ],
+    "started": "2026-11-08T19:02:59.970Z",
+    "ended": "2026-11-08T19:05:00.898Z",
+    "log": "reports/cardrpg-big/a5/e1-crew-advice/gates/e2e-attempt-1.log",
+    "sha256": "9f57244c4cc84bdf6715721a4280fb4e95c4dd4c6635ff1b5e662a4d70e44c02",
+    "counts": [
+      "  421 passed (2.0m)"
+    ]
+  },
+  {
+    "name": "build",
+    "attempt": 1,
+    "code": 0,
+    "head": "290061918636c89d98790a6fdd7174c1221a4404",
+    "scope": "complete",
+    "command": [
+      "pnpm",
+      "build"
+    ],
+    "started": "2026-11-08T19:05:00.899Z",
+    "ended": "2026-11-08T19:05:10.677Z",
+    "log": "reports/cardrpg-big/a5/e1-crew-advice/gates/build-attempt-1.log",
+    "sha256": "ed074143b3180b80e083760dccf16d79eb433f6a9eabee9ea73528a68202b852",
+    "counts": []
+  }
+]

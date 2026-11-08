@@ -39,3 +39,7 @@ Reviewed [offline artifact](e1/artifact/index.html): 20914389bytes, SHA-256 bdbd
 The retry suggestion improves the fixed10-seed check from0/10to1/10; this is not the required≥70%day7gate. B1/B2 combat gates, full progression acceptance, E2/E3 engagement and Z remain open. Result contributions are observations, not proof that one item caused the win. Bot/screenshots are proxies, not a human playtest.
 
 No merge, deployment, B renderer adoption, wallet use or on-chain issuance. Existing version1 B contracts stay unchanged.
+
+## Owned-reserve follow-up
+
+The later [reserve advice report](E1-RESERVE-ADVICE.md) closes real-click eligibility at unchanged challenge difficulty. It retains the original confounded gain and its correction; it does not claim a population win-rate improvement.
