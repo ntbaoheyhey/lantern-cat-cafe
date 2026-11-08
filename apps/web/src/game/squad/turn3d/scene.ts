@@ -28,6 +28,7 @@ import { applyCardLighting } from './card-lighting';
 import { CardSurfaces } from './card-surfaces';
 import { CardEffects, cardRecipeFor } from './card-effects';
 import { createCardClips, cardIdleFrame, cardTravelFraction, cardHitClip, cardSkillMotion } from './card-motion';
+import { isReadableBattle } from './look-b2';
 import { cardBodyYaw, cardFormation, cardFrameHeight, focusCardHead } from './card-staging';
 import { loadingFrame, warmScene } from './loading';
 import { CardUtensil } from './card-utensils';
@@ -37,6 +38,7 @@ import { earnedRevealV4 } from './card-v4-presentation';
 
 export interface SceneView {
   earnedReveal?: unknown;
+  playbackSpeed?: number;
   decorateStage?: (stage: T.Group, cancelled?: () => boolean) => void | Promise<void>;
   animateStage?: (stage: T.Group, time: number, reducedMotion: boolean) => void;
   autoBattle?: boolean;
@@ -412,7 +414,7 @@ export class TurnScene {
     for(const a of view.actors)if(!this.puppets.has(a.id)&&!this.pending.has(a.id))void this.ensure(a,view.boss,view);
     const frame=view.frame, cardRecipe=view.autoBattle?cardRecipeFor(frame,view.actors):undefined, source=frame?this.puppets.get(frame.plan.actorId):undefined;
     const targets=frame?frame.plan.targetIds.map(id=>this.puppets.get(id)).filter((p):p is Puppet=>!!p):[];
-    for(const a of view.actors){const p=this.puppets.get(a.id);if(!p)continue;const slot=view.model?this.zero:view.autoBattle?cardFormation(a,view.rows?.[a.id]):formationPoint(a,view.boss);if(!view.autoBattle||a.hp>0)p.base.set(slot.x,slot.y,slot.z);p.root.position.copy(p.base);p.root.scale.setScalar(view.model?1:figureScale(a.role,a.side));p.model.rotation.y=view.model?view.model.angle:view.autoBattle?cardBodyYaw(a.side,0,0):restYaw(a.side);
+    for(const a of view.actors){const p=this.puppets.get(a.id);if(!p)continue;const slot=view.model?this.zero:view.autoBattle?cardFormation(a,view.rows?.[a.id]):formationPoint(a,view.boss);if(!view.autoBattle||a.hp>0)p.base.set(slot.x,slot.y,slot.z);p.root.position.copy(p.base);p.root.scale.setScalar(view.model?1:figureScale(a.role,a.side)*(isReadableBattle()&&view.autoBattle?(a.role==='yarn'?1.25:a.side==='party'?1.25:1.38):1));p.model.rotation.y=view.model?view.model.angle:view.autoBattle?cardBodyYaw(a.side,0,0):restYaw(a.side);
       if (view.tableau) {
         p.base.set((a.slot - 1) * 2.1, 0, a.slot === 1 ? -.35 : .3);
         p.root.position.copy(p.base);
@@ -506,16 +508,20 @@ export class TurnScene {
     view.targetIds.slice(0,12).forEach((id,i)=>{const p=this.puppets.get(id),r=this.targetRings[i];if(p&&r){r.visible=true;r.position.set(p.base.x,.05,p.base.z);r.scale.setScalar(1.25);r.material.color.set(view.legalIds.includes(id)?TEAL:'#ec8996');}});
     this.camera.position.set(0,7.2,11.6);this.cameraTarget.set(0,.7,0);this.camera.zoom=!view.autoBattle&&view.camera==='close'?1.05:1;
     if(this.lookStageEnabled&&!view.model){this.camera.position.set(0,6.4,12);this.cameraTarget.set(0,1.1,0);}
+    const readable=isReadableBattle()&&view.autoBattle&&!view.model;
+    if(readable){this.camera.position.set(0,4.7,12);this.cameraTarget.set(0,view.boss?1.25:1.16,0);}
     const distance=this.camera.position.distanceTo(this.cameraTarget),frameHeight=view.model?(this.lookStageEnabled?(view.model.role==='yarn'?4.6:3.3):(view.model.role==='yarn'?3.3:2.25)):view.tableau?Math.max(4,7.5/this.camera.aspect):view.autoBattle?cardFrameHeight(this.camera.aspect,view.camera==='close'?'close':view.camera==='far'?'far':'wide'):stageHeight(this.camera.aspect);
     this.camera.fov=T.MathUtils.radToDeg(2*Math.atan(frameHeight/2/distance));
     if(view.model){this.camera.position.set(0,3.7,11.3);this.cameraTarget.y=view.model.role==='yarn'?1.35:.94;this.camera.zoom=1.02;}
     if(view.camera==='overhead')this.camera.position.set(0,13,6);
 
-    if(frame&&!view.reducedMotion&&!view.model){const push=view.autoBattle?Math.sin(frame.actionProgress*Math.PI)*(frame.plan.ultimate?1.2:frame.plan.events.some(event=>event.type==='death')?.9:.35):frame.camera||0;const crowded=view.actors.filter(a=>a.side==='enemy'&&a.hp>0).length>=5;this.camera.zoom+=push*(crowded?.025:.045);const focus=source?.base??this.zero;this.cameraTarget.x=focus.x*push*(crowded?.025:.06);const shake=frame.shake||0;this.camera.position.x+=Math.sin(frame.elapsed*.13)*shake*.035;this.camera.position.y+=Math.cos(frame.elapsed*.17)*shake*.025;}
-    if(frame&&!view.reducedMotion&&!view.model){const shot=cardRecipe?.shot??EFFECT_DIRECTION[frame.plan.skillId]?.shot,motion=frame.plan.ultimate?.22:.08,phase=Math.sin(frame.actionProgress*Math.PI);if(shot==='left'||shot==='right')this.camera.position.x+=phase*motion*(shot==='left'?-1:1);if(shot==='rise')this.camera.position.y+=phase*motion;}
+    if(frame&&!view.reducedMotion&&!view.model&&(!readable||(view.playbackSpeed??1)<4)){const push=view.autoBattle?Math.sin(frame.actionProgress*Math.PI)*(frame.plan.ultimate?1.2:frame.plan.events.some(event=>event.type==='death')?.9:.35):frame.camera||0;const crowded=view.actors.filter(a=>a.side==='enemy'&&a.hp>0).length>=5;this.camera.zoom+=push*(crowded?.025:.045);const focus=source?.base??this.zero;this.cameraTarget.x=focus.x*push*(crowded?.025:.06);const shake=frame.shake||0;this.camera.position.x+=Math.sin(frame.elapsed*.13)*shake*.035;this.camera.position.y+=Math.cos(frame.elapsed*.17)*shake*.025;}
+    if(frame&&!view.reducedMotion&&!view.model&&(!readable||(view.playbackSpeed??1)<4)){const shot=cardRecipe?.shot??EFFECT_DIRECTION[frame.plan.skillId]?.shot,motion=frame.plan.ultimate?.22:.08,phase=Math.sin(frame.actionProgress*Math.PI);if(shot==='left'||shot==='right')this.camera.position.x+=phase*motion*(shot==='left'?-1:1);if(shot==='rise')this.camera.position.y+=phase*motion;}
+    if(readable&&!frame&&!view.reducedMotion&&!view.paused&&(view.playbackSpeed??1)<4){this.camera.position.x+=Math.sin(this.time*.21)*.045;this.cameraTarget.x+=Math.sin(this.time*.17)*.025;}
     if(frame?.plan.skillId==='victory'&&!view.reducedMotion){this.camera.position.x=Math.sin(frame.actionProgress*Math.PI)*1.25;this.camera.position.y+=Math.sin(frame.actionProgress*Math.PI)*.3;}
     if (this.entrance && !frame) this.camera.zoom += cardEntrancePose(this.time - this.entrance.startedAt, view.reducedMotion).zoom;
-    if(bossCue&&!view.model&&!view.reducedMotion){const pulse=Math.sin(bossCue.progress*Math.PI);this.camera.zoom+=pulse*.03;this.cameraTarget.y+=pulse*.08;}
+    if(bossCue&&!view.model&&!view.reducedMotion&&(!readable||(view.playbackSpeed??1)<4)){const pulse=Math.sin(bossCue.progress*Math.PI);this.camera.zoom+=pulse*.03;this.cameraTarget.y+=pulse*.08;}
+    if(readable)this.camera.zoom=Math.min(1.06,this.camera.zoom);
     this.camera.lookAt(this.cameraTarget);this.camera.updateProjectionMatrix();this.camera.updateMatrixWorld();
     if('setFocusDistance' in this.post)this.post.setFocusDistance(this.camera.position.distanceTo(this.cameraTarget));
     if(view.autoBattle && !view.model) {
@@ -564,7 +570,7 @@ export class TurnScene {
       const top=screen(center.clone().add(new T.Vector3(0,.45,0))),foot=screen(p.root.position.clone());
       const aTop=p.root.position.clone().add(new T.Vector3(0,p.height*p.root.scale.y,0));const ideal=screen(aTop);ideal.y-=8;
       projected.push({id:a.id,x:top.x,y:top.y,labelX:ideal.x,labelY:ideal.y,footY:foot.y,visible:true});
-      labels.push({id:a.id,x:ideal.x,y:ideal.y,height:view.autoBattle?48:a.side==='enemy'?a.statuses.length?41:29:a.statuses.length?30:18,head:screenBounds(p.model,this.camera,this.width,this.height)});
+      labels.push({id:a.id,x:ideal.x,y:ideal.y,height:view.autoBattle?(readable?30:48):a.side==='enemy'?a.statuses.length?41:29:a.statuses.length?30:18,head:screenBounds(p.model,this.camera,this.width,this.height)});
     }
     const obstacles = view.autoBattle ? view.actors.filter(actor => actor.side === 'party' && actor.hp > 0)
       .flatMap(actor => { const puppet = this.puppets.get(actor.id); return puppet ? [screenBounds(puppet.model,this.camera,this.width,this.height)] : []; }) : [];

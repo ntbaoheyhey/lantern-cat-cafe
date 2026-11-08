@@ -9,6 +9,7 @@ import { ReviewStudio, FrameMeter } from '../cardrpg-big2/ReviewStudio';
 import '../cardrpg-big/demo-tools.css';
 import '../../apps/web/src/game/cardrpg/look-tokens.css';
 import { isLookV2, setLookV2, subscribeLookV2 } from '../../apps/web/src/game/squad/turn3d/look-v2';
+import { isReadableBattle, setReadableBattle, subscribeReadableBattle } from '../../apps/web/src/game/squad/turn3d/look-b2';
 import { LookAtelier } from './LookAtelier';
 setLookV2(true);
 
@@ -23,6 +24,7 @@ function DemoTools({ open }: { open: (kind: Panel['kind']) => void }) {
 }
 
 function Demo() {
+  const readable = useSyncExternalStore(subscribeReadableBattle, isReadableBattle);
   const look = useSyncExternalStore(subscribeLookV2, isLookV2);
   const [header, setHeader] = useState<HTMLElement | null>(null);
   const [panel, setPanel] = useState<Panel | null>(null);
@@ -60,6 +62,7 @@ function Demo() {
     <DepthApp offline />
     {header && createPortal(<div className="dp-demo-tools" aria-label="Demo tools">
       {!panel && <DemoTools open={open} />}
+      <button aria-label="B2 before/after" aria-pressed={readable} onClick={() => setReadableBattle(!readable)}>B2: {readable ? 'After' : 'Before'}</button>
       <button aria-label="Look A/B" aria-pressed={look} onClick={() => setLookV2(!look)}>Look: {look ? 'Atelier' : 'Classic'}</button>
       <button aria-pressed={meter} onClick={() => setMeter(!meter)}>Frame meter</button>
     </div>, header)}

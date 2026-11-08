@@ -244,3 +244,17 @@
 .dp-v4-boss-cue[hidden]{display:none}
 @media(max-width:1100px){.dp-v4-readiness{font-size:9px;gap:3px 6px}.dp-v4-plan{font-size:11px}.dp-battle-v4 .dp-party-card{padding:5px 7px}.dp-battle-v4 .dp-party{min-height:98px}}
 .dp-earned-receipt{position:absolute;inset:auto 12px 12px;z-index:3;padding:10px 14px;color:#fff2d6;background:#172e36f2;border:1px solid #efbf70;border-radius:8px;pointer-events:none;font-size:12px;line-height:1.4;text-align:center}.dp-earned-receipt[hidden]{display:none}
+/* B2 labels retain the allocator's width but use less vertical space. */
+.dp-readable .dp-world-plate{padding:3px 5px;font-size:10px;line-height:1.2}
+.dp-readable .dp-world-plate b{font-size:10px}
+.dp-readable .dp-world-plate .dp-intent{display:none}
+.dp-readable .dp-world-plate:hover .dp-intent{display:block}
+.dp-readable .dp-world-plate .dp-statuses:empty{display:none}
+
+.dp-readable .dp-world-plate{min-height:0;height:auto;max-height:46px}
+.dp-readable .dp-world-plate:has(.dp-boss-phase){max-height:54px}
+
+.dp-readable .dp-v4-boss-cue{top:4px;left:50%;transform:translateX(-50%);width:auto;max-width:55%;padding:4px 14px;font-size:11px;line-height:1.3;min-height:0}
+.dp-readable .dp-ultimate-moment{width:132px;padding:5px;gap:5px;top:8px}
+.dp-readable .dp-ultimate-moment img{width:35px;height:44px}
+.dp-readable .dp-ultimate-moment button{font-size:10px;padding:3px 6px}
