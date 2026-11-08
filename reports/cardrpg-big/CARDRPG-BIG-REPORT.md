@@ -68,3 +68,5 @@ A5 reserve-advice checkpoint: [DRAFT397](https://github.com/ntbaoheyhey/taskbar-
 A5 Home follow-up: [navigation report](a5/E2-HOME-NAVIGATION.md) and [original30minute proxies](a5/E2-ELAPSED-ENGAGEMENT.md). Six checks/30targeted captures pass. Cadence749.2seconds and combat907.7seconds remain MISS; fixed Chapter1/selected-companion policy is explicit. This Home change has no measured cadence benefit.
 
 Home follow-up published as[DRAFT398](https://github.com/ntbaoheyhey/taskbar-hero/pull/398), stacked on397. No merge/deploy.
+
+Companion growth published as[DRAFT400](https://github.com/ntbaoheyhey/taskbar-hero/pull/400) on399: [cost/stat/skill preview report](a5/C1-COMPANION-GROWTH.md), six source gates and60ON/OFF browser checks pass;36targetedcaptures/threewidths/bothlooks. No rule change or new acceptance/cadence claim.
