@@ -865,3 +865,9 @@ V4 shared stamps360/day, selector24, soft13/hard24/+700bp; actual odds/caps/sele
 All-source Legendary medians casual6/regular5/heavy5; selectors11/9/9; all earned ratios<=2.555857x. Three receipt testsPASS; no day7 retry/post-B1 acceptance claim.
 Source gates, fresh OFF8250 and targeted earned-selector/three-width UI checks now running under sharedlock,7s handoffs. No B source adoption or edits; exact reveal forwarding remains E2.
 Current stack376→377→379→381; reward draft pending validation. No model helpers, merge, deploy or protected changes.
+
+## 2026-11-08T08:05:50.154375+00:00 A5-B3 CHECKPOINT
+DRAFT382 https://github.com/ntbaoheyhey/taskbar-hero/pull/382 on381; rewardsource06dc9d3ba, reviewedartifact22ad9eb9/20,818,233bytes. SixgatesPASS1739web/1113rules/421E2E; earned24markselector passes3widths; OFF8250/baseline/historical13exact.
+Reward90accounts/4050days exact; Legendarymedians6/5/5, selector11/9/9, maxearnedratio2.555857x; B3stillPARTIAL onday7combat/retry. Publicdemo unchanged.
+Stat-budget05 originalcandidateexecutionINVALID: /tmp canonicalized to/private/tmp, so transforms silently missed. Originalrawresultsretained. Corrected same-source/seeds/cases now requires executedmodule receipts and numericgearparity; noacceptance/productioncombat changes.
+E1 staged independently, adoption/tests next. Fresh20001–20500unused. NoB/protectedchanges/modelhelpers/merge/deploy.
