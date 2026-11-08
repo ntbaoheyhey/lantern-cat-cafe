@@ -84,3 +84,7 @@ Do not choose a gameplay patch from this generator alone. Review the six paired 
 The repeated fourth-slot correlation is not by itself proof of an unbounded set4 loop. Null unique components and failed candidates must remain visible.
 
 No human playtest claim. No production rule or acceptance seed was changed by this diagnostic.
+
+## Current A5 source follow-up
+
+[Current24](b1/current-cliffs-24/INTERPRETATION.md) audits68current residuals and20,400component battles: chapter2 now dominates, with set4 alone null in every chapter2 cell. [Hit envelopes25](b1/hit-envelope-25/RESULTS.md) are all rejected; reducing bursts can simply saturate wins. The original A4 table above remains historical, not the current source diagnosis. Fresh acceptance remains unused.
