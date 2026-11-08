@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-Home43 DRAFT402 published on401; source96b32a5d3/evidence2aa6e2b82. Original six gates and36UIchecks/42captures remain verified. Prepare44 registered layout prototype next; no source adoption yet. Original Home02 cadence/dead-time MISS retained.
+Prepare44 exact prototype adopted after18scenario checks/18captures plus2oldcaptures and2real-worker checks PASS. Three widths/both modes/looks, contrast6.858/nooverflow; formation/Fight visible. Full six source gates and exact ON/OFF rebuild next. Home43 DRAFT402 published.
 ## NEXT
-Run registered Prepare44 prototype with original offscreen-placement reproduction, real keyboard/plan/forecast controls and3widths/bothmodes/looks. Adopt only after checks; then full six gates/exact builds. B1/B2/static-display/cadence/startup/Z remain open; fresh20001–20500 UNUSED.
+Complete Prepare44 source-bound closure and draft on402; retain original Home02 cadence/dead-time MISS. Investigate capped currencies/six rewarded routes and selected-cat-only growth in the retained late session before proposing a cadence change. B1/B2/static-display/startup/Z remain open; fresh20001–20500 UNUSED.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -308,3 +308,5 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - Personal Home43 visual review:1280baseline earned hint/action,1024alternate-look band4,1440baseline active-band2 inspected; primary visible and coherent. Alternate Look explicitly usesdev=1, so reviewer buttons are expected. No all-screen contrast or Z claim.
 
 - 2026-11-08T22:19:16.953939+00:00: Resumed latest Home43 checkpoint, no active A jobs. Verified source/log/scope without repeating suites; published DRAFT402 https://github.com/ntbaoheyhey/taskbar-hero/pull/402 on401. Previous stop handoff is historical and superseded by user resume. Untracked display40 outputs and Finder file preserved. Prepare44 prospective files retained; no new acceptance.
+
+- 2026-11-08T22:22:47.639688+00:00: Prepare44 prospective prototype and native worker checks passed firstattempt; no UI/runtime corrections. Adopted exact two registered source files after personal3width review. Forecast stale results ignored, actual worker CSP denial retains placement/Fight. Original capped late-save inspected:6rewarded routes,420fish/90threads/360stamps/6essence earned,49stars,levels8/1/1. No numerical retune or acceptance sample.
