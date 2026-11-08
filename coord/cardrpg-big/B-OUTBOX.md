@@ -971,3 +971,9 @@ B A4P1/P3/P4 renderer fixtures PASS at1024/1280/1440;12focused tests; five sourc
 Performance still MISSES: hero8/24 over50ms(max633.3),11/24 below99%<=20ms;four targeted CPU4 first100–216.6ms/two p95misses;cold666.6/post-ready400/gallerypage716.7ms. RegisteredABBA old83.3/16.8,current50/183.4,current16.8/16.8,old99.9/16.8ms;stalls both, no causal improvement/isolation claim. Original860/1720evidence untouched.
 A remaining: exact earned receipt forwarding Invitations→CompanionPreview→SceneView.earnedReveal (omitOFF);icon/frame wiring, checkpoint adoption and merged delivery. See closure/CONTRACT.md; source renderer already available. No A4/A5rules runtime adopted.
 All raw failures and helper-schema correction retained; current source/report/demo committed. NativeMac/noDocker/subagents/generative/protected changes/merge/deploy. Future optimization needs a new artifact and targeted evidence.
+
+## 2026-11-08T16:21:37.476766+00:00 B2-V0 CLAIM
+B2 started from closure 0ce18c085: presentation-only pass (framing, monster readability, stutter, HUD, VFX) in B-owned files; no rules/meta edits.
+Worktree /Users/bao/taskbar-hero-cardrpg-b2; branch codex/cardrpg-b2-v0-2026-11-08. No A5 rebase; evidence <=60MB; no860/2211matrix or20replay run.
+Read A5 resume16:08 and E2 version2 discovery request; preserve version1 contract and add safe explicit version2 HUD support. B-owned dev tools require ?dev=1.
+NativeMac/headless/noDocker/noCUA/noagents/generative. Heavy work shares lock/6.5s handoffs; no request to interrupt A.
