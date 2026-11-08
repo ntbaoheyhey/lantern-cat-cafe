@@ -50,3 +50,20 @@ The prospectively declared assignments complete all 1,840 cells / 92,000 TRAIN o
 Soot improves 3,427 paired cases and worsens 1,255, still below55%; Black cup remains unused. Crew advantage drops31.00→26.75pp, still above25%; the selected crew stays Mallow/Biscuit/Cinnamon. Every scene has at least four triples within5pp, but best teams remain saturated. Cat and set ranges still miss. Do not attribute a cat's whole gain to its own gear: allied assignments also changed.
 
 [Registration](b2/kit-fit-14/REGISTERED-METHOD.md) · [all paired results](b2/kit-fit-14/summary.json). The fixture retains the original harmful Hush resolver; no suppression correction or Cinnamon cooldown is combined here.
+
+## Eligible-kit and rescue-rest interaction17
+
+Both prospectively registered arms completed all 1,840 TRAIN1–50 cells. They share kit14's eligible gear assignments and the Hush utility-turn correction15; only the rest arm adds trial10's one intervening turn between Comfort cups. Their original source, fixed eight scenes and all five comparison sources remain in [the paired audit](b2/eligible-suppression-17/comparison.json).
+
+|Measure|Eligible kit + Hush|Same + rescue rest|Target|
+|---|---:|---:|---|
+|Soot|57.25%|55.17%|55–75%|
+|Sorrel|57.78%|56.09%|55–75%|
+|Inkcap|60.40%|58.95%|55–75%|
+|Cinnamon|87.13%|79.76%|55–75%|
+|Selected-crew advantage|26.00pp|27.50pp|10–25pp|
+|Near-best distinct crews, minimum over eight scenes|38|27|At least 4|
+
+Rescue rest changes 393 team battles from loss to win and 2,014 from win to loss, all in the Cinnamon-containing comparisons; these overlap the per-cat aggregates and must not be counted again. Cinnamon remains above75%; Mochi, Panko and Biscuit also remain above75%. All eight homogeneous set aggregates are identical between the two arms; three remain below35%, and several declared niches still lack a valid carrier. Every scene's best team remains100%, limiting the diversity result.
+
+Do not adopt the cooldown or call this balance closure. Correcting kit eligibility and suppression explains part of the bottom-cat gap, while this cooldown does not meet the full cat/crew targets. This diagnostic uses the original common-fixture runtime plus guard/Hush15, not anchored60 or the later Hush-credit22 correction. Those combinations and fresh acceptance remain unmeasured; no new samples were run for this report.

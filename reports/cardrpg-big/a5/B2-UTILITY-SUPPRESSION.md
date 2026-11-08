@@ -1,6 +1,6 @@
 # A5 B2 — utility suppression can create an attack
 
-Status: correction adopted after both registered TRAIN matrices; all six source checks and OFF compatibility PASS. Original current-source TRAIN composition is still running; broader balance remains open.
+Status: correction adopted after both registered TRAIN matrices; all six original-source checks and OFF compatibility PASS. The current16 composition is complete. The subsequent resolver-site credit correction has separate checks; broader balance remains open.
 
 Carrier12 found Inkcap's intended Velvetrim matchup winning 21/50, while the other seven sets won 50/50. Diagnostic13 preserves its gear, stats, allies, enemies and seeds, then ablates only setup effects. Removing row reach or Quiet spores restores 50/50 in both normalization arms. Removing the four-piece effect or its extra target preference leaves 21/50. All full-arm outcomes match the prior receipt exactly; twelve seed-1 replays reproduce exactly.
 
@@ -35,4 +35,4 @@ This is a saved-input regression, not a new45-day earned cohort. Source gates, O
 
 Original source `edd8ac69e` passes typecheck, lint, 1,746 web tests, 1,154 rules tests (2 expected failures and 11 skips retained), all 421 E2E tests and build on their first attempts. All logs and 45 combat-source files were independently hash-verified. OFF remains exact across165cells/8,250routes; baseline-v1 and all13historical receipts remain unchanged. [Source and compatibility audit](b2-suppression/source-checks.json). No source-suite rerun.
 
-The original1,321-cell TRAIN50 composition remains pending. Accurate Hush-credit eligibility is separately isolated in [the attribution review](B2-HUSH-ATTRIBUTION.md); no claim that source tests establish balance closure.
+The original1,321-cell TRAIN50 composition is complete in [the source composition audit](b2-suppression/audit.json). It retains 68 fourth-slot misses, a worst paired gain of 88pp, and the cat/set/band/display misses. Accurate Hush-credit eligibility is separately measured in [the attribution review](B2-HUSH-ATTRIBUTION.md); no claim that source tests establish balance closure. Earlier pending statements above describe the original checkpoints.

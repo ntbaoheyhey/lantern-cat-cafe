@@ -28,11 +28,11 @@ The expanded32-case unit suite passes on21; original16 fails13/passes19, and sig
 
 ## Eligibility22 saved-input comparison
 
-The same90previously earned day7 saves retain every first/first-two win result, recommendation and cost versus current16. All90first-encounter and choice summaries are exact;83post-route state hashes,88retry summaries and85without-advice summaries are exact. Changed states remain retained. Casual26/30,regular28/30 first-two andheavy28/30 first satisfy these saved-input gates; this is not a fresh45-day cohort. [Independent paired audit](b2/hush-eligibility-22/day7-paired.json). Original wider TRAIN matrix remains running.
+The same90previously earned day7 saves retain every first/first-two win result, recommendation and cost versus current16. All90first-encounter and choice summaries are exact;83post-route state hashes,88retry summaries and85without-advice summaries are exact. Changed states remain retained. Casual26/30,regular28/30 first-two andheavy28/30 first satisfy these saved-input gates; this is not a fresh45-day cohort. [Independent paired audit](b2/hush-eligibility-22/day7-paired.json). The wider TRAIN matrix is now complete below; earlier pending statements describe the original checkpoints.
 
 ## Composition decision
 
-All1,321 registered TRAIN1–50 cells completed. Both384-piece arms, all30tier/165band/15farming/64set cases and three crew pairs have identical win outcomes. One of660team cells loses4/50wins;659are exact and no case improves. The original selected crew is unchanged. This removes unearned healing, so a small loss is retained as an expected cost of the semantic correction, not rerolled away. [Complete paired audit](b2/hush-eligibility-22/audit.json).
+All1,321 registered TRAIN1–50 cells completed. Both384-piece arms, all30tier/165band/15farming/64set cases and three crew pairs have identical win outcomes. The Soot/Sorrel/Velvet chapter-one team falls from32/50to28/50wins; the other659team cells are exact and no case improves. The original selected crew is unchanged. This removes unearned healing, so the four lost wins are retained as a cost of the semantic correction, not rerolled away. [Complete paired audit](b2/hush-eligibility-22/audit.json).
 
 The numeric misses do not disappear:68fourth-slot cases exceed12pp (worst88pp),23/24TRAIN tier steps reach2pp, two band spreads miss, cats61.70–86.61%, sets76.75–92.25%. Crew24.67pp and boss diversity40/76/130 satisfy these pilot checks, but saturated best teams and missing elite coverage limit that result. Display correlation0.644/0.547/0.432 misses chapters2/3. These are TRAIN pilots, not fresh acceptance.
 
