@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-Equipment41 closure PASS on c0543531a: six original first-attempt gates (web1768/rules1192/E2E421/build), exact ON/OFF prototype equality, 36 UI checks/24 captures, worker stale/CSP scenarios. DRAFT401 published on400. Original Home02 PID79723 continues its sixth/final lease; auditor85893 will aggregate, no restart. Home43 registered source/tools staged in /tmp/cardrpg-a5-home-stars-43, not adopted.
+Equipment41 DRAFT401 published and mirrored to ledger229cbd6a2/syncd5976a1a3. Home43 exact registered two-file source adopted: star hint, primary destination and band align; active route and uncleared chapter priority preserved. Full source/UI validation next. Original Home02 PID79723 final lease/auditor85893 preserved, no restart.
 ## NEXT
-Checkpoint Equipment41 sync/ledger; then adopt registered Home43 route/star alignment with focused and full checks. Collect original Home02 60-minute audit without new samples. B1/B2/static-display/startup/Z remain open; fresh20001–20500 UNUSED.
+Run Home43 seven focused cases, six source checks and registered old/new three-width browser protocol, retain all logs and close source-bound receipts before draft. Collect original Home02 60-minute audit. B1/B2/static-display/startup/Z remain open; fresh20001–20500 UNUSED.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -298,3 +298,5 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - 2026-11-08T22:04:10.974775+00:00: Resumed original Equipment41 completion; all original six source checks and adopted-build closure PASS, no suites repeated. Receipt hashes independently verified. Home02 original browser and its final active-time lease preserved; registered Home43 waits Equipment draft. No combat/acceptance/B/protected changes.
 
 - 2026-11-08T22:05:00.346532+00:00: Published DRAFT401 https://github.com/ntbaoheyhey/taskbar-hero/pull/401 on400, evidence7c6e0618a. Original source/gates unchanged. Home43 is next; original Home02 final lease and automatic auditor preserved.
+
+- 2026-11-08T22:05:43.322788+00:00: Home43 exact registered sources/tools adopted after Equipment401 publication. Inputs verified before copy; original earned-minute42 hash preserved. No combat/save/worker change or new elapsed journey.
