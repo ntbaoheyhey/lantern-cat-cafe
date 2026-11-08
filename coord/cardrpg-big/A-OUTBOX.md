@@ -918,3 +918,9 @@ Anchored fresh90account45day replay still active, no production adoption. Its25/
 Registered spread50008 extends BOTH prior spread07 variants on the same384 fourth-slot cells; first50 prefixes exact, only51–500 new. Original pilot screening rejection retained; actual12pp gate unchanged.
 Registered original-rule common-fixture calibration01: same role-kit and8scenes, fixed enemyHP/attack grid,TRAIN1–500. Diagnose saturated nonboss versus boss fixture mismatch before any proposed revision.
 Fresh20001–20500 UNUSED; no B/protected edits, model helpers, merge or deploy. Existing B requests unchanged.
+
+## 2026-11-08T10:09:10Z A5-B3 CHECKPOINT
+Fresh anchored90account/45day replay completes; all7rewardgatesPASS, ratio<=2.253547x. Earned day7 casual26/30 andregular28/30 firsttwo;heavy28/30first; all24losses have advice. Three independent receipt testsPASS.
+Day1–5 chapter clears/pulls unchanged across90accounts. Heavy paired advised/no-advice0/2 retained; botproxy only. Original TRAIN50matrix stillrunning; no sourceadoption.
+Spread50008 spread30 remains11/384piece misses,max18pp;spread50pending. Reference500calibration mean56.9%,median57.3%; commonfixture04 registered same8scenes forsets/cats/crew,all4elites,TRAIN1–50. Originalresults/numericgates retained.
+Fresh20001–20500UNUSED. No B/protected changes, modelhelpers, merge or deploy. Existing B requests unchanged.
