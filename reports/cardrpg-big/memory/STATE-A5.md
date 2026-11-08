@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-H0 baseline measured60.37active minutes; closure PASS with OFF165cells/8250routes exact. All five source gates+build PASS on unchanged A4 runtime, five receipt tests PASS. Workdir /Users/bao/taskbar-hero-cardrpg-a4; branch codex/cardrpg-a5-h0-2026-11-08. Preparing H0 draft on #376; A5 remains active.
+H0 baseline measured60.37active minutes; closure PASS with OFF165cells/8250routes exact. All five source gates+build PASS on unchanged A4 runtime, five receipt tests PASS. Workdir /Users/bao/taskbar-hero-cardrpg-a4; branch codex/cardrpg-a5-h0-2026-11-08. H0 draft #377 published on #376 (fd4f73c1); A5 remains active.
 ## NEXT
-Publish H0 draft and mirror STATE/outbox. B1pilot04 coordinator tool1447 runs registered response-weight/pressure TRAIN experiment; pilot03 rejected for saturation. Existing C1build49190/browser57661 and B3reward58227/link-probe59372 are retained; E1 isolated checks complete. Adopt no source draft until its checks and phase review. Acceptance20001–20500 unused.
+Mirror H0 STATE/outbox, then C1 source adoption while B1 continues training. B1pilot04 coordinator tool1447 runs registered response-weight/pressure TRAIN experiment; pilot03 rejected for saturation. Existing C1build49190/browser57661 and B3reward58227/link-probe59372 are retained; E1 isolated checks complete. Adopt no source draft until its checks and phase review. Acceptance20001–20500 unused.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -56,3 +56,5 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - H0 closure completed2026-11-08T01:25:43Z: OFF165cells/8250routes digest47477251b3d20ab602bee5c55a56cdd661e111b1386e298e0c9bc67737fecfa3 PASS. Five receipt tests now bind to original A4 commit so later demo updates do not invalidate historical provenance; original four-test log retained.
 - B1pilot03 rejected: reply-half/full/partial maxgain10/8/4pp but before saturation25/30/31of31 and after30/31/31. Registeredpilot04 before sampling: response0.15/0.30; response0.5 with boss pressure1.15/1.30; exact31TRAIN1–50pairs, no acceptance. Same bounded lock/handoff. Production unchanged.
 - E1 draft isolated checks PASS (available atomic commands, forecast key, exact day7 attribution/rows, no mutation); easypractice recommendation returnednone in34.6ms. This is not real-browser CPU budget verification; draft remains unadopted.
+
+- H0 draft published: https://github.com/ntbaoheyhey/taskbar-hero/pull/377 stacked on376; evidencefd4f73c1. No merge/deploy. Rawlog whitespace retained by limiting diff-whitespace check to nonlog files.
