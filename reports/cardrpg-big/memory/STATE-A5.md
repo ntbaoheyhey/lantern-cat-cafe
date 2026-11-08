@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-C1 specialties23 adopted from the exact three-file staged manifest on codex/cardrpg-a5-c1-specialties-2026-11-08, stacked on DRAFT394. Twelve cat job lines and mode-correct Team tooltips; source six checks and OFF digest complete. Separate ON/OFF functional checks and supplemental Collection framing pass; published as DRAFT396 on394; all receipts and reviewed copy captures retained. Hush closure remains complete.
+C1 specialties DRAFT396 complete on394; all source/OFF/UI receipts retained. B1 current-cliffs24 registered on codex/cardrpg-a5-b1-cliffs-2026-11-08 before sampling; source remains copy-only a30757265. No production combat change.
 ## NEXT
-Mirror C1 draft396 checkpoint, then resume B1/B2 root-cause work on a separate stacked branch; no source tuning during copy verification. Original 216 replay/ON-OFF/12cat/8tooltip/three-width/THC7-12 checks already pass; do not rerun them. No original TRAIN matrix restart; fresh20001–20500 UNUSED. B1/B2/display/cadence/startup/Z open; stack376→377→379→381→382→383→384→385→386→388→394→396.
+Run registered current-cliffs24:68current TRAIN50 misses ×6components; exact original22before/full parity; six observer replays. Analyze current chapter2 failure before choosing any new tuning. Do not rerun completed original matrices or use fresh20001–20500. B1/B2/display/cadence/startup/Z remain open; stack376→377→379→381→382→383→384→385→386→388→394→396.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -224,3 +224,5 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - 2026-11-08T18:38:18.064417+00:00: C1 closure auditPASS;216paired replays/36text-only differences;OFF8250exact;ON/OFF12cats+8sets+THC7/12+keyboard/threewidths;42functional+12supplemental captures, contrast8.028minimum. Actual copy samples personally reviewed; baseline miniature blank frames disclosed, no renderer claim. Runtime a30757265 unchanged, sixsourcechecks420originalE2E+1retry retained. Bpublished395; no integration/sourceadoption. Freshacceptance unused.
 
 - 2026-11-08T18:39:18.379616+00:00: Published DRAFT396 https://github.com/ntbaoheyhey/taskbar-hero/pull/396 on394, evidencec85716f54. Source gates and UI checks unchanged; no duplicate PR or runtime changes.
+
+- 2026-11-08T18:41:52.652081+00:00: Registered current-cliffs24 before sampling;68current22misses,20400component battles, six deterministic traceexamples. Worst nowch2(1→45/50), not oldch3. No boss-cap experiment or production retune is registered/adopted. Source unchanged, freshacceptance untouched.
