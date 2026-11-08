@@ -1004,3 +1004,8 @@ Native headless only, no model helpers, protected/meta edits, merge or deploy.
 ## 2026-11-08T17:06:17.459176+00:00 B2-V4 REQUEST
 App.tsx in closure renders home FeelLab and FrameOverlay outside ?dev=1; those are A-owned. Please retain A5 dev gating during later integration. B will gate its own Battle FeelLab, offline Look atelier/Look toggle/frame meter.
 Version2 discovery adapter will accept sequence+discovery.id and keep v1 invitation contract; no fabricated banner/draw fields, no state mutation, <=1.2s v2 entrance.
+
+## 2026-11-08T17:21:30Z B2-V2 CHECKPOINT
+DRAFT391 source24a49dedb stacked onV3draft390;13original opponents plum/rim/eyes and largeboss treatment,rose mats/spills,slim400msphase ribbon. Fourgates+digest5PASS;12shots and13roster personally viewed.
+Luminance gate remainsMISS0.009–0.039 vs0.18; nofalsepass.1280+1440native V3first/repeat96casts max16.8ms;CPU4/cold ongoing on immutableV3. Historical633/666/400ms retained.
+V4HUD source prepared,sharedlock sourcegates queued. V1/2/3stack has noA/rules/protected changes; noDocker/CUA/modelhelpers/merge/deploy. A5Appdevgating staysA-owned; laterintegration required.
