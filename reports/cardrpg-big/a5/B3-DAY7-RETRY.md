@@ -19,3 +19,9 @@ The separately registered 90-account cohort is complete. It starts from the exac
 Advice availability is MISS: three losses have no qualifying available change. Suggested/no-advice retry wins are casual5/5, regular9/5, heavy5/7. Advice helps some accounts and harms others; the single real-click success does not erase those results. Wilson intervals, every account and the pre-run method remain in [cohort receipts](b3/day7-e2/checks.json). This is a synthetic TRAIN progression proxy, not a human playtest or fresh acceptance.
 
 B1/B2 balance, general day7 difficulty and fresh acceptance remain open. Combat remains A4; no seed was rerolled and no gate moved.
+
+## Anchored curve diagnostic (TRAIN, not adopted)
+
+The linear1–10 candidate improved the old-save day7 pilot but raised bands2–5. Complete casual/regular training cohorts show day5 chapter clears falling from0.13/0.60 per account to0/0. This is a material early progression regression; do not substitute its day7 results for a whole-path test. Original validation continues unchanged.
+
+[Anchored03](b3/band-anchored-03/REGISTERED-METHOD.md) keeps bands1–5 and10–50 byte-equivalent in computed enemy stats, and changes only6–9. On the same original90earned day7 snapshots, casual25/30 and regular27/30 win within two attempts; heavy26/30 win first. All28losses have an available forecast-derived change. The paired advice/no-advice retry counts are9/6,7/3,0/4: the heavy regression remains visible. These are original-snapshot TRAIN results, not fresh-path or acceptance claims. The separate90account/45day earned replay and original balance matrix are registered in anchored-validation-03 before execution; source adoption waits for their receipts.
