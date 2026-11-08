@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-Reply-pressure39 completed and independently audited: all three registered arms rejected (worst32/50/44pp; mean before87.15/41.94/16.65%). Original failures and every negative pair retained. Production994d84056/DRAFT400 unchanged; no active A jobs.
+Original Home-led engagement02 PID79723 continues60active minutes on immutable6c09ce3c. Contextual display40 PID80272 queues bounded110s leases; do not duplicate either. Production994d84056/DRAFT400 unchanged. Read-only receipt auditors and Equipment forecast41 draft prepared; no UI adoption yet.
 ## NEXT
-Preserve39 closure. Measure the current Home-led elapsed journey after navigation/growth fixes; original fixed-Chapter1 policy had749.2s gap/dead907.7s MISS. B1/B2/display/startup/Z remain open; do not extend rejected39 or use fresh20001–20500 yet.
+Audit original384contextual cases once complete; retain static displayMISS regardless. If diagnostic supports it, finish staged whole-crew Equipment boss rehearsal41 with worker/UI/source/OFF checks. Aggregate original engagement02 at60active minutes (0–5/30/60), preserving01MISS. B1/B2/startup/Z and fresh20001–20500 remain open.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -278,3 +278,5 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - 2026-11-08T20:46:10.240191+00:00: Registered reply-pressure39 before samples; current production hashes identical to corrected34 except isolated policy and boss-only attack multiplier. Three fixed arms, all384cases versus early04 historical31. Controls reused; no acceptance or automatic adoption. Original coordinator tool52735 uses110sleases/7shandoffs.
 
 - 2026-11-08T20:53:20.569169+00:00: Resumed exact39 completed receipts without rerunning any battles. Independent auditPASS:3×384TRAIN50cells/6replays/45OFF/24scaling plus observer. All3screenFAIL, no wider expansion/adoption. Current-source report corrected from Settings to growth994d84056. Unrelated Documents checkout and Finder file untouched.
+
+- Resume2026-11-08T21:04UTC: kept original79723/80272 workers and source snapshots; no reruns. Prepared zero-sample contextual/engagement auditors. Equipment forecast41 is draft-only in tools/cardrpg-big/a5-drafts/equipment-forecast-41 and/tmp: whole-crew actual equip transaction, fixed boss/band, reserve transfer,20seed qualitative forecast, worker cancellation/cache tests. No source adoption, acceptance or B edits.
