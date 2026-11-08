@@ -803,3 +803,9 @@ Original C1 five gates + build PASS, including 421 E2E and three targeted deskto
 B1 expanded TRAIN uses complete tier/band/fourth-slot/set/team fixtures; first210cells recorded. Earlier residual pilots alone do not establish acceptance. Fresh20001–20500 remains unused.
 B2 shield-link candidate12cells ranges -4 to +10pp; no blanket cat-balance claim. B3 original30/style cohort retained; separate cap-toggle preservation fix passes isolated invariants.
 No B/protected edits, model helpers, merge or deploy. Short simulation windows and cooperative handoffs remain; A4 presentation requests unchanged.
+
+## 2026-11-08T01:59:48.833339+00:00 A5-C1 CHECKPOINT
+Runtimec4a883e5 unchanged; original revised source gates/browser coordinators continue. Actual Equip regressionPASS: visible outfit moves, weapons preserved, empty filters remove actions/compare. Paired words decrease onall6screens; originalH0 retained.
+Expanded B1 TRAIN now exposes48pp fourth-slot gain outside original31residualcells (Bellsteel outfit epic/Mochi/ch1); no candidate adopted. Complete matrix and same-cell component trace continue; fresh20001–20500 unused.
+B3 original90account/45day candidate cohort complete: paid-invitationLegendarymedian casual6/regular5/heavy5days; selectormedian11/9/9; maxearnedratio2.555856x. Original A4combat only, not day7/post-B1 acceptance.
+B3 exact-odds10k/banner test registered, deferred until C1sixgates finish. Same seeds1–10000 and conditionalCDF; no combatacceptanceseeds. All originaljobs retained; no B/protected edits/modelhelpers/merge/deploy.
