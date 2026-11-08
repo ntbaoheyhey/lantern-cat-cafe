@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-P1 source adopted on codex/cardrpg-a5-p1-2026-11-08: lazy07 screens/reviewer boundaries, exact model dictionary/module transport, default build pixel packing. Production combat remains A4; fresh 20001–20500 UNUSED. C1 draft379 unchanged.
+B3 reward source adopted at dd216ebf9 on codex/cardrpg-a5-b3-2026-11-08 after exact4050/4050 corrected cohort parity. Shared stamps360, selector24, soft13/hard24/+700bp; actual odds/cap/selector UI and truthful tomorrow allowance wired. Combat stays A4; fresh20001–20500 UNUSED.
 ## NEXT
-P1 draft381 published on379, source509c88fbf/closure95e1c1c4f. Mirror state and continue B3 reward progress while B1/B2 remain rejected. Preserve corrected90-account parity session59384; no rule adoption before matching all4050days and wiring current odds/caps. No B/protected edits or fresh combat acceptance.
+Complete existing source gates session52823, fresh OFF165/8250 session95739 and targeted earned-selector/offline-build/three-width UI session23235. Logs under b3-adopted/gates and b3/{off,ui-checks}; do not duplicate or mutate measured rule source while jobs run. Then review captures, preserve receipts, draft reward-only B3 on381; day7 retry and B1/B2 still pending.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -112,3 +112,5 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - P1 closureattempts1/2 retained missing1024 evidence;3assembledoriginalresults;4adds durableartifact path only. No source-suite or browser rerun. OFF8250 reused with63rulehashparity, baseline/historical13 exact. Originalruntime509c88fbf unchanged; draftreport P1-SIZE-STARTUP.md explicitlyPARTIAL.
 
 - Published P1 DRAFT https://github.com/ntbaoheyhey/taskbar-hero/pull/381 on#379, head95e1c1c4f, no merge/deploy. Stack376→377→379→381. Three trailing-whitespace lines in registeredstartup harness intentionally retained with exactmeasuredhash; PR records this provenance exception. B1/B2remainMISS, not deferred acceptancepassed.
+
+- Resume 2026-11-08T07:48:33.754688+00:00: preserved original reward coordinator61157; all90accounts/4050days completed with exact original hashes. All-source firstLegendary median6/5/5days (casual/regular/heavy), regular100%by7/14, selector11/9/9days; ratios<=2.555857x. Three independent receipt testsPASS. Current source dd216ebf9; tests/build/browser/OFF in progress. Added no saved fields, combat/B/protected edits or acceptance sampling.

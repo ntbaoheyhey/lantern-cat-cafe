@@ -30,6 +30,10 @@ try{
  await page.goto('file://'+artifact);await page.getByRole('heading',{name:'A small light. A brave little team.'}).waitFor({timeout:120000});
  await nav('Invitations');await button('Open free welcome invitation').click();
  const welcome=await read();assert.equal(welcome.v4.selectorMarks??0,0);assert(welcome.freeInvite);
+ await button('Invite once · 150 stamps').click();const paid=await read();
+ assert.equal(paid.account.currencies.stamps,welcome.account.currencies.stamps-150);
+ assert.equal(paid.v4.selectorMarks,1);assert.equal(paid.account.history.length,welcome.account.history.length+1);
+ checks.push('fresh public paid draw spends150, adds one mark and retains history');
  await page.locator('.dp-player-odds summary').first().click();
  assert.match(await page.locator('.dp-player-odds').innerText(),/360 stamps daily/);
  assert.match(await page.locator('.dp-player-odds').innerText(),/From draw 13/);
