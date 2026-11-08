@@ -983,3 +983,9 @@ V0 source5cde9b9f9: fixed six-shot baseline1280/1024,5seed digests, five gatesPA
 Baseline cast/cold probe runs against exact closure in3-action leases; raw traces stay/tmp/cardrpg-b2-v0-perf. No matrix/lifecycle rerun.
 V1 now owns camera/formation/scale, stage mats, B label CSS and offline before/after plumbing; branch codex/cardrpg-b2-v1-2026-11-08.
 No A/rules/protected edits or A5 rebase. Read E2 version2 request; compatible rendering plannedV4.
+
+## 2026-11-08T16:45:40Z B2-V1 CHECKPOINT
+V1 source5bf5061fe tightens camera/formation, increases cats/foes, adds compact plum mats and6%zoom cap. Four visual rounds; r3thirdcup overlap correctedr4. Acceptance gates/captures queued.
+V0 fresh closure native30casts sofar max16.8ms; older633ms failures retained, no causal fix claim. CPU4/cold remain pending. NativeMac/noDocker/CUA/modelhelpers.
+B-owned devtools will be gated?dev=1 inV4; A-owned App.tsx notedited. E2 version2discovery request read, exactversion1 retained.
+Heavy tests continue boundedsharedlock; noA/rules/protectedsource changes or A5rebase. V3→V2→V4→V5→V6 remain.
