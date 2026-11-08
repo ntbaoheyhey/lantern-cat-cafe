@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-Advice29 source e14d320ed fully verified: six gates1746web/1192rules/421E2E/build; OFF8250 exact; original-loss fallback and earned Mallow1→5 swap pass3widths/bothlooks24captures. Same-band90records exact, no population benefit. Published DRAFT397 on396; evidence18da2ac96.
+DRAFT397 published/mirrored (ledgerd56c262bf,sync1a0a123b6); runtimee14d320ed unchanged. Reference30/31 complete:4,000exact restored calibration outcomes; Hush removal of replacement attacks explains both changed scenes. Every negative pair and15replays retained; no fixture/gate retune.
 ## NEXT
-Reference30 completed4000TRAIN:6scenes exact, scene4 262→499/500 andscene5 288→242; median57.8% so no automatic recalibration. Investigate changed support scenes, preserve negatives. B1/B2/display/cadence/startup/Zopen; fresh20001–20500UNUSED.
+Continue B1 root cause from current24 traces: boss round6 lethal thresholds remain; prior hit caps/committed phases/rawpressure redistribution rejected. Explore only a prospectively registered understandable boss pattern hypothesis; preserve all misses. B2/display/cadence/startup/Zopen; fresh20001–20500UNUSED.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -238,3 +238,5 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - 2026-11-08T19:20:20.430366+00:00: Resumed original advice29 coordinators without reruns; six source gates/OFF/UI closurePASS. Personally inspected baseline1280trainedResult, baseline1440fallback andlook1024Prepare. Reference30 registered snapshot sampled4000TRAIN once; six scenes exact,324improved/133worsened, median57.8%, mean61.675%. Receipt-audit attempt1 used wrong historical digest serialization; corrected attempt2 retains original script/error and no simulation rerun. No combat/acceptance/B change.
 
 - 2026-11-08T19:21:27.397588+00:00: DRAFT397 verified at18da2ac96 on396; six source checks and24UIcaptures unchanged. No duplicate PR or test rerun. Mirror state/report to ledger and append coordination checkpoint.
+
+- 2026-11-08T19:26:56.009826+00:00: Reference30/31 audited: old enemyAct reproduces4,000calibration outcomes exactly; utility suppression reproduces allcurrent reference outcomes; credit eligibility leaves those outcomes exact. Scene4+237/-0,scene5+87/-133. Five explanatory cases×3arms replay exactly; no production tuning. First isolatedbuild failed before samples due missingtransitive dependencies; exact copies/hashmanifest andfailure retained. Median57.8%, no automatic recalibration.

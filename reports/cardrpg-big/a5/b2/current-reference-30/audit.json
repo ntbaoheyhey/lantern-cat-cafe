@@ -1,0 +1,174 @@
+{
+  "status": "TRAIN diagnostic only; no combat or fixture change",
+  "rows": [
+    {
+      "scene": 0,
+      "enemies": [
+        "yarn-giant"
+      ],
+      "factor": 0.9084375,
+      "beforeWins": 293,
+      "wins": 293,
+      "rate": 0.586,
+      "wilson95": [
+        0.5423312223504144,
+        0.6283573910901985
+      ],
+      "improved": 0,
+      "worsened": 0,
+      "exactPrefix50": true
+    },
+    {
+      "scene": 1,
+      "enemies": [
+        "rain-spool"
+      ],
+      "factor": 0.9107265625000001,
+      "beforeWins": 276,
+      "wins": 276,
+      "rate": 0.552,
+      "wilson95": [
+        0.508179738010616,
+        0.5950273305813826
+      ],
+      "improved": 0,
+      "worsened": 0,
+      "exactPrefix50": true
+    },
+    {
+      "scene": 2,
+      "enemies": [
+        "pantry-crown"
+      ],
+      "factor": 1.0145546875,
+      "beforeWins": 258,
+      "wins": 258,
+      "rate": 0.516,
+      "wilson95": [
+        0.4722414643366831,
+        0.5595145567685472
+      ],
+      "improved": 0,
+      "worsened": 0,
+      "exactPrefix50": true
+    },
+    {
+      "scene": 3,
+      "enemies": [
+        "needle-moth",
+        "pollen-scout"
+      ],
+      "factor": 3.372796875,
+      "beforeWins": 319,
+      "wins": 319,
+      "rate": 0.638,
+      "wilson95": [
+        0.5949717262107974,
+        0.6789239558218143
+      ],
+      "improved": 0,
+      "worsened": 0,
+      "exactPrefix50": true
+    },
+    {
+      "scene": 4,
+      "enemies": [
+        "spool-ram",
+        "button-guard"
+      ],
+      "factor": 2.850890625,
+      "beforeWins": 262,
+      "wins": 499,
+      "rate": 0.998,
+      "wilson95": [
+        0.9887592932948532,
+        0.9996468636054407
+      ],
+      "improved": 237,
+      "worsened": 0,
+      "exactPrefix50": false
+    },
+    {
+      "scene": 5,
+      "enemies": [
+        "teacup-healer",
+        "kettle-knight"
+      ],
+      "factor": 3.665796875,
+      "beforeWins": 288,
+      "wins": 242,
+      "rate": 0.484,
+      "wilson95": [
+        0.4404854432314528,
+        0.527758535663317
+      ],
+      "improved": 87,
+      "worsened": 133,
+      "exactPrefix50": false
+    },
+    {
+      "scene": 6,
+      "enemies": [
+        "crumb-sentinel",
+        "binding-thread"
+      ],
+      "factor": 3.711578125,
+      "beforeWins": 285,
+      "wins": 285,
+      "rate": 0.57,
+      "wilson95": [
+        0.5262342399257419,
+        0.6126983524096407
+      ],
+      "improved": 0,
+      "worsened": 0,
+      "exactPrefix50": true
+    },
+    {
+      "scene": 7,
+      "enemies": [
+        "sock-skipper",
+        "needle-moth"
+      ],
+      "factor": 3.47809375,
+      "beforeWins": 295,
+      "wins": 295,
+      "rate": 0.59,
+      "wilson95": [
+        0.5463626881245969,
+        0.6322649305923236
+      ],
+      "improved": 0,
+      "worsened": 0,
+      "exactPrefix50": true
+    }
+  ],
+  "mean": 0.6167499999999999,
+  "median": 0.578,
+  "improved": 324,
+  "worsened": 133,
+  "referenceMedian55to60": true,
+  "receipts": [
+    {
+      "path": "reports/cardrpg-big/a5/b2/current-reference-30/REGISTERED-METHOD.json",
+      "sha256": "1cd45bf81a0703172fd148f0790eed9f8ba2a5676e6c45045a224a39aa2c6465"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/b2/current-reference-30/results.json",
+      "sha256": "6584d18664376f5092e713de177cbb32e2f99d84717189da905270f8d9b509d8"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/b2/fixture-calibration-03/results.json",
+      "sha256": "d0145f287a78b914df61b2ce6e85e1dc58650247a6ccd6a4222ee7906a94ac29"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/b2/common-fixture-04/results.json",
+      "sha256": "5bdc6c838f4ad4e84fc4ed63266a8530c2d104d6fabb746792bd09fd527b5ff2"
+    }
+  ],
+  "limitations": [
+    "The same reference and fixed enemy overrides were selected on TRAIN in calibration03.",
+    "No new kit/team or acceptance result; this check cannot close cat/set/crew gates.",
+    "A reference within its registered range gives no reason to recalibrate difficulty merely to pass another gate."
+  ]
+}
