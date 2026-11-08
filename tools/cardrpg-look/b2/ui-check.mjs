@@ -40,6 +40,8 @@ try{
    await page.getByRole('button',{name:'Battle gallery',exact:true}).click();
    assert.equal(await page.locator('.look-b2-pairs figure').count(),6);
    await page.locator('.look-b2-ultimates button').first().click();
+   console.log(JSON.stringify({gallery:await page.locator('.look-b2-preview').innerText()}));
+   await page.screenshot({path:`${out}/gallery-preview.png`});
    await page.getByLabel('Preview speed',{exact:true}).selectOption('0.25');
    await page.getByLabel('Effect only',{exact:true}).check();
    assert.deepEqual(await page.evaluate(()=>({speed:window.__depthReview.gallerySpeed,only:window.__depthReview.galleryEffectOnly})),{speed:.25,only:true});
