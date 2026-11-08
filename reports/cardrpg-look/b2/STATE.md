@@ -8,7 +8,7 @@ V4 liveUI failed9instead12slots because starter has3equipped skills; preserve fa
 V5 twelve-ultimate sheet/fullClover/wave personally reviewed.288face samples/0offenders,105draws/111338tris. Review in v5/REVIEW.md.
 V5published1d0fb2b06; currentbranch codex/cardrpg-b2-v6-2026-11-08. Next: V6 HUDslot fix/gallery/demo; V6 sourcegates/E2E/digest; UI/startup/sixshots/lean/video/fivebattle; report/ledger/B-OUTBOX.
 V5 performance once after effects uses immutable /tmp/cardrpg-b2-v5.html; registered144casts+6cold, no matrix or retries for a pass.
-V5 probe session26027 queued on immutableV5; do not duplicate. V6 source validation next. Shared timinglock <=20min with6.5s handoff.
-Evidence48MiB beforeV6; budget60MB, compress only already-reviewed PNGs if necessary; raw traces/frames in/tmp/cardrpg-b2-*.
+V5 queuedprobe9384 stopped before any child/sample; after-effects probe will use actual V6 delivery HTML. V6source coordinator9690/session83256 active. Shared timinglock <=20min with6.5s handoff.
+Evidence26MiB after archival review copies; budget60MB, compress only already-reviewed PNGs if necessary; raw traces/frames in/tmp/cardrpg-b2-*.
 A read17:39UTC: sourceedd8ac69e; schema v1/v2 unchanged, devgating preserved. Open A integration: App-owned devgating and exact receipts/adoption.
 Closure index unchanged7e092b1a/31,494,758bytes. Drafts only; no merge/deploy/mainpush/A5rebase.
