@@ -1,0 +1,76 @@
+[
+  {
+    "name": "typecheck",
+    "attempt": 1,
+    "code": 0,
+    "head": "da2b4886c557eebe4e327d9501e71b31b626296d",
+    "started": "2026-11-08T17:52:37.240Z",
+    "ended": "2026-11-08T17:53:21.287Z",
+    "log": "reports/cardrpg-big/a5/b2-hush-credit/gates/typecheck-attempt-1.log",
+    "sha256": "7922ae6870f3c8060b7f6747c462dee18939ad955b85f0ebffb6012383376590",
+    "counts": []
+  },
+  {
+    "name": "lint",
+    "attempt": 1,
+    "code": 0,
+    "head": "da2b4886c557eebe4e327d9501e71b31b626296d",
+    "started": "2026-11-08T17:53:28.291Z",
+    "ended": "2026-11-08T17:54:27.895Z",
+    "log": "reports/cardrpg-big/a5/b2-hush-credit/gates/lint-attempt-1.log",
+    "sha256": "ac84fb313d353189008477b04dc948ed782832065928e3cb253bcf6fe3aa6384",
+    "counts": []
+  },
+  {
+    "name": "web-unit",
+    "attempt": 1,
+    "code": 0,
+    "head": "da2b4886c557eebe4e327d9501e71b31b626296d",
+    "started": "2026-11-08T17:54:34.897Z",
+    "ended": "2026-11-08T18:02:19.375Z",
+    "log": "reports/cardrpg-big/a5/b2-hush-credit/gates/web-unit-attempt-1.log",
+    "sha256": "eff3bc03e7693d21f88538dea7814d85b3c76623c9948fb93a4b7b15dc7d935a",
+    "counts": [
+      " Test Files  178 passed (178)",
+      "      Tests  1746 passed (1746)"
+    ]
+  },
+  {
+    "name": "rules",
+    "attempt": 1,
+    "code": 0,
+    "head": "da2b4886c557eebe4e327d9501e71b31b626296d",
+    "started": "2026-11-08T18:02:26.377Z",
+    "ended": "2026-11-08T18:03:12.559Z",
+    "log": "reports/cardrpg-big/a5/b2-hush-credit/gates/rules-attempt-1.log",
+    "sha256": "ad22398ea3a5eb3ce108d88adb72cd97450a2b4e04f5d0f85979770260f6751b",
+    "counts": [
+      " Test Files  70 passed | 3 skipped (73)",
+      "      Tests  1186 passed | 2 expected fail | 11 skipped (1199)"
+    ]
+  },
+  {
+    "name": "e2e",
+    "attempt": 1,
+    "code": 0,
+    "head": "da2b4886c557eebe4e327d9501e71b31b626296d",
+    "started": "2026-11-08T18:03:19.563Z",
+    "ended": "2026-11-08T18:19:51.797Z",
+    "log": "reports/cardrpg-big/a5/b2-hush-credit/gates/e2e-attempt-1.log",
+    "sha256": "ec587156e9fdfac01a394960b4e4ac8fc4827f1744829d5550de680caa305175",
+    "counts": [
+      "  421 passed (2.1m)"
+    ]
+  },
+  {
+    "name": "build",
+    "attempt": 1,
+    "code": 0,
+    "head": "da2b4886c557eebe4e327d9501e71b31b626296d",
+    "started": "2026-11-08T18:19:58.800Z",
+    "ended": "2026-11-08T18:21:55.265Z",
+    "log": "reports/cardrpg-big/a5/b2-hush-credit/gates/build-attempt-1.log",
+    "sha256": "a38efed48e1a352ccd3928e231aeb05b6f133d287868ccd42b6050ae4fbff684",
+    "counts": []
+  }
+]

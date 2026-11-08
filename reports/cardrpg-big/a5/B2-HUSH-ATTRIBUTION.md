@@ -37,3 +37,8 @@ All1,321 registered TRAIN1–50 cells completed. Both384-piece arms, all30tier/1
 The numeric misses do not disappear:68fourth-slot cases exceed12pp (worst88pp),23/24TRAIN tier steps reach2pp, two band spreads miss, cats61.70–86.61%, sets76.75–92.25%. Crew24.67pp and boss diversity40/76/130 satisfy these pilot checks, but saturated best teams and missing elite coverage limit that result. Display correlation0.644/0.547/0.432 misses chapters2/3. These are TRAIN pilots, not fresh acceptance.
 
 Adopt only the two registered runtime files plus the32case regression suite. No Cinnamon cooldown, semantic gear fixture or other trial is combined. All45combat hashes match eligibility22. Original Hush-only source checks and composition remain archived; the adopted source now needs its own six checks and OFF digest. No public demo change or event schema request.
+
+
+## Adopted source verification
+
+Runtime da2b4886c passes typecheck, lint, 1,746 web unit tests, 1,186 rules tests, 421 E2E tests and build. The inherited two expected-failure and eleven skipped rule cases remain explicit. All original attempts and source hashes are retained in [closure audit](b2-hush-credit/audit.json). OFF165cells/8,250routes matches the frozen digest; baseline-v1 and all13historical simulation files are exact. No balance acceptance, fresh earned cohort or public-demo replacement is claimed.

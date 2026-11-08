@@ -1,0 +1,543 @@
+{
+  "source": "da2b4886c557eebe4e327d9501e71b31b626296d",
+  "status": "Adopted Hush correctness repair verified; balance acceptance remains open.",
+  "changes": [
+    "A Hushed heal or shield signature spends its turn without replacement damage.",
+    "Hush earns suppression and Lantern credit only where it blocks eligible utility.",
+    "Summon eligibility is checked after retaliation, phase and available-thread checks.",
+    "Drowsy credit remains; Result copy names enemy actions rather than utility only."
+  ],
+  "gates": [
+    {
+      "name": "typecheck",
+      "attempt": 1,
+      "code": 0,
+      "head": "da2b4886c557eebe4e327d9501e71b31b626296d",
+      "started": "2026-11-08T17:52:37.240Z",
+      "ended": "2026-11-08T17:53:21.287Z",
+      "log": "reports/cardrpg-big/a5/b2-hush-credit/gates/typecheck-attempt-1.log",
+      "sha256": "7922ae6870f3c8060b7f6747c462dee18939ad955b85f0ebffb6012383376590",
+      "counts": []
+    },
+    {
+      "name": "lint",
+      "attempt": 1,
+      "code": 0,
+      "head": "da2b4886c557eebe4e327d9501e71b31b626296d",
+      "started": "2026-11-08T17:53:28.291Z",
+      "ended": "2026-11-08T17:54:27.895Z",
+      "log": "reports/cardrpg-big/a5/b2-hush-credit/gates/lint-attempt-1.log",
+      "sha256": "ac84fb313d353189008477b04dc948ed782832065928e3cb253bcf6fe3aa6384",
+      "counts": []
+    },
+    {
+      "name": "web-unit",
+      "attempt": 1,
+      "code": 0,
+      "head": "da2b4886c557eebe4e327d9501e71b31b626296d",
+      "started": "2026-11-08T17:54:34.897Z",
+      "ended": "2026-11-08T18:02:19.375Z",
+      "log": "reports/cardrpg-big/a5/b2-hush-credit/gates/web-unit-attempt-1.log",
+      "sha256": "eff3bc03e7693d21f88538dea7814d85b3c76623c9948fb93a4b7b15dc7d935a",
+      "counts": [
+        " Test Files  178 passed (178)",
+        "      Tests  1746 passed (1746)"
+      ]
+    },
+    {
+      "name": "rules",
+      "attempt": 1,
+      "code": 0,
+      "head": "da2b4886c557eebe4e327d9501e71b31b626296d",
+      "started": "2026-11-08T18:02:26.377Z",
+      "ended": "2026-11-08T18:03:12.559Z",
+      "log": "reports/cardrpg-big/a5/b2-hush-credit/gates/rules-attempt-1.log",
+      "sha256": "ad22398ea3a5eb3ce108d88adb72cd97450a2b4e04f5d0f85979770260f6751b",
+      "counts": [
+        " Test Files  70 passed | 3 skipped (73)",
+        "      Tests  1186 passed | 2 expected fail | 11 skipped (1199)"
+      ]
+    },
+    {
+      "name": "e2e",
+      "attempt": 1,
+      "code": 0,
+      "head": "da2b4886c557eebe4e327d9501e71b31b626296d",
+      "started": "2026-11-08T18:03:19.563Z",
+      "ended": "2026-11-08T18:19:51.797Z",
+      "log": "reports/cardrpg-big/a5/b2-hush-credit/gates/e2e-attempt-1.log",
+      "sha256": "ec587156e9fdfac01a394960b4e4ac8fc4827f1744829d5550de680caa305175",
+      "counts": [
+        "  421 passed (2.1m)"
+      ]
+    },
+    {
+      "name": "build",
+      "attempt": 1,
+      "code": 0,
+      "head": "da2b4886c557eebe4e327d9501e71b31b626296d",
+      "started": "2026-11-08T18:19:58.800Z",
+      "ended": "2026-11-08T18:21:55.265Z",
+      "log": "reports/cardrpg-big/a5/b2-hush-credit/gates/build-attempt-1.log",
+      "sha256": "a38efed48e1a352ccd3928e231aeb05b6f133d287868ccd42b6050ae4fbff684",
+      "counts": []
+    }
+  ],
+  "off": {
+    "offBehavior": "PASS",
+    "sha256": "47477251b3d20ab602bee5c55a56cdd661e111b1386e298e0c9bc67737fecfa3",
+    "cells": 165,
+    "routes": 8250
+  },
+  "semantic": {
+    "total": 144,
+    "before": 125,
+    "after": 144,
+    "exactOff": 72
+  },
+  "train": {
+    "pieceMisses": 68,
+    "worstPieceGainPp": 88,
+    "displayShare": 0.04509341837032212,
+    "displayCorrelation": [
+      {
+        "chapter": 1,
+        "rho": 0.6435733434068818
+      },
+      {
+        "chapter": 2,
+        "rho": 0.5471041842898186
+      },
+      {
+        "chapter": 3,
+        "rho": 0.43182067253512385
+      }
+    ],
+    "tierSteps": 23,
+    "tierReversals": 0,
+    "bandMisses": 2,
+    "cats": [
+      {
+        "id": "mochi",
+        "rate": 0.7435151515151515,
+        "topPickCells": 51
+      },
+      {
+        "id": "soot",
+        "rate": 0.6169696969696971,
+        "topPickCells": 14
+      },
+      {
+        "id": "clover",
+        "rate": 0.7323636363636364,
+        "topPickCells": 45
+      },
+      {
+        "id": "panko",
+        "rate": 0.7167272727272729,
+        "topPickCells": 40
+      },
+      {
+        "id": "mallow",
+        "rate": 0.7559999999999998,
+        "topPickCells": 30
+      },
+      {
+        "id": "sorrel",
+        "rate": 0.7343030303030302,
+        "topPickCells": 40
+      },
+      {
+        "id": "biscuit",
+        "rate": 0.8369696969696969,
+        "topPickCells": 56
+      },
+      {
+        "id": "inkcap",
+        "rate": 0.7324848484848486,
+        "topPickCells": 21
+      },
+      {
+        "id": "cinnamon",
+        "rate": 0.8442424242424241,
+        "topPickCells": 84
+      },
+      {
+        "id": "brioche",
+        "rate": 0.6202424242424244,
+        "topPickCells": 28
+      },
+      {
+        "id": "velvet",
+        "rate": 0.8660606060606058,
+        "topPickCells": 77
+      },
+      {
+        "id": "marigold",
+        "rate": 0.8441212121212122,
+        "topPickCells": 84
+      }
+    ],
+    "sets": [
+      {
+        "id": "hearthloom",
+        "rate": 0.77,
+        "leadingSituations": [
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "id": "moonwick",
+        "rate": 0.8025,
+        "leadingSituations": [
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "id": "mossbrew",
+        "rate": 0.8175,
+        "leadingSituations": [
+          1,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "id": "rainlace",
+        "rate": 0.8049999999999999,
+        "leadingSituations": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "id": "crumbweave",
+        "rate": 0.9225,
+        "leadingSituations": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "id": "bellsteel",
+        "rate": 0.7675000000000001,
+        "leadingSituations": [
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "id": "emberfelt",
+        "rate": 0.7875,
+        "leadingSituations": [
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "id": "velvetrim",
+        "rate": 0.8375,
+        "leadingSituations": [
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      }
+    ],
+    "crewGainPp": 24.666666666666668,
+    "bossDiversity": [
+      {
+        "chapter": 1,
+        "best": 1,
+        "withinFivePp": 40
+      },
+      {
+        "chapter": 2,
+        "best": 1,
+        "withinFivePp": 76
+      },
+      {
+        "chapter": 3,
+        "best": 1,
+        "withinFivePp": 130
+      }
+    ]
+  },
+  "paired": {
+    "groups": [
+      {
+        "key": "pieces-equipped:reference",
+        "cells": 384,
+        "battles": 19200,
+        "improved": 0,
+        "worsened": 0,
+        "positiveCells": 0,
+        "negativeCells": 0,
+        "exactOutcomeCells": 384
+      },
+      {
+        "key": "pieces-equipped:enhanced",
+        "cells": 384,
+        "battles": 19200,
+        "improved": 0,
+        "worsened": 0,
+        "positiveCells": 0,
+        "negativeCells": 0,
+        "exactOutcomeCells": 384
+      },
+      {
+        "key": "tiers:fixture",
+        "cells": 30,
+        "battles": 1500,
+        "improved": 0,
+        "worsened": 0,
+        "positiveCells": 0,
+        "negativeCells": 0,
+        "exactOutcomeCells": 30
+      },
+      {
+        "key": "bands:fixture",
+        "cells": 165,
+        "battles": 8250,
+        "improved": 0,
+        "worsened": 0,
+        "positiveCells": 0,
+        "negativeCells": 0,
+        "exactOutcomeCells": 165
+      },
+      {
+        "key": "fixed:fixture",
+        "cells": 15,
+        "battles": 750,
+        "improved": 0,
+        "worsened": 0,
+        "positiveCells": 0,
+        "negativeCells": 0,
+        "exactOutcomeCells": 15
+      },
+      {
+        "key": "sets:fixture",
+        "cells": 64,
+        "battles": 3200,
+        "improved": 0,
+        "worsened": 0,
+        "positiveCells": 0,
+        "negativeCells": 0,
+        "exactOutcomeCells": 64
+      },
+      {
+        "key": "teams:fixture",
+        "cells": 660,
+        "battles": 33000,
+        "improved": 0,
+        "worsened": 4,
+        "positiveCells": 0,
+        "negativeCells": 1,
+        "exactOutcomeCells": 659
+      },
+      {
+        "key": "crew:reference",
+        "cells": 3,
+        "battles": 150,
+        "improved": 0,
+        "worsened": 0,
+        "positiveCells": 0,
+        "negativeCells": 0,
+        "exactOutcomeCells": 3
+      },
+      {
+        "key": "crew:enhanced",
+        "cells": 3,
+        "battles": 150,
+        "improved": 0,
+        "worsened": 0,
+        "positiveCells": 0,
+        "negativeCells": 0,
+        "exactOutcomeCells": 3
+      }
+    ],
+    "crewSelections": [
+      {
+        "before": [
+          "biscuit",
+          "cinnamon",
+          "velvet"
+        ],
+        "after": [
+          "biscuit",
+          "cinnamon",
+          "velvet"
+        ],
+        "exact": true
+      }
+    ]
+  },
+  "savedDay7": {
+    "totals": {
+      "accounts": 90,
+      "firstImproved": 0,
+      "firstWorsened": 0,
+      "firstTwoImproved": 0,
+      "firstTwoWorsened": 0,
+      "firstEncountersExact": 90,
+      "firstChoicesExact": 90,
+      "firstStateHashesExact": 83,
+      "adviceExact": 90,
+      "costsExact": 90,
+      "retriesExact": 88,
+      "withoutAdviceExact": 85
+    },
+    "cohorts": [
+      {
+        "style": "casual",
+        "accounts": 30,
+        "chapters": {
+          "1": 6,
+          "2": 24,
+          "3": 0
+        },
+        "firstWins": 17,
+        "firstWinRate": 0.5666666666666667,
+        "firstWilson": [
+          0.3919730700081361,
+          0.7262251442353347
+        ],
+        "twoAttemptWins": 26,
+        "twoAttemptWinRate": 0.8666666666666667,
+        "twoAttemptWilson": [
+          0.703186733179637,
+          0.9469034451594526
+        ],
+        "losses": 13,
+        "availableAdvice": 13,
+        "allLossesHaveAdvice": true,
+        "retryWinsWithAdvice": 9,
+        "retryWinsWithoutAdvice": 6
+      },
+      {
+        "style": "regular",
+        "accounts": 30,
+        "chapters": {
+          "1": 6,
+          "2": 10,
+          "3": 14
+        },
+        "firstWins": 21,
+        "firstWinRate": 0.7,
+        "firstWilson": [
+          0.5212421254128504,
+          0.8333525173175619
+        ],
+        "twoAttemptWins": 28,
+        "twoAttemptWinRate": 0.9333333333333333,
+        "twoAttemptWilson": [
+          0.7867654163738308,
+          0.9815229762087295
+        ],
+        "losses": 9,
+        "availableAdvice": 9,
+        "allLossesHaveAdvice": true,
+        "retryWinsWithAdvice": 7,
+        "retryWinsWithoutAdvice": 4
+      },
+      {
+        "style": "heavy",
+        "accounts": 30,
+        "chapters": {
+          "1": 0,
+          "2": 1,
+          "3": 29
+        },
+        "firstWins": 28,
+        "firstWinRate": 0.9333333333333333,
+        "firstWilson": [
+          0.7867654163738308,
+          0.9815229762087295
+        ],
+        "twoAttemptWins": 28,
+        "twoAttemptWinRate": 0.9333333333333333,
+        "twoAttemptWilson": [
+          0.7867654163738308,
+          0.9815229762087295
+        ],
+        "losses": 2,
+        "availableAdvice": 2,
+        "allLossesHaveAdvice": true,
+        "retryWinsWithAdvice": 0,
+        "retryWinsWithoutAdvice": 2
+      }
+    ],
+    "gates": {
+      "casualFirstTwoAtLeast50": true,
+      "regularFirstTwoAtLeast70": true,
+      "heavyFirstAtMost95": true,
+      "everyLossHasAvailableImprovement": true
+    }
+  },
+  "sourceFilesChecked": 45,
+  "scope": {
+    "scope": "PASS",
+    "baseline": "PASS",
+    "historicalSimFiles": 13,
+    "author": "ntbaoheyhey <108352255+ntbaoheyhey@users.noreply.github.com> 1794162124 +0700"
+  },
+  "receipts": [
+    {
+      "path": "reports/cardrpg-big/a5/b2-hush-credit/gates/checks.json",
+      "sha256": "a9f9c2a1111230e1926f335fc0c52eebfdbf7d8a3b9684bc8c8c28c64ecb8254"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/b2/hush-eligibility-22/REGISTERED-METHOD.json",
+      "sha256": "80c6c10f190a58b4354182fe56d79d7e1c67d295ccd8ac5d825ffbf8840608f6"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/b2-hush-credit/off/checks.json",
+      "sha256": "b266e345cf77ddcfcdc0772a11a6e690e577fcf2168c09f2316c5fc4d4230e4d"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/b2-hush-credit/off/source.json",
+      "sha256": "c83ef8d96837b656f44a3079aaff4c88de2e2c3d917ff4faa537d835d6ee1877"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/b2/hush-eligibility-22/audit.json",
+      "sha256": "e15fdaa2d0f8dc347daf48a1acbac40af3e0e7ada16a1188b6f17145ef9c88dc"
+    }
+  ],
+  "limitations": [
+    "The original fixture does not establish elite crew diversity or all set niches.",
+    "TRAIN pilots are not the fresh 500-seed acceptance matrix.",
+    "Previously earned day7 saves do not establish a fresh 45-day earned progression cohort.",
+    "Changes to suppression credit affect Lantern healing timing; this is not only a wording fix.",
+    "Exact encounter summaries do not establish byte-identical combat logs or saved states.",
+    "No cooldown, gear-fixture, AI, model asset, protected path or dependency change is adopted.",
+    "Fresh acceptance 20001–20500 remains unused and all numeric misses remain visible.",
+    "Public offline artifact remains unchanged until the Z delivery phase."
+  ]
+}
