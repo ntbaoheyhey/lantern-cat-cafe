@@ -1,0 +1,466 @@
+{
+  "method": "TRAIN diagnostic; common eight scenes weighted equally for sets, cats and crew. Frozen scenario stats, same utility budgets and exact paired seeds. This does not replace the original acceptance definition automatically.",
+  "receipt": {
+    "path": "reports/cardrpg-big/a5/b2/common-fixture-04/results.json",
+    "sha256": "5bdc6c838f4ad4e84fc4ed63266a8530c2d104d6fabb746792bd09fd527b5ff2"
+  },
+  "count": 50,
+  "references": [
+    {
+      "scene": 0,
+      "rate": 0.48,
+      "calibration500Rate": 0.586,
+      "wilson95": [
+        0.34797135286578046,
+        0.6148825510995539
+      ]
+    },
+    {
+      "scene": 1,
+      "rate": 0.5,
+      "calibration500Rate": 0.552,
+      "wilson95": [
+        0.3664451431682858,
+        0.6335548568317142
+      ]
+    },
+    {
+      "scene": 2,
+      "rate": 0.52,
+      "calibration500Rate": 0.516,
+      "wilson95": [
+        0.38511744890044614,
+        0.6520286471342196
+      ]
+    },
+    {
+      "scene": 3,
+      "rate": 0.66,
+      "calibration500Rate": 0.638,
+      "wilson95": [
+        0.521538260502326,
+        0.7756305077749992
+      ]
+    },
+    {
+      "scene": 4,
+      "rate": 0.46,
+      "calibration500Rate": 0.524,
+      "wilson95": [
+        0.3296965219222435,
+        0.5960112860084253
+      ]
+    },
+    {
+      "scene": 5,
+      "rate": 0.46,
+      "calibration500Rate": 0.576,
+      "wilson95": [
+        0.3296965219222435,
+        0.5960112860084253
+      ]
+    },
+    {
+      "scene": 6,
+      "rate": 0.56,
+      "calibration500Rate": 0.57,
+      "wilson95": [
+        0.4230602802165686,
+        0.6883780078874284
+      ]
+    },
+    {
+      "scene": 7,
+      "rate": 0.42,
+      "calibration500Rate": 0.59,
+      "wilson95": [
+        0.2937500335471198,
+        0.5576655823142176
+      ]
+    }
+  ],
+  "sets": [
+    {
+      "id": "hearthloom",
+      "rate": 0.27499999999999997,
+      "leads": [
+        5
+      ]
+    },
+    {
+      "id": "moonwick",
+      "rate": 0.3025,
+      "leads": []
+    },
+    {
+      "id": "mossbrew",
+      "rate": 0.3875,
+      "leads": [
+        2,
+        6
+      ]
+    },
+    {
+      "id": "rainlace",
+      "rate": 0.315,
+      "leads": []
+    },
+    {
+      "id": "crumbweave",
+      "rate": 0.5125000000000001,
+      "leads": [
+        0,
+        1,
+        3,
+        4,
+        7
+      ]
+    },
+    {
+      "id": "bellsteel",
+      "rate": 0.27249999999999996,
+      "leads": []
+    },
+    {
+      "id": "emberfelt",
+      "rate": 0.2925,
+      "leads": []
+    },
+    {
+      "id": "velvetrim",
+      "rate": 0.3275,
+      "leads": []
+    }
+  ],
+  "cats": [
+    {
+      "id": "mochi",
+      "rate": 0.7182727272727273,
+      "topPickCells": 150,
+      "best": {
+        "team": [
+          "mochi",
+          "biscuit",
+          "brioche"
+        ],
+        "scene": 4,
+        "wins": 50,
+        "rate": 1,
+        "wilson95": [
+          0.9286524008666414,
+          1
+        ]
+      }
+    },
+    {
+      "id": "soot",
+      "rate": 0.4415909090909088,
+      "topPickCells": 54,
+      "best": {
+        "team": [
+          "mochi",
+          "soot",
+          "brioche"
+        ],
+        "scene": 7,
+        "wins": 50,
+        "rate": 1,
+        "wilson95": [
+          0.9286524008666414,
+          1
+        ]
+      }
+    },
+    {
+      "id": "clover",
+      "rate": 0.6080909090909087,
+      "topPickCells": 110,
+      "best": {
+        "team": [
+          "clover",
+          "biscuit",
+          "brioche"
+        ],
+        "scene": 4,
+        "wins": 50,
+        "rate": 1,
+        "wilson95": [
+          0.9286524008666414,
+          1
+        ]
+      }
+    },
+    {
+      "id": "panko",
+      "rate": 0.6863181818181817,
+      "topPickCells": 122,
+      "best": {
+        "team": [
+          "clover",
+          "panko",
+          "biscuit"
+        ],
+        "scene": 5,
+        "wins": 50,
+        "rate": 1,
+        "wilson95": [
+          0.9286524008666414,
+          1
+        ]
+      }
+    },
+    {
+      "id": "mallow",
+      "rate": 0.638181818181818,
+      "topPickCells": 98,
+      "best": {
+        "team": [
+          "clover",
+          "mallow",
+          "biscuit"
+        ],
+        "scene": 1,
+        "wins": 50,
+        "rate": 1,
+        "wilson95": [
+          0.9286524008666414,
+          1
+        ]
+      }
+    },
+    {
+      "id": "sorrel",
+      "rate": 0.523090909090909,
+      "topPickCells": 80,
+      "best": {
+        "team": [
+          "clover",
+          "mallow",
+          "sorrel"
+        ],
+        "scene": 7,
+        "wins": 50,
+        "rate": 1,
+        "wilson95": [
+          0.9286524008666414,
+          1
+        ]
+      }
+    },
+    {
+      "id": "biscuit",
+      "rate": 0.7154090909090909,
+      "topPickCells": 151,
+      "best": {
+        "team": [
+          "biscuit",
+          "brioche",
+          "marigold"
+        ],
+        "scene": 1,
+        "wins": 50,
+        "rate": 1,
+        "wilson95": [
+          0.9286524008666414,
+          1
+        ]
+      }
+    },
+    {
+      "id": "inkcap",
+      "rate": 0.5447272727272724,
+      "topPickCells": 69,
+      "best": {
+        "team": [
+          "biscuit",
+          "inkcap",
+          "brioche"
+        ],
+        "scene": 7,
+        "wins": 50,
+        "rate": 1,
+        "wilson95": [
+          0.9286524008666414,
+          1
+        ]
+      }
+    },
+    {
+      "id": "cinnamon",
+      "rate": 0.836272727272727,
+      "topPickCells": 285,
+      "best": {
+        "team": [
+          "biscuit",
+          "cinnamon",
+          "brioche"
+        ],
+        "scene": 3,
+        "wins": 50,
+        "rate": 1,
+        "wilson95": [
+          0.9286524008666414,
+          1
+        ]
+      }
+    },
+    {
+      "id": "brioche",
+      "rate": 0.6105454545454546,
+      "topPickCells": 107,
+      "best": {
+        "team": [
+          "biscuit",
+          "brioche",
+          "marigold"
+        ],
+        "scene": 1,
+        "wins": 50,
+        "rate": 1,
+        "wilson95": [
+          0.9286524008666414,
+          1
+        ]
+      }
+    },
+    {
+      "id": "velvet",
+      "rate": 0.6609999999999995,
+      "topPickCells": 130,
+      "best": {
+        "team": [
+          "biscuit",
+          "brioche",
+          "velvet"
+        ],
+        "scene": 0,
+        "wins": 50,
+        "rate": 1,
+        "wilson95": [
+          0.9286524008666414,
+          1
+        ]
+      }
+    },
+    {
+      "id": "marigold",
+      "rate": 0.726909090909091,
+      "topPickCells": 182,
+      "best": {
+        "team": [
+          "biscuit",
+          "brioche",
+          "marigold"
+        ],
+        "scene": 1,
+        "wins": 50,
+        "rate": 1,
+        "wilson95": [
+          0.9286524008666414,
+          1
+        ]
+      }
+    }
+  ],
+  "diversity": [
+    {
+      "scene": 0,
+      "enemies": [
+        "yarn-giant"
+      ],
+      "best": 1,
+      "withinFivePp": 69,
+      "saturatedTeams": 69
+    },
+    {
+      "scene": 1,
+      "enemies": [
+        "rain-spool"
+      ],
+      "best": 1,
+      "withinFivePp": 81,
+      "saturatedTeams": 81
+    },
+    {
+      "scene": 2,
+      "enemies": [
+        "pantry-crown"
+      ],
+      "best": 1,
+      "withinFivePp": 49,
+      "saturatedTeams": 49
+    },
+    {
+      "scene": 3,
+      "enemies": [
+        "needle-moth",
+        "pollen-scout"
+      ],
+      "best": 1,
+      "withinFivePp": 35,
+      "saturatedTeams": 35
+    },
+    {
+      "scene": 4,
+      "enemies": [
+        "spool-ram",
+        "button-guard"
+      ],
+      "best": 1,
+      "withinFivePp": 82,
+      "saturatedTeams": 82
+    },
+    {
+      "scene": 5,
+      "enemies": [
+        "teacup-healer",
+        "kettle-knight"
+      ],
+      "best": 1,
+      "withinFivePp": 70,
+      "saturatedTeams": 70
+    },
+    {
+      "scene": 6,
+      "enemies": [
+        "crumb-sentinel",
+        "binding-thread"
+      ],
+      "best": 1,
+      "withinFivePp": 82,
+      "saturatedTeams": 82
+    },
+    {
+      "scene": 7,
+      "enemies": [
+        "sock-skipper",
+        "needle-moth"
+      ],
+      "best": 1,
+      "withinFivePp": 147,
+      "saturatedTeams": 147
+    }
+  ],
+  "crew": {
+    "team": [
+      "mallow",
+      "biscuit",
+      "cinnamon"
+    ],
+    "gainPp": 31
+  },
+  "gates": {
+    "everySet35to75": false,
+    "everySetLeads": false,
+    "everyCat55to75": false,
+    "everyCatTopPick": true,
+    "crew10to25": false,
+    "diversityAtLeastFour": true
+  },
+  "limitations": [
+    "Reference difficulty was chosen on TRAIN using only the starter role kit, before any new set/team cell.",
+    "Per-cat averages pool overlapping teams; scene Wilson intervals do not imply independent pooled team trials.",
+    "Each of the four catalog elites appears in one declared lineup; other companion lineups are not inferred.",
+    "The best crew and best-at examples are TRAIN selections. They must be registered unchanged before fresh acceptance."
+  ]
+}

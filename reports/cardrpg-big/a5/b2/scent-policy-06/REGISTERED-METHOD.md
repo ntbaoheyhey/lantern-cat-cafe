@@ -1,0 +1,7 @@
+# Scent policy06 — registered TRAIN candidate
+
+Read-only probe05 reproduced all22000original battles. Soot selected Black cup zero times in203598actions. Its Moonwick heal emitted3096events, all in teams also containing Velvet; no healing trigger without Velvet. The original one-action score omits Scent. This establishes an unused kit action, not that selecting it would win more.
+
+One isolated candidate values Scent for the remaining visible mark duration: basic direct-damage amplification of20%, actual marked-damage affixes/set bonus and at most6missingHP per marked attack for Moonwick. Count still-queued allies in this round and future full mark rounds; cap estimated damage at targetHP and healing at missingHP. No enemy-RNG peeking, fixed skill bonus, skill/stat/gear/crew change or new combat input. This estimate assumes eligible allies use basic attacks, so healing/control opportunity costs may make it optimistic; report negative paired results too.
+
+Run the original1840common-fixture cells, all8scenes/8sets/220triples/reference/pairedcrew, TRAIN1..50, fixed original budget/weights/enemyStats. Preserve every original result, first-seed replay parity and paired improved/worsened counts; report Soot Black cup choices and every cat/set gate. Do not recalibrate difficulty, replace acceptance, combine anchored/spread candidates or adopt automatically. Source snapshot and matrix hashes fixed before first run.110second shared leases and7second handoffs. Fresh20001–20500 remains unused.
