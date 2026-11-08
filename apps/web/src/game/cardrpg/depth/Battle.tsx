@@ -68,12 +68,17 @@ export function BattleView({ m }: { m: DepthModel }) {
     const currentAudio = m.audio;
     try {
       const anchorPlates = (anchors: Anchor[]) => {
-        for (const plate of plates.current.values()) plate.hidden = true;
+        const visible = new Set(anchors.filter(anchor => anchor.visible).map(anchor => anchor.id));
+        for (const [id, plate] of plates.current) {
+          if (!readable) plate.hidden = true;
+          else if (plate.hidden === visible.has(id)) plate.hidden = !visible.has(id);
+        }
         for (const anchor of anchors) {
           const plate = plates.current.get(anchor.id);
           if (!plate) continue;
-          plate.hidden = !anchor.visible;
-          plate.style.transform = `translate(${Math.round(anchor.labelX - 69)}px, ${Math.round(anchor.labelY)}px)`;
+          const transform = `translate(${Math.round(anchor.labelX - 69)}px, ${Math.round(anchor.labelY)}px)`;
+          if (!readable) plate.hidden = !anchor.visible;
+          if (!readable || plate.style.transform !== transform) plate.style.transform = transform;
         }
       };
       scene.current = new TurnScene(host.current!, () => ({ ...view.current!, frame: m.frame }), anchorPlates, () => {}, message => {

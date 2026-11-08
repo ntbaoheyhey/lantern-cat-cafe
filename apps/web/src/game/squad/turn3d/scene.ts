@@ -16,6 +16,7 @@ import { createLookStage, disposeLookStage } from './look-stage';
 import { createLookEnvironment } from './look-environment';
 import {stageTexture,prepareStageTexture} from './surfaces';
 import {layoutLabels,intersects,type LabelInput} from './label-layout';
+import { StableLabelLayout } from './look-label-layout';
 import {GearAttachments,GearResources} from './gear-visuals';
 import type {ActorAppearance} from './appearance';
 import { loadModel } from './assets';
@@ -76,6 +77,7 @@ export class TurnScene {
   readonly stats = { frames: 0, calls: 0, triangles: 0, geometries: 0, textures: 0, particles: 0, estimatedGpuBytes: 0, loaded: 0, hiddenFrames: 0,quality:'high' as Quality };
   readonly labelAudit:{heads:LabelInput['head'][];cards:LabelInput['head'][];missing:string[];overlaps:number}={heads:[],cards:[],missing:[],overlaps:0};
   private positions=new Map<string,T.Vector3>();private scratch=new T.Vector3();private zero=new T.Vector3();private labelsAt=0;
+  private stableLabels = new StableLabelLayout();
   private puppets = new Map<string,Puppet>();
   private gearResources = new GearResources();
   private pending = new Set<string>();
@@ -574,7 +576,8 @@ export class TurnScene {
     }
     const obstacles = view.autoBattle ? view.actors.filter(actor => actor.side === 'party' && actor.hp > 0)
       .flatMap(actor => { const puppet = this.puppets.get(actor.id); return puppet ? [screenBounds(puppet.model,this.camera,this.width,this.height)] : []; }) : [];
-    const placed=layoutLabels(labels,this.width,this.height,view.autoBattle?138:90,obstacles);
+    const placed=readable ? this.stableLabels.resolve(labels,this.width,this.height,138,obstacles)
+      : layoutLabels(labels,this.width,this.height,view.autoBattle?138:90,obstacles);
     this.labelAudit.heads=[...labels.map(p=>p.head),...obstacles];this.labelAudit.cards=[...placed.values()];this.labelAudit.missing=labels.filter(p=>!placed.has(p.id)).map(p=>p.id);this.labelAudit.overlaps=this.labelAudit.cards.reduce((sum,c,i)=>sum+this.labelAudit.cards.slice(i+1).filter(x=>intersects(c,x,0)).length+this.labelAudit.heads.filter(h=>intersects(c,h,0)).length,0);
     for(const a of projected){const box=placed.get(a.id);if(box){a.labelX=box.x+box.width/2;a.labelY=box.y}else a.visible=false;}
     this.onAnchors(projected);
