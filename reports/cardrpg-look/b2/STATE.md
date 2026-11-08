@@ -1,25 +1,26 @@
 # B2 STATE
-Base0ce18c085d078a5351c3fe7893302d63b39f3e6e; own checkout /Users/bao/taskbar-hero-cardrpg-b2.
-Single agent/native macOS/headless/noDocker/noCUA/no generative calls. B-owned presentation only; no protected/meta/rules edits.
-V0draft387, V1draft389, V3draft390, V2draft391, V4draft392 published. V5 sourcec4e161434, four gates/digest5/twelve shots complete.
-V1 four reviewed rounds; cats31–41%arena/15–20%page. V2 thirteen opponents reviewed, plum/eyes/rose mats; luminance0.009–0.039 MISS0.18.
-V3 immutable0f87e6ef:144casts max16.8ms and6cold complete. Historical633cast/666cold/400postready retained; no causal cure claim.
-V4 liveUI failed9instead12slots because starter has3equipped skills; preserve failure log, render4catalog slots with unavailable state inV6.
-V5 twelve-ultimate sheet/fullClover/wave personally reviewed.288face samples/0offenders,105draws/111338tris. Review in v5/REVIEW.md.
-V5published1d0fb2b06; currentbranch codex/cardrpg-b2-v6-2026-11-08. Next: UI/startup/sixshots/lean/video/fivebattle; report/ledger/B-OUTBOX.
-After-effects performance will use immutable /tmp/cardrpg-b2-v6.html; registered144casts+6cold, no matrix or retries for a pass.
-V5 queuedprobe9384 stopped before any child/sample; after-effects probe will use actual V6 delivery HTML. V6 fivegates1773web/421E2E/digest5/twelve shots complete. Delivery UI attempt1 passed slot/receipt/toggle checks but exact preview-speed label timedout. Fixed explicit aria-label in offline gallery; no web/rules source change. Rebuild/captures session86891 queued; original5gates remain applicable. Shared timinglock <=20min with6.5s handoff.
-Evidence26MiB after archival review copies; budget60MB, compress only already-reviewed PNGs if necessary; raw traces/frames in/tmp/cardrpg-b2-*.
-A read17:39UTC: sourceedd8ac69e; schema v1/v2 unchanged, devgating preserved. Open A integration: App-owned devgating and exact receipts/adoption.
-Closure index unchanged7e092b1a/31,494,758bytes. Drafts only; no merge/deploy/mainpush/A5rebase.
-V6 artifactf660b547/29,812,850bytes; twelvecaptures/error0/overflow0. Reviewed1280round1/1024Clover; v6/REVIEW.md.
-Current demo c711dec2/29,812,862bytes at95078dad5;12shots rerun after offline aria-label fix, errors0/overflow0. Delivery retry session6476 queued; aftereffects probe still unstarted.
-UI c711dec2 PASS3sizes:12icons,82pxHUD,13.8249:1numericcontrast,tooltip/before-after/receipt/galleryspeed/effect-only. Delivery15621 continuesstartup/lean/DPR2/video/lifecycle.
-Posteffects probe now registered on /tmp/cardrpg-b2-v6.html c711dec2; keep originalsingle144cast+6cold run, no retries for pass.
-Resume: deliveryPID15621 and performancePID17040 still active; galleryPID17223 queued, no duplicates. First48native casts16.8ms; remainingconfigs/cold pending.
-StartupPASS3522500bytes/11chunks/0Three-model. Lean21550338bytes/B-assets15349700bytes;SSIMmin0.999987. DPR2sixshots complete; boss/earned inspected. Before20svideo captured; after/lifecycle pending.
-LatestA18:02 holds source-validation lease after B handoff; da2b4886c schema unchanged. V6 report generator now follows archivedWebP filenames; audit strengthened for digest5/artifactbinding/lifecycle/gallery. No runtime changes.
-Native after-VFX96cast windows complete at1280/1440,max16.8ms/errors0. Fivebattle lifecyclePID27841 owns currentlease; first4sameScene543geometries/103textures/47programs. CPU4/cold/gallery pending.
-Full/lean/video/DPR2 delivery published43662f01c; V6draft awaits remainingregisteredprobes/report. Evidence58.76MB after archival1024/video-sheetWebP packing; keep1440DPR2+1280PNG and both20svideos.
-144casts complete16.8ms; nativecold3complete16.8ms;CPU4coldpending. Galleryready check FAILED: previewbar top107px blocks Pause; retainedv6/gallery/attempt-1.log.
-CommittedCSSfixf052fb330 moves only gallerypreviewtop171px; rebuild wrapper/session39936 queued, thenUI3sizes+gallery3sizes. Originalperf17040 continuesc711immutable; no repeatedsamples. Will prove JS/assets/existingbattleCSS identical and report CSS-only artifact lineage.
+Base: 0ce18c085d078a5351c3fe7893302d63b39f3e6e; checkout /Users/bao/taskbar-hero-cardrpg-b2.
+Single agent; native macOS/headless; no Docker/CUA/generative calls. B-owned presentation only.
+Branch codex/cardrpg-b2-v6-2026-11-08; V0/V1/V3/V2/V4/V5 drafts 387/389/390/391/392/393 published.
+V0–V5 complete; do not redo phases or completed samples. V6 delivery checks complete; report/draft publication next.
+Source checks: typecheck/lint/unit/build PASS each phase; V6 1773 web tests and 421 E2E PASS.
+Five-seed full-battle/log bytes match baseline in every phase; protected and A-owned paths unchanged.
+Framing: round1 cats17.8–23.0% page height; regular foes20.0–21.5%; HUD82px at1280, contrast13.8249.
+V5 ultimate sheet reviewed;288 face samples/0offenders. Delivery peak115draws/117942tris.
+V3 and post-V5 each144cast windows+6cold complete. Post-V5 native/CPU4casts16.8ms max; nativecold16.8ms.
+CPU4cold166.6ms; CPU4scene setup250ms. Historical633/666/400ms retained, no causal cure claim.
+Original17040 exited after CPU4coldrun0. Preserve run0; resumed only missingrun1–2, receipt v5/perf/resume.json.
+Measured immutableHTML c711dec2 at/tmp/cardrpg-b2-v6.html; timing/video/six-shot/lifecycle hashes remain original.
+Delivery7f4d0fcc/29812862bytes;lean285d6745/21550338bytes. Only gallery preview top107→171px changed.
+v6/gallery-fix-lineage.json proves JS/assets/otherCSS identical. Three-width general UI on deliveryPASS.
+Ready-gallery 1024/1280/1440 complete: all mouse controls/quarter speed/effect-only PASS, no page errors.
+No active B browser/probe remains. Original pre-fix gallery failure retained; six repaired ready views personally inspected.
+Next: commit/push reviewed delivery; draftV6 onV5, ledger B2 section, B-OUTBOX checkpoint and publication note.
+Full/lean B-owned embeddedbytes23612236/15349700; lean six-shotSSIMmin0.999987; HTML below31.5MB.
+Two20s H264 clips at1440x900, x1, sameinitialSHA/9choices; no cuts. Six1440DPR2 originals retained.
+Five natural battles: sameScene; GPU543/103/47 stable; heap+653272bytes. Observation, not proof of flatness.
+Startup3522500bytes/11scripts/0Three-model, delta0; closureindex7e092b1a/31494758bytes unchanged.
+Known misses: opponent luminance0.009–0.039<0.18;boss/tallestregular1.52–1.66x<2x. Sorrelpreview obscuresSoot.
+A integration: preserve App ?dev=1 gating; forward exact earned v1 receipt / v2 discovery; adopt B-owned stack separately.
+No A5 rebase, rules/meta/protected edits, merge/deploy/mainpush. Evidence below60MB; exact count in AUDIT.json.
+Audit29/31 PASS; only the two art gates above miss. Report66lines; images and links verified. Raw traces stay/tmp/cardrpg-b2-*; no matrices/20replay reruns.

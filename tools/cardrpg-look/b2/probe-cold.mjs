@@ -13,12 +13,22 @@ const snapshotFile = resolve(snapshotDirectory, 'index.html');
 await writeFile(snapshotFile, artifactBytes);
 const captureScreenshots = process.env.BIG_CAPTURE !== '0';
 const scenarios = JSON.parse(process.env.BIG_SCENARIOS || '[[1280,720,1,1],[1280,720,2,1],[1440,900,1,1],[1440,900,2,1],[1280,720,1,4],[1280,720,2,4],[2560,1440,1,1]]');
+// Continue an interrupted registration without overwriting completed samples.
+const sampleStart = Number(process.env.BIG_SAMPLE_START || 0);
+if (!Number.isInteger(sampleStart) || sampleStart < 0) throw new Error('Invalid sample offset');
 await mkdir(output, { recursive: true });
+for (const [i, [width, height, dpr, throttle]] of scenarios.entries()) {
+  const name = `run${sampleStart + i}-${width}x${height}-dpr${dpr}-cpu${throttle}`;
+  if (await readFile(`${output}/${name}.json`).then(() => true, () => false)) {
+    await rm(snapshotDirectory, { recursive: true, force: true });
+    throw new Error(`Refusing to repeat completed sample ${name}`);
+  }
+}
 const browser = await chromium.launch({ channel: 'chromium', args: ['--use-angle=metal'] });
 const rows = [];
 try {
   for (const [sampleIndex, [width, height, dpr, throttle]] of scenarios.entries()) {
-    const name = `run${sampleIndex}-${width}x${height}-dpr${dpr}-cpu${throttle}`;
+    const name = `run${sampleStart + sampleIndex}-${width}x${height}-dpr${dpr}-cpu${throttle}`;
     const page = await browser.newPage({ viewport: { width, height }, deviceScaleFactor: dpr });
     const errors = [];
     page.on('pageerror', error => errors.push(String(error)));

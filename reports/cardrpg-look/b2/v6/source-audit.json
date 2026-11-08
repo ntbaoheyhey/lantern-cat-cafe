@@ -22,5 +22,33 @@
     "reports/cardrpg-look/b2/v0/1280-6-earned.png",
     "reports/cardrpg-look/b2/v5/shots/1280-6-earned.png"
   ],
-  "note": "Lossy archival WebP copies were made after the measured HTML. Exact original gallery PNGs remain in the recorded Git source commit; no HTML rebuild or runtime change during measurement."
+  "note": "Lossy archival WebP copies were made after the measured HTML. Exact original gallery PNGs remain in the recorded Git source commit; no HTML rebuild or runtime change during measurement.",
+  "deliveryGalleryRevision": {
+    "htmlSha256": "7f4d0fcc694915958c0c38ad54c9722ced944b18b82aadc346cdaede43fe7aae",
+    "buildHead": "f052fb330d5bd068976867a0ce73aeea2e3ec15e",
+    "buildDirty": true,
+    "recordedInputs": 1980,
+    "changedMeasurementOrReportTools": [
+      "tools/cardrpg-look/b2/audit.mjs",
+      "tools/cardrpg-look/b2/probe-cold.mjs",
+      "tools/cardrpg-look/b2/write-report.py"
+    ],
+    "archivalInputsVerifiedAtOriginalCommit": [
+      "reports/cardrpg-look/b2/v0/1280-1-round1.png",
+      "reports/cardrpg-look/b2/v5/shots/1280-1-round1.png",
+      "reports/cardrpg-look/b2/v0/1280-2-mochi.png",
+      "reports/cardrpg-look/b2/v5/shots/1280-2-mochi.png",
+      "reports/cardrpg-look/b2/v0/1280-3-clover.png",
+      "reports/cardrpg-look/b2/v5/shots/1280-3-clover.png",
+      "reports/cardrpg-look/b2/v0/1280-4-wave.png",
+      "reports/cardrpg-look/b2/v5/shots/1280-4-wave.png",
+      "reports/cardrpg-look/b2/v0/1280-5-boss.png",
+      "reports/cardrpg-look/b2/v5/shots/1280-5-boss.png",
+      "reports/cardrpg-look/b2/v0/1280-6-earned.png",
+      "reports/cardrpg-look/b2/v5/shots/1280-6-earned.png"
+    ],
+    "runtimeAndAssetsMatchBuildInputs": true,
+    "measuredToDeliveredComparison": "gallery-fix-lineage.json",
+    "note": "All app/runtime/assets match delivered build hashes. The only decoded change from measured c711dec2 is preview top107\u2192171px. Build dirty flag is preserved; absent gallery input PNGs are verified against their original source commit."
+  }
 }

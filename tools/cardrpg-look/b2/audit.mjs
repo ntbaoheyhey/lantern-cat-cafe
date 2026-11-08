@@ -21,9 +21,11 @@ const outOfScope=changed.filter(p=>!(/^(apps\/web\/src\/game\/squad\/turn3d\/|to
 check('B-owned changed paths only',outOfScope,outOfScope.length===0);
 const bytes=await readFile('docs/cardrpg-look/index.html'),sha=createHash('sha256').update(bytes).digest('hex');check('closure index exact',sha,sha==='7e092b1a18b2a4af1dcdcc51e6a24f38bc5e674580d2ecddca33c3de306aff34');
 check('startup parity',results.startup.deltaBytes,results.startup.deltaBytes===0);
-const shots=await read('v6/shots/shots.json'),ui=await read('v6/ui/checks.json'),dpr=await read('v6/1440/shots.json');check('12 layout +6 DPR2 shots',[shots.rows.length,dpr.rows.length],shots.rows.length===12&&dpr.rows.length===6&&shots.rows.every(r=>r.errors.length===0&&!r.overflow)&&dpr.rows.every(r=>r.errors.length===0&&!r.overflow));
+const shots=await read('v6/shots/shots.json'),ui=await read('v6/ui-gallery-fix/checks.json'),dpr=await read('v6/1440/shots.json');check('12 layout +6 DPR2 shots',[shots.rows.length,dpr.rows.length],shots.rows.length===12&&dpr.rows.length===6&&shots.rows.every(r=>r.errors.length===0&&!r.overflow)&&dpr.rows.every(r=>r.errors.length===0&&!r.overflow));
 const demo=await readFile('docs/cardrpg-look/b2.html'),demoSha=createHash('sha256').update(demo).digest('hex');
-check('delivery receipts bind the measured HTML',[results.sha256,perf.sha256,shots.sha256,ui.sha256,dpr.sha256], [results.sha256,perf.sha256,shots.sha256,ui.sha256,dpr.sha256].every(v=>v===demoSha));
+const lineage=await read('v6/gallery-fix-lineage.json'),fullLineage=lineage.rows.find(r=>r.variant==='full'),measuredSha=fullLineage.beforeSha256;
+check('gallery-only CSS patch preserves measured executable/assets/battle CSS',lineage.rows,lineage.rows.every(r=>r.javascriptByteIdentical&&r.allOtherHtmlByteIdentical&&r.allOtherCssByteIdentical)&&fullLineage.afterSha256===demoSha);
+check('receipts retain original and delivered HTML hashes',{measuredSha,deliveredSha:demoSha,perf:perf.sha256,shots:shots.sha256,ui:ui.sha256},[perf.sha256,shots.sha256,dpr.sha256].every(v=>v===measuredSha)&&results.sha256===demoSha&&ui.sha256===demoSha);
 check('three-width UI',ui.rows.length,ui.rows.length===3&&ui.errors.length===0&&ui.rows.every(r=>!r.overflow&&r.numberContrast>=4.5&&r.cardOverflow.every(v=>!v)));
 const videos=await read('v6/videos/checks.json');check('paired20sH264 same initial',videos.sameInitial,videos.sameInitial&&videos.rows.every(r=>r.errors.length===0&&r.probe.streams[0].codec_name==='h264'&&Number(r.probe.format.duration)===20));
 const roster=await read('v2/roster/checks.json'),bossIds=['yarn-giant','kettle-knight','pantry-crown'];
@@ -44,5 +46,7 @@ check('phase source gates',receipts.map(r=>({phase:r.phase,gates:r.gates})),rece
 check('five-seed full-battle and log parity each phase',receipts.map(r=>({phase:r.phase,seeds:r.digest.map(v=>v.seed)})),receipts.every(r=>JSON.stringify(r.digest)===JSON.stringify(receipts[0].digest)&&r.digest.length===5));
 const gallery=await read('v6/gallery/checks.json'),life=await read('v6/lifecycle/checks.json');
 check('ready gallery and effect-only preview',gallery.rows,gallery.sha256===demoSha&&gallery.errors.length===0&&gallery.rows.length===2&&gallery.rows.every(r=>r.ready&&r.speed===.25&&r.paused)&&gallery.rows[0].effectOnly===false&&gallery.rows[1].effectOnly===true);
-check('five natural battles retain one scene',life.rows.map(r=>({index:r.index,retained:r.retained})),life.sha256===demoSha&&life.errors.length===0&&life.rows.length===5&&life.rows.every(r=>r.retained));
+const gallerySizes=await read('v6/gallery/three-sizes.json');
+check('gallery mouse controls at three widths',gallerySizes.rows.map(r=>r.width),JSON.stringify(gallerySizes.rows.map(r=>r.width))==='[1024,1280,1440]'&&gallerySizes.rows.every(r=>r.sha256===demoSha&&r.errors.length===0&&r.rows.length===2&&r.rows.every(v=>v.ready&&v.speed===.25&&v.paused)&&r.rows[0].effectOnly===false&&r.rows[1].effectOnly===true));
+check('five natural battles retain one scene',life.rows.map(r=>({index:r.index,retained:r.retained})),life.sha256===measuredSha&&life.errors.length===0&&life.rows.length===5&&life.rows.every(r=>r.retained));
 await writeFile(`${root}/AUDIT.json`,JSON.stringify({at:new Date().toISOString(),checks,misses,receipts},null,2));console.log(JSON.stringify({checks:Object.keys(checks).length,misses}));
