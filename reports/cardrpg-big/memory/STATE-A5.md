@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-Growth38 source994d84056 verified: six source gates PASS1760web/1192rules/421E2E/build; separateON/OFF60browserchecks/36captures, contrast6.858/nooverflow. Exact rules/package reuseOFF8250, baseline/historical13exact. DRAFT400 onSettings399 published at1d9d4022d; no active jobs.
+DRAFT400 growth preview published and mirrored (ledgerab3b325ab/synce81fd1275). B1 reply-pressure39 registered on current exact rules: isolated full queued-reply34 AI plus boss attack1.15/1.30/1.45; six-replay/45OFF/scaling/observer probes then all384TRAIN1–50 pairs. One coordinator, no production change.
 ## NEXT
-Resume B1/B2 remaining numeric misses after growth draft/ledger/outbox. Original30minute cadence749.2s/dead907.7s MISS; display/startup/Z remain open. Fresh20001–20500 UNUSED.
+Audit every39arm and preserve all negative pairs/saturation; expand only under the prospective screen, otherwise reject. Original30minute cadence749.2s/dead907.7s MISS; B1/B2/display/startup/Z open. Fresh20001–20500 UNUSED.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -274,3 +274,5 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - 2026-11-08T20:42:34.933566+00:00: Growth38 independent closurePASS. Original six suites reused without reruns; all60ON/OFFbrowserchecks/36captures complete after one retained acknowledgement-only harness fix. Runtime994d84056 unchanged;21MBartifact archived, no rule/acceptance/B change.
 
 - 2026-11-08T20:44:00.015108+00:00: DRAFT400 https://github.com/ntbaoheyhey/taskbar-hero/pull/400 verified on399; source994d84056/evidence1d9d4022d. Growth preview fully wired and checked; all original failures and unresolved A5 numeric gates retained.
+
+- 2026-11-08T20:46:10.240191+00:00: Registered reply-pressure39 before samples; current production hashes identical to corrected34 except isolated policy and boss-only attack multiplier. Three fixed arms, all384cases versus early04 historical31. Controls reused; no acceptance or automatic adoption. Original coordinator tool52735 uses110sleases/7shandoffs.
