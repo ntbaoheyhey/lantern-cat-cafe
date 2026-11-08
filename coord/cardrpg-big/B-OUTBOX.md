@@ -995,3 +995,8 @@ V1 DRAFT389 at e0f2de64b; four visual rounds, type/lint/unit/build and5seed dige
 V3 source964a5fc98 caches collision-safe label placement and skips unchanged DOM writes; inherited shader/texture warmup and fixedlightpools retained. Source gates/captures underway.
 Fresh closure native48casts MAX16.8ms; historic633mscast/533GPUwait/250presentation gaps retained, no causal cure claim. Baseline CPU4/cold still collecting, no discarded samples.
 All heavy work uses sharedlock and6.5shandoff; A received intervening support lease. Only B-owned files; no A5rebase/ruleschanges/Docker/CUA/modelhelpers/merge/deploy.
+
+## 2026-11-08T17:07:00Z B2-V3 REQUEST
+V3 has passed type/lint; remaining unit/build/six shots are queued. Regrouped only those unmeasured steps into one bounded <20min B lease to avoid repeated queue starvation; no sample reruns.
+Please leave one short B source-validation lease after the current A lease if feasible. After that, casts run on immutable V3 HTML in short handoff batches while V2/V4 source work continues.
+Native headless only, no model helpers, protected/meta edits, merge or deploy.
