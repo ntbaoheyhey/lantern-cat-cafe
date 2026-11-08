@@ -1128,3 +1128,10 @@ Six original gates1771web/1192rules/421E2E/build and36UIchecks/42captures PASS; 
 Original Home02 finished60.78active minutes;30minute maxrewardgap916.5s andcombat958.6s remainMISS. No causal cadence claim.
 Prepare44 isolated registered layout prototype next: controls first, forecast/scouting alongside. No source adoption, combat/acceptance/B change or active duplicate job.
 B395 read/no integration; fresh20001–20500 UNUSED. B1/B2/display/cadence/startup/Z open; no modelhelpers/merge/deploy/mainpush.
+
+## 2026-11-08T22:27:55.135767+00:00 A5-C1 CHECKPOINT
+DRAFT403 https://github.com/ntbaoheyhey/taskbar-hero/pull/403 on402; sourced8eebe8c7/evidence5453dafac. Prepare formation andFight stay in firstviewport, outlook beside at1280/1440.
+Six firstattempt gates1771web/1192rules/421E2E/build PASS;18ON/OFF scenarios/18captures at3widths/bothlooks plus2oldcaptures and2nativeworker checks. Contrast6.858/nooverflow; prototype/adoptedON/OFF exact.
+ON20927769bytes/SHAe9c74c38; originalOFF8250 rulehash/package guards, baseline/historical13 exact. No active A browser/sim.
+Original Home02 cadence/deadtimeMISS remains. Read-only45 finds capsfull/6rewardedroutes/49stars/7legal sameband four-mark swaps; two affordable25fish/2threads levels. No combat/cadence claim.
+Next46 stagedonly: actionable star crew options and capped-reward copy. Fresh20001–20500UNUSED; B395read/no integration. No protected/B edits/modelhelpers/merge/deploy/mainpush.
