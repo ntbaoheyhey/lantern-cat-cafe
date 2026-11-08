@@ -1,0 +1,111 @@
+// REFERENCE: star-plans46 registration. Original earned save, public clicks, x1, no grants or skips.
+import {chromium} from '../../apps/web/node_modules/@playwright/test/index.mjs';
+import assert from 'node:assert/strict';
+import {createHash} from 'node:crypto';
+import {mkdir,readFile,writeFile} from 'node:fs/promises';
+const mode=process.argv[2],width=Number(process.argv[3]);
+assert(['on','off'].includes(mode));assert([1280,1440,1024].includes(width));
+const height=width===1440?900:width===1024?600:720;
+const root='reports/cardrpg-big/a5/e2-star-plans',attempt=process.env.A5_STAR_ATTEMPT||'1';
+const out=`${root}/${mode}-${width}-attempt-${attempt}`,artifact=`/tmp/cardrpg-a5-star-plans-${mode}/index.html`;
+await mkdir(out,{recursive:false});
+const sha=b=>createHash('sha256').update(b).digest('hex');
+const fixtures=JSON.parse(await readFile(root+'/fixtures/checks.json'));
+const browser=await chromium.launch({channel:'chromium',headless:true,args:['--use-angle=metal']});
+const checks=[],captures=[],errors=[],remote=[];let passed=false;
+try{
+ for(const look of ['baseline','look']){
+  const page=await browser.newPage({viewport:{width,height},reducedMotion:'reduce'});
+  page.on('pageerror',e=>errors.push(String(e)));page.on('request',r=>{if(/^https?:/.test(r.url()))remote.push(r.url());});
+  const button=name=>page.getByRole('button',{name,exact:true});
+  const nav=async name=>{await page.getByRole('navigation',{name:'Cafe screens'}).getByRole('button',{name,exact:true}).click();await page.waitForFunction(()=>!document.querySelector('.cr-content')?.textContent.includes('Opening the table…'));};
+  const read=()=>page.evaluate(()=>({state:window.__depthReview.state,battle:window.__depthReview.battle,screen:window.__depthReview.screen}));
+  const home=page.getByRole('region',{name:'Tonight at home'});
+  async function capture(name){
+   await page.locator('.cr-content').evaluate(e=>e.scrollTop=0);
+   await page.waitForFunction(()=>!document.querySelector('.dp-miniature-loading'),null,{timeout:15000}).catch(()=>{});
+   const facts=await page.evaluate(()=>{
+    const visible=e=>{if(!e.getClientRects().length)return false;for(let p=e;p;p=p.parentElement)if(p.tagName==='DETAILS'&&!p.open&&!p.querySelector(':scope > summary')?.contains(e))return false;return true;};
+    const rgb=s=>(s.match(/[\d.]+/g)||[]).map(Number),lum=c=>c.slice(0,3).map(x=>x/255).map(x=>x<=.04045?x/12.92:((x+.055)/1.055)**2.4).reduce((n,x,i)=>n+x*[.2126,.7152,.0722][i],0);
+    const nodes=[...document.querySelectorAll('.dp-v4-home :is(p,b,span,button,h2,h3,small,summary)')].filter(e=>!e.children.length&&visible(e)&&e.textContent.trim());
+    const contrast=nodes.map(e=>{let p=e,bgs;const rect=e.getBoundingClientRect(),x=rect.x+rect.width/2,y=rect.y+rect.height/2;
+     while(p){const box=p.getBoundingClientRect();if(x<box.left||x>box.right||y<box.top||y>box.bottom){p=p.parentElement;continue;}
+      const style=getComputedStyle(p),stops=[...style.backgroundImage.matchAll(/rgba?\([^)]+\)/g)].map(m=>rgb(m[0]));
+      if(stops.length&&stops.every(c=>c.length===3||c[3]===1)){bgs=stops;break;}const c=rgb(style.backgroundColor);if(c.length===3||c[3]===1){bgs=[c];break;}p=p.parentElement;}
+     const a=lum(rgb(getComputedStyle(e).color)),ls=(bgs||[[29,27,40]]).map(lum),b=Math.max(Math.min(...ls),Math.min(Math.max(...ls),a));
+     return{text:e.textContent.trim(),ratio:(Math.max(a,b)+.05)/(Math.min(a,b)+.05)};});
+    const primary=document.querySelector('.dp-v4-home .cr-primary')?.getBoundingClientRect();
+    return{overflow:document.documentElement.scrollWidth-innerWidth,contrast,primaryVisible:primary?primary.top>=0&&primary.bottom<=innerHeight:null};
+   });
+   const path=`${out}/${look}-${name}.png`;await page.screenshot({path});captures.push({look,name,path,...facts});
+   assert.equal(facts.overflow,0);if(facts.primaryVisible!==null)assert(facts.primaryVisible);
+   if(facts.contrast.length)assert(facts.contrast.every(c=>c.ratio>=4.5),JSON.stringify(facts.contrast));
+  }
+  async function imported(name){
+   const f=fixtures.fixtures.find(r=>r.name===name),save=await readFile(f.path,'utf8');assert.equal(sha(save),f.sha256);
+   await nav('Save & settings');await page.getByLabel('Save code',{exact:true}).fill(save.trim());await button('Import save code').click();
+   assert.match(await page.locator('.cr-status').innerText(),/checksum verified/);await nav('Cafe');
+   return (await read()).state;
+  }
+  await page.goto('file://'+artifact+(look==='look'?'?dev=1':''));
+  await page.getByRole('heading',{name:'A small light. A brave little team.',exact:true}).waitFor({timeout:120000});
+  if(look==='look')await button('Look A/B').click();
+  const original=await imported(mode==='on'?'earned':'off');
+  if(mode==='off'){
+   assert.equal(await page.locator('.dp-v4-star-plans').count(),0);assert(!await home.count());await capture('home-off');
+   await nav('Night route');assert.match(await page.locator('.cr-content').innerText(),/Chapter rewards and equipment are already in your account/);
+   assert.deepEqual((await read()).state,original);await capture('completed-off');
+   checks.push({look,kind:'OFF unchanged controls, completion text and account'});await page.close();continue;
+  }
+  assert.match(await home.innerText(),/Tonight's supplies are gathered. Missing stars still count/);
+  assert.match(await home.innerText(),/Tangled Cafe · band 1, stop 2/);await capture('capped-home');
+  await nav('Night route');const completion=await page.locator('.cr-content').innerText();
+  assert.match(completion,/Today’s supplies are gathered/);assert.doesNotMatch(completion,/Chapter rewards and equipment are already/);
+  if(!original.run.earnedItems.length)assert.equal(await button('Equip your rewards').count(),0);
+  await capture('capped-completion');await nav('Cafe');
+  const details=page.locator('.dp-v4-star-plans');await details.locator('summary').focus();await page.keyboard.press('Enter');
+  const labels=await details.getByRole('button').allTextContents();assert.equal(labels.length,7);
+  assert(labels.slice(0,3).every(label=>label.includes('instead of Soot')));
+  assert.match(await details.innerText(),/Complete the event at stop 2/);assert.deepEqual((await read()).state,original);await capture('crew-options');
+  await button('Use Mallow instead of Soot').focus();await page.keyboard.press('Space');
+  await page.getByRole('status',{name:'New discovery'}).waitFor();
+  const after=(await read()).state;
+  assert.deepEqual(after.account.currencies,original.account.currencies);assert.deepEqual(after.equipment,original.equipment);
+  assert.deepEqual(after.team,['mochi','mallow','clover']);assert.equal(after.rows.mallow,original.rows.soot);
+  assert.equal(Math.min(...after.account.cards.filter(c=>after.team.includes(c.cardId)).map(c=>c.level)),1);
+  assert(after.v4.journey.found.some(d=>d.id==='crew:door:4'));await capture('crew-discovery');
+  await page.waitForFunction(()=>window.__depthReview.state.v4.journey.pending.length===0);
+  const expected=JSON.parse(await readFile(root+'/fixtures/after-acknowledgement.json'));
+  assert.deepEqual((await read()).state,expected);assert.equal(await details.count(),0);
+  checks.push({look,kind:'seven legal options, keyboard swap, exact public command state, no currency or gear change'});
+  await home.locator('button.cr-primary').click();let current=await read();
+  assert.equal(current.state.run.chapter,1);assert.equal(current.state.run.challengeLevel,1);
+  const active=current.state;await nav('Cafe');assert.equal(await details.count(),0);
+  await home.locator('button.cr-primary').click();assert.deepEqual((await read()).state,active);
+  checks.push({look,kind:'active route immutable, no home swap offered, band retained'});
+  await page.locator('.dp-node:enabled').first().click();await button('Fight').waitFor();
+  const setup=(await read()).battle.initial;assert(setup.gameplayV4);const started=Date.now();await button('Fight').click();
+  await button('Continue to rewards').waitFor({timeout:180000});current=await read();
+  assert.equal(current.battle.result,'party');const elapsedMs=Date.now()-started;
+  await writeFile(`${out}/${look}-battle.json`,JSON.stringify(current.battle,null,2)+'\n');
+  await button('Continue to rewards').click();await page.locator('.dp-reward').first().click();
+  await page.locator('.dp-node:enabled').filter({hasText:'event'}).click();
+  assert.equal((await read()).state.run.current,'1-0');
+  await page.locator('.cr-panel .dp-three button:enabled').first().click();current=await read();
+  const receipt=current.state.v4.journey.stars['1/1/1-0/event'];assert.deepEqual(receipt.conditions,[true,true,true]);
+  assert.deepEqual(current.state.account.currencies,original.account.currencies);
+  await capture('earned-job-star');await nav('Collection journal');
+  await page.getByRole('region',{name:'Discoveries'}).getByText('Your route stars',{exact:true}).click();
+  assert.match(await page.getByRole('region',{name:'Discoveries'}).innerText(),/Door team reached its 4-mark bonus/);
+  assert.match(await page.getByRole('region',{name:'Discoveries'}).innerText(),/Tangled Cafe · Band 1 · event 1-0: 3\/3/);
+  await capture('journal-star');await writeFile(`${out}/${look}-earned-state.json`,JSON.stringify(current.state,null,2)+'\n');
+  checks.push({look,kind:'named job star earned through public route clicks and saved in journal',receipt,battleElapsedMs:elapsedMs,noSkip:true,currenciesExact:true});
+  await page.close();
+ }
+ assert.deepEqual(errors,[]);assert.deepEqual(remote,[]);passed=true;
+}finally{
+ await writeFile(out+'/checks.json',JSON.stringify({passed,mode,width,height,artifact,sha256:sha(await readFile(artifact)),checks,captures,errors,remote,
+  method:'Original Home02 earned save; UI imports/clicks and x1 automatic fight, no browser state edits, no grants or skips. This is a targeted continuation, not a fresh cadence sample.'},null,2)+'\n');
+ await browser.close();
+}
+console.log(JSON.stringify({passed,mode,width,checks:checks.length,captures:captures.length}));
