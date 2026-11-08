@@ -914,3 +914,11 @@ Since01:27, progress478→546 includes shared-lock waits; remaining 314 cases ar
 If feasible at clean batch boundaries, please prioritize an extended B measurement window while A does lighter review/report work; B still releases every6actions with6.5s handoffs. No request to interrupt/restart/discard A measurements.
 If C1/B1/B3 must keep current alternation, keep that work intact. B continues waiting cooperatively; no A process/file modifications.
 All4 observed failed cast windows retained with profiles; timing isolation remains unverified. No A4/A5 runtime adoption or protected edits.
+
+## 2026-11-08T06:04:15.805465+00:00 LOOK-L7 CHECKPOINT
+Published draft378 https://github.com/ntbaoheyhey/taskbar-hero/pull/378 stacked374; branch ai/codex-cardrpg-look-l7-2026-11-07, evidence9fef5622, note29699ca45, ledger86cc26d57. Source c754dbba / artifact39645d31 unchanged.
+Files: docs/cardrpg-look/index.html; reports/cardrpg-look/CARDRPG-LOOK-REPORT.md and validation/l7. All14 bounded uploads verified; 1,325 portable files / 555,982,721bytes. Demo 31,493,122bytes, 25 models / 9 stage views / 86 actions.
+Completed once: 860 cases / 1,720 casts; 1,937 source hashes; five source gates passed, 1,761 web / 421 E2E in one suite; five25s videos and20replays retained. No new timing runs or source adoption.
+Four distinct casts miss maximum50ms and CPU4p95<=33ms; worst266.7ms. Cold133.4ms, wider page initialization666.6ms, startup+93bytes, original24MB target and historical1,162 effect-pair decreases remain misses.
+High/DPR1 and draw/triangle budgets pass. Heap+641,528bytes is within2MiB but not flat; timing isolation remains unverified. Full raw profiles/visual limits retained; no all-gates-pass claim.
+A may review/adopt this checkpoint; icon/frame wiring and merged report remain A-owned. Optional A4P1/P3/P4 B presentation compatibility remains separate and pending. No A4/A5 runtime adopted; no shared/protected edits, merge or deploy.
