@@ -65,7 +65,7 @@ describe('v4 equipment safety and compatibility',()=>{
  });
  it('round trips THC9 presets and imports THC8, while legacy-only exports remain THC7',()=>{
   const s=R.saveLoadoutV4(fresh(),2,'Dawn').state;
-  expect(R.exportSave(s).startsWith('THC12.')).toBe(true);expect(R.importSave(R.exportSave(s))).toEqual(s);expect(R.importSave(code(s))).toEqual(s);
+  expect(R.exportSave(s).startsWith('THC13.')).toBe(true);expect(R.importSave(R.exportSave(s))).toEqual(s);expect(R.importSave(code(s))).toEqual(s);
   expect(R.exportSave(R.createDepthAccount()).startsWith('THC7.')).toBe(true);
   const off=R.setGameplayV4(s,false);expect(R.importSave(R.exportSave(off)).v4).toEqual(s.v4);
  });

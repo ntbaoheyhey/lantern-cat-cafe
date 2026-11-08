@@ -212,3 +212,20 @@
 .dp-v4-scouting { margin: 16px 0; }
 .dp-v4-scouting h3 { margin-top: 0; }
 .dp-v4-scouting p { margin-bottom: 0; }
+
+/* A5 discoveries and the cafe home; gameplayV4-only components. */
+.dp-v4-home{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(180px,.7fr);gap:24px;align-items:center}
+.dp-v4-home h2{margin:10px 0;font-size:30px}.dp-v4-home>.dp-miniature{height:270px}
+.dp-v4-home-pull{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:12px}
+.dp-v4-home-pull p{margin:4px 0}.dp-v4-home-pull span{display:block;margin-top:5px}
+.dp-v4-home-tomorrow{margin:12px 0 0;color:var(--muted)}.dp-v4-skip-lesson{margin-left:10px}
+.dp-v4-home-board>summary,.dp-v4-home-routes>details>summary{cursor:pointer;padding:8px 0}
+.dp-v4-stars{display:block;color:#f2cd87;font-size:17px;letter-spacing:2px}.dp-v4-stars [data-earned=false]{color:#cfbdd8}
+.dp-v4-star-goals{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:13px;letter-spacing:normal;color:#f3eee4}
+.dp-v4-star-board{margin-top:22px}.dp-v4-discoveries>ol{list-style:none;padding:0;display:grid;gap:8px}
+.dp-v4-discoveries li{padding:10px;border-bottom:1px solid #67556b}.dp-v4-discoveries li small{display:block;color:#d5c9dc}
+.dp-v4-celebration{position:fixed;z-index:90;right:24px;bottom:24px;max-width:340px;padding:18px 22px;border:1px solid #f2cd87;border-radius:16px;background:#302638;color:#f3eee4;box-shadow:0 8px 32px #0005;animation:dp-discovery-in .2s ease-out}
+.dp-v4-celebration small{color:#f2cd87}.dp-v4-celebration p{margin:8px 0 12px}.dp-v4-celebration button{min-height:32px}
+.dp-v4-celebration[data-reduced=true]{animation:none}@keyframes dp-discovery-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.dp-v4-celebration{animation:none}}
+@media(max-width:1100px){.dp-v4-home{grid-template-columns:minmax(0,1fr) 180px;gap:12px}.dp-v4-home>.dp-miniature{height:240px}.dp-v4-home h2{font-size:26px}.dp-v4-home-pull{gap:8px}.dp-v4-celebration{right:16px;bottom:16px;max-width:300px}}

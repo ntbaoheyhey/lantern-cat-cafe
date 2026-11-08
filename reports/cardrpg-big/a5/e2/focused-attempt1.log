@@ -1,0 +1,20 @@
+{"lock":"acquired","lane":"A","pid":7139,"startedAt":"2026-11-08T08:31:29.311Z","task":"A5 E2 focused UI and rule checks"}
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-a4/apps/web
+
+
+ Test Files  2 passed (2)
+      Tests  8 passed (8)
+   Start at  15:31:29
+   Duration  1.07s (environment 44%, transform 32%, import 17%, tests 6%)
+
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-a4/packages/game-rules
+
+
+ Test Files  1 passed (1)
+      Tests  8 passed (8)
+   Start at  15:31:31
+   Duration  173ms (transform 60%, import 26%, tests 13%, worker 2%)
+
+{"lock":"released","pid":7139,"task":"A5 E2 focused UI and rule checks"}

@@ -1,3 +1,5 @@
+import { combatStarsV4, stopStarsV4 } from './stars-v4';
+import { recordNodeStarsV4 } from './journey-v4';
 import { Rng, deriveSeed } from '../../rng';
 import { clone, integer, requireRule, progress } from '../internal';
 import { BOONS, BOON_BY_ID } from './boons';
@@ -143,6 +145,7 @@ export function finishEncounter(state: DepthAccount): RuleResult<DepthAccount> {
   return transactDepth(state,s=>{
     const run=s.run,b=run?.battle;requireRule(run&&b?.result,'NOT_READY','Finish the encounter.');
     const node=run.nodes.find(n=>n.id===run.current);requireRule(node,'NOT_READY','Encounter node missing.');
+    recordNodeStarsV4(s, combatStarsV4(run, node, b));
     if(run.gameplayV4)delete run.packedSupply;
     run.hp=Object.fromEntries(b.actors.filter(a=>a.side==='party').map(a=>[a.catalogId,a.hp]));s.lastChoices=clone(b.choices);run.battle=null;
     if(b.result==='enemy'){settleRun(s,false);return;}
@@ -185,6 +188,7 @@ export function resolveNode(state: DepthAccount,choice: string,targetId?: string
       if(choice==='points')run.points+=70;else addBoon(run,shopStock(run)[0]!);
     } else requireRule(false,'NOT_READY','This node requires a battle.');
     finishNode(run);
+    recordNodeStarsV4(s, stopStarsV4(s, run, node, Object.fromEntries(cats.map(c => [c.id,c.stats.hp]))));
   });
 }
 export function shopStock(run: Run): string[] {

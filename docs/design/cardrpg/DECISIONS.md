@@ -118,3 +118,9 @@ Result contributions are exact observed amounts, grouped by actor and effect ide
 The available retry command settles the lost route once, checks the owned/affordable change again, and starts a new route at its first stop. This preserves the existing route economy and avoids resurrecting a settled boss battle. The button explicitly says “Apply and retry route”; it does not promise an immediate boss rematch or victory. Forecasts use20 fixed TRAIN seeds in a worker and qualitative bands; CPU4 page throttle is reported separately because worker slowdown is not calibrated.
 
 Scouting exposes opening, reach and closing separately after the first, story and elite stops. The original opening copy leaked the closing phase; the reviewed artifact fixes this and verifies3/3 at boss preparation. Evidence: reports/cardrpg-big/a5/E1-CHOICE-PAYOFF.md and e1/reviewed/audit.json. No combat tuning, save schema or version1 B event change in E1.
+
+## A5 E2 implementation — stars and discoveries, 2026-11-08
+
+Each node keeps three independent badges across visits, keyed by chapter/band/map position/kind. Noncombat stops use completion, half-health and four-mark crew goals, since they have no winner or battle-round count. Three once-only milestone rewards share existing daily caps; replay stars are not a new uncapped currency source. THC13 is required for the saved journal, with quiet migration and OFF preservation.
+
+Discovery earned-reveal version2 explicitly discriminates crew/set/rank/Legendary/star events instead of inventing invitation fields. Version1 events remain unchanged. The A-owned DOM fallback lasts1.2s and stays hidden during battle or invitation reveal. Evidence and limits: reports/cardrpg-big/a5/e2/CONTRACT.md and rules/checks.json; broader economy and engagement remain unmeasured on this change.

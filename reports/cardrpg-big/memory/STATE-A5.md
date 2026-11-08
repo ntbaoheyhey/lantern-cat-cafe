@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-E1 source 602587b35 is verified: six source gates, 18 reviewed desktop captures, 3-clue real-click route, CPU4 observations, fresh OFF 8250 and three receipt tests PASS. Reviewed artifact bdbdb35a / 20,914,389 bytes. Published DRAFT #383 on #382.
+E2 source adopted after snapshot typecheck and16focused checks PASS. THC13 stores monotone stars/discoveries and one-time capped claims; compactHome,1.2s skippable celebration and exactv1invitation forwarding. Actual earned route/stars sim PASS; sixgates/build/browser/OFF next.
 ## NEXT
-E2 draft at /tmp/cardrpg-a5-e2-integration: seven rule tests PASS; isolated typecheck failed because snapshot omitted existing client files. Restore snapshot dependency, review source and validate before adoption. No active E1 jobs. B1/B2 remain MISS; combat A4; fresh acceptance 20001–20500 unused. Stack 376→377→379→381→382→383.
+Run E2 sixgates and targeted3widths, retain originals; no B renderer adoption. Need fresh45day economy after added star claims and E3/H0 cadence measurement. B1/B2/day7 victory stillMISS; combat A4; fresh20001–20500 unused. Published stack376→377→379→381→382→383.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES

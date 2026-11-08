@@ -33,3 +33,10 @@ export function battleReasons(battle: Battle): string[] {
   if (!reasons.length) reasons.push('Direct attacks and current health decided this encounter; no protection contribution was recorded.');
   return reasons.slice(0, 3);
 }
+
+/** Version 2 earned discoveries have no draw, banner or pity fields. Version 1 receipts remain readable. */
+export interface DiscoveryRevealV4 {
+  version: 2; kind: 'earned-reveal'; sequence: number; round: 0;
+  discovery: { kind: 'crew' | 'set' | 'rank' | 'legendary' | 'stars'; id: string };
+  itemId: string; text: string;
+}

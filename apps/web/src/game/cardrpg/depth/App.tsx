@@ -1,3 +1,4 @@
+import { DiscoveryCelebrationV4 } from './JourneyV4';
 import { showReviewTools } from "./player-mode";
 import { lazy, Suspense, useEffect, useLayoutEffect, useRef, useState, useSyncExternalStore, type CSSProperties } from 'react';
 import { isLookV2, setLookV2, subscribeLookV2 } from '../../squad/turn3d/look-v2';
@@ -79,6 +80,7 @@ export default function DepthApp({ offline = false, gameplayV4 = false }: { offl
         {m.screen === 'collection' && <Collection m={m} />}{m.screen === 'inventory' && <Inventory m={m} />}{m.screen === 'gacha' && <Invitations m={m} />}
         {m.screen === 'codex' && <Codex v4={activeGameplayV4(m.state)} />}{m.screen === 'relics' && <Relics m={m} />}{m.screen === 'save' && <SaveSettings m={m} />}{m.screen === 'evidence' && <Evidence />}</Suspense>
       </div></main></div></div>
+    <DiscoveryCelebrationV4 m={m}/>
     {m.sceneStarted && <div className="dp-battle-shell"><Suspense fallback={<p role="status">Preparing the battle…</p>}><BattleView m={m} /></Suspense></div>}
     {offline && reviewTools && m.labPerformance && <Suspense fallback={null}><FrameOverlay m={m} /></Suspense>}
   </div></CompanionPreviewProvider>;
