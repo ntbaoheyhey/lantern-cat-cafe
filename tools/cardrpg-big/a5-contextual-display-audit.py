@@ -9,6 +9,8 @@ reg = read(root / 'REGISTERED-METHOD.json')
 result = read(root / 'results.json')
 partial = read(root / 'partial.json')
 assert read(root / 'complete.json')['complete']
+registration_digest = hashlib.sha256(json.dumps(reg,ensure_ascii=False,separators=(',',':')).encode()).hexdigest()
+assert result['registrationSha256'] == partial['registrationSha256'] == registration_digest
 assert sha(reg['control']) == reg['controlSha256']
 for p, digest in reg['source'].items():
     assert sha(Path(reg['sourceRoot']) / p) == digest, p

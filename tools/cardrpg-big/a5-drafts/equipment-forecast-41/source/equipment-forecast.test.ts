@@ -35,7 +35,7 @@ it('uses the named boss and exact band pressure at all three unlocked chapters',
 });
 
 it('includes loss of gear on active cats when transferring to a reserve', () => {
-  let state = account(); const invite = firstInvitation(state, 11);
+  let state = account(); const invite = firstInvitation(state, 4);
   expect(invite.ok).toBe(true); state = invite.state;
   const reserve = state.account.cards.find(card => !state.team.includes(card.cardId))!;
   expect(reserve).toBeTruthy();
