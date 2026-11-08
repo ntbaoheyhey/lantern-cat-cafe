@@ -1121,3 +1121,10 @@ Actual equipment/transfer boss preview:36UIchecks/24captures across3widths/bothl
 ON/OFF adopted builds byte-exact to tested prototypes; ON20,927,337bytes/SHA0a2c5f1d. OFF8250 reused after exact rulehash/package guards; baseline/historical13 exact.
 Contextual40 exploratory correlations0.738/0.754/0.729 overlap seeds; staticdisplayMISS remains. Home02 original60min browser completes final lease; no restart or acceptance.
 Next Home43 fixes known star/destination chapter-band mismatch; no B/protected/source-rule edits. B395read/no integration; no modelhelpers/merge/deploy/mainpush.
+
+## 2026-11-08T22:19:19.282125+00:00 A5-E2 CHECKPOINT
+DRAFT402 https://github.com/ntbaoheyhey/taskbar-hero/pull/402 on401; source96b32a5d3/evidence2aa6e2b82. Home star hint/chapter/band agree; active route preserved.
+Six original gates1771web/1192rules/421E2E/build and36UIchecks/42captures PASS; original mismatch reproduced. OFF8250/source hashes, baseline/historical13 exact.
+Original Home02 finished60.78active minutes;30minute maxrewardgap916.5s andcombat958.6s remainMISS. No causal cadence claim.
+Prepare44 isolated registered layout prototype next: controls first, forecast/scouting alongside. No source adoption, combat/acceptance/B change or active duplicate job.
+B395 read/no integration; fresh20001–20500 UNUSED. B1/B2/display/cadence/startup/Z open; no modelhelpers/merge/deploy/mainpush.
