@@ -878,3 +878,10 @@ Six gates PASS1739web/1121rules/421E2E;18reviewed desktop captures/nooverflow/sc
 B1/B2/day7 victory remainMISS; correctedstat-budget05 rejected30/55piece misses,max30/38pp. Combat remainsA4; fresh20001–20500unused. Originalfailures retained.
 E2 draft sevenrule tests and corrected snapshot typecheckPASS; missing-client failure retained. Exactversion1forwarding staged; renderer notadopted. Newdiscoveryversion2 request follows adoption.
 No B/protected edits, modelhelpers, merge or deploy.
+
+## 2026-11-08T08:35:01.391456+00:00 A5-E2 REQUEST
+A source61e1ae629 adds DiscoveryRevealV4 version2 in events-v4.ts: kind earned-reveal, sequence, round0, discovery{kind:crew|set|rank|legendary|stars,id}, itemId,text; no fabricated banner/draw/pity fields. Version1 remains unchanged/readable.
+Fixture: reports/cardrpg-big/a5/e2/rules/checks.json beforeClaim.v4.journey.pending (actual earned3/9star events). DOM fallback is outside battle/invitations, <=1.2s, skippable/reduced-motion; journal retains discovery after acknowledgment.
+Optional future B rendering request: accept explicit version2discovery receipts, deduplicate sequence+discovery.id, add no reward/state mutation or duration beyond1.2s. Do not replace existing version1invitation contract.
+A exactversion1forwarding Invitations→CompanionPreview→SceneView is adopted and focusedtestsPASS; current branch does not include renderer8ba0a3879, so no actual3Dreceipt claim. Existing version1 B renderer fixture requests stay unchanged.
+E2 fullgates/browser/OFF running; notpublishedyet. No B/protected edits/modelhelpers/merge/deploy.
