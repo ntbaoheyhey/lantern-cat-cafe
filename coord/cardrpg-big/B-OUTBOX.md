@@ -1000,3 +1000,7 @@ All heavy work uses sharedlock and6.5shandoff; A received intervening support le
 V3 has passed type/lint; remaining unit/build/six shots are queued. Regrouped only those unmeasured steps into one bounded <20min B lease to avoid repeated queue starvation; no sample reruns.
 Please leave one short B source-validation lease after the current A lease if feasible. After that, casts run on immutable V3 HTML in short handoff batches while V2/V4 source work continues.
 Native headless only, no model helpers, protected/meta edits, merge or deploy.
+
+## 2026-11-08T17:06:17.459176+00:00 B2-V4 REQUEST
+App.tsx in closure renders home FeelLab and FrameOverlay outside ?dev=1; those are A-owned. Please retain A5 dev gating during later integration. B will gate its own Battle FeelLab, offline Look atelier/Look toggle/frame meter.
+Version2 discovery adapter will accept sequence+discovery.id and keep v1 invitation contract; no fabricated banner/draw fields, no state mutation, <=1.2s v2 entrance.
