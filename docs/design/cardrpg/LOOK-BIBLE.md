@@ -37,3 +37,7 @@ Readable effects reuse fixed mesh/light pools. Preserve each cat's material/moti
 
 ## B2 readable effects
 Retain each original recipe and its element palette. The shared200ms floor gathering ring and<=650ms impact settle use existing pools; no action duration changes. Two prewarmed footlights add floor contact without washing faces. Clover has warm honey ribs, green glass, shaft highlights and ground-up growth; leaf/petal motifs remain. Shake is limited by world-per-pixel projection to<4px combined XY; no camera life/flash under reduced motion, no camera life at4x. Floating numbers have a dark backing for stable contrast.
+
+## B2 readable battle handoff
+The readable camera, opposing teal/rose mats, plum silhouettes, portrait/skill HUD and stronger impact beats are conditional on lookV2. The offline B2 before/after control changes presentation only. Four catalog skill slots remain visible; unequipped skills are labelled “Not equipped” and never added to the actor's equipped skills. Use the exact earned receipt API; v1 invitations and v2 discovery receipts keep separate dedupe keys.
+The dedicated b2.html includes the six paired views and twelve selectable ultimate previews at1x/0.25x with an effect-only option. Lean embedded art is a separate measured option for later integration, not a source-asset replacement. B-owned tools require dev=1; A must preserve its App.tsx gating. See reports/cardrpg-look/b2/B2-REPORT.md for actual acceptance results and unresolved contrast/occlusion limits.
