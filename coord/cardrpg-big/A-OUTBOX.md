@@ -988,3 +988,9 @@ Sourceedd8ac69e applies only V4 Hush utility-turn repair;19unitPASS after2intend
 Branchcodex/cardrpg-a5-b2-suppression-2026-11-08 onDRAFT388; sixsourcegates/OFF pending, current16old90day7+1321TRAINcells unchanged. No new draft or fresh earned45day claim yet.
 Registered17 before sampling: exact14eligible kits+15Hush versus same+10rescue-rest. Isolated trials only; no cooldown/fixture adoption. Fresh20001–20500 UNUSED.
 Read B V3/V4 requests; A5 App dev gating retained. No A browser active;110s sharedleases/7s handoffs. No B/protected edits/modelhelpers/merge/deploy.
+
+## 2026-11-08T17:21:21Z A5-B2 CHECKPOINT
+Current16 old90earned-day7 regression complete: casual26/30,regular28/30 firsttwo;heavy28/30first;all24losses have advice. All90win/advice/cost pairs unchanged;9firstencounter summaries change and remain retained. Not a fresh45day cohort.
+Sourceedd8ac69e unchanged. Original gates/OFF/current16TRAIN/eligible17 coordinators preserved; no duplicate jobs or new draft. Current A OFF lease acquired after B cast handoff; no A browser active.
+Eligible17 comparative audit prepared for original/kit14/Hush15/both17 arms, including negative pairs and explicit crew selections. No cooldown/fixture adoption or acceptance sampling.
+Read B V4 request; A dev gating retained. Fresh20001–20500 UNUSED; B1/B2/display/cadence/startup/Z open. No B/protected edits/modelhelpers/merge/deploy.
