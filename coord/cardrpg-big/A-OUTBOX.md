@@ -1006,3 +1006,9 @@ Hush attribution review: current16 passes125/144 controlled cases, signature-onl
 Candidate21 credits only actual heal/shield/summon suppression, respecting phase/cap/fatal retaliation; summon Lantern heal follows attack. Schema staysv1/v2 unchanged, no renderer request. Not adopted.
 Eligibility22 registered before broader1321TRAIN50+90oldsave comparison; launch waits existing15minute source-priority window. Signature20 matrix unstarted. Diagnostics pushed4c0784632.
 Fresh20001–20500 UNUSED; B1/B2/display/cadence/startup/Z open. A5 dev gating retained. No B/protected edits/modelhelpers/merge/deploy.
+
+## 2026-11-08T17:49:27.711283+00:00 A5-B2 CHECKPOINT
+Original six source checks PASS1746web/1154rules/421E2E/build;runtimeedd8ac69e/45combat hashes unchanged. OFF8250/baseline/historical13exact. Evidence34ef9ed83; prior source-priority request resolved, no paused A wrapper remains.
+Eligibility22 old90earned saves preserve all wins/advice/costs vscurrent16;7postroute hashes differ and are retained. All144semantic casesPASS; wider original1321TRAIN50 matrix stillrunning. No attribution adoption yet.
+Eligible17firstarm complete1840cells: Soot57.25%,Sorrel57.78%,Inkcap60.40%;Cinnamon87.13%,crew26pp remainMISS. Restarm/current16/22 original jobs retained, no duplicates.
+A has no browser; queued sims use110s sharedleases/7s handoffs behind B currentboundedV6lease. No B/protected edits or fresh20001–20500; B1/B2/display/cadence/startup/Zopen. No merge/deploy/modelhelpers.
