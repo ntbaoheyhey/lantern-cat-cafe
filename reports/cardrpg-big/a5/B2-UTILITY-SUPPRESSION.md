@@ -24,3 +24,9 @@ The production regression suite adds19 behavioral cases, including summon/banque
 The carrier audit verifies all1,024cells/51,200battles. Inkcap–Velvetrim's declared scene improves21→48wins in matched-utility and21→49 in fixed-core, with no negative pairs in those two cells. Across each full25,600battle arm,1,070/1,077 improve and321/328 worsen;6/8 cells have negative net gains. These outcomes remain in [the paired audit](b2/utility-suppression-15/paired-carriers.json). Velvetrim still does not lead its saturated primary scene, and Bellsteel's fixed-core primary falls37→35wins. No claim that all builds improve.
 
 Production adopts only the three-line V4 branch, preserving the current fatal-followup guard formatting and anchored progression. All45 combat-source hashes must equal the registered current16 snapshot. Source regression passes19/19 after correction; the original2fail/17pass receipt is retained. Six source gates, OFF digest and current16 saved-input/balance regressions remain pending. No cooldown or fixture trial is adopted.
+
+## Current-source saved-day7 regression
+
+All90previously earned saves complete on current16. Casual26/30 and regular28/30 win within two attempts; heavy28/30 win first attempt. All24losses receive an available recommendation. Every first/first-two win outcome, advice and currency cost matches the anchored baseline. Of90first-encounter summaries,81are exact;89retry summaries and85without-advice summaries are exact. The independent audit preserves the changed pairs rather than claiming identical combat logs. Heavy advised retries still win0/2 while the paired without-advice attempts win2/2.
+
+This is a saved-input regression, not a new45-day earned cohort. Source gates, OFF and the original1321-cell balance matrix remain pending. [Paired account audit](b2/suppression-current-16/day7-paired.json).

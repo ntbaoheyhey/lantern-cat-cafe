@@ -37,7 +37,12 @@ assert.equal(pairs.rows.length,1024);
 const day7 = await read('reports/cardrpg-big/a5/b2/suppression-current-16/day7-checks/checks.json');
 assert.equal(day7.accounts.length,90);
 for (const [path,hash] of Object.entries(registration.savedInputs)) assert.equal(sha(await readFile(path)),hash,path);
+const day7Pairs = await read('reports/cardrpg-big/a5/b2/suppression-current-16/day7-paired.json');
+assert.equal(day7Pairs.totals.accounts,90);
+for (const receipt of day7Pairs.receipts) assert.equal(sha(await readFile(receipt.path)),receipt.sha256,receipt.path);
 const current = await read('reports/cardrpg-big/a5/b2/suppression-current-16/summary.json');
+assert.deepEqual(current.source,registration.combatSource);
+for (const receipt of current.receipts) assert.equal(sha(await readFile(receipt.path)),receipt.sha256,receipt.path);
 const scope = JSON.parse(execFileSync(process.execPath,['tools/cardrpg-big/a5-scope.mjs'],{encoding:'utf8'}));
 assert.equal(scope.scope,'PASS'); assert.equal(scope.baseline,'PASS'); assert.equal(scope.historicalSimFiles,13);
 const audit = { source, status:'Utility-suppression correction verified; broader A5 balance remains open.',
@@ -45,7 +50,7 @@ const audit = { source, status:'Utility-suppression correction verified; broader
   gates,off,sourceFilesChecked:Object.keys(registration.combatSource).length,
   commonGates:common.gates,commonCats:common.cats,commonCrew:common.crew,
   carrierPairs:pairs.totals,carrierPrimary:pairs.primary,
-  savedDay7:{cohorts:day7.cohorts,gates:day7.gates,scope:'90 previously earned saves; not a fresh 45-day progression cohort'},
+  savedDay7:{cohorts:day7.cohorts,gates:day7.gates,paired:day7Pairs.totals,scope:'90 previously earned saves; not a fresh 45-day progression cohort'},
   currentTrain:current,receipts,
   scope:{scope:scope.scope,baseline:scope.baseline,historicalSimFiles:scope.historicalSimFiles,author:scope.author},
   limitations:[
