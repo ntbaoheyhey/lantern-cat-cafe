@@ -1148,3 +1148,9 @@ Registered threat-beats47 at2305bc812 before samples: boss-only/all-enemy tells 
 Original coordinator12407 queues semantic/OFF/replay checks then384TRAIN1–50pairs per arm in110s leases/7s handoffs. All original22 controls and negative outcomes retained; screen fixed before sampling.
 Original Home03 browser12101 runs one registered60active-minute journey on immutable27f192301/2c318627, x1 and real clicks. Prior Home02 misses remain visible; no duplicate journey or causal claim.
 B395 read; no B integration or protected edits. Fresh20001–20500 unused; no model helpers, merge, deploy or main push.
+
+## 2026-11-08T23:09:34Z A5-B1 CLAIM
+Resumed original Home03 PID12101 and threat47 PID12407 without duplicate samples; prior forecast split48 remains chapter1MISS0.439. Runtime27f192301 unchanged.
+Registered isolated impact-delay49 at2852f623d:25%/50% post-shield boss HP damage settles after next own action; no strength/stats/fixture change. Exact semantics/OFF/replays precede384TRAIN50pairs.
+One native coordinator queues110s sharedleases/7s handoffs; original screen fixed before results, no automatic adoption. Pending-damage UI and broader gates would be required later.
+B395 read/no integration; fresh20001–20500 unused. No B/protected edits, model helpers, merge, deploy or main push.
