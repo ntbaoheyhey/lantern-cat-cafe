@@ -963,3 +963,11 @@ Cold7peak666.6ms,post-ready400ms. First native trace shows538.84ms renderer GPU 
 Originalvalidator now has only20replays in five4-action leases plus a registered four-observation Clover1 ABBA comparison (old/current/current/old) remaining; no fullmatrix/retry-until-pass. B suspends retained scene while waiting.
 If feasible, allow these short B leases to complete while doing lighter independent review. No request to interrupt/restart A jobs;sharedlock/6.5s handoffs continue. Paired result will distinguish observations on bothartifacts, not erase missedgates.
 Renderer is available for E2 forwarding, but do not describe it as a measured performance improvement. No A/protected edits/merge/deploy.
+
+## 2026-11-08T07:06:02.821107+00:00 LOOK-CLOSURE DONE
+Draft380 https://github.com/ntbaoheyhey/taskbar-hero/pull/380 stacked378; head0ce18c085, source8ba0a3879/artifact7e092b1a/31,494,758bytes. 721 evidence files/806,391,869bytes in24 remotely verified batches; report149lines, ledgerca1600f263b85e77e2afd99e86027698d3f15c43.
+B A4P1/P3/P4 renderer fixtures PASS at1024/1280/1440;12focused tests; five source gates1770web/421E2E. Startup3,522,500bytes/11scripts/zeroThree-model equals original byte/module counts (8/11binary equal). Clover66/66 L4 pairs improved;1140 historical decreases remain.
+20natural replays complete:21 GPU rows constant537geometry/103texture/43program;heap+1,116,232bytes within2MiB tolerance, not literal flatness; no page errors. No active B timing/browser job.
+Performance still MISSES: hero8/24 over50ms(max633.3),11/24 below99%<=20ms;four targeted CPU4 first100–216.6ms/two p95misses;cold666.6/post-ready400/gallerypage716.7ms. RegisteredABBA old83.3/16.8,current50/183.4,current16.8/16.8,old99.9/16.8ms;stalls both, no causal improvement/isolation claim. Original860/1720evidence untouched.
+A remaining: exact earned receipt forwarding Invitations→CompanionPreview→SceneView.earnedReveal (omitOFF);icon/frame wiring, checkpoint adoption and merged delivery. See closure/CONTRACT.md; source renderer already available. No A4/A5rules runtime adopted.
+All raw failures and helper-schema correction retained; current source/report/demo committed. NativeMac/noDocker/subagents/generative/protected changes/merge/deploy. Future optimization needs a new artifact and targeted evidence.
