@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-Original33 and corrected34 complete/audited, both rejected for saturation/progression; production e14d320ed unchanged. Emergency-only35 complete/audited/rejected:96piece misses,worst40pp,heavy30/30,two unavailable improvements. Current-source30minute engagement01 registered/started once on exact4b15da6d artifact.
+Original engagement01 browser60133 continues on immutable4b15da6d/e14d320ed; display36 static calibration retains original queued job. E2 Home follow-up fixes stale completed-lesson CTA and first-star copy, no combat change; source/UI checks pending.
 ## NEXT
-Keep33/34/35 rejected and preserve every negative pair. Preserve original engagement01 browser/leases and complete actual30active minutes, diagnose cadence honestly. B1/B2/display/startup/Z open; fresh20001–20500 UNUSED.
+Complete original30active-minute measurement without restarting it, audit display36, validate Home follow-up on separate artifact and publish draft only after six gates. B1/B2/display/startup/Z remain open; fresh20001–20500 UNUSED.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -248,3 +248,5 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - 2026-11-08T19:45:31.694405+00:00: Original33/34 independently audited, both0piece misses but364/384before and384/384after saturated;18/24tiersteps,heavy30/30,one unavailable advice. Both rejected. Emergency35 preserves original ranking unless strictly fewer queued-reply casualties;6full/18prefix/45OFF plus observer parityPASS (2/6wins). Original matrix/cohort active; no production mutation. Registered30minute engagement01 from exact current e14d320ed/4b15da6d, source/archive/script hashes, explicit H0 UI adaptations and frozen browser handoffs. One original browser coordinator only; no acceptance/B/protected change.
 
 - 2026-11-08T19:46:52.648936+00:00: Emergency35 complete1321TRAIN50/90same-band saves. Independent source/script/input/outcome auditPASS, but96piece misses/worst40pp,172before/171after saturated,cats67.70–91.76%,sets85.50–93.50%,heavy30/30,two unavailable advice. Rejected; runtimeunchanged. Original30minute engagement01 browser active (tool65238), no duplicate sampling.
+
+- 2026-11-08T19:56:08.300111+00:00: resumed existing engagement01 and display36 processes without duplicates. Personally inspected Cafe/result captures: after opening, Home still recommends the completed practice and sends primary action to Team; all-recorded-stars fallback incorrectly asks for first star. Separate E2 Home source starts next unlocked route at selected band, preserves active route, and names unfinished star location. Original elapsed artifact/source remain immutable. No combat/acceptance/B/protected change.
