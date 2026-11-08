@@ -6,7 +6,7 @@ Cân bằng trang bị, một số mèo, nhịp thưởng 30 phút và hiệu n�
 
 # A5 checkpoint — acceptance remains open
 
-Runtime source: `da2b4886c`. The latest Hush credit correction passes all six source checks and the exact OFF digest; [source-bound closure](b2-hush-credit/audit.json). This report separates historical evidence from current-source TRAIN diagnostics. Bots are proxies, not a human playtest. Fresh acceptance seeds20001–20500 remain UNUSED; old10001–10500 are contaminated.
+Runtime source: `a30757265` (copy-only successor to`da2b4886c`). The Hush credit correction passes all six source checks and the exact OFF digest; [source-bound closure](b2-hush-credit/audit.json). This report separates historical evidence from current-source TRAIN diagnostics. Bots are proxies, not a human playtest. Fresh acceptance seeds20001–20500 remain UNUSED; old10001–10500 are contaminated.
 
 ## Play experience and progression
 
@@ -57,12 +57,14 @@ P1 lossless artifact20,816,833bytes; later B3 reviewed artifact20,922,529bytes, 
 
 P1 default CPU median/max ms:1280CPU1 main295.7/368.1 versus candidate298.0/532.6 MISS;1280CPU4 1047.3/1114.4 versus1006.3/1046.8 PASS;1440CPU1 285.4/293.4 versus303.4/329.2 MISS. Three observations each, none discarded. Offline CPU4 full-opening max266.6ms exceeds120ms: MISS. [Individual observations](P1-SIZE-STARTUP.md).
 
-Latest source typecheck/lint/web1746/rules1186/E2E421/build PASS; original logs and two expected-failure/eleven skipped rule cases are retained. Latest OFF165cells/8250routes exact digest47477251b3d20ab602bee5c55a56cdd661e111b1386e298e0c9bc67737fecfa3. Baseline-v1 SHA9a5f6ebbb04af56c19f11cf43cf2763b35df2bde3b7a8dcd943060e878d793d3 and13historical sims unchanged. THC7/THC12 migrations and THC13 journal are covered by source tests.
+Latest copy source typecheck/lint/web1746/rules1186/build PASS; E2E420original+1failed-case retryPASS; original logs and two expected-failure/eleven skipped rule cases are retained. Latest OFF165cells/8250routes exact digest47477251b3d20ab602bee5c55a56cdd661e111b1386e298e0c9bc67737fecfa3. Baseline-v1 SHA9a5f6ebbb04af56c19f11cf43cf2763b35df2bde3b7a8dcd943060e878d793d3 and13historical sims unchanged. THC7/THC12 migrations and THC13 journal are covered by source tests.
 
 Reviewed preview: [B3 game](b3/closure/artifact/index.html), SHA60407a0bd423386c66d86f50b88d867a3a7fe89bee357836a3da1ae6796432a7. It predates the two Hush fixes. [Opening walkthrough](../../../docs/cardrpg3/a5-first-5-minutes.html) uses E3 screenshots/timeline. Public [game](../../../docs/cardrpg3/index.html) and [guide](../../../docs/cardrpg3/gameplay-v4.html) remain A4, SHA067d2062f6836a6d0bb9f6753ece1b2f3ca923688f241866a7f42806c8f7b6a1 /9dca8fe648d6e101de89ffa02099249327615648989b1207f7e7183c6c0d0482. Z will rebuild and replace them only after review.
 
 Draft stack: [376](https://github.com/ntbaoheyhey/taskbar-hero/pull/376) → [377](https://github.com/ntbaoheyhey/taskbar-hero/pull/377) → [379](https://github.com/ntbaoheyhey/taskbar-hero/pull/379) → [381](https://github.com/ntbaoheyhey/taskbar-hero/pull/381) → [382](https://github.com/ntbaoheyhey/taskbar-hero/pull/382) → [383](https://github.com/ntbaoheyhey/taskbar-hero/pull/383) → [384](https://github.com/ntbaoheyhey/taskbar-hero/pull/384) → [385](https://github.com/ntbaoheyhey/taskbar-hero/pull/385) → [386](https://github.com/ntbaoheyhey/taskbar-hero/pull/386) → [388](https://github.com/ntbaoheyhey/taskbar-hero/pull/388) → [394](https://github.com/ntbaoheyhey/taskbar-hero/pull/394). Hush source closure and remote draft are verified.
 
-B requests remain: automatic-action/crew/formation cues; phase≤400ms and finish≤800ms; exact v1 earned invitation and v2 discovery rendering. A forwards receipts and preserves dev gating; no B checkpoint is adopted. Latest B renderer delivery has separate performance receipts, not A5 integrated evidence.
+B requests remain: automatic-action/crew/formation cues; phase≤400ms and finish≤800ms; exact v1 earned invitation and v2 discovery rendering. A forwards receipts and preserves dev gating; no B checkpoint is adopted. B2 V0–V6 is published through draft395; its separate renderer/performance receipts are not A5 integrated evidence. No B source adopted.
 
-Remaining work: B1/B2 numeric closure and display calibration; per-cat on-screen job lines; fresh registered acceptance and earned cohorts on selected combat; full0–30/60min engagement; last-artifact screenshot pack; startup; guide refresh and fresh-eyes self-review. [Human playtest kit](PLAYTEST-KIT.md) is ready; no human answers or retention claim. Promotion to live and any future on-chain step remain user decisions after review; no such approval is requested at this checkpoint.
+Companion-job copy and eight mode-correct set tooltips pass216paired replays and separateON/OFF three-width checks; [report](C1-COMPANION-JOBS.md). Capabilities are not best-team rankings.
+
+Remaining work: B1/B2 numeric closure and display calibration; fresh registered acceptance and earned cohorts on selected combat; full0–30/60min engagement; last-artifact screenshot pack; startup; guide refresh and fresh-eyes self-review. [Human playtest kit](PLAYTEST-KIT.md) is ready; no human answers or retention claim. Promotion to live and any future on-chain step remain user decisions after review; no such approval is requested at this checkpoint.

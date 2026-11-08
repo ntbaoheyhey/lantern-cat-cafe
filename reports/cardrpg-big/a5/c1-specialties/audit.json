@@ -1,0 +1,1404 @@
+{
+  "source": "a307572652ecbaaf71bcecac9f4367cdb6529688",
+  "status": "PASS",
+  "gates": [
+    {
+      "name": "typecheck",
+      "attempt": 1,
+      "code": 0,
+      "head": "a307572652ecbaaf71bcecac9f4367cdb6529688",
+      "started": "2026-11-08T18:25:24.304Z",
+      "ended": "2026-11-08T18:25:34.699Z",
+      "log": "reports/cardrpg-big/a5/c1-specialties/gates/typecheck-attempt-1.log",
+      "sha256": "51a42e236a32504b0d88a3bf68105a49f4443b7656a01bba4c17d18c75eeb896",
+      "counts": []
+    },
+    {
+      "name": "lint",
+      "attempt": 1,
+      "code": 0,
+      "head": "a307572652ecbaaf71bcecac9f4367cdb6529688",
+      "started": "2026-11-08T18:25:34.700Z",
+      "ended": "2026-11-08T18:25:45.289Z",
+      "log": "reports/cardrpg-big/a5/c1-specialties/gates/lint-attempt-1.log",
+      "sha256": "a53f38f90231d3f94787cba09e842aed97ef41aed55d1a0351b112aabe7beea1",
+      "counts": []
+    },
+    {
+      "name": "web-unit",
+      "attempt": 1,
+      "code": 0,
+      "head": "a307572652ecbaaf71bcecac9f4367cdb6529688",
+      "started": "2026-11-08T18:25:45.289Z",
+      "ended": "2026-11-08T18:26:05.010Z",
+      "log": "reports/cardrpg-big/a5/c1-specialties/gates/web-unit-attempt-1.log",
+      "sha256": "ca3350b23fa7daf3084b11bf1bfe5502f288ffdb30f398ce1baf477508778f7c",
+      "counts": [
+        " Test Files  178 passed (178)",
+        "      Tests  1746 passed (1746)"
+      ]
+    },
+    {
+      "name": "rules",
+      "attempt": 1,
+      "code": 0,
+      "head": "a307572652ecbaaf71bcecac9f4367cdb6529688",
+      "started": "2026-11-08T18:26:05.011Z",
+      "ended": "2026-11-08T18:26:33.655Z",
+      "log": "reports/cardrpg-big/a5/c1-specialties/gates/rules-attempt-1.log",
+      "sha256": "6f5f5f2980cc95ea8a5904e478be847d0477d5094b7d3f4f18674192c040e1f0",
+      "counts": [
+        " Test Files  70 passed | 3 skipped (73)",
+        "      Tests  1186 passed | 2 expected fail | 11 skipped (1199)"
+      ]
+    },
+    {
+      "name": "e2e",
+      "attempt": 1,
+      "code": 1,
+      "head": "a307572652ecbaaf71bcecac9f4367cdb6529688",
+      "started": "2026-11-08T18:26:33.655Z",
+      "ended": "2026-11-08T18:28:43.188Z",
+      "log": "reports/cardrpg-big/a5/c1-specialties/gates/e2e-attempt-1.log",
+      "sha256": "18e073f352106231ef92fe762dc25065440712147fa426874a33c9c40528a42d",
+      "counts": [
+        "  1 failed",
+        "  420 passed (2.1m)"
+      ]
+    },
+    {
+      "name": "e2e",
+      "attempt": 2,
+      "code": 0,
+      "head": "b46b7993dad57807315ad10194800d5f9a25132e",
+      "scope": "last failed cases only; passed cases retained from the original complete run",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@taskbar-hero/web",
+        "test:e2e",
+        "--last-failed",
+        "--workers=1"
+      ],
+      "started": "2026-11-08T18:31:06.759Z",
+      "ended": "2026-11-08T18:31:20.164Z",
+      "log": "reports/cardrpg-big/a5/c1-specialties/gates/e2e-attempt-2.log",
+      "sha256": "dcf52e4afa71c2441168e0efdcf7a05f6b8468af371837d30da113ce8f1c34bb",
+      "counts": [
+        "  1 passed (13.0s)"
+      ]
+    },
+    {
+      "name": "build",
+      "attempt": 1,
+      "code": 0,
+      "head": "b46b7993dad57807315ad10194800d5f9a25132e",
+      "scope": "complete",
+      "command": [
+        "pnpm",
+        "build"
+      ],
+      "started": "2026-11-08T18:31:20.165Z",
+      "ended": "2026-11-08T18:31:30.209Z",
+      "log": "reports/cardrpg-big/a5/c1-specialties/gates/build-attempt-1.log",
+      "sha256": "86f36b4bb1921b59cff67545b08bcc8983b3663a54da2482522f3287b077e56b",
+      "counts": []
+    }
+  ],
+  "off": {
+    "offBehavior": "PASS",
+    "sha256": "47477251b3d20ab602bee5c55a56cdd661e111b1386e298e0c9bc67737fecfa3",
+    "cells": 165,
+    "routes": 8250
+  },
+  "artifacts": [
+    {
+      "mode": "on",
+      "path": "/tmp/cardrpg-a5-specialties-on/index.html",
+      "bytes": 20923141,
+      "sha256": "78c3fba75795fac516a90e2a5ecf9a9761795231426a38f601ad65f0ccfcfb52"
+    },
+    {
+      "mode": "off",
+      "path": "/tmp/cardrpg-a5-specialties-off/index.html",
+      "bytes": 20923141,
+      "sha256": "9ecb20d7b04fd3a8669451b9bf601305429d607dcd3bebb33dcd5812fb04a023"
+    }
+  ],
+  "browsers": [
+    {
+      "mode": "on",
+      "width": 1280,
+      "checks": [
+        "THC12 imports without losing currencies, team or day; build mode on",
+        "baseline: all twelve Collection selections show the correct on description",
+        "baseline: all eight set tooltips follow on; Team jobs visible",
+        "baseline: Prepare keyboard selection and placement preserve selected job",
+        "look: all twelve Collection selections show the correct on description",
+        "look: all eight set tooltips follow on; Team jobs visible",
+        "look: Prepare keyboard selection and placement preserve selected job"
+      ]
+    },
+    {
+      "mode": "on",
+      "width": 1440,
+      "checks": [
+        "THC12 imports without losing currencies, team or day; build mode on",
+        "baseline: all twelve Collection selections show the correct on description",
+        "baseline: all eight set tooltips follow on; Team jobs visible",
+        "baseline: Prepare keyboard selection and placement preserve selected job",
+        "look: all twelve Collection selections show the correct on description",
+        "look: all eight set tooltips follow on; Team jobs visible",
+        "look: Prepare keyboard selection and placement preserve selected job"
+      ]
+    },
+    {
+      "mode": "on",
+      "width": 1024,
+      "checks": [
+        "THC12 imports without losing currencies, team or day; build mode on",
+        "baseline: all twelve Collection selections show the correct on description",
+        "baseline: all eight set tooltips follow on; Team jobs visible",
+        "baseline: Prepare keyboard selection and placement preserve selected job",
+        "look: all twelve Collection selections show the correct on description",
+        "look: all eight set tooltips follow on; Team jobs visible",
+        "look: Prepare keyboard selection and placement preserve selected job"
+      ]
+    },
+    {
+      "mode": "off",
+      "width": 1280,
+      "checks": [
+        "THC12 imports without losing currencies, team or day; build mode off",
+        "baseline: all twelve Collection selections show the correct off description",
+        "baseline: all eight set tooltips follow off; Team jobs absent",
+        "baseline: Prepare has no V4 job panel",
+        "look: all twelve Collection selections show the correct off description",
+        "look: all eight set tooltips follow off; Team jobs absent",
+        "look: Prepare has no V4 job panel"
+      ]
+    },
+    {
+      "mode": "off",
+      "width": 1440,
+      "checks": [
+        "THC12 imports without losing currencies, team or day; build mode off",
+        "baseline: all twelve Collection selections show the correct off description",
+        "baseline: all eight set tooltips follow off; Team jobs absent",
+        "baseline: Prepare has no V4 job panel",
+        "look: all twelve Collection selections show the correct off description",
+        "look: all eight set tooltips follow off; Team jobs absent",
+        "look: Prepare has no V4 job panel"
+      ]
+    },
+    {
+      "mode": "off",
+      "width": 1024,
+      "checks": [
+        "THC12 imports without losing currencies, team or day; build mode off",
+        "baseline: all twelve Collection selections show the correct off description",
+        "baseline: all eight set tooltips follow off; Team jobs absent",
+        "baseline: Prepare has no V4 job panel",
+        "look: all twelve Collection selections show the correct off description",
+        "look: all eight set tooltips follow off; Team jobs absent",
+        "look: Prepare has no V4 job panel"
+      ]
+    }
+  ],
+  "pairedBattles": 216,
+  "allowedText": {
+    "before": "Lantern team: +8% effect accuracy; first utility suppression heals its user 8.",
+    "after": "Lantern team: +8% effect accuracy; first softened or stopped enemy action heals its controller 8.",
+    "events": 36
+  },
+  "captures": [
+    {
+      "name": "baseline-collection",
+      "path": "reports/cardrpg-big/a5/c1-specialties/browser-on-1280-attempt-1/baseline-collection.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Best at: Keeping several allies healthy over long fights.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Best at:",
+          "ratio": 11.756728459422893
+        }
+      ],
+      "sha256": "4d0b2c205a6811462fcfca571f43cf7372ee2d489bd20944b92a23134b800286"
+    },
+    {
+      "name": "baseline-team-sets",
+      "path": "reports/cardrpg-big/a5/c1-specialties/browser-on-1280-attempt-1/baseline-team-sets.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Hearthloom · 1/4",
+          "ratio": 8.37605029481978
+        },
+        {
+          "text": "Moonwick · 1/4",
+          "ratio": 8.37605029481978
+        },
+        {
+          "text": "Mossbrew · 1/4",
+          "ratio": 8.37605029481978
+        },
+        {
+          "text": "Rainlace · 1/4",
+          "ratio": 8.37605029481978
+        },
+        {
+          "text": "Crumbweave · 1/4",
+          "ratio": 8.37605029481978
+        },
+        {
+          "text": "Bellsteel · 1/4",
+          "ratio": 8.37605029481978
+        },
+        {
+          "text": "Emberfelt · 1/4",
+          "ratio": 8.37605029481978
+        },
+        {
+          "text": "Velvetrim · 1/4",
+          "ratio": 8.37605029481978
+        },
+        {
+          "text": "Mossbrew · 2/4",
+          "ratio": 8.37605029481978
+        }
+      ],
+      "sha256": "590af8e62989c93b56cc912dee99d80046559100b73838a45bd6c02b93fa4f26"
+    },
+    {
+      "name": "baseline-team-jobs",
+      "path": "reports/cardrpg-big/a5/c1-specialties/browser-on-1280-attempt-1/baseline-team-jobs.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Best at:",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Best at: Shielding the crew against front-row pressure.",
+          "ratio": 11.756728459422893
+        }
+      ],
+      "sha256": "a286aeca6521331c86cd86075b9ffb3e0eab9dd6f19da8eaf8c6011214481cfa"
+    },
+    {
+      "name": "baseline-prepare",
+      "path": "reports/cardrpg-big/a5/c1-specialties/browser-on-1280-attempt-1/baseline-prepare.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Best at: Detonating stacked Crumb trails.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Best at:",
+          "ratio": 11.756728459422893
+        }
+      ],
+      "sha256": "b55c0fd378e6d5e044ece71b7c65e7b9f05ceae1e7995fbf650b0aa98363a559"
+    },
+    {
+      "name": "look-collection",
+      "path": "reports/cardrpg-big/a5/c1-specialties/browser-on-1280-attempt-1/look-collection.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Best at: Keeping several allies healthy over long fights.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Best at:",
+          "ratio": 10.084979698275495
+        }
+      ],
+      "sha256": "70bd6f4c7aa323a6aa9b690ec36360d86853309824f9bfe5aec9d76eb582c3f2"
+    },
+    {
+      "name": "look-team-sets",
+      "path": "reports/cardrpg-big/a5/c1-specialties/browser-on-1280-attempt-1/look-team-sets.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Hearthloom · 1/4",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Moonwick · 1/4",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Mossbrew · 1/4",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Rainlace · 1/4",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Crumbweave · 1/4",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Bellsteel · 1/4",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Emberfelt · 1/4",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Velvetrim · 1/4",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Mossbrew · 2/4",
+          "ratio": 8.028038840639192
+        }
+      ],
+      "sha256": "6060066544ae906b03c002b677b73e8df50160c37b35749968a39db67c794d59"
+    },
+    {
+      "name": "look-team-jobs",
+      "path": "reports/cardrpg-big/a5/c1-specialties/browser-on-1280-attempt-1/look-team-jobs.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Best at:",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Best at: Shielding the crew against front-row pressure.",
+          "ratio": 10.084979698275495
+        }
+      ],
+      "sha256": "625c1278fadee2dff34b43984ab1e4ba0a85fcebc2941618a49dc779b66b518d"
+    },
+    {
+      "name": "look-prepare",
+      "path": "reports/cardrpg-big/a5/c1-specialties/browser-on-1280-attempt-1/look-prepare.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Best at: Detonating stacked Crumb trails.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Best at:",
+          "ratio": 10.084979698275495
+        }
+      ],
+      "sha256": "4a878c2f52ee5af25b3e038e8758e5245678e98dc783ace69e4f03afb2f146ed"
+    },
+    {
+      "name": "baseline-collection",
+      "path": "reports/cardrpg-big/a5/c1-specialties/browser-on-1440-attempt-1/baseline-collection.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Best at: Keeping several allies healthy over long fights.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Best at:",
+          "ratio": 11.756728459422893
+        }
+      ],
+      "sha256": "33a1ef8ad61946c0a8926df0f04296da5883cb3c2d8933a1ee272c8456513b4b"
+    },
+    {
+      "name": "baseline-team-sets",
+      "path": "reports/cardrpg-big/a5/c1-specialties/browser-on-1440-attempt-1/baseline-team-sets.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Hearthloom · 1/4",
+          "ratio": 8.37605029481978
+        },
+        {
+          "text": "Moonwick · 1/4",
+          "ratio": 8.37605029481978
+        },
+        {
+          "text": "Mossbrew · 1/4",
+          "ratio": 8.37605029481978
+        },
+        {
+          "text": "Rainlace · 1/4",
+          "ratio": 8.37605029481978
+        },
+        {
+          "text": "Crumbweave · 1/4",
+          "ratio": 8.37605029481978
+        },
+        {
+          "text": "Bellsteel · 1/4",
+          "ratio": 8.37605029481978
+        },
+        {
+          "text": "Emberfelt · 1/4",
+          "ratio": 8.37605029481978
+        },
+        {
+          "text": "Velvetrim · 1/4",
+          "ratio": 8.37605029481978
+        },
+        {
+          "text": "Mossbrew · 2/4",
+          "ratio": 8.37605029481978
+        }
+      ],
+      "sha256": "0cbc5efed5d90e4847050b521936e9e3cec33957d6cc51d1b0625d3a38ff7bfc"
+    },
+    {
+      "name": "baseline-team-jobs",
+      "path": "reports/cardrpg-big/a5/c1-specialties/browser-on-1440-attempt-1/baseline-team-jobs.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Best at:",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Best at: Shielding the crew against front-row pressure.",
+          "ratio": 11.756728459422893
+        }
+      ],
+      "sha256": "651bb661bd3fe0dbfb280fb458a9e9548342a7cc270418bd936e9f6ed8a9423d"
+    },
+    {
+      "name": "baseline-prepare",
+      "path": "reports/cardrpg-big/a5/c1-specialties/browser-on-1440-attempt-1/baseline-prepare.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Best at: Detonating stacked Crumb trails.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Best at:",
+          "ratio": 11.756728459422893
+        }
+      ],
+      "sha256": "f16a1a988599d73901454679c08c6cbeaf85ab8ffe80b77a6b3ceabe2b68fc20"
+    },
+    {
+      "name": "look-collection",
+      "path": "reports/cardrpg-big/a5/c1-specialties/browser-on-1440-attempt-1/look-collection.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Best at: Keeping several allies healthy over long fights.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Best at:",
+          "ratio": 10.084979698275495
+        }
+      ],
+      "sha256": "9646a978b976107dc27bb46d7fee03131e3d08bb968f60c37ec525f9bdb332cc"
+    },
+    {
+      "name": "look-team-sets",
+      "path": "reports/cardrpg-big/a5/c1-specialties/browser-on-1440-attempt-1/look-team-sets.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Hearthloom · 1/4",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Moonwick · 1/4",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Mossbrew · 1/4",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Rainlace · 1/4",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Crumbweave · 1/4",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Bellsteel · 1/4",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Emberfelt · 1/4",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Velvetrim · 1/4",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Mossbrew · 2/4",
+          "ratio": 8.028038840639192
+        }
+      ],
+      "sha256": "9e8cb49aea1afb21b455f632880c3ed44779c5d34f8b0978ff577de433380e68"
+    },
+    {
+      "name": "look-team-jobs",
+      "path": "reports/cardrpg-big/a5/c1-specialties/browser-on-1440-attempt-1/look-team-jobs.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Best at:",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Best at: Shielding the crew against front-row pressure.",
+          "ratio": 10.084979698275495
+        }
+      ],
+      "sha256": "da3dce4cb4aa4e541d1fccf55bb6a41377ab9f9c4b9eeb2eb894e7ce558e44f4"
+    },
+    {
+      "name": "look-prepare",
+      "path": "reports/cardrpg-big/a5/c1-specialties/browser-on-1440-attempt-1/look-prepare.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Best at: Detonating stacked Crumb trails.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Best at:",
+          "ratio": 10.084979698275495
+        }
+      ],
+      "sha256": "d5857167f86f0dfc6bf8bf993099b290408ebce1a9e513e8cfbdddafede3cd83"
+    },
+    {
+      "name": "baseline-collection",
+      "path": "reports/cardrpg-big/a5/c1-specialties/browser-on-1024-attempt-1/baseline-collection.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Best at: Keeping several allies healthy over long fights.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Best at:",
+          "ratio": 11.756728459422893
+        }
+      ],
+      "sha256": "79ba790b4e7a1ce0ed908aaca8358ce3f02c2f65c449d4244d6b7a401806f87f"
+    },
+    {
+      "name": "baseline-team-sets",
+      "path": "reports/cardrpg-big/a5/c1-specialties/browser-on-1024-attempt-1/baseline-team-sets.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Hearthloom · 1/4",
+          "ratio": 8.37605029481978
+        },
+        {
+          "text": "Moonwick · 1/4",
+          "ratio": 8.37605029481978
+        },
+        {
+          "text": "Mossbrew · 1/4",
+          "ratio": 8.37605029481978
+        },
+        {
+          "text": "Rainlace · 1/4",
+          "ratio": 8.37605029481978
+        },
+        {
+          "text": "Crumbweave · 1/4",
+          "ratio": 8.37605029481978
+        },
+        {
+          "text": "Bellsteel · 1/4",
+          "ratio": 8.37605029481978
+        },
+        {
+          "text": "Emberfelt · 1/4",
+          "ratio": 8.37605029481978
+        },
+        {
+          "text": "Velvetrim · 1/4",
+          "ratio": 8.37605029481978
+        },
+        {
+          "text": "Mossbrew · 2/4",
+          "ratio": 8.37605029481978
+        }
+      ],
+      "sha256": "954f1f9efe527da4d72edefe52d962280b26e50c4fceaa365e5229b16a54171f"
+    },
+    {
+      "name": "baseline-team-jobs",
+      "path": "reports/cardrpg-big/a5/c1-specialties/browser-on-1024-attempt-1/baseline-team-jobs.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Best at:",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Best at: Shielding the crew against front-row pressure.",
+          "ratio": 11.756728459422893
+        }
+      ],
+      "sha256": "dd4dfe007228abc7c4b8011c8304087339b77a003f5b882638266edaeab2eed5"
+    },
+    {
+      "name": "baseline-prepare",
+      "path": "reports/cardrpg-big/a5/c1-specialties/browser-on-1024-attempt-1/baseline-prepare.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Best at: Detonating stacked Crumb trails.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Best at:",
+          "ratio": 11.756728459422893
+        }
+      ],
+      "sha256": "101b950ba589e73a8036120134decf439fc9352a2c0985b048e2c91b8c56b246"
+    },
+    {
+      "name": "look-collection",
+      "path": "reports/cardrpg-big/a5/c1-specialties/browser-on-1024-attempt-1/look-collection.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Best at: Keeping several allies healthy over long fights.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Best at:",
+          "ratio": 10.084979698275495
+        }
+      ],
+      "sha256": "dc6272629d2af1a0bec174bb88a3f5de2434963c4b4e5fd29c44080689a50bf5"
+    },
+    {
+      "name": "look-team-sets",
+      "path": "reports/cardrpg-big/a5/c1-specialties/browser-on-1024-attempt-1/look-team-sets.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Hearthloom · 1/4",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Moonwick · 1/4",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Mossbrew · 1/4",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Rainlace · 1/4",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Crumbweave · 1/4",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Bellsteel · 1/4",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Emberfelt · 1/4",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Velvetrim · 1/4",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Mossbrew · 2/4",
+          "ratio": 8.028038840639192
+        }
+      ],
+      "sha256": "b8b832f4cf1a1a032f96ef025afb0a8f7fe4e84ce4327f4d18804bd328e1a142"
+    },
+    {
+      "name": "look-team-jobs",
+      "path": "reports/cardrpg-big/a5/c1-specialties/browser-on-1024-attempt-1/look-team-jobs.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Best at:",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Best at: Shielding the crew against front-row pressure.",
+          "ratio": 10.084979698275495
+        }
+      ],
+      "sha256": "c9bb15aba6e17b15f9f5898df42656e272d0201ecddcfd3f33dcd95b383ffb8c"
+    },
+    {
+      "name": "look-prepare",
+      "path": "reports/cardrpg-big/a5/c1-specialties/browser-on-1024-attempt-1/look-prepare.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Best at: Detonating stacked Crumb trails.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Best at:",
+          "ratio": 10.084979698275495
+        }
+      ],
+      "sha256": "6bf56fbf365ffea1b09fbc70c731a61a7d255da1fbc6f1fd37fdc67aed33bbfe"
+    },
+    {
+      "name": "baseline-collection",
+      "path": "reports/cardrpg-big/a5/c1-specialties/browser-off-1280-attempt-1/baseline-collection.png",
+      "overflow": 0,
+      "contrast": [],
+      "sha256": "f3dc6bc5e027a17952228679ef9cb93a2914a8c96c5bed9d38044571f6fc2e81"
+    },
+    {
+      "name": "baseline-team-sets",
+      "path": "reports/cardrpg-big/a5/c1-specialties/browser-off-1280-attempt-1/baseline-team-sets.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Hearthloom · 1/4",
+          "ratio": 8.37605029481978
+        },
+        {
+          "text": "Moonwick · 1/4",
+          "ratio": 8.37605029481978
+        },
+        {
+          "text": "Mossbrew · 1/4",
+          "ratio": 8.37605029481978
+        },
+        {
+          "text": "Rainlace · 1/4",
+          "ratio": 8.37605029481978
+        },
+        {
+          "text": "Crumbweave · 1/4",
+          "ratio": 8.37605029481978
+        },
+        {
+          "text": "Bellsteel · 1/4",
+          "ratio": 8.37605029481978
+        },
+        {
+          "text": "Emberfelt · 1/4",
+          "ratio": 8.37605029481978
+        },
+        {
+          "text": "Velvetrim · 1/4",
+          "ratio": 8.37605029481978
+        },
+        {
+          "text": "Mossbrew · 2/4",
+          "ratio": 8.37605029481978
+        }
+      ],
+      "sha256": "53932a78da3aab4f1d71eb144ef5ba4790fcf6d468ac6a1b7e469f017a58288f"
+    },
+    {
+      "name": "baseline-prepare",
+      "path": "reports/cardrpg-big/a5/c1-specialties/browser-off-1280-attempt-1/baseline-prepare.png",
+      "overflow": 0,
+      "contrast": [],
+      "sha256": "3217780ff44397ddc73fa5d159ab69871ff0f5ee2021e5db61221448cb91575b"
+    },
+    {
+      "name": "look-collection",
+      "path": "reports/cardrpg-big/a5/c1-specialties/browser-off-1280-attempt-1/look-collection.png",
+      "overflow": 0,
+      "contrast": [],
+      "sha256": "94d75891a7389f4dc94d148af64e7ea3fcd538b8f4602e0ed7aa874d29ecf1b1"
+    },
+    {
+      "name": "look-team-sets",
+      "path": "reports/cardrpg-big/a5/c1-specialties/browser-off-1280-attempt-1/look-team-sets.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Hearthloom · 1/4",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Moonwick · 1/4",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Mossbrew · 1/4",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Rainlace · 1/4",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Crumbweave · 1/4",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Bellsteel · 1/4",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Emberfelt · 1/4",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Velvetrim · 1/4",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Mossbrew · 2/4",
+          "ratio": 8.028038840639192
+        }
+      ],
+      "sha256": "a16417f485da7854fd451de591a9fd14423d1218511fb9deaeeda3792ef65c1e"
+    },
+    {
+      "name": "look-prepare",
+      "path": "reports/cardrpg-big/a5/c1-specialties/browser-off-1280-attempt-1/look-prepare.png",
+      "overflow": 0,
+      "contrast": [],
+      "sha256": "332759079b633f002c9309003942fe60a874e728e2c10580f1b794b7404dc743"
+    },
+    {
+      "name": "baseline-collection",
+      "path": "reports/cardrpg-big/a5/c1-specialties/browser-off-1440-attempt-1/baseline-collection.png",
+      "overflow": 0,
+      "contrast": [],
+      "sha256": "0065a694018f0aefd7c92b3e917869d64020d15c86faf235067625b4157b84e9"
+    },
+    {
+      "name": "baseline-team-sets",
+      "path": "reports/cardrpg-big/a5/c1-specialties/browser-off-1440-attempt-1/baseline-team-sets.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Hearthloom · 1/4",
+          "ratio": 8.37605029481978
+        },
+        {
+          "text": "Moonwick · 1/4",
+          "ratio": 8.37605029481978
+        },
+        {
+          "text": "Mossbrew · 1/4",
+          "ratio": 8.37605029481978
+        },
+        {
+          "text": "Rainlace · 1/4",
+          "ratio": 8.37605029481978
+        },
+        {
+          "text": "Crumbweave · 1/4",
+          "ratio": 8.37605029481978
+        },
+        {
+          "text": "Bellsteel · 1/4",
+          "ratio": 8.37605029481978
+        },
+        {
+          "text": "Emberfelt · 1/4",
+          "ratio": 8.37605029481978
+        },
+        {
+          "text": "Velvetrim · 1/4",
+          "ratio": 8.37605029481978
+        },
+        {
+          "text": "Mossbrew · 2/4",
+          "ratio": 8.37605029481978
+        }
+      ],
+      "sha256": "3cf8180780a7818bd1bc8db2e91ed92b00c5387da36aad9130ee584464164363"
+    },
+    {
+      "name": "baseline-prepare",
+      "path": "reports/cardrpg-big/a5/c1-specialties/browser-off-1440-attempt-1/baseline-prepare.png",
+      "overflow": 0,
+      "contrast": [],
+      "sha256": "db666cfcbfdb2d9bb18c1bde5d9ee519daa7086e3b66bc7870ea4ea7b265445b"
+    },
+    {
+      "name": "look-collection",
+      "path": "reports/cardrpg-big/a5/c1-specialties/browser-off-1440-attempt-1/look-collection.png",
+      "overflow": 0,
+      "contrast": [],
+      "sha256": "727977cb5749a45cfb9a14b32020f40db48984d93ec03f9dd018b4f3864f208e"
+    },
+    {
+      "name": "look-team-sets",
+      "path": "reports/cardrpg-big/a5/c1-specialties/browser-off-1440-attempt-1/look-team-sets.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Hearthloom · 1/4",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Moonwick · 1/4",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Mossbrew · 1/4",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Rainlace · 1/4",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Crumbweave · 1/4",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Bellsteel · 1/4",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Emberfelt · 1/4",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Velvetrim · 1/4",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Mossbrew · 2/4",
+          "ratio": 8.028038840639192
+        }
+      ],
+      "sha256": "be14bf94b872e718ca548e6aff2a66c056c29c2710298ccee4e4882e4b9817fc"
+    },
+    {
+      "name": "look-prepare",
+      "path": "reports/cardrpg-big/a5/c1-specialties/browser-off-1440-attempt-1/look-prepare.png",
+      "overflow": 0,
+      "contrast": [],
+      "sha256": "aa32e0c11832739a1cdec3fb97ec2fca2503edb10cb4bd657b6f041f8b6d7572"
+    },
+    {
+      "name": "baseline-collection",
+      "path": "reports/cardrpg-big/a5/c1-specialties/browser-off-1024-attempt-1/baseline-collection.png",
+      "overflow": 0,
+      "contrast": [],
+      "sha256": "0d9cb29c84b94d0ee7ac14cb5d9db15c0cc058d231b9f2a7189f36fdf8ca00f8"
+    },
+    {
+      "name": "baseline-team-sets",
+      "path": "reports/cardrpg-big/a5/c1-specialties/browser-off-1024-attempt-1/baseline-team-sets.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Hearthloom · 1/4",
+          "ratio": 8.37605029481978
+        },
+        {
+          "text": "Moonwick · 1/4",
+          "ratio": 8.37605029481978
+        },
+        {
+          "text": "Mossbrew · 1/4",
+          "ratio": 8.37605029481978
+        },
+        {
+          "text": "Rainlace · 1/4",
+          "ratio": 8.37605029481978
+        },
+        {
+          "text": "Crumbweave · 1/4",
+          "ratio": 8.37605029481978
+        },
+        {
+          "text": "Bellsteel · 1/4",
+          "ratio": 8.37605029481978
+        },
+        {
+          "text": "Emberfelt · 1/4",
+          "ratio": 8.37605029481978
+        },
+        {
+          "text": "Velvetrim · 1/4",
+          "ratio": 8.37605029481978
+        },
+        {
+          "text": "Mossbrew · 2/4",
+          "ratio": 8.37605029481978
+        }
+      ],
+      "sha256": "419ab2553519152bb7c1530cb3f4e6edd1f8bcb8cc5b124756e401c49b8b51bf"
+    },
+    {
+      "name": "baseline-prepare",
+      "path": "reports/cardrpg-big/a5/c1-specialties/browser-off-1024-attempt-1/baseline-prepare.png",
+      "overflow": 0,
+      "contrast": [],
+      "sha256": "47870881c38b7fa2b1a3420081ba543e1ef7b44f2ec9bc67de73c8e03e932280"
+    },
+    {
+      "name": "look-collection",
+      "path": "reports/cardrpg-big/a5/c1-specialties/browser-off-1024-attempt-1/look-collection.png",
+      "overflow": 0,
+      "contrast": [],
+      "sha256": "f4b56bf3ed210af610f1496aa6e229b5ae1b47f6ca6d8eac5524eecb379c9bbc"
+    },
+    {
+      "name": "look-team-sets",
+      "path": "reports/cardrpg-big/a5/c1-specialties/browser-off-1024-attempt-1/look-team-sets.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Hearthloom · 1/4",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Moonwick · 1/4",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Mossbrew · 1/4",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Rainlace · 1/4",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Crumbweave · 1/4",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Bellsteel · 1/4",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Emberfelt · 1/4",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Velvetrim · 1/4",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Mossbrew · 2/4",
+          "ratio": 8.028038840639192
+        }
+      ],
+      "sha256": "1032bda9809a19b5137149cb9b7f82965b9f5da70cb1eddb116e5cc1ca737684"
+    },
+    {
+      "name": "look-prepare",
+      "path": "reports/cardrpg-big/a5/c1-specialties/browser-off-1024-attempt-1/look-prepare.png",
+      "overflow": 0,
+      "contrast": [],
+      "sha256": "36a2e4843b7a90b627a189f25a27057f8880a591c3eec84fbaf28d3a3b6a81cb"
+    }
+  ],
+  "reviewedCollections": [
+    {
+      "look": "baseline",
+      "path": "reports/cardrpg-big/a5/c1-specialties/visual-on-1280-attempt-2/baseline-collection.png",
+      "heading": "Marigold",
+      "headingVisible": true,
+      "job": "Best at: Keeping several allies healthy over long fights.",
+      "jobVisible": true,
+      "jobBounds": {
+        "top": 186.40625,
+        "bottom": 206.546875,
+        "left": 800.640625,
+        "right": 1231.984375
+      },
+      "overflow": 0,
+      "loading": 0,
+      "sha256": "eb71d4f9735934208c64b2d8cf56560086bda7529708cb43817086067d2f5fd9"
+    },
+    {
+      "look": "look",
+      "path": "reports/cardrpg-big/a5/c1-specialties/visual-on-1280-attempt-2/look-collection.png",
+      "heading": "Marigold",
+      "headingVisible": true,
+      "job": "Best at: Keeping several allies healthy over long fights.",
+      "jobVisible": true,
+      "jobBounds": {
+        "top": 186.40625,
+        "bottom": 206.546875,
+        "left": 800.640625,
+        "right": 1231.984375
+      },
+      "overflow": 0,
+      "loading": 0,
+      "sha256": "0702b533d55f53da45221540a092856301ee053e190bd1c7559f012f350823fb"
+    },
+    {
+      "look": "baseline",
+      "path": "reports/cardrpg-big/a5/c1-specialties/visual-on-1440-attempt-1/baseline-collection.png",
+      "heading": "Marigold",
+      "headingVisible": true,
+      "job": "Best at: Keeping several allies healthy over long fights.",
+      "jobVisible": true,
+      "jobBounds": {
+        "top": 186.40625,
+        "bottom": 206.546875,
+        "left": 886.21875,
+        "right": 1391.984375
+      },
+      "overflow": 0,
+      "loading": 0,
+      "sha256": "5a6e8d23664996aa037020536c2ff02a1bf5c091684327467ba06eec22a33750"
+    },
+    {
+      "look": "look",
+      "path": "reports/cardrpg-big/a5/c1-specialties/visual-on-1440-attempt-1/look-collection.png",
+      "heading": "Marigold",
+      "headingVisible": true,
+      "job": "Best at: Keeping several allies healthy over long fights.",
+      "jobVisible": true,
+      "jobBounds": {
+        "top": 186.40625,
+        "bottom": 206.546875,
+        "left": 886.21875,
+        "right": 1391.984375
+      },
+      "overflow": 0,
+      "loading": 0,
+      "sha256": "99814dacccbc1de021b7209d21935729cef1bcaea6c976f10cf51a5397282c0b"
+    },
+    {
+      "look": "baseline",
+      "path": "reports/cardrpg-big/a5/c1-specialties/visual-on-1024-attempt-1/baseline-collection.png",
+      "heading": "Marigold",
+      "headingVisible": true,
+      "job": "Best at: Keeping several allies healthy over long fights.",
+      "jobVisible": true,
+      "jobBounds": {
+        "top": 185.515625,
+        "bottom": 204.109375,
+        "left": 642.984375,
+        "right": 988.984375
+      },
+      "overflow": 0,
+      "loading": 0,
+      "sha256": "373c6ab155bd7ca94871ceb6997500d9405b6d0a3ddac68a9ca33933797ad4a9"
+    },
+    {
+      "look": "look",
+      "path": "reports/cardrpg-big/a5/c1-specialties/visual-on-1024-attempt-1/look-collection.png",
+      "heading": "Marigold",
+      "headingVisible": true,
+      "job": "Best at: Keeping several allies healthy over long fights.",
+      "jobVisible": true,
+      "jobBounds": {
+        "top": 185.515625,
+        "bottom": 204.109375,
+        "left": 642.984375,
+        "right": 988.984375
+      },
+      "overflow": 0,
+      "loading": 0,
+      "sha256": "e9ede991f1f68b175d5b4775cffb2ae2e388ed8c7f62423575232194fac9f86b"
+    },
+    {
+      "look": "baseline",
+      "path": "reports/cardrpg-big/a5/c1-specialties/visual-off-1280-attempt-1/baseline-collection.png",
+      "heading": "Marigold",
+      "headingVisible": true,
+      "job": null,
+      "jobVisible": true,
+      "jobBounds": null,
+      "overflow": 0,
+      "loading": 0,
+      "sha256": "6d3df0d1a108b17a909ea801466ceab7eafa34e281664ce7cceabf8f9de2f6ce"
+    },
+    {
+      "look": "look",
+      "path": "reports/cardrpg-big/a5/c1-specialties/visual-off-1280-attempt-1/look-collection.png",
+      "heading": "Marigold",
+      "headingVisible": true,
+      "job": null,
+      "jobVisible": true,
+      "jobBounds": null,
+      "overflow": 0,
+      "loading": 0,
+      "sha256": "9853723fd31965ada0cd4699b18ec13a0e84e0535c6c7279495cb052e4a6d3bc"
+    },
+    {
+      "look": "baseline",
+      "path": "reports/cardrpg-big/a5/c1-specialties/visual-off-1440-attempt-1/baseline-collection.png",
+      "heading": "Marigold",
+      "headingVisible": true,
+      "job": null,
+      "jobVisible": true,
+      "jobBounds": null,
+      "overflow": 0,
+      "loading": 0,
+      "sha256": "0d43e0b04b9038ed87d13641005f1d905759baec44f90da3249e5c45379b5720"
+    },
+    {
+      "look": "look",
+      "path": "reports/cardrpg-big/a5/c1-specialties/visual-off-1440-attempt-1/look-collection.png",
+      "heading": "Marigold",
+      "headingVisible": true,
+      "job": null,
+      "jobVisible": true,
+      "jobBounds": null,
+      "overflow": 0,
+      "loading": 0,
+      "sha256": "718b90d309579ccfcbf8be0b126c9ead3d8d09ed8f943e4f45af9ca0c3f32d77"
+    },
+    {
+      "look": "baseline",
+      "path": "reports/cardrpg-big/a5/c1-specialties/visual-off-1024-attempt-1/baseline-collection.png",
+      "heading": "Marigold",
+      "headingVisible": true,
+      "job": null,
+      "jobVisible": true,
+      "jobBounds": null,
+      "overflow": 0,
+      "loading": 0,
+      "sha256": "01124dd3191857477ab96367a5b57479a46408a5cff02b780465eb668a053d62"
+    },
+    {
+      "look": "look",
+      "path": "reports/cardrpg-big/a5/c1-specialties/visual-off-1024-attempt-1/look-collection.png",
+      "heading": "Marigold",
+      "headingVisible": true,
+      "job": null,
+      "jobVisible": true,
+      "jobBounds": null,
+      "overflow": 0,
+      "loading": 0,
+      "sha256": "54f5ef879e04c1182cc89316dafa6423c87a8d1e86132bb38070e95ff56e4e25"
+    }
+  ],
+  "minimumScopedContrast": 8.028038840639192,
+  "scope": {
+    "scope": "PASS",
+    "baseline": "PASS",
+    "historicalSimFiles": 13
+  },
+  "receipts": [
+    {
+      "path": "reports/cardrpg-big/a5/c1-specialties/gates/checks.json",
+      "sha256": "5d680b76afbfe5bc01af03234efe061f984c0684dc60b6c6eacdf0167b048d27"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/c1-specialties/gates/e2e-original-failure/last-run.json",
+      "sha256": "2b7b7701aa02f90a7c9d97b42252cbcb9b5b8ef8623a2f48a80757a20c46d01e"
+    },
+    {
+      "path": "tools/cardrpg-big/a5-drafts/specialties-23/manifest.json",
+      "sha256": "cdb73b5353398782d7bad2bd3d1bcdce59b61e96e62380c0c807a726dde4e16d"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/c1-specialties/off/checks.json",
+      "sha256": "b266e345cf77ddcfcdc0772a11a6e690e577fcf2168c09f2316c5fc4d4230e4d"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/c1-specialties/off/source.json",
+      "sha256": "dc87bcea33b0dee52faa77c4a5b82a1b846eb1a6de11b56a9f3ed514debcef47"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/c1-specialties/replay/checks.json",
+      "sha256": "2572543aac7ed9544fb18a9ef2b04a5f3d5ac27cb51d01cc4beb465908999ca0"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/c1-specialties/ui-checks/checks.json",
+      "sha256": "90d68763bb46bab414e2c977e020ea2d79387995b75ca816e2b39001a088ac8e"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/c1-specialties/fixtures/checks.json",
+      "sha256": "447f3a808be1d36b4db0af13279c05c6186a3a159bd2037df5040a61755497ba"
+    },
+    {
+      "path": "/tmp/cardrpg-a5-specialties-on/build.json",
+      "sha256": "e740419875019793149921f31f6aa7e25fe63dce853a3ee665aa7bb93e965ed7"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/c1-specialties/builds/on.json",
+      "sha256": "f069a06049ab7bba008cca5240b5c3aeba98be36928103e4ccadbec240bf0ca4"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/c1-specialties/browser-on-1280-attempt-1/checks.json",
+      "sha256": "bee996de6c7a166abaeb87254829b58d8c652bfe9710f56fa42f5f6eaf33841c"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/c1-specialties/visual-on-1280-attempt-2/checks.json",
+      "sha256": "26fd17ef8832663e7b9e8e05709771144e4c167c129d1b9cc112e693f38c32d7"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/c1-specialties/browser-on-1440-attempt-1/checks.json",
+      "sha256": "6ee36a3de2e28f86c00282af51c741d25eee0f5dc802def79d1d9dc048dc5c16"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/c1-specialties/visual-on-1440-attempt-1/checks.json",
+      "sha256": "bf9af0cc3befdb1c82fa815a39e7da4d0860d70167b77a5646436f494a66316f"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/c1-specialties/browser-on-1024-attempt-1/checks.json",
+      "sha256": "0499c321c2c0b9429102866a3d961d3bce14882619ad3df87a8cce1bb08f2063"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/c1-specialties/visual-on-1024-attempt-1/checks.json",
+      "sha256": "8c4d7a5fd0652321e1442ca1ad5654cbaf617cfcb8367b1b01599622da0b8222"
+    },
+    {
+      "path": "/tmp/cardrpg-a5-specialties-off/build.json",
+      "sha256": "6be34b7563080d9883a0aceb8162ea31cb24350a35ded4bcd9a501a6b8a30904"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/c1-specialties/builds/off.json",
+      "sha256": "056b9d62226c3dbc9caa69502cf52fec48a6a56e01d4f14521bfbcd90be7b94c"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/c1-specialties/browser-off-1280-attempt-1/checks.json",
+      "sha256": "9e90a9ce16a1a43736dbdc7315cc745de0d1bf436f510e7196c46cb8c5e1a327"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/c1-specialties/visual-off-1280-attempt-1/checks.json",
+      "sha256": "364f642ebbb36e6996d0b8415fb6930b0c0b91dbd8fc1cd62eb5d80f1a83e7d8"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/c1-specialties/browser-off-1440-attempt-1/checks.json",
+      "sha256": "6b8d4dc8246d94971bec261f31442713be3434c4c0a7c0e9ae5b234c78e472ff"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/c1-specialties/visual-off-1440-attempt-1/checks.json",
+      "sha256": "664818fba689da4c643a798ada3afb6f2e53ce0700fd2d2e00166f827544a9d0"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/c1-specialties/browser-off-1024-attempt-1/checks.json",
+      "sha256": "0169b261aa78bfb3ecc883d4da8dfe51e60ef9efa6527b70e497536c8322adc9"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/c1-specialties/visual-off-1024-attempt-1/checks.json",
+      "sha256": "7fcfdc12bbaa7ad5e6284c1ee2a6115ffb0128282c5e2eb8e8e50f7d96b652b2"
+    }
+  ],
+  "limitations": [
+    "Kit capabilities are not measured best-team rankings.",
+    "Synthetic gear fixtures exercise presentation, not earned progression or balance.",
+    "Targeted copy captures are not the full last-artifact screenshot pack.",
+    "Original Collection screenshots centered below the job line; twelve supplemental captures frame it after preview loading.",
+    "No timing, fresh acceptance, complete 30-minute cadence or human playtest claim.",
+    "Public demo remains unchanged until Z. Local ON/OFF artifacts are reproducible from recorded inputs."
+  ]
+}

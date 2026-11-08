@@ -13,9 +13,11 @@ const steps = [
   ['replay', ['tools/cardrpg-big/a5-specialties-replay.mjs'], {}],
   ['fixtures', ['tools/cardrpg-big/a5-specialties-fixtures.mjs'], {}],
   ...['on', 'off'].flatMap(mode => [
-    [`build-${mode}`, ['tools/cardrpg-big/build.mjs'], { BIG_OUTPUT_DIR: `/tmp/cardrpg-a5-specialties-${mode}`, BIG_GAMEPLAY_V4: mode === 'on' ? '1' : '0' }],
+    [`build-${mode}`, ['tools/cardrpg-big/build.mjs'], { BIG_OUTPUT_DIR: `/tmp/cardrpg-a5-specialties-${mode}`, BIG_GAMEPLAY_V4: mode === 'on' ? '1' : '0', BIG_PYTHON: '/tmp/cardrpg-a5-tools/bin/python' }],
     ...[1280, 1440, 1024].map(width => [`browser-${mode}-${width}`, ['tools/cardrpg-big/a5-specialties-browser.mjs', String(width), mode], {}]),
   ]),
+  ...['on', 'off'].flatMap(mode => [1280, 1440, 1024].map(width =>
+    [`visual-${mode}-${width}`, ['tools/cardrpg-big/a5-specialties-visual.mjs', String(width), mode], {}])),
 ];
 for (const [name, args, env] of steps) {
   if (rows.some(row => row.name === name && row.code === 0)) continue;

@@ -1,0 +1,20 @@
+{"lock":"acquired","lane":"A","pid":40439,"startedAt":"2026-11-08T18:35:21.200Z","task":"A5 specialties visual-on-1280"}
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+  assert(metrics.headingVisible)
+
+    at file:///Users/bao/taskbar-hero-cardrpg-a4/tools/cardrpg-big/a5-specialties-visual.mjs:46:48 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
+
+Node.js v24.22.2
+{"lock":"released","pid":40439,"task":"A5 specialties visual-on-1280"}

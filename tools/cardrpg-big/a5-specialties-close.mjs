@@ -50,14 +50,14 @@ for (const [path, digest] of Object.entries(replay.afterSource)) assert.equal(sh
 const ui = await read(`${root}/ui-checks/checks.json`);
 for (const row of ui) assert.equal(sha(await readFile(row.log)), row.sha256, row.log);
 for (const name of ['replay', 'fixtures', ...['on', 'off'].flatMap(mode =>
-  [`build-${mode}`, ...[1280, 1440, 1024].map(width => `browser-${mode}-${width}`)])])
+  [`build-${mode}`, ...[1280, 1440, 1024].flatMap(width => [`browser-${mode}-${width}`, `visual-${mode}-${width}`])])])
   assert.equal(ui.findLast(row => row.name === name)?.code, 0, name);
 const fixtures = await read(`${root}/fixtures/checks.json`);
 assert.equal(fixtures.cats.length, 12);
 assert.equal(fixtures.tooltips.length, 8);
 assert.equal(fixtures.historical.prefix, 'THC12');
 assert.equal(sha(await readFile(`${root}/fixtures/all-set-tooltips.save`)), fixtures.saveSha256);
-const artifacts = [], browsers = [], captures = [];
+const artifacts = [], browsers = [], captures = [], reviewedCollections = [];
 for (const mode of ['on', 'off']) {
   const artifactRoot = `/tmp/cardrpg-a5-specialties-${mode}`;
   const artifact = await readFile(`${artifactRoot}/index.html`);
@@ -87,17 +87,29 @@ for (const mode of ['on', 'off']) {
       captures.push({ ...capture, sha256: sha(await readFile(capture.path)) });
     }
     browsers.push({ mode, width, checks: browser.checks });
+    const visualCheck = ui.findLast(row => row.name === `visual-${mode}-${width}` && row.code === 0);
+    const visual = await read(`${root}/visual-${mode}-${width}-attempt-${visualCheck.attempt}/checks.json`);
+    assert.equal(visual.passed, true); assert.equal(visual.sha256, build.sha256);
+    assert.equal(visual.mode, mode); assert.equal(visual.width, width);
+    assert.equal(visual.captures.length, 2); assert.deepEqual(visual.errors, []);
+    for (const capture of visual.captures) {
+      assert(capture.headingVisible && capture.jobVisible);
+      assert.equal(capture.overflow, 0); assert.equal(capture.loading, 0);
+      assert.equal(sha(await readFile(capture.path)), capture.sha256);
+      reviewedCollections.push(capture);
+    }
   }
 }
 const scope = JSON.parse(execFileSync(process.execPath, ['tools/cardrpg-big/a5-scope.mjs'], { encoding: 'utf8' }));
 assert.equal(scope.scope, 'PASS'); assert.equal(scope.baseline, 'PASS'); assert.equal(scope.historicalSimFiles, 13);
 const report = { source, status: 'PASS', gates, off, artifacts, browsers,
-  pairedBattles: replay.rows.length, allowedText: replay.allowedText, captures,
+  pairedBattles: replay.rows.length, allowedText: replay.allowedText, captures, reviewedCollections,
   minimumScopedContrast: Math.min(...captures.flatMap(capture => capture.contrast.map(row => row.ratio))),
   scope: { scope: scope.scope, baseline: scope.baseline, historicalSimFiles: scope.historicalSimFiles }, receipts,
   limitations: ['Kit capabilities are not measured best-team rankings.',
     'Synthetic gear fixtures exercise presentation, not earned progression or balance.',
     'Targeted copy captures are not the full last-artifact screenshot pack.',
+    'Original Collection screenshots centered below the job line; twelve supplemental captures frame it after preview loading.',
     'No timing, fresh acceptance, complete 30-minute cadence or human playtest claim.',
     'Public demo remains unchanged until Z. Local ON/OFF artifacts are reproducible from recorded inputs.'] };
 await writeFile(`${root}/audit.json`, JSON.stringify(report, null, 2) + '\n');
