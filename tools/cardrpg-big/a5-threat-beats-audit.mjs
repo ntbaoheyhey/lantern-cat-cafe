@@ -29,6 +29,18 @@ const summarize=matrix=>{
 const baseline=summarize(control),arms={},negativePairs=[];
 for(const name of ['control','boss','all']){
  const reg=await json(`${root}/${name}/REGISTERED-METHOD.json`);
+ if(reg.harnessRevision){
+  const rev=reg.harnessRevision,old=await json(rev.previous);
+  assert.equal(receipts[rev.previous],rev.previousSha256);
+  assert.equal(sha(await readFile(rev.originalScript)),rev.originalScriptSha256);
+  assert.deepEqual(reg.source,old.source);assert.deepEqual(reg.combatSource,old.combatSource);
+  assert.equal(reg.controlSha256,old.controlSha256);
+  const changed=Object.keys(old.scripts).filter(p=>reg.scripts[p]!==old.scripts[p]);
+  assert.deepEqual(changed,['tools/cardrpg-big/a5-threat-beats-probe.mjs']);
+  assert.equal(old.scripts[changed[0]],rev.originalScriptSha256);
+  const original=await readFile(rev.originalScript,'utf8');
+  assert.equal(await readFile(changed[0],'utf8'),original.replace("if(row.mode!=='on')assert.deepEqual(row,old);","if(row.mode!=='on')assert.deepEqual(JSON.parse(JSON.stringify(row)),old);"));
+ }
  assert.equal(sha(await readFile(controlPath)),reg.controlSha256);
  for(const[p,h]of Object.entries(reg.source))assert.equal(sha(await readFile(reg.sourceRoot+'/'+p)),h,p);
  for(const[p,h]of Object.entries(reg.scripts))assert.equal(sha(await readFile(p)),h,p);
