@@ -2,7 +2,7 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import assert from 'node:assert/strict';
-const root = 'reports/cardrpg-big/a5/b2/scent-policy-06';
+const root = process.argv[2] || 'reports/cardrpg-big/a5/b2/scent-policy-06';
 const sha = bytes => createHash('sha256').update(bytes).digest('hex');
 const bytes = await readFile(root + '/results.json'), data = JSON.parse(bytes);
 const method = JSON.parse(await readFile(root + '/REGISTERED-METHOD.json'));
@@ -46,6 +46,20 @@ function paired(rows) {
     blackCup: rows.reduce((n, row) => n + row.blackCup, 0) };
 }
 const teams = data.rows.filter(row => row.kind === 'teams'); assert.equal(teams.length, 1760);
+const prefixChecks = [];
+if (method.parent) {
+  assert.equal(sha(await readFile(method.parent.path)), method.parent.sha256);
+  const candidateRows = new Map(data.rows.map(row => [row.key, row]));
+  for (const path of ['reports/cardrpg-big/a5/b2/scent-policy-06/partial.json', 'reports/cardrpg-big/a5/b2/scent-policy-crash-07/partial.json']) {
+    const retainedBytes = await readFile(path), retained = JSON.parse(retainedBytes);
+    let battles = 0;
+    for (const row of retained.rows) {
+      assert.equal(candidateRows.get(row.key).outcomes.slice(0, row.outcomes.length), row.outcomes, `Guard-only prefix drift: ${row.key}`);
+      battles += row.outcomes.length;
+    }
+    prefixChecks.push({ path, sha256: sha(retainedBytes), cells: retained.rows.length, battles });
+  }
+}
 const cats = [...new Set(teams.flatMap(row => row.team))].map(id => {
   const rows = teams.filter(row => row.team.includes(id)); assert.equal(rows.length, 440);
   const top = rows.filter(row => {
@@ -79,7 +93,7 @@ const gates = { everyCat55to75: cats.every(cat => cat.afterRate >= .55 && cat.af
   diversityAtLeastFour: diversity.every(scene => scene.withinFivePp >= 4) };
 const summary = { method: 'TRAIN1–50 only. Fixed original1840 common-fixture cells, weights, stats and budgets; no recalibration or acceptance change.',
   receipts: [{ path: root + '/results.json', sha256: sha(bytes) }, method.original],
-  cats, sets, diversity, crew, gates,
+  cats, sets, diversity, crew, gates, prefixChecks,
   sootByScene: method.scenarios.map((scene, index) => ({ scene: index, ...paired(teams.filter(row => row.scene === index && row.team.includes('soot'))) })),
   reference: data.rows.filter(row => row.kind === 'reference').map(row => ({ scene: row.scene, ...paired([row]) })),
   limitations: ['Overlapping cat teams are not independent trials; no pooled confidence-interval claim.',

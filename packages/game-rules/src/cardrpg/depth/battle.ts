@@ -375,7 +375,14 @@ function executeEffect(b: Battle, actor: Actor, target: Actor, effect: Effect, s
       for (const [i,t] of [target,...others].slice(0,3).entries()) damage(b,actor,t,power*(1-i*.15),skill.breakPower);
       break;
     }
-    case 'energy': if(b.v4)shield(b,actor,weakest(living(b,actor.side)),Math.min(18,power*6));else {b.energy=Math.min(10,b.energy+power);record(b,actor,actor,'energy',power);}break;
+    case 'energy': {
+      if(b.v4) {
+        // Reflection may defeat the last ally earlier in this same skill.
+        const ally=weakest(living(b,actor.side));
+        if(ally)shield(b,actor,ally,Math.min(18,power*6));
+      } else {b.energy=Math.min(10,b.energy+power);record(b,actor,actor,'energy',power);}
+      break;
+    }
     case 'swap': { const row=actor.row;actor.row=target.row;target.row=row;shield(b,actor,actor,boonValue(b,'swapShield')+(hasEffect(actor,'swap-shield')?(b.v4?12:25):0));shield(b,actor,target,boonValue(b,'swapShield')+(hasEffect(actor,'swap-shield')?(b.v4?12:25):0));if(hasEffect(actor,'unique:rainbell')){if(b.v4){const debuff=actor.statuses.find(s=>STATUS_BY_ID[s.id].kind==='debuff'&&STATUS_BY_ID[s.id].dispellable);if(debuff)actor.statuses=actor.statuses.filter(s=>s!==debuff);}else dispel(b,actor,actor,'debuff');}break; }
     case 'drain': heal(b,actor,actor,actor.attack*power/100);break;
     case 'consume': { const count=stacks(actor,'cozy');actor.statuses=actor.statuses.filter(s=>s.id!=='cozy');if(count)damage(b,actor,target,count*power,0);break; }

@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-B3 anchored progression source6c0a04592 reviewed: six gates PASS1746web/1133rules/421E2E, exactOFF8250, x1boss64.921s VICTORY, same-route oldplanloss. Closureaudit and41capture contact sheet complete; DRAFT386 published on385. Production combat still otherwise A4.
+B3 DRAFT386 published and mirrored; branchcodex/cardrpg-a5-b2-kit-2026-11-08. Fix existing V4 fatal-reflection/energy-target crash;2focused scenarios and21combinedtestsPASS, exactcapturedreplay/alllegalpreviewPASS. Scentpolicy remains isolated, not production.
 ## NEXT
-Mirror B3 draft386 checkpoint/ledger. B1 spread50 wider09 rejected(cat/set/crew/diversity misses); B2 probe05 proves Blackcup0/203598actions. Isolated Scentpolicy06 stopped on an existing energy-to-missing-ally crash; registered unchanged-source crash07 reproduction active, no adoption. B1/B2/display/cadence/startup/Z stillopen. Fresh20001–20500 UNUSED. Stack376→377→379→381→382→383→384→385→386.
+Scentpolicy06a runs original1840commoncells TRAIN1–50 with the guard only; compare all06/crash07prefixes. Original06crash retained. Assess paired outcomes before any policy adoption; then sixgates/OFF/targetedbrowser for B2 phase. B1/B2/display/cadence/startup/Z stillopen. Fresh20001–20500UNUSED. Stack376→377→379→381→382→383→384→385→386.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -174,3 +174,5 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - B1 wider09 complete: oldspread50tiers24/24/no reversals, all33bandspreadsPASS, cats46.81–68.99%,sets80.25–86.25%,crew35.33pp,bossdiversity3/1/3. Reject adoption;500fourth-slot0miss/max11.2pp remains separately labelled. B2 read-only440cells/22000battles exactcommon04parity: SootBlackcup0of203598actions;3096Moonwickhealevents allwithVelvet. Registered Scentpolicy06 isolated one-policychange, all1840originalcommoncells TRAIN1–50; source/snapshot/matrix archived before sampling, current coordinator /tmp/cardrpg-a5-scent-policy-06/coordinator.log, tool15608. No production/acceptancechange.
 
 - Published B3 DRAFT https://github.com/ntbaoheyhey/taskbar-hero/pull/386 on385, closure5bd68a836/runtime6c0a04592. No merge/deploy. Scentpolicy06slice2 failed in existing energy effect after no living ally remains; original log retained. Registered crash07 captures exact failedTRAIN fixture/legal preview on unchanged candidate source and retained checkpoint; no production candidate adopted.
+
+- 2026-11-08T16:22:53.026606+00:00: B3sync9e0a73afc/ledger5353ec9d2 pushed. Exact crash07: mallow,brioche,velvet/scene5/seed21/round10; Velvet4HP dies to Kettle reflection during stolenflame, then energyshield hasno recipient. Productionguard skipsmissingally only; unchangedOFFbranch; existingally12shield retained. Unit red-before1failure/11pass, after21pass; actualprefix JSON replay andalllegalactionpreviewsPASS. Scentpolicy06a registered exact06plusguard, all1840originalcells, no policy/stat/kitretune, preserve originalcrash and compare prefixes. Owned coordinator tool84045, /tmp/cardrpg-a5-scent-policy-06a/coordinator.log.
