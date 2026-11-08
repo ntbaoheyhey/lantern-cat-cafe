@@ -18,8 +18,16 @@ async function capture(name,selector,{scroll=true}={}){
   const rgb=s=>(s.match(/[\d.]+/g)||[]).map(Number),luma=c=>c.slice(0,3).map(x=>x/255).map(x=>x<=.04045?x/12.92:((x+.055)/1.055)**2.4).reduce((n,x,i)=>n+x*[.2126,.7152,.0722][i],0);
   const visible=e=>e.getClientRects().length&&getComputedStyle(e).visibility!=='hidden'&&!e.closest('details:not([open])');
   const contrast=[...document.querySelectorAll(selector+' *')].filter(e=>visible(e)&&!e.children.length&&e.textContent.trim()&&!e.matches('option,progress,button:disabled')).map(e=>{
-   let p=e,bg;while(p){const c=rgb(getComputedStyle(p).backgroundColor);if(c.length===3||c[3]===1){bg=c;break;}p=p.parentElement;}
-   const a=luma(rgb(getComputedStyle(e).color)),b=luma(bg||[29,27,40]);return{text:e.textContent.trim(),ratio:(Math.max(a,b)+.05)/(Math.min(a,b)+.05)};
+   let p=e,backgrounds;
+   while(p){
+    const style=getComputedStyle(p),stops=[...style.backgroundImage.matchAll(/rgba?\([^)]+\)/g)].map(m=>rgb(m[0]));
+    // A gradient can be fully opaque while backgroundColor is transparent.
+    // Use the full luminance interval, never the unrelated ancestor behind it.
+    if(stops.length&&stops.every(c=>c.length===3||c[3]===1)){backgrounds=stops;break;}
+    const c=rgb(style.backgroundColor);if(c.length===3||c[3]===1){backgrounds=[c];break;}p=p.parentElement;
+   }
+   const a=luma(rgb(getComputedStyle(e).color)),values=(backgrounds||[[29,27,40]]).map(luma),lo=Math.min(...values),hi=Math.max(...values);
+   const b=Math.max(lo,Math.min(hi,a));return{text:e.textContent.trim(),ratio:(Math.max(a,b)+.05)/(Math.min(a,b)+.05),backgrounds};
   });return{overflow:document.documentElement.scrollWidth-innerWidth,contrast};
  },selector);await page.screenshot({path:`${out}/${name}.png`});captures.push({name,selector,...metrics});assert.equal(metrics.overflow,0,name);
  assert(metrics.contrast.every(c=>c.ratio>=4.5),JSON.stringify(metrics.contrast.filter(c=>c.ratio<4.5)));

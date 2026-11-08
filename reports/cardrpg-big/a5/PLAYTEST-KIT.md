@@ -1,38 +1,34 @@
-# Taskbar Hero — 15-minute playtest
+# A5 — 15-minute playtest
 
-**Tóm tắt:** Chơi từ bản lưu mới trong 15 phút. Nói thành tiếng điều bạn định làm và vì sao. Đừng nhờ người hướng dẫn chọn đội hộ. Ghi lại chỗ khó hiểu, lúc phải chờ và lựa chọn có tác dụng rõ nhất. Trả lời tám câu dưới đây; ý kiến chê giúp ích nhiều như lời khen.
+**Tóm tắt:** Chơi như người mới trong 15 phút. Không cần đọc tài liệu trước. Ghi lại lúc bạn không biết làm gì, một lựa chọn có tác dụng rõ và điều khiến bạn muốn quay lại. Có thể trả lời tám câu bên dưới bằng tiếng Việt; không cần gửi mã tài khoản hoặc thông tin ví.
 
-This kit is prepared during H0. Use the A5 demo linked in A5-REPORT.md once that artifact is published. Current A4 observations are a baseline, not results for the upcoming build. A bot run or the author’s own review does not count as a human playtest.
-
-## Before you start
-
-Open the offline demo on a desktop at 1280×720 or larger. Start with a fresh cafe and the normal player view, without `?dev=1`. Keep battles at x1 for this test. They are automatic; decisions happen before and between them. There are no purchases to make.
-
-The observer should note the demo SHA, window size, whether the player has played similar games, and the start time. Ask the player to think aloud. Do not explain an unclear control until they ask for help; record the help given. Stop whenever the player wants.
+This is a human playtest kit, not a claim that a human playtest has happened. Use the reviewed offline demo linked in A5-REPORT.md when that artifact is available. Keep developer mode off. Keep battles at ×1 for the first encounter; later speed controls are your choice.
 
 ## Fifteen minutes
 
-| Time | Player task | Observer notes |
-|---|---|---|
-| 0–2 min | Start the practice fight. Before fighting, explain what you expect your front cat to do. | First action; time spent looking for it; whether the result matches the expectation. |
-| 2–5 min | Place a cat, compare and equip a piece, then open an earned invitation when available. | Can the player name the change before committing? Do the controls work without help? |
-| 5–10 min | Choose a route. Read what is known about the boss, choose a plan, and play the next fight. | Which alternative was rejected, and why? Note every wait that feels empty. |
-| 10–13 min | Read the result. Try its suggested improvement if available; otherwise explain the next change. | Does the explanation name a cat and an effect the player actually noticed? |
-| 13–15 min | Visit the cafe and journal. Explain what to chase next and what brings you back tomorrow. | Is there one clear next action? Can the player find odds and reward limits? |
+1. **0–3 minutes:** Start a fresh cafe. Follow the main button. Place a cat, watch one automatic fight, and read its result. Tell us what the result taught you.
+2. **3–6 minutes:** Open an invitation you can afford. Compare and equip one available item. Before fighting, say what you expect to change.
+3. **6–10 minutes:** Choose a night route. Read a revealed boss clue and choose a route or plan because of it. Check whether the result supports your expectation.
+4. **10–13 minutes:** Visit the discovery journal and star board. Pick one unfinished goal. If you lose, read the suggested change and use it if you want.
+5. **13–15 minutes:** Return to the cafe. Find what is ready now and what tomorrow offers. Stop without looking for help in design documents.
 
-Do not rush a player to reach the later tasks. An unfinished path and its reason are useful results. For a separate day-7 check, import the earned save named in A5-REPORT.md, play the boss, and record the first outcome and one informed retry. Do not mix this imported path with the fresh-save timeline.
+Do not spend money or connect a wallet. The test uses the local, earned-currency game.
 
 ## Eight questions
 
-1. What did you think you should do first? What did you actually do?
-2. Which choice changed a fight? Name the cat, gear, row, or plan and what changed.
-3. Why did you win or lose the last fight? What on screen told you that?
-4. Which control, term, or screen needed an explanation?
-5. When did you feel excited? When did you start waiting or lose interest?
-6. What are you trying to earn next, and how would you earn it?
-7. Can you find the invitation odds and the guarantee? Explain them in your own words.
-8. Would you play tomorrow, from 1 to 10? What is the main reason for that score?
+1. At each pause, did you know what to do next? Name the first confusing screen.
+2. Which choice changed a fight? Name the cat, item, row, plan or route and what happened.
+3. Did a result explain why you won or lost? What was still missing?
+4. Did an invitation, discovery or reward feel exciting? Which one, or none?
+5. Could you understand the item's benefit and the invitation odds without outside help?
+6. Did any loss feel unfair, or any fight feel decided before you could prepare?
+7. What would you return for tomorrow? Rate your interest from 1 to 10 and explain why.
+8. What one thing should we change first?
+
+## What an observer should note
+
+Record the minute, screen, player's exact words, chosen action and result. Watch for stalled navigation, repeated reading, missed rewards, unexplained deaths, unclear comparisons and joy. Do not explain the intended solution unless the player asks; record any help given. Count actual choices made, not every button shown. Bot results and your impressions are separate evidence.
 
 ## Send results back
 
-Paste the demo SHA or report link, window size, eight answers, and a short timestamped list of confusing or exciting moments into this chat. Include the save code at the stopping point if you want the path reproduced. Optional screenshots or a recording help locate a problem; avoid including personal information. Keep the player’s words separate from the observer’s interpretation.
+Paste the demo SHA or artifact filename, browser, window size, approximate play duration, answers 1–8 and two or three moments with their minute marks into this chat. Optional screenshots and a local exported game save help reproduce an issue; remove personal information. State whether you had played an earlier version. We will keep negative feedback and compare it with the recorded automated checks.

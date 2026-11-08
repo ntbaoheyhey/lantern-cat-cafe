@@ -1,0 +1,18 @@
+{"lock":"acquired","lane":"A","pid":14464,"startedAt":"2026-11-08T08:45:09.883Z","task":"A5 E2 reviewed desktop 1280"}
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: [{"text":"Try the practice table →","ratio":1}]
+    at capture (file:///Users/bao/taskbar-hero-cardrpg-a4/tools/cardrpg-big/a5-e2-browser.mjs:25:2)
+    at async file:///Users/bao/taskbar-hero-cardrpg-a4/tools/cardrpg-big/a5-e2-browser.mjs:54:2 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
+
+Node.js v24.22.2
+{"lock":"released","pid":14464,"task":"A5 E2 reviewed desktop 1280"}
