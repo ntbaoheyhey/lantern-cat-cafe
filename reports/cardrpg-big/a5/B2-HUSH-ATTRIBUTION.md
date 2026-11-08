@@ -13,3 +13,15 @@ This changes when the once-only Lantern heal can activate, so it is not merely a
 Signature20 is registered before wider sampling. It preserves the exact current16 1,321 TRAIN1–50 cells and all 90 previously earned day7 saves. This is a paired composition check, not a fresh 45-day earned cohort. All negative pairs must remain visible. Wider results and source adoption are pending; existing balance misses and fresh acceptance remain open.
 
 [Prospective composition method](b2/hush-signature-20/REGISTERED-METHOD.md). No acceptance seeds, cooldown experiment, rear-reach experiment or gear-fixture change is combined.
+
+The staged regression suite adds 18 cases. The original source fails six and passes twelve; the candidate passes all eighteen, including a basic turn followed by two signatures that must award Lantern healing only once. These tests ran in source-hash-verified temporary copies; production remains unchanged. Phase-one Pantry, capped summons and summoners defeated by retaliation are under additional review before adoption. Signature20 remains registered but unstarted, because signature-only credit may still be too broad.
+
+## Eligibility extension21
+
+The registered extension adds Pantry before its summon phase, two occupied summon slots, and summoners killed by Riposte. Across144controlled cases, current16 passes125, signature-only19 passes137, and resolver-site21 passes144. The signature-only candidate still falsely credits seven signature cases: phase-one Pantry, three capped summoners and three defeated summoners. All72OFF event streams and all controlled attack payloads remain exact.
+
+Candidate21 credits Hush at the skipped heal/shield branch or at a live, eligible summon with a free slot. Summon suppression and its existing Lantern heal resolve after the enemy attack. Drowsy still credits its actual softened attack; result copy says “enemy actions” rather than incorrectly calling every softened attack utility. This timing change requires wider paired measurement.
+
+The expanded32-case unit suite passes on21; original16 fails13/passes19, and signature19 fails7/passes25. All failures remain retained. Signature20 wider sampling was never started and its registered files remain intact. Eligibility22 prospectively registers the unchanged1321TRAIN50cells and90old earned saves; it waits for the existing bounded source-priority window. No new earned45-day or acceptance claim.
+
+[Prospective extension](b2/hush-eligibility-21/REGISTERED-METHOD.md) · [three-source audit](b2/hush-eligibility-21/audit.json) · [wider composition registration](b2/hush-eligibility-22/REGISTERED-METHOD.md).

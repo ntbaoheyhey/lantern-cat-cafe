@@ -3,9 +3,9 @@ import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import { readFile, writeFile } from 'node:fs/promises';
 
-const root = 'reports/cardrpg-big/a5/b2/suppression-current-16';
+const root = process.argv[2] || 'reports/cardrpg-big/a5/b2/suppression-current-16';
 const paths = {
-  before: 'reports/cardrpg-big/a5/b3/anchored-validation-03/day7-checks/checks.json',
+  before: process.argv[3] || 'reports/cardrpg-big/a5/b3/anchored-validation-03/day7-checks/checks.json',
   after: root + '/day7-checks/checks.json',
   registration: root + '/REGISTERED-METHOD.json',
 };
