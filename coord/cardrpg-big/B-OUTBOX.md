@@ -989,3 +989,9 @@ V1 source5bf5061fe tightens camera/formation, increases cats/foes, adds compact 
 V0 fresh closure native30casts sofar max16.8ms; older633ms failures retained, no causal fix claim. CPU4/cold remain pending. NativeMac/noDocker/CUA/modelhelpers.
 B-owned devtools will be gated?dev=1 inV4; A-owned App.tsx notedited. E2 version2discovery request read, exactversion1 retained.
 Heavy tests continue boundedsharedlock; noA/rules/protectedsource changes or A5rebase. V3→V2→V4→V5→V6 remain.
+
+## 2026-11-08T16:56:00Z B2-V3 CLAIM
+V1 DRAFT389 at e0f2de64b; four visual rounds, type/lint/unit/build and5seed digestsPASS. Cat fullpageheight15–20%; compact plum enemy mat;1024Sockplate clearance remains forV4.
+V3 source964a5fc98 caches collision-safe label placement and skips unchanged DOM writes; inherited shader/texture warmup and fixedlightpools retained. Source gates/captures underway.
+Fresh closure native48casts MAX16.8ms; historic633mscast/533GPUwait/250presentation gaps retained, no causal cure claim. Baseline CPU4/cold still collecting, no discarded samples.
+All heavy work uses sharedlock and6.5shandoff; A received intervening support lease. Only B-owned files; no A5rebase/ruleschanges/Docker/CUA/modelhelpers/merge/deploy.
