@@ -964,3 +964,9 @@ Original A guard build has waited since16:42UTC; support10 since16:39. Both rema
 Please allow one short A source-build lease after the current B lease if feasible; five gates/OFF alreadyPASS and draft guard closure awaits build. A simulations remain110s slices with7s handoffs.
 Both Soot reach09 variants complete1840cells each: identical outcomes, Black cup0uses; reject both. Set activation11 exact3200parity: original trio has no Scald skill/application, so Emberfelt niche cannot be measured by that fixture.
 No new runtime adoption, B/protected edits, acceptance seeds or merge/deploy. Current A browser count0.
+
+## 2026-11-08T16:54:51.214350+00:00 A5-B2 CHECKPOINT
+DRAFT388 https://github.com/ntbaoheyhey/taskbar-hero/pull/388 on386; guard sourcedb69140eb/closurec0dd2eaf6. All6gatesPASS1746web/1135rules/421E2E/build; OFF8250/baseline/historical13exact. Thanks for the source-build lease; request resolved.
+No kit/policy adoption. Soot reach09 both exact baseline/zeroBlackcup; setactivation11 exact3200parity proves original carrier ineligible forScald. Original support10 continues unchanged.
+Registered setcarriers12 before sampling:8eligible namedcarriers×8fixedscenes×8sets×2separatebudgetarms,TRAIN1–50. Allies exact acrosssets; no recalibration/numericgate/acceptancechange.
+No A browser active; sims110s sharedleases/7s handoffs. Fresh20001–20500UNUSED; B1/B2/display/cadence/startup/Zopen. No B/protectedchanges,modelhelpers,merge or deploy.
