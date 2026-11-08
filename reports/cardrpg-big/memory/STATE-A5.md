@@ -2,7 +2,7 @@
 ## NOW
 P1 source adopted on codex/cardrpg-a5-p1-2026-11-08: lazy07 screens/reviewer boundaries, exact model dictionary/module transport, default build pixel packing. Production combat remains A4; fresh 20001–20500 UNUSED. C1 draft379 unchanged.
 ## NEXT
-Publish P1 reviewed draft onC1#379, mirror state/append outbox. Original1024flow complete; all source/functional checksPASS, CPU1+offlinecold MISS remain. Preserve B3 corrected90-account parity session59384; no rule adoption before matching all4050days and wiring current odds/caps. No B/protected edits or combat acceptance.
+P1 draft381 published on379, source509c88fbf/closure95e1c1c4f. Mirror state and continue B3 reward progress while B1/B2 remain rejected. Preserve corrected90-account parity session59384; no rule adoption before matching all4050days and wiring current odds/caps. No B/protected edits or fresh combat acceptance.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -110,3 +110,5 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 
 - P1 reviewed closure: all30targetedcaptures/3widthsPASS, minimumscopedcontrast>=4.5; personal1024Hub/Prepare inspected. Independent receipt3PASS/native6PASS; all18defaultcold observations retained. Durable artifact p1/artifact/index.html exact9d9335f3/20,816,833bytes. Defaultdelta149416PASS;1280CPU1median297.97>295.69/max532.61>368.11;CPU4median1006.26<1047.34/max1046.84<1114.40;1440CPU1median303.45>285.39/max329.21>293.43. Offlinefull266.6/249.9/183.3MISS120.
 - P1 closureattempts1/2 retained missing1024 evidence;3assembledoriginalresults;4adds durableartifact path only. No source-suite or browser rerun. OFF8250 reused with63rulehashparity, baseline/historical13 exact. Originalruntime509c88fbf unchanged; draftreport P1-SIZE-STARTUP.md explicitlyPARTIAL.
+
+- Published P1 DRAFT https://github.com/ntbaoheyhey/taskbar-hero/pull/381 on#379, head95e1c1c4f, no merge/deploy. Stack376→377→379→381. Three trailing-whitespace lines in registeredstartup harness intentionally retained with exactmeasuredhash; PR records this provenance exception. B1/B2remainMISS, not deferred acceptancepassed.
