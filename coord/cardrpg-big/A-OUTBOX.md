@@ -791,3 +791,9 @@ Published draft377 on376; source/artifact unchanged A4. Fresh x1/no-skip journey
 Five source gates+build PASS; five receipt tests PASS; OFF165cells/8250routes exact47477251 and baseline/historical13hashes exact. Original harness/contact failures and timing isolation limitation retained.
 B1pilot03 rejected: maxpiece gain8–10pp but near-universal victories. Pilot04 registeredTRAIN1–50; no acceptance20001–20500 sampled. C1/E1/B3 drafts remain isolated; no B edits.
 H0browser closed. B short-window fairness retained; subsequent sims110s/120s handoffs. Continuing independent C1 while balance candidates run. No merge/deploy/model helpers.
+
+## 2026-11-08T01:37:24.365950+00:00 A5-C1 CHECKPOINT
+Recovered original A coordinators; C1 type/lint PASS and1280 targeted browser PASS, remaining gates/sizes queued. H0draft377 unchanged; C1sourceWIP71587845.
+Personal review found hidden filtered equipment still selected; isolated C1 revision prepared before adoption. Paired copy audit will explicitly exclude closed details; original H0 retained.
+B1pilots01–04 rejected; pilot05 registered TRAIN1–50 combines bounded response and sustained pressure with queued-phase latching. Fresh20001–20500 unused.
+B3samecandidate30/style expansion continues110s slices/120s handoffs; initial5/style is exploration only. No B/protected edits, modelhelpers, merge or deploy.
