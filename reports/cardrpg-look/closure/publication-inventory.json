@@ -1,0 +1,3613 @@
+{
+  "artifact": "7e092b1a18b2a4af1dcdcc51e6a24f38bc5e674580d2ecddca33c3de306aff34",
+  "source": "8ba0a38799401d6127b1f9d4295dcccbfee6d355",
+  "files": [
+    {
+      "path": "docs/cardrpg-look/build.json",
+      "bytes": 340758,
+      "sha256": "3a55725d49c78a93b655bf59c27de07167e8a86492991481c20a88612d0f550c"
+    },
+    {
+      "path": "docs/cardrpg-look/index.html",
+      "bytes": 31494758,
+      "sha256": "7e092b1a18b2a4af1dcdcc51e6a24f38bc5e674580d2ecddca33c3de306aff34"
+    },
+    {
+      "path": "reports/cardrpg-look/CARDRPG-LOOK-REPORT.md",
+      "bytes": 25082,
+      "sha256": "61542ecda9a060543c026e92eaa956df5e344163fec78c539d2181d36309da66"
+    },
+    {
+      "path": "reports/cardrpg-look/PROGRESS.md",
+      "bytes": 9310,
+      "sha256": "45ccaed0652d51b597dee4e8f9c13530cb230a97197b44aeb6dda18bca9c983f"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/COLD-REVIEW.md",
+      "bytes": 3138,
+      "sha256": "0403f931e4e8577ae6089ade29947e4a5605635ddc2faa4a853165ccb1ee9802"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/CONTRACT.md",
+      "bytes": 1663,
+      "sha256": "f108950fdbae83b6e3db8495c91976f86a62b8e79e4825e85af849b2562b7654"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/PLAN.md",
+      "bytes": 1537,
+      "sha256": "9040b422baaeedcb6ce5a2239e521cb39e3a314961ad6a85500cbf85df81a97a"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/REVIEW.md",
+      "bytes": 5237,
+      "sha256": "0cfed85caf236a9729a8a25e212e898d15838f4261115c02b654a328581fe7ab"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/a4-fixtures.json",
+      "bytes": 724,
+      "sha256": "7966163c8ab4c7bd70f1cb84d1107661a56bd44613261c271d1f96797c9a43ac"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/acceptance.json",
+      "bytes": 1452,
+      "sha256": "cd6de52e68e114e7c0da88a29f1db1ebfa54f32d11a2d515941c4ff4cd042556"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/audit.json",
+      "bytes": 33197,
+      "sha256": "f2c5f217b9911bda6d8b70b34b42dcebd271852961653df72a883cfd55cbaeae"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/audit.py",
+      "bytes": 8230,
+      "sha256": "efac4246515be4dc78ed5c25e74620be7d883b3570f80abfb4d113f9d362057c"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/cold-audit.json",
+      "bytes": 27590,
+      "sha256": "4654850b1fafa18929aa554f040ff6fecc2ae7aebc5181cf5d7f31abe2fa3b68"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/cold-audit.py",
+      "bytes": 5252,
+      "sha256": "af92beaa334cca8d5d7cd0f8dbcfdcef319f3dd686d205a26c81f065d3f96700"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/diagnosis-attempts/paired-summary-schema-1.log",
+      "bytes": 1123,
+      "sha256": "0b27d94743d678576e8f73160ecd7bdf3dd58f0ed7341ccc16b9473287d96fa9"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/diagnosis-attempts/trace-parser-1.log",
+      "bytes": 831,
+      "sha256": "ba9dd8d8c970617af3d0554ea92542ff3af2098662ed54c7c846d3c9125fe0bc"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effect-pair-audit.py",
+      "bytes": 2521,
+      "sha256": "65b112eeed4ca9bc42a76c415052a374b9429cbba48fc207ff0753b1d88401c9"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/biscuit-runtime-1.png",
+      "bytes": 256041,
+      "sha256": "ab6d092eab55a3904e56fa77cf3373dd9127418d10d6bcc86a3df5e510c44f7e"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/brioche-runtime-1.png",
+      "bytes": 271916,
+      "sha256": "b6b958f7db5365dee1db731defa3d9930c9724c0c31dcab67c4c844f577c9a15"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/captures.json",
+      "bytes": 191471,
+      "sha256": "6280992f4c32ea31e8e1f41b37e20032b40108f5c88cdf60b8ab203c41b9935e"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/clover-runtime-1.png",
+      "bytes": 271105,
+      "sha256": "e97f03458a92340a1295ec44747b232c289d2aaf35d875cf4d1f04a5034e5c88"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/clover-vs-l4.json",
+      "bytes": 11855,
+      "sha256": "9443c6812ec7e1d1692cadf290781833d20381135a625396e2ae273778cbde56"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/comparison.json",
+      "bytes": 3228,
+      "sha256": "68355c9295b9f6cf1012a91e30564aa67c523778e3d1f9afd2f24e7e9376e50b"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/features.npz",
+      "bytes": 20699,
+      "sha256": "3737cef55819a76c7ffffb2fc6149009a37b4ec08b8ae900368bf6e87103831c"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/biscuit-2-0-canonicalImage.png",
+      "bytes": 17723,
+      "sha256": "8f4d7e0b18d667942a4d22e06a08e58001f0012102369cf54773dc29869e1d75"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/biscuit-2-0-edges.png",
+      "bytes": 135,
+      "sha256": "96fcf3fff2859dec6ef44608bf4b9ea35e0e3cd7ca3815e4e64433d5817525e1"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/biscuit-2-0-mask.png",
+      "bytes": 130,
+      "sha256": "b90426632fb2e52f19d0caa2ad2c7e697656fc329ac6b7ec9f1e1aaa45c5db14"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/biscuit-2-0-overdrawImage.png",
+      "bytes": 11773,
+      "sha256": "9a8da974a80ec66e878072608a46eff9dea799619e5f3d6c3e0e25a917ec1a89"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/biscuit-2-0-real.png",
+      "bytes": 925269,
+      "sha256": "1afa87998d4c204f46d6a0cd546eb48c1d93cedfcad730d0791f53f4e33c092a"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/biscuit-2-0-without.png",
+      "bytes": 924928,
+      "sha256": "6ac87e865b168b4cfe643fd56256ec12e04a15211ff3c10ac26ebb2e51860e78"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/biscuit-2-1-canonicalImage.png",
+      "bytes": 18861,
+      "sha256": "74e5d989823f82decf5e4e7d6722be262553b468733c52e0a6aa1665c7aee913"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/biscuit-2-1-edges.png",
+      "bytes": 134,
+      "sha256": "16972c41a1a767518a2545c1e797fba70a92fa17bf353118bafcee99178723ea"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/biscuit-2-1-mask.png",
+      "bytes": 131,
+      "sha256": "68a6a22010d904e046230e385c088c0d1559bdedb78ba1717c1f8e5e0256969a"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/biscuit-2-1-overdrawImage.png",
+      "bytes": 11882,
+      "sha256": "7997b13e8d8e72695dabee2b6d4eccbfe1d682a617e09b3187c9c7764d6c375d"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/biscuit-2-1-real.png",
+      "bytes": 927051,
+      "sha256": "f6b7f1b9b9202c4de9a37790079d72b19ee95e526e9c86d5e653a1d87d8ee5ac"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/biscuit-2-1-without.png",
+      "bytes": 926439,
+      "sha256": "4764f31253ab1e78c07d4767e511d9a8037d333a9e5708b1f57a98757c0006dc"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/biscuit-2-2-canonicalImage.png",
+      "bytes": 18316,
+      "sha256": "f91d4322f7ff4db46a0d44b2d568f7d87ae7abfc37725d09d49929fe5b9c75a4"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/biscuit-2-2-edges.png",
+      "bytes": 130,
+      "sha256": "e9c65864387ded06156d5b958f87eb78fef9cd41ec667a4e6d567649f9040cd3"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/biscuit-2-2-mask.png",
+      "bytes": 130,
+      "sha256": "290cb888a689abaa5335e0f3a612a15b31f9cd1edcde41d9ba859b6ce67dc7e1"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/biscuit-2-2-overdrawImage.png",
+      "bytes": 11841,
+      "sha256": "1a8a6398592e8518bb6fb57df2def03b08c0972fa3be0f5bcbd0927f823ff256"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/biscuit-2-2-real.png",
+      "bytes": 927772,
+      "sha256": "b9e954082658293f99ac5cf5970eaeaa478f1fb4dc2978d851e479275ea210fc"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/biscuit-2-2-without.png",
+      "bytes": 927189,
+      "sha256": "4f5f15a0cf5fe39bd5bf0d6764f24baa6351bfe5069ec788bb84f61f2474d9fd"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/biscuit-2-3-canonicalImage.png",
+      "bytes": 43864,
+      "sha256": "123aec8a75d0b26a2037a2d2584fa4edd40585d12d23c92852d48ffa2a717b73"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/biscuit-2-3-edges.png",
+      "bytes": 257,
+      "sha256": "3f94cd2810021af617c0febc8cc82dd5a3baa3cab6877e9d2a53db129c3a4749"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/biscuit-2-3-mask.png",
+      "bytes": 226,
+      "sha256": "a3248cb62988c9e4584d52b200169c61c4a7195e8d53ccbf3739d72f1cb9d2f2"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/biscuit-2-3-overdrawImage.png",
+      "bytes": 14402,
+      "sha256": "ff2b066aa817fde00a563c5b55afd7c72bfdbfa5e44b678348396a169f8e766a"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/biscuit-2-3-real.png",
+      "bytes": 927872,
+      "sha256": "dcc8d7a537ec856cc4bb9183ae884f8c77e0eca080bdbaba78b3a82f049ed28a"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/biscuit-2-3-without.png",
+      "bytes": 927237,
+      "sha256": "36ff8337703da7c1e16f9bd00826384ed97c83e882219cc2676ba1700108107b"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/biscuit-2-4-canonicalImage.png",
+      "bytes": 51129,
+      "sha256": "e96608071cd0c52ca589edfb5f8f831e95ed49e894c066d651e25d31c58a4f20"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/biscuit-2-4-edges.png",
+      "bytes": 320,
+      "sha256": "68bddd243ee75894d35d60c5529bc1118b0650a9dbfdbaeba09cca42336b3d44"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/biscuit-2-4-mask.png",
+      "bytes": 259,
+      "sha256": "181fefa3bc31fecfaccdb1b6fbe01cab171fbbcf91cd021f64ffea7866e71296"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/biscuit-2-4-overdrawImage.png",
+      "bytes": 16110,
+      "sha256": "167ca789479fbc44270acf91bd7524efb9b5702d3161eff56bc7415d30967ad1"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/biscuit-2-4-real.png",
+      "bytes": 925901,
+      "sha256": "eb98e63c5d8e5f524ba4dc3d9eb5557e51d33a8872fcb8198144464b65115659"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/biscuit-2-4-without.png",
+      "bytes": 925749,
+      "sha256": "e2cad414ca118906b27cf21ada62469761631ebb73684f4467f5daceb8ae26b4"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/biscuit-2-5-canonicalImage.png",
+      "bytes": 40320,
+      "sha256": "268091523c733d69092b9a971e6c33bf4b253a010413edeba016aae330ac0d7f"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/biscuit-2-5-edges.png",
+      "bytes": 302,
+      "sha256": "82ccb0f334d8c75bd46d091bcde5938352e82c6287811981cf49ea37978cb4df"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/biscuit-2-5-mask.png",
+      "bytes": 260,
+      "sha256": "b047533e03a3881fe7f6f09baf315bf7e3f74cf7d5fd59c5fcd30806df09a6de"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/biscuit-2-5-overdrawImage.png",
+      "bytes": 14442,
+      "sha256": "5b9bb6d310a0ffb69d9d40ec38f2b63fa6dc49e6c105c69e94bb8559ead3ffb5"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/biscuit-2-5-real.png",
+      "bytes": 926278,
+      "sha256": "3252ac76446836cb1679f91f633ea167ce53f779f69feb39996cb546408801f5"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/biscuit-2-5-without.png",
+      "bytes": 924508,
+      "sha256": "d14c4810e3993e6ac2ef86614cb9c32ea87f403553051d18128f3c97a8a8f251"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/brioche-4-0-canonicalImage.png",
+      "bytes": 18665,
+      "sha256": "040bc3252d97265fbfca096492bd26bdc2f914ccd72f8e5327e5e0d8e696a6d3"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/brioche-4-0-edges.png",
+      "bytes": 162,
+      "sha256": "1c788f8d51d94de03c36631e84f0fd4be2fa2ff4666a57f10b0c85bd6f718c3b"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/brioche-4-0-mask.png",
+      "bytes": 162,
+      "sha256": "1c788f8d51d94de03c36631e84f0fd4be2fa2ff4666a57f10b0c85bd6f718c3b"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/brioche-4-0-overdrawImage.png",
+      "bytes": 12155,
+      "sha256": "7e802fea1ad9aa79df2e58bfa67b0797c2f74fa4d205edade30cd4497605d001"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/brioche-4-0-real.png",
+      "bytes": 932744,
+      "sha256": "39b9b7e41498e26c4050d081fc2148edafac86f4179ea956153e3feb68429b4f"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/brioche-4-0-without.png",
+      "bytes": 932516,
+      "sha256": "2cdb92243e323082a3b10f2e29f84cec3391bc507e1f589c704dd853c95c9b3e"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/brioche-4-1-canonicalImage.png",
+      "bytes": 25249,
+      "sha256": "164e3d9cd0326668471c9e2ccf7b247e3be22752618c8781aaf05d891cef565a"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/brioche-4-1-edges.png",
+      "bytes": 227,
+      "sha256": "6f9b00b66e90292202b34968eb9f0125beb3af2b604cac7d9c422d8a54458c43"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/brioche-4-1-mask.png",
+      "bytes": 223,
+      "sha256": "de5ab433a5247abd6d61fea1d101516110b887ce151d0da6b164aa61799afb63"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/brioche-4-1-overdrawImage.png",
+      "bytes": 13361,
+      "sha256": "d50c50c432942da3d39a1bb46d63f9e0ace62c20641c860657876f9413aeb6de"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/brioche-4-1-real.png",
+      "bytes": 937521,
+      "sha256": "87885bb88219b58cb2962727b8bb48294cc574c2fc4e76a7ae68e7304ba96dac"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/brioche-4-1-without.png",
+      "bytes": 936863,
+      "sha256": "1ba4c1319c66b62aaa333d50da81b50e17f05bae9f06900d2bcd7f203b3fc6da"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/brioche-4-2-canonicalImage.png",
+      "bytes": 36882,
+      "sha256": "57d57b6c6c72a1fed088c18ac2ed0331ed9d51b42409c77a6f54f0addce011c0"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/brioche-4-2-edges.png",
+      "bytes": 389,
+      "sha256": "ad05eeea1f1851c6c28f278155c8c61c4a4298cfc2cdccd7888e3e41164a06ca"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/brioche-4-2-mask.png",
+      "bytes": 365,
+      "sha256": "60276b5678382b22dced00ee2dca7d700dc33656318932509356a5c39efcaf0b"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/brioche-4-2-overdrawImage.png",
+      "bytes": 21747,
+      "sha256": "7443f1405ade41f53581b66fedba389142726f8c5000d985d9e981908603eb12"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/brioche-4-2-real.png",
+      "bytes": 941404,
+      "sha256": "70073ca8fec818a26ff3df6ac6b821b96606f222677b2f612be6281180fd879d"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/brioche-4-2-without.png",
+      "bytes": 937474,
+      "sha256": "274843f0075be2d508d16941076a8e3c82a8b37637e4d6e7c3bed24931ff6657"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/brioche-4-3-canonicalImage.png",
+      "bytes": 58389,
+      "sha256": "81b24cf627091edb929c05c24e4ee7b47b7aa396ba8b739795040f138db6c714"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/brioche-4-3-edges.png",
+      "bytes": 416,
+      "sha256": "23c7431405fd2d69bf3a1bde8b860ed5c5e64104f4af7bc23d2e75d26d079133"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/brioche-4-3-mask.png",
+      "bytes": 367,
+      "sha256": "03bf039c4deacfafec960a85d20e2b8471054c646ea643a23389ae46e740d933"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/brioche-4-3-overdrawImage.png",
+      "bytes": 30492,
+      "sha256": "1babbcc3f08c05fc689851720d286e8545801bae3bb51b0fde762accb19c297c"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/brioche-4-3-real.png",
+      "bytes": 944175,
+      "sha256": "1af47a2d490ec9e1f2aac93d7f2cfab01758ad841b26ac061c95c19abdb16e27"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/brioche-4-3-without.png",
+      "bytes": 937276,
+      "sha256": "1df382a1d9114e90318f8caa351bdcba672808b1cab46e6841f3d4736cd56562"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/brioche-4-4-canonicalImage.png",
+      "bytes": 62731,
+      "sha256": "6716510a44d4457fd6fb9b4ede38a00c2ac91e5feecfafbf6262077e7894c8ac"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/brioche-4-4-edges.png",
+      "bytes": 391,
+      "sha256": "26980f4a6c597b0ca48c43ef250696ae2250d137da8d5862c14ea56649c7dfa1"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/brioche-4-4-mask.png",
+      "bytes": 339,
+      "sha256": "8f0792638652473fb12ba13a3cc00920c79091d26777144ab1b279cd088d62d0"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/brioche-4-4-overdrawImage.png",
+      "bytes": 33195,
+      "sha256": "35442c417dc343786e8cd2bf4239b4d35fdefd68dbcae9f465b3c2b6f849455b"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/brioche-4-4-real.png",
+      "bytes": 938577,
+      "sha256": "23071996ceb5725b55649cc34f7e80c51bbad1d0183fba6b42b158ecb4b8c470"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/brioche-4-4-without.png",
+      "bytes": 933229,
+      "sha256": "612370088be522bb9541e63f00e5b11fe4e810efcff9acf041ff2faa575e0cad"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/brioche-4-5-canonicalImage.png",
+      "bytes": 54011,
+      "sha256": "42baec65b2df793fef3a143af2345e100821bc986240dcc3e737060647d9ad23"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/brioche-4-5-edges.png",
+      "bytes": 326,
+      "sha256": "90ca52e2d045e58a0130f92859b96031dac1a4de0b6ca172a19c95c97e8d9b3f"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/brioche-4-5-mask.png",
+      "bytes": 286,
+      "sha256": "03f3d53281436d4b98eae8e571f40f1db8664ed50d6df5f78bb825e53690aec9"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/brioche-4-5-overdrawImage.png",
+      "bytes": 29743,
+      "sha256": "a951b246e128f2353d7cc826c9aff00725968f7cfaaf722397ce3fd7435728a7"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/brioche-4-5-real.png",
+      "bytes": 934403,
+      "sha256": "45318ef793d22e6861bf355ebea47b535a8bfb79761b042360236ca5862e7bab"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/brioche-4-5-without.png",
+      "bytes": 929631,
+      "sha256": "07f62a260f672d09d9437235bcbaac60737828604a579de8b6cd8436245de7b8"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/clover-4-0-canonicalImage.png",
+      "bytes": 19052,
+      "sha256": "cc0f38ad23b5625bfa985ca6ec7e7f575aefc929f355b11b11302f78deed0d3d"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/clover-4-0-edges.png",
+      "bytes": 173,
+      "sha256": "9facd1971452b15dbf20fc2d75cedb4ce06f29ac4c8de561a70d50dc04af60a2"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/clover-4-0-mask.png",
+      "bytes": 177,
+      "sha256": "a45adc58251626c3007f853cc2b0f22b6993624f90528545da37e5bd208be9b2"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/clover-4-0-overdrawImage.png",
+      "bytes": 11824,
+      "sha256": "9764f73420916c9f8423255dbc471fe2cc8c9ffdae46043a5c03aeb91e3a2ebc"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/clover-4-0-real.png",
+      "bytes": 929455,
+      "sha256": "762804a64165e4fa2265e158764eb87ce226b6194034eb795bffb0d982b75a72"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/clover-4-0-without.png",
+      "bytes": 929356,
+      "sha256": "b1843c98f9d43fd8b81772b799357166ea2385f1e431fb3d3a19c807b13ddfbb"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/clover-4-1-canonicalImage.png",
+      "bytes": 23124,
+      "sha256": "57678fef149d4d805bf4933319b4f6393f8ada99340ba67e5ae4249d6567f2b1"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/clover-4-1-edges.png",
+      "bytes": 242,
+      "sha256": "eaf1c3bce24f1554bb4dbed78bc190e2577d4e4a27a92bdd84ed6061a7a1e489"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/clover-4-1-mask.png",
+      "bytes": 213,
+      "sha256": "882679dadc5b958a6854fae7ccc3c31e7f9d0479f0ebcb0e1a6efd763e5f570b"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/clover-4-1-overdrawImage.png",
+      "bytes": 12945,
+      "sha256": "1e9244933bba276b5d5aee69d1fe7f26d01b6b3d46c84d99cb2def1a26404731"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/clover-4-1-real.png",
+      "bytes": 933245,
+      "sha256": "a0a6849fc8b3ffd02c1b49d7fce77edc14df05d75714605a800d9bb833911699"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/clover-4-1-without.png",
+      "bytes": 933003,
+      "sha256": "541d0521d5e9093150b2df31d4e878bde7ea93500116aaf01ae64bfa230fae9f"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/clover-4-2-canonicalImage.png",
+      "bytes": 28748,
+      "sha256": "3ef5d8d9274f247bbdb5290d14cbc20ab53bf619aafd0c47cf6476cb5b131357"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/clover-4-2-edges.png",
+      "bytes": 264,
+      "sha256": "c5e9e41e51f7a29484a3810027fff96a8203bc2c5a702944218f05619229d74b"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/clover-4-2-mask.png",
+      "bytes": 238,
+      "sha256": "5a4afd34c9df685c88b1190c249b0562148960bcce5cf987159b28bc8986810e"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/clover-4-2-overdrawImage.png",
+      "bytes": 13371,
+      "sha256": "1c09965a3a350319a703e7ddbfde1025494ad73ea7f115b8182793ad9a1b9571"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/clover-4-2-real.png",
+      "bytes": 935607,
+      "sha256": "eed4a489f24f40457f311db47ba117ac8bca9d265c57fc77569fd63d001d5240"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/clover-4-2-without.png",
+      "bytes": 934962,
+      "sha256": "28d66b2c606d09ee34c103f95815aa00186b95987dccc59afd7ee7a026453958"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/clover-4-3-canonicalImage.png",
+      "bytes": 47859,
+      "sha256": "0ad42228cc7c3f952a238697741b89c24a289d9a8a7a4c4c8c169b8f10ea88f7"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/clover-4-3-edges.png",
+      "bytes": 367,
+      "sha256": "2c93499c152548fe0b32322ef18a18431e8e9a9b3bcb076663ebebda41104cf7"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/clover-4-3-mask.png",
+      "bytes": 301,
+      "sha256": "0e937ecb7fd474cf6b729320bfec918b784bbd708c314c635d59e6d8e272c18e"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/clover-4-3-overdrawImage.png",
+      "bytes": 24890,
+      "sha256": "3b639c6f680dd52d55f477ffa9ee668faaf3c636a4dc98bad0e594e00d9def49"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/clover-4-3-real.png",
+      "bytes": 945861,
+      "sha256": "e04c9de8260e5b78464b6e943c131519eb32b8cfb7fe66ee1729333f9e89cba4"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/clover-4-3-without.png",
+      "bytes": 933950,
+      "sha256": "7c0a011641ed1677ab6a409db6e354114190fa0402df958d49ca96afa4a3cdf5"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/clover-4-4-canonicalImage.png",
+      "bytes": 51055,
+      "sha256": "8c8f539ab7627f6f50e44187c74bf48c33d30c19a477d4ed1c1655ca63cf2dee"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/clover-4-4-edges.png",
+      "bytes": 374,
+      "sha256": "ab9065620473aeba8214a0d2c6c9cd3087130ee16586d23b697991e039d1f9e1"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/clover-4-4-mask.png",
+      "bytes": 321,
+      "sha256": "bae4041a21a04fda0bd564b818291aea7afe6740d9281949610ddb462ffb5460"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/clover-4-4-overdrawImage.png",
+      "bytes": 26406,
+      "sha256": "873804f0f38c0559d6fff374b6bbcdc617e0e1b23d8e11882dccd67b6081dc01"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/clover-4-4-real.png",
+      "bytes": 943175,
+      "sha256": "32fc654e2098db2f4260cedd178c2e4e8de4f11928dc565894f9bc50772e566d"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/clover-4-4-without.png",
+      "bytes": 931575,
+      "sha256": "7d4287607a810d175877074e571c124e581b09430d12edecee2a1a6d498229db"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/clover-4-5-canonicalImage.png",
+      "bytes": 41170,
+      "sha256": "c76f17538759c607688d823ae7a13c9f9f5f148e59bd8b1b5e47349f62c6e76a"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/clover-4-5-edges.png",
+      "bytes": 283,
+      "sha256": "d1e9c9790f404db9f70fa6fbef8f104054a9aed0667bb82d0a574f1b2723dd30"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/clover-4-5-mask.png",
+      "bytes": 280,
+      "sha256": "b5a0d22011904add4ca71363cd7c8e00b3ca05da44e95deb5dbdb09b8dd944f6"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/clover-4-5-overdrawImage.png",
+      "bytes": 25510,
+      "sha256": "d1423aae64457dee250d1f101d2e61f2a15f2702213d879645ce0774236fa3bd"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/clover-4-5-real.png",
+      "bytes": 936521,
+      "sha256": "175279300207f8d80c6134a34e75916cf2203964911212569efb56719b6ee265"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/clover-4-5-without.png",
+      "bytes": 927051,
+      "sha256": "88d16896e233b065e484cad200da722ec1d56fc0a726539241355c6a4a5ca809"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/mochi-4-0-canonicalImage.png",
+      "bytes": 24413,
+      "sha256": "574fdc3ab2f23d0bca6c86e7506400687122e0c2a0d0cb1e3648d51629e9d6cb"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/mochi-4-0-edges.png",
+      "bytes": 239,
+      "sha256": "012b06817b075053c229df15aff384c3072905a6e83d2dadcd69ff92feb35d8e"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/mochi-4-0-mask.png",
+      "bytes": 239,
+      "sha256": "012b06817b075053c229df15aff384c3072905a6e83d2dadcd69ff92feb35d8e"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/mochi-4-0-overdrawImage.png",
+      "bytes": 13291,
+      "sha256": "dce489c9c32399fafa11cebd5b9e9d5884fa5649515f2ea89905d13ff7862eef"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/mochi-4-0-real.png",
+      "bytes": 931238,
+      "sha256": "fbe0368cbab632ee12d2c29f190b4dfeb6db9b0cb8ef5f2c3d82b455782b5263"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/mochi-4-0-without.png",
+      "bytes": 930094,
+      "sha256": "fd62150b2d557a34217914651a48b45ccff5fd69903bfbd4f10496cd912cc9a7"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/mochi-4-1-canonicalImage.png",
+      "bytes": 24737,
+      "sha256": "721cd0cacb447b8a583379fccbad8f4167ba1eebdef8f7fc7e12d963df09fb8a"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/mochi-4-1-edges.png",
+      "bytes": 234,
+      "sha256": "14e4fa83eed1a4c3f05d2e042cee84a9689a4babf726873452a97b2fc6a46794"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/mochi-4-1-mask.png",
+      "bytes": 235,
+      "sha256": "2125646ea623d3b2045d236b1ef35eab27622295537afffa005424a90ef25211"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/mochi-4-1-overdrawImage.png",
+      "bytes": 13806,
+      "sha256": "56935cc5da3d8500948ddc29d0d142e7ae53cf83fdc3549d59bade4dad6b5223"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/mochi-4-1-real.png",
+      "bytes": 935345,
+      "sha256": "3d07e77590e44a365103273bea3ce35a607b9ea3723ed662921aa45ced93f663"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/mochi-4-1-without.png",
+      "bytes": 933681,
+      "sha256": "aeb3edbef5865dee35e30eb3bbd251ff3a767412a134f5ce30b34fae47603862"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/mochi-4-2-canonicalImage.png",
+      "bytes": 23600,
+      "sha256": "bfe1f6ad827fcee430482570d81a8dd91f520bfe2ff81fc4bdac5555faa1c73d"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/mochi-4-2-edges.png",
+      "bytes": 232,
+      "sha256": "1bb3bdba83ca89a477bbe27e5925f1553e08ebd40b5b4688073c8ec935db604a"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/mochi-4-2-mask.png",
+      "bytes": 233,
+      "sha256": "915c86d6d96ac08e33ddc1bc88d63d28342ef22668716f1cb7aa11647b451362"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/mochi-4-2-overdrawImage.png",
+      "bytes": 13873,
+      "sha256": "1cbf02a7697aecadfa6a4add4c4f9072921b619cdd1db7208b97428c58b5e271"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/mochi-4-2-real.png",
+      "bytes": 935986,
+      "sha256": "aacc1b97c09cc7b6a98c32c01d573fdd738697bf02f68f60c0a8eeedc3a14083"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/mochi-4-2-without.png",
+      "bytes": 934750,
+      "sha256": "b332cb02026d069d0965e79efc2c152d085e8ad5840f86bc644096dad81267b6"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/mochi-4-3-canonicalImage.png",
+      "bytes": 43658,
+      "sha256": "7774b4c743b2e956583da33979b31dce3e40fa7554f0ed554131accdab21dd0c"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/mochi-4-3-edges.png",
+      "bytes": 326,
+      "sha256": "c3d7cfa48f68e3e823af23119540cc86b31d33ef401ea9d006814041e6975940"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/mochi-4-3-mask.png",
+      "bytes": 290,
+      "sha256": "f27c54cb9b49cef4a018bd32c1ef04ddab7735ea3e8e40232841fd371b0cfec9"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/mochi-4-3-overdrawImage.png",
+      "bytes": 22156,
+      "sha256": "56f2d7f740ddaaf735ee36dee28781a4d8386802638cf8fe03d422a9b56a520f"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/mochi-4-3-real.png",
+      "bytes": 940902,
+      "sha256": "ab14af98438ae6aa7e97f7d324c77910596dfd9691754ab21e5821cbc0e08b9f"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/mochi-4-3-without.png",
+      "bytes": 934440,
+      "sha256": "61a4431e664d9c744b7efa57a557b8c8418fc77ad6b44531161782b455d0ca65"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/mochi-4-4-canonicalImage.png",
+      "bytes": 50972,
+      "sha256": "5169853a6cbbd2f419576d61579abe90ab2d9a281785046ce5c4a34237c1216e"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/mochi-4-4-edges.png",
+      "bytes": 371,
+      "sha256": "9fe6220cb08ab121dbb64d61e56666f8939001598cd74680782a585f077359b7"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/mochi-4-4-mask.png",
+      "bytes": 323,
+      "sha256": "9fadbe94af3d256cfe9321d24457b0bf16e56dd03f967f0768093a6e2fc76959"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/mochi-4-4-overdrawImage.png",
+      "bytes": 24707,
+      "sha256": "c5bf885b5f733fe49ad6199a51845e80b9188c267a7031009b91f7bedcc07558"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/mochi-4-4-real.png",
+      "bytes": 943559,
+      "sha256": "f66c79b8d9ac1b41b27aece11d277c4fb3e7fe5b40b035c20c8afed3d60afe04"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/mochi-4-4-without.png",
+      "bytes": 932345,
+      "sha256": "6d43ac073bc1a7cdc46c12188790008f48400a7da25234a441e674db966ebbec"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/mochi-4-5-canonicalImage.png",
+      "bytes": 46948,
+      "sha256": "e9833e825771865cd128e56ed6def699a6584fd21ca9a710438008d417713126"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/mochi-4-5-edges.png",
+      "bytes": 377,
+      "sha256": "8522e709999db57ec487f66d9e100a7a665581665581c52224bf3ca4b6918a24"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/mochi-4-5-mask.png",
+      "bytes": 338,
+      "sha256": "34738c3eca4a0c5090a3d5357b7bcaa93f656cdf556c7c5271ff477bf14ec9bd"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/mochi-4-5-overdrawImage.png",
+      "bytes": 25701,
+      "sha256": "8587ff2538dca2fa5018fe0d2c2e43825909f90560c4a27e946fc9497655dca4"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/mochi-4-5-real.png",
+      "bytes": 940691,
+      "sha256": "bb6cfaee51b2b25a3d687ee6bd464395c134cc6eb9dc725f2a5c24635d7f524e"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/mochi-4-5-without.png",
+      "bytes": 927436,
+      "sha256": "8604e3de30557d48e8de070a42baf7fc85b1e526c7718c712b3786791c36206c"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/panko-4-0-canonicalImage.png",
+      "bytes": 18043,
+      "sha256": "0757b4923edc149d63af4f5b425076737220f6ea18dcdccbf9a5a382e5bdb757"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/panko-4-0-edges.png",
+      "bytes": 151,
+      "sha256": "41a4c7dac1471397792f4a86fc0e56735a516f68dc7d0b8454620f32a6eac83b"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/panko-4-0-mask.png",
+      "bytes": 151,
+      "sha256": "41a4c7dac1471397792f4a86fc0e56735a516f68dc7d0b8454620f32a6eac83b"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/panko-4-0-overdrawImage.png",
+      "bytes": 11992,
+      "sha256": "3ee541be8028b81a4975030a473c8cefc185748893ae12197e3a49a46f6acd41"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/panko-4-0-real.png",
+      "bytes": 929248,
+      "sha256": "c388f6ed16d810b2d8e4db5bfec22ff0e3935f542b7ae3ef28d46775865f047b"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/panko-4-0-without.png",
+      "bytes": 928883,
+      "sha256": "7d340ac22a67f740a8f9c237133b454678384e4a4a43c8cbf162fe4c10184662"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/panko-4-1-canonicalImage.png",
+      "bytes": 17947,
+      "sha256": "65f9929b0731393ce2b1f2b8ef7eb4fc28f3528332796635eaa334de002bd388"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/panko-4-1-edges.png",
+      "bytes": 144,
+      "sha256": "1a227b909d567cfb55a1bc3a3c1a0ef955ba230821441db80852b64ad8e55035"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/panko-4-1-mask.png",
+      "bytes": 143,
+      "sha256": "8d987f8d7f7f254bfd0446016cc295de96c59009e5db63725ee16ec1439c5b73"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/panko-4-1-overdrawImage.png",
+      "bytes": 11854,
+      "sha256": "af9d31e672847dca1770d993d2f3262466b0923bc28c6d93e76cf8f90015f646"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/panko-4-1-real.png",
+      "bytes": 932487,
+      "sha256": "fcee57574772777914a6688cba352f1e499749a9b429e1734a4471a85a1a654a"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/panko-4-1-without.png",
+      "bytes": 932235,
+      "sha256": "0edf34d80a38966de4bead478326ade4ce02036356d75bd19564c764cccd1b46"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/panko-4-2-canonicalImage.png",
+      "bytes": 37685,
+      "sha256": "ac6f80c9717e049d4b3310061cad092ed8ea714ed335fc7e52342062ac8b28d1"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/panko-4-2-edges.png",
+      "bytes": 298,
+      "sha256": "ca46987b6af8d1f5c716e3ba7d82622afd527c1eae1344aaa87461b8031fb7fd"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/panko-4-2-mask.png",
+      "bytes": 281,
+      "sha256": "d9a81110db9fa41fd57a89b702c736fc3af713fd239c2008be58667b2f6b9be1"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/panko-4-2-overdrawImage.png",
+      "bytes": 13220,
+      "sha256": "9cd08dbbb2b0eddddac42db3fe6e3f55b353ce2bafac03fe4dadb4ead3ba683b"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/panko-4-2-real.png",
+      "bytes": 935479,
+      "sha256": "9ef0a0db0e1e3097c974fb8a123f61fbeaf8986c56da78e0325e299ea7f377c3"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/panko-4-2-without.png",
+      "bytes": 934050,
+      "sha256": "49a8fe475364264a3d39a36054c7665389c0dfa458173da7baf291c4c5332092"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/panko-4-3-canonicalImage.png",
+      "bytes": 87669,
+      "sha256": "8793efdaba85b11b53cbd5e220fd7183b32d2c998f40383d60cf55dea7e02d3b"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/panko-4-3-edges.png",
+      "bytes": 546,
+      "sha256": "3f5db6894c65a7f8d4d7ad747ec6032486da8063f799d8a3a0a8cd0584eaf0aa"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/panko-4-3-mask.png",
+      "bytes": 445,
+      "sha256": "37c0877966e56954c80c9dcb32a92692dd04b586cfa9367d06366f457ba74205"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/panko-4-3-overdrawImage.png",
+      "bytes": 17032,
+      "sha256": "6ac32e1052baadc4f2ed37cab0010a894ff6ac685f3abe715aaf96d39b0960b8"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/panko-4-3-real.png",
+      "bytes": 937644,
+      "sha256": "ff847d188a00059e2ed6ef93cb2cef6759217cbed6e7e4a774b2a360db3f3410"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/panko-4-3-without.png",
+      "bytes": 933276,
+      "sha256": "21c5536afdbb7229ffd4e488ea8cd73fd240fa9bb7422f1763d28af299f81dff"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/panko-4-4-canonicalImage.png",
+      "bytes": 96442,
+      "sha256": "20817a9b8833bcb192f5fe64be0c18e7bb03ad787453f0ec6a7eaff997675d48"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/panko-4-4-edges.png",
+      "bytes": 560,
+      "sha256": "a3ec62990c07e518f9fba91c50d991711e7fca64cb47d05b80e6355d1e88d6ce"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/panko-4-4-mask.png",
+      "bytes": 458,
+      "sha256": "9f7a2146b16a3cd1cf0e97ce3d551de882793ce31ed8e5c8c64c45c1f95f57bf"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/panko-4-4-overdrawImage.png",
+      "bytes": 18867,
+      "sha256": "52a4d055bd4ba124f2095a0df64fb3047e7ac2f136191dce2fb4e92e5486b4cf"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/panko-4-4-real.png",
+      "bytes": 938486,
+      "sha256": "c5b50c3c5b3ba4fd3cae3473c969dea4e40fbfc77e6c38fc3953145595afcfe2"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/panko-4-4-without.png",
+      "bytes": 931566,
+      "sha256": "eb3ad14a0df6a61efd6e5f797daee2f909eedf9b19141eb26136a9e3301bbf5d"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/panko-4-5-canonicalImage.png",
+      "bytes": 78759,
+      "sha256": "5b02ba304bb0666ed920ee74997a2b77a2323f967b5b6b7ecaed35b72fff6d43"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/panko-4-5-edges.png",
+      "bytes": 492,
+      "sha256": "06aae712005e5b1566765367f9ace9de4a13e46df144c6078241ecfa039ff115"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/panko-4-5-mask.png",
+      "bytes": 441,
+      "sha256": "9d0b0db0eee0ce89ab05bae6525df4fe842725aad6616462f72898cffb58d933"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/panko-4-5-overdrawImage.png",
+      "bytes": 18838,
+      "sha256": "f58d3c348cd8b763029aadcb0828c750744f79626612223fc14062501884fb14"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/panko-4-5-real.png",
+      "bytes": 934017,
+      "sha256": "2a7f4fa6e2566c7c7be0f4adf9d81c7f6e392dbf0ab9897a96ca84b2304a0d9d"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/panko-4-5-without.png",
+      "bytes": 927504,
+      "sha256": "5598dc2404333686d483d7c4e3a859b67f5bdcfbfe3449dc0d3dabf7d3107147"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/soot-3-0-canonicalImage.png",
+      "bytes": 16326,
+      "sha256": "de3557580d5f35cb28c50476710a8f5a681c8ad28c77a03b67e4dbad4610e19b"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/soot-3-0-edges.png",
+      "bytes": 137,
+      "sha256": "3212776b5479e2c9e2ac0b4a855006b9b865a00051e0c3bb0f4e24f48c0fa3c0"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/soot-3-0-mask.png",
+      "bytes": 137,
+      "sha256": "3212776b5479e2c9e2ac0b4a855006b9b865a00051e0c3bb0f4e24f48c0fa3c0"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/soot-3-0-overdrawImage.png",
+      "bytes": 11326,
+      "sha256": "6928ac8d915ef6bc2129e6f75517a59f22c5dafc2f69b0b39024b227b22008b7"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/soot-3-0-real.png",
+      "bytes": 924110,
+      "sha256": "52ef58987e38b0b58cbe12b27a6084dbb2c877b1465f47bdb5f471bc9c7c410d"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/soot-3-0-without.png",
+      "bytes": 924110,
+      "sha256": "52ef58987e38b0b58cbe12b27a6084dbb2c877b1465f47bdb5f471bc9c7c410d"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/soot-3-1-canonicalImage.png",
+      "bytes": 18398,
+      "sha256": "3c22217ba116e6536234cda444e831cade7f55d6fa59b4ca2ee0df1e0ed8e9ab"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/soot-3-1-edges.png",
+      "bytes": 160,
+      "sha256": "830ff6af9e3d3fd4a19d4112bf13f306acdd7c07a36f0ffc4e0d5272bf07ec26"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/soot-3-1-mask.png",
+      "bytes": 160,
+      "sha256": "830ff6af9e3d3fd4a19d4112bf13f306acdd7c07a36f0ffc4e0d5272bf07ec26"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/soot-3-1-overdrawImage.png",
+      "bytes": 11532,
+      "sha256": "ff0879cbe03a6c0aa97b85675d1bfb1e4cdb186829660469befe1c2cd2c2fe3a"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/soot-3-1-real.png",
+      "bytes": 926229,
+      "sha256": "ddaeee7520369964809d01f3a7ba824c890b3d181c22625b6b7ba0a09907662c"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/soot-3-1-without.png",
+      "bytes": 926107,
+      "sha256": "38416fac68dd99571571f250678ae39da52c69d423ca4f111c00ba034a3618bb"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/soot-3-2-canonicalImage.png",
+      "bytes": 18501,
+      "sha256": "528c603e2441364db5aa15a7acbdcadda0744962d7ae3f7e5c4420588e06d91b"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/soot-3-2-edges.png",
+      "bytes": 160,
+      "sha256": "cc53dc604e813efffc5585ed1be770292607483d0c8dabd76d2d2ce19680483c"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/soot-3-2-mask.png",
+      "bytes": 160,
+      "sha256": "cc53dc604e813efffc5585ed1be770292607483d0c8dabd76d2d2ce19680483c"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/soot-3-2-overdrawImage.png",
+      "bytes": 11770,
+      "sha256": "8694badebf022486a5f6c2c854cdc3531b7c9c63e70fc579e8a090042e305e1c"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/soot-3-2-real.png",
+      "bytes": 926644,
+      "sha256": "91dd708b4f90c80ab37611a1f38a3aaea55673943ca589013cabca92701b027a"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/soot-3-2-without.png",
+      "bytes": 926582,
+      "sha256": "fe7eead7dbb9e0ba8ddff0da78bd86e0ed047813bbae3b448c7b7db875309157"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/soot-3-3-canonicalImage.png",
+      "bytes": 29202,
+      "sha256": "f7d405bece3f1a411c7bfdae77fd57ee3dab498b713807950ec6322a7694c0dc"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/soot-3-3-edges.png",
+      "bytes": 198,
+      "sha256": "220a19dfecf479d19b3cf646d50b11c6454a18308512ec0516d0bba7ffbc02e7"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/soot-3-3-mask.png",
+      "bytes": 180,
+      "sha256": "ff83af07d81d4427fad0243c79804df108088420939f74994d013239da015ba3"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/soot-3-3-overdrawImage.png",
+      "bytes": 13028,
+      "sha256": "466529abbc152858f2eec245eaf622247867bc899c959f9f8a00b1d82cfc925c"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/soot-3-3-real.png",
+      "bytes": 925405,
+      "sha256": "9d306c2b3b3fedbe5d04ced687beb093af93d343880e7f8763604f38cec9a712"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/soot-3-3-without.png",
+      "bytes": 924525,
+      "sha256": "3f4fc6eb234ae640ead3afba83204e90a2ce1470e3ddcc686ce3ebc5358b3f6a"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/soot-3-4-canonicalImage.png",
+      "bytes": 55331,
+      "sha256": "d6378c0926104875ffd1d81ad3919c7b4540eebe4cc7808d4ba436e314e93d40"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/soot-3-4-edges.png",
+      "bytes": 296,
+      "sha256": "5273e2e16a2fe90f28ee984b80de44419e6826103515c25d015e7be8f10fd1c7"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/soot-3-4-mask.png",
+      "bytes": 255,
+      "sha256": "c2ab380410209445944a8e73cc153c9029055cf2c4f05d33e83628d4f99f1464"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/soot-3-4-overdrawImage.png",
+      "bytes": 16177,
+      "sha256": "5e85b722f918b7e733aa8c9060145b9dbf2f8d308d32673a9f9fcf00a3d1baa2"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/soot-3-4-real.png",
+      "bytes": 924123,
+      "sha256": "bf15895c26fb3aa148ffe8b5135ec4dfb301c58f1a5ad27fb9751cb8707e60a8"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/soot-3-4-without.png",
+      "bytes": 923090,
+      "sha256": "c70b26802750285e57c7aba5a1ab5469bcf065695635794b1d81e05abcadf9c2"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/soot-3-5-canonicalImage.png",
+      "bytes": 28542,
+      "sha256": "2d1521e28e7a24cc6593557116049d6a4664e4389a5a51c85841888829094800"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/soot-3-5-edges.png",
+      "bytes": 208,
+      "sha256": "873089a0465e7b47bd42982132c5116d1952f1bb6de316d03f0efcd69d6ca29e"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/soot-3-5-mask.png",
+      "bytes": 199,
+      "sha256": "0b0027f64aff502b792bc404edaea63cdb9cca72930e130e32e1f4d06ffdebc9"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/soot-3-5-overdrawImage.png",
+      "bytes": 13187,
+      "sha256": "a260fcb7bbb25b7645e9b03691955b12f97345bb4ef70f208dd79c2f845d916c"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/soot-3-5-real.png",
+      "bytes": 923897,
+      "sha256": "b76d722b69b8fd0ca261476851dc40bcb2789c7058cf1017cdf1b4be9bca6785"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/frames/soot-3-5-without.png",
+      "bytes": 923248,
+      "sha256": "cb71c368a54289b0926bbef2326d071333a11ee7793ee81f1953a2606241ae1c"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/mochi-runtime-1.png",
+      "bytes": 268998,
+      "sha256": "be8a6977b8da6beb1b5709537201b25c391733d31339ed97ececd776fd44c4de"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/panko-runtime-1.png",
+      "bytes": 265711,
+      "sha256": "796e1637b35083104ec922b8fd1297256920cb184db1950f476d52bcd197dec1"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/sheets/biscuit-2.webp",
+      "bytes": 7100,
+      "sha256": "4d3a97cdd20d2ca31c607d005192adc3ecbfa845b778a2c2801d1014f424d605"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/sheets/brioche-4.webp",
+      "bytes": 10928,
+      "sha256": "d5a1e3f3ab8f1df59a8806c267cc4823d3c246682e4bd0b893cf85ffe2359f02"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/sheets/clover-4.webp",
+      "bytes": 10142,
+      "sha256": "3a3a9b89023be75374604cc81f2fe1f7650d9beed3f9866a77065ef37f23bb5b"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/sheets/mochi-4.webp",
+      "bytes": 10642,
+      "sha256": "3c9ac756b008a10a0b2b84d6f4d87b46a990b9f7fdd849895d56f24452810774"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/sheets/panko-4.webp",
+      "bytes": 16182,
+      "sha256": "37a8d73005e4eacbc81451aaaa3c0e3fac19534c6c30597c46704d843c82cd87"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/sheets/soot-3.webp",
+      "bytes": 5722,
+      "sha256": "70c7862fb024c23b2186285e1aba05ff91a11d1921e837e5ec67471ad8fe70ec"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/soot-runtime-1.png",
+      "bytes": 266464,
+      "sha256": "b85c1871a4c9fc7f1df50203aae57eb3c17df1e43e18a0cbf883a36eabd5deb4"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-1/uniqueness.json",
+      "bytes": 28360,
+      "sha256": "b9299a586b21cb6fe759b63f04ffd5401a37ca75a041f1fd9148cca12c376b4a"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/captures.json",
+      "bytes": 66110,
+      "sha256": "9b2e09650e50d33633b2eb41026b1a976886d7283f72aa2376205012a37b4bf3"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/clover-runtime-1.png",
+      "bytes": 271538,
+      "sha256": "d07c7fb38f472bcbd52e07404da6f447dcd5fe5ec6f0d7d1a13d4e403b305373"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/enemy-runtime-1.png",
+      "bytes": 271578,
+      "sha256": "e87343959794d45b66e2b808e4af8e6a1486759150eca9c90c5bd3bb0600c110"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/features.npz",
+      "bytes": 8534,
+      "sha256": "d37957504c703a17fb1a369806971c6310a883acc82554fc9fefd4cac6cb1ee7"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/clover-4-0-canonicalImage.png",
+      "bytes": 19052,
+      "sha256": "cc0f38ad23b5625bfa985ca6ec7e7f575aefc929f355b11b11302f78deed0d3d"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/clover-4-0-edges.png",
+      "bytes": 173,
+      "sha256": "9facd1971452b15dbf20fc2d75cedb4ce06f29ac4c8de561a70d50dc04af60a2"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/clover-4-0-mask.png",
+      "bytes": 177,
+      "sha256": "a45adc58251626c3007f853cc2b0f22b6993624f90528545da37e5bd208be9b2"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/clover-4-0-overdrawImage.png",
+      "bytes": 11824,
+      "sha256": "9764f73420916c9f8423255dbc471fe2cc8c9ffdae46043a5c03aeb91e3a2ebc"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/clover-4-0-real.png",
+      "bytes": 929469,
+      "sha256": "5c55b437ac40ec2c2463ff0fcb7b1a9c2c2fa4a84c5c766cf2eb3a9f53a3d540"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/clover-4-0-without.png",
+      "bytes": 929491,
+      "sha256": "2eb6f6a60bac3cb987c814eafe1731b789398e8f2cd5749a38050e533a0cc863"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/clover-4-1-canonicalImage.png",
+      "bytes": 23124,
+      "sha256": "57678fef149d4d805bf4933319b4f6393f8ada99340ba67e5ae4249d6567f2b1"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/clover-4-1-edges.png",
+      "bytes": 242,
+      "sha256": "eaf1c3bce24f1554bb4dbed78bc190e2577d4e4a27a92bdd84ed6061a7a1e489"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/clover-4-1-mask.png",
+      "bytes": 213,
+      "sha256": "882679dadc5b958a6854fae7ccc3c31e7f9d0479f0ebcb0e1a6efd763e5f570b"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/clover-4-1-overdrawImage.png",
+      "bytes": 12945,
+      "sha256": "1e9244933bba276b5d5aee69d1fe7f26d01b6b3d46c84d99cb2def1a26404731"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/clover-4-1-real.png",
+      "bytes": 933245,
+      "sha256": "a0a6849fc8b3ffd02c1b49d7fce77edc14df05d75714605a800d9bb833911699"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/clover-4-1-without.png",
+      "bytes": 933003,
+      "sha256": "541d0521d5e9093150b2df31d4e878bde7ea93500116aaf01ae64bfa230fae9f"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/clover-4-2-canonicalImage.png",
+      "bytes": 29180,
+      "sha256": "8fc0f392e7db3d5953418ff86bcb0f7a217f61f332a6fb68a9b469ff4ba5b0f2"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/clover-4-2-edges.png",
+      "bytes": 263,
+      "sha256": "c1f5049516b5fe819af7c05f647002ae96c10fb2096e1008ce0f8fbb9b65b1ee"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/clover-4-2-mask.png",
+      "bytes": 238,
+      "sha256": "cdc695d70e5e8153be919036b95a0ca323c74bc5fff4c97a5bb2847ee485d342"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/clover-4-2-overdrawImage.png",
+      "bytes": 13370,
+      "sha256": "9507d6061ef3a45e9de6d66b0f3c6cfbd13c44107735949e3d4e7b7790299b3a"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/clover-4-2-real.png",
+      "bytes": 935488,
+      "sha256": "8df4c624558ea80e7ed5422b71d46a510f7445f0cd06d00f96249817fcc2ce48"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/clover-4-2-without.png",
+      "bytes": 934962,
+      "sha256": "28d66b2c606d09ee34c103f95815aa00186b95987dccc59afd7ee7a026453958"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/clover-4-3-canonicalImage.png",
+      "bytes": 49048,
+      "sha256": "0c22336b8e5acc82ab1345130b24099a0c08f70c58823ef7f4b4aa16f92f5cf5"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/clover-4-3-edges.png",
+      "bytes": 378,
+      "sha256": "beb7f6a5ce2a439948c2542409dade3b1484b1a2b8556bdcb76899983d5b5cc9"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/clover-4-3-mask.png",
+      "bytes": 306,
+      "sha256": "d0793d90b1f8dcf0c28b266e200bef62deb317c07052adb36a720450d2883085"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/clover-4-3-overdrawImage.png",
+      "bytes": 25477,
+      "sha256": "89205b00a008604891aa19fb59371db4781fc7fcbc99274e1d16a07a89c7ada0"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/clover-4-3-real.png",
+      "bytes": 946180,
+      "sha256": "b3a1968ea22314a1faa138c3c9e92a8673120334f1bf5f5a2bca67c5df871d0a"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/clover-4-3-without.png",
+      "bytes": 933950,
+      "sha256": "7c0a011641ed1677ab6a409db6e354114190fa0402df958d49ca96afa4a3cdf5"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/clover-4-4-canonicalImage.png",
+      "bytes": 53025,
+      "sha256": "5f49bff87e70f59e7c45368e7d97aeffd14760940050fedc42ded4da316089c1"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/clover-4-4-edges.png",
+      "bytes": 392,
+      "sha256": "96bd16623962cdd524e1b89ee3588b2234e09b032a9eaf9bc57de882bc698edb"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/clover-4-4-mask.png",
+      "bytes": 335,
+      "sha256": "b50b6cff72116c4042117f08f0c6c72b558c9ab5aa8e344265381d20680813eb"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/clover-4-4-overdrawImage.png",
+      "bytes": 26340,
+      "sha256": "d92e6468e7cacc17c33e601c22f2b86a5f79a0ec2e4e3decdad97dc00e352768"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/clover-4-4-real.png",
+      "bytes": 942621,
+      "sha256": "6e81851056743bd1a9b927b5b7e9ae37c0bc0230d35db5181aad6724935e5c8e"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/clover-4-4-without.png",
+      "bytes": 931575,
+      "sha256": "7d4287607a810d175877074e571c124e581b09430d12edecee2a1a6d498229db"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/clover-4-5-canonicalImage.png",
+      "bytes": 41762,
+      "sha256": "dba6db4550f93b91c91ff34e775db3f9e52c9c9afb6828097f7ee692b22ef76f"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/clover-4-5-edges.png",
+      "bytes": 285,
+      "sha256": "ea515cda5e172c42c49fec16afd13ddf702ad69da77f640f8a3238bf9360aeb9"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/clover-4-5-mask.png",
+      "bytes": 277,
+      "sha256": "bcff9d2f47271e656d3051f50cbc41776bc826cebedc6e5ec3e0cb33f80e3476"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/clover-4-5-overdrawImage.png",
+      "bytes": 25743,
+      "sha256": "ac7e0b389b40fcb609d649dd3112093cd9d7db72398198a9f322769a9a6e070b"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/clover-4-5-real.png",
+      "bytes": 936567,
+      "sha256": "790caa79a109356b7e6ec43cb95227d868dd30d9c1cef048d9f1514671e13c7c"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/clover-4-5-without.png",
+      "bytes": 927051,
+      "sha256": "88d16896e233b065e484cad200da722ec1d56fc0a726539241355c6a4a5ca809"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/enemy-yarn-giant-0-canonicalImage.png",
+      "bytes": 39502,
+      "sha256": "c7d9f5eb3ac740f80a93d42ae5c05a84084bb8970085356818b56b4f431d3b42"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/enemy-yarn-giant-0-edges.png",
+      "bytes": 318,
+      "sha256": "0acb43dce6d9463123ebced2065a224dded021f068e535e3e8a0a75d1b38f370"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/enemy-yarn-giant-0-mask.png",
+      "bytes": 314,
+      "sha256": "456fadb70ebd899bd9baffde6741d3e4efed380845f1f1b3967b3e874d4cced0"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/enemy-yarn-giant-0-overdrawImage.png",
+      "bytes": 16211,
+      "sha256": "6974e029a59af381139e5c4bb65fa067a8f44fbf771619b0b3ab39028a86738c"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/enemy-yarn-giant-0-real.png",
+      "bytes": 936082,
+      "sha256": "94a757cdca09781d9552a497dfcecde5d4032096818615cbd3b15a71ca3442d9"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/enemy-yarn-giant-0-without.png",
+      "bytes": 933140,
+      "sha256": "2797f5aa29f2a632b045080f166575f30a14d6200e3488bff2fe8243d7571c6a"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/enemy-yarn-giant-1-canonicalImage.png",
+      "bytes": 45946,
+      "sha256": "a8bddc414e1cea6dcffc893825126472d49aa62a6c5a5bbb3ea0a3fd1538034f"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/enemy-yarn-giant-1-edges.png",
+      "bytes": 325,
+      "sha256": "701fb94bf17fa908467d60961948ff762e1c1b3233dc8233839c655acef978dc"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/enemy-yarn-giant-1-mask.png",
+      "bytes": 307,
+      "sha256": "54050f8263cd2d3c73045d0a18afd21f208d1f8ad5f4f764bd826e1753ef0196"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/enemy-yarn-giant-1-overdrawImage.png",
+      "bytes": 17443,
+      "sha256": "719a0830ad3a44197dc713829055922fe7db9f6eccdea252f006cdc3efb83375"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/enemy-yarn-giant-1-real.png",
+      "bytes": 939691,
+      "sha256": "d85dc35653c548d07752e5731c84c86a7f5230a9c4ce3cee323ffd7c2ece1187"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/enemy-yarn-giant-1-without.png",
+      "bytes": 934968,
+      "sha256": "85a9d161053b9ebf4e08cf6a0991ec7417925fd6dbf411d1071746c583ec4978"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/enemy-yarn-giant-2-canonicalImage.png",
+      "bytes": 44506,
+      "sha256": "0b28ce777448553bd4d1bbef5227624dd62338375121c8c95b9080770988aa04"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/enemy-yarn-giant-2-edges.png",
+      "bytes": 353,
+      "sha256": "0b0d6e02cab8286b371857048c9c8f131cc406ed7bf1886f4963b7007d5a5033"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/enemy-yarn-giant-2-mask.png",
+      "bytes": 331,
+      "sha256": "8c9ca6c599f6feaee54507ffe811fd91ea92d4eb3f45993043928a61eac9b695"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/enemy-yarn-giant-2-overdrawImage.png",
+      "bytes": 17392,
+      "sha256": "949d3234b67ea9713a7c3466c1fc27ced33563fa12e1de890da262fc6fe04f23"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/enemy-yarn-giant-2-real.png",
+      "bytes": 940251,
+      "sha256": "f5704b9a286d106080c5dfdc338c6979d8755ae24a06e0c39fe4d02686c880b9"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/enemy-yarn-giant-2-without.png",
+      "bytes": 936509,
+      "sha256": "76f93b786ab6733956af23fb0d334dddc1ee7da9a45006bd6044546896cd8e79"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/enemy-yarn-giant-3-canonicalImage.png",
+      "bytes": 56345,
+      "sha256": "e2ba5441473e751c77c8b3b21d2f9fd1cb15997d95858626ab34be31a7c78303"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/enemy-yarn-giant-3-edges.png",
+      "bytes": 417,
+      "sha256": "3e8482eda4e23bc4e8fd2ae8a992556894f87b51e771e512e32cf779b2cd0904"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/enemy-yarn-giant-3-mask.png",
+      "bytes": 333,
+      "sha256": "e9e2a75096d575ea290c5cd9e08a8f4592c023510e704d84705956ce3d14f1a8"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/enemy-yarn-giant-3-overdrawImage.png",
+      "bytes": 14980,
+      "sha256": "5ea67f19cbc3daf91070485ab9524993fd5f7dcb4933bc5241f8ac4000706386"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/enemy-yarn-giant-3-real.png",
+      "bytes": 938629,
+      "sha256": "79e591af266ca31ac90492ac343bee7f6cd15ea90230b56439772ba774c8bb79"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/enemy-yarn-giant-3-without.png",
+      "bytes": 933306,
+      "sha256": "c7c6f7c663a96a50bdfc7330255890c41a8d2687a57f6b6ed4bfd83f17830849"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/enemy-yarn-giant-4-canonicalImage.png",
+      "bytes": 70461,
+      "sha256": "fa42f5467f7626bda02fc2ca60a7eb6fe740512490713fbaba36a2c7c27bdf18"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/enemy-yarn-giant-4-edges.png",
+      "bytes": 406,
+      "sha256": "ea8ef1d9c095b0ccfb694de17f56fa2e7e55f0dac666a92ecb92f1265c05a425"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/enemy-yarn-giant-4-mask.png",
+      "bytes": 358,
+      "sha256": "da0e18814c79d1b92960e0073e739c60ec54018bd6c506bfb4b0edc51c561ddb"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/enemy-yarn-giant-4-overdrawImage.png",
+      "bytes": 18364,
+      "sha256": "375df05e03b65dd32ea1e12fb0b0b1062eea710ab898131e1e8d1bb69174cab8"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/enemy-yarn-giant-4-real.png",
+      "bytes": 937830,
+      "sha256": "d050b79e4632a1376242a0de0b60fdede04c0ddf7d737e993951849eb9ecb608"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/enemy-yarn-giant-4-without.png",
+      "bytes": 932862,
+      "sha256": "c698565f8b87e88747fc2cb91cb7bf21ba7e53122f3acb925ee9c6c20de01311"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/enemy-yarn-giant-5-canonicalImage.png",
+      "bytes": 83427,
+      "sha256": "2dc5afe0172e6a04fdf6f0a091735a10f4818cf951170a4f4c6a6c119ecb081c"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/enemy-yarn-giant-5-edges.png",
+      "bytes": 468,
+      "sha256": "af6c3c34e39c7607b622adabd64732b049b3dfd69b6abc59a69230fae24bf15d"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/enemy-yarn-giant-5-mask.png",
+      "bytes": 409,
+      "sha256": "b9e56b07bda9cfa7aa22e592b37a53ba9120698c069f718e40619ca608e967bc"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/enemy-yarn-giant-5-overdrawImage.png",
+      "bytes": 20952,
+      "sha256": "aa251d73e9760e2e7a6dd82a64a8305e81f3838309bc01844feba9d2410571e4"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/enemy-yarn-giant-5-real.png",
+      "bytes": 937256,
+      "sha256": "b50c987f5926604d1ded4943b6648fd5be8f3b91529bee4efc0c419c25024541"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/frames/enemy-yarn-giant-5-without.png",
+      "bytes": 931895,
+      "sha256": "3939641c1f0f267d828147a6dc4c1c5f7bca555fe1d1011dcb5f9d27f0f05af9"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/incremental-pairs.json",
+      "bytes": 581647,
+      "sha256": "dff021f38d4b5dc6f195d9c80a1cbdce7ad098e6b872d9fd4232160dfc770e2a"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/sheets/clover-4.webp",
+      "bytes": 10368,
+      "sha256": "3589807a1a6e63d8821b617cb0475b4390bc819df118c83ad9cef3cdf93f7cc4"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/sheets/enemy-yarn-giant.webp",
+      "bytes": 14070,
+      "sha256": "92aa1e15e4da1ed0507826da0bbc6bd4a4a434f2b6967841fe08d8efa25a9786"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/pilot-2/uniqueness.json",
+      "bytes": 9299,
+      "sha256": "8bd0a13c8e8565d4b2fe3c0615bfd22f8b505bbdd5df9d44eb00ad68c7b2e53b"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/brioche-runtime-1.png",
+      "bytes": 271916,
+      "sha256": "b6b958f7db5365dee1db731defa3d9930c9724c0c31dcab67c4c844f577c9a15"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/captures.json",
+      "bytes": 192931,
+      "sha256": "3aaa00854869f7d8c49decd646b7e7bf2d9a5d29e88d90d4855594633e558a0a"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/clover-runtime-1.png",
+      "bytes": 271868,
+      "sha256": "b5772d7a14051174c8305818e4854c904672c52ecac284a60ceac563b09bc665"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/enemy-runtime-1.png",
+      "bytes": 271329,
+      "sha256": "fc9ddb2210f46e3847b50b6909061f8498cd7e9d5ecb08e3417f5f4c4a6307ac"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/features.npz",
+      "bytes": 23126,
+      "sha256": "0bc5620f77d25abc4326e3abab032e45ec339b8f301a0fa016db51b6fc0381ce"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/brioche-4-0-canonicalImage.png",
+      "bytes": 18665,
+      "sha256": "040bc3252d97265fbfca096492bd26bdc2f914ccd72f8e5327e5e0d8e696a6d3"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/brioche-4-0-edges.png",
+      "bytes": 162,
+      "sha256": "1c788f8d51d94de03c36631e84f0fd4be2fa2ff4666a57f10b0c85bd6f718c3b"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/brioche-4-0-mask.png",
+      "bytes": 162,
+      "sha256": "1c788f8d51d94de03c36631e84f0fd4be2fa2ff4666a57f10b0c85bd6f718c3b"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/brioche-4-0-overdrawImage.png",
+      "bytes": 12155,
+      "sha256": "7e802fea1ad9aa79df2e58bfa67b0797c2f74fa4d205edade30cd4497605d001"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/brioche-4-0-real.png",
+      "bytes": 932744,
+      "sha256": "39b9b7e41498e26c4050d081fc2148edafac86f4179ea956153e3feb68429b4f"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/brioche-4-0-without.png",
+      "bytes": 932516,
+      "sha256": "2cdb92243e323082a3b10f2e29f84cec3391bc507e1f589c704dd853c95c9b3e"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/brioche-4-1-canonicalImage.png",
+      "bytes": 25249,
+      "sha256": "164e3d9cd0326668471c9e2ccf7b247e3be22752618c8781aaf05d891cef565a"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/brioche-4-1-edges.png",
+      "bytes": 227,
+      "sha256": "6f9b00b66e90292202b34968eb9f0125beb3af2b604cac7d9c422d8a54458c43"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/brioche-4-1-mask.png",
+      "bytes": 223,
+      "sha256": "de5ab433a5247abd6d61fea1d101516110b887ce151d0da6b164aa61799afb63"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/brioche-4-1-overdrawImage.png",
+      "bytes": 13361,
+      "sha256": "d50c50c432942da3d39a1bb46d63f9e0ace62c20641c860657876f9413aeb6de"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/brioche-4-1-real.png",
+      "bytes": 937521,
+      "sha256": "87885bb88219b58cb2962727b8bb48294cc574c2fc4e76a7ae68e7304ba96dac"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/brioche-4-1-without.png",
+      "bytes": 936863,
+      "sha256": "1ba4c1319c66b62aaa333d50da81b50e17f05bae9f06900d2bcd7f203b3fc6da"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/brioche-4-2-canonicalImage.png",
+      "bytes": 36882,
+      "sha256": "57d57b6c6c72a1fed088c18ac2ed0331ed9d51b42409c77a6f54f0addce011c0"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/brioche-4-2-edges.png",
+      "bytes": 389,
+      "sha256": "ad05eeea1f1851c6c28f278155c8c61c4a4298cfc2cdccd7888e3e41164a06ca"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/brioche-4-2-mask.png",
+      "bytes": 365,
+      "sha256": "60276b5678382b22dced00ee2dca7d700dc33656318932509356a5c39efcaf0b"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/brioche-4-2-overdrawImage.png",
+      "bytes": 21747,
+      "sha256": "7443f1405ade41f53581b66fedba389142726f8c5000d985d9e981908603eb12"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/brioche-4-2-real.png",
+      "bytes": 941404,
+      "sha256": "70073ca8fec818a26ff3df6ac6b821b96606f222677b2f612be6281180fd879d"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/brioche-4-2-without.png",
+      "bytes": 937474,
+      "sha256": "274843f0075be2d508d16941076a8e3c82a8b37637e4d6e7c3bed24931ff6657"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/brioche-4-3-canonicalImage.png",
+      "bytes": 58389,
+      "sha256": "81b24cf627091edb929c05c24e4ee7b47b7aa396ba8b739795040f138db6c714"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/brioche-4-3-edges.png",
+      "bytes": 416,
+      "sha256": "23c7431405fd2d69bf3a1bde8b860ed5c5e64104f4af7bc23d2e75d26d079133"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/brioche-4-3-mask.png",
+      "bytes": 367,
+      "sha256": "03bf039c4deacfafec960a85d20e2b8471054c646ea643a23389ae46e740d933"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/brioche-4-3-overdrawImage.png",
+      "bytes": 30492,
+      "sha256": "1babbcc3f08c05fc689851720d286e8545801bae3bb51b0fde762accb19c297c"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/brioche-4-3-real.png",
+      "bytes": 944175,
+      "sha256": "1af47a2d490ec9e1f2aac93d7f2cfab01758ad841b26ac061c95c19abdb16e27"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/brioche-4-3-without.png",
+      "bytes": 937276,
+      "sha256": "1df382a1d9114e90318f8caa351bdcba672808b1cab46e6841f3d4736cd56562"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/brioche-4-4-canonicalImage.png",
+      "bytes": 62731,
+      "sha256": "6716510a44d4457fd6fb9b4ede38a00c2ac91e5feecfafbf6262077e7894c8ac"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/brioche-4-4-edges.png",
+      "bytes": 391,
+      "sha256": "26980f4a6c597b0ca48c43ef250696ae2250d137da8d5862c14ea56649c7dfa1"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/brioche-4-4-mask.png",
+      "bytes": 339,
+      "sha256": "8f0792638652473fb12ba13a3cc00920c79091d26777144ab1b279cd088d62d0"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/brioche-4-4-overdrawImage.png",
+      "bytes": 33195,
+      "sha256": "35442c417dc343786e8cd2bf4239b4d35fdefd68dbcae9f465b3c2b6f849455b"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/brioche-4-4-real.png",
+      "bytes": 938577,
+      "sha256": "23071996ceb5725b55649cc34f7e80c51bbad1d0183fba6b42b158ecb4b8c470"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/brioche-4-4-without.png",
+      "bytes": 933229,
+      "sha256": "612370088be522bb9541e63f00e5b11fe4e810efcff9acf041ff2faa575e0cad"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/brioche-4-5-canonicalImage.png",
+      "bytes": 54011,
+      "sha256": "42baec65b2df793fef3a143af2345e100821bc986240dcc3e737060647d9ad23"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/brioche-4-5-edges.png",
+      "bytes": 326,
+      "sha256": "90ca52e2d045e58a0130f92859b96031dac1a4de0b6ca172a19c95c97e8d9b3f"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/brioche-4-5-mask.png",
+      "bytes": 286,
+      "sha256": "03f3d53281436d4b98eae8e571f40f1db8664ed50d6df5f78bb825e53690aec9"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/brioche-4-5-overdrawImage.png",
+      "bytes": 29743,
+      "sha256": "a951b246e128f2353d7cc826c9aff00725968f7cfaaf722397ce3fd7435728a7"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/brioche-4-5-real.png",
+      "bytes": 934403,
+      "sha256": "45318ef793d22e6861bf355ebea47b535a8bfb79761b042360236ca5862e7bab"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/brioche-4-5-without.png",
+      "bytes": 929631,
+      "sha256": "07f62a260f672d09d9437235bcbaac60737828604a579de8b6cd8436245de7b8"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/clover-4-0-canonicalImage.png",
+      "bytes": 19052,
+      "sha256": "cc0f38ad23b5625bfa985ca6ec7e7f575aefc929f355b11b11302f78deed0d3d"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/clover-4-0-edges.png",
+      "bytes": 173,
+      "sha256": "9facd1971452b15dbf20fc2d75cedb4ce06f29ac4c8de561a70d50dc04af60a2"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/clover-4-0-mask.png",
+      "bytes": 177,
+      "sha256": "a45adc58251626c3007f853cc2b0f22b6993624f90528545da37e5bd208be9b2"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/clover-4-0-overdrawImage.png",
+      "bytes": 11824,
+      "sha256": "9764f73420916c9f8423255dbc471fe2cc8c9ffdae46043a5c03aeb91e3a2ebc"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/clover-4-0-real.png",
+      "bytes": 929455,
+      "sha256": "762804a64165e4fa2265e158764eb87ce226b6194034eb795bffb0d982b75a72"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/clover-4-0-without.png",
+      "bytes": 929356,
+      "sha256": "b1843c98f9d43fd8b81772b799357166ea2385f1e431fb3d3a19c807b13ddfbb"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/clover-4-1-canonicalImage.png",
+      "bytes": 23124,
+      "sha256": "57678fef149d4d805bf4933319b4f6393f8ada99340ba67e5ae4249d6567f2b1"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/clover-4-1-edges.png",
+      "bytes": 242,
+      "sha256": "eaf1c3bce24f1554bb4dbed78bc190e2577d4e4a27a92bdd84ed6061a7a1e489"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/clover-4-1-mask.png",
+      "bytes": 213,
+      "sha256": "882679dadc5b958a6854fae7ccc3c31e7f9d0479f0ebcb0e1a6efd763e5f570b"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/clover-4-1-overdrawImage.png",
+      "bytes": 12945,
+      "sha256": "1e9244933bba276b5d5aee69d1fe7f26d01b6b3d46c84d99cb2def1a26404731"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/clover-4-1-real.png",
+      "bytes": 933245,
+      "sha256": "a0a6849fc8b3ffd02c1b49d7fce77edc14df05d75714605a800d9bb833911699"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/clover-4-1-without.png",
+      "bytes": 933003,
+      "sha256": "541d0521d5e9093150b2df31d4e878bde7ea93500116aaf01ae64bfa230fae9f"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/clover-4-2-canonicalImage.png",
+      "bytes": 29447,
+      "sha256": "1bcdc1efe3c22a24eeb8c0f2fc639e3420b3219bea3f677d8a5a0faa142ff0d4"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/clover-4-2-edges.png",
+      "bytes": 263,
+      "sha256": "74142d5c9177d250fc1488c9c053f880534ef42f06480c5d2d4e88d923b91a2f"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/clover-4-2-mask.png",
+      "bytes": 238,
+      "sha256": "75da7d7d5663db398704a96b96aa7b451ff982af1841093f42dec29b1ac36d28"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/clover-4-2-overdrawImage.png",
+      "bytes": 13595,
+      "sha256": "289aeb191bac8d89c3bbf30e1219b0e58c878f1d7cbb2f037793f14544bf46a0"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/clover-4-2-real.png",
+      "bytes": 935753,
+      "sha256": "b4d85f634b7ed52d21d8fa8069180db0701694594e5428ef24f9e63b4f95fa5f"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/clover-4-2-without.png",
+      "bytes": 934962,
+      "sha256": "28d66b2c606d09ee34c103f95815aa00186b95987dccc59afd7ee7a026453958"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/clover-4-3-canonicalImage.png",
+      "bytes": 49949,
+      "sha256": "01c564f7a91eca049803601bfab64a6bba5b5e469bdfc887c5d738e0af942518"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/clover-4-3-edges.png",
+      "bytes": 369,
+      "sha256": "ee11baca08a1da350ca8916085dd89aa555cce3950af8bb55bf6e49115c432f2"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/clover-4-3-mask.png",
+      "bytes": 304,
+      "sha256": "1e190147e900736061db566ea4fa697cc7f3f4db191b0c12e245b61b61b6a80e"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/clover-4-3-overdrawImage.png",
+      "bytes": 25568,
+      "sha256": "550bad7ee2e6a572c85265f1c98db76fdcf47c93c61d4725c394faa18feca8f9"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/clover-4-3-real.png",
+      "bytes": 945864,
+      "sha256": "b24f070c833b0fc3c9d25727d24f168347487e0dd33a3d5dea73381de616c15a"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/clover-4-3-without.png",
+      "bytes": 933950,
+      "sha256": "7c0a011641ed1677ab6a409db6e354114190fa0402df958d49ca96afa4a3cdf5"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/clover-4-4-canonicalImage.png",
+      "bytes": 54152,
+      "sha256": "c51a94dd94d528851b200c4a8d05b8f6d32d8617b90583ab8ed76fb97a498dd1"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/clover-4-4-edges.png",
+      "bytes": 390,
+      "sha256": "9526cd853e24ef0a1fb7135d022fa4ae7f8e758e3e02e981f4e412cc2b929610"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/clover-4-4-mask.png",
+      "bytes": 337,
+      "sha256": "cd21c25468e70aeea9a4a6f5ed72bb20bc0b7d06d573cc2b51af739ebef43518"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/clover-4-4-overdrawImage.png",
+      "bytes": 26655,
+      "sha256": "87ff8a0858a6951ed3f1a9fa1493f512d4c4f484ca3c686fd504283abb02ebd9"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/clover-4-4-real.png",
+      "bytes": 942763,
+      "sha256": "d11f1e3fe2a3cc98ca6ec40e8675d669a1a8c54a99c1faed0bd46087cc821a3e"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/clover-4-4-without.png",
+      "bytes": 931575,
+      "sha256": "7d4287607a810d175877074e571c124e581b09430d12edecee2a1a6d498229db"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/clover-4-5-canonicalImage.png",
+      "bytes": 42265,
+      "sha256": "5b5c2278d7c53c8d3a413802762b41c9353815157e9e40bcd3c18314675609b8"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/clover-4-5-edges.png",
+      "bytes": 285,
+      "sha256": "ea515cda5e172c42c49fec16afd13ddf702ad69da77f640f8a3238bf9360aeb9"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/clover-4-5-mask.png",
+      "bytes": 277,
+      "sha256": "bcff9d2f47271e656d3051f50cbc41776bc826cebedc6e5ec3e0cb33f80e3476"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/clover-4-5-overdrawImage.png",
+      "bytes": 25162,
+      "sha256": "3cff31aae474859cae602319758546d055aab0cce487738ea9b1d65e37f8391e"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/clover-4-5-real.png",
+      "bytes": 936592,
+      "sha256": "6d9645c36b559e1cf67d47f18a5dcea7af2295908aeaa910d1bf8c9a49a1519d"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/clover-4-5-without.png",
+      "bytes": 927051,
+      "sha256": "88d16896e233b065e484cad200da722ec1d56fc0a726539241355c6a4a5ca809"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/enemy-yarn-giant-0-canonicalImage.png",
+      "bytes": 39502,
+      "sha256": "c7d9f5eb3ac740f80a93d42ae5c05a84084bb8970085356818b56b4f431d3b42"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/enemy-yarn-giant-0-edges.png",
+      "bytes": 318,
+      "sha256": "0acb43dce6d9463123ebced2065a224dded021f068e535e3e8a0a75d1b38f370"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/enemy-yarn-giant-0-mask.png",
+      "bytes": 314,
+      "sha256": "456fadb70ebd899bd9baffde6741d3e4efed380845f1f1b3967b3e874d4cced0"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/enemy-yarn-giant-0-overdrawImage.png",
+      "bytes": 16211,
+      "sha256": "6974e029a59af381139e5c4bb65fa067a8f44fbf771619b0b3ab39028a86738c"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/enemy-yarn-giant-0-real.png",
+      "bytes": 935662,
+      "sha256": "9794298c8bf7b00a70ea21c74c1d41e4fed5dd667b86f12369fbbaf6752add1f"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/enemy-yarn-giant-0-without.png",
+      "bytes": 932560,
+      "sha256": "e628ceb6dd07b67d33f231cf0273a1fe7bfbb0de3033b01f23cb3b36f00a70fa"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/enemy-yarn-giant-1-canonicalImage.png",
+      "bytes": 45946,
+      "sha256": "a8bddc414e1cea6dcffc893825126472d49aa62a6c5a5bbb3ea0a3fd1538034f"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/enemy-yarn-giant-1-edges.png",
+      "bytes": 325,
+      "sha256": "701fb94bf17fa908467d60961948ff762e1c1b3233dc8233839c655acef978dc"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/enemy-yarn-giant-1-mask.png",
+      "bytes": 307,
+      "sha256": "54050f8263cd2d3c73045d0a18afd21f208d1f8ad5f4f764bd826e1753ef0196"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/enemy-yarn-giant-1-overdrawImage.png",
+      "bytes": 17443,
+      "sha256": "719a0830ad3a44197dc713829055922fe7db9f6eccdea252f006cdc3efb83375"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/enemy-yarn-giant-1-real.png",
+      "bytes": 939111,
+      "sha256": "05ebc8222786d8916b3a73aaac4cc02e72046c7a9a8a709898854c107059f168"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/enemy-yarn-giant-1-without.png",
+      "bytes": 934508,
+      "sha256": "2cf7f3495cd7b7f98ed214e22845b24f15fa12c30e88f0f3da3c5a21392aa35f"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/enemy-yarn-giant-2-canonicalImage.png",
+      "bytes": 44506,
+      "sha256": "0b28ce777448553bd4d1bbef5227624dd62338375121c8c95b9080770988aa04"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/enemy-yarn-giant-2-edges.png",
+      "bytes": 353,
+      "sha256": "0b0d6e02cab8286b371857048c9c8f131cc406ed7bf1886f4963b7007d5a5033"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/enemy-yarn-giant-2-mask.png",
+      "bytes": 331,
+      "sha256": "8c9ca6c599f6feaee54507ffe811fd91ea92d4eb3f45993043928a61eac9b695"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/enemy-yarn-giant-2-overdrawImage.png",
+      "bytes": 17392,
+      "sha256": "949d3234b67ea9713a7c3466c1fc27ced33563fa12e1de890da262fc6fe04f23"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/enemy-yarn-giant-2-real.png",
+      "bytes": 939438,
+      "sha256": "74d8acfd51615000764e343de54ecbdea60d968a750158e6f64ef33e09cfea59"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/enemy-yarn-giant-2-without.png",
+      "bytes": 935685,
+      "sha256": "02984979c4295577c15c2e4fe081cb88a317e5d92cb576ab2efb7361523402be"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/enemy-yarn-giant-3-canonicalImage.png",
+      "bytes": 56345,
+      "sha256": "e2ba5441473e751c77c8b3b21d2f9fd1cb15997d95858626ab34be31a7c78303"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/enemy-yarn-giant-3-edges.png",
+      "bytes": 417,
+      "sha256": "3e8482eda4e23bc4e8fd2ae8a992556894f87b51e771e512e32cf779b2cd0904"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/enemy-yarn-giant-3-mask.png",
+      "bytes": 333,
+      "sha256": "e9e2a75096d575ea290c5cd9e08a8f4592c023510e704d84705956ce3d14f1a8"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/enemy-yarn-giant-3-overdrawImage.png",
+      "bytes": 14980,
+      "sha256": "5ea67f19cbc3daf91070485ab9524993fd5f7dcb4933bc5241f8ac4000706386"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/enemy-yarn-giant-3-real.png",
+      "bytes": 938054,
+      "sha256": "f55d478d0eae1bba6cdde379504433dae7eac02da15811f7d9b10aa93004d6fe"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/enemy-yarn-giant-3-without.png",
+      "bytes": 932830,
+      "sha256": "099ef94d51ccd021af38bb3178ae727b4619fea60a480dd464e2b78893374571"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/enemy-yarn-giant-4-canonicalImage.png",
+      "bytes": 70461,
+      "sha256": "fa42f5467f7626bda02fc2ca60a7eb6fe740512490713fbaba36a2c7c27bdf18"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/enemy-yarn-giant-4-edges.png",
+      "bytes": 406,
+      "sha256": "ea8ef1d9c095b0ccfb694de17f56fa2e7e55f0dac666a92ecb92f1265c05a425"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/enemy-yarn-giant-4-mask.png",
+      "bytes": 358,
+      "sha256": "da0e18814c79d1b92960e0073e739c60ec54018bd6c506bfb4b0edc51c561ddb"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/enemy-yarn-giant-4-overdrawImage.png",
+      "bytes": 18364,
+      "sha256": "375df05e03b65dd32ea1e12fb0b0b1062eea710ab898131e1e8d1bb69174cab8"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/enemy-yarn-giant-4-real.png",
+      "bytes": 937257,
+      "sha256": "a0d114341d4e8e6c8abc9438d5f4aec109834fa4d8cb3cc2af04e2e68e05e6f6"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/enemy-yarn-giant-4-without.png",
+      "bytes": 932136,
+      "sha256": "d0ed7a44b542df8122ba5cdc94fb23ccc0dd151814bb75f242606867ff050015"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/enemy-yarn-giant-5-canonicalImage.png",
+      "bytes": 83427,
+      "sha256": "2dc5afe0172e6a04fdf6f0a091735a10f4818cf951170a4f4c6a6c119ecb081c"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/enemy-yarn-giant-5-edges.png",
+      "bytes": 468,
+      "sha256": "af6c3c34e39c7607b622adabd64732b049b3dfd69b6abc59a69230fae24bf15d"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/enemy-yarn-giant-5-mask.png",
+      "bytes": 409,
+      "sha256": "b9e56b07bda9cfa7aa22e592b37a53ba9120698c069f718e40619ca608e967bc"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/enemy-yarn-giant-5-overdrawImage.png",
+      "bytes": 20952,
+      "sha256": "aa251d73e9760e2e7a6dd82a64a8305e81f3838309bc01844feba9d2410571e4"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/enemy-yarn-giant-5-real.png",
+      "bytes": 936617,
+      "sha256": "812412b5934250da64f93240ca1df7663361115ecfd0ca6d786b78cf00d95dc5"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/enemy-yarn-giant-5-without.png",
+      "bytes": 931312,
+      "sha256": "0580916c053b523ae8ad4328a745165b1a7a43b89e9178a67f29dd8ca190b4e2"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/mochi-4-0-canonicalImage.png",
+      "bytes": 24413,
+      "sha256": "574fdc3ab2f23d0bca6c86e7506400687122e0c2a0d0cb1e3648d51629e9d6cb"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/mochi-4-0-edges.png",
+      "bytes": 239,
+      "sha256": "012b06817b075053c229df15aff384c3072905a6e83d2dadcd69ff92feb35d8e"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/mochi-4-0-mask.png",
+      "bytes": 239,
+      "sha256": "012b06817b075053c229df15aff384c3072905a6e83d2dadcd69ff92feb35d8e"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/mochi-4-0-overdrawImage.png",
+      "bytes": 13291,
+      "sha256": "dce489c9c32399fafa11cebd5b9e9d5884fa5649515f2ea89905d13ff7862eef"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/mochi-4-0-real.png",
+      "bytes": 931238,
+      "sha256": "fbe0368cbab632ee12d2c29f190b4dfeb6db9b0cb8ef5f2c3d82b455782b5263"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/mochi-4-0-without.png",
+      "bytes": 930094,
+      "sha256": "fd62150b2d557a34217914651a48b45ccff5fd69903bfbd4f10496cd912cc9a7"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/mochi-4-1-canonicalImage.png",
+      "bytes": 24737,
+      "sha256": "721cd0cacb447b8a583379fccbad8f4167ba1eebdef8f7fc7e12d963df09fb8a"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/mochi-4-1-edges.png",
+      "bytes": 234,
+      "sha256": "14e4fa83eed1a4c3f05d2e042cee84a9689a4babf726873452a97b2fc6a46794"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/mochi-4-1-mask.png",
+      "bytes": 235,
+      "sha256": "2125646ea623d3b2045d236b1ef35eab27622295537afffa005424a90ef25211"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/mochi-4-1-overdrawImage.png",
+      "bytes": 13806,
+      "sha256": "56935cc5da3d8500948ddc29d0d142e7ae53cf83fdc3549d59bade4dad6b5223"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/mochi-4-1-real.png",
+      "bytes": 935345,
+      "sha256": "3d07e77590e44a365103273bea3ce35a607b9ea3723ed662921aa45ced93f663"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/mochi-4-1-without.png",
+      "bytes": 933681,
+      "sha256": "aeb3edbef5865dee35e30eb3bbd251ff3a767412a134f5ce30b34fae47603862"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/mochi-4-2-canonicalImage.png",
+      "bytes": 23600,
+      "sha256": "bfe1f6ad827fcee430482570d81a8dd91f520bfe2ff81fc4bdac5555faa1c73d"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/mochi-4-2-edges.png",
+      "bytes": 232,
+      "sha256": "1bb3bdba83ca89a477bbe27e5925f1553e08ebd40b5b4688073c8ec935db604a"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/mochi-4-2-mask.png",
+      "bytes": 233,
+      "sha256": "915c86d6d96ac08e33ddc1bc88d63d28342ef22668716f1cb7aa11647b451362"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/mochi-4-2-overdrawImage.png",
+      "bytes": 13873,
+      "sha256": "1cbf02a7697aecadfa6a4add4c4f9072921b619cdd1db7208b97428c58b5e271"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/mochi-4-2-real.png",
+      "bytes": 935986,
+      "sha256": "aacc1b97c09cc7b6a98c32c01d573fdd738697bf02f68f60c0a8eeedc3a14083"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/mochi-4-2-without.png",
+      "bytes": 934750,
+      "sha256": "b332cb02026d069d0965e79efc2c152d085e8ad5840f86bc644096dad81267b6"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/mochi-4-3-canonicalImage.png",
+      "bytes": 43658,
+      "sha256": "7774b4c743b2e956583da33979b31dce3e40fa7554f0ed554131accdab21dd0c"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/mochi-4-3-edges.png",
+      "bytes": 326,
+      "sha256": "c3d7cfa48f68e3e823af23119540cc86b31d33ef401ea9d006814041e6975940"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/mochi-4-3-mask.png",
+      "bytes": 290,
+      "sha256": "f27c54cb9b49cef4a018bd32c1ef04ddab7735ea3e8e40232841fd371b0cfec9"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/mochi-4-3-overdrawImage.png",
+      "bytes": 22156,
+      "sha256": "56f2d7f740ddaaf735ee36dee28781a4d8386802638cf8fe03d422a9b56a520f"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/mochi-4-3-real.png",
+      "bytes": 940902,
+      "sha256": "ab14af98438ae6aa7e97f7d324c77910596dfd9691754ab21e5821cbc0e08b9f"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/mochi-4-3-without.png",
+      "bytes": 934440,
+      "sha256": "61a4431e664d9c744b7efa57a557b8c8418fc77ad6b44531161782b455d0ca65"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/mochi-4-4-canonicalImage.png",
+      "bytes": 50972,
+      "sha256": "5169853a6cbbd2f419576d61579abe90ab2d9a281785046ce5c4a34237c1216e"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/mochi-4-4-edges.png",
+      "bytes": 371,
+      "sha256": "9fe6220cb08ab121dbb64d61e56666f8939001598cd74680782a585f077359b7"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/mochi-4-4-mask.png",
+      "bytes": 323,
+      "sha256": "9fadbe94af3d256cfe9321d24457b0bf16e56dd03f967f0768093a6e2fc76959"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/mochi-4-4-overdrawImage.png",
+      "bytes": 24707,
+      "sha256": "c5bf885b5f733fe49ad6199a51845e80b9188c267a7031009b91f7bedcc07558"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/mochi-4-4-real.png",
+      "bytes": 943559,
+      "sha256": "f66c79b8d9ac1b41b27aece11d277c4fb3e7fe5b40b035c20c8afed3d60afe04"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/mochi-4-4-without.png",
+      "bytes": 932345,
+      "sha256": "6d43ac073bc1a7cdc46c12188790008f48400a7da25234a441e674db966ebbec"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/mochi-4-5-canonicalImage.png",
+      "bytes": 46948,
+      "sha256": "e9833e825771865cd128e56ed6def699a6584fd21ca9a710438008d417713126"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/mochi-4-5-edges.png",
+      "bytes": 377,
+      "sha256": "8522e709999db57ec487f66d9e100a7a665581665581c52224bf3ca4b6918a24"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/mochi-4-5-mask.png",
+      "bytes": 338,
+      "sha256": "34738c3eca4a0c5090a3d5357b7bcaa93f656cdf556c7c5271ff477bf14ec9bd"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/mochi-4-5-overdrawImage.png",
+      "bytes": 25701,
+      "sha256": "8587ff2538dca2fa5018fe0d2c2e43825909f90560c4a27e946fc9497655dca4"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/mochi-4-5-real.png",
+      "bytes": 940691,
+      "sha256": "bb6cfaee51b2b25a3d687ee6bd464395c134cc6eb9dc725f2a5c24635d7f524e"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/mochi-4-5-without.png",
+      "bytes": 927436,
+      "sha256": "8604e3de30557d48e8de070a42baf7fc85b1e526c7718c712b3786791c36206c"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/panko-4-0-canonicalImage.png",
+      "bytes": 18043,
+      "sha256": "0757b4923edc149d63af4f5b425076737220f6ea18dcdccbf9a5a382e5bdb757"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/panko-4-0-edges.png",
+      "bytes": 151,
+      "sha256": "41a4c7dac1471397792f4a86fc0e56735a516f68dc7d0b8454620f32a6eac83b"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/panko-4-0-mask.png",
+      "bytes": 151,
+      "sha256": "41a4c7dac1471397792f4a86fc0e56735a516f68dc7d0b8454620f32a6eac83b"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/panko-4-0-overdrawImage.png",
+      "bytes": 11992,
+      "sha256": "3ee541be8028b81a4975030a473c8cefc185748893ae12197e3a49a46f6acd41"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/panko-4-0-real.png",
+      "bytes": 929248,
+      "sha256": "c388f6ed16d810b2d8e4db5bfec22ff0e3935f542b7ae3ef28d46775865f047b"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/panko-4-0-without.png",
+      "bytes": 928883,
+      "sha256": "7d340ac22a67f740a8f9c237133b454678384e4a4a43c8cbf162fe4c10184662"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/panko-4-1-canonicalImage.png",
+      "bytes": 17947,
+      "sha256": "65f9929b0731393ce2b1f2b8ef7eb4fc28f3528332796635eaa334de002bd388"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/panko-4-1-edges.png",
+      "bytes": 144,
+      "sha256": "1a227b909d567cfb55a1bc3a3c1a0ef955ba230821441db80852b64ad8e55035"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/panko-4-1-mask.png",
+      "bytes": 143,
+      "sha256": "8d987f8d7f7f254bfd0446016cc295de96c59009e5db63725ee16ec1439c5b73"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/panko-4-1-overdrawImage.png",
+      "bytes": 11854,
+      "sha256": "af9d31e672847dca1770d993d2f3262466b0923bc28c6d93e76cf8f90015f646"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/panko-4-1-real.png",
+      "bytes": 932487,
+      "sha256": "fcee57574772777914a6688cba352f1e499749a9b429e1734a4471a85a1a654a"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/panko-4-1-without.png",
+      "bytes": 932235,
+      "sha256": "0edf34d80a38966de4bead478326ade4ce02036356d75bd19564c764cccd1b46"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/panko-4-2-canonicalImage.png",
+      "bytes": 37685,
+      "sha256": "ac6f80c9717e049d4b3310061cad092ed8ea714ed335fc7e52342062ac8b28d1"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/panko-4-2-edges.png",
+      "bytes": 298,
+      "sha256": "ca46987b6af8d1f5c716e3ba7d82622afd527c1eae1344aaa87461b8031fb7fd"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/panko-4-2-mask.png",
+      "bytes": 281,
+      "sha256": "d9a81110db9fa41fd57a89b702c736fc3af713fd239c2008be58667b2f6b9be1"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/panko-4-2-overdrawImage.png",
+      "bytes": 13220,
+      "sha256": "9cd08dbbb2b0eddddac42db3fe6e3f55b353ce2bafac03fe4dadb4ead3ba683b"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/panko-4-2-real.png",
+      "bytes": 935479,
+      "sha256": "9ef0a0db0e1e3097c974fb8a123f61fbeaf8986c56da78e0325e299ea7f377c3"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/panko-4-2-without.png",
+      "bytes": 934050,
+      "sha256": "49a8fe475364264a3d39a36054c7665389c0dfa458173da7baf291c4c5332092"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/panko-4-3-canonicalImage.png",
+      "bytes": 87669,
+      "sha256": "8793efdaba85b11b53cbd5e220fd7183b32d2c998f40383d60cf55dea7e02d3b"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/panko-4-3-edges.png",
+      "bytes": 546,
+      "sha256": "3f5db6894c65a7f8d4d7ad747ec6032486da8063f799d8a3a0a8cd0584eaf0aa"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/panko-4-3-mask.png",
+      "bytes": 445,
+      "sha256": "37c0877966e56954c80c9dcb32a92692dd04b586cfa9367d06366f457ba74205"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/panko-4-3-overdrawImage.png",
+      "bytes": 17032,
+      "sha256": "6ac32e1052baadc4f2ed37cab0010a894ff6ac685f3abe715aaf96d39b0960b8"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/panko-4-3-real.png",
+      "bytes": 937644,
+      "sha256": "ff847d188a00059e2ed6ef93cb2cef6759217cbed6e7e4a774b2a360db3f3410"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/panko-4-3-without.png",
+      "bytes": 933276,
+      "sha256": "21c5536afdbb7229ffd4e488ea8cd73fd240fa9bb7422f1763d28af299f81dff"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/panko-4-4-canonicalImage.png",
+      "bytes": 96442,
+      "sha256": "20817a9b8833bcb192f5fe64be0c18e7bb03ad787453f0ec6a7eaff997675d48"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/panko-4-4-edges.png",
+      "bytes": 560,
+      "sha256": "a3ec62990c07e518f9fba91c50d991711e7fca64cb47d05b80e6355d1e88d6ce"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/panko-4-4-mask.png",
+      "bytes": 458,
+      "sha256": "9f7a2146b16a3cd1cf0e97ce3d551de882793ce31ed8e5c8c64c45c1f95f57bf"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/panko-4-4-overdrawImage.png",
+      "bytes": 18867,
+      "sha256": "52a4d055bd4ba124f2095a0df64fb3047e7ac2f136191dce2fb4e92e5486b4cf"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/panko-4-4-real.png",
+      "bytes": 938486,
+      "sha256": "c5b50c3c5b3ba4fd3cae3473c969dea4e40fbfc77e6c38fc3953145595afcfe2"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/panko-4-4-without.png",
+      "bytes": 931566,
+      "sha256": "eb3ad14a0df6a61efd6e5f797daee2f909eedf9b19141eb26136a9e3301bbf5d"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/panko-4-5-canonicalImage.png",
+      "bytes": 78759,
+      "sha256": "5b02ba304bb0666ed920ee74997a2b77a2323f967b5b6b7ecaed35b72fff6d43"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/panko-4-5-edges.png",
+      "bytes": 492,
+      "sha256": "06aae712005e5b1566765367f9ace9de4a13e46df144c6078241ecfa039ff115"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/panko-4-5-mask.png",
+      "bytes": 441,
+      "sha256": "9d0b0db0eee0ce89ab05bae6525df4fe842725aad6616462f72898cffb58d933"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/panko-4-5-overdrawImage.png",
+      "bytes": 18838,
+      "sha256": "f58d3c348cd8b763029aadcb0828c750744f79626612223fc14062501884fb14"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/panko-4-5-real.png",
+      "bytes": 934017,
+      "sha256": "2a7f4fa6e2566c7c7be0f4adf9d81c7f6e392dbf0ab9897a96ca84b2304a0d9d"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/panko-4-5-without.png",
+      "bytes": 927504,
+      "sha256": "5598dc2404333686d483d7c4e3a859b67f5bdcfbfe3449dc0d3dabf7d3107147"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/soot-3-0-canonicalImage.png",
+      "bytes": 16326,
+      "sha256": "de3557580d5f35cb28c50476710a8f5a681c8ad28c77a03b67e4dbad4610e19b"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/soot-3-0-edges.png",
+      "bytes": 137,
+      "sha256": "3212776b5479e2c9e2ac0b4a855006b9b865a00051e0c3bb0f4e24f48c0fa3c0"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/soot-3-0-mask.png",
+      "bytes": 137,
+      "sha256": "3212776b5479e2c9e2ac0b4a855006b9b865a00051e0c3bb0f4e24f48c0fa3c0"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/soot-3-0-overdrawImage.png",
+      "bytes": 11326,
+      "sha256": "6928ac8d915ef6bc2129e6f75517a59f22c5dafc2f69b0b39024b227b22008b7"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/soot-3-0-real.png",
+      "bytes": 924110,
+      "sha256": "52ef58987e38b0b58cbe12b27a6084dbb2c877b1465f47bdb5f471bc9c7c410d"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/soot-3-0-without.png",
+      "bytes": 924110,
+      "sha256": "52ef58987e38b0b58cbe12b27a6084dbb2c877b1465f47bdb5f471bc9c7c410d"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/soot-3-1-canonicalImage.png",
+      "bytes": 18398,
+      "sha256": "3c22217ba116e6536234cda444e831cade7f55d6fa59b4ca2ee0df1e0ed8e9ab"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/soot-3-1-edges.png",
+      "bytes": 160,
+      "sha256": "830ff6af9e3d3fd4a19d4112bf13f306acdd7c07a36f0ffc4e0d5272bf07ec26"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/soot-3-1-mask.png",
+      "bytes": 160,
+      "sha256": "830ff6af9e3d3fd4a19d4112bf13f306acdd7c07a36f0ffc4e0d5272bf07ec26"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/soot-3-1-overdrawImage.png",
+      "bytes": 11532,
+      "sha256": "ff0879cbe03a6c0aa97b85675d1bfb1e4cdb186829660469befe1c2cd2c2fe3a"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/soot-3-1-real.png",
+      "bytes": 926229,
+      "sha256": "ddaeee7520369964809d01f3a7ba824c890b3d181c22625b6b7ba0a09907662c"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/soot-3-1-without.png",
+      "bytes": 926107,
+      "sha256": "38416fac68dd99571571f250678ae39da52c69d423ca4f111c00ba034a3618bb"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/soot-3-2-canonicalImage.png",
+      "bytes": 18501,
+      "sha256": "528c603e2441364db5aa15a7acbdcadda0744962d7ae3f7e5c4420588e06d91b"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/soot-3-2-edges.png",
+      "bytes": 160,
+      "sha256": "cc53dc604e813efffc5585ed1be770292607483d0c8dabd76d2d2ce19680483c"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/soot-3-2-mask.png",
+      "bytes": 160,
+      "sha256": "cc53dc604e813efffc5585ed1be770292607483d0c8dabd76d2d2ce19680483c"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/soot-3-2-overdrawImage.png",
+      "bytes": 11770,
+      "sha256": "8694badebf022486a5f6c2c854cdc3531b7c9c63e70fc579e8a090042e305e1c"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/soot-3-2-real.png",
+      "bytes": 926644,
+      "sha256": "91dd708b4f90c80ab37611a1f38a3aaea55673943ca589013cabca92701b027a"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/soot-3-2-without.png",
+      "bytes": 926582,
+      "sha256": "fe7eead7dbb9e0ba8ddff0da78bd86e0ed047813bbae3b448c7b7db875309157"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/soot-3-3-canonicalImage.png",
+      "bytes": 29202,
+      "sha256": "f7d405bece3f1a411c7bfdae77fd57ee3dab498b713807950ec6322a7694c0dc"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/soot-3-3-edges.png",
+      "bytes": 198,
+      "sha256": "220a19dfecf479d19b3cf646d50b11c6454a18308512ec0516d0bba7ffbc02e7"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/soot-3-3-mask.png",
+      "bytes": 180,
+      "sha256": "ff83af07d81d4427fad0243c79804df108088420939f74994d013239da015ba3"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/soot-3-3-overdrawImage.png",
+      "bytes": 13028,
+      "sha256": "466529abbc152858f2eec245eaf622247867bc899c959f9f8a00b1d82cfc925c"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/soot-3-3-real.png",
+      "bytes": 925405,
+      "sha256": "9d306c2b3b3fedbe5d04ced687beb093af93d343880e7f8763604f38cec9a712"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/soot-3-3-without.png",
+      "bytes": 924525,
+      "sha256": "3f4fc6eb234ae640ead3afba83204e90a2ce1470e3ddcc686ce3ebc5358b3f6a"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/soot-3-4-canonicalImage.png",
+      "bytes": 55331,
+      "sha256": "d6378c0926104875ffd1d81ad3919c7b4540eebe4cc7808d4ba436e314e93d40"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/soot-3-4-edges.png",
+      "bytes": 296,
+      "sha256": "5273e2e16a2fe90f28ee984b80de44419e6826103515c25d015e7be8f10fd1c7"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/soot-3-4-mask.png",
+      "bytes": 255,
+      "sha256": "c2ab380410209445944a8e73cc153c9029055cf2c4f05d33e83628d4f99f1464"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/soot-3-4-overdrawImage.png",
+      "bytes": 16177,
+      "sha256": "5e85b722f918b7e733aa8c9060145b9dbf2f8d308d32673a9f9fcf00a3d1baa2"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/soot-3-4-real.png",
+      "bytes": 924123,
+      "sha256": "bf15895c26fb3aa148ffe8b5135ec4dfb301c58f1a5ad27fb9751cb8707e60a8"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/soot-3-4-without.png",
+      "bytes": 923090,
+      "sha256": "c70b26802750285e57c7aba5a1ab5469bcf065695635794b1d81e05abcadf9c2"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/soot-3-5-canonicalImage.png",
+      "bytes": 28542,
+      "sha256": "2d1521e28e7a24cc6593557116049d6a4664e4389a5a51c85841888829094800"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/soot-3-5-edges.png",
+      "bytes": 208,
+      "sha256": "873089a0465e7b47bd42982132c5116d1952f1bb6de316d03f0efcd69d6ca29e"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/soot-3-5-mask.png",
+      "bytes": 199,
+      "sha256": "0b0027f64aff502b792bc404edaea63cdb9cca72930e130e32e1f4d06ffdebc9"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/soot-3-5-overdrawImage.png",
+      "bytes": 13187,
+      "sha256": "a260fcb7bbb25b7645e9b03691955b12f97345bb4ef70f208dd79c2f845d916c"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/soot-3-5-real.png",
+      "bytes": 923897,
+      "sha256": "b76d722b69b8fd0ca261476851dc40bcb2789c7058cf1017cdf1b4be9bca6785"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/frames/soot-3-5-without.png",
+      "bytes": 923248,
+      "sha256": "cb71c368a54289b0926bbef2326d071333a11ee7793ee81f1953a2606241ae1c"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/incremental-pairs.json",
+      "bytes": 581628,
+      "sha256": "d11cd6b941a7c76cee0f0d6d4d36831f91e5a0ecf1ace788516fd7ffb05b146a"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/mochi-runtime-1.png",
+      "bytes": 268998,
+      "sha256": "be8a6977b8da6beb1b5709537201b25c391733d31339ed97ececd776fd44c4de"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/panko-runtime-1.png",
+      "bytes": 265711,
+      "sha256": "796e1637b35083104ec922b8fd1297256920cb184db1950f476d52bcd197dec1"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/sheets/brioche-4.webp",
+      "bytes": 10928,
+      "sha256": "d5a1e3f3ab8f1df59a8806c267cc4823d3c246682e4bd0b893cf85ffe2359f02"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/sheets/clover-4.webp",
+      "bytes": 10420,
+      "sha256": "366da8cbc539ed7d899667fdea01e0757f691a30ffb7e438986a5ca51a58a7c8"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/sheets/enemy-yarn-giant.webp",
+      "bytes": 14070,
+      "sha256": "92aa1e15e4da1ed0507826da0bbc6bd4a4a434f2b6967841fe08d8efa25a9786"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/sheets/mochi-4.webp",
+      "bytes": 10642,
+      "sha256": "3c9ac756b008a10a0b2b84d6f4d87b46a990b9f7fdd849895d56f24452810774"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/sheets/panko-4.webp",
+      "bytes": 16182,
+      "sha256": "37a8d73005e4eacbc81451aaaa3c0e3fac19534c6c30597c46704d843c82cd87"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/sheets/soot-3.webp",
+      "bytes": 5722,
+      "sha256": "70c7862fb024c23b2186285e1aba05ff91a11d1921e837e5ec67471ad8fe70ec"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/soot-runtime-1.png",
+      "bytes": 266464,
+      "sha256": "b85c1871a4c9fc7f1df50203aae57eb3c17df1e43e18a0cbf883a36eabd5deb4"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/effects/reviewed/uniqueness.json",
+      "bytes": 28467,
+      "sha256": "ccd5c6c909fb9ad4551262fc6e6f86f3bb5fed56397afa6bd8d5a7b80a1d40e9"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/labels/checks.json",
+      "bytes": 1168,
+      "sha256": "9008cb34a85b57c69c1e5c372d69a115bb16ad95b573774e6e414a425aa7ce8d"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/lifecycle20/summary.json",
+      "bytes": 1434146,
+      "sha256": "9f72f204aae79396f503d8a34c065a0e33b40c50af892ba8bb103584595f87b8"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/paired-cast/1-before/1280x720-dpr1-cpu1-high-clover-1-trace.json.gz",
+      "bytes": 26394164,
+      "sha256": "ade9076de6be4b868a8adabaaba4b82a7a518cd204be0f79595a266f2e631356"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/paired-cast/1-before/1280x720-dpr1-cpu1-high-clover-1.json",
+      "bytes": 44879,
+      "sha256": "ce8daa7dd6ee688a62a72ff4291b580813116b6bf9c8e671ba32df23bb820c99"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/paired-cast/1-before/summary.json",
+      "bytes": 19282,
+      "sha256": "f48a6e369cc425ca781ac1a6f362ec7a813e468bb3c66041fa2266be2da336e6"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/paired-cast/2-after/1280x720-dpr1-cpu1-high-clover-1-trace.json.gz",
+      "bytes": 26422761,
+      "sha256": "5c070307ef2fd5590946596cc1894b0c634bbcd4b364a2b2e5734f0d5cb0723f"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/paired-cast/2-after/1280x720-dpr1-cpu1-high-clover-1.json",
+      "bytes": 42041,
+      "sha256": "9297272d366e995804dc8b42a876a102a2dc663bc717393fa521fd338eb22800"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/paired-cast/2-after/summary.json",
+      "bytes": 19283,
+      "sha256": "54956e2ec0fd875a560d661da528eddbb40b304cb702c44ca2984091ca40e1e9"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/paired-cast/3-after/1280x720-dpr1-cpu1-high-clover-1-trace.json.gz",
+      "bytes": 26331418,
+      "sha256": "7b39cceae25969fc1bbee0ce00c5ec9337e081ec79d530552392f5bde0e19249"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/paired-cast/3-after/1280x720-dpr1-cpu1-high-clover-1.json",
+      "bytes": 43174,
+      "sha256": "cf40efa4a6bb7adc62e59527f97294f609385fe988c0f668baa30c30c301cf5c"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/paired-cast/3-after/summary.json",
+      "bytes": 19255,
+      "sha256": "5ea100fe8673e28aa83147cf3d0f9aad9cda48b4a13a1a31238f6fc994d587a0"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/paired-cast/4-before/1280x720-dpr1-cpu1-high-clover-1-trace.json.gz",
+      "bytes": 26281964,
+      "sha256": "91c5cf50569071598bcdb693a4b286bfc94e3207be156403b296898bc2079ba7"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/paired-cast/4-before/1280x720-dpr1-cpu1-high-clover-1.json",
+      "bytes": 41828,
+      "sha256": "09a95ab7c8cca7fbef6e265c512998c5695d2a032305085bf6c3306648e3e36e"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/paired-cast/4-before/summary.json",
+      "bytes": 19281,
+      "sha256": "5e3dfaedd2db741c9fc1c8b043a0ffb004f649299486a0ce1e600a919c0008f2"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/paired-cast/comparison.json",
+      "bytes": 5121,
+      "sha256": "de9cffbdb1bde735f4d58e239d7b546454f84bfa9d78dee40913e86b5abaf2de"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/paired-cast/plan.json",
+      "bytes": 870,
+      "sha256": "3eb05d86c4ecca29fa466388f190c5d7378b4e4e026e9d8d5fd1b232d621e653"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/paired-cast.mjs",
+      "bytes": 3862,
+      "sha256": "0b96d8d73f2aefe0a78a17e2d20df8e7157094fc35ef2904ec37dac22f4112fd"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/perf-after/1440x900-dpr1-cpu4-medium-brioche-4-trace.json.gz",
+      "bytes": 27587359,
+      "sha256": "1d1439e539307a7dfa5e0a0ae87d42b8543b31441d10596f22d45678acaf731e"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/perf-after/1440x900-dpr1-cpu4-medium-brioche-4.json",
+      "bytes": 66175,
+      "sha256": "f2ef2abaa58b3909ac8fb73a0f87d6bc2b422651b58a5969cbbf044bb67b5383"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/perf-after/1440x900-dpr1-cpu4-medium-cinnamon-4-trace.json.gz",
+      "bytes": 27880579,
+      "sha256": "cd895253eac0358007e5c4228e51a4002f64e1baad4eb2b64aa51f198897712e"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/perf-after/1440x900-dpr1-cpu4-medium-cinnamon-4.json",
+      "bytes": 66594,
+      "sha256": "6cc6e906e828b88dcadeb6914ff134d3fdb62498c69760cf14927dd0e0df6d58"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/perf-after/1440x900-dpr1-cpu4-medium-panko-1-trace.json.gz",
+      "bytes": 27453977,
+      "sha256": "e188d35570744e28a71ea1b5dc880048f17dffcd926e8e63d0c0069a014490b3"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/perf-after/1440x900-dpr1-cpu4-medium-panko-1.json",
+      "bytes": 59041,
+      "sha256": "47452bafce8312312e7b42fb602c920d82ff5bf1197e1867b97e8ceaf8400212"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/perf-after/1440x900-dpr1-cpu4-medium-velvet-1-trace.json.gz",
+      "bytes": 26960709,
+      "sha256": "0bd8230002fc4602b5b59d880a44fce46452c6d5c7458fe20a187ef49e3c9aa4"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/perf-after/1440x900-dpr1-cpu4-medium-velvet-1.json",
+      "bytes": 60690,
+      "sha256": "629800c1f1a31654a17d3b44b8c76261355fc36035cc573b624be1ebdb9f8342"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/perf-after/summary.json",
+      "bytes": 33909,
+      "sha256": "bf18e3c001fa16124f95eb59b9f6723cc8d9b1b7dbbffce0ef80f9bd1007bcbf"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/perf-before/1440x900-dpr1-cpu4-medium-brioche-4-trace.json.gz",
+      "bytes": 27667425,
+      "sha256": "afa01c84cce7f9340da2faf65e737e35ed418343e15cdc2c035124b02da42845"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/perf-before/1440x900-dpr1-cpu4-medium-brioche-4.json",
+      "bytes": 69645,
+      "sha256": "f71ad2f5f936f1669516607a65f97d312ba1ab6ca999ac90c8a5a4038864c690"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/perf-before/1440x900-dpr1-cpu4-medium-cinnamon-4-trace.json.gz",
+      "bytes": 27698134,
+      "sha256": "80ac56a064907172a32c5a93fefe23e7f8c128d292d3acabf50818db4f994713"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/perf-before/1440x900-dpr1-cpu4-medium-cinnamon-4.json",
+      "bytes": 69885,
+      "sha256": "da3657aaf786077fc2ff5b4883abff475e9ad58356e8f17c96427cc2ec1ee7ad"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/perf-before/1440x900-dpr1-cpu4-medium-panko-1-trace.json.gz",
+      "bytes": 27490556,
+      "sha256": "dec1633bbbd5ab464910dc39798e07f203ecb01cdb8d56b347738e575968ecfc"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/perf-before/1440x900-dpr1-cpu4-medium-panko-1.json",
+      "bytes": 70583,
+      "sha256": "953eac5a84b083aa5d2afecd877655fa0947b40f2dac1800a43acecd9c9d8cad"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/perf-before/1440x900-dpr1-cpu4-medium-velvet-1-trace.json.gz",
+      "bytes": 27318009,
+      "sha256": "ea2b8d811c2e348e741e5cf641d3081a7ca17fe8507109999e438ff526ba0fbe"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/perf-before/1440x900-dpr1-cpu4-medium-velvet-1.json",
+      "bytes": 68868,
+      "sha256": "9c5064f4f717e3e74b981db597e84d25cf3764ada9d668f03300ff8237248e89"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/perf-before/summary.json",
+      "bytes": 34326,
+      "sha256": "642fd0f1f18de5d2189c48357c4f01537ddf18c42855294e887292a458dd82e5"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/presentation/attempt-1/1024-boss-finish.png",
+      "bytes": 600662,
+      "sha256": "4ce6c7abe8834921dfc2e413baf989ceb57ce0362aca9d431ae806e12604f743"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/presentation/attempt-1/1024-boss-phase.png",
+      "bytes": 602281,
+      "sha256": "eb76015c2177cf995aa11f01853cb95e4fb8616c08c81961f467f6f9b728552e"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/presentation/attempt-1/1024-cooldowns.png",
+      "bytes": 605774,
+      "sha256": "afa9246e34755b32a4b5e0f67815263a88729ec7c41a5e539dde0f755a4efe7e"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/presentation/attempt-1/1024-earned.png",
+      "bytes": 605955,
+      "sha256": "b907525b64f69120371e2e4e9be9786f610b25a85c0218a4282f10f55d2855c4"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/presentation/attempt-1/1024-legacy.png",
+      "bytes": 636576,
+      "sha256": "5b4abba22773d51ff022eb90ab955fb801f453c6842e8a9cb0d6acbf1733b6a2"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/presentation/attempt-1/1280-boss-finish.png",
+      "bytes": 838243,
+      "sha256": "05939e94b8323820844a6fd61dc1c5b39364e92108790c84430cb39f951c0c03"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/presentation/attempt-1/1280-boss-phase.png",
+      "bytes": 840380,
+      "sha256": "e63d300f9b3703577027190791fe7d634c582f73ffb28f792afe69044bfcf927"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/presentation/attempt-1/1280-cooldowns.png",
+      "bytes": 834028,
+      "sha256": "6177717a6de3f903283113f76b3f0a07a8560df9ecf04ead79f9bfc8b48aaccd"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/presentation/attempt-1/1280-earned.png",
+      "bytes": 844223,
+      "sha256": "43a539d366272c4719246d3e242645027d23c2dc8c226939bce4451c351776fe"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/presentation/attempt-1/1280-legacy.png",
+      "bytes": 883020,
+      "sha256": "007ea53aaa5b499a7ba399e0a87477ed7df2f11f445bba96acd315a39846d822"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/presentation/attempt-1/1440-boss-finish.png",
+      "bytes": 1244119,
+      "sha256": "98d793f67d7807ed7a6ddb43f34b6dcf84e9117c56753ceaa50af9b3c41a70ec"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/presentation/attempt-1/1440-boss-phase.png",
+      "bytes": 1244905,
+      "sha256": "50a9b1aedd6a78c7468436283c3484fa6dc7456cb6ffa446676665942babcc81"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/presentation/attempt-1/1440-cooldowns.png",
+      "bytes": 1215901,
+      "sha256": "a22bbe1d2f4f5d9119e18dd1d209c32544ab1f148d69bab55c0de65af024f0da"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/presentation/attempt-1/1440-earned.png",
+      "bytes": 1245247,
+      "sha256": "a6a7ea36cdce0365fe238941c4a8654e1cd300f93ec9103687047ed9dfd337db"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/presentation/attempt-1/1440-legacy.png",
+      "bytes": 1289051,
+      "sha256": "ff6a0d5f9babdff4761e2184253e32917e3928a811dcefb75bb2a485fe3dfe3a"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/presentation/attempt-1/checks.json",
+      "bytes": 4067,
+      "sha256": "8fe5b31a649d529f9697dec0e16299ae1ff8dbe9778d035c72e25bdd035b82b3"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/presentation/reviewed/1024-boss-finish.png",
+      "bytes": 536865,
+      "sha256": "f02db47ea06b14097d657449d301b0edad774eed85f3da201ddb53263cefae1b"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/presentation/reviewed/1024-boss-phase.png",
+      "bytes": 537435,
+      "sha256": "4670c75f897bd07b15010ae475da1aa4aa2e2f81d47d896c2039f0b840734bf0"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/presentation/reviewed/1024-cooldowns.png",
+      "bytes": 550678,
+      "sha256": "4e779ec4ed8b320a05b30ecf45cede833a531c9279e5ae9472557e659fef944f"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/presentation/reviewed/1024-earned.png",
+      "bytes": 605955,
+      "sha256": "b907525b64f69120371e2e4e9be9786f610b25a85c0218a4282f10f55d2855c4"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/presentation/reviewed/1024-legacy.png",
+      "bytes": 636576,
+      "sha256": "5b4abba22773d51ff022eb90ab955fb801f453c6842e8a9cb0d6acbf1733b6a2"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/presentation/reviewed/1280-boss-finish.png",
+      "bytes": 735997,
+      "sha256": "ab5533439abb19438fd52c4f3b6859bf04aa9c62afe28e78de85c973e58373f8"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/presentation/reviewed/1280-boss-phase.png",
+      "bytes": 739067,
+      "sha256": "72499c5ae0ae3083c7b4ccef10d4fcd4c56d0ce19cd1b5203279aa1378014417"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/presentation/reviewed/1280-cooldowns.png",
+      "bytes": 768584,
+      "sha256": "8fede22f7f8ccf6580ea82ff0e671d7e1effe25d0ce3537859d4eb0dcde905c9"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/presentation/reviewed/1280-earned.png",
+      "bytes": 844223,
+      "sha256": "43a539d366272c4719246d3e242645027d23c2dc8c226939bce4451c351776fe"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/presentation/reviewed/1280-legacy.png",
+      "bytes": 883020,
+      "sha256": "007ea53aaa5b499a7ba399e0a87477ed7df2f11f445bba96acd315a39846d822"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/presentation/reviewed/1440-boss-finish.png",
+      "bytes": 1115797,
+      "sha256": "6de7cebe1280d62392ec74672d58be48ecdcfc1e50fa1ee03bee9a122743d8ca"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/presentation/reviewed/1440-boss-phase.png",
+      "bytes": 1116450,
+      "sha256": "d849f7de45b56eb24e2ee5736f12ff5c31d69954f45a9e8eb33f6e905f0bb6ac"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/presentation/reviewed/1440-cooldowns.png",
+      "bytes": 1142250,
+      "sha256": "a3ff2cb20abcb277ac40f929cb70fc33c8c31cbacac329ed7ec5612c7318154a"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/presentation/reviewed/1440-earned.png",
+      "bytes": 1245247,
+      "sha256": "a6a7ea36cdce0365fe238941c4a8654e1cd300f93ec9103687047ed9dfd337db"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/presentation/reviewed/1440-legacy.png",
+      "bytes": 1289051,
+      "sha256": "ff6a0d5f9babdff4761e2184253e32917e3928a811dcefb75bb2a485fe3dfe3a"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/presentation/reviewed/checks.json",
+      "bytes": 4422,
+      "sha256": "cfa2dbd5c62940cb92efbf9213851e897ee62b407ae737ea42bf4193f9b5c22e"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/presentation/round-2/1024-legacy.png",
+      "bytes": 636576,
+      "sha256": "5b4abba22773d51ff022eb90ab955fb801f453c6842e8a9cb0d6acbf1733b6a2"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/presentation/round-2/checks.json",
+      "bytes": 1018,
+      "sha256": "533706bb7e578ae8c073e5ee90508b009ad5d71c9015306af0f5a0db4395b8a2"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/presentation/round-3/1024-boss-finish.png",
+      "bytes": 536865,
+      "sha256": "f02db47ea06b14097d657449d301b0edad774eed85f3da201ddb53263cefae1b"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/presentation/round-3/1024-boss-phase.png",
+      "bytes": 537435,
+      "sha256": "4670c75f897bd07b15010ae475da1aa4aa2e2f81d47d896c2039f0b840734bf0"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/presentation/round-3/1024-cooldowns.png",
+      "bytes": 550678,
+      "sha256": "4e779ec4ed8b320a05b30ecf45cede833a531c9279e5ae9472557e659fef944f"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/presentation/round-3/1024-earned.png",
+      "bytes": 605955,
+      "sha256": "b907525b64f69120371e2e4e9be9786f610b25a85c0218a4282f10f55d2855c4"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/presentation/round-3/1024-legacy.png",
+      "bytes": 636576,
+      "sha256": "5b4abba22773d51ff022eb90ab955fb801f453c6842e8a9cb0d6acbf1733b6a2"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/presentation/round-3/1280-boss-finish.png",
+      "bytes": 735997,
+      "sha256": "ab5533439abb19438fd52c4f3b6859bf04aa9c62afe28e78de85c973e58373f8"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/presentation/round-3/1280-boss-phase.png",
+      "bytes": 739067,
+      "sha256": "72499c5ae0ae3083c7b4ccef10d4fcd4c56d0ce19cd1b5203279aa1378014417"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/presentation/round-3/1280-cooldowns.png",
+      "bytes": 768584,
+      "sha256": "8fede22f7f8ccf6580ea82ff0e671d7e1effe25d0ce3537859d4eb0dcde905c9"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/presentation/round-3/1280-earned.png",
+      "bytes": 844223,
+      "sha256": "43a539d366272c4719246d3e242645027d23c2dc8c226939bce4451c351776fe"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/presentation/round-3/1280-legacy.png",
+      "bytes": 883020,
+      "sha256": "007ea53aaa5b499a7ba399e0a87477ed7df2f11f445bba96acd315a39846d822"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/presentation/round-3/1440-boss-finish.png",
+      "bytes": 1115754,
+      "sha256": "4d4b1ed471905479e435f2f6c74eec725ff3374f0ae3011380a4e63131b394d0"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/presentation/round-3/1440-boss-phase.png",
+      "bytes": 1116549,
+      "sha256": "cca8d7e9b53c3533bf59b6095c82244691db4025b29dcf024471ccd437ff2ea8"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/presentation/round-3/1440-cooldowns.png",
+      "bytes": 1142250,
+      "sha256": "a3ff2cb20abcb277ac40f929cb70fc33c8c31cbacac329ed7ec5612c7318154a"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/presentation/round-3/1440-earned.png",
+      "bytes": 1245247,
+      "sha256": "a6a7ea36cdce0365fe238941c4a8654e1cd300f93ec9103687047ed9dfd337db"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/presentation/round-3/1440-legacy.png",
+      "bytes": 1289051,
+      "sha256": "ff6a0d5f9babdff4761e2184253e32917e3928a811dcefb75bb2a485fe3dfe3a"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/presentation/round-3/checks.json",
+      "bytes": 4422,
+      "sha256": "91812344e6576830c104d1f3aeeccf03bf46dad5e29feba82c2972191456ad7d"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/publish.py",
+      "bytes": 4091,
+      "sha256": "58dabc4fba49a9888cc776016bc79fb32b559408221939126bf32edafb9ba9c1"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/startup/checks.json",
+      "bytes": 82687,
+      "sha256": "2778d45b7ebb457bbdf76328ba6782f88158804abce30850c4a2b7fc19af0458"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/startup/default-entry.png",
+      "bytes": 55034,
+      "sha256": "fa18fc9ee51b0c56429ee9dbc5dcbfaef73676ce3ce6db3135345ad2c9e58b8c"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/startup/default-onboarding.png",
+      "bytes": 136110,
+      "sha256": "36496ba5ad877d28806ad9e57f93131db3f97a4ae5fc1ecea9d601311250b5d0"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/startup/readiness-dom.json",
+      "bytes": 724,
+      "sha256": "0167cadb291b3cce299b8e77cff38ad5c9d6ff493696bc54784859b3b09eee80"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/startup/readiness.png",
+      "bytes": 54937,
+      "sha256": "f23a8f91f2f910262f0e3ce4a8f3da296a4bda4463195cb62da4a9c5fa6c19f5"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/startup-audit.py",
+      "bytes": 3151,
+      "sha256": "c59193b1df2d4e34976d3f8cc61d5fe560d4c3700de70ceeebdb10d5883944f3"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/startup-v2/checks.json",
+      "bytes": 82687,
+      "sha256": "7922dd547f032e2c80c366820c12d3dc2d8602bc2dfbc76773d7736265b8ee12"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/startup-v2/default-entry.png",
+      "bytes": 54942,
+      "sha256": "91e5bdbf88603b2e30f89bc1d97663590cff28c7bdc27d5ca47467e07dce13a2"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/startup-v2/default-onboarding.png",
+      "bytes": 97136,
+      "sha256": "172ccb8f077b9d276663a6c27755cdaf75d4ecb8ce24102e0d72df0197effd03"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/startup-v2/readiness-dom.json",
+      "bytes": 724,
+      "sha256": "0167cadb291b3cce299b8e77cff38ad5c9d6ff493696bc54784859b3b09eee80"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/startup-v2/readiness.png",
+      "bytes": 54941,
+      "sha256": "cb0d519b4c275b745ec2f57de3f82fdee17830db110fb0e041580b05d83df5e4"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/startup-v3/audit.json",
+      "bytes": 758,
+      "sha256": "94585b8f8191301da9a5896911e861d7383c20b3e81e39129fe295c476954409"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/startup-v3/build-receipt.json",
+      "bytes": 114438,
+      "sha256": "7245bfbb25cf57d44c464de7ba0f77090042f2fed28f7f8cc822ea05d6a1f3e4"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/startup-v3/checks.json",
+      "bytes": 82687,
+      "sha256": "d4bc5e670524f115b1b0009af55433a82dee8477141d78f44a558bdb9abb20e3"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/startup-v3/default-entry.png",
+      "bytes": 55031,
+      "sha256": "f7a17720f57926feed284c14b17b544fb3e27267116e2613de344333aca0d430"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/startup-v3/default-onboarding.png",
+      "bytes": 136110,
+      "sha256": "36496ba5ad877d28806ad9e57f93131db3f97a4ae5fc1ecea9d601311250b5d0"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/startup-v3/entry.txt",
+      "bytes": 27445,
+      "sha256": "db6cd814ecb3640e47c03c65812ecae16827f685c067ff2625b5d649933e95e1"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/startup-v3/readiness-dom.json",
+      "bytes": 724,
+      "sha256": "c7a975f9bdfaf1022cf8315ab41997afa8ccd239d230f9314b341feac5019085"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/startup-v3/readiness.png",
+      "bytes": 55014,
+      "sha256": "d4d4aaafd5bc786cc761f88eb064e5dd18e34ba9a8c9fdb7efb31be0430d1a18"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/trace-diagnosis.json",
+      "bytes": 20316,
+      "sha256": "5eb410833b8eda22075b06cf635ced2ddd0a1530b0069ba52c9955b475f7b48a"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/trace-diagnosis.py",
+      "bytes": 2594,
+      "sha256": "de407a0a1d6092f83ce893c8eacc993bebc4b612894724ebd65420ca47163d7c"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/validate.mjs",
+      "bytes": 2450,
+      "sha256": "af64ad4d51a757262ff69b492995d499b64013f1987b22b3a4fdb6ff2b0cbc05"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/validation-complete.json",
+      "bytes": 198,
+      "sha256": "2e82cb2199d286cc4cef32fca6a59872b054eecda0bca4c02ad8ef82bba62a4e"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/validation-start.json",
+      "bytes": 190,
+      "sha256": "ea43869a8fb8e4012b055af7b32e8ee774f25cf04317eda1d8b4c9491663712f"
+    },
+    {
+      "path": "reports/cardrpg-look/closure/write-report.py",
+      "bytes": 8242,
+      "sha256": "a840160fa8f32e6f613d1cb5ad7d48d281e22c4f5fd006272981bccaf98f823b"
+    },
+    {
+      "path": "reports/cardrpg-look/memory/HANDOFF.md",
+      "bytes": 98339,
+      "sha256": "4252065be34608af7e44a8203f90c73e27e05655943218c7011f6e22b5a8ed31"
+    },
+    {
+      "path": "reports/cardrpg-look/memory/STATE.md",
+      "bytes": 28198,
+      "sha256": "859558800690213f5c89d80abdadf8f8dc7bc64679967660ec7fc628d8c6e28c"
+    },
+    {
+      "path": "reports/cardrpg-look/validation/closure/build-resume.log",
+      "bytes": 21613,
+      "sha256": "6793c148410838abf6c4442bc2115825efaeda3c0c4a9eb931d0711df2cb786a"
+    },
+    {
+      "path": "reports/cardrpg-look/validation/closure/casts-clover/1280x720-dpr1-cpu1-high-clover-1.json",
+      "bytes": 45252,
+      "sha256": "6ff4defd400511a71eccb2d639926f9fd8ebb3d4423b09a13da5fc7786e616b8"
+    },
+    {
+      "path": "reports/cardrpg-look/validation/closure/casts-clover/1280x720-dpr1-cpu1-high-clover-2.json",
+      "bytes": 48112,
+      "sha256": "869fa34302f07e34f0fe181ed2099183dd093bfea3f7f74d913bb74a99ca485d"
+    },
+    {
+      "path": "reports/cardrpg-look/validation/closure/casts-clover/1280x720-dpr1-cpu1-high-clover-3.json",
+      "bytes": 46534,
+      "sha256": "7cec2221eb693274b9d7b8c7a3e071e636aafa89524981a65efcded9b36d6b12"
+    },
+    {
+      "path": "reports/cardrpg-look/validation/closure/casts-clover/1280x720-dpr1-cpu1-high-clover-4.json",
+      "bytes": 50066,
+      "sha256": "fa5c348c60d9863e8080902e4fc977f71c306c0789e281950aa85856b1250dac"
+    },
+    {
+      "path": "reports/cardrpg-look/validation/closure/casts-clover/summary.json",
+      "bytes": 33906,
+      "sha256": "e66a8d2b7ce50871c975379597efae4ede6316faf9e697e55e9ddf36fdd091e0"
+    },
+    {
+      "path": "reports/cardrpg-look/validation/closure/casts-mochi/1280x720-dpr1-cpu1-high-mochi-1.json",
+      "bytes": 45538,
+      "sha256": "3841f40cd2e9eabb6e88550f9ea4f46a426088d9226f14894a7aed2c78df6ab2"
+    },
+    {
+      "path": "reports/cardrpg-look/validation/closure/casts-mochi/1280x720-dpr1-cpu1-high-mochi-2.json",
+      "bytes": 46372,
+      "sha256": "3c33335a8de714f7b6fbfce64e6411abb2a89400f6e375f0563595946a835bcd"
+    },
+    {
+      "path": "reports/cardrpg-look/validation/closure/casts-mochi/1280x720-dpr1-cpu1-high-mochi-3.json",
+      "bytes": 47945,
+      "sha256": "795f38cdbff22a28370e23ef9aa62a58e324b315c826e9e14a45bac49d9d5196"
+    },
+    {
+      "path": "reports/cardrpg-look/validation/closure/casts-mochi/1280x720-dpr1-cpu1-high-mochi-4.json",
+      "bytes": 49801,
+      "sha256": "6fa91454b133c4ae98d568aa830eb1b9aa5f1e9f2eff6e483d85763559c050fd"
+    },
+    {
+      "path": "reports/cardrpg-look/validation/closure/casts-mochi/summary.json",
+      "bytes": 33771,
+      "sha256": "8efafceb212a79299c8d0b9a5b2d35a89c81a9833a96421b9fa20a5424e6f1cd"
+    },
+    {
+      "path": "reports/cardrpg-look/validation/closure/casts-soot/1280x720-dpr1-cpu1-high-soot-1.json",
+      "bytes": 46133,
+      "sha256": "43814c289c353ea480f24ef70e680fe60e6464c56d11a45f86683f67bed46a01"
+    },
+    {
+      "path": "reports/cardrpg-look/validation/closure/casts-soot/1280x720-dpr1-cpu1-high-soot-2.json",
+      "bytes": 46159,
+      "sha256": "1a469ea6166f7115a72378fe720f15ed8d45efddf4d8b7b0fd88738164bf0d48"
+    },
+    {
+      "path": "reports/cardrpg-look/validation/closure/casts-soot/1280x720-dpr1-cpu1-high-soot-3.json",
+      "bytes": 47458,
+      "sha256": "a358aa3d7e31355dd0446b063c0664af2a058abb967d9319d3ba20d9066dbd35"
+    },
+    {
+      "path": "reports/cardrpg-look/validation/closure/casts-soot/1280x720-dpr1-cpu1-high-soot-4.json",
+      "bytes": 50004,
+      "sha256": "e3fd64850346e1f08ea2995ddaf8d5b247cd92a6c486af2ba904c8ffde7bce3b"
+    },
+    {
+      "path": "reports/cardrpg-look/validation/closure/casts-soot/summary.json",
+      "bytes": 33775,
+      "sha256": "5139cbeb5fb3abdd1b96372bce1710c3ffb6a4bd51a68e0dd87e862316983bd7"
+    },
+    {
+      "path": "reports/cardrpg-look/validation/closure/cold-batch-1/1280x720-dpr1-cpu1-trace.json.gz",
+      "bytes": 33158660,
+      "sha256": "2df166e4dfabcae5d8228d28a30ea1fa32abf0e0bd5c40e33126a87454766887"
+    },
+    {
+      "path": "reports/cardrpg-look/validation/closure/cold-batch-1/1280x720-dpr1-cpu1.json",
+      "bytes": 154830,
+      "sha256": "9eb8884b5e1cc6b4a4738214711d4e23c545ecaaba1eb2b60032ce0fe38e524a"
+    },
+    {
+      "path": "reports/cardrpg-look/validation/closure/cold-batch-1/1280x720-dpr1-cpu4-trace.json.gz",
+      "bytes": 35287167,
+      "sha256": "d19466e51100cda28c963299e5d436b68398ede61402fb977e4ee843c9b0f9b0"
+    },
+    {
+      "path": "reports/cardrpg-look/validation/closure/cold-batch-1/1280x720-dpr1-cpu4.json",
+      "bytes": 194941,
+      "sha256": "aecc95abc4dec70c0f084fee09167bac3ead98ffb948a06b5b78778fdb7623e7"
+    },
+    {
+      "path": "reports/cardrpg-look/validation/closure/cold-batch-1/1280x720-dpr2-cpu1-trace.json.gz",
+      "bytes": 33188011,
+      "sha256": "9cf7a6b6262c1fc5bf67dcb2014e0f0426d864367bafb2a4b1381e704adf56a9"
+    },
+    {
+      "path": "reports/cardrpg-look/validation/closure/cold-batch-1/1280x720-dpr2-cpu1.json",
+      "bytes": 157672,
+      "sha256": "b87b90cb8354fc67bc6b7bb92144ad71921ba3e74d7757d5cb3ca679ce97fe44"
+    },
+    {
+      "path": "reports/cardrpg-look/validation/closure/cold-batch-1/1280x720-dpr2-cpu4-trace.json.gz",
+      "bytes": 34758490,
+      "sha256": "62b600ec2fb93dc2fd7be26e5d5c5f08f15cd7a2ab4aeb5ef43ce2edf07693d5"
+    },
+    {
+      "path": "reports/cardrpg-look/validation/closure/cold-batch-1/1280x720-dpr2-cpu4.json",
+      "bytes": 183451,
+      "sha256": "7df53ba68f31ac2a341b31c6d698eb39e5fb8fc28892b958715653bcf5c0e4b4"
+    },
+    {
+      "path": "reports/cardrpg-look/validation/closure/cold-batch-1/1440x900-dpr1-cpu1-trace.json.gz",
+      "bytes": 33381473,
+      "sha256": "0f6443593c11ae670a3a9e92e76b8390fd94549fa326e6647d51bacdefc37c94"
+    },
+    {
+      "path": "reports/cardrpg-look/validation/closure/cold-batch-1/1440x900-dpr1-cpu1.json",
+      "bytes": 147587,
+      "sha256": "22714cbe5662d41e841cec366099677ebf2d2af4ae1fa64df23d30a4f5adbd35"
+    },
+    {
+      "path": "reports/cardrpg-look/validation/closure/cold-batch-1/1440x900-dpr2-cpu1-trace.json.gz",
+      "bytes": 33273766,
+      "sha256": "693dc459dc4a275bfc75aaa63cb3b22958a631cbf56a5b49b6941aa807d62b01"
+    },
+    {
+      "path": "reports/cardrpg-look/validation/closure/cold-batch-1/1440x900-dpr2-cpu1.json",
+      "bytes": 153245,
+      "sha256": "90fce7abbdb1d363d69343ecd9634758ffeb106396cc3050bee4b4ad772bda33"
+    },
+    {
+      "path": "reports/cardrpg-look/validation/closure/cold-batch-1/summary.json",
+      "bytes": 31962,
+      "sha256": "45983be79bc2ccce7ecb55e2c97c62ee0777bac36731f071bc84034e4c7fc96b"
+    },
+    {
+      "path": "reports/cardrpg-look/validation/closure/cold-batch-2/2560x1440-dpr1-cpu1-trace.json.gz",
+      "bytes": 32898805,
+      "sha256": "d212eb3a71b55c812c6ab5b0ba022e35a0edbd28bef3124ce6e6ad07ebc9b6e5"
+    },
+    {
+      "path": "reports/cardrpg-look/validation/closure/cold-batch-2/2560x1440-dpr1-cpu1.json",
+      "bytes": 157910,
+      "sha256": "2f5df1c669c804946d05b17831958ee148312cdbcbfd0bcbf027885ac663e6f4"
+    },
+    {
+      "path": "reports/cardrpg-look/validation/closure/cold-batch-2/summary.json",
+      "bytes": 5712,
+      "sha256": "0ee866b34ce9a3b02273050ab02a51bc597e6c1a2389bbe9917ed9322fc29d08"
+    },
+    {
+      "path": "reports/cardrpg-look/validation/closure/e2e-resume.log",
+      "bytes": 81776,
+      "sha256": "6ae00365030cd4452e4609c6298f58b5b5456d8bac894aaa2731ec54ed4b83a0"
+    },
+    {
+      "path": "reports/cardrpg-look/validation/closure/flag-off/audit.json",
+      "bytes": 758,
+      "sha256": "94585b8f8191301da9a5896911e861d7383c20b3e81e39129fe295c476954409"
+    },
+    {
+      "path": "reports/cardrpg-look/validation/closure/flag-off/build-receipt.json",
+      "bytes": 114438,
+      "sha256": "329959534b74230835f77c4b9125843f7d8bd140d26976c54f592553f214a3f1"
+    },
+    {
+      "path": "reports/cardrpg-look/validation/closure/flag-off/checks.json",
+      "bytes": 82687,
+      "sha256": "6769c73fcdb93a355759aff73b8ad145c5e84c40caf5a465b65c51f6bc170787"
+    },
+    {
+      "path": "reports/cardrpg-look/validation/closure/flag-off/default-entry.png",
+      "bytes": 54933,
+      "sha256": "fefa8c395518b933f0a433d1b24aa87f6ef73ae56563c55cc1cd53ad3fd5b7dc"
+    },
+    {
+      "path": "reports/cardrpg-look/validation/closure/flag-off/default-onboarding.png",
+      "bytes": 97129,
+      "sha256": "e13264eab881d095b33718a4deea548006bbdd78d9350ec55e5fa6e811a5c1bc"
+    },
+    {
+      "path": "reports/cardrpg-look/validation/closure/flag-off/entry.txt",
+      "bytes": 27445,
+      "sha256": "018ef0414b086386f18eec5c5a859b58dccedefbde37b8f3ced285db64099899"
+    },
+    {
+      "path": "reports/cardrpg-look/validation/closure/flag-off/readiness-dom.json",
+      "bytes": 724,
+      "sha256": "9381449bda8e72c46809011a187dad710832752d0f6142d64c7a807a14681992"
+    },
+    {
+      "path": "reports/cardrpg-look/validation/closure/flag-off/readiness.png",
+      "bytes": 54984,
+      "sha256": "ad27a8930cc3bbde902440b644287ec8e1d1d78316655d27f19efa061d4a5944"
+    },
+    {
+      "path": "reports/cardrpg-look/validation/closure/lint-resume.log",
+      "bytes": 483,
+      "sha256": "421d2d313b129fadd56d04a3126764ce994826b2de3d874169a98faf9a156f4f"
+    },
+    {
+      "path": "reports/cardrpg-look/validation/closure/measurement-summary.json",
+      "bytes": 642,
+      "sha256": "a255c9e70d8a7a23af65f1eb3586c260368881c441f0d5b9f08b84f96769e69c"
+    },
+    {
+      "path": "reports/cardrpg-look/validation/closure/source-gates.json",
+      "bytes": 1018,
+      "sha256": "a4072d7df4239cb7d167a5dd7bc23152d01daf4890531c88bf470985d1953680"
+    },
+    {
+      "path": "reports/cardrpg-look/validation/closure/typecheck-resume.log",
+      "bytes": 553,
+      "sha256": "1b8aa470e522ca5610124a627deafb870c5c8407d30d09d4c09486f163a298c4"
+    },
+    {
+      "path": "reports/cardrpg-look/validation/closure/unit-resume.log",
+      "bytes": 3951,
+      "sha256": "69f9b7f83649b0b5e1a5c0de9fa6a059a378a8a6fabadc2cfce9b6c6c297eefe"
+    }
+  ],
+  "count": 721,
+  "bytes": 806391869
+}
