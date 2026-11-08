@@ -47,6 +47,7 @@ const audit={status:'PASS: contextual Equipment forecast UI; A5 balance acceptan
  limitations:['Original prototype browser receipts reused only after exact ON/OFF artifact byte equality.',
  'Synthetic UI fixtures do not establish earned progression. No account or combat rule changed.',
  'Contextual TRAIN samples overlap; static display calibration and fresh acceptance remain open.',
+ 'CPU4 is page CDP throttling; independent worker CPU throttling is not established.',
  'Scoped contrast and targeted captures are not the Z screenshot pack. No startup or retention claim.']};
 assert(audit.cpu1Under400ms);
 await writeFile(root+'/audit.json',JSON.stringify(audit,null,2)+'\n');

@@ -1,10 +1,13 @@
 # REFERENCE: display-context40. Reconstruct registered results without new combat samples.
 from pathlib import Path
-import hashlib, json, math
+import gzip, hashlib, json, math
 
 root = Path('reports/cardrpg-big/a5/b1/display-context-40')
-read = lambda p: json.loads(Path(p).read_text())
-sha = lambda p: hashlib.sha256(Path(p).read_bytes()).hexdigest()
+def raw(p):
+    path=Path(p)
+    return path.read_bytes() if path.exists() else gzip.decompress(Path(str(path)+'.gz').read_bytes())
+read = lambda p: json.loads(raw(p))
+sha = lambda p: hashlib.sha256(raw(p)).hexdigest()
 reg = read(root / 'REGISTERED-METHOD.json')
 result = read(root / 'results.json')
 partial = read(root / 'partial.json')
@@ -72,10 +75,17 @@ for chapter in [1,2,3]:
                          predictedNegative=sum(a < 0 for a in x),observedNegative=sum(b < 0 for b in y),
                          predictedTies=sum(a == 0 for a in x),observedTies=sum(b == 0 for b in y),
                          screen='PASS' if correlation is not None and correlation >= .6 else 'MISS'))
-receipt_paths = [root/'REGISTERED-METHOD.json', root/'results.json', root/'partial.json', reg['control']]
+# Lossless archive keeps full-build forecast keys without oversized Git blobs.
+archives=[]
+for name in ['results.json','partial.json']:
+    path=root/name; body=raw(path); archived=Path(str(path)+'.gz')
+    if not archived.exists(): archived.write_bytes(gzip.compress(body,compresslevel=9,mtime=0))
+    assert gzip.decompress(archived.read_bytes())==body
+    archives.append(dict(path=str(archived),sha256=hashlib.sha256(archived.read_bytes()).hexdigest(),rawPath=str(path),rawSha256=hashlib.sha256(body).hexdigest(),rawBytes=len(body)))
+receipt_paths = [root/'REGISTERED-METHOD.json', reg['control']]
 audit = dict(status='PASS: receipt consistency',screen='PASS' if all(c['screen']=='PASS' for c in chapters) else 'MISS',
              chapters=chapters,cases=cases,uniqueForecasts=len(cache),newAuditCombatSamples=0,
-             receipts=[dict(path=str(p),sha256=sha(p)) for p in receipt_paths],
+             receipts=[dict(path=str(p),sha256=sha(p)) for p in receipt_paths],archives=archives,
              limitations=['Forecast TRAIN1–20 overlaps outcome TRAIN1–50. This is not independent validation.',
                           'This contextual forecast does not calibrate the static utility display.',
                           'No acceptance seeds or production combat changes. No UI adoption is automatic.'])
@@ -89,7 +99,7 @@ All384 original fourth-slot cases and50 gear rolls per case are retained. Each f
 |---|---:|---:|---:|---:|---|
 {table}
 
-Registered diagnostic screen: **{audit['screen']}**. The forecast samples overlap the outcome samples: this supports only TRAIN exploration, never acceptance or a calibrated probability claim. The existing static display gate remains open. Every negative prediction and outcome, including zero ties, is retained in audit.json and results.json.
+Registered diagnostic screen: **{audit['screen']}**. The forecast samples overlap the outcome samples: this supports only TRAIN exploration, never acceptance or a calibrated probability claim. The existing static display gate remains open. Every negative prediction and outcome, including zero ties, is retained in audit.json and the lossless results.json.gz archive.
 
 No production score, budget, fixture, combat or acceptance seed is changed. A contextual UI still needs worker cancellation, transfer, cache, CSP and latency verification. FullTRAIN500 and fresh registered acceptance remain required for a calibrated score claim.
 ''')

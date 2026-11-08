@@ -16,6 +16,10 @@ assert.equal(execFileSync('git',['diff','--name-only','994d84056','--','apps','p
 const reg=await json(root+'/REGISTERED-UI.json'),clarification=await json(root+'/test-fixture-clarification.json');
 const correction=await json(root+'/source-correction-1.json');
 for(const [p,h]of Object.entries(reg.paths))assert.equal(sha(await readFile(p)),correction.paths[p]??(p===clarification.path?clarification.sha256:h),p);
+for(const name of ['fixtures.mjs','browser.mjs','build-sandbox.mjs']){
+ const executed='tools/cardrpg-big/a5-drafts/equipment-forecast-41/'+name;
+ assert.equal(sha(await readFile(executed)),reg.paths[prep+'/'+name],executed);
+}
 const workerReg=await json(root+'/REGISTERED-WORKER.json');
 for(const [p,h]of Object.entries(workerReg.paths))assert.equal(sha(await readFile(p)),h,p);
 const artifacts=[],browsers=[],captures=[],timings=[];
@@ -54,6 +58,6 @@ assert(latency.some(r=>r.cpu===1)&&latency.some(r=>r.cpu===4));
 const audit={status:'PASS: isolated prototype behavior; not production adoption or balance acceptance',production:'994d84056',artifacts,browsers,captures,workers,latency,
  cpu1Under400ms:latency.filter(r=>r.cpu===1).every(r=>r.elapsedMs<=400),cpu1MaxMs:Math.max(...latency.filter(r=>r.cpu===1).map(r=>r.elapsedMs)),cpu4MaxMs:Math.max(...latency.filter(r=>r.cpu===4).map(r=>r.elapsedMs)),
  minimumScopedContrast:Math.min(...captures.flatMap(c=>c.contrast.map(r=>r.ratio))),receipts,
- limitations:['Synthetic UI fixtures are not earned progression or a balance sample.','Contextual40 remains separate; its overlapping TRAIN samples do not close static display calibration.','No source adoption, full source suite, OFF population rerun, startup improvement, Z screenshot pack or human playtest claim.']};
+ limitations:['Synthetic UI fixtures are not earned progression or a balance sample.','Contextual40 remains separate; its overlapping TRAIN samples do not close static display calibration.','CPU4 applies page CDP Emulation.setCPUThrottlingRate. Worker CPU throttling is not independently established; these are page-throttled delivery observations.','No source adoption, full source suite, OFF population rerun, startup improvement, Z screenshot pack or human playtest claim.']};
 await writeFile(root+'/prototype-audit.json',JSON.stringify(audit,null,2)+'\n');
 console.log(JSON.stringify({status:audit.status,captures:captures.length,cpu1Under400ms:audit.cpu1Under400ms,cpu1MaxMs:audit.cpu1MaxMs,cpu4MaxMs:audit.cpu4MaxMs,minimumScopedContrast:audit.minimumScopedContrast}));
