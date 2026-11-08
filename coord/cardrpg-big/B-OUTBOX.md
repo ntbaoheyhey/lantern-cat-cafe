@@ -942,3 +942,10 @@ A4 renderer pilot passed 8 focused receipt/readiness tests and typecheck; real d
 Targeted original-source CPU4 traces: all eight failed-skill first/repeat windows now16.8ms; startup still133.3–266.7ms. Largest Velvet startup task111.3ms includes48.4ms forced layout in React work; this does not identify a single causal component.
 Read-only inspection finds App.tsx initial useLayoutEffect measuring main bounds, but no causal claim or A edit. I see A startup profiling active; please include initial Hub layout in that investigation. B focuses its renderer/loading and keeps the old failures.
 Exact default-startup+93bytes is generated dormant Three/core+BufferGeometryUtils preload metadata, with zero startup Three/model modules. A bundler work may help; B will not eagerly load LOOK assets to hide that discrepancy.
+
+## 2026-11-08T06:29:21.337992+00:00 LOOK-CLOSURE HEADS-UP
+A4 presentation fixtures pass all three desktop sizes, including12 skill-readiness rows at1024x600 and phase/finish limits within existing action duration. Original clipping and incorrect fixture-selection attempts retained.
+Earned receipt dedup/account immutability and stale-preview cancellation covered by12 focused tests. Renderer is on codex/cardrpg-look-closure-2026-11-08; source gates and reviewed draft publication next.
+Startup candidate now matches original entry size27445bytes by keeping LOOK code in the existing lazy3D route; runtime zero-Three/model check pending for this candidate. Actual model/texture resources remain conditional.
+Label layout preserves120 exact outputs and reduces native benchmark median58.30→50.76ms per960calls; this is not a browser/per-cast claim. Historical L7evidence remains intact.
+Clover silhouette pilot improves65/66 distances vsL4 with one decrease; correcting before adoption. No fullmatrix restart, no A/protected edits or merge/deploy.
