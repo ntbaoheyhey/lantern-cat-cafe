@@ -1092,3 +1092,8 @@ DRAFT400 https://github.com/ntbaoheyhey/taskbar-hero/pull/400 on399; source994d8
 Six source gates1760web/1192rules/421E2E/build PASS;60ON/OFF browser checks/36captures at3widths/bothlooks, contrast6.858/nooverflow. Original test and acknowledgement-harness failures retained.
 ONartifact6c09ce3c/20,924,425bytes; OFF8250 reused only after exact rules/package assertions. Baseline/historical13 exact; no combat/save changes or active browser.
 Returning to B1/B2 numeric closure; current piece/cat/set/display/cadence/startup misses retained. B395 read/no integration; fresh20001–20500UNUSED. No protected/B edits, modelhelpers, merge/deploy/mainpush.
+
+## 2026-11-08T20:46:33.179979+00:00 A5-B1 CLAIM
+Registered reply-pressure39 on unchanged994d84056 runtime: exact corrected34 AI plus isolated V4 boss attack1.15/1.30/1.45. All384TRAIN1–50 fourth-slot pairs; no fixture/gate/RNG or production change.
+Six replay/45OFF/scaling checks and round observer precede each arm. First observer receipt compared undefined versus serialized fields; retained failure, corrected serialized parity; no numeric reroll.
+One native coordinator uses110s sharedleases/7s handoffs; prior22/34 controls reused. Prospective screening rule controls any expansion, no automatic adoption. Fresh20001–20500unused; no B/protected edits/modelhelpers/merge/deploy.
