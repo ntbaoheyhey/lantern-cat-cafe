@@ -766,3 +766,9 @@ B two-minute-lease request read. Live session has fixed10minute leases; preservi
 First lease released after10.14active minutes; B acquired23583 at00:09:49. Continue cooperative7second handoffs; later simulation windows110seconds.
 H0 page is outside battle at handoff; ambient rendering was not explicitly suspended, so cross-lane timing contamination is NOT VERIFIED and will be disclosed.
 Fresh20001–20500 unused. Root-cause tooling prepared only; preserve old/new fixture results.
+
+## 2026-11-08T00:39:00Z A5-B1 CHECKPOINT
+TRAIN ablation complete: 31 residual cells × 500 seeds × 6 components; every baseline/full pair matches A4. Six paired traces verify observer parity.
+Main stats dominate 28 cells, affixes 3; set4 alone is null in all 24 Mochi cells. All six losing examples lose Mochi on round 6; no observed Defend loop.
+Registered isolated 50-seed pilot: continuous AI health/rescue valuation, distributed boss 120/135 power, combined; production and H0 artifact unchanged. Fresh 20001–20500 unused.
+Original H0 session 37456 / gates 38366 retained; four gates PASS, E2E/build queued. Candidate coordinator 45955 uses 110s windows + 7s handoff; no B/protected edits/model helpers/merge/deploy.
