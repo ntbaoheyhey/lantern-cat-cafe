@@ -2,7 +2,7 @@
 ## NOW
 C1 Settings closure PASS on dc60280cf: six source checks,21targeted captures/ON+OFF/3widths/player+reviewer+Look, contrast6.858/nooverflow. Artifactf27ff7dc/20,923,753bytes. No A browser or simulation active.
 ## NEXT
-Publish Settings DRAFT stacked on Home398. Continue A5 numeric balance/display and player progression clarity; B1/B2/startup/Z remain open. Original30minute cadence749.2s/dead907.7s MISS; fresh20001–20500 UNUSED.
+Settings DRAFT399 published on Home398 at d693705ff. Continue A5 numeric balance/display and player progression clarity; B1/B2/startup/Z remain open. Original30minute cadence749.2s/dead907.7s MISS; fresh20001–20500 UNUSED.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -264,3 +264,5 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - 2026-11-08T20:23:58.075280+00:00: Published DRAFT398 https://github.com/ntbaoheyhey/taskbar-hero/pull/398 on397; evidence7609492b5, source/checks unchanged. All elapsed misses retained. No A browser/sim remains; B395 read, no integration.
 
 - 2026-11-08T20:32Z: resumed Settings original source/UI jobs without duplication. All six source gates1754web/1192rules/421E2E/build pass on dc60280cf. Before-browser attempt2 exposed import returning Home; original script/log preserved, attempt3 reopens Settings and passes. All21ON/OFF/player/reviewer/Look captures and save roundtrips pass, contrast6.858. Independent closure verifies every original log, rules hash, OFF8250/package diff, unchanged Relics/Evidence and baseline/historical13. No source retune or fresh acceptance. Reviewer discovery-card overlap disclosed.
+
+- 2026-11-08T20:34Z: DRAFT399 verified on398 at d693705ff; source and all Settings receipts unchanged. Full21capture contact sheet personally inspected. Next independent C1 clarity issue: Companion level/star buttons spend without showing cost or expected stat/skill changes; prepare a V4-only public-command preview and keep OFF exact. No combat/acceptance mutation.
