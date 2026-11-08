@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-Prepare44 exact prototype adopted after18scenario checks/18captures plus2oldcaptures and2real-worker checks PASS. Three widths/both modes/looks, contrast6.858/nooverflow; formation/Fight visible. Full six source gates and exact ON/OFF rebuild PASS firstattempt; source-bound audit complete. Home43 DRAFT402 published.
+Prepare44 DRAFT403 published on402; sourced8eebe8c7/evidence5453dafac. All six firstattempt gates and prototype/adoptedON/OFF exact;18UIscenarios/18captures plus2before/2worker checksPASS. Original Home02 cadence/dead-timeMISS unchanged. Read-only opportunities45 complete.
 ## NEXT
-Publish Prepare44 draft on402; retain original Home02 cadence/dead-time MISS. Investigate capped currencies/six rewarded routes and selected-cat-only growth in the retained late session before proposing a cadence change. B1/B2/static-display/startup/Z remain open; fresh20001–20500 UNUSED.
+Implement/test staged star-plans46 on a new branch after403: show capped supplies and named legal same-band crew choices for the next job star. No adoption before units/browser/earned-star evidence. Original45 diagnosis7legal swaps and2affordable upgrades; no win/cadence claim. B1/B2/display/startup/Z remain open; fresh20001–20500 UNUSED.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -312,3 +312,5 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - 2026-11-08T22:22:47.639688+00:00: Prepare44 prospective prototype and native worker checks passed firstattempt; no UI/runtime corrections. Adopted exact two registered source files after personal3width review. Forecast stale results ignored, actual worker CSP denial retains placement/Fight. Original capped late-save inspected:6rewarded routes,420fish/90threads/360stamps/6essence earned,49stars,levels8/1/1. No numerical retune or acceptance sample.
 
 - Prepare44 closurePASS: original six gates1771web/1192rules/421E2E/build; adoptedON/OFF byte-exact to prototypes; original OFF8250 and baseline/historical13 verified by exact sources. No rerun of passed checks. Diagnosis45 independently confirms capped retained account and7legal one-seat four-mark crews; Soot/Clover each have affordable25fish/2threads levelups. Proposed star-plans46 files are staged only, not runtime or measured cadence.
+
+- 2026-11-08T22:27:50.824804+00:00: Published DRAFT403 https://github.com/ntbaoheyhey/taskbar-hero/pull/403 on402; original evidence unchanged. No active browser or heavy A job. Read-only45 and prospective46 remain separate from shipped runtime.
