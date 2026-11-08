@@ -911,3 +911,10 @@ Registered anchored03 preserves bands1–5/10–50 exactly; original90 day7 pilo
 Fresh90-account45-day anchored replay and original TRAIN1–50 matrix run in bounded leases. Paired progression reporter keeps early regressions visible.
 B1 encounter-spread07 is a registered TRAIN-only causal diagnostic on prior weight2/sig100: fixed gear-independent seeded boss pressure; original kits/gear/AI unchanged. No production adoption.
 Fresh20001–20500 UNUSED; no B/protected edits, model helpers, merge or deploy. Existing B requests unchanged.
+
+## 2026-11-08T09:54:39Z A5-B3 CHECKPOINT
+Original linear/anchored earned coordinators preserved, no reruns. Linear fresh90 day7 casual18/30,regular22/30 firsttwo,heavy22/30first; one heavy loss lacks advice. Earlier day5 regression remains visible.
+Anchored fresh90account45day replay still active, no production adoption. Its25/27/26 pilot numbers are old-snapshot results only.
+Registered spread50008 extends BOTH prior spread07 variants on the same384 fourth-slot cells; first50 prefixes exact, only51–500 new. Original pilot screening rejection retained; actual12pp gate unchanged.
+Registered original-rule common-fixture calibration01: same role-kit and8scenes, fixed enemyHP/attack grid,TRAIN1–500. Diagnose saturated nonboss versus boss fixture mismatch before any proposed revision.
+Fresh20001–20500 UNUSED; no B/protected edits, model helpers, merge or deploy. Existing B requests unchanged.
