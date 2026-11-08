@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-Advice29 source e14d320ed fully verified: six gates1746web/1192rules/421E2E/build; OFF8250 exact; original-loss fallback and earned Mallow1→5 swap pass3widths/bothlooks24captures. Same-band90records exact, no population benefit. Published DRAFT397 on396; evidence18da2ac96.
+Home closure PASS: six source checks,30targeted captures/3widths/bothlooks, minimum contrast6.858; artifact6854ef89/20,923,697bytes. Original engagement01 COMPLETE30.05minutes/51captures; cadence749.2s and dead907.7s remainMISS. No active old browser or simulation.
 ## NEXT
-Reference30 completed4000TRAIN:6scenes exact, scene4 262→499/500 andscene5 288→242; median57.8% so no automatic recalibration. Investigate changed support scenes, preserve negatives. B1/B2/display/cadence/startup/Zopen; fresh20001–20500UNUSED.
+Home DRAFT398 published on397 at7609492b5. Continue isolated C1 reviewer-only Settings grants37. B1/B2/display/startup/Z remain open; fresh20001–20500 UNUSED.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -238,3 +238,27 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - 2026-11-08T19:20:20.430366+00:00: Resumed original advice29 coordinators without reruns; six source gates/OFF/UI closurePASS. Personally inspected baseline1280trainedResult, baseline1440fallback andlook1024Prepare. Reference30 registered snapshot sampled4000TRAIN once; six scenes exact,324improved/133worsened, median57.8%, mean61.675%. Receipt-audit attempt1 used wrong historical digest serialization; corrected attempt2 retains original script/error and no simulation rerun. No combat/acceptance/B change.
 
 - 2026-11-08T19:21:27.397588+00:00: DRAFT397 verified at18da2ac96 on396; six source checks and24UIcaptures unchanged. No duplicate PR or test rerun. Mirror state/report to ledger and append coordination checkpoint.
+
+- 2026-11-08T19:26:56.009826+00:00: Reference30/31 audited: old enemyAct reproduces4,000calibration outcomes exactly; utility suppression reproduces allcurrent reference outcomes; credit eligibility leaves those outcomes exact. Scene4+237/-0,scene5+87/-133. Five explanatory cases×3arms replay exactly; no production tuning. First isolatedbuild failed before samples due missingtransitive dependencies; exact copies/hashmanifest andfailure retained. Median57.8%, no automatic recalibration.
+
+- 2026-11-08T19:30:50.231582+00:00: resumed latest handoff; no active A workers or duplicate jobs. Registered32 before samples: all legal actions in the first-fatal round of six existing24 traces. Tests whether immediate-action valuation overlooks an available survival choice before another pressure retune. Production unchanged; fresh20001–20500 unused.
+
+- 2026-11-08T19:34:57.267000+00:00: fatal-choice32 complete120alternatives/18decisions/6examples; selected full hashes and all alternate replays exact. First JSON-vs-undefined parity failure retained. Reply33 full-value projection registered,45OFFexact/6replays/18prefixes/immutablelegalPASS. Its90same-band saved inputs give heavy30/30 and one missing advice: fails. Source observer additionally proves a single surviving-party sentinel can die and advance a projected round15→16. No adoption. Original33 matrix kept intact;34 registers all-living-party queue guard and independent complete regression before samples.
+
+- 2026-11-08T19:45:31.694405+00:00: Original33/34 independently audited, both0piece misses but364/384before and384/384after saturated;18/24tiersteps,heavy30/30,one unavailable advice. Both rejected. Emergency35 preserves original ranking unless strictly fewer queued-reply casualties;6full/18prefix/45OFF plus observer parityPASS (2/6wins). Original matrix/cohort active; no production mutation. Registered30minute engagement01 from exact current e14d320ed/4b15da6d, source/archive/script hashes, explicit H0 UI adaptations and frozen browser handoffs. One original browser coordinator only; no acceptance/B/protected change.
+
+- 2026-11-08T19:46:52.648936+00:00: Emergency35 complete1321TRAIN50/90same-band saves. Independent source/script/input/outcome auditPASS, but96piece misses/worst40pp,172before/171after saturated,cats67.70–91.76%,sets85.50–93.50%,heavy30/30,two unavailable advice. Rejected; runtimeunchanged. Original30minute engagement01 browser active (tool65238), no duplicate sampling.
+
+- 2026-11-08T19:56:08.300111+00:00: resumed existing engagement01 and display36 processes without duplicates. Personally inspected Cafe/result captures: after opening, Home still recommends the completed practice and sends primary action to Team; all-recorded-stars fallback incorrectly asks for first star. Separate E2 Home source starts next unlocked route at selected band, preserves active route, and names unfinished star location. Original elapsed artifact/source remain immutable. No combat/acceptance/B/protected change.
+
+- Display36 completed/audited320registered models,384existingTRAIN50cells/6400gear rolls, zero new combat. Best minimum chapterrho0.497718 versus target0.6; no passing model. Original0.644/0.547/0.432retained; shared rawPower gear budget unchanged. Home sourcea8016fc5b/testd305ae33f awaiting focused gate, original engagement browser continues separately.
+
+- 2026-11-08T20:04:24.508502+00:00: resumed Home/engagement work from latest source, not obsolete stop handoff. Original30minute browser and all registered hashes preserved. Home six-source-gate tool92644, targetedUI36284 queue under sharedlock; fixtures/build/threewidths/bothlooks have separate retained attemptlogs. OFF will reuse original8250 only after all rulehashes/package diff prove exact. B395 outbox refreshed, remote397DRAFT verified; no B integration/acceptance/source mutation.
+
+- 2026-11-08T20:10:08.302895+00:00: Home six gates complete firstattempt PASS1750web/1192rules(+2expectedfail/11skip)/421E2E/build on source d305ae33f; no runtime change. Originalfixture attempt1 failed a harness-only importSave return-type assertion before browser/build. Original script/log retained; corrected2117c8ee7 verifies exact export/import code. OriginalUI retry22811 queued, no duplicate browser samples. Engagement original thirdlease active,20.55minutes at priorcheckpoint. Separate reviewcontrols37 stagedONLY in/tmp: fouroffline grants remain visible in ordinarySaveSettings; fix waits Home closure.
+
+- 2026-11-08T20:17:01.309140+00:00: resumed exact Home/engagement jobs, no reruns. Verified six firstattempt source checks1750web/1192rules/421E2E/build. Original corrected fixture retry is queued behind original elapsed browser. Staged reviewcontrols37 remains unadopted until Home closure; do not touch protected Relic fixture paths.
+
+- 2026-11-08T20:22:25.489658+00:00: Home source-bound audit PASS after retained gradient/readiness harness correction; all30 captures/zerooverflow/primaryvisible/contrast6.858. Original engagement browser completed30.05active minutes,32encounters/70meaningful offers/20rewards/11celebrations. Largest gap749.235s,combat907.67s vs896.67H0: cadence/deadtimeMISS. Fixed policy levelsMochi8/Soot1/Clover1 and repeatsChapter1; no causal Home benefit claimed. No runtime/acceptance/B change.
+
+- 2026-11-08T20:23:58.075280+00:00: Published DRAFT398 https://github.com/ntbaoheyhey/taskbar-hero/pull/398 on397; evidence7609492b5, source/checks unchanged. All elapsed misses retained. No A browser/sim remains; B395 read, no integration.

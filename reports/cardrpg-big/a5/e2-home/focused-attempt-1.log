@@ -1,0 +1,15 @@
+{"lock":"acquired","lane":"A","pid":62689,"startedAt":"2026-11-08T19:56:08.472Z","task":"A5 Home focused regression"}
+
+> @taskbar-hero/web@0.0.0 test /Users/bao/taskbar-hero-cardrpg-a4/apps/web
+> vitest run src/game/cardrpg/depth/HomeV4.test.tsx
+
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-a4/apps/web
+
+
+ Test Files  1 passed (1)
+      Tests  4 passed (4)
+   Start at  03:06:12
+   Duration  920ms (environment 52%, transform 18%, import 16%, tests 14%)
+
+{"lock":"released","pid":62689,"task":"A5 Home focused regression"}

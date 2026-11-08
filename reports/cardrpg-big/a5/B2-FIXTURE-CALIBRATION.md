@@ -62,3 +62,7 @@ Both Emberfelt set effects require its carrier to apply Scald: extending Scald d
 The next diagnostic must compare sets on a single named carrier with an eligible kit, while holding that context's allies, remaining gear, stats budget and enemies fixed across all eight sets. Contexts must be declared before sampling and include both favorable and unfavorable situations; no best-case-only aggregate or acceptance replacement is authorized by this audit. Old homogeneous-kit results stay visible. The numeric thresholds are unchanged, and fresh20001–20500 remains unused.
 
 [Registration](b2/set-activation-11/REGISTERED-METHOD.md) · [raw64cells](b2/set-activation-11/results.json) · [audited summary](b2/set-activation-11/summary.json). Gear-trigger counts are incomplete for permanent modifiers and must not be relabelled as total causal contributions.
+
+## Current-source transport and mechanism
+
+[Reference30](b2/current-reference-30/RESULTS.md) retains500TRAINseeds per scene and the original overrides. Six scenes are exact; Spool Ram/Button Guard262→499wins and Teacup Healer/Kettle Knight288→242. Mean61.675%,median57.8%; no recalibration. [Mechanism31](b2/reference-mechanism-31/RESULTS.md) isolates the adopted Hush suppression branch with4,000exact restored outcomes,8,000diagnostic samples and15replays. Removal of replacement attacks accounts for all reference changes; the later credit correction has no reference-outcome effect. Every negative pair stays visible. This does not close cat/set/crew gates or justify a blanket difficulty change.

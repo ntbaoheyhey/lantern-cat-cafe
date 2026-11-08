@@ -1,0 +1,1589 @@
+{
+  "method": "TRAIN 1–50. Original fixtures, no acceptance or gate changes. Paired intervals are normal approximations, not Wilson intervals. Display correlation is Spearman with average tied ranks.",
+  "source": {
+    "packages/game-rules/src/cardrpg/battle.ts": "cf2b02d5cf0d193d7395be8f736e2e4b8dd9cbed6264e37a5d46f2306da393a5",
+    "packages/game-rules/src/cardrpg/catalog.ts": "3a0e7ec530f4d8f4aa5b6bcffc665f6226fb1aafe36b9854c1999b7aedd87145",
+    "packages/game-rules/src/cardrpg/commands.ts": "cb8320136dc7663ced7f2b29b6e107cb1087188e00ef38228d71314d27ca3f7c",
+    "packages/game-rules/src/cardrpg/config.ts": "c3a7f68aac65c19158e3cfe20c0c28ab08b50b0f6da657b2f81bb9db91c088c3",
+    "packages/game-rules/src/cardrpg/contract.ts": "40ffcc72d23ac5ddbf2bf7c3babf48339afcfd7ccf04c0f4c7fed5e3b68d36f0",
+    "packages/game-rules/src/cardrpg/depth/auto-extras/index.ts": "2524db42d4c481b87340d9c0470f99f72b8d418db38a24e5344c0edca35653eb",
+    "packages/game-rules/src/cardrpg/depth/auto-extras/runner.ts": "0fc20f25d2e4523d761700081bd4556cbbe8350ea276e4cf6186e84586a94ee9",
+    "packages/game-rules/src/cardrpg/depth/battle.ts": "2fe5222e7422ba3c14ce41826fc6ada60c5f66a20ffb0764a4032cde2407e31b",
+    "packages/game-rules/src/cardrpg/depth/boons.ts": "0edbee3debfc189081a89b9d6e3a502a42f8b12b0cd5fcab3219cbe491c5943e",
+    "packages/game-rules/src/cardrpg/depth/bridge.ts": "c3ae46cae953c2421a550a4d2ca370618b7d73b13a0eee8bce644c09d78dcaf4",
+    "packages/game-rules/src/cardrpg/depth/catalog.ts": "1220e3ca2053777cf694a91d75f99d10c1e2522b4896ded689c772fe8d09d8d6",
+    "packages/game-rules/src/cardrpg/depth/contract.ts": "0de99399fcc8924d0f9269a59a9e5c73b81140041dca5082b9ead5bdc06a2c03",
+    "packages/game-rules/src/cardrpg/depth/editions-v4.ts": "dde57882b2d3752b341fa6512ed2909405c80688ba5ba9c95eb05689f9ec4eba",
+    "packages/game-rules/src/cardrpg/depth/equipment-v4.ts": "5b244c29a63ea2a764d17030481f9fb4dd1a53055f893d8cc1f3bf78d36a7ed8",
+    "packages/game-rules/src/cardrpg/depth/equipment.ts": "5b1a98044c772dfad104cf06a137df8ec84263a6e41cf2bd37703aaafe2e6347",
+    "packages/game-rules/src/cardrpg/depth/events-v4.ts": "28bf81e222fef0e749a93d280e1b3e9440fa55e66019a53a8c541755426bfa47",
+    "packages/game-rules/src/cardrpg/depth/forecast-key-v4.ts": "371eb851fc09a205e4d28912b1db5892c0d1c67b78ece9d6e83636665dc42f68",
+    "packages/game-rules/src/cardrpg/depth/forecast-v4.ts": "dc9f96becc2191d01fd2802d183e55f2b36496a2ea62b77d971d964c7a56a25e",
+    "packages/game-rules/src/cardrpg/depth/gacha-v4.ts": "17f6ed915e15e546dad0ff9ac76df6d71f067018fd30250a1b98b37a25651a84",
+    "packages/game-rules/src/cardrpg/depth/gameplay-v4.ts": "5ed0a46b1d3bde886ee0546818892141b2a3f2871c5197de803eaa4b89fecafa",
+    "packages/game-rules/src/cardrpg/depth/index.ts": "c5f407d8f1d606a97eff6026033eedd728455341ff955ff78eda587e0f297b1b",
+    "packages/game-rules/src/cardrpg/depth/items-v4.ts": "26b811082f641a212be65167e9396ddaf4bfe3e10bc25037e3e3cb1fadfaf822",
+    "packages/game-rules/src/cardrpg/depth/journey-v4.ts": "bfcfb3c2806801a630f9579b4ea52c7f23f4f9d3374c52b6197714a59d4c7726",
+    "packages/game-rules/src/cardrpg/depth/loadouts-v4.ts": "23b13eaecf5c93ae9950618927484ac06c5e5f3c06c98284567586bc9754c47d",
+    "packages/game-rules/src/cardrpg/depth/meta-v4.ts": "e9abcb01fa100412bc8c58e9b2431850b1f6fb48fe547e7802dda010d9ce67f8",
+    "packages/game-rules/src/cardrpg/depth/onboarding.ts": "ff6b7b0d1690941e9e5b65c003fe362cd19b44050a9bc75bd2f06f0c56a27d6d",
+    "packages/game-rules/src/cardrpg/depth/outcome-v4.ts": "165847a74706015cb810fefde40e7fa6c1eb06ebedfe350e490ae2f174f3faf8",
+    "packages/game-rules/src/cardrpg/depth/pacing-v4.ts": "96b99f838a8bbcd255a00917d480584797811d8c00cbd8593c824a17f3d04ec3",
+    "packages/game-rules/src/cardrpg/depth/policies.ts": "3b73e10ad3093bd97e0d929f393ba69799a02fa975fb6b2a87d8f1af19e4050b",
+    "packages/game-rules/src/cardrpg/depth/recommendation-v4.ts": "fda82fae0951fb0707cc596a8f0017d871f86b8832cd8e6d277dba899b966886",
+    "packages/game-rules/src/cardrpg/depth/run-bot.ts": "a6ae62c38c318f36b5043e23b96ccce4cf97789c173579b96e87b95bf61a9753",
+    "packages/game-rules/src/cardrpg/depth/run.ts": "5447d51bc9800308e3afa3fbf0f519c35352d33fd35bc59569a5ea4ea1fcd80f",
+    "packages/game-rules/src/cardrpg/depth/save.ts": "ba164c85ad6218381c3397a13904838b2f5081bfade3ab0a5c0f508c3288c072",
+    "packages/game-rules/src/cardrpg/depth/scarcity.ts": "f13fbea286d49d6cff2eb69b7c501bc4284fa0dc07b633a2f99975380db5e461",
+    "packages/game-rules/src/cardrpg/depth/scouting-v4.ts": "86220991f828ca1046a5f4ce348849e51f1875152b56364ded06fbe39f9f79d3",
+    "packages/game-rules/src/cardrpg/depth/stars-v4.ts": "5738c85159ed38eabb77239b1bb50cc9c9f6265bd5168c42b3c0f5212957d610",
+    "packages/game-rules/src/cardrpg/depth/state.ts": "476f0bc2839bf69db1e7013adbc007041dbadf095b07f7f6e12babbd283cf3da",
+    "packages/game-rules/src/cardrpg/equipment.ts": "c72b84c5961ea3073eea7ed1fc061f6171329a0982834883e5f34e8a0786f597",
+    "packages/game-rules/src/cardrpg/fixtures/index.ts": "0627a3f89483eee71ff5ccedc2df355cd6530f38ffa0b8e1682720698dc29390",
+    "packages/game-rules/src/cardrpg/gacha.ts": "ace3b76900607785f8a26dc95619bc4411e5cd79491075c37503bf10efa9e09a",
+    "packages/game-rules/src/cardrpg/index.ts": "06d7a8244835dc11ed7908101a312b5b94ec0329924bc4230c671b001725934b",
+    "packages/game-rules/src/cardrpg/internal.ts": "a881bd313e3a1b0401ec08929a92025fc5de54bfe7c5f05c86a150b6e0f23704",
+    "packages/game-rules/src/cardrpg/progression.ts": "dd2afa830bc2ef3328d6dc2e94f21cabc89c1cfc36ae1bec64b9753de485118e",
+    "packages/game-rules/src/cardrpg/state.ts": "09da5dd6df7a88da66a0e2ba842dc3f66b1c5d708bc38cd585085bbfea45d0ea",
+    "packages/game-rules/src/rng.ts": "294a2a0149a7e89cb9b9b6bbf237b11daecd645a49760b8b2c415bfbc2884270"
+  },
+  "count": 50,
+  "receipts": [
+    {
+      "path": "reports/cardrpg-big/a5/b1/queued-reply-33/balance/equipped/results.json",
+      "sha256": "269980d4ad93c0af2b7d7393104225df79c10ae6bdff8e157c2d23df567a8b79"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/b1/queued-reply-33/balance/tiers/results.json",
+      "sha256": "9dced7a9ca1313b9eb28264689482c23471222bbf0c0c584dc473350e9c60f42"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/b1/queued-reply-33/balance/sets/results.json",
+      "sha256": "b080838b789895f98c7e37f3c303fd1c4315275d559af0c17b9339bcdaa7bc95"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/b1/queued-reply-33/balance/teams/results.json",
+      "sha256": "951eeb3afb3480cf4b5f60f91f7862c823aad93a8613f84c9b00197cce83eb93"
+    }
+  ],
+  "pieces": {
+    "cells": 384,
+    "misses": 0,
+    "worst": {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"velvetrim-weapon-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "kind": "pieces-equipped",
+      "templateId": "velvetrim-weapon-epic",
+      "cardId": "soot",
+      "level": 6,
+      "chapter": 1,
+      "outcomes": "33333133333331331333333333333333333333333333131333",
+      "actions": 2798,
+      "minPowerRatio": 1,
+      "maxPowerRatio": 1,
+      "maxShare": 0.016352060891031025,
+      "maxEnhancedShare": 0.02490190413628434,
+      "shareSum": 0.8081785834510877,
+      "complete": true,
+      "digest": "20e7e0e75d22c839844dccf398ddf3926ea9d25a4b71d978c9a4474407302f83",
+      "wins": 50,
+      "beforeWins": 45,
+      "improved": 5,
+      "worsened": 0,
+      "gainPp": 10,
+      "pairedNormal95Pp": [
+        1.6844242532462008,
+        18.3155757467538
+      ],
+      "rate": 1,
+      "meanShare": 0.016163571669021756
+    },
+    "beforeSaturated": 364,
+    "afterSaturated": 384,
+    "maxDisplayShare": 0.04509341837032212,
+    "spearmanByChapter": [
+      {
+        "chapter": 1,
+        "rho": 0.13904537992848606
+      },
+      {
+        "chapter": 2,
+        "rho": 0.13500182217784937
+      },
+      {
+        "chapter": 3,
+        "rho": null
+      }
+    ]
+  },
+  "tiers": {
+    "positive": 18,
+    "reversals": 1,
+    "total": 24,
+    "rows": [
+      {
+        "level": 1,
+        "chapter": 1,
+        "from": "none",
+        "to": "common",
+        "gainPp": 22
+      },
+      {
+        "level": 1,
+        "chapter": 1,
+        "from": "common",
+        "to": "rare",
+        "gainPp": 18
+      },
+      {
+        "level": 1,
+        "chapter": 1,
+        "from": "rare",
+        "to": "epic",
+        "gainPp": 15.999999999999998
+      },
+      {
+        "level": 1,
+        "chapter": 1,
+        "from": "epic",
+        "to": "legendary",
+        "gainPp": 24
+      },
+      {
+        "level": 1,
+        "chapter": 2,
+        "from": "none",
+        "to": "common",
+        "gainPp": 70
+      },
+      {
+        "level": 1,
+        "chapter": 2,
+        "from": "common",
+        "to": "rare",
+        "gainPp": 14.000000000000002
+      },
+      {
+        "level": 1,
+        "chapter": 2,
+        "from": "rare",
+        "to": "epic",
+        "gainPp": 9.999999999999998
+      },
+      {
+        "level": 1,
+        "chapter": 2,
+        "from": "epic",
+        "to": "legendary",
+        "gainPp": 0
+      },
+      {
+        "level": 1,
+        "chapter": 3,
+        "from": "none",
+        "to": "common",
+        "gainPp": 60
+      },
+      {
+        "level": 1,
+        "chapter": 3,
+        "from": "common",
+        "to": "rare",
+        "gainPp": 6.000000000000005
+      },
+      {
+        "level": 1,
+        "chapter": 3,
+        "from": "rare",
+        "to": "epic",
+        "gainPp": 7.9999999999999964
+      },
+      {
+        "level": 1,
+        "chapter": 3,
+        "from": "epic",
+        "to": "legendary",
+        "gainPp": 2.0000000000000018
+      },
+      {
+        "level": 6,
+        "chapter": 1,
+        "from": "none",
+        "to": "common",
+        "gainPp": 24
+      },
+      {
+        "level": 6,
+        "chapter": 1,
+        "from": "common",
+        "to": "rare",
+        "gainPp": 4.0000000000000036
+      },
+      {
+        "level": 6,
+        "chapter": 1,
+        "from": "rare",
+        "to": "epic",
+        "gainPp": 2.0000000000000018
+      },
+      {
+        "level": 6,
+        "chapter": 1,
+        "from": "epic",
+        "to": "legendary",
+        "gainPp": 0
+      },
+      {
+        "level": 6,
+        "chapter": 2,
+        "from": "none",
+        "to": "common",
+        "gainPp": 44.00000000000001
+      },
+      {
+        "level": 6,
+        "chapter": 2,
+        "from": "common",
+        "to": "rare",
+        "gainPp": 7.9999999999999964
+      },
+      {
+        "level": 6,
+        "chapter": 2,
+        "from": "rare",
+        "to": "epic",
+        "gainPp": -2.0000000000000018
+      },
+      {
+        "level": 6,
+        "chapter": 2,
+        "from": "epic",
+        "to": "legendary",
+        "gainPp": 2.0000000000000018
+      },
+      {
+        "level": 6,
+        "chapter": 3,
+        "from": "none",
+        "to": "common",
+        "gainPp": 4.0000000000000036
+      },
+      {
+        "level": 6,
+        "chapter": 3,
+        "from": "common",
+        "to": "rare",
+        "gainPp": 0
+      },
+      {
+        "level": 6,
+        "chapter": 3,
+        "from": "rare",
+        "to": "epic",
+        "gainPp": 0
+      },
+      {
+        "level": 6,
+        "chapter": 3,
+        "from": "epic",
+        "to": "legendary",
+        "gainPp": 0
+      }
+    ]
+  },
+  "bands": [
+    {
+      "level": 1,
+      "chapter": 1,
+      "spreadPp": 76,
+      "saturated": false,
+      "rates": [
+        {
+          "rarity": "none",
+          "rate": 0.02
+        },
+        {
+          "rarity": "common",
+          "rate": 0.4
+        },
+        {
+          "rarity": "rare",
+          "rate": 0.42
+        },
+        {
+          "rarity": "epic",
+          "rate": 0.48
+        },
+        {
+          "rarity": "legendary",
+          "rate": 0.78
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "chapter": 2,
+      "spreadPp": 100,
+      "saturated": false,
+      "rates": [
+        {
+          "rarity": "none",
+          "rate": 0
+        },
+        {
+          "rarity": "common",
+          "rate": 0.76
+        },
+        {
+          "rarity": "rare",
+          "rate": 0.92
+        },
+        {
+          "rarity": "epic",
+          "rate": 1
+        },
+        {
+          "rarity": "legendary",
+          "rate": 1
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "chapter": 3,
+      "spreadPp": 90,
+      "saturated": false,
+      "rates": [
+        {
+          "rarity": "none",
+          "rate": 0.1
+        },
+        {
+          "rarity": "common",
+          "rate": 0.76
+        },
+        {
+          "rarity": "rare",
+          "rate": 0.92
+        },
+        {
+          "rarity": "epic",
+          "rate": 1
+        },
+        {
+          "rarity": "legendary",
+          "rate": 1
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "chapter": 1,
+      "spreadPp": 76,
+      "saturated": false,
+      "rates": [
+        {
+          "rarity": "none",
+          "rate": 0
+        },
+        {
+          "rarity": "common",
+          "rate": 0.32
+        },
+        {
+          "rarity": "rare",
+          "rate": 0.42
+        },
+        {
+          "rarity": "epic",
+          "rate": 0.44
+        },
+        {
+          "rarity": "legendary",
+          "rate": 0.76
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "chapter": 2,
+      "spreadPp": 100,
+      "saturated": false,
+      "rates": [
+        {
+          "rarity": "none",
+          "rate": 0
+        },
+        {
+          "rarity": "common",
+          "rate": 0.72
+        },
+        {
+          "rarity": "rare",
+          "rate": 0.9
+        },
+        {
+          "rarity": "epic",
+          "rate": 1
+        },
+        {
+          "rarity": "legendary",
+          "rate": 1
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "chapter": 3,
+      "spreadPp": 90,
+      "saturated": false,
+      "rates": [
+        {
+          "rarity": "none",
+          "rate": 0.1
+        },
+        {
+          "rarity": "common",
+          "rate": 0.8
+        },
+        {
+          "rarity": "rare",
+          "rate": 0.86
+        },
+        {
+          "rarity": "epic",
+          "rate": 1
+        },
+        {
+          "rarity": "legendary",
+          "rate": 1
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "chapter": 1,
+      "spreadPp": 72,
+      "saturated": false,
+      "rates": [
+        {
+          "rarity": "none",
+          "rate": 0
+        },
+        {
+          "rarity": "common",
+          "rate": 0.42
+        },
+        {
+          "rarity": "rare",
+          "rate": 0.36
+        },
+        {
+          "rarity": "epic",
+          "rate": 0.5
+        },
+        {
+          "rarity": "legendary",
+          "rate": 0.72
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "chapter": 2,
+      "spreadPp": 100,
+      "saturated": false,
+      "rates": [
+        {
+          "rarity": "none",
+          "rate": 0
+        },
+        {
+          "rarity": "common",
+          "rate": 0.68
+        },
+        {
+          "rarity": "rare",
+          "rate": 0.92
+        },
+        {
+          "rarity": "epic",
+          "rate": 1
+        },
+        {
+          "rarity": "legendary",
+          "rate": 1
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "chapter": 3,
+      "spreadPp": 88,
+      "saturated": false,
+      "rates": [
+        {
+          "rarity": "none",
+          "rate": 0.12
+        },
+        {
+          "rarity": "common",
+          "rate": 0.8
+        },
+        {
+          "rarity": "rare",
+          "rate": 0.86
+        },
+        {
+          "rarity": "epic",
+          "rate": 1
+        },
+        {
+          "rarity": "legendary",
+          "rate": 1
+        }
+      ]
+    },
+    {
+      "level": 4,
+      "chapter": 1,
+      "spreadPp": 76,
+      "saturated": false,
+      "rates": [
+        {
+          "rarity": "none",
+          "rate": 0
+        },
+        {
+          "rarity": "common",
+          "rate": 0.34
+        },
+        {
+          "rarity": "rare",
+          "rate": 0.34
+        },
+        {
+          "rarity": "epic",
+          "rate": 0.54
+        },
+        {
+          "rarity": "legendary",
+          "rate": 0.76
+        }
+      ]
+    },
+    {
+      "level": 4,
+      "chapter": 2,
+      "spreadPp": 100,
+      "saturated": false,
+      "rates": [
+        {
+          "rarity": "none",
+          "rate": 0
+        },
+        {
+          "rarity": "common",
+          "rate": 0.7
+        },
+        {
+          "rarity": "rare",
+          "rate": 0.94
+        },
+        {
+          "rarity": "epic",
+          "rate": 1
+        },
+        {
+          "rarity": "legendary",
+          "rate": 1
+        }
+      ]
+    },
+    {
+      "level": 4,
+      "chapter": 3,
+      "spreadPp": 88,
+      "saturated": false,
+      "rates": [
+        {
+          "rarity": "none",
+          "rate": 0.12
+        },
+        {
+          "rarity": "common",
+          "rate": 0.7
+        },
+        {
+          "rarity": "rare",
+          "rate": 0.92
+        },
+        {
+          "rarity": "epic",
+          "rate": 1
+        },
+        {
+          "rarity": "legendary",
+          "rate": 1
+        }
+      ]
+    },
+    {
+      "level": 5,
+      "chapter": 1,
+      "spreadPp": 64,
+      "saturated": false,
+      "rates": [
+        {
+          "rarity": "none",
+          "rate": 0
+        },
+        {
+          "rarity": "common",
+          "rate": 0.28
+        },
+        {
+          "rarity": "rare",
+          "rate": 0.44
+        },
+        {
+          "rarity": "epic",
+          "rate": 0.54
+        },
+        {
+          "rarity": "legendary",
+          "rate": 0.64
+        }
+      ]
+    },
+    {
+      "level": 5,
+      "chapter": 2,
+      "spreadPp": 100,
+      "saturated": false,
+      "rates": [
+        {
+          "rarity": "none",
+          "rate": 0
+        },
+        {
+          "rarity": "common",
+          "rate": 0.68
+        },
+        {
+          "rarity": "rare",
+          "rate": 0.94
+        },
+        {
+          "rarity": "epic",
+          "rate": 0.98
+        },
+        {
+          "rarity": "legendary",
+          "rate": 1
+        }
+      ]
+    },
+    {
+      "level": 5,
+      "chapter": 3,
+      "spreadPp": 84,
+      "saturated": false,
+      "rates": [
+        {
+          "rarity": "none",
+          "rate": 0.16
+        },
+        {
+          "rarity": "common",
+          "rate": 0.66
+        },
+        {
+          "rarity": "rare",
+          "rate": 0.98
+        },
+        {
+          "rarity": "epic",
+          "rate": 1
+        },
+        {
+          "rarity": "legendary",
+          "rate": 1
+        }
+      ]
+    },
+    {
+      "level": 6,
+      "chapter": 1,
+      "spreadPp": 54,
+      "saturated": false,
+      "rates": [
+        {
+          "rarity": "none",
+          "rate": 0.46
+        },
+        {
+          "rarity": "common",
+          "rate": 0.88
+        },
+        {
+          "rarity": "rare",
+          "rate": 0.98
+        },
+        {
+          "rarity": "epic",
+          "rate": 1
+        },
+        {
+          "rarity": "legendary",
+          "rate": 1
+        }
+      ]
+    },
+    {
+      "level": 6,
+      "chapter": 2,
+      "spreadPp": 78,
+      "saturated": false,
+      "rates": [
+        {
+          "rarity": "none",
+          "rate": 0.22
+        },
+        {
+          "rarity": "common",
+          "rate": 0.86
+        },
+        {
+          "rarity": "rare",
+          "rate": 1
+        },
+        {
+          "rarity": "epic",
+          "rate": 1
+        },
+        {
+          "rarity": "legendary",
+          "rate": 1
+        }
+      ]
+    },
+    {
+      "level": 6,
+      "chapter": 3,
+      "spreadPp": 6.000000000000005,
+      "saturated": false,
+      "rates": [
+        {
+          "rarity": "none",
+          "rate": 0.94
+        },
+        {
+          "rarity": "common",
+          "rate": 1
+        },
+        {
+          "rarity": "rare",
+          "rate": 1
+        },
+        {
+          "rarity": "epic",
+          "rate": 1
+        },
+        {
+          "rarity": "legendary",
+          "rate": 1
+        }
+      ]
+    },
+    {
+      "level": 7,
+      "chapter": 1,
+      "spreadPp": 84,
+      "saturated": false,
+      "rates": [
+        {
+          "rarity": "none",
+          "rate": 0.16
+        },
+        {
+          "rarity": "common",
+          "rate": 0.86
+        },
+        {
+          "rarity": "rare",
+          "rate": 0.9
+        },
+        {
+          "rarity": "epic",
+          "rate": 0.94
+        },
+        {
+          "rarity": "legendary",
+          "rate": 1
+        }
+      ]
+    },
+    {
+      "level": 7,
+      "chapter": 2,
+      "spreadPp": 84,
+      "saturated": false,
+      "rates": [
+        {
+          "rarity": "none",
+          "rate": 0.16
+        },
+        {
+          "rarity": "common",
+          "rate": 0.72
+        },
+        {
+          "rarity": "rare",
+          "rate": 0.9
+        },
+        {
+          "rarity": "epic",
+          "rate": 1
+        },
+        {
+          "rarity": "legendary",
+          "rate": 1
+        }
+      ]
+    },
+    {
+      "level": 7,
+      "chapter": 3,
+      "spreadPp": 18.000000000000004,
+      "saturated": false,
+      "rates": [
+        {
+          "rarity": "none",
+          "rate": 0.82
+        },
+        {
+          "rarity": "common",
+          "rate": 1
+        },
+        {
+          "rarity": "rare",
+          "rate": 1
+        },
+        {
+          "rarity": "epic",
+          "rate": 1
+        },
+        {
+          "rarity": "legendary",
+          "rate": 1
+        }
+      ]
+    },
+    {
+      "level": 8,
+      "chapter": 1,
+      "spreadPp": 84,
+      "saturated": false,
+      "rates": [
+        {
+          "rarity": "none",
+          "rate": 0.16
+        },
+        {
+          "rarity": "common",
+          "rate": 0.76
+        },
+        {
+          "rarity": "rare",
+          "rate": 0.84
+        },
+        {
+          "rarity": "epic",
+          "rate": 0.96
+        },
+        {
+          "rarity": "legendary",
+          "rate": 1
+        }
+      ]
+    },
+    {
+      "level": 8,
+      "chapter": 2,
+      "spreadPp": 100,
+      "saturated": false,
+      "rates": [
+        {
+          "rarity": "none",
+          "rate": 0
+        },
+        {
+          "rarity": "common",
+          "rate": 0.62
+        },
+        {
+          "rarity": "rare",
+          "rate": 0.74
+        },
+        {
+          "rarity": "epic",
+          "rate": 0.96
+        },
+        {
+          "rarity": "legendary",
+          "rate": 1
+        }
+      ]
+    },
+    {
+      "level": 8,
+      "chapter": 3,
+      "spreadPp": 36,
+      "saturated": false,
+      "rates": [
+        {
+          "rarity": "none",
+          "rate": 0.64
+        },
+        {
+          "rarity": "common",
+          "rate": 1
+        },
+        {
+          "rarity": "rare",
+          "rate": 1
+        },
+        {
+          "rarity": "epic",
+          "rate": 1
+        },
+        {
+          "rarity": "legendary",
+          "rate": 1
+        }
+      ]
+    },
+    {
+      "level": 9,
+      "chapter": 1,
+      "spreadPp": 96,
+      "saturated": false,
+      "rates": [
+        {
+          "rarity": "none",
+          "rate": 0
+        },
+        {
+          "rarity": "common",
+          "rate": 0.54
+        },
+        {
+          "rarity": "rare",
+          "rate": 0.7
+        },
+        {
+          "rarity": "epic",
+          "rate": 0.88
+        },
+        {
+          "rarity": "legendary",
+          "rate": 0.96
+        }
+      ]
+    },
+    {
+      "level": 9,
+      "chapter": 2,
+      "spreadPp": 100,
+      "saturated": false,
+      "rates": [
+        {
+          "rarity": "none",
+          "rate": 0
+        },
+        {
+          "rarity": "common",
+          "rate": 0.4
+        },
+        {
+          "rarity": "rare",
+          "rate": 0.6
+        },
+        {
+          "rarity": "epic",
+          "rate": 0.84
+        },
+        {
+          "rarity": "legendary",
+          "rate": 1
+        }
+      ]
+    },
+    {
+      "level": 9,
+      "chapter": 3,
+      "spreadPp": 64,
+      "saturated": false,
+      "rates": [
+        {
+          "rarity": "none",
+          "rate": 0.36
+        },
+        {
+          "rarity": "common",
+          "rate": 0.96
+        },
+        {
+          "rarity": "rare",
+          "rate": 0.96
+        },
+        {
+          "rarity": "epic",
+          "rate": 1
+        },
+        {
+          "rarity": "legendary",
+          "rate": 1
+        }
+      ]
+    },
+    {
+      "level": 10,
+      "chapter": 1,
+      "spreadPp": 89.99999999999999,
+      "saturated": false,
+      "rates": [
+        {
+          "rarity": "none",
+          "rate": 0.04
+        },
+        {
+          "rarity": "common",
+          "rate": 0.44
+        },
+        {
+          "rarity": "rare",
+          "rate": 0.76
+        },
+        {
+          "rarity": "epic",
+          "rate": 0.84
+        },
+        {
+          "rarity": "legendary",
+          "rate": 0.94
+        }
+      ]
+    },
+    {
+      "level": 10,
+      "chapter": 2,
+      "spreadPp": 100,
+      "saturated": false,
+      "rates": [
+        {
+          "rarity": "none",
+          "rate": 0
+        },
+        {
+          "rarity": "common",
+          "rate": 0.32
+        },
+        {
+          "rarity": "rare",
+          "rate": 0.54
+        },
+        {
+          "rarity": "epic",
+          "rate": 0.78
+        },
+        {
+          "rarity": "legendary",
+          "rate": 1
+        }
+      ]
+    },
+    {
+      "level": 10,
+      "chapter": 3,
+      "spreadPp": 68,
+      "saturated": false,
+      "rates": [
+        {
+          "rarity": "none",
+          "rate": 0.32
+        },
+        {
+          "rarity": "common",
+          "rate": 0.86
+        },
+        {
+          "rarity": "rare",
+          "rate": 0.96
+        },
+        {
+          "rarity": "epic",
+          "rate": 1
+        },
+        {
+          "rarity": "legendary",
+          "rate": 1
+        }
+      ]
+    },
+    {
+      "level": 50,
+      "chapter": 1,
+      "spreadPp": 84,
+      "saturated": false,
+      "rates": [
+        {
+          "rarity": "none",
+          "rate": 0
+        },
+        {
+          "rarity": "common",
+          "rate": 0.08
+        },
+        {
+          "rarity": "rare",
+          "rate": 0.26
+        },
+        {
+          "rarity": "epic",
+          "rate": 0.5
+        },
+        {
+          "rarity": "legendary",
+          "rate": 0.84
+        }
+      ]
+    },
+    {
+      "level": 50,
+      "chapter": 2,
+      "spreadPp": 94,
+      "saturated": false,
+      "rates": [
+        {
+          "rarity": "none",
+          "rate": 0.06
+        },
+        {
+          "rarity": "common",
+          "rate": 0.76
+        },
+        {
+          "rarity": "rare",
+          "rate": 0.86
+        },
+        {
+          "rarity": "epic",
+          "rate": 0.98
+        },
+        {
+          "rarity": "legendary",
+          "rate": 1
+        }
+      ]
+    },
+    {
+      "level": 50,
+      "chapter": 3,
+      "spreadPp": 86,
+      "saturated": false,
+      "rates": [
+        {
+          "rarity": "none",
+          "rate": 0.14
+        },
+        {
+          "rarity": "common",
+          "rate": 0.94
+        },
+        {
+          "rarity": "rare",
+          "rate": 1
+        },
+        {
+          "rarity": "epic",
+          "rate": 0.98
+        },
+        {
+          "rarity": "legendary",
+          "rate": 1
+        }
+      ]
+    }
+  ],
+  "sets": [
+    {
+      "id": "hearthloom",
+      "rate": 0.9924999999999999,
+      "leadingSituations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "id": "moonwick",
+      "rate": 0.9975,
+      "leadingSituations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "id": "mossbrew",
+      "rate": 0.995,
+      "leadingSituations": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "id": "rainlace",
+      "rate": 0.9924999999999999,
+      "leadingSituations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "id": "crumbweave",
+      "rate": 1,
+      "leadingSituations": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "id": "bellsteel",
+      "rate": 1,
+      "leadingSituations": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "id": "emberfelt",
+      "rate": 0.995,
+      "leadingSituations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "id": "velvetrim",
+      "rate": 0.9975,
+      "leadingSituations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    }
+  ],
+  "cats": [
+    {
+      "id": "mochi",
+      "rate": 0.8747878787878787,
+      "bestTeam": [
+        "mochi",
+        "soot",
+        "clover"
+      ],
+      "bestChapter": 1,
+      "bestRate": 1,
+      "topPickCells": 102
+    },
+    {
+      "id": "soot",
+      "rate": 0.8475151515151519,
+      "bestTeam": [
+        "mochi",
+        "soot",
+        "clover"
+      ],
+      "bestChapter": 1,
+      "bestRate": 1,
+      "topPickCells": 56
+    },
+    {
+      "id": "clover",
+      "rate": 0.8744242424242425,
+      "bestTeam": [
+        "mochi",
+        "soot",
+        "clover"
+      ],
+      "bestChapter": 1,
+      "bestRate": 1,
+      "topPickCells": 78
+    },
+    {
+      "id": "panko",
+      "rate": 0.861090909090909,
+      "bestTeam": [
+        "mochi",
+        "soot",
+        "panko"
+      ],
+      "bestChapter": 3,
+      "bestRate": 1,
+      "topPickCells": 91
+    },
+    {
+      "id": "mallow",
+      "rate": 0.8764848484848486,
+      "bestTeam": [
+        "mochi",
+        "clover",
+        "mallow"
+      ],
+      "bestChapter": 3,
+      "bestRate": 1,
+      "topPickCells": 59
+    },
+    {
+      "id": "sorrel",
+      "rate": 0.8768484848484848,
+      "bestTeam": [
+        "mochi",
+        "soot",
+        "sorrel"
+      ],
+      "bestChapter": 1,
+      "bestRate": 1,
+      "topPickCells": 83
+    },
+    {
+      "id": "biscuit",
+      "rate": 0.9035151515151514,
+      "bestTeam": [
+        "mochi",
+        "soot",
+        "biscuit"
+      ],
+      "bestChapter": 3,
+      "bestRate": 1,
+      "topPickCells": 93
+    },
+    {
+      "id": "inkcap",
+      "rate": 0.9401212121212121,
+      "bestTeam": [
+        "mochi",
+        "soot",
+        "inkcap"
+      ],
+      "bestChapter": 3,
+      "bestRate": 1,
+      "topPickCells": 83
+    },
+    {
+      "id": "cinnamon",
+      "rate": 0.9369696969696969,
+      "bestTeam": [
+        "mochi",
+        "soot",
+        "cinnamon"
+      ],
+      "bestChapter": 1,
+      "bestRate": 1,
+      "topPickCells": 111
+    },
+    {
+      "id": "brioche",
+      "rate": 0.7775757575757577,
+      "bestTeam": [
+        "mochi",
+        "soot",
+        "brioche"
+      ],
+      "bestChapter": 3,
+      "bestRate": 1,
+      "topPickCells": 63
+    },
+    {
+      "id": "velvet",
+      "rate": 0.9523636363636364,
+      "bestTeam": [
+        "mochi",
+        "soot",
+        "velvet"
+      ],
+      "bestChapter": 1,
+      "bestRate": 1,
+      "topPickCells": 103
+    },
+    {
+      "id": "marigold",
+      "rate": 0.943030303030303,
+      "bestTeam": [
+        "mochi",
+        "soot",
+        "marigold"
+      ],
+      "bestChapter": 1,
+      "bestRate": 1,
+      "topPickCells": 119
+    }
+  ],
+  "bossDiversity": [
+    {
+      "chapter": 1,
+      "best": 1,
+      "withinFivePp": 118
+    },
+    {
+      "chapter": 2,
+      "best": 1,
+      "withinFivePp": 128
+    },
+    {
+      "chapter": 3,
+      "best": 1,
+      "withinFivePp": 191
+    }
+  ],
+  "crew": {
+    "gainPp": 8,
+    "rows": [
+      {
+        "key": "{\"kind\":\"crew\",\"chapter\":1,\"team\":[\"biscuit\",\"cinnamon\",\"velvet\"]}",
+        "kind": "crew",
+        "chapter": 1,
+        "team": [
+          "biscuit",
+          "cinnamon",
+          "velvet"
+        ],
+        "outcomes": "31333133333331333333333333333313333333333333313333",
+        "actions": 1461,
+        "minPowerRatio": 0.9985866788076149,
+        "maxPowerRatio": 1,
+        "maxShare": 0,
+        "maxEnhancedShare": 0,
+        "shareSum": 0,
+        "complete": true,
+        "digest": "c8d33d99080839edfdbc1149dc6e8ad3d5f62cb2507d150f3911ab124938d4e0",
+        "wins": 50,
+        "beforeWins": 45,
+        "improved": 5,
+        "worsened": 0,
+        "gainPp": 10,
+        "pairedNormal95Pp": [
+          1.6844242532462008,
+          18.3155757467538
+        ],
+        "rate": 1,
+        "meanShare": 0
+      },
+      {
+        "key": "{\"kind\":\"crew\",\"chapter\":2,\"team\":[\"biscuit\",\"cinnamon\",\"velvet\"]}",
+        "kind": "crew",
+        "chapter": 2,
+        "team": [
+          "biscuit",
+          "cinnamon",
+          "velvet"
+        ],
+        "outcomes": "33333331113133333333333333333333333333333333313133",
+        "actions": 1478,
+        "minPowerRatio": 0.9985866788076149,
+        "maxPowerRatio": 1,
+        "maxShare": 0,
+        "maxEnhancedShare": 0,
+        "shareSum": 0,
+        "complete": true,
+        "digest": "b31ff9329b919ec207fc060af239b6e8ecb6dacf7c24fc70bde37951585f243f",
+        "wins": 50,
+        "beforeWins": 44,
+        "improved": 6,
+        "worsened": 0,
+        "gainPp": 12,
+        "pairedNormal95Pp": [
+          2.9925257702283723,
+          21.007474229771628
+        ],
+        "rate": 1,
+        "meanShare": 0
+      },
+      {
+        "key": "{\"kind\":\"crew\",\"chapter\":3,\"team\":[\"biscuit\",\"cinnamon\",\"velvet\"]}",
+        "kind": "crew",
+        "chapter": 3,
+        "team": [
+          "biscuit",
+          "cinnamon",
+          "velvet"
+        ],
+        "outcomes": "33333333333333333333333333333333333333333333313333",
+        "actions": 1573,
+        "minPowerRatio": 0.9985866788076149,
+        "maxPowerRatio": 1,
+        "maxShare": 0,
+        "maxEnhancedShare": 0,
+        "shareSum": 0,
+        "complete": true,
+        "digest": "94aec0d1c6d6b00e5d6ece7844452fcf4f370f3d291c0216e6dfc5002cf13182",
+        "wins": 50,
+        "beforeWins": 49,
+        "improved": 1,
+        "worsened": 0,
+        "gainPp": 2,
+        "pairedNormal95Pp": [
+          -1.8806020151517724,
+          5.880602015151773
+        ],
+        "rate": 1,
+        "meanShare": 0
+      }
+    ]
+  },
+  "limitations": [
+    "Bare 2304-piece cells and elite diversity are not covered by this diagnostic.",
+    "Training tiers report 24 steps; the registered 44/48 gate also requires acceptance.",
+    "Saturated fourth-slot outcomes remain visible; smaller gains alone do not establish healthy balance."
+  ]
+}

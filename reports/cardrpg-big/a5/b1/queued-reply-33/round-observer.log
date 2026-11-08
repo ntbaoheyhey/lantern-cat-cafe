@@ -1,0 +1,15 @@
+file:///private/tmp/cardrpg-a4-rules-XDOf00/rules.mjs:10559
+	if (reply.round !== b.round) throw Error("QUEUED_REPLY_CROSSED_ROUND " + b.round + " -> " + reply.round + "; sentinel=" + sentinel.id + "; alive=" + reply.actors.filter((a) => a.side === "party" && a.hp > 0).map((a) => a.id).join(","));
+	                                   ^
+
+Error: QUEUED_REPLY_CROSSED_ROUND 15 -> 16; sentinel=mochi; alive=soot
+    at queuedReply (file:///private/tmp/cardrpg-a4-rules-XDOf00/rules.mjs:10559:37)
+    at file:///private/tmp/cardrpg-a4-rules-XDOf00/rules.mjs:10567:28
+    at Array.map (<anonymous>)
+    at automatic (file:///private/tmp/cardrpg-a4-rules-XDOf00/rules.mjs:10564:33)
+    at ordinary (file:///private/tmp/cardrpg-a4-rules-XDOf00/rules.mjs:10582:32)
+    at chooseAction (file:///private/tmp/cardrpg-a4-rules-XDOf00/rules.mjs:10601:55)
+    at Module.playBattle (file:///private/tmp/cardrpg-a4-rules-XDOf00/rules.mjs:10619:21)
+    at file:///Users/bao/taskbar-hero-cardrpg-a4/[eval1]:5:8
+
+Node.js v24.22.2
