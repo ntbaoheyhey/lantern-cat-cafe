@@ -258,3 +258,42 @@
 .dp-readable .dp-ultimate-moment{width:132px;padding:5px;gap:5px;top:8px}
 .dp-readable .dp-ultimate-moment img{width:35px;height:44px}
 .dp-readable .dp-ultimate-moment button{font-size:10px;padding:3px 6px}
+
+/* B2 read-only state cards. Icon focus reveals the full skill and state. */
+.dp-readable .dp-party{height:82px;min-height:82px;max-height:82px;flex:none}
+.dp-readable .dp-party-card{display:grid;height:82px;min-height:0;align-content:center;grid-template-columns:42px minmax(0,1fr);gap:3px 7px;padding:5px 10px;position:relative;overflow:visible}
+.dp-readable .dp-party-card>img{width:42px;height:59px;object-fit:cover;object-position:50% 25%;grid-row:1/3;border-radius:7px;background:#182e36}
+.dp-readable .dp-party-health{align-self:end}
+.dp-readable .dp-party-health>span{display:flex;justify-content:space-between;gap:4px;white-space:nowrap}
+.dp-readable .dp-party-health>span b{font-size:11px}.dp-readable .dp-party-health>span strong{font-size:10px}
+.dp-readable .dp-skills-readonly{display:flex;align-items:center;gap:8px;min-width:0}
+.dp-readable .dp-skill-state{position:relative;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;flex:none;background:conic-gradient(#e7c38b var(--cooldown),#496069 0);padding:2px;box-sizing:border-box;color:#fff4df;outline-offset:3px;cursor:help}
+.dp-readable .dp-skill-state img{width:28px;height:28px;border-radius:50%;object-fit:cover;background:#172d36}
+.dp-readable .dp-skill-state.is-ready{box-shadow:0 0 0 1px #e7c38b,0 0 8px #e7c38b55;background:#e7c38b}
+.dp-readable .dp-skill-state:not(.is-ready) img{filter:saturate(.4);opacity:.68}
+.dp-readable .dp-skill-state>b{position:absolute;inset:auto -3px -1px auto;min-width:14px;height:14px;background:#142932;color:#fff4df;border:1px solid #bdc5c3;border-radius:8px;font:700 10px/14px system-ui;text-align:center}
+.dp-readable .dp-row-icon{font:16px/1 system-ui;color:#f3d6a3;position:relative;cursor:help}
+.dp-readable [data-tip]::after{content:attr(data-tip);position:absolute;z-index:30;bottom:calc(100% + 7px);left:50%;transform:translateX(-50%);background:#11252e;color:#fff1d7;border:1px solid #a6b9b8;padding:7px 10px;border-radius:6px;font:11px/1.4 system-ui;white-space:normal;width:max-content;max-width:220px;pointer-events:none;display:none}
+.dp-readable [data-tip]:is(:hover,:focus-visible)::after{display:block}
+.dp-readable .dp-skills-readonly [data-tip]::after{left:0;transform:none}
+.dp-readable .dp-party-card:last-child [data-tip]::after{left:auto;right:0;transform:none}
+.dp-readable .dp-v4-plan{padding:4px 12px;gap:7px;min-height:23px;font-size:11px;border-radius:0}
+.dp-readable .dp-plan-chip{position:relative;display:inline-flex;gap:5px;align-items:center;padding:3px 8px;border:1px solid #6b8388;border-radius:12px;color:#fff1d7;background:#203c45;cursor:help}
+.dp-readable .dp-v4-plan [data-tip]::after{bottom:auto;top:calc(100% + 5px);left:0;transform:none}
+.dp-readable .dp-v4-plan>small{font-size:10px;color:#dde7e3}
+.dp-readable .dp-action-caption{height:21px;min-height:21px;padding:2px 12px;font-size:10px;justify-content:center;gap:16px;box-sizing:border-box}
+.dp-readable .dp-float-number{position:absolute;top:0;left:0;z-index:5;pointer-events:none;display:flex;gap:8px;justify-content:center;width:140px;font:800 22px/1 system-ui;text-shadow:0 2px 2px #14242a,1px 0 #14242a,-1px 0 #14242a;animation:readable-rise .55s ease-out both}
+.dp-readable .dp-float-number .dp-number{font:inherit;color:#ffe2c4}.dp-readable .dp-float-number .dp-number-heal{color:#b7ffd8}.dp-readable .dp-float-number .dp-number-shield{color:#b3e8ff}
+.dp-readable .dp-statuses{display:flex;gap:3px;margin:0}.dp-readable .dp-statuses>span{font-size:8px;line-height:12px;padding:0 3px}
+.dp-readable .dp-world-plate .dp-statuses{position:absolute;top:100%;left:0;background:#172e36;border-radius:4px;pointer-events:none;display:none}.dp-readable .dp-world-plate:is(:hover,:focus-visible) .dp-statuses{display:flex}
+.dp-readable .dp-world-plate{box-sizing:border-box;min-height:32px}.dp-readable .dp-world-plate .dp-intent{display:none!important}
+.dp-earned-receipt.dp-readable-earned{inset:auto auto 14px 50%;transform:translateX(-50%);display:flex;align-items:center;gap:12px;max-width:80%;text-align:left;padding:7px 16px 7px 7px;box-shadow:0 6px 25px #10242a88}
+.dp-readable-earned img{width:42px;height:54px;object-fit:cover;border-radius:5px}.dp-readable-earned b{display:block;font:600 16px/1.3 Georgia;color:#fff0ce}.dp-readable-earned span{font-size:11px;color:#e1e8df}.dp-earned-receipt.dp-readable-earned[hidden]{display:none}
+@keyframes readable-rise{from{margin-top:8px;opacity:0}20%{opacity:1}to{margin-top:-10px;opacity:1}}
+@media(max-width:1100px){.dp-readable .dp-party-card{padding:5px 7px;gap:3px 6px}.dp-readable .dp-skills-readonly{gap:6px}.dp-readable .dp-skill-state{width:30px;height:30px}.dp-readable .dp-skill-state img{width:24px;height:24px}.dp-readable .dp-row-icon{font-size:13px}}
+@media(prefers-reduced-motion:reduce){.dp-readable .dp-float-number{animation:none}}
+
+.dp-readable .dp-party-health .dp-statuses{position:absolute;bottom:100%;left:4px;background:#172e36;padding:4px;display:none}.dp-readable .dp-party-card:is(:hover,:focus-within) .dp-statuses{display:flex}
+.dp-readable .dp-skill-state:focus-visible,.dp-readable .dp-row-icon:focus-visible,.dp-readable .dp-plan-chip:focus-visible{outline:2px solid #ffe2a2;outline-offset:3px}
+
+.dp-readable .dp-ultimate-moment>img{width:35px;height:46px;object-fit:cover;object-position:50% 25%;border-radius:5px}

@@ -1,0 +1,4 @@
+# HUD first review — personally viewed1280 round1/Mochi/earned and1024 wave
+Five flaws: (200–280,242–270) floating42 sits at canvas origin because auto battles suppress party anchors; (200–235,270–310) ultimate portrait still uses old tiny sprite; top98px retains devcontrols because capture explicitly requesteddev1; (880–1015,320–350 at1024) right Sock plate is near edge but numbers fit; (630–832,535–603) earned badge is warm/readable but occupies some mat.
+Worst3 fixes: emit party position anchors without creating nameplates; useL1 portrait in ultimate cue; capture ordinary no-dev URL (baseline had unconditional tools, so originalsix frames remain valid). No combat/event changes. V4round1 fourgates1773web +digest5PASS retained. Product HUD82px pluscaption21px.
+Self-grades1/2/3/4/5/6:8/7/6.5/8/8/8; Mochi floating text bug prevents approval until next capture. Portrait/status/skill keyboard labels are preserved.

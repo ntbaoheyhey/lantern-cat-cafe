@@ -1,3 +1,4 @@
+import { readablePortrait, readableName } from './look-readable-assets';
 import { styleReadableEnemy, isReadableBoss } from './look-readable-enemies';
 import { CardEnemyExpression } from './card-enemy-expression';
 import { CardBossAtmosphere, BOSS_STYLES, bossPerformance } from './card-boss-performance';
@@ -90,7 +91,7 @@ export class TurnScene {
   private dirty = true;
   private time = 0;
   private litChapter = 0;
-  private entrance?: { asset: string; startedAt: number };
+  private entrance?: { asset: string; startedAt: number; duration?: number };
   private earnedBadge?: HTMLDivElement;
   private earnedKey?: string;
   private width = 1;
@@ -345,6 +346,7 @@ export class TurnScene {
    * failed preparation, or absent cat; no controls or account state are changed. */
   async playEntrance(catId: string, receipt: unknown = this.view().earnedReveal): Promise<boolean> {
     const earned = earnedRevealV4(receipt);
+    if (earned?.version === 2 && !isLookV2()) return false;
     if (receipt !== undefined && (!earned || earned.itemId !== catId)) return false;
     await this.warming;
     if (this.disposed || !this.ready) return false;
@@ -356,13 +358,24 @@ export class TurnScene {
       || !this.view().actors.some(candidate => candidate.id === actor.id
         && (this.view().models?.[candidate.id] ?? candidate.role) === catId)) return false;
     if (earned && this.earnedKey === earned.key) return true;
-    this.entrance = { asset: catId, startedAt: this.time };
+    this.entrance = { asset: catId, startedAt: this.time, duration: earned?.version === 2 ? 1.2 : undefined };
     if (earned) {
       this.earnedKey = earned.key;
       const badge = this.earnedBadge ??= document.createElement('div');
       badge.className = 'dp-earned-receipt'; badge.setAttribute('role', 'status');
       badge.setAttribute('aria-label', 'Earned invitation');
       badge.textContent = earned.text; badge.dataset.rarity = earned.rarity;
+      if (isReadableBattle()) {
+        badge.classList.add('dp-readable-earned');
+        const portrait = document.createElement('img'), copy = document.createElement('div');
+        const title = document.createElement('b'), line = document.createElement('span');
+        const name = readableName(catId), url = readablePortrait(catId);
+        if (url) portrait.src = url;
+        portrait.alt = ''; title.textContent = name;
+        line.textContent = earned.version === 2 ? earned.text : earned.duplicate > 0 ? `${name} is home again.` : `${name} joined your café!`;
+        copy.append(title, line); badge.replaceChildren(...(url ? [portrait, copy] : [copy]));
+        badge.setAttribute('aria-label', earned.version === 2 ? 'Earned discovery' : 'Earned invitation');
+      }
       badge.hidden = false; this.host.appendChild(badge);
     } else if (this.earnedBadge) this.earnedBadge.hidden = true;
     this.dirty = true;
@@ -468,7 +481,7 @@ export class TurnScene {
         if(other)p.model.rotation.y=view.autoBattle?cardBodyYaw(a.side,targetYaw(p.base,other.base),weight):blendYaw(restYaw(a.side),targetYaw(p.base,other.base),weight);
       }
       if (this.entrance?.asset === p.asset && !frame) {
-        const entrance = cardEntrancePose(this.time - this.entrance.startedAt, view.reducedMotion);
+        const entrance = cardEntrancePose(this.time - this.entrance.startedAt, view.reducedMotion, this.entrance.duration);
         if (p.actions.has('victory')) { clip = 'victory'; progress = entrance.progress; }
         p.root.position.y += entrance.lift;
         p.model.rotation.y = cardBodyYaw('party', 0, 0) + entrance.turn;
@@ -528,7 +541,7 @@ export class TurnScene {
     if(frame&&!view.reducedMotion&&!view.model&&(!readable||(view.playbackSpeed??1)<4)){const shot=cardRecipe?.shot??EFFECT_DIRECTION[frame.plan.skillId]?.shot,motion=frame.plan.ultimate?.22:.08,phase=Math.sin(frame.actionProgress*Math.PI);if(shot==='left'||shot==='right')this.camera.position.x+=phase*motion*(shot==='left'?-1:1);if(shot==='rise')this.camera.position.y+=phase*motion;}
     if(readable&&!frame&&!view.reducedMotion&&!view.paused&&(view.playbackSpeed??1)<4){this.camera.position.x+=Math.sin(this.time*.21)*.045;this.cameraTarget.x+=Math.sin(this.time*.17)*.025;}
     if(frame?.plan.skillId==='victory'&&!view.reducedMotion){this.camera.position.x=Math.sin(frame.actionProgress*Math.PI)*1.25;this.camera.position.y+=Math.sin(frame.actionProgress*Math.PI)*.3;}
-    if (this.entrance && !frame) this.camera.zoom += cardEntrancePose(this.time - this.entrance.startedAt, view.reducedMotion).zoom;
+    if (this.entrance && !frame) this.camera.zoom += cardEntrancePose(this.time - this.entrance.startedAt, view.reducedMotion, this.entrance.duration).zoom;
     if(bossCue&&!view.model&&!view.reducedMotion&&(!readable||(view.playbackSpeed??1)<4)){const pulse=Math.sin(bossCue.progress*Math.PI);this.camera.zoom+=pulse*.03;this.cameraTarget.y+=pulse*.08;}
     if(readable)this.camera.zoom=Math.min(1.06,this.camera.zoom);
     this.camera.lookAt(this.cameraTarget);this.camera.updateProjectionMatrix();this.camera.updateMatrixWorld();
@@ -573,7 +586,11 @@ export class TurnScene {
     const now=performance.now();if(view.fixedTime===undefined&&now-this.labelsAt<50)return;this.labelsAt=now;
     const projected:Anchor[]=[],labels:LabelInput[]=[];
     const screen=(v:T.Vector3)=>{v.project(this.camera);return {x:(v.x*.5+.5)*this.width,y:(-v.y*.5+.5)*this.height}};
-    for(const a of view.actors){const p=this.puppets.get(a.id);if(!p||a.hp<=0||(view.autoBattle&&a.side==='party'))continue;
+    for(const a of view.actors){const p=this.puppets.get(a.id);if(!p||a.hp<=0)continue;
+      if(view.autoBattle&&a.side==='party'){
+        if(readable){const top=screen(p.root.position.clone().add(new T.Vector3(0,p.height*p.root.scale.y,0)));projected.push({id:a.id,x:top.x,y:top.y,labelX:top.x,labelY:top.y,footY:0,visible:false});}
+        continue;
+      }
       if(frame?.plan.ultimate&&['anticipation','travel','impact'].includes(frame.beat.kind)&&a.id!==frame.plan.actorId&&!frame.plan.targetIds.includes(a.id))continue;
       const head=p.model.getObjectByName(`${a.role}_head`)??p.model,center=head.getWorldPosition(new T.Vector3());
       const top=screen(center.clone().add(new T.Vector3(0,.45,0))),foot=screen(p.root.position.clone());

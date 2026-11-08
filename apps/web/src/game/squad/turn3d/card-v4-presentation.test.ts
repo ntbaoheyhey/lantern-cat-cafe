@@ -47,6 +47,14 @@ describe('A4 read-only presentation contract', () => {
     expect(earnedRevealV4({ ...earnedEvents.events[0], draw: 0 })).toBeUndefined();
     expect(earnedRevealV4({ ...earnedEvents.events[0], duplicate: .5 })).toBeUndefined();
   });
+  it('reads version2 discoveries without inventing invitation data', () => {
+    const receipt = {version:2,kind:'earned-reveal',sequence:8,round:0,discovery:{kind:'stars',id:'sorrel:3'},itemId:'sorrel',text:'Sorrel reached three stars.'};
+    const before=JSON.stringify(receipt);
+    expect(earnedRevealV4(receipt)).toMatchObject({version:2,key:'discovery/8/sorrel:3',itemId:'sorrel'});
+    expect(earnedRevealV4({...receipt,discovery:{kind:'unknown',id:'x'}})).toBeUndefined();
+    expect(earnedRevealV4({...receipt,round:1})).toBeUndefined();
+    expect(JSON.stringify(receipt)).toBe(before);
+  });
   it('renders an earned receipt once, using the existing entrance and no reward mutation', async () => {
     const receipt = earnedEvents.events[0]!, host = document.createElement('div');
     const view = { actors: [{ id: 'cat', role: 'alchemist' }], models: { cat: 'sorrel' }, earnedReveal: receipt };

@@ -57,9 +57,18 @@ export function bossCueV4(events: readonly PresentationEventV4[], elapsed: numbe
   return elapsed < end ? { event, endsAt: end, duration: end - impact } : undefined;
 }
 export function earnedRevealV4(value: unknown) {
+  if (object(value) && value.version === 2) {
+    const discovery = value.discovery;
+    if (value.kind !== 'earned-reveal' || !ordinal(value.sequence) || value.round !== 0
+      || typeof value.itemId !== 'string' || !value.itemId || typeof value.text !== 'string'
+      || !object(discovery) || !['crew','set','rank','legendary','stars'].includes(String(discovery.kind))
+      || typeof discovery.id !== 'string' || !discovery.id) return;
+    return { version: 2, key: `discovery/${value.sequence}/${discovery.id}`, itemId: value.itemId,
+      rarity: 'discovery', duplicate: 0, text: value.text };
+  }
   if (!presentationEventV4(value) || value.kind !== 'earned-reveal' || typeof value.itemId !== 'string'
     || !value.itemId || typeof value.bannerId !== 'string' || !value.bannerId || !ordinal(value.draw)
     || value.draw < 1 || typeof value.rarity !== 'string' || !ordinal(value.duplicate)) return;
-  return { key: `${value.bannerId}/${value.draw}/${value.sequence}`, itemId: value.itemId,
+  return { version: 1, key: `${value.bannerId}/${value.draw}/${value.sequence}`, itemId: value.itemId,
     rarity: value.rarity, duplicate: value.duplicate, text: value.text };
 }
