@@ -20,7 +20,7 @@ export function cardFormation(actor: Pick<TurnActor, 'side' | 'slot' | 'role'>, 
     if (actor.role === 'yarn') return { x: 2.15, y: 0, z: -.6 };
     const lane = actor.slot % 3;
     const depth = [-.55, .75, -1.4][lane]!;
-    const distance = actor.side === 'enemy' ? [1.3, 2.95, 3.45][lane]! + (row === 'rear' ? .12 : 0)
+    const distance = actor.side === 'enemy' ? [1.3, 3.05, 2.6][lane]! + (row === 'rear' ? .12 : 0)
       : row === 'rear' ? [2.8, 3.4, 2.85][lane]! : [1.45, 2.85, 3.1][lane]!;
     return { x: side * distance, y: 0, z: depth };
   }
