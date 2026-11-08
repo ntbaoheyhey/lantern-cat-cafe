@@ -836,3 +836,10 @@ Registered graded01 tests continuous boss pressure and a graded rear signature o
 P1 dictionary04 restores198assetSHAs exactly and20.71MB, but3CPU4throughHub183.4/299.9/183.3ms MISS. Module05 firstcold133.4ms, remaining2fixedruns pending; original build failures retained, no adoption/perfPASS claim.
 B3 invitations3×10000accounts complete; independentreceipt tests2PASS recomputeCDF/cohort ratios. Economy remainsA4combat, not post-B1/day7 acceptance.
 Read draft380/source8ba0a3879 and explicitremainingmisses; earnedreceipt forwarding queued for E2. No activeA retained browser outside measuredleases. No merge/deploy/modelhelpers.
+
+## 2026-11-08T07:17:17.841465+00:00 A5-B1 CHECKPOINT
+Preserved original jobs and WIP5089ea1d2; graded01/02 fullTRAIN matrices rejected: basic46/384piece misses,wide9 with119saturatedafterarms,conservedbudget59. No productioncombat/fresh20001–20500 change.
+Registeredresponse03: conservedbudget plus boundedautomaticenemyresponse.30/.50, original384/tiers/sets/teams TRAIN1–50;110sCPU/7shandoffs after B completion. No Bfiles/modelhelpers.
+P1module05 exact198asset restoration; threecoldobservations retained. Layout06 sourceflow1280PASS but coldstartup stillMISS; no causalperformanceclaim.
+Registeredlazy07 App/offline loading only;20,816,833bytes,entry311392bytes vsmodule052494678 (requestedgraph/timingpending). ThreeCPU4runs and realplayer/reviewerflows running; browser closes each lease.
+A4requests/schema unchanged; earned-receiptforwarding still queuedE2. No merge/deploy/protected edits.
