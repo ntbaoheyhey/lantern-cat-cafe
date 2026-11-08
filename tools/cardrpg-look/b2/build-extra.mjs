@@ -2,6 +2,7 @@ import {readFile} from 'node:fs/promises';
 import {resolve} from 'node:path';
 import {createHash} from 'node:crypto';
 import {createRequire} from 'node:module';
+import {execFileSync} from 'node:child_process';
 const require=createRequire('/Users/bao/tools/cardrpg-look/npm/package.json'),sharp=require('sharp');
 export async function b2Evidence(root){
  const images=[],files=[];const names=['First round','Mochi’s last light','Clover’s greenhouse','Three opponents','Yarn Giant awakens','A new companion'];
@@ -9,7 +10,11 @@ export async function b2Evidence(root){
   const pair={name:names[i-1]};
   for(const [side,dir]of [['before','v0'],['after','v5/shots']]){
    const {rows}=JSON.parse(await readFile(resolve(root,`reports/cardrpg-look/b2/${dir}/shots.json`)));
-   const row=rows.find(r=>r.width===1280&&r.name.startsWith(`${i}-`));const path=`reports/cardrpg-look/b2/${dir}/${row.file}`,raw=await readFile(resolve(root,path));
+   const row=rows.find(r=>r.width===1280&&r.name.startsWith(`${i}-`));
+   // Reproduce a measured gallery after its original PNGs were archived.
+   const ref=process.env.B2_SHOWCASE_COMMIT;
+   const path=`reports/cardrpg-look/b2/${dir}/${ref ? row.sourceFile ?? row.originalFile ?? row.file : row.file}`;
+   const raw=ref ? execFileSync('git',['show',`${ref}:${path}`],{cwd:root,maxBuffer:8*1024*1024}) : await readFile(resolve(root,path));
    const thumb=await sharp(raw).resize(640).webp({quality:82}).toBuffer();pair[side]=`data:image/webp;base64,${thumb.toString('base64')}`;files.push({path,sourceSha256:createHash('sha256').update(raw).digest('hex')});
   }
   images.push(pair);
