@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-C1 specialties23 adopted from the exact three-file staged manifest on codex/cardrpg-a5-c1-specialties-2026-11-08, stacked on DRAFT394. Twelve cat job lines and mode-correct Team tooltips; source six checks and OFF digest complete. Separate ON/OFF functional checks and supplemental Collection framing pass; copy draft publication pending. Hush closure remains complete.
+C1 specialties23 adopted from the exact three-file staged manifest on codex/cardrpg-a5-c1-specialties-2026-11-08, stacked on DRAFT394. Twelve cat job lines and mode-correct Team tooltips; source six checks and OFF digest complete. Separate ON/OFF functional checks and supplemental Collection framing pass; published as DRAFT396 on394; all receipts and reviewed copy captures retained. Hush closure remains complete.
 ## NEXT
-Finish supplemental Collection capture review, bind complete receipts, publish C1 specialties draft on394 and mirror ledger. Original 216 replay/ON-OFF/12cat/8tooltip/three-width/THC7-12 checks already pass; do not rerun them. No original TRAIN matrix restart; fresh20001–20500 UNUSED. B1/B2/display/cadence/startup/Z open; stack376→377→379→381→382→383→384→385→386→388→394.
+Mirror C1 draft396 checkpoint, then resume B1/B2 root-cause work on a separate stacked branch; no source tuning during copy verification. Original 216 replay/ON-OFF/12cat/8tooltip/three-width/THC7-12 checks already pass; do not rerun them. No original TRAIN matrix restart; fresh20001–20500 UNUSED. B1/B2/display/cadence/startup/Z open; stack376→377→379→381→382→383→384→385→386→388→394→396.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -222,3 +222,5 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - Resume2026-11-08T18:36Z: original OFF8250 completed exact. Source six checks complete; E2E420original+1failed-case retry, no runtime edits. Offline build-on attempt1 missing retired Python preserved; attempt2 uses existing A5 Pillow11.3.0 and passes. Separate ON/OFF all functional checks pass. Visual review found Collection screenshots centered below job text and before preview readiness; supplemental captures use identical artifacts. Original supplemental attempt1 incorrectly scrolled window instead of content and is retained. A premature runner resume was rejected by exclusive log creation before any duplicate sample; original coordinator completed normally. No new acceptance samples.
 
 - 2026-11-08T18:38:18.064417+00:00: C1 closure auditPASS;216paired replays/36text-only differences;OFF8250exact;ON/OFF12cats+8sets+THC7/12+keyboard/threewidths;42functional+12supplemental captures, contrast8.028minimum. Actual copy samples personally reviewed; baseline miniature blank frames disclosed, no renderer claim. Runtime a30757265 unchanged, sixsourcechecks420originalE2E+1retry retained. Bpublished395; no integration/sourceadoption. Freshacceptance unused.
+
+- 2026-11-08T18:39:18.379616+00:00: Published DRAFT396 https://github.com/ntbaoheyhey/taskbar-hero/pull/396 on394, evidencec85716f54. Source gates and UI checks unchanged; no duplicate PR or runtime changes.
