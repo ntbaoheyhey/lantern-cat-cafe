@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-Advice29 source e14d320ed fully verified: six gates1746web/1192rules/421E2E/build; OFF8250 exact; original-loss fallback and earned Mallow1→5 swap pass3widths/bothlooks24captures. Same-band90records exact, no population benefit. Draft publication next.
+Advice29 source e14d320ed fully verified: six gates1746web/1192rules/421E2E/build; OFF8250 exact; original-loss fallback and earned Mallow1→5 swap pass3widths/bothlooks24captures. Same-band90records exact, no population benefit. Published DRAFT397 on396; evidence18da2ac96.
 ## NEXT
-Publish reserve-advice draft on396; mirror ledger/outbox. Reference30 completed4000TRAIN:6scenes exact, scene4 262→499/500 andscene5 288→242; median57.8% so no automatic recalibration. Investigate changed support scenes, preserve negatives. B1/B2/display/cadence/startup/Zopen; fresh20001–20500UNUSED.
+Reference30 completed4000TRAIN:6scenes exact, scene4 262→499/500 andscene5 288→242; median57.8% so no automatic recalibration. Investigate changed support scenes, preserve negatives. B1/B2/display/cadence/startup/Zopen; fresh20001–20500UNUSED.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -236,3 +236,5 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - 2026-11-08T19:12:16.454938+00:00: Advice29 both corrected cohorts complete, all90account records identical, original90firststates exact, progression thresholdsPASS27/28firsttwo and28heavyfirst; zeroeligible reserve suggestions in those oldsaves. Adopted exact registered two-guard candidate after supported audit. Controlled regression before1fail/5pass, after6pass. Separate casual2 fixture spends250fish/8threads viafourpubliclevelcommands, keepsfirstcombat/choices exact, then legitimately suggestsMallow atband5. No new population benefit or freshacceptance claim.
 
 - 2026-11-08T19:20:20.430366+00:00: Resumed original advice29 coordinators without reruns; six source gates/OFF/UI closurePASS. Personally inspected baseline1280trainedResult, baseline1440fallback andlook1024Prepare. Reference30 registered snapshot sampled4000TRAIN once; six scenes exact,324improved/133worsened, median57.8%, mean61.675%. Receipt-audit attempt1 used wrong historical digest serialization; corrected attempt2 retains original script/error and no simulation rerun. No combat/acceptance/B change.
+
+- 2026-11-08T19:21:27.397588+00:00: DRAFT397 verified at18da2ac96 on396; six source checks and24UIcaptures unchanged. No duplicate PR or test rerun. Mirror state/report to ledger and append coordination checkpoint.
