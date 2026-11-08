@@ -99,3 +99,8 @@ Kettle Knight remains a rules elite; presentation-only boss emphasis requested b
 
 ## B2 V4 HUD
 Existing L1/L5 portrait1x and L6 icon1x WebP reused byte-for-byte. CSS conic cooldown rings, no new bitmap. Display-name receipt card and sequence/discovery.id v2 deduplication use textContent; original v1 semantics retained.
+## B2 V5 procedural effects
+Tool: Three.js existing instanced primitive pools + GLSL; deterministic seed1808, no bitmap/model import.
+All twelve ultimates and basic skills retain authored motifs/palette/timing. A200ms gathered floor ring immediately precedes travel; impact expands into a<=650ms keyed afterglow, within the existing plan duration. Two existing foot lights peak1.15/0.65 rather than0.85/0.55; no added lights/per-cast material allocation.
+Clover greenhouse uses original profile glass with honey frame ribs, surfaceKind6, panes at0.46+0.18rim opacity, procedural22x light shafts and ground-up growth. Existing leaf/petal recipe and protected face ellipses remain.
+Shake: camera distance/FOV/viewport-derived2.5pxX +1.79pxY maximum, combined<4px; previous rendering retained whenB2OFF. Number backing#142932, warm/green/blue text; CSS only.
