@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-Current-cliffs24 complete and audited:68residuals/20,400component battles,3,400exactcurrent22pairs. Chapter2mainstat survival cliff; set4null. New hit-envelope25 registered on current source before sampling; no runtime change.
+Committed-pattern26 complete/audited; controlled90/90PASS, but heavyday7 firstwins30/30 violates≤95%. Isolated adoption rejected; runtimea30757265 unchanged. New pressure-transfer27 registered, not yet sampled.
 ## NEXT
-Run registered hit-envelope25 all384fourth-slotTRAIN1–50pairs,3isolated bossdamage envelopes; retain saturation and allmisses before deciding broader work. B1/B2/display/cadence/startup/Zopen; fresh20001–20500UNUSED; no priorjobsactive.
+Run semantic27 then both registered1321TRAIN50+90saved-day7 arms (T15/T30) under boundedlock. Preserve all26/27misses. B1/B2/display/cadence/startup/Zopen; fresh20001–20500UNUSED; no priorjobsactive.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -228,3 +228,5 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - 2026-11-08T18:41:52.652081+00:00: Registered current-cliffs24 before sampling;68current22misses,20400component battles, six deterministic traceexamples. Worst nowch2(1→45/50), not oldch3. No boss-cap experiment or production retune is registered/adopted. Source unchanged, freshacceptance untouched.
 
 - Resume: preserved completed24receipts; no duplicate simulations. Audited current source and alloriginal22pair outcomes. Three prospective boss-hit envelopes25 registered; source snapshot and exact-once overlay identity required. No production/acceptance change.
+
+- 2026-11-08T18:56:26.827993+00:00: resumed26 completed receipts without duplicate simulations. Independent audit90semantic/45OFF/1321TRAIN/90saved inputsPASS; heavyceiling regresses28→30wins, firsttwo7improved/1worsened. Rejected isolatedadoption; no runtime change. Registered27fixed-target rawcycle redistributionT15/T30 before sampling, not equivalent to actualHPdamage.

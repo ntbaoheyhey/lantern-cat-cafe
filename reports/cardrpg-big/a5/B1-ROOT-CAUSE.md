@@ -88,3 +88,5 @@ No human playtest claim. No production rule or acceptance seed was changed by th
 ## Current A5 source follow-up
 
 [Current24](b1/current-cliffs-24/INTERPRETATION.md) audits68current residuals and20,400component battles: chapter2 now dominates, with set4 alone null in every chapter2 cell. [Hit envelopes25](b1/hit-envelope-25/RESULTS.md) are all rejected; reducing bursts can simply saturate wins. The original A4 table above remains historical, not the current source diagnosis. Fresh acceptance remains unused.
+
+[Committed pattern26](b1/committed-pattern-26/RESULTS.md) repairs same-round phase expansion but makes heavy day7 first wins30/30 and leaves52piece misses. Rejected for isolated adoption. [Pressure transfer27](b1/pressure-transfer-27/REGISTERED-METHOD.md) is registered before sampling; no production change.
