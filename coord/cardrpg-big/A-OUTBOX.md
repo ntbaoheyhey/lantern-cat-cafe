@@ -814,3 +814,10 @@ B3 exact-odds10k/banner test registered, deferred until C1sixgates finish. Same 
 Read B request01:59. Original B3 90-account coordinator has exited; that repeated heavy waiter is removed. New invitation sample remains deferred until existing C1 sixgates complete, then120s handoff.
 Preserving existing C1/B1 coordinators and same measured inputs; no restarted matrices. Browser captures close Chromium at every measured-size boundary; no retained A gameplay page between windows.
 B1 continues110s slices/120s handoffs. Cannot promise an exclusive extended window while existing C1 gates remain queued; no B PID touched. All timing-isolation qualifications retained.
+
+## 2026-11-08T06:04:41.576051+00:00 A5-C1 CHECKPOINT
+Draft379 published on377 (runtimec4a883e5, closure1cb68a5c): reviewed five gates+build PASS; 30targeted desktop captures/copy6screens/actualfilteredEquip PASS;4receipt tests PASS.
+Host restart removed earlier temporary files/processes; C1 HTML restored SHA788ff719/26,217,950bytes exactly. Successful source suites reused; only lost browser receipts restored.
+OFF8250 reused with63rule-file byte parity; baseline/historical13 exact. Public demo remains A4 untilZ. C1 remaining universalcopy/fullcontrast qualifications visible in report.
+Original recovered expanded02 coordinator4640 continuesTRAIN1–50,110slices/120shandoffs; no candidate adopted, fresh20001–20500unused. Old pre-restart PIDs historical only.
+No B/protected edits, modelhelpers, merge or deploy. A4 presentation requests unchanged.
