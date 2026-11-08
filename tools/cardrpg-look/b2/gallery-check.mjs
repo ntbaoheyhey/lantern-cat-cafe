@@ -4,11 +4,11 @@ import {resolve} from 'node:path';
 import {createHash} from 'node:crypto';
 import assert from 'node:assert/strict';
 import {withTimingLock} from '../lock.mjs';
-const artifact=resolve('docs/cardrpg-look/b2.html'),out='reports/cardrpg-look/b2/v6/gallery';await mkdir(out,{recursive:true});const errors=[],rows=[];
+const artifact=resolve('docs/cardrpg-look/b2.html'),out=process.env.B2_GALLERY_OUT||'reports/cardrpg-look/b2/v6/gallery';await mkdir(out,{recursive:true});const errors=[],rows=[];
 await withTimingLock('B2 ready gallery visual review',async()=>{
  const browser=await chromium.launch({channel:'chromium',args:['--use-angle=metal']});
  try{
-  const page=await browser.newPage({viewport:{width:1280,height:720}});page.on('pageerror',e=>errors.push(String(e)));await page.goto('file://'+artifact);
+  const page=await browser.newPage({viewport:{width:Number(process.env.B2_GALLERY_WIDTH||1280),height:Number(process.env.B2_GALLERY_HEIGHT||720)}});page.on('pageerror',e=>errors.push(String(e)));await page.goto('file://'+artifact);
   await page.getByRole('button',{name:'Battle gallery',exact:true}).click();
   await page.waitForFunction(()=>[...document.querySelectorAll('.look-b2-gallery img')].every(i=>i.complete&&i.naturalWidth>0));
   assert.equal(await page.locator('.look-b2-pairs figure').count(),6);assert.equal(await page.locator('.look-b2-ultimates button').count(),12);

@@ -19,3 +19,7 @@ Posteffects probe now registered on /tmp/cardrpg-b2-v6.html c711dec2; keep origi
 Resume: deliveryPID15621 and performancePID17040 still active; galleryPID17223 queued, no duplicates. First48native casts16.8ms; remainingconfigs/cold pending.
 StartupPASS3522500bytes/11chunks/0Three-model. Lean21550338bytes/B-assets15349700bytes;SSIMmin0.999987. DPR2sixshots complete; boss/earned inspected. Before20svideo captured; after/lifecycle pending.
 LatestA18:02 holds source-validation lease after B handoff; da2b4886c schema unchanged. V6 report generator now follows archivedWebP filenames; audit strengthened for digest5/artifactbinding/lifecycle/gallery. No runtime changes.
+Native after-VFX96cast windows complete at1280/1440,max16.8ms/errors0. Fivebattle lifecyclePID27841 owns currentlease; first4sameScene543geometries/103textures/47programs. CPU4/cold/gallery pending.
+Full/lean/video/DPR2 delivery published43662f01c; V6draft awaits remainingregisteredprobes/report. Evidence58.76MB after archival1024/video-sheetWebP packing; keep1440DPR2+1280PNG and both20svideos.
+144casts complete16.8ms; nativecold3complete16.8ms;CPU4coldpending. Galleryready check FAILED: previewbar top107px blocks Pause; retainedv6/gallery/attempt-1.log.
+CommittedCSSfixf052fb330 moves only gallerypreviewtop171px; rebuild wrapper/session39936 queued, thenUI3sizes+gallery3sizes. Originalperf17040 continuesc711immutable; no repeatedsamples. Will prove JS/assets/existingbattleCSS identical and report CSS-only artifact lineage.

@@ -27,6 +27,7 @@ check('delivery receipts bind the measured HTML',[results.sha256,perf.sha256,sho
 check('three-width UI',ui.rows.length,ui.rows.length===3&&ui.errors.length===0&&ui.rows.every(r=>!r.overflow&&r.numberContrast>=4.5&&r.cardOverflow.every(v=>!v)));
 const videos=await read('v6/videos/checks.json');check('paired20sH264 same initial',videos.sameInitial,videos.sameInitial&&videos.rows.every(r=>r.errors.length===0&&r.probe.streams[0].codec_name==='h264'&&Number(r.probe.format.duration)===20));
 const roster=await read('v2/roster/checks.json'),bossIds=['yarn-giant','kettle-knight','pantry-crown'];
+const models=await read('v6/model-budget.json');check('regular <=12k and boss <=22k model triangles',models.rows.map(r=>({id:r.id,triangles:r.triangles,limit:r.limit})),models.rows.length===13&&models.rows.every(r=>r.pass));
 const regularMax=Math.max(...roster.rows.filter(r=>!bossIds.includes(r.id)).map(r=>r.unit.heightPercent));
 const bossRatios=Object.fromEntries(roster.rows.filter(r=>bossIds.includes(r.id)).map(r=>[r.id,r.unit.heightPercent/regularMax]));
 check('boss height >=2x regular (same roster camera)',bossRatios,Object.values(bossRatios).every(v=>v>=2));
