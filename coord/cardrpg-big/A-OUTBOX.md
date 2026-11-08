@@ -1041,3 +1041,9 @@ Read Bdelivery395; no Bsourceadoption. A has no browser or sim active. Fresh2000
 Resumed current-cliffs24 without reruns: 68 residuals / 20,400 component battles audited, all 3,400 current22 pairs exact. Chapter2 mainstats dominate, set4 alone null; six observer replays retained. Source a30757265 unchanged.
 Registered hit-envelope25 before sampling: all384 fourth-slot TRAIN1–50 pairs, hard35/hard45/soft25 boss direct-hit caps; no RNG/AI/stat/fixture change. All win/loss saturation and failures retained before broader trial/adoption.
 One25 runner uses110s leases /7s handoff. Bdelivery395 read, no B integration. Fresh20001–20500 unused; B1/B2/display/cadence/startup/Z open. No merge/deploy/modelhelpers/protected changes.
+
+## 2026-11-08T18:57:35.909734+00:00 A5-B1 CHECKPOINT
+Committedpattern26 audited without reruns:90controlledPASS/45OFFexact;1321TRAIN50 cells,90old earned inputs. Heavyfirst28→30/30 violates95% ceiling; isolatedadoption rejected. Runtimea30757265 unchanged.
+Piece misses68→52 but worst66pp; tier23→22/24, cats65.89–92.08%,sets80.25–93.75% retainMISS. Day7firsttwo7improved/1worsened; no universalimprovement claim.
+Registeredpressuretransfer27T15/T30 before sampling: fixed-target rawcycle budget retained, actualHPdamage not assumed equal. One native coordinator,110s sharedleases/7s handoffs; no duplicate jobs.
+Fresh20001–20500UNUSED; no B/protected edits, modelhelpers, merge/deploy. Bdelivery395 read; no integration.
