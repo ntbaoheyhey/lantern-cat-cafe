@@ -6,7 +6,7 @@ Cân bằng trang bị, một số mèo, nhịp thưởng 30 phút và hiệu n�
 
 # A5 checkpoint — acceptance remains open
 
-Runtime source: `dc60280cf` (reviewer-only Settings grants; Home navigation and combat unchanged). Six source checks and the exact OFF digest pass; [source-bound closure](c1-review-controls/audit.json). Hush correction remains unchanged. This report separates historical evidence from current-source TRAIN diagnostics. Bots are proxies, not a human playtest. Fresh acceptance seeds20001–20500 remain UNUSED; old10001–10500 are contaminated.
+Runtime source: `994d84056` (companion growth previews; combat unchanged). Six source checks and the exact OFF digest pass; [source-bound closure](c1-growth-preview/audit.json). Hush correction remains unchanged. This report separates historical evidence from current-source TRAIN diagnostics. Bots are proxies, not a human playtest. Fresh acceptance seeds20001–20500 remain UNUSED; old10001–10500 are contaminated.
 
 ## Play experience and progression
 
@@ -76,3 +76,5 @@ Remaining work: B1/B2 numeric closure and display calibration; fresh registered 
 [Settings controls](C1-SETTINGS-CONTROLS.md): four grants hidden for ordinary V4; explicit review and OFF retain them. Save roundtrips/keyboard/21targetedcaptures pass; runtime dc60280cf, preview SHA f27ff7dc954d9f8316e20a316ef62c9db96db0be54c13a58db1145d19b49286a,20,923,753bytes. Harness failures and existing reviewer discovery-card overlap remain disclosed. No new startup/cadence claim.
 
 [Companion growth](C1-COMPANION-GROWTH.md): actual cost/stats/unlocked skills before Level up/Add a star; exact public-command preview, no rule change. SeparateON/OFF60browserchecks/36captures across3widths/bothlooks PASS; contrast6.858/nooverflow. Preview20,924,425bytes/SHA6c09ce3c5cc1725f54eb91bb4f6b8b4429cb219bd3cee6825593f2bb84b9d4e7. Original test/harness failures retained; no cadence or balance claim.
+
+[Reply-pressure39](b1/reply-pressure-39/RESULTS.md): all three arms rejected under the predeclared screen; worst piece gains32/50/44pp. The middle pressure restores average difficulty but retains99piece misses. No production adoption, extra acceptance samples or wider rerun.

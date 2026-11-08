@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-DRAFT400 growth preview published and mirrored (ledgerab3b325ab/synce81fd1275). B1 reply-pressure39 registered on current exact rules: isolated full queued-reply34 AI plus boss attack1.15/1.30/1.45; six-replay/45OFF/scaling/observer probes then all384TRAIN1–50 pairs. One coordinator, no production change.
+Reply-pressure39 completed and independently audited: all three registered arms rejected (worst32/50/44pp; mean before87.15/41.94/16.65%). Original failures and every negative pair retained. Production994d84056/DRAFT400 unchanged; no active A jobs.
 ## NEXT
-Audit every39arm and preserve all negative pairs/saturation; expand only under the prospective screen, otherwise reject. Original30minute cadence749.2s/dead907.7s MISS; B1/B2/display/startup/Z open. Fresh20001–20500 UNUSED.
+Preserve39 closure. Measure the current Home-led elapsed journey after navigation/growth fixes; original fixed-Chapter1 policy had749.2s gap/dead907.7s MISS. B1/B2/display/startup/Z remain open; do not extend rejected39 or use fresh20001–20500 yet.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -276,3 +276,5 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - 2026-11-08T20:44:00.015108+00:00: DRAFT400 https://github.com/ntbaoheyhey/taskbar-hero/pull/400 verified on399; source994d84056/evidence1d9d4022d. Growth preview fully wired and checked; all original failures and unresolved A5 numeric gates retained.
 
 - 2026-11-08T20:46:10.240191+00:00: Registered reply-pressure39 before samples; current production hashes identical to corrected34 except isolated policy and boss-only attack multiplier. Three fixed arms, all384cases versus early04 historical31. Controls reused; no acceptance or automatic adoption. Original coordinator tool52735 uses110sleases/7shandoffs.
+
+- 2026-11-08T20:53:20.569169+00:00: Resumed exact39 completed receipts without rerunning any battles. Independent auditPASS:3×384TRAIN50cells/6replays/45OFF/24scaling plus observer. All3screenFAIL, no wider expansion/adoption. Current-source report corrected from Settings to growth994d84056. Unrelated Documents checkout and Finder file untouched.
