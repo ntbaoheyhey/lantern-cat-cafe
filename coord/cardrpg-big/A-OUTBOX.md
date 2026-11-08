@@ -1102,3 +1102,9 @@ One native coordinator uses110s sharedleases/7s handoffs; prior22/34 controls re
 Reply-pressure39 complete and audited on original samples: all3 arms rejected (worst32/50/44pp; meanbefore87.15/41.94/16.65%). All negative pairs and original observer failure retained in641b5edf3; runtime994d84056 unchanged.
 Registered Home-led engagement02 before sampling: exact growth6c09ce3c artifact,60active minutes, one fresh persistent browser, x1/no grants/skips/time edits. Only route-launch policy follows Home primary; selected-cat upgrades and other original01 choices unchanged.
 One original coordinator uses10minute bounded leases/7s frozen handoffs. Original01 cadence/deadtimeMISS remains; no new engagement result yet. B395 read/no integration; fresh20001–20500 unused. No B/protected edits/modelhelpers/merge/deploy.
+
+## 2026-11-08T21:08:17.860920+00:00 A5-E1 CHECKPOINT
+Resumed original Home60minute79723 and contextual40/80272 without duplication; immutable6c09ce3c/source994d84056. First10active minutes complete; no cadence conclusion yet.
+Contextual40 keepsall384TRAIN50gear contexts with existing20seed forecast; first bounded slice retained, all source/control hashes fixed. Static displayMISS remains; no acceptance sampled.
+Staged whole-crew Equipment41 boss rehearsal and zero-resample auditors atf1e1ff2e1; sourceNOTadopted. Isolated unit job82773 queued; no model helpers or extra browser.
+ProductionDRAFT400unchanged. B395read/no integration; no B/protected edits, merge, deploy or mainpush. Original01cadence/deadtimeMISS and B1/B2/startup/Z remain open.
