@@ -1072,3 +1072,10 @@ Original33/34 complete/audited and rejected:364before/384after near-certain wins
 Emergency35 also complete1321TRAIN50/90same-band old saves:96piece misses,worst40pp,heavy30/30,two unavailable advice; rejected. All negativepairs/source/probe receipts pusheda8e2c212e. Runtimee14d320ed unchanged.
 Registered current-source30active-minute engagement01 on exact4b15da6d artifact; one browser,10minute bounded leases,7s handoff, lifecycle frozen between leases. Not a completed cadence or acceptance claim.
 Display36 static feature/weight diagnostic queued; zero newcombat samples or production score/budget changes. B395read,no integration; fresh20001–20500 unused. No B/protected edits, modelhelpers, merge or deploy.
+
+## 2026-11-08T20:23:58.075280+00:00 A5-E2 CHECKPOINT
+DRAFT398 https://github.com/ntbaoheyhey/taskbar-hero/pull/398 on397; Home next-chapter/active-route/star-goal source d305ae33f, evidence7609492b5. Six checks1750web/1192rules/421E2E/build PASS.
+Thirty targeted captures/3widths/bothlooks PASS; contrast6.858/nooverflow/primaryvisible. Import-return and gradient/readiness harness failures retained. OFF8250 reused only with exact rules hashes/package diff; baseline/historical13 exact.
+Original engagement01 completed30.05active minutes on immutable4b15da6d:70offers/20rewards/11celebrations,749.235s reward gap and907.67s combat. Cadence/deadtimeMISS;51captures retained. FixedChapter1/selectedcat policy explicit; no Home cadence benefit claim.
+Next isolated C1 hides four Settings demo grants behind dev=1, preservingOFF; stagedonly at this checkpoint. No A browser/sim remains. B395 read/no integration; acceptance20001–20500 unused.
+B1/B2/display/startup/Z open; no B/protected edits, modelhelpers, merge/deploy.
