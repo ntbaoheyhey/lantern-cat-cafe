@@ -1,0 +1,17 @@
+# Available crews for the next job star
+
+Home now offers named, available crew swaps for an unfinished job star and says when all daily supplies are gathered. The original capped save can earn its missing event star after choosing a crew. Original30minute cadence/dead-time gates remain MISS; this targeted continuation is not a human playtest or a fresh elapsed journey.
+
+The original Home02 account has49stars, six rewarded routes and all four currency allowances filled. Its seven legal one-seat changes activate a four-mark job at the displayed band. Home lists those actual public-command previews; changes retaining a current guardian and healer come first, without a combat ranking. Every cat keeps its own gear, the incoming cat inherits the outgoing row, and no currency is spent. An active route, unavailable band, combat star, already-complete star or already-active four-mark crew receives no suggested swap.
+
+Selecting Mallow instead of Soot in the original earned save records the Door team discovery. The primary action starts Tangled Cafe at band1; after an x1 victory and the stop2 event, its record becomes3/3 and appears in Discoveries. Six actual browser continuations at three widths/both looks reproduce this with unchanged currency,18.946–20.443second fights and no skip, grants or injected browser state. This is one account repeated for UI coverage, not six independent balance samples or a population win claim.
+
+The completion screen describes saved rewards instead of promising new chapter rewards on a capped replay. With no newly collected items, its button says “Review equipment.” New text follows the account's current V4 flag: switching OFF retains a completed run's original mode internally, but preserves the old paragraph/button. No combat, economy, cap, save schema, runtime dependency or B-owned file changed.
+
+Validation: eight isolated tests and24ON/OFF browser scenarios with48targeted captures. The primary action remains visible on Home at1280x720,1440x900 and1024x600; measured global horizontal overflow is0 and minimum scoped Home text contrast is6.726. Expanded crew options can require scrolling. Alternate-look captures explicitly use `?dev=1`; reviewer controls there are expected. Journal state is asserted through the DOM; viewport captures are not a substitute for the later Z pack.
+
+Original failures remain: a lazy-screen read in the first browser harness; the genuine account/run-mode completion-copy defect; a Vite asset allowlist error before isolated tests ran; and an audit invoked before the last OFF receipt was written. The revised source passed its isolated checks. The audit retry consumed completed receipts and repeated no gameplay. All six source checks passed on the first attempt: typecheck, lint,1,779web tests,1,192rules tests (two expected failures,11skipped),421E2E tests and build. The source-bound closure verifies both adopted builds are byte-identical to the browser-tested prototypes. Original OFF8,250route receipts are reused only after exact rule hashes and a zero package diff; baseline and13historical sims remain exact.
+
+Preview:20,929,441bytes, SHA256 `2c3186275e052a423c55830cd6b7b20d2c8af5769b8854c184e2399a5576bc86`. No new startup measurement or cadence benefit is claimed. Fresh acceptance seeds20001–20500 remain unused.
+
+[Source-bound closure](e2-star-plans/audit.json) · [prototype evidence](e2-star-plans/prototype-audit.json) · [original availability diagnosis](E2-CAPPED-CHOICES.md) · [retained Home02 misses](E2-HOME-ENGAGEMENT.md).

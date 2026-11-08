@@ -4,6 +4,8 @@ import { PageTitle } from '../shared';
 import type { DepthModel } from './model';
 import { CompanionPreview } from './CompanionPreview';
 import { CafeBoardV4 } from './CafeV4';
+import { StarCrewPlansV4 } from './StarCrewPlansV4';
+import { dailySuppliesFullV4 } from './star-plans-v4';
 
 export function HomeV4({m}:{m:DepthModel}) {
  const [,tick]=useState(0);
@@ -28,10 +30,11 @@ export function HomeV4({m}:{m:DepthModel}) {
  const act=()=>active?m.go('map'):m.state.tutorial<3?m.tutorial():!m.state.freeInvite?m.go('gacha'):m.state.tutorial===3?m.go('inventory'):m.start(route.id,'campaign',band);
  return <><PageTitle eyebrow={`Cafe day ${m.state.account.day}`} title="A small light. A brave little team."/>
   <section className="dp-v4-home cr-panel" aria-label="Tonight at home"><div><small>TONIGHT'S LITTLE ADVENTURE</small><h2>Keep the lantern warm.</h2>
-   <p>{goal}</p><button className="cr-primary" onClick={act}>{next} →</button>
+   <p>{goal}</p>{dailySuppliesFullV4(m.state)&&<p>Tonight's supplies are gathered. Missing stars still count.</p>}<button className="cr-primary" onClick={act}>{next} →</button>
    {m.state.tutorial<3&&<button className="dp-v4-skip-lesson" onClick={()=>{m.state.tutorial=3;m.notify();}}>Skip lesson</button>}
    <div className="dp-v4-home-pull"><p><b>Next star · {stars} found</b><span>{starGoal}</span></p>
     <p><b>The kettle</b><span>{shift.claims?`${shift.claims} cafe service ready.`:shift.remaining===0?'Fresh service tomorrow.':`Ready in ${Math.max(1,Math.ceil((shift.readyAt-shift.now)/60000))} minutes.`}</span></p></div>
+   <StarCrewPlansV4 m={m} goal={nextStar} band={band}/>
    <p className="dp-v4-home-tomorrow"><b>Tomorrow</b> {week.tomorrow}</p>
   </div><CompanionPreview m={m} home/></section>
   <section className="cr-panel dp-v4-home-routes"><h2>Choose tonight's route</h2>
