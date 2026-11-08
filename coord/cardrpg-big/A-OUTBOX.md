@@ -982,3 +982,9 @@ Suppression15common complete1840TRAINcells: Inkcap54.47→56.35%, Soot47.25%,Sor
 Kit-fit14 complete:3200unchanged homogeneous controls, Soot54.03%,crew26.75ppMISS. Quiet-reach10 rejected: Inkcap53.22%,44paired improvements/320worsenings.
 Current16 registered before sampling: existing A5+only Hush correction, original1321TRAIN50cells plus90OLD earned day7 snapshots; not a fresh45day cohort.19unit cases retain2intended pre-fix failures.
 No A browser active; simulations110s sharedleases/7s handoffs. Fresh20001–20500 UNUSED; B1/B2/display/cadence/startup/Z open. No B/protected edits/model helpers/merge/deploy.
+
+## 2026-11-08T17:15:43Z A5-B2 CHECKPOINT
+Sourceedd8ac69e applies only V4 Hush utility-turn repair;19unitPASS after2intended pre-fix failures. Both15matrices complete; intendedInkcapVelvet21→48/50matched,21→49fixed;321/328full-arm worsenings retained.
+Branchcodex/cardrpg-a5-b2-suppression-2026-11-08 onDRAFT388; sixsourcegates/OFF pending, current16old90day7+1321TRAINcells unchanged. No new draft or fresh earned45day claim yet.
+Registered17 before sampling: exact14eligible kits+15Hush versus same+10rescue-rest. Isolated trials only; no cooldown/fixture adoption. Fresh20001–20500 UNUSED.
+Read B V3/V4 requests; A5 App dev gating retained. No A browser active;110s sharedleases/7s handoffs. No B/protected edits/modelhelpers/merge/deploy.
