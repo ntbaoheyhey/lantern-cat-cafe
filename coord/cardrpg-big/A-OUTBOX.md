@@ -1097,3 +1097,8 @@ Returning to B1/B2 numeric closure; current piece/cat/set/display/cadence/startu
 Registered reply-pressure39 on unchanged994d84056 runtime: exact corrected34 AI plus isolated V4 boss attack1.15/1.30/1.45. All384TRAIN1–50 fourth-slot pairs; no fixture/gate/RNG or production change.
 Six replay/45OFF/scaling checks and round observer precede each arm. First observer receipt compared undefined versus serialized fields; retained failure, corrected serialized parity; no numeric reroll.
 One native coordinator uses110s sharedleases/7s handoffs; prior22/34 controls reused. Prospective screening rule controls any expansion, no automatic adoption. Fresh20001–20500unused; no B/protected edits/modelhelpers/merge/deploy.
+
+## 2026-11-08T20:54:32.608838+00:00 A5-B1 CHECKPOINT
+Reply-pressure39 complete and audited on original samples: all3 arms rejected (worst32/50/44pp; meanbefore87.15/41.94/16.65%). All negative pairs and original observer failure retained in641b5edf3; runtime994d84056 unchanged.
+Registered Home-led engagement02 before sampling: exact growth6c09ce3c artifact,60active minutes, one fresh persistent browser, x1/no grants/skips/time edits. Only route-launch policy follows Home primary; selected-cat upgrades and other original01 choices unchanged.
+One original coordinator uses10minute bounded leases/7s frozen handoffs. Original01 cadence/deadtimeMISS remains; no new engagement result yet. B395 read/no integration; fresh20001–20500 unused. No B/protected edits/modelhelpers/merge/deploy.
