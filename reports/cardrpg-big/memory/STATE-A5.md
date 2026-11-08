@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-H0 baseline measured60.37active minutes; closure PASS with OFF165cells/8250routes exact. All five source gates+build PASS on unchanged A4 runtime, five receipt tests PASS. Workdir /Users/bao/taskbar-hero-cardrpg-a4; branch codex/cardrpg-a5-h0-2026-11-08. H0 draft #377 published on #376 (fd4f73c1); A5 remains active.
+H0 baseline measured60.37active minutes; closure PASS with OFF165cells/8250routes exact. All five source gates+build PASS on unchanged A4 runtime, five receipt tests PASS. Workdir /Users/bao/taskbar-hero-cardrpg-a4; branch codex/cardrpg-a5-c1-2026-11-08. H0 draft #377 published on #376 (fd4f73c1); A5 remains active.
 ## NEXT
-Mirror H0 STATE/outbox, then C1 source adoption while B1 continues training. B1pilot04 coordinator tool1447 runs registered response-weight/pressure TRAIN experiment; pilot03 rejected for saturation. Existing C1build49190/browser57661 and B3reward58227/link-probe59372 are retained; E1 isolated checks complete. Adopt no source draft until its checks and phase review. Acceptance20001–20500 unused.
+H0 mirrored in sync517eb245/ledgercc31ef26. C1 exact overlay source adopted; five gates+build coordinator34393 and original browser57661 are running/queued. B1pilot04 coordinator tool1447 runs registered response-weight/pressure TRAIN experiment; pilot03 rejected for saturation. Existing C1build49190/browser57661 and B3reward58227/link-probe59372 are retained; E1 isolated checks complete. Adopt no source draft until its checks and phase review. Acceptance20001–20500 unused.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -58,3 +58,6 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - E1 draft isolated checks PASS (available atomic commands, forecast key, exact day7 attribution/rows, no mutation); easypractice recommendation returnednone in34.6ms. This is not real-browser CPU budget verification; draft remains unadopted.
 
 - H0 draft published: https://github.com/ntbaoheyhey/taskbar-hero/pull/377 stacked on376; evidencefd4f73c1. No merge/deploy. Rawlog whitespace retained by limiting diff-whitespace check to nonlog files.
+
+- C1 phase started on H0draft377; exact14file overlay4f06dc4f,26,217,646bytes built. A-owned source now adopted with source-tested.json; game rules remain A4 and docs/cardrpg3 artifact remains H0. C1 browser original coordinator57661 tests isolated build before any further edits. Type/lint/web/rules/E2E/build coordinator34393 records the earlier branch head but source-tested.json binds actual runtime inputs.
+- B1pilot04 COMPLETE: response0.15 worst40pp/2miss;0.30 worst8pp but20before/24after saturated. Response0.5pressure1.15 worst22pp/4miss with4/18saturated;pressure1.30 worst52pp/18miss with0saturated. None adopted. Fresh acceptance remains untouched.

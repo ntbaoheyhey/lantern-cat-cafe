@@ -1,3 +1,4 @@
+import { showReviewTools } from "./player-mode";
 import { useEffect, useState } from 'react';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import { PageTitle } from '../shared';
@@ -31,10 +32,10 @@ export function Prepare({ m }: { m: DepthModel }) {
     .reduce((sum, actor) => sum + actor.hp / 5 + actor.attack * 2 + actor.defense * 1.5, 0));
   const difficulty = !prediction ? 'Estimating…' : prediction.wins < 3 ? 'Hard' : prediction.wins === 5 && prediction.remaining > .55 ? 'Easy' : 'Even';
   return <><PageTitle eyebrow={m.tutorialBattle ? 'Practice table' : R.CHAPTERS[battle.chapter - 1]!.name} title="Prepare your team" />
-    <div className="cr-actions"><button className="cr-primary dp-fight" onClick={() => m.fight()}>Fight</button><button onClick={() => m.leave()}>Return to cafe</button><span>Your companions choose their actions. Watch, then improve your team.</span></div>
-    <section className="cr-panel dp-matchup"><div><small>TEAM POWER</small><strong>{power('party')}</strong></div><div><b>{difficulty}</b><small>{prediction ? `${prediction.wins}/5 simulated wins` : 'Trying five seeded fights for this team'}</small></div><div><small>ENEMY POWER</small><strong>{power('enemy')}</strong></div></section>
+    <div className="cr-actions"><button className="cr-primary dp-fight" onClick={() => m.fight()}>Fight</button><button onClick={() => m.leave()}>Return to cafe</button><span>{battle.v4 ? 'Pick your plan. Your cats take it from here.' : 'Your companions choose their actions. Watch, then improve your team.'}</span></div>
+    <section className="cr-panel dp-matchup"><div><small>TEAM POWER</small><strong>{power('party')}</strong></div><div><b>{difficulty}</b><small>{battle.v4 ? (prediction ? 'Rough forecast · your current crew' : 'Reading the matchup…') : prediction ? `${prediction.wins}/5 simulated wins` : 'Trying five seeded fights for this team'}</small></div><div><small>ENEMY POWER</small><strong>{power('enemy')}</strong></div></section>
     <details className="dp-estimate-note"><summary>How difficulty is estimated</summary><p>Power combines current HP ÷ 5, attack × 2 and defense × 1.5. Difficulty uses five alternate-seed simulations with your current gear and health. This small sample is a rough build hint, not a promised win rate.</p></details>
-    {battle.v4&&<section className="cr-panel dp-v4-pacing"><h2>Challenge band {battle.initial.challengeLevel??'legacy'}</h2><p>Enemy health and attack are fixed for this route band. Your equipment never raises enemy stats. Lower completed bands remain available for easier routes.</p>{battle.initial.enemies.some(id=>R.ENEMY_BY_ID[id]?.tier==='boss')&&<p>The boss changes its signature at half health. Defeating it retires its linked helpers together; there is no helpers-only cleanup.</p>}</section>}
+    {battle.v4&&<section className="cr-panel dp-v4-pacing"><h2>Challenge band {battle.initial.challengeLevel??'legacy'}</h2><p>Each band has fixed enemies. Choose a lower completed band for a gentler route.</p>{battle.initial.enemies.some(id=>R.ENEMY_BY_ID[id]?.tier==='boss')&&<p>At half health, the boss changes tactics. Defeat the boss and its helpers leave.</p>}</section>}
     {battle.v4 && <PreparationV4 m={m} />}
     <div className="dp-three">{battle.actors.filter(actor => actor.side === 'party').map(actor => <section className="cr-panel" key={actor.id}>
       <div className="dp-cat-heading"><img {...portraitProps(actor.catalogId)} alt="" /><div><h2>{actor.name}</h2><small>{actor.row} row · {actor.hp}/{actor.maxHp} HP</small></div></div>
@@ -57,7 +58,7 @@ export function BattleResult({ m }: { m: DepthModel }) {
   const name = (id: string) => battle.actors.find(actor => actor.id === id)?.name ?? id;
   const maxima = { damage: Math.max(1, ...summary.cats.map(cat => cat.damage)), healing: Math.max(1, ...summary.cats.map(cat => cat.healing)), taken: Math.max(1, ...summary.cats.map(cat => cat.taken)) };
   const labels = { damage: 'Damage', healing: 'Healing', taken: 'Damage taken' };
-  return <><PageTitle eyebrow={`${m.replay ? 'Replay' : 'Encounter'} · ${battle.round} rounds · seed ${battle.seed}`} title={battle.result === 'party' ? 'Victory' : battle.result === 'enemy' ? 'Defeat' : 'Recorded segment complete'} />
+  return <><PageTitle eyebrow={`${m.replay ? 'Replay' : 'Encounter'} · ${battle.round} rounds${showReviewTools(!!battle.v4) ? ` · seed ${battle.seed}` : ''}`} title={battle.result === 'party' ? 'Victory' : battle.result === 'enemy' ? 'Defeat' : 'Recorded segment complete'} />
     <div className="cr-actions"><button className="cr-primary" onClick={() => m.finish()}>{m.replay ? 'Close replay' : m.tutorialBattle ? 'Complete lesson' : 'Continue to rewards'}</button>{!m.replay && <><button onClick={() => m.replayLast()}>Watch replay</button><button onClick={() => m.improveTeam()}>Improve team</button></>}</div>
     {battle.v4 && <OutcomeV4 battle={battle} />}
     <section className={`cr-panel dp-result-banner ${battle.result === 'party' ? 'victory' : ''}`}><CompanionCard id={summary.mvp!.catalogId} m={m} /><div><small>MOST VALUABLE COMPANION</small><h2>{summary.mvp!.name}</h2><p>{summary.mvp!.damage} damage · {summary.mvp!.healing} healing · {summary.mvp!.shielding} shields</p><small>Contribution = damage + healing + ¼ shields.</small></div></section>
