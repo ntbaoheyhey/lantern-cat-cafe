@@ -1,0 +1,101 @@
+[
+  {
+    "name": "typecheck",
+    "attempt": 1,
+    "code": 2,
+    "head": "e3134ea58c779aa879551bac18970e9a0e29293c",
+    "started": "2026-11-08T08:09:29.543Z",
+    "ended": "2026-11-08T08:09:31.573Z",
+    "log": "reports/cardrpg-big/a5/e1-adopted/gates/typecheck-attempt-1.log",
+    "sha256": "daefd348c3f456c64832dc239e8c93869aebd7550f4cab525e22ae90957153d3",
+    "counts": []
+  },
+  {
+    "name": "typecheck",
+    "attempt": 2,
+    "code": 0,
+    "head": "979b00f561145c5dd13a2a483a2a771bbb27e71e",
+    "started": "2026-11-08T08:10:07.835Z",
+    "ended": "2026-11-08T08:10:18.305Z",
+    "log": "reports/cardrpg-big/a5/e1-adopted/gates/typecheck-attempt-2.log",
+    "sha256": "18aefd1c814f1a5d473ec4a287187be53c58f506043bb3812f801e20fcce55c7",
+    "counts": []
+  },
+  {
+    "name": "lint",
+    "attempt": 1,
+    "code": 0,
+    "head": "979b00f561145c5dd13a2a483a2a771bbb27e71e",
+    "started": "2026-11-08T08:10:25.309Z",
+    "ended": "2026-11-08T08:10:35.268Z",
+    "log": "reports/cardrpg-big/a5/e1-adopted/gates/lint-attempt-1.log",
+    "sha256": "7b5e69ac21f55a7fd1c8f794d90e2f45bdcb1727f2803348b098e5b4704ec8c2",
+    "counts": []
+  },
+  {
+    "name": "web-unit",
+    "attempt": 1,
+    "code": 0,
+    "head": "979b00f561145c5dd13a2a483a2a771bbb27e71e",
+    "started": "2026-11-08T08:10:42.270Z",
+    "ended": "2026-11-08T08:11:00.442Z",
+    "log": "reports/cardrpg-big/a5/e1-adopted/gates/web-unit-attempt-1.log",
+    "sha256": "a62164d5252f34213dc20d1121dfb07652ff5853be18339793513c8cb7905bea",
+    "counts": [
+      " Test Files  176 passed (176)",
+      "      Tests  1739 passed (1739)"
+    ]
+  },
+  {
+    "name": "rules",
+    "attempt": 1,
+    "code": 0,
+    "head": "979b00f561145c5dd13a2a483a2a771bbb27e71e",
+    "started": "2026-11-08T08:11:07.446Z",
+    "ended": "2026-11-08T08:13:29.604Z",
+    "log": "reports/cardrpg-big/a5/e1-adopted/gates/rules-attempt-1.log",
+    "sha256": "17f23849ae182d5ee7fe6b86229d065d536eaff266b56514cf827ee63b61d39d",
+    "counts": [
+      " Test Files  65 passed | 3 skipped (68)",
+      "      Tests  1121 passed | 2 expected fail | 11 skipped (1134)"
+    ]
+  },
+  {
+    "name": "e2e",
+    "attempt": 1,
+    "code": 1,
+    "head": "979b00f561145c5dd13a2a483a2a771bbb27e71e",
+    "started": "2026-11-08T08:13:36.607Z",
+    "ended": "2026-11-08T08:16:34.003Z",
+    "log": "reports/cardrpg-big/a5/e1-adopted/gates/e2e-attempt-1.log",
+    "sha256": "49bfd978cf89ad18bfa693f2cc3f483927dc07a519e4f7fa91daa88af43ee04e",
+    "counts": [
+      "  1 failed",
+      "  420 passed (2.0m)"
+    ]
+  },
+  {
+    "name": "e2e",
+    "attempt": 2,
+    "code": 0,
+    "head": "979b00f561145c5dd13a2a483a2a771bbb27e71e",
+    "started": "2026-11-08T08:17:28.654Z",
+    "ended": "2026-11-08T08:19:30.348Z",
+    "log": "reports/cardrpg-big/a5/e1-adopted/gates/e2e-attempt-2.log",
+    "sha256": "398c1b7fda4172c52dfbce39e7bd2f0e58a7d15e2f2a4dc787bd2b7e86eb50da",
+    "counts": [
+      "  421 passed (2.0m)"
+    ]
+  },
+  {
+    "name": "build",
+    "attempt": 1,
+    "code": 0,
+    "head": "979b00f561145c5dd13a2a483a2a771bbb27e71e",
+    "started": "2026-11-08T08:19:37.351Z",
+    "ended": "2026-11-08T08:19:50.430Z",
+    "log": "reports/cardrpg-big/a5/e1-adopted/gates/build-attempt-1.log",
+    "sha256": "56797a6a02d205530e4cc244c36fbe6e72aca250e914a34f19e7a192e118e6d0",
+    "counts": []
+  }
+]
