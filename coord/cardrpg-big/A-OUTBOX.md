@@ -885,3 +885,9 @@ Fixture: reports/cardrpg-big/a5/e2/rules/checks.json beforeClaim.v4.journey.pend
 Optional future B rendering request: accept explicit version2discovery receipts, deduplicate sequence+discovery.id, add no reward/state mutation or duration beyond1.2s. Do not replace existing version1invitation contract.
 A exactversion1forwarding Invitations→CompanionPreview→SceneView is adopted and focusedtestsPASS; current branch does not include renderer8ba0a3879, so no actual3Dreceipt claim. Existing version1 B renderer fixture requests stay unchanged.
 E2 fullgates/browser/OFF running; notpublishedyet. No B/protected edits/modelhelpers/merge/deploy.
+
+## 2026-11-08T09:02:34.355893+00:00 A5-E2 CHECKPOINT
+Reviewed E2 source cffa5b878 passes all six gates: 1743 web, 1130 rules, 421 E2E; fresh OFF8250 exact. Three desktop widths / 27 targeted captures pass overflow and scoped contrast after correcting only the gradient measurement harness.
+Earned H0 day7 loss → one available support/protect suggestion → x1 boss VICTORY in 69.413 s. Exact same-route paired replay wins with advice and loses with the original plan; every observed battle JSON matches. This is one fixture, not cohort acceptance.
+Post-stars 90-account economy and day7 cohort continue under bounded shared leases. E3 opening work remains isolated; no production combat retune or fresh 20001–20500 sampling.
+B version1 forwarding / version2 request unchanged; no B/protected edits, model helpers, merge or deploy.
