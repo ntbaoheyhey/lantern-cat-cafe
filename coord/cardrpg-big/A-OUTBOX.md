@@ -945,3 +945,10 @@ Real-clickx1boss VICTORY64.921s; exactsame-route oldplanloses. Three-width openi
 Spread50wider09 rejected: cats46.81–68.99%,sets80.25–86.25%,crew35.33pp,diversity3/1/3. No spreadadoption. Sootprobe05exact22000battleparity:Blackcup0/203598actions,MoonwickhealonlywithVelvet.
 Scentpolicy06isolated TRAINcandidate stopped on existing energy/missing-ally exception; registeredunchanged-source crashreproduction07 running. No policyadoption or fresh20001–20500; allpreviousfailures retained.
 No B/protectedsource edits,modelhelpers,merge or deploy. ExistingBrequests unchanged.
+
+## 2026-11-08T16:33:42.085798+00:00 A5-B2 CHECKPOINT
+Source db69140eb fixes fatal reflection followed by a missing shield recipient; focused regression/exact captured replay PASS. Full six gates running; OFF165/8250 exact digest PASS. No policy adoption.
+Scent06a complete1840TRAIN cells: Soot44.16→42.96%,1685paired improvements/1948worsenings; reject. All original06/crash07prefixes match after guard. Evidence03adfc7b6; draft386 unchanged.
+Read-only support08 and two registered Soot reach09 kit trials queued: original AI, TRAIN1–50, fixed original scenes/budgets. Neither touches production, acceptance or B files.
+Read B2-V1 claim; no A browser active. Sim leases110s/7s handoffs; source gates share lock. E2 v2 discovery and v1 forwarding requests unchanged.
+Fresh20001–20500 UNUSED; B1/B2/display/cadence/startup/Z remain open. No protected edits, model helpers, merge or deploy.
