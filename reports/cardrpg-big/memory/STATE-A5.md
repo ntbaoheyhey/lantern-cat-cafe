@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-Hush source da2b4886c and closure audit verified: all six checks PASS1746web/1186rules/421E2E/build; OFF165/8250 exact,45combat hashes/baseline/historical13 verified. Original suite14362 and closure watcher97683 completed without reruns. DRAFT394 on388 is published and verified against remote head93dc81fa8.
+C1 specialties23 adopted from the exact three-file staged manifest on codex/cardrpg-a5-c1-specialties-2026-11-08, stacked on DRAFT394. Twelve cat job lines and mode-correct Team tooltips; source verification pending. Hush closure remains complete.
 ## NEXT
-Sync and mirror Hush DRAFT394. Then branch for C1/B2 specialties23, adopt three exact staged files with a5-specialties-adopt.mjs and commit source. Run a5-source-batch.mjs under shared lock, a5-off-check.mjs c1-specialties and a5-specialties-checks.mjs (216paired copy replays, two mode builds,12cats/8tooltips/3widths/both looks/THC7+12). Existing runtime remains unchanged until that separate phase. No original TRAIN matrices restart; fresh20001–20500 UNUSED. B1/B2/display/cadence/startup/Z open; stack376→377→379→381→382→383→384→385→386→388→394.
+Run source batch under shared timing lock, OFF digest and targeted specialties checks (216 paired replays, separate ON/OFF builds, 12 cats, 8 tooltips, three widths, both looks, THC7/THC12). Review actual captures, retain failures, close draft after gates. No original TRAIN matrix restart; fresh20001–20500 UNUSED. B1/B2/display/cadence/startup/Z open; stack376→377→379→381→382→383→384→385→386→388→394.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -214,3 +214,5 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - 2026-11-08T18:22:30.644377+00:00: original Hush suite/closure complete; all six gates1746web/1186rules/421E2E/build PASS. OFF8250/45combat/baseline/historical13 verified. No reruns, source changes or acceptance sampling during the wait. Staged copy checks remain unexecuted.
 
 - 2026-11-08T18:24:41.337800+00:00: resumed from saved handoff. Remote DRAFT394 already exists on388 at93dc81fa8; verified body/head and original six-check/OFF receipts without rerunning suites or creating a duplicate PR. No A coordinator active. Continue separate specialties23 copy phase; no combat tuning or acceptance sampling.
+
+- 2026-11-08T18:25:22.030038+00:00: adopted only specialties23 three-file hash-verified draft after Hush closure and remote394 verification. Capability lines are not measured best-team rankings. Shared-lock targeted checks and source gates start on the committed source; public demo remains unchanged.

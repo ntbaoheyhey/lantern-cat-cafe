@@ -17,7 +17,7 @@ export const CREW_JOBS: { id: CrewJob; name: string; small: string; full: string
   { id: 'door', name: 'Door team', small: '+3% maximum HP', full: '+6% maximum HP; front cats start with 8 shield' },
   { id: 'kettle', name: 'Kettle team', small: '+4% healing', full: '+8% healing; first cleanse grants 8 shield' },
   { id: 'table', name: 'Table team', small: '+3% direct attack', full: '+6% direct attack; +3 raw damage to marked foes' },
-  { id: 'lantern', name: 'Lantern team', small: '+4% effect accuracy', full: '+8% effect accuracy; first utility suppression heals its user 8' },
+  { id: 'lantern', name: 'Lantern team', small: '+4% effect accuracy', full: '+8% effect accuracy; first softened or stopped enemy action heals its controller 8' },
 ];
 export const CAT_CREWS: Record<string, readonly [CrewJob, CrewJob]> = {
   mochi: ['door', 'kettle'], panko: ['door', 'table'], brioche: ['door', 'lantern'],
@@ -118,3 +118,19 @@ export function enemyGuideV4(id: string): { intent: string; counter: string; exc
   };
   return byMechanic[enemy.mechanic] ?? { intent: enemy.intent, counter: enemy.counter, exception: 'Front row while it lives' };
 }
+
+/** A short description of each kit's job, not a promised win or a power ranking. */
+export const CAT_SPECIALTIES_V4: Readonly<Record<string, string>> = {
+  "mochi": "Shielding the crew against front-row pressure.",
+  "soot": "Detonating stacked Crumb trails.",
+  "clover": "Cleansing Scald and healing over time.",
+  "panko": "Returning damage when enemies hit the front row.",
+  "mallow": "Burning several foes through their shields.",
+  "sorrel": "Weakening rear attackers and sharing spare shields.",
+  "biscuit": "Finishing wounded foes through row cover.",
+  "inkcap": "Quieting healers and tangling dangerous targets.",
+  "cinnamon": "Rescuing a hurt ally with healing and Cozy.",
+  "brioche": "Building shields and lending them to an ally.",
+  "velvet": "Marking rear targets so the whole crew can reach them.",
+  "marigold": "Keeping several allies healthy over long fights."
+};

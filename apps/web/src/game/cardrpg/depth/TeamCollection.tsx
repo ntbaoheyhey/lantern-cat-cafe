@@ -52,7 +52,7 @@ export function Team({ m }: { m: DepthModel }) {
           </select></label>
           <small>{Object.values(R.equipmentEffects(state, id).counts).reduce((sum, count) => sum + count, 0)}/4 pieces equipped</small>
           {R.SETS.filter(set => R.equipmentEffects(state, id).counts[set.id]).map(set => <small className="dp-team-set" key={set.id}
-            title={`2 pieces · ${set.two} 4 pieces · ${set.four}`}>
+            title={`2 pieces · ${v4 ? R.SET_TEXT_V4[set.id]!.two : set.two} 4 pieces · ${v4 ? R.SET_TEXT_V4[set.id]!.four : set.four}`}>
             {set.name} · {R.equipmentEffects(state, id).counts[set.id]}/4
           </small>)}
         </div>)}</div>
@@ -78,7 +78,7 @@ export function Team({ m }: { m: DepthModel }) {
       </div>)}
     </div></section>}
     <section className="cr-panel"><h2>Automatic kits</h2><div className="dp-three">{state.team.map(id => <div key={id}>
-      <h3>{R.CAT_BY_ID[id]!.name}</h3><p>{v4 ? R.passiveDescriptionV4(id) : R.CAT_BY_ID[id]!.passive.description}</p>
+      <h3>{R.CAT_BY_ID[id]!.name}</h3>{v4 && <p data-companion-specialty={id}><b>Best at:</b> {R.CAT_SPECIALTIES_V4[id]}</p>}<p>{v4 ? R.passiveDescriptionV4(id) : R.CAT_BY_ID[id]!.passive.description}</p>
       {R.availableSkills(state, id).map(skill => <div className="dp-skill-summary" key={skill.id}>
         <img src={skillIcon(skill.id)} alt="" /><span><b>{skill.name}</b><small>{v4 ? R.skillDescriptionV4(skill) : skill.description}</small></span>
       </div>)}
@@ -130,6 +130,7 @@ export function Collection({ m }: { m: DepthModel }) {
       </div>
       <section className="cr-panel dp-detail" ref={detail}>
         <header><small>{CARD_BY_ID[cat.id]!.rarity} · {cat.role} · {v4 ? R.CAT_CREWS[cat.id]!.map(job => R.CREW_JOBS.find(c => c.id === job)!.name).join(' / ') : cat.flavour}</small><h2>{cat.name}</h2></header>
+        {v4 && <p data-companion-specialty={cat.id}><b>Best at:</b> {R.CAT_SPECIALTIES_V4[cat.id]}</p>}
         {owned ? <>
           <p>Level {owned.level} · {owned.stars} stars · {owned.shards} shards · Awakening {m.state.awakened[cat.id] ?? 0}/3</p>
           <div className="cr-actions">
