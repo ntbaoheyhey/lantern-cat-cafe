@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-Original reply33 runner57328/tool8091 measures fixed source; corrected34 registered, semantic probe queued. No production change. Fatal-choice32 complete:120alternatives,3/6death preventable,4/6alternative wins.
+Original33 and corrected34 complete/audited, both rejected for saturation/progression; production e14d320ed unchanged. Emergency-only35 complete/audited/rejected:96piece misses,worst40pp,heavy30/30,two unavailable improvements. Current-source30minute engagement01 registered/started once on exact4b15da6d artifact.
 ## NEXT
-Finish original33 receipts and corrected34 semantic/cohort/matrix; reject33 for preview boundary violation. Evaluate34 without relaxing gates. B1/B2/display/cadence/startup/Z open; fresh20001–20500 UNUSED.
+Keep33/34/35 rejected and preserve every negative pair. Preserve original engagement01 browser/leases and complete actual30active minutes, diagnose cadence honestly. B1/B2/display/startup/Z open; fresh20001–20500 UNUSED.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -244,3 +244,7 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - 2026-11-08T19:30:50.231582+00:00: resumed latest handoff; no active A workers or duplicate jobs. Registered32 before samples: all legal actions in the first-fatal round of six existing24 traces. Tests whether immediate-action valuation overlooks an available survival choice before another pressure retune. Production unchanged; fresh20001–20500 unused.
 
 - 2026-11-08T19:34:57.267000+00:00: fatal-choice32 complete120alternatives/18decisions/6examples; selected full hashes and all alternate replays exact. First JSON-vs-undefined parity failure retained. Reply33 full-value projection registered,45OFFexact/6replays/18prefixes/immutablelegalPASS. Its90same-band saved inputs give heavy30/30 and one missing advice: fails. Source observer additionally proves a single surviving-party sentinel can die and advance a projected round15→16. No adoption. Original33 matrix kept intact;34 registers all-living-party queue guard and independent complete regression before samples.
+
+- 2026-11-08T19:45:31.694405+00:00: Original33/34 independently audited, both0piece misses but364/384before and384/384after saturated;18/24tiersteps,heavy30/30,one unavailable advice. Both rejected. Emergency35 preserves original ranking unless strictly fewer queued-reply casualties;6full/18prefix/45OFF plus observer parityPASS (2/6wins). Original matrix/cohort active; no production mutation. Registered30minute engagement01 from exact current e14d320ed/4b15da6d, source/archive/script hashes, explicit H0 UI adaptations and frozen browser handoffs. One original browser coordinator only; no acceptance/B/protected change.
+
+- 2026-11-08T19:46:52.648936+00:00: Emergency35 complete1321TRAIN50/90same-band saves. Independent source/script/input/outcome auditPASS, but96piece misses/worst40pp,172before/171after saturated,cats67.70–91.76%,sets85.50–93.50%,heavy30/30,two unavailable advice. Rejected; runtimeunchanged. Original30minute engagement01 browser active (tool65238), no duplicate sampling.
