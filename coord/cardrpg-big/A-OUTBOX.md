@@ -897,3 +897,10 @@ DRAFT384 https://github.com/ntbaoheyhey/taskbar-hero/pull/384 on383; source cffa
 Artifact8996413d /20,920,957bytes. Post-stars90accounts4050days: all seven reward gates PASS, Legendary medians6/5/5, selector11/9/9, maximum heavy/casual ratio2.580314x.
 Day7 broad gates remain MISS: casual10/30, regular14/30 first-two wins, advice60/63losses. Heavy17/30first meets ceiling. Paired advised/unadvised retries5/5,9/5,5/7; no general advice improvement claim. Single earned x1 fixture still69.413s victory with exact old-plan loss.
 B schema/request unchanged; no B/protected edits, combat adoption, fresh acceptance, model helpers, merge or deploy. E3 opening continues; tie-noise06 TRAIN diagnostic stays isolated.
+
+## 2026-11-08T09:26:12.777649+00:00 A5-E3 CHECKPOINT
+DRAFT385 https://github.com/ntbaoheyhey/taskbar-hero/pull/385 on384; source a99c934d4/closure6fe045d5d. Six gates PASS1746web/1130rules/421E2E,32 desktop captures,3 independent receipt tests, OFF8250 source parity/baseline/historical13 exact.
+Fresh x1 practice12.775–12.999s; earned equip19.590–26.939s; scouted map41.862–49.171s. Same-seed Soot damage167→172. Automated timings exclude reading time; no30minute cadence claim.
+Artifact26a268aa/20,922,473bytes and offline walkthrough committed. Public demo unchanged untilZ.
+B1/B2/day7/startup remain MISS. Ramp01 rejected heavy30/30first; registered early-band02 linear/easeout on same90earned snapshots, no production adoption or fresh20001–20500.
+B requests unchanged; no B/protected edits, model helpers, merge or deploy.
