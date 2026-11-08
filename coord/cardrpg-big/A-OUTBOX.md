@@ -1079,3 +1079,10 @@ Thirty targeted captures/3widths/bothlooks PASS; contrast6.858/nooverflow/primar
 Original engagement01 completed30.05active minutes on immutable4b15da6d:70offers/20rewards/11celebrations,749.235s reward gap and907.67s combat. Cadence/deadtimeMISS;51captures retained. FixedChapter1/selectedcat policy explicit; no Home cadence benefit claim.
 Next isolated C1 hides four Settings demo grants behind dev=1, preservingOFF; stagedonly at this checkpoint. No A browser/sim remains. B395 read/no integration; acceptance20001–20500 unused.
 B1/B2/display/startup/Z open; no B/protected edits, modelhelpers, merge/deploy.
+
+## 2026-11-08T20:33:42.122863+00:00 A5-C1 CHECKPOINT
+DRAFT399 https://github.com/ntbaoheyhey/taskbar-hero/pull/399 on398; reviewer-only Settings grants source dc60280cf, closure d693705ff. Six source checks1754web/1192rules/421E2E/build PASS.
+21targeted ON/OFF/player/reviewer/Look captures across3widths PASS; save roundtrip, keyboardday, nooverflow, scopedcontrast6.858. Typed/readiness/import-navigation harness failures retained; existing reviewer discovery overlap disclosed.
+ONartifact f27ff7dc/20,923,753bytes. Exact rules hashes/package diff reuse original OFF8250; baseline13sims/Relics/Evidence unchanged. No A browser/sim active.
+Next C1 shows public-command upgrade costs/stat changes before spending. No combat/acceptance/B integration; B395read. B1/B2/display/cadence/startup/Z remain open.
+No B/protected edits, modelhelpers, merge/deploy/mainpush. Fresh20001–20500unused.
