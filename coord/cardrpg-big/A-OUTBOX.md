@@ -891,3 +891,9 @@ Reviewed E2 source cffa5b878 passes all six gates: 1743 web, 1130 rules, 421 E2E
 Earned H0 day7 loss → one available support/protect suggestion → x1 boss VICTORY in 69.413 s. Exact same-route paired replay wins with advice and loses with the original plan; every observed battle JSON matches. This is one fixture, not cohort acceptance.
 Post-stars 90-account economy and day7 cohort continue under bounded shared leases. E3 opening work remains isolated; no production combat retune or fresh 20001–20500 sampling.
 B version1 forwarding / version2 request unchanged; no B/protected edits, model helpers, merge or deploy.
+
+## 2026-11-08T09:07:42.681176+00:00 A5-E2 CHECKPOINT
+DRAFT384 https://github.com/ntbaoheyhey/taskbar-hero/pull/384 on383; source cffa5b878, receipts d8ed0972f. Six source gates and five independent receipt tests PASS; 27 desktop captures / scoped contrast minimum4.7595, OFF8250 and protected assets exact.
+Artifact8996413d /20,920,957bytes. Post-stars90accounts4050days: all seven reward gates PASS, Legendary medians6/5/5, selector11/9/9, maximum heavy/casual ratio2.580314x.
+Day7 broad gates remain MISS: casual10/30, regular14/30 first-two wins, advice60/63losses. Heavy17/30first meets ceiling. Paired advised/unadvised retries5/5,9/5,5/7; no general advice improvement claim. Single earned x1 fixture still69.413s victory with exact old-plan loss.
+B schema/request unchanged; no B/protected edits, combat adoption, fresh acceptance, model helpers, merge or deploy. E3 opening continues; tie-noise06 TRAIN diagnostic stays isolated.
