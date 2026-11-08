@@ -1,6 +1,6 @@
 # A5 living state
 ## NOW
-Growth38 source994d84056 verified: six source gates PASS1760web/1192rules/421E2E/build; separateON/OFF60browserchecks/36captures, contrast6.858/nooverflow. Exact rules/package reuseOFF8250, baseline/historical13exact. Publishing DRAFT onSettings399; no active jobs.
+Growth38 source994d84056 verified: six source gates PASS1760web/1192rules/421E2E/build; separateON/OFF60browserchecks/36captures, contrast6.858/nooverflow. Exact rules/package reuseOFF8250, baseline/historical13exact. DRAFT400 onSettings399 published at1d9d4022d; no active jobs.
 ## NEXT
 Resume B1/B2 remaining numeric misses after growth draft/ledger/outbox. Original30minute cadence749.2s/dead907.7s MISS; display/startup/Z remain open. Fresh20001–20500 UNUSED.
 ## DONE
@@ -272,3 +272,5 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - 2026-11-08T20:39:57.285821+00:00: resumed growth38 after original coordinators completed; no active jobs or duplicate suites. Corrected browser-only state expectation to include explicit acknowledgement of queued discoveries, with full-state equality retained. Source994d84056 and original six gates remain exact; fresh acceptance unused.
 
 - 2026-11-08T20:42:34.933566+00:00: Growth38 independent closurePASS. Original six suites reused without reruns; all60ON/OFFbrowserchecks/36captures complete after one retained acknowledgement-only harness fix. Runtime994d84056 unchanged;21MBartifact archived, no rule/acceptance/B change.
+
+- 2026-11-08T20:44:00.015108+00:00: DRAFT400 https://github.com/ntbaoheyhey/taskbar-hero/pull/400 verified on399; source994d84056/evidence1d9d4022d. Growth preview fully wired and checked; all original failures and unresolved A5 numeric gates retained.
