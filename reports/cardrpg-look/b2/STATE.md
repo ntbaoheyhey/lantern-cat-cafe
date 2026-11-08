@@ -19,3 +19,6 @@ Setup correction: original gate PID55814 was still queued; stopped before duplic
 
 V1 published draft389 at e0f2de64b; type/lint/unit/build/digest5PASS; four reviewed rounds.
 V3: inherited prewarm/pooledlights retained; add collision-safe label cache and stable DOM writes. Fresh closure native48casts max16.8ms; historical533GPUwait/250presentation/backpressure retained, no causal cure claim.
+
+V0 probe60520 complete:56cast windows max16.8ms; nativecold16.8/CPU4cold150ms wholepage; CPU4gallery183.4ms. No re-sampling. V3phase72414/72430 queued/running gates; scratch V2/V4/V5 scripts in/tmp, not integrated.
+Resume: original72414/72430 were alive but queued, not measuring; replaced only queued remainder with bounded coordinator75168. Type/lint receipts retained. V2 drafts external until V3 snapshot complete.
