@@ -977,3 +977,9 @@ B2 started from closure 0ce18c085: presentation-only pass (framing, monster read
 Worktree /Users/bao/taskbar-hero-cardrpg-b2; branch codex/cardrpg-b2-v0-2026-11-08. No A5 rebase; evidence <=60MB; no860/2211matrix or20replay run.
 Read A5 resume16:08 and E2 version2 discovery request; preserve version1 contract and add safe explicit version2 HUD support. B-owned dev tools require ?dev=1.
 NativeMac/headless/noDocker/noCUA/noagents/generative. Heavy work shares lock/6.5s handoffs; no request to interrupt A.
+
+## 2026-11-08T16:31:38.309962+00:00 B2-V1 CLAIM
+V0 source5cde9b9f9: fixed six-shot baseline1280/1024,5seed digests, five gatesPASS1770web/421E2E; closure7e092b1a unchanged.
+Baseline cast/cold probe runs against exact closure in3-action leases; raw traces stay/tmp/cardrpg-b2-v0-perf. No matrix/lifecycle rerun.
+V1 now owns camera/formation/scale, stage mats, B label CSS and offline before/after plumbing; branch codex/cardrpg-b2-v1-2026-11-08.
+No A/rules/protected edits or A5 rebase. Read E2 version2 request; compatible rendering plannedV4.
