@@ -48,3 +48,16 @@ Completed 860/860 cases and 1,720 casts; raw audit confirms four distinct missed
 ## 2026-11-08T06:03:35.243866+00:00 — L7 draft published
 
 Published draft378 stacked on374; remote evidence9fef5622 verified after14 uploads. All1,325 portable evidence files/555,982,721bytes are included with explicit hashes; historical raw trees remain local. Report131lines and completed860/1720measurement retained with all four failed cast windows and other misses. Source/artifact unchanged. Publication receipt records exact commits. Remaining A integration and optional B presentation compatibility are separate work.
+
+## 2026-11-08T06:58:00.995297+00:00 — Closure measurements and audit complete
+
+Source 8ba0a3879, artifact 7e092b1a /31,494,758 bytes, all 1,944 inputs verified unchanged. Five source gates PASS: 1,770 web/421 E2E; no repeats. Presentation three sizes, startup byte/module parity and reviewed Clover 66/66 improvements complete.
+20 natural replays COMPLETE: 21 GPU snapshots constant 537/103/43, heap +1,116,232 bytes within 2 MiB tolerance, no page errors. Original validator exited; no active B browser or timing job.
+Registered Clover1 ABBA COMPLETE: old 83.3/16.8, current 50.0/183.4, current 16.8/16.8, old 99.9/16.8 ms first/repeat. Collector schema failure preserved; audit-only correction reused exact observations. Stalls in both artifacts; no causal improvement or exclusive-machine claim.
+Current misses: hero 8/24 over 50 ms (max633.3), 11/24 below99% <=20 ms; targeted CPU4 first133.3/100/133.3/216.6 ms; cold666.6 ms/post-ready400 ms/gallerypage716.7 ms; ABBA current1/4max+2/4coverage; heap not literal flat; original24MB target;1140/2211 strict old-pair decreases; timing isolation unverified. Original860/1720 matrix and historical failures retained.
+Audit and report generated; report149 lines. Personal visual acceptance hashes verified. A renderer contract available; actual earned forwarding and icon/frames remain A-owned.
+NEXT: prepare/inspect bounded publication inventory, publish evidence, draft stacked378, publication note, ledger mirror and B-OUTBOX. Do not rerun measurements or alter source. NativeMac/noDocker/subagents/generative/protected edits/merge/deploy.
+
+## 2026-11-08T07:05:05.124686+00:00 — Closure draft380 published
+
+24 verified uploads;721 evidence files/806,391,869bytes, commitdc296d1250b6f06b3ff8293837b6b2482b36e793. Source/artifact unchanged, report149lines. Renderer compatibility handed over with all missed gates retained. Ledger mirror and B-OUTBOX follow.

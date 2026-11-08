@@ -1,19 +1,37 @@
-# Báo cáo LOOK — checkpoint L7
-Demo có 25 mô hình xoay được, 9 góc cảnh và bộ xem đủ 86 kỹ năng/chiêu cuối.
-Đã kiểm tra trực tiếp 100 góc mô hình, 9 góc cảnh và 6 cấu hình kích thước/DPR.
-Đã quay 5 video 25 giây; mỗi video được xem qua 6 ảnh mẫu, không phải duyệt liên tục từng khung hình.
-Ma trận cuối đã đo 860 tổ hợp hợp lệ trên 25 nhân vật, 86 hành động và 10 cấu hình: 1.720 lượt thi triển.
-20 lượt phát lại đã hoàn tất: heap tăng 641,528 byte; trong ngưỡng 2 MiB, không phải hoàn toàn không tăng.
-Typecheck/lint/unit/build qua; E2E có 421 ca qua trong một lượt; 1761 kiểm thử web qua.
-Demo 31,493,122 byte: vượt 24 MB, trong giới hạn 32 MB có giải trình hình ảnh.
-Các điểm chưa đạt về tải lạnh, kích thước, hiệu ứng và hiệu năng được liệt kê dưới đây; không coi chúng là đạt.
-Chân dung đã có trong Collection/Team; A còn tích hợp icon/khung, B còn yêu cầu trình bày A4 chưa làm.
+# Báo cáo LOOK — bàn giao B và kiểm chứng bổ sung
+Đã hoàn tất phần trình bày B cho hồi chiêu/đội hình, chuyển pha boss và thông báo nhận mèo theo dữ liệu A4.
+Đã kiểm tra thao tác trên ba kích thước desktop; không tràn hàng kỹ năng và không thay đổi tài khoản.
+Cả 1.770 kiểm thử web và 421 kiểm thử thao tác qua; typecheck, lint và bản dựng cũng qua.
+Kích thước mã tải lúc mở ứng dụng đã về đúng 3.522.500 byte; không tải mô hình/Three ở màn hình mặc định.
+Clover cải thiện 66/66 so sánh liên quan với L4; vẫn còn 1140/2.211 so sánh giảm so với bản gốc.
+24 lượt chiêu mẫu: khung hình chậm nhất 633.3 ms; tám lượt kiểm tra bốn kỹ năng từng chậm tối đa 216.6 ms.
+20 trận phát lại: heap tăng 1,116,232 byte; số tài nguyên GPU không tăng. Đây không phải bằng chứng không có rò rỉ.
+Demo 31,494,758 byte, trong mức 32 MB đã giải trình; khung hình khi tải lạnh chậm nhất 666.6 ms vẫn vượt mục tiêu.
+Phần B đã bàn giao; A còn nối thông báo nhận mèo vào Invitations, icon/khung và tích hợp bản chung. Các hạn chế được giữ rõ dưới đây.
 
-REFERENCE: docs/cardrpg-look/index.html; validation/l7/audit.json; validation/l7/freeze.json; validation/l7/ART-REVIEW.md; validation/l7/VIDEO-REVIEW.md; validation/l5/selection.json
+REFERENCE: docs/cardrpg-look/index.html; closure/audit.json; closure/REVIEW.md; closure/CONTRACT.md; validation/l7/audit.json; validation/l7/freeze.json
 
-L7 source `c754dbba`, artifact `39645d319c264bac0c1011d0e5370de335281ebf6e1df64de67978e34bcb4133`, 1937 hashed inputs. Stacked on [L5 draft374](https://github.com/ntbaoheyhey/taskbar-hero/pull/374), accepted A3 `daba7d7c`; no A4 runtime adoption. Publication reference is recorded in memory/STATE.md after verification. L1–L6 measurements below retain their original artifacts.
+Historical L7 source `c754dbba`, artifact `39645d319c264bac0c1011d0e5370de335281ebf6e1df64de67978e34bcb4133`, 1937 hashed inputs. Stacked on [L5 draft374](https://github.com/ntbaoheyhey/taskbar-hero/pull/374), accepted A3 `daba7d7c`; no A4 runtime adoption. Publication reference is recorded in memory/STATE.md after verification. L1–L6 measurements below retain their original artifacts.
 
-Verdict: the LOOK demo and evidence package are delivered with measured misses and visible limitations. This is not an all-gates-pass or premium-art claim. The personal scores below are retained from the L5 art review; L7 adds inspection tools and final measurements, without rebuilding the models.
+Verdict: B implementation, targeted validation and handoff are complete with measured misses and visible limitations. This is not an all-gates-pass or premium-art claim. Personal art scores below remain from L5; closure changes presentation, startup imports, label allocation and the Clover greenhouse silhouette.
+
+
+## Closure checkpoint — current artifact
+
+Source `8ba0a3879`, artifact `7e092b1a18b2a4af1dcdcc51e6a24f38bc5e674580d2ecddca33c3de306aff34`, 1944 source hashes verified before/after. [Audit](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/cardrpg-look-closure-2026-11-08/reports/cardrpg-look/closure/audit.json) · [personal review](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/cardrpg-look-closure-2026-11-08/reports/cardrpg-look/closure/REVIEW.md). Original860cases/1720casts were not repeated or overwritten.
+
+| Targeted check | Current measured result |
+|---|---|
+|Presentation|1024×600,1280×720,1440×900;12 skill rows; phase400ms/finish432ms inside1173ms action; receipt dedup/cancel/account invariance;12 focused tests|
+|Startup|3,522,500bytes/11scripts;0Three/model modules/requests;all loaded chunk byte counts/module memberships and normalized entry/preload branches match;8/11scripts binary-identical|
+|Cast checks|24hero windows max633.3ms, minimum90.16%≤20ms;8 targeted CPU4 windows max216.6ms/p9583.3ms. The eight pre-change targeted windows peaked at16.8ms; no causal stall-fix claim|
+|Cold7|Hub native 925.2–1039.2 ms / CPU4 2834.2–2906.8ms;ready native 6388.4–7184.9 ms / CPU4 10244.6–10264.7ms;peak666.6ms. Targeted gallery page max716.7ms, separate from casts|
+|Lifecycle|20natural replays/21snapshots;heap+1,116,232bytes;GPU geometries/textures/programs unchanged;within2MiB tolerance, not literal flatness|
+|Effects|6fresh captures/15pairs;minimum0.787730;no absolute/face/overdraw offenders. Incremental Clover row compared with66 retained L4 rows:66improved/0new decreases;1140/2211original-baseline decreases remain, not a fresh full-effect run|
+
+Current missed/unverified gates: Original24MB target exceeded; existing32MB visual allowance applies. Cold7 maximum666.6ms exceeds historical117ms ceiling. Natural-playback cold samples also have post-ready gaps up to400.0ms; minimum96.37%of post-ready frames<=20ms. These default-quality samples are separate from fixed-tier gallery casts. 1440x900-dpr1-cpu4-medium-panko-1/first: max133.3/p9516.8ms. 1440x900-dpr1-cpu4-medium-cinnamon-4/first: max100.0/p9516.8ms. 1440x900-dpr1-cpu4-medium-brioche-4/first: max133.3/p9533.3ms. 1440x900-dpr1-cpu4-medium-velvet-1/first: max216.6/p9583.3ms. Hero first/repeat50ms limit missed in8/24windows; maximum633.3ms. Hero High/DPR1 99%frames<=20ms missed in11/24windows; minimum90.16%. Separate registered ABBA current-artifact windows: 1/4 exceed 50 ms; 2/4 miss 99% coverage at 20 ms; peak 183.4 ms. These are additional observations, not substitutes for the 24 hero windows. Literal heap flatness not established: final growth1116232bytes; tolerance and GPU results separately reported. Original effect-pair non-regression still missed: 1140/2211 distances decrease; incremental unchanged-row reuse, not a fresh full-effects run. Exclusive whole-machine timing isolation not established; shared-lock leases and suspended/closed browser handoffs do not prove that no external load existed. Historical L7 misses remain valid. Registered Clover1 ABBA first/repeat: 1-before:83.3/16.8ms; 2-after:50.0/183.4ms; 3-after:16.8/16.8ms; 4-before:99.9/16.8ms. This small comparison does not clear any failed window or establish a causal patch/driver diagnosis. See closure/COLD-REVIEW.md for GPU-wait evidence. Art scores below are unchanged.
+
+[1024 cooldown layout](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/cardrpg-look-closure-2026-11-08/reports/cardrpg-look/closure/presentation/reviewed/1024-cooldowns.png) · [bounded boss cue](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/cardrpg-look-closure-2026-11-08/reports/cardrpg-look/closure/presentation/reviewed/1280-boss-phase.png) · [Clover effect](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/cardrpg-look-closure-2026-11-08/reports/cardrpg-look/closure/effects/reviewed/clover-runtime-1.png). Receipt smoke is B's renderer with A fixtures, not A's live Invitations. Original failed layout/fixture/effect pilot attempts are preserved.
 
 | User complaint | Before → current | Self-grade/10 | Evidence / limit |
 |---|---|---:|---|
@@ -21,7 +39,7 @@ Verdict: the LOOK demo and evidence package are delivered with measured misses a
 |Lighting/depth|Flat fill →key/rim/ramp/contact shading|6.5|[L3](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-cardrpg-look-l7-2026-11-07/reports/cardrpg-look/L3-CHECKPOINT.md):36 face checks; historical Soot separation .0524→.0506, below .18 target|
 |Stage richness|Sparse tabletop →cafe textiles/ceramics/plants/night window|6.8|[L2](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-cardrpg-look-l7-2026-11-07/reports/cardrpg-look/L2-CHECKPOINT.md):50,272 stage triangles/4 meshes;4 Blender/3 runtime rounds; repeated shelves remain|
 |Colour/UI harmony|Muddy field →teal/honey palette and12 matching portraits|7|[Refreshed portraits](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-cardrpg-look-l7-2026-11-07/reports/cardrpg-look/rounds/art/portraits/packed-round-5/portraits-dark.png);A owns icon/frame wiring|
-|Effects quality|Thin effects →6 original atlases/ribbons/impact lights|6|L4 distance minimum.6030→.6530;1162 strict pair decreases remain|
+|Effects quality|Thin effects →6 original atlases/ribbons/impact lights|6|L4 distance minimum.6030→.6530;1162 historical strict decreases; closure reduces this to1140 through66 Clover improvements|
 |Sharpness|Flat maps →baked detail and1x/2x art|6.8|L1hero1024/L5colour512/detail256;fine grain softens after reviewed compression|
 |Post look|Incomplete stack →bloom/grade/focus/vignette/grain/SMAA tiers|7|[L3](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-cardrpg-look-l7-2026-11-07/reports/cardrpg-look/L3-CHECKPOINT.md):12-sample depth AO,16³ LUTs/3 tiers;no full shadow maps/GTAO/TAA|
 
@@ -29,7 +47,7 @@ Self-grades are personal judgments, not acceptance metrics. All22 selected model
 
 The L7 viewer preserves account/screen state, disposes isolated scenes, works offline, and exercises live A/B plus the historical matched wipe. The skill gallery exercises quarter speed and effect-only at all six desktop configurations. Original loading-overlay captures are preserved in validation/l7/attempts/overlay-1; visible readiness was corrected before recapture. Two later harness selector failures (duplicate comparison label and exact speed-label matching) are retained in attempts/selector-1 and selector-2; only UI configurations resumed, with identical HTML and109 verified unit/stage captures retained.
 
-| Validation | L7 measured result |
+| Validation | Historical L7 measured result (original artifact retained) |
 |---|---|
 |Source|Five gates passed; demo-tools TypeScript passed; 1761 web tests; inherited rules: 2 expected failures / 11 skips|
 |E2E|421 passed in one suite; original logs and any retries retained in validation/l7|
@@ -110,10 +128,10 @@ L7 adds 125,699 HTML bytes over L5 for the isolated viewer and comparison payloa
 |kettle-knight|improved|11884tri;12 fresh poses;48-frame turntable|
 |pantry-crown|improved|19548tri;12 fresh poses;48-frame turntable|
 
-Missed or unverified targets:
+Missed or unverified targets (L7 history retained; closure status above):
 
 - Original 24 MB target exceeded; explicit visual justification recorded for up to 32 MB.
-- Exact startup byte parity +93 bytes.
+- Historical L7 startup +93bytes; repaired in closure to0byte delta. Loaded module/byte counts match, not all binary hashes.
 - Cold-open maximum 133.4 ms exceeds the historical 117 ms ceiling.
 - Literal retained-heap flatness is not established: final delta +641,528bytes. The recorded 2MiB tolerance passes and GPU object counts remain constant; neither finding proves an absence of leaks.
 - Exclusive timing isolation is unverified because A5-H0 retained an unsuspended page between shared-lock leases. Budget numbers remain observations under these conditions.
@@ -122,10 +140,10 @@ Missed or unverified targets:
 - The separate gallery matrix also records a 666.6ms full-page frame before the first cast. This wider interval includes initialization and casts; it is not counted again as an independent cast failure. See interval table and raw profile below.
 - Historical L4 strict uniqueness:1162/2211 pair distances decrease,worst−.122392341;absolute separation passes but non-regression remains missed. Next fix: targeted authored per-pair silhouette/palette/timing edits, then comparable captures.
 
-Profiles and next fixes: raw first/repeat windows are in validation/l7/matrix; startup parity remains an exact-byte discrepancy despite matching module membership. A future performance pass should use the worst named raw windows to target prewarm/render cost; evidence here is retained rather than overwritten. The worst CPU4 cold frame occurs before Hub interaction and before Fight:133.4ms, with58.4ms forced style/layout inside the overlapping callback. See validation/l7/COLD-REVIEW.md; minified callback attribution does not identify the source component. Profile initial Hub layout/initialization first, then compare equivalent samples. Further atlas/model compression requires matched visual review before accepting texture loss.
+Historical profiles remain in validation/l7/matrix and validation/l7/COLD-REVIEW.md. Closure repairs the startup byte discrepancy, but the new cold traces show GPU token waits and macOS presentation backpressure, including post-ready gaps; they do not establish a source, driver or external-load cause. Further performance work needs isolated GPU/presentation profiling. The registered ABBA comparison retains stalls in both artifacts and cannot establish a causal improvement. Further atlas/model compression requires matched visual review before accepting texture loss.
 
 Visual limits: Static preview review does not establish continuous collision-free animation. Raised eye rims, rigid cloth/accessories and broad smooth backs remain. Stages reuse cafe geometry with chapter palette changes; shelf repetition and empty rug areas remain. Miniatures sit within broad empty viewport margins; short viewports and the historical wipe require vertical scrolling. Tab state contrast is weak; historical thumbnails and tiny baked captions are softer than the native viewer. Historical L4 strict effect-pair regressions remain open; no new continuous VFX quality claim. Wide video composition makes heroes small; pale thin effects blend with rugs. Yarn Giant retains coarse flat pink ribbons and a friendly expression; Clover arches retain a wire-like appearance. Six samples per silent clip can miss fast impact peaks and do not establish continuous animation quality. The obsolete L6 art-gallery footer is corrected in L7. Review samples do not establish continuous collision-free motion. Five videos: [mochi](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-cardrpg-look-l7-2026-11-07/reports/cardrpg-look/video/mochi/mochi-x1.webm) · [soot](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-cardrpg-look-l7-2026-11-07/reports/cardrpg-look/video/soot/soot-x1.webm) · [clover](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-cardrpg-look-l7-2026-11-07/reports/cardrpg-look/video/clover/clover-x1.webm) · [yarn-giant](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-cardrpg-look-l7-2026-11-07/reports/cardrpg-look/video/yarn-giant/yarn-giant-x1.webm) · [ultimate](https://github.com/ntbaoheyhey/taskbar-hero/blob/ai/codex-cardrpg-look-l7-2026-11-07/reports/cardrpg-look/video/ultimate/ultimate-x1.webm).
 
 L5 portable evidence remains3440files/1,018,720,566bytes;2,096,889,266bytes of local originals individually hashed. L7 publication inventory separates portable receipts/images/videos from intermediate duplicate artifacts. All authoring uses original Blender/procedural parameters; no generative model or external art imported.
 
-Lane A retains icon/frame wiring, checkpoint adoption and the merged delivery report. A4P1/P3/P4 requests to B remain open as separate presentation compatibility work: fixed-cooldown/crew/row cues instead of legacy meters; boss phase/finish cues within400/800ms and existing action durations; optional version1 earned-reveal receipts. A4 delivery is [draft376](https://github.com/ntbaoheyhey/taskbar-hero/pull/376); A5 started separately during this matrix. No A4/A5 runtime is adopted here and compatibility is not verified. A has not announced adoption of this LOOK checkpoint. This branch does not edit A4 rules, meta/shared/protected paths. No merge/deploy/main push. Native macOS on Apple M3 Pro; no laneB Docker jobs, subagents or generative calls.
+Lane A owns icon/frame wiring, exact earned-reveal forwarding through Invitations/CompanionPreview, adoption and merged delivery. B A4P1/P3/P4 renderer work is now implemented and verified against published version1 fixtures; live A meta/combat integration is not claimed. See [contract](https://github.com/ntbaoheyhey/taskbar-hero/blob/codex/cardrpg-look-closure-2026-11-08/reports/cardrpg-look/closure/CONTRACT.md). A has not announced adoption of this checkpoint. No A4/A5 rules runtime, shared/protected edits, merge/deploy/main push. Native macOS Apple M3 Pro; no B Docker jobs, subagents or generative calls.

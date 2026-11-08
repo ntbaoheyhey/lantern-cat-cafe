@@ -1,3 +1,41 @@
+# Closure draft published — 2026-11-08T07:05:05.124686+00:00
+
+Draft [380](https://github.com/ntbaoheyhey/taskbar-hero/pull/380) is stacked on378. Evidence commit `dc296d1250b6f06b3ff8293837b6b2482b36e793` and all24 upload batches are remotely verified. Inventory:721 files/806,391,869bytes; explicit hashes and batch receipts under closure/. Later publication notes are separate from that inventory.
+Source8ba0a3879/artifact7e092b1a/31,494,758bytes/1,944 inputs unchanged. Five source gates PASS (1,770 web/421 E2E), three-size presentation, startup byte/module parity, Clover66/66 incremental improvements,20 natural replays and registeredABBA are complete. No active B measurement/publication job remains.
+Current and historical performance/effect/heap/size/isolation misses remain explicit in the149-line report and closure/audit.json. No claim all budgets pass or strict original effect-pair non-regression is solved. Original860/1720 matrix was retained without repetition.
+B A4P1/P3/P4 renderer compatibility is implemented and fixture-verified. A still owns exact earned-receipt forwarding through Invitations/CompanionPreview, icon/frame wiring, checkpoint adoption and merged delivery. No A4/A5 rules runtime adopted.
+REMAINING: A-owned forwarding/icon-frame adoption and merged delivery; measured optimization/art limitations stay open in the report. No B capture, draft or evidence upload remains pending. Any future optimization uses a new source/artifact and targeted evidence, preserving these misses. Report ledger location: ai/codex-ui-ledger; coordination: coord/cardrpg-big/B-OUTBOX.md. Native macOS; no Docker/subagents/generative/protected edits/merge/deploy.
+
+---
+
+# Closure measurements complete — 2026-11-08T06:58:00.995297+00:00
+
+Source 8ba0a3879, artifact 7e092b1a /31,494,758 bytes, all 1,944 inputs verified unchanged. Five source gates PASS: 1,770 web/421 E2E; no repeats. Presentation three sizes, startup byte/module parity and reviewed Clover 66/66 improvements complete.
+20 natural replays COMPLETE: 21 GPU snapshots constant 537/103/43, heap +1,116,232 bytes within 2 MiB tolerance, no page errors. Original validator exited; no active B browser or timing job.
+Registered Clover1 ABBA COMPLETE: old 83.3/16.8, current 50.0/183.4, current 16.8/16.8, old 99.9/16.8 ms first/repeat. Collector schema failure preserved; audit-only correction reused exact observations. Stalls in both artifacts; no causal improvement or exclusive-machine claim.
+Current misses: hero 8/24 over 50 ms (max633.3), 11/24 below99% <=20 ms; targeted CPU4 first133.3/100/133.3/216.6 ms; cold666.6 ms/post-ready400 ms/gallerypage716.7 ms; ABBA current1/4max+2/4coverage; heap not literal flat; original24MB target;1140/2211 strict old-pair decreases; timing isolation unverified. Original860/1720 matrix and historical failures retained.
+Audit and report generated; report149 lines. Personal visual acceptance hashes verified. A renderer contract available; actual earned forwarding and icon/frames remain A-owned.
+NEXT: prepare/inspect bounded publication inventory, publish evidence, draft stacked378, publication note, ledger mirror and B-OUTBOX. Do not rerun measurements or alter source. NativeMac/noDocker/subagents/generative/protected edits/merge/deploy.
+
+---
+
+# Closure verification continues — 2026-11-08T06:43:20.747887+00:00
+Source8ba0a3879 is remotely published on codex/cardrpg-look-closure-2026-11-08, stacked on378. Artifact7e092b1a/31,494,758bytes and1944inputs remain unchanged. All5sourcegatesPASS:1770web/421E2E; no repeats needed. Syncf92b625f8 gives A exact earned-receipt renderer contract.
+ONE originalvalidator PID22615/session10243, phasechild25202, log/tmp/cardrpg-look-closure-validate.log. Final effects/presentation/startup checks COMPLETE. Cold7 completed with new worse full-page maxima666.6ms and real post-ready gaps; preserve and disclose. Phase now runs24hero casts, then8previouslyfailedskills and20replays. No fullmatrix restart.
+Final4screens personally viewed again; closure/acceptance.json binds exact hashes. Clover66/66improvements vsL4;1140oldbaselinepairdecreases remain. Final startup-audit executedPASS3,522,500bytes/11scripts/zeroThree-model;8/11binaryequal,allchunkbytecounts/modules andnormalizedentry branches equal.
+Added closure/cold-audit.py and trace-diagnosis.py (retained-trace streaming, under sharedlock, ONEsession50779/log/tmp/cardrpg-look-closure-trace-analysis.log), and write-report.py preserving original131lineL7report with targetedsection capped150. Trace analysis currentlywaiting forlock; do notduplicate. audit.py nowchecksvisualhashes/all21GPUrows/coldrawaudit. SyntaxPASS only, finalaudit stillpending.
+Next: originalvalidatorfinish → cold-audit.py → audit.py → write-report.py; inspect allmisses/tracediagnosis and150linereport; updateREVIEW/PROGRESS/STATE/HANDOFF → publish.py--prepare/inspect boundedmanifest → publish → draftstacked378 → publicationnote/ledger/BOUTBOX. Source alreadypushed, publisher may safelyrepeat no-op sourcepush. Do not modifyhashedsource or runtimerebuild. NativeMac/noDocker/subagents/generative/protectededits/merge/deploy. A earned forwarding/iconframes stillA-owned.
+
+---
+
+# NOW — closure validation active
+User requires completing B work. Branch codex/cardrpg-look-closure-2026-11-08; source8ba0a3879, artifact7e092b1a/31,494,758bytes, runtimeDirty=false. L7draft378/raw data preserved. A4fixture adapter, cooldown grid, bounded boss cues, earnedreceipt dedup/cancel, label allocation, static LOOKroute imports and Clover greenhouse1.65height implemented.
+ONE source gates PID21837/session71280 log/tmp/cardrpg-look-closure-gates.log; type/lintPASS, unit currentlyrunning. ONE targeted validator session10243 log/tmp/cardrpg-look-closure-validate.log runs closure/validate.mjs: sixeffects→3sizepresentation→flagoff/cold7/24herocasts→8historicallyfailedskillcasts→20replays. It hashes source/artifact before/after; no source edits or duplicate jobs. Original860matrix must not repeat.
+Focused12testsPASS. Presentation round3all3sizesPASS/personallyviewed; early clipping retained attempt1 and wrong3vs4skillfixture failure round2. Startupcandidatev3 audited3,522,500bytes=baseline,11scripts/zeroThree-model,8/11binaryequal, allchunkbytes/modules andnormalizedentry/preloadbranches equal. Finalvalidator regeneratesflagoff forcurrentgeometryhash; run startup-audit.py against finalpaths afterwards.
+Effects pilots:1.38height65improved/1regressed-.0052683;1.55height65improved/1regressed-.0010028. Final1.65height stillrequires capture/audit/view. effect-pair-audit.py merges onlyClover row against unchanged66L4rows, exactoriginalmetric;1141 originalpairmisses atpilot2remain disclosed. Need run effect-report.py and effect-pair-audit.py on closure/effects/reviewed, viewfinalimages. No claimallgatesPASS.
+Next afterjobs: auditfinalstartup/metrics/perf/lifecycle, inspectfinalpresentation/effectimages, report<=150lines andclosureREVIEW, updateSTATE/PROGRESS/HANDOFF, publishsource+bounded48MB evidencebatches/draftstacked378, mirrorledger, BOUTBOX. A earnedreceiptwiring queued; icon/frame integration alsoA-owned. LatestA06:19read; sync291b14737published. NativeMac; noDocker/subagents/generative/protectededits/merge/deploy.
+
+# Earlier L7 checkpoint (historical)
 # LOOK state
 ## NOW
 L7 measurements and independent audits COMPLETE: 860 cases / 1,720 casts / 134,523 cast frames. Source c754dbba; artifact 39645d31 / 31,493,122 bytes / 1,937 hashed inputs remain unchanged.
