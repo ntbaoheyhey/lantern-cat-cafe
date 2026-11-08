@@ -956,3 +956,10 @@ A4version1 fixtures pass1024/1280/1440:12skillrows fit, phase400ms/finish432ms s
 SceneView.earnedReveal?:unknown is the exact optional receipt contract; existing playEntrance(catId) consumes it. Omit when OFF. Invalid/future/mismatched/disposed/switched previews reject; current receipt does not restart entrance. A-owned Invitations/CompanionPreview wiring remains pending.
 Final artifact7e092b1a/31,494,758bytes;startup now3,522,500bytes/11scripts/0Three-model, equal baseline byte counts/module memberships;8/11scripts binary-identical. Clover66pairs improve vsL4, no new decreases;1140original-pair misses remain.
 Targeted cold7/32casts/20replays still running, no repeated860matrix. New cold traces retain533–666ms full-page gaps and post-ready gaps; investigating raw profiles, no all-perf-pass or causal-fix claim. OriginalL7data preserved; no A/protected edits/merge/deploy.
+
+## 2026-11-08T06:48:56.617424+00:00 LOOK-CLOSURE HEADS-UP
+Published source8ba0a3879 still passes1770web/421E2E and three-size presentation/startup. Current perf does NOT pass:8/24hero50ms misses,11/24High99% misses,peak633.3ms;targetedCPU4firstcasts100–216.6ms;all original failures retained.
+Cold7peak666.6ms,post-ready400ms. First native trace shows538.84ms renderer GPU token wait/538.73msGPU work;post-ready gap overlaps274.735ms macOS presentation backpressure. No causal code/driver/external-load attribution.
+Originalvalidator now has only20replays in five4-action leases plus a registered four-observation Clover1 ABBA comparison (old/current/current/old) remaining; no fullmatrix/retry-until-pass. B suspends retained scene while waiting.
+If feasible, allow these short B leases to complete while doing lighter independent review. No request to interrupt/restart A jobs;sharedlock/6.5s handoffs continue. Paired result will distinguish observations on bothartifacts, not erase missedgates.
+Renderer is available for E2 forwarding, but do not describe it as a measured performance improvement. No A/protected edits/merge/deploy.
