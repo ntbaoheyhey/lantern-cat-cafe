@@ -184,11 +184,12 @@ export function BattleView({ m }: { m: DepthModel }) {
       <img src={readable ? readablePortrait(cat.catalogId) ?? portrait(cat.catalogId) : portrait(cat.catalogId)} alt="" />
       <div className="dp-party-health"><span><b>{cat.name}</b><strong>{cat.hp}/{cat.maxHp} HP</strong></span><progress value={cat.hp} max={cat.maxHp} aria-label={`${cat.name} health`} /><Statuses actor={cat} /></div>
       {readable ? <div className="dp-skills-readonly" aria-label={`${cat.name} skills`}>
-        {cat.skills.map(id => { const skill = R.SKILLS[id]; if (!skill) return null;
-          const state = v4 ? skillReadinessV4(cat, skill) : skill.type === 'ultimate' ? cat.charge >= 100 ? 'Ready' : `${cat.charge}/100 charge` : (cat.cooldowns[id] ?? 0) > 0 ? `${cat.cooldowns[id]} turns` : 'Ready';
+        {(R.CAT_BY_ID[cat.catalogId]?.skills.map(skill => skill.id) ?? cat.skills).map(id => { const skill = R.SKILLS[id]; if (!skill) return null;
+          const equipped = cat.skills.includes(id);
+          const state = !equipped ? 'Not equipped' : v4 ? skillReadinessV4(cat, skill) : skill.type === 'ultimate' ? cat.charge >= 100 ? 'Ready' : `${cat.charge}/100 charge` : (cat.cooldowns[id] ?? 0) > 0 ? `${cat.cooldowns[id]} turns` : 'Ready';
           const remaining = v4 || skill.type !== 'ultimate' ? Number.parseInt(state) || 0 : Math.max(0,100-cat.charge);
-          const fraction = state === 'Ready' ? 1 : 1-Math.min(1,remaining / (v4 || skill.type !== 'ultimate' ? Math.max(2,skill.cooldown) : 100));
-          return <span key={id} tabIndex={0} role="img" className={`dp-skill-state ${state === 'Ready' ? 'is-ready' : ''}`} style={{'--cooldown': `${fraction*100}%`} as CSSProperties} aria-label={`${skill.name}: ${state}`} data-tip={`${skill.name} · ${state}`}><img src={readableSkillIcon(id) ?? skillIcon(id)} alt="" />{state !== 'Ready' && <b>{state === 'Used this battle' ? '×' : v4 || skill.type !== 'ultimate' ? remaining : cat.charge}</b>}</span>;
+          const fraction = !equipped || state === 'Used this battle' ? 0 : state === 'Ready' ? 1 : 1-Math.min(1,remaining / (v4 || skill.type !== 'ultimate' ? Math.max(2,skill.cooldown) : 100));
+          return <span key={id} tabIndex={0} role="img" className={`dp-skill-state ${state === 'Ready' ? 'is-ready' : ''}`} style={{'--cooldown': `${fraction*100}%`} as CSSProperties} aria-label={`${skill.name}: ${state}`} data-tip={`${skill.name} · ${state}`}><img src={readableSkillIcon(id) ?? skillIcon(id)} alt="" />{state !== 'Ready' && <b>{!equipped ? '–' : state === 'Used this battle' ? '×' : v4 || skill.type !== 'ultimate' ? remaining : cat.charge}</b>}</span>;
         })}
         <span className="dp-row-icon" tabIndex={0} role="img" aria-label={cat.row === 'front' ? 'Front row' : 'Back row'} data-tip={cat.row === 'front' ? 'Front row' : 'Back row'}>{cat.row === 'front' ? '▸' : '▹'}</span>
       </div> : v4 ? <div className="dp-v4-readiness" aria-label={`${cat.name} cooldowns`}><small>{cat.row === 'front' ? 'Front row' : 'Back row'}</small>

@@ -1,0 +1,60 @@
+{
+  "method": "Headless CDP screencast, actual natural x1 playback, same watchNow fixture/camera B; first continuous20s, no edits/cuts/tick injection. Wall timestamps converted to30fps H.264. Recording is not the performance probe.",
+  "sameInitial": true,
+  "rows": [
+    {
+      "name": "before",
+      "file": "reports/cardrpg-look/b2/v6/videos/before-20s.mp4",
+      "sha256": "5eb2a473faf7529eec1423cf7b2c34d16869e4dc0229bb93cd5a59ceb2eae857",
+      "bytes": 5189379,
+      "artifact": "/tmp/cardrpg-b2-v0.html",
+      "artifactSha256": "7e092b1a18b2a4af1dcdcc51e6a24f38bc5e674580d2ecddca33c3de306aff34",
+      "initialSha256": "066985a175f3edad9722b733a4d79ebbdbd786282c4fbe2636c54c9e47b5b218",
+      "capturedFrames": 570,
+      "choices": 9,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1440,
+            "height": 900,
+            "nb_frames": "600"
+          }
+        ],
+        "format": {
+          "duration": "20.000000"
+        }
+      },
+      "errors": []
+    },
+    {
+      "name": "after",
+      "file": "reports/cardrpg-look/b2/v6/videos/after-20s.mp4",
+      "sha256": "d82f24ae92e8b2fce4b57ac5a9c6a0a7f32dd15b1ab6e9c8dba61b5ead1fb9fa",
+      "bytes": 6270208,
+      "artifact": "/Users/bao/taskbar-hero-cardrpg-b2/docs/cardrpg-look/b2.html",
+      "artifactSha256": "c711dec26c28810a301264f315ae07cd16a14ce2c9ff77c4b39a0805f1514a05",
+      "initialSha256": "066985a175f3edad9722b733a4d79ebbdbd786282c4fbe2636c54c9e47b5b218",
+      "capturedFrames": 586,
+      "choices": 9,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1440,
+            "height": 900,
+            "nb_frames": "600"
+          }
+        ],
+        "format": {
+          "duration": "20.000000"
+        }
+      },
+      "errors": []
+    }
+  ]
+}
