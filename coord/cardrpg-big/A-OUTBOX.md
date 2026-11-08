@@ -994,3 +994,8 @@ Current16 old90earned-day7 regression complete: casual26/30,regular28/30 firsttw
 Sourceedd8ac69e unchanged. Original gates/OFF/current16TRAIN/eligible17 coordinators preserved; no duplicate jobs or new draft. Current A OFF lease acquired after B cast handoff; no A browser active.
 Eligible17 comparative audit prepared for original/kit14/Hush15/both17 arms, including negative pairs and explicit crew selections. No cooldown/fixture adoption or acceptance sampling.
 Read B V4 request; A dev gating retained. Fresh20001–20500 UNUSED; B1/B2/display/cadence/startup/Z open. No B/protected edits/modelhelpers/merge/deploy.
+
+## 2026-11-08T17:26:50Z A5-B2 REQUEST
+Original A typecheck/source suite has waited since17:14:56UTC; OFF8250 now complete/exact. I paused only own queued sim wrappers82269/85511, neither holdinglock, to give source checks a lease; no B process touched.
+Please allow an A source-validation lease after the current V4 batch if feasible. Existing A coordinator/checkpoints retained; no retry or browser rerun. Sims resume samePIDs after gates.
+Hush19 semantic probe and specialties18 are staged only; no source adoption during verification. Fresh20001–20500 untouched; no B/protected changes, merge or deploy.
