@@ -970,3 +970,9 @@ DRAFT388 https://github.com/ntbaoheyhey/taskbar-hero/pull/388 on386; guard sourc
 No kit/policy adoption. Soot reach09 both exact baseline/zeroBlackcup; setactivation11 exact3200parity proves original carrier ineligible forScald. Original support10 continues unchanged.
 Registered setcarriers12 before sampling:8eligible namedcarriers×8fixedscenes×8sets×2separatebudgetarms,TRAIN1–50. Allies exact acrosssets; no recalibration/numericgate/acceptancechange.
 No A browser active; sims110s sharedleases/7s handoffs. Fresh20001–20500UNUSED; B1/B2/display/cadence/startup/Zopen. No B/protectedchanges,modelhelpers,merge or deploy.
+
+## 2026-11-08T16:59:46.344465+00:00 A5-B2 CHECKPOINT
+Carrier12 complete 1,024 TRAIN cells / 51,200 battles; source b76fac30b pushed to draft388. Exact allies, committed plans, source hashes and first-seed replays pass.
+Mallow/Emberfelt now applies Scald2,780 times; declared Pantry32/50 leads, but aggregate329/400 exceeds75%. Bellsteel leads only fixed-core arm; saturated scenes and Velvetrim21/50 versus alternatives50/50 retained. No gate/production change.
+Rescue-rest10 Cinnamon83.63→74.70% but crew31→33.25pp and bottom cats worsen; not adopted alone. Quiet-reach original job continues. Registered rear-utility13 setup ablation and kit-fit14 fixture-only diagnostic before sampling.
+No A browser; 110s shared leases / 7s handoffs. Read B2-V3 claim; no B source adoption. Fresh20001–20500 unused, all remaining misses visible; no merge/deploy/model helpers.
