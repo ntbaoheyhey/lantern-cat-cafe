@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-C1 reviewed runtime c4a883e5: all five source gates + build PASS, three-size targeted browser/copy/equip closure PASS. Artifact restored SHA788ff719/26,217,950bytes exactly after host restart. C1 draft #379 published on H0 #377; public demo remains A4 until Z. Workdir /Users/bao/taskbar-hero-cardrpg-a4.
+P1 source adopted on codex/cardrpg-a5-p1-2026-11-08: lazy07 screens/reviewer boundaries, exact model dictionary/module transport, default build pixel packing. Production combat remains A4; fresh 20001–20500 UNUSED. C1 draft379 unchanged.
 ## NEXT
-Keep original expanded02 coordinator PID4640; it combines continuous rescue and response-aware AI on TRAIN1–50 across tiers/equipped/sets/teams, no production adoption. Expanded01 complete and rejected (48/38pp fourth-slot cliffs). Mirror C1 state; continue B1–B3, then E1–E3/P1/Z. Fresh20001–20500 UNUSED. Old pre-restart PIDs below are historical and must not be resumed.
+P1 draft381 published on379, source509c88fbf/closure95e1c1c4f. Mirror state and continue B3 reward progress while B1/B2 remain rejected. Preserve corrected90-account parity session59384; no rule adoption before matching all4050days and wiring current odds/caps. No B/protected edits or fresh combat acceptance.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -86,3 +86,29 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - Resume closure: verified existing reviewed C1 six green source logs, restored browser/copy/equip receipts and exact 63 rule hashes; no source-suite repetition. Original expanded02 coordinator4640 continues unchanged. C1 scope/copy limits explicitly reported, draft publication pending.
 
 - C1 draft published: https://github.com/ntbaoheyhey/taskbar-hero/pull/379 on #377, closure commit1cb68a5c. Four receipt tests PASS; reviewed five source gates+build/three-size browser/copy/equip verified. No runtime changes since c4a883e5, merge or deploy.
+
+- B1 branch codex/cardrpg-a5-b1-2026-11-08 started on C1#379/befed6422. Latest B checkpoint draft378 reviewed; no B adoption during immutable A balance sample. Current expanded02 original PID4640 preserved. Recovered scripts/candidate hashes are archived durably before further implementation.
+
+- Continuation at06:32UTC: pressure01 complete. Weight2/sig125 worst32pp/8misses; weight2/sig10026pp/5misses; weight4/sig12526pp/12misses. Original33×50pilot only, no saturation in eitherweight2variant. Extended bothweight2candidates toTRAIN500 without changing sources or first50outcomes; newregistration pressure-500, originalcoordinator21620.
+- P1 pilot03 native+browser198asset SHA parityPASS, all6fixedCPU4observations retained. Original first observation false only for null-vs-empty sceneError harness assertion; correction1retains its timings. Packed throughHubmax566.6ms (target120MISS); no adoption. Read-only GLBview audit found1081duplicategroups; pilot04 exact dictionary removes repeated identical subranges without editing artwork. Registered beforepacking; browser tests pending.
+
+- Continuation audit: preserved original running jobs, now completed pressure500/traces/expanded03/dictionary04. Weight2/sig100 TRAIN500 original33cells2miss/worst15.6pp; expandedTRAIN50 all384fourthslots50miss/worst38pp(Emberfelt Legendary weapon/Soot/ch2),24/24tiersteps/0reversals,33/33bands. Cat45.25–78.40%,crew37.33pp. No combat candidate adopted. Fresh20001–20500 unused.
+- Pressure500 traces: Crumbweave weapon main7pp/full13.6pp; Bellsteel outfit main10pp/affixes6.2/full15.6pp, set4alone0. Full500prefix/replayparity exact. Next fix must address residual equipment/boss interactions, not claim the old33case near-pass as closure.
+- P1 dictionary04 complete3CPU4runs: throughHub183.4/299.9/183.3ms, all198assets byteexact,20.71MB targetPASS/startupMISS. Module05 attempts1–3 retained; corrected metadata self-edge with3native testsPASS; restoredverified existingPillow for attempt4. No production or B asset edits.
+- B3 recovered invitations complete3banners×10000accounts×60draws. New receipt tests2PASS independently recompute exactCDF and90account/45day reward summaries/ratios. Original reward cohort usesA4combat and paidinvitationLegendary only; not earnedday7/post-B1 acceptance. Candidate values360stamps/24marks/soft13/hard24/+700bp remain unchanged.
+
+- Continuation checkpoint 2026-11-08T07:17:05.350886+00:00: originalgraded01/02 complete; same50seed fullmatrix summaries now durable. Gradedbasic46/384piece misses,max32pp,cats43.70–76.25%,crew38pp; gradedwide9miss/max18pp but119afterarms>=95%,crew33.33pp; gradedbudget59miss/max28pp,cats34.74–75.41%,crew54pp. Allrejected, no gate movement.
+- Registeredresponse03 before sampling: gradedbudget plus originalboundedreplyweights.30/.50, same384/210/64/663TRAIN1–50. Coordinator toolsession78042;110sCPU/7shandoffs afterBcompletion. No acceptance.
+- P1module05 nativeESM preserves198assetbytes; original3cold observations retained. Layout06 registered synchronouslayout ablation preserves actualplayer/reviewerflows1280 but firstcold233.3msMISS; do not claim causalperformanceimprovement. Originalfailed path/registration attempt retained.
+- P1lazy07 registered App/offline Reactlazy overlays; actualbuild9d9335f3/20,816,833bytes, entry311392bytes vs2494678module05entry (totalrequestedgraph NOT YET measured). Deferred Utility/reviewer/other screens, no Bsource/rule/asset mutation. Fixed3CPU4coordinator20761 and realC1flows34936 running.
+
+- Continuation 2026-11-08T07:22:18.128155+00:00: exact lazy07 overlays adopted only after 1280 player/reviewer flow PASS and two original CPU4 Hub observations116.7/116.6ms; third remains pending. Native pixel/model/module parity tests6PASS; all198browserassets exact. Rejectedlayout06 excluded. P1 source/gates/production artifact parity pending; no universal performance PASS claim. Original response03 TRAIN coordinator preserved.
+
+- Continuation: P1 all six source gates PASS (1737web/1106rules/421E2E), native transport6PASS. Original18cold default observations complete: JSdelta149416bytes PASS; CPU4median/max improve,1280/1440CPU1 MISS. Flow1440PASS;1024queued. Closure attempts1/2 stopped on missing1024receipt, no browser rerun or source fix.
+- Continuouspolicy04 COMPLETE/rejected: smoothA4 39/384piece misses,max90pp; smoothbudget120/384,max38pp; crew50.67/55.33pp. RESULTS/summary durable. Productioncombat A4; fresh20001–20500UNUSED.
+- B3 correctedreward-validation02 registered before execution, actual90accounts/45days, assert every originalcandidate01statehash (4050days). Adds firstownedLegendary across sources separately from paidinvitationdate. Coordinator session59384; original first990account-days match. Numeric360/24/13/24/+700 unchanged. Read all-source timing limitations before reporting.
+
+- P1 reviewed closure: all30targetedcaptures/3widthsPASS, minimumscopedcontrast>=4.5; personal1024Hub/Prepare inspected. Independent receipt3PASS/native6PASS; all18defaultcold observations retained. Durable artifact p1/artifact/index.html exact9d9335f3/20,816,833bytes. Defaultdelta149416PASS;1280CPU1median297.97>295.69/max532.61>368.11;CPU4median1006.26<1047.34/max1046.84<1114.40;1440CPU1median303.45>285.39/max329.21>293.43. Offlinefull266.6/249.9/183.3MISS120.
+- P1 closureattempts1/2 retained missing1024 evidence;3assembledoriginalresults;4adds durableartifact path only. No source-suite or browser rerun. OFF8250 reused with63rulehashparity, baseline/historical13 exact. Originalruntime509c88fbf unchanged; draftreport P1-SIZE-STARTUP.md explicitlyPARTIAL.
+
+- Published P1 DRAFT https://github.com/ntbaoheyhey/taskbar-hero/pull/381 on#379, head95e1c1c4f, no merge/deploy. Stack376→377→379→381. Three trailing-whitespace lines in registeredstartup harness intentionally retained with exactmeasuredhash; PR records this provenance exception. B1/B2remainMISS, not deferred acceptancepassed.
