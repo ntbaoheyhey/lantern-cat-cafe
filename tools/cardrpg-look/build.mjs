@@ -8,6 +8,9 @@ import { root, web, requireWeb } from '../visual-support.mjs';
 import { evidencePayload } from '../cardrpg-big2/embed-evidence.mjs';
 import { showcaseEvidence } from './showcase-evidence.mjs';
 const { build } = await import(requireWeb.resolve('vite'));
+// B2 can build a separate artifact without rewriting the accepted closure demo.
+const outputPath = process.env.LOOK_OUTPUT || 'docs/cardrpg-look/index.html';
+const receiptPath = process.env.LOOK_RECEIPT || 'docs/cardrpg-look/build.json';
 // Both streams decode to identical bytes. Different asset classes favour
 // different DEFLATE hash-table sizes; keep the smaller stream per payload.
 const gzip = bytes => {
@@ -90,7 +93,7 @@ ${evidence.tags}
 <script>${showcase.script}</script>
 <script id="payload" type="application/octet-stream">${payload}</script><script>${loader}</script></body></html>`;
 mkdirSync(resolve(root, 'docs/cardrpg-look'), { recursive: true });
-writeFileSync(resolve(root, 'docs/cardrpg-look/index.html'), html);
+writeFileSync(resolve(root, outputPath), html);
 const sourceRoots = ['packages/game-rules/src', 'apps/web/src', 'assets', 'tools/cardrpg-depth', 'tools/cardrpg-big', 'tools/cardrpg-big2', 'tools/cardrpg-look', 'tools/cardrpg-demo/verify-delivery.py', 'tools/visual-support.mjs'];
 const files = execFileSync('git', ['ls-files', '--cached', '--others', '--exclude-standard', ...sourceRoots], { cwd: root, encoding: 'utf8' }).trim().split('\n');
 const hashes = Object.fromEntries(files.map(path => [path, createHash('sha256').update(readFileSync(resolve(root, path))).digest('hex')]));
@@ -107,5 +110,5 @@ const receipt = { date: new Date().toISOString(), head, dirty, bytes: Buffer.byt
   sha256: createHash('sha256').update(html).digest('hex'), runtimeDirty, sourceRoots, sourceHashes: hashes,
   sourceAssetHashes, assetHashes,
   references: ['docs/cardrpg-look/index.html', 'tools/cardrpg-big/build.mjs', 'packages/game-rules/src/cardrpg/depth', 'apps/web/src/game/cardrpg/depth'] };
-writeFileSync(resolve(root, 'docs/cardrpg-look/build.json'), JSON.stringify(receipt, null, 2));
+writeFileSync(resolve(root, receiptPath), JSON.stringify(receipt, null, 2));
 console.log(JSON.stringify({ head, dirty, bytes: receipt.bytes, sha256: receipt.sha256 }));
