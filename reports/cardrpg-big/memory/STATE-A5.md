@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-Star plans46 source-bound closure PASS on27f192301: six first-attempt gates1779web/1192rules/421E2E/build,8isolated units,24ON/OFF browser scenarios/48captures. Adopted ON/OFF builds byte-identical to tested prototypes; OFF8250 source hashes and baseline/historical13 exact. DRAFT publication on403 next.
+Star plans46 source-bound closure PASS on27f192301: six first-attempt gates1779web/1192rules/421E2E/build,8isolated units,24ON/OFF browser scenarios/48captures. Adopted ON/OFF builds byte-identical to tested prototypes; OFF8250 source hashes and baseline/historical13 exact. Published DRAFT404 on403; evidence62d3e0a64.
 ## NEXT
-Publish Starplans draft, sync outbox/ledger, then register/run the staged Home03 elapsed protocol on immutable checked artifact. Original Home02 cadence/dead-time MISS unchanged; no new benefit claim. B1/B2/display/startup/Z open; fresh20001–20500 UNUSED.
+Sync outbox/ledger, then register/run the staged Home03 elapsed protocol on immutable checked artifact. Original Home02 cadence/dead-time MISS unchanged; no new benefit claim. B1/B2/display/startup/Z open; fresh20001–20500 UNUSED.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -320,3 +320,5 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - 2026-11-08T22:42:22.702430+00:00: Starplans46 mode revision passed8isolated units/24browser scenarios/48captures. Prototype audit initially ran before finalOFF1024 row was persisted; guard failure retained, unchanged audit passed after original coordinator exited. No UI samples repeated by audit. ON20929441bytes/SHA2c318627; scopedcontrast6.726/nooverflow. Exact source adopted; no rule/save/acceptance change.
 
 - 2026-11-08T22:46:57.696091+00:00: Resumed original9317 source coordinator without duplicate suites. All six firstattempt checks and independent source-bound closure PASS; ON20929441bytes/SHA2c318627, OFF prototype exact,48captures, scopedcontrast6.726. Personally reviewed1280crew options and1024Look earned-star page. No combat/save/acceptance/B change.
+
+- 2026-11-08T22:47:48.026422+00:00: Published DRAFT404 https://github.com/ntbaoheyhey/taskbar-hero/pull/404 on403; source27f192301/evidence62d3e0a64. Original gates and browser receipts unchanged. No merge/deploy.

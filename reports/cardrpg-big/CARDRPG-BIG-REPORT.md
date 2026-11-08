@@ -76,3 +76,5 @@ A5 Equipment41: actual equip/transfer boss comparison source c0543531a passes si
 A5 Home43 aligns unfinished-star hints and primary chapter/band, preserving active routes; source96b32a5d3, sixchecksPASS1771web/1192rules/421E2E/build and36UIchecks/42captures. Original60.78minute Home02 journey has30minmaxrewardgap916.484s andcombat958.568s (+6.9%H0): cadence/deadtimeMISS. Reports:a5/E2-HOME-STARS.md andE2-HOME-ENGAGEMENT.md. No fresh acceptance, merge or deploy.
 
 A5 Starplans46 offers available Home crew choices for job stars and honest capped-replay copy. Source27f192301 passes six gates1779web/1192rules/421E2E/build;24ON/OFF browser scenarios/48captures, scopedcontrast6.726 and exact prototype/adopted bytes. ON20,929,441bytes/SHA2c318627; OFF8250/baseline/historical13 exact. Original Home02 cadence/dead-timeMISS remains; see[a5/E2-HOME-CREW-PLANS.md](a5/E2-HOME-CREW-PLANS.md).
+
+Starplans46 published as[DRAFT404](https://github.com/ntbaoheyhey/taskbar-hero/pull/404), stacked on403.
