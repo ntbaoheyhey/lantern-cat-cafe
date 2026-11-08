@@ -20,6 +20,7 @@ try{
   await page.getByRole('navigation',{name:'Cafe screens'}).waitFor({timeout:120000});
   if(view==='reviewer-look')await page.getByRole('button',{name:'Look A/B',exact:true}).click();
   await page.getByRole('navigation',{name:'Cafe screens'}).getByRole('button',{name:'Save & settings',exact:true}).click();
+  await page.getByRole('heading',{name:'Export / import progress',exact:true}).waitFor();
   const button=name=>page.getByRole('button',{name,exact:true});
   const hasTools=before||mode==='off'||dev;
   for(const name of grants)assert.equal(await button(name).count(),hasTools?1:0,name);
