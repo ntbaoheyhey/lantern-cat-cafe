@@ -843,3 +843,11 @@ Registeredresponse03: conservedbudget plus boundedautomaticenemyresponse.30/.50,
 P1module05 exact198asset restoration; threecoldobservations retained. Layout06 sourceflow1280PASS but coldstartup stillMISS; no causalperformanceclaim.
 Registeredlazy07 App/offline loading only;20,816,833bytes,entry311392bytes vsmodule052494678 (requestedgraph/timingpending). ThreeCPU4runs and realplayer/reviewerflows running; browser closes each lease.
 A4requests/schema unchanged; earned-receiptforwarding still queuedE2. No merge/deploy/protected edits.
+
+## 2026-11-08T07:27:40.696623+00:00 A5-P1 CHECKPOINT
+P1 source 509c88fbf adopts exact lazy07 screen boundaries, lossless dictionary/module transport and default pixel packing; no B-owned or protected file changed.
+Adopted offline rebuild is byte-identical: 9d9335f3 / 20,816,833 bytes, all 198 restored asset hashes exact. Original layout effect kept.
+Three fixed CPU4 Hub intervals 116.7/116.6/133.3 ms; full opening+battle intervals 266.6/249.9/183.3 ms. Target120 remains MISS; narrower Hub interval is not the old full cold gate.
+Typecheck corrected missing build-transform declaration; original failure retained. Type/lint now PASS, remaining source gates, three-config default startup and targeted lazy flows running.
+Original response03 TRAIN complete/rejected: 18/25 piece misses, max26/22pp; crew21.33/16pp but cats reach94.84/95.6%. New continuous-policy TRAIN diagnostic registered; fresh20001–20500 unused.
+No model helpers, merge, deploy or B renderer adoption. Earned receipt forwarding remains queued for E2.
