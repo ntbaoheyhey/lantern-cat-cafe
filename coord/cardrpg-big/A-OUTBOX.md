@@ -1066,3 +1066,9 @@ Reference30/31 complete: original4,000calibration outcomes restored exactly; no 
 Read-only fatal-choice32 exhausts120actions/18decisions in6existing losing traces: firstdeath preventable3/6, alternative win4/6; neither is a population claim. Original JSON-parity harness failure retained.
 Registered queued-reply33 before sampling: auto privately values pending enemy replies, no assumed ally actions/new stats/boss changes.6replays/18prefixes/45OFF hashes and immutable choicesPASS;1321TRAIN50 plus90same-band earned saves now running.
 One native coordinator uses110s sharedleases/7s handoffs; no B integration/edits or modelhelpers. Fresh20001–20500 unused; all B1/B2/display/cadence/startup/Z misses retained. No merge/deploy.
+
+## 2026-11-08T19:49:08Z A5-B1 CHECKPOINT
+Original33/34 complete/audited and rejected:364before/384after near-certain wins;18/24tiersteps,heavy30/30,one unavailable advice. Corrected34 round-boundary semantic checksPASS; no adoption.
+Emergency35 also complete1321TRAIN50/90same-band old saves:96piece misses,worst40pp,heavy30/30,two unavailable advice; rejected. All negativepairs/source/probe receipts pusheda8e2c212e. Runtimee14d320ed unchanged.
+Registered current-source30active-minute engagement01 on exact4b15da6d artifact; one browser,10minute bounded leases,7s handoff, lifecycle frozen between leases. Not a completed cadence or acceptance claim.
+Display36 static feature/weight diagnostic queued; zero newcombat samples or production score/budget changes. B395read,no integration; fresh20001–20500 unused. No B/protected edits, modelhelpers, merge or deploy.
