@@ -104,3 +104,9 @@ The first training pilot exposed repeat shield/heal stalls (up to 251 actions); 
 - Preserve every pilot and residual; do not infer one-piece balance from all-loss bare-party cells. Register coherent-kit/fourth-slot pairs before heldout. Pilot worst88pp remains a miss until the full receipt says otherwise.
 - Reject the extra bounded-defense variant:384 coherent-kit pilot outcome digests unchanged. No unsupported extra runtime change.
 - Acceptance train1–500 and heldout10001–10500 each use3625cells; no heldout sampled before this record. Source hashes bind every resume. Any subsequent tuning based on heldout must disclose contamination and a new reserved block.
+## A5 B3 — restore reachable earned rewards, 2026-11-08
+
+- Adopt the registered reward-only360-stamp/24-mark/soft13/hard24/+700bp candidate after corrected4050-day parity. A4's180 daily cap made all styles identical and censored every60-mark selector. Preserve every original pilot and the rejected480/40 proposal; do not claim it was measured.
+- Keep the old60-mark balances and pity counters, including when V4 is disabled. Changed mode caps limit future earnings without clawing back earned currency. No new state or save version; old THC7/THC12 imports remain valid.
+- Show a suggested first-week goal plus tomorrow's real daily allowance. No manufactured daily unlock, promised Legendary date, purchase, expiring marks or edition-cap change.
+- Evidence: reports/cardrpg-big/a5/B3-PROGRESSION.md; b3/reward-validation-02/summary.json; b3/invitations-01/gacha.json. Bot reward gates do not substitute for the pending earned-day7 retry and selected-combat acceptance gates.

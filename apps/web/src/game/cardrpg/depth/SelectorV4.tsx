@@ -13,7 +13,7 @@ export function SelectorV4({m}:{m:DepthModel}) {
   <label>Reward type <select aria-label="Reward type" value={kind} onChange={e=>{setKind(e.target.value as 'cat'|'gear');setChosen('');}}><option value="cat">Companion</option><option value="gear">Equipment</option></select></label>
   <label>Chosen reward <select aria-label="Chosen reward" value={chosen} onChange={e=>setChosen(e.target.value)}><option value="">Choose a reward</option>{options.map(o=><option key={o.id} value={o.id}>{o.name} · {o.rarity}</option>)}</select></label>
   {selected&&<p>{owned?`Already collected: ${CARD_RPG_CONFIG.rarity[selected.rarity].shards} matching shards. Duplicates can be chosen only after collecting every companion.`:kind==='gear'?`One account-bound piece. Legendary choices require mastery of their source chapter.`:'A new companion joins at level one.'}</p>}
-  <p role="status">{reason??'Ready to spend 60 marks on this reward.'}</p>
-  <button disabled={!!reason} onClick={()=>m.apply(R.chooseSelectorV4(m.state,kind,chosen),'Your chosen reward is ready. 60 marks spent; pity unchanged.')}>Choose reward · 60 marks</button>
+  <p role="status">{reason??`Ready to spend ${R.SELECTOR_COST_V4} marks on this reward.`}</p>
+  <button disabled={!!reason} onClick={()=>m.apply(R.chooseSelectorV4(m.state,kind,chosen),`Your chosen reward is ready. ${R.SELECTOR_COST_V4} marks spent; pity unchanged.`)}>Choose reward · {R.SELECTOR_COST_V4} marks</button>
  </section>;
 }

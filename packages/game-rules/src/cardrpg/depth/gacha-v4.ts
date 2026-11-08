@@ -1,8 +1,8 @@
 import { Rng, deriveSeed } from '../../rng';
 import { CARDS } from '../catalog';
 import { CARD_RPG_CONFIG as C } from '../config';
-import { RARITY_ORDER, type GachaResult } from '../contract';
-import { bannerById, emptyPity, getBannerOdds, getDrawPool, pull } from '../gacha';
+import { RARITY_ORDER, type GachaResult, type PityState } from '../contract';
+import { bannerById, emptyPity, getBannerOdds } from '../gacha';
 import { integer, progress, requireRule, spend } from '../internal';
 import { GEAR, GEAR_BY_ID, makeGear } from './equipment';
 import { GEAR_CAP_V4 } from './equipment-v4';
@@ -12,7 +12,13 @@ import { requireHome, transactDepth } from './state';
 import type { DepthAccount } from './contract';
 import type { GameplayEventV4 } from './events-v4';
 
-export const SELECTOR_COST_V4 = 60;
+export const SELECTOR_COST_V4 = 24;
+export const invitationBannerV4 = (id:string) => ({...bannerById(id),softPity:13,hardPity:24,softStepBp:700});
+export function invitationOddsV4(id:string,pity:PityState=emptyPity()) {
+ const banner=invitationBannerV4(id);
+ // Old THC12 counters keep their earned credit: an over-threshold counter guarantees the next draw.
+ return getBannerOdds(banner,{...pity,sinceLegendary:Math.min(pity.sinceLegendary,banner.hardPity-1)});
+}
 export function selectorMarksV4(s: DepthAccount): number { return s.v4?.selectorMarks ?? 0; }
 function safeAdd(a:number,b:number):number { requireRule(Number.isSafeInteger(a+b)&&a+b>=0,'MAX_LEVEL','This saved balance is full.');return a+b; }
 function recordReveals(s:DepthAccount,results:GachaResult[]):void {
@@ -28,19 +34,26 @@ function recordReveals(s:DepthAccount,results:GachaResult[]):void {
 /** Mutates only the enclosing atomic draft; no animation controls acquisition. */
 export function drawInvitationsV4(s:DepthAccount,bannerId:string,seed:number,count=1):GachaResult[] {
  requireHome(s);requireRule(gameplayV4(s)&&!!s.v4,'NOT_READY','Enable Gameplay v4 first.');
- const b=bannerById(bannerId);let results:GachaResult[];
+ const b=invitationBannerV4(bannerId);const results:GachaResult[]=[];
  requireRule(integer(count,1,C.maxBatch)&&integer(seed,0,0xffffffff),'INVALID_AMOUNT','Choose 1–10 invitations and an unsigned seed.');
  requireRule(s.account.daily.draws+count<=C.maxDrawsPerDay,'DAILY_CAP','Daily invitation limit reached.');
  safeAdd(selectorMarksV4(s),count);
- if(b.kind==='cat'){
-  const r=pull(bannerId,s.account,seed,count);requireRule(r.ok,'INVALID_AMOUNT',r.ok?'':r.error.message);
-  s.account=r.state;results=r.value;
- }else{
-  requireRule(s.gear.length+count<=GEAR_CAP_V4,'MAX_LEVEL','Make room for the entire basket before spending.');
+ {
+  requireRule(b.kind==='cat'||s.gear.length+count<=GEAR_CAP_V4,'MAX_LEVEL','Make room for the entire basket before spending.');
   spend(s.account,Object.fromEntries(Object.entries(b.cost).map(([k,v])=>[k,v*count])));
-  const pity=s.account.pity[b.pityGroup]??=emptyPity(),rng=new Rng(deriveSeed(seed,pity.totalPulls));results=[];
+  const pity=s.account.pity[b.pityGroup]??=emptyPity(),rng=new Rng(deriveSeed(seed,pity.totalPulls));
   for(let n=0;n<count;n++){
-   const oddsBp=getBannerOdds(b,pity),rarity=rng.weighted(oddsBp,RARITY_ORDER);
+   const oddsBp=invitationOddsV4(bannerId,pity),rarity=rng.weighted(oddsBp,RARITY_ORDER);
+   if(b.kind==='cat'){
+    let pool=CARDS.filter(c=>c.rarity===rarity);
+    if(rarity==='legendary'&&b.featuredCardId){const featured=pity.featuredGuaranteed||rng.int(0,9999)<b.featuredRateBp;pool=pool.filter(c=>featured?c.id===b.featuredCardId:c.id!==b.featuredCardId);pity.featuredGuaranteed=!featured;}
+    const fresh=pool.filter(c=>!s.account.cards.some(o=>o.cardId===c.id));if(fresh.length)pool=fresh;
+    requireRule(pool.length>0,'NOT_READY','This banner has an empty rarity pool.');
+    const cat=pool[rng.int(0,pool.length-1)]!,owned=s.account.cards.find(o=>o.cardId===cat.id),shards=owned?C.rarity[rarity].shards:0;
+    if(owned)owned.shards=safeAdd(owned.shards,shards);else{s.account.cards.push({id:cat.id,cardId:cat.id,level:1,stars:1,shards:0,soulbound:true});s.account.loadouts[cat.id]={};}
+    const result:GachaResult={index:safeAdd(pity.totalPulls,1),bannerId,rarity,cardId:cat.id,duplicate:!!owned,shards,pityBefore:pity.sinceLegendary,oddsBp,soulbound:true,tradeable:false};
+    pity.totalPulls=result.index;pity.sinceLegendary=rarity==='legendary'?0:pity.sinceLegendary+1;s.account.daily.draws++;results.push(result);s.account.history.push(result);progress(s.account,'draws');continue;
+   }
    let pool=GEAR.filter(g=>g.rarity===rarity);const fresh=pool.filter(g=>!s.gear.some(i=>i.templateId===g.id));if(fresh.length)pool=fresh;
    const template=pool[rng.int(0,pool.length-1)]!,duplicate=s.gear.some(g=>g.templateId===template.id);
    const gear=makeGear(s,template.id,deriveSeed(seed,s.account.nextId));s.gear.push(gear);
@@ -54,8 +67,13 @@ export function drawInvitationsV4(s:DepthAccount,bannerId:string,seed:number,cou
  recordReveals(s,results);return results;
 }
 export function getDrawPoolV4(s:DepthAccount,bannerId:string){
- const b=bannerById(bannerId);if(b.kind==='cat')return getDrawPool(s.account,bannerId);
- const odds=getBannerOdds(b,s.account.pity[b.pityGroup]??emptyPity());
+ const b=invitationBannerV4(bannerId),pity=s.account.pity[b.pityGroup]??emptyPity(),odds=invitationOddsV4(bannerId,pity);
+ if(b.kind==='cat')return RARITY_ORDER.flatMap(rarity=>{
+  const rows=CARDS.filter(c=>c.rarity===rarity);
+  const group=(pool:typeof rows,chance:number)=>{const fresh=pool.filter(c=>!s.account.cards.some(o=>o.cardId===c.id)),actual=fresh.length?fresh:pool;return actual.map(c=>({id:c.id,rarity,probability:odds[rarity]/10000*chance/actual.length}));};
+  if(rarity==='legendary'&&b.featuredCardId){const chance=pity.featuredGuaranteed?1:b.featuredRateBp/10000;return [...group(rows.filter(c=>c.id===b.featuredCardId),chance),...group(rows.filter(c=>c.id!==b.featuredCardId),1-chance)];}
+  return group(rows,1);
+ });
  return RARITY_ORDER.flatMap(rarity=>{const pool=GEAR.filter(g=>g.rarity===rarity),fresh=pool.filter(g=>!s.gear.some(i=>i.templateId===g.id)),actual=fresh.length?fresh:pool;return actual.map(g=>({id:g.id,rarity,probability:odds[rarity]/10000/actual.length}));});
 }
 export function selectorEligibilityV4(s:DepthAccount,kind:'cat'|'gear',id:string):string|null {

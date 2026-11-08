@@ -55,3 +55,9 @@ Simulation: several accounts compete for a tiny configured test cap using produc
 "An edition records an evening you earned. Reserve it with boss seals after its milestone. This preview tracks local edition supply; it does not mint an NFT. Your design never changes combat strength."
 
 The screen provides the actual lifetime/season numbers, remaining local slots, my live/burned/fused records, qualifications, spent effort and a readable issuance receipt. The ordinary equipment keepsake slot and actual Fuji holdings are linked with distinct labels so the player cannot mistake a gear draw for a minted asset.
+
+## A5 earned invitation allowance — 2026-11-08
+
+GameplayV4's shared stamp earn allowance is360/day; fish420, threads90 and essence6 retain their prior reward caps. Draws still cost150 earned stamps, at most30/day, and each paid draw adds one permanent mark. A chosen cat or eligible gear costs24 marks. The conditional Legendary curve starts at draw13 (+7 percentage points each draw), with a guarantee at24; the base odds and separate featured guarantee stay unchanged. This replaces the earlier180/60/41/60 invitation values for V4 only.
+
+These changes do not increase boss seals (one/day), design issuance, season/account allowances, or combat strength of editions. Ordinary rewards remain bound, with no purchase or cash-out. Existing balances, marks and legacy pity counters are preserved in both modes. Evidence: [B3 progression](../../../reports/cardrpg-big/a5/B3-PROGRESSION.md), the90-account earned cohort and3×10,000-account invitation audit linked there. Combat and day7 acceptance remain pending; invitation progress is not a mint entitlement.

@@ -27,9 +27,10 @@ export function Invitations({ m }: { m: DepthModel }) {
   const [results, setResults] = useState<GachaResult[]>([]);
   const [index, setIndex] = useState(0);
   const [phase, setPhase] = useState<RevealPhase>('summary');
-  const banner = BANNERS.find(candidate => candidate.id === bannerId)!;
+  const banner = m.state.gameplayV4 ? R.invitationBannerV4(bannerId) : BANNERS.find(candidate => candidate.id === bannerId)!;
   const pity = m.state.account.pity[banner.pityGroup] ?? emptyPity();
-  const odds = getBannerOdds(banner, pity);
+  const odds = m.state.gameplayV4 ? R.invitationOddsV4(bannerId, pity) : getBannerOdds(banner, pity);
+  const untilLegendary = Math.max(1, banner.hardPity - pity.sinceLegendary);
   const active = results[index];
   const revealing = results.length > 0 && phase !== 'summary';
   const reducedMotion = m.state.settings.reducedMotion || systemReducedMotion;
@@ -114,7 +115,7 @@ export function Invitations({ m }: { m: DepthModel }) {
       <button key={choice.id} aria-pressed={bannerId === choice.id} disabled={revealing}
         onClick={() => { setBannerId(choice.id); setResults([]); }}>{choice.name}</button>)}</div>
     <section ref={fairness} className="dp-invitation-fairness" aria-label="Invitation fairness">
-      <div className="dp-fairness-pity"><strong>Legendary guaranteed in {banner.hardPity - pity.sinceLegendary}</strong>
+      <div className="dp-fairness-pity"><strong>Legendary guaranteed in {untilLegendary}</strong>
         <span>{pity.sinceLegendary}/{banner.hardPity} pulls · Next legendary {(odds.legendary / 100).toFixed(2)}%</span></div>
       {!m.state.gameplayV4 && <div className="dp-fairness-odds"><span>Base odds</span>{Object.entries(banner.oddsBp).map(([rarity, value]) =>
         <span key={rarity}>{rarity} {value / 100}%</span>)}</div>}
@@ -139,9 +140,9 @@ export function Invitations({ m }: { m: DepthModel }) {
         {shelfRoom<10&&<p>{shelfRoom} equipment spaces free. Make room for the whole basket before inviting.</p>}
         {inRun && <p>Finish your current route to open invitations.</p>}
         <InvitationRules v4={!!m.state.gameplayV4}>
-        {m.state.gameplayV4 && <><p>{banner.description}</p><p>New discoveries come first within your rolled rarity and featured group.</p><p>Skipping the reveal keeps the same saved reward. Invitations use earned stamps only.</p><p>Each banner tracks its own pity. You can open up to 30 invitations daily.</p></>}
+        {m.state.gameplayV4 && <><p>{banner.description}</p><p>New discoveries come first within your rolled rarity and featured group.</p><p>Skipping the reveal keeps the same saved reward. Invitations use earned stamps only.</p><p>Each banner tracks its own pity. You can open up to 30 invitations daily.</p><p>Earn up to {R.depthCaps(m.state).stamps} stamps daily across service, routes, board and milestones.</p><p>From draw {banner.softPity}, Legendary chance rises by {banner.softStepBp / 100} percentage points per draw.</p><p>A Legendary arrives by draw {banner.hardPity}. Each Legendary resets that banner’s counter.</p><p>{R.SELECTOR_COST_V4} marks choose one reward. Your welcome invitation adds no marks.</p></>}
         <div className="dp-pity"><strong>Legendary pity progress</strong>
-          <progress aria-label="Legendary pity" value={pity.sinceLegendary} max={banner.hardPity} />
+          <progress aria-label="Legendary pity" value={Math.min(pity.sinceLegendary, banner.hardPity)} max={banner.hardPity} />
           <small>{pity.sinceLegendary}/{banner.hardPity} · Soft pity begins on pull {banner.softPity}</small>
         </div>
         {banner.featuredCardId && <p>{pity.featuredGuaranteed ? 'Your next legendary is Marigold.'

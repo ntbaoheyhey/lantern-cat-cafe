@@ -6,7 +6,7 @@ import { GEAR, GEAR_BY_ID, SETS } from './equipment';
 import { gameplayV4 } from './gameplay-v4';
 import { stackCapV4 } from './items-v4';
 import { claimIdleService, idlePreview, syncCalendarDay } from './bridge';
-import { DEPTH_CAPS, grantDepth, requireHome, transactDepth } from './state';
+import { DEPTH_CAPS, depthCaps, grantDepth, requireHome, transactDepth } from './state';
 import type { DepthAccount } from './contract';
 export interface CollectionJournalV4 { cats:string[];gear:string[];sets:string[];rewardedRoutes:number;claims:string[] }
 export function journalV4(s:DepthAccount):CollectionJournalV4 {
@@ -30,7 +30,7 @@ export const MILESTONES_V4=[
  {id:'ten-routes',name:'Ten evenings of effort',target:10,kind:'routes',reward:{stamps:60}},
 ] as const;
 export function cappedPreviewV4(s:DepthAccount,requested:Cost):Cost {
- return Object.fromEntries(Object.entries(requested).map(([id,n])=>[id,Math.max(0,Math.min(n,DEPTH_CAPS[id as keyof typeof DEPTH_CAPS]-s.account.daily.earned[id as keyof typeof DEPTH_CAPS]))]));
+ return Object.fromEntries(Object.entries(requested).map(([id,n])=>[id,Math.max(0,Math.min(n,depthCaps(s)[id as keyof typeof DEPTH_CAPS]-s.account.daily.earned[id as keyof typeof DEPTH_CAPS]))]));
 }
 export function milestonePreviewV4(s:DepthAccount,id:string){
  const milestone=MILESTONES_V4.find(m=>m.id===id);requireRule(milestone,'UNKNOWN_ID','Choose a journal milestone.');
@@ -96,7 +96,7 @@ export const LESSONS_V4=[
  {id:'front',title:'One sturdy front row',text:'Keep a guardian in front. Rear companions gain cover while the front holds.',action:'Arrange your crew',screen:'team'},
  {id:'intent',title:'Read one opponent',text:'Look for the next enemy signature before Fight. Hush can stop a healer; cleanse answers Tangle.',action:'Read the field guide',screen:'codex'},
  {id:'gear',title:'One piece, one purpose',text:'Compare an item’s stats and utility before equipping it. A matching set adds a bounded team effect.',action:'Compare equipment',screen:'inventory'},
- {id:'invite',title:'Invitations you earn',text:'An earned draw costs 150 stamps and grants one selector mark. Sixty marks choose a companion; your welcome draw grants no mark.',action:'Review invitation odds',screen:'gacha'},
+ {id:'invite',title:'Invitations you earn',text:'Each earned invitation adds one selector mark. Save 24 marks to choose a companion. Welcome invitations add none.',action:'Review invitation odds',screen:'gacha'},
 ] as const;
 export function currentLessonV4(s:DepthAccount){return s.account.day>=7?null:LESSONS_V4.find(l=>!s.v4?.lessons?.includes(l.id))??null;}
 export function finishLessonV4(state:DepthAccount,id:string){return transactDepth(state,s=>{
@@ -104,3 +104,21 @@ export function finishLessonV4(state:DepthAccount,id:string){return transactDept
  requireRule(currentLessonV4(s)?.id===id,'NOT_READY','That lesson is already complete or not next.');
  s.v4!.lessons??=[];s.v4!.lessons.push(id);
 });}
+
+/** First-week suggestions, not calendar unlocks or guaranteed drops. No saved state. */
+export function firstWeekV4(s: DepthAccount) {
+ if (!gameplayV4(s)) return null;
+ const goals = [
+  'Place a sturdy companion in front. Try the practice table.',
+  'Compare a spare piece. Equip the one that helps your crew.',
+  'Spend earned stamps on an invitation. Save marks for your choice.',
+  'Try a different crew job. Choose its standing plan before fighting.',
+  'Save your favourite shift. Try another piece without losing your setup.',
+  'Read the next boss’s guide. Prepare an upgrade you can afford.',
+  'Challenge your next uncleared chapter with your prepared crew.',
+ ];
+ const day = Math.max(1, s.account.day);
+ const goal = goals[Math.min(day, 7) - 1]!;
+ const nextGoal = day < 7 ? goals[day]! : 'Try another crew on a familiar route.';
+ return {day, goal, tomorrow: `${nextGoal} Two cafe services return; earn up to ${depthCaps(s).stamps} stamps across tomorrow’s activities.`};
+}

@@ -4,7 +4,7 @@ import { QUESTS } from '../catalog';
 import { clone } from '../internal';
 const fresh=()=>R.setGameplayV4(R.createDepthAccount(17),true);
 const take=(r:R.RuleResult<R.DepthAccount>)=>{expect(r.ok,r.error).toBe(true);return r.state;};
-const capped=(s:R.DepthAccount)=>{s.account.daily.earned={...R.DEPTH_CAPS};return s;};
+const capped=(s:R.DepthAccount)=>{s.account.daily.earned={...R.depthCaps(s)};return s;};
 describe('v4 permanent collection and shared reward board',()=>{
  it('records the last owned template before salvage without mutating the caller',()=>{
   const s=fresh(),gear=R.makeGear(s,'bellsteel-weapon-common',3);s.gear.push(gear);const copy=clone(s);
@@ -22,7 +22,7 @@ describe('v4 permanent collection and shared reward board',()=>{
   const twice=R.claimMilestoneV4(s,'twelve-templates');expect(twice.ok).toBe(false);expect(twice.state).toEqual(s);
  });
  it('previews partial reward exactly before a once-only claim',()=>{
-  let s=fresh();s.v4!.journal={cats:[],gear:[],sets:[],rewardedRoutes:10,claims:[]};s.account.daily.earned.stamps=170;
+  let s=fresh();s.v4!.journal={cats:[],gear:[],sets:[],rewardedRoutes:10,claims:[]};s.account.daily.earned.stamps=R.depthCaps(s).stamps-10;
   expect(R.milestonePreviewV4(s,'ten-routes').reward).toEqual({stamps:10});const before=s.account.currencies.stamps;s=take(R.claimMilestoneV4(s,'ten-routes'));expect(s.account.currencies.stamps-before).toBe(10);
  });
  it('grants a cosmetic ribbon once or its disclosed thread duplicate',()=>{
@@ -38,7 +38,7 @@ describe('v4 permanent collection and shared reward board',()=>{
  it('honors stack capacity and leaves a weekly claim atomic',()=>{
   let s=capped(fresh());s.account.quests['weekly-wins']!.progress=3;s.account.inventory.stacks['pantry-key']=99;
   expect(R.metaCommand(s,{type:'claimQuest',questId:'weekly-wins'}).ok).toBe(false);s.account.inventory.stacks['pantry-key']=0;
-  s=take(R.metaCommand(s,{type:'claimQuest',questId:'weekly-wins'}));expect(s.account.inventory.stacks['pantry-key']).toBe(1);expect(s.account.daily.earned).toEqual(R.DEPTH_CAPS);
+  s=take(R.metaCommand(s,{type:'claimQuest',questId:'weekly-wins'}));expect(s.account.inventory.stacks['pantry-key']).toBe(1);expect(s.account.daily.earned).toEqual(R.depthCaps(s));
  });
  it('rejects unknown or unfinished claims without creating journal state',()=>{
   const s=fresh();for(const id of ['unknown','six-cats','ten-routes'])expect(R.claimMilestoneV4(s,id)).toMatchObject({ok:false,state:s});
