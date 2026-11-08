@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-Home43 source96b32a5d3 and exact-artifact closure PASS: six original gates1771web/1192rules/421E2E/build,36UIchecks/42captures plus reproduced old mismatch. Original Home02 finished60.78active minutes; cadence/dead-timeMISS retained. EquipmentDRAFT401 published. Home43 draft publication next. Prepare44 source/geometry protocol staged only; no runtime adoption or prototype run.
+Home43 DRAFT402 published on401; source96b32a5d3/evidence2aa6e2b82. Original six gates and36UIchecks/42captures remain verified. Prepare44 registered layout prototype next; no source adoption yet. Original Home02 cadence/dead-time MISS retained.
 ## NEXT
-Publish Home43 draft on401 and checkpoint outbox/ledger. Then run the registered Prepare44 prototype (tools/cardrpg-big/a5-drafts/prepare-order-44); do not adopt before geometry/controls/OFF checks. B1/B2/static-display/cadence/startup/Z remain open; fresh20001–20500 UNUSED.
+Run registered Prepare44 prototype with original offscreen-placement reproduction, real keyboard/plan/forecast controls and3widths/bothmodes/looks. Adopt only after checks; then full six gates/exact builds. B1/B2/static-display/cadence/startup/Z remain open; fresh20001–20500 UNUSED.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -306,3 +306,5 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - 2026-11-08T22:16:22.649985+00:00: Home43 source-bound closurePASS firstattempt;36UIchecks/42captures, oldchapter1hint→chapter3actual reproduced. Artifact754d3806f31595c168f84e9c17d5c203be144e9abdd602c96e3c907e60dcd761/20927513bytes; contrast6.858421081163746. No new rule simulation, earned journey or acceptance.
 
 - Personal Home43 visual review:1280baseline earned hint/action,1024alternate-look band4,1440baseline active-band2 inspected; primary visible and coherent. Alternate Look explicitly usesdev=1, so reviewer buttons are expected. No all-screen contrast or Z claim.
+
+- 2026-11-08T22:19:16.953939+00:00: Resumed latest Home43 checkpoint, no active A jobs. Verified source/log/scope without repeating suites; published DRAFT402 https://github.com/ntbaoheyhey/taskbar-hero/pull/402 on401. Previous stop handoff is historical and superseded by user resume. Untracked display40 outputs and Finder file preserved. Prepare44 prospective files retained; no new acceptance.
