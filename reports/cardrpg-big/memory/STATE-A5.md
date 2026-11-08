@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-Reward-only B3 reviewed source06dc9d3ba closed: six gates PASS (web1739/rules1113/E2E421/build), OFF165/8250 exact, three-width earned24mark selector PASS. Personal1024 capture reviewed; sticky heading clearance corrected. Durableartifact22ad9eb9/20,818,233bytes. Reward draft publication on381 next; B3 overallPARTIAL (day7 combat/retry pending).
+Reward DRAFT382 published on381 (headba58ba326); reward functional/source/browser/OFF checks PASS, B3 remainsPARTIAL on day7 combat. Stat-budget05 original attemptINVALID: /tmp vs/private/tmp prevented every candidate transform. Corrected same-seed execution now asserts applied modules and numeric gear values before sampling; production combat staysA4.
 ## NEXT
-Publish reward draft, mirror STATE and append A-OUTBOX. Original stat-budget05 coordinator69562/session86963 continues immutable snapshot TRAIN; relative035 first384piece cells32miss/max88pp, not adoption. E1 staged17files under /tmp/cardrpg-a5-e1-integration pending source adoption/tests/browser after B3. Fresh20001–20500 UNUSED.
+Finish corrected immutable TRAIN job (session76893; /tmp/cardrpg-a5-stat-budget-05-corrected). Preserve original rejected/invalid receipts. Integrate staged E1 after the snapshot matrix stops enumerating current source; complete rules/worker/browser/source checks. Fresh20001–20500 UNUSED. Stack376→377→379→381→382.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -120,3 +120,5 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - Registered stat-budget05 TRAIN before sampling at /tmp/cardrpg-a5-stat-budget-05 and a5/b1/stat-budget-05: relative main-stat3.5%/5% (cap12%) atop exact pressure500weight2/sig100, all384/210/64/663cases TRAIN1–50. Source copied immutably to /tmp/cardrpg-a5-stat-budget-05/source; coordinator69562/session86963,110slock/7shandoff. No production adoption/acceptance. E1 16-file integration staged under /tmp/cardrpg-a5-e1-integration; untested, not adopted.
 
 - B3 reviewed closure PASS: source06dc9d3ba, three independent numeric receipt tests, all12reviewedcaptures minimumscopedcontrast8.376/nooverflow/errors/remote. Exactearned24→0/pity unchanged; sourcechecks/historical13/baseline/OFF165/8250 PASS. Original type portability and missing temporary-Python build failures retained; currentPillow11.3.0 used. Artifact22ad9eb9/20818233 archived. B3 stillPARTIAL onA4combat; day7retry/collectible/post-B1 gates remain pending.
+
+- Resume 2026-11-08T08:05:35.905036+00:00: verified remoteDRAFT382/headba58ba326, no duplicate reward publication or tests. Originalstat05 completed both variants identically; confirmed realpath mismatch in loader. Original32piece misses/max88pp are NOT candidate outcomes. Correctedexecutorcanonicalizespaths/asserts all executable transforms once and checksgearformula; same source/seeds/cases, separate corrected receipts; no production/acceptance changes.
