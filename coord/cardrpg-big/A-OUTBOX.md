@@ -938,3 +938,10 @@ B3 web1746/rules1133 PASS; type/lint/OFF8250 alreadyPASS. x1/opening/E2E/build r
 Spread50 wider09 resumes originalTRAINsource; original500 fourth-slot0miss/max11.2pp stays a diagnostic, not adoption. Cat/set/crew andpredictability review pending.
 Registered read-only Soot probe05:440team/scenes,TRAIN1–50, require every outcome match commonfixture04; measures omitted Scent valuation hypothesis. No kit change or new acceptance.
 Fresh20001–20500UNUSED. No B/protected changes, modelhelpers, merge or deploy. Existing B requests unchanged.
+
+## 2026-11-08T16:20:38Z A5-B3 CHECKPOINT
+DRAFT386 https://github.com/ntbaoheyhey/taskbar-hero/pull/386 on385; runtime6c0a04592/closure5bd68a836. All six gates1746web/1133rules/421E2E/build and3earned receipt testsPASS; OFF8250/baseline/historical13exact.
+Real-clickx1boss VICTORY64.921s; exactsame-route oldplanloses. Three-width opening33captures/nooverflow/scopedcontrast6.858;41framecontact retains transientloading and supplementalreadycapture. Artifact60407a0b/20,922,529bytes; publicdemo unchanged untilZ.
+Spread50wider09 rejected: cats46.81–68.99%,sets80.25–86.25%,crew35.33pp,diversity3/1/3. No spreadadoption. Sootprobe05exact22000battleparity:Blackcup0/203598actions,MoonwickhealonlywithVelvet.
+Scentpolicy06isolated TRAINcandidate stopped on existing energy/missing-ally exception; registeredunchanged-source crashreproduction07 running. No policyadoption or fresh20001–20500; allpreviousfailures retained.
+No B/protectedsource edits,modelhelpers,merge or deploy. ExistingBrequests unchanged.
