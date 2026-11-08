@@ -494,12 +494,17 @@ export function enemyAct(b: Battle): boolean {
   const impaired=intent.interrupted||stacks(actor,'drowsy')>0;
   const quiet=stacks(actor,'hush')>0;
   const signature=intent.signature&&!impaired;
-  if(b.v4 && (impaired || quiet&&['heal','shield','summon','bind','banquet'].includes(spec.mechanic))) {
-    record(b,actor,actor,'suppressed',1,'Control suppressed enemy utility');
+  const creditSuppression = () => {
+    record(b,actor,actor,'suppressed',1,impaired?'Control softened enemy action':'Hush stopped enemy utility');
     const controller=b.actors.find(a=>a.id===actor.statuses.find(s=>s.id===(impaired?'drowsy':'hush'))?.source);
     if(controller?.bonuses.crewSuppress&&!controller.bonuses.crewSuppressed){controller.bonuses.crewSuppressed=1;heal(b,controller,controller,controller.bonuses.crewSuppress);}
-  }
+  };
+  if(b.v4&&impaired) creditSuppression();
   if (impaired) damage(b,actor,target,40,0,b.v4&&spec.mechanic!=='steal');
+  else if (b.v4&&signature&&quiet&&['heal','shield'].includes(spec.mechanic)) {
+    // Suppression spends the committed utility turn; it does not replace it with a hit.
+    creditSuppression();
+  }
   else if (spec.mechanic==='heal'&&!quiet&&(!b.v4||signature)) heal(b,actor,weakest(living(b,'enemy')),65);
   else if (spec.mechanic==='shield'&&!quiet&&(!b.v4||signature)) for (const a of living(b,'enemy').filter(a=>a.row===actor.row)) shield(b,actor,a,45);
   else {
@@ -514,7 +519,10 @@ export function enemyAct(b: Battle): boolean {
       if (signature&&spec.mechanic==='bomb') {loseHp(b,actor,t,stacks(t,'crumb')*35,'detonate');t.statuses=t.statuses.filter(s=>s.id!=='crumb');}
     }
     if (spec.mechanic==='steal'||signature&&spec.mechanic==='banquet') {if(b.v4){const removed=Math.min(6,target.shield);target.shield-=removed;record(b,actor,target,'strip-shield',removed);}else b.energy=Math.max(0,b.energy-1);}
-    if ((!b.v4||actor.hp>0)&&signature&&!quiet&&(spec.mechanic==='summon'||spec.mechanic==='banquet'&&actor.phase===2||spec.mechanic==='bind')) spawnThread(b,actor);
+    if ((!b.v4||actor.hp>0)&&signature&&(spec.mechanic==='summon'||spec.mechanic==='banquet'&&actor.phase===2||spec.mechanic==='bind')) {
+      if(!quiet) spawnThread(b,actor);
+      else if(b.v4&&living(b,'enemy').filter(a=>a.catalogId==='binding-thread').length<2) creditSuppression();
+    }
     if (spec.mechanic==='reflect'&&actor.turns===0) {shield(b,actor,actor,70);applyStatus(b,actor,actor,'cozy');}
   }
   record(b,actor,target,'enemy-action',0,impaired?(b.v4?'Drowsy intent · softened basic':'Broken intent · softened basic'):intent.label);

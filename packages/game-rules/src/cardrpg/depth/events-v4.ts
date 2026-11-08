@@ -25,7 +25,7 @@ export function battleReasons(battle: Battle): string[] {
   const shields = battle.log.filter(e => e.kind === 'absorbed' && battle.actors.some(a => a.id === e.targetId && a.side === 'party')).reduce((n, e) => n + e.amount, 0);
   if (shields) reasons.push(`Your shields absorbed ${shields} damage before it reached HP.`);
   const suppressed = battle.log.filter(e => e.kind === 'suppressed');
-  if (suppressed.length) reasons.push(`Your control softened or stopped ${suppressed.length} enemy utility actions.`);
+  if (suppressed.length) reasons.push(`Your control softened or stopped ${suppressed.length} enemy actions.`);
   const gear = battle.v4.events.find(e => e.kind === 'gear-trigger' && e.amount > 0);
   if (gear) reasons.push(gear.text);
   const healing = battle.log.filter(e => e.kind === 'heal' && battle.actors.some(a => a.id === e.targetId && a.side === 'party')).reduce((n, e) => n + e.amount, 0);

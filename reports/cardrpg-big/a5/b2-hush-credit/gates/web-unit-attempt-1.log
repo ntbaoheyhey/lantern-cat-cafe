@@ -1,0 +1,19 @@
+{"lock":"acquired","lane":"A","pid":15694,"startedAt":"2026-11-08T17:54:34.933Z","task":"A5 b2-hush-credit web-unit"}
+
+> @taskbar-hero/web@0.0.0 test /Users/bao/taskbar-hero-cardrpg-a4/apps/web
+> vitest run
+
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-a4/apps/web
+
+
+ Test Files  178 passed (178)
+      Tests  1746 passed (1746)
+   Start at  01:02:01
+   Duration  17.43s (environment 48%, tests 38%, import 12%, transform 2%, worker 1%)
+
+Environment  jsdom was created 178 times · 81.29s total, 48% of tracked time
+             create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+             learn more: https://vitest.dev/guide/improving-performance#test-environments
+
+{"lock":"released","pid":15694,"task":"A5 b2-hush-credit web-unit"}

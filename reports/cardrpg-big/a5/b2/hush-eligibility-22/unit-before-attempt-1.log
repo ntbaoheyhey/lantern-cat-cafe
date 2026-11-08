@@ -1,0 +1,98 @@
+
+ RUN  v5.0.5 /private/tmp/cardrpg-a5-hush-unit-22/before/packages/game-rules
+
+ ❯ src/cardrpg/depth/suppression-eligibility-v4.test.ts (32 tests | 13 failed) 22ms
+   ❯ Hush reports only an action it actually suppresses (18)
+     × teacup-healer basic turn, V4=true: no control credit or Lantern heal 5ms
+     × button-guard basic turn, V4=true: no control credit or Lantern heal 1ms
+     × pollen-scout basic turn, V4=true: no control credit or Lantern heal 1ms
+     × yarn-giant basic turn, V4=true: no control credit or Lantern heal 0ms
+     × pantry-crown basic turn, V4=true: no control credit or Lantern heal 0ms
+     × does not consume Lantern credit before a real utility signature 0ms
+   ❯ Hush credit requires an eligible summon at resolution (14)
+     × pantry-crown/phase1/V4=true: no false credit or heal 0ms
+     × pollen-scout/cap/V4=true: no false credit or heal 1ms
+     × pollen-scout/fatal/V4=true: no false credit or heal 1ms
+     × yarn-giant/cap/V4=true: no false credit or heal 1ms
+     × yarn-giant/fatal/V4=true: no false credit or heal 1ms
+     × pantry-crown/cap/V4=true: no false credit or heal 1ms
+     × pantry-crown/fatal/V4=true: no false credit or heal 0ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 13 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/cardrpg/depth/suppression-eligibility-v4.test.ts > Hush reports only an action it actually suppresses > teacup-healer basic turn, V4=true: no control credit or Lantern heal
+ FAIL  src/cardrpg/depth/suppression-eligibility-v4.test.ts > Hush reports only an action it actually suppresses > button-guard basic turn, V4=true: no control credit or Lantern heal
+ FAIL  src/cardrpg/depth/suppression-eligibility-v4.test.ts > Hush reports only an action it actually suppresses > pollen-scout basic turn, V4=true: no control credit or Lantern heal
+ FAIL  src/cardrpg/depth/suppression-eligibility-v4.test.ts > Hush reports only an action it actually suppresses > yarn-giant basic turn, V4=true: no control credit or Lantern heal
+ FAIL  src/cardrpg/depth/suppression-eligibility-v4.test.ts > Hush reports only an action it actually suppresses > pantry-crown basic turn, V4=true: no control credit or Lantern heal
+AssertionError: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ src/cardrpg/depth/suppression-eligibility-v4.test.ts:31:65
+     29|       expect(R.enemyAct(battle)).toBe(true);
+     30|       const events = battle.log.slice(offset);
+     31|       expect(events.some(event => event.kind === 'suppressed')).toBe(f…
+       |                                                                 ^
+     32|       expect(events.some(event => event.kind === 'heal' && event.actor…
+     33|       expect(controller.hp).toBe(hp);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/13]⎯
+
+ FAIL  src/cardrpg/depth/suppression-eligibility-v4.test.ts > Hush reports only an action it actually suppresses > does not consume Lantern credit before a real utility signature
+AssertionError: expected 9958 to be 9950 // Object.is equality
+
+- Expected
++ Received
+
+- 9950
++ 9958
+
+ ❯ src/cardrpg/depth/suppression-eligibility-v4.test.ts:67:27
+     65|     const hp = controller.hp;
+     66|     expect(R.enemyAct(battle)).toBe(true);
+     67|     expect(controller.hp).toBe(hp);
+       |                           ^
+     68|     expect(controller.bonuses.crewSuppressed).toBeUndefined();
+     69|     // Reach the same enemy's next turn through public actions, then i…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/13]⎯
+
+ FAIL  src/cardrpg/depth/suppression-eligibility-v4.test.ts > Hush credit requires an eligible summon at resolution > pantry-crown/phase1/V4=true: no false credit or heal
+ FAIL  src/cardrpg/depth/suppression-eligibility-v4.test.ts > Hush credit requires an eligible summon at resolution > pollen-scout/cap/V4=true: no false credit or heal
+ FAIL  src/cardrpg/depth/suppression-eligibility-v4.test.ts > Hush credit requires an eligible summon at resolution > pollen-scout/fatal/V4=true: no false credit or heal
+ FAIL  src/cardrpg/depth/suppression-eligibility-v4.test.ts > Hush credit requires an eligible summon at resolution > yarn-giant/cap/V4=true: no false credit or heal
+ FAIL  src/cardrpg/depth/suppression-eligibility-v4.test.ts > Hush credit requires an eligible summon at resolution > yarn-giant/fatal/V4=true: no false credit or heal
+ FAIL  src/cardrpg/depth/suppression-eligibility-v4.test.ts > Hush credit requires an eligible summon at resolution > pantry-crown/cap/V4=true: no false credit or heal
+ FAIL  src/cardrpg/depth/suppression-eligibility-v4.test.ts > Hush credit requires an eligible summon at resolution > pantry-crown/fatal/V4=true: no false credit or heal
+AssertionError: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ src/cardrpg/depth/suppression-eligibility-v4.test.ts:105:63
+    103|     const events = battle.log.slice(offset);
+    104|     if (context === 'fatal') expect(enemy.hp).toBe(0);
+    105|     expect(events.some(event => event.kind === 'suppressed')).toBe(fal…
+       |                                                               ^
+    106|     expect(events.some(event => event.kind === 'summon')).toBe(false);
+    107|     expect(events.some(event => event.kind === 'heal' && event.actorId…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/13]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  13 failed | 19 passed (32)
+   Start at  00:36:48
+   Duration  432ms (transform 78%, import 14%, tests 7%, worker 1%)
+
+undefined
+/Users/bao/taskbar-hero-cardrpg-a4/packages/game-rules:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: vitest run --root /tmp/cardrpg-a5-hush-unit-22/before/packages/game-rules src/cardrpg/depth/suppression-eligibility-v4.test.ts

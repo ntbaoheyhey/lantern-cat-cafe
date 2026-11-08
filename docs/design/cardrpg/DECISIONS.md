@@ -146,3 +146,16 @@ This adopts a bounded progression repair, not balance closure. Original TRAIN50 
 ### A5 fatal follow-up guard
 
 A registered TRAIN Scent-policy probe exposed an existing automatic-preview exception: Kettle Knight reflection kills the last party member during Velvet's Stolen flame, then its energy-to-shield follow-up dereferences a missing ally. The V4 effect now skips a missing recipient and preserves the normal12shield if an ally survives. Legacy energy is unchanged. Two unit scenarios fail-before/pass-after for the no-ally case; the captured round10/seed21 state and every legal-action preview replay without throwing. No numeric balance or policy adoption is implied. Evidence: reports/cardrpg-big/a5/b2/fatal-followup/checks.json and scent-policy-crash-07/failure.json.
+
+
+### A5 Hush utility suppression, 2026-11-08
+
+A Hushed V4 heal or shield signature now spends its committed utility turn without replacement damage. Ordinary basic attacks, Drowsy softened attacks, summon/boss damage and OFF retain their existing behavior. No skill power, gear, AI, save field or event schema changes.
+
+The old resolver silently converted the stopped65HP refill into70shield plus39HP damage against Mochi in the captured Inkcap–Velvetrim replay. Removing Quiet spores or rear reach restored50/50 wins, while removing the four-piece threshold did not. The registered branch correction changes the intended matched fixture21/50→48/50 (fixed-core21→49); every other carrier cell and negative pair remains visible. Common-fixture Inkcap54.47→56.35%, but Soot47.25%, Sorrel53.20%, Cinnamon84% and crew30.75pp still miss their gates. This repairs a contradictory mechanic, not broad balance or acceptance. Evidence: reports/cardrpg-big/a5/B2-UTILITY-SUPPRESSION.md and b2/utility-suppression-15/paired-carriers.json.
+
+### A5 Hush credit at the actual suppressed action, 2026-11-08
+
+Hush no longer earns a suppression event or the existing once-only8HP Lantern heal on ordinary enemy attacks. Heal/shield signatures credit the skipped utility branch. Summon signatures credit only a living eligible summoner with a free thread slot, after its attack and retaliation resolve. Phase-one Pantry, full summon capacity and defeated summoners cannot earn credit. Drowsy still credits its softened action; the Result reason now says enemy actions. No amount, gear, AI, schema, saved field or OFF behavior is changed.
+
+The registered144-case semantic comparison passes144 versus125 on the prior source; all72OFF streams and controlled attack payloads are exact. The unchanged1321 TRAIN1–50 composition retains every piece/tier/band/set/crew outcome; one of660team cells loses four of50wins after false healing is removed. The same90earned day7 saves retain all win/advice/cost results. Original68fourth-piece misses, worst88pp, two band misses and cat/set misses remain open. This correctness repair is not balance closure. Evidence: reports/cardrpg-big/a5/B2-HUSH-ATTRIBUTION.md and b2/hush-eligibility-22/audit.json. Fresh20001–20500 remains unused; full source/compatibility checks follow on the adopted source.

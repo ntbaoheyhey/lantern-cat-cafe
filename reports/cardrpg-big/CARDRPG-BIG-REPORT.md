@@ -1,3 +1,5 @@
+Báo cáo tiến độ mới nhất: [A5 checkpoint](a5/A5-REPORT.md). A5 đã cải thiện luồng mở đầu và ngày7; cân bằng, nhịp30phút, startup và nghiệm thu mới vẫn còn mở. Phần A4 bên dưới được giữ nguyên làm mốc lịch sử; không phải số đo của mã A5 hiện tại.
+
 Bản thử nghiệm có đội hình, chiến thuật trước trận, trang bị và vật phẩm dùng giữa các trận.
 Cafe, nhiệm vụ, bộ sưu tập và đổi thưởng bằng dấu mời đã thành các vòng chơi có phần thưởng.
 P6 đã đo train/heldout tách biệt; các mục cân bằng chưa đạt vẫn ghi MISS, không coi kiểm thử chức năng là cân bằng đạt.
