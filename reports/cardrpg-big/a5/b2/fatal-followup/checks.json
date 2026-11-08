@@ -1,0 +1,74 @@
+{
+  "sourceReceipt": {
+    "path": "reports/cardrpg-big/a5/b2/scent-policy-crash-07/failure.json",
+    "sha256": "426548763d60bf70eaf3342a6201fc6223079018ba0f837639987f55e0dcc4f7"
+  },
+  "exactPrefixReplay": true,
+  "automaticPreviewImmutable": true,
+  "everyLegalActionResolves": true,
+  "fatalFollowupResult": "enemy",
+  "fatalFollowupReplayExact": true,
+  "auto": {
+    "actorId": "velvet",
+    "skillId": "velvet-3",
+    "targetId": "foe-0-teacup-healer"
+  },
+  "outcomes": [
+    {
+      "choice": {
+        "actorId": "velvet",
+        "skillId": "velvet-1",
+        "targetId": "foe-0-teacup-healer"
+      },
+      "result": null
+    },
+    {
+      "choice": {
+        "actorId": "velvet",
+        "skillId": "velvet-1",
+        "targetId": "foe-1-kettle-knight"
+      },
+      "result": "enemy"
+    },
+    {
+      "choice": {
+        "actorId": "velvet",
+        "skillId": "velvet-2",
+        "targetId": "foe-0-teacup-healer"
+      },
+      "result": "enemy"
+    },
+    {
+      "choice": {
+        "actorId": "velvet",
+        "skillId": "velvet-2",
+        "targetId": "foe-1-kettle-knight"
+      },
+      "result": "enemy"
+    },
+    {
+      "choice": {
+        "actorId": "velvet",
+        "skillId": "velvet-3",
+        "targetId": "foe-0-teacup-healer"
+      },
+      "result": null
+    },
+    {
+      "choice": {
+        "actorId": "velvet",
+        "skillId": "velvet-3",
+        "targetId": "foe-1-kettle-knight"
+      },
+      "result": "enemy"
+    },
+    {
+      "choice": {
+        "actorId": "velvet",
+        "skillId": "defend",
+        "targetId": "velvet"
+      },
+      "result": null
+    }
+  ]
+}

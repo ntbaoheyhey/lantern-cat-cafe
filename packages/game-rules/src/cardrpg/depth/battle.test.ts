@@ -3,11 +3,40 @@ import { describe, expect, it } from 'vitest';
 import { CARDS } from '../catalog';
 import { CATS, ENEMIES } from './catalog';
 import { act, applyStatus, createBattle, currentActor, enemyAct, legalChoices, replayBattle } from './battle';
-import { playBattle } from './policies';
+import { chooseAction, playBattle } from './policies';
 import type { BattleSetup } from './contract';
 const setup=(seed=11,enemies=['button-guard','sock-skipper']):BattleSetup=>({seed,chapter:1,cats:CATS.slice(0,3).map(c=>({id:c.id,stats:{...CARDS.find(old=>old.id===c.id)!.baseStats},row:c.row,skills:c.skills.slice(0,3).map(s=>s.id)})),enemies});
 
 describe('depth numbered-round decisions',()=>{
+  it.each([false, true])('finishes a reflected fatal hit before a follow-up shield (surviving ally: %s)', withAlly => {
+    const ids = withAlly ? ['velvet', 'mochi'] : ['velvet'];
+    const b = createBattle({ seed: 21, chapter: 1, gameplayV4: true,
+      cats: ids.map(id => {
+        const cat = CATS.find(c => c.id === id)!;
+        return { id, stats: { ...CARDS.find(c => c.id === id)!.baseStats }, row: cat.row,
+          skills: cat.skills.slice(0, 3).map(skill => skill.id) };
+      }), enemies: ['kettle-knight'], hp: { velvet: 4 } });
+    const velvet = b.actors.find(actor => actor.id === 'velvet')!;
+    const kettle = b.actors.find(actor => actor.catalogId === 'kettle-knight')!;
+    kettle.shield = 10000; // Keep the shield through the hit so its reflection is guaranteed.
+    const choice = { actorId: velvet.id, skillId: 'velvet-3', targetId: kettle.id };
+    expect(legalChoices(b)).toContainEqual(choice);
+    const before = clone(b);
+    expect(legalChoices(b)).toContainEqual(chooseAction(b, 'auto'));
+    expect(b).toEqual(before);
+    const beforeShield = b.actors.find(actor => actor.id === 'mochi')?.shield;
+    expect(act(b, choice)).toBe(true);
+    expect(velvet.hp).toBe(0);
+    expect(b.log.some(event => event.kind === 'reflect' && event.targetId === velvet.id)).toBe(true);
+    if (withAlly) {
+      expect(b.result).toBeNull();
+      expect(b.actors.find(actor => actor.id === 'mochi')!.shield).toBe(beforeShield! + 12);
+    } else {
+      expect(b.result).toBe('enemy');
+      expect(b.log.some(event => event.kind === 'shield' && event.actorId === velvet.id)).toBe(false);
+    }
+    expect(b.actors.every(actor => Number.isFinite(actor.hp) && Number.isFinite(actor.shield))).toBe(true);
+  });
   it('gives each living actor one action in each numbered round',()=>{
     const b=createBattle(setup());const seen=new Set<string>();
     for(let i=0;i<90&&!b.result;i++) {

@@ -1,0 +1,7 @@
+# Kit fit14 — prospective TRAIN fixture diagnosis
+
+Original common04 assigns one kit per legacy role. Read-only probe05 establishes Soot's Moonwick heal activates only with Velvet; carrier12 establishes Mallow can activate Emberfelt and documents an Inkcap/Velvetrim drawback. This tests whether role-only gear assignments understate a cat's usable job. It does not assert better outcomes.
+
+The JSON declares all12kit assignments from skill eligibility before sampling. Original AI/skills/rows/levels/stars/crew rules and all eight scenes remain fixed. No Cinnamon cooldown or Inkcap reach trial is combined. Preserve the independent crash guard only. The power target remains the ORIGINAL starter role-kit budget for every seed, not the newly equipped starter's budget. All homogeneous-set controls must reproduce their original3,200outcomes exactly.
+
+Run all original1,840cells ×TRAIN1–50; compare every cat, set and selected crew, including negative changes. Sorrel lacks swap and is only partly eligible for Rainlace. Inkcap receives Velvetrim despite its known unfavorable scene; do not select only better gear outcomes afterward. This is not an optimized-loadout search or new acceptance protocol. The best crew uses the existing TRAIN selection procedure and will be disclosed. Fresh20001–20500 unused, no production changes. Source archived by carrier12, all208file hashes asserted. Shared110s leases/7s handoffs.

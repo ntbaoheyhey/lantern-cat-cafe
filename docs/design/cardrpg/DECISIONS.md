@@ -141,3 +141,8 @@ The old challenge6 combines two abrupt multipliers and raises Yarn Giant attack 
 Fresh90account/4050day TRAIN replay yields casual26/30 and regular28/30 first-two wins, heavy28/30 first wins and advice24/24 losses. Early chapter clears and pulls through day5 are unchanged; reward gates pass. The heavy advised retries lose0/2 against2/2 without advice; recommendations are not guaranteed improvements. Evidence: reports/cardrpg-big/a5/B3-DAY7-RETRY.md and b3/anchored-validation-03.
 
 This adopts a bounded progression repair, not balance closure. Original TRAIN50 matrix still has68 fourth-slot misses, worst88pp, cats61.75–86.65%, sets76.75–92.25%, one flat tier step and two band-spread misses (9/1 and10/1). The latter band10 is source-identical to A4. Keep these failures for B1/B2; fresh20001–20500 is unused. Browser x1 and full source checks follow before draft publication.
+
+
+### A5 fatal follow-up guard
+
+A registered TRAIN Scent-policy probe exposed an existing automatic-preview exception: Kettle Knight reflection kills the last party member during Velvet's Stolen flame, then its energy-to-shield follow-up dereferences a missing ally. The V4 effect now skips a missing recipient and preserves the normal12shield if an ally survives. Legacy energy is unchanged. Two unit scenarios fail-before/pass-after for the no-ally case; the captured round10/seed21 state and every legal-action preview replay without throwing. No numeric balance or policy adoption is implied. Evidence: reports/cardrpg-big/a5/b2/fatal-followup/checks.json and scent-policy-crash-07/failure.json.
