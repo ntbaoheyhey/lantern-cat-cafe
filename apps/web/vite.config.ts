@@ -1,8 +1,9 @@
+import { pixelPackingPlugin } from '../../tools/cardrpg-big/pixel-packing.mjs';
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), pixelPackingPlugin()],
   build: {
     chunkSizeWarningLimit: 1500, // Phaser is ~1.2 MB minified
     rollupOptions: {

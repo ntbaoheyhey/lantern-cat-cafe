@@ -1,0 +1,250 @@
+{
+  "meta": {
+    "kind": "pieces-equipped",
+    "templateId": "bellsteel-outfit-epic",
+    "cardId": "mochi",
+    "level": 6,
+    "chapter": 1
+  },
+  "outcomes": {
+    "none": "11000001001010101000000000001000001001010000001010",
+    "main": "11010001001110101110010011011100101111010000001010",
+    "affixes": "01010001001010100110000011011100101111000000001010",
+    "unique": "11000001001010101000000000001000001001010000001010",
+    "set4": "11000001001010101000000000001000001001010000001010",
+    "all": "11111011001111111110110011111101101111011011001110"
+  },
+  "wins": {
+    "none": 13,
+    "main": 25,
+    "affixes": 20,
+    "unique": 13,
+    "set4": 13,
+    "all": 37
+  },
+  "gainPp": {
+    "none": 0,
+    "main": 24,
+    "affixes": 14,
+    "unique": 0,
+    "set4": 0,
+    "all": 48
+  },
+  "seed": 3,
+  "divergence": {
+    "before": {
+      "round": 4,
+      "actor": "mochi",
+      "choice": {
+        "actorId": "mochi",
+        "skillId": "mochi-2",
+        "targetId": "mochi"
+      },
+      "logIndex": 54,
+      "actors": [
+        {
+          "id": "mochi",
+          "hp": 340,
+          "shield": 0,
+          "statuses": [
+            {
+              "id": "steep",
+              "stacks": 2,
+              "remaining": 1,
+              "source": "clover",
+              "appliedRound": 2
+            },
+            {
+              "id": "cozy",
+              "stacks": 2,
+              "remaining": 1,
+              "source": "mochi",
+              "appliedRound": 3
+            },
+            {
+              "id": "sprout",
+              "stacks": 1,
+              "remaining": 2,
+              "source": "clover",
+              "appliedRound": 3
+            },
+            {
+              "id": "tangle",
+              "stacks": 1,
+              "remaining": 1,
+              "source": "foe-0-yarn-giant",
+              "appliedRound": 3
+            }
+          ]
+        },
+        {
+          "id": "soot",
+          "hp": 558,
+          "shield": 136,
+          "statuses": [
+            {
+              "id": "cozy",
+              "stacks": 2,
+              "remaining": 1,
+              "source": "mochi",
+              "appliedRound": 3
+            },
+            {
+              "id": "sprout",
+              "stacks": 1,
+              "remaining": 2,
+              "source": "clover",
+              "appliedRound": 3
+            }
+          ]
+        },
+        {
+          "id": "clover",
+          "hp": 458,
+          "shield": 130,
+          "statuses": [
+            {
+              "id": "cozy",
+              "stacks": 2,
+              "remaining": 1,
+              "source": "mochi",
+              "appliedRound": 3
+            },
+            {
+              "id": "sprout",
+              "stacks": 1,
+              "remaining": 2,
+              "source": "clover",
+              "appliedRound": 3
+            }
+          ]
+        },
+        {
+          "id": "foe-0-yarn-giant",
+          "hp": 705,
+          "shield": 0,
+          "statuses": []
+        },
+        {
+          "id": "foe-4-binding-thread",
+          "hp": 114,
+          "shield": 0,
+          "statuses": []
+        }
+      ]
+    },
+    "after": {
+      "round": 4,
+      "actor": "mochi",
+      "choice": {
+        "actorId": "mochi",
+        "skillId": "mochi-1",
+        "targetId": "foe-0-yarn-giant"
+      },
+      "logIndex": 54,
+      "actors": [
+        {
+          "id": "mochi",
+          "hp": 420,
+          "shield": 0,
+          "statuses": [
+            {
+              "id": "steep",
+              "stacks": 2,
+              "remaining": 1,
+              "source": "clover",
+              "appliedRound": 2
+            },
+            {
+              "id": "cozy",
+              "stacks": 2,
+              "remaining": 1,
+              "source": "mochi",
+              "appliedRound": 3
+            },
+            {
+              "id": "sprout",
+              "stacks": 1,
+              "remaining": 2,
+              "source": "clover",
+              "appliedRound": 3
+            },
+            {
+              "id": "tangle",
+              "stacks": 1,
+              "remaining": 1,
+              "source": "foe-0-yarn-giant",
+              "appliedRound": 3
+            }
+          ]
+        },
+        {
+          "id": "soot",
+          "hp": 558,
+          "shield": 136,
+          "statuses": [
+            {
+              "id": "cozy",
+              "stacks": 2,
+              "remaining": 1,
+              "source": "mochi",
+              "appliedRound": 3
+            },
+            {
+              "id": "sprout",
+              "stacks": 1,
+              "remaining": 2,
+              "source": "clover",
+              "appliedRound": 3
+            }
+          ]
+        },
+        {
+          "id": "clover",
+          "hp": 458,
+          "shield": 130,
+          "statuses": [
+            {
+              "id": "cozy",
+              "stacks": 2,
+              "remaining": 1,
+              "source": "mochi",
+              "appliedRound": 3
+            },
+            {
+              "id": "sprout",
+              "stacks": 1,
+              "remaining": 2,
+              "source": "clover",
+              "appliedRound": 3
+            }
+          ]
+        },
+        {
+          "id": "foe-0-yarn-giant",
+          "hp": 705,
+          "shield": 0,
+          "statuses": []
+        },
+        {
+          "id": "foe-4-binding-thread",
+          "hp": 114,
+          "shield": 0,
+          "statuses": []
+        }
+      ]
+    }
+  },
+  "firstPartyDeath": {
+    "index": 108,
+    "round": 6,
+    "source": "foe-0-yarn-giant",
+    "target": "mochi",
+    "kind": "damage",
+    "hp": 295,
+    "shield": 0,
+    "requested": 386,
+    "margin": -91
+  },
+  "parity": "All50 paired results exact; full observed replay JSON equals uninstrumented result"
+}

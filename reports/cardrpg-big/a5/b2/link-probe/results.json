@@ -1,0 +1,400 @@
+{
+  "manifest": {
+    "registeredAt": "2026-11-08T01:15:57.207821+00:00",
+    "seeds": [
+      1,
+      50
+    ],
+    "chapters": [
+      1,
+      2,
+      3
+    ],
+    "teams": [
+      [
+        "mallow",
+        "brioche",
+        "marigold"
+      ],
+      [
+        "mallow",
+        "cinnamon",
+        "brioche"
+      ],
+      [
+        "mochi",
+        "brioche",
+        "velvet"
+      ],
+      [
+        "panko",
+        "brioche",
+        "velvet"
+      ]
+    ],
+    "source": {
+      "packages/game-rules/src/cardrpg/depth/battle.ts": "7b4ac50d7258546d6700a468efdcb36481e2ccc599907504373d158b11020865",
+      "packages/game-rules/src/cardrpg/depth/policies.ts": "f467781a6a689b280bf4b2f76621a90f0547508b541dfabfa776767fcc121f67",
+      "/tmp/cardrpg-a5-b2-prep/team-fixtures.mjs": "331c43d6771d5c58d2749bce53f41cc4dcbee43b4e06233b036348e97c3ef91d",
+      "/tmp/cardrpg-a5-b2-prep/link-probe.mjs": "641797567f28d970302f65058e40734395bbaee4ca566d07bfe2444a568e4847"
+    },
+    "trainSha256": "1254e499f666e3ced97af83189a177b5f91428f97a51153bbb9b1ab7df57521f",
+    "status": "Registered before run; read-only TRAIN shield-bypass diagnosis; no production or acceptance change"
+  },
+  "rows": [
+    {
+      "key": "{\"kind\":\"teams\",\"team\":[\"mallow\",\"brioche\",\"marigold\"],\"chapter\":1,\"level\":6}",
+      "team": [
+        "mallow",
+        "brioche",
+        "marigold"
+      ],
+      "chapter": 1,
+      "wins": 2,
+      "sharedHits": 136,
+      "shieldedHits": 87,
+      "bypassedHp": 3590,
+      "preventableHp": 3343,
+      "lethalWithShield": 0
+    },
+    {
+      "key": "{\"kind\":\"teams\",\"team\":[\"mallow\",\"brioche\",\"marigold\"],\"chapter\":2,\"level\":6}",
+      "team": [
+        "mallow",
+        "brioche",
+        "marigold"
+      ],
+      "chapter": 2,
+      "wins": 2,
+      "sharedHits": 105,
+      "shieldedHits": 79,
+      "bypassedHp": 3527,
+      "preventableHp": 3265,
+      "lethalWithShield": 0
+    },
+    {
+      "key": "{\"kind\":\"teams\",\"team\":[\"mallow\",\"brioche\",\"marigold\"],\"chapter\":3,\"level\":6}",
+      "team": [
+        "mallow",
+        "brioche",
+        "marigold"
+      ],
+      "chapter": 3,
+      "wins": 30,
+      "sharedHits": 152,
+      "shieldedHits": 117,
+      "bypassedHp": 3730,
+      "preventableHp": 3577,
+      "lethalWithShield": 0
+    },
+    {
+      "key": "{\"kind\":\"teams\",\"team\":[\"mallow\",\"cinnamon\",\"brioche\"],\"chapter\":1,\"level\":6}",
+      "team": [
+        "mallow",
+        "cinnamon",
+        "brioche"
+      ],
+      "chapter": 1,
+      "wins": 22,
+      "sharedHits": 168,
+      "shieldedHits": 95,
+      "bypassedHp": 3039,
+      "preventableHp": 2952,
+      "lethalWithShield": 0
+    },
+    {
+      "key": "{\"kind\":\"teams\",\"team\":[\"mallow\",\"cinnamon\",\"brioche\"],\"chapter\":2,\"level\":6}",
+      "team": [
+        "mallow",
+        "cinnamon",
+        "brioche"
+      ],
+      "chapter": 2,
+      "wins": 3,
+      "sharedHits": 131,
+      "shieldedHits": 109,
+      "bypassedHp": 4182,
+      "preventableHp": 3971,
+      "lethalWithShield": 2
+    },
+    {
+      "key": "{\"kind\":\"teams\",\"team\":[\"mallow\",\"cinnamon\",\"brioche\"],\"chapter\":3,\"level\":6}",
+      "team": [
+        "mallow",
+        "cinnamon",
+        "brioche"
+      ],
+      "chapter": 3,
+      "wins": 40,
+      "sharedHits": 169,
+      "shieldedHits": 154,
+      "bypassedHp": 4284,
+      "preventableHp": 4163,
+      "lethalWithShield": 0
+    },
+    {
+      "key": "{\"kind\":\"teams\",\"team\":[\"mochi\",\"brioche\",\"velvet\"],\"chapter\":1,\"level\":6}",
+      "team": [
+        "mochi",
+        "brioche",
+        "velvet"
+      ],
+      "chapter": 1,
+      "wins": 20,
+      "sharedHits": 138,
+      "shieldedHits": 81,
+      "bypassedHp": 1306,
+      "preventableHp": 1230,
+      "lethalWithShield": 2
+    },
+    {
+      "key": "{\"kind\":\"teams\",\"team\":[\"mochi\",\"brioche\",\"velvet\"],\"chapter\":2,\"level\":6}",
+      "team": [
+        "mochi",
+        "brioche",
+        "velvet"
+      ],
+      "chapter": 2,
+      "wins": 0,
+      "sharedHits": 82,
+      "shieldedHits": 68,
+      "bypassedHp": 2314,
+      "preventableHp": 2298,
+      "lethalWithShield": 0
+    },
+    {
+      "key": "{\"kind\":\"teams\",\"team\":[\"mochi\",\"brioche\",\"velvet\"],\"chapter\":3,\"level\":6}",
+      "team": [
+        "mochi",
+        "brioche",
+        "velvet"
+      ],
+      "chapter": 3,
+      "wins": 19,
+      "sharedHits": 154,
+      "shieldedHits": 88,
+      "bypassedHp": 1209,
+      "preventableHp": 1112,
+      "lethalWithShield": 0
+    },
+    {
+      "key": "{\"kind\":\"teams\",\"team\":[\"panko\",\"brioche\",\"velvet\"],\"chapter\":1,\"level\":6}",
+      "team": [
+        "panko",
+        "brioche",
+        "velvet"
+      ],
+      "chapter": 1,
+      "wins": 21,
+      "sharedHits": 171,
+      "shieldedHits": 123,
+      "bypassedHp": 2305,
+      "preventableHp": 2305,
+      "lethalWithShield": 0
+    },
+    {
+      "key": "{\"kind\":\"teams\",\"team\":[\"panko\",\"brioche\",\"velvet\"],\"chapter\":2,\"level\":6}",
+      "team": [
+        "panko",
+        "brioche",
+        "velvet"
+      ],
+      "chapter": 2,
+      "wins": 0,
+      "sharedHits": 123,
+      "shieldedHits": 85,
+      "bypassedHp": 3155,
+      "preventableHp": 3155,
+      "lethalWithShield": 0
+    },
+    {
+      "key": "{\"kind\":\"teams\",\"team\":[\"panko\",\"brioche\",\"velvet\"],\"chapter\":3,\"level\":6}",
+      "team": [
+        "panko",
+        "brioche",
+        "velvet"
+      ],
+      "chapter": 3,
+      "wins": 9,
+      "sharedHits": 123,
+      "shieldedHits": 105,
+      "bypassedHp": 1785,
+      "preventableHp": 1785,
+      "lethalWithShield": 0
+    }
+  ],
+  "examples": [
+    {
+      "team": [
+        "mallow",
+        "brioche",
+        "marigold"
+      ],
+      "chapter": 1,
+      "seed": 1,
+      "result": "enemy",
+      "trace": [
+        {
+          "round": 3,
+          "source": "foe-0-yarn-giant",
+          "target": "brioche",
+          "amount": 53,
+          "hp": 695,
+          "shield": 139,
+          "lethal": false
+        },
+        {
+          "round": 5,
+          "source": "foe-0-yarn-giant",
+          "target": "brioche",
+          "amount": 25,
+          "hp": 333,
+          "shield": 12,
+          "lethal": false
+        }
+      ]
+    },
+    {
+      "team": [
+        "mallow",
+        "brioche",
+        "marigold"
+      ],
+      "chapter": 1,
+      "seed": 2,
+      "result": "enemy",
+      "trace": [
+        {
+          "round": 3,
+          "source": "foe-0-yarn-giant",
+          "target": "brioche",
+          "amount": 48,
+          "hp": 432,
+          "shield": 139,
+          "lethal": false
+        },
+        {
+          "round": 4,
+          "source": "foe-0-yarn-giant",
+          "target": "brioche",
+          "amount": 31,
+          "hp": 212,
+          "shield": 52,
+          "lethal": false
+        },
+        {
+          "round": 5,
+          "source": "foe-0-yarn-giant",
+          "target": "brioche",
+          "amount": 38,
+          "hp": 244,
+          "shield": 44,
+          "lethal": false
+        }
+      ]
+    },
+    {
+      "team": [
+        "mallow",
+        "brioche",
+        "marigold"
+      ],
+      "chapter": 1,
+      "seed": 3,
+      "result": "enemy",
+      "trace": [
+        {
+          "round": 3,
+          "source": "foe-0-yarn-giant",
+          "target": "brioche",
+          "amount": 53,
+          "hp": 711,
+          "shield": 139,
+          "lethal": false
+        }
+      ]
+    },
+    {
+      "team": [
+        "mallow",
+        "brioche",
+        "marigold"
+      ],
+      "chapter": 1,
+      "seed": 4,
+      "result": "enemy",
+      "trace": [
+        {
+          "round": 3,
+          "source": "foe-0-yarn-giant",
+          "target": "brioche",
+          "amount": 53,
+          "hp": 714,
+          "shield": 139,
+          "lethal": false
+        },
+        {
+          "round": 5,
+          "source": "foe-0-yarn-giant",
+          "target": "brioche",
+          "amount": 28,
+          "hp": 301,
+          "shield": 12,
+          "lethal": false
+        }
+      ]
+    },
+    {
+      "team": [
+        "mallow",
+        "brioche",
+        "marigold"
+      ],
+      "chapter": 1,
+      "seed": 5,
+      "result": "enemy",
+      "trace": [
+        {
+          "round": 3,
+          "source": "foe-0-yarn-giant",
+          "target": "brioche",
+          "amount": 48,
+          "hp": 433,
+          "shield": 139,
+          "lethal": false
+        }
+      ]
+    },
+    {
+      "team": [
+        "mallow",
+        "brioche",
+        "marigold"
+      ],
+      "chapter": 1,
+      "seed": 6,
+      "result": "enemy",
+      "trace": [
+        {
+          "round": 3,
+          "source": "foe-0-yarn-giant",
+          "target": "brioche",
+          "amount": 51,
+          "hp": 700,
+          "shield": 139,
+          "lethal": false
+        },
+        {
+          "round": 5,
+          "source": "foe-0-yarn-giant",
+          "target": "brioche",
+          "amount": 26,
+          "hp": 280,
+          "shield": 12,
+          "lethal": false
+        }
+      ]
+    }
+  ],
+  "method": "All outcomes match A4 TRAIN; observer JSON parity for seed1 in every cell. Preventable HP is a local hit bound, not a predicted battle outcome."
+}

@@ -1,0 +1,128 @@
+{
+  "status": "Isolated checks only; no adoption/typecheck/browser timing claim",
+  "checks": [
+    "Public changes reject missing cats, empty front, active run; input unchanged",
+    "Forecast key excludes encounter RNG and includes plan",
+    "Earned day7 receipt: exact row reconstruction, named top3 and first fallen, no mutation",
+    "Gear sources: unique and set heal remain separate; two-piece effect stays named two-piece with four worn; unmatched source omitted",
+    "Recommendation uses fixed paired TRAIN samples and atomic available commands; no input mutation"
+  ],
+  "elapsedMs": 35.91304100000002,
+  "advice": null,
+  "hashes": {
+    "/Users/bao/taskbar-hero-cardrpg-a4/packages/game-rules/src/cardrpg/depth/outcome-v4.ts": "165847a74706015cb810fefde40e7fa6c1eb06ebedfe350e490ae2f174f3faf8",
+    "/Users/bao/taskbar-hero-cardrpg-a4/packages/game-rules/src/cardrpg/depth/recommendation-v4.ts": "48e2e0aedf6c12d3a9d0c702550510b7effd6f4de3756c6f9e76c480e3f1db9b",
+    "/Users/bao/taskbar-hero-cardrpg-a4/packages/game-rules/src/cardrpg/depth/forecast-v4.ts": "885f818b8ea008a15f3a4dba987a567f076d5f537292fa09e5a22ff3eb31b2b3",
+    "/Users/bao/taskbar-hero-cardrpg-a4/packages/game-rules/src/cardrpg/depth/forecast-key-v4.ts": "371eb851fc09a205e4d28912b1db5892c0d1c67b78ece9d6e83636665dc42f68"
+  },
+  "day7Outcome": {
+    "causes": [
+      {
+        "id": "heal:clover",
+        "actorId": "clover",
+        "kind": "healing",
+        "amount": 790,
+        "unit": "HP",
+        "text": "Clover restored 790 missing HP."
+      },
+      {
+        "id": "damage:soot",
+        "actorId": "soot",
+        "kind": "damage",
+        "amount": 707,
+        "unit": "damage",
+        "text": "Soot dealt 707 damage · 73% of your total."
+      },
+      {
+        "id": "absorb:mochi",
+        "actorId": "mochi",
+        "kind": "absorption",
+        "amount": 244,
+        "unit": "damage",
+        "text": "Mochi’s shields absorbed 244 damage."
+      }
+    ],
+    "allCauses": [
+      {
+        "id": "heal:clover",
+        "actorId": "clover",
+        "kind": "healing",
+        "amount": 790,
+        "unit": "HP",
+        "text": "Clover restored 790 missing HP."
+      },
+      {
+        "id": "damage:soot",
+        "actorId": "soot",
+        "kind": "damage",
+        "amount": 707,
+        "unit": "damage",
+        "text": "Soot dealt 707 damage · 73% of your total."
+      },
+      {
+        "id": "absorb:mochi",
+        "actorId": "mochi",
+        "kind": "absorption",
+        "amount": 244,
+        "unit": "damage",
+        "text": "Mochi’s shields absorbed 244 damage."
+      },
+      {
+        "id": "damage:mochi",
+        "actorId": "mochi",
+        "kind": "damage",
+        "amount": 230,
+        "unit": "damage",
+        "text": "Mochi dealt 230 damage · 24% of your total."
+      },
+      {
+        "id": "absorb:soot",
+        "actorId": "soot",
+        "kind": "absorption",
+        "amount": 197,
+        "unit": "damage",
+        "text": "Soot’s shields absorbed 197 damage."
+      },
+      {
+        "id": "absorb:clover",
+        "actorId": "clover",
+        "kind": "absorption",
+        "amount": 183,
+        "unit": "damage",
+        "text": "Clover’s shields absorbed 183 damage."
+      },
+      {
+        "id": "heal:mochi",
+        "actorId": "mochi",
+        "kind": "healing",
+        "amount": 37,
+        "unit": "HP",
+        "text": "Mochi restored 37 missing HP."
+      },
+      {
+        "id": "damage:clover",
+        "actorId": "clover",
+        "kind": "damage",
+        "amount": 29,
+        "unit": "damage",
+        "text": "Clover dealt 29 damage · 3% of your total."
+      }
+    ],
+    "totalDamage": 966,
+    "damageByRow": {
+      "front": 1194,
+      "rear": 1612
+    },
+    "rearShare": 57,
+    "firstFallen": {
+      "id": "mochi",
+      "name": "Mochi",
+      "round": 6
+    },
+    "reconstructedRows": {
+      "mochi": "front",
+      "soot": "rear",
+      "clover": "rear"
+    }
+  }
+}

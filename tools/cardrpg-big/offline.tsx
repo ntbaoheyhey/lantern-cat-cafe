@@ -1,13 +1,14 @@
 import { showReviewTools } from "../../apps/web/src/game/cardrpg/depth/player-mode";
 // REFERENCE: reports/cardrpg-big2/INTEGRATION-HOOKS.md; apps/web/src/game/cardrpg/depth/App.tsx
-import { useEffect, useState, useSyncExternalStore } from 'react';
+import { lazy, Suspense, useEffect, useState, useSyncExternalStore } from 'react';
 import { createRoot } from 'react-dom/client';
 import { createPortal } from 'react-dom';
 import DepthApp from '../../apps/web/src/game/cardrpg/depth/App';
 import { isLookV2, setLookV2, subscribeLookV2 } from '../../apps/web/src/game/squad/turn3d/look-v2';
 import type { Screen } from '../../apps/web/src/game/cardrpg/depth/model';
-import { MechanicsLab } from '../cardrpg-big2/MechanicsLab';
-import { ReviewStudio, FrameMeter } from '../cardrpg-big2/ReviewStudio';
+const MechanicsLab = lazy(() => import('../cardrpg-big2/MechanicsLab').then(m => ({default:m.MechanicsLab})));
+const ReviewStudio = lazy(() => import('../cardrpg-big2/ReviewStudio').then(m => ({default:m.ReviewStudio})));
+const FrameMeter = lazy(() => import('../cardrpg-big2/ReviewStudio').then(m => ({default:m.FrameMeter})));
 import './demo-tools.css';
 
 declare const __GAMEPLAY_V4__: boolean;
@@ -64,11 +65,11 @@ function Demo() {
       <button aria-pressed={lookV2} title={lookV2 ? 'Showing Look V2. Switch to baseline styling.' : 'Showing baseline styling. Switch to Look V2.'}
         onClick={() => setLookV2(!lookV2)}>Look A/B</button>
     </div>, header)}
-    {meter && <FrameMeter />}
-    {panel && createPortal(panel.kind === 'mechanics'
+    {meter && <Suspense fallback={null}><FrameMeter /></Suspense>}
+    {panel && createPortal(<Suspense fallback={<p role="status">Opening the studio…</p>}>{panel.kind === 'mechanics'
       ? <MechanicsLab close={panel.close} />
       : <ReviewStudio close={panel.close} openMechanics={() => setPanel({ ...panel, kind: 'mechanics' })}
-        go={(screen: Screen) => { panel.close(); window.__depthReview?.go(screen); }} />, panel.host)}
+        go={(screen: Screen) => { panel.close(); window.__depthReview?.go(screen); }} />}</Suspense>, panel.host)}
   </div>;
 }
 

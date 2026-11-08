@@ -1,0 +1,11 @@
+# E1 result and informed retry, staged design only
+
+Current event schema v1 includes gear-trigger amounts only for certain heal/shield grants. Reflect, cleanse, suppression and row swaps cannot truthfully be attributed to a set from that schema alone. Never print "Bellsteel returned all reflected damage" just because it was equipped. Existing actor logs already allow named effective damage/healing/absorbed amounts. Use observed actors and amounts, with the associated standing plan and gear only when proven by typed data.
+
+Proposed v2 adds optional, discriminated contribution receipts (damage/heal/shield/absorption/cleanse/redirect/suppression) with actor, target, effect, template/set/crew IDs and effective amount. Version1 remains readable. Emit only at actual resolver transitions; preview copies remain isolated. Do not introduce a combat input or edit Battle.tsx. Any schema change requires an A-OUTBOX request to B with examples and timing budget; never wait for B.
+
+Result: three highest meaningful observed totals with named actors and type-correct units. Prefer one actual gear/crew contribution when present, but do not manufacture three causal claims if logs only contain two. Damage share denominator includes actual party HP damage (not shields, heals, retired adds, or raw overkill). Row damage must replay row swaps; final row alone is not evidence of where a hit landed. Keep attribution qualifications in expanded notes, short concrete text on the play surface.
+
+Recommendation: derive legal alternatives from current earned inventory, rows and plan; validate each through public commands on clones. No invented item, grant or level. Evaluate bounded TRAIN samples and return only a demonstrated better option plus exact command and precondition fingerprint. Revalidate when clicked; stale advice never spends resources or resets a battle. A loss is settled before changing the build. The button must state whether it starts a new route or opens preparation, and must not silently abandon an unfinished winning route. If no improvement is available, show a factual next unlock rather than an unsupported promise. B3 bots use the same recommendation function.
+
+Worker concerns already listed in README.md remain open. No implementation, timing or acceptance claim in this file.

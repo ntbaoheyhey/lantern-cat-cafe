@@ -1,0 +1,20 @@
+{"lock":"acquired","lane":"A","pid":11454,"startedAt":"2026-11-08T06:07:34.485Z","task":"A5 isolated outcome attribution regression"}
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+  assert(!wrong.ok)
+
+    at file:///Users/bao/taskbar-hero-cardrpg-a4/tools/cardrpg-big/a5-drafts/e1-prep/check-rules-drafts-02.mjs:21:73 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
+
+Node.js v24.22.2
+{"lock":"released","pid":11454,"task":"A5 isolated outcome attribution regression"}

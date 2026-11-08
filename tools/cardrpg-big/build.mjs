@@ -1,3 +1,5 @@
+import {packModelDictionary} from './model-dictionary-transport.mjs';
+import {offlineModulePayload} from './offline-module-payload.mjs';
 import { readFileSync, writeFileSync, mkdirSync, unlinkSync } from 'node:fs';
 import { resolve, relative, extname } from 'node:path';
 import { execFileSync } from 'node:child_process';
@@ -27,11 +29,11 @@ const result = await build({ configFile: false, root: web, envDir: false, public
     },
   }],
   define: { 'process.env.NODE_ENV': '"production"', __GAMEPLAY_V4__: JSON.stringify(gameplayV4) }, resolve: { dedupe: ['react', 'react-dom'] },
-  build: { write: false, minify: true, lib: { entry: resolve(root, 'tools/cardrpg-big/offline.tsx'), name: 'CardRpgDepth', formats: ['iife'] } } });
+  build: { write: false, minify: true, lib: { entry: resolve(root, 'tools/cardrpg-big/offline.tsx'), name: 'CardRpgDepth', formats: ['es'] } } });
 const output = (Array.isArray(result) ? result : [result]).flatMap(r => r.output);
 const js = output.filter(f => f.type === 'chunk').map(f => f.code).join('\n');
 const css = output.filter(f => f.type === 'asset' && f.fileName.endsWith('.css')).map(f => f.source).join('\n');
-const payload = gzipSync(Buffer.from(JSON.stringify({ js, css })), { level: 9 }).toString('base64');
+const payload = gzipSync(Buffer.from(JSON.stringify(offlineModulePayload(output,css))), { level: 9 }).toString('base64');
 const head = execFileSync('git', ['rev-parse', 'HEAD'], { cwd: root, encoding: 'utf8' }).trim();
 const dirty = !!execFileSync('git', ['status', '--porcelain'], { cwd: root, encoding: 'utf8' }).trim();
 const sourceAssetHashes = Object.fromEntries([...embeddedAssets].map(([path, asset]) =>
@@ -54,8 +56,11 @@ for (const row of imagePacking) {
   if (row.selected) embeddedAssets.set(key, { mime: 'image/webp', bytes: packed });
 }
 const assetEntries = [...embeddedAssets].sort(([left], [right]) => left.localeCompare(right));
-const manifest = assetEntries.map(([key, asset]) => ({ key, mime: asset.mime }));
-const assetTags = assetEntries.map(([, asset], index) => `<script id="asset-${index}" type="application/octet-stream">${gzipSync(asset.bytes, { level: 9 }).toString('base64')}</script>`).join('\n');
+const packed=packModelDictionary(assetEntries.map(([key,asset])=>({key,...asset})));
+const manifest=packed.assets.map(({key,mime,patches})=>({key,mime,...(patches.length?{patches}:{})}));
+const dictionaryTags='<script id="model-dictionary" type="application/octet-stream">'+gzipSync(packed.dictionary,{level:9}).toString('base64')+'</script>\n<script id="model-dictionary-index" type="application/json">'+JSON.stringify(packed.entries.map(e=>[e.offset,e.length]))+'</script>';
+
+const assetTags = packed.assets.map((asset, index) => `<script id="asset-${index}" type="application/octet-stream">${gzipSync(asset.bytes, { level: 9 }).toString('base64')}</script>`).join('\n');
 // Meshopt is embedded; permit WASM only when this artifact actually contains compressed glTFs.
 // Uncompressed L0 and normal default builds keep their existing CSP byte-for-byte.
 const needsMeshoptWasm = assetEntries.some(([, asset]) => asset.mime === 'model/gltf-binary'
@@ -70,6 +75,7 @@ if (evidence.rows.length < 93 || evidence.files.length < 160) {
 const html = `<!doctype html>\n<!-- REFERENCE: docs/cardrpg2/index.html | tools/cardrpg-big/build.mjs | apps/web/src/game/cardrpg/depth | packages/game-rules/src/cardrpg/depth -->\n<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none';img-src data: blob:;style-src 'unsafe-inline';script-src 'unsafe-inline'${wasmCsp} blob:;connect-src data: blob:;media-src data: blob:"><script>${performanceMeter}</script><script>window.__LOOK_V2__=${lookV2};document.documentElement.dataset.lookV2=String(window.__LOOK_V2__);</script><title>The Lantern · Three chapters</title><style>html,body{margin:0;background:#1d1b28;color:#f5ebdc}#loading{margin:0;padding:40px 40px 18px;font:18px system-ui}#opening-progress{display:block;width:min(420px,calc(100% - 80px));margin:0 40px;accent-color:#d8b98a}</style></head><body><div id="root"><p id="loading">Opening the cafe…</p><progress id="opening-progress" aria-label="Opening the cafe" value="0" max="1"></progress></div><script id="asset-manifest" type="application/json">${JSON.stringify(manifest).replace(/</g, '\\u003c')}</script>
 ${assetTags}
 ${evidence.tags}
+${dictionaryTags}
 <script>${evidence.script}</script>
 <script id="payload" type="application/octet-stream">${payload}</script><script>${loader}</script></body></html>`;
 mkdirSync(outputDirectory, { recursive: true });
@@ -83,7 +89,7 @@ const inputPaths = [...sourceRoots, ...Object.keys(assetHashes)];
 const runtimeDirty = !!execFileSync('git', ['diff', 'HEAD', '--', ...inputPaths], { cwd: root, encoding: 'utf8' }).length
   || !!execFileSync('git', ['ls-files', '--others', '--exclude-standard', ...inputPaths], { cwd: root, encoding: 'utf8' }).trim();
 const receipt = { date: new Date().toISOString(), head, dirty, lookV2, gameplayV4, needsMeshoptWasm, outputDirectory: relative(root, outputDirectory), bytes: Buffer.byteLength(html), compressed: true,
-  imagePacking, evidence: { rows: evidence.rows.length, files: evidence.files, bytes: Buffer.byteLength(evidence.tags) },
+  moduleChunks: output.filter(f=>f.type==='chunk').map(f=>({name:f.fileName,bytes:Buffer.byteLength(f.code),entry:f.isEntry,imports:f.imports,dynamicImports:f.dynamicImports,modules:Object.keys(f.modules)})), dictionary:{entries:packed.entries.length,bytes:packed.dictionary.length,gzipBytes:gzipSync(packed.dictionary,{level:9}).length},imagePacking, evidence: { rows: evidence.rows.length, files: evidence.files, bytes: Buffer.byteLength(evidence.tags) },
   assetCount: manifest.length, scriptBytes: Buffer.byteLength(js), assetBytes: assetEntries.reduce((sum, [, asset]) => sum + asset.bytes.length, 0),
   sha256: createHash('sha256').update(html).digest('hex'), runtimeDirty, sourceRoots, sourceHashes: hashes,
   sourceAssetHashes, assetHashes,

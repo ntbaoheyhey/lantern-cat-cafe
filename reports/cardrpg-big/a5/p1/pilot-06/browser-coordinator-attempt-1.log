@@ -1,0 +1,15 @@
+node:internal/fs/promises:1345
+  return new FileHandle(await PromisePrototypeThen(
+                        ^
+
+Error: ENOENT: no such file or directory, open 'reports/cardrpg-big/a5/p1/pilot-06/REGISTERED-BROWSER.json'
+    at async open (node:internal/fs/promises:1345:25)
+    at async readFile (node:internal/fs/promises:2003:14)
+    at async file:///Users/bao/taskbar-hero-cardrpg-a4/tools/cardrpg-big/a5-drafts/p1-prep/run-offline-browser-06.mjs:7:31 {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'reports/cardrpg-big/a5/p1/pilot-06/REGISTERED-BROWSER.json'
+}
+
+Node.js v24.22.2

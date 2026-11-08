@@ -1,0 +1,23 @@
+{
+  "registeredAt": "2026-11-08T00:35:49.735303+00:00",
+  "count": 50,
+  "seedStart": 1,
+  "seedEnd": 50,
+  "source": {
+    "packages/game-rules/src/cardrpg/depth/policies.ts": "f467781a6a689b280bf4b2f76621a90f0547508b541dfabfa776767fcc121f67",
+    "packages/game-rules/src/cardrpg/depth/battle.ts": "7b4ac50d7258546d6700a468efdcb36481e2ccc599907504373d158b11020865"
+  },
+  "variants": {
+    "baseline": {},
+    "smooth": {
+      "packages/game-rules/src/cardrpg/depth/policies.ts": "92b0605bdb74642f9dbf87bba6e68be2ed744460c0d6cef309b3bb347a80dfdf"
+    },
+    "distributed": {
+      "packages/game-rules/src/cardrpg/depth/battle.ts": "67885c5fef3edb6ea31acb0ba1f3753b9a3e1ba40618d857c989a269ebcde567"
+    },
+    "combined": {
+      "packages/game-rules/src/cardrpg/depth/policies.ts": "92b0605bdb74642f9dbf87bba6e68be2ed744460c0d6cef309b3bb347a80dfdf",
+      "packages/game-rules/src/cardrpg/depth/battle.ts": "67885c5fef3edb6ea31acb0ba1f3753b9a3e1ba40618d857c989a269ebcde567"
+    }
+  }
+}

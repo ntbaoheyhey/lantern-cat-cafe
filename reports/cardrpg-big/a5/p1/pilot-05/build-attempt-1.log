@@ -1,0 +1,21 @@
+{"lock":"acquired","lane":"A","pid":25370,"startedAt":"2026-11-08T06:36:49.901Z","task":"A5 offline ES modules pilot05"}
+[plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-cardrpg-a4/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Unresolved generated import web.js -> web.js
+    at file:///Users/bao/taskbar-hero-cardrpg-a4/tools/cardrpg-big/a5-drafts/p1-prep/offline-module-payload.mjs:17:7
+    at Array.map (<anonymous>)
+    at offlineModulePayload (file:///Users/bao/taskbar-hero-cardrpg-a4/tools/cardrpg-big/a5-drafts/p1-prep/offline-module-payload.mjs:8:24)
+    at file:///Users/bao/taskbar-hero-cardrpg-a4/tools/cardrpg-big/a5-drafts/p1-prep/offline-modules-builder.mjs:37:53 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
+
+Node.js v24.22.2
+{"lock":"released","pid":25370,"task":"A5 offline ES modules pilot05"}

@@ -1,0 +1,20 @@
+{"lock":"acquired","lane":"A","pid":17317,"startedAt":"2026-11-08T06:24:49.485Z","task":"A5 offline transport original CPU4 run1"}
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+'' !== null
+
+    at file:///Users/bao/taskbar-hero-cardrpg-a4/tools/cardrpg-big/a5-drafts/p1-prep/offline-browser-03.mjs:40:65 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: '',
+  expected: null,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.22.2
+{"lock":"released","pid":17317,"task":"A5 offline transport original CPU4 run1"}
