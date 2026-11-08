@@ -33,15 +33,25 @@ const boss=day7.encounters.find(e=>e.kind==='boss');assert(boss);
 const b=boss.battle,party=b.actors.filter(a=>a.side==='party');
 const actor=id=>b.actors.find(a=>a.id===id)?.name??id;
 const firstFallen=b.log.find(e=>e.kind==='defeat'&&party.some(a=>a.id===e.targetId));
-const hpLossKinds=['damage','dot','shared','reflect'];
-const damageByRow=Object.fromEntries(['front','rear'].map(row=>[row,b.log.filter(e=>hpLossKinds.includes(e.kind)&&party.some(a=>a.id===e.targetId&&a.row===row)).reduce((n,e)=>n+e.amount,0)]));
+const hpLossKinds=['damage','dot','shared','reflect','detonate'];
+const rows=Object.fromEntries(boss.setup.cats.map(c=>[c.id,c.row]));
+const damageByRow={front:0,rear:0},swaps=[];
+// The fixed day7 trio has one swap skill, Mochi's Apron crossing. It has no damage effects.
+assert.deepEqual(boss.setup.cats.map(c=>c.id),['mochi','soot','clover']);
+for(const event of b.log){
+ if(hpLossKinds.includes(event.kind)&&rows[event.targetId])damageByRow[rows[event.targetId]]+=event.amount;
+ if(event.kind==='action'&&event.skillId==='mochi-3'){
+  [rows[event.actorId],rows[event.targetId]]=[rows[event.targetId],rows[event.actorId]];swaps.push({round:event.round,actor:event.actorId,target:event.targetId});
+ }
+}
+assert.deepEqual(rows,Object.fromEntries(party.map(a=>[a.id,a.row])),'Track row swaps before attributing damage');
 const diagnosis={wallSeconds:boss.wallMs/1000,result:b.result,rounds:b.round,partyChoices:b.choices.length,
  firstFallen:firstFallen?{name:actor(firstFallen.targetId),round:firstFallen.round,source:actor(firstFallen.actorId)}:null,
- damageByRow,plan:b.v4.plan,crews:b.v4.events.filter(e=>e.kind==='crew-active'),
+ damageByRow,swaps,plan:b.v4.plan,crews:b.v4.events.filter(e=>e.kind==='crew-active'),
  cats:boss.setup.cats.map(c=>({id:c.id,row:c.row,equipment:c.equipment,stats:c.stats})),
  eventCounts:Object.fromEntries(unique(b.log.map(e=>e.kind)).map(kind=>[kind,b.log.filter(e=>e.kind===kind).length])),
  survivingEnemies:b.actors.filter(a=>a.side==='enemy'&&a.hp>0).map(a=>({name:a.name,hp:a.hp,maxHp:a.maxHp,shield:a.shield})),
- rowAttribution:'Starting and final rows agree for this fixed starter crew; full ordered logs retained. Includes damage, DOT, shared and reflected HP loss; absorbed shield reported separately.',
+ rowAttribution:'Track Mochi Apron crossing swaps in ordered action logs, asserting reconstructed final rows. Includes damage, DOT, detonation, shared and reflected HP loss; shield absorption is separate.',
 };
 const rewards=timeline.filter(r=>['reward','celebration'].includes(r.kind)&&r.atMs<=1800000).map(r=>r.atMs);
 const gapSeconds=[0,...rewards,1800000].slice(1).map((n,i)=>(n-[0,...rewards][i])/1000);
