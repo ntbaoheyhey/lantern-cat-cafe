@@ -70,3 +70,5 @@ A5 Home follow-up: [navigation report](a5/E2-HOME-NAVIGATION.md) and [original30
 Home follow-up published as[DRAFT398](https://github.com/ntbaoheyhey/taskbar-hero/pull/398), stacked on397. No merge/deploy.
 
 Companion growth published as[DRAFT400](https://github.com/ntbaoheyhey/taskbar-hero/pull/400) on399: [cost/stat/skill preview report](a5/C1-COMPANION-GROWTH.md), six source gates and60ON/OFF browser checks pass;36targetedcaptures/threewidths/bothlooks. No rule change or new acceptance/cadence claim.
+
+A5 Equipment41: actual equip/transfer boss comparison source c0543531a passes six checks (1768web/1192rules/421E2E/build),36UIchecks/24captures and native worker stale/CSP fallback. Both rebuilt artifacts match original UI bytes; ON20,927,337bytes/SHA0a2c5f1d. Static display, B1/B2, cadence/startup and fresh acceptance remain open. See a5/E1-EQUIPMENT-FORECAST.md.

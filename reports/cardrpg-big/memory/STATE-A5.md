@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-Growth38 source994d84056 verified: six source gates PASS1760web/1192rules/421E2E/build; separateON/OFF60browserchecks/36captures, contrast6.858/nooverflow. Exact rules/package reuseOFF8250, baseline/historical13exact. DRAFT400 onSettings399 published at1d9d4022d; no active jobs.
+Equipment41 closure PASS on c0543531a: six original first-attempt gates (web1768/rules1192/E2E421/build), exact ON/OFF prototype equality, 36 UI checks/24 captures, worker stale/CSP scenarios. DRAFT401 published on400. Original Home02 PID79723 continues its sixth/final lease; auditor85893 will aggregate, no restart. Home43 registered source/tools staged in /tmp/cardrpg-a5-home-stars-43, not adopted.
 ## NEXT
-Resume B1/B2 remaining numeric misses after growth draft/ledger/outbox. Original30minute cadence749.2s/dead907.7s MISS; display/startup/Z remain open. Fresh20001–20500 UNUSED.
+Checkpoint Equipment41 sync/ledger; then adopt registered Home43 route/star alignment with focused and full checks. Collect original Home02 60-minute audit without new samples. B1/B2/static-display/startup/Z remain open; fresh20001–20500 UNUSED.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -274,3 +274,27 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - 2026-11-08T20:42:34.933566+00:00: Growth38 independent closurePASS. Original six suites reused without reruns; all60ON/OFFbrowserchecks/36captures complete after one retained acknowledgement-only harness fix. Runtime994d84056 unchanged;21MBartifact archived, no rule/acceptance/B change.
 
 - 2026-11-08T20:44:00.015108+00:00: DRAFT400 https://github.com/ntbaoheyhey/taskbar-hero/pull/400 verified on399; source994d84056/evidence1d9d4022d. Growth preview fully wired and checked; all original failures and unresolved A5 numeric gates retained.
+
+- 2026-11-08T20:46:10.240191+00:00: Registered reply-pressure39 before samples; current production hashes identical to corrected34 except isolated policy and boss-only attack multiplier. Three fixed arms, all384cases versus early04 historical31. Controls reused; no acceptance or automatic adoption. Original coordinator tool52735 uses110sleases/7shandoffs.
+
+- 2026-11-08T20:53:20.569169+00:00: Resumed exact39 completed receipts without rerunning any battles. Independent auditPASS:3×384TRAIN50cells/6replays/45OFF/24scaling plus observer. All3screenFAIL, no wider expansion/adoption. Current-source report corrected from Settings to growth994d84056. Unrelated Documents checkout and Finder file untouched.
+
+- Resume2026-11-08T21:04UTC: kept original79723/80272 workers and source snapshots; no reruns. Prepared zero-sample contextual/engagement auditors. Equipment forecast41 is draft-only in tools/cardrpg-big/a5-drafts/equipment-forecast-41 and/tmp: whole-crew actual equip transaction, fixed boss/band, reserve transfer,20seed qualitative forecast, worker cancellation/cache tests. No source adoption, acceptance or B edits.
+
+- 21:10UTC scheduling only: display coordinator80272/waiter82901 SIGSTOP while neither owns lock or has sim child, to let original isolated unit82773 receive next lease. Native resume guard /tmp/cardrpg-a5-equipment-forecast-41/resume-display.py resumes BOTH after unitexit+7s (15min fallback); retain guard/log, never restart samples. Original engagement79723/activelease82687 untouched.
+
+- Resume21:15UTC: original79723 Home journey and80272 contextual sample retained;82773 unit still queued,83598 guard owns resumption of paused display waiter. Added sequential Equipment41 prototype coordinator only. No runtime adoption, balance retune, acceptance or duplicated jobs. Latest43Result screenshot personally inspected.
+
+- 21:19UTC: Equipment41 unitattempt1 retained7pass/1fail. Actual equipGear deletes/reinserts an ownedslot, altering equipment-array order; preview now recognizes an already-equipped piece after command validation. Originalkey/combat/fixtures unchanged. Added prospective real-worker stale-delivery/CSP-denial checks and zero-sample prototypeauditor. Two starter Python newline syntax errors happened before anyjob and originalscript retained in/tmp. Corrected native starter tool94454 waits85180; no duplicate samples/adoption.
+
+- 2026-11-08T21:29:32.307786+00:00: resumed original jobs; no duplicate sampling. Equipment41 correction passed8/8 isolated units. Scheduling-only guard72798 pauses frozen Home coordinator/waiter79723/87305 until originalprototype87311 exits (15min watchdog), leaving originalpage and active-time unchanged. Read-only pressure42 reconstructs every384×500 original pair exactly: spread30/50 have119/84cells with at leastone predeclared pressurestratum>12pp; worst34.26/31.82pp. Smallerbins/multiplecomparisons/oldsource explicitly limit interpretation; zero newbattles and originalrejections unchanged. Fresh20001–20500 unused.
+
+- 2026-11-08T21:40:44.461911+00:00: Original Equipment41 prototype complete: 36 browser checks/24 captures, real stale delivery and CSP denial pass; source c0543531a adopted after contextual40 audit. Original Home79723 resumed. Full source tool34517 and exact-build tool14818 queued; no acceptance or B/protected changes.
+
+- 2026-11-08T21:51:11.660691+00:00: Resumed original Equipment41 source90127/build90142 and Home02 browser79723; no repeated samples. Equipment typecheckPASS; remaining checks queued. Original Home reached42active minutes. Personal threshold/transfer captures inspected. Home43 two-file draft at/tmp/cardrpg-a5-home-stars-43 aligns primary chapter and band with available unfinished stars, preserves active route and uncleared priority; NOT adopted. Exact earned42checkpoint archived for targeted regression.
+
+- 2026-11-08T21:57:48.320261+00:00: Home43 source/test/fixtures/browser/coordinator/closure prepared and hash-registered under/tmp/cardrpg-a5-home-stars-43; NOT adopted or run. Original minute42 checkpoint contains all3cleared and14partial stars. Fresh-eyes inspection of Home02 minute5/10Prepare screenshots shows ancillary forecast/scouting/stars push formation controls below the720pxviewport; address separately after Home43, no B edits. Equipment41 registered five closuretools verified exact; original source checks still waiting for current Home lease92515. Safe-handoff guard tool89647 will pause only between frozen leases and always resume within15minutes.
+
+- 2026-11-08T22:04:10.974775+00:00: Resumed original Equipment41 completion; all original six source checks and adopted-build closure PASS, no suites repeated. Receipt hashes independently verified. Home02 original browser and its final active-time lease preserved; registered Home43 waits Equipment draft. No combat/acceptance/B/protected changes.
+
+- 2026-11-08T22:05:00.346532+00:00: Published DRAFT401 https://github.com/ntbaoheyhey/taskbar-hero/pull/401 on400, evidence7c6e0618a. Original source/gates unchanged. Home43 is next; original Home02 final lease and automatic auditor preserved.
