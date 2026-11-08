@@ -11,8 +11,8 @@ const run=(script,env)=>new Promise((res,rej)=>{const p=spawn(process.execPath,[
 const receipt={phase,artifact,raw,rows:[],cold:[]};
 for(const [ci,c]of configs.entries()){
  const ids=phase==='v0'&&ci===1?['panko-1','cinnamon-4','brioche-4','velvet-4']:cats.flatMap(cat=>[`${cat}-1`,`${cat}-4`]);
- for(let i=0;i<ids.length;i+=3){const key=`cast-${ci}-${i}`,dir=`${raw}/${key}`;
-  await withTimingLock(`B2 ${phase} ${key}`,()=>run('tools/cardrpg-look/b2/probe-casts.mjs',{BIG_SKILL_OUT:dir,BIG_SKILL_IDS:ids.slice(i,i+3).join(','),BIG_SKILL_CONFIGS:JSON.stringify([c]),BIG_SKILL_PROFILE:phase==='v0'?'1':''}));
+ for(let i=0,batch=phase==='v0'?3:24;i<ids.length;i+=batch){const key=`cast-${ci}-${i}`,dir=`${raw}/${key}`;
+  await withTimingLock(`B2 ${phase} ${key}`,()=>run('tools/cardrpg-look/b2/probe-casts.mjs',{BIG_SKILL_OUT:dir,BIG_SKILL_IDS:ids.slice(i,i+batch).join(','),BIG_SKILL_CONFIGS:JSON.stringify([c]),BIG_SKILL_PROFILE:phase==='v0'?'1':''}));
   const summary=JSON.parse(await readFile(`${dir}/summary.json`));receipt.rows.push(...summary.rows);receipt.sha256=summary.sha256;await writeFile(`${out}/summary.json`,JSON.stringify(receipt,null,2));
  }
 }

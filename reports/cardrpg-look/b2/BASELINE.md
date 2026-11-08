@@ -6,7 +6,7 @@ Fixed six shots captured at1280x720/1024x600 DPR1, cameraB; personally viewed128
 Shot1 screen-space model heights: Mochi20.6%, Soot25.3%, Clover20.9%, Teacup19.1%, Sock19.6% of arena; full-page heights are separately recorded in v0/shots.json.
 The review request's~7–9% refers approximately to full-page occupancy, not arena height; retain both denominators instead of calling the existing models compliant.
 Self-grades: round1 6/10, Mochi impact6/10, Clover5.5/10, wave5.5/10, boss6/10, earned5.5/10. Subject size, labels and HUD dilute the approved cafe art.
-Performance: one registered baseline probe underway; all samples retained; no success claim before completion.
+Performance: fresh unmodified closure56cast windows (48native+8CPU4) max16.8ms, cold native16.8ms/CPU4 150ms whole-page. CPU4 gallery opening peak183.4ms. No claim to cure historical633ms/666ms spikes; summaries under v0/perf and raw traces /tmp/cardrpg-b2-v0-perf.
 ## Visual review — before changes
 Shot1: (680–950,370–540) empty floor splits teams; (930–1190,350–490) labels cover enemy faces; (190–1280,590–700) word-heavy bar; (300–1180,240–375) shelves take too much stage; (350–610,375–510) cats too small. Fix framing/scale, mats, plates first.
 Shot2: (700–960,370–550) enemy half empty; (200–270,240–350) ultimate card competes with cat; (340–620,390–530) action is a weak thin yellow outline; (190–1280,590–700) words dominate; (930–1190,390–500) foes disappear at thumbnail size. Fix camera, subject size, layout first; VFX inV5.
