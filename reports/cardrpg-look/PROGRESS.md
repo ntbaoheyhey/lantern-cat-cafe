@@ -28,3 +28,23 @@ All372 committed phase poses personally reviewed:216cat/156opponent;all selected
 ## 2026-11-07T21:25:09.702169+00:00 — L5 audit complete
 
 Completed all22 models/turntables, nine portrait refreshes,66stills/372poses. Source gates and420+1 E2E coverage accepted with original timeout preserved; no clean421-run claim. Cold7MAX133.3msMISS;24castMAX16.8ms/100%≤20/errors0. HTML31,367,423bytes uses documented32MBallowance;startup+93bytes and historical1162strict effect-pair regressions remain. Selected evidence publication follows; L7viewer/videos/finalmatrix/lifecycle20/CPU4BalancedLow still unrun.
+
+## 2026-11-07T23:35:11.368928+00:00 — L7 final measurement continuation
+
+Original matrix coordinator retained; observed 306/860 cases, no repeated runs. Five source gates and personal UI/video reviews were already complete. Supporting audit now verifies recorded review hashes and every retained lifecycle snapshot: geometry537, texture103 and program43 counts stay constant; heap ends+641,528bytes, below the recorded2MiB tolerance but not literally flat. Seven leading RAF timestamps precede performance.now start marks by0.6–2.2ms; the supplemental assertion correction and all offsets are retained. Existing source/artifact and performance budgets unchanged. A4draft376 is published; no A4 runtime adopted.
+
+## 2026-11-08T01:12:46.150500+00:00 — L7 final matrix and report continuation
+
+Original coordinator18667/matrix23583 remains active at 460/860 cases; observer41626/session20982 waits for completion before running the existing audits/report. No repeat measurements or source changes. Retained Panko repeat150ms/p9566.7ms misses remain. New Mallow-3 full-page maximum383.3ms occurs before scene-ready and first cast; both active casts peak16.8ms. These intervals remain distinct. The reporter now derives exact slow-frame geometry counts from the raw diagnosis, uses the actual first-cast boundary for page-interval wording, and presents measurements with readable spacing. Syntax verified; final report not generated yet. All1937 source inputs and five frozen receipts were reverified, artifact39645d31 unchanged. Docker ps empty; native macOS. Base draft374/head1f8d1b7c verified. Publication awaits the original matrix, independent audits and report review.
+
+## 2026-11-08T01:29:00.683654+00:00 — all missed casts compared
+
+2026-11-08T01:29:00.683654+00:00: resumed Lane B; original matrix23583/coordinator18667 still active at 478/860, observer41626/session20982 retained. Added existing-data cast-profile audit and readable per-miss comparison; partial run verifies4 distinct failed windows (Panko-repeat150/p9566.7, Cinnamon-4first266.7/p9533.3, Brioche-4repeat266.6/p95200.1, Velvet-1first183.3/p9533.4). Exact33ms threshold retained. Helper syntax and1937source+5evidence+HTMLhashes verified; no browser repeats/runtime edits. Final report generator now requires all-miss audit and links its per-cast table. Native macOS; docker ps empty.
+
+## 2026-11-08T06:00:12.487896+00:00 — L7 completed audit and report review
+
+Completed 860/860 cases and 1,720 casts; raw audit confirms four distinct missed windows, without additional cast failures. Reviewed generated report, interval/callback comparisons, retained source gate receipts and size justification. Source/artifact remain unchanged; no new measurements. Maximum active-cast frame266.7ms, matrix initialization666.6ms, CPU4cold133.4ms; startup+93bytes, 24MB target and historical effect-pair misses remain explicit. Publication preparation now proceeds from the existing audited artifact. Native macOS; Docker daemon unavailable.
+
+## 2026-11-08T06:03:35.243866+00:00 — L7 draft published
+
+Published draft378 stacked on374; remote evidence9fef5622 verified after14 uploads. All1,325 portable evidence files/555,982,721bytes are included with explicit hashes; historical raw trees remain local. Report131lines and completed860/1720measurement retained with all four failed cast windows and other misses. Source/artifact unchanged. Publication receipt records exact commits. Remaining A integration and optional B presentation compatibility are separate work.

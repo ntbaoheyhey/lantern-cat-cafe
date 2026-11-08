@@ -1,11 +1,16 @@
 # LOOK state
 ## NOW
-L5 PUBLISHED draft374/evidence45c8966a, runtime source c5048bee, branch ai/codex-cardrpg-look-l5-2026-11-07. Native macOS; DockerDesktop open, docker ps empty. No subagents/generative calls/CUA. All22 raw/packed models and nine refreshed portraits committed; only owned paths.
-Fresh framing pilot1171b9ec/31,367,423bytes: all36 Pollen/Yarn/Rain basic+special samples personally viewed,0projected-bound failures/0errors; prior foot crops preserved. Brioche/Marigold48poses reviewed with0framefail. Sock/Rain24poses reviewed; Rain oldcrop fixed in freshpilot.
+L7 measurements and independent audits COMPLETE: 860 cases / 1,720 casts / 134,523 cast frames. Source c754dbba; artifact 39645d31 / 31,493,122 bytes / 1,937 hashed inputs remain unchanged.
+Published draft378 stacked on374: https://github.com/ntbaoheyhey/taskbar-hero/pull/378. Evidence commit9fef5622; 1,325 portable files / 555,982,721 bytes in14 verified batches. No measurement restart needed.
+UI 34 windows: 25 units / 100 angles / 9 stage views / 6 configurations; prior personal image/video reviews retained. Five source gates PASS: 1,761 web tests and 421 E2E in one clean suite.
+Four distinct cast misses remain: Panko repeat 150ms, Cinnamon4 first 266.7ms, Brioche4 repeat 266.6ms, Velvet1 first 183.3ms; all also miss exact CPU4 p95<=33ms. High/DPR1, draws and triangles have zero misses.
+Cold CPU4 maximum 133.4ms; wider matrix page maximum 666.6ms before first cast; startup +93 bytes; original 24MB target missed with documented 32MB allowance; historical L4 1,162 strict pair decreases unresolved.
+Lifecycle20 heap +641,528 bytes within recorded 2MiB tolerance, not literally flat; all 21 snapshots retain 537 geometries / 103 textures / 43 programs. Timing isolation remains unverified.
+Native macOS; Docker daemon currently unavailable, no B Docker work. No subagents/generative calls. Latest A5-C1 ANSWER 02:02 read; no A4/A5 runtime adopted.
 ## NEXT
-L5 measurements and independent audit COMPLETE on immutable c5048bee/artifact1171b9ec. All1913inputs,22models/turntables,66stills,372poses,6portraitUIconfigs verified. Type/lint/unit1761web/build PASS. E2E420initial passes+1focused unchanged-source pass, not a clean421run; original timeout retained. Cold7 nativeMAX33.3/CPU4MAX133.3;casts24MAX16.8/100%≤20/errors0. Flagoff0Three/model;startup+93bytes MISS. HTML31,367,423bytes:24MBMISS/documented32MBallowance. HistoricalL4strict1162pairMISS remains.
-Selected evidence3440files/1,018,720,566bytes plus explicit documentation published in24 bounded fast-forward batches. Draft374 stacked371; remote45c8966a verified. Original ignored-test-results upload failure preserved and resumed atbatch7 without repeated tests. Next mirror-ledger.pyL5→BOUTBOX checkpoint/L7claim. No active B timing job; original6591/session8230 exited0. Do not repeat L5 measurements.
-L7 still staged ONLY in memory/l7-prep. Promote afterL5publication, then committedUI/sourcegates→personalreview→freeze→videos5/lifecycle20/860matrix once. Prepared9review-sheet aids in memory/l7-review-sheets.py. Finalmatrix/lifecycle/CPU4BalancedLow remainunrun. NoA4adoption/shared/rules edits; latestA21:13 read.
+L7 demo/report/evidence checkpoint is published. Next work is separate: lane A checkpoint adoption/icon-frame wiring, and optional A4P1/P3/P4 presentation compatibility; no active B measurement.
+Do not rerun completed matrix/source gates or modify frozen inputs. All original failures/raw data retained; historical L4/L5 raw trees excluded from publication.
+Lane A retains icon/frame wiring and merged delivery. Optional A4P1/P3/P4 presentation requests to B remain separate pending compatibility work.
 
 ## DONE
 Read exact user brief twice, old B HANDOFF, both outboxes; verified remote delivery tip and full worktree created.
@@ -107,3 +112,31 @@ L0 five source gates421E2E + flagoff PASS; baseline244/cold7/24casts complete. L
 - 2026-11-07T21:25:09.702169+00:00: L5audit complete; source/artifact unchanged. Selectivepublication/report stage active; allmisses and originalE2E failure retained.
 
 - 2026-11-07T21:31:37.927291+00:00: Published draft374/evidence45c8966a. All portable evidence hashes unchanged; original local-only1278files/2,096,889,266bytes retained. No runtime changes during publication.
+
+- 2026-11-07T21:32:22.324332+00:00: L5 draft/ledger/sync complete. Promoted16explicitL7files at2781e0de and launched one validationcoordinator/session59429. Finalmeasure stillunrun.
+
+- 2026-11-07T23:35:11.368928+00:00 resumed original L7 coordinator, no duplicate timings. Completed supporting audit: original100unit/9stage/6config/30video review hashes verified; all21retained lifecycle snapshots audited; GPU counts constant, heap+641528bytes, peak+859844bytes. Read A23:22 completion; Dockercontainers0. Matrix306/860 still running.
+
+- Matrix startup diagnostic: CPU4 gallery pages have whole-page peaks at least216.7ms before first cast, while completed activecasts remain16.8ms. Added final-only memory/l7-interval-audit.py and report/publisher requirements to recompute/report all pageOpen/postInteractive/postReady intervals. Syntax checked; full audit awaits860complete. Do not confuse these page intervals with Cold7 or active-cast budget failures.
+
+- 2026-11-07T23:59:00.356798+00:00 A5-H0 started. B waited at404/860 during A lease and resumed original coordinator at23:58:19UTC; no overlap inferred from A owner timestamp (A stamps owner before acquisition). B OUTBOX acknowledges A5 and requests retained browsers not actively render during other-lane measurements.
+
+- 2026-11-08T00:04:40.554419+00:00 B remains at410/860 while A5-H0 holds its elapsed-session lease (default60active minutes,10minute slices). Original18667/23583 both alive, no B source changes/restarts. Published B handoff request8527eb87: roughly2minute leases if compatible with existing H0 evidence; otherwise one fullBwindow eachhandoff. Do not restart or alter A work. Current completed matrix page peak233.3ms; activecasts max16.8ms.
+
+- 2026-11-08T00:13:59.576216+00:00 Continuation: source1937/artifact rehashed unchanged; A5 ambient-rendering disclosure saved and required by report/publisher. Matrix still original single run. Dockerps empty/nativeMac.
+
+- 2026-11-08T00:19:34.645702+00:00 Added source-free observer41626/session20982; diagnosed entry+93 as generatedpreloadheader73/index20; originalentryhashes saved; report/publisher require diagnostic and isolationdisclosure. Bsync42cec5c2 pushed; PR374base1f8d1b7c verified.
+
+- 2026-11-08T00:47:09.452654+00:00 Panko-1repeat Balanced1440/DPR1/CPU4 MAX150/p9566.7 MISS retained; cast-diagnosis maps recordedadjacent scene.loop callbacks but no rootcause. Reporter/publisher include castdiagnosis, startuprawaudit, strictheap/timinglimits. Sync1d830f05 requests aggregatehandoffs amidAqueues.
+
+- 2026-11-08T00:52:44.325741+00:00 continuation: reverified1937 source+5 frozen evidence hashes and artifact39645d31; no Docker containers. Original18667/23583 and observer41626/session20982 retained at448/860. Reporter precision fixed: Panko castmax92draw/99159tri vs slowestframe87draw/98003tri; no source/harness changes. Base374 open/draft1f8d1b7c verified. Finalpublication stillpending.
+
+- 2026-11-08T01:12:46.150500+00:00 report continuation: observed 460/860. Original Mallow-3 Balanced1440/DPR1/CPU4 page frame383.3ms ends12822.7ms, after Hub5589.6 and before ready14455.9/firstcast14604.4; bothcastsMAX16.8. Reporter separates cast maxima from slowest-frame draw/triangle counts and uses the measured first-cast boundary for full-page wording; readability improved, syntaxchecked only. Runtime/input hashes and raw observations remain unchanged.
+
+- 2026-11-08T01:29:00.683654+00:00: resumed Lane B; original matrix23583/coordinator18667 still active at 478/860, observer41626/session20982 retained. Added existing-data cast-profile audit and readable per-miss comparison; partial run verifies4 distinct failed windows (Panko-repeat150/p9566.7, Cinnamon-4first266.7/p9533.3, Brioche-4repeat266.6/p95200.1, Velvet-1first183.3/p9533.4). Exact33ms threshold retained. Helper syntax and1937source+5evidence+HTMLhashes verified; no browser repeats/runtime edits. Final report generator now requires all-miss audit and links its per-cast table. Native macOS; docker ps empty.
+
+## 2026-11-08T06:00:12.487896+00:00 — L7 completed audit review
+Verified complete audit/report and all four missed-cast comparisons. Original measurements ended at 03:16:43 UTC; 134,523 cast and 569,780 full-page frames audited. No new timing runs or source edits. Native macOS; Docker daemon unavailable at continuation. Publication follows explicit manifest review.
+
+## 2026-11-08T06:03:35.243866+00:00 — L7 draft published
+Draft378 stacked on374, evidence9fef5622 remotely verified. All14 bounded fast-forward uploads succeeded; publication-inventory.json hashes1,325 portable files/555,982,721bytes and one retained duplicate HTML. publication-receipt.json records batch commits, report/inventory hashes and artifact39645d31. Subsequent publication notes change prose/receipts only, not frozen sources or measurements. See sync B-OUTBOX for ledger and coordination references.

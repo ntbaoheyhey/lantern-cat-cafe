@@ -1,0 +1,69 @@
+{
+  "artifact": "39645d319c264bac0c1011d0e5370de335281ebf6e1df64de67978e34bcb4133",
+  "bytes": 31493122,
+  "maximumAuthorizedBytes": 32000000,
+  "originalTargetBytes": 24000000,
+  "previousL5Bytes": 31367423,
+  "deltaFromL5Bytes": 125699,
+  "headroomBytes": 506878,
+  "reason": "Retains the visually reviewed L5 models, stage, effects and portraits, and adds the isolated miniature/stage viewer plus hash-bound comparison thumbnails. No new external runtime dependency or art service. UI screenshots still require personal review before final freeze.",
+  "visualEvidence": [
+    "reports/cardrpg-look/rounds/roster/panko/round-3/comparison.png",
+    "reports/cardrpg-look/rounds/roster/inkcap/round-2/comparison.png",
+    "reports/cardrpg-look/rounds/opponents/yarn-giant/round-4/comparison.png",
+    "reports/cardrpg-look/rounds/opponents/pantry-crown/round-3/comparison.png",
+    "reports/cardrpg-look/rounds/art/portraits/packed-round-5/portraits-dark.png",
+    "reports/cardrpg-look/validation/l5/compression/512-256-q80/comparison/RUNTIME-REVIEW.md"
+  ],
+  "l5Justification": "reports/cardrpg-look/validation/l5/size-justification.json",
+  "assetClasses": {
+    "flipbooks": {
+      "files": 6,
+      "rawBytes": 1064346,
+      "gzipBytes": 1062364,
+      "embeddedBytes": 1416492
+    },
+    "atelier-models": {
+      "files": 25,
+      "rawBytes": 6133860,
+      "gzipBytes": 4981768,
+      "embeddedBytes": 6642384
+    },
+    "portraits": {
+      "files": 65,
+      "rawBytes": 5065564,
+      "gzipBytes": 5003964,
+      "embeddedBytes": 6672036
+    },
+    "atelier-stage": {
+      "files": 2,
+      "rawBytes": 1768378,
+      "gzipBytes": 1498581,
+      "embeddedBytes": 1998112
+    },
+    "classic-models": {
+      "files": 25,
+      "rawBytes": 4357168,
+      "gzipBytes": 2150794,
+      "embeddedBytes": 2867752
+    },
+    "textures-and-other": {
+      "files": 71,
+      "rawBytes": 6081366,
+      "gzipBytes": 6032046,
+      "embeddedBytes": 8042804
+    },
+    "icons": {
+      "files": 52,
+      "rawBytes": 19256,
+      "gzipBytes": 15153,
+      "embeddedBytes": 20280
+    }
+  },
+  "comparisonPayloadBytes": 121166,
+  "limitations": [
+    "Original24MB target remains missed.",
+    "The small showcase thumbnails are presentation derivatives; native originals remain in evidence.",
+    "L7 performance measurements have not started."
+  ]
+}

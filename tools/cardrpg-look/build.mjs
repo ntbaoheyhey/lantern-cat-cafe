@@ -6,6 +6,7 @@ import { createHash } from 'node:crypto';
 import { gzipSync } from 'node:zlib';
 import { root, web, requireWeb } from '../visual-support.mjs';
 import { evidencePayload } from '../cardrpg-big2/embed-evidence.mjs';
+import { showcaseEvidence } from './showcase-evidence.mjs';
 const { build } = await import(requireWeb.resolve('vite'));
 // Both streams decode to identical bytes. Different asset classes favour
 // different DEFLATE hash-table sizes; keep the smaller stream per payload.
@@ -81,24 +82,27 @@ const assetTags = assetEntries.map(([, asset], index) => `<script id="asset-${in
 const performanceMeter = readFileSync(resolve(root, 'tools/cardrpg-big/offline-performance.js'), 'utf8');
 const loader = readFileSync(resolve(root, 'tools/cardrpg-big/offline-loader.js'), 'utf8');
 const evidence = evidencePayload(root);
+const showcase = await showcaseEvidence(root);
 const html = `<!doctype html>\n<!-- REFERENCE: docs/cardrpg2/index.html | tools/cardrpg-look/build.mjs | docs/design/cardrpg/LOOK-BIBLE.md | apps/web/src/game/cardrpg/depth | packages/game-rules/src/cardrpg/depth -->\n<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none';img-src data: blob:;style-src 'unsafe-inline';script-src 'unsafe-inline' 'wasm-unsafe-eval' blob:;connect-src data: blob:;media-src data: blob:"><script>window.__LOOK_PACKED__=true;${performanceMeter}</script><title>The Lantern · Lantern atelier</title><style>html,body{margin:0;background:#1d1b28;color:#f5ebdc}#loading{margin:0;padding:40px 40px 18px;font:18px system-ui}#opening-progress{display:block;width:min(420px,calc(100% - 80px));margin:0 40px;accent-color:#d8b98a}</style></head><body><div id="root"><p id="loading">Opening the cafe…</p><progress id="opening-progress" aria-label="Opening the cafe" value="0" max="1"></progress></div><script id="asset-manifest" type="application/json">${JSON.stringify(manifest).replace(/</g, '\\u003c')}</script>
 ${assetTags}
 ${evidence.tags}
 <script>${evidence.script}</script>
+<script>${showcase.script}</script>
 <script id="payload" type="application/octet-stream">${payload}</script><script>${loader}</script></body></html>`;
 mkdirSync(resolve(root, 'docs/cardrpg-look'), { recursive: true });
 writeFileSync(resolve(root, 'docs/cardrpg-look/index.html'), html);
 const sourceRoots = ['packages/game-rules/src', 'apps/web/src', 'assets', 'tools/cardrpg-depth', 'tools/cardrpg-big', 'tools/cardrpg-big2', 'tools/cardrpg-look', 'tools/cardrpg-demo/verify-delivery.py', 'tools/visual-support.mjs'];
 const files = execFileSync('git', ['ls-files', '--cached', '--others', '--exclude-standard', ...sourceRoots], { cwd: root, encoding: 'utf8' }).trim().split('\n');
 const hashes = Object.fromEntries(files.map(path => [path, createHash('sha256').update(readFileSync(resolve(root, path))).digest('hex')]));
+for (const row of showcase.files) hashes[row.path] = row.sourceSha256;
 const assetHashes = Object.fromEntries(assetEntries.map(([path, asset]) =>
   [path, createHash('sha256').update(asset.bytes).digest('hex')]));
-const inputPaths = [...sourceRoots, ...Object.keys(assetHashes)];
+const inputPaths = [...sourceRoots, ...Object.keys(assetHashes), ...showcase.files.map(row => row.path)];
 const runtimeDirty = !!execFileSync('git', ['diff', 'HEAD', '--', ...inputPaths], { cwd: root, encoding: 'utf8' }).length
   || !!execFileSync('git', ['ls-files', '--others', '--exclude-standard', ...inputPaths], { cwd: root, encoding: 'utf8' }).trim();
 const receipt = { date: new Date().toISOString(), head, dirty, bytes: Buffer.byteLength(html), compressed: true,
   compression: { format: 'gzip', level: 9, memLevels: [8, 9], selection: 'smallest stream per payload; decoded bytes unchanged' },
-  imagePacking, evidence: { rows: evidence.rows.length, files: evidence.files, bytes: Buffer.byteLength(evidence.tags) },
+  imagePacking, showcase: { bytes: showcase.bytes, files: showcase.files }, evidence: { rows: evidence.rows.length, files: evidence.files, bytes: Buffer.byteLength(evidence.tags) },
   assetCount: manifest.length, assetClasses, scriptBytes: Buffer.byteLength(js), assetBytes: assetEntries.reduce((sum, [, asset]) => sum + asset.bytes.length, 0),
   sha256: createHash('sha256').update(html).digest('hex'), runtimeDirty, sourceRoots, sourceHashes: hashes,
   sourceAssetHashes, assetHashes,

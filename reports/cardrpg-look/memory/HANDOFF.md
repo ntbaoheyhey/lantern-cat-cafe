@@ -1,3 +1,136 @@
+# L7 checkpoint published — 2026-11-08T06:03:35.243866+00:00
+
+Draft [378](https://github.com/ntbaoheyhey/taskbar-hero/pull/378) is stacked on L5 draft374. Evidence commit `9fef56228a68bb5f95db2db96f3960449891238f` and all14 upload batches were remotely verified; 1,325 portable files / 555,982,721bytes. Exact inventory and batch receipts: validation/l7/publication-inventory.json and publication-receipt.json. The inventory describes the evidence commit; later publication notes are prose/receipt additions only.
+
+Source c754dbba / artifact39645d31 /31,493,122bytes /1,937inputs unchanged. Completed once:860cases /1,720casts; four distinct active-cast misses retained with diagnostics. Five source gates passed (1,761web/421E2E). Report131lines; five25second videos,20replays,100unitangles/ninestageviews/sixdesktop configurations retained. No new matrix/observer or source change required. Original old active-job notes below are historical.
+
+Remaining: separate optional A4P1/P3/P4 B presentation compatibility; A icon/frame wiring, checkpoint adoption and merged delivery. All missed budgets and art limitations are in CARDRPG-LOOK-REPORT.md. Preserve frozen evidence; any future fixes need a new source/artifact and targeted evidence. Do not silently rebase this measured checkpoint onto A4/A5. See B-OUTBOX for ledger/coordination publication references. Native macOS, Docker daemon unavailable; no B Docker jobs/subagents/generative calls. No merge/deploy/main push.
+
+---
+
+# L7 completed measurements — publication next — 2026-11-08T06:00:12.487896+00:00
+
+Read STATE first15 and RULES, then current A-OUTBOX. Matrix/audits/report are complete: 860/860 cases, 1,720 casts, four distinct failed cast windows; no additional misses. Source c754dbba / artifact39645d31 / 1,937 inputs unchanged. Original active-job notes below are historical; do not launch another measurement or observer. Temporary logs no longer exist; durable validation/l7 receipts and raw profiles are present.
+
+Reviewed report (<=150 lines), CAST-PROFILE-REVIEW and size justification. Five source gates passed on the frozen inputs (1,761 web / 421 E2E). All current and historical misses, literal heap-flatness and timing-isolation limitations remain explicit. Docker daemon currently unavailable; work is native macOS.
+
+NEXT: memory/l7-publish.py --prepare; inspect explicit manifest; publish <=48MB fast-forward batches; draft stacked on374 (verified open/draft/head1f8d1b7c); publication note; mirror-ledger.py L7; B-OUTBOX. Preserve local historical raw files. No runtime/source edits or gate reruns required. Optional A4P1/P3/P4 remain separate pending B work; A icon/frame wiring and adoption remain open.
+
+---
+
+# L7 continuation — every missed cast compared — 2026-11-08T01:29:00.683654+00:00
+
+2026-11-08T01:29:00.683654+00:00: resumed Lane B; original matrix23583/coordinator18667 still active at 478/860, observer41626/session20982 retained. Added existing-data cast-profile audit and readable per-miss comparison; partial run verifies4 distinct failed windows (Panko-repeat150/p9566.7, Cinnamon-4first266.7/p9533.3, Brioche-4repeat266.6/p95200.1, Velvet-1first183.3/p9533.4). Exact33ms threshold retained. Helper syntax and1937source+5evidence+HTMLhashes verified; no browser repeats/runtime edits. Final report generator now requires all-miss audit and links its per-cast table. Native macOS; docker ps empty.
+
+Remaining: original matrix completes → existing observer audits/report → inspect all-miss table/report (≤150 lines) → phase-end STATE/PROGRESS/HANDOFF → l7-publish --prepare and inspect explicit manifest → ≤48MB fast-forward batches → draft stacked on374 → publication note → mirror-ledger.py L7 → B-OUTBOX. No new matrix, observer, or source change. All historical evidence retained.
+
+---
+
+# L7 continuation — report precision and unchanged source — 2026-11-08T00:52:44.325741+00:00
+
+Resumed user's Lane B request. Re-read RULES/STATE, old prompt, original B handoff and both OUTBOX tails; sync pull is current. Docker ps empty; native Node/Chromium, no containers/model helpers/generative calls. All1937 source hashes +5 frozen evidence hashes +artifact39645d31 reverified unchanged.
+Original coordinator18667/matrix23583 and observer41626/session20982 remain active; 448/860 last observed. Continue the existing observer, do not duplicate. Last explicit session20982 poll succeeded, no new output; final audits/report still pending.
+Report helper now distinguishes per-cast maximum92draws/99159triangles from slowest150ms-frame87draws/98003triangles, derived from retained cast-diagnosis.json. Syntax parsed; no runtime/harness/input edits or new measurements. Original Panko p9566.7ms miss and timing-isolation limitation remain.
+GitHub connector verified basePR374 stillopen/draft/head1f8d1b7c. No L7 publication/PR yet. Remaining sequence: originalmatrix ends→existing observer audits/report→inspect report and update phase-end STATE/PROGRESS/HANDOFF→publisher --prepare and inspectmanifest→48MB batches→draft stacked374→publication note→mirror-ledger.pyL7→BOUTBOX. Preserve all local historical raw trees.
+
+---
+
+# L7 active cast MISS diagnosed — 2026-11-08T00:47:09.452654+00:00
+
+Original18667/matrix23583 active; 448/860 completed batches. Observer41626/session20982 still waits; do NOT duplicate. Logs /tmp/cardrpg-look-l7-final-measure.log and /tmp/cardrpg-look-l7-await-audit.log.
+New real MISS retained: config-5/batch-12 Panko-1 repeat MAX150ms/p9566.7ms (both budget misses),92draws/99159triangles,errors0. memory/l7-cast-diagnosis.mjs executed successfully → validation/l7/cast-diagnosis.json; raw+batch hashes bound. Peak overlaps155mslongtask;8adjacent/during-cast LAF callbacks map by exact decoded payload.js UTF16 offsets to scene.loop (scene.ts). No LAF entry overlapspeak; do not claim specific expensive operation,shader/modelorbackgroundrootcause. Report/publisher now requirediagnostic.
+Startup audit memory/l7-startup-audit.py independently recomputes+93=73header+20indexes from savedoriginals; report runsit. Report explicitly lists heapflatnessnotestablished and timingisolationunverified under missed/unverifiedtargets. Syntaxchecked; noapp/harnesssourcechanges/retests.
+Sync1d830f05 ACK/request published: A nowhas H0/E2E/B1candidate queues; asks aggregate80–95sBwindow afterheavyjobs withoutinterrupt/restart. LatestA00:39B1checkpoint read; noA runtimeadoption. Remainingpublicationsequence unchanged below.
+
+---
+
+# L7 observer and startup diagnosis — 2026-11-08T00:19:34.644878+00:00
+
+ONE original measurement18667/matrix23583 remains active (428/860 last observed). ONE read-only await/audit observer PID41626/session20982 runs memory/l7-await-audit.py, logfile/tmp/cardrpg-look-l7-await-audit.log. Do not launch another observer or measurement. Observer only waits for original completion, then runs l7-audit/interval-audit, updates stale size limitation, generates report. No publication automation; inspect report+manifest before push.
+Startup diagnosis saved validation/l7/flag-off/startup-diagnosis.json with hash-verified original entry files: +93bytes = preloadheader+73/indexarrays+20; normalizedbody/defaultlegacydependency membership equal. Two added dormant three.core/BufferGeometryUtils entries were not loaded in recorded default startup. Exactbyte MISS retained; no causalcoldclaim. Report/publisher require diagnosis. Syntaxchecked; conservative129reportlines with10misses.
+Timingcontext/coordination evidence persists ambient-rendering isolationUNVERIFIED. B ACK sync42cec5c2 pushed; basePR374 stillopen/draft/head1f8d1b7c verified. No source changes/retests. Next after observer succeeds: inspectreport, phaseendSTATE/PROGRESS/HANDOFF→manifestprepare+inspect→48MBpublish→draftstacked374→note/ledger/BOUTBOX.
+
+---
+
+# L7 continuation — timing isolation disclosure — 2026-11-08T00:13:59.576216+00:00
+
+Original18667/matrix23583 active; 422/860 observed. Read actual matrix summary/log; no restart. All1937 source hashes/artifact39645d31 reverified unchanged. Dockerps empty/nativeMac.
+A5-H0 ANSWER says persistent page ambient rendering is NOT explicitly suspended at handoff. Saved exact answer and lease snapshot in validation/l7/coordination; timing-context.json flags isolationUNVERIFIED. Report/publisher now require this disclosure and rehash source receipts. Preserve numbers as observations; no exclusive-device acceptance or causal-contamination claim. Helpers parsed; no source change or retest.
+Remaining sequence unchanged: originalmatrix ends → l7-audit → l7-interval-audit → update stale size limitation → l7-write-report → inspect <=150lines → phaseend docs → l7-publish --prepare/inspect/48MBbatches → draft stacked374 → publication note/ledger/BOUTBOX. Existing raw evidence and failures retained.
+
+---
+
+# L7 continuation — supporting audit and publication prep
+
+Original final coordinator18667 /matrix23583 remains running; do not restart. Read actual /tmp/cardrpg-look-l7-final-measure.log and STATE first15. Last observed410/860 during this continuation; sourcec754dbba/artifact39645d31/31,493,122bytes/1937inputs immutable.
+Lifecycle20 COMPLETE: heap+641,528bytes, peak+859,844; all21snapshots537geometry/103texture/43program constant. This is within recorded2MiB tolerance, NOT literal flatness. New memory/l7-support-audit.py ran successfully; support-audit.json binds original review/video/lifecycle evidence. One overstrict RAF boundary assertion preserved in support-audit-initial-assertion.json; seven first RAF timestamps precede performance.now marker0.6–2.2ms. Correct check allows one observed leading frame interval; remaining frames all within natural battle markers. No runtime/budget/measurement altered.
+Report helper updated (syntax checked only; finalaudit absent): explicit lifecycle tolerance, A4requests are pending B work not A-owned, links point to actual B evidence branch so ledger links work, L2/L3numeric metrics/limits and verdict. Publisher now includes support helper and rehashes verified support files. Helpers under memory are NOT frozen sources. No new tests/reruns after already accepted421E2E.
+Read A23:22 FINAL CHECKPOINT draft376/headf1b433e8/ledger39c295b5 and newer23:53A5-H0 CLAIM. A4jobs ended; A5-H0 baseline now actively shares the timing lock. B OUTBOXHEADSUP a555621b and REQUEST8527eb87 acknowledged A5 and requested boundedhandoffs (A5H0 default60active minutes/10minuteleases); no source adoption. No Bcheckpoint adopted; optionalP1fixedcooldown/crew,P3phase<=400ms/finish<=800ms,P4earnedreveal remainopen. NoA4runtime adopted byB. Dockerps empty; nativeMac AppleM3Pro; oneagent/no generative/CUA.
+New finding: completed CPU4 matrix rows have full-page startup peaks up to216.7ms while activecasts stay16.8ms. Added memory/l7-interval-audit.py (syntax only;requires completed matrix), recomputing pageOpen/postInteractive/postReady fromraw. Report/publisher now REQUIRE matrix-interval-audit.json and publish perconfiguration intervaltable. Original measurements unchanged.
+Next: originalmatrix finishes→tools/cardrpg-look/l7-audit.mjs→memory/l7-interval-audit.py→memory/l7-write-report.py. Inspectreport <=150lines andactualmisses. Update size-justification stale limitation only aftercomplete; record phaseendSTATE/PROGRESS/HANDOFF. memory/l7-publish.py--prepare,inspect explicit manifest then48MBbatches; draftPR stacked374 viaGitHub connector; publicationnote→mirror-ledger.pyL7→BOUTBOX. Do notbulkstage4.8GBL4/L5raw. ExistingL7portablefiles ~476MB (coldtracegz dominate; largest34.9MB), finalmore. Base374 metadata verifiedopen/draft at1f8d1b7c. No draftL7createdyet.
+
+---
+
+# L7 final measurement continuation — 2026-11-07T22:24:05.323549+00:00
+
+ONE originalcoordinator18667/session50598 remainsalive; logfile/tmp/cardrpg-look-l7-final-measure.log. caffeinate monitor session6035 exitswith18667. Sourcec754dbba/artifact39645d31/31,493,122bytes/1937inputs immutable. No sourceedits/restarts.
+FlagoffPASS11scripts/0Three/model;startup+93bytesMISS,modulemembershipunchanged. Cold7complete(nativeMAX33.3/CPU4MAX133.4MISS);24castsMAX16.8/100%≤20/errors0. COLD-REVIEW.md/cold-diagnosis.json locateworstCPU4framebeforeHub/Fight,58.4msforcedstyle/layout; nosourcecomponentcausalclaim. Reporterupdatedwiththisdiagnostic.
+All5×25svideoscomplete: Mochi/Soot/Clover/YarnGiant/ultimate,750decodedframes each. All30samples PERSONALLYVIEWED and recorded in video-review.json/VIDEO-REVIEW.md withhashes. No repeatviews needed; no continuousview/audio/naturalbossclaim. Limits:pale/thineffects,smallheroes,coarsepinkbossribbons/wire-likeCloverarches. Reporthelpermergesvideo limits.
+Child22127 lifecycle20active:7replays observed22:23,geometry537/texture103unchanged;fullresultpending. ThenexistingcoordinatorstartsONE860matrix/1720casts. Finalmatrixnotyetstarted atthisnote. Verifyactuallog. Nevermodifyhashedsource or runoldqueues.
+AllL7UI/sourcegates alreadyPASS (1761web/421E2E ONE cleanrun); freeze/reviewacceptance done. Afterfinalmeasurecomplete→l7-audit.mjs→memory/l7-write-report.py(report+L7-CHECKPOINT)→STATE/PROGRESS→l7-publish.py--prepare/inspect/48MBbatches→draftstacked374→mirrorledger→BOUTBOX. Do notbulkstagehistoricalL4/L5raw.
+NativeMac; DockerDesktopopen/dockerpsempty, useranswered. NoDockerjobs/subagents/generative/CUA. LatestA21:42read; noA4adoption; optionalpresentationrequests open.
+
+---
+
+# L7 source accepted; final measurements active — 2026-11-07T22:05:11.868518+00:00
+
+Read STATE first15. Sourcec754dbba/artifact39645d31/31,493,122bytes/all1937inputs immutable. FivegatesPASS (1761web,421E2E ONE cleanrun); priorcoordinator14319 exited. UI34windows/100unitangles/9stageviews/6configs reviewed; supplementary9scrolled images reviewed. Review acceptance andfreeze.json written. Allfailures preserved under overlay-1/selector-1/selector-2.
+ONE coordinator PID18667/session50598 runs tools/cardrpg-look/final-measure.mjs; log/tmp/cardrpg-look-l7-final-measure.log. Started22:04:51UTC. Flagoff/cold7/casts24/videos5/lifecycle20/860matrix sequential under sharedlock; verifyactualprogress. Neverrestartcompleted work or changehashedsources.
+Need personal6samples×5videos→video-review.json/VIDEO-REVIEW.md; no continuousviewclaim. Aftercoordinator complete→l7-audit→l7-write-report.py (alsoL7-CHECKPOINT)→STATE/PROGRESS→l7-publish.py --prepare/inspect/48MBbatches→draftstacked374→mirror-ledger.pyL7→BOUTBOX.
+Added memory/l7-scroll-review.mjs (executedPASS,9screens) and includedin publisher. l7-write-report updatedforbothselectorfailures. Reviewer disclosedweak tabstate,largeemptyviewport/tallhistoricalwipe,softthumbnail/tinybakedcaptions plusoldmaterial/stage/VFXlimits. All25modelsremain3look-slice/22improved.
+NativeMac Node/Playwright/Chromium; DockerDesktopopen/dockerpsempty. NoDockerjobs/subagents/generative/CUA. LatestA21:42read; noA4adoption; optionalrequestsopen. OriginalL524MB/cold/startup andL4strictmissesretainhistoricalscope.
+
+---
+
+# L7 selector continuation — 2026-11-07T21:57:46.507054+00:00
+
+Read STATE first15 for latest process state; previous handoff entries are historical.
+Native macOS: Node/Playwright/Chromium directly; Docker Desktop open but no running containers. User Docker question answered again from current processes. No subagents/generative/CUA.
+L7 source c754dbba, same runtime39645d31/31,493,122bytes. First overlay attempt and selector1/2 failures preserved; harness now scopes comparison tab and matches speed combobox accessible name.
+ONE coordinator14319/child14379 runs memory/l7-resume-ui.mjs with LOOK_L7_RESUME_ATTEMPT=selector-2; log/tmp/cardrpg-look-l7-resume-ui-2.log. Retains25unit+3chapter windows;4/6UIconfigs passed including0.25x/effectonly. Waiting A timinglock before final2configs, then existing fivegate runner. Do not restart or change hashedsource.
+All25units×4angles and9stageviews already personallyreviewed in ART-REVIEW. OnceUIcomplete, generate final review sheets, view6configurations, finish notes/acceptance/sizejustification, then freeze and ONE final-measure.mjs. Fivevideos,20lifecycle,860matrix UNRUN.
+Existing l7-write-report.py/l7-publish.py are prepared only. After finalaudit+video sample review: report/L7-CHECKPOINT/STATE→prepare+inspect publicationmanifest→bounded48MBpush→draftstacked374→ledger→BOUTBOX. LatestA21:42P6read, optionalpresentationrequests open; no A4adoption.
+
+---
+
+# L7 validation2 / review active — 2026-11-07T21:45:56.537182+00:00
+
+NativeMac; DockerDesktop open but dockerps empty; user answered. ONE unchanged coordinator10946/session60297; capturechild11214. Log/tmp/cardrpg-look-l7-validation-2.log. Captured19/25units sofar; readactuallog. A uses110sCPU+120shandoff; respectsharedlock. No restart/sourceedits.
+Source4aed4c7e,HTML39645d31/31,493,122bytes;all1937inputs unchanged. Firstoverlayfailure retained validation/l7/attempts/overlay-1 withoriginalHTML/log/12screenshots. Correctedreadiness waitsvisibleoverlayhidden.
+Personallyviewed15units×4angles in3sheets, fullMochifront, separateartgallery1024light/1440dark. Specificnotesin validation/l7/ART-REVIEW.md. Reviewhelper now --partial preparescompleted5-unitgroups; cropsmodelbounds+12% padding, fixesradianlabels todegrees; finalrun without--partial afterUIcompleted generates9sheets/manifest. Needviewunits16–25,9stages,6configs. Noacceptanceyet.
+Newmemory/l7-write-report.py and l7-publish.py syntaxcheckedONLY. Reporterrequiresaudit+video-review, retainsL5historicalrubric/tierfacts,max150lines. Publisher--prepare afterfinalreport/STATE/checkpoint hashesexplicitL7evidence+docs/helpers;48MBfastforwards,neverbulkL4/L5raw. MustcreateL7-CHECKPOINT beforeprepare. Sizejustification restored,stillpendingUIreview.
+AfterUI/sourcegates andpersonalreview→review-acceptance→freeze→ONE final-measure.mjs cold7/casts24/videos5/lifecycle20/860matrix; allfinalmeasurestillUNRUN. Fivevideo6samplesrequirepersonalreview+video-review.json+VIDEO-REVIEW.md. Thenl7-audit→report/publish→draftstacked374→mirror-ledger.pyL7→BOUTBOX. LastA21:13; noA4adoption. Sourceunchanged16ownedfilesonly; noapp/shared/rules edits.
+
+---
+
+# L7 visible-readiness correction — 2026-11-07T21:36:37.297439+00:00
+
+Read STATE first15 and actual /tmp/cardrpg-look-l7-validation-2.log. Docker Desktop open; no running containers, native Mac. Oneagent/no generative/subagents/CUA.
+Original10167/10382 stopped outside lock after personally viewed loading-overlay screenshot. Original attempt, HTML, build and log preserved at validation/l7/attempts/overlay-1. Committed harness fix4aed4c7e awaits .look-loading hidden; sourcebuild rerun required by hashed input. HTML still39645d31/31,493,122bytes.
+ONE coordinator10946/session60297 runs L7 validation2. Do not restart it or modify hashed source while active. UI34windows→fivegates→personal100unitangles/9stageviews/6configs; source freeze/fivevideos/lifecycle20/860matrix remain unstarted. L5 complete and published; no L5reruns. A21:13 latest read, optionalpresentation requests open.
+
+---
+
+# L7 validation active — 2026-11-07T21:32:34.476611+00:00
+
+L5done: draft374/evidence45c8966a/note1f8d1b7c/ledgerfd264691/syncc61f4efc allpublished. NoL5reruns. L7ownbranch ai/codex-cardrpg-look-l7-2026-11-07 source2781e0de. One coordinator10167/session59429 logfile/tmp/cardrpg-look-l7-validation.log; caffeinate monitor started. Do not restart or change sources whileactive.
+
+L7build39645d31/31,493,122bytes (506,878below32MB); runtimeDirtyfalse checked bycoordinator. Demo-types thenartgallery3/atelier34windows/fivegates insequence. Need readlogactualresults. Only16ownedtool fileschanged; zeroapp/shared/rules/assets changes fromL5. Finalmatrix/freeze/videos/lifecycle20 notstarted.
+
+Aftercapturecompletion use memory/l7-review-sheets.py tocreate9sheets thenpersonallyreview25unit4angles/9stageviews/6configs. Fix/preservefailures ifneeded. OncecleancommittedUI/gates accepted write review-acceptance.json+sizejustification→freeze.mjs→ONE final-measure.mjs (cold7/casts24/5×25svideos withsixsamples/lifecycle20/860validcases1720casts). SeeL7prepPLAN fordetails. Native/noDockerjobs/subagents/generative/CUA. A4optionalrequests remainopen;latestA21:13read.
+
+---
+
 # L5 published → L7 — 2026-11-07T21:31:37.927291+00:00
 
 Draft374/evidence45c8966a PUBLISHED stacked371. All24bounded batches uploaded; original Git ignored-test-results failure atbatch7 preserved and explicitresume completed. Original measurements/source intact: c5048bee/artifact1171b9ec,31,367,423bytes,1913inputs. No active B timing task. Need publication-note commit/push→mirror-ledger.py L5→BOUTBOX CHECKPOINT+L7CLAIM, then promote16explicit prepared files in /tmp/cardrpg-look-l7-source-files.txt onto newownL7branch. L7stillunrun. Read STATE and memory/l7-prep/PLAN.md.
