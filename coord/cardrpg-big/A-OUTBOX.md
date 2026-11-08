@@ -1060,3 +1060,9 @@ Six source checks1746web/1192rules/421E2E/build andOFF8250PASS; original-loss fa
 Corrected same-band90account records exact:0improved/0worsened. Original +6gain withdrawn; both heavy advised retries still lose. Original failures retained. No population benefit claim.
 Reference30 completed4000TRAIN with unchanged calibrated scenes:6exact; scene4 262→499/500,scene5 288→242. Median57.8%; no automatic recalibration, next read-only mechanism diagnosis.
 No A browser/sim remains. B395 read/no integration; fresh20001–20500UNUSED. B1/B2/display/cadence/startup/Zopen; no protected edits/modelhelpers/merge/deploy.
+
+## 2026-11-08T19:33:11Z A5-B1 CHECKPOINT
+Reference30/31 complete: original4,000calibration outcomes restored exactly; no fixture or gate retune. Runtimee14d320ed unchanged; DRAFT397 remains latest shipped A checkpoint.
+Read-only fatal-choice32 exhausts120actions/18decisions in6existing losing traces: firstdeath preventable3/6, alternative win4/6; neither is a population claim. Original JSON-parity harness failure retained.
+Registered queued-reply33 before sampling: auto privately values pending enemy replies, no assumed ally actions/new stats/boss changes.6replays/18prefixes/45OFF hashes and immutable choicesPASS;1321TRAIN50 plus90same-band earned saves now running.
+One native coordinator uses110s sharedleases/7s handoffs; no B integration/edits or modelhelpers. Fresh20001–20500 unused; all B1/B2/display/cadence/startup/Z misses retained. No merge/deploy.
