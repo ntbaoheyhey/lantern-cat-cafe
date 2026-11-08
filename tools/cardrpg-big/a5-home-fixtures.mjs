@@ -27,7 +27,7 @@ try{
   ['all-stars',allStars,'Synthetic UI fixture: existing star receipts completed solely to test the fallback. No reward/pacing claim.'],
  ]){
   const path=out+'/'+name+'.save',code=R.exportSave(state);await writeFile(path,code+'\n');
-  const imported=R.importSave(code);assert(imported.ok,imported.error);
+  const imported=R.importSave(code);assert.equal(R.exportSave(imported),code);
   checks.push({name,path,method,sha256:sha(code+'\n'),stateSha256:sha(JSON.stringify(state)),cleared:state.cleared,stars:R.starCountV4(state)});
  }
  await writeFile(out+'/checks.json',JSON.stringify({passed:true,origin,checks,battles},null,2)+'\n');
