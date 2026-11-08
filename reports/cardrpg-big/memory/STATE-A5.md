@@ -300,3 +300,5 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - 2026-11-08T22:05:00.346532+00:00: Published DRAFT401 https://github.com/ntbaoheyhey/taskbar-hero/pull/401 on400, evidence7c6e0618a. Original source/gates unchanged. Home43 is next; original Home02 final lease and automatic auditor preserved.
 
 - 2026-11-08T22:05:43.322788+00:00: Home43 exact registered sources/tools adopted after Equipment401 publication. Inputs verified before copy; original earned-minute42 hash preserved. No combat/save/worker change or new elapsed journey.
+
+- 2026-11-08T22:15:18.998855+00:00: Original Home02 completed60.7786active minutes/58battles/60captures; automatic audit and independent receipt hashesPASS. At30min72meaningfuloffers/21rewards/13celebrations, maxgap916.484s andcombat958.568s (+6.90% versusH0): cadence/deadtimeMISS. Day1selectedcatMochi8/Soot1/Clover1 explains policy limits, not a human inference. Home43 source sixchecksPASS1771web/1192rules/421E2E/build; exact old mismatch reproduced, three-width UI active. Prepare44 unadopted draft/tools only; no new acceptance.

@@ -14,9 +14,9 @@ Runtime source: `c0543531a` (actual-equipment boss comparison; combat unchanged)
 |---|---|---|---|
 |First fight ≤25s|H0 original opening retained|12.775–12.999s; later anchored regression13.067–13.139s|PASS, three widths|
 |Place, equip and invite by3min; scouted map by5min|Developer controls and form preparation|Placement/invite/equip19.590–26.939s; map41.862–49.171s|PASS, automated clicks without reading time|
-|Meaningful choice offers,0–5/30/60min|17 /75 /98|15 /70 /not measured|PASS≥5at30min; fixed-policy proxy|
-|Rewards / celebrations,0–5/30/60min|8/18/18 rewards;4/6/6 celebrations|11/20 rewards;8/11 celebrations at5/30min; largest gap749.2s|MISS:≤300s target|
-|Combat dead time reduced ≥40%|128.642 /896.670 /1886.883s; max30min reward gap775.271s|120.6 /907.7s at5/30min;30min increases1.2%|MISS:≥40%reduction|
+|Meaningful choice offers,0–5/30/60min|17 /75 /98|15 /72 /98|PASS≥5at30min; Home02 fixed-policy proxy|
+|Rewards / celebrations,0–5/30/60min|8/18/18 rewards;4/6/6 celebrations|11/21/21 rewards;8/13/13 celebrations at5/30/60min; largest30min gap916.5s|MISS:≤300s target|
+|Combat dead time reduced ≥40%|128.642 /896.670 /1886.883s; max30min reward gap775.271s|120.5 /958.6 /2044.8s;30min increases6.9%|MISS:≥40%reduction|
 |Player controls, copy and navigation|Six visible developer buttons; verbose forms|dev=1 gating, keyboard/click placement, filtered equipment actions|C1 functional PASS; wording is not retention evidence|
 |Named result, available retry, forecast|Generic result advice|Named contributions; one available change;20-seed worker, CPU1 max56.8ms on boss route|E1 functional PASS; advice can worsen a retry|
 |Day7 real-click x1 boss|H0 defeat52.368s|Victory64.921s; same route loses with the old plan|PASS, one paired earned fixture on anchored source|
@@ -80,3 +80,5 @@ Remaining work: B1/B2 numeric closure and display calibration; fresh registered 
 [Reply-pressure39](b1/reply-pressure-39/RESULTS.md): all three arms rejected under the predeclared screen; worst piece gains32/50/44pp. The middle pressure restores average difficulty but retains99piece misses. No production adoption, extra acceptance samples or wider rerun. [Pressure strata42](b1/pressure-strata-42/RESULTS.md) reconstructs the old spread candidates without new battles: conditional gains still vary within the five registered pressure groups; smaller bins and multiple comparisons limit interpretation.
 
 [Equipment comparison](E1-EQUIPMENT-FORECAST.md): actual whole-crew equip/transfer against a selected boss and band;36browserchecks/24captures, worker stale-delivery/CSP fallback PASS. ON20,927,337bytes/SHA0a2c5f1d; CPU1max79.9ms. Contextual TRAIN correlations0.738/0.754/0.729 overlap seeds and do not close static-display or fresh acceptance gates.
+
+[Original Home02 journey](E2-HOME-ENGAGEMENT.md) completed60.78active minutes/58battles/60captures on immutable growth994d84056. Receipt auditPASS; cadence/dead-timeMISS remains. Home01 stays retained separately. No new human retention claim or acceptance sample.
