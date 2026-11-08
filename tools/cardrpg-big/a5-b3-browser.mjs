@@ -6,7 +6,7 @@ import {createHash} from 'node:crypto';
 import assert from 'node:assert/strict';
 const width=Number(process.argv[2]||1280),height=width===1440?900:width===1024?600:720;
 assert([1024,1280,1440].includes(width));
-const artifact=resolve('/tmp/cardrpg-a5-b3-adopted/index.html'),out=`reports/cardrpg-big/a5/b3/browser-${width}`;
+const artifact=resolve(process.env.A5_B3_ARTIFACT||'/tmp/cardrpg-a5-b3-adopted/index.html'),out=`${process.env.A5_B3_BROWSER_OUT||'reports/cardrpg-big/a5/b3'}/browser-${width}`;
 await mkdir(out,{recursive:true});
 const browser=await chromium.launch({channel:'chromium',headless:true,args:['--use-angle=metal']});
 const page=await browser.newPage({viewport:{width,height},reducedMotion:'reduce'}),errors=[],remote=[],captures=[],checks=[];
@@ -14,7 +14,12 @@ const read=()=>page.evaluate(()=>window.__depthReview.state),button=name=>page.g
 const nav=async name=>page.getByRole('navigation',{name:'Cafe screens'}).getByRole('button',{name,exact:true}).click();
 page.on('pageerror',e=>errors.push(String(e)));page.on('request',r=>{if(/^https?:/.test(r.url()))remote.push(r.url());});
 async function capture(name,selector){
- await page.locator(selector).scrollIntoViewIfNeeded();
+ if(selector==='.dp-v4-selector') await page.locator(selector).evaluate(e=>e.scrollIntoView({block:'start',behavior:'instant'}));
+ else await page.locator(selector).scrollIntoViewIfNeeded();
+ if(selector==='.dp-v4-selector') {
+  const heading=await page.locator(selector+' h2').boundingBox(),sticky=await page.locator('.dp-invitation-fairness').boundingBox();
+  assert(heading&&sticky&&heading.y>=sticky.y+sticky.height,`${name}: sticky odds cover the chosen reward heading`);
+ }
  const metrics=await page.evaluate(selector=>{
   const rgb=s=>(s.match(/[\d.]+/g)||[]).map(Number),luma=c=>c.slice(0,3).map(x=>x/255).map(x=>x<=.04045?x/12.92:((x+.055)/1.055)**2.4).reduce((n,x,i)=>n+x*[.2126,.7152,.0722][i],0);
   const contrast=[...document.querySelectorAll(selector+' *')].filter(e=>e.getClientRects().length&&!e.children.length&&e.textContent.trim()&&!e.matches('option,progress')).map(e=>{
