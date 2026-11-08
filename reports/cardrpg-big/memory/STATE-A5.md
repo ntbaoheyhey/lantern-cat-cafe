@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-B3 DRAFT386 published and mirrored; branchcodex/cardrpg-a5-b2-kit-2026-11-08. Fix existing V4 fatal-reflection/energy-target crash;2focused scenarios and21combinedtestsPASS, exactcapturedreplay/alllegalpreviewPASS. Scentpolicy remains isolated, not production.
+B3 draft386 preserved; current branch codex/cardrpg-a5-b2-kit-2026-11-08, runtime db69140eb. Fatal-reflection guard passes focused regression/replay; full six gates and OFF in progress. Scent06a completed and rejected: Soot44.16%→42.96%; no policy adoption.
 ## NEXT
-Scentpolicy06a runs original1840commoncells TRAIN1–50 with the guard only; compare all06/crash07prefixes. Original06crash retained. Assess paired outcomes before any policy adoption; then sixgates/OFF/targetedbrowser for B2 phase. B1/B2/display/cadence/startup/Z stillopen. Fresh20001–20500UNUSED. Stack376→377→379→381→382→383→384→385→386.
+Preserve running jobs: guard gates tool56843, OFF51952; read-only support-kit08 tool20368; two isolated Soot reach09 variants tool60289. Review completed receipts before adopting any kit. Production runtime stays guard-only during source checks. B1/B2/display/cadence/startup/Z remain open. Fresh20001–20500 UNUSED. Stack376→377→379→381→382→383→384→385→386.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -176,3 +176,5 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - Published B3 DRAFT https://github.com/ntbaoheyhey/taskbar-hero/pull/386 on385, closure5bd68a836/runtime6c0a04592. No merge/deploy. Scentpolicy06slice2 failed in existing energy effect after no living ally remains; original log retained. Registered crash07 captures exact failedTRAIN fixture/legal preview on unchanged candidate source and retained checkpoint; no production candidate adopted.
 
 - 2026-11-08T16:22:53.026606+00:00: B3sync9e0a73afc/ledger5353ec9d2 pushed. Exact crash07: mallow,brioche,velvet/scene5/seed21/round10; Velvet4HP dies to Kettle reflection during stolenflame, then energyshield hasno recipient. Productionguard skipsmissingally only; unchangedOFFbranch; existingally12shield retained. Unit red-before1failure/11pass, after21pass; actualprefix JSON replay andalllegalactionpreviewsPASS. Scentpolicy06a registered exact06plusguard, all1840originalcells, no policy/stat/kitretune, preserve originalcrash and compare prefixes. Owned coordinator tool84045, /tmp/cardrpg-a5-scent-policy-06a/coordinator.log.
+
+- 2026-11-08T16:32:37.523747+00:00: resumed existing Scent06a coordinator without duplicate work; all1840cells complete. Exact63371original06 and76670crash07prefix outcomes preserved. Soot−1.19545pp (1685improved/1948worsened), seven of eight scenes worsen; reject evaluator. Separate missing-recipient fix remains production. Guard six gates/OFF source-bound to db69140eb running under lock. Read-only support08 measures1088original cells with exact baseline parity. Registered reach09 before sampling: rear-target access alone versus access+oneCrumb after successful mark, original AI; two1840cell TRAIN1–50 candidates. No production kit change or acceptance.
