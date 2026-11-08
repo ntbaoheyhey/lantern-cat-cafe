@@ -1,0 +1,438 @@
+{
+  "passed": true,
+  "origin": {
+    "at": "2026-11-08T21:51:11.660691+00:00",
+    "source": "c0543531a",
+    "origin": "reports/cardrpg-big/a5/engagement/home-02/session/state-checkpoint.json",
+    "originSha256": "d3ee8953915b54a00bd0de3bc88217d3db97e2dff983b931479049363eb919fa",
+    "method": "Home43 UI regression only. Preserve earned minute42 checkpoint and public-command continuation; separate synthetic band/star fixtures explicitly labelled. No combat tuning or acceptance sampling.",
+    "paths": {
+      "/tmp/cardrpg-a5-home-stars-43/HomeV4.test.tsx": "df678dfa62d500f155a0cd9edeee8ee82f0c73cb095bae7c8dfdfe2b3fa6ee44",
+      "/tmp/cardrpg-a5-home-stars-43/HomeV4.tsx": "8a2ceb251c53be8b26101cd941eeb6f5f945f57e20ec206e2b2480b2486865dc",
+      "/tmp/cardrpg-a5-home-stars-43/earned-minute42.json": "d3ee8953915b54a00bd0de3bc88217d3db97e2dff983b931479049363eb919fa",
+      "/tmp/cardrpg-a5-home-stars-43/fixtures.mjs": "6cf793f90b171672e68f8de091d2335865b2e95b925eb0924bbc2e5bd070b185",
+      "/tmp/cardrpg-a5-home-stars-43/browser.mjs": "38a6f57fde13fbd9190fc3c2f0f422ec624aa4acc9374db189288e50203eb126",
+      "/tmp/cardrpg-a5-home-stars-43/checks.mjs": "8e3a5e3a36865e8d05824f92030abca7f4d61ce608285b5fe06c2e37984caa42",
+      "/tmp/cardrpg-a5-home-stars-43/close.mjs": "d454668b07ad95d89e8cc38ab664b73146ab43c5aa71f2cee775bbdeff474a3b"
+    },
+    "preparedChecksAt": "2026-11-08T21:52:58.379995+00:00"
+  },
+  "checks": [
+    {
+      "name": "earned",
+      "path": "reports/cardrpg-big/a5/e2-home-stars/fixtures/earned.save",
+      "method": "Public-command continuation of the original minute42 state; no additional grants or level injection.",
+      "sha256": "cff356af1238a273e0e098929deafadf296d35a6935c7bd15b832a4895e349e7",
+      "stateSha256": "f8244e33e328cd392c6143f3fedd7c66cebb372705500d47b334dac47e05d69b"
+    },
+    {
+      "name": "bands",
+      "path": "reports/cardrpg-big/a5/e2-home-stars/fixtures/bands.save",
+      "method": "Synthetic UI fixture: owned levels5 and two partial star receipts to test exact band2/band4 selection.",
+      "sha256": "2abfb0ef439db3caeb9039b1be091eab5ea5c5fb13d209f041c7ddce6e87066e",
+      "stateSha256": "0937412625dd639dcaeda8d3454a40f7b49789610927579bad8b04088abb5785"
+    },
+    {
+      "name": "next",
+      "path": "reports/cardrpg-big/a5/e2-home-stars/fixtures/next.save",
+      "method": "Synthetic UI fixture: only chapter1 cleared, one partial chapter1 star; chapter2 must take priority.",
+      "sha256": "8e6f034421fb9c8ddf3229acc3ca4fce0c74b5fd751b527ff16d7b93c94d51e7",
+      "stateSha256": "fd47a800c17adde0d08ccd527b82c8838eb60be4428db2dffab624a63e2a1aae"
+    },
+    {
+      "name": "above",
+      "path": "reports/cardrpg-big/a5/e2-home-stars/fixtures/above.save",
+      "method": "Synthetic UI fixture: a band5 star above the current crew ceiling1 must not be advertised as available.",
+      "sha256": "2ef3d8e356c24403f3c7995a21584640c4a1d763ea5a951059b022436c9cf44a",
+      "stateSha256": "ba0acd490276cbcdcd5bce4766ec36ba05b5304e31aebc072abcb475e18c0c89"
+    },
+    {
+      "name": "full",
+      "path": "reports/cardrpg-big/a5/e2-home-stars/fixtures/full.save",
+      "method": "Synthetic UI fixture: every recorded star complete; no false first-star instruction.",
+      "sha256": "add7f3c3095ceb712b1bd03d5c76c27b97170086f37bdd68a2dd10fe7d532fc2",
+      "stateSha256": "2558f8154f869405d6083823dbce7d1b5233ea7928a172eb8bebb8ebd3783e04"
+    },
+    {
+      "name": "active-band",
+      "path": "reports/cardrpg-big/a5/e2-home-stars/fixtures/active-band.save",
+      "method": "Public route start from the synthetic bands fixture; band2 remains selected while the crew ceiling is5.",
+      "sha256": "ef4487d6e3be8ebbaa977f50491aa04a76fd9585d62150573d6efd98fbb85514",
+      "stateSha256": "f518159d411c2eeb9764c4b671a88c6116a5659aaf2c294b1669292fbdf4c7fe"
+    }
+  ],
+  "battles": [
+    {
+      "setup": {
+        "seed": 2080527508,
+        "chapter": 3,
+        "cats": [
+          {
+            "id": "mochi",
+            "stats": {
+              "hp": 641,
+              "attack": 60,
+              "defense": 37,
+              "critBp": 800,
+              "critDamageBp": 5000,
+              "effectHitBp": 0,
+              "effectResistBp": 0,
+              "healingBp": 400,
+              "shieldBp": 0,
+              "initiative": 8
+            },
+            "skills": [
+              "mochi-1",
+              "mochi-2",
+              "mochi-3",
+              "mochi-4"
+            ],
+            "row": "front",
+            "equipment": [
+              "moonwick-weapon-common",
+              "hearthloom-outfit-common"
+            ],
+            "effects": [],
+            "bonuses": {}
+          },
+          {
+            "id": "soot",
+            "stats": {
+              "hp": 460,
+              "attack": 71,
+              "defense": 22,
+              "critBp": 1200,
+              "critDamageBp": 5000,
+              "effectHitBp": 0,
+              "effectResistBp": 0,
+              "healingBp": 400,
+              "shieldBp": 0,
+              "initiative": 6
+            },
+            "skills": [
+              "soot-1",
+              "soot-2",
+              "soot-3"
+            ],
+            "row": "rear",
+            "equipment": [
+              "moonwick-weapon-rare",
+              "moonwick-outfit-common"
+            ],
+            "effects": [
+              "marked-break"
+            ],
+            "bonuses": {
+              "attack": 1
+            }
+          },
+          {
+            "id": "clover",
+            "stats": {
+              "hp": 384,
+              "attack": 42,
+              "defense": 20,
+              "critBp": 500,
+              "critDamageBp": 5000,
+              "effectHitBp": 0,
+              "effectResistBp": 0,
+              "healingBp": 400,
+              "shieldBp": 0,
+              "initiative": 4
+            },
+            "skills": [
+              "clover-1",
+              "clover-2",
+              "clover-3"
+            ],
+            "row": "rear",
+            "equipment": [
+              "mossbrew-weapon-common",
+              "mossbrew-outfit-common"
+            ],
+            "effects": [
+              "healing-cleanse"
+            ],
+            "bonuses": {}
+          }
+        ],
+        "enemies": [
+          "needle-moth",
+          "teacup-healer"
+        ],
+        "hp": {
+          "mochi": 641,
+          "soot": 460,
+          "clover": 384
+        },
+        "boons": {
+          "shelter-4": 1,
+          "ember-3": 2
+        },
+        "upgrades": {},
+        "mutator": "",
+        "gameplayV4": true,
+        "challengeLevel": 1,
+        "enemyStats": {
+          "button-guard": {
+            "hp": 120,
+            "attack": 19,
+            "defense": 18
+          },
+          "sock-skipper": {
+            "hp": 175,
+            "attack": 22,
+            "defense": 8
+          },
+          "spool-ram": {
+            "hp": 315,
+            "attack": 30,
+            "defense": 16
+          },
+          "needle-moth": {
+            "hp": 165,
+            "attack": 17,
+            "defense": 6
+          },
+          "teacup-healer": {
+            "hp": 191,
+            "attack": 14,
+            "defense": 10
+          },
+          "kettle-knight": {
+            "hp": 357,
+            "attack": 25,
+            "defense": 35
+          },
+          "yarn-giant": {
+            "hp": 861,
+            "attack": 99,
+            "defense": 22
+          },
+          "binding-thread": {
+            "hp": 96,
+            "attack": 10,
+            "defense": 0
+          },
+          "practice-cushion": {
+            "hp": 58,
+            "attack": 14,
+            "defense": 0
+          },
+          "pollen-scout": {
+            "hp": 284,
+            "attack": 22,
+            "defense": 10
+          },
+          "rain-spool": {
+            "hp": 1103,
+            "attack": 110,
+            "defense": 24
+          },
+          "crumb-sentinel": {
+            "hp": 378,
+            "attack": 27,
+            "defense": 22
+          },
+          "pantry-crown": {
+            "hp": 1068,
+            "attack": 138,
+            "defense": 25
+          }
+        },
+        "plan": {
+          "focus": "finish",
+          "care": "protect"
+        }
+      },
+      "result": "party",
+      "replaySha256": "e9d80f54f299d1d961aba231081af7eca46504139b34a467625fabf85bf4ee5b"
+    },
+    {
+      "setup": {
+        "seed": 511631122,
+        "chapter": 3,
+        "cats": [
+          {
+            "id": "mochi",
+            "stats": {
+              "hp": 641,
+              "attack": 60,
+              "defense": 37,
+              "critBp": 800,
+              "critDamageBp": 5000,
+              "effectHitBp": 0,
+              "effectResistBp": 0,
+              "healingBp": 400,
+              "shieldBp": 0,
+              "initiative": 8
+            },
+            "skills": [
+              "mochi-1",
+              "mochi-2",
+              "mochi-3",
+              "mochi-4"
+            ],
+            "row": "front",
+            "equipment": [
+              "moonwick-weapon-common",
+              "hearthloom-outfit-common"
+            ],
+            "effects": [],
+            "bonuses": {}
+          },
+          {
+            "id": "soot",
+            "stats": {
+              "hp": 460,
+              "attack": 71,
+              "defense": 22,
+              "critBp": 1200,
+              "critDamageBp": 5000,
+              "effectHitBp": 0,
+              "effectResistBp": 0,
+              "healingBp": 400,
+              "shieldBp": 0,
+              "initiative": 6
+            },
+            "skills": [
+              "soot-1",
+              "soot-2",
+              "soot-3"
+            ],
+            "row": "rear",
+            "equipment": [
+              "moonwick-weapon-rare",
+              "moonwick-outfit-common"
+            ],
+            "effects": [
+              "marked-break"
+            ],
+            "bonuses": {
+              "attack": 1
+            }
+          },
+          {
+            "id": "clover",
+            "stats": {
+              "hp": 384,
+              "attack": 42,
+              "defense": 20,
+              "critBp": 500,
+              "critDamageBp": 5000,
+              "effectHitBp": 0,
+              "effectResistBp": 0,
+              "healingBp": 400,
+              "shieldBp": 0,
+              "initiative": 4
+            },
+            "skills": [
+              "clover-1",
+              "clover-2",
+              "clover-3"
+            ],
+            "row": "rear",
+            "equipment": [
+              "mossbrew-weapon-common",
+              "mossbrew-outfit-common"
+            ],
+            "effects": [
+              "healing-cleanse"
+            ],
+            "bonuses": {}
+          }
+        ],
+        "enemies": [
+          "pantry-crown"
+        ],
+        "hp": {
+          "mochi": 641,
+          "soot": 460,
+          "clover": 384
+        },
+        "boons": {
+          "shelter-4": 1,
+          "ember-3": 2,
+          "garden-3": 1
+        },
+        "upgrades": {},
+        "mutator": "",
+        "gameplayV4": true,
+        "challengeLevel": 1,
+        "enemyStats": {
+          "button-guard": {
+            "hp": 120,
+            "attack": 19,
+            "defense": 18
+          },
+          "sock-skipper": {
+            "hp": 175,
+            "attack": 22,
+            "defense": 8
+          },
+          "spool-ram": {
+            "hp": 315,
+            "attack": 30,
+            "defense": 16
+          },
+          "needle-moth": {
+            "hp": 165,
+            "attack": 17,
+            "defense": 6
+          },
+          "teacup-healer": {
+            "hp": 191,
+            "attack": 14,
+            "defense": 10
+          },
+          "kettle-knight": {
+            "hp": 357,
+            "attack": 25,
+            "defense": 35
+          },
+          "yarn-giant": {
+            "hp": 861,
+            "attack": 99,
+            "defense": 22
+          },
+          "binding-thread": {
+            "hp": 96,
+            "attack": 10,
+            "defense": 0
+          },
+          "practice-cushion": {
+            "hp": 58,
+            "attack": 14,
+            "defense": 0
+          },
+          "pollen-scout": {
+            "hp": 284,
+            "attack": 22,
+            "defense": 10
+          },
+          "rain-spool": {
+            "hp": 1103,
+            "attack": 110,
+            "defense": 24
+          },
+          "crumb-sentinel": {
+            "hp": 378,
+            "attack": 27,
+            "defense": 22
+          },
+          "pantry-crown": {
+            "hp": 1068,
+            "attack": 138,
+            "defense": 25
+          }
+        },
+        "plan": {
+          "focus": "finish",
+          "care": "protect"
+        }
+      },
+      "result": "party",
+      "replaySha256": "2bfd6108bfe67e84a151d8f28aa2449a88aa839b14f05a4e01e24a06b153b5bb"
+    }
+  ]
+}

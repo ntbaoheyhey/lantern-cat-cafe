@@ -48,15 +48,58 @@ it('opens the next unlocked chapter and never replaces an active route', () => {
  expect(m.screen).toBe('map'); expect(R.exportSave(m.state)).toBe(before);
 });
 
-it('offers a familiar route after all chapters and a new stop after all recorded stars', () => {
+it('revisits the chapter named by the next star after clearing all chapters', () => {
  const m = ready(); m.state.cleared = [1, 2, 3];
  R.recordNodeStarsV4(m.state, { key: '1/1/0-0/battle', chapter: 1, band: 1, nodeId: '0-0', kind: 'battle', conditions: [true, true, true] });
  const ui = render(<HomeV4 m={m} />);
- expect(home().getByText('Explore another stop for a new star.')).toBeTruthy();
+ expect(home().getByText('Explore Midnight Pantry for a new star.')).toBeTruthy();
  expect(home().queryByText('Win your first route encounter.')).toBeNull();
  m.state.v4!.journey!.stars['1/1/0-0/battle']!.conditions = [true, false, true];
  ui.rerender(<HomeV4 m={m} />);
- expect(home().getByText('Tangled Cafe, stop 1: Win without a cat falling.')).toBeTruthy();
- fireEvent.click(home().getByRole('button', { name: 'Revisit Midnight Pantry →' }));
- expect(m.state.run?.chapter).toBe(3);
+ expect(home().getByText('Tangled Cafe · band 1, stop 1: Win without a cat falling.')).toBeTruthy();
+ fireEvent.click(home().getByRole('button', { name: 'Revisit Tangled Cafe →' }));
+ expect(m.state.run?.chapter).toBe(1); expect(m.state.run?.challengeLevel).toBe(1);
+});
+
+
+it('keeps each star hint and primary destination on the explicitly selected band', () => {
+ const m = ready(); m.state.cleared = [1, 2, 3];
+ for (const cat of m.state.account.cards) cat.level = 5;
+ R.recordNodeStarsV4(m.state, { key: '1/2/0-0/battle', chapter: 1, band: 2, nodeId: '0-0', kind: 'battle', conditions: [true, false, true] });
+ R.recordNodeStarsV4(m.state, { key: '2/4/6-0/boss', chapter: 2, band: 4, nodeId: '6-0', kind: 'boss', conditions: [true, true, false] });
+ const money = { ...m.state.account.currencies };
+ render(<HomeV4 m={m} />);
+ expect((screen.getByRole('combobox', { name: 'Challenge band' }) as HTMLSelectElement).value).toBe('2');
+ expect(home().getByText('Tangled Cafe · band 2, stop 1: Win without a cat falling.')).toBeTruthy();
+ fireEvent.change(screen.getByRole('combobox', { name: 'Challenge band' }), { target: { value: '4' } });
+ expect(home().getByText('Rooftop Orchard · band 4, stop 7: Win within 10 rounds.')).toBeTruthy();
+ expect(home().queryByText(/Tangled Cafe · band/)).toBeNull();
+ fireEvent.click(home().getByRole('button', { name: 'Revisit Rooftop Orchard →' }));
+ expect(m.state.run?.chapter).toBe(2); expect(m.state.run?.challengeLevel).toBe(4);
+ expect(m.state.account.currencies).toEqual(money);
+});
+
+it('prioritizes an uncleared chapter and only shows a star from that destination', () => {
+ const m = ready(); m.state.cleared = [1];
+ R.recordNodeStarsV4(m.state, { key: '1/1/0-0/battle', chapter: 1, band: 1, nodeId: '0-0', kind: 'battle', conditions: [true, false, true] });
+ render(<HomeV4 m={m} />);
+ expect(home().getByText('Explore Rooftop Orchard for a new star.')).toBeTruthy();
+ expect(home().queryByText(/Tangled Cafe · band/)).toBeNull();
+ fireEvent.click(home().getByRole('button', { name: 'Explore Rooftop Orchard →' }));
+ expect(m.state.run?.chapter).toBe(2);
+});
+
+it('ignores stars above the current crew ceiling and keeps the active route band', () => {
+ const m = ready(); m.state.cleared = [1, 2, 3];
+ R.recordNodeStarsV4(m.state, { key: '1/5/0-0/battle', chapter: 1, band: 5, nodeId: '0-0', kind: 'battle', conditions: [true, false, true] });
+ const ui = render(<HomeV4 m={m} />);
+ expect(home().queryByText(/Tangled Cafe · band/)).toBeNull();
+ expect(home().getByRole('button', { name: 'Revisit Midnight Pantry →' })).toBeTruthy();
+ for (const cat of m.state.account.cards) cat.level = 5;
+ m.start(2, 'campaign', 2); m.go('hub');
+ const before = R.exportSave(m.state); ui.rerender(<HomeV4 m={m} />);
+ expect((screen.getByRole('combobox', { name: 'Challenge band' }) as HTMLSelectElement).value).toBe('2');
+ expect((screen.getByRole('combobox', { name: 'Challenge band' }) as HTMLSelectElement).disabled).toBe(true);
+ fireEvent.click(home().getByRole('button', { name: 'Continue your route →' }));
+ expect(m.screen).toBe('map'); expect(R.exportSave(m.state)).toBe(before);
 });
