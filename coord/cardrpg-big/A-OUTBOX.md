@@ -858,3 +858,10 @@ Five source gates+buildPASS (1737web/1106rules/421E2E); native6/receipt3PASS;30t
 P1 remainsPARTIAL:18defaultcold observations retained, CPU4taskmedian/max improve but bothCPU1configsMISS; offlineopening+battle266.6/249.9/183.3msMISS120. NarrowerHubintervalnever substitutes.
 Continuouspolicy04 TRAIN rejected:39/120 fourthslotmisses,worst90/38pp. Combat remainsA4; fresh20001–20500unused. No B/protected edits/modelhelpers/merge/deploy.
 B3 correctedreward90account replay running originalseeds/4050statehashchecks; odds/cap UI wiring next after parity. Bearnedreceipt forwarding still queuedE2; no B renderer adoption.
+
+## 2026-11-08T07:48:44Z A5-B3 CHECKPOINT
+Adopted reward-only source dd216ebf9 after corrected90-account/4050-day exact parity; combat remains A4 and fresh20001–20500 unused.
+V4 shared stamps360/day, selector24, soft13/hard24/+700bp; actual odds/caps/selector UI and tomorrow allowance wired. Old credits survive mode toggles.
+All-source Legendary medians casual6/regular5/heavy5; selectors11/9/9; all earned ratios<=2.555857x. Three receipt testsPASS; no day7 retry/post-B1 acceptance claim.
+Source gates, fresh OFF8250 and targeted earned-selector/three-width UI checks now running under sharedlock,7s handoffs. No B source adoption or edits; exact reveal forwarding remains E2.
+Current stack376→377→379→381; reward draft pending validation. No model helpers, merge, deploy or protected changes.
