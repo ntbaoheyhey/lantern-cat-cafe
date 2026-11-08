@@ -1,0 +1,500 @@
+{
+  "passed": true,
+  "width": 1440,
+  "height": 900,
+  "artifact": "/tmp/cardrpg-a5-home-artifact/index.html",
+  "sha256": "6854ef89b7c1e4c6fac912fef25dca9bbd915a792409e6fb52227a15fba46900",
+  "checks": [
+    "baseline: Skip lesson, welcome, paid crafting/equip, Home keyboard primary starts chapter1 without extra spending",
+    "baseline: exact earned active route continues without replacing or settling it",
+    "baseline: next unlocked chapter uses selected band2 in a labelled synthetic UI fixture",
+    "baseline: all recorded stars earned gives a new-stop goal, not a first-star instruction",
+    "look: Skip lesson, welcome, paid crafting/equip, Home keyboard primary starts chapter1 without extra spending",
+    "look: exact earned active route continues without replacing or settling it",
+    "look: next unlocked chapter uses selected band2 in a labelled synthetic UI fixture",
+    "look: all recorded stars earned gives a new-stop goal, not a first-star instruction"
+  ],
+  "captures": [
+    {
+      "look": "baseline",
+      "name": "fresh",
+      "path": "reports/cardrpg-big/a5/e2-home/browser-1440-attempt-1/baseline-fresh.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "TONIGHT'S LITTLE ADVENTURE",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "Keep the lantern warm.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Place a sturdy companion in front. Try the practice table.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Try the practice table →",
+          "ratio": 9.237546476333335
+        },
+        {
+          "text": "Skip lesson",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Next star · 0 found",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Win your first route encounter.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "The kettle",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Ready in 15 minutes.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Tomorrow",
+          "ratio": 6.858421081163746
+        }
+      ],
+      "primaryVisible": true,
+      "text": "TONIGHT'S LITTLE ADVENTURE\nKeep the lantern warm.\n\nPlace a sturdy companion in front. Try the practice table.\n\nTry the practice table →Skip lesson\n\nNext star · 0 found\nWin your first route encounter.\n\nThe kettle\nReady in 15 minutes.\n\nTomorrow Compare a spare piece. Equip the one that helps your crew. Two cafe services return; earn up to 360 stamps across tomorrow’s activities.",
+      "loading": 0
+    },
+    {
+      "look": "baseline",
+      "name": "ready",
+      "path": "reports/cardrpg-big/a5/e2-home/browser-1440-attempt-1/baseline-ready.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "TONIGHT'S LITTLE ADVENTURE",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "Keep the lantern warm.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Your crew is ready. Explore Tangled Cafe and learn the boss’s tricks.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Explore Tangled Cafe →",
+          "ratio": 9.237546476333335
+        },
+        {
+          "text": "Next star · 0 found",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Win your first route encounter.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "The kettle",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Ready in 15 minutes.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Tomorrow",
+          "ratio": 6.858421081163746
+        }
+      ],
+      "primaryVisible": true,
+      "text": "TONIGHT'S LITTLE ADVENTURE\nKeep the lantern warm.\n\nYour crew is ready. Explore Tangled Cafe and learn the boss’s tricks.\n\nExplore Tangled Cafe →\n\nNext star · 0 found\nWin your first route encounter.\n\nThe kettle\nReady in 15 minutes.\n\nTomorrow Compare a spare piece. Equip the one that helps your crew. Two cafe services return; earn up to 360 stamps across tomorrow’s activities.",
+      "loading": 0
+    },
+    {
+      "look": "baseline",
+      "name": "active",
+      "path": "reports/cardrpg-big/a5/e2-home/browser-1440-attempt-1/baseline-active.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "TONIGHT'S LITTLE ADVENTURE",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "Keep the lantern warm.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Your crew is waiting at the next stop.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Continue your route →",
+          "ratio": 9.237546476333335
+        },
+        {
+          "text": "Next star · 16 found",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Tangled Cafe, stop 2: Visit with a four-mark crew job active.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "The kettle",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Ready in 16 minutes.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Tomorrow",
+          "ratio": 6.858421081163746
+        }
+      ],
+      "primaryVisible": true,
+      "text": "TONIGHT'S LITTLE ADVENTURE\nKeep the lantern warm.\n\nYour crew is waiting at the next stop.\n\nContinue your route →\n\nNext star · 16 found\nTangled Cafe, stop 2: Visit with a four-mark crew job active.\n\nThe kettle\nReady in 16 minutes.\n\nTomorrow Compare a spare piece. Equip the one that helps your crew. Two cafe services return; earn up to 360 stamps across tomorrow’s activities.",
+      "loading": 0
+    },
+    {
+      "look": "baseline",
+      "name": "next-chapter",
+      "path": "reports/cardrpg-big/a5/e2-home/browser-1440-attempt-1/baseline-next-chapter.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "TONIGHT'S LITTLE ADVENTURE",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "Keep the lantern warm.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Your crew is ready. Explore Rooftop Orchard and learn the boss’s tricks.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Explore Rooftop Orchard →",
+          "ratio": 9.237546476333335
+        },
+        {
+          "text": "Next star · 17 found",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Tangled Cafe, stop 2: Visit with a four-mark crew job active.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "The kettle",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Ready in 16 minutes.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Tomorrow",
+          "ratio": 6.858421081163746
+        }
+      ],
+      "primaryVisible": true,
+      "text": "TONIGHT'S LITTLE ADVENTURE\nKeep the lantern warm.\n\nYour crew is ready. Explore Rooftop Orchard and learn the boss’s tricks.\n\nExplore Rooftop Orchard →\n\nNext star · 17 found\nTangled Cafe, stop 2: Visit with a four-mark crew job active.\n\nThe kettle\nReady in 16 minutes.\n\nTomorrow Compare a spare piece. Equip the one that helps your crew. Two cafe services return; earn up to 360 stamps across tomorrow’s activities.",
+      "loading": 0
+    },
+    {
+      "look": "baseline",
+      "name": "new-star",
+      "path": "reports/cardrpg-big/a5/e2-home/browser-1440-attempt-1/baseline-new-star.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "TONIGHT'S LITTLE ADVENTURE",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "Keep the lantern warm.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Your crew is ready. Explore Rooftop Orchard and learn the boss’s tricks.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Explore Rooftop Orchard →",
+          "ratio": 9.237546476333335
+        },
+        {
+          "text": "Next star · 21 found",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Explore another stop for a new star.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "The kettle",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Ready in 16 minutes.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Tomorrow",
+          "ratio": 6.858421081163746
+        }
+      ],
+      "primaryVisible": true,
+      "text": "TONIGHT'S LITTLE ADVENTURE\nKeep the lantern warm.\n\nYour crew is ready. Explore Rooftop Orchard and learn the boss’s tricks.\n\nExplore Rooftop Orchard →\n\nNext star · 21 found\nExplore another stop for a new star.\n\nThe kettle\nReady in 16 minutes.\n\nTomorrow Compare a spare piece. Equip the one that helps your crew. Two cafe services return; earn up to 360 stamps across tomorrow’s activities.",
+      "loading": 0
+    },
+    {
+      "look": "look",
+      "name": "fresh",
+      "path": "reports/cardrpg-big/a5/e2-home/browser-1440-attempt-1/look-fresh.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "TONIGHT'S LITTLE ADVENTURE",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Keep the lantern warm.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Place a sturdy companion in front. Try the practice table.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Try the practice table →",
+          "ratio": 9.509076954893759
+        },
+        {
+          "text": "Skip lesson",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Next star · 0 found",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Win your first route encounter.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "The kettle",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Ready in 15 minutes.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Tomorrow",
+          "ratio": 8.028038840639192
+        }
+      ],
+      "primaryVisible": true,
+      "text": "TONIGHT'S LITTLE ADVENTURE\nKeep the lantern warm.\n\nPlace a sturdy companion in front. Try the practice table.\n\nTry the practice table →Skip lesson\n\nNext star · 0 found\nWin your first route encounter.\n\nThe kettle\nReady in 15 minutes.\n\nTomorrow Compare a spare piece. Equip the one that helps your crew. Two cafe services return; earn up to 360 stamps across tomorrow’s activities.",
+      "loading": 0
+    },
+    {
+      "look": "look",
+      "name": "ready",
+      "path": "reports/cardrpg-big/a5/e2-home/browser-1440-attempt-1/look-ready.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "TONIGHT'S LITTLE ADVENTURE",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Keep the lantern warm.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Your crew is ready. Explore Tangled Cafe and learn the boss’s tricks.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Explore Tangled Cafe →",
+          "ratio": 9.509076954893759
+        },
+        {
+          "text": "Next star · 0 found",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Win your first route encounter.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "The kettle",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Ready in 15 minutes.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Tomorrow",
+          "ratio": 8.028038840639192
+        }
+      ],
+      "primaryVisible": true,
+      "text": "TONIGHT'S LITTLE ADVENTURE\nKeep the lantern warm.\n\nYour crew is ready. Explore Tangled Cafe and learn the boss’s tricks.\n\nExplore Tangled Cafe →\n\nNext star · 0 found\nWin your first route encounter.\n\nThe kettle\nReady in 15 minutes.\n\nTomorrow Compare a spare piece. Equip the one that helps your crew. Two cafe services return; earn up to 360 stamps across tomorrow’s activities.",
+      "loading": 0
+    },
+    {
+      "look": "look",
+      "name": "active",
+      "path": "reports/cardrpg-big/a5/e2-home/browser-1440-attempt-1/look-active.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "TONIGHT'S LITTLE ADVENTURE",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Keep the lantern warm.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Your crew is waiting at the next stop.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Continue your route →",
+          "ratio": 9.509076954893759
+        },
+        {
+          "text": "Next star · 16 found",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Tangled Cafe, stop 2: Visit with a four-mark crew job active.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "The kettle",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Ready in 16 minutes.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Tomorrow",
+          "ratio": 8.028038840639192
+        }
+      ],
+      "primaryVisible": true,
+      "text": "TONIGHT'S LITTLE ADVENTURE\nKeep the lantern warm.\n\nYour crew is waiting at the next stop.\n\nContinue your route →\n\nNext star · 16 found\nTangled Cafe, stop 2: Visit with a four-mark crew job active.\n\nThe kettle\nReady in 16 minutes.\n\nTomorrow Compare a spare piece. Equip the one that helps your crew. Two cafe services return; earn up to 360 stamps across tomorrow’s activities.",
+      "loading": 0
+    },
+    {
+      "look": "look",
+      "name": "next-chapter",
+      "path": "reports/cardrpg-big/a5/e2-home/browser-1440-attempt-1/look-next-chapter.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "TONIGHT'S LITTLE ADVENTURE",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Keep the lantern warm.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Your crew is ready. Explore Rooftop Orchard and learn the boss’s tricks.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Explore Rooftop Orchard →",
+          "ratio": 9.509076954893759
+        },
+        {
+          "text": "Next star · 17 found",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Tangled Cafe, stop 2: Visit with a four-mark crew job active.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "The kettle",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Ready in 16 minutes.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Tomorrow",
+          "ratio": 8.028038840639192
+        }
+      ],
+      "primaryVisible": true,
+      "text": "TONIGHT'S LITTLE ADVENTURE\nKeep the lantern warm.\n\nYour crew is ready. Explore Rooftop Orchard and learn the boss’s tricks.\n\nExplore Rooftop Orchard →\n\nNext star · 17 found\nTangled Cafe, stop 2: Visit with a four-mark crew job active.\n\nThe kettle\nReady in 16 minutes.\n\nTomorrow Compare a spare piece. Equip the one that helps your crew. Two cafe services return; earn up to 360 stamps across tomorrow’s activities.",
+      "loading": 0
+    },
+    {
+      "look": "look",
+      "name": "new-star",
+      "path": "reports/cardrpg-big/a5/e2-home/browser-1440-attempt-1/look-new-star.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "TONIGHT'S LITTLE ADVENTURE",
+          "ratio": 8.028038840639192
+        },
+        {
+          "text": "Keep the lantern warm.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Your crew is ready. Explore Rooftop Orchard and learn the boss’s tricks.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Explore Rooftop Orchard →",
+          "ratio": 9.509076954893759
+        },
+        {
+          "text": "Next star · 21 found",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Explore another stop for a new star.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "The kettle",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Ready in 16 minutes.",
+          "ratio": 10.084979698275495
+        },
+        {
+          "text": "Tomorrow",
+          "ratio": 8.028038840639192
+        }
+      ],
+      "primaryVisible": true,
+      "text": "TONIGHT'S LITTLE ADVENTURE\nKeep the lantern warm.\n\nYour crew is ready. Explore Rooftop Orchard and learn the boss’s tricks.\n\nExplore Rooftop Orchard →\n\nNext star · 21 found\nExplore another stop for a new star.\n\nThe kettle\nReady in 16 minutes.\n\nTomorrow Compare a spare piece. Equip the one that helps your crew. Two cafe services return; earn up to 360 stamps across tomorrow’s activities.",
+      "loading": 0
+    }
+  ],
+  "errors": [],
+  "remote": [],
+  "method": "Fresh UI opening through explicit Skip lesson, earned welcome/craft commands; immutable earned active checkpoint plus labelled synthetic band/star fixtures. Baseline normal mode; Look selected through dev=1 reviewer UI. No combat/cadence claim."
+}

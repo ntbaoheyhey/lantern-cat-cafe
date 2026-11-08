@@ -22,14 +22,21 @@ try{
   async function capture(name){
    await page.locator('.cr-content').evaluate(e=>e.scrollTop=0);
    // Wait for the ordinary A-owned preview readiness, preserving a missing miniature as a limitation.
-   await page.waitForFunction(()=>!document.querySelector('.dp-preview-loading'),null,{timeout:15000}).catch(()=>{});
+   await page.waitForFunction(()=>!document.querySelector('.dp-miniature-loading'),null,{timeout:15000}).catch(()=>{});
    const m=await home.evaluate(root=>{
     const rgb=s=>(s.match(/[\d.]+/g)||[]).map(Number),lum=c=>c.slice(0,3).map(x=>x/255).map(x=>x<=.04045?x/12.92:((x+.055)/1.055)**2.4).reduce((n,x,i)=>n+x*[.2126,.7152,.0722][i],0);
     const nodes=[...root.querySelectorAll('p,b,span,button,h2,small')].filter(e=>!e.children.length&&e.getClientRects().length&&e.textContent.trim());
-    const contrast=nodes.map(e=>{let p=e,bg;while(p){const c=rgb(getComputedStyle(p).backgroundColor);if(c.length===3||c[3]===1){bg=c;break;}p=p.parentElement;}
-     const a=lum(rgb(getComputedStyle(e).color)),b=lum(bg||[29,27,40]);return{text:e.textContent.trim(),ratio:(Math.max(a,b)+.05)/(Math.min(a,b)+.05)};});
+    const contrast=nodes.map(e=>{
+     let p=e,bgs;const rect=e.getBoundingClientRect(),x=rect.x+rect.width/2,y=rect.y+rect.height/2;
+     while(p){const box=p.getBoundingClientRect();if(x<box.left||x>box.right||y<box.top||y>box.bottom){p=p.parentElement;continue;}
+      const style=getComputedStyle(p),stops=[...style.backgroundImage.matchAll(/rgba?\([^)]+\)/g)].map(m=>rgb(m[0]));
+      if(stops.length&&stops.every(c=>c.length===3||c[3]===1)){bgs=stops;break;}
+      const c=rgb(style.backgroundColor);if(c.length===3||c[3]===1){bgs=[c];break;}p=p.parentElement;}
+     const a=lum(rgb(getComputedStyle(e).color)),ls=(bgs||[[29,27,40]]).map(lum),b=Math.max(Math.min(...ls),Math.min(Math.max(...ls),a));
+     return{text:e.textContent.trim(),ratio:(Math.max(a,b)+.05)/(Math.min(a,b)+.05)};
+    });
     const primary=root.querySelector('.cr-primary').getBoundingClientRect();
-    return{overflow:document.documentElement.scrollWidth-innerWidth,contrast,primaryVisible:primary.top>=0&&primary.bottom<=innerHeight,text:root.innerText,loading:root.querySelectorAll('.dp-preview-loading').length};
+    return{overflow:document.documentElement.scrollWidth-innerWidth,contrast,primaryVisible:primary.top>=0&&primary.bottom<=innerHeight,text:root.innerText,loading:root.querySelectorAll('.dp-miniature-loading').length};
    });
    const path=`${out}/${look}-${name}.png`;await page.screenshot({path});captures.push({look,name,path,...m});
    assert.equal(m.overflow,0);assert(m.primaryVisible);assert(m.contrast.length&&m.contrast.every(c=>c.ratio>=4.5),JSON.stringify(m.contrast));

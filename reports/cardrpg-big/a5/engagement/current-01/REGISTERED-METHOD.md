@@ -1,0 +1,11 @@
+# Current A5 elapsed journey01 — registered before running
+
+Measure30 active elapsed minutes on sourcee14d320ed and artifact4b15da6d. One fresh save,1280×720, real clicks, x1, no skip/import/grants/time acceleration. Current production is unchanged; rejected33/34 and experimental35 policies are excluded. These are automated engagement proxies, not acceptance or a human playtest.
+
+Reuse H0 practice, welcome, first affordable spare equipment for Mochi, one available selected-cat level per interlude, Chapter1 routes, first node/boon/affordable event, camp heal, shop saving, periodic journal and affordable150stamp invitations. Change Care to Protect before the first campaign encounter. Same3.5s decision and5s result reading allowances. New opening follows its real paid180fish/30thread Soot craft, compare and equip. New star rewards are collected when available. These content/UI adaptations are explicit and prevent interpreting the comparison as a single-rule causal experiment. No action or gate adapts to results.
+
+Record complete battle setups/logs, positive currency/gear/cat rewards, visible invitation ceremonies and DOM-observed discovery cards. Do not count undisplayed pending discoveries. Preparation/equipment meaningful-offer proxy stays distinct finalHP/actions/result on TRAIN1/2/3, with repeated contexts deduplicated. Route options alone are not counted. Combat wallseconds remains the H0 noninteractive proxy; decision reading and other elapsed time remain separate.
+
+Visible words exclude collapsed-details descendants, with the summary itself visible; keep historical H0 raw counts and identify its later corrected copy audit separately. Developer controls and seed labels are counted. Targeted captures cover opening, first12encounters and each5minute boundary; this is not the Z full screenshot pack.
+
+Shared timing lock leases last about10minutes, ending at a safe action boundary and below20minutes. Browser lifecycle is frozen between leases, thawed after reacquisition; wall timestamps and at least7s handoff remain. Cafe service accrues real walltime; there is no clock edit. Register immutable source/script/artifact hashes and preserve every failure. Do not restart successful samples or reinterpret missing windows as complete.

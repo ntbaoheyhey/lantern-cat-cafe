@@ -1,0 +1,18 @@
+{"lock":"acquired","lane":"A","pid":68270,"startedAt":"2026-11-08T20:19:18.665Z","task":"A5 Home browser-1280"}
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: [{"text":"TONIGHT'S LITTLE ADVENTURE","ratio":11.673128997944755},{"text":"Keep the lantern warm.","ratio":14.66401337817278},{"text":"Place a sturdy companion in front. Try the practice table.","ratio":14.66401337817278},{"text":"Try the practice table →","ratio":1},{"text":"Skip lesson","ratio":12.727624984908184},{"text":"Next star · 0 found","ratio":14.66401337817278},{"text":"Win your first route encounter.","ratio":14.66401337817278},{"text":"The kettle","ratio":14.66401337817278},{"text":"Ready in 15 minutes.","ratio":14.66401337817278},{"text":"Tomorrow","ratio":11.673128997944755},{"text":"Preparing miniatures…","ratio":12.727624984908184}]
+    at capture (file:///Users/bao/taskbar-hero-cardrpg-a4/tools/cardrpg-big/a5-home-browser.mjs:35:56)
+    at async file:///Users/bao/taskbar-hero-cardrpg-a4/tools/cardrpg-big/a5-home-browser.mjs:46:3 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
+
+Node.js v24.22.2
+{"lock":"released","pid":68270,"task":"A5 Home browser-1280"}

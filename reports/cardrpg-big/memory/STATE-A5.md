@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-Original engagement01 browser60133 continues on immutable4b15da6d/e14d320ed; display36 static calibration retains original queued job. E2 Home follow-up fixes stale completed-lesson CTA and first-star copy, no combat change; source/UI checks pending.
+Home closure PASS: six source checks,30targeted captures/3widths/bothlooks, minimum contrast6.858; artifact6854ef89/20,923,697bytes. Original engagement01 COMPLETE30.05minutes/51captures; cadence749.2s and dead907.7s remainMISS. No active old browser or simulation.
 ## NEXT
-Complete original30active-minute measurement without restarting it, audit display36, validate Home follow-up on separate artifact and publish draft only after six gates. B1/B2/display/startup/Z remain open; fresh20001–20500 UNUSED.
+Publish Home draft with original failed harness attempts and elapsed misses. Then isolate C1 reviewer-only Settings grants37. B1/B2/display/startup/Z remain open; fresh20001–20500 UNUSED.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -250,3 +250,13 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - 2026-11-08T19:46:52.648936+00:00: Emergency35 complete1321TRAIN50/90same-band saves. Independent source/script/input/outcome auditPASS, but96piece misses/worst40pp,172before/171after saturated,cats67.70–91.76%,sets85.50–93.50%,heavy30/30,two unavailable advice. Rejected; runtimeunchanged. Original30minute engagement01 browser active (tool65238), no duplicate sampling.
 
 - 2026-11-08T19:56:08.300111+00:00: resumed existing engagement01 and display36 processes without duplicates. Personally inspected Cafe/result captures: after opening, Home still recommends the completed practice and sends primary action to Team; all-recorded-stars fallback incorrectly asks for first star. Separate E2 Home source starts next unlocked route at selected band, preserves active route, and names unfinished star location. Original elapsed artifact/source remain immutable. No combat/acceptance/B/protected change.
+
+- Display36 completed/audited320registered models,384existingTRAIN50cells/6400gear rolls, zero new combat. Best minimum chapterrho0.497718 versus target0.6; no passing model. Original0.644/0.547/0.432retained; shared rawPower gear budget unchanged. Home sourcea8016fc5b/testd305ae33f awaiting focused gate, original engagement browser continues separately.
+
+- 2026-11-08T20:04:24.508502+00:00: resumed Home/engagement work from latest source, not obsolete stop handoff. Original30minute browser and all registered hashes preserved. Home six-source-gate tool92644, targetedUI36284 queue under sharedlock; fixtures/build/threewidths/bothlooks have separate retained attemptlogs. OFF will reuse original8250 only after all rulehashes/package diff prove exact. B395 outbox refreshed, remote397DRAFT verified; no B integration/acceptance/source mutation.
+
+- 2026-11-08T20:10:08.302895+00:00: Home six gates complete firstattempt PASS1750web/1192rules(+2expectedfail/11skip)/421E2E/build on source d305ae33f; no runtime change. Originalfixture attempt1 failed a harness-only importSave return-type assertion before browser/build. Original script/log retained; corrected2117c8ee7 verifies exact export/import code. OriginalUI retry22811 queued, no duplicate browser samples. Engagement original thirdlease active,20.55minutes at priorcheckpoint. Separate reviewcontrols37 stagedONLY in/tmp: fouroffline grants remain visible in ordinarySaveSettings; fix waits Home closure.
+
+- 2026-11-08T20:17:01.309140+00:00: resumed exact Home/engagement jobs, no reruns. Verified six firstattempt source checks1750web/1192rules/421E2E/build. Original corrected fixture retry is queued behind original elapsed browser. Staged reviewcontrols37 remains unadopted until Home closure; do not touch protected Relic fixture paths.
+
+- 2026-11-08T20:22:25.489658+00:00: Home source-bound audit PASS after retained gradient/readiness harness correction; all30 captures/zerooverflow/primaryvisible/contrast6.858. Original engagement browser completed30.05active minutes,32encounters/70meaningful offers/20rewards/11celebrations. Largest gap749.235s,combat907.67s vs896.67H0: cadence/deadtimeMISS. Fixed policy levelsMochi8/Soot1/Clover1 and repeatsChapter1; no causal Home benefit claimed. No runtime/acceptance/B change.
