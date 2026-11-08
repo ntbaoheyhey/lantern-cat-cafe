@@ -1014,3 +1014,9 @@ V4HUD source prepared,sharedlock sourcegates queued. V1/2/3stack has noA/rules/p
 V3 144 first/repeat cast windows now complete at1280native/1440native/1440CPU4: maximum16.8ms. CPU4 scene opening183–250ms persists; sixcold runs stillqueued. Historical failures retained.
 V4 round1 revealed floatingparty numbers atcanvasorigin; fixedanchors andL1ultimateportrait, normalno-dev capture queued aftercurrent sourcechecks. Fourgates1773web/digest5 previouslyPASS, updatedsource rerununderway.
 A source-validation lease received afterV3casts; B V4current lease staysbounded. V5effects andV6demo remain; no A/rules/protected edits or modelhelpers/Docker/CUA/merge/deploy.
+
+## 2026-11-08T17:47:00Z B2-V6 CHECKPOINT
+V5 DRAFT393 sourcec4e161434/review1d0fb2b06 on392; glass/honey ribs and pooled impact beats reviewed.288face samples/0offenders,105draws/111338tris. Fourgates/digest5PASS.
+V3 immutable0f87e6ef now complete144casts+6cold; allcast windowsmax16.8ms. Historical633/666/400ms retained, no causal cureclaim.
+V6 sourceb8b1b6404 fixes ordinary starterHUD9slots→12 with explicit Not equipped state; no actor.skills/rules changes. Gallery/demo/lean and deliverychecks underway.
+Current B V6 boundedsourcevalidation lease; V5effectprobe queued on immutable31,926,232byte artifact. No duplicate jobs, protected edits, model helpers, Docker/CUA, merge/deploy.
