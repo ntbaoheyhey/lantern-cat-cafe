@@ -2,7 +2,7 @@
 import {readFile,writeFile} from 'node:fs/promises';
 import {gunzipSync} from 'node:zlib';
 const rows=[];
-for(const [variant,path]of [['full','docs/cardrpg-look/b2.html'],['lean','/tmp/cardrpg-b2-lean.html']]){
+for(const [variant,path]of [['full','docs/cardrpg-look/b2.html'],['lean','docs/cardrpg-look/b2-lean.html']]){
  const html=await readFile(path,'utf8'),manifest=JSON.parse(html.match(/<script id="asset-manifest" type="application\/json">(.*?)<\/script>/s)[1]),classes={};
  let bOwnedBytes=0,bOwnedRaw=0;
  for(const [i,entry]of manifest.entries()){
@@ -14,4 +14,4 @@ for(const [variant,path]of [['full','docs/cardrpg-look/b2.html'],['lean','/tmp/c
  }
  rows.push({variant,path,htmlBytes:Buffer.byteLength(html),bOwnedRawBytes:bOwnedRaw,bOwnedEmbeddedBytes:bOwnedBytes,classes});
 }
-await writeFile('reports/cardrpg-look/b2/v6/asset-budget.json',JSON.stringify({definition:'B art: all cardrpg-look assets, legacy model aliases and cardrpg/cardrpg3 portraits/icons/textures; excludes A-owned evidence imagery. Base64 gzip payload bytes, before script tags/manifest. Lean replaces12portrait2x with existing1x; no source assets modified.',rows},null,2));console.log(JSON.stringify(rows));
+await writeFile('reports/cardrpg-look/b2/v6/asset-budget.json',JSON.stringify({definition:'B art: all cardrpg-look assets, legacy model aliases and cardrpg/cardrpg3 portraits/icons/textures; excludes A-owned evidence imagery. Base64 gzip payload bytes, before script tags/manifest. Lean replaces12portrait2x with existing1x and resizes/recompresses legacy B textures and portraits; no source assets modified.',rows},null,2));console.log(JSON.stringify(rows));

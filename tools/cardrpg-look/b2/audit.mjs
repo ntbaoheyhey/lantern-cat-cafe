@@ -1,0 +1,31 @@
+import {readFile,writeFile,readdir,stat} from 'node:fs/promises';
+import {execFileSync} from 'node:child_process';
+import {createHash} from 'node:crypto';
+const root='reports/cardrpg-look/b2',read=async p=>JSON.parse(await readFile(`${root}/${p}`,'utf8')),misses=[],checks={};
+const check=(label,actual,pass)=>{checks[label]={actual,pass};if(!pass)misses.push({label,actual})};
+const results=await read('RESULTS.json'),perf=await read('v5/perf/summary.json');
+check('native casts <=50ms',results.castNativeMax,results.castNativeMax<=50.1);
+check('CPU4 casts <=100ms',results.castCPU4Max,results.castCPU4Max<=100.1);
+check('native cold <=150ms',results.coldNativeMax,results.coldNativeMax<=150.1);
+check('native after Hub-ready <=100ms',results.nativePostHubMax,results.nativePostHubMax<=100.1);
+check('native ready regression <=1500ms',Math.max(...results.nativeLoadToBattleReady)-Math.max(...results.baselineNativeLoadToBattleReady),Math.max(...results.nativeLoadToBattleReady)-Math.max(...results.baselineNativeLoadToBattleReady)<=1500);
+check('peak <=250 draws /150k triangles',[results.draws,results.triangles],results.draws<=250&&results.triangles<=150000);
+check('face protected samples',results.faceOffenders,results.faceOffenders===0);
+check('144 cast windows +6 cold runs',[results.castWindows,perf.cold.length],results.castWindows===144&&perf.cold.length===6);
+check('demo <=31.5MB',results.bytes,results.bytes<=31500000);
+const budget=await read('v6/asset-budget.json');check('lean B bytes stretch <=18MB',budget.rows[1].bOwnedEmbeddedBytes,budget.rows[1].bOwnedEmbeddedBytes<=18000000);
+const protectedPaths=['packages/game-rules','contracts','supabase','.github','package.json','pnpm-lock.yaml','apps/web/package.json','apps/web/src/game/cardrpg/depth/App.tsx','apps/web/src/game/cardrpg/depth/depth.css','apps/web/src/game/cardrpg/depth/shared.tsx','tools/cardrpg-big','docs/cardrpg3','reports/cardrpg-big'];
+const diff=execFileSync('git',['diff','--name-only','0ce18c085','--',...protectedPaths],{encoding:'utf8'}).trim();check('protected scope unchanged',diff,!diff);
+const bytes=await readFile('docs/cardrpg-look/index.html'),sha=createHash('sha256').update(bytes).digest('hex');check('closure index exact',sha,sha==='7e092b1a18b2a4af1dcdcc51e6a24f38bc5e674580d2ecddca33c3de306aff34');
+check('startup parity',results.startup.deltaBytes,results.startup.deltaBytes===0);
+const shots=await read('v6/shots/shots.json'),ui=await read('v6/ui/checks.json'),dpr=await read('v6/1440/shots.json');check('12 layout +6 DPR2 shots',[shots.rows.length,dpr.rows.length],shots.rows.length===12&&dpr.rows.length===6&&shots.rows.every(r=>r.errors.length===0&&!r.overflow)&&dpr.rows.every(r=>r.errors.length===0&&!r.overflow));
+check('three-width UI',ui.rows.length,ui.rows.length===3&&ui.errors.length===0&&ui.rows.every(r=>!r.overflow&&r.numberContrast>=4.5&&r.cardOverflow.every(v=>!v)));
+const videos=await read('v6/videos/checks.json');check('paired20sH264 same initial',videos.sameInitial,videos.sameInitial&&videos.rows.every(r=>r.errors.length===0&&r.probe.streams[0].codec_name==='h264'&&Number(r.probe.format.duration)===20));
+const v2=await read('v2/shots/shots.json'),contrast=v2.rows.flatMap(r=>r.contrast?.rows??[]);checks.opponentContrast={actual:'0.009–0.039 linear luminance, original V2 silhouette/ablation method',pass:false};misses.push({label:'opponent luminance >=0.18',actual:checks.opponentContrast.actual});
+const walk=async p=>(await Promise.all((await readdir(p)).map(async n=>{const f=`${p}/${n}`,s=await stat(f);return s.isDirectory()?walk(f):s.size}))).reduce((a,b)=>a+b,0);const evidence=await walk(root);check('evidence <=60MB',evidence,evidence<=60000000);
+const receipts=[];for(const phase of ['v0','v1','v3','v2','v4','v5','v6']){
+ const gates=JSON.parse(await readFile(`reports/cardrpg-look/validation/b2-${phase}/source-gates.json`));
+ const latest=Object.fromEntries(gates.map(g=>[g.name,g.code]));receipts.push({phase,gates:latest,digest:await read(`digests-${phase}.json`)});
+}
+check('phase source gates',receipts.map(r=>({phase:r.phase,gates:r.gates})),receipts.every(r=>Object.values(r.gates).every(c=>c===0)));
+await writeFile(`${root}/AUDIT.json`,JSON.stringify({at:new Date().toISOString(),checks,misses,receipts},null,2));console.log(JSON.stringify({checks:Object.keys(checks).length,misses}));

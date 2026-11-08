@@ -11,8 +11,8 @@ await withTimingLock('B2 delivery layouts, startup and lean pack',async()=>{
  await run(['tools/cardrpg-look/flag-off-check.mjs','--prepare'],off);await run(['tools/cardrpg-look/flag-off-check.mjs'],off);
  await python(['reports/cardrpg-look/closure/startup-audit.py','reports/cardrpg-look/b2/v6/startup','/tmp/cardrpg-b2-flag-off']);
  await run(['tools/cardrpg-look/b2/shots.mjs'],{B2_ARTIFACT:'docs/cardrpg-look/b2.html',B2_OUT:'reports/cardrpg-look/b2/v6/1440',B2_SIZES:'[[1440,900,2]]'});
- await run(['tools/cardrpg-look/build.mjs'],{LOOK_OUTPUT:'/tmp/cardrpg-b2-lean.html',LOOK_RECEIPT:'reports/cardrpg-look/b2/v6/lean-build.json',LOOK_LEAN:'1'});
- await run(['tools/cardrpg-look/b2/shots.mjs'],{B2_ARTIFACT:'/tmp/cardrpg-b2-lean.html',B2_OUT:'/tmp/cardrpg-b2-lean-shots',B2_SIZES:'[[1280,720,1]]'});
+ await run(['tools/cardrpg-look/build.mjs'],{LOOK_OUTPUT:'docs/cardrpg-look/b2-lean.html',LOOK_RECEIPT:'reports/cardrpg-look/b2/v6/lean-build.json',LOOK_LEAN:'1'});
+ await run(['tools/cardrpg-look/b2/shots.mjs'],{B2_ARTIFACT:'docs/cardrpg-look/b2-lean.html',B2_OUT:'/tmp/cardrpg-b2-lean-shots',B2_SIZES:'[[1280,720,1]]'});
  await python(['tools/cardrpg-look/b2/ssim.py','reports/cardrpg-look/b2/v6/shots','/tmp/cardrpg-b2-lean-shots','reports/cardrpg-look/b2/v6/lean-ssim.json']);
  delete process.env.B2_LOCK_OWNER;
 });

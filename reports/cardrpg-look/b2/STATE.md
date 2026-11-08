@@ -6,9 +6,9 @@ V1 four reviewed rounds; cats31–41%arena/15–20%page. V2 thirteen opponents r
 V3 immutable0f87e6ef:144casts max16.8ms and6cold complete. Historical633cast/666cold/400postready retained; no causal cure claim.
 V4 liveUI failed9instead12slots because starter has3equipped skills; preserve failure log, render4catalog slots with unavailable state inV6.
 V5 twelve-ultimate sheet/fullClover/wave personally reviewed.288face samples/0offenders,105draws/111338tris. Review in v5/REVIEW.md.
-Next: publishV5draft; V6 HUDslot fix/gallery/demo; V6 sourcegates/E2E/digest; UI/startup/sixshots/lean/video/fivebattle; report/ledger/B-OUTBOX.
+V5published1d0fb2b06; currentbranch codex/cardrpg-b2-v6-2026-11-08. Next: V6 HUDslot fix/gallery/demo; V6 sourcegates/E2E/digest; UI/startup/sixshots/lean/video/fivebattle; report/ledger/B-OUTBOX.
 V5 performance once after effects uses immutable /tmp/cardrpg-b2-v5.html; registered144casts+6cold, no matrix or retries for a pass.
-No active B job at resume17:44UTC; do not restart old coordinators. Shared timinglock <=20min with6.5s handoff.
+V5 probe session26027 queued on immutableV5; do not duplicate. V6 source validation next. Shared timinglock <=20min with6.5s handoff.
 Evidence48MiB beforeV6; budget60MB, compress only already-reviewed PNGs if necessary; raw traces/frames in/tmp/cardrpg-b2-*.
 A read17:39UTC: sourceedd8ac69e; schema v1/v2 unchanged, devgating preserved. Open A integration: App-owned devgating and exact receipts/adoption.
 Closure index unchanged7e092b1a/31,494,758bytes. Drafts only; no merge/deploy/mainpush/A5rebase.

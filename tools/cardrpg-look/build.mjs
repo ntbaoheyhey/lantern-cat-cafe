@@ -7,10 +7,13 @@ import { gzipSync } from 'node:zlib';
 import { root, web, requireWeb } from '../visual-support.mjs';
 import { evidencePayload } from '../cardrpg-big2/embed-evidence.mjs';
 import { showcaseEvidence } from './showcase-evidence.mjs';
+import { b2Evidence } from './b2/build-extra.mjs';
 const { build } = await import(requireWeb.resolve('vite'));
 // B2 can build a separate artifact without rewriting the accepted closure demo.
 const outputPath = process.env.LOOK_OUTPUT || 'docs/cardrpg-look/index.html';
 const receiptPath = process.env.LOOK_RECEIPT || 'docs/cardrpg-look/build.json';
+const readableDemo = outputPath.includes('b2');
+const lean = process.env.LOOK_LEAN === '1';
 // Both streams decode to identical bytes. Different asset classes favour
 // different DEFLATE hash-table sizes; keep the smaller stream per payload.
 const gzip = bytes => {
@@ -66,6 +69,20 @@ for (const row of imagePacking) {
   row.selected = row.opaque && gzip(packed).length < gzip(asset.bytes).length;
   if (row.selected) embeddedAssets.set(key, { mime: 'image/webp', bytes: packed });
 }
+const leanChanges=[];
+if (lean) for (const [key,asset] of embeddedAssets) {
+  if (key.startsWith('assets/cardrpg-look/portraits/') && key.endsWith('-2x.webp')) {
+    const smaller=embeddedAssets.get(key.replace('-2x.webp','-1x.webp'));
+    if(smaller){leanChanges.push({key,before:asset.bytes.length,after:smaller.bytes.length,method:'existing1x'});embeddedAssets.set(key,smaller);}
+  }
+  if (/^assets\/(cardrpg3b?\/textures|cardrpg(?:3)?\/portraits)\//.test(key) && /^image\//.test(asset.mime)) {
+    const {createRequire}=await import('node:module');
+    const sharp=createRequire('/Users/bao/tools/cardrpg-look/npm/package.json')('sharp');
+    const limit=key.includes('/portraits/')?256:1024;
+    const bytes=await sharp(asset.bytes).resize({width:limit,height:limit,fit:'inside',withoutEnlargement:true}).webp({quality:82,alphaQuality:100}).toBuffer();
+    if(gzip(bytes).length<gzip(asset.bytes).length){leanChanges.push({key,before:asset.bytes.length,after:bytes.length,method:`WebPq82,max${limit}`});embeddedAssets.set(key,{mime:'image/webp',bytes});}
+  }
+}
 const assetEntries = [...embeddedAssets].sort(([left], [right]) => left.localeCompare(right));
 const assetClasses = {};
 for (const [path, asset] of assetEntries) {
@@ -84,9 +101,9 @@ const manifest = assetEntries.map(([key, asset]) => ({ key, mime: asset.mime }))
 const assetTags = assetEntries.map(([, asset], index) => `<script id="asset-${index}" type="application/octet-stream">${gzip(asset.bytes).toString('base64')}</script>`).join('\n');
 const performanceMeter = readFileSync(resolve(root, 'tools/cardrpg-big/offline-performance.js'), 'utf8');
 const loader = readFileSync(resolve(root, 'tools/cardrpg-big/offline-loader.js'), 'utf8');
-const evidence = evidencePayload(root);
-const showcase = await showcaseEvidence(root);
-const html = `<!doctype html>\n<!-- REFERENCE: docs/cardrpg2/index.html | tools/cardrpg-look/build.mjs | docs/design/cardrpg/LOOK-BIBLE.md | apps/web/src/game/cardrpg/depth | packages/game-rules/src/cardrpg/depth -->\n<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none';img-src data: blob:;style-src 'unsafe-inline';script-src 'unsafe-inline' 'wasm-unsafe-eval' blob:;connect-src data: blob:;media-src data: blob:"><script>window.__LOOK_PACKED__=true;${performanceMeter}</script><title>The Lantern · Lantern atelier</title><style>html,body{margin:0;background:#1d1b28;color:#f5ebdc}#loading{margin:0;padding:40px 40px 18px;font:18px system-ui}#opening-progress{display:block;width:min(420px,calc(100% - 80px));margin:0 40px;accent-color:#d8b98a}</style></head><body><div id="root"><p id="loading">Opening the cafe…</p><progress id="opening-progress" aria-label="Opening the cafe" value="0" max="1"></progress></div><script id="asset-manifest" type="application/json">${JSON.stringify(manifest).replace(/</g, '\\u003c')}</script>
+const evidence = readableDemo ? {tags:'',script:'',rows:[],files:[]} : evidencePayload(root);
+const showcase = readableDemo ? await b2Evidence(root) : await showcaseEvidence(root);
+const html = `<!doctype html>\n<!-- REFERENCE: reports/cardrpg-look/b2/B2-REPORT.md | reports/cardrpg-look/b2/PROMPT.txt | docs/cardrpg-look/b2.html | docs/cardrpg2/index.html | tools/cardrpg-look/build.mjs | docs/design/cardrpg/LOOK-BIBLE.md | apps/web/src/game/cardrpg/depth | packages/game-rules/src/cardrpg/depth -->\n<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none';img-src data: blob:;style-src 'unsafe-inline';script-src 'unsafe-inline' 'wasm-unsafe-eval' blob:;connect-src data: blob:;media-src data: blob:"><script>window.__LOOK_PACKED__=true;${performanceMeter}</script><title>The Lantern · Lantern atelier</title><style>html,body{margin:0;background:#1d1b28;color:#f5ebdc}#loading{margin:0;padding:40px 40px 18px;font:18px system-ui}#opening-progress{display:block;width:min(420px,calc(100% - 80px));margin:0 40px;accent-color:#d8b98a}</style></head><body><div id="root"><p id="loading">Opening the cafe…</p><progress id="opening-progress" aria-label="Opening the cafe" value="0" max="1"></progress></div><script id="asset-manifest" type="application/json">${JSON.stringify(manifest).replace(/</g, '\\u003c')}</script>
 ${assetTags}
 ${evidence.tags}
 <script>${evidence.script}</script>
@@ -103,7 +120,7 @@ const assetHashes = Object.fromEntries(assetEntries.map(([path, asset]) =>
 const inputPaths = [...sourceRoots, ...Object.keys(assetHashes), ...showcase.files.map(row => row.path)];
 const runtimeDirty = !!execFileSync('git', ['diff', 'HEAD', '--', ...inputPaths], { cwd: root, encoding: 'utf8' }).length
   || !!execFileSync('git', ['ls-files', '--others', '--exclude-standard', ...inputPaths], { cwd: root, encoding: 'utf8' }).trim();
-const receipt = { date: new Date().toISOString(), head, dirty, bytes: Buffer.byteLength(html), compressed: true,
+const receipt = { lean, leanChanges, date: new Date().toISOString(), head, dirty, bytes: Buffer.byteLength(html), compressed: true,
   compression: { format: 'gzip', level: 9, memLevels: [8, 9], selection: 'smallest stream per payload; decoded bytes unchanged' },
   imagePacking, showcase: { bytes: showcase.bytes, files: showcase.files }, evidence: { rows: evidence.rows.length, files: evidence.files, bytes: Buffer.byteLength(evidence.tags) },
   assetCount: manifest.length, assetClasses, scriptBytes: Buffer.byteLength(js), assetBytes: assetEntries.reduce((sum, [, asset]) => sum + asset.bytes.length, 0),
