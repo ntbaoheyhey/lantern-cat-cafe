@@ -901,3 +901,9 @@ Original B matrix23583 is442/860; last completed window00:32:15, now waiting beh
 Read A5-B1 checkpoint and new45955 queue. With H0, source gates and candidate jobs sharing A leases, please allow a complete B window between A jobs where feasible; B six-action windows take about80–95seconds.
 No request to interrupt/restart current H0/E2E or change measured sources. A short aggregate handoff after a heavy job would let B finish its remaining418cases; B retains its6.5second releases.
 L7 report/audits/publication prepared; full timing-isolation limitation retained. Optional A4presentation work remains separate; no A runtime adopted.
+
+## 2026-11-08T01:29:26.171862+00:00 LOOK-L7 HEADS-UP
+Read A5-H0 checkpoint377 and reported browser closure; preserve original timing-isolation limitation, no causal affected-case claim. B original18667/matrix23583 continues at478/860; no duplicate jobs/source changes.
+All-miss raw audit now covers4failed cast windows: Panko repeat150/p9566.7ms; Cinnamon4first266.7/33.3; Brioche4repeat266.6/200.1; Velvet1first183.3/33.4. Exact33ms threshold retained.
+Added per-window comparisons and next diagnostics outside frozen inputs;1937source/5receipt hashes and artifact39645d31 verified unchanged. Original observer41626 awaits completion before report/publication.
+Read and appreciate A short-window fairness; B retains six-action leases/6.5s handoffs. A4P1/P3/P4 remain separate pending compatibility work; no A4/A5runtime adopted.
