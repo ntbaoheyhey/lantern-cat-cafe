@@ -1,6 +1,6 @@
 # A5 living state
 ## NOW
-Original Home-led engagement02 PID79723 continues60active minutes on immutable6c09ce3c. Contextual display40 PID80272 queues bounded110s leases; do not duplicate either. Production994d84056/DRAFT400 unchanged. Read-only receipt auditors and Equipment forecast41 draft prepared; no UI adoption yet.
+Original Home02 PID79723 now passed21.34active minutes and continues immutable6c09ce3c; display40 PID80272 resumed by originalguard after unitexit. Equipment41 original unit7/8 PASS exposed same-piece ordering false difference; isolatedsource correction registered, unit2 PID85180 queued, native starter waits and will run prototype only if8/8PASS. Production994d84056/DRAFT400 unchanged.
 ## NEXT
 Audit original384contextual cases once complete; retain static displayMISS regardless. If diagnostic supports it, finish staged whole-crew Equipment boss rehearsal41 with worker/UI/source/OFF checks. Aggregate original engagement02 at60active minutes (0–5/30/60), preserving01MISS. B1/B2/startup/Z and fresh20001–20500 remain open.
 ## DONE
@@ -284,3 +284,5 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - 21:10UTC scheduling only: display coordinator80272/waiter82901 SIGSTOP while neither owns lock or has sim child, to let original isolated unit82773 receive next lease. Native resume guard /tmp/cardrpg-a5-equipment-forecast-41/resume-display.py resumes BOTH after unitexit+7s (15min fallback); retain guard/log, never restart samples. Original engagement79723/activelease82687 untouched.
 
 - Resume21:15UTC: original79723 Home journey and80272 contextual sample retained;82773 unit still queued,83598 guard owns resumption of paused display waiter. Added sequential Equipment41 prototype coordinator only. No runtime adoption, balance retune, acceptance or duplicated jobs. Latest43Result screenshot personally inspected.
+
+- 21:19UTC: Equipment41 unitattempt1 retained7pass/1fail. Actual equipGear deletes/reinserts an ownedslot, altering equipment-array order; preview now recognizes an already-equipped piece after command validation. Originalkey/combat/fixtures unchanged. Added prospective real-worker stale-delivery/CSP-denial checks and zero-sample prototypeauditor. Two starter Python newline syntax errors happened before anyjob and originalscript retained in/tmp. Corrected native starter tool94454 waits85180; no duplicate samples/adoption.

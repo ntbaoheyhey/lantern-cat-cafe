@@ -18,7 +18,9 @@ export function equipmentForecast(state: R.DepthAccount, cardId: string, instanc
   });
   const before = setup(state), after = setup(changed.state);
   return { before, after, boss: R.ENEMY_BY_ID[route.boss]!.name,
-    sameCrew: R.forecastKeyV4(before) === R.forecastKeyV4(after),
+    // Re-equipping the same piece only reinserts its slot key; it cannot change the matchup.
+    sameCrew: Object.values(state.equipment[cardId] ?? {}).includes(instanceId)
+      || R.forecastKeyV4(before) === R.forecastKeyV4(after),
     benched: !state.team.includes(cardId),
     transfer: Object.entries(state.equipment).find(([id, slots]) => id !== cardId && Object.values(slots).includes(instanceId))?.[0] };
 }

@@ -5,8 +5,8 @@ import { spawn } from 'node:child_process';
 import { mkdir, open, readFile, writeFile } from 'node:fs/promises';
 import { setTimeout as delay } from 'node:timers/promises';
 const out = 'reports/cardrpg-big/a5/e1-equipment-forecast/ui-checks';
-const unit = await readFile('/tmp/cardrpg-a5-equipment-forecast-41/unit-attempt-1.log', 'utf8');
-assert(unit.includes('8 passed') && unit.includes('lock\":\"released'), 'Wait for the original isolated unit job to finish successfully');
+const unit = await readFile('/tmp/cardrpg-a5-equipment-forecast-41/unit-attempt-2.log', 'utf8');
+assert(unit.includes('8 passed') && unit.includes('"lock":"released"'), 'Wait for corrected isolated unit completion');
 await mkdir(out, { recursive: true });
 const rows = JSON.parse(await readFile(out + '/checks.json', 'utf8').catch(error => {
   if (error.code === 'ENOENT') return '[]'; throw error;
@@ -17,6 +17,7 @@ const steps = [
   ['build-'+mode, ['tools/cardrpg-big/a5-drafts/equipment-forecast-41/build-sandbox.mjs',mode], {}],
   ...[1280,1440,1024].map(width=>['browser-'+mode+'-'+width, ['tools/cardrpg-big/a5-drafts/equipment-forecast-41/browser.mjs',mode,String(width)],{}]),
  ]),
+ ['worker-lifecycle', ['tools/cardrpg-big/a5-drafts/equipment-forecast-41/worker-lifecycle.mjs'], {}],
 ];
 for (const [name, args, env] of steps) {
   if (rows.some(row => row.name === name && row.code === 0)) continue;
