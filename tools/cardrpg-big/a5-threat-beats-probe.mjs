@@ -60,7 +60,7 @@ try{
   for(let i=0;i<rows.length;i++){
    const row=rows[i],old=control.rows[i];assert.equal(row.key,old.key);assert.equal(row.mode,old.mode);
    assert.equal(row.initialSha256,old.initialSha256);
-   if(row.mode!=='on')assert.deepEqual(row,old);
+   if(row.mode!=='on')assert.deepEqual(JSON.parse(JSON.stringify(row)),old);
   }
  }
 }finally{await vite.close();}

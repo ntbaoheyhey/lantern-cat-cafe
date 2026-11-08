@@ -267,7 +267,7 @@
     "packages/game-rules/src/rng.ts": "294a2a0149a7e89cb9b9b6bbf237b11daecd645a49760b8b2c415bfbc2884270"
   },
   "scripts": {
-    "tools/cardrpg-big/a5-threat-beats-probe.mjs": "6c8ab0b7ffa988947b74bce740e98f08c34327a2a9ba7a78970b12ee14a1df88",
+    "tools/cardrpg-big/a5-threat-beats-probe.mjs": "34ade8528d95e9df966c91cf1b6af1bf37bc940475c1f9ba6ba93feb357f3e76",
     "tools/cardrpg-big/a5-threat-beats-run.mjs": "78590a5ea5209a67d7d734540f749e31669d680f388e960a99169f328cefec86",
     "tools/cardrpg-big/a4-load.mjs": "9b6a983ec4d8757f3843ad58c73536bfbc8c1b83adf285c906c579c42cd229d6",
     "tools/cardrpg-big/a5-drafts/prepare-threat-beats-47.py": "a2acebd0185806311e174436addbeae2814bf3fc54c9b5f48b282e9f642f85e5"
@@ -278,5 +278,13 @@
   "cases": 384,
   "acceptanceSeedsUsed": false,
   "control": "reports/cardrpg-big/a5/b2/hush-eligibility-22/balance/equipped/results.json",
-  "controlSha256": "0ccf444257cf8b7f94c446046a981840417684d4d4d7c05d3a1d96a92f96123c"
+  "controlSha256": "0ccf444257cf8b7f94c446046a981840417684d4d4d7c05d3a1d96a92f96123c",
+  "harnessRevision": {
+    "registeredAt": "2026-11-08T23:11:30.278248+00:00",
+    "previous": "reports/cardrpg-big/a5/b1/threat-beats-47/control/REGISTERED-METHOD-attempt-1.json",
+    "previousSha256": "165e571e26d716dcd2d86df73649ac01faa482be985f685f3ad42fe571e813c8",
+    "originalScript": "reports/cardrpg-big/a5/b1/threat-beats-47/probe-attempt-1.mjs.txt",
+    "originalScriptSha256": "6c8ab0b7ffa988947b74bce740e98f08c34327a2a9ba7a78970b12ee14a1df88",
+    "reason": "Compare serialized replay receipts to parsed JSON: undefined optional intent.status is absent from JSON. No source, input, schedule, seed, screen or matrix change. Original control probe and failed boss attempt retained."
+  }
 }
