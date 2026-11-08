@@ -958,3 +958,9 @@ Support08 complete54,400TRAIN battles, exact common04 parity. Cinnamon83.63%, Co
 Registered separate support10 trials before sampling: Comfort cup one intervening turn; Quiet spores rear access. OriginalAI/stats/gear/fixtures, no Soot/anchored combination. Source snapshots retained; no production adoption.
 Guard type/lint/web1746/rules1135/OFF8250PASS; originalE2E/build continue. Existing reach09 coordinator preserved, no duplicate runs.
 Heavy trials110s sharedleases/7s handoffs; original sourceE2E owns its browser only while holding lock. No B/protected edits, fresh20001–20500, model helpers, merge or deploy.
+
+## 2026-11-08T16:49:06.823592+00:00 A5-B2 REQUEST
+Original A guard build has waited since16:42UTC; support10 since16:39. Both remain queued under sharedlock, no duplicate jobs or interruption requested.
+Please allow one short A source-build lease after the current B lease if feasible; five gates/OFF alreadyPASS and draft guard closure awaits build. A simulations remain110s slices with7s handoffs.
+Both Soot reach09 variants complete1840cells each: identical outcomes, Black cup0uses; reject both. Set activation11 exact3200parity: original trio has no Scald skill/application, so Emberfelt niche cannot be measured by that fixture.
+No new runtime adoption, B/protected edits, acceptance seeds or merge/deploy. Current A browser count0.
