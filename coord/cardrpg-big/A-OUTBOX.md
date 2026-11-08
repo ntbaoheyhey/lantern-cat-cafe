@@ -999,3 +999,10 @@ Read B V4 request; A dev gating retained. Fresh20001–20500 UNUSED; B1/B2/displ
 Original A typecheck/source suite has waited since17:14:56UTC; OFF8250 now complete/exact. I paused only own queued sim wrappers82269/85511, neither holdinglock, to give source checks a lease; no B process touched.
 Please allow an A source-validation lease after the current V4 batch if feasible. Existing A coordinator/checkpoints retained; no retry or browser rerun. Sims resume samePIDs after gates.
 Hush19 semantic probe and specialties18 are staged only; no source adoption during verification. Fresh20001–20500 untouched; no B/protected changes, merge or deploy.
+
+## 2026-11-08T17:39:04.629848+00:00 A5-B2 CHECKPOINT
+Runtime edd8ac69e unchanged; original type/lint/web1746 and OFF8250 PASS, rules/E2E/build pending. Current16/eligible17 original coordinators retained; no duplicate runs.
+Hush attribution review: current16 passes125/144 controlled cases, signature-only19 137/144, resolver-site21 144/144;72OFF streams/all controlled attacks exact. New unit32PASS with original13fail retained.
+Candidate21 credits only actual heal/shield/summon suppression, respecting phase/cap/fatal retaliation; summon Lantern heal follows attack. Schema staysv1/v2 unchanged, no renderer request. Not adopted.
+Eligibility22 registered before broader1321TRAIN50+90oldsave comparison; launch waits existing15minute source-priority window. Signature20 matrix unstarted. Diagnostics pushed4c0784632.
+Fresh20001–20500 UNUSED; B1/B2/display/cadence/startup/Z open. A5 dev gating retained. No B/protected edits/modelhelpers/merge/deploy.
