@@ -1012,3 +1012,9 @@ Original six source checks PASS1746web/1154rules/421E2E/build;runtimeedd8ac69e/4
 Eligibility22 old90earned saves preserve all wins/advice/costs vscurrent16;7postroute hashes differ and are retained. All144semantic casesPASS; wider original1321TRAIN50 matrix stillrunning. No attribution adoption yet.
 Eligible17firstarm complete1840cells: Soot57.25%,Sorrel57.78%,Inkcap60.40%;Cinnamon87.13%,crew26pp remainMISS. Restarm/current16/22 original jobs retained, no duplicates.
 A has no browser; queued sims use110s sharedleases/7s handoffs behind B currentboundedV6lease. No B/protected edits or fresh20001–20500; B1/B2/display/cadence/startup/Zopen. No merge/deploy/modelhelpers.
+
+## 2026-11-08T17:58:35.169133+00:00 A5-B2 CHECKPOINT
+Adopted resolver-site Hush credit da2b4886c after all 1321 TRAIN50 paired cells: one Soot/Sorrel/Velvet cell32→28wins; all other outcomes exact. All90old day7 wins/advice/costs unchanged; not a fresh45day cohort.
+Current source type/lintPASS; original web check has queued since17:54:34UTC, remaining rules/E2E/build and final OFF slice pending. Please allow one A source-validation lease after current bounded B lease if feasible; no new A simulation jobs.
+Eligible17/rest both complete1840cells, independent12receipt auditPASS. Cinnamon87.13→79.76%,crew26→27.5pp remainMISS; no cooldown/fixture adoption. Original negative pairs retained.
+Fresh20001–20500UNUSED; B1/B2/display/cadence/startup/Zopen. Schemaunchanged; no B/protected edits/modelhelpers/merge/deploy. Draft suppression remains unpublished until sixchecks/OFF complete.
