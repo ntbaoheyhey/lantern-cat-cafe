@@ -52,13 +52,18 @@ export function outcomeV4(battle: Battle) {
     const unit = event.text.includes(' restored ') && event.text.includes(' HP to ') ? 'HP'
       : event.text.includes(' granted ') && event.text.includes(' shield to ') ? 'shield' : null;
     if (!unit) continue;
-    const key = `${event.actorId}:${event.templateId}:${unit}`, template = GEAR_BY_ID[event.templateId];
+    const template = GEAR_BY_ID[event.templateId];
     if (!template) continue;
-    const prior = gearGroups.get(key), amount = (prior?.amount ?? 0) + event.amount;
     const worn = battle.initial.cats.find(cat => cat.id === event.actorId)?.equipment ?? [];
     const set = SETS.find(set => set.id === template.setId);
     const count = worn.filter(id => GEAR_BY_ID[id]?.setId === template.setId).length;
-    const source = event.effect.startsWith('unique:') ? template.name : `${set?.name ?? template.setId} ${count >= 4 ? '4' : '2'}-piece`;
+    const unique = event.effect.startsWith('unique:');
+    const threshold = set?.twoEffect === event.effect ? 2 : set?.fourEffect === event.effect ? 4 : null;
+    // Four equipped pieces do not turn the separate two-piece effect into a four-piece contribution.
+    if (unique ? event.effect !== `unique:${template.unique}` || !worn.includes(template.id) : !threshold || count < threshold) continue;
+    const key = `${event.actorId}:${unique ? template.id : template.setId}:${event.effect}:${unit}`;
+    const prior = gearGroups.get(key), amount = (prior?.amount ?? 0) + event.amount;
+    const source = unique ? template.name : `${set!.name} ${threshold}-piece`;
     gearGroups.set(key, { id: `gear:${key}`, kind: 'gear', actorId: event.actorId, amount, unit, templateId: event.templateId,
       text: `${source} on ${name(event.actorId)} ${unit === 'HP' ? 'restored' : 'granted'} ${amount} ${unit}.` });
   }

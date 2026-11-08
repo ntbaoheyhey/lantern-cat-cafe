@@ -1,3 +1,4 @@
+// REFERENCE: measured B3 candidate01 360-stamp cap / soft13+700bp / hard24. Staged; not adopted.
 import {describe,expect,it} from 'vitest';
 import * as R from './index';
 import {BANNERS} from '../catalog';
@@ -5,11 +6,11 @@ import {emptyPity,getBannerOdds} from '../gacha';
 const fresh=()=>R.setGameplayV4(R.createDepthAccount(23),true);
 
 describe('v4 early invitation progress',()=>{
- it('keeps base odds, starts the disclosed soft curve on draw10 and guarantees draw24',()=>{
+ it('keeps base odds, starts the disclosed soft curve on draw13 and guarantees draw24',()=>{
   for(const banner of BANNERS){
    expect(R.invitationOddsV4(banner.id)).toEqual(getBannerOdds(banner,emptyPity()));
-   expect(R.invitationOddsV4(banner.id,{...emptyPity(),sinceLegendary:8}).legendary).toBe(100);
-   expect(R.invitationOddsV4(banner.id,{...emptyPity(),sinceLegendary:9}).legendary).toBe(600);
+   expect(R.invitationOddsV4(banner.id,{...emptyPity(),sinceLegendary:11}).legendary).toBe(100);
+   expect(R.invitationOddsV4(banner.id,{...emptyPity(),sinceLegendary:12}).legendary).toBe(800);
    expect(R.invitationOddsV4(banner.id,{...emptyPity(),sinceLegendary:23})).toEqual({common:0,rare:0,epic:0,legendary:10000});
   }
  });
@@ -27,7 +28,7 @@ describe('v4 early invitation progress',()=>{
   expect(drawn.state.v4!.selectorMarks).toBe(60);expect(drawn.state.account.pity[banner.pityGroup]!.sinceLegendary).toBe(0);
  });
  it('uses the same conditional probabilities in exact pools and committed draws',()=>{
-  for(const banner of BANNERS)for(const pity of [0,8,9,15,23,59]){
+  for(const banner of BANNERS)for(const pity of [0,11,12,18,23,59]){
    const s=fresh();s.account.pity[banner.pityGroup]={...emptyPity(),sinceLegendary:pity};
    const pool=R.getDrawPoolV4(s,banner.id),odds=R.invitationOddsV4(banner.id,s.account.pity[banner.pityGroup]);
    expect(pool.reduce((n,r)=>n+r.probability,0)).toBeCloseTo(1,10);
@@ -46,17 +47,17 @@ describe('v4 early invitation progress',()=>{
 
 describe('mode-aware earned allowance',()=>{
  it('settles previewed partial stamps once at the v4 cap',()=>{
-  const s=fresh();s.account.daily.earned.stamps=470;s.v4!.journal={cats:[],gear:[],sets:[],rewardedRoutes:10,claims:[]};
+  const s=fresh();s.account.daily.earned.stamps=350;s.v4!.journal={cats:[],gear:[],sets:[],rewardedRoutes:10,claims:[]};
   expect(R.milestonePreviewV4(s,'ten-routes').reward.stamps).toBe(10);
   const r=R.claimMilestoneV4(s,'ten-routes');expect(r.ok).toBe(true);
   expect(r.state.account.currencies.stamps-s.account.currencies.stamps).toBe(10);
-  expect(r.state.account.daily.earned.stamps).toBe(480);
+  expect(r.state.account.daily.earned.stamps).toBe(360);
   expect(R.claimMilestoneV4(r.state,'ten-routes')).toMatchObject({ok:false,state:r.state});
  });
  it('does not claw back stamps earned before switching OFF',()=>{
-  const s=R.setGameplayV4(fresh(),false);s.account.daily.earned.stamps=400;
+  const s=R.setGameplayV4(fresh(),false);s.account.daily.earned.stamps=340;
   const before=s.account.currencies.stamps,r=R.metaCommand(s,{type:'level',cardId:s.team[0]!});
-  expect(r.ok).toBe(true);expect(r.state.account.currencies.stamps).toBe(before);expect(r.state.account.daily.earned.stamps).toBe(400);
+  expect(r.ok).toBe(true);expect(r.state.account.currencies.stamps).toBe(before);expect(r.state.account.daily.earned.stamps).toBe(340);
   R.grantDepth(r.state,{stamps:40});expect(r.state.account.currencies.stamps).toBe(before);
  });
 });

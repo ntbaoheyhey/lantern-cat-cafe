@@ -1,0 +1,26 @@
+{
+  "registeredAt": "2026-11-08T06:20:24.102797+00:00",
+  "input": "/tmp/cardrpg-a5-c1-revision/artifact/index.html",
+  "inputSha256": "788ff719e42c7f595615fcf2f60ae4e0021ba32419f47ed2057dae785587be82",
+  "output": "/tmp/cardrpg-a5-transport-01",
+  "tools": {
+    "tools/cardrpg-big/a5-drafts/p1-prep/model-transport.mjs": "f55b15cac65f5f557a0369a4366d9ce898922b41178df58ed0c826dcc42c9809",
+    "tools/cardrpg-big/a5-drafts/p1-prep/offline-transport-01.mjs": "457f6d013a30d555024ffae23508fcce7abf9530bdb45e68128fae92e89aac3f",
+    "tools/cardrpg-big/offline-loader.js": "0762eb21de5cc27b98fcd9d21301a9a75dade3e30f0b99e8ab688867a94c4fa3"
+  },
+  "encodings": [
+    {
+      "width": 4,
+      "delta": false
+    },
+    {
+      "width": 4,
+      "delta": true
+    },
+    {
+      "width": 8,
+      "delta": false
+    }
+  ],
+  "method": "For each embedded GLB try three fixed reversible byte encodings before existing gzip; choose smaller transport including metadata overhead. Keep every trial size. Restore exact bytes before GLTFLoader; all198 assets, shaders, pixels and frames remain unchanged. Original source assets and production builder untouched. Shared timing lock for native compression and subsequent browser checks. Browser/cold performance not inferred from size."
+}

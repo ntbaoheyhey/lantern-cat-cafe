@@ -1,0 +1,37 @@
+{
+  "registeredAt": "2026-11-08T06:10:19.142239+00:00",
+  "baseline": "340f88b92405ceb6b5421b207307fdbb283b2ca3",
+  "candidateRuntime": "c4a883e5ea9f3d7e8424d799b2dafc73cc51d8df",
+  "candidateTransformSha256": "172448cfac078e727c7f097172f899a69131702fc32badb1ddf13275a13327d3",
+  "harnessSha256": "0d221158e0d0c104f2944917af68693fd4064d6f7a2c8d854838891d661fc0c5",
+  "observations": 3,
+  "configs": [
+    [
+      1280,
+      1
+    ],
+    [
+      1280,
+      4
+    ],
+    [
+      1440,
+      1
+    ]
+  ],
+  "order": [
+    [
+      "main",
+      "packed"
+    ],
+    [
+      "packed",
+      "main"
+    ],
+    [
+      "main",
+      "packed"
+    ]
+  ],
+  "method": "Fresh browser profile and disabled cache per observation, fixed five-second post-onboarding window, blocked external network. Same browser/build tooling on main and unchanged C1 runtime plus lossless pixel packing. Record all observations; no reroll. Three observations/config are a diagnostic, not statistical equivalence. Native shared lock per observation, closed browser/server at each boundary, at least7seconds handoff. All runtime/source/asset files unchanged."
+}

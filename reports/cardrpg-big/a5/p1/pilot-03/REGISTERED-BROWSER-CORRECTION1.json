@@ -1,0 +1,10 @@
+{
+  "recordedAt": "2026-11-08T06:26:56.202814+00:00",
+  "originalHarnessSha256": "52404e11c153bb470ac7841cddf826f57f74dc59648abce51cb9a33a5ba8936f",
+  "harnessSha256": "b3bae7832d0a9a4a07eef4f5b85560ff845b9864a8f0905864935c225120e6ec",
+  "retainedObservation": {
+    "path": "reports/cardrpg-big/a5/p1/pilot-03/original-cpu4-run1/checks.json",
+    "sha256": "aa93e8fa9613c57001e6a977079c9fd8365a07f861bc8adfe05bf9f15b85348c"
+  },
+  "method": "First originalCPU4 run1 completed the entire fixed timing interval. Harness then incorrectly required sceneError===null although the real no-error value is emptystring. Preserve original raw checks/logs/source and use its timing unchanged; never rerun that observation. Correct only the assertion; run the deferred original asset SHA audit after run2 timing. Remaining five scheduled observations unchanged. No source/artifact/CPU threshold change."
+}

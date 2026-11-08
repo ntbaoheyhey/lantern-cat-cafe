@@ -1,0 +1,2924 @@
+{
+  "method": {
+    "registeredAt": "2026-11-08T06:20:24.102797+00:00",
+    "input": "/tmp/cardrpg-a5-c1-revision/artifact/index.html",
+    "inputSha256": "788ff719e42c7f595615fcf2f60ae4e0021ba32419f47ed2057dae785587be82",
+    "output": "/tmp/cardrpg-a5-transport-01",
+    "tools": {
+      "tools/cardrpg-big/a5-drafts/p1-prep/model-transport.mjs": "f55b15cac65f5f557a0369a4366d9ce898922b41178df58ed0c826dcc42c9809",
+      "tools/cardrpg-big/a5-drafts/p1-prep/offline-transport-01.mjs": "457f6d013a30d555024ffae23508fcce7abf9530bdb45e68128fae92e89aac3f",
+      "tools/cardrpg-big/offline-loader.js": "0762eb21de5cc27b98fcd9d21301a9a75dade3e30f0b99e8ab688867a94c4fa3"
+    },
+    "encodings": [
+      {
+        "width": 4,
+        "delta": false
+      },
+      {
+        "width": 4,
+        "delta": true
+      },
+      {
+        "width": 8,
+        "delta": false
+      }
+    ],
+    "method": "For each embedded GLB try three fixed reversible byte encodings before existing gzip; choose smaller transport including metadata overhead. Keep every trial size. Restore exact bytes before GLTFLoader; all198 assets, shaders, pixels and frames remain unchanged. Original source assets and production builder untouched. Shared timing lock for native compression and subsequent browser checks. Browser/cold performance not inferred from size."
+  },
+  "rows": [
+    {
+      "index": 0,
+      "key": "assets/cardrpg-look/game-models/clover.glb",
+      "mime": "model/gltf-binary",
+      "decodedBytes": 545492,
+      "decodedSha256": "e8cde35d414e5ad2286ed44ca495d6ac10e3abd0c638e1ce13e7baa9c9dbec5e",
+      "originalGzipBytes": 496922,
+      "candidates": [
+        {
+          "encoding": {
+            "width": 4,
+            "delta": false
+          },
+          "gzipBytes": 513907,
+          "byteParity": "PASS"
+        },
+        {
+          "encoding": {
+            "width": 4,
+            "delta": true
+          },
+          "gzipBytes": 520687,
+          "byteParity": "PASS"
+        },
+        {
+          "encoding": {
+            "width": 8,
+            "delta": false
+          },
+          "gzipBytes": 522257,
+          "byteParity": "PASS"
+        }
+      ],
+      "selected": null,
+      "selectedGzipBytes": 496922
+    },
+    {
+      "index": 1,
+      "key": "assets/cardrpg-look/game-models/mochi.glb",
+      "mime": "model/gltf-binary",
+      "decodedBytes": 532444,
+      "decodedSha256": "51cb78f6e0899ef3d76c7a2842cc28dd3d2d0804f27e83357b39acd342e35d95",
+      "originalGzipBytes": 481502,
+      "candidates": [
+        {
+          "encoding": {
+            "width": 4,
+            "delta": false
+          },
+          "gzipBytes": 499036,
+          "byteParity": "PASS"
+        },
+        {
+          "encoding": {
+            "width": 4,
+            "delta": true
+          },
+          "gzipBytes": 506322,
+          "byteParity": "PASS"
+        },
+        {
+          "encoding": {
+            "width": 8,
+            "delta": false
+          },
+          "gzipBytes": 508825,
+          "byteParity": "PASS"
+        }
+      ],
+      "selected": null,
+      "selectedGzipBytes": 481502
+    },
+    {
+      "index": 2,
+      "key": "assets/cardrpg-look/game-models/soot.glb",
+      "mime": "model/gltf-binary",
+      "decodedBytes": 499608,
+      "decodedSha256": "b2e82eb8b3c8346f266b87517a61169e9cd935fa285c2ffccbd34b43b3277642",
+      "originalGzipBytes": 447417,
+      "candidates": [
+        {
+          "encoding": {
+            "width": 4,
+            "delta": false
+          },
+          "gzipBytes": 465893,
+          "byteParity": "PASS"
+        },
+        {
+          "encoding": {
+            "width": 4,
+            "delta": true
+          },
+          "gzipBytes": 473498,
+          "byteParity": "PASS"
+        },
+        {
+          "encoding": {
+            "width": 8,
+            "delta": false
+          },
+          "gzipBytes": 476722,
+          "byteParity": "PASS"
+        }
+      ],
+      "selected": null,
+      "selectedGzipBytes": 447417
+    },
+    {
+      "index": 3,
+      "key": "assets/cardrpg-look/portraits/clover-1x.webp",
+      "mime": "image/webp",
+      "decodedBytes": 14070,
+      "decodedSha256": "b069b69e7b7b4d79aa09f87089eca1f7868c832d1d4eb047e48b15d7fe7fbb58",
+      "originalGzipBytes": 14093,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 14093
+    },
+    {
+      "index": 4,
+      "key": "assets/cardrpg-look/portraits/clover-2x.webp",
+      "mime": "image/webp",
+      "decodedBytes": 32160,
+      "decodedSha256": "e1c8c3fad3bfa91d391b3c58ecf4645ab5881cbed199bc329c1e7538a674cf2f",
+      "originalGzipBytes": 31973,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 31973
+    },
+    {
+      "index": 5,
+      "key": "assets/cardrpg-look/portraits/mochi-1x.webp",
+      "mime": "image/webp",
+      "decodedBytes": 15798,
+      "decodedSha256": "811db7da5d8232f51cd68563efbf43bed2e82be9aa7804082a3a3248efb9b1f7",
+      "originalGzipBytes": 15821,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 15821
+    },
+    {
+      "index": 6,
+      "key": "assets/cardrpg-look/portraits/mochi-2x.webp",
+      "mime": "image/webp",
+      "decodedBytes": 35794,
+      "decodedSha256": "f2bc115607c413df0f8c4049885ef3acf9da01f86dc631ea9ea6f9920689890e",
+      "originalGzipBytes": 35629,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 35629
+    },
+    {
+      "index": 7,
+      "key": "assets/cardrpg-look/portraits/soot-1x.webp",
+      "mime": "image/webp",
+      "decodedBytes": 11482,
+      "decodedSha256": "e89fc23dbcd682a50f4a0e380484340200f550c51e5df683c776169b00dee749",
+      "originalGzipBytes": 11505,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 11505
+    },
+    {
+      "index": 8,
+      "key": "assets/cardrpg-look/portraits/soot-2x.webp",
+      "mime": "image/webp",
+      "decodedBytes": 25822,
+      "decodedSha256": "5bc3c938878dfa8ecffcdbd136f46465a748c8a5b5e9a7e0b67867960a741350",
+      "originalGzipBytes": 25621,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 25621
+    },
+    {
+      "index": 9,
+      "key": "assets/cardrpg/portraits/biscuit.png",
+      "mime": "image/png",
+      "decodedBytes": 171745,
+      "decodedSha256": "64e568299ab5f6e7166d763216c41b2ac2ca4edc91c6384e4203e918933dfc2e",
+      "originalGzipBytes": 168985,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 168985
+    },
+    {
+      "index": 10,
+      "key": "assets/cardrpg/portraits/brioche.png",
+      "mime": "image/png",
+      "decodedBytes": 177525,
+      "decodedSha256": "e538bb17b9a8e2a41d95e6191eabd08687f1690d762df963aafa9e2d4143338e",
+      "originalGzipBytes": 174716,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 174716
+    },
+    {
+      "index": 11,
+      "key": "assets/cardrpg/portraits/cinnamon.png",
+      "mime": "image/png",
+      "decodedBytes": 157786,
+      "decodedSha256": "be1a564073d08809e9876f24a89eaffd96792acb651830d4862d940dabd1ed92",
+      "originalGzipBytes": 154605,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 154605
+    },
+    {
+      "index": 12,
+      "key": "assets/cardrpg/portraits/clover.png",
+      "mime": "image/png",
+      "decodedBytes": 148968,
+      "decodedSha256": "c1b50f22f8ba0870bcc533c2cebcfdebb5086113c947ff0c7f95a333520e3f9e",
+      "originalGzipBytes": 145911,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 145911
+    },
+    {
+      "index": 13,
+      "key": "assets/cardrpg/portraits/inkcap.png",
+      "mime": "image/png",
+      "decodedBytes": 158321,
+      "decodedSha256": "b15b33f44badb089d6588002bf061e8ed92eefe1760084d22b6d037a7dfaaa56",
+      "originalGzipBytes": 155266,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 155266
+    },
+    {
+      "index": 14,
+      "key": "assets/cardrpg/portraits/mallow.png",
+      "mime": "image/png",
+      "decodedBytes": 152559,
+      "decodedSha256": "c3f033e66fa765f98298a41caad971fa049f40fab6d30bc91298682d9468d67a",
+      "originalGzipBytes": 150025,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 150025
+    },
+    {
+      "index": 15,
+      "key": "assets/cardrpg/portraits/marigold.png",
+      "mime": "image/png",
+      "decodedBytes": 159895,
+      "decodedSha256": "18604ae02adf0af95d0400764bbe90d084a0e69390db6e40306c0fdefbb4ed89",
+      "originalGzipBytes": 156810,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 156810
+    },
+    {
+      "index": 16,
+      "key": "assets/cardrpg/portraits/mochi.png",
+      "mime": "image/png",
+      "decodedBytes": 163633,
+      "decodedSha256": "e6299df849b33159562c8457fc61c6ec8db26352e28c6198730351d1ceb7bd94",
+      "originalGzipBytes": 160763,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 160763
+    },
+    {
+      "index": 17,
+      "key": "assets/cardrpg/portraits/panko.png",
+      "mime": "image/png",
+      "decodedBytes": 173643,
+      "decodedSha256": "4dd58346db3b1bc1976e122d41c6d744e9f1fd835d4249663338e0bd71f31d93",
+      "originalGzipBytes": 170948,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 170948
+    },
+    {
+      "index": 18,
+      "key": "assets/cardrpg/portraits/soot.png",
+      "mime": "image/png",
+      "decodedBytes": 148316,
+      "decodedSha256": "ae3ed0e52b6de1f72fb57f33d3374e28fed11fc0e3ccac8c660ffa9649eee28a",
+      "originalGzipBytes": 145616,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 145616
+    },
+    {
+      "index": 19,
+      "key": "assets/cardrpg/portraits/sorrel.png",
+      "mime": "image/png",
+      "decodedBytes": 151611,
+      "decodedSha256": "7cdf415fddbb5b61634860d2aa2ba199e93222df21b11aa52bbbf637c72e73b3",
+      "originalGzipBytes": 148546,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 148546
+    },
+    {
+      "index": 20,
+      "key": "assets/cardrpg/portraits/velvet.png",
+      "mime": "image/png",
+      "decodedBytes": 160790,
+      "decodedSha256": "1718a2aecad631f1bfbebf5f17c6bd69bd15e3e2c54fad2e10293732e97bdb21",
+      "originalGzipBytes": 158018,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 158018
+    },
+    {
+      "index": 21,
+      "key": "assets/cardrpg2/models/binding-thread.glb",
+      "mime": "model/gltf-binary",
+      "decodedBytes": 404304,
+      "decodedSha256": "2ade57ef05fde5db22d86246d018679aa008aacb9c7676079b427b29d3a07262",
+      "originalGzipBytes": 188337,
+      "candidates": [
+        {
+          "encoding": {
+            "width": 4,
+            "delta": false
+          },
+          "gzipBytes": 185412,
+          "byteParity": "PASS"
+        },
+        {
+          "encoding": {
+            "width": 4,
+            "delta": true
+          },
+          "gzipBytes": 188062,
+          "byteParity": "PASS"
+        },
+        {
+          "encoding": {
+            "width": 8,
+            "delta": false
+          },
+          "gzipBytes": 221889,
+          "byteParity": "PASS"
+        }
+      ],
+      "selected": {
+        "width": 4,
+        "delta": false
+      },
+      "selectedGzipBytes": 185412
+    },
+    {
+      "index": 22,
+      "key": "assets/cardrpg2/models/biscuit.glb",
+      "mime": "model/gltf-binary",
+      "decodedBytes": 691920,
+      "decodedSha256": "967bb55ad745b333d5afb0405df86b7d2c6530cefa5f8c854c72f0ea11a713f5",
+      "originalGzipBytes": 276481,
+      "candidates": [
+        {
+          "encoding": {
+            "width": 4,
+            "delta": false
+          },
+          "gzipBytes": 284662,
+          "byteParity": "PASS"
+        },
+        {
+          "encoding": {
+            "width": 4,
+            "delta": true
+          },
+          "gzipBytes": 287584,
+          "byteParity": "PASS"
+        },
+        {
+          "encoding": {
+            "width": 8,
+            "delta": false
+          },
+          "gzipBytes": 337751,
+          "byteParity": "PASS"
+        }
+      ],
+      "selected": null,
+      "selectedGzipBytes": 276481
+    },
+    {
+      "index": 23,
+      "key": "assets/cardrpg2/models/brioche.glb",
+      "mime": "model/gltf-binary",
+      "decodedBytes": 708148,
+      "decodedSha256": "d554d8e8946cfea368bdafe611a6351e66dd5329a983d08b4a458a3c090712ad",
+      "originalGzipBytes": 286313,
+      "candidates": [
+        {
+          "encoding": {
+            "width": 4,
+            "delta": false
+          },
+          "gzipBytes": 294965,
+          "byteParity": "PASS"
+        },
+        {
+          "encoding": {
+            "width": 4,
+            "delta": true
+          },
+          "gzipBytes": 295549,
+          "byteParity": "PASS"
+        },
+        {
+          "encoding": {
+            "width": 8,
+            "delta": false
+          },
+          "gzipBytes": 345379,
+          "byteParity": "PASS"
+        }
+      ],
+      "selected": null,
+      "selectedGzipBytes": 286313
+    },
+    {
+      "index": 24,
+      "key": "assets/cardrpg2/models/button-guard.glb",
+      "mime": "model/gltf-binary",
+      "decodedBytes": 431432,
+      "decodedSha256": "f8373d6882e09b7fe487d7ed8472098f24e0be903ae1232d9c9031a7eb52c619",
+      "originalGzipBytes": 186790,
+      "candidates": [
+        {
+          "encoding": {
+            "width": 4,
+            "delta": false
+          },
+          "gzipBytes": 201769,
+          "byteParity": "PASS"
+        },
+        {
+          "encoding": {
+            "width": 4,
+            "delta": true
+          },
+          "gzipBytes": 207233,
+          "byteParity": "PASS"
+        },
+        {
+          "encoding": {
+            "width": 8,
+            "delta": false
+          },
+          "gzipBytes": 237586,
+          "byteParity": "PASS"
+        }
+      ],
+      "selected": null,
+      "selectedGzipBytes": 186790
+    },
+    {
+      "index": 25,
+      "key": "assets/cardrpg2/models/cinnamon.glb",
+      "mime": "model/gltf-binary",
+      "decodedBytes": 826752,
+      "decodedSha256": "c33e933ffcc6c0f818b5c15b31387dd7a2f0f64ee3e6627197cf75b7c1db1c3d",
+      "originalGzipBytes": 332897,
+      "candidates": [
+        {
+          "encoding": {
+            "width": 4,
+            "delta": false
+          },
+          "gzipBytes": 341851,
+          "byteParity": "PASS"
+        },
+        {
+          "encoding": {
+            "width": 4,
+            "delta": true
+          },
+          "gzipBytes": 350001,
+          "byteParity": "PASS"
+        },
+        {
+          "encoding": {
+            "width": 8,
+            "delta": false
+          },
+          "gzipBytes": 421641,
+          "byteParity": "PASS"
+        }
+      ],
+      "selected": null,
+      "selectedGzipBytes": 332897
+    },
+    {
+      "index": 26,
+      "key": "assets/cardrpg2/models/clover.glb",
+      "mime": "model/gltf-binary",
+      "decodedBytes": 836776,
+      "decodedSha256": "d3cbda072509146ec57985f6eaa463c26c70e1b0afe4b41df7300a01c6b2acb5",
+      "originalGzipBytes": 335268,
+      "candidates": [
+        {
+          "encoding": {
+            "width": 4,
+            "delta": false
+          },
+          "gzipBytes": 345921,
+          "byteParity": "PASS"
+        },
+        {
+          "encoding": {
+            "width": 4,
+            "delta": true
+          },
+          "gzipBytes": 354579,
+          "byteParity": "PASS"
+        },
+        {
+          "encoding": {
+            "width": 8,
+            "delta": false
+          },
+          "gzipBytes": 426756,
+          "byteParity": "PASS"
+        }
+      ],
+      "selected": null,
+      "selectedGzipBytes": 335268
+    },
+    {
+      "index": 27,
+      "key": "assets/cardrpg2/models/crumb-sentinel.glb",
+      "mime": "model/gltf-binary",
+      "decodedBytes": 446080,
+      "decodedSha256": "8203bfe37601513442b8dca7feb177b533228fdd8c5a588e4163182b02247418",
+      "originalGzipBytes": 189876,
+      "candidates": [
+        {
+          "encoding": {
+            "width": 4,
+            "delta": false
+          },
+          "gzipBytes": 205683,
+          "byteParity": "PASS"
+        },
+        {
+          "encoding": {
+            "width": 4,
+            "delta": true
+          },
+          "gzipBytes": 212760,
+          "byteParity": "PASS"
+        },
+        {
+          "encoding": {
+            "width": 8,
+            "delta": false
+          },
+          "gzipBytes": 244781,
+          "byteParity": "PASS"
+        }
+      ],
+      "selected": null,
+      "selectedGzipBytes": 189876
+    },
+    {
+      "index": 28,
+      "key": "assets/cardrpg2/models/inkcap.glb",
+      "mime": "model/gltf-binary",
+      "decodedBytes": 710400,
+      "decodedSha256": "196d80fd47c708def37265045ebdcd104e09a44064525d4f9bedb19e27191660",
+      "originalGzipBytes": 287120,
+      "candidates": [
+        {
+          "encoding": {
+            "width": 4,
+            "delta": false
+          },
+          "gzipBytes": 295687,
+          "byteParity": "PASS"
+        },
+        {
+          "encoding": {
+            "width": 4,
+            "delta": true
+          },
+          "gzipBytes": 296044,
+          "byteParity": "PASS"
+        },
+        {
+          "encoding": {
+            "width": 8,
+            "delta": false
+          },
+          "gzipBytes": 348299,
+          "byteParity": "PASS"
+        }
+      ],
+      "selected": null,
+      "selectedGzipBytes": 287120
+    },
+    {
+      "index": 29,
+      "key": "assets/cardrpg2/models/kettle-knight.glb",
+      "mime": "model/gltf-binary",
+      "decodedBytes": 517792,
+      "decodedSha256": "3fd9b7b4a2a1e73bb4fdce82127ea690842683764c685f486ac0e594360b0c1d",
+      "originalGzipBytes": 223844,
+      "candidates": [
+        {
+          "encoding": {
+            "width": 4,
+            "delta": false
+          },
+          "gzipBytes": 237068,
+          "byteParity": "PASS"
+        },
+        {
+          "encoding": {
+            "width": 4,
+            "delta": true
+          },
+          "gzipBytes": 243424,
+          "byteParity": "PASS"
+        },
+        {
+          "encoding": {
+            "width": 8,
+            "delta": false
+          },
+          "gzipBytes": 277184,
+          "byteParity": "PASS"
+        }
+      ],
+      "selected": null,
+      "selectedGzipBytes": 223844
+    },
+    {
+      "index": 30,
+      "key": "assets/cardrpg2/models/mallow.glb",
+      "mime": "model/gltf-binary",
+      "decodedBytes": 693756,
+      "decodedSha256": "7a4148e196c6edec328080d6eadca6939f460a3009dd0dfc08daac6439553e05",
+      "originalGzipBytes": 285443,
+      "candidates": [
+        {
+          "encoding": {
+            "width": 4,
+            "delta": false
+          },
+          "gzipBytes": 291943,
+          "byteParity": "PASS"
+        },
+        {
+          "encoding": {
+            "width": 4,
+            "delta": true
+          },
+          "gzipBytes": 292134,
+          "byteParity": "PASS"
+        },
+        {
+          "encoding": {
+            "width": 8,
+            "delta": false
+          },
+          "gzipBytes": 342696,
+          "byteParity": "PASS"
+        }
+      ],
+      "selected": null,
+      "selectedGzipBytes": 285443
+    },
+    {
+      "index": 31,
+      "key": "assets/cardrpg2/models/marigold.glb",
+      "mime": "model/gltf-binary",
+      "decodedBytes": 900472,
+      "decodedSha256": "c937fdd0263d39a572c3448cbb1adf7e04fc87d1e0c674e226fab5245d7ba8a6",
+      "originalGzipBytes": 358925,
+      "candidates": [
+        {
+          "encoding": {
+            "width": 4,
+            "delta": false
+          },
+          "gzipBytes": 375217,
+          "byteParity": "PASS"
+        },
+        {
+          "encoding": {
+            "width": 4,
+            "delta": true
+          },
+          "gzipBytes": 387443,
+          "byteParity": "PASS"
+        },
+        {
+          "encoding": {
+            "width": 8,
+            "delta": false
+          },
+          "gzipBytes": 469334,
+          "byteParity": "PASS"
+        }
+      ],
+      "selected": null,
+      "selectedGzipBytes": 358925
+    },
+    {
+      "index": 32,
+      "key": "assets/cardrpg2/models/mochi.glb",
+      "mime": "model/gltf-binary",
+      "decodedBytes": 845060,
+      "decodedSha256": "ea65658d73a010984b52948b7e71901c5c205dbedac7f97eb788abca5feb6893",
+      "originalGzipBytes": 355873,
+      "candidates": [
+        {
+          "encoding": {
+            "width": 4,
+            "delta": false
+          },
+          "gzipBytes": 368776,
+          "byteParity": "PASS"
+        },
+        {
+          "encoding": {
+            "width": 4,
+            "delta": true
+          },
+          "gzipBytes": 370903,
+          "byteParity": "PASS"
+        },
+        {
+          "encoding": {
+            "width": 8,
+            "delta": false
+          },
+          "gzipBytes": 433285,
+          "byteParity": "PASS"
+        }
+      ],
+      "selected": null,
+      "selectedGzipBytes": 355873
+    },
+    {
+      "index": 33,
+      "key": "assets/cardrpg2/models/needle-moth.glb",
+      "mime": "model/gltf-binary",
+      "decodedBytes": 433984,
+      "decodedSha256": "11335b8e194ade91ba990898d41b66472dd1749daf8cb98a91628c4c905b600a",
+      "originalGzipBytes": 159229,
+      "candidates": [
+        {
+          "encoding": {
+            "width": 4,
+            "delta": false
+          },
+          "gzipBytes": 174352,
+          "byteParity": "PASS"
+        },
+        {
+          "encoding": {
+            "width": 4,
+            "delta": true
+          },
+          "gzipBytes": 181602,
+          "byteParity": "PASS"
+        },
+        {
+          "encoding": {
+            "width": 8,
+            "delta": false
+          },
+          "gzipBytes": 215448,
+          "byteParity": "PASS"
+        }
+      ],
+      "selected": null,
+      "selectedGzipBytes": 159229
+    },
+    {
+      "index": 34,
+      "key": "assets/cardrpg2/models/panko.glb",
+      "mime": "model/gltf-binary",
+      "decodedBytes": 699824,
+      "decodedSha256": "74127ecfce48c817deba33fbe83a7d4bc0f1e9f406bf6a25189a5e3918cf9e5a",
+      "originalGzipBytes": 280026,
+      "candidates": [
+        {
+          "encoding": {
+            "width": 4,
+            "delta": false
+          },
+          "gzipBytes": 288249,
+          "byteParity": "PASS"
+        },
+        {
+          "encoding": {
+            "width": 4,
+            "delta": true
+          },
+          "gzipBytes": 289171,
+          "byteParity": "PASS"
+        },
+        {
+          "encoding": {
+            "width": 8,
+            "delta": false
+          },
+          "gzipBytes": 340795,
+          "byteParity": "PASS"
+        }
+      ],
+      "selected": null,
+      "selectedGzipBytes": 280026
+    },
+    {
+      "index": 35,
+      "key": "assets/cardrpg2/models/pantry-crown.glb",
+      "mime": "model/gltf-binary",
+      "decodedBytes": 838252,
+      "decodedSha256": "544fc8d17e8e3cf4dbe819968537bd6b92d60e8e1afe12c15fdffe83c3168433",
+      "originalGzipBytes": 398729,
+      "candidates": [
+        {
+          "encoding": {
+            "width": 4,
+            "delta": false
+          },
+          "gzipBytes": 358497,
+          "byteParity": "PASS"
+        },
+        {
+          "encoding": {
+            "width": 4,
+            "delta": true
+          },
+          "gzipBytes": 358774,
+          "byteParity": "PASS"
+        },
+        {
+          "encoding": {
+            "width": 8,
+            "delta": false
+          },
+          "gzipBytes": 417732,
+          "byteParity": "PASS"
+        }
+      ],
+      "selected": {
+        "width": 4,
+        "delta": false
+      },
+      "selectedGzipBytes": 358497
+    },
+    {
+      "index": 36,
+      "key": "assets/cardrpg2/models/pollen-scout.glb",
+      "mime": "model/gltf-binary",
+      "decodedBytes": 456584,
+      "decodedSha256": "5fcbdbbf83011c75aabc39b7fe9488d27ebb08e1aaccc94823e45583a6bbdc4a",
+      "originalGzipBytes": 165626,
+      "candidates": [
+        {
+          "encoding": {
+            "width": 4,
+            "delta": false
+          },
+          "gzipBytes": 182887,
+          "byteParity": "PASS"
+        },
+        {
+          "encoding": {
+            "width": 4,
+            "delta": true
+          },
+          "gzipBytes": 190255,
+          "byteParity": "PASS"
+        },
+        {
+          "encoding": {
+            "width": 8,
+            "delta": false
+          },
+          "gzipBytes": 227926,
+          "byteParity": "PASS"
+        }
+      ],
+      "selected": null,
+      "selectedGzipBytes": 165626
+    },
+    {
+      "index": 37,
+      "key": "assets/cardrpg2/models/practice-cushion.glb",
+      "mime": "model/gltf-binary",
+      "decodedBytes": 467776,
+      "decodedSha256": "27c617005cad3b588181b6e9af568690e4393d40f50dfa8121a9122b1e9a9554",
+      "originalGzipBytes": 176311,
+      "candidates": [
+        {
+          "encoding": {
+            "width": 4,
+            "delta": false
+          },
+          "gzipBytes": 191335,
+          "byteParity": "PASS"
+        },
+        {
+          "encoding": {
+            "width": 4,
+            "delta": true
+          },
+          "gzipBytes": 197149,
+          "byteParity": "PASS"
+        },
+        {
+          "encoding": {
+            "width": 8,
+            "delta": false
+          },
+          "gzipBytes": 234341,
+          "byteParity": "PASS"
+        }
+      ],
+      "selected": null,
+      "selectedGzipBytes": 176311
+    },
+    {
+      "index": 38,
+      "key": "assets/cardrpg2/models/rain-spool.glb",
+      "mime": "model/gltf-binary",
+      "decodedBytes": 367652,
+      "decodedSha256": "42cbebadd578bd1e01327e1e7977619c91f5a088796e92a83018fdc160ac1769",
+      "originalGzipBytes": 136365,
+      "candidates": [
+        {
+          "encoding": {
+            "width": 4,
+            "delta": false
+          },
+          "gzipBytes": 148703,
+          "byteParity": "PASS"
+        },
+        {
+          "encoding": {
+            "width": 4,
+            "delta": true
+          },
+          "gzipBytes": 152376,
+          "byteParity": "PASS"
+        },
+        {
+          "encoding": {
+            "width": 8,
+            "delta": false
+          },
+          "gzipBytes": 176697,
+          "byteParity": "PASS"
+        }
+      ],
+      "selected": null,
+      "selectedGzipBytes": 136365
+    },
+    {
+      "index": 39,
+      "key": "assets/cardrpg2/models/sock-skipper.glb",
+      "mime": "model/gltf-binary",
+      "decodedBytes": 378768,
+      "decodedSha256": "8457f9df0dd3269e261381b7eb76151d78a5887b44c159d7827debe4d99cc8ae",
+      "originalGzipBytes": 150167,
+      "candidates": [
+        {
+          "encoding": {
+            "width": 4,
+            "delta": false
+          },
+          "gzipBytes": 165704,
+          "byteParity": "PASS"
+        },
+        {
+          "encoding": {
+            "width": 4,
+            "delta": true
+          },
+          "gzipBytes": 170541,
+          "byteParity": "PASS"
+        },
+        {
+          "encoding": {
+            "width": 8,
+            "delta": false
+          },
+          "gzipBytes": 198162,
+          "byteParity": "PASS"
+        }
+      ],
+      "selected": null,
+      "selectedGzipBytes": 150167
+    },
+    {
+      "index": 40,
+      "key": "assets/cardrpg2/models/soot.glb",
+      "mime": "model/gltf-binary",
+      "decodedBytes": 899164,
+      "decodedSha256": "8ad5f7fbf6b396462db611f7c250c7531e22a5efab207dee413bef528854319a",
+      "originalGzipBytes": 383415,
+      "candidates": [
+        {
+          "encoding": {
+            "width": 4,
+            "delta": false
+          },
+          "gzipBytes": 395995,
+          "byteParity": "PASS"
+        },
+        {
+          "encoding": {
+            "width": 4,
+            "delta": true
+          },
+          "gzipBytes": 400707,
+          "byteParity": "PASS"
+        },
+        {
+          "encoding": {
+            "width": 8,
+            "delta": false
+          },
+          "gzipBytes": 472105,
+          "byteParity": "PASS"
+        }
+      ],
+      "selected": null,
+      "selectedGzipBytes": 383415
+    },
+    {
+      "index": 41,
+      "key": "assets/cardrpg2/models/sorrel.glb",
+      "mime": "model/gltf-binary",
+      "decodedBytes": 831080,
+      "decodedSha256": "ba9fbd068f80a6e534af557aa1a33da92115cb8a5d23048104fa757d44b90d5d",
+      "originalGzipBytes": 333541,
+      "candidates": [
+        {
+          "encoding": {
+            "width": 4,
+            "delta": false
+          },
+          "gzipBytes": 344421,
+          "byteParity": "PASS"
+        },
+        {
+          "encoding": {
+            "width": 4,
+            "delta": true
+          },
+          "gzipBytes": 352476,
+          "byteParity": "PASS"
+        },
+        {
+          "encoding": {
+            "width": 8,
+            "delta": false
+          },
+          "gzipBytes": 425520,
+          "byteParity": "PASS"
+        }
+      ],
+      "selected": null,
+      "selectedGzipBytes": 333541
+    },
+    {
+      "index": 42,
+      "key": "assets/cardrpg2/models/spool-ram.glb",
+      "mime": "model/gltf-binary",
+      "decodedBytes": 357196,
+      "decodedSha256": "9d7434b5aea300e92a55616c7197f4311283e0a1d96cdf6bd2b4b67de332a620",
+      "originalGzipBytes": 132468,
+      "candidates": [
+        {
+          "encoding": {
+            "width": 4,
+            "delta": false
+          },
+          "gzipBytes": 144075,
+          "byteParity": "PASS"
+        },
+        {
+          "encoding": {
+            "width": 4,
+            "delta": true
+          },
+          "gzipBytes": 147347,
+          "byteParity": "PASS"
+        },
+        {
+          "encoding": {
+            "width": 8,
+            "delta": false
+          },
+          "gzipBytes": 169726,
+          "byteParity": "PASS"
+        }
+      ],
+      "selected": null,
+      "selectedGzipBytes": 132468
+    },
+    {
+      "index": 43,
+      "key": "assets/cardrpg2/models/teacup-healer.glb",
+      "mime": "model/gltf-binary",
+      "decodedBytes": 387180,
+      "decodedSha256": "42ac6bb3fe40521580d41a520576af39fea513d81dcb457d252065d6079b0e5f",
+      "originalGzipBytes": 135890,
+      "candidates": [
+        {
+          "encoding": {
+            "width": 4,
+            "delta": false
+          },
+          "gzipBytes": 150895,
+          "byteParity": "PASS"
+        },
+        {
+          "encoding": {
+            "width": 4,
+            "delta": true
+          },
+          "gzipBytes": 156708,
+          "byteParity": "PASS"
+        },
+        {
+          "encoding": {
+            "width": 8,
+            "delta": false
+          },
+          "gzipBytes": 169921,
+          "byteParity": "PASS"
+        }
+      ],
+      "selected": null,
+      "selectedGzipBytes": 135890
+    },
+    {
+      "index": 44,
+      "key": "assets/cardrpg2/models/velvet.glb",
+      "mime": "model/gltf-binary",
+      "decodedBytes": 692040,
+      "decodedSha256": "bebc3f14363a99c4f71c631093a04a1c5c7e940224044037ec93285278a74f7b",
+      "originalGzipBytes": 278422,
+      "candidates": [
+        {
+          "encoding": {
+            "width": 4,
+            "delta": false
+          },
+          "gzipBytes": 289070,
+          "byteParity": "PASS"
+        },
+        {
+          "encoding": {
+            "width": 4,
+            "delta": true
+          },
+          "gzipBytes": 290725,
+          "byteParity": "PASS"
+        },
+        {
+          "encoding": {
+            "width": 8,
+            "delta": false
+          },
+          "gzipBytes": 339853,
+          "byteParity": "PASS"
+        }
+      ],
+      "selected": null,
+      "selectedGzipBytes": 278422
+    },
+    {
+      "index": 45,
+      "key": "assets/cardrpg2/models/yarn-giant.glb",
+      "mime": "model/gltf-binary",
+      "decodedBytes": 828464,
+      "decodedSha256": "33357b16bf8a476001f8589cb3745c95d4545866e786fe9e3d57343c3f71d444",
+      "originalGzipBytes": 396192,
+      "candidates": [
+        {
+          "encoding": {
+            "width": 4,
+            "delta": false
+          },
+          "gzipBytes": 355015,
+          "byteParity": "PASS"
+        },
+        {
+          "encoding": {
+            "width": 4,
+            "delta": true
+          },
+          "gzipBytes": 355514,
+          "byteParity": "PASS"
+        },
+        {
+          "encoding": {
+            "width": 8,
+            "delta": false
+          },
+          "gzipBytes": 414251,
+          "byteParity": "PASS"
+        }
+      ],
+      "selected": {
+        "width": 4,
+        "delta": false
+      },
+      "selectedGzipBytes": 355015
+    },
+    {
+      "index": 46,
+      "key": "assets/cardrpg3/evidence/baseline-dpr1-enemy.webp",
+      "mime": "image/webp",
+      "decodedBytes": 5698,
+      "decodedSha256": "b58643d26369b780a39fdb743d8e201bd7ad04b3eb821eeb72ab39505762b07b",
+      "originalGzipBytes": 5721,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 5721
+    },
+    {
+      "index": 47,
+      "key": "assets/cardrpg3/evidence/baseline-dpr1-hero-face.webp",
+      "mime": "image/webp",
+      "decodedBytes": 6090,
+      "decodedSha256": "2a543ad84cd68baa8861302ed9be07b1d791a5558f65b9272b00796948abd433",
+      "originalGzipBytes": 6113,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 6113
+    },
+    {
+      "index": 48,
+      "key": "assets/cardrpg3/evidence/baseline-dpr1-hud-text.webp",
+      "mime": "image/webp",
+      "decodedBytes": 1500,
+      "decodedSha256": "d5e6e9be028754b8d065156aeb6bbb7a50c9b13a99849f091f70da7ae37326bd",
+      "originalGzipBytes": 1523,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 1523
+    },
+    {
+      "index": 49,
+      "key": "assets/cardrpg3/evidence/baseline-dpr1-portrait.webp",
+      "mime": "image/webp",
+      "decodedBytes": 29302,
+      "decodedSha256": "0b2f65f77b15674f411da44b6992de9ca75dee22c8925d70d8b46c08c345ce4e",
+      "originalGzipBytes": 29284,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 29284
+    },
+    {
+      "index": 50,
+      "key": "assets/cardrpg3/evidence/baseline-dpr1-skill-icon.webp",
+      "mime": "image/webp",
+      "decodedBytes": 468,
+      "decodedSha256": "5d1706bee13ffe9bf60fa234b2caf70a3f2ddae0a00cb9ab7dab47a8a3cf2519",
+      "originalGzipBytes": 491,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 491
+    },
+    {
+      "index": 51,
+      "key": "assets/cardrpg3/evidence/baseline-dpr2-enemy.webp",
+      "mime": "image/webp",
+      "decodedBytes": 17056,
+      "decodedSha256": "beeaaa2332a0dd0ab9609a3496b4b3e1a8b92522ea9ce62edfcb9b1c311fd037",
+      "originalGzipBytes": 17084,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 17084
+    },
+    {
+      "index": 52,
+      "key": "assets/cardrpg3/evidence/baseline-dpr2-hero-face.webp",
+      "mime": "image/webp",
+      "decodedBytes": 18724,
+      "decodedSha256": "2b848dea1c6fb9e8bc7606d30d2db67f55eb641c34dde8c9fd0235de1abd8e4b",
+      "originalGzipBytes": 18740,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 18740
+    },
+    {
+      "index": 53,
+      "key": "assets/cardrpg3/evidence/baseline-dpr2-hud-text.webp",
+      "mime": "image/webp",
+      "decodedBytes": 2748,
+      "decodedSha256": "9e6c5e46bc2856a5da7cc1911eaf3d01ebd09dbc658b8b417cc97cb9bc4687c9",
+      "originalGzipBytes": 2771,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 2771
+    },
+    {
+      "index": 54,
+      "key": "assets/cardrpg3/evidence/baseline-dpr2-portrait.webp",
+      "mime": "image/webp",
+      "decodedBytes": 87876,
+      "decodedSha256": "d04ab2c66c13de871a2233b36e4fa56bea36f3b089786b3bca8c43aa6d2e7b1b",
+      "originalGzipBytes": 87924,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 87924
+    },
+    {
+      "index": 55,
+      "key": "assets/cardrpg3/evidence/baseline-dpr2-skill-icon.webp",
+      "mime": "image/webp",
+      "decodedBytes": 952,
+      "decodedSha256": "67947da3326b975623ad17f34da90ff5f8796512b9f3a1cf151d598606a9d822",
+      "originalGzipBytes": 975,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 975
+    },
+    {
+      "index": 56,
+      "key": "assets/cardrpg3/evidence/current-dpr1-enemy.webp",
+      "mime": "image/webp",
+      "decodedBytes": 6268,
+      "decodedSha256": "80c13b121e1087e61bb51a8f40a9dcf2c5288b4696870753180b09f09fd90a6e",
+      "originalGzipBytes": 6291,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 6291
+    },
+    {
+      "index": 57,
+      "key": "assets/cardrpg3/evidence/current-dpr1-hero-face.webp",
+      "mime": "image/webp",
+      "decodedBytes": 6288,
+      "decodedSha256": "0febba6730e84e9e3f08b68a6622c3504d0d3bfc79e858a16d8b80a3dc61825e",
+      "originalGzipBytes": 6311,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 6311
+    },
+    {
+      "index": 58,
+      "key": "assets/cardrpg3/evidence/current-dpr1-hud-text.webp",
+      "mime": "image/webp",
+      "decodedBytes": 1500,
+      "decodedSha256": "d5e6e9be028754b8d065156aeb6bbb7a50c9b13a99849f091f70da7ae37326bd",
+      "originalGzipBytes": 1523,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 1523
+    },
+    {
+      "index": 59,
+      "key": "assets/cardrpg3/evidence/current-dpr1-portrait.webp",
+      "mime": "image/webp",
+      "decodedBytes": 29184,
+      "decodedSha256": "d840e28bd9e5584b171634b0174c166a18fbf12fb47090abfcca3d1a2332ad40",
+      "originalGzipBytes": 29182,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 29182
+    },
+    {
+      "index": 60,
+      "key": "assets/cardrpg3/evidence/current-dpr1-skill-icon.webp",
+      "mime": "image/webp",
+      "decodedBytes": 432,
+      "decodedSha256": "4a4ff876a2f3e3a89d5c0cf7a17f25818d5530f3b17de8e1c4ad5a2d95d667db",
+      "originalGzipBytes": 455,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 455
+    },
+    {
+      "index": 61,
+      "key": "assets/cardrpg3/evidence/current-dpr2-enemy.webp",
+      "mime": "image/webp",
+      "decodedBytes": 18122,
+      "decodedSha256": "e0939991a17d55d15cd0db16b5d16a420bd221cd23e0460618e24332eb2b3c77",
+      "originalGzipBytes": 18150,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 18150
+    },
+    {
+      "index": 62,
+      "key": "assets/cardrpg3/evidence/current-dpr2-hero-face.webp",
+      "mime": "image/webp",
+      "decodedBytes": 18256,
+      "decodedSha256": "a5d55a9c6b6b099a8a0c757b4436a661061d3c79eb8d3e1798b044e452447da0",
+      "originalGzipBytes": 18284,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 18284
+    },
+    {
+      "index": 63,
+      "key": "assets/cardrpg3/evidence/current-dpr2-hud-text.webp",
+      "mime": "image/webp",
+      "decodedBytes": 2748,
+      "decodedSha256": "9e6c5e46bc2856a5da7cc1911eaf3d01ebd09dbc658b8b417cc97cb9bc4687c9",
+      "originalGzipBytes": 2771,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 2771
+    },
+    {
+      "index": 64,
+      "key": "assets/cardrpg3/evidence/current-dpr2-portrait.webp",
+      "mime": "image/webp",
+      "decodedBytes": 86942,
+      "decodedSha256": "25865d36a22482b09f299a6cf6f5e0537910355cb1d7783244678d9ab080bcba",
+      "originalGzipBytes": 86990,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 86990
+    },
+    {
+      "index": 65,
+      "key": "assets/cardrpg3/evidence/current-dpr2-skill-icon.webp",
+      "mime": "image/webp",
+      "decodedBytes": 880,
+      "decodedSha256": "3881f8b89d9a26adf9ee560c9136475a694dd35ed7f0f4f04cdb40e895c102b4",
+      "originalGzipBytes": 903,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 903
+    },
+    {
+      "index": 66,
+      "key": "assets/cardrpg3/icons/biscuit-1.svg",
+      "mime": "image/svg+xml",
+      "decodedBytes": 330,
+      "decodedSha256": "9d2f326be7671d21f4c9f98fbc330946fcb472f90081afa4cdab1290a7327a15",
+      "originalGzipBytes": 246,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 246
+    },
+    {
+      "index": 67,
+      "key": "assets/cardrpg3/icons/biscuit-2.svg",
+      "mime": "image/svg+xml",
+      "decodedBytes": 339,
+      "decodedSha256": "d4ffa2a309e7ca9d88e18b203d15404b0616d46ddd62b5fc3d7598c8d2328a66",
+      "originalGzipBytes": 252,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 252
+    },
+    {
+      "index": 68,
+      "key": "assets/cardrpg3/icons/biscuit-3.svg",
+      "mime": "image/svg+xml",
+      "decodedBytes": 351,
+      "decodedSha256": "9d66a94be73606496f3201929439d156929f7a40d5ec9d72c86f3b705c777c6d",
+      "originalGzipBytes": 263,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 263
+    },
+    {
+      "index": 69,
+      "key": "assets/cardrpg3/icons/biscuit-4.svg",
+      "mime": "image/svg+xml",
+      "decodedBytes": 357,
+      "decodedSha256": "f86b6c4f2a96503be459a650575b2d466c4d80a03aba735cff4fa27a517a8117",
+      "originalGzipBytes": 260,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 260
+    },
+    {
+      "index": 70,
+      "key": "assets/cardrpg3/icons/brioche-1.svg",
+      "mime": "image/svg+xml",
+      "decodedBytes": 330,
+      "decodedSha256": "9b52008cf47c9bd20825b5093fcff328b32adff5ff47e00868b2605b91cf8110",
+      "originalGzipBytes": 253,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 253
+    },
+    {
+      "index": 71,
+      "key": "assets/cardrpg3/icons/brioche-2.svg",
+      "mime": "image/svg+xml",
+      "decodedBytes": 339,
+      "decodedSha256": "8834ab2ffdca806eb8ae234842ca0381212594411ec92983a579d7891f1139b0",
+      "originalGzipBytes": 256,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 256
+    },
+    {
+      "index": 72,
+      "key": "assets/cardrpg3/icons/brioche-3.svg",
+      "mime": "image/svg+xml",
+      "decodedBytes": 351,
+      "decodedSha256": "7616dd25795be4a4e5c449805736686a57baa0e117336c51798cea3b870ea621",
+      "originalGzipBytes": 265,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 265
+    },
+    {
+      "index": 73,
+      "key": "assets/cardrpg3/icons/brioche-4.svg",
+      "mime": "image/svg+xml",
+      "decodedBytes": 357,
+      "decodedSha256": "b52ca98e919fc2064f66f4b16e854f9224915861625d42b7822c99f19ffb8a88",
+      "originalGzipBytes": 268,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 268
+    },
+    {
+      "index": 74,
+      "key": "assets/cardrpg3/icons/cinnamon-1.svg",
+      "mime": "image/svg+xml",
+      "decodedBytes": 333,
+      "decodedSha256": "46452911cf41646f0480368893196e5e36586e96c07db5bbcf98c63ace23d9ac",
+      "originalGzipBytes": 249,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 249
+    },
+    {
+      "index": 75,
+      "key": "assets/cardrpg3/icons/cinnamon-2.svg",
+      "mime": "image/svg+xml",
+      "decodedBytes": 342,
+      "decodedSha256": "017538e4477d298e88028a23a0e6ca22c261f144670c3e7ca7e2c2e54a9ae820",
+      "originalGzipBytes": 254,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 254
+    },
+    {
+      "index": 76,
+      "key": "assets/cardrpg3/icons/cinnamon-3.svg",
+      "mime": "image/svg+xml",
+      "decodedBytes": 354,
+      "decodedSha256": "330cbe644748b6e87ab545d14535a5780166ee7fcecebe14ef4c9aa1919fb3e4",
+      "originalGzipBytes": 262,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 262
+    },
+    {
+      "index": 77,
+      "key": "assets/cardrpg3/icons/cinnamon-4.svg",
+      "mime": "image/svg+xml",
+      "decodedBytes": 360,
+      "decodedSha256": "74ed1d5c1c372e639ab92e4226d207291b141bfe2cd711ec4b244acedabe5b9e",
+      "originalGzipBytes": 262,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 262
+    },
+    {
+      "index": 78,
+      "key": "assets/cardrpg3/icons/clover-1.svg",
+      "mime": "image/svg+xml",
+      "decodedBytes": 326,
+      "decodedSha256": "ffe997b4ff32f79b37db8e43f70df80d7d4d0261998fee0ef6b2c6daffdfebf1",
+      "originalGzipBytes": 244,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 244
+    },
+    {
+      "index": 79,
+      "key": "assets/cardrpg3/icons/clover-2.svg",
+      "mime": "image/svg+xml",
+      "decodedBytes": 335,
+      "decodedSha256": "d08a2aa4af75e6fce3d318570f17f494c5c4763e7aff3cec6257af17fc72e595",
+      "originalGzipBytes": 248,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 248
+    },
+    {
+      "index": 80,
+      "key": "assets/cardrpg3/icons/clover-3.svg",
+      "mime": "image/svg+xml",
+      "decodedBytes": 347,
+      "decodedSha256": "04d07fb7ca64ae126b5a1c9e7822788eb79366b56a3946241ba150db7f7ee79c",
+      "originalGzipBytes": 258,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 258
+    },
+    {
+      "index": 81,
+      "key": "assets/cardrpg3/icons/clover-4.svg",
+      "mime": "image/svg+xml",
+      "decodedBytes": 353,
+      "decodedSha256": "c516deadae3bf70222e7d8f466214984a27a9b0e7ef9f586a9421f1dab525a60",
+      "originalGzipBytes": 258,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 258
+    },
+    {
+      "index": 82,
+      "key": "assets/cardrpg3/icons/inkcap-1.svg",
+      "mime": "image/svg+xml",
+      "decodedBytes": 323,
+      "decodedSha256": "c55e9004efce54af33154a9f834862cf562d8e5148394648d08e85cca6f7a296",
+      "originalGzipBytes": 250,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 250
+    },
+    {
+      "index": 83,
+      "key": "assets/cardrpg3/icons/inkcap-2.svg",
+      "mime": "image/svg+xml",
+      "decodedBytes": 332,
+      "decodedSha256": "5254322c7f95b778c5bb2c986c14bed9d92346ab33f8664eec510e6906b10e7c",
+      "originalGzipBytes": 252,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 252
+    },
+    {
+      "index": 84,
+      "key": "assets/cardrpg3/icons/inkcap-3.svg",
+      "mime": "image/svg+xml",
+      "decodedBytes": 344,
+      "decodedSha256": "93aba1d332abcef163d9cbef9466ac74458d170134752504e7b7f2be7a2dec68",
+      "originalGzipBytes": 261,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 261
+    },
+    {
+      "index": 85,
+      "key": "assets/cardrpg3/icons/inkcap-4.svg",
+      "mime": "image/svg+xml",
+      "decodedBytes": 350,
+      "decodedSha256": "5a1079d9a3b9d1bac0501f1e0e1febeb5a087a52ca7475e6f446daa9abe5d641",
+      "originalGzipBytes": 262,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 262
+    },
+    {
+      "index": 86,
+      "key": "assets/cardrpg3/icons/mallow-1.svg",
+      "mime": "image/svg+xml",
+      "decodedBytes": 332,
+      "decodedSha256": "020942fdf30ce9e9d20d1c3fab9ede255ad8d482a08d1d589df57bf584af4cb2",
+      "originalGzipBytes": 248,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 248
+    },
+    {
+      "index": 87,
+      "key": "assets/cardrpg3/icons/mallow-2.svg",
+      "mime": "image/svg+xml",
+      "decodedBytes": 341,
+      "decodedSha256": "e6f2346d99b2f924cc1f09b17078910c23dd68b3e7f8ca53a003e5555db890d5",
+      "originalGzipBytes": 253,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 253
+    },
+    {
+      "index": 88,
+      "key": "assets/cardrpg3/icons/mallow-3.svg",
+      "mime": "image/svg+xml",
+      "decodedBytes": 353,
+      "decodedSha256": "61d775984a5b3fbf12772dc30aec186bff75eb33b35747bef823c8a243f560c1",
+      "originalGzipBytes": 263,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 263
+    },
+    {
+      "index": 89,
+      "key": "assets/cardrpg3/icons/mallow-4.svg",
+      "mime": "image/svg+xml",
+      "decodedBytes": 359,
+      "decodedSha256": "a7bebcb39e839b22372f0a0b5a5a69a9b3fedae0dce360a7736f194136c4e719",
+      "originalGzipBytes": 262,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 262
+    },
+    {
+      "index": 90,
+      "key": "assets/cardrpg3/icons/marigold-1.svg",
+      "mime": "image/svg+xml",
+      "decodedBytes": 346,
+      "decodedSha256": "f8f9e7f362d34db76bca674ac23c66d1963bd0f993221537762d9eabb4fbe8fd",
+      "originalGzipBytes": 257,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 257
+    },
+    {
+      "index": 91,
+      "key": "assets/cardrpg3/icons/marigold-2.svg",
+      "mime": "image/svg+xml",
+      "decodedBytes": 355,
+      "decodedSha256": "fd0e1ccf545d62f748e937e7133416786a0200138a240c17a1f40db83c1d1e17",
+      "originalGzipBytes": 259,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 259
+    },
+    {
+      "index": 92,
+      "key": "assets/cardrpg3/icons/marigold-3.svg",
+      "mime": "image/svg+xml",
+      "decodedBytes": 367,
+      "decodedSha256": "3b24e59aee8863c5d603ab2cf5d358b1fc60d4952f1f220b01930e35bfa54454",
+      "originalGzipBytes": 271,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 271
+    },
+    {
+      "index": 93,
+      "key": "assets/cardrpg3/icons/marigold-4.svg",
+      "mime": "image/svg+xml",
+      "decodedBytes": 373,
+      "decodedSha256": "839a784dabfba9fd74a8917feb8cd448fb308a27bd1d647cba0a4726e991226f",
+      "originalGzipBytes": 268,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 268
+    },
+    {
+      "index": 94,
+      "key": "assets/cardrpg3/icons/mochi-1.svg",
+      "mime": "image/svg+xml",
+      "decodedBytes": 324,
+      "decodedSha256": "3d5f1084129610d3db0ae1f76d8fc1b7b62a02cc0aae519506c64882ce39387c",
+      "originalGzipBytes": 249,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 249
+    },
+    {
+      "index": 95,
+      "key": "assets/cardrpg3/icons/mochi-2.svg",
+      "mime": "image/svg+xml",
+      "decodedBytes": 333,
+      "decodedSha256": "a1ed894b7989af4a1a72053efd986a822b524ef3e222a122c62d1d1614101b26",
+      "originalGzipBytes": 251,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 251
+    },
+    {
+      "index": 96,
+      "key": "assets/cardrpg3/icons/mochi-3.svg",
+      "mime": "image/svg+xml",
+      "decodedBytes": 345,
+      "decodedSha256": "0b9bc85f4aac9300e2a049f574979a1343a986cae39cfe26b13fdf7b02dc4be9",
+      "originalGzipBytes": 260,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 260
+    },
+    {
+      "index": 97,
+      "key": "assets/cardrpg3/icons/mochi-4.svg",
+      "mime": "image/svg+xml",
+      "decodedBytes": 351,
+      "decodedSha256": "64436b099d9a5c8527795d4284e7dfa4b3020155b055941a6267520b10da6a30",
+      "originalGzipBytes": 260,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 260
+    },
+    {
+      "index": 98,
+      "key": "assets/cardrpg3/icons/panko-1.svg",
+      "mime": "image/svg+xml",
+      "decodedBytes": 334,
+      "decodedSha256": "d03e1d09d9b6ae345e272fd79a2294b8a5c20e6b1416a35f2e84417d12f37782",
+      "originalGzipBytes": 254,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 254
+    },
+    {
+      "index": 99,
+      "key": "assets/cardrpg3/icons/panko-2.svg",
+      "mime": "image/svg+xml",
+      "decodedBytes": 343,
+      "decodedSha256": "461e355e0bcee9ff1a90d05c01bacfb8f02ecd862f061ec1a42fed3b670fc679",
+      "originalGzipBytes": 258,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 258
+    },
+    {
+      "index": 100,
+      "key": "assets/cardrpg3/icons/panko-3.svg",
+      "mime": "image/svg+xml",
+      "decodedBytes": 355,
+      "decodedSha256": "d9c698c2ea1926cb380cd1714806d6bfc01fc536c709eb5f4d2af810d81d7125",
+      "originalGzipBytes": 267,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 267
+    },
+    {
+      "index": 101,
+      "key": "assets/cardrpg3/icons/panko-4.svg",
+      "mime": "image/svg+xml",
+      "decodedBytes": 361,
+      "decodedSha256": "4f689de4e30c6720bfac5dd4422c59ede02666dab39a7aee409449fbc1736d7e",
+      "originalGzipBytes": 268,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 268
+    },
+    {
+      "index": 102,
+      "key": "assets/cardrpg3/icons/soot-1.svg",
+      "mime": "image/svg+xml",
+      "decodedBytes": 330,
+      "decodedSha256": "323f7b913943e2b9fa8f51febf857e79f350cceaa874d38f0fdf7f4928346f50",
+      "originalGzipBytes": 247,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 247
+    },
+    {
+      "index": 103,
+      "key": "assets/cardrpg3/icons/soot-2.svg",
+      "mime": "image/svg+xml",
+      "decodedBytes": 339,
+      "decodedSha256": "d4c8ba1423a2996c1714a6438c2235d289156e198a5a6b0c3beea3e12d0a41a9",
+      "originalGzipBytes": 251,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 251
+    },
+    {
+      "index": 104,
+      "key": "assets/cardrpg3/icons/soot-3.svg",
+      "mime": "image/svg+xml",
+      "decodedBytes": 351,
+      "decodedSha256": "0d32a60a5dce79c960141d7a58047703154c065dde28e6b2dbecc1039b2de8b6",
+      "originalGzipBytes": 262,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 262
+    },
+    {
+      "index": 105,
+      "key": "assets/cardrpg3/icons/soot-4.svg",
+      "mime": "image/svg+xml",
+      "decodedBytes": 357,
+      "decodedSha256": "4b0b26056a43c5a096d5b751e7a0756337c5bef3f777675ef039e5281745b716",
+      "originalGzipBytes": 260,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 260
+    },
+    {
+      "index": 106,
+      "key": "assets/cardrpg3/icons/sorrel-1.svg",
+      "mime": "image/svg+xml",
+      "decodedBytes": 322,
+      "decodedSha256": "181c589d666c68b204ed5b42893b17e721ff758eac0d8d0b6c41ec2d28947325",
+      "originalGzipBytes": 248,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 248
+    },
+    {
+      "index": 107,
+      "key": "assets/cardrpg3/icons/sorrel-2.svg",
+      "mime": "image/svg+xml",
+      "decodedBytes": 331,
+      "decodedSha256": "885f86aa6ea18de9a876c43c070c792fab1f7db7ded687ba6d4822b42933d664",
+      "originalGzipBytes": 251,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 251
+    },
+    {
+      "index": 108,
+      "key": "assets/cardrpg3/icons/sorrel-3.svg",
+      "mime": "image/svg+xml",
+      "decodedBytes": 343,
+      "decodedSha256": "84c1b2bdfb046cbb9996e323d9dfa2f71e91545a85a539cfc552ff65c75d432d",
+      "originalGzipBytes": 260,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 260
+    },
+    {
+      "index": 109,
+      "key": "assets/cardrpg3/icons/sorrel-4.svg",
+      "mime": "image/svg+xml",
+      "decodedBytes": 349,
+      "decodedSha256": "74a75420616d7efc22bb06dbb2ddf0c2f9fbe9e883ee58af4938c83d59000cff",
+      "originalGzipBytes": 262,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 262
+    },
+    {
+      "index": 110,
+      "key": "assets/cardrpg3/icons/velvet-1.svg",
+      "mime": "image/svg+xml",
+      "decodedBytes": 330,
+      "decodedSha256": "b6aade919635b3c8cb4741b95d014f2ec174883762c1342a4e4b86d2c4aa7621",
+      "originalGzipBytes": 248,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 248
+    },
+    {
+      "index": 111,
+      "key": "assets/cardrpg3/icons/velvet-2.svg",
+      "mime": "image/svg+xml",
+      "decodedBytes": 339,
+      "decodedSha256": "099f6568e177dd930fa1e54ba563488a8bb4d49c201fbe1ec342f6c19126e808",
+      "originalGzipBytes": 251,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 251
+    },
+    {
+      "index": 112,
+      "key": "assets/cardrpg3/icons/velvet-3.svg",
+      "mime": "image/svg+xml",
+      "decodedBytes": 351,
+      "decodedSha256": "4fb6f03df0e31130fa94d91573fb7ed6ff7a7500f4df5fa298636d8bc7e8a669",
+      "originalGzipBytes": 258,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 258
+    },
+    {
+      "index": 113,
+      "key": "assets/cardrpg3/icons/velvet-4.svg",
+      "mime": "image/svg+xml",
+      "decodedBytes": 357,
+      "decodedSha256": "025976ca843d1bda277987525e69ecbb205f64568ce50b4d0f1e0c22eac1bafd",
+      "originalGzipBytes": 260,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 260
+    },
+    {
+      "index": 114,
+      "key": "assets/cardrpg3/portraits/binding-thread.webp",
+      "mime": "image/webp",
+      "decodedBytes": 28228,
+      "decodedSha256": "f756ce7cd0883a55a1e620516d56cce63fff54420235bc078ca503d43458806c",
+      "originalGzipBytes": 27009,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 27009
+    },
+    {
+      "index": 115,
+      "key": "assets/cardrpg3/portraits/biscuit.webp",
+      "mime": "image/webp",
+      "decodedBytes": 27942,
+      "decodedSha256": "60a0f5a53cb42db54ca69de62bbeefd100d253ec3ffa7701ec33fb01436a5731",
+      "originalGzipBytes": 26966,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 26966
+    },
+    {
+      "index": 116,
+      "key": "assets/cardrpg3/portraits/brioche.webp",
+      "mime": "image/webp",
+      "decodedBytes": 29906,
+      "decodedSha256": "9cfa5287b28cd9e028ccaad02533a6d406e2923fe01003ba7e3994059d035314",
+      "originalGzipBytes": 29177,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 29177
+    },
+    {
+      "index": 117,
+      "key": "assets/cardrpg3/portraits/button-guard.webp",
+      "mime": "image/webp",
+      "decodedBytes": 27044,
+      "decodedSha256": "fbacc2b2889d3bb7ee564983ed8d599b975c0f9c2f6d6ce53a90701c00617471",
+      "originalGzipBytes": 25846,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 25846
+    },
+    {
+      "index": 118,
+      "key": "assets/cardrpg3/portraits/cinnamon.webp",
+      "mime": "image/webp",
+      "decodedBytes": 30910,
+      "decodedSha256": "5799ec5a45d9bd80397fa591fd63077e39adf1d9648d1f42f2fba71f3937b4f8",
+      "originalGzipBytes": 29863,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 29863
+    },
+    {
+      "index": 119,
+      "key": "assets/cardrpg3/portraits/clover.webp",
+      "mime": "image/webp",
+      "decodedBytes": 26230,
+      "decodedSha256": "3dab551cf951ca19b69161f336cb8cff9049a3e270f228cd15c943497cae6c5f",
+      "originalGzipBytes": 25146,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 25146
+    },
+    {
+      "index": 120,
+      "key": "assets/cardrpg3/portraits/crumb-sentinel.webp",
+      "mime": "image/webp",
+      "decodedBytes": 29134,
+      "decodedSha256": "fd202af761b5690e0664fba7dcc3d8d43f61bfa7b61679fc821a80c14d819d77",
+      "originalGzipBytes": 28041,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 28041
+    },
+    {
+      "index": 121,
+      "key": "assets/cardrpg3/portraits/inkcap.webp",
+      "mime": "image/webp",
+      "decodedBytes": 18240,
+      "decodedSha256": "df70ee7e28086ade760dff17fe5b7d724b98020e7ccb78d55b00a95b42c15653",
+      "originalGzipBytes": 17039,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 17039
+    },
+    {
+      "index": 122,
+      "key": "assets/cardrpg3/portraits/kettle-knight.webp",
+      "mime": "image/webp",
+      "decodedBytes": 27006,
+      "decodedSha256": "88019ab667bc0bf068f8831d2f5c17b9f0db361941cb64a730bc194318aa15af",
+      "originalGzipBytes": 25956,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 25956
+    },
+    {
+      "index": 123,
+      "key": "assets/cardrpg3/portraits/mallow.webp",
+      "mime": "image/webp",
+      "decodedBytes": 25142,
+      "decodedSha256": "e8069d4c8d542e7124ca111435f6fa8fc600e84879d35016278643e7fdfcb96b",
+      "originalGzipBytes": 23999,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 23999
+    },
+    {
+      "index": 124,
+      "key": "assets/cardrpg3/portraits/marigold.webp",
+      "mime": "image/webp",
+      "decodedBytes": 30110,
+      "decodedSha256": "b87c6e572eae677aa11b44ec64d05b4615dafc44ed4fdd32da6e19ebe2cd38de",
+      "originalGzipBytes": 29106,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 29106
+    },
+    {
+      "index": 125,
+      "key": "assets/cardrpg3/portraits/mochi.webp",
+      "mime": "image/webp",
+      "decodedBytes": 33284,
+      "decodedSha256": "f9feae0025d4e17cd1063a3ab42450a99fcfea8e4ebb1024b18c6ce5eae1dbef",
+      "originalGzipBytes": 32264,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 32264
+    },
+    {
+      "index": 126,
+      "key": "assets/cardrpg3/portraits/needle-moth.webp",
+      "mime": "image/webp",
+      "decodedBytes": 32170,
+      "decodedSha256": "4e6567a0c1fdc7f421ae301509a10f5db598e03ce71ad43fc9e817404cd3f5f2",
+      "originalGzipBytes": 31044,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 31044
+    },
+    {
+      "index": 127,
+      "key": "assets/cardrpg3/portraits/panko.webp",
+      "mime": "image/webp",
+      "decodedBytes": 26138,
+      "decodedSha256": "b591ebf9ee10dc1d58a711ff5baa5694b0440686d3be2f231f0f8ee4d9611d1d",
+      "originalGzipBytes": 25036,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 25036
+    },
+    {
+      "index": 128,
+      "key": "assets/cardrpg3/portraits/pantry-crown.webp",
+      "mime": "image/webp",
+      "decodedBytes": 84958,
+      "decodedSha256": "4725dc56f5e47a1a62e5bf11b8b156f007c19b94408c85a2cf88ab87958a783b",
+      "originalGzipBytes": 84460,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 84460
+    },
+    {
+      "index": 129,
+      "key": "assets/cardrpg3/portraits/pollen-scout.webp",
+      "mime": "image/webp",
+      "decodedBytes": 30376,
+      "decodedSha256": "b0d8f14a8f9612740279c73529c37d9f36ad283e10e0f403cd08e0804e87a258",
+      "originalGzipBytes": 29331,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 29331
+    },
+    {
+      "index": 130,
+      "key": "assets/cardrpg3/portraits/practice-cushion.webp",
+      "mime": "image/webp",
+      "decodedBytes": 22908,
+      "decodedSha256": "fac99dbeee992a3fffa0b227de5f7f36595c240ca9a5861986408cd289f5a23a",
+      "originalGzipBytes": 21755,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 21755
+    },
+    {
+      "index": 131,
+      "key": "assets/cardrpg3/portraits/rain-spool.webp",
+      "mime": "image/webp",
+      "decodedBytes": 35862,
+      "decodedSha256": "b94ff29c48422da50d1dc90040c3b725084f65e4c3a0a8e3aae10b6fe75ba985",
+      "originalGzipBytes": 34848,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 34848
+    },
+    {
+      "index": 132,
+      "key": "assets/cardrpg3/portraits/sock-skipper.webp",
+      "mime": "image/webp",
+      "decodedBytes": 19402,
+      "decodedSha256": "ab4ae58c359b9df1fc58138b198969468757b55d6e7b55a925d74fad27e10515",
+      "originalGzipBytes": 18251,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 18251
+    },
+    {
+      "index": 133,
+      "key": "assets/cardrpg3/portraits/soot.webp",
+      "mime": "image/webp",
+      "decodedBytes": 30856,
+      "decodedSha256": "7099374d20de8b5204e3014770e620f50cbbb6d6164132c1d3f8e17601157276",
+      "originalGzipBytes": 29858,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 29858
+    },
+    {
+      "index": 134,
+      "key": "assets/cardrpg3/portraits/sorrel.webp",
+      "mime": "image/webp",
+      "decodedBytes": 33824,
+      "decodedSha256": "20472f0760286f442a6c9b7f3a5d8ff90bb39f7f648d39f2d8932b89354e79d5",
+      "originalGzipBytes": 33023,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 33023
+    },
+    {
+      "index": 135,
+      "key": "assets/cardrpg3/portraits/spool-ram.webp",
+      "mime": "image/webp",
+      "decodedBytes": 29510,
+      "decodedSha256": "e2190de9b1bfaa69e86cf67bfd64745120a7cbbf8d20c0e200a48d89f33bf79d",
+      "originalGzipBytes": 28406,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 28406
+    },
+    {
+      "index": 136,
+      "key": "assets/cardrpg3/portraits/teacup-healer.webp",
+      "mime": "image/webp",
+      "decodedBytes": 20624,
+      "decodedSha256": "9178f824daafb377e21d01e6f8293caddeddfd5aa8888f2567cd507907c61057",
+      "originalGzipBytes": 19479,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 19479
+    },
+    {
+      "index": 137,
+      "key": "assets/cardrpg3/portraits/velvet.webp",
+      "mime": "image/webp",
+      "decodedBytes": 25522,
+      "decodedSha256": "b2c9d36fc83e4bfa7823a0f9462e33a9313b135f85520e81afe66bd4461747c6",
+      "originalGzipBytes": 24438,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 24438
+    },
+    {
+      "index": 138,
+      "key": "assets/cardrpg3/portraits/yarn-giant.webp",
+      "mime": "image/webp",
+      "decodedBytes": 92858,
+      "decodedSha256": "d9208eaac639fb415fb713bef5f3bd52870143a45e25789b1fd6a1cef517442b",
+      "originalGzipBytes": 92395,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 92395
+    },
+    {
+      "index": 139,
+      "key": "assets/cardrpg3/textures/felt-color.png",
+      "mime": "image/webp",
+      "decodedBytes": 221520,
+      "decodedSha256": "1d675887d315d5af3618624ed29cfd2b016646004910a6074e395e5746c46eef",
+      "originalGzipBytes": 214813,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 214813
+    },
+    {
+      "index": 140,
+      "key": "assets/cardrpg3/textures/felt-normal.png",
+      "mime": "image/webp",
+      "decodedBytes": 1227378,
+      "decodedSha256": "661d770de7aee3209e1b6c05572e3501e5829a8b8848362f19f68c54aaa06a0e",
+      "originalGzipBytes": 1227771,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 1227771
+    },
+    {
+      "index": 141,
+      "key": "assets/cardrpg3b/textures/stage-cloth.png",
+      "mime": "image/webp",
+      "decodedBytes": 757300,
+      "decodedSha256": "960911e7b81947d679d8a1df8f2d8d50d5fe3c269858d648ff0c15a8dc673eb8",
+      "originalGzipBytes": 757553,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 757553
+    },
+    {
+      "index": 142,
+      "key": "assets/cardrpg3b/textures/stage-window.png",
+      "mime": "image/webp",
+      "decodedBytes": 22402,
+      "decodedSha256": "687640ca5ff730be08cd34914456248bbc8cfb8feb5c062b36393bbb0f4664ec",
+      "originalGzipBytes": 22427,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 22427
+    },
+    {
+      "index": 143,
+      "key": "assets/cardrpg3b/textures/stage-wood.png",
+      "mime": "image/webp",
+      "decodedBytes": 708912,
+      "decodedSha256": "9f275d0e3fe5b0f572cc082cd7c991917202697824397430690f62d330bd9d1a",
+      "originalGzipBytes": 709150,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 709150
+    },
+    {
+      "index": 144,
+      "key": "reports/cardrpg-big/demo/packaging/automatic.webp",
+      "mime": "image/webp",
+      "decodedBytes": 531956,
+      "decodedSha256": "78952c660134e79159e8b00e76d33c5fba111a7879cda20ac5de4a30fde16dad",
+      "originalGzipBytes": 531421,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 531421
+    },
+    {
+      "index": 145,
+      "key": "reports/cardrpg-big/demo/packaging/baseline.webp",
+      "mime": "image/webp",
+      "decodedBytes": 429958,
+      "decodedSha256": "e4f7d2916b69ce9748f85e7544a9c024b6cadf127f97363926cdcafca9368fbb",
+      "originalGzipBytes": 430086,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 430086
+    },
+    {
+      "index": 146,
+      "key": "reports/cardrpg-big/effects/sheets/clover-1.webp",
+      "mime": "image/webp",
+      "decodedBytes": 5220,
+      "decodedSha256": "ccb3677c8d01e0279a166f853e1b5a3b0bd5db645bc93d61dd0a44bd25441c93",
+      "originalGzipBytes": 4381,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 4381
+    },
+    {
+      "index": 147,
+      "key": "reports/cardrpg-big/effects/sheets/clover-2.webp",
+      "mime": "image/webp",
+      "decodedBytes": 7102,
+      "decodedSha256": "43f5f9f0d78d9292c4b348a2191f4e968a39552e35dc72001b39ae86299a52cc",
+      "originalGzipBytes": 6130,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 6130
+    },
+    {
+      "index": 148,
+      "key": "reports/cardrpg-big/effects/sheets/clover-3.webp",
+      "mime": "image/webp",
+      "decodedBytes": 9828,
+      "decodedSha256": "02209b3c85a25e5b375e06417e02a6a9f0b91c5dcbf5bb1ba8c6347639ab37a9",
+      "originalGzipBytes": 9038,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 9038
+    },
+    {
+      "index": 149,
+      "key": "reports/cardrpg-big/effects/sheets/clover-4.webp",
+      "mime": "image/webp",
+      "decodedBytes": 12434,
+      "decodedSha256": "edb803ded1c71844194740cba4c4bd588b2742585d89abf3410a9596a94212eb",
+      "originalGzipBytes": 11742,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 11742
+    },
+    {
+      "index": 150,
+      "key": "reports/cardrpg-big/effects/sheets/clover-passive.webp",
+      "mime": "image/webp",
+      "decodedBytes": 5174,
+      "decodedSha256": "c0f150c26cd42efc7a2283bd051b7b0cf8c26993cc5bed6d1f661842982bc6dc",
+      "originalGzipBytes": 4266,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 4266
+    },
+    {
+      "index": 151,
+      "key": "reports/cardrpg-big/effects/sheets/enemy-binding-thread-basic.webp",
+      "mime": "image/webp",
+      "decodedBytes": 4218,
+      "decodedSha256": "514ce5a964982801cd9c692ca6b57bcafae0f288393ebfc0e4f66c4f395dd8f2",
+      "originalGzipBytes": 3268,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 3268
+    },
+    {
+      "index": 152,
+      "key": "reports/cardrpg-big/effects/sheets/enemy-binding-thread.webp",
+      "mime": "image/webp",
+      "decodedBytes": 7092,
+      "decodedSha256": "13e36bda298c83ef5730bf3c2ce06f7ca870757dc514501e5dbbfad116ebdaf0",
+      "originalGzipBytes": 6187,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 6187
+    },
+    {
+      "index": 153,
+      "key": "reports/cardrpg-big/effects/sheets/enemy-button-guard-basic.webp",
+      "mime": "image/webp",
+      "decodedBytes": 4724,
+      "decodedSha256": "fd1d30a22e29a2d5e9636b368db755b43778a83198dff602ff71306a9833fd17",
+      "originalGzipBytes": 3773,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 3773
+    },
+    {
+      "index": 154,
+      "key": "reports/cardrpg-big/effects/sheets/enemy-button-guard.webp",
+      "mime": "image/webp",
+      "decodedBytes": 8098,
+      "decodedSha256": "a1e6ba06b89e42c47c41b3458d044e91976f65140709401098201430873e866a",
+      "originalGzipBytes": 7268,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 7268
+    },
+    {
+      "index": 155,
+      "key": "reports/cardrpg-big/effects/sheets/enemy-needle-moth-basic.webp",
+      "mime": "image/webp",
+      "decodedBytes": 3938,
+      "decodedSha256": "9829ecccbbf3da89fb840c02cfd53037b5757f3fc3c248117bddbc70551b0f87",
+      "originalGzipBytes": 2829,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 2829
+    },
+    {
+      "index": 156,
+      "key": "reports/cardrpg-big/effects/sheets/enemy-needle-moth.webp",
+      "mime": "image/webp",
+      "decodedBytes": 7808,
+      "decodedSha256": "1c1d8ca4932d4a5295967b1c1c6901b2ee7a8cd20edfe10a579723c43cead555",
+      "originalGzipBytes": 6993,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 6993
+    },
+    {
+      "index": 157,
+      "key": "reports/cardrpg-big/effects/sheets/enemy-practice-cushion-basic.webp",
+      "mime": "image/webp",
+      "decodedBytes": 4418,
+      "decodedSha256": "97f6ae80acf4a6ba42054b9b481dcf8518fa7ece8465226ab51b19816bada2d8",
+      "originalGzipBytes": 3471,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 3471
+    },
+    {
+      "index": 158,
+      "key": "reports/cardrpg-big/effects/sheets/enemy-practice-cushion.webp",
+      "mime": "image/webp",
+      "decodedBytes": 7008,
+      "decodedSha256": "b844ef48c4e7499f477ab7d170f34cef129c3e50b855be6fa2c05627fc9e4ce8",
+      "originalGzipBytes": 6240,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 6240
+    },
+    {
+      "index": 159,
+      "key": "reports/cardrpg-big/effects/sheets/enemy-sock-skipper-basic.webp",
+      "mime": "image/webp",
+      "decodedBytes": 3922,
+      "decodedSha256": "f74ba06a0810e53c759cc8ab9260738d222632dc8836121e00e648883522c206",
+      "originalGzipBytes": 2841,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 2841
+    },
+    {
+      "index": 160,
+      "key": "reports/cardrpg-big/effects/sheets/enemy-sock-skipper.webp",
+      "mime": "image/webp",
+      "decodedBytes": 6052,
+      "decodedSha256": "739a2b10573f986f63fe18368ddf59e068140cc8ec54ad054cefd32bfd004c60",
+      "originalGzipBytes": 5252,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 5252
+    },
+    {
+      "index": 161,
+      "key": "reports/cardrpg-big/effects/sheets/enemy-spool-ram-basic.webp",
+      "mime": "image/webp",
+      "decodedBytes": 4520,
+      "decodedSha256": "d6dfadfe9a68c43a754ccc2a7d20b405432e71bbb0fc4f7c271298c7189bb6bb",
+      "originalGzipBytes": 3503,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 3503
+    },
+    {
+      "index": 162,
+      "key": "reports/cardrpg-big/effects/sheets/enemy-spool-ram.webp",
+      "mime": "image/webp",
+      "decodedBytes": 8314,
+      "decodedSha256": "9489fb504587266236fc387a185cab6727ee8f8dfcae3155e7a626c204bc0556",
+      "originalGzipBytes": 7518,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 7518
+    },
+    {
+      "index": 163,
+      "key": "reports/cardrpg-big/effects/sheets/enemy-teacup-healer-basic.webp",
+      "mime": "image/webp",
+      "decodedBytes": 3994,
+      "decodedSha256": "5fecf4b8e9752d35357283540193b4025e46e0d89758db767510c6cf7200b70e",
+      "originalGzipBytes": 2856,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 2856
+    },
+    {
+      "index": 164,
+      "key": "reports/cardrpg-big/effects/sheets/enemy-teacup-healer.webp",
+      "mime": "image/webp",
+      "decodedBytes": 7506,
+      "decodedSha256": "ac4035e9f12e0e4e3e02d11805a9fbc5066ae8d7931dc4c6e6e91dd06a80789d",
+      "originalGzipBytes": 6760,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 6760
+    },
+    {
+      "index": 165,
+      "key": "reports/cardrpg-big/effects/sheets/enemy-yarn-giant-basic.webp",
+      "mime": "image/webp",
+      "decodedBytes": 4814,
+      "decodedSha256": "a6879a251f346cd5fcbd5e1c35dae63ae93fdfe129e72ddc5754babc4fbe9e97",
+      "originalGzipBytes": 3865,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 3865
+    },
+    {
+      "index": 166,
+      "key": "reports/cardrpg-big/effects/sheets/enemy-yarn-giant.webp",
+      "mime": "image/webp",
+      "decodedBytes": 14286,
+      "decodedSha256": "fc17c99084b2756cf16d966f756d800285bc3c922740708c0a9f6cb6eb0caf02",
+      "originalGzipBytes": 13645,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 13645
+    },
+    {
+      "index": 167,
+      "key": "reports/cardrpg-big/effects/sheets/mochi-1.webp",
+      "mime": "image/webp",
+      "decodedBytes": 7758,
+      "decodedSha256": "0ceb931af91736d874d3288e5100ae9fa67ad717a0713a2d003a0a72cefbdb92",
+      "originalGzipBytes": 6844,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 6844
+    },
+    {
+      "index": 168,
+      "key": "reports/cardrpg-big/effects/sheets/mochi-2.webp",
+      "mime": "image/webp",
+      "decodedBytes": 8520,
+      "decodedSha256": "c437fd328395348340f430c3f09a0ca9dd60c3418afd9cfa61b28775ef009346",
+      "originalGzipBytes": 7673,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 7673
+    },
+    {
+      "index": 169,
+      "key": "reports/cardrpg-big/effects/sheets/mochi-3.webp",
+      "mime": "image/webp",
+      "decodedBytes": 8970,
+      "decodedSha256": "f750c108cbd31ebda20bc3012194fdeb9cc3cfcd5162a3d646155416f40ce1dd",
+      "originalGzipBytes": 8148,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 8148
+    },
+    {
+      "index": 170,
+      "key": "reports/cardrpg-big/effects/sheets/mochi-4.webp",
+      "mime": "image/webp",
+      "decodedBytes": 11820,
+      "decodedSha256": "e2516112a43a35eb9be83bc440a28448af4a18041a1300ec2d14da9838f7e93f",
+      "originalGzipBytes": 11124,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 11124
+    },
+    {
+      "index": 171,
+      "key": "reports/cardrpg-big/effects/sheets/mochi-passive.webp",
+      "mime": "image/webp",
+      "decodedBytes": 4600,
+      "decodedSha256": "1e5d8f9aeb03fe5b88437750e771fa0e7b47f92ff5be056a1d33ef6dc1821a53",
+      "originalGzipBytes": 3661,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 3661
+    },
+    {
+      "index": 172,
+      "key": "reports/cardrpg-big/effects/sheets/soot-1.webp",
+      "mime": "image/webp",
+      "decodedBytes": 4528,
+      "decodedSha256": "492feb5a8847aaacdab94aaf1f1b71c8b7df6545eb6abb65fda1457688ec65ee",
+      "originalGzipBytes": 3640,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 3640
+    },
+    {
+      "index": 173,
+      "key": "reports/cardrpg-big/effects/sheets/soot-2.webp",
+      "mime": "image/webp",
+      "decodedBytes": 6266,
+      "decodedSha256": "1a10af6022a98fae8c0173e2c95dad803a8ccba415d106d3196a00c918be1cca",
+      "originalGzipBytes": 5420,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 5420
+    },
+    {
+      "index": 174,
+      "key": "reports/cardrpg-big/effects/sheets/soot-3.webp",
+      "mime": "image/webp",
+      "decodedBytes": 7178,
+      "decodedSha256": "9018fe3ee256a46dac4ed2ec578be6d92b8de77e13a7fcdef01601cb9225901b",
+      "originalGzipBytes": 6378,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 6378
+    },
+    {
+      "index": 175,
+      "key": "reports/cardrpg-big/effects/sheets/soot-4.webp",
+      "mime": "image/webp",
+      "decodedBytes": 10056,
+      "decodedSha256": "6cad9d7da69ef5eece9744f5e9bdbc1b7404f9647b14b0a9281c80b77eeb4262",
+      "originalGzipBytes": 9194,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 9194
+    },
+    {
+      "index": 176,
+      "key": "reports/cardrpg-big/effects/sheets/soot-passive.webp",
+      "mime": "image/webp",
+      "decodedBytes": 5576,
+      "decodedSha256": "7497fb3832bdcedcdc75739353c4f2323e29dd769432948293c55d83320d4a10",
+      "originalGzipBytes": 4581,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 4581
+    },
+    {
+      "index": 177,
+      "key": "reports/cardrpg-big/filmstrips/clover-1.webp",
+      "mime": "image/webp",
+      "decodedBytes": 79086,
+      "decodedSha256": "846a4c48b00975cef6ffa571487ea163737a7fb2f50a11c3dd63fe2f8d829186",
+      "originalGzipBytes": 77183,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 77183
+    },
+    {
+      "index": 178,
+      "key": "reports/cardrpg-big/filmstrips/clover-2.webp",
+      "mime": "image/webp",
+      "decodedBytes": 110952,
+      "decodedSha256": "204b41644ce06ac0344118b696a9abd1391eef30db5a485c342117550d240fed",
+      "originalGzipBytes": 110238,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 110238
+    },
+    {
+      "index": 179,
+      "key": "reports/cardrpg-big/filmstrips/clover-3.webp",
+      "mime": "image/webp",
+      "decodedBytes": 135214,
+      "decodedSha256": "47ecc6c7c2bcf0e9600641b7612f27fca68668296ec8b2af148c259195361b90",
+      "originalGzipBytes": 134658,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 134658
+    },
+    {
+      "index": 180,
+      "key": "reports/cardrpg-big/filmstrips/clover-4.webp",
+      "mime": "image/webp",
+      "decodedBytes": 137954,
+      "decodedSha256": "c1faab6d3861d4568231b75da104296457c6e489d51253b3e72be88f56fd3328",
+      "originalGzipBytes": 137536,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 137536
+    },
+    {
+      "index": 181,
+      "key": "reports/cardrpg-big/filmstrips/enemy-binding-thread.webp",
+      "mime": "image/webp",
+      "decodedBytes": 67350,
+      "decodedSha256": "a7270a422f62a86e33acaa248a8fbfcb8095aa87feb92ae984a3af8b772643fd",
+      "originalGzipBytes": 66448,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 66448
+    },
+    {
+      "index": 182,
+      "key": "reports/cardrpg-big/filmstrips/enemy-button-guard.webp",
+      "mime": "image/webp",
+      "decodedBytes": 56240,
+      "decodedSha256": "c6fc5e71f24f29c8747fa77b79dbe2eac533b76b879537f16d4fa3bc3b684713",
+      "originalGzipBytes": 55665,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 55665
+    },
+    {
+      "index": 183,
+      "key": "reports/cardrpg-big/filmstrips/enemy-needle-moth.webp",
+      "mime": "image/webp",
+      "decodedBytes": 67522,
+      "decodedSha256": "555bdcfe4d76ea00c01f0820c37ac2e96fedf9665b860a1047a16178aba8e22e",
+      "originalGzipBytes": 66989,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 66989
+    },
+    {
+      "index": 184,
+      "key": "reports/cardrpg-big/filmstrips/enemy-practice-cushion.webp",
+      "mime": "image/webp",
+      "decodedBytes": 58440,
+      "decodedSha256": "46c8a9d68957a1f04933096bd51ba0b919311eaaf01a3b7bb1e981fc56a3eb55",
+      "originalGzipBytes": 57602,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 57602
+    },
+    {
+      "index": 185,
+      "key": "reports/cardrpg-big/filmstrips/enemy-sock-skipper.webp",
+      "mime": "image/webp",
+      "decodedBytes": 52714,
+      "decodedSha256": "bf477599707300c054f4d00d30d68e59dab9c2422e5689e476963618a9da4889",
+      "originalGzipBytes": 51831,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 51831
+    },
+    {
+      "index": 186,
+      "key": "reports/cardrpg-big/filmstrips/enemy-spool-ram.webp",
+      "mime": "image/webp",
+      "decodedBytes": 54118,
+      "decodedSha256": "c2599533ad92a30e5d627472e91eb8adba113ac41503661d10f83fbd9309b253",
+      "originalGzipBytes": 53254,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 53254
+    },
+    {
+      "index": 187,
+      "key": "reports/cardrpg-big/filmstrips/enemy-teacup-healer.webp",
+      "mime": "image/webp",
+      "decodedBytes": 61640,
+      "decodedSha256": "9136643c7beba0b451ac514ee9a7050a46a67b06107517f16203c0ce4c1d80e4",
+      "originalGzipBytes": 61011,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 61011
+    },
+    {
+      "index": 188,
+      "key": "reports/cardrpg-big/filmstrips/enemy-yarn-giant.webp",
+      "mime": "image/webp",
+      "decodedBytes": 110652,
+      "decodedSha256": "c9077cbf5461e0ff19d8e68bfadda0681d3f8992ee247c27022cda38e809dabe",
+      "originalGzipBytes": 109722,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 109722
+    },
+    {
+      "index": 189,
+      "key": "reports/cardrpg-big/filmstrips/mochi-1.webp",
+      "mime": "image/webp",
+      "decodedBytes": 63322,
+      "decodedSha256": "4b73ee6de1dc085e7f4440d1aba834f817e9635eea3b07f33f50a2f94c4bb562",
+      "originalGzipBytes": 62498,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 62498
+    },
+    {
+      "index": 190,
+      "key": "reports/cardrpg-big/filmstrips/mochi-2.webp",
+      "mime": "image/webp",
+      "decodedBytes": 85312,
+      "decodedSha256": "b2b7c48e27c0065c962941da6860e3f22db62ac68bbfb880f81c2d888880103f",
+      "originalGzipBytes": 84928,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 84928
+    },
+    {
+      "index": 191,
+      "key": "reports/cardrpg-big/filmstrips/mochi-3.webp",
+      "mime": "image/webp",
+      "decodedBytes": 90122,
+      "decodedSha256": "3dcf77255b3b33ba148ea61aa8b18f79a86bcc7bdb02763e1098e77c91cd912f",
+      "originalGzipBytes": 89419,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 89419
+    },
+    {
+      "index": 192,
+      "key": "reports/cardrpg-big/filmstrips/mochi-4.webp",
+      "mime": "image/webp",
+      "decodedBytes": 107464,
+      "decodedSha256": "924b6fe632fbafef7fd27d272609e614b0cc9bf4ff58c9289962e7023a1661e0",
+      "originalGzipBytes": 107125,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 107125
+    },
+    {
+      "index": 193,
+      "key": "reports/cardrpg-big/filmstrips/soot-1.webp",
+      "mime": "image/webp",
+      "decodedBytes": 95500,
+      "decodedSha256": "afcae4363520f2c037652844a83cab0a2846c9f0be2a788547bd85821940537d",
+      "originalGzipBytes": 95115,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 95115
+    },
+    {
+      "index": 194,
+      "key": "reports/cardrpg-big/filmstrips/soot-2.webp",
+      "mime": "image/webp",
+      "decodedBytes": 96026,
+      "decodedSha256": "d9bc0e9ce0660b154d65e2b53b1f191ccaf9eceb4b60b56e3268e5340299e140",
+      "originalGzipBytes": 95503,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 95503
+    },
+    {
+      "index": 195,
+      "key": "reports/cardrpg-big/filmstrips/soot-3.webp",
+      "mime": "image/webp",
+      "decodedBytes": 101274,
+      "decodedSha256": "cf9b7b07dac885f73c7a4684e9791d819221c444da78862f29cbf4a138c4a37a",
+      "originalGzipBytes": 100879,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 100879
+    },
+    {
+      "index": 196,
+      "key": "reports/cardrpg-big/filmstrips/soot-4.webp",
+      "mime": "image/webp",
+      "decodedBytes": 104254,
+      "decodedSha256": "cc7fd82db9a5b7fc7c055f2c2607f5c56156d061d58cd61410688eb6d181fa3d",
+      "originalGzipBytes": 103866,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 103866
+    },
+    {
+      "index": 197,
+      "key": "reports/cardrpg-big/layout/1280-bounds.webp",
+      "mime": "image/webp",
+      "decodedBytes": 126044,
+      "decodedSha256": "dd1f87f77bf7b69c48b8d6fa165149d5de2fc00f1c16f7c5b9f9f4c9816140d9",
+      "originalGzipBytes": 126102,
+      "candidates": [],
+      "selected": null,
+      "selectedGzipBytes": 126102
+    }
+  ],
+  "allAssetBytesPreserved": true,
+  "beforeBytes": 26217950,
+  "afterBytes": 26106177,
+  "savedBytes": 111773,
+  "sha256": "16be80fe00fe3432877f5cea9088050e0f0863ae9ac2e1facf76be0f480521a9",
+  "output": "/tmp/cardrpg-a5-transport-01/index.html",
+  "limits": "Exact native byte parity only. Browser restored-asset SHA checks, startup measurements and real-click rendering still pending. Source assets, gameplay, public artifact and production builder unchanged."
+}

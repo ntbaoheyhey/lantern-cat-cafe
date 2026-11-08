@@ -1,0 +1,9 @@
+{
+  "registeredAt": "2026-11-08T06:48:32.801148+00:00",
+  "attempt": 2,
+  "reason": "Original build fails on a metadata-only self edge web.js -> web.js after the bundler inlines its dynamic import. Actual self specifiers still rewrite; missing external dependencies still fail. Native self-edge and cyclic import tests PASS. No runtime or asset change. Original attempt retained.",
+  "hashes": {
+    "tools/cardrpg-big/a5-drafts/p1-prep/offline-module-payload.mjs": "74e7ef679a326f6882aab1e0151074d8015a93640dc78ae603d47e21f7e6b74a",
+    "tools/cardrpg-big/a5-drafts/p1-prep/offline-module-payload.test.mjs": "a36cfaaa39b4fd1e8fa015df7afa00bc5f8e88d3080e577f74d0db021c10990b"
+  }
+}

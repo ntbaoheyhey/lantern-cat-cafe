@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-C1 reviewed runtime c4a883e5: all five source gates + build PASS, three-size targeted browser/copy/equip closure PASS. Artifact restored SHA788ff719/26,217,950bytes exactly after host restart. C1 draft #379 published on H0 #377; public demo remains A4 until Z. Workdir /Users/bao/taskbar-hero-cardrpg-a4.
+C1draft379 remains unchanged; production combat staysA4. Branch codex/cardrpg-a5-b1-2026-11-08. Expanded03/graded01/graded02 diagnostics completed and rejected. Fresh20001–20500 UNUSED. P1lazy07 overlay built and registered; source adoption waits browser checks.
 ## NEXT
-Keep original expanded02 coordinator PID4640; it combines continuous rescue and response-aware AI on TRAIN1–50 across tiers/equipped/sets/teams, no production adoption. Expanded01 complete and rejected (48/38pp fourth-slot cliffs). C1 state mirrored to ai/codex-ui-ledger5351a23a. Continue B1–B3, then E1–E3/P1/Z. Fresh20001–20500 UNUSED. Old pre-restart PIDs below are historical and must not be resumed.
+Preserve original running response03TRAIN coordinator (two bounded-response variants, full384/tiers/sets/teams) and P1lazy07 threefixedCPU4/browser-flow coordinators. Module05/layout06 original3runs completed; no reruns. Verify lazy07 player/reviewer/battle/resize flows, finish P1 bundle/performance closure independently while balance remainsMISS. No Bsource adoption or protectedchanges.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -88,3 +88,16 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - C1 draft published: https://github.com/ntbaoheyhey/taskbar-hero/pull/379 on #377, closure commit1cb68a5c. Four receipt tests PASS; reviewed five source gates+build/three-size browser/copy/equip verified. No runtime changes since c4a883e5, merge or deploy.
 
 - B1 branch codex/cardrpg-a5-b1-2026-11-08 started on C1#379/befed6422. Latest B checkpoint draft378 reviewed; no B adoption during immutable A balance sample. Current expanded02 original PID4640 preserved. Recovered scripts/candidate hashes are archived durably before further implementation.
+
+- Continuation at06:32UTC: pressure01 complete. Weight2/sig125 worst32pp/8misses; weight2/sig10026pp/5misses; weight4/sig12526pp/12misses. Original33×50pilot only, no saturation in eitherweight2variant. Extended bothweight2candidates toTRAIN500 without changing sources or first50outcomes; newregistration pressure-500, originalcoordinator21620.
+- P1 pilot03 native+browser198asset SHA parityPASS, all6fixedCPU4observations retained. Original first observation false only for null-vs-empty sceneError harness assertion; correction1retains its timings. Packed throughHubmax566.6ms (target120MISS); no adoption. Read-only GLBview audit found1081duplicategroups; pilot04 exact dictionary removes repeated identical subranges without editing artwork. Registered beforepacking; browser tests pending.
+
+- Continuation audit: preserved original running jobs, now completed pressure500/traces/expanded03/dictionary04. Weight2/sig100 TRAIN500 original33cells2miss/worst15.6pp; expandedTRAIN50 all384fourthslots50miss/worst38pp(Emberfelt Legendary weapon/Soot/ch2),24/24tiersteps/0reversals,33/33bands. Cat45.25–78.40%,crew37.33pp. No combat candidate adopted. Fresh20001–20500 unused.
+- Pressure500 traces: Crumbweave weapon main7pp/full13.6pp; Bellsteel outfit main10pp/affixes6.2/full15.6pp, set4alone0. Full500prefix/replayparity exact. Next fix must address residual equipment/boss interactions, not claim the old33case near-pass as closure.
+- P1 dictionary04 complete3CPU4runs: throughHub183.4/299.9/183.3ms, all198assets byteexact,20.71MB targetPASS/startupMISS. Module05 attempts1–3 retained; corrected metadata self-edge with3native testsPASS; restoredverified existingPillow for attempt4. No production or B asset edits.
+- B3 recovered invitations complete3banners×10000accounts×60draws. New receipt tests2PASS independently recompute exactCDF and90account/45day reward summaries/ratios. Original reward cohort usesA4combat and paidinvitationLegendary only; not earnedday7/post-B1 acceptance. Candidate values360stamps/24marks/soft13/hard24/+700bp remain unchanged.
+
+- Continuation checkpoint 2026-11-08T07:17:05.350886+00:00: originalgraded01/02 complete; same50seed fullmatrix summaries now durable. Gradedbasic46/384piece misses,max32pp,cats43.70–76.25%,crew38pp; gradedwide9miss/max18pp but119afterarms>=95%,crew33.33pp; gradedbudget59miss/max28pp,cats34.74–75.41%,crew54pp. Allrejected, no gate movement.
+- Registeredresponse03 before sampling: gradedbudget plus originalboundedreplyweights.30/.50, same384/210/64/663TRAIN1–50. Coordinator toolsession78042;110sCPU/7shandoffs afterBcompletion. No acceptance.
+- P1module05 nativeESM preserves198assetbytes; original3cold observations retained. Layout06 registered synchronouslayout ablation preserves actualplayer/reviewerflows1280 but firstcold233.3msMISS; do not claim causalperformanceimprovement. Originalfailed path/registration attempt retained.
+- P1lazy07 registered App/offline Reactlazy overlays; actualbuild9d9335f3/20,816,833bytes, entry311392bytes vs2494678module05entry (totalrequestedgraph NOT YET measured). Deferred Utility/reviewer/other screens, no Bsource/rule/asset mutation. Fixed3CPU4coordinator20761 and realC1flows34936 running.

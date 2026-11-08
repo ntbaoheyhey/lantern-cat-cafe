@@ -1,0 +1,459 @@
+{
+  "registration": {
+    "registeredAt": "2026-11-08T06:10:19.142239+00:00",
+    "baseline": "340f88b92405ceb6b5421b207307fdbb283b2ca3",
+    "candidateRuntime": "c4a883e5ea9f3d7e8424d799b2dafc73cc51d8df",
+    "candidateTransformSha256": "172448cfac078e727c7f097172f899a69131702fc32badb1ddf13275a13327d3",
+    "harnessSha256": "0d221158e0d0c104f2944917af68693fd4064d6f7a2c8d854838891d661fc0c5",
+    "observations": 3,
+    "configs": [
+      [
+        1280,
+        1
+      ],
+      [
+        1280,
+        4
+      ],
+      [
+        1440,
+        1
+      ]
+    ],
+    "order": [
+      [
+        "main",
+        "packed"
+      ],
+      [
+        "packed",
+        "main"
+      ],
+      [
+        "main",
+        "packed"
+      ]
+    ],
+    "method": "Fresh browser profile and disabled cache per observation, fixed five-second post-onboarding window, blocked external network. Same browser/build tooling on main and unchanged C1 runtime plus lossless pixel packing. Record all observations; no reroll. Three observations/config are a diagnostic, not statistical equivalence. Native shared lock per observation, closed browser/server at each boundary, at least7seconds handoff. All runtime/source/asset files unchanged."
+  },
+  "receipts": [
+    {
+      "path": "reports/cardrpg-big/a5/p1/pilot-01/main-1280-cpu1-run1/checks.json",
+      "sha256": "e155aa0a8fd21d15076830fdd56045e67862f28067f256db1bebad5028e4b1cf"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/p1/pilot-01/main-1280-cpu1-run2/checks.json",
+      "sha256": "a43e64b7e57b3cca02623fcc224aaf322cc5edfc444bb6ab42e916c7fbfc82a0"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/p1/pilot-01/main-1280-cpu1-run3/checks.json",
+      "sha256": "acecbb62343fdcde92e031f7fe57a3648fea02216b763106b19e4030de3b7212"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/p1/pilot-01/packed-1280-cpu1-run1/checks.json",
+      "sha256": "570cb863e3d4ae565f91eae64f93472e70c5bcb13a2224b5ef7f13589a62d15c"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/p1/pilot-01/packed-1280-cpu1-run2/checks.json",
+      "sha256": "c6e985df1dea6153c723ac1f1a00d193ee2f0acde9cb78b0979007ffaf86ceef"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/p1/pilot-01/packed-1280-cpu1-run3/checks.json",
+      "sha256": "305ba0789b66f32736f870da456220db0fc538f06b8902c0bcdafe5b4b83e77b"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/p1/pilot-01/main-1280-cpu4-run1/checks.json",
+      "sha256": "027ced20388013fedc9f39cad7cb6dc8f5bb063bc887e6e148eafa9a4336cae7"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/p1/pilot-01/main-1280-cpu4-run2/checks.json",
+      "sha256": "cf225a803cf23677685c7ea9855572122470a78af70fcc82985301b3a7b0e668"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/p1/pilot-01/main-1280-cpu4-run3/checks.json",
+      "sha256": "cbc87ef1d519477d2becb2ba6f6a4accd78abed9214e47e70b7d4ddf8817200a"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/p1/pilot-01/packed-1280-cpu4-run1/checks.json",
+      "sha256": "0bb96d6cbbfcf3b27a2d3e536205b45050abacd0c44f01cf398958230abaceb6"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/p1/pilot-01/packed-1280-cpu4-run2/checks.json",
+      "sha256": "39692ec2c200044c9c96dce084c31e9cd08812bf3407dcf1a167a5f349990a68"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/p1/pilot-01/packed-1280-cpu4-run3/checks.json",
+      "sha256": "da03c886d51ad84c4299f44873d2875c9ae2870a1122df8b62b44ec44503acde"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/p1/pilot-01/main-1440-cpu1-run1/checks.json",
+      "sha256": "419358a01b9d879c426833aae527eaf145ddb8407e9f079e69a74ee1be4f6715"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/p1/pilot-01/main-1440-cpu1-run2/checks.json",
+      "sha256": "208d56a30ebbe008ac5f54d55c3b8e1a9db9a11b963b2742c9c9484e39f0c1e0"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/p1/pilot-01/main-1440-cpu1-run3/checks.json",
+      "sha256": "4f6ff943c2b0181ab294d871fd9195198236fac8ddb1f6973e358949b48f80d7"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/p1/pilot-01/packed-1440-cpu1-run1/checks.json",
+      "sha256": "46fa86facac3083664c043f8606269d6952d46855bb889af82e5ffc92055ce8b"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/p1/pilot-01/packed-1440-cpu1-run2/checks.json",
+      "sha256": "8745936d3e280d875862c445a54323f75043195fe00b0d8dc1b697ee757637cc"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/p1/pilot-01/packed-1440-cpu1-run3/checks.json",
+      "sha256": "815e63b531f2a289f0d828d717669dcc58cf2a3115b7e6344c3755e1799fc656"
+    }
+  ],
+  "configs": [
+    {
+      "width": 1280,
+      "cpu": 1,
+      "builds": {
+        "main": {
+          "runs": [
+            {
+              "run": 1,
+              "loadedJsBytes": 2969908,
+              "taskMs": 468.47099999999995,
+              "scriptMs": 251.00099999999998,
+              "layoutMs": 43.849,
+              "frameMaxMs": 50,
+              "longTaskMaxMs": 56
+            },
+            {
+              "run": 2,
+              "loadedJsBytes": 2969908,
+              "taskMs": 530.858,
+              "scriptMs": 295.74699999999996,
+              "layoutMs": 32.299,
+              "frameMaxMs": 33.30000000000001,
+              "longTaskMaxMs": 0
+            },
+            {
+              "run": 3,
+              "loadedJsBytes": 2969908,
+              "taskMs": 491.348,
+              "scriptMs": 276.55999999999995,
+              "layoutMs": 30.444,
+              "frameMaxMs": 16.800000000000182,
+              "longTaskMaxMs": 0
+            }
+          ],
+          "loadedJsBytes": 2969908,
+          "taskMs": {
+            "median": 491.348,
+            "max": 530.858
+          },
+          "scriptMs": {
+            "median": 276.55999999999995,
+            "max": 295.74699999999996
+          },
+          "layoutMs": {
+            "median": 32.299,
+            "max": 43.849
+          },
+          "frameMaxMs": {
+            "median": 33.30000000000001,
+            "max": 50
+          },
+          "longTaskMaxMs": {
+            "median": 0,
+            "max": 56
+          }
+        },
+        "packed": {
+          "runs": [
+            {
+              "run": 1,
+              "loadedJsBytes": 3118660,
+              "taskMs": 529.207,
+              "scriptMs": 298.5,
+              "layoutMs": 30.816,
+              "frameMaxMs": 33.3,
+              "longTaskMaxMs": 0
+            },
+            {
+              "run": 2,
+              "loadedJsBytes": 3118660,
+              "taskMs": 538.071,
+              "scriptMs": 302.697,
+              "layoutMs": 31.192999999999998,
+              "frameMaxMs": 33.3,
+              "longTaskMaxMs": 0
+            },
+            {
+              "run": 3,
+              "loadedJsBytes": 3118660,
+              "taskMs": 552.98,
+              "scriptMs": 312.514,
+              "layoutMs": 33.354,
+              "frameMaxMs": 33.30000000000001,
+              "longTaskMaxMs": 0
+            }
+          ],
+          "loadedJsBytes": 3118660,
+          "taskMs": {
+            "median": 538.071,
+            "max": 552.98
+          },
+          "scriptMs": {
+            "median": 302.697,
+            "max": 312.514
+          },
+          "layoutMs": {
+            "median": 31.192999999999998,
+            "max": 33.354
+          },
+          "frameMaxMs": {
+            "median": 33.3,
+            "max": 33.30000000000001
+          },
+          "longTaskMaxMs": {
+            "median": 0,
+            "max": 0
+          }
+        }
+      },
+      "deltaJsBytes": 148752,
+      "bytesWithin150000": true,
+      "taskMedianNotWorse": false,
+      "taskMaxNotWorse": false
+    },
+    {
+      "width": 1280,
+      "cpu": 4,
+      "builds": {
+        "main": {
+          "runs": [
+            {
+              "run": 1,
+              "loadedJsBytes": 2969908,
+              "taskMs": 794.323,
+              "scriptMs": 452.303,
+              "layoutMs": 98.072,
+              "frameMaxMs": 149.89999999999998,
+              "longTaskMaxMs": 142
+            },
+            {
+              "run": 2,
+              "loadedJsBytes": 2969908,
+              "taskMs": 792.5419999999999,
+              "scriptMs": 442.187,
+              "layoutMs": 98.307,
+              "frameMaxMs": 133.3,
+              "longTaskMaxMs": 145
+            },
+            {
+              "run": 3,
+              "loadedJsBytes": 2969908,
+              "taskMs": 805.3249999999999,
+              "scriptMs": 451.424,
+              "layoutMs": 99.58200000000001,
+              "frameMaxMs": 116.60000000000002,
+              "longTaskMaxMs": 140
+            }
+          ],
+          "loadedJsBytes": 2969908,
+          "taskMs": {
+            "median": 794.323,
+            "max": 805.3249999999999
+          },
+          "scriptMs": {
+            "median": 451.424,
+            "max": 452.303
+          },
+          "layoutMs": {
+            "median": 98.307,
+            "max": 99.58200000000001
+          },
+          "frameMaxMs": {
+            "median": 133.3,
+            "max": 149.89999999999998
+          },
+          "longTaskMaxMs": {
+            "median": 142,
+            "max": 145
+          }
+        },
+        "packed": {
+          "runs": [
+            {
+              "run": 1,
+              "loadedJsBytes": 3118660,
+              "taskMs": 776.281,
+              "scriptMs": 440.42900000000003,
+              "layoutMs": 97.583,
+              "frameMaxMs": 133.3,
+              "longTaskMaxMs": 142
+            },
+            {
+              "run": 2,
+              "loadedJsBytes": 3118660,
+              "taskMs": 747.8159999999999,
+              "scriptMs": 423.82,
+              "layoutMs": 92.19,
+              "frameMaxMs": 116.79999999999995,
+              "longTaskMaxMs": 135
+            },
+            {
+              "run": 3,
+              "loadedJsBytes": 3118660,
+              "taskMs": 773.883,
+              "scriptMs": 436.23499999999996,
+              "layoutMs": 96.916,
+              "frameMaxMs": 133.29999999999995,
+              "longTaskMaxMs": 143
+            }
+          ],
+          "loadedJsBytes": 3118660,
+          "taskMs": {
+            "median": 773.883,
+            "max": 776.281
+          },
+          "scriptMs": {
+            "median": 436.23499999999996,
+            "max": 440.42900000000003
+          },
+          "layoutMs": {
+            "median": 96.916,
+            "max": 97.583
+          },
+          "frameMaxMs": {
+            "median": 133.29999999999995,
+            "max": 133.3
+          },
+          "longTaskMaxMs": {
+            "median": 142,
+            "max": 143
+          }
+        }
+      },
+      "deltaJsBytes": 148752,
+      "bytesWithin150000": true,
+      "taskMedianNotWorse": true,
+      "taskMaxNotWorse": true
+    },
+    {
+      "width": 1440,
+      "cpu": 1,
+      "builds": {
+        "main": {
+          "runs": [
+            {
+              "run": 1,
+              "loadedJsBytes": 2969908,
+              "taskMs": 392.649,
+              "scriptMs": 218.698,
+              "layoutMs": 27.044999999999998,
+              "frameMaxMs": 33.400000000000006,
+              "longTaskMaxMs": 0
+            },
+            {
+              "run": 2,
+              "loadedJsBytes": 2969908,
+              "taskMs": 429.037,
+              "scriptMs": 248.632,
+              "layoutMs": 33.934,
+              "frameMaxMs": 33.3,
+              "longTaskMaxMs": 0
+            },
+            {
+              "run": 3,
+              "loadedJsBytes": 2969908,
+              "taskMs": 333.096,
+              "scriptMs": 173.867,
+              "layoutMs": 33.99,
+              "frameMaxMs": 33.30000000000001,
+              "longTaskMaxMs": 0
+            }
+          ],
+          "loadedJsBytes": 2969908,
+          "taskMs": {
+            "median": 392.649,
+            "max": 429.037
+          },
+          "scriptMs": {
+            "median": 218.698,
+            "max": 248.632
+          },
+          "layoutMs": {
+            "median": 33.934,
+            "max": 33.99
+          },
+          "frameMaxMs": {
+            "median": 33.30000000000001,
+            "max": 33.400000000000006
+          },
+          "longTaskMaxMs": {
+            "median": 0,
+            "max": 0
+          }
+        },
+        "packed": {
+          "runs": [
+            {
+              "run": 1,
+              "loadedJsBytes": 3118660,
+              "taskMs": 486.869,
+              "scriptMs": 274.046,
+              "layoutMs": 28.225,
+              "frameMaxMs": 16.800000000000182,
+              "longTaskMaxMs": 0
+            },
+            {
+              "run": 2,
+              "loadedJsBytes": 3118660,
+              "taskMs": 311.086,
+              "scriptMs": 163.683,
+              "layoutMs": 29.266000000000002,
+              "frameMaxMs": 33.39999999999998,
+              "longTaskMaxMs": 0
+            },
+            {
+              "run": 3,
+              "loadedJsBytes": 3118660,
+              "taskMs": 272.25200000000007,
+              "scriptMs": 147.45,
+              "layoutMs": 29.314,
+              "frameMaxMs": 233.39999999999986,
+              "longTaskMaxMs": 0
+            }
+          ],
+          "loadedJsBytes": 3118660,
+          "taskMs": {
+            "median": 311.086,
+            "max": 486.869
+          },
+          "scriptMs": {
+            "median": 163.683,
+            "max": 274.046
+          },
+          "layoutMs": {
+            "median": 29.266000000000002,
+            "max": 29.314
+          },
+          "frameMaxMs": {
+            "median": 33.39999999999998,
+            "max": 233.39999999999986
+          },
+          "longTaskMaxMs": {
+            "median": 0,
+            "max": 0
+          }
+        }
+      },
+      "deltaJsBytes": 148752,
+      "bytesWithin150000": true,
+      "taskMedianNotWorse": true,
+      "taskMaxNotWorse": false
+    }
+  ],
+  "status": "PARTIAL: byte diagnostic PASS against registered main; startup task median/max MISS in some configurations. No production adoption.",
+  "limitation": "Three observations/config; no equivalence claim. Five-second window includes active default app. Baseline is registered commit340f88b9, not an assertion that origin/main has remained unchanged. Offline artifact and CPU4 are not measured here."
+}

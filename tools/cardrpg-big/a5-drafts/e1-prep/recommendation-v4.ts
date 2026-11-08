@@ -34,7 +34,11 @@ export function adviceBuildKeyV4(s: DepthAccount): string {
 /** Public atomic build change; checks ownership, affordability and the home boundary. */
 export function changeBuildV4(state: DepthAccount, change: BuildChangeV4): RuleResult<DepthAccount> {
   if (!gameplayV4(state) || !state.v4) return { ok: false, state, error: 'Open a Gameplay v4 crew first.' };
-  if (change.kind === 'row') return configureTeam(state, state.team, { ...state.rows, [change.catId]: change.row }, state.skills);
+  if (change.kind === 'row') {
+    if (!state.team.includes(change.catId) || !['front', 'rear'].includes(change.row))
+      return { ok: false, state, error: 'Choose a cat in your crew and an available row.' };
+    return configureTeam(state, state.team, { ...state.rows, [change.catId]: change.row }, state.skills);
+  }
   if (change.kind === 'equip') return equipGear(state, change.catId, change.gearId);
   if (change.kind === 'level') return metaCommand(state, { type: 'level', cardId: change.cardId });
   return transactDepth(state, s => {

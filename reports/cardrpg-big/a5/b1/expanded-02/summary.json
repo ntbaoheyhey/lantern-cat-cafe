@@ -2,15 +2,23 @@
   "method": "TRAIN1\u201350 read-only expanded diagnostics. Original A4 outcomes truncated to the SAME first50 seeds/cell. No production, gate or acceptance-seed change. Bare2304 cells and elite diversity NOT VERIFIED. Correlation is existing displayed share, not a fitted outcome model.",
   "variants": {
     "smooth-aware-latched": {
-      "pending": [
-        "equipped",
-        "sets",
-        "teams"
-      ],
+      "pending": [],
       "receipts": [
         {
           "path": "reports/cardrpg-big/a5/b1/expanded-02/smooth-aware-latched/tiers/results.json",
           "sha256": "cd9526f9ff1ed8712cda4dbd1fdd854fbb98467304898a354310c89b56723552"
+        },
+        {
+          "path": "reports/cardrpg-big/a5/b1/expanded-02/smooth-aware-latched/equipped/results.json",
+          "sha256": "8e0640b98f5c16d10743eba10d263bbae7dd69d5d8bb768575d3524c2341964f"
+        },
+        {
+          "path": "reports/cardrpg-big/a5/b1/expanded-02/smooth-aware-latched/sets/results.json",
+          "sha256": "b62c1b1e11333b1ea7dc86dfb31d39b3412dd1869f6da7e792d16c85d8a4bbde"
+        },
+        {
+          "path": "reports/cardrpg-big/a5/b1/expanded-02/smooth-aware-latched/teams/results.json",
+          "sha256": "c28a2a91ad6c91296ad41e73d7c71a63d0248a15b629d8c83c5b7dc451babbbf"
         }
       ],
       "candidate": {
@@ -425,6 +433,578 @@
               "meets": true
             }
           ]
+        },
+        "piecesEquipped": {
+          "cells": 384,
+          "worst": {
+            "kind": "pieces-equipped",
+            "templateId": "bellsteel-outfit-legendary",
+            "cardId": "mochi",
+            "level": 6,
+            "chapter": 2,
+            "gainPp": 56.0,
+            "beforeRate": 0.42,
+            "afterRate": 0.98
+          },
+          "above12pp": 61,
+          "negative": 41,
+          "maxDisplayShare": 0.04509341837032212,
+          "correlationByChapter": [
+            {
+              "chapter": 1,
+              "spearman": -0.01724429062670619
+            },
+            {
+              "chapter": 2,
+              "spearman": 0.21030607849699529
+            },
+            {
+              "chapter": 3,
+              "spearman": -0.10306932369285171
+            }
+          ],
+          "correlationLabel": "Existing mean displayed team share vs paired win delta, tied average ranks; NOT recalibrated display score."
+        },
+        "sets": [
+          {
+            "id": "bellsteel",
+            "rate": 0.9075,
+            "scenes": [
+              {
+                "scene": 0,
+                "rate": 0.56,
+                "leads": false
+              },
+              {
+                "scene": 1,
+                "rate": 0.72,
+                "leads": false
+              },
+              {
+                "scene": 2,
+                "rate": 0.98,
+                "leads": false
+              },
+              {
+                "scene": 3,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 4,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 5,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 6,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 7,
+                "rate": 1.0,
+                "leads": true
+              }
+            ]
+          },
+          {
+            "id": "crumbweave",
+            "rate": 0.905,
+            "scenes": [
+              {
+                "scene": 0,
+                "rate": 0.68,
+                "leads": true
+              },
+              {
+                "scene": 1,
+                "rate": 0.56,
+                "leads": false
+              },
+              {
+                "scene": 2,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 3,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 4,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 5,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 6,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 7,
+                "rate": 1.0,
+                "leads": true
+              }
+            ]
+          },
+          {
+            "id": "emberfelt",
+            "rate": 0.8275,
+            "scenes": [
+              {
+                "scene": 0,
+                "rate": 0.18,
+                "leads": false
+              },
+              {
+                "scene": 1,
+                "rate": 0.46,
+                "leads": false
+              },
+              {
+                "scene": 2,
+                "rate": 0.98,
+                "leads": false
+              },
+              {
+                "scene": 3,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 4,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 5,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 6,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 7,
+                "rate": 1.0,
+                "leads": true
+              }
+            ]
+          },
+          {
+            "id": "hearthloom",
+            "rate": 0.8625,
+            "scenes": [
+              {
+                "scene": 0,
+                "rate": 0.32,
+                "leads": false
+              },
+              {
+                "scene": 1,
+                "rate": 0.58,
+                "leads": false
+              },
+              {
+                "scene": 2,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 3,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 4,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 5,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 6,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 7,
+                "rate": 1.0,
+                "leads": true
+              }
+            ]
+          },
+          {
+            "id": "moonwick",
+            "rate": 0.8425,
+            "scenes": [
+              {
+                "scene": 0,
+                "rate": 0.24,
+                "leads": false
+              },
+              {
+                "scene": 1,
+                "rate": 0.5,
+                "leads": false
+              },
+              {
+                "scene": 2,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 3,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 4,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 5,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 6,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 7,
+                "rate": 1.0,
+                "leads": true
+              }
+            ]
+          },
+          {
+            "id": "mossbrew",
+            "rate": 0.925,
+            "scenes": [
+              {
+                "scene": 0,
+                "rate": 0.6,
+                "leads": false
+              },
+              {
+                "scene": 1,
+                "rate": 0.8,
+                "leads": true
+              },
+              {
+                "scene": 2,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 3,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 4,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 5,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 6,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 7,
+                "rate": 1.0,
+                "leads": true
+              }
+            ]
+          },
+          {
+            "id": "rainlace",
+            "rate": 0.87,
+            "scenes": [
+              {
+                "scene": 0,
+                "rate": 0.3,
+                "leads": false
+              },
+              {
+                "scene": 1,
+                "rate": 0.66,
+                "leads": false
+              },
+              {
+                "scene": 2,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 3,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 4,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 5,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 6,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 7,
+                "rate": 1.0,
+                "leads": true
+              }
+            ]
+          },
+          {
+            "id": "velvetrim",
+            "rate": 0.905,
+            "scenes": [
+              {
+                "scene": 0,
+                "rate": 0.54,
+                "leads": false
+              },
+              {
+                "scene": 1,
+                "rate": 0.7,
+                "leads": false
+              },
+              {
+                "scene": 2,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 3,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 4,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 5,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 6,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 7,
+                "rate": 1.0,
+                "leads": true
+              }
+            ]
+          }
+        ],
+        "cats": [
+          {
+            "id": "biscuit",
+            "rate": 0.7757575757575758,
+            "bestTeam": [
+              "mochi",
+              "clover",
+              "biscuit"
+            ],
+            "bestChapter": 2,
+            "bestRate": 1.0,
+            "topPickCells": 58
+          },
+          {
+            "id": "brioche",
+            "rate": 0.556,
+            "bestTeam": [
+              "mochi",
+              "clover",
+              "brioche"
+            ],
+            "bestChapter": 3,
+            "bestRate": 1.0,
+            "topPickCells": 28
+          },
+          {
+            "id": "cinnamon",
+            "rate": 0.8751515151515151,
+            "bestTeam": [
+              "mochi",
+              "soot",
+              "cinnamon"
+            ],
+            "bestChapter": 3,
+            "bestRate": 1.0,
+            "topPickCells": 91
+          },
+          {
+            "id": "clover",
+            "rate": 0.7072727272727273,
+            "bestTeam": [
+              "mochi",
+              "soot",
+              "clover"
+            ],
+            "bestChapter": 3,
+            "bestRate": 1.0,
+            "topPickCells": 57
+          },
+          {
+            "id": "inkcap",
+            "rate": 0.8843636363636364,
+            "bestTeam": [
+              "mochi",
+              "soot",
+              "inkcap"
+            ],
+            "bestChapter": 3,
+            "bestRate": 1.0,
+            "topPickCells": 76
+          },
+          {
+            "id": "mallow",
+            "rate": 0.6934545454545454,
+            "bestTeam": [
+              "mochi",
+              "mallow",
+              "inkcap"
+            ],
+            "bestChapter": 3,
+            "bestRate": 1.0,
+            "topPickCells": 28
+          },
+          {
+            "id": "marigold",
+            "rate": 0.7801212121212121,
+            "bestTeam": [
+              "mochi",
+              "soot",
+              "marigold"
+            ],
+            "bestChapter": 3,
+            "bestRate": 1.0,
+            "topPickCells": 79
+          },
+          {
+            "id": "mochi",
+            "rate": 0.7461818181818182,
+            "bestTeam": [
+              "mochi",
+              "soot",
+              "clover"
+            ],
+            "bestChapter": 3,
+            "bestRate": 1.0,
+            "topPickCells": 63
+          },
+          {
+            "id": "panko",
+            "rate": 0.6604848484848485,
+            "bestTeam": [
+              "mochi",
+              "clover",
+              "panko"
+            ],
+            "bestChapter": 3,
+            "bestRate": 1.0,
+            "topPickCells": 42
+          },
+          {
+            "id": "soot",
+            "rate": 0.6219393939393939,
+            "bestTeam": [
+              "mochi",
+              "soot",
+              "clover"
+            ],
+            "bestChapter": 3,
+            "bestRate": 1.0,
+            "topPickCells": 21
+          },
+          {
+            "id": "sorrel",
+            "rate": 0.7024242424242424,
+            "bestTeam": [
+              "mochi",
+              "clover",
+              "sorrel"
+            ],
+            "bestChapter": 3,
+            "bestRate": 1.0,
+            "topPickCells": 45
+          },
+          {
+            "id": "velvet",
+            "rate": 0.8503030303030303,
+            "bestTeam": [
+              "mochi",
+              "soot",
+              "velvet"
+            ],
+            "bestChapter": 3,
+            "bestRate": 1.0,
+            "topPickCells": 64
+          }
+        ],
+        "bossDiversity": [
+          {
+            "chapter": 1,
+            "best": 1.0,
+            "within5pp": 57
+          },
+          {
+            "chapter": 2,
+            "best": 1.0,
+            "within5pp": 77
+          },
+          {
+            "chapter": 3,
+            "best": 1.0,
+            "within5pp": 140
+          }
+        ],
+        "crew": {
+          "team": [
+            "biscuit",
+            "cinnamon",
+            "velvet"
+          ],
+          "gainPp": 28.0
         }
       },
       "originalSameCells": {
@@ -839,19 +1419,591 @@
               "meets": true
             }
           ]
-        }
+        },
+        "piecesEquipped": {
+          "cells": 384,
+          "worst": {
+            "kind": "pieces-equipped",
+            "templateId": "hearthloom-charm-legendary",
+            "cardId": "mochi",
+            "level": 6,
+            "chapter": 3,
+            "gainPp": 88.0,
+            "beforeRate": 0.04,
+            "afterRate": 0.92
+          },
+          "above12pp": 32,
+          "negative": 25,
+          "maxDisplayShare": 0.04519651545984302,
+          "correlationByChapter": [
+            {
+              "chapter": 1,
+              "spearman": 0.10569976630461919
+            },
+            {
+              "chapter": 2,
+              "spearman": 0.3921686694021183
+            },
+            {
+              "chapter": 3,
+              "spearman": 0.4641856284130212
+            }
+          ],
+          "correlationLabel": "Existing mean displayed team share vs paired win delta, tied average ranks; NOT recalibrated display score."
+        },
+        "sets": [
+          {
+            "id": "bellsteel",
+            "rate": 0.6825,
+            "scenes": [
+              {
+                "scene": 0,
+                "rate": 0.06,
+                "leads": false
+              },
+              {
+                "scene": 1,
+                "rate": 0.0,
+                "leads": true
+              },
+              {
+                "scene": 2,
+                "rate": 0.4,
+                "leads": false
+              },
+              {
+                "scene": 3,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 4,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 5,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 6,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 7,
+                "rate": 1.0,
+                "leads": true
+              }
+            ]
+          },
+          {
+            "id": "crumbweave",
+            "rate": 0.77,
+            "scenes": [
+              {
+                "scene": 0,
+                "rate": 0.88,
+                "leads": true
+              },
+              {
+                "scene": 1,
+                "rate": 0.0,
+                "leads": true
+              },
+              {
+                "scene": 2,
+                "rate": 0.28,
+                "leads": false
+              },
+              {
+                "scene": 3,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 4,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 5,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 6,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 7,
+                "rate": 1.0,
+                "leads": true
+              }
+            ]
+          },
+          {
+            "id": "emberfelt",
+            "rate": 0.6525,
+            "scenes": [
+              {
+                "scene": 0,
+                "rate": 0.1,
+                "leads": false
+              },
+              {
+                "scene": 1,
+                "rate": 0.0,
+                "leads": true
+              },
+              {
+                "scene": 2,
+                "rate": 0.12,
+                "leads": false
+              },
+              {
+                "scene": 3,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 4,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 5,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 6,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 7,
+                "rate": 1.0,
+                "leads": true
+              }
+            ]
+          },
+          {
+            "id": "hearthloom",
+            "rate": 0.68,
+            "scenes": [
+              {
+                "scene": 0,
+                "rate": 0.06,
+                "leads": false
+              },
+              {
+                "scene": 1,
+                "rate": 0.0,
+                "leads": true
+              },
+              {
+                "scene": 2,
+                "rate": 0.38,
+                "leads": false
+              },
+              {
+                "scene": 3,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 4,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 5,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 6,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 7,
+                "rate": 1.0,
+                "leads": true
+              }
+            ]
+          },
+          {
+            "id": "moonwick",
+            "rate": 0.6975,
+            "scenes": [
+              {
+                "scene": 0,
+                "rate": 0.14,
+                "leads": false
+              },
+              {
+                "scene": 1,
+                "rate": 0.0,
+                "leads": true
+              },
+              {
+                "scene": 2,
+                "rate": 0.44,
+                "leads": false
+              },
+              {
+                "scene": 3,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 4,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 5,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 6,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 7,
+                "rate": 1.0,
+                "leads": true
+              }
+            ]
+          },
+          {
+            "id": "mossbrew",
+            "rate": 0.695,
+            "scenes": [
+              {
+                "scene": 0,
+                "rate": 0.06,
+                "leads": false
+              },
+              {
+                "scene": 1,
+                "rate": 0.0,
+                "leads": true
+              },
+              {
+                "scene": 2,
+                "rate": 0.5,
+                "leads": false
+              },
+              {
+                "scene": 3,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 4,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 5,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 6,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 7,
+                "rate": 1.0,
+                "leads": true
+              }
+            ]
+          },
+          {
+            "id": "rainlace",
+            "rate": 0.6925,
+            "scenes": [
+              {
+                "scene": 0,
+                "rate": 0.06,
+                "leads": false
+              },
+              {
+                "scene": 1,
+                "rate": 0.0,
+                "leads": true
+              },
+              {
+                "scene": 2,
+                "rate": 0.48,
+                "leads": false
+              },
+              {
+                "scene": 3,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 4,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 5,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 6,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 7,
+                "rate": 1.0,
+                "leads": true
+              }
+            ]
+          },
+          {
+            "id": "velvetrim",
+            "rate": 0.72,
+            "scenes": [
+              {
+                "scene": 0,
+                "rate": 0.08,
+                "leads": false
+              },
+              {
+                "scene": 1,
+                "rate": 0.0,
+                "leads": true
+              },
+              {
+                "scene": 2,
+                "rate": 0.68,
+                "leads": true
+              },
+              {
+                "scene": 3,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 4,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 5,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 6,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 7,
+                "rate": 1.0,
+                "leads": true
+              }
+            ]
+          }
+        ],
+        "cats": [
+          {
+            "id": "biscuit",
+            "rate": 0.6309090909090909,
+            "bestTeam": [
+              "mochi",
+              "biscuit",
+              "cinnamon"
+            ],
+            "bestChapter": 3,
+            "bestRate": 1.0,
+            "topPickCells": 38
+          },
+          {
+            "id": "brioche",
+            "rate": 0.3172121212121212,
+            "bestTeam": [
+              "mochi",
+              "cinnamon",
+              "brioche"
+            ],
+            "bestChapter": 3,
+            "bestRate": 1.0,
+            "topPickCells": 10
+          },
+          {
+            "id": "cinnamon",
+            "rate": 0.6349090909090909,
+            "bestTeam": [
+              "mochi",
+              "clover",
+              "cinnamon"
+            ],
+            "bestChapter": 3,
+            "bestRate": 1.0,
+            "topPickCells": 66
+          },
+          {
+            "id": "clover",
+            "rate": 0.4619393939393939,
+            "bestTeam": [
+              "mochi",
+              "clover",
+              "sorrel"
+            ],
+            "bestChapter": 3,
+            "bestRate": 1.0,
+            "topPickCells": 21
+          },
+          {
+            "id": "inkcap",
+            "rate": 0.48448484848484846,
+            "bestTeam": [
+              "inkcap",
+              "cinnamon",
+              "marigold"
+            ],
+            "bestChapter": 2,
+            "bestRate": 1.0,
+            "topPickCells": 8
+          },
+          {
+            "id": "mallow",
+            "rate": 0.4872727272727273,
+            "bestTeam": [
+              "mochi",
+              "mallow",
+              "velvet"
+            ],
+            "bestChapter": 3,
+            "bestRate": 1.0,
+            "topPickCells": 14
+          },
+          {
+            "id": "marigold",
+            "rate": 0.575030303030303,
+            "bestTeam": [
+              "mochi",
+              "clover",
+              "marigold"
+            ],
+            "bestChapter": 2,
+            "bestRate": 1.0,
+            "topPickCells": 55
+          },
+          {
+            "id": "mochi",
+            "rate": 0.48193939393939395,
+            "bestTeam": [
+              "mochi",
+              "clover",
+              "sorrel"
+            ],
+            "bestChapter": 3,
+            "bestRate": 1.0,
+            "topPickCells": 29
+          },
+          {
+            "id": "panko",
+            "rate": 0.42278787878787877,
+            "bestTeam": [
+              "clover",
+              "panko",
+              "marigold"
+            ],
+            "bestChapter": 2,
+            "bestRate": 1.0,
+            "topPickCells": 13
+          },
+          {
+            "id": "soot",
+            "rate": 0.30496969696969695,
+            "bestTeam": [
+              "soot",
+              "biscuit",
+              "cinnamon"
+            ],
+            "bestChapter": 3,
+            "bestRate": 1.0,
+            "topPickCells": 3
+          },
+          {
+            "id": "sorrel",
+            "rate": 0.4473939393939394,
+            "bestTeam": [
+              "mochi",
+              "clover",
+              "sorrel"
+            ],
+            "bestChapter": 3,
+            "bestRate": 1.0,
+            "topPickCells": 15
+          },
+          {
+            "id": "velvet",
+            "rate": 0.644969696969697,
+            "bestTeam": [
+              "mochi",
+              "clover",
+              "velvet"
+            ],
+            "bestChapter": 3,
+            "bestRate": 1.0,
+            "topPickCells": 50
+          }
+        ],
+        "bossDiversity": [
+          {
+            "chapter": 1,
+            "best": 1.0,
+            "within5pp": 16
+          },
+          {
+            "chapter": 2,
+            "best": 1.0,
+            "within5pp": 31
+          },
+          {
+            "chapter": 3,
+            "best": 1.0,
+            "within5pp": 64
+          }
+        ]
       }
     },
     "smooth-aware-distributed": {
-      "pending": [
-        "equipped",
-        "sets",
-        "teams"
-      ],
+      "pending": [],
       "receipts": [
         {
           "path": "reports/cardrpg-big/a5/b1/expanded-02/smooth-aware-distributed/tiers/results.json",
           "sha256": "ff999207491637392578a1cb6c5152e91c4d78b00145683d869c690ce8eb549f"
+        },
+        {
+          "path": "reports/cardrpg-big/a5/b1/expanded-02/smooth-aware-distributed/equipped/results.json",
+          "sha256": "a438a7a81e72833f6121cadf774519ed43a7c50828192b3be24d53d48f4f66d8"
+        },
+        {
+          "path": "reports/cardrpg-big/a5/b1/expanded-02/smooth-aware-distributed/sets/results.json",
+          "sha256": "b6deabdee19c8a5cab25a9c7dff8f91fe8f949aa0073d47274368cb6e82ef0cf"
+        },
+        {
+          "path": "reports/cardrpg-big/a5/b1/expanded-02/smooth-aware-distributed/teams/results.json",
+          "sha256": "bdd4e7887e8680da3cf7958a53eebfdcd86c706b9bcb54f90c9fc17a6179bbba"
         }
       ],
       "candidate": {
@@ -1266,6 +2418,578 @@
               "meets": true
             }
           ]
+        },
+        "piecesEquipped": {
+          "cells": 384,
+          "worst": {
+            "kind": "pieces-equipped",
+            "templateId": "mossbrew-relic-legendary",
+            "cardId": "clover",
+            "level": 6,
+            "chapter": 2,
+            "gainPp": 32.0,
+            "beforeRate": 0.62,
+            "afterRate": 0.94
+          },
+          "above12pp": 30,
+          "negative": 69,
+          "maxDisplayShare": 0.04509341837032212,
+          "correlationByChapter": [
+            {
+              "chapter": 1,
+              "spearman": -0.16248444729083888
+            },
+            {
+              "chapter": 2,
+              "spearman": 0.20698960274513473
+            },
+            {
+              "chapter": 3,
+              "spearman": 0.007563933442871493
+            }
+          ],
+          "correlationLabel": "Existing mean displayed team share vs paired win delta, tied average ranks; NOT recalibrated display score."
+        },
+        "sets": [
+          {
+            "id": "bellsteel",
+            "rate": 0.98,
+            "scenes": [
+              {
+                "scene": 0,
+                "rate": 0.88,
+                "leads": true
+              },
+              {
+                "scene": 1,
+                "rate": 0.96,
+                "leads": true
+              },
+              {
+                "scene": 2,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 3,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 4,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 5,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 6,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 7,
+                "rate": 1.0,
+                "leads": true
+              }
+            ]
+          },
+          {
+            "id": "crumbweave",
+            "rate": 0.9175,
+            "scenes": [
+              {
+                "scene": 0,
+                "rate": 0.76,
+                "leads": false
+              },
+              {
+                "scene": 1,
+                "rate": 0.6,
+                "leads": false
+              },
+              {
+                "scene": 2,
+                "rate": 0.98,
+                "leads": false
+              },
+              {
+                "scene": 3,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 4,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 5,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 6,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 7,
+                "rate": 1.0,
+                "leads": true
+              }
+            ]
+          },
+          {
+            "id": "emberfelt",
+            "rate": 0.9,
+            "scenes": [
+              {
+                "scene": 0,
+                "rate": 0.4,
+                "leads": false
+              },
+              {
+                "scene": 1,
+                "rate": 0.8,
+                "leads": false
+              },
+              {
+                "scene": 2,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 3,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 4,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 5,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 6,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 7,
+                "rate": 1.0,
+                "leads": true
+              }
+            ]
+          },
+          {
+            "id": "hearthloom",
+            "rate": 0.9175,
+            "scenes": [
+              {
+                "scene": 0,
+                "rate": 0.64,
+                "leads": false
+              },
+              {
+                "scene": 1,
+                "rate": 0.72,
+                "leads": false
+              },
+              {
+                "scene": 2,
+                "rate": 0.98,
+                "leads": false
+              },
+              {
+                "scene": 3,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 4,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 5,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 6,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 7,
+                "rate": 1.0,
+                "leads": true
+              }
+            ]
+          },
+          {
+            "id": "moonwick",
+            "rate": 0.92,
+            "scenes": [
+              {
+                "scene": 0,
+                "rate": 0.5,
+                "leads": false
+              },
+              {
+                "scene": 1,
+                "rate": 0.86,
+                "leads": false
+              },
+              {
+                "scene": 2,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 3,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 4,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 5,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 6,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 7,
+                "rate": 1.0,
+                "leads": true
+              }
+            ]
+          },
+          {
+            "id": "mossbrew",
+            "rate": 0.95,
+            "scenes": [
+              {
+                "scene": 0,
+                "rate": 0.74,
+                "leads": false
+              },
+              {
+                "scene": 1,
+                "rate": 0.86,
+                "leads": false
+              },
+              {
+                "scene": 2,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 3,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 4,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 5,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 6,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 7,
+                "rate": 1.0,
+                "leads": true
+              }
+            ]
+          },
+          {
+            "id": "rainlace",
+            "rate": 0.9425,
+            "scenes": [
+              {
+                "scene": 0,
+                "rate": 0.64,
+                "leads": false
+              },
+              {
+                "scene": 1,
+                "rate": 0.9,
+                "leads": false
+              },
+              {
+                "scene": 2,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 3,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 4,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 5,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 6,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 7,
+                "rate": 1.0,
+                "leads": true
+              }
+            ]
+          },
+          {
+            "id": "velvetrim",
+            "rate": 0.9625,
+            "scenes": [
+              {
+                "scene": 0,
+                "rate": 0.8,
+                "leads": false
+              },
+              {
+                "scene": 1,
+                "rate": 0.9,
+                "leads": false
+              },
+              {
+                "scene": 2,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 3,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 4,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 5,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 6,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 7,
+                "rate": 1.0,
+                "leads": true
+              }
+            ]
+          }
+        ],
+        "cats": [
+          {
+            "id": "biscuit",
+            "rate": 0.8425454545454546,
+            "bestTeam": [
+              "mochi",
+              "clover",
+              "biscuit"
+            ],
+            "bestChapter": 2,
+            "bestRate": 1.0,
+            "topPickCells": 70
+          },
+          {
+            "id": "brioche",
+            "rate": 0.6853333333333333,
+            "bestTeam": [
+              "mochi",
+              "clover",
+              "brioche"
+            ],
+            "bestChapter": 3,
+            "bestRate": 1.0,
+            "topPickCells": 53
+          },
+          {
+            "id": "cinnamon",
+            "rate": 0.9608484848484848,
+            "bestTeam": [
+              "mochi",
+              "soot",
+              "cinnamon"
+            ],
+            "bestChapter": 2,
+            "bestRate": 1.0,
+            "topPickCells": 129
+          },
+          {
+            "id": "clover",
+            "rate": 0.7854545454545454,
+            "bestTeam": [
+              "mochi",
+              "soot",
+              "clover"
+            ],
+            "bestChapter": 3,
+            "bestRate": 1.0,
+            "topPickCells": 69
+          },
+          {
+            "id": "inkcap",
+            "rate": 0.9328484848484848,
+            "bestTeam": [
+              "mochi",
+              "soot",
+              "inkcap"
+            ],
+            "bestChapter": 2,
+            "bestRate": 1.0,
+            "topPickCells": 101
+          },
+          {
+            "id": "mallow",
+            "rate": 0.7773333333333333,
+            "bestTeam": [
+              "mochi",
+              "panko",
+              "mallow"
+            ],
+            "bestChapter": 3,
+            "bestRate": 1.0,
+            "topPickCells": 42
+          },
+          {
+            "id": "marigold",
+            "rate": 0.8381818181818181,
+            "bestTeam": [
+              "mochi",
+              "soot",
+              "marigold"
+            ],
+            "bestChapter": 3,
+            "bestRate": 1.0,
+            "topPickCells": 94
+          },
+          {
+            "id": "mochi",
+            "rate": 0.8461818181818181,
+            "bestTeam": [
+              "mochi",
+              "soot",
+              "clover"
+            ],
+            "bestChapter": 3,
+            "bestRate": 1.0,
+            "topPickCells": 80
+          },
+          {
+            "id": "panko",
+            "rate": 0.78,
+            "bestTeam": [
+              "mochi",
+              "clover",
+              "panko"
+            ],
+            "bestChapter": 3,
+            "bestRate": 1.0,
+            "topPickCells": 59
+          },
+          {
+            "id": "soot",
+            "rate": 0.6848484848484848,
+            "bestTeam": [
+              "mochi",
+              "soot",
+              "clover"
+            ],
+            "bestChapter": 3,
+            "bestRate": 1.0,
+            "topPickCells": 29
+          },
+          {
+            "id": "sorrel",
+            "rate": 0.7664242424242425,
+            "bestTeam": [
+              "mochi",
+              "soot",
+              "sorrel"
+            ],
+            "bestChapter": 3,
+            "bestRate": 1.0,
+            "topPickCells": 64
+          },
+          {
+            "id": "velvet",
+            "rate": 0.901090909090909,
+            "bestTeam": [
+              "mochi",
+              "soot",
+              "velvet"
+            ],
+            "bestChapter": 3,
+            "bestRate": 1.0,
+            "topPickCells": 77
+          }
+        ],
+        "bossDiversity": [
+          {
+            "chapter": 1,
+            "best": 1.0,
+            "within5pp": 96
+          },
+          {
+            "chapter": 2,
+            "best": 1.0,
+            "within5pp": 106
+          },
+          {
+            "chapter": 3,
+            "best": 1.0,
+            "within5pp": 168
+          }
+        ],
+        "crew": {
+          "team": [
+            "biscuit",
+            "cinnamon",
+            "velvet"
+          ],
+          "gainPp": 21.333333333333332
         }
       },
       "originalSameCells": {
@@ -1680,7 +3404,571 @@
               "meets": true
             }
           ]
-        }
+        },
+        "piecesEquipped": {
+          "cells": 384,
+          "worst": {
+            "kind": "pieces-equipped",
+            "templateId": "hearthloom-charm-legendary",
+            "cardId": "mochi",
+            "level": 6,
+            "chapter": 3,
+            "gainPp": 88.0,
+            "beforeRate": 0.04,
+            "afterRate": 0.92
+          },
+          "above12pp": 32,
+          "negative": 25,
+          "maxDisplayShare": 0.04519651545984302,
+          "correlationByChapter": [
+            {
+              "chapter": 1,
+              "spearman": 0.10569976630461919
+            },
+            {
+              "chapter": 2,
+              "spearman": 0.3921686694021183
+            },
+            {
+              "chapter": 3,
+              "spearman": 0.4641856284130212
+            }
+          ],
+          "correlationLabel": "Existing mean displayed team share vs paired win delta, tied average ranks; NOT recalibrated display score."
+        },
+        "sets": [
+          {
+            "id": "bellsteel",
+            "rate": 0.6825,
+            "scenes": [
+              {
+                "scene": 0,
+                "rate": 0.06,
+                "leads": false
+              },
+              {
+                "scene": 1,
+                "rate": 0.0,
+                "leads": true
+              },
+              {
+                "scene": 2,
+                "rate": 0.4,
+                "leads": false
+              },
+              {
+                "scene": 3,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 4,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 5,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 6,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 7,
+                "rate": 1.0,
+                "leads": true
+              }
+            ]
+          },
+          {
+            "id": "crumbweave",
+            "rate": 0.77,
+            "scenes": [
+              {
+                "scene": 0,
+                "rate": 0.88,
+                "leads": true
+              },
+              {
+                "scene": 1,
+                "rate": 0.0,
+                "leads": true
+              },
+              {
+                "scene": 2,
+                "rate": 0.28,
+                "leads": false
+              },
+              {
+                "scene": 3,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 4,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 5,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 6,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 7,
+                "rate": 1.0,
+                "leads": true
+              }
+            ]
+          },
+          {
+            "id": "emberfelt",
+            "rate": 0.6525,
+            "scenes": [
+              {
+                "scene": 0,
+                "rate": 0.1,
+                "leads": false
+              },
+              {
+                "scene": 1,
+                "rate": 0.0,
+                "leads": true
+              },
+              {
+                "scene": 2,
+                "rate": 0.12,
+                "leads": false
+              },
+              {
+                "scene": 3,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 4,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 5,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 6,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 7,
+                "rate": 1.0,
+                "leads": true
+              }
+            ]
+          },
+          {
+            "id": "hearthloom",
+            "rate": 0.68,
+            "scenes": [
+              {
+                "scene": 0,
+                "rate": 0.06,
+                "leads": false
+              },
+              {
+                "scene": 1,
+                "rate": 0.0,
+                "leads": true
+              },
+              {
+                "scene": 2,
+                "rate": 0.38,
+                "leads": false
+              },
+              {
+                "scene": 3,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 4,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 5,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 6,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 7,
+                "rate": 1.0,
+                "leads": true
+              }
+            ]
+          },
+          {
+            "id": "moonwick",
+            "rate": 0.6975,
+            "scenes": [
+              {
+                "scene": 0,
+                "rate": 0.14,
+                "leads": false
+              },
+              {
+                "scene": 1,
+                "rate": 0.0,
+                "leads": true
+              },
+              {
+                "scene": 2,
+                "rate": 0.44,
+                "leads": false
+              },
+              {
+                "scene": 3,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 4,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 5,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 6,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 7,
+                "rate": 1.0,
+                "leads": true
+              }
+            ]
+          },
+          {
+            "id": "mossbrew",
+            "rate": 0.695,
+            "scenes": [
+              {
+                "scene": 0,
+                "rate": 0.06,
+                "leads": false
+              },
+              {
+                "scene": 1,
+                "rate": 0.0,
+                "leads": true
+              },
+              {
+                "scene": 2,
+                "rate": 0.5,
+                "leads": false
+              },
+              {
+                "scene": 3,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 4,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 5,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 6,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 7,
+                "rate": 1.0,
+                "leads": true
+              }
+            ]
+          },
+          {
+            "id": "rainlace",
+            "rate": 0.6925,
+            "scenes": [
+              {
+                "scene": 0,
+                "rate": 0.06,
+                "leads": false
+              },
+              {
+                "scene": 1,
+                "rate": 0.0,
+                "leads": true
+              },
+              {
+                "scene": 2,
+                "rate": 0.48,
+                "leads": false
+              },
+              {
+                "scene": 3,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 4,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 5,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 6,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 7,
+                "rate": 1.0,
+                "leads": true
+              }
+            ]
+          },
+          {
+            "id": "velvetrim",
+            "rate": 0.72,
+            "scenes": [
+              {
+                "scene": 0,
+                "rate": 0.08,
+                "leads": false
+              },
+              {
+                "scene": 1,
+                "rate": 0.0,
+                "leads": true
+              },
+              {
+                "scene": 2,
+                "rate": 0.68,
+                "leads": true
+              },
+              {
+                "scene": 3,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 4,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 5,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 6,
+                "rate": 1.0,
+                "leads": true
+              },
+              {
+                "scene": 7,
+                "rate": 1.0,
+                "leads": true
+              }
+            ]
+          }
+        ],
+        "cats": [
+          {
+            "id": "biscuit",
+            "rate": 0.6309090909090909,
+            "bestTeam": [
+              "mochi",
+              "biscuit",
+              "cinnamon"
+            ],
+            "bestChapter": 3,
+            "bestRate": 1.0,
+            "topPickCells": 38
+          },
+          {
+            "id": "brioche",
+            "rate": 0.3172121212121212,
+            "bestTeam": [
+              "mochi",
+              "cinnamon",
+              "brioche"
+            ],
+            "bestChapter": 3,
+            "bestRate": 1.0,
+            "topPickCells": 10
+          },
+          {
+            "id": "cinnamon",
+            "rate": 0.6349090909090909,
+            "bestTeam": [
+              "mochi",
+              "clover",
+              "cinnamon"
+            ],
+            "bestChapter": 3,
+            "bestRate": 1.0,
+            "topPickCells": 66
+          },
+          {
+            "id": "clover",
+            "rate": 0.4619393939393939,
+            "bestTeam": [
+              "mochi",
+              "clover",
+              "sorrel"
+            ],
+            "bestChapter": 3,
+            "bestRate": 1.0,
+            "topPickCells": 21
+          },
+          {
+            "id": "inkcap",
+            "rate": 0.48448484848484846,
+            "bestTeam": [
+              "inkcap",
+              "cinnamon",
+              "marigold"
+            ],
+            "bestChapter": 2,
+            "bestRate": 1.0,
+            "topPickCells": 8
+          },
+          {
+            "id": "mallow",
+            "rate": 0.4872727272727273,
+            "bestTeam": [
+              "mochi",
+              "mallow",
+              "velvet"
+            ],
+            "bestChapter": 3,
+            "bestRate": 1.0,
+            "topPickCells": 14
+          },
+          {
+            "id": "marigold",
+            "rate": 0.575030303030303,
+            "bestTeam": [
+              "mochi",
+              "clover",
+              "marigold"
+            ],
+            "bestChapter": 2,
+            "bestRate": 1.0,
+            "topPickCells": 55
+          },
+          {
+            "id": "mochi",
+            "rate": 0.48193939393939395,
+            "bestTeam": [
+              "mochi",
+              "clover",
+              "sorrel"
+            ],
+            "bestChapter": 3,
+            "bestRate": 1.0,
+            "topPickCells": 29
+          },
+          {
+            "id": "panko",
+            "rate": 0.42278787878787877,
+            "bestTeam": [
+              "clover",
+              "panko",
+              "marigold"
+            ],
+            "bestChapter": 2,
+            "bestRate": 1.0,
+            "topPickCells": 13
+          },
+          {
+            "id": "soot",
+            "rate": 0.30496969696969695,
+            "bestTeam": [
+              "soot",
+              "biscuit",
+              "cinnamon"
+            ],
+            "bestChapter": 3,
+            "bestRate": 1.0,
+            "topPickCells": 3
+          },
+          {
+            "id": "sorrel",
+            "rate": 0.4473939393939394,
+            "bestTeam": [
+              "mochi",
+              "clover",
+              "sorrel"
+            ],
+            "bestChapter": 3,
+            "bestRate": 1.0,
+            "topPickCells": 15
+          },
+          {
+            "id": "velvet",
+            "rate": 0.644969696969697,
+            "bestTeam": [
+              "mochi",
+              "clover",
+              "velvet"
+            ],
+            "bestChapter": 3,
+            "bestRate": 1.0,
+            "topPickCells": 50
+          }
+        ],
+        "bossDiversity": [
+          {
+            "chapter": 1,
+            "best": 1.0,
+            "within5pp": 16
+          },
+          {
+            "chapter": 2,
+            "best": 1.0,
+            "within5pp": 31
+          },
+          {
+            "chapter": 3,
+            "best": 1.0,
+            "within5pp": 64
+          }
+        ]
       }
     }
   }
