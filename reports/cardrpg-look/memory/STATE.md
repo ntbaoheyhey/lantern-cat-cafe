@@ -1,3 +1,13 @@
+# Closure draft published — 2026-11-08T07:05:05.124686+00:00
+
+Draft [380](https://github.com/ntbaoheyhey/taskbar-hero/pull/380) is stacked on378. Evidence commit `dc296d1250b6f06b3ff8293837b6b2482b36e793` and all24 upload batches are remotely verified. Inventory:721 files/806,391,869bytes; explicit hashes and batch receipts under closure/. Later publication notes are separate from that inventory.
+Source8ba0a3879/artifact7e092b1a/31,494,758bytes/1,944 inputs unchanged. Five source gates PASS (1,770 web/421 E2E), three-size presentation, startup byte/module parity, Clover66/66 incremental improvements,20 natural replays and registeredABBA are complete. No active B measurement/publication job remains.
+Current and historical performance/effect/heap/size/isolation misses remain explicit in the149-line report and closure/audit.json. No claim all budgets pass or strict original effect-pair non-regression is solved. Original860/1720 matrix was retained without repetition.
+B A4P1/P3/P4 renderer compatibility is implemented and fixture-verified. A still owns exact earned-receipt forwarding through Invitations/CompanionPreview, icon/frame wiring, checkpoint adoption and merged delivery. No A4/A5 rules runtime adopted.
+REMAINING: A-owned forwarding/icon-frame adoption and merged delivery; measured optimization/art limitations stay open in the report. No B capture, draft or evidence upload remains pending. Any future optimization uses a new source/artifact and targeted evidence, preserving these misses. Report ledger location: ai/codex-ui-ledger; coordination: coord/cardrpg-big/B-OUTBOX.md. Native macOS; no Docker/subagents/generative/protected edits/merge/deploy.
+
+---
+
 # Closure measurements complete — 2026-11-08T06:58:00.995297+00:00
 
 Source 8ba0a3879, artifact 7e092b1a /31,494,758 bytes, all 1,944 inputs verified unchanged. Five source gates PASS: 1,770 web/421 E2E; no repeats. Presentation three sizes, startup byte/module parity and reviewed Clover 66/66 improvements complete.

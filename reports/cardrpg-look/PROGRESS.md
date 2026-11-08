@@ -57,3 +57,7 @@ Registered Clover1 ABBA COMPLETE: old 83.3/16.8, current 50.0/183.4, current 16.
 Current misses: hero 8/24 over 50 ms (max633.3), 11/24 below99% <=20 ms; targeted CPU4 first133.3/100/133.3/216.6 ms; cold666.6 ms/post-ready400 ms/gallerypage716.7 ms; ABBA current1/4max+2/4coverage; heap not literal flat; original24MB target;1140/2211 strict old-pair decreases; timing isolation unverified. Original860/1720 matrix and historical failures retained.
 Audit and report generated; report149 lines. Personal visual acceptance hashes verified. A renderer contract available; actual earned forwarding and icon/frames remain A-owned.
 NEXT: prepare/inspect bounded publication inventory, publish evidence, draft stacked378, publication note, ledger mirror and B-OUTBOX. Do not rerun measurements or alter source. NativeMac/noDocker/subagents/generative/protected edits/merge/deploy.
+
+## 2026-11-08T07:05:05.124686+00:00 — Closure draft380 published
+
+24 verified uploads;721 evidence files/806,391,869bytes, commitdc296d1250b6f06b3ff8293837b6b2482b36e793. Source/artifact unchanged, report149lines. Renderer compatibility handed over with all missed gates retained. Ledger mirror and B-OUTBOX follow.
