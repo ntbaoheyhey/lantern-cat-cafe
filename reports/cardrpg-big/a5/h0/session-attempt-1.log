@@ -1,0 +1,11 @@
+{"lock":"acquired","lane":"A","pid":36308,"startedAt":"2026-11-07T23:55:36.486Z","task":"A5-H0 elapsed-session lease"}
+{"lock":"released","pid":36308,"task":"A5-H0 elapsed-session lease"}
+file:///Users/bao/taskbar-hero-cardrpg-a4/tools/cardrpg-big/a5-h0-session.mjs:124
+ while(activeMs<duration){const exit=await new Promise((resolve,reject)=>{const child=spawn(process.execPath,['tools/cardrpg-big/with-timing-lock.mjs','A5-H0 elapsed-session lease',process.execPath,'tools/cardrpg-big/a5-lock-client.mjs',socketPath],{stdio:'inherit'});child.on('error',reject);child.on('close',resolve);});if(exit!==0)throw Error('H0 lease failed; retain receipt, correct only the failing harness step.');if(activeMs<duration){record('handoff-start');await delay(7000);record('handoff-end');}}
+                                                                                                                                                                                                                                                                                                                                                    ^
+
+Error: H0 lease failed; retain receipt, correct only the failing harness step.
+    at file:///Users/bao/taskbar-hero-cardrpg-a4/tools/cardrpg-big/a5-h0-session.mjs:124:341
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+Node.js v24.22.2
