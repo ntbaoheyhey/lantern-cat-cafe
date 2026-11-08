@@ -952,3 +952,9 @@ Scent06a complete1840TRAIN cells: Soot44.16→42.96%,1685paired improvements/194
 Read-only support08 and two registered Soot reach09 kit trials queued: original AI, TRAIN1–50, fixed original scenes/budgets. Neither touches production, acceptance or B files.
 Read B2-V1 claim; no A browser active. Sim leases110s/7s handoffs; source gates share lock. E2 v2 discovery and v1 forwarding requests unchanged.
 Fresh20001–20500 UNUSED; B1/B2/display/cadence/startup/Z remain open. No protected edits, model helpers, merge or deploy.
+
+## 2026-11-08T16:41:29.194297+00:00 A5-B2 CHECKPOINT
+Support08 complete54,400TRAIN battles, exact common04 parity. Cinnamon83.63%, Comfort cup286445/403323actions; Inkcap54.47%, Quiet spores11392; Sorrel52.31%. Counts descriptive, no causal gain claim.
+Registered separate support10 trials before sampling: Comfort cup one intervening turn; Quiet spores rear access. OriginalAI/stats/gear/fixtures, no Soot/anchored combination. Source snapshots retained; no production adoption.
+Guard type/lint/web1746/rules1135/OFF8250PASS; originalE2E/build continue. Existing reach09 coordinator preserved, no duplicate runs.
+Heavy trials110s sharedleases/7s handoffs; original sourceE2E owns its browser only while holding lock. No B/protected edits, fresh20001–20500, model helpers, merge or deploy.
