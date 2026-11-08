@@ -3,6 +3,7 @@ import {describe,expect,it} from 'vitest';
 import * as R from './index';
 import {BANNERS} from '../catalog';
 import {emptyPity,getBannerOdds} from '../gacha';
+import {clone} from '../internal';
 const fresh=()=>R.setGameplayV4(R.createDepthAccount(23),true);
 
 describe('v4 early invitation progress',()=>{
@@ -47,7 +48,7 @@ describe('v4 early invitation progress',()=>{
 
 describe('mode-aware earned allowance',()=>{
  it('offers truthful week goals without changing state or enabling them in OFF mode',()=>{
-  const s=fresh(),before=structuredClone(s);
+  const s=fresh(),before=clone(s);
   for(let day=1;day<=8;day++){
    const view=R.firstWeekV4({...s,account:{...s.account,day}});
    expect(view?.goal.length).toBeGreaterThan(0);expect(view?.tomorrow).toContain('up to 360 stamps');
