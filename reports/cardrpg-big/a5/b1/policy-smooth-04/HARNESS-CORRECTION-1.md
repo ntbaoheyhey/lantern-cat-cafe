@@ -1,0 +1,1 @@
+Coordinator variant labels were accidentally changed by a broad string replacement before the exact variant-list substitution. The unregistered label was rejected before any simulation. Original failed folders/logs are retained. Correct labels smooth-a4/smooth-budget and fail-fast outer loop only; no registered policy, seed, fixture or gate change.

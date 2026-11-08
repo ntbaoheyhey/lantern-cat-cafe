@@ -1,0 +1,11 @@
+{"lock":"acquired","lane":"A","pid":51329,"startedAt":"2026-11-08T07:24:33.987Z","task":"A5 policy smooth04 TRAIN budget-policy smooth040 equipped"}
+file:///Users/bao/taskbar-hero-cardrpg-a4/tools/cardrpg-big/a5-drafts/b1-prep/policy-smooth-04/matrix.mjs:18
+for(const [path,row] of Object.entries(transforms))source[path]=row.sha256;
+                               ^
+
+TypeError: Cannot convert undefined or null to object
+    at Object.entries (<anonymous>)
+    at file:///Users/bao/taskbar-hero-cardrpg-a4/tools/cardrpg-big/a5-drafts/b1-prep/policy-smooth-04/matrix.mjs:18:32
+
+Node.js v24.22.2
+{"lock":"released","pid":51329,"task":"A5 policy smooth04 TRAIN budget-policy smooth040 equipped"}

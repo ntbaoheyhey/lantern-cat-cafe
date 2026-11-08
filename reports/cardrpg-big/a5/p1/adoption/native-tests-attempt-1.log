@@ -1,0 +1,25 @@
+✔ shared source model views round-trip without changing any source byte (20.798375ms)
+✔ restoration rejects overlapping, out-of-range and unknown dictionary references (0.380334ms)
+✔ offline module map preserves lazy imports and cyclic generated dependencies (0.612583ms)
+✔ external or unrecognized imports cannot leak into the offline artifact (0.634334ms)
+✔ self-edge metadata may survive an inlined import without creating a fetch (0.584583ms)
+{
+  sourceSha256: 'b91c471af11ffe2eb75a8c4e2b158d2bc5e5ebbfc7b67c7081e95e9dedd78c16',
+  sourceBytes: 509607,
+  packedBytes: 98969,
+  savedBytes: 410638,
+  roster: 25,
+  parity: 'PASS',
+  nodeImportMs: 3.2991659999999996,
+  nodeDecodeAndAssertionMs: 3.4876250000000013,
+  method: 'Isolated native Node check; not a browser startup measurement or a production adoption.'
+}
+✔ the full production roster round-trips every frame, pixel and catalog field (16.097833ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 79.152583
