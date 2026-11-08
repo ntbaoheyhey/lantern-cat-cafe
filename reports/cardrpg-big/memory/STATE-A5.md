@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-Star plans46 revised prototype audited:8units,24ON/OFF browser scenarios/48captures PASS; exact earned save reaches the job star at3widths/bothlooks. Adopted exact4runtime files plus test after visual review. Full six source checks and adoptedON/OFF byte parity next. Original failures retained.
+Star plans46 source-bound closure PASS on27f192301: six first-attempt gates1779web/1192rules/421E2E/build,8isolated units,24ON/OFF browser scenarios/48captures. Adopted ON/OFF builds byte-identical to tested prototypes; OFF8250 source hashes and baseline/historical13 exact. DRAFT publication on403 next.
 ## NEXT
-Run source validation and adopted builds, close audit then DRAFT on403/state/outbox/ledger. No cadence benefit claim: original Home02 cadence/dead-time MISS unchanged. Home03 script/protocol staged only, not registered/run. B1/B2/display/startup/Z open; fresh20001–20500 UNUSED.
+Publish Starplans draft, sync outbox/ledger, then register/run the staged Home03 elapsed protocol on immutable checked artifact. Original Home02 cadence/dead-time MISS unchanged; no new benefit claim. B1/B2/display/startup/Z open; fresh20001–20500 UNUSED.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -318,3 +318,5 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - 2026-11-08T22:40:13.838666+00:00: Resumed46 on existing branch; original7unit/prototype receipts retained. Real-click originalON18scenarios/36captures passed after lazy-screen harness wait. OFF caught account/run mode mismatch in new completion copy; draft now gates new copy on account flag. Original failure logs preserved; revisedON/OFF coordinator84145 and isolatedunit15483 are unique active jobs. No combat/save/acceptance/B changes or model helpers.
 
 - 2026-11-08T22:42:22.702430+00:00: Starplans46 mode revision passed8isolated units/24browser scenarios/48captures. Prototype audit initially ran before finalOFF1024 row was persisted; guard failure retained, unchanged audit passed after original coordinator exited. No UI samples repeated by audit. ON20929441bytes/SHA2c318627; scopedcontrast6.726/nooverflow. Exact source adopted; no rule/save/acceptance change.
+
+- 2026-11-08T22:46:57.696091+00:00: Resumed original9317 source coordinator without duplicate suites. All six firstattempt checks and independent source-bound closure PASS; ON20929441bytes/SHA2c318627, OFF prototype exact,48captures, scopedcontrast6.726. Personally reviewed1280crew options and1024Look earned-star page. No combat/save/acceptance/B change.

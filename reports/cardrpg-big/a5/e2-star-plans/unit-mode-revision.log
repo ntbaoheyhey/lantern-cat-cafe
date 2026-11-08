@@ -1,0 +1,27 @@
+{"lock":"acquired","lane":"A","pid":8319,"startedAt":"2026-11-08T22:38:01.901Z","task":"A5 Star plans46 mode units"}
+
+ RUN  v5.0.5 /private/tmp/cardrpg-a5-star-plans-46/source
+
+ ❯ StarCrewPlansV4.test.tsx (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  StarCrewPlansV4.test.tsx [ StarCrewPlansV4.test.tsx ]
+Error: Denied ID /Users/bao/taskbar-hero-cardrpg-a4/assets/cardrpg/portraits/biscuit.png?url
+  File: /Users/bao/taskbar-hero-cardrpg-a4/assets/cardrpg/portraits/biscuit.png?url
+ ❯ loadAndTransform ../../../../Users/bao/taskbar-hero-cardrpg-a4/node_modules/.pnpm/vite@8.3.5_@types+node@22.20.5/node_modules/vite/dist/node/chunks/node.js:20099:31
+ ❯ doTransform ../../../../Users/bao/taskbar-hero-cardrpg-a4/node_modules/.pnpm/vite@8.3.5_@types+node@22.20.5/node_modules/vite/dist/node/chunks/node.js:20076:17
+ ❯ fetchModule ../../../../Users/bao/taskbar-hero-cardrpg-a4/node_modules/.pnpm/vite@8.3.5_@types+node@22.20.5/node_modules/vite/dist/node/chunks/node.js:36298:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  05:38:52
+   Duration  500ms (environment 99%, worker 1%)
+
+undefined
+/Users/bao/taskbar-hero-cardrpg-a4/apps/web:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: vitest run --config /tmp/cardrpg-a5-star-plans-46/vitest.config.mjs
+{"lock":"released","pid":8319,"task":"A5 Star plans46 mode units"}
