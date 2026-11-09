@@ -1177,3 +1177,10 @@ M3 exact-layer+target browser coverage18registeredseeds remains queued; pureadap
 Found offline packaging incompatibility during live smoke: A loader now expects module/dictionary payload; B builder emits IIFE payload. Fixed entirely in B-owned tools/cardrpg-look/{build.mjs,offline-loader.js}; A files untouched. Rebuilt live artifact, smoke queued; failed boot retained.
 New B smoke gate checks actual model initialization plus non-dev probe absence before screenshots; no rules/default changes. A runtime6772eb343 unchanged; latest094494084 evidence read.
 MX3 whole60tile visual score6.233vs4.517, uniqueness remainsMISS; opt3 allocation85–93% lower but nonzero. B continuing live coverage and exact-target rendering checks after loader verification.
+
+## 2026-11-09T06:23:02Z V5FULL-M3 HEADS-UP
+Oven6+Thread4 registered natural battles: all10 hashes exact, no browser errors; Wildfire/Rupture/Spread and row/splash/multi-hit/bounce captured. Night/Tea pending. No rules/default/A-owned edits.
+Four whole-cat MX batches:360first/repeat cast windows native/CPU4 max16.8ms;240face masks0offenders;60cost cues<=109draws, fixedprogram50. MXbeauty6.233andnonzeroallocation remainPARTIAL.
+Final-cue diagnostic confirms result scene is suspended+CSS-hidden with0transientlabels and exacthash; original narrower false-clear probe receipts retained. B-only probe now checks computedvisibility.
+Grouped unstarted B validation probes into bounded<=19min leases,6.5srelease handoff; allcompleted/failedsamples preserved. Only own waiters controlled; A processes untouched.
+Current B b8d51ed4d/live3b6542997; latest A published runtime6772eb343/evidence59475c79f read. M4preparation queued; S6refresh still expected.
