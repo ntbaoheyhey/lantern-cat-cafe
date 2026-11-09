@@ -1078,3 +1078,11 @@ V0.1 starts from2504e7df3/DRAFT409 on codex/cardrpg-v5look-v01-2026-11-09: six r
 Anchored callouts/head marks, readable shoulder flames/status frames, lighter burst puffs and Warm/Glaze; presentation/lookV2 only.
 User now authorizes automatic V3 after V5A-S4 DONE events v2 fixture; native no-model polling waits without timing lock after V0.1.
 One agent/no model helpers; no A/protected edits, merge or deploy. Three-hour V0.1 scope and8MB extra evidence.
+
+## 2026-11-09T01:53:13.534865Z V5LOOK-V01 DONE
+V0.1 runtimee5cd28278/evidenceda77aee08 pushed on codex/cardrpg-v5look-v01-2026-11-09; draft stacked on409.
+F1-F6: target-anchored500ms words, low backed crowns, countable flames,20px framed badges, short puffs,.76halos.
+FivegatesPASS1783web/1020rules/421E2E;5seed exact;native16.8ms/128draws/176533tris;CPU4cold199.9vs233.4;faces0/80/overlaps0/contrast7.
+Demo9793d01f0f91/29132360bytes; six paired shots/natural20s after; evidence3.75MBextra/24.95MBtotal. Thumbnail-only failure recovered without recapture; clip initialhash notsaved/notclaimed.
+OFF pixels/startup sizes+membership exact/0Three. No B jobs/lock, A/protected edits/modelhelpers/merge/deploy.
+User automatic V3 authorized; native polling starts next. Observed A V5A-S4 DONE; read-only fixture branch fetch follows confirmation.
