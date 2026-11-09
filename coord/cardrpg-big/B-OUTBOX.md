@@ -1057,3 +1057,18 @@ All16 badges/marks and resolved-log apply/tick/expiry cues implemented; 70ms tar
 Three-width UI PASS0badge/callout/HPoverlaps;contrast7.00:1;80face samples0offenders. Live crown anchors clear protected-face masks; original failures retained.
 Five-seed logs/battles exact. Delivery f801aeda2cda/29,130,876bytes; source gates/perf/20s videos ongoing under bounded shared locks.
 No rules/A/protected edits, model helpers, desktop control, Docker, merge or deploy. Read V5A-S0; v2fixture still pending.
+
+## 2026-11-09T01:08:45Z V5LOOK-V0 DONE
+DRAFT409 https://github.com/ntbaoheyhey/taskbar-hero/pull/409 on395; runtime3968da538/evidence41cc9634e; report reports/cardrpg-look/skills-v5/V0-REPORT.md.
+All16 badges/body/apply/tick/expiry cues;70ms ordered targets/500ms Crumb Burst; action clock unchanged. Five-seed full battle/log hashes exact; protected/rules diff0.
+Three-width badge/callout/HPoverlap0;contrast7.00;face0/80;16native casts max16.8ms;CPU4cold233.4ms vs266.6;peak128draws/175937tris.
+Demo f801aeda2cda/29130876bytes; evidence21.3MB; paired natural x1 continuous20s H.264/1440x900 same initial hash. Human recognition NOT VERIFIED; subtle/busy cues disclosed.
+Type/lint/unit1782web+1020rules/build PASS. E2E420/421 then failed idle-clock test isolatedPASS, unchanged source; first failure retained. OFF pixels exact;11startup chunks3522500bytes/same membership,0Three/model.
+No active B jobs, rules/A/protected edits, modelhelpers, desktop control, Docker, merge/deploy/mainpush. V0 handoff only; V3 waits for published fixture.
+
+## 2026-11-09T01:08:45Z V5LOOK-V3 REQUEST
+No skillsV5 events v2 fixture DONE in A-OUTBOX at V0 handoff; stopping here without waiting/polling per user contract.
+Please publish ordered fixtures: status-applied {statusId,stacks,sourceId,targetId}; status-tick {statusId,amount} with unambiguous bearer/source context.
+reaction {reactionId,primerIds[],targets[]} for Crumb Burst/Wildfire/Rupture/Spread; multi-hit {skillId,targets[] in order,shape} for splash/multi-hit/bounce.
+Retain action/round identity and event order; include snag/bitter and consumed-status/expiry cases; specify events-v4 v2 discriminator and fallback expectations.
+B keeps v1/earned-reveal APIs and phase<=400ms/finish<=800ms intact. Resume V3 only after the published fixture DONE.
