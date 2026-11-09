@@ -14,7 +14,7 @@ The shared toolkit adds two authored procedural 1024² atlases, instanced sprite
 | Five seeds ON/OFF/base | Exact at each batch and optimisation | [parity](opt3/parity/parity.json) |
 | Whole-cat first/repeat casts | 360 windows, native/CPU4 max 16.8 ms | [batch receipt](batch-summary.json) |
 | Whole-cat resource costs | 60 cues, ≤109 draws, fixed 50 programs | Per-batch cost receipts |
-| Faces | 240 whole-cat masks + 90 fixed-shot masks, 0 offenders | Per-batch faces; [fixed faces](opt3/faces/faces.json) |
+| Faces | 240 whole-cat masks + 90 fixed-shot masks, 0 offenders | Per-batch faces; [fixed faces](opt3/faces/faces.json.gz) |
 | Text layout | 1,176 frames, zero overlaps/outside/unplaced on fixture source | [collisions](opt3/collide/collisions.json.gz) |
 | Cold load native / CPU4 | 33.3/33.4/33.3 ms / 150.1/183.3/183.3 ms; ready≤9708.4 ms | [six cold runs](opt3/cold/summary.json.gz) |
 | Queue slices | max44.3 ms vs40; single upload remains PARTIAL | [cold receipt](opt3/cold/summary.json.gz) |
