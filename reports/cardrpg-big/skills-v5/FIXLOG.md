@@ -226,3 +226,11 @@ Addendum received during S5. TRAIN remains 1–500. Existing baseline slices con
 - Smallest fix: add visible-strip/HP-plate rectangles and intersections to the already planned automatic-battle capture; require ready-scene coverage in its summary and disclose the count in V5A-REPORT. This adds no screenshot, battle sample, runtime mutation, or numeric acceptance gate.
 - Verify: node syntax checks and git diff whitespace checks PASS; no Z registration/sample exists. Production source closure is rechecked against s5-selected OFF8250/fallback180+45 receipts. Actual overlay verdict stays NOT VERIFIED until the once-only Z capture; B owns its integrated CSS correction.
 - Coordination command failures: two append commands contained literal backslash-n after a Python with statement and failed parsing before any write; the third append used one simple statement and published sync3112c8017. No sample or application state changed.
+
+## S5-NORMAL-PACING — exact starter replay follow-up (PARTIAL)
+- Reproduce: `diagnose-starter-pacing.mjs`, retained pre-use registration and action traces in `s5/selected/pacing-replay*.json`. Both fixed seed1 normal hashes match saved full-500 observations; no new sample or candidate.
+- Measure: first normal12rounds/34party actions; healer normal25rounds/74actions. Support with offense available9/25actions; enemy healing0/606HP. Patient steep occurs at full living-party HP2/6times respectively. Full-500 mean13.238 and denominator unchanged.
+- Ranked attribution: 1. Prevention/Regen horizon can outrank immediate damage; 2. healer sustain delays removals; 3. setup timing changes future payoff. The trace establishes choices and healing, not causal benefit of alternative actions.
+- Smallest future fix: isolate one support horizon term on TRAIN with survival and pacing paired. No fourth S5 package; broad cooldown and Mark-strike remain rejected.
+- Verification/status: exact saved battle hashes; unchanged selected OFF8250/fallback180+45/six-gate closure. [PACING-REVIEW.md](s5/selected/PACING-REVIEW.md) keeps limitations explicit. PARTIAL for the pre-S6 revisit.
+- Report-write correction: an initial Python command contained a literal backslash-n after a `with` statement and failed parsing before execution; no file, sample or commit changed. The corrected patch writes prose only.
