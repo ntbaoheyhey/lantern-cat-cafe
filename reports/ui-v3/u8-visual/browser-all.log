@@ -1,0 +1,50 @@
+
+Running 37 tests using 1 worker
+
+(node:74322) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+  ✓   1 ../../tools/ui-v3/specs/battle-hud.spec.ts:6:99 › battle plates and HUD stay separate on 1024 (9.1s)
+
+  ✓   2 ../../tools/ui-v3/specs/battle-hud.spec.ts:6:99 › battle plates and HUD stay separate on 1280 (8.1s)
+
+  ✓   3 ../../tools/ui-v3/specs/battle-hud.spec.ts:6:99 › battle plates and HUD stay separate on 1440 (9.6s)
+
+  ✓   4 ../../tools/ui-v3/specs/battle-hud.spec.ts:6:99 › battle plates and HUD stay separate off 1024 (9.9s)
+
+  ✓   5 ../../tools/ui-v3/specs/battle-hud.spec.ts:6:99 › battle plates and HUD stay separate off 1280 (10.0s)
+
+  ✓   6 ../../tools/ui-v3/specs/battle-hud.spec.ts:6:99 › battle plates and HUD stay separate off 1440 (10.3s)
+  ✓   7 ../../tools/ui-v3/specs/battle-hud.spec.ts:41:5 › battle ignores unknown events and supports guide, speed and banners (2.8s)
+  ✓   8 ../../tools/ui-v3/specs/dev-gating.spec.ts:2:37 › review tools require dev=1 in v3 (1.9s)
+  ✓   9 ../../tools/ui-v3/specs/dev-gating.spec.ts:2:37 › review tools require dev=1 in legacy (809ms)
+  ✓  10 ../../tools/ui-v3/specs/encounter.spec.ts:3:5 › Prepare keeps Fight above the fold and preserves formation edits (3.3s)
+  ✓  11 ../../tools/ui-v3/specs/encounter.spec.ts:21:5 › Route preserves chapter, band, daily and Tower controls (1.6s)
+  ✓  12 ../../tools/ui-v3/specs/encounter.spec.ts:31:5 › discovery celebration never covers Fight or sheet close (5.4s)
+  ✓  13 ../../tools/ui-v3/specs/first-five-seconds.spec.ts:2:68 › primary action is largest and visible 1024 (1.5s)
+  ✓  14 ../../tools/ui-v3/specs/first-five-seconds.spec.ts:2:68 › primary action is largest and visible 1280 (1.6s)
+  ✓  15 ../../tools/ui-v3/specs/first-five-seconds.spec.ts:2:68 › primary action is largest and visible 1440 (1.6s)
+  ✓  16 ../../tools/ui-v3/specs/first-five-seconds.spec.ts:7:5 › fallback uses current crew, no home canvas, and model-backed tips (871ms)
+  ✓  17 ../../tools/ui-v3/specs/polish.spec.ts:2:5 › Home fixed controls and claim dots reflect actionable model state (700ms)
+  ✓  18 ../../tools/ui-v3/specs/polish.spec.ts:10:5 › keyboard cycles a sheet and returns focus; reduced motion removes home animation (798ms)
+  ✓  19 ../../tools/ui-v3/specs/polish.spec.ts:14:5 › first real practice fight wins within 25 seconds using two clicks (16.3s)
+  ✓  20 ../../tools/ui-v3/specs/polish.spec.ts:17:110 › no overflow or clipped controls on 1024 (2.5s)
+  ✓  21 ../../tools/ui-v3/specs/polish.spec.ts:17:110 › no overflow or clipped controls on 1280 (2.5s)
+  ✓  22 ../../tools/ui-v3/specs/polish.spec.ts:17:110 › no overflow or clipped controls on 1440 (2.4s)
+  ✓  23 ../../tools/ui-v3/specs/polish.spec.ts:17:110 › no overflow or clipped controls on 1920 (2.5s)
+  ✓  24 ../../tools/ui-v3/specs/polish.spec.ts:17:110 › no overflow or clipped controls off 1024 (2.5s)
+  ✓  25 ../../tools/ui-v3/specs/polish.spec.ts:17:110 › no overflow or clipped controls off 1280 (2.5s)
+  ✓  26 ../../tools/ui-v3/specs/polish.spec.ts:17:110 › no overflow or clipped controls off 1440 (2.5s)
+  ✓  27 ../../tools/ui-v3/specs/polish.spec.ts:17:110 › no overflow or clipped controls off 1920 (2.5s)
+  ✓  28 ../../tools/ui-v3/specs/polish.spec.ts:24:5 › collecting Night tips shows committed currency feedback (756ms)
+  ✓  29 ../../tools/ui-v3/specs/reachability.spec.ts:2:5 › all old destinations retain model data within two clicks (2.0s)
+  ✓  30 ../../tools/ui-v3/specs/reachability.spec.ts:10:5 › Field guide uses the shared eight V5 names (1.6s)
+  ✓  31 ../../tools/ui-v3/specs/reachability.spec.ts:12:5 › Cats, Bag and Recruit display the same saved counts as legacy (4.6s)
+  ✓  32 ../../tools/ui-v3/specs/recruit-reveal.spec.ts:3:5 › recruit has four beats under four seconds, saved parity, second-pull skip and odds (4.6s)
+  ✓  33 ../../tools/ui-v3/specs/recruit-reveal.spec.ts:17:5 › ten recruits keep legacy results, odds and pity; summary sorts rarity (3.4s)
+  ✓  34 ../../tools/ui-v3/specs/recruit-reveal.spec.ts:30:5 › reduced-motion recruit goes straight to saved results (1.6s)
+  ✓  35 ../../tools/ui-v3/specs/relic-chip.spec.ts:2:5 › Relic chip persists across sheets and preserves read-only Fuji copy (1.3s)
+  ✓  36 ../../tools/ui-v3/specs/shell.spec.ts:2:5 › v3 shell has five dock buttons, six primary destinations and no rail (849ms)
+  ✓  37 ../../tools/ui-v3/specs/shell.spec.ts:10:5 › legacy opt-out still renders the original rail (395ms)
+
+  37 passed (2.3m)
