@@ -1,8 +1,8 @@
 # Skills V5 lane A state
 Base: d22f47cb8 (A5 closing tip, DRAFT406; paused WIP c7b0c498f preserved).
 Runtime baseline: 0e1e15180108b443ce2e615ea54272b907cc8bb0.
-Phase: S1 published as DRAFT408; S2 shapes/reactions next; user explicitly resumed 2026-11-09.
-Branch: codex/cardrpg-v5a-s1-2026-11-09.
+Phase: S2 shapes/reactions in progress; user explicitly resumed 2026-11-09.
+Branch: codex/cardrpg-v5a-s2-2026-11-09; S1 closing tip31e7c2c7f.
 Done: git status/log recorded; handoff found under memory/; rules/outboxes read.
 Done: ON/OFF artifacts match 20,929,841 bytes and 9e25f238 / 9158b51e.
 Done: no live A5 job found; inherited recent commits are the documented paused WIP.
@@ -16,7 +16,8 @@ Runtime S1: 423e430f6; source-bound audit PASS. No live A validation job.
 Done: S1 type/lint/web1783/rules1223/build PASS (+2 expected fail/11 skips); E2E420+isolated1 PASS.
 Original E2E Home timing5.28s>5s retained; isolated recovery unchanged source.
 Done: S1 DRAFT408 on407, runtime423e430f6/evidencee8b8254c8.
-Next: S2 staged at /tmp/cardrpg-v5a-s2 (not applied/tested).
+S2 applied from staged resolver; lethal unmarked Wildfire edge added before tests.
+Next: S2 focused/six gates/both compatibility checks and draft.
 Draft S3 kits/policy/enemies at /tmp/cardrpg-v5a-s3, NOT applied/tested; no phase bypass.
 Spec conflict: Cinnamon keep-kit has no multi-target; revive-only ultimate cannot fire without a fallen ally. Keep/report, no silent redesign.
 Next phases: S0 -> S1 -> S2 -> S3 -> S4 -> S5 -> S8 -> S6; S7 after S3.

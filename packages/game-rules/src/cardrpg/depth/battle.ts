@@ -1,3 +1,5 @@
+import { executeShapeV5, shapeV5, type ShapeV5 } from './skills-v5/shapes';
+import { crumbBurstV5, directReactionV5, spreadV5, type ReactionRuntimeV5 } from './skills-v5/reactions';
 import { beforeActionV5, consumeDazeV5, defenseV5, receivedV5, statusIdV5, statusRuleV5, tickStatusesV5, type StatusRuntimeV5 } from './skills-v5/statuses';
 import { clone } from '../internal';
 import { DEFAULT_PLAN, crewThresholds, enemyGuideV4, openingCrewBonus, validPlan } from './gameplay-v4';
@@ -99,13 +101,14 @@ function loseHp(b: Battle, source: Actor, target: Actor, amount: number, kind: s
   if (target.hp === 0) {
     if (target.side === 'party' && b.firstDeath === null) b.firstDeath = target.role;
     record(b, source, target, 'defeat');
+    if(b.initial.skillsV5)spreadV5(b,source,target,reactionRuntimeV5);
     if (source.catalogId === 'velvet') { if (b.v4) heal(b,source,source,6); else source.charge = Math.min(100, source.charge + 15); }
     if (source.side === 'party' && source.hp > 0) heal(b,source,source,boonValue(b,'killHeal'));
   }
   phaseBossV4(b,target);
   return actual;
 }
-function damage(b: Battle, source: Actor, target: Actor, power: number, pressure: number, cover = false) {
+function damage(b: Battle, source: Actor, target: Actor, power: number, pressure: number, cover = false, shape: ShapeV5 = 'single') {
   if (target.hp <= 0) return;
   if (stacks(target, 'decoy')) {
     target.statuses = target.statuses.filter(s => s.id !== 'decoy');
@@ -164,6 +167,7 @@ function damage(b: Battle, source: Actor, target: Actor, power: number, pressure
     loseHp(b, source, protector, shared, 'shared');
   }
   loseHp(b, source, target, hpDamage, 'damage');
+  if(b.initial.skillsV5)directReactionV5(b,source,target,shape,reactionRuntimeV5);
   if((b.v4?stacks(target,'scent')>0&&source.bonuses.breakShieldRound!==b.round:target.break>=target.breakCap)){if(b.v4)source.bonuses.breakShieldRound=b.round;shield(b,source,source,source.bonuses.breakShield??0);}
   if(b.v4&&hasEffect(source,'ultimate-refund')&&stacks(target,'scent')&&source.bonuses.moonHealRound!==b.round){source.bonuses.moonHealRound=b.round;gearGrant(b,source,source,'ultimate-refund','heal',6);}
   if(hasEffect(source,'third-crumb')&&(b.v4?source.bonuses.thirdCrumbTurn!==source.turns&&((source.bonuses.attackCount??0)+1)%3===0:(source.turns+1)%3===0)){if(b.v4)source.bonuses.thirdCrumbTurn=source.turns;applyStatus(b,source,target,'crumb');}
@@ -182,6 +186,7 @@ function damage(b: Battle, source: Actor, target: Actor, power: number, pressure
   const reflect = stacks(target, 'riposte') * (16+(target.bonuses.counterPower??0)+(hasEffect(target,'counter-plus')?(b.v4?3:8):0)) + (target.catalogId === 'kettle-knight' && target.shield > 0 ? 12 : 0);
   if (reflect && source.hp > 0) loseHp(b, target, source, reflect, 'reflect');
 }
+const reactionRuntimeV5:ReactionRuntimeV5={apply:applyStatus,loseHp,record,rule:id=>STATUS_BY_ID[id]};
 const statusRuntimeV5:StatusRuntimeV5={heal,loseHp,record,rule:id=>STATUS_BY_ID[id],isBoss:actor=>ENEMY_BY_ID[actor.catalogId]?.tier==='boss'};
 export function tickStatuses(b: Battle, actor: Actor) {
   if(b.initial.skillsV5)return tickStatusesV5(b,[actor],statusRuntimeV5);
@@ -347,7 +352,7 @@ function cleanseUniqueV4(b:Battle,actor:Actor,target:Actor){
 function executeEffect(b: Battle, actor: Actor, target: Actor, effect: Effect, skill: Skill) {
   const power=Math.round((effect.power??0)*(1+.2*(b.initial.upgrades?.[skill.id]??0)));
   switch (effect.kind) {
-    case 'hit': damage(b,actor,target,power,skill.breakPower); break;
+    case 'hit': damage(b,actor,target,power,skill.breakPower,false,shapeV5(skill)); break;
     case 'shield': shield(b,actor,target,power+(actor.bonuses.shieldFlat??0));if(boonValue(b,'shieldHeal'))heal(b,actor,target,boonValue(b,'shieldHeal'));break;
     case 'heal':
       heal(b,actor,target,power+boonValue(b,'healing')+(actor.bonuses.healFlat??0));
@@ -367,18 +372,21 @@ function executeEffect(b: Battle, actor: Actor, target: Actor, effect: Effect, s
     }
     case 'dispel': dispel(b,actor,target,'buff'); break;
     case 'detonate': {
+      const detonate=()=>{
       const count=stacks(target,'crumb')+stacks(target,'scald');
       loseHp(b,actor,target,count*(24+boonValue(b,'detonatePower'))*power/100,'detonate');
       target.statuses=target.statuses.filter(s=>s.id!=='crumb'&&s.id!=='scald');
       if(count&&boonValue(b,'detonateSplash'))for(const other of living(b,target.side).filter(a=>a.id!==target.id))loseHp(b,actor,other,boonValue(b,'detonateSplash'),'detonate');
       if(count&&hasEffect(actor,'detonate-energy')){if(b.v4){if(actor.bonuses.setDetonateTurn!==actor.turns){actor.bonuses.setDetonateTurn=actor.turns;gearGrant(b,actor,actor,'detonate-energy','shield',8);}}else b.energy=Math.min(10,b.energy+1);}
       if(count&&hasEffect(actor,'unique:crumbbook')&&(!b.v4||actor.bonuses.bookTurn!==actor.turns)){if(b.v4)actor.bonuses.bookTurn=actor.turns;gearGrant(b,actor,actor,'unique:crumbbook','shield',b.v4?10:35);}
-      if (count && actor.catalogId==='soot') {if(b.v4)shield(b,actor,actor,6);else actor.charge=Math.min(100,actor.charge+10);}
+      if (count && actor.catalogId==='soot') {if(b.v4)shield(b,actor,actor,6);else actor.charge=Math.min(100,actor.charge+10); }
+      };
+      if(b.initial.skillsV5)crumbBurstV5(b,actor,target,reactionRuntimeV5,detonate);else detonate();
       break;
     }
     case 'transfer': { const amount=actor.shield;actor.shield=0;shield(b,actor,target,amount);break; }
     case 'revive': target.hp=Math.round(target.maxHp*power/100);target.statuses=[];actor.passiveUsed=true;record(b,actor,target,'revive',target.hp);break;
-    case 'execute': damage(b,actor,target,power*(target.hp/target.maxHp<.3+(actor.bonuses.executeThreshold??0)/100?2:1),skill.breakPower);break;
+    case 'execute': damage(b,actor,target,power*(target.hp/target.maxHp<.3+(actor.bonuses.executeThreshold??0)/100?2:1),skill.breakPower,false,shapeV5(skill));break;
     case 'chain': {
       const others=living(b,target.side).filter(t=>t.id!==target.id);
       for (const [i,t] of [target,...others].slice(0,3).entries()) damage(b,actor,t,power*(1-i*.15),skill.breakPower);
@@ -445,10 +453,13 @@ export function act(b: Battle, choice: Choice): boolean {
   } else {b.energy-=energyCost(actor,skill);actor.charge-=skill.charge;}
   actor.cooldowns[skill.id]=skill.cooldown+1;
   shield(b,actor,actor,stacks(actor,'glaze')*20);
+  if(b.initial.skillsV5)executeShapeV5(b,actor,target,skill,{roll,effect:executeEffect,record});
+  else {
   const affected=skill.target==='foes'?living(b,'enemy'):skill.target==='allies'?living(b,'party'):skill.target==='row'?living(b,target.side).filter(a=>a.row===target.row):[target];
   for (const effect of skill.effects) {
     if (effect.self || effect.kind==='energy' || effect.kind==='chain') executeEffect(b,actor,effect.self?actor:target,effect,skill);
     else for (const t of affected) executeEffect(b,actor,t,effect,skill);
+  }
   }
   if (actor.catalogId==='panko'&&skill.id==='defend') applyStatus(b,actor,actor,'riposte');
   if(skill.id==='defend'){
