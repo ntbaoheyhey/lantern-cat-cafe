@@ -27,7 +27,7 @@ Spec amendment authorised: Cinnamon ally splash and no-casualty team ultimate; b
 Next phases: S0 -> S1 -> S2 -> S3 -> S4 -> S5 -> S8 -> S6; S7 after S3.
 Acceptance: 20001-20500 UNUSED; TRAIN 1-500 only.
 Open: fourth-slot 63/384, worst88.8pp; cats/sets/bands; cadence723s/deadtime2%; startup/static display/Z.
-B:06:30M3 overlay collision read; B owns CSS fix, A inherited artifact assessed separately. MX04:56 guardian-use disclosure adopted; no integration/retune.
+B:07:04M3 eighteen exact natural replays read;06:55 Yarn+4threads152draws separate. A keeps130gate/ownartifact; guardian disclosure adopted, overlay diagnostic queued.
 Untouchable: .DS_Store and display-context-40/{partial,results}.json preserved uncommitted.
 No model helpers, CUA, Docker, main checkout edits, merge or deploy.
 Done: S3 DRAFT411 on410, runtime053fe383d/evidence8a894a35f.
