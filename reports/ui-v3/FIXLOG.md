@@ -56,3 +56,24 @@ U0 in progress. No published Lane U milestone yet.
 - U7-FRESH-EYES / attempt1:1280 Home screenshot exposed an eight-word heading and unreadably faint locked chest caption. Shortened heading to “Your evening crew” and keep the disabled chest’s caption at full contrast. Third concern is inherited stage/portrait art, pending B art PASS. Recheck G1, axe, first-five/polish and screenshot before publication.
 
 - U7 final / FIXED:36/36 new browser checks; exact16/16 polish/first-five rechecks after fresh-eyes fix;24axe pairs zero serious/critical; G1 all0 (1867webtests). Home screenshot visually inspected at u7-close/home.webp. First-fight software backend limitation stays explicit; no gate or rule changed.
+
+- U8-G6 / attempt1: first file:// CPU4 run is interactive at2475ms, cold frameMAX100ms, cold long task102ms, idleMAX0ms, draws0. The literal223.3ms interactive gate fails; do not substitute the passing frame metric. Attribute mandatory4ms timer after each of291assets (~1.16s floor). Smallest owned fix: copy the existing loader into tools/ui-v3 and yield by an8ms work budget instead of every asset; keep every asset restored identically. Preserve all three baseline observations, then rerun exact offline gate + G1.
+
+- U8-OFFLINE-HARNESS / attempt1: offline check passed loading and natural fight, then strict Odds selector matched both the parent and nested probability summary. Scope to the direct child; retain legal odds table assertion. Exact flow rerun with G6 and G1; no product change.
+
+- U8-G6 / attempt1 PARTIAL:8ms budget yields produced2243/2224.4/2206.9ms, little benefit; cold frameMAX83.4ms, idle0. Attribution now shows serialized decompression dominates. Attempt2:decode8 independent asset entries concurrently, restore/publish in original manifest order and retain8ms yielding. No asset keys, decoded bytes or rules change. Re-run the same three cold contexts and60s idle plus exact play flow/G1.
+- U8-OFFLINE-HARNESS / FIXED: strict direct-child Odds selector passes; natural fight14260ms, no remote fetches/errors, dev-only labs open and close.
+
+- U8-G6 / PARTIAL:8-way transport decoding yields2143.5/2158.4/2139.6ms (gate223.3). ColdframeMAX83.4ms, coldlongtaskMAX93ms, steady0ms, draws0. Startup includes parsing31.2MB plus291asset restores and app evaluation. Retain all observations; no passing-frame substitution or further sample reroll. G1PASS; exact offlineflowPASS14219ms; compatibility hashes/source exact. Further startup work requires a larger packaging design.
+
+- U8-VISUAL / attempt1: review of actual offline captures found discovery toast covering Fight and Result screenshot still in lazy “Opening…” state. CSS in U scope reserves sheet-header centre for compact toast (Home uses the free strip above dock); no reward/ack timing changes. Harness waits for specific rendered content, and captures battle at45%of the current cast. Preserve failed shots, rerun geometry+G1, rebuild and recapture.
+
+- U8-VISUAL-HARNESS / attempt1: first toast geometry passed but cleanup used unsupported Playwright clock.uninstall. Install once per test (navigation retains the clock); remove nonexistent cleanup. Assertions unchanged. Exact encounter suite and G1 rerun.
+
+- U8-BASELINE-CAPTURE / attempt1: original U0 Result images were also captured during lazy loading. Reproduce archived U0 source f2df22b20 under /tmp/ui-v3-baseline and wait for Victory. Initial archive server missed React imports after late dependency symlink; configure explicit original package aliases and separate temp cache. No baseline application code changed; original failed shots retained.
+
+- U8-VISUAL / FIXED: exact encounter3/3, complete new37/37, axe24pairs clean, G1PASS1867webtests. Rebuilt artifact e5a63e7e… has56settledAFTERcaptures/0errors; Prepare and Result visually inspected. Offline practice14.285s, no remote fetches/errors. G6 stillPARTIAL2,141.1–2,191.3ms; original runs retained.
+
+- U8-BASELINE-CAPTURE / attempt2 diagnosis: archived server lacked read-only report assets imported by original Battle and blocked symlinked assets. Supply existing reports and explicit fs allow-list limited to own source/temp. Original source remains unchanged. The diagnostic retry did not alter its renderer.
+
+- U8-BASELINE-CAPTURE / FIXED: corrected archive dependencies/allow-list; four original-U0 Result captures now wait for Victory,0browsererrors (u8-visual/baseline-archive-verify.log). Original unsettled images retained; baseline runtime was not edited. Rebuilt56paircontactpage. Two setup fixes, then successful verification; failed diagnostic runs retained.

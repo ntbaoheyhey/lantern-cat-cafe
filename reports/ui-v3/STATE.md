@@ -28,3 +28,13 @@ U5 draft#433. U6 complete: four ceremony beats in under4s; welcome and10draw rew
 U7 decision: one prioritized actionable event bubble keeps raw fixed Home controls at≤10 including map button. Tasks use capped claim previews; Recruit uses actual150stamp price and daily availability; Journal claims feed Events. Reward flight reads only committed currency deltas; existing model.apply already supplies the sound hook. Preserve current bundled fonts (no extra font bytes).
 
 U7 complete: draft U6#434. Full36browser tests PASS; after fresh-eyes heading/chest repairs targeted16/16 and axe24pairs PASS. G1 PASS1867tests; G7 entry+50B vs BASE; save migrations25/25 and protected231sources exact. First natural practice15–16s on matching Metal backend; default softwareGL slowness reproduced in legacy. Current artR1 f041cebfc remains PARTIAL and excluded. Proceed U8 offline build.
+
+U8: preparing single-file artifact with uiV3/gameplayV4/skillsV5 enabled, review-only labs lazy and dev-gated. Product default remains OFF.
+
+U8 verified: sourceb103d1c39, runtimeDirty=false, offline31201966B/SHA05f56593f7b0333a48ff8d845203d26d7f03c6c651e70e3391a3b761cdae606b.56matchedAFTERcaptures,0errors;2contact sheets. G1PASS1867webtests. Offline natural fight14219ms; no network fetches/errors, odds/dev gating PASS. G6 literalinteractive remainsPARTIAL2139.6–2158.4ms; coldframeMAX83.4ms, idle60s0longtasks,0draws. Two measured transport repairs retained. G7+46B. Next U9 finalE2E/score/improvement/sync.
+
+U8 resume: toast geometry3sizesPASS; capture readiness fixed; runtime5a9d2ead6, offline31202110B/SHAe5a63e7e26d7bfe860d60e6a62460a247491fe22c7befadbc7ceda91e6c2d0a6.56AFTERshots/0errors. G1PASS1867webtests. Full browser/axe/offline closure running; U0 Result capture readiness also being corrected from archived U0 source. Latest art3ef6f96a6 remainsPARTIAL, excluded.
+
+U8 complete: G1PASS,37/37newbrowser,24axe scans clean,56AFTERshots/0errors, corrected4originalU0Resultshots/0errors. Offline31,202,110B, naturalfight14.285s, CPU4interactive2,141.1–2,191.3ms(PARTIAL), idle0longtasks/draws0. Protectedsource/hashchecksPASS. PublishU8 then U9existingE2E/selfscore.
+
+U8 published draft#436, headd9264617b. ContinueU9 fulllegacyE2E then strictscore, requiredoneimprovementpass if<8.5, ledger+sync.

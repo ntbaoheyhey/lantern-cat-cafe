@@ -1,0 +1,21 @@
+{"lock":"acquired","lane":"U","pid":69075,"startedAt":"2026-11-09T23:25:33.441Z","task":"U8-offline-check"}
+{"run":1,"cpu":4,"interactiveMs":2475,"coldMaxFrameMs":100,"coldMaxLongTaskMs":102,"steadyMaxLongTaskMs":0,"idleWindowMs":60004.60000000149,"drawCalls":0,"errors":[],"remote":[]}
+{"run":2,"cpu":4,"interactiveMs":2224.300000000745,"coldMaxFrameMs":83.40000000000009,"coldMaxLongTaskMs":87,"steadyMaxLongTaskMs":0,"idleWindowMs":1004,"drawCalls":0,"errors":[],"remote":[]}
+{"run":3,"cpu":4,"interactiveMs":2208.199999999255,"coldMaxFrameMs":83.40000000000009,"coldMaxLongTaskMs":87,"steadyMaxLongTaskMs":0,"idleWindowMs":1002.6000000014901,"drawCalls":0,"errors":[],"remote":[]}
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+locator.click: Error: strict mode violation: locator('.uv-odds summary') resolved to 2 elements:
+    1) <summary>Odds</summary> aka getByText('Odds', { exact: true })
+    2) <summary>Exact next-pull probabilities</summary> aka getByText('Exact next-pull probabilities')
+
+Call log:
+[2m  - waiting for locator('.uv-odds summary')[22m
+
+    at /Users/bao/taskbar-hero-ui-v3/tools/ui-v3/offline-check.mjs:23:108 {
+  log: [ "  - waiting for locator('.uv-odds summary')" ]
+}
+
+Node.js v24.22.2
+{"lock":"released","pid":69075,"task":"U8-offline-check"}
