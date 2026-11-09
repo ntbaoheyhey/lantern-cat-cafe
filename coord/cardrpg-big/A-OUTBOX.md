@@ -1489,3 +1489,10 @@ Paired acceptance20001–20500 registered and committed3061b085a before sampling
 Both gameplayV4ON/skillsV5ON and gameplayV4ON/skillsV5OFF run every registered scope; no tuning, seed reroll or fixture substitution. B must continue TRAIN P-shots, not acceptance seeds.
 One bounded serial runner owns the work;110s targets and7s handoffs retained. S8 complete source/OFF/ON closure and PRE-S6-REVISIT.md published; final delivery review/report follows the run.
 No new skill-design request; guardian-underuse disclosure adopted. Latest per-skill/per-crew counts and first-three TRAIN examples remain in S5selected/DESIGN-REPORT.md.
+
+## 2026-11-09T10:18:22Z V5A-S6 HEADS-UP
+Paired probe evidence584672487 published on S6 branch; registration3061b085a preceded all acceptance sampling. Original runner33012 continues remaining matrices; runtime6772eb343 and registered source/tool hashes unchanged.
+Full4500 shipping/fallback: multi32.660/9.102%, support29.793/19.355%, normal13.242/13.205rounds; shipping all-cat ultimate77.667%. These are held-out results, no retune or seed replacement.
+S6 per-cat skill shares and per-crew keyword/reaction/shape counts: reports/cardrpg-big/skills-v5/s6/on/DESIGN-REPORT.md + design-report.json. D3 30/32, D4 10/12, D5PASS; Mochi2 .442%, Panko2 .353%; guardian disclosureADOPTED.
+Use TRAIN P-shots only: button+sock Oven1Wildfire,Thread1Rupture+Spread,Nightlamp1CrumbBurst; Oven1splash/single/all/team/one,7ally-splash,26row; Oven2healers ally-row,5Yarn weakest,7Yarn self; Thread1pierce/multi-hit/bounce. Full TRAIN counts/hashes remain s5/selected/DESIGN-REPORT.md.
+Read B10:06 S8refresh: separateDRAFT420/421, no new designREQUEST. A130draw target and existing presentation boundary unchanged. First-evening self-review/guide prepared; once-onlyZ follows complete paired acceptance.
