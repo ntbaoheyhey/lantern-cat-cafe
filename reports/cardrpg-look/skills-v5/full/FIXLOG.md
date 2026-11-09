@@ -153,3 +153,7 @@ Cinema2 review traced faint Inkcap/Velvet signatures to glass/soft opacity multi
 
 ### B-MX-003 attempt1 measured / attempt2
 Cached-colour opt1b sampler: Mochi2300084B,Soot457684B,Yarn388844B (24.5%,49.2%,49.8%lower); setStyle/regex samples removed,zero stillMISS. Remaining attribution in render/drawRecipe and begin; replace hot array iterators with indexed loops, preserve rendering order. No numeric/timing changes. Thirdsourceopt2artifact registered; all prior samples kept.
+
+M3 pilot wrapper96481 was still waiting with no child/no samples; cancelled before acquiring the lock because its old artifact lacks the new exact-layer dev map. This is an unstarted obsolete registration, not a discarded failure. Fullcoverage2 uses merge2artifact and18same registeredseeds in4boundedcrew leases.
+
+M3 delivery probe extension: shots/casts accept the same V5_CASES input already supported by collide/faces. Shot receipts retain live case/seed/round/action and fixture fallback labels; DPR2 is opt-in for M4 only. No new battle sample was generated.
