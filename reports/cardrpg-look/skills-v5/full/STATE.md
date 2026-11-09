@@ -1,5 +1,5 @@
 # Skills V5 full run
-NOW MX closure gates running; M3 fix1 applied: plain status labels + in-flow reaction ticker + complete sibling-panel collision probe; source/parity/build queue39906, browserwaiter armed.
+NOW MX startup/video closure queued; M3 contact batching verified 146draws (152before), perf/E2E/startup pending; M4 candidates remain in /tmp.
 BASE #415 f9924699cab2fa5b8029baa1158f789ee44ddfda; fullPROMPT/RULES apply, no agents/models/desktop/Docker.
 DONE V0#409,V01#413,V3#415; never redo completed samples.
 DONE M1#416 source54d3e29b2; M2#418 tip58adf21de,source2e6ee6425; fullmilestone reports underfull/m1,m2.
@@ -34,6 +34,14 @@ LATEST M3delivery2:51shots,1unplacedP5/1024;1077windowframes0reportedoverlaps bu
 OPEN B-M3-003/004/005:legacylabel142px,liveAstripoverplate,peak152drawsvs130(P4).Preparedlabel/ticker/probefixes;drawattributionqueued-session12597.
 QUEUES inherited no-model FIFO16545; MX parent18885 continues; M3 parent18886 paused before superseded E2E, child23592 current immutable casts/cold finishes; diagnosis25053 queued.
 SOURCE root gates done: type/lint/buildPASS; StageLayout timeout once bothworktrees,2/2isolatedPASS each; logs preserved. NewM3fix1source gates running.
-LATEST naturalcoverage14/18 hashesexact,all4reactions submitted; Night4endingsclear; olderOven/Thread10endingsremainunverified byoriginalprobe. Tea4pending.
+LATEST natural coverage18/18 exact hashes,1687plans,0errors,38/45requestedcells. All4reactions captured; Night/Tea8endingsclear, originalOven/Thread10unverified bynarrowprobe.
 LATEST A06:36evidenceb3471813a runtime6772eb343 unchanged; noS6. M4preparedonly; do not repeat finishedsamples.
-LATEST M3fix1 typecheck/lint/all1854webunit/parity5seed/liveadapter18battles/buildPASS; no browserpassclaim yet. Registeredfix1artifact292? seebuildreceiptforactualhash.
+LATEST M3fix1 typecheck/lint/all1854webunit/parity5seed/liveadapter18battles/buildPASS; no browserpassclaim yet. Artifact 2600ba196eb56070dd2b1d0038fcc2316218520aae3092221742371dbacc81ec.
+SOURCE live352c5e955 label/ticker/colliderfix; fix1artifact 2600ba196eb56070dd2b1d0038fcc2316218520aae3092221742371dbacc81ec 28108545bytes; type/lint/1854unit/5seed/live18parityPASS, browserqueued.
+
+LATEST M3baseline168casts native/CPU4max16.8; coldnative33.4/33.3/33.3 CPU4183.3/183.3/183.3. fix2web1856/1856PASS incl2contact-transform tests; conditional150drawreason inFIXLOG, measuredresultpending.
+
+RESUMED 2026-11-09T07:05:38Z: re-read full prompt/rules/state/open FIXLOG/outboxes; no completed sample repeated. A0c80c912e evidence, runtime6772eb343 unchanged.
+LATEST M3fix2:51shots+1095frames0overlap/outside/unplaced;98face masks0offenders;contrast4.618;12UIcasesPASS;146draws/163043tris. Conditional150ceiling awaitsperf,130targetstillMISS.
+
+LATEST M3fix2perfPASS:18casts native16.8/CPU466.6ms,peak147draws conditional150/155219tris;6coldmax183.4msCPU4/ready10294.3;130primarytargetPARTIAL. E2E/startup queued.

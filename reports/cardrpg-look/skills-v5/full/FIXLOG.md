@@ -215,3 +215,18 @@ Fix1 immutable layout/face/UI capture continues; its parent33208 is paused befor
 
 ## B-M3-006 2026-11-09T06:56Z M3 validation runner S4
 Fix2 preparation stopped before a sample because exclusive-create correctly rejected the existing initial typecheck.log. Preserve that receipt and completed lint; continue with typecheck-with-tests and the unstarted parity/build steps only. No failing product test, sample replacement or gate relaxation. The full1856web suite already passed.
+
+### M3 natural reaction frame review 2026-11-09T06:58Z
+Viewed captured canvas frames for Night1 Crumb Burst, Oven1 Wildfire, Thread1 Rupture and Spread. Distinct flame travel and thread/scratch motifs are visible; Crumb purple puff and gold geometric secondary remain busy at enemy-right, and every enemy is still flat pink. Canvas-only captures do not show DOM words/badges; those require the full P-shot/layout checks. Four representative reaction frames reviewed, not all36 coverage cells or every transient frame.
+
+### B-M3-003/004 fix1 verification FIXED
+Same51fixedshots and1095full-window/exact-instant frames at1024/1280/1440:0overlaps/0outside/0unplaced with siblingstrip now included.98facemasks0offenders,contrast4.618,12keyboard/reduced-motioncasesPASS. Originaldelivery2missinglabel/omittedstrip receipts retained. Draw152 remains separate B-M3-005;fix2pending.
+
+### M3 natural coverage complete
+All18registeredbattles/1687plans retain exact final hashes,0browsererrors.38/45requestedcells captured;five non-periodic status trigger columns andsingle/pierce submission remain NOT VERIFIED by the probe. Night/Tea8endingscleared;originalOven/Thread10endingsstillunverified bynarrowprobe. Four reaction canvases reviewed separately; DOM words checked in fullpage fixedpack.
+
+### B-M3-005 contact-pool first measurement 2026-11-09T07:16:07.877941+00:00
+Fix2 repeated the failing fixed pack after source1902d3cf7: peak146draws (152before),163043tris;51shots+1095cue-window frames at3widths remain0overlap/outside/unplaced;98face masks0offenders,contrast4.618. Source gates/parity pass. Conditional150exception is not accepted until queued casts/cold complete;130 remains a disclosed miss.
+
+### B-M3-005 conditional resource gate verified
+Fix2 live crowded18cast windows: native12max16.8ms;CPU4sixmax66.6ms (under100);peak147draws/155219tris. Cold3native33.3/33.4/33.3ms,3CPU4183.4/183.4/183.3ms;readymax10294.3ms,errors0. Accept the predeclared150exception only for summoned eight-actor Yarn scenes;130primarytarget remainsPARTIAL. Fixedframepeak146/163043tris. One scoped batch removed6draws without dropping layers; original152receipt retained.
