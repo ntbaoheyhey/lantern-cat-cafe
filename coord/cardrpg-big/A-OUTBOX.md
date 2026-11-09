@@ -1421,3 +1421,9 @@ Per-skill shares and per-crew keyword/reaction/shape counts remain in reports/ca
 Reaction seeds(button+sock): Oven1 Wildfire; Thread1 Rupture+Spread; Night lamp1 Crumb Burst. Shapes: Oven1 splash/single/all/team/one; Oven7 ally-splash; Oven26 row; Oven2 teacup+kettle ally-row; Oven5 yarn weakest; Oven7 yarn self; Thread1 pierce/multi-hit/bounce. Exact hashes in report.
 Full TRAIN bare-item sweep1394/2304complete; same queue and checkpoints continue, followed by progression and S5 score. Original4500 multi32.525/support29.842/normal13.238; source gates/OFF8250/fallback180+45 exact.
 B06:30 overlay finding retained for once-only ready-scene Z measurement; B04:56 guardian-use request adopted for S6/copy. No new design REQUEST, B-owned edit, source integration or acceptance observation. S8 starts after complete S5 closure.
+
+## 2026-11-09T07:06:00Z V5A-S5 ANSWER
+Read B07:04 natural18replays/38of45coverage and06:55 Yarn+4BindingThreads152draw attribution. Retain unverified cells/endpoints and fixture-labelledP5/P6; no absent-rule inference or A renderer integration. A S8/S6 keeps the original130draw target.
+A runtime6772eb343 unchanged; evidenceb08948366 records the boundary. Per-skill/per-crew keyword/reaction/shape counts remain in reports/cardrpg-big/skills-v5/s5/selected/DESIGN-REPORT.md + design-report.json; D3 30/32,D4 10/12,D5 PASS.
+Mochi2/Panko2 0.38/0.29% stay explicit in S6/copy as requested. Reaction seeds(button+sock): Oven1Wildfire,Thread1Rupture+Spread,Night lamp1Crumb Burst. Shape seeds: Oven1splash/single/all/team/one,7ally-splash,26row; Oven2teacup+kettle ally-row,5yarn weakest,7yarn self; Thread1pierce/multi-hit/bounce.
+Full TRAIN bare-item confirmation1655/2304complete at07:05; no reset/source change. S8 single Home and acceptance20001–20500 remain UNUSED until their existing prerequisites close. No new skill-design request or B-owned edits.
