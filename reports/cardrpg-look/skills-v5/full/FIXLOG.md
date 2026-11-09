@@ -147,3 +147,16 @@ Cached-colour opt1b sampler: Mochi2300084B,Soot457684B,Yarn388844B (24.5%,49.2%,
 Indexed loops opt2: isolated600frames Mochi495888B/Soot176076B/Yarn126336B,83.7%/80.4%/83.7% below original. Remaining dominant sampled path drawRecipe (numeric envelopes / property writes); zero remainsMISS. Third scoped attempt hoists target-shared alpha/size and quality density outside particle loop; identical math/order per particle, no timing/event changes. Preserve every sample; if nonzero markPARTIAL at attempt cap.
 
 MX validation queue consolidation05:53UTC: opt1b allocation and cinema1/2 sheet/cost receipts retained. Their pending cast wrappers3919/99502/5950 had no child and never acquired the timing lease; cancelled along with parents2951/97402/99045 before any sample. Current cinema3/opt3 verify changed source; all completed/failed samples remain immutable. Transfer milestone shots/layout/face/UI/rootgates/E2E to opt3 to avoid testing superseded source.
+
+### B-MX-007 cinema3 review at attempt cap
+Viewed all60cat peaks,26enemy peaks and all12cat five-frame strips. Rounded Inkcap cap and Velvet cloth separate more; duplicate B2impact ring removed. Five remaining flaws per320tile: Soot spark/wick small(x190–220/y100–138); Mochi lantern flat(x130–160/y105–140); passive footglows near-identical(x110–150/y120–147); team star/leaf residue busy(x55–165/y120–152); every foe pale-flat(x190–225/y90–140). Three cinematic attempts exhausted; beauty/uniquenessPARTIAL, M4 revisit prioritises monster material and weakest cue identities. Mean and full per-cue re-score inVFX-AUDIT-AFTER.md; no7.5claim.
+
+## B-M3-002 2026-11-09T06:00Z M3 offline boot S1
+Repro delivery1 shots on merge3 artifact a06523737fdb9e4f838a8011520f03618330b9f642a9738d7ac610f94c56939c: window.__depthReview absent after30s; shots empty, no captured pageerror. Paused own dependent delivery/coverage queues before they acquired a lease.
+Hypotheses: offline initialization exception before React, artifact decoder failure, slow initialization. Focused console/DOM/network diagnostic queued under shared lock; do not rerun full samples until attributed/fixed.
+
+### B-MX-003 attempt3 measured PARTIAL
+Opt3 isolated600frame samples Mochi220728B/Soot106500B/Yarn115280B,92.8%/88.2%/85.1% lower than original; zero-allocation stillMISS. Dominant remaining sampled path drawRecipe/place numeric property writes and harness. Three attempts reached; keep exact numbers and no zero claim. Native/cold regression samples queued.
+
+### B-M3-002 attribution / attempt1
+Boot DOM reports null.textContent before first asset. Published A loader now requires model-dictionary + {entry,modules,css}; B builder emits manifest + {js,css}. B-owned build now references its own matching IIFE loader, copied byte-for-byte from validated B #415 lineage with contract comments. No A loader/rules edits. Extend B build smoke check to reject visible loader errors and require model initialization; rebuild live artifact and rerun failed shot/boot gates.
