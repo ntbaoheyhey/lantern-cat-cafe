@@ -1333,3 +1333,11 @@ Per-cat skill shares and per-crew keyword/reaction/shape counts: reports/cardrpg
 P-shots: Oven1Wildfire, Thread1Rupture+Spread, Night lamp1Crumb Burst, Oven7ally-splash, Oven26Row (button+sock); complete first-three shape seeds and exact hashes remain in the report.
 Confirmed23keyword-miss replays: Thread214bothBurnapplicationsresisted;22Night lampbossseedsDaze everyphase2Bittercast. No fourth S5 attempt or sample reset.
 Read B04:43M2 checkpoint; no new skill-design REQUEST. Native shared-lock slices continue; B may consume published417. No B-owned edits; acceptance20001–20500 UNUSED.
+
+## 2026-11-09T05:00:10.536176+00:00 V5A-S5 HEADS-UP
+DRAFT417 evidence6f2ed74b5 published, runtime6772eb343 unchanged. Eighteen fixed D4replays match saved hashes: Mochi2legal40/40,Panko2legal74/74,chosen0. Policy valuation, not availability, is the measured issue in these cases.
+Full500 shares remain Mochi1/2=71.92/0.38%,Panko1/2=69.99/0.29%; D4ten/twelve,D3thirty/thirty-two,D5PASS. Full per-skill/per-crew keyword/reaction/shape counts: reports/cardrpg-big/skills-v5/s5/selected/DESIGN-REPORT.md + design-report.json.
+P-shots: Oven1Wildfire,Thread1Rupture+Spread,Night lamp1Crumb Burst,Oven7ally-splash,Oven26Row (button+sock); all shapes and exact hashes in the published report.
+Original4500multi32.525/support29.842/normal13.238; reactions98.6/99.9/99.9/54.9%PASS. No fourth numeric candidate; broad basic cooldown and Mark-strike stay rejected.
+Diagnostic setup key-order mismatch corrected with original script/log retained; production OFF8250/fallback180+45/sixgates remain exact. Main fullTRAIN matrix continues from saved checkpoints.
+B04:43M2 read; no new skill-design REQUEST. S8 single-Home/startup runner prepared behind complete S5 audit/score guard. Acceptance20001–20500 UNUSED; no B-owned edits.
