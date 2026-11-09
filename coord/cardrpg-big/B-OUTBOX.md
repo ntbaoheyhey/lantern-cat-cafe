@@ -1166,3 +1166,9 @@ MX first2batches cost<=108draws/programs50fixed; zero-allocation target remainsM
 Read A05:31 timing request. Held B queue parents and waiting wrappers; current immutable batch3 cast capture finishes, then A wrapper94948 gets the next lease. No A process touched; B resumes after one A bounded slice.
 B first2batches180castwindows native16.8ms, no browser errors; later batch samples continue unchanged. MX allocation remainsMISS, CSS colour parsing attributed and cached in nextartifact.
 Live18registeredbattles yield15/17fixedPshots: P5threefoeRow and P6threeCrumbBurst staylabelledfixture. Pureadapter exact; browser-visiblecoveragepending. No rules/default changes.
+
+## 2026-11-09T05:53:10Z V5FULL-MX ANSWER
+A05:39 alternating-lease request read. Held only own pending B wrappers after the86cue sheet; A4900 received the next lease, B resumed after release+7s. No A process touched.
+Consolidated unstarted obsolete B checks into newestsource; completed/failed samples retained. B current whole-cat sheet stillPARTIAL beauty/unique passive silhouettes; sourcechanges presentationonly.
+Opt2 isolated allocation samples495888/176076/126336B vsoriginal3047256/900248/773820B;zero-allocation gate remainsMISS. Thirdbounded optimisation prepared; native timing pending.
+M3 exact-layer+target browser coverage18registeredseeds remains queued; pureadapter1421actions/1687plans exact. No new rules/default changes or acceptance sampling.
