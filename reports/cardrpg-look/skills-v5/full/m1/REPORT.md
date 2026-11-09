@@ -30,7 +30,7 @@ Collision receipt: [collide3](collide3/collisions.json.gz); `summarize.mjs` chec
 P15 uses the published boss phase fixture at action72/sequence185; old v2 boss text adapter limitation is registered B-M3-001, not silently treated as verified.
 All M1 code remains under lookV2; no rule/flag defaults, A-owned files or protected paths changed. No additional texture assets.
 Draft [#416](https://github.com/ntbaoheyhey/taskbar-hero/pull/416), source54d3e29b2; all complete rows aggregated in [summary](summary.json).
-Continuous [20-second fixture clip](video/M1-after-20s.mp4), [sampled review](video/clip-review.webp), and [fresh-eyes defects](FRESH-EYES.md); clip path verified in the recording receipt.
+Continuous [20-second fixture clip](https://github.com/ntbaoheyhey/taskbar-hero/blob/3a8ed4c08f2dd0b7032d25259631a5132e4cb804/reports/cardrpg-look/skills-v5/full/m1/video/M1-after-20s.mp4), [sampled review](video/clip-review.webp), and [fresh-eyes defects](FRESH-EYES.md); clip path verified in the recording receipt.
 M1 review retains five concrete defects; top three carry to the already-scoped M2 work after capped M1 attempts. No live claim.
 
 | Self-score criterion | Weight | Score | Evidence / assessment |

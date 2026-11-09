@@ -1,5 +1,5 @@
 # Skills V5 full run
-NOW M4 delivery: full30.074MB/lean21.811MB built from live7c326fc81; immutable locked validation/films queued. M3 byte attribution is PARTIAL(+3B preload map); no source fix adopted.
+NOW M4 bossbanner repair: Bbc22a644f/live1eded4102 sourcegatesPASS;51shots/layout queued on timinglock,then delivery2 casts/cold/guide/E2E/fourfilms. Prior package retained.
 BASE #415 f9924699cab2fa5b8029baa1158f789ee44ddfda; full/PROMPT.txt and RULES.md apply. One agent, no model helpers, native/headless.
 WORKTREES B=/Users/bao/taskbar-hero-cardrpg-b2 branch codex/cardrpg-v5full-m4-2026-11-09; live=/Users/bao/taskbar-hero-cardrpg-v5live branch codex/cardrpg-v5live-2026-11-09.
 PROTECTED all A-owned/rules/manifests/default flags; draft PR only; never A folder. Sync B-OUTBOX append only.
@@ -35,3 +35,5 @@ RESUME08:07UTC: livepilot51shots+1194cueframes0overlap/unplaced,faces/UI/contras
 OPEN B-M4-004 S2 PARTIAL: same-pathOFFindex28182→28185B due lazy preload graph;10otherssame. Three diagnostics temporary only,no repo source edits. Pairedbrowser pending.
 NEXT consume own queuedBclosure/trigger/natural5/offpair/delivery gates+fourfilms;pack<=80MB;M3draft,M4report/draft;refreshAuntilS6DONE;M5report/ledger/BOUTBOX.
 OPEN B-M4-005 attempt1: fresh-eyeP15bossbannerhidesplatename;scene reservesbanner,colliderextended. Olddeliverybrowserqueue cancelledunsampled;rootgates/repairedpilotnext. #420draftcreated.
+
+RESUME08:18UTC: naturaldelta5battles404plans exact,0errors/uncleared; combined23samples/18seeds45of45cells observed,original10endingsstillunverified. OFFpaired11members/0Three pass,literal+3Bpartial.

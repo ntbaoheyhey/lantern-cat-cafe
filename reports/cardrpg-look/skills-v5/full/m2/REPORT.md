@@ -23,7 +23,7 @@ Wildfire travels in staggered fronts, Rupture tensions/snaps, Spread flies statu
 | Keyboard/Escape/reduced motion |12casesPASS;hint close/gallery bounds3widthsPASS|[UI](ui2/ui.json.gz),[extras](extras4/extras.json.gz)|
 | OFF startup |11loaded chunks same bytes+members;0Three/models|[comparison](startup-comparison.json)|
 
-[1440 review](review4-1440.webp),[1024 review](review4-1024.webp),[continuous20s fixture clip](video/M2-after-20s.mp4),[clip samples](video/clip-review.webp),[five concrete flaws](FRESH-EYES.md). Original failed material/framing samples remain in readability1/2/3 and roster2/3; no sample replaced. Material polish and boss scale reached3attempt cap and revisit inM4. M1 single-upload51.5ms miss remains for MX atlases.
+[1440 review](review4-1440.webp),[1024 review](review4-1024.webp),[continuous20s fixture clip](https://github.com/ntbaoheyhey/taskbar-hero/blob/3a8ed4c08f2dd0b7032d25259631a5132e4cb804/reports/cardrpg-look/skills-v5/full/m2/video/M2-after-20s.mp4),[clip samples](video/clip-review.webp),[five concrete flaws](FRESH-EYES.md). Original failed material/framing samples remain in readability1/2/3 and roster2/3; no sample replaced. Material polish and boss scale reached3attempt cap and revisit inM4. M1 single-upload51.5ms miss remains for MX atlases.
 No rule/default/A-owned changes. Live integration remains unverified. M3 will consume published S5 #417, including ally-splash; early skill-use feedback posted to B-OUTBOX.
 
 | Self-score criterion | Weight | Score | Evidence / assessment |
@@ -31,7 +31,7 @@ No rule/default/A-owned changes. Live integration remains unverified. M3 will co
 | Skill VFX beauty |22%|4.5|[MX0 audit](../VFX-AUDIT.md):4.517mean; several sparse skills.|
 | Status readability |15%|8|[shots](shots4/shots.json.gz):body cap,framed badges,0layout failures.|
 | Combo/reaction legibility |12%|7|[motion strips](reactions1):words clear;Rupture/Spread motion still small.|
-| Multi-target clarity |8%|7.5|[clip](video/M2-after-20s.mp4):separate landings/numbers.|
+| Multi-target clarity |8%|7.5|[clip](https://github.com/ntbaoheyhey/taskbar-hero/blob/3a8ed4c08f2dd0b7032d25259631a5132e4cb804/reports/cardrpg-look/skills-v5/full/m2/video/M2-after-20s.mp4):separate landings/numbers.|
 | Unit/monster readability |8%|6|[review](review4-1440.webp):value pass;flat materials and boss ratio miss.|
 | Performance |15%|8|[summary](summary.json):cast pass;M1cold pass,texture upload remains.|
 | Live integration correctness |15%|2|Fixture only;S5 source is available forM3.|
