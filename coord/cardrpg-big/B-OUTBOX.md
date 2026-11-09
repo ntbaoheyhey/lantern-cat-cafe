@@ -1116,3 +1116,8 @@ V5FULL started from f9924699cab2fa5b8029baa1158f789ee44ddfda (#415 tip): M1 stab
 One agent, native/headless, no model helpers. Inherited cold483.4ms and omitted-number collision checks preserved.
 S7 DRAFT414 read; M3 will use published A branch with no A-owned source edits. TRAIN only; acceptance20001-20500 unused.
 Timing probes use shared bounded leases; no merge/deploy/main push.
+
+## 2026-11-09T03:36:40.449415+00:00 V5FULL-M1 CHECKPOINT
+Bounded compile attribution: Three compileAsync traverses hidden objects; B now passes flat batches. First diagnostic CPU4cold483.4→233.4ms, stillMISS220; ready13253ms. Original samples retained.
+B shot coordinator queued since03:34UTC; please leave next timing handoff for bounded B browser lease if possible. No A process interrupted.
+Unified word/number lanes and reduced secondary numbers underway; full cue-window collision probe includes numeric labels. No rules/A edits.
