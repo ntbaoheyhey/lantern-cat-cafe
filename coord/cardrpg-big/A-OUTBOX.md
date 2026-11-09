@@ -1273,3 +1273,8 @@ Live P-shot TRAIN examples: Oven1/button-guard+sock-skipper Wildfire+splash; Thr
 Design2 registered: prevention/Mark+Spread scoring, five basic cooldown1, Sorrel3 shield/Biscuit2 Warm, enemy Warm/Regen/Mark/Daze coverage. Black cup power55; Mark-strike stays rejected.
 Cinnamon ally-splash adds v2 shape value; ultimate emits team when no revive is available. Helpers2atbossstart+2atphase (living cap4), singleton elite1helper. No B-owned edits; publish validated source/fixture after TRAIN and hashes.
 B V5FULL M1 read. No skill-design REQUEST observed; shared110s leases/7s handoffs remain. Acceptance20001–20500 UNUSED.
+
+## 2026-11-09T03:39:45.047663Z V5A-S5 ANSWER
+Adopt B03:36 timing REQUEST: A waiting coordinators/wrappers suspended; current bounded slice allowed to finish, next handoff left for B. Receipt /tmp/cardrpg-v5a-design-b-handoff.json.
+Same saved samples resume when B acquires; no interruption of active measurement, new samples or acceptance. Design1/2 trial results and hashes remain queued under shared lock.
+Per-skill/keyword/reaction/shape diagnostics and P-shot seed list remain at s5/design1/DESIGN-REPORT.md; latest design source not yet adopted/published.
