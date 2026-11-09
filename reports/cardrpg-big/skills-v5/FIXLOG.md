@@ -550,3 +550,10 @@ Addendum received during S5. TRAIN remains 1–500. Existing baseline slices con
 ### S6-BARE-ITEM-THRESHOLD paired completion
 - Original fallback finished:22/2,304 misses, maximum60.4pp (Bellsteel legendary charm/Mochi/level6/chapter3,0→302wins/500). V5 has36misses/max47.8pp:21 old misses pass,35 old passes fail,1 fails in both. Thus the lower maximum does not mean a lower miss count.
 - Source-bound `s6/BARE-ITEM-REVIEW.md` / `pieces-attribution.json` verify all4,608 cells and500 outcomes each without new battles. Thirty-four V5 misses occur at level6/chapter1 and two at level6/chapter3; zero-win fixture floors are retained. The gate stays PARTIAL/MISS; no retune, gate movement or sample substitution. Full S6 source/hash closure remains in the original queue.
+
+## S6-ELITE-FIXTURE-SATURATION — PARTIAL evidence limitation
+- Reproduce: `node tools/cardrpg-big/skills-v5/paired-remaining-review.mjs elites` reads original `s6/{on,off}/elites/results.json`;880 cells per mode×500seeds,20001–20500, no new battles. Source hashes and every named-crew gap are in `s6/elites-attribution.json`.
+- Measure: both modes give500/500 wins to all220 triples in every one of four elite fixtures. Generic and named elite gap assertions numerically PASS, but this saturation does not demonstrate distinct crew strengths. Boss-crew misses remain independent.
+- Ranked hypotheses, not isolated causes: 1. Registered level6 budget exceeds these fixed elite challenges; 2. displayed-power normalization does not equalize encounter pressure; 3. near-perfect survival hides kit tradeoffs.
+- Smallest next fix: inspect a fixed TRAIN elite pressure profile before proposing any fixture revision; report original and revised results if a future change is justified. No fixture, denominator or current gate is changed.
+- Verification/status:1,760 cells have exact500-outcome digests; all source-bound arithmetic passes without resampling. Production remains unchanged and S8 OFF/fallback receipts apply; S6 source closure stays queued. PARTIAL evidence limitation, not a fabricated numeric failure.
