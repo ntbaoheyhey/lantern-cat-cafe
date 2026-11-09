@@ -1,5 +1,5 @@
 # Skills V5 full run
-NOW MX3 cinema3 whole86cue sheet captured/reviewing; MX5 opt3 third bounded allocation attempt prepared; M3 exact-target coverage2 queued.
+NOW MX verification continuing; M3 boot S1 attribution queued after empty delivery1 shots. Dependent live queues held.
 BASE #415 f9924699cab2fa5b8029baa1158f789ee44ddfda; fullPROMPT/RULES apply, no agents/models/desktop/Docker.
 DONE V0#409,V01#413,V3#415; never redo completed samples.
 DONE M1#416 source54d3e29b2; M2#418 tip58adf21de,source2e6ee6425; fullmilestone reports underfull/m1,m2.
@@ -29,3 +29,5 @@ WAITING nofixturewait:runnableS5available;latestA05:31timingrequestread,latestpu
 STOP onlyM5delivered,20Nov12UTC,orunfixable/unrevertibleS1withM5PARTIAL. Continueautomatically.
 LATEST 05:51UTC: opt2 isolated600frame allocations495888/176076/126336B,zeroMISS. opt3 hoists target particle envelopes;type/lint/unit/build/parityPASS, browserpending.
 LATEST A4900 received nextlease afterBcinema3;handoff2.py resumes ownpausedBqueues afterA release. Source48c3f8ae2+opt3uncommitted.
+
+LATEST 06:02UTC: MX3audit6.233vs4.517,uniquenessMISS. Opt3allocation220728/106500/115280B,zeroMISS at3attemptcap. M3merge3bootdiagnosticqueued;parents9870/6066+wrappers10508/6082held.
