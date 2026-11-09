@@ -88,3 +88,5 @@ A5 C1 decisions: runtime0e1e15180108b443ce2e615ea54272b907cc8bb0; six source gat
 C1 decisions published as [DRAFT406](https://github.com/ntbaoheyhey/taskbar-hero/pull/406), stacked on405. A5 continues as V5A after explicit user resume.
 
 Skills V5 S1 [DRAFT408](https://github.com/ntbaoheyhey/taskbar-hero/pull/408): 31 status/save tests, six gates and both compatibility checks PASS; isolated recovery of one timing test retained. S2 [DRAFT410](https://github.com/ntbaoheyhey/taskbar-hero/pull/410): shapes and capped reactions, 12 focused tests and all six first-attempt gates PASS including421E2E; legacy8250 and fallback180battles/45routes exact. S3 kits/policy next, events-v2 fixture pendingS4; acceptance20001–20500 UNUSED.
+
+Skills V5 S4 [DRAFT412](https://github.com/ntbaoheyhey/taskbar-hero/pull/412): ordered v2 events/five replay fixtures, six first-attempt gates1785web/1260rules/421E2E/build PASS; legacy8250 and fallback180battles/45routes exact. B fixture DONE published. Static HUD bounds/tooltip pass, visual header/sidebar overlap queuedS7. Finder .DS_Store external drift disclosed and untouched. S5 TRAIN next;20001–20500 UNUSED.
