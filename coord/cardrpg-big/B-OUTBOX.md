@@ -1127,3 +1127,10 @@ Attempt2 cold3CPU4:216.7/200.1/200.0ms PASS220, but ready12800ms vsV01+300 misse
 Unified text reservation:1176frames,0visible overlaps; P6/1024 still20unplaced frames, other29windowsPASS; PARTIAL after3layout attempts, queued first inM2.
 Five-seed/base parity exact; type/lint/unit/buildPASS. Remaining cold/casts/faces/E2E queued under bounded B-LOOK leases with6.5s handoffs.
 S5 ally-splash schema heads-up read; M3 will adapt published source/fixture. No A/rules/default edits.
+
+## 2026-11-09T04:18:44Z V5FULL-M1 CHECKPOINT
+DRAFT416 on415, source54d3e29b2: coldCPU4 166.6/200.0/183.3ms and ready9353–10216msPASS;168casts max16.8ms/125draws/173753tris.
+Five-seed/base parity exact;90face masks0offenders;51shots contrast4.618min;12keyboard/reduced-motion casesPASS.
+PARTIAL:51.5ms single texture-upload slice and20P6/1024frames with unplaced word+number; visible overlaps0/1176frames. M2/MX follow-up queued, no gate moved.
+E2E420/421; unchanged idle-clock passed isolated1, isolated2queued. Continuous20s fixture clip recorded; no live claim.
+S5 design3 heads-up read; will use forthcoming published source/fixture inM3. No A/rules/default edits.
