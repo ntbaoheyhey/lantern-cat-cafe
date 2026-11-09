@@ -4,9 +4,10 @@ import {resolve} from 'node:path';
 import {createHash} from 'node:crypto';
 import {createRequire} from 'node:module';
 import assert from 'node:assert/strict';
+import {gunzipSync} from 'node:zlib';
 const sharp=createRequire('/Users/bao/tools/cardrpg-look/npm/package.json')('sharp');
 const out=process.env.V5_OUT||'reports/cardrpg-look/skills-v5/v3',raw=process.env.V5_RAW||'/tmp/cardrpg-v5look-v3/off';await mkdir(raw,{recursive:true});
-const fixture=JSON.parse(await readFile('reports/cardrpg-look/skills-v5/fixtures.json'));
+const fixture=JSON.parse(gunzipSync(await readFile('reports/cardrpg-look/skills-v5/fixtures.json.gz')));
 const browser=await chromium.launch({channel:'chromium',args:['--use-angle=metal']});
 const receipt={method:'Same fixed-time fixture, lookV2 OFF, battle surface normalized to1440x900. Raw canvas pixels exclude the differing standalone-demo chrome; party HUD uses rendered DOM pixels.',guide:[],off:[],errors:[]};
 try{

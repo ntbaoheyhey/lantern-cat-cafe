@@ -25,7 +25,18 @@ faces = read(out / 'faces.json')
 delivery = read(out / 'delivery.json')
 gates = read(out / 'gates/checks.json')
 videos = [read(out / f'videos/{side}.json') for side in ['before', 'after']]
-assert a['sha256'] == build['sha256'] == perf['sha256'] == cold['sha256'] == videos[1]['artifactSha256'] == artifact
+measured = read(out / 'iteration3/build.json')
+assert a['sha256'] == perf['sha256'] == cold['sha256'] == measured['sha256']
+assert build['sha256'] == videos[1]['artifactSha256'] == artifact
+assert delivery['off'][1]['artifactSha256'] == artifact
+changed_inputs = [p for p, h in measured['sourceHashes'].items() if h != build['sourceHashes'].get(p)]
+assert set(changed_inputs) == {'tools/cardrpg-look/skills-v5/v3-playback.ts', 'tools/cardrpg-look/skills-v5/v3-delivery.mjs'}
+assert measured['sourceAssetHashes'] == build['sourceAssetHashes']
+playback = (root / 'tools/cardrpg-look/skills-v5/v3-playback.ts').read_text()
+previous = playback.replace("function prepareViewer(m:DepthModel){\n if(!m.galleryBattle)m.inspect(m.galleryId,-1);\n m.sceneStarted=true;\n}\n", '').replace(' prepareViewer(m);const frame=', ' const frame=').replace(' prepareViewer(m);\n', '')
+assert hashlib.sha256(previous.encode()).hexdigest() == measured['sourceHashes']['tools/cardrpg-look/skills-v5/v3-playback.ts']
+lineage = {'measuredArtifactSha256': measured['sha256'], 'deliveredArtifactSha256': artifact, 'changedBuildInputs': changed_inputs, 'rendererAndArtInputsExact': True, 'method': 'Only preview entry now calls the public gallery API and sets sceneStarted; QA reads gzip fixture. Removing exactly those viewer lines recovers the measured source hash. Cue construction, renderer, rules and art inputs identical. UI/perf/face samples are retained on the measured artifact, not relabelled as new samples. Direct-entry controls, OFF pixels, startup and videos run on delivered artifact.'}
+save('artifact-lineage.json', lineage)
 assert read(out / 'digests-before.json') == read(out / 'digests-after.json')
 assert len(a['ui']) == 27 and len(a['shots']) == 9
 assert not a['errors'] and not perf['errors'] and not delivery['errors']
@@ -67,7 +78,7 @@ coldmax = max(r['max'] for r in cold['rows'])
 oldcold = max(r['max'] for r in read(parent / 'v01/perf/cold.json')['rows'])
 draws = max([r['peakDraws'] for r in rows] + [r['stats']['calls'] for r in a['shots']] + [r['calls'] for r in faces['rows']])
 tris = max([r['peakTriangles'] for r in rows] + [r['stats']['triangles'] for r in a['shots']] + [r['triangles'] for r in faces['rows']])
-result = {'base': base, 'artifactSha256': artifact, 'artifactBytes': demo.stat().st_size, 'demoDeltaFromV01': demo.stat().st_size - (root / 'docs/cardrpg-look/v5-v0.html').stat().st_size, 'seeds': [7, 17, 71, 1808, 20261108], 'battleAndLogParity': True, 'nativeCastWindows': len(rows), 'nativeMax': native, 'cpu4ColdMax': coldmax, 'cpu4ColdBeforeMax': oldcold, 'cpu4DeltaPercent': (coldmax / oldcold - 1) * 100, 'peakDraws': draws, 'peakTriangles': tris, 'faces': faces['samples'], 'faceOffenders': len(faces['offenders']), 'contrastMin': min(u['contrast'] for u in a['ui']), 'badgeOverlap': 0, 'calloutOverlap': 0, 'offPixelsExact': True, 'startup': startup, 'gates': gates, 'e2eRecovery': recovery, 'sameVideoInitial': True}
+result = {'base': base, 'artifactSha256': artifact, 'artifactBytes': demo.stat().st_size, 'demoDeltaFromV01': demo.stat().st_size - (root / 'docs/cardrpg-look/v5-v0.html').stat().st_size, 'seeds': [7, 17, 71, 1808, 20261108], 'battleAndLogParity': True, 'nativeCastWindows': len(rows), 'nativeMax': native, 'cpu4ColdMax': coldmax, 'cpu4ColdBeforeMax': oldcold, 'cpu4DeltaPercent': (coldmax / oldcold - 1) * 100, 'peakDraws': draws, 'peakTriangles': tris, 'faces': faces['samples'], 'faceOffenders': len(faces['offenders']), 'contrastMin': min(u['contrast'] for u in a['ui']), 'badgeOverlap': 0, 'calloutOverlap': 0, 'offPixelsExact': True, 'startup': startup, 'gates': gates, 'e2eRecovery': recovery, 'sameVideoInitial': True, 'measurementArtifactSha256': measured['sha256'], 'artifactLineage': lineage}
 result['gatesMet'] = {'native': native <= 16.80001, 'draws': draws <= 130, 'cold': coldmax / oldcold <= 1.1, 'demo': demo.stat().st_size <= (root / 'docs/cardrpg-look/b2.html').stat().st_size + 1500000}
 save('RESULTS.json', result)
 print(json.dumps(result))

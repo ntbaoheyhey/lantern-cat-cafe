@@ -32,8 +32,8 @@ The six DPR1 shots are labelled presentation fixtures (existing R.act resolves r
 | Badge overlaps / contrast | 0 at1440×900,1280×720,1024×600; minimum7.00:1. |
 | OFF startup | 11 scripts/3,522,500bytes; per-chunk byte counts/modules unchanged; 8/11 content hashes exact, entry references normalize equal; zero Three/model startup modules. |
 
-[Raw numbers](RESULTS.json) · [source audit](source-audit.json) · [UI](after-browser.json) · [performance](perf-delivery/casts.json) · [cold](perf-delivery/summary.json).
-Typecheck/lint/unit (1782 web/1020 rules)/build PASS. E2E:420/421 first run; the one idle-clock test passed an isolated retry on unchanged source. Cause unproven; [first failure](gates/e2e.log) and [recovery](gates/recovery.json) retained.
+[Raw numbers](RESULTS.json) · [source audit](source-audit.json) · [UI](after-browser.json.gz) · [performance](perf-delivery/casts.json) · [cold](perf-delivery/summary.json).
+Typecheck/lint/unit (1782 web/1020 rules)/build PASS. E2E:420/421 first run; the one idle-clock test passed an isolated retry on unchanged source. Cause unproven; [first failure](gates/e2e.log.gz) and [recovery](gates/recovery.json) retained.
 Keyboard hover/focus tooltip, Escape, +N overflow, static reduced-motion matrices, three-size guide mouse controls and OFF fixed-frame renderer/HUD pixel parity PASS. [Delivery](delivery.json).
 Natural chapter-1 x1,1440×900, continuous20s H.264: [before](videos/before-20s.mp4) / [after](videos/after-20s.mp4); same initial battle, no cuts or injected actions. [Receipt](videos/checks.json).
 New artwork:16 original SVG paths; no textures/dependencies added. All look changes remain behind lookV2; rules/protected paths unchanged; action-clock delta0ms. [Provenance](../../../assets/provenance/look.md).

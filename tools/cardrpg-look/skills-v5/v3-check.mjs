@@ -9,7 +9,12 @@ const sharp=createRequire('/Users/bao/tools/cardrpg-look/npm/package.json')('sha
 const side=process.argv[2]||'after',artifact=resolve(side==='before'?'docs/cardrpg-look/v5-v0.html':'docs/cardrpg-look/v5.html');
 const out=process.env.V5_OUT||'reports/cardrpg-look/skills-v5/v3',raw='/tmp/cardrpg-v5look-v3/marks';await mkdir(`${out}/shots`,{recursive:true});await mkdir(raw,{recursive:true});
 const {frames}=JSON.parse(await readFile('/tmp/cardrpg-v5look-v3/frames.json'));
-const receipt={side,artifact,sha256:createHash('sha256').update(await readFile(artifact)).digest('hex'),shots:[],ui:[],marks:[],errors:[],method:'Published S4 exact action snapshots and ordered events, fixed DPR1 time3.2, six cases plus three shapes; no gameplay simulation.'};
+const receipt={side,artifact,sha256:createHash('sha256').update(await readFile(artifact)).digest('hex'),shots:[],ui:[],marks:[],cueFaces:[],errors:[],method:'Published S4 exact action snapshots and ordered events, fixed DPR1 time3.2, six cases plus three shapes; CSS number animation held at110ms; no gameplay simulation.'};
+async function effectPair(page,key){
+ const sample=await page.evaluate(()=>{const s=window.__depthScene,e=s.cardEffects;s.render({...s.view(),fixedTime:3.2,paused:true},0);s.dirty=false;const masks=e.protectedFaces.slice(0,e.material.uniforms.protectedCount.value).map(v=>v.toArray()),headTops=Array.from(e.protectedHeadTops),stats={...s.stats},real=s.renderer.domElement.toDataURL('image/png');e.root.visible=false;e.setLightsEnabled(false);s.post.render(s.scene,s.camera,0,0,'#ffe6d2',true);const without=s.renderer.domElement.toDataURL('image/png');e.root.visible=true;e.setLightsEnabled(true);return {masks,headTops,stats,real,without}});
+ for(const field of ['real','without']){await writeFile(`${raw}/${key}-${field}.png`,Buffer.from(sample[field].split(',')[1],'base64'));sample[field]=`${raw}/${key}-${field}.png`;}
+ return {id:key,...sample};
+}
 const browser=await chromium.launch({channel:'chromium',args:['--use-angle=metal']});
 try{
  for(const [width,height]of side==='before'?[[1440,900]]:[[1440,900],[1280,720],[1024,600]]){
@@ -39,6 +44,7 @@ try{
   });
   receipt.ui.push({name,width,...ui});
   if(width===1440){const file=`shots/${side}-${width}-${name}.webp`;await sharp(await page.screenshot()).webp({quality:80}).toFile(`${out}/${file}`);receipt.shots.push({name,width,file,...await page.evaluate(coverage)});}
+  if(width===1440&&side==='after')receipt.cueFaces.push(await effectPair(page,`cue-${name}`));
   if(side==='after'){
    assert.equal(ui.badgeOverlap,0,`${width}/${name} badge`);assert.equal(ui.wordOverlap,0,`${width}/${name} words`);assert.equal(ui.reservedOverlap,0,`${width}/${name} HP/HUD`);assert.equal(ui.outside,0);assert.equal(ui.overflow,false);assert.ok(ui.contrast>=4.5,`${width}/${name} contrast${ui.contrast}`);
    if(['crumb-burst','wildfire','rupture','spread'].includes(name))assert.ok(ui.words.some(w=>w.text===({'crumb-burst':'CRUMB BURST!',wildfire:'WILDFIRE!',rupture:'RUPTURE!',spread:'SPREAD!'})[name]),`${name} word`);

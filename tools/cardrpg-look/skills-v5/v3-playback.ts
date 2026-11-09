@@ -35,14 +35,19 @@ export function fixtureFrame(row:Row,action:Action){
  const apply=(side:'before'|'after')=>{for(const a of battle.actors){const snap=action[side].find(s=>s.id===a.id);if(snap){a.hp=snap.hp;a.shield=snap.shield;a.statuses=structuredClone(snap.statuses) as R.Status[];}}};
  apply('after');
  const presentation=applyV5Presentation(plan,statusPresentation(plan,battle.log),plan.v5);
- const cueAt=Math.max(plan.beats[2]!.start,...(presentation.reactions??[]).map(r=>r.at));
+ const cueAt=Math.max(plan.beats[2]!.start,...(presentation.reactions??[]).map(r=>r.at),...(presentation.landings??[]).map(r=>r.at));
  return {battle,plan,before:action.before,after:action.after,fixtureId:row.id,actionId:action.actionId,at:cueAt+110};
 }
 export function selectedFixture(name:string){const selected=chosen.get(name);if(!selected)throw Error(`No published fixture for ${name}`);return fixtureFrame(selected.row,selected.action)}
+function prepareViewer(m:DepthModel){
+ if(!m.galleryBattle)m.inspect(m.galleryId,-1);
+ m.sceneStarted=true;
+}
 export function mountFixture(m:DepthModel,name:string,play=false){
- const frame=selectedFixture(name);m.galleryBattle=structuredClone(frame.battle);m.plan=structuredClone(frame.plan);m.animationAt=play?0:frame.at;m.paused=!play;m.gallerySpeed=1;m.camera='wide';m.notify(false);return frame;
+ prepareViewer(m);const frame=selectedFixture(name);m.galleryBattle=structuredClone(frame.battle);m.plan=structuredClone(frame.plan);m.animationAt=play?0:frame.at;m.paused=!play;m.gallerySpeed=1;m.camera='wide';m.notify(false);return frame;
 }
 export function startFixtureFilm(m:DepthModel,id='spread'){
+ prepareViewer(m);
  const row=source.fixtures.find(f=>f.id===id)!;let index=0,raf=0,applied=false;
  const next=()=>{const action=row.actions[index++];if(!action)return false;const f=fixtureFrame(row,action);m.galleryBattle=f.battle;m.plan=f.plan;m.animationAt=0;m.paused=false;m.gallerySpeed=1;applied=false;for(const a of m.galleryBattle.actors){const s=f.before.find(s=>s.id===a.id);if(s){a.hp=s.hp;a.shield=s.shield;a.statuses=structuredClone(s.statuses) as R.Status[]}}m.notify(false);return true;};
  next();

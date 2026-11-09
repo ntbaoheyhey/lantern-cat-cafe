@@ -1,0 +1,10 @@
+{
+  "measuredArtifactSha256": "44dd8f2ecea0f834a60efb6a30979354fae3d9f20e1e196ebdf55853b7c5c4e6",
+  "deliveredArtifactSha256": "e4491ebf3827e1f6e9fa5bc41dbb8ae2feda0e7fa86ceea7aef12e8438f97ec9",
+  "changedBuildInputs": [
+    "tools/cardrpg-look/skills-v5/v3-delivery.mjs",
+    "tools/cardrpg-look/skills-v5/v3-playback.ts"
+  ],
+  "rendererAndArtInputsExact": true,
+  "method": "Only preview entry now calls the public gallery API and sets sceneStarted; QA reads gzip fixture. Removing exactly those viewer lines recovers the measured source hash. Cue construction, renderer, rules and art inputs identical. UI/perf/face samples are retained on the measured artifact, not relabelled as new samples. Direct-entry controls, OFF pixels, startup and videos run on delivered artifact."
+}
