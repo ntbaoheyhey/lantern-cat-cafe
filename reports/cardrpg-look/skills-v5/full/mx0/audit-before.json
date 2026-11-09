@@ -1,0 +1,1342 @@
+{
+  "method": "Agent visual self-score from all 12 cat and 13 enemy five-frame sheets. Five frozen samples inform motion; continuous motion acceptance is separate. Configured layers are not perceived layers. 48 cat active skills include 12 ultimates; 12 passive presentations give 60 distinct cat tiles, plus 26 enemy cues.",
+  "rows": [
+    {
+      "id": "mochi-1",
+      "name": "Door knock",
+      "scores": [
+        6,
+        5,
+        5,
+        6,
+        7
+      ],
+      "mean": 5.8,
+      "configuredLayers": 4,
+      "evidence": "mochi.webp",
+      "note": "Door silhouette reads; support/ultimate rely on similar gold foot rings."
+    },
+    {
+      "id": "mochi-2",
+      "name": "Warm welcome",
+      "scores": [
+        4,
+        3,
+        4,
+        4,
+        6
+      ],
+      "mean": 4.2,
+      "configuredLayers": 4,
+      "evidence": "mochi.webp",
+      "note": "Door silhouette reads; support/ultimate rely on similar gold foot rings."
+    },
+    {
+      "id": "mochi-3",
+      "name": "Apron crossing",
+      "scores": [
+        5,
+        4,
+        4,
+        6,
+        6
+      ],
+      "mean": 5.0,
+      "configuredLayers": 4,
+      "evidence": "mochi.webp",
+      "note": "Door silhouette reads; support/ultimate rely on similar gold foot rings."
+    },
+    {
+      "id": "mochi-4",
+      "name": "Last light shelter",
+      "scores": [
+        5,
+        4,
+        4,
+        5,
+        6
+      ],
+      "mean": 4.8,
+      "configuredLayers": 5,
+      "evidence": "mochi.webp",
+      "note": "Door silhouette reads; support/ultimate rely on similar gold foot rings."
+    },
+    {
+      "id": "soot-1",
+      "name": "Cocoa spark",
+      "scores": [
+        3,
+        2,
+        3,
+        3,
+        5
+      ],
+      "mean": 3.2,
+      "configuredLayers": 4,
+      "evidence": "soot.webp",
+      "note": "Spark is nearly absent; cup/lantern identity needs material depth and sharper impact."
+    },
+    {
+      "id": "soot-2",
+      "name": "Black cup",
+      "scores": [
+        5,
+        4,
+        4,
+        5,
+        6
+      ],
+      "mean": 4.8,
+      "configuredLayers": 5,
+      "evidence": "soot.webp",
+      "note": "Spark is nearly absent; cup/lantern identity needs material depth and sharper impact."
+    },
+    {
+      "id": "soot-3",
+      "name": "Lantern wick",
+      "scores": [
+        5,
+        4,
+        5,
+        6,
+        6
+      ],
+      "mean": 5.2,
+      "configuredLayers": 5,
+      "evidence": "soot.webp",
+      "note": "Spark is nearly absent; cup/lantern identity needs material depth and sharper impact."
+    },
+    {
+      "id": "soot-4",
+      "name": "Midnight service",
+      "scores": [
+        4,
+        4,
+        4,
+        4,
+        6
+      ],
+      "mean": 4.4,
+      "configuredLayers": 5,
+      "evidence": "soot.webp",
+      "note": "Spark is nearly absent; cup/lantern identity needs material depth and sharper impact."
+    },
+    {
+      "id": "clover-1",
+      "name": "Leaf tap",
+      "scores": [
+        3,
+        2,
+        3,
+        4,
+        5
+      ],
+      "mean": 3.4,
+      "configuredLayers": 4,
+      "evidence": "clover.webp",
+      "note": "Greenhouse arch is distinctive; basic leaf and steam are too small."
+    },
+    {
+      "id": "clover-2",
+      "name": "Patient steep",
+      "scores": [
+        4,
+        3,
+        4,
+        5,
+        6
+      ],
+      "mean": 4.4,
+      "configuredLayers": 5,
+      "evidence": "clover.webp",
+      "note": "Greenhouse arch is distinctive; basic leaf and steam are too small."
+    },
+    {
+      "id": "clover-3",
+      "name": "Clearleaf rinse",
+      "scores": [
+        5,
+        4,
+        5,
+        6,
+        6
+      ],
+      "mean": 5.2,
+      "configuredLayers": 5,
+      "evidence": "clover.webp",
+      "note": "Greenhouse arch is distinctive; basic leaf and steam are too small."
+    },
+    {
+      "id": "clover-4",
+      "name": "Greenhouse morning",
+      "scores": [
+        7,
+        6,
+        6,
+        8,
+        6
+      ],
+      "mean": 6.6,
+      "configuredLayers": 5,
+      "evidence": "clover.webp",
+      "note": "Greenhouse arch is distinctive; basic leaf and steam are too small."
+    },
+    {
+      "id": "panko-1",
+      "name": "Pan reply",
+      "scores": [
+        5,
+        4,
+        4,
+        5,
+        6
+      ],
+      "mean": 4.8,
+      "configuredLayers": 4,
+      "evidence": "panko.webp",
+      "note": "Oven/handle motif reads; cover and return settle into generic rings."
+    },
+    {
+      "id": "panko-2",
+      "name": "Bread cover",
+      "scores": [
+        4,
+        3,
+        4,
+        4,
+        6
+      ],
+      "mean": 4.2,
+      "configuredLayers": 4,
+      "evidence": "panko.webp",
+      "note": "Oven/handle motif reads; cover and return settle into generic rings."
+    },
+    {
+      "id": "panko-3",
+      "name": "Crust return",
+      "scores": [
+        5,
+        4,
+        4,
+        5,
+        6
+      ],
+      "mean": 4.8,
+      "configuredLayers": 4,
+      "evidence": "panko.webp",
+      "note": "Oven/handle motif reads; cover and return settle into generic rings."
+    },
+    {
+      "id": "panko-4",
+      "name": "Oven door",
+      "scores": [
+        6,
+        5,
+        5,
+        6,
+        6
+      ],
+      "mean": 5.6,
+      "configuredLayers": 5,
+      "evidence": "panko.webp",
+      "note": "Oven/handle motif reads; cover and return settle into generic rings."
+    },
+    {
+      "id": "mallow-1",
+      "name": "Whisk flare",
+      "scores": [
+        4,
+        3,
+        4,
+        5,
+        6
+      ],
+      "mean": 4.4,
+      "configuredLayers": 4,
+      "evidence": "mallow.webp",
+      "note": "Fire travel is visible; three attacks share the same small flame profile."
+    },
+    {
+      "id": "mallow-2",
+      "name": "Split ember",
+      "scores": [
+        4,
+        3,
+        4,
+        5,
+        6
+      ],
+      "mean": 4.4,
+      "configuredLayers": 4,
+      "evidence": "mallow.webp",
+      "note": "Fire travel is visible; three attacks share the same small flame profile."
+    },
+    {
+      "id": "mallow-3",
+      "name": "Burnt sugar",
+      "scores": [
+        5,
+        4,
+        5,
+        5,
+        6
+      ],
+      "mean": 5.0,
+      "configuredLayers": 5,
+      "evidence": "mallow.webp",
+      "note": "Fire travel is visible; three attacks share the same small flame profile."
+    },
+    {
+      "id": "mallow-4",
+      "name": "Closing blaze",
+      "scores": [
+        6,
+        5,
+        5,
+        6,
+        6
+      ],
+      "mean": 5.6,
+      "configuredLayers": 5,
+      "evidence": "mallow.webp",
+      "note": "Fire travel is visible; three attacks share the same small flame profile."
+    },
+    {
+      "id": "sorrel-1",
+      "name": "Moon spoon",
+      "scores": [
+        3,
+        2,
+        3,
+        4,
+        5
+      ],
+      "mean": 3.4,
+      "configuredLayers": 4,
+      "evidence": "sorrel.webp",
+      "note": "Moon spoon is tiny; tea/glass motif reads but lacks a strong beat."
+    },
+    {
+      "id": "sorrel-2",
+      "name": "Cold brew",
+      "scores": [
+        5,
+        4,
+        4,
+        5,
+        6
+      ],
+      "mean": 4.8,
+      "configuredLayers": 5,
+      "evidence": "sorrel.webp",
+      "note": "Moon spoon is tiny; tea/glass motif reads but lacks a strong beat."
+    },
+    {
+      "id": "sorrel-3",
+      "name": "Decanted moon",
+      "scores": [
+        5,
+        4,
+        4,
+        6,
+        6
+      ],
+      "mean": 5.0,
+      "configuredLayers": 5,
+      "evidence": "sorrel.webp",
+      "note": "Moon spoon is tiny; tea/glass motif reads but lacks a strong beat."
+    },
+    {
+      "id": "sorrel-4",
+      "name": "Shared pot",
+      "scores": [
+        6,
+        5,
+        5,
+        6,
+        6
+      ],
+      "mean": 5.6,
+      "configuredLayers": 6,
+      "evidence": "sorrel.webp",
+      "note": "Moon spoon is tiny; tea/glass motif reads but lacks a strong beat."
+    },
+    {
+      "id": "biscuit-1",
+      "name": "Rolling pin",
+      "scores": [
+        5,
+        4,
+        5,
+        6,
+        6
+      ],
+      "mean": 5.2,
+      "configuredLayers": 4,
+      "evidence": "biscuit.webp",
+      "note": "Pin and crumb silhouette reads; support and ultimate need more depth."
+    },
+    {
+      "id": "biscuit-2",
+      "name": "Sideboard step",
+      "scores": [
+        4,
+        3,
+        4,
+        5,
+        6
+      ],
+      "mean": 4.4,
+      "configuredLayers": 4,
+      "evidence": "biscuit.webp",
+      "note": "Pin and crumb silhouette reads; support and ultimate need more depth."
+    },
+    {
+      "id": "biscuit-3",
+      "name": "Last crumb",
+      "scores": [
+        5,
+        4,
+        5,
+        6,
+        6
+      ],
+      "mean": 5.2,
+      "configuredLayers": 4,
+      "evidence": "biscuit.webp",
+      "note": "Pin and crumb silhouette reads; support and ultimate need more depth."
+    },
+    {
+      "id": "biscuit-4",
+      "name": "Bakers procession",
+      "scores": [
+        5,
+        4,
+        5,
+        5,
+        6
+      ],
+      "mean": 5.0,
+      "configuredLayers": 5,
+      "evidence": "biscuit.webp",
+      "note": "Pin and crumb silhouette reads; support and ultimate need more depth."
+    },
+    {
+      "id": "inkcap-1",
+      "name": "Ink thread",
+      "scores": [
+        5,
+        4,
+        5,
+        6,
+        6
+      ],
+      "mean": 5.2,
+      "configuredLayers": 4,
+      "evidence": "inkcap.webp",
+      "note": "Thread/decoy silhouettes differ; purple spore impact is faint."
+    },
+    {
+      "id": "inkcap-2",
+      "name": "Quiet spores",
+      "scores": [
+        4,
+        3,
+        4,
+        4,
+        5
+      ],
+      "mean": 4.0,
+      "configuredLayers": 5,
+      "evidence": "inkcap.webp",
+      "note": "Thread/decoy silhouettes differ; purple spore impact is faint."
+    },
+    {
+      "id": "inkcap-3",
+      "name": "Paper decoy",
+      "scores": [
+        6,
+        4,
+        4,
+        6,
+        6
+      ],
+      "mean": 5.2,
+      "configuredLayers": 4,
+      "evidence": "inkcap.webp",
+      "note": "Thread/decoy silhouettes differ; purple spore impact is faint."
+    },
+    {
+      "id": "inkcap-4",
+      "name": "Dreaming canopy",
+      "scores": [
+        5,
+        4,
+        4,
+        5,
+        6
+      ],
+      "mean": 4.8,
+      "configuredLayers": 5,
+      "evidence": "inkcap.webp",
+      "note": "Thread/decoy silhouettes differ; purple spore impact is faint."
+    },
+    {
+      "id": "cinnamon-1",
+      "name": "Spice pinch",
+      "scores": [
+        4,
+        3,
+        4,
+        5,
+        6
+      ],
+      "mean": 4.4,
+      "configuredLayers": 4,
+      "evidence": "cinnamon.webp",
+      "note": "Cup/cloche are recognisable; cleanse has almost no impact silhouette."
+    },
+    {
+      "id": "cinnamon-2",
+      "name": "Comfort cup",
+      "scores": [
+        5,
+        4,
+        4,
+        6,
+        6
+      ],
+      "mean": 5.0,
+      "configuredLayers": 5,
+      "evidence": "cinnamon.webp",
+      "note": "Cup/cloche are recognisable; cleanse has almost no impact silhouette."
+    },
+    {
+      "id": "cinnamon-3",
+      "name": "Clean apron",
+      "scores": [
+        3,
+        2,
+        3,
+        3,
+        5
+      ],
+      "mean": 3.2,
+      "configuredLayers": 4,
+      "evidence": "cinnamon.webp",
+      "note": "Cup/cloche are recognisable; cleanse has almost no impact silhouette."
+    },
+    {
+      "id": "cinnamon-4",
+      "name": "Second serving",
+      "scores": [
+        6,
+        4,
+        4,
+        6,
+        6
+      ],
+      "mean": 5.2,
+      "configuredLayers": 5,
+      "evidence": "cinnamon.webp",
+      "note": "Cup/cloche are recognisable; cleanse has almost no impact silhouette."
+    },
+    {
+      "id": "brioche-1",
+      "name": "Bell patrol",
+      "scores": [
+        5,
+        4,
+        4,
+        5,
+        6
+      ],
+      "mean": 4.8,
+      "configuredLayers": 4,
+      "evidence": "brioche.webp",
+      "note": "Aprons read but flat lilac surfaces hide secondary details."
+    },
+    {
+      "id": "brioche-2",
+      "name": "Borrowed blanket",
+      "scores": [
+        5,
+        4,
+        4,
+        5,
+        6
+      ],
+      "mean": 4.8,
+      "configuredLayers": 4,
+      "evidence": "brioche.webp",
+      "note": "Aprons read but flat lilac surfaces hide secondary details."
+    },
+    {
+      "id": "brioche-3",
+      "name": "Starched collar",
+      "scores": [
+        4,
+        3,
+        4,
+        4,
+        6
+      ],
+      "mean": 4.2,
+      "configuredLayers": 4,
+      "evidence": "brioche.webp",
+      "note": "Aprons read but flat lilac surfaces hide secondary details."
+    },
+    {
+      "id": "brioche-4",
+      "name": "Constellation apron",
+      "scores": [
+        6,
+        5,
+        5,
+        6,
+        5
+      ],
+      "mean": 5.4,
+      "configuredLayers": 5,
+      "evidence": "brioche.webp",
+      "note": "Aprons read but flat lilac surfaces hide secondary details."
+    },
+    {
+      "id": "velvet-1",
+      "name": "Silk nick",
+      "scores": [
+        4,
+        3,
+        4,
+        4,
+        6
+      ],
+      "mean": 4.2,
+      "configuredLayers": 4,
+      "evidence": "velvet.webp",
+      "note": "Three triangle/ribbon peaks are similar; curtain is mostly a low smoke band."
+    },
+    {
+      "id": "velvet-2",
+      "name": "Candle bounce",
+      "scores": [
+        4,
+        3,
+        4,
+        4,
+        6
+      ],
+      "mean": 4.2,
+      "configuredLayers": 5,
+      "evidence": "velvet.webp",
+      "note": "Three triangle/ribbon peaks are similar; curtain is mostly a low smoke band."
+    },
+    {
+      "id": "velvet-3",
+      "name": "Stolen flame",
+      "scores": [
+        5,
+        4,
+        4,
+        4,
+        6
+      ],
+      "mean": 4.6,
+      "configuredLayers": 5,
+      "evidence": "velvet.webp",
+      "note": "Three triangle/ribbon peaks are similar; curtain is mostly a low smoke band."
+    },
+    {
+      "id": "velvet-4",
+      "name": "Velvet curtain",
+      "scores": [
+        4,
+        4,
+        5,
+        4,
+        6
+      ],
+      "mean": 4.6,
+      "configuredLayers": 5,
+      "evidence": "velvet.webp",
+      "note": "Three triangle/ribbon peaks are similar; curtain is mostly a low smoke band."
+    },
+    {
+      "id": "marigold-1",
+      "name": "Seed stitch",
+      "scores": [
+        4,
+        3,
+        4,
+        5,
+        6
+      ],
+      "mean": 4.4,
+      "configuredLayers": 4,
+      "evidence": "marigold.webp",
+      "note": "Leaf/cup motifs read; floral growth and impact hierarchy are weak."
+    },
+    {
+      "id": "marigold-2",
+      "name": "Garden bell",
+      "scores": [
+        5,
+        4,
+        4,
+        5,
+        6
+      ],
+      "mean": 4.8,
+      "configuredLayers": 4,
+      "evidence": "marigold.webp",
+      "note": "Leaf/cup motifs read; floral growth and impact hierarchy are weak."
+    },
+    {
+      "id": "marigold-3",
+      "name": "Spring pruning",
+      "scores": [
+        5,
+        4,
+        4,
+        5,
+        6
+      ],
+      "mean": 4.8,
+      "configuredLayers": 5,
+      "evidence": "marigold.webp",
+      "note": "Leaf/cup motifs read; floral growth and impact hierarchy are weak."
+    },
+    {
+      "id": "marigold-4",
+      "name": "First tea blossom",
+      "scores": [
+        6,
+        5,
+        5,
+        6,
+        6
+      ],
+      "mean": 5.6,
+      "configuredLayers": 6,
+      "evidence": "marigold.webp",
+      "note": "Leaf/cup motifs read; floral growth and impact hierarchy are weak."
+    },
+    {
+      "id": "mochi-passive",
+      "name": "Door keeper",
+      "scores": [
+        3,
+        2,
+        3,
+        4,
+        6
+      ],
+      "mean": 3.6,
+      "configuredLayers": 3,
+      "evidence": "mochi.webp",
+      "note": "Door silhouette reads; support/ultimate rely on similar gold foot rings."
+    },
+    {
+      "id": "soot-passive",
+      "name": "Ash reader",
+      "scores": [
+        3,
+        2,
+        3,
+        4,
+        6
+      ],
+      "mean": 3.6,
+      "configuredLayers": 3,
+      "evidence": "soot.webp",
+      "note": "Spark is nearly absent; cup/lantern identity needs material depth and sharper impact."
+    },
+    {
+      "id": "clover-passive",
+      "name": "Second steep",
+      "scores": [
+        3,
+        2,
+        3,
+        4,
+        6
+      ],
+      "mean": 3.6,
+      "configuredLayers": 3,
+      "evidence": "clover.webp",
+      "note": "Greenhouse arch is distinctive; basic leaf and steam are too small."
+    },
+    {
+      "id": "panko-passive",
+      "name": "Warm crust",
+      "scores": [
+        3,
+        2,
+        3,
+        4,
+        6
+      ],
+      "mean": 3.6,
+      "configuredLayers": 3,
+      "evidence": "panko.webp",
+      "note": "Oven/handle motif reads; cover and return settle into generic rings."
+    },
+    {
+      "id": "mallow-passive",
+      "name": "Hot whisk",
+      "scores": [
+        3,
+        2,
+        3,
+        4,
+        6
+      ],
+      "mean": 3.6,
+      "configuredLayers": 3,
+      "evidence": "mallow.webp",
+      "note": "Fire travel is visible; three attacks share the same small flame profile."
+    },
+    {
+      "id": "sorrel-passive",
+      "name": "Measured pour",
+      "scores": [
+        3,
+        2,
+        3,
+        4,
+        6
+      ],
+      "mean": 3.6,
+      "configuredLayers": 3,
+      "evidence": "sorrel.webp",
+      "note": "Moon spoon is tiny; tea/glass motif reads but lacks a strong beat."
+    },
+    {
+      "id": "biscuit-passive",
+      "name": "Bakers resolve",
+      "scores": [
+        3,
+        2,
+        3,
+        4,
+        6
+      ],
+      "mean": 3.6,
+      "configuredLayers": 3,
+      "evidence": "biscuit.webp",
+      "note": "Pin and crumb silhouette reads; support and ultimate need more depth."
+    },
+    {
+      "id": "inkcap-passive",
+      "name": "Soft landing",
+      "scores": [
+        3,
+        2,
+        3,
+        4,
+        6
+      ],
+      "mean": 3.6,
+      "configuredLayers": 3,
+      "evidence": "inkcap.webp",
+      "note": "Thread/decoy silhouettes differ; purple spore impact is faint."
+    },
+    {
+      "id": "cinnamon-passive",
+      "name": "Ground spice",
+      "scores": [
+        3,
+        2,
+        3,
+        4,
+        6
+      ],
+      "mean": 3.6,
+      "configuredLayers": 3,
+      "evidence": "cinnamon.webp",
+      "note": "Cup/cloche are recognisable; cleanse has almost no impact silhouette."
+    },
+    {
+      "id": "brioche-passive",
+      "name": "Night watch",
+      "scores": [
+        3,
+        2,
+        3,
+        4,
+        6
+      ],
+      "mean": 3.6,
+      "configuredLayers": 3,
+      "evidence": "brioche.webp",
+      "note": "Aprons read but flat lilac surfaces hide secondary details."
+    },
+    {
+      "id": "velvet-passive",
+      "name": "Lost flame",
+      "scores": [
+        3,
+        2,
+        3,
+        4,
+        6
+      ],
+      "mean": 3.6,
+      "configuredLayers": 3,
+      "evidence": "velvet.webp",
+      "note": "Three triangle/ribbon peaks are similar; curtain is mostly a low smoke band."
+    },
+    {
+      "id": "marigold-passive",
+      "name": "First leaf",
+      "scores": [
+        3,
+        2,
+        3,
+        4,
+        6
+      ],
+      "mean": 3.6,
+      "configuredLayers": 3,
+      "evidence": "marigold.webp",
+      "note": "Leaf/cup motifs read; floral growth and impact hierarchy are weak."
+    },
+    {
+      "id": "enemy:button-guard:basic",
+      "name": "Button tap",
+      "scores": [
+        3,
+        2,
+        3,
+        4,
+        6
+      ],
+      "mean": 3.6,
+      "configuredLayers": 4,
+      "evidence": "button-guard.webp",
+      "note": "Button/coil reads at travel; impact collapses to small rings."
+    },
+    {
+      "id": "enemy:sock-skipper:basic",
+      "name": "Heel scuff",
+      "scores": [
+        3,
+        2,
+        3,
+        4,
+        6
+      ],
+      "mean": 3.6,
+      "configuredLayers": 4,
+      "evidence": "sock-skipper.webp",
+      "note": "Sock silhouette travels, but pink fabric at impact competes with body."
+    },
+    {
+      "id": "enemy:spool-ram:basic",
+      "name": "Bobbin nudge",
+      "scores": [
+        3,
+        2,
+        3,
+        4,
+        6
+      ],
+      "mean": 3.6,
+      "configuredLayers": 4,
+      "evidence": "spool-ram.webp",
+      "note": "Signature lunge reads; charge lacks a sustained telegraph."
+    },
+    {
+      "id": "enemy:needle-moth:basic",
+      "name": "Running stitch",
+      "scores": [
+        3,
+        2,
+        3,
+        3,
+        6
+      ],
+      "mean": 3.4,
+      "configuredLayers": 4,
+      "evidence": "needle-moth.webp",
+      "note": "Thin pale needles disappear near impact; no clear three-strike sequence."
+    },
+    {
+      "id": "enemy:teacup-healer:basic",
+      "name": "Saucer flick",
+      "scores": [
+        3,
+        2,
+        3,
+        4,
+        6
+      ],
+      "mean": 3.6,
+      "configuredLayers": 4,
+      "evidence": "teacup-healer.webp",
+      "note": "Spoon and cup are legible in travel; healing has little secondary depth."
+    },
+    {
+      "id": "enemy:kettle-knight:basic",
+      "name": "Spout jab",
+      "scores": [
+        4,
+        3,
+        4,
+        5,
+        6
+      ],
+      "mean": 4.4,
+      "configuredLayers": 4,
+      "evidence": "kettle-knight.webp",
+      "note": "Shield/steam identity reads; the attack is still one sparse arc."
+    },
+    {
+      "id": "enemy:yarn-giant:basic",
+      "name": "Weaver sweep",
+      "scores": [
+        4,
+        3,
+        4,
+        5,
+        6
+      ],
+      "mean": 4.4,
+      "configuredLayers": 4,
+      "evidence": "yarn-giant.webp",
+      "note": "Heavy pose carries the cue; sparse pale thread fan lacks a broad impact."
+    },
+    {
+      "id": "enemy:binding-thread:basic",
+      "name": "Shoulder tug",
+      "scores": [
+        3,
+        2,
+        3,
+        4,
+        6
+      ],
+      "mean": 3.6,
+      "configuredLayers": 4,
+      "evidence": "binding-thread.webp",
+      "note": "Narrow thread travel, low ring impact; signature resembles basic."
+    },
+    {
+      "id": "enemy:practice-cushion:basic",
+      "name": "Soft hop",
+      "scores": [
+        2,
+        2,
+        3,
+        3,
+        6
+      ],
+      "mean": 3.2,
+      "configuredLayers": 4,
+      "evidence": "practice-cushion.webp",
+      "note": "Basic is nearly absent; signature pad silhouette reads but is flat."
+    },
+    {
+      "id": "enemy:pollen-scout:basic",
+      "name": "Seedbrush flick",
+      "scores": [
+        4,
+        3,
+        4,
+        5,
+        6
+      ],
+      "mean": 4.4,
+      "configuredLayers": 4,
+      "evidence": "pollen-scout.webp",
+      "note": "Green petal travel distinguishes it, but impact reduces to a small ring."
+    },
+    {
+      "id": "enemy:rain-spool:basic",
+      "name": "Rain sling",
+      "scores": [
+        3,
+        2,
+        3,
+        4,
+        6
+      ],
+      "mean": 3.6,
+      "configuredLayers": 4,
+      "evidence": "rain-spool.webp",
+      "note": "Blue lines/raindrops readable in travel, sparse impact."
+    },
+    {
+      "id": "enemy:crumb-sentinel:basic",
+      "name": "Sugar pinch",
+      "scores": [
+        4,
+        3,
+        4,
+        5,
+        6
+      ],
+      "mean": 4.4,
+      "configuredLayers": 4,
+      "evidence": "crumb-sentinel.webp",
+      "note": "Crown travel is distinctive, with few supporting layers."
+    },
+    {
+      "id": "enemy:pantry-crown:basic",
+      "name": "Cup tally",
+      "scores": [
+        5,
+        3,
+        4,
+        6,
+        6
+      ],
+      "mean": 4.8,
+      "configuredLayers": 4,
+      "evidence": "pantry-crown.webp",
+      "note": "Cup/crown signature is clear; only modest settling depth."
+    },
+    {
+      "id": "enemy:button-guard",
+      "name": "Button barricade",
+      "scores": [
+        3,
+        2,
+        3,
+        4,
+        6
+      ],
+      "mean": 3.6,
+      "configuredLayers": 4,
+      "evidence": "button-guard.webp",
+      "note": "Button/coil reads at travel; impact collapses to small rings."
+    },
+    {
+      "id": "enemy:sock-skipper",
+      "name": "Pocket skip",
+      "scores": [
+        3,
+        2,
+        3,
+        4,
+        6
+      ],
+      "mean": 3.6,
+      "configuredLayers": 5,
+      "evidence": "sock-skipper.webp",
+      "note": "Sock silhouette travels, but pink fabric at impact competes with body."
+    },
+    {
+      "id": "enemy:spool-ram",
+      "name": "Spring-loaded sweep",
+      "scores": [
+        3,
+        2,
+        3,
+        4,
+        6
+      ],
+      "mean": 3.6,
+      "configuredLayers": 6,
+      "evidence": "spool-ram.webp",
+      "note": "Signature lunge reads; charge lacks a sustained telegraph."
+    },
+    {
+      "id": "enemy:needle-moth",
+      "name": "Needle canopy",
+      "scores": [
+        3,
+        2,
+        3,
+        3,
+        6
+      ],
+      "mean": 3.4,
+      "configuredLayers": 4,
+      "evidence": "needle-moth.webp",
+      "note": "Thin pale needles disappear near impact; no clear three-strike sequence."
+    },
+    {
+      "id": "enemy:teacup-healer",
+      "name": "Careful refill",
+      "scores": [
+        3,
+        2,
+        3,
+        4,
+        6
+      ],
+      "mean": 3.6,
+      "configuredLayers": 5,
+      "evidence": "teacup-healer.webp",
+      "note": "Spoon and cup are legible in travel; healing has little secondary depth."
+    },
+    {
+      "id": "enemy:kettle-knight",
+      "name": "Mirror polish",
+      "scores": [
+        4,
+        3,
+        4,
+        5,
+        6
+      ],
+      "mean": 4.4,
+      "configuredLayers": 5,
+      "evidence": "kettle-knight.webp",
+      "note": "Shield/steam identity reads; the attack is still one sparse arc."
+    },
+    {
+      "id": "enemy:yarn-giant",
+      "name": "Loomfall",
+      "scores": [
+        4,
+        3,
+        4,
+        5,
+        6
+      ],
+      "mean": 4.4,
+      "configuredLayers": 6,
+      "evidence": "yarn-giant.webp",
+      "note": "Heavy pose carries the cue; sparse pale thread fan lacks a broad impact."
+    },
+    {
+      "id": "enemy:binding-thread",
+      "name": "Woven snare",
+      "scores": [
+        3,
+        2,
+        3,
+        4,
+        6
+      ],
+      "mean": 3.6,
+      "configuredLayers": 5,
+      "evidence": "binding-thread.webp",
+      "note": "Narrow thread travel, low ring impact; signature resembles basic."
+    },
+    {
+      "id": "enemy:practice-cushion",
+      "name": "Cushion tumble",
+      "scores": [
+        2,
+        2,
+        3,
+        3,
+        6
+      ],
+      "mean": 3.2,
+      "configuredLayers": 5,
+      "evidence": "practice-cushion.webp",
+      "note": "Basic is nearly absent; signature pad silhouette reads but is flat."
+    },
+    {
+      "id": "enemy:pollen-scout",
+      "name": "Thread garden",
+      "scores": [
+        4,
+        3,
+        4,
+        5,
+        6
+      ],
+      "mean": 4.4,
+      "configuredLayers": 5,
+      "evidence": "pollen-scout.webp",
+      "note": "Green petal travel distinguishes it, but impact reduces to a small ring."
+    },
+    {
+      "id": "enemy:rain-spool",
+      "name": "Cloudburst",
+      "scores": [
+        3,
+        2,
+        3,
+        4,
+        6
+      ],
+      "mean": 3.6,
+      "configuredLayers": 6,
+      "evidence": "rain-spool.webp",
+      "note": "Blue lines/raindrops readable in travel, sparse impact."
+    },
+    {
+      "id": "enemy:crumb-sentinel",
+      "name": "Sugar burst",
+      "scores": [
+        4,
+        3,
+        4,
+        5,
+        6
+      ],
+      "mean": 4.4,
+      "configuredLayers": 6,
+      "evidence": "crumb-sentinel.webp",
+      "note": "Crown travel is distinctive, with few supporting layers."
+    },
+    {
+      "id": "enemy:pantry-crown",
+      "name": "Empty banquet",
+      "scores": [
+        5,
+        3,
+        4,
+        6,
+        6
+      ],
+      "mean": 4.8,
+      "configuredLayers": 6,
+      "evidence": "pantry-crown.webp",
+      "note": "Cup/crown signature is clear; only modest settling depth."
+    }
+  ],
+  "mean": 4.5166666666666675,
+  "worstHalf": [
+    "soot-1",
+    "cinnamon-3",
+    "clover-1",
+    "sorrel-1",
+    "mochi-passive",
+    "soot-passive",
+    "clover-passive",
+    "panko-passive",
+    "mallow-passive",
+    "sorrel-passive",
+    "biscuit-passive",
+    "inkcap-passive",
+    "cinnamon-passive",
+    "brioche-passive",
+    "velvet-passive",
+    "marigold-passive",
+    "inkcap-2",
+    "mochi-2",
+    "panko-2",
+    "brioche-3",
+    "velvet-1",
+    "velvet-2",
+    "soot-4",
+    "clover-2",
+    "mallow-1",
+    "mallow-2",
+    "biscuit-2",
+    "cinnamon-1",
+    "marigold-1",
+    "velvet-3"
+  ],
+  "byCat": {
+    "mochi": 4.680000000000001,
+    "soot": 4.24,
+    "clover": 4.640000000000001,
+    "panko": 4.6,
+    "mallow": 4.6,
+    "sorrel": 4.4799999999999995,
+    "biscuit": 4.680000000000001,
+    "inkcap": 4.5600000000000005,
+    "cinnamon": 4.28,
+    "brioche": 4.5600000000000005,
+    "velvet": 4.24,
+    "marigold": 4.640000000000001
+  }
+}

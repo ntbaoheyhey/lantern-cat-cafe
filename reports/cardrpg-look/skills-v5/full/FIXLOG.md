@@ -59,3 +59,26 @@ Hypotheses: low material value vs mat; boss scale/framing; shared preview slots.
 ## B-M2-003 2026-11-09T04:22Z M2 reaction motion/teaching S3
 Repro: P6/P9/P10/P11 frozen500ms frame strips +12 ultimate peaks with marks. Baseline motion shapes too similar; no one-time keyword legend.
 Attempt1 prepared: staggered low fire fronts, rupture tension/snap/inward drops, Spread status-icon arcs; closable2s session hint outside centre. Need layout/faces/perf/parity verification.
+
+### M2 attempt1 applied
+Narrow numeric reservations, top3marks, hostile material value/rim, boss-only scale/framing, gallery/entrance lanes, distinct reaction phases,2s session hints. No rules/default edits. Verification in /tmp/cardrpg-v5full-m2.
+
+### M2 build contract correction
+First typecheck found optional TurnEvent.note incompatible with numeric-width helper. Accept optional note and use an empty length when absent; no rule/event edits. Typecheck2/lint2/unit2 PASS; original typecheck1 retained.
+
+### B-M2-002 attempt1 measured / attempt2
+Attempt1 luminance0.312–0.417 PASS0.18 but observed1280earned ButtonGuard x805–918/y350–491 washed flat by emissive. P15 boss vertex y=-0.17..0.87 at1024 and Sorrel feet1.09: clipping is a new visible regression, not acceptance. Reduce emission. Boss-only1.25 framing and target2.0, move crew1.1units rearward to retain floor safety. Extend readability receipt with explicit bounds and cross-shot boss/regular ratio; do not replace attempt1.
+
+### B-M1-002 M2 verification FIXED
+M2 narrow per-target number widths: all1176frames across30P5–P14windows,1024/1280/1440, visibleoverlaps0/outside0/unplaced0, errors0. Original20unplacedframes kept inM1. Receipt /tmp/cardrpg-v5full-m2/collide1/collisions.json.gz.
+
+### B-M2-002 attempt2 measured / attempt3
+Attempt2 all vertex bounds inside canvas, preview Sorrel/Soot disjoint, gallery outside stage at3widths. Emission reduction overshot: luminance separation0.010–0.096 MISS0.18; original13opponent denominator also shows boss ratios1.517–1.843 MISS2.0. Source third attempt restores intermediate honey-plum emission(.78 vs .95/.30), scales all three B2 bosses to the same intended projected height with target2.18/framing1.26. Final M2 attempt; retain all failed samples and mark any remaining issue PARTIAL.
+
+### B-M2-002 attempt3 result / regression rollback
+Third material luminance0.262–0.364 PASS0.18 across18masks. Enlarged boss clips1.1–1.4px at P15/1024/1280 (normalized y=-.00362); this is a regression, so reverted ONLY third boss scale/camera to verified attempt2. Boss ratio remainsPARTIAL1.517–1.843; source brightness retained. Queue70548 stopped after attribution to avoid obsolete delivery casts/E2E; current immutable-artifact child allowed to finish. No unrelated process touched. Three-attempt budget reached, revisit boss once atM4.
+### B-M2-003 visual review
+12frame/500ms strips: Wildfire visibly travels; Crumb disperses and clears bodies; Rupture thread/snap is still small around Kettle ankles(x800–940,y400–500 at1280), Spread icons too faint between foes(x850–1100,y330–430). PARTIAL motion beauty, queued MX toolkit/materials and M4 fresh-eyes.48ultimate protectedface masks0offenders, all12peaks0DOM overlaps. Hint close and gallery separation3widthsPASS.
+
+### M2 closure visual review 2026-11-09T04:56Z
+Delivery1280P1 and1024P15 viewed: luminance0.262–0.364 and all projected boundsPASS after rollback. Foes remain visibly pale/flat at1280x720 x795–1130,y350–550 despite the numeric pass. Material attempt budget exhausted; recordPARTIAL surface depth and revisit once inM4 with directional/value separation rather than raising emission. This is not counted as beauty acceptance.

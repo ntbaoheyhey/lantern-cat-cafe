@@ -1,5 +1,5 @@
-M1 đã hoàn tất báo cáo và bằng chứng trên PR nháp416, chưa merge hay triển khai.
-CPU4 cold166,6–200,0ms;168cửa sổ cast tối đa16,8ms;90mặt được bảo vệ không lỗi.
-E2E420/421, lỗi idle-clock đã qua hai lần chạy riêng; OFF không đổi11chunk và không tải Three/model.
-Còn thiếu một cặp chữ/số ở20khung1024px và lát upload51,5ms; giữ nguyên mẫu lỗi, chuyển sangM2/MX.
-Tiếp tục M2: độ rõ quái vật, ưu tiên trạng thái, bố cục và chuyển động phản ứng.
+Chữ và số đã tách rõ: 1.176 khung kiểm tra không chồng lấn, tràn hay thiếu nhãn.
+Ưu tiên tối đa ba dấu trên thân; mọi trạng thái vẫn có trong huy hiệu và mục +N.
+Độ sáng quái so với sàn đạt 0,262–0,364, nhưng chất liệu còn nhạt/phẳng và cần xem lại.
+Kích thước trùm còn PARTIAL 1,52–1,84 lần; giữ khung an toàn sau khi bản lớn hơn bị cắt đầu.
+Tiếp tục bộ VFX rồi tích hợp luật S5; video hiện tại là fixture, chưa phải trận Skills V5 thật.

@@ -1,4 +1,6 @@
 import { applyV5Presentation, v5SourceForPlan, REACTION_WORDS } from '../../squad/turn3d/card-v5-events';
+import { numberLaneWidth } from '../../squad/turn3d/card-number-lane';
+import { StatusLegend } from '../../squad/turn3d/StatusLegend';
 import { StatusBadges } from '../../squad/turn3d/StatusBadges';
 import { statusPresentation, statusImpactLabels } from '../../squad/turn3d/card-status-beats';
 import { useEffect, useMemo, useRef, useState, useSyncExternalStore, type CSSProperties } from 'react';
@@ -61,7 +63,7 @@ export function BattleView({ m }: { m: DepthModel }) {
     labels: (statusView ? statusImpactLabels(m.plan!,id,statusView) : impactLabels(m.plan!.events, id)).filter(event =>
       ['damage', 'heal', 'shield', 'death', 'status_apply'].includes(event.type)
       && (event.amount > 0 || event.type === 'death')),
-  })).filter(result => result.labels.length) : [], [m.plan, battle.actors, statusView]);
+  })).filter(result => result.labels.length).map(result=>({...result,width:numberLaneWidth(result.labels)})) : [], [m.plan, battle.actors, statusView]);
   // Resolve costume metadata when React receives a battle snapshot. The GPU
   // loop otherwise repeats catalog filters and object copies for every cat.
   const actors = project(battle);
@@ -69,10 +71,11 @@ export function BattleView({ m }: { m: DepthModel }) {
   view.current = { actors, currentId: m.plan?.actorId ?? R.currentActor(battle)?.id ?? null, frame: null,
     models: Object.fromEntries(battle.actors.map(actor => [actor.id, actor.catalogId])), warmModelIds: MODEL_IDS, appearance: actor => appearances.get(actor.id) ?? {},
     decorateStage: decorateChapterStage, animateStage: animateChapterStage,
-    autoBattle: true, effectOnly: !!m.galleryBattle && m.galleryEffectOnly,
+    autoBattle: true, galleryPreview: !!m.galleryBattle, effectOnly: !!m.galleryBattle && m.galleryEffectOnly,
     cardStatuses: Object.fromEntries(battle.actors.map(actor => [actor.id, lookV2 ? actor.statuses : actor.statuses.map(status => status.id)])),
     cardPresentation: statusView,
     cardNumberRows: lookV2 ? Object.fromEntries(results.map(r=>[r.id,r.labels.length])) : undefined,
+    cardNumberWidths: lookV2 ? Object.fromEntries(results.map(r=>[r.id,r.width])) : undefined,
     cardMoment: !!m.plan?.ultimate && battle.actors.find(a=>a.id===m.plan?.actorId)?.side==='party' && !m.galleryEffectOnly,
     rows: Object.fromEntries(battle.actors.map(actor => [actor.id, actor.row])),
     chapter: battle.chapter, camera: m.camera, playbackSpeed: m.state.settings.speed,
@@ -98,7 +101,7 @@ export function BattleView({ m }: { m: DepthModel }) {
             // Hidden labels still reserve space for the whole cue window, so
             // staggered hits never shuffle their neighbours while appearing.
             const wordWidth=callout ? (callout.dataset.compact==='true'?38:innerWidth<=1100?138:150) : 0;
-            const numberWidth=number?110:0;
+            const numberWidth=number?Number(number.dataset.laneWidth):0;
             const placed=anchor.textLane;
             for(const element of [callout,number])if(element)element.dataset.placed=String(!!placed);
             if(placed){
@@ -193,7 +196,7 @@ export function BattleView({ m }: { m: DepthModel }) {
       </span>)}<small>Actions are automatic</small></div>}
     {m.offline && new URLSearchParams(window.location.search).get('dev') === '1' && <FeelLab m={m} />}
     <div className={`dp-arena chapter-${battle.chapter} ${lowHealth ? 'dp-low-health' : ''} ${m.galleryBattle && m.galleryEffectOnly ? 'dp-effect-only' : ''}`}><div className="dp-canvas" ref={host} />
-      {readable && m.impactVisible && results.map((result,resultIndex) => <div data-secondary={lookV2 && resultIndex>0} data-number-target={result.id} className="dp-float-number" key={`${m.plan?.skillId}-${result.id}`} ref={element => { if (element) numbers.current.set(result.id, element); else numbers.current.delete(result.id); }} aria-label={`${result.name} ${result.labels.map(label => `${label.type} ${label.amount}`).join(', ')}`}>
+      {readable && m.impactVisible && results.map((result,resultIndex) => <div style={lookV2?{width:result.width}:undefined} data-lane-width={result.width} data-secondary={lookV2 && resultIndex>0} data-number-target={result.id} className="dp-float-number" key={`${m.plan?.skillId}-${result.id}`} ref={element => { if (element) numbers.current.set(result.id, element); else numbers.current.delete(result.id); }} aria-label={`${result.name} ${result.labels.map(label => `${label.type} ${label.amount}`).join(', ')}`}>
         {result.labels.map((event, index) => <span className={`dp-number dp-number-${event.type} ${lookV2 && 'dot' in event && event.dot ? 'dp-number-dot' : ''} ${lookV2 && 'statusId' in event && event.statusId==='snag' ? 'dp-number-bleed' : ''} ${lookV2 && 'bitter' in event && event.bitter ? 'dp-number-bitter' : ''}`} key={index}>{event.type === 'death' ? 'KO' : event.type === 'status_apply' ? event.note : `${event.type === 'heal' ? '+' : event.type === 'shield' ? '◇' : '−'}${event.amount}`}{lookV2 && 'bitter' in event && event.bitter===true && <small> −50%</small>}</span>)}
       </div>)}
       {lookV2 && statusView?.bursts.map((id,index) => {
@@ -222,7 +225,7 @@ export function BattleView({ m }: { m: DepthModel }) {
         </div>;
       })}
     </div>
-    <div className="dp-party">{battle.actors.filter(candidate => candidate.side === 'party').map(cat => <div className={`dp-party-card ${actor?.id === cat.id ? 'current' : ''} ${cat.hp > 0 && cat.hp / cat.maxHp <= .25 ? 'dp-health-critical' : ''}`} key={cat.id} data-hp-plate>
+    <div className="dp-party">{lookV2 && <StatusLegend enabled={new URLSearchParams(window.location.search).get('dev')!=='1' && (m.state.settings as {hints?:boolean}).hints!==false} ids={battle.actors.flatMap(a=>a.statuses.map(s=>s.id)).join(',')} />}{battle.actors.filter(candidate => candidate.side === 'party').map(cat => <div className={`dp-party-card ${actor?.id === cat.id ? 'current' : ''} ${cat.hp > 0 && cat.hp / cat.maxHp <= .25 ? 'dp-health-critical' : ''}`} key={cat.id} data-hp-plate>
       <img src={readable ? readablePortrait(cat.catalogId) ?? portrait(cat.catalogId) : portrait(cat.catalogId)} alt="" />
       <div className="dp-party-health"><span><b>{cat.name}</b><strong>{cat.hp}/{cat.maxHp} HP</strong></span><progress value={cat.hp} max={cat.maxHp} aria-label={`${cat.name} health`} /><Statuses actor={cat} look={lookV2} /></div>
       {readable ? <div className="dp-skills-readonly" aria-label={`${cat.name} skills`}>

@@ -10,7 +10,8 @@ export function styleReadableEnemy(model: T.Object3D, id: string) {
     const materials = Array.isArray(node.material) ? node.material : [node.material];
     for (const material of materials) {
       if (!(material instanceof T.MeshStandardMaterial)) continue;
-      material.color.set(eye ? '#ffe0b2' : '#96667e');
+      material.color.set(eye ? '#ffe0b2' : '#ddb0c8');
+      if(!eye){material.emissive.set('#d294aa');material.emissiveIntensity=.78;}
       material.roughness = eye ? .34 : .84;
       if (eye) { material.emissive.set('#ff9d48'); material.emissiveIntensity = .22; }
       if (!material.userData.b2Enemy) {
@@ -21,10 +22,10 @@ export function styleReadableEnemy(model: T.Object3D, id: string) {
           shader.fragmentShader = shader.fragmentShader.replace('#include <emissivemap_fragment>', `
             #include <emissivemap_fragment>
             float foeRim = pow(1. - abs(dot(normal, normalize(vViewPosition))), 2.5);
-            totalEmissiveRadiance += vec3(.27,.025,.065) * foeRim;
+            totalEmissiveRadiance += vec3(.48,.10,.17) * foeRim;
           `);
         };
-        material.customProgramCacheKey = () => `${key}-readable-plum-rim-1`;
+        material.customProgramCacheKey = () => `${key}-readable-plum-rim-2`;
       }
     }
     if (eye) node.scale.multiply(new T.Vector3(1.14,1.2,1.04));
