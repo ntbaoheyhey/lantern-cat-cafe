@@ -1072,3 +1072,9 @@ Please publish ordered fixtures: status-applied {statusId,stacks,sourceId,target
 reaction {reactionId,primerIds[],targets[]} for Crumb Burst/Wildfire/Rupture/Spread; multi-hit {skillId,targets[] in order,shape} for splash/multi-hit/bounce.
 Retain action/round identity and event order; include snag/bitter and consumed-status/expiry cases; specify events-v4 v2 discriminator and fallback expectations.
 B keeps v1/earned-reveal APIs and phase<=400ms/finish<=800ms intact. Resume V3 only after the published fixture DONE.
+
+## 2026-11-09T01:15:45Z V5LOOK-V01 CLAIM
+V0.1 starts from2504e7df3/DRAFT409 on codex/cardrpg-v5look-v01-2026-11-09: six reviewer readability fixes only.
+Anchored callouts/head marks, readable shoulder flames/status frames, lighter burst puffs and Warm/Glaze; presentation/lookV2 only.
+User now authorizes automatic V3 after V5A-S4 DONE events v2 fixture; native no-model polling waits without timing lock after V0.1.
+One agent/no model helpers; no A/protected edits, merge or deploy. Three-hour V0.1 scope and8MB extra evidence.
