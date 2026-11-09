@@ -1,0 +1,6213 @@
+{
+  "version": "0.7.0",
+  "seed": 195469431,
+  "rng": 699666704,
+  "chapter": 2,
+  "actors": [
+    {
+      "shield": 0,
+      "charge": 0,
+      "break": 0,
+      "statuses": [],
+      "cooldowns": {
+        "mochi-1": 0,
+        "mochi-4": 0
+      },
+      "passiveUsed": false,
+      "phase": 1,
+      "equipment": [
+        "hearthloom-weapon-rare",
+        "moonwick-outfit-rare",
+        "moonwick-charm-rare",
+        "hearthloom-relic-epic"
+      ],
+      "setEffects": [
+        "defend-shield",
+        "marked-break"
+      ],
+      "bonuses": {
+        "hp": 12,
+        "defense": 2,
+        "attack": 1,
+        "critBp": 800,
+        "critDamageBp": 5000,
+        "healingBp": 400,
+        "shieldBp": 0,
+        "healProc": 0,
+        "cleanseProc": 0,
+        "attackCount": 5,
+        "breakShieldRound": 6,
+        "markShieldRound": 6,
+        "uniqueUltimateUsed": 1,
+        "controlImmuneUntil": 5
+      },
+      "turns": 6,
+      "id": "mochi",
+      "catalogId": "mochi",
+      "name": "Mochi",
+      "side": "party",
+      "role": "guardian",
+      "row": "front",
+      "flavour": "hearth",
+      "hp": 0,
+      "maxHp": 725,
+      "attack": 62,
+      "defense": 45,
+      "initiative": 9,
+      "effectHit": 0,
+      "effectResist": 0,
+      "breakCap": 6,
+      "skills": [
+        "mochi-1",
+        "mochi-2",
+        "mochi-3",
+        "mochi-4"
+      ]
+    },
+    {
+      "shield": 0,
+      "charge": 0,
+      "break": 0,
+      "statuses": [
+        {
+          "id": "brittle",
+          "stacks": 3,
+          "remaining": 1,
+          "source": "foe-6-binding-thread",
+          "appliedRound": 12
+        }
+      ],
+      "cooldowns": {
+        "soot-2": 0,
+        "soot-1": 1,
+        "soot-3": 0,
+        "soot-4": 3
+      },
+      "passiveUsed": false,
+      "phase": 1,
+      "equipment": [
+        "hearthloom-weapon-common",
+        "hearthloom-outfit-rare",
+        "hearthloom-charm-common",
+        "bellsteel-relic-rare"
+      ],
+      "setEffects": [
+        "defend-shield"
+      ],
+      "bonuses": {
+        "hp": 11,
+        "critBp": 1200,
+        "critDamageBp": 5000,
+        "healingBp": 400,
+        "shieldBp": 0,
+        "healProc": 0,
+        "cleanseProc": 0,
+        "attackCount": 13,
+        "breakShieldRound": 6,
+        "markShieldRound": 6,
+        "uniqueUltimateUsed": 1,
+        "controlImmuneUntil": 14,
+        "sproutUsed": 1
+      },
+      "turns": 13,
+      "id": "soot",
+      "catalogId": "soot",
+      "name": "Soot",
+      "side": "party",
+      "role": "hexer",
+      "row": "rear",
+      "flavour": "moon",
+      "hp": 0,
+      "maxHp": 575,
+      "attack": 75,
+      "defense": 29,
+      "initiative": 8,
+      "effectHit": 0,
+      "effectResist": 0,
+      "breakCap": 6,
+      "skills": [
+        "soot-1",
+        "soot-2",
+        "soot-3",
+        "soot-4"
+      ]
+    },
+    {
+      "shield": 0,
+      "charge": 0,
+      "break": 0,
+      "statuses": [
+        {
+          "id": "sprout",
+          "stacks": 1,
+          "remaining": 2,
+          "source": "clover",
+          "appliedRound": 12
+        }
+      ],
+      "cooldowns": {
+        "clover-2": 0,
+        "clover-3": 1,
+        "clover-4": 3,
+        "clover-1": 0
+      },
+      "passiveUsed": true,
+      "phase": 1,
+      "equipment": [
+        "moonwick-weapon-common",
+        "hearthloom-outfit-rare",
+        "moonwick-charm-common",
+        "hearthloom-relic-common"
+      ],
+      "setEffects": [
+        "defend-shield",
+        "marked-break"
+      ],
+      "bonuses": {
+        "hp": 5,
+        "critBp": 500,
+        "critDamageBp": 5000,
+        "healingBp": 400,
+        "shieldBp": 0,
+        "healProc": 1,
+        "cleanseProc": 0,
+        "uniqueUltimateUsed": 1,
+        "sproutUsed": 1,
+        "controlImmuneUntil": 11,
+        "attackCount": 1
+      },
+      "turns": 12,
+      "id": "clover",
+      "catalogId": "clover",
+      "name": "Clover",
+      "side": "party",
+      "role": "healer",
+      "row": "rear",
+      "flavour": "garden",
+      "hp": 0,
+      "maxHp": 448,
+      "attack": 44,
+      "defense": 25,
+      "initiative": 7,
+      "effectHit": 0,
+      "effectResist": 0,
+      "breakCap": 6,
+      "skills": [
+        "clover-1",
+        "clover-2",
+        "clover-3",
+        "clover-4"
+      ]
+    },
+    {
+      "shield": 0,
+      "charge": 0,
+      "break": 0,
+      "statuses": [],
+      "cooldowns": {},
+      "passiveUsed": false,
+      "phase": 2,
+      "equipment": [],
+      "setEffects": [],
+      "bonuses": {
+        "v5ReactionRound": 11,
+        "v5Helpers": 1
+      },
+      "turns": 13,
+      "id": "foe-0-rain-spool",
+      "catalogId": "rain-spool",
+      "name": "Rain Spool",
+      "side": "enemy",
+      "role": "charger",
+      "row": "front",
+      "flavour": "ember",
+      "hp": 319,
+      "maxHp": 1253,
+      "attack": 265,
+      "defense": 24,
+      "initiative": 5,
+      "effectHit": 0,
+      "effectResist": 1200,
+      "breakCap": 8,
+      "skills": []
+    },
+    {
+      "shield": 0,
+      "charge": 0,
+      "break": 0,
+      "statuses": [],
+      "cooldowns": {},
+      "passiveUsed": false,
+      "phase": 1,
+      "equipment": [],
+      "setEffects": [],
+      "bonuses": {},
+      "turns": 2,
+      "id": "foe-1-binding-thread",
+      "catalogId": "binding-thread",
+      "name": "Binding Thread",
+      "side": "enemy",
+      "role": "thread",
+      "row": "rear",
+      "flavour": "moon",
+      "hp": 0,
+      "maxHp": 126,
+      "attack": 25,
+      "defense": 0,
+      "initiative": 4,
+      "effectHit": 0,
+      "effectResist": 500,
+      "breakCap": 2,
+      "skills": [],
+      "linkedBossId": "foe-0-rain-spool"
+    },
+    {
+      "shield": 0,
+      "charge": 0,
+      "break": 0,
+      "statuses": [],
+      "cooldowns": {},
+      "passiveUsed": false,
+      "phase": 1,
+      "equipment": [],
+      "setEffects": [],
+      "bonuses": {
+        "controlImmuneUntil": 7
+      },
+      "turns": 6,
+      "id": "foe-2-binding-thread",
+      "catalogId": "binding-thread",
+      "name": "Binding Thread",
+      "side": "enemy",
+      "role": "thread",
+      "row": "rear",
+      "flavour": "moon",
+      "hp": 0,
+      "maxHp": 126,
+      "attack": 25,
+      "defense": 0,
+      "initiative": 3,
+      "effectHit": 0,
+      "effectResist": 500,
+      "breakCap": 2,
+      "skills": [],
+      "linkedBossId": "foe-0-rain-spool"
+    },
+    {
+      "shield": 0,
+      "charge": 0,
+      "break": 0,
+      "statuses": [],
+      "cooldowns": {},
+      "passiveUsed": false,
+      "phase": 1,
+      "equipment": [],
+      "setEffects": [],
+      "bonuses": {},
+      "turns": 3,
+      "id": "foe-6-binding-thread",
+      "catalogId": "binding-thread",
+      "name": "Binding Thread",
+      "side": "enemy",
+      "role": "thread",
+      "row": "rear",
+      "flavour": "moon",
+      "hp": 73,
+      "maxHp": 126,
+      "attack": 25,
+      "defense": 0,
+      "initiative": 5,
+      "effectHit": 0,
+      "effectResist": 500,
+      "breakCap": 2,
+      "skills": [],
+      "linkedBossId": "foe-0-rain-spool"
+    },
+    {
+      "shield": 0,
+      "charge": 0,
+      "break": 0,
+      "statuses": [],
+      "cooldowns": {},
+      "passiveUsed": false,
+      "phase": 1,
+      "equipment": [],
+      "setEffects": [],
+      "bonuses": {
+        "controlImmuneUntil": 13
+      },
+      "turns": 3,
+      "id": "foe-7-binding-thread",
+      "catalogId": "binding-thread",
+      "name": "Binding Thread",
+      "side": "enemy",
+      "role": "thread",
+      "row": "rear",
+      "flavour": "moon",
+      "hp": 71,
+      "maxHp": 126,
+      "attack": 25,
+      "defense": 0,
+      "initiative": 4,
+      "effectHit": 0,
+      "effectResist": 500,
+      "breakCap": 2,
+      "skills": [],
+      "linkedBossId": "foe-0-rain-spool"
+    }
+  ],
+  "round": 13,
+  "queue": [
+    "foe-6-binding-thread",
+    "foe-7-binding-thread"
+  ],
+  "acted": [
+    "soot",
+    "foe-0-rain-spool"
+  ],
+  "energy": 0,
+  "maxEnergy": 0,
+  "intents": [
+    {
+      "actorId": "foe-0-rain-spool",
+      "targetId": "soot",
+      "label": "Rain Spool · basic pressure",
+      "counter": "Prefer healing and Steep; Drowsy softens the signature.",
+      "power": 100,
+      "signature": false,
+      "interrupted": false
+    },
+    {
+      "actorId": "foe-6-binding-thread",
+      "targetId": "soot",
+      "label": "Binding Thread · basic pressure",
+      "counter": "Defeat the thread to release its knot or Cleanse.",
+      "power": 100,
+      "signature": false,
+      "interrupted": false
+    },
+    {
+      "actorId": "foe-7-binding-thread",
+      "targetId": "soot",
+      "label": "Binding Thread · basic pressure",
+      "counter": "Defeat the thread to release its knot or Cleanse.",
+      "power": 100,
+      "signature": false,
+      "interrupted": false
+    }
+  ],
+  "log": [
+    {
+      "round": 0,
+      "actorId": "mochi",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Regen"
+    },
+    {
+      "round": 0,
+      "actorId": "soot",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Regen"
+    },
+    {
+      "round": 0,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Regen"
+    },
+    {
+      "round": 1,
+      "actorId": "mochi",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "shield",
+      "amount": 6,
+      "text": ""
+    },
+    {
+      "round": 1,
+      "actorId": "mochi",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "mochi-1",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "splash"
+    },
+    {
+      "round": 1,
+      "actorId": "mochi",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 44,
+      "text": ""
+    },
+    {
+      "round": 1,
+      "actorId": "mochi",
+      "targetId": "foe-1-binding-thread",
+      "skillId": "mochi-1",
+      "kind": "multi-hit",
+      "amount": 1,
+      "text": "splash"
+    },
+    {
+      "round": 1,
+      "actorId": "mochi",
+      "targetId": "foe-1-binding-thread",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 22,
+      "text": ""
+    },
+    {
+      "round": 1,
+      "actorId": "mochi",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "shield",
+      "amount": 18,
+      "text": ""
+    },
+    {
+      "round": 1,
+      "actorId": "mochi",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "mochi-1",
+      "kind": "action",
+      "amount": 0,
+      "text": "Mochi focuses the weakest reachable foe, Rain Spool (HP 100%) · Door knock"
+    },
+    {
+      "round": 1,
+      "actorId": "soot",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "soot-2",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "single"
+    },
+    {
+      "round": 1,
+      "actorId": "soot",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 29,
+      "text": ""
+    },
+    {
+      "round": 1,
+      "actorId": "soot",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Mark"
+    },
+    {
+      "round": 1,
+      "actorId": "soot",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "soot-2",
+      "kind": "action",
+      "amount": 0,
+      "text": "Soot focuses the weakest reachable foe, Rain Spool (HP 96%) · Black cup"
+    },
+    {
+      "round": 1,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "clover-2",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "ally-row"
+    },
+    {
+      "round": 1,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 1,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "dispel",
+      "amount": 0,
+      "text": "Removed debuffs"
+    },
+    {
+      "round": 1,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "status",
+      "amount": 2,
+      "text": "Regen"
+    },
+    {
+      "round": 1,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "clover-2",
+      "kind": "multi-hit",
+      "amount": 1,
+      "text": "ally-row"
+    },
+    {
+      "round": 1,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 1,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "status",
+      "amount": 2,
+      "text": "Regen"
+    },
+    {
+      "round": 1,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "clover-2",
+      "kind": "action",
+      "amount": 0,
+      "text": "Clover heals Clover (HP 100%) · Patient steep"
+    },
+    {
+      "round": 1,
+      "actorId": "foe-0-rain-spool",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "absorbed",
+      "amount": 24,
+      "text": "Shield absorbed direct damage"
+    },
+    {
+      "round": 1,
+      "actorId": "foe-0-rain-spool",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 133,
+      "text": ""
+    },
+    {
+      "round": 1,
+      "actorId": "foe-0-rain-spool",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "enemy-action",
+      "amount": 0,
+      "text": "Rain Spool · basic pressure"
+    },
+    {
+      "round": 1,
+      "actorId": "foe-1-binding-thread",
+      "targetId": "mochi",
+      "skillId": "binding-thread",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "single"
+    },
+    {
+      "round": 1,
+      "actorId": "foe-1-binding-thread",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 8,
+      "text": ""
+    },
+    {
+      "round": 1,
+      "actorId": "foe-1-binding-thread",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Shred"
+    },
+    {
+      "round": 1,
+      "actorId": "foe-1-binding-thread",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "enemy-action",
+      "amount": 0,
+      "text": "Binding Thread · basic pressure"
+    },
+    {
+      "round": 1,
+      "actorId": "foe-2-binding-thread",
+      "targetId": "mochi",
+      "skillId": "binding-thread",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "single"
+    },
+    {
+      "round": 1,
+      "actorId": "foe-2-binding-thread",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 8,
+      "text": ""
+    },
+    {
+      "round": 1,
+      "actorId": "foe-2-binding-thread",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "status",
+      "amount": 2,
+      "text": "Shred"
+    },
+    {
+      "round": 1,
+      "actorId": "foe-2-binding-thread",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "enemy-action",
+      "amount": 0,
+      "text": "Binding Thread · basic pressure"
+    },
+    {
+      "round": 1,
+      "actorId": "mochi",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 19,
+      "text": ""
+    },
+    {
+      "round": 1,
+      "actorId": "mochi",
+      "targetId": "mochi",
+      "skillId": "steep",
+      "kind": "status-tick",
+      "amount": 19,
+      "text": "Regen"
+    },
+    {
+      "round": 1,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 1,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "steep",
+      "kind": "status-tick",
+      "amount": 0,
+      "text": "Regen"
+    },
+    {
+      "round": 1,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 1,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "steep",
+      "kind": "status-tick",
+      "amount": 0,
+      "text": "Regen"
+    },
+    {
+      "round": 2,
+      "actorId": "mochi",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "shield",
+      "amount": 6,
+      "text": ""
+    },
+    {
+      "round": 2,
+      "actorId": "mochi",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "mochi-1",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "splash"
+    },
+    {
+      "round": 2,
+      "actorId": "mochi",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 57,
+      "text": ""
+    },
+    {
+      "round": 2,
+      "actorId": "mochi",
+      "targetId": "foe-1-binding-thread",
+      "skillId": "mochi-1",
+      "kind": "multi-hit",
+      "amount": 1,
+      "text": "splash"
+    },
+    {
+      "round": 2,
+      "actorId": "mochi",
+      "targetId": "foe-1-binding-thread",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 31,
+      "text": ""
+    },
+    {
+      "round": 2,
+      "actorId": "mochi",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "shield",
+      "amount": 18,
+      "text": ""
+    },
+    {
+      "round": 2,
+      "actorId": "mochi",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "mochi-1",
+      "kind": "action",
+      "amount": 0,
+      "text": "Mochi focuses the weakest reachable foe, Rain Spool (HP 94%) · Door knock"
+    },
+    {
+      "round": 2,
+      "actorId": "soot",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "soot-1",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "pierce"
+    },
+    {
+      "round": 2,
+      "actorId": "soot",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 61,
+      "text": ""
+    },
+    {
+      "round": 2,
+      "actorId": "soot",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Crumb trail"
+    },
+    {
+      "round": 2,
+      "actorId": "soot",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "soot-1",
+      "kind": "action",
+      "amount": 0,
+      "text": "Soot pressures a foe, Rain Spool (HP 90%) · Cocoa spark"
+    },
+    {
+      "round": 2,
+      "actorId": "clover",
+      "targetId": "mochi",
+      "skillId": "clover-3",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "team"
+    },
+    {
+      "round": 2,
+      "actorId": "clover",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "dispel",
+      "amount": 1,
+      "text": "Removed debuffs"
+    },
+    {
+      "round": 2,
+      "actorId": "clover",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 47,
+      "text": ""
+    },
+    {
+      "round": 2,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "clover-3",
+      "kind": "multi-hit",
+      "amount": 1,
+      "text": "team"
+    },
+    {
+      "round": 2,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "dispel",
+      "amount": 0,
+      "text": "Removed debuffs"
+    },
+    {
+      "round": 2,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 2,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "clover-3",
+      "kind": "multi-hit",
+      "amount": 2,
+      "text": "team"
+    },
+    {
+      "round": 2,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "dispel",
+      "amount": 0,
+      "text": "Removed debuffs"
+    },
+    {
+      "round": 2,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 2,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "clover-3",
+      "kind": "action",
+      "amount": 0,
+      "text": "Clover supports the team (lowest HP 82%) · Clearleaf rinse"
+    },
+    {
+      "round": 2,
+      "actorId": "foe-0-rain-spool",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "absorbed",
+      "amount": 24,
+      "text": "Shield absorbed direct damage"
+    },
+    {
+      "round": 2,
+      "actorId": "foe-0-rain-spool",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 136,
+      "text": ""
+    },
+    {
+      "round": 2,
+      "actorId": "foe-0-rain-spool",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "enemy-action",
+      "amount": 0,
+      "text": "Rain Spool · basic pressure"
+    },
+    {
+      "round": 2,
+      "actorId": "foe-1-binding-thread",
+      "targetId": "mochi",
+      "skillId": "binding-thread",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "single"
+    },
+    {
+      "round": 2,
+      "actorId": "foe-1-binding-thread",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 8,
+      "text": ""
+    },
+    {
+      "round": 2,
+      "actorId": "foe-1-binding-thread",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Shred"
+    },
+    {
+      "round": 2,
+      "actorId": "foe-1-binding-thread",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "enemy-action",
+      "amount": 0,
+      "text": "Binding Thread · basic pressure"
+    },
+    {
+      "round": 2,
+      "actorId": "foe-2-binding-thread",
+      "targetId": "mochi",
+      "skillId": "binding-thread",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "single"
+    },
+    {
+      "round": 2,
+      "actorId": "foe-2-binding-thread",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 9,
+      "text": ""
+    },
+    {
+      "round": 2,
+      "actorId": "foe-2-binding-thread",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "status",
+      "amount": 2,
+      "text": "Shred"
+    },
+    {
+      "round": 2,
+      "actorId": "foe-2-binding-thread",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "enemy-action",
+      "amount": 0,
+      "text": "Binding Thread · basic pressure"
+    },
+    {
+      "round": 2,
+      "actorId": "mochi",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 19,
+      "text": ""
+    },
+    {
+      "round": 2,
+      "actorId": "mochi",
+      "targetId": "mochi",
+      "skillId": "steep",
+      "kind": "status-tick",
+      "amount": 19,
+      "text": "Regen"
+    },
+    {
+      "round": 2,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 2,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "steep",
+      "kind": "status-tick",
+      "amount": 0,
+      "text": "Regen"
+    },
+    {
+      "round": 2,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 2,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "steep",
+      "kind": "status-tick",
+      "amount": 0,
+      "text": "Regen"
+    },
+    {
+      "round": 2,
+      "actorId": "foe-0-rain-spool",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "",
+      "kind": "expire",
+      "amount": 0,
+      "text": "Mark"
+    },
+    {
+      "round": 3,
+      "actorId": "mochi",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "shield",
+      "amount": 6,
+      "text": ""
+    },
+    {
+      "round": 3,
+      "actorId": "mochi",
+      "targetId": "mochi",
+      "skillId": "mochi-4",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "team"
+    },
+    {
+      "round": 3,
+      "actorId": "mochi",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "dispel",
+      "amount": 1,
+      "text": "Removed debuffs"
+    },
+    {
+      "round": 3,
+      "actorId": "mochi",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "shield",
+      "amount": 130,
+      "text": ""
+    },
+    {
+      "round": 3,
+      "actorId": "mochi",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "status",
+      "amount": 2,
+      "text": "Warm"
+    },
+    {
+      "round": 3,
+      "actorId": "mochi",
+      "targetId": "soot",
+      "skillId": "mochi-4",
+      "kind": "multi-hit",
+      "amount": 1,
+      "text": "team"
+    },
+    {
+      "round": 3,
+      "actorId": "mochi",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "dispel",
+      "amount": 0,
+      "text": "Removed debuffs"
+    },
+    {
+      "round": 3,
+      "actorId": "mochi",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "shield",
+      "amount": 130,
+      "text": ""
+    },
+    {
+      "round": 3,
+      "actorId": "mochi",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "status",
+      "amount": 2,
+      "text": "Warm"
+    },
+    {
+      "round": 3,
+      "actorId": "mochi",
+      "targetId": "clover",
+      "skillId": "mochi-4",
+      "kind": "multi-hit",
+      "amount": 2,
+      "text": "team"
+    },
+    {
+      "round": 3,
+      "actorId": "mochi",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "dispel",
+      "amount": 0,
+      "text": "Removed debuffs"
+    },
+    {
+      "round": 3,
+      "actorId": "mochi",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "shield",
+      "amount": 130,
+      "text": ""
+    },
+    {
+      "round": 3,
+      "actorId": "mochi",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "status",
+      "amount": 2,
+      "text": "Warm"
+    },
+    {
+      "round": 3,
+      "actorId": "mochi",
+      "targetId": "clover",
+      "skillId": "mochi-4",
+      "kind": "action",
+      "amount": 0,
+      "text": "Mochi supports the team (lowest HP 70%) · Last light shelter"
+    },
+    {
+      "round": 3,
+      "actorId": "soot",
+      "targetId": "foe-1-binding-thread",
+      "skillId": "soot-1",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "pierce"
+    },
+    {
+      "round": 3,
+      "actorId": "soot",
+      "targetId": "foe-1-binding-thread",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 73,
+      "text": ""
+    },
+    {
+      "round": 3,
+      "actorId": "soot",
+      "targetId": "foe-1-binding-thread",
+      "skillId": "",
+      "kind": "defeat",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 3,
+      "actorId": "soot",
+      "targetId": "foe-1-binding-thread",
+      "skillId": "soot-1",
+      "kind": "action",
+      "amount": 0,
+      "text": "Soot focuses the weakest reachable foe, Binding Thread (HP 58%) · Cocoa spark"
+    },
+    {
+      "round": 3,
+      "actorId": "clover",
+      "targetId": "mochi",
+      "skillId": "clover-4",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "team"
+    },
+    {
+      "round": 3,
+      "actorId": "clover",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 94,
+      "text": ""
+    },
+    {
+      "round": 3,
+      "actorId": "clover",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Second sprout"
+    },
+    {
+      "round": 3,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "clover-4",
+      "kind": "multi-hit",
+      "amount": 1,
+      "text": "team"
+    },
+    {
+      "round": 3,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 3,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Second sprout"
+    },
+    {
+      "round": 3,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "clover-4",
+      "kind": "multi-hit",
+      "amount": 2,
+      "text": "team"
+    },
+    {
+      "round": 3,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 3,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Second sprout"
+    },
+    {
+      "round": 3,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "clover-4",
+      "kind": "action",
+      "amount": 0,
+      "text": "Clover supports the team (lowest HP 70%) · Greenhouse morning"
+    },
+    {
+      "round": 3,
+      "actorId": "foe-0-rain-spool",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 252,
+      "text": ""
+    },
+    {
+      "round": 3,
+      "actorId": "foe-0-rain-spool",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Daze"
+    },
+    {
+      "round": 3,
+      "actorId": "foe-0-rain-spool",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "enemy-action",
+      "amount": 0,
+      "text": "Cloudburst removes shields before hitting a row; below half HP it reaches both."
+    },
+    {
+      "round": 3,
+      "actorId": "foe-2-binding-thread",
+      "targetId": "mochi",
+      "skillId": "binding-thread",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "single"
+    },
+    {
+      "round": 3,
+      "actorId": "foe-2-binding-thread",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 6,
+      "text": ""
+    },
+    {
+      "round": 3,
+      "actorId": "foe-2-binding-thread",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Shred"
+    },
+    {
+      "round": 3,
+      "actorId": "foe-2-binding-thread",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Daze"
+    },
+    {
+      "round": 3,
+      "actorId": "foe-2-binding-thread",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "enemy-action",
+      "amount": 0,
+      "text": "Knots apply Shred; every third turn Dazes the weakest cat."
+    },
+    {
+      "round": 3,
+      "actorId": "mochi",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 19,
+      "text": ""
+    },
+    {
+      "round": 3,
+      "actorId": "mochi",
+      "targetId": "mochi",
+      "skillId": "steep",
+      "kind": "status-tick",
+      "amount": 19,
+      "text": "Regen"
+    },
+    {
+      "round": 3,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 3,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "steep",
+      "kind": "status-tick",
+      "amount": 0,
+      "text": "Regen"
+    },
+    {
+      "round": 3,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 3,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "steep",
+      "kind": "status-tick",
+      "amount": 0,
+      "text": "Regen"
+    },
+    {
+      "round": 3,
+      "actorId": "mochi",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "expire",
+      "amount": 0,
+      "text": "Regen"
+    },
+    {
+      "round": 3,
+      "actorId": "soot",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "expire",
+      "amount": 0,
+      "text": "Regen"
+    },
+    {
+      "round": 3,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "expire",
+      "amount": 0,
+      "text": "Regen"
+    },
+    {
+      "round": 4,
+      "actorId": "mochi",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "shield",
+      "amount": 6,
+      "text": ""
+    },
+    {
+      "round": 4,
+      "actorId": "mochi",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "suppressed",
+      "amount": 1,
+      "text": "Daze spent the next action"
+    },
+    {
+      "round": 4,
+      "actorId": "mochi",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "mochi-1",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "splash"
+    },
+    {
+      "round": 4,
+      "actorId": "mochi",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 22,
+      "text": ""
+    },
+    {
+      "round": 4,
+      "actorId": "mochi",
+      "targetId": "foe-2-binding-thread",
+      "skillId": "mochi-1",
+      "kind": "multi-hit",
+      "amount": 1,
+      "text": "splash"
+    },
+    {
+      "round": 4,
+      "actorId": "mochi",
+      "targetId": "foe-2-binding-thread",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 12,
+      "text": ""
+    },
+    {
+      "round": 4,
+      "actorId": "mochi",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "shield",
+      "amount": 9,
+      "text": ""
+    },
+    {
+      "round": 4,
+      "actorId": "mochi",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "mochi-1",
+      "kind": "action",
+      "amount": 0,
+      "text": "Mochi focuses the weakest reachable foe, Rain Spool (HP 85%) · Door knock"
+    },
+    {
+      "round": 4,
+      "actorId": "soot",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "soot-3",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "single"
+    },
+    {
+      "round": 4,
+      "actorId": "soot",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 63,
+      "text": ""
+    },
+    {
+      "round": 4,
+      "actorId": "soot",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "",
+      "kind": "detonate",
+      "amount": 36,
+      "text": ""
+    },
+    {
+      "round": 4,
+      "actorId": "soot",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "shield",
+      "amount": 6,
+      "text": ""
+    },
+    {
+      "round": 4,
+      "actorId": "soot",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "crumb-burst",
+      "kind": "reaction",
+      "amount": 1,
+      "text": "Crumb Burst"
+    },
+    {
+      "round": 4,
+      "actorId": "soot",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "soot-3",
+      "kind": "action",
+      "amount": 0,
+      "text": "Soot focuses the weakest reachable foe, Rain Spool (HP 83%) · Lantern wick"
+    },
+    {
+      "round": 4,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "clover-2",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "ally-row"
+    },
+    {
+      "round": 4,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 4,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Regen"
+    },
+    {
+      "round": 4,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "clover-2",
+      "kind": "multi-hit",
+      "amount": 1,
+      "text": "ally-row"
+    },
+    {
+      "round": 4,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 4,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Regen"
+    },
+    {
+      "round": 4,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "clover-2",
+      "kind": "action",
+      "amount": 0,
+      "text": "Clover heals Clover (HP 100%) · Patient steep"
+    },
+    {
+      "round": 4,
+      "actorId": "foe-0-rain-spool",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 151,
+      "text": ""
+    },
+    {
+      "round": 4,
+      "actorId": "foe-0-rain-spool",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "enemy-action",
+      "amount": 0,
+      "text": "Rain Spool · basic pressure"
+    },
+    {
+      "round": 4,
+      "actorId": "foe-2-binding-thread",
+      "targetId": "mochi",
+      "skillId": "binding-thread",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "single"
+    },
+    {
+      "round": 4,
+      "actorId": "foe-2-binding-thread",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 7,
+      "text": ""
+    },
+    {
+      "round": 4,
+      "actorId": "foe-2-binding-thread",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "status",
+      "amount": 2,
+      "text": "Shred"
+    },
+    {
+      "round": 4,
+      "actorId": "foe-2-binding-thread",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "enemy-action",
+      "amount": 0,
+      "text": "Binding Thread · basic pressure"
+    },
+    {
+      "round": 4,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 4,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "steep",
+      "kind": "status-tick",
+      "amount": 0,
+      "text": "Regen"
+    },
+    {
+      "round": 4,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 4,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "steep",
+      "kind": "status-tick",
+      "amount": 0,
+      "text": "Regen"
+    },
+    {
+      "round": 4,
+      "actorId": "mochi",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "expire",
+      "amount": 0,
+      "text": "Warm"
+    },
+    {
+      "round": 4,
+      "actorId": "soot",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "expire",
+      "amount": 0,
+      "text": "Warm"
+    },
+    {
+      "round": 4,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "expire",
+      "amount": 0,
+      "text": "Warm"
+    },
+    {
+      "round": 5,
+      "actorId": "mochi",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "shield",
+      "amount": 6,
+      "text": ""
+    },
+    {
+      "round": 5,
+      "actorId": "mochi",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "mochi-1",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "splash"
+    },
+    {
+      "round": 5,
+      "actorId": "mochi",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 65,
+      "text": ""
+    },
+    {
+      "round": 5,
+      "actorId": "mochi",
+      "targetId": "foe-2-binding-thread",
+      "skillId": "mochi-1",
+      "kind": "multi-hit",
+      "amount": 1,
+      "text": "splash"
+    },
+    {
+      "round": 5,
+      "actorId": "mochi",
+      "targetId": "foe-2-binding-thread",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 23,
+      "text": ""
+    },
+    {
+      "round": 5,
+      "actorId": "mochi",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "shield",
+      "amount": 18,
+      "text": ""
+    },
+    {
+      "round": 5,
+      "actorId": "mochi",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "mochi-1",
+      "kind": "action",
+      "amount": 0,
+      "text": "Mochi focuses the weakest reachable foe, Rain Spool (HP 75%) · Door knock"
+    },
+    {
+      "round": 5,
+      "actorId": "soot",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "soot-2",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "single"
+    },
+    {
+      "round": 5,
+      "actorId": "soot",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 45,
+      "text": ""
+    },
+    {
+      "round": 5,
+      "actorId": "soot",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Mark"
+    },
+    {
+      "round": 5,
+      "actorId": "soot",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "soot-2",
+      "kind": "action",
+      "amount": 0,
+      "text": "Soot focuses the weakest reachable foe, Rain Spool (HP 70%) · Black cup"
+    },
+    {
+      "round": 5,
+      "actorId": "clover",
+      "targetId": "mochi",
+      "skillId": "clover-3",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "team"
+    },
+    {
+      "round": 5,
+      "actorId": "clover",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "dispel",
+      "amount": 1,
+      "text": "Removed debuffs"
+    },
+    {
+      "round": 5,
+      "actorId": "clover",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 47,
+      "text": ""
+    },
+    {
+      "round": 5,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "clover-3",
+      "kind": "multi-hit",
+      "amount": 1,
+      "text": "team"
+    },
+    {
+      "round": 5,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "dispel",
+      "amount": 0,
+      "text": "Removed debuffs"
+    },
+    {
+      "round": 5,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 5,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "clover-3",
+      "kind": "multi-hit",
+      "amount": 2,
+      "text": "team"
+    },
+    {
+      "round": 5,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "dispel",
+      "amount": 0,
+      "text": "Removed debuffs"
+    },
+    {
+      "round": 5,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 5,
+      "actorId": "clover",
+      "targetId": "mochi",
+      "skillId": "clover-3",
+      "kind": "action",
+      "amount": 0,
+      "text": "Clover supports the team (lowest HP 28%) · Clearleaf rinse"
+    },
+    {
+      "round": 5,
+      "actorId": "foe-0-rain-spool",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "absorbed",
+      "amount": 24,
+      "text": "Shield absorbed direct damage"
+    },
+    {
+      "round": 5,
+      "actorId": "foe-0-rain-spool",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 137,
+      "text": ""
+    },
+    {
+      "round": 5,
+      "actorId": "foe-0-rain-spool",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "enemy-action",
+      "amount": 0,
+      "text": "Rain Spool · basic pressure"
+    },
+    {
+      "round": 5,
+      "actorId": "foe-2-binding-thread",
+      "targetId": "mochi",
+      "skillId": "binding-thread",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "single"
+    },
+    {
+      "round": 5,
+      "actorId": "foe-2-binding-thread",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 8,
+      "text": ""
+    },
+    {
+      "round": 5,
+      "actorId": "foe-2-binding-thread",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "resist",
+      "amount": 0,
+      "text": "Mochi resisted Shred"
+    },
+    {
+      "round": 5,
+      "actorId": "foe-2-binding-thread",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "enemy-action",
+      "amount": 0,
+      "text": "Binding Thread · basic pressure"
+    },
+    {
+      "round": 5,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 5,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "steep",
+      "kind": "status-tick",
+      "amount": 0,
+      "text": "Regen"
+    },
+    {
+      "round": 5,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 5,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "steep",
+      "kind": "status-tick",
+      "amount": 0,
+      "text": "Regen"
+    },
+    {
+      "round": 5,
+      "actorId": "mochi",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "expire",
+      "amount": 0,
+      "text": "Second sprout"
+    },
+    {
+      "round": 5,
+      "actorId": "soot",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "expire",
+      "amount": 0,
+      "text": "Second sprout"
+    },
+    {
+      "round": 5,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "expire",
+      "amount": 0,
+      "text": "Second sprout"
+    },
+    {
+      "round": 6,
+      "actorId": "mochi",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "shield",
+      "amount": 6,
+      "text": ""
+    },
+    {
+      "round": 6,
+      "actorId": "mochi",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "mochi-1",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "splash"
+    },
+    {
+      "round": 6,
+      "actorId": "mochi",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 53,
+      "text": ""
+    },
+    {
+      "round": 6,
+      "actorId": "mochi",
+      "targetId": "foe-2-binding-thread",
+      "skillId": "mochi-1",
+      "kind": "multi-hit",
+      "amount": 1,
+      "text": "splash"
+    },
+    {
+      "round": 6,
+      "actorId": "mochi",
+      "targetId": "foe-2-binding-thread",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 21,
+      "text": ""
+    },
+    {
+      "round": 6,
+      "actorId": "mochi",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "shield",
+      "amount": 18,
+      "text": ""
+    },
+    {
+      "round": 6,
+      "actorId": "mochi",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "mochi-1",
+      "kind": "action",
+      "amount": 0,
+      "text": "Mochi focuses the weakest reachable foe, Rain Spool (HP 66%) · Door knock"
+    },
+    {
+      "round": 6,
+      "actorId": "soot",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "soot-4",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "all"
+    },
+    {
+      "round": 6,
+      "actorId": "soot",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 53,
+      "text": ""
+    },
+    {
+      "round": 6,
+      "actorId": "soot",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "",
+      "kind": "resist",
+      "amount": 0,
+      "text": "Rain Spool resisted Daze"
+    },
+    {
+      "round": 6,
+      "actorId": "soot",
+      "targetId": "foe-2-binding-thread",
+      "skillId": "soot-4",
+      "kind": "multi-hit",
+      "amount": 1,
+      "text": "all"
+    },
+    {
+      "round": 6,
+      "actorId": "soot",
+      "targetId": "foe-2-binding-thread",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 55,
+      "text": ""
+    },
+    {
+      "round": 6,
+      "actorId": "soot",
+      "targetId": "foe-2-binding-thread",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Daze"
+    },
+    {
+      "round": 6,
+      "actorId": "soot",
+      "targetId": "foe-2-binding-thread",
+      "skillId": "soot-4",
+      "kind": "action",
+      "amount": 0,
+      "text": "Soot focuses the weakest reachable foe, Binding Thread (HP 56%) · Midnight service"
+    },
+    {
+      "round": 6,
+      "actorId": "clover",
+      "targetId": "mochi",
+      "skillId": "clover-2",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "ally-row"
+    },
+    {
+      "round": 6,
+      "actorId": "clover",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 36,
+      "text": ""
+    },
+    {
+      "round": 6,
+      "actorId": "clover",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Regen"
+    },
+    {
+      "round": 6,
+      "actorId": "clover",
+      "targetId": "mochi",
+      "skillId": "clover-2",
+      "kind": "action",
+      "amount": 0,
+      "text": "Clover heals Mochi (HP 15%) · Patient steep"
+    },
+    {
+      "round": 6,
+      "actorId": "foe-0-rain-spool",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 143,
+      "text": ""
+    },
+    {
+      "round": 6,
+      "actorId": "foe-0-rain-spool",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "defeat",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 6,
+      "actorId": "foe-0-rain-spool",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "enemy-action",
+      "amount": 0,
+      "text": "Cloudburst removes shields before hitting a row; below half HP it reaches both."
+    },
+    {
+      "round": 6,
+      "actorId": "foe-2-binding-thread",
+      "targetId": "foe-2-binding-thread",
+      "skillId": "",
+      "kind": "suppressed",
+      "amount": 1,
+      "text": "Daze spent the next action"
+    },
+    {
+      "round": 6,
+      "actorId": "foe-2-binding-thread",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "absorbed",
+      "amount": 9,
+      "text": "Shield absorbed direct damage"
+    },
+    {
+      "round": 6,
+      "actorId": "foe-2-binding-thread",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 6,
+      "actorId": "foe-2-binding-thread",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "enemy-action",
+      "amount": 0,
+      "text": "Drowsy intent · softened basic"
+    },
+    {
+      "round": 6,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 6,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "steep",
+      "kind": "status-tick",
+      "amount": 0,
+      "text": "Regen"
+    },
+    {
+      "round": 6,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 6,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "steep",
+      "kind": "status-tick",
+      "amount": 0,
+      "text": "Regen"
+    },
+    {
+      "round": 6,
+      "actorId": "soot",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "expire",
+      "amount": 0,
+      "text": "Regen"
+    },
+    {
+      "round": 6,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "expire",
+      "amount": 0,
+      "text": "Regen"
+    },
+    {
+      "round": 6,
+      "actorId": "foe-0-rain-spool",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "",
+      "kind": "expire",
+      "amount": 0,
+      "text": "Mark"
+    },
+    {
+      "round": 7,
+      "actorId": "soot",
+      "targetId": "foe-2-binding-thread",
+      "skillId": "soot-1",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "pierce"
+    },
+    {
+      "round": 7,
+      "actorId": "soot",
+      "targetId": "foe-2-binding-thread",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 15,
+      "text": ""
+    },
+    {
+      "round": 7,
+      "actorId": "soot",
+      "targetId": "foe-2-binding-thread",
+      "skillId": "",
+      "kind": "defeat",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 7,
+      "actorId": "soot",
+      "targetId": "foe-2-binding-thread",
+      "skillId": "soot-1",
+      "kind": "action",
+      "amount": 0,
+      "text": "Soot focuses the weakest reachable foe, Binding Thread (HP 12%) · Cocoa spark"
+    },
+    {
+      "round": 7,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "clover-2",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "ally-row"
+    },
+    {
+      "round": 7,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 7,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Regen"
+    },
+    {
+      "round": 7,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "clover-2",
+      "kind": "multi-hit",
+      "amount": 1,
+      "text": "ally-row"
+    },
+    {
+      "round": 7,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 7,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Regen"
+    },
+    {
+      "round": 7,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "clover-2",
+      "kind": "action",
+      "amount": 0,
+      "text": "Clover heals Clover (HP 100%) · Patient steep"
+    },
+    {
+      "round": 7,
+      "actorId": "foe-0-rain-spool",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "absorbed",
+      "amount": 130,
+      "text": "Shield absorbed direct damage"
+    },
+    {
+      "round": 7,
+      "actorId": "foe-0-rain-spool",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 79,
+      "text": ""
+    },
+    {
+      "round": 7,
+      "actorId": "foe-0-rain-spool",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "enemy-action",
+      "amount": 0,
+      "text": "Rain Spool · basic pressure"
+    },
+    {
+      "round": 7,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 7,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "steep",
+      "kind": "status-tick",
+      "amount": 0,
+      "text": "Regen"
+    },
+    {
+      "round": 7,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 19,
+      "text": ""
+    },
+    {
+      "round": 7,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "steep",
+      "kind": "status-tick",
+      "amount": 19,
+      "text": "Regen"
+    },
+    {
+      "round": 8,
+      "actorId": "soot",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "soot-1",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "pierce"
+    },
+    {
+      "round": 8,
+      "actorId": "soot",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 75,
+      "text": ""
+    },
+    {
+      "round": 8,
+      "actorId": "soot",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Crumb trail"
+    },
+    {
+      "round": 8,
+      "actorId": "soot",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "soot-1",
+      "kind": "action",
+      "amount": 0,
+      "text": "Soot focuses the weakest reachable foe, Rain Spool (HP 58%) · Cocoa spark"
+    },
+    {
+      "round": 8,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "clover-4",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "team"
+    },
+    {
+      "round": 8,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 8,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Second sprout"
+    },
+    {
+      "round": 8,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "clover-4",
+      "kind": "multi-hit",
+      "amount": 1,
+      "text": "team"
+    },
+    {
+      "round": 8,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 60,
+      "text": ""
+    },
+    {
+      "round": 8,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Second sprout"
+    },
+    {
+      "round": 8,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "clover-4",
+      "kind": "action",
+      "amount": 0,
+      "text": "Clover supports the team (lowest HP 87%) · Greenhouse morning"
+    },
+    {
+      "round": 8,
+      "actorId": "foe-0-rain-spool",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 193,
+      "text": ""
+    },
+    {
+      "round": 8,
+      "actorId": "foe-0-rain-spool",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "enemy-action",
+      "amount": 0,
+      "text": "Rain Spool · basic pressure"
+    },
+    {
+      "round": 8,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 8,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "steep",
+      "kind": "status-tick",
+      "amount": 0,
+      "text": "Regen"
+    },
+    {
+      "round": 8,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 19,
+      "text": ""
+    },
+    {
+      "round": 8,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "steep",
+      "kind": "status-tick",
+      "amount": 19,
+      "text": "Regen"
+    },
+    {
+      "round": 8,
+      "actorId": "mochi",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "expire",
+      "amount": 0,
+      "text": "Regen"
+    },
+    {
+      "round": 9,
+      "actorId": "soot",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "soot-3",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "single"
+    },
+    {
+      "round": 9,
+      "actorId": "soot",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 57,
+      "text": ""
+    },
+    {
+      "round": 9,
+      "actorId": "foe-0-rain-spool",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "",
+      "kind": "phase",
+      "amount": 2,
+      "text": "Rain Spool: closing phase. The next signature reaches both rows."
+    },
+    {
+      "round": 9,
+      "actorId": "foe-0-rain-spool",
+      "targetId": "foe-6-binding-thread",
+      "skillId": "",
+      "kind": "summon",
+      "amount": 0,
+      "text": "Binding Thread joins next round"
+    },
+    {
+      "round": 9,
+      "actorId": "foe-0-rain-spool",
+      "targetId": "foe-7-binding-thread",
+      "skillId": "",
+      "kind": "summon",
+      "amount": 0,
+      "text": "Binding Thread joins next round"
+    },
+    {
+      "round": 9,
+      "actorId": "soot",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "",
+      "kind": "detonate",
+      "amount": 36,
+      "text": ""
+    },
+    {
+      "round": 9,
+      "actorId": "soot",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "shield",
+      "amount": 6,
+      "text": ""
+    },
+    {
+      "round": 9,
+      "actorId": "soot",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "crumb-burst",
+      "kind": "reaction",
+      "amount": 1,
+      "text": "Crumb Burst"
+    },
+    {
+      "round": 9,
+      "actorId": "soot",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "soot-3",
+      "kind": "action",
+      "amount": 0,
+      "text": "Soot focuses the weakest reachable foe, Rain Spool (HP 52%) · Lantern wick"
+    },
+    {
+      "round": 9,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "clover-2",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "ally-row"
+    },
+    {
+      "round": 9,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 9,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "status",
+      "amount": 2,
+      "text": "Regen"
+    },
+    {
+      "round": 9,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "clover-2",
+      "kind": "multi-hit",
+      "amount": 1,
+      "text": "ally-row"
+    },
+    {
+      "round": 9,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 36,
+      "text": ""
+    },
+    {
+      "round": 9,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "status",
+      "amount": 2,
+      "text": "Regen"
+    },
+    {
+      "round": 9,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "clover-2",
+      "kind": "action",
+      "amount": 0,
+      "text": "Clover heals Clover (HP 61%) · Patient steep"
+    },
+    {
+      "round": 9,
+      "actorId": "foe-0-rain-spool",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 340,
+      "text": ""
+    },
+    {
+      "round": 9,
+      "actorId": "foe-0-rain-spool",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Daze"
+    },
+    {
+      "round": 9,
+      "actorId": "foe-0-rain-spool",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 310,
+      "text": ""
+    },
+    {
+      "round": 9,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "survive",
+      "amount": 112,
+      "text": "Second sprout"
+    },
+    {
+      "round": 9,
+      "actorId": "foe-0-rain-spool",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Daze"
+    },
+    {
+      "round": 9,
+      "actorId": "foe-0-rain-spool",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "enemy-action",
+      "amount": 0,
+      "text": "Cloudburst removes shields before hitting a row; below half HP it reaches both."
+    },
+    {
+      "round": 9,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 37,
+      "text": ""
+    },
+    {
+      "round": 9,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "steep",
+      "kind": "status-tick",
+      "amount": 37,
+      "text": "Regen"
+    },
+    {
+      "round": 9,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 37,
+      "text": ""
+    },
+    {
+      "round": 9,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "steep",
+      "kind": "status-tick",
+      "amount": 37,
+      "text": "Regen"
+    },
+    {
+      "round": 10,
+      "actorId": "soot",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "suppressed",
+      "amount": 1,
+      "text": "Daze spent the next action"
+    },
+    {
+      "round": 10,
+      "actorId": "soot",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "soot-1",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "pierce"
+    },
+    {
+      "round": 10,
+      "actorId": "soot",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 24,
+      "text": ""
+    },
+    {
+      "round": 10,
+      "actorId": "soot",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Crumb trail"
+    },
+    {
+      "round": 10,
+      "actorId": "soot",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "soot-1",
+      "kind": "action",
+      "amount": 0,
+      "text": "Soot pressures a foe, Rain Spool (HP 44%) · Cocoa spark"
+    },
+    {
+      "round": 10,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "suppressed",
+      "amount": 1,
+      "text": "Daze spent the next action"
+    },
+    {
+      "round": 10,
+      "actorId": "clover",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "clover-1",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "single"
+    },
+    {
+      "round": 10,
+      "actorId": "clover",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 14,
+      "text": ""
+    },
+    {
+      "round": 10,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 9,
+      "text": ""
+    },
+    {
+      "round": 10,
+      "actorId": "clover",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "clover-1",
+      "kind": "action",
+      "amount": 0,
+      "text": "Clover focuses the weakest reachable foe, Rain Spool (HP 43%) · Leaf tap"
+    },
+    {
+      "round": 10,
+      "actorId": "foe-0-rain-spool",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 183,
+      "text": ""
+    },
+    {
+      "round": 10,
+      "actorId": "foe-0-rain-spool",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "enemy-action",
+      "amount": 0,
+      "text": "Rain Spool · basic pressure"
+    },
+    {
+      "round": 10,
+      "actorId": "foe-6-binding-thread",
+      "targetId": "clover",
+      "skillId": "binding-thread",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "single"
+    },
+    {
+      "round": 10,
+      "actorId": "foe-6-binding-thread",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 10,
+      "text": ""
+    },
+    {
+      "round": 10,
+      "actorId": "foe-6-binding-thread",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Shred"
+    },
+    {
+      "round": 10,
+      "actorId": "foe-6-binding-thread",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "enemy-action",
+      "amount": 0,
+      "text": "Binding Thread · basic pressure"
+    },
+    {
+      "round": 10,
+      "actorId": "foe-7-binding-thread",
+      "targetId": "clover",
+      "skillId": "binding-thread",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "single"
+    },
+    {
+      "round": 10,
+      "actorId": "foe-7-binding-thread",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 10,
+      "text": ""
+    },
+    {
+      "round": 10,
+      "actorId": "foe-7-binding-thread",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "status",
+      "amount": 2,
+      "text": "Shred"
+    },
+    {
+      "round": 10,
+      "actorId": "foe-7-binding-thread",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "enemy-action",
+      "amount": 0,
+      "text": "Binding Thread · basic pressure"
+    },
+    {
+      "round": 10,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 37,
+      "text": ""
+    },
+    {
+      "round": 10,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "steep",
+      "kind": "status-tick",
+      "amount": 37,
+      "text": "Regen"
+    },
+    {
+      "round": 10,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 37,
+      "text": ""
+    },
+    {
+      "round": 10,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "steep",
+      "kind": "status-tick",
+      "amount": 37,
+      "text": "Regen"
+    },
+    {
+      "round": 10,
+      "actorId": "soot",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "expire",
+      "amount": 0,
+      "text": "Second sprout"
+    },
+    {
+      "round": 11,
+      "actorId": "soot",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "soot-3",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "single"
+    },
+    {
+      "round": 11,
+      "actorId": "soot",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 93,
+      "text": ""
+    },
+    {
+      "round": 11,
+      "actorId": "soot",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "",
+      "kind": "detonate",
+      "amount": 36,
+      "text": ""
+    },
+    {
+      "round": 11,
+      "actorId": "soot",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "shield",
+      "amount": 6,
+      "text": ""
+    },
+    {
+      "round": 11,
+      "actorId": "soot",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "crumb-burst",
+      "kind": "reaction",
+      "amount": 1,
+      "text": "Crumb Burst"
+    },
+    {
+      "round": 11,
+      "actorId": "soot",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "soot-3",
+      "kind": "action",
+      "amount": 0,
+      "text": "Soot focuses the weakest reachable foe, Rain Spool (HP 41%) · Lantern wick"
+    },
+    {
+      "round": 11,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "clover-3",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "team"
+    },
+    {
+      "round": 11,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "dispel",
+      "amount": 0,
+      "text": "Removed debuffs"
+    },
+    {
+      "round": 11,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 47,
+      "text": ""
+    },
+    {
+      "round": 11,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "clover-3",
+      "kind": "multi-hit",
+      "amount": 1,
+      "text": "team"
+    },
+    {
+      "round": 11,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "dispel",
+      "amount": 1,
+      "text": "Removed debuffs"
+    },
+    {
+      "round": 11,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 47,
+      "text": ""
+    },
+    {
+      "round": 11,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "clover-3",
+      "kind": "action",
+      "amount": 0,
+      "text": "Clover supports the team (lowest HP 22%) · Clearleaf rinse"
+    },
+    {
+      "round": 11,
+      "actorId": "foe-0-rain-spool",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 214,
+      "text": ""
+    },
+    {
+      "round": 11,
+      "actorId": "foe-0-rain-spool",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "enemy-action",
+      "amount": 0,
+      "text": "Rain Spool · basic pressure"
+    },
+    {
+      "round": 11,
+      "actorId": "foe-6-binding-thread",
+      "targetId": "soot",
+      "skillId": "binding-thread",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "single"
+    },
+    {
+      "round": 11,
+      "actorId": "foe-6-binding-thread",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "absorbed",
+      "amount": 6,
+      "text": "Shield absorbed direct damage"
+    },
+    {
+      "round": 11,
+      "actorId": "foe-6-binding-thread",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 3,
+      "text": ""
+    },
+    {
+      "round": 11,
+      "actorId": "foe-6-binding-thread",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Shred"
+    },
+    {
+      "round": 11,
+      "actorId": "foe-6-binding-thread",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "enemy-action",
+      "amount": 0,
+      "text": "Binding Thread · basic pressure"
+    },
+    {
+      "round": 11,
+      "actorId": "foe-7-binding-thread",
+      "targetId": "soot",
+      "skillId": "binding-thread",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "single"
+    },
+    {
+      "round": 11,
+      "actorId": "foe-7-binding-thread",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 9,
+      "text": ""
+    },
+    {
+      "round": 11,
+      "actorId": "foe-7-binding-thread",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "status",
+      "amount": 2,
+      "text": "Shred"
+    },
+    {
+      "round": 11,
+      "actorId": "foe-7-binding-thread",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "enemy-action",
+      "amount": 0,
+      "text": "Binding Thread · basic pressure"
+    },
+    {
+      "round": 11,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 37,
+      "text": ""
+    },
+    {
+      "round": 11,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "steep",
+      "kind": "status-tick",
+      "amount": 37,
+      "text": "Regen"
+    },
+    {
+      "round": 11,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 37,
+      "text": ""
+    },
+    {
+      "round": 11,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "steep",
+      "kind": "status-tick",
+      "amount": 37,
+      "text": "Regen"
+    },
+    {
+      "round": 11,
+      "actorId": "soot",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "expire",
+      "amount": 0,
+      "text": "Regen"
+    },
+    {
+      "round": 11,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "expire",
+      "amount": 0,
+      "text": "Regen"
+    },
+    {
+      "round": 12,
+      "actorId": "soot",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "soot-4",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "all"
+    },
+    {
+      "round": 12,
+      "actorId": "soot",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 46,
+      "text": ""
+    },
+    {
+      "round": 12,
+      "actorId": "soot",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "",
+      "kind": "resist",
+      "amount": 0,
+      "text": "Rain Spool resisted Daze"
+    },
+    {
+      "round": 12,
+      "actorId": "soot",
+      "targetId": "foe-6-binding-thread",
+      "skillId": "soot-4",
+      "kind": "multi-hit",
+      "amount": 1,
+      "text": "all"
+    },
+    {
+      "round": 12,
+      "actorId": "soot",
+      "targetId": "foe-6-binding-thread",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 53,
+      "text": ""
+    },
+    {
+      "round": 12,
+      "actorId": "soot",
+      "targetId": "foe-6-binding-thread",
+      "skillId": "",
+      "kind": "resist",
+      "amount": 0,
+      "text": "Binding Thread resisted Daze"
+    },
+    {
+      "round": 12,
+      "actorId": "soot",
+      "targetId": "foe-7-binding-thread",
+      "skillId": "soot-4",
+      "kind": "multi-hit",
+      "amount": 2,
+      "text": "all"
+    },
+    {
+      "round": 12,
+      "actorId": "soot",
+      "targetId": "foe-7-binding-thread",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 55,
+      "text": ""
+    },
+    {
+      "round": 12,
+      "actorId": "soot",
+      "targetId": "foe-7-binding-thread",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Daze"
+    },
+    {
+      "round": 12,
+      "actorId": "soot",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "soot-4",
+      "kind": "action",
+      "amount": 0,
+      "text": "Soot pressures a foe, Rain Spool (HP 31%) · Midnight service"
+    },
+    {
+      "round": 12,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "clover-4",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "team"
+    },
+    {
+      "round": 12,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 94,
+      "text": ""
+    },
+    {
+      "round": 12,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Second sprout"
+    },
+    {
+      "round": 12,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "clover-4",
+      "kind": "multi-hit",
+      "amount": 1,
+      "text": "team"
+    },
+    {
+      "round": 12,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 94,
+      "text": ""
+    },
+    {
+      "round": 12,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Second sprout"
+    },
+    {
+      "round": 12,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "clover-4",
+      "kind": "action",
+      "amount": 0,
+      "text": "Clover supports the team (lowest HP 10%) · Greenhouse morning"
+    },
+    {
+      "round": 12,
+      "actorId": "foe-0-rain-spool",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 292,
+      "text": ""
+    },
+    {
+      "round": 12,
+      "actorId": "soot",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "survive",
+      "amount": 144,
+      "text": "Second sprout"
+    },
+    {
+      "round": 12,
+      "actorId": "foe-0-rain-spool",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Daze"
+    },
+    {
+      "round": 12,
+      "actorId": "foe-0-rain-spool",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 139,
+      "text": ""
+    },
+    {
+      "round": 12,
+      "actorId": "foe-0-rain-spool",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "defeat",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 12,
+      "actorId": "foe-0-rain-spool",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "enemy-action",
+      "amount": 0,
+      "text": "Cloudburst removes shields before hitting a row; below half HP it reaches both."
+    },
+    {
+      "round": 12,
+      "actorId": "foe-6-binding-thread",
+      "targetId": "soot",
+      "skillId": "binding-thread",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "single"
+    },
+    {
+      "round": 12,
+      "actorId": "foe-6-binding-thread",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 10,
+      "text": ""
+    },
+    {
+      "round": 12,
+      "actorId": "foe-6-binding-thread",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "status",
+      "amount": 3,
+      "text": "Shred"
+    },
+    {
+      "round": 12,
+      "actorId": "foe-6-binding-thread",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "resist",
+      "amount": 0,
+      "text": "Soot resisted Daze"
+    },
+    {
+      "round": 12,
+      "actorId": "foe-6-binding-thread",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "enemy-action",
+      "amount": 0,
+      "text": "Knots apply Shred; every third turn Dazes the weakest cat."
+    },
+    {
+      "round": 12,
+      "actorId": "foe-7-binding-thread",
+      "targetId": "foe-7-binding-thread",
+      "skillId": "",
+      "kind": "suppressed",
+      "amount": 1,
+      "text": "Daze spent the next action"
+    },
+    {
+      "round": 12,
+      "actorId": "foe-7-binding-thread",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 10,
+      "text": ""
+    },
+    {
+      "round": 12,
+      "actorId": "foe-7-binding-thread",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "enemy-action",
+      "amount": 0,
+      "text": "Drowsy intent · softened basic"
+    },
+    {
+      "round": 13,
+      "actorId": "soot",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "suppressed",
+      "amount": 1,
+      "text": "Daze spent the next action"
+    },
+    {
+      "round": 13,
+      "actorId": "soot",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "soot-1",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "pierce"
+    },
+    {
+      "round": 13,
+      "actorId": "soot",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 25,
+      "text": ""
+    },
+    {
+      "round": 13,
+      "actorId": "soot",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "",
+      "kind": "resist",
+      "amount": 0,
+      "text": "Rain Spool resisted Crumb trail"
+    },
+    {
+      "round": 13,
+      "actorId": "soot",
+      "targetId": "foe-0-rain-spool",
+      "skillId": "soot-1",
+      "kind": "action",
+      "amount": 0,
+      "text": "Soot pressures a foe, Rain Spool (HP 27%) · Cocoa spark"
+    },
+    {
+      "round": 13,
+      "actorId": "foe-0-rain-spool",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 124,
+      "text": ""
+    },
+    {
+      "round": 13,
+      "actorId": "foe-0-rain-spool",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "defeat",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 13,
+      "actorId": "foe-0-rain-spool",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "enemy-action",
+      "amount": 0,
+      "text": "Rain Spool · basic pressure"
+    }
+  ],
+  "choices": [
+    {
+      "actorId": "mochi",
+      "skillId": "mochi-1",
+      "targetId": "foe-0-rain-spool"
+    },
+    {
+      "actorId": "soot",
+      "skillId": "soot-2",
+      "targetId": "foe-0-rain-spool"
+    },
+    {
+      "actorId": "clover",
+      "skillId": "clover-2",
+      "targetId": "clover"
+    },
+    {
+      "actorId": "mochi",
+      "skillId": "mochi-1",
+      "targetId": "foe-0-rain-spool"
+    },
+    {
+      "actorId": "soot",
+      "skillId": "soot-1",
+      "targetId": "foe-0-rain-spool"
+    },
+    {
+      "actorId": "clover",
+      "skillId": "clover-3",
+      "targetId": "clover"
+    },
+    {
+      "actorId": "mochi",
+      "skillId": "mochi-4",
+      "targetId": "clover"
+    },
+    {
+      "actorId": "soot",
+      "skillId": "soot-1",
+      "targetId": "foe-1-binding-thread"
+    },
+    {
+      "actorId": "clover",
+      "skillId": "clover-4",
+      "targetId": "clover"
+    },
+    {
+      "actorId": "mochi",
+      "skillId": "mochi-1",
+      "targetId": "foe-0-rain-spool"
+    },
+    {
+      "actorId": "soot",
+      "skillId": "soot-3",
+      "targetId": "foe-0-rain-spool"
+    },
+    {
+      "actorId": "clover",
+      "skillId": "clover-2",
+      "targetId": "clover"
+    },
+    {
+      "actorId": "mochi",
+      "skillId": "mochi-1",
+      "targetId": "foe-0-rain-spool"
+    },
+    {
+      "actorId": "soot",
+      "skillId": "soot-2",
+      "targetId": "foe-0-rain-spool"
+    },
+    {
+      "actorId": "clover",
+      "skillId": "clover-3",
+      "targetId": "mochi"
+    },
+    {
+      "actorId": "mochi",
+      "skillId": "mochi-1",
+      "targetId": "foe-0-rain-spool"
+    },
+    {
+      "actorId": "soot",
+      "skillId": "soot-4",
+      "targetId": "foe-2-binding-thread"
+    },
+    {
+      "actorId": "clover",
+      "skillId": "clover-2",
+      "targetId": "mochi"
+    },
+    {
+      "actorId": "soot",
+      "skillId": "soot-1",
+      "targetId": "foe-2-binding-thread"
+    },
+    {
+      "actorId": "clover",
+      "skillId": "clover-2",
+      "targetId": "clover"
+    },
+    {
+      "actorId": "soot",
+      "skillId": "soot-1",
+      "targetId": "foe-0-rain-spool"
+    },
+    {
+      "actorId": "clover",
+      "skillId": "clover-4",
+      "targetId": "clover"
+    },
+    {
+      "actorId": "soot",
+      "skillId": "soot-3",
+      "targetId": "foe-0-rain-spool"
+    },
+    {
+      "actorId": "clover",
+      "skillId": "clover-2",
+      "targetId": "clover"
+    },
+    {
+      "actorId": "soot",
+      "skillId": "soot-1",
+      "targetId": "foe-0-rain-spool"
+    },
+    {
+      "actorId": "clover",
+      "skillId": "clover-1",
+      "targetId": "foe-0-rain-spool"
+    },
+    {
+      "actorId": "soot",
+      "skillId": "soot-3",
+      "targetId": "foe-0-rain-spool"
+    },
+    {
+      "actorId": "clover",
+      "skillId": "clover-3",
+      "targetId": "soot"
+    },
+    {
+      "actorId": "soot",
+      "skillId": "soot-4",
+      "targetId": "foe-0-rain-spool"
+    },
+    {
+      "actorId": "clover",
+      "skillId": "clover-4",
+      "targetId": "clover"
+    },
+    {
+      "actorId": "soot",
+      "skillId": "defend",
+      "targetId": "soot"
+    }
+  ],
+  "result": "enemy",
+  "firstDeath": "guardian",
+  "procRounds": {
+    "v5ActionSequence": 58
+  },
+  "boons": {
+    "garden-5": 1,
+    "ember-4": 2,
+    "flow-1": 1
+  },
+  "mutator": "",
+  "initial": {
+    "skillsV5": true,
+    "seed": 195469431,
+    "chapter": 2,
+    "cats": [
+      {
+        "id": "mochi",
+        "stats": {
+          "hp": 725,
+          "attack": 62,
+          "defense": 45,
+          "critBp": 800,
+          "critDamageBp": 5000,
+          "effectHitBp": 0,
+          "effectResistBp": 0,
+          "healingBp": 400,
+          "shieldBp": 0,
+          "initiative": 8
+        },
+        "skills": [
+          "mochi-1",
+          "mochi-2",
+          "mochi-3",
+          "mochi-4"
+        ],
+        "row": "front",
+        "equipment": [
+          "hearthloom-weapon-rare",
+          "moonwick-outfit-rare",
+          "moonwick-charm-rare",
+          "hearthloom-relic-epic"
+        ],
+        "effects": [
+          "defend-shield",
+          "marked-break"
+        ],
+        "bonuses": {
+          "hp": 12,
+          "defense": 2,
+          "attack": 1
+        }
+      },
+      {
+        "id": "soot",
+        "stats": {
+          "hp": 575,
+          "attack": 75,
+          "defense": 29,
+          "critBp": 1200,
+          "critDamageBp": 5000,
+          "effectHitBp": 0,
+          "effectResistBp": 0,
+          "healingBp": 400,
+          "shieldBp": 0,
+          "initiative": 6
+        },
+        "skills": [
+          "soot-1",
+          "soot-2",
+          "soot-3",
+          "soot-4"
+        ],
+        "row": "rear",
+        "equipment": [
+          "hearthloom-weapon-common",
+          "hearthloom-outfit-rare",
+          "hearthloom-charm-common",
+          "bellsteel-relic-rare"
+        ],
+        "effects": [
+          "defend-shield"
+        ],
+        "bonuses": {
+          "hp": 11
+        }
+      },
+      {
+        "id": "clover",
+        "stats": {
+          "hp": 448,
+          "attack": 44,
+          "defense": 25,
+          "critBp": 500,
+          "critDamageBp": 5000,
+          "effectHitBp": 0,
+          "effectResistBp": 0,
+          "healingBp": 400,
+          "shieldBp": 0,
+          "initiative": 4
+        },
+        "skills": [
+          "clover-1",
+          "clover-2",
+          "clover-3",
+          "clover-4"
+        ],
+        "row": "rear",
+        "equipment": [
+          "moonwick-weapon-common",
+          "hearthloom-outfit-rare",
+          "moonwick-charm-common",
+          "hearthloom-relic-common"
+        ],
+        "effects": [
+          "defend-shield",
+          "marked-break"
+        ],
+        "bonuses": {
+          "hp": 5
+        }
+      }
+    ],
+    "enemies": [
+      "rain-spool"
+    ],
+    "hp": {
+      "mochi": 725,
+      "soot": 575,
+      "clover": 448
+    },
+    "boons": {
+      "garden-5": 1,
+      "ember-4": 2,
+      "flow-1": 1
+    },
+    "upgrades": {},
+    "mutator": "",
+    "gameplayV4": true,
+    "challengeLevel": 6,
+    "enemyStats": {
+      "button-guard": {
+        "hp": 136,
+        "attack": 22,
+        "defense": 18
+      },
+      "sock-skipper": {
+        "hp": 199,
+        "attack": 25,
+        "defense": 8
+      },
+      "spool-ram": {
+        "hp": 358,
+        "attack": 34,
+        "defense": 16
+      },
+      "needle-moth": {
+        "hp": 187,
+        "attack": 19,
+        "defense": 6
+      },
+      "teacup-healer": {
+        "hp": 217,
+        "attack": 16,
+        "defense": 10
+      },
+      "kettle-knight": {
+        "hp": 406,
+        "attack": 28,
+        "defense": 35
+      },
+      "yarn-giant": {
+        "hp": 978,
+        "attack": 123,
+        "defense": 22
+      },
+      "binding-thread": {
+        "hp": 109,
+        "attack": 11,
+        "defense": 0
+      },
+      "practice-cushion": {
+        "hp": 65,
+        "attack": 16,
+        "defense": 0
+      },
+      "pollen-scout": {
+        "hp": 322,
+        "attack": 25,
+        "defense": 10
+      },
+      "rain-spool": {
+        "hp": 1253,
+        "attack": 136,
+        "defense": 24
+      },
+      "crumb-sentinel": {
+        "hp": 430,
+        "attack": 31,
+        "defense": 22
+      },
+      "pantry-crown": {
+        "hp": 1213,
+        "attack": 171,
+        "defense": 25
+      }
+    },
+    "plan": {
+      "focus": "finish",
+      "care": "steady"
+    }
+  },
+  "v4": {
+    "version": 1,
+    "plan": {
+      "focus": "finish",
+      "care": "steady"
+    },
+    "events": [
+      {
+        "kind": "crew-active",
+        "crew": "door",
+        "marks": 3,
+        "contributors": [
+          "mochi",
+          "clover"
+        ],
+        "threshold": 2,
+        "text": "Door team: +3% maximum HP.",
+        "sequence": 0,
+        "round": 0,
+        "version": 2,
+        "actionId": 0,
+        "stage": "setup",
+        "logIndex": 0
+      },
+      {
+        "kind": "crew-active",
+        "crew": "kettle",
+        "marks": 3,
+        "contributors": [
+          "mochi",
+          "clover"
+        ],
+        "threshold": 2,
+        "text": "Kettle team: +4% healing.",
+        "sequence": 1,
+        "round": 0,
+        "version": 2,
+        "actionId": 0,
+        "stage": "setup",
+        "logIndex": 0
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "steep",
+        "stacks": 1,
+        "sourceId": "mochi",
+        "actorId": "mochi",
+        "targetId": "mochi",
+        "text": "Mochi: Regen ×1.",
+        "sequence": 2,
+        "round": 0,
+        "version": 2,
+        "actionId": 0,
+        "stage": "setup",
+        "logIndex": 1
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "steep",
+        "stacks": 1,
+        "sourceId": "soot",
+        "actorId": "soot",
+        "targetId": "soot",
+        "text": "Soot: Regen ×1.",
+        "sequence": 3,
+        "round": 0,
+        "version": 2,
+        "actionId": 0,
+        "stage": "setup",
+        "logIndex": 2
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "steep",
+        "stacks": 1,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "clover",
+        "text": "Clover: Regen ×1.",
+        "sequence": 4,
+        "round": 0,
+        "version": 2,
+        "actionId": 0,
+        "stage": "setup",
+        "logIndex": 3
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "mochi",
+        "targetId": "foe-0-rain-spool",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Mochi focuses the weakest reachable foe, Rain Spool (HP 100%) · Door knock",
+        "text": "finish/steady plan: Mochi focuses the weakest reachable foe, Rain Spool (HP 100%) · Door knock",
+        "sequence": 5,
+        "round": 1,
+        "version": 2,
+        "actionId": 1,
+        "stage": "action",
+        "logIndex": 4
+      },
+      {
+        "kind": "multi-hit",
+        "actorId": "mochi",
+        "skillId": "mochi-1",
+        "shape": "splash",
+        "targets": [
+          "foe-0-rain-spool",
+          "foe-1-binding-thread"
+        ],
+        "text": "Mochi: Door knock reaches 2 landings.",
+        "sequence": 6,
+        "round": 1,
+        "version": 2,
+        "actionId": 1,
+        "stage": "action",
+        "logIndex": 8
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "soot",
+        "targetId": "foe-0-rain-spool",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Soot focuses the weakest reachable foe, Rain Spool (HP 96%) · Black cup",
+        "text": "finish/steady plan: Soot focuses the weakest reachable foe, Rain Spool (HP 96%) · Black cup",
+        "sequence": 7,
+        "round": 1,
+        "version": 2,
+        "actionId": 2,
+        "stage": "action",
+        "logIndex": 10
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "scent",
+        "stacks": 1,
+        "sourceId": "soot",
+        "actorId": "soot",
+        "targetId": "foe-0-rain-spool",
+        "text": "Rain Spool: Mark ×1.",
+        "sequence": 8,
+        "round": 1,
+        "version": 2,
+        "actionId": 2,
+        "stage": "action",
+        "logIndex": 13
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "clover",
+        "targetId": "clover",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Clover heals Clover (HP 100%) · Patient steep",
+        "text": "finish/steady plan: Clover heals Clover (HP 100%) · Patient steep",
+        "sequence": 9,
+        "round": 1,
+        "version": 2,
+        "actionId": 3,
+        "stage": "action",
+        "logIndex": 14
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "steep",
+        "stacks": 2,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "soot",
+        "text": "Soot: Regen ×2.",
+        "sequence": 10,
+        "round": 1,
+        "version": 2,
+        "actionId": 3,
+        "stage": "action",
+        "logIndex": 18
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "steep",
+        "stacks": 2,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "clover",
+        "text": "Clover: Regen ×2.",
+        "sequence": 11,
+        "round": 1,
+        "version": 2,
+        "actionId": 3,
+        "stage": "action",
+        "logIndex": 21
+      },
+      {
+        "kind": "multi-hit",
+        "actorId": "clover",
+        "skillId": "clover-2",
+        "shape": "ally-row",
+        "targets": [
+          "soot",
+          "clover"
+        ],
+        "text": "Clover: Patient steep reaches 2 landings.",
+        "sequence": 12,
+        "round": 1,
+        "version": 2,
+        "actionId": 3,
+        "stage": "action",
+        "logIndex": 21
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "brittle",
+        "stacks": 1,
+        "sourceId": "foe-1-binding-thread",
+        "actorId": "foe-1-binding-thread",
+        "targetId": "mochi",
+        "text": "Mochi: Shred ×1.",
+        "sequence": 13,
+        "round": 1,
+        "version": 2,
+        "actionId": 5,
+        "stage": "action",
+        "logIndex": 28
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "brittle",
+        "stacks": 2,
+        "sourceId": "foe-2-binding-thread",
+        "actorId": "foe-2-binding-thread",
+        "targetId": "mochi",
+        "text": "Mochi: Shred ×2.",
+        "sequence": 14,
+        "round": 1,
+        "version": 2,
+        "actionId": 6,
+        "stage": "action",
+        "logIndex": 32
+      },
+      {
+        "kind": "status-tick",
+        "statusId": "steep",
+        "amount": 19,
+        "sourceId": "mochi",
+        "actorId": "mochi",
+        "targetId": "mochi",
+        "text": "Mochi: Regen 19.",
+        "sequence": 15,
+        "round": 1,
+        "version": 2,
+        "actionId": 6,
+        "stage": "round-end",
+        "logIndex": 35
+      },
+      {
+        "kind": "status-tick",
+        "statusId": "steep",
+        "amount": 0,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "soot",
+        "text": "Soot: Regen 0.",
+        "sequence": 16,
+        "round": 1,
+        "version": 2,
+        "actionId": 6,
+        "stage": "round-end",
+        "logIndex": 37
+      },
+      {
+        "kind": "status-tick",
+        "statusId": "steep",
+        "amount": 0,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "clover",
+        "text": "Clover: Regen 0.",
+        "sequence": 17,
+        "round": 1,
+        "version": 2,
+        "actionId": 6,
+        "stage": "round-end",
+        "logIndex": 39
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "mochi",
+        "targetId": "foe-0-rain-spool",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Mochi focuses the weakest reachable foe, Rain Spool (HP 94%) · Door knock",
+        "text": "finish/steady plan: Mochi focuses the weakest reachable foe, Rain Spool (HP 94%) · Door knock",
+        "sequence": 18,
+        "round": 2,
+        "version": 2,
+        "actionId": 7,
+        "stage": "action",
+        "logIndex": 40
+      },
+      {
+        "kind": "multi-hit",
+        "actorId": "mochi",
+        "skillId": "mochi-1",
+        "shape": "splash",
+        "targets": [
+          "foe-0-rain-spool",
+          "foe-1-binding-thread"
+        ],
+        "text": "Mochi: Door knock reaches 2 landings.",
+        "sequence": 19,
+        "round": 2,
+        "version": 2,
+        "actionId": 7,
+        "stage": "action",
+        "logIndex": 44
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "soot",
+        "targetId": "foe-0-rain-spool",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Soot pressures a foe, Rain Spool (HP 90%) · Cocoa spark",
+        "text": "finish/steady plan: Soot pressures a foe, Rain Spool (HP 90%) · Cocoa spark",
+        "sequence": 20,
+        "round": 2,
+        "version": 2,
+        "actionId": 8,
+        "stage": "action",
+        "logIndex": 46
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "crumb",
+        "stacks": 1,
+        "sourceId": "soot",
+        "actorId": "soot",
+        "targetId": "foe-0-rain-spool",
+        "text": "Rain Spool: Crumb trail ×1.",
+        "sequence": 21,
+        "round": 2,
+        "version": 2,
+        "actionId": 8,
+        "stage": "action",
+        "logIndex": 49
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "clover",
+        "targetId": "clover",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Clover supports the team (lowest HP 82%) · Clearleaf rinse",
+        "text": "finish/steady plan: Clover supports the team (lowest HP 82%) · Clearleaf rinse",
+        "sequence": 22,
+        "round": 2,
+        "version": 2,
+        "actionId": 9,
+        "stage": "action",
+        "logIndex": 50
+      },
+      {
+        "kind": "multi-hit",
+        "actorId": "clover",
+        "skillId": "clover-3",
+        "shape": "team",
+        "targets": [
+          "mochi",
+          "soot",
+          "clover"
+        ],
+        "text": "Clover: Clearleaf rinse reaches 3 landings.",
+        "sequence": 23,
+        "round": 2,
+        "version": 2,
+        "actionId": 9,
+        "stage": "action",
+        "logIndex": 59
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "brittle",
+        "stacks": 1,
+        "sourceId": "foe-1-binding-thread",
+        "actorId": "foe-1-binding-thread",
+        "targetId": "mochi",
+        "text": "Mochi: Shred ×1.",
+        "sequence": 24,
+        "round": 2,
+        "version": 2,
+        "actionId": 11,
+        "stage": "action",
+        "logIndex": 66
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "brittle",
+        "stacks": 2,
+        "sourceId": "foe-2-binding-thread",
+        "actorId": "foe-2-binding-thread",
+        "targetId": "mochi",
+        "text": "Mochi: Shred ×2.",
+        "sequence": 25,
+        "round": 2,
+        "version": 2,
+        "actionId": 12,
+        "stage": "action",
+        "logIndex": 70
+      },
+      {
+        "kind": "status-tick",
+        "statusId": "steep",
+        "amount": 19,
+        "sourceId": "mochi",
+        "actorId": "mochi",
+        "targetId": "mochi",
+        "text": "Mochi: Regen 19.",
+        "sequence": 26,
+        "round": 2,
+        "version": 2,
+        "actionId": 12,
+        "stage": "round-end",
+        "logIndex": 73
+      },
+      {
+        "kind": "status-tick",
+        "statusId": "steep",
+        "amount": 0,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "soot",
+        "text": "Soot: Regen 0.",
+        "sequence": 27,
+        "round": 2,
+        "version": 2,
+        "actionId": 12,
+        "stage": "round-end",
+        "logIndex": 75
+      },
+      {
+        "kind": "status-tick",
+        "statusId": "steep",
+        "amount": 0,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "clover",
+        "text": "Clover: Regen 0.",
+        "sequence": 28,
+        "round": 2,
+        "version": 2,
+        "actionId": 12,
+        "stage": "round-end",
+        "logIndex": 77
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "mochi",
+        "targetId": "clover",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Mochi supports the team (lowest HP 70%) · Last light shelter",
+        "text": "finish/steady plan: Mochi supports the team (lowest HP 70%) · Last light shelter",
+        "sequence": 29,
+        "round": 3,
+        "version": 2,
+        "actionId": 13,
+        "stage": "action",
+        "logIndex": 79
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "cozy",
+        "stacks": 2,
+        "sourceId": "mochi",
+        "actorId": "mochi",
+        "targetId": "mochi",
+        "text": "Mochi: Warm ×2.",
+        "sequence": 30,
+        "round": 3,
+        "version": 2,
+        "actionId": 13,
+        "stage": "action",
+        "logIndex": 83
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "cozy",
+        "stacks": 2,
+        "sourceId": "mochi",
+        "actorId": "mochi",
+        "targetId": "soot",
+        "text": "Soot: Warm ×2.",
+        "sequence": 31,
+        "round": 3,
+        "version": 2,
+        "actionId": 13,
+        "stage": "action",
+        "logIndex": 87
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "cozy",
+        "stacks": 2,
+        "sourceId": "mochi",
+        "actorId": "mochi",
+        "targetId": "clover",
+        "text": "Clover: Warm ×2.",
+        "sequence": 32,
+        "round": 3,
+        "version": 2,
+        "actionId": 13,
+        "stage": "action",
+        "logIndex": 91
+      },
+      {
+        "kind": "multi-hit",
+        "actorId": "mochi",
+        "skillId": "mochi-4",
+        "shape": "team",
+        "targets": [
+          "mochi",
+          "soot",
+          "clover"
+        ],
+        "text": "Mochi: Last light shelter reaches 3 landings.",
+        "sequence": 33,
+        "round": 3,
+        "version": 2,
+        "actionId": 13,
+        "stage": "action",
+        "logIndex": 91
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "soot",
+        "targetId": "foe-1-binding-thread",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Soot focuses the weakest reachable foe, Binding Thread (HP 58%) · Cocoa spark",
+        "text": "finish/steady plan: Soot focuses the weakest reachable foe, Binding Thread (HP 58%) · Cocoa spark",
+        "sequence": 34,
+        "round": 3,
+        "version": 2,
+        "actionId": 14,
+        "stage": "action",
+        "logIndex": 92
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "clover",
+        "targetId": "clover",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Clover supports the team (lowest HP 70%) · Greenhouse morning",
+        "text": "finish/steady plan: Clover supports the team (lowest HP 70%) · Greenhouse morning",
+        "sequence": 35,
+        "round": 3,
+        "version": 2,
+        "actionId": 15,
+        "stage": "action",
+        "logIndex": 96
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "sprout",
+        "stacks": 1,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "mochi",
+        "text": "Mochi: Second sprout ×1.",
+        "sequence": 36,
+        "round": 3,
+        "version": 2,
+        "actionId": 15,
+        "stage": "action",
+        "logIndex": 99
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "sprout",
+        "stacks": 1,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "soot",
+        "text": "Soot: Second sprout ×1.",
+        "sequence": 37,
+        "round": 3,
+        "version": 2,
+        "actionId": 15,
+        "stage": "action",
+        "logIndex": 102
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "sprout",
+        "stacks": 1,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "clover",
+        "text": "Clover: Second sprout ×1.",
+        "sequence": 38,
+        "round": 3,
+        "version": 2,
+        "actionId": 15,
+        "stage": "action",
+        "logIndex": 105
+      },
+      {
+        "kind": "multi-hit",
+        "actorId": "clover",
+        "skillId": "clover-4",
+        "shape": "team",
+        "targets": [
+          "mochi",
+          "soot",
+          "clover"
+        ],
+        "text": "Clover: Greenhouse morning reaches 3 landings.",
+        "sequence": 39,
+        "round": 3,
+        "version": 2,
+        "actionId": 15,
+        "stage": "action",
+        "logIndex": 105
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "drowsy",
+        "stacks": 1,
+        "sourceId": "foe-0-rain-spool",
+        "actorId": "foe-0-rain-spool",
+        "targetId": "mochi",
+        "text": "Mochi: Daze ×1.",
+        "sequence": 40,
+        "round": 3,
+        "version": 2,
+        "actionId": 16,
+        "stage": "action",
+        "logIndex": 108
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "brittle",
+        "stacks": 1,
+        "sourceId": "foe-2-binding-thread",
+        "actorId": "foe-2-binding-thread",
+        "targetId": "mochi",
+        "text": "Mochi: Shred ×1.",
+        "sequence": 41,
+        "round": 3,
+        "version": 2,
+        "actionId": 17,
+        "stage": "action",
+        "logIndex": 112
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "drowsy",
+        "stacks": 1,
+        "sourceId": "foe-2-binding-thread",
+        "actorId": "foe-2-binding-thread",
+        "targetId": "mochi",
+        "text": "Mochi: Daze ×1.",
+        "sequence": 42,
+        "round": 3,
+        "version": 2,
+        "actionId": 17,
+        "stage": "action",
+        "logIndex": 113
+      },
+      {
+        "kind": "status-tick",
+        "statusId": "steep",
+        "amount": 19,
+        "sourceId": "mochi",
+        "actorId": "mochi",
+        "targetId": "mochi",
+        "text": "Mochi: Regen 19.",
+        "sequence": 43,
+        "round": 3,
+        "version": 2,
+        "actionId": 17,
+        "stage": "round-end",
+        "logIndex": 116
+      },
+      {
+        "kind": "status-tick",
+        "statusId": "steep",
+        "amount": 0,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "soot",
+        "text": "Soot: Regen 0.",
+        "sequence": 44,
+        "round": 3,
+        "version": 2,
+        "actionId": 17,
+        "stage": "round-end",
+        "logIndex": 118
+      },
+      {
+        "kind": "status-tick",
+        "statusId": "steep",
+        "amount": 0,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "clover",
+        "text": "Clover: Regen 0.",
+        "sequence": 45,
+        "round": 3,
+        "version": 2,
+        "actionId": 17,
+        "stage": "round-end",
+        "logIndex": 120
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "mochi",
+        "targetId": "foe-0-rain-spool",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Mochi focuses the weakest reachable foe, Rain Spool (HP 85%) · Door knock",
+        "text": "finish/steady plan: Mochi focuses the weakest reachable foe, Rain Spool (HP 85%) · Door knock",
+        "sequence": 46,
+        "round": 4,
+        "version": 2,
+        "actionId": 18,
+        "stage": "action",
+        "logIndex": 125
+      },
+      {
+        "kind": "multi-hit",
+        "actorId": "mochi",
+        "skillId": "mochi-1",
+        "shape": "splash",
+        "targets": [
+          "foe-0-rain-spool",
+          "foe-2-binding-thread"
+        ],
+        "text": "Mochi: Door knock reaches 2 landings.",
+        "sequence": 47,
+        "round": 4,
+        "version": 2,
+        "actionId": 18,
+        "stage": "action",
+        "logIndex": 129
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "soot",
+        "targetId": "foe-0-rain-spool",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Soot focuses the weakest reachable foe, Rain Spool (HP 83%) · Lantern wick",
+        "text": "finish/steady plan: Soot focuses the weakest reachable foe, Rain Spool (HP 83%) · Lantern wick",
+        "sequence": 48,
+        "round": 4,
+        "version": 2,
+        "actionId": 19,
+        "stage": "action",
+        "logIndex": 131
+      },
+      {
+        "kind": "reaction",
+        "reactionId": "crumb-burst",
+        "primerIds": [
+          "crumb"
+        ],
+        "targets": [
+          "foe-0-rain-spool"
+        ],
+        "actorId": "soot",
+        "sourceId": "soot",
+        "targetId": "foe-0-rain-spool",
+        "text": "Soot → Crumb Burst.",
+        "sequence": 49,
+        "round": 4,
+        "version": 2,
+        "actionId": 19,
+        "stage": "action",
+        "logIndex": 136
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "clover",
+        "targetId": "clover",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Clover heals Clover (HP 100%) · Patient steep",
+        "text": "finish/steady plan: Clover heals Clover (HP 100%) · Patient steep",
+        "sequence": 50,
+        "round": 4,
+        "version": 2,
+        "actionId": 20,
+        "stage": "action",
+        "logIndex": 137
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "steep",
+        "stacks": 1,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "soot",
+        "text": "Soot: Regen ×1.",
+        "sequence": 51,
+        "round": 4,
+        "version": 2,
+        "actionId": 20,
+        "stage": "action",
+        "logIndex": 140
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "steep",
+        "stacks": 1,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "clover",
+        "text": "Clover: Regen ×1.",
+        "sequence": 52,
+        "round": 4,
+        "version": 2,
+        "actionId": 20,
+        "stage": "action",
+        "logIndex": 143
+      },
+      {
+        "kind": "multi-hit",
+        "actorId": "clover",
+        "skillId": "clover-2",
+        "shape": "ally-row",
+        "targets": [
+          "soot",
+          "clover"
+        ],
+        "text": "Clover: Patient steep reaches 2 landings.",
+        "sequence": 53,
+        "round": 4,
+        "version": 2,
+        "actionId": 20,
+        "stage": "action",
+        "logIndex": 143
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "brittle",
+        "stacks": 2,
+        "sourceId": "foe-2-binding-thread",
+        "actorId": "foe-2-binding-thread",
+        "targetId": "mochi",
+        "text": "Mochi: Shred ×2.",
+        "sequence": 54,
+        "round": 4,
+        "version": 2,
+        "actionId": 22,
+        "stage": "action",
+        "logIndex": 149
+      },
+      {
+        "kind": "status-tick",
+        "statusId": "steep",
+        "amount": 0,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "soot",
+        "text": "Soot: Regen 0.",
+        "sequence": 55,
+        "round": 4,
+        "version": 2,
+        "actionId": 22,
+        "stage": "round-end",
+        "logIndex": 152
+      },
+      {
+        "kind": "status-tick",
+        "statusId": "steep",
+        "amount": 0,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "clover",
+        "text": "Clover: Regen 0.",
+        "sequence": 56,
+        "round": 4,
+        "version": 2,
+        "actionId": 22,
+        "stage": "round-end",
+        "logIndex": 154
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "mochi",
+        "targetId": "foe-0-rain-spool",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Mochi focuses the weakest reachable foe, Rain Spool (HP 75%) · Door knock",
+        "text": "finish/steady plan: Mochi focuses the weakest reachable foe, Rain Spool (HP 75%) · Door knock",
+        "sequence": 57,
+        "round": 5,
+        "version": 2,
+        "actionId": 23,
+        "stage": "action",
+        "logIndex": 158
+      },
+      {
+        "kind": "multi-hit",
+        "actorId": "mochi",
+        "skillId": "mochi-1",
+        "shape": "splash",
+        "targets": [
+          "foe-0-rain-spool",
+          "foe-2-binding-thread"
+        ],
+        "text": "Mochi: Door knock reaches 2 landings.",
+        "sequence": 58,
+        "round": 5,
+        "version": 2,
+        "actionId": 23,
+        "stage": "action",
+        "logIndex": 162
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "soot",
+        "targetId": "foe-0-rain-spool",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Soot focuses the weakest reachable foe, Rain Spool (HP 70%) · Black cup",
+        "text": "finish/steady plan: Soot focuses the weakest reachable foe, Rain Spool (HP 70%) · Black cup",
+        "sequence": 59,
+        "round": 5,
+        "version": 2,
+        "actionId": 24,
+        "stage": "action",
+        "logIndex": 164
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "scent",
+        "stacks": 1,
+        "sourceId": "soot",
+        "actorId": "soot",
+        "targetId": "foe-0-rain-spool",
+        "text": "Rain Spool: Mark ×1.",
+        "sequence": 60,
+        "round": 5,
+        "version": 2,
+        "actionId": 24,
+        "stage": "action",
+        "logIndex": 167
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "clover",
+        "targetId": "mochi",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Clover supports the team (lowest HP 28%) · Clearleaf rinse",
+        "text": "finish/steady plan: Clover supports the team (lowest HP 28%) · Clearleaf rinse",
+        "sequence": 61,
+        "round": 5,
+        "version": 2,
+        "actionId": 25,
+        "stage": "action",
+        "logIndex": 168
+      },
+      {
+        "kind": "multi-hit",
+        "actorId": "clover",
+        "skillId": "clover-3",
+        "shape": "team",
+        "targets": [
+          "mochi",
+          "soot",
+          "clover"
+        ],
+        "text": "Clover: Clearleaf rinse reaches 3 landings.",
+        "sequence": 62,
+        "round": 5,
+        "version": 2,
+        "actionId": 25,
+        "stage": "action",
+        "logIndex": 177
+      },
+      {
+        "kind": "status-tick",
+        "statusId": "steep",
+        "amount": 0,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "soot",
+        "text": "Soot: Regen 0.",
+        "sequence": 63,
+        "round": 5,
+        "version": 2,
+        "actionId": 27,
+        "stage": "round-end",
+        "logIndex": 187
+      },
+      {
+        "kind": "status-tick",
+        "statusId": "steep",
+        "amount": 0,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "clover",
+        "text": "Clover: Regen 0.",
+        "sequence": 64,
+        "round": 5,
+        "version": 2,
+        "actionId": 27,
+        "stage": "round-end",
+        "logIndex": 189
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "mochi",
+        "targetId": "foe-0-rain-spool",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Mochi focuses the weakest reachable foe, Rain Spool (HP 66%) · Door knock",
+        "text": "finish/steady plan: Mochi focuses the weakest reachable foe, Rain Spool (HP 66%) · Door knock",
+        "sequence": 65,
+        "round": 6,
+        "version": 2,
+        "actionId": 28,
+        "stage": "action",
+        "logIndex": 193
+      },
+      {
+        "kind": "multi-hit",
+        "actorId": "mochi",
+        "skillId": "mochi-1",
+        "shape": "splash",
+        "targets": [
+          "foe-0-rain-spool",
+          "foe-2-binding-thread"
+        ],
+        "text": "Mochi: Door knock reaches 2 landings.",
+        "sequence": 66,
+        "round": 6,
+        "version": 2,
+        "actionId": 28,
+        "stage": "action",
+        "logIndex": 197
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "soot",
+        "targetId": "foe-2-binding-thread",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Soot focuses the weakest reachable foe, Binding Thread (HP 56%) · Midnight service",
+        "text": "finish/steady plan: Soot focuses the weakest reachable foe, Binding Thread (HP 56%) · Midnight service",
+        "sequence": 67,
+        "round": 6,
+        "version": 2,
+        "actionId": 29,
+        "stage": "action",
+        "logIndex": 199
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "drowsy",
+        "stacks": 1,
+        "sourceId": "soot",
+        "actorId": "soot",
+        "targetId": "foe-2-binding-thread",
+        "text": "Binding Thread: Daze ×1.",
+        "sequence": 68,
+        "round": 6,
+        "version": 2,
+        "actionId": 29,
+        "stage": "action",
+        "logIndex": 205
+      },
+      {
+        "kind": "multi-hit",
+        "actorId": "soot",
+        "skillId": "soot-4",
+        "shape": "all",
+        "targets": [
+          "foe-0-rain-spool",
+          "foe-2-binding-thread"
+        ],
+        "text": "Soot: Midnight service reaches 2 landings.",
+        "sequence": 69,
+        "round": 6,
+        "version": 2,
+        "actionId": 29,
+        "stage": "action",
+        "logIndex": 205
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "clover",
+        "targetId": "mochi",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Clover heals Mochi (HP 15%) · Patient steep",
+        "text": "finish/steady plan: Clover heals Mochi (HP 15%) · Patient steep",
+        "sequence": 70,
+        "round": 6,
+        "version": 2,
+        "actionId": 30,
+        "stage": "action",
+        "logIndex": 206
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "steep",
+        "stacks": 1,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "mochi",
+        "text": "Mochi: Regen ×1.",
+        "sequence": 71,
+        "round": 6,
+        "version": 2,
+        "actionId": 30,
+        "stage": "action",
+        "logIndex": 209
+      },
+      {
+        "kind": "multi-hit",
+        "actorId": "clover",
+        "skillId": "clover-2",
+        "shape": "ally-row",
+        "targets": [
+          "mochi"
+        ],
+        "text": "Clover: Patient steep reaches 1 landings.",
+        "sequence": 72,
+        "round": 6,
+        "version": 2,
+        "actionId": 30,
+        "stage": "action",
+        "logIndex": 209
+      },
+      {
+        "kind": "status-tick",
+        "statusId": "steep",
+        "amount": 0,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "soot",
+        "text": "Soot: Regen 0.",
+        "sequence": 73,
+        "round": 6,
+        "version": 2,
+        "actionId": 32,
+        "stage": "round-end",
+        "logIndex": 219
+      },
+      {
+        "kind": "status-tick",
+        "statusId": "steep",
+        "amount": 0,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "clover",
+        "text": "Clover: Regen 0.",
+        "sequence": 74,
+        "round": 6,
+        "version": 2,
+        "actionId": 32,
+        "stage": "round-end",
+        "logIndex": 221
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "soot",
+        "targetId": "foe-2-binding-thread",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Soot focuses the weakest reachable foe, Binding Thread (HP 12%) · Cocoa spark",
+        "text": "finish/steady plan: Soot focuses the weakest reachable foe, Binding Thread (HP 12%) · Cocoa spark",
+        "sequence": 75,
+        "round": 7,
+        "version": 2,
+        "actionId": 33,
+        "stage": "action",
+        "logIndex": 224
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "clover",
+        "targetId": "clover",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Clover heals Clover (HP 100%) · Patient steep",
+        "text": "finish/steady plan: Clover heals Clover (HP 100%) · Patient steep",
+        "sequence": 76,
+        "round": 7,
+        "version": 2,
+        "actionId": 34,
+        "stage": "action",
+        "logIndex": 228
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "steep",
+        "stacks": 1,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "soot",
+        "text": "Soot: Regen ×1.",
+        "sequence": 77,
+        "round": 7,
+        "version": 2,
+        "actionId": 34,
+        "stage": "action",
+        "logIndex": 231
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "steep",
+        "stacks": 1,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "clover",
+        "text": "Clover: Regen ×1.",
+        "sequence": 78,
+        "round": 7,
+        "version": 2,
+        "actionId": 34,
+        "stage": "action",
+        "logIndex": 234
+      },
+      {
+        "kind": "multi-hit",
+        "actorId": "clover",
+        "skillId": "clover-2",
+        "shape": "ally-row",
+        "targets": [
+          "soot",
+          "clover"
+        ],
+        "text": "Clover: Patient steep reaches 2 landings.",
+        "sequence": 79,
+        "round": 7,
+        "version": 2,
+        "actionId": 34,
+        "stage": "action",
+        "logIndex": 234
+      },
+      {
+        "kind": "status-tick",
+        "statusId": "steep",
+        "amount": 0,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "soot",
+        "text": "Soot: Regen 0.",
+        "sequence": 80,
+        "round": 7,
+        "version": 2,
+        "actionId": 35,
+        "stage": "round-end",
+        "logIndex": 240
+      },
+      {
+        "kind": "status-tick",
+        "statusId": "steep",
+        "amount": 19,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "clover",
+        "text": "Clover: Regen 19.",
+        "sequence": 81,
+        "round": 7,
+        "version": 2,
+        "actionId": 35,
+        "stage": "round-end",
+        "logIndex": 242
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "soot",
+        "targetId": "foe-0-rain-spool",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Soot focuses the weakest reachable foe, Rain Spool (HP 58%) · Cocoa spark",
+        "text": "finish/steady plan: Soot focuses the weakest reachable foe, Rain Spool (HP 58%) · Cocoa spark",
+        "sequence": 82,
+        "round": 8,
+        "version": 2,
+        "actionId": 36,
+        "stage": "action",
+        "logIndex": 242
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "crumb",
+        "stacks": 1,
+        "sourceId": "soot",
+        "actorId": "soot",
+        "targetId": "foe-0-rain-spool",
+        "text": "Rain Spool: Crumb trail ×1.",
+        "sequence": 83,
+        "round": 8,
+        "version": 2,
+        "actionId": 36,
+        "stage": "action",
+        "logIndex": 245
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "clover",
+        "targetId": "clover",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Clover supports the team (lowest HP 87%) · Greenhouse morning",
+        "text": "finish/steady plan: Clover supports the team (lowest HP 87%) · Greenhouse morning",
+        "sequence": 84,
+        "round": 8,
+        "version": 2,
+        "actionId": 37,
+        "stage": "action",
+        "logIndex": 246
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "sprout",
+        "stacks": 1,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "soot",
+        "text": "Soot: Second sprout ×1.",
+        "sequence": 85,
+        "round": 8,
+        "version": 2,
+        "actionId": 37,
+        "stage": "action",
+        "logIndex": 249
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "sprout",
+        "stacks": 1,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "clover",
+        "text": "Clover: Second sprout ×1.",
+        "sequence": 86,
+        "round": 8,
+        "version": 2,
+        "actionId": 37,
+        "stage": "action",
+        "logIndex": 252
+      },
+      {
+        "kind": "multi-hit",
+        "actorId": "clover",
+        "skillId": "clover-4",
+        "shape": "team",
+        "targets": [
+          "soot",
+          "clover"
+        ],
+        "text": "Clover: Greenhouse morning reaches 2 landings.",
+        "sequence": 87,
+        "round": 8,
+        "version": 2,
+        "actionId": 37,
+        "stage": "action",
+        "logIndex": 252
+      },
+      {
+        "kind": "status-tick",
+        "statusId": "steep",
+        "amount": 0,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "soot",
+        "text": "Soot: Regen 0.",
+        "sequence": 88,
+        "round": 8,
+        "version": 2,
+        "actionId": 38,
+        "stage": "round-end",
+        "logIndex": 257
+      },
+      {
+        "kind": "status-tick",
+        "statusId": "steep",
+        "amount": 19,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "clover",
+        "text": "Clover: Regen 19.",
+        "sequence": 89,
+        "round": 8,
+        "version": 2,
+        "actionId": 38,
+        "stage": "round-end",
+        "logIndex": 259
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "soot",
+        "targetId": "foe-0-rain-spool",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Soot focuses the weakest reachable foe, Rain Spool (HP 52%) · Lantern wick",
+        "text": "finish/steady plan: Soot focuses the weakest reachable foe, Rain Spool (HP 52%) · Lantern wick",
+        "sequence": 90,
+        "round": 9,
+        "version": 2,
+        "actionId": 39,
+        "stage": "action",
+        "logIndex": 260
+      },
+      {
+        "kind": "boss-phase",
+        "actorId": "foe-0-rain-spool",
+        "bossId": "rain-spool",
+        "from": 1,
+        "to": 2,
+        "threshold": 0.5,
+        "text": "Rain Spool: closing phase. The next signature reaches both rows.",
+        "sequence": 91,
+        "round": 9,
+        "version": 2,
+        "actionId": 39,
+        "stage": "action",
+        "logIndex": 263
+      },
+      {
+        "kind": "reaction",
+        "reactionId": "crumb-burst",
+        "primerIds": [
+          "crumb"
+        ],
+        "targets": [
+          "foe-0-rain-spool"
+        ],
+        "actorId": "soot",
+        "sourceId": "soot",
+        "targetId": "foe-0-rain-spool",
+        "text": "Soot → Crumb Burst.",
+        "sequence": 92,
+        "round": 9,
+        "version": 2,
+        "actionId": 39,
+        "stage": "action",
+        "logIndex": 268
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "clover",
+        "targetId": "clover",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Clover heals Clover (HP 61%) · Patient steep",
+        "text": "finish/steady plan: Clover heals Clover (HP 61%) · Patient steep",
+        "sequence": 93,
+        "round": 9,
+        "version": 2,
+        "actionId": 40,
+        "stage": "action",
+        "logIndex": 269
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "steep",
+        "stacks": 2,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "soot",
+        "text": "Soot: Regen ×2.",
+        "sequence": 94,
+        "round": 9,
+        "version": 2,
+        "actionId": 40,
+        "stage": "action",
+        "logIndex": 272
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "steep",
+        "stacks": 2,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "clover",
+        "text": "Clover: Regen ×2.",
+        "sequence": 95,
+        "round": 9,
+        "version": 2,
+        "actionId": 40,
+        "stage": "action",
+        "logIndex": 275
+      },
+      {
+        "kind": "multi-hit",
+        "actorId": "clover",
+        "skillId": "clover-2",
+        "shape": "ally-row",
+        "targets": [
+          "soot",
+          "clover"
+        ],
+        "text": "Clover: Patient steep reaches 2 landings.",
+        "sequence": 96,
+        "round": 9,
+        "version": 2,
+        "actionId": 40,
+        "stage": "action",
+        "logIndex": 275
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "drowsy",
+        "stacks": 1,
+        "sourceId": "foe-0-rain-spool",
+        "actorId": "foe-0-rain-spool",
+        "targetId": "soot",
+        "text": "Soot: Daze ×1.",
+        "sequence": 97,
+        "round": 9,
+        "version": 2,
+        "actionId": 41,
+        "stage": "action",
+        "logIndex": 278
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "drowsy",
+        "stacks": 1,
+        "sourceId": "foe-0-rain-spool",
+        "actorId": "foe-0-rain-spool",
+        "targetId": "clover",
+        "text": "Clover: Daze ×1.",
+        "sequence": 98,
+        "round": 9,
+        "version": 2,
+        "actionId": 41,
+        "stage": "action",
+        "logIndex": 281
+      },
+      {
+        "kind": "status-tick",
+        "statusId": "steep",
+        "amount": 37,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "soot",
+        "text": "Soot: Regen 37.",
+        "sequence": 99,
+        "round": 9,
+        "version": 2,
+        "actionId": 41,
+        "stage": "round-end",
+        "logIndex": 284
+      },
+      {
+        "kind": "status-tick",
+        "statusId": "steep",
+        "amount": 37,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "clover",
+        "text": "Clover: Regen 37.",
+        "sequence": 100,
+        "round": 9,
+        "version": 2,
+        "actionId": 41,
+        "stage": "round-end",
+        "logIndex": 286
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "soot",
+        "targetId": "foe-0-rain-spool",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Soot pressures a foe, Rain Spool (HP 44%) · Cocoa spark",
+        "text": "finish/steady plan: Soot pressures a foe, Rain Spool (HP 44%) · Cocoa spark",
+        "sequence": 101,
+        "round": 10,
+        "version": 2,
+        "actionId": 42,
+        "stage": "action",
+        "logIndex": 287
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "crumb",
+        "stacks": 1,
+        "sourceId": "soot",
+        "actorId": "soot",
+        "targetId": "foe-0-rain-spool",
+        "text": "Rain Spool: Crumb trail ×1.",
+        "sequence": 102,
+        "round": 10,
+        "version": 2,
+        "actionId": 42,
+        "stage": "action",
+        "logIndex": 290
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "clover",
+        "targetId": "foe-0-rain-spool",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Clover focuses the weakest reachable foe, Rain Spool (HP 43%) · Leaf tap",
+        "text": "finish/steady plan: Clover focuses the weakest reachable foe, Rain Spool (HP 43%) · Leaf tap",
+        "sequence": 103,
+        "round": 10,
+        "version": 2,
+        "actionId": 43,
+        "stage": "action",
+        "logIndex": 292
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "brittle",
+        "stacks": 1,
+        "sourceId": "foe-6-binding-thread",
+        "actorId": "foe-6-binding-thread",
+        "targetId": "clover",
+        "text": "Clover: Shred ×1.",
+        "sequence": 104,
+        "round": 10,
+        "version": 2,
+        "actionId": 45,
+        "stage": "action",
+        "logIndex": 301
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "brittle",
+        "stacks": 2,
+        "sourceId": "foe-7-binding-thread",
+        "actorId": "foe-7-binding-thread",
+        "targetId": "clover",
+        "text": "Clover: Shred ×2.",
+        "sequence": 105,
+        "round": 10,
+        "version": 2,
+        "actionId": 46,
+        "stage": "action",
+        "logIndex": 305
+      },
+      {
+        "kind": "status-tick",
+        "statusId": "steep",
+        "amount": 37,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "soot",
+        "text": "Soot: Regen 37.",
+        "sequence": 106,
+        "round": 10,
+        "version": 2,
+        "actionId": 46,
+        "stage": "round-end",
+        "logIndex": 308
+      },
+      {
+        "kind": "status-tick",
+        "statusId": "steep",
+        "amount": 37,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "clover",
+        "text": "Clover: Regen 37.",
+        "sequence": 107,
+        "round": 10,
+        "version": 2,
+        "actionId": 46,
+        "stage": "round-end",
+        "logIndex": 310
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "soot",
+        "targetId": "foe-0-rain-spool",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Soot focuses the weakest reachable foe, Rain Spool (HP 41%) · Lantern wick",
+        "text": "finish/steady plan: Soot focuses the weakest reachable foe, Rain Spool (HP 41%) · Lantern wick",
+        "sequence": 108,
+        "round": 11,
+        "version": 2,
+        "actionId": 47,
+        "stage": "action",
+        "logIndex": 311
+      },
+      {
+        "kind": "reaction",
+        "reactionId": "crumb-burst",
+        "primerIds": [
+          "crumb"
+        ],
+        "targets": [
+          "foe-0-rain-spool"
+        ],
+        "actorId": "soot",
+        "sourceId": "soot",
+        "targetId": "foe-0-rain-spool",
+        "text": "Soot → Crumb Burst.",
+        "sequence": 109,
+        "round": 11,
+        "version": 2,
+        "actionId": 47,
+        "stage": "action",
+        "logIndex": 316
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "clover",
+        "targetId": "soot",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Clover supports the team (lowest HP 22%) · Clearleaf rinse",
+        "text": "finish/steady plan: Clover supports the team (lowest HP 22%) · Clearleaf rinse",
+        "sequence": 110,
+        "round": 11,
+        "version": 2,
+        "actionId": 48,
+        "stage": "action",
+        "logIndex": 317
+      },
+      {
+        "kind": "multi-hit",
+        "actorId": "clover",
+        "skillId": "clover-3",
+        "shape": "team",
+        "targets": [
+          "soot",
+          "clover"
+        ],
+        "text": "Clover: Clearleaf rinse reaches 2 landings.",
+        "sequence": 111,
+        "round": 11,
+        "version": 2,
+        "actionId": 48,
+        "stage": "action",
+        "logIndex": 323
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "brittle",
+        "stacks": 1,
+        "sourceId": "foe-6-binding-thread",
+        "actorId": "foe-6-binding-thread",
+        "targetId": "soot",
+        "text": "Soot: Shred ×1.",
+        "sequence": 112,
+        "round": 11,
+        "version": 2,
+        "actionId": 50,
+        "stage": "action",
+        "logIndex": 330
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "brittle",
+        "stacks": 2,
+        "sourceId": "foe-7-binding-thread",
+        "actorId": "foe-7-binding-thread",
+        "targetId": "soot",
+        "text": "Soot: Shred ×2.",
+        "sequence": 113,
+        "round": 11,
+        "version": 2,
+        "actionId": 51,
+        "stage": "action",
+        "logIndex": 334
+      },
+      {
+        "kind": "status-tick",
+        "statusId": "steep",
+        "amount": 37,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "soot",
+        "text": "Soot: Regen 37.",
+        "sequence": 114,
+        "round": 11,
+        "version": 2,
+        "actionId": 51,
+        "stage": "round-end",
+        "logIndex": 337
+      },
+      {
+        "kind": "status-tick",
+        "statusId": "steep",
+        "amount": 37,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "clover",
+        "text": "Clover: Regen 37.",
+        "sequence": 115,
+        "round": 11,
+        "version": 2,
+        "actionId": 51,
+        "stage": "round-end",
+        "logIndex": 339
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "soot",
+        "targetId": "foe-0-rain-spool",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Soot pressures a foe, Rain Spool (HP 31%) · Midnight service",
+        "text": "finish/steady plan: Soot pressures a foe, Rain Spool (HP 31%) · Midnight service",
+        "sequence": 116,
+        "round": 12,
+        "version": 2,
+        "actionId": 52,
+        "stage": "action",
+        "logIndex": 341
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "drowsy",
+        "stacks": 1,
+        "sourceId": "soot",
+        "actorId": "soot",
+        "targetId": "foe-7-binding-thread",
+        "text": "Binding Thread: Daze ×1.",
+        "sequence": 117,
+        "round": 12,
+        "version": 2,
+        "actionId": 52,
+        "stage": "action",
+        "logIndex": 350
+      },
+      {
+        "kind": "multi-hit",
+        "actorId": "soot",
+        "skillId": "soot-4",
+        "shape": "all",
+        "targets": [
+          "foe-0-rain-spool",
+          "foe-6-binding-thread",
+          "foe-7-binding-thread"
+        ],
+        "text": "Soot: Midnight service reaches 3 landings.",
+        "sequence": 118,
+        "round": 12,
+        "version": 2,
+        "actionId": 52,
+        "stage": "action",
+        "logIndex": 350
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "clover",
+        "targetId": "clover",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Clover supports the team (lowest HP 10%) · Greenhouse morning",
+        "text": "finish/steady plan: Clover supports the team (lowest HP 10%) · Greenhouse morning",
+        "sequence": 119,
+        "round": 12,
+        "version": 2,
+        "actionId": 53,
+        "stage": "action",
+        "logIndex": 351
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "sprout",
+        "stacks": 1,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "soot",
+        "text": "Soot: Second sprout ×1.",
+        "sequence": 120,
+        "round": 12,
+        "version": 2,
+        "actionId": 53,
+        "stage": "action",
+        "logIndex": 354
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "sprout",
+        "stacks": 1,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "clover",
+        "text": "Clover: Second sprout ×1.",
+        "sequence": 121,
+        "round": 12,
+        "version": 2,
+        "actionId": 53,
+        "stage": "action",
+        "logIndex": 357
+      },
+      {
+        "kind": "multi-hit",
+        "actorId": "clover",
+        "skillId": "clover-4",
+        "shape": "team",
+        "targets": [
+          "soot",
+          "clover"
+        ],
+        "text": "Clover: Greenhouse morning reaches 2 landings.",
+        "sequence": 122,
+        "round": 12,
+        "version": 2,
+        "actionId": 53,
+        "stage": "action",
+        "logIndex": 357
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "drowsy",
+        "stacks": 1,
+        "sourceId": "foe-0-rain-spool",
+        "actorId": "foe-0-rain-spool",
+        "targetId": "soot",
+        "text": "Soot: Daze ×1.",
+        "sequence": 123,
+        "round": 12,
+        "version": 2,
+        "actionId": 54,
+        "stage": "action",
+        "logIndex": 361
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "brittle",
+        "stacks": 3,
+        "sourceId": "foe-6-binding-thread",
+        "actorId": "foe-6-binding-thread",
+        "targetId": "soot",
+        "text": "Soot: Shred ×3.",
+        "sequence": 124,
+        "round": 12,
+        "version": 2,
+        "actionId": 55,
+        "stage": "action",
+        "logIndex": 367
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "soot",
+        "targetId": "foe-0-rain-spool",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Soot pressures a foe, Rain Spool (HP 27%) · Cocoa spark",
+        "text": "finish/steady plan: Soot pressures a foe, Rain Spool (HP 27%) · Cocoa spark",
+        "sequence": 125,
+        "round": 13,
+        "version": 2,
+        "actionId": 57,
+        "stage": "action",
+        "logIndex": 373
+      }
+    ],
+    "committed": true
+  }
+}

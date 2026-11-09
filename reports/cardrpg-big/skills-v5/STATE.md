@@ -1,7 +1,7 @@
 # Skills V5 lane A state
 Base: d22f47cb8 (A5 closing tip, DRAFT406; paused WIP c7b0c498f preserved).
 Runtime baseline: 0e1e15180108b443ce2e615ea54272b907cc8bb0.
-Phase: S5 TRAIN design optimisation after S7 DRAFT414; user ADDENDUM-SKILLDESIGN.md saved; D1–D6 fold into S5→S8→S6.
+Phase: S5 full TRAIN complete; entering S8 cadence/startup/static-display observations before S6.
 Branch: codex/cardrpg-v5a-s5-2026-11-09 DRAFT417on414; selected6772eb343/evidencece538d379, S7baseab8bc377f.
 Done: git status/log recorded; handoff found under memory/; rules/outboxes read.
 Done: ON/OFF artifacts match 20,929,841 bytes and 9e25f238 / 9158b51e.
@@ -27,7 +27,7 @@ Spec amendment authorised: Cinnamon ally splash and no-casualty team ultimate; b
 Next phases: S0 -> S1 -> S2 -> S3 -> S4 -> S5 -> S8 -> S6; S7 after S3.
 Acceptance: 20001-20500 UNUSED; TRAIN 1-500 only.
 Open: fourth-slot 63/384, worst88.8pp; cats/sets/bands; cadence723s/deadtime2%; startup/static display/Z.
-B:07:31 read: separate B artifact147 peak draws; A keeps130 target and own artifact. Guardian disclosure adopted; ready-scene overlay diagnostic queued.
+B:08:08 read: DRAFT420 separate integration preview,147 draws/+3B default entry. A keeps130 target/own artifact; guardian disclosure adopted, ready-scene overlay queued.
 Untouchable: .DS_Store and display-context-40/{partial,results}.json preserved uncommitted.
 No model helpers, CUA, Docker, main checkout edits, merge or deploy.
 Done: S3 DRAFT411 on410, runtime053fe383d/evidence8a894a35f.
@@ -53,8 +53,8 @@ B lease granted by suspending own waiting queues, all resumed unchanged after B 
 S7 no active validation job; meta/fallback UI PASS3widths; build20,958,952bytes/bca56f23612d.
 S7 UI reviewed4captures; combo contrast10.3748,fallback14.2011. Fallback only static shell readiness.
 S7 priority: same S5 queues resumed after isolated E2E PASS; receipt/tmp/cardrpg-v5a-s7-priority.json.
-S8 preflight: selected default build/tmp/cardrpg-v5a-s8-selected-default-dist; main340f88b9 rechecked. Home now requires complete S5 score/audit; no run yet.
+S5 self-score 6.281/10 (PARTIAL); first S8 review items: Fight pacing; Balance gates. Full receipt audit PASS; numeric misses retained.
 S6 tools preflightPASS; ready-scene fallback/HP-plate diagnostic added to same Z capture after B06:30. No samples; missing A5 registration handled with exact PROMPT-A5 gates.
 S5 addendum: design1multi32.089/support29.595/normal12.08; design2b32.940/30.045/17.967REJECTED. Design3full500:multi32.525/support29.842/normal13.238,D4ten/twelve,D3thirty/thirty-two,D5PASS; A5matrices running. FIXLOG active, acceptance UNUSED.
-S5 selected4505cells complete; fourthslot35/384,worst47pp; bare33/2304,worst51pp (before321/47.6). Cats51.05–79.17%,tiers19/24,bands13/33miss; same progression queue51634 continues; source/hash checks PASS.
+S5 selected4505cells complete; fourthslot35/384,worst47pp; bare33/2304,worst51pp (before321/47.6). Cats51.05–79.17%,tiers19/24,bands13/33miss; 90 earned accounts complete; same queue51634 runs day7/editions; source/hash checks PASS.
 S5 diagnostics:23D3+18D4+2starter pacing replays exact; guardians legal but skipped, starter12/25r with0/606enemy heal. PACING-REVIEW.md; full500 queues continue unchanged.

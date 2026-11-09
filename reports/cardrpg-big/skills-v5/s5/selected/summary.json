@@ -8,10 +8,12 @@
     "equipped",
     "teams",
     "sets",
-    "tiers"
+    "tiers",
+    "pieces",
+    "elites"
   ],
-  "cells": 1321,
-  "trials": 660500,
+  "cells": 4505,
+  "trials": 2252500,
   "pieces": {
     "cells": 384,
     "misses": 35,
@@ -51,7 +53,12 @@
     "beforeSaturated": 0,
     "afterSaturated": 11
   },
-  "barePieces": null,
+  "barePieces": {
+    "cells": 2304,
+    "misses": 33,
+    "worstGainPp": 51,
+    "maxShare": 0.04799521767347804
+  },
   "cats": [
     {
       "id": "mochi",
@@ -645,6 +652,118 @@
           "rate": 0.744,
           "gapPp": 25.6,
           "within5": false
+        }
+      }
+    },
+    {
+      "kind": "elites",
+      "scene": 0,
+      "best": 1,
+      "nearBestCount": 220,
+      "approved": {
+        "oven": {
+          "rate": 1,
+          "gapPp": 0,
+          "within5": true
+        },
+        "thread": {
+          "rate": 1,
+          "gapPp": 0,
+          "within5": true
+        },
+        "night-lamp": {
+          "rate": 1,
+          "gapPp": 0,
+          "within5": true
+        },
+        "afternoon-tea": {
+          "rate": 1,
+          "gapPp": 0,
+          "within5": true
+        }
+      }
+    },
+    {
+      "kind": "elites",
+      "scene": 1,
+      "best": 1,
+      "nearBestCount": 220,
+      "approved": {
+        "oven": {
+          "rate": 1,
+          "gapPp": 0,
+          "within5": true
+        },
+        "thread": {
+          "rate": 1,
+          "gapPp": 0,
+          "within5": true
+        },
+        "night-lamp": {
+          "rate": 1,
+          "gapPp": 0,
+          "within5": true
+        },
+        "afternoon-tea": {
+          "rate": 1,
+          "gapPp": 0,
+          "within5": true
+        }
+      }
+    },
+    {
+      "kind": "elites",
+      "scene": 2,
+      "best": 1,
+      "nearBestCount": 220,
+      "approved": {
+        "oven": {
+          "rate": 1,
+          "gapPp": 0,
+          "within5": true
+        },
+        "thread": {
+          "rate": 1,
+          "gapPp": 0,
+          "within5": true
+        },
+        "night-lamp": {
+          "rate": 1,
+          "gapPp": 0,
+          "within5": true
+        },
+        "afternoon-tea": {
+          "rate": 1,
+          "gapPp": 0,
+          "within5": true
+        }
+      }
+    },
+    {
+      "kind": "elites",
+      "scene": 3,
+      "best": 1,
+      "nearBestCount": 220,
+      "approved": {
+        "oven": {
+          "rate": 1,
+          "gapPp": 0,
+          "within5": true
+        },
+        "thread": {
+          "rate": 1,
+          "gapPp": 0,
+          "within5": true
+        },
+        "night-lamp": {
+          "rate": 1,
+          "gapPp": 0,
+          "within5": true
+        },
+        "afternoon-tea": {
+          "rate": 1,
+          "gapPp": 0,
+          "within5": true
         }
       }
     }

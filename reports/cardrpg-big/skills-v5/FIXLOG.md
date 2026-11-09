@@ -1,5 +1,19 @@
 # Skills V5 repair log
 
+## S5-A5-DAY7-ADVICE — one earned loss without an improving recommendation (PARTIAL)
+- Reproduce: registered TRAIN day7 `heavy-3.save`, account root 4 and route seed 55437, chapter 3/band 6, in `s5/selected/day7/results.json`. Account levels are 7/7/6; the route loses at boss node 6-0 after 19 rounds, with Pantry Crown at 44 HP. The input save SHA256 is `11db8c14fd90d5041b61eb60808278389bf170e233d324dbaa35b7108b7ceb68`.
+- Measure: before 21/21 losses had available advice; selected 50/51 do. Casual wins within two attempts are 19/30, regular 21/30; heavy first-attempt wins are 15/30. The three win-rate conditions pass, while the every-loss-advice gate regresses to MISS.
+- Ranked hypotheses: (1) no affordable legal candidate beats the current build in the fixed ten-seed forecast; (2) the forecast does not represent this near-win encounter well; (3) helper pressure changes which preparation decisions help. The retained result establishes absence of a recommendation, not which hypothesis caused it.
+- Smallest next fix: replay this exact earned account and audit candidate availability and forecast values before changing one V5-only recommendation term. Do not grant resources, force advice without evidence, or replace the loss seed. The selected three-package S5 design remains unchanged.
+- Verification/status: all 90 earned account cases are retained, with paired advice/no-advice retries when available. Full combat/progression matrices and OFF8,250/fallback180+45 source closure remain exact. PARTIAL; carry this specific loss into the pre-S6 review.
+
+## S5-A5-ESSENCE-RATIO — progression regression (PARTIAL)
+- Reproduce: complete 90-account × 45-day TRAIN receipts in `s5/{before,selected}/economy/results.json`; unchanged public-command policy and style budgets. `economy-summary.mjs` reports the original ≤3× heavy/casual gate.
+- Measure: essence ratio 2.808208× PASS → 3.079646× MISS. The other currency/pull ratios remain below 3×, regular Legendary-by-day7 is 29/30, and selector timing passes. Cumulative essence by style/day and source hashes are retained in `s5/selected/economy-attribution.json`.
+- Ranked hypotheses: (1) changed combat outcomes alter route-earned rewards; (2) early rewards compound into subsequent equipment and route success; (3) daily caps affect heavy and casual cohorts differently. The aggregate receipts establish the ratio regression, not the individual causal contributions.
+- Smallest next fix: trace one retained casual account's missing reward opportunity and the matching heavy account before changing a combat or reward term. Do not alter style budgets or the ratio denominator. The three S5 design packages remain exhausted.
+- Verification/status: all 4,050 account-days and full combat matrices are retained; OFF8,250/fallback180+45 source closure remains exact. Day7/collectible confirmation continues on the same source. PARTIAL; revisit before S6, with no acceptance sampling or extra S5 candidate.
+
 ## S5-BARE-ATTRIBUTION-BITS — read-only diagnostic decoder (FIXED)
 - Reproduce: initial read-only aggregation of `s5/before/pieces/results.json` interpreted outcome bit 1 as the without-item result. Its assertion against the saved 321 misses failed (the inverted interpretation found 5). The command stopped before writing any report; simulations and existing summaries were untouched.
 - Ranked hypotheses: (1) reversed outcome bits, confirmed against `bare-matrix.mjs:128`; (2) incomplete cells, ruled out for all 2,304 rows; (3) source drift, not indicated by this arithmetic mismatch.
@@ -247,3 +261,143 @@ Addendum received during S5. TRAIN remains 1–500. Existing baseline slices con
 - Smallest future fix: isolate one support horizon term on TRAIN with survival and pacing paired. No fourth S5 package; broad cooldown and Mark-strike remain rejected.
 - Verification/status: exact saved battle hashes; unchanged selected OFF8250/fallback180+45/six-gate closure. [PACING-REVIEW.md](s5/selected/PACING-REVIEW.md) keeps limitations explicit. PARTIAL for the pre-S6 revisit.
 - Report-write correction: an initial Python command contained a literal backslash-n after a `with` statement and failed parsing before execution; no file, sample or commit changed. The corrected patch writes prose only.
+
+## S5-GATE A5.fourth-slot — PARTIAL
+- Reproduce: fixed TRAIN1–500, `node tools/cardrpg-big/skills-v5/numeric-gates.mjs reports/cardrpg-big/skills-v5/s5/selected`; registered cases and saved outcomes: `reports/cardrpg-big/skills-v5/s5/selected/equipped/results.json`. Gate unchanged: Every paired gain ≤12pp.
+- Measure: before {"misses":13,"cells":384,"worstPp":41}; after {"misses":35,"cells":384,"worstPp":47}. Original MISS is retained. Full per-skill/per-crew details remain in `reports/cardrpg-big/skills-v5/s5/selected/DESIGN-REPORT.md`.
+- Ranked hypotheses (not isolated causal estimates): Set thresholds interact with helpers/statuses; survivability items cross win boundaries; paired fixture saturation.
+- Smallest next fix: Isolate a single set/proc contribution on the same TRAIN pairs before considering a smaller V5-only effect. No item normalization is adopted. Three S5 design packages are already retained; no fourth candidate is introduced by this report.
+- Verification/status: full affected matrices and both mode-compatibility checks are recorded in `reports/cardrpg-big/skills-v5/s5/selected/receipt-audit.json` and `reports/cardrpg-big/skills-v5/s5-selected/audit.json`; current gate remains **PARTIAL / MISS**. Passing source/hash checks do not override it.
+
+## S5-GATE A5.bare-piece — PARTIAL
+- Reproduce: fixed TRAIN1–500, `node tools/cardrpg-big/skills-v5/numeric-gates.mjs reports/cardrpg-big/skills-v5/s5/selected`; registered cases and saved outcomes: `reports/cardrpg-big/skills-v5/s5/selected/pieces/results.json`. Gate unchanged: Every paired gain ≤12pp.
+- Measure: before {"cells":2304,"misses":321,"worstGainPp":47.6,"maxShare":0.04799521767347804}; after {"cells":2304,"misses":33,"worstGainPp":51,"maxShare":0.04799521767347804}. Original MISS is retained. Full per-skill/per-crew details remain in `reports/cardrpg-big/skills-v5/s5/selected/DESIGN-REPORT.md`.
+- Ranked hypotheses (not isolated causal estimates): Set thresholds interact with helpers/statuses; survivability items cross win boundaries; paired fixture saturation.
+- Smallest next fix: Isolate a single set/proc contribution on the same TRAIN pairs before considering a smaller V5-only effect. No item normalization is adopted. Three S5 design packages are already retained; no fourth candidate is introduced by this report.
+- Verification/status: full affected matrices and both mode-compatibility checks are recorded in `reports/cardrpg-big/skills-v5/s5/selected/receipt-audit.json` and `reports/cardrpg-big/skills-v5/s5-selected/audit.json`; current gate remains **PARTIAL / MISS**. Passing source/hash checks do not override it.
+
+## S5-GATE A5.display-correlation — PARTIAL
+- Reproduce: fixed TRAIN1–500, `node tools/cardrpg-big/skills-v5/numeric-gates.mjs reports/cardrpg-big/skills-v5/s5/selected`; registered cases and saved outcomes: `reports/cardrpg-big/skills-v5/s5/selected/summary.json`. Gate unchanged: Spearman ≥.6 each chapter.
+- Measure: before [0.4424499486471425,0.22787749567562532,0.13887629371546384]; after [0.4255760817961126,0.3711899936462595,0.15094751238119097]. Original MISS is retained. Full per-skill/per-crew details remain in `reports/cardrpg-big/skills-v5/s5/selected/DESIGN-REPORT.md`.
+- Ranked hypotheses (not isolated causal estimates): Static utility weights disagree with nonlinear win effects; saturated cells weaken rank correlation; set completion dominates individual item estimates.
+- Smallest next fix: The320 registered shared-weight fits were all rejected. Investigate one attributable utility term; keep the existing Spearman gate. Three S5 design packages are already retained; no fourth candidate is introduced by this report.
+- Verification/status: full affected matrices and both mode-compatibility checks are recorded in `reports/cardrpg-big/skills-v5/s5/selected/receipt-audit.json` and `reports/cardrpg-big/skills-v5/s5-selected/audit.json`; current gate remains **PARTIAL / MISS**. Passing source/hash checks do not override it.
+
+## S5-GATE A5.cats — PARTIAL
+- Reproduce: fixed TRAIN1–500, `node tools/cardrpg-big/skills-v5/numeric-gates.mjs reports/cardrpg-big/skills-v5/s5/selected`; registered cases and saved outcomes: `reports/cardrpg-big/skills-v5/s5/selected/teams/results.json`. Gate unchanged: Every cat55–75%, each top pick somewhere.
+- Measure: before 62.412%–93.119%; after 51.045%–79.168%. Original MISS is retained. Full per-skill/per-crew details remain in `reports/cardrpg-big/skills-v5/s5/selected/DESIGN-REPORT.md`.
+- Ranked hypotheses (not isolated causal estimates): Unequal encounter difficulty despite matched displayed power; helper/status synergy favors particular kits; support/control choices cross win thresholds.
+- Smallest next fix: Separate kit effects from reference-fixture difficulty on TRAIN; preserve the approved crews, reference fixture and current gates. Three S5 design packages are already retained; no fourth candidate is introduced by this report.
+- Verification/status: full affected matrices and both mode-compatibility checks are recorded in `reports/cardrpg-big/skills-v5/s5/selected/receipt-audit.json` and `reports/cardrpg-big/skills-v5/s5-selected/audit.json`; current gate remains **PARTIAL / MISS**. Passing source/hash checks do not override it.
+
+## S5-GATE A5.fixture-calibration — PARTIAL
+- Reproduce: fixed TRAIN1–500, `node tools/cardrpg-big/skills-v5/numeric-gates.mjs reports/cardrpg-big/skills-v5/s5/selected`; registered cases and saved outcomes: `reports/cardrpg-big/skills-v5/s5/selected/teams/results.json`. Gate unchanged: Reference matched-power median55–60% on TRAIN; measured on acceptance.
+- Measure: before {"median":0.454,"byChapter":[{"chapter":2,"rate":0.448},{"chapter":3,"rate":0.454},{"chapter":1,"rate":0.99}],"note":"Unchanged fixture; no calibration or gate adjustment adopted."}; after {"median":0.34,"byChapter":[{"chapter":2,"rate":0.212},{"chapter":3,"rate":0.34},{"chapter":1,"rate":0.866}],"note":"Unchanged fixture; no calibration or gate adjustment adopted."}. Original MISS is retained. Full per-skill/per-crew details remain in `reports/cardrpg-big/skills-v5/s5/selected/DESIGN-REPORT.md`.
+- Ranked hypotheses (not isolated causal estimates): Unequal encounter difficulty despite matched displayed power; helper/status synergy favors particular kits; support/control choices cross win thresholds.
+- Smallest next fix: Separate kit effects from reference-fixture difficulty on TRAIN; preserve the approved crews, reference fixture and current gates. Three S5 design packages are already retained; no fourth candidate is introduced by this report.
+- Verification/status: full affected matrices and both mode-compatibility checks are recorded in `reports/cardrpg-big/skills-v5/s5/selected/receipt-audit.json` and `reports/cardrpg-big/skills-v5/s5-selected/audit.json`; current gate remains **PARTIAL / MISS**. Passing source/hash checks do not override it.
+
+## S5-GATE A5.sets — PARTIAL
+- Reproduce: fixed TRAIN1–500, `node tools/cardrpg-big/skills-v5/numeric-gates.mjs reports/cardrpg-big/skills-v5/s5/selected`; registered cases and saved outcomes: `reports/cardrpg-big/skills-v5/s5/selected/sets/results.json`. Gate unchanged: Each set35–75% and leads ≥1 shared situation.
+- Measure: before 83.550%–94.625%; after 72.925%–94.400%. Original MISS is retained. Full per-skill/per-crew details remain in `reports/cardrpg-big/skills-v5/s5/selected/DESIGN-REPORT.md`.
+- Ranked hypotheses (not isolated causal estimates): Set thresholds interact with helpers/statuses; survivability items cross win boundaries; paired fixture saturation.
+- Smallest next fix: Isolate a single set/proc contribution on the same TRAIN pairs before considering a smaller V5-only effect. No item normalization is adopted. Three S5 design packages are already retained; no fourth candidate is introduced by this report.
+- Verification/status: full affected matrices and both mode-compatibility checks are recorded in `reports/cardrpg-big/skills-v5/s5/selected/receipt-audit.json` and `reports/cardrpg-big/skills-v5/s5-selected/audit.json`; current gate remains **PARTIAL / MISS**. Passing source/hash checks do not override it.
+
+## S5-GATE A5.crew-gain — PARTIAL
+- Reproduce: fixed TRAIN1–500, `node tools/cardrpg-big/skills-v5/numeric-gates.mjs reports/cardrpg-big/skills-v5/s5/selected`; registered cases and saved outcomes: `reports/cardrpg-big/skills-v5/s5/selected/teams/results.json`. Gate unchanged: Coherent minus random10–25pp.
+- Measure: before {"chosen":["brioche","velvet","marigold"],"gainPp":21.666666666666668}; after {"chosen":["mochi","clover","mallow"],"gainPp":29.399999999999995}. Regression from an earlier PASS. Full per-skill/per-crew details remain in `reports/cardrpg-big/skills-v5/s5/selected/DESIGN-REPORT.md`.
+- Ranked hypotheses (not isolated causal estimates): Unequal encounter difficulty despite matched displayed power; helper/status synergy favors particular kits; support/control choices cross win thresholds.
+- Smallest next fix: Separate kit effects from reference-fixture difficulty on TRAIN; preserve the approved crews, reference fixture and current gates. Three S5 design packages are already retained; no fourth candidate is introduced by this report.
+- Verification/status: full affected matrices and both mode-compatibility checks are recorded in `reports/cardrpg-big/skills-v5/s5/selected/receipt-audit.json` and `reports/cardrpg-big/skills-v5/s5-selected/audit.json`; current gate remains **PARTIAL / MISS**. Passing source/hash checks do not override it.
+
+## S5-GATE V5.named-crews — PARTIAL
+- Reproduce: fixed TRAIN1–500, `node tools/cardrpg-big/skills-v5/numeric-gates.mjs reports/cardrpg-big/skills-v5/s5/selected`; registered cases and saved outcomes: `reports/cardrpg-big/skills-v5/s5/selected/summary.json`. Gate unchanged: All4approved crews within5pp of best at every boss/elite.
+- Measure: before 3/7 encounters miss; after 3/7 encounters miss. Original MISS is retained. Full per-skill/per-crew details remain in `reports/cardrpg-big/skills-v5/s5/selected/DESIGN-REPORT.md`.
+- Ranked hypotheses (not isolated causal estimates): Unequal encounter difficulty despite matched displayed power; helper/status synergy favors particular kits; support/control choices cross win thresholds.
+- Smallest next fix: Separate kit effects from reference-fixture difficulty on TRAIN; preserve the approved crews, reference fixture and current gates. Three S5 design packages are already retained; no fourth candidate is introduced by this report.
+- Verification/status: full affected matrices and both mode-compatibility checks are recorded in `reports/cardrpg-big/skills-v5/s5/selected/receipt-audit.json` and `reports/cardrpg-big/skills-v5/s5-selected/audit.json`; current gate remains **PARTIAL / MISS**. Passing source/hash checks do not override it.
+
+## S5-GATE V5.D3-keyword-crews — PARTIAL
+- Reproduce: fixed TRAIN1–500, `node tools/cardrpg-big/skills-v5/numeric-gates.mjs reports/cardrpg-big/skills-v5/s5/selected`; registered cases and saved outcomes: `reports/cardrpg-big/skills-v5/s5/selected/design-report.json`. Gate unchanged: Each of8keywords in≥1/3 battles of every named crew.
+- Measure: before not instrumented in the earlier cohort; after see the32 per-crew keyword assertions in the linked design report. Original MISS is retained. Full per-skill/per-crew details remain in `reports/cardrpg-big/skills-v5/s5/selected/DESIGN-REPORT.md`.
+- Ranked hypotheses (not isolated causal estimates): Recorded Thread Burn attempts can both resist; Night lamp Daze suppresses Yarn Bitter; encounter mechanics determine exposure opportunities.
+- Smallest next fix: Consider a distinct secondary Bitter context without weakening successful control. Exact23miss replays are retained; no fourth S5 package. Three S5 design packages are already retained; no fourth candidate is introduced by this report.
+- Verification/status: full affected matrices and both mode-compatibility checks are recorded in `reports/cardrpg-big/skills-v5/s5/selected/receipt-audit.json` and `reports/cardrpg-big/skills-v5/s5-selected/audit.json`; current gate remains **PARTIAL / MISS**. Passing source/hash checks do not override it.
+
+## S5-GATE V5.D4-skill-diversity — PARTIAL
+- Reproduce: fixed TRAIN1–500, `node tools/cardrpg-big/skills-v5/numeric-gates.mjs reports/cardrpg-big/skills-v5/s5/selected`; registered cases and saved outcomes: `reports/cardrpg-big/skills-v5/s5/selected/design-report.json`. Gate unchanged: Each skill5–60% of all its cat actions in matched battles.
+- Measure: before not instrumented in the earlier cohort; after mochi: mochi-1 71.925%, mochi-2 0.384%, mochi-3 9.029%, mochi-4 18.525%; panko: panko-1 69.986%, panko-2 0.286%, panko-3 9.093%, panko-4 19.700%. Original MISS is retained. Full per-skill/per-crew details remain in `reports/cardrpg-big/skills-v5/s5/selected/DESIGN-REPORT.md`.
+- Ranked hypotheses (not isolated causal estimates): The automatic evaluator prefers other legal moves; capped/discounted shield value can underreward prevention; existing support companions cover the same need.
+- Smallest next fix: Value the distinct Warm welcome/Bread cover opportunity. Eighteen exact replays rule out availability in those cases; broad basic cooldowns remain rejected. Three S5 design packages are already retained; no fourth candidate is introduced by this report.
+- Verification/status: full affected matrices and both mode-compatibility checks are recorded in `reports/cardrpg-big/skills-v5/s5/selected/receipt-audit.json` and `reports/cardrpg-big/skills-v5/s5-selected/audit.json`; current gate remains **PARTIAL / MISS**. Passing source/hash checks do not override it.
+
+## S5-GATE A5.tiers — PARTIAL
+- Reproduce: fixed TRAIN1–500, `node tools/cardrpg-big/skills-v5/numeric-gates.mjs reports/cardrpg-big/skills-v5/s5/selected`; registered cases and saved outcomes: `reports/cardrpg-big/skills-v5/s5/selected/tiers/results.json`. Gate unchanged: TRAIN24comparisons; combined44/48 evaluated after acceptance.
+- Measure: before Detailed measured values retained in reports/cardrpg-big/skills-v5/s5/before/tiers/results.json; after Detailed measured values retained in reports/cardrpg-big/skills-v5/s5/selected/tiers/results.json. Original MISS is retained. Full per-skill/per-crew details remain in `reports/cardrpg-big/skills-v5/s5/selected/DESIGN-REPORT.md`.
+- Ranked hypotheses (not isolated causal estimates): Intended-band saturation; item/status scaling changes tier benefits; helper pressure changes survivability thresholds.
+- Smallest next fix: Identify the first failing tier pair and its actual outcome differences before a narrowly scoped V5 change. Three S5 design packages are already retained; no fourth candidate is introduced by this report.
+- Verification/status: full affected matrices and both mode-compatibility checks are recorded in `reports/cardrpg-big/skills-v5/s5/selected/receipt-audit.json` and `reports/cardrpg-big/skills-v5/s5-selected/audit.json`; current gate remains **PARTIAL / MISS**. Passing source/hash checks do not override it.
+
+## S5-GATE A5.band-ladder — PARTIAL
+- Reproduce: fixed TRAIN1–500, `node tools/cardrpg-big/skills-v5/numeric-gates.mjs reports/cardrpg-big/skills-v5/s5/selected`; registered cases and saved outcomes: `reports/cardrpg-big/skills-v5/s5/selected/tiers/results.json`. Gate unchanged: Bare→legendary≥15pp; no intended-band saturation.
+- Measure: before 1/33 intended-band cells miss; after 13/33 intended-band cells miss. Original MISS is retained. Full per-skill/per-crew details remain in `reports/cardrpg-big/skills-v5/s5/selected/DESIGN-REPORT.md`.
+- Ranked hypotheses (not isolated causal estimates): Intended-band saturation; item/status scaling changes tier benefits; helper pressure changes survivability thresholds.
+- Smallest next fix: Identify the first failing tier pair and its actual outcome differences before a narrowly scoped V5 change. Three S5 design packages are already retained; no fourth candidate is introduced by this report.
+- Verification/status: full affected matrices and both mode-compatibility checks are recorded in `reports/cardrpg-big/skills-v5/s5/selected/receipt-audit.json` and `reports/cardrpg-big/skills-v5/s5-selected/audit.json`; current gate remains **PARTIAL / MISS**. Passing source/hash checks do not override it.
+
+## S5-GATE V5.full500.multi-ally — PARTIAL
+- Reproduce: fixed TRAIN1–500, `node tools/cardrpg-big/skills-v5/numeric-gates.mjs reports/cardrpg-big/skills-v5/s5/selected`; registered cases and saved outcomes: `reports/cardrpg-big/skills-v5/s5/selected/metrics/results.json`. Gate unchanged: ≥35% support actions touch multiple allies.
+- Measure: before 25.355780199032374; after 29.841532412734946. Original MISS is retained. Full per-skill/per-crew details remain in `reports/cardrpg-big/skills-v5/s5/selected/DESIGN-REPORT.md`.
+- Ranked hypotheses (not isolated causal estimates): Guardian support moves are rarely selected; Cinnamon Clean apron remains single-patient; efficient single-target sustain competes with multi-ally casts.
+- Smallest next fix: The exact Cinnamon ally-splash/team fallback and later support rows are already selected. A future change should target one prevention opportunity with paired pacing checks. Three S5 design packages are already retained; no fourth candidate is introduced by this report.
+- Verification/status: full affected matrices and both mode-compatibility checks are recorded in `reports/cardrpg-big/skills-v5/s5/selected/receipt-audit.json` and `reports/cardrpg-big/skills-v5/s5-selected/audit.json`; current gate remains **PARTIAL / MISS**. Passing source/hash checks do not override it.
+
+## S5-GATE V5.full500.normal-rounds — PARTIAL
+- Reproduce: fixed TRAIN1–500, `node tools/cardrpg-big/skills-v5/numeric-gates.mjs reports/cardrpg-big/skills-v5/s5/selected`; registered cases and saved outcomes: `reports/cardrpg-big/skills-v5/s5/selected/metrics/results.json`. Gate unchanged: Mean8–12normal rounds.
+- Measure: before 12.036; after 13.237666666666666. Original MISS is retained. Full per-skill/per-crew details remain in `reports/cardrpg-big/skills-v5/s5/selected/DESIGN-REPORT.md`.
+- Ranked hypotheses (not isolated causal estimates): Setup/prevention replaces immediate damage; opening enemy sustain lengthens some fights; support can be chosen after its best window.
+- Smallest next fix: Broad cooldowns were rejected after17.967rounds. Next isolate one support/setup valuation term and retain full normal-battle denominators. Three S5 design packages are already retained; no fourth candidate is introduced by this report.
+- Verification/status: full affected matrices and both mode-compatibility checks are recorded in `reports/cardrpg-big/skills-v5/s5/selected/receipt-audit.json` and `reports/cardrpg-big/skills-v5/s5-selected/audit.json`; current gate remains **PARTIAL / MISS**. Passing source/hash checks do not override it.
+
+## S5-GATE V5.full500.ultimates — PARTIAL
+- Reproduce: fixed TRAIN1–500, `node tools/cardrpg-big/skills-v5/numeric-gates.mjs reports/cardrpg-big/skills-v5/s5/selected`; registered cases and saved outcomes: `reports/cardrpg-big/skills-v5/s5/selected/metrics/results.json`. Gate unchanged: ≥1executed ultimate per cat per normal battle.
+- Measure: before 66.66666666666667; after 78.7. Original MISS is retained. Full per-skill/per-crew details remain in `reports/cardrpg-big/skills-v5/s5/selected/DESIGN-REPORT.md`.
+- Ranked hypotheses (not isolated causal estimates): Short encounters end before each cat casts; another legal skill can have higher policy value; defeats suppress later actions.
+- Smallest next fix: Cinnamon no-casualty fallback is implemented. Examine one actual missed-ultimate window without forced rotation or artificial casualties. Three S5 design packages are already retained; no fourth candidate is introduced by this report.
+- Verification/status: full affected matrices and both mode-compatibility checks are recorded in `reports/cardrpg-big/skills-v5/s5/selected/receipt-audit.json` and `reports/cardrpg-big/skills-v5/s5-selected/audit.json`; current gate remains **PARTIAL / MISS**. Passing source/hash checks do not override it.
+
+## S5-GATE V5.probe180.multi-ally — PARTIAL
+- Reproduce: fixed TRAIN1–500, `node tools/cardrpg-big/skills-v5/numeric-gates.mjs reports/cardrpg-big/skills-v5/s5/selected`; registered cases and saved outcomes: `reports/cardrpg-big/skills-v5/s5/selected/metrics/results.json`. Gate unchanged: ≥35% support actions touch multiple allies.
+- Measure: before 25.352664576802507; after 30.061790487138957. Original MISS is retained. Full per-skill/per-crew details remain in `reports/cardrpg-big/skills-v5/s5/selected/DESIGN-REPORT.md`.
+- Ranked hypotheses (not isolated causal estimates): Guardian support moves are rarely selected; Cinnamon Clean apron remains single-patient; efficient single-target sustain competes with multi-ally casts.
+- Smallest next fix: The exact Cinnamon ally-splash/team fallback and later support rows are already selected. A future change should target one prevention opportunity with paired pacing checks. Three S5 design packages are already retained; no fourth candidate is introduced by this report.
+- Verification/status: full affected matrices and both mode-compatibility checks are recorded in `reports/cardrpg-big/skills-v5/s5/selected/receipt-audit.json` and `reports/cardrpg-big/skills-v5/s5-selected/audit.json`; current gate remains **PARTIAL / MISS**. Passing source/hash checks do not override it.
+
+## S5-GATE V5.probe180.normal-rounds — PARTIAL
+- Reproduce: fixed TRAIN1–500, `node tools/cardrpg-big/skills-v5/numeric-gates.mjs reports/cardrpg-big/skills-v5/s5/selected`; registered cases and saved outcomes: `reports/cardrpg-big/skills-v5/s5/selected/metrics/results.json`. Gate unchanged: Mean8–12normal rounds.
+- Measure: before 12.108333333333333; after 13.3. Original MISS is retained. Full per-skill/per-crew details remain in `reports/cardrpg-big/skills-v5/s5/selected/DESIGN-REPORT.md`.
+- Ranked hypotheses (not isolated causal estimates): Setup/prevention replaces immediate damage; opening enemy sustain lengthens some fights; support can be chosen after its best window.
+- Smallest next fix: Broad cooldowns were rejected after17.967rounds. Next isolate one support/setup valuation term and retain full normal-battle denominators. Three S5 design packages are already retained; no fourth candidate is introduced by this report.
+- Verification/status: full affected matrices and both mode-compatibility checks are recorded in `reports/cardrpg-big/skills-v5/s5/selected/receipt-audit.json` and `reports/cardrpg-big/skills-v5/s5-selected/audit.json`; current gate remains **PARTIAL / MISS**. Passing source/hash checks do not override it.
+
+## S5-GATE V5.probe180.ultimates — PARTIAL
+- Reproduce: fixed TRAIN1–500, `node tools/cardrpg-big/skills-v5/numeric-gates.mjs reports/cardrpg-big/skills-v5/s5/selected`; registered cases and saved outcomes: `reports/cardrpg-big/skills-v5/s5/selected/metrics/results.json`. Gate unchanged: ≥1executed ultimate per cat per normal battle.
+- Measure: before 66.66666666666667; after 75. Original MISS is retained. Full per-skill/per-crew details remain in `reports/cardrpg-big/skills-v5/s5/selected/DESIGN-REPORT.md`.
+- Ranked hypotheses (not isolated causal estimates): Short encounters end before each cat casts; another legal skill can have higher policy value; defeats suppress later actions.
+- Smallest next fix: Cinnamon no-casualty fallback is implemented. Examine one actual missed-ultimate window without forced rotation or artificial casualties. Three S5 design packages are already retained; no fourth candidate is introduced by this report.
+- Verification/status: full affected matrices and both mode-compatibility checks are recorded in `reports/cardrpg-big/skills-v5/s5/selected/receipt-audit.json` and `reports/cardrpg-big/skills-v5/s5-selected/audit.json`; current gate remains **PARTIAL / MISS**. Passing source/hash checks do not override it.
+
+## S5-GATE A5.economy.ratiosAtMost3 — PARTIAL
+- Reproduce: fixed TRAIN1–500, `node tools/cardrpg-big/skills-v5/numeric-gates.mjs reports/cardrpg-big/skills-v5/s5/selected`; registered cases and saved outcomes: `reports/cardrpg-big/skills-v5/s5/selected/economy/summary.json`. Gate unchanged: Unchanged A5 registered gate.
+- Measure: before true; after false. Regression from an earlier PASS. Full per-skill/per-crew details remain in `reports/cardrpg-big/skills-v5/s5/selected/DESIGN-REPORT.md`.
+- Ranked hypotheses (not isolated causal estimates): The exact numeric condition is not met in the retained rows; combat outcomes can alter earned progression; no individual causal contribution has yet been isolated.
+- Smallest next fix: Inspect the first failing registered row before proposing a narrowly scoped TRAIN change; retain the current threshold and all samples. Three S5 design packages are already retained; no fourth candidate is introduced by this report.
+- Verification/status: full affected matrices and both mode-compatibility checks are recorded in `reports/cardrpg-big/skills-v5/s5/selected/receipt-audit.json` and `reports/cardrpg-big/skills-v5/s5-selected/audit.json`; current gate remains **PARTIAL / MISS**. Passing source/hash checks do not override it.
+
+## S5-GATE A5.day7.everyLossHasAvailableImprovement — PARTIAL
+- Reproduce: fixed TRAIN1–500, `node tools/cardrpg-big/skills-v5/numeric-gates.mjs reports/cardrpg-big/skills-v5/s5/selected`; registered cases and saved outcomes: `reports/cardrpg-big/skills-v5/s5/selected/day7/results.json`. Gate unchanged: Unchanged A5 registered gate.
+- Measure: before true; after false. Regression from an earlier PASS. Full per-skill/per-crew details remain in `reports/cardrpg-big/skills-v5/s5/selected/DESIGN-REPORT.md`.
+- Ranked hypotheses (not isolated causal estimates): The exact numeric condition is not met in the retained rows; combat outcomes can alter earned progression; no individual causal contribution has yet been isolated.
+- Smallest next fix: Inspect the first failing registered row before proposing a narrowly scoped TRAIN change; retain the current threshold and all samples. Three S5 design packages are already retained; no fourth candidate is introduced by this report.
+- Verification/status: full affected matrices and both mode-compatibility checks are recorded in `reports/cardrpg-big/skills-v5/s5/selected/receipt-audit.json` and `reports/cardrpg-big/skills-v5/s5-selected/audit.json`; current gate remains **PARTIAL / MISS**. Passing source/hash checks do not override it.
