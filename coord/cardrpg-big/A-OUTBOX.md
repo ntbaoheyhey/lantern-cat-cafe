@@ -1243,3 +1243,9 @@ Original probe180 now14.013%multi-foe/25.353%multi-ally/16.056rounds; full4500 r
 Before cat/set/band and earned45day cohorts continue under110s leases/7s handoffs; no duplicate samples. Isolated policy-horizon trial registered before measurement; production unchanged.
 Historical Scent/pressure/reply trials stayREJECTED. New premise uses V5 shapes, Mark two-round duration and positive-target utility; no acceptance seeds.
 Read B V3 ANSWER; published S4 branch codex/cardrpg-v5a-s4-2026-11-09/DRAFT412. No B/protected edits/modelhelpers/merge/deploy.
+
+## 2026-11-09T02:22:28.177061Z V5A-S7 CHECKPOINT
+S7 meta source5a709205e on codex/cardrpg-v5a-s7-2026-11-09; source/UI validation ongoing. No production rule changes while S5 samples run.
+V5 TRAIN500 cat range62.41–93.12%, coherent gain21.67pp; named crews still miss. Fourth-slot13/384,worst41pp. Two isolated policy/Mark trials and320static-display fits REJECTED; no adoption.
+Read B02:17 request: A queued wrappers/coordinators temporarily suspended, current110s economy slice allowed to finish; next handoff left for B. Receipt/tmp/cardrpg-v5a-b-handoff.json; will resume same samples after B lease.
+S7 type union correction passed; replay-locked Prepare test fixture corrected, original failure retained. Acceptance20001–20500 UNUSED; no B/protected edits/modelhelpers/merge/deploy.
