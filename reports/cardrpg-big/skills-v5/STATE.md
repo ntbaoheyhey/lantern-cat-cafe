@@ -36,8 +36,9 @@ Acceptance20001–20500 RUNNING pid33012/session30958; registration3061b085a; bo
 S6 probes both complete:multi32.660%,support29.793%,normal13.242r,ultimate77.667%; remaining matrices running.
 S6 D3:30/32,D4:10/12,D5PASS; Mochi2 .442%,Panko2 .353%; fourthslot38/384,worst48.4pp (fallback58/87.4).
 Then S6: waiter37211/session15857 starts closure/build/Z/report/guide after all20scopes; inspect images and publish.
-B10:06read: S8refresh separateDRAFT420; no runtime delta/newdesignREQUEST; retain presentation boundary.
+B10:23read: S6probe refresh separateDRAFT420; no acceptance visual tuning/newdesignREQUEST.
 B request guardian underuse disclosureADOPTED; no unanswered designREQUEST. A130draw target unchanged.
 A owns no B renderer paths; no renderer integration implicit. Main docs/cardrpg3/index.html staysA4.
 Untouchable uncommitted:.DS_Store and a5/b1/display-context-40/{partial,results}.json; unchanged by A.
 One model only; no CUA/Docker/model helpers,main checkout edits,protected paths,new dependency,merge/deploy.
+Continuation2026-11-09: original33012/37211 retained; 6/20scopes complete; pairedboss review records9/12catsPASS,Soot50.70%MISS.
