@@ -188,3 +188,25 @@ Addendum received during S5. TRAIN remains 1–500. Existing baseline slices con
 - Attribute: 1. Empty ready-action selection; 2. missing scene telemetry; 3. failed renderer initialization. These are measurement-integrity failure modes, not measured runtime defects.
 - Smallest fix: require a nonempty ready-action cohort with finite frame/draw values and observed rendered geometry. Missing telemetry now leaves the original observation incomplete instead of passing a zero maximum.
 - Verify: syntax check; actual model.plan and TurnScene.stats field names confirmed read-only. All production rule bytes still match selected OFF8250/fallback180+45 receipts; actual browser validation remains scheduled exactly once in S8. Before/after source hashes: s8/performance-preflight/checks.json.
+
+## S5-A5-SETS-CREW — saturation and coherent-gain regression (PARTIAL)
+- Reproduce: all64set cells and663team/crew cells on fixed TRAIN1–500 in s5/before and s5/selected; read-only aggregation retained in s5/selected/set-crew-attribution.json with source/result hashes.
+- Measure: coherent gain21.667pp PASS →29.400pp MISS against unchanged10–25pp; selected chapter gains10.8/48.8/28.6pp. Five of8sets exceed75%; selected set rates72.925–94.400%. Every set wins100% in scenes3–7 both before and after; their tied leading niches do not establish distinct strengths.
+- Attribution limit: the registered TRAIN-selected coherent crew changes from Brioche/Velvet/Marigold to Mochi/Clover/Mallow. This before/after gate result is not a same-crew causal comparison; acceptance will predeclare and hold the selected crew fixed across both modes.
+- Ranked hypotheses: 1. Helper/status kit synergy and TRAIN crew selection increase the measured advantage; 2. random crews expose uneven matchup difficulty; 3. the already saturated set fixture hides useful set differences. Only saturation and the recorded outcome arithmetic are established here, not an isolated causal lever.
+- Smallest next fix: isolate one coherent-crew synergy on TRAIN and separate its effect from unchanged reference difficulty. Existing three S5 design packages are retained; no fourth package, renamed niche gate, or fixture recalibration is adopted.
+- Verify/status: complete500seed team/set receipts are preserved; current OFF8250/fallback180+45/six-gate source closure remains exact. The remaining affected full matrices continue on the same source. PARTIAL; revisit with those completed matrices before S6.
+
+## S5-NORMAL-PACING — retained cohort attribution (PARTIAL; pre-S6 review input)
+- Reproduce: source-bound s5/selected/metrics/results.json; aggregation only in s5/selected/pacing-attribution.json. Original three-crew full500 normal mean remains13.238rounds against8–12, no denominator change.
+- Measure: original starter crew18.212rounds, original Oven probe8.894, original Thread probe12.607. The approved named crews separately measure Oven9.148, Thread7.857, Night lamp13.866, Afternoon tea20.689; named-crew values do not replace the original probe.
+- Ranked hypotheses: 1. Particular sustain/setup combinations trade damage for extra turns; 2. different foe survival changes opportunities; 3. team selection changes the mix of successful and failed fights. Cohort means alone do not isolate a skill coefficient.
+- Smallest next fix: trace one starter-crew support/setup decision rather than reintroduce the rejected broad cooldown package. Three S5 design packages remain exhausted; no fourth candidate or re-roll.
+- Verification/status: all full500 probe rows retained, current production bytes still match selected OFF8250/fallback180+45/six-gate closure. Natural earned-boss seconds remain unmeasured until S8. PARTIAL.
+
+## S5-A5-TIERS-BANDS — full selected TRAIN result (PARTIAL)
+- Reproduce: completed210cells×500TRAIN seeds in s5/selected/tiers/results.json; unchanged summary arithmetic. Exact missed tier pairs and band cells: s5/selected/tier-attribution.json.
+- Measure: before18/24positive comparisons →selected19/24, zero reversals; intended-band misses1/33 →13/33. The unchanged combined44/48 gate cannot pass this candidate even if all24acceptance comparisons pass (maximum43). Acceptance remains UNUSED.
+- Ranked hypotheses: 1. Helper/status pressure changes tier thresholds; 2. low-win floors in level1 chapter2/3 cells suppress adjacent-tier gain; 3. reference matched-power normalization masks real kit differences. All five sub2pp pairs lie in those cells. Exact pair outcomes establish the miss; mechanisms are not independently ablated.
+- Smallest next fix: trace the first retained sub2pp tier pair on TRAIN and isolate one scaling term. Three S5 design packages are already exhausted; no fourth candidate, relaxed threshold or retrospective sample selection.
+- Verify/status: all210cells retain500outcomes and source registration; current OFF8250/fallback180+45/six-gate closure remains exact. Full elite/item/progression checks continue unchanged; report this gate as PARTIAL/MISS regardless of later source-test passes.
