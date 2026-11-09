@@ -1,0 +1,33 @@
+{"lock":"acquired","lane":"A","pid":88103,"startedAt":"2026-11-09T01:22:06.967Z","task":"V5A s3 rules"}
+
+> @taskbar-hero/game-rules@0.0.0 test /Users/bao/taskbar-hero-cardrpg-a4/packages/game-rules
+> vitest run
+
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-a4/packages/game-rules
+
+ ❯ src/cardrpg/depth/skills-v5/statuses.test.ts (31 tests | 1 failed) 190ms
+   ❯ Skills V5 core keywords (27)
+     × Bitter halves healing and shielding, and expires after two round ends 3ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/cardrpg/depth/skills-v5/statuses.test.ts > Skills V5 core keywords > Bitter halves healing and shielding, and expires after two round ends
+TypeError: Cannot read properties of undefined (reading 'actorId')
+ ❯ src/cardrpg/depth/battle.ts:449:51
+
+ ❯ act src/cardrpg/depth/battle.ts:449:24
+ ❯ src/cardrpg/depth/skills-v5/statuses.test.ts:59:21
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 73 passed | 3 skipped (77)
+      Tests  1 failed | 1251 passed | 2 expected fail | 11 skipped (1265)
+   Start at  08:22:07
+   Duration  27.37s (tests 94%, import 4%, transform 1%)
+
+/Users/bao/taskbar-hero-cardrpg-a4/packages/game-rules:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/game-rules@0.0.0 test: `vitest run`
+Exit status 1
+{"lock":"released","pid":88103,"task":"V5A s3 rules"}

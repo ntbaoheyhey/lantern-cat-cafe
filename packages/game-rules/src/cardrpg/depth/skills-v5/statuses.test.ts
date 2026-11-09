@@ -56,7 +56,7 @@ describe('Skills V5 core keywords',()=>{
  });
  it('Bitter halves healing and shielding, and expires after two round ends',()=>{
   const b=createBattle(setup()),t=b.actors[0]!;land(b,b.actors[1]!,t,'bitter');expect(receivedV5(t,80)).toBe(40);expect(receivedV5(t,70)).toBe(35);
-  t.shield=0;expect(act(b,legalChoices(b).find(c=>c.skillId==='mochi-2'&&c.targetId===t.id)!)).toBe(true);expect(t.shield).toBe(35);
+  t.hp--;t.shield=0;expect(act(b,legalChoices(b).find(c=>c.skillId==='mochi-2'&&c.targetId===t.id)!)).toBe(true);expect(t.shield).toBe(35);
   t.hp=t.maxHp-100;land(b,b.actors[1]!,t,'steep');tickStatuses(b,t);expect(t.hp).toBe(t.maxHp-91);expect(status(t,'bitter')?.remaining).toBe(1);tickStatuses(b,t);expect(status(t,'bitter')).toBeUndefined();
  });
  it('Shred reduces defense by eight percent per stack; a direct hit strips 15 shield per stack',()=>{
