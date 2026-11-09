@@ -1,3 +1,4 @@
+import {emitGameplayEvent} from '../events-v4';
 import type {Actor,Battle,Intent,StatusId} from '../contract';
 import {landingsV5,weakestV5,type ShapeV5} from './shapes';
 
@@ -28,7 +29,8 @@ export interface EnemyRuntimeV5 {
 export function enemyActionV5(b:Battle,actor:Actor,intent:Intent,target:Actor,io:EnemyRuntimeV5):boolean {
   if(!ENEMY_MECHANICS_V5[actor.catalogId])return false;
   const party=()=>b.actors.filter(a=>a.side==='party'&&a.hp>0),foes=()=>b.actors.filter(a=>a.side==='enemy'&&a.hp>0);
-  const hit=(t:Actor,power=100,shape:ShapeV5='single')=>{io.record(b,actor,t,'multi-hit',0,shape,actor.catalogId);io.damage(b,actor,t,power,0,shape==='single',shape);};
+  const targets:string[]=[];let resolvedShape:ShapeV5='single';
+  const hit=(t:Actor,power=100,shape:ShapeV5='single')=>{targets.push(t.id);resolvedShape=shape;io.record(b,actor,t,'multi-hit',0,shape,actor.catalogId);io.damage(b,actor,t,power,0,shape==='single',shape);};
   switch(actor.catalogId){
     case 'button-guard':
       if(intent.signature)for(const ally of foes().filter(a=>a.row===actor.row))io.shield(b,actor,ally,45);else hit(target);
@@ -42,7 +44,7 @@ export function enemyActionV5(b:Battle,actor:Actor,intent:Intent,target:Actor,io
       else{actor.bonuses.v5Charge=0;for(const landing of landingsV5(b,actor,target,'row',n=>io.roll(b,n)))hit(landing.target,175*landing.multiplier,'row');}
       break;
     case 'needle-moth':
-      for(let i=0;i<3&&actor.hp>0;i++){const living=party();if(!living.length)break;const victim=living[io.roll(b,living.length)]!;io.record(b,actor,victim,'multi-hit',i,'multi-hit',actor.catalogId);io.damage(b,actor,victim,40,0,false,'multi-hit');}
+      for(let i=0;i<3&&actor.hp>0;i++){const living=party();if(!living.length)break;const victim=living[io.roll(b,living.length)]!;targets.push(victim.id);resolvedShape='multi-hit';io.record(b,actor,victim,'multi-hit',i,'multi-hit',actor.catalogId);io.damage(b,actor,victim,40,0,false,'multi-hit');}
       break;
     case 'teacup-healer':
       if(intent.signature){const patient=weakestV5(foes());if(patient)io.heal(b,actor,patient,65);}else hit(target);
@@ -61,5 +63,6 @@ export function enemyActionV5(b:Battle,actor:Actor,intent:Intent,target:Actor,io
       }
       break;
   }
+  if(targets.length&&resolvedShape!=='single')emitGameplayEvent(b,{kind:'multi-hit',skillId:actor.catalogId,shape:resolvedShape,targets,actorId:actor.id,text:`${actor.name}: ${targets.length} landings.`});
   return true;
 }

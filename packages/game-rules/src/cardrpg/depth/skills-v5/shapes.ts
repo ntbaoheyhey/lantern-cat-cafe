@@ -1,3 +1,4 @@
+import {emitGameplayEvent} from '../events-v4';
 import type { Actor, Battle, Effect, Skill } from '../contract';
 
 export type ShapeV5 = 'single' | 'pierce' | 'row' | 'splash' | 'bounce' | 'all' | 'multi-hit' | 'one' | 'weakest' | 'ally-row' | 'team' | 'self' | 'fallen';
@@ -48,6 +49,7 @@ export function executeShapeV5(b: Battle, actor: Actor, main: Actor, skill: Skil
   const ordinary = shape === 'multi-hit' ? [] : landingsV5(b,actor,main,shape,rolled);
   const once = skill.effects.filter(e => e.self || e.recipient || e.kind === 'energy' || e.kind === 'chain');
   const perTarget = skill.effects.filter(e => !once.includes(e));
+  const targets:string[]=[];
   const length = shape === 'multi-hit' ? 3 : ordinary.length;
   for (let i = 0; i < length; i++) {
     if (actor.hp <= 0) break;
@@ -55,12 +57,14 @@ export function executeShapeV5(b: Battle, actor: Actor, main: Actor, skill: Skil
     const landing = shape === 'multi-hit' ? (foes.length ? {target:foes[rolled(foes.length)]!,multiplier:.4} : undefined) : ordinary[i];
     if (!landing) break;
     if (landing.target.hp <= 0 && shape !== 'fallen') continue;
+    targets.push(landing.target.id);
     io.record(b,actor,landing.target,'multi-hit',i,shape,skill.id);
     for (const effect of perTarget) {
       const weighted = skill.shape && ['hit','execute'].includes(effect.kind) ? {...effect,power:(effect.power ?? 0)*landing.multiplier} : effect;
       io.effect(b,actor,landing.target,weighted,skill);
     }
   }
+  if(targets.length&&['splash','multi-hit','bounce','row','all','team','ally-row'].includes(shape))emitGameplayEvent(b,{kind:'multi-hit',actorId:actor.id,skillId:skill.id,shape,targets,text:`${actor.name}: ${skill.name} reaches ${targets.length} landings.`});
   if (actor.hp <= 0) return;
   for (const effect of once) {
     const recipients = effect.self ? [actor] : effect.recipient === 'weakest' ? [weakestV5(alive(b,actor.side))] : effect.recipient === 'team' ? alive(b,actor.side) : [main];

@@ -1,8 +1,8 @@
 # Skills V5 lane A state
 Base: d22f47cb8 (A5 closing tip, DRAFT406; paused WIP c7b0c498f preserved).
 Runtime baseline: 0e1e15180108b443ce2e615ea54272b907cc8bb0.
-Phase: S3 DRAFT411 published; S4 next. User explicitly resumed2026-11-09.
-Branch: codex/cardrpg-v5a-s3-2026-11-09; S2 closing tip0d0a377ea.
+Phase: S4 events/fixture/fallback HUD applied; validation underway. User explicitly resumed2026-11-09.
+Branch: codex/cardrpg-v5a-s4-2026-11-09; S3 closing tip4cfab8846.
 Done: git status/log recorded; handoff found under memory/; rules/outboxes read.
 Done: ON/OFF artifacts match 20,929,841 bytes and 9e25f238 / 9158b51e.
 Done: no live A5 job found; inherited recent commits are the documented paused WIP.
@@ -22,7 +22,7 @@ Done: S2 DRAFT410 on408; runtime8412383c2/evidencedabd2a4e5.
 Done: S3 17focused, type/lint/web1783/rules1252PASS; original Bitter fixture failure retained.
 Done: S3 E2E420+isolated1PASS; buildPASS. Original clock failure retained; closurePASS.
 S3 OFF8250/fallback180battles45routes exact; baseline13/scope/leftoversPASS.
-S3 kits/policy/enemies applied; no S4 source applied yet.
+S4 v2 events, THC15 migration, explicit demo opt-in and fallback strip applied.
 Spec conflict: Cinnamon keep-kit has no multi-target; revive-only ultimate cannot fire without a fallen ally. Keep/report, no silent redesign.
 Next phases: S0 -> S1 -> S2 -> S3 -> S4 -> S5 -> S8 -> S6; S7 after S3.
 Acceptance: 20001-20500 UNUSED; TRAIN 1-500 only.

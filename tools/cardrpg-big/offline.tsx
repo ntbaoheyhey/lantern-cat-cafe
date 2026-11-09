@@ -12,6 +12,7 @@ const FrameMeter = lazy(() => import('../cardrpg-big2/ReviewStudio').then(m => (
 import './demo-tools.css';
 
 declare const __GAMEPLAY_V4__: boolean;
+declare const __SKILLS_V5__: boolean;
 
 type Panel = { host: HTMLElement; kind: 'mechanics' | 'studio'; close: () => void };
 
@@ -58,7 +59,7 @@ function Demo() {
     } });
   };
   return <div className={`dp-offline-demo ${panel ? 'b2-demo-lab-open' : ''}`}>
-    <DepthApp offline gameplayV4={typeof __GAMEPLAY_V4__ !== 'undefined' && __GAMEPLAY_V4__} />
+    <DepthApp offline skillsV5={typeof __SKILLS_V5__ !== 'undefined' && __SKILLS_V5__} gameplayV4={typeof __GAMEPLAY_V4__ !== 'undefined' && __GAMEPLAY_V4__} />
     {reviewTools && header && createPortal(<div className="dp-demo-tools" aria-label="Demo tools">
       {!panel && <DemoTools open={open} />}
       <button aria-pressed={meter} onClick={() => setMeter(!meter)}>Frame meter</button>

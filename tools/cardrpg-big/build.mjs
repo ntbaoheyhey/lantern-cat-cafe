@@ -28,7 +28,7 @@ const result = await build({ configFile: false, root: web, envDir: false, public
       return `export default window.__cardAssets[${JSON.stringify(key)}];`;
     },
   }],
-  define: { 'process.env.NODE_ENV': '"production"', __GAMEPLAY_V4__: JSON.stringify(gameplayV4) }, resolve: { dedupe: ['react', 'react-dom'] },
+  define: { 'process.env.NODE_ENV': '"production"', __GAMEPLAY_V4__: JSON.stringify(gameplayV4), __SKILLS_V5__: JSON.stringify(process.env.BIG_SKILLS_V5 === '1') }, resolve: { dedupe: ['react', 'react-dom'] },
   build: { write: false, minify: true, lib: { entry: resolve(root, 'tools/cardrpg-big/offline.tsx'), name: 'CardRpgDepth', formats: ['es'] } } });
 const output = (Array.isArray(result) ? result : [result]).flatMap(r => r.output);
 const js = output.filter(f => f.type === 'chunk').map(f => f.code).join('\n');
@@ -88,7 +88,7 @@ const assetHashes = Object.fromEntries(assetEntries.map(([path, asset]) =>
 const inputPaths = [...sourceRoots, ...Object.keys(assetHashes)];
 const runtimeDirty = !!execFileSync('git', ['diff', 'HEAD', '--', ...inputPaths], { cwd: root, encoding: 'utf8' }).length
   || !!execFileSync('git', ['ls-files', '--others', '--exclude-standard', ...inputPaths], { cwd: root, encoding: 'utf8' }).trim();
-const receipt = { date: new Date().toISOString(), head, dirty, lookV2, gameplayV4, needsMeshoptWasm, outputDirectory: relative(root, outputDirectory), bytes: Buffer.byteLength(html), compressed: true,
+const receipt = { date: new Date().toISOString(), head, dirty, lookV2, gameplayV4, skillsV5:process.env.BIG_SKILLS_V5 === '1', needsMeshoptWasm, outputDirectory: relative(root, outputDirectory), bytes: Buffer.byteLength(html), compressed: true,
   moduleChunks: output.filter(f=>f.type==='chunk').map(f=>({name:f.fileName,bytes:Buffer.byteLength(f.code),entry:f.isEntry,imports:f.imports,dynamicImports:f.dynamicImports,modules:Object.keys(f.modules)})), dictionary:{entries:packed.entries.length,bytes:packed.dictionary.length,gzipBytes:gzipSync(packed.dictionary,{level:9}).length},imagePacking, evidence: { rows: evidence.rows.length, files: evidence.files, bytes: Buffer.byteLength(evidence.tags) },
   assetCount: manifest.length, scriptBytes: Buffer.byteLength(js), assetBytes: assetEntries.reduce((sum, [, asset]) => sum + asset.bytes.length, 0),
   sha256: createHash('sha256').update(html).digest('hex'), runtimeDirty, sourceRoots, sourceHashes: hashes,

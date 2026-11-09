@@ -1,3 +1,4 @@
+import {emitGameplayEvent} from '../events-v4';
 import type { Actor, Battle, StatusId, StatusRule } from '../contract';
 
 /** Core vocabulary is mode-specific; historical catalogue entries remain unchanged. */
@@ -38,6 +39,7 @@ export function statusDamageV5(b:Battle,source:Actor,target:Actor,id:'scald'|'sn
   const actual=io.loseHp(b,source,target,amount,'dot');
   if(io.isBoss(target))target.bonuses.v5DotDamage=(target.bonuses.v5DotDamage??0)+actual;
   io.record(b,source,target,'status-tick',actual,core[id]!.name,id);
+  emitGameplayEvent(b,{kind:'status-tick',statusId:id,amount:actual,sourceId:source.id,actorId:source.id,targetId:target.id,text:`${target.name}: ${core[id]!.name} ${actual}.`});
   return actual;
 }
 export function beforeActionV5(b:Battle,actor:Actor,io:StatusRuntimeV5):boolean {
@@ -55,12 +57,15 @@ export function consumeDazeV5(b:Battle,actor:Actor,io:StatusRuntimeV5):boolean {
   return true;
 }
 export function tickStatusesV5(b:Battle,actors:Actor[],io:StatusRuntimeV5):void {
+  b.procRounds.v5RoundEnd=1;
+  try {
   // Global ordering is independent of actor order and original status insertion order.
   for(const actor of actors.filter(a=>a.hp>0)){
     const regen=actor.statuses.find(s=>s.id==='steep');
     if(regen){const source=b.actors.find(a=>a.id===regen.source)??actor,before=actor.hp;
       io.heal(b,source,actor,18*regen.stacks);
       io.record(b,source,actor,'status-tick',actor.hp-before,'Regen','steep');
+      emitGameplayEvent(b,{kind:'status-tick',statusId:'steep',amount:actor.hp-before,sourceId:source.id,actorId:source.id,targetId:actor.id,text:`${actor.name}: Regen ${actor.hp-before}.`});
       const burn=actor.statuses.find(s=>s.id==='scald');if(burn)burn.stacks--;
       actor.statuses=actor.statuses.filter(s=>s.stacks>0);
     }
@@ -77,4 +82,5 @@ export function tickStatusesV5(b:Battle,actors:Actor[],io:StatusRuntimeV5):void 
     }
     actor.statuses=actor.statuses.filter(s=>s.remaining>0&&s.stacks>0);
   }
+  } finally {delete b.procRounds.v5RoundEnd;}
 }

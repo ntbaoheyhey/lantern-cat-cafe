@@ -55,7 +55,7 @@ export class DepthModel {
   get cafeNow() { return this.offline ? this.cafeClockBase + Math.max(0, Date.now() - this.cafeClockStart) : Date.now(); }
   private resetCafeClock() { this.cafeClockStart = Date.now(); this.cafeClockBase = Math.max(this.state.idle.lastAt, this.state.v4?.clockWatermark ?? 0, (this.state.idle.dayKey ?? 0) * 86400000); }
 
-  constructor(readonly offline: boolean, readonly gameplayMode = false) {
+  constructor(readonly offline: boolean, readonly gameplayMode = false, readonly skillsMode = false) {
     this.state = R.createDepthAccount(11, offline ? 0 : Date.now());
     if (!offline) {
       try {
@@ -73,7 +73,7 @@ export class DepthModel {
       this.state.selectedRelic = null;
       this.liveRelicNote = 'Read connected wallet or choose fixture mode';
     }
-    this.state = R.setGameplayV4(this.state, gameplayMode); this.resetCafeClock();
+    this.state = R.setGameplayV4(this.state, gameplayMode); if(skillsMode)this.state=R.setSkillsV5(this.state,true); this.resetCafeClock();
     this.itemId = this.state.gear[0]?.id ?? '';
     if (!offline) {
       try { this.teamPresets = readTeamPresets(localStorage.getItem(TEAM_PRESETS_KEY)); } catch { /* Preferences remain available for this visit. */ }
@@ -166,7 +166,7 @@ export class DepthModel {
     }
   }
   tutorial() {
-    this.tutorialBattle = R.createBattle({ seed: 7, chapter: 1, cats: R.battleCats(this.state), enemies: ['practice-cushion'], tutorial: true,
+    this.tutorialBattle = R.createBattle({ ...(R.skillsV5(this.state)?{skillsV5:true}:{}),seed: 7, chapter: 1, cats: R.battleCats(this.state), enemies: ['practice-cushion'], tutorial: true,
       ...(R.gameplayV4(this.state) ? { gameplayV4: true, plan: this.state.v4?.plan,
         enemyStats: { 'practice-cushion': { hp: 300, attack: 60, defense: 0 } } } : {}) });
     this.plan = null; this.watching = false; this.paused = false; this.go('prepare');
@@ -358,7 +358,7 @@ export class DepthModel {
     try {
       const next = R.importSave(code, this.offline ? 0 : Date.now());
       if (!this.offline) { next.relics = []; next.selectedRelic = null; }
-      this.state = R.setGameplayV4(next, this.gameplayMode); this.resetCafeClock(); this.tutorialBattle = null; this.replay = null; this.plan = null; this.galleryBattle = null;
+      this.state = R.setGameplayV4(next, this.gameplayMode); if(this.skillsMode)this.state=R.setSkillsV5(this.state,true); this.resetCafeClock(); this.tutorialBattle = null; this.replay = null; this.plan = null; this.galleryBattle = null;
       this.restoreEncounter();
       this.paused = false;
       this.cardId = next.team[0]!; this.itemId = next.gear[0]?.id ?? '';
@@ -367,6 +367,7 @@ export class DepthModel {
   }
   reset() {
     this.state = R.setGameplayV4(R.createDepthAccount(11, this.offline ? 0 : Date.now()), this.gameplayMode);
+    if(this.skillsMode)this.state=R.setSkillsV5(this.state,true);
     this.resetCafeClock();
     this.tutorialBattle = null; this.replay = null; this.plan = null; this.galleryBattle = null;
     this.paused = false; this.watching = false;

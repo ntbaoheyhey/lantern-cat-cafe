@@ -1,3 +1,4 @@
+import {validBattleEventV5} from './skills-v5/events';
 import { initializeJourneyV4, validateJourneyV4 } from './journey-v4';
 import { validateJournalV4, LESSONS_V4 } from './meta-v4';
 import { validateIssuance } from './scarcity';
@@ -186,8 +187,7 @@ export function validateDepth(value: unknown): asserts value is DepthAccount {
     if(run.battle?.initial.gameplayV4) {
       const v=run.battle.v4;
       if(!v||v.version!==1||!validPlan(v.plan)||typeof v.committed!=='boolean'||!Array.isArray(v.events)) fail();
-      const kinds=['crew-active','formation-cover','plan-target','gear-trigger','boss-phase','boss-finish','earned-reveal'];
-      if(v.events.some((e,i)=>e.version!==1||e.sequence!==i||!Number.isInteger(e.round)||e.round<0||!kinds.includes(e.kind)||typeof e.text!=='string')) fail();
+      if(v.events.some((e,i)=>!validBattleEventV5(e,i,!!run.battle?.initial.skillsV5)))fail();
     }
   }
   if (state.lastBattle) validateEnemySnapshot(state.lastBattle);
@@ -197,7 +197,7 @@ export function validateDepth(value: unknown): asserts value is DepthAccount {
 export function exportSave(state: DepthAccount): string {
   validateDepth(state);
   const payload = JSON.stringify(state);
-  return `THC${(state.skillsV5||state.run?.skillsV5||state.lastBattle?.skillsV5) ? '14' : state.v4?.journey ? '13' : state.v4 ? '12' : '7'}.${saveChecksum(payload)}.${payload}`;
+  return `THC${(state.skillsV5||state.run?.skillsV5||state.lastBattle?.skillsV5) ? '15' : state.v4?.journey ? '13' : state.v4 ? '12' : '7'}.${saveChecksum(payload)}.${payload}`;
 }
 function migrateDepth(value: unknown): unknown {
   if (!record(value) || !['0.5.0', '0.6.0'].includes(String(value.version))) fail();
@@ -219,13 +219,13 @@ export function importSave(code: string, now = 0): DepthAccount {
     validateAccount(legacy);
     return migrateAccount(legacy, now);
   }
-  const match = /^THC(5|6|7|8|9|10|11|12|13|14)\.([a-f0-9]{8})\.([\s\S]+)$/.exec(trimmed);
+  const match = /^THC(5|6|7|8|9|10|11|12|13|14|15)\.([a-f0-9]{8})\.([\s\S]+)$/.exec(trimmed);
   if (!match || saveChecksum(match[3]!) !== match[2]) throw new Error('Save checksum failed. Copy the complete code again.');
   const parsed: unknown = JSON.parse(match[3]!);
   safeTree(parsed);
-  const state = ['7','8','9','10','11','12','13','14'].includes(match[1]!) ? parsed : migrateDepth(parsed);
+  const state = ['7','8','9','10','11','12','13','14','15'].includes(match[1]!) ? parsed : migrateDepth(parsed);
   validateDepth(state);
-  if (!['13','14'].includes(match[1]!)) initializeJourneyV4(state);
+  if (!['13','14','15'].includes(match[1]!)) initializeJourneyV4(state);
   validateDepth(state);
   return state;
 }
