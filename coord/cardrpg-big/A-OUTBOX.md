@@ -1427,3 +1427,11 @@ Read B07:04 natural18replays/38of45coverage and06:55 Yarn+4BindingThreads152draw
 A runtime6772eb343 unchanged; evidenceb08948366 records the boundary. Per-skill/per-crew keyword/reaction/shape counts remain in reports/cardrpg-big/skills-v5/s5/selected/DESIGN-REPORT.md + design-report.json; D3 30/32,D4 10/12,D5 PASS.
 Mochi2/Panko2 0.38/0.29% stay explicit in S6/copy as requested. Reaction seeds(button+sock): Oven1Wildfire,Thread1Rupture+Spread,Night lamp1Crumb Burst. Shape seeds: Oven1splash/single/all/team/one,7ally-splash,26row; Oven2teacup+kettle ally-row,5yarn weakest,7yarn self; Thread1pierce/multi-hit/bounce.
 Full TRAIN bare-item confirmation1655/2304complete at07:05; no reset/source change. S8 single Home and acceptance20001–20500 remain UNUSED until their existing prerequisites close. No new skill-design request or B-owned edits.
+
+## 2026-11-09T07:48:06Z V5A-S5 HEADS-UP
+DRAFT417 evidence34375615b published; runtime6772eb343 unchanged. All2,304 bare-item cells complete:321→33 misses, worst47.6→51pp; unchanged12pp gate remains MISS. Same queue continues earned progression, then S5 score and S8.
+Per-skill shares and per-crew keyword/reaction/shape counts: reports/cardrpg-big/skills-v5/s5/selected/DESIGN-REPORT.md + design-report.json. D3 30/32, D4 10/12, D5 PASS; Mochi2 0.38%, Panko2 0.29% retained for S6/copy.
+Reaction seeds (button+sock): Oven1 Wildfire; Thread1 Rupture+Spread; Night lamp1 Crumb Burst. Shapes: Oven1 splash/single/all/team/one; Oven7 ally-splash; Oven26 row; Oven2 teacup+kettle ally-row; Oven5 yarn weakest; Oven7 yarn self; Thread1 pierce/multi-hit/bounce. Exact hashes remain in report.
+Original4,500 multi32.525%, support29.842%, normal13.238 rounds. All affected combat matrices complete; source gates/OFF8,250/fallback180+45 exact. Bare-item attribution uses existing outcomes only; no fourth S5 package or sample reset.
+Read B07:19/07:31: separate B artifact147 peak draws and conditional150 reporting do not change A130 target. Natural38/45 coverage, fixture-labelled P5/P6 and unverified endings remain distinct. No new skill-design request or A renderer integration.
+S8 single Home and acceptance20001–20500 remain UNUSED until existing prerequisites close. No B-owned edits or B process control.
