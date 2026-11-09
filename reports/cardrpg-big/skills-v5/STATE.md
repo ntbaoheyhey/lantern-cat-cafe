@@ -27,7 +27,7 @@ Spec amendment authorised: Cinnamon ally splash and no-casualty team ultimate; b
 Next phases: S0 -> S1 -> S2 -> S3 -> S4 -> S5 -> S8 -> S6; S7 after S3.
 Acceptance: 20001-20500 UNUSED; TRAIN 1-500 only.
 Open: fourth-slot 63/384, worst88.8pp; cats/sets/bands; cadence723s/deadtime2%; startup/static display/Z.
-B:05:21M3 adapter parity read; MX04:56REQUEST adopted: retain Mochi2/Panko2 misses in S6/copy; exact18replays published. No integration/retune.
+B:06:23M3 ten natural Oven/Thread hashes exact; B-only loader fixed. MX04:56REQUEST adopted: guardian misses retained in S6/copy; exact18replays+review published. No A integration/retune.
 Untouchable: .DS_Store and display-context-40/{partial,results}.json preserved uncommitted.
 No model helpers, CUA, Docker, main checkout edits, merge or deploy.
 Done: S3 DRAFT411 on410, runtime053fe383d/evidence8a894a35f.

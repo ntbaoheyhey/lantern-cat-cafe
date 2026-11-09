@@ -1,6 +1,6 @@
 # S5 TRAIN trials and retained misses
 
-Shipping rules remain the published S4 rules. All samples below use TRAIN 1–500; acceptance 20001–20500 is unused. Historical A5 Scent, pressure, reply and duration trials remain rejected. V5-specific trials were registered before sampling and isolated outside production.
+This is the retained **pre-addendum S4-control trial record**. The later user-approved design3 is published as runtime6772eb343 in DRAFT417; its full TRAIN confirmation is continuing. See [selection](s5/SELECTION.md) and [current design results](s5/selected/DESIGN-REPORT.md). All samples below use TRAIN 1–500; acceptance 20001–20500 is unused. Historical A5 Scent, pressure, reply and duration trials remain rejected. V5-specific trials were registered before sampling and isolated outside production.
 
 | Trial | Original | Measured candidate | Decision |
 |---|---|---|---|
@@ -14,6 +14,6 @@ V5 alone reduced full-500 fourth-slot misses from 63/384 to 13/384, and worst ga
 
 The original normal encounters alone have 27.745% multi-foe actions. The single-boss encounter has 0%; the required combined probe is 14.283%. The combined denominator stays unchanged. This explains part of the miss; it does not justify moving the target.
 
-Cinnamon's user-approved keep-ultimate revives a fallen ally. It cannot satisfy an unconditional ultimate-per-cat gate when nobody falls. The original oven crew therefore records 0% all-cat ultimate coverage. Keep the gate and disclose the conflict rather than manufacture casualties or cast an illegal revival.
+Cinnamon's original keep-ultimate revived a fallen ally, so the original oven crew recorded 0% all-cat ultimate coverage when nobody fell. The later D2 addendum explicitly amends this kit with a legal team-heal/Warm fallback; these old-control results remain unchanged. The selected design's unconditional ultimate gate still misses and is reported separately.
 
 The unchanged reference trio Mochi/Soot/Clover wins 99.0%, 44.8% and 45.4% in the three matched-power boss cells. Its median45.4% misses the requested55–60% calibration target. This target is now an explicit receipt-derived row; no fixture or threshold was changed.
