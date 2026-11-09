@@ -43,4 +43,4 @@ Original deterministic snag/bitter SVGs and pooled cues: [provenance](../../../a
 LIMITS: CPU4 cold gate remainsMISS; pre-ready timer/GPU wait observed but root cause unproven. Human recognition NOT VERIFIED; full simultaneous-stack readability and fast shape recognition need user review. Real skillsV5 ON integration belongs to the later step.
 Earlier selector/capture/CSS/preview failures and isolated recoveries retained. Raw PNGs, JPEG frames and cold trace remain in /tmp/cardrpg-v5look-v3; not counted as published evidence.
 Evidence below25MB: lossless JSON/log gzip, pixel-exact startup WebP, exact diagnostic-shot deduplication; only old video overview thumbnails resized (original PNGs remain in base git). MP4s and primary fixed shots unchanged. [Packing](v3/delivery-packing.json).
-Draft stacked on413; B-OUTBOX DONE receipt follows publication. No merge/deploy/main push. Stop after V3d.
+[DRAFT415](https://github.com/ntbaoheyhey/taskbar-hero/pull/415), stacked on413; evidence a952082ef/receipt repair e8becfd09. B-OUTBOX DONE and handoff in [receipt](v3/HANDOFF.json). No merge/deploy/main push; stop at V3d.

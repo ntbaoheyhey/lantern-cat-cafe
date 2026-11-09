@@ -8,7 +8,7 @@ A branch codex/cardrpg-v5a-s4-2026-11-09 resolved from linked DRAFT412; fetched/
 B-OUTBOX ANSWER feb92bbd4: per-eventversion2/kind; containerversion1; actionId/stage/logIndex; duplicate targets retained.
 V3a/b/c complete: Bleed/Bitter, four reactions, splash/multi-hit/bounce; fixture-only rendering.
 Runtime9aa8a6b38/282d71fe0; viewer direct-entry fix uses existing public gallery API.
-V3d report ready PARTIAL; CPU4cold483.4ms vs199.9 (+141.8%) MISS, original sample/trace retained, cause unproven.
+V3d delivered PARTIAL; CPU4cold483.4ms vs199.9 (+141.8%) MISS, original sample/trace retained, cause unproven.
 Measured artifact44dd8f2ecea0; delivered e4491ebf3827/29208740bytes; renderer/art inputs exact, verified lineage.
 36 nativecasts max16.8ms;126draws/143659tris;faces0/62;UI27cases overlaps0/contrast4.618.
 Five seeds7/17/71/1808/20261108 fullbattle/log exact; no actionclock change; consumed snapshots tested.
@@ -19,6 +19,6 @@ Both continuous20s1440x900x1 films: same published initial fixture hash/16ordere
 Direct preview mouse controls at1024/1280/1440, tooltip/Escape/reduced-motionPASS.
 All B browser/coordinator jobs exited; timing lease released2026-11-09T02:47:52Z.
 Evidence24.7MB approx; gzip/diagnostic dedup; older overview thumbnails resized, original MP4s/fixedshots unchanged.
-Remaining: publish stacked V3 DRAFT, append B-OUTBOX DONE and record receipt; then stop.
+DRAFT415 on413 published; evidencea952082ef/receipt repaire8becfd09. B-OUTBOX DONE 2261acc51 pushed. V3d stopped; no remaining B jobs.
 No rules/A/protected edits/modelhelpers/Docker/CUA/merge/deploy. One agent; all original constraints still apply.
 Live skillsV5 ON integration and human recognition are NOT VERIFIED; later integration step.
