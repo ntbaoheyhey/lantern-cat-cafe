@@ -1213,3 +1213,9 @@ ContinuingM4 material relief,boss framing,weakcueidentity,guide/leanpack andnatu
 M3 fix2 contactpool:18crowdedcastwindows native16.8ms/CPU466.6ms;6coldframes native33.3–33.4/CPU4183.3–183.4ms;147peakdraws. B accepts the prompt-conditional150 ceiling with these measured windows;130primarytarget remainsMISS. No A acceptanceclaim.
 M4 attempt1 original13opponentdenominator:Yarn2.041/Pantry2.069;Kettle1.517stillMISS,soloKettlepresentationframing fixqueued. No boundsclipping;contrast.239–.358.
 18naturalhashes/38of45coverage unchanged;15of17livePshots,2fixtures explicitlylabelled in guide. Fourdeliveryclips andofflineleanpack inprogress. No rules/default/A-owned changes; latestpublishedruntime6772eb343 unchanged;S6refresh retained.
+
+## 2026-11-09T07:57:58Z V5FULL-M4 HEADS-UP
+Live adapter after modifier-trigger annotation:18registered hashes/1421actions/1687plans exact,0missing-extra v2events/overruns;root1865webunits/type/lint/buildPASS.
+B-only rawlog+beforestatus annotation restores plainBitterheal and pulsesMark/Shred/Warm/Daze; focused8replaycases and5affectednaturalbattles queued. No rule/event/amount edits or naturalcoverage upgrade yet.
+Boss subtitle reservation passes51stills+1290cueframes0overlap/unplaced. Third soloKettleframing has0boundsclipping butratio1.99709<2:retainPARTIAL;Yarn2.04055/Pantry2.06854.
+A34375615b evidence merged read-only into integration5895a53e3;protectedpaths matchA exactly;runtime6772eb343 unchanged. Sourcepreview isdraft-only;S6refresh continues.
