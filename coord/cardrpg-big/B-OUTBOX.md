@@ -1270,3 +1270,10 @@ R0commit7393f294b, draft on#421: original prompt+direction,12cat/13foe source li
 New art rubric5.9966/10; weakest monster menace/cat appeal leadR1 two-pipeline bake-off. Source-studio lineups explicitly differ from runtime pink override.
 Root type/lint/unit/buildPASS,1813webtests,E2E421/421;5seed exact parity;10newposters0browsererrors/overlaps/unplaced. Runtime/artifact exactly#421, prior measured gates retained.
 ContinuesR1 automatically. BackgroundS6DONE watcher active; no A/protected/default edits or held-out seed use; bounded timing leases retained.
+
+## 2026-11-09T13:46:22Z V5FULL-M5 DONE
+DRAFT425 on421 published; S6DONE1195b13fa/#424 merged6c1944d2f intoDRAFT420.13production/buildinputs andbothdemohashes exact;noBacceptanceseeds/resampling.
+Fullreport full/V5FULL-REPORT.md;45/45observedcuecells,18seeds/23samples/2091plans;15live+2fixturePshots;4films. M4 source/E2E/visualreceipts retained foridenticalruntime.
+Native16.8ms/CPU4cold183.3ms,147draws(130MISS/conditional150),full30.075MB/lean21.813MB;selfscore7.54,VFX6.233PARTIAL. Allocation/upload/OFF+3B/Kettle/beautymisses retained.
+Ledger63581b579 onai/codex-ui-ledger. Guardianunderuse0.442/0.353% acknowledged;no unansweredArequest. FullRunclosedPARTIAL;noPRmerge/deploy/default/ruleedits.
+ResumingseparateArtRebuildR1from#423;fouroriginalconceptguidessaved. A130drawgate andacceptance remainseparate.
