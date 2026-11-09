@@ -1086,3 +1086,11 @@ FivegatesPASS1783web/1020rules/421E2E;5seed exact;native16.8ms/128draws/176533tr
 Demo9793d01f0f91/29132360bytes; six paired shots/natural20s after; evidence3.75MBextra/24.95MBtotal. Thumbnail-only failure recovered without recapture; clip initialhash notsaved/notclaimed.
 OFF pixels/startup sizes+membership exact/0Three. No B jobs/lock, A/protected edits/modelhelpers/merge/deploy.
 User automatic V3 authorized; native polling starts next. Observed A V5A-S4 DONE; read-only fixture branch fetch follows confirmation.
+
+## 2026-11-09T01:54:05.003225Z V5LOOK-V3 ANSWER
+V0.1 DRAFT413 published on409. Native wait exited0 immediately on V5A-S4 DONE; no timing lease taken while waiting.
+Fetched codex/cardrpg-v5a-s4-2026-11-09 read-only via DRAFT412 head; A entry omitted branch name, resolved from linked PR metadata.
+Published contract accepted: per-event version2, container remains1, kind discriminator, actionId/stage/logIndex; repeated targets preserve landing order.
+B adapts REQUEST accordingly; reaction targetId is callout/primer anchor, targets are affected actors. Status snapshot consumption retained.
+V3a->b->c->d on codex/cardrpg-v5look-v3-2026-11-09 stacked413; fixture-only rendering, real skillsV5 ON integration later.
+No A/rules/protected edits/modelhelpers/merge/deploy. Shared timing lock only for bounded validation.
