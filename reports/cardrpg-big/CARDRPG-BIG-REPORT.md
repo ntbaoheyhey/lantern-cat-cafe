@@ -1,10 +1,10 @@
-Báo cáo hiện tại: [Skills V5 S5](skills-v5/S5-REPORT.md), [DRAFT417](https://github.com/ntbaoheyhey/taskbar-hero/pull/417), runtime6772eb343/evidenceb21a91c35. TRAIN 1–500 đã hoàn tất: 22 PASS / 20 MISS, điểm tự đánh giá 6.28/10; kiểm tra mã nguồn và hai chế độ tương thích PASS. S8 đang đo một phiên Home 60 phút cùng startup và nhịp trận; nghiệm thu20001–20500 chưa dùng. [STATE](skills-v5/STATE.md). Các gate A5 tiếp tục trong Skills V5; phần A4 bên dưới là mốc lịch sử.
+Đã triển khai Skills V5: Burn, Bleed, Bitter, nhiều mục tiêu và bốn phản ứng; trận đấu vẫn tự động.
+Đã đo chung bản V5 và bản dự phòng trên khối hạt giống mới 20001–20500; mọi lần thử đều được giữ lại.
+Kết quả là PARTIAL: các ô MISS bên dưới vẫn chưa đạt, không được thay bằng kết quả kiểm thử mã nguồn.
+Bản demo offline riêng giữ nguyên bản A4; hình ảnh mới của lane B chưa được tích hợp.
+Mọi PR vẫn là draft, chưa merge hay deploy; nhận diện trạng thái và mức độ vui của người thật chưa được xác minh.
 
-Bản thử nghiệm có đội hình, chiến thuật trước trận, trang bị và vật phẩm dùng giữa các trận.
-Cafe, nhiệm vụ, bộ sưu tập và đổi thưởng bằng dấu mời đã thành các vòng chơi có phần thưởng.
-P6 đã đo train/heldout tách biệt; các mục cân bằng chưa đạt vẫn ghi MISS, không coi kiểm thử chức năng là cân bằng đạt.
-Demo chạy offline; kết quả browser và bảng số liệu bên dưới gắn với đúng SHA của bản thử nghiệm.
-Đây là bản nháp để đánh giá; còn lệch cân bằng, chi phí tải trang và yêu cầu trình diễn cho Lane B.
+Current: [Skills V5 acceptance](skills-v5/V5A-REPORT.md), registered20001–20500 in both modes, 21PASS/21MISS and self-score6.16/10. [STATE](skills-v5/STATE.md), [draft stack](skills-v5/STACK.md), [offline demo](../../docs/cardrpg3/skills-v5.html), [current guide](../../docs/cardrpg3/skills-v5-guide.html). Runtime6772eb343 remains unchanged after registration; original source/hash checks and every miss are retained. A5 gates continue in this report; the A4 section below is historical.
 
 # A4 gameplay delivery
 REFERENCE: [Gameplay v4](../../docs/design/cardrpg/GAMEPLAY-V4.md); [research](../../docs/design/cardrpg/RESEARCH-GAMEPLAY-V4.md); [NFT boundary](../../docs/design/cardrpg/NFT-VALUE-SPEC.md).
