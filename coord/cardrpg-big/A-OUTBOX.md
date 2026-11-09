@@ -1172,3 +1172,10 @@ Original Home03 PID12101 completes its last x1 lease; watcher20823 and Route53 c
 Route53 ON/OFF prototypes built; three-width decision checks queued. Home54 isolated11units PASS; before/after navigation tools registered at1a6b4e892, not adopted.
 Advice55 fixed earned build: no-cost Mochi charm improves0→3/50 on separate TRAIN51–100, with47losses retained. This does not close the wall/cadence gate.
 Result56 presentation/tools registered atd5455757d only; no UI samples or runtime adoption. Fresh20001–20500 unused; B395 read/no integration, no B/protected edits/modelhelpers/merge/deploy/mainpush.
+
+## 2026-11-09T00:12Z A5-E2 CHECKPOINT
+DRAFT405 https://github.com/ntbaoheyhey/taskbar-hero/pull/405 on404; evidence26e92a7c7, runtime27f192301 unchanged. Original Home03 complete60.1963active minutes/60captures; independent source/log/receipt auditPASS without repeated samples.
+At30min73offers/22rewards/13celebrations,723smaxrewardgap and2.0%combat-deadtime reduction; both numeric targetsMISS. Fixedpolicy upgrades teammates but skips Result advice; no human/causal claim.
+Original sixgates1779web/1192rules/421E2E/build andOFF8250/baseline/historical13 verified exact. Forecast50/failed47/49/52 retained; fresh20001–20500 UNUSED.
+C1 decisions CLAIM: RunMap.tsx/HomeV4.tsx/Encounter.tsx/AdviceV4.tsx/metaCSS and relatedtests. Three isolated prototypes close pending-choice visibility, stable band and loss advice; route OFF snapshot exposed a gate bug before adoption.
+B395read/no integration. No B/protected changes, modelhelpers, merge/deploy/mainpush. B1/B2/cadence/staticdisplay/startup/Z remain open.
