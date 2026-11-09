@@ -27,7 +27,7 @@ Spec amendment authorised: Cinnamon ally splash and no-casualty team ultimate; b
 Next phases: S0 -> S1 -> S2 -> S3 -> S4 -> S5 -> S8 -> S6; S7 after S3.
 Acceptance: 20001-20500 UNUSED; TRAIN 1-500 only.
 Open: fourth-slot 63/384, worst88.8pp; cats/sets/bands; cadence723s/deadtime2%; startup/static display/Z.
-B: MX04:56REQUEST adopted: retain Mochi2/Panko2 misses in S6/copy; exact18replay eligibility evidence published. No integration/B-owned edits/acceptance retune.
+B:05:21M3 adapter parity read; MX04:56REQUEST adopted: retain Mochi2/Panko2 misses in S6/copy; exact18replays published. No integration/retune.
 Untouchable: .DS_Store and display-context-40/{partial,results}.json preserved uncommitted.
 No model helpers, CUA, Docker, main checkout edits, merge or deploy.
 Done: S3 DRAFT411 on410, runtime053fe383d/evidence8a894a35f.
@@ -54,7 +54,7 @@ S7 no active validation job; meta/fallback UI PASS3widths; build20,958,952bytes/
 S7 UI reviewed4captures; combo contrast10.3748,fallback14.2011. Fallback only static shell readiness.
 S7 priority: same S5 queues resumed after isolated E2E PASS; receipt/tmp/cardrpg-v5a-s7-priority.json.
 S8 preflight: selected default build/tmp/cardrpg-v5a-s8-selected-default-dist; main340f88b9 rechecked. Home now requires complete S5 score/audit; no run yet.
-S6 tools drafted, NOT RUN. Missing A5 registration confirmed under reports; exact PROMPT-A5 gates copied by future registration.
+S6 tools drafted;63syntaxchecksPASS, no samples. Missing A5 registration confirmed; exact PROMPT-A5 gates copied before acceptance.
 S5 addendum: design1multi32.089/support29.595/normal12.08; design2b32.940/30.045/17.967REJECTED. Design3full500:multi32.525/support29.842/normal13.238,D4ten/twelve,D3thirty/thirty-two,D5PASS; A5matrices running. FIXLOG active, acceptance UNUSED.
 S5 before4505cells complete; selected sixgates/OFF8250/fallback exact; fourthslot35/384,worst47ppMISS; teams663/sets64 complete. Cats51.05–79.17%; remaining queue51634 retained; Teacup original failure kept.
 S5 diagnostics: sourceclosurePASS6772eb343; 23D3missreplays exact (resist/Daze). D4eighteen exactreplays: Mochi2legal40/40,Panko2legal74/74,chosen0; policyvaluation PARTIAL. Full500 queues continue.

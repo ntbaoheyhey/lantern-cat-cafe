@@ -43,13 +43,15 @@ try{
  await capture('fresh-prepare','.dp-v4-prepare');checks.push('Public keyboard placement; no in-fight input');
  await page.evaluate(code=>{const m=window.__depthReview;m.import(code);m.go('hub');},save);
  await capture('earned-home','.dp-v4-home');
+ await page.getByText('Cafe service, daily board and star rewards',{exact:true}).click();
+ await capture('earned-service-board','.dp-v4-home-board');
  for(const [name,screen]of [['team','Team & cards'],['companions','Companions'],['equipment','Equipment'],['invitations','Invitations'],['journal','Collection journal'],['guide','Field guide'],['save','Save & settings']]){await nav(screen);await capture(name);}
  await nav('Companions');await page.locator('.dp-v5-glossary summary').click();await capture('status-glossary','.dp-v5-glossary');
  await nav('Invitations');await page.locator('.dp-player-odds summary').first().click();await capture('invitation-odds','.dp-player-odds');
- await nav('Equipment');const item=page.locator('.dp-gear-grid button').first();if(await item.count()){await item.click();await capture('equipment-compare','.dp-v4-utility');}
+ await nav('Equipment');const item=page.locator('.dp-gear-grid button').first();assert(await item.count(),'The predeclared earned save must contain equipment');await item.click();await capture('equipment-compare','.dp-v4-utility');
  await nav('Cafe');await page.getByRole('region',{name:'Tonight at home',exact:true}).locator('button.cr-primary').click();
  await nav('Night route');await capture('night-route');
- // S4 natural reaction fixture is a review setup, not earned progression.
+ // Selected Skills V5 natural reaction fixture is a review setup, not earned progression.
  await page.evaluate(b=>{const m=window.__depthReview;m.state.run=undefined;m.replay=null;m.tutorialBattle=b;m.watching=false;m.sceneStarted=false;m.go('prepare');},prepared);
  await button('Select Biscuit for placement').click();await capture('combo-prepare','.dp-v4-prepare');await capture('crew-hint','.dp-v5-combos');
  await button('Fight').click();await page.getByLabel('Playback speed',{exact:true}).selectOption('1');
@@ -65,6 +67,6 @@ try{
  assert.equal(rows.length,21,'Every declared screen must be captured');complete=true;
 }finally{
  const contrast=rows.flatMap(r=>r.contrast),failures=rows.flatMap(r=>r.contrast.filter(c=>c.ratio<4.5).map(c=>({capture:r.name,...c})));
- const receipt={complete,artifact,artifactSha256:sha(await readFile(artifact)),width,height,look,rows,checks,errors,remote,minimumContrast:Math.min(...contrast.map(c=>c.ratio)),contrastFailures:failures,overflowFailures:rows.filter(r=>r.overflow!==0).map(r=>({name:r.name,overflow:r.overflow})),scope:'One last-artifact A-owned screen group. Earned day45 save imported for populated screens; natural S4 reaction fixture for Prepare/Result. No wallet/Relic action, combat timing, human recognition or causal progression claim.'};
+ const receipt={complete,artifact,artifactSha256:sha(await readFile(artifact)),width,height,look,rows,checks,errors,remote,minimumContrast:Math.min(...contrast.map(c=>c.ratio)),contrastFailures:failures,overflowFailures:rows.filter(r=>r.overflow!==0).map(r=>({name:r.name,overflow:r.overflow})),scope:'One last-artifact A-owned screen group. Earned day45 save imported for populated screens; natural selected Skills V5 reaction fixture for Prepare/Result. No wallet/Relic action, combat timing, human recognition or causal progression claim.'};
  await writeFile(out+'/checks.json',JSON.stringify(receipt,null,2)+'\n');await browser.close();console.log(JSON.stringify({width,look,captures:rows.length,contrastFailures:failures.length,overflowFailures:receipt.overflowFailures.length,errors:errors.length}));
 }

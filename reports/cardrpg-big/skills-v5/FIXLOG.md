@@ -175,3 +175,16 @@ Addendum received during S5. TRAIN remains 1–500. Existing baseline slices con
 - Smallest fix: use ordinary escaped backticks. Re-run parser preflight before using the reporter. Production rules, registered matrices and OFF/ON receipts are unchanged; this tool only appends measured misses after receipt closure.
 
 - S5-GATE-REPORTER-SYNTAX verification: parser correction passes (`s5/gate-reporter-preflight/correction-1.log`). S8 observation-miss reporter also parses. Both tools read completed receipts only; no samples or runtime changes. The prepared S8 display table now reads selected TRAIN correlations, preserving the before values separately.
+
+## S6-Z-PREFLIGHT — missing declared capture (FIXED before registration)
+- Reproduce: static enumeration of `z-pack.mjs` has only20 captures after expanding its seven-screen loop, while registration and closure require21. Original script: `s6/z-preflight/before.mjs`; no Z registration or browser sample has run.
+- Attribution: the earned Cafe service/daily reward panel was omitted. Ranked alternatives: (1) missing board capture confirmed; (2) equipment branch could omit another capture; (3) navigation loop count mismatch ruled out by its seven entries.
+- Smallest fix: include the expanded earned service board as the21st declared screen; assert equipment exists instead of silently skipping its comparison. Keep the21-screen/126-capture plan and all three widths/both looks.
+- Verify: syntax preflight plus static21-screen enumeration. Runtime and current OFF8250/fallback180+45 hashes are unchanged; the once-only pack will validate actual captures on its registered delivery artifact in S6.
+- Edit-command correction: the first Python patch command had a literal backslash-n after a colon and failed parsing before executing any statement. No files or samples changed in that attempt; corrected command uses real newlines.
+
+## S8-PERFORMANCE-PREFLIGHT — empty telemetry could pass (FIXED before registration)
+- Reproduce: static evaluation `Math.max(0,...[])` returns0; the original sampler would report both cast and draw maxima as0 with no ready-action frames. No browser or acceptance sample was run.
+- Attribute: 1. Empty ready-action selection; 2. missing scene telemetry; 3. failed renderer initialization. These are measurement-integrity failure modes, not measured runtime defects.
+- Smallest fix: require a nonempty ready-action cohort with finite frame/draw values and observed rendered geometry. Missing telemetry now leaves the original observation incomplete instead of passing a zero maximum.
+- Verify: syntax check; actual model.plan and TurnScene.stats field names confirmed read-only. All production rule bytes still match selected OFF8250/fallback180+45 receipts; actual browser validation remains scheduled exactly once in S8. Before/after source hashes: s8/performance-preflight/checks.json.
