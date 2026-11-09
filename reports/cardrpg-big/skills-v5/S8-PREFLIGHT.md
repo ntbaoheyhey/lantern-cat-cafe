@@ -14,3 +14,5 @@ The user addendum is already saved verbatim in `ADDENDUM-SKILLDESIGN.md` and rec
 - The existing 23 keyword-attribution replays reproduce their saved hashes. They are diagnosis of TRAIN observations, not new samples or a fourth S5 design attempt.
 
 After S5 reports its self-score, make its two weakest lines the first S8 review items. Revisit every open repair once before S6; retain failures and do not alter gates, sample blocks or denominators. Lane B's latest M2 checkpoint consumes published DRAFT417; it contains no new skill-design REQUEST.
+
+Continuation: [owned queue receipt](s8/continuation.json) records the existing TRAIN/closure processes and the guarded S8 transition waiter. It waits for complete S5 receipts/report/score, publishes the S5 evidence commit, creates the stacked S8 branch and registers its one Home/startup/performance/day7 observations. No acceptance launch is automated by this waiter; inspect S8 and revisit repairs first. Current main reverified unchanged at06:05UTC.
