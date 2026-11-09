@@ -1,5 +1,6 @@
 export async function open(page,artifact){
- await page.goto('file://'+artifact+'?dev=1');await page.waitForFunction(()=>window.__depthReview);
+ await page.goto('file://'+artifact+'?dev=1');await page.waitForFunction(()=>window.__depthReview||document.getElementById('loading')?.textContent?.startsWith('The demo could not open.'));
+ const loaderError=await page.evaluate(()=>document.getElementById('loading')?.textContent);if(loaderError?.startsWith('The demo could not open.'))throw Error(loaderError);
  await page.evaluate(()=>{const m=window.__depthReview;m.watchNow();m.paused=true;m.camera='wide';m.notify(false)});
  await page.waitForFunction(()=>window.__depthScene?.ready,null,{timeout:120000});
 }
