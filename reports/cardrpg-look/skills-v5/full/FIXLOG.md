@@ -160,3 +160,9 @@ Opt3 isolated600frame samples Mochi220728B/Soot106500B/Yarn115280B,92.8%/88.2%/8
 
 ### B-M3-002 attribution / attempt1
 Boot DOM reports null.textContent before first asset. Published A loader now requires model-dictionary + {entry,modules,css}; B builder emits manifest + {js,css}. B-owned build now references its own matching IIFE loader, copied byte-for-byte from validated B #415 lineage with contract comments. No A loader/rules edits. Extend B build smoke check to reject visible loader errors and require model initialization; rebuild live artifact and rerun failed shot/boot gates.
+
+### B-M3-002 verification FIXED 2026-11-09T06:04:43.946845+00:00
+Corrected live artifact20b76874ec7e initializes model in normal/dev modes; no loader/browser errors, live probe absent in normal mode. Evidence /tmp/cardrpg-v5full-m3/merge4/smoke/smoke.json. Original failing merge3artifact and DOM/console receipt retained. Resumed registered coverage3/delivery2 on corrected payload; coverage2 never acquired lease or sampled. Root gates queued; this change alters packaging only.
+
+### Evidence packing correction 2026-11-09T06:13Z
+Raw CDP traces were included by the generic packer and exceeded the80MB evidence cap before staging. Exclude raw -trace.json files; retain originals in /tmp with SHA256 manifest, package extracted per-run summaries. Deduplicated identical previously packed receipts; current56.35MB. No measured sample deleted or repeated.
