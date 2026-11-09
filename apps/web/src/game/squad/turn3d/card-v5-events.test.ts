@@ -9,7 +9,7 @@ describe('published S4 fixture presentation',()=>{
   const view=applyV5Presentation(f.plan,statusPresentation(f.plan,f.battle.log),f.plan.v5);
   expect(readV5Events(f.plan.v5!.events).length).toBeGreaterThan(0);
   for(const b of [...view.beats,...view.reactions??[],...view.landings??[]]){expect(b.at).toBeGreaterThanOrEqual(0);expect(b.at+b.duration).toBeLessThanOrEqual(f.plan.duration);}
-  if(Object.hasOwn(REACTION_WORDS,name))expect(view.reactions?.some(r=>r.id===name)).toBe(true);
+  if(Object.hasOwn(REACTION_WORDS,name))expect(view.reactions?.some(r=>r.id===name&&f.at>=r.at&&f.at<r.at+r.duration)).toBe(true);
   if(name==='multi-hit'){const hits=view.landings!;expect(hits).toHaveLength(3);expect(new Set(hits.map(h=>h.targetId)).size).toBeLessThan(3);expect(hits.map(h=>h.at-hits[0]!.at)).toEqual([0,70,140]);}
   if(name==='splash')expect(view.landings?.slice(1).every(h=>h.scale<1)).toBe(true);
   if(name==='bitter')expect(f.plan.targetIds.flatMap(id=>statusImpactLabels(f.plan,id,view)).some(l=>l.bitter)).toBe(true);

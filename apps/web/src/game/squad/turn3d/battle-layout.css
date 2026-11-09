@@ -326,8 +326,8 @@
 .dp-v5look .dp-status-badges button.dp-status-badge:hover{border-color:var(--status-rim)}
 
 /* Published S4 cues: actual received amount remains unchanged. */
-.dp-v5look .dp-number-bleed{color:#f9aeb6;font-size:16px;font-style:normal}
-.dp-v5look .dp-number-bitter{color:#e5dfe9;text-decoration:line-through}
+.dp-v5look .dp-number-bleed,.dp-v5look.dp-readable .dp-float-number .dp-number-bleed{color:#f9aeb6;font-size:16px;font-style:normal}
+.dp-v5look .dp-number-bitter,.dp-v5look.dp-readable .dp-float-number .dp-number-bitter{color:#e5dfe9;text-decoration:line-through}
 .dp-v5look .dp-number-bitter small{display:inline-block;text-decoration:none;font-size:14px;color:#f2dfd7}
 /* Keep Bitter's approved violet hue above 4.5:1 against its own backing. */
 .dp-v5look .dp-status-badges button.dp-status-badge[data-status="bitter"]{background:#08151a}

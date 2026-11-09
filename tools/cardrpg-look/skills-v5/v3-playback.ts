@@ -3,7 +3,8 @@ import * as R from '../../../packages/game-rules/src/cardrpg/depth/index';
 import type { DepthModel } from '../../../apps/web/src/game/cardrpg/depth/model';
 import { presentationEvents } from '../../../apps/web/src/game/cardrpg/depth/battle-presentation';
 import { createCardActionPlan } from '../../../apps/web/src/game/cardrpg/depth/card-action-plan';
-import type { V5Event, V5Plan } from '../../../apps/web/src/game/squad/turn3d/card-v5-events';
+import { applyV5Presentation, type V5Event, type V5Plan } from '../../../apps/web/src/game/squad/turn3d/card-v5-events';
+import { statusPresentation } from '../../../apps/web/src/game/squad/turn3d/card-status-beats';
 import source from './v3-source.json';
 export const fixtureSource=source;
 export const caseNames=['bleed','bitter','crumb-burst','wildfire','rupture','spread','splash','multi-hit','bounce'] as const;
@@ -33,7 +34,9 @@ export function fixtureFrame(row:Row,action:Action){
  plan.v5={logStart:action.logStart,events:row.events.filter(e=>e.actionId===action.actionId),before:action.before,after:action.after};
  const apply=(side:'before'|'after')=>{for(const a of battle.actors){const snap=action[side].find(s=>s.id===a.id);if(snap){a.hp=snap.hp;a.shield=snap.shield;a.statuses=structuredClone(snap.statuses) as R.Status[];}}};
  apply('after');
- return {battle,plan,before:action.before,after:action.after,fixtureId:row.id,actionId:action.actionId,at:plan.beats[2]!.start+110};
+ const presentation=applyV5Presentation(plan,statusPresentation(plan,battle.log),plan.v5);
+ const cueAt=Math.max(plan.beats[2]!.start,...(presentation.reactions??[]).map(r=>r.at));
+ return {battle,plan,before:action.before,after:action.after,fixtureId:row.id,actionId:action.actionId,at:cueAt+110};
 }
 export function selectedFixture(name:string){const selected=chosen.get(name);if(!selected)throw Error(`No published fixture for ${name}`);return fixtureFrame(selected.row,selected.action)}
 export function mountFixture(m:DepthModel,name:string,play=false){

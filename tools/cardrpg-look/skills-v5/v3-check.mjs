@@ -18,9 +18,12 @@ try{
  const apply=async(frame)=>{
   await page.evaluate(f=>{const m=window.__depthReview;m.galleryBattle=structuredClone(f.battle);m.plan=structuredClone(f.plan);m.animationAt=f.at;m.paused=true;m.gallerySpeed=1;m.camera='wide';m.state.settings.reducedMotion=false;m.notify(false)},frame);
   await page.waitForFunction(()=>window.__depthReview.battle.actors.every(a=>window.__depthScene.puppets.get(a.id)?.asset===a.catalogId));
+  // Match the fixed model beat: CSS otherwise keeps fading numbers while the battle is paused.
+  await page.evaluate(()=>document.querySelectorAll('.dp-float-number').forEach(e=>{e.style.animationPlayState='paused';e.style.animationDelay='-0.11s'}));
   await page.evaluate(()=>{const s=window.__depthScene;s.render({...s.view(),fixedTime:3.2,paused:true},0);s.dirty=false});await page.waitForTimeout(100);
  };
  for(const [name,f]of Object.entries(frames)){
+  if(side==='before'&&['splash','multi-hit','bounce'].includes(name))continue;
   await apply(f);
   const ui=await page.evaluate(()=>{
    const rect=e=>e.getBoundingClientRect().toJSON(),hit=(a,b)=>a.left<b.right&&a.right>b.left&&a.top<b.bottom&&a.bottom>b.top;
@@ -31,14 +34,16 @@ try{
    let badgeOverlap=0;for(let i=0;i<badges.length;i++){const r=rect(badges[i]);for(const hp of badges[i].closest('[data-hp-plate]').querySelectorAll('progress,.dp-party-health>span strong,.dp-world-plate>div>small'))if(hit(r,rect(hp)))badgeOverlap++;for(const b of badges.slice(i+1))if(hit(r,rect(b)))badgeOverlap++;}
    const contrast=[...badges,...document.querySelectorAll('.dp-combo-callout')].map(e=>{const c=getComputedStyle(e),a=lum(c.color),b=lum(c.backgroundColor);return (Math.max(a,b)+.05)/(Math.min(a,b)+.05)});
    const p=window.__depthScene.view().cardPresentation;
-   return {words,badges:badges.length,badgeOverlap,wordOverlap:words.reduce((n,w,i)=>n+words.slice(i+1).filter(v=>hit(w.rect,v.rect)).length,0),reservedOverlap:words.reduce((n,w)=>n+[...reserve,...plates].filter(r=>hit(w.rect,r)).length,0),outside:words.filter(w=>w.rect.left<stage.left||w.rect.right>stage.right||w.rect.top<stage.top||w.rect.bottom>stage.bottom).length,contrast:Math.min(...contrast),overflow:document.documentElement.scrollWidth>innerWidth,bleed:[...document.querySelectorAll('.dp-number-bleed')].map(e=>e.textContent),bitter:[...document.querySelectorAll('.dp-number-bitter')].map(e=>e.textContent),presentation:p?{beats:p.beats,reactions:p.reactions,landings:p.landings}:null};
+   const numberStyles=[...document.querySelectorAll('.dp-number-bleed,.dp-number-bitter')].map(e=>{const c=getComputedStyle(e);return {text:e.textContent,color:c.color,fontSize:c.fontSize,fontStyle:c.fontStyle,decoration:c.textDecorationLine,visible:!e.closest('.dp-float-number')?.hidden}});
+   return {words,badges:badges.length,badgeOverlap,wordOverlap:words.reduce((n,w,i)=>n+words.slice(i+1).filter(v=>hit(w.rect,v.rect)).length,0),reservedOverlap:words.reduce((n,w)=>n+[...reserve,...plates].filter(r=>hit(w.rect,r)).length,0),outside:words.filter(w=>w.rect.left<stage.left||w.rect.right>stage.right||w.rect.top<stage.top||w.rect.bottom>stage.bottom).length,contrast:Math.min(...contrast),overflow:document.documentElement.scrollWidth>innerWidth,bleed:[...document.querySelectorAll('.dp-number-bleed')].map(e=>e.textContent),bitter:[...document.querySelectorAll('.dp-number-bitter')].map(e=>e.textContent),numberStyles,presentation:p?{beats:p.beats,reactions:p.reactions,landings:p.landings}:null};
   });
   receipt.ui.push({name,width,...ui});
   if(width===1440){const file=`shots/${side}-${width}-${name}.webp`;await sharp(await page.screenshot()).webp({quality:80}).toFile(`${out}/${file}`);receipt.shots.push({name,width,file,...await page.evaluate(coverage)});}
   if(side==='after'){
    assert.equal(ui.badgeOverlap,0,`${width}/${name} badge`);assert.equal(ui.wordOverlap,0,`${width}/${name} words`);assert.equal(ui.reservedOverlap,0,`${width}/${name} HP/HUD`);assert.equal(ui.outside,0);assert.equal(ui.overflow,false);assert.ok(ui.contrast>=4.5,`${width}/${name} contrast${ui.contrast}`);
    if(['crumb-burst','wildfire','rupture','spread'].includes(name))assert.ok(ui.words.some(w=>w.text===({'crumb-burst':'CRUMB BURST!',wildfire:'WILDFIRE!',rupture:'RUPTURE!',spread:'SPREAD!'})[name]),`${name} word`);
-   if(name==='bleed')assert.ok(ui.bleed.length);if(name==='bitter')assert.ok(ui.bitter.some(t=>t.includes('50%')));
+   if(name==='bleed'){assert.ok(ui.bleed.length);assert.ok(ui.numberStyles.some(n=>n.color==='rgb(249, 174, 182)'&&n.fontSize==='16px'&&n.fontStyle==='normal'&&n.visible));}
+   if(name==='bitter'){assert.ok(ui.bitter.some(t=>t.includes('50%')));assert.ok(ui.numberStyles.some(n=>n.color==='rgb(229, 223, 233)'&&n.decoration==='line-through'&&n.visible));}
   }
  }
  if(side==='after'){
