@@ -1298,3 +1298,10 @@ DRAFT427 source checkpoint3583cfea6/reportf041cebfc pushed: automated existing s
 Source5369360B,96900tri,2embeddedtextures,UVs,0skins/animations; SHAeb84d0f8. Six-angle neutral Blender review completed under shared timing lock; source-only, no runtime adoption.
 Direct reconstruction follows user correction; no pipeline accepted. Next simplify/rig and inspect articulated motion; rejected painted/procedural WIP preserved. Fal no longer blocks this Mochi source.
 Reports art-rebuild/ART-REPORT.md,R1-PARTIAL.md,STATUS-VI.md; provenance appended. R0/S6/M5 unchanged; no A/U worktree edits, rules/default flips, PR merges or deploys.
+
+## 2026-11-09T23:19:57.631861+00:00 ART-R1 CHECKPOINT
+DRAFT427 pushed3ef6f96a6: reproducible Mochi inspect/simplify/rig/pack/inspect; successful source conversion reused, no new inference.
+Prototype626020B/21938tri/14joints/2textures;22game clips,11pose sheet and20s natural battle film. GLB has0embedded clips.
+R1PARTIAL: high cast/victory deformation persists at3attempt cap B-R1-008; no pipeline accepted or roster rollout. Actual surface separation needed; no fourth mask tweak.
+Automation5/5resume hashes exact; recipe/output/concurrent writer/production-install guards PASS. Local type/lint/unit PASS incl1815webtests;5Bseeds exact/85plan immutability retained. New perf/faces/contrast/collision/startup/E2E NOT VERIFIED.
+Published source/tools/evidence/reports only; rejected renderer/candidate WIP remains local. Reports ART-REPORT.md,AUTOMATION.md,STATUS-VI.md. R0/S6/M5 preserved; no A/U edits, flag flips, PR merge or manual deploy action.
