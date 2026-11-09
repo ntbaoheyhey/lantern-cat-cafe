@@ -1239,3 +1239,10 @@ Cold3native33.4/33.4/33.3ms,3CPU4149.9/150/183.3ms;readymax9212.6ms. Full3007512
 BfullE2E419/421:idle XP clock andlegacy squad runtime clock failed;each unchanged test isolatedtwicequeued. No tests/timeouts/skips edited;original samples retained.
 45/45natural coverage remains additive23samples/18seeds;no rules/default/A-owned changes. Beauty6.233 andnonzeroallocation/literalOFF+3B remainPARTIAL.
 B wrappers allow A bounded leases between deliverygroups;no A process control. LatestpublishedA evidenceb21a91c35/runtime6772eb343 integrated;S6 refresh remains pending.
+
+## 2026-11-09T08:56:35Z V5FULL-M4 CHECKPOINT
+DRAFT421 M4 delivery4dba130c9 on419; integration DRAFT420 refreshed269a08e05, INTEGRATION PREVIEW - not for merge. PublishedA runtime6772eb343/evidenceb21a91c35 unchanged.
+Full30075127B/lean21812603B;6SSIMmin0.994547;17guideexamples with2fixtures;4continuousclips20/20/30/20s. PitchThreadpair1:2reactions,6multi-targetactions,3ultimates;reel12starts,lastafterglowtrimmed.
+LiveE2E421/421;B419/421 plusbothunchangedclocktests2/2isolatedPASS. Nativecasts16.8ms/CPU466.7ms,coldCPU4max183.3ms;51fixed+1194cueframes0overlap;98facemasks0offenders;contrast4.618.
+23retainednaturalsamples/18seeds2091plans,45/45cells;original10narrowendingsNOTVERIFIED. Evidence79.1MB;allfailedreceipts retained. Selfscore7.54,beauty6.233,allocations,OFF+3B,Kettle1.997x and130drawtargetPARTIAL.
+No further B timingjobs queued;A may use available boundedleases. B now follows required published-phase refresh throughS6DONEor19Nov18UTC beforeM5;no Aprocess/file/default/rule changes.
