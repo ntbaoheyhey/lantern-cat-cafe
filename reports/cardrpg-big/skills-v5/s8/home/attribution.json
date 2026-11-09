@@ -1,0 +1,4386 @@
+{
+  "artifactSha256": "4e310b07f9dfb005abdff830d498e8d0f6615553e1710a2ce12eeedad3a3638e",
+  "windows": [
+    {
+      "minutes": 5,
+      "combatSeconds": 145.365,
+      "baselineCombatSeconds": 128.642,
+      "reductionPercent": -12.999642418494748,
+      "lossCombatSeconds": 68.174,
+      "completedResults": {
+        "party": 4,
+        "enemy": 1
+      },
+      "longestGap": {
+        "seconds": 84.564,
+        "from": "settle encounter",
+        "to": "settle encounter",
+        "startMs": 147299,
+        "endMs": 231863,
+        "battles": [
+          {
+            "index": 3,
+            "seed": 3280124206,
+            "enemies": [
+              "yarn-giant"
+            ],
+            "result": "enemy",
+            "rounds": 11,
+            "actions": 26,
+            "secondsWithinGap": 68.174
+          }
+        ],
+        "combatSeconds": 68.174
+      },
+      "longestBattles": [
+        {
+          "index": 3,
+          "startMs": 158434,
+          "endMs": 226608,
+          "seconds": 68.174,
+          "seed": 3280124206,
+          "chapter": 1,
+          "enemies": [
+            "yarn-giant"
+          ],
+          "crew": [
+            {
+              "id": "mochi",
+              "skills": [
+                "mochi-1",
+                "mochi-2",
+                "mochi-3"
+              ]
+            },
+            {
+              "id": "soot",
+              "skills": [
+                "soot-1",
+                "soot-2",
+                "soot-3"
+              ]
+            },
+            {
+              "id": "clover",
+              "skills": [
+                "clover-1",
+                "clover-2",
+                "clover-3"
+              ]
+            }
+          ],
+          "rounds": 11,
+          "result": "enemy",
+          "actions": 26,
+          "partyActions": 26,
+          "skillUses": {
+            "mochi-3": 2,
+            "soot-2": 2,
+            "clover-2": 4,
+            "mochi-1": 7,
+            "soot-1": 4,
+            "soot-3": 2,
+            "clover-3": 1,
+            "mochi-2": 2,
+            "defend": 2
+          },
+          "battleSha256": "041f3fbeaef7c6cc9600fa907462d179d568354abc40d03d73951dfbb8fe9393",
+          "windowSeconds": 68.174
+        },
+        {
+          "index": 1,
+          "startMs": 55372,
+          "endMs": 77560,
+          "seconds": 22.188,
+          "seed": 791576452,
+          "chapter": 1,
+          "enemies": [
+            "teacup-healer",
+            "sock-skipper"
+          ],
+          "crew": [
+            {
+              "id": "mochi",
+              "skills": [
+                "mochi-1",
+                "mochi-2",
+                "mochi-3"
+              ]
+            },
+            {
+              "id": "soot",
+              "skills": [
+                "soot-1",
+                "soot-2",
+                "soot-3"
+              ]
+            },
+            {
+              "id": "clover",
+              "skills": [
+                "clover-1",
+                "clover-2",
+                "clover-3"
+              ]
+            }
+          ],
+          "rounds": 3,
+          "result": "party",
+          "actions": 9,
+          "partyActions": 9,
+          "skillUses": {
+            "mochi-1": 3,
+            "soot-1": 1,
+            "clover-1": 2,
+            "soot-2": 1,
+            "clover-2": 1,
+            "soot-3": 1
+          },
+          "battleSha256": "e3d2489b16b66a2f113e00c943b7a7836739868b3feb9c3869cf571924c97b10",
+          "windowSeconds": 22.188
+        },
+        {
+          "index": 4,
+          "startMs": 269320,
+          "endMs": 290537,
+          "seconds": 21.217,
+          "seed": 3307271994,
+          "chapter": 1,
+          "enemies": [
+            "button-guard",
+            "sock-skipper"
+          ],
+          "crew": [
+            {
+              "id": "mochi",
+              "skills": [
+                "mochi-1",
+                "mochi-2",
+                "mochi-3"
+              ]
+            },
+            {
+              "id": "biscuit",
+              "skills": [
+                "biscuit-1",
+                "biscuit-2",
+                "biscuit-3"
+              ]
+            },
+            {
+              "id": "clover",
+              "skills": [
+                "clover-1",
+                "clover-2",
+                "clover-3"
+              ]
+            }
+          ],
+          "rounds": 3,
+          "result": "party",
+          "actions": 7,
+          "partyActions": 7,
+          "skillUses": {
+            "mochi-1": 2,
+            "biscuit-3": 1,
+            "clover-1": 2,
+            "mochi-3": 1,
+            "biscuit-1": 1
+          },
+          "battleSha256": "2b553b4798e21949e61c73999f864d26563f07a26113692b103c389305158b31",
+          "windowSeconds": 21.217
+        },
+        {
+          "index": 2,
+          "startMs": 122622,
+          "endMs": 142070,
+          "seconds": 19.448,
+          "seed": 3778700884,
+          "chapter": 1,
+          "enemies": [
+            "sock-skipper",
+            "sock-skipper"
+          ],
+          "crew": [
+            {
+              "id": "mochi",
+              "skills": [
+                "mochi-1",
+                "mochi-2",
+                "mochi-3"
+              ]
+            },
+            {
+              "id": "soot",
+              "skills": [
+                "soot-1",
+                "soot-2",
+                "soot-3"
+              ]
+            },
+            {
+              "id": "clover",
+              "skills": [
+                "clover-1",
+                "clover-2",
+                "clover-3"
+              ]
+            }
+          ],
+          "rounds": 4,
+          "result": "party",
+          "actions": 10,
+          "partyActions": 10,
+          "skillUses": {
+            "mochi-1": 3,
+            "soot-2": 1,
+            "clover-2": 2,
+            "soot-1": 1,
+            "mochi-3": 1,
+            "soot-3": 1,
+            "clover-1": 1
+          },
+          "battleSha256": "95057e344565cdc09416875399d3d05547a4062d8cc4b72eee6648bbe66dbd9e",
+          "windowSeconds": 19.448
+        },
+        {
+          "index": 0,
+          "startMs": 6154,
+          "endMs": 20492,
+          "seconds": 14.338,
+          "seed": 7,
+          "chapter": 1,
+          "enemies": [
+            "practice-cushion"
+          ],
+          "crew": [
+            {
+              "id": "mochi",
+              "skills": [
+                "mochi-1",
+                "mochi-2",
+                "mochi-3"
+              ]
+            },
+            {
+              "id": "soot",
+              "skills": [
+                "soot-1",
+                "soot-2",
+                "soot-3"
+              ]
+            },
+            {
+              "id": "clover",
+              "skills": [
+                "clover-1",
+                "clover-2",
+                "clover-3"
+              ]
+            }
+          ],
+          "rounds": 2,
+          "result": "party",
+          "actions": 5,
+          "partyActions": 5,
+          "skillUses": {
+            "mochi-3": 1,
+            "soot-2": 1,
+            "clover-1": 1,
+            "mochi-1": 1,
+            "soot-1": 1
+          },
+          "battleSha256": "170a7e929b73b88939887d750571d7ed8867ada25385b3beb1e3872a63750a9b",
+          "windowSeconds": 14.338
+        }
+      ]
+    },
+    {
+      "minutes": 30,
+      "combatSeconds": 990.2890000000001,
+      "baselineCombatSeconds": 896.67,
+      "reductionPercent": -10.440741855978247,
+      "lossCombatSeconds": 466.403,
+      "completedResults": {
+        "party": 20,
+        "enemy": 6
+      },
+      "longestGap": {
+        "seconds": 929.859,
+        "from": "Claim cafe service",
+        "to": "window end",
+        "startMs": 870141,
+        "endMs": 1800000,
+        "battles": [
+          {
+            "index": 13,
+            "seed": 2024383137,
+            "enemies": [
+              "teacup-healer",
+              "button-guard"
+            ],
+            "result": "party",
+            "rounds": 4,
+            "actions": 11,
+            "secondsWithinGap": 27.895
+          },
+          {
+            "index": 14,
+            "seed": 1133702706,
+            "enemies": [
+              "button-guard",
+              "sock-skipper"
+            ],
+            "result": "party",
+            "rounds": 3,
+            "actions": 8,
+            "secondsWithinGap": 16.316
+          },
+          {
+            "index": 15,
+            "seed": 30332408,
+            "enemies": [
+              "rain-spool"
+            ],
+            "result": "enemy",
+            "rounds": 13,
+            "actions": 31,
+            "secondsWithinGap": 81.018
+          },
+          {
+            "index": 16,
+            "seed": 3882441614,
+            "enemies": [
+              "button-guard",
+              "button-guard"
+            ],
+            "result": "party",
+            "rounds": 2,
+            "actions": 6,
+            "secondsWithinGap": 20.643
+          },
+          {
+            "index": 17,
+            "seed": 3921343890,
+            "enemies": [
+              "sock-skipper",
+              "teacup-healer"
+            ],
+            "result": "party",
+            "rounds": 3,
+            "actions": 9,
+            "secondsWithinGap": 17.417
+          },
+          {
+            "index": 18,
+            "seed": 899726880,
+            "enemies": [
+              "rain-spool"
+            ],
+            "result": "enemy",
+            "rounds": 12,
+            "actions": 36,
+            "secondsWithinGap": 83.999
+          },
+          {
+            "index": 19,
+            "seed": 1211488677,
+            "enemies": [
+              "teacup-healer",
+              "sock-skipper"
+            ],
+            "result": "party",
+            "rounds": 4,
+            "actions": 11,
+            "secondsWithinGap": 29.644
+          },
+          {
+            "index": 20,
+            "seed": 2503341991,
+            "enemies": [
+              "sock-skipper",
+              "button-guard"
+            ],
+            "result": "party",
+            "rounds": 3,
+            "actions": 7,
+            "secondsWithinGap": 13.706
+          },
+          {
+            "index": 21,
+            "seed": 188593055,
+            "enemies": [
+              "rain-spool"
+            ],
+            "result": "enemy",
+            "rounds": 12,
+            "actions": 31,
+            "secondsWithinGap": 78.715
+          },
+          {
+            "index": 22,
+            "seed": 4010165288,
+            "enemies": [
+              "sock-skipper",
+              "needle-moth"
+            ],
+            "result": "party",
+            "rounds": 3,
+            "actions": 8,
+            "secondsWithinGap": 23.8
+          },
+          {
+            "index": 23,
+            "seed": 3742173748,
+            "enemies": [
+              "button-guard",
+              "sock-skipper"
+            ],
+            "result": "party",
+            "rounds": 3,
+            "actions": 8,
+            "secondsWithinGap": 13.722
+          },
+          {
+            "index": 24,
+            "seed": 126583848,
+            "enemies": [
+              "rain-spool"
+            ],
+            "result": "party",
+            "rounds": 12,
+            "actions": 33,
+            "secondsWithinGap": 73.245
+          },
+          {
+            "index": 25,
+            "seed": 1028839662,
+            "enemies": [
+              "teacup-healer",
+              "sock-skipper"
+            ],
+            "result": "party",
+            "rounds": 3,
+            "actions": 9,
+            "secondsWithinGap": 27.861
+          },
+          {
+            "index": 26,
+            "seed": 563811602,
+            "enemies": [
+              "sock-skipper",
+              "binding-thread"
+            ],
+            "result": "party",
+            "rounds": 3,
+            "actions": 9,
+            "secondsWithinGap": 6.427
+          }
+        ],
+        "combatSeconds": 514.408
+      },
+      "longestBattles": [
+        {
+          "index": 12,
+          "startMs": 774611,
+          "endMs": 864578,
+          "seconds": 89.967,
+          "seed": 2256061393,
+          "chapter": 2,
+          "enemies": [
+            "rain-spool"
+          ],
+          "crew": [
+            {
+              "id": "mochi",
+              "skills": [
+                "mochi-1",
+                "mochi-2",
+                "mochi-3"
+              ]
+            },
+            {
+              "id": "biscuit",
+              "skills": [
+                "biscuit-1",
+                "biscuit-2",
+                "biscuit-3"
+              ]
+            },
+            {
+              "id": "clover",
+              "skills": [
+                "clover-1",
+                "clover-2",
+                "clover-3"
+              ]
+            }
+          ],
+          "rounds": 14,
+          "result": "enemy",
+          "actions": 38,
+          "partyActions": 38,
+          "skillUses": {
+            "mochi-3": 2,
+            "biscuit-3": 4,
+            "clover-2": 8,
+            "mochi-1": 9,
+            "biscuit-1": 5,
+            "clover-3": 3,
+            "defend": 4,
+            "biscuit-2": 1,
+            "clover-1": 2
+          },
+          "battleSha256": "bb49cc30ac61e3153ff023ce671d4f2cfcb5fc9041939d3366385423e513af0d",
+          "windowSeconds": 89.967
+        },
+        {
+          "index": 6,
+          "startMs": 364463,
+          "endMs": 452855,
+          "seconds": 88.392,
+          "seed": 3057134794,
+          "chapter": 1,
+          "enemies": [
+            "yarn-giant"
+          ],
+          "crew": [
+            {
+              "id": "mochi",
+              "skills": [
+                "mochi-1",
+                "mochi-2",
+                "mochi-3"
+              ]
+            },
+            {
+              "id": "biscuit",
+              "skills": [
+                "biscuit-1",
+                "biscuit-2",
+                "biscuit-3"
+              ]
+            },
+            {
+              "id": "clover",
+              "skills": [
+                "clover-1",
+                "clover-2",
+                "clover-3"
+              ]
+            }
+          ],
+          "rounds": 14,
+          "result": "party",
+          "actions": 40,
+          "partyActions": 40,
+          "skillUses": {
+            "mochi-3": 2,
+            "biscuit-3": 5,
+            "clover-2": 10,
+            "mochi-1": 8,
+            "biscuit-2": 3,
+            "biscuit-1": 5,
+            "mochi-2": 4,
+            "clover-3": 3
+          },
+          "battleSha256": "31048356faf63808b5d4a93acfb2a7db110b42fd650278cc8fe197bcc104d198",
+          "windowSeconds": 88.392
+        },
+        {
+          "index": 18,
+          "startMs": 1209120,
+          "endMs": 1293119,
+          "seconds": 83.999,
+          "seed": 899726880,
+          "chapter": 2,
+          "enemies": [
+            "rain-spool"
+          ],
+          "crew": [
+            {
+              "id": "mochi",
+              "skills": [
+                "mochi-1",
+                "mochi-2",
+                "mochi-3"
+              ]
+            },
+            {
+              "id": "biscuit",
+              "skills": [
+                "biscuit-1",
+                "biscuit-2",
+                "biscuit-3"
+              ]
+            },
+            {
+              "id": "clover",
+              "skills": [
+                "clover-1",
+                "clover-2",
+                "clover-3"
+              ]
+            }
+          ],
+          "rounds": 12,
+          "result": "enemy",
+          "actions": 36,
+          "partyActions": 36,
+          "skillUses": {
+            "mochi-3": 2,
+            "biscuit-3": 4,
+            "clover-2": 8,
+            "mochi-1": 8,
+            "biscuit-1": 5,
+            "clover-3": 3,
+            "biscuit-2": 3,
+            "clover-1": 1,
+            "mochi-2": 2
+          },
+          "battleSha256": "f7f4df674a5f0bc53272309a0bd64fcf9798f1941253f6af1fcfde819b53f2c9",
+          "windowSeconds": 83.999
+        },
+        {
+          "index": 15,
+          "startMs": 999261,
+          "endMs": 1080279,
+          "seconds": 81.018,
+          "seed": 30332408,
+          "chapter": 2,
+          "enemies": [
+            "rain-spool"
+          ],
+          "crew": [
+            {
+              "id": "mochi",
+              "skills": [
+                "mochi-1",
+                "mochi-2",
+                "mochi-3"
+              ]
+            },
+            {
+              "id": "biscuit",
+              "skills": [
+                "biscuit-1",
+                "biscuit-2",
+                "biscuit-3"
+              ]
+            },
+            {
+              "id": "clover",
+              "skills": [
+                "clover-1",
+                "clover-2",
+                "clover-3"
+              ]
+            }
+          ],
+          "rounds": 13,
+          "result": "enemy",
+          "actions": 31,
+          "partyActions": 31,
+          "skillUses": {
+            "mochi-3": 1,
+            "biscuit-3": 4,
+            "clover-2": 8,
+            "mochi-1": 5,
+            "biscuit-2": 3,
+            "clover-3": 1,
+            "clover-1": 2,
+            "biscuit-1": 6,
+            "mochi-2": 1
+          },
+          "battleSha256": "df878cca67850b7744b448f536880e5ca158b0f628105e2f3c070a997b9bcce7",
+          "windowSeconds": 81.018
+        },
+        {
+          "index": 21,
+          "startMs": 1426795,
+          "endMs": 1505510,
+          "seconds": 78.715,
+          "seed": 188593055,
+          "chapter": 2,
+          "enemies": [
+            "rain-spool"
+          ],
+          "crew": [
+            {
+              "id": "mochi",
+              "skills": [
+                "mochi-1",
+                "mochi-2",
+                "mochi-3"
+              ]
+            },
+            {
+              "id": "biscuit",
+              "skills": [
+                "biscuit-1",
+                "biscuit-2",
+                "biscuit-3"
+              ]
+            },
+            {
+              "id": "clover",
+              "skills": [
+                "clover-1",
+                "clover-2",
+                "clover-3"
+              ]
+            }
+          ],
+          "rounds": 12,
+          "result": "enemy",
+          "actions": 31,
+          "partyActions": 31,
+          "skillUses": {
+            "mochi-3": 1,
+            "biscuit-3": 3,
+            "clover-2": 6,
+            "mochi-1": 8,
+            "biscuit-2": 4,
+            "clover-1": 2,
+            "mochi-2": 3,
+            "clover-3": 2,
+            "biscuit-1": 2
+          },
+          "battleSha256": "03fcc15e51d0dcd181e02059085a62e5cf65386469def526ddeec0e8c71c502c",
+          "windowSeconds": 78.715
+        }
+      ]
+    },
+    {
+      "minutes": 60,
+      "combatSeconds": 2037.837,
+      "baselineCombatSeconds": 1886.8830000000003,
+      "reductionPercent": -8.000178071454336,
+      "lossCombatSeconds": 988.8610000000001,
+      "completedResults": {
+        "party": 41,
+        "enemy": 13
+      },
+      "longestGap": {
+        "seconds": 1489.966,
+        "from": "A LITTLE MOMENT TO KEEP\n\n60 route stars. A little brighter every evening.\n\nSkip celebration",
+        "to": "window end",
+        "startMs": 2110034,
+        "endMs": 3600000,
+        "battles": [
+          {
+            "index": 31,
+            "seed": 1780819474,
+            "enemies": [
+              "button-guard",
+              "teacup-healer"
+            ],
+            "result": "party",
+            "rounds": 3,
+            "actions": 9,
+            "secondsWithinGap": 24.337
+          },
+          {
+            "index": 32,
+            "seed": 2356962934,
+            "enemies": [
+              "teacup-healer",
+              "teacup-healer"
+            ],
+            "result": "party",
+            "rounds": 4,
+            "actions": 12,
+            "secondsWithinGap": 21.658
+          },
+          {
+            "index": 33,
+            "seed": 1245215347,
+            "enemies": [
+              "rain-spool"
+            ],
+            "result": "enemy",
+            "rounds": 13,
+            "actions": 36,
+            "secondsWithinGap": 85.154
+          },
+          {
+            "index": 34,
+            "seed": 4239797844,
+            "enemies": [
+              "button-guard",
+              "sock-skipper"
+            ],
+            "result": "party",
+            "rounds": 3,
+            "actions": 8,
+            "secondsWithinGap": 22.363
+          },
+          {
+            "index": 35,
+            "seed": 483714718,
+            "enemies": [
+              "button-guard",
+              "button-guard"
+            ],
+            "result": "party",
+            "rounds": 3,
+            "actions": 7,
+            "secondsWithinGap": 12.462
+          },
+          {
+            "index": 36,
+            "seed": 3483962368,
+            "enemies": [
+              "rain-spool"
+            ],
+            "result": "enemy",
+            "rounds": 13,
+            "actions": 37,
+            "secondsWithinGap": 83.868
+          },
+          {
+            "index": 37,
+            "seed": 2034488919,
+            "enemies": [
+              "sock-skipper",
+              "sock-skipper"
+            ],
+            "result": "party",
+            "rounds": 3,
+            "actions": 9,
+            "secondsWithinGap": 25.053
+          },
+          {
+            "index": 38,
+            "seed": 2718845648,
+            "enemies": [
+              "sock-skipper",
+              "needle-moth"
+            ],
+            "result": "party",
+            "rounds": 3,
+            "actions": 7,
+            "secondsWithinGap": 13.393
+          },
+          {
+            "index": 39,
+            "seed": 3859915983,
+            "enemies": [
+              "rain-spool"
+            ],
+            "result": "enemy",
+            "rounds": 12,
+            "actions": 32,
+            "secondsWithinGap": 70.967
+          },
+          {
+            "index": 40,
+            "seed": 2137864833,
+            "enemies": [
+              "sock-skipper",
+              "button-guard"
+            ],
+            "result": "party",
+            "rounds": 3,
+            "actions": 8,
+            "secondsWithinGap": 22.797
+          },
+          {
+            "index": 41,
+            "seed": 2080527508,
+            "enemies": [
+              "sock-skipper",
+              "teacup-healer"
+            ],
+            "result": "party",
+            "rounds": 3,
+            "actions": 8,
+            "secondsWithinGap": 14.891
+          },
+          {
+            "index": 42,
+            "seed": 511631122,
+            "enemies": [
+              "rain-spool"
+            ],
+            "result": "enemy",
+            "rounds": 11,
+            "actions": 28,
+            "secondsWithinGap": 62.32
+          },
+          {
+            "index": 43,
+            "seed": 3269809185,
+            "enemies": [
+              "button-guard",
+              "teacup-healer"
+            ],
+            "result": "party",
+            "rounds": 3,
+            "actions": 9,
+            "secondsWithinGap": 25.59
+          },
+          {
+            "index": 44,
+            "seed": 880630250,
+            "enemies": [
+              "button-guard",
+              "needle-moth"
+            ],
+            "result": "party",
+            "rounds": 2,
+            "actions": 6,
+            "secondsWithinGap": 10.787
+          },
+          {
+            "index": 45,
+            "seed": 1732749953,
+            "enemies": [
+              "rain-spool"
+            ],
+            "result": "enemy",
+            "rounds": 12,
+            "actions": 29,
+            "secondsWithinGap": 68.855
+          },
+          {
+            "index": 46,
+            "seed": 3365983584,
+            "enemies": [
+              "teacup-healer",
+              "teacup-healer"
+            ],
+            "result": "party",
+            "rounds": 4,
+            "actions": 11,
+            "secondsWithinGap": 29.302
+          },
+          {
+            "index": 47,
+            "seed": 3326676537,
+            "enemies": [
+              "sock-skipper",
+              "sock-skipper"
+            ],
+            "result": "party",
+            "rounds": 3,
+            "actions": 8,
+            "secondsWithinGap": 14.759
+          },
+          {
+            "index": 48,
+            "seed": 2868178150,
+            "enemies": [
+              "rain-spool"
+            ],
+            "result": "enemy",
+            "rounds": 10,
+            "actions": 28,
+            "secondsWithinGap": 69.705
+          },
+          {
+            "index": 49,
+            "seed": 2914833299,
+            "enemies": [
+              "sock-skipper",
+              "sock-skipper"
+            ],
+            "result": "party",
+            "rounds": 3,
+            "actions": 8,
+            "secondsWithinGap": 24.09
+          },
+          {
+            "index": 50,
+            "seed": 3012321121,
+            "enemies": [
+              "sock-skipper",
+              "sock-skipper"
+            ],
+            "result": "party",
+            "rounds": 3,
+            "actions": 8,
+            "secondsWithinGap": 14.934
+          },
+          {
+            "index": 51,
+            "seed": 1281318595,
+            "enemies": [
+              "rain-spool"
+            ],
+            "result": "enemy",
+            "rounds": 12,
+            "actions": 36,
+            "secondsWithinGap": 81.589
+          },
+          {
+            "index": 52,
+            "seed": 1490908556,
+            "enemies": [
+              "needle-moth",
+              "teacup-healer"
+            ],
+            "result": "party",
+            "rounds": 3,
+            "actions": 9,
+            "secondsWithinGap": 26.01
+          },
+          {
+            "index": 53,
+            "seed": 2847216581,
+            "enemies": [
+              "needle-moth",
+              "sock-skipper"
+            ],
+            "result": "party",
+            "rounds": 3,
+            "actions": 7,
+            "secondsWithinGap": 13.536
+          }
+        ],
+        "combatSeconds": 838.42
+      },
+      "longestBattles": [
+        {
+          "index": 27,
+          "startMs": 1826327,
+          "endMs": 1925249,
+          "seconds": 98.922,
+          "seed": 3425957772,
+          "chapter": 3,
+          "enemies": [
+            "pantry-crown"
+          ],
+          "crew": [
+            {
+              "id": "mochi",
+              "skills": [
+                "mochi-1",
+                "mochi-2",
+                "mochi-3"
+              ]
+            },
+            {
+              "id": "biscuit",
+              "skills": [
+                "biscuit-1",
+                "biscuit-2",
+                "biscuit-3"
+              ]
+            },
+            {
+              "id": "clover",
+              "skills": [
+                "clover-1",
+                "clover-2",
+                "clover-3"
+              ]
+            }
+          ],
+          "rounds": 15,
+          "result": "party",
+          "actions": 44,
+          "partyActions": 44,
+          "skillUses": {
+            "mochi-3": 2,
+            "biscuit-3": 4,
+            "clover-2": 7,
+            "mochi-1": 10,
+            "biscuit-2": 4,
+            "biscuit-1": 7,
+            "clover-3": 4,
+            "clover-1": 3,
+            "mochi-2": 3
+          },
+          "battleSha256": "94e6090b2ce60b4bbf8d4c515d76b9a449c75670b8e432c59abdfec25ebce6d4",
+          "windowSeconds": 98.922
+        },
+        {
+          "index": 12,
+          "startMs": 774611,
+          "endMs": 864578,
+          "seconds": 89.967,
+          "seed": 2256061393,
+          "chapter": 2,
+          "enemies": [
+            "rain-spool"
+          ],
+          "crew": [
+            {
+              "id": "mochi",
+              "skills": [
+                "mochi-1",
+                "mochi-2",
+                "mochi-3"
+              ]
+            },
+            {
+              "id": "biscuit",
+              "skills": [
+                "biscuit-1",
+                "biscuit-2",
+                "biscuit-3"
+              ]
+            },
+            {
+              "id": "clover",
+              "skills": [
+                "clover-1",
+                "clover-2",
+                "clover-3"
+              ]
+            }
+          ],
+          "rounds": 14,
+          "result": "enemy",
+          "actions": 38,
+          "partyActions": 38,
+          "skillUses": {
+            "mochi-3": 2,
+            "biscuit-3": 4,
+            "clover-2": 8,
+            "mochi-1": 9,
+            "biscuit-1": 5,
+            "clover-3": 3,
+            "defend": 4,
+            "biscuit-2": 1,
+            "clover-1": 2
+          },
+          "battleSha256": "bb49cc30ac61e3153ff023ce671d4f2cfcb5fc9041939d3366385423e513af0d",
+          "windowSeconds": 89.967
+        },
+        {
+          "index": 6,
+          "startMs": 364463,
+          "endMs": 452855,
+          "seconds": 88.392,
+          "seed": 3057134794,
+          "chapter": 1,
+          "enemies": [
+            "yarn-giant"
+          ],
+          "crew": [
+            {
+              "id": "mochi",
+              "skills": [
+                "mochi-1",
+                "mochi-2",
+                "mochi-3"
+              ]
+            },
+            {
+              "id": "biscuit",
+              "skills": [
+                "biscuit-1",
+                "biscuit-2",
+                "biscuit-3"
+              ]
+            },
+            {
+              "id": "clover",
+              "skills": [
+                "clover-1",
+                "clover-2",
+                "clover-3"
+              ]
+            }
+          ],
+          "rounds": 14,
+          "result": "party",
+          "actions": 40,
+          "partyActions": 40,
+          "skillUses": {
+            "mochi-3": 2,
+            "biscuit-3": 5,
+            "clover-2": 10,
+            "mochi-1": 8,
+            "biscuit-2": 3,
+            "biscuit-1": 5,
+            "mochi-2": 4,
+            "clover-3": 3
+          },
+          "battleSha256": "31048356faf63808b5d4a93acfb2a7db110b42fd650278cc8fe197bcc104d198",
+          "windowSeconds": 88.392
+        },
+        {
+          "index": 33,
+          "startMs": 2229873,
+          "endMs": 2315027,
+          "seconds": 85.154,
+          "seed": 1245215347,
+          "chapter": 2,
+          "enemies": [
+            "rain-spool"
+          ],
+          "crew": [
+            {
+              "id": "mochi",
+              "skills": [
+                "mochi-1",
+                "mochi-2",
+                "mochi-3"
+              ]
+            },
+            {
+              "id": "biscuit",
+              "skills": [
+                "biscuit-1",
+                "biscuit-2",
+                "biscuit-3"
+              ]
+            },
+            {
+              "id": "clover",
+              "skills": [
+                "clover-1",
+                "clover-2",
+                "clover-3"
+              ]
+            }
+          ],
+          "rounds": 13,
+          "result": "enemy",
+          "actions": 36,
+          "partyActions": 36,
+          "skillUses": {
+            "mochi-1": 7,
+            "biscuit-3": 3,
+            "clover-2": 8,
+            "biscuit-1": 6,
+            "biscuit-2": 2,
+            "clover-3": 3,
+            "mochi-2": 3,
+            "mochi-3": 1,
+            "clover-1": 2,
+            "defend": 1
+          },
+          "battleSha256": "03223e5e2c7b6c1bc8890e538f578fead5199bf8ad980394277b1002e7f15fe9",
+          "windowSeconds": 85.154
+        },
+        {
+          "index": 18,
+          "startMs": 1209120,
+          "endMs": 1293119,
+          "seconds": 83.999,
+          "seed": 899726880,
+          "chapter": 2,
+          "enemies": [
+            "rain-spool"
+          ],
+          "crew": [
+            {
+              "id": "mochi",
+              "skills": [
+                "mochi-1",
+                "mochi-2",
+                "mochi-3"
+              ]
+            },
+            {
+              "id": "biscuit",
+              "skills": [
+                "biscuit-1",
+                "biscuit-2",
+                "biscuit-3"
+              ]
+            },
+            {
+              "id": "clover",
+              "skills": [
+                "clover-1",
+                "clover-2",
+                "clover-3"
+              ]
+            }
+          ],
+          "rounds": 12,
+          "result": "enemy",
+          "actions": 36,
+          "partyActions": 36,
+          "skillUses": {
+            "mochi-3": 2,
+            "biscuit-3": 4,
+            "clover-2": 8,
+            "mochi-1": 8,
+            "biscuit-1": 5,
+            "clover-3": 3,
+            "biscuit-2": 3,
+            "clover-1": 1,
+            "mochi-2": 2
+          },
+          "battleSha256": "f7f4df674a5f0bc53272309a0bd64fcf9798f1941253f6af1fcfde819b53f2c9",
+          "windowSeconds": 83.999
+        }
+      ]
+    }
+  ],
+  "encounters": [
+    {
+      "index": 0,
+      "startMs": 6154,
+      "endMs": 20492,
+      "seconds": 14.338,
+      "seed": 7,
+      "chapter": 1,
+      "enemies": [
+        "practice-cushion"
+      ],
+      "crew": [
+        {
+          "id": "mochi",
+          "skills": [
+            "mochi-1",
+            "mochi-2",
+            "mochi-3"
+          ]
+        },
+        {
+          "id": "soot",
+          "skills": [
+            "soot-1",
+            "soot-2",
+            "soot-3"
+          ]
+        },
+        {
+          "id": "clover",
+          "skills": [
+            "clover-1",
+            "clover-2",
+            "clover-3"
+          ]
+        }
+      ],
+      "rounds": 2,
+      "result": "party",
+      "actions": 5,
+      "partyActions": 5,
+      "skillUses": {
+        "mochi-3": 1,
+        "soot-2": 1,
+        "clover-1": 1,
+        "mochi-1": 1,
+        "soot-1": 1
+      },
+      "battleSha256": "170a7e929b73b88939887d750571d7ed8867ada25385b3beb1e3872a63750a9b"
+    },
+    {
+      "index": 1,
+      "startMs": 55372,
+      "endMs": 77560,
+      "seconds": 22.188,
+      "seed": 791576452,
+      "chapter": 1,
+      "enemies": [
+        "teacup-healer",
+        "sock-skipper"
+      ],
+      "crew": [
+        {
+          "id": "mochi",
+          "skills": [
+            "mochi-1",
+            "mochi-2",
+            "mochi-3"
+          ]
+        },
+        {
+          "id": "soot",
+          "skills": [
+            "soot-1",
+            "soot-2",
+            "soot-3"
+          ]
+        },
+        {
+          "id": "clover",
+          "skills": [
+            "clover-1",
+            "clover-2",
+            "clover-3"
+          ]
+        }
+      ],
+      "rounds": 3,
+      "result": "party",
+      "actions": 9,
+      "partyActions": 9,
+      "skillUses": {
+        "mochi-1": 3,
+        "soot-1": 1,
+        "clover-1": 2,
+        "soot-2": 1,
+        "clover-2": 1,
+        "soot-3": 1
+      },
+      "battleSha256": "e3d2489b16b66a2f113e00c943b7a7836739868b3feb9c3869cf571924c97b10"
+    },
+    {
+      "index": 2,
+      "startMs": 122622,
+      "endMs": 142070,
+      "seconds": 19.448,
+      "seed": 3778700884,
+      "chapter": 1,
+      "enemies": [
+        "sock-skipper",
+        "sock-skipper"
+      ],
+      "crew": [
+        {
+          "id": "mochi",
+          "skills": [
+            "mochi-1",
+            "mochi-2",
+            "mochi-3"
+          ]
+        },
+        {
+          "id": "soot",
+          "skills": [
+            "soot-1",
+            "soot-2",
+            "soot-3"
+          ]
+        },
+        {
+          "id": "clover",
+          "skills": [
+            "clover-1",
+            "clover-2",
+            "clover-3"
+          ]
+        }
+      ],
+      "rounds": 4,
+      "result": "party",
+      "actions": 10,
+      "partyActions": 10,
+      "skillUses": {
+        "mochi-1": 3,
+        "soot-2": 1,
+        "clover-2": 2,
+        "soot-1": 1,
+        "mochi-3": 1,
+        "soot-3": 1,
+        "clover-1": 1
+      },
+      "battleSha256": "95057e344565cdc09416875399d3d05547a4062d8cc4b72eee6648bbe66dbd9e"
+    },
+    {
+      "index": 3,
+      "startMs": 158434,
+      "endMs": 226608,
+      "seconds": 68.174,
+      "seed": 3280124206,
+      "chapter": 1,
+      "enemies": [
+        "yarn-giant"
+      ],
+      "crew": [
+        {
+          "id": "mochi",
+          "skills": [
+            "mochi-1",
+            "mochi-2",
+            "mochi-3"
+          ]
+        },
+        {
+          "id": "soot",
+          "skills": [
+            "soot-1",
+            "soot-2",
+            "soot-3"
+          ]
+        },
+        {
+          "id": "clover",
+          "skills": [
+            "clover-1",
+            "clover-2",
+            "clover-3"
+          ]
+        }
+      ],
+      "rounds": 11,
+      "result": "enemy",
+      "actions": 26,
+      "partyActions": 26,
+      "skillUses": {
+        "mochi-3": 2,
+        "soot-2": 2,
+        "clover-2": 4,
+        "mochi-1": 7,
+        "soot-1": 4,
+        "soot-3": 2,
+        "clover-3": 1,
+        "mochi-2": 2,
+        "defend": 2
+      },
+      "battleSha256": "041f3fbeaef7c6cc9600fa907462d179d568354abc40d03d73951dfbb8fe9393"
+    },
+    {
+      "index": 4,
+      "startMs": 269320,
+      "endMs": 290537,
+      "seconds": 21.217,
+      "seed": 3307271994,
+      "chapter": 1,
+      "enemies": [
+        "button-guard",
+        "sock-skipper"
+      ],
+      "crew": [
+        {
+          "id": "mochi",
+          "skills": [
+            "mochi-1",
+            "mochi-2",
+            "mochi-3"
+          ]
+        },
+        {
+          "id": "biscuit",
+          "skills": [
+            "biscuit-1",
+            "biscuit-2",
+            "biscuit-3"
+          ]
+        },
+        {
+          "id": "clover",
+          "skills": [
+            "clover-1",
+            "clover-2",
+            "clover-3"
+          ]
+        }
+      ],
+      "rounds": 3,
+      "result": "party",
+      "actions": 7,
+      "partyActions": 7,
+      "skillUses": {
+        "mochi-1": 2,
+        "biscuit-3": 1,
+        "clover-1": 2,
+        "mochi-3": 1,
+        "biscuit-1": 1
+      },
+      "battleSha256": "2b553b4798e21949e61c73999f864d26563f07a26113692b103c389305158b31"
+    },
+    {
+      "index": 5,
+      "startMs": 335659,
+      "endMs": 348110,
+      "seconds": 12.451,
+      "seed": 2258202081,
+      "chapter": 1,
+      "enemies": [
+        "sock-skipper",
+        "button-guard"
+      ],
+      "crew": [
+        {
+          "id": "mochi",
+          "skills": [
+            "mochi-1",
+            "mochi-2",
+            "mochi-3"
+          ]
+        },
+        {
+          "id": "biscuit",
+          "skills": [
+            "biscuit-1",
+            "biscuit-2",
+            "biscuit-3"
+          ]
+        },
+        {
+          "id": "clover",
+          "skills": [
+            "clover-1",
+            "clover-2",
+            "clover-3"
+          ]
+        }
+      ],
+      "rounds": 3,
+      "result": "party",
+      "actions": 7,
+      "partyActions": 7,
+      "skillUses": {
+        "mochi-1": 2,
+        "biscuit-3": 1,
+        "clover-1": 2,
+        "mochi-3": 1,
+        "biscuit-1": 1
+      },
+      "battleSha256": "0cd75a11097c5d6111ca0bd6554f04e90f2237feac7621477923b93af0c48c6c"
+    },
+    {
+      "index": 6,
+      "startMs": 364463,
+      "endMs": 452855,
+      "seconds": 88.392,
+      "seed": 3057134794,
+      "chapter": 1,
+      "enemies": [
+        "yarn-giant"
+      ],
+      "crew": [
+        {
+          "id": "mochi",
+          "skills": [
+            "mochi-1",
+            "mochi-2",
+            "mochi-3"
+          ]
+        },
+        {
+          "id": "biscuit",
+          "skills": [
+            "biscuit-1",
+            "biscuit-2",
+            "biscuit-3"
+          ]
+        },
+        {
+          "id": "clover",
+          "skills": [
+            "clover-1",
+            "clover-2",
+            "clover-3"
+          ]
+        }
+      ],
+      "rounds": 14,
+      "result": "party",
+      "actions": 40,
+      "partyActions": 40,
+      "skillUses": {
+        "mochi-3": 2,
+        "biscuit-3": 5,
+        "clover-2": 10,
+        "mochi-1": 8,
+        "biscuit-2": 3,
+        "biscuit-1": 5,
+        "mochi-2": 4,
+        "clover-3": 3
+      },
+      "battleSha256": "31048356faf63808b5d4a93acfb2a7db110b42fd650278cc8fe197bcc104d198"
+    },
+    {
+      "index": 7,
+      "startMs": 477267,
+      "endMs": 501303,
+      "seconds": 24.036,
+      "seed": 1205179080,
+      "chapter": 2,
+      "enemies": [
+        "sock-skipper",
+        "needle-moth"
+      ],
+      "crew": [
+        {
+          "id": "mochi",
+          "skills": [
+            "mochi-1",
+            "mochi-2",
+            "mochi-3"
+          ]
+        },
+        {
+          "id": "biscuit",
+          "skills": [
+            "biscuit-1",
+            "biscuit-2",
+            "biscuit-3"
+          ]
+        },
+        {
+          "id": "clover",
+          "skills": [
+            "clover-1",
+            "clover-2",
+            "clover-3"
+          ]
+        }
+      ],
+      "rounds": 3,
+      "result": "party",
+      "actions": 8,
+      "partyActions": 8,
+      "skillUses": {
+        "mochi-1": 3,
+        "biscuit-1": 2,
+        "clover-2": 1,
+        "biscuit-3": 1,
+        "clover-1": 1
+      },
+      "battleSha256": "d87ce590cc5eae0c578725524545ddde526aa4d319574d49ac21ee3ac5fc8dc2"
+    },
+    {
+      "index": 8,
+      "startMs": 546530,
+      "endMs": 557286,
+      "seconds": 10.756,
+      "seed": 3075570,
+      "chapter": 2,
+      "enemies": [
+        "needle-moth",
+        "button-guard"
+      ],
+      "crew": [
+        {
+          "id": "mochi",
+          "skills": [
+            "mochi-1",
+            "mochi-2",
+            "mochi-3"
+          ]
+        },
+        {
+          "id": "biscuit",
+          "skills": [
+            "biscuit-1",
+            "biscuit-2",
+            "biscuit-3"
+          ]
+        },
+        {
+          "id": "clover",
+          "skills": [
+            "clover-1",
+            "clover-2",
+            "clover-3"
+          ]
+        }
+      ],
+      "rounds": 2,
+      "result": "party",
+      "actions": 6,
+      "partyActions": 6,
+      "skillUses": {
+        "mochi-1": 2,
+        "biscuit-3": 1,
+        "clover-1": 2,
+        "biscuit-1": 1
+      },
+      "battleSha256": "63cf082bec29e8f574a3b864944fa2f918f853e133c4c0403aeecbdddc45038f"
+    },
+    {
+      "index": 9,
+      "startMs": 573529,
+      "endMs": 638059,
+      "seconds": 64.53,
+      "seed": 3593217473,
+      "chapter": 2,
+      "enemies": [
+        "rain-spool"
+      ],
+      "crew": [
+        {
+          "id": "mochi",
+          "skills": [
+            "mochi-1",
+            "mochi-2",
+            "mochi-3"
+          ]
+        },
+        {
+          "id": "biscuit",
+          "skills": [
+            "biscuit-1",
+            "biscuit-2",
+            "biscuit-3"
+          ]
+        },
+        {
+          "id": "clover",
+          "skills": [
+            "clover-1",
+            "clover-2",
+            "clover-3"
+          ]
+        }
+      ],
+      "rounds": 9,
+      "result": "enemy",
+      "actions": 27,
+      "partyActions": 27,
+      "skillUses": {
+        "mochi-3": 2,
+        "biscuit-3": 3,
+        "clover-2": 6,
+        "mochi-1": 5,
+        "biscuit-1": 5,
+        "clover-1": 1,
+        "clover-3": 2,
+        "mochi-2": 2,
+        "biscuit-2": 1
+      },
+      "battleSha256": "bdb5c722d016ca761d5509696fda40d5770446dcb91d69282ff63391374f215d"
+    },
+    {
+      "index": 10,
+      "startMs": 672712,
+      "endMs": 699430,
+      "seconds": 26.718,
+      "seed": 3993276604,
+      "chapter": 2,
+      "enemies": [
+        "teacup-healer",
+        "button-guard"
+      ],
+      "crew": [
+        {
+          "id": "mochi",
+          "skills": [
+            "mochi-1",
+            "mochi-2",
+            "mochi-3"
+          ]
+        },
+        {
+          "id": "biscuit",
+          "skills": [
+            "biscuit-1",
+            "biscuit-2",
+            "biscuit-3"
+          ]
+        },
+        {
+          "id": "clover",
+          "skills": [
+            "clover-1",
+            "clover-2",
+            "clover-3"
+          ]
+        }
+      ],
+      "rounds": 4,
+      "result": "party",
+      "actions": 10,
+      "partyActions": 10,
+      "skillUses": {
+        "mochi-1": 3,
+        "biscuit-3": 1,
+        "clover-1": 3,
+        "mochi-3": 1,
+        "biscuit-1": 2
+      },
+      "battleSha256": "73c0c69ad73d52b25f137343a30735443c8a1ecc111bd2db9fa33a1d32e2d0a6"
+    },
+    {
+      "index": 11,
+      "startMs": 744697,
+      "endMs": 758363,
+      "seconds": 13.666,
+      "seed": 2333531385,
+      "chapter": 2,
+      "enemies": [
+        "button-guard",
+        "sock-skipper"
+      ],
+      "crew": [
+        {
+          "id": "mochi",
+          "skills": [
+            "mochi-1",
+            "mochi-2",
+            "mochi-3"
+          ]
+        },
+        {
+          "id": "biscuit",
+          "skills": [
+            "biscuit-1",
+            "biscuit-2",
+            "biscuit-3"
+          ]
+        },
+        {
+          "id": "clover",
+          "skills": [
+            "clover-1",
+            "clover-2",
+            "clover-3"
+          ]
+        }
+      ],
+      "rounds": 3,
+      "result": "party",
+      "actions": 8,
+      "partyActions": 8,
+      "skillUses": {
+        "mochi-1": 2,
+        "biscuit-3": 1,
+        "clover-1": 2,
+        "mochi-3": 1,
+        "biscuit-1": 2
+      },
+      "battleSha256": "6fbcabd3b0aaebbb85247eeb13e917451882f67e706d612412a716d4c450b95e"
+    },
+    {
+      "index": 12,
+      "startMs": 774611,
+      "endMs": 864578,
+      "seconds": 89.967,
+      "seed": 2256061393,
+      "chapter": 2,
+      "enemies": [
+        "rain-spool"
+      ],
+      "crew": [
+        {
+          "id": "mochi",
+          "skills": [
+            "mochi-1",
+            "mochi-2",
+            "mochi-3"
+          ]
+        },
+        {
+          "id": "biscuit",
+          "skills": [
+            "biscuit-1",
+            "biscuit-2",
+            "biscuit-3"
+          ]
+        },
+        {
+          "id": "clover",
+          "skills": [
+            "clover-1",
+            "clover-2",
+            "clover-3"
+          ]
+        }
+      ],
+      "rounds": 14,
+      "result": "enemy",
+      "actions": 38,
+      "partyActions": 38,
+      "skillUses": {
+        "mochi-3": 2,
+        "biscuit-3": 4,
+        "clover-2": 8,
+        "mochi-1": 9,
+        "biscuit-1": 5,
+        "clover-3": 3,
+        "defend": 4,
+        "biscuit-2": 1,
+        "clover-1": 2
+      },
+      "battleSha256": "bb49cc30ac61e3153ff023ce671d4f2cfcb5fc9041939d3366385423e513af0d"
+    },
+    {
+      "index": 13,
+      "startMs": 893783,
+      "endMs": 921678,
+      "seconds": 27.895,
+      "seed": 2024383137,
+      "chapter": 2,
+      "enemies": [
+        "teacup-healer",
+        "button-guard"
+      ],
+      "crew": [
+        {
+          "id": "mochi",
+          "skills": [
+            "mochi-1",
+            "mochi-2",
+            "mochi-3"
+          ]
+        },
+        {
+          "id": "biscuit",
+          "skills": [
+            "biscuit-1",
+            "biscuit-2",
+            "biscuit-3"
+          ]
+        },
+        {
+          "id": "clover",
+          "skills": [
+            "clover-1",
+            "clover-2",
+            "clover-3"
+          ]
+        }
+      ],
+      "rounds": 4,
+      "result": "party",
+      "actions": 11,
+      "partyActions": 11,
+      "skillUses": {
+        "mochi-1": 3,
+        "biscuit-3": 1,
+        "clover-1": 3,
+        "mochi-3": 1,
+        "biscuit-1": 3
+      },
+      "battleSha256": "b61b35d79c1b467f8f21d075f2a57b1e63046e0329e7cbc9c6b1ee1206e007e0"
+    },
+    {
+      "index": 14,
+      "startMs": 966864,
+      "endMs": 983180,
+      "seconds": 16.316,
+      "seed": 1133702706,
+      "chapter": 2,
+      "enemies": [
+        "button-guard",
+        "sock-skipper"
+      ],
+      "crew": [
+        {
+          "id": "mochi",
+          "skills": [
+            "mochi-1",
+            "mochi-2",
+            "mochi-3"
+          ]
+        },
+        {
+          "id": "biscuit",
+          "skills": [
+            "biscuit-1",
+            "biscuit-2",
+            "biscuit-3"
+          ]
+        },
+        {
+          "id": "clover",
+          "skills": [
+            "clover-1",
+            "clover-2",
+            "clover-3"
+          ]
+        }
+      ],
+      "rounds": 3,
+      "result": "party",
+      "actions": 8,
+      "partyActions": 8,
+      "skillUses": {
+        "mochi-3": 1,
+        "biscuit-1": 2,
+        "clover-1": 2,
+        "mochi-1": 2,
+        "biscuit-3": 1
+      },
+      "battleSha256": "08dca9b376214dd8822e8054550ee54318a3a9a6e691de235b55165d7d624262"
+    },
+    {
+      "index": 15,
+      "startMs": 999261,
+      "endMs": 1080279,
+      "seconds": 81.018,
+      "seed": 30332408,
+      "chapter": 2,
+      "enemies": [
+        "rain-spool"
+      ],
+      "crew": [
+        {
+          "id": "mochi",
+          "skills": [
+            "mochi-1",
+            "mochi-2",
+            "mochi-3"
+          ]
+        },
+        {
+          "id": "biscuit",
+          "skills": [
+            "biscuit-1",
+            "biscuit-2",
+            "biscuit-3"
+          ]
+        },
+        {
+          "id": "clover",
+          "skills": [
+            "clover-1",
+            "clover-2",
+            "clover-3"
+          ]
+        }
+      ],
+      "rounds": 13,
+      "result": "enemy",
+      "actions": 31,
+      "partyActions": 31,
+      "skillUses": {
+        "mochi-3": 1,
+        "biscuit-3": 4,
+        "clover-2": 8,
+        "mochi-1": 5,
+        "biscuit-2": 3,
+        "clover-3": 1,
+        "clover-1": 2,
+        "biscuit-1": 6,
+        "mochi-2": 1
+      },
+      "battleSha256": "df878cca67850b7744b448f536880e5ca158b0f628105e2f3c070a997b9bcce7"
+    },
+    {
+      "index": 16,
+      "startMs": 1109709,
+      "endMs": 1130352,
+      "seconds": 20.643,
+      "seed": 3882441614,
+      "chapter": 2,
+      "enemies": [
+        "button-guard",
+        "button-guard"
+      ],
+      "crew": [
+        {
+          "id": "mochi",
+          "skills": [
+            "mochi-1",
+            "mochi-2",
+            "mochi-3"
+          ]
+        },
+        {
+          "id": "biscuit",
+          "skills": [
+            "biscuit-1",
+            "biscuit-2",
+            "biscuit-3"
+          ]
+        },
+        {
+          "id": "clover",
+          "skills": [
+            "clover-1",
+            "clover-2",
+            "clover-3"
+          ]
+        }
+      ],
+      "rounds": 2,
+      "result": "party",
+      "actions": 6,
+      "partyActions": 6,
+      "skillUses": {
+        "mochi-1": 2,
+        "biscuit-1": 2,
+        "clover-2": 1,
+        "clover-1": 1
+      },
+      "battleSha256": "79359f4b17b47f9c64c2c65ea8641a34f6c17bef2e462268d6bab612d65980fe"
+    },
+    {
+      "index": 17,
+      "startMs": 1175516,
+      "endMs": 1192933,
+      "seconds": 17.417,
+      "seed": 3921343890,
+      "chapter": 2,
+      "enemies": [
+        "sock-skipper",
+        "teacup-healer"
+      ],
+      "crew": [
+        {
+          "id": "mochi",
+          "skills": [
+            "mochi-1",
+            "mochi-2",
+            "mochi-3"
+          ]
+        },
+        {
+          "id": "biscuit",
+          "skills": [
+            "biscuit-1",
+            "biscuit-2",
+            "biscuit-3"
+          ]
+        },
+        {
+          "id": "clover",
+          "skills": [
+            "clover-1",
+            "clover-2",
+            "clover-3"
+          ]
+        }
+      ],
+      "rounds": 3,
+      "result": "party",
+      "actions": 9,
+      "partyActions": 9,
+      "skillUses": {
+        "mochi-1": 3,
+        "biscuit-3": 1,
+        "clover-1": 3,
+        "biscuit-1": 2
+      },
+      "battleSha256": "38e5b8fd2addd9a232adb00efa2c84c6a6e90feaa077b832a7b1f408e7396704"
+    },
+    {
+      "index": 18,
+      "startMs": 1209120,
+      "endMs": 1293119,
+      "seconds": 83.999,
+      "seed": 899726880,
+      "chapter": 2,
+      "enemies": [
+        "rain-spool"
+      ],
+      "crew": [
+        {
+          "id": "mochi",
+          "skills": [
+            "mochi-1",
+            "mochi-2",
+            "mochi-3"
+          ]
+        },
+        {
+          "id": "biscuit",
+          "skills": [
+            "biscuit-1",
+            "biscuit-2",
+            "biscuit-3"
+          ]
+        },
+        {
+          "id": "clover",
+          "skills": [
+            "clover-1",
+            "clover-2",
+            "clover-3"
+          ]
+        }
+      ],
+      "rounds": 12,
+      "result": "enemy",
+      "actions": 36,
+      "partyActions": 36,
+      "skillUses": {
+        "mochi-3": 2,
+        "biscuit-3": 4,
+        "clover-2": 8,
+        "mochi-1": 8,
+        "biscuit-1": 5,
+        "clover-3": 3,
+        "biscuit-2": 3,
+        "clover-1": 1,
+        "mochi-2": 2
+      },
+      "battleSha256": "f7f4df674a5f0bc53272309a0bd64fcf9798f1941253f6af1fcfde819b53f2c9"
+    },
+    {
+      "index": 19,
+      "startMs": 1322283,
+      "endMs": 1351927,
+      "seconds": 29.644,
+      "seed": 1211488677,
+      "chapter": 2,
+      "enemies": [
+        "teacup-healer",
+        "sock-skipper"
+      ],
+      "crew": [
+        {
+          "id": "mochi",
+          "skills": [
+            "mochi-1",
+            "mochi-2",
+            "mochi-3"
+          ]
+        },
+        {
+          "id": "biscuit",
+          "skills": [
+            "biscuit-1",
+            "biscuit-2",
+            "biscuit-3"
+          ]
+        },
+        {
+          "id": "clover",
+          "skills": [
+            "clover-1",
+            "clover-2",
+            "clover-3"
+          ]
+        }
+      ],
+      "rounds": 4,
+      "result": "party",
+      "actions": 11,
+      "partyActions": 11,
+      "skillUses": {
+        "mochi-1": 4,
+        "biscuit-1": 3,
+        "clover-2": 1,
+        "biscuit-3": 1,
+        "clover-1": 2
+      },
+      "battleSha256": "9b999c9a560531655c67b486df2d6f01ce18fd488fe54460eb6f391746e9e810"
+    },
+    {
+      "index": 20,
+      "startMs": 1397018,
+      "endMs": 1410724,
+      "seconds": 13.706,
+      "seed": 2503341991,
+      "chapter": 2,
+      "enemies": [
+        "sock-skipper",
+        "button-guard"
+      ],
+      "crew": [
+        {
+          "id": "mochi",
+          "skills": [
+            "mochi-1",
+            "mochi-2",
+            "mochi-3"
+          ]
+        },
+        {
+          "id": "biscuit",
+          "skills": [
+            "biscuit-1",
+            "biscuit-2",
+            "biscuit-3"
+          ]
+        },
+        {
+          "id": "clover",
+          "skills": [
+            "clover-1",
+            "clover-2",
+            "clover-3"
+          ]
+        }
+      ],
+      "rounds": 3,
+      "result": "party",
+      "actions": 7,
+      "partyActions": 7,
+      "skillUses": {
+        "mochi-1": 3,
+        "biscuit-3": 1,
+        "clover-2": 1,
+        "biscuit-1": 1,
+        "clover-1": 1
+      },
+      "battleSha256": "23e94cc7e3f597194f22d604981e8f61960f3de0247577738109d971cbafda94"
+    },
+    {
+      "index": 21,
+      "startMs": 1426795,
+      "endMs": 1505510,
+      "seconds": 78.715,
+      "seed": 188593055,
+      "chapter": 2,
+      "enemies": [
+        "rain-spool"
+      ],
+      "crew": [
+        {
+          "id": "mochi",
+          "skills": [
+            "mochi-1",
+            "mochi-2",
+            "mochi-3"
+          ]
+        },
+        {
+          "id": "biscuit",
+          "skills": [
+            "biscuit-1",
+            "biscuit-2",
+            "biscuit-3"
+          ]
+        },
+        {
+          "id": "clover",
+          "skills": [
+            "clover-1",
+            "clover-2",
+            "clover-3"
+          ]
+        }
+      ],
+      "rounds": 12,
+      "result": "enemy",
+      "actions": 31,
+      "partyActions": 31,
+      "skillUses": {
+        "mochi-3": 1,
+        "biscuit-3": 3,
+        "clover-2": 6,
+        "mochi-1": 8,
+        "biscuit-2": 4,
+        "clover-1": 2,
+        "mochi-2": 3,
+        "clover-3": 2,
+        "biscuit-1": 2
+      },
+      "battleSha256": "03fcc15e51d0dcd181e02059085a62e5cf65386469def526ddeec0e8c71c502c"
+    },
+    {
+      "index": 22,
+      "startMs": 1531390,
+      "endMs": 1555190,
+      "seconds": 23.8,
+      "seed": 4010165288,
+      "chapter": 2,
+      "enemies": [
+        "sock-skipper",
+        "needle-moth"
+      ],
+      "crew": [
+        {
+          "id": "mochi",
+          "skills": [
+            "mochi-1",
+            "mochi-2",
+            "mochi-3"
+          ]
+        },
+        {
+          "id": "biscuit",
+          "skills": [
+            "biscuit-1",
+            "biscuit-2",
+            "biscuit-3"
+          ]
+        },
+        {
+          "id": "clover",
+          "skills": [
+            "clover-1",
+            "clover-2",
+            "clover-3"
+          ]
+        }
+      ],
+      "rounds": 3,
+      "result": "party",
+      "actions": 8,
+      "partyActions": 8,
+      "skillUses": {
+        "mochi-1": 3,
+        "biscuit-1": 2,
+        "clover-2": 1,
+        "biscuit-3": 1,
+        "clover-1": 1
+      },
+      "battleSha256": "0ada90ef7d1387e8a37d287e6e6486c0769400f7d7a91e41ef415dd5d96d3cda"
+    },
+    {
+      "index": 23,
+      "startMs": 1600281,
+      "endMs": 1614003,
+      "seconds": 13.722,
+      "seed": 3742173748,
+      "chapter": 2,
+      "enemies": [
+        "button-guard",
+        "sock-skipper"
+      ],
+      "crew": [
+        {
+          "id": "mochi",
+          "skills": [
+            "mochi-1",
+            "mochi-2",
+            "mochi-3"
+          ]
+        },
+        {
+          "id": "biscuit",
+          "skills": [
+            "biscuit-1",
+            "biscuit-2",
+            "biscuit-3"
+          ]
+        },
+        {
+          "id": "clover",
+          "skills": [
+            "clover-1",
+            "clover-2",
+            "clover-3"
+          ]
+        }
+      ],
+      "rounds": 3,
+      "result": "party",
+      "actions": 8,
+      "partyActions": 8,
+      "skillUses": {
+        "mochi-1": 2,
+        "biscuit-3": 1,
+        "clover-1": 2,
+        "mochi-3": 1,
+        "biscuit-1": 2
+      },
+      "battleSha256": "e89c2d0efb99831175e87ad327f3c934e084d1fd2069c4968ad6d49d24a87424"
+    },
+    {
+      "index": 24,
+      "startMs": 1630071,
+      "endMs": 1703316,
+      "seconds": 73.245,
+      "seed": 126583848,
+      "chapter": 2,
+      "enemies": [
+        "rain-spool"
+      ],
+      "crew": [
+        {
+          "id": "mochi",
+          "skills": [
+            "mochi-1",
+            "mochi-2",
+            "mochi-3"
+          ]
+        },
+        {
+          "id": "biscuit",
+          "skills": [
+            "biscuit-1",
+            "biscuit-2",
+            "biscuit-3"
+          ]
+        },
+        {
+          "id": "clover",
+          "skills": [
+            "clover-1",
+            "clover-2",
+            "clover-3"
+          ]
+        }
+      ],
+      "rounds": 12,
+      "result": "party",
+      "actions": 33,
+      "partyActions": 33,
+      "skillUses": {
+        "mochi-3": 2,
+        "biscuit-3": 4,
+        "clover-2": 8,
+        "mochi-1": 6,
+        "biscuit-1": 8,
+        "clover-3": 2,
+        "mochi-2": 2,
+        "clover-1": 1
+      },
+      "battleSha256": "f471131fd62c4893b5c8e9a577bae0e7e306e35ad0fd50191a22a10bb8246eb9"
+    },
+    {
+      "index": 25,
+      "startMs": 1720511,
+      "endMs": 1748372,
+      "seconds": 27.861,
+      "seed": 1028839662,
+      "chapter": 3,
+      "enemies": [
+        "teacup-healer",
+        "sock-skipper"
+      ],
+      "crew": [
+        {
+          "id": "mochi",
+          "skills": [
+            "mochi-1",
+            "mochi-2",
+            "mochi-3"
+          ]
+        },
+        {
+          "id": "biscuit",
+          "skills": [
+            "biscuit-1",
+            "biscuit-2",
+            "biscuit-3"
+          ]
+        },
+        {
+          "id": "clover",
+          "skills": [
+            "clover-1",
+            "clover-2",
+            "clover-3"
+          ]
+        }
+      ],
+      "rounds": 3,
+      "result": "party",
+      "actions": 9,
+      "partyActions": 9,
+      "skillUses": {
+        "mochi-1": 3,
+        "biscuit-1": 2,
+        "clover-2": 1,
+        "biscuit-3": 1,
+        "clover-1": 2
+      },
+      "battleSha256": "a5ec95550a1e7d05440b566392cc252a93d121dcdae548d1215b6b01b205e3c1"
+    },
+    {
+      "index": 26,
+      "startMs": 1793573,
+      "endMs": 1809984,
+      "seconds": 16.411,
+      "seed": 563811602,
+      "chapter": 3,
+      "enemies": [
+        "sock-skipper",
+        "binding-thread"
+      ],
+      "crew": [
+        {
+          "id": "mochi",
+          "skills": [
+            "mochi-1",
+            "mochi-2",
+            "mochi-3"
+          ]
+        },
+        {
+          "id": "biscuit",
+          "skills": [
+            "biscuit-1",
+            "biscuit-2",
+            "biscuit-3"
+          ]
+        },
+        {
+          "id": "clover",
+          "skills": [
+            "clover-1",
+            "clover-2",
+            "clover-3"
+          ]
+        }
+      ],
+      "rounds": 3,
+      "result": "party",
+      "actions": 9,
+      "partyActions": 9,
+      "skillUses": {
+        "mochi-1": 2,
+        "biscuit-1": 2,
+        "clover-1": 2,
+        "biscuit-3": 1,
+        "clover-3": 1,
+        "mochi-3": 1
+      },
+      "battleSha256": "af2c23d79695e5e735da54792a8455f819fd0ad08d01a10672ee3efbc7d059a1"
+    },
+    {
+      "index": 27,
+      "startMs": 1826327,
+      "endMs": 1925249,
+      "seconds": 98.922,
+      "seed": 3425957772,
+      "chapter": 3,
+      "enemies": [
+        "pantry-crown"
+      ],
+      "crew": [
+        {
+          "id": "mochi",
+          "skills": [
+            "mochi-1",
+            "mochi-2",
+            "mochi-3"
+          ]
+        },
+        {
+          "id": "biscuit",
+          "skills": [
+            "biscuit-1",
+            "biscuit-2",
+            "biscuit-3"
+          ]
+        },
+        {
+          "id": "clover",
+          "skills": [
+            "clover-1",
+            "clover-2",
+            "clover-3"
+          ]
+        }
+      ],
+      "rounds": 15,
+      "result": "party",
+      "actions": 44,
+      "partyActions": 44,
+      "skillUses": {
+        "mochi-3": 2,
+        "biscuit-3": 4,
+        "clover-2": 7,
+        "mochi-1": 10,
+        "biscuit-2": 4,
+        "biscuit-1": 7,
+        "clover-3": 4,
+        "clover-1": 3,
+        "mochi-2": 3
+      },
+      "battleSha256": "94e6090b2ce60b4bbf8d4c515d76b9a449c75670b8e432c59abdfec25ebce6d4"
+    },
+    {
+      "index": 28,
+      "startMs": 1943000,
+      "endMs": 1967935,
+      "seconds": 24.935,
+      "seed": 44739832,
+      "chapter": 1,
+      "enemies": [
+        "teacup-healer",
+        "button-guard"
+      ],
+      "crew": [
+        {
+          "id": "mochi",
+          "skills": [
+            "mochi-1",
+            "mochi-2",
+            "mochi-3"
+          ]
+        },
+        {
+          "id": "biscuit",
+          "skills": [
+            "biscuit-1",
+            "biscuit-2",
+            "biscuit-3"
+          ]
+        },
+        {
+          "id": "clover",
+          "skills": [
+            "clover-1",
+            "clover-2",
+            "clover-3"
+          ]
+        }
+      ],
+      "rounds": 3,
+      "result": "party",
+      "actions": 9,
+      "partyActions": 9,
+      "skillUses": {
+        "mochi-1": 2,
+        "biscuit-3": 1,
+        "clover-1": 3,
+        "mochi-3": 1,
+        "biscuit-1": 2
+      },
+      "battleSha256": "8d5596d3c24a2eaa499149e13c9abb49afc3e3247e28f9882eb9bd811c30c1c4"
+    },
+    {
+      "index": 29,
+      "startMs": 2013272,
+      "endMs": 2026948,
+      "seconds": 13.676,
+      "seed": 2635136790,
+      "chapter": 1,
+      "enemies": [
+        "teacup-healer",
+        "button-guard"
+      ],
+      "crew": [
+        {
+          "id": "mochi",
+          "skills": [
+            "mochi-1",
+            "mochi-2",
+            "mochi-3"
+          ]
+        },
+        {
+          "id": "biscuit",
+          "skills": [
+            "biscuit-1",
+            "biscuit-2",
+            "biscuit-3"
+          ]
+        },
+        {
+          "id": "clover",
+          "skills": [
+            "clover-1",
+            "clover-2",
+            "clover-3"
+          ]
+        }
+      ],
+      "rounds": 3,
+      "result": "party",
+      "actions": 8,
+      "partyActions": 8,
+      "skillUses": {
+        "mochi-1": 3,
+        "biscuit-3": 1,
+        "clover-1": 2,
+        "biscuit-1": 2
+      },
+      "battleSha256": "f17a06c8132d855e68e6459ae08802cd07d4dbf5b8cba8d4c812b895d7bce7c2"
+    },
+    {
+      "index": 30,
+      "startMs": 2043133,
+      "endMs": 2104744,
+      "seconds": 61.611,
+      "seed": 2542255639,
+      "chapter": 1,
+      "enemies": [
+        "yarn-giant"
+      ],
+      "crew": [
+        {
+          "id": "mochi",
+          "skills": [
+            "mochi-1",
+            "mochi-2",
+            "mochi-3"
+          ]
+        },
+        {
+          "id": "biscuit",
+          "skills": [
+            "biscuit-1",
+            "biscuit-2",
+            "biscuit-3"
+          ]
+        },
+        {
+          "id": "clover",
+          "skills": [
+            "clover-1",
+            "clover-2",
+            "clover-3"
+          ]
+        }
+      ],
+      "rounds": 10,
+      "result": "party",
+      "actions": 25,
+      "partyActions": 25,
+      "skillUses": {
+        "mochi-3": 2,
+        "biscuit-3": 4,
+        "clover-2": 3,
+        "mochi-1": 8,
+        "biscuit-2": 1,
+        "biscuit-1": 5,
+        "clover-1": 1,
+        "clover-3": 1
+      },
+      "battleSha256": "68316e000e1da0d3cf659d35b9d5727752e776ac6844ab786429827a1c2a2362"
+    },
+    {
+      "index": 31,
+      "startMs": 2122259,
+      "endMs": 2146596,
+      "seconds": 24.337,
+      "seed": 1780819474,
+      "chapter": 2,
+      "enemies": [
+        "button-guard",
+        "teacup-healer"
+      ],
+      "crew": [
+        {
+          "id": "mochi",
+          "skills": [
+            "mochi-1",
+            "mochi-2",
+            "mochi-3"
+          ]
+        },
+        {
+          "id": "biscuit",
+          "skills": [
+            "biscuit-1",
+            "biscuit-2",
+            "biscuit-3"
+          ]
+        },
+        {
+          "id": "clover",
+          "skills": [
+            "clover-1",
+            "clover-2",
+            "clover-3"
+          ]
+        }
+      ],
+      "rounds": 3,
+      "result": "party",
+      "actions": 9,
+      "partyActions": 9,
+      "skillUses": {
+        "mochi-1": 3,
+        "biscuit-3": 1,
+        "clover-1": 3,
+        "biscuit-1": 2
+      },
+      "battleSha256": "160f25e38c3f15be69db4cc2e1f9ddeb92caa3e01f8eb02af9c9dbe64db03eae"
+    },
+    {
+      "index": 32,
+      "startMs": 2192016,
+      "endMs": 2213674,
+      "seconds": 21.658,
+      "seed": 2356962934,
+      "chapter": 2,
+      "enemies": [
+        "teacup-healer",
+        "teacup-healer"
+      ],
+      "crew": [
+        {
+          "id": "mochi",
+          "skills": [
+            "mochi-1",
+            "mochi-2",
+            "mochi-3"
+          ]
+        },
+        {
+          "id": "biscuit",
+          "skills": [
+            "biscuit-1",
+            "biscuit-2",
+            "biscuit-3"
+          ]
+        },
+        {
+          "id": "clover",
+          "skills": [
+            "clover-1",
+            "clover-2",
+            "clover-3"
+          ]
+        }
+      ],
+      "rounds": 4,
+      "result": "party",
+      "actions": 12,
+      "partyActions": 12,
+      "skillUses": {
+        "mochi-1": 3,
+        "biscuit-1": 3,
+        "clover-1": 4,
+        "biscuit-3": 1,
+        "mochi-3": 1
+      },
+      "battleSha256": "9e00518d560c12bb390f2bd8470cc113cd9731d1654cf396a426ed50efed6a4b"
+    },
+    {
+      "index": 33,
+      "startMs": 2229873,
+      "endMs": 2315027,
+      "seconds": 85.154,
+      "seed": 1245215347,
+      "chapter": 2,
+      "enemies": [
+        "rain-spool"
+      ],
+      "crew": [
+        {
+          "id": "mochi",
+          "skills": [
+            "mochi-1",
+            "mochi-2",
+            "mochi-3"
+          ]
+        },
+        {
+          "id": "biscuit",
+          "skills": [
+            "biscuit-1",
+            "biscuit-2",
+            "biscuit-3"
+          ]
+        },
+        {
+          "id": "clover",
+          "skills": [
+            "clover-1",
+            "clover-2",
+            "clover-3"
+          ]
+        }
+      ],
+      "rounds": 13,
+      "result": "enemy",
+      "actions": 36,
+      "partyActions": 36,
+      "skillUses": {
+        "mochi-1": 7,
+        "biscuit-3": 3,
+        "clover-2": 8,
+        "biscuit-1": 6,
+        "biscuit-2": 2,
+        "clover-3": 3,
+        "mochi-2": 3,
+        "mochi-3": 1,
+        "clover-1": 2,
+        "defend": 1
+      },
+      "battleSha256": "03223e5e2c7b6c1bc8890e538f578fead5199bf8ad980394277b1002e7f15fe9"
+    },
+    {
+      "index": 34,
+      "startMs": 2337174,
+      "endMs": 2359537,
+      "seconds": 22.363,
+      "seed": 4239797844,
+      "chapter": 2,
+      "enemies": [
+        "button-guard",
+        "sock-skipper"
+      ],
+      "crew": [
+        {
+          "id": "mochi",
+          "skills": [
+            "mochi-1",
+            "mochi-2",
+            "mochi-3"
+          ]
+        },
+        {
+          "id": "biscuit",
+          "skills": [
+            "biscuit-1",
+            "biscuit-2",
+            "biscuit-3"
+          ]
+        },
+        {
+          "id": "clover",
+          "skills": [
+            "clover-1",
+            "clover-2",
+            "clover-3"
+          ]
+        }
+      ],
+      "rounds": 3,
+      "result": "party",
+      "actions": 8,
+      "partyActions": 8,
+      "skillUses": {
+        "mochi-1": 2,
+        "biscuit-3": 1,
+        "clover-1": 2,
+        "mochi-3": 1,
+        "biscuit-1": 2
+      },
+      "battleSha256": "545e556ec10a6268ea05281f2ced68189d0cb831049f9748e3a9078eb50ae35e"
+    },
+    {
+      "index": 35,
+      "startMs": 2405033,
+      "endMs": 2417495,
+      "seconds": 12.462,
+      "seed": 483714718,
+      "chapter": 2,
+      "enemies": [
+        "button-guard",
+        "button-guard"
+      ],
+      "crew": [
+        {
+          "id": "mochi",
+          "skills": [
+            "mochi-1",
+            "mochi-2",
+            "mochi-3"
+          ]
+        },
+        {
+          "id": "biscuit",
+          "skills": [
+            "biscuit-1",
+            "biscuit-2",
+            "biscuit-3"
+          ]
+        },
+        {
+          "id": "clover",
+          "skills": [
+            "clover-1",
+            "clover-2",
+            "clover-3"
+          ]
+        }
+      ],
+      "rounds": 3,
+      "result": "party",
+      "actions": 7,
+      "partyActions": 7,
+      "skillUses": {
+        "mochi-1": 2,
+        "biscuit-3": 1,
+        "clover-1": 2,
+        "mochi-3": 1,
+        "biscuit-1": 1
+      },
+      "battleSha256": "27d26b1ad7d96fb9be85c53e08b30a1ba286dfb7e5aab459417d4c82b6f74b2c"
+    },
+    {
+      "index": 36,
+      "startMs": 2433551,
+      "endMs": 2517419,
+      "seconds": 83.868,
+      "seed": 3483962368,
+      "chapter": 2,
+      "enemies": [
+        "rain-spool"
+      ],
+      "crew": [
+        {
+          "id": "mochi",
+          "skills": [
+            "mochi-1",
+            "mochi-2",
+            "mochi-3"
+          ]
+        },
+        {
+          "id": "biscuit",
+          "skills": [
+            "biscuit-1",
+            "biscuit-2",
+            "biscuit-3"
+          ]
+        },
+        {
+          "id": "clover",
+          "skills": [
+            "clover-1",
+            "clover-2",
+            "clover-3"
+          ]
+        }
+      ],
+      "rounds": 13,
+      "result": "enemy",
+      "actions": 37,
+      "partyActions": 37,
+      "skillUses": {
+        "mochi-3": 2,
+        "biscuit-3": 4,
+        "clover-2": 7,
+        "mochi-1": 9,
+        "biscuit-1": 6,
+        "clover-1": 3,
+        "clover-3": 3,
+        "biscuit-2": 2,
+        "mochi-2": 1
+      },
+      "battleSha256": "1a03c286128fd6de4956ce7569a0e266e296d06adbdb58d58f0ec192203d5e22"
+    },
+    {
+      "index": 37,
+      "startMs": 2539419,
+      "endMs": 2564472,
+      "seconds": 25.053,
+      "seed": 2034488919,
+      "chapter": 2,
+      "enemies": [
+        "sock-skipper",
+        "sock-skipper"
+      ],
+      "crew": [
+        {
+          "id": "mochi",
+          "skills": [
+            "mochi-1",
+            "mochi-2",
+            "mochi-3"
+          ]
+        },
+        {
+          "id": "biscuit",
+          "skills": [
+            "biscuit-1",
+            "biscuit-2",
+            "biscuit-3"
+          ]
+        },
+        {
+          "id": "clover",
+          "skills": [
+            "clover-1",
+            "clover-2",
+            "clover-3"
+          ]
+        }
+      ],
+      "rounds": 3,
+      "result": "party",
+      "actions": 9,
+      "partyActions": 9,
+      "skillUses": {
+        "mochi-1": 3,
+        "biscuit-1": 2,
+        "clover-2": 1,
+        "biscuit-3": 1,
+        "clover-1": 2
+      },
+      "battleSha256": "f61815159397219bd62420d876375e2f10ea2b87e8dff8ed534e5f457c3000b6"
+    },
+    {
+      "index": 38,
+      "startMs": 2609895,
+      "endMs": 2623288,
+      "seconds": 13.393,
+      "seed": 2718845648,
+      "chapter": 2,
+      "enemies": [
+        "sock-skipper",
+        "needle-moth"
+      ],
+      "crew": [
+        {
+          "id": "mochi",
+          "skills": [
+            "mochi-1",
+            "mochi-2",
+            "mochi-3"
+          ]
+        },
+        {
+          "id": "biscuit",
+          "skills": [
+            "biscuit-1",
+            "biscuit-2",
+            "biscuit-3"
+          ]
+        },
+        {
+          "id": "clover",
+          "skills": [
+            "clover-1",
+            "clover-2",
+            "clover-3"
+          ]
+        }
+      ],
+      "rounds": 3,
+      "result": "party",
+      "actions": 7,
+      "partyActions": 7,
+      "skillUses": {
+        "mochi-1": 3,
+        "biscuit-1": 2,
+        "clover-1": 2
+      },
+      "battleSha256": "586c97e6fd7f33bc27f117aba9b433d8da6739c3ad7eae8631c211e34e4b5e5a"
+    },
+    {
+      "index": 39,
+      "startMs": 2639349,
+      "endMs": 2710316,
+      "seconds": 70.967,
+      "seed": 3859915983,
+      "chapter": 2,
+      "enemies": [
+        "rain-spool"
+      ],
+      "crew": [
+        {
+          "id": "mochi",
+          "skills": [
+            "mochi-1",
+            "mochi-2",
+            "mochi-3"
+          ]
+        },
+        {
+          "id": "biscuit",
+          "skills": [
+            "biscuit-1",
+            "biscuit-2",
+            "biscuit-3"
+          ]
+        },
+        {
+          "id": "clover",
+          "skills": [
+            "clover-1",
+            "clover-2",
+            "clover-3"
+          ]
+        }
+      ],
+      "rounds": 12,
+      "result": "enemy",
+      "actions": 32,
+      "partyActions": 32,
+      "skillUses": {
+        "mochi-1": 6,
+        "biscuit-3": 4,
+        "clover-2": 8,
+        "mochi-3": 2,
+        "biscuit-1": 6,
+        "clover-3": 3,
+        "mochi-2": 1,
+        "biscuit-2": 1,
+        "clover-1": 1
+      },
+      "battleSha256": "c3c5ff7ef38b4a59bc0ac92e065f32393a5a219bd7a43d2be5fbe94ed2d14d69"
+    },
+    {
+      "index": 40,
+      "startMs": 2732656,
+      "endMs": 2755453,
+      "seconds": 22.797,
+      "seed": 2137864833,
+      "chapter": 2,
+      "enemies": [
+        "sock-skipper",
+        "button-guard"
+      ],
+      "crew": [
+        {
+          "id": "mochi",
+          "skills": [
+            "mochi-1",
+            "mochi-2",
+            "mochi-3"
+          ]
+        },
+        {
+          "id": "biscuit",
+          "skills": [
+            "biscuit-1",
+            "biscuit-2",
+            "biscuit-3"
+          ]
+        },
+        {
+          "id": "clover",
+          "skills": [
+            "clover-1",
+            "clover-2",
+            "clover-3"
+          ]
+        }
+      ],
+      "rounds": 3,
+      "result": "party",
+      "actions": 8,
+      "partyActions": 8,
+      "skillUses": {
+        "mochi-1": 2,
+        "biscuit-3": 1,
+        "clover-1": 2,
+        "mochi-3": 1,
+        "biscuit-1": 2
+      },
+      "battleSha256": "a163fc87804a2dbb7abe4fbf2628a60691d097adcd29c1ae5edabb66692985ae"
+    },
+    {
+      "index": 41,
+      "startMs": 2800964,
+      "endMs": 2815855,
+      "seconds": 14.891,
+      "seed": 2080527508,
+      "chapter": 2,
+      "enemies": [
+        "sock-skipper",
+        "teacup-healer"
+      ],
+      "crew": [
+        {
+          "id": "mochi",
+          "skills": [
+            "mochi-1",
+            "mochi-2",
+            "mochi-3"
+          ]
+        },
+        {
+          "id": "biscuit",
+          "skills": [
+            "biscuit-1",
+            "biscuit-2",
+            "biscuit-3"
+          ]
+        },
+        {
+          "id": "clover",
+          "skills": [
+            "clover-1",
+            "clover-2",
+            "clover-3"
+          ]
+        }
+      ],
+      "rounds": 3,
+      "result": "party",
+      "actions": 8,
+      "partyActions": 8,
+      "skillUses": {
+        "mochi-1": 3,
+        "biscuit-1": 2,
+        "clover-1": 2,
+        "biscuit-3": 1
+      },
+      "battleSha256": "e4bf15984e4c5155ca6b47c972607408e1a54e573e7d63381213116701b999bd"
+    },
+    {
+      "index": 42,
+      "startMs": 2831962,
+      "endMs": 2894282,
+      "seconds": 62.32,
+      "seed": 511631122,
+      "chapter": 2,
+      "enemies": [
+        "rain-spool"
+      ],
+      "crew": [
+        {
+          "id": "mochi",
+          "skills": [
+            "mochi-1",
+            "mochi-2",
+            "mochi-3"
+          ]
+        },
+        {
+          "id": "biscuit",
+          "skills": [
+            "biscuit-1",
+            "biscuit-2",
+            "biscuit-3"
+          ]
+        },
+        {
+          "id": "clover",
+          "skills": [
+            "clover-1",
+            "clover-2",
+            "clover-3"
+          ]
+        }
+      ],
+      "rounds": 11,
+      "result": "enemy",
+      "actions": 28,
+      "partyActions": 28,
+      "skillUses": {
+        "mochi-1": 9,
+        "biscuit-3": 3,
+        "clover-2": 6,
+        "mochi-3": 1,
+        "biscuit-1": 4,
+        "clover-3": 2,
+        "biscuit-2": 1,
+        "clover-1": 1,
+        "mochi-2": 1
+      },
+      "battleSha256": "6f2ab15886bf9740dc64e9b656d6af1c482db9e4b56ca8bd2bec79777a96d795"
+    },
+    {
+      "index": 43,
+      "startMs": 2916467,
+      "endMs": 2942057,
+      "seconds": 25.59,
+      "seed": 3269809185,
+      "chapter": 2,
+      "enemies": [
+        "button-guard",
+        "teacup-healer"
+      ],
+      "crew": [
+        {
+          "id": "mochi",
+          "skills": [
+            "mochi-1",
+            "mochi-2",
+            "mochi-3"
+          ]
+        },
+        {
+          "id": "biscuit",
+          "skills": [
+            "biscuit-1",
+            "biscuit-2",
+            "biscuit-3"
+          ]
+        },
+        {
+          "id": "clover",
+          "skills": [
+            "clover-1",
+            "clover-2",
+            "clover-3"
+          ]
+        }
+      ],
+      "rounds": 3,
+      "result": "party",
+      "actions": 9,
+      "partyActions": 9,
+      "skillUses": {
+        "mochi-1": 3,
+        "biscuit-3": 1,
+        "clover-1": 3,
+        "biscuit-1": 2
+      },
+      "battleSha256": "00c2a8a2600ecfdb32cd716c4730e1f730204dbabb103b9987728652037c9a2c"
+    },
+    {
+      "index": 44,
+      "startMs": 2987551,
+      "endMs": 2998338,
+      "seconds": 10.787,
+      "seed": 880630250,
+      "chapter": 2,
+      "enemies": [
+        "button-guard",
+        "needle-moth"
+      ],
+      "crew": [
+        {
+          "id": "mochi",
+          "skills": [
+            "mochi-1",
+            "mochi-2",
+            "mochi-3"
+          ]
+        },
+        {
+          "id": "biscuit",
+          "skills": [
+            "biscuit-1",
+            "biscuit-2",
+            "biscuit-3"
+          ]
+        },
+        {
+          "id": "clover",
+          "skills": [
+            "clover-1",
+            "clover-2",
+            "clover-3"
+          ]
+        }
+      ],
+      "rounds": 2,
+      "result": "party",
+      "actions": 6,
+      "partyActions": 6,
+      "skillUses": {
+        "mochi-1": 2,
+        "biscuit-3": 1,
+        "clover-1": 2,
+        "biscuit-1": 1
+      },
+      "battleSha256": "368a9a567875bcd2d7e2a38773b8f7d785b58a8830e3099b38bac3e71eb02aca"
+    },
+    {
+      "index": 45,
+      "startMs": 3014523,
+      "endMs": 3083378,
+      "seconds": 68.855,
+      "seed": 1732749953,
+      "chapter": 2,
+      "enemies": [
+        "rain-spool"
+      ],
+      "crew": [
+        {
+          "id": "mochi",
+          "skills": [
+            "mochi-1",
+            "mochi-2",
+            "mochi-3"
+          ]
+        },
+        {
+          "id": "biscuit",
+          "skills": [
+            "biscuit-1",
+            "biscuit-2",
+            "biscuit-3"
+          ]
+        },
+        {
+          "id": "clover",
+          "skills": [
+            "clover-1",
+            "clover-2",
+            "clover-3"
+          ]
+        }
+      ],
+      "rounds": 12,
+      "result": "enemy",
+      "actions": 29,
+      "partyActions": 29,
+      "skillUses": {
+        "mochi-3": 3,
+        "biscuit-3": 4,
+        "clover-2": 4,
+        "mochi-1": 7,
+        "biscuit-2": 2,
+        "biscuit-1": 6,
+        "clover-3": 1,
+        "mochi-2": 2
+      },
+      "battleSha256": "c57503d500a3b0f066f787519b00b91d6fea00164eed38b023d5cc3536944f5a"
+    },
+    {
+      "index": 46,
+      "startMs": 3105400,
+      "endMs": 3134702,
+      "seconds": 29.302,
+      "seed": 3365983584,
+      "chapter": 2,
+      "enemies": [
+        "teacup-healer",
+        "teacup-healer"
+      ],
+      "crew": [
+        {
+          "id": "mochi",
+          "skills": [
+            "mochi-1",
+            "mochi-2",
+            "mochi-3"
+          ]
+        },
+        {
+          "id": "biscuit",
+          "skills": [
+            "biscuit-1",
+            "biscuit-2",
+            "biscuit-3"
+          ]
+        },
+        {
+          "id": "clover",
+          "skills": [
+            "clover-1",
+            "clover-2",
+            "clover-3"
+          ]
+        }
+      ],
+      "rounds": 4,
+      "result": "party",
+      "actions": 11,
+      "partyActions": 11,
+      "skillUses": {
+        "mochi-1": 4,
+        "biscuit-1": 3,
+        "clover-1": 3,
+        "biscuit-3": 1
+      },
+      "battleSha256": "67434df43f93aa3c623d8904798ad2f199dd2997de62073cd74e57e88a36134d"
+    },
+    {
+      "index": 47,
+      "startMs": 3180247,
+      "endMs": 3195006,
+      "seconds": 14.759,
+      "seed": 3326676537,
+      "chapter": 2,
+      "enemies": [
+        "sock-skipper",
+        "sock-skipper"
+      ],
+      "crew": [
+        {
+          "id": "mochi",
+          "skills": [
+            "mochi-1",
+            "mochi-2",
+            "mochi-3"
+          ]
+        },
+        {
+          "id": "biscuit",
+          "skills": [
+            "biscuit-1",
+            "biscuit-2",
+            "biscuit-3"
+          ]
+        },
+        {
+          "id": "clover",
+          "skills": [
+            "clover-1",
+            "clover-2",
+            "clover-3"
+          ]
+        }
+      ],
+      "rounds": 3,
+      "result": "party",
+      "actions": 8,
+      "partyActions": 8,
+      "skillUses": {
+        "mochi-1": 3,
+        "biscuit-1": 3,
+        "clover-1": 2
+      },
+      "battleSha256": "36fea32ab08f4136005b86d018f522bcbf7e10fd3ab97c6868db835c3a559d99"
+    },
+    {
+      "index": 48,
+      "startMs": 3211145,
+      "endMs": 3280850,
+      "seconds": 69.705,
+      "seed": 2868178150,
+      "chapter": 2,
+      "enemies": [
+        "rain-spool"
+      ],
+      "crew": [
+        {
+          "id": "mochi",
+          "skills": [
+            "mochi-1",
+            "mochi-2",
+            "mochi-3"
+          ]
+        },
+        {
+          "id": "biscuit",
+          "skills": [
+            "biscuit-1",
+            "biscuit-2",
+            "biscuit-3"
+          ]
+        },
+        {
+          "id": "clover",
+          "skills": [
+            "clover-1",
+            "clover-2",
+            "clover-3"
+          ]
+        }
+      ],
+      "rounds": 10,
+      "result": "enemy",
+      "actions": 28,
+      "partyActions": 28,
+      "skillUses": {
+        "mochi-3": 2,
+        "biscuit-3": 3,
+        "clover-2": 6,
+        "mochi-1": 5,
+        "biscuit-1": 6,
+        "clover-3": 2,
+        "clover-1": 1,
+        "defend": 3
+      },
+      "battleSha256": "9bc0ae2ed866ebde149e3166816be90c2fbc276601acd337fd56fba3e846ee46"
+    },
+    {
+      "index": 49,
+      "startMs": 3303092,
+      "endMs": 3327182,
+      "seconds": 24.09,
+      "seed": 2914833299,
+      "chapter": 2,
+      "enemies": [
+        "sock-skipper",
+        "sock-skipper"
+      ],
+      "crew": [
+        {
+          "id": "mochi",
+          "skills": [
+            "mochi-1",
+            "mochi-2",
+            "mochi-3"
+          ]
+        },
+        {
+          "id": "biscuit",
+          "skills": [
+            "biscuit-1",
+            "biscuit-2",
+            "biscuit-3"
+          ]
+        },
+        {
+          "id": "clover",
+          "skills": [
+            "clover-1",
+            "clover-2",
+            "clover-3"
+          ]
+        }
+      ],
+      "rounds": 3,
+      "result": "party",
+      "actions": 8,
+      "partyActions": 8,
+      "skillUses": {
+        "mochi-1": 3,
+        "biscuit-1": 2,
+        "clover-2": 1,
+        "biscuit-3": 1,
+        "clover-1": 1
+      },
+      "battleSha256": "affd0367f442afa7eda96660ea6886134b896ebe3d1175fc0b9a0ad2867f09c4"
+    },
+    {
+      "index": 50,
+      "startMs": 3372953,
+      "endMs": 3387887,
+      "seconds": 14.934,
+      "seed": 3012321121,
+      "chapter": 2,
+      "enemies": [
+        "sock-skipper",
+        "sock-skipper"
+      ],
+      "crew": [
+        {
+          "id": "mochi",
+          "skills": [
+            "mochi-1",
+            "mochi-2",
+            "mochi-3"
+          ]
+        },
+        {
+          "id": "biscuit",
+          "skills": [
+            "biscuit-1",
+            "biscuit-2",
+            "biscuit-3"
+          ]
+        },
+        {
+          "id": "clover",
+          "skills": [
+            "clover-1",
+            "clover-2",
+            "clover-3"
+          ]
+        }
+      ],
+      "rounds": 3,
+      "result": "party",
+      "actions": 8,
+      "partyActions": 8,
+      "skillUses": {
+        "mochi-1": 3,
+        "biscuit-1": 2,
+        "clover-2": 1,
+        "biscuit-3": 1,
+        "clover-1": 1
+      },
+      "battleSha256": "05295d854b3f908e3b2c1911bca88c18bc4979611e0d458105d01e726b14c474"
+    },
+    {
+      "index": 51,
+      "startMs": 3404068,
+      "endMs": 3485657,
+      "seconds": 81.589,
+      "seed": 1281318595,
+      "chapter": 2,
+      "enemies": [
+        "rain-spool"
+      ],
+      "crew": [
+        {
+          "id": "mochi",
+          "skills": [
+            "mochi-1",
+            "mochi-2",
+            "mochi-3"
+          ]
+        },
+        {
+          "id": "biscuit",
+          "skills": [
+            "biscuit-1",
+            "biscuit-2",
+            "biscuit-3"
+          ]
+        },
+        {
+          "id": "clover",
+          "skills": [
+            "clover-1",
+            "clover-2",
+            "clover-3"
+          ]
+        }
+      ],
+      "rounds": 12,
+      "result": "enemy",
+      "actions": 36,
+      "partyActions": 36,
+      "skillUses": {
+        "mochi-3": 2,
+        "biscuit-3": 4,
+        "clover-2": 8,
+        "mochi-1": 5,
+        "biscuit-2": 4,
+        "biscuit-1": 4,
+        "clover-3": 3,
+        "mochi-2": 5,
+        "clover-1": 1
+      },
+      "battleSha256": "427f8faf7cb6e0bd6a7628fba1a052c1e0fee2a0014696e527a0ee1a8cd59cfd"
+    },
+    {
+      "index": 52,
+      "startMs": 3508131,
+      "endMs": 3534141,
+      "seconds": 26.01,
+      "seed": 1490908556,
+      "chapter": 2,
+      "enemies": [
+        "needle-moth",
+        "teacup-healer"
+      ],
+      "crew": [
+        {
+          "id": "mochi",
+          "skills": [
+            "mochi-1",
+            "mochi-2",
+            "mochi-3"
+          ]
+        },
+        {
+          "id": "biscuit",
+          "skills": [
+            "biscuit-1",
+            "biscuit-2",
+            "biscuit-3"
+          ]
+        },
+        {
+          "id": "clover",
+          "skills": [
+            "clover-1",
+            "clover-2",
+            "clover-3"
+          ]
+        }
+      ],
+      "rounds": 3,
+      "result": "party",
+      "actions": 9,
+      "partyActions": 9,
+      "skillUses": {
+        "mochi-1": 3,
+        "biscuit-3": 1,
+        "clover-1": 3,
+        "biscuit-1": 2
+      },
+      "battleSha256": "b4d39306a8c6e86283cfd0b971a52fd73242679957e1db5873e675e4f9285050"
+    },
+    {
+      "index": 53,
+      "startMs": 3579870,
+      "endMs": 3593406,
+      "seconds": 13.536,
+      "seed": 2847216581,
+      "chapter": 2,
+      "enemies": [
+        "needle-moth",
+        "sock-skipper"
+      ],
+      "crew": [
+        {
+          "id": "mochi",
+          "skills": [
+            "mochi-1",
+            "mochi-2",
+            "mochi-3"
+          ]
+        },
+        {
+          "id": "biscuit",
+          "skills": [
+            "biscuit-1",
+            "biscuit-2",
+            "biscuit-3"
+          ]
+        },
+        {
+          "id": "clover",
+          "skills": [
+            "clover-1",
+            "clover-2",
+            "clover-3"
+          ]
+        }
+      ],
+      "rounds": 3,
+      "result": "party",
+      "actions": 7,
+      "partyActions": 7,
+      "skillUses": {
+        "mochi-1": 3,
+        "biscuit-1": 1,
+        "clover-1": 2,
+        "biscuit-3": 1
+      },
+      "battleSha256": "0b74ae37099feb54f625e830cf28fb744bf5afb5ff33990334ad210eb6f5aeee"
+    }
+  ],
+  "capNotices": [
+    {
+      "atMs": 878279,
+      "screen": "hub",
+      "label": "nav:Cafe",
+      "notice": "Tonight's supplies are gathered. Missing stars still count."
+    },
+    {
+      "atMs": 886321,
+      "screen": "hub",
+      "label": "nav:Cafe",
+      "notice": "Tonight's supplies are gathered. Missing stars still count."
+    },
+    {
+      "atMs": 1085409,
+      "screen": "map",
+      "label": "settle encounter",
+      "notice": "Today’s supplies are gathered. Your stars and collected equipment are saved."
+    },
+    {
+      "atMs": 1085501,
+      "screen": "hub",
+      "label": "nav:Cafe",
+      "notice": "Tonight's supplies are gathered. Missing stars still count."
+    },
+    {
+      "atMs": 1093836,
+      "screen": "hub",
+      "label": "nav:Cafe",
+      "notice": "Tonight's supplies are gathered. Missing stars still count."
+    },
+    {
+      "atMs": 1102252,
+      "screen": "hub",
+      "label": "nav:Cafe",
+      "notice": "Tonight's supplies are gathered. Missing stars still count."
+    },
+    {
+      "atMs": 1298275,
+      "screen": "map",
+      "label": "settle encounter",
+      "notice": "Today’s supplies are gathered. Your stars and collected equipment are saved."
+    },
+    {
+      "atMs": 1298396,
+      "screen": "hub",
+      "label": "nav:Cafe",
+      "notice": "Tonight's supplies are gathered. Missing stars still count."
+    },
+    {
+      "atMs": 1306412,
+      "screen": "hub",
+      "label": "nav:Cafe",
+      "notice": "Tonight's supplies are gathered. Missing stars still count."
+    },
+    {
+      "atMs": 1314800,
+      "screen": "hub",
+      "label": "nav:Cafe",
+      "notice": "Tonight's supplies are gathered. Missing stars still count."
+    },
+    {
+      "atMs": 1510775,
+      "screen": "map",
+      "label": "settle encounter",
+      "notice": "Today’s supplies are gathered. Your stars and collected equipment are saved."
+    },
+    {
+      "atMs": 1510869,
+      "screen": "hub",
+      "label": "nav:Cafe",
+      "notice": "Tonight's supplies are gathered. Missing stars still count."
+    },
+    {
+      "atMs": 1519354,
+      "screen": "hub",
+      "label": "nav:Cafe",
+      "notice": "Tonight's supplies are gathered. Missing stars still count."
+    },
+    {
+      "atMs": 1523902,
+      "screen": "hub",
+      "label": "nav:Cafe",
+      "notice": "Tonight's supplies are gathered. Missing stars still count."
+    },
+    {
+      "atMs": 1708451,
+      "screen": "map",
+      "label": "settle encounter",
+      "notice": "Today’s supplies are gathered. Your stars and collected equipment are saved."
+    },
+    {
+      "atMs": 1708560,
+      "screen": "hub",
+      "label": "nav:Cafe",
+      "notice": "Tonight's supplies are gathered. Missing stars still count."
+    },
+    {
+      "atMs": 1713073,
+      "screen": "hub",
+      "label": "nav:Cafe",
+      "notice": "Tonight's supplies are gathered. Missing stars still count."
+    },
+    {
+      "atMs": 1930423,
+      "screen": "map",
+      "label": "settle encounter",
+      "notice": "Today’s supplies are gathered. Your stars and collected equipment are saved."
+    },
+    {
+      "atMs": 1930556,
+      "screen": "hub",
+      "label": "nav:Cafe",
+      "notice": "Tonight's supplies are gathered. Missing stars still count."
+    },
+    {
+      "atMs": 1935493,
+      "screen": "hub",
+      "label": "nav:Cafe",
+      "notice": "Tonight's supplies are gathered. Missing stars still count."
+    },
+    {
+      "atMs": 2110049,
+      "screen": "map",
+      "label": "settle encounter",
+      "notice": "Today’s supplies are gathered. Your stars and collected equipment are saved."
+    },
+    {
+      "atMs": 2110179,
+      "screen": "hub",
+      "label": "nav:Cafe",
+      "notice": "Tonight's supplies are gathered. Missing stars still count."
+    },
+    {
+      "atMs": 2114767,
+      "screen": "hub",
+      "label": "nav:Cafe",
+      "notice": "Tonight's supplies are gathered. Missing stars still count."
+    },
+    {
+      "atMs": 2320187,
+      "screen": "map",
+      "label": "settle encounter",
+      "notice": "Today’s supplies are gathered. Your stars and collected equipment are saved."
+    },
+    {
+      "atMs": 2320295,
+      "screen": "hub",
+      "label": "nav:Cafe",
+      "notice": "Tonight's supplies are gathered. Missing stars still count."
+    },
+    {
+      "atMs": 2324879,
+      "screen": "hub",
+      "label": "nav:Cafe",
+      "notice": "Tonight's supplies are gathered. Missing stars still count."
+    },
+    {
+      "atMs": 2329648,
+      "screen": "hub",
+      "label": "nav:Cafe",
+      "notice": "Tonight's supplies are gathered. Missing stars still count."
+    },
+    {
+      "atMs": 2522594,
+      "screen": "map",
+      "label": "settle encounter",
+      "notice": "Today’s supplies are gathered. Your stars and collected equipment are saved."
+    },
+    {
+      "atMs": 2522745,
+      "screen": "hub",
+      "label": "nav:Cafe",
+      "notice": "Tonight's supplies are gathered. Missing stars still count."
+    },
+    {
+      "atMs": 2527289,
+      "screen": "hub",
+      "label": "nav:Cafe",
+      "notice": "Tonight's supplies are gathered. Missing stars still count."
+    },
+    {
+      "atMs": 2531925,
+      "screen": "hub",
+      "label": "nav:Cafe",
+      "notice": "Tonight's supplies are gathered. Missing stars still count."
+    },
+    {
+      "atMs": 2715596,
+      "screen": "map",
+      "label": "settle encounter",
+      "notice": "Today’s supplies are gathered. Your stars and collected equipment are saved."
+    },
+    {
+      "atMs": 2715735,
+      "screen": "hub",
+      "label": "nav:Cafe",
+      "notice": "Tonight's supplies are gathered. Missing stars still count."
+    },
+    {
+      "atMs": 2720444,
+      "screen": "hub",
+      "label": "nav:Cafe",
+      "notice": "Tonight's supplies are gathered. Missing stars still count."
+    },
+    {
+      "atMs": 2725087,
+      "screen": "hub",
+      "label": "nav:Cafe",
+      "notice": "Tonight's supplies are gathered. Missing stars still count."
+    },
+    {
+      "atMs": 2899452,
+      "screen": "map",
+      "label": "settle encounter",
+      "notice": "Today’s supplies are gathered. Your stars and collected equipment are saved."
+    },
+    {
+      "atMs": 2899596,
+      "screen": "hub",
+      "label": "nav:Cafe",
+      "notice": "Tonight's supplies are gathered. Missing stars still count."
+    },
+    {
+      "atMs": 2904180,
+      "screen": "hub",
+      "label": "nav:Cafe",
+      "notice": "Tonight's supplies are gathered. Missing stars still count."
+    },
+    {
+      "atMs": 2908927,
+      "screen": "hub",
+      "label": "nav:Cafe",
+      "notice": "Tonight's supplies are gathered. Missing stars still count."
+    },
+    {
+      "atMs": 3088518,
+      "screen": "map",
+      "label": "settle encounter",
+      "notice": "Today’s supplies are gathered. Your stars and collected equipment are saved."
+    },
+    {
+      "atMs": 3088620,
+      "screen": "hub",
+      "label": "nav:Cafe",
+      "notice": "Tonight's supplies are gathered. Missing stars still count."
+    },
+    {
+      "atMs": 3093190,
+      "screen": "hub",
+      "label": "nav:Cafe",
+      "notice": "Tonight's supplies are gathered. Missing stars still count."
+    },
+    {
+      "atMs": 3097876,
+      "screen": "hub",
+      "label": "nav:Cafe",
+      "notice": "Tonight's supplies are gathered. Missing stars still count."
+    },
+    {
+      "atMs": 3285999,
+      "screen": "map",
+      "label": "settle encounter",
+      "notice": "Today’s supplies are gathered. Your stars and collected equipment are saved."
+    },
+    {
+      "atMs": 3286133,
+      "screen": "hub",
+      "label": "nav:Cafe",
+      "notice": "Tonight's supplies are gathered. Missing stars still count."
+    },
+    {
+      "atMs": 3290847,
+      "screen": "hub",
+      "label": "nav:Cafe",
+      "notice": "Tonight's supplies are gathered. Missing stars still count."
+    },
+    {
+      "atMs": 3295576,
+      "screen": "hub",
+      "label": "nav:Cafe",
+      "notice": "Tonight's supplies are gathered. Missing stars still count."
+    },
+    {
+      "atMs": 3490835,
+      "screen": "map",
+      "label": "settle encounter",
+      "notice": "Today’s supplies are gathered. Your stars and collected equipment are saved."
+    },
+    {
+      "atMs": 3490963,
+      "screen": "hub",
+      "label": "nav:Cafe",
+      "notice": "Tonight's supplies are gathered. Missing stars still count."
+    },
+    {
+      "atMs": 3495616,
+      "screen": "hub",
+      "label": "nav:Cafe",
+      "notice": "Tonight's supplies are gathered. Missing stars still count."
+    },
+    {
+      "atMs": 3500549,
+      "screen": "hub",
+      "label": "nav:Cafe",
+      "notice": "Tonight's supplies are gathered. Missing stars still count."
+    }
+  ],
+  "sources": [
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/timeline.json",
+      "sha256": "f33c9bc3f5648cdd51cebc24c60acb93d99dd4ca725c11d046a3e037bc644d70"
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/metrics.json",
+      "sha256": "6d8f305986f07970431d8581a0dca62d243025fbbd7b6968ed8cef2b807aede2"
+    },
+    {
+      "path": "packages/game-rules/src/cardrpg/depth/state.ts",
+      "sha256": "476f0bc2839bf69db1e7013adbc007041dbadf095b07f7f6e12babbd283cf3da"
+    },
+    {
+      "path": "apps/web/src/game/cardrpg/depth/star-plans-v4.ts",
+      "sha256": "a2369c0529ec86fe59ca2074154ef6e99ec9b17ab37af2af827547e49100a39e"
+    }
+  ],
+  "limitations": [
+    "Recorded action counts and losses describe the fixed policy; they do not isolate a cause or a safe tuning change.",
+    "Combat duration is clipped to each window. A battle crossing its boundary remains included.",
+    "Progression can lock ultimates. Earned-route skill availability is separate from the base-stat and matched-power D4 probes.",
+    "This reads the original observation only; no new Home run, selected seed, gate or denominator."
+  ]
+}

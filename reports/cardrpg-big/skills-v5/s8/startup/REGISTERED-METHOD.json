@@ -1,0 +1,62 @@
+{
+  "registeredAt": "2026-11-09T08:15:54.784Z",
+  "head": "b21a91c3586a72f7fa46d6670c218d286b59dd90",
+  "baseline": {
+    "directory": "/tmp/cardrpg-a5-p1-prep/main-dist",
+    "head": "340f88b92405ceb6b5421b207307fdbb283b2ca3",
+    "receiptSha256": "34ec965357473e8448be2f605328179164eccd33062c7aab9d6b26582378833b",
+    "currentMain": {
+      "observedAt": "2026-11-09T02:33:00Z",
+      "url": "https://api.github.com/repos/ntbaoheyhey/taskbar-hero/git/ref/heads/main",
+      "sha": "340f88b92405ceb6b5421b207307fdbb283b2ca3",
+      "source": "Connected GitHub fetch tool, twice observed unchanged from original A5 startup baseline",
+      "reverifiedAt": "2026-11-09T03:17:00Z",
+      "cliReverification": {
+        "observedAt": "2026-11-09T06:05:41.511685+00:00",
+        "command": "git ls-remote origin refs/heads/main",
+        "sha": "340f88b92405ceb6b5421b207307fdbb283b2ca3"
+      }
+    }
+  },
+  "candidate": {
+    "directory": "/tmp/cardrpg-v5a-s8-selected-default-dist",
+    "head": "ce538d3796edf72dbd6be98e548c18d106a6b637",
+    "receiptSha256": "1523ab8735ba1fb565dd116e1185b67511788cd8a01d1a300bdfa0101778fcec"
+  },
+  "script": "tools/cardrpg-big/a5-startup-check.mjs",
+  "scriptSha256": "b1698996871b06afdd6b88c181a5005682175b87122de4a861ab1141b5e8ab07",
+  "configs": [
+    [
+      1280,
+      1
+    ],
+    [
+      1280,
+      4
+    ],
+    [
+      1440,
+      1
+    ]
+  ],
+  "observations": 3,
+  "order": [
+    [
+      "baseline",
+      "candidate"
+    ],
+    [
+      "candidate",
+      "baseline"
+    ],
+    [
+      "baseline",
+      "candidate"
+    ]
+  ],
+  "gates": {
+    "loadedJsDeltaAtMost": 150000,
+    "taskMedianAndMaxNotWorse": true
+  },
+  "method": "GitHub main ref observed as340f88b9; reuse its exact original build, with fresh profiles, disabled cache, real onboarding click plus5s, every requested JS chunk hash checked. Nine observations per build, no repeats or excluded outliers; native Metal, no desktop control."
+}

@@ -1,6 +1,6 @@
 # Skills V5 lane A state
 Base: d22f47cb8 (A5 closing tip/DRAFT406); runtime baseline0e1e15180108b443ce2e615ea54272b907cc8bb0.
-Phase: S8 single prospective Home, then startup/performance/day7 and six source gates; S6 follows.
+Phase: S8 observations/source closure complete; pre-S6 repair revisit recorded; publish S8 then register S6.
 Branch: codex/cardrpg-v5a-s8-2026-11-09; baseS5 b21a91c3586a72f7fa46d6670c218d286b59dd90/DRAFT417.
 Selected runtime: 6772eb34330881dd06b82e8016b0ab61b16daefe; no production changes in S8.
 Order: completed R1/S0/S1/S2/S3/S4/S7/S5 -> current S8 -> S6; never restart a completed phase.
@@ -26,17 +26,17 @@ Rejected: policy-horizon,Mark-strike(Blackcup55→85),broad cooldowns,320display
 Compatibility: OFF8250 digest47477251... exact; A5fallback180battles/45routes exact; baseline13 exact.
 Source gates/current compatibility: s5-selected/audit.json; corrected failures retained in FIXLOG.md.
 S8 artifact: /tmp/cardrpg-v5a-s5-tip-artifact/index.html;20,961,816bytes/SHA4e310b07f9dfb005abdff830d498e8d0f6615553e1710a2ce12eeedad3a3638e.
-S8 existing owned processes:transition13818 -> s8-series94866 -> Home94867; continuation.json proves ownership.
-S8 Home started08:15:56UTC; same process/browser,44active minutes/39encounters at09:20UTC,0errors; target60.
+S8 owned queue: transition13818/series94866 completed10:00:58UTC; sixgates1785web/1262rules/421E2E PASS.
+S8 Home completed09:37UTC:original browser60.04active minutes; first30rewardgap929.859s,combat990.289s.
 S8 registration:110slease targets,7shandoffs,Home03public-clickpolicy,naturalx1; real wall-time cafes.
 S8 default candidate:/tmp/cardrpg-v5a-s8-selected-default-dist; originalmain340f88b9 reverified unchanged.
-S8 first30 retained:rewardgap929.859s,combat990.289s(+10.441%vsH0),capnotice14.638min; completion pending.
-S8 review:TRAIN-REVIEW.md; run elapsed-attribution.mjs after Home metrics; PRE-S6-REVISIT awaits all observations.
+S8 Home first30:deadtime+10.441%vsH0;466.403s losses;capnotice14.638min. Both cadence gatesMISS.
+S8 review: PRE-S6-REVISIT.md records every open group; earnedboss130.129s and fixedYarn280.037sMISS.
 Acceptance20001–20500 UNUSED; register both modes/source/tools/cases before first use.30001/40001 unused.
 S6 tools preflightPASS; once-onlyZ includes ready-scene fallback/HP-plate diagnostic; no samples yet.
-Next: finish existing S8 queue,review observations/FIXLOG,publish S8draft+ledger; branch/register/run pairedS6.
+Next: publish S8draft+ledger/outbox; branch/register/run pairedS6 on20001–20500.
 Then S6: all numeric scopes both modes,sixgates,offline skills-v5.html,Zpack,guide/playtest,fresh-eyes,report/outbox.
-B08:17read: separateDRAFT420 integration;45/45natural cue coverage; retain original narrow ending limitations.
+B08:56read: separateDRAFT420/421;45/45natural cue coverage; retain narrow ending/performance limits.
 B request guardian underuse disclosureADOPTED; no unanswered designREQUEST. A130draw target unchanged.
 A owns no B renderer paths; no renderer integration implicit. Main docs/cardrpg3/index.html staysA4.
 Untouchable uncommitted:.DS_Store and a5/b1/display-context-40/{partial,results}.json; unchanged by A.

@@ -37,12 +37,14 @@ function short(r){const m=r.measured;
  return r.status;
 }
 const a5Rows=on.rows.filter(r=>r.id.startsWith('A5.')).map(r=>`|${captions[r.id]??r.id.replace('A5.','')}|${short(r)}|${short(row(off,r.id))}|${r.status}|`).join('\n');
+const observedBosses=[...s8.sampledBosses,...s8.homeBosses];
+const bossPacingPass=observedBosses.length>0&&observedBosses.every(r=>r.seconds>=45&&r.seconds<=90);
 const m30=home.metrics.find(r=>r.minutes===30),v5Rows=[
  ['Multi-foe damage≥30%','9.1%',paired('multiFoeShare','%'),variant('multi-foe')],
  ['Multi-ally support≥35%','19.4%',paired('multiAllyShare','%'),variant('multi-ally')],
  ['≥2announced reactions; each≥40% named crew','~4.8unannounced',paired('reactionsPerBattle')+'; '+row(on,'V5.reaction-coverage').measured.map(r=>r.id+' '+pct(r.share)).join(', '),variant('reactions')&&all(['V5.reaction-coverage'])],
  ['Every cat≥1ultimate/normal','2–3%of actions',paired('allCatsUltimateShare','%')+' battles meet every-cat condition',variant('ultimates')],
- ['Normals8–12rounds; earned boss45–90s','17.3all-encounter rounds',paired('normalRounds')+'; boss '+status(s8.day7.bossVictory&&s8.day7.boss45to90s),variant('normal-rounds')&&s8.day7.bossVictory&&s8.day7.boss45to90s],
+ ['Normals8–12rounds; earned boss45–90s','17.3all-encounter rounds',paired('normalRounds')+'; earned boss '+status(s8.day7.bossVictory&&s8.day7.boss45to90s)+'; '+observedBosses.filter(r=>r.seconds>=45&&r.seconds<=90).length+'/'+observedBosses.length+' fixed/Home bosses within45–90s',variant('normal-rounds')&&s8.day7.bossVictory&&s8.day7.boss45to90s&&bossPacingPass],
  ['Each keyword≥1/3battles; cleanse≥3%support','cleanse0.1%old scope','Keyword '+status(variant('keywords'))+'; cleanse '+paired('cleanseSupportShare','%'),variant('keywords')&&variant('cleanse')],
  ['4approved crews within5pp; cats55–75%','Unmeasured','Named crews '+row(on,'V5.named-crews').status+'; cats '+short(row(on,'A5.cats')),all(['V5.named-crews','A5.cats'])],
  ['Cast≤16.8ms; draws≤130; demo+≤1.5MB','16.8ms/115draws',`${n(s8.performance.nativeCastMax)}ms/${s8.performance.peakDraws}draws/+${s8.size.deltaFromA5}bytes; inherited renderer`,s8.performance.nativeCastPass&&s8.performance.drawPass&&s8.size.v5DeltaPass],

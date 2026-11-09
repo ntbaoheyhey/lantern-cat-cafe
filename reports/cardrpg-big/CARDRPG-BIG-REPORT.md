@@ -1,4 +1,4 @@
-Báo cáo tiến độ mới nhất: [A5 checkpoint](a5/A5-REPORT.md). A5 đã cải thiện luồng mở đầu và ngày7; cân bằng, nhịp30phút, startup và nghiệm thu mới vẫn còn mở. Phần A4 bên dưới được giữ nguyên làm mốc lịch sử; không phải số đo của mã A5 hiện tại.
+Báo cáo hiện tại: [Skills V5 S5](skills-v5/S5-REPORT.md), [DRAFT417](https://github.com/ntbaoheyhey/taskbar-hero/pull/417), runtime6772eb343/evidenceb21a91c35. TRAIN 1–500 đã hoàn tất: 22 PASS / 20 MISS, điểm tự đánh giá 6.28/10; kiểm tra mã nguồn và hai chế độ tương thích PASS. S8 đang đo một phiên Home 60 phút cùng startup và nhịp trận; nghiệm thu20001–20500 chưa dùng. [STATE](skills-v5/STATE.md). Các gate A5 tiếp tục trong Skills V5; phần A4 bên dưới là mốc lịch sử.
 
 Bản thử nghiệm có đội hình, chiến thuật trước trận, trang bị và vật phẩm dùng giữa các trận.
 Cafe, nhiệm vụ, bộ sưu tập và đổi thưởng bằng dấu mời đã thành các vòng chơi có phần thưởng.
