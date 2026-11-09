@@ -9,7 +9,8 @@ try{
   const account=R.createDepthAccount(seed),battle=R.createBattle({seed,chapter:1,cats:R.battleCats(account),enemies:['button-guard','sock-skipper']});R.playBattle(battle,'auto');
   rows.push({seed,bytes:Buffer.byteLength(JSON.stringify(battle)),sha256:createHash('sha256').update(JSON.stringify(battle)).digest('hex'),logSha256:createHash('sha256').update(JSON.stringify(battle.log)).digest('hex'),result:battle.result});
  }
- const baseline='reports/cardrpg-look/skills-v5/digests-before.json',phase=process.argv[2]||'before';await mkdir('reports/cardrpg-look/skills-v5',{recursive:true});
+ const out=process.env.V5_OUT||'reports/cardrpg-look/skills-v5';
+ const baseline=`${out}/digests-before.json`,phase=process.argv[2]||'before';await mkdir('reports/cardrpg-look/skills-v5',{recursive:true});
  if(phase!=='before'&&JSON.stringify(rows)!==JSON.stringify(JSON.parse(await readFile(baseline))))throw Error('Battle digest changed');
- await writeFile(`reports/cardrpg-look/skills-v5/digests-${phase}.json`,JSON.stringify(rows,null,2));console.log(JSON.stringify({phase,seeds:rows.length,match:true}));
+ await writeFile(`${out}/digests-${phase}.json`,JSON.stringify(rows,null,2));console.log(JSON.stringify({phase,seeds:rows.length,match:true}));
 }finally{await vite.close()}

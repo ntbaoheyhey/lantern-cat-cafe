@@ -45,3 +45,29 @@ Evidence currently 21,281,201bytes (<25MB); raw PNGs/frames in /tmp/cardrpg-v5lo
 
 [DRAFT409](https://github.com/ntbaoheyhey/taskbar-hero/pull/409), stacked on395; runtime3968da538, evidence41cc9634e.
 [Coordination receipt](HANDOFF.json): B-OUTBOX DONE and V3 schema REQUEST pushed; no active B jobs, stop at V0.
+
+## V0.1 · Readability fixes
+
+Đã neo chữ phản ứng theo từng mục tiêu, hạ Mark/Daze sát đầu và tăng độ rõ của lửa.
+Huy hiệu có khung màu riêng; khói vụn tan nhanh, Warm/Glaze đạt độ mờ 76%.
+Chỉ sửa phần nhìn; năm seed giữ nguyên kết quả. Tiếp tục V3 tự động khi Lane A công bố fixture.
+
+| Fixed DPR1 shot / self-grade | V0 before | V0.1 after |
+| --- | --- | --- |
+| Burn: 8/10: five side flames countable | ![Before](shots/after-1440-1-burn.webp) | ![After](v01/shots/after-1440-1-burn.webp) |
+| Mark + Daze: 8/10: closer crowns with dark backing | ![Before](shots/after-1440-2-mark-daze.webp) | ![After](v01/shots/after-1440-2-mark-daze.webp) |
+| Regen + Warm: 7.5/10: visible honey halo | ![Before](shots/after-1440-3-regen-warm.webp) | ![After](v01/shots/after-1440-3-regen-warm.webp) |
+| All16: 7/10: framed badges, dense marks remain busy | ![Before](shots/after-1440-4-signatures.webp) | ![After](v01/shots/after-1440-4-signatures.webp) |
+| Three-target row: 7.5/10: unchanged stagger, legacy numbers busy | ![Before](shots/after-1440-5-row.webp) | ![After](v01/shots/after-1440-5-row.webp) |
+| Crumb Burst: 8/10: target-local words, bodies stay visible | ![Before](shots/after-1440-6-burst.webp) | ![After](v01/shots/after-1440-6-burst.webp) |
+
+Five-seed full battle/log parity PASS; native 16.8ms max (16 windows); peak 128 draws/176,533 tris. CPU4 cold 233.4→199.9ms (-14.4%).
+Badge/callout overlaps0 at1024/1280/1440; contrast7.00:1; icons16/20/20px, warm/teal/honey rim colours checked. Words500ms, offsets0/70/140ms; action clock unchanged.
+Protected faces0/80; crown mask excludes only empty space above the entire model from the circular margin; on-model face regions unchanged. [Contact sheet](v01/status-contact-sheet.webp).
+Typecheck/lint/unit1783web+1020rules/build PASS; E2E 421/421 PASS first run. [Gate receipts](v01/gates/checks.json).
+lookV2 OFF fixed-frame canvas/HUD pixels exact; startup11 chunks/3,522,500bytes, unchanged sizes/modules, zero Three/model modules.
+Demo [v5-v0.html](../../../docs/cardrpg-look/v5-v0.html):29,132,360bytes, SHA256 `9793d01f0f91964f44e49516ec09ebce97890c31f59cfb4ea8305886901db8d6`. [Natural20s after](v01/videos/after-20s.mp4),1440×900,x1,no cuts.
+[Measurements](v01/RESULTS.json) · [Source audit](v01/source-audit.json). F1–F6 only; no rules/protected changes; prior misses retained. Self-grades are not user review; human recognition NOT VERIFIED.
+Video thumbnail export lacked a WebP encoder; recovered from the completed original MP4 without recapture. [Failure/recovery](v01/videos/checks.json); same-initial hash was not recorded for this clip.
+V3 follows automatically after published V5A-S4 DONE events v2 fixture; native wait has no timing lease. Draft stacked on409; no merge/deploy.
+Evidence: 3,657,439 added bytes (<8MB); total <25MB. Large JSON receipts use lossless gzip; startup images use pixel-exact lossless WebP. [Packing](v01/packing.json).

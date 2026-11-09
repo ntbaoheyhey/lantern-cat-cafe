@@ -7,8 +7,8 @@ import assert from 'node:assert/strict';
 import {coverage} from '../b2/coverage.mjs';
 const sharp=createRequire('/Users/bao/tools/cardrpg-look/npm/package.json')('sharp');
 const side=process.argv[2]||'after',artifact=resolve(side==='before'?'/tmp/cardrpg-v5look-before.html':'docs/cardrpg-look/v5-v0.html');
-const out='reports/cardrpg-look/skills-v5',raw='/tmp/cardrpg-v5look-marks';await mkdir(`${out}/shots`,{recursive:true});await mkdir(raw,{recursive:true});
-const fixture=JSON.parse(await readFile(`${out}/fixtures.json`));
+const out=process.env.V5_OUT||'reports/cardrpg-look/skills-v5',raw=process.env.V5_RAW||'/tmp/cardrpg-v5look-marks';await mkdir(`${out}/shots`,{recursive:true});await mkdir(raw,{recursive:true});
+const fixture=JSON.parse(await readFile('reports/cardrpg-look/skills-v5/fixtures.json'));
 const receipt={side,artifact,sha256:createHash('sha256').update(await readFile(artifact)).digest('hex'),method:'DPR1 fixedTime3.2 presentation fixtures; raw rule-resolved multi/burst casts. No timing claims from screenshots.',shots:[],ui:[],marks:[],errors:[]};
 const browser=await chromium.launch({channel:'chromium',args:['--use-angle=metal']});
 try{
@@ -34,12 +34,14 @@ try{
    const comboLayout=await page.evaluate(()=>{
     const callouts=[...document.querySelectorAll('.dp-combo-callout')].filter(e=>!e.hidden).map(e=>e.getBoundingClientRect().toJSON());
     const plates=[...document.querySelectorAll('.dp-world-plate')].filter(e=>!e.hidden).map(e=>e.getBoundingClientRect().toJSON());
+    const stage=document.querySelector('.dp-arena').getBoundingClientRect();
+    const reserved=[...document.querySelectorAll('.dp-ultimate-moment,.dp-party,.dp-battle-top')].map(e=>e.getBoundingClientRect().toJSON());
     const hit=(a,b)=>a.left<b.right&&a.right>b.left&&a.top<b.bottom&&a.bottom>b.top;
-    return {width:innerWidth,callouts,wordOverlaps:callouts.reduce((n,a,i)=>n+callouts.slice(i+1).filter(b=>hit(a,b)).length,0),plateOverlaps:callouts.reduce((n,a)=>n+plates.filter(b=>hit(a,b)).length,0)};
+    return {width:innerWidth,callouts,reservedOverlaps:callouts.reduce((n,a)=>n+reserved.filter(b=>hit(a,b)).length,0),outside:callouts.filter(a=>a.left<stage.left||a.right>stage.right||a.top<stage.top||a.bottom>stage.bottom).length,wordOverlaps:callouts.reduce((n,a,i)=>n+callouts.slice(i+1).filter(b=>hit(a,b)).length,0),plateOverlaps:callouts.reduce((n,a)=>n+plates.filter(b=>hit(a,b)).length,0)};
    });
    receipt.comboLayouts??=[];receipt.comboLayouts.push(comboLayout);
    await shot('combo-layout');
-   assert.equal(comboLayout.wordOverlaps,0,'combo words must not overlap');assert.equal(comboLayout.plateOverlaps,0,'combo words must not cover HP plates');
+   assert.equal(comboLayout.callouts.length,3);assert.equal(comboLayout.reservedOverlaps,0);assert.equal(comboLayout.outside,0);assert.equal(comboLayout.wordOverlaps,0,'combo words must not overlap');assert.equal(comboLayout.plateOverlaps,0,'combo words must not cover HP plates');
    await apply(fixture.statuses.map(s=>s.id));
    const ui=await page.evaluate(()=>{
     const intersect=(a,b)=>a.left<b.right&&a.right>b.left&&a.top<b.bottom&&a.bottom>b.top;
@@ -52,7 +54,7 @@ try{
     }
     const lum=c=>{const rgb=c.match(/[\d.]+/g).slice(0,3).map(Number).map(n=>{const v=n/255;return v<=.04045?v/12.92:((v+.055)/1.055)**2.4});return rgb[0]*.2126+rgb[1]*.7152+rgb[2]*.0722};
     const contrast=badges.map(e=>{const s=getComputedStyle(e),a=lum(s.color),b=lum(s.backgroundColor);return (Math.max(a,b)+.05)/(Math.min(a,b)+.05)});
-    return {width:innerWidth,badges:badges.length,overlap,bounds,contrastMin:Math.min(...contrast),overflow:document.documentElement.scrollWidth>innerWidth,plateAudit:window.__depthScene.labelAudit};
+    return {width:innerWidth,iconPixels:[...document.querySelectorAll('.dp-status-badge svg')].map(e=>e.getBoundingClientRect().width),families:[...document.querySelectorAll('.dp-status-badge')].map(e=>({family:e.dataset.statusFamily,rim:getComputedStyle(e).borderColor})),badges:badges.length,overlap,bounds,contrastMin:Math.min(...contrast),overflow:document.documentElement.scrollWidth>innerWidth,plateAudit:window.__depthScene.labelAudit};
    });
    await page.locator('.dp-status-badge').first().focus();await page.getByRole('tooltip').waitFor();
    ui.focusText=await page.getByRole('tooltip').innerText();assert.match(ui.focusText,/Stacks 5\/5.*3 rounds/);
@@ -68,8 +70,12 @@ try{
    await page.evaluate(()=>{const s=window.__depthScene;s.render({...s.view(),fixedTime:9.2,paused:true},0);s.dirty=false});
    const staticB=await page.evaluate(()=>[...window.__depthScene.cardEffects.root.children].filter(m=>m.visible).map(m=>Array.from(m.instanceMatrix.array.slice(0,m.count*16))));
    assert.deepEqual(staticB,staticA);ui.reducedMotionStatic=true;
+   await apply(['scald','cozy','crumb']);
+   ui.familyRims=await page.evaluate(()=>[...document.querySelectorAll('.dp-status-badge')].map(e=>({family:e.dataset.statusFamily,rim:getComputedStyle(e).borderColor})));
+   for(const rim of ui.familyRims)assert.equal(rim.rim,{debuff:'rgb(239, 170, 115)',buff:'rgb(128, 216, 202)',signature:'rgb(244, 219, 149)'}[rim.family]);
+   assert.equal(new Set(ui.familyRims.map(r=>r.family)).size,3);
    receipt.ui.push(ui);
-   if(width===1440){
+   if(width===1440&&!process.env.V5_QUICK){
     for(const status of fixture.statuses){
      await apply([status.id]);
      const detail=await page.evaluate(coverage);
@@ -77,10 +83,11 @@ try{
       const s=window.__depthScene,e=s.cardEffects;
       s.render({...s.view(),fixedTime:3.2,paused:true},0);s.dirty=false;
       const masks=e.protectedFaces.slice(0,e.material.uniforms.protectedCount.value).map(v=>v.toArray());
+      const headTops=Array.from(e.protectedHeadTops??[]);
       const stats={...s.stats},effectStats={...e.stats},real=s.renderer.domElement.toDataURL('image/png');
       e.root.visible=false;e.setLightsEnabled(false);s.post.render(s.scene,s.camera,0,0,'#ffe6d2',true);
       const without=s.renderer.domElement.toDataURL('image/png');e.root.visible=true;e.setLightsEnabled(true);
-      return {masks,stats,effectStats,real,without};
+      return {masks,headTops,stats,effectStats,real,without};
      });
      for(const key of ['real','without']){await writeFile(`${raw}/${status.id}-${key}.png`,Buffer.from(sample[key].split(',')[1],'base64'));delete sample[key]}
      receipt.marks.push({id:status.id,name:fixture.identities[status.id].name,subtitle:status.name,...sample,...detail,real:`${raw}/${status.id}-real.png`,without:`${raw}/${status.id}-without.png`});
