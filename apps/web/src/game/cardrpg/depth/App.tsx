@@ -31,6 +31,7 @@ import './meta.css';
 import '../look-tokens.css';
 import './look-meta.css';
 const ShellV3 = lazy(() => import('../ui-v3/ShellV3'));
+const BattleHudV3 = lazy(() => import('../ui-v3/BattleHudV3'));
 const rarityStyle = Object.fromEntries(Object.entries(lookTokens.rarities).flatMap(([rarity, values]) =>
   Object.entries(values).map(([name, value]) => [`--look-${rarity}-${name}`, String(value)]))) as CSSProperties;
 const navigation: [Screen, string, string][] = [
@@ -83,6 +84,7 @@ export default function DepthApp({ offline = false, gameplayV4 = false, skillsV5
     <Suspense fallback={<p role="status">Opening the cafe…</p>}><ShellV3 m={m}>{pageView}</ShellV3></Suspense>
     <DiscoveryCelebrationV4 m={m}/>
     {m.sceneStarted && <div className="dp-battle-shell"><Suspense fallback={<p role="status">Preparing the battle…</p>}><BattleView m={m}/></Suspense></div>}
+    {m.showBattle && <Suspense fallback={null}><BattleHudV3 m={m}/></Suspense>}
   </div></CompanionPreviewProvider>;
   return <CompanionPreviewProvider m={m}><div ref={app} data-player-v4={activeGameplayV4(m.state) && !reviewTools} data-look-v2={lookV2} data-battle-active={m.showBattle} style={lookV2 ? rarityStyle : undefined} className={`cr-app dp-app ${m.state.settings.reducedMotion ? 'dp-reduced-motion' : ''}`}><div className="dp-cafe">
     <a className="cr-skip" href="#depth-main">Skip navigation</a><aside className="cr-sidebar"><button className="cr-brand" disabled={m.showBattle} onClick={() => m.go('hub')}><span>♜</span><b>THE LANTERN<br /><small>CAT CAFE QUEST</small></b></button><p className="cr-sidebar-caption">A little courage, every day.</p><nav aria-label="Cafe screens">{navigation.filter(([id])=>(id!=='journal'||activeGameplayV4(m.state))&&(id!=='evidence'||reviewTools)).map(([id, icon, name]) => <button key={id} disabled={m.showBattle} title={m.showBattle ? 'Finish or leave the table to change screens.' : undefined} aria-current={m.screen === id ? 'page' : undefined} onPointerEnter={() => preloadPreviewModels(id === 'gacha' ? ['clover'] : m.state.team)} onFocus={() => preloadPreviewModels(m.state.team)} onClick={() => m.go(id)}><span aria-hidden="true">{icon}</span>{name}</button>)}</nav><div className="cr-sidebar-bottom"><b>THE FIRST LANTERN</b><p>{offline ? 'Offline preview · keep progress with save codes' : 'Local account · automatic saving'}</p><small>Desktop prototype · 0.7.0</small></div></aside>
