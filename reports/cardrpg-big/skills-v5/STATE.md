@@ -1,8 +1,8 @@
 # Skills V5 lane A state
 Base: d22f47cb8 (A5 closing tip, DRAFT406; paused WIP c7b0c498f preserved).
 Runtime baseline: 0e1e15180108b443ce2e615ea54272b907cc8bb0.
-Phase: S1 published as DRAFT408; S2 shapes/reactions next; user explicitly resumed 2026-11-09.
-Branch: codex/cardrpg-v5a-s1-2026-11-09.
+Phase: S2 validated; S3 next; user explicitly resumed 2026-11-09.
+Branch: codex/cardrpg-v5a-s2-2026-11-09; S1 closing tip31e7c2c7f.
 Done: git status/log recorded; handoff found under memory/; rules/outboxes read.
 Done: ON/OFF artifacts match 20,929,841 bytes and 9e25f238 / 9158b51e.
 Done: no live A5 job found; inherited recent commits are the documented paused WIP.
@@ -16,12 +16,15 @@ Runtime S1: 423e430f6; source-bound audit PASS. No live A validation job.
 Done: S1 type/lint/web1783/rules1223/build PASS (+2 expected fail/11 skips); E2E420+isolated1 PASS.
 Original E2E Home timing5.28s>5s retained; isolated recovery unchanged source.
 Done: S1 DRAFT408 on407, runtime423e430f6/evidencee8b8254c8.
-Next: S2 staged at /tmp/cardrpg-v5a-s2 (not applied/tested).
+S2 applied from staged resolver; lethal unmarked Wildfire edge added before tests.
+Done: S2 12 focused/six gates PASS incl first-attempt E2E421; OFF8250 + fallback exact; audit PASS.
+Done: S2 DRAFT410 on408; runtime8412383c2/evidencedabd2a4e5.
+Next: apply and validate staged S3.
 Draft S3 kits/policy/enemies at /tmp/cardrpg-v5a-s3, NOT applied/tested; no phase bypass.
 Spec conflict: Cinnamon keep-kit has no multi-target; revive-only ultimate cannot fire without a fallen ally. Keep/report, no silent redesign.
 Next phases: S0 -> S1 -> S2 -> S3 -> S4 -> S5 -> S8 -> S6; S7 after S3.
 Acceptance: 20001-20500 UNUSED; TRAIN 1-500 only.
 Open: fourth-slot 63/384, worst88.8pp; cats/sets/bands; cadence723s/deadtime2%; startup/static display/Z.
-B: V5LOOK V0 active from 598fd8019; no events-v2 fixture yet. No B-owned edits.
+B: V0 DRAFT409; V0.1 active; V3 REQUEST waits for published S4 fixture DONE. No B-owned edits.
 Untouchable: .DS_Store and display-context-40/{partial,results}.json preserved uncommitted.
 No model helpers, CUA, Docker, main checkout edits, merge or deploy.
