@@ -39,3 +39,9 @@
 - Attempt2 produced a provider preview but GLB extraction failed on ZeroGPU quota. No exported mesh, no rig, no runtime acceptance. Keep the original failure and preview bytes; do not resubmit inference to hide it or bypass quota.
 - fal remains unconnected; its suggestion is already visible. User needs to connect the service, not re-authorize the same image conversion. No duplicate plugin suggestion or external purchase.
 - Continue the direct-image route once an exportable mesh is available. Do not promote the rejected painted or primitive candidate in the meantime. Current checkpoint is PARTIAL; R1 is not complete.
+
+## Browser automation succeeded — 2026-11-09T22:53:33.409814+00:00
+- The user asked to automate the existing signed-in TRELLIS workflow. Resumed its already-uploaded original PNG; one Generate and one Extract, no duplicate request. This later user direction supersedes the previous no-retry checkpoint.
+- Exact seed20261109/resolution1024/decimation100000/texture2048 retained. Export succeeded; source5369360B,96900tri,2embeddedtextures,0skins,0animations, SHAeb84d0f8ca114736806432a18c0abd7249f3fb451c642c53fb28a1a85c0912a6.
+- Browser file-download helpers timed out; fetched the exact observed generated-file URL using urllib, without accessing browser cookies or credentials. No plugin connection or purchase needed. Original failure receipts retained.
+- Conversion is complete; rig, geometry repair, animation and runtime quality remain separate unverified work. Raw model retained outside demo/git.

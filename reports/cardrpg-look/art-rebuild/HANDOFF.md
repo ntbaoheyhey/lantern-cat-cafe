@@ -1,3 +1,13 @@
+# Latest continuation checkpoint — 2026-11-09T22:52 UTC
+
+The user asked to automate the already signed-in TRELLIS browser workflow. This is now successful: original Mochi PNG -> Generate -> Extract GLB -> local download. Do not submit inference again for this source.
+Source `assets/source/look-v3/image-to3d/mochi-source.glb`, 5369360bytes, SHAeb84d0f8ca114736806432a18c0abd7249f3fb451c642c53fb28a1a85c0912a6. Original also at `~/art/look-v3/image-to3d/mochi/browser-20261109/mochi-source.glb`.
+96900triangles,2embeddedWebPtextures,UVs,0skins/animations. Prior quota failure retained. Fal is no longer a dependency for this Mochi conversion. No credentials read, purchase or new concept generation.
+Browser result kept as a deliverable; screenshot and browser-*.json in r1/image-to-3d. Direct observed URL download used after browser download helper timeouts.
+Local neutral six-angle review completed through with-timing-lock.mjs; lease released. Renders in r1/image-to-3d/browser-review. Preserve unaccepted dirty runtime candidates. Next simplify and rig reviewed geometry, verify articulated battle motion before expansion. R1 remains PARTIAL, no pipeline accepted.
+
+---
+
 # Active continuation checkpoint — 2026-11-09T22:31:35.707869+00:00
 
 User resumed the paused run and explicitly authorized direct external image-to-3D for Mochi. The paused handoff below is historical.

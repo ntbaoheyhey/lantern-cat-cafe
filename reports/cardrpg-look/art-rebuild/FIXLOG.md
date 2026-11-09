@@ -22,3 +22,6 @@ Measured: image_to_3d returned provider preview; extract_glb failed on ZeroGPU q
 Hypotheses: service quota (confirmed explicit error), geometry failure (not evidenced), client serialization failure (not evidenced).
 Action: preserve six preview images and receipt, mark PREVIEW_ONLY_EXPORT_BLOCKED, prepare structural/import checks, use already authorized fal route after connection. No repeated inference/quota workaround.
 Verification: preview hashes match source; fal installed:false. Rig, motion, performance, topology and real-battle image quality NOT VERIFIED. Status PARTIAL, external dependency; no runtime regression introduced by this checkpoint.
+
+### B-R1-006 follow-up 2026-11-09T22:53:33.409814+00:00
+User explicitly requested automation of the already signed-in browser workflow. One new Generate and Extract succeeded. Downloaded raw GLB via exact visible link; structure96900tri/2textures/0skins/0clips. Prior quota failure unchanged. Export blocker RESOLVED for Mochi; rig/runtime still NOT VERIFIED. Browser download timeout retained in browser-automation.json.
