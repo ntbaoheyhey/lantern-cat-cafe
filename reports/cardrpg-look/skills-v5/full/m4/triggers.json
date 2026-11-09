@@ -1,0 +1,69 @@
+{
+  "label": "M4 trigger source",
+  "root": "/tmp/cardrpg-v5full-m4/triggers",
+  "cwd": "/Users/bao/taskbar-hero-cardrpg-b2",
+  "env": {
+    "V5_ARTIFACT": "/tmp/cardrpg-v5full-m4/triggers/v5-triggers.html"
+  },
+  "groups": [
+    {
+      "name": "source",
+      "lock": false,
+      "jobs": [
+        {
+          "name": "typecheck",
+          "args": [
+            "pnpm",
+            "typecheck"
+          ],
+          "env": {}
+        },
+        {
+          "name": "lint",
+          "args": [
+            "pnpm",
+            "lint"
+          ],
+          "env": {}
+        },
+        {
+          "name": "unit",
+          "args": [
+            "pnpm",
+            "test"
+          ],
+          "env": {}
+        },
+        {
+          "name": "parity",
+          "args": [
+            "node",
+            "tools/cardrpg-look/skills-v5/full/parity.mjs"
+          ],
+          "env": {
+            "V5_OUT": "/tmp/cardrpg-v5full-m4/triggers/parity"
+          }
+        },
+        {
+          "name": "offline-build",
+          "args": [
+            "node",
+            "tools/cardrpg-look/build.mjs"
+          ],
+          "env": {
+            "LOOK_OUTPUT": "/tmp/cardrpg-v5full-m4/triggers/v5-triggers.html",
+            "LOOK_RECEIPT": "/tmp/cardrpg-v5full-m4/triggers/build.json"
+          }
+        },
+        {
+          "name": "production-build",
+          "args": [
+            "pnpm",
+            "build"
+          ],
+          "env": {}
+        }
+      ]
+    }
+  ]
+}

@@ -19,7 +19,7 @@ Wildfire travels in staggered fronts, Rupture tensions/snaps, Spread flies statu
 | Boss hierarchy |1.517–1.843x vs2x;allvertices inside;PARTIAL|[full13enemy roster](roster4/roster.json.gz)|
 | Casts first+repeat |168windows;native16.8ms/CPU4 33.3ms;125draws/173949tris|[casts](casts4/casts.json.gz)|
 | Typecheck/lint/unit/build |PASS;1798web tests;full workspace checks retained|[logs](gates)|
-| Full E2E |421/421 PASS; no retries|[log](gates/e2e5.log)|
+| Full E2E |421/421 PASS; no retries|[log](gates/e2e5.log.gz)|
 | Keyboard/Escape/reduced motion |12casesPASS;hint close/gallery bounds3widthsPASS|[UI](ui2/ui.json.gz),[extras](extras4/extras.json.gz)|
 | OFF startup |11loaded chunks same bytes+members;0Three/models|[comparison](startup-comparison.json)|
 

@@ -1,5 +1,5 @@
-18 trận thật khớp hàm băm; bộ đo ban đầu xác nhận 38/45 ô, phần bổ sung đang chạy.
-Các nhãn và số tránh va chạm ở ba độ rộng; bản sửa mới giữ rõ hồi máu bị Bitter giảm.
-Tuyệt kỹ và kỹ năng có thêm lớp hiệu ứng; tự chấm hình ảnh vẫn chưa đạt 7,5.
-Yarn và Pantry vượt tỉ lệ 2×; Kettle đạt 1,997×, không cắt chân nhưng vẫn thiếu ngưỡng.
-Đang đóng gói demo đầy đủ/bản nhẹ và bốn clip; startup OFF lệch 3 byte đang được truy nguyên.
+Đã đóng gói demo thật 30,075 MB và bản nhẹ 21,813 MB; 421/421 E2E bản tích hợp đạt.
+18 hạt giống khớp kết quả; 45/45 ô được bộ đo ghi nhận, hai ảnh vẫn là fixture.
+Tung chiêu tối đa 16,8 ms; mở lạnh CPU4 tối đa 183,3 ms; 147 lượt vẽ chưa đạt 130.
+Đủ bốn phim; clip 30 giây có hai phản ứng, sáu đòn đa mục tiêu và ba tuyệt kỹ.
+Tự chấm 7,54/10, hình ảnh 6,233/10; tiếp tục cập nhật lane A tới S6 rồi giao báo cáo M5 PARTIAL.

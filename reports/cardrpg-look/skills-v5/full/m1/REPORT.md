@@ -42,5 +42,5 @@ M1 review retains five concrete defects; top three carry to the already-scoped M
 | Unit/monster readability |8%|4|[P15/P1 review](review.webp): floor separation and boss hierarchy miss.|
 | Performance |15%|8|[summary](summary.json): cast/cold pass; texture slice misses.|
 | Live integration correctness |15%|2|Fixture only; runnable A branch recorded for M3, no live proof.|
-| Size/startup/compatibility |5%|7|29,210,352byte artifact; reduced-motionPASS; [OFF receipt](startup/checks.json).|
+| Size/startup/compatibility |5%|7|29,210,352byte artifact; reduced-motionPASS; [OFF receipt](startup/checks.json.gz).|
 Weighted self-score **5.55/10**; user acceptance not claimed. Lowest lines live integration and VFX: preserve M3 integration decision and MX0 baseline audit, then execute M2's explicit readability scope.

@@ -35,3 +35,7 @@ The design feedback to A already cites S5's measured Mochi2/Panko2 shares of0.38
 | Live correctness |15%|8|18exact hashes;38/45observed cells.|
 | Size/startup/compatibility |5%|8|Offline28.1MB;OFFbytes differ3B;attribution pending.|
 Weighted self-score **7.31/10**, provisional untilOFFbyte attribution;monsterdepth andskillidentity leadM4. Integration remains PARTIAL.
+
+### Additive M4 follow-up, 2026-11-09
+The original M3 measurements above remain unchanged. Five trigger-repair replays add404plans: the combined23samples/18unique seeds now observe45/45cells,exacthashes,0browsererrors. [Updated matrix](../m4/coverage/COVERAGE.md) preserves both artifact hashes and every original sample;ten original narrow ending probes remainNOTVERIFIED.
+Paired same-directory OFFstartup confirms the same11loadedmembers and0Three/model/errors,with literal entry28182→28185B duepreloadmetadata;bytegate remainsPARTIAL. M4 nativecasts16.8ms/CPU466.7ms,coldCPU4max183.3ms. Guide/package/film verification is recorded in[the M4 report](../m4/REPORT.md),not substituted for original M3 samples. Published A evidenceb21a91c35 leaves runtime6772eb343 unchanged.

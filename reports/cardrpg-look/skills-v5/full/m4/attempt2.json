@@ -1,0 +1,143 @@
+{
+  "label": "M4 attempt2",
+  "root": "/tmp/cardrpg-v5full-m4/attempt2",
+  "cwd": "/Users/bao/taskbar-hero-cardrpg-b2",
+  "env": {
+    "V5_ARTIFACT": "/tmp/cardrpg-v5full-m4/attempt2/v5-attempt2.html"
+  },
+  "groups": [
+    {
+      "name": "source",
+      "lock": false,
+      "jobs": [
+        {
+          "name": "typecheck",
+          "args": [
+            "pnpm",
+            "typecheck"
+          ],
+          "env": {}
+        },
+        {
+          "name": "lint",
+          "args": [
+            "pnpm",
+            "lint"
+          ],
+          "env": {}
+        },
+        {
+          "name": "unit",
+          "args": [
+            "pnpm",
+            "test"
+          ],
+          "env": {}
+        },
+        {
+          "name": "parity",
+          "args": [
+            "node",
+            "tools/cardrpg-look/skills-v5/full/parity.mjs"
+          ],
+          "env": {
+            "V5_OUT": "/tmp/cardrpg-v5full-m4/attempt2/parity"
+          }
+        },
+        {
+          "name": "offline-build",
+          "args": [
+            "node",
+            "tools/cardrpg-look/build.mjs"
+          ],
+          "env": {
+            "LOOK_OUTPUT": "/tmp/cardrpg-v5full-m4/attempt2/v5-attempt2.html",
+            "LOOK_RECEIPT": "/tmp/cardrpg-v5full-m4/attempt2/build.json"
+          }
+        },
+        {
+          "name": "production-build",
+          "args": [
+            "pnpm",
+            "build"
+          ],
+          "env": {}
+        }
+      ]
+    },
+    {
+      "name": "readability and identity review",
+      "lock": true,
+      "jobs": [
+        {
+          "name": "roster",
+          "args": [
+            "node",
+            "tools/cardrpg-look/skills-v5/full/roster.mjs"
+          ],
+          "env": {}
+        },
+        {
+          "name": "readability",
+          "args": [
+            "node",
+            "tools/cardrpg-look/skills-v5/full/readability.mjs"
+          ],
+          "env": {}
+        },
+        {
+          "name": "shots",
+          "args": [
+            "node",
+            "tools/cardrpg-look/skills-v5/full/shots.mjs"
+          ],
+          "env": {}
+        },
+        {
+          "name": "collide",
+          "args": [
+            "node",
+            "tools/cardrpg-look/skills-v5/full/collide.mjs"
+          ],
+          "env": {}
+        },
+        {
+          "name": "faces",
+          "args": [
+            "node",
+            "tools/cardrpg-look/skills-v5/full/faces.mjs"
+          ],
+          "env": {}
+        },
+        {
+          "name": "face-analysis",
+          "args": [
+            "/Users/bao/tools/cardrpg-look/venv/bin/python",
+            "tools/cardrpg-look/skills-v5/full/faces.py",
+            "/tmp/cardrpg-v5full-m4/attempt2/faces/face-frames.json",
+            "/tmp/cardrpg-v5full-m4/attempt2/faces/faces.json"
+          ],
+          "env": {}
+        },
+        {
+          "name": "ui",
+          "args": [
+            "node",
+            "tools/cardrpg-look/skills-v5/full/ui.mjs"
+          ],
+          "env": {}
+        },
+        {
+          "name": "contrast",
+          "args": [
+            "node",
+            "tools/cardrpg-look/skills-v5/full/contrast.mjs",
+            "/tmp/cardrpg-v5full-m4/attempt2/shots/shots.json.gz",
+            "/tmp/cardrpg-v5full-m4/attempt2/contrast.json"
+          ],
+          "env": {}
+        }
+      ]
+    }
+  ]
+}

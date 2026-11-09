@@ -1,0 +1,28 @@
+{
+  "label": "M4 natural status delta",
+  "root": "/tmp/cardrpg-v5full-m4/natural-delta",
+  "cwd": "/Users/bao/taskbar-hero-cardrpg-v5live",
+  "env": {
+    "V5_ARTIFACT": "/tmp/cardrpg-v5full-m4/live-pilot/v5-live-pilot.html",
+    "V5_REGISTRATION": "/tmp/cardrpg-v5full-m3/registration/registration.json",
+    "V5_FOLLOWUP": "/tmp/cardrpg-v5full-m4/live-pilot/trigger-cases2/cases.json"
+  },
+  "groups": [
+    {
+      "name": "five affected registered battles",
+      "lock": true,
+      "jobs": [
+        {
+          "name": "coverage",
+          "args": [
+            "node",
+            "tools/cardrpg-look/skills-v5/full/coverage.mjs"
+          ],
+          "env": {
+            "V5_IDS": "oven-pair-1,oven-healer-1,oven-boss-1,thread-pair-1,tea-healer-1"
+          }
+        }
+      ]
+    }
+  ]
+}

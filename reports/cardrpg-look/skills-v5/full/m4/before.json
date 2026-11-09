@@ -1,0 +1,27 @@
+{
+  "label": "M4 original before film",
+  "root": "/tmp/cardrpg-v5full-m4/before",
+  "cwd": "/Users/bao/taskbar-hero-cardrpg-b2",
+  "env": {
+    "V5_ARTIFACT": "/tmp/cardrpg-v5full-before395.html"
+  },
+  "groups": [
+    {
+      "name": "natural20seconds",
+      "lock": true,
+      "jobs": [
+        {
+          "name": "before",
+          "args": [
+            "node",
+            "tools/cardrpg-look/skills-v5/full/natural-video.mjs"
+          ],
+          "env": {
+            "V5_NAME": "before",
+            "V5_OUT": "/tmp/cardrpg-v5full-m4/before"
+          }
+        }
+      ]
+    }
+  ]
+}
