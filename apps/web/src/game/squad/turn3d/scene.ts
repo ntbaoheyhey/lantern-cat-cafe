@@ -1,3 +1,4 @@
+import { LookContactPool } from './look-contact-pool';
 import { LookEffectRim } from './look-effect-rim';
 import { targetTextLane } from './card-callout-layout';
 import type { StatusPresentation } from './card-status-beats';
@@ -126,6 +127,7 @@ export class TurnScene {
   private bossAtmosphere?: CardBossAtmosphere;
   private cameraTarget = new T.Vector3(0,.65,0);
   private blobMaterial!: T.MeshBasicMaterial;
+  private contactPool?: LookContactPool;
   private geometryOwned = new Set<T.BufferGeometry>();
   private materialOwned = new Set<T.Material>();
   private pick = (e: PointerEvent) => {
@@ -163,7 +165,7 @@ export class TurnScene {
     // Effect modules own their pools, including placeholders replaced at play.
     // Registering those here as well would dispose the same resources twice.
     const own=(o:T.Object3D)=>{
-      if(o===this.spells?.root||o===this.cardEffects?.root||o===this.bossAtmosphere?.root)return;
+      if(o===this.spells?.root||o===this.cardEffects?.root||o===this.bossAtmosphere?.root||o===this.contactPool?.root)return;
       if(o instanceof T.Mesh||o instanceof T.Line||o instanceof T.Points){this.geometryOwned.add(o.geometry);for(const material of Array.isArray(o.material)?o.material:[o.material])this.materialOwned.add(material);}
       if(o instanceof T.Sprite)this.materialOwned.add(o.material);
       for(const child of o.children)own(child);
@@ -177,6 +179,7 @@ export class TurnScene {
     this.glow=this.makeGlow();
     if(this.lookStageEnabled)this.contactTexture=this.makeContact();
     this.blobMaterial=new T.MeshBasicMaterial({map:this.contactTexture??this.glow,color:this.lookStageEnabled?'#172D36':'#151222',transparent:true,opacity:this.lookStageEnabled?.56:.45,depthWrite:false});
+    if(this.lookStageEnabled&&isReadableBattle()&&this.view().autoBattle){this.contactPool=new LookContactPool(this.blobMaterial);this.scene.add(this.contactPool.root);}
     this.scene.fog=new T.Fog('#252332',15,27);
     this.scene.add(new T.HemisphereLight('#f4e9e8','#675166',1.35));
     const key=new T.DirectionalLight('#ffe0ba',3.3); key.name='cafe-key'; key.position.set(-4,8,5); this.scene.add(key);
@@ -627,6 +630,7 @@ export class TurnScene {
     const display=view.effectOnly?this.effectPreview:this.scene;
     if(this.spells.root.parent!==display)display.add(this.spells.root);
     if(this.cardEffects&&!this.lookStageEnabled&&this.cardEffects.root.parent!==display)display.add(this.cardEffects.root);
+    if(this.contactPool){this.contactPool.begin();for(const p of this.puppets.values())this.contactPool.add(p.shadow,p.root.visible);this.contactPool.end();}
     this.renderer.info.reset();this.post.render(display,this.camera,(frame?.shake??0)*.35,frame?.progress??0,frame?.color??'#ffe6d2',view.reducedMotion);this.stats.quality=this.post.effectiveQuality;this.renderer.domElement.dataset.quality=this.stats.quality;this.stats.frames++;const info=this.renderer.info;Object.assign(this.stats,{calls:info.render.calls,triangles:info.render.triangles,geometries:info.memory.geometries,textures:info.memory.textures});
     if(this.stats.frames%60===1){const geometries=new Set<T.BufferGeometry>();const collect=(o:T.Object3D)=>{if(o instanceof T.Mesh||o instanceof T.Line||o instanceof T.Points)geometries.add(o.geometry);};this.scene.traverse(collect);if(this.lookStageEnabled)this.cardEffects?.root.traverse(collect);let bytes=64*64*4;for(const g of geometries){for(const attr of Object.values(g.attributes))bytes+=attr.array.byteLength;bytes+=g.index?.array.byteLength??0;}this.stats.estimatedGpuBytes=bytes;}
     // Labels are DOM overlays; do not traverse every mesh at the GPU cadence.
@@ -701,6 +705,7 @@ export class TurnScene {
     this.stageTextures.forEach(texture => texture.dispose());
     this.glow?.dispose();
     this.contactTexture?.dispose();
+    this.contactPool?.dispose();
     this.blobMaterial?.dispose();
     this.spells?.dispose();
     this.cardEffects?.dispose();

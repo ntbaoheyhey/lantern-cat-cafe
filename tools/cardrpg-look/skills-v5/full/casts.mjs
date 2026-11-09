@@ -9,7 +9,7 @@ const cats=['mochi','soot','clover','panko','mallow','sorrel','biscuit','inkcap'
 const fixtures=JSON.parse(await readFile(process.env.V5_CASES||'/tmp/cardrpg-v5full-m1/cases.json'));
 const common={clover:2,cinnamon:3,marigold:2}; // A S5 published matched use shares, source6772eb343.
 const allCues=[...cats.map(c=>({id:c+'-4',gallery:c+'-4',progress:0})),...cats.map(c=>({id:c+'-'+(common[c]??1),gallery:c+'-'+(common[c]??1),progress:0})),...fixtures.filter(r=>['P6','P9','P10','P11'].includes(r.id))];
-const cues=process.env.V5_IDS?process.env.V5_IDS.split(',').map(id=>allCues.find(r=>r.id===id)??{id,gallery:id,progress:0}):allCues;
+const cues=process.env.V5_IDS?process.env.V5_IDS.split(',').map(id=>allCues.find(r=>r.id===id)??fixtures.find(r=>r.id===id)??{id,gallery:id,progress:0}):allCues;
 const result={sha256:createHash('sha256').update(await readFile(artifact)).digest('hex'),selection:'Twelve ultimates + most-used skill for each cat from published A S5 matched use shares (6772eb343); four reaction fixtures.',rows:[],errors:[]};
 const browser=await chromium.launch({channel:'chromium',args:['--use-angle=metal','--enable-precise-memory-info']});
 try{for(const [width,height,cpu]of JSON.parse(process.env.V5_CAST_CONFIGS||'[[1280,720,1],[1440,900,1],[1440,900,4]]')){

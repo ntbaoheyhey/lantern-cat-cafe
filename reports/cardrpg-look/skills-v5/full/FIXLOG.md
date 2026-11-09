@@ -208,3 +208,10 @@ B-only status lookup accepts stored cafe subtitles; displayed apply/expiry label
 
 ### B-MX-008 isolated results FLAKY
 The unchanged StageLayout test passed twice sequentially in each worktree (four isolated runs, each <3s including process startup). Original full-suite timeout logs retained; no test/timeout changes. Root typecheck/lint/build passed. Full suite result is recorded as1800/1801 B and1852/1853 live plus2/2 isolated passes each, not a clean full-run claim.
+
+### B-M3-005 attribution / attempt1
+The failing live Yarn frame contains eight actors: four summoned Binding Threads use44 draws, cats57, Yarn15, stage13, effects10. Their parts are articulated; merging them statically would remove motion. Batch the existing ground-contact quads into two fixed instance pools (regular/boss) instead, preserving geometry, opacity, texture and poses. This should remove6draws on the152draw frame with no lost effect layer. If measured native/CPU4 casts and cold gates pass, use the prompt's conditional150draw ceiling for this eight-actor live scene; the130target remains separately reported as missed. No blanket low-quality switch or rule change.
+Fix1 immutable layout/face/UI capture continues; its parent33208 is paused before source E2E so the same suite runs once on the forthcoming draw fix. Existing completed and failed samples retained.
+
+## B-M3-006 2026-11-09T06:56Z M3 validation runner S4
+Fix2 preparation stopped before a sample because exclusive-create correctly rejected the existing initial typecheck.log. Preserve that receipt and completed lint; continue with typecheck-with-tests and the unstarted parity/build steps only. No failing product test, sample replacement or gate relaxation. The full1856web suite already passed.
