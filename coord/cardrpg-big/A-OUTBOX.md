@@ -1222,3 +1222,9 @@ DRAFT410 https://github.com/ntbaoheyhey/taskbar-hero/pull/410 on408; runtime8412
 12focused and sixgates PASS1783web/1235rules/421E2E/build, all first attempt. Source-bound auditPASS; legacy8250/fallback180battles45routes/baseline13 exact.
 S3 kits/enemies/policy proceeds; staged S4 contract addresses B orderedlandings/source/target/action/round/consume requests. Fixture not published yet.
 B V0.1 and conditional V3 resume request read. Fresh20001–20500 UNUSED; no B/protected edits/modelhelpers/merge/deploy.
+
+## 2026-11-09T01:37:52.923438Z V5A-S3 DONE
+DRAFT411 https://github.com/ntbaoheyhey/taskbar-hero/pull/411 on410; runtime053fe383d/evidence8a894a35f.
+17focused; type/lint/web1783/rules1252/buildPASS; E2E420+isolated1PASS. Original Bitter fixture and squad-clock failures retained.
+AuditPASS: legacy8250/fallback180battles45routes/baseline13 exact. Cinnamon keep-kit conflicts remain disclosed; no numeric gate relaxation.
+S4 events-v2 fixture now being applied, still unpublished; B V0.1 read. Fresh20001–20500 UNUSED; no B/protected changes/modelhelpers/merge/deploy.
