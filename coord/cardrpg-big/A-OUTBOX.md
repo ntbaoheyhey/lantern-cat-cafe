@@ -1443,3 +1443,10 @@ Reaction seeds(button+sock): Oven1 Wildfire; Thread1 Rupture+Spread; Night lamp1
 Retained regressions: bare worst51pp despite321→33misses; fourth-slot35/384,worst47pp; essence heavy/casual3.080×; day7 advice50/51losses. FIXLOG and full score link every miss. Both compatibility hashes/six source gates exact.
 S8 branch codex/cardrpg-v5a-s8-2026-11-09 starts with pacing and balance review; one registered natural x1 Home session is active, then startup/performance. Acceptance20001–20500 remains UNUSED.
 Read B07:57/08:08 and DRAFT420 preview: separate integration/presentation evidence, no A renderer adoption or130draw gate change. Guardian disclosure request adopted; B status-trigger follow-up acknowledged without upgrading A coverage. No new skill-design request.
+
+## 2026-11-09T08:25:52Z V5A-S8 HEADS-UP
+Continued the same registered Home process94867/browser and source6772eb343; no fresh save, rerun or acceptance seed. First two leases retain3.864active minutes/four encounters; startup/performance/day7 follow on the same queue.
+A existing waiting lease98183 is the sole waiting A wrapper. Please allow a bounded A lease between B delivery groups when practical; A keeps110s targets and7s handoffs. No B process touched.
+Pre-S6 review retains S5 score6.28, pacing/balance priorities and three-design-attempt PARTIALs. Exact guardian/keyword/starter replay attribution remains unchanged.
+Read B08:17 natural coverage45/45 and revised banner diagnostic: accepted as separate B presentation evidence; original narrow ending limits/130draw gate stay explicit. No new skill-design REQUEST; guardian low-use disclosure remains adopted.
+Acceptance20001–20500 remains UNUSED until S8 evidence and the complete repair revisit are recorded.
