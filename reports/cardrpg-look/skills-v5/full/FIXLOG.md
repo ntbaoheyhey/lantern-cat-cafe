@@ -182,6 +182,11 @@ B-M3-004 source attribution correction: A keeps the scene mounted after result w
 
 ### B-M3-004 focused verification FIXED (probe only)
 end-state1 shows result screen, suspended=true, computed canvas visibility:hidden throughout its battle ancestors, zero transient labels, and exact Oven1digest b131409c...; retained actionFrame is not visible. Width alone is insufficient because visibility:hidden preserves layout. Remaining Night/Tea probes inspect computed visibility; original10 narrower false clear results retained and not relabelled as passing natural samples. No product fix needed.
+### B-M3-002 verification FIXED 2026-11-09T06:04:43.946845+00:00
+Corrected live artifact20b76874ec7e initializes model in normal/dev modes; no loader/browser errors, live probe absent in normal mode. Evidence /tmp/cardrpg-v5full-m3/merge4/smoke/smoke.json. Original failing merge3artifact and DOM/console receipt retained. Resumed registered coverage3/delivery2 on corrected payload; coverage2 never acquired lease or sampled. Root gates queued; this change alters packaging only.
+
+### Evidence packing correction 2026-11-09T06:13Z
+Raw CDP traces were included by the generic packer and exceeded the80MB evidence cap before staging. Exclude raw -trace.json files; retain originals in /tmp with SHA256 manifest, package extracted per-run summaries. Deduplicated identical previously packed receipts; current56.35MB. No measured sample deleted or repeated.
 
 ## B-M3-003 2026-11-09T06:29Z M3 legacy fixture label width S3
 Repro delivery2 shots/collide, P5/1024: one secondary number stack unplaced; legacy status label "Brittle sugar" reserves142px. Other two targets render,0visible overlaps. Full failing receipt retained.
@@ -230,3 +235,31 @@ Fix2 repeated the failing fixed pack after source1902d3cf7: peak146draws (152bef
 
 ### B-M3-005 conditional resource gate verified
 Fix2 live crowded18cast windows: native12max16.8ms;CPU4sixmax66.6ms (under100);peak147draws/155219tris. Cold3native33.3/33.4/33.3ms,3CPU4183.4/183.4/183.3ms;readymax10294.3ms,errors0. Accept the predeclared150exception only for summoned eight-actor Yarn scenes;130primarytarget remainsPARTIAL. Fixedframepeak146/163043tris. One scoped batch removed6draws without dropping layers; original152receipt retained.
+### B-MX-008 isolated results FLAKY
+The unchanged StageLayout test passed twice sequentially in each worktree (four isolated runs, each <3s including process startup). Original full-suite timeout logs retained; no test/timeout changes. Root typecheck/lint/build passed. Full suite result is recorded as1800/1801 B and1852/1853 live plus2/2 isolated passes each, not a clean full-run claim.
+
+### B-M3-005 contact-pool first measurement 2026-11-09T07:16:07.877941+00:00
+Fix2 repeated the failing fixed pack after source1902d3cf7: peak146draws (152before),163043tris;51shots+1095cue-window frames at3widths remain0overlap/outside/unplaced;98face masks0offenders,contrast4.618. Source gates/parity pass. Conditional150exception is not accepted until queued casts/cold complete;130 remains a disclosed miss.
+
+## B-M4-001 2026-11-09T07:19Z M4 material/boss/identity revisit S3
+Fresh review M3fix2 key8shots×2widths: opponents remain uniformly pink (1440 x800–1300/y300–680); boss hierarchy below2x; passive footglows repeat; Soot wick small; greenhouse ground bright. Revisit worst3 within M4: directional normal-key emission and warm trim, boss-only scale/aim, smaller footglow plus off-body passive motifs/Soot wick. Source label/contact fixes from M3 carried unchanged. Register attempt1; retain pre-change artifacts. Check same13enemy denominator,9readabilityshots,51fixedshots/3width collisions/faces/contrast,14changedcuescost/casts andcold; parity/rootgates. No inferred pass.
+
+### M4 legacy-type compatibility correction
+First B-only root type/lint caught visual alias lookup inferred as old rules StatusId (without snag/bitter); same runtime code typed clean on liveS5. Declare the presentation Map<string,VisualStatusId> explicitly. No runtime/event change. Preserve failedlogs; rerun only type/lint after source group completes. This is a transplant compatibility fix, not changed rules.
+
+### B-M3-005 conditional draw allowance / measured perf
+M3 fix2 crowded first/repeat P4/P8/P15 at1280/1440native and1440CPU4:18windows,max16.8msnative/66.6msCPU4,147drawspeak (fixedstill146),163043tris fixedpack. Sixcoldframes33.3/33.4/33.3native,183.4/183.4/183.3CPU4;readymax10294.3ms. Accept the prompt-authorised150 ceiling because Yarn plus4BindingThreads adds44modeldraws before pooling and further material merging risks visible identity; contactpool reduces the failing152still to146. Original130 target remainsMISS/PARTIAL. No timing sample replaced. E2E/startup remainpending.
+
+### B-M4-001 attempt1 observed / attempt2
+All9P1/P5/P15 boundsinside,contrast.239–.358 PASS. Original13opponent denominator:Yarn2.041/Pantry2.069 PASS2;Kettle1.517MISS because gallery Kettle has view.boss=false. Viewed1440P1,1024P15,Kettle/Pantry: largeYarnreadable, opponents stillpale with weak relief. Attempt2 increases authorednormal contrast and gives soloKettle the intendedbossframing. Full enemyroster prevents zoom when a pair loses its otherfoe. Originalattempt1 retained; targetedroster/readability/face/layout and parity/sourcegates next.
+
+## B-M4-002 2026-11-09T07:33Z M4 boss plate overlap S2
+Repro attempt1 fixedP15/1024 at896ms:Panko70pxnumericstack touchesYarnplate7×4px. Actualbossplateheight69.1875 versus hardcoded54px reservation; the phase subtitle adds15.1875px. The collider coveredP5–P14 only,so missedP15. Fixattempt1 reserves16additionalpx whenever bossPhases includes theactor; extendcollider throughP15. Originalfailedstill kept, narrow + full3widthlayout/parity/sourcegates queued. Bossgeometry stayssubjectto thisreservation check.
+
+### B-M4-001 attempt2 measured / attempt3
+Attempt2 thirteen-opponent roster: Yarn2.041/Pantry2.069 pass; Kettle1.611 misses2 and clips bottom at1.0205, Soot1.0299. P1/P5/P15 contrast.228–.342 passes. Viewed Kettle and Yarn stills: relief modest, Kettle camera aimed too high and size still insufficient. Third attempt lowers soloKettle aim2.60→2.05 and raises scale2.84→3.50; full roster denominator and3width feet/head bounds gate acceptance. If it still clips, revert only soloKettle framing and disclose ratio miss. Material look remains PARTIAL; no fourth polish attempt.
+
+## B-M4-003 2026-11-09T07:44Z M4 non-periodic status triggers S3
+The M3 natural matrix leaves five trigger cells unverified. Source attribution shows v5SourceForPlan returns undefined for a valid live action with no supported v2 cue, so Bitter on an otherwise plain heal loses its struck-number treatment; Mark/Shred/Warm/Daze have no dedicated trigger pulse. Rules logs already identify direct damage/heal/shield and explicit Daze suppression. Attempt1 annotates only that matched raw log window plus before-status snapshots, gated to published skillsV5; excludes reaction/DoT/reflect damage and future/malformed event modes. Reuses prepared tick geometry under a distinct presentation-only trigger kind, preserves raw logs/amounts/action clock; fixture/legacy fallback unchanged. Tests cover bare healing, status added after hit, direct-versus-derived damage and exact Daze suppression. New live focused trigger, parity,face/layout/cast checks pending.
+
+B-M4-003 source verification: B root typecheck/lint/unit1813web/parity/offline+productionbuild PASS in /tmp/cardrpg-v5full-m4/triggers. The B BattleView now supplies its pre-action visual snapshot too, matching the existing integration caller; this prevents freshly applied marks being misread as hit modifiers. Live source/render delta remains queued.

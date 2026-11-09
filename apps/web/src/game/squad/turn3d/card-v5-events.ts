@@ -6,7 +6,8 @@ export const REACTION_WORDS = { 'crumb-burst':'CRUMB BURST!', wildfire:'WILDFIRE
 export type ReactionId = keyof typeof REACTION_WORDS;
 export interface V5Event { version:2; kind:string; sequence:number; actionId:number; round:number; stage:string; logIndex:number; sourceId?:string; actorId?:string; targetId?:string; statusId?:string; stacks?:number; amount?:number; reactionId?:string; primerIds?:string[]; targets?:string[]; skillId?:string; shape?:string }
 export interface StatusSnapshot { id:string; statuses:{id:string;stacks:number;remaining:number}[] }
-export interface V5Source { logStart?:number; events:unknown[]; before:StatusSnapshot[]; after:StatusSnapshot[] }
+export interface VisualTriggerLog { kind:string; actorId:string; targetId:string; amount:number; text:string }
+export interface V5Source { triggerLogs?:readonly VisualTriggerLog[]; logStart?:number; events:unknown[]; before:StatusSnapshot[]; after:StatusSnapshot[] }
 export type V5Plan = EffectPlan & { v5?:V5Source };
 export interface ReactionBeat { id:ReactionId; targetId:string; sourceId:string; targets:string[]; primerIds:VisualStatusId[]; at:number; duration:number }
 export interface LandingBeat { targetId:string; fromId:string; shape:string; index:number; at:number; duration:number; scale:number }
@@ -24,8 +25,8 @@ export function readV5Events(input:unknown):V5Event[] {
 }
 /** Published snapshots/events are render inputs only. Never roll targets or advance combat. */
 export function applyV5Presentation(plan:EffectPlan, legacy:StatusPresentation, source:V5Source|undefined):StatusPresentation {
-  const events=readV5Events(source?.events);if(!events.length)return legacy;
-  const impact=plan.beats[2]!.start, result:StatusPresentation={offsets:new Map(),beats:legacy.beats.filter(b=>b.kind==='expire').map(b=>({...b})),kinds:new Map(legacy.kinds),bursts:[],reactions:[],landings:[],tickIds:new Map(),bitterTargets:new Set()};
+  const events=readV5Events(source?.events);if(!events.length&&!source?.triggerLogs?.length)return legacy;
+  const impact=plan.beats[2]!.start, result:StatusPresentation={offsets:new Map(),beats:legacy.beats.filter(b=>!events.length||b.kind==='expire').map(b=>({...b})),kinds:new Map(legacy.kinds),bursts:[],reactions:[],landings:[],tickIds:new Map(),bitterTargets:new Set()};
   const landing=events.find(e=>e.kind==='multi-hit');
   if(landing){
     // Preserve repeated targets; a Map alone loses a second/third seeded strike.
@@ -50,6 +51,21 @@ export function applyV5Presentation(plan:EffectPlan, legacy:StatusPresentation, 
       if(label){result.kinds.set(label.seq,'dot');result.tickIds!.set(label.seq,event.statusId!);}
     }
   }
+  // The published rules log non-periodic modifiers as direct hits/heals or
+  // explicit suppression, rather than status-tick events. These pulses are
+  // presentation annotations of that log, never new combat events.
+  for(const log of source?.triggerLogs??[]){
+    const actor=source!.before.find(a=>a.id===log.targetId);
+    const ids:VisualStatusId[]=log.kind==='damage'?['scent','brittle','cozy']
+      :log.kind==='heal'||log.kind==='shield'?['bitter']
+      :log.kind==='suppressed'&&log.text==='Daze spent the next action'?['drowsy']:[];
+    for(const statusId of ids){
+      const status=actor?.statuses.find(s=>s.id===statusId);if(!status)continue;
+      if(result.beats.some(b=>b.kind==='trigger'&&b.statusId===statusId&&b.targetId===log.targetId))continue;
+      const at=Math.min(plan.duration-1,impact+(result.offsets.get(log.targetId)??0));
+      result.beats.push({kind:'trigger',statusId,sourceId:log.actorId,targetId:log.targetId,stacks:status.stacks,at,duration:Math.min(200,plan.duration-at)});
+    }
+  }
   for(const actor of source!.before){
     if(actor.statuses.some(s=>s.id==='bitter'))result.bitterTargets!.add(actor.id);
     for(const status of actor.statuses){
@@ -65,7 +81,7 @@ export function applyV5Presentation(plan:EffectPlan, legacy:StatusPresentation, 
 /** Integration accepts S4's v4.version=1 container with version=2 events. */
 export function v5SourceForPlan(plan:EffectPlan,battle:unknown,before?:{actors:StatusSnapshot[]}):V5Source|undefined {
   if((plan as V5Plan).v5)return (plan as V5Plan).v5;
-  const b=battle as {v4?:{version:number;events?:unknown[]};actors?:StatusSnapshot[];log?:{kind:string;actorId:string;targetId:string;amount:number;text:string}[]}|undefined;
+  const b=battle as {initial?:{skillsV5?:boolean};v4?:{version:number;events?:unknown[]};actors?:StatusSnapshot[];log?:{kind:string;actorId:string;targetId:string;amount:number;text:string}[]}|undefined;
   if(b?.v4?.version!==1||!b.log)return;
   const planEvents=plan.events.filter(e=>e.type!=='action_start'),first=planEvents[0];if(!first)return;
   const types:Record<string,string>={'reaction-damage':'damage',damage:'damage',dot:'damage',detonate:'damage',shared:'damage',reflect:'damage',heal:'heal',revive:'heal',survive:'heal',shield:'shield',defeat:'death',status:'status_apply',expire:'status_expire',phase:'boss_phase',summon:'spawn'};
@@ -74,5 +90,7 @@ export function v5SourceForPlan(plan:EffectPlan,battle:unknown,before?:{actors:S
   for(let i=end-1;i>=first.seq-1;i--){const candidate=i-first.seq+1;if(matches(first,i)&&planEvents.every(e=>matches(e,candidate+e.seq-1))){start=candidate;break;}}
   if(start<0)return;
   const events=readV5Events(b.v4.events).filter(e=>e.logIndex>start&&e.logIndex<=end&&(plan.skillId==='round-status'?e.stage==='round-end':e.stage==='action'));
-  return events.length?{logStart:start,events,before:before?.actors??b.actors??[],after:b.actors??[]}:undefined;
+  const triggerLogs=b.initial?.skillsV5&&readV5Events(b.v4.events).length
+    ?b.log.slice(start,start+Math.max(...planEvents.map(e=>e.seq))):undefined;
+  return events.length||triggerLogs?.length?{logStart:start,events,triggerLogs,before:before?.actors??b.actors??[],after:b.actors??[]}:undefined;
 }

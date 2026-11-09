@@ -439,7 +439,7 @@ export class CardEffects {
       this.focus.copy(target);
       this.caster.copy(positions.get(beat.sourceId)??target);
       this.setColor(this.baseColor,look.color);this.accentColor.copy(this.baseColor);this.flash=0;
-      const layer=beat.kind==='burst'?CRUMB_BURST_LAYER:look[beat.kind];
+      const layer=beat.kind==='burst'?CRUMB_BURST_LAYER:look[beat.kind==='trigger'?'tick':beat.kind];
       if(beat.kind!=='apply')this.focus.y+=(heights?.get(beat.targetId)??1.6)*.42;
       // Reduced motion keeps the identifying mark/badge, with no dart, flare or flash.
       if(calm)continue;

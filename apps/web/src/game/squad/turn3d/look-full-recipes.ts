@@ -39,9 +39,9 @@ export function fullRecipes(base:Record<string,Recipe>,cats:readonly string[]):R
    const layers=result[id]!.layers;
    // Impact silhouettes sit on the landing: travel is a separate layer and
    // cannot still be half-way across the mat when the rules hit is shown.
-   if(cat==='soot'&&i===0){layers[5]!.size=.39;layers[3]=l('spark','expand',target,{start:.49,end:.71,size:1.0,height:.55,accent:true,opacity:.94});layers[5]!.spriteRow=3;}
+   if(cat==='soot'&&i===0){layers[5]!.size=.39;layers[3]=l('spark','expand',target,{start:.49,end:.71,size:1.18,height:.55,offset:[.42,0,.32],accent:true,opacity:.94});layers[5]!.spriteRow=3;}
    if(cat==='soot'&&i===1){layers[3]!.offset=[.58,0,.15];layers.push(l('knock-ring','shrink',target,{start:.45,end:.67,size:1.1,height:.65,opacity:.76,accent:true}));}
-   if(cat==='soot'&&i===2){layers[3]!.count=1;layers[3]!.motion='rise';layers[3]!.size=1.5;layers[3]!.offset=[.48,0,.2];layers[3]!.accent=true;layers[5]!.size=.38;layers[5]!.spriteRow=3;}
+   if(cat==='soot'&&i===2){layers[3]!.count=1;layers[3]!.motion='rise';layers[3]!.size=1.5;layers[3]!.offset=[.72,0,.38];layers[3]!.height=.7;layers[3]!.accent=true;layers[5]!.size=.38;layers[5]!.spriteRow=3;}
    if(cat==='velvet'&&i===0){layers[3]!.motion='cross';layers[3]!.count=3;layers[3]!.size=.9;layers[3]!.spread=.55;layers[3]!.accent=true;}
    if(cat==='velvet'&&i===1){layers[5]!.size=.36;layers[3]=l('wick','orbit',target,{start:.48,end:.78,count:3,size:.5,spread:.7,height:.5,opacity:.9,accent:true});layers[5]!.spriteRow=6;}
    if(cat==='velvet'&&i===2){layers[3]=l('flame','shrink',target,{start:.48,end:.72,size:1.2,height:.55,accent:true,opacity:.9});layers[5]!.primitive='soft-particle';layers[5]!.spriteRow=3;}
@@ -73,7 +73,17 @@ export function fullRecipes(base:Record<string,Recipe>,cats:readonly string[]):R
    if(cat==='biscuit'&&i===0){layers[3]!.motion='cross';layers[3]!.size=1.05;layers[3]!.accent=true;layers[5]!.spriteRow=0;}
    if(cat==='biscuit'&&i===1){layers[3]!.motion='sweep';layers[3]!.size=.9;layers[3]!.offset=[.5,0,.1];layers[5]!.spriteRow=5;}
    if(cat==='biscuit'&&i===2){layers[3]!.count=1;layers[3]!.motion='shrink';layers[3]!.size=1.25;layers[3]!.accent=true;layers[5]!.spriteRow=5;}
-   if(passive){layers[3]!.size=.6;layers[3]!.offset=[.6,0,.18];layers[3]!.opacity=.76;layers[5]!.count=6;}
+   if(passive){
+    // Passive identities live beside the body; the old large footglow hid them.
+    layers[3]!.size=.88;layers[3]!.offset=[.75,0,.35];layers[3]!.height=.62;
+    layers[3]!.opacity=.88;layers[3]!.accent=true;layers[4]!.size=.65;layers[4]!.opacity=.18;
+    layers[5]!.count=6;layers[5]!.size=.22;layers[5]!.spread=.45;
+    if(cat==='soot'){layers[3]!.primitive='crescent';layers[3]!.motion='orbit';layers[3]!.count=2;layers[3]!.spread=.38;}
+    if(cat==='cinnamon'){layers[3]!.primitive='spice-star';layers[3]!.motion='cross';layers[3]!.count=3;layers[3]!.size=.48;layers[3]!.spread=.5;}
+    if(cat==='clover'){layers[3]!.primitive='leaf';layers[3]!.motion='rise';layers[3]!.count=2;layers[3]!.size=.72;layers[3]!.spread=.45;}
+    if(cat==='sorrel'){layers[3]!.motion='pour';layers[3]!.height=1.0;layers[3]!.size=.7;}
+    if(cat==='brioche'){layers[3]!.motion='orbit';layers[3]!.count=3;layers[3]!.size=.48;layers[3]!.spread=.42;}
+   }
    // Signature cinematics retain sculpted silhouettes with individually timed motifs.
    if(ultimate){
     const layers=result[id]!.layers;

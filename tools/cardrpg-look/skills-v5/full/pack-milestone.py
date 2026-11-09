@@ -7,6 +7,7 @@ for p in sorted(source.rglob('*')):
  rel=p.relative_to(source)
  if any(part in ('dist','frames','node_modules','staged') for part in rel.parts):continue
  if p.suffix not in ('.json','.gz','.log','.webp'):continue
+ if '-trace.json' in p.name:continue # Raw CDP traces stay in the recorded /tmp source; package extracted summaries.
  if p.suffix=='.webp' and not any(str(rel).startswith(prefix+'/') for prefix in images):continue
  data=p.read_bytes();dest=target/rel
  if p.suffix in ('.json','.log') and len(data)>12000:
