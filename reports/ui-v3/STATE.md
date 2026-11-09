@@ -22,3 +22,5 @@ U3 complete:G1 PASS1867tests; new browser11/11; repaired screenshots reviewed. M
 U3 draft#431. U4 complete: portrait crew/foe Prepare, model-derived Result/MVP/rewards, Route challenge/daily/Tower restored. G1 PASS1867webtests;13browser tests PASS;axe24screen/look pairs0serious/critical. Primary hover repair verified in u4-final/prepare-on.webp. Protected231files exact. Proceed U5 battle overlay, no B source edits.
 
 U4 draft#432. U5 complete: all20browser tests PASS, including24ready/cast captures across1024/1280/1440 and both looks; zero plate/HUD intersections. Crew status row and banner contrast repaired and screenshots inspected. G1 PASS1867webtests at u5-final/. Rules source identity and recorded production digests exact. No B edits. Proceed U6 recruit ceremony.
+
+U5 draft#433. U6 complete: four ceremony beats in under4s; welcome and10draw rewards/gear/pity EXACT against legacy; odds table exact; second-pull skip and reduced-motion PASS3/3. Axe24pairs clean. Final G1 PASS1867webtests at u6-gates/. Corrected reveal screenshots reviewed. Prepared U7 and U8 files remain uncommitted until their phases. Next U7.

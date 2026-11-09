@@ -30,3 +30,16 @@ U0 in progress. No published Lane U milestone yet.
 - U5-GUIDE / attempt1: Escape during battle also ran the hidden shell's sheet-close handler. Guard shell keyboard handling while battle is active and handle guide Escape locally. Exact guide test + G1 + full battle geometry rerun.
 
 - U5 final verification / FIXED: explicit plate readiness, dedicated status row, ink banner text and isolated battle-guide Escape all pass exact checks plus G1. Full20/20browser suite at u5-final/browser.log; repaired1440boss cast screenshot visually checked.
+
+- U6-HARNESS / attempt1: ceremony observer attached before lazy Recruit mounted; added stage readiness. Ten-pull fixture had500stamps against1500cost; fund it with5000 before the identical legacy/V3 comparison. Exact browser rerun and G1 queued; no costs or expectations changed.
+
+- U6-CAPTURE / attempt1: clock-frozen reveal screenshot landed on the initial opacity0 animation frame. Advance100ms into each beat before capture; keep real-time duration assertions unchanged.
+
+- U6-ODDS / attempt2: rewards/gear/pity are exactly equal, but legacy odds labels visually capitalize rarity. Restore that presentation in V3; retain the strict rendered-table assertion.
+- U6-CAPTURE / attempt2: Playwright virtual timers do not advance CSS animation composition consistently; finite animations are completed for each screenshot while the real phase clock is preserved. This is screenshot-only.
+
+- U7-DEV-BOUNDARY / attempt1 (found during U6 final check): prepared developer-tool adapter imported outside-product TS sources and pulled their separate React type context into web tsc. Keep their existing Vite module boundary via lazy glob loaders; no B/tool-source edits. Re-run G1 before U6 publication.
+
+- U7-DEV-BOUNDARY / REJECTED: do not couple the product shell to offline-only lab modules. Unused trial adapter removed; existing Feel lab/Before-after retained. Extra offline lab controls belong in the U8 demo entry. G1 rerun covers the clean product boundary.
+
+- U6 final / FIXED: strict ceremony/parity suite3/3; screenshot capture corrected and inspected; final G1 type/lint/unit/build0 in u6-gates/. Earlier failed receipts retained.
