@@ -1,0 +1,82 @@
+[
+  {
+    "name": "typecheck",
+    "attempt": 1,
+    "code": 0,
+    "head": "a7e372edd076084aadb7302058fd4b4c0ba97f3b",
+    "sourceDigest": "2631c44723de93688b16d1c0b2326041aaee1ffc4ebc365030136433a2472a49",
+    "started": "2026-11-09T01:38:36.221Z",
+    "ended": "2026-11-09T01:38:53.956Z",
+    "log": "reports/cardrpg-big/skills-v5/s4/gates/typecheck-attempt-1.log",
+    "sha256": "d9172fd52a21d114d3c0a5416cedc611393175a14bc11b09bcde0a952b58be1d",
+    "counts": []
+  },
+  {
+    "name": "lint",
+    "attempt": 1,
+    "code": 0,
+    "head": "a7e372edd076084aadb7302058fd4b4c0ba97f3b",
+    "sourceDigest": "2631c44723de93688b16d1c0b2326041aaee1ffc4ebc365030136433a2472a49",
+    "started": "2026-11-09T01:39:00.958Z",
+    "ended": "2026-11-09T01:39:12.961Z",
+    "log": "reports/cardrpg-big/skills-v5/s4/gates/lint-attempt-1.log",
+    "sha256": "542ef3ef65ab5e835048304c7bab8e68cd49990d6ffdd4769a0a4e11f17a3a1f",
+    "counts": []
+  },
+  {
+    "name": "web-unit",
+    "attempt": 1,
+    "code": 0,
+    "head": "a7e372edd076084aadb7302058fd4b4c0ba97f3b",
+    "sourceDigest": "2631c44723de93688b16d1c0b2326041aaee1ffc4ebc365030136433a2472a49",
+    "started": "2026-11-09T01:39:19.963Z",
+    "ended": "2026-11-09T01:39:50.986Z",
+    "log": "reports/cardrpg-big/skills-v5/s4/gates/web-unit-attempt-1.log",
+    "sha256": "77f15f2dba46e528a7328c62670e0f7d9ad729925289f565dafe78a07a3f93b8",
+    "counts": [
+      " Test Files  185 passed (185)",
+      "      Tests  1785 passed (1785)"
+    ]
+  },
+  {
+    "name": "rules",
+    "attempt": 1,
+    "code": 0,
+    "head": "a7e372edd076084aadb7302058fd4b4c0ba97f3b",
+    "sourceDigest": "2631c44723de93688b16d1c0b2326041aaee1ffc4ebc365030136433a2472a49",
+    "started": "2026-11-09T01:39:57.989Z",
+    "ended": "2026-11-09T01:43:05.374Z",
+    "log": "reports/cardrpg-big/skills-v5/s4/gates/rules-attempt-1.log",
+    "sha256": "f1d2084f6d6a0a8a7b3b4a7b382b50c217da88a70abb080aaaf054db83ad3a59",
+    "counts": [
+      " Test Files  75 passed | 3 skipped (78)",
+      "      Tests  1260 passed | 2 expected fail | 11 skipped (1273)"
+    ]
+  },
+  {
+    "name": "e2e",
+    "attempt": 1,
+    "code": 0,
+    "head": "a7e372edd076084aadb7302058fd4b4c0ba97f3b",
+    "sourceDigest": "2631c44723de93688b16d1c0b2326041aaee1ffc4ebc365030136433a2472a49",
+    "started": "2026-11-09T01:43:12.376Z",
+    "ended": "2026-11-09T01:46:40.602Z",
+    "log": "reports/cardrpg-big/skills-v5/s4/gates/e2e-attempt-1.log",
+    "sha256": "5ddde20c120aff4436502ac908512bab4087fa06700bc324072df999f21c7586",
+    "counts": [
+      "  421 passed (2.2m)"
+    ]
+  },
+  {
+    "name": "build",
+    "attempt": 1,
+    "code": 0,
+    "head": "a7e372edd076084aadb7302058fd4b4c0ba97f3b",
+    "sourceDigest": "2631c44723de93688b16d1c0b2326041aaee1ffc4ebc365030136433a2472a49",
+    "started": "2026-11-09T01:46:47.606Z",
+    "ended": "2026-11-09T01:47:21.543Z",
+    "log": "reports/cardrpg-big/skills-v5/s4/gates/build-attempt-1.log",
+    "sha256": "b3005d0bff7ec21f82359fbf70a4ac0b8705b8f3001d7c9fbef6685c2f6169d4",
+    "counts": []
+  }
+]

@@ -1,7 +1,7 @@
 # Skills V5 lane A state
 Base: d22f47cb8 (A5 closing tip, DRAFT406; paused WIP c7b0c498f preserved).
 Runtime baseline: 0e1e15180108b443ce2e615ea54272b907cc8bb0.
-Phase: S4 events/fixture/fallback HUD applied; validation underway. User explicitly resumed2026-11-09.
+Phase: S4 events/fixture validated; publishing draft and B handoff. User explicitly resumed2026-11-09.
 Branch: codex/cardrpg-v5a-s4-2026-11-09; S3 closing tip4cfab8846.
 Done: git status/log recorded; handoff found under memory/; rules/outboxes read.
 Done: ON/OFF artifacts match 20,929,841 bytes and 9e25f238 / 9158b51e.
@@ -31,3 +31,5 @@ B: V0 DRAFT409; V0.1 active; V3 REQUEST waits for published S4 fixture DONE. No 
 Untouchable: .DS_Store and display-context-40/{partial,results}.json preserved uncommitted.
 No model helpers, CUA, Docker, main checkout edits, merge or deploy.
 Done: S3 DRAFT411 on410, runtime053fe383d/evidence8a894a35f.
+S4: six first-attempt gates1785web/1260rules/421E2E/build PASS; both hashes exact. HUD spacing fix queued S7.
+Finder .DS_Store external drift observed; untouched/uncommitted; two JSON leftovers exact.
