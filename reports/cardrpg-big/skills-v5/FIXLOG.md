@@ -1,5 +1,11 @@
 # Skills V5 repair log
 
+## S5-GUARDIAN-ATTRIBUTION-HASH — diagnostic setup serialization (FIXED)
+- Reproduce: `node tools/cardrpg-big/skills-v5/diagnose-guardian-use.mjs`, first fixed replay `matched/oven/0/1`. Original script/log retained in `s5/selected/guardian-attribution-preflight/attempt-1.*`; no attribution result was emitted.
+- Measure: expected saved hash `dbebf34a9ce69484f307b5e70fda481a115ecc5a7d360e748f8def1f86d0750f`, diagnostic `5982589ca15638e39c8d12f215c8ffa15307d7882b91046da7edc353dbe9c49c`.
+- Ranked hypotheses: (1) initial setup property order differs in the JSON-bound battle hash (`skillsV5` preceded `challengeLevel`); (2) a reconstructed fixture differs; (3) diagnostic observation mutates battle state. No combat regression is established by this harness failure.
+- Smallest correction: match the registered setup property order. Rerun the same eighteen existing seed1 observations and require every original battle hash. No candidate, acceptance seed or changed frequency estimate. Production-rule hashes remain identical to the passing OFF8250/fallback180+45 and six-gate closure in `s5-selected/audit.json`.
+
 Addendum received during S5. TRAIN remains 1–500. Existing baseline slices continue unchanged; acceptance 20001–20500 is UNUSED. Every entry retains failed samples. At most three candidate attempts per issue per phase; revisit open issues once before S6. OFF legacy digest and ON fallback hashes are prerequisites for adoption.
 
 ## S5-DESIGN-1 — multi-target play and dormant skills (attempt 1, PARTIAL: measuring)
@@ -154,3 +160,12 @@ Addendum received during S5. TRAIN remains 1–500. Existing baseline slices con
 - Ranked hypotheses: (1) existing set completion interacts with the new status/helper targets; (2) changed support/control choices cross win thresholds; (3) extra helper pressure magnifies survivability items. These are ranked explanations, not isolated causal measurements.
 - Smallest attempted change remains the registered three-package design sequence. No fourth S5 attempt or item normalization is introduced during the full sweep. Retain richer-play gains and this regression as PARTIAL; review completed cat/set/band evidence before S6.
 - Both OFF8250 and ON fallback180/45 hashes are exact on selected production rules, and six source gates pass in `s5-selected/audit.json`. Affected full matrices continue on the same source and seeds.
+
+- S5-GUARDIAN-ATTRIBUTION-HASH correction verified: all eighteen saved battle hashes match after matching setup key order. Original failure retained; `guardian-attribution-preflight/correction-1.log` records the successful identical-seed replay. No production code or measured distribution changed.
+
+## S5-D4-GUARDIANS — eligibility attribution (PARTIAL; pre-S6 revisit)
+- Reproduce: `node tools/cardrpg-big/skills-v5/diagnose-guardian-use.mjs`; `s5/selected/guardian-attribution.json`. Fixed seed1 in all nine existing matched encounters for Oven and Afternoon tea, eighteen exact saved hashes. This diagnostic does not replace the full500 shares.
+- Measure: Mochi skill2 legal40/40 turns, chosen0; basic31/40. Panko skill2 legal74/74, chosen0; basic51/74. An eligible target had room below the policy shield cap on38/40 and74/74 turns respectively. Full500 skill1/2 shares remain71.92/0.38% and69.99/0.29%, both D4 MISS.
+- Attribution: skill availability is ruled out in this fixed replay set; the automatic evaluator ranks other legal choices higher. Ranked unresolved causes: (1) immediate damage/removal value outweighs preventive support; (2) shield value is capped and discounted; (3) existing support companions already supply protection. The individual score contributions have not been causally ablated.
+- Smallest next candidate: value the distinct prevention window of these later skills, or a targeted basic cooldown with paired pacing checks. Broad cooldown changes already regressed normal rounds17.967 and stay REJECTED. Three S5 design packages are exhausted; no fourth numeric attempt.
+- Verification: source hashes and every replay hash match the selected build. OFF8250 and fallback180+45 remain exact in `s5-selected/audit.json`; affected full A5 matrices continue on that same source. Retain PARTIAL and revisit with the completed balance evidence before S6.

@@ -19,8 +19,8 @@ Open [Skills V5 demo](../../../docs/cardrpg3/skills-v5.html) locally on a deskto
 Please answer these eight questions:
 
 1. After two fights, name the statuses shown on five units. Include the display name and what each does. “Unsure” is useful.
-2. Which attack hit more than one foe? Did its target list make the difference clear?
-3. Did you see Crumb Burst, Wildfire, Rupture or Spread? Which cat caused it, and why?
+2. Which attack hit more than one foe? In a boss fight, did the extra enemies give you a reason to value that shape? If Cinnamon is available, was her healing of adjacent allies visible?
+3. Did you see Crumb Burst, Wildfire, Rupture or Spread? Which cat caused it, and why? If Cinnamon used Second serving without a fallen ally, could you tell what it did?
 4. What did your first equipment change do? Was that visible in the next result?
 5. After a loss, what specific change did the game offer? Was it available to you?
 6. Where did you wait too long, lose track of the next step, or struggle to read?

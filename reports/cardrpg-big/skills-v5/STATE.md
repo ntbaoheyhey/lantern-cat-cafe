@@ -57,4 +57,4 @@ S8 preflight: selected default build/tmp/cardrpg-v5a-s8-selected-default-dist; m
 S6 tools drafted, NOT RUN. Missing A5 registration confirmed under reports; exact PROMPT-A5 gates copied by future registration.
 S5 addendum: design1multi32.089/support29.595/normal12.08; design2b32.940/30.045/17.967REJECTED. Design3full500:multi32.525/support29.842/normal13.238,D4ten/twelve,D3thirty/thirty-two,D5PASS; A5matrices running. FIXLOG active, acceptance UNUSED.
 S5 baseline4505cells complete; selectedOFF8250/fallback exact,sixgatesPASS1785web/1262rules/421E2E/build; fourthslot35/384,worst47ppMISS; otherfullmatrix pending. Queue51634 retained; Teacup fixture corrected, original failure kept.
-S5 continuation: source closurePASS6772eb343; reactioncoverage Wildfire98.6/Rupture99.9/Crumb99.9/Spread54.9%; 23missreplays exact: Thread214tworesists; Nightlamp22allphase2signaturesDazed.
+S5 diagnostics: sourceclosurePASS6772eb343; 23D3missreplays exact (resist/Daze). D4eighteen exactreplays: Mochi2legal40/40,Panko2legal74/74,chosen0; policyvaluation PARTIAL. Full500 queues continue.
