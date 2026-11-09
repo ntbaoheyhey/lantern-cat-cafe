@@ -137,3 +137,20 @@ Addendum received during S5. TRAIN remains 1–500. Existing baseline slices con
 ## S5-REACTION-COVERAGE — selected full TRAIN verification (FIXED)
 - Reproduce: selected/metrics/results.json, registered TRAIN1–500, intended named crews, unchanged three encounters. Wildfire98.6%, Rupture99.9%, Crumb Burst99.9%, Spread54.9%; all exceed40%.
 - D1 helpers restore Spread recipients; bounded future Mark/Spread scoring retains Black cup power55. Selected six source gates PASS and OFF8250/fallback180+45 exact in s5-selected/audit.json. Full A5 effects remain pending; reaction gate is FIXED independently.
+
+## S5-D3-COVERAGE — exact missing-seed attribution (PARTIAL; pre-S6 revisit)
+- Reproduce: `node tools/cardrpg-big/skills-v5/diagnose-keyword-misses.mjs`; receipt `s5/selected/keyword-attribution.json`. All 23 replay hashes match the existing full TRAIN observations. No new samples, candidate or fourth design attempt.
+- Thread seed214: Kettle acts below half HP in round8 and attempts Burn on both front cats. Biscuit and Brioche both resist. This corrects the earlier unproven suggestion that control prevented this specific Burn. Observed coverage remains499/1500, below500/1500.
+- Night lamp's22missing boss seeds: every phase2 signature is interrupted or Dazed, and the emitted marker is the softened basic. Its signature-control role directly suppresses Bitter opportunities. Coverage remains478/1500; no display/event omission is observed.
+- Ranked follow-up options: (1) a distinct secondary Bitter opponent context, (2) a later-unlocked primer/support combo role providing exposure, (3) adjust timing without weakening successful Daze. These require a future registered design; none is applied in this diagnostic.
+- Keep PARTIAL after three S5 packages. The current OFF8250/fallback180+45 exact and six-gate closure bind unchanged production rules. Full A5 confirmation continues; D3 denominator/threshold unchanged.
+
+## S5-EVIDENCE-WHITESPACE — raw captured log bytes (FIXED scope attribution)
+- Staged whitespace check reports eight WebServer blank-line prefixes in `s5-selected/gates/e2e-attempt-1.log`. This is hash-bound captured output, not source whitespace.
+- Preserve original evidence bytes. Source/docs/tools whitespace check passes with raw `*.log` and retained `*.patch` excluded. No runtime or sample change.
+
+## S5-A5-FOURTH-SLOT-REGRESSION — selected helper/kit package (PARTIAL)
+- Reproduce: `s5/selected/equipped/results.json`, unchanged384cells × TRAIN1–500. Selected35/384misses,worst47pp versus before13/384,worst41pp; original A5 was63/384,worst88.8pp. Display-share maximum4.5197% remains below10%.
+- Ranked hypotheses: (1) existing set completion interacts with the new status/helper targets; (2) changed support/control choices cross win thresholds; (3) extra helper pressure magnifies survivability items. These are ranked explanations, not isolated causal measurements.
+- Smallest attempted change remains the registered three-package design sequence. No fourth S5 attempt or item normalization is introduced during the full sweep. Retain richer-play gains and this regression as PARTIAL; review completed cat/set/band evidence before S6.
+- Both OFF8250 and ON fallback180/45 hashes are exact on selected production rules, and six source gates pass in `s5-selected/audit.json`. Affected full matrices continue on the same source and seeds.

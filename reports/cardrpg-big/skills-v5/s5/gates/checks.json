@@ -1,0 +1,107 @@
+[
+  {
+    "name": "typecheck",
+    "attempt": 1,
+    "code": 0,
+    "head": "ab8bc377fc1a5aa01960ad5e8f4d0e921604d0d1",
+    "sourceDigest": "1c61ddba31596d77f6870b7813ed4a57d61a66d368b9184dc22c4302caa63a04",
+    "started": "2026-11-09T02:53:04.078Z",
+    "ended": "2026-11-09T02:54:36.811Z",
+    "log": "reports/cardrpg-big/skills-v5/s5/gates/typecheck-attempt-1.log",
+    "sha256": "1d6720a2088faa7b83d816b0a246ebab130fcb99be807aa0d1cd9848bad7d7a0",
+    "counts": []
+  },
+  {
+    "name": "lint",
+    "attempt": 1,
+    "code": 0,
+    "head": "ab8bc377fc1a5aa01960ad5e8f4d0e921604d0d1",
+    "sourceDigest": "1c61ddba31596d77f6870b7813ed4a57d61a66d368b9184dc22c4302caa63a04",
+    "started": "2026-11-09T02:54:43.814Z",
+    "ended": "2026-11-09T02:56:41.810Z",
+    "log": "reports/cardrpg-big/skills-v5/s5/gates/lint-attempt-1.log",
+    "sha256": "c73eb1d72b60e5fe36f5e2c11be6391b96c57c1cc2895b1f5381bcdd80c47882",
+    "counts": []
+  },
+  {
+    "name": "web-unit",
+    "attempt": 1,
+    "code": 0,
+    "head": "ab8bc377fc1a5aa01960ad5e8f4d0e921604d0d1",
+    "sourceDigest": "1c61ddba31596d77f6870b7813ed4a57d61a66d368b9184dc22c4302caa63a04",
+    "started": "2026-11-09T02:56:48.813Z",
+    "ended": "2026-11-09T02:57:42.817Z",
+    "log": "reports/cardrpg-big/skills-v5/s5/gates/web-unit-attempt-1.log",
+    "sha256": "42b91721455e502ecbb1f9c3f423f0d32f6aa1533cc23f692e5ff383ff8446d9",
+    "counts": [
+      " Test Files  185 passed (185)",
+      "      Tests  1785 passed (1785)"
+    ]
+  },
+  {
+    "name": "rules",
+    "attempt": 1,
+    "code": 0,
+    "head": "ab8bc377fc1a5aa01960ad5e8f4d0e921604d0d1",
+    "sourceDigest": "1c61ddba31596d77f6870b7813ed4a57d61a66d368b9184dc22c4302caa63a04",
+    "started": "2026-11-09T02:57:49.819Z",
+    "ended": "2026-11-09T03:02:46.087Z",
+    "log": "reports/cardrpg-big/skills-v5/s5/gates/rules-attempt-1.log",
+    "sha256": "c05d7e0980836a792f5fcae53cac6e7675318a3cf6e73aaf10b075d523dd4475",
+    "counts": [
+      " Test Files  75 passed | 3 skipped (78)",
+      "      Tests  1260 passed | 2 expected fail | 11 skipped (1273)"
+    ]
+  },
+  {
+    "name": "e2e",
+    "attempt": 1,
+    "code": 1,
+    "head": "ab8bc377fc1a5aa01960ad5e8f4d0e921604d0d1",
+    "sourceDigest": "1c61ddba31596d77f6870b7813ed4a57d61a66d368b9184dc22c4302caa63a04",
+    "started": "2026-11-09T03:02:53.091Z",
+    "ended": "2026-11-09T03:11:41.236Z",
+    "log": "reports/cardrpg-big/skills-v5/s5/gates/e2e-attempt-1.log",
+    "sha256": "c79ce9bbcc0b475b87a0c54d3aad789fe29a83bdb4d9fcfe427d59a16dc95a5a",
+    "counts": [
+      "  1 failed",
+      "  420 passed (2.5m)"
+    ]
+  },
+  {
+    "name": "e2e",
+    "attempt": 2,
+    "code": 0,
+    "head": "ab8bc377fc1a5aa01960ad5e8f4d0e921604d0d1",
+    "sourceDigest": "1c61ddba31596d77f6870b7813ed4a57d61a66d368b9184dc22c4302caa63a04",
+    "started": "2026-11-09T03:14:38.925Z",
+    "ended": "2026-11-09T03:15:51.420Z",
+    "log": "reports/cardrpg-big/skills-v5/s5/gates/e2e-attempt-2.log",
+    "sha256": "9d430632e8bd031c931dc90f008b490711542e4cb7a20860f97e3bf536ded011",
+    "counts": [
+      "  1 passed (19.7s)"
+    ],
+    "recovery": {
+      "scope": "a local fight never writes storage or contacts a game API",
+      "original": "reports/cardrpg-big/skills-v5/s5/gates/e2e-attempt-1.log",
+      "originalSha256": "c79ce9bbcc0b475b87a0c54d3aad789fe29a83bdb4d9fcfe427d59a16dc95a5a",
+      "originalCounts": [
+        "  1 failed",
+        "  420 passed (2.5m)"
+      ],
+      "note": "Single failed timing test rerun in isolation; original full run retained. No runtime change."
+    }
+  },
+  {
+    "name": "build",
+    "attempt": 1,
+    "code": 0,
+    "head": "ab8bc377fc1a5aa01960ad5e8f4d0e921604d0d1",
+    "sourceDigest": "1c61ddba31596d77f6870b7813ed4a57d61a66d368b9184dc22c4302caa63a04",
+    "started": "2026-11-09T03:15:58.422Z",
+    "ended": "2026-11-09T03:17:59.078Z",
+    "log": "reports/cardrpg-big/skills-v5/s5/gates/build-attempt-1.log",
+    "sha256": "084969ea121d040976280f96a61f3f460fd698cdd502ec5b6156ab41ad08ae54",
+    "counts": []
+  }
+]

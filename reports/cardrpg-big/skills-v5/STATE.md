@@ -2,7 +2,7 @@
 Base: d22f47cb8 (A5 closing tip, DRAFT406; paused WIP c7b0c498f preserved).
 Runtime baseline: 0e1e15180108b443ce2e615ea54272b907cc8bb0.
 Phase: S5 TRAIN design optimisation after S7 DRAFT414; user ADDENDUM-SKILLDESIGN.md saved; D1–D6 fold into S5→S8→S6.
-Branch: codex/cardrpg-v5a-s5-2026-11-09; selected source6772eb343, based on S7 closingab8bc377f.
+Branch: codex/cardrpg-v5a-s5-2026-11-09 DRAFT417on414; selected6772eb343/evidencece538d379, S7baseab8bc377f.
 Done: git status/log recorded; handoff found under memory/; rules/outboxes read.
 Done: ON/OFF artifacts match 20,929,841 bytes and 9e25f238 / 9158b51e.
 Done: no live A5 job found; inherited recent commits are the documented paused WIP.
@@ -56,5 +56,5 @@ S7 priority: same S5 queues resumed after isolated E2E PASS; receipt/tmp/cardrpg
 S8 default build prepared/tmp/cardrpg-v5a-s8-default-dist; main ref verified340f88b9. No profiling/Home run yet.
 S6 tools drafted, NOT RUN. Missing A5 registration confirmed under reports; exact PROMPT-A5 gates copied by future registration.
 S5 addendum: design1multi32.089/support29.595/normal12.08; design2b32.940/30.045/17.967REJECTED. Design3full500:multi32.525/support29.842/normal13.238,D4ten/twelve,D3thirty/thirty-two,D5PASS; A5matrices running. FIXLOG active, acceptance UNUSED.
-S5 baseline4505cells complete; selectedOFF8250/fallback exact,sixgatesPASS1785web/1262rules/421E2E/build; fullmatrix pending. Queue51634 retained; Teacup fixture corrected, original failure kept.
-S5 continuation: source closurePASS6772eb343; reactioncoverage Wildfire98.6/Rupture99.9/Crumb99.9/Spread54.9%; keyword-miss seeds saved.
+S5 baseline4505cells complete; selectedOFF8250/fallback exact,sixgatesPASS1785web/1262rules/421E2E/build; fourthslot35/384,worst47ppMISS; otherfullmatrix pending. Queue51634 retained; Teacup fixture corrected, original failure kept.
+S5 continuation: source closurePASS6772eb343; reactioncoverage Wildfire98.6/Rupture99.9/Crumb99.9/Spread54.9%; 23missreplays exact: Thread214tworesists; Nightlamp22allphase2signaturesDazed.

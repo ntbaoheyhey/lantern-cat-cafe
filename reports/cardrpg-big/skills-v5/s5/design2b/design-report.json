@@ -1,0 +1,1624 @@
+{
+  "sample": "pilot",
+  "count": 50,
+  "sourceDigest": "0a1bb4df648e2a8a11f1053bf9e1f99b2b120f564d022e400852d3ffd6572956",
+  "summary": {
+    "battles": 450,
+    "multiFoeShare": 32.94003555842897,
+    "multiAllyShare": 30.04509018036072,
+    "cleanseSupportShare": 14.223446893787575,
+    "rounds": 22.946666666666665,
+    "normalRounds": 17.966666666666665,
+    "reactionsPerBattle": 7.46,
+    "allCatsUltimateShare": 80.33333333333333,
+    "keywordBattles": {
+      "scald": 0.54,
+      "snag": 0.5555555555555556,
+      "bitter": 0.5466666666666666,
+      "scent": 0.5555555555555556,
+      "brittle": 0.7755555555555556,
+      "drowsy": 0.7777777777777778,
+      "steep": 0.6911111111111111,
+      "cozy": 0.9177777777777778
+    },
+    "reactionBattleShare": {
+      "crumb-burst": 0.33111111111111113,
+      "wildfire": 0.28888888888888886,
+      "rupture": 0.3333333333333333,
+      "spread": 0.06888888888888889
+    }
+  },
+  "cats": [
+    {
+      "cat": "mochi",
+      "role": "guardian",
+      "actions": 2204,
+      "skills": [
+        {
+          "id": "mochi-1",
+          "name": "Door knock",
+          "uses": 1079,
+          "share": 0.4895644283121597,
+          "shape": "splash",
+          "statuses": []
+        },
+        {
+          "id": "mochi-2",
+          "name": "Warm welcome",
+          "uses": 561,
+          "share": 0.2545372050816697,
+          "shape": "weakest",
+          "statuses": [
+            "cozy"
+          ]
+        },
+        {
+          "id": "mochi-3",
+          "name": "Apron crossing",
+          "uses": 1,
+          "share": 0.00045372050816696913,
+          "shape": "one",
+          "statuses": [
+            "link",
+            "shelter"
+          ]
+        },
+        {
+          "id": "mochi-4",
+          "name": "Last light shelter",
+          "uses": 409,
+          "share": 0.18557168784029038,
+          "shape": "team",
+          "statuses": [
+            "cozy"
+          ]
+        }
+      ],
+      "topPattern": "splash / weakest+cozy",
+      "pass": false
+    },
+    {
+      "cat": "soot",
+      "role": "hexer",
+      "actions": 2690,
+      "skills": [
+        {
+          "id": "soot-1",
+          "name": "Cocoa spark",
+          "uses": 693,
+          "share": 0.25762081784386615,
+          "shape": "pierce",
+          "statuses": [
+            "crumb"
+          ]
+        },
+        {
+          "id": "soot-2",
+          "name": "Black cup",
+          "uses": 832,
+          "share": 0.3092936802973978,
+          "shape": "single",
+          "statuses": [
+            "scent"
+          ]
+        },
+        {
+          "id": "soot-3",
+          "name": "Lantern wick",
+          "uses": 625,
+          "share": 0.23234200743494424,
+          "shape": "single",
+          "statuses": []
+        },
+        {
+          "id": "soot-4",
+          "name": "Midnight service",
+          "uses": 537,
+          "share": 0.1996282527881041,
+          "shape": "all",
+          "statuses": [
+            "drowsy"
+          ]
+        }
+      ],
+      "topPattern": "single+scent / pierce+crumb",
+      "pass": true
+    },
+    {
+      "cat": "clover",
+      "role": "healer",
+      "actions": 4263,
+      "skills": [
+        {
+          "id": "clover-1",
+          "name": "Leaf tap",
+          "uses": 1141,
+          "share": 0.2676518883415435,
+          "shape": "single",
+          "statuses": []
+        },
+        {
+          "id": "clover-2",
+          "name": "Patient steep",
+          "uses": 1765,
+          "share": 0.41402768003753226,
+          "shape": "ally-row",
+          "statuses": [
+            "steep"
+          ]
+        },
+        {
+          "id": "clover-3",
+          "name": "Clearleaf rinse",
+          "uses": 464,
+          "share": 0.10884353741496598,
+          "shape": "team",
+          "statuses": []
+        },
+        {
+          "id": "clover-4",
+          "name": "Greenhouse morning",
+          "uses": 893,
+          "share": 0.20947689420595825,
+          "shape": "team",
+          "statuses": [
+            "sprout"
+          ]
+        }
+      ],
+      "topPattern": "ally-row+steep / single",
+      "pass": true
+    },
+    {
+      "cat": "panko",
+      "role": "guardian",
+      "actions": 3876,
+      "skills": [
+        {
+          "id": "panko-1",
+          "name": "Pan reply",
+          "uses": 1756,
+          "share": 0.45304437564499483,
+          "shape": "single",
+          "statuses": [
+            "riposte",
+            "brittle"
+          ]
+        },
+        {
+          "id": "panko-2",
+          "name": "Bread cover",
+          "uses": 68,
+          "share": 0.017543859649122806,
+          "shape": "self",
+          "statuses": [
+            "shelter"
+          ]
+        },
+        {
+          "id": "panko-3",
+          "name": "Crust return",
+          "uses": 1147,
+          "share": 0.2959236326109391,
+          "shape": "team",
+          "statuses": [
+            "riposte"
+          ]
+        },
+        {
+          "id": "panko-4",
+          "name": "Oven door",
+          "uses": 838,
+          "share": 0.21620227038183695,
+          "shape": "self",
+          "statuses": [
+            "riposte",
+            "shelter"
+          ]
+        }
+      ],
+      "topPattern": "single+riposte+brittle / team+riposte",
+      "pass": false
+    },
+    {
+      "cat": "mallow",
+      "role": "striker",
+      "actions": 2398,
+      "skills": [
+        {
+          "id": "mallow-1",
+          "name": "Whisk flare",
+          "uses": 1271,
+          "share": 0.5300250208507089,
+          "shape": "splash",
+          "statuses": [
+            "scald"
+          ]
+        },
+        {
+          "id": "mallow-2",
+          "name": "Split ember",
+          "uses": 119,
+          "share": 0.04962468723936614,
+          "shape": "row",
+          "statuses": [
+            "scald"
+          ]
+        },
+        {
+          "id": "mallow-3",
+          "name": "Burnt sugar",
+          "uses": 564,
+          "share": 0.23519599666388658,
+          "shape": "single",
+          "statuses": []
+        },
+        {
+          "id": "mallow-4",
+          "name": "Closing blaze",
+          "uses": 443,
+          "share": 0.1847372810675563,
+          "shape": "all",
+          "statuses": [
+            "scald"
+          ]
+        }
+      ],
+      "topPattern": "splash+scald / single",
+      "pass": false
+    },
+    {
+      "cat": "sorrel",
+      "role": "controller",
+      "actions": 4111,
+      "skills": [
+        {
+          "id": "sorrel-1",
+          "name": "Moon spoon",
+          "uses": 1803,
+          "share": 0.4385794210654342,
+          "shape": "single",
+          "statuses": [
+            "bitter"
+          ]
+        },
+        {
+          "id": "sorrel-2",
+          "name": "Cold brew",
+          "uses": 1392,
+          "share": 0.33860374604719046,
+          "shape": "pierce",
+          "statuses": [
+            "drowsy"
+          ]
+        },
+        {
+          "id": "sorrel-3",
+          "name": "Decanted moon",
+          "uses": 127,
+          "share": 0.030892726830454877,
+          "shape": "one",
+          "statuses": [
+            "glaze"
+          ]
+        },
+        {
+          "id": "sorrel-4",
+          "name": "Shared pot",
+          "uses": 619,
+          "share": 0.1505716370712722,
+          "shape": "team",
+          "statuses": [
+            "glaze"
+          ]
+        }
+      ],
+      "topPattern": "single+bitter / pierce+drowsy",
+      "pass": false
+    },
+    {
+      "cat": "biscuit",
+      "role": "striker",
+      "actions": 1659,
+      "skills": [
+        {
+          "id": "biscuit-1",
+          "name": "Rolling pin",
+          "uses": 682,
+          "share": 0.4110910186859554,
+          "shape": "multi-hit",
+          "statuses": [
+            "snag"
+          ]
+        },
+        {
+          "id": "biscuit-2",
+          "name": "Sideboard step",
+          "uses": 72,
+          "share": 0.0433996383363472,
+          "shape": "one",
+          "statuses": [
+            "cozy"
+          ]
+        },
+        {
+          "id": "biscuit-3",
+          "name": "Last crumb",
+          "uses": 576,
+          "share": 0.3471971066907776,
+          "shape": "pierce",
+          "statuses": []
+        },
+        {
+          "id": "biscuit-4",
+          "name": "Bakers procession",
+          "uses": 274,
+          "share": 0.16515973477998794,
+          "shape": "bounce",
+          "statuses": [
+            "brittle"
+          ]
+        }
+      ],
+      "topPattern": "multi-hit+snag / pierce",
+      "pass": false
+    },
+    {
+      "cat": "inkcap",
+      "role": "controller",
+      "actions": 2918,
+      "skills": [
+        {
+          "id": "inkcap-1",
+          "name": "Ink thread",
+          "uses": 1069,
+          "share": 0.36634681288553805,
+          "shape": "pierce",
+          "statuses": [
+            "brittle"
+          ]
+        },
+        {
+          "id": "inkcap-2",
+          "name": "Quiet spores",
+          "uses": 526,
+          "share": 0.1802604523646333,
+          "shape": "pierce",
+          "statuses": [
+            "drowsy"
+          ]
+        },
+        {
+          "id": "inkcap-3",
+          "name": "Paper decoy",
+          "uses": 766,
+          "share": 0.26250856751199453,
+          "shape": "one",
+          "statuses": [
+            "decoy",
+            "shelter"
+          ]
+        },
+        {
+          "id": "inkcap-4",
+          "name": "Dreaming canopy",
+          "uses": 529,
+          "share": 0.18128855380397532,
+          "shape": "all",
+          "statuses": [
+            "drowsy",
+            "brittle"
+          ]
+        }
+      ],
+      "topPattern": "pierce+brittle / one+decoy+shelter",
+      "pass": true
+    },
+    {
+      "cat": "cinnamon",
+      "role": "healer",
+      "actions": 2277,
+      "skills": [
+        {
+          "id": "cinnamon-1",
+          "name": "Spice pinch",
+          "uses": 536,
+          "share": 0.23539745278875715,
+          "shape": "single",
+          "statuses": [
+            "scald"
+          ]
+        },
+        {
+          "id": "cinnamon-2",
+          "name": "Comfort cup",
+          "uses": 608,
+          "share": 0.26701800614844096,
+          "shape": "ally-splash",
+          "statuses": [
+            "cozy"
+          ]
+        },
+        {
+          "id": "cinnamon-3",
+          "name": "Clean apron",
+          "uses": 843,
+          "share": 0.3702239789196311,
+          "shape": "one",
+          "statuses": [
+            "steep"
+          ]
+        },
+        {
+          "id": "cinnamon-4",
+          "name": "Second serving",
+          "uses": 290,
+          "share": 0.12736056214317085,
+          "shape": "team",
+          "statuses": []
+        }
+      ],
+      "topPattern": "one+steep / ally-splash+cozy",
+      "pass": true
+    },
+    {
+      "cat": "brioche",
+      "role": "guardian",
+      "actions": 1365,
+      "skills": [
+        {
+          "id": "brioche-1",
+          "name": "Bell patrol",
+          "uses": 567,
+          "share": 0.4153846153846154,
+          "shape": "single",
+          "statuses": [
+            "glaze"
+          ]
+        },
+        {
+          "id": "brioche-2",
+          "name": "Borrowed blanket",
+          "uses": 121,
+          "share": 0.08864468864468865,
+          "shape": "one",
+          "statuses": []
+        },
+        {
+          "id": "brioche-3",
+          "name": "Starched collar",
+          "uses": 456,
+          "share": 0.33406593406593404,
+          "shape": "single",
+          "statuses": [
+            "brittle"
+          ]
+        },
+        {
+          "id": "brioche-4",
+          "name": "Constellation apron",
+          "uses": 207,
+          "share": 0.15164835164835164,
+          "shape": "team",
+          "statuses": [
+            "link",
+            "glaze"
+          ]
+        }
+      ],
+      "topPattern": "single+glaze / single+brittle",
+      "pass": true
+    },
+    {
+      "cat": "velvet",
+      "role": "witch",
+      "actions": 1936,
+      "skills": [
+        {
+          "id": "velvet-1",
+          "name": "Silk nick",
+          "uses": 907,
+          "share": 0.4684917355371901,
+          "shape": "pierce",
+          "statuses": [
+            "scent",
+            "snag"
+          ]
+        },
+        {
+          "id": "velvet-2",
+          "name": "Candle bounce",
+          "uses": 127,
+          "share": 0.06559917355371901,
+          "shape": "bounce",
+          "statuses": []
+        },
+        {
+          "id": "velvet-3",
+          "name": "Stolen flame",
+          "uses": 511,
+          "share": 0.26394628099173556,
+          "shape": "single",
+          "statuses": []
+        },
+        {
+          "id": "velvet-4",
+          "name": "Velvet curtain",
+          "uses": 378,
+          "share": 0.1952479338842975,
+          "shape": "single",
+          "statuses": [
+            "decoy"
+          ]
+        }
+      ],
+      "topPattern": "pierce+scent+snag / single",
+      "pass": true
+    },
+    {
+      "cat": "marigold",
+      "role": "healer",
+      "actions": 2855,
+      "skills": [
+        {
+          "id": "marigold-1",
+          "name": "Seed stitch",
+          "uses": 448,
+          "share": 0.15691768826619965,
+          "shape": "single",
+          "statuses": [
+            "steep"
+          ]
+        },
+        {
+          "id": "marigold-2",
+          "name": "Garden bell",
+          "uses": 1234,
+          "share": 0.43222416812609454,
+          "shape": "team",
+          "statuses": [
+            "steep"
+          ]
+        },
+        {
+          "id": "marigold-3",
+          "name": "Spring pruning",
+          "uses": 664,
+          "share": 0.23257443082311735,
+          "shape": "single",
+          "statuses": [
+            "scald",
+            "crumb"
+          ]
+        },
+        {
+          "id": "marigold-4",
+          "name": "First tea blossom",
+          "uses": 501,
+          "share": 0.1754816112084063,
+          "shape": "team",
+          "statuses": []
+        }
+      ],
+      "topPattern": "team+steep / single+scald+crumb",
+      "pass": true
+    }
+  ],
+  "perCrew": {
+    "base/oven": {
+      "battles": 150,
+      "skills": {
+        "mallow-1": 1109,
+        "cinnamon-3": 902,
+        "mochi-1": 960,
+        "mallow-3": 540,
+        "cinnamon-1": 864,
+        "mochi-2": 437,
+        "mallow-4": 385,
+        "cinnamon-4": 120,
+        "mochi-4": 469,
+        "defend": 129,
+        "cinnamon-2": 130,
+        "mallow-2": 56,
+        "mochi-3": 3
+      },
+      "keywords": {
+        "scald": 4690,
+        "steep": 1250,
+        "snag": 267,
+        "cozy": 2563,
+        "scent": 324,
+        "brittle": 1468,
+        "drowsy": 384,
+        "bitter": 369,
+        "link": 3,
+        "shelter": 3
+      },
+      "enemyKeywords": {
+        "snag": 267,
+        "cozy": 100,
+        "scent": 324,
+        "steep": 348,
+        "scald": 367,
+        "brittle": 1468,
+        "drowsy": 384,
+        "bitter": 369
+      },
+      "reactions": {
+        "wildfire": 2084
+      },
+      "shapes": {
+        "splash": 2069,
+        "one": 905,
+        "single": 1404,
+        "weakest": 437,
+        "all": 385,
+        "team": 589,
+        "self": 129,
+        "ally-splash": 130,
+        "row": 56
+      },
+      "keywordCoverage": {
+        "scald": 1,
+        "snag": 0.3333333333333333,
+        "bitter": 0.3333333333333333,
+        "scent": 0.3333333333333333,
+        "brittle": 0.3333333333333333,
+        "drowsy": 0.3333333333333333,
+        "steep": 1,
+        "cozy": 1
+      }
+    },
+    "base/thread": {
+      "battles": 150,
+      "skills": {
+        "velvet-1": 843,
+        "biscuit-1": 761,
+        "brioche-3": 421,
+        "velvet-2": 125,
+        "brioche-1": 596,
+        "velvet-4": 374,
+        "biscuit-4": 316,
+        "brioche-4": 321,
+        "velvet-3": 350,
+        "biscuit-3": 487,
+        "biscuit-2": 69,
+        "brioche-2": 189,
+        "defend": 19
+      },
+      "keywords": {
+        "scent": 897,
+        "snag": 2806,
+        "brittle": 3001,
+        "glaze": 1559,
+        "decoy": 374,
+        "link": 963,
+        "cozy": 188,
+        "steep": 72,
+        "scald": 142,
+        "drowsy": 503,
+        "bitter": 338
+      },
+      "enemyKeywords": {
+        "snag": 159,
+        "cozy": 100,
+        "scent": 91,
+        "steep": 72,
+        "scald": 142,
+        "brittle": 1954,
+        "drowsy": 503,
+        "bitter": 338
+      },
+      "reactions": {
+        "rupture": 837,
+        "spread": 102
+      },
+      "shapes": {
+        "pierce": 1330,
+        "multi-hit": 761,
+        "single": 1741,
+        "bounce": 441,
+        "team": 321,
+        "one": 258,
+        "self": 19
+      },
+      "keywordCoverage": {
+        "scald": 0.3333333333333333,
+        "snag": 1,
+        "bitter": 0.3333333333333333,
+        "scent": 1,
+        "brittle": 1,
+        "drowsy": 0.3333333333333333,
+        "steep": 0.3333333333333333,
+        "cozy": 0.94
+      }
+    },
+    "base/night-lamp": {
+      "battles": 150,
+      "skills": {
+        "soot-2": 926,
+        "marigold-2": 913,
+        "inkcap-3": 795,
+        "soot-1": 644,
+        "marigold-3": 839,
+        "inkcap-1": 767,
+        "soot-4": 599,
+        "marigold-4": 349,
+        "inkcap-4": 594,
+        "inkcap-2": 655,
+        "soot-3": 749,
+        "marigold-1": 729,
+        "defend": 23
+      },
+      "keywords": {
+        "scent": 1295,
+        "steep": 3783,
+        "decoy": 795,
+        "shelter": 795,
+        "snag": 246,
+        "crumb": 1205,
+        "scald": 734,
+        "brittle": 4029,
+        "drowsy": 2935,
+        "cozy": 105,
+        "bitter": 303
+      },
+      "enemyKeywords": {
+        "snag": 246,
+        "cozy": 82,
+        "scent": 325,
+        "steep": 315,
+        "brittle": 2223,
+        "drowsy": 501,
+        "bitter": 303
+      },
+      "reactions": {
+        "crumb-burst": 902,
+        "spread": 56
+      },
+      "shapes": {
+        "single": 3243,
+        "team": 1262,
+        "one": 795,
+        "pierce": 2066,
+        "all": 1193,
+        "self": 23
+      },
+      "keywordCoverage": {
+        "scald": 1,
+        "snag": 0.3333333333333333,
+        "bitter": 0.30666666666666664,
+        "scent": 1,
+        "brittle": 1,
+        "drowsy": 1,
+        "steep": 1,
+        "cozy": 0.6666666666666666
+      }
+    },
+    "base/afternoon-tea": {
+      "battles": 150,
+      "skills": {
+        "clover-2": 1652,
+        "sorrel-2": 2039,
+        "panko-3": 766,
+        "panko-1": 2195,
+        "clover-4": 1145,
+        "panko-4": 1050,
+        "sorrel-3": 172,
+        "sorrel-4": 343,
+        "panko-2": 637,
+        "clover-1": 1393,
+        "sorrel-1": 2156,
+        "defend": 45,
+        "clover-3": 557
+      },
+      "keywords": {
+        "steep": 3418,
+        "drowsy": 2627,
+        "riposte": 5580,
+        "brittle": 3983,
+        "snag": 341,
+        "sprout": 3435,
+        "shelter": 1687,
+        "cozy": 161,
+        "glaze": 1201,
+        "bitter": 2177,
+        "scent": 806,
+        "scald": 358
+      },
+      "enemyKeywords": {
+        "snag": 341,
+        "cozy": 116,
+        "scent": 806,
+        "steep": 617,
+        "scald": 358,
+        "brittle": 2282,
+        "drowsy": 698,
+        "bitter": 446
+      },
+      "reactions": {},
+      "shapes": {
+        "ally-row": 1652,
+        "pierce": 2039,
+        "team": 2811,
+        "single": 5744,
+        "self": 1732,
+        "one": 172
+      },
+      "keywordCoverage": {
+        "scald": 0.3333333333333333,
+        "snag": 0.3333333333333333,
+        "bitter": 0.9866666666666667,
+        "scent": 0.3333333333333333,
+        "brittle": 1,
+        "drowsy": 1,
+        "steep": 1,
+        "cozy": 0.5133333333333333
+      }
+    },
+    "matched/oven": {
+      "battles": 450,
+      "skills": {
+        "mallow-1": 1271,
+        "cinnamon-3": 843,
+        "mochi-1": 1079,
+        "cinnamon-1": 536,
+        "mochi-2": 561,
+        "mallow-4": 443,
+        "mallow-3": 564,
+        "cinnamon-2": 608,
+        "mochi-4": 409,
+        "defend": 155,
+        "mallow-2": 119,
+        "cinnamon-4": 290,
+        "mochi-3": 1
+      },
+      "keywords": {
+        "scald": 2939,
+        "steep": 949,
+        "cozy": 3756,
+        "snag": 80,
+        "scent": 136,
+        "link": 155,
+        "brittle": 1509,
+        "drowsy": 801,
+        "bitter": 133,
+        "shelter": 1,
+        "crumb": 127
+      },
+      "enemyKeywords": {
+        "snag": 80,
+        "scent": 136,
+        "cozy": 100,
+        "steep": 106,
+        "scald": 115,
+        "brittle": 1509,
+        "drowsy": 801,
+        "bitter": 133,
+        "crumb": 127
+      },
+      "reactions": {
+        "wildfire": 838
+      },
+      "shapes": {
+        "splash": 2350,
+        "one": 844,
+        "single": 1100,
+        "weakest": 561,
+        "all": 443,
+        "ally-splash": 608,
+        "team": 642,
+        "self": 155,
+        "row": 119,
+        "fallen": 57
+      },
+      "keywordCoverage": {
+        "scald": 1,
+        "snag": 0.10222222222222223,
+        "bitter": 0.10888888888888888,
+        "scent": 0.1111111111111111,
+        "brittle": 0.7355555555555555,
+        "drowsy": 0.36444444444444446,
+        "steep": 0.9666666666666667,
+        "cozy": 0.9955555555555555
+      }
+    },
+    "matched/thread": {
+      "battles": 450,
+      "skills": {
+        "velvet-1": 907,
+        "biscuit-3": 576,
+        "brioche-1": 567,
+        "velvet-3": 511,
+        "biscuit-1": 682,
+        "brioche-3": 456,
+        "velvet-2": 127,
+        "velvet-4": 378,
+        "brioche-4": 207,
+        "biscuit-4": 274,
+        "brioche-2": 121,
+        "biscuit-2": 72,
+        "defend": 82
+      },
+      "keywords": {
+        "scent": 956,
+        "snag": 2526,
+        "glaze": 1182,
+        "brittle": 2520,
+        "cozy": 254,
+        "decoy": 378,
+        "link": 684,
+        "bitter": 115,
+        "drowsy": 623,
+        "scald": 137,
+        "crumb": 81
+      },
+      "enemyKeywords": {
+        "snag": 1,
+        "cozy": 100,
+        "scent": 4,
+        "brittle": 1611,
+        "bitter": 115,
+        "drowsy": 623,
+        "scald": 137,
+        "crumb": 81
+      },
+      "reactions": {
+        "spread": 199,
+        "rupture": 682
+      },
+      "shapes": {
+        "pierce": 1483,
+        "single": 1912,
+        "multi-hit": 682,
+        "bounce": 401,
+        "team": 207,
+        "one": 193,
+        "self": 82
+      },
+      "keywordCoverage": {
+        "scald": 0.1111111111111111,
+        "snag": 0.9977777777777778,
+        "bitter": 0.09777777777777778,
+        "scent": 0.9888888888888889,
+        "brittle": 0.9111111111111111,
+        "drowsy": 0.3333333333333333,
+        "steep": 0,
+        "cozy": 0.4177777777777778
+      }
+    },
+    "matched/night-lamp": {
+      "battles": 450,
+      "skills": {
+        "soot-2": 832,
+        "marigold-3": 664,
+        "inkcap-1": 1069,
+        "soot-1": 693,
+        "marigold-2": 1234,
+        "inkcap-2": 526,
+        "soot-3": 625,
+        "marigold-1": 448,
+        "inkcap-4": 529,
+        "soot-4": 537,
+        "inkcap-3": 766,
+        "marigold-4": 501,
+        "defend": 39
+      },
+      "keywords": {
+        "scent": 955,
+        "scald": 770,
+        "crumb": 1054,
+        "brittle": 3119,
+        "snag": 49,
+        "steep": 4118,
+        "cozy": 502,
+        "drowsy": 2461,
+        "decoy": 766,
+        "shelter": 766,
+        "bitter": 120
+      },
+      "enemyKeywords": {
+        "snag": 49,
+        "scent": 74,
+        "steep": 89,
+        "scald": 81,
+        "cozy": 14,
+        "brittle": 1465,
+        "bitter": 120,
+        "drowsy": 374,
+        "crumb": 51
+      },
+      "reactions": {
+        "spread": 67,
+        "crumb-burst": 672
+      },
+      "shapes": {
+        "single": 2569,
+        "pierce": 2288,
+        "team": 1735,
+        "all": 1066,
+        "one": 766,
+        "self": 39
+      },
+      "keywordCoverage": {
+        "scald": 0.9777777777777777,
+        "snag": 0.1,
+        "bitter": 0.08222222222222222,
+        "scent": 0.9933333333333333,
+        "brittle": 0.9666666666666667,
+        "drowsy": 0.9777777777777777,
+        "steep": 0.9977777777777778,
+        "cozy": 0.9977777777777778
+      }
+    },
+    "matched/afternoon-tea": {
+      "battles": 450,
+      "skills": {
+        "clover-2": 1765,
+        "sorrel-2": 1392,
+        "panko-1": 1756,
+        "clover-1": 1141,
+        "sorrel-1": 1803,
+        "panko-3": 1147,
+        "clover-4": 893,
+        "panko-4": 838,
+        "sorrel-4": 619,
+        "panko-2": 68,
+        "clover-3": 464,
+        "sorrel-3": 127,
+        "defend": 237
+      },
+      "keywords": {
+        "steep": 2686,
+        "cozy": 691,
+        "drowsy": 2544,
+        "brittle": 4386,
+        "riposte": 6102,
+        "snag": 54,
+        "sprout": 2630,
+        "shelter": 906,
+        "bitter": 1487,
+        "scent": 179,
+        "scald": 100,
+        "glaze": 1945,
+        "link": 67,
+        "crumb": 97
+      },
+      "enemyKeywords": {
+        "snag": 54,
+        "scent": 179,
+        "scald": 100,
+        "steep": 82,
+        "cozy": 8,
+        "brittle": 3086,
+        "drowsy": 1270,
+        "bitter": 117,
+        "crumb": 97
+      },
+      "reactions": {},
+      "shapes": {
+        "ally-row": 1765,
+        "pierce": 1392,
+        "single": 4700,
+        "team": 3123,
+        "self": 1143,
+        "one": 127
+      },
+      "keywordCoverage": {
+        "scald": 0.18666666666666668,
+        "snag": 0.1,
+        "bitter": 0.9022222222222223,
+        "scent": 0.1111111111111111,
+        "brittle": 0.9955555555555555,
+        "drowsy": 1,
+        "steep": 0.9911111111111112,
+        "cozy": 0.9911111111111112
+      }
+    }
+  },
+  "examples": {
+    "reactions": {
+      "wildfire": [
+        {
+          "crew": "oven",
+          "seed": 1,
+          "enemies": [
+            "button-guard",
+            "sock-skipper"
+          ],
+          "battleSha256": "19da766f7b0fa023f53e8cd9762db0899a84e44e757271de6bef56610739fbe5"
+        },
+        {
+          "crew": "oven",
+          "seed": 2,
+          "enemies": [
+            "button-guard",
+            "sock-skipper"
+          ],
+          "battleSha256": "914701030fb1964bf715bba8a5422b533bc0398b37101bd8d3ef2b35cc149681"
+        },
+        {
+          "crew": "oven",
+          "seed": 3,
+          "enemies": [
+            "button-guard",
+            "sock-skipper"
+          ],
+          "battleSha256": "aae0833847661b89208a176bd13e130dfca39a8f4f4e116656ba5a0436ada589"
+        }
+      ],
+      "rupture": [
+        {
+          "crew": "thread",
+          "seed": 1,
+          "enemies": [
+            "button-guard",
+            "sock-skipper"
+          ],
+          "battleSha256": "9f1c018cefea6daf3035db2cc45e53b0a2f139d963b8bdca4f2ad9e82766e675"
+        },
+        {
+          "crew": "thread",
+          "seed": 2,
+          "enemies": [
+            "button-guard",
+            "sock-skipper"
+          ],
+          "battleSha256": "3a7ba77b8ec3e99752f41d50c342e2374c7c71e79e85bb0d8c599b71697b8271"
+        },
+        {
+          "crew": "thread",
+          "seed": 3,
+          "enemies": [
+            "button-guard",
+            "sock-skipper"
+          ],
+          "battleSha256": "99b572d4301e557bb4a8569543efcab37bd55649fcae4064402cb51d18422449"
+        }
+      ],
+      "spread": [
+        {
+          "crew": "thread",
+          "seed": 1,
+          "enemies": [
+            "button-guard",
+            "sock-skipper"
+          ],
+          "battleSha256": "9f1c018cefea6daf3035db2cc45e53b0a2f139d963b8bdca4f2ad9e82766e675"
+        },
+        {
+          "crew": "thread",
+          "seed": 2,
+          "enemies": [
+            "button-guard",
+            "sock-skipper"
+          ],
+          "battleSha256": "3a7ba77b8ec3e99752f41d50c342e2374c7c71e79e85bb0d8c599b71697b8271"
+        },
+        {
+          "crew": "thread",
+          "seed": 3,
+          "enemies": [
+            "button-guard",
+            "sock-skipper"
+          ],
+          "battleSha256": "99b572d4301e557bb4a8569543efcab37bd55649fcae4064402cb51d18422449"
+        }
+      ],
+      "crumb-burst": [
+        {
+          "crew": "night-lamp",
+          "seed": 1,
+          "enemies": [
+            "button-guard",
+            "sock-skipper"
+          ],
+          "battleSha256": "00200cf73009a7885fae9c34ae39e90e1bb7408b1f3759ce8bb20263dda0c8a9"
+        },
+        {
+          "crew": "night-lamp",
+          "seed": 2,
+          "enemies": [
+            "button-guard",
+            "sock-skipper"
+          ],
+          "battleSha256": "7c8dfeaa706e7a2e24ed35c1b0b5efd6e74f924e295aefdca2e5159f2cf586da"
+        },
+        {
+          "crew": "night-lamp",
+          "seed": 3,
+          "enemies": [
+            "button-guard",
+            "sock-skipper"
+          ],
+          "battleSha256": "c46a5cf359ba2b6e8e4aad49ef844f5abc0c9ee701b5b0b5ed8fd786479833ca"
+        }
+      ]
+    },
+    "shapeCounts": {
+      "splash": [
+        {
+          "crew": "oven",
+          "seed": 1,
+          "enemies": [
+            "button-guard",
+            "sock-skipper"
+          ],
+          "battleSha256": "19da766f7b0fa023f53e8cd9762db0899a84e44e757271de6bef56610739fbe5"
+        },
+        {
+          "crew": "oven",
+          "seed": 2,
+          "enemies": [
+            "button-guard",
+            "sock-skipper"
+          ],
+          "battleSha256": "914701030fb1964bf715bba8a5422b533bc0398b37101bd8d3ef2b35cc149681"
+        },
+        {
+          "crew": "oven",
+          "seed": 3,
+          "enemies": [
+            "button-guard",
+            "sock-skipper"
+          ],
+          "battleSha256": "aae0833847661b89208a176bd13e130dfca39a8f4f4e116656ba5a0436ada589"
+        }
+      ],
+      "one": [
+        {
+          "crew": "oven",
+          "seed": 1,
+          "enemies": [
+            "button-guard",
+            "sock-skipper"
+          ],
+          "battleSha256": "19da766f7b0fa023f53e8cd9762db0899a84e44e757271de6bef56610739fbe5"
+        },
+        {
+          "crew": "oven",
+          "seed": 2,
+          "enemies": [
+            "button-guard",
+            "sock-skipper"
+          ],
+          "battleSha256": "914701030fb1964bf715bba8a5422b533bc0398b37101bd8d3ef2b35cc149681"
+        },
+        {
+          "crew": "oven",
+          "seed": 3,
+          "enemies": [
+            "button-guard",
+            "sock-skipper"
+          ],
+          "battleSha256": "aae0833847661b89208a176bd13e130dfca39a8f4f4e116656ba5a0436ada589"
+        }
+      ],
+      "single": [
+        {
+          "crew": "oven",
+          "seed": 1,
+          "enemies": [
+            "button-guard",
+            "sock-skipper"
+          ],
+          "battleSha256": "19da766f7b0fa023f53e8cd9762db0899a84e44e757271de6bef56610739fbe5"
+        },
+        {
+          "crew": "oven",
+          "seed": 2,
+          "enemies": [
+            "button-guard",
+            "sock-skipper"
+          ],
+          "battleSha256": "914701030fb1964bf715bba8a5422b533bc0398b37101bd8d3ef2b35cc149681"
+        },
+        {
+          "crew": "oven",
+          "seed": 3,
+          "enemies": [
+            "button-guard",
+            "sock-skipper"
+          ],
+          "battleSha256": "aae0833847661b89208a176bd13e130dfca39a8f4f4e116656ba5a0436ada589"
+        }
+      ],
+      "weakest": [
+        {
+          "crew": "oven",
+          "seed": 1,
+          "enemies": [
+            "button-guard",
+            "sock-skipper"
+          ],
+          "battleSha256": "19da766f7b0fa023f53e8cd9762db0899a84e44e757271de6bef56610739fbe5"
+        },
+        {
+          "crew": "oven",
+          "seed": 2,
+          "enemies": [
+            "button-guard",
+            "sock-skipper"
+          ],
+          "battleSha256": "914701030fb1964bf715bba8a5422b533bc0398b37101bd8d3ef2b35cc149681"
+        },
+        {
+          "crew": "oven",
+          "seed": 3,
+          "enemies": [
+            "button-guard",
+            "sock-skipper"
+          ],
+          "battleSha256": "aae0833847661b89208a176bd13e130dfca39a8f4f4e116656ba5a0436ada589"
+        }
+      ],
+      "all": [
+        {
+          "crew": "oven",
+          "seed": 1,
+          "enemies": [
+            "button-guard",
+            "sock-skipper"
+          ],
+          "battleSha256": "19da766f7b0fa023f53e8cd9762db0899a84e44e757271de6bef56610739fbe5"
+        },
+        {
+          "crew": "oven",
+          "seed": 2,
+          "enemies": [
+            "button-guard",
+            "sock-skipper"
+          ],
+          "battleSha256": "914701030fb1964bf715bba8a5422b533bc0398b37101bd8d3ef2b35cc149681"
+        },
+        {
+          "crew": "oven",
+          "seed": 3,
+          "enemies": [
+            "button-guard",
+            "sock-skipper"
+          ],
+          "battleSha256": "aae0833847661b89208a176bd13e130dfca39a8f4f4e116656ba5a0436ada589"
+        }
+      ],
+      "team": [
+        {
+          "crew": "oven",
+          "seed": 1,
+          "enemies": [
+            "button-guard",
+            "sock-skipper"
+          ],
+          "battleSha256": "19da766f7b0fa023f53e8cd9762db0899a84e44e757271de6bef56610739fbe5"
+        },
+        {
+          "crew": "oven",
+          "seed": 2,
+          "enemies": [
+            "button-guard",
+            "sock-skipper"
+          ],
+          "battleSha256": "914701030fb1964bf715bba8a5422b533bc0398b37101bd8d3ef2b35cc149681"
+        },
+        {
+          "crew": "oven",
+          "seed": 3,
+          "enemies": [
+            "button-guard",
+            "sock-skipper"
+          ],
+          "battleSha256": "aae0833847661b89208a176bd13e130dfca39a8f4f4e116656ba5a0436ada589"
+        }
+      ],
+      "self": [
+        {
+          "crew": "oven",
+          "seed": 2,
+          "enemies": [
+            "button-guard",
+            "sock-skipper"
+          ],
+          "battleSha256": "914701030fb1964bf715bba8a5422b533bc0398b37101bd8d3ef2b35cc149681"
+        },
+        {
+          "crew": "oven",
+          "seed": 3,
+          "enemies": [
+            "button-guard",
+            "sock-skipper"
+          ],
+          "battleSha256": "aae0833847661b89208a176bd13e130dfca39a8f4f4e116656ba5a0436ada589"
+        },
+        {
+          "crew": "oven",
+          "seed": 4,
+          "enemies": [
+            "button-guard",
+            "sock-skipper"
+          ],
+          "battleSha256": "c856c0a2bc8ec451344dc396ef5b8bdd083c67d4b070a0b7df690ae88c249414"
+        }
+      ],
+      "ally-splash": [
+        {
+          "crew": "oven",
+          "seed": 14,
+          "enemies": [
+            "button-guard",
+            "sock-skipper"
+          ],
+          "battleSha256": "8f01bfebff8baff938ae91ac139f0f583c90656e46cbae88c34b4487e3b55db9"
+        },
+        {
+          "crew": "oven",
+          "seed": 15,
+          "enemies": [
+            "button-guard",
+            "sock-skipper"
+          ],
+          "battleSha256": "bd8f70a5538d89cb371c53247b2568111e5a7edeaece502f111e5d8716575162"
+        },
+        {
+          "crew": "oven",
+          "seed": 18,
+          "enemies": [
+            "button-guard",
+            "sock-skipper"
+          ],
+          "battleSha256": "ae2021e71bd0cafb7f81aa4f5abed7f00a8c8f0453a0603e23ba59e1fffc7ced"
+        }
+      ],
+      "row": [
+        {
+          "crew": "oven",
+          "seed": 43,
+          "enemies": [
+            "button-guard",
+            "sock-skipper"
+          ],
+          "battleSha256": "3d8c67843d2f4207f268e7c18ece87c940e243829f6f282e8e60ef7d6bc61183"
+        },
+        {
+          "crew": "oven",
+          "seed": 2,
+          "enemies": [
+            "teacup-healer",
+            "kettle-knight"
+          ],
+          "battleSha256": "060aa9245af30f1b8dd64c6a271608ff504b0bbff03b46a1dbc245729161f88f"
+        },
+        {
+          "crew": "oven",
+          "seed": 3,
+          "enemies": [
+            "teacup-healer",
+            "kettle-knight"
+          ],
+          "battleSha256": "2e7603133be2464d9e71eb8b792d813dc919959b7ef3774ae12aeae320d8e3ac"
+        }
+      ],
+      "pierce": [
+        {
+          "crew": "thread",
+          "seed": 1,
+          "enemies": [
+            "button-guard",
+            "sock-skipper"
+          ],
+          "battleSha256": "9f1c018cefea6daf3035db2cc45e53b0a2f139d963b8bdca4f2ad9e82766e675"
+        },
+        {
+          "crew": "thread",
+          "seed": 2,
+          "enemies": [
+            "button-guard",
+            "sock-skipper"
+          ],
+          "battleSha256": "3a7ba77b8ec3e99752f41d50c342e2374c7c71e79e85bb0d8c599b71697b8271"
+        },
+        {
+          "crew": "thread",
+          "seed": 3,
+          "enemies": [
+            "button-guard",
+            "sock-skipper"
+          ],
+          "battleSha256": "99b572d4301e557bb4a8569543efcab37bd55649fcae4064402cb51d18422449"
+        }
+      ],
+      "multi-hit": [
+        {
+          "crew": "thread",
+          "seed": 1,
+          "enemies": [
+            "button-guard",
+            "sock-skipper"
+          ],
+          "battleSha256": "9f1c018cefea6daf3035db2cc45e53b0a2f139d963b8bdca4f2ad9e82766e675"
+        },
+        {
+          "crew": "thread",
+          "seed": 2,
+          "enemies": [
+            "button-guard",
+            "sock-skipper"
+          ],
+          "battleSha256": "3a7ba77b8ec3e99752f41d50c342e2374c7c71e79e85bb0d8c599b71697b8271"
+        },
+        {
+          "crew": "thread",
+          "seed": 3,
+          "enemies": [
+            "button-guard",
+            "sock-skipper"
+          ],
+          "battleSha256": "99b572d4301e557bb4a8569543efcab37bd55649fcae4064402cb51d18422449"
+        }
+      ],
+      "bounce": [
+        {
+          "crew": "thread",
+          "seed": 1,
+          "enemies": [
+            "button-guard",
+            "sock-skipper"
+          ],
+          "battleSha256": "9f1c018cefea6daf3035db2cc45e53b0a2f139d963b8bdca4f2ad9e82766e675"
+        },
+        {
+          "crew": "thread",
+          "seed": 2,
+          "enemies": [
+            "button-guard",
+            "sock-skipper"
+          ],
+          "battleSha256": "3a7ba77b8ec3e99752f41d50c342e2374c7c71e79e85bb0d8c599b71697b8271"
+        },
+        {
+          "crew": "thread",
+          "seed": 3,
+          "enemies": [
+            "button-guard",
+            "sock-skipper"
+          ],
+          "battleSha256": "99b572d4301e557bb4a8569543efcab37bd55649fcae4064402cb51d18422449"
+        }
+      ],
+      "ally-row": [
+        {
+          "crew": "afternoon-tea",
+          "seed": 1,
+          "enemies": [
+            "button-guard",
+            "sock-skipper"
+          ],
+          "battleSha256": "8c5f98e0b9395eb9db6c51843c51e53516f60bdaf73e7f0dbc86fbe0d7daf615"
+        },
+        {
+          "crew": "afternoon-tea",
+          "seed": 2,
+          "enemies": [
+            "button-guard",
+            "sock-skipper"
+          ],
+          "battleSha256": "5baeb2511c4788f56be23d927157f736ff1fd3277e0a7a2b2b589fcc1fcb2aca"
+        },
+        {
+          "crew": "afternoon-tea",
+          "seed": 3,
+          "enemies": [
+            "button-guard",
+            "sock-skipper"
+          ],
+          "battleSha256": "23cb3c784f28d682a8fd7fd34c320b2e5479d3fd543d84e9f0647dc18428eade"
+        }
+      ]
+    }
+  },
+  "gates": {
+    "D4": false,
+    "D5": true,
+    "D3": false
+  },
+  "duplicates": []
+}
