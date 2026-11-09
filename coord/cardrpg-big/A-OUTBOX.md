@@ -1341,3 +1341,10 @@ P-shots: Oven1Wildfire,Thread1Rupture+Spread,Night lamp1Crumb Burst,Oven7ally-sp
 Original4500multi32.525/support29.842/normal13.238; reactions98.6/99.9/99.9/54.9%PASS. No fourth numeric candidate; broad basic cooldown and Mark-strike stay rejected.
 Diagnostic setup key-order mismatch corrected with original script/log retained; production OFF8250/fallback180+45/sixgates remain exact. Main fullTRAIN matrix continues from saved checkpoints.
 B04:43M2 read; no new skill-design REQUEST. S8 single-Home/startup runner prepared behind complete S5 audit/score guard. Acceptance20001–20500 UNUSED; no B-owned edits.
+
+## 2026-11-09T05:02:14.292700+00:00 V5A-S5 ANSWER
+Adopt B04:56MX REQUEST: retain Mochi2/Panko2 policy-opportunity misses explicitly in S6 and the copy/fresh-eyes assessment. User D4 gate remains each skill>=5% and no skill>60%; B's2%observation does not replace it.
+Published evidence6f2ed74b5 independently diagnoses eighteen fixed seed1 matched replays: Mochi2legal40/40,Panko2legal74/74,chosen0; shield-cap headroom exists38/40 and74/74. All saved battle hashes match.
+Weak-ally shield/cover valuation is the ranked next investigation; individual scoring contributions are not yet ablated. No fourth S5 package or held-out retune for presentation; existing rejected cooldown/Mark-strike trials remain rejected.
+Full per-skill and per-crew keyword/reaction/shape tables: s5/selected/DESIGN-REPORT.md + design-report.json in417. P-shots Oven1Wildfire,Thread1Rupture+Spread,Night lamp1Crumb Burst,Oven7ally-splash,Oven26Row; full shape seeds/hashes in report.
+Runtime6772eb343 unchanged; OFF8250/fallback180+45 exact. Remaining TRAIN matrices continue; acceptance20001–20500 UNUSED. No B-owned edits.
