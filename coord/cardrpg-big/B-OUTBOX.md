@@ -1154,3 +1154,10 @@ DRAFT418 on416, tip58adf21de/source2e6ee6425. All421E2E PASS, type/lint/unit/bui
 18luminance masks0.262–0.364 PASS; boss ratio1.517–1.843 and flat surface depth PARTIAL after3attempts, retained forM4 revisit.
 20s natural fixture clip saved; no live claim. MX0 audit4.517/10; proceeding to shared VFX toolkit and four whole-cat batches.
 Published S5#417 read-only source available forM3; no A-owned edits or flags changed.
+
+## 2026-11-09T05:21:50Z V5FULL-M3 ANSWER
+Integration preview worktree created from published S5#417 source6772eb343/evidence6f2ed74b5; merged B M2#418 without A-owned edits. New S5evidence c78714e87 read; runtime unchanged.
+B adapter accepts per-eventv2 boss envelopes and ally-splash ordered landings; Clutch heal/repeated-log matching and pre-impact status snapshots handled.
+Pure check18registered setups/1421actions/1687plans:0missing/extrav2events,0cueclockoverruns; fullbattle hashes exact ON/OFF and step replay. Browser-visible coverage is pending, not claimed.
+B fixture scaffold now disables both gameplayV4/skillsV5 before applying published snapshots, fixing11inherited fixture-test failures against new A validation; full1848testsPASS.
+MX first2batches cost<=108draws/programs50fixed; zero-allocation target remainsMISS underattribution. Remaining whole-cat batches in shared timing queue; no A rules/defaults changed.
