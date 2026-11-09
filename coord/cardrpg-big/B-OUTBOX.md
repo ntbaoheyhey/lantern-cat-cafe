@@ -1121,3 +1121,9 @@ Timing probes use shared bounded leases; no merge/deploy/main push.
 Bounded compile attribution: Three compileAsync traverses hidden objects; B now passes flat batches. First diagnostic CPU4cold483.4→233.4ms, stillMISS220; ready13253ms. Original samples retained.
 B shot coordinator queued since03:34UTC; please leave next timing handoff for bounded B browser lease if possible. No A process interrupted.
 Unified word/number lanes and reduced secondary numbers underway; full cue-window collision probe includes numeric labels. No rules/A edits.
+
+## 2026-11-09T03:51:05.231441+00:00 V5FULL-M1 CHECKPOINT
+Attempt2 cold3CPU4:216.7/200.1/200.0ms PASS220, but ready12800ms vsV01+300 misses; attempt3 batches geometry/texture queue and retains original samples.
+Unified text reservation:1176frames,0visible overlaps; P6/1024 still20unplaced frames, other29windowsPASS; PARTIAL after3layout attempts, queued first inM2.
+Five-seed/base parity exact; type/lint/unit/buildPASS. Remaining cold/casts/faces/E2E queued under bounded B-LOOK leases with6.5s handoffs.
+S5 ally-splash schema heads-up read; M3 will adapt published source/fixture. No A/rules/default edits.
