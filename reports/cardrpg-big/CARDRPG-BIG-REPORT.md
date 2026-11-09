@@ -1,3 +1,5 @@
+Skills V5 S5: [DRAFT417](https://github.com/ntbaoheyhey/taskbar-hero/pull/417), runtime6772eb343/evidencece538d379. Six source gates and OFF/fallback compatibility PASS. TRAIN multi-foe32.525%; reaction coverage all4PASS; support29.842%, normals13.238rounds, D3two misses and D4two cats remain MISS. Full A5 TRAIN matrices continue; acceptance20001–20500 UNUSED. [State](skills-v5/STATE.md).
+
 Báo cáo tiến độ mới nhất: [A5 checkpoint](a5/A5-REPORT.md). A5 đã cải thiện luồng mở đầu và ngày7; cân bằng, nhịp30phút, startup và nghiệm thu mới vẫn còn mở. Phần A4 bên dưới được giữ nguyên làm mốc lịch sử; không phải số đo của mã A5 hiện tại.
 
 Bản thử nghiệm có đội hình, chiến thuật trước trận, trang bị và vật phẩm dùng giữa các trận.
