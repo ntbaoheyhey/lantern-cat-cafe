@@ -1,0 +1,50 @@
+{
+  "base": "3e95a0121",
+  "rows": [
+    {
+      "path": "apps/web/src",
+      "base": "be99b0649415816a63849f421fa80e660453683a",
+      "current": "be99b0649415816a63849f421fa80e660453683a",
+      "exact": true
+    },
+    {
+      "path": "assets",
+      "base": "a5db565f3e43b979ec9da277974eb6a82a80199a",
+      "current": "a5db565f3e43b979ec9da277974eb6a82a80199a",
+      "exact": true
+    },
+    {
+      "path": "packages/game-rules",
+      "base": "86fb15ce1cfde7d062b5d351a1a194646ea80218",
+      "current": "86fb15ce1cfde7d062b5d351a1a194646ea80218",
+      "exact": true
+    },
+    {
+      "path": "tools/cardrpg-look/build.mjs",
+      "base": "f0e1c8e8408bff692d10d617c7009e27cba52728",
+      "current": "f0e1c8e8408bff692d10d617c7009e27cba52728",
+      "exact": true
+    },
+    {
+      "path": "tools/cardrpg-look/offline.tsx",
+      "base": "689c7d35524e61c52037d60b20a1c70e73ec532c",
+      "current": "689c7d35524e61c52037d60b20a1c70e73ec532c",
+      "exact": true
+    },
+    {
+      "path": "tools/cardrpg-look/offline-loader.js",
+      "base": "5897bbf94c6a85961973a5c39db36963c5c5fd51",
+      "current": "5897bbf94c6a85961973a5c39db36963c5c5fd51",
+      "exact": true
+    }
+  ],
+  "basis": "R0 modifies only art-rebuild docs/capture tools. Unchanged M4 artifact gates retained; no timing sample replaced.",
+  "reusedGates": {
+    "fixedShots": "../../skills-v5/full/m4/delivery2/full-shots/shots.json.gz",
+    "collide": "../../skills-v5/full/m4/banner-fix",
+    "faces": "../../skills-v5/full/m4",
+    "perf": "../../skills-v5/full/m4/delivery2",
+    "startup": "../../skills-v5/full/m4",
+    "liveParity": "../../skills-v5/full/m4/REPORT.md"
+  }
+}

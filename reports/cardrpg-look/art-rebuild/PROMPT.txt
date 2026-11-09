@@ -1,0 +1,112 @@
+TASKBAR HERO - CODEX LANE B "ART REBUILD": MAKE THE CATS, MONSTERS, SKILL EFFECTS AND BATTLE TRULY BEAUTIFUL AND EYE-CATCHING (2026-11-09 13:30 UTC). ONE LONG AUTONOMOUS, SELF-TESTING, SELF-REPAIRING RUN. Paste into the lane B session that is waiting for lane A's S6 (the "Skills V5 Full Run"), or into a fresh session. THIS MESSAGE IS THE USER'S EXPLICIT INSTRUCTION TO RUN NOW, UNATTENDED, UNTIL SECTION 11 SAYS STOP. Do not ask the user anything; decide by this prompt, record decisions in STATE, continue.
+
+ART SOURCE SWITCH (the user may edit this one line before pasting): GEN_IMAGES = ALLOWED
+ (ALLOWED = you may use the image-generation tool available to you in this Codex session under section 4 rules. NOT_ALLOWED = Blender/procedural/hand-authored SVG/shader art only.)
+
+REFERENCE (read first): reports/cardrpg-look/skills-v5/full/{PROMPT.txt,RULES.md,STATE.md,FIXLOG.md,VFX-AUDIT.md,VFX-AUDIT-AFTER.md,M4-REVIEW.md,STATUS-VI.md}; docs/design/cardrpg/LOOK-BIBLE.md; reports/cardrpg-look/b2/B2-REPORT.md; assets/provenance/look.md; look-assets.json; docs/cardrpg-look/v5-live.html (current demo, draft #421) and integration draft #420 (worktree /Users/bao/taskbar-hero-cardrpg-v5live).
+
+==================================================================
+0. WHY THIS RUN EXISTS (read twice)
+==================================================================
+The user's verdict on the current demo (9 Nov): "the characters look quite ugly; now we must build truly beautiful images and truly beautiful effects, eye-catching; you may tear down and rebuild the characters; use the best tools; render images". Your own audit agrees: visual 6.233/10, uniqueness MISS. The reviewer looked at m4/dpr2/1440-P16-live-P16 and m4/vfx/peak-sheet and saw:
+ - CATS look like chunky toys: blocky primitive bodies, small faces relative to the head, flat shading, no fur or material richness, weak expressions; they do not sell "adorable cat cafe heroes".
+ - MONSTERS are washed-out pastel pink plasticine (after the luminance "relief" fix): low saturation, low detail, no menace; they read as candy, not as enemies.
+ - SKILL EFFECTS are mostly flat billboard cut-outs (Mochi's ultimate = flat yellow cardboard house outlines + white teacup shapes), little glow, few particles, no depth; most effects are small relative to the frame; in the 60-tile peak sheet most tiles look the same.
+ - JUDGE BUILD shows developer buttons in the top bar (Look atelier, Review studio, Mechanics lab, Skills V5 guide, B2: After, Look: Atelier, Frame meter, Feel lab).
+Everything lane B built stays (stack #409 -> #421, integration #420, all probes, readability work, Skills V5 cues). This run raises the ART QUALITY BAR, which is the part judges notice in the first 5 seconds (screening: Technical + Avalanche; final: Creativity 15, UI/UX + Demo 10, Pitch 10). Demo Day 30 Nov; your report deadline 20 Nov 12:00 UTC.
+
+==================================================================
+1. RULES (inherit, then the differences)
+==================================================================
+Sections 1 (hard rules), 2 (lane split, sync, waiting without model calls, branches), 3 (anti-forget), 6 (gate thresholds unless changed below) and 7 (self-repair loop) of reports/cardrpg-look/skills-v5/full/PROMPT.txt apply VERBATIM. Re-read them now. Differences for this run:
+ - Branches: codex/cardrpg-art-r<N>-2026-11-09 (actual UTC date), stacked on #421's branch; one draft PR per milestone; integration refreshes go to the existing #420 worktree/branch as new merge commits.
+ - State files: reports/cardrpg-look/art-rebuild/{PROMPT.txt (this prompt verbatim + sha256), STATE.md, FIXLOG.md, DECISIONS.md, STATUS-VI.md}. Same anti-forget behaviour.
+ - New art lives behind a B-owned sub-switch `lookArt: 'v2' | 'v3'` inside lookV2 (v3 default in your demos, v2 kept for the dev before/after toggle). lookV2 OFF unchanged as always.
+ - Evidence budget for this run: reports/cardrpg-look/art-rebuild/ <= 120 MB (WebP review shots, <= 6 clips of <= 30 s). Source art masters (Blender files, layered PSD/PNG) go under assets/source/look-v3/ only if <= 60 MB total; otherwise keep masters outside git in ~/art/look-v3/ and commit the exporters + provenance.
+ - Size: full demo <= 40 MB (was 33), lean demo <= 26 MB; report bytes per class.
+ - Perf thresholds unchanged (native cast <= 16.8 ms, 1440 CPU4 cast <= 100 ms, CPU4 cold <= 220 ms, draws target <= 130 with the documented 150 ceiling, tris <= 220k at peak, 0 per-cast allocations target).
+
+==================================================================
+2. FIRST: DUTIES FROM THE FULL RUN (do not drop them)
+==================================================================
+ - If lane A posts S6 DONE at any time: pause art work at the next safe point, do the FULL run's M3 refresh + M5 report exactly as specified there (<= 4 h), publish, then resume this run. Use the waiting script in the background (no model calls) and check it between milestones.
+ - Open FULL-run issues stay open in their FIXLOG (B-M1-001, B-MX-003, B-M4-004, draws 147 > 130, Kettle 1.997x); fix them when the rebuild touches the same code, otherwise leave them as recorded.
+
+==================================================================
+3. ART DIRECTION TARGET ("premium cozy")
+==================================================================
+Write reports/cardrpg-look/art-rebuild/ART-DIRECTION.md (<= 80 lines) first, then follow it. Baseline from LOOK-BIBLE (night cafe, teal/honey, warm lamps) plus:
+ - CATS: adorable and premium. Big expressive heads (~40-45% of body height), large glossy eyes with two highlights and coloured irises, readable mouth/brow expressions (idle, attack, hurt, happy), soft fur look (shell fur or fur-card silhouette + painted fur normal/gradient), rich outfit materials (cloth with folds, ceramic, metal buttons, leather), one strong silhouette idea per cat tied to its role and kit (Mochi lantern-guardian with apron and door shield, Soot midnight hexer with crumb lantern, Clover greenhouse healer, ...). The 12 must be distinguishable as silhouettes at 64 px.
+ - MONSTERS: "enchanted cafe objects gone wrong": saturated plum/crimson/ink palette with emissive eyes, cracks, stitching, steam, clearly hostile but still cozy-cute (not gore). Bosses huge, with a crown/aura and their own light. Fix the washed-out pink: separate from floor by rim light, value and saturation, not by paling them.
+ - SHADING: toon ramp with 3 tones + soft AO + coloured rim (honey for cats, plum for monsters) + subtle subsurface warmth on ears/noses; contact shadows; consistent light direction with the stage lamps.
+ - ANIMATION: idle breathing + blink + ear/tail motion, anticipation-lunge-recover attacks, hit flinch + flash, victory pose, defeat slump; squash/stretch tuned per cat.
+ - VFX: luminous and layered: HDR-like emissive cores with bloom, soft particles, painted or simulated flipbooks (smoke, steam, flame, sparkle, leaf, ink, crumb), ribbon trails, shockwaves, decals, light flashes; ultimates fill 25-40% of frame height with one signature motif per cat; nothing looks like flat cardboard.
+ - COMPOSITION: camera closer; cats >= 18% of viewport height at 1280x720, regulars >= 16%, bosses >= 2x the tallest regular; HUD-safe zones respected.
+ - Fundamentals checklist used in every review: silhouette, value grouping, colour harmony (LOOK tokens), focal point, edge control, shape language (round = friend, sharp = foe), consistency across the roster.
+
+==================================================================
+4. IMAGE GENERATION RULES (only if GEN_IMAGES = ALLOWED)
+==================================================================
+ - Use only the image-generation capability built into this Codex session (it is part of your own agent; do not start other agents, services or paid APIs; no API keys). If no such tool is available, record it in DECISIONS.md and use the NOT_ALLOWED path.
+ - Prompts are your own words describing OUR original characters (cat names, roles, outfits, palette from LOOK tokens). Never name, describe or imitate an existing game, studio, franchise, artist or character; never upload or reference external images; inputs may only be our own renders/sketches.
+ - Use generation for: concept sheets (front/side/back turnarounds, expression sheets) as modelling guides, painted textures (fur gradients, cloth, ceramic, decals), card/portrait illustrations, painted VFX sprite sheets, UI ornaments. Every output is post-processed by you (palette lock to look-tokens, cleanup, consistent lighting direction, crop/pack) and checked for artefacts (extra limbs/eyes, garbled text, inconsistent outfit) before use.
+ - Provenance per asset in assets/provenance/look.md: tool/model name as reported by the tool, full prompt, seed/params if exposed, date, post-processing steps, final file hash. Keep generated masters outside the demo unless used.
+
+==================================================================
+5. MILESTONES (in order; each ends with gates + rubric + draft PR + B-OUTBOX CHECKPOINT + STATUS-VI.md; then CONTINUE)
+==================================================================
+R0 SETUP + HONEST BASELINE (<= 2 h): save prompt/state files; capture the "poster set" you will reuse all run: (a) hero lineup of all 12 cats at equal scale on a neutral cafe floor, (b) all 13 opponents lineup, (c) battle hero frame 1440x900 (P16-like), (d) ultimate peak of Mochi, Soot, Clover, Mallow, (e) 10 s battle clip. Score them with the rubric (section 8) as the baseline. Write ART-DIRECTION.md.
+R1 PIPELINE BAKE-OFF (<= 10 h): build Mochi, Soot, Button Guard and Yarn Giant in TWO candidate pipelines, same shots, then choose by rubric score (record in DECISIONS.md; the user can override later):
+ - Path 3D+: rebuild meshes in Blender headless (bpy scripts committed under tools/cardrpg-look/blender-v3/): skin-modifier/metaball base -> voxel remesh -> smooth/subdivide, proper head/eye topology, shape keys for 4 expressions, armature compatible with the existing clip set (or retarget), baked textures (painted gradients, fur normal, AO), shell-fur or fur-card silhouette in three.js, new toon/rim material. Guides: generated concept turnarounds if allowed.
+ - Path 2.5D: illustrated full-body characters (generated if allowed, otherwise painted procedurally), cut into 5-8 layers (body, head, ears, eyes/mouth sheet, arms, tail, prop) with inpainted overlaps, animated as layered billboards in the existing 3D stage (bone-like transforms, mesh deformation for squash/stretch, blink/mouth swaps, lunge, flinch, victory), with contact shadow, rim-light tint and depth sorting that matches the stage camera presets.
+ Keep whichever scores higher overall (ties -> the one with lower production cost to finish 25 units by 18 Nov). You may also choose a hybrid (e.g. 3D bodies + painted faces) if it scores best.
+R2 FULL ROSTER (<= 25 h, batches of 3 units): all 12 cats, then 10 regular opponents, then 3 bosses (Yarn Giant, Kettle Knight, Pantry Crown), in the chosen pipeline. Per batch: concept -> build -> pose/expression sheet -> in-battle shots -> quality loop (5 flaws with regions, fix worst 3, >= 2 rounds) -> lineup consistency check against already finished units -> perf/face/contrast gates. Keep skeleton/clip/event compatibility so Skills V5 cues, status marks, plates and badges still anchor correctly (re-run collide/faces on P-shots per batch).
+R3 PORTRAITS AND CARD ART (<= 6 h): one illustrated portrait per cat (1x/2x WebP) + rarity frame plates + 13 opponent portraits, matching the new art, delivered through look-assets.json (A-owned screens pick them up through the existing adapter; if a screen needs code changes, REQUEST to A with exact suggestions). Earned-cat reveal uses the new portrait.
+R4 VFX 2.0 (<= 15 h): rebuild skill effects for the new art level, worst-first from VFX-AUDIT-AFTER.md: replace every flat cut-out shape with luminous layered effects (section 3 VFX), render/generate flipbooks at good quality (Blender smoke/fire/steam sims or EEVEE renders into atlases, or generated painted sheets), tune bloom/emissive so effects glow without hiding faces, scale ultimates to 25-40% of frame height with a signature motif each, enemy attacks in hostile palette, Skills V5 status marks/reactions restyled to match (keep their readability gates). Gates: MX audit average >= 8.0 (from 6.233), 60-tile uniqueness PASS by eye (no two tiles read the same), all perf gates.
+R5 STAGE, LIGHT, CAMERA, POST (<= 6 h): closer camera presets meeting section 3 coverage; light rig and post (bloom, colour grade LUT from LOOK tokens, light vignette, gentle DOF on background only), contact shadows, ambient life (steam, dust motes, lamp flicker) within budget; monsters' value/saturation fix verified (opponent-floor separation >= 0.18 with the new palette).
+R6 JUDGE BUILD HYGIENE (<= 2 h): every B-owned dev control (Look atelier, Look: Atelier, B2: After, Frame meter, Feel lab, Review studio, Mechanics lab, Skills V5 guide if B-owned) renders only with ?dev=1; for any that live in A-owned files, one REQUEST to A listing them; the judge demo opens straight into the game with no dev chrome.
+R7 INTEGRATION + DEMO + FILMS (<= 6 h, start by 18 Nov 18:00 UTC at the latest): merge into the #420 integration branch (A-owned files take A's version), re-run live coverage/parity/perf deltas, build docs/cardrpg-look/v5-live.html and the lean pack, films: 20 s before (#421) / after, 30 s pitch clip (combo crew, >= 2 reactions, >= 1 ultimate, new art), 20 s ultimate reel, and a 10 s "roster turntable" for the pitch deck.
+R8 REPORT (ALWAYS by 20 Nov 12:00 UTC): reports/cardrpg-look/art-rebuild/ART-REPORT.md (<= 90 lines): 5 Vietnamese lines first; poster set before/after (lineups, hero frame, 4 ultimate peaks); bake-off decision with scores; rubric table; perf/size table; FIXLOG summary; provenance summary (how many assets generated vs authored); misses; what the user should look at. Ledger section in CARDRPG-LOOK-REPORT.md. B-OUTBOX DONE.
+
+==================================================================
+6. TEST AND REVIEW PLAN
+==================================================================
+ Per change set: typecheck, lint, unit.
+ Per batch/milestone: build; parity (lookV2 ON vs OFF and lookArt v2 vs v3: identical battle logs/digests on the 5 seeds + LIVE-SEEDS); P-shot pack + poster set at 1440 DPR1 and 1024 layout; collide (badges, plates, words, numbers, moment card); faces (protected faces 0 offenders, re-derive masks for new models); contrast; casts (changed units/cues); cold 3+3 at R2 end, R4 end, R7; draws/tris/programs; heap per cast; startup audit lookV2 OFF; bytes per class.
+ E2E full at each milestone end (flaky rule from FULL section 6).
+ BEAUTY REVIEW at each milestone (mandatory, not a metric): open the poster set and the latest clip; write a blind A/B note for each pair (which is more appealing and why, in art-fundamentals terms); list 5 flaws with regions; fix the worst 3 through the self-repair loop; recapture. If a change does not clearly beat the previous version in the A/B note, revert it.
+ LINEUP TEST: after every batch, all finished units side by side at equal scale; inconsistent style/proportion/lighting = S3 issue.
+
+==================================================================
+7. SELF-REPAIR
+==================================================================
+Use FULL PROMPT.txt section 7 exactly (reproduce -> measure -> hypotheses -> smallest fix -> verify incl. parity and touched gates -> record; max 3 attempts per issue per milestone, then PARTIAL and move on; S1 blocks the PR; extend the probe that missed it). Art-specific additions: a generated asset with artefacts is regenerated or repaired, never shipped; a model that breaks clips/anchors is fixed or reverted to v2 for that unit (record), never shipped broken; if the chosen pipeline cannot finish the roster by 18 Nov 00:00 UTC, finish remaining units at the best achievable level in the same style and record PARTIAL rather than mixing styles.
+
+==================================================================
+8. SELF-SCORE RUBRIC (baseline at R0; score at every milestone end; target weighted >= 8.5 by R7)
+==================================================================
+| Criterion | Weight | 10 = | 6 = | <= 4 = |
+| Character beauty and appeal (12 cats) | 25% | each cat adorable, premium, distinct silhouette, rich materials, expressive | cute but toy-like or inconsistent | blocky, flat, ugly |
+| Monster and boss menace + readability | 10% | hostile, saturated, detailed, instantly read, bosses huge | readable but bland | pale/candy-like |
+| Skill VFX beauty (all skills + ultimates + enemy attacks) | 20% | luminous, layered, unique per cat, cinematic ultimates, audit >= 8.5 | audit ~6.5 | flat cut-outs |
+| Animation quality | 10% | idle life, anticipation/impact/recover, expressions | basic tweens | stiff |
+| Stage, light, camera composition | 10% | units dominate frame, cohesive light/post, focal clarity | ok but wide/flat | empty, washed |
+| Readability kept (statuses, combos, plates, numbers) | 10% | all V5 readability gates still PASS | minor regressions | broken |
+| Performance | 10% | all perf gates PASS with new art | one miss <= +25% | visible freeze |
+| Size, startup, compatibility, judge hygiene | 5% | <= 40 MB, lean <= 26 MB, OFF unchanged, no dev chrome | one soft miss | dev chrome visible / OFF broken |
+If the weighted total is < 8.5 at a milestone end, the two weakest lines become the first work of the next milestone.
+
+==================================================================
+9. DECISIONS YOU MAKE YOURSELF (record in DECISIONS.md)
+==================================================================
+Pipeline choice after the bake-off; exact proportions, palettes, materials within ART-DIRECTION.md; which assets to generate vs author; camera presets; quality tiers; which units to rebuild first; regenerating or repairing generated assets. NOT yours: rules, numbers, kits, A-owned screens, merging, deploying, default flags.
+
+==================================================================
+10. SCHEDULE GUIDE (UTC; adjust, record changes)
+==================================================================
+R0 9 Nov; R1 by 10 Nov; R2 cats by 13 Nov, opponents/bosses by 15 Nov; R3 by 16 Nov; R4 by 17 Nov; R5+R6 by 18 Nov; R7 18-19 Nov; R8 by 20 Nov 12:00. Lane A S6/M5 duty (section 2) interrupts whenever it arrives.
+
+==================================================================
+11. STOP CONDITIONS
+==================================================================
+Stop only when R8 is delivered, or 20 Nov 12:00 UTC is reached (deliver R8 with what you have), or an S1 issue you cannot fix or revert (deliver R8 as PARTIAL describing it). Never stop to wait for the user.
