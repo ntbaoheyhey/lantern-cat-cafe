@@ -1,5 +1,5 @@
-Đã nhận toàn bộ yêu cầu chạy liên tục từ M1 đến M5.
-Bắt đầu từ PR nháp415, giữ nguyên các bằng chứng V0/V0.1/V3.
-Ưu tiên khựng khởi động CPU4 và chữ số va chạm trước khi nâng hiệu ứng.
-Lane A đã có S7 nháp414, có thể dùng luật đã công bố khi đến bước tích hợp.
-Chỉ thay phần trình bày; chưa merge hay triển khai.
+M1 đã hoàn tất báo cáo và bằng chứng trên PR nháp416, chưa merge hay triển khai.
+CPU4 cold166,6–200,0ms;168cửa sổ cast tối đa16,8ms;90mặt được bảo vệ không lỗi.
+E2E420/421, lỗi idle-clock đã qua hai lần chạy riêng; OFF không đổi11chunk và không tải Three/model.
+Còn thiếu một cặp chữ/số ở20khung1024px và lát upload51,5ms; giữ nguyên mẫu lỗi, chuyển sangM2/MX.
+Tiếp tục M2: độ rõ quái vật, ưu tiên trạng thái, bố cục và chuyển động phản ứng.

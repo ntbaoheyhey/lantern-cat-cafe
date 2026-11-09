@@ -4,8 +4,8 @@ import {gunzipSync} from 'node:zlib';
 const [directory,output]=process.argv.slice(2);
 async function read(name){try{const b=await readFile(`${directory}/${name}`);return JSON.parse(name.endsWith('.gz')?gunzipSync(b):b)}catch(e){if(e.code==='ENOENT')return null;throw e}}
 const [collide,casts,cold,shots,faces,ui]=await Promise.all([
- read('collide3/collisions.json.gz'),read('casts3/casts.json.gz'),read('cold-attempt3/summary.json'),
- read('after3/shots.json.gz'),read('faces3/faces.json'),read('ui3/ui.json'),
+ read('collide3/collisions.json.gz'),read('casts3/casts.json.gz'),read('cold-attempt3/summary.json.gz'),
+ read('after3/shots.json.gz'),read('faces3/faces.json'),read('ui4/ui.json'),
 ]);
 const all=collide?.rows.flatMap(r=>r.frames.map(f=>({id:r.id,width:r.width,...f})));
 const round=n=>Math.round(n*10)/10;

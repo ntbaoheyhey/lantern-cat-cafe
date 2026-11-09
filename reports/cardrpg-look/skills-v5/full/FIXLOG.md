@@ -48,3 +48,14 @@ Repro ui3: P1 Escape closes tooltip while retaining badge focus; P4 reuses same 
 
 ## B-M2-001 2026-11-09T04:12Z M2 readability baseline probe S2
 readability-before retained3measured1024cases then failed idle earned preview: harness assumed gallery plan always non-null, but progress=-1 intentionally clears it. Repair null guard; resume existing rows without repeating samples. No product change. Resume artifact/source unchanged, fresh output readability-before2 includes preserved rows with provenance.
+
+### B-M1-004 verification
+ui4 passes12keyboard/Escape and static reduced-motion cases at1024/1280/1440; original ui3 retained. Probe focus navigation corrected; product unchanged. FIXED.
+
+## B-M2-002 2026-11-09T04:22Z M2 body/readability S3
+Repro: V5_ARTIFACT=/tmp/cardrpg-v5full-m1/v5-attempt3.html V5_OUT=/tmp/cardrpg-v5full-m1/readability-before2 node tools/cardrpg-look/skills-v5/full/readability.mjs (bounded timing lock).
+Before isolated geometry/floor luminance separation0.024–0.126 across P1/P5/P15 and3widths, all below0.18. Earned Sorrel overlaps Soot in projected bounds; P4 crowded marks observed.
+Hypotheses: low material value vs mat; boss scale/framing; shared preview slots. Attempt1 prepared: brighter hostile material+rim without stage darkening, boss-only scale/framing, separate gallery/entrance slots, top3 body marks. Not applied until M1 immutable checks close.
+## B-M2-003 2026-11-09T04:22Z M2 reaction motion/teaching S3
+Repro: P6/P9/P10/P11 frozen500ms frame strips +12 ultimate peaks with marks. Baseline motion shapes too similar; no one-time keyword legend.
+Attempt1 prepared: staggered low fire fronts, rupture tension/snap/inward drops, Spread status-icon arcs; closable2s session hint outside centre. Need layout/faces/perf/parity verification.
