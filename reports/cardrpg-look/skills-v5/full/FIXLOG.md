@@ -234,3 +234,13 @@ Same-path publishedA/candidate productionOFF startup loads the same11script memb
 
 ### B-M4-005 attempt1 verified 2026-11-09T08:23Z
 Bbc22a644f/live1eded4102: expanded actualDOM audit passes51fixedframes and1194cueframes at1024/1280/1440,0overlap/outside/unplaced,0browsererrors. Viewed P15name/banner at1024and1440: both visible and separate. Source/type/lint/unit/parity/build pass;faces98masks0offenders,contrast4.618,12UIcasespass. FIXED. Delivery2build SHAedd92234 starts casts/cold and browser closure; original pilot/package receipts retained.
+
+## B-M4-006 2026-11-09T08:35Z M4 E2E clocks S2
+Repro: B banner browser closure full unchanged421test suite, sourcebc22a644f/e2c16dd84:419pass; idle-loop XP stays0 after clock.fastForward and local squad runtime stays0.1s instead of3.x. Original full log retained in b-banner-browser/e2e.log.
+Hypotheses: clock/RAF scheduling under full-suite concurrency; unrelated legacy startup; look regression. Both paths are legacy and unchanged by M4. Cheapest discriminator: each failing test isolated twice sequentially with one worker, identical tests/timeouts, under shared timing lock. No skips or test edits. Attempts0; awaiting four isolated receipts before classification.
+
+### B-M4-006 isolated results FLAKY, 2026-11-09T08:42Z
+Both unchanged failing tests pass twice sequentially with one worker (idle2/2,squad2/2),under the shared lease. Retain full419/421and allfourisolated logs; classify as scheduling/clock flakes in this measured scope. No test,timeout,skip or runtime edits; no clean421full-run claim forB. Why not caught: full-suite concurrency exposes timing behavior absent from focused presentation probes.
+
+## B-M4-007 2026-11-09T08:44Z M4 evidence packing S2
+Repro: post-pack SHA256 verification found six missing canonical V0 images. Cause: Path.resolve followed existing iteration symlinks during duplicate-media removal. Restored exact canonical blobs from the current pre-pack HEAD,verified their originalSHA256; retained existing symlinks and all distinct samples. All56media/gzip aliases now verify byte-for-byte;no runtime change or sample rerun. EVIDENCE-ALIASES.json records the correction. FIXED. Future packing treats symlinks as aliases rather than independent media.
