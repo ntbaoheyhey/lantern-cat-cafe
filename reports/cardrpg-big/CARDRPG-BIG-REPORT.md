@@ -80,3 +80,5 @@ A5 Starplans46 offers available Home crew choices for job stars and honest cappe
 Starplans46 published as[DRAFT404](https://github.com/ntbaoheyhey/taskbar-hero/pull/404), stacked on403.
 
 A5 informed Home03 completed60.1963active minutes on source27f192301 with60captures. Independent receipt/source/OFF closure PASS. At30min73choiceoffers/22rewards/13celebrations; maxrewardgap723.0seconds anddeadtime reduction2.0% remainMISS. Fixedpolicy upgrades teammates but does not apply Result advice. [Report](a5/E2-INFORMED-ENGAGEMENT.md); fresh acceptance and B1/B2/startup/Z remain open.
+
+Informed Home03 evidence published as [DRAFT405](https://github.com/ntbaoheyhey/taskbar-hero/pull/405), stacked on404.

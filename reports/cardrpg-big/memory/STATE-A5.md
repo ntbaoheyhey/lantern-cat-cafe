@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-Runtime27f192301/DRAFT404 unchanged. Home03 COMPLETE60.1963active minutes; independent audit/closurePASS60captures, cadence/deadtimeMISS. Original job handles absent/terminal, no journey restart. Result56 original prototype now running; Route53 failed only JSON undefined intent-property comparison, original retained and harness correction prepared. Fresh20001–20500 UNUSED.
+Runtime27f192301/DRAFT405 unchanged. Home03 COMPLETE60.1963active minutes; independent audit/closurePASS60captures, cadence/deadtimeMISS. Original job handles absent/terminal, no journey restart. Result56 original prototype now running; Route53 failed only JSON undefined intent-property comparison, original retained and harness correction prepared. Fresh20001–20500 UNUSED.
 ## NEXT
-Publish informed evidence checkpoint on404 with ledger/outbox. Finish Route53/Home54/Result56 targeted prototypes; adopt only reviewed successful sources and validate one coherent UI phase. B1/B2/static-display/cadence/startup/Z remain open; do not substitute UI checks for balance closure.
+Informed evidence published asDRAFT405 on404; mirror ledger/outbox. Finish Route53/Home54/Result56 targeted prototypes; adopt only reviewed successful sources and validate one coherent UI phase. B1/B2/static-display/cadence/startup/Z remain open; do not substitute UI checks for balance closure.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
@@ -344,3 +344,5 @@ H0 attempt2 COMPLETE; attempt1 harness loop retained/excluded. Type/lint/web1735
 - Resume: preserved original Home03/12101, receipt watcher20823, Route53/30416, Home54 unit31648 and Advice55/31978. Added prospective Home54 fixture/browser tools only, with explicit synthetic boundary labels and no combat samples. Runtime27f192301 and fresh acceptance unchanged.
 
 - Resume2026-11-09T00:08Z: previous status-only turn did not advance implementation. Revalidated all original handles as absent; Home03 complete, 60capture receipt audit and source/OFF closure nowPASS with no repeated samples. At30min73offers/22rewards/13celebrations,maxgap723.0s,combat878.9s (2.0%reduction), cadence/deadtimeMISS. Personally inspected full60capture contact sheet; four early images show lazy-screen placeholders, retained without a ready-screen claim. Route53 firstUI failed only undefined intent serialization; original tool/log retained, complete JSON equality correction registered. Result56 original coordinator started once; no acceptance or runtime/B/protected edits.
+
+- 2026-11-09T00:10Z: DRAFT405 https://github.com/ntbaoheyhey/taskbar-hero/pull/405 published at26e92a7c7 on404, unchanged runtime and original sixchecks. Route53 ON42scenario checks pass after serialization correction; OFF completed V4 save exposes real account/run-mode mismatch in new ordering. Correct new layout gate to require current accountV4, retain historical failure. Home54 andResult56 original prototypes remain active; no repeated elapsed journey.
