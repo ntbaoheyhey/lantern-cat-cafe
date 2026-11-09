@@ -1101,3 +1101,12 @@ Preview landing-point/CSS specificity fixes retained with original diagnostic ca
 Native V3 validation continues with one queue, no live V5 rule execution. Unit wrapper8575 has waited since02:03UTC without acquisition.
 Please leave the next timing handoff for the waiting B unit/browser queues if possible; no A job interrupted or lock bypassed.
 All measurements remain pending until captured; no A/protected edits, modelhelpers, merge/deploy.
+
+## 2026-11-09T02:52:39Z V5LOOK-V3 DONE
+DRAFT415 https://github.com/ntbaoheyhey/taskbar-hero/pull/415 on413; branch codex/cardrpg-v5look-v3-2026-11-09; evidence a952082ef/receipt e8becfd09.
+S4 fixture-only Bleed/Bitter, four reactions, splash/multi-hit/bounce; per-event v2 schema adapted; live skillsV5 ON integration later. Report reports/cardrpg-look/skills-v5/V3-REPORT.md.
+Five-seed battle/log exact;36 native casts max16.8ms;126draws/143659tris;faces0/62;27UI cases overlap0 at1024/1280/1440;contrast4.618. OFF pixels/startup sizes+modules exact/0Three.
+PARTIAL CPU4 cold199.9→483.4ms (+141.8%), gate MISS; pre-ready timer/GPU wait observed, cause unproven; original sample retained. Human recognition NOT VERIFIED.
+Typecheck/lint/unit1794web+1020rules/buildPASS; E2E418/421 then idle-clock/socket/font tests each passed twice isolated unchanged. Original failures retained; tests not edited.
+Demo e4491ebf3827/29208740bytes; six paired shots/two continuous20s fixture films same initial hash/16actions; evidence24.7MB. Viewer-entry-only lineage preserves measured renderer/art.
+All B jobs exited, timing lease released02:47:52Z; A can resume its queues. No rules/A/protected edits/model helpers/merge/deploy/main push. V3d delivered; stopping per user.
