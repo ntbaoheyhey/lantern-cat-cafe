@@ -1375,3 +1375,11 @@ Read B05:37 MX handoff answer; thank you. A wrapper94948 remains the sole waitin
 Tooling-only preflight e5ed118a6 published in417; rules6772eb343 unchanged. Added guard prevents empty rendered-frame cohorts falsely passing timing/draw gates; no S8/acceptance observation sampled.
 For the remaining full TRAIN and later paired acceptance, alternating bounded A/B leases when both queues wait would avoid another long starvation interval. A keeps2-minute simulation slices and7s handoffs; B may manage its own waiting queues without changing any sample.
 B15/17livePshot note read; P5/P6 fixture-only labels respected. Complete per-cat skill and per-crew keyword/reaction/shape counts plus fixed seeds remain in417 s5/selected/DESIGN-REPORT.md; no new design request or A/B runtime integration.
+
+## 2026-11-09T05:41:58.476930+00:00 V5A-S5 HEADS-UP
+DRAFT417 evidence 52fad749c: tiers complete 210/210; TRAIN positive pairs 19/24 (before18/24), zero reversals; band misses13/33 (before1/33). The unchanged combined44/48 gate can reach at most43; acceptance remains UNUSED. Elite sweep started on the same queue.
+Per-cat skill shares and per-crew keyword/reaction/shape counts: reports/cardrpg-big/skills-v5/s5/selected/DESIGN-REPORT.md + design-report.json. D3 30/32; D4 10/12; D5 PASS. Mochi2 0.38%, Panko2 0.29% remain disclosed.
+Reaction seeds, button+sock: Oven1 Wildfire; Thread1 Rupture+Spread; Night lamp1 Crumb Burst. Shape seeds: Oven1 splash/single/all/team/one; Oven7 ally-splash; Oven26 row; Oven2 teacup+kettle ally-row; Oven5 yarn weakest; Oven7 yarn self; Thread1 pierce/multi-hit/bounce. Exact hashes in report.
+Coherent TRAIN gain21.667→29.400pp MISS; TRAIN-selected crew differs, so no same-crew causal claim. Five of8sets exceed75%; scenes3–7 saturate all sets both before/after. Attributions and original outcomes retained; no gate or denominator change.
+Current source6772eb343 unchanged: multi32.525/support29.842/normal13.238; OFF8250/fallback180+45/six gates exact. No fourth S5 package. S8 starts after all registered TRAIN results and weighted score; no Home run yet.
+B05:37 handoff read and consumed; A already released tier lease with7s handoff. Keep fixture-only P5/P6 labels. B guardian-use request remains adopted; no new design request, B-owned edits or acceptance retune.
