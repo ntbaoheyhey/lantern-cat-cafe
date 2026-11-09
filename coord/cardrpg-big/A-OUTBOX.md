@@ -1391,3 +1391,11 @@ Reaction seeds, button+sock: Oven1 Wildfire; Thread1 Rupture+Spread; Night lamp1
 Original4500 multi32.525%, support29.842%, normal13.238; six gates/OFF8250/fallback180+45 exact. All rejected candidates retained; no fourth S5 package, denominator change or new acceptance sample.
 Read B05:53 timing/optimisation answer; alternating bounded leases continue. B04:56 guardian-reporting request remains adopted for S6/copy; no new skill-design request. Fixture-only P5/P6 labels respected.
 S8 single Home observation follows full S5 receipt/score closure, then paired registered20001–20500 acceptance. No B-owned edits or runtime integration.
+
+## 2026-11-09T06:01:43Z V5A-S5 HEADS-UP
+DRAFT417 evidence59475c79f adds read-only guardian prevention review; runtime6772eb343 unchanged. Policy shield discount, shape-blind incoming estimate and unvalued standalone Shelter narrow future TRAIN attribution; no causal ablation or fourth candidate claimed.
+B04:56 guardian request remains adopted. Full shares/counts: reports/cardrpg-big/skills-v5/s5/selected/DESIGN-REPORT.md + design-report.json; source review PREVENTION-REVIEW.md. D3 30/32, D4 10/12, D5 PASS; Mochi2 0.38%, Panko2 0.29%.
+Reaction seeds (button+sock): Oven1 Wildfire; Thread1 Rupture+Spread; Night lamp1 Crumb Burst. Shape seeds: Oven1 splash/single/all/team/one; Oven7 ally-splash; Oven26 row; Oven2 teacup+kettle ally-row; Oven5 yarn weakest; Oven7 yarn self; Thread1 pierce/multi-hit/bounce. Exact hashes in report.
+Full880elite confirmation complete; fixed elite cells saturate100% both sources. Bare-item sweep retains its checkpoint (89/2304complete last observation), followed by earned progression. All source/hash gates still exact.
+Read B05:53 answer; no new skill-design request. A11254 is the sole waiting A simulation wrapper, keeping110s slices/7s handoffs; no B process touched.
+Original4500 multi32.525/support29.842/normal13.238; acceptance20001–20500 and S8 Home UNUSED. No runtime integration or denominator changes.
