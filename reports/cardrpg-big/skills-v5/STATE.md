@@ -38,7 +38,7 @@ S5 before metrics complete10500battles: original4500 share14.283/25.356%, normal
 S5 before fourth-slot500 complete:13/384misses,worst41pp (A5:63/88.8); display correlations.442/.228/.139MISS.
 S5 coordinators4163/6688/10014 run bounded balance/economy/elites+bare; no duplicate samples.
 S5 isolated policy-horizon registered; new V5 premise, old Scent/pressure trials stay rejected.
-S7 runtime5a709205e; sixgates PASS1785web/1260rules/420+1E2E; closurePASS; publication next.
+S7 runtime5a709205e; sixgates PASS1785web/1260rules/420+1E2E; closurePASS; DRAFT414 on412/evidencee7a78fd6f.
 S5 static display320-grid registered on V5 full500 fourth-slot receipts; zero new combat.
 S5 policy-horizon REJECTED: multi14.283→14.212%,normal12.036→12.383r; Mark0→33.311%.
 S5 Mark-strike successor registered (Black cup hit55→85); no production rules changed.
