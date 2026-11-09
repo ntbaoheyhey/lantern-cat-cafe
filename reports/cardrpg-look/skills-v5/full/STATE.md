@@ -1,8 +1,8 @@
 # Skills V5 full-run state
-NOW M4: four-film bundle/guide/lean pack and delivery checks complete; publishing M4 draft, then refreshing published A phases through S6 DONE or19Nov18UTC before M5.
+NOW mandatory M3 published-phase refresh after M4 draft#421. M5 prepared62lines, publish only after S6DONE or19Nov18UTC cap; no new browser/timing jobs queued.
 PROMPT full/PROMPT.txt and RULES.md apply; single agent, no model helpers/generation, headless native macOS.
-B /Users/bao/taskbar-hero-cardrpg-b2 branch codex/cardrpg-v5full-m4-2026-11-09, runtime bc22a644f, current commit e2c16dd84.
-LIVE /Users/bao/taskbar-hero-cardrpg-v5live branch codex/cardrpg-v5live-2026-11-09, current ced2555e0; draft #420 INTEGRATION PREVIEW - not for merge.
+B /Users/bao/taskbar-hero-cardrpg-b2 branch codex/cardrpg-v5full-m4-2026-11-09, runtime bc22a644f, M4 delivery4dba130c9 (draft#421), next branch codex/cardrpg-v5full-m5-2026-11-09.
+LIVE /Users/bao/taskbar-hero-cardrpg-v5live branch codex/cardrpg-v5live-2026-11-09, current269a08e05; draft #420 INTEGRATION PREVIEW - not for merge.
 Only B-owned presentation/tools/assets/docs/reports; protected A rules/screens/defaults/manifests untouched. Never use A worktree.
 DONE V0#409, V01#413, V3#415 f9924699; M1#416, M2#418, MX#419 3a8ed4c08. Preserve completed/failed samples.
 DONE MX:48active cat skills including12ultimates,12passives,26enemy cues. Mean4.517→6.233; beauty7.5/uniqueness MISS after3attempts.
@@ -30,10 +30,10 @@ OPEN B-M4-004 PARTIAL after3diagnostics:OFFentry28182→28185B preloadmetadata;o
 Source lineage2 verifies2930source+291assets against committedliveced2555e0 usingexisting25fallback-model remaps; no runtime drift.
 DONE evidence packing:lossless gzip+identical media aliases. B-M4-007 symlink correction restored exact6blobs andretargeted2links;all56alias hashes verify. Distinct/failed samples retained.
 EVIDENCE M4packincluded,cap80MB and4clips≤30s; q64reviewencodes preserve dimensions/originalhashes. Distinct failedsamples retained.
-QUEUE own no-modelFIFO16545; neverkillA/unrelated PIDs. Current delivery /tmp/cardrpg-v5full-m4/delivery2.json; owner/lease controlled by run-lock with≤19min timeout/6.5s handoff.
+QUEUE allM4jobs complete; ownFIFO16545 stopped via its stopfile. No timinglock held orrequested. NeverkillA/unrelated PIDs.
 VIDEO before20s complete seed791576452. After usesexactinitialJSON withV4/V5ON;pitchpredeclaredThreadpair1;reelactualguide12ultimates1x. /tmp/cardrpg-v5full-m4/delivery2-queue.log.
-WAITING A latest08:25 S8Homeactive/noS6;lastpublished b21a91c35 runtime6772eb343 unchanged. SyncB08:37checkpoint pushed;no newdesign request.
-NEXT publish M4 report/draft +BOUTBOX; complete M5 prepared report after mandatory published A refresh. M4 films20/20/30/20s, pitch2reactions/6multi/3ultimates; reel12starts,lastafterglowtrimmed.
+WAITING published A phase/S6 since 2026-11-09T08:57:30Z, last check 2026-11-09T08:57:30Z; lastreadline1452 (08:25S8Homeactive), runtime6772eb343/evidenceb21a91c35. SyncM4checkpoint08:56pushed.
+NEXT timeout1200 wait-outbox.sh withV5_LAST_READ_LINE1452; onnewpublishedphase fetch/read-only andmerge integration, deltaonlyverification. M5draft/report/ledger/BOUTBOXDONE afterrefreshcap.
 THEN continue M3 published-phase refresh untilS6DONEor19Nov18UTC; wait-outbox.sh withrecordedlastline,onlyqueuedBworkwhilewaiting. M5report≤90lines+ledger+BOUTBOXDONE.
 Prepared drafts/scripts /tmp/cardrpg-v5full-m4-prep/{M4-REPORT.md,V5FULL-REPORT.md,review-videos.py,sync-entry.py}; M5 placeholders mustbe resolved beforepublication.
 STOP only M5delivered,20Nov12UTC,orunfixable/unrevertibleS1withM5PARTIAL. No manualhandoff.
