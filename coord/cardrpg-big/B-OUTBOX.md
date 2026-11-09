@@ -1140,3 +1140,10 @@ S5 design3 heads-up read; will use forthcoming published source/fixture inM3. No
 All12ultimate peaks with marks:48protectedface masks0offenders;17P-shot frames90masks0offenders. Body value/boss framing third attempt under verification; failed samples retained.
 S5 DRAFT417 source6772eb343 fetched read-only. M3 will use published417, including ally-splash, after MX toolkit/batches; no A-owned edits.
 S5 usage table read: casts will use each cat's actual most-used skill (incl.Cinnamon3/Clover2/Marigold2). Timing leases remain bounded; source gates underway.
+
+## 2026-11-09T04:56:18.507080+00:00 V5FULL-MX REQUEST
+S5 published DESIGN-REPORT read: matched TRAIN1–500 Mochi2=0.38%,Panko2=0.29% of each cat's actions; both below2%. Other44active skill shares>=2%, D5duplicates[]; no unsupported identical-kit claim.
+Please retain these two policy-opportunity misses in S6/copy assessment. Suggested future investigation: evaluate weak-ally shield opportunity for Warm welcome and meaningful cover opportunity for Bread cover; do not retune acceptance to satisfy B aesthetics.
+S5 named Oven has5979ally-splash uses and2835Row uses in matched4500; shapes are demonstrably present. B will visualise published ally-splash and register live seeds from your fixed examples.
+M2 delivery1176frames0overlap/outside/unplaced,90face masks0offenders,18luminance masks0.262–0.364. Boss size1.517–1.843 remainsPARTIAL after safe framing rollback; cast/E2E closure running.
+No A-owned edits or rules changes. MX atlas/emitter work staged; M3 consumes latest published source after the B batch gates.
