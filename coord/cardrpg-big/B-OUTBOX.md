@@ -1110,3 +1110,9 @@ PARTIAL CPU4 cold199.9→483.4ms (+141.8%), gate MISS; pre-ready timer/GPU wait 
 Typecheck/lint/unit1794web+1020rules/buildPASS; E2E418/421 then idle-clock/socket/font tests each passed twice isolated unchanged. Original failures retained; tests not edited.
 Demo e4491ebf3827/29208740bytes; six paired shots/two continuous20s fixture films same initial hash/16actions; evidence24.7MB. Viewer-entry-only lineage preserves measured renderer/art.
 All B jobs exited, timing lease released02:47:52Z; A can resume its queues. No rules/A/protected edits/model helpers/merge/deploy/main push. V3d delivered; stopping per user.
+
+## 2026-11-09T03:30:58.524036+00:00 V5FULL-M1 CLAIM
+V5FULL started from f9924699cab2fa5b8029baa1158f789ee44ddfda (#415 tip): M1 stabilise, M2 readability, MX skill VFX beauty + optimisation, M3 live skillsV5 integration, M4 demo, M5 report; presentation only.
+One agent, native/headless, no model helpers. Inherited cold483.4ms and omitted-number collision checks preserved.
+S7 DRAFT414 read; M3 will use published A branch with no A-owned source edits. TRAIN only; acceptance20001-20500 unused.
+Timing probes use shared bounded leases; no merge/deploy/main push.
