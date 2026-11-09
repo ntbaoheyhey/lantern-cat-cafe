@@ -1,3 +1,4 @@
+import { CatKitV5, ReactionSummaryV5 } from './SkillsV5';
 import { NodeStarsV4 } from './JourneyV4';
 import { showReviewTools } from "./player-mode";
 import { useEffect, useState, type ReactNode } from 'react';
@@ -62,7 +63,7 @@ export function Prepare({ m }: { m: DepthModel }) {
       <h3>Equipped</h3><ul className="dp-equipped-list">{(['weapon', 'outfit', 'charm', 'relic'] as const).map(slot => {
         const template = actor.equipment.map(id => R.GEAR_BY_ID[id]!).find(item => item.slot === slot);
         return <li key={slot}><small>{slot}</small><span>{template ? `${template.name} · ${template.rarity}` : 'Empty slot'}</span></li>;
-      })}</ul><p>{actor.skills.map(id => R.SKILLS[id]!.name).join(' · ')}</p>
+      })}</ul><p>{actor.skills.map(id => R.SKILLS[id]!.name).join(' · ')}</p>{battle.initial.skillsV5&&<CatKitV5 catId={actor.catalogId}/>}
     </section>)}</div></CrewDetails>
     <section className="cr-panel dp-opponents"><h2>At the other end of the table</h2><div>{battle.actors.filter(actor => actor.side === 'enemy').map(actor => <span key={actor.id}><img {...portraitProps(actor.catalogId)} alt="" /><b>{actor.name}</b><small>{actor.hp} HP · {actor.row} row</small></span>)}</div></section>
     {battle.v4 && <section className="cr-panel"><h2>Read their plan</h2><div className="dp-v4-grid">{battle.actors.filter(a => a.side === 'enemy').map(actor => {
@@ -87,6 +88,7 @@ export function BattleResult({ m }: { m: DepthModel }) {
     {!liveLoss && canAdvise && <AdviceV4 m={m} />}
     <section className={`cr-panel dp-result-banner ${battle.result === 'party' ? 'victory' : ''}`}><CompanionCard id={summary.mvp!.catalogId} m={m} /><div><small>MOST VALUABLE COMPANION</small><h2>{summary.mvp!.name}</h2><p>{summary.mvp!.damage} damage · {summary.mvp!.healing} healing · {summary.mvp!.shielding} shields</p><small>Contribution = damage + healing + ¼ shields.</small></div></section>
     <div className="dp-three">{summary.cats.map(cat => <section className="cr-panel dp-cat-result" key={cat.id}><h2>{cat.name}</h2>{(['damage', 'healing', 'taken'] as const).map(metric => <label key={metric}><span>{labels[metric]} <b>{cat[metric]}</b></span><progress aria-label={`${cat.name} ${labels[metric]}`} value={cat[metric]} max={maxima[metric]} /></label>)}</section>)}</div>
+    <ReactionSummaryV5 battle={battle}/>
     <section className="cr-panel"><h2>Key moments</h2>{summary.firstUltimate && <p>First ultimate · round {summary.firstUltimate.round} · {name(summary.firstUltimate.actorId)} used {R.SKILLS[summary.firstUltimate.skillId]!.name}</p>}
       {summary.biggestHit && <p>Biggest hit · round {summary.biggestHit.round} · {name(summary.biggestHit.actorId)} dealt {summary.biggestHit.amount} to {name(summary.biggestHit.targetId)}</p>}
       {summary.saves.map((event, index) => <p key={index}>Saved · round {event.round} · {name(event.targetId)} {event.kind === 'revive' ? 'returned to the fight' : 'survived with Second sprout'}</p>)}

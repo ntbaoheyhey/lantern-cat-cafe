@@ -1,0 +1,119 @@
+[
+  {
+    "name": "typecheck",
+    "attempt": 1,
+    "code": 2,
+    "head": "23c8033eb09369f115687a5d8ce7500de0cb7927",
+    "sourceDigest": "388849381318bf48bea0b215ebf2b562dff73ba3526e18a4f8d171f5451cfc21",
+    "started": "2026-11-09T02:10:17.270Z",
+    "ended": "2026-11-09T02:15:19.218Z",
+    "log": "reports/cardrpg-big/skills-v5/s7/gates/typecheck-attempt-1.log",
+    "sha256": "afdfdc3c4a5771c4921361485be7e601bb9d5add1b3db65581b08913b88a90f4",
+    "counts": []
+  },
+  {
+    "name": "typecheck",
+    "attempt": 2,
+    "code": 0,
+    "head": "23c8033eb09369f115687a5d8ce7500de0cb7927",
+    "sourceDigest": "1c61ddba31596d77f6870b7813ed4a57d61a66d368b9184dc22c4302caa63a04",
+    "started": "2026-11-09T02:15:43.632Z",
+    "ended": "2026-11-09T02:20:56.466Z",
+    "log": "reports/cardrpg-big/skills-v5/s7/gates/typecheck-attempt-2.log",
+    "sha256": "9e388651d4e329781a64c2c40631a0053a1d12e21f09e0b6aa63fb49643128e6",
+    "counts": []
+  },
+  {
+    "name": "lint",
+    "attempt": 1,
+    "code": 0,
+    "head": "23c8033eb09369f115687a5d8ce7500de0cb7927",
+    "sourceDigest": "1c61ddba31596d77f6870b7813ed4a57d61a66d368b9184dc22c4302caa63a04",
+    "started": "2026-11-09T02:21:03.469Z",
+    "ended": "2026-11-09T02:40:15.090Z",
+    "log": "reports/cardrpg-big/skills-v5/s7/gates/lint-attempt-1.log",
+    "sha256": "d0ff50f4eaddf442a96976918ab5fad1d93f641f4a3598a20d7b43464ded8201",
+    "counts": []
+  },
+  {
+    "name": "web-unit",
+    "attempt": 1,
+    "code": 0,
+    "head": "23c8033eb09369f115687a5d8ce7500de0cb7927",
+    "sourceDigest": "1c61ddba31596d77f6870b7813ed4a57d61a66d368b9184dc22c4302caa63a04",
+    "started": "2026-11-09T02:40:22.093Z",
+    "ended": "2026-11-09T02:40:51.333Z",
+    "log": "reports/cardrpg-big/skills-v5/s7/gates/web-unit-attempt-1.log",
+    "sha256": "820263e40dd70bd76de54c8b34b90a61445a73c33334347cf426ac808dda3eda",
+    "counts": [
+      " Test Files  185 passed (185)",
+      "      Tests  1785 passed (1785)"
+    ]
+  },
+  {
+    "name": "rules",
+    "attempt": 1,
+    "code": 0,
+    "head": "23c8033eb09369f115687a5d8ce7500de0cb7927",
+    "sourceDigest": "1c61ddba31596d77f6870b7813ed4a57d61a66d368b9184dc22c4302caa63a04",
+    "started": "2026-11-09T02:40:58.335Z",
+    "ended": "2026-11-09T02:41:28.937Z",
+    "log": "reports/cardrpg-big/skills-v5/s7/gates/rules-attempt-1.log",
+    "sha256": "a6f50261aa4cf6369fdf75781e290275bf0c968a1ab55357b82791f8b3654004",
+    "counts": [
+      " Test Files  75 passed | 3 skipped (78)",
+      "      Tests  1260 passed | 2 expected fail | 11 skipped (1273)"
+    ]
+  },
+  {
+    "name": "e2e",
+    "attempt": 1,
+    "code": 1,
+    "head": "23c8033eb09369f115687a5d8ce7500de0cb7927",
+    "sourceDigest": "1c61ddba31596d77f6870b7813ed4a57d61a66d368b9184dc22c4302caa63a04",
+    "started": "2026-11-09T02:41:35.941Z",
+    "ended": "2026-11-09T02:44:28.059Z",
+    "log": "reports/cardrpg-big/skills-v5/s7/gates/e2e-attempt-1.log",
+    "sha256": "ba9422fe10130bbfab33f496aee65c588d46c55d1d456fa3a8586110a94c76ba",
+    "counts": [
+      "  1 failed",
+      "  420 passed (2.9m)"
+    ]
+  },
+  {
+    "name": "e2e",
+    "attempt": 2,
+    "code": 0,
+    "head": "5a709205e469df04a3bd79b8ad1e0aca39b75e6a",
+    "sourceDigest": "1c61ddba31596d77f6870b7813ed4a57d61a66d368b9184dc22c4302caa63a04",
+    "started": "2026-11-09T02:45:31.601Z",
+    "ended": "2026-11-09T02:45:46.036Z",
+    "log": "reports/cardrpg-big/skills-v5/s7/gates/e2e-attempt-2.log",
+    "sha256": "f593c3b8e5f2e40338568b268d13e6618af27ae049179ee6f07e6e8ba8a7dd26",
+    "counts": [
+      "  1 passed (13.8s)"
+    ],
+    "recovery": {
+      "scope": "idle loop accrues fish and XP across claims without double-pay",
+      "original": "reports/cardrpg-big/skills-v5/s7/gates/e2e-attempt-1.log",
+      "originalSha256": "ba9422fe10130bbfab33f496aee65c588d46c55d1d456fa3a8586110a94c76ba",
+      "originalCounts": [
+        "  1 failed",
+        "  420 passed (2.9m)"
+      ],
+      "note": "Single failed timing test rerun in isolation; original full run retained. No runtime change."
+    }
+  },
+  {
+    "name": "build",
+    "attempt": 1,
+    "code": 0,
+    "head": "5a709205e469df04a3bd79b8ad1e0aca39b75e6a",
+    "sourceDigest": "1c61ddba31596d77f6870b7813ed4a57d61a66d368b9184dc22c4302caa63a04",
+    "started": "2026-11-09T02:45:53.040Z",
+    "ended": "2026-11-09T02:48:07.053Z",
+    "log": "reports/cardrpg-big/skills-v5/s7/gates/build-attempt-1.log",
+    "sha256": "4f677a268542448528488e2e383f3caaa2ae693ca489fbd9f14619cddc95850a",
+    "counts": []
+  }
+]
