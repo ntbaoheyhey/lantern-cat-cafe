@@ -238,6 +238,11 @@ async function bakeCardClips(model: T.Object3D, role: string, asset: string) {
       const node = model.getObjectByName(`${role}_${joint}`);
       if (!node) continue;
       const values: number[] = [];
+      const fitSockHip = model.userData.lookV2 === true && asset === 'sock-skipper'
+        && (joint === 'footL' || joint === 'footR');
+      // These inherited pivots sit at the ankle. Rotate the stuffed leg about
+      // its upper end while preserving the rig and the authored kick angles.
+      const hip = fitSockHip ? new T.Vector3(0, .36, 0).multiply(node.scale) : null;
       for (const [index, pose] of poses.entries()) {
         const angles = [...pose[joint]!] as MotionVector;
         const lag = delayed[index]!.motion!;
@@ -256,10 +261,39 @@ async function bakeCardClips(model: T.Object3D, role: string, asset: string) {
           angles[0] = Math.max(-.90, angles[0] * .65);
           angles[2] = -Math.abs(angles[2]) * .65;
         }
+        // The baked serving plate/paddle and Sorrel's spoon cross the broad
+        // cheek or apron in support/ultimate poses; Pollen's new basket also
+        // obscures its face while lifting. Carry both hands outwards without
+        // changing clip duration, root motion or the classic model's tracks.
+        if (model.userData.lookV2 === true && (asset === 'panko' || asset === 'biscuit' || asset === 'brioche' || asset === 'sorrel' || asset === 'pollen-scout') && (joint === 'armL' || joint === 'armR')) {
+          angles[0] = Math.max(-.90, angles[0] * .65);
+          angles[2] = Math.abs(angles[2]) * (joint === 'armL' ? -.65 : .65);
+        }
+        // The sculpted whisk and flask are larger than the legacy props. The
+        // outward wrist path keeps them beside Mallow's, Cinnamon's and
+        // Marigold's muzzles.
+        if (model.userData.lookV2 === true && (asset === 'mallow' || asset === 'cinnamon' || asset === 'marigold') && joint === 'armR') {
+          angles[0] = Math.max(-.90, angles[0] * .65);
+          angles[2] = Math.abs(angles[2]) * .65;
+        }
         const rotation = new T.Quaternion().setFromEuler(new T.Euler(...angles));
-        values.push(...node.quaternion.clone().multiply(rotation).toArray());
+        const quaternion = node.quaternion.clone().multiply(rotation);
+        values.push(...quaternion.toArray());
       }
       tracks.push(new T.QuaternionKeyframeTrack(`${node.name}.quaternion`, times, values));
+      if (hip) {
+        // Match the quaternion interpolator between the 41 authored samples;
+        // denser translation keys keep the upper leg still during fast kicks.
+        const positionTimes = Array.from({ length: 161 }, (_, index) => index / 160 * definition.duration);
+        const positions = positionTimes.flatMap((_, index) => {
+          const key = Math.floor(index / 4), next = Math.min(40, key + 1);
+          const quaternion = new T.Quaternion().fromArray(values, key * 4)
+            .slerp(new T.Quaternion().fromArray(values, next * 4), index % 4 / 4);
+          return hip.clone().applyQuaternion(node.quaternion)
+            .sub(hip.clone().applyQuaternion(quaternion)).add(node.position).toArray();
+        });
+        tracks.push(new T.VectorKeyframeTrack(`${node.name}.position`, positionTimes, positions));
+      }
     }
     const motion = model.getObjectByName(`${role}_motion`);
     const body = model.getObjectByName(`${role}_body`);

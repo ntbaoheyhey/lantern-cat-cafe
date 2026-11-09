@@ -1,0 +1,44 @@
+{
+  "tool": "glTF-Transform4.5.1 / cwebp1.6.0",
+  "parameters": [
+    "--compress",
+    "meshopt",
+    "--flatten",
+    "false",
+    "--join",
+    "false",
+    "--instance",
+    "false",
+    "--palette",
+    "false",
+    "--simplify",
+    "false",
+    "--prune",
+    "false",
+    "--texture-compress",
+    "webp",
+    "--texture-size",
+    "2048"
+  ],
+  "irradianceQuality": 90,
+  "rows": [
+    {
+      "source": "assets/cardrpg-look/stage/cafe.glb",
+      "output": "assets/cardrpg-look/stage/game/cafe.glb",
+      "sourceSha256": "25fef39400e30b1a8847bcb4482dcf32fbc13edfe08f2bd8f0840a29ee60e6e5",
+      "sha256": "06257f9acccde9a53e40609a20e8088cdb0e18c5f9027332ea5b5068a402f922",
+      "before": 6027476,
+      "after": 1015272,
+      "gzipAfter": 746181
+    },
+    {
+      "source": "assets/cardrpg-look/stage/irradiance.png",
+      "output": "assets/cardrpg-look/stage/game/irradiance.webp",
+      "sourceSha256": "554460a0faad88a2c333c0eac705aa9e2729212a5e626766eeff79c76a56264a",
+      "sha256": "4c59451d18a55ba14944801daafb20e2fbd8e37b483dcd1eb86a5137e5469e9c",
+      "before": 3942787,
+      "after": 753106,
+      "gzipAfter": 752985
+    }
+  ]
+}

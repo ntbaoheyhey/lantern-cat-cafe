@@ -1,0 +1,76 @@
+{
+  "quality": 80,
+  "size": 512,
+  "detail": 256,
+  "scriptSha256": "83322913d3e0e418622cd6233ac08b3f0a7b4b2ef3801d28b2c21885dcb74251",
+  "method": "From raw GLB: resize textures, optionally resize normal/metallic-roughness separately, encode WebP, then meshopt high. No geometry simplification. Preview GLB retains uncompressed geometry for studio comparison.",
+  "rows": [
+    {
+      "owner": "pantry-crown",
+      "input": "assets/cardrpg-look/models/pantry-crown.glb",
+      "output": "reports/cardrpg-look/validation/l5/compression/pantry-r3-512-256-q80/pantry-crown.glb",
+      "preview": "reports/cardrpg-look/validation/l5/compression/pantry-r3-512-256-q80/pantry-crown-preview.glb",
+      "parameters": [
+        [
+          "resize",
+          "assets/cardrpg-look/models/pantry-crown.glb",
+          "reports/cardrpg-look/validation/l5/compression/pantry-r3-512-256-q80/pantry-crown-resized.glb",
+          "--width",
+          "512",
+          "--height",
+          "512"
+        ],
+        [
+          "resize",
+          "reports/cardrpg-look/validation/l5/compression/pantry-r3-512-256-q80/pantry-crown-resized.glb",
+          "reports/cardrpg-look/validation/l5/compression/pantry-r3-512-256-q80/pantry-crown-normal-sized.glb",
+          "--width",
+          "256",
+          "--height",
+          "256",
+          "--pattern",
+          "*normal"
+        ],
+        [
+          "resize",
+          "reports/cardrpg-look/validation/l5/compression/pantry-r3-512-256-q80/pantry-crown-normal-sized.glb",
+          "reports/cardrpg-look/validation/l5/compression/pantry-r3-512-256-q80/pantry-crown-material-sized.glb",
+          "--width",
+          "256",
+          "--height",
+          "256",
+          "--pattern",
+          "*roughness"
+        ],
+        [
+          "webp",
+          "reports/cardrpg-look/validation/l5/compression/pantry-r3-512-256-q80/pantry-crown-material-sized.glb",
+          "reports/cardrpg-look/validation/l5/compression/pantry-r3-512-256-q80/pantry-crown-preview.glb",
+          "--quality",
+          "80",
+          "--effort",
+          "100",
+          "--lossless",
+          "false",
+          "--near-lossless",
+          "false"
+        ],
+        [
+          "meshopt",
+          "reports/cardrpg-look/validation/l5/compression/pantry-r3-512-256-q80/pantry-crown-preview.glb",
+          "reports/cardrpg-look/validation/l5/compression/pantry-r3-512-256-q80/pantry-crown.glb",
+          "--level",
+          "high"
+        ]
+      ],
+      "before": 2655276,
+      "after": 232040,
+      "gzipBefore": 2324074,
+      "gzipAfter": 158082,
+      "sourceSha256": "db7b781144219f8ab389cdcd8a3b36d39c4530b8f40c950403b0b08b43ec28aa",
+      "sha256": "7b00c1553985dce822fad663565a96d35b4a9b934124a40131220e1599d18d24",
+      "previewSha256": "32169a4609b26e66fc577215c91ed4afc45045d92213488a402f5965368e66a2"
+    }
+  ],
+  "status": "Visual comparison required"
+}

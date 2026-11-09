@@ -1,0 +1,71 @@
+{"lock":"acquired","lane":"A","pid":51325,"startedAt":"2026-11-09T00:36:28.384Z","task":"V5LOOK V0 unit"}
+
+> taskbar-hero@0.0.0 test /Users/bao/taskbar-hero-cardrpg-b2
+> node --test scripts/*.test.mjs && pnpm -r test
+
+✔ explicit root and nested index imports resolve to their exact files (9.538666ms)
+✔ directory aliases coexist with explicit indexes and ordinary modules (2.234083ms)
+✔ test modules, fixture folders and non-TypeScript files stay out of deployment maps (2.433583ms)
+✔ output order is stable regardless of file creation order (4.320334ms)
+✔ generation preserves auth mappings and ignores shared or non-function directories (5.690334ms)
+✔ auth health HTTP 200 exits correctly without leaking response data (28.16325ms)
+✔ auth health HTTP 429 exits correctly without leaking response data (15.195334ms)
+✔ auth health HTTP 500 exits correctly without leaking response data (13.597542ms)
+✔ auth health HTTP 502 exits correctly without leaking response data (13.242417ms)
+✔ auth health HTTP 503 exits correctly without leaking response data (13.614375ms)
+✔ auth health fails closed when the transport is unavailable (13.268416ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 162.843708
+Scope: 6 of 7 workspace projects
+packages/auth test$ vitest run
+packages/chain test$ vitest run
+packages/game-rules test$ vitest run
+supabase/tests test$ vitest run
+packages/game-rules test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-b2/packages/game-rules
+packages/auth test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-b2/packages/auth
+packages/chain test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-b2/packages/chain
+supabase/tests test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-b2/supabase/tests
+packages/chain test:  Test Files  3 passed (3)
+packages/chain test:       Tests  32 passed (32)
+packages/chain test:    Start at  07:36:29
+packages/chain test:    Duration  785ms (import 57%, tests 34%, transform 8%, worker 2%)
+packages/chain test: Done
+packages/auth test:  Test Files  1 passed (1)
+packages/auth test:       Tests  24 passed (24)
+packages/auth test:    Start at  07:36:29
+packages/auth test:    Duration  1.10s (import 74%, tests 24%, transform 2%)
+packages/auth test: Done
+supabase/tests test:  Test Files  34 passed (34)
+supabase/tests test:       Tests  581 passed (581)
+supabase/tests test:    Start at  07:36:29
+supabase/tests test:    Duration  14.45s (tests 82%, import 16%, transform 2%)
+supabase/tests test: Done
+packages/game-rules test:  Test Files  55 passed | 3 skipped (58)
+packages/game-rules test:       Tests  1020 passed | 2 expected fail | 11 skipped (1033)
+packages/game-rules test:    Start at  07:36:29
+packages/game-rules test:    Duration  37.23s (tests 95%, import 3%, transform 1%)
+packages/game-rules test: Done
+packages/api-contract test$ pnpm --filter @taskbar-hero/game-rules exec vitest run --root ../api-contract
+packages/api-contract test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-b2/packages/api-contract
+packages/api-contract test:  Test Files  1 passed (1)
+packages/api-contract test:       Tests  16 passed (16)
+packages/api-contract test:    Start at  07:37:06
+packages/api-contract test:    Duration  134ms (transform 51%, import 40%, tests 6%, worker 3%)
+packages/api-contract test: Done
+apps/web test$ vitest run
+apps/web test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-b2/apps/web
+apps/web test:  Test Files  182 passed (182)
+apps/web test:       Tests  1782 passed (1782)
+apps/web test:    Start at  07:37:07
+apps/web test:    Duration  22.13s (environment 50%, tests 36%, import 11%, transform 3%)
+apps/web test: Environment  jsdom was created 182 times · 109.23s total, 50% of tracked time
+apps/web test:              create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+apps/web test:              learn more: https://vitest.dev/guide/improving-performance#test-environments
+apps/web test: Done
+{"lock":"released","pid":51325,"task":"V5LOOK V0 unit"}

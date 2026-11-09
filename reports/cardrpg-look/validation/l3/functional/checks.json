@@ -1,0 +1,2328 @@
+{
+  "sha256": "02ffd9cb351fba4984dffac98036a2853bde5fe06e0a1ce503ceccc53655cb70",
+  "method": "Real battle entry and camera selects; fixed idle at3.2s for framing. Actual disposed resources counted when leaving the table. No frame timing from screenshots.",
+  "rows": [
+    {
+      "width": 1024,
+      "height": 600,
+      "frames": [
+        {
+          "preset": "close",
+          "file": "1024x600-close.png",
+          "shell": {
+            "visible": true,
+            "overlap": false,
+            "stageFraction": 0.7465423749466886,
+            "content": {
+              "x": 160,
+              "y": 87.09375,
+              "width": 864,
+              "height": 512.90625,
+              "top": 87.09375,
+              "right": 1024,
+              "bottom": 600,
+              "left": 160
+            },
+            "battle": {
+              "x": 160,
+              "y": 87.09375,
+              "width": 864,
+              "height": 512.90625,
+              "top": 87.09375,
+              "right": 1024,
+              "bottom": 600,
+              "left": 160
+            },
+            "nav": {
+              "x": 0,
+              "y": 0,
+              "width": 160,
+              "height": 600,
+              "top": 0,
+              "right": 160,
+              "bottom": 600,
+              "left": 0
+            },
+            "hud": {
+              "x": 160,
+              "y": 0,
+              "width": 864,
+              "height": 59.09375,
+              "top": 0,
+              "right": 1024,
+              "bottom": 59.09375,
+              "left": 160
+            },
+            "controls": [
+              {
+                "text": "1×2×4×",
+                "rect": {
+                  "x": 422.53125,
+                  "y": 92.59375,
+                  "width": 39,
+                  "height": 30,
+                  "top": 92.59375,
+                  "right": 461.53125,
+                  "bottom": 122.59375,
+                  "left": 422.53125
+                }
+              },
+              {
+                "text": "Resume",
+                "rect": {
+                  "x": 467.53125,
+                  "y": 93.09375,
+                  "width": 52.296875,
+                  "height": 29,
+                  "top": 93.09375,
+                  "right": 519.828125,
+                  "bottom": 122.09375,
+                  "left": 467.53125
+                }
+              },
+              {
+                "text": "Skip to result",
+                "rect": {
+                  "x": 525.828125,
+                  "y": 93.09375,
+                  "width": 77.71875,
+                  "height": 29,
+                  "top": 93.09375,
+                  "right": 603.546875,
+                  "bottom": 122.09375,
+                  "left": 525.828125
+                }
+              },
+              {
+                "text": "A · CloserB · MediumC · Wider",
+                "rect": {
+                  "x": 651.671875,
+                  "y": 92.59375,
+                  "width": 80,
+                  "height": 30,
+                  "top": 92.59375,
+                  "right": 731.671875,
+                  "bottom": 122.59375,
+                  "left": 651.671875
+                }
+              },
+              {
+                "text": "Sound off",
+                "rect": {
+                  "x": 737.671875,
+                  "y": 93.09375,
+                  "width": 61.109375,
+                  "height": 29,
+                  "top": 93.09375,
+                  "right": 798.78125,
+                  "bottom": 122.09375,
+                  "left": 737.671875
+                }
+              },
+              {
+                "text": "",
+                "rect": {
+                  "x": 825.828125,
+                  "y": 90.09375,
+                  "width": 45,
+                  "height": 35,
+                  "top": 90.09375,
+                  "right": 870.828125,
+                  "bottom": 125.09375,
+                  "left": 825.828125
+                }
+              },
+              {
+                "text": "Battle log",
+                "rect": {
+                  "x": 878.828125,
+                  "y": 93.09375,
+                  "width": 60.125,
+                  "height": 29,
+                  "top": 93.09375,
+                  "right": 938.953125,
+                  "bottom": 122.09375,
+                  "left": 878.828125
+                }
+              },
+              {
+                "text": "Leave table",
+                "rect": {
+                  "x": 944.953125,
+                  "y": 93.09375,
+                  "width": 69.046875,
+                  "height": 29,
+                  "top": 93.09375,
+                  "right": 1014,
+                  "bottom": 122.09375,
+                  "left": 944.953125
+                }
+              }
+            ]
+          },
+          "stage": "lantern-atelier-cafe",
+          "atelier": true,
+          "fov": 23.665464742926897,
+          "actors": [
+            {
+              "id": "mochi",
+              "bounds": [
+                -0.3734077715870034,
+                -0.19214133349305587,
+                -0.2357333991076157,
+                0.2536634042714694
+              ],
+              "contactY": 0.044
+            },
+            {
+              "id": "soot",
+              "bounds": [
+                -0.76560774577868,
+                -0.6131074165759354,
+                -0.6335651668124915,
+                -0.05735976981067705
+              ],
+              "contactY": 0.044
+            },
+            {
+              "id": "clover",
+              "bounds": [
+                -0.656723448142287,
+                -0.38956396424519074,
+                -0.5055089322090538,
+                0.06298988036096334
+              ],
+              "contactY": 0.044
+            },
+            {
+              "id": "teacup-healer",
+              "bounds": [
+                0.4639002096652231,
+                -0.17944370313843033,
+                0.6151567740542062,
+                0.1983458894285379
+              ],
+              "contactY": 0.044
+            },
+            {
+              "id": "sock-skipper",
+              "bounds": [
+                0.6126565798123375,
+                -0.6174284967783227,
+                0.7847694138837075,
+                -0.16415112544889507
+              ],
+              "contactY": 0.044
+            }
+          ],
+          "calm0": [
+            0,
+            0,
+            15,
+            15
+          ],
+          "calm1": [
+            0,
+            0,
+            15,
+            15
+          ],
+          "moving": [
+            9,
+            9,
+            14.914964042448275,
+            14.820557988112514
+          ],
+          "background": "rgb(35, 62, 70)",
+          "token": "#233e46",
+          "canvas": {
+            "x": 160,
+            "y": 153.09375,
+            "width": 864,
+            "height": 382.90625
+          },
+          "overflow": false,
+          "stats": {
+            "frames": 3,
+            "calls": 106,
+            "triangles": 101148,
+            "geometries": 558,
+            "textures": 123,
+            "particles": 0,
+            "estimatedGpuBytes": 5155316,
+            "loaded": 5,
+            "hiddenFrames": 0,
+            "quality": "medium"
+          }
+        },
+        {
+          "preset": "wide",
+          "file": "1024x600-wide.png",
+          "shell": {
+            "visible": true,
+            "overlap": false,
+            "stageFraction": 0.7465423749466886,
+            "content": {
+              "x": 160,
+              "y": 87.09375,
+              "width": 864,
+              "height": 512.90625,
+              "top": 87.09375,
+              "right": 1024,
+              "bottom": 600,
+              "left": 160
+            },
+            "battle": {
+              "x": 160,
+              "y": 87.09375,
+              "width": 864,
+              "height": 512.90625,
+              "top": 87.09375,
+              "right": 1024,
+              "bottom": 600,
+              "left": 160
+            },
+            "nav": {
+              "x": 0,
+              "y": 0,
+              "width": 160,
+              "height": 600,
+              "top": 0,
+              "right": 160,
+              "bottom": 600,
+              "left": 0
+            },
+            "hud": {
+              "x": 160,
+              "y": 0,
+              "width": 864,
+              "height": 59.09375,
+              "top": 0,
+              "right": 1024,
+              "bottom": 59.09375,
+              "left": 160
+            },
+            "controls": [
+              {
+                "text": "1×2×4×",
+                "rect": {
+                  "x": 422.53125,
+                  "y": 92.59375,
+                  "width": 39,
+                  "height": 30,
+                  "top": 92.59375,
+                  "right": 461.53125,
+                  "bottom": 122.59375,
+                  "left": 422.53125
+                }
+              },
+              {
+                "text": "Resume",
+                "rect": {
+                  "x": 467.53125,
+                  "y": 93.09375,
+                  "width": 52.296875,
+                  "height": 29,
+                  "top": 93.09375,
+                  "right": 519.828125,
+                  "bottom": 122.09375,
+                  "left": 467.53125
+                }
+              },
+              {
+                "text": "Skip to result",
+                "rect": {
+                  "x": 525.828125,
+                  "y": 93.09375,
+                  "width": 77.71875,
+                  "height": 29,
+                  "top": 93.09375,
+                  "right": 603.546875,
+                  "bottom": 122.09375,
+                  "left": 525.828125
+                }
+              },
+              {
+                "text": "A · CloserB · MediumC · Wider",
+                "rect": {
+                  "x": 651.671875,
+                  "y": 92.59375,
+                  "width": 80,
+                  "height": 30,
+                  "top": 92.59375,
+                  "right": 731.671875,
+                  "bottom": 122.59375,
+                  "left": 651.671875
+                }
+              },
+              {
+                "text": "Sound off",
+                "rect": {
+                  "x": 737.671875,
+                  "y": 93.09375,
+                  "width": 61.109375,
+                  "height": 29,
+                  "top": 93.09375,
+                  "right": 798.78125,
+                  "bottom": 122.09375,
+                  "left": 737.671875
+                }
+              },
+              {
+                "text": "",
+                "rect": {
+                  "x": 825.828125,
+                  "y": 90.09375,
+                  "width": 45,
+                  "height": 35,
+                  "top": 90.09375,
+                  "right": 870.828125,
+                  "bottom": 125.09375,
+                  "left": 825.828125
+                }
+              },
+              {
+                "text": "Battle log",
+                "rect": {
+                  "x": 878.828125,
+                  "y": 93.09375,
+                  "width": 60.125,
+                  "height": 29,
+                  "top": 93.09375,
+                  "right": 938.953125,
+                  "bottom": 122.09375,
+                  "left": 878.828125
+                }
+              },
+              {
+                "text": "Leave table",
+                "rect": {
+                  "x": 944.953125,
+                  "y": 93.09375,
+                  "width": 69.046875,
+                  "height": 29,
+                  "top": 93.09375,
+                  "right": 1014,
+                  "bottom": 122.09375,
+                  "left": 944.953125
+                }
+              }
+            ]
+          },
+          "stage": "lantern-atelier-cafe",
+          "atelier": true,
+          "fov": 26.249338690422896,
+          "actors": [
+            {
+              "id": "mochi",
+              "bounds": [
+                -0.3355258237448436,
+                -0.17264873444303566,
+                -0.21181841658945177,
+                0.22792943572218985
+              ],
+              "contactY": 0.044
+            },
+            {
+              "id": "soot",
+              "bounds": [
+                -0.6879373947576544,
+                -0.5509081134450433,
+                -0.5692904397445575,
+                -0.05154066272843444
+              ],
+              "contactY": 0.044
+            },
+            {
+              "id": "clover",
+              "bounds": [
+                -0.5900993302148086,
+                -0.3500429823652438,
+                -0.4542254173472657,
+                0.05659960264318444
+              ],
+              "contactY": 0.044
+            },
+            {
+              "id": "teacup-healer",
+              "bounds": [
+                0.4168378695542584,
+                -0.16123926948670547,
+                0.5527495650921852,
+                0.1782238426749181
+              ],
+              "contactY": 0.044
+            },
+            {
+              "id": "sock-skipper",
+              "bounds": [
+                0.5505030137444191,
+                -0.5547908231921159,
+                0.7051551255186936,
+                -0.14749811272219554
+              ],
+              "contactY": 0.044
+            }
+          ],
+          "calm0": [
+            0,
+            0,
+            15,
+            15
+          ],
+          "calm1": [
+            0,
+            0,
+            15,
+            15
+          ],
+          "moving": [
+            9,
+            9,
+            14.914964042448275,
+            14.820557988112514
+          ],
+          "background": "rgb(35, 62, 70)",
+          "token": "#233e46",
+          "canvas": {
+            "x": 160,
+            "y": 153.09375,
+            "width": 864,
+            "height": 382.90625
+          },
+          "overflow": false,
+          "stats": {
+            "frames": 4,
+            "calls": 106,
+            "triangles": 101148,
+            "geometries": 558,
+            "textures": 123,
+            "particles": 0,
+            "estimatedGpuBytes": 5155316,
+            "loaded": 5,
+            "hiddenFrames": 0,
+            "quality": "medium"
+          }
+        },
+        {
+          "preset": "far",
+          "file": "1024x600-far.png",
+          "shell": {
+            "visible": true,
+            "overlap": false,
+            "stageFraction": 0.7465423749466886,
+            "content": {
+              "x": 160,
+              "y": 87.09375,
+              "width": 864,
+              "height": 512.90625,
+              "top": 87.09375,
+              "right": 1024,
+              "bottom": 600,
+              "left": 160
+            },
+            "battle": {
+              "x": 160,
+              "y": 87.09375,
+              "width": 864,
+              "height": 512.90625,
+              "top": 87.09375,
+              "right": 1024,
+              "bottom": 600,
+              "left": 160
+            },
+            "nav": {
+              "x": 0,
+              "y": 0,
+              "width": 160,
+              "height": 600,
+              "top": 0,
+              "right": 160,
+              "bottom": 600,
+              "left": 0
+            },
+            "hud": {
+              "x": 160,
+              "y": 0,
+              "width": 864,
+              "height": 59.09375,
+              "top": 0,
+              "right": 1024,
+              "bottom": 59.09375,
+              "left": 160
+            },
+            "controls": [
+              {
+                "text": "1×2×4×",
+                "rect": {
+                  "x": 422.53125,
+                  "y": 92.59375,
+                  "width": 39,
+                  "height": 30,
+                  "top": 92.59375,
+                  "right": 461.53125,
+                  "bottom": 122.59375,
+                  "left": 422.53125
+                }
+              },
+              {
+                "text": "Resume",
+                "rect": {
+                  "x": 467.53125,
+                  "y": 93.09375,
+                  "width": 52.296875,
+                  "height": 29,
+                  "top": 93.09375,
+                  "right": 519.828125,
+                  "bottom": 122.09375,
+                  "left": 467.53125
+                }
+              },
+              {
+                "text": "Skip to result",
+                "rect": {
+                  "x": 525.828125,
+                  "y": 93.09375,
+                  "width": 77.71875,
+                  "height": 29,
+                  "top": 93.09375,
+                  "right": 603.546875,
+                  "bottom": 122.09375,
+                  "left": 525.828125
+                }
+              },
+              {
+                "text": "A · CloserB · MediumC · Wider",
+                "rect": {
+                  "x": 651.671875,
+                  "y": 92.59375,
+                  "width": 80,
+                  "height": 30,
+                  "top": 92.59375,
+                  "right": 731.671875,
+                  "bottom": 122.59375,
+                  "left": 651.671875
+                }
+              },
+              {
+                "text": "Sound off",
+                "rect": {
+                  "x": 737.671875,
+                  "y": 93.09375,
+                  "width": 61.109375,
+                  "height": 29,
+                  "top": 93.09375,
+                  "right": 798.78125,
+                  "bottom": 122.09375,
+                  "left": 737.671875
+                }
+              },
+              {
+                "text": "",
+                "rect": {
+                  "x": 825.828125,
+                  "y": 90.09375,
+                  "width": 45,
+                  "height": 35,
+                  "top": 90.09375,
+                  "right": 870.828125,
+                  "bottom": 125.09375,
+                  "left": 825.828125
+                }
+              },
+              {
+                "text": "Battle log",
+                "rect": {
+                  "x": 878.828125,
+                  "y": 93.09375,
+                  "width": 60.125,
+                  "height": 29,
+                  "top": 93.09375,
+                  "right": 938.953125,
+                  "bottom": 122.09375,
+                  "left": 878.828125
+                }
+              },
+              {
+                "text": "Leave table",
+                "rect": {
+                  "x": 944.953125,
+                  "y": 93.09375,
+                  "width": 69.046875,
+                  "height": 29,
+                  "top": 93.09375,
+                  "right": 1014,
+                  "bottom": 122.09375,
+                  "left": 944.953125
+                }
+              }
+            ]
+          },
+          "stage": "lantern-atelier-cafe",
+          "atelier": true,
+          "fov": 29.16929708177211,
+          "actors": [
+            {
+              "id": "mochi",
+              "bounds": [
+                -0.3006659979012235,
+                -0.1547112035918112,
+                -0.18981130837236584,
+                0.2042484553874169
+              ],
+              "contactY": 0.044
+            },
+            {
+              "id": "soot",
+              "bounds": [
+                -0.6164633797178981,
+                -0.49367090685335047,
+                -0.5101433810697983,
+                -0.04618578867872697
+              ],
+              "contactY": 0.044
+            },
+            {
+              "id": "clover",
+              "bounds": [
+                -0.5287903088937895,
+                -0.31367488030132235,
+                -0.4070331661943031,
+                0.05071912444648996
+              ],
+              "contactY": 0.044
+            },
+            {
+              "id": "teacup-healer",
+              "bounds": [
+                0.37353003895121856,
+                -0.14448713759198284,
+                0.4953210388488414,
+                0.15970707979960191
+              ],
+              "contactY": 0.044
+            },
+            {
+              "id": "sock-skipper",
+              "bounds": [
+                0.4933078954333106,
+                -0.4971502181851428,
+                0.6318922553349332,
+                -0.13217363347833105
+              ],
+              "contactY": 0.044
+            }
+          ],
+          "calm0": [
+            0,
+            0,
+            15,
+            15
+          ],
+          "calm1": [
+            0,
+            0,
+            15,
+            15
+          ],
+          "moving": [
+            9,
+            9,
+            14.914964042448275,
+            14.820557988112514
+          ],
+          "background": "rgb(35, 62, 70)",
+          "token": "#233e46",
+          "canvas": {
+            "x": 160,
+            "y": 153.09375,
+            "width": 864,
+            "height": 382.90625
+          },
+          "overflow": false,
+          "stats": {
+            "frames": 5,
+            "calls": 106,
+            "triangles": 101148,
+            "geometries": 558,
+            "textures": 123,
+            "particles": 0,
+            "estimatedGpuBytes": 5155316,
+            "loaded": 5,
+            "hiddenFrames": 0,
+            "quality": "medium"
+          }
+        }
+      ],
+      "toggles": [
+        {
+          "look": false,
+          "stage": false,
+          "oldDisposed": true,
+          "oldCanvasRemoved": true
+        },
+        {
+          "look": true,
+          "stage": true,
+          "oldDisposed": true,
+          "oldCanvasRemoved": true
+        }
+      ],
+      "disposal": {
+        "expected": 20,
+        "actual": 20,
+        "oldDisposed": true
+      },
+      "errors": [],
+      "requests": []
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "frames": [
+        {
+          "preset": "close",
+          "file": "1280x720-close.png",
+          "shell": {
+            "visible": true,
+            "overlap": false,
+            "stageFraction": 0.7583105590062111,
+            "content": {
+              "x": 184,
+              "y": 91.09375,
+              "width": 1096,
+              "height": 628.90625,
+              "top": 91.09375,
+              "right": 1280,
+              "bottom": 720,
+              "left": 184
+            },
+            "battle": {
+              "x": 184,
+              "y": 91.09375,
+              "width": 1096,
+              "height": 628.90625,
+              "top": 91.09375,
+              "right": 1280,
+              "bottom": 720,
+              "left": 184
+            },
+            "nav": {
+              "x": 0,
+              "y": 0,
+              "width": 184,
+              "height": 720,
+              "top": 0,
+              "right": 184,
+              "bottom": 720,
+              "left": 0
+            },
+            "hud": {
+              "x": 184,
+              "y": 0,
+              "width": 1096,
+              "height": 63.09375,
+              "top": 0,
+              "right": 1280,
+              "bottom": 63.09375,
+              "left": 184
+            },
+            "controls": [
+              {
+                "text": "1×2×4×",
+                "rect": {
+                  "x": 594.71875,
+                  "y": 99.59375,
+                  "width": 39,
+                  "height": 30,
+                  "top": 99.59375,
+                  "right": 633.71875,
+                  "bottom": 129.59375,
+                  "left": 594.71875
+                }
+              },
+              {
+                "text": "Resume",
+                "rect": {
+                  "x": 642.71875,
+                  "y": 100.0625,
+                  "width": 59.734375,
+                  "height": 29.046875,
+                  "top": 100.0625,
+                  "right": 702.453125,
+                  "bottom": 129.109375,
+                  "left": 642.71875
+                }
+              },
+              {
+                "text": "Skip to result",
+                "rect": {
+                  "x": 711.453125,
+                  "y": 100.0625,
+                  "width": 87.1875,
+                  "height": 29.046875,
+                  "top": 100.0625,
+                  "right": 798.640625,
+                  "bottom": 129.109375,
+                  "left": 711.453125
+                }
+              },
+              {
+                "text": "A · CloserB · MediumC · Wider",
+                "rect": {
+                  "x": 849.765625,
+                  "y": 99.59375,
+                  "width": 80,
+                  "height": 30,
+                  "top": 99.59375,
+                  "right": 929.765625,
+                  "bottom": 129.59375,
+                  "left": 849.765625
+                }
+              },
+              {
+                "text": "Sound off",
+                "rect": {
+                  "x": 938.765625,
+                  "y": 100.0625,
+                  "width": 69.25,
+                  "height": 29.046875,
+                  "top": 100.0625,
+                  "right": 1008.015625,
+                  "bottom": 129.109375,
+                  "left": 938.765625
+                }
+              },
+              {
+                "text": "",
+                "rect": {
+                  "x": 1038.0625,
+                  "y": 97.09375,
+                  "width": 60,
+                  "height": 35,
+                  "top": 97.09375,
+                  "right": 1098.0625,
+                  "bottom": 132.09375,
+                  "left": 1038.0625
+                }
+              },
+              {
+                "text": "Battle log",
+                "rect": {
+                  "x": 1109.0625,
+                  "y": 100.0625,
+                  "width": 68.09375,
+                  "height": 29.046875,
+                  "top": 100.0625,
+                  "right": 1177.15625,
+                  "bottom": 129.109375,
+                  "left": 1109.0625
+                }
+              },
+              {
+                "text": "Leave table",
+                "rect": {
+                  "x": 1186.15625,
+                  "y": 100.0625,
+                  "width": 77.84375,
+                  "height": 29.046875,
+                  "top": 100.0625,
+                  "right": 1264,
+                  "bottom": 129.109375,
+                  "left": 1186.15625
+                }
+              }
+            ]
+          },
+          "stage": "lantern-atelier-cafe",
+          "atelier": true,
+          "fov": 23.246565067692536,
+          "actors": [
+            {
+              "id": "mochi",
+              "bounds": [
+                -0.3734077715870034,
+                -0.19570323607644488,
+                -0.2357333991076157,
+                0.25836579869415854
+              ],
+              "contactY": 0.044
+            },
+            {
+              "id": "soot",
+              "bounds": [
+                -0.76560774577868,
+                -0.6244731589245265,
+                -0.6335651668124915,
+                -0.058423101206150234
+              ],
+              "contactY": 0.044
+            },
+            {
+              "id": "clover",
+              "bounds": [
+                -0.656723448142287,
+                -0.396785673730674,
+                -0.5055089322090538,
+                0.06415758235150454
+              ],
+              "contactY": 0.044
+            },
+            {
+              "id": "teacup-healer",
+              "bounds": [
+                0.4639002096652231,
+                -0.1827702179396028,
+                0.6151567740542062,
+                0.20202281163531355
+              ],
+              "contactY": 0.044
+            },
+            {
+              "id": "sock-skipper",
+              "bounds": [
+                0.6126565798123375,
+                -0.6288743430090724,
+                0.7847694138837075,
+                -0.16719414751589745
+              ],
+              "contactY": 0.044
+            }
+          ],
+          "calm0": [
+            0,
+            0,
+            15,
+            15
+          ],
+          "calm1": [
+            0,
+            0,
+            15,
+            15
+          ],
+          "moving": [
+            9,
+            9,
+            14.914964042448275,
+            14.820557988112514
+          ],
+          "background": "rgb(35, 62, 70)",
+          "token": "#233e46",
+          "canvas": {
+            "x": 184,
+            "y": 167.09375,
+            "width": 1096,
+            "height": 476.90625
+          },
+          "overflow": false,
+          "stats": {
+            "frames": 3,
+            "calls": 106,
+            "triangles": 101148,
+            "geometries": 558,
+            "textures": 123,
+            "particles": 0,
+            "estimatedGpuBytes": 5155316,
+            "loaded": 5,
+            "hiddenFrames": 0,
+            "quality": "medium"
+          }
+        },
+        {
+          "preset": "wide",
+          "file": "1280x720-wide.png",
+          "shell": {
+            "visible": true,
+            "overlap": false,
+            "stageFraction": 0.7583105590062111,
+            "content": {
+              "x": 184,
+              "y": 91.09375,
+              "width": 1096,
+              "height": 628.90625,
+              "top": 91.09375,
+              "right": 1280,
+              "bottom": 720,
+              "left": 184
+            },
+            "battle": {
+              "x": 184,
+              "y": 91.09375,
+              "width": 1096,
+              "height": 628.90625,
+              "top": 91.09375,
+              "right": 1280,
+              "bottom": 720,
+              "left": 184
+            },
+            "nav": {
+              "x": 0,
+              "y": 0,
+              "width": 184,
+              "height": 720,
+              "top": 0,
+              "right": 184,
+              "bottom": 720,
+              "left": 0
+            },
+            "hud": {
+              "x": 184,
+              "y": 0,
+              "width": 1096,
+              "height": 63.09375,
+              "top": 0,
+              "right": 1280,
+              "bottom": 63.09375,
+              "left": 184
+            },
+            "controls": [
+              {
+                "text": "1×2×4×",
+                "rect": {
+                  "x": 594.71875,
+                  "y": 99.59375,
+                  "width": 39,
+                  "height": 30,
+                  "top": 99.59375,
+                  "right": 633.71875,
+                  "bottom": 129.59375,
+                  "left": 594.71875
+                }
+              },
+              {
+                "text": "Resume",
+                "rect": {
+                  "x": 642.71875,
+                  "y": 100.0625,
+                  "width": 59.734375,
+                  "height": 29.046875,
+                  "top": 100.0625,
+                  "right": 702.453125,
+                  "bottom": 129.109375,
+                  "left": 642.71875
+                }
+              },
+              {
+                "text": "Skip to result",
+                "rect": {
+                  "x": 711.453125,
+                  "y": 100.0625,
+                  "width": 87.1875,
+                  "height": 29.046875,
+                  "top": 100.0625,
+                  "right": 798.640625,
+                  "bottom": 129.109375,
+                  "left": 711.453125
+                }
+              },
+              {
+                "text": "A · CloserB · MediumC · Wider",
+                "rect": {
+                  "x": 849.765625,
+                  "y": 99.59375,
+                  "width": 80,
+                  "height": 30,
+                  "top": 99.59375,
+                  "right": 929.765625,
+                  "bottom": 129.59375,
+                  "left": 849.765625
+                }
+              },
+              {
+                "text": "Sound off",
+                "rect": {
+                  "x": 938.765625,
+                  "y": 100.0625,
+                  "width": 69.25,
+                  "height": 29.046875,
+                  "top": 100.0625,
+                  "right": 1008.015625,
+                  "bottom": 129.109375,
+                  "left": 938.765625
+                }
+              },
+              {
+                "text": "",
+                "rect": {
+                  "x": 1038.0625,
+                  "y": 97.09375,
+                  "width": 60,
+                  "height": 35,
+                  "top": 97.09375,
+                  "right": 1098.0625,
+                  "bottom": 132.09375,
+                  "left": 1038.0625
+                }
+              },
+              {
+                "text": "Battle log",
+                "rect": {
+                  "x": 1109.0625,
+                  "y": 100.0625,
+                  "width": 68.09375,
+                  "height": 29.046875,
+                  "top": 100.0625,
+                  "right": 1177.15625,
+                  "bottom": 129.109375,
+                  "left": 1109.0625
+                }
+              },
+              {
+                "text": "Leave table",
+                "rect": {
+                  "x": 1186.15625,
+                  "y": 100.0625,
+                  "width": 77.84375,
+                  "height": 29.046875,
+                  "top": 100.0625,
+                  "right": 1264,
+                  "bottom": 129.109375,
+                  "left": 1186.15625
+                }
+              }
+            ]
+          },
+          "stage": "lantern-atelier-cafe",
+          "atelier": true,
+          "fov": 25.787694119023598,
+          "actors": [
+            {
+              "id": "mochi",
+              "bounds": [
+                -0.33552582374484363,
+                -0.17584928459042873,
+                -0.2118184165894518,
+                0.2321547756382294
+              ],
+              "contactY": 0.044
+            },
+            {
+              "id": "soot",
+              "bounds": [
+                -0.6879373947576545,
+                -0.561120809468415,
+                -0.5692904397445576,
+                -0.052496119924366876
+              ],
+              "contactY": 0.044
+            },
+            {
+              "id": "clover",
+              "bounds": [
+                -0.5900993302148088,
+                -0.35653205465654764,
+                -0.45422541734726585,
+                0.057648842112946096
+              ],
+              "contactY": 0.044
+            },
+            {
+              "id": "teacup-healer",
+              "bounds": [
+                0.4168378695542585,
+                -0.164228311771817,
+                0.5527495650921854,
+                0.18152774378825273
+              ],
+              "contactY": 0.044
+            },
+            {
+              "id": "sock-skipper",
+              "bounds": [
+                0.5505030137444192,
+                -0.5650754966168476,
+                0.7051551255186937,
+                -0.15023242240558898
+              ],
+              "contactY": 0.044
+            }
+          ],
+          "calm0": [
+            0,
+            0,
+            15,
+            15
+          ],
+          "calm1": [
+            0,
+            0,
+            15,
+            15
+          ],
+          "moving": [
+            9,
+            9,
+            14.914964042448275,
+            14.820557988112514
+          ],
+          "background": "rgb(35, 62, 70)",
+          "token": "#233e46",
+          "canvas": {
+            "x": 184,
+            "y": 167.09375,
+            "width": 1096,
+            "height": 476.90625
+          },
+          "overflow": false,
+          "stats": {
+            "frames": 4,
+            "calls": 106,
+            "triangles": 101148,
+            "geometries": 558,
+            "textures": 123,
+            "particles": 0,
+            "estimatedGpuBytes": 5155316,
+            "loaded": 5,
+            "hiddenFrames": 0,
+            "quality": "medium"
+          }
+        },
+        {
+          "preset": "far",
+          "file": "1280x720-far.png",
+          "shell": {
+            "visible": true,
+            "overlap": false,
+            "stageFraction": 0.7583105590062111,
+            "content": {
+              "x": 184,
+              "y": 91.09375,
+              "width": 1096,
+              "height": 628.90625,
+              "top": 91.09375,
+              "right": 1280,
+              "bottom": 720,
+              "left": 184
+            },
+            "battle": {
+              "x": 184,
+              "y": 91.09375,
+              "width": 1096,
+              "height": 628.90625,
+              "top": 91.09375,
+              "right": 1280,
+              "bottom": 720,
+              "left": 184
+            },
+            "nav": {
+              "x": 0,
+              "y": 0,
+              "width": 184,
+              "height": 720,
+              "top": 0,
+              "right": 184,
+              "bottom": 720,
+              "left": 0
+            },
+            "hud": {
+              "x": 184,
+              "y": 0,
+              "width": 1096,
+              "height": 63.09375,
+              "top": 0,
+              "right": 1280,
+              "bottom": 63.09375,
+              "left": 184
+            },
+            "controls": [
+              {
+                "text": "1×2×4×",
+                "rect": {
+                  "x": 594.71875,
+                  "y": 99.59375,
+                  "width": 39,
+                  "height": 30,
+                  "top": 99.59375,
+                  "right": 633.71875,
+                  "bottom": 129.59375,
+                  "left": 594.71875
+                }
+              },
+              {
+                "text": "Resume",
+                "rect": {
+                  "x": 642.71875,
+                  "y": 100.0625,
+                  "width": 59.734375,
+                  "height": 29.046875,
+                  "top": 100.0625,
+                  "right": 702.453125,
+                  "bottom": 129.109375,
+                  "left": 642.71875
+                }
+              },
+              {
+                "text": "Skip to result",
+                "rect": {
+                  "x": 711.453125,
+                  "y": 100.0625,
+                  "width": 87.1875,
+                  "height": 29.046875,
+                  "top": 100.0625,
+                  "right": 798.640625,
+                  "bottom": 129.109375,
+                  "left": 711.453125
+                }
+              },
+              {
+                "text": "A · CloserB · MediumC · Wider",
+                "rect": {
+                  "x": 849.765625,
+                  "y": 99.59375,
+                  "width": 80,
+                  "height": 30,
+                  "top": 99.59375,
+                  "right": 929.765625,
+                  "bottom": 129.59375,
+                  "left": 849.765625
+                }
+              },
+              {
+                "text": "Sound off",
+                "rect": {
+                  "x": 938.765625,
+                  "y": 100.0625,
+                  "width": 69.25,
+                  "height": 29.046875,
+                  "top": 100.0625,
+                  "right": 1008.015625,
+                  "bottom": 129.109375,
+                  "left": 938.765625
+                }
+              },
+              {
+                "text": "",
+                "rect": {
+                  "x": 1038.0625,
+                  "y": 97.09375,
+                  "width": 60,
+                  "height": 35,
+                  "top": 97.09375,
+                  "right": 1098.0625,
+                  "bottom": 132.09375,
+                  "left": 1038.0625
+                }
+              },
+              {
+                "text": "Battle log",
+                "rect": {
+                  "x": 1109.0625,
+                  "y": 100.0625,
+                  "width": 68.09375,
+                  "height": 29.046875,
+                  "top": 100.0625,
+                  "right": 1177.15625,
+                  "bottom": 129.109375,
+                  "left": 1109.0625
+                }
+              },
+              {
+                "text": "Leave table",
+                "rect": {
+                  "x": 1186.15625,
+                  "y": 100.0625,
+                  "width": 77.84375,
+                  "height": 29.046875,
+                  "top": 100.0625,
+                  "right": 1264,
+                  "bottom": 129.109375,
+                  "left": 1186.15625
+                }
+              }
+            ]
+          },
+          "stage": "lantern-atelier-cafe",
+          "atelier": true,
+          "fov": 28.66045439517423,
+          "actors": [
+            {
+              "id": "mochi",
+              "bounds": [
+                -0.30066599790122356,
+                -0.15757922904856603,
+                -0.18981130837236593,
+                0.20803479894854324
+              ],
+              "contactY": 0.044
+            },
+            {
+              "id": "soot",
+              "bounds": [
+                -0.6164633797178982,
+                -0.5028225435496188,
+                -0.5101433810697984,
+                -0.04704197759456252
+              ],
+              "contactY": 0.044
+            },
+            {
+              "id": "clover",
+              "bounds": [
+                -0.5287903088937896,
+                -0.31948976326365963,
+                -0.40703316619430313,
+                0.05165935202328936
+              ],
+              "contactY": 0.044
+            },
+            {
+              "id": "teacup-healer",
+              "bounds": [
+                0.37353003895121867,
+                -0.1471656300292906,
+                0.4953210388488415,
+                0.16266771845960312
+              ],
+              "contactY": 0.044
+            },
+            {
+              "id": "sock-skipper",
+              "bounds": [
+                0.4933078954333108,
+                -0.5063663541112011,
+                0.6318922553349333,
+                -0.13462385903877455
+              ],
+              "contactY": 0.044
+            }
+          ],
+          "calm0": [
+            0,
+            0,
+            15,
+            15
+          ],
+          "calm1": [
+            0,
+            0,
+            15,
+            15
+          ],
+          "moving": [
+            9,
+            9,
+            14.914964042448275,
+            14.820557988112514
+          ],
+          "background": "rgb(35, 62, 70)",
+          "token": "#233e46",
+          "canvas": {
+            "x": 184,
+            "y": 167.09375,
+            "width": 1096,
+            "height": 476.90625
+          },
+          "overflow": false,
+          "stats": {
+            "frames": 5,
+            "calls": 106,
+            "triangles": 101148,
+            "geometries": 558,
+            "textures": 123,
+            "particles": 0,
+            "estimatedGpuBytes": 5155316,
+            "loaded": 5,
+            "hiddenFrames": 0,
+            "quality": "medium"
+          }
+        }
+      ],
+      "toggles": [
+        {
+          "look": false,
+          "stage": false,
+          "oldDisposed": true,
+          "oldCanvasRemoved": true
+        },
+        {
+          "look": true,
+          "stage": true,
+          "oldDisposed": true,
+          "oldCanvasRemoved": true
+        }
+      ],
+      "disposal": {
+        "expected": 20,
+        "actual": 20,
+        "oldDisposed": true
+      },
+      "errors": [],
+      "requests": []
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "frames": [
+        {
+          "preset": "close",
+          "file": "1440x900-close.png",
+          "shell": {
+            "visible": true,
+            "overlap": false,
+            "stageFraction": 0.8120919451419741,
+            "content": {
+              "x": 184,
+              "y": 91.09375,
+              "width": 1256,
+              "height": 808.90625,
+              "top": 91.09375,
+              "right": 1440,
+              "bottom": 900,
+              "left": 184
+            },
+            "battle": {
+              "x": 184,
+              "y": 91.09375,
+              "width": 1256,
+              "height": 808.90625,
+              "top": 91.09375,
+              "right": 1440,
+              "bottom": 900,
+              "left": 184
+            },
+            "nav": {
+              "x": 0,
+              "y": 0,
+              "width": 184,
+              "height": 900,
+              "top": 0,
+              "right": 184,
+              "bottom": 900,
+              "left": 0
+            },
+            "hud": {
+              "x": 184,
+              "y": 0,
+              "width": 1256,
+              "height": 63.09375,
+              "top": 0,
+              "right": 1440,
+              "bottom": 63.09375,
+              "left": 184
+            },
+            "controls": [
+              {
+                "text": "1×2×4×",
+                "rect": {
+                  "x": 754.71875,
+                  "y": 99.59375,
+                  "width": 39,
+                  "height": 30,
+                  "top": 99.59375,
+                  "right": 793.71875,
+                  "bottom": 129.59375,
+                  "left": 754.71875
+                }
+              },
+              {
+                "text": "Resume",
+                "rect": {
+                  "x": 802.71875,
+                  "y": 100.0625,
+                  "width": 59.734375,
+                  "height": 29.046875,
+                  "top": 100.0625,
+                  "right": 862.453125,
+                  "bottom": 129.109375,
+                  "left": 802.71875
+                }
+              },
+              {
+                "text": "Skip to result",
+                "rect": {
+                  "x": 871.453125,
+                  "y": 100.0625,
+                  "width": 87.1875,
+                  "height": 29.046875,
+                  "top": 100.0625,
+                  "right": 958.640625,
+                  "bottom": 129.109375,
+                  "left": 871.453125
+                }
+              },
+              {
+                "text": "A · CloserB · MediumC · Wider",
+                "rect": {
+                  "x": 1009.765625,
+                  "y": 99.59375,
+                  "width": 80,
+                  "height": 30,
+                  "top": 99.59375,
+                  "right": 1089.765625,
+                  "bottom": 129.59375,
+                  "left": 1009.765625
+                }
+              },
+              {
+                "text": "Sound off",
+                "rect": {
+                  "x": 1098.765625,
+                  "y": 100.0625,
+                  "width": 69.25,
+                  "height": 29.046875,
+                  "top": 100.0625,
+                  "right": 1168.015625,
+                  "bottom": 129.109375,
+                  "left": 1098.765625
+                }
+              },
+              {
+                "text": "",
+                "rect": {
+                  "x": 1198.0625,
+                  "y": 97.09375,
+                  "width": 60,
+                  "height": 35,
+                  "top": 97.09375,
+                  "right": 1258.0625,
+                  "bottom": 132.09375,
+                  "left": 1198.0625
+                }
+              },
+              {
+                "text": "Battle log",
+                "rect": {
+                  "x": 1269.0625,
+                  "y": 100.0625,
+                  "width": 68.09375,
+                  "height": 29.046875,
+                  "top": 100.0625,
+                  "right": 1337.15625,
+                  "bottom": 129.109375,
+                  "left": 1269.0625
+                }
+              },
+              {
+                "text": "Leave table",
+                "rect": {
+                  "x": 1346.15625,
+                  "y": 100.0625,
+                  "width": 77.84375,
+                  "height": 29.046875,
+                  "top": 100.0625,
+                  "right": 1424,
+                  "bottom": 129.109375,
+                  "left": 1346.15625
+                }
+              }
+            ]
+          },
+          "stage": "lantern-atelier-cafe",
+          "atelier": true,
+          "fov": 27.772834788499303,
+          "actors": [
+            {
+              "id": "mochi",
+              "bounds": [
+                -0.3734077715870034,
+                -0.16282837990121965,
+                -0.2357333991076157,
+                0.21496468462494683
+              ],
+              "contactY": 0.044
+            },
+            {
+              "id": "soot",
+              "bounds": [
+                -0.76560774577868,
+                -0.5195721583252659,
+                -0.6335651668124915,
+                -0.04860900161347626
+              ],
+              "contactY": 0.044
+            },
+            {
+              "id": "clover",
+              "bounds": [
+                -0.656723448142287,
+                -0.3301323458767062,
+                -0.5055089322090538,
+                0.053380186256061314
+              ],
+              "contactY": 0.044
+            },
+            {
+              "id": "teacup-healer",
+              "bounds": [
+                0.4639002096652231,
+                -0.15206789155838765,
+                0.6151567740542062,
+                0.16808637292445194
+              ],
+              "contactY": 0.044
+            },
+            {
+              "id": "sock-skipper",
+              "bounds": [
+                0.6126565798123375,
+                -0.5232340174161075,
+                0.7847694138837075,
+                -0.13910833931404684
+              ],
+              "contactY": 0.044
+            }
+          ],
+          "calm0": [
+            0,
+            0,
+            15,
+            15
+          ],
+          "calm1": [
+            0,
+            0,
+            15,
+            15
+          ],
+          "moving": [
+            9,
+            9,
+            14.914964042448275,
+            14.820557988112514
+          ],
+          "background": "rgb(35, 62, 70)",
+          "token": "#233e46",
+          "canvas": {
+            "x": 184,
+            "y": 167.09375,
+            "width": 1256,
+            "height": 656.90625
+          },
+          "overflow": false,
+          "stats": {
+            "frames": 3,
+            "calls": 106,
+            "triangles": 101148,
+            "geometries": 558,
+            "textures": 123,
+            "particles": 0,
+            "estimatedGpuBytes": 5155316,
+            "loaded": 5,
+            "hiddenFrames": 0,
+            "quality": "medium"
+          }
+        },
+        {
+          "preset": "wide",
+          "file": "1440x900-wide.png",
+          "shell": {
+            "visible": true,
+            "overlap": false,
+            "stageFraction": 0.8120919451419741,
+            "content": {
+              "x": 184,
+              "y": 91.09375,
+              "width": 1256,
+              "height": 808.90625,
+              "top": 91.09375,
+              "right": 1440,
+              "bottom": 900,
+              "left": 184
+            },
+            "battle": {
+              "x": 184,
+              "y": 91.09375,
+              "width": 1256,
+              "height": 808.90625,
+              "top": 91.09375,
+              "right": 1440,
+              "bottom": 900,
+              "left": 184
+            },
+            "nav": {
+              "x": 0,
+              "y": 0,
+              "width": 184,
+              "height": 900,
+              "top": 0,
+              "right": 184,
+              "bottom": 900,
+              "left": 0
+            },
+            "hud": {
+              "x": 184,
+              "y": 0,
+              "width": 1256,
+              "height": 63.09375,
+              "top": 0,
+              "right": 1440,
+              "bottom": 63.09375,
+              "left": 184
+            },
+            "controls": [
+              {
+                "text": "1×2×4×",
+                "rect": {
+                  "x": 754.71875,
+                  "y": 99.59375,
+                  "width": 39,
+                  "height": 30,
+                  "top": 99.59375,
+                  "right": 793.71875,
+                  "bottom": 129.59375,
+                  "left": 754.71875
+                }
+              },
+              {
+                "text": "Resume",
+                "rect": {
+                  "x": 802.71875,
+                  "y": 100.0625,
+                  "width": 59.734375,
+                  "height": 29.046875,
+                  "top": 100.0625,
+                  "right": 862.453125,
+                  "bottom": 129.109375,
+                  "left": 802.71875
+                }
+              },
+              {
+                "text": "Skip to result",
+                "rect": {
+                  "x": 871.453125,
+                  "y": 100.0625,
+                  "width": 87.1875,
+                  "height": 29.046875,
+                  "top": 100.0625,
+                  "right": 958.640625,
+                  "bottom": 129.109375,
+                  "left": 871.453125
+                }
+              },
+              {
+                "text": "A · CloserB · MediumC · Wider",
+                "rect": {
+                  "x": 1009.765625,
+                  "y": 99.59375,
+                  "width": 80,
+                  "height": 30,
+                  "top": 99.59375,
+                  "right": 1089.765625,
+                  "bottom": 129.59375,
+                  "left": 1009.765625
+                }
+              },
+              {
+                "text": "Sound off",
+                "rect": {
+                  "x": 1098.765625,
+                  "y": 100.0625,
+                  "width": 69.25,
+                  "height": 29.046875,
+                  "top": 100.0625,
+                  "right": 1168.015625,
+                  "bottom": 129.109375,
+                  "left": 1098.765625
+                }
+              },
+              {
+                "text": "",
+                "rect": {
+                  "x": 1198.0625,
+                  "y": 97.09375,
+                  "width": 60,
+                  "height": 35,
+                  "top": 97.09375,
+                  "right": 1258.0625,
+                  "bottom": 132.09375,
+                  "left": 1198.0625
+                }
+              },
+              {
+                "text": "Battle log",
+                "rect": {
+                  "x": 1269.0625,
+                  "y": 100.0625,
+                  "width": 68.09375,
+                  "height": 29.046875,
+                  "top": 100.0625,
+                  "right": 1337.15625,
+                  "bottom": 129.109375,
+                  "left": 1269.0625
+                }
+              },
+              {
+                "text": "Leave table",
+                "rect": {
+                  "x": 1346.15625,
+                  "y": 100.0625,
+                  "width": 77.84375,
+                  "height": 29.046875,
+                  "top": 100.0625,
+                  "right": 1424,
+                  "bottom": 129.109375,
+                  "left": 1346.15625
+                }
+              }
+            ]
+          },
+          "stage": "lantern-atelier-cafe",
+          "atelier": true,
+          "fov": 30.766962693782055,
+          "actors": [
+            {
+              "id": "mochi",
+              "bounds": [
+                -0.3355258237448436,
+                -0.14630955875182053,
+                -0.21181841658945177,
+                0.19315667314125654
+              ],
+              "contactY": 0.044
+            },
+            {
+              "id": "soot",
+              "bounds": [
+                -0.6879373947576545,
+                -0.4668619393647317,
+                -0.5692904397445576,
+                -0.0436776536237033
+              ],
+              "contactY": 0.044
+            },
+            {
+              "id": "clover",
+              "bounds": [
+                -0.5900993302148086,
+                -0.29664065861385186,
+                -0.45422541734726574,
+                0.04796480504167827
+              ],
+              "contactY": 0.044
+            },
+            {
+              "id": "teacup-healer",
+              "bounds": [
+                0.41683786955425844,
+                -0.13664071415391352,
+                0.5527495650921853,
+                0.15103413219298578
+              ],
+              "contactY": 0.044
+            },
+            {
+              "id": "sock-skipper",
+              "bounds": [
+                0.5505030137444191,
+                -0.47015230550432835,
+                0.7051551255186936,
+                -0.12499589909378121
+              ],
+              "contactY": 0.044
+            }
+          ],
+          "calm0": [
+            0,
+            0,
+            15,
+            15
+          ],
+          "calm1": [
+            0,
+            0,
+            15,
+            15
+          ],
+          "moving": [
+            9,
+            9,
+            14.914964042448275,
+            14.820557988112514
+          ],
+          "background": "rgb(35, 62, 70)",
+          "token": "#233e46",
+          "canvas": {
+            "x": 184,
+            "y": 167.09375,
+            "width": 1256,
+            "height": 656.90625
+          },
+          "overflow": false,
+          "stats": {
+            "frames": 4,
+            "calls": 106,
+            "triangles": 101148,
+            "geometries": 558,
+            "textures": 123,
+            "particles": 0,
+            "estimatedGpuBytes": 5155316,
+            "loaded": 5,
+            "hiddenFrames": 0,
+            "quality": "medium"
+          }
+        },
+        {
+          "preset": "far",
+          "file": "1440x900-far.png",
+          "shell": {
+            "visible": true,
+            "overlap": false,
+            "stageFraction": 0.8120919451419741,
+            "content": {
+              "x": 184,
+              "y": 91.09375,
+              "width": 1256,
+              "height": 808.90625,
+              "top": 91.09375,
+              "right": 1440,
+              "bottom": 900,
+              "left": 184
+            },
+            "battle": {
+              "x": 184,
+              "y": 91.09375,
+              "width": 1256,
+              "height": 808.90625,
+              "top": 91.09375,
+              "right": 1440,
+              "bottom": 900,
+              "left": 184
+            },
+            "nav": {
+              "x": 0,
+              "y": 0,
+              "width": 184,
+              "height": 900,
+              "top": 0,
+              "right": 184,
+              "bottom": 900,
+              "left": 0
+            },
+            "hud": {
+              "x": 184,
+              "y": 0,
+              "width": 1256,
+              "height": 63.09375,
+              "top": 0,
+              "right": 1440,
+              "bottom": 63.09375,
+              "left": 184
+            },
+            "controls": [
+              {
+                "text": "1×2×4×",
+                "rect": {
+                  "x": 754.71875,
+                  "y": 99.59375,
+                  "width": 39,
+                  "height": 30,
+                  "top": 99.59375,
+                  "right": 793.71875,
+                  "bottom": 129.59375,
+                  "left": 754.71875
+                }
+              },
+              {
+                "text": "Resume",
+                "rect": {
+                  "x": 802.71875,
+                  "y": 100.0625,
+                  "width": 59.734375,
+                  "height": 29.046875,
+                  "top": 100.0625,
+                  "right": 862.453125,
+                  "bottom": 129.109375,
+                  "left": 802.71875
+                }
+              },
+              {
+                "text": "Skip to result",
+                "rect": {
+                  "x": 871.453125,
+                  "y": 100.0625,
+                  "width": 87.1875,
+                  "height": 29.046875,
+                  "top": 100.0625,
+                  "right": 958.640625,
+                  "bottom": 129.109375,
+                  "left": 871.453125
+                }
+              },
+              {
+                "text": "A · CloserB · MediumC · Wider",
+                "rect": {
+                  "x": 1009.765625,
+                  "y": 99.59375,
+                  "width": 80,
+                  "height": 30,
+                  "top": 99.59375,
+                  "right": 1089.765625,
+                  "bottom": 129.59375,
+                  "left": 1009.765625
+                }
+              },
+              {
+                "text": "Sound off",
+                "rect": {
+                  "x": 1098.765625,
+                  "y": 100.0625,
+                  "width": 69.25,
+                  "height": 29.046875,
+                  "top": 100.0625,
+                  "right": 1168.015625,
+                  "bottom": 129.109375,
+                  "left": 1098.765625
+                }
+              },
+              {
+                "text": "",
+                "rect": {
+                  "x": 1198.0625,
+                  "y": 97.09375,
+                  "width": 60,
+                  "height": 35,
+                  "top": 97.09375,
+                  "right": 1258.0625,
+                  "bottom": 132.09375,
+                  "left": 1198.0625
+                }
+              },
+              {
+                "text": "Battle log",
+                "rect": {
+                  "x": 1269.0625,
+                  "y": 100.0625,
+                  "width": 68.09375,
+                  "height": 29.046875,
+                  "top": 100.0625,
+                  "right": 1337.15625,
+                  "bottom": 129.109375,
+                  "left": 1269.0625
+                }
+              },
+              {
+                "text": "Leave table",
+                "rect": {
+                  "x": 1346.15625,
+                  "y": 100.0625,
+                  "width": 77.84375,
+                  "height": 29.046875,
+                  "top": 100.0625,
+                  "right": 1424,
+                  "bottom": 129.109375,
+                  "left": 1346.15625
+                }
+              }
+            ]
+          },
+          "stage": "lantern-atelier-cafe",
+          "atelier": true,
+          "fov": 34.13669339215497,
+          "actors": [
+            {
+              "id": "mochi",
+              "bounds": [
+                -0.3006659979012235,
+                -0.13110856563474824,
+                -0.18981130837236584,
+                0.17308844736034673
+              ],
+              "contactY": 0.044
+            },
+            {
+              "id": "soot",
+              "bounds": [
+                -0.6164633797178981,
+                -0.4183568028073569,
+                -0.5101433810697983,
+                -0.03913971558487698
+              ],
+              "contactY": 0.044
+            },
+            {
+              "id": "clover",
+              "bounds": [
+                -0.5287903088937895,
+                -0.2658208499266984,
+                -0.4070331661943031,
+                0.042981448673711696
+              ],
+              "contactY": 0.044
+            },
+            {
+              "id": "teacup-healer",
+              "bounds": [
+                0.37353003895121856,
+                -0.12244427631974067,
+                0.4953210388488414,
+                0.13534227430280543
+              ],
+              "contactY": 0.044
+            },
+            {
+              "id": "sock-skipper",
+              "bounds": [
+                0.4933078954333106,
+                -0.4213053127246579,
+                0.6318922553349332,
+                -0.11200931217494678
+              ],
+              "contactY": 0.044
+            }
+          ],
+          "calm0": [
+            0,
+            0,
+            15,
+            15
+          ],
+          "calm1": [
+            0,
+            0,
+            15,
+            15
+          ],
+          "moving": [
+            9,
+            9,
+            14.914964042448275,
+            14.820557988112514
+          ],
+          "background": "rgb(35, 62, 70)",
+          "token": "#233e46",
+          "canvas": {
+            "x": 184,
+            "y": 167.09375,
+            "width": 1256,
+            "height": 656.90625
+          },
+          "overflow": false,
+          "stats": {
+            "frames": 5,
+            "calls": 106,
+            "triangles": 101148,
+            "geometries": 558,
+            "textures": 123,
+            "particles": 0,
+            "estimatedGpuBytes": 5155316,
+            "loaded": 5,
+            "hiddenFrames": 0,
+            "quality": "medium"
+          }
+        }
+      ],
+      "toggles": [
+        {
+          "look": false,
+          "stage": false,
+          "oldDisposed": true,
+          "oldCanvasRemoved": true
+        },
+        {
+          "look": true,
+          "stage": true,
+          "oldDisposed": true,
+          "oldCanvasRemoved": true
+        }
+      ],
+      "disposal": {
+        "expected": 20,
+        "actual": 20,
+        "oldDisposed": true
+      },
+      "errors": [],
+      "requests": []
+    }
+  ]
+}

@@ -1,0 +1,779 @@
+{
+  "at": "2026-11-08T18:34:04.508Z",
+  "checks": {
+    "native casts <=50ms": {
+      "actual": 16.80000000000109,
+      "pass": true
+    },
+    "CPU4 casts <=100ms": {
+      "actual": 16.80000000000109,
+      "pass": true
+    },
+    "native cold <=150ms": {
+      "actual": 16.80000000000291,
+      "pass": true
+    },
+    "native after Hub-ready <=100ms": {
+      "actual": 16.80000000000291,
+      "pass": true
+    },
+    "native ready regression <=1500ms": {
+      "actual": 25.599999997764826,
+      "pass": true
+    },
+    "peak <=250 draws /150k triangles": {
+      "actual": [
+        115,
+        117942
+      ],
+      "pass": true
+    },
+    "face protected samples": {
+      "actual": 0,
+      "pass": true
+    },
+    "144 cast windows +6 cold runs": {
+      "actual": [
+        144,
+        6
+      ],
+      "pass": true
+    },
+    "demo <=31.5MB": {
+      "actual": 29812862,
+      "pass": true
+    },
+    "lean B bytes stretch <=18MB": {
+      "actual": 15349700,
+      "pass": true
+    },
+    "protected scope unchanged": {
+      "actual": "",
+      "pass": true
+    },
+    "B-owned changed paths only": {
+      "actual": [],
+      "pass": true
+    },
+    "closure index exact": {
+      "actual": "7e092b1a18b2a4af1dcdcc51e6a24f38bc5e674580d2ecddca33c3de306aff34",
+      "pass": true
+    },
+    "startup parity": {
+      "actual": 0,
+      "pass": true
+    },
+    "12 layout +6 DPR2 shots": {
+      "actual": [
+        12,
+        6
+      ],
+      "pass": true
+    },
+    "gallery-only CSS patch preserves measured executable/assets/battle CSS": {
+      "actual": [
+        {
+          "variant": "full",
+          "beforeSha256": "c711dec26c28810a301264f315ae07cd16a14ce2c9ff77c4b39a0805f1514a05",
+          "afterSha256": "7f4d0fcc694915958c0c38ad54c9722ced944b18b82aadc346cdaede43fe7aae",
+          "beforeBytes": 29812862,
+          "afterBytes": 29812862,
+          "javascriptSha256": "4a2048c6ea2d2ce2546bacfab348ee5769580bdca022ae9f82e9ccfb440211b5",
+          "javascriptByteIdentical": true,
+          "allOtherHtmlByteIdentical": true,
+          "allOtherCssByteIdentical": true,
+          "change": {
+            "selector": ".look-b2-preview",
+            "property": "top",
+            "before": "107px",
+            "after": "171px"
+          }
+        },
+        {
+          "variant": "lean",
+          "beforeSha256": "b99b583cf334aacff784760c39b0bd22f02076b3b82d851a212a544c55beef12",
+          "afterSha256": "285d6745b2e4f6c9238c9bd14a825fa6b1c7fe263d6fd704772a194f0d7349ff",
+          "beforeBytes": 21550338,
+          "afterBytes": 21550338,
+          "javascriptSha256": "4a2048c6ea2d2ce2546bacfab348ee5769580bdca022ae9f82e9ccfb440211b5",
+          "javascriptByteIdentical": true,
+          "allOtherHtmlByteIdentical": true,
+          "allOtherCssByteIdentical": true,
+          "change": {
+            "selector": ".look-b2-preview",
+            "property": "top",
+            "before": "107px",
+            "after": "171px"
+          }
+        }
+      ],
+      "pass": true
+    },
+    "receipts retain original and delivered HTML hashes": {
+      "actual": {
+        "measuredSha": "c711dec26c28810a301264f315ae07cd16a14ce2c9ff77c4b39a0805f1514a05",
+        "deliveredSha": "7f4d0fcc694915958c0c38ad54c9722ced944b18b82aadc346cdaede43fe7aae",
+        "perf": "c711dec26c28810a301264f315ae07cd16a14ce2c9ff77c4b39a0805f1514a05",
+        "shots": "c711dec26c28810a301264f315ae07cd16a14ce2c9ff77c4b39a0805f1514a05",
+        "ui": "7f4d0fcc694915958c0c38ad54c9722ced944b18b82aadc346cdaede43fe7aae"
+      },
+      "pass": true
+    },
+    "three-width UI": {
+      "actual": 3,
+      "pass": true
+    },
+    "paired20sH264 same initial": {
+      "actual": true,
+      "pass": true
+    },
+    "regular <=12k and boss <=22k model triangles": {
+      "actual": [
+        {
+          "id": "button-guard",
+          "triangles": 7774,
+          "limit": 12000
+        },
+        {
+          "id": "sock-skipper",
+          "triangles": 7784,
+          "limit": 12000
+        },
+        {
+          "id": "teacup-healer",
+          "triangles": 7783,
+          "limit": 12000
+        },
+        {
+          "id": "spool-ram",
+          "triangles": 7770,
+          "limit": 12000
+        },
+        {
+          "id": "binding-thread",
+          "triangles": 7778,
+          "limit": 12000
+        },
+        {
+          "id": "practice-cushion",
+          "triangles": 7786,
+          "limit": 12000
+        },
+        {
+          "id": "pollen-scout",
+          "triangles": 7780,
+          "limit": 12000
+        },
+        {
+          "id": "crumb-sentinel",
+          "triangles": 7790,
+          "limit": 12000
+        },
+        {
+          "id": "needle-moth",
+          "triangles": 7784,
+          "limit": 12000
+        },
+        {
+          "id": "rain-spool",
+          "triangles": 7756,
+          "limit": 12000
+        },
+        {
+          "id": "kettle-knight",
+          "triangles": 11884,
+          "limit": 22000
+        },
+        {
+          "id": "pantry-crown",
+          "triangles": 19548,
+          "limit": 22000
+        },
+        {
+          "id": "yarn-giant",
+          "triangles": 19762,
+          "limit": 22000
+        }
+      ],
+      "pass": true
+    },
+    "boss height >=2x regular (same roster camera)": {
+      "actual": {
+        "yarn-giant": 1.6581764810877524,
+        "kettle-knight": 1.517272710652152,
+        "pantry-crown": 1.5298833852650704
+      },
+      "pass": false
+    },
+    "boss page height >=24%": {
+      "actual": [
+        [
+          "yarn-giant",
+          37.894955981436944
+        ],
+        [
+          "kettle-knight",
+          34.67482697877924
+        ],
+        [
+          "pantry-crown",
+          34.96302366037689
+        ]
+      ],
+      "pass": true
+    },
+    "canonical cats page height >=13%": {
+      "actual": 17.76702959463253,
+      "pass": true
+    },
+    "roster regular page height >=12%": {
+      "actual": 18.342550087925776,
+      "pass": true
+    },
+    "opponentContrast": {
+      "actual": "0.009–0.039 linear luminance, original V2 silhouette/ablation method",
+      "pass": false
+    },
+    "evidence <=60MB": {
+      "actual": 59849210,
+      "pass": true
+    },
+    "phase source gates": {
+      "actual": [
+        {
+          "phase": "v0",
+          "gates": {
+            "typecheck": 0,
+            "lint": 0,
+            "unit": 0,
+            "build": 0,
+            "e2e": 0
+          }
+        },
+        {
+          "phase": "v1",
+          "gates": {
+            "typecheck": 0,
+            "lint": 0,
+            "unit": 0,
+            "build": 0
+          }
+        },
+        {
+          "phase": "v3",
+          "gates": {
+            "typecheck": 0,
+            "lint": 0,
+            "unit": 0,
+            "build": 0
+          }
+        },
+        {
+          "phase": "v2",
+          "gates": {
+            "typecheck": 0,
+            "lint": 0,
+            "unit": 0,
+            "build": 0
+          }
+        },
+        {
+          "phase": "v4",
+          "gates": {
+            "typecheck": 0,
+            "lint": 0,
+            "unit": 0,
+            "build": 0
+          }
+        },
+        {
+          "phase": "v5",
+          "gates": {
+            "typecheck": 0,
+            "lint": 0,
+            "unit": 0,
+            "build": 0
+          }
+        },
+        {
+          "phase": "v6",
+          "gates": {
+            "typecheck": 0,
+            "lint": 0,
+            "unit": 0,
+            "build": 0,
+            "e2e": 0
+          }
+        }
+      ],
+      "pass": true
+    },
+    "five-seed full-battle and log parity each phase": {
+      "actual": [
+        {
+          "phase": "v0",
+          "seeds": [
+            7,
+            17,
+            71,
+            1808,
+            20261108
+          ]
+        },
+        {
+          "phase": "v1",
+          "seeds": [
+            7,
+            17,
+            71,
+            1808,
+            20261108
+          ]
+        },
+        {
+          "phase": "v3",
+          "seeds": [
+            7,
+            17,
+            71,
+            1808,
+            20261108
+          ]
+        },
+        {
+          "phase": "v2",
+          "seeds": [
+            7,
+            17,
+            71,
+            1808,
+            20261108
+          ]
+        },
+        {
+          "phase": "v4",
+          "seeds": [
+            7,
+            17,
+            71,
+            1808,
+            20261108
+          ]
+        },
+        {
+          "phase": "v5",
+          "seeds": [
+            7,
+            17,
+            71,
+            1808,
+            20261108
+          ]
+        },
+        {
+          "phase": "v6",
+          "seeds": [
+            7,
+            17,
+            71,
+            1808,
+            20261108
+          ]
+        }
+      ],
+      "pass": true
+    },
+    "ready gallery and effect-only preview": {
+      "actual": [
+        {
+          "ready": true,
+          "id": "clover-4",
+          "speed": 0.25,
+          "effectOnly": false,
+          "paused": true
+        },
+        {
+          "ready": true,
+          "id": "clover-4",
+          "speed": 0.25,
+          "effectOnly": true,
+          "paused": true
+        }
+      ],
+      "pass": true
+    },
+    "gallery mouse controls at three widths": {
+      "actual": [
+        1024,
+        1280,
+        1440
+      ],
+      "pass": true
+    },
+    "five natural battles retain one scene": {
+      "actual": [
+        {
+          "index": 0,
+          "retained": true
+        },
+        {
+          "index": 1,
+          "retained": true
+        },
+        {
+          "index": 2,
+          "retained": true
+        },
+        {
+          "index": 3,
+          "retained": true
+        },
+        {
+          "index": 4,
+          "retained": true
+        }
+      ],
+      "pass": true
+    }
+  },
+  "misses": [
+    {
+      "label": "boss height >=2x regular (same roster camera)",
+      "actual": {
+        "yarn-giant": 1.6581764810877524,
+        "kettle-knight": 1.517272710652152,
+        "pantry-crown": 1.5298833852650704
+      }
+    },
+    {
+      "label": "opponent luminance >=0.18",
+      "actual": "0.009–0.039 linear luminance, original V2 silhouette/ablation method"
+    }
+  ],
+  "receipts": [
+    {
+      "phase": "v0",
+      "gates": {
+        "typecheck": 0,
+        "lint": 0,
+        "unit": 0,
+        "build": 0,
+        "e2e": 0
+      },
+      "digest": [
+        {
+          "seed": 7,
+          "bytes": 23407,
+          "sha256": "9dd1abd4fc7bd7e39be9f8bfe2a662c2dc026fb7fc329d3e59fc6186ff03cdaf",
+          "logSha256": "aa9de641c9b54dba58b2a5d6a154c7c21b10dbe1bdce07c08a15f801d3fe6796",
+          "result": "party"
+        },
+        {
+          "seed": 17,
+          "bytes": 22994,
+          "sha256": "76f1e89db7e278ce2b69b8cd00f3c60907c312628620165796c901b3248e3ab2",
+          "logSha256": "a05fb4e3d1afb13dafba29aeb4591345e74d0ef3c83628403de6483522c82978",
+          "result": "party"
+        },
+        {
+          "seed": 71,
+          "bytes": 22836,
+          "sha256": "6a0d49af25573a7c7208fcb8f875cc6596a933f6734f9411a984b9e02422fac2",
+          "logSha256": "07f52a62fcea9fc6fd523502a292b63a7e8187415db1bceec6c5eb6901d496ac",
+          "result": "party"
+        },
+        {
+          "seed": 1808,
+          "bytes": 22835,
+          "sha256": "4504c99c29d7e5c12620feccc103d3fd2fd10e18cb0e4717b29d3a640976ad0e",
+          "logSha256": "16db2ad3214ef376402980dd76f4996dd0667a5ed31d225129c1615da1cf0a68",
+          "result": "party"
+        },
+        {
+          "seed": 20261108,
+          "bytes": 22543,
+          "sha256": "0334dd1ba9d600aa4472873b6552f1eb52db4306989762bf449cf4b61c36cd37",
+          "logSha256": "e409d96309dac65e8c406fdbc4b3d284a69d63e385d1cb5a8f0ef416225d9aa3",
+          "result": "party"
+        }
+      ]
+    },
+    {
+      "phase": "v1",
+      "gates": {
+        "typecheck": 0,
+        "lint": 0,
+        "unit": 0,
+        "build": 0
+      },
+      "digest": [
+        {
+          "seed": 7,
+          "bytes": 23407,
+          "sha256": "9dd1abd4fc7bd7e39be9f8bfe2a662c2dc026fb7fc329d3e59fc6186ff03cdaf",
+          "logSha256": "aa9de641c9b54dba58b2a5d6a154c7c21b10dbe1bdce07c08a15f801d3fe6796",
+          "result": "party"
+        },
+        {
+          "seed": 17,
+          "bytes": 22994,
+          "sha256": "76f1e89db7e278ce2b69b8cd00f3c60907c312628620165796c901b3248e3ab2",
+          "logSha256": "a05fb4e3d1afb13dafba29aeb4591345e74d0ef3c83628403de6483522c82978",
+          "result": "party"
+        },
+        {
+          "seed": 71,
+          "bytes": 22836,
+          "sha256": "6a0d49af25573a7c7208fcb8f875cc6596a933f6734f9411a984b9e02422fac2",
+          "logSha256": "07f52a62fcea9fc6fd523502a292b63a7e8187415db1bceec6c5eb6901d496ac",
+          "result": "party"
+        },
+        {
+          "seed": 1808,
+          "bytes": 22835,
+          "sha256": "4504c99c29d7e5c12620feccc103d3fd2fd10e18cb0e4717b29d3a640976ad0e",
+          "logSha256": "16db2ad3214ef376402980dd76f4996dd0667a5ed31d225129c1615da1cf0a68",
+          "result": "party"
+        },
+        {
+          "seed": 20261108,
+          "bytes": 22543,
+          "sha256": "0334dd1ba9d600aa4472873b6552f1eb52db4306989762bf449cf4b61c36cd37",
+          "logSha256": "e409d96309dac65e8c406fdbc4b3d284a69d63e385d1cb5a8f0ef416225d9aa3",
+          "result": "party"
+        }
+      ]
+    },
+    {
+      "phase": "v3",
+      "gates": {
+        "typecheck": 0,
+        "lint": 0,
+        "unit": 0,
+        "build": 0
+      },
+      "digest": [
+        {
+          "seed": 7,
+          "bytes": 23407,
+          "sha256": "9dd1abd4fc7bd7e39be9f8bfe2a662c2dc026fb7fc329d3e59fc6186ff03cdaf",
+          "logSha256": "aa9de641c9b54dba58b2a5d6a154c7c21b10dbe1bdce07c08a15f801d3fe6796",
+          "result": "party"
+        },
+        {
+          "seed": 17,
+          "bytes": 22994,
+          "sha256": "76f1e89db7e278ce2b69b8cd00f3c60907c312628620165796c901b3248e3ab2",
+          "logSha256": "a05fb4e3d1afb13dafba29aeb4591345e74d0ef3c83628403de6483522c82978",
+          "result": "party"
+        },
+        {
+          "seed": 71,
+          "bytes": 22836,
+          "sha256": "6a0d49af25573a7c7208fcb8f875cc6596a933f6734f9411a984b9e02422fac2",
+          "logSha256": "07f52a62fcea9fc6fd523502a292b63a7e8187415db1bceec6c5eb6901d496ac",
+          "result": "party"
+        },
+        {
+          "seed": 1808,
+          "bytes": 22835,
+          "sha256": "4504c99c29d7e5c12620feccc103d3fd2fd10e18cb0e4717b29d3a640976ad0e",
+          "logSha256": "16db2ad3214ef376402980dd76f4996dd0667a5ed31d225129c1615da1cf0a68",
+          "result": "party"
+        },
+        {
+          "seed": 20261108,
+          "bytes": 22543,
+          "sha256": "0334dd1ba9d600aa4472873b6552f1eb52db4306989762bf449cf4b61c36cd37",
+          "logSha256": "e409d96309dac65e8c406fdbc4b3d284a69d63e385d1cb5a8f0ef416225d9aa3",
+          "result": "party"
+        }
+      ]
+    },
+    {
+      "phase": "v2",
+      "gates": {
+        "typecheck": 0,
+        "lint": 0,
+        "unit": 0,
+        "build": 0
+      },
+      "digest": [
+        {
+          "seed": 7,
+          "bytes": 23407,
+          "sha256": "9dd1abd4fc7bd7e39be9f8bfe2a662c2dc026fb7fc329d3e59fc6186ff03cdaf",
+          "logSha256": "aa9de641c9b54dba58b2a5d6a154c7c21b10dbe1bdce07c08a15f801d3fe6796",
+          "result": "party"
+        },
+        {
+          "seed": 17,
+          "bytes": 22994,
+          "sha256": "76f1e89db7e278ce2b69b8cd00f3c60907c312628620165796c901b3248e3ab2",
+          "logSha256": "a05fb4e3d1afb13dafba29aeb4591345e74d0ef3c83628403de6483522c82978",
+          "result": "party"
+        },
+        {
+          "seed": 71,
+          "bytes": 22836,
+          "sha256": "6a0d49af25573a7c7208fcb8f875cc6596a933f6734f9411a984b9e02422fac2",
+          "logSha256": "07f52a62fcea9fc6fd523502a292b63a7e8187415db1bceec6c5eb6901d496ac",
+          "result": "party"
+        },
+        {
+          "seed": 1808,
+          "bytes": 22835,
+          "sha256": "4504c99c29d7e5c12620feccc103d3fd2fd10e18cb0e4717b29d3a640976ad0e",
+          "logSha256": "16db2ad3214ef376402980dd76f4996dd0667a5ed31d225129c1615da1cf0a68",
+          "result": "party"
+        },
+        {
+          "seed": 20261108,
+          "bytes": 22543,
+          "sha256": "0334dd1ba9d600aa4472873b6552f1eb52db4306989762bf449cf4b61c36cd37",
+          "logSha256": "e409d96309dac65e8c406fdbc4b3d284a69d63e385d1cb5a8f0ef416225d9aa3",
+          "result": "party"
+        }
+      ]
+    },
+    {
+      "phase": "v4",
+      "gates": {
+        "typecheck": 0,
+        "lint": 0,
+        "unit": 0,
+        "build": 0
+      },
+      "digest": [
+        {
+          "seed": 7,
+          "bytes": 23407,
+          "sha256": "9dd1abd4fc7bd7e39be9f8bfe2a662c2dc026fb7fc329d3e59fc6186ff03cdaf",
+          "logSha256": "aa9de641c9b54dba58b2a5d6a154c7c21b10dbe1bdce07c08a15f801d3fe6796",
+          "result": "party"
+        },
+        {
+          "seed": 17,
+          "bytes": 22994,
+          "sha256": "76f1e89db7e278ce2b69b8cd00f3c60907c312628620165796c901b3248e3ab2",
+          "logSha256": "a05fb4e3d1afb13dafba29aeb4591345e74d0ef3c83628403de6483522c82978",
+          "result": "party"
+        },
+        {
+          "seed": 71,
+          "bytes": 22836,
+          "sha256": "6a0d49af25573a7c7208fcb8f875cc6596a933f6734f9411a984b9e02422fac2",
+          "logSha256": "07f52a62fcea9fc6fd523502a292b63a7e8187415db1bceec6c5eb6901d496ac",
+          "result": "party"
+        },
+        {
+          "seed": 1808,
+          "bytes": 22835,
+          "sha256": "4504c99c29d7e5c12620feccc103d3fd2fd10e18cb0e4717b29d3a640976ad0e",
+          "logSha256": "16db2ad3214ef376402980dd76f4996dd0667a5ed31d225129c1615da1cf0a68",
+          "result": "party"
+        },
+        {
+          "seed": 20261108,
+          "bytes": 22543,
+          "sha256": "0334dd1ba9d600aa4472873b6552f1eb52db4306989762bf449cf4b61c36cd37",
+          "logSha256": "e409d96309dac65e8c406fdbc4b3d284a69d63e385d1cb5a8f0ef416225d9aa3",
+          "result": "party"
+        }
+      ]
+    },
+    {
+      "phase": "v5",
+      "gates": {
+        "typecheck": 0,
+        "lint": 0,
+        "unit": 0,
+        "build": 0
+      },
+      "digest": [
+        {
+          "seed": 7,
+          "bytes": 23407,
+          "sha256": "9dd1abd4fc7bd7e39be9f8bfe2a662c2dc026fb7fc329d3e59fc6186ff03cdaf",
+          "logSha256": "aa9de641c9b54dba58b2a5d6a154c7c21b10dbe1bdce07c08a15f801d3fe6796",
+          "result": "party"
+        },
+        {
+          "seed": 17,
+          "bytes": 22994,
+          "sha256": "76f1e89db7e278ce2b69b8cd00f3c60907c312628620165796c901b3248e3ab2",
+          "logSha256": "a05fb4e3d1afb13dafba29aeb4591345e74d0ef3c83628403de6483522c82978",
+          "result": "party"
+        },
+        {
+          "seed": 71,
+          "bytes": 22836,
+          "sha256": "6a0d49af25573a7c7208fcb8f875cc6596a933f6734f9411a984b9e02422fac2",
+          "logSha256": "07f52a62fcea9fc6fd523502a292b63a7e8187415db1bceec6c5eb6901d496ac",
+          "result": "party"
+        },
+        {
+          "seed": 1808,
+          "bytes": 22835,
+          "sha256": "4504c99c29d7e5c12620feccc103d3fd2fd10e18cb0e4717b29d3a640976ad0e",
+          "logSha256": "16db2ad3214ef376402980dd76f4996dd0667a5ed31d225129c1615da1cf0a68",
+          "result": "party"
+        },
+        {
+          "seed": 20261108,
+          "bytes": 22543,
+          "sha256": "0334dd1ba9d600aa4472873b6552f1eb52db4306989762bf449cf4b61c36cd37",
+          "logSha256": "e409d96309dac65e8c406fdbc4b3d284a69d63e385d1cb5a8f0ef416225d9aa3",
+          "result": "party"
+        }
+      ]
+    },
+    {
+      "phase": "v6",
+      "gates": {
+        "typecheck": 0,
+        "lint": 0,
+        "unit": 0,
+        "build": 0,
+        "e2e": 0
+      },
+      "digest": [
+        {
+          "seed": 7,
+          "bytes": 23407,
+          "sha256": "9dd1abd4fc7bd7e39be9f8bfe2a662c2dc026fb7fc329d3e59fc6186ff03cdaf",
+          "logSha256": "aa9de641c9b54dba58b2a5d6a154c7c21b10dbe1bdce07c08a15f801d3fe6796",
+          "result": "party"
+        },
+        {
+          "seed": 17,
+          "bytes": 22994,
+          "sha256": "76f1e89db7e278ce2b69b8cd00f3c60907c312628620165796c901b3248e3ab2",
+          "logSha256": "a05fb4e3d1afb13dafba29aeb4591345e74d0ef3c83628403de6483522c82978",
+          "result": "party"
+        },
+        {
+          "seed": 71,
+          "bytes": 22836,
+          "sha256": "6a0d49af25573a7c7208fcb8f875cc6596a933f6734f9411a984b9e02422fac2",
+          "logSha256": "07f52a62fcea9fc6fd523502a292b63a7e8187415db1bceec6c5eb6901d496ac",
+          "result": "party"
+        },
+        {
+          "seed": 1808,
+          "bytes": 22835,
+          "sha256": "4504c99c29d7e5c12620feccc103d3fd2fd10e18cb0e4717b29d3a640976ad0e",
+          "logSha256": "16db2ad3214ef376402980dd76f4996dd0667a5ed31d225129c1615da1cf0a68",
+          "result": "party"
+        },
+        {
+          "seed": 20261108,
+          "bytes": 22543,
+          "sha256": "0334dd1ba9d600aa4472873b6552f1eb52db4306989762bf449cf4b61c36cd37",
+          "logSha256": "e409d96309dac65e8c406fdbc4b3d284a69d63e385d1cb5a8f0ef416225d9aa3",
+          "result": "party"
+        }
+      ]
+    }
+  ]
+}

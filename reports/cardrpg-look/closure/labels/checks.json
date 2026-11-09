@@ -1,0 +1,44 @@
+{
+  "baseline": "29699ca45",
+  "source": "apps/web/src/game/squad/turn3d/label-layout.ts",
+  "hashes": [
+    "98d16c6d529cd7789c6485d550595b3cbc67f18367effdbc4217d930de9d1a7a",
+    "b82acb7824644b774061ab1a27809df5f199874db09272923002788964c75b08"
+  ],
+  "cases": 120,
+  "parity": true,
+  "method": "Deterministic desktop/dense/impossible placement inputs, exact result Map equality, alternating native Node batches. Not a browser cast or GC measurement.",
+  "callsPerSample": 960,
+  "samples": [
+    {
+      "beforeMs": 56.953832999999975,
+      "afterMs": 50.63758400000006
+    },
+    {
+      "beforeMs": 58.30370800000003,
+      "afterMs": 51.330917
+    },
+    {
+      "beforeMs": 60.35758299999998,
+      "afterMs": 51.02291700000001
+    },
+    {
+      "beforeMs": 58.400041999999985,
+      "afterMs": 50.764625000000024
+    },
+    {
+      "beforeMs": 57.50204100000008,
+      "afterMs": 50.75787500000001
+    },
+    {
+      "beforeMs": 57.62158299999987,
+      "afterMs": 50.36508300000003
+    },
+    {
+      "beforeMs": 59.37608399999999,
+      "afterMs": 50.15537499999982
+    }
+  ],
+  "beforeMedianMs": 58.30370800000003,
+  "afterMedianMs": 50.75787500000001
+}

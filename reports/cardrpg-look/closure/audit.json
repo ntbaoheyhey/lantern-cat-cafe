@@ -1,0 +1,1288 @@
+{
+  "artifact": "7e092b1a18b2a4af1dcdcc51e6a24f38bc5e674580d2ecddca33c3de306aff34",
+  "source": "8ba0a38799401d6127b1f9d4295dcccbfee6d355",
+  "sourceInputs": 1944,
+  "bytes": 31494758,
+  "sourceGates": [
+    {
+      "name": "typecheck",
+      "code": 0,
+      "startedAt": "2026-11-08T06:30:59.001Z",
+      "endedAt": "2026-11-08T06:31:09.158Z",
+      "log": "reports/cardrpg-look/validation/closure/typecheck-resume.log"
+    },
+    {
+      "name": "lint",
+      "code": 0,
+      "startedAt": "2026-11-08T06:31:15.662Z",
+      "endedAt": "2026-11-08T06:31:25.123Z",
+      "log": "reports/cardrpg-look/validation/closure/lint-resume.log"
+    },
+    {
+      "name": "unit",
+      "code": 0,
+      "startedAt": "2026-11-08T06:31:31.628Z",
+      "endedAt": "2026-11-08T06:32:26.584Z",
+      "log": "reports/cardrpg-look/validation/closure/unit-resume.log"
+    },
+    {
+      "name": "build",
+      "code": 0,
+      "startedAt": "2026-11-08T06:33:51.187Z",
+      "endedAt": "2026-11-08T06:34:01.926Z",
+      "log": "reports/cardrpg-look/validation/closure/build-resume.log"
+    },
+    {
+      "name": "e2e",
+      "code": 0,
+      "startedAt": "2026-11-08T06:34:14.438Z",
+      "endedAt": "2026-11-08T06:35:54.475Z",
+      "log": "reports/cardrpg-look/validation/closure/e2e-resume.log"
+    }
+  ],
+  "presentationSizes": 3,
+  "effectPairs": {
+    "freshEffects": 6,
+    "freshPairs": 15,
+    "minimumDistance": 0.7877297050720745,
+    "peakOverdraw": 18,
+    "incrementalImproved": 66,
+    "incrementalNewRegressions": 0,
+    "originalRegressions": 1140,
+    "worstOriginalDelta": -0.10239422389644703
+  },
+  "startup": {
+    "startupBytes": 3522500,
+    "baselineBytes": 3522500,
+    "deltaBytes": 0,
+    "scripts": 11,
+    "byteIdenticalScripts": 8,
+    "everyLoadedChunkByteCountAndModuleMembershipEqual": true,
+    "entryBytes": 27445,
+    "baselineEntryBytes": 27445,
+    "normalizedEntryBodyAndAllPreloadBranchesEqual": true,
+    "entryByteIdentical": false,
+    "threeOrModelModules": 0,
+    "modelRequests": 0,
+    "note": "Hashes can change with referenced chunk filenames and ordering. Every loaded chunk byte count and module membership match; normalized entry program and all five branch dependency memberships match. LOOK resources are only created when selected; its code now shares the existing lazy 3D route. This is not binary parity or a classic 3D-route download-size parity claim."
+  },
+  "phase": {
+    "artifact": "7e092b1a18b2a4af1dcdcc51e6a24f38bc5e674580d2ecddca33c3de306aff34",
+    "coldRuns": 7,
+    "castWindows": 24,
+    "coldInteractiveMs": [
+      966,
+      1000.5,
+      925.1999999997206,
+      925.6000000000931,
+      2834.2000000001863,
+      2906.7999999998137,
+      1039.2000000001863
+    ],
+    "battleReadyMs": [
+      7083.399999999907,
+      7184.899999999907,
+      6443.399999999907,
+      6533.600000000093,
+      10264.700000000186,
+      10244.600000000093,
+      6388.4000000003725
+    ],
+    "coldMaxMs": 666.6000000000004,
+    "castMaxMs": 633.3000000000002,
+    "castP95MaxMs": 33.30000000000018,
+    "castWithin20Min": 0.9016393442622951,
+    "errors": []
+  },
+  "targetedCasts": [
+    {
+      "case": "1440x900-dpr1-cpu4-medium-panko-1",
+      "use": "first",
+      "before": {
+        "frames": 71,
+        "max": 16.80000000000109,
+        "p95": 16.799999999999272,
+        "above25": 0,
+        "above50": 0,
+        "within20": 1,
+        "calls": 92,
+        "qualities": [
+          "medium"
+        ],
+        "triangles": 99159,
+        "particles": 6
+      },
+      "after": {
+        "frames": 67,
+        "max": 133.29999999999927,
+        "p95": 16.80000000000109,
+        "above25": 2,
+        "above50": 1,
+        "within20": 0.9701492537313433,
+        "calls": 92,
+        "triangles": 99159,
+        "particles": 6
+      }
+    },
+    {
+      "case": "1440x900-dpr1-cpu4-medium-panko-1",
+      "use": "repeat",
+      "before": {
+        "frames": 71,
+        "max": 16.799999999999272,
+        "p95": 16.700000000000728,
+        "above25": 0,
+        "above50": 0,
+        "within20": 1,
+        "calls": 92,
+        "qualities": [
+          "medium"
+        ],
+        "triangles": 99159,
+        "particles": 6
+      },
+      "after": {
+        "frames": 71,
+        "max": 16.80000000000109,
+        "p95": 16.799999999999272,
+        "above25": 0,
+        "above50": 0,
+        "within20": 1,
+        "calls": 92,
+        "triangles": 99159,
+        "particles": 6
+      }
+    },
+    {
+      "case": "1440x900-dpr1-cpu4-medium-cinnamon-4",
+      "use": "first",
+      "before": {
+        "frames": 102,
+        "max": 16.80000000000109,
+        "p95": 16.700000000000728,
+        "above25": 0,
+        "above50": 0,
+        "within20": 1,
+        "calls": 94,
+        "qualities": [
+          "medium"
+        ],
+        "triangles": 100893,
+        "particles": 10
+      },
+      "after": {
+        "frames": 96,
+        "max": 100,
+        "p95": 16.799999999999272,
+        "above25": 2,
+        "above50": 1,
+        "within20": 0.9791666666666666,
+        "calls": 94,
+        "triangles": 100893,
+        "particles": 10
+      }
+    },
+    {
+      "case": "1440x900-dpr1-cpu4-medium-cinnamon-4",
+      "use": "repeat",
+      "before": {
+        "frames": 102,
+        "max": 16.80000000000109,
+        "p95": 16.799999999999272,
+        "above25": 0,
+        "above50": 0,
+        "within20": 1,
+        "calls": 94,
+        "qualities": [
+          "medium"
+        ],
+        "triangles": 100893,
+        "particles": 10
+      },
+      "after": {
+        "frames": 102,
+        "max": 16.80000000000109,
+        "p95": 16.799999999999272,
+        "above25": 0,
+        "above50": 0,
+        "within20": 1,
+        "calls": 94,
+        "triangles": 100893,
+        "particles": 10
+      }
+    },
+    {
+      "case": "1440x900-dpr1-cpu4-medium-brioche-4",
+      "use": "first",
+      "before": {
+        "frames": 102,
+        "max": 16.80000000000109,
+        "p95": 16.799999999999272,
+        "above25": 0,
+        "above50": 0,
+        "within20": 1,
+        "calls": 97,
+        "qualities": [
+          "medium"
+        ],
+        "triangles": 106600,
+        "particles": 21
+      },
+      "after": {
+        "frames": 82,
+        "max": 133.3000000000011,
+        "p95": 33.29999999999927,
+        "above25": 5,
+        "above50": 4,
+        "within20": 0.9390243902439024,
+        "calls": 97,
+        "triangles": 106600,
+        "particles": 21
+      }
+    },
+    {
+      "case": "1440x900-dpr1-cpu4-medium-brioche-4",
+      "use": "repeat",
+      "before": {
+        "frames": 102,
+        "max": 16.80000000000109,
+        "p95": 16.799999999999272,
+        "above25": 0,
+        "above50": 0,
+        "within20": 1,
+        "calls": 97,
+        "qualities": [
+          "medium"
+        ],
+        "triangles": 106600,
+        "particles": 21
+      },
+      "after": {
+        "frames": 101,
+        "max": 33.399999999999636,
+        "p95": 16.799999999999272,
+        "above25": 1,
+        "above50": 0,
+        "within20": 0.9900990099009901,
+        "calls": 97,
+        "triangles": 106600,
+        "particles": 21
+      }
+    },
+    {
+      "case": "1440x900-dpr1-cpu4-medium-velvet-1",
+      "use": "first",
+      "before": {
+        "frames": 71,
+        "max": 16.80000000000109,
+        "p95": 16.700000000000728,
+        "above25": 0,
+        "above50": 0,
+        "within20": 1,
+        "calls": 90,
+        "qualities": [
+          "medium"
+        ],
+        "triangles": 98852,
+        "particles": 5
+      },
+      "after": {
+        "frames": 56,
+        "max": 216.60000000000036,
+        "p95": 83.29999999999927,
+        "above25": 4,
+        "above50": 3,
+        "within20": 0.9285714285714286,
+        "calls": 90,
+        "triangles": 98852,
+        "particles": 5
+      }
+    },
+    {
+      "case": "1440x900-dpr1-cpu4-medium-velvet-1",
+      "use": "repeat",
+      "before": {
+        "frames": 71,
+        "max": 16.80000000000109,
+        "p95": 16.799999999999272,
+        "above25": 0,
+        "above50": 0,
+        "within20": 1,
+        "calls": 90,
+        "qualities": [
+          "medium"
+        ],
+        "triangles": 98852,
+        "particles": 5
+      },
+      "after": {
+        "frames": 69,
+        "max": 33.399999999999636,
+        "p95": 16.80000000000109,
+        "above25": 2,
+        "above50": 0,
+        "within20": 0.9710144927536232,
+        "calls": 90,
+        "triangles": 98852,
+        "particles": 5
+      }
+    }
+  ],
+  "heroCasts": [
+    {
+      "case": "1280x720-dpr1-cpu1-high-mochi-1",
+      "use": "first",
+      "summary": {
+        "frames": 61,
+        "max": 99.90000000000055,
+        "p95": 33.30000000000018,
+        "above25": 6,
+        "above50": 1,
+        "within20": 0.9016393442622951,
+        "calls": 97,
+        "triangles": 103091,
+        "particles": 8
+      }
+    },
+    {
+      "case": "1280x720-dpr1-cpu1-high-mochi-1",
+      "use": "repeat",
+      "summary": {
+        "frames": 71,
+        "max": 16.80000000000109,
+        "p95": 16.700000000000728,
+        "above25": 0,
+        "above50": 0,
+        "within20": 1,
+        "calls": 97,
+        "triangles": 103091,
+        "particles": 8
+      }
+    },
+    {
+      "case": "1280x720-dpr1-cpu1-high-mochi-2",
+      "use": "first",
+      "summary": {
+        "frames": 68,
+        "max": 250,
+        "p95": 16.700000000000728,
+        "above25": 2,
+        "above50": 2,
+        "within20": 0.9705882352941176,
+        "calls": 97,
+        "triangles": 102099,
+        "particles": 9
+      }
+    },
+    {
+      "case": "1280x720-dpr1-cpu1-high-mochi-2",
+      "use": "repeat",
+      "summary": {
+        "frames": 78,
+        "max": 16.80000000000109,
+        "p95": 16.799999999999272,
+        "above25": 0,
+        "above50": 0,
+        "within20": 1,
+        "calls": 97,
+        "triangles": 102099,
+        "particles": 9
+      }
+    },
+    {
+      "case": "1280x720-dpr1-cpu1-high-mochi-3",
+      "use": "first",
+      "summary": {
+        "frames": 76,
+        "max": 50.099999999999454,
+        "p95": 16.800000000000182,
+        "above25": 1,
+        "above50": 1,
+        "within20": 0.9868421052631579,
+        "calls": 97,
+        "triangles": 102463,
+        "particles": 6
+      }
+    },
+    {
+      "case": "1280x720-dpr1-cpu1-high-mochi-3",
+      "use": "repeat",
+      "summary": {
+        "frames": 78,
+        "max": 16.799999999999272,
+        "p95": 16.799999999999272,
+        "above25": 0,
+        "above50": 0,
+        "within20": 1,
+        "calls": 97,
+        "triangles": 102463,
+        "particles": 6
+      }
+    },
+    {
+      "case": "1280x720-dpr1-cpu1-high-mochi-4",
+      "use": "first",
+      "summary": {
+        "frames": 101,
+        "max": 16.80000000000109,
+        "p95": 16.700000000000728,
+        "above25": 0,
+        "above50": 0,
+        "within20": 1,
+        "calls": 102,
+        "triangles": 107133,
+        "particles": 18
+      }
+    },
+    {
+      "case": "1280x720-dpr1-cpu1-high-mochi-4",
+      "use": "repeat",
+      "summary": {
+        "frames": 96,
+        "max": 150,
+        "p95": 16.799999999999272,
+        "above25": 1,
+        "above50": 1,
+        "within20": 0.9895833333333334,
+        "calls": 102,
+        "triangles": 107133,
+        "particles": 18
+      }
+    },
+    {
+      "case": "1280x720-dpr1-cpu1-high-soot-1",
+      "use": "first",
+      "summary": {
+        "frames": 70,
+        "max": 33.30000000000018,
+        "p95": 16.700000000000728,
+        "above25": 1,
+        "above50": 0,
+        "within20": 0.9857142857142858,
+        "calls": 96,
+        "triangles": 100669,
+        "particles": 10
+      }
+    },
+    {
+      "case": "1280x720-dpr1-cpu1-high-soot-1",
+      "use": "repeat",
+      "summary": {
+        "frames": 71,
+        "max": 16.799999999999272,
+        "p95": 16.799999999999272,
+        "above25": 0,
+        "above50": 0,
+        "within20": 1,
+        "calls": 96,
+        "triangles": 100669,
+        "particles": 10
+      }
+    },
+    {
+      "case": "1280x720-dpr1-cpu1-high-soot-2",
+      "use": "first",
+      "summary": {
+        "frames": 77,
+        "max": 33.399999999999636,
+        "p95": 16.799999999999272,
+        "above25": 1,
+        "above50": 0,
+        "within20": 0.987012987012987,
+        "calls": 97,
+        "triangles": 101269,
+        "particles": 7
+      }
+    },
+    {
+      "case": "1280x720-dpr1-cpu1-high-soot-2",
+      "use": "repeat",
+      "summary": {
+        "frames": 78,
+        "max": 16.799999999999272,
+        "p95": 16.700000000000728,
+        "above25": 0,
+        "above50": 0,
+        "within20": 1,
+        "calls": 97,
+        "triangles": 101269,
+        "particles": 7
+      }
+    },
+    {
+      "case": "1280x720-dpr1-cpu1-high-soot-3",
+      "use": "first",
+      "summary": {
+        "frames": 80,
+        "max": 16.80000000000109,
+        "p95": 16.800000000000182,
+        "above25": 0,
+        "above50": 0,
+        "within20": 1,
+        "calls": 97,
+        "triangles": 102991,
+        "particles": 12
+      }
+    },
+    {
+      "case": "1280x720-dpr1-cpu1-high-soot-3",
+      "use": "repeat",
+      "summary": {
+        "frames": 80,
+        "max": 16.80000000000109,
+        "p95": 16.700000000000728,
+        "above25": 0,
+        "above50": 0,
+        "within20": 1,
+        "calls": 97,
+        "triangles": 102991,
+        "particles": 12
+      }
+    },
+    {
+      "case": "1280x720-dpr1-cpu1-high-soot-4",
+      "use": "first",
+      "summary": {
+        "frames": 103,
+        "max": 16.80000000000109,
+        "p95": 16.700000000000728,
+        "above25": 0,
+        "above50": 0,
+        "within20": 1,
+        "calls": 97,
+        "triangles": 104525,
+        "particles": 11
+      }
+    },
+    {
+      "case": "1280x720-dpr1-cpu1-high-soot-4",
+      "use": "repeat",
+      "summary": {
+        "frames": 98,
+        "max": 166.60000000000036,
+        "p95": 16.799999999999272,
+        "above25": 1,
+        "above50": 1,
+        "within20": 0.9897959183673469,
+        "calls": 97,
+        "triangles": 104525,
+        "particles": 11
+      }
+    },
+    {
+      "case": "1280x720-dpr1-cpu1-high-clover-1",
+      "use": "first",
+      "summary": {
+        "frames": 64,
+        "max": 633.3000000000002,
+        "p95": 16.80000000000109,
+        "above25": 2,
+        "above50": 1,
+        "within20": 0.96875,
+        "calls": 97,
+        "triangles": 101245,
+        "particles": 7
+      }
+    },
+    {
+      "case": "1280x720-dpr1-cpu1-high-clover-1",
+      "use": "repeat",
+      "summary": {
+        "frames": 71,
+        "max": 16.80000000000109,
+        "p95": 16.700000000000728,
+        "above25": 0,
+        "above50": 0,
+        "within20": 1,
+        "calls": 97,
+        "triangles": 101245,
+        "particles": 7
+      }
+    },
+    {
+      "case": "1280x720-dpr1-cpu1-high-clover-2",
+      "use": "first",
+      "summary": {
+        "frames": 73,
+        "max": 66.60000000000036,
+        "p95": 16.80000000000109,
+        "above25": 2,
+        "above50": 1,
+        "within20": 0.9726027397260274,
+        "calls": 98,
+        "triangles": 103579,
+        "particles": 11
+      }
+    },
+    {
+      "case": "1280x720-dpr1-cpu1-high-clover-2",
+      "use": "repeat",
+      "summary": {
+        "frames": 78,
+        "max": 16.80000000000109,
+        "p95": 16.799999999999272,
+        "above25": 0,
+        "above50": 0,
+        "within20": 1,
+        "calls": 98,
+        "triangles": 103579,
+        "particles": 11
+      }
+    },
+    {
+      "case": "1280x720-dpr1-cpu1-high-clover-3",
+      "use": "first",
+      "summary": {
+        "frames": 77,
+        "max": 33.30000000000018,
+        "p95": 16.800000000000182,
+        "above25": 1,
+        "above50": 0,
+        "within20": 0.987012987012987,
+        "calls": 102,
+        "triangles": 108597,
+        "particles": 39
+      }
+    },
+    {
+      "case": "1280x720-dpr1-cpu1-high-clover-3",
+      "use": "repeat",
+      "summary": {
+        "frames": 78,
+        "max": 16.799999999999272,
+        "p95": 16.799999999999272,
+        "above25": 0,
+        "above50": 0,
+        "within20": 1,
+        "calls": 102,
+        "triangles": 108597,
+        "particles": 39
+      }
+    },
+    {
+      "case": "1280x720-dpr1-cpu1-high-clover-4",
+      "use": "first",
+      "summary": {
+        "frames": 101,
+        "max": 16.80000000000109,
+        "p95": 16.700000000000728,
+        "above25": 0,
+        "above50": 0,
+        "within20": 1,
+        "calls": 102,
+        "triangles": 106587,
+        "particles": 39
+      }
+    },
+    {
+      "case": "1280x720-dpr1-cpu1-high-clover-4",
+      "use": "repeat",
+      "summary": {
+        "frames": 96,
+        "max": 83.19999999999891,
+        "p95": 16.80000000000109,
+        "above25": 2,
+        "above50": 1,
+        "within20": 0.9791666666666666,
+        "calls": 102,
+        "triangles": 106587,
+        "particles": 39
+      }
+    }
+  ],
+  "heroMaxMisses": [
+    {
+      "case": "1280x720-dpr1-cpu1-high-mochi-1",
+      "use": "first",
+      "summary": {
+        "frames": 61,
+        "max": 99.90000000000055,
+        "p95": 33.30000000000018,
+        "above25": 6,
+        "above50": 1,
+        "within20": 0.9016393442622951,
+        "calls": 97,
+        "triangles": 103091,
+        "particles": 8
+      }
+    },
+    {
+      "case": "1280x720-dpr1-cpu1-high-mochi-2",
+      "use": "first",
+      "summary": {
+        "frames": 68,
+        "max": 250,
+        "p95": 16.700000000000728,
+        "above25": 2,
+        "above50": 2,
+        "within20": 0.9705882352941176,
+        "calls": 97,
+        "triangles": 102099,
+        "particles": 9
+      }
+    },
+    {
+      "case": "1280x720-dpr1-cpu1-high-mochi-3",
+      "use": "first",
+      "summary": {
+        "frames": 76,
+        "max": 50.099999999999454,
+        "p95": 16.800000000000182,
+        "above25": 1,
+        "above50": 1,
+        "within20": 0.9868421052631579,
+        "calls": 97,
+        "triangles": 102463,
+        "particles": 6
+      }
+    },
+    {
+      "case": "1280x720-dpr1-cpu1-high-mochi-4",
+      "use": "repeat",
+      "summary": {
+        "frames": 96,
+        "max": 150,
+        "p95": 16.799999999999272,
+        "above25": 1,
+        "above50": 1,
+        "within20": 0.9895833333333334,
+        "calls": 102,
+        "triangles": 107133,
+        "particles": 18
+      }
+    },
+    {
+      "case": "1280x720-dpr1-cpu1-high-soot-4",
+      "use": "repeat",
+      "summary": {
+        "frames": 98,
+        "max": 166.60000000000036,
+        "p95": 16.799999999999272,
+        "above25": 1,
+        "above50": 1,
+        "within20": 0.9897959183673469,
+        "calls": 97,
+        "triangles": 104525,
+        "particles": 11
+      }
+    },
+    {
+      "case": "1280x720-dpr1-cpu1-high-clover-1",
+      "use": "first",
+      "summary": {
+        "frames": 64,
+        "max": 633.3000000000002,
+        "p95": 16.80000000000109,
+        "above25": 2,
+        "above50": 1,
+        "within20": 0.96875,
+        "calls": 97,
+        "triangles": 101245,
+        "particles": 7
+      }
+    },
+    {
+      "case": "1280x720-dpr1-cpu1-high-clover-2",
+      "use": "first",
+      "summary": {
+        "frames": 73,
+        "max": 66.60000000000036,
+        "p95": 16.80000000000109,
+        "above25": 2,
+        "above50": 1,
+        "within20": 0.9726027397260274,
+        "calls": 98,
+        "triangles": 103579,
+        "particles": 11
+      }
+    },
+    {
+      "case": "1280x720-dpr1-cpu1-high-clover-4",
+      "use": "repeat",
+      "summary": {
+        "frames": 96,
+        "max": 83.19999999999891,
+        "p95": 16.80000000000109,
+        "above25": 2,
+        "above50": 1,
+        "within20": 0.9791666666666666,
+        "calls": 102,
+        "triangles": 106587,
+        "particles": 39
+      }
+    }
+  ],
+  "heroCoverageMisses": [
+    {
+      "case": "1280x720-dpr1-cpu1-high-mochi-1",
+      "use": "first",
+      "summary": {
+        "frames": 61,
+        "max": 99.90000000000055,
+        "p95": 33.30000000000018,
+        "above25": 6,
+        "above50": 1,
+        "within20": 0.9016393442622951,
+        "calls": 97,
+        "triangles": 103091,
+        "particles": 8
+      }
+    },
+    {
+      "case": "1280x720-dpr1-cpu1-high-mochi-2",
+      "use": "first",
+      "summary": {
+        "frames": 68,
+        "max": 250,
+        "p95": 16.700000000000728,
+        "above25": 2,
+        "above50": 2,
+        "within20": 0.9705882352941176,
+        "calls": 97,
+        "triangles": 102099,
+        "particles": 9
+      }
+    },
+    {
+      "case": "1280x720-dpr1-cpu1-high-mochi-3",
+      "use": "first",
+      "summary": {
+        "frames": 76,
+        "max": 50.099999999999454,
+        "p95": 16.800000000000182,
+        "above25": 1,
+        "above50": 1,
+        "within20": 0.9868421052631579,
+        "calls": 97,
+        "triangles": 102463,
+        "particles": 6
+      }
+    },
+    {
+      "case": "1280x720-dpr1-cpu1-high-mochi-4",
+      "use": "repeat",
+      "summary": {
+        "frames": 96,
+        "max": 150,
+        "p95": 16.799999999999272,
+        "above25": 1,
+        "above50": 1,
+        "within20": 0.9895833333333334,
+        "calls": 102,
+        "triangles": 107133,
+        "particles": 18
+      }
+    },
+    {
+      "case": "1280x720-dpr1-cpu1-high-soot-1",
+      "use": "first",
+      "summary": {
+        "frames": 70,
+        "max": 33.30000000000018,
+        "p95": 16.700000000000728,
+        "above25": 1,
+        "above50": 0,
+        "within20": 0.9857142857142858,
+        "calls": 96,
+        "triangles": 100669,
+        "particles": 10
+      }
+    },
+    {
+      "case": "1280x720-dpr1-cpu1-high-soot-2",
+      "use": "first",
+      "summary": {
+        "frames": 77,
+        "max": 33.399999999999636,
+        "p95": 16.799999999999272,
+        "above25": 1,
+        "above50": 0,
+        "within20": 0.987012987012987,
+        "calls": 97,
+        "triangles": 101269,
+        "particles": 7
+      }
+    },
+    {
+      "case": "1280x720-dpr1-cpu1-high-soot-4",
+      "use": "repeat",
+      "summary": {
+        "frames": 98,
+        "max": 166.60000000000036,
+        "p95": 16.799999999999272,
+        "above25": 1,
+        "above50": 1,
+        "within20": 0.9897959183673469,
+        "calls": 97,
+        "triangles": 104525,
+        "particles": 11
+      }
+    },
+    {
+      "case": "1280x720-dpr1-cpu1-high-clover-1",
+      "use": "first",
+      "summary": {
+        "frames": 64,
+        "max": 633.3000000000002,
+        "p95": 16.80000000000109,
+        "above25": 2,
+        "above50": 1,
+        "within20": 0.96875,
+        "calls": 97,
+        "triangles": 101245,
+        "particles": 7
+      }
+    },
+    {
+      "case": "1280x720-dpr1-cpu1-high-clover-2",
+      "use": "first",
+      "summary": {
+        "frames": 73,
+        "max": 66.60000000000036,
+        "p95": 16.80000000000109,
+        "above25": 2,
+        "above50": 1,
+        "within20": 0.9726027397260274,
+        "calls": 98,
+        "triangles": 103579,
+        "particles": 11
+      }
+    },
+    {
+      "case": "1280x720-dpr1-cpu1-high-clover-3",
+      "use": "first",
+      "summary": {
+        "frames": 77,
+        "max": 33.30000000000018,
+        "p95": 16.800000000000182,
+        "above25": 1,
+        "above50": 0,
+        "within20": 0.987012987012987,
+        "calls": 102,
+        "triangles": 108597,
+        "particles": 39
+      }
+    },
+    {
+      "case": "1280x720-dpr1-cpu1-high-clover-4",
+      "use": "repeat",
+      "summary": {
+        "frames": 96,
+        "max": 83.19999999999891,
+        "p95": 16.80000000000109,
+        "above25": 2,
+        "above50": 1,
+        "within20": 0.9791666666666666,
+        "calls": 102,
+        "triangles": 106587,
+        "particles": 39
+      }
+    }
+  ],
+  "castGeometry": {
+    "peakCalls": 102,
+    "peakTriangles": 108597
+  },
+  "coldIntervals": {
+    "maxPageMs": 666.6000000000004,
+    "maxPostReadyMs": 400,
+    "minimumPostReadyWithin20": 0.9636663914120561
+  },
+  "pairedCasts": {
+    "plan": {
+      "registeredAt": "2026-11-08T06:54:55.220Z",
+      "reason": "New closure Clover1 High/DPR1 first-cast633.3ms gap, with cold trace showing GPU command waits/presentation backpressure. Separate source effect from current environment without discarding failures.",
+      "order": [
+        "before",
+        "after",
+        "after",
+        "before"
+      ],
+      "skill": "clover-1",
+      "config": [
+        1280,
+        720,
+        1,
+        1,
+        "high"
+      ],
+      "before": "39645d319c264bac0c1011d0e5370de335281ebf6e1df64de67978e34bcb4133",
+      "after": "7e092b1a18b2a4af1dcdcc51e6a24f38bc5e674580d2ecddca33c3de306aff34",
+      "method": "Exactly four fresh-context observations in registered ABBA order; first/repeat retained, CPU/GPU profile on. Same current harness, viewport, tier and machine under one shared-lock window. No confidence/causal root-cause or exclusive-device claim from two samples per artifact."
+    },
+    "observations": [
+      {
+        "order": 1,
+        "variant": "before",
+        "path": "reports/cardrpg-look/closure/paired-cast/1-before/summary.json",
+        "sha256": "f48a6e369cc425ca781ac1a6f362ec7a813e468bb3c66041fa2266be2da336e6",
+        "casts": [
+          {
+            "use": "first",
+            "frames": 60,
+            "max": 83.30000000000018,
+            "p95": 33.399999999999636,
+            "above25": 6,
+            "above50": 2,
+            "within20": 0.9,
+            "calls": 97,
+            "triangles": 101245,
+            "particles": 7
+          },
+          {
+            "use": "repeat",
+            "frames": 71,
+            "max": 16.80000000000109,
+            "p95": 16.799999999999272,
+            "above25": 0,
+            "above50": 0,
+            "within20": 1,
+            "calls": 97,
+            "triangles": 101245,
+            "particles": 7
+          }
+        ],
+        "pageOpen": {
+          "frames": 538,
+          "max": 116.70000000000005,
+          "p95": 16.800000000000182,
+          "above25": 13,
+          "above50": 5,
+          "within20": 0.9758364312267658
+        }
+      },
+      {
+        "order": 2,
+        "variant": "after",
+        "path": "reports/cardrpg-look/closure/paired-cast/2-after/summary.json",
+        "sha256": "54956e2ec0fd875a560d661da528eddbb40b304cb702c44ca2984091ca40e1e9",
+        "casts": [
+          {
+            "use": "first",
+            "frames": 68,
+            "max": 50,
+            "p95": 16.800000000000182,
+            "above25": 2,
+            "above50": 0,
+            "within20": 0.9705882352941176,
+            "calls": 97,
+            "triangles": 101245,
+            "particles": 7
+          },
+          {
+            "use": "repeat",
+            "frames": 61,
+            "max": 183.39999999999964,
+            "p95": 33.30000000000109,
+            "above25": 4,
+            "above50": 3,
+            "within20": 0.9344262295081968,
+            "calls": 97,
+            "triangles": 101245,
+            "particles": 7
+          }
+        ],
+        "pageOpen": {
+          "frames": 551,
+          "max": 699.9,
+          "p95": 16.799999999999997,
+          "above25": 10,
+          "above50": 4,
+          "within20": 0.9818511796733213
+        }
+      },
+      {
+        "order": 3,
+        "variant": "after",
+        "path": "reports/cardrpg-look/closure/paired-cast/3-after/summary.json",
+        "sha256": "5ea100fe8673e28aa83147cf3d0f9aad9cda48b4a13a1a31238f6fc994d587a0",
+        "casts": [
+          {
+            "use": "first",
+            "frames": 71,
+            "max": 16.800000000000182,
+            "p95": 16.700000000000728,
+            "above25": 0,
+            "above50": 0,
+            "within20": 1,
+            "calls": 97,
+            "triangles": 101245,
+            "particles": 7
+          },
+          {
+            "use": "repeat",
+            "frames": 71,
+            "max": 16.80000000000109,
+            "p95": 16.700000000000728,
+            "above25": 0,
+            "above50": 0,
+            "within20": 1,
+            "calls": 97,
+            "triangles": 101245,
+            "particles": 7
+          }
+        ],
+        "pageOpen": {
+          "frames": 557,
+          "max": 66.7,
+          "p95": 16.799999999999272,
+          "above25": 2,
+          "above50": 1,
+          "within20": 0.9964093357271095
+        }
+      },
+      {
+        "order": 4,
+        "variant": "before",
+        "path": "reports/cardrpg-look/closure/paired-cast/4-before/summary.json",
+        "sha256": "5e3dfaedd2db741c9fc1c8b043a0ffb004f649299486a0ce1e600a919c0008f2",
+        "casts": [
+          {
+            "use": "first",
+            "frames": 66,
+            "max": 99.89999999999964,
+            "p95": 16.800000000000182,
+            "above25": 1,
+            "above50": 1,
+            "within20": 0.9848484848484849,
+            "calls": 97,
+            "triangles": 101245,
+            "particles": 7
+          },
+          {
+            "use": "repeat",
+            "frames": 71,
+            "max": 16.80000000000109,
+            "p95": 16.800000000000182,
+            "above25": 0,
+            "above50": 0,
+            "within20": 1,
+            "calls": 97,
+            "triangles": 101245,
+            "particles": 7
+          }
+        ],
+        "pageOpen": {
+          "frames": 510,
+          "max": 416.6,
+          "p95": 16.799999999999272,
+          "above25": 6,
+          "above50": 2,
+          "within20": 0.9882352941176471
+        }
+      }
+    ]
+  },
+  "targetedPageMaxBefore": 266.6999999999998,
+  "targetedPageMaxAfter": 716.7,
+  "cold": [
+    {
+      "width": 1280,
+      "height": 720,
+      "dpr": 1,
+      "throttle": 1,
+      "loadToInteractiveMs": 966,
+      "battleReadyMs": 7083.399999999907,
+      "max": 533.2999999999997,
+      "p95": 16.799999999999272
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "dpr": 2,
+      "throttle": 1,
+      "loadToInteractiveMs": 1000.5,
+      "battleReadyMs": 7184.899999999907,
+      "max": 666.6000000000004,
+      "p95": 16.799999999999272
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "dpr": 1,
+      "throttle": 1,
+      "loadToInteractiveMs": 925.1999999997206,
+      "battleReadyMs": 6443.399999999907,
+      "max": 283.40000000000146,
+      "p95": 16.799999999999272
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "dpr": 2,
+      "throttle": 1,
+      "loadToInteractiveMs": 925.6000000000931,
+      "battleReadyMs": 6533.600000000093,
+      "max": 383.2000000000007,
+      "p95": 16.799999999999272
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "dpr": 1,
+      "throttle": 4,
+      "loadToInteractiveMs": 2834.2000000001863,
+      "battleReadyMs": 10264.700000000186,
+      "max": 249.89999999999782,
+      "p95": 16.799999999999955
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "dpr": 2,
+      "throttle": 4,
+      "loadToInteractiveMs": 2906.7999999998137,
+      "battleReadyMs": 10244.600000000093,
+      "max": 533.3000000000002,
+      "p95": 16.799999999999272
+    },
+    {
+      "width": 2560,
+      "height": 1440,
+      "dpr": 1,
+      "throttle": 1,
+      "loadToInteractiveMs": 1039.2000000001863,
+      "battleReadyMs": 6388.4000000003725,
+      "max": 400,
+      "p95": 16.799999999999272
+    }
+  ],
+  "lifecycle": {
+    "replays": 20,
+    "snapshots": 21,
+    "growth": {
+      "heap": 1116232,
+      "geometries": 0,
+      "textures": 0,
+      "programs": 0
+    },
+    "tolerance": {
+      "retainedHeapGrowthBytes": 2097152,
+      "gpuObjectsGrowth": 0
+    },
+    "passed": true,
+    "budgetMisses": [],
+    "gpu": {
+      "geometries": 537,
+      "textures": 103
+    },
+    "programs": 43
+  },
+  "protectedFilesChanged": [],
+  "missedOrUnverified": [
+    "Original24MB target exceeded; existing32MB visual allowance applies.",
+    "Cold7 maximum666.6ms exceeds historical117ms ceiling.",
+    "Natural-playback cold samples also have post-ready gaps up to400.0ms; minimum96.37%of post-ready frames<=20ms. These default-quality samples are separate from fixed-tier gallery casts.",
+    "1440x900-dpr1-cpu4-medium-panko-1/first: max133.3/p9516.8ms.",
+    "1440x900-dpr1-cpu4-medium-cinnamon-4/first: max100.0/p9516.8ms.",
+    "1440x900-dpr1-cpu4-medium-brioche-4/first: max133.3/p9533.3ms.",
+    "1440x900-dpr1-cpu4-medium-velvet-1/first: max216.6/p9583.3ms.",
+    "Hero first/repeat50ms limit missed in8/24windows; maximum633.3ms.",
+    "Hero High/DPR1 99%frames<=20ms missed in11/24windows; minimum90.16%.",
+    "Separate registered ABBA current-artifact windows: 1/4 exceed 50 ms; 2/4 miss 99% coverage at 20 ms; peak 183.4 ms. These are additional observations, not substitutes for the 24 hero windows.",
+    "Literal heap flatness not established: final growth1116232bytes; tolerance and GPU results separately reported.",
+    "Original effect-pair non-regression still missed: 1140/2211 distances decrease; incremental unchanged-row reuse, not a fresh full-effects run.",
+    "Exclusive whole-machine timing isolation not established; shared-lock leases and suspended/closed browser handoffs do not prove that no external load existed."
+  ],
+  "historical": "L7 original860cases/1720casts and fourmissed casts remain retained; this targeted run does not replace or clear them."
+}

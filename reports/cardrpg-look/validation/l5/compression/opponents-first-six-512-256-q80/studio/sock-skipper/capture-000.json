@@ -1,0 +1,69 @@
+{
+  "source": "reports/cardrpg-look/validation/l5/compression/opponents-first-six-512-256-q80/sock-skipper-preview.glb",
+  "sourceSha256": "a2e11c5f70674775221b4f9f201ec7556cc106865d91f799807a5195be7c8a29",
+  "scriptSha256": "fcf28f65b2253c7db48aee79b6b1436477eea464875b24e85f3b9739359ba610",
+  "renderer": "4.5.3 LTS",
+  "seed": 20261107,
+  "samples": 40,
+  "size": [
+    512,
+    640
+  ],
+  "camera": {
+    "position": [
+      1.25,
+      -5.800000190734863,
+      1.7400000095367432
+    ],
+    "target": [
+      0.0,
+      0.0,
+      1.090000033378601
+    ],
+    "orthoScale": 2.6500000953674316
+  },
+  "turntable": false,
+  "rows": [
+    {
+      "index": 0,
+      "yaw": 0,
+      "file": "000.png",
+      "projectedBounds": [
+        0.3132794499397278,
+        0.08005452156066895,
+        0.679224967956543,
+        0.5980302095413208
+      ],
+      "sha256": "916a00de3fe0f53e2a0a59bf6ac70a6aa569aebaa66da7f082079fdb2913a5cc",
+      "framingPass": true
+    },
+    {
+      "index": 1,
+      "yaw": 1.5707963267948966,
+      "file": "001.png",
+      "projectedBounds": [
+        0.31498438119888306,
+        0.07847830653190613,
+        0.6675607562065125,
+        0.601487398147583
+      ],
+      "sha256": "df3117d202b3311adbd9bb201b777732bc18763d8f25611e5c3f358fac4dad0d",
+      "framingPass": true
+    },
+    {
+      "index": 2,
+      "yaw": 3.141592653589793,
+      "file": "002.png",
+      "projectedBounds": [
+        0.32077503204345703,
+        0.08889517188072205,
+        0.6867205500602722,
+        0.5992426872253418
+      ],
+      "sha256": "c7d6165d86bdad499b22dce943bcb6b907c9d5be45137bcdc0021901f57e4a8e",
+      "framingPass": true
+    }
+  ],
+  "original": true,
+  "method": "Fixed studio/camera/scale across before and after. Bounds are diagnostics, never used to reframe silently."
+}

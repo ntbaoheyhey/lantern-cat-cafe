@@ -3,6 +3,7 @@ import { chromium } from '../../apps/web/node_modules/@playwright/test/index.mjs
 import { mkdir, readFile, writeFile, mkdtemp, rm } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { withTimingLock } from './lock.mjs';
+import { observePose } from './pose-observation.mjs';
 const source=process.env.LOOK_ARTIFACT||'docs/cardrpg-look/index.html';
 const out=process.env.LOOK_OUT||'reports/cardrpg-look/validation/l1/poses';
 await mkdir(out,{recursive:true});
@@ -26,14 +27,7 @@ for(const cat of (process.env.LOOK_OWNERS||'mochi,soot,clover').split(','))for(l
    await page.waitForTimeout(180);
    await page.waitForFunction(cat=>[...window.__depthScene.puppets.values()].some(p=>p.asset===cat),cat);
    for(const progress of [0,.18,.36,.54,.72,.96]){
-    const detail=await page.evaluate(({cat,id,progress})=>{
-     const s=window.__depthScene,view={...s.view(),frame:null,paused:true,fixedTime:3.2,currentId:null};
-     const actor=view.actors.find(a=>view.models[a.id]===cat);
-     view.actors=[actor];view.model={role:actor.role,clip:id,angle:-.12};view.modelProgress=progress;
-     s.render(view,0); s.dirty=false;
-     const r=s.renderer.domElement.getBoundingClientRect();
-     return {canvas:{x:r.x,y:r.y,width:r.width,height:r.height},stats:{...s.stats},model:s.puppets.get(actor.id).model.userData};
-    },{cat,id,progress});
+    const detail=await page.evaluate(observePose,{cat,id,progress});
     const file=`${id}-${Math.round(progress*100)}.png`;
     await page.screenshot({path:`${out}/${file}`,clip:detail.canvas});
     receipt.rows.push({cat,id,progress,file,...detail,errors:[...errors]});

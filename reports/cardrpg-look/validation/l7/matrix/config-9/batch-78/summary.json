@@ -1,0 +1,1728 @@
+{
+  "artifact": "/Users/bao/taskbar-hero-cardrpg-look/docs/cardrpg-look/index.html",
+  "sha256": "39645d319c264bac0c1011d0e5370de335281ebf6e1df64de67978e34bcb4133",
+  "started": "2026-11-08T03:14:46.006Z",
+  "rows": [
+    {
+      "name": "1440x900-dpr1-cpu4-low-enemy-kettle-knight",
+      "action": {
+        "id": "enemy:kettle-knight",
+        "owner": "kettle-knight",
+        "name": "Kettle Knight · Reflects 12 damage per hit while its shield holds.",
+        "ultimate": false,
+        "enemy": true
+      },
+      "width": 1440,
+      "height": 900,
+      "dpr": 1,
+      "cpu": 4,
+      "quality": "low",
+      "errors": [],
+      "casts": [
+        {
+          "use": "first",
+          "duration": 1182,
+          "before": {
+            "at": 10018.199999988079,
+            "frames": 4,
+            "calls": 86,
+            "triangles": 103922,
+            "geometries": 530,
+            "textures": 103,
+            "particles": 0,
+            "estimatedGpuBytes": 5822038,
+            "loaded": 4,
+            "hiddenFrames": 0,
+            "quality": "low",
+            "gpuObjects": {
+              "geometries": 530,
+              "textures": 103
+            },
+            "heap": 30281704,
+            "heapDetail": {
+              "usedSize": 30281704,
+              "totalSize": 91389952,
+              "embedderHeapUsedSize": 4266344,
+              "backingStorageSize": 30046641
+            }
+          },
+          "after": {
+            "at": 11201.79999999702,
+            "frames": 75,
+            "calls": 88,
+            "triangles": 104082,
+            "geometries": 530,
+            "textures": 103,
+            "particles": 0,
+            "estimatedGpuBytes": 5713784,
+            "loaded": 4,
+            "hiddenFrames": 0,
+            "quality": "low",
+            "gpuObjects": {
+              "geometries": 530,
+              "textures": 103
+            },
+            "heap": 43651160,
+            "heapDetail": {
+              "usedSize": 43651160,
+              "totalSize": 91389952,
+              "embedderHeapUsedSize": 4495440,
+              "backingStorageSize": 30046714
+            }
+          },
+          "summary": {
+            "frames": 71,
+            "max": 16.80000000000109,
+            "p95": 16.799999999999272,
+            "above25": 0,
+            "above50": 0,
+            "within20": 1,
+            "calls": 92,
+            "qualities": [
+              "low"
+            ],
+            "triangles": 106550,
+            "particles": 6
+          }
+        },
+        {
+          "use": "repeat",
+          "duration": 1182,
+          "before": {
+            "at": 11203.39999999106,
+            "frames": 75,
+            "calls": 88,
+            "triangles": 104082,
+            "geometries": 530,
+            "textures": 103,
+            "particles": 0,
+            "estimatedGpuBytes": 5713784,
+            "loaded": 4,
+            "hiddenFrames": 0,
+            "quality": "low",
+            "gpuObjects": {
+              "geometries": 530,
+              "textures": 103
+            },
+            "heap": 43662080,
+            "heapDetail": {
+              "usedSize": 43662080,
+              "totalSize": 91389952,
+              "embedderHeapUsedSize": 4495440,
+              "backingStorageSize": 30046714
+            }
+          },
+          "after": {
+            "at": 12384.59999999404,
+            "frames": 146,
+            "calls": 88,
+            "triangles": 104082,
+            "geometries": 530,
+            "textures": 103,
+            "particles": 0,
+            "estimatedGpuBytes": 5713784,
+            "loaded": 4,
+            "hiddenFrames": 0,
+            "quality": "low",
+            "gpuObjects": {
+              "geometries": 530,
+              "textures": 103
+            },
+            "heap": 28796776,
+            "heapDetail": {
+              "usedSize": 28796776,
+              "totalSize": 91389952,
+              "embedderHeapUsedSize": 4720296,
+              "backingStorageSize": 30046714
+            }
+          },
+          "summary": {
+            "frames": 71,
+            "max": 16.80000000000109,
+            "p95": 16.799999999999272,
+            "above25": 0,
+            "above50": 0,
+            "within20": 1,
+            "calls": 92,
+            "qualities": [
+              "low"
+            ],
+            "triangles": 106550,
+            "particles": 6
+          }
+        }
+      ],
+      "pageOpen": {
+        "frames": 723,
+        "max": 166.70000000000005,
+        "p95": 16.799999999999272,
+        "above25": 5,
+        "above50": 2,
+        "within20": 0.9930843706777317
+      },
+      "postInteractive": {
+        "frames": 617,
+        "max": 33.399999999999636,
+        "p95": 16.799999999999272,
+        "above25": 3,
+        "above50": 0,
+        "within20": 0.9951377633711507
+      },
+      "postReady": {
+        "frames": 149,
+        "max": 16.80000000000109,
+        "p95": 16.799999999999272,
+        "above25": 0,
+        "above50": 0,
+        "within20": 1
+      },
+      "firstInteractiveAt": 2043.1,
+      "sceneReadyAt": 9892.8
+    },
+    {
+      "name": "1440x900-dpr1-cpu4-low-enemy-yarn-giant",
+      "action": {
+        "id": "enemy:yarn-giant",
+        "owner": "yarn-giant",
+        "name": "Yarn Giant · Every third round Loomfall sweeps the front and Tangled threads appear.",
+        "ultimate": false,
+        "enemy": true
+      },
+      "width": 1440,
+      "height": 900,
+      "dpr": 1,
+      "cpu": 4,
+      "quality": "low",
+      "errors": [],
+      "casts": [
+        {
+          "use": "first",
+          "duration": 1164,
+          "before": {
+            "at": 10978,
+            "frames": 4,
+            "calls": 93,
+            "triangles": 114600,
+            "geometries": 530,
+            "textures": 103,
+            "particles": 0,
+            "estimatedGpuBytes": 5822038,
+            "loaded": 4,
+            "hiddenFrames": 0,
+            "quality": "low",
+            "gpuObjects": {
+              "geometries": 530,
+              "textures": 103
+            },
+            "heap": 35430940,
+            "heapDetail": {
+              "usedSize": 35430940,
+              "totalSize": 88768512,
+              "embedderHeapUsedSize": 5783336,
+              "backingStorageSize": 30068781
+            }
+          },
+          "after": {
+            "at": 12139.59999999404,
+            "frames": 74,
+            "calls": 95,
+            "triangles": 114760,
+            "geometries": 530,
+            "textures": 103,
+            "particles": 0,
+            "estimatedGpuBytes": 5893612,
+            "loaded": 4,
+            "hiddenFrames": 0,
+            "quality": "low",
+            "gpuObjects": {
+              "geometries": 530,
+              "textures": 103
+            },
+            "heap": 49821516,
+            "heapDetail": {
+              "usedSize": 49821516,
+              "totalSize": 89554944,
+              "embedderHeapUsedSize": 6107344,
+              "backingStorageSize": 30068789
+            }
+          },
+          "summary": {
+            "frames": 70,
+            "max": 16.799999999999272,
+            "p95": 16.700000000000728,
+            "above25": 0,
+            "above50": 0,
+            "within20": 1,
+            "calls": 99,
+            "qualities": [
+              "low"
+            ],
+            "triangles": 116976,
+            "particles": 5
+          }
+        },
+        {
+          "use": "repeat",
+          "duration": 1164,
+          "before": {
+            "at": 12141.40000000596,
+            "frames": 74,
+            "calls": 95,
+            "triangles": 114760,
+            "geometries": 530,
+            "textures": 103,
+            "particles": 0,
+            "estimatedGpuBytes": 5893612,
+            "loaded": 4,
+            "hiddenFrames": 0,
+            "quality": "low",
+            "gpuObjects": {
+              "geometries": 530,
+              "textures": 103
+            },
+            "heap": 49832580,
+            "heapDetail": {
+              "usedSize": 49832580,
+              "totalSize": 89554944,
+              "embedderHeapUsedSize": 6107344,
+              "backingStorageSize": 30068789
+            }
+          },
+          "after": {
+            "at": 13306.59999999404,
+            "frames": 144,
+            "calls": 95,
+            "triangles": 114760,
+            "geometries": 530,
+            "textures": 103,
+            "particles": 0,
+            "estimatedGpuBytes": 5893612,
+            "loaded": 4,
+            "hiddenFrames": 0,
+            "quality": "low",
+            "gpuObjects": {
+              "geometries": 530,
+              "textures": 103
+            },
+            "heap": 36153036,
+            "heapDetail": {
+              "usedSize": 36153036,
+              "totalSize": 89817088,
+              "embedderHeapUsedSize": 6085608,
+              "backingStorageSize": 30068789
+            }
+          },
+          "summary": {
+            "frames": 70,
+            "max": 16.80000000000109,
+            "p95": 16.700000000000728,
+            "above25": 0,
+            "above50": 0,
+            "within20": 1,
+            "calls": 99,
+            "qualities": [
+              "low"
+            ],
+            "triangles": 116976,
+            "particles": 5
+          }
+        }
+      ],
+      "pageOpen": {
+        "frames": 775,
+        "max": 183.30000000000018,
+        "p95": 16.799999999999272,
+        "above25": 8,
+        "above50": 2,
+        "within20": 0.9896774193548387
+      },
+      "postInteractive": {
+        "frames": 667,
+        "max": 50,
+        "p95": 16.799999999999272,
+        "above25": 5,
+        "above50": 0,
+        "within20": 0.992503748125937
+      },
+      "postReady": {
+        "frames": 147,
+        "max": 16.80000000000109,
+        "p95": 16.700000000000728,
+        "above25": 0,
+        "above50": 0,
+        "within20": 1
+      },
+      "firstInteractiveAt": 2082.4,
+      "sceneReadyAt": 10848.8
+    },
+    {
+      "name": "1440x900-dpr1-cpu4-low-enemy-binding-thread",
+      "action": {
+        "id": "enemy:binding-thread",
+        "owner": "binding-thread",
+        "name": "Binding Thread · Knots apply Tangle to the weakest cat.",
+        "ultimate": false,
+        "enemy": true
+      },
+      "width": 1440,
+      "height": 900,
+      "dpr": 1,
+      "cpu": 4,
+      "quality": "low",
+      "errors": [],
+      "casts": [
+        {
+          "use": "first",
+          "duration": 1182,
+          "before": {
+            "at": 10009.09999999404,
+            "frames": 4,
+            "calls": 87,
+            "triangles": 99816,
+            "geometries": 530,
+            "textures": 103,
+            "particles": 0,
+            "estimatedGpuBytes": 5822038,
+            "loaded": 4,
+            "hiddenFrames": 0,
+            "quality": "low",
+            "gpuObjects": {
+              "geometries": 530,
+              "textures": 103
+            },
+            "heap": 43995036,
+            "heapDetail": {
+              "usedSize": 43995036,
+              "totalSize": 94797824,
+              "embedderHeapUsedSize": 5688408,
+              "backingStorageSize": 30055686
+            }
+          },
+          "after": {
+            "at": 11192.29999999702,
+            "frames": 75,
+            "calls": 89,
+            "triangles": 99976,
+            "geometries": 530,
+            "textures": 103,
+            "particles": 0,
+            "estimatedGpuBytes": 5668988,
+            "loaded": 4,
+            "hiddenFrames": 0,
+            "quality": "low",
+            "gpuObjects": {
+              "geometries": 530,
+              "textures": 103
+            },
+            "heap": 30993604,
+            "heapDetail": {
+              "usedSize": 30993604,
+              "totalSize": 95584256,
+              "embedderHeapUsedSize": 5975808,
+              "backingStorageSize": 30055697
+            }
+          },
+          "summary": {
+            "frames": 71,
+            "max": 16.80000000000109,
+            "p95": 16.700000000000728,
+            "above25": 0,
+            "above50": 0,
+            "within20": 1,
+            "calls": 93,
+            "qualities": [
+              "low"
+            ],
+            "triangles": 101918,
+            "particles": 5
+          }
+        },
+        {
+          "use": "repeat",
+          "duration": 1182,
+          "before": {
+            "at": 11193.40000000596,
+            "frames": 75,
+            "calls": 89,
+            "triangles": 99976,
+            "geometries": 530,
+            "textures": 103,
+            "particles": 0,
+            "estimatedGpuBytes": 5668988,
+            "loaded": 4,
+            "hiddenFrames": 0,
+            "quality": "low",
+            "gpuObjects": {
+              "geometries": 530,
+              "textures": 103
+            },
+            "heap": 31003868,
+            "heapDetail": {
+              "usedSize": 31003868,
+              "totalSize": 95584256,
+              "embedderHeapUsedSize": 5975808,
+              "backingStorageSize": 30055697
+            }
+          },
+          "after": {
+            "at": 12374.59999999404,
+            "frames": 146,
+            "calls": 89,
+            "triangles": 99976,
+            "geometries": 530,
+            "textures": 103,
+            "particles": 0,
+            "estimatedGpuBytes": 5668988,
+            "loaded": 4,
+            "hiddenFrames": 0,
+            "quality": "low",
+            "gpuObjects": {
+              "geometries": 530,
+              "textures": 103
+            },
+            "heap": 42647592,
+            "heapDetail": {
+              "usedSize": 42647592,
+              "totalSize": 95584256,
+              "embedderHeapUsedSize": 6073944,
+              "backingStorageSize": 30055697
+            }
+          },
+          "summary": {
+            "frames": 71,
+            "max": 16.80000000000109,
+            "p95": 16.799999999999272,
+            "above25": 0,
+            "above50": 0,
+            "within20": 1,
+            "calls": 93,
+            "qualities": [
+              "low"
+            ],
+            "triangles": 101918,
+            "particles": 5
+          }
+        }
+      ],
+      "pageOpen": {
+        "frames": 720,
+        "max": 166.70000000000005,
+        "p95": 16.799999999999272,
+        "above25": 8,
+        "above50": 2,
+        "within20": 0.9888888888888889
+      },
+      "postInteractive": {
+        "frames": 615,
+        "max": 33.400000000000546,
+        "p95": 16.799999999999272,
+        "above25": 5,
+        "above50": 0,
+        "within20": 0.991869918699187
+      },
+      "postReady": {
+        "frames": 149,
+        "max": 16.80000000000109,
+        "p95": 16.700000000000728,
+        "above25": 0,
+        "above50": 0,
+        "within20": 1
+      },
+      "firstInteractiveAt": 2033.1,
+      "sceneReadyAt": 9882.9
+    },
+    {
+      "name": "1440x900-dpr1-cpu4-low-enemy-practice-cushion",
+      "action": {
+        "id": "enemy:practice-cushion",
+        "owner": "practice-cushion",
+        "name": "Practice Cushion · A gentle third-round bump teaches a break interrupt.",
+        "ultimate": false,
+        "enemy": true
+      },
+      "width": 1440,
+      "height": 900,
+      "dpr": 1,
+      "cpu": 4,
+      "quality": "low",
+      "errors": [],
+      "casts": [
+        {
+          "use": "first",
+          "duration": 1182,
+          "before": {
+            "at": 9935.70000000298,
+            "frames": 4,
+            "calls": 86,
+            "triangles": 99824,
+            "geometries": 530,
+            "textures": 103,
+            "particles": 0,
+            "estimatedGpuBytes": 5822038,
+            "loaded": 4,
+            "hiddenFrames": 0,
+            "quality": "low",
+            "gpuObjects": {
+              "geometries": 530,
+              "textures": 103
+            },
+            "heap": 39437204,
+            "heapDetail": {
+              "usedSize": 39437204,
+              "totalSize": 93224960,
+              "embedderHeapUsedSize": 7137520,
+              "backingStorageSize": 38247555
+            }
+          },
+          "after": {
+            "at": 11115.5,
+            "frames": 75,
+            "calls": 88,
+            "triangles": 99984,
+            "geometries": 530,
+            "textures": 103,
+            "particles": 0,
+            "estimatedGpuBytes": 5652380,
+            "loaded": 4,
+            "hiddenFrames": 0,
+            "quality": "low",
+            "gpuObjects": {
+              "geometries": 530,
+              "textures": 103
+            },
+            "heap": 52764260,
+            "heapDetail": {
+              "usedSize": 52764260,
+              "totalSize": 94011392,
+              "embedderHeapUsedSize": 7188144,
+              "backingStorageSize": 38247569
+            }
+          },
+          "summary": {
+            "frames": 71,
+            "max": 16.80000000000109,
+            "p95": 16.799999999999272,
+            "above25": 0,
+            "above50": 0,
+            "within20": 1,
+            "calls": 91,
+            "qualities": [
+              "low"
+            ],
+            "triangles": 101632,
+            "particles": 6
+          }
+        },
+        {
+          "use": "repeat",
+          "duration": 1182,
+          "before": {
+            "at": 11116.60000000894,
+            "frames": 75,
+            "calls": 88,
+            "triangles": 99984,
+            "geometries": 530,
+            "textures": 103,
+            "particles": 0,
+            "estimatedGpuBytes": 5652380,
+            "loaded": 4,
+            "hiddenFrames": 0,
+            "quality": "low",
+            "gpuObjects": {
+              "geometries": 530,
+              "textures": 103
+            },
+            "heap": 52774524,
+            "heapDetail": {
+              "usedSize": 52774524,
+              "totalSize": 94011392,
+              "embedderHeapUsedSize": 7188144,
+              "backingStorageSize": 38247569
+            }
+          },
+          "after": {
+            "at": 12299.79999999702,
+            "frames": 146,
+            "calls": 88,
+            "triangles": 99984,
+            "geometries": 530,
+            "textures": 103,
+            "particles": 0,
+            "estimatedGpuBytes": 5652380,
+            "loaded": 4,
+            "hiddenFrames": 0,
+            "quality": "low",
+            "gpuObjects": {
+              "geometries": 530,
+              "textures": 103
+            },
+            "heap": 38200592,
+            "heapDetail": {
+              "usedSize": 38200592,
+              "totalSize": 94535680,
+              "embedderHeapUsedSize": 7561992,
+              "backingStorageSize": 38247569
+            }
+          },
+          "summary": {
+            "frames": 71,
+            "max": 16.799999999999272,
+            "p95": 16.700000000000728,
+            "above25": 0,
+            "above50": 0,
+            "within20": 1,
+            "calls": 91,
+            "qualities": [
+              "low"
+            ],
+            "triangles": 101632,
+            "particles": 6
+          }
+        }
+      ],
+      "pageOpen": {
+        "frames": 714,
+        "max": 183.39999999999986,
+        "p95": 16.700000000000728,
+        "above25": 7,
+        "above50": 2,
+        "within20": 0.9901960784313726
+      },
+      "postInteractive": {
+        "frames": 608,
+        "max": 49.90000000000009,
+        "p95": 16.700000000000728,
+        "above25": 5,
+        "above50": 0,
+        "within20": 0.9917763157894737
+      },
+      "postReady": {
+        "frames": 149,
+        "max": 16.80000000000109,
+        "p95": 16.799999999999272,
+        "above25": 0,
+        "above50": 0,
+        "within20": 1
+      },
+      "firstInteractiveAt": 2059.3,
+      "sceneReadyAt": 9809.1
+    },
+    {
+      "name": "1440x900-dpr1-cpu4-low-enemy-pollen-scout",
+      "action": {
+        "id": "enemy:pollen-scout",
+        "owner": "pollen-scout",
+        "name": "Pollen Scout · Every third round plants a Binding Thread, up to two.",
+        "ultimate": false,
+        "enemy": true
+      },
+      "width": 1440,
+      "height": 900,
+      "dpr": 1,
+      "cpu": 4,
+      "quality": "low",
+      "errors": [],
+      "casts": [
+        {
+          "use": "first",
+          "duration": 1182,
+          "before": {
+            "at": 9906.5,
+            "frames": 4,
+            "calls": 88,
+            "triangles": 99818,
+            "geometries": 530,
+            "textures": 103,
+            "particles": 0,
+            "estimatedGpuBytes": 5822038,
+            "loaded": 4,
+            "hiddenFrames": 0,
+            "quality": "low",
+            "gpuObjects": {
+              "geometries": 530,
+              "textures": 103
+            },
+            "heap": 46635716,
+            "heapDetail": {
+              "usedSize": 46635716,
+              "totalSize": 92700672,
+              "embedderHeapUsedSize": 7033288,
+              "backingStorageSize": 36716254
+            }
+          },
+          "after": {
+            "at": 11088.09999999404,
+            "frames": 75,
+            "calls": 90,
+            "triangles": 99978,
+            "geometries": 530,
+            "textures": 103,
+            "particles": 0,
+            "estimatedGpuBytes": 5661848,
+            "loaded": 4,
+            "hiddenFrames": 0,
+            "quality": "low",
+            "gpuObjects": {
+              "geometries": 530,
+              "textures": 103
+            },
+            "heap": 33753736,
+            "heapDetail": {
+              "usedSize": 33753736,
+              "totalSize": 93224960,
+              "embedderHeapUsedSize": 7190224,
+              "backingStorageSize": 36716267
+            }
+          },
+          "summary": {
+            "frames": 71,
+            "max": 16.799999999999272,
+            "p95": 16.700000000000728,
+            "above25": 0,
+            "above50": 0,
+            "within20": 1,
+            "calls": 94,
+            "qualities": [
+              "low"
+            ],
+            "triangles": 101674,
+            "particles": 7
+          }
+        },
+        {
+          "use": "repeat",
+          "duration": 1182,
+          "before": {
+            "at": 11089.79999999702,
+            "frames": 75,
+            "calls": 90,
+            "triangles": 99978,
+            "geometries": 530,
+            "textures": 103,
+            "particles": 0,
+            "estimatedGpuBytes": 5661848,
+            "loaded": 4,
+            "hiddenFrames": 0,
+            "quality": "low",
+            "gpuObjects": {
+              "geometries": 530,
+              "textures": 103
+            },
+            "heap": 33764000,
+            "heapDetail": {
+              "usedSize": 33764000,
+              "totalSize": 93224960,
+              "embedderHeapUsedSize": 7190224,
+              "backingStorageSize": 36716267
+            }
+          },
+          "after": {
+            "at": 12272.39999999106,
+            "frames": 146,
+            "calls": 90,
+            "triangles": 99978,
+            "geometries": 530,
+            "textures": 103,
+            "particles": 0,
+            "estimatedGpuBytes": 5661848,
+            "loaded": 4,
+            "hiddenFrames": 0,
+            "quality": "low",
+            "gpuObjects": {
+              "geometries": 530,
+              "textures": 103
+            },
+            "heap": 45544272,
+            "heapDetail": {
+              "usedSize": 45544272,
+              "totalSize": 93224960,
+              "embedderHeapUsedSize": 7303912,
+              "backingStorageSize": 36716267
+            }
+          },
+          "summary": {
+            "frames": 71,
+            "max": 16.80000000000109,
+            "p95": 16.700000000000728,
+            "above25": 0,
+            "above50": 0,
+            "within20": 1,
+            "calls": 94,
+            "qualities": [
+              "low"
+            ],
+            "triangles": 101674,
+            "particles": 7
+          }
+        }
+      ],
+      "pageOpen": {
+        "frames": 714,
+        "max": 166.69999999999982,
+        "p95": 16.799999999999272,
+        "above25": 8,
+        "above50": 2,
+        "within20": 0.988795518207283
+      },
+      "postInteractive": {
+        "frames": 609,
+        "max": 33.40000000000009,
+        "p95": 16.799999999999272,
+        "above25": 4,
+        "above50": 0,
+        "within20": 0.993431855500821
+      },
+      "postReady": {
+        "frames": 149,
+        "max": 16.80000000000109,
+        "p95": 16.700000000000728,
+        "above25": 0,
+        "above50": 0,
+        "within20": 1
+      },
+      "firstInteractiveAt": 2048.2,
+      "sceneReadyAt": 9781.3
+    },
+    {
+      "name": "1440x900-dpr1-cpu4-low-enemy-rain-spool",
+      "action": {
+        "id": "enemy:rain-spool",
+        "owner": "rain-spool",
+        "name": "Rain Spool · Every third round Cloudburst washes shields away before a row hit.",
+        "ultimate": false,
+        "enemy": true
+      },
+      "width": 1440,
+      "height": 900,
+      "dpr": 1,
+      "cpu": 4,
+      "quality": "low",
+      "errors": [],
+      "casts": [
+        {
+          "use": "first",
+          "duration": 1164,
+          "before": {
+            "at": 9976.90000000596,
+            "frames": 4,
+            "calls": 89,
+            "triangles": 102114,
+            "geometries": 530,
+            "textures": 103,
+            "particles": 0,
+            "estimatedGpuBytes": 5822038,
+            "loaded": 4,
+            "hiddenFrames": 0,
+            "quality": "low",
+            "gpuObjects": {
+              "geometries": 530,
+              "textures": 103
+            },
+            "heap": 49226236,
+            "heapDetail": {
+              "usedSize": 49226236,
+              "totalSize": 97681408,
+              "embedderHeapUsedSize": 7175128,
+              "backingStorageSize": 36826394
+            }
+          },
+          "after": {
+            "at": 11141.79999999702,
+            "frames": 74,
+            "calls": 91,
+            "triangles": 102274,
+            "geometries": 530,
+            "textures": 103,
+            "particles": 0,
+            "estimatedGpuBytes": 5677256,
+            "loaded": 4,
+            "hiddenFrames": 0,
+            "quality": "low",
+            "gpuObjects": {
+              "geometries": 530,
+              "textures": 103
+            },
+            "heap": 37209272,
+            "heapDetail": {
+              "usedSize": 37209272,
+              "totalSize": 97943552,
+              "embedderHeapUsedSize": 7347384,
+              "backingStorageSize": 36826404
+            }
+          },
+          "summary": {
+            "frames": 70,
+            "max": 16.80000000000109,
+            "p95": 16.700000000000728,
+            "above25": 0,
+            "above50": 0,
+            "within20": 1,
+            "calls": 95,
+            "qualities": [
+              "low"
+            ],
+            "triangles": 104550,
+            "particles": 9
+          }
+        },
+        {
+          "use": "repeat",
+          "duration": 1164,
+          "before": {
+            "at": 11143.40000000596,
+            "frames": 74,
+            "calls": 91,
+            "triangles": 102274,
+            "geometries": 530,
+            "textures": 103,
+            "particles": 0,
+            "estimatedGpuBytes": 5677256,
+            "loaded": 4,
+            "hiddenFrames": 0,
+            "quality": "low",
+            "gpuObjects": {
+              "geometries": 530,
+              "textures": 103
+            },
+            "heap": 37219536,
+            "heapDetail": {
+              "usedSize": 37219536,
+              "totalSize": 97943552,
+              "embedderHeapUsedSize": 7347384,
+              "backingStorageSize": 36826404
+            }
+          },
+          "after": {
+            "at": 12307.5,
+            "frames": 144,
+            "calls": 91,
+            "triangles": 102274,
+            "geometries": 530,
+            "textures": 103,
+            "particles": 0,
+            "estimatedGpuBytes": 5677256,
+            "loaded": 4,
+            "hiddenFrames": 0,
+            "quality": "low",
+            "gpuObjects": {
+              "geometries": 530,
+              "textures": 103
+            },
+            "heap": 49660956,
+            "heapDetail": {
+              "usedSize": 49660956,
+              "totalSize": 98729984,
+              "embedderHeapUsedSize": 7619296,
+              "backingStorageSize": 36826404
+            }
+          },
+          "summary": {
+            "frames": 70,
+            "max": 16.80000000000109,
+            "p95": 16.799999999999272,
+            "above25": 0,
+            "above50": 0,
+            "within20": 1,
+            "calls": 95,
+            "qualities": [
+              "low"
+            ],
+            "triangles": 104550,
+            "particles": 9
+          }
+        }
+      ],
+      "pageOpen": {
+        "frames": 713,
+        "max": 183.29999999999995,
+        "p95": 16.799999999999272,
+        "above25": 9,
+        "above50": 2,
+        "within20": 0.9873772791023843
+      },
+      "postInteractive": {
+        "frames": 608,
+        "max": 50,
+        "p95": 16.799999999999272,
+        "above25": 6,
+        "above50": 0,
+        "within20": 0.9901315789473685
+      },
+      "postReady": {
+        "frames": 147,
+        "max": 16.80000000000109,
+        "p95": 16.799999999999272,
+        "above25": 0,
+        "above50": 0,
+        "within20": 1
+      },
+      "firstInteractiveAt": 2050,
+      "sceneReadyAt": 9849.7
+    }
+  ],
+  "fullGalleryActions": [
+    {
+      "id": "mochi-1",
+      "owner": "mochi",
+      "name": "Mochi · Door knock",
+      "ultimate": false,
+      "enemy": false
+    },
+    {
+      "id": "mochi-2",
+      "owner": "mochi",
+      "name": "Mochi · Warm welcome",
+      "ultimate": false,
+      "enemy": false
+    },
+    {
+      "id": "mochi-3",
+      "owner": "mochi",
+      "name": "Mochi · Apron crossing",
+      "ultimate": false,
+      "enemy": false
+    },
+    {
+      "id": "mochi-4",
+      "owner": "mochi",
+      "name": "Mochi · Last light shelter",
+      "ultimate": true,
+      "enemy": false
+    },
+    {
+      "id": "soot-1",
+      "owner": "soot",
+      "name": "Soot · Cocoa spark",
+      "ultimate": false,
+      "enemy": false
+    },
+    {
+      "id": "soot-2",
+      "owner": "soot",
+      "name": "Soot · Black cup",
+      "ultimate": false,
+      "enemy": false
+    },
+    {
+      "id": "soot-3",
+      "owner": "soot",
+      "name": "Soot · Lantern wick",
+      "ultimate": false,
+      "enemy": false
+    },
+    {
+      "id": "soot-4",
+      "owner": "soot",
+      "name": "Soot · Midnight service",
+      "ultimate": true,
+      "enemy": false
+    },
+    {
+      "id": "clover-1",
+      "owner": "clover",
+      "name": "Clover · Leaf tap",
+      "ultimate": false,
+      "enemy": false
+    },
+    {
+      "id": "clover-2",
+      "owner": "clover",
+      "name": "Clover · Patient steep",
+      "ultimate": false,
+      "enemy": false
+    },
+    {
+      "id": "clover-3",
+      "owner": "clover",
+      "name": "Clover · Clearleaf rinse",
+      "ultimate": false,
+      "enemy": false
+    },
+    {
+      "id": "clover-4",
+      "owner": "clover",
+      "name": "Clover · Greenhouse morning",
+      "ultimate": true,
+      "enemy": false
+    },
+    {
+      "id": "panko-1",
+      "owner": "panko",
+      "name": "Panko · Pan reply",
+      "ultimate": false,
+      "enemy": false
+    },
+    {
+      "id": "panko-2",
+      "owner": "panko",
+      "name": "Panko · Bread cover",
+      "ultimate": false,
+      "enemy": false
+    },
+    {
+      "id": "panko-3",
+      "owner": "panko",
+      "name": "Panko · Crust return",
+      "ultimate": false,
+      "enemy": false
+    },
+    {
+      "id": "panko-4",
+      "owner": "panko",
+      "name": "Panko · Oven door",
+      "ultimate": true,
+      "enemy": false
+    },
+    {
+      "id": "mallow-1",
+      "owner": "mallow",
+      "name": "Mallow · Whisk flare",
+      "ultimate": false,
+      "enemy": false
+    },
+    {
+      "id": "mallow-2",
+      "owner": "mallow",
+      "name": "Mallow · Split ember",
+      "ultimate": false,
+      "enemy": false
+    },
+    {
+      "id": "mallow-3",
+      "owner": "mallow",
+      "name": "Mallow · Burnt sugar",
+      "ultimate": false,
+      "enemy": false
+    },
+    {
+      "id": "mallow-4",
+      "owner": "mallow",
+      "name": "Mallow · Closing blaze",
+      "ultimate": true,
+      "enemy": false
+    },
+    {
+      "id": "sorrel-1",
+      "owner": "sorrel",
+      "name": "Sorrel · Moon spoon",
+      "ultimate": false,
+      "enemy": false
+    },
+    {
+      "id": "sorrel-2",
+      "owner": "sorrel",
+      "name": "Sorrel · Cold brew",
+      "ultimate": false,
+      "enemy": false
+    },
+    {
+      "id": "sorrel-3",
+      "owner": "sorrel",
+      "name": "Sorrel · Decanted moon",
+      "ultimate": false,
+      "enemy": false
+    },
+    {
+      "id": "sorrel-4",
+      "owner": "sorrel",
+      "name": "Sorrel · Shared pot",
+      "ultimate": true,
+      "enemy": false
+    },
+    {
+      "id": "biscuit-1",
+      "owner": "biscuit",
+      "name": "Biscuit · Rolling pin",
+      "ultimate": false,
+      "enemy": false
+    },
+    {
+      "id": "biscuit-2",
+      "owner": "biscuit",
+      "name": "Biscuit · Sideboard step",
+      "ultimate": false,
+      "enemy": false
+    },
+    {
+      "id": "biscuit-3",
+      "owner": "biscuit",
+      "name": "Biscuit · Last crumb",
+      "ultimate": false,
+      "enemy": false
+    },
+    {
+      "id": "biscuit-4",
+      "owner": "biscuit",
+      "name": "Biscuit · Bakers procession",
+      "ultimate": true,
+      "enemy": false
+    },
+    {
+      "id": "inkcap-1",
+      "owner": "inkcap",
+      "name": "Inkcap · Ink thread",
+      "ultimate": false,
+      "enemy": false
+    },
+    {
+      "id": "inkcap-2",
+      "owner": "inkcap",
+      "name": "Inkcap · Quiet spores",
+      "ultimate": false,
+      "enemy": false
+    },
+    {
+      "id": "inkcap-3",
+      "owner": "inkcap",
+      "name": "Inkcap · Paper decoy",
+      "ultimate": false,
+      "enemy": false
+    },
+    {
+      "id": "inkcap-4",
+      "owner": "inkcap",
+      "name": "Inkcap · Dreaming canopy",
+      "ultimate": true,
+      "enemy": false
+    },
+    {
+      "id": "cinnamon-1",
+      "owner": "cinnamon",
+      "name": "Cinnamon · Spice pinch",
+      "ultimate": false,
+      "enemy": false
+    },
+    {
+      "id": "cinnamon-2",
+      "owner": "cinnamon",
+      "name": "Cinnamon · Comfort cup",
+      "ultimate": false,
+      "enemy": false
+    },
+    {
+      "id": "cinnamon-3",
+      "owner": "cinnamon",
+      "name": "Cinnamon · Clean apron",
+      "ultimate": false,
+      "enemy": false
+    },
+    {
+      "id": "cinnamon-4",
+      "owner": "cinnamon",
+      "name": "Cinnamon · Second serving",
+      "ultimate": true,
+      "enemy": false
+    },
+    {
+      "id": "brioche-1",
+      "owner": "brioche",
+      "name": "Brioche · Bell patrol",
+      "ultimate": false,
+      "enemy": false
+    },
+    {
+      "id": "brioche-2",
+      "owner": "brioche",
+      "name": "Brioche · Borrowed blanket",
+      "ultimate": false,
+      "enemy": false
+    },
+    {
+      "id": "brioche-3",
+      "owner": "brioche",
+      "name": "Brioche · Starched collar",
+      "ultimate": false,
+      "enemy": false
+    },
+    {
+      "id": "brioche-4",
+      "owner": "brioche",
+      "name": "Brioche · Constellation apron",
+      "ultimate": true,
+      "enemy": false
+    },
+    {
+      "id": "velvet-1",
+      "owner": "velvet",
+      "name": "Velvet · Silk nick",
+      "ultimate": false,
+      "enemy": false
+    },
+    {
+      "id": "velvet-2",
+      "owner": "velvet",
+      "name": "Velvet · Candle bounce",
+      "ultimate": false,
+      "enemy": false
+    },
+    {
+      "id": "velvet-3",
+      "owner": "velvet",
+      "name": "Velvet · Stolen flame",
+      "ultimate": false,
+      "enemy": false
+    },
+    {
+      "id": "velvet-4",
+      "owner": "velvet",
+      "name": "Velvet · Velvet curtain",
+      "ultimate": true,
+      "enemy": false
+    },
+    {
+      "id": "marigold-1",
+      "owner": "marigold",
+      "name": "Marigold · Seed stitch",
+      "ultimate": false,
+      "enemy": false
+    },
+    {
+      "id": "marigold-2",
+      "owner": "marigold",
+      "name": "Marigold · Garden bell",
+      "ultimate": false,
+      "enemy": false
+    },
+    {
+      "id": "marigold-3",
+      "owner": "marigold",
+      "name": "Marigold · Spring pruning",
+      "ultimate": false,
+      "enemy": false
+    },
+    {
+      "id": "marigold-4",
+      "owner": "marigold",
+      "name": "Marigold · First tea blossom",
+      "ultimate": true,
+      "enemy": false
+    },
+    {
+      "id": "mochi-passive",
+      "owner": "mochi",
+      "name": "Mochi · Door keeper",
+      "ultimate": false,
+      "enemy": false
+    },
+    {
+      "id": "soot-passive",
+      "owner": "soot",
+      "name": "Soot · Ash reader",
+      "ultimate": false,
+      "enemy": false
+    },
+    {
+      "id": "clover-passive",
+      "owner": "clover",
+      "name": "Clover · Second steep",
+      "ultimate": false,
+      "enemy": false
+    },
+    {
+      "id": "panko-passive",
+      "owner": "panko",
+      "name": "Panko · Warm crust",
+      "ultimate": false,
+      "enemy": false
+    },
+    {
+      "id": "mallow-passive",
+      "owner": "mallow",
+      "name": "Mallow · Hot whisk",
+      "ultimate": false,
+      "enemy": false
+    },
+    {
+      "id": "sorrel-passive",
+      "owner": "sorrel",
+      "name": "Sorrel · Measured pour",
+      "ultimate": false,
+      "enemy": false
+    },
+    {
+      "id": "biscuit-passive",
+      "owner": "biscuit",
+      "name": "Biscuit · Bakers resolve",
+      "ultimate": false,
+      "enemy": false
+    },
+    {
+      "id": "inkcap-passive",
+      "owner": "inkcap",
+      "name": "Inkcap · Soft landing",
+      "ultimate": false,
+      "enemy": false
+    },
+    {
+      "id": "cinnamon-passive",
+      "owner": "cinnamon",
+      "name": "Cinnamon · Ground spice",
+      "ultimate": false,
+      "enemy": false
+    },
+    {
+      "id": "brioche-passive",
+      "owner": "brioche",
+      "name": "Brioche · Night watch",
+      "ultimate": false,
+      "enemy": false
+    },
+    {
+      "id": "velvet-passive",
+      "owner": "velvet",
+      "name": "Velvet · Lost flame",
+      "ultimate": false,
+      "enemy": false
+    },
+    {
+      "id": "marigold-passive",
+      "owner": "marigold",
+      "name": "Marigold · First leaf",
+      "ultimate": false,
+      "enemy": false
+    },
+    {
+      "id": "enemy:button-guard:basic",
+      "owner": "button-guard",
+      "name": "Button Guard · Button tap",
+      "ultimate": false,
+      "enemy": true
+    },
+    {
+      "id": "enemy:sock-skipper:basic",
+      "owner": "sock-skipper",
+      "name": "Sock Skipper · Heel scuff",
+      "ultimate": false,
+      "enemy": true
+    },
+    {
+      "id": "enemy:spool-ram:basic",
+      "owner": "spool-ram",
+      "name": "Spool Ram · Bobbin nudge",
+      "ultimate": false,
+      "enemy": true
+    },
+    {
+      "id": "enemy:needle-moth:basic",
+      "owner": "needle-moth",
+      "name": "Needle Moth · Running stitch",
+      "ultimate": false,
+      "enemy": true
+    },
+    {
+      "id": "enemy:teacup-healer:basic",
+      "owner": "teacup-healer",
+      "name": "Teacup Healer · Saucer flick",
+      "ultimate": false,
+      "enemy": true
+    },
+    {
+      "id": "enemy:kettle-knight:basic",
+      "owner": "kettle-knight",
+      "name": "Kettle Knight · Spout jab",
+      "ultimate": false,
+      "enemy": true
+    },
+    {
+      "id": "enemy:yarn-giant:basic",
+      "owner": "yarn-giant",
+      "name": "Yarn Giant · Weaver sweep",
+      "ultimate": false,
+      "enemy": true
+    },
+    {
+      "id": "enemy:binding-thread:basic",
+      "owner": "binding-thread",
+      "name": "Binding Thread · Shoulder tug",
+      "ultimate": false,
+      "enemy": true
+    },
+    {
+      "id": "enemy:practice-cushion:basic",
+      "owner": "practice-cushion",
+      "name": "Practice Cushion · Soft hop",
+      "ultimate": false,
+      "enemy": true
+    },
+    {
+      "id": "enemy:pollen-scout:basic",
+      "owner": "pollen-scout",
+      "name": "Pollen Scout · Seedbrush flick",
+      "ultimate": false,
+      "enemy": true
+    },
+    {
+      "id": "enemy:rain-spool:basic",
+      "owner": "rain-spool",
+      "name": "Rain Spool · Rain sling",
+      "ultimate": false,
+      "enemy": true
+    },
+    {
+      "id": "enemy:crumb-sentinel:basic",
+      "owner": "crumb-sentinel",
+      "name": "Crumb Sentinel · Sugar pinch",
+      "ultimate": false,
+      "enemy": true
+    },
+    {
+      "id": "enemy:pantry-crown:basic",
+      "owner": "pantry-crown",
+      "name": "Pantry Crown · Cup tally",
+      "ultimate": false,
+      "enemy": true
+    },
+    {
+      "id": "enemy:button-guard",
+      "owner": "button-guard",
+      "name": "Button Guard · Button brace grants shields to its row.",
+      "ultimate": false,
+      "enemy": true
+    },
+    {
+      "id": "enemy:sock-skipper",
+      "owner": "sock-skipper",
+      "name": "Sock Skipper · Pocket skip steals 1 shared energy and hits the rear.",
+      "ultimate": false,
+      "enemy": true
+    },
+    {
+      "id": "enemy:spool-ram",
+      "owner": "spool-ram",
+      "name": "Spool Ram · Every third round charges a double-power front-row sweep.",
+      "ultimate": false,
+      "enemy": true
+    },
+    {
+      "id": "enemy:needle-moth",
+      "owner": "needle-moth",
+      "name": "Needle Moth · Needle rain applies Scald to the rear row.",
+      "ultimate": false,
+      "enemy": true
+    },
+    {
+      "id": "enemy:teacup-healer",
+      "owner": "teacup-healer",
+      "name": "Teacup Healer · Refills the most wounded ally by 65 HP.",
+      "ultimate": false,
+      "enemy": true
+    },
+    {
+      "id": "enemy:kettle-knight",
+      "owner": "kettle-knight",
+      "name": "Kettle Knight · Reflects 12 damage per hit while its shield holds.",
+      "ultimate": false,
+      "enemy": true
+    },
+    {
+      "id": "enemy:yarn-giant",
+      "owner": "yarn-giant",
+      "name": "Yarn Giant · Every third round Loomfall sweeps the front and Tangled threads appear.",
+      "ultimate": false,
+      "enemy": true
+    },
+    {
+      "id": "enemy:binding-thread",
+      "owner": "binding-thread",
+      "name": "Binding Thread · Knots apply Tangle to the weakest cat.",
+      "ultimate": false,
+      "enemy": true
+    },
+    {
+      "id": "enemy:practice-cushion",
+      "owner": "practice-cushion",
+      "name": "Practice Cushion · A gentle third-round bump teaches a break interrupt.",
+      "ultimate": false,
+      "enemy": true
+    },
+    {
+      "id": "enemy:pollen-scout",
+      "owner": "pollen-scout",
+      "name": "Pollen Scout · Every third round plants a Binding Thread, up to two.",
+      "ultimate": false,
+      "enemy": true
+    },
+    {
+      "id": "enemy:rain-spool",
+      "owner": "rain-spool",
+      "name": "Rain Spool · Every third round Cloudburst washes shields away before a row hit.",
+      "ultimate": false,
+      "enemy": true
+    },
+    {
+      "id": "enemy:crumb-sentinel",
+      "owner": "crumb-sentinel",
+      "name": "Crumb Sentinel · Every third round Sugar burst detonates Crumb trails on cats.",
+      "ultimate": false,
+      "enemy": true
+    },
+    {
+      "id": "enemy:pantry-crown",
+      "owner": "pantry-crown",
+      "name": "Pantry Crown · Every third round Empty banquet drains energy and silences the table.",
+      "ultimate": false,
+      "enemy": true
+    }
+  ],
+  "actions": [
+    {
+      "id": "enemy:kettle-knight",
+      "owner": "kettle-knight",
+      "name": "Kettle Knight · Reflects 12 damage per hit while its shield holds.",
+      "ultimate": false,
+      "enemy": true
+    },
+    {
+      "id": "enemy:yarn-giant",
+      "owner": "yarn-giant",
+      "name": "Yarn Giant · Every third round Loomfall sweeps the front and Tangled threads appear.",
+      "ultimate": false,
+      "enemy": true
+    },
+    {
+      "id": "enemy:binding-thread",
+      "owner": "binding-thread",
+      "name": "Binding Thread · Knots apply Tangle to the weakest cat.",
+      "ultimate": false,
+      "enemy": true
+    },
+    {
+      "id": "enemy:practice-cushion",
+      "owner": "practice-cushion",
+      "name": "Practice Cushion · A gentle third-round bump teaches a break interrupt.",
+      "ultimate": false,
+      "enemy": true
+    },
+    {
+      "id": "enemy:pollen-scout",
+      "owner": "pollen-scout",
+      "name": "Pollen Scout · Every third round plants a Binding Thread, up to two.",
+      "ultimate": false,
+      "enemy": true
+    },
+    {
+      "id": "enemy:rain-spool",
+      "owner": "rain-spool",
+      "name": "Rain Spool · Every third round Cloudburst washes shields away before a row hit.",
+      "ultimate": false,
+      "enemy": true
+    }
+  ],
+  "selection": {
+    "owners": null,
+    "ids": [
+      "enemy:kettle-knight",
+      "enemy:yarn-giant",
+      "enemy:binding-thread",
+      "enemy:practice-cushion",
+      "enemy:pollen-scout",
+      "enemy:rain-spool"
+    ],
+    "limit": "",
+    "fullGalleryCount": 86,
+    "measuredActionCount": 6,
+    "scope": "explicit subset"
+  },
+  "completed": true,
+  "ended": "2026-11-08T03:16:02.305Z"
+}

@@ -1,0 +1,140 @@
+{
+  "quality": 80,
+  "size": 512,
+  "method": "From raw GLB: resize textures, encode WebP, then meshopt high. No geometry simplification. Preview GLB retains uncompressed geometry for studio comparison.",
+  "rows": [
+    {
+      "owner": "panko",
+      "input": "assets/cardrpg-look/models/panko.glb",
+      "output": "reports/cardrpg-look/validation/l5/compression/512-q80/panko.glb",
+      "preview": "reports/cardrpg-look/validation/l5/compression/512-q80/panko-preview.glb",
+      "parameters": [
+        [
+          "resize",
+          "assets/cardrpg-look/models/panko.glb",
+          "reports/cardrpg-look/validation/l5/compression/512-q80/panko-resized.glb",
+          "--width",
+          "512",
+          "--height",
+          "512"
+        ],
+        [
+          "webp",
+          "reports/cardrpg-look/validation/l5/compression/512-q80/panko-resized.glb",
+          "reports/cardrpg-look/validation/l5/compression/512-q80/panko-preview.glb",
+          "--quality",
+          "80",
+          "--effort",
+          "100",
+          "--lossless",
+          "false",
+          "--near-lossless",
+          "false"
+        ],
+        [
+          "meshopt",
+          "reports/cardrpg-look/validation/l5/compression/512-q80/panko-preview.glb",
+          "reports/cardrpg-look/validation/l5/compression/512-q80/panko.glb",
+          "--level",
+          "high"
+        ]
+      ],
+      "before": 2822980,
+      "after": 322420,
+      "gzipBefore": 2607298,
+      "gzipAfter": 271308,
+      "sourceSha256": "e654b7fec46c8ad21e54689ff878d489a9b3f7f19c4569116b77b02385f2af5b",
+      "sha256": "f9075041de574ea772930200ddf6eb1cb524e7d472d984e1588dbcde64037e82",
+      "previewSha256": "ccc647bd900648772c7d7dc69b542e31c6b306fb1fdeb478c26eeb6714425ac1"
+    },
+    {
+      "owner": "mallow",
+      "input": "assets/cardrpg-look/models/mallow.glb",
+      "output": "reports/cardrpg-look/validation/l5/compression/512-q80/mallow.glb",
+      "preview": "reports/cardrpg-look/validation/l5/compression/512-q80/mallow-preview.glb",
+      "parameters": [
+        [
+          "resize",
+          "assets/cardrpg-look/models/mallow.glb",
+          "reports/cardrpg-look/validation/l5/compression/512-q80/mallow-resized.glb",
+          "--width",
+          "512",
+          "--height",
+          "512"
+        ],
+        [
+          "webp",
+          "reports/cardrpg-look/validation/l5/compression/512-q80/mallow-resized.glb",
+          "reports/cardrpg-look/validation/l5/compression/512-q80/mallow-preview.glb",
+          "--quality",
+          "80",
+          "--effort",
+          "100",
+          "--lossless",
+          "false",
+          "--near-lossless",
+          "false"
+        ],
+        [
+          "meshopt",
+          "reports/cardrpg-look/validation/l5/compression/512-q80/mallow-preview.glb",
+          "reports/cardrpg-look/validation/l5/compression/512-q80/mallow.glb",
+          "--level",
+          "high"
+        ]
+      ],
+      "before": 2965852,
+      "after": 327096,
+      "gzipBefore": 2758684,
+      "gzipAfter": 277019,
+      "sourceSha256": "341001f07f483b312d6014ccb370a5a97d4b02e4930fbec5b98c884260ab2bbc",
+      "sha256": "940e369a15f95cbbf98b6e8758fe96d467609f18d6d0bb5012f6d9d72a8a6e17",
+      "previewSha256": "fa3aa7b606671ecdc672879123341946800257bd9eb6f51f9862ca1dfc0b3145"
+    },
+    {
+      "owner": "cinnamon",
+      "input": "assets/cardrpg-look/models/cinnamon.glb",
+      "output": "reports/cardrpg-look/validation/l5/compression/512-q80/cinnamon.glb",
+      "preview": "reports/cardrpg-look/validation/l5/compression/512-q80/cinnamon-preview.glb",
+      "parameters": [
+        [
+          "resize",
+          "assets/cardrpg-look/models/cinnamon.glb",
+          "reports/cardrpg-look/validation/l5/compression/512-q80/cinnamon-resized.glb",
+          "--width",
+          "512",
+          "--height",
+          "512"
+        ],
+        [
+          "webp",
+          "reports/cardrpg-look/validation/l5/compression/512-q80/cinnamon-resized.glb",
+          "reports/cardrpg-look/validation/l5/compression/512-q80/cinnamon-preview.glb",
+          "--quality",
+          "80",
+          "--effort",
+          "100",
+          "--lossless",
+          "false",
+          "--near-lossless",
+          "false"
+        ],
+        [
+          "meshopt",
+          "reports/cardrpg-look/validation/l5/compression/512-q80/cinnamon-preview.glb",
+          "reports/cardrpg-look/validation/l5/compression/512-q80/cinnamon.glb",
+          "--level",
+          "high"
+        ]
+      ],
+      "before": 2853924,
+      "after": 325764,
+      "gzipBefore": 2635031,
+      "gzipAfter": 271724,
+      "sourceSha256": "3d34ffbba7668f799ae67fda4a78a5016fe9cb111d064e3ec171784c3cb2b102",
+      "sha256": "67a428e2585ceedf88a7fde3d46107fd5e8578fa490f713e9acadb89831fe47c",
+      "previewSha256": "595168be8237b5d08383600aabe5dfea4cd1c1d8c490c15aa748b9b289f8a11d"
+    }
+  ],
+  "status": "Visual comparison required"
+}

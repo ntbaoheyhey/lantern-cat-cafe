@@ -101,4 +101,84 @@ describe('authored starter motion', () => {
     const track = action.tracks.find(track => track.name === 'guardian_motion.position')!;
     expect([...track.values.slice(0, 3)]).toEqual([...track.values.slice(-3)]);
   });
+
+  it.each([
+    { asset: 'panko', role: 'guardian', fittedJoints: ['armL', 'armR'] },
+    { asset: 'mallow', role: 'witch', fittedJoints: ['armR'] },
+    { asset: 'cinnamon', role: 'alchemist', fittedJoints: ['armR'] },
+    { asset: 'biscuit', role: 'guardian', fittedJoints: ['armL', 'armR'] },
+    { asset: 'sorrel', role: 'alchemist', fittedJoints: ['armL', 'armR'] },
+    { asset: 'brioche', role: 'guardian', fittedJoints: ['armL', 'armR'] },
+    { asset: 'marigold', role: 'alchemist', fittedJoints: ['armR'] },
+    { asset: 'pollen-scout', role: 'ranger', fittedJoints: ['armL', 'armR'] },
+  ])('preserves $asset classic poses and timing while fitting only its Look hand arcs', async ({ asset, role, fittedJoints }) => {
+    const model = (look: boolean) => {
+      const root = new T.Group(); root.userData.lookV2 = look;
+      for (const part of ['motion', 'body', 'head', 'armL', 'armR']) {
+        const node = new T.Group(); node.name = `${role}_${part}`; root.add(node);
+      }
+      return root;
+    };
+    const classic = await createCardClips(model(false), role, asset);
+    const look = await createCardClips(model(true), role, asset);
+    const definitions = cardClipDefinitions(asset).filter(definition => definition.id.startsWith(`${asset}-`)
+      || definition.id.startsWith(`enemy:${asset}`));
+    expect(definitions).toHaveLength(asset === 'pollen-scout' ? 2 : 4);
+    for (const definition of definitions) {
+      const original = classic.find(clip => clip.name === definition.id)!;
+      const fitted = look.find(clip => clip.name === definition.id)!;
+      expect(fitted.duration).toBe(original.duration);
+      for (const track of original.tracks) {
+        const adjusted = fitted.tracks.find(other => other.name === track.name)!;
+        expect(adjusted.times).toEqual(track.times);
+        if (!fittedJoints.some(joint => track.name === `${role}_${joint}.quaternion`)) {
+          expect(adjusted.values).toEqual(track.values);
+          continue;
+        }
+        const joint = track.name.includes('armL') ? 'armL' : 'armR';
+        for (let sample = 0; sample <= 40; sample++) {
+          const expected = new T.Quaternion().setFromEuler(new T.Euler(...sampleCardPose(definition, sample / 40)[joint]!));
+          const actual = new T.Quaternion().fromArray(track.values, sample * 4).normalize();
+          expect(actual.angleTo(expected)).toBeLessThan(1e-6);
+        }
+        expect([...adjusted.values.slice(0, 4)]).toEqual([...adjusted.values.slice(-4)]);
+        expect(adjusted.values).not.toEqual(track.values);
+      }
+    }
+  });
+  it('keeps the Look sock hip attached during kicks without changing classic motion', async () => {
+    const makeModel = (look: boolean) => {
+      const model = new T.Group(); model.userData.lookV2 = look;
+      for (const side of ['L', 'R']) {
+        const foot = new T.Group(); foot.name = `flanker_foot${side}`;
+        foot.position.set(side === 'L' ? -.2 : .2, .1144, .06); model.add(foot);
+      }
+      return model;
+    };
+    const classic = await createCardClips(makeModel(false), 'flanker', 'sock-skipper');
+    const model = makeModel(true);
+    const look = await createCardClips(model, 'flanker', 'sock-skipper');
+    const mixer = new T.AnimationMixer(model);
+    for (const clip of look) {
+      const original = classic.find(other => other.name === clip.name)!;
+      expect(clip.duration).toBe(original.duration);
+      for (const track of original.tracks) {
+        expect(clip.tracks.find(other => other.name === track.name)!.values).toEqual(track.values);
+      }
+      expect(original.tracks.some(track => track.name.endsWith('.position'))).toBe(false);
+      mixer.stopAllAction(); mixer.clipAction(clip).play();
+      for (let sample = 0; sample <= 160; sample++) {
+        mixer.setTime(clip.duration * sample / 160);
+        for (const side of ['L', 'R']) {
+          const foot = model.getObjectByName(`flanker_foot${side}`)!;
+          const actualHip = foot.localToWorld(new T.Vector3(0, .36, 0));
+          const restHip = new T.Vector3(side === 'L' ? -.2 : .2, .4744, .06);
+          // Covers interpolation between baked samples as well as endpoints.
+          expect(actualHip.distanceTo(restHip)).toBeLessThan(.003);
+        }
+      }
+    }
+    mixer.stopAllAction(); mixer.uncacheRoot(model);
+  });
+
 });

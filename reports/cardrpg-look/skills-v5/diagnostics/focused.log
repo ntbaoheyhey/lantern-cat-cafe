@@ -1,0 +1,44 @@
+
+> @taskbar-hero/web@0.0.0 test /Users/bao/taskbar-hero-cardrpg-b2/apps/web
+> vitest run -- src/game/squad/turn3d/card-status-v5.test.tsx
+
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-b2/apps/web
+
+ ❯ src/game/squad/turn3d/card-status-v5.test.tsx (8 tests | 4 failed) 401ms
+   ❯ presentation-only resolved log beats (6)
+     × maps source logs, stacks and ordered targets without mutating seed 7 69ms
+     × maps source logs, stacks and ordered targets without mutating seed 71 33ms
+     × maps source logs, stacks and ordered targets without mutating seed 1808 22ms
+     × maps source logs, stacks and ordered targets without mutating seed 20261108 47ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/game/squad/turn3d/card-status-v5.test.tsx > presentation-only resolved log beats > maps source logs, stacks and ordered targets without mutating seed 7
+ FAIL  src/game/squad/turn3d/card-status-v5.test.tsx > presentation-only resolved log beats > maps source logs, stacks and ordered targets without mutating seed 71
+ FAIL  src/game/squad/turn3d/card-status-v5.test.tsx > presentation-only resolved log beats > maps source logs, stacks and ordered targets without mutating seed 1808
+ FAIL  src/game/squad/turn3d/card-status-v5.test.tsx > presentation-only resolved log beats > maps source logs, stacks and ordered targets without mutating seed 20261108
+AssertionError: expected 0 to be greater than 0
+ ❯ src/game/squad/turn3d/card-status-v5.test.tsx:64:88
+     62|       expect(JSON.stringify(battle)).toBe(bytes);expect(JSON.stringify…
+     63|     }
+     64|     expect(mapped).toBeGreaterThan(10);expect(ticks).toBeGreaterThan(0…
+       |                                                                                        ^
+     65|   });
+     66|   it('falls back without guessing a reaction for unmatched or future s…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+
+ Test Files  1 failed | 181 passed (182)
+      Tests  4 failed | 1777 passed (1781)
+   Start at  07:31:49
+   Duration  26.03s (environment 52%, tests 35%, import 11%, transform 2%)
+
+Environment  jsdom was created 182 times · 134.30s total, 52% of tracked time
+             create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+             learn more: https://vitest.dev/guide/improving-performance#test-environments
+
+/Users/bao/taskbar-hero-cardrpg-b2/apps/web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/web@0.0.0 test: `vitest run -- src/game/squad/turn3d/card-status-v5.test.tsx`
+Exit status 1
