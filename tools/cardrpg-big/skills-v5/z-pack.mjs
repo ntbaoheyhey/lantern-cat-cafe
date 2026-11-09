@@ -28,7 +28,15 @@ async function capture(name,selector='.dp-page'){
   const contrast=[...root.querySelectorAll('h1,h2,h3,p,button,small,label,dt,dd,summary,strong')].filter(e=>shown(e)&&e.textContent.trim()&&!e.closest('button:disabled,select:disabled')).map(e=>{
    let p=e,bgs;while(p){const s=getComputedStyle(p),stops=[...s.backgroundImage.matchAll(/rgba?\([^)]+\)/g)].map(m=>rgb(m[0]));if(stops.length&&stops.every(c=>c.length===3||c[3]===1)){bgs=stops;break;}const c=rgb(s.backgroundColor);if(c.length===3||c[3]===1){bgs=[c];break;}p=p.parentElement;}
    const a=lum(rgb(getComputedStyle(e).color)),ls=(bgs||[[29,27,40]]).map(lum),b=Math.max(Math.min(...ls),Math.min(Math.max(...ls),a));return{text:e.textContent.trim().slice(0,160),ratio:(Math.max(a,b)+.05)/(Math.min(a,b)+.05)};
-  });return{screen:window.__depthReview.screen,text:root.innerText,overflow:document.documentElement.scrollWidth-innerWidth,contrast,look:document.querySelector('.dp-app').dataset.lookV2,previewReady:window.__depthPreviewScene?.stats?.loaded??null};
+  });
+  // The live fallback is a sibling of BattleView; include it when assessing ready-scene plates.
+  const rect=e=>{const r=e.getBoundingClientRect();return{x:r.x,y:r.y,width:r.width,height:r.height};};
+  const strip=document.querySelector('.dp-v5-status-strip'),stripBox=strip&&shown(strip)?rect(strip):null;
+  const fallbackPlateOverlaps=stripBox?[...document.querySelectorAll('[data-hp-plate]')].filter(shown).map(e=>{
+   const plate=rect(e),overlapWidth=Math.min(stripBox.x+stripBox.width,plate.x+plate.width)-Math.max(stripBox.x,plate.x),overlapHeight=Math.min(stripBox.y+stripBox.height,plate.y+plate.height)-Math.max(stripBox.y,plate.y);
+   return{actor:e.getAttribute('data-actor'),text:e.innerText,plate,overlapWidth,overlapHeight};
+  }).filter(r=>r.overlapWidth>0&&r.overlapHeight>0):[];
+  return{screen:window.__depthReview.screen,text:root.innerText,overflow:document.documentElement.scrollWidth-innerWidth,contrast,look:document.querySelector('.dp-app').dataset.lookV2,previewReady:window.__depthPreviewScene?.stats?.loaded??null,sceneReady:!!window.__depthScene?.ready,stripBox,fallbackPlateOverlaps};
  },selector);
  const path=`${out}/${name}.png`;await page.screenshot({path});rows.push({name,path,...facts});await writeFile(out+'/partial.json',JSON.stringify({artifact,width,height,look,rows,errors,remote},null,2));
 }
@@ -67,6 +75,6 @@ try{
  assert.equal(rows.length,21,'Every declared screen must be captured');complete=true;
 }finally{
  const contrast=rows.flatMap(r=>r.contrast),failures=rows.flatMap(r=>r.contrast.filter(c=>c.ratio<4.5).map(c=>({capture:r.name,...c})));
- const receipt={complete,artifact,artifactSha256:sha(await readFile(artifact)),width,height,look,rows,checks,errors,remote,minimumContrast:Math.min(...contrast.map(c=>c.ratio)),contrastFailures:failures,overflowFailures:rows.filter(r=>r.overflow!==0).map(r=>({name:r.name,overflow:r.overflow})),scope:'One last-artifact A-owned screen group. Earned day45 save imported for populated screens; natural selected Skills V5 reaction fixture for Prepare/Result. No wallet/Relic action, combat timing, human recognition or causal progression claim.'};
+ const receipt={complete,artifact,artifactSha256:sha(await readFile(artifact)),width,height,look,rows,checks,errors,remote,minimumContrast:Math.min(...contrast.map(c=>c.ratio)),contrastFailures:failures,overflowFailures:rows.filter(r=>r.overflow!==0).map(r=>({name:r.name,overflow:r.overflow})),fallbackOverlapFailures:rows.flatMap(r=>r.fallbackPlateOverlaps.map(c=>({capture:r.name,sceneReady:r.sceneReady,...c}))),scope:'One last-artifact A-owned screen group. Earned day45 save imported for populated screens; natural selected Skills V5 reaction fixture for Prepare/Result. Ready-scene fallback/HP-plate overlap is an explicit diagnostic, not a substitute for human recognition. No wallet/Relic action, combat timing, human recognition or causal progression claim.'};
  await writeFile(out+'/checks.json',JSON.stringify(receipt,null,2)+'\n');await browser.close();console.log(JSON.stringify({width,look,captures:rows.length,contrastFailures:failures.length,overflowFailures:receipt.overflowFailures.length,errors:errors.length}));
 }
