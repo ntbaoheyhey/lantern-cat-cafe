@@ -1,0 +1,2255 @@
+{
+  "offset": 0,
+  "count": 500,
+  "sourceDigest": "1e7f8c1c6576f0a0bcab7bf36f0f00939bfcffc16f71d4ab784f70b476799959",
+  "rows": [
+    {
+      "id": "A5.fourth-slot",
+      "target": "Every paired gain ≤12pp",
+      "measured": {
+        "misses": 35,
+        "cells": 384,
+        "worstPp": 47
+      },
+      "status": "MISS",
+      "source": "reports/cardrpg-big/skills-v5/s5/selected/equipped/results.json"
+    },
+    {
+      "id": "A5.bare-piece",
+      "target": "Every paired gain ≤12pp",
+      "measured": {
+        "cells": 2304,
+        "misses": 33,
+        "worstGainPp": 51,
+        "maxShare": 0.04799521767347804
+      },
+      "status": "MISS",
+      "source": "reports/cardrpg-big/skills-v5/s5/selected/pieces/results.json"
+    },
+    {
+      "id": "A5.display-share",
+      "target": "Every +0/+12 display share ≤10%",
+      "measured": 0.04799521767347804,
+      "status": "PASS",
+      "source": "reports/cardrpg-big/skills-v5/s5/selected/summary.json"
+    },
+    {
+      "id": "A5.display-correlation",
+      "target": "Spearman ≥.6 each chapter",
+      "measured": [
+        0.4255760817961126,
+        0.3711899936462595,
+        0.15094751238119097
+      ],
+      "status": "MISS",
+      "source": "reports/cardrpg-big/skills-v5/s5/selected/summary.json"
+    },
+    {
+      "id": "A5.cats",
+      "target": "Every cat55–75%, each top pick somewhere",
+      "measured": {
+        "range": [
+          0.5104484848484853,
+          0.7916848484848485
+        ],
+        "cats": [
+          {
+            "id": "mochi",
+            "rate": 0.6988727272727273,
+            "topPickCells": 56
+          },
+          {
+            "id": "soot",
+            "rate": 0.5104484848484853,
+            "topPickCells": 5
+          },
+          {
+            "id": "clover",
+            "rate": 0.6605575757575756,
+            "topPickCells": 35
+          },
+          {
+            "id": "panko",
+            "rate": 0.6017575757575756,
+            "topPickCells": 27
+          },
+          {
+            "id": "mallow",
+            "rate": 0.670290909090909,
+            "topPickCells": 23
+          },
+          {
+            "id": "sorrel",
+            "rate": 0.6094181818181815,
+            "topPickCells": 9
+          },
+          {
+            "id": "biscuit",
+            "rate": 0.6117090909090908,
+            "topPickCells": 17
+          },
+          {
+            "id": "inkcap",
+            "rate": 0.6547393939393936,
+            "topPickCells": 17
+          },
+          {
+            "id": "cinnamon",
+            "rate": 0.7916848484848485,
+            "topPickCells": 82
+          },
+          {
+            "id": "brioche",
+            "rate": 0.5684969696969695,
+            "topPickCells": 19
+          },
+          {
+            "id": "velvet",
+            "rate": 0.7634303030303029,
+            "topPickCells": 28
+          },
+          {
+            "id": "marigold",
+            "rate": 0.6972484848484847,
+            "topPickCells": 41
+          }
+        ]
+      },
+      "status": "MISS",
+      "source": "reports/cardrpg-big/skills-v5/s5/selected/teams/results.json"
+    },
+    {
+      "id": "A5.fixture-calibration",
+      "target": "Reference matched-power median55–60% on TRAIN; measured on acceptance",
+      "measured": {
+        "median": 0.34,
+        "byChapter": [
+          {
+            "chapter": 2,
+            "rate": 0.212
+          },
+          {
+            "chapter": 3,
+            "rate": 0.34
+          },
+          {
+            "chapter": 1,
+            "rate": 0.866
+          }
+        ],
+        "note": "Unchanged fixture; no calibration or gate adjustment adopted."
+      },
+      "status": "MISS",
+      "source": "reports/cardrpg-big/skills-v5/s5/selected/teams/results.json"
+    },
+    {
+      "id": "A5.sets",
+      "target": "Each set35–75% and leads ≥1 shared situation",
+      "measured": {
+        "range": [
+          0.72925,
+          0.944
+        ],
+        "sets": [
+          {
+            "id": "hearthloom",
+            "rate": 0.74125,
+            "leadingSituations": [
+              3,
+              4,
+              5,
+              6,
+              7
+            ]
+          },
+          {
+            "id": "moonwick",
+            "rate": 0.74575,
+            "leadingSituations": [
+              3,
+              4,
+              5,
+              6,
+              7
+            ]
+          },
+          {
+            "id": "mossbrew",
+            "rate": 0.8305,
+            "leadingSituations": [
+              3,
+              4,
+              5,
+              6,
+              7
+            ]
+          },
+          {
+            "id": "rainlace",
+            "rate": 0.944,
+            "leadingSituations": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ]
+          },
+          {
+            "id": "crumbweave",
+            "rate": 0.84625,
+            "leadingSituations": [
+              3,
+              4,
+              5,
+              6,
+              7
+            ]
+          },
+          {
+            "id": "bellsteel",
+            "rate": 0.76625,
+            "leadingSituations": [
+              3,
+              4,
+              5,
+              6,
+              7
+            ]
+          },
+          {
+            "id": "emberfelt",
+            "rate": 0.72925,
+            "leadingSituations": [
+              3,
+              4,
+              5,
+              6,
+              7
+            ]
+          },
+          {
+            "id": "velvetrim",
+            "rate": 0.8245,
+            "leadingSituations": [
+              3,
+              4,
+              5,
+              6,
+              7
+            ]
+          }
+        ]
+      },
+      "status": "MISS",
+      "source": "reports/cardrpg-big/skills-v5/s5/selected/sets/results.json"
+    },
+    {
+      "id": "A5.crew-gain",
+      "target": "Coherent minus random10–25pp",
+      "measured": {
+        "chosen": [
+          "mochi",
+          "clover",
+          "mallow"
+        ],
+        "gainPp": 29.399999999999995
+      },
+      "status": "MISS",
+      "source": "reports/cardrpg-big/skills-v5/s5/selected/teams/results.json"
+    },
+    {
+      "id": "A5.crew-diversity",
+      "target": "≥4distinct triples within5pp of best per boss/elite",
+      "measured": [
+        {
+          "kind": "teams",
+          "scene": 1,
+          "nearBestCount": 143,
+          "best": 1
+        },
+        {
+          "kind": "teams",
+          "scene": 2,
+          "nearBestCount": 12,
+          "best": 1
+        },
+        {
+          "kind": "teams",
+          "scene": 3,
+          "nearBestCount": 36,
+          "best": 1
+        },
+        {
+          "kind": "elites",
+          "scene": 0,
+          "nearBestCount": 220,
+          "best": 1
+        },
+        {
+          "kind": "elites",
+          "scene": 1,
+          "nearBestCount": 220,
+          "best": 1
+        },
+        {
+          "kind": "elites",
+          "scene": 2,
+          "nearBestCount": 220,
+          "best": 1
+        },
+        {
+          "kind": "elites",
+          "scene": 3,
+          "nearBestCount": 220,
+          "best": 1
+        }
+      ],
+      "status": "PASS",
+      "source": "reports/cardrpg-big/skills-v5/s5/selected/summary.json"
+    },
+    {
+      "id": "V5.named-crews",
+      "target": "All4approved crews within5pp of best at every boss/elite",
+      "measured": [
+        {
+          "kind": "teams",
+          "scene": 1,
+          "best": 1,
+          "nearBestCount": 143,
+          "approved": {
+            "oven": {
+              "rate": 1,
+              "gapPp": 0,
+              "within5": true
+            },
+            "thread": {
+              "rate": 0.83,
+              "gapPp": 17.000000000000004,
+              "within5": false
+            },
+            "night-lamp": {
+              "rate": 1,
+              "gapPp": 0,
+              "within5": true
+            },
+            "afternoon-tea": {
+              "rate": 0.71,
+              "gapPp": 29.000000000000004,
+              "within5": false
+            }
+          }
+        },
+        {
+          "kind": "teams",
+          "scene": 2,
+          "best": 1,
+          "nearBestCount": 12,
+          "approved": {
+            "oven": {
+              "rate": 0.242,
+              "gapPp": 75.8,
+              "within5": false
+            },
+            "thread": {
+              "rate": 0.174,
+              "gapPp": 82.60000000000001,
+              "within5": false
+            },
+            "night-lamp": {
+              "rate": 0.336,
+              "gapPp": 66.39999999999999,
+              "within5": false
+            },
+            "afternoon-tea": {
+              "rate": 0.578,
+              "gapPp": 42.2,
+              "within5": false
+            }
+          }
+        },
+        {
+          "kind": "teams",
+          "scene": 3,
+          "best": 1,
+          "nearBestCount": 36,
+          "approved": {
+            "oven": {
+              "rate": 0.984,
+              "gapPp": 1.6000000000000014,
+              "within5": true
+            },
+            "thread": {
+              "rate": 0.416,
+              "gapPp": 58.400000000000006,
+              "within5": false
+            },
+            "night-lamp": {
+              "rate": 0.402,
+              "gapPp": 59.8,
+              "within5": false
+            },
+            "afternoon-tea": {
+              "rate": 0.744,
+              "gapPp": 25.6,
+              "within5": false
+            }
+          }
+        },
+        {
+          "kind": "elites",
+          "scene": 0,
+          "best": 1,
+          "nearBestCount": 220,
+          "approved": {
+            "oven": {
+              "rate": 1,
+              "gapPp": 0,
+              "within5": true
+            },
+            "thread": {
+              "rate": 1,
+              "gapPp": 0,
+              "within5": true
+            },
+            "night-lamp": {
+              "rate": 1,
+              "gapPp": 0,
+              "within5": true
+            },
+            "afternoon-tea": {
+              "rate": 1,
+              "gapPp": 0,
+              "within5": true
+            }
+          }
+        },
+        {
+          "kind": "elites",
+          "scene": 1,
+          "best": 1,
+          "nearBestCount": 220,
+          "approved": {
+            "oven": {
+              "rate": 1,
+              "gapPp": 0,
+              "within5": true
+            },
+            "thread": {
+              "rate": 1,
+              "gapPp": 0,
+              "within5": true
+            },
+            "night-lamp": {
+              "rate": 1,
+              "gapPp": 0,
+              "within5": true
+            },
+            "afternoon-tea": {
+              "rate": 1,
+              "gapPp": 0,
+              "within5": true
+            }
+          }
+        },
+        {
+          "kind": "elites",
+          "scene": 2,
+          "best": 1,
+          "nearBestCount": 220,
+          "approved": {
+            "oven": {
+              "rate": 1,
+              "gapPp": 0,
+              "within5": true
+            },
+            "thread": {
+              "rate": 1,
+              "gapPp": 0,
+              "within5": true
+            },
+            "night-lamp": {
+              "rate": 1,
+              "gapPp": 0,
+              "within5": true
+            },
+            "afternoon-tea": {
+              "rate": 1,
+              "gapPp": 0,
+              "within5": true
+            }
+          }
+        },
+        {
+          "kind": "elites",
+          "scene": 3,
+          "best": 1,
+          "nearBestCount": 220,
+          "approved": {
+            "oven": {
+              "rate": 1,
+              "gapPp": 0,
+              "within5": true
+            },
+            "thread": {
+              "rate": 1,
+              "gapPp": 0,
+              "within5": true
+            },
+            "night-lamp": {
+              "rate": 1,
+              "gapPp": 0,
+              "within5": true
+            },
+            "afternoon-tea": {
+              "rate": 1,
+              "gapPp": 0,
+              "within5": true
+            }
+          }
+        }
+      ],
+      "status": "MISS",
+      "source": "reports/cardrpg-big/skills-v5/s5/selected/summary.json"
+    },
+    {
+      "id": "V5.D3-keyword-crews",
+      "target": "Each of8keywords in≥1/3 battles of every named crew",
+      "measured": {
+        "base/oven": {
+          "battles": 1500,
+          "skills": {
+            "mallow-1": 9391,
+            "cinnamon-3": 7919,
+            "mochi-1": 12769,
+            "mallow-3": 4869,
+            "cinnamon-1": 7196,
+            "mallow-4": 3080,
+            "cinnamon-4": 1032,
+            "mochi-4": 3391,
+            "cinnamon-2": 1283,
+            "mallow-2": 720,
+            "mochi-3": 1023,
+            "mochi-2": 88,
+            "defend": 157
+          },
+          "keywords": {
+            "scald": 40981,
+            "steep": 8419,
+            "cozy": 15797,
+            "snag": 2560,
+            "scent": 2530,
+            "link": 2046,
+            "shelter": 1023,
+            "brittle": 13719,
+            "drowsy": 3343,
+            "bitter": 3012
+          },
+          "enemyKeywords": {
+            "cozy": 1000,
+            "snag": 2560,
+            "steep": 500,
+            "scent": 2530,
+            "scald": 2410,
+            "brittle": 13719,
+            "drowsy": 3343,
+            "bitter": 3012
+          },
+          "reactions": {
+            "wildfire": 19394
+          },
+          "shapes": {
+            "splash": 22160,
+            "one": 7919,
+            "single": 12065,
+            "all": 3080,
+            "team": 4423,
+            "ally-splash": 1283,
+            "row": 720,
+            "ally-row": 1023,
+            "weakest": 88,
+            "self": 157
+          },
+          "keywordCoverage": {
+            "scald": 1,
+            "snag": 0.3333333333333333,
+            "bitter": 0.3333333333333333,
+            "scent": 0.3333333333333333,
+            "brittle": 0.3333333333333333,
+            "drowsy": 0.3333333333333333,
+            "steep": 1,
+            "cozy": 1
+          }
+        },
+        "base/thread": {
+          "battles": 1500,
+          "skills": {
+            "velvet-1": 8361,
+            "biscuit-1": 7487,
+            "brioche-3": 4399,
+            "velvet-2": 1192,
+            "brioche-1": 6051,
+            "velvet-4": 3658,
+            "biscuit-4": 3189,
+            "brioche-4": 3267,
+            "velvet-3": 3520,
+            "biscuit-3": 4789,
+            "brioche-2": 1725,
+            "biscuit-2": 870,
+            "defend": 201
+          },
+          "keywords": {
+            "scent": 8756,
+            "snag": 28026,
+            "brittle": 30136,
+            "cozy": 2071,
+            "glaze": 15804,
+            "decoy": 3658,
+            "link": 9753,
+            "steep": 500,
+            "scald": 1420,
+            "drowsy": 5244,
+            "bitter": 3419
+          },
+          "enemyKeywords": {
+            "cozy": 1000,
+            "snag": 1663,
+            "steep": 500,
+            "scent": 894,
+            "scald": 1420,
+            "brittle": 19443,
+            "drowsy": 5244,
+            "bitter": 3419
+          },
+          "reactions": {
+            "rupture": 8222,
+            "spread": 933
+          },
+          "shapes": {
+            "pierce": 13150,
+            "multi-hit": 7487,
+            "single": 17628,
+            "bounce": 4381,
+            "team": 3267,
+            "one": 2595,
+            "self": 201
+          },
+          "keywordCoverage": {
+            "scald": 0.33266666666666667,
+            "snag": 1,
+            "bitter": 0.3333333333333333,
+            "scent": 0.9966666666666667,
+            "brittle": 0.9993333333333333,
+            "drowsy": 0.3333333333333333,
+            "steep": 0.3333333333333333,
+            "cozy": 0.9626666666666667
+          }
+        },
+        "base/night-lamp": {
+          "battles": 1500,
+          "skills": {
+            "soot-2": 6603,
+            "marigold-2": 8742,
+            "inkcap-3": 7596,
+            "soot-1": 8341,
+            "marigold-3": 7768,
+            "inkcap-1": 7296,
+            "soot-4": 5731,
+            "marigold-4": 3485,
+            "inkcap-4": 5648,
+            "inkcap-2": 5880,
+            "soot-3": 6910,
+            "marigold-1": 6576,
+            "defend": 108
+          },
+          "keywords": {
+            "scent": 9637,
+            "steep": 33302,
+            "decoy": 7596,
+            "shelter": 7596,
+            "cozy": 1054,
+            "snag": 2468,
+            "crumb": 12828,
+            "scald": 6856,
+            "brittle": 39803,
+            "drowsy": 28161,
+            "bitter": 3131
+          },
+          "enemyKeywords": {
+            "cozy": 946,
+            "snag": 2468,
+            "steep": 500,
+            "scent": 2707,
+            "brittle": 22418,
+            "bitter": 3131,
+            "drowsy": 5057
+          },
+          "reactions": {
+            "crumb-burst": 9424,
+            "spread": 387
+          },
+          "shapes": {
+            "single": 27857,
+            "team": 12227,
+            "one": 7596,
+            "pierce": 21517,
+            "all": 11379,
+            "self": 108
+          },
+          "keywordCoverage": {
+            "scald": 1,
+            "snag": 0.3333333333333333,
+            "bitter": 0.31866666666666665,
+            "scent": 1,
+            "brittle": 1,
+            "drowsy": 1,
+            "steep": 1,
+            "cozy": 0.6686666666666666
+          }
+        },
+        "base/afternoon-tea": {
+          "battles": 1500,
+          "skills": {
+            "clover-2": 15271,
+            "sorrel-3": 4413,
+            "panko-3": 2416,
+            "sorrel-2": 15711,
+            "panko-1": 28720,
+            "clover-4": 9661,
+            "panko-4": 8062,
+            "clover-1": 10830,
+            "sorrel-1": 15957,
+            "sorrel-4": 3655,
+            "clover-3": 4537,
+            "panko-2": 279,
+            "defend": 376
+          },
+          "keywords": {
+            "steep": 25335,
+            "glaze": 19243,
+            "riposte": 44251,
+            "cozy": 1376,
+            "snag": 3770,
+            "drowsy": 21646,
+            "brittle": 44869,
+            "sprout": 28983,
+            "shelter": 8341,
+            "bitter": 16850,
+            "scent": 5377,
+            "scald": 1547
+          },
+          "enemyKeywords": {
+            "cozy": 1000,
+            "snag": 3770,
+            "steep": 500,
+            "scent": 5377,
+            "scald": 1547,
+            "brittle": 22635,
+            "drowsy": 6687,
+            "bitter": 3862
+          },
+          "reactions": {},
+          "shapes": {
+            "ally-row": 19963,
+            "team": 20269,
+            "pierce": 15711,
+            "single": 55507,
+            "self": 8438
+          },
+          "keywordCoverage": {
+            "scald": 0.3333333333333333,
+            "snag": 0.3333333333333333,
+            "bitter": 0.9986666666666667,
+            "scent": 0.3333333333333333,
+            "brittle": 1,
+            "drowsy": 1,
+            "steep": 1,
+            "cozy": 0.7206666666666667
+          }
+        },
+        "matched/oven": {
+          "battles": 4500,
+          "skills": {
+            "mallow-1": 10268,
+            "cinnamon-3": 7902,
+            "mochi-1": 14618,
+            "cinnamon-1": 4780,
+            "mallow-4": 4301,
+            "mallow-3": 4933,
+            "cinnamon-2": 5979,
+            "mochi-4": 3765,
+            "cinnamon-4": 2544,
+            "mallow-2": 2835,
+            "mochi-3": 1835,
+            "defend": 35,
+            "mochi-2": 78
+          },
+          "keywords": {
+            "scald": 26752,
+            "steep": 8402,
+            "cozy": 28777,
+            "snag": 687,
+            "scent": 1119,
+            "link": 3698,
+            "shelter": 1835,
+            "brittle": 12717,
+            "bitter": 1242,
+            "drowsy": 6953,
+            "crumb": 1164
+          },
+          "enemyKeywords": {
+            "cozy": 1280,
+            "snag": 687,
+            "steep": 500,
+            "scent": 1119,
+            "scald": 1180,
+            "brittle": 12717,
+            "bitter": 1242,
+            "drowsy": 6953,
+            "crumb": 1164
+          },
+          "reactions": {
+            "wildfire": 7154
+          },
+          "shapes": {
+            "splash": 24886,
+            "one": 7902,
+            "single": 9713,
+            "all": 4301,
+            "ally-splash": 5979,
+            "team": 5812,
+            "row": 2835,
+            "ally-row": 1835,
+            "self": 35,
+            "weakest": 78,
+            "fallen": 497
+          },
+          "keywordCoverage": {
+            "scald": 0.9984444444444445,
+            "snag": 0.10288888888888889,
+            "bitter": 0.10733333333333334,
+            "scent": 0.11,
+            "brittle": 0.7177777777777777,
+            "drowsy": 0.31733333333333336,
+            "steep": 0.95,
+            "cozy": 0.95
+          }
+        },
+        "matched/thread": {
+          "battles": 4500,
+          "skills": {
+            "velvet-1": 9160,
+            "biscuit-3": 5767,
+            "brioche-1": 5784,
+            "velvet-3": 5094,
+            "biscuit-1": 6726,
+            "brioche-3": 4601,
+            "velvet-2": 1202,
+            "velvet-4": 3830,
+            "brioche-4": 2059,
+            "biscuit-4": 2632,
+            "defend": 911,
+            "brioche-2": 1279,
+            "biscuit-2": 948
+          },
+          "keywords": {
+            "scent": 9340,
+            "snag": 25618,
+            "glaze": 11911,
+            "cozy": 3357,
+            "brittle": 25237,
+            "decoy": 3830,
+            "link": 6933,
+            "steep": 31,
+            "scald": 1326,
+            "bitter": 1112,
+            "drowsy": 6286,
+            "crumb": 721
+          },
+          "enemyKeywords": {
+            "cozy": 1498,
+            "snag": 28,
+            "steep": 31,
+            "scent": 27,
+            "scald": 1326,
+            "brittle": 16268,
+            "bitter": 1112,
+            "drowsy": 6286,
+            "crumb": 721
+          },
+          "reactions": {
+            "spread": 1999,
+            "rupture": 6910
+          },
+          "shapes": {
+            "pierce": 14927,
+            "single": 19309,
+            "multi-hit": 6726,
+            "bounce": 3834,
+            "team": 2059,
+            "self": 911,
+            "one": 2227
+          },
+          "keywordCoverage": {
+            "scald": 0.11177777777777778,
+            "snag": 0.9993333333333333,
+            "bitter": 0.1,
+            "scent": 0.9626666666666667,
+            "brittle": 0.9086666666666666,
+            "drowsy": 0.3382222222222222,
+            "steep": 0.006888888888888889,
+            "cozy": 0.562
+          }
+        },
+        "matched/night-lamp": {
+          "battles": 4500,
+          "skills": {
+            "soot-2": 6996,
+            "marigold-3": 6621,
+            "inkcap-1": 10637,
+            "soot-1": 7497,
+            "marigold-2": 12173,
+            "inkcap-2": 4898,
+            "soot-3": 6156,
+            "marigold-1": 4321,
+            "inkcap-4": 5233,
+            "soot-4": 5313,
+            "inkcap-3": 7531,
+            "marigold-4": 4927,
+            "defend": 405
+          },
+          "keywords": {
+            "scent": 8147,
+            "scald": 7260,
+            "crumb": 10311,
+            "brittle": 30773,
+            "cozy": 5454,
+            "snag": 482,
+            "steep": 40059,
+            "drowsy": 23990,
+            "decoy": 7531,
+            "shelter": 7531,
+            "bitter": 1039
+          },
+          "enemyKeywords": {
+            "cozy": 557,
+            "snag": 482,
+            "steep": 500,
+            "scent": 551,
+            "scald": 526,
+            "brittle": 14342,
+            "bitter": 1039,
+            "drowsy": 3780,
+            "crumb": 466
+          },
+          "reactions": {
+            "spread": 634,
+            "crumb-burst": 6674
+          },
+          "shapes": {
+            "single": 24094,
+            "pierce": 23032,
+            "team": 17100,
+            "all": 10546,
+            "one": 7531,
+            "self": 405
+          },
+          "keywordCoverage": {
+            "scald": 0.9835555555555555,
+            "snag": 0.09955555555555555,
+            "bitter": 0.078,
+            "scent": 0.9864444444444445,
+            "brittle": 0.9715555555555555,
+            "drowsy": 0.9737777777777777,
+            "steep": 0.9982222222222222,
+            "cozy": 1
+          }
+        },
+        "matched/afternoon-tea": {
+          "battles": 4500,
+          "skills": {
+            "clover-2": 17245,
+            "sorrel-2": 12717,
+            "panko-1": 24691,
+            "clover-1": 10445,
+            "clover-4": 9253,
+            "panko-4": 6950,
+            "sorrel-1": 13923,
+            "panko-3": 3208,
+            "sorrel-3": 7069,
+            "sorrel-4": 5942,
+            "defend": 781,
+            "panko-2": 101,
+            "clover-3": 4419
+          },
+          "keywords": {
+            "steep": 26552,
+            "cozy": 5848,
+            "drowsy": 23721,
+            "brittle": 48069,
+            "riposte": 41595,
+            "sprout": 26467,
+            "shelter": 7051,
+            "bitter": 12214,
+            "snag": 510,
+            "glaze": 30359,
+            "scent": 1632,
+            "scald": 846,
+            "link": 330,
+            "crumb": 1122
+          },
+          "enemyKeywords": {
+            "cozy": 619,
+            "snag": 510,
+            "steep": 500,
+            "scent": 1632,
+            "scald": 846,
+            "brittle": 30913,
+            "drowsy": 12200,
+            "bitter": 1299,
+            "crumb": 1122
+          },
+          "reactions": {},
+          "shapes": {
+            "ally-row": 24415,
+            "pierce": 12717,
+            "single": 49059,
+            "team": 22822,
+            "self": 7731
+          },
+          "keywordCoverage": {
+            "scald": 0.17377777777777778,
+            "snag": 0.09777777777777778,
+            "bitter": 0.8648888888888889,
+            "scent": 0.11088888888888888,
+            "brittle": 0.9942222222222222,
+            "drowsy": 0.9993333333333333,
+            "steep": 0.9884444444444445,
+            "cozy": 0.9884444444444445
+          }
+        }
+      },
+      "status": "MISS",
+      "source": "reports/cardrpg-big/skills-v5/s5/selected/design-report.json"
+    },
+    {
+      "id": "V5.D4-skill-diversity",
+      "target": "Each skill5–60% of all its cat actions in matched battles",
+      "measured": [
+        {
+          "cat": "mochi",
+          "role": "guardian",
+          "actions": 20324,
+          "skills": [
+            {
+              "id": "mochi-1",
+              "name": "Door knock",
+              "uses": 14618,
+              "share": 0.719248179492226,
+              "shape": "splash",
+              "statuses": []
+            },
+            {
+              "id": "mochi-2",
+              "name": "Warm welcome",
+              "uses": 78,
+              "share": 0.003837827199370203,
+              "shape": "weakest",
+              "statuses": [
+                "cozy"
+              ]
+            },
+            {
+              "id": "mochi-3",
+              "name": "Apron crossing",
+              "uses": 1835,
+              "share": 0.09028734501082464,
+              "shape": "ally-row",
+              "statuses": [
+                "link",
+                "shelter"
+              ]
+            },
+            {
+              "id": "mochi-4",
+              "name": "Last light shelter",
+              "uses": 3765,
+              "share": 0.18524896673883093,
+              "shape": "team",
+              "statuses": [
+                "cozy"
+              ]
+            }
+          ],
+          "topPattern": "splash / team+cozy",
+          "pass": false
+        },
+        {
+          "cat": "soot",
+          "role": "hexer",
+          "actions": 26003,
+          "skills": [
+            {
+              "id": "soot-1",
+              "name": "Cocoa spark",
+              "uses": 7497,
+              "share": 0.28831288697457985,
+              "shape": "pierce",
+              "statuses": [
+                "crumb"
+              ]
+            },
+            {
+              "id": "soot-2",
+              "name": "Black cup",
+              "uses": 6996,
+              "share": 0.2690458793216167,
+              "shape": "single",
+              "statuses": [
+                "scent"
+              ]
+            },
+            {
+              "id": "soot-3",
+              "name": "Lantern wick",
+              "uses": 6156,
+              "share": 0.23674191439449294,
+              "shape": "single",
+              "statuses": []
+            },
+            {
+              "id": "soot-4",
+              "name": "Midnight service",
+              "uses": 5313,
+              "share": 0.204322578164058,
+              "shape": "all",
+              "statuses": [
+                "drowsy"
+              ]
+            }
+          ],
+          "topPattern": "pierce+crumb / single+scent",
+          "pass": true
+        },
+        {
+          "cat": "clover",
+          "role": "healer",
+          "actions": 41367,
+          "skills": [
+            {
+              "id": "clover-1",
+              "name": "Leaf tap",
+              "uses": 10445,
+              "share": 0.25249595087871973,
+              "shape": "single",
+              "statuses": []
+            },
+            {
+              "id": "clover-2",
+              "name": "Patient steep",
+              "uses": 17245,
+              "share": 0.41687818792757514,
+              "shape": "ally-row",
+              "statuses": [
+                "steep"
+              ]
+            },
+            {
+              "id": "clover-3",
+              "name": "Clearleaf rinse",
+              "uses": 4419,
+              "share": 0.10682428022336646,
+              "shape": "team",
+              "statuses": []
+            },
+            {
+              "id": "clover-4",
+              "name": "Greenhouse morning",
+              "uses": 9253,
+              "share": 0.223680711678391,
+              "shape": "team",
+              "statuses": [
+                "sprout"
+              ]
+            }
+          ],
+          "topPattern": "ally-row+steep / single",
+          "pass": true
+        },
+        {
+          "cat": "panko",
+          "role": "guardian",
+          "actions": 35280,
+          "skills": [
+            {
+              "id": "panko-1",
+              "name": "Pan reply",
+              "uses": 24691,
+              "share": 0.6998582766439909,
+              "shape": "single",
+              "statuses": [
+                "riposte",
+                "brittle"
+              ]
+            },
+            {
+              "id": "panko-2",
+              "name": "Bread cover",
+              "uses": 101,
+              "share": 0.00286281179138322,
+              "shape": "ally-row",
+              "statuses": [
+                "shelter"
+              ]
+            },
+            {
+              "id": "panko-3",
+              "name": "Crust return",
+              "uses": 3208,
+              "share": 0.0909297052154195,
+              "shape": "team",
+              "statuses": [
+                "riposte"
+              ]
+            },
+            {
+              "id": "panko-4",
+              "name": "Oven door",
+              "uses": 6950,
+              "share": 0.19699546485260772,
+              "shape": "self",
+              "statuses": [
+                "riposte",
+                "shelter"
+              ]
+            }
+          ],
+          "topPattern": "single+riposte+brittle / self+riposte+shelter",
+          "pass": false
+        },
+        {
+          "cat": "mallow",
+          "role": "striker",
+          "actions": 22344,
+          "skills": [
+            {
+              "id": "mallow-1",
+              "name": "Whisk flare",
+              "uses": 10268,
+              "share": 0.45954171142141065,
+              "shape": "splash",
+              "statuses": [
+                "scald"
+              ]
+            },
+            {
+              "id": "mallow-2",
+              "name": "Split ember",
+              "uses": 2835,
+              "share": 0.12687969924812031,
+              "shape": "row",
+              "statuses": [
+                "scald"
+              ]
+            },
+            {
+              "id": "mallow-3",
+              "name": "Burnt sugar",
+              "uses": 4933,
+              "share": 0.2207751521661296,
+              "shape": "single",
+              "statuses": []
+            },
+            {
+              "id": "mallow-4",
+              "name": "Closing blaze",
+              "uses": 4301,
+              "share": 0.19249015395631938,
+              "shape": "all",
+              "statuses": [
+                "scald"
+              ]
+            }
+          ],
+          "topPattern": "splash+scald / single",
+          "pass": true
+        },
+        {
+          "cat": "sorrel",
+          "role": "controller",
+          "actions": 40097,
+          "skills": [
+            {
+              "id": "sorrel-1",
+              "name": "Moon spoon",
+              "uses": 13923,
+              "share": 0.3472329600718258,
+              "shape": "single",
+              "statuses": [
+                "bitter"
+              ]
+            },
+            {
+              "id": "sorrel-2",
+              "name": "Cold brew",
+              "uses": 12717,
+              "share": 0.3171558969498965,
+              "shape": "pierce",
+              "statuses": [
+                "drowsy"
+              ]
+            },
+            {
+              "id": "sorrel-3",
+              "name": "Decanted moon",
+              "uses": 7069,
+              "share": 0.17629747861436018,
+              "shape": "ally-row",
+              "statuses": [
+                "glaze"
+              ]
+            },
+            {
+              "id": "sorrel-4",
+              "name": "Shared pot",
+              "uses": 5942,
+              "share": 0.14819063770356886,
+              "shape": "team",
+              "statuses": [
+                "glaze"
+              ]
+            }
+          ],
+          "topPattern": "single+bitter / pierce+drowsy",
+          "pass": true
+        },
+        {
+          "cat": "biscuit",
+          "role": "striker",
+          "actions": 16628,
+          "skills": [
+            {
+              "id": "biscuit-1",
+              "name": "Rolling pin",
+              "uses": 6726,
+              "share": 0.4044984363723839,
+              "shape": "multi-hit",
+              "statuses": [
+                "snag"
+              ]
+            },
+            {
+              "id": "biscuit-2",
+              "name": "Sideboard step",
+              "uses": 948,
+              "share": 0.057012268462833776,
+              "shape": "one",
+              "statuses": [
+                "cozy"
+              ]
+            },
+            {
+              "id": "biscuit-3",
+              "name": "Last crumb",
+              "uses": 5767,
+              "share": 0.34682463314890544,
+              "shape": "pierce",
+              "statuses": []
+            },
+            {
+              "id": "biscuit-4",
+              "name": "Bakers procession",
+              "uses": 2632,
+              "share": 0.15828722636516718,
+              "shape": "bounce",
+              "statuses": [
+                "brittle"
+              ]
+            }
+          ],
+          "topPattern": "multi-hit+snag / pierce",
+          "pass": true
+        },
+        {
+          "cat": "inkcap",
+          "role": "controller",
+          "actions": 28585,
+          "skills": [
+            {
+              "id": "inkcap-1",
+              "name": "Ink thread",
+              "uses": 10637,
+              "share": 0.37211824383417874,
+              "shape": "pierce",
+              "statuses": [
+                "brittle"
+              ]
+            },
+            {
+              "id": "inkcap-2",
+              "name": "Quiet spores",
+              "uses": 4898,
+              "share": 0.17134860941053,
+              "shape": "pierce",
+              "statuses": [
+                "drowsy"
+              ]
+            },
+            {
+              "id": "inkcap-3",
+              "name": "Paper decoy",
+              "uses": 7531,
+              "share": 0.26345985656813015,
+              "shape": "one",
+              "statuses": [
+                "decoy",
+                "shelter"
+              ]
+            },
+            {
+              "id": "inkcap-4",
+              "name": "Dreaming canopy",
+              "uses": 5233,
+              "share": 0.18306804267972712,
+              "shape": "all",
+              "statuses": [
+                "drowsy",
+                "brittle"
+              ]
+            }
+          ],
+          "topPattern": "pierce+brittle / one+decoy+shelter",
+          "pass": true
+        },
+        {
+          "cat": "cinnamon",
+          "role": "healer",
+          "actions": 21205,
+          "skills": [
+            {
+              "id": "cinnamon-1",
+              "name": "Spice pinch",
+              "uses": 4780,
+              "share": 0.22541853336477247,
+              "shape": "single",
+              "statuses": [
+                "scald"
+              ]
+            },
+            {
+              "id": "cinnamon-2",
+              "name": "Comfort cup",
+              "uses": 5979,
+              "share": 0.28196180146191935,
+              "shape": "ally-splash",
+              "statuses": [
+                "cozy"
+              ]
+            },
+            {
+              "id": "cinnamon-3",
+              "name": "Clean apron",
+              "uses": 7902,
+              "share": 0.3726479603867012,
+              "shape": "one",
+              "statuses": [
+                "steep"
+              ]
+            },
+            {
+              "id": "cinnamon-4",
+              "name": "Second serving",
+              "uses": 2544,
+              "share": 0.11997170478660693,
+              "shape": "team",
+              "statuses": [
+                "cozy"
+              ]
+            }
+          ],
+          "topPattern": "one+steep / ally-splash+cozy",
+          "pass": true
+        },
+        {
+          "cat": "brioche",
+          "role": "guardian",
+          "actions": 13974,
+          "skills": [
+            {
+              "id": "brioche-1",
+              "name": "Bell patrol",
+              "uses": 5784,
+              "share": 0.41391155002146846,
+              "shape": "single",
+              "statuses": [
+                "glaze"
+              ]
+            },
+            {
+              "id": "brioche-2",
+              "name": "Borrowed blanket",
+              "uses": 1279,
+              "share": 0.09152712179762416,
+              "shape": "one",
+              "statuses": []
+            },
+            {
+              "id": "brioche-3",
+              "name": "Starched collar",
+              "uses": 4601,
+              "share": 0.3292543294690139,
+              "shape": "single",
+              "statuses": [
+                "brittle"
+              ]
+            },
+            {
+              "id": "brioche-4",
+              "name": "Constellation apron",
+              "uses": 2059,
+              "share": 0.14734506941462716,
+              "shape": "team",
+              "statuses": [
+                "link",
+                "glaze"
+              ]
+            }
+          ],
+          "topPattern": "single+glaze / single+brittle",
+          "pass": true
+        },
+        {
+          "cat": "velvet",
+          "role": "witch",
+          "actions": 19391,
+          "skills": [
+            {
+              "id": "velvet-1",
+              "name": "Silk nick",
+              "uses": 9160,
+              "share": 0.47238409571450674,
+              "shape": "pierce",
+              "statuses": [
+                "scent",
+                "snag"
+              ]
+            },
+            {
+              "id": "velvet-2",
+              "name": "Candle bounce",
+              "uses": 1202,
+              "share": 0.0619875199834975,
+              "shape": "bounce",
+              "statuses": []
+            },
+            {
+              "id": "velvet-3",
+              "name": "Stolen flame",
+              "uses": 5094,
+              "share": 0.26269919034603684,
+              "shape": "single",
+              "statuses": []
+            },
+            {
+              "id": "velvet-4",
+              "name": "Velvet curtain",
+              "uses": 3830,
+              "share": 0.19751431076272497,
+              "shape": "single",
+              "statuses": [
+                "decoy"
+              ]
+            }
+          ],
+          "topPattern": "pierce+scent+snag / single",
+          "pass": true
+        },
+        {
+          "cat": "marigold",
+          "role": "healer",
+          "actions": 28120,
+          "skills": [
+            {
+              "id": "marigold-1",
+              "name": "Seed stitch",
+              "uses": 4321,
+              "share": 0.15366287339971552,
+              "shape": "single",
+              "statuses": [
+                "steep"
+              ]
+            },
+            {
+              "id": "marigold-2",
+              "name": "Garden bell",
+              "uses": 12173,
+              "share": 0.4328947368421053,
+              "shape": "team",
+              "statuses": [
+                "steep"
+              ]
+            },
+            {
+              "id": "marigold-3",
+              "name": "Spring pruning",
+              "uses": 6621,
+              "share": 0.2354551920341394,
+              "shape": "single",
+              "statuses": [
+                "scald",
+                "crumb"
+              ]
+            },
+            {
+              "id": "marigold-4",
+              "name": "First tea blossom",
+              "uses": 4927,
+              "share": 0.17521337126600284,
+              "shape": "team",
+              "statuses": []
+            }
+          ],
+          "topPattern": "team+steep / single+scald+crumb",
+          "pass": true
+        }
+      ],
+      "status": "MISS",
+      "source": "reports/cardrpg-big/skills-v5/s5/selected/design-report.json"
+    },
+    {
+      "id": "V5.D5-distinct-patterns",
+      "target": "No identical same-role top2 shape+status pattern",
+      "measured": [],
+      "status": "PASS",
+      "source": "reports/cardrpg-big/skills-v5/s5/selected/design-report.json"
+    },
+    {
+      "id": "A5.tiers",
+      "target": "TRAIN24comparisons; combined44/48 evaluated after acceptance",
+      "measured": {
+        "positive": 19,
+        "total": 24,
+        "reversals": 0,
+        "rows": [
+          {
+            "level": 1,
+            "chapter": 1,
+            "from": "none",
+            "to": "common",
+            "gainPp": 20
+          },
+          {
+            "level": 1,
+            "chapter": 1,
+            "from": "common",
+            "to": "rare",
+            "gainPp": 13.999999999999998
+          },
+          {
+            "level": 1,
+            "chapter": 1,
+            "from": "rare",
+            "to": "epic",
+            "gainPp": 26.8
+          },
+          {
+            "level": 1,
+            "chapter": 1,
+            "from": "epic",
+            "to": "legendary",
+            "gainPp": 28.000000000000004
+          },
+          {
+            "level": 1,
+            "chapter": 2,
+            "from": "none",
+            "to": "common",
+            "gainPp": 0
+          },
+          {
+            "level": 1,
+            "chapter": 2,
+            "from": "common",
+            "to": "rare",
+            "gainPp": 0.4
+          },
+          {
+            "level": 1,
+            "chapter": 2,
+            "from": "rare",
+            "to": "epic",
+            "gainPp": 0.4
+          },
+          {
+            "level": 1,
+            "chapter": 2,
+            "from": "epic",
+            "to": "legendary",
+            "gainPp": 2.8
+          },
+          {
+            "level": 1,
+            "chapter": 3,
+            "from": "none",
+            "to": "common",
+            "gainPp": 0.4
+          },
+          {
+            "level": 1,
+            "chapter": 3,
+            "from": "common",
+            "to": "rare",
+            "gainPp": 0.6
+          },
+          {
+            "level": 1,
+            "chapter": 3,
+            "from": "rare",
+            "to": "epic",
+            "gainPp": 3.3999999999999995
+          },
+          {
+            "level": 1,
+            "chapter": 3,
+            "from": "epic",
+            "to": "legendary",
+            "gainPp": 12.8
+          },
+          {
+            "level": 6,
+            "chapter": 1,
+            "from": "none",
+            "to": "common",
+            "gainPp": 26.6
+          },
+          {
+            "level": 6,
+            "chapter": 1,
+            "from": "common",
+            "to": "rare",
+            "gainPp": 13
+          },
+          {
+            "level": 6,
+            "chapter": 1,
+            "from": "rare",
+            "to": "epic",
+            "gainPp": 14.600000000000001
+          },
+          {
+            "level": 6,
+            "chapter": 1,
+            "from": "epic",
+            "to": "legendary",
+            "gainPp": 7.399999999999995
+          },
+          {
+            "level": 6,
+            "chapter": 2,
+            "from": "none",
+            "to": "common",
+            "gainPp": 10.200000000000001
+          },
+          {
+            "level": 6,
+            "chapter": 2,
+            "from": "common",
+            "to": "rare",
+            "gainPp": 2.5999999999999996
+          },
+          {
+            "level": 6,
+            "chapter": 2,
+            "from": "rare",
+            "to": "epic",
+            "gainPp": 19.799999999999997
+          },
+          {
+            "level": 6,
+            "chapter": 2,
+            "from": "epic",
+            "to": "legendary",
+            "gainPp": 20.200000000000006
+          },
+          {
+            "level": 6,
+            "chapter": 3,
+            "from": "none",
+            "to": "common",
+            "gainPp": 14.600000000000001
+          },
+          {
+            "level": 6,
+            "chapter": 3,
+            "from": "common",
+            "to": "rare",
+            "gainPp": 6.6000000000000005
+          },
+          {
+            "level": 6,
+            "chapter": 3,
+            "from": "rare",
+            "to": "epic",
+            "gainPp": 13.600000000000001
+          },
+          {
+            "level": 6,
+            "chapter": 3,
+            "from": "epic",
+            "to": "legendary",
+            "gainPp": 28.59999999999999
+          }
+        ],
+        "note": "Original44/48 combines TRAIN24 and acceptance24, reported separately before heldout."
+      },
+      "status": "MISS",
+      "source": "reports/cardrpg-big/skills-v5/s5/selected/tiers/results.json"
+    },
+    {
+      "id": "A5.band-ladder",
+      "target": "Bare→legendary≥15pp; no intended-band saturation",
+      "measured": [
+        {
+          "level": 1,
+          "chapter": 1,
+          "spreadPp": 85,
+          "saturated": false
+        },
+        {
+          "level": 1,
+          "chapter": 2,
+          "spreadPp": 0.4,
+          "saturated": false
+        },
+        {
+          "level": 1,
+          "chapter": 3,
+          "spreadPp": 2.1999999999999997,
+          "saturated": false
+        },
+        {
+          "level": 2,
+          "chapter": 1,
+          "spreadPp": 83.8,
+          "saturated": false
+        },
+        {
+          "level": 2,
+          "chapter": 2,
+          "spreadPp": 0.4,
+          "saturated": false
+        },
+        {
+          "level": 2,
+          "chapter": 3,
+          "spreadPp": 0.8,
+          "saturated": false
+        },
+        {
+          "level": 3,
+          "chapter": 1,
+          "spreadPp": 83,
+          "saturated": false
+        },
+        {
+          "level": 3,
+          "chapter": 2,
+          "spreadPp": 0.2,
+          "saturated": false
+        },
+        {
+          "level": 3,
+          "chapter": 3,
+          "spreadPp": 1.2,
+          "saturated": false
+        },
+        {
+          "level": 4,
+          "chapter": 1,
+          "spreadPp": 83.8,
+          "saturated": false
+        },
+        {
+          "level": 4,
+          "chapter": 2,
+          "spreadPp": 0.2,
+          "saturated": false
+        },
+        {
+          "level": 4,
+          "chapter": 3,
+          "spreadPp": 1,
+          "saturated": false
+        },
+        {
+          "level": 5,
+          "chapter": 1,
+          "spreadPp": 83.39999999999999,
+          "saturated": false
+        },
+        {
+          "level": 5,
+          "chapter": 2,
+          "spreadPp": 0,
+          "saturated": false
+        },
+        {
+          "level": 5,
+          "chapter": 3,
+          "spreadPp": 0.6,
+          "saturated": false
+        },
+        {
+          "level": 6,
+          "chapter": 1,
+          "spreadPp": 85.39999999999999,
+          "saturated": false
+        },
+        {
+          "level": 6,
+          "chapter": 2,
+          "spreadPp": 44.2,
+          "saturated": false
+        },
+        {
+          "level": 6,
+          "chapter": 3,
+          "spreadPp": 60.6,
+          "saturated": false
+        },
+        {
+          "level": 7,
+          "chapter": 1,
+          "spreadPp": 89.4,
+          "saturated": false
+        },
+        {
+          "level": 7,
+          "chapter": 2,
+          "spreadPp": 29.2,
+          "saturated": false
+        },
+        {
+          "level": 7,
+          "chapter": 3,
+          "spreadPp": 52,
+          "saturated": false
+        },
+        {
+          "level": 8,
+          "chapter": 1,
+          "spreadPp": 92,
+          "saturated": false
+        },
+        {
+          "level": 8,
+          "chapter": 2,
+          "spreadPp": 20.8,
+          "saturated": false
+        },
+        {
+          "level": 8,
+          "chapter": 3,
+          "spreadPp": 39.8,
+          "saturated": false
+        },
+        {
+          "level": 9,
+          "chapter": 1,
+          "spreadPp": 94.6,
+          "saturated": false
+        },
+        {
+          "level": 9,
+          "chapter": 2,
+          "spreadPp": 12.6,
+          "saturated": false
+        },
+        {
+          "level": 9,
+          "chapter": 3,
+          "spreadPp": 31.6,
+          "saturated": false
+        },
+        {
+          "level": 10,
+          "chapter": 1,
+          "spreadPp": 88.2,
+          "saturated": false
+        },
+        {
+          "level": 10,
+          "chapter": 2,
+          "spreadPp": 6.6000000000000005,
+          "saturated": false
+        },
+        {
+          "level": 10,
+          "chapter": 3,
+          "spreadPp": 21.4,
+          "saturated": false
+        },
+        {
+          "level": 50,
+          "chapter": 1,
+          "spreadPp": 98.6,
+          "saturated": false
+        },
+        {
+          "level": 50,
+          "chapter": 2,
+          "spreadPp": 14.6,
+          "saturated": false
+        },
+        {
+          "level": 50,
+          "chapter": 3,
+          "spreadPp": 61.199999999999996,
+          "saturated": false
+        }
+      ],
+      "status": "MISS",
+      "source": "reports/cardrpg-big/skills-v5/s5/selected/tiers/results.json"
+    },
+    {
+      "id": "V5.full500.multi-foe",
+      "target": "≥30% damage actions hit multiple foes",
+      "measured": 32.52485261106589,
+      "status": "PASS",
+      "source": "reports/cardrpg-big/skills-v5/s5/selected/metrics/results.json"
+    },
+    {
+      "id": "V5.full500.multi-ally",
+      "target": "≥35% support actions touch multiple allies",
+      "measured": 29.841532412734946,
+      "status": "MISS",
+      "source": "reports/cardrpg-big/skills-v5/s5/selected/metrics/results.json"
+    },
+    {
+      "id": "V5.full500.reactions",
+      "target": "≥2announced reactions/battle",
+      "measured": 6.742,
+      "status": "PASS",
+      "source": "reports/cardrpg-big/skills-v5/s5/selected/metrics/results.json"
+    },
+    {
+      "id": "V5.full500.normal-rounds",
+      "target": "Mean8–12normal rounds",
+      "measured": 13.237666666666666,
+      "status": "MISS",
+      "source": "reports/cardrpg-big/skills-v5/s5/selected/metrics/results.json"
+    },
+    {
+      "id": "V5.full500.ultimates",
+      "target": "≥1executed ultimate per cat per normal battle",
+      "measured": 78.7,
+      "status": "MISS",
+      "source": "reports/cardrpg-big/skills-v5/s5/selected/metrics/results.json"
+    },
+    {
+      "id": "V5.full500.keywords",
+      "target": "Every core keyword in≥1/3battles",
+      "measured": {
+        "scald": 0.5384444444444444,
+        "snag": 0.5555555555555556,
+        "bitter": 0.5364444444444444,
+        "scent": 0.5555555555555556,
+        "brittle": 0.7777777777777778,
+        "drowsy": 0.7775555555555556,
+        "steep": 0.7777777777777778,
+        "cozy": 0.9853333333333333
+      },
+      "status": "PASS",
+      "source": "reports/cardrpg-big/skills-v5/s5/selected/metrics/results.json"
+    },
+    {
+      "id": "V5.full500.cleanse",
+      "target": "Cleanse≥3%of support actions",
+      "measured": 13.138904871499808,
+      "status": "PASS",
+      "source": "reports/cardrpg-big/skills-v5/s5/selected/metrics/results.json"
+    },
+    {
+      "id": "V5.probe180.multi-foe",
+      "target": "≥30% damage actions hit multiple foes",
+      "measured": 32.22985633978763,
+      "status": "PASS",
+      "source": "reports/cardrpg-big/skills-v5/s5/selected/metrics/results.json"
+    },
+    {
+      "id": "V5.probe180.multi-ally",
+      "target": "≥35% support actions touch multiple allies",
+      "measured": 30.061790487138957,
+      "status": "MISS",
+      "source": "reports/cardrpg-big/skills-v5/s5/selected/metrics/results.json"
+    },
+    {
+      "id": "V5.probe180.reactions",
+      "target": "≥2announced reactions/battle",
+      "measured": 6.65,
+      "status": "PASS",
+      "source": "reports/cardrpg-big/skills-v5/s5/selected/metrics/results.json"
+    },
+    {
+      "id": "V5.probe180.normal-rounds",
+      "target": "Mean8–12normal rounds",
+      "measured": 13.3,
+      "status": "MISS",
+      "source": "reports/cardrpg-big/skills-v5/s5/selected/metrics/results.json"
+    },
+    {
+      "id": "V5.probe180.ultimates",
+      "target": "≥1executed ultimate per cat per normal battle",
+      "measured": 75,
+      "status": "MISS",
+      "source": "reports/cardrpg-big/skills-v5/s5/selected/metrics/results.json"
+    },
+    {
+      "id": "V5.probe180.keywords",
+      "target": "Every core keyword in≥1/3battles",
+      "measured": {
+        "scald": 0.5388888888888889,
+        "snag": 0.5555555555555556,
+        "bitter": 0.5388888888888889,
+        "scent": 0.5555555555555556,
+        "brittle": 0.7777777777777778,
+        "drowsy": 0.7777777777777778,
+        "steep": 0.7777777777777778,
+        "cozy": 0.9888888888888889
+      },
+      "status": "PASS",
+      "source": "reports/cardrpg-big/skills-v5/s5/selected/metrics/results.json"
+    },
+    {
+      "id": "V5.probe180.cleanse",
+      "target": "Cleanse≥3%of support actions",
+      "measured": 12.789193849691047,
+      "status": "PASS",
+      "source": "reports/cardrpg-big/skills-v5/s5/selected/metrics/results.json"
+    },
+    {
+      "id": "V5.reaction-coverage",
+      "target": "Every reaction in≥40%of its named crew battles",
+      "measured": [
+        {
+          "id": "crumb-burst",
+          "crew": "night-lamp",
+          "share": 0.9993333333333333
+        },
+        {
+          "id": "wildfire",
+          "crew": "oven",
+          "share": 0.986
+        },
+        {
+          "id": "rupture",
+          "crew": "thread",
+          "share": 0.9993333333333333
+        },
+        {
+          "id": "spread",
+          "crew": "thread",
+          "share": 0.5486666666666666
+        }
+      ],
+      "status": "PASS",
+      "source": "reports/cardrpg-big/skills-v5/s5/selected/metrics/results.json"
+    },
+    {
+      "id": "A5.economy.regularLegendaryDay7",
+      "target": "Unchanged A5 registered gate",
+      "measured": true,
+      "status": "PASS",
+      "source": "reports/cardrpg-big/skills-v5/s5/selected/economy/summary.json"
+    },
+    {
+      "id": "A5.economy.regularLegendaryDay14",
+      "target": "Unchanged A5 registered gate",
+      "measured": true,
+      "status": "PASS",
+      "source": "reports/cardrpg-big/skills-v5/s5/selected/economy/summary.json"
+    },
+    {
+      "id": "A5.economy.heavyEarlierThanCasual",
+      "target": "Unchanged A5 registered gate",
+      "measured": true,
+      "status": "PASS",
+      "source": "reports/cardrpg-big/skills-v5/s5/selected/economy/summary.json"
+    },
+    {
+      "id": "A5.economy.regularSelectorBy21",
+      "target": "Unchanged A5 registered gate",
+      "measured": true,
+      "status": "PASS",
+      "source": "reports/cardrpg-big/skills-v5/s5/selected/economy/summary.json"
+    },
+    {
+      "id": "A5.economy.casualSelectorBy35",
+      "target": "Unchanged A5 registered gate",
+      "measured": true,
+      "status": "PASS",
+      "source": "reports/cardrpg-big/skills-v5/s5/selected/economy/summary.json"
+    },
+    {
+      "id": "A5.economy.heavySelectorNotCensored",
+      "target": "Unchanged A5 registered gate",
+      "measured": true,
+      "status": "PASS",
+      "source": "reports/cardrpg-big/skills-v5/s5/selected/economy/summary.json"
+    },
+    {
+      "id": "A5.economy.ratiosAtMost3",
+      "target": "Unchanged A5 registered gate",
+      "measured": false,
+      "status": "MISS",
+      "source": "reports/cardrpg-big/skills-v5/s5/selected/economy/summary.json"
+    },
+    {
+      "id": "A5.day7.casualFirstTwoAtLeast50",
+      "target": "Unchanged A5 registered gate",
+      "measured": true,
+      "status": "PASS",
+      "source": "reports/cardrpg-big/skills-v5/s5/selected/day7/results.json"
+    },
+    {
+      "id": "A5.day7.regularFirstTwoAtLeast70",
+      "target": "Unchanged A5 registered gate",
+      "measured": true,
+      "status": "PASS",
+      "source": "reports/cardrpg-big/skills-v5/s5/selected/day7/results.json"
+    },
+    {
+      "id": "A5.day7.heavyFirstAtMost95",
+      "target": "Unchanged A5 registered gate",
+      "measured": true,
+      "status": "PASS",
+      "source": "reports/cardrpg-big/skills-v5/s5/selected/day7/results.json"
+    },
+    {
+      "id": "A5.day7.everyLossHasAvailableImprovement",
+      "target": "Unchanged A5 registered gate",
+      "measured": false,
+      "status": "MISS",
+      "source": "reports/cardrpg-big/skills-v5/s5/selected/day7/results.json"
+    },
+    {
+      "id": "A5.collectibles",
+      "target": "Local editions paired gain≤3pp",
+      "measured": 0,
+      "status": "PASS",
+      "source": "reports/cardrpg-big/skills-v5/s5/selected/editions/results.json"
+    }
+  ],
+  "counts": {
+    "PASS": 22,
+    "MISS": 20
+  },
+  "limitations": [
+    "Numeric bot fixtures only; human recognition, real x1 timing, startup and screenshots are separate evidence.",
+    "TRAIN-only22/24 is an interim diagnostic, never a substitute for the original combined44/48 gate.",
+    "Fallback uses the same TRAIN-selected coherent crew as shipping; no held-out selection."
+  ]
+}
