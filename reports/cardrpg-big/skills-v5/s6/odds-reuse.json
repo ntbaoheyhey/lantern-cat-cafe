@@ -1,0 +1,23 @@
+{
+  "status": "PASS: inherited odds evidence",
+  "baselineRuntime": "0e1e15180108b443ce2e615ea54272b907cc8bb0",
+  "files": {
+    "packages/game-rules/src/cardrpg/depth/gacha-v4.ts": "17f6ed915e15e546dad0ff9ac76df6d71f067018fd30250a1b98b37a25651a84",
+    "packages/game-rules/src/cardrpg/depth/meta-v4.ts": "e9abcb01fa100412bc8c58e9b2431850b1f6fb48fe547e7802dda010d9ce67f8",
+    "packages/game-rules/src/cardrpg/depth/gameplay-v4.ts": "5ed0a46b1d3bde886ee0546818892141b2a3f2871c5197de803eaa4b89fecafa",
+    "packages/game-rules/src/cardrpg/gacha.ts": "ace3b76900607785f8a26dc95619bc4411e5cd79491075c37503bf10efa9e09a",
+    "packages/game-rules/src/cardrpg/catalog.ts": "3a0e7ec530f4d8f4aa5b6bcffc665f6226fb1aafe36b9854c1999b7aedd87145",
+    "packages/game-rules/src/cardrpg/config.ts": "c3a7f68aac65c19158e3cfe20c0c28ab08b50b0f6da657b2f81bb9db91c088c3",
+    "packages/game-rules/src/rng.ts": "294a2a0149a7e89cb9b9b6bbf237b11daecd645a49760b8b2c415bfbc2884270"
+  },
+  "registration": {
+    "path": "reports/cardrpg-big/a5/b3/invitations-01/REGISTERED-METHOD.json",
+    "sha256": "e0bc1dfedf3a0292e17577378e98d07f6df9c75c103b224b0b6e9ff8c97ac6c5"
+  },
+  "results": {
+    "path": "reports/cardrpg-big/a5/b3/invitations-01/gacha.json",
+    "sha256": "dc378c5d308f577920857a2e9e835ca1116191f49d937f3b6d062651b279eecc"
+  },
+  "sourceStatus": "Invitation odds, selector, meta rewards, legacy catalog/config and RNG bytes match the A5 runtime; gacha-v4 also matches the original registered candidate hash.",
+  "limitations": "Earlier 3×10,000 fixed-bankroll distribution is reused. Not a new 20001–20500 sample, earned-progression measurement, or proof that every state/save implementation byte is unchanged."
+}

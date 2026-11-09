@@ -1,5 +1,18 @@
 # Skills V5 repair log
 
+## S5-BARE-ATTRIBUTION-BITS — read-only diagnostic decoder (FIXED)
+- Reproduce: initial read-only aggregation of `s5/before/pieces/results.json` interpreted outcome bit 1 as the without-item result. Its assertion against the saved 321 misses failed (the inverted interpretation found 5). The command stopped before writing any report; simulations and existing summaries were untouched.
+- Ranked hypotheses: (1) reversed outcome bits, confirmed against `bare-matrix.mjs:128`; (2) incomplete cells, ruled out for all 2,304 rows; (3) source drift, not indicated by this arithmetic mismatch.
+- Smallest fix: decode bit 2 as without-item and bit 1 as with-item, matching the registered runner. Verify every pair of win counts and gain against each existing summary before writing the attribution file.
+- Verification: all 4,608 before/selected cells agree; counts are 321 → 33. No production rule changed; selected OFF8,250/fallback180+45 and affected full combat matrices remain bound to `s5-selected/audit.json`. FIXED; no battle sample or design attempt consumed.
+
+## S5-A5-BARE-ITEM — fewer failing cells, larger worst gain (PARTIAL)
+- Reproduce: completed `s5/{before,selected}/pieces/results.json`, 2,304 cells × TRAIN1–500 each. Read-only paired aggregation and receipt hashes: `s5/selected/bare-item-attribution.json`.
+- Measure: failed cells 321 → 33; worst gain 47.6 → 51 percentage points. The unchanged single-item gate is ≤12 points, so it remains MISS despite the lower failure count. Display share remains below 10%.
+- Ranked hypotheses: (1) survivability effects cross sharp win thresholds; (2) new helper/status pressure changes the benefit of particular carriers; (3) reference difficulty floors conceal effects in other cells. These hypotheses have not been isolated by ablation.
+- Smallest next fix: trace the retained worst cell and isolate one item effect on TRAIN. The three S5 design packages remain exhausted; no fourth package, new fixture or replacement denominator is introduced.
+- Verification/status: full affected combat matrices and exact OFF8,250/fallback180+45 checks are retained; progression continues on the same source. PARTIAL; revisit with complete progression evidence before S6.
+
 ## S5-GUARDIAN-ATTRIBUTION-HASH — diagnostic setup serialization (FIXED)
 - Reproduce: `node tools/cardrpg-big/skills-v5/diagnose-guardian-use.mjs`, first fixed replay `matched/oven/0/1`. Original script/log retained in `s5/selected/guardian-attribution-preflight/attempt-1.*`; no attribution result was emitted.
 - Measure: expected saved hash `dbebf34a9ce69484f307b5e70fda481a115ecc5a7d360e748f8def1f86d0750f`, diagnostic `5982589ca15638e39c8d12f215c8ffa15307d7882b91046da7edc353dbe9c49c`.
@@ -169,3 +182,68 @@ Addendum received during S5. TRAIN remains 1–500. Existing baseline slices con
 - Attribution: skill availability is ruled out in this fixed replay set; the automatic evaluator ranks other legal choices higher. Ranked unresolved causes: (1) immediate damage/removal value outweighs preventive support; (2) shield value is capped and discounted; (3) existing support companions already supply protection. The individual score contributions have not been causally ablated.
 - Smallest next candidate: value the distinct prevention window of these later skills, or a targeted basic cooldown with paired pacing checks. Broad cooldown changes already regressed normal rounds17.967 and stay REJECTED. Three S5 design packages are exhausted; no fourth numeric attempt.
 - Verification: source hashes and every replay hash match the selected build. OFF8250 and fallback180+45 remain exact in `s5-selected/audit.json`; affected full A5 matrices continue on that same source. Retain PARTIAL and revisit with the completed balance evidence before S6.
+
+## S5-GATE-REPORTER-SYNTAX — report-only template escaping (FIXED)
+- Reproduce: `node --check tools/cardrpg-big/skills-v5/record-gate-misses.mjs`; original script/log retained under `s5/gate-reporter-preflight/attempt-1.*`. Double-escaped Markdown backticks terminated the JavaScript template. No reporting or sample execution occurred.
+- Smallest fix: use ordinary escaped backticks. Re-run parser preflight before using the reporter. Production rules, registered matrices and OFF/ON receipts are unchanged; this tool only appends measured misses after receipt closure.
+
+- S5-GATE-REPORTER-SYNTAX verification: parser correction passes (`s5/gate-reporter-preflight/correction-1.log`). S8 observation-miss reporter also parses. Both tools read completed receipts only; no samples or runtime changes. The prepared S8 display table now reads selected TRAIN correlations, preserving the before values separately.
+
+## S6-Z-PREFLIGHT — missing declared capture (FIXED before registration)
+- Reproduce: static enumeration of `z-pack.mjs` has only20 captures after expanding its seven-screen loop, while registration and closure require21. Original script: `s6/z-preflight/before.mjs`; no Z registration or browser sample has run.
+- Attribution: the earned Cafe service/daily reward panel was omitted. Ranked alternatives: (1) missing board capture confirmed; (2) equipment branch could omit another capture; (3) navigation loop count mismatch ruled out by its seven entries.
+- Smallest fix: include the expanded earned service board as the21st declared screen; assert equipment exists instead of silently skipping its comparison. Keep the21-screen/126-capture plan and all three widths/both looks.
+- Verify: syntax preflight plus static21-screen enumeration. Runtime and current OFF8250/fallback180+45 hashes are unchanged; the once-only pack will validate actual captures on its registered delivery artifact in S6.
+- Edit-command correction: the first Python patch command had a literal backslash-n after a colon and failed parsing before executing any statement. No files or samples changed in that attempt; corrected command uses real newlines.
+
+## S8-PERFORMANCE-PREFLIGHT — empty telemetry could pass (FIXED before registration)
+- Reproduce: static evaluation `Math.max(0,...[])` returns0; the original sampler would report both cast and draw maxima as0 with no ready-action frames. No browser or acceptance sample was run.
+- Attribute: 1. Empty ready-action selection; 2. missing scene telemetry; 3. failed renderer initialization. These are measurement-integrity failure modes, not measured runtime defects.
+- Smallest fix: require a nonempty ready-action cohort with finite frame/draw values and observed rendered geometry. Missing telemetry now leaves the original observation incomplete instead of passing a zero maximum.
+- Verify: syntax check; actual model.plan and TurnScene.stats field names confirmed read-only. All production rule bytes still match selected OFF8250/fallback180+45 receipts; actual browser validation remains scheduled exactly once in S8. Before/after source hashes: s8/performance-preflight/checks.json.
+
+## S5-A5-SETS-CREW — saturation and coherent-gain regression (PARTIAL)
+- Reproduce: all64set cells and663team/crew cells on fixed TRAIN1–500 in s5/before and s5/selected; read-only aggregation retained in s5/selected/set-crew-attribution.json with source/result hashes.
+- Measure: coherent gain21.667pp PASS →29.400pp MISS against unchanged10–25pp; selected chapter gains10.8/48.8/28.6pp. Five of8sets exceed75%; selected set rates72.925–94.400%. Every set wins100% in scenes3–7 both before and after; their tied leading niches do not establish distinct strengths.
+- Attribution limit: the registered TRAIN-selected coherent crew changes from Brioche/Velvet/Marigold to Mochi/Clover/Mallow. This before/after gate result is not a same-crew causal comparison; acceptance will predeclare and hold the selected crew fixed across both modes.
+- Ranked hypotheses: 1. Helper/status kit synergy and TRAIN crew selection increase the measured advantage; 2. random crews expose uneven matchup difficulty; 3. the already saturated set fixture hides useful set differences. Only saturation and the recorded outcome arithmetic are established here, not an isolated causal lever.
+- Smallest next fix: isolate one coherent-crew synergy on TRAIN and separate its effect from unchanged reference difficulty. Existing three S5 design packages are retained; no fourth package, renamed niche gate, or fixture recalibration is adopted.
+- Verify/status: complete500seed team/set receipts are preserved; current OFF8250/fallback180+45/six-gate source closure remains exact. The remaining affected full matrices continue on the same source. PARTIAL; revisit with those completed matrices before S6.
+
+## S5-NORMAL-PACING — retained cohort attribution (PARTIAL; pre-S6 review input)
+- Reproduce: source-bound s5/selected/metrics/results.json; aggregation only in s5/selected/pacing-attribution.json. Original three-crew full500 normal mean remains13.238rounds against8–12, no denominator change.
+- Measure: original starter crew18.212rounds, original Oven probe8.894, original Thread probe12.607. The approved named crews separately measure Oven9.148, Thread7.857, Night lamp13.866, Afternoon tea20.689; named-crew values do not replace the original probe.
+- Ranked hypotheses: 1. Particular sustain/setup combinations trade damage for extra turns; 2. different foe survival changes opportunities; 3. team selection changes the mix of successful and failed fights. Cohort means alone do not isolate a skill coefficient.
+- Smallest next fix: trace one starter-crew support/setup decision rather than reintroduce the rejected broad cooldown package. Three S5 design packages remain exhausted; no fourth candidate or re-roll.
+- Verification/status: all full500 probe rows retained, current production bytes still match selected OFF8250/fallback180+45/six-gate closure. Natural earned-boss seconds remain unmeasured until S8. PARTIAL.
+
+## S5-A5-TIERS-BANDS — full selected TRAIN result (PARTIAL)
+- Reproduce: completed210cells×500TRAIN seeds in s5/selected/tiers/results.json; unchanged summary arithmetic. Exact missed tier pairs and band cells: s5/selected/tier-attribution.json.
+- Measure: before18/24positive comparisons →selected19/24, zero reversals; intended-band misses1/33 →13/33. The unchanged combined44/48 gate cannot pass this candidate even if all24acceptance comparisons pass (maximum43). Acceptance remains UNUSED.
+- Ranked hypotheses: 1. Helper/status pressure changes tier thresholds; 2. low-win floors in level1 chapter2/3 cells suppress adjacent-tier gain; 3. reference matched-power normalization masks real kit differences. All five sub2pp pairs lie in those cells. Exact pair outcomes establish the miss; mechanisms are not independently ablated.
+- Smallest next fix: trace the first retained sub2pp tier pair on TRAIN and isolate one scaling term. Three S5 design packages are already exhausted; no fourth candidate, relaxed threshold or retrospective sample selection.
+- Verify/status: all210cells retain500outcomes and source registration; current OFF8250/fallback180+45/six-gate closure remains exact. Full elite/item/progression checks continue unchanged; report this gate as PARTIAL/MISS regardless of later source-test passes.
+
+## S5-A5-ELITE-SATURATION — full selected TRAIN result (PARTIAL attribution)
+- Reproduce: completed880elite cells×500TRAIN seeds in s5/before/elites/results.json and s5/selected/elites/results.json; read-only aggregation with result/source hashes in s5/selected/elite-attribution.json.
+- Measure: all220crews are within5pp of the best at all four elite encounters both before and after; the four named crews have zero gaps. These elite gate assertions PASS, but a saturated fixture supplies limited evidence of distinct kit strength. Boss-specific named-crew misses remain separate.
+- Ranked hypotheses: 1. Level6epic matched-power parties overpower these fixed elite encounters; 2. matched display power does not calibrate encounter difficulty; 3. helper/status changes are too small to escape that ceiling. The completed outcomes establish the ceiling, not individual causes.
+- Smallest next fix: investigate encounter difficulty in a future TRAIN design, preserving the current fixture and registered acceptance. No extra S5 candidate or replacement denominator.
+- Verification/status: all880×500outcomes retained; selected OFF8250/fallback180+45 and six-gate closure remain exact. Full bare-item/progression confirmation continues. Balance calibration remains PARTIAL; the measured elite diversity gate is not relabelled a miss.
+
+- S5-D4 source review: `s5/selected/PREVENTION-REVIEW.md` narrows the unresolved prevention heuristic: shield uses a fixed cap/discount; incoming `due` omits shape expansion; Shelter alone has no independent value term; Link value vanishes at full HP. These are code properties, not causal ablations. No new sample or fourth candidate; current hashes/registered sweep unchanged.
+
+## S6-Z-OVERLAY-PREFLIGHT — sibling fallback was outside the layout diagnostic (FIXED measurement; visual result pending)
+- Reproduce: B-OUTBOX 2026-11-09T06:30:20Z reports its integrated P1/1440 fallback strip over a Kettle plate. A's retained s7/fallback-ui captures cover shell geometry before miniatures are ready; their original limited scope is unchanged. Static review of z-pack.mjs found contrast/overflow checks but no strip-versus-plate intersection measurement.
+- Ranked hypotheses: 1. The sibling strip intersects a projected HP plate (observed in B's artifact); 2. renderer framing differs between A and B; 3. current capture checks omit a visible sibling (confirmed by source review). No collision in A's current artifact is claimed without a ready-scene observation.
+- Smallest fix: add visible-strip/HP-plate rectangles and intersections to the already planned automatic-battle capture; require ready-scene coverage in its summary and disclose the count in V5A-REPORT. This adds no screenshot, battle sample, runtime mutation, or numeric acceptance gate.
+- Verify: node syntax checks and git diff whitespace checks PASS; no Z registration/sample exists. Production source closure is rechecked against s5-selected OFF8250/fallback180+45 receipts. Actual overlay verdict stays NOT VERIFIED until the once-only Z capture; B owns its integrated CSS correction.
+- Coordination command failures: two append commands contained literal backslash-n after a Python with statement and failed parsing before any write; the third append used one simple statement and published sync3112c8017. No sample or application state changed.
+
+## S5-NORMAL-PACING — exact starter replay follow-up (PARTIAL)
+- Reproduce: `diagnose-starter-pacing.mjs`, retained pre-use registration and action traces in `s5/selected/pacing-replay*.json`. Both fixed seed1 normal hashes match saved full-500 observations; no new sample or candidate.
+- Measure: first normal12rounds/34party actions; healer normal25rounds/74actions. Support with offense available9/25actions; enemy healing0/606HP. Patient steep occurs at full living-party HP2/6times respectively. Full-500 mean13.238 and denominator unchanged.
+- Ranked attribution: 1. Prevention/Regen horizon can outrank immediate damage; 2. healer sustain delays removals; 3. setup timing changes future payoff. The trace establishes choices and healing, not causal benefit of alternative actions.
+- Smallest future fix: isolate one support horizon term on TRAIN with survival and pacing paired. No fourth S5 package; broad cooldown and Mark-strike remain rejected.
+- Verification/status: exact saved battle hashes; unchanged selected OFF8250/fallback180+45/six-gate closure. [PACING-REVIEW.md](s5/selected/PACING-REVIEW.md) keeps limitations explicit. PARTIAL for the pre-S6 revisit.
+- Report-write correction: an initial Python command contained a literal backslash-n after a `with` statement and failed parsing before execution; no file, sample or commit changed. The corrected patch writes prose only.

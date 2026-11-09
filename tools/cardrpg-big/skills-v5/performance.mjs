@@ -28,6 +28,9 @@ try{
  await page.waitForFunction(()=>window.__depthReview.screen==='result'&&!window.__depthReview.showBattle,null,{timeout:600000});
  const ended=await page.evaluate(()=>performance.now());result=await page.evaluate(()=>({frames:window.__v5Perf.frames,battle:window.__depthReview.battle}));
  const casts=result.frames.filter(f=>f.at>=begin&&f.at<=ended&&f.showBattle&&f.planId!==null&&f.ready),whole=result.frames.filter(f=>f.at<=ended);
+ assert(casts.length>0,'No ready action frames: timing and draw gates are NOT VERIFIED');
+ assert(casts.every(f=>Number.isFinite(f.ms)&&f.ms>0&&Number.isFinite(f.calls)&&f.calls>=0),'Missing or invalid cast telemetry');
+ assert(casts.some(f=>f.calls>0&&f.triangles>0),'No rendered geometry was observed during a ready action');
  result={initialSha256:sha(JSON.stringify(initial)),begin,ended,battleMs:ended-begin,...result,castMaxMs:Math.max(0,...casts.map(f=>f.ms)),wholeOpeningMaxMs:Math.max(0,...whole.map(f=>f.ms)),peakDraws:Math.max(0,...casts.map(f=>f.calls??0)),sampledActions:new Set(casts.map(f=>f.planId)).size};
  assert.deepEqual(errors,[]);assert.deepEqual(remote,[]);complete=true;
 }finally{
