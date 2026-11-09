@@ -12,7 +12,7 @@ const { build } = await import(requireWeb.resolve('vite'));
 // B2 can build a separate artifact without rewriting the accepted closure demo.
 const outputPath = process.env.LOOK_OUTPUT || 'docs/cardrpg-look/index.html';
 const receiptPath = process.env.LOOK_RECEIPT || 'docs/cardrpg-look/build.json';
-const readableDemo = outputPath.includes('b2');
+const readableDemo = outputPath.includes('b2') || outputPath.includes('v5');
 const lean = process.env.LOOK_LEAN === '1';
 // Both streams decode to identical bytes. Different asset classes favour
 // different DEFLATE hash-table sizes; keep the smaller stream per payload.
@@ -43,7 +43,7 @@ const result = await build({ configFile: false, root: web, envDir: false, public
     },
   }],
   define: { 'process.env.NODE_ENV': '"production"' }, resolve: { dedupe: ['react', 'react-dom'] },
-  build: { write: false, minify: true, lib: { entry: resolve(root, 'tools/cardrpg-look/offline.tsx'), name: 'CardRpgDepth', formats: ['iife'] } } });
+  build: { write: false, minify: true, lib: { entry: resolve(root, process.env.LOOK_ENTRY || 'tools/cardrpg-look/offline.tsx'), name: 'CardRpgDepth', formats: ['iife'] } } });
 const output = (Array.isArray(result) ? result : [result]).flatMap(r => r.output);
 const js = output.filter(f => f.type === 'chunk').map(f => f.code).join('\n');
 const css = output.filter(f => f.type === 'asset' && f.fileName.endsWith('.css')).map(f => f.source).join('\n');
@@ -54,7 +54,7 @@ const sourceAssetHashes = Object.fromEntries([...embeddedAssets].map(([path, ass
   [path, createHash('sha256').update(asset.bytes).digest('hex')]));
 // Keep source PNGs and manifest keys. Only opaque, losslessly packed images
 // with a smaller gzip payload are selected; translucent portraits stay PNG.
-const imageRequest = `/tmp/cardrpg-big-image-pack-${process.pid}.json`;
+const imageRequest = `/tmp/cardrpg-v5look-image-pack-${process.pid}.json`;
 writeFileSync(imageRequest, JSON.stringify([...embeddedAssets.keys()]
   .filter(key => extname(key) === '.png').map(key => resolve(root, key))));
 let imagePacking;
@@ -102,8 +102,8 @@ const assetTags = assetEntries.map(([, asset], index) => `<script id="asset-${in
 const performanceMeter = readFileSync(resolve(root, 'tools/cardrpg-big/offline-performance.js'), 'utf8');
 const loader = readFileSync(resolve(root, 'tools/cardrpg-big/offline-loader.js'), 'utf8');
 const evidence = readableDemo ? {tags:'',script:'',rows:[],files:[]} : evidencePayload(root);
-const showcase = readableDemo ? await b2Evidence(root) : await showcaseEvidence(root);
-const html = `<!doctype html>\n<!-- REFERENCE: reports/cardrpg-look/b2/B2-REPORT.md | reports/cardrpg-look/b2/PROMPT.txt | docs/cardrpg-look/b2.html | docs/cardrpg2/index.html | tools/cardrpg-look/build.mjs | docs/design/cardrpg/LOOK-BIBLE.md | apps/web/src/game/cardrpg/depth | packages/game-rules/src/cardrpg/depth -->\n<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none';img-src data: blob:;style-src 'unsafe-inline';script-src 'unsafe-inline' 'wasm-unsafe-eval' blob:;connect-src data: blob:;media-src data: blob:"><script>window.__LOOK_PACKED__=true;${performanceMeter}</script><title>The Lantern · Lantern atelier</title><style>html,body{margin:0;background:#1d1b28;color:#f5ebdc}#loading{margin:0;padding:40px 40px 18px;font:18px system-ui}#opening-progress{display:block;width:min(420px,calc(100% - 80px));margin:0 40px;accent-color:#d8b98a}</style></head><body><div id="root"><p id="loading">Opening the cafe…</p><progress id="opening-progress" aria-label="Opening the cafe" value="0" max="1"></progress></div><script id="asset-manifest" type="application/json">${JSON.stringify(manifest).replace(/</g, '\\u003c')}</script>
+const showcase = outputPath.includes('v5') ? {script:'',bytes:0,files:[]} : readableDemo ? await b2Evidence(root) : await showcaseEvidence(root);
+const html = `<!doctype html>\n<!-- REFERENCE: reports/cardrpg-look/skills-v5/V0-REPORT.md | reports/cardrpg-look/skills-v5/SPEC.md | reports/cardrpg-look/b2/B2-REPORT.md | reports/cardrpg-look/b2/PROMPT.txt | docs/cardrpg-look/b2.html | docs/cardrpg2/index.html | tools/cardrpg-look/build.mjs | docs/design/cardrpg/LOOK-BIBLE.md | apps/web/src/game/cardrpg/depth | packages/game-rules/src/cardrpg/depth -->\n<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none';img-src data: blob:;style-src 'unsafe-inline';script-src 'unsafe-inline' 'wasm-unsafe-eval' blob:;connect-src data: blob:;media-src data: blob:"><script>window.__LOOK_PACKED__=true;${performanceMeter}</script><title>The Lantern · Lantern atelier</title><style>html,body{margin:0;background:#1d1b28;color:#f5ebdc}#loading{margin:0;padding:40px 40px 18px;font:18px system-ui}#opening-progress{display:block;width:min(420px,calc(100% - 80px));margin:0 40px;accent-color:#d8b98a}</style></head><body><div id="root"><p id="loading">Opening the cafe…</p><progress id="opening-progress" aria-label="Opening the cafe" value="0" max="1"></progress></div><script id="asset-manifest" type="application/json">${JSON.stringify(manifest).replace(/</g, '\\u003c')}</script>
 ${assetTags}
 ${evidence.tags}
 <script>${evidence.script}</script>

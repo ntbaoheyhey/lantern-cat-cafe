@@ -1,3 +1,5 @@
+import { StatusBadges } from '../../squad/turn3d/StatusBadges';
+import { statusPresentation, statusImpactLabels } from '../../squad/turn3d/card-status-beats';
 import { useEffect, useMemo, useRef, useState, useSyncExternalStore, type CSSProperties } from 'react';
 import { readablePortrait, readableSkillIcon } from '../../squad/turn3d/look-readable-assets';
 import { isReadableBattle, subscribeReadableBattle } from '../../squad/turn3d/look-b2';
@@ -14,7 +16,8 @@ import { bossCueV4, presentationV4, skillReadinessV4, standingPlanText, type Pre
 import { project, appearance } from './scene-actors';
 import '../../squad/turn3d/battle-layout.css';
 
-function Statuses({ actor }: { actor: R.Actor }) {
+function Statuses({ actor, look }: { actor: R.Actor; look: boolean }) {
+  if (look) return <StatusBadges statuses={actor.statuses} name={actor.name} />;
   return <div className="dp-statuses">{actor.statuses.map(status => <span key={status.id}
     title={`${R.STATUS_BY_ID[status.id].description} Stacks ${status.stacks}/${R.STATUS_BY_ID[status.id].cap}. ${status.remaining} rounds remaining.`}>
     {R.STATUS_BY_ID[status.id].name} {status.stacks} · {status.remaining}r
@@ -32,6 +35,9 @@ export function BattleView({ m }: { m: DepthModel }) {
   const loadingProgress = useRef<HTMLProgressElement>(null);
   const plates = useRef(new Map<string, HTMLDivElement>());
   const numbers = useRef(new Map<string, HTMLDivElement>());
+  const callouts = useRef(new Map<string, HTMLDivElement>());
+  const statusView = useMemo(() => lookV2 && m.plan ? statusPresentation(m.plan,m.battle?.log ?? []) : undefined,[lookV2,m.plan,m.battle?.log.length]);
+  const statusViewRef = useRef(statusView); statusViewRef.current = statusView;
   const lastBattle = useRef(m.battle!);
   const view = useRef<SceneView | null>(null);
   const [logOpen, setLogOpen] = useState(false);
@@ -57,7 +63,8 @@ export function BattleView({ m }: { m: DepthModel }) {
     models: Object.fromEntries(battle.actors.map(actor => [actor.id, actor.catalogId])), warmModelIds: MODEL_IDS, appearance: actor => appearances.get(actor.id) ?? {},
     decorateStage: decorateChapterStage, animateStage: animateChapterStage,
     autoBattle: true, effectOnly: !!m.galleryBattle && m.galleryEffectOnly,
-    cardStatuses: Object.fromEntries(battle.actors.map(actor => [actor.id, actor.statuses.map(status => status.id)])),
+    cardStatuses: Object.fromEntries(battle.actors.map(actor => [actor.id, lookV2 ? actor.statuses : actor.statuses.map(status => status.id)])),
+    cardPresentation: statusView,
     rows: Object.fromEntries(battle.actors.map(actor => [actor.id, actor.row])),
     chapter: battle.chapter, camera: m.camera, playbackSpeed: m.state.settings.speed,
     bossPhases: Object.fromEntries(battle.actors.filter(a => R.ENEMY_BY_ID[a.catalogId]?.tier === 'boss').map(a => [a.id, a.phase])),
@@ -69,15 +76,50 @@ export function BattleView({ m }: { m: DepthModel }) {
     m.sceneReady = false;
     const currentAudio = m.audio;
     try {
+      const comboRects = Array.from({length:12}, () => ({x:0,y:0}));
       const anchorPlates = (anchors: Anchor[]) => {
         const visible = new Set(anchors.filter(anchor => anchor.visible).map(anchor => anchor.id));
         for (const [id, plate] of plates.current) {
           if (!readable) plate.hidden = true;
           else if (plate.hidden === visible.has(id)) plate.hidden = !visible.has(id);
         }
+        let comboCount = 0;
         for (const anchor of anchors) {
           const number = numbers.current.get(anchor.id);
           if (number) number.style.transform = `translate(${Math.max(0, anchor.x - 70)}px, ${Math.max(30, anchor.y - 28)}px)`;
+          const callout = callouts.current.get(anchor.id);
+          if (callout) {
+            let x = Math.max(6, Math.min((host.current?.clientWidth ?? 600)-196, anchor.x-95));
+            let y = anchor.labelY-42;
+            // Place the word above nearby HP plates, then lift intersecting words.
+            for (const other of anchors) if (other.visible && x < other.labelX+69 && x+190 > other.labelX-69) y = Math.min(y,other.labelY-42);
+            for (let attempt=0;attempt<comboCount;attempt++) {
+              let moved = false;
+              for (let i=0;i<comboCount;i++) {
+                const previous=comboRects[i]!;
+                if(x < previous.x+198 && x+198 > previous.x && y < previous.y+42 && y+42 > previous.y) { y=previous.y-42;moved=true; }
+              }
+              if(!moved)break;
+            }
+            y=Math.max(8,y);
+            // Short arenas use a free slot above or beside the plates.
+            let found=false;
+            for(let row=0;row<4&&!found;row++)for(let col=0;col<8&&!found;col++) {
+              const candidateX=Math.max(6,x-col*198),candidateY=y+row*42;
+              let free=true;
+              for(const other of anchors)if(plates.current.has(other.id)&&other.visible
+                &&candidateX<other.labelX+73&&candidateX+194>other.labelX-69
+                &&candidateY<other.labelY+58&&candidateY+38>other.labelY)free=false;
+              for(let i=0;i<comboCount;i++) {
+                const previous=comboRects[i]!;
+                if(candidateX<previous.x+198&&candidateX+198>previous.x&&candidateY<previous.y+42&&candidateY+42>previous.y)free=false;
+              }
+              if(free){x=candidateX;y=candidateY;found=true;}
+            }
+            const saved=comboRects[comboCount++];if(saved){saved.x=x;saved.y=y;}
+            const transform=`translate(${Math.round(x)}px, ${Math.round(y)}px)`;
+            if(callout.style.transform!==transform)callout.style.transform=transform;
+          }
           const plate = plates.current.get(anchor.id);
           if (!plate) continue;
           const transform = `translate(${Math.round(anchor.labelX - 69)}px, ${Math.round(anchor.labelY)}px)`;
@@ -100,6 +142,18 @@ export function BattleView({ m }: { m: DepthModel }) {
           m.plan.beats[2]!.start, m.plan.duration) : undefined;
         bossCue.current.hidden = !cue;
         if (cue && bossCue.current.textContent !== cue.event.text) bossCue.current.textContent = cue.event.text;
+      }
+      if (lookV2 && m.plan && statusViewRef.current) {
+        const presentation = statusViewRef.current, impact = m.plan.beats[2]!.start;
+        for (const [id,number] of numbers.current) {
+          const hidden = m.animationAt < impact + (presentation.offsets.get(id) ?? 0);
+          if(number.hidden !== hidden)number.hidden = hidden;
+        }
+        for (const [id,callout] of callouts.current) {
+          const at = m.animationAt-impact-(presentation.offsets.get(id) ?? 0);
+          const hidden = at < 0 || at >= 500;
+          if(callout.hidden !== hidden)callout.hidden = hidden;
+        }
       }
       const loading = scene.current?.loading;
       if (loading && loadingText.current && loadingText.current.textContent !== loading.label) {
@@ -135,12 +189,12 @@ export function BattleView({ m }: { m: DepthModel }) {
   const action = [...(m.battle?.log ?? battle.log)].reverse().find(event => event.kind === 'action' || event.kind === 'enemy-action');
   const results = useMemo(() => m.plan ? m.plan.targetIds.map(id => ({
     id, name: battle.actors.find(candidate => candidate.id === id)?.name ?? id,
-    labels: impactLabels(m.plan!.events, id).filter(event =>
+    labels: (statusView ? statusImpactLabels(m.plan!,id,statusView) : impactLabels(m.plan!.events, id)).filter(event =>
       ['damage', 'heal', 'shield', 'death', 'status_apply'].includes(event.type)
       && (event.amount > 0 || event.type === 'death')),
-  })).filter(result => result.labels.length) : [], [m.plan, battle.actors]);
+  })).filter(result => result.labels.length) : [], [m.plan, battle.actors, statusView]);
   const lowHealth = battle.actors.some(candidate => candidate.side === 'party' && candidate.hp > 0 && candidate.hp / candidate.maxHp <= .25);
-  return <section className={`dp-battle ${readable ? 'dp-readable' : ''} ${v4 ? 'dp-battle-v4' : ''} ${m.showBattle ? '' : 'dp-hidden'}`} aria-hidden={!m.showBattle} inert={!m.showBattle}>
+  return <section className={`dp-battle ${lookV2 ? 'dp-v5look' : ''} ${m.state.settings.reducedMotion ? 'dp-calm' : ''} ${readable ? 'dp-readable' : ''} ${v4 ? 'dp-battle-v4' : ''} ${m.showBattle ? '' : 'dp-hidden'}`} aria-hidden={!m.showBattle} inert={!m.showBattle}>
     <header className="dp-battle-top"><div><small>{m.replay ? 'Recorded replay' : m.tutorialBattle ? 'Practice table' : R.CHAPTERS[battle.chapter - 1]!.name}</small><h1>Round {battle.round}</h1></div>
       <label>Speed<select aria-label="Playback speed" value={m.state.settings.speed} onChange={event => { m.state.settings.speed = Number(event.target.value); m.notify(); }}>{[1, 2, 4].map(speed => <option key={speed} value={speed}>{speed}×</option>)}</select></label>
       <button onClick={() => { m.paused = !m.paused; m.notify(false); }}>{m.paused ? 'Resume' : 'Pause'}</button>
@@ -159,8 +213,10 @@ export function BattleView({ m }: { m: DepthModel }) {
     {m.offline && new URLSearchParams(window.location.search).get('dev') === '1' && <FeelLab m={m} />}
     <div className={`dp-arena chapter-${battle.chapter} ${lowHealth ? 'dp-low-health' : ''} ${m.galleryBattle && m.galleryEffectOnly ? 'dp-effect-only' : ''}`}><div className="dp-canvas" ref={host} />
       {readable && m.impactVisible && results.map(result => <div className="dp-float-number" key={`${m.plan?.skillId}-${result.id}`} ref={element => { if (element) numbers.current.set(result.id, element); else numbers.current.delete(result.id); }} aria-label={`${result.name} ${result.labels.map(label => `${label.type} ${label.amount}`).join(', ')}`}>
-        {result.labels.map((event, index) => <span className={`dp-number dp-number-${event.type}`} key={index}>{event.type === 'death' ? 'KO' : event.type === 'status_apply' ? event.note : `${event.type === 'heal' ? '+' : event.type === 'shield' ? '◇' : '−'}${event.amount}`}</span>)}
+        {result.labels.map((event, index) => <span className={`dp-number dp-number-${event.type} ${lookV2 && 'dot' in event && event.dot ? 'dp-number-dot' : ''}`} key={index}>{event.type === 'death' ? 'KO' : event.type === 'status_apply' ? event.note : `${event.type === 'heal' ? '+' : event.type === 'shield' ? '◇' : '−'}${event.amount}`}</span>)}
       </div>)}
+      {lookV2 && statusView?.bursts.map(id => <div key={`${m.plan?.id}-${id}`} className="dp-combo-callout" data-combo-target={id} role="status" hidden
+        ref={element => { if(element)callouts.current.set(id,element);else callouts.current.delete(id); }}>CRUMB BURST!</div>)}
       {v4 && <div className="dp-v4-boss-cue" ref={bossCue} role="status" aria-label="Boss event" hidden />}
       {m.plan?.ultimate && actor?.side === 'party' && !m.galleryEffectOnly && <aside className={`dp-ultimate-moment dp-ultimate-${actor.catalogId}`} aria-label={`${actor.name} ultimate`}>
         <img src={readable ? readablePortrait(actor.catalogId) ?? portrait(actor.catalogId) : portrait(actor.catalogId)} alt="" /><div><strong>{actor.name}</strong><span>{m.plan.name}</span></div>
@@ -176,13 +232,13 @@ export function BattleView({ m }: { m: DepthModel }) {
           <progress value={enemy.hp} max={enemy.maxHp} aria-label={`${enemy.name} health`} />
           <small className="dp-intent" title={intent?.label}>{intent?.interrupted ? 'Interrupted' : intent?.label}</small>
           {R.ENEMY_BY_ID[enemy.catalogId]?.tier === 'boss' && <small className="dp-boss-phase" title={R.ENEMY_BY_ID[enemy.catalogId]!.phases[enemy.phase - 1]}>Phase {enemy.phase} · {enemy.phase === 1 ? R.ENEMY_BY_ID[enemy.catalogId]!.phases[0] : 'Awakened'}</small>}
-          <Statuses actor={enemy} />
+          <Statuses actor={enemy} look={lookV2} />
         </div>;
       })}
     </div>
     <div className="dp-party">{battle.actors.filter(candidate => candidate.side === 'party').map(cat => <div className={`dp-party-card ${actor?.id === cat.id ? 'current' : ''} ${cat.hp > 0 && cat.hp / cat.maxHp <= .25 ? 'dp-health-critical' : ''}`} key={cat.id} data-hp-plate>
       <img src={readable ? readablePortrait(cat.catalogId) ?? portrait(cat.catalogId) : portrait(cat.catalogId)} alt="" />
-      <div className="dp-party-health"><span><b>{cat.name}</b><strong>{cat.hp}/{cat.maxHp} HP</strong></span><progress value={cat.hp} max={cat.maxHp} aria-label={`${cat.name} health`} /><Statuses actor={cat} /></div>
+      <div className="dp-party-health"><span><b>{cat.name}</b><strong>{cat.hp}/{cat.maxHp} HP</strong></span><progress value={cat.hp} max={cat.maxHp} aria-label={`${cat.name} health`} /><Statuses actor={cat} look={lookV2} /></div>
       {readable ? <div className="dp-skills-readonly" aria-label={`${cat.name} skills`}>
         {(R.CAT_BY_ID[cat.catalogId]?.skills.map(skill => skill.id) ?? cat.skills).map(id => { const skill = R.SKILLS[id]; if (!skill) return null;
           const equipped = cat.skills.includes(id);
@@ -204,7 +260,7 @@ export function BattleView({ m }: { m: DepthModel }) {
       </div>
       {m.impactVisible && results.length ? <div className="dp-result-chips" aria-label="Action results">
         {results.map(result => <span className="dp-result-chip" key={result.id}><b>{result.name}</b>
-          {result.labels.map((event, index) => <span className={`dp-number dp-number-${event.type}`} key={index}>
+          {result.labels.map((event, index) => <span className={`dp-number dp-number-${event.type} ${lookV2 && 'dot' in event && event.dot ? 'dp-number-dot' : ''}`} key={index}>
             {event.type === 'death' ? 'KO' : event.type === 'status_apply' ? event.note : `${event.type === 'heal' ? '+' : event.type === 'shield' ? '◇' : '−'}${event.amount}`}
             {event.hits > 1 && <small title={`${event.hits} hits`} aria-label={`${event.hits} hits`}>{'·'.repeat(Math.min(6, event.hits))}</small>}
           </span>)}

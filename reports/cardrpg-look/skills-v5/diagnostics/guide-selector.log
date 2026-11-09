@@ -1,0 +1,16 @@
+{"lock":"acquired","lane":"A","pid":69831,"startedAt":"2026-11-09T00:48:52.898Z","task":"V5LOOK OFF renderer parity and guide"}
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+locator.selectOption: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByLabel('Status', { exact: true })[22m
+
+    at /Users/bao/taskbar-hero-cardrpg-b2/tools/cardrpg-look/skills-v5/delivery.mjs:38:48 {
+  log: [ "  - waiting for getByLabel('Status', { exact: true })" ],
+  name: 'TimeoutError'
+}
+
+Node.js v24.22.2
+{"lock":"released","pid":69831,"task":"V5LOOK OFF renderer parity and guide"}
