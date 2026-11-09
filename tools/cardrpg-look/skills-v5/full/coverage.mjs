@@ -1,0 +1,46 @@
+import {chromium} from '../../../../apps/web/node_modules/@playwright/test/index.mjs';
+import {readFile,writeFile,mkdir} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+import {gzipSync} from 'node:zlib';
+import {createRequire} from 'node:module';
+const sharp=createRequire('/Users/bao/tools/cardrpg-look/npm/package.json')('sharp');
+const out=process.env.V5_OUT,artifact=process.env.V5_ARTIFACT;await mkdir(out+'/frames',{recursive:true});
+const cases=JSON.parse(await readFile(process.env.V5_REGISTRATION)).filter(r=>!process.env.V5_IDS||process.env.V5_IDS.split(',').includes(r.id));
+const result={sha256:createHash('sha256').update(await readFile(artifact)).digest('hex'),speed:4,method:'Real automatic battles via published rules and model.act/tick. No gallery or injected plans. Active semantic windows correlated with renderer instance submissions; each first semantic cell has an actual canvas frame for visual verification. Submission alone is not proof of visible pixels.',rows:[],errors:[]};
+const browser=await chromium.launch({channel:'chromium',args:['--use-angle=metal']});
+try{const page=await browser.newPage({viewport:{width:1280,height:720},deviceScaleFactor:1});page.on('pageerror',e=>result.errors.push(String(e)));
+ await page.goto('file://'+artifact+'?dev=1');await page.waitForFunction(()=>window.__depthReview&&window.__v5LiveStart);
+ for(const row of cases){
+  await page.evaluate(row=>window.__v5LiveStart(row.setup,4),row);
+  await page.waitForFunction(()=>window.__depthScene?.ready,null,{timeout:120000});
+  await page.waitForFunction(()=>window.__depthReview.battle.actors.every(a=>window.__depthScene.puppets.get(a.id)?.asset===a.catalogId));
+  await page.evaluate(()=>{
+   const m=window.__depthReview,s=window.__depthScene,e=s.cardEffects;
+   window.__liveRows=[];window.__liveCells={};window.__liveFinished=false;window.__liveFrames=0;
+   if(!e.__audited){e.__audited=true;e.__submitted=[];e.__lane='body';
+    const original=e.render;e.render=function(...args){this.__submitted.length=0;this.__lane='body';return original.apply(this,args)};
+    for(const method of ['renderStatusBeats','renderV5Cues','renderAction']){const original=e[method];e[method]=function(...args){const old=this.__lane;this.__lane=method;const value=original.apply(this,args);this.__lane=old;return value};}
+    const place=e.place;e.place=function(layer,...args){const before=this.stats.instances;place.call(this,layer,...args);if(this.stats.instances>before)this.__submitted.push({lane:this.__lane,primitive:layer.primitive,count:this.stats.instances-before});};
+   }
+   let previous=null,record=null;
+   const tick=()=>{
+    window.__liveFrames++;const plan=m.plan,v=s.view(),p=v.cardPresentation,at=m.animationAt;
+    if(plan&&plan!==previous){previous=plan;record={round:m.battle.round,skill:plan.skillId,actionId:plan.events[0]?.actionId,actor:plan.actorId,duration:plan.duration,frames:0,active:{},received:p?{beats:p.beats,reactions:p.reactions,landings:p.landings}:null};window.__liveRows.push(record);}
+    if(plan&&record&&p){record.frames++;
+     const cues=[...p.beats.map(b=>({...b,key:'status:'+b.statusId+':'+b.kind,lane:'renderStatusBeats'})),...(p.reactions??[]).map(b=>({...b,key:'reaction:'+b.id,lane:'renderV5Cues'})),...(p.landings??[]).map(b=>({...b,key:'shape:'+b.shape,lane:'renderV5Cues'}))];
+     for(const cue of cues){if(at<cue.at||at>=cue.at+cue.duration)continue;const n=e.__submitted.filter(x=>x.lane===cue.lane).reduce((n,x)=>n+x.count,0);if(!n)continue;record.active[cue.key]=(record.active[cue.key]??0)+1;
+      const target=m.battle.actors.find(a=>a.id===cue.targetId),source=m.battle.actors.find(a=>a.id===cue.sourceId);const keys=[cue.key];if(cue.key.startsWith('status:')&&cue.kind==='apply'&&target?.side==='party'&&source?.side==='enemy')keys.push('enemy-'+cue.key);
+      for(const key of keys)if(!window.__liveCells[key])window.__liveCells[key]={key,round:record.round,actionId:record.actionId,skill:record.skill,at,target:cue.targetId,submitted:n,frame:s.renderer.domElement.toDataURL('image/png')};
+     }
+     for(const actor of m.visualBattle.actors)for(const status of actor.statuses){const key='active:'+status.id;if(!window.__liveCells[key])window.__liveCells[key]={key,round:record.round,actionId:record.actionId,skill:record.skill,at,target:actor.id,stacks:status.stacks,frame:s.renderer.domElement.toDataURL('image/png')};}
+    }
+    if(m.battle?.result&&!m.plan){window.__liveFinished=true;return;}window.__liveRaf=requestAnimationFrame(tick);
+   };m.paused=false;m.notify(false);window.__liveRaf=requestAnimationFrame(tick);
+  });
+  await page.waitForFunction(()=>window.__liveFinished,null,{timeout:300000});
+  const data=await page.evaluate(()=>({plans:window.__liveRows,cells:window.__liveCells,frames:window.__liveFrames,battle:window.__depthReview.battle}));
+  for(const [key,cell]of Object.entries(data.cells)){const path='frames/'+row.id+'-'+key.replaceAll(':','-')+'.webp';await sharp(Buffer.from(cell.frame.split(',')[1],'base64')).webp({quality:80}).toFile(out+'/'+path);cell.frame=path;}
+  const json=JSON.stringify(data.battle);const hash=createHash('sha256').update(json).digest('hex');delete data.battle;
+  result.rows.push({id:row.id,seed:row.seed,sha256:hash,parity:hash===row.sha256,...data});await writeFile(out+'/coverage.json.gz',gzipSync(JSON.stringify(result)));console.log(JSON.stringify({id:row.id,parity:hash===row.sha256,plans:data.plans.length,cells:Object.keys(data.cells)}));
+ }
+}finally{await browser.close();await writeFile(out+'/coverage.json.gz',gzipSync(JSON.stringify(result)));}

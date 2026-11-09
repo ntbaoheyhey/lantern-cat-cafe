@@ -82,3 +82,9 @@ Third material luminance0.262–0.364 PASS0.18 across18masks. Enlarged boss clip
 
 ### M2 closure visual review 2026-11-09T04:56Z
 Delivery1280P1 and1024P15 viewed: luminance0.262–0.364 and all projected boundsPASS after rollback. Foes remain visibly pale/flat at1280x720 x795–1130,y350–550 despite the numeric pass. Material attempt budget exhausted; recordPARTIAL surface depth and revisit once inM4 with directional/value separation rather than raising emission. This is not counted as beauty acceptance.
+
+## B-M3-002 2026-11-09T05:18Z M3 fixture scaffold compatibility S2
+Repro integration preflight pnpm --filter @taskbar-hero/web test:11existing fixture tests fail,1837PASS. A new validation correctly rejects skillsV5:true/gameplayV4:false; B legacy snapshot scaffold only disabled gameplayV4. Set both flagsfalse for scaffold construction, then retain published snapshots/events exactly. Live path uses bothtrue. No tests/rules changed. Verify full suite and fixture immutability; failed log retained.
+
+### M3 pure adapter verification
+Registered18live setups,1421resolved actions/1687presentation plans:0missing/extrav2events,0cue-clock overruns; all18fullbattle digests match step replay and lookON/OFF. Published fixture scaffold fix restores1848unitPASS. This is pure adapter evidence, NOT browser/live-visible coverage. New boundary tests cover repeated-log matching,Clutch heal,ally-splash scaling,before snapshots and malformedv2boss envelopes.

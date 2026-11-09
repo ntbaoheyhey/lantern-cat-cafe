@@ -25,14 +25,14 @@ export function readV5Events(input:unknown):V5Event[] {
 /** Published snapshots/events are render inputs only. Never roll targets or advance combat. */
 export function applyV5Presentation(plan:EffectPlan, legacy:StatusPresentation, source:V5Source|undefined):StatusPresentation {
   const events=readV5Events(source?.events);if(!events.length)return legacy;
-  const impact=plan.beats[2]!.start, result:StatusPresentation={offsets:new Map(),beats:[],kinds:new Map(legacy.kinds),bursts:[],reactions:[],landings:[],tickIds:new Map(),bitterTargets:new Set()};
+  const impact=plan.beats[2]!.start, result:StatusPresentation={offsets:new Map(),beats:legacy.beats.filter(b=>b.kind==='expire').map(b=>({...b})),kinds:new Map(legacy.kinds),bursts:[],reactions:[],landings:[],tickIds:new Map(),bitterTargets:new Set()};
   const landing=events.find(e=>e.kind==='multi-hit');
   if(landing){
     // Preserve repeated targets; a Map alone loses a second/third seeded strike.
     landing.targets!.forEach((targetId,index)=>{
       const at=Math.min(plan.duration-1,impact+index*70);
       if(!result.offsets.has(targetId))result.offsets.set(targetId,at-impact);
-      result.landings!.push({targetId,fromId:index&&landing.shape==='bounce'?landing.targets![index-1]!:landing.actorId??plan.actorId,shape:landing.shape!,index,at,duration:Math.min(180,plan.duration-at),scale:landing.shape==='splash'&&index>0?.60:1});
+      result.landings!.push({targetId,fromId:index&&landing.shape==='bounce'?landing.targets![index-1]!:landing.actorId??plan.actorId,shape:landing.shape!,index,at,duration:Math.min(180,plan.duration-at),scale:['splash','ally-splash'].includes(landing.shape!)&&index>0?.60:1});
     });
   }else for(const [id,at]of legacy.offsets)result.offsets.set(id,at);
   const reactions=events.filter(e=>e.kind==='reaction');
@@ -55,6 +55,7 @@ export function applyV5Presentation(plan:EffectPlan, legacy:StatusPresentation, 
     for(const status of actor.statuses){
       if(!statusIdentity(status.id)||source!.after.find(a=>a.id===actor.id)?.statuses.some(s=>s.id===status.id))continue;
       // Explicit before/after state also covers consumed primers; no stale body marks.
+      if(result.beats.some(b=>b.kind==='expire'&&b.statusId===status.id&&b.targetId===actor.id))continue;
       result.beats.push({kind:'expire',statusId:status.id as VisualStatusId,sourceId:actor.id,targetId:actor.id,stacks:status.stacks,at:impact,duration:Math.min(200,plan.duration-impact)});
     }
   }
@@ -62,15 +63,16 @@ export function applyV5Presentation(plan:EffectPlan, legacy:StatusPresentation, 
 }
 
 /** Integration accepts S4's v4.version=1 container with version=2 events. */
-export function v5SourceForPlan(plan:EffectPlan,battle:unknown):V5Source|undefined {
+export function v5SourceForPlan(plan:EffectPlan,battle:unknown,before?:{actors:StatusSnapshot[]}):V5Source|undefined {
   if((plan as V5Plan).v5)return (plan as V5Plan).v5;
   const b=battle as {v4?:{version:number;events?:unknown[]};actors?:StatusSnapshot[];log?:{kind:string;actorId:string;targetId:string;amount:number;text:string}[]}|undefined;
   if(b?.v4?.version!==1||!b.log)return;
-  const first=plan.events.find(e=>e.type!=='action_start');if(!first)return;
-  const end=Math.min(first.actionId,b.log.length);
-  let start=-1;
-  for(let i=end-1;i>=first.seq-1;i--){const l=b.log[i]!;if(l.actorId===first.actorId&&first.targetIds.includes(l.targetId)&&l.amount===first.amount&&l.text===first.note){start=i-first.seq+1;break;}}
+  const planEvents=plan.events.filter(e=>e.type!=='action_start'),first=planEvents[0];if(!first)return;
+  const types:Record<string,string>={'reaction-damage':'damage',damage:'damage',dot:'damage',detonate:'damage',shared:'damage',reflect:'damage',heal:'heal',revive:'heal',survive:'heal',shield:'shield',defeat:'death',status:'status_apply',expire:'status_expire',phase:'boss_phase',summon:'spawn'};
+  const matches=(e:typeof first,index:number)=>{const l=b.log![index];return l&&types[l.kind]===e.type&&l.actorId===e.actorId&&e.targetIds.includes(l.targetId)&&l.amount===e.amount&&(l.text===e.note||e.note==='Clutch heal');};
+  const end=Math.min(first.actionId,b.log.length);let start=-1;
+  for(let i=end-1;i>=first.seq-1;i--){const candidate=i-first.seq+1;if(matches(first,i)&&planEvents.every(e=>matches(e,candidate+e.seq-1))){start=candidate;break;}}
   if(start<0)return;
   const events=readV5Events(b.v4.events).filter(e=>e.logIndex>start&&e.logIndex<=end&&(plan.skillId==='round-status'?e.stage==='round-end':e.stage==='action'));
-  return events.length?{logStart:start,events,before:b.actors??[],after:b.actors??[]}:undefined;
+  return events.length?{logStart:start,events,before:before?.actors??b.actors??[],after:b.actors??[]}:undefined;
 }

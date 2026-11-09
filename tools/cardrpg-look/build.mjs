@@ -42,7 +42,7 @@ const result = await build({ configFile: false, root: web, envDir: false, public
       return `export default window.__cardAssets[${JSON.stringify(key)}];`;
     },
   }],
-  define: { 'process.env.NODE_ENV': '"production"' }, resolve: { dedupe: ['react', 'react-dom'] },
+  define: { 'process.env.NODE_ENV': '"production"', '__LOOK_LIVE__': process.env.LOOK_LIVE==='1'?'true':'false' }, resolve: { dedupe: ['react', 'react-dom'] },
   build: { write: false, minify: true, lib: { entry: resolve(root, process.env.LOOK_ENTRY || 'tools/cardrpg-look/offline.tsx'), name: 'CardRpgDepth', formats: ['iife'] } } });
 const output = (Array.isArray(result) ? result : [result]).flatMap(r => r.output);
 const js = output.filter(f => f.type === 'chunk').map(f => f.code).join('\n');

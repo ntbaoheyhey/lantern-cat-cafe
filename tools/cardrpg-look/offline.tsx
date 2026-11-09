@@ -10,9 +10,13 @@ import '../cardrpg-big/demo-tools.css';
 import '../../apps/web/src/game/cardrpg/look-tokens.css';
 import { isLookV2, setLookV2, subscribeLookV2 } from '../../apps/web/src/game/squad/turn3d/look-v2';
 import { isReadableBattle, setReadableBattle, subscribeReadableBattle } from '../../apps/web/src/game/squad/turn3d/look-b2';
+import { installLiveProbe } from './skills-v5/full/live-dev';
 import { B2Gallery } from './b2-gallery';
 import { LookAtelier } from './LookAtelier';
+declare const __LOOK_LIVE__: boolean;
+const live=typeof __LOOK_LIVE__!=='undefined'&&__LOOK_LIVE__;
 setLookV2(true);
+if(live)installLiveProbe();
 const developer = new URLSearchParams(location.search).get('dev') === '1';
 
 type Panel = { host: HTMLElement; kind: 'mechanics' | 'studio' | 'atelier'; close: () => void };
@@ -61,7 +65,7 @@ function Demo() {
     } });
   };
   return <div className={`dp-offline-demo ${panel ? 'b2-demo-lab-open' : ''}`}>
-    <DepthApp offline /><aside className="look-b2-reference" aria-label="Demo references">REFERENCE: reports/cardrpg-look/b2/B2-REPORT.md · docs/design/cardrpg/LOOK-BIBLE.md · tools/cardrpg-look/build.mjs</aside>
+    <DepthApp offline gameplayV4={live} skillsV5={live} /><aside className="look-b2-reference" aria-label="Demo references">REFERENCE: reports/cardrpg-look/b2/B2-REPORT.md · docs/design/cardrpg/LOOK-BIBLE.md · tools/cardrpg-look/build.mjs</aside>
     {header && createPortal(<div className="dp-demo-tools" aria-label="Demo tools">
       {developer && !panel && <DemoTools open={open} />}
       <B2Gallery />

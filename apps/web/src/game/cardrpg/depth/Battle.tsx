@@ -39,7 +39,7 @@ export function BattleView({ m }: { m: DepthModel }) {
   const plates = useRef(new Map<string, HTMLDivElement>());
   const numbers = useRef(new Map<string, HTMLDivElement>());
   const callouts = useRef(new Map<string, HTMLDivElement>());
-  const statusView = useMemo(() => lookV2 && m.plan ? applyV5Presentation(m.plan,statusPresentation(m.plan,m.battle?.log ?? []),v5SourceForPlan(m.plan,m.battle)) : undefined,[lookV2,m.plan,m.battle?.log.length]);
+  const statusView = useMemo(() => lookV2 && m.plan ? applyV5Presentation(m.plan,statusPresentation(m.plan,m.battle?.log ?? []),v5SourceForPlan(m.plan,m.battle,m.visualBattle ?? undefined)) : undefined,[lookV2,m.plan,m.battle?.log.length]);
   const statusViewRef = useRef(statusView); statusViewRef.current = statusView;
   const lastBattle = useRef(m.battle!);
   const view = useRef<SceneView | null>(null);

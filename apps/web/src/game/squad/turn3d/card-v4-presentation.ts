@@ -1,7 +1,7 @@
 /** Read-only compatibility with A's optional events-v4 version 1 contract.
  * No rules import: older battles and unknown future versions stay unchanged. */
 export interface PresentationEventV4 {
-  version: 1; sequence: number; round: number; kind: string; text: string;
+  version: 1 | 2; actionId?: number; stage?: string; logIndex?: number; sequence: number; round: number; kind: string; text: string;
   actorId?: string; targetId?: string;
   crew?: string; marks?: number; threshold?: number; contributors?: string[];
   bossId?: string; from?: number; to?: number; retiredIds?: string[];
@@ -14,8 +14,9 @@ export interface PresentationV4 {
 const object = (value: unknown): value is Record<string, unknown> => !!value && typeof value === 'object';
 const ordinal = (value: unknown): value is number => Number.isSafeInteger(value) && (value as number) >= 0;
 export function presentationEventV4(value: unknown): value is PresentationEventV4 {
-  if (!object(value) || value.version !== 1 || !ordinal(value.sequence)
+  if (!object(value) || ![1,2].includes(value.version as number) || !ordinal(value.sequence)
     || !ordinal(value.round) || typeof value.kind !== 'string' || typeof value.text !== 'string') return false;
+  if (value.version === 2 && (!ordinal(value.actionId) || !ordinal(value.logIndex) || !['setup','action','round-end'].includes(String(value.stage)))) return false;
   if (value.kind === 'crew-active') return ['door', 'kettle', 'table', 'lantern'].includes(String(value.crew))
     && ordinal(value.marks) && [2, 4].includes(value.threshold as number)
     && Array.isArray(value.contributors) && value.contributors.every(id => typeof id === 'string');

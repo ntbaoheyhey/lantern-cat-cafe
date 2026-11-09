@@ -23,7 +23,7 @@ for(const row of source.fixtures)for(const action of row.actions){
  }
 }
 export function fixtureFrame(row:Row,action:Action){
- const battle=R.createBattle({...row.initial,gameplayV4:false} as unknown as R.BattleSetup);
+ const battle=R.createBattle({...row.initial,gameplayV4:false,skillsV5:false} as unknown as R.BattleSetup);
  const logs=row.log.slice(action.logStart,action.logEnd),marker=logs.find(e=>e.kind==='action'||e.kind==='enemy-action');
  const skillId=marker?.skillId||'round-status';
  battle.round=action.round;battle.queue=[action.actorId,...battle.queue.filter(id=>id!==action.actorId)];battle.log=row.log.slice(0,action.logEnd) as R.BattleEvent[];
