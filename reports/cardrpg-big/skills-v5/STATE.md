@@ -1,8 +1,8 @@
 # Skills V5 lane A state
 Base: d22f47cb8 (A5 closing tip, DRAFT406; paused WIP c7b0c498f preserved).
 Runtime baseline: 0e1e15180108b443ce2e615ea54272b907cc8bb0.
-Phase: S2 validated; S3 next; user explicitly resumed 2026-11-09.
-Branch: codex/cardrpg-v5a-s2-2026-11-09; S1 closing tip31e7c2c7f.
+Phase: S3 kits/enemies/policy validation; user explicitly resumed 2026-11-09.
+Branch: codex/cardrpg-v5a-s3-2026-11-09; S2 closing tip0d0a377ea.
 Done: git status/log recorded; handoff found under memory/; rules/outboxes read.
 Done: ON/OFF artifacts match 20,929,841 bytes and 9e25f238 / 9158b51e.
 Done: no live A5 job found; inherited recent commits are the documented paused WIP.
@@ -19,8 +19,8 @@ Done: S1 DRAFT408 on407, runtime423e430f6/evidencee8b8254c8.
 S2 applied from staged resolver; lethal unmarked Wildfire edge added before tests.
 Done: S2 12 focused/six gates PASS incl first-attempt E2E421; OFF8250 + fallback exact; audit PASS.
 Done: S2 DRAFT410 on408; runtime8412383c2/evidencedabd2a4e5.
-Next: apply and validate staged S3.
-Draft S3 kits/policy/enemies at /tmp/cardrpg-v5a-s3, NOT applied/tested; no phase bypass.
+Done: S3 17 focused tests PASS first attempt. Six source gates and compatibility next.
+S3 kits/policy/enemies applied; no S4 source applied yet.
 Spec conflict: Cinnamon keep-kit has no multi-target; revive-only ultimate cannot fire without a fallen ally. Keep/report, no silent redesign.
 Next phases: S0 -> S1 -> S2 -> S3 -> S4 -> S5 -> S8 -> S6; S7 after S3.
 Acceptance: 20001-20500 UNUSED; TRAIN 1-500 only.

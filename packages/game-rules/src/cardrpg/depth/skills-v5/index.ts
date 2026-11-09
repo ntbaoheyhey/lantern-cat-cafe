@@ -12,3 +12,6 @@ export function setSkillsV5(state:DepthAccount,enabled:boolean):DepthAccount {
 
 export * from './shapes';
 export * from './reactions';
+
+export * from './kits';
+export * from './enemies';

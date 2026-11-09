@@ -1,4 +1,6 @@
-import { executeShapeV5, shapeV5, type ShapeV5 } from './skills-v5/shapes';
+import { kitSkillV5 } from './skills-v5/kits';
+import { enemyActionV5, enemyIntentV5 } from './skills-v5/enemies';
+import { executeShapeV5, shapeV5, weakestV5, type EffectV5, type ShapeV5 } from './skills-v5/shapes';
 import { crumbBurstV5, directReactionV5, spreadV5, type ReactionRuntimeV5 } from './skills-v5/reactions';
 import { beforeActionV5, consumeDazeV5, defenseV5, receivedV5, statusIdV5, statusRuleV5, tickStatusesV5, type StatusRuntimeV5 } from './skills-v5/statuses';
 import { clone } from '../internal';
@@ -9,7 +11,7 @@ import { boonValue } from './boons';
 import { challengeStatsV4, phaseBossV4, finishBossV4 } from './pacing-v4';
 import { Rng, deriveSeed } from '../../rng';
 import { CAT_BY_ID, ENEMY_BY_ID, hasAdvantage, SKILLS, STATUS_BY_ID, teamCombos } from './catalog';
-import { CONTRACT_VERSION, type Actor, type Battle, type BattleSetup, type Choice, type Effect, type Intent, type Skill, type StatusId } from './contract';
+import { CONTRACT_VERSION, type Actor, type Battle, type BattleSetup, type Choice, type Intent, type Skill, type StatusId } from './contract';
 
 const clamp = (n: number, lo: number, hi: number) => Math.max(lo, Math.min(hi, n));
 const hasEffect = (actor: Actor, id: string) => actor.setEffects.includes(id);
@@ -285,7 +287,8 @@ function setIntents(b: Battle) {
     const front=party.filter(p=>p.row==='front');
     const reachable=b.v4&&front.length?front:party;
     const target = spec.mechanic==='steal' && rear.length ? weakest(rear) : b.v4&&spec.mechanic==='snare'?weakest(reachable):reachable[roll(b,reachable.length)]!;
-    return {actorId:a.id,targetId:target.id,label:signature?(b.v4?enemyGuideV4(a.catalogId).intent:spec.intent):`${a.name} · ${!b.v4&&spec.mechanic==='heal'?'Cup refill':'basic pressure'}`,counter:b.v4?enemyGuideV4(a.catalogId).counter:spec.counter,power:signature?175:100,status:signature?spec.status:undefined,signature,interrupted:false};
+    const intent:Intent={actorId:a.id,targetId:target.id,label:signature?(b.v4?enemyGuideV4(a.catalogId).intent:spec.intent):`${a.name} · ${!b.v4&&spec.mechanic==='heal'?'Cup refill':'basic pressure'}`,counter:b.v4?enemyGuideV4(a.catalogId).counter:spec.counter,power:signature?175:100,status:signature?spec.status:undefined,signature,interrupted:false};
+    return b.initial.skillsV5?enemyIntentV5(b,a,intent):intent;
   });
 }
 function beginRound(b: Battle) {
@@ -313,6 +316,7 @@ function checkResult(b: Battle) {
 export function currentActor(b: Battle) { return b.actors.find(a => a.id === b.queue[0] && a.hp > 0); }
 export function targets(b: Battle, actor: Actor, skill: Skill): Actor[] {
   const foes=living(b,actor.side==='party'?'enemy':'party'), allies=living(b,actor.side);
+  if(b.initial.skillsV5&&shapeV5(skill)==='weakest'){const target=weakestV5(allies);return target?[target]:[];}
   if (skill.target==='self') return [actor];
   if (skill.target==='fallen') return b.actors.filter(a=>a.side===actor.side&&a.hp===0);
   if (skill.target==='ally'||skill.target==='allies') return allies;
@@ -325,13 +329,13 @@ export function targets(b: Battle, actor: Actor, skill: Skill): Actor[] {
 const defend: Skill = { id:'defend',catId:'',name:'Defend',description:'Gain 35 shield and Cozy. Panko also gains Riposte.',type:'defend',target:'self',cost:0,cooldown:0,charge:0,breakPower:0,effects:[{kind:'shield',power:35},{kind:'rally',status:'cozy'}],unlockLevel:1,unlockStars:1 };
 const wait: Skill = {...defend,id:'wait',name:'Pour energy',description:'Gain 1 shared energy. Use one action.',type:'support',effects:[{kind:'energy',power:1}]};
 export const COMMON_SKILLS = {defend,wait};
-export function skillById(id: string): Skill | undefined { return SKILLS[id] ?? COMMON_SKILLS[id as keyof typeof COMMON_SKILLS]; }
+export function skillById(id: string, v5 = false): Skill | undefined {const skill=SKILLS[id]??COMMON_SKILLS[id as keyof typeof COMMON_SKILLS];return v5&&skill?kitSkillV5(skill):skill;}
 export function energyCost(actor: Actor, skill: Skill) { return skill.cost + (skill.cost>0 && stacks(actor,'hush') ? 1 : 0); }
 export function legalChoices(b: Battle): Choice[] {
   const actor=currentActor(b);
   if (!actor||actor.side!=='party'||b.result) return [];
   return [...actor.skills,'defend',...(b.v4?[]:['wait'])].flatMap(id=>{
-    const skill=skillById(id)!;
+    const skill=skillById(id,b.initial.skillsV5)!;
     if ((!b.v4&&(energyCost(actor,skill)>b.energy || skill.charge>actor.charge)) || (b.v4&&skill.type==='ultimate'&&actor.turns<2) || (actor.cooldowns[id]??0)>0 || skill.effects.some(e=>e.kind==='revive')&&actor.passiveUsed) return [];
     return targets(b,actor,skill).map(t=>({actorId:actor.id,skillId:id,targetId:t.id}));
   });
@@ -349,8 +353,8 @@ function gearGrant(b:Battle,actor:Actor,target:Actor,effect:string,kind:'heal'|'
 function cleanseUniqueV4(b:Battle,actor:Actor,target:Actor){
   if(hasEffect(actor,'unique:gardenkey')&&actor.bonuses.gardenTurn!==actor.turns){actor.bonuses.gardenTurn=actor.turns;gearGrant(b,actor,target,'unique:gardenkey','heal',8);}
 }
-function executeEffect(b: Battle, actor: Actor, target: Actor, effect: Effect, skill: Skill) {
-  const power=Math.round((effect.power??0)*(1+.2*(b.initial.upgrades?.[skill.id]??0)));
+function executeEffect(b: Battle, actor: Actor, target: Actor, effect: EffectV5, skill: Skill) {
+  const power=Math.round((effect.power??0)*(1+.2*(b.initial.upgrades?.[skill.id]??0))*(b.initial.skillsV5?1+(effect.burnScaling??0)*stacks(target,'scald'):1));
   switch (effect.kind) {
     case 'hit': damage(b,actor,target,power,skill.breakPower,false,shapeV5(skill)); break;
     case 'shield': shield(b,actor,target,power+(actor.bonuses.shieldFlat??0));if(boonValue(b,'shieldHeal'))heal(b,actor,target,boonValue(b,'shieldHeal'));break;
@@ -365,7 +369,10 @@ function executeEffect(b: Battle, actor: Actor, target: Actor, effect: Effect, s
       break;
     case 'cleanse': {
       const before=target.statuses.length;
-      dispel(b,actor,target,'debuff');
+      if(b.initial.skillsV5&&effect.cleanseCount){
+        const removed=target.statuses.filter(s=>STATUS_BY_ID[s.id].kind==='debuff'&&STATUS_BY_ID[s.id].dispellable).slice(0,effect.cleanseCount);
+        target.statuses=target.statuses.filter(s=>!removed.includes(s));record(b,actor,target,'dispel',removed.length,'Removed debuffs');
+      }else dispel(b,actor,target,'debuff');
       if(before>target.statuses.length){shield(b,actor,target,actor.bonuses.cleanseShield??0);if(b.v4)cleanseUniqueV4(b,actor,target);else if(hasEffect(actor,'unique:gardenkey'))heal(b,actor,target,25);}
       if(before>target.statuses.length&&!actor.bonuses.cleanseProc){if(b.v4){shield(b,actor,target,boonValue(b,'cleanseExtraShield'));if(actor.bonuses.crewCleanse&&!actor.bonuses.crewCleansed){actor.bonuses.crewCleansed=1;shield(b,actor,target,actor.bonuses.crewCleanse);}}else b.energy=Math.min(10,b.energy+boonValue(b,'cleanseEnergy'));actor.bonuses.cleanseProc=1;}
       break;
@@ -442,8 +449,8 @@ export function act(b: Battle, choice: Choice): boolean {
   if (!legalChoices(b).some(c=>c.actorId===choice.actorId&&c.skillId===choice.skillId&&c.targetId===choice.targetId)) return false;
   const actor=currentActor(b)!;
   if(b.initial.skillsV5&&!beforeActionV5(b,actor,statusRuntimeV5)){b.choices.push({...choice});record(b,actor,actor,'action',0,'Bleed prevented the action',choice.skillId);finishAction(b,actor);return true;}
-  let skill=skillById(choice.skillId)!, target=b.actors.find(a=>a.id===choice.targetId)!;
-  if(b.initial.skillsV5&&consumeDazeV5(b,actor,statusRuntimeV5)){const basic=skillById(actor.skills[0]!)!;skill={...basic,effects:basic.effects.map(e=>({...e,...(e.power!==undefined?{power:e.power*.5}:{})}))};target=targets(b,actor,skill)[0]??target;}
+  let skill=skillById(choice.skillId,b.initial.skillsV5)!, target=b.actors.find(a=>a.id===choice.targetId)!;
+  if(b.initial.skillsV5&&consumeDazeV5(b,actor,statusRuntimeV5)){const basic=skillById(actor.skills[0]!,true)!;skill={...basic,effects:basic.effects.map(e=>({...e,...(e.power!==undefined?{power:e.power*.5}:{})}))};target=targets(b,actor,skill)[0]??target;}
   const description = actionDescription(b, actor, target, skill);
   b.choices.push({...choice});
   actor.bonuses.healProc=0;actor.bonuses.cleanseProc=0;
@@ -526,7 +533,11 @@ export function enemyAct(b: Battle): boolean {
     if(controller?.bonuses.crewSuppress&&!controller.bonuses.crewSuppressed){controller.bonuses.crewSuppressed=1;heal(b,controller,controller,controller.bonuses.crewSuppress);}
   };
   if(b.v4&&impaired&&!b.initial.skillsV5) creditSuppression();
-  if (impaired) damage(b,actor,target,b.initial.skillsV5?(spec.tier==='boss'?100:50):40,0,b.v4&&spec.mechanic!=='steal');
+  if (impaired) {
+    if(b.initial.skillsV5&&actor.catalogId==='spool-ram')actor.bonuses.v5Charge=0;
+    damage(b,actor,target,b.initial.skillsV5?(spec.tier==='boss'?100:50):40,0,b.v4&&spec.mechanic!=='steal');
+  }
+  else if(b.initial.skillsV5&&enemyActionV5(b,actor,intent,target,{damage,apply:applyStatus,shield,heal,roll,record})){/* V5 chapter-one mechanic resolved. */}
   else if (b.v4&&signature&&quiet&&['heal','shield'].includes(spec.mechanic)) {
     // Suppression spends the committed utility turn; it does not replace it with a hit.
     creditSuppression();

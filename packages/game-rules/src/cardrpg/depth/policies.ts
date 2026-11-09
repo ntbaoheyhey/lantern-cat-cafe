@@ -1,3 +1,4 @@
+import { actorValueV5, actionBonusV5 } from './skills-v5/policy';
 import { clone } from '../internal';
 import { Rng, deriveSeed } from '../../rng';
 import { act, currentActor, enemyAct, legalChoices, skillById, stacks } from './battle';
@@ -33,9 +34,9 @@ function valueV4(b: Battle, a: Actor): number {
   return n;
 }
 function value(b: Battle): number {
-  const party=b.actors.filter(a=>a.side==='party').reduce((n,a)=>n+(b.v4?valueV4(b,a):actorValue(a)),0);
+  const party=b.actors.filter(a=>a.side==='party').reduce((n,a)=>n+(b.initial.skillsV5?actorValueV5(b,a):b.v4?valueV4(b,a):actorValue(a)),0);
   if (b.result) return b.result === 'party' ? 100000 + party * 2 - b.round * 40 - b.choices.length * 3 : -100000;
-  const foes=b.actors.filter(a=>a.side==='enemy').reduce((n,a)=>n+(b.v4?valueV4(b,a):actorValue(a))*(a.catalogId === 'binding-thread' ? .2 : 1),0);
+  const foes=b.actors.filter(a=>a.side==='enemy').reduce((n,a)=>n+(b.initial.skillsV5?actorValueV5(b,a):b.v4?valueV4(b,a):actorValue(a))*(a.catalogId === 'binding-thread' ? .2 : 1),0);
   const pressure=b.actors.filter(a=>a.side==='enemy'&&a.hp>0).reduce((n,a)=>{
     const intent=b.intents.find(i=>i.actorId===a.id);
     return n+a.break*(intent?.signature?12:5)+(intent?.interrupted?35:0);
@@ -47,7 +48,7 @@ function automatic(b: Battle): Choice {
   const scored = legalChoices(b).map(choice => {
     const preview = previewCopy(b);
     act(preview, choice);
-    let score = value(preview) + planPreference(b,choice);
+    let score = value(preview) + planPreference(b,choice) + (b.initial.skillsV5?actionBonusV5(b,preview,choice):0);
     for (const actor of b.actors) {
       const after = preview.actors.find(candidate => candidate.id === actor.id)!;
       // Removing an enemy also removes its future turns, even when little HP remains.
@@ -64,7 +65,7 @@ function automatic(b: Battle): Choice {
   return scored[0]!.choice;
 }
 function ordinary(b: Battle, policy: 'auto' | 'greedy'): Choice {
-  if (policy === 'auto') return automatic(b);
+  if (policy === 'auto'||b.initial.skillsV5) return automatic(b);
   const choices=legalChoices(b);
   const offensive=choices.filter(c=>skillById(c.skillId)!.effects.some(e=>['hit','execute','chain'].includes(e.kind)));
   return [...offensive].sort((a,c)=>{
@@ -87,7 +88,7 @@ export function chooseAction(b: Battle, policy: Policy): Choice {
       if(currentActor(preview)?.side==='enemy')enemyAct(preview);
       else act(preview,ordinary(preview,'greedy'));
     }
-    return {choice,score:value(preview)};
+    return {choice,score:value(preview)+(b.initial.skillsV5?actionBonusV5(b,preview,choice):0)};
   });
   scored.sort((a,c)=>c.score-a.score||a.choice.skillId.localeCompare(c.choice.skillId)||a.choice.targetId.localeCompare(c.choice.targetId));
   return scored[0]!.choice;
