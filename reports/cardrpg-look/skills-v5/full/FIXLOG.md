@@ -136,3 +136,9 @@ Viewed12ultimate peak tiles: Clover glass strongly distinct; Mallow flame readab
 Isolated600frame sampler after1200warmframes: Mochi3047256B/Soot900248B/Yarn773820B, including repeated CSS Color.setStyle regex allocations and target-array reset. Cache parsed recipe/status colours during preparation, reuse target slots and pass cached colours to pooled lights. Sampling includes JS numeric boxing; zero remains unproven until measured. Repro allocation.mjs on immutable cinema2; newopt1artifact+allocation/casts/cold pending. Prior sample retained.
 
 MX5 colour API typecheck caught two legacy illuminate callers in unchanged tests. Optional cached colours preserve the six-argument API; renderer supplies prepared colours. opt1 typecheck failure retained, opt1b verifies.
+
+### B-MX-007 attempt3 material/ground attribution
+Cinema2 review traced faint Inkcap/Velvet signatures to glass/soft opacity multiplied twice, and repeated circles to the universal B2 impact ring beneath an already-authored ground layer. Third scoped fix removes that duplicate ring for authored recipes only, gives ink-spore a rounded canopy/stem with ceramic depth, bends Velvet veil as cloth with preserved per-layer alpha, widens its three needles. Face masks still gate all fragments; no action clock/events changed. Register cinema3 fullcat sheet and changedInkcap/Velvetcost/casts/faces, plus final P-shot checks; earlier artifacts kept.
+
+### B-MX-003 attempt1 measured / attempt2
+Cached-colour opt1b sampler: Mochi2300084B,Soot457684B,Yarn388844B (24.5%,49.2%,49.8%lower); setStyle/regex samples removed,zero stillMISS. Remaining attribution in render/drawRecipe and begin; replace hot array iterators with indexed loops, preserve rendering order. No numeric/timing changes. Thirdsourceopt2artifact registered; all prior samples kept.
