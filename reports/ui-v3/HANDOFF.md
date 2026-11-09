@@ -1,11 +1,11 @@
 # Demo integration handoff
 
-Current milestone: U2 (fallback living cafe), branch codex/cardrpg-ui-v3-u2-2026-11-09, stacked on U1 draft #429 and U0 #428. U3–U9 still in progress; not a final demo.
+Current milestone: U3 (compact sheets), branch codex/cardrpg-ui-v3-u3-2026-11-09, stacked on U2 draft #430, U1 #429 and U0 #428. U4–U9 still in progress; not a final demo.
 
 Enable via ?ui=v3 or VITE_UI_V3=1. Product defaults OFF; ?ui=legacy overrides demo default. Review tools need ?dev=1 in both shells.
 
 Owned changes: depth/App.tsx shell integration, ui-v3/**, player-mode gating, UI reports/tools/proposal. B paths remain byte-identical; no ui-seams. Preserve B renderer files when merging, and adapt our overlay if its DOM contracts change.
 
-Checklist for final integration: Home → Night Patrol → Prepare → Fight → Result → Home; Recruit and Odds; Relic · Fuji on every non-battle sheet; export/import; old shell with ui=legacy. Still pending: compact sheets, battle overlay, recruit ceremony, final offline build and gates.
+Checklist for final integration: Home → Night Patrol → Prepare → Fight → Result → Home; Recruit and Odds; Relic · Fuji on every non-battle sheet; export/import; old shell with ui=legacy. Still pending: Prepare/Result, advanced route controls, battle overlay, recruit ceremony, final offline build and gates.
 
-G1 PASS; U2 browser6/6; compatibility source identity231files; G7 default entry−3B. G6 idle fallback PASS but production cold-interactive unresolved. See u2/HOME-DECISION.md for retained 3D and fallback measurements.
+G1 PASS; U3 browser11/11, axe20screen/look pairs0serious/critical; compatibility source identity231files; G7 default entry−3B. G6 idle fallback PASS but production cold-interactive unresolved. See u2/HOME-DECISION.md for retained 3D and fallback measurements.

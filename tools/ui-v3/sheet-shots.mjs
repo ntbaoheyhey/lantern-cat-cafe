@@ -1,0 +1,4 @@
+import {chromium} from '../../apps/web/node_modules/@playwright/test/index.mjs';
+import{execFileSync}from'node:child_process';import{mkdirSync}from'node:fs';
+const out=process.argv[2]??'u3',browser=await chromium.launch({headless:true}),page=await browser.newPage({viewport:{width:1280,height:720},reducedMotion:'reduce'});mkdirSync(`reports/ui-v3/${out}`,{recursive:true});
+try{await page.goto('http://127.0.0.1:5950/tools/ui-v3/index.html?ui=v3');for(const name of ['Cats','Team','Bag']){await page.getByRole('button',{name,exact:true}).click();await page.waitForTimeout(300);await page.screenshot({path:`/tmp/ui-v3-${name}.png`});execFileSync('/tmp/ui-v3-python/bin/python',['-c','from PIL import Image;import sys;Image.open(sys.argv[1]).save(sys.argv[2],quality=80)',`/tmp/ui-v3-${name}.png`,`reports/ui-v3/${out}/${name}.webp`]);await page.keyboard.press('Escape');}}finally{await browser.close()}

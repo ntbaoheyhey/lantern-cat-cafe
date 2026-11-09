@@ -14,8 +14,8 @@ import type { DepthModel } from './model';
 
 const categories = ['Equipment', 'Materials', 'Consumables', 'Collectibles', 'Currencies'] as const;
 
-export function Inventory({ m }: { m: DepthModel }) {
-  const [category, setCategory] = useState<typeof categories[number]>('Equipment');
+export function Inventory({ m, initialCategory = 'Equipment' }: { m: DepthModel; initialCategory?: typeof categories[number] }) {
+  const [category, setCategory] = useState<typeof categories[number]>(initialCategory);
   const [slot, setSlot] = useState('all');
   const [rarity, setRarity] = useState('all');
   const [setId, setSetId] = useState('all');
