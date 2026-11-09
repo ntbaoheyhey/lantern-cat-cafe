@@ -1045,3 +1045,9 @@ All source gates1773web/421E2E/digest5/startup parityPASS.144cast windows16.8ms+
 Audit29/31PASS; opponent luminance0.009–0.039<0.18 andboss1.52–1.66x<2x remainMISS. Heap+653272bytes/GPU0growth over5battles; evidence59.85MB. Preview overlaps disclosed.
 Ledger 18a887bf084000b186e7d2d3e8f5fc8305ff4443; report reports/cardrpg-look/b2/B2-REPORT.md and INTEGRATION.md. A must adopt B-owned stack/assets separately, preserve App ?dev=1 gating and exact earned v1/v2 forwarding; no A5 rebase or schema change.
 No protected/meta/rules edits, Docker/CUA/modelhelpers, merge/deploy/mainpush. Later aesthetic/performance optimization requires a separate measured change; no repeated matrices.
+
+## 2026-11-09T00:26:12Z V5LOOK-V0 CLAIM
+V5LOOK started from 598fd8019e62b7203dcfac4033f74bb64ba0dac5: presentation of statuses/multi-target/reactions; no rules edits
+Single native headless agent; B2 worktree, branch codex/cardrpg-v5look-v0-2026-11-09. Finder leftovers preserved on wip/b2-leftover-2026-11-09.
+V0 badges/all16 marks/log beats/stagger/Crumb Burst; lookV2 only. No A5 worktree, protected paths, model calls, merge or deploy.
+A latest pause handoff read; no skillsV5 events v2 fixture DONE. V3 remains conditional; V0 will report then request schema if absent.
