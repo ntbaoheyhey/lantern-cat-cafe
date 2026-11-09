@@ -515,14 +515,15 @@ export class CardEffects {
     camera: T.Camera, quality: Quality, calm: boolean, stagger = false) {
     this.setColor(this.baseColor,recipe.color);
     this.setColor(this.accentColor,recipe.accent);
+    const density = quality === 'low' ? .5 : quality === 'medium' ? .8 : 1;
+    const emitterDensity=1/Math.sqrt(this.playbackSpeed);
     for (let layerIndex=0;layerIndex<recipe.layers.length;layerIndex++) {
       const layer=recipe.layers[layerIndex]!;
       const shape=this.presentation?.landings?.[0]?.shape;
       if(stagger&&!recipe.authored&&(shape==='splash'||shape==='multi-hit'||shape==='bounce')&&layer.anchor!=='caster')continue;
       const landings=stagger&&recipe.authored&&layer.anchor!=='caster'?this.presentation?.landings:undefined;
       const anchors = landings?.length || (layer.anchor === 'all-targets' ? this.targets.length : 1);
-      const density = quality === 'low' ? .5 : quality === 'medium' ? .8 : 1;
-      const count = Math.max(1, Math.ceil(layer.count * density * (layer.emitter?1/Math.sqrt(this.playbackSpeed):1)));
+      const count = Math.max(1, Math.ceil(layer.count * density * (layer.emitter?emitterDensity:1)));
       for (let target = 0; target < anchors; target++) {
         const landing=landings?.[target];
         const targetIndex=landing?this.targetIds.indexOf(landing.targetId):target;
@@ -532,15 +533,13 @@ export class CardEffects {
         const progress = (localProgress - layer.start) / (layer.end - layer.start);
         if (progress < 0 || progress > 1) continue;
         this.focus.copy(layer.anchor === 'caster' ? this.caster : this.targets[targetIndex]!);
-        for (let index = 0; index < count; index++) {
-          // Midnight service's lavender lanterns used to hide bodies throughout recovery.
-          const burst = this.atelier && this.presentation?.bursts.includes(this.targetIds[target]!) && layer.primitive === 'lantern';
-          const age = this.actionFrame ? this.actionFrame.elapsed-this.actionFrame.plan.beats[2]!.start-delay : 0;
-          this.alphaFactor=burst ? .42*Math.max(.12,1-Math.max(0,age)/180) : 1;
-          this.sizeFactor=burst ? .62 : landing?.scale??1;
-          this.place(layer, progress, index, count, camera, calm);
-          this.alphaFactor=1;this.sizeFactor=1;
-        }
+        // The envelope is shared by this target's particles, not recomputed per instance.
+        const burst = this.atelier && this.presentation?.bursts.includes(this.targetIds[target]!) && layer.primitive === 'lantern';
+        const age = this.actionFrame ? this.actionFrame.elapsed-this.actionFrame.plan.beats[2]!.start-delay : 0;
+        this.alphaFactor=burst ? .42*Math.max(.12,1-Math.max(0,age)/180) : 1;
+        this.sizeFactor=burst ? .62 : landing?.scale??1;
+        for (let index = 0; index < count; index++) this.place(layer, progress, index, count, camera, calm);
+        this.alphaFactor=1;this.sizeFactor=1;
       }
     }
   }

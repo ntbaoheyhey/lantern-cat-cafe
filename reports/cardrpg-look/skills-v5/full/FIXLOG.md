@@ -142,3 +142,8 @@ Cinema2 review traced faint Inkcap/Velvet signatures to glass/soft opacity multi
 
 ### B-MX-003 attempt1 measured / attempt2
 Cached-colour opt1b sampler: Mochi2300084B,Soot457684B,Yarn388844B (24.5%,49.2%,49.8%lower); setStyle/regex samples removed,zero stillMISS. Remaining attribution in render/drawRecipe and begin; replace hot array iterators with indexed loops, preserve rendering order. No numeric/timing changes. Thirdsourceopt2artifact registered; all prior samples kept.
+
+### B-MX-003 attempt2 measured / attempt3
+Indexed loops opt2: isolated600frames Mochi495888B/Soot176076B/Yarn126336B,83.7%/80.4%/83.7% below original. Remaining dominant sampled path drawRecipe (numeric envelopes / property writes); zero remainsMISS. Third scoped attempt hoists target-shared alpha/size and quality density outside particle loop; identical math/order per particle, no timing/event changes. Preserve every sample; if nonzero markPARTIAL at attempt cap.
+
+MX validation queue consolidation05:53UTC: opt1b allocation and cinema1/2 sheet/cost receipts retained. Their pending cast wrappers3919/99502/5950 had no child and never acquired the timing lease; cancelled along with parents2951/97402/99045 before any sample. Current cinema3/opt3 verify changed source; all completed/failed samples remain immutable. Transfer milestone shots/layout/face/UI/rootgates/E2E to opt3 to avoid testing superseded source.
