@@ -1,0 +1,144 @@
+{
+  "method": "Exact delivered full-artifact input hash comparison against committed live worktree; no rebuild or timing sample. Includes all build-declared runtime/source and source-asset files.",
+  "artifactSha256": "edd92234d18c0fbf5821baa60716dfe4e148b3d286c9bbde250d89f65905709f",
+  "buildHead": "1eded41021aa7dd9de6349645338e9623628bf7b",
+  "currentHead": "ced2555e00c9b66ad45527cf035e0a649dd634e8",
+  "rows": [
+    {
+      "field": "sourceHashes",
+      "checked": 2930,
+      "mismatches": []
+    },
+    {
+      "field": "sourceAssetHashes",
+      "checked": 291,
+      "mismatches": [
+        {
+          "path": "assets/cardrpg2/models/panko.glb",
+          "expected": "1b16ad3d13dc5d22f40028deb71f961c4983b64f92ca40142a152c30e25cdd12",
+          "actual": "74127ecfce48c817deba33fbe83a7d4bc0f1e9f406bf6a25189a5e3918cf9e5a"
+        },
+        {
+          "path": "assets/cardrpg2/models/binding-thread.glb",
+          "expected": "074449ad8dd872c4f05cb76c07d4f080f8cc52a3ee5c39e2ccec071d6f47d8be",
+          "actual": "2ade57ef05fde5db22d86246d018679aa008aacb9c7676079b427b29d3a07262"
+        },
+        {
+          "path": "assets/cardrpg2/models/biscuit.glb",
+          "expected": "841bc8ea7b76d93037aed35d34cfcf4ff7ff837e759774a2806e878882627644",
+          "actual": "967bb55ad745b333d5afb0405df86b7d2c6530cefa5f8c854c72f0ea11a713f5"
+        },
+        {
+          "path": "assets/cardrpg2/models/brioche.glb",
+          "expected": "0db94f484765adbd03e6fe16063e3aac6917cedb4b6b005ce21736d10d81e5d3",
+          "actual": "d554d8e8946cfea368bdafe611a6351e66dd5329a983d08b4a458a3c090712ad"
+        },
+        {
+          "path": "assets/cardrpg2/models/button-guard.glb",
+          "expected": "a21ca04516197097b3dc388942f19cccded8c59cd2e6eca25e93a2c6a2877259",
+          "actual": "f8373d6882e09b7fe487d7ed8472098f24e0be903ae1232d9c9031a7eb52c619"
+        },
+        {
+          "path": "assets/cardrpg2/models/cinnamon.glb",
+          "expected": "617c011486fa8ec5ca1e8cedfdacc877ad4577261f9e2da9fa3dca1e6e13ee3b",
+          "actual": "c33e933ffcc6c0f818b5c15b31387dd7a2f0f64ee3e6627197cf75b7c1db1c3d"
+        },
+        {
+          "path": "assets/cardrpg2/models/clover.glb",
+          "expected": "09f7234225936efa8f8445aa72995a0e1f3ac632f25b35c2666eb5ea7167a932",
+          "actual": "d3cbda072509146ec57985f6eaa463c26c70e1b0afe4b41df7300a01c6b2acb5"
+        },
+        {
+          "path": "assets/cardrpg2/models/crumb-sentinel.glb",
+          "expected": "06841e8fc8f082a287b288c224683a940684b87dd85aa3af53304c9d7ed04dfd",
+          "actual": "8203bfe37601513442b8dca7feb177b533228fdd8c5a588e4163182b02247418"
+        },
+        {
+          "path": "assets/cardrpg2/models/teacup-healer.glb",
+          "expected": "e7640fcd1addf9149c60e637bb8829e3568fe7489dcef17883e3e5fdf7bf1e58",
+          "actual": "42ac6bb3fe40521580d41a520576af39fea513d81dcb457d252065d6079b0e5f"
+        },
+        {
+          "path": "assets/cardrpg2/models/inkcap.glb",
+          "expected": "d0c0e3df406392bf9aaa4015e40e925a16f00506c160dd82918dfb9414d93fb4",
+          "actual": "196d80fd47c708def37265045ebdcd104e09a44064525d4f9bedb19e27191660"
+        },
+        {
+          "path": "assets/cardrpg2/models/pantry-crown.glb",
+          "expected": "93cc6761f30b116184879256dd6c78896b7dcde153c87ef717acd1827434d184",
+          "actual": "544fc8d17e8e3cf4dbe819968537bd6b92d60e8e1afe12c15fdffe83c3168433"
+        },
+        {
+          "path": "assets/cardrpg2/models/kettle-knight.glb",
+          "expected": "591f02ad5a40873536355e1ad4585d11eeaaca6f3e2ce03923705cd8855225ac",
+          "actual": "3fd9b7b4a2a1e73bb4fdce82127ea690842683764c685f486ac0e594360b0c1d"
+        },
+        {
+          "path": "assets/cardrpg2/models/pollen-scout.glb",
+          "expected": "e0b55e4bf222f8747098fbfe1b0a79eed9bc126b99978653bc1733361e3365cb",
+          "actual": "5fcbdbbf83011c75aabc39b7fe9488d27ebb08e1aaccc94823e45583a6bbdc4a"
+        },
+        {
+          "path": "assets/cardrpg2/models/mallow.glb",
+          "expected": "bb76b28592beedaaed28716102fa29a5914ceecafbd7733bf291500f7a098ae7",
+          "actual": "7a4148e196c6edec328080d6eadca6939f460a3009dd0dfc08daac6439553e05"
+        },
+        {
+          "path": "assets/cardrpg2/models/practice-cushion.glb",
+          "expected": "c4c92cb1840d6fa83c553a9849384f38e008b437413cb5c8ec86f8601e0657b8",
+          "actual": "27c617005cad3b588181b6e9af568690e4393d40f50dfa8121a9122b1e9a9554"
+        },
+        {
+          "path": "assets/cardrpg2/models/rain-spool.glb",
+          "expected": "6d7ac1bc84046c2ee523c23d3c2d5ee61b276059af99cc52245cd9d1631d4b02",
+          "actual": "42cbebadd578bd1e01327e1e7977619c91f5a088796e92a83018fdc160ac1769"
+        },
+        {
+          "path": "assets/cardrpg2/models/marigold.glb",
+          "expected": "770d039fc7d3646637b2acd418b428c1cbb36b1ffd21e1a20d275e9edcdbef40",
+          "actual": "c937fdd0263d39a572c3448cbb1adf7e04fc87d1e0c674e226fab5245d7ba8a6"
+        },
+        {
+          "path": "assets/cardrpg2/models/sock-skipper.glb",
+          "expected": "02579a20ea851f5d6638618fac495cbdd31a299c8ebe8dee54780e39bda57d8d",
+          "actual": "8457f9df0dd3269e261381b7eb76151d78a5887b44c159d7827debe4d99cc8ae"
+        },
+        {
+          "path": "assets/cardrpg2/models/mochi.glb",
+          "expected": "8583b9d4339062c0cd28dbc418c16155dc059e881e079772bc43818acb413fd5",
+          "actual": "ea65658d73a010984b52948b7e71901c5c205dbedac7f97eb788abca5feb6893"
+        },
+        {
+          "path": "assets/cardrpg2/models/spool-ram.glb",
+          "expected": "7f8f797a7dc82480cb841e007bc6e249eab06a81aa600abd5280b48cef8be496",
+          "actual": "9d7434b5aea300e92a55616c7197f4311283e0a1d96cdf6bd2b4b67de332a620"
+        },
+        {
+          "path": "assets/cardrpg2/models/needle-moth.glb",
+          "expected": "40744b2d1b8caa8558845a0bdbccaff5264d1f1d215030784daa70a04a1a26e5",
+          "actual": "11335b8e194ade91ba990898d41b66472dd1749daf8cb98a91628c4c905b600a"
+        },
+        {
+          "path": "assets/cardrpg2/models/sorrel.glb",
+          "expected": "9d019452e9f8d657ef1a68197ea4e60519d62c7e1d7f88819ffc4ddece6cf82c",
+          "actual": "ba9fbd068f80a6e534af557aa1a33da92115cb8a5d23048104fa757d44b90d5d"
+        },
+        {
+          "path": "assets/cardrpg2/models/soot.glb",
+          "expected": "1d06f869d47ec5d2c20ff1a1ceb762e23c9498757ddad43ec07fd8176b2e790d",
+          "actual": "8ad5f7fbf6b396462db611f7c250c7531e22a5efab207dee413bef528854319a"
+        },
+        {
+          "path": "assets/cardrpg2/models/velvet.glb",
+          "expected": "f9b8d729310ca8b8a91a19ce3fc9c3beb1ac0c1cca7a6214a3fe458650a150f7",
+          "actual": "bebc3f14363a99c4f71c631093a04a1c5c7e940224044037ec93285278a74f7b"
+        },
+        {
+          "path": "assets/cardrpg2/models/yarn-giant.glb",
+          "expected": "8cdeca691a9165fcc089384a3e6dafbfcc66189c603378a00558ad67c2629a07",
+          "actual": "33357b16bf8a476001f8589cb3745c95d4545866e786fe9e3d57343c3f71d444"
+        }
+      ]
+    }
+  ]
+}

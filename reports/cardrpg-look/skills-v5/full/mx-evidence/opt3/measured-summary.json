@@ -1,0 +1,192 @@
+{
+  "root": "/tmp/cardrpg-v5full-mx/opt3",
+  "checks": [
+    {
+      "name": "shots",
+      "start": "2026-11-09T06:30:46.108Z",
+      "end": "2026-11-09T06:31:19.387Z",
+      "code": 0
+    },
+    {
+      "name": "collide",
+      "start": "2026-11-09T06:31:19.388Z",
+      "end": "2026-11-09T06:32:18.379Z",
+      "code": 0
+    },
+    {
+      "name": "faces",
+      "start": "2026-11-09T06:32:18.380Z",
+      "end": "2026-11-09T06:32:27.018Z",
+      "code": 0
+    },
+    {
+      "name": "face-analysis",
+      "start": "2026-11-09T06:32:27.019Z",
+      "end": "2026-11-09T06:32:27.884Z",
+      "code": 0
+    },
+    {
+      "name": "ui",
+      "start": "2026-11-09T06:32:27.885Z",
+      "end": "2026-11-09T06:32:48.506Z",
+      "code": 0
+    },
+    {
+      "name": "root-typecheck",
+      "start": "2026-11-09T06:40:44.321Z",
+      "end": "2026-11-09T06:40:58.416Z",
+      "code": 0
+    },
+    {
+      "name": "root-lint",
+      "start": "2026-11-09T06:40:58.418Z",
+      "end": "2026-11-09T06:41:11.303Z",
+      "code": 0
+    },
+    {
+      "name": "root-test",
+      "start": "2026-11-09T06:41:11.303Z",
+      "end": "2026-11-09T06:42:37.784Z",
+      "code": 1
+    },
+    {
+      "name": "root-build",
+      "start": "2026-11-09T06:42:37.786Z",
+      "end": "2026-11-09T06:42:57.093Z",
+      "code": 0
+    },
+    {
+      "name": "startup-prepare",
+      "start": "2026-11-09T06:42:57.139Z",
+      "end": "2026-11-09T06:42:58.153Z",
+      "code": 0
+    },
+    {
+      "name": "cold",
+      "start": "2026-11-09T06:51:34.903Z",
+      "end": "2026-11-09T06:55:37.214Z",
+      "code": 0
+    },
+    {
+      "name": "e2e",
+      "start": "2026-11-09T07:08:38.443Z",
+      "end": "2026-11-09T07:10:20.476Z",
+      "code": 0
+    },
+    {
+      "name": "startup",
+      "start": "2026-11-09T07:16:05.442Z",
+      "end": "2026-11-09T07:16:12.358Z",
+      "code": 0
+    },
+    {
+      "name": "contrast",
+      "start": "2026-11-09T07:16:12.360Z",
+      "end": "2026-11-09T07:16:12.410Z",
+      "code": 0
+    },
+    {
+      "name": "video",
+      "start": "2026-11-09T07:16:12.411Z",
+      "end": "2026-11-09T07:16:42.428Z",
+      "code": 0
+    }
+  ],
+  "shots": {
+    "samples": 51,
+    "overlaps": 0,
+    "outside": 0,
+    "unplaced": 0,
+    "failures": [],
+    "errors": [],
+    "contrastMin": 4.61824303658529,
+    "draws": 126,
+    "tris": 163043
+  },
+  "collide": {
+    "samples": 1176,
+    "overlaps": 0,
+    "outside": 0,
+    "unplaced": 0,
+    "failures": [],
+    "errors": []
+  },
+  "casts": {
+    "count": 18,
+    "errors": [],
+    "groups": [
+      {
+        "cpu": 1,
+        "samples": 12,
+        "maxMs": 16.8
+      },
+      {
+        "cpu": 4,
+        "samples": 6,
+        "maxMs": 16.8
+      }
+    ],
+    "draws": 110,
+    "tris": 119482
+  },
+  "cold": [
+    {
+      "cpu": 1,
+      "maxMs": 33.3,
+      "readyMs": 5702.4,
+      "postReadyMaxMs": 16.8,
+      "maxQueueSliceMs": 29.6,
+      "errors": []
+    },
+    {
+      "cpu": 1,
+      "maxMs": 33.4,
+      "readyMs": 5467.4,
+      "postReadyMaxMs": 16.8,
+      "maxQueueSliceMs": 29.3,
+      "errors": []
+    },
+    {
+      "cpu": 1,
+      "maxMs": 33.3,
+      "readyMs": 5478.7,
+      "postReadyMaxMs": 16.8,
+      "maxQueueSliceMs": 32.4,
+      "errors": []
+    },
+    {
+      "cpu": 4,
+      "maxMs": 150.1,
+      "readyMs": 8944.1,
+      "postReadyMaxMs": 33.4,
+      "maxQueueSliceMs": 43.6,
+      "errors": []
+    },
+    {
+      "cpu": 4,
+      "maxMs": 183.3,
+      "readyMs": 9708.4,
+      "postReadyMaxMs": 33.4,
+      "maxQueueSliceMs": 44.3,
+      "errors": []
+    },
+    {
+      "cpu": 4,
+      "maxMs": 183.3,
+      "readyMs": 9690.9,
+      "postReadyMaxMs": 33.3,
+      "maxQueueSliceMs": 42.4,
+      "errors": []
+    }
+  ],
+  "faces": {
+    "samples": 90,
+    "offenders": []
+  },
+  "ui": {
+    "count": 12,
+    "errors": [],
+    "keyboardEscape": true,
+    "reducedMotionStatic": true
+  }
+}

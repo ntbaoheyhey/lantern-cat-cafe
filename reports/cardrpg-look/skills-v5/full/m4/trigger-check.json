@@ -1,0 +1,53 @@
+{
+  "label": "M4 trigger delta",
+  "root": "/tmp/cardrpg-v5full-m4/trigger-check",
+  "cwd": "/Users/bao/taskbar-hero-cardrpg-v5live",
+  "env": {
+    "V5_ARTIFACT": "/tmp/cardrpg-v5full-m4/live-pilot/v5-live-pilot.html",
+    "V5_CASES": "/tmp/cardrpg-v5full-m4/live-pilot/trigger-cases2/cases.json"
+  },
+  "groups": [
+    {
+      "name": "trigger render and text",
+      "lock": true,
+      "jobs": [
+        {
+          "name": "triggers",
+          "args": [
+            "node",
+            "tools/cardrpg-look/skills-v5/full/triggers.mjs"
+          ],
+          "env": {}
+        },
+        {
+          "name": "faces",
+          "args": [
+            "node",
+            "tools/cardrpg-look/skills-v5/full/faces.mjs"
+          ],
+          "env": {}
+        },
+        {
+          "name": "face-analysis",
+          "args": [
+            "/Users/bao/tools/cardrpg-look/venv/bin/python",
+            "tools/cardrpg-look/skills-v5/full/faces.py",
+            "/tmp/cardrpg-v5full-m4/trigger-check/faces/face-frames.json",
+            "/tmp/cardrpg-v5full-m4/trigger-check/faces/faces.json"
+          ],
+          "env": {}
+        },
+        {
+          "name": "casts",
+          "args": [
+            "node",
+            "tools/cardrpg-look/skills-v5/full/casts.mjs"
+          ],
+          "env": {
+            "V5_IDS": "T1,T2,T3,T4,T5,T6,T7,T8"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "quality": 80,
+  "size": 512,
+  "detail": 256,
+  "scriptSha256": "83322913d3e0e418622cd6233ac08b3f0a7b4b2ef3801d28b2c21885dcb74251",
+  "method": "From raw GLB: resize textures, optionally resize normal/metallic-roughness separately, encode WebP, then meshopt high. No geometry simplification. Preview GLB retains uncompressed geometry for studio comparison.",
+  "rows": [
+    {
+      "owner": "crumb-sentinel",
+      "input": "assets/cardrpg-look/models/crumb-sentinel.glb",
+      "output": "reports/cardrpg-look/validation/l5/compression/crumb-r3-512-256-q80/crumb-sentinel.glb",
+      "preview": "reports/cardrpg-look/validation/l5/compression/crumb-r3-512-256-q80/crumb-sentinel-preview.glb",
+      "parameters": [
+        [
+          "resize",
+          "assets/cardrpg-look/models/crumb-sentinel.glb",
+          "reports/cardrpg-look/validation/l5/compression/crumb-r3-512-256-q80/crumb-sentinel-resized.glb",
+          "--width",
+          "512",
+          "--height",
+          "512"
+        ],
+        [
+          "resize",
+          "reports/cardrpg-look/validation/l5/compression/crumb-r3-512-256-q80/crumb-sentinel-resized.glb",
+          "reports/cardrpg-look/validation/l5/compression/crumb-r3-512-256-q80/crumb-sentinel-normal-sized.glb",
+          "--width",
+          "256",
+          "--height",
+          "256",
+          "--pattern",
+          "*normal"
+        ],
+        [
+          "resize",
+          "reports/cardrpg-look/validation/l5/compression/crumb-r3-512-256-q80/crumb-sentinel-normal-sized.glb",
+          "reports/cardrpg-look/validation/l5/compression/crumb-r3-512-256-q80/crumb-sentinel-material-sized.glb",
+          "--width",
+          "256",
+          "--height",
+          "256",
+          "--pattern",
+          "*roughness"
+        ],
+        [
+          "webp",
+          "reports/cardrpg-look/validation/l5/compression/crumb-r3-512-256-q80/crumb-sentinel-material-sized.glb",
+          "reports/cardrpg-look/validation/l5/compression/crumb-r3-512-256-q80/crumb-sentinel-preview.glb",
+          "--quality",
+          "80",
+          "--effort",
+          "100",
+          "--lossless",
+          "false",
+          "--near-lossless",
+          "false"
+        ],
+        [
+          "meshopt",
+          "reports/cardrpg-look/validation/l5/compression/crumb-r3-512-256-q80/crumb-sentinel-preview.glb",
+          "reports/cardrpg-look/validation/l5/compression/crumb-r3-512-256-q80/crumb-sentinel.glb",
+          "--level",
+          "high"
+        ]
+      ],
+      "before": 2615776,
+      "after": 138788,
+      "gzipBefore": 2491642,
+      "gzipAfter": 105935,
+      "sourceSha256": "3dff91badbcf83149374a4eed2ade822c6f88131c6b84397046303ad8644a069",
+      "sha256": "d86488f8739046347400e106a85ad07b5aed425d30b34377e7f46a701630978f",
+      "previewSha256": "0bab51bdbd19b1d405fbf8adaa3986ede0a5540dc09804e9b38aed668585ccb6"
+    }
+  ],
+  "status": "Visual comparison required"
+}

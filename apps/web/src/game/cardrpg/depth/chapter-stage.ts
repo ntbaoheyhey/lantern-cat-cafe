@@ -1,4 +1,5 @@
 import * as T from 'three';
+import { loadingFrame } from '../../squad/turn3d/loading';
 import { addCardStageLife, animateCardStageLife } from '../../squad/turn3d/card-stage-life';
 import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 
@@ -14,7 +15,8 @@ const themes = [
 ];
 
 /** Original café scenery, built once from primitives and instanced shelf details. */
-export function decorateChapterStage(stage: T.Group) {
+export async function decorateChapterStage(stage: T.Group, cancelled: () => boolean = () => false) {
+  if (stage.userData.lookV2) return;
   stage.userData.candle = { flame: stage.getObjectByName('cafe-candle-flame'), halo: stage.getObjectByName('cafe-candle-halo') };
   for (const [index, theme] of themes.entries()) {
     const group = new T.Group();
@@ -84,6 +86,7 @@ export function decorateChapterStage(stage: T.Group) {
       }
     }
 
+    await loadingFrame(); if (cancelled()) return;
     // Bake fixed decorations into one draw per material. Ambient parts stay movable.
     const staticGeometry = new Map<T.Material, T.BufferGeometry[]>();
     for (const object of [...group.children]) {
@@ -103,6 +106,7 @@ export function decorateChapterStage(stage: T.Group) {
       geometries.forEach(part => part.dispose());
     }
 
+    await loadingFrame(); if (cancelled()) return;
     addCardStageLife(group, index + 1);
     const particles = new Float32Array(44 * 3);
     for (let mote = 0; mote < 44; mote++) {
@@ -139,10 +143,12 @@ export function decorateChapterStage(stage: T.Group) {
       return { body, wings, restY: body.position.y };
     });
     group.userData.ambient = { dust, steam, critters } satisfies AmbientStage;
+    await loadingFrame(); if (cancelled()) return;
   }
 }
 
 export function animateChapterStage(stage: T.Group, time: number, reducedMotion: boolean) {
+  if (stage.userData.lookV2) { stage.userData.animateLook?.(time, reducedMotion); return; }
   const t = reducedMotion ? 0 : time;
   const candle = stage.userData.candle as { flame: T.Mesh; halo: T.Sprite };
   const flicker = Math.sin(t * 8.3) * .06 + Math.sin(t * 13.7) * .025;

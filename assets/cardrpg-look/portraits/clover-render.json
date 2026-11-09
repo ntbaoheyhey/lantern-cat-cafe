@@ -1,23 +1,77 @@
 {
-  "cat": "clover",
+  "owner": "clover",
+  "original": true,
+  "round": 3,
+  "status": "Source render selected for L6; runtime validation separate",
+  "tier": "look-slice-model",
   "source": "assets/cardrpg-look/models/clover.glb",
-  "sha256": "4aff6f5d562e34aa3b09f09e2aec1ebc9a12fbce0faa41931449c17a9e80ebfe",
+  "sourceSha256": "4aff6f5d562e34aa3b09f09e2aec1ebc9a12fbce0faa41931449c17a9e80ebfe",
+  "scriptSha256": "1c32d882e41c679a9e8dbba605803f316808292adbbfecf54c924cff5f4d4f95",
   "renderer": "4.5.3 LTS",
+  "seed": 20261107,
   "samples": 64,
-  "frames": 1,
-  "resolution": [
+  "renderSize": [
     1024,
     1280
   ],
-  "display": [
+  "displaySize": [
     256,
     320
   ],
-  "delivered": [
-    512,
-    640
+  "deliverySizes": [
+    [
+      256,
+      320
+    ],
+    [
+      512,
+      640
+    ]
   ],
-  "supersampling": 4,
-  "fps": null,
-  "original": true
+  "camera": {
+    "orthoScale": 1.850000023841858,
+    "target": [
+      0.008975863456726074,
+      0.01629282534122467,
+      0.7598385810852051
+    ],
+    "position": [
+      1.258975863456726,
+      -5.783707141876221,
+      1.4098385572433472
+    ],
+    "minimumBorder": 0.055
+  },
+  "colorManagement": {
+    "transform": "AgX",
+    "look": "AgX - Medium High Contrast"
+  },
+  "projectedBounds": [
+    0.09565059095621109,
+    0.07054570317268372,
+    0.8760957717895508,
+    0.90473473072052
+  ],
+  "modelBounds": [
+    [
+      -0.5173970460891724,
+      -0.49437233805656433,
+      0.00018006563186645508
+    ],
+    [
+      0.5353487730026245,
+      0.5269579887390137,
+      1.5194971561431885
+    ]
+  ],
+  "studioPose": {
+    "node": "alchemist_head",
+    "worldAxis": "Y",
+    "degrees": -5,
+    "scope": "Imported portrait scene only; source game model unchanged"
+  },
+  "file": "reports/cardrpg-look/rounds/art/portraits/round-3/clover.png",
+  "sha256": "356a665d20e0603835516930863b346ca3b3d90d943241879bf49da0c25cebcf",
+  "selectedRound": 3,
+  "sourceRender": "reports/cardrpg-look/rounds/art/portraits/round-3/clover.png"
 }

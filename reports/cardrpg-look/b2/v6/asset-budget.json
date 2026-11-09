@@ -1,0 +1,107 @@
+{
+  "definition": "B art: all cardrpg-look assets, legacy model aliases and cardrpg/cardrpg3 portraits/icons/textures; excludes A-owned evidence imagery. Base64 gzip payload bytes, before script tags/manifest. Lean replaces12portrait2x with existing1x and resizes/recompresses legacy B textures and portraits; no source assets modified.",
+  "rows": [
+    {
+      "variant": "full",
+      "path": "docs/cardrpg-look/b2.html",
+      "htmlBytes": 29812862,
+      "bOwnedRawBytes": 21410600,
+      "bOwnedEmbeddedBytes": 23612236,
+      "classes": {
+        "effect atlases": {
+          "files": 6,
+          "rawBytes": 1064346,
+          "gzipBytes": 1062364,
+          "embeddedBytes": 1416492
+        },
+        "atelier models": {
+          "files": 25,
+          "rawBytes": 6133860,
+          "gzipBytes": 4981768,
+          "embeddedBytes": 6642384
+        },
+        "icons": {
+          "files": 97,
+          "rawBytes": 317076,
+          "gzipBytes": 314028,
+          "embeddedBytes": 418852
+        },
+        "portraits": {
+          "files": 61,
+          "rawBytes": 4832260,
+          "gzipBytes": 4770710,
+          "embeddedBytes": 6361024
+        },
+        "atelier stage": {
+          "files": 2,
+          "rawBytes": 1768378,
+          "gzipBytes": 1498581,
+          "embeddedBytes": 1998112
+        },
+        "legacy models": {
+          "files": 25,
+          "rawBytes": 4357168,
+          "gzipBytes": 2150794,
+          "embeddedBytes": 2867752
+        },
+        "textures or other": {
+          "files": 5,
+          "rawBytes": 2937512,
+          "gzipBytes": 2930709,
+          "embeddedBytes": 3907620
+        }
+      }
+    },
+    {
+      "variant": "lean",
+      "path": "docs/cardrpg-look/b2-lean.html",
+      "htmlBytes": 21550338,
+      "bOwnedRawBytes": 15144836,
+      "bOwnedEmbeddedBytes": 15349700,
+      "classes": {
+        "effect atlases": {
+          "files": 6,
+          "rawBytes": 1064346,
+          "gzipBytes": 1062364,
+          "embeddedBytes": 1416492
+        },
+        "atelier models": {
+          "files": 25,
+          "rawBytes": 6133860,
+          "gzipBytes": 4981768,
+          "embeddedBytes": 6642384
+        },
+        "icons": {
+          "files": 97,
+          "rawBytes": 317076,
+          "gzipBytes": 314028,
+          "embeddedBytes": 418852
+        },
+        "portraits": {
+          "files": 61,
+          "rawBytes": 1255884,
+          "gzipBytes": 1257137,
+          "embeddedBytes": 1676260
+        },
+        "atelier stage": {
+          "files": 2,
+          "rawBytes": 1768378,
+          "gzipBytes": 1498581,
+          "embeddedBytes": 1998112
+        },
+        "legacy models": {
+          "files": 25,
+          "rawBytes": 4357168,
+          "gzipBytes": 2150794,
+          "embeddedBytes": 2867752
+        },
+        "textures or other": {
+          "files": 5,
+          "rawBytes": 248124,
+          "gzipBytes": 247381,
+          "embeddedBytes": 329848
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{"name":"full-build","start":"2026-11-09T08:02:05.310Z","end":"2026-11-09T08:02:10.152Z","code":0}
+{"name":"lean-build","start":"2026-11-09T08:02:10.154Z","end":"2026-11-09T08:02:14.746Z","code":0}
+{"name":"startup-prepare","start":"2026-11-09T08:02:14.747Z","end":"2026-11-09T08:02:15.711Z","code":0}
+Traceback (most recent call last):
+  File "/tmp/cardrpg-v5full-m4/prepare-delivery.py", line 22, in <module>
+    subprocess.run(['nice','-n','10','node','/tmp/cardrpg-v5full-close/queue.mjs',str(f)],cwd=c['cwd'],check=True)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 528, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['nice', '-n', '10', 'node', '/tmp/cardrpg-v5full-close/queue.mjs', '/tmp/cardrpg-v5full-m4/delivery.json']' died with <Signals.SIGTERM: 15>.

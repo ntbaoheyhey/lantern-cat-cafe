@@ -1,0 +1,3 @@
+# Packed opponent batch 3 review
+
+Personally viewed all nine raw/packed studio pairs at fixed camera. Pollen Scout retains the basket opening, individual pollen balls and rear wing seams; its muted wings still have weak contrast. Rain Spool retains blue rain cover, face droplets and rounded side disks; rear yarn courses remain repetitive. Binding Thread retains the open loop, twisted strands and tied junctions; its plain head has a soft hostile read. Fine cloth texture becomes softer at this scale without visible silhouette changes. Minimum crop SSIM 0.990731 measures fidelity only. All three accepted as packed runtime candidates, pending animation and phase checks.

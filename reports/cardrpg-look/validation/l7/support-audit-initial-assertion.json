@@ -1,0 +1,7 @@
+{
+  "scriptSha256": "8d026d82653a0295cee49b8d73a7c7c3a630a853ccbd62da720de5e0dae1a4fb",
+  "assertion": "all start <= RAF timestamp <= end",
+  "outcome": "AssertionError",
+  "reason": "Seven replay windows have only their first RAF timestamp 0.6\u20132.2ms before the performance.now start marker. RAF timestamps refer to frame start and may precede callback execution. Remaining frames fall within battle marks. This is a supplemental assertion mismatch, not a changed performance budget.",
+  "continuation": "Validate all later frames within marks and first frame no earlier than one observed RAF interval; retain actual offsets. Existing lifecycle/source/artifact unchanged."
+}

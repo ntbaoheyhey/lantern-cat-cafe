@@ -1,0 +1,71 @@
+{"lock":"acquired","lane":"A","pid":92548,"startedAt":"2026-11-09T01:29:21.781Z","task":"V5LOOK V0.1 unit"}
+
+> taskbar-hero@0.0.0 test /Users/bao/taskbar-hero-cardrpg-b2
+> node --test scripts/*.test.mjs && pnpm -r test
+
+✔ explicit root and nested index imports resolve to their exact files (8.383875ms)
+✔ directory aliases coexist with explicit indexes and ordinary modules (1.779708ms)
+✔ test modules, fixture folders and non-TypeScript files stay out of deployment maps (2.13325ms)
+✔ output order is stable regardless of file creation order (3.469041ms)
+✔ generation preserves auth mappings and ignores shared or non-function directories (4.011209ms)
+✔ auth health HTTP 200 exits correctly without leaking response data (26.43875ms)
+✔ auth health HTTP 429 exits correctly without leaking response data (15.767542ms)
+✔ auth health HTTP 500 exits correctly without leaking response data (13.627625ms)
+✔ auth health HTTP 502 exits correctly without leaking response data (13.507833ms)
+✔ auth health HTTP 503 exits correctly without leaking response data (15.963916ms)
+✔ auth health fails closed when the transport is unavailable (16.242042ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 166.878792
+Scope: 6 of 7 workspace projects
+packages/auth test$ vitest run
+packages/chain test$ vitest run
+packages/game-rules test$ vitest run
+supabase/tests test$ vitest run
+packages/chain test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-b2/packages/chain
+supabase/tests test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-b2/supabase/tests
+packages/auth test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-b2/packages/auth
+packages/game-rules test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-b2/packages/game-rules
+packages/chain test:  Test Files  3 passed (3)
+packages/chain test:       Tests  32 passed (32)
+packages/chain test:    Start at  08:29:22
+packages/chain test:    Duration  582ms (import 52%, tests 30%, transform 14%, worker 3%)
+packages/chain test: Done
+packages/auth test:  Test Files  1 passed (1)
+packages/auth test:       Tests  24 passed (24)
+packages/auth test:    Start at  08:29:22
+packages/auth test:    Duration  826ms (import 60%, tests 35%, transform 4%, worker 1%)
+packages/auth test: Done
+supabase/tests test:  Test Files  34 passed (34)
+supabase/tests test:       Tests  581 passed (581)
+supabase/tests test:    Start at  08:29:22
+supabase/tests test:    Duration  13.13s (tests 82%, import 15%, transform 3%)
+supabase/tests test: Done
+packages/game-rules test:  Test Files  55 passed | 3 skipped (58)
+packages/game-rules test:       Tests  1020 passed | 2 expected fail | 11 skipped (1033)
+packages/game-rules test:    Start at  08:29:22
+packages/game-rules test:    Duration  36.03s (tests 94%, import 4%, transform 2%)
+packages/game-rules test: Done
+packages/api-contract test$ pnpm --filter @taskbar-hero/game-rules exec vitest run --root ../api-contract
+packages/api-contract test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-b2/packages/api-contract
+packages/api-contract test:  Test Files  1 passed (1)
+packages/api-contract test:       Tests  16 passed (16)
+packages/api-contract test:    Start at  08:29:59
+packages/api-contract test:    Duration  176ms (transform 54%, import 38%, tests 6%, worker 2%)
+packages/api-contract test: Done
+apps/web test$ vitest run
+apps/web test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-b2/apps/web
+apps/web test:  Test Files  183 passed (183)
+apps/web test:       Tests  1783 passed (1783)
+apps/web test:    Start at  08:29:59
+apps/web test:    Duration  24.13s (environment 52%, tests 34%, import 11%, transform 2%)
+apps/web test: Environment  jsdom was created 183 times · 124.21s total, 52% of tracked time
+apps/web test:              create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+apps/web test:              learn more: https://vitest.dev/guide/improving-performance#test-environments
+apps/web test: Done
+{"lock":"released","pid":92548,"task":"V5LOOK V0.1 unit"}

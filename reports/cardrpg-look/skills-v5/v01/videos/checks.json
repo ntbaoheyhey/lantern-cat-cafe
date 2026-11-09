@@ -1,0 +1,33 @@
+{
+  "method": "Continuous natural x1 watchNow battle at1440x900; original CDP screencast JPEGs with wall durations in frames.txt, resampled30fps; no injected actions/cuts. Receipt recovered from completed original clip after thumbnail error.",
+  "sameInitial": null,
+  "rows": [
+    {
+      "name": "after",
+      "file": "reports/cardrpg-look/skills-v5/v01/videos/after-20s.mp4",
+      "sha256": "bb289aa9af850eb942157dfe0f944589302f20db25abd142ac9fba5f269fbc86",
+      "bytes": 979181,
+      "artifact": "/Users/bao/taskbar-hero-cardrpg-b2/docs/cardrpg-look/v5-v0.html",
+      "artifactSha256": "9793d01f0f91964f44e49516ec09ebce97890c31f59cfb4ea8305886901db8d6",
+      "capturedFrames": 587,
+      "rawDuration": 20.04988201522827,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1440,
+            "height": 900,
+            "nb_frames": "600"
+          }
+        ],
+        "format": {
+          "duration": "20.000000"
+        }
+      },
+      "encoding": "H.264 CRF34 slow / 400k maxrate / 800k buffer; source JPEG frames retained in /tmp",
+      "receiptRecovery": "Capture and H.264 encode completed; ffmpeg thumbnail failed because WebP encoder unavailable. Thumbnail regenerated from the same MP4 with Pillow; no recapture or cut. Initial battle hash and final choices were not saved before the thumbnail failure, so not claimed here."
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "source": "reports/cardrpg-look/validation/l5/compression/opponents-batch3-512-256-q80/pollen-scout-preview.glb",
+  "sourceSha256": "6027d0e88a03e5473d959efd220bdeb9da9bd85f8155456dc655af3f5d92ee80",
+  "scriptSha256": "fcf28f65b2253c7db48aee79b6b1436477eea464875b24e85f3b9739359ba610",
+  "renderer": "4.5.3 LTS",
+  "seed": 20261107,
+  "samples": 40,
+  "size": [
+    512,
+    640
+  ],
+  "camera": {
+    "position": [
+      1.25,
+      -5.800000190734863,
+      1.7400000095367432
+    ],
+    "target": [
+      0.0,
+      0.0,
+      1.090000033378601
+    ],
+    "orthoScale": 2.6500000953674316
+  },
+  "turntable": false,
+  "rows": [
+    {
+      "index": 0,
+      "yaw": 0,
+      "file": "000.png",
+      "projectedBounds": [
+        0.21732695400714874,
+        0.06741064786911011,
+        0.7856740355491638,
+        0.6250098943710327
+      ],
+      "sha256": "e140dc3f6daeee51d7a843f76f58fbb28932790bd7080097a0f39f63eb0eafdf",
+      "framingPass": true
+    },
+    {
+      "index": 1,
+      "yaw": 1.5707963267948966,
+      "file": "001.png",
+      "projectedBounds": [
+        0.388129860162735,
+        0.06739000231027603,
+        0.6515822410583496,
+        0.633166491985321
+      ],
+      "sha256": "1b9a5b55d67697ee4fd05550fae15f3e71dc716b6ec0194ba9254e5f401df9c8",
+      "framingPass": true
+    },
+    {
+      "index": 2,
+      "yaw": 3.141592653589793,
+      "file": "002.png",
+      "projectedBounds": [
+        0.214325949549675,
+        0.07412424683570862,
+        0.7826730608940125,
+        0.6282893419265747
+      ],
+      "sha256": "52af346962a35d05b8d0865767cf97d187ece146775ce9361c02b6d826c93a13",
+      "framingPass": true
+    }
+  ],
+  "original": true,
+  "method": "Fixed studio/camera/scale across before and after. Bounds are diagnostics, never used to reframe silently."
+}

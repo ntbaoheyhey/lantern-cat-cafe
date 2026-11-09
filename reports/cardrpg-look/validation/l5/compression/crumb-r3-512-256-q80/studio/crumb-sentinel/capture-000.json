@@ -1,0 +1,69 @@
+{
+  "source": "reports/cardrpg-look/validation/l5/compression/crumb-r3-512-256-q80/crumb-sentinel-preview.glb",
+  "sourceSha256": "0bab51bdbd19b1d405fbf8adaa3986ede0a5540dc09804e9b38aed668585ccb6",
+  "scriptSha256": "fcf28f65b2253c7db48aee79b6b1436477eea464875b24e85f3b9739359ba610",
+  "renderer": "4.5.3 LTS",
+  "seed": 20261107,
+  "samples": 40,
+  "size": [
+    512,
+    640
+  ],
+  "camera": {
+    "position": [
+      1.25,
+      -5.800000190734863,
+      1.7400000095367432
+    ],
+    "target": [
+      0.0,
+      0.0,
+      1.090000033378601
+    ],
+    "orthoScale": 2.6500000953674316
+  },
+  "turntable": false,
+  "rows": [
+    {
+      "index": 0,
+      "yaw": 0,
+      "file": "000.png",
+      "projectedBounds": [
+        0.18213291466236115,
+        0.08318793028593063,
+        0.7272711992263794,
+        0.5828855633735657
+      ],
+      "sha256": "69591bd7952b6d130f2c4b3f37cefc513fe8591e6f680a66f626f65a59b6ee72",
+      "framingPass": true
+    },
+    {
+      "index": 1,
+      "yaw": 1.5707963267948966,
+      "file": "001.png",
+      "projectedBounds": [
+        0.38698044419288635,
+        0.07970935851335526,
+        0.6388629674911499,
+        0.5857717394828796
+      ],
+      "sha256": "5a554c11c640bb4b49285ae96a60465622a624c7ff05af89f7a70a7b6f9c6c02",
+      "framingPass": true
+    },
+    {
+      "index": 2,
+      "yaw": 3.141592653589793,
+      "file": "002.png",
+      "projectedBounds": [
+        0.2727287709712982,
+        0.08831113576889038,
+        0.8178671002388,
+        0.5862979292869568
+      ],
+      "sha256": "517f49a14459b2797f56df99082710bba50f24c628b6b83b0ef0f9e7ff1fc2ad",
+      "framingPass": true
+    }
+  ],
+  "original": true,
+  "method": "Fixed studio/camera/scale across before and after. Bounds are diagnostics, never used to reframe silently."
+}

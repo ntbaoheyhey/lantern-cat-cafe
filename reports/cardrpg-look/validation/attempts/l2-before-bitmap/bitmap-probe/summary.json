@@ -1,0 +1,413 @@
+{
+  "date": "2026-11-07T08:17:26.087Z",
+  "artifact": "/Users/bao/taskbar-hero-cardrpg-look/docs/cardrpg-look/index.html",
+  "sha256": "dac82f01dfefe213fd24c23a1cab04fe785713060fcac70bc03e16264766abf2",
+  "captureScreenshots": false,
+  "method": "Inherited full-page harness with each scenario traced. Fresh file URL, fresh browser context, cache disabled, RAF and trace begin before navigation. Real mouse clicks. CPU throttle affects CPU only. Raw load frames are retained.",
+  "rows": [
+    {
+      "loadToInteractiveMs": 910.5999999977648,
+      "battleReadyMs": 6602.599999997765,
+      "postInteractive": {
+        "count": 676,
+        "max": 33.299999999999955,
+        "p95": 16.799999999999272,
+        "above25": 1,
+        "above50": 0,
+        "within20": 0.9985207100591716
+      },
+      "postReady": {
+        "count": 335,
+        "max": 16.80000000000109,
+        "p95": 16.799999999999272,
+        "above25": 0,
+        "above50": 0,
+        "within20": 1
+      },
+      "width": 1280,
+      "height": 720,
+      "dpr": 1,
+      "throttle": 1,
+      "errors": [],
+      "marks": [
+        {
+          "label": "hub-interactive",
+          "at": 910.5999999977648
+        },
+        {
+          "label": "fight-click",
+          "at": 1028.3999999985099
+        },
+        {
+          "label": "scene-ready",
+          "at": 6602.599999997765
+        },
+        {
+          "label": "measurement-end",
+          "at": 12207.5
+        }
+      ],
+      "last": 12197.9,
+      "stats": {
+        "frames": 338,
+        "calls": 111,
+        "triangles": 101796,
+        "geometries": 557,
+        "textures": 113,
+        "particles": 4,
+        "estimatedGpuBytes": 5155316,
+        "loaded": 5,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "labelAudit": {
+        "heads": [
+          {
+            "x": 903.434758697181,
+            "y": 237.8911532722647,
+            "width": 88.27141324759043,
+            "height": 95.77737279208046
+          },
+          {
+            "x": 991.6455221481979,
+            "y": 340.3775717161939,
+            "width": 93.73954100899846,
+            "height": 109.8700820743826
+          },
+          {
+            "x": 415.45753360649996,
+            "y": 210.40582197469215,
+            "width": 80.1271352496234,
+            "height": 121.53913710204947
+          },
+          {
+            "x": 170.25786359381095,
+            "y": 296.0334190756212,
+            "width": 92.14942213937928,
+            "height": 146.59705569660167
+          },
+          {
+            "x": 239.7052938388868,
+            "y": 261.9026375324646,
+            "width": 95.83985250363588,
+            "height": 123.48718385285974
+          }
+        ],
+        "cards": [
+          {
+            "x": 881.1372854790213,
+            "y": 173.0958300895996,
+            "width": 138,
+            "height": 48
+          },
+          {
+            "x": 1001.5617065791607,
+            "y": 277.20224094273914,
+            "width": 138,
+            "height": 48
+          }
+        ],
+        "missing": [],
+        "overlaps": 0
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Pro, Unspecified Version)",
+      "pixelRatio": 1,
+      "canvas": {
+        "width": 1280,
+        "height": 568,
+        "cssWidth": 1280,
+        "cssHeight": 568
+      },
+      "stageFraction": 0.7888888888888889,
+      "heap": 29400000,
+      "post": {
+        "width": 1280,
+        "height": 568,
+        "samples": 4
+      },
+      "result": null,
+      "actions": 3,
+      "audit": {
+        "width": 1280,
+        "height": 568,
+        "units": [
+          {
+            "id": "mochi",
+            "side": "party",
+            "role": "guardian",
+            "yaw": 0.4363323129985824,
+            "box": {
+              "x": 415.21410041274373,
+              "y": 210.3840186163091,
+              "width": 80.16716573420047,
+              "height": 121.59050919133784
+            }
+          },
+          {
+            "id": "soot",
+            "side": "party",
+            "role": "witch",
+            "yaw": 0.5585053606381855,
+            "box": {
+              "x": 169.88286992048705,
+              "y": 296.057981199028,
+              "width": 92.21567022978303,
+              "height": 146.63931342886195
+            }
+          },
+          {
+            "id": "clover",
+            "side": "party",
+            "role": "alchemist",
+            "yaw": 0.4363323129985824,
+            "box": {
+              "x": 238.68309736265752,
+              "y": 261.9648164479307,
+              "width": 96.18937273061357,
+              "height": 123.52463915685593
+            }
+          },
+          {
+            "id": "foe-0-teacup-healer",
+            "side": "enemy",
+            "role": "healer",
+            "yaw": -0.4363323129985824,
+            "box": {
+              "x": 904.0991440396206,
+              "y": 236.9395900816361,
+              "width": 89.57108368892614,
+              "height": 96.1514993677774
+            }
+          },
+          {
+            "id": "foe-1-sock-skipper",
+            "side": "enemy",
+            "role": "flanker",
+            "yaw": -0.5585053606381855,
+            "box": {
+              "x": 991.7046949578548,
+              "y": 339.9328471643531,
+              "width": 93.81294075666824,
+              "height": 110.03205650857359
+            }
+          }
+        ],
+        "overlaps": [
+          [
+            "soot",
+            "clover"
+          ]
+        ],
+        "outside": []
+      },
+      "max": 33.299999999999955,
+      "p95": 16.700000000000728,
+      "p99": 16.800000000000182,
+      "above25": 1,
+      "above50": 0,
+      "within20": 0.9986301369863013
+    },
+    {
+      "loadToInteractiveMs": 1808,
+      "battleReadyMs": 9061.699999999255,
+      "postInteractive": {
+        "count": 740,
+        "max": 116.59999999999991,
+        "p95": 16.800000000000182,
+        "above25": 18,
+        "above50": 3,
+        "within20": 0.9756756756756757
+      },
+      "postReady": {
+        "count": 335,
+        "max": 16.80000000000109,
+        "p95": 16.700000000000728,
+        "above25": 0,
+        "above50": 0,
+        "within20": 1
+      },
+      "width": 1280,
+      "height": 720,
+      "dpr": 1,
+      "throttle": 4,
+      "errors": [],
+      "marks": [
+        {
+          "label": "hub-interactive",
+          "at": 1808
+        },
+        {
+          "label": "fight-click",
+          "at": 2308.199999999255
+        },
+        {
+          "label": "scene-ready",
+          "at": 9061.699999999255
+        },
+        {
+          "label": "measurement-end",
+          "at": 14667.39999999851
+        }
+      ],
+      "last": 14651.3,
+      "stats": {
+        "frames": 339,
+        "calls": 111,
+        "triangles": 101796,
+        "geometries": 557,
+        "textures": 113,
+        "particles": 4,
+        "estimatedGpuBytes": 5155316,
+        "loaded": 5,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "labelAudit": {
+        "heads": [
+          {
+            "x": 904.373463622554,
+            "y": 237.01078820283342,
+            "width": 89.46003286855637,
+            "height": 96.02119463525875
+          },
+          {
+            "x": 992.005592076646,
+            "y": 339.8525253934306,
+            "width": 93.90678226704563,
+            "height": 109.84169747847307
+          },
+          {
+            "x": 416.1920654574037,
+            "y": 210.5198832844936,
+            "width": 80.00840570793116,
+            "height": 121.38635053573253
+          },
+          {
+            "x": 171.3958772458016,
+            "y": 296.00190500548104,
+            "width": 91.94876552076306,
+            "height": 146.47222593135444
+          },
+          {
+            "x": 239.9241708757686,
+            "y": 262.0439660140955,
+            "width": 96.04676546732486,
+            "height": 123.30141093843815
+          }
+        ],
+        "cards": [
+          {
+            "x": 881.304513902554,
+            "y": 173.14663017305008,
+            "width": 138,
+            "height": 48
+          },
+          {
+            "x": 1001.7187804975429,
+            "y": 277.16107090715263,
+            "width": 138,
+            "height": 48
+          }
+        ],
+        "missing": [],
+        "overlaps": 0
+      },
+      "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Pro, Unspecified Version)",
+      "pixelRatio": 1,
+      "canvas": {
+        "width": 1280,
+        "height": 568,
+        "cssWidth": 1280,
+        "cssHeight": 568
+      },
+      "stageFraction": 0.7888888888888889,
+      "heap": 33100000,
+      "post": {
+        "width": 1280,
+        "height": 568,
+        "samples": 4
+      },
+      "result": null,
+      "actions": 3,
+      "audit": {
+        "width": 1280,
+        "height": 568,
+        "units": [
+          {
+            "id": "mochi",
+            "side": "party",
+            "role": "guardian",
+            "yaw": 0.4363323129985824,
+            "box": {
+              "x": 415.9774974773117,
+              "y": 210.49520403576983,
+              "width": 80.04416520360968,
+              "height": 121.4322678123053
+            }
+          },
+          {
+            "id": "soot",
+            "side": "party",
+            "role": "witch",
+            "yaw": 0.5585053606381855,
+            "box": {
+              "x": 171.06291872666958,
+              "y": 296.0203500235136,
+              "width": 92.00998881338336,
+              "height": 146.508259998031
+            }
+          },
+          {
+            "id": "clover",
+            "side": "party",
+            "role": "alchemist",
+            "yaw": 0.4363323129985824,
+            "box": {
+              "x": 239.36623781600474,
+              "y": 262.0652622978617,
+              "width": 96.2604318996344,
+              "height": 123.33820096187469
+            }
+          },
+          {
+            "id": "foe-0-teacup-healer",
+            "side": "enemy",
+            "role": "healer",
+            "yaw": -0.4363323129985824,
+            "box": {
+              "x": 904.4057858729288,
+              "y": 236.4050729896734,
+              "width": 90.62003054079355,
+              "height": 96.26105582945306
+            }
+          },
+          {
+            "id": "foe-1-sock-skipper",
+            "side": "enemy",
+            "role": "flanker",
+            "yaw": -0.5585053606381855,
+            "box": {
+              "x": 991.8368581265287,
+              "y": 340.22238430517297,
+              "width": 93.8151022191588,
+              "height": 109.7974064232094
+            }
+          }
+        ],
+        "overlaps": [
+          [
+            "soot",
+            "clover"
+          ]
+        ],
+        "outside": []
+      },
+      "max": 133.30000000000018,
+      "p95": 16.800000000000068,
+      "p99": 33.400000000000546,
+      "above25": 21,
+      "above50": 4,
+      "within20": 0.9749403341288783
+    }
+  ]
+}

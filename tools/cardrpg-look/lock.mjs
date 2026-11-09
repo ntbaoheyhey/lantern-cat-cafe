@@ -2,6 +2,16 @@ import { mkdir, readFile, writeFile, rm, stat, rename } from 'node:fs/promises';
 import { setTimeout as delay } from 'node:timers/promises';
 const directory = '/tmp/cardrpg-big-locks/timing.lock';
 export async function withTimingLock(task, fn) {
+  // A B2 phase may group its short gates/captures into one <20 minute lease.
+  // Children can reuse only the still-live, explicitly inherited owner.
+  if (process.env.B2_LOCK_OWNER) {
+    const saved = JSON.parse(await readFile(`${directory}/owner.json`, 'utf8').catch(() => '{}'));
+    if (saved.lane === 'B-LOOK' && saved.pid === Number(process.env.B2_LOCK_OWNER)) {
+      process.kill(saved.pid, 0);
+      return fn();
+    }
+    throw new Error('Inherited B2 timing lease is no longer owned');
+  }
   await mkdir('/tmp/cardrpg-big-locks', { recursive: true });
   let owned = false;
   const owner = { lane: 'B-LOOK', pid: process.pid, startedAt: new Date().toISOString(), task };

@@ -1,0 +1,69 @@
+{
+  "source": "reports/cardrpg-look/validation/l5/compression/cushion-kettle-512-256-q80/practice-cushion-preview.glb",
+  "sourceSha256": "75d2098d0421beedf67990646cd63852c2cb93113aa3140b45cdd12b4d50f344",
+  "scriptSha256": "fcf28f65b2253c7db48aee79b6b1436477eea464875b24e85f3b9739359ba610",
+  "renderer": "4.5.3 LTS",
+  "seed": 20261107,
+  "samples": 40,
+  "size": [
+    512,
+    640
+  ],
+  "camera": {
+    "position": [
+      1.25,
+      -5.800000190734863,
+      1.7400000095367432
+    ],
+    "target": [
+      0.0,
+      0.0,
+      1.090000033378601
+    ],
+    "orthoScale": 2.6500000953674316
+  },
+  "turntable": false,
+  "rows": [
+    {
+      "index": 0,
+      "yaw": 0,
+      "file": "000.png",
+      "projectedBounds": [
+        0.20386143028736115,
+        0.07773574441671371,
+        0.7883111238479614,
+        0.5750532746315002
+      ],
+      "sha256": "d0180cd3942992be331699be86038f23c133529f015be8c1e5e207516fcf6f94",
+      "framingPass": true
+    },
+    {
+      "index": 1,
+      "yaw": 1.5707963267948966,
+      "file": "001.png",
+      "projectedBounds": [
+        0.3327004313468933,
+        0.07312693446874619,
+        0.6797118186950684,
+        0.5900110006332397
+      ],
+      "sha256": "324501665347ebc23d0eb896231bd3ef754b4b7e4ec489c8c3aaab315f50123f",
+      "framingPass": true
+    },
+    {
+      "index": 2,
+      "yaw": 3.141592653589793,
+      "file": "002.png",
+      "projectedBounds": [
+        0.21168889105319977,
+        0.08193213492631912,
+        0.7961385846138,
+        0.5750532746315002
+      ],
+      "sha256": "e38c708e64453bb8a4e05594449066a9ccee0a547dd335118c14c056d2384f6a",
+      "framingPass": true
+    }
+  ],
+  "original": true,
+  "method": "Fixed studio/camera/scale across before and after. Bounds are diagnostics, never used to reframe silently."
+}

@@ -1,0 +1,86 @@
+{
+  "scope": "Fixed studio compression fidelity; not aesthetics or runtime acceptance.",
+  "rows": [
+    {
+      "owner": "pollen-scout",
+      "raw": "reports/cardrpg-look/rounds/opponents/pollen-scout/round-2/views",
+      "packed": "reports/cardrpg-look/validation/l5/compression/opponents-batch3-512-256-q80/studio/pollen-scout",
+      "sourceSha256": "1fd258bf6d5efc7acf7b67be0a4c4664d1d942969a74379cb27bbe0bea2996c4",
+      "previewSha256": "6027d0e88a03e5473d959efd220bdeb9da9bd85f8155456dc655af3f5d92ee80",
+      "pairs": [
+        {
+          "angle": 0,
+          "cropSsim": 0.9940804286875631,
+          "meanSubjectChannelError": 1.254993010684953,
+          "alphaMismatchPixels": 0
+        },
+        {
+          "angle": 90,
+          "cropSsim": 0.994361501941472,
+          "meanSubjectChannelError": 1.266831676685132,
+          "alphaMismatchPixels": 0
+        },
+        {
+          "angle": 180,
+          "cropSsim": 0.9930545329078523,
+          "meanSubjectChannelError": 1.1136534339677946,
+          "alphaMismatchPixels": 0
+        }
+      ]
+    },
+    {
+      "owner": "rain-spool",
+      "raw": "reports/cardrpg-look/rounds/opponents/rain-spool/round-2/views",
+      "packed": "reports/cardrpg-look/validation/l5/compression/opponents-batch3-512-256-q80/studio/rain-spool",
+      "sourceSha256": "c508d2273dafcf23d91dfde5701749478f6ae43d85943b37c5c654ea2182594e",
+      "previewSha256": "723332000ff0ead78329ec8fd6f42c5128c10e39813cc46de5840b518557a603",
+      "pairs": [
+        {
+          "angle": 0,
+          "cropSsim": 0.9907307168671972,
+          "meanSubjectChannelError": 1.7945171807679285,
+          "alphaMismatchPixels": 0
+        },
+        {
+          "angle": 90,
+          "cropSsim": 0.9911291367656122,
+          "meanSubjectChannelError": 1.8652292393746712,
+          "alphaMismatchPixels": 0
+        },
+        {
+          "angle": 180,
+          "cropSsim": 0.9928497692195176,
+          "meanSubjectChannelError": 1.7494935165482168,
+          "alphaMismatchPixels": 0
+        }
+      ]
+    },
+    {
+      "owner": "binding-thread",
+      "raw": "reports/cardrpg-look/rounds/opponents/binding-thread/round-2/views",
+      "packed": "reports/cardrpg-look/validation/l5/compression/opponents-batch3-512-256-q80/studio/binding-thread",
+      "sourceSha256": "5222c6b4212e3b5f9445f2e0580df06968df42fa61ae793ab912342d96094594",
+      "previewSha256": "bfd305533630e9a457d3f434ddfe78b4f0b18ffa933ebfafbe73b1be2351d774",
+      "pairs": [
+        {
+          "angle": 0,
+          "cropSsim": 0.995568618852781,
+          "meanSubjectChannelError": 1.5179600931227082,
+          "alphaMismatchPixels": 0
+        },
+        {
+          "angle": 90,
+          "cropSsim": 0.9942261717627116,
+          "meanSubjectChannelError": 1.4223173038166992,
+          "alphaMismatchPixels": 0
+        },
+        {
+          "angle": 180,
+          "cropSsim": 0.9951828734458106,
+          "meanSubjectChannelError": 1.48059935144806,
+          "alphaMismatchPixels": 0
+        }
+      ]
+    }
+  ]
+}
