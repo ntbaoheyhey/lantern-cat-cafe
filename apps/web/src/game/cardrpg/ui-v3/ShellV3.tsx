@@ -6,6 +6,8 @@ import {showReviewTools} from '../depth/player-mode';
 import {homeView,patrolDefaults} from './selectors';
 import {Icon,type IconName} from './Icon';
 import './ui-v3.css';
+import {useNewDiscoveries} from './useNewDiscoveries';
+import {RewardFly} from './RewardFly';
 import {HomeScene} from './HomeScene';
 const CatsSheet=lazy(()=>import('./SheetsV3').then(m=>({default:m.CatsSheet})));
 const TeamSheet=lazy(()=>import('./SheetsV3').then(m=>({default:m.TeamSheet})));
@@ -20,7 +22,8 @@ const labels:Partial<Record<Screen,string>>={collection:'Cats',journal:'Cats',te
 const dock:[Screen,string,IconName][]=[['collection','Cats','cats'],['team','Team','team'],['inventory','Bag','bag'],['gacha','Recruit','recruit']];
 export default function ShellV3({m,children}:{m:DepthModel;children:ReactNode}) {
  const [menu,setMenu]=useState(false),[events,setEvents]=useState(false),[bagTab,setBagTab]=useState('gear'),[route,setRoute]=useState(false);
- const view=useMemo(()=>homeView(m.state,m.cafeNow),[m,m.state]);
+ const view=useMemo(()=>homeView(m.state,m.cafeNow),[m,m.state,m.snapshot()]);
+ const newItems=useNewDiscoveries(m);
  const dialog=useRef<HTMLElement>(null),returnFocus=useRef<HTMLElement|null>(null);
  const sheet=m.screen!=='hub'||events;
  const close=()=>{setEvents(false);setMenu(false);m.go('hub');requestAnimationFrame(()=>{const target=returnFocus.current;if(target?.isConnected)target.focus();else (document.querySelector<HTMLElement>(`[data-home-destination="${target?.dataset.homeDestination??''}"]`)??document.querySelector<HTMLElement>('.uv-menu-button'))?.focus();});};
@@ -33,13 +36,13 @@ export default function ShellV3({m,children}:{m:DepthModel;children:ReactNode}) 
  if(m.showBattle)return null;
  return <div className="uv-shell" data-ui-v3="true">
   <HomeScene m={m} onRecruit={()=>go('gacha')} onTasks={openEvents}/>
-  <header className="uv-hud"><div className="uv-identity"><div className="uv-avatar"><img {...portraitProps(m.state.team[0]!)} alt=""/><span>Lv. {m.state.account.accountLevel}</span></div><div><b>The Lantern</b><small>Team power {view.power}</small></div></div>
-   <div className="uv-currencies">{(['fish','stamps','threads'] as const).filter(id=>m.state.account.currencies[id]>0||id==='fish').slice(0,3).map(id=><span key={id} className="uv-currency" aria-label={`${id}: ${m.state.account.currencies[id]}`}><i aria-hidden="true">{id==='fish'?'◈':id==='stamps'?'✉':'⌁'}</i>{m.state.account.currencies[id].toLocaleString('en-US')}<small>{id}</small></span>)}</div>
+  <RewardFly values={m.state.account.currencies}/><header className="uv-hud"><div className="uv-identity"><div className="uv-avatar"><img {...portraitProps(m.state.team[0]!)} alt=""/><span>Lv. {m.state.account.accountLevel}</span></div><div><b>The Lantern</b><small>Team power {view.power}</small></div></div>
+   <div className="uv-currencies">{(['fish','stamps','threads'] as const).filter(id=>m.state.account.currencies[id]>0||id==='fish').slice(0,3).map(id=><span key={id} data-currency={id} className="uv-currency" aria-label={`${id}: ${m.state.account.currencies[id]}`}><i aria-hidden="true">{id==='fish'?'◈':id==='stamps'?'✉':'⌁'}</i>{m.state.account.currencies[id].toLocaleString('en-US')}<small>{id}</small></span>)}</div>
    <button className="uv-relic" onClick={()=>go('relics')}><Icon name="relic"/>Relic · Fuji</button>
    <button className="uv-menu-button" aria-label="Open menu" aria-expanded={menu} onClick={()=>setMenu(!menu)}><Icon name="menu"/></button>
   </header>
-  {!sheet&&<><aside className="uv-events" aria-label="Ready to collect">{view.tasks>0&&<button onClick={openEvents}><Icon name="events"/><span>Today’s tasks</span><i className="uv-dot"/></button>}{view.free&&<button onClick={()=>go('gacha')}><Icon name="recruit"/><span>Free recruit</span><i className="uv-dot"/></button>}</aside>
-  <footer className="uv-dock"><nav aria-label="Cafe dock">{dock.map(([screen,label,icon])=><button key={screen} data-home-destination={label} onClick={()=>go(screen)}><span><Icon name={icon}/>{((screen==='collection'&&view.cats)||(screen==='inventory'&&view.gear)||(screen==='gacha'&&view.recruit))&&<i className="uv-dot"/>}</span>{label}</button>)}<button data-home-destination="Events" onClick={openEvents}><span><Icon name="events"/>{view.tasks>0&&<i className="uv-dot"/>}</span>Events</button></nav>
+  {!sheet&&<><aside className="uv-events" aria-label="Ready to collect">{view.tasks>0&&<button onClick={openEvents}><Icon name="events"/><span>Today’s tasks</span><i className="uv-dot"/></button>}{view.tasks===0&&view.free&&<button onClick={()=>go('gacha')}><Icon name="recruit"/><span>Free recruit</span><i className="uv-dot"/></button>}{view.tasks===0&&!view.free&&view.milestones>0&&<button onClick={()=>go('journal')}><Icon name="cats"/><span>Journal reward</span><i className="uv-dot"/></button>}</aside>
+  <footer className="uv-dock"><nav aria-label="Cafe dock">{dock.map(([screen,label,icon])=><button key={screen} data-home-destination={label} onClick={()=>go(screen)}><span><Icon name={icon}/>{((screen==='collection'&&(view.cats||newItems.cats))||(screen==='inventory'&&(view.gear||newItems.gear))||(screen==='gacha'&&view.recruit))&&<i className="uv-dot"/>}</span>{label}</button>)}<button data-home-destination="Events" onClick={openEvents}><span><Icon name="events"/>{view.tasks+view.milestones>0&&<i className="uv-dot"/>}</span>Events</button></nav>
    <div className="uv-patrol-group"><button className="uv-map-button" aria-label="Open route map" onClick={()=>{go('map');setRoute(true);}}>⌁</button><button className="uv-patrol" data-home-destination="Patrol" onClick={patrol}><Icon name="fight"/><span>Night Patrol<small>{view.subline}</small></span><b aria-hidden="true">→</b></button></div></footer></>}
   {menu&&<nav className="uv-menu" aria-label="Cafe menu"><button onClick={()=>go('save')}>Open settings</button><button onClick={()=>go('save')}>Export / import</button><button onClick={()=>go('codex')}>Read Field guide</button><details><summary>Read credits</summary><p>The Lantern · original cats, music and cafe. Built for Taskbar Hero.</p></details>{showReviewTools(true)&&<><button onClick={()=>go('evidence')}>Before / after</button><Suspense fallback={null}><FeelLab m={m} home/></Suspense></>}</nav>}
   {sheet&&<><button className="uv-dim" tabIndex={-1} aria-label="Close sheet" onClick={close}/><section className="uv-sheet" role="dialog" aria-label={events?'Events':labels[m.screen]} ref={dialog} tabIndex={-1}>

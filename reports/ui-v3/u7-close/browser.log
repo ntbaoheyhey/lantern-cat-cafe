@@ -1,0 +1,23 @@
+
+Running 16 tests using 1 worker
+
+(node:67647) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 ../../tools/ui-v3/specs/first-five-seconds.spec.ts:2:68 › primary action is largest and visible 1024 (1.6s)
+  ✓   2 ../../tools/ui-v3/specs/first-five-seconds.spec.ts:2:68 › primary action is largest and visible 1280 (1.6s)
+  ✓   3 ../../tools/ui-v3/specs/first-five-seconds.spec.ts:2:68 › primary action is largest and visible 1440 (1.5s)
+  ✓   4 ../../tools/ui-v3/specs/first-five-seconds.spec.ts:7:5 › fallback uses current crew, no home canvas, and model-backed tips (767ms)
+  ✓   5 ../../tools/ui-v3/specs/polish.spec.ts:2:5 › Home fixed controls and claim dots reflect actionable model state (700ms)
+  ✓   6 ../../tools/ui-v3/specs/polish.spec.ts:10:5 › keyboard cycles a sheet and returns focus; reduced motion removes home animation (719ms)
+  ✓   7 ../../tools/ui-v3/specs/polish.spec.ts:14:5 › first real practice fight wins within 25 seconds using two clicks (16.3s)
+  ✓   8 ../../tools/ui-v3/specs/polish.spec.ts:17:110 › no overflow or clipped controls on 1024 (2.5s)
+  ✓   9 ../../tools/ui-v3/specs/polish.spec.ts:17:110 › no overflow or clipped controls on 1280 (2.5s)
+  ✓  10 ../../tools/ui-v3/specs/polish.spec.ts:17:110 › no overflow or clipped controls on 1440 (2.5s)
+  ✓  11 ../../tools/ui-v3/specs/polish.spec.ts:17:110 › no overflow or clipped controls on 1920 (2.5s)
+  ✓  12 ../../tools/ui-v3/specs/polish.spec.ts:17:110 › no overflow or clipped controls off 1024 (2.6s)
+  ✓  13 ../../tools/ui-v3/specs/polish.spec.ts:17:110 › no overflow or clipped controls off 1280 (2.5s)
+  ✓  14 ../../tools/ui-v3/specs/polish.spec.ts:17:110 › no overflow or clipped controls off 1440 (2.5s)
+  ✓  15 ../../tools/ui-v3/specs/polish.spec.ts:17:110 › no overflow or clipped controls off 1920 (2.5s)
+  ✓  16 ../../tools/ui-v3/specs/polish.spec.ts:24:5 › collecting Night tips shows committed currency feedback (774ms)
+
+  16 passed (44.5s)

@@ -43,3 +43,16 @@ U0 in progress. No published Lane U milestone yet.
 - U7-DEV-BOUNDARY / REJECTED: do not couple the product shell to offline-only lab modules. Unused trial adapter removed; existing Feel lab/Before-after retained. Extra offline lab controls belong in the U8 demo entry. G1 rerun covers the clean product boundary.
 
 - U6 final / FIXED: strict ceremony/parity suite3/3; screenshot capture corrected and inspected; final G1 type/lint/unit/build0 in u6-gates/. Earlier failed receipts retained.
+
+- U7-DOTS / attempt1: source audit found Recruit dot at1stamp though pull costs150, task dots ignored daily-cap claimability, and two event bubbles could push fixed controls to11. Use read-only actual previews and a prioritized single event bubble. Verify red dots and raw count without changing gates.
+
+- U7-DOTS / attempt2: direct model notifications can retain state identity, leaving useMemo stale. Include model revision; add separate local viewing hints for newly acquired cats/gear. Exact dot/reward tests + G1 scheduled.
+- U7-FIRST-FIGHT / OPEN: real2click practice test exceeded25s with Round1/full HP. Ranked hypotheses:1 inherited scene-ready/auto scheduling;2 U overlay notifications;3 cold compilation. Measure model/scene state at5s intervals in both shells; no forced skip/speed or raised timeout.
+
+- U7-FIRST-FIGHT diagnosis: default headless software renderer spends~20s compiling/warming and renders2–3fps; legacy also misses25s. V3 software probe was interrupted by Vite HMR when dot fix landed, so its reset tail is INVALID, retained. Compare both using the same --use-angle=metal backend as Lane A timing; keep source frozen during that run.
+
+- U7-FIRST-FIGHT / FIXED harness attribution: Metal probe finishes V3 by20s and legacy by15s, both in2rounds/5choices. The default software GL backend was the cause; use the Lane A macOS Metal backend in our browser config, with no simulation/speed edits. Exact25s gate retained; complete U7 suite rerun next.
+
+- U7-FRESH-EYES / attempt1:1280 Home screenshot exposed an eight-word heading and unreadably faint locked chest caption. Shortened heading to “Your evening crew” and keep the disabled chest’s caption at full contrast. Third concern is inherited stage/portrait art, pending B art PASS. Recheck G1, axe, first-five/polish and screenshot before publication.
+
+- U7 final / FIXED:36/36 new browser checks; exact16/16 polish/first-five rechecks after fresh-eyes fix;24axe pairs zero serious/critical; G1 all0 (1867webtests). Home screenshot visually inspected at u7-close/home.webp. First-fight software backend limitation stays explicit; no gate or rule changed.
