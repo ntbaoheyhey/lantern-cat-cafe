@@ -82,3 +82,35 @@ Third material luminance0.262–0.364 PASS0.18 across18masks. Enlarged boss clip
 
 ### M2 closure visual review 2026-11-09T04:56Z
 Delivery1280P1 and1024P15 viewed: luminance0.262–0.364 and all projected boundsPASS after rollback. Foes remain visibly pale/flat at1280x720 x795–1130,y350–550 despite the numeric pass. Material attempt budget exhausted; recordPARTIAL surface depth and revisit once inM4 with directional/value separation rather than raising emission. This is not counted as beauty acceptance.
+
+## B-MX-001 2026-11-09T05:05Z MX1 legacy toolkit contracts S2
+Repro batch1 queue pnpm --filter @taskbar-hero/web test:1798PASS/2FAIL. New atlas-only quads were inserted into the legacy sculpted-primitive catalog, whose test requires structural vertices; initial45frame tier selection also replaced existing sustained-window observe semantics.
+Fix attempt1: separate LOOK_PARTICLE_PRIMITIVES and explicit observeWarmup used only by LookPost scene; original exported sculpted catalog, legacy allocation path and observe behavior preserved. Existing tests unchanged. Full failing sample retained in /tmp/cardrpg-v5full-mx/batch1/test.log; verify full gates plus forthcoming parity/casts/cold. Why staged checks missed: staged run tested only recipe contracts, not complete renderer suite.
+
+### B-MX-001 verification
+Full1800unit/type/lint/build/parityPASS after separating new APIs; old tests unchanged. First immutable batch1b artifact proceeds to visual/cost probes.
+
+## B-MX-002 2026-11-09T05:08Z MX2 batch1 visual hierarchy S3
+Round1 reviewed Soot/Velvet/Cinnamon five-frame strips at1440: (1) Soot1 impact still halfway from caster to target, (2) emitted motes too small/dim at impact, (3) Cinnamon3 two opaque apron panels dominate lowerbody, (4) Velvet1/2/3 share a thin purplefan, (5) Soot/Cinnamon ultimate secondary motifs read late/small. Regions per320tile: travelx130–185/y80–110,impacttargetx185–220/y85–135; Cinnamon3x110–155/y80–125.
+Root cause generic projectile core spans impact; .18sprite too small; full1.0cloth repeated twice. Fix round1: separate core landing at.48 from travelend.52, enlarge12burst motes with colour-over-life, shrink/translucent cloth, bespoke spark/cupreticle/wick and needle/candle/stolenflame impact motifs. Immutable first sheet retained. Round2 review/gates pending.
+
+B-MX-002 sourcecheck: round1 recipe requested shrink before that motion existed; typecheck caught2errors. Added the bounded scale envelope1.25→.30 (no event/clock change); failed log retained in batch1c.
+
+## B-MX-003 2026-11-09T05:10Z MX1 allocation/cost attribution S2
+First batch1b cost sample15cues:program count50unchanged,draws<=105; CDP sampling reports per-cast allocations including place/drawRecipe/renderAction, so zero-allocation NOT met. Baseline profile retained. Hypotheses: own numeric/iterator boxing, Three renderer allocations, sampler/harness retainedframes. MX5 will isolate the synchronous effect path afterwarmup and attribute before claimingzero.
+Probe correction: old .56fraction was not the actual impact beat. Cost1b retained; subsequent cost probes conservatively sum projected bounds at impact,secondary,afterglow and keep allthree,using the maximum. It remains an overdrawestimate,notpixeltruth.
+
+### B-MX-002 round2 visual review / final small corrections
+Viewed all three batch1d strips (15cues×5frames). Correct landing and smaller Cinnamon apron now visible. Remaining five flaws in320px tiles: Soot1 ember secondary barely reads(x190–218,y110–140); Soot3 wick behind target(x187–212,y90–127); Velvet2 candles small(x188–215,y110–135); Cinnamon4 dome too solid(x115–160,y105–138); Soot/Velvet afterglow still ring-heavy(x180–215,y130–145). Enlarged selected sprite silhouettes, moved/accented wick beside body, softened Cinnamon dome. Ring-heavy afterglow retainedPARTIAL for MX3. No event or duration changes; batch1e verification registered.
+
+## B-MX-004 2026-11-09T05:17Z MX2 batch2 visual hierarchy S3
+Round1 reviewed Sorrel/Inkcap/Brioche15×5strips. Five flaws at320tile: Sorrel4 overlapping teapots across allies(x50–165,y95–145); Inkcap2 spore cap hidden in foe(x188–210,y92–128); Brioche1 bell merges with foe(x188–223,y93–130); Inkcap3 paper silhouette still flat(x140–165,y100–126); Brioche4 floor stars crowd mat(x50–165,y128–153). Three fixes: smaller translucent teapots, brighter off-body spore cap, larger off-body bell. Paper shading and star crowding remain for round2/MX3. Probe had measured configured layers but not perceived separation; individual five-frame review catches this.
+
+### MX batch1e visual closure and probe precision
+Viewed15tile peak sheet after round2 tweaks: Soot cup/wick, Velvet needle/candle/flame, Cinnamon cup/apron/cloche are distinguishable, but small spark and ring-heavy residue remainPARTIAL; no7.5beauty claim yet. Cost15cues105draws/102467tris, programs50→50, conservativeoverdraw0.363; allocationsremainMISS. Corrected face harness to beat2+55% (same actualimpact as sheets), replacing guessed56%total duration before registered final face runs.
+
+## B-MX-005 2026-11-09T05:21Z MX2 batch3 visual hierarchy S3
+Round1 reviewed allPanko/Mallow/Clover15×5strips. Five flaws at320tile: Panko2 bread mostly behind cat(x110–147,y98–132); Mallow3 flat star lacks hot-core beat(x188–215,y115–137); Clover3 leaf/wreath fan crowds feet(x55–162,y125–151); Panko4 oven too small/buried(x110–150,y112–141); Clover4 greenhouse peak is late secondary(x55–165,y60–145). First3fixed with forward bread,hotcore particles,smaller translucent wreath; oven offset improved too. Late greenhouse intentionally carries afterglow, MX3 timing audit pending; no score claim from layercount alone.
+
+### B-MX-004 round2 review
+Viewed all15×5batch2bframes: Sorrel team teapots no longer blanket allies, Inkcap cap and Brioche bell moved outside silhouettes. Remaining five refinements: Sorrel1 spoon thin, Sorrel3 moon looks like two braces, Inkcap1 thread thin, Inkcap3 paper very flat, Brioche4 mat stars bright. First three are legible atfullsize but moderate identity, retained for MX3 whole-sheet assessment; no new batch2regression observed. Two review rounds complete; final cost/casts/faces queued.

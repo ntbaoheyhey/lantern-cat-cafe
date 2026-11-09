@@ -42,6 +42,8 @@ const output = 'varying vec2 vUv;uniform sampler2D source;void main(){gl_FragCol
 // Pinned Three SMAA internals expose its textures/targets for explicit sliced prewarm.
 interface SmaaResources { _areaTexture:T.Texture;_searchTexture:T.Texture;_edgesRT:T.WebGLRenderTarget;_weightsRT:T.WebGLRenderTarget;_materialEdges:T.ShaderMaterial;_materialWeights:T.ShaderMaterial;_materialBlend:T.ShaderMaterial }
 export class LookPost {
+ readonly qualityWarmup={samples:0,p95:0,selected:'high' as Quality};
+ private calibrated=false;
  private sceneTarget:T.WebGLRenderTarget;private a:T.WebGLRenderTarget;private b:T.WebGLRenderTarget;private graded:T.WebGLRenderTarget;private antialiased:T.WebGLRenderTarget;
  private smaa=new SMAAPass();private scene=new T.Scene();private camera=new T.Camera();private plane:T.Mesh<T.PlaneGeometry,T.ShaderMaterial>;
  private filter:T.ShaderMaterial;private final:T.ShaderMaterial;private output:T.ShaderMaterial;private luts:T.DataTexture[];
@@ -65,8 +67,18 @@ export class LookPost {
  setChapter(chapter:number){this.final.uniforms.lut!.value=this.luts[Math.max(0,Math.min(2,chapter-1))];}
  protectFaces(faces:T.Vector4[],count:number){this.final.uniforms.protectedFaces!.value=faces;this.final.uniforms.protectedCount!.value=Math.min(12,count);}
  setQuality(quality:Quality){if(this.requested===quality)return;this.requested=quality;this.mode=quality;this.sampleCount=this.slowWindows=this.fastWindows=0;this.resize(this.width,this.height);}
+ observeWarmup(ms:number,auto=true){
+  if(this.calibrated)return this.observe(ms,auto);
+  if(!auto||ms<5||ms>200)return;
+  this.samples[this.sampleCount++]=ms;if(this.sampleCount<45)return;
+  const warm=this.samples.subarray(0,45);warm.sort();const p95=warm[42]!;
+  this.mode=p95>35?'low':p95>22&&this.requested==='high'?'medium':this.requested;
+  this.qualityWarmup.samples=45;this.qualityWarmup.p95=p95;this.qualityWarmup.selected=this.mode;
+  this.calibrated=true;this.sampleCount=0;this.resize(this.width,this.height);
+ }
  observe(ms:number,auto=true){
-  if(!auto||ms<5||ms>200)return;this.samples[this.sampleCount++]=ms;if(this.sampleCount<this.samples.length)return;
+  if(!auto||ms<5||ms>200)return;this.samples[this.sampleCount++]=ms;
+  if(this.sampleCount<this.samples.length)return;
   this.samples.sort();const p95=this.samples[171]!;this.sampleCount=0;this.slowWindows=p95>25?this.slowWindows+1:0;this.fastWindows=p95<18?this.fastWindows+1:0;
   if(this.slowWindows>=2&&this.mode!=='low'){this.mode=this.mode==='high'?'medium':'low';this.slowWindows=this.fastWindows=0;this.resize(this.width,this.height);}
   else if(this.fastWindows>=6&&this.mode!==this.requested){this.mode=this.mode==='low'&&this.requested==='high'?'medium':this.requested;this.slowWindows=this.fastWindows=0;this.resize(this.width,this.height);}

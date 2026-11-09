@@ -1,3 +1,4 @@
+import { fullRecipes } from './look-full-recipes';
 import { showBodyMark } from './card-status-priority';
 import { CARD_STATUS_LOOKS, CRUMB_BURST_LAYER, V5_CUE_LAYERS } from './card-status-looks';
 import type { ReactionBeat, LandingBeat } from './card-v5-events';
@@ -13,8 +14,10 @@ import type { TurnActor } from '@taskbar-hero/game-rules/src/squad/turn/types';
 import type { EffectFrame } from './effects';
 import type { Quality } from './post';
 import { CARD_EFFECT_RECIPES, LEGACY_CARD_STATUS_LOOKS, type CardEffectLayer, type CardEffectRecipe } from './card-effect-data';
-import { CARD_EFFECT_PRIMITIVES, createCardPrimitive, type CardEffectPrimitive } from './card-effect-primitives';
+import { LOOK_PARTICLE_PRIMITIVES, CARD_EFFECT_PRIMITIVES, createCardPrimitive, type CardEffectPrimitive } from './card-effect-primitives';
 
+export const FULL_VFX_CATS:readonly string[]=['soot','velvet','cinnamon','sorrel','inkcap','brioche','panko','mallow','clover','marigold','mochi','biscuit']; // batches enabled after individual review
+const FULL_RECIPES=fullRecipes(CARD_EFFECT_RECIPES,FULL_VFX_CATS);
 export const CARD_EFFECT_BUDGET = { instances: 96, primitiveCalls: 8, lookInstances: 256, lookPrimitiveCalls: 16, perPrimitive: 64, protectedFaces: 12 };
 const vertexShader = `
   attribute float effectAlpha;
@@ -50,6 +53,7 @@ const READABLE_IMPACT: CardEffectLayer = {...READABLE_GATHER,motion:'expand',siz
 const READABLE_SMALL_IMPACT: CardEffectLayer = {...READABLE_IMPACT,size:.75,opacity:.65};
 const NO_REACTIONS:readonly ReactionBeat[]=[];
 const NO_LANDINGS:readonly LandingBeat[]=[];
+const NO_CUES:readonly string[]=[];
 const nextTask = () => new Promise<void>(resolve => setTimeout(resolve, 0));
 const ease = (value: number) => value * value * (3 - 2 * value);
 const effectBeatSpans = {
@@ -59,7 +63,7 @@ const effectBeatSpans = {
 
 export function cardRecipeFor(frame: EffectFrame | null, actors: TurnActor[]): CardEffectRecipe | undefined {
   if (!frame) return;
-  const skill = CARD_EFFECT_RECIPES[frame.plan.presentationId ?? frame.plan.skillId];
+  const skill = (isReadableBattle()?FULL_RECIPES:CARD_EFFECT_RECIPES)[frame.plan.presentationId ?? frame.plan.skillId];
   if (skill) return skill;
   const actor = actors.find(candidate => candidate.id === frame.plan.actorId);
   return actor?.side === 'enemy' ? CARD_EFFECT_RECIPES[`enemy:${actor.cardRpg?.cardId}`] : undefined;
@@ -71,18 +75,20 @@ interface PrimitivePool {
   phase?: T.InstancedBufferAttribute;
   flash?: T.InstancedBufferAttribute;
   mark?: T.InstancedBufferAttribute;
+  tile?: T.InstancedBufferAttribute;
 }
 
 /** Pooled geometry compositions. No geometry/material/particle creation during playback. */
 export class CardEffects {
   readonly root = new T.Group();
-  readonly recipes = CARD_EFFECT_RECIPES;
+  readonly recipes:Record<string,CardEffectRecipe>;
   readonly ready: Promise<void>;
   readonly stats = { instances: 0, primitiveCalls: 0, truncated: 0 };
   readonly protectedHeadTops = new Float32Array(CARD_EFFECT_BUDGET.protectedFaces);
   readonly protectedFaces = Array.from({ length: CARD_EFFECT_BUDGET.protectedFaces }, () => new T.Vector4());
   private material: T.ShaderMaterial;
   private pools = new Map<CardEffectPrimitive, PrimitivePool>();
+  private poolList:PrimitivePool[]=[];
   private disposed = false;
   private deferred:PrimitivePool[]=[];
   private deferredRenderer?:T.WebGLRenderer;
@@ -98,10 +104,16 @@ export class CardEffects {
   private statusHeight = 1.6;
   private side = new T.Vector3();
   private forward = new T.Vector3();
+  private playbackSpeed=1;
   private sizeFactor = 1;
   private alphaFactor = 1;
   private position = new T.Vector3();
+  private lifeColor=new T.Color();
   private caster = new T.Vector3();
+  private casterVelocity=new T.Vector3();
+  private previousCaster=new T.Vector3();
+  private previousElapsed=-1;
+  private previousPlan:EffectFrame['plan']|null=null;
   private focus = new T.Vector3();
   private targets: T.Vector3[] = [];
   private targetIds: string[] = [];
@@ -116,6 +128,7 @@ export class CardEffects {
   private resolution = new T.Vector2(1, 1);
 
   constructor(private scene: T.Scene, private atelier = false) {
+    this.recipes=atelier?FULL_RECIPES:CARD_EFFECT_RECIPES;
     this.root.name = 'card-effect-compositions';
     scene.add(this.root);
     this.material = new T.ShaderMaterial({
@@ -143,7 +156,7 @@ export class CardEffects {
       if (this.disposed) return;
     }
     if(this.atelier) {
-      await Promise.all(CARD_EFFECT_PRIMITIVES.map(primitive =>
+      await Promise.all([...CARD_EFFECT_PRIMITIVES,...LOOK_PARTICLE_PRIMITIVES].map(primitive =>
         lookWarmQueue.enqueue(`geometry:${primitive}`,()=>this.createPool(primitive),()=>this.disposed)));
     } else for(const primitive of CARD_EFFECT_PRIMITIVES) {
       await nextTask();if(this.disposed)return;this.createPool(primitive);
@@ -159,6 +172,8 @@ export class CardEffects {
       if (phase) {phase.setUsage(T.DynamicDrawUsage);geometry.setAttribute('effectPhase', phase);}
       const mark = this.look ? new T.InstancedBufferAttribute(new Float32Array(CARD_EFFECT_BUDGET.perPrimitive), 1) : undefined;
       if(mark){mark.setUsage(T.DynamicDrawUsage);geometry.setAttribute('effectMark',mark);}
+      const tile=this.look?new T.InstancedBufferAttribute(new Float32Array(CARD_EFFECT_BUDGET.perPrimitive).fill(-1),1):undefined;
+      if(tile){tile.setUsage(T.DynamicDrawUsage);geometry.setAttribute('effectTile',tile);}
       const alpha = new T.InstancedBufferAttribute(new Float32Array(CARD_EFFECT_BUDGET.perPrimitive), 1);
       alpha.setUsage(T.DynamicDrawUsage);
       geometry.setAttribute('effectAlpha', alpha);
@@ -171,7 +186,8 @@ export class CardEffects {
       mesh.count = 0;
       mesh.visible = false;
       this.root.add(mesh);
-      this.pools.set(primitive, { mesh, alpha, phase, flash, mark });
+      const pool={ mesh, alpha, phase, flash, mark, tile };
+      this.pools.set(primitive,pool);this.poolList.push(pool);
   }
 
   async warm(renderer: T.WebGLRenderer, camera: T.Camera) {
@@ -192,7 +208,7 @@ export class CardEffects {
       renderer.setRenderTarget(target);
       const essentials=new Set(Object.values(CARD_STATUS_LOOKS).flatMap(s=>[s.layer.primitive,s.apply.primitive,s.tick.primitive]));
       essentials.add('knock-ring');
-      for (const pool of this.pools.values()) {
+      for (const pool of this.poolList) {
         const { mesh, alpha, phase, flash, mark }=pool;
         if(this.atelier&&!essentials.has(mesh.name as CardEffectPrimitive)){
           this.deferred.push(pool);continue;
@@ -271,13 +287,14 @@ export class CardEffects {
   render(frame: EffectFrame | null, recipe: CardEffectRecipe | undefined, actors: TurnActor[],
     positions: Map<string, T.Vector3>, camera: T.Camera, quality: Quality, calm: boolean,
     statuses?: Record<string, readonly (string | {id:string;stacks:number})[]>, time = 0,
-    presentation?: StatusPresentation, heights?: ReadonlyMap<string,number>, crowns?: ReadonlyMap<string,number>) {
-    for (const { mesh } of this.pools.values()) { mesh.count = 0; mesh.visible = false; }
+    presentation?: StatusPresentation, heights?: ReadonlyMap<string,number>, crowns?: ReadonlyMap<string,number>, playbackSpeed=1) {
+    for (const { mesh } of this.poolList) { mesh.count = 0; mesh.visible = false; }
     this.look?.begin();this.flash = 0;
     this.stats.instances = 0;
     this.stats.primitiveCalls = 0;
     this.stats.truncated = 0;
     if (this.disposed) return;
+    this.playbackSpeed=Math.max(1,playbackSpeed);
     this.mark=0;this.sizeFactor=1;this.alphaFactor=1;
     this.side.set(1,0,0).applyQuaternion(camera.quaternion);
     this.forward.set(0,0,1).applyQuaternion(camera.quaternion);
@@ -315,13 +332,14 @@ export class CardEffects {
       this.renderV5Cues(frame, positions, camera, calm, heights);
       if (recipe) this.renderAction(frame, recipe, actors, positions, camera, quality, calm);
     }
-    for (const { mesh, alpha, phase, flash, mark } of this.pools.values()) {
+    for (const { mesh, alpha, phase, flash, mark, tile } of this.poolList) {
       if (!mesh.count) continue;
       mesh.visible = true;
       mesh.instanceMatrix.needsUpdate = true;
       mesh.instanceColor!.needsUpdate = true;
       alpha.needsUpdate = true;
       if(mark)mark.needsUpdate = true;
+      if(tile)tile.needsUpdate=true;
       if (phase) phase.needsUpdate = true;
       if (flash) flash.needsUpdate = true;
     }
@@ -329,11 +347,13 @@ export class CardEffects {
 
   private renderAction(frame: EffectFrame, recipe: CardEffectRecipe, actors: TurnActor[],
     positions: Map<string, T.Vector3>, camera: T.Camera, quality: Quality, calm: boolean) {
-    const actor = actors.find(candidate => candidate.id === frame.plan.actorId);
+    let actor:TurnActor|undefined;for(let i=0;i<actors.length;i++)if(actors[i]!.id===frame.plan.actorId){actor=actors[i];break;}
     this.caster.copy(positions.get(frame.plan.actorId) ?? this.position.set(0, 0, 0));
+    if(this.atelier&&frame.plan===this.previousPlan&&frame.elapsed>this.previousElapsed){this.casterVelocity.copy(this.caster).sub(this.previousCaster).multiplyScalar(1000/(frame.elapsed-this.previousElapsed));this.casterVelocity.clampLength(0,3);}else this.casterVelocity.set(0,0,0);
+    this.previousCaster.copy(this.caster);this.previousElapsed=frame.elapsed;this.previousPlan=frame.plan;
     this.targets.length = 0; this.targetIds.length = 0;
     for (const id of frame.plan.targetIds) {
-      const target = actors.find(candidate => candidate.id === id);
+      let target:TurnActor|undefined;for(let i=0;i<actors.length;i++)if(actors[i]!.id===id){target=actors[i];break;}
       const position = positions.get(id);
       const appropriateSide = recipe.target === 'friendly' ? target?.side === actor?.side : target?.side !== actor?.side;
       if (position && appropriateSide) { this.targets.push(position); this.targetIds.push(id); }
@@ -363,7 +383,7 @@ export class CardEffects {
         }
       }
     }
-    for (const id of frame.plan.presentationCues ?? []) {
+    for (const id of frame.plan.presentationCues ?? NO_CUES) {
       const cue = CARD_EFFECT_RECIPES[id] ?? LAB_EFFECT_RECIPES[id];
       if (cue) {
         const target = positions.get(frame.plan.presentationCueTargets?.[id] ?? '');
@@ -468,22 +488,26 @@ export class CardEffects {
     this.accentColor.set(recipe.accent);
     for (const layer of recipe.layers) {
       const shape=this.presentation?.landings?.[0]?.shape;
-      if(stagger&&(shape==='splash'||shape==='multi-hit'||shape==='bounce')&&layer.anchor!=='caster')continue;
-      const anchors = layer.anchor === 'all-targets' ? this.targets.length : 1;
+      if(stagger&&!recipe.authored&&(shape==='splash'||shape==='multi-hit'||shape==='bounce')&&layer.anchor!=='caster')continue;
+      const landings=stagger&&recipe.authored&&layer.anchor!=='caster'?this.presentation?.landings:undefined;
+      const anchors = landings?.length || (layer.anchor === 'all-targets' ? this.targets.length : 1);
       const density = quality === 'low' ? .5 : quality === 'medium' ? .8 : 1;
-      const count = Math.max(1, Math.ceil(layer.count * density));
+      const count = Math.max(1, Math.ceil(layer.count * density * (layer.emitter?1/Math.sqrt(this.playbackSpeed):1)));
       for (let target = 0; target < anchors; target++) {
-        const delay = stagger && layer.anchor !== 'caster' ? this.presentation?.offsets.get(this.targetIds[target]!) ?? 0 : 0;
+        const landing=landings?.[target];
+        const targetIndex=landing?this.targetIds.indexOf(landing.targetId):target;
+        if(targetIndex<0)continue;
+        const delay=landing&&this.actionFrame?landing.at-this.actionFrame.plan.beats[2]!.start:stagger&&layer.anchor!=='caster'?this.presentation?.offsets.get(this.targetIds[targetIndex]!)??0:0;
         const localProgress = delay && this.actionFrame ? this.delayedProgress(this.actionFrame,delay) : actionProgress;
         const progress = (localProgress - layer.start) / (layer.end - layer.start);
         if (progress < 0 || progress > 1) continue;
-        this.focus.copy(layer.anchor === 'caster' ? this.caster : this.targets[target]!);
+        this.focus.copy(layer.anchor === 'caster' ? this.caster : this.targets[targetIndex]!);
         for (let index = 0; index < count; index++) {
           // Midnight service's lavender lanterns used to hide bodies throughout recovery.
           const burst = this.atelier && this.presentation?.bursts.includes(this.targetIds[target]!) && layer.primitive === 'lantern';
           const age = this.actionFrame ? this.actionFrame.elapsed-this.actionFrame.plan.beats[2]!.start-delay : 0;
           this.alphaFactor=burst ? .42*Math.max(.12,1-Math.max(0,age)/180) : 1;
-          this.sizeFactor=burst ? .62 : 1;
+          this.sizeFactor=burst ? .62 : landing?.scale??1;
           this.place(layer, progress, index, count, camera, calm);
           this.alphaFactor=1;this.sizeFactor=1;
         }
@@ -506,7 +530,9 @@ export class CardEffects {
       return;
     }
     const offset = count > 1 ? index / (count - 1) : .5;
-    const phase = Math.max(0, Math.min(1, progress * 1.16 - offset * .16));
+    let phase = Math.max(0, Math.min(1, progress * 1.16 - offset * .16));
+    if(layer.emitter&&calm)phase=.45;
+    else if(layer.emitter){const start=layer.emitter.mode==='rate'?offset*.55:offset*.08;phase=(progress-start)/layer.emitter.life;if(phase<0||phase>=1)return;}
     const travel = ease(phase);
     const angle = index * 2.399963 + (calm ? 0 : travel * layer.turns * Math.PI * 2);
     const radius = layer.spread;
@@ -516,12 +542,22 @@ export class CardEffects {
     this.position.copy(this.focus);
     this.position.y += height;
     switch (layer.motion) {
+      case 'emit': {
+        const emitter=layer.emitter;if(!emitter)return;
+        const vx=Math.cos(angle)*emitter.velocity[0],vz=Math.sin(angle)*emitter.velocity[2];
+        this.position.x+=vx*phase+Math.sin(phase*7+index)*emitter.curl*phase+this.casterVelocity.x*phase*emitter.inherit;
+        this.position.z+=vz*phase+Math.cos(phase*5+index)*emitter.curl*phase+this.casterVelocity.z*phase*emitter.inherit;
+        this.position.y+=emitter.velocity[1]*phase+.5*emitter.gravity*phase*phase;
+        size*=Math.sin(Math.min(1,phase*5)*Math.PI/2)*(1-phase*.75);spin=angle+phase*layer.turns;break;
+      }
       case 'hold':
         size *= .85 + .15 * ease(Math.min(1, phase * 5));
         break;
       case 'pulse':
         size *= .75 + .25 * Math.sin(phase * Math.PI);
         break;
+      case 'shrink':
+        size*=1.25-travel*.95;break;
       case 'expand':
         size *= .45 + travel * .9;
         this.position.x += Math.cos(angle) * radius * (count > 1 ? .4 : 0);
@@ -607,11 +643,12 @@ export class CardEffects {
     const instance = pool.mesh.count++;
     if (newPrimitive) this.stats.primitiveCalls++;
     pool.mesh.setMatrixAt(instance, this.transform.matrix);
-    pool.mesh.setColorAt(instance, layer.accent ? this.accentColor : this.baseColor);
+    pool.mesh.setColorAt(instance, layer.emitter?this.lifeColor.copy(this.accentColor).lerp(this.baseColor,phase*phase):layer.accent ? this.accentColor : this.baseColor);
     const fade = persistent ? 1 : Math.min(1, phase * 12) * Math.min(1, (1 - phase) * 5);
     pool.alpha.setX(instance, fade * layer.opacity * this.alphaFactor);
     pool.phase?.setX(instance, phase);
     pool.mark?.setX(instance, this.mark);
+    pool.tile?.setX(instance,layer.spriteRow??-1);
     pool.flash?.setX(instance, this.flash);
     this.stats.instances++;
   }
@@ -619,7 +656,7 @@ export class CardEffects {
   dispose() {
     this.disposed = true;this.deferredTarget.dispose();
     this.root.removeFromParent();
-    for (const { mesh } of this.pools.values()) {
+    for (const { mesh } of this.poolList) {
       mesh.geometry.dispose();
       mesh.dispose();
     }

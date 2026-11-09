@@ -5,19 +5,15 @@ import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 import type { CardEffectPrimitive } from './card-effect-primitives';
 import type { CardEffectRecipe } from './card-effect-data';
 import { loadingFrame } from './loading';
+import { lookWarmQueue } from './look-warm-queue';
 
-const sources = import.meta.glob('../../../../../../assets/cardrpg-look/flipbooks/{smoke,steam,flame,sparkle,yarn-dust,ribbon}.webp', {
-  eager: true, query: '?url', import: 'default',
-}) as Record<string, string>;
-const families = ['smoke', 'steam', 'flame', 'sparkle', 'yarn-dust', 'ribbon'] as const;
-type Family = typeof families[number];
-const familyFor: Partial<Record<CardEffectPrimitive, Family>> = {
-  'ink-stain': 'smoke', 'ink-drop': 'smoke', steam: 'steam', veil: 'steam',
-  flame: 'flame', ember: 'flame', spark: 'sparkle', 'spice-star': 'sparkle',
-  seam: 'yarn-dust', knot: 'yarn-dust', spool: 'yarn-dust', spindle: 'yarn-dust',
-  'crumb-crown': 'yarn-dust', 'seed-pod': 'sparkle', constellation: 'sparkle',
-  comet: 'ribbon', wave: 'ribbon', 'yarn-fan': 'ribbon',
+const sources = import.meta.glob('../../../../../../assets/cardrpg-look/flipbooks/{v5-soft,v5-motifs}.webp', {eager:true,query:'?url',import:'default'}) as Record<string,string>;
+const families=['v5-soft','v5-motifs'] as const;
+type Family=typeof families[number];
+const familyFor:Partial<Record<CardEffectPrimitive,Family>>={
+ 'soft-particle':'v5-soft','motif-particle':'v5-motifs','ink-stain':'v5-motifs','ink-drop':'v5-motifs',steam:'v5-soft',veil:'v5-soft',flame:'v5-soft',ember:'v5-soft',spark:'v5-soft','spice-star':'v5-soft',seam:'v5-motifs',knot:'v5-motifs',spool:'v5-motifs',spindle:'v5-motifs','crumb-crown':'v5-soft','seed-pod':'v5-motifs',constellation:'v5-soft',comet:'v5-soft',wave:'v5-soft','yarn-fan':'v5-motifs',leaf:'v5-motifs',petal:'v5-motifs',droplet:'v5-motifs','shield-facet':'v5-motifs',
 };
+const rowFor:Partial<Record<CardEffectPrimitive,number>>={'ink-stain':2,'ink-drop':2,steam:1,veil:7,flame:2,ember:3,spark:4,'spice-star':4,'crumb-crown':5,'seed-pod':7,constellation:4,comet:6,wave:6,leaf:1,petal:5,droplet:3,'shield-facet':4};
 const ribbons = new Set<CardEffectPrimitive>(['comet', 'wave', 'yarn-fan']);
 const paper = new Set<CardEffectPrimitive>(['apron', 'roof', 'leaf', 'petal', 'sock', 'wing',
   'bread', 'crumb-crown', 'paper-cat', 'apron-cloth', 'blanket', 'collar', 'flower-bell']);
@@ -73,16 +69,16 @@ function craftedBody(kind: CardEffectPrimitive): T.BufferGeometry | undefined {
   }
   return undefined;
 }
-const vertex = `attribute float effectAlpha,effectPhase,effectPart,effectFlash,effectMark;uniform float surfaceKind;varying vec3 effectColor,n,localPoint;varying vec2 texUV;varying float opacity,phase,part,viewDepth,flash,mark;
-void main(){effectColor=instanceColor;opacity=effectAlpha;phase=effectPhase;part=effectPart;flash=effectFlash;mark=effectMark;texUV=uv;
+const vertex = `attribute float effectAlpha,effectPhase,effectPart,effectFlash,effectMark,effectTile;uniform float surfaceKind;varying vec3 effectColor,n,localPoint;varying vec2 texUV;varying float opacity,phase,part,viewDepth,flash,mark,tile;
+void main(){effectColor=instanceColor;opacity=effectAlpha;phase=effectPhase;part=effectPart;flash=effectFlash;mark=effectMark;tile=effectTile;texUV=uv;
  vec3 p=position;if(surfaceKind>5.5)p.y=(p.y+.75)*smoothstep(0.,.4,effectPhase)-.75;localPoint=p;if(effectPart>1.5&&effectPart<2.5){p.y+=sin(uv.x*8.-effectPhase*6.283)*.07*sin(uv.x*3.14159);}
  if(effectPart<.5&&surfaceKind>.5&&surfaceKind<1.5){p.z+=sin(p.x*4.8+effectPhase*.8)*.11*(.8+.2*cos(p.y*4.));}
  vec3 surfaceNormal=normal;
  if(effectPart<.5&&surfaceKind>.5&&surfaceKind<1.5){surfaceNormal.x-=cos(p.x*4.8+effectPhase*.8)*.528*(.8+.2*cos(p.y*4.))*normal.z;surfaceNormal.y+=sin(p.x*4.8+effectPhase*.8)*.088*sin(p.y*4.)*normal.z;}
  mat3 instanceNormal=mat3(instanceMatrix);surfaceNormal/=max(vec3(dot(instanceNormal[0],instanceNormal[0]),dot(instanceNormal[1],instanceNormal[1]),dot(instanceNormal[2],instanceNormal[2])),vec3(.000001));
  vec4 mv=modelViewMatrix*instanceMatrix*vec4(p,1.);viewDepth=-mv.z;n=normalize(normalMatrix*instanceNormal*surfaceNormal);gl_Position=projectionMatrix*mv;}`;
-const fragment = `varying vec3 effectColor,n,localPoint;varying vec2 texUV;varying float opacity,phase,part,viewDepth,flash,mark;
-uniform sampler2D atlas,sceneDepth;uniform float surfaceKind,softVolume,flameVolume,depthEnabled,overdraw;uniform vec2 resolution,clipPlanes;uniform vec4 protectedFaces[12];uniform int protectedCount;uniform float protectedHeadTops[12];
+const fragment = `varying vec3 effectColor,n,localPoint;varying vec2 texUV;varying float opacity,phase,part,viewDepth,flash,mark,tile;
+uniform sampler2D atlas,sceneDepth;uniform float surfaceKind,softVolume,flameVolume,depthEnabled,overdraw,atlasRow;uniform vec2 resolution,clipPlanes;uniform vec4 protectedFaces[12];uniform int protectedCount;uniform float protectedHeadTops[12];
 float distanceAt(vec2 uv){float z=texture2D(sceneDepth,uv).r*2.-1.;return 2.*clipPlanes.x*clipPlanes.y/(clipPlanes.y+clipPlanes.x-z*(clipPlanes.y-clipPlanes.x));}
 void main(){vec2 screen=gl_FragCoord.xy/resolution;float faceFade=1.;
  for(int i=0;i<12;i++){if(i>=protectedCount)break;if(mark>1.5&&mark<2.5&&screen.y>protectedHeadTops[i]+.008)continue;vec4 f=protectedFaces[i];vec2 q=(screen-f.xy)/max(f.zw,vec2(.00001));float radius=dot(q,q);if(radius<1.)discard;faceFade*=smoothstep(1.,1.6,radius);}
@@ -91,11 +87,11 @@ void main(){vec2 screen=gl_FragCoord.xy/resolution;float faceFade=1.;
    if(mark<1.5||mark>2.5)discard;
    float r=length((texUV-.5)*2.);a*=.72*(1.-smoothstep(.65,1.,r));c=vec3(.012,.026,.033);
  }else
- if(part>.5&&part<1.5){float f=clamp(floor(phase*35.),0.,35.);vec2 cell=vec2(mod(f,6.),5.-floor(f/6.));vec2 uv=(cell+clamp(texUV,vec2(.5/256.),vec2(1.-.5/256.)))/6.;
+ if(part>.5&&part<1.5){float f=clamp(phase*7.,0.,7.);vec2 cell=vec2(floor(f),7.-(tile>=0.?tile:atlasRow));vec2 uv=(cell+clamp(texUV,vec2(.5/128.),vec2(1.-.5/128.)))/8.;
   vec4 t=texture2D(atlas,uv);vec3 straight=t.rgb/max(t.a,.0001);vec3 linear=pow(straight,vec3(2.2));float light=mix(dot(linear,vec3(.2126,.7152,.0722)),max(linear.r,max(linear.g,linear.b)),flameVolume);
   a*=mix(t.a*.52,sqrt(t.a)*.72,softVolume);if(mark>.5&&mark<1.5)a*=.32;c=mix(effectColor*.55,effectColor*1.75,clamp(light,0.,1.));
   c+=mix(effectColor,vec3(1.,.78,.4),.35)*pow(clamp(light,0.,1.),4.)*1.4*flameVolume;
- }else if(part>1.5&&part<2.5){float f=clamp(floor(phase*35.),0.,35.);vec2 cell=vec2(mod(f,6.),5.-floor(f/6.));vec4 silk=texture2D(atlas,(cell+clamp(texUV,vec2(.5/256.),vec2(1.-.5/256.)))/6.);float fibre=dot(silk.rgb,vec3(.2126,.7152,.0722));float edge=1.-abs(texUV.y*2.-1.);a*=pow(max(0.,edge),1.2)*sin(texUV.x*3.14159)*.7;c=mix(effectColor*.55,mix(effectColor,vec3(1.),.3)*3.2,pow(edge,7.)*.65);c*=.95+fibre*.15;additive=.35;
+ }else if(part>1.5&&part<2.5){float f=clamp(phase*7.,0.,7.);vec2 cell=vec2(floor(f),7.-(tile>=0.?tile:atlasRow));vec4 silk=texture2D(atlas,(cell+clamp(texUV,vec2(.5/128.),vec2(1.-.5/128.)))/8.);float fibre=dot(silk.rgb,vec3(.2126,.7152,.0722));float edge=1.-abs(texUV.y*2.-1.);a*=pow(max(0.,edge),1.2)*sin(texUV.x*3.14159)*.7;c=mix(effectColor*.55,mix(effectColor,vec3(1.),.3)*3.2,pow(edge,7.)*.65);c*=.95+fibre*.15;additive=.35;
  }else{float light=.5+.5*dot(normalize(n),normalize(vec3(-.45,.75,.5)));float rim=pow(1.-abs(normalize(n).z),2.);
   a*=mark>.5&&mark<2.5?1.:mix(1.,mix(.38,.10,flameVolume),softVolume);
   c=effectColor*(.42+light*.48)+mix(effectColor,vec3(.9),.18)*rim*.18;
@@ -137,7 +133,7 @@ export class LookVfx {
     this.lights = Array.from({ length: 2 }, (_, i) => {
       // Foot-level falloff lights the floor and lower costume without washing
       // the protected eyes; keep both lights present throughout loading/play.
-      const light = new T.PointLight('#ffc773', 0, .42, 2);
+      const light = new T.PointLight('#ffc773', 0, .65, 2);
       light.name = `atelier-effect-light-${i}`;scene.add(light);return light;
     });
   }
@@ -157,15 +153,15 @@ export class LookVfx {
   }
   material(kind: CardEffectPrimitive) {
     const family = familyFor[kind], finish = kind === 'greenhouse' && isReadableBattle() ? 6 : kind === 'lantern' ? 5 : paper.has(kind) ? 1 : glass.has(kind) ? 2 : ceramic.has(kind) ? 3 : metal.has(kind) ? 4 : 0;
-    const key = `${family ?? 'sculpted'}/${finish}`;
+    const key = `${family ?? 'sculpted'}/${finish}/${rowFor[kind]??0}/${kind==='flame'||kind==='ember'?1:0}`;
     let material = this.materials.get(key);
     if (!material) {
       material = new T.ShaderMaterial({vertexShader: vertex, fragmentShader: fragment,
         transparent: true, depthWrite: false, side: T.DoubleSide, forceSinglePass: true,
         blending: T.CustomBlending, blendEquation: T.AddEquation, blendSrc: T.OneFactor,
         blendDst: T.OneMinusSrcAlphaFactor,
-        uniforms: {...this.shared, atlas: {value: this.textures.get(family ?? 'sparkle')},
-          surfaceKind: {value: finish}, softVolume: {value: family && ['smoke', 'steam', 'flame'].includes(family) ? 1 : 0}, flameVolume: {value: family === 'flame' ? 1 : 0}, sceneDepth: this.depth,
+        uniforms: {...this.shared, atlas: {value: this.textures.get(family ?? 'v5-soft')}, atlasRow:{value:rowFor[kind]??0},
+          surfaceKind: {value: finish}, softVolume: {value: ['steam','veil','flame','ember','soft-particle','motif-particle','ink-drop','ink-stain'].includes(kind) ? 1 : 0}, flameVolume: {value: kind === 'flame'||kind==='ember' ? 1 : 0}, sceneDepth: this.depth,
           depthEnabled: this.depthEnabled, clipPlanes: this.clipPlanes}});
       this.materials.set(key, material);
     }
@@ -173,6 +169,7 @@ export class LookVfx {
   }
   geometry(base: T.BufferGeometry, kind: CardEffectPrimitive) {
     const family = familyFor[kind];
+    if(kind==='soft-particle'||kind==='motif-particle'){base.setAttribute('effectPart',new T.BufferAttribute(new Float32Array(base.attributes.position!.count).fill(1),1));return base;}
     let original = base.index ? base.toNonIndexed() : base;
     if (original !== base) base.dispose();
     if (paper.has(kind)) original = refinePaper(original);
@@ -210,7 +207,7 @@ export class LookVfx {
       for (let i = 0; i < 32; i++) {point(i, -1);point(i + 1, -1);point(i + 1, 1);point(i, -1);point(i + 1, 1);point(i, 1);}
       addition = new T.BufferGeometry();addition.setAttribute('position', new T.Float32BufferAttribute(vertices, 3));
       addition.setAttribute('uv', new T.Float32BufferAttribute(uvs, 2));addition.computeVertexNormals();
-    } else {const size = family === 'flame' ? 3.1 : family === 'smoke' || family === 'steam' ? 2.6 : 1.65;
+    } else {const size = kind==='flame' ? 2.6 : ['steam','veil','ink-drop','ink-stain'].includes(kind) ? 2.1 : 1.45;
       const plane = new T.PlaneGeometry(size, size);addition = plane.toNonIndexed();plane.dispose();addition.translate(0, .05, -.01);}
     addition.setAttribute('effectPart', new T.BufferAttribute(new Float32Array(addition.attributes.position!.count).fill(ribbons.has(kind) ? 2 : 1), 1));
     const merged = mergeGeometries([original, addition], false)!;original.dispose();addition.dispose();merged.computeBoundingSphere();return merged;
@@ -241,7 +238,7 @@ export class LookVfx {
     }
   }
   async warm(renderer: T.WebGLRenderer, cancelled: () => boolean) {
-    for (const texture of this.textures.values()) {if (cancelled()) return;renderer.initTexture(texture);await loadingFrame();}
+    for (const texture of this.textures.values()) {if (cancelled()) return;await lookWarmQueue.enqueue('vfx-atlas',()=>renderer.initTexture(texture),cancelled);}
   }
   dispose() {
     this.disposed = true;for (const light of this.lights) light.removeFromParent();

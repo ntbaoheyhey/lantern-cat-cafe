@@ -122,3 +122,9 @@ Tool: authored TypeScript/Three geometry and GLSL (no image/model generation); d
 
 ### Skills V5 full M2 · 2026-11-09
 Original Three/GLSL material adjustment, deterministic seed0: hostile body base#ddb0c8, emissive#d294aa at.78, rim RGB(.48,.10,.17) with exponent2.5; same original meshes/atlas/lighting, no stage darkening. Body statuses capped to highest-priority3; badges retain every status. Boss safe framing1.25,targetY2.0,Yarn multiplier1.75; larger third attempt was reverted for clipping and is not claimed accepted. Reaction500ms profiles: Wildfire3fronts+sparks, Rupture24%tension/76%snap+inward drops, Spread per-primer icons. No new art/dependency/model.
+
+## Skills V5 full MX atlases and toolkit — 2026-11-09
+Original analytic NumPy/Pillow generator `tools/cardrpg-look/skills-v5/full/atlases.py`, seed20261109,128px cell,8x8 rows/columns,1024px,lossless premultiplied WebP. Two atlases: soft(smoke,steam,flame,ember,sparkle,crumb,ribbon,mist); motifs(yarn,leaf,ink,tea,frost,petal,shard,pollen). Exact field formulas and eight phase samples per row in generator; no imported art. Combined 132386bytes.
+Authored analytic emitter uses burst/rate,velocity/gravity/curl/caster inheritance; per-instance tile selects row;32segment tapered sine ribbon, fixed2light pool,50ms target-pose stop,45frame tier selection. Recipes preserve cafe silhouettes, authored palettes/timings in look-full-recipes.ts; protected-face shader applies to effects and new rim uniforms.
+
+V5FULL MX2 whole-cat recipes: `look-full-recipes.ts`, original hand-authored cafe-object compositions, deterministic golden-angle seed2.399963; no external imagery. Shared parameters: seven+ layers/cue, anticipation.08–.34,travel.30–.52,impact.48+,ground.51–1,burst12/18,rate4/7; twelve palettes/motifs and per-skill overrides in source. 48active(12ultimate included)+12passive identities. Reuses original sculpted primitives and the two MX1 procedural atlases.

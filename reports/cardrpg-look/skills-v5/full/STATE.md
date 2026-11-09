@@ -1,5 +1,5 @@
 # Skills V5 full run
-NOW M2 closure complete: all421E2E PASS; package evidence and draftPR, then install staged MX toolkit.
+NOW MX2 batch1 round2 corrections -> batch1e verification; M3 worktree checkout complete, publishedS5 untouched.
 BASE f9924699cab2fa5b8029baa1158f789ee44ddfda, DRAFT415 ->413->409->395.
 DONE prior V0/V01/V3; do not repeat their completed samples.
 READ all references; full A history, latest S7. Baseline rebuilt byte-exact e4491ebf/29208740bytes; tools checked external venv.
@@ -17,6 +17,7 @@ STOP only full prompt section10. One agent, no model helpers, no desktop control
 DONE M1 source54d3e29b2/DRAFT416: cold/casts/parity/faces/contrast/UI/build/startupPASS; E2Eflake isolated2/2PASS; clip20s.
 NEXT MX1 toolkit; four MX2 whole-cat batches, MX3 ultimates, MX4 enemies, MX5 optimisation; then live integration.
 DECISION MX0 baseline86cue strips/60cat tiles captured once; self-score4.517 from12cat sheets; all13enemy sheets reviewed; MX0 audit table saved.
-PREP MX toolkit in /tmp/cardrpg-v5full-mx/staged (not installed):two132KBatlases,emitter/ribbons/rim/light/quality,recipes disabled pending4catbatches; install after M2 PR.
+DONE M2 DRAFT418 tip58adf21de; shared MX toolkit installed; staged logs retained, no finished sample reruns.
 
 DONE M2 source2e6ee6425:168casts native16.8/CPU4 33.3ms;125draws/173949tris;E2E421PASS;20sfixture clip saved.
+PREP M3 read-only S5schema notes /tmp/cardrpg-v5full-m3/adapter-notes.md; integration worktree frompublishedS5, mergeM2 pending checkoutcompletion; latestMX merge afterbatchclosure.
