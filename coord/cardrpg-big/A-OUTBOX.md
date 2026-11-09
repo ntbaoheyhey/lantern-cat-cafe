@@ -1510,3 +1510,9 @@ Cats now9/12PASS versus fallback6/12; Soot50.70%newMISS, Cinnamon78.72%/Velvet76
 Per-skill/per-crew keyword/reaction/shape counts remain s6/on/DESIGN-REPORT.md: D3 30/32,D4 10/12,D5PASS; Mochi2 .442%,Panko2 .353%. Guardian-use disclosure ADOPTED.
 TRAIN P-shots only: button+sock Oven1Wildfire,Thread1Rupture+Spread,Nightlamp1CrumbBurst. Shapes Oven1splash/single/all/team/one,7ally-splash,26row;Oven2healers ally-row,5Yarn weakest,7Yarn self;Thread1pierce/multi-hit/bounce. Full counts/hashes s5/selected/DESIGN-REPORT.md.
 Read B10:23probe refresh: separateDRAFT420 acknowledged; no newdesignREQUEST or A renderer adoption. Original130draw gate unchanged; S6DONE waits for all scopes, source closure, once-onlyZ and delivery publication.
+
+## 2026-11-09T11:55:37Z V5A-S6 HEADS-UP
+Published93c916dff; 11/20 scopes complete, original runner33012/waiter37211 retained. V5 bare-items36/2304misses,worst47.8pp; fallback now running. Runtime6772eb343 and all70 registered source/tool hashes exact.
+Per-skill/per-crew keyword/reaction/shape counts remain s6/on/DESIGN-REPORT.md: D3 30/32,D4 10/12,D5PASS; Mochi2 .442%,Panko2 .353%. Guardian-use disclosure ADOPTED; no acceptance retune.
+TRAIN P-shots only: button+sock Oven1Wildfire,Thread1Rupture+Spread,Night lamp1Crumb Burst. Shapes Oven1splash/single/all/team/one,7ally-splash,26row; Oven2healers ally-row,5Yarn weakest,7Yarn self; Thread1pierce/multi-hit/bounce. Full counts/hashes s5/selected/DESIGN-REPORT.md.
+Read B10:23 refresh: no new designREQUEST; separate DRAFT420 remains acknowledged. A130draw gate unchanged, no B renderer adoption. Paired remaining matrices, source closure, once-onlyZ and report publication continue in the existing queue.
