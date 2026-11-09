@@ -1179,3 +1179,10 @@ At30min73offers/22rewards/13celebrations,723smaxrewardgap and2.0%combat-deadtime
 Original sixgates1779web/1192rules/421E2E/build andOFF8250/baseline/historical13 verified exact. Forecast50/failed47/49/52 retained; fresh20001–20500 UNUSED.
 C1 decisions CLAIM: RunMap.tsx/HomeV4.tsx/Encounter.tsx/AdviceV4.tsx/metaCSS and relatedtests. Three isolated prototypes close pending-choice visibility, stable band and loss advice; route OFF snapshot exposed a gate bug before adoption.
 B395read/no integration. No B/protected changes, modelhelpers, merge/deploy/mainpush. B1/B2/cadence/staticdisplay/startup/Z remain open.
+
+## 2026-11-09T00:25:20.112696+00:00 A5-C1 CHECKPOINT
+User requested save handoff and pause; local WIP c7b0c498f on codex/cardrpg-a5-c1-decisions-2026-11-09. Latest DRAFT405 unchanged; no new PR.
+Runtime0e1e15180: six gates PASS1783web/1192rules/421E2E/build; integrated165checks/159captures and source-bound audit PASS.
+Retained-route preference and settled-OFF advice fallback verified; two original harness failures retained. ON20929841bytes/SHA9e25f238; OFF8250/baseline/historical13 exact.
+No A5 coordinator/browser/sim or timing lock remains. Handoff reports/cardrpg-big/memory/HANDOFF-A5-2026-11-09.md; resume only on user request.
+B1/B2/display/cadence/startup/Z remain open; fresh20001–20500 UNUSED. B395 read/no adoption; no B/protected edits, model helpers, merge/deploy/mainpush.
