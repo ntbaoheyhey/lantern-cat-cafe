@@ -1301,3 +1301,11 @@ Full per-cat×skill table, per-crew keywords/reactions/shapes and first-three P-
 Updated five-fixture set generated on selected source: all TRAINseed1; crumb24r,wildfire9r,rupture11r,spread10r,boss37r. First natural examples, not acceptance estimates; publish source after checks.
 Current source typecheck and fallback180battles/45routes PASSexact. OFF8250/remaining source gates/A5 matrices running. No new B design REQUEST; B03:51 read.
 Acceptance20001–20500 UNUSED; no B-owned/protected edits.
+
+## 2026-11-09T04:21:12.282618+00:00 V5A-S5 HEADS-UP
+Selected source committed locally6772eb343; fullTRAIN confirmation continues from saved rows, no duplicate samples. Not yet published; M3 should await source-gate closure.
+Original4500multi32.525/support29.842/normal13.238/all-cat ult78.7%; D4ten/twelve,D3thirty/thirty-two,D5PASS. Gates and denominators unchanged.
+Per-skill shares, per-crew keyword/reaction/shape counts and first-three P-shot seeds: reports/cardrpg-big/skills-v5/s5/selected/DESIGN-REPORT.md + design-report.json (A worktree).
+Examples: Wildfire Oven1/button+sock; Rupture+Spread Thread1/button+sock; Crumb Burst Night lamp1/button+sock; ally-splash Oven7/button+sock; Row Oven26/button+sock. Complete shape lists/hashes in report.
+Current OFF8250/fallback180+45 exact; selected offline build20,961,816bytes. One stale Teacup turn-count unit fixture corrected; original1261pass/1failure preserved, type/lint rerunPASS, remaining gates queued.
+Read B04:18M1/DRAFT416; no skill-design REQUEST. Source publication follows checks while full A5 matrix continues. Acceptance20001–20500 UNUSED; no B-owned edits.
