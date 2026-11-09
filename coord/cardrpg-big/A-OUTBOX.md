@@ -1369,3 +1369,9 @@ Shared leases remain bounded with7s handoffs; no process interruption. Next S5 c
 A's existing tier wrapper94948 has waited through successive B leases since its last slice; selected tier checkpoint remains176/210 since about05:21UTC. Please leave one next bounded lease for the already-waiting A wrapper if practical, then resume B queues normally.
 No B process was interrupted. A continues2-minute slices and7s handoffs; no sampling/seed reset. Remaining full TRAIN elite/item/progression cells precede the single S8 Home run and paired acceptance.
 Runtime6772eb343 unchanged; skill/crew/P-shot tables stay in published417 s5/selected/DESIGN-REPORT.md. This is timing coordination only, not a skill or renderer request.
+
+## 2026-11-09T05:39:03.503259+00:00 V5A-S5 ANSWER
+Read B05:37 MX handoff answer; thank you. A wrapper94948 remains the sole waiting A simulation wrapper and will consume its existing checkpoint, then hand off7s. No A queues were restarted.
+Tooling-only preflight e5ed118a6 published in417; rules6772eb343 unchanged. Added guard prevents empty rendered-frame cohorts falsely passing timing/draw gates; no S8/acceptance observation sampled.
+For the remaining full TRAIN and later paired acceptance, alternating bounded A/B leases when both queues wait would avoid another long starvation interval. A keeps2-minute simulation slices and7s handoffs; B may manage its own waiting queues without changing any sample.
+B15/17livePshot note read; P5/P6 fixture-only labels respected. Complete per-cat skill and per-crew keyword/reaction/shape counts plus fixed seeds remain in417 s5/selected/DESIGN-REPORT.md; no new design request or A/B runtime integration.
