@@ -492,3 +492,22 @@ Addendum received during S5. TRAIN remains 1–500. Existing baseline slices con
 - Ranked hypotheses (not established causes): 1. Different loaded modules or evaluation; 2. native scheduling variance; 3. initialization work after the onboarding click.
 - Smallest next fix: Use all three original paired observations and their chunk membership. Do not reroll an outlier or claim statistical equivalence. This report does not apply a runtime change or run a new sample.
 - Verification/status: S8 six source gates and OFF8250/fallback180+45 compatibility remain exact in `s8/audit.json`; all affected observations are retained in `s8/observations.json`. **PARTIAL / MISS**; revisit the original evidence before S6, without moving gates.
+
+## S6-DELIVERY-WAITER — FIXED tooling syntax
+- Reproduce: original passive waiter in `s6/delivery-preflight/waiter-attempt-1.py` fails Python parsing at line27. A repair wrapper repeated the same separator typo; both diagnostics are recorded in `attempts.log`. Neither attempt started a child or a new sample.
+- Attribute/hypothesis1: a literal backslash-n was written where an actual newline was intended.
+- Smallest fix, third attempt: replace only that separator with an actual newline. Corrected source compiles. Waiter observes original runner33012 and starts existing delivery commands only after all20 scopes finish.
+- Verification: Python compile PASS. Registered source/tool files unchanged; OFF/fallback receipts remain from S8 for unchanged production bytes. S6 closure is pending. No gate, sample or runtime modification.
+
+## S6-REPORT-VALUES — FIXED reporting omission
+- Reproduce: retained `s6/report-preflight/delivery-report-before-values.mjs` fell back to PASS/MISS strings for all economy/day-7 measurement cells, and showed the earned boss verdict without its elapsed seconds.
+- Attribute/hypothesis1: the numeric gate receipt stores those progression assertions as booleans; the reporter did not read the corresponding underlying summaries. Gate evaluation and original outcomes were unaffected.
+- Smallest fix: read both modes' completed economy/day-7 receipts when rendering the report; show actual rates, counts, medians, censored accounts, currency ratios and original earned-boss seconds. Add plain gate labels. Do not change the registered evaluator, samples or thresholds.
+- Verification: reporter syntax PASS; all registered source/tool hashes remain exact. Full rendered-value verification waits for both modes' completed receipts in the existing delivery queue. S8 compatibility remains applicable; S6 source/hash closure is pending.
+
+## S6-FOURTH-SLOT-TRADEOFF — PARTIAL
+- Reproduce: read the completed paired `s6/{on,off}/equipped/results.json` receipts; fixed384 cases ×500 seeds,20001–20500. `s6/equipment-attribution.json` binds both file hashes and every chapter maximum.
+- Measure: fallback58/384 misses, worst87.4pp; V5 38/384 misses, worst48.4pp. Forty-nine fallback misses become passes, but29 fallback passes become misses;9 fail in both. The two global maxima occur in different named cases, recorded in `s6/EQUIPMENT-REVIEW.md`. TRAIN V5 had35 misses/worst47pp.
+- Ranked hypotheses, not isolated causes: 1. New helper and support interactions move survival thresholds; 2. policy choices amplify changes in available protection; 3. set completion effects interact with the different battle length.
+- Smallest next fix: in a future TRAIN phase, isolate one of the29 newly failing cases and separate its fourth-piece contributions before changing a V5-only term. Current held-out candidate is unchanged; any retune needs a newly registered30001–30500 block.
+- Verification/status: every current cell retains500 outcomes, Wilson intervals and paired digests. Scope/baseline13 and registered source/tool hashes pass; S8 OFF/fallback receipts remain exact for unchanged production bytes. The separate bare-item scope and full S6 closure are pending. Original12pp gate remains PARTIAL/MISS; aggregate improvement does not erase regressions.

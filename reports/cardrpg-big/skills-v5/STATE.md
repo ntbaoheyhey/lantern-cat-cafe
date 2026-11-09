@@ -34,8 +34,8 @@ S8 Home first30:deadtime+10.441%vsH0;466.403s losses;capnotice14.638min. Both ca
 S8 review: PRE-S6-REVISIT.md records every open group; earnedboss130.129s and fixedYarn280.037sMISS.
 Acceptance20001–20500 RUNNING pid33012/session30958; registration3061b085a; both modes;30001/40001 UNUSED.
 S6 probes both complete:multi32.660%,support29.793%,normal13.242r,ultimate77.667%; remaining matrices running.
-S6 D3:30/32,D4:10/12,D5PASS; Mochi2 .442%,Panko2 .353%; FRESH-EYES review and guide prepared.
-Then S6: all numeric scopes both modes,sixgates,offline skills-v5.html,Zpack,guide/playtest,fresh-eyes,report/outbox.
+S6 D3:30/32,D4:10/12,D5PASS; Mochi2 .442%,Panko2 .353%; fourthslot38/384,worst48.4pp (fallback58/87.4).
+Then S6: waiter37211/session15857 starts closure/build/Z/report/guide after all20scopes; inspect images and publish.
 B10:06read: S8refresh separateDRAFT420; no runtime delta/newdesignREQUEST; retain presentation boundary.
 B request guardian underuse disclosureADOPTED; no unanswered designREQUEST. A130draw target unchanged.
 A owns no B renderer paths; no renderer integration implicit. Main docs/cardrpg3/index.html staysA4.
