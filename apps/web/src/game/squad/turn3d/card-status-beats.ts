@@ -1,10 +1,12 @@
+import type { VisualStatusId } from './card-status-data';
+import type { ReactionBeat, LandingBeat } from './card-v5-events';
 import { STATUSES } from '@taskbar-hero/game-rules/src/cardrpg/depth/catalog';
-import type { BattleEvent, StatusId } from '@taskbar-hero/game-rules/src/cardrpg/depth/contract';
+import type { BattleEvent } from '@taskbar-hero/game-rules/src/cardrpg/depth/contract';
 import type { TurnEvent } from '@taskbar-hero/game-rules/src/squad/turn/types';
 import type { EffectPlan } from './effects';
 
-export interface StatusBeat { kind:'apply'|'tick'|'expire'|'burst'; statusId:StatusId; sourceId:string; targetId:string; stacks:number; at:number; duration:number }
-export interface StatusPresentation { offsets:Map<string,number>; beats:StatusBeat[]; kinds:Map<number,string>; bursts:string[] }
+export interface StatusBeat { kind:'apply'|'tick'|'expire'|'burst'; statusId:VisualStatusId; sourceId:string; targetId:string; stacks:number; at:number; duration:number }
+export interface StatusPresentation { offsets:Map<string,number>; beats:StatusBeat[]; kinds:Map<number,string>; bursts:string[]; reactions?:ReactionBeat[]; landings?:LandingBeat[]; tickIds?:Map<number,string>; bitterTargets?:Set<string> }
 const types:Record<string,string> = { damage:'damage',dot:'damage',detonate:'damage',shared:'damage',reflect:'damage',heal:'heal',revive:'heal',survive:'heal',shield:'shield',defeat:'death',status:'status_apply',expire:'status_expire',phase:'boss_phase',summon:'spawn' };
 const byName = new Map(STATUSES.map(status => [status.name,status.id]));
 function matches(event:TurnEvent, log:BattleEvent|undefined) {
@@ -46,13 +48,13 @@ export function statusPresentation(plan:EffectPlan, log:readonly BattleEvent[]):
 
 /** Damage-over-time never folds into a direct-hit label. Source event amounts remain exact. */
 export function statusImpactLabels(plan:EffectPlan, targetId:string, presentation:StatusPresentation) {
-  const labels:(TurnEvent&{hits:number;dot:boolean})[]=[];
+  const labels:(TurnEvent&{hits:number;dot:boolean;statusId?:string;bitter?:boolean})[]=[];
   for(const e of plan.events) {
     if(!e.targetIds.includes(targetId))continue;
     const dot=presentation.kinds.get(e.seq)==='dot',numeric=['damage','heal','shield'].includes(e.type);
-    const existing=numeric?labels.find(x=>x.type===e.type&&x.dot===dot&&Math.sign(x.amount)===Math.sign(e.amount)):undefined;
+    const existing=numeric?labels.find(x=>x.type===e.type&&x.dot===dot&&x.statusId===presentation.tickIds?.get(e.seq)&&Math.sign(x.amount)===Math.sign(e.amount)):undefined;
     if(existing){existing.amount+=e.amount;existing.hits++;}
-    else labels.push({...e,hits:1,dot});
+    else labels.push({...e,hits:1,dot,statusId:presentation.tickIds?.get(e.seq),bitter:e.type==='heal'&&presentation.bitterTargets?.has(targetId)});
   }
   return labels;
 }

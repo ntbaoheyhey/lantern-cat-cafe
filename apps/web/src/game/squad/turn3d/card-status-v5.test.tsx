@@ -12,9 +12,9 @@ import { statusPresentation, statusImpactLabels } from './card-status-beats';
 afterEach(cleanup);
 describe('lookV2 status vocabulary',()=>{
   it('requires an original icon, display name and body/apply/tick/expiry cue for every rules status',()=>{
-    expect(Object.keys(STATUS_IDENTITIES).sort()).toEqual(STATUSES.map(s=>s.id).sort());
-    expect(Object.keys(CARD_STATUS_LOOKS).sort()).toEqual(STATUSES.map(s=>s.id).sort());
-    expect(new Set(Object.values(STATUS_IDENTITIES).map(s=>s.path)).size).toBe(STATUSES.length);
+    expect(Object.keys(STATUS_IDENTITIES).sort()).toEqual([...new Set([...STATUSES.map(s=>s.id),'snag','bitter'])].sort());
+    expect(Object.keys(CARD_STATUS_LOOKS).sort()).toEqual([...new Set([...STATUSES.map(s=>s.id),'snag','bitter'])].sort());
+    expect(new Set(Object.values(STATUS_IDENTITIES).map(s=>s.path)).size).toBe(new Set([...STATUSES.map(s=>s.id),'snag','bitter']).size);
     for(const rule of STATUSES){
       expect(STATUS_IDENTITIES[rule.id].name.length).toBeGreaterThan(0);
       const look=CARD_STATUS_LOOKS[rule.id];

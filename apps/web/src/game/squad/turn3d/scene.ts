@@ -604,7 +604,8 @@ export class TurnScene {
     const now=performance.now();if(view.fixedTime===undefined&&now-this.labelsAt<50)return;this.labelsAt=now;
     const projected:Anchor[]=[],labels:LabelInput[]=[];
     const screen=(v:T.Vector3)=>{v.project(this.camera);return {x:(v.x*.5+.5)*this.width,y:(-v.y*.5+.5)*this.height}};
-    for(const a of view.actors){const p=this.puppets.get(a.id);if(!p||a.hp<=0)continue;
+    for(const a of view.actors){const p=this.puppets.get(a.id);if(!p)continue;
+      if(a.hp<=0){if(this.lookStageEnabled&&view.cardPresentation?.bursts.includes(a.id)){const top=screen(p.root.position.clone().add(new T.Vector3(0,p.height*p.root.scale.y,0)));projected.push({id:a.id,x:top.x,y:top.y,labelX:top.x,labelY:top.y,footY:0,visible:false});}continue;}
       if(view.autoBattle&&a.side==='party'){
         if(readable){const top=screen(p.root.position.clone().add(new T.Vector3(0,p.height*p.root.scale.y,0)));projected.push({id:a.id,x:top.x,y:top.y,labelX:top.x,labelY:top.y,footY:0,visible:false});}
         continue;

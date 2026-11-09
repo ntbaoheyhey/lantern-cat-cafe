@@ -1,3 +1,4 @@
+import { applyV5Presentation, v5SourceForPlan, REACTION_WORDS } from '../../squad/turn3d/card-v5-events';
 import { targetCallout } from '../../squad/turn3d/card-callout-layout';
 import type { Rect } from '../../squad/turn3d/label-layout';
 import { StatusBadges } from '../../squad/turn3d/StatusBadges';
@@ -38,7 +39,7 @@ export function BattleView({ m }: { m: DepthModel }) {
   const plates = useRef(new Map<string, HTMLDivElement>());
   const numbers = useRef(new Map<string, HTMLDivElement>());
   const callouts = useRef(new Map<string, HTMLDivElement>());
-  const statusView = useMemo(() => lookV2 && m.plan ? statusPresentation(m.plan,m.battle?.log ?? []) : undefined,[lookV2,m.plan,m.battle?.log.length]);
+  const statusView = useMemo(() => lookV2 && m.plan ? applyV5Presentation(m.plan,statusPresentation(m.plan,m.battle?.log ?? []),v5SourceForPlan(m.plan,m.battle)) : undefined,[lookV2,m.plan,m.battle?.log.length]);
   const statusViewRef = useRef(statusView); statusViewRef.current = statusView;
   const lastBattle = useRef(m.battle!);
   const view = useRef<SceneView | null>(null);
@@ -139,8 +140,9 @@ export function BattleView({ m }: { m: DepthModel }) {
           if(number.hidden !== hidden)number.hidden = hidden;
         }
         for (const [id,callout] of callouts.current) {
-          const at = m.animationAt-impact-(presentation.offsets.get(id) ?? 0);
-          const hidden = at < 0 || at >= 500 || callout.dataset.placed === 'false';
+          const reaction=presentation.reactions?.find(r=>r.targetId===id);
+          const at = m.animationAt-(reaction?.at??impact+(presentation.offsets.get(id) ?? 0));
+          const hidden = at < 0 || at >= (reaction?.duration??500) || callout.dataset.placed === 'false';
           if(callout.hidden !== hidden)callout.hidden = hidden;
         }
       }
@@ -202,10 +204,10 @@ export function BattleView({ m }: { m: DepthModel }) {
     {m.offline && new URLSearchParams(window.location.search).get('dev') === '1' && <FeelLab m={m} />}
     <div className={`dp-arena chapter-${battle.chapter} ${lowHealth ? 'dp-low-health' : ''} ${m.galleryBattle && m.galleryEffectOnly ? 'dp-effect-only' : ''}`}><div className="dp-canvas" ref={host} />
       {readable && m.impactVisible && results.map(result => <div className="dp-float-number" key={`${m.plan?.skillId}-${result.id}`} ref={element => { if (element) numbers.current.set(result.id, element); else numbers.current.delete(result.id); }} aria-label={`${result.name} ${result.labels.map(label => `${label.type} ${label.amount}`).join(', ')}`}>
-        {result.labels.map((event, index) => <span className={`dp-number dp-number-${event.type} ${lookV2 && 'dot' in event && event.dot ? 'dp-number-dot' : ''}`} key={index}>{event.type === 'death' ? 'KO' : event.type === 'status_apply' ? event.note : `${event.type === 'heal' ? '+' : event.type === 'shield' ? '◇' : '−'}${event.amount}`}</span>)}
+        {result.labels.map((event, index) => <span className={`dp-number dp-number-${event.type} ${lookV2 && 'dot' in event && event.dot ? 'dp-number-dot' : ''} ${lookV2 && 'statusId' in event && event.statusId==='snag' ? 'dp-number-bleed' : ''} ${lookV2 && 'bitter' in event && event.bitter ? 'dp-number-bitter' : ''}`} key={index}>{event.type === 'death' ? 'KO' : event.type === 'status_apply' ? event.note : `${event.type === 'heal' ? '+' : event.type === 'shield' ? '◇' : '−'}${event.amount}`}{lookV2 && 'bitter' in event && event.bitter===true && <small> −50%</small>}</span>)}
       </div>)}
       {lookV2 && statusView?.bursts.map(id => <div key={`${m.plan?.id}-${id}`} className="dp-combo-callout" data-combo-target={id} role="status" hidden
-        ref={element => { if(element)callouts.current.set(id,element);else callouts.current.delete(id); }}>CRUMB BURST!</div>)}
+        ref={element => { if(element)callouts.current.set(id,element);else callouts.current.delete(id); }}>{REACTION_WORDS[statusView.reactions?.find(r=>r.targetId===id)?.id??'crumb-burst']}</div>)}
       {v4 && <div className="dp-v4-boss-cue" ref={bossCue} role="status" aria-label="Boss event" hidden />}
       {m.plan?.ultimate && actor?.side === 'party' && !m.galleryEffectOnly && <aside className={`dp-ultimate-moment dp-ultimate-${actor.catalogId}`} aria-label={`${actor.name} ultimate`}>
         <img src={readable ? readablePortrait(actor.catalogId) ?? portrait(actor.catalogId) : portrait(actor.catalogId)} alt="" /><div><strong>{actor.name}</strong><span>{m.plan.name}</span></div>
@@ -249,7 +251,7 @@ export function BattleView({ m }: { m: DepthModel }) {
       </div>
       {m.impactVisible && results.length ? <div className="dp-result-chips" aria-label="Action results">
         {results.map(result => <span className="dp-result-chip" key={result.id}><b>{result.name}</b>
-          {result.labels.map((event, index) => <span className={`dp-number dp-number-${event.type} ${lookV2 && 'dot' in event && event.dot ? 'dp-number-dot' : ''}`} key={index}>
+          {result.labels.map((event, index) => <span className={`dp-number dp-number-${event.type} ${lookV2 && 'dot' in event && event.dot ? 'dp-number-dot' : ''} ${lookV2 && 'statusId' in event && event.statusId==='snag' ? 'dp-number-bleed' : ''} ${lookV2 && 'bitter' in event && event.bitter ? 'dp-number-bitter' : ''}`} key={index}>
             {event.type === 'death' ? 'KO' : event.type === 'status_apply' ? event.note : `${event.type === 'heal' ? '+' : event.type === 'shield' ? '◇' : '−'}${event.amount}`}
             {event.hits > 1 && <small title={`${event.hits} hits`} aria-label={`${event.hits} hits`}>{'·'.repeat(Math.min(6, event.hits))}</small>}
           </span>)}

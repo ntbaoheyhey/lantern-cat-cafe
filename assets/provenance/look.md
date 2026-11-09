@@ -114,3 +114,8 @@ Persistent marks and transient apply/tick/expiry/crumb-burst compositions reuse 
 
 ### Skills V5 V0.1 readability · 2026-11-09
 Tool: authored TypeScript/Three geometry and GLSL (no image/model generation); deterministic, seed not applicable. Reuse original flame/cup/steam/bubble primitives and existing atlases. Crown backing: 1.8×1.35 XY plane at z=-.08, radial edge .65–1, ink linear RGB(.012,.026,.033), .72 backing multiplier, same instanced draw. Burn: .30-height-scaled solid flames, alternating camera-facing sides at .33+.07×row height, vertical .16−.20×row, existing glow at .32 multiplier. Warm/Glaze: .76 alpha thin rings, no glass-opacity attenuation on persistent halos. No new texture, model, runtime dependency or light.
+
+### Skills V5 V3 · published S4 fixture, 2026-11-09
+- Tool: hand-authored TypeScript/SVG + `node tools/cardrpg-look/skills-v5/icons.mjs`; deterministic seed0, 24-unit grid,64px archive,2.2px rounded strokes; original `snag.svg` red yarn scratches/drop and `bitter.svg` violet tea/smoke/slash. No generative calls/imported art.
+- Bleed scratches/drop and Bitter low smoke ring reuse seam/droplet/steam pools; .76–.78 opacity, protected-face mask retained.
+- Crumb/Wildfire/Rupture/Spread use existing button/flame/seam/droplet/status-symbol primitives;<=500ms reaction window,70ms ordered landing offsets. No new texture, light or combat data.

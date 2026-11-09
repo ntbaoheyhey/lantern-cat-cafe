@@ -1,11 +1,14 @@
 import type { StatusId } from '@taskbar-hero/game-rules/src/cardrpg/depth/contract';
 
+export type VisualStatusId = StatusId | 'snag' | 'bitter';
 export interface StatusIdentity {
   name: string; subtitle: string; color: string; order: 0 | 1 | 2; path: string;
 }
 /** Original 16px line drawings, authored on a 24-unit grid; no imported artwork. */
 export const STATUS_IDENTITIES = {
   scald: { name:'Burn', subtitle:'Scald', color:'#efaa73', order:0, path:'M12 2C14 8 20 9 19 15A7 7 0 0 1 5 15C5 11 8 9 9 7C9 12 13 12 12 2ZM12 14L10 18L14 18Z' },
+  snag: { name:'Bleed', subtitle:'Snag', color:'#d9616b', order:0, path:'M4 3L15 17M10 2L21 16M3 12L14 4M9 20L20 12M6 16C2 20 4 23 6 23C9 23 10 20 6 16Z' },
+  bitter: { name:'Bitter', subtitle:'Bitter tea', color:'#8d7aa6', order:0, path:'M4 12H17V17Q16 22 11 22Q5 22 4 17ZM17 13H21V17H17M7 2Q3 5 8 8M13 2Q9 5 14 8M3 22L21 3' },
   scent: { name:'Mark', subtitle:'Scented', color:'#f4db95', order:0, path:'M5 8H16V12A5 5 0 0 1 6 12ZM16 9H19V13H16M3 19Q12 22 21 19M9 3V5M13 2V5' },
   brittle: { name:'Shred', subtitle:'Brittle sugar', color:'#9fd3e0', order:0, path:'M12 2L21 6L19 15L12 22L5 15L3 6ZM13 3L10 9L14 12L9 17L12 22M14 12L19 11' },
   tangle: { name:'Shred', subtitle:'Tangle', color:'#9fd3e0', order:0, path:'M4 5L11 3L20 6L18 17L12 21L5 17ZM13 4L9 10L15 13L11 20M4 11Q10 7 17 17' },
@@ -21,6 +24,6 @@ export const STATUS_IDENTITIES = {
   decoy: { name:'Decoy', subtitle:'Yarn decoy', color:'#e6c392', order:2, path:'M4 10L3 3L9 7L15 7L21 3L20 10C24 22 0 24 4 10ZM5 13L19 17M6 18L18 11M9 9L12 21' },
   glaze: { name:'Glaze', subtitle:'Glaze', color:'#b7e1df', order:2, path:'M12 2C9 7 5 11 5 15A7 7 0 0 0 19 15C19 11 15 7 12 2ZM8 15Q8 19 12 19M18 3L19 6L22 7L19 8L18 11' },
   shelter: { name:'Shelter', subtitle:'Shelter', color:'#f4db95', order:2, path:'M2 11L12 2L22 11M5 10V21H19V10M9 21V14H15V21M8 7H16' },
-} satisfies Record<StatusId, StatusIdentity>;
+} satisfies Record<VisualStatusId, StatusIdentity>;
 
-export const statusIdentity = (id: string): StatusIdentity | undefined => STATUS_IDENTITIES[id as StatusId];
+export const statusIdentity = (id: string): StatusIdentity | undefined => STATUS_IDENTITIES[id as VisualStatusId];

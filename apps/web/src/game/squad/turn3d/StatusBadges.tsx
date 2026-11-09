@@ -2,15 +2,19 @@ import { useId, useState, type CSSProperties } from 'react';
 import { createPortal } from 'react-dom';
 import { STATUS_BY_ID } from '@taskbar-hero/game-rules/src/cardrpg/depth/catalog';
 import type { Status } from '@taskbar-hero/game-rules/src/cardrpg/depth/contract';
-import { statusIdentity } from './card-status-data';
+import { statusIdentity, type VisualStatusId } from './card-status-data';
 
-export function statusDescription(status: Status) {
-  const look = statusIdentity(status.id), rule = STATUS_BY_ID[status.id];
+type VisualStatus = Omit<Status,'id'> & {id:VisualStatusId};
+// Presentation copies of the two published S4 rules; never used by combat.
+const NEW_RULES = { snag:{name:'Bleed',cap:5,duration:3,description:'Lose 8 HP per stack before your action. Shields absorb it.'}, bitter:{name:'Bitter',cap:1,duration:2,description:'Receive half as much healing and shielding.'} };
+const ruleFor=(id:VisualStatusId)=>id==='snag'||id==='bitter'?NEW_RULES[id]:STATUS_BY_ID[id];
+export function statusDescription(status: VisualStatus) {
+  const look = statusIdentity(status.id), rule = ruleFor(status.id);
   return `${look?.name ?? status.id} — ${look?.subtitle ?? rule?.name ?? status.id}. ${rule?.description ?? 'Unknown status.'} Stacks ${status.stacks}/${rule?.cap ?? '?'}. ${status.remaining} rounds remaining.`;
 }
 
 /** Ordinary DOM outside postprocessing. Only mounted by the lookV2 branch. */
-export function StatusBadges({ statuses, name }: { statuses: readonly Status[]; name: string }) {
+export function StatusBadges({ statuses, name }: { statuses: readonly VisualStatus[]; name: string }) {
   const tooltipId = useId();
   const [tip, setTip] = useState<{ key: string; text: string; x: number; y: number; above: boolean } | null>(null);
   const sorted = [...statuses].sort((a,b) => (statusIdentity(a.id)?.order ?? 2) - (statusIdentity(b.id)?.order ?? 2));
@@ -28,7 +32,7 @@ export function StatusBadges({ statuses, name }: { statuses: readonly Status[]; 
   });
   return <div className="dp-status-badges" aria-label={`${name} statuses`}>
     {sorted.slice(0,4).map(status => {
-      const look = statusIdentity(status.id), rule = STATUS_BY_ID[status.id], text = statusDescription(status);
+      const look = statusIdentity(status.id), rule = ruleFor(status.id), text = statusDescription(status);
       return <button type="button" key={status.id} className="dp-status-badge" data-status={status.id} data-status-family={look?.order === 0 ? 'debuff' : look?.order === 1 ? 'buff' : 'signature'}
         style={{ '--status-color':look?.color ?? '#fff0d2' } as CSSProperties}
         aria-label={text} {...events(status.id,text)}>
