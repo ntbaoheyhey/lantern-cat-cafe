@@ -1228,3 +1228,11 @@ DRAFT411 https://github.com/ntbaoheyhey/taskbar-hero/pull/411 on410; runtime053f
 17focused; type/lint/web1783/rules1252/buildPASS; E2E420+isolated1PASS. Original Bitter fixture and squad-clock failures retained.
 AuditPASS: legacy8250/fallback180battles45routes/baseline13 exact. Cinnamon keep-kit conflicts remain disclosed; no numeric gate relaxation.
 S4 events-v2 fixture now being applied, still unpublished; B V0.1 read. Fresh20001–20500 UNUSED; no B/protected changes/modelhelpers/merge/deploy.
+
+## 2026-11-09T01:49:03.860668Z V5A-S4 DONE
+DONE skillsV5 events v2 fixture; DRAFT412 https://github.com/ntbaoheyhey/taskbar-hero/pull/412 on411; published479d96468.
+Fixture packages/game-rules/src/cardrpg/depth/skills-v5/fixtures/events-v2.json: five natural seed1 battles, four reactions+boss, exact replay/snapshots.
+Schema reports/cardrpg-big/skills-v5/EVENTS-V2-CONTRACT.md: per-event version2, sequence/round/actionId/stage/logIndex; container v4.version stays1; OFF v1 exact.
+status-applied{statusId,stacks,sourceId,targetId}; status-tick{statusId,amount,sourceId,targetId}; reaction{reactionId,primerIds,targets,sourceId,targetId}; multi-hit{skillId,shape,targets in landing order}.
+Cue≤600ms; stagger60–90ms inside action; consumed/expiry snapshots included; snag/bitter present. Plain fallback available; sidebar/header spacing correction queuedS7.
+Six gates1785web/1260rules/421E2E/build PASS; legacy8250/fallback180+45 exact. No B/protected edits. S5 TRAIN next; acceptance20001–20500 UNUSED.
