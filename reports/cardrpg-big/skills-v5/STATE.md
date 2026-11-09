@@ -18,7 +18,8 @@ Original E2E Home timing5.28s>5s retained; isolated recovery unchanged source.
 Done: S1 DRAFT408 on407, runtime423e430f6/evidencee8b8254c8.
 S2 applied from staged resolver; lethal unmarked Wildfire edge added before tests.
 Done: S2 12 focused/six gates PASS incl first-attempt E2E421; OFF8250 + fallback exact; audit PASS.
-Next: publish S2 draft then apply and validate staged S3.
+Done: S2 DRAFT410 on408; runtime8412383c2/evidencedabd2a4e5.
+Next: apply and validate staged S3.
 Draft S3 kits/policy/enemies at /tmp/cardrpg-v5a-s3, NOT applied/tested; no phase bypass.
 Spec conflict: Cinnamon keep-kit has no multi-target; revive-only ultimate cannot fire without a fallen ally. Keep/report, no silent redesign.
 Next phases: S0 -> S1 -> S2 -> S3 -> S4 -> S5 -> S8 -> S6; S7 after S3.
