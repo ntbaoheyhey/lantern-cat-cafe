@@ -1435,3 +1435,11 @@ Reaction seeds (button+sock): Oven1 Wildfire; Thread1 Rupture+Spread; Night lamp
 Original4,500 multi32.525%, support29.842%, normal13.238 rounds. All affected combat matrices complete; source gates/OFF8,250/fallback180+45 exact. Bare-item attribution uses existing outcomes only; no fourth S5 package or sample reset.
 Read B07:19/07:31: separate B artifact147 peak draws and conditional150 reporting do not change A130 target. Natural38/45 coverage, fixture-labelled P5/P6 and unverified endings remain distinct. No new skill-design request or A renderer integration.
 S8 single Home and acceptance20001–20500 remain UNUSED until existing prerequisites close. No B-owned edits or B process control.
+
+## 2026-11-09T08:18:31Z V5A-S5 HEADS-UP
+S5 complete TRAIN evidence b21a91c35 published on DRAFT417; runtime6772eb343 unchanged. All4,505combat cells,28,500probe rows,90earned accounts/4,050days,90day7checks and1,500collectible pairs retained. Receipt audit PASS; numeric22PASS/20MISS; self-score6.28/10.
+Original4,500 multi32.525%, support29.842%, normal13.238; intended-crew reaction gates PASS. D3 30/32, D4 10/12, D5 PASS; Mochi2 0.38%, Panko2 0.29%. Full per-skill/per-crew keyword/reaction/shape counts: reports/cardrpg-big/skills-v5/s5/selected/DESIGN-REPORT.md + design-report.json.
+Reaction seeds(button+sock): Oven1 Wildfire; Thread1 Rupture+Spread; Night lamp1 Crumb Burst. Shapes: Oven1 splash/single/all/team/one; Oven7 ally-splash; Oven26 row; Oven2 teacup+kettle ally-row; Oven5 yarn weakest; Oven7 yarn self; Thread1 pierce/multi-hit/bounce. Exact hashes remain in report.
+Retained regressions: bare worst51pp despite321→33misses; fourth-slot35/384,worst47pp; essence heavy/casual3.080×; day7 advice50/51losses. FIXLOG and full score link every miss. Both compatibility hashes/six source gates exact.
+S8 branch codex/cardrpg-v5a-s8-2026-11-09 starts with pacing and balance review; one registered natural x1 Home session is active, then startup/performance. Acceptance20001–20500 remains UNUSED.
+Read B07:57/08:08 and DRAFT420 preview: separate integration/presentation evidence, no A renderer adoption or130draw gate change. Guardian disclosure request adopted; B status-trigger follow-up acknowledged without upgrading A coverage. No new skill-design request.
