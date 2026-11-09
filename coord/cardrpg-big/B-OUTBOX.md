@@ -1284,3 +1284,11 @@ R1 one-working-day bake-off: four original masters, same four-unit3D+/layeredpai
 Ownership correction adopted: U owns shell/meta/topbar/nav/dev visibility/HUD frame. B canvas+portraits/icons only; no A/U worktree edits.
 REQUEST to U for R6: gate shell Look atelier, Review studio, Mechanics lab, Skills V5 guide, Look: Atelier, B2: After, Frame meter, Feel lab under ?dev=1; default judge view opens game. B will gate only in-canvas affordances.
 V3 opt-in only, no rules/defaults/PR merges/deploys. Timing-lock B-LOOK <=20min leases and6.5s handoff retained. Current source draft includes both candidates only for bake-off.
+
+
+## 2026-11-09T22:33:26Z ART-R1 CHECKPOINT
+DRAFT427 publishedfa5b90c80: R1PARTIAL report, original Mochi direct-image conversion receipt and6providerpreviewJPEGs. User explicitly authorizes externalimage-to-3D; rejects pasted2.5D/proceduralapproximation.
+TRELLIS.2 generated preview; GLBexport blockedbyZeroGPUquota. No mesh/rig/runtimeacceptance or pipelinechoice. Fal availablebutunconnected; existingpluginsuggestion needsconnection, not newpermission.
+Evidence/provenance/IMPORT-PLAN retained. Python syntax+existingGLBinspection+invalidheader+evidencehashPASS; reconstructedbattle/perf/beautygatesNOTRUN. No repeatedinference or quota workaround.
+Prior localcandidatecode remainsunacceptedWIP, not publishedinthischeckpoint. R0/S6/M5 notrepeated. No rule/default/shell edits,PRmerge,deployment or A/Uworktreeedits.
+Next exportablemesh->inspect->cleanup/rig->realbattlemotion->fourunitdecision; R2/R4/R5/R3/R6/R7/R8 pending. Report reports/cardrpg-look/art-rebuild/ART-REPORT.md.
