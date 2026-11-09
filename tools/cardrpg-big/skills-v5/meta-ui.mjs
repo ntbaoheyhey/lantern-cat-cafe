@@ -19,7 +19,7 @@ try{for(const [width,height] of [[1280,720],[1440,900],[1024,600]]){
  const page=await browser.newPage({viewport:{width,height},reducedMotion:'reduce'}),errors=[],network=[];page.on('pageerror',e=>errors.push(e.message));
  await page.route(/^https?:/,route=>{network.push(route.request().url());return route.abort();});
  await page.goto(pathToFileURL(resolve(artifact)).href);await page.waitForFunction(()=>!!window.__depthReview);
- await page.evaluate(()=>{const m=window.__depthReview;m.state.tutorial='complete';m.go('collection');});
+ await page.evaluate(()=>{const m=window.__depthReview;m.state.tutorial=3;m.go('collection');});
  for(const cat of cats){
   await page.evaluate(id=>{const m=window.__depthReview;m.cardId=id;m.notify(false);},cat.id);
   const kit=page.locator(`[data-v5-kit="${cat.id}"]`);await kit.waitFor();assert((await kit.innerText()).includes(cat.role));
@@ -29,7 +29,7 @@ try{for(const [width,height] of [[1280,720],[1440,900],[1024,600]]){
  assert((await glossary.innerText()).includes('Bleed'));assert((await glossary.innerText()).includes('Scald'));
  await glossary.scrollIntoViewIfNeeded();await page.screenshot({path:out+`/collection-${width}.png`});
  await page.evaluate(()=>{const m=window.__depthReview;m.state.skillsV5=false;m.notify(false);});assert.equal(await page.locator('[data-v5-kit],.dp-v5-glossary').count(),0);
- await page.evaluate(b=>{const m=window.__depthReview;m.state.skillsV5=true;m.replay=b;m.watching=false;m.sceneStarted=false;m.go('prepare');},prepared);
+ await page.evaluate(b=>{const m=window.__depthReview;m.state.skillsV5=true;m.replay=null;m.tutorialBattle=b;m.watching=false;m.sceneStarted=false;m.go('prepare');},prepared);
  const hints=page.getByRole('complementary',{name:'Combo partners'});await hints.waitFor();assert((await hints.innerText()).includes('Rupture'));
  await page.getByRole('button',{name:'Select Biscuit for placement'}).click();assert.equal(await page.locator('.dp-v4-prepare [data-v5-kit="biscuit"]').count(),1);
  const geometry=await page.locator('.dp-page').evaluate(el=>{const r=el.getBoundingClientRect();return {left:r.left,right:r.right,overflow:el.scrollWidth>el.clientWidth+1};});assert(geometry.left>=0&&geometry.right<=width+1&&!geometry.overflow);
