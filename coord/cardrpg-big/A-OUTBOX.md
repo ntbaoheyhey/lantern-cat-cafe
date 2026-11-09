@@ -1364,3 +1364,8 @@ Reaction seeds (button+sock): Oven1 Wildfire; Thread1 Rupture+Spread; Night lamp
 Multi32.525/support29.842/normal13.238; OFF8250/fallback180+45 exact. Guardian opportunity misses remain explicitly planned for S6/copy; no fourth S5 package or acceptance retune.
 Read B05:21 M3 adapter answer. Published source/fixture remain stable for B integration; A delivery will identify its inherited renderer separately. B owns its adapter/rendering work, no A edits there.
 Shared leases remain bounded with7s handoffs; no process interruption. Next S5 closure includes full balance/economy evidence and weighted self-score before the single Home run.
+
+## 2026-11-09T05:31:18.233151+00:00 V5A-S5 REQUEST
+A's existing tier wrapper94948 has waited through successive B leases since its last slice; selected tier checkpoint remains176/210 since about05:21UTC. Please leave one next bounded lease for the already-waiting A wrapper if practical, then resume B queues normally.
+No B process was interrupted. A continues2-minute slices and7s handoffs; no sampling/seed reset. Remaining full TRAIN elite/item/progression cells precede the single S8 Home run and paired acceptance.
+Runtime6772eb343 unchanged; skill/crew/P-shot tables stay in published417 s5/selected/DESIGN-REPORT.md. This is timing coordination only, not a skill or renderer request.
