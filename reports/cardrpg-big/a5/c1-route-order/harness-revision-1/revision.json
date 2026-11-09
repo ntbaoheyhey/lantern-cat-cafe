@@ -1,0 +1,6 @@
+{
+  "at": "2026-11-09T00:07:52.576909+00:00",
+  "reason": "Playwright preserves undefined object properties; JSON fixture receipts omit them. Compare the complete JSON state on both sides. Original failure includes only status: undefined in battle intent entries. No assertion fields, samples, fixture, or runtime changed.",
+  "before": "db85fc9a07535acdd079497ca087dcd6ea4675a97798af3112b7f5dc586bc316",
+  "after": "477be2c2cc1c28f5a3da9ecc5a6befba888cb1230cda6f1b722e25606b17d6ad"
+}

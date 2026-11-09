@@ -1,0 +1,214 @@
+{
+  "passed": true,
+  "input": "reports/cardrpg-big/a5/e2-star-plans/fixtures/earned.json",
+  "inputSha256": "c22354ddc19c5b247c98e5ab42a70cb4e80518358f2c431a93e4f172eb954d9f",
+  "fixtures": [
+    {
+      "mode": "on",
+      "name": "complete",
+      "path": "reports/cardrpg-big/a5/c1-route-order/fixtures/on-complete.save",
+      "statePath": "reports/cardrpg-big/a5/c1-route-order/fixtures/on-complete.json",
+      "afterPath": "reports/cardrpg-big/a5/c1-route-order/fixtures/on-complete-after.json",
+      "action": "navigation",
+      "selector": "Return to cafe",
+      "sha256": "20447961fcb501c4ddc9878af76d96d575e414d29539e41baa4ebe7f5002ea85",
+      "stateSha256": "c22354ddc19c5b247c98e5ab42a70cb4e80518358f2c431a93e4f172eb954d9f",
+      "afterSha256": "c22354ddc19c5b247c98e5ab42a70cb4e80518358f2c431a93e4f172eb954d9f"
+    },
+    {
+      "mode": "on",
+      "name": "route",
+      "path": "reports/cardrpg-big/a5/c1-route-order/fixtures/on-route.save",
+      "statePath": "reports/cardrpg-big/a5/c1-route-order/fixtures/on-route.json",
+      "afterPath": "reports/cardrpg-big/a5/c1-route-order/fixtures/on-route-after.json",
+      "action": "enter",
+      "selector": ".dp-node:enabled",
+      "sha256": "10e8a92f03e6a2749ab44a9db7542a5a7842b7deb213fd3a2f18ecb9a3004838",
+      "stateSha256": "1276c6bd22b7e50faf3d722153606498a48d3ef8ed22a4efa588d6f3a8ac7b53",
+      "afterSha256": "aa1509fec86ab459ea87ab4ca95c51e3cc03b835bd73b73ac36951f3cd8d5d19"
+    },
+    {
+      "mode": "on",
+      "name": "reward",
+      "path": "reports/cardrpg-big/a5/c1-route-order/fixtures/on-reward.save",
+      "statePath": "reports/cardrpg-big/a5/c1-route-order/fixtures/on-reward.json",
+      "afterPath": "reports/cardrpg-big/a5/c1-route-order/fixtures/on-reward-after.json",
+      "action": "reward",
+      "selector": ".dp-reward",
+      "sha256": "84900965ca9d1b64e392b23b094e2e82d84641fd6767ffbe17e40618da47043e",
+      "stateSha256": "708c7ce2391ade3f3a20a77546896c4d7d7724a6cdccc8de0a43032e93ca9095",
+      "afterSha256": "d02f2cf0f54f944971b543f392d23a8fe4180635bf84d406b0ca03af7297d6d1"
+    },
+    {
+      "mode": "on",
+      "name": "event",
+      "path": "reports/cardrpg-big/a5/c1-route-order/fixtures/on-event.save",
+      "statePath": "reports/cardrpg-big/a5/c1-route-order/fixtures/on-event.json",
+      "afterPath": "reports/cardrpg-big/a5/c1-route-order/fixtures/on-event-after.json",
+      "action": "resolve",
+      "selector": ".cr-panel .dp-three button:enabled",
+      "sha256": "9b365cb03c8e5a572536409390d3c4669748bb5895b7880447d80434ab5feaca",
+      "stateSha256": "cbf41ad32b793cc51ae9d90ccf8a2c801358d429bb3a73c6270885ff643d1ab7",
+      "afterSha256": "dcad3e57124b62402d293934ddeb52ebb499e6a6409ff7f1f46918a2b042c341"
+    },
+    {
+      "mode": "on",
+      "name": "treasure",
+      "path": "reports/cardrpg-big/a5/c1-route-order/fixtures/on-treasure.save",
+      "statePath": "reports/cardrpg-big/a5/c1-route-order/fixtures/on-treasure.json",
+      "afterPath": "reports/cardrpg-big/a5/c1-route-order/fixtures/on-treasure-after.json",
+      "action": "resolve",
+      "selector": "Take 70 run points",
+      "sha256": "123a58ac9380f6f96a7b3278f15b0383e555c2596693a4d380b5af4c781b9ffc",
+      "stateSha256": "01bea8d3c0963631588a7a98ba52f772a8f260199f7a2286bd2d113687b1e18c",
+      "afterSha256": "a9e230a19254eb619b30db4f6a3729b766be3796ebec8ace97d85197bc67ab65"
+    },
+    {
+      "mode": "on",
+      "name": "shop",
+      "path": "reports/cardrpg-big/a5/c1-route-order/fixtures/on-shop.save",
+      "statePath": "reports/cardrpg-big/a5/c1-route-order/fixtures/on-shop.json",
+      "afterPath": "reports/cardrpg-big/a5/c1-route-order/fixtures/on-shop-after.json",
+      "action": "resolve",
+      "selector": "Save your points and leave",
+      "sha256": "57362d500f86ac9ced399bb27803c49f4e2f55554226999a3df4fa13e0ec0a80",
+      "stateSha256": "758c54b4b7230aa346c325f26888a7e251abf464b9d2fbb1a062a5ee19e8f02c",
+      "afterSha256": "a4106c8858e0b27ad8cc631e6d5a813264f3bc06b25d58b4c0a41f84c76cd3c3"
+    },
+    {
+      "mode": "on",
+      "name": "campfire",
+      "path": "reports/cardrpg-big/a5/c1-route-order/fixtures/on-campfire.save",
+      "statePath": "reports/cardrpg-big/a5/c1-route-order/fixtures/on-campfire.json",
+      "afterPath": "reports/cardrpg-big/a5/c1-route-order/fixtures/on-campfire-after.json",
+      "action": "resolve",
+      "selector": "Heal the team · 35% HP",
+      "sha256": "73ecc2bcf4ff990e59ee639ddfbb5e8f751219262356020f90ee81ba7c48e4d3",
+      "stateSha256": "120dc31897a2e64dd9ede673071f599b10c63ee4b699a0d08f254603f4656fca",
+      "afterSha256": "976ce47bacd9da2badfb5a84399509707afd70e7ab75b9f9615577827a7154b1"
+    },
+    {
+      "mode": "off",
+      "name": "complete",
+      "path": "reports/cardrpg-big/a5/c1-route-order/fixtures/off-complete.save",
+      "statePath": "reports/cardrpg-big/a5/c1-route-order/fixtures/off-complete.json",
+      "afterPath": "reports/cardrpg-big/a5/c1-route-order/fixtures/off-complete-after.json",
+      "action": "navigation",
+      "selector": "Return to cafe",
+      "sha256": "4fbf8f57f8597f9f0937fb227d1188e5bc9444be81309e6af40992d52502ca58",
+      "stateSha256": "24987a5f6c73be9ca56393dcf019cc8fe9f1b0b1f0b11298f7c2059df1d53d0b",
+      "afterSha256": "24987a5f6c73be9ca56393dcf019cc8fe9f1b0b1f0b11298f7c2059df1d53d0b"
+    },
+    {
+      "mode": "off",
+      "name": "route",
+      "path": "reports/cardrpg-big/a5/c1-route-order/fixtures/off-route.save",
+      "statePath": "reports/cardrpg-big/a5/c1-route-order/fixtures/off-route.json",
+      "afterPath": "reports/cardrpg-big/a5/c1-route-order/fixtures/off-route-after.json",
+      "action": "enter",
+      "selector": ".dp-node:enabled",
+      "sha256": "b273fc2458778880517419c0787e3056240ccb281d3c420ecadd008527045304",
+      "stateSha256": "7ca5c2dca0bfb1650e3477bb5e8c3485d06e18605f2126471b9be9e7bec23807",
+      "afterSha256": "d3ff49e3764e83dd5f36af56c2a806cbfae738cab01e49e4e3c3e813203d02f9"
+    },
+    {
+      "mode": "off",
+      "name": "reward",
+      "path": "reports/cardrpg-big/a5/c1-route-order/fixtures/off-reward.save",
+      "statePath": "reports/cardrpg-big/a5/c1-route-order/fixtures/off-reward.json",
+      "afterPath": "reports/cardrpg-big/a5/c1-route-order/fixtures/off-reward-after.json",
+      "action": "reward",
+      "selector": ".dp-reward",
+      "sha256": "709b1812b6278c550f0869dc462ae08f5375d003fefdfca6e6031034345f2b2a",
+      "stateSha256": "3213371fd4638b428ade62d995e7f5a777540b34f34a3540ebf51ab45f56ad47",
+      "afterSha256": "3b117c7b85577de8c5e0a9020c803d2ffaa8fad5aa29f996e0e96002d4ade2d8"
+    },
+    {
+      "mode": "off",
+      "name": "event",
+      "path": "reports/cardrpg-big/a5/c1-route-order/fixtures/off-event.save",
+      "statePath": "reports/cardrpg-big/a5/c1-route-order/fixtures/off-event.json",
+      "afterPath": "reports/cardrpg-big/a5/c1-route-order/fixtures/off-event-after.json",
+      "action": "resolve",
+      "selector": ".cr-panel .dp-three button:enabled",
+      "sha256": "fb04665a45c55f960eb1194f1f57e95ae863076f66deeae4079645632af8c3cb",
+      "stateSha256": "b0d970e37cb6439000008329101d4927d2ffeed84ee7ebebfe2b2f1b53f193f0",
+      "afterSha256": "231619d07ccde7599fd8921c39f718ce8ce2dc24886b07196a23bf3a7f3d1dc7"
+    },
+    {
+      "mode": "off",
+      "name": "treasure",
+      "path": "reports/cardrpg-big/a5/c1-route-order/fixtures/off-treasure.save",
+      "statePath": "reports/cardrpg-big/a5/c1-route-order/fixtures/off-treasure.json",
+      "afterPath": "reports/cardrpg-big/a5/c1-route-order/fixtures/off-treasure-after.json",
+      "action": "resolve",
+      "selector": "Take 70 run points",
+      "sha256": "5f24d824b473f73b7510f3bc2878e8c02ced55c76c7edb49d3a656e2af70a372",
+      "stateSha256": "5b3bba9265a038d99abc6f02dfe673dbe98e66741de281391dd8069d4ff975fd",
+      "afterSha256": "85e6f68fa0bf0a2b4721405c0f087dc4c549429301fa9f3b40d7cf476c98ae04"
+    },
+    {
+      "mode": "off",
+      "name": "shop",
+      "path": "reports/cardrpg-big/a5/c1-route-order/fixtures/off-shop.save",
+      "statePath": "reports/cardrpg-big/a5/c1-route-order/fixtures/off-shop.json",
+      "afterPath": "reports/cardrpg-big/a5/c1-route-order/fixtures/off-shop-after.json",
+      "action": "resolve",
+      "selector": "Save your points and leave",
+      "sha256": "ca9d11ad6ffa2adf809673196ce909aecbf6f8f49d46fa26d92671a109eeea66",
+      "stateSha256": "de153ceb255457881e47d19da18a5a0444ae7fb770ad3e947437e4ac8b088fd1",
+      "afterSha256": "09bd9cea9e7b19fbc63fc77c5453313b402981a37aef9bb4171f2a5f78e7e87e"
+    },
+    {
+      "mode": "off",
+      "name": "campfire",
+      "path": "reports/cardrpg-big/a5/c1-route-order/fixtures/off-campfire.save",
+      "statePath": "reports/cardrpg-big/a5/c1-route-order/fixtures/off-campfire.json",
+      "afterPath": "reports/cardrpg-big/a5/c1-route-order/fixtures/off-campfire-after.json",
+      "action": "resolve",
+      "selector": "Heal the team · 35% HP",
+      "sha256": "5d6d56c7fd91716d50efb20b20d5ae7ad74eeb3f103e76138cd77929a19a8c78",
+      "stateSha256": "08effa5806809c773ef41da40019dc89c0f03565bcbbf200d0657d46c606ff37",
+      "afterSha256": "07cc0167f1ebc402ff94d5c47731da589c818193cb6517e1451f6a1ce5c8ffc2"
+    }
+  ],
+  "commands": [
+    {
+      "mode": "on",
+      "kind": "automatic-fixture-battle",
+      "seed": 4278366903,
+      "result": "party"
+    },
+    {
+      "mode": "on",
+      "kind": "automatic-fixture-battle",
+      "seed": 24695326,
+      "result": "party"
+    },
+    {
+      "mode": "on",
+      "kind": "automatic-fixture-battle",
+      "seed": 268152983,
+      "result": "enemy"
+    },
+    {
+      "mode": "off",
+      "kind": "automatic-fixture-battle",
+      "seed": 4278366903,
+      "result": "party"
+    },
+    {
+      "mode": "off",
+      "kind": "automatic-fixture-battle",
+      "seed": 24695326,
+      "result": "party"
+    },
+    {
+      "mode": "off",
+      "kind": "automatic-fixture-battle",
+      "seed": 268152983,
+      "result": "party"
+    }
+  ],
+  "method": "Original earned Home02 account; public route commands and automatic battles create targeted UI fixtures only. No progression, cadence, probability, or live x1 timing inference."
+}

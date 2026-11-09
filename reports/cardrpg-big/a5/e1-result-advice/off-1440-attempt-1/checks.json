@@ -1,0 +1,84 @@
+{
+  "passed": true,
+  "before": false,
+  "mode": "off",
+  "width": 1440,
+  "height": 900,
+  "artifact": "/tmp/cardrpg-a5-result-advice-off/index.html",
+  "sha256": "ec52d263d36b1a9000cf1adb80b68363d2d9568d1718caea738e7b4ab313814b",
+  "checks": [
+    {
+      "name": "off",
+      "look": "baseline",
+      "unchangedPrimary": true
+    },
+    {
+      "name": "off",
+      "look": "look",
+      "unchangedPrimary": true
+    }
+  ],
+  "captures": [
+    {
+      "name": "off-result",
+      "look": "baseline",
+      "path": "reports/cardrpg-big/a5/e1-result-advice/off-1440-attempt-1/baseline-off-result.png",
+      "box": {
+        "x": 210,
+        "y": 197.625,
+        "width": 157.25,
+        "height": 40.140625
+      },
+      "visible": true,
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Continue to rewards",
+          "ratio": 9.237546476333335
+        },
+        {
+          "text": "Watch replay",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Improve team",
+          "ratio": 10.615526804635495
+        }
+      ]
+    },
+    {
+      "name": "off-result",
+      "look": "look",
+      "path": "reports/cardrpg-big/a5/e1-result-advice/off-1440-attempt-1/look-off-result.png",
+      "box": {
+        "x": 210,
+        "y": 197.625,
+        "width": 157.25,
+        "height": 40.140625
+      },
+      "visible": true,
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "Continue to rewards",
+          "ratio": 9.509076954893759
+        },
+        {
+          "text": "Watch replay",
+          "ratio": 12.727624984908184
+        },
+        {
+          "text": "Improve team",
+          "ratio": 12.727624984908184
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "remote": [],
+  "limitations": [
+    "Saved-fixture UI checks; no causal win, reward cadence or startup claim.",
+    "Replay skip is a renderer regression only; elapsed journeys remain x1 without skips.",
+    "Scoped text contrast, not the Z screenshot pack."
+  ]
+}

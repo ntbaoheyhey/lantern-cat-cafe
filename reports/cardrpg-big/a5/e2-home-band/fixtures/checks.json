@@ -1,0 +1,70 @@
+{
+  "originPath": "reports/cardrpg-big/a5/engagement/advice-55/earned-checkpoint.json",
+  "originSha256": "ca93a044b7c0435d1fa33f205b5b7da101f254be35a38f80ca96aeba6bdd7ba7",
+  "fixtures": [
+    {
+      "name": "earned",
+      "path": "reports/cardrpg-big/a5/e2-home-band/fixtures/earned.save",
+      "sha256": "5bb8c663ddf6304407ad32e551c1bf1c618708038fc60611977ff8f66a057b47",
+      "statePath": "reports/cardrpg-big/a5/e2-home-band/fixtures/earned.json",
+      "band": 5,
+      "chapter": 1,
+      "method": "Original earned Home03 checkpoint; public abandon and discovery acknowledgement only."
+    },
+    {
+      "name": "first",
+      "path": "reports/cardrpg-big/a5/e2-home-band/fixtures/first.save",
+      "sha256": "cca5d4a8ed2ffdd4ec06aec55240e382bf629493e88540a257dd226791e31f85",
+      "statePath": "reports/cardrpg-big/a5/e2-home-band/fixtures/first.json",
+      "band": 1,
+      "chapter": 1,
+      "method": "Synthetic UI boundary: earned level5 crew with no previous run."
+    },
+    {
+      "name": "retained",
+      "path": "reports/cardrpg-big/a5/e2-home-band/fixtures/retained.save",
+      "sha256": "831e2883aeb992f2a9d0d4d7e0e0f7e687e27cebe7caf159add479782ab1683f",
+      "statePath": "reports/cardrpg-big/a5/e2-home-band/fixtures/retained.json",
+      "band": 2,
+      "chapter": 1,
+      "method": "Public band2 start and abandon from the earned account; current crew ceiling5."
+    },
+    {
+      "name": "next",
+      "path": "reports/cardrpg-big/a5/e2-home-band/fixtures/next.save",
+      "sha256": "0cdfc39766d263f9f2fe7395c7828b77280d77030c18b058742e69661b7c5159",
+      "statePath": "reports/cardrpg-big/a5/e2-home-band/fixtures/next.json",
+      "band": 1,
+      "chapter": 2,
+      "method": "Synthetic chapter unlock only; previous run still chapter1 band2."
+    },
+    {
+      "name": "active",
+      "path": "reports/cardrpg-big/a5/e2-home-band/fixtures/active.save",
+      "sha256": "cfb7c06c87ca73a140f311cdfa8a5fc85986a468b73198ed45b856d2c16bb8b2",
+      "statePath": "reports/cardrpg-big/a5/e2-home-band/fixtures/active.json",
+      "band": 2,
+      "chapter": 1,
+      "method": "Public band2 route; navigation must preserve exact account state."
+    },
+    {
+      "name": "stars",
+      "path": "reports/cardrpg-big/a5/e2-home-band/fixtures/stars.save",
+      "sha256": "2abfb0ef439db3caeb9039b1be091eab5ea5c5fb13d209f041c7ddce6e87066e",
+      "statePath": "reports/cardrpg-big/a5/e2-home-band/fixtures/stars.json",
+      "band": 2,
+      "chapter": 1,
+      "method": "Existing labelled synthetic star/band fixture, unchanged."
+    },
+    {
+      "name": "off",
+      "path": "reports/cardrpg-big/a5/e2-home-band/fixtures/off.save",
+      "sha256": "2b3a73e382efd569eba4d06521636b196c3e95d085e5cbf7fbaabb08bd00be4f",
+      "statePath": "reports/cardrpg-big/a5/e2-home-band/fixtures/off.json",
+      "band": null,
+      "chapter": 1,
+      "method": "Same retained account with the existing public flag toggle."
+    }
+  ],
+  "samplesRun": 0
+}

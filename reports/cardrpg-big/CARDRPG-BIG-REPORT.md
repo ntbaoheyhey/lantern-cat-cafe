@@ -82,3 +82,7 @@ Starplans46 published as[DRAFT404](https://github.com/ntbaoheyhey/taskbar-hero/p
 A5 informed Home03 completed60.1963active minutes on source27f192301 with60captures. Independent receipt/source/OFF closure PASS. At30min73choiceoffers/22rewards/13celebrations; maxrewardgap723.0seconds anddeadtime reduction2.0% remainMISS. Fixedpolicy upgrades teammates but does not apply Result advice. [Report](a5/E2-INFORMED-ENGAGEMENT.md); fresh acceptance and B1/B2/startup/Z remain open.
 
 Informed Home03 evidence published as [DRAFT405](https://github.com/ntbaoheyhey/taskbar-hero/pull/405), stacked on404.
+
+A5 C1 decisions: runtime0e1e15180108b443ce2e615ea54272b907cc8bb0; six source gates1783web/1192rules/421E2E/build PASS and integrated165checks/159captures, scopedcontrast6.192688:1. Existing source-bound auditPASS; no checks repeated. [Reviewed ON preview](a5/c1-decisions/artifact-on/index.html)20,929,841bytes/SHA9e25f238ea96ea4df2f59f2a2a77df6ccf29b7eb5733ae8cbb349a14b6c1bb98; OFF same size/SHA9158b51e0d2e182ed4cd2de8cf0e62434fd3d7a689e8808421b7d4910cc7c584. OFF8250/baseline/historical13 exact. A5 open gates continue inside Skills V5 (reports/cardrpg-big/skills-v5/). Main offline index stays A4; fresh20001-20500 UNUSED.
+
+C1 decisions published as [DRAFT406](https://github.com/ntbaoheyhey/taskbar-hero/pull/406), stacked on405. A5 continues as V5A after explicit user resume.

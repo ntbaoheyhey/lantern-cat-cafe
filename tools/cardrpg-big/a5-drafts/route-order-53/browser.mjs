@@ -18,7 +18,7 @@ try {
   page.on('pageerror',e=>errors.push(String(e)));page.on('request',r=>{if(/^https?:/.test(r.url()))remote.push(r.url());});
   const button=name=>page.getByRole('button',{name,exact:true});
   const nav=async name=>{await page.getByRole('navigation',{name:'Cafe screens'}).getByRole('button',{name,exact:true}).click();await page.waitForFunction(()=>!document.querySelector('.cr-content')?.textContent.includes('Opening the table…'));};
-  const read=()=>page.evaluate(()=>window.__depthReview.state);
+  const read=()=>page.evaluate(()=>JSON.parse(JSON.stringify(window.__depthReview.state)));
   await page.goto('file://'+(artifact.startsWith('/')?artifact:process.cwd()+'/'+artifact)+(look==='look'?'?dev=1':''));
   await page.getByRole('heading',{name:'A small light. A brave little team.',exact:true}).waitFor({timeout:120000});
   if(look==='look')await button('Look A/B').click();

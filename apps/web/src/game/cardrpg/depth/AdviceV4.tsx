@@ -27,9 +27,9 @@ export function AdviceV4({ m }: { m: DepthModel }) {
     <h2>One change for your next try</h2>
     {!current ? <p>Checking changes your crew can make now…</p> : current.advice ? <>
       <p>{current.advice.label}</p><p>{Object.entries(current.advice.cost).map(([name,n]) => `${n} ${name}`).join(' · ') || 'No currency needed.'}</p>
-      <button className="cr-primary" onClick={() => m.applyResultAdvice(current.advice!)}>Apply and retry route</button>
+      <button className={R.gameplayV4(m.state) ? "cr-primary" : undefined} onClick={() => m.applyResultAdvice(current.advice!)}>Apply and retry route</button>
       <small>Your earned rewards stay. A fresh route starts at the first stop.</small>
     </> : <><p>{current.error ? 'The suggestion is unavailable. Review your crew before returning.' : 'No stronger available change stood out in this forecast.'}</p>
-      <button onClick={() => m.improveTeam()}>Open team preparation</button></>}
+      <button className={R.gameplayV4(m.state) ? "cr-primary" : undefined} onClick={() => m.improveTeam()}>Open team preparation</button></>}
   </section>;
 }
