@@ -1,0 +1,2 @@
+import {chromium} from '../../apps/web/node_modules/@playwright/test/index.mjs';
+const b=await chromium.launch({headless:true});const p=await b.newPage();p.on('pageerror',e=>console.log('ERROR',e.message));p.on('console',m=>{if(m.type()==='error')console.log(m.text().slice(0,300))});await p.goto('http://127.0.0.1:5950/tools/ui-v3/index.html');await p.waitForTimeout(2500);console.log((await p.locator('body').innerText()).slice(0,300));await b.close();
