@@ -7,18 +7,23 @@ import {homeView} from './selectors';
 import {Icon,type IconName} from './Icon';
 import './ui-v3.css';
 import {HomeScene} from './HomeScene';
-const CafeBoard=lazy(()=>import('../depth/CafeV4').then(m=>({default:m.CafeBoardV4})));
+const CatsSheet=lazy(()=>import('./SheetsV3').then(m=>({default:m.CatsSheet})));
+const TeamSheet=lazy(()=>import('./SheetsV3').then(m=>({default:m.TeamSheet})));
+const BagSheet=lazy(()=>import('./SheetsV3').then(m=>({default:m.BagSheet})));
+const EventsSheet=lazy(()=>import('./SheetsV3').then(m=>({default:m.EventsSheet})));
+const RouteMap=lazy(()=>import('../depth/RunMap').then(m=>({default:m.RunMap})));
 const FeelLab=lazy(()=>import('../depth/FeelLab').then(m=>({default:m.FeelLab})));
 const labels:Partial<Record<Screen,string>>={collection:'Cats',journal:'Cats',team:'Team',inventory:'Bag',relics:'Bag',gacha:'Recruit',codex:'Field guide',save:'Settings',evidence:'Before / after',map:'Night route',prepare:'Prepare',result:'Tonight’s story'};
 const dock:[Screen,string,IconName][]=[['collection','Cats','cats'],['team','Team','team'],['inventory','Bag','bag'],['gacha','Recruit','recruit']];
 export default function ShellV3({m,children}:{m:DepthModel;children:ReactNode}) {
- const [menu,setMenu]=useState(false),[events,setEvents]=useState(false);
+ const [menu,setMenu]=useState(false),[events,setEvents]=useState(false),[bagTab,setBagTab]=useState('gear'),[route,setRoute]=useState(false);
  const view=useMemo(()=>homeView(m.state,m.cafeNow),[m,m.state]);
  const dialog=useRef<HTMLElement>(null),returnFocus=useRef<HTMLElement|null>(null);
  const sheet=m.screen!=='hub'||events;
  const close=()=>{setEvents(false);setMenu(false);m.go('hub');requestAnimationFrame(()=>{const target=returnFocus.current;if(target?.isConnected)target.focus();else (document.querySelector<HTMLElement>(`[data-home-destination="${target?.dataset.homeDestination??''}"]`)??document.querySelector<HTMLElement>('.uv-menu-button'))?.focus();});};
- const go=(screen:Screen)=>{returnFocus.current=document.activeElement as HTMLElement;setEvents(false);setMenu(false);m.go(screen);};
+ const go=(screen:Screen)=>{returnFocus.current=document.activeElement as HTMLElement;setEvents(false);setMenu(false);setRoute(false);m.go(screen);};
  const openEvents=()=>{returnFocus.current=document.activeElement as HTMLElement;m.go('hub');setEvents(true);setMenu(false);};
+ useEffect(()=>{if(m.screen!=='hub')setEvents(false);},[m.screen]);
  useEffect(()=>{if(sheet)dialog.current?.focus();},[sheet,m.screen]);
  useEffect(()=>{const key=(e:KeyboardEvent)=>{if(e.key==='Escape'){if(menu)setMenu(false);else if(sheet)close();}if(e.key==='Tab'&&sheet){const nodes=Array.from(dialog.current?.querySelectorAll<HTMLElement>('button:not(:disabled),[href],input,select,textarea,summary,[tabindex="0"]')??[]).filter(n=>n.getClientRects().length);const first=nodes[0],last=nodes.at(-1);if(e.shiftKey&&(document.activeElement===first||document.activeElement===dialog.current)){e.preventDefault();last?.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first?.focus();}}};window.addEventListener('keydown',key);return()=>window.removeEventListener('keydown',key);});
  const patrol=()=>{setEvents(false);if(m.battle){go(m.battle.result?'result':'prepare');return;}if(m.state.tutorial<3){m.tutorial();return;}if(!m.state.run||m.state.run.complete)m.start(view.chapter,'campaign',1);const run=m.state.run;if(run&&!run.complete&&!run.rewardChoices.length){const next=R.availableNodes(run)[0];if(next)m.enter(next.id);}if(!m.battle)m.go('map');};
@@ -36,9 +41,10 @@ export default function ShellV3({m,children}:{m:DepthModel;children:ReactNode}) 
   {menu&&<nav className="uv-menu" aria-label="Cafe menu"><button onClick={()=>go('save')}>Open settings</button><button onClick={()=>go('save')}>Export / import</button><button onClick={()=>go('codex')}>Read Field guide</button><details><summary>Read credits</summary><p>The Lantern · original cats, music and cafe. Built for Taskbar Hero.</p></details>{showReviewTools(true)&&<><button onClick={()=>go('evidence')}>Before / after</button><Suspense fallback={null}><FeelLab m={m} home/></Suspense></>}</nav>}
   {sheet&&<><button className="uv-dim" tabIndex={-1} aria-label="Close sheet" onClick={close}/><section className="uv-sheet" role="dialog" aria-label={events?'Events':labels[m.screen]} ref={dialog} tabIndex={-1}>
    <header className="uv-sheet-heading"><h1>{events?'Events':labels[m.screen]}</h1><button className="uv-close" aria-label="Close" onClick={close}><Icon name="close"/></button></header>
+   {m.screen==='prepare'&&<nav className="uv-tabs" aria-label="Patrol tabs"><button aria-current={!route?'page':undefined} onClick={()=>setRoute(false)}>Prepare</button><button aria-current={route?'page':undefined} onClick={()=>setRoute(true)}>Route</button><button onClick={()=>go('codex')} aria-label="Read Field guide">?</button></nav>}
    {['collection','journal'].includes(m.screen)&&<nav className="uv-tabs" aria-label="Cats tabs"><button aria-current={m.screen==='collection'?'page':undefined} onClick={()=>go('collection')}>My cats</button><button aria-current={m.screen==='journal'?'page':undefined} onClick={()=>go('journal')}>Journal</button></nav>}
-   {['inventory','relics'].includes(m.screen)&&<nav className="uv-tabs" aria-label="Bag tabs"><button aria-current={m.screen==='inventory'?'page':undefined} onClick={()=>go('inventory')}>Gear</button><button onClick={()=>go('relics')} aria-current={m.screen==='relics'?'page':undefined}>Relics</button></nav>}
-   <main className="uv-sheet-content cr-content" id="depth-main" data-screen={events?'events':m.screen}><Suspense fallback={<p role="status">Opening…</p>}>{events?<CafeBoard m={m}/>:m.screen==='evidence'&&!showReviewTools(true)?null:children}</Suspense></main>
+   {['inventory','relics'].includes(m.screen)&&<nav className="uv-tabs" aria-label="Bag tabs"><button aria-current={m.screen==='inventory'&&bagTab==='gear'?'page':undefined} onClick={()=>{setBagTab('gear');go('inventory')}}>Gear</button><button aria-current={m.screen==='inventory'&&bagTab==='materials'?'page':undefined} onClick={()=>{setBagTab('materials');go('inventory')}}>Materials</button><button onClick={()=>go('relics')} aria-current={m.screen==='relics'?'page':undefined}>Relics</button></nav>}
+   <main className="uv-sheet-content cr-content" id="depth-main" data-screen={events?'events':m.screen}><Suspense fallback={<p role="status">Opening…</p>}>{events?<EventsSheet m={m}/>:m.screen==='prepare'&&route?<section aria-label="Route preview"><RouteMap m={m}/></section>:m.screen==='collection'?<CatsSheet m={m}/>:m.screen==='team'?<TeamSheet m={m}/>:m.screen==='inventory'?<BagSheet key={bagTab} m={m} materials={bagTab==='materials'}/>:m.screen==='evidence'&&!showReviewTools(true)?null:children}</Suspense></main>
   </section></>}
   <div className={`uv-notice ${m.error?'uv-error':''}`} role={m.error?'alert':'status'}>{m.error?m.notice:''}</div>
  </div>;
