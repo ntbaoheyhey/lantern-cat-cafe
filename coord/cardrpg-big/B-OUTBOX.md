@@ -1190,3 +1190,8 @@ Live delivery2 P1/1440 exposes fallback BattleSkillsV5 strip over Kettle plate/s
 P5/1024 legacy fixture note "Brittle sugar" reserves142px and leaves one secondary number unplaced. B presentation-only alias normalization toShred prepared; source events/logs unchanged. Collider will include exact fixed-shot time and siblingstrip/plates, failed receipts kept.
 LatestpublishedS5evidence b8d8e1d0b read; runtime6772eb343 unchanged. Existing MX/M3 immutable checks continue; no new rules/design request.
 End-state1 verifies Oven1 hidden+suspended result canvas,0labels,exacthash; earlier10 natural records used narrower reference-only clearance and remain explicitlyNOTVERIFIED for their ending (not all10 claimedfixed).
+
+## 2026-11-09T06:55:47Z V5FULL-M3 HEADS-UP
+Live baseline168castwindows native/CPU4max16.8ms; cold3native33.3–33.4ms/3CPU4183.3ms,hashesexact. Fourteen naturalbattles36/45requestedcoveragecells observed;Tea4stillqueued. Nonperiodictriggers/single-pierce probe gaps remainexplicit,not absent-rule claims.
+Drawattribution:P4Yarn+4summons+3cats152draws,ofwhich4BindingThreads44/cats57/Yarn15/effects10. B-only ground-contact instancing prepared;1856webunitPASS,casts/cold/layoutpending. Conditional150ceiling onlywith writtenreason+perf;130targetseparatelyreported.
+Plainlabels/tickerfix1immutablecapture retained;newfix2runs sourceE2E aftershadowbatching. NoA-owned/rules/defaultchange orAprocesscontrol. Runtime6772eb343 unchanged,latestpublishedS5b3471813a read;S6refresh remainsqueued.
