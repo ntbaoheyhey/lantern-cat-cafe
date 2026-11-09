@@ -1,14 +1,37 @@
 import {emitGameplayEvent} from '../events-v4';
+import {ENEMY_BY_ID} from '../catalog';
 import type {Actor,Battle,Intent,StatusId} from '../contract';
 import {landingsV5,weakestV5,type ShapeV5} from './shapes';
 
+/** Existing helpers make isolated boss/elite encounters readable combo opportunities. */
+export function encounterEnemiesV5(ids:string[]):string[] {
+  const tier=ids.length===1?ENEMY_BY_ID[ids[0]!]!.tier:'';
+  return tier==='boss'?[...ids,'binding-thread','binding-thread']:tier==='elite'?[...ids,'binding-thread']:ids;
+}
+export function phaseHelpersV5(b:Battle,boss:Actor,spawn:(b:Battle,source:Actor,limit?:number)=>void):void {
+  if(boss.hp<=0||boss.phase!==2||ENEMY_BY_ID[boss.catalogId]?.tier!=='boss'||boss.bonuses.v5Helpers)return;
+  boss.bonuses.v5Helpers=1;
+  spawn(b,boss,4);spawn(b,boss,4);
+}
+/** A defeated thread releases only its own knot; another source's Shred stays. */
+export function releaseThreadV5(b:Battle,thread:Actor):void {
+  if(thread.catalogId!=='binding-thread')return;
+  for(const ally of b.actors.filter(a=>a.side==='party')){
+    const removed=ally.statuses.filter(s=>s.source===thread.id&&['brittle','drowsy'].includes(s.id));
+    if(!removed.length)continue;
+    ally.statuses=ally.statuses.filter(s=>!removed.includes(s));
+    b.log.push({round:b.round,actorId:thread.id,targetId:ally.id,skillId:'',kind:'dispel',amount:removed.length,text:'Binding Thread defeated; knot released.'});
+  }
+}
+
 export const ENEMY_MECHANICS_V5:Record<string,{mechanic:string;counter:string}>={
-  'button-guard':{mechanic:'Shields its whole row.',counter:'Shred strips shields; Burn passes through.'},
+  'button-guard':{mechanic:'Shields and Warms its whole row.',counter:'Shred strips shields; Burn passes through.'},
   'sock-skipper':{mechanic:'Targets rear cats and applies Bleed.',counter:'Shield the rear before their next actions.'},
   'spool-ram':{mechanic:'Charges for one turn, then hits a row.',counter:'Daze interrupts the charged action.'},
   'needle-moth':{mechanic:'Three seeded hits on random cats.',counter:'Warm and team shields soften repeated hits.'},
   'teacup-healer':{mechanic:'Heals its weakest ally every two rounds.',counter:'Bitter halves healing; Mark opens rear access.'},
   'kettle-knight':{mechanic:'Below half HP, basics Burn the front row.',counter:'Cleanse or Regen removes Burn.'},
+  'binding-thread':{mechanic:'Knots apply Shred; every third turn Dazes the weakest cat.',counter:'Defeat the thread to release its knot or Cleanse.'},
   'yarn-giant':{mechanic:'Row + Shred signatures; closing phase All + Bitter.',counter:'Cleanse the crew; Daze stops its signature.'},
 };
 export function enemyIntentV5(b:Battle,actor:Actor,intent:Intent):Intent {
@@ -33,6 +56,7 @@ export function enemyActionV5(b:Battle,actor:Actor,intent:Intent,target:Actor,io
   const hit=(t:Actor,power=100,shape:ShapeV5='single')=>{targets.push(t.id);resolvedShape=shape;io.record(b,actor,t,'multi-hit',0,shape,actor.catalogId);io.damage(b,actor,t,power,0,shape==='single',shape);};
   switch(actor.catalogId){
     case 'button-guard':
+      if(actor.turns===0)io.apply(b,actor,actor,'cozy');
       if(intent.signature)for(const ally of foes().filter(a=>a.row===actor.row))io.shield(b,actor,ally,45);else hit(target);
       break;
     case 'sock-skipper':{
@@ -47,12 +71,16 @@ export function enemyActionV5(b:Battle,actor:Actor,intent:Intent,target:Actor,io
       for(let i=0;i<3&&actor.hp>0;i++){const living=party();if(!living.length)break;const victim=living[io.roll(b,living.length)]!;targets.push(victim.id);resolvedShape='multi-hit';io.record(b,actor,victim,'multi-hit',i,'multi-hit',actor.catalogId);io.damage(b,actor,victim,40,0,false,'multi-hit');}
       break;
     case 'teacup-healer':
-      if(intent.signature){const patient=weakestV5(foes());if(patient)io.heal(b,actor,patient,65);}else hit(target);
+      if(actor.turns===0)io.apply(b,actor,actor,'steep');
+      if(intent.signature){const patient=weakestV5(foes());if(patient)io.heal(b,actor,patient,65);}else{hit(target);io.apply(b,actor,target,'scent');}
       break;
     case 'kettle-knight':
       hit(target,intent.signature?intent.power:100);
       if(!intent.signature&&actor.hp<actor.maxHp/2)for(const front of party().filter(a=>a.row==='front'))io.apply(b,actor,front,'scald');
       if(actor.turns===0){io.shield(b,actor,actor,70);io.apply(b,actor,actor,'cozy');}
+      break;
+    case 'binding-thread':
+      hit(target,50);io.apply(b,actor,target,'brittle');if(intent.signature)io.apply(b,actor,target,'drowsy');
       break;
     case 'yarn-giant':
       if(!intent.signature)hit(target);

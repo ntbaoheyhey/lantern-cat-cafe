@@ -1,5 +1,5 @@
-import { kitSkillV5 } from './skills-v5/kits';
-import { enemyActionV5, enemyIntentV5 } from './skills-v5/enemies';
+import { kitSkillV5, situationalSkillV5 } from './skills-v5/kits';
+import { enemyActionV5, enemyIntentV5, encounterEnemiesV5, phaseHelpersV5, releaseThreadV5 } from './skills-v5/enemies';
 import { executeShapeV5, shapeV5, weakestV5, type EffectV5, type ShapeV5 } from './skills-v5/shapes';
 import { crumbBurstV5, directReactionV5, spreadV5, type ReactionRuntimeV5 } from './skills-v5/reactions';
 import { beforeActionV5, consumeDazeV5, defenseV5, receivedV5, statusIdV5, statusRuleV5, tickStatusesV5, type StatusRuntimeV5 } from './skills-v5/statuses';
@@ -104,11 +104,13 @@ function loseHp(b: Battle, source: Actor, target: Actor, amount: number, kind: s
   if (target.hp === 0) {
     if (target.side === 'party' && b.firstDeath === null) b.firstDeath = target.role;
     record(b, source, target, 'defeat');
+    if(b.initial.skillsV5)releaseThreadV5(b,target);
     if(b.initial.skillsV5)spreadV5(b,source,target,reactionRuntimeV5);
     if (source.catalogId === 'velvet') { if (b.v4) heal(b,source,source,6); else source.charge = Math.min(100, source.charge + 15); }
     if (source.side === 'party' && source.hp > 0) heal(b,source,source,boonValue(b,'killHeal'));
   }
   phaseBossV4(b,target);
+  if(b.initial.skillsV5)phaseHelpersV5(b,target,spawnThread);
   return actual;
 }
 function damage(b: Battle, source: Actor, target: Actor, power: number, pressure: number, cover = false, shape: ShapeV5 = 'single') {
@@ -234,7 +236,7 @@ export function createBattle(setup: BattleSetup): Battle {
     if (!cat || ![3, 4].includes(c.skills.length) || new Set(c.skills).size !== c.skills.length || c.skills.some(id => SKILLS[id]?.catId !== c.id)) throw Error('Invalid cat skill kit');
     return { ...actorBase(),id:c.id,catalogId:c.id,name:cat.name,side:'party',role:cat.role,row:c.row,flavour:cat.flavour,hp:Math.min(c.stats.hp,setup.hp?.[c.id]??c.stats.hp),maxHp:c.stats.hp,attack:c.stats.attack,defense:c.stats.defense,initiative:9-index,effectHit:c.stats.effectHitBp,effectResist:c.stats.effectResistBp,breakCap:6,skills:[...c.skills],equipment:c.equipment??[],setEffects:c.effects??[],bonuses:{...c.bonuses,critBp:c.stats.critBp,critDamageBp:c.stats.critDamageBp,healingBp:c.stats.healingBp,shieldBp:c.stats.shieldBp} };
   });
-  actors.push(...setup.enemies.map((id,i) => enemyActor(id,i,setup.chapter,setup.tutorial,initial.enemyStats)));
+  actors.push(...(setup.skillsV5?encounterEnemiesV5(setup.enemies):setup.enemies).map((id,i) => enemyActor(id,i,setup.chapter,setup.tutorial,initial.enemyStats)));
   const b: Battle = {version:CONTRACT_VERSION,seed:setup.seed,rng:setup.seed,chapter:setup.chapter,actors,round:0,queue:[],acted:[],energy:0,maxEnergy:5,intents:[],log:[],choices:[],result:null,firstDeath:null,procRounds:{},boons:{...setup.boons},mutator:setup.mutator??'',initial};
   if (setup.gameplayV4) {
     b.v4={version:1,plan:clone(initial.plan!),events:[],committed:false};
@@ -317,7 +319,7 @@ function checkResult(b: Battle) {
 export function currentActor(b: Battle) { return b.actors.find(a => a.id === b.queue[0] && a.hp > 0); }
 export function targets(b: Battle, actor: Actor, skill: Skill): Actor[] {
   const foes=living(b,actor.side==='party'?'enemy':'party'), allies=living(b,actor.side);
-  if(b.initial.skillsV5&&shapeV5(skill)==='weakest'){const target=weakestV5(allies);return target?[target]:[];}
+  if(b.initial.skillsV5){skill=situationalSkillV5(b,actor,skill);if(['weakest','ally-splash'].includes(shapeV5(skill))){const target=weakestV5(allies);return target?[target]:[];}}
   if (skill.target==='self') return [actor];
   if (skill.target==='fallen') return b.actors.filter(a=>a.side===actor.side&&a.hp===0);
   if (skill.target==='ally'||skill.target==='allies') return allies;
@@ -336,7 +338,7 @@ export function legalChoices(b: Battle): Choice[] {
   const actor=currentActor(b);
   if (!actor||actor.side!=='party'||b.result) return [];
   return [...actor.skills,'defend',...(b.v4?[]:['wait'])].flatMap(id=>{
-    const skill=skillById(id,b.initial.skillsV5)!;
+    const base=skillById(id,b.initial.skillsV5)!,skill=b.initial.skillsV5?situationalSkillV5(b,actor,base):base;
     if ((!b.v4&&(energyCost(actor,skill)>b.energy || skill.charge>actor.charge)) || (b.v4&&skill.type==='ultimate'&&actor.turns<2) || (actor.cooldowns[id]??0)>0 || skill.effects.some(e=>e.kind==='revive')&&actor.passiveUsed) return [];
     return targets(b,actor,skill).map(t=>({actorId:actor.id,skillId:id,targetId:t.id}));
   });
@@ -452,6 +454,7 @@ export function act(b: Battle, choice: Choice): boolean {
   if(b.initial.skillsV5)b.procRounds.v5ActionSequence=(b.procRounds.v5ActionSequence??0)+1;
   if(b.initial.skillsV5&&!beforeActionV5(b,actor,statusRuntimeV5)){b.choices.push({...choice});record(b,actor,actor,'action',0,'Bleed prevented the action',choice.skillId);finishAction(b,actor);return true;}
   let skill=skillById(choice.skillId,b.initial.skillsV5)!, target=b.actors.find(a=>a.id===choice.targetId)!;
+  if(b.initial.skillsV5)skill=situationalSkillV5(b,actor,skill);
   if(b.initial.skillsV5&&consumeDazeV5(b,actor,statusRuntimeV5)){const basic=skillById(actor.skills[0]!,true)!;skill={...basic,effects:basic.effects.map(e=>({...e,...(e.power!==undefined?{power:e.power*.5}:{})}))};target=targets(b,actor,skill)[0]??target;}
   const description = actionDescription(b, actor, target, skill);
   b.choices.push({...choice});
@@ -505,8 +508,8 @@ export function act(b: Battle, choice: Choice): boolean {
   finishAction(b,actor);
   return true;
 }
-function spawnThread(b: Battle, source: Actor) {
-  if (living(b,'enemy').filter(a=>a.catalogId==='binding-thread').length>=2) return;
+function spawnThread(b: Battle, source: Actor, limit=2) {
+  if (living(b,'enemy').filter(a=>a.catalogId==='binding-thread').length>=limit) return;
   const actor=enemyActor('binding-thread',b.actors.length,b.chapter,false,b.initial.enemyStats);
   if(b.v4)actor.linkedBossId=ENEMY_BY_ID[source.catalogId]?.tier==='boss'?source.id:source.linkedBossId;
   b.actors.push(actor);

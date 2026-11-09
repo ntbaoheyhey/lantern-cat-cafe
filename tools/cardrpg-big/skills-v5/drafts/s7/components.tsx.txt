@@ -1,0 +1,18 @@
+
+export function SkillKitV5({id}:{id:string}) {
+ const cat=R.CAT_BY_ID[id]!;
+ return <div aria-label={`${cat.name} shapes and combo role`}><p><b>{R.COMBO_ROLES_V5[id]}</b></p>
+  <details><summary>Skill shapes</summary><ul>{cat.skills.map(original=>{
+   const skill=R.kitSkillV5(original);return <li key={skill.id}><b>{skill.name}</b> · {skill.description}</li>;
+  })}</ul></details></div>;
+}
+export function SynergyV5({ids}:{ids:string[]}) {
+ const hints=R.crewHintsV5(ids);return hints.length?<div role="note" aria-label="Crew reaction hints">{hints.map(text=><p key={text}>{text}</p>)}</div>:null;
+}
+export function ReactionResultV5({battle}:{battle:R.Battle}) {
+ const reactions=(battle.v4?.events??[]).filter(e=>e.kind==='reaction');
+ const groups=new Map<string,{text:string;count:number}>();
+ for(const e of reactions){if(e.kind!=='reaction')continue;const key=`${e.sourceId}/${e.reactionId}`,g=groups.get(key)??{text:`${battle.actors.find(a=>a.id===e.sourceId)?.name??e.sourceId} triggered ${R.REACTION_NAMES_V5[e.reactionId]}`,count:0};g.count++;groups.set(key,g);}
+ const most=[...groups.values()].sort((a,b)=>b.count-a.count||a.text.localeCompare(b.text))[0];
+ return <p aria-label="Reaction contribution">{most?`${most.text} ${most.count} ${most.count===1?'time':'times'}.`:'No reaction triggered. Pair a primer with a matching follow-up.'}</p>;
+}

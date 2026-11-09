@@ -1,7 +1,7 @@
 import {emitGameplayEvent} from '../events-v4';
 import type { Actor, Battle, Effect, Skill } from '../contract';
 
-export type ShapeV5 = 'single' | 'pierce' | 'row' | 'splash' | 'bounce' | 'all' | 'multi-hit' | 'one' | 'weakest' | 'ally-row' | 'team' | 'self' | 'fallen';
+export type ShapeV5 = 'single' | 'pierce' | 'row' | 'splash' | 'bounce' | 'all' | 'multi-hit' | 'one' | 'weakest' | 'ally-row' | 'ally-splash' | 'team' | 'self' | 'fallen';
 export interface EffectV5 extends Effect {
   recipient?: 'main' | 'weakest' | 'team';
   burnScaling?: number;
@@ -28,6 +28,7 @@ export function landingsV5(b: Battle, actor: Actor, main: Actor, shape: ShapeV5,
   switch (shape) {
     case 'self': return one(actor);
     case 'weakest': return one(weakestV5(allies));
+    case 'ally-splash': {const patient=weakestV5(allies);return patient?[...one(patient),...adjacentV5(b,patient).map(target=>({target,multiplier:.4}))]:[];}
     case 'team': return allies.map(target => ({target, multiplier:1}));
     case 'ally-row': return allies.filter(t => t.row === main.row).map(target => ({target, multiplier:1}));
     case 'row': return foes.filter(t => t.row === main.row).map(target => ({target, multiplier:.6}));
@@ -60,11 +61,11 @@ export function executeShapeV5(b: Battle, actor: Actor, main: Actor, skill: Skil
     targets.push(landing.target.id);
     io.record(b,actor,landing.target,'multi-hit',i,shape,skill.id);
     for (const effect of perTarget) {
-      const weighted = skill.shape && ['hit','execute'].includes(effect.kind) ? {...effect,power:(effect.power ?? 0)*landing.multiplier} : effect;
+      const weighted = skill.shape && (['hit','execute'].includes(effect.kind)||shape==='ally-splash'&&effect.kind==='heal') ? {...effect,power:(effect.power ?? 0)*landing.multiplier} : effect;
       io.effect(b,actor,landing.target,weighted,skill);
     }
   }
-  if(targets.length&&['splash','multi-hit','bounce','row','all','team','ally-row'].includes(shape))emitGameplayEvent(b,{kind:'multi-hit',actorId:actor.id,skillId:skill.id,shape,targets,text:`${actor.name}: ${skill.name} reaches ${targets.length} landings.`});
+  if(targets.length&&['splash','multi-hit','bounce','row','all','team','ally-row','ally-splash'].includes(shape))emitGameplayEvent(b,{kind:'multi-hit',actorId:actor.id,skillId:skill.id,shape,targets,text:`${actor.name}: ${skill.name} reaches ${targets.length} landings.`});
   if (actor.hp <= 0) return;
   for (const effect of once) {
     const recipients = effect.self ? [actor] : effect.recipient === 'weakest' ? [weakestV5(alive(b,actor.side))] : effect.recipient === 'team' ? alive(b,actor.side) : [main];

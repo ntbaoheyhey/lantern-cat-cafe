@@ -1,0 +1,22 @@
+// Prepare S8's single prospective Home run only after S5/S7 closure. Does not launch a browser.
+import {readFile,writeFile,mkdir,cp} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+import {execFileSync} from 'node:child_process';
+import assert from 'node:assert/strict';
+import {resolve} from 'node:path';
+const artifactDirectory=process.argv[2];assert(artifactDirectory);
+const root='reports/cardrpg-big/skills-v5/s8/home',scratch='/tmp/cardrpg-v5a-s8-home-source';
+const sha=b=>createHash('sha256').update(b).digest('hex'),json=async p=>JSON.parse(await readFile(p,'utf8'));
+for(const phase of ['s5-selected','s7'])assert.equal((await json(`reports/cardrpg-big/skills-v5/${phase}/audit.json`)).status,'PASS');
+const build=await json(artifactDirectory+'/build.json'),artifact=resolve(artifactDirectory+'/index.html');assert(build.skillsV5&&build.gameplayV4);
+assert.equal(sha(await readFile(artifact)),build.sha256);
+for(const [p,h]of Object.entries(build.sourceHashes))if(p.startsWith('apps/')||p.startsWith('packages/'))assert.equal(sha(await readFile(p)),h,p);
+await mkdir(root,{recursive:true});await mkdir(scratch);await cp('packages/game-rules/src',scratch+'/packages/game-rules/src',{recursive:true});
+const previous=await json('reports/cardrpg-big/skills-v5/s5/selected/metrics/REGISTERED-METHOD.json');
+for(const [p,h]of Object.entries(previous.source))assert.equal(sha(await readFile(scratch+'/'+p)),h,p);
+const script='tools/cardrpg-big/skills-v5/home-session.mjs';
+const selected=await json('reports/cardrpg-big/skills-v5/s5/selected/metrics/results.json');
+const reg={registeredAt:new Date().toISOString(),runtimeSource:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),sourceRoot:scratch,source:previous.source,artifact,artifactSha256:build.sha256,artifactBytes:build.bytes,buildManifest:resolve(artifactDirectory+'/build.json'),buildManifestSha256:sha(await readFile(artifactDirectory+'/build.json')),script,scriptSha256:sha(await readFile(script)),durationActiveMinutes:60,viewport:[1280,720],acceptanceSeedsUsed:false,reason:`V5 changes every battle via statuses, shapes, reactions, boss helpers and amended support kits; selected full TRAIN normal mean is ${selected.summary.normalRounds} rounds (S4 before12.036). Re-measure once after S5, preserving Home03 public-click policy and all gates. No causal single-change or human-retention claim.`};
+await writeFile(root+'/REGISTERED-METHOD.json',JSON.stringify(reg,null,2)+'\n',{flag:'wx'});
+await writeFile(root+'/REGISTERED-METHOD.md',`# Prospective Skills V5 Home run\n\n${reg.reason}\n\nOne fresh save, one persistent headless browser, 60 active minutes at 1280×720. Real clicks, automatic x1 battles, no skip, imports, grants or clock acceleration. Same Home03 choices: one affordable lowest-level teammate upgrade per interlude; first named crew plan; first offered node/boon/event, camp heal and shop saving. Same 3.5s/5s reading allowances and seed1/2/3 counterfactuals, now explicitly skillsV5 ON. No Result-advice optimization.\n\nReport 0–5/30/60 windows; max reward-or-celebration gap ≤300s and combat-walltime reduction ≥40% against H0, with Home03's 723s/2.0% retained. Positive currency/gear/cat deltas and visible ceremonies count; stars alone do not. ≥5 distinct-outcome offers by30min.\n\n110s lease targets, ending at safe public-action boundaries, maximum20min; freeze lifecycle and hand off ≥7s. Cafe uses real wall time. Fixed source/artifact/script hashes bind this run. Keep partial failures; no second full sample without a newly justified change. Targeted progression captures are not the once-only Z pack.\n`,{flag:'wx'});
+console.log(JSON.stringify({root,sourceRoot:scratch,artifactSha256:build.sha256}));

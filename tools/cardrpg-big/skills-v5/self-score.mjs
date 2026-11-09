@@ -1,0 +1,27 @@
+// Registered addendum score from complete receipts; never substitutes for a gate.
+import {readFile,writeFile} from 'node:fs/promises';
+import assert from 'node:assert/strict';
+const phase=process.argv[2];assert(['s5','s6'].includes(phase));
+const root='reports/cardrpg-big/skills-v5',dir=root+'/'+(phase==='s5'?'s5/selected':'s6/on');
+const json=async p=>JSON.parse(await readFile(p,'utf8'));
+const auditPhase=phase==='s5'?'s5-selected':phase;
+const [d,g,a]=await Promise.all([json(dir+'/design-report.json'),json(dir+'/numeric-gates.json'),json(root+'/'+auditPhase+'/audit.json')]);
+assert.equal(g.count,500);assert.equal(g.offset,phase==='s5'?0:20000);assert.equal(a.status,'PASS');
+const status=(id)=>g.rows.find(r=>r.id===id)?.status==='PASS';
+const keyword=Object.entries(d.perCrew).filter(([id])=>id.startsWith('base/')).flatMap(([crew,c])=>Object.entries(c.keywordCoverage).map(([id,n])=>({id:crew+'/'+id,measured:n,pass:n>=1/3})));
+const skills=d.cats.flatMap(c=>c.skills.map(s=>({id:s.id,measured:s.share,pass:s.share>=.05&&s.share<=.6})));assert.equal(keyword.length,32);assert.equal(skills.length,48);
+const fraction=xs=>xs.filter(x=>x.pass).length/xs.length;
+const varietyParts=[{id:'multi-foe',value:Number(status('V5.full500.multi-foe'))},{id:'multi-ally',value:Number(status('V5.full500.multi-ally'))},{id:'D3',value:fraction(keyword)},{id:'D4',value:fraction(skills)}];
+const balance=g.rows.filter(r=>r.id.startsWith('A5.')||['V5.named-crews','V5.full500.reactions','V5.reaction-coverage'].includes(r.id)).map(r=>({id:r.id,pass:r.status==='PASS'&&!(phase==='s5'&&r.id==='A5.tiers'),status:phase==='s5'&&r.id==='A5.tiers'?'NOT VERIFIED: acceptance half unused':r.status}));
+const observations=phase==='s6'?await json(root+'/s8/observations.json'):null;
+const pacingParts=[{id:'normal-rounds',value:Number(status('V5.full500.normal-rounds'))},{id:'earned-boss45-90s',value:Number(!!observations?.day7?.bossVictory&&!!observations?.day7?.boss45to90s)},{id:'every-cat-ultimate',value:d.summary.allCatsUltimateShare/100}];
+const registration=await readFile(root+'/REGISTERED-METHOD.json').then(x=>JSON.parse(x)).catch(e=>{if(e.code==='ENOENT')return null;throw e;});
+const integrity=phase==='s5'?!registration:registration?.offset===20000&&registration.sourceDigest===g.sourceDigest&&(await json(root+'/s6/off/receipt-audit.json')).status==='PASS';assert(integrity);
+const compatibility=[{id:'OFF8250/baseline13',pass:a.off.routes===8250&&a.scope.baseline==='PASS'},{id:'fallback180/45',pass:!!a.fallback.battleSha256&&!!a.fallback.route.sha256},{id:'old-save-suite',pass:a.gates.some(x=>x.name==='rules'&&x.code===0)},{id:phase==='s5'?'acceptance-unused':'registered-paired-acceptance',pass:integrity}];
+const mean=xs=>xs.reduce((n,x)=>n+x.value,0)/xs.length;
+const lines=[{id:'Variety in play',weight:.3,score:10*mean(varietyParts),evidence:dir+'/design-report.json'},{id:'Balance gates',weight:.3,score:10*fraction(balance),evidence:dir+'/numeric-gates.json'},{id:'Fight pacing',weight:.2,score:10*mean(pacingParts),evidence:phase==='s5'?dir+'/metrics/results.json':root+'/s8/observations.json'},{id:'Compatibility/honesty',weight:.2,score:10*fraction(compatibility),evidence:root+'/'+auditPhase+'/audit.json'}];
+const total=lines.reduce((n,l)=>n+l.weight*l.score,0),priorities=[...lines].sort((a,b)=>a.score-b.score).slice(0,2).map(l=>l.id);
+const result={phase,sourceDigest:g.sourceDigest,total,target:8,status:total>=8?'PASS':'PARTIAL',lines,priorities:total<8?priorities:[],atomic:{keyword,skills,balance,varietyParts,pacingParts,compatibility},limitations:['Evidence score, not a human enjoyment rating or replacement gate.','S5 missing elapsed boss evidence scores zero; TRAIN tiers do not stand in for the original combined acceptance gate.']};
+await writeFile(root+'/'+phase+'/self-score.json',JSON.stringify(result,null,2)+'\n');
+await writeFile(root+'/'+phase.toUpperCase()+'-SELF-SCORE.md',`# ${phase.toUpperCase()} self-score\n\n${total.toFixed(2)}/10, target8.0: **${result.status}**. [Atomic arithmetic](${phase}/self-score.json); registered [method](SELF-SCORE-METHOD.md).\n\n|Line|Weight|Score|Evidence|\n|---|---:|---:|---|\n${lines.map(l=>`|${l.id}|${l.weight*100}%|${l.score.toFixed(2)}|[receipt](${l.evidence.replace(root+'/','')})|`).join('\n')}\n\n${total<8?'First items of the next phase: '+priorities.join('; ')+'.':'Target met; unresolved gates remain independently visible.'} No enjoyment or human-recognition claim.\n`);
+console.log(JSON.stringify({phase,total,lines,priorities:result.priorities}));

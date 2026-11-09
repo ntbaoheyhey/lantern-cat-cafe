@@ -1,0 +1,42 @@
+from pathlib import Path
+r=Path('/Users/bao/taskbar-hero-cardrpg-a4');web=r/'apps/web/src/game/cardrpg/depth'
+def edit(p,old,new):
+ s=p.read_text();assert old in s,(p,old);p.write_text(s.replace(old,new))
+p=web/'TeamCollection.tsx'
+edit(p,'const v4 = R.gameplayV4(state);','const v4 = R.gameplayV4(state), v5 = R.skillsV5(state);')
+edit(p,'const v4 = R.gameplayV4(m.state);','const v4 = R.gameplayV4(m.state), v5 = R.skillsV5(m.state);')
+edit(p,'{v4 ? R.skillDescriptionV4(skill) : skill.description}','{v5 ? R.kitSkillV5(skill).description : v4 ? R.skillDescriptionV4(skill) : skill.description}')
+edit(p,'{v4 ? R.skillDescriptionV4(action) : action.description}','{v5 ? R.kitSkillV5(action).description : v4 ? R.skillDescriptionV4(action) : action.description}')
+edit(p,'<h3>{R.CAT_BY_ID[id]!.name}</h3>', '<h3>{R.CAT_BY_ID[id]!.name}</h3>{v5&&<p className="dp-v5-combo-role">{R.COMBO_ROLES_V5[id]}</p>}')
+edit(p,'<p><b>{cat.passive.name}</b>', '<>{v5&&<p className="dp-v5-combo-role">{R.COMBO_ROLES_V5[cat.id]}</p>}</><p><b>{cat.passive.name}</b>')
+p=web/'PreparationV4.tsx'
+edit(p,"import { useState }", "import { SkillKitV5, SynergyV5, ReactionResultV5 } from './SkillsV5';\nimport { useState }")
+edit(p,'<p data-companion-specialty={selected}>','{battle.initial.skillsV5&&<><SkillKitV5 id={selected}/><SynergyV5 ids={ids}/></>}\n      <p data-companion-specialty={selected}>')
+edit(p,'<ul>{outcome.causes.map','{battle.initial.skillsV5&&<ReactionResultV5 battle={battle}/>}\n    <ul>{outcome.causes.map')
+p=web/'Encounter.tsx'
+edit(p,'const guide = R.enemyGuideV4(actor.catalogId);','const guide = R.enemyGuideV4(actor.catalogId), v5Guide = battle.initial.skillsV5?R.ENEMY_MECHANICS_V5[actor.catalogId]:undefined;')
+edit(p,'<p>{guide.intent}</p><small>{guide.exception}</small><p><b>Try:</b> {guide.counter}</p>', '<p>{v5Guide?.mechanic??guide.intent}</p>{!v5Guide&&<small>{guide.exception}</small>}<p><b>Try:</b> {v5Guide?.counter??guide.counter}</p>')
+p=web/'SkillsV5.tsx';p.open('a').write(Path('/tmp/cardrpg-v5a-s7/components.tsx').read_text())
+p=web/'App.tsx'
+edit(p,'gameplayV4 as activeGameplayV4','skillsV5 as activeSkillsV5, gameplayV4 as activeGameplayV4')
+edit(p,'<Codex v4={activeGameplayV4(m.state)} />','<Codex v4={activeGameplayV4(m.state)} v5={activeSkillsV5(m.state)} />')
+p=web/'Pages.tsx'
+edit(p,'export function Codex({ v4 = false }: { v4?: boolean })','export function Codex({ v4 = false, v5 = false }: { v4?: boolean; v5?: boolean })')
+edit(p,"R.STATUSES.map(status =>", "(v5 ? [...R.CORE_STATUS_RULES_V5,...R.STATUSES.filter(s=>['crumb','riposte','link','sprout','decoy','glaze','shelter'].includes(s.id))] : R.STATUSES).map(status =>")
+edit(p,'<h2>{status.name}</h2><p>{v4 ? R.statusDescriptionV4(status.id) : status.description}</p>', '<h2>{status.name}</h2>{v5&&R.STATUS_SUBTITLES_V5[status.id]&&<small>{R.STATUS_SUBTITLES_V5[status.id]}</small>}<p>{v5 ? R.statusRuleV5(status.id,status).description : v4 ? R.statusDescriptionV4(status.id) : status.description}</p>')
+
+p=web/'Pages.tsx'
+edit(p,'{v4 ? R.enemyGuideV4(enemy.id).intent : enemy.intent}', '{v5&&R.ENEMY_MECHANICS_V5[enemy.id] ? R.ENEMY_MECHANICS_V5[enemy.id]!.mechanic : v4 ? R.enemyGuideV4(enemy.id).intent : enemy.intent}')
+edit(p,'{v4 ? R.enemyGuideV4(enemy.id).counter : enemy.counter}', '{v5&&R.ENEMY_MECHANICS_V5[enemy.id] ? R.ENEMY_MECHANICS_V5[enemy.id]!.counter : v4 ? R.enemyGuideV4(enemy.id).counter : enemy.counter}')
+# Keep the plain fallback in the unused sidebar during automatic playback.
+p=web/'App.tsx'
+edit(p,'data-battle-active={m.showBattle}', 'data-battle-active={m.showBattle} data-skills-v5-battle={m.showBattle&&!!m.visualBattle?.initial.skillsV5}')
+edit(p,'<nav aria-label="Cafe screens">', '{m.showBattle&&m.visualBattle?.initial.skillsV5&&<BattleSkillsV5 battle={m.visualBattle}/>}<nav aria-label="Cafe screens">')
+edit(p,'    {m.showBattle&&m.visualBattle?.initial.skillsV5&&<BattleSkillsV5 battle={m.visualBattle}/>}\n','')
+p=web/'depth.css'
+s=p.read_text();i=s.index('\n.dp-v5-status-strip{');s=s[:i]+'''
+.dp-app[data-skills-v5-battle=true] .cr-sidebar nav,.dp-app[data-skills-v5-battle=true] .cr-sidebar-bottom,.dp-app[data-skills-v5-battle=true] .cr-sidebar-caption{display:none}
+.dp-v5-status-strip{position:relative;z-index:25;padding:7px;border:1px solid #a88eab;border-radius:8px;background:#251f30;color:#fff0d8;font:12px/1.4 system-ui;max-height:calc(100vh - 112px);overflow:auto;margin:10px 0}
+.dp-v5-unit-conditions{display:grid;grid-template-columns:minmax(0,1fr);gap:10px}.dp-v5-unit-condition{display:flex;align-items:center;gap:4px;min-width:0;flex-wrap:wrap}.dp-v5-unit-condition>b{font-size:12px;flex-basis:100%}.dp-v5-unit-condition>small{color:#e8d7ed}.dp-v5-status-strip p{margin:10px 0 0;font-size:12px;color:#ffdc9a}.dp-v5-keyword{display:inline-block;padding:1px 4px;border:1px solid #b5a1bd;border-radius:4px;color:#fff0d8;font-size:11px;line-height:16px;max-width:100%}.dp-v5-keyword>span{display:none;padding:6px 0;background:#251f30;font-size:12px;overflow-wrap:anywhere}.dp-v5-keyword:hover>span,.dp-v5-keyword:focus>span{display:block}.dp-v5-keyword:focus-visible{outline:2px solid #ffe0a8;outline-offset:2px}
+.dp-v5-combo-role{color:#ffe0a8;font-size:12px}
+''';p.write_text(s)
