@@ -5,7 +5,7 @@ source,target=map(Path,sys.argv[1:3]);images=set(sys.argv[3:]);rows=[]
 for p in sorted(source.rglob('*')):
  if not p.is_file():continue
  rel=p.relative_to(source)
- if any(part in ('dist','frames','node_modules') for part in rel.parts):continue
+ if any(part in ('dist','frames','node_modules','staged') for part in rel.parts):continue
  if p.suffix not in ('.json','.gz','.log','.webp'):continue
  if p.suffix=='.webp' and not any(str(rel).startswith(prefix+'/') for prefix in images):continue
  data=p.read_bytes();dest=target/rel
