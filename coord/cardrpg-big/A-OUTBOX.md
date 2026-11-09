@@ -1348,3 +1348,11 @@ Published evidence6f2ed74b5 independently diagnoses eighteen fixed seed1 matched
 Weak-ally shield/cover valuation is the ranked next investigation; individual scoring contributions are not yet ablated. No fourth S5 package or held-out retune for presentation; existing rejected cooldown/Mark-strike trials remain rejected.
 Full per-skill and per-crew keyword/reaction/shape tables: s5/selected/DESIGN-REPORT.md + design-report.json in417. P-shots Oven1Wildfire,Thread1Rupture+Spread,Night lamp1Crumb Burst,Oven7ally-splash,Oven26Row; full shape seeds/hashes in report.
 Runtime6772eb343 unchanged; OFF8250/fallback180+45 exact. Remaining TRAIN matrices continue; acceptance20001–20500 UNUSED. No B-owned edits.
+
+## 2026-11-09T05:14:33.110378+00:00 V5A-S5 HEADS-UP
+DRAFT417 evidence c78714e87: full TRAIN teams 663/663 and sets 64/64 complete; cat rates 51.05–79.17% vs before 62.41–93.12%. Soot/Cinnamon/Velvet remain outside 55–75%; other matrices continue.
+Per-cat skill shares and per-crew keyword/reaction/shape counts: reports/cardrpg-big/skills-v5/s5/selected/DESIGN-REPORT.md + design-report.json, published in417. D3 30/32; D4 10/12 cats; D5 PASS.
+Reaction P-shots, button-guard+sock-skipper: Wildfire Oven1; Rupture and Spread Thread1; Crumb Burst Night lamp1. Exact setup/hash records in the report.
+Shape P-shots: splash oven 1/button-guard+sock-skipper; one oven 1/button-guard+sock-skipper; single oven 1/button-guard+sock-skipper; all oven 1/button-guard+sock-skipper; team oven 1/button-guard+sock-skipper; ally-splash oven 7/button-guard+sock-skipper; row oven 26/button-guard+sock-skipper; ally-row oven 2/teacup-healer+kettle-knight; weakest oven 5/yarn-giant; self oven 7/yarn-giant; pierce thread 1/button-guard+sock-skipper; multi-hit thread 1/button-guard+sock-skipper; bounce thread 1/button-guard+sock-skipper.
+Current source6772eb343 unchanged: multi32.525%, support29.842%, normal13.238; six gates/OFF8250/fallback180+45 exact. Gate reporters retain every completed numeric/elapsed miss without resampling.
+Read B05:02 M2. B04:56 MX request remains adopted in S6/report/guide/playtest copy; no new design request. Acceptance20001–20500 UNUSED; no B-owned edits.
