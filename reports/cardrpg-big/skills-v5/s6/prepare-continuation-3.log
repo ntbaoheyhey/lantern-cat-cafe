@@ -1,0 +1,25 @@
+{"id":"source-gates","attempt":3,"started":"2026-11-09T13:08:20.624Z","ended":"2026-11-09T13:08:20.753Z","code":0,"log":"reports/cardrpg-big/skills-v5/s6/logs/source-gates-3.log"}
+{"id":"compatibility","attempt":2,"started":"2026-11-09T13:08:20.754Z","ended":"2026-11-09T13:08:20.826Z","code":0,"log":"reports/cardrpg-big/skills-v5/s6/logs/compatibility-2.log"}
+{"id":"closure","attempt":2,"started":"2026-11-09T13:08:20.826Z","ended":"2026-11-09T13:08:21.550Z","code":0,"log":"reports/cardrpg-big/skills-v5/s6/logs/closure-2.log"}
+{"id":"self-score","attempt":2,"started":"2026-11-09T13:08:21.550Z","ended":"2026-11-09T13:08:21.592Z","code":0,"log":"reports/cardrpg-big/skills-v5/s6/logs/self-score-2.log"}
+{"id":"record-misses","attempt":2,"started":"2026-11-09T13:08:21.592Z","ended":"2026-11-09T13:08:21.631Z","code":0,"log":"reports/cardrpg-big/skills-v5/s6/logs/record-misses-2.log"}
+{"id":"z-1280-off","attempt":2,"started":"2026-11-09T13:08:21.633Z","ended":"2026-11-09T13:08:23.891Z","code":1,"log":"reports/cardrpg-big/skills-v5/s6/logs/z-1280-off-2.log"}
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Keep original failures. Inspect before correcting or resuming.
+
+1 !== 0
+
+    at run (file:///Users/bao/taskbar-hero-cardrpg-a4/tools/cardrpg-big/skills-v5/delivery-prepare.mjs:22:9)
+    at async file:///Users/bao/taskbar-hero-cardrpg-a4/tools/cardrpg-big/skills-v5/delivery-prepare.mjs:47:2 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 1,
+  expected: 0,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.22.2

@@ -18,7 +18,7 @@ const prepared=R.createBattle(example.initial),finished=R.playBattle(R.createBat
 const browser=await chromium.launch({channel:'chromium',headless:true,args:['--use-angle=metal']}),page=await browser.newPage({viewport:{width,height},reducedMotion:'reduce'});
 const rows=[],errors=[],remote=[],checks=[];let complete=false;page.on('pageerror',e=>errors.push(String(e)));page.on('request',r=>{if(/^https?:/.test(r.url()))remote.push(r.url());});
 const button=name=>page.getByRole('button',{name,exact:true});
-const nav=async name=>{await page.getByRole('navigation',{name:'Cafe screens'}).getByRole('button',{name,exact:true}).click();await page.locator('.dp-page').waitFor();};
+const nav=async name=>{await page.getByRole('navigation',{name:'Cafe screens'}).getByRole('button',{name,exact:true}).click();await page.waitForFunction(()=>document.querySelector('.dp-page')?.getAttribute('data-screen')===window.__depthReview.screen&&!document.querySelector('.cr-content')?.textContent.includes('Opening the table…'));};
 async function capture(name,selector='.dp-page'){
  const target=page.locator(selector).first();await target.waitFor();await target.scrollIntoViewIfNeeded();
  await page.locator('.cr-content img').evaluateAll(xs=>Promise.all(xs.map(x=>x.decode().catch(()=>{}))));
@@ -41,9 +41,11 @@ async function capture(name,selector='.dp-page'){
  const path=`${out}/${name}.png`;await page.screenshot({path});rows.push({name,path,...facts});await writeFile(out+'/partial.json',JSON.stringify({artifact,width,height,look,rows,errors,remote},null,2));
 }
 try{
- await page.goto('file://'+artifact+'?dev=1');await page.waitForFunction(()=>!!window.__depthReview);
- if((await page.locator('.dp-app').getAttribute('data-look-v2'))!==String(look))await button('Look A/B').click();
- await page.evaluate(()=>{history.replaceState(null,'',location.pathname);window.__depthReview.notify(false);});
+ await page.goto('file://'+artifact);await page.waitForFunction(()=>!!window.__depthReview);
+ // Apply the cosmetic fixture through its existing store event; public mode starts without dev=1.
+ await page.evaluate(enabled=>{window.__LOOK_V2__=enabled;document.documentElement.dataset.lookV2=String(enabled);window.dispatchEvent(new CustomEvent('lantern-look-v2',{detail:enabled}));},look);
+ await page.waitForFunction(enabled=>document.querySelector('.dp-app')?.getAttribute('data-look-v2')===String(enabled),look);
+ await page.locator('.dp-app[data-player-v4="true"]').waitFor();
  for(const name of ['Feel lab','Review studio','Mechanics lab','Frame meter','Look A/B','Before / after'])assert.equal(await button(name).count(),0,name);
  await capture('fresh-home','.dp-v4-home');
  await page.getByRole('button',{name:/Try the practice table/}).click();
@@ -69,8 +71,8 @@ try{
  await page.evaluate(b=>{const m=window.__depthReview;m.replay=b;m.tutorialBattle=null;m.watching=false;m.sceneStarted=false;m.paused=false;m.go('result');},finished);
  await capture('reaction-result','.dp-v4-outcome');await capture('reaction-explanation','.dp-v5-reaction-summary');
  await page.evaluate(()=>{const m=window.__depthReview;m.replay=null;m.tutorialBattle=null;m.sceneStarted=false;m.go('hub');});
- await page.evaluate(()=>{history.replaceState(null,'',location.pathname+'?dev=1');window.__depthReview.notify(false);});
- assert(await button('Look A/B').isVisible());await capture('review-controls','.dp-page');checks.push('Review controls require dev=1; both looks retain V5 rules');
+ await page.goto('file://'+artifact+'?dev=1');await button('Look A/B').waitFor({state:'visible'});if((await page.locator('.dp-app').getAttribute('data-look-v2'))!==String(look))await button('Look A/B').click();
+ await button('Look A/B').waitFor({state:'visible'});await capture('review-controls','.dp-page');checks.push('Review controls require dev=1; both looks retain V5 rules');
  assert.deepEqual(errors,[]);assert.deepEqual(remote,[]);
  assert.equal(rows.length,21,'Every declared screen must be captured');complete=true;
 }finally{
