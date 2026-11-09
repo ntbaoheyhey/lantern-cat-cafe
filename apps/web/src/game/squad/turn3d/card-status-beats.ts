@@ -8,7 +8,7 @@ import type { EffectPlan } from './effects';
 export interface StatusBeat { kind:'apply'|'tick'|'expire'|'burst'; statusId:VisualStatusId; sourceId:string; targetId:string; stacks:number; at:number; duration:number }
 export interface StatusPresentation { offsets:Map<string,number>; beats:StatusBeat[]; kinds:Map<number,string>; bursts:string[]; reactions?:ReactionBeat[]; landings?:LandingBeat[]; tickIds?:Map<number,string>; bitterTargets?:Set<string> }
 const types:Record<string,string> = { damage:'damage',dot:'damage',detonate:'damage',shared:'damage',reflect:'damage',heal:'heal',revive:'heal',survive:'heal',shield:'shield',defeat:'death',status:'status_apply',expire:'status_expire',phase:'boss_phase',summon:'spawn' };
-const byName = new Map(STATUSES.map(status => [status.name,status.id]));
+const byName = new Map<string,VisualStatusId>(STATUSES.map(status => [status.name,status.id]));
 // Older fixture logs keep cafe subtitles even when the live catalogue uses
 // plain keyword names. This is a presentation lookup; source logs stay exact.
 for (const [id, identity] of Object.entries(STATUS_IDENTITIES)) {

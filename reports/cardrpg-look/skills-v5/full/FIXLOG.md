@@ -195,3 +195,6 @@ Fix2 repeated the failing fixed pack after source1902d3cf7: peak146draws (152bef
 
 ## B-M4-001 2026-11-09T07:19Z M4 material/boss/identity revisit S3
 Fresh review M3fix2 key8shots×2widths: opponents remain uniformly pink (1440 x800–1300/y300–680); boss hierarchy below2x; passive footglows repeat; Soot wick small; greenhouse ground bright. Revisit worst3 within M4: directional normal-key emission and warm trim, boss-only scale/aim, smaller footglow plus off-body passive motifs/Soot wick. Source label/contact fixes from M3 carried unchanged. Register attempt1; retain pre-change artifacts. Check same13enemy denominator,9readabilityshots,51fixedshots/3width collisions/faces/contrast,14changedcuescost/casts andcold; parity/rootgates. No inferred pass.
+
+### M4 legacy-type compatibility correction
+First B-only root type/lint caught visual alias lookup inferred as old rules StatusId (without snag/bitter); same runtime code typed clean on liveS5. Declare the presentation Map<string,VisualStatusId> explicitly. No runtime/event change. Preserve failedlogs; rerun only type/lint after source group completes. This is a transplant compatibility fix, not changed rules.
