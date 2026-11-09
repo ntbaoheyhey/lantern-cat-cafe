@@ -114,3 +114,25 @@ Round1 reviewed allPanko/Mallow/Clover15×5strips. Five flaws at320tile: Panko2 
 
 ### B-MX-004 round2 review
 Viewed all15×5batch2bframes: Sorrel team teapots no longer blanket allies, Inkcap cap and Brioche bell moved outside silhouettes. Remaining five refinements: Sorrel1 spoon thin, Sorrel3 moon looks like two braces, Inkcap1 thread thin, Inkcap3 paper very flat, Brioche4 mat stars bright. First three are legible atfullsize but moderate identity, retained for MX3 whole-sheet assessment; no new batch2regression observed. Two review rounds complete; final cost/casts/faces queued.
+
+### B-MX-005 round2 review
+Reviewed Panko/Mallow/Clover15×5 frames frombatch3b. Bread clearer beside ally, hotcore visible, rinse wreath less dense. Remaining five flaws: Panko4 oven still small(x125–150/y115–145 per320tile), Mallow1 whisk mostly line(x185–210/y100–125), Clover4 fullgreenhouse later than impact, Clover3 leafy aftermath busy(x60–165/y125–150), smallparticles difficult at320thumb. Two review rounds complete; ultimate phase and effectcontrast remainMX3; no7.5claim.
+
+## B-MX-006 2026-11-09T05:29Z MX2 batch4 hierarchy S3
+Repro batch4a Marigold/Mochi/Biscuit15×5frames: Marigold1 seeds under foe(x188–215/y115–140), Marigold4 large opaque team cans(x50–165/y110–145), Mochi2 lantern behindally(x110–145/y100–130), Biscuit4 bread obscures foe feet(x185–222/y115–142), Mochi4 floor swirls crowded. Cause generic fullsize team cores with lateoffset. Round1fix larger offbodyseeds/lantern and smaller translucent cans/bread. Floor swirls retainedforMX3. Verify nextsheet/cost/casts/faces/parity, prior artifact immutable.
+
+## B-MX-007 2026-11-09T05:29Z MX3 ultimate timing S3
+Observed on batch3b/batch4a: Clover greenhouse reachesfullheight insecondary, ultimate teamfootrings dominate, gather/rimspans entire600–780msanticipation. Fix: render-onlylast200msgather/rim, earlierglassgrowth, lowergroundalpha/size, brighterimpactmotes, smallerMochiroof. Originalactiondurations unchanged; all12ultimate strips+casts+faces withstatuses verify next.
+MX4 chapter1: preserve7enemy×2silhouettes/timing with hostileplum/red, instancedyarn/embers, Spoolchargegroundpulse and Yarnwave. Otherenemyfallbacks unchanged.
+
+### B-MX-007 round1 cinema review / attempt2
+Viewedall12fiveframes: greenhouse nowfullatimpact. Remainingflaws per320tile: Mochiroof mostlymaskedbybody(x60–150/y110–140); Sootlantern behindfoe(x190–215/y95–125); Pankooven onlythinoutline(x125–150/y120–145); Inkcapcanopy hidden(x185–220/y100–128); Biscuitbread stillflatlate(x185–220/y115–140). Cause depthshadow and genericcentral anchor. Moveuniqueultmotifs beside/aboveunits; advanceparticles; use Biscuitrollingpair, softenBriochecollars/Marigoldground. Noevent/castduration change. Keepcinema1, verifycinema2 andfaces.
+
+### B-MX-006 round2 review
+Viewed batch4b all15 five-frame strips: seed/lantern/roller silhouettes separate better. Five retained flaws per320tile: Marigold ground leaves crowd feet(x55–160/y125–150), Mochi lantern looks flat(x135–160/y100–135), Mochi4 roof still overlaps its fellow roof(x65–145/y100–140), Biscuit4 sparse impact(x190–220/y110–135), passive glows repeat ground rings. Cinema2 reduces ground layers and moves signatures; remaining surface depth is PARTIAL, not a7.5claim.
+### B-MX-007 round2 review
+Viewed12ultimate peak tiles: Clover glass strongly distinct; Mallow flame readable; Mochi/Panko/Soot signatures now beside silhouettes. Inkcap veil still faint, Velvet needles thin, Biscuit impact sparse; repeated ground spirals remain. Keep these visible limitations in audit; cinema2 faces/casts pending. No timing/rules changes.
+### B-MX-003 attempt1
+Isolated600frame sampler after1200warmframes: Mochi3047256B/Soot900248B/Yarn773820B, including repeated CSS Color.setStyle regex allocations and target-array reset. Cache parsed recipe/status colours during preparation, reuse target slots and pass cached colours to pooled lights. Sampling includes JS numeric boxing; zero remains unproven until measured. Repro allocation.mjs on immutable cinema2; newopt1artifact+allocation/casts/cold pending. Prior sample retained.
+
+MX5 colour API typecheck caught two legacy illuminate callers in unchanged tests. Optional cached colours preserve the six-argument API; renderer supplies prepared colours. opt1 typecheck failure retained, opt1b verifies.

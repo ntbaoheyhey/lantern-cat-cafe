@@ -466,7 +466,8 @@ export class TurnScene {
         p.model.rotation.y = (1 - a.slot) * .12;
       }
       if(this.effectRim){
-        const lead=frame&&source===p&&frame.beat.kind==='anticipation'?Math.sin(frame.progress*Math.PI)*.42:0;
+        const leadAt=frame?.plan.ultimate?Math.max(0,1-(frame.beat.duration-frame.elapsed)/200):frame?.progress??0;
+        const lead=frame&&source===p&&frame.beat.kind==='anticipation'?Math.sin(leadAt*Math.PI)*.42:0;
         const after=frame?frame.elapsed-frame.plan.beats[2]!.start-(view.cardPresentation?.offsets.get(a.id)??0):-1;
         const hit=targets.includes(p)&&after>=0&&after<180?Math.sin(after/180*Math.PI)*.7:0;
         this.effectRim.update(p.model,view.reducedMotion?0:Math.max(lead,hit),cardRecipe?.accent??'#ffd395');

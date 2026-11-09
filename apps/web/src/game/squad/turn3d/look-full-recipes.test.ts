@@ -1,6 +1,6 @@
 import {describe,expect,it} from 'vitest';
 import {CARD_EFFECT_RECIPES} from './card-effect-data';
-import {fullRecipes} from './look-full-recipes';
+import {fullRecipes,fullEnemyRecipes} from './look-full-recipes';
 const cats=['soot','velvet','cinnamon','sorrel','inkcap','brioche','panko','mallow','clover','marigold','mochi','biscuit'];
 describe('authored presentation recipes',()=>{
  it('preserves the legacy recipes and the action timing contract for every presentation',()=>{
@@ -24,4 +24,16 @@ describe('authored presentation recipes',()=>{
   expect(recipes['enemy:button-guard']).toBe(CARD_EFFECT_RECIPES['enemy:button-guard']);
   expect(recipes['unknown']).toBeUndefined();
  });
+});
+
+it('keeps published enemy action clocks and the legacy catalog unchanged',()=>{
+ const before=JSON.stringify(CARD_EFFECT_RECIPES),result=fullEnemyRecipes(CARD_EFFECT_RECIPES);
+ for(const owner of ['button-guard','sock-skipper','spool-ram','needle-moth','teacup-healer','kettle-knight','yarn-giant'])for(const suffix of ['',':basic']){
+  const id='enemy:'+owner+suffix,old=CARD_EFFECT_RECIPES[id]!;
+  expect(result[id]!.durations).toEqual(old.durations);
+  expect(result[id]!.target).toEqual(old.target);
+  expect(result[id]!.layers.length).toBeGreaterThanOrEqual(4);
+ }
+ expect(JSON.stringify(CARD_EFFECT_RECIPES)).toBe(before);
+ expect(result['enemy:practice-cushion']).toBe(CARD_EFFECT_RECIPES['enemy:practice-cushion']);
 });

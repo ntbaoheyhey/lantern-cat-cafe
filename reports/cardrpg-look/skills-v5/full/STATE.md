@@ -1,5 +1,5 @@
 # Skills V5 full run
-NOW MX2 batch1 round2 corrections -> batch1e verification; M3 worktree checkout complete, publishedS5 untouched.
+NOW MX2 batch4 round2 review pending; batches1–3 checks in inherited bounded timing queues. M3 pure adapter/preflight PASS; browser coverage next.
 BASE f9924699cab2fa5b8029baa1158f789ee44ddfda, DRAFT415 ->413->409->395.
 DONE prior V0/V01/V3; do not repeat their completed samples.
 READ all references; full A history, latest S7. Baseline rebuilt byte-exact e4491ebf/29208740bytes; tools checked external venv.
@@ -21,3 +21,6 @@ DONE M2 DRAFT418 tip58adf21de; shared MX toolkit installed; staged logs retained
 
 DONE M2 source2e6ee6425:168casts native16.8/CPU4 33.3ms;125draws/173949tris;E2E421PASS;20sfixture clip saved.
 PREP M3 read-only S5schema notes /tmp/cardrpg-v5full-m3/adapter-notes.md; integration worktree frompublishedS5, mergeM2 pending checkoutcompletion; latestMX merge afterbatchclosure.
+
+DONE MX source772e2e9f3 toolkit/allcatrecipes; noMXPRyet. M3 uncommitted verified adapter inintegrationworktree; preserve.
+NUMBERS M3 18battles/1421actions/1687plans exact18hashes,0missing/extrav2events; browserNOTVERIFIED. Full1848unitPASS.

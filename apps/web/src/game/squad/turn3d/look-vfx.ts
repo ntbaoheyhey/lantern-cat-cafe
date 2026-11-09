@@ -227,14 +227,15 @@ export class LookVfx {
     }
   }
   illuminate(recipe: CardEffectRecipe, progress: number, caster: T.Vector3,
-    targets: T.Vector3[], camera: T.Camera, calm: boolean) {
+    targets: T.Vector3[], camera: T.Camera, calm: boolean, color?: T.Color, accent?: T.Color) {
     const focus = targets[0] ?? caster;this.projected.copy(focus);this.projected.y += .3;this.projected.project(camera);
     this.impact.set(this.projected.x * .5 + .5, this.projected.y * .5 + .5);
     const t = (progress - .45) / .43;
     const power = t > 0 && t < 1 && !calm && this.lightsEnabled ? Math.sin(t * Math.PI) ** 2 * (isReadableBattle() ? recipe.ultimate ? 1.15 : .65 : recipe.ultimate ? .85 : .55) : 0;
     for (let i = 0; i < this.lights.length; i++) {
       const light = this.lights[i]!;light.position.copy(targets[i] ?? focus);light.position.y += .06;
-      light.color.set(i ? recipe.accent : recipe.color);light.intensity = i && targets.length < 2 ? 0 : power;
+      const cached=i?accent:color;
+      if(cached)light.color.copy(cached);else light.color.set(i?recipe.accent:recipe.color);light.intensity = i && targets.length < 2 ? 0 : power;
     }
   }
   async warm(renderer: T.WebGLRenderer, cancelled: () => boolean) {

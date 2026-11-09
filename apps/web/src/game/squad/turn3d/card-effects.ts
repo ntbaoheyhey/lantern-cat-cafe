@@ -1,4 +1,4 @@
-import { fullRecipes } from './look-full-recipes';
+import { fullRecipes, fullEnemyRecipes } from './look-full-recipes';
 import { showBodyMark } from './card-status-priority';
 import { CARD_STATUS_LOOKS, CRUMB_BURST_LAYER, V5_CUE_LAYERS } from './card-status-looks';
 import type { ReactionBeat, LandingBeat } from './card-v5-events';
@@ -17,7 +17,7 @@ import { CARD_EFFECT_RECIPES, LEGACY_CARD_STATUS_LOOKS, type CardEffectLayer, ty
 import { LOOK_PARTICLE_PRIMITIVES, CARD_EFFECT_PRIMITIVES, createCardPrimitive, type CardEffectPrimitive } from './card-effect-primitives';
 
 export const FULL_VFX_CATS:readonly string[]=['soot','velvet','cinnamon','sorrel','inkcap','brioche','panko','mallow','clover','marigold','mochi','biscuit']; // batches enabled after individual review
-const FULL_RECIPES=fullRecipes(CARD_EFFECT_RECIPES,FULL_VFX_CATS);
+const FULL_RECIPES=fullEnemyRecipes(fullRecipes(CARD_EFFECT_RECIPES,FULL_VFX_CATS));
 export const CARD_EFFECT_BUDGET = { instances: 96, primitiveCalls: 8, lookInstances: 256, lookPrimitiveCalls: 16, perPrimitive: 64, protectedFaces: 12 };
 const vertexShader = `
   attribute float effectAlpha;
@@ -66,7 +66,7 @@ export function cardRecipeFor(frame: EffectFrame | null, actors: TurnActor[]): C
   const skill = (isReadableBattle()?FULL_RECIPES:CARD_EFFECT_RECIPES)[frame.plan.presentationId ?? frame.plan.skillId];
   if (skill) return skill;
   const actor = actors.find(candidate => candidate.id === frame.plan.actorId);
-  return actor?.side === 'enemy' ? CARD_EFFECT_RECIPES[`enemy:${actor.cardRpg?.cardId}`] : undefined;
+  return actor?.side === 'enemy' ? (isReadableBattle()?FULL_RECIPES:CARD_EFFECT_RECIPES)[`enemy:${actor.cardRpg?.cardId}`] : undefined;
 }
 
 interface PrimitivePool {
@@ -126,9 +126,24 @@ export class CardEffects {
   private baseColor = new T.Color();
   private accentColor = new T.Color();
   private resolution = new T.Vector2(1, 1);
+  private colorCache = new Map<string,T.Color>();
+
+  private setColor(target:T.Color,value:string) {
+    const cached=this.colorCache.get(value);
+    if(cached)target.copy(cached);else target.set(value);
+  }
 
   constructor(private scene: T.Scene, private atelier = false) {
     this.recipes=atelier?FULL_RECIPES:CARD_EFFECT_RECIPES;
+    if(atelier){
+      // Parse CSS colours once while preparing, never on a warmed cast path.
+      for(const recipe of [...Object.values(this.recipes),...Object.values(LAB_EFFECT_RECIPES)]){
+        this.colorCache.set(recipe.color,new T.Color(recipe.color));
+        this.colorCache.set(recipe.accent,new T.Color(recipe.accent));
+      }
+      for(const look of Object.values(CARD_STATUS_LOOKS))this.colorCache.set(look.color,new T.Color(look.color));
+      for(const value of ['#e6c392','#d9616b','#efaa73'])this.colorCache.set(value,new T.Color(value));
+    }
     this.root.name = 'card-effect-compositions';
     scene.add(this.root);
     this.material = new T.ShaderMaterial({
@@ -316,7 +331,7 @@ export class CardEffects {
           this.statusHeight=heights?.get(actor.id)??1.6;
           this.mark=this.atelier?(id==='scald'?1:'crown' in look&&look.crown?2:(id==='cozy'||id==='glaze')?3:id==='snag'?5:4):0;
           if (this.atelier && id!=='bitter') this.focus.y += 'crown' in look && look.crown ? crowns?.get(actor.id) ?? (heights?.get(actor.id) ?? 1.6) + .18 : (heights?.get(actor.id) ?? 1.6) * .42;
-          this.baseColor.set(look.color);
+          this.setColor(this.baseColor,look.color);
           this.accentColor.copy(this.baseColor);
           const phase = calm ? .5 : .5 + Math.sin(time * 2) * .22;
           const count = this.atelier && id === 'scald' ? Math.max(1,Math.min(5,typeof status === 'string' ? 1 : status.stacks)) : look.layer.count;
@@ -351,25 +366,28 @@ export class CardEffects {
     this.caster.copy(positions.get(frame.plan.actorId) ?? this.position.set(0, 0, 0));
     if(this.atelier&&frame.plan===this.previousPlan&&frame.elapsed>this.previousElapsed){this.casterVelocity.copy(this.caster).sub(this.previousCaster).multiplyScalar(1000/(frame.elapsed-this.previousElapsed));this.casterVelocity.clampLength(0,3);}else this.casterVelocity.set(0,0,0);
     this.previousCaster.copy(this.caster);this.previousElapsed=frame.elapsed;this.previousPlan=frame.plan;
-    this.targets.length = 0; this.targetIds.length = 0;
+    let targetCount=0;
     for (const id of frame.plan.targetIds) {
       let target:TurnActor|undefined;for(let i=0;i<actors.length;i++)if(actors[i]!.id===id){target=actors[i];break;}
       const position = positions.get(id);
       const appropriateSide = recipe.target === 'friendly' ? target?.side === actor?.side : target?.side !== actor?.side;
-      if (position && appropriateSide) { this.targets.push(position); this.targetIds.push(id); }
+      if (position && appropriateSide) { this.targets[targetCount]=position;this.targetIds[targetCount++]=id; }
     }
-    if (!this.targets.length) { this.targets.push(this.caster); this.targetIds.push(frame.plan.actorId); }
+    if (!targetCount) { this.targets[0]=this.caster;this.targetIds[0]=frame.plan.actorId;targetCount=1; }
+    this.targets.length=targetCount;this.targetIds.length=targetCount;
     const span = effectBeatSpans[frame.beat.kind];
-    const progress = span[0] + (span[1] - span[0]) * frame.progress;
+    const cueProgress=this.atelier&&recipe.ultimate&&frame.beat.kind==='anticipation'?Math.max(0,1-(frame.beat.duration-frame.elapsed)/200):frame.progress;
+    const progress = span[0] + (span[1] - span[0]) * cueProgress;
     // A brief visual accent fits inside the existing impact beat; no timing change.
     this.flash = !calm && progress > .525 && progress < .558 ? Math.sin((progress - .525) / .033 * Math.PI) : 0;
-    this.look?.illuminate(recipe, progress, this.caster, this.targets, camera, calm);
+    this.setColor(this.baseColor,recipe.color);this.setColor(this.accentColor,recipe.accent);
+    this.look?.illuminate(recipe, progress, this.caster, this.targets, camera, calm, this.baseColor, this.accentColor);
     this.drawRecipe(recipe, progress, camera, quality, calm, true);
     if (isReadableBattle()) {
       // Existing pools, fixed action clock. The characteristic recipe stays on top.
       const gather = (frame.elapsed - frame.plan.beats[0]!.duration + 200) / 200;
       if (gather > 0 && gather < 1) {
-        this.baseColor.set(recipe.color); this.accentColor.set(recipe.accent);
+        this.setColor(this.baseColor,recipe.color); this.setColor(this.accentColor,recipe.accent);
         this.focus.copy(this.caster);
         this.place(READABLE_GATHER, gather, 0, 1, camera, calm);
       }
@@ -377,7 +395,7 @@ export class CardEffects {
         const delay = this.presentation?.offsets.get(this.targetIds[i]!) ?? 0;
         const after = (frame.elapsed - frame.plan.beats[2]!.start - delay) / Math.min(500, frame.plan.duration-frame.plan.beats[2]!.start-delay);
         if (after > 0 && after < 1) {
-          this.baseColor.set(recipe.accent);
+          this.setColor(this.baseColor,recipe.accent);
           this.focus.copy(this.presentation ? this.targets[i]! : recipe.target === 'friendly' ? this.caster : this.targets[0]!);
           this.place(recipe.ultimate ? READABLE_IMPACT : READABLE_SMALL_IMPACT, after, 0, 1, camera, calm);
         }
@@ -413,7 +431,7 @@ export class CardEffects {
       if(!target||!look)continue;
       this.focus.copy(target);
       this.caster.copy(positions.get(beat.sourceId)??target);
-      this.baseColor.set(look.color);this.accentColor.copy(this.baseColor);this.flash=0;
+      this.setColor(this.baseColor,look.color);this.accentColor.copy(this.baseColor);this.flash=0;
       const layer=beat.kind==='burst'?CRUMB_BURST_LAYER:look[beat.kind];
       if(beat.kind!=='apply')this.focus.y+=(heights?.get(beat.targetId)??1.6)*.42;
       // Reduced motion keeps the identifying mark/badge, with no dart, flare or flash.
@@ -431,10 +449,10 @@ export class CardEffects {
       this.focus.copy(primer);this.focus.y+=(heights?.get(reaction.targetId)??1.6)*.35;
       this.caster.copy(this.focus);this.flash=0;
       if(reaction.id==='crumb-burst'){
-        this.baseColor.set('#e6c392');this.accentColor.copy(this.baseColor);
+        this.setColor(this.baseColor,'#e6c392');this.accentColor.copy(this.baseColor);
         for(let i=0;i<CRUMB_BURST_LAYER.count;i++)this.place(CRUMB_BURST_LAYER,progress,i,CRUMB_BURST_LAYER.count,camera,false);
       }else if(reaction.id==='rupture'){
-        this.baseColor.set('#d9616b');this.accentColor.copy(this.baseColor);
+        this.setColor(this.baseColor,'#d9616b');this.accentColor.copy(this.baseColor);
         if(progress<.24){
           for(let i=0;i<2;i++)this.place(V5_CUE_LAYERS.tension,progress/.24,i,2,camera,false);
         }else{
@@ -449,7 +467,7 @@ export class CardEffects {
         this.focus.copy(target);this.focus.y+=(heights?.get(id)??1.6)*.32;
         if(reaction.id==='wildfire'){
           // Low fire fronts cross the distance; a hot spark follows each front.
-          this.baseColor.set('#efaa73');this.accentColor.copy(this.baseColor);
+          this.setColor(this.baseColor,'#efaa73');this.accentColor.copy(this.baseColor);
           for(let i=0;i<3;i++){
             const front=Math.max(0,travel-i*.08);
             this.place(V5_CUE_LAYERS.fire,front,i,3,camera,false);
@@ -458,7 +476,7 @@ export class CardEffects {
         }else for(let statusIndex=0;statusIndex<reaction.primerIds.length;statusIndex++){
           const look=CARD_STATUS_LOOKS[reaction.primerIds[statusIndex]!];if(!look)continue;
           const flight=Math.min(1,Math.max(0,travel-statusIndex*.06));
-          this.baseColor.set(look.color);this.accentColor.copy(this.baseColor);
+          this.setColor(this.baseColor,look.color);this.accentColor.copy(this.baseColor);
           this.place(look.flight,flight,0,1,camera,false);
         }
       }
@@ -467,7 +485,7 @@ export class CardEffects {
     for(const landing of this.presentation.landings??NO_LANDINGS){
       const target=positions.get(landing.targetId),from=positions.get(landing.fromId);if(!target)continue;
       const progress=(frame.elapsed-landing.at)/landing.duration;
-      this.focus.copy(target);this.caster.copy(from??target);this.baseColor.set(frame.plan.accent);this.accentColor.copy(this.baseColor);
+      this.focus.copy(target);this.caster.copy(from??target);this.setColor(this.baseColor,frame.plan.accent);this.accentColor.copy(this.baseColor);
       if(landing.shape==='bounce'){
         const travel=(frame.elapsed-landing.at+70)/70;
         if(travel>=0&&travel<1){this.focus.y+=.55;this.caster.y+=.55;this.place(V5_CUE_LAYERS.arc,travel,0,1,camera,false);this.focus.copy(target);}
@@ -484,8 +502,8 @@ export class CardEffects {
 
   private drawRecipe(recipe: CardEffectRecipe, actionProgress: number,
     camera: T.Camera, quality: Quality, calm: boolean, stagger = false) {
-    this.baseColor.set(recipe.color);
-    this.accentColor.set(recipe.accent);
+    this.setColor(this.baseColor,recipe.color);
+    this.setColor(this.accentColor,recipe.accent);
     for (const layer of recipe.layers) {
       const shape=this.presentation?.landings?.[0]?.shape;
       if(stagger&&!recipe.authored&&(shape==='splash'||shape==='multi-hit'||shape==='bounce')&&layer.anchor!=='caster')continue;
