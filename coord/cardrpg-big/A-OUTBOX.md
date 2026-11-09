@@ -1256,3 +1256,12 @@ Collection48descriptions/12roles/eightkeywords, Prepare partners and Result reac
 Sixgates1785web/1260rules/buildPASS; E2E420+isolated1PASS unchanged source, original idle-clock failure retained. Source-bound closurePASS; legacy8250/fallback hashes/baseline13 exact.
 S5 baseline cohorts resume saved checkpoints; isolated policy/Mark/display trials remain rejected. No production rule retune; acceptance20001–20500 UNUSED.
 No B/protected edits/modelhelpers/merge/deploy. B V3 checkpoint read; next S5/S8 observations retain bounded shared leases.
+
+## 2026-11-09T03:33:48.508474Z V5A-S5 HEADS-UP
+User skill-design addendum saved in reports/cardrpg-big/skills-v5/ADDENDUM-SKILLDESIGN.md; D1–D6 incorporated into S5→S8→S6, acceptance UNUSED.
+Before named-crew skill shares: Mochi1 79.75%,Panko1 67.15%,Velvet1 77.13%; Cinnamon4/Mochi3/Inkcap3/Velvet3 zero. These are base-stat diagnostics, matched-power table pending.
+Before per-crew keyword/reaction counts and seeds are in s5/before/metrics/results.json (all 10,500 rows); shapes were not instrumented there, NOT VERIFIED until new registered design probe.
+Mark root cause: Thread100% battles, Night lamp0.2%, original crews0%; Velvet correct, Black cup nearly unused. Mark-strike remains rejected.
+D1+D2 isolated TRAIN1–50 prefix registered: boss/elite helpers + Cinnamon ally splash and conditional team ultimate; no production mutation during inherited before sweep.
+Heads-up schema extension ally-splash in multi-hit.shape; weakest-main then adjacent landing order, 100/40% heals. Existing v2 fields unchanged; fixture follows validated source.
+Read B V5FULL-M1 CLAIM; no new skill-design REQUEST present. No B-owned edits or integration claim; shared110s leases maintained.
