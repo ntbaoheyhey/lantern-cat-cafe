@@ -5,7 +5,7 @@ import type { BattleEvent } from '@taskbar-hero/game-rules/src/cardrpg/depth/con
 import type { TurnEvent } from '@taskbar-hero/game-rules/src/squad/turn/types';
 import type { EffectPlan } from './effects';
 
-export interface StatusBeat { kind:'apply'|'tick'|'expire'|'burst'; statusId:VisualStatusId; sourceId:string; targetId:string; stacks:number; at:number; duration:number }
+export interface StatusBeat { kind:'apply'|'tick'|'trigger'|'expire'|'burst'; statusId:VisualStatusId; sourceId:string; targetId:string; stacks:number; at:number; duration:number }
 export interface StatusPresentation { offsets:Map<string,number>; beats:StatusBeat[]; kinds:Map<number,string>; bursts:string[]; reactions?:ReactionBeat[]; landings?:LandingBeat[]; tickIds?:Map<number,string>; bitterTargets?:Set<string> }
 const types:Record<string,string> = { damage:'damage',dot:'damage',detonate:'damage',shared:'damage',reflect:'damage',heal:'heal',revive:'heal',survive:'heal',shield:'shield',defeat:'death',status:'status_apply',expire:'status_expire',phase:'boss_phase',summon:'spawn' };
 const byName = new Map<string,VisualStatusId>(STATUSES.map(status => [status.name,status.id]));
