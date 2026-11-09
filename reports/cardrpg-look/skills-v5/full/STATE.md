@@ -32,8 +32,8 @@ DONE evidence packing:lossless gzip+identical media aliases. B-M4-007 symlink co
 EVIDENCE M4packincluded,cap80MB and4clips≤30s; q64reviewencodes preserve dimensions/originalhashes. Distinct failedsamples retained.
 QUEUE allM4jobs complete; ownFIFO16545 stopped via its stopfile. No timinglock held orrequested. NeverkillA/unrelated PIDs.
 VIDEO before20s complete seed791576452. After usesexactinitialJSON withV4/V5ON;pitchpredeclaredThreadpair1;reelactualguide12ultimates1x. /tmp/cardrpg-v5full-m4/delivery2-queue.log.
-WAITING S6 closure since 2026-11-09T10:06:00Z, last check 2026-11-09T10:23:10Z; lastreadline1498. S6partialpublished584672487 integrated; remainingpairedmatrices/once-onlyZ ongoing. Runtime6772eb343 unchanged; noacceptance seeds runbyB.
-NEXT timeout1200 wait-outbox.sh withV5_LAST_READ_LINE1498; onnewpublishedphase fetch/read-only andmerge integration, deltaonlyverification. M5draft/report/ledger/BOUTBOXDONE afterrefreshcap.
+WAITING S6 closure since 2026-11-09T10:06:00Z, last check 2026-11-09T13:19:49Z; lastreadline1505. A10:36:4/20pairedscopes complete, evidence7c1140b73, runtime6772eb343 unchanged; samephase incrementalreceipts willrefresh atS6DONE. NoBtimingjobs.
+NEXT timeout1200 wait-outbox.sh withV5_LAST_READ_LINE1505; onnewpublishedphase fetch/read-only andmerge integration, deltaonlyverification. M5draft/report/ledger/BOUTBOXDONE afterrefreshcap.
 THEN continue M3 published-phase refresh untilS6DONEor19Nov18UTC; wait-outbox.sh withrecordedlastline,onlyqueuedBworkwhilewaiting. M5report≤90lines+ledger+BOUTBOXDONE.
 Prepared drafts/scripts /tmp/cardrpg-v5full-m4-prep/{M4-REPORT.md,V5FULL-REPORT.md,review-videos.py,sync-entry.py}; M5 placeholders mustbe resolved beforepublication.
 STOP only M5delivered,20Nov12UTC,orunfixable/unrevertibleS1withM5PARTIAL. No manualhandoff.
