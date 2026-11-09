@@ -16,7 +16,8 @@ export function HomeV4({m}:{m:DepthModel}) {
  const nextChapter=unlocked.find(chapter=>!m.state.cleared.includes(chapter.id));
  const pendingStars=Object.values(m.state.v4?.journey?.stars??{}).filter(r=>r.conditions.some(c=>!c)
   &&r.band>=1&&r.band<=ceiling&&unlocked.some(chapter=>chapter.id===r.chapter));
- const band=active?m.state.run!.challengeLevel??ceiling:Math.min(selected??(!nextChapter?pendingStars[0]?.band:undefined)??ceiling,ceiling);
+ const firstClearBand=nextChapter?(m.state.run?.chapter===nextChapter.id?m.state.run.challengeLevel:undefined)??1:undefined;
+ const band=active?m.state.run!.challengeLevel??ceiling:Math.min(selected??firstClearBand??pendingStars[0]?.band??ceiling,ceiling);
  const replayStar=!nextChapter?pendingStars.find(r=>r.band===band):undefined;
  const route=active?R.CHAPTERS[m.state.run!.chapter-1]!:nextChapter??R.CHAPTERS.find(chapter=>chapter.id===replayStar?.chapter)??R.CHAPTERS[2]!;
  const week=R.firstWeekV4(m.state)!,shift=R.cafeShiftV4(m.state,m.cafeNow),stars=R.starCountV4(m.state);
@@ -30,7 +31,7 @@ export function HomeV4({m}:{m:DepthModel}) {
  const act=()=>active?m.go('map'):m.state.tutorial<3?m.tutorial():!m.state.freeInvite?m.go('gacha'):m.state.tutorial===3?m.go('inventory'):m.start(route.id,'campaign',band);
  return <><PageTitle eyebrow={`Cafe day ${m.state.account.day}`} title="A small light. A brave little team."/>
   <section className="dp-v4-home cr-panel" aria-label="Tonight at home"><div><small>TONIGHT'S LITTLE ADVENTURE</small><h2>Keep the lantern warm.</h2>
-   <p>{goal}</p>{dailySuppliesFullV4(m.state)&&<p>Tonight's supplies are gathered. Missing stars still count.</p>}<button className="cr-primary" onClick={act}>{next} →</button>
+   <p>{goal}</p>{nextChapter&&m.state.tutorial>=4&&<p>Band {band} stays fixed as your crew grows. Choose a higher band below when ready.</p>}{dailySuppliesFullV4(m.state)&&<p>Tonight's supplies are gathered. Missing stars still count.</p>}<button className="cr-primary" onClick={act}>{next} →</button>
    {m.state.tutorial<3&&<button className="dp-v4-skip-lesson" onClick={()=>{m.state.tutorial=3;m.notify();}}>Skip lesson</button>}
    <div className="dp-v4-home-pull"><p><b>Next star · {stars} found</b><span>{starGoal}</span></p>
     <p><b>The kettle</b><span>{shift.claims?`${shift.claims} cafe service ready.`:shift.remaining===0?'Fresh service tomorrow.':`Ready in ${Math.max(1,Math.ceil((shift.readyAt-shift.now)/60000))} minutes.`}</span></p></div>

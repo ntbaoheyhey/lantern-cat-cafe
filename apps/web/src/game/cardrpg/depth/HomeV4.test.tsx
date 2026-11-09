@@ -103,3 +103,43 @@ it('ignores stars above the current crew ceiling and keeps the active route band
  fireEvent.click(home().getByRole('button', { name: 'Continue your route →' }));
  expect(m.screen).toBe('map'); expect(R.exportSave(m.state)).toBe(before);
 });
+
+
+it('starts an uncleared chapter at band one even when the crew has grown', () => {
+ const m=ready();for(const c of m.state.account.cards)c.level=5;
+ const before=R.exportSave(m.state);render(<HomeV4 m={m}/>);
+ expect((screen.getByRole('combobox',{name:'Challenge band'}) as HTMLSelectElement).value).toBe('1');
+ expect(home().getByText('Band 1 stays fixed as your crew grows. Choose a higher band below when ready.')).toBeTruthy();
+ expect(R.exportSave(m.state)).toBe(before);
+ fireEvent.click(home().getByRole('button',{name:'Explore Tangled Cafe →'}));
+ expect(m.state.run!.challengeLevel).toBe(1);
+});
+it('keeps a previously chosen band after loss, growth and a new Home visit', () => {
+ const m=ready();for(const c of m.state.account.cards)c.level=2;
+ m.start(1,'campaign',2);m.state=R.abandonRun(m.state).state;
+ for(const c of m.state.account.cards)c.level=5;m.go('hub');
+ const before=R.exportSave(m.state);render(<HomeV4 m={m}/>);
+ expect((screen.getByRole('combobox',{name:'Challenge band'}) as HTMLSelectElement).value).toBe('2');
+ expect(R.exportSave(m.state)).toBe(before);
+ fireEvent.click(home().getByRole('button',{name:'Explore Tangled Cafe →'}));
+ expect(m.state.run!.challengeLevel).toBe(2);
+});
+it('starts a newly unlocked chapter at band one and honors an explicit choice', () => {
+ const m=ready();for(const c of m.state.account.cards)c.level=5;
+ m.start(1,'campaign',4);m.state=R.abandonRun(m.state).state;m.state.cleared=[1];m.go('hub');
+ render(<HomeV4 m={m}/>);
+ expect((screen.getByRole('combobox',{name:'Challenge band'}) as HTMLSelectElement).value).toBe('1');
+ fireEvent.change(screen.getByRole('combobox',{name:'Challenge band'}),{target:{value:'3'}});
+ fireEvent.click(home().getByRole('button',{name:'Explore Rooftop Orchard →'}));
+ expect(m.state.run!.chapter).toBe(2);expect(m.state.run!.challengeLevel).toBe(3);
+});
+it('clamps a retained band to the current crew ceiling without rewriting the saved run', () => {
+ const m=ready();for(const c of m.state.account.cards)c.level=5;
+ m.start(1,'campaign',4);m.state=R.abandonRun(m.state).state;
+ m.state.account.cards.find(c=>c.cardId==='soot')!.level=2;m.go('hub');
+ const before=R.exportSave(m.state);render(<HomeV4 m={m}/>);
+ expect((screen.getByRole('combobox',{name:'Challenge band'}) as HTMLSelectElement).value).toBe('2');
+ expect(R.exportSave(m.state)).toBe(before);
+ fireEvent.click(home().getByRole('button',{name:'Explore Tangled Cafe →'}));
+ expect(m.state.run!.challengeLevel).toBe(2);
+});

@@ -251,3 +251,8 @@
 .dp-v4-prepare-layout .dp-v4-placement-card { min-width: min(150px, 100%); max-width: 100%; }
 .dp-v4-prepare-layout .dp-v4-scouting .dp-v4-grid { grid-template-columns: 1fr; }
 @media (max-width: 1100px) { .dp-v4-prepare-layout { grid-template-columns: 1fr; } }
+
+/* Keep the next available change beside the named result on ordinary V4 losses. */
+.dp-v4-result-decisions { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 18px; align-items: start; }
+.dp-v4-result-decisions > * { min-width: 0; }
+@media (max-width: 1100px) { .dp-v4-result-decisions { grid-template-columns: 1fr; } }
