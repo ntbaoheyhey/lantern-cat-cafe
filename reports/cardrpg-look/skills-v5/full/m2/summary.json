@@ -1,0 +1,110 @@
+{
+  "artifactSha256": "f618aabdde185ba23398dcdf65b59c7fb737349d0eab04618cd3e01f821da0b3",
+  "artifactBytes": 29153560,
+  "readability": {
+    "luminanceMin": 0.262002822419123,
+    "luminanceMax": 0.36370437713248194,
+    "masks": 18,
+    "bossRatios": [
+      {
+        "id": "yarn-giant",
+        "ratio": 1.843079014602043
+      },
+      {
+        "id": "kettle-knight",
+        "ratio": 1.5172727106521515
+      },
+      {
+        "id": "pantry-crown",
+        "ratio": 1.7042171010585219
+      }
+    ],
+    "rosterOutside": []
+  },
+  "shots": {
+    "count": 51,
+    "contrastMin": 4.61824303658529,
+    "errors": [],
+    "failures": []
+  },
+  "faces": {
+    "samples": 90,
+    "offenders": []
+  },
+  "collisions": {
+    "windows": 30,
+    "frames": 1176,
+    "overlaps": 0,
+    "outside": 0,
+    "unplaced": 0,
+    "errors": []
+  },
+  "casts": {
+    "windows": 168,
+    "errors": [],
+    "draws": 125,
+    "tris": 173949,
+    "groups": [
+      {
+        "cpu": 1,
+        "count": 112,
+        "max": 16.8
+      },
+      {
+        "cpu": 4,
+        "count": 56,
+        "max": 33.3
+      }
+    ]
+  },
+  "gates": [
+    {
+      "name": "typecheck5",
+      "start": "2026-11-09T04:45:44.104Z",
+      "end": "2026-11-09T04:45:54.412Z",
+      "code": 0
+    },
+    {
+      "name": "lint5",
+      "start": "2026-11-09T04:45:54.414Z",
+      "end": "2026-11-09T04:46:04.626Z",
+      "code": 0
+    },
+    {
+      "name": "test5",
+      "start": "2026-11-09T04:46:04.626Z",
+      "end": "2026-11-09T04:46:31.109Z",
+      "code": 0
+    },
+    {
+      "name": "artifact4",
+      "start": "2026-11-09T04:46:31.110Z",
+      "end": "2026-11-09T04:46:35.359Z",
+      "code": 0
+    },
+    {
+      "name": "parity4",
+      "start": "2026-11-09T04:46:35.360Z",
+      "end": "2026-11-09T04:46:36.202Z",
+      "code": 0
+    },
+    {
+      "name": "visual4",
+      "start": "2026-11-09T04:46:36.202Z",
+      "end": "2026-11-09T04:49:56.369Z",
+      "code": 0
+    },
+    {
+      "name": "casts4",
+      "start": "2026-11-09T04:49:56.370Z",
+      "end": "2026-11-09T04:56:21.631Z",
+      "code": 0
+    },
+    {
+      "name": "e2e5",
+      "start": "2026-11-09T04:56:21.632Z",
+      "end": "2026-11-09T05:00:36.033Z",
+      "code": 0
+    }
+  ]
+}
