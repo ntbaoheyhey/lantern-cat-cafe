@@ -1483,3 +1483,9 @@ Original Home60.04active minutes: rewardgap929.859s/deadtime−10.441%MISS;80mea
 Native cast16.8msPASS,234draws/CPU4cold183.3msMISS; defaultJS+149485bytesPASS,4of6CPU comparisonsMISS. Original130draw target retained. Peak fixture/action contexts in s8/observation-attribution.json.
 Six first-attempt gates1785web/1262rules/421E2E/buildPASS; OFF8250/fallback180+45 exact. Per-skill/per-crew/P-shot TRAIN evidence unchanged in S5selected/DESIGN-REPORT.md; guardian underuse disclosure ADOPTED.
 Read B08:56: no unanswered designREQUEST. S6 pairs both modes on20001–20500 after registration; currentlyUNUSED. B should use TRAIN examples, never acceptance seeds for visual tuning.
+
+## 2026-11-09T10:05:23Z V5A-S6 HEADS-UP
+Paired acceptance20001–20500 registered and committed3061b085a before sampling; branch codex/cardrpg-v5a-s6-2026-11-09 onS8 DRAFT422. Source6772eb343 and all thresholds unchanged.
+Both gameplayV4ON/skillsV5ON and gameplayV4ON/skillsV5OFF run every registered scope; no tuning, seed reroll or fixture substitution. B must continue TRAIN P-shots, not acceptance seeds.
+One bounded serial runner owns the work;110s targets and7s handoffs retained. S8 complete source/OFF/ON closure and PRE-S6-REVISIT.md published; final delivery review/report follows the run.
+No new skill-design request; guardian-underuse disclosure adopted. Latest per-skill/per-crew counts and first-three TRAIN examples remain in S5selected/DESIGN-REPORT.md.
