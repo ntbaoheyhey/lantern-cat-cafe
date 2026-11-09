@@ -1,3 +1,14 @@
+# Active continuation checkpoint — 2026-11-09T22:31:35.707869+00:00
+
+User resumed the paused run and explicitly authorized direct external image-to-3D for Mochi. The paused handoff below is historical.
+Current result: R1 PARTIAL, provider preview exists but no GLB; export quota failure retained. See R1-PARTIAL.md, STATE.md, r1/IMPORT-PLAN.md.
+No inference is running; do not duplicate TRELLIS submission. Fal is unconnected; existing plugin suggestion needs user connection. No additional image-use permission needed.
+M5 reporting merge, integration link-only push and R1 draft #427 housekeeping are already complete. Do not repeat them.
+Local unaccepted runtime candidates and scripts remain dirty/untracked and must be preserved. Only direct-conversion evidence/report/tooling is in this checkpoint.
+Do not roll out a roster or claim a rig before an exportable mesh is inspected. Next: verify connected fal tools, submit existing Mochi source once, inspect output, rig and test actual battle motion.
+
+---
+
 # Art Rebuild handoff — paused by user
 
 Saved UTC: 2026-11-09T13:47:45.209202+00:00

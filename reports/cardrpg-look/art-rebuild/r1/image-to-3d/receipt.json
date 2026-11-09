@@ -1,0 +1,54 @@
+{
+  "status": "FAILED",
+  "source": "assets/source/look-v3/concepts/mochi.png",
+  "sourceSha256": "678241f78c41b3ee88d71498cd4eb50847866021565df8a46c61c1efc6b9fdd8",
+  "provider": "https://huggingface.co/spaces/microsoft/TRELLIS.2",
+  "endpoint": "https://microsoft-trellis-2.hf.space",
+  "model": "microsoft/TRELLIS.2-4B",
+  "params": {
+    "seed": 20261109,
+    "resolution": "1024",
+    "ss_guidance_strength": 7.5,
+    "ss_guidance_rescale": 0.7,
+    "ss_sampling_steps": 12,
+    "ss_rescale_t": 5.0,
+    "shape_slat_guidance_strength": 7.5,
+    "shape_slat_guidance_rescale": 0.5,
+    "shape_slat_sampling_steps": 12,
+    "shape_slat_rescale_t": 3.0,
+    "tex_slat_guidance_strength": 1.0,
+    "tex_slat_guidance_rescale": 0.0,
+    "tex_slat_sampling_steps": 12,
+    "tex_slat_rescale_t": 3.0
+  },
+  "extraction": {
+    "decimation_target": 100000,
+    "texture_size": 2048
+  },
+  "authorization": "User: Cho phép image-to-3D bên ngoài",
+  "startedAt": "2026-11-09T22:24:32.047074+00:00",
+  "events": [
+    {
+      "status": "CONNECTING",
+      "at": "2026-11-09T22:24:32.047212+00:00"
+    },
+    {
+      "status": "UPLOADING_ORIGINAL_IMAGE",
+      "at": "2026-11-09T22:24:36.312900+00:00"
+    },
+    {
+      "status": "IMAGE_TO_3D_SUBMITTED",
+      "at": "2026-11-09T22:24:57.420295+00:00"
+    },
+    {
+      "status": "MESH_GENERATED_EXTRACTING",
+      "at": "2026-11-09T22:25:57.438676+00:00"
+    },
+    {
+      "status": "FAILED",
+      "at": "2026-11-09T22:26:12.444105+00:00"
+    }
+  ],
+  "error": "You have exceeded your ZeroGPU quota (120s requested vs. 134s left). Try again in 23:59:02. Authenticate with a Hugging Face token for more quota - https://huggingface.co/settings/tokens",
+  "errorType": "AppError"
+}

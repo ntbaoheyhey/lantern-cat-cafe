@@ -24,3 +24,18 @@
 - Prepared r1/image-to-3d-job.json using the existing Mochi master, SHA678241f7. No image regenerated, no asset uploaded.
 - Built-in imagegen outputs raster images; Blender is available locally but no automatic image-to-3D model is installed. Discovery found the fal plugin advertises 3D assets; it is not installed/connected and its exact image-to-3D route remains unverified.
 - External generation is explicitly prohibited by original PROMPT section4, so do not submit without a user override. No pipeline accepted. Prior rejected candidates/evidence remain preserved.
+
+## External image-to-3D authorized
+- User answered “Cho phép image-to-3D bên ngoài” to the prepared Mochi conversion request. This overrides the original section4 service restriction for this workflow. Do not ask permission again for the same scope.
+- Use our original generated image as the actual model input, retain provenance and verify mesh/texture/rig. Connection/model capability remains to be verified; no external submission yet.
+
+## Direct conversion started — official TRELLIS.2
+- Verified public official demo RUNNING; submitted original Mochi master to microsoft/TRELLIS.2-4B with seed20261109, resolution1024 and default12 sampling steps per stage. Original alpha is retained for provider preprocessing.
+- Extraction requested at100k faces/2048texture as a source master, not the final runtime budget; local cleanup/packing will follow quality inspection.
+- fal TripoP2 official docs confirm single-image textured/PBR mesh output, but plugin remains unconnected. Public TRELLIS.2 enables the authorized trial immediately without credentials.
+- First submission-script attempt failed locally before upload because gradio_client2.7.2 renamed hf_token to token. Fixed from inspected signature; attempt2 preserves attempt1 receipt. No repeated inference completed.
+
+## Direct image-to-3D export block — 2026-11-09 UTC
+- Attempt2 produced a provider preview but GLB extraction failed on ZeroGPU quota. No exported mesh, no rig, no runtime acceptance. Keep the original failure and preview bytes; do not resubmit inference to hide it or bypass quota.
+- fal remains unconnected; its suggestion is already visible. User needs to connect the service, not re-authorize the same image conversion. No duplicate plugin suggestion or external purchase.
+- Continue the direct-image route once an exportable mesh is available. Do not promote the rejected painted or primitive candidate in the meantime. Current checkpoint is PARTIAL; R1 is not complete.

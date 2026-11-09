@@ -1,9 +1,9 @@
 {
-  "status": "PREPARED_NOT_SUBMITTED",
+  "status": "PREVIEW_ONLY_EXPORT_BLOCKED",
   "input": "assets/source/look-v3/concepts/mochi.png",
   "sha256": "678241f78c41b3ee88d71498cd4eb50847866021565df8a46c61c1efc6b9fdd8",
   "intent": "Use the existing generated Mochi image itself as image-to-3D conditioning, producing a textured volumetric mesh. User rejects flat picture planes and loose primitive reinterpretation.",
-  "providerCandidate": "fal; discovered 3D capability, not installed/connected; exact image-to-3D model and pricing not yet verified",
+  "providerCandidate": "Official Microsoft TRELLIS.2 Hugging Face demo; public client, no API keys or account tokens",
   "outputContract": {
     "format": "GLB",
     "geometry": "closed volumetric cat body, face, paws, ears, tail, apron and door shield; inspect front/side/back",
@@ -16,5 +16,15 @@
     "continuous articulated action clip in the real battle scene",
     "same four-unit bake-off and honest rubric scores before roster rollout"
   ],
-  "submission": "No external upload or generation made. Original PROMPT section4 prohibits other services/paid APIs. Requires user override and a connected tool before submission."
+  "submission": "Original Mochi PNG generated a provider preview at 2026-11-09T22:25:57Z; extract_glb failed at 22:26:12Z on ZeroGPU quota. No GLB downloaded. No inference retry.",
+  "authorization": "User explicitly approved external image-to-3D in this session: Cho phép image-to-3D bên ngoài.",
+  "provider": "https://huggingface.co/spaces/microsoft/TRELLIS.2",
+  "model": "microsoft/TRELLIS.2-4B",
+  "localReceipt": "/Users/bao/art/look-v3/image-to3d/mochi/attempt2/receipt.json",
+  "falAlternative": {
+    "model": "tripo3d/p2/image-to-3d",
+    "docs": "https://fal.ai/models/tripo3d/p2/image-to-3d/api",
+    "status": "Not connected, confirmed by plugin search 2026-11-09T22:29Z; suggestion already shown at22:20Z. Await connection, not a new authorization. No fal submission."
+  },
+  "evidence": "r1/image-to-3d/manifest.json"
 }
