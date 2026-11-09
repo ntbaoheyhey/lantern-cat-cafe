@@ -56,5 +56,5 @@ S7 priority: same S5 queues resumed after isolated E2E PASS; receipt/tmp/cardrpg
 S8 preflight: selected default build/tmp/cardrpg-v5a-s8-selected-default-dist; main340f88b9 rechecked. Home now requires complete S5 score/audit; no run yet.
 S6 tools drafted;63syntaxchecksPASS, no samples. Missing A5 registration confirmed; exact PROMPT-A5 gates copied before acceptance.
 S5 addendum: design1multi32.089/support29.595/normal12.08; design2b32.940/30.045/17.967REJECTED. Design3full500:multi32.525/support29.842/normal13.238,D4ten/twelve,D3thirty/thirty-two,D5PASS; A5matrices running. FIXLOG active, acceptance UNUSED.
-S5 before4505cells complete; selected sixgates/OFF8250/fallback exact; fourthslot35/384,worst47ppMISS; teams663/sets64/tiers210 complete. Cats51.05–79.17%,tiers19/24,bands13/33miss; queue51634 retained.
+S5 before4505cells complete; selected source/hashchecksPASS; fourthslot35/384,worst47ppMISS; teams663/sets64/tiers210/elites880 complete. Cats51.05–79.17%,tiers19/24,bands13/33miss; bare/progression queue51634 retained.
 S5 diagnostics: sourceclosurePASS6772eb343; 23D3missreplays exact (resist/Daze). D4eighteen exactreplays: Mochi2legal40/40,Panko2legal74/74,chosen0; policyvaluation PARTIAL. Full500 queues continue.
