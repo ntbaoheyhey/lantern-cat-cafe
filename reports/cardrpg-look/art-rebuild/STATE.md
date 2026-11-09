@@ -1,7 +1,7 @@
 # Art rebuild state
-NOW R0 complete; publishing draft then R1 four-unit bake-off.
+NOW R1 paused for S6DONE13:36:45UTC: four original concept masters saved, no runtime edits; M3refresh+M5 then resume.
 PROMPT.txt is the verbatim 18883-byte user instruction; digest in PROMPT.sha256.
-B /Users/bao/taskbar-hero-cardrpg-b2, codex/cardrpg-art-r0-2026-11-09; base #421 3e95a0121 plus Full Run reporting descendants.
+B /Users/bao/taskbar-hero-cardrpg-b2, codex/cardrpg-art-r1-2026-11-09; R0draft#423, base #421 3e95a0121 plus Full Run reporting descendants.
 Preserved pre-existing waiting edit in wip/b-leftover-2026-11-09-art commit047601861; no discarded work.
 Integration /Users/bao/taskbar-hero-cardrpg-v5live, draft#420; use only new merge commits, A-owned takes A.
 ONE agent, native/headless only. No subagents, external model APIs, deployment, PR merge or default flag change.
@@ -13,7 +13,7 @@ BASELINE immutable demo docs/cardrpg-look/v5-live.html 30075127bytes, prior VFX6
 TOOLS node24.22.2, pnpm10.28.0, Blender4.5.3LTS at ~/tools/cardrpg-look/Blender.app; existing Playwright/sharp/PIL tools.
 DISK 93GiB available at R0 start; evidence<=120MB, source masters<=60MB otherwise ~/art/look-v3.
 FULL DUTY S6 latest read13:11:20paired scopes complete, delivery review pending; no S6DONE yet.
-WAITING background no-model wait-outbox.sh for new V5A-S6 DONE; check between milestones; interrupt art safely for M3refresh+M5<=4h.
+WAITING resolved: S6DONE1195b13fa/#424; runtime6772eb343 unchanged; verify delta and deliverM5.
 OPEN inherited B-M1-001 upload44.3ms, B-MX-003 allocation, B-M4-004 OFF+3B,147draws>130,Kettle1.997x; retained in Full FIXLOG.
 DONE R0 source lineups25units,10runtimeposters,10sretainednaturalclip; rubric5.9966. Type/lint/unit/buildPASS,1813webtests,E2E421/421,5seedparityexact.
 NEXT R1 two candidate pipelines forMochi/Soot/ButtonGuard/YarnGiant; original concepts and rig-compatible rebuild; default flags unchanged.
