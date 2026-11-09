@@ -22,3 +22,4 @@ Fallback 45-route SHA b85feeb659f013dfd1817d452d233d6c48f8f3e1402e4c5625bf760e49
 Baseline-v1 and all13 historical sims byte-exact; protected/B-owned scope and commit author checks PASS.
 No balance, UI readability or performance acceptance claim. Fresh20001–20500 remains UNUSED.
 S2 shapes/reactions are staged separately and not included in S1. Draft publication stacked on S0 #407.
+DRAFT408 https://github.com/ntbaoheyhey/taskbar-hero/pull/408 on407; runtime423e430f6/evidencee8b8254c8.
