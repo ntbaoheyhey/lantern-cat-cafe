@@ -1208,3 +1208,8 @@ DRAFT419 on418, B3a8ed4c08:48active skills incl12ultimates+12passives and26enemy
 Beautyselfscore6.233vs7.5,nonzero sampledallocation,bossratio andflatmaterials remainPARTIAL. Failedsamples preserved; report full/mx-evidence/REPORT.md.
 M3contactpool fixedshot peak146draws from152;51shots+1095frames0overlap/outside/unplaced;casts/coldpending beforeconditional150exception,130stillMISS.
 ContinuingM4 material relief,boss framing,weakcueidentity,guide/leanpack andnaturalclips. Latest A runtime6772eb343 unchanged;S6refresh pending.
+
+## 2026-11-09T07:31:30Z V5FULL-M4 HEADS-UP
+M3 fix2 contactpool:18crowdedcastwindows native16.8ms/CPU466.6ms;6coldframes native33.3–33.4/CPU4183.3–183.4ms;147peakdraws. B accepts the prompt-conditional150 ceiling with these measured windows;130primarytarget remainsMISS. No A acceptanceclaim.
+M4 attempt1 original13opponentdenominator:Yarn2.041/Pantry2.069;Kettle1.517stillMISS,soloKettlepresentationframing fixqueued. No boundsclipping;contrast.239–.358.
+18naturalhashes/38of45coverage unchanged;15of17livePshots,2fixtures explicitlylabelled in guide. Fourdeliveryclips andofflineleanpack inprogress. No rules/default/A-owned changes; latestpublishedruntime6772eb343 unchanged;S6refresh retained.
