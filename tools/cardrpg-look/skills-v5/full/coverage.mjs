@@ -24,7 +24,7 @@ try{const page=await browser.newPage({viewport:{width:1280,height:720},deviceSca
    }
    let previous=null,record=null;const closing=[];
    const tick=()=>{
-    window.__liveFrames++;for(let i=closing.length-1;i>=0;i--){const old=closing[i];if(++old.frames>=2){old.record.cleared=e.actionFrame?.plan!==old.plan;closing.splice(i,1)}}const plan=m.plan,v=s.view(),p=v.cardPresentation,at=m.animationAt;
+    window.__liveFrames++;for(let i=closing.length-1;i>=0;i--){const old=closing[i];if(++old.frames>=2){const hidden=getComputedStyle(s.renderer.domElement).visibility==='hidden'||s.renderer.domElement.getBoundingClientRect().width===0;old.record.cleared=e.disposed||!s.renderer.domElement.isConnected||hidden||e.actionFrame?.plan!==old.plan;old.record.clearReason=e.disposed?'disposed':!s.renderer.domElement.isConnected?'detached':hidden?'hidden':'next-render';closing.splice(i,1)}}const plan=m.plan,v=s.view(),p=v.cardPresentation,at=m.animationAt;
     if(plan!==previous&&record){closing.push({record,plan:previous,frames:0});record=null;}
     if(plan&&plan!==previous){previous=plan;record={round:m.battle.round,skill:plan.skillId,actionId:plan.events[0]?.actionId,actor:plan.actorId,duration:plan.duration,frames:0,active:{},received:p?{beats:p.beats,reactions:p.reactions,landings:p.landings}:null};window.__liveRows.push(record);}
     if(plan&&record&&p){record.frames++;

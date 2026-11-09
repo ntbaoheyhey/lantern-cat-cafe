@@ -174,3 +174,11 @@ Opt3 isolated600frame samples Mochi220728B/Soot106500B/Yarn115280B,92.8%/88.2%/8
 
 ### B-M3-002 attribution / attempt1
 Boot DOM reports null.textContent before first asset. Published A loader now requires model-dictionary + {entry,modules,css}; B builder emits manifest + {js,css}. B-owned build now references its own matching IIFE loader, copied byte-for-byte from validated B #415 lineage with contract comments. No A loader/rules edits. Extend B build smoke check to reject visible loader errors and require model initialization; rebuild live artifact and rerun failed shot/boot gates.
+
+## B-M3-004 2026-11-09T06:16Z M3 final-cue lifetime probe S2
+Repro coverage3/Oven: all6lastplans report uncleared; earlier331plans clear. Source showResult unmounts the scene and disposes effects, leaving the inaccessible old actionFrame reference intact. Hypotheses: probe confuses retained JS object with visible pixels (most likely), delayed disposal, actual residual scene. Extend remaining unstarted crew probes to record disposed/detached lifecycle; run one focused final-action replay on Oven1, preserving all6original natural samples. No product/rules changes.
+
+B-M3-004 source attribution correction: A keeps the scene mounted after result with .dp-hidden and suspended=true; it does not dispose immediately. Therefore disposal alone does not settle the probe. Remaining Night/Tea runs also record zero canvas width as hidden. Oven/Thread originals stay uncleared by their narrower probes; focused final-action receipt will inspect actual DOM visibility, suspension and parity.
+
+### B-M3-004 focused verification FIXED (probe only)
+end-state1 shows result screen, suspended=true, computed canvas visibility:hidden throughout its battle ancestors, zero transient labels, and exact Oven1digest b131409c...; retained actionFrame is not visible. Width alone is insufficient because visibility:hidden preserves layout. Remaining Night/Tea probes inspect computed visibility; original10 narrower false clear results retained and not relabelled as passing natural samples. No product fix needed.
