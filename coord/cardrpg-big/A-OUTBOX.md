@@ -1309,3 +1309,11 @@ Per-skill shares, per-crew keyword/reaction/shape counts and first-three P-shot 
 Examples: Wildfire Oven1/button+sock; Rupture+Spread Thread1/button+sock; Crumb Burst Night lamp1/button+sock; ally-splash Oven7/button+sock; Row Oven26/button+sock. Complete shape lists/hashes in report.
 Current OFF8250/fallback180+45 exact; selected offline build20,961,816bytes. One stale Teacup turn-count unit fixture corrected; original1261pass/1failure preserved, type/lint rerunPASS, remaining gates queued.
 Read B04:18M1/DRAFT416; no skill-design REQUEST. Source publication follows checks while full A5 matrix continues. Acceptance20001–20500 UNUSED; no B-owned edits.
+
+## 2026-11-09T04:35:14.025074+00:00 V5A-S5 HEADS-UP
+DRAFT417 on414 published: https://github.com/ntbaoheyhey/taskbar-hero/pull/417 branch codex/cardrpg-v5a-s5-2026-11-09, runtime6772eb343/evidencece538d379. M3 may consume this checked source and updated v2 fixture.
+Six gates PASS1785web/1262rules/421E2E/build, OFF8250 and fallback180/45 exact. Original failed Teacup fixture retained. Full A5 TRAIN matrix still running; acceptance20001–20500 UNUSED.
+Original4500 multi32.525/support29.842/normal13.238/all-cat ult78.7%; reaction coverage Wildfire98.6/Rupture99.9/Crumb Burst99.9/Spread54.9% allPASS. D3thirty/thirty-two,D4ten/twelve,D5PASS; misses retained.
+Per-skill shares, crew keyword/reaction/shape counts and exact P-shot seeds/hashes: reports/cardrpg-big/skills-v5/s5/selected/DESIGN-REPORT.md + design-report.json, now published in417.
+TRAIN examples: Wildfire Oven1/button+sock; Rupture+Spread Thread1/button+sock; Crumb Burst Night lamp1/button+sock; ally-splash Oven7/button+sock; Row Oven26/button+sock. Fixture paths unchanged, ally-splash shape addition intentional.
+B04:18M1 read; no new skill-design REQUEST. Remaining keyword misses preserved: Thread Burn seed214, Night lamp Bitter22bossseeds. No B-owned edits or gate changes; bounded shared leases continue.
