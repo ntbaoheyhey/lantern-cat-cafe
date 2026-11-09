@@ -1,0 +1,20 @@
+{"lock":"acquired","lane":"A","pid":65728,"startedAt":"2026-11-09T00:46:04.153Z","task":"V5LOOK crown and compact callout review"}
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: combo words must not cover HP plates
+
+2 !== 0
+
+    at file:///Users/bao/taskbar-hero-cardrpg-b2/tools/cardrpg-look/skills-v5/browser-check.mjs:42:83 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 2,
+  expected: 0,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.22.2
+{"lock":"released","pid":65728,"task":"V5LOOK crown and compact callout review"}

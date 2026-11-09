@@ -3,10 +3,21 @@ import hashlib,json,subprocess
 root=Path.cwd();out=root/'reports/cardrpg-look/skills-v5'
 read=lambda p:json.loads((out/p).read_text())
 a=read('after-browser.json');b=read('before-browser.json');perf=read('perf-delivery/casts.json');cold=read('perf-delivery/summary.json');oldcold=read('perf-before/summary.json');oldperf=read('perf-before/casts.json');faces=read('faces.json');startup=read('startup/audit.json');delivery=read('delivery.json');videos=read('videos/checks.json');gates=read('gates/checks.json');demo=root/'docs/cardrpg-look/v5-v0.html';data=demo.read_bytes();sha=hashlib.sha256(data).hexdigest()
-assert all(c['code']==0 for c in gates) and len(gates)==5
+recovery=read('gates/recovery.json')
+assert len(gates)==5 and all(c['code']==0 for c in gates if c['name']!='e2e')
+assert gates[-1]['name']=='e2e' and gates[-1]['code']==1 and recovery['code']==0
 assert a['sha256']==perf['sha256']==cold['sha256']==sha
 assert videos['rows'][1]['artifactSha256']==sha
 assert read('digests-before.json')==read('digests-after.json')
+build=read('build.json')
+assert build['sha256']==sha
+buildInputDrift=[]
+for path,expected in build['sourceHashes'].items():
+    actual=hashlib.sha256((root/path).read_bytes()).hexdigest()
+    if actual!=expected:
+        # The retained selector failure changed the QA tool, not a demo input.
+        assert path=='tools/cardrpg-look/skills-v5/delivery.mjs',path
+        buildInputDrift.append({'path':path,'before':expected,'after':actual,'reason':'QA-only stable select locator; no runtime/art asset change'})
 rows=perf['rows'];maxcast=max(r['max']for r in rows);oldcast=max(r['max']for r in oldperf['rows'])
 # The inherited cold summary reports all page frames from before navigation.
 maxcold=max(r['summary']['max']for r in cold['rows']) if 'summary' in cold['rows'][0] else max(r['max']for r in cold['rows'])
@@ -17,9 +28,9 @@ changed=subprocess.check_output(['git','diff','--name-only',base],text=True).spl
 allowed=lambda p:p.startswith(('apps/web/src/game/squad/turn3d/','assets/cardrpg-look/statuses/','tools/cardrpg-look/','docs/cardrpg-look/','reports/cardrpg-look/'))or p in ['apps/web/src/game/cardrpg/depth/Battle.tsx','assets/provenance/look.md','docs/design/cardrpg/LOOK-BIBLE.md']
 assert all(allowed(p)for p in changed),[p for p in changed if not allowed(p)]
 sourcepaths=sorted(p for p in set(changed) if p.startswith(('apps/web/','assets/','tools/')))
-audit={'base':base,'artifactSha256':sha,'artifactBytes':len(data),'sourceFiles':{p:hashlib.sha256((root/p).read_bytes()).hexdigest() for p in sourcepaths},'changedOutsideScope':[],'protectedChanges':[],'rulesTreeBefore':subprocess.check_output(['git','rev-parse',base+':packages/game-rules'],text=True).strip(),'rulesTrackedDiff':subprocess.check_output(['git','diff',base,'--','packages/game-rules'],text=True),'evidenceSource':'Native macOS headless Chromium/Metal; no model calls or desktop control.'}
+audit={'base':base,'artifactSha256':sha,'artifactBytes':len(data),'sourceFiles':{p:hashlib.sha256((root/p).read_bytes()).hexdigest() for p in sourcepaths},'buildInputDrift':buildInputDrift,'runtimeAndArtBuildInputsExact':True,'changedOutsideScope':[],'protectedChanges':[],'rulesTreeBefore':subprocess.check_output(['git','rev-parse',base+':packages/game-rules'],text=True).strip(),'rulesTrackedDiff':subprocess.check_output(['git','diff',base,'--','packages/game-rules'],text=True),'evidenceSource':'Native macOS headless Chromium/Metal; no model calls or desktop control.'}
 (out/'source-audit.json').write_text(json.dumps(audit,indent=2)+'\n')
-result={'base':base,'artifactSha256':sha,'artifactBytes':len(data),'demoDeltaBytes':len(data)-Path('docs/cardrpg-look/b2.html').stat().st_size,'seeds':[r['seed']for r in read('digests-after.json')],'battleAndLogParity':True,'nativeCastWindows':len(rows),'nativeMax':maxcast,'nativeBeforeMax':oldcast,'cpu4ColdMax':maxcold,'cpu4ColdBeforeMax':oldmax,'cpu4DeltaPercent':(maxcold/oldmax-1)*100,'peakDraws':peakdraw,'peakTriangles':peaktri,'faces':faces['samples'],'faceOffenders':len(faces['offenders']),'overlaps':{r['width']:r['overlap']for r in a['ui']},'contrastMin':min(r['contrastMin']for r in a['ui']),'comboLayouts':a['comboLayouts'],'startup':startup,'offFixedFramePixelsExact':delivery['offPixelExact'],'gates':gates,'sameVideoInitial':videos['sameInitial'],'evidenceBytes':sum(p.stat().st_size for p in out.rglob('*')if p.is_file())}
+result={'base':base,'artifactSha256':sha,'artifactBytes':len(data),'demoDeltaBytes':len(data)-Path('docs/cardrpg-look/b2.html').stat().st_size,'seeds':[r['seed']for r in read('digests-after.json')],'battleAndLogParity':True,'nativeCastWindows':len(rows),'nativeMax':maxcast,'nativeBeforeMax':oldcast,'cpu4ColdMax':maxcold,'cpu4ColdBeforeMax':oldmax,'cpu4DeltaPercent':(maxcold/oldmax-1)*100,'peakDraws':peakdraw,'peakTriangles':peaktri,'faces':faces['samples'],'faceOffenders':len(faces['offenders']),'overlaps':{r['width']:r['overlap']for r in a['ui']},'contrastMin':min(r['contrastMin']for r in a['ui']),'comboLayouts':a['comboLayouts'],'startup':startup,'offFixedFramePixelsExact':delivery['offPixelExact'],'gates':gates,'e2eRecovery':recovery,'sameVideoInitial':videos['sameInitial'],'evidenceBytes':sum(p.stat().st_size for p in out.rglob('*')if p.is_file())}
 (out/'RESULTS.json').write_text(json.dumps(result,indent=2)+'\n')
 lines=[
 'Đã thêm huy hiệu, số cộng dồn và vòng thời hạn cho đủ 16 trạng thái hiện có.',
@@ -42,13 +53,13 @@ f'| Observed peak draws / tris | {peakdraw} / {peaktri:,}; draw budget130. |',
 f'| Demo bytes | {len(data):,}; B2 delta{result["demoDeltaBytes"]:+,}, within+1,500,000. |',
 f'| Protected faces | {faces["samples"]} samples, {len(faces["offenders"])} threshold offenders; each current status on Mochi and Button Guard. |',
 f'| Badge overlaps / contrast | 0 at1440×900,1280×720,1024×600; minimum{result["contrastMin"]:.2f}:1. |',
-f'| OFF startup | {startup["scripts"]} scripts/{startup["startupBytes"]:,}bytes; per-chunk bytes/modules unchanged, zero Three/model startup modules. |',
+f'| OFF startup | {startup["scripts"]} scripts/{startup["startupBytes"]:,}bytes; per-chunk byte counts/modules unchanged; 8/11 content hashes exact, entry references normalize equal; zero Three/model startup modules. |',
 '', '[Raw numbers](RESULTS.json) · [source audit](source-audit.json) · [UI](after-browser.json) · [performance](perf-delivery/casts.json) · [cold](perf-delivery/summary.json).',
-'Five gates PASS: typecheck, lint, full unit (1782 web/1020 rules, existing skips/expected-fail retained), build,421E2E. [Receipts](gates/checks.json).',
+'Typecheck/lint/unit (1782 web/1020 rules)/build PASS. E2E:420/421 first run; the one idle-clock test passed an isolated retry on unchanged source. Cause unproven; [first failure](gates/e2e.log) and [recovery](gates/recovery.json) retained.',
 'Keyboard hover/focus tooltip, Escape, +N overflow, static reduced-motion matrices, three-size guide mouse controls and OFF fixed-frame renderer/HUD pixel parity PASS. [Delivery](delivery.json).',
 'Natural chapter-1 x1,1440×900, continuous20s H.264: [before](videos/before-20s.mp4) / [after](videos/after-20s.mp4); same initial battle, no cuts or injected actions. [Receipt](videos/checks.json).',
 'New artwork:16 original SVG paths; no textures/dependencies added. All look changes remain behind lookV2; rules/protected paths unchanged; action-clock delta0ms. [Provenance](../../../assets/provenance/look.md).',
-'', 'LIMITS: Human 4/5 status recognition is NOT VERIFIED. Existing warm/glaze marks are subtle; all16 simultaneous marks and legacy large row-hit numbers remain visually busy. OFF pixel check isolates a fixed battle surface from the standalone demos’ differing chrome; startup audit covers the ordinary app route.',
+'', 'LIMITS: Human 4/5 status recognition is NOT VERIFIED; the natural20s clips do not cover every status/reaction. Existing warm/glaze marks are subtle; all16 simultaneous marks and legacy large row-hit numbers remain visually busy. OFF pixel check isolates a fixed battle surface from the standalone demos’ differing chrome; startup audit covers the ordinary app route.',
 'Iteration1 native/cold results, earlier overlaps, crown-mask clipping and selector/capture failures are retained, not substituted for delivery results. No causal claim about historical macOS driver stalls; timing coverage is deliberately bounded.',
 'V3 NOT STARTED: no published “skillsV5 events v2 fixture” DONE at this handoff. Lane A REQUEST records the needed schema; stop at V0 per the task contract.',
 f'Evidence currently {result["evidenceBytes"]:,}bytes (<25MB); raw PNGs/frames in /tmp/cardrpg-v5look-*. DRAFT only; no merge, deployment, A5 worktree access or rule edits.' ]
