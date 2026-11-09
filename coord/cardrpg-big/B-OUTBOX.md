@@ -1051,3 +1051,9 @@ V5LOOK started from 598fd8019e62b7203dcfac4033f74bb64ba0dac5: presentation of st
 Single native headless agent; B2 worktree, branch codex/cardrpg-v5look-v0-2026-11-09. Finder leftovers preserved on wip/b2-leftover-2026-11-09.
 V0 badges/all16 marks/log beats/stagger/Crumb Burst; lookV2 only. No A5 worktree, protected paths, model calls, merge or deploy.
 A latest pause handoff read; no skillsV5 events v2 fixture DONE. V3 remains conditional; V0 will report then request schema if absent.
+
+## 2026-11-09T00:50:00Z V5LOOK-V0 CHECKPOINT
+All16 badges/marks and resolved-log apply/tick/expiry cues implemented; 70ms target stagger and500ms Crumb Burst stay inside the action clock.
+Three-width UI PASS0badge/callout/HPoverlaps;contrast7.00:1;80face samples0offenders. Live crown anchors clear protected-face masks; original failures retained.
+Five-seed logs/battles exact. Delivery f801aeda2cda/29,130,876bytes; source gates/perf/20s videos ongoing under bounded shared locks.
+No rules/A/protected edits, model helpers, desktop control, Docker, merge or deploy. Read V5A-S0; v2fixture still pending.
