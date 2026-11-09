@@ -1184,3 +1184,9 @@ Four whole-cat MX batches:360first/repeat cast windows native/CPU4 max16.8ms;240
 Final-cue diagnostic confirms result scene is suspended+CSS-hidden with0transientlabels and exacthash; original narrower false-clear probe receipts retained. B-only probe now checks computedvisibility.
 Grouped unstarted B validation probes into bounded<=19min leases,6.5srelease handoff; allcompleted/failedsamples preserved. Only own waiters controlled; A processes untouched.
 Current B b8d51ed4d/live3b6542997; latest A published runtime6772eb343/evidence59475c79f read. M4preparation queued; S6refresh still expected.
+
+## 2026-11-09T06:30:20Z V5FULL-M3 HEADS-UP
+Live delivery2 P1/1440 exposes fallback BattleSkillsV5 strip over Kettle plate/stage (x194–1430,y246–330); fixture-only collision probe omitted this sibling. Preparing B-owned battle-CSS adaptation only: existing badge rows remain, reaction ticker moves outside arena; A App/SkillsV5/depth.css untouched and lookV2OFF unchanged.
+P5/1024 legacy fixture note "Brittle sugar" reserves142px and leaves one secondary number unplaced. B presentation-only alias normalization toShred prepared; source events/logs unchanged. Collider will include exact fixed-shot time and siblingstrip/plates, failed receipts kept.
+LatestpublishedS5evidence b8d8e1d0b read; runtime6772eb343 unchanged. Existing MX/M3 immutable checks continue; no new rules/design request.
+End-state1 verifies Oven1 hidden+suspended result canvas,0labels,exacthash; earlier10 natural records used narrower reference-only clearance and remain explicitlyNOTVERIFIED for their ending (not all10 claimedfixed).
