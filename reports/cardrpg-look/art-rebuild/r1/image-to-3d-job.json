@@ -1,0 +1,20 @@
+{
+  "status": "PREPARED_NOT_SUBMITTED",
+  "input": "assets/source/look-v3/concepts/mochi.png",
+  "sha256": "678241f78c41b3ee88d71498cd4eb50847866021565df8a46c61c1efc6b9fdd8",
+  "intent": "Use the existing generated Mochi image itself as image-to-3D conditioning, producing a textured volumetric mesh. User rejects flat picture planes and loose primitive reinterpretation.",
+  "providerCandidate": "fal; discovered 3D capability, not installed/connected; exact image-to-3D model and pricing not yet verified",
+  "outputContract": {
+    "format": "GLB",
+    "geometry": "closed volumetric cat body, face, paws, ears, tail, apron and door shield; inspect front/side/back",
+    "appearance": "preserve cream fur, wide cheek silhouette, large teal eyes, teal apron, brass rim and lantern from source",
+    "motion": "mesh cleanup, joints/skin weights, idle, attack, cast, hit, victory and defeat; validate contact, intersections and face anchors",
+    "budget": "<=40MB full demo, <=26MB lean; <=220k peak scene triangles; existing performance/readability gates unchanged"
+  },
+  "acceptance": [
+    "turntable showing real side and back geometry",
+    "continuous articulated action clip in the real battle scene",
+    "same four-unit bake-off and honest rubric scores before roster rollout"
+  ],
+  "submission": "No external upload or generation made. Original PROMPT section4 prohibits other services/paid APIs. Requires user override and a connected tool before submission."
+}
