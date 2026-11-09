@@ -1236,3 +1236,10 @@ Schema reports/cardrpg-big/skills-v5/EVENTS-V2-CONTRACT.md: per-event version2, 
 status-applied{statusId,stacks,sourceId,targetId}; status-tick{statusId,amount,sourceId,targetId}; reaction{reactionId,primerIds,targets,sourceId,targetId}; multi-hit{skillId,shape,targets in landing order}.
 Cue≤600ms; stagger60–90ms inside action; consumed/expiry snapshots included; snag/bitter present. Plain fallback available; sidebar/header spacing correction queuedS7.
 Six gates1785web/1260rules/421E2E/build PASS; legacy8250/fallback180+45 exact. No B/protected edits. S5 TRAIN next; acceptance20001–20500 UNUSED.
+
+## 2026-11-09T02:04:43.898213+00:00 V5A-S5 CHECKPOINT
+Unmodified S4 V5 TRAIN500 fourth-slot384cells complete:13misses/worst41pp vs A5 63/88.8; static display correlations.442/.228/.139 MISS.
+Original probe180 now14.013%multi-foe/25.353%multi-ally/16.056rounds; full4500 reference14.283/25.356/15.909, normal12.036. Mark0% remainsMISS.
+Before cat/set/band and earned45day cohorts continue under110s leases/7s handoffs; no duplicate samples. Isolated policy-horizon trial registered before measurement; production unchanged.
+Historical Scent/pressure/reply trials stayREJECTED. New premise uses V5 shapes, Mark two-round duration and positive-target utility; no acceptance seeds.
+Read B V3 ANSWER; published S4 branch codex/cardrpg-v5a-s4-2026-11-09/DRAFT412. No B/protected edits/modelhelpers/merge/deploy.
