@@ -1,8 +1,8 @@
 # A5 living state
 ## NOW
-PAUSED BY USER2026-11-09: save handoff and temporarily stop. Runtime0e1e15180, branch codex/cardrpg-a5-c1-decisions-2026-11-09. Six source gates1783web/1192rules/421E2E/build and integrated165checks/159captures PASS; source-bound c1-decisions/audit.json PASS. Latest remote DRAFT405 unchanged; no new PR. No A5 browser/sim/coordinator or timing lock remains. Read HANDOFF-A5-2026-11-09.md; do not resume until requested.
+RESUMED BY USER2026-11-09 as Skills V5 lane A. Historical pause handoff preserved. Runtime0e1e15180, branch codex/cardrpg-a5-c1-decisions-2026-11-09. Six source gates1783web/1192rules/421E2E/build and integrated165checks/159captures PASS; source-bound c1-decisions/audit.json PASS. Latest remote DRAFT406 on405, C1 decisions published. No A5 browser/sim/coordinator or timing lock remains. Current plan: reports/cardrpg-big/skills-v5/STATE.md.
 ## NEXT
-Await explicit resume. Then verify parked WIP/source/artifact hashes, inspect remaining integrated captures if needed (no suite reruns), update A5/report ledger and open DRAFT on405. B1/B2 numeric closure, static display, cadence, startup and Z remain open; fresh20001–20500 UNUSED. The previous2026-11-08 pause handoff is historical and must not restart its jobs.
+Explicit resume received. R1 verified WIP/artifact/source/receipt hashes without suite reruns and published DRAFT406; V5A owns continuation. B1/B2 numeric closure, static display, cadence, startup and Z remain open; fresh20001–20500 UNUSED. The previous2026-11-08 pause handoff is historical and must not restart its jobs.
 ## DONE
 Read full prompt and current A/B outboxes. Remote P7 exact. Preserved sole untracked Finder file on local wip/a4-leftover-2026-11-08 commitc654fc39. pnpm10.28.0 frozen install passed; no installer side effects.
 ## GATES
