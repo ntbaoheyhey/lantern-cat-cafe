@@ -1,0 +1,22 @@
+{"id":"numeric-on","attempt":1,"started":"2026-11-09T12:54:13.464Z","ended":"2026-11-09T12:54:14.932Z","code":0,"log":"reports/cardrpg-big/skills-v5/s6/logs/numeric-on-1.log"}
+{"id":"numeric-off","attempt":1,"started":"2026-11-09T12:54:14.933Z","ended":"2026-11-09T12:54:16.193Z","code":0,"log":"reports/cardrpg-big/skills-v5/s6/logs/numeric-off-1.log"}
+{"id":"source-gates","attempt":1,"started":"2026-11-09T12:54:16.196Z","ended":"2026-11-09T12:58:31.565Z","code":1,"log":"reports/cardrpg-big/skills-v5/s6/logs/source-gates-1.log"}
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Keep original failures. Inspect before correcting or resuming.
+
+1 !== 0
+
+    at run (file:///Users/bao/taskbar-hero-cardrpg-a4/tools/cardrpg-big/skills-v5/delivery-prepare.mjs:22:9)
+    at async file:///Users/bao/taskbar-hero-cardrpg-a4/tools/cardrpg-big/skills-v5/delivery-prepare.mjs:26:1 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 1,
+  expected: 0,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.22.2

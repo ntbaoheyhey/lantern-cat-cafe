@@ -42,7 +42,7 @@ for(const mode of ['on','off']){
  modes[mode]={counts:gates.counts,receiptSha256:sha(await readFile(`${out}/${mode}/receipt-audit.json`))};
 }
 const reports=[root+'/V5A-REPORT.md','reports/cardrpg-big/a5/A5-REPORT.md','reports/cardrpg-big/CARDRPG-BIG-REPORT.md'];
-const documents=[...reports,root+'/PLAYTEST-KIT.md',root+'/FRESH-EYES.md',root+'/S6-SELF-SCORE.md',...['BARE-ITEM','ELITE','BOSS-CREW','EQUIPMENT','SET','TIER'].map(s=>`${out}/${s}-REVIEW.md`)];
+const documents=[...reports,root+'/PLAYTEST-KIT.md',root+'/FRESH-EYES.md',root+'/S6-SELF-SCORE.md',out+'/visual-review/REVIEW.md',...['BARE-ITEM','ELITE','BOSS-CREW','EQUIPMENT','SET','TIER','PROGRESSION'].map(s=>`${out}/${s}-REVIEW.md`)];
 const docs=[];let localLinks=0;
 for(const path of documents){
  const body=await readFile(path,'utf8'),lines=body.trimEnd().split('\n').length;

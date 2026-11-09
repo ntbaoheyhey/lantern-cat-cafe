@@ -1,6 +1,6 @@
 # Skills V5 lane A state
 Base: d22f47cb8 (A5 closing tip/DRAFT406); runtime baseline0e1e15180108b443ce2e615ea54272b907cc8bb0.
-Phase: S6 paired acceptance running; original runner33012 retained, then Z/report delivery.
+Phase: S6 acceptance and delivery reviewed PARTIAL; integrity audit PASS, draft publication closing.
 Branch: codex/cardrpg-v5a-s6-2026-11-09; baseS8 1d7c6f68e/DRAFT422.
 Selected runtime: 6772eb34330881dd06b82e8016b0ab61b16daefe; no production changes in S8.
 Order: completed R1/S0/S1/S2/S3/S4/S7/S5/S8 -> current S6; never restart a completed phase.
@@ -32,16 +32,19 @@ S8 registration:110slease targets,7shandoffs,Home03public-clickpolicy,naturalx1;
 S8 default candidate:/tmp/cardrpg-v5a-s8-selected-default-dist; originalmain340f88b9 reverified unchanged.
 S8 Home first30:deadtime+10.441%vsH0;466.403s losses;capnotice14.638min. Both cadence gatesMISS.
 S8 review: PRE-S6-REVISIT.md records every open group; earnedboss130.129s and fixedYarn280.037sMISS.
-Acceptance20001–20500 RUNNING pid33012/session30958; registration3061b085a; both modes;30001/40001 UNUSED.
-S6 probes both complete:multi32.660%,support29.793%,normal13.242r,ultimate77.667%; remaining matrices running.
+Acceptance20001–20500 COMPLETE,20/20 scopes; registration3061b085a; both modes;30001/40001 UNUSED.
+S6 paired20/20 complete:multi32.660%,support29.793%,normal13.242r,ultimate77.667%; numeric21PASS/21MISS.
 S6 D3:30/32,D4:10/12,D5PASS; Mochi2 .442%,Panko2 .353%; fourthslot38/384,worst48.4pp (fallback58/87.4).
-Then S6: waiter37211/session15857 closes/builds/Z/reports/guides after20scopes; run delivery-sheets.py,review147images,audit-delivery.mjs,publish.
+Next S6: delivery integrity audit, draft on422, A-OUTBOX DONE and ledger mirror; no new runtime/samples.
 B10:23read: S6probe refresh separateDRAFT420; no acceptance visual tuning/newdesignREQUEST.
 B request guardian underuse disclosureADOPTED; no unanswered designREQUEST. A130draw target unchanged.
 A owns no B renderer paths; no renderer integration implicit. Main docs/cardrpg3/index.html staysA4.
 Untouchable uncommitted:.DS_Store and a5/b1/display-context-40/{partial,results}.json; unchanged by A.
 One model only; no CUA/Docker/model helpers,main checkout edits,protected paths,new dependency,merge/deploy.
-Continuation2026-11-09: original33012/37211 retained; 14/20scopes complete; pairedbare V5 36/2304,worst47.8pp vs fallback22/60.4pp; pairedelitesall100%; economyrunning; cats9/12PASS,Soot50.70%MISS; tiers37/48vsfallback46/48.
-S6 delivery review: queued guide refresh covers inherited A5 entry points,3 Z screenshots and7day goals; browser check pending.
+S6 source: type/lint/1785web/1262rules/buildPASS; originalE2E420PASS/1clockFAIL,unchanged isolated1/1PASS.
+S6 Z126+guide21 captures reviewed;0horizontaloverflows;defaultLook contrast6.24PASS,oldlook1.62MISS.
 
-Delivery continuation:70registered source/tool hashes exact; paired bare-item/elite read-only reviews queued before report; original33012/37211 retained.
+S6 review:6plate overlaps at1280/1024;Fieldguide legacy copyMISS;6route-labelled shots arePrepare, mapNOTVERIFIED.
+S6 all70registered source/tool hashes exact; paired reviews complete; unchanged artifact4e310b07 (20,961,816bytes).
+S6 score6.16/10:variety7.14,balance5.00,pacing2.59,compatibility10;next priorities pacing/balance.
+S6 guide/PLAYTEST-KIT/FRESH-EYES refreshed; delivery review and every open miss linked in FIXLOG.md.

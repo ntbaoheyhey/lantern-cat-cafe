@@ -1,0 +1,1151 @@
+{
+  "skillsV5": true,
+  "sourceDigest": "1e7f8c1c6576f0a0bcab7bf36f0f00939bfcffc16f71d4ab784f70b476799959",
+  "sample": "acceptance",
+  "count": 500,
+  "offset": 20000,
+  "scopes": [
+    "equipped",
+    "teams",
+    "sets",
+    "tiers",
+    "pieces",
+    "elites"
+  ],
+  "cells": 4505,
+  "trials": 2252500,
+  "pieces": {
+    "cells": 384,
+    "misses": 38,
+    "worst": {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-charm-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":1}",
+      "kind": "pieces-equipped",
+      "templateId": "hearthloom-charm-legendary",
+      "cardId": "mochi",
+      "level": 6,
+      "chapter": 1,
+      "actions": 27354,
+      "minPowerRatio": 1,
+      "maxPowerRatio": 1,
+      "maxShare": 0.030301912223073626,
+      "maxEnhancedShare": 0.03953248700012284,
+      "shareSum": 14.202056100096378,
+      "complete": true,
+      "digest": "e134971c06b58f3ed7a841e6ff203e6375e91e94cc13d4f333d1945193cefc9f",
+      "meanShare": 0.028404112200192757,
+      "wins": 474,
+      "n": 500,
+      "rate": 0.948,
+      "wilson95": [
+        0.9248983617059371,
+        0.9642699800903735
+      ],
+      "beforeWins": 232,
+      "gainPp": 48.4
+    },
+    "maxShare": 0.04520182704805877,
+    "meanGain": 2.892187499999998,
+    "spearmanByChapter": [
+      0.45678169447104344,
+      0.34209242758839786,
+      0.19745975142182293
+    ],
+    "beforeSaturated": 0,
+    "afterSaturated": 13
+  },
+  "barePieces": {
+    "cells": 2304,
+    "misses": 36,
+    "worstGainPp": 47.8,
+    "maxShare": 0.04799778349034514
+  },
+  "cats": [
+    {
+      "id": "mochi",
+      "rate": 0.695830303030303,
+      "topPickCells": 62,
+      "best": {
+        "key": "{\"kind\":\"teams\",\"team\":[\"mochi\",\"cinnamon\",\"marigold\"],\"chapter\":3,\"level\":6}",
+        "kind": "teams",
+        "team": [
+          "mochi",
+          "cinnamon",
+          "marigold"
+        ],
+        "chapter": 3,
+        "level": 6,
+        "actions": 49550,
+        "minPowerRatio": 0.9956988889611188,
+        "maxPowerRatio": 1.003204852438437,
+        "maxShare": 0,
+        "maxEnhancedShare": 0,
+        "shareSum": 0,
+        "complete": true,
+        "digest": "ebcaa9ed76f28e665bd652635bd136ccc0ff5b67c0ffb14de2ab67e5349b01ed",
+        "meanShare": 0,
+        "wins": 500,
+        "n": 500,
+        "rate": 1,
+        "wilson95": [
+          0.9923753814690964,
+          0.9999999999999999
+        ],
+        "beforeWins": null,
+        "gainPp": null
+      }
+    },
+    {
+      "id": "soot",
+      "rate": 0.5069696969696971,
+      "topPickCells": 3,
+      "best": {
+        "key": "{\"kind\":\"teams\",\"team\":[\"soot\",\"panko\",\"cinnamon\"],\"chapter\":1,\"level\":6}",
+        "kind": "teams",
+        "team": [
+          "soot",
+          "panko",
+          "cinnamon"
+        ],
+        "chapter": 1,
+        "level": 6,
+        "actions": 17765,
+        "minPowerRatio": 0.9984952945898183,
+        "maxPowerRatio": 1,
+        "maxShare": 0,
+        "maxEnhancedShare": 0,
+        "shareSum": 0,
+        "complete": true,
+        "digest": "ebcaa9ed76f28e665bd652635bd136ccc0ff5b67c0ffb14de2ab67e5349b01ed",
+        "meanShare": 0,
+        "wins": 500,
+        "n": 500,
+        "rate": 1,
+        "wilson95": [
+          0.9923753814690964,
+          0.9999999999999999
+        ],
+        "beforeWins": null,
+        "gainPp": null
+      }
+    },
+    {
+      "id": "clover",
+      "rate": 0.6583515151515149,
+      "topPickCells": 37,
+      "best": {
+        "key": "{\"kind\":\"teams\",\"team\":[\"clover\",\"cinnamon\",\"brioche\"],\"chapter\":1,\"level\":6}",
+        "kind": "teams",
+        "team": [
+          "clover",
+          "cinnamon",
+          "brioche"
+        ],
+        "chapter": 1,
+        "level": 6,
+        "actions": 52599,
+        "minPowerRatio": 0.9963278230910988,
+        "maxPowerRatio": 1.0032527128053568,
+        "maxShare": 0,
+        "maxEnhancedShare": 0,
+        "shareSum": 0,
+        "complete": true,
+        "digest": "ebcaa9ed76f28e665bd652635bd136ccc0ff5b67c0ffb14de2ab67e5349b01ed",
+        "meanShare": 0,
+        "wins": 500,
+        "n": 500,
+        "rate": 1,
+        "wilson95": [
+          0.9923753814690964,
+          0.9999999999999999
+        ],
+        "beforeWins": null,
+        "gainPp": null
+      }
+    },
+    {
+      "id": "panko",
+      "rate": 0.6029333333333334,
+      "topPickCells": 31,
+      "best": {
+        "key": "{\"kind\":\"teams\",\"team\":[\"panko\",\"velvet\",\"marigold\"],\"chapter\":1,\"level\":6}",
+        "kind": "teams",
+        "team": [
+          "panko",
+          "velvet",
+          "marigold"
+        ],
+        "chapter": 1,
+        "level": 6,
+        "actions": 17923,
+        "minPowerRatio": 0.9996793257812987,
+        "maxPowerRatio": 1,
+        "maxShare": 0,
+        "maxEnhancedShare": 0,
+        "shareSum": 0,
+        "complete": true,
+        "digest": "ebcaa9ed76f28e665bd652635bd136ccc0ff5b67c0ffb14de2ab67e5349b01ed",
+        "meanShare": 0,
+        "wins": 500,
+        "n": 500,
+        "rate": 1,
+        "wilson95": [
+          0.9923753814690964,
+          0.9999999999999999
+        ],
+        "beforeWins": null,
+        "gainPp": null
+      }
+    },
+    {
+      "id": "mallow",
+      "rate": 0.6682181818181819,
+      "topPickCells": 26,
+      "best": {
+        "key": "{\"kind\":\"teams\",\"team\":[\"mallow\",\"velvet\",\"marigold\"],\"chapter\":1,\"level\":6}",
+        "kind": "teams",
+        "team": [
+          "mallow",
+          "velvet",
+          "marigold"
+        ],
+        "chapter": 1,
+        "level": 6,
+        "actions": 14485,
+        "minPowerRatio": 0.9972266130520665,
+        "maxPowerRatio": 1.0046532071187302,
+        "maxShare": 0,
+        "maxEnhancedShare": 0,
+        "shareSum": 0,
+        "complete": true,
+        "digest": "ebcaa9ed76f28e665bd652635bd136ccc0ff5b67c0ffb14de2ab67e5349b01ed",
+        "meanShare": 0,
+        "wins": 500,
+        "n": 500,
+        "rate": 1,
+        "wilson95": [
+          0.9923753814690964,
+          0.9999999999999999
+        ],
+        "beforeWins": null,
+        "gainPp": null
+      }
+    },
+    {
+      "id": "sorrel",
+      "rate": 0.6112606060606061,
+      "topPickCells": 10,
+      "best": {
+        "key": "{\"kind\":\"teams\",\"team\":[\"sorrel\",\"cinnamon\",\"brioche\"],\"chapter\":1,\"level\":6}",
+        "kind": "teams",
+        "team": [
+          "sorrel",
+          "cinnamon",
+          "brioche"
+        ],
+        "chapter": 1,
+        "level": 6,
+        "actions": 52700,
+        "minPowerRatio": 0.9956174242743111,
+        "maxPowerRatio": 1.0030446174103247,
+        "maxShare": 0,
+        "maxEnhancedShare": 0,
+        "shareSum": 0,
+        "complete": true,
+        "digest": "ebcaa9ed76f28e665bd652635bd136ccc0ff5b67c0ffb14de2ab67e5349b01ed",
+        "meanShare": 0,
+        "wins": 500,
+        "n": 500,
+        "rate": 1,
+        "wilson95": [
+          0.9923753814690964,
+          0.9999999999999999
+        ],
+        "beforeWins": null,
+        "gainPp": null
+      }
+    },
+    {
+      "id": "biscuit",
+      "rate": 0.610290909090909,
+      "topPickCells": 15,
+      "best": {
+        "key": "{\"kind\":\"teams\",\"team\":[\"biscuit\",\"velvet\",\"marigold\"],\"chapter\":1,\"level\":6}",
+        "kind": "teams",
+        "team": [
+          "biscuit",
+          "velvet",
+          "marigold"
+        ],
+        "chapter": 1,
+        "level": 6,
+        "actions": 15640,
+        "minPowerRatio": 1,
+        "maxPowerRatio": 1.0004295450783007,
+        "maxShare": 0,
+        "maxEnhancedShare": 0,
+        "shareSum": 0,
+        "complete": true,
+        "digest": "ebcaa9ed76f28e665bd652635bd136ccc0ff5b67c0ffb14de2ab67e5349b01ed",
+        "meanShare": 0,
+        "wins": 500,
+        "n": 500,
+        "rate": 1,
+        "wilson95": [
+          0.9923753814690964,
+          0.9999999999999999
+        ],
+        "beforeWins": null,
+        "gainPp": null
+      }
+    },
+    {
+      "id": "inkcap",
+      "rate": 0.6541454545454545,
+      "topPickCells": 20,
+      "best": {
+        "key": "{\"kind\":\"teams\",\"team\":[\"inkcap\",\"velvet\",\"marigold\"],\"chapter\":1,\"level\":6}",
+        "kind": "teams",
+        "team": [
+          "inkcap",
+          "velvet",
+          "marigold"
+        ],
+        "chapter": 1,
+        "level": 6,
+        "actions": 20899,
+        "minPowerRatio": 0.9969143875176766,
+        "maxPowerRatio": 1.0046707010310911,
+        "maxShare": 0,
+        "maxEnhancedShare": 0,
+        "shareSum": 0,
+        "complete": true,
+        "digest": "ebcaa9ed76f28e665bd652635bd136ccc0ff5b67c0ffb14de2ab67e5349b01ed",
+        "meanShare": 0,
+        "wins": 500,
+        "n": 500,
+        "rate": 1,
+        "wilson95": [
+          0.9923753814690964,
+          0.9999999999999999
+        ],
+        "beforeWins": null,
+        "gainPp": null
+      }
+    },
+    {
+      "id": "cinnamon",
+      "rate": 0.7871999999999999,
+      "topPickCells": 81,
+      "best": {
+        "key": "{\"kind\":\"teams\",\"team\":[\"cinnamon\",\"velvet\",\"marigold\"],\"chapter\":1,\"level\":6}",
+        "kind": "teams",
+        "team": [
+          "cinnamon",
+          "velvet",
+          "marigold"
+        ],
+        "chapter": 1,
+        "level": 6,
+        "actions": 20647,
+        "minPowerRatio": 0.9967054151542273,
+        "maxPowerRatio": 1.0042866973454696,
+        "maxShare": 0,
+        "maxEnhancedShare": 0,
+        "shareSum": 0,
+        "complete": true,
+        "digest": "ebcaa9ed76f28e665bd652635bd136ccc0ff5b67c0ffb14de2ab67e5349b01ed",
+        "meanShare": 0,
+        "wins": 500,
+        "n": 500,
+        "rate": 1,
+        "wilson95": [
+          0.9923753814690964,
+          0.9999999999999999
+        ],
+        "beforeWins": null,
+        "gainPp": null
+      }
+    },
+    {
+      "id": "brioche",
+      "rate": 0.57,
+      "topPickCells": 20,
+      "best": {
+        "key": "{\"kind\":\"teams\",\"team\":[\"brioche\",\"velvet\",\"marigold\"],\"chapter\":1,\"level\":6}",
+        "kind": "teams",
+        "team": [
+          "brioche",
+          "velvet",
+          "marigold"
+        ],
+        "chapter": 1,
+        "level": 6,
+        "actions": 20573,
+        "minPowerRatio": 1,
+        "maxPowerRatio": 1.0026245093764277,
+        "maxShare": 0,
+        "maxEnhancedShare": 0,
+        "shareSum": 0,
+        "complete": true,
+        "digest": "ebcaa9ed76f28e665bd652635bd136ccc0ff5b67c0ffb14de2ab67e5349b01ed",
+        "meanShare": 0,
+        "wins": 500,
+        "n": 500,
+        "rate": 1,
+        "wilson95": [
+          0.9923753814690964,
+          0.9999999999999999
+        ],
+        "beforeWins": null,
+        "gainPp": null
+      }
+    },
+    {
+      "id": "velvet",
+      "rate": 0.7611636363636366,
+      "topPickCells": 36,
+      "best": {
+        "key": "{\"kind\":\"teams\",\"team\":[\"brioche\",\"velvet\",\"marigold\"],\"chapter\":1,\"level\":6}",
+        "kind": "teams",
+        "team": [
+          "brioche",
+          "velvet",
+          "marigold"
+        ],
+        "chapter": 1,
+        "level": 6,
+        "actions": 20573,
+        "minPowerRatio": 1,
+        "maxPowerRatio": 1.0026245093764277,
+        "maxShare": 0,
+        "maxEnhancedShare": 0,
+        "shareSum": 0,
+        "complete": true,
+        "digest": "ebcaa9ed76f28e665bd652635bd136ccc0ff5b67c0ffb14de2ab67e5349b01ed",
+        "meanShare": 0,
+        "wins": 500,
+        "n": 500,
+        "rate": 1,
+        "wilson95": [
+          0.9923753814690964,
+          0.9999999999999999
+        ],
+        "beforeWins": null,
+        "gainPp": null
+      }
+    },
+    {
+      "id": "marigold",
+      "rate": 0.6950181818181821,
+      "topPickCells": 40,
+      "best": {
+        "key": "{\"kind\":\"teams\",\"team\":[\"brioche\",\"velvet\",\"marigold\"],\"chapter\":1,\"level\":6}",
+        "kind": "teams",
+        "team": [
+          "brioche",
+          "velvet",
+          "marigold"
+        ],
+        "chapter": 1,
+        "level": 6,
+        "actions": 20573,
+        "minPowerRatio": 1,
+        "maxPowerRatio": 1.0026245093764277,
+        "maxShare": 0,
+        "maxEnhancedShare": 0,
+        "shareSum": 0,
+        "complete": true,
+        "digest": "ebcaa9ed76f28e665bd652635bd136ccc0ff5b67c0ffb14de2ab67e5349b01ed",
+        "meanShare": 0,
+        "wins": 500,
+        "n": 500,
+        "rate": 1,
+        "wilson95": [
+          0.9923753814690964,
+          0.9999999999999999
+        ],
+        "beforeWins": null,
+        "gainPp": null
+      }
+    }
+  ],
+  "sets": [
+    {
+      "id": "hearthloom",
+      "rate": 0.74475,
+      "leadingSituations": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "id": "moonwick",
+      "rate": 0.7435,
+      "leadingSituations": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "id": "mossbrew",
+      "rate": 0.83025,
+      "leadingSituations": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "id": "rainlace",
+      "rate": 0.9435,
+      "leadingSituations": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "id": "crumbweave",
+      "rate": 0.84875,
+      "leadingSituations": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "id": "bellsteel",
+      "rate": 0.76825,
+      "leadingSituations": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "id": "emberfelt",
+      "rate": 0.73375,
+      "leadingSituations": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "id": "velvetrim",
+      "rate": 0.83175,
+      "leadingSituations": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    }
+  ],
+  "crew": {
+    "chosen": [
+      "mochi",
+      "clover",
+      "mallow"
+    ],
+    "gainPp": 31.2
+  },
+  "diversity": [
+    {
+      "kind": "teams",
+      "scene": 1,
+      "best": 1,
+      "nearBestCount": 142,
+      "approved": {
+        "oven": {
+          "rate": 1,
+          "gapPp": 0,
+          "within5": true
+        },
+        "thread": {
+          "rate": 0.85,
+          "gapPp": 15.000000000000002,
+          "within5": false
+        },
+        "night-lamp": {
+          "rate": 0.998,
+          "gapPp": 0.20000000000000018,
+          "within5": true
+        },
+        "afternoon-tea": {
+          "rate": 0.692,
+          "gapPp": 30.800000000000004,
+          "within5": false
+        }
+      }
+    },
+    {
+      "kind": "teams",
+      "scene": 2,
+      "best": 1,
+      "nearBestCount": 11,
+      "approved": {
+        "oven": {
+          "rate": 0.192,
+          "gapPp": 80.80000000000001,
+          "within5": false
+        },
+        "thread": {
+          "rate": 0.142,
+          "gapPp": 85.8,
+          "within5": false
+        },
+        "night-lamp": {
+          "rate": 0.286,
+          "gapPp": 71.39999999999999,
+          "within5": false
+        },
+        "afternoon-tea": {
+          "rate": 0.562,
+          "gapPp": 43.8,
+          "within5": false
+        }
+      }
+    },
+    {
+      "kind": "teams",
+      "scene": 3,
+      "best": 1,
+      "nearBestCount": 34,
+      "approved": {
+        "oven": {
+          "rate": 0.976,
+          "gapPp": 2.400000000000002,
+          "within5": true
+        },
+        "thread": {
+          "rate": 0.442,
+          "gapPp": 55.800000000000004,
+          "within5": false
+        },
+        "night-lamp": {
+          "rate": 0.358,
+          "gapPp": 64.2,
+          "within5": false
+        },
+        "afternoon-tea": {
+          "rate": 0.772,
+          "gapPp": 22.799999999999997,
+          "within5": false
+        }
+      }
+    },
+    {
+      "kind": "elites",
+      "scene": 0,
+      "best": 1,
+      "nearBestCount": 220,
+      "approved": {
+        "oven": {
+          "rate": 1,
+          "gapPp": 0,
+          "within5": true
+        },
+        "thread": {
+          "rate": 1,
+          "gapPp": 0,
+          "within5": true
+        },
+        "night-lamp": {
+          "rate": 1,
+          "gapPp": 0,
+          "within5": true
+        },
+        "afternoon-tea": {
+          "rate": 1,
+          "gapPp": 0,
+          "within5": true
+        }
+      }
+    },
+    {
+      "kind": "elites",
+      "scene": 1,
+      "best": 1,
+      "nearBestCount": 220,
+      "approved": {
+        "oven": {
+          "rate": 1,
+          "gapPp": 0,
+          "within5": true
+        },
+        "thread": {
+          "rate": 1,
+          "gapPp": 0,
+          "within5": true
+        },
+        "night-lamp": {
+          "rate": 1,
+          "gapPp": 0,
+          "within5": true
+        },
+        "afternoon-tea": {
+          "rate": 1,
+          "gapPp": 0,
+          "within5": true
+        }
+      }
+    },
+    {
+      "kind": "elites",
+      "scene": 2,
+      "best": 1,
+      "nearBestCount": 220,
+      "approved": {
+        "oven": {
+          "rate": 1,
+          "gapPp": 0,
+          "within5": true
+        },
+        "thread": {
+          "rate": 1,
+          "gapPp": 0,
+          "within5": true
+        },
+        "night-lamp": {
+          "rate": 1,
+          "gapPp": 0,
+          "within5": true
+        },
+        "afternoon-tea": {
+          "rate": 1,
+          "gapPp": 0,
+          "within5": true
+        }
+      }
+    },
+    {
+      "kind": "elites",
+      "scene": 3,
+      "best": 1,
+      "nearBestCount": 220,
+      "approved": {
+        "oven": {
+          "rate": 1,
+          "gapPp": 0,
+          "within5": true
+        },
+        "thread": {
+          "rate": 1,
+          "gapPp": 0,
+          "within5": true
+        },
+        "night-lamp": {
+          "rate": 1,
+          "gapPp": 0,
+          "within5": true
+        },
+        "afternoon-tea": {
+          "rate": 1,
+          "gapPp": 0,
+          "within5": true
+        }
+      }
+    }
+  ],
+  "tiers": {
+    "positive": 18,
+    "total": 24,
+    "reversals": 0,
+    "rows": [
+      {
+        "level": 1,
+        "chapter": 1,
+        "from": "none",
+        "to": "common",
+        "gainPp": 20.2
+      },
+      {
+        "level": 1,
+        "chapter": 1,
+        "from": "common",
+        "to": "rare",
+        "gainPp": 15.200000000000003
+      },
+      {
+        "level": 1,
+        "chapter": 1,
+        "from": "rare",
+        "to": "epic",
+        "gainPp": 29.000000000000004
+      },
+      {
+        "level": 1,
+        "chapter": 1,
+        "from": "epic",
+        "to": "legendary",
+        "gainPp": 25.2
+      },
+      {
+        "level": 1,
+        "chapter": 2,
+        "from": "none",
+        "to": "common",
+        "gainPp": 0.2
+      },
+      {
+        "level": 1,
+        "chapter": 2,
+        "from": "common",
+        "to": "rare",
+        "gainPp": 0
+      },
+      {
+        "level": 1,
+        "chapter": 2,
+        "from": "rare",
+        "to": "epic",
+        "gainPp": 1
+      },
+      {
+        "level": 1,
+        "chapter": 2,
+        "from": "epic",
+        "to": "legendary",
+        "gainPp": 0.5999999999999999
+      },
+      {
+        "level": 1,
+        "chapter": 3,
+        "from": "none",
+        "to": "common",
+        "gainPp": 0.4
+      },
+      {
+        "level": 1,
+        "chapter": 3,
+        "from": "common",
+        "to": "rare",
+        "gainPp": 0.8
+      },
+      {
+        "level": 1,
+        "chapter": 3,
+        "from": "rare",
+        "to": "epic",
+        "gainPp": 5
+      },
+      {
+        "level": 1,
+        "chapter": 3,
+        "from": "epic",
+        "to": "legendary",
+        "gainPp": 11.6
+      },
+      {
+        "level": 6,
+        "chapter": 1,
+        "from": "none",
+        "to": "common",
+        "gainPp": 32.800000000000004
+      },
+      {
+        "level": 6,
+        "chapter": 1,
+        "from": "common",
+        "to": "rare",
+        "gainPp": 8.799999999999997
+      },
+      {
+        "level": 6,
+        "chapter": 1,
+        "from": "rare",
+        "to": "epic",
+        "gainPp": 15.800000000000002
+      },
+      {
+        "level": 6,
+        "chapter": 1,
+        "from": "epic",
+        "to": "legendary",
+        "gainPp": 6.999999999999995
+      },
+      {
+        "level": 6,
+        "chapter": 2,
+        "from": "none",
+        "to": "common",
+        "gainPp": 10.200000000000001
+      },
+      {
+        "level": 6,
+        "chapter": 2,
+        "from": "common",
+        "to": "rare",
+        "gainPp": 5.6
+      },
+      {
+        "level": 6,
+        "chapter": 2,
+        "from": "rare",
+        "to": "epic",
+        "gainPp": 17.8
+      },
+      {
+        "level": 6,
+        "chapter": 2,
+        "from": "epic",
+        "to": "legendary",
+        "gainPp": 20.799999999999997
+      },
+      {
+        "level": 6,
+        "chapter": 3,
+        "from": "none",
+        "to": "common",
+        "gainPp": 16.2
+      },
+      {
+        "level": 6,
+        "chapter": 3,
+        "from": "common",
+        "to": "rare",
+        "gainPp": 7.000000000000001
+      },
+      {
+        "level": 6,
+        "chapter": 3,
+        "from": "rare",
+        "to": "epic",
+        "gainPp": 15.000000000000002
+      },
+      {
+        "level": 6,
+        "chapter": 3,
+        "from": "epic",
+        "to": "legendary",
+        "gainPp": 29.799999999999994
+      }
+    ],
+    "note": "Original44/48 combines TRAIN24 and acceptance24, reported separately before heldout."
+  },
+  "bands": [
+    {
+      "level": 1,
+      "chapter": 1,
+      "spreadPp": 86.4,
+      "saturated": false
+    },
+    {
+      "level": 1,
+      "chapter": 2,
+      "spreadPp": 0.2,
+      "saturated": false
+    },
+    {
+      "level": 1,
+      "chapter": 3,
+      "spreadPp": 1.7999999999999998,
+      "saturated": false
+    },
+    {
+      "level": 2,
+      "chapter": 1,
+      "spreadPp": 86.8,
+      "saturated": false
+    },
+    {
+      "level": 2,
+      "chapter": 2,
+      "spreadPp": 0.2,
+      "saturated": false
+    },
+    {
+      "level": 2,
+      "chapter": 3,
+      "spreadPp": 1.6,
+      "saturated": false
+    },
+    {
+      "level": 3,
+      "chapter": 1,
+      "spreadPp": 83.39999999999999,
+      "saturated": false
+    },
+    {
+      "level": 3,
+      "chapter": 2,
+      "spreadPp": 0.2,
+      "saturated": false
+    },
+    {
+      "level": 3,
+      "chapter": 3,
+      "spreadPp": 1.7999999999999998,
+      "saturated": false
+    },
+    {
+      "level": 4,
+      "chapter": 1,
+      "spreadPp": 82.8,
+      "saturated": false
+    },
+    {
+      "level": 4,
+      "chapter": 2,
+      "spreadPp": 0.2,
+      "saturated": false
+    },
+    {
+      "level": 4,
+      "chapter": 3,
+      "spreadPp": 1.4000000000000001,
+      "saturated": false
+    },
+    {
+      "level": 5,
+      "chapter": 1,
+      "spreadPp": 81.39999999999999,
+      "saturated": false
+    },
+    {
+      "level": 5,
+      "chapter": 2,
+      "spreadPp": 0.2,
+      "saturated": false
+    },
+    {
+      "level": 5,
+      "chapter": 3,
+      "spreadPp": 1,
+      "saturated": false
+    },
+    {
+      "level": 6,
+      "chapter": 1,
+      "spreadPp": 82.2,
+      "saturated": false
+    },
+    {
+      "level": 6,
+      "chapter": 2,
+      "spreadPp": 42.199999999999996,
+      "saturated": false
+    },
+    {
+      "level": 6,
+      "chapter": 3,
+      "spreadPp": 59.199999999999996,
+      "saturated": false
+    },
+    {
+      "level": 7,
+      "chapter": 1,
+      "spreadPp": 87,
+      "saturated": false
+    },
+    {
+      "level": 7,
+      "chapter": 2,
+      "spreadPp": 26.200000000000003,
+      "saturated": false
+    },
+    {
+      "level": 7,
+      "chapter": 3,
+      "spreadPp": 53.2,
+      "saturated": false
+    },
+    {
+      "level": 8,
+      "chapter": 1,
+      "spreadPp": 92.8,
+      "saturated": false
+    },
+    {
+      "level": 8,
+      "chapter": 2,
+      "spreadPp": 18,
+      "saturated": false
+    },
+    {
+      "level": 8,
+      "chapter": 3,
+      "spreadPp": 37.8,
+      "saturated": false
+    },
+    {
+      "level": 9,
+      "chapter": 1,
+      "spreadPp": 92.19999999999999,
+      "saturated": false
+    },
+    {
+      "level": 9,
+      "chapter": 2,
+      "spreadPp": 11.600000000000001,
+      "saturated": false
+    },
+    {
+      "level": 9,
+      "chapter": 3,
+      "spreadPp": 28.599999999999998,
+      "saturated": false
+    },
+    {
+      "level": 10,
+      "chapter": 1,
+      "spreadPp": 84.6,
+      "saturated": false
+    },
+    {
+      "level": 10,
+      "chapter": 2,
+      "spreadPp": 8.4,
+      "saturated": false
+    },
+    {
+      "level": 10,
+      "chapter": 3,
+      "spreadPp": 24.8,
+      "saturated": false
+    },
+    {
+      "level": 50,
+      "chapter": 1,
+      "spreadPp": 99.2,
+      "saturated": false
+    },
+    {
+      "level": 50,
+      "chapter": 2,
+      "spreadPp": 16.8,
+      "saturated": false
+    },
+    {
+      "level": 50,
+      "chapter": 3,
+      "spreadPp": 67.80000000000001,
+      "saturated": false
+    }
+  ],
+  "limitations": [
+    "Controlled fixtures; bots are proxies. Missing scopes remain NOT VERIFIED.",
+    "Cat/sets use unchanged historical boss/set fixtures. Eligible carrier diagnostics stay separate. No acceptance claims for TRAIN."
+  ]
+}

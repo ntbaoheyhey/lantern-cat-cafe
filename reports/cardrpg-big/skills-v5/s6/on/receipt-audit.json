@@ -1,0 +1,83 @@
+{
+  "status": "PASS",
+  "sourceDigest": "1e7f8c1c6576f0a0bcab7bf36f0f00939bfcffc16f71d4ab784f70b476799959",
+  "offset": 20000,
+  "skillsV5": true,
+  "rows": [
+    {
+      "scope": "metrics",
+      "count": 28500,
+      "source": "reports/cardrpg-big/skills-v5/s6/on/metrics/results.json",
+      "sha256": "f1cec9a9f0975cf3960e6bae3f144a2b5b43b2bfb8446dc451c21987f0357a1e",
+      "registrationSha256": "1df0a33ebc785820f51d5087a1849e82cd9fcf9d932a7775eb4191c1cb2ccd5c"
+    },
+    {
+      "scope": "equipped",
+      "count": 384,
+      "source": "reports/cardrpg-big/skills-v5/s6/on/equipped/results.json",
+      "sha256": "b04f893fe7df7d40af03d793dd5de2932d99fbd837382c7d6a245375e54b75da",
+      "registrationSha256": "dae4ce90a69b3279e774160edbdd53c3a54df2673b3b78dc737add7add6143e6"
+    },
+    {
+      "scope": "teams",
+      "count": 663,
+      "source": "reports/cardrpg-big/skills-v5/s6/on/teams/results.json",
+      "sha256": "e7cb3b4ccf9a246e7258b88ed729bf4fe6ecdab74e90273c06809c0ef1c7c188",
+      "registrationSha256": "e6f55b2b8929e3dd643c3e255201e3b6e164e92320ae145f2265e0a652475ebe"
+    },
+    {
+      "scope": "sets",
+      "count": 64,
+      "source": "reports/cardrpg-big/skills-v5/s6/on/sets/results.json",
+      "sha256": "52476a6241bce0e7bae9063ea2888f4d4567dfde40f660198149607981669b6f",
+      "registrationSha256": "bee3ae44bf9421f1a7f9b47d016affed4d63b1fd4730d271edbf6c43dcc95033"
+    },
+    {
+      "scope": "tiers",
+      "count": 210,
+      "source": "reports/cardrpg-big/skills-v5/s6/on/tiers/results.json",
+      "sha256": "e85700ae8d5cdfcaadb24b325137ad7c26ac86921e55d86efab04d7496b9677b",
+      "registrationSha256": "f2d9ccc728449628002fe189df2ea187038c7311f348f9d96845d373b7c0eb72"
+    },
+    {
+      "scope": "pieces",
+      "count": 2304,
+      "source": "reports/cardrpg-big/skills-v5/s6/on/pieces/results.json",
+      "sha256": "d0bff9b9f90713d35e08092879ae65ca2041ed9c3503180e0a640d1aa70189f2",
+      "registrationSha256": "7377e0f5b868eeea9710b155d2df797db380394f46f07dbb57d374240310d4aa"
+    },
+    {
+      "scope": "elites",
+      "count": 880,
+      "source": "reports/cardrpg-big/skills-v5/s6/on/elites/results.json",
+      "sha256": "75e5b66e580166aa884f7b8caf092ab3e22badcef90b0962396043d460ed21de",
+      "registrationSha256": "fed3d8f53cc2539649d3dd14f8ebc1e06b0ebb9ba64258ae71be14276ce8529b"
+    },
+    {
+      "scope": "economy",
+      "count": 90,
+      "source": "reports/cardrpg-big/skills-v5/s6/on/economy/results.json",
+      "sha256": "8f8b6d79caca1ba9b98cfc32d0c7244f675c458081ee18847b70d2e835cd718f",
+      "registrationSha256": "3bdc21da94351f5032003a66ee09ed751b6f9d717c6fd615b7e2982823e821f7"
+    },
+    {
+      "scope": "day7",
+      "count": 90,
+      "source": "reports/cardrpg-big/skills-v5/s6/on/day7/results.json",
+      "sha256": "5281a5de6edc1c0897814414f8cdd62341d17c9d9bbfc6da9841b6a030caa796",
+      "registrationSha256": "1f6f1a3e37925bca440e5128b6908d278b6b3ccecb08948341674e7d30b035b5"
+    },
+    {
+      "scope": "editions",
+      "count": 1500,
+      "source": "reports/cardrpg-big/skills-v5/s6/on/editions/results.json",
+      "sha256": "ca2b042c063255216825d8045d06bc078fe7bb7cc91337f6b6f38a1b1c35cc1c",
+      "registrationSha256": "d9f2bc01144818bb74d22068d47acfe438e329d616dffe86b8114d0cd2f16bcd"
+    }
+  ],
+  "numericCounts": {
+    "PASS": 21,
+    "MISS": 21
+  },
+  "meaning": "Receipt integrity only. Numeric MISS gates remain MISS; this audit makes no gameplay acceptance claim."
+}

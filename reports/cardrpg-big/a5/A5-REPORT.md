@@ -1,89 +1,47 @@
-Luồng mở đầu đã có đặt mèo, mở lời mời, chọn trang bị và đọc manh mối boss.
-Boss ngày 7 thắng sau một gợi ý cụ thể trong ca chơi đã ghi hình; 90 tài khoản mô phỏng đạt mục tiêu TRAIN.
-Hush đã được sửa để không biến lượt hồi máu thành đòn đánh hoặc ghi nhận hồi máu không có thật.
-Cân bằng trang bị, một số mèo, nhịp thưởng 30 phút và hiệu năng khởi động vẫn còn thiếu hoặc chưa đạt.
-Đây là báo cáo tiến độ A5, chưa phải nghiệm thu; mọi PR vẫn là draft, chưa merge hay deploy.
-# A5 checkpoint — acceptance remains open
-Runtime source: `0e1e15180108b443ce2e615ea54272b907cc8bb0` (RunMap pending actions, stable Home band and visible Result advice; combat unchanged). Six source checks and the exact OFF digest pass; [source-bound closure](c1-decisions/audit.json). Hush correction remains unchanged. This report separates historical evidence from current-source TRAIN diagnostics. Bots are proxies, not a human playtest. Fresh acceptance seeds20001–20500 remain UNUSED; old10001–10500 are contaminated.
-## Play experience and progression
-|Target|A4 / H0 before|Latest measured A5 evidence|Status and scope|
+Đã triển khai Skills V5: Burn, Bleed, Bitter, nhiều mục tiêu và bốn phản ứng; trận đấu vẫn tự động.
+Đã đo chung bản V5 và bản dự phòng trên khối hạt giống mới 20001–20500; mọi lần thử đều được giữ lại.
+Kết quả là PARTIAL: các ô MISS bên dưới vẫn chưa đạt, không được thay bằng kết quả kiểm thử mã nguồn.
+Bản demo offline riêng giữ nguyên bản A4; hình ảnh mới của lane B chưa được tích hợp.
+Mọi PR vẫn là draft, chưa merge hay deploy; nhận diện trạng thái và mức độ vui của người thật chưa được xác minh.
+
+# A5 gates continued through Skills V5
+
+A5 open gates continue inside Skills V5 (reports/cardrpg-big/skills-v5/). Latest combined acceptance uses20001–20500 with both gameplayV4ON/skillsV5ON and gameplayV4ON/skillsV5OFF. [Full V5 report](../skills-v5/V5A-REPORT.md), [registered method](../skills-v5/REGISTERED-METHOD.md), [TRAIN before/after](../skills-v5/S5-REPORT.md). Historical C1 runtime0e1e15180/sixgates/165UIchecks remain unchanged evidence.
+
+|A5 gate|V5 acceptance|V4 fallback|V5 status|
 |---|---|---|---|
-|First fight ≤25s|H0 original opening retained|12.775–12.999s; later anchored regression13.067–13.139s|PASS, three widths|
-|Place, equip and invite by3min; scouted map by5min|Developer controls and form preparation|Placement/invite/equip19.590–26.939s; map41.862–49.171s|PASS, automated clicks without reading time|
-|Meaningful choice offers,0–5/30/60min|17 /75 /98|15 /73 /112|PASS≥5at30min; Home03 fixed-policy proxy|
-|Rewards / celebrations,0–5/30/60min|8/18/18 rewards;4/6/6 celebrations|10/22/23 rewards;9/13/14 celebrations at5/30/60min; largest30min gap723.0s|MISS:≤300s target|
-|Combat dead time reduced ≥40%|128.642 /896.670 /1886.883s; max30min reward gap775.271s|120.6 /878.9 /1776.5s;30min decreases2.0%|MISS:≥40%reduction|
-|Player controls, copy and navigation|Six visible developer buttons; verbose forms|dev=1 gating, keyboard/click placement, filtered equipment actions|C1 functional PASS; wording is not retention evidence|
-|Named result, available retry, forecast|Generic result advice|Named contributions; one available change;20-seed worker, CPU1 max56.8ms on boss route|E1 functional PASS; advice can worsen a retry|
-|Day7 real-click x1 boss|H0 defeat52.368s|Victory64.921s; same route loses with the old plan|PASS, one paired earned fixture on anchored source|
-|Day7 casual / regular first-two wins|10/30 /14/30 after early E2|26/30 /28/30 after fresh45day anchored replay|TRAIN PASS; latest Hush preserves90saved-input wins|
-|Heavy first win ≤95%; advice available|17/30; three unavailable suggestions overall|28/30 first wins;24/24losses receive advice|TRAIN PASS; heavy advised0/2 vs no-advice2/2 retained|
-|Legendary by7≥35%, by14≥70%; style medians differ|Regular6.7% /10%; all medians day33|Anchored reward gates pass; casual/regular/heavy median6/5/5|TRAIN PASS; not a fresh cohort on Hush22|
-|Chosen reward regular≤21, casual≤35; heavy uncensored|All styles censored by45|Anchored medians casual10, regular9, heavy9; none censored|TRAIN PASS|
-|Earned heavy/casual ≤3×|Maximum2.726×|Anchored maximum2.253546× across currencies/paid draws|TRAIN PASS|
-|Conditional invitation CDF ≤1pp|0.640337pp|0.456811pp, three banners×10,000accounts|PASS on changed reward rules|
-Evidence: [H0](H0-FIRST-SESSION.md), [C1](C1-PLAYER-SCREENS.md), [rewards and first-week table](B3-PROGRESSION.md), [earned retry](B3-DAY7-RETRY.md), [E1](E1-CHOICE-PAYOFF.md), [E2](E2-GOALS-CELEBRATIONS.md), [E3](E3-FIRST-FIVE-MINUTES.md). Choice offers can differ only in HP/action count; they are not98 distinct strategic ideas.
+|Fourth-slot gain≤12pp|38/384 misses; worst48.40pp|58/384 misses; worst87.40pp|MISS|
+|Bare-item gain≤12pp|36/2304 misses; worst47.80pp|22/2304 misses; worst60.40pp|MISS|
+|Display share≤10%|4.80%|4.80%|PASS|
+|Static Spearman≥.6/chapter|0.46/0.34/0.20|0.59/0.52/0.32|MISS|
+|Cats55–75%, each top pick|50.70%–78.72%|61.83%–86.82%|MISS|
+|Reference fixture median55–60%|32.40%|66.60%|MISS|
+|Sets35–75%, leading niche|73.38%–94.35%|79.83%–92.55%|MISS|
+|Coherent gain10–25pp|31.20pp|-16.00pp|MISS|
+|≥4near-best crews/boss+elite|142/11/34/220/220/220/220|46/66/126/220/220/220/220|PASS|
+|Tier comparisons≥44/48,0reversals|37/48; reversals0|46/48; reversals0|MISS|
+|Bands≥15pp,no saturation|12/33 misses|0/33 misses|MISS|
+|Regular Legendary by7≥35%|100.00%|100.00%|PASS|
+|Regular Legendary by14≥70%|100.00%|100.00%|PASS|
+|Heavy Legendary median earlier|median day 5.00 heavy / 6.00 casual|median day 5.00 heavy / 6.00 casual|PASS|
+|Regular selector median≤21|median day 9.00|median day 9.00|PASS|
+|Casual selector median≤35|median day 10.50|median day 11.00|PASS|
+|Heavy selector uncensored|0/30 censored|0/30 censored|PASS|
+|Every heavy/casual ratio ≤3×|paidPulls 1.30×; fish 1.26×; threads 1.46×; stamps 1.31×; essence 3.31×|paidPulls 1.22×; fish 1.17×; threads 1.36×; stamps 1.23×; essence 2.25×|MISS|
+|Casual day-7 win in first two attempts ≥50%|15/30 (50.00%)|20/30 (66.67%)|PASS|
+|Regular day-7 win in first two attempts ≥70%|20/30 (66.67%)|24/30 (80.00%)|MISS|
+|Heavy day-7 first-attempt win ≤95%|16/30 (53.33%)|29/30 (96.67%)|PASS|
+|Every loss has an available improvement|52/54 losses|27/28 losses|MISS|
+|Local collectible gain≤3pp|0.00pp|0.00pp|PASS|
 
-## Balance — old acceptance versus current TRAIN, not paired acceptance
+[Cadence, startup and natural day7](../skills-v5/S8-REPORT.md): reward gap929.86s **MISS**; dead-time reduction-10.44% **MISS**; first fight14.34s **PASS**; real-click day-7 boss 130.13 s, target 45–90 s: **MISS**. Meaningful offers80 **PASS**.
 
-|Gate|A4 heldout500|Current TRAIN (50 unless stated)|Status|
-|---|---:|---:|---|
-|Single piece ≤12pp including fourth slot|Worst93.4pp;31outliers|63/384fourth-slot misses; worst88.8pp (500seeds)|MISS; bare2304cells not rerun|
-|Displayed share ≤10%|≤4.80%|≤4.51%|TRAIN PASS alone does not validate impact|
-|Display correlation ≥0.6 per chapter|Not registered in A4|0.644 /0.547 /0.432|MISS, chapters2/3|
-|Adjacent tiers ≥44/48; zero reversals|46/48;0reversals|23/24TRAIN steps;0reversals|PARTIAL; fresh half unmeasured|
-|Bands ≥15pp spread; no saturation|33/33|Two of33 miss|MISS|
-|Cats55–75%; each a top pick|31.38–64.66%|61.70–86.61%; each has top-pick cells|MISS|
-|Sets35–75%; each declared niche leads|67.03–79.60%|76.75–92.25%; original fixture has ineligible carriers|MISS; revised fixture still diagnostic|
-|Crew gain10–25pp|47.73pp|24.67pp|TRAIN PASS in original boss fixture only|
-|At least4near-best distinct crews per boss/elite|Not registered|Boss40/76/130; best100%; current elite coverage missing|PARTIAL; saturation limits interpretation|
-|Matched-power tolerance ±2%|0.99438–1.00569|Assertions preserved in every registered matched cell|TRAIN PASS|
-|Collectible paired gain ≤3pp|0pp,6000encounters|No changed collectible power; current full replay pending|NOT VERIFIED on latest source|
+Default startup bytes **PASS**, task median/max **MISS**; offline size20961816 **PASS**, coldCPU4183.30ms **MISS**. Invitation CDF0.456811pp **PASS inherited** with unchanged odds sources. No new10k-account odds sample claimed.
 
-[Root cause](B1-ROOT-CAUSE.md): ordinary main stats dominate28/31original cliffs; isolated set4 gain is zero in the large chapter3 cases. [Fixture diagnosis](B2-FIXTURE-CALIBRATION.md) retains both saturated original scenes and the common calibrated scenes. [Carrier audit](B2-SET-CARRIERS.md) proves Emberfelt's original trio cannot apply Scald. These findings do not relax numeric gates.
+C1/E1/E2 functional paths: retained dev=1 gating, keyboard placement, pending map action order, stable Home band, available Result advice, named contributions, crew plans and discoveries. [Z pack](../skills-v5/s6/z/summary.json):126captures, overflow0, minimumcontrast1.62 **MISS**. Legacy-look contrast and six fallback/plate overlaps remain **MISS**; default Look V2 contrast6.24:1 **PASS**. Field guide copy is **MISS**; all six route-labelled captures show Prepare, leaving settled map coverage **NOT VERIFIED**. [Review](../skills-v5/s6/visual-review/REVIEW.md). Human recognition/enjoyment **NOT VERIFIED**.
 
-[Hush correction](B2-HUSH-ATTRIBUTION.md):144controlled cases PASS;72OFF streams exact. All1,321TRAIN cells are paired with original current16. One Soot/Sorrel/Velvet team falls32→28wins out of50; all other outcome cells are exact. All90previously earned day7 wins/advice/costs remain unchanged, but seven post-route state hashes differ. This is a gameplay timing correction, not only copy.
+[First-week progression](B3-PROGRESSION.md), [historical opening](E3-FIRST-FIVE-MINUTES.md), [current elapsed opening](../skills-v5/S8-ENGAGEMENT.md), [fresh-eyes](../skills-v5/FRESH-EYES.md), [playtest kit](../skills-v5/PLAYTEST-KIT.md). Historical timings are not substituted for current timing misses.
 
-[Support trials](B2-SUPPORT-KITS.md): eligible gear plus Hush lifts bottom cats; adding rescue rest leaves Cinnamon79.76% and raises crew gain26→27.5pp. Neither the cooldown nor fixture revision is adopted. [Pressure spread](B1-PRESSURE-FOLLOWUP.md) reduces fourth-slot cliffs in500TRAIN seeds but fails other gates and adds predictability cost; rejected. All attempts and negative pairs remain retained. [Timing47](b1/threat-beats-47/RESULTS.md) and [delayed impact49](b1/impact-delay-49/RESULTS.md) also fail their fixed screens; neither is adopted.
+Legacy OFF 8250 digest `47477251b3d20ab602bee5c55a56cdd661e111b1386e298e0c9bc67737fecfa3`; fallback A5 battles/routes exact; baseline-v1 and 13 historical sims exact; old-save migration tests PASS. Full source checks and retained failures: [closure](../skills-v5/s6/audit.json).
 
-## Size, compatibility and delivery
-
-P1 lossless artifact20,816,833bytes; later B3 reviewed artifact20,922,529bytes, versus A4's26,215,694. The ≤24MB target passes for those measured artifacts. Default requested JS delta+149,416bytes versus registered main340f88b9 meets+150,000; current-main comparison still needs Z.
-
-P1 default CPU median/max ms:1280CPU1 main295.7/368.1 versus candidate298.0/532.6 MISS;1280CPU4 1047.3/1114.4 versus1006.3/1046.8 PASS;1440CPU1 285.4/293.4 versus303.4/329.2 MISS. Three observations each, none discarded. Offline CPU4 full-opening max266.6ms exceeds120ms: MISS. [Individual observations](P1-SIZE-STARTUP.md).
-
-Latest C1 decision source typecheck/lint/web1783/rules1192/E2E421/build PASS; original logs and two expected-failure/eleven skipped rule cases are retained. Latest OFF165cells/8250routes exact digest47477251b3d20ab602bee5c55a56cdd661e111b1386e298e0c9bc67737fecfa3. Baseline-v1 SHA9a5f6ebbb04af56c19f11cf43cf2763b35df2bde3b7a8dcd943060e878d793d3 and13historical sims unchanged. THC7/THC12 migrations and THC13 journal are covered by source tests.
-
-Reviewed preview: [current A5 game](c1-decisions/artifact-on/index.html), source0e1e15180, SHA9e25f238ea96ea4df2f59f2a2a77df6ccf29b7eb5733ae8cbb349a14b6c1bb98,20,929,841bytes. [Historical B3 preview](b3/closure/artifact/index.html) predates the Hush fixes. [Opening walkthrough](../../../docs/cardrpg3/a5-first-5-minutes.html) uses E3 screenshots/timeline. Public [game](../../../docs/cardrpg3/index.html) and [guide](../../../docs/cardrpg3/gameplay-v4.html) remain A4, SHA067d2062f6836a6d0bb9f6753ece1b2f3ca923688f241866a7f42806c8f7b6a1 /9dca8fe648d6e101de89ffa02099249327615648989b1207f7e7183c6c0d0482. Skills V5 uses a separate demo; the main index stays A4.
-
-Draft stack: [376](https://github.com/ntbaoheyhey/taskbar-hero/pull/376) → [377](https://github.com/ntbaoheyhey/taskbar-hero/pull/377) → [379](https://github.com/ntbaoheyhey/taskbar-hero/pull/379) → [381](https://github.com/ntbaoheyhey/taskbar-hero/pull/381) → [382](https://github.com/ntbaoheyhey/taskbar-hero/pull/382) → [383](https://github.com/ntbaoheyhey/taskbar-hero/pull/383) → [384](https://github.com/ntbaoheyhey/taskbar-hero/pull/384) → [385](https://github.com/ntbaoheyhey/taskbar-hero/pull/385) → [386](https://github.com/ntbaoheyhey/taskbar-hero/pull/386) → [388](https://github.com/ntbaoheyhey/taskbar-hero/pull/388) → [394](https://github.com/ntbaoheyhey/taskbar-hero/pull/394) → [396](https://github.com/ntbaoheyhey/taskbar-hero/pull/396) → [397](https://github.com/ntbaoheyhey/taskbar-hero/pull/397) → [398](https://github.com/ntbaoheyhey/taskbar-hero/pull/398) → [399](https://github.com/ntbaoheyhey/taskbar-hero/pull/399) → [400](https://github.com/ntbaoheyhey/taskbar-hero/pull/400) → [401](https://github.com/ntbaoheyhey/taskbar-hero/pull/401) → [402](https://github.com/ntbaoheyhey/taskbar-hero/pull/402) → [403](https://github.com/ntbaoheyhey/taskbar-hero/pull/403) → [404](https://github.com/ntbaoheyhey/taskbar-hero/pull/404) → [405](https://github.com/ntbaoheyhey/taskbar-hero/pull/405). Hush source closure and remote draft are verified.
-
-B requests remain: automatic-action/crew/formation cues; phase≤400ms and finish≤800ms; exact v1 earned invitation and v2 discovery rendering. A forwards receipts and preserves dev gating; no B checkpoint is adopted. B2 V0–V6 is published through draft395; its separate renderer/performance receipts are not A5 integrated evidence. No B source adopted.
-
-Companion-job copy and eight mode-correct set tooltips pass216paired replays and separateON/OFF three-width checks; [report](C1-COMPANION-JOBS.md). Capabilities are not best-team rankings.
-
-Remaining work: B1/B2 numeric closure and display calibration; fresh registered acceptance and earned cohorts on selected combat; 30min cadence/dead-time improvement and60min engagement; last-artifact screenshot pack; startup; guide refresh and fresh-eyes self-review. [Human playtest kit](PLAYTEST-KIT.md) is ready; no human answers or retention claim. Promotion to live and any future on-chain step remain user decisions after review; no such approval is requested at this checkpoint.
-
-[Reserve advice](E1-RESERVE-ADVICE.md): under-level reserves excluded, invalid swaps rejected atomically; earned Mallow1→5 costs250fish/8threads and applies at band5 across three widths/bothlooks. Corrected same-band90save arms are exact (0improved/0worsened); original +6gain is withdrawn. Original24losses retain available advice; both heavy advised retries still lose. Latest artifact20,923,417bytes, SHA4b15da6dbe4701c1383bf296decd30800f582c61e318447fd8f74b952493a665; no startup remeasurement.
-
-[Queued-reply trials33–35](B1-QUEUED-REPLIES.md) are rejected: full-value33/34 saturate364before/384after builds; emergency35 retains96piece misses and makes heavy30/30 first wins. Original30minute engagement01 is complete: [audited proxies](E2-ELAPSED-ENGAGEMENT.md),51retainedcaptures; cadence/dead-timeMISS. [Home follow-up](E2-HOME-NAVIGATION.md) passes30targetedcaptures but is not part of that elapsed measurement.
-
-[Settings controls](C1-SETTINGS-CONTROLS.md): four grants hidden for ordinary V4; explicit review and OFF retain them. Save roundtrips/keyboard/21targetedcaptures pass; runtime dc60280cf, preview SHA f27ff7dc954d9f8316e20a316ef62c9db96db0be54c13a58db1145d19b49286a,20,923,753bytes. Harness failures and existing reviewer discovery-card overlap remain disclosed. No new startup/cadence claim.
-
-[Companion growth](C1-COMPANION-GROWTH.md): actual cost/stats/unlocked skills before Level up/Add a star; exact public-command preview, no rule change. SeparateON/OFF60browserchecks/36captures across3widths/bothlooks PASS; contrast6.858/nooverflow. Preview20,924,425bytes/SHA6c09ce3c5cc1725f54eb91bb4f6b8b4429cb219bd3cee6825593f2bb84b9d4e7. Original test/harness failures retained; no cadence or balance claim.
-
-[Reply-pressure39](b1/reply-pressure-39/RESULTS.md): all three arms rejected under the predeclared screen; worst piece gains32/50/44pp. The middle pressure restores average difficulty but retains99piece misses. No production adoption, extra acceptance samples or wider rerun. [Pressure strata42](b1/pressure-strata-42/RESULTS.md) reconstructs the old spread candidates without new battles: conditional gains still vary within the five registered pressure groups; smaller bins and multiple comparisons limit interpretation.
-
-[Equipment comparison](E1-EQUIPMENT-FORECAST.md): actual whole-crew equip/transfer against a selected boss and band;36browserchecks/24captures, worker stale-delivery/CSP fallback PASS. ON20,927,337bytes/SHA0a2c5f1d; CPU1max79.9ms. Contextual TRAIN correlations0.738/0.754/0.729 overlap seeds and do not close static-display or fresh acceptance gates. Post-hoc [separate combat seeds48](b1/display-split-48/RESULTS.md) fall to0.439/0.620/0.688; chapter1 misses0.6. No additional battles.
-
-[Original Home02 journey](E2-HOME-ENGAGEMENT.md) completed60.78active minutes/58battles/60captures on immutable growth994d84056. Receipt auditPASS; cadence/dead-timeMISS remains. Home01 stays retained separately. No new human retention claim or acceptance sample.
-
-[Home star navigation](E2-HOME-STARS.md) fixes the reproduced chapter/band mismatch with36checks/42captures; no new cadence benefit claimed. Original Home02 scores remain separate from this fix.
-
-[Prepare layout](C1-PREPARE-LAYOUT.md): formation/Fight visible at3widths,18ON/OFF scenarios/18captures plus2before captures; native stale-worker/CSP checksPASS. Exact prototype/adoptedON20,927,769bytes/SHAe9c74c38. Original cadenceMISS unchanged.
-
-[Home star crews](E2-HOME-CREW-PLANS.md): available one-seat swaps and capped-reward copy;8isolated units,24ON/OFF scenarios/48captures and six gatesPASS. Exact adopted/prototype ON20,929,441bytes/SHA2c318627, scopedcontrast6.726. Six targeted x1 continuations earn the event job star; original Home02 cadenceMISS remains.
-
-[Registered forecast precision50](b1/display-precision-50/RESULTS.md) keeps all384cases and exact1–50prefixes; unchanged20seed forecasts correlate0.850/0.691/0.733 against separateTRAIN51–500. Eachchapter meets0.6, but case averages do not validate per-item percentages or static utility scores. Full500piece results retain63misses/worst88.8pp; no runtime or fresh-acceptance change. [Duration52](b1/reply-duration-52/RESULTS.md): corrected reply policy with bossHP1.25/1.5/2 remains rejected: worst piece gains42/78/44pp; after-arm median17/20/27rounds. All384TRAIN50pairs perarm and original negative pairs retained. No adoption or fresh acceptance. [Informed Home03](E2-INFORMED-ENGAGEMENT.md) completed60.1963active minutes,60captures; independent receipt/source closurePASS. Cadence/deadtimeMISS retained. Fixedpolicy upgrades teammates but does not follow Result advice; no causal UI benefit or human-retention claim. Original Home01/02 remain preserved.
-
-A5 open gates continue inside Skills V5 (reports/cardrpg-big/skills-v5/). [C1 decisions](C1-DECISION-VISIBILITY.md): 165checks/159captures, contrast6.192688:1; original six gates and closure reused without reruns. OFF artifact20,929,841bytes/SHA9158b51e0d2e182ed4cd2de8cf0e62434fd3d7a689e8808421b7d4910cc7c584. C1 [DRAFT406](https://github.com/ntbaoheyhey/taskbar-hero/pull/406) published on #405; no new acceptance samples.
+[Separate offline V5 demo](../../../docs/cardrpg3/skills-v5.html):20961816bytes/SHA4e310b07f9dfb005abdff830d498e8d0f6615553e1710a2ce12eeedad3a3638e. Main A4 index unchanged. [Draft stack](../skills-v5/STACK.md). B live presentation preview remains separate; no merge/deploy/on-chain action. Any later retune needs registered30001–30500.

@@ -557,3 +557,230 @@ Addendum received during S5. TRAIN remains 1–500. Existing baseline slices con
 - Ranked hypotheses, not isolated causes: 1. Registered level6 budget exceeds these fixed elite challenges; 2. displayed-power normalization does not equalize encounter pressure; 3. near-perfect survival hides kit tradeoffs.
 - Smallest next fix: inspect a fixed TRAIN elite pressure profile before proposing any fixture revision; report original and revised results if a future change is justified. No fixture, denominator or current gate is changed.
 - Verification/status:1,760 cells have exact500-outcome digests; all source-bound arithmetic passes without resampling. Production remains unchanged and S8 OFF/fallback receipts apply; S6 source closure stays queued. PARTIAL evidence limitation, not a fabricated numeric failure.
+
+## S6-EARNED-ESSENCE-RATIO — PARTIAL
+- Reproduce: original `s6/on/economy/results.json`,90 accounts×45 synthetic days with registered20001–20030 roots and deterministic derived streams; no injected currency, new route sample or elapsed-time claim.
+- Measure: heavy/casual essence3.313496× exceeds unchanged3× cap (TRAIN3.079646×). Other V5 ratios: paid pulls1.299304×, fish1.258378×, threads1.461371×, stamps1.306733×. Fallback cohort and day7 checks continue in the original runner.
+- Ranked hypotheses, not isolated causes: 1. Route victory and progression differences alter earned essence; 2. daily route budgets interact with reward sources; 3. milestone timing changes access to later rewards.
+- Smallest next fix: compare paired style/source totals, then isolate one earned-reward path on TRAIN before changing a V5-only term. No cap change or held-out retune is applied.
+- Verification/status: the complete original90-account receipt is retained; no production change since6772eb343. S8 OFF/fallback receipts apply, and complete S6 source/hash closure remains queued. PARTIAL/MISS; a changed candidate needs newly registered30001–30500.
+
+### S6-EARNED-ESSENCE-RATIO paired completion
+- Both modes completed90 accounts×45 days. Fallback essence ratio2.254006×PASS becomes V5 3.313496×MISS at the unchanged3× cap; this is a paired-configuration regression. Other V5/fallback ratios: paid pulls1.299304/1.222263×; fish1.258378/1.171584×; threads1.461371/1.356721×; stamps1.306733/1.225972×. All remain below3×.
+- The complete `s6/{on,off}/economy/results.json` receipts preserve individual accounts, source totals and milestone censoring. This comparison does not isolate the responsible combat or reward path; no cap adjustment or reroll is applied. Earned day7 and full closure continue in the original runner.
+
+## S6-EARNED-DAY7-REGULAR — PARTIAL
+- Reproduce: completed `s6/{on,off}/day7/results.json`; `node tools/cardrpg-big/skills-v5/paired-progression-review.mjs` verifies all180 original account outcomes without new routes or forecasts.
+- Measure: V5 regular20/30 wins within two attempts (66.667%) misses70%, versus TRAIN21/30 and paired fallback24/30. V5 casual15/30 meets50%; heavy16/30 first wins meets≤95%. Advice is available for52/54 V5 losses versus27/28 fallback, so the every-loss gate remains MISS.
+- Ranked hypotheses, not isolated causes: 1. V5 earns later chapters before day7; 2. boss helpers and starter-kit pressure change route success; 3. available preparation changes fail the registered forecast for some earned states. Exact chapter mix and no-advice roots20002/20021 are in `s6/PROGRESSION-REVIEW.md`.
+- Smallest next fix: isolate advancement versus same-state boss pressure on TRAIN before changing a V5-only term; inspect the original saved no-advice cases. No granted resources, replacement accounts, additional acceptance retries or runtime retune.
+- Verification/status: source-bound report assertions PASS and all70 registered source/tool hashes remain exact. Full S6 source/hash closure is running in the original delivery queue; previous S8 compatibility applies to unchanged production. PARTIAL/MISS; a later changed candidate needs registered30001–30500.
+
+## S6-E2E-LOCAL-CLOCK — PARTIAL pending isolated recovery
+- Reproduce: original `s6/gates/e2e-attempt-1.log`, full suite with four workers:420 PASS/1 FAIL. `squad.spec.ts:29` expected3.x seconds within10s but HUD stayed0.1s. Original error context retained beside the log; no trace archive was emitted.
+- Ranked hypotheses: 1. Legacy animation clock stalled under concurrent browser load; 2. page visibility scheduling paused the clock; 3. legacy squad lifecycle defect. The receipt alone does not distinguish these.
+- Smallest diagnostic: unchanged test, unchanged10s assertion, one worker via existing `V5_E2E_RECOVERY` path. No source, timeout, skip, seed, or acceptance change. Retain the full-suite failure even if isolation passes.
+- Verification pending: isolated test, remaining build, source-bound OFF/fallback hash checks, and S6 closure. Maximum3 attempts retained.
+
+## S6-GATE A5.fourth-slot — PARTIAL
+- Reproduce: fixed acceptance20001–20500, `node tools/cardrpg-big/skills-v5/numeric-gates.mjs reports/cardrpg-big/skills-v5/s6/on`; registered cases and saved outcomes: `reports/cardrpg-big/skills-v5/s6/on/equipped/results.json`. Gate unchanged: Every paired gain ≤12pp.
+- Measure: before {"misses":35,"cells":384,"worstPp":47}; after {"misses":38,"cells":384,"worstPp":48.4}. Original MISS is retained. Full per-skill/per-crew details remain in `reports/cardrpg-big/skills-v5/s6/on/DESIGN-REPORT.md`.
+- Ranked hypotheses (not isolated causal estimates): Set thresholds interact with helpers/statuses; survivability items cross win boundaries; paired fixture saturation.
+- Smallest next fix: Isolate a single set/proc contribution on the same TRAIN pairs before considering a smaller V5-only effect. No item normalization is adopted. No retune after seeing this acceptance block. A future changed candidate requires TRAIN work and registered30001–30500.
+- Verification/status: full affected matrices and both mode-compatibility checks are recorded in `reports/cardrpg-big/skills-v5/s6/on/receipt-audit.json` and `reports/cardrpg-big/skills-v5/s6/audit.json`; current gate remains **PARTIAL / MISS**. Passing source/hash checks do not override it.
+
+## S6-GATE A5.bare-piece — PARTIAL
+- Reproduce: fixed acceptance20001–20500, `node tools/cardrpg-big/skills-v5/numeric-gates.mjs reports/cardrpg-big/skills-v5/s6/on`; registered cases and saved outcomes: `reports/cardrpg-big/skills-v5/s6/on/pieces/results.json`. Gate unchanged: Every paired gain ≤12pp.
+- Measure: before {"cells":2304,"misses":33,"worstGainPp":51,"maxShare":0.04799521767347804}; after {"cells":2304,"misses":36,"worstGainPp":47.8,"maxShare":0.04799778349034514}. Original MISS is retained. Full per-skill/per-crew details remain in `reports/cardrpg-big/skills-v5/s6/on/DESIGN-REPORT.md`.
+- Ranked hypotheses (not isolated causal estimates): Set thresholds interact with helpers/statuses; survivability items cross win boundaries; paired fixture saturation.
+- Smallest next fix: Isolate a single set/proc contribution on the same TRAIN pairs before considering a smaller V5-only effect. No item normalization is adopted. No retune after seeing this acceptance block. A future changed candidate requires TRAIN work and registered30001–30500.
+- Verification/status: full affected matrices and both mode-compatibility checks are recorded in `reports/cardrpg-big/skills-v5/s6/on/receipt-audit.json` and `reports/cardrpg-big/skills-v5/s6/audit.json`; current gate remains **PARTIAL / MISS**. Passing source/hash checks do not override it.
+
+## S6-GATE A5.display-correlation — PARTIAL
+- Reproduce: fixed acceptance20001–20500, `node tools/cardrpg-big/skills-v5/numeric-gates.mjs reports/cardrpg-big/skills-v5/s6/on`; registered cases and saved outcomes: `reports/cardrpg-big/skills-v5/s6/on/summary.json`. Gate unchanged: Spearman ≥.6 each chapter.
+- Measure: before [0.4255760817961126,0.3711899936462595,0.15094751238119097]; after [0.45678169447104344,0.34209242758839786,0.19745975142182293]. Original MISS is retained. Full per-skill/per-crew details remain in `reports/cardrpg-big/skills-v5/s6/on/DESIGN-REPORT.md`.
+- Ranked hypotheses (not isolated causal estimates): Static utility weights disagree with nonlinear win effects; saturated cells weaken rank correlation; set completion dominates individual item estimates.
+- Smallest next fix: The320 registered shared-weight fits were all rejected. Investigate one attributable utility term; keep the existing Spearman gate. No retune after seeing this acceptance block. A future changed candidate requires TRAIN work and registered30001–30500.
+- Verification/status: full affected matrices and both mode-compatibility checks are recorded in `reports/cardrpg-big/skills-v5/s6/on/receipt-audit.json` and `reports/cardrpg-big/skills-v5/s6/audit.json`; current gate remains **PARTIAL / MISS**. Passing source/hash checks do not override it.
+
+## S6-GATE A5.cats — PARTIAL
+- Reproduce: fixed acceptance20001–20500, `node tools/cardrpg-big/skills-v5/numeric-gates.mjs reports/cardrpg-big/skills-v5/s6/on`; registered cases and saved outcomes: `reports/cardrpg-big/skills-v5/s6/on/teams/results.json`. Gate unchanged: Every cat55–75%, each top pick somewhere.
+- Measure: before 51.045%–79.168%; after 50.697%–78.720%. Original MISS is retained. Full per-skill/per-crew details remain in `reports/cardrpg-big/skills-v5/s6/on/DESIGN-REPORT.md`.
+- Ranked hypotheses (not isolated causal estimates): Unequal encounter difficulty despite matched displayed power; helper/status synergy favors particular kits; support/control choices cross win thresholds.
+- Smallest next fix: Separate kit effects from reference-fixture difficulty on TRAIN; preserve the approved crews, reference fixture and current gates. No retune after seeing this acceptance block. A future changed candidate requires TRAIN work and registered30001–30500.
+- Verification/status: full affected matrices and both mode-compatibility checks are recorded in `reports/cardrpg-big/skills-v5/s6/on/receipt-audit.json` and `reports/cardrpg-big/skills-v5/s6/audit.json`; current gate remains **PARTIAL / MISS**. Passing source/hash checks do not override it.
+
+## S6-GATE A5.fixture-calibration — PARTIAL
+- Reproduce: fixed acceptance20001–20500, `node tools/cardrpg-big/skills-v5/numeric-gates.mjs reports/cardrpg-big/skills-v5/s6/on`; registered cases and saved outcomes: `reports/cardrpg-big/skills-v5/s6/on/teams/results.json`. Gate unchanged: Reference matched-power median55–60% on TRAIN; measured on acceptance.
+- Measure: before {"median":0.34,"byChapter":[{"chapter":2,"rate":0.212},{"chapter":3,"rate":0.34},{"chapter":1,"rate":0.866}],"note":"Unchanged fixture; no calibration or gate adjustment adopted."}; after {"median":0.324,"byChapter":[{"chapter":2,"rate":0.19},{"chapter":3,"rate":0.324},{"chapter":1,"rate":0.868}],"note":"Unchanged fixture; no calibration or gate adjustment adopted."}. Original MISS is retained. Full per-skill/per-crew details remain in `reports/cardrpg-big/skills-v5/s6/on/DESIGN-REPORT.md`.
+- Ranked hypotheses (not isolated causal estimates): Unequal encounter difficulty despite matched displayed power; helper/status synergy favors particular kits; support/control choices cross win thresholds.
+- Smallest next fix: Separate kit effects from reference-fixture difficulty on TRAIN; preserve the approved crews, reference fixture and current gates. No retune after seeing this acceptance block. A future changed candidate requires TRAIN work and registered30001–30500.
+- Verification/status: full affected matrices and both mode-compatibility checks are recorded in `reports/cardrpg-big/skills-v5/s6/on/receipt-audit.json` and `reports/cardrpg-big/skills-v5/s6/audit.json`; current gate remains **PARTIAL / MISS**. Passing source/hash checks do not override it.
+
+## S6-GATE A5.sets — PARTIAL
+- Reproduce: fixed acceptance20001–20500, `node tools/cardrpg-big/skills-v5/numeric-gates.mjs reports/cardrpg-big/skills-v5/s6/on`; registered cases and saved outcomes: `reports/cardrpg-big/skills-v5/s6/on/sets/results.json`. Gate unchanged: Each set35–75% and leads ≥1 shared situation.
+- Measure: before 72.925%–94.400%; after 73.375%–94.350%. Original MISS is retained. Full per-skill/per-crew details remain in `reports/cardrpg-big/skills-v5/s6/on/DESIGN-REPORT.md`.
+- Ranked hypotheses (not isolated causal estimates): Set thresholds interact with helpers/statuses; survivability items cross win boundaries; paired fixture saturation.
+- Smallest next fix: Isolate a single set/proc contribution on the same TRAIN pairs before considering a smaller V5-only effect. No item normalization is adopted. No retune after seeing this acceptance block. A future changed candidate requires TRAIN work and registered30001–30500.
+- Verification/status: full affected matrices and both mode-compatibility checks are recorded in `reports/cardrpg-big/skills-v5/s6/on/receipt-audit.json` and `reports/cardrpg-big/skills-v5/s6/audit.json`; current gate remains **PARTIAL / MISS**. Passing source/hash checks do not override it.
+
+## S6-GATE A5.crew-gain — PARTIAL
+- Reproduce: fixed acceptance20001–20500, `node tools/cardrpg-big/skills-v5/numeric-gates.mjs reports/cardrpg-big/skills-v5/s6/on`; registered cases and saved outcomes: `reports/cardrpg-big/skills-v5/s6/on/teams/results.json`. Gate unchanged: Coherent minus random10–25pp.
+- Measure: before {"chosen":["mochi","clover","mallow"],"gainPp":29.399999999999995}; after {"chosen":["mochi","clover","mallow"],"gainPp":31.2}. Original MISS is retained. Full per-skill/per-crew details remain in `reports/cardrpg-big/skills-v5/s6/on/DESIGN-REPORT.md`.
+- Ranked hypotheses (not isolated causal estimates): Unequal encounter difficulty despite matched displayed power; helper/status synergy favors particular kits; support/control choices cross win thresholds.
+- Smallest next fix: Separate kit effects from reference-fixture difficulty on TRAIN; preserve the approved crews, reference fixture and current gates. No retune after seeing this acceptance block. A future changed candidate requires TRAIN work and registered30001–30500.
+- Verification/status: full affected matrices and both mode-compatibility checks are recorded in `reports/cardrpg-big/skills-v5/s6/on/receipt-audit.json` and `reports/cardrpg-big/skills-v5/s6/audit.json`; current gate remains **PARTIAL / MISS**. Passing source/hash checks do not override it.
+
+## S6-GATE V5.named-crews — PARTIAL
+- Reproduce: fixed acceptance20001–20500, `node tools/cardrpg-big/skills-v5/numeric-gates.mjs reports/cardrpg-big/skills-v5/s6/on`; registered cases and saved outcomes: `reports/cardrpg-big/skills-v5/s6/on/summary.json`. Gate unchanged: All4approved crews within5pp of best at every boss/elite.
+- Measure: before 3/7 encounters miss; after 3/7 encounters miss. Original MISS is retained. Full per-skill/per-crew details remain in `reports/cardrpg-big/skills-v5/s6/on/DESIGN-REPORT.md`.
+- Ranked hypotheses (not isolated causal estimates): Unequal encounter difficulty despite matched displayed power; helper/status synergy favors particular kits; support/control choices cross win thresholds.
+- Smallest next fix: Separate kit effects from reference-fixture difficulty on TRAIN; preserve the approved crews, reference fixture and current gates. No retune after seeing this acceptance block. A future changed candidate requires TRAIN work and registered30001–30500.
+- Verification/status: full affected matrices and both mode-compatibility checks are recorded in `reports/cardrpg-big/skills-v5/s6/on/receipt-audit.json` and `reports/cardrpg-big/skills-v5/s6/audit.json`; current gate remains **PARTIAL / MISS**. Passing source/hash checks do not override it.
+
+## S6-GATE V5.D3-keyword-crews — PARTIAL
+- Reproduce: fixed acceptance20001–20500, `node tools/cardrpg-big/skills-v5/numeric-gates.mjs reports/cardrpg-big/skills-v5/s6/on`; registered cases and saved outcomes: `reports/cardrpg-big/skills-v5/s6/on/design-report.json`. Gate unchanged: Each of8keywords in≥1/3 battles of every named crew.
+- Measure: before see the32 per-crew keyword assertions in the linked design report; after see the32 per-crew keyword assertions in the linked design report. Original MISS is retained. Full per-skill/per-crew details remain in `reports/cardrpg-big/skills-v5/s6/on/DESIGN-REPORT.md`.
+- Ranked hypotheses (not isolated causal estimates): Recorded Thread Burn attempts can both resist; Night lamp Daze suppresses Yarn Bitter; encounter mechanics determine exposure opportunities.
+- Smallest next fix: Consider a distinct secondary Bitter context without weakening successful control. Exact23miss replays are retained; no fourth S5 package. No retune after seeing this acceptance block. A future changed candidate requires TRAIN work and registered30001–30500.
+- Verification/status: full affected matrices and both mode-compatibility checks are recorded in `reports/cardrpg-big/skills-v5/s6/on/receipt-audit.json` and `reports/cardrpg-big/skills-v5/s6/audit.json`; current gate remains **PARTIAL / MISS**. Passing source/hash checks do not override it.
+
+## S6-GATE V5.D4-skill-diversity — PARTIAL
+- Reproduce: fixed acceptance20001–20500, `node tools/cardrpg-big/skills-v5/numeric-gates.mjs reports/cardrpg-big/skills-v5/s6/on`; registered cases and saved outcomes: `reports/cardrpg-big/skills-v5/s6/on/design-report.json`. Gate unchanged: Each skill5–60% of all its cat actions in matched battles.
+- Measure: before mochi: mochi-1 71.925%, mochi-2 0.384%, mochi-3 9.029%, mochi-4 18.525%; panko: panko-1 69.986%, panko-2 0.286%, panko-3 9.093%, panko-4 19.700%; after mochi: mochi-1 72.152%, mochi-2 0.442%, mochi-3 8.823%, mochi-4 18.460%; panko: panko-1 69.742%, panko-2 0.353%, panko-3 9.196%, panko-4 19.811%. Original MISS is retained. Full per-skill/per-crew details remain in `reports/cardrpg-big/skills-v5/s6/on/DESIGN-REPORT.md`.
+- Ranked hypotheses (not isolated causal estimates): The automatic evaluator prefers other legal moves; capped/discounted shield value can underreward prevention; existing support companions cover the same need.
+- Smallest next fix: Value the distinct Warm welcome/Bread cover opportunity. Eighteen exact replays rule out availability in those cases; broad basic cooldowns remain rejected. No retune after seeing this acceptance block. A future changed candidate requires TRAIN work and registered30001–30500.
+- Verification/status: full affected matrices and both mode-compatibility checks are recorded in `reports/cardrpg-big/skills-v5/s6/on/receipt-audit.json` and `reports/cardrpg-big/skills-v5/s6/audit.json`; current gate remains **PARTIAL / MISS**. Passing source/hash checks do not override it.
+
+## S6-GATE A5.tiers — PARTIAL
+- Reproduce: fixed acceptance20001–20500, `node tools/cardrpg-big/skills-v5/numeric-gates.mjs reports/cardrpg-big/skills-v5/s6/on`; registered cases and saved outcomes: `reports/cardrpg-big/skills-v5/s6/on/tiers/results.json`. Gate unchanged: TRAIN+acceptance≥44/48 at≥2pp, zero reversals.
+- Measure: before Detailed measured values retained in reports/cardrpg-big/skills-v5/s5/selected/tiers/results.json; after Detailed measured values retained in reports/cardrpg-big/skills-v5/s6/on/tiers/results.json. Original MISS is retained. Full per-skill/per-crew details remain in `reports/cardrpg-big/skills-v5/s6/on/DESIGN-REPORT.md`.
+- Ranked hypotheses (not isolated causal estimates): Intended-band saturation; item/status scaling changes tier benefits; helper pressure changes survivability thresholds.
+- Smallest next fix: Identify the first failing tier pair and its actual outcome differences before a narrowly scoped V5 change. No retune after seeing this acceptance block. A future changed candidate requires TRAIN work and registered30001–30500.
+- Verification/status: full affected matrices and both mode-compatibility checks are recorded in `reports/cardrpg-big/skills-v5/s6/on/receipt-audit.json` and `reports/cardrpg-big/skills-v5/s6/audit.json`; current gate remains **PARTIAL / MISS**. Passing source/hash checks do not override it.
+
+## S6-GATE A5.band-ladder — PARTIAL
+- Reproduce: fixed acceptance20001–20500, `node tools/cardrpg-big/skills-v5/numeric-gates.mjs reports/cardrpg-big/skills-v5/s6/on`; registered cases and saved outcomes: `reports/cardrpg-big/skills-v5/s6/on/tiers/results.json`. Gate unchanged: Bare→legendary≥15pp; no intended-band saturation.
+- Measure: before 13/33 intended-band cells miss; after 12/33 intended-band cells miss. Original MISS is retained. Full per-skill/per-crew details remain in `reports/cardrpg-big/skills-v5/s6/on/DESIGN-REPORT.md`.
+- Ranked hypotheses (not isolated causal estimates): Intended-band saturation; item/status scaling changes tier benefits; helper pressure changes survivability thresholds.
+- Smallest next fix: Identify the first failing tier pair and its actual outcome differences before a narrowly scoped V5 change. No retune after seeing this acceptance block. A future changed candidate requires TRAIN work and registered30001–30500.
+- Verification/status: full affected matrices and both mode-compatibility checks are recorded in `reports/cardrpg-big/skills-v5/s6/on/receipt-audit.json` and `reports/cardrpg-big/skills-v5/s6/audit.json`; current gate remains **PARTIAL / MISS**. Passing source/hash checks do not override it.
+
+## S6-GATE V5.full500.multi-ally — PARTIAL
+- Reproduce: fixed acceptance20001–20500, `node tools/cardrpg-big/skills-v5/numeric-gates.mjs reports/cardrpg-big/skills-v5/s6/on`; registered cases and saved outcomes: `reports/cardrpg-big/skills-v5/s6/on/metrics/results.json`. Gate unchanged: ≥35% support actions touch multiple allies.
+- Measure: before 29.841532412734946; after 29.79286640335273. Original MISS is retained. Full per-skill/per-crew details remain in `reports/cardrpg-big/skills-v5/s6/on/DESIGN-REPORT.md`.
+- Ranked hypotheses (not isolated causal estimates): Guardian support moves are rarely selected; Cinnamon Clean apron remains single-patient; efficient single-target sustain competes with multi-ally casts.
+- Smallest next fix: The exact Cinnamon ally-splash/team fallback and later support rows are already selected. A future change should target one prevention opportunity with paired pacing checks. No retune after seeing this acceptance block. A future changed candidate requires TRAIN work and registered30001–30500.
+- Verification/status: full affected matrices and both mode-compatibility checks are recorded in `reports/cardrpg-big/skills-v5/s6/on/receipt-audit.json` and `reports/cardrpg-big/skills-v5/s6/audit.json`; current gate remains **PARTIAL / MISS**. Passing source/hash checks do not override it.
+
+## S6-GATE V5.full500.normal-rounds — PARTIAL
+- Reproduce: fixed acceptance20001–20500, `node tools/cardrpg-big/skills-v5/numeric-gates.mjs reports/cardrpg-big/skills-v5/s6/on`; registered cases and saved outcomes: `reports/cardrpg-big/skills-v5/s6/on/metrics/results.json`. Gate unchanged: Mean8–12normal rounds.
+- Measure: before 13.237666666666666; after 13.242333333333333. Original MISS is retained. Full per-skill/per-crew details remain in `reports/cardrpg-big/skills-v5/s6/on/DESIGN-REPORT.md`.
+- Ranked hypotheses (not isolated causal estimates): Setup/prevention replaces immediate damage; opening enemy sustain lengthens some fights; support can be chosen after its best window.
+- Smallest next fix: Broad cooldowns were rejected after17.967rounds. Next isolate one support/setup valuation term and retain full normal-battle denominators. No retune after seeing this acceptance block. A future changed candidate requires TRAIN work and registered30001–30500.
+- Verification/status: full affected matrices and both mode-compatibility checks are recorded in `reports/cardrpg-big/skills-v5/s6/on/receipt-audit.json` and `reports/cardrpg-big/skills-v5/s6/audit.json`; current gate remains **PARTIAL / MISS**. Passing source/hash checks do not override it.
+
+## S6-GATE V5.full500.ultimates — PARTIAL
+- Reproduce: fixed acceptance20001–20500, `node tools/cardrpg-big/skills-v5/numeric-gates.mjs reports/cardrpg-big/skills-v5/s6/on`; registered cases and saved outcomes: `reports/cardrpg-big/skills-v5/s6/on/metrics/results.json`. Gate unchanged: ≥1executed ultimate per cat per normal battle.
+- Measure: before 78.7; after 77.66666666666667. Original MISS is retained. Full per-skill/per-crew details remain in `reports/cardrpg-big/skills-v5/s6/on/DESIGN-REPORT.md`.
+- Ranked hypotheses (not isolated causal estimates): Short encounters end before each cat casts; another legal skill can have higher policy value; defeats suppress later actions.
+- Smallest next fix: Cinnamon no-casualty fallback is implemented. Examine one actual missed-ultimate window without forced rotation or artificial casualties. No retune after seeing this acceptance block. A future changed candidate requires TRAIN work and registered30001–30500.
+- Verification/status: full affected matrices and both mode-compatibility checks are recorded in `reports/cardrpg-big/skills-v5/s6/on/receipt-audit.json` and `reports/cardrpg-big/skills-v5/s6/audit.json`; current gate remains **PARTIAL / MISS**. Passing source/hash checks do not override it.
+
+## S6-GATE V5.probe180.multi-ally — PARTIAL
+- Reproduce: fixed acceptance20001–20500, `node tools/cardrpg-big/skills-v5/numeric-gates.mjs reports/cardrpg-big/skills-v5/s6/on`; registered cases and saved outcomes: `reports/cardrpg-big/skills-v5/s6/on/metrics/results.json`. Gate unchanged: ≥35% support actions touch multiple allies.
+- Measure: before 30.061790487138957; after 29.266862170087975. Original MISS is retained. Full per-skill/per-crew details remain in `reports/cardrpg-big/skills-v5/s6/on/DESIGN-REPORT.md`.
+- Ranked hypotheses (not isolated causal estimates): Guardian support moves are rarely selected; Cinnamon Clean apron remains single-patient; efficient single-target sustain competes with multi-ally casts.
+- Smallest next fix: The exact Cinnamon ally-splash/team fallback and later support rows are already selected. A future change should target one prevention opportunity with paired pacing checks. No retune after seeing this acceptance block. A future changed candidate requires TRAIN work and registered30001–30500.
+- Verification/status: full affected matrices and both mode-compatibility checks are recorded in `reports/cardrpg-big/skills-v5/s6/on/receipt-audit.json` and `reports/cardrpg-big/skills-v5/s6/audit.json`; current gate remains **PARTIAL / MISS**. Passing source/hash checks do not override it.
+
+## S6-GATE V5.probe180.normal-rounds — PARTIAL
+- Reproduce: fixed acceptance20001–20500, `node tools/cardrpg-big/skills-v5/numeric-gates.mjs reports/cardrpg-big/skills-v5/s6/on`; registered cases and saved outcomes: `reports/cardrpg-big/skills-v5/s6/on/metrics/results.json`. Gate unchanged: Mean8–12normal rounds.
+- Measure: before 13.3; after 13.341666666666667. Original MISS is retained. Full per-skill/per-crew details remain in `reports/cardrpg-big/skills-v5/s6/on/DESIGN-REPORT.md`.
+- Ranked hypotheses (not isolated causal estimates): Setup/prevention replaces immediate damage; opening enemy sustain lengthens some fights; support can be chosen after its best window.
+- Smallest next fix: Broad cooldowns were rejected after17.967rounds. Next isolate one support/setup valuation term and retain full normal-battle denominators. No retune after seeing this acceptance block. A future changed candidate requires TRAIN work and registered30001–30500.
+- Verification/status: full affected matrices and both mode-compatibility checks are recorded in `reports/cardrpg-big/skills-v5/s6/on/receipt-audit.json` and `reports/cardrpg-big/skills-v5/s6/audit.json`; current gate remains **PARTIAL / MISS**. Passing source/hash checks do not override it.
+
+## S6-GATE V5.probe180.ultimates — PARTIAL
+- Reproduce: fixed acceptance20001–20500, `node tools/cardrpg-big/skills-v5/numeric-gates.mjs reports/cardrpg-big/skills-v5/s6/on`; registered cases and saved outcomes: `reports/cardrpg-big/skills-v5/s6/on/metrics/results.json`. Gate unchanged: ≥1executed ultimate per cat per normal battle.
+- Measure: before 75; after 75.83333333333333. Original MISS is retained. Full per-skill/per-crew details remain in `reports/cardrpg-big/skills-v5/s6/on/DESIGN-REPORT.md`.
+- Ranked hypotheses (not isolated causal estimates): Short encounters end before each cat casts; another legal skill can have higher policy value; defeats suppress later actions.
+- Smallest next fix: Cinnamon no-casualty fallback is implemented. Examine one actual missed-ultimate window without forced rotation or artificial casualties. No retune after seeing this acceptance block. A future changed candidate requires TRAIN work and registered30001–30500.
+- Verification/status: full affected matrices and both mode-compatibility checks are recorded in `reports/cardrpg-big/skills-v5/s6/on/receipt-audit.json` and `reports/cardrpg-big/skills-v5/s6/audit.json`; current gate remains **PARTIAL / MISS**. Passing source/hash checks do not override it.
+
+## S6-GATE A5.economy.ratiosAtMost3 — PARTIAL
+- Reproduce: fixed acceptance20001–20500, `node tools/cardrpg-big/skills-v5/numeric-gates.mjs reports/cardrpg-big/skills-v5/s6/on`; registered cases and saved outcomes: `reports/cardrpg-big/skills-v5/s6/on/economy/summary.json`. Gate unchanged: Unchanged A5 registered gate.
+- Measure: before false; after false. Original MISS is retained. Full per-skill/per-crew details remain in `reports/cardrpg-big/skills-v5/s6/on/DESIGN-REPORT.md`.
+- Ranked hypotheses (not isolated causal estimates): The exact numeric condition is not met in the retained rows; combat outcomes can alter earned progression; no individual causal contribution has yet been isolated.
+- Smallest next fix: Inspect the first failing registered row before proposing a narrowly scoped TRAIN change; retain the current threshold and all samples. No retune after seeing this acceptance block. A future changed candidate requires TRAIN work and registered30001–30500.
+- Verification/status: full affected matrices and both mode-compatibility checks are recorded in `reports/cardrpg-big/skills-v5/s6/on/receipt-audit.json` and `reports/cardrpg-big/skills-v5/s6/audit.json`; current gate remains **PARTIAL / MISS**. Passing source/hash checks do not override it.
+
+## S6-GATE A5.day7.regularFirstTwoAtLeast70 — PARTIAL
+- Reproduce: fixed acceptance20001–20500, `node tools/cardrpg-big/skills-v5/numeric-gates.mjs reports/cardrpg-big/skills-v5/s6/on`; registered cases and saved outcomes: `reports/cardrpg-big/skills-v5/s6/on/day7/results.json`. Gate unchanged: Unchanged A5 registered gate.
+- Measure: before true; after false. Regression from an earlier PASS. Full per-skill/per-crew details remain in `reports/cardrpg-big/skills-v5/s6/on/DESIGN-REPORT.md`.
+- Ranked hypotheses (not isolated causal estimates): The exact numeric condition is not met in the retained rows; combat outcomes can alter earned progression; no individual causal contribution has yet been isolated.
+- Smallest next fix: Inspect the first failing registered row before proposing a narrowly scoped TRAIN change; retain the current threshold and all samples. No retune after seeing this acceptance block. A future changed candidate requires TRAIN work and registered30001–30500.
+- Verification/status: full affected matrices and both mode-compatibility checks are recorded in `reports/cardrpg-big/skills-v5/s6/on/receipt-audit.json` and `reports/cardrpg-big/skills-v5/s6/audit.json`; current gate remains **PARTIAL / MISS**. Passing source/hash checks do not override it.
+
+## S6-GATE A5.day7.everyLossHasAvailableImprovement — PARTIAL
+- Reproduce: fixed acceptance20001–20500, `node tools/cardrpg-big/skills-v5/numeric-gates.mjs reports/cardrpg-big/skills-v5/s6/on`; registered cases and saved outcomes: `reports/cardrpg-big/skills-v5/s6/on/day7/results.json`. Gate unchanged: Unchanged A5 registered gate.
+- Measure: before false; after false. Original MISS is retained. Full per-skill/per-crew details remain in `reports/cardrpg-big/skills-v5/s6/on/DESIGN-REPORT.md`.
+- Ranked hypotheses (not isolated causal estimates): The exact numeric condition is not met in the retained rows; combat outcomes can alter earned progression; no individual causal contribution has yet been isolated.
+- Smallest next fix: Inspect the first failing registered row before proposing a narrowly scoped TRAIN change; retain the current threshold and all samples. No retune after seeing this acceptance block. A future changed candidate requires TRAIN work and registered30001–30500.
+- Verification/status: full affected matrices and both mode-compatibility checks are recorded in `reports/cardrpg-big/skills-v5/s6/on/receipt-audit.json` and `reports/cardrpg-big/skills-v5/s6/audit.json`; current gate remains **PARTIAL / MISS**. Passing source/hash checks do not override it.
+
+## S6-Z-HARNESS-COMMIT — PARTIAL pending capture
+- Reproduce: original `s6/logs/z-1280-off-1.log` and `s6/z/harness-attempt-1/1280-look-off-checks.json`; zero captures, immediate Review studio count1 after URL/model change.
+- Attribution: model notification is synchronous but React DOM commit is scheduled; locator.count does not wait. Hypotheses:1 stale DOM,2 actual review-gating defect. Existing source gates pass; this diagnostic must distinguish them.
+- Smallest fix: wait for the existing data-player-v4=true DOM marker, then assert every review control absent; wait for Look A/B visibility when restoring dev=1. Original script, registration and empty receipt retained. Correction recorded before first successful capture; acceptance registration untouched.
+- Verification pending: unchanged artifact/fixture hashes, all126 declared screenshots, source OFF/fallback checks from S6 closure. No completed capture group repeated or runtime edited.
+
+### S6-E2E-LOCAL-CLOCK recovery
+- Unchanged isolated test PASS in5.0s; full original420PASS/1FAIL retained with error context. Type/lint/1785web/1262rules/build PASS; OFF8250/fallback180+45 exact in s6/audit.json. Recovery path FIXED; intermittent-clock cause remains PARTIAL/unisolated. No all-green first-attempt claim.
+
+### S6-Z-HARNESS-COMMIT attempt2 attribution / correction2
+- Attempt2 still had Review studio after data-player-v4=true; zero captures. Diagnostic observed count1→0 only when the existing Look A/B store rerendered parent Demo. Source confirms Demo subscribes to the cosmetic store while model.notify only updates its children. Hypothesis1 (mere scheduled DOM delay) REJECTED.
+- Third attempt starts at the actual public URL, applies the requested cosmetic look using its existing store event, checks controls absent, and loads the actual dev=1 URL for its separate controls capture. Lazy navigation now waits for committed target-page content. Original2 scripts/registrations/empty receipts and diagnostic retained. Same21screens×6cases, artifact, save, reaction fixture and gates; no production edits.
+- No completed sample was rerolled; screenshot correction budget now exhausted for this issue. A further failure must remain PARTIAL with attribution.
+
+### S6-Z-HARNESS-COMMIT closure — FIXED for public/dev capture
+- Attempt3 completed all126 captures after using actual public/dev URLs. Both empty failed attempts remain; no completed group repeated. Six route screenshots have a separate semantic coverage miss below. Same artifact SHA4e310b07; OFF8250/fallback180+45 exact in s6/audit.json.
+
+## S6-Z-CONTRAST — PARTIAL
+- Reproduce without reroll: inspect `s6/z/summary.json` and `s6/visual-review/review.json`; capture command was `node tools/cardrpg-big/skills-v5/z-pack.mjs <1280|1440|1024> <on|off>` against SHA4e310b07. Completed groups must not be repeated.
+- Measure/attribute: Look V2 ON min 6.2448:1, zero scan failures; OFF min 1.6214:1, 27 flagged text nodes per width (81 across all three widths). The scan includes rendered below-fold content, so the smallest ratio is not necessarily in the visible screenshot. Legacy-look card text meets a pale gradient; no claim of pixel contrast at every location.
+- Ranked hypothesis1: Legacy-look card text meets a pale gradient; no claim of pixel contrast at every location. No unmeasured causal ranking is asserted.
+- Smallest action: Adjust A-owned legacy-look card text/backplate and verify the same three widths on a future artifact. Documentation disclosure is applied now; no product repair is claimed.
+- Before/after: measured artifact unchanged; disclosure and coverage accounting corrected. No extra runtime attempt after the retained S6 pack. OFF8250/fallback180+45 and registered70 source/tool hashes remain exact; delivery audit rechecks those bindings. Status remains PARTIAL.
+
+## S6-Z-OVERLAP — PARTIAL
+- Reproduce without reroll: inspect `s6/z/1280-look-on/checks.json` and `s6/visual-review/review.json`; capture command was `node tools/cardrpg-big/skills-v5/z-pack.mjs <1280|1440|1024> <on|off>` against SHA4e310b07. Completed groups must not be repeated.
+- Measure/attribute: Six enemy-plate overlaps across four of six ready-scene captures: Button Guard at 1280 in both looks; Button Guard and Sock Skipper at 1024 in both looks. Zero in the two 1440 captures. The A-owned fallback strip uses a fixed offset inside the battle region without reserving renderer plate space.
+- Ranked hypothesis1: The A-owned fallback strip uses a fixed offset inside the battle region without reserving renderer plate space. No unmeasured causal ranking is asserted.
+- Smallest action: Reserve space for the fallback outside the arena; verify ready-scene rectangles. B owns its separate rendering integration. Documentation disclosure is applied now; no product repair is claimed.
+- Before/after: measured artifact unchanged; disclosure and coverage accounting corrected. No extra runtime attempt after the retained S6 pack. OFF8250/fallback180+45 and registered70 source/tool hashes remain exact; delivery audit rechecks those bindings. Status remains PARTIAL.
+
+## S6-Z-FIELD-GUIDE — PARTIAL
+- Reproduce without reroll: inspect `s6/z/1440-look-on/guide.png` and `s6/visual-review/review.json`; capture command was `node tools/cardrpg-big/skills-v5/z-pack.mjs <1280|1440|1024> <on|off>` against SHA4e310b07. Completed groups must not be repeated.
+- Measure/attribute: In-game Field guide still labels Cozy, Scald, Tangle, Steep, Scented, Rattled and Drowsy, including old Tangle/Rattled rules and cap values. The Companions glossary and standalone V5 guide use the eight V5 display names. Pages.tsx Codex reads R.STATUSES and statusDescriptionV4 with only a v4 prop; it has no skillsV5 path.
+- Ranked hypothesis1: Pages.tsx Codex reads R.STATUSES and statusDescriptionV4 with only a v4 prop; it has no skillsV5 path. No unmeasured causal ranking is asserted.
+- Smallest action: Add an A-owned skillsV5-gated Codex vocabulary/description path. Current playtest instructions point to the correct glossary; source remains unchanged. Documentation disclosure is applied now; no product repair is claimed.
+- Before/after: measured artifact unchanged; disclosure and coverage accounting corrected. No extra runtime attempt after the retained S6 pack. OFF8250/fallback180+45 and registered70 source/tool hashes remain exact; delivery audit rechecks those bindings. Status remains PARTIAL.
+
+## S6-Z-ROUTE-COVERAGE — PARTIAL
+- Reproduce without reroll: inspect `s6/z/1024-look-on/night-route.png` and `s6/visual-review/review.json`; capture command was `node tools/cardrpg-big/skills-v5/z-pack.mjs <1280|1440|1024> <on|off>` against SHA4e310b07. Completed groups must not be repeated.
+- Measure/attribute: All six night-route captures have screen=prepare and visibly show Prepare. Current settled route-map screenshot coverage is NOT VERIFIED, despite 126 retained captures. The prepared practice state survives the imported save; Night route resolves to the pending Prepare screen. The harness asserted readiness, not the requested map identity.
+- Ranked hypothesis1: The prepared practice state survives the imported save; Night route resolves to the pending Prepare screen. The harness asserted readiness, not the requested map identity. No unmeasured causal ranking is asserted.
+- Smallest action: Future route fixture must clear the pending tutorial and assert screen identity. No repeated screenshot pack or replacement of these samples. Documentation disclosure is applied now; no product repair is claimed.
+- Before/after: measured artifact unchanged; disclosure and coverage accounting corrected. No extra runtime attempt after the retained S6 pack. OFF8250/fallback180+45 and registered70 source/tool hashes remain exact; delivery audit rechecks those bindings. Status remains PARTIAL.
+
+## S6-Z-MINIATURE — NOT VERIFIED
+- Reproduce without reroll: inspect `s6/z/1440-look-on/fresh-home.png` and `s6/visual-review/review.json`; capture command was `node tools/cardrpg-big/skills-v5/z-pack.mjs <1280|1440|1024> <on|off>` against SHA4e310b07. Completed groups must not be repeated.
+- Measure/attribute: Home/Companions captures include Preparing miniatures. The battle capture explicitly waits for scene readiness; the meta captures do not wait for miniature readiness. These are real sampled transitions, not proof of a persistent missing model.
+- Ranked hypothesis1: These are real sampled transitions, not proof of a persistent missing model. No unmeasured causal ranking is asserted.
+- Smallest action: Use a future settled-miniature check if assessing appearance or loading, separate from this retained pack. Documentation disclosure is applied now; no product repair is claimed.
+- Before/after: measured artifact unchanged; disclosure and coverage accounting corrected. No extra runtime attempt after the retained S6 pack. OFF8250/fallback180+45 and registered70 source/tool hashes remain exact; delivery audit rechecks those bindings. Status remains NOT VERIFIED.
+
+## S6-DELIVERY-AUDIT-ORDER — FIXED
+- Reproduce: `node tools/cardrpg-big/skills-v5/audit-delivery.mjs`; attempt1 log records missing visual-review/review.json. Attribution: audit ran before the manual review receipt existed, not a runtime regression.
+- Smallest fix: complete the eight-sheet review and six full-size checks, save findings, then rerun the same integrity audit. Original failure retained; no sample or gate changed. Before: ENOENT; after: delivery-audit-attempt-2.log PASS (147 images,104 local links,70 registered files). Compatibility/source hashes are rechecked by the audit.

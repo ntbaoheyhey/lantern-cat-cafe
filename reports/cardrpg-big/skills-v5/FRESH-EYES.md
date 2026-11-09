@@ -2,7 +2,7 @@
 
 This is one agent's skeptical self-review, not a human playtest or retention result. I re-read the original first30minute timeline and inspected its60 chronological captures on [five sheets](s6/fresh-eyes/journey-01.jpg), plus the minute30 boundary capture at full size. [Review manifest](s6/fresh-eyes/review-manifest.json) binds the source and image hashes. Selected artifact SHA256 is `4e310b07f9dfb005abdff830d498e8d0f6615553e1710a2ce12eeedad3a3638e`.
 
-This reinspection uses the same prospective real-click journey, including its waits, losses and transitional screenshots. It is not a second hour, a new sample, continuous video review or independent playtest. Full-size checks covered Home, the equipment opening, invitation, formation, event choice and minutes10/15/20/25/30. The pending once-only Z pack will separately check settled controls at all three widths and both looks.
+This reinspection uses the same prospective real-click journey, including its waits, losses and transitional screenshots. It is not a second hour, a new sample, continuous video review or independent playtest. Full-size checks covered Home, the equipment opening, invitation, formation, event choice and minutes10/15/20/25/30. The once-only Z pack is now captured and reviewed at all three widths and both looks; [artifact review](s6/visual-review/REVIEW.md) records its limitations.
 
 |Question|Score /10|Reason from this journey|
 |---|---:|---|
@@ -16,7 +16,7 @@ The A4 report did not score these exact four questions, so there is no invented 
 Concrete observations for the next TRAIN/design phase:
 
 1. [Home](s8/home/session/000-fresh-save.png) establishes the next action with a prominent practice-table button, but the miniature is still preparing in this first capture. This is an observed transition, not proof of a persistent missing model.
-2. [Equipment opening](s8/home/session/004-opening-equipment-compare.png) provides a clear choice between attack and health. The actual equipment selector continues below the fold; the settled scrolled compare must be inspected in Z.
+2. [Equipment opening](s8/home/session/004-opening-equipment-compare.png) provides a clear choice between attack and health. The actual equipment selector continues below the fold; the settled scrolled compare is retained in the Z pack.
 3. [Formation](s8/home/session/013-prepare.png) shows front/back placement, shapes and a combo role. “Protects primers” assumes vocabulary a new player may not yet know; the companion glossary is useful but requires another navigation step.
 4. [Five-minute event](s8/home/session/028-minute-5-choose-1-0.png) presents three distinct consequences above the route. This is a stronger decision moment than merely comparing a power total.
 5. [Ten-minute defeat](s8/home/session/041-minute-10-result.png) places named contributions above the MVP card. It explains who acted and fell, but the advice panel is still in its checking state at capture time. No claim that it never resolves.
@@ -29,3 +29,5 @@ Concrete observations for the next TRAIN/design phase:
 The next priorities remain pacing and balance. Investigate actual incoming protection opportunities and sustain costs on TRAIN; keep the rejected blanket cooldown experiment rejected. Review a concrete reward/progression moment before changing currency caps, since the heavy/casual essence ratio already misses. Preserve all current results and require a new registered block for any post-acceptance retune.
 
 The [15-minute human kit](PLAYTEST-KIT.md) asks eight questions, including five unit-state identifications after two fights. Until real answers arrive, recognition≥4/5 and human enjoyment remain **NOT VERIFIED**. B's separate presentation preview has not been substituted for this artifact.
+
+S6 delivery review: all 126 artifact and 21 guide captures were inspected through eight contact sheets, with six full-size checks. Default Look V2 contrast passes, but legacy-look contrast, fallback/plate overlap and in-game Field guide copy remain PARTIAL. All six route-labelled captures show Prepare; settled route-map coverage is NOT VERIFIED. These findings qualify earlier S7 copy/UI coverage; they are not hidden by successful source tests. See the [review receipt](s6/visual-review/review.json) and [repair log](FIXLOG.md).
