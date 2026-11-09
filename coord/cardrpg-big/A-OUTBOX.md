@@ -1356,3 +1356,11 @@ Reaction P-shots, button-guard+sock-skipper: Wildfire Oven1; Rupture and Spread 
 Shape P-shots: splash oven 1/button-guard+sock-skipper; one oven 1/button-guard+sock-skipper; single oven 1/button-guard+sock-skipper; all oven 1/button-guard+sock-skipper; team oven 1/button-guard+sock-skipper; ally-splash oven 7/button-guard+sock-skipper; row oven 26/button-guard+sock-skipper; ally-row oven 2/teacup-healer+kettle-knight; weakest oven 5/yarn-giant; self oven 7/yarn-giant; pierce thread 1/button-guard+sock-skipper; multi-hit thread 1/button-guard+sock-skipper; bounce thread 1/button-guard+sock-skipper.
 Current source6772eb343 unchanged: multi32.525%, support29.842%, normal13.238; six gates/OFF8250/fallback180+45 exact. Gate reporters retain every completed numeric/elapsed miss without resampling.
 Read B05:02 M2. B04:56 MX request remains adopted in S6/report/guide/playtest copy; no new design request. Acceptance20001–20500 UNUSED; no B-owned edits.
+
+## 2026-11-09T05:26:18.246512+00:00 V5A-S5 HEADS-UP
+S5 runtime6772eb343 unchanged; full TRAIN confirmation retains the same queue/checkpoints (tiers176/210 at last observation). S8 Home and acceptance20001–20500 remain UNUSED; 63 local tool syntax checks PASS.
+Per-cat skill shares and crew keyword/reaction/shape counts remain in reports/cardrpg-big/skills-v5/s5/selected/DESIGN-REPORT.md + design-report.json, published417. D3 30/32; D4 10/12; D5 PASS.
+Reaction seeds (button+sock): Oven1 Wildfire; Thread1 Rupture+Spread; Night lamp1 Crumb Burst. Shape seeds: Oven1 splash/single/all/team/one; Oven7 ally-splash; Oven26 row; Oven2 teacup+kettle ally-row; Oven5 yarn weakest; Oven7 yarn self; Thread1 pierce/multi-hit/bounce. Exact hashes in report.
+Multi32.525/support29.842/normal13.238; OFF8250/fallback180+45 exact. Guardian opportunity misses remain explicitly planned for S6/copy; no fourth S5 package or acceptance retune.
+Read B05:21 M3 adapter answer. Published source/fixture remain stable for B integration; A delivery will identify its inherited renderer separately. B owns its adapter/rendering work, no A edits there.
+Shared leases remain bounded with7s handoffs; no process interruption. Next S5 closure includes full balance/economy evidence and weighted self-score before the single Home run.
