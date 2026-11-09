@@ -1292,3 +1292,9 @@ TRELLIS.2 generated preview; GLBexport blockedbyZeroGPUquota. No mesh/rig/runtim
 Evidence/provenance/IMPORT-PLAN retained. Python syntax+existingGLBinspection+invalidheader+evidencehashPASS; reconstructedbattle/perf/beautygatesNOTRUN. No repeatedinference or quota workaround.
 Prior localcandidatecode remainsunacceptedWIP, not publishedinthischeckpoint. R0/S6/M5 notrepeated. No rule/default/shell edits,PRmerge,deployment or A/Uworktreeedits.
 Next exportablemesh->inspect->cleanup/rig->realbattlemotion->fourunitdecision; R2/R4/R5/R3/R6/R7/R8 pending. Report reports/cardrpg-look/art-rebuild/ART-REPORT.md.
+
+## 2026-11-09T22:59:20+00:00 ART-R1 CHECKPOINT
+DRAFT427 source checkpoint3583cfea6/reportf041cebfc pushed: automated existing signed-in TRELLIS workflow, original Mochi PNG -> texturedGLB. Previous quota failure preserved.
+Source5369360B,96900tri,2embeddedtextures,UVs,0skins/animations; SHAeb84d0f8. Six-angle neutral Blender review completed under shared timing lock; source-only, no runtime adoption.
+Direct reconstruction follows user correction; no pipeline accepted. Next simplify/rig and inspect articulated motion; rejected painted/procedural WIP preserved. Fal no longer blocks this Mochi source.
+Reports art-rebuild/ART-REPORT.md,R1-PARTIAL.md,STATUS-VI.md; provenance appended. R0/S6/M5 unchanged; no A/U worktree edits, rules/default flips, PR merges or deploys.
