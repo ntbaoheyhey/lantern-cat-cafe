@@ -1,5 +1,5 @@
 # Skills V5 full run
-NOW M4: immutable boss-plate/Kettle checks queued; non-periodic trigger annotation source gates running. M3 E2E passed, startup closure queued before integration merge.
+NOW M4: B53b1547da merged into live ed2cd81f0; immutable live pilot source gates running; trigger/guide probes prepared. M3 startup observation PASS, A byte baseline queued.
 BASE #415 f9924699cab2fa5b8029baa1158f789ee44ddfda; full/PROMPT.txt and RULES.md apply. One agent, no model helpers, native/headless.
 WORKTREES B=/Users/bao/taskbar-hero-cardrpg-b2 branch codex/cardrpg-v5full-m4-2026-11-09; live=/Users/bao/taskbar-hero-cardrpg-v5live branch codex/cardrpg-v5live-2026-11-09.
 PROTECTED all A-owned/rules/manifests/default flags; draft PR only; never A folder. Sync B-OUTBOX append only.
@@ -31,3 +31,4 @@ VIDEO before20scomplete /tmp/cardrpg-v5full-m4/before seed791576452;afterreusesi
 EVIDENCE B~56MB/live~63MB;cap80MB inclfourclips. Rawtracesretained/tmpwithhashes. No duplicateunchangedstrips;DPR2onlyM4key8.
 NEXT M3startup/report/draft;mergeBinto livekeepingAownedfiles;refreshfixedliveplanssamepin;livepilot51shots/layout/faces/UI+triggerdelta;full/leanbuild31.5MB;casts/cold/OFF/E2E,6SSIM,films;M4reportPR;S6refresh;M5<=90lines+ledger+BOUTBOXDONE.
 STOP onlyM5delivered,20Nov12UTC,orunfixable/unrevertibleS1withM5PARTIAL. No handoff.
+RESUME07:53UTC: plate-fix51shots+P5..P15windows0overlap/unplaced;14changedcuecasts84windowsmax16.8ms; live pilot /tmp/cardrpg-v5full-m4/live-pilot.json session76034. Preserve samePshot seed/action/time pins.

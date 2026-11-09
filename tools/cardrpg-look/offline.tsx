@@ -12,6 +12,7 @@ import { isLookV2, setLookV2, subscribeLookV2 } from '../../apps/web/src/game/sq
 import { isReadableBattle, setReadableBattle, subscribeReadableBattle } from '../../apps/web/src/game/squad/turn3d/look-b2';
 import { installLiveProbe } from './skills-v5/full/live-dev';
 import { B2Gallery } from './b2-gallery';
+import { LiveGuide } from './skills-v5/full/LiveGuide';
 import { LookAtelier } from './LookAtelier';
 declare const __LOOK_LIVE__: boolean;
 const live=typeof __LOOK_LIVE__!=='undefined'&&__LOOK_LIVE__;
@@ -65,10 +66,10 @@ function Demo() {
     } });
   };
   return <div className={`dp-offline-demo ${panel ? 'b2-demo-lab-open' : ''}`}>
-    <DepthApp offline gameplayV4={live} skillsV5={live} /><aside className="look-b2-reference" aria-label="Demo references">REFERENCE: reports/cardrpg-look/b2/B2-REPORT.md · docs/design/cardrpg/LOOK-BIBLE.md · tools/cardrpg-look/build.mjs</aside>
+    <DepthApp offline gameplayV4={live} skillsV5={live} /><aside className="look-b2-reference" aria-label="Demo references">REFERENCE: {live ? 'reports/cardrpg-look/skills-v5/full/V5FULL-REPORT.md' : 'reports/cardrpg-look/b2/B2-REPORT.md'} · docs/design/cardrpg/LOOK-BIBLE.md · tools/cardrpg-look/build.mjs</aside>
     {header && createPortal(<div className="dp-demo-tools" aria-label="Demo tools">
       {developer && !panel && <DemoTools open={open} />}
-      <B2Gallery />
+      {live ? <LiveGuide /> : <B2Gallery />}
       <button aria-label="B2 before/after" aria-pressed={readable} onClick={() => setReadableBattle(!readable)}>B2: {readable ? 'After' : 'Before'}</button>
       {developer && <button aria-label="Look A/B" aria-pressed={look} onClick={() => setLookV2(!look)}>Look: {look ? 'Atelier' : 'Classic'}</button>}
       {developer && <button aria-pressed={meter} onClick={() => setMeter(!meter)}>Frame meter</button>}
