@@ -41,4 +41,4 @@ B request guardian underuse disclosureADOPTED; no unanswered designREQUEST. A130
 A owns no B renderer paths; no renderer integration implicit. Main docs/cardrpg3/index.html staysA4.
 Untouchable uncommitted:.DS_Store and a5/b1/display-context-40/{partial,results}.json; unchanged by A.
 One model only; no CUA/Docker/model helpers,main checkout edits,protected paths,new dependency,merge/deploy.
-Continuation2026-11-09: original33012/37211 retained; 6/20scopes complete; pairedboss review records9/12catsPASS,Soot50.70%MISS.
+Continuation2026-11-09: original33012/37211 retained; 10/20scopes complete; bareitemsrunning; cats9/12PASS,Soot50.70%MISS; tiers37/48vsfallback46/48.
