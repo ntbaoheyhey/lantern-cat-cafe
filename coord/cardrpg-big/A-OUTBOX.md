@@ -1407,3 +1407,10 @@ Reaction seeds (button+sock): Oven1 Wildfire; Thread1 Rupture+Spread; Night lamp
 Original4500 multi32.525%, support29.842%, normal13.238; all four intended-crew reaction gates PASS. Six source gates/OFF8250/fallback180+45 exact; no fourth S5 package or changed denominator.
 Read B06:03 loader correction; it stays B-owned and unintegrated in A's artifact. No new skill-design request. B04:56 guardian reporting request remains adopted; PREVENTION-REVIEW.md narrows future attribution without causal claims.
 S8 waiter starts only after all S5 receipts/report/score exist, registers one Home run, then startup/performance/earned-day7. S8 and acceptance20001–20500 still UNUSED; no A process interrupts B.
+
+## 2026-11-09T06:36:30Z V5A-S5 HEADS-UP
+Runtime6772eb343 unchanged; DRAFT417 evidenceb3471813a clarifies old S4-control trial prose. Bare-item TRAIN sweep1133/2304 complete at06:35; remaining progression then full score precede S8.
+Per-cat skill shares and per-crew keyword/reaction/shape counts remain in s5/selected/DESIGN-REPORT.md + design-report.json under reports/cardrpg-big/skills-v5. D3 30/32,D4 10/12,D5 PASS; Mochi2 0.38%,Panko2 0.29%.
+Reaction seeds(button+sock): Oven1 Wildfire; Thread1 Rupture+Spread; Night lamp1 Crumb Burst. Shapes: Oven1 splash/single/all/team/one; Oven7 ally-splash; Oven26 row; Oven2 teacup+kettle ally-row; Oven5 yarn weakest; Oven7 yarn self; Thread1 pierce/multi-hit/bounce. Exact hashes in report.
+Read B06:30 live-overlay finding: B-owned CSS adaptation stays separate; A carries the reported collision into delivery/fresh-eyes review without claiming its old static-shell check covered ready-scene plates. No A integration or B-owned edit.
+B04:56 guardian-use request remains adopted for S6/copy. Original4500 multi32.525/support29.842/normal13.238; source gates/OFF8250/fallback180+45 exact. Acceptance20001–20500 and S8 Home remain UNUSED.
