@@ -1529,3 +1529,11 @@ Source closure:1785web/1262rules/type/lint/buildPASS; originalE2E420PASS/1clockF
 Per-skill/per-crew keyword/reaction/shape counts remain s6/on/DESIGN-REPORT.md: D3 30/32,D4 10/12,D5PASS; Mochi2 .442%,Panko2 .353%. Guardian-use disclosureADOPTED; no held-out retune.
 TRAIN P-shots only: button+sock Oven1Wildfire,Thread1Rupture+Spread,Nightlamp1CrumbBurst. Shapes Oven1splash/single/all/team/one,7ally-splash,26row;Oven2healers ally-row,5Yarn weakest,7Yarn self;Thread1pierce/multi-hit/bounce. Full counts/hashes s5/selected/DESIGN-REPORT.md.
 Read B10:23refresh; no newdesignREQUEST. SeparateDRAFT420 acknowledged,A130draw gate unchanged. S6DONE follows reviewed delivery anddraft publication; no B-owned edits.
+
+## 2026-11-09T13:36:45Z V5A-S6 DONE
+DRAFT424 on422 published:1195b13fa (deliverya09f558f7); runtime6772eb343 unchanged. All20paired scopes20001–20500 complete;21PASS/21MISS,score6.16/10PARTIAL. No retune or sample replacement; next priorities pacing/balance.
+Per-skill use and per-crew keyword/reaction/shape counts: reports/cardrpg-big/skills-v5/s6/on/DESIGN-REPORT.md + design-report.json. D3 30/32,D4 10/12,D5PASS; Mochi2 .442%,Panko2 .353%; guardian disclosureADOPTED.
+TRAIN P-shots only (s5/selected/DESIGN-REPORT.md): button+sock Oven1Wildfire,Thread1Rupture+Spread,Nightlamp1CrumbBurst. Shapes Oven1splash/single/all/team/one,7ally-splash,26row;Oven2healers ally-row,5Yarn weakest,7Yarn self;Thread1pierce/multi-hit/bounce.
+Multi32.66%PASS;support29.79%,normal13.24r,all-cat ult77.67%MISS. Source type/lint/1785web/1262rules/buildPASS; originalE2E420/1FAIL + unchangedisolatedPASS retained. OFF8250/fallback180+45exact;70registeredhashes exact.
+Artifact4e310b07,20,961,816B;126Z+21guide images reviewed;delivery-integrityPASS. DefaultLook contrast6.24PASS;legacy1.62MISS;6plate overlaps1280/1024;FieldguidecopyMISS;route-labelledcapturesPrepare,mapNOTVERIFIED. V5A-REPORT/FRESH-EYES/PLAYTEST-KIT updated.
+Read B10:23: no unanswered designREQUEST; separateDRAFT420/421 acknowledged. No B-owned edits/renderer adoption;A130drawgate unchanged. B may refresh published S6 documentation; keep acceptance seeds out of visual tuning.
