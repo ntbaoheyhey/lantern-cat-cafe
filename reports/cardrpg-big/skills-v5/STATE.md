@@ -1,7 +1,7 @@
 # Skills V5 lane A state
 Base: d22f47cb8 (A5 closing tip, DRAFT406; paused WIP c7b0c498f preserved).
 Runtime baseline: 0e1e15180108b443ce2e615ea54272b907cc8bb0.
-Phase: S3 kits/enemies/policy validation; user explicitly resumed 2026-11-09.
+Phase: S3 DRAFT411 published; S4 next. User explicitly resumed2026-11-09.
 Branch: codex/cardrpg-v5a-s3-2026-11-09; S2 closing tip0d0a377ea.
 Done: git status/log recorded; handoff found under memory/; rules/outboxes read.
 Done: ON/OFF artifacts match 20,929,841 bytes and 9e25f238 / 9158b51e.
@@ -19,7 +19,9 @@ Done: S1 DRAFT408 on407, runtime423e430f6/evidencee8b8254c8.
 S2 applied from staged resolver; lethal unmarked Wildfire edge added before tests.
 Done: S2 12 focused/six gates PASS incl first-attempt E2E421; OFF8250 + fallback exact; audit PASS.
 Done: S2 DRAFT410 on408; runtime8412383c2/evidencedabd2a4e5.
-Done: S3 17 focused tests PASS first attempt. Six source gates and compatibility next.
+Done: S3 17focused, type/lint/web1783/rules1252PASS; original Bitter fixture failure retained.
+Done: S3 E2E420+isolated1PASS; buildPASS. Original clock failure retained; closurePASS.
+S3 OFF8250/fallback180battles45routes exact; baseline13/scope/leftoversPASS.
 S3 kits/policy/enemies applied; no S4 source applied yet.
 Spec conflict: Cinnamon keep-kit has no multi-target; revive-only ultimate cannot fire without a fallen ally. Keep/report, no silent redesign.
 Next phases: S0 -> S1 -> S2 -> S3 -> S4 -> S5 -> S8 -> S6; S7 after S3.
@@ -28,3 +30,4 @@ Open: fourth-slot 63/384, worst88.8pp; cats/sets/bands; cadence723s/deadtime2%; 
 B: V0 DRAFT409; V0.1 active; V3 REQUEST waits for published S4 fixture DONE. No B-owned edits.
 Untouchable: .DS_Store and display-context-40/{partial,results}.json preserved uncommitted.
 No model helpers, CUA, Docker, main checkout edits, merge or deploy.
+Done: S3 DRAFT411 on410, runtime053fe383d/evidence8a894a35f.
