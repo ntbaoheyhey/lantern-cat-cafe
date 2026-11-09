@@ -23,7 +23,7 @@ Chưa chọn pipeline hoặc nhân rộng roster; không cần kết nối fal �
 ## Automated conversion/export — 2026-11-09 22:52 UTC
 
 - User requested automation of the existing signed-in TRELLIS session. Original PNG upload was resumed without regenerating concept art; one Generate and one Extract completed at seed20261109/resolution1024/target100000faces/texture2048.
-- [Original GLB](../../../../assets/source/look-v3/image-to3d/mochi-source.glb) is source-only, outside the demo bundle. Correct repository path: `assets/source/look-v3/image-to3d/mochi-source.glb`. SHA256 `eb84d0f8ca114736806432a18c0abd7249f3fb451c642c53fb28a1a85c0912a6`, 5,369,360 bytes.
+- [Original GLB](../../../assets/source/look-v3/image-to3d/mochi-source.glb) is source-only, outside the demo bundle. Correct repository path: `assets/source/look-v3/image-to3d/mochi-source.glb`. SHA256 `eb84d0f8ca114736806432a18c0abd7249f3fb451c642c53fb28a1a85c0912a6`, 5,369,360 bytes.
 - [Automation receipt](r1/image-to-3d/browser-automation.json), [download provenance](r1/image-to-3d/browser-download.json), [structural inspection](r1/image-to-3d/browser-structure.json): 96,900 triangles, UVs, two embedded WebP textures, no skin, no animation, no external resources.
 - Browser download helpers timed out. The exact download URL visible in the generated result was retrieved successfully through urllib; no browser credentials/cookies read, no payment or plugin install.
 - [Topology diagnostic](r1/image-to-3d/browser-topology.json): rounding positions to1e-5 gives43,605 welded positions and29components;42,992positions lie in the largest connected component. This is a fused source mesh, not animation-ready separate body parts. Geometry and skin weights need review.
