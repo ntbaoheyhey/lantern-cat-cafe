@@ -1,5 +1,5 @@
 # Skills V5 full-run state
-NOW mandatory M3 published-phase refresh after M4 draft#421. M5 prepared62lines, publish only after S6DONE or19Nov18UTC cap; no new browser/timing jobs queued.
+NOW published S8 integrated9a50068af into draft420; exact production/build trees unchanged. M4measurements remainvalid; wait S6DONE or19Nov18UTC before M5.
 PROMPT full/PROMPT.txt and RULES.md apply; single agent, no model helpers/generation, headless native macOS.
 B /Users/bao/taskbar-hero-cardrpg-b2 branch codex/cardrpg-v5full-m4-2026-11-09, runtime bc22a644f, M4 delivery4dba130c9 (draft#421), next branch codex/cardrpg-v5full-m5-2026-11-09.
 LIVE /Users/bao/taskbar-hero-cardrpg-v5live branch codex/cardrpg-v5live-2026-11-09, current269a08e05; draft #420 INTEGRATION PREVIEW - not for merge.
@@ -32,8 +32,8 @@ DONE evidence packing:lossless gzip+identical media aliases. B-M4-007 symlink co
 EVIDENCE M4packincluded,cap80MB and4clips≤30s; q64reviewencodes preserve dimensions/originalhashes. Distinct failedsamples retained.
 QUEUE allM4jobs complete; ownFIFO16545 stopped via its stopfile. No timinglock held orrequested. NeverkillA/unrelated PIDs.
 VIDEO before20s complete seed791576452. After usesexactinitialJSON withV4/V5ON;pitchpredeclaredThreadpair1;reelactualguide12ultimates1x. /tmp/cardrpg-v5full-m4/delivery2-queue.log.
-WAITING published A phase/S6 since 2026-11-09T08:57:30Z, last check 2026-11-09T08:57:30Z; lastreadline1452 (08:25S8Homeactive), runtime6772eb343/evidenceb21a91c35. SyncM4checkpoint08:56pushed.
-NEXT timeout1200 wait-outbox.sh withV5_LAST_READ_LINE1452; onnewpublishedphase fetch/read-only andmerge integration, deltaonlyverification. M5draft/report/ledger/BOUTBOXDONE afterrefreshcap.
+WAITING S6 publication since 2026-11-09T10:06:00Z, last check 2026-11-09T10:06:00Z; S8#422 published1d7c6f68e integrated, runtime6772eb343 unchanged. Never use acceptance seeds.
+NEXT timeout1200 wait-outbox.sh withV5_LAST_READ_LINE1478; onnewpublishedphase fetch/read-only andmerge integration, deltaonlyverification. M5draft/report/ledger/BOUTBOXDONE afterrefreshcap.
 THEN continue M3 published-phase refresh untilS6DONEor19Nov18UTC; wait-outbox.sh withrecordedlastline,onlyqueuedBworkwhilewaiting. M5report≤90lines+ledger+BOUTBOXDONE.
 Prepared drafts/scripts /tmp/cardrpg-v5full-m4-prep/{M4-REPORT.md,V5FULL-REPORT.md,review-videos.py,sync-entry.py}; M5 placeholders mustbe resolved beforepublication.
 STOP only M5delivered,20Nov12UTC,orunfixable/unrevertibleS1withM5PARTIAL. No manualhandoff.
