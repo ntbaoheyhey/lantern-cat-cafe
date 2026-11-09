@@ -546,3 +546,7 @@ Addendum received during S5. TRAIN remains 1–500. Existing baseline slices con
 - Ranked hypotheses, not isolated causes: 1. Sustain crosses a survival threshold; 2. helper pressure changes the timing of that threshold; 3. policy choices amplify protection from the item.
 - Smallest next fix: after the paired review, isolate one failing interaction on TRAIN while keeping the original bare-team budget and seeds. No held-out retune or item normalization is applied.
 - Verification/status: all2,304 cells retain500 outcomes and digests. All70 registered source/tool hashes remain exact; unchanged-production S8 OFF/fallback checks still apply. Paired fallback, full S6 closure and affected progression scopes remain pending. Current gate PARTIAL/MISS; any later changed candidate needs registered30001–30500.
+
+### S6-BARE-ITEM-THRESHOLD paired completion
+- Original fallback finished:22/2,304 misses, maximum60.4pp (Bellsteel legendary charm/Mochi/level6/chapter3,0→302wins/500). V5 has36misses/max47.8pp:21 old misses pass,35 old passes fail,1 fails in both. Thus the lower maximum does not mean a lower miss count.
+- Source-bound `s6/BARE-ITEM-REVIEW.md` / `pieces-attribution.json` verify all4,608 cells and500 outcomes each without new battles. Thirty-four V5 misses occur at level6/chapter1 and two at level6/chapter3; zero-win fixture floors are retained. The gate stays PARTIAL/MISS; no retune, gate movement or sample substitution. Full S6 source/hash closure remains in the original queue.
