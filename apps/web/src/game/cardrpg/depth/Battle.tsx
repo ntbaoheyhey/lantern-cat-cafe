@@ -74,6 +74,7 @@ export function BattleView({ m }: { m: DepthModel }) {
     autoBattle: true, galleryPreview: !!m.galleryBattle, effectOnly: !!m.galleryBattle && m.galleryEffectOnly,
     cardStatuses: Object.fromEntries(battle.actors.map(actor => [actor.id, lookV2 ? actor.statuses : actor.statuses.map(status => status.id)])),
     cardPresentation: statusView,
+    cardBossCue: lookV2 && !m.galleryEffectOnly && history.events.some(event => event.kind === 'boss-phase' || event.kind === 'boss-finish'),
     cardNumberRows: lookV2 ? Object.fromEntries(results.map(r=>[r.id,r.labels.length])) : undefined,
     cardNumberWidths: lookV2 ? Object.fromEntries(results.map(r=>[r.id,r.width])) : undefined,
     cardMoment: !!m.plan?.ultimate && battle.actors.find(a=>a.id===m.plan?.actorId)?.side==='party' && !m.galleryEffectOnly,

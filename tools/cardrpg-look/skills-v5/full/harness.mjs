@@ -27,9 +27,11 @@ export function audit(){
  const plates=all('.dp-world-plate'),badges=all('.dp-status-badge,.dp-status-more');
  const words=all('.dp-combo-callout'),numbers=all('.dp-float-number');
  const liveStrip=all('.dp-v5-status-strip');
- const fixed=all('.dp-ultimate-moment,.dp-party,.dp-battle-top,.dp-roundbar,.dp-v5-status-strip');
+ const bossCues=all('.dp-v4-boss-cue');
+ const fixed=all('.dp-ultimate-moment,.dp-party,.dp-battle-top,.dp-roundbar,.dp-v5-status-strip,.dp-v4-boss-cue');
  const hit=(a,b)=>a.left<b.right-.5&&a.right>b.left+.5&&a.top<b.bottom-.5&&a.bottom>b.top+.5;
  const overlaps=[];const text=[...words,...numbers];
+ for(const cue of bossCues)for(const other of [...plates,...all('.dp-ultimate-moment')])if(hit(rect(cue),rect(other)))overlaps.push([rect(cue),rect(other)]);
  for(let i=0;i<text.length;i++)for(const b of [...text.slice(i+1),...plates,...fixed])if(hit(rect(text[i]),rect(b)))overlaps.push([rect(text[i]),rect(b)]);
  for(const plate of plates)for(const strip of liveStrip)if(hit(rect(plate),rect(strip)))overlaps.push([rect(plate),rect(strip)]);
  for(let i=0;i<badges.length;i++)for(const b of [...badges.slice(i+1),...badges[i].closest('[data-hp-plate]').querySelectorAll('progress,.dp-party-health>span strong,.dp-world-plate>div>small')])if(hit(rect(badges[i]),rect(b)))overlaps.push([rect(badges[i]),rect(b)]);
