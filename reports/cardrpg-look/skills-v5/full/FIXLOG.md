@@ -82,3 +82,113 @@ Third material luminance0.262–0.364 PASS0.18 across18masks. Enlarged boss clip
 
 ### M2 closure visual review 2026-11-09T04:56Z
 Delivery1280P1 and1024P15 viewed: luminance0.262–0.364 and all projected boundsPASS after rollback. Foes remain visibly pale/flat at1280x720 x795–1130,y350–550 despite the numeric pass. Material attempt budget exhausted; recordPARTIAL surface depth and revisit once inM4 with directional/value separation rather than raising emission. This is not counted as beauty acceptance.
+
+## B-MX-001 2026-11-09T05:05Z MX1 legacy toolkit contracts S2
+Repro batch1 queue pnpm --filter @taskbar-hero/web test:1798PASS/2FAIL. New atlas-only quads were inserted into the legacy sculpted-primitive catalog, whose test requires structural vertices; initial45frame tier selection also replaced existing sustained-window observe semantics.
+Fix attempt1: separate LOOK_PARTICLE_PRIMITIVES and explicit observeWarmup used only by LookPost scene; original exported sculpted catalog, legacy allocation path and observe behavior preserved. Existing tests unchanged. Full failing sample retained in /tmp/cardrpg-v5full-mx/batch1/test.log; verify full gates plus forthcoming parity/casts/cold. Why staged checks missed: staged run tested only recipe contracts, not complete renderer suite.
+
+### B-MX-001 verification
+Full1800unit/type/lint/build/parityPASS after separating new APIs; old tests unchanged. First immutable batch1b artifact proceeds to visual/cost probes.
+
+## B-MX-002 2026-11-09T05:08Z MX2 batch1 visual hierarchy S3
+Round1 reviewed Soot/Velvet/Cinnamon five-frame strips at1440: (1) Soot1 impact still halfway from caster to target, (2) emitted motes too small/dim at impact, (3) Cinnamon3 two opaque apron panels dominate lowerbody, (4) Velvet1/2/3 share a thin purplefan, (5) Soot/Cinnamon ultimate secondary motifs read late/small. Regions per320tile: travelx130–185/y80–110,impacttargetx185–220/y85–135; Cinnamon3x110–155/y80–125.
+Root cause generic projectile core spans impact; .18sprite too small; full1.0cloth repeated twice. Fix round1: separate core landing at.48 from travelend.52, enlarge12burst motes with colour-over-life, shrink/translucent cloth, bespoke spark/cupreticle/wick and needle/candle/stolenflame impact motifs. Immutable first sheet retained. Round2 review/gates pending.
+
+B-MX-002 sourcecheck: round1 recipe requested shrink before that motion existed; typecheck caught2errors. Added the bounded scale envelope1.25→.30 (no event/clock change); failed log retained in batch1c.
+
+## B-MX-003 2026-11-09T05:10Z MX1 allocation/cost attribution S2
+First batch1b cost sample15cues:program count50unchanged,draws<=105; CDP sampling reports per-cast allocations including place/drawRecipe/renderAction, so zero-allocation NOT met. Baseline profile retained. Hypotheses: own numeric/iterator boxing, Three renderer allocations, sampler/harness retainedframes. MX5 will isolate the synchronous effect path afterwarmup and attribute before claimingzero.
+Probe correction: old .56fraction was not the actual impact beat. Cost1b retained; subsequent cost probes conservatively sum projected bounds at impact,secondary,afterglow and keep allthree,using the maximum. It remains an overdrawestimate,notpixeltruth.
+
+### B-MX-002 round2 visual review / final small corrections
+Viewed all three batch1d strips (15cues×5frames). Correct landing and smaller Cinnamon apron now visible. Remaining five flaws in320px tiles: Soot1 ember secondary barely reads(x190–218,y110–140); Soot3 wick behind target(x187–212,y90–127); Velvet2 candles small(x188–215,y110–135); Cinnamon4 dome too solid(x115–160,y105–138); Soot/Velvet afterglow still ring-heavy(x180–215,y130–145). Enlarged selected sprite silhouettes, moved/accented wick beside body, softened Cinnamon dome. Ring-heavy afterglow retainedPARTIAL for MX3. No event or duration changes; batch1e verification registered.
+
+## B-MX-004 2026-11-09T05:17Z MX2 batch2 visual hierarchy S3
+Round1 reviewed Sorrel/Inkcap/Brioche15×5strips. Five flaws at320tile: Sorrel4 overlapping teapots across allies(x50–165,y95–145); Inkcap2 spore cap hidden in foe(x188–210,y92–128); Brioche1 bell merges with foe(x188–223,y93–130); Inkcap3 paper silhouette still flat(x140–165,y100–126); Brioche4 floor stars crowd mat(x50–165,y128–153). Three fixes: smaller translucent teapots, brighter off-body spore cap, larger off-body bell. Paper shading and star crowding remain for round2/MX3. Probe had measured configured layers but not perceived separation; individual five-frame review catches this.
+
+### MX batch1e visual closure and probe precision
+Viewed15tile peak sheet after round2 tweaks: Soot cup/wick, Velvet needle/candle/flame, Cinnamon cup/apron/cloche are distinguishable, but small spark and ring-heavy residue remainPARTIAL; no7.5beauty claim yet. Cost15cues105draws/102467tris, programs50→50, conservativeoverdraw0.363; allocationsremainMISS. Corrected face harness to beat2+55% (same actualimpact as sheets), replacing guessed56%total duration before registered final face runs.
+
+## B-MX-005 2026-11-09T05:21Z MX2 batch3 visual hierarchy S3
+Round1 reviewed allPanko/Mallow/Clover15×5strips. Five flaws at320tile: Panko2 bread mostly behind cat(x110–147,y98–132); Mallow3 flat star lacks hot-core beat(x188–215,y115–137); Clover3 leaf/wreath fan crowds feet(x55–162,y125–151); Panko4 oven too small/buried(x110–150,y112–141); Clover4 greenhouse peak is late secondary(x55–165,y60–145). First3fixed with forward bread,hotcore particles,smaller translucent wreath; oven offset improved too. Late greenhouse intentionally carries afterglow, MX3 timing audit pending; no score claim from layercount alone.
+
+### B-MX-004 round2 review
+Viewed all15×5batch2bframes: Sorrel team teapots no longer blanket allies, Inkcap cap and Brioche bell moved outside silhouettes. Remaining five refinements: Sorrel1 spoon thin, Sorrel3 moon looks like two braces, Inkcap1 thread thin, Inkcap3 paper very flat, Brioche4 mat stars bright. First three are legible atfullsize but moderate identity, retained for MX3 whole-sheet assessment; no new batch2regression observed. Two review rounds complete; final cost/casts/faces queued.
+
+### B-MX-005 round2 review
+Reviewed Panko/Mallow/Clover15×5 frames frombatch3b. Bread clearer beside ally, hotcore visible, rinse wreath less dense. Remaining five flaws: Panko4 oven still small(x125–150/y115–145 per320tile), Mallow1 whisk mostly line(x185–210/y100–125), Clover4 fullgreenhouse later than impact, Clover3 leafy aftermath busy(x60–165/y125–150), smallparticles difficult at320thumb. Two review rounds complete; ultimate phase and effectcontrast remainMX3; no7.5claim.
+
+## B-MX-006 2026-11-09T05:29Z MX2 batch4 hierarchy S3
+Repro batch4a Marigold/Mochi/Biscuit15×5frames: Marigold1 seeds under foe(x188–215/y115–140), Marigold4 large opaque team cans(x50–165/y110–145), Mochi2 lantern behindally(x110–145/y100–130), Biscuit4 bread obscures foe feet(x185–222/y115–142), Mochi4 floor swirls crowded. Cause generic fullsize team cores with lateoffset. Round1fix larger offbodyseeds/lantern and smaller translucent cans/bread. Floor swirls retainedforMX3. Verify nextsheet/cost/casts/faces/parity, prior artifact immutable.
+
+## B-MX-007 2026-11-09T05:29Z MX3 ultimate timing S3
+Observed on batch3b/batch4a: Clover greenhouse reachesfullheight insecondary, ultimate teamfootrings dominate, gather/rimspans entire600–780msanticipation. Fix: render-onlylast200msgather/rim, earlierglassgrowth, lowergroundalpha/size, brighterimpactmotes, smallerMochiroof. Originalactiondurations unchanged; all12ultimate strips+casts+faces withstatuses verify next.
+MX4 chapter1: preserve7enemy×2silhouettes/timing with hostileplum/red, instancedyarn/embers, Spoolchargegroundpulse and Yarnwave. Otherenemyfallbacks unchanged.
+
+### B-MX-007 round1 cinema review / attempt2
+Viewedall12fiveframes: greenhouse nowfullatimpact. Remainingflaws per320tile: Mochiroof mostlymaskedbybody(x60–150/y110–140); Sootlantern behindfoe(x190–215/y95–125); Pankooven onlythinoutline(x125–150/y120–145); Inkcapcanopy hidden(x185–220/y100–128); Biscuitbread stillflatlate(x185–220/y115–140). Cause depthshadow and genericcentral anchor. Moveuniqueultmotifs beside/aboveunits; advanceparticles; use Biscuitrollingpair, softenBriochecollars/Marigoldground. Noevent/castduration change. Keepcinema1, verifycinema2 andfaces.
+
+### B-MX-006 round2 review
+Viewed batch4b all15 five-frame strips: seed/lantern/roller silhouettes separate better. Five retained flaws per320tile: Marigold ground leaves crowd feet(x55–160/y125–150), Mochi lantern looks flat(x135–160/y100–135), Mochi4 roof still overlaps its fellow roof(x65–145/y100–140), Biscuit4 sparse impact(x190–220/y110–135), passive glows repeat ground rings. Cinema2 reduces ground layers and moves signatures; remaining surface depth is PARTIAL, not a7.5claim.
+### B-MX-007 round2 review
+Viewed12ultimate peak tiles: Clover glass strongly distinct; Mallow flame readable; Mochi/Panko/Soot signatures now beside silhouettes. Inkcap veil still faint, Velvet needles thin, Biscuit impact sparse; repeated ground spirals remain. Keep these visible limitations in audit; cinema2 faces/casts pending. No timing/rules changes.
+### B-MX-003 attempt1
+Isolated600frame sampler after1200warmframes: Mochi3047256B/Soot900248B/Yarn773820B, including repeated CSS Color.setStyle regex allocations and target-array reset. Cache parsed recipe/status colours during preparation, reuse target slots and pass cached colours to pooled lights. Sampling includes JS numeric boxing; zero remains unproven until measured. Repro allocation.mjs on immutable cinema2; newopt1artifact+allocation/casts/cold pending. Prior sample retained.
+
+MX5 colour API typecheck caught two legacy illuminate callers in unchanged tests. Optional cached colours preserve the six-argument API; renderer supplies prepared colours. opt1 typecheck failure retained, opt1b verifies.
+
+### B-MX-007 attempt3 material/ground attribution
+Cinema2 review traced faint Inkcap/Velvet signatures to glass/soft opacity multiplied twice, and repeated circles to the universal B2 impact ring beneath an already-authored ground layer. Third scoped fix removes that duplicate ring for authored recipes only, gives ink-spore a rounded canopy/stem with ceramic depth, bends Velvet veil as cloth with preserved per-layer alpha, widens its three needles. Face masks still gate all fragments; no action clock/events changed. Register cinema3 fullcat sheet and changedInkcap/Velvetcost/casts/faces, plus final P-shot checks; earlier artifacts kept.
+
+### B-MX-003 attempt1 measured / attempt2
+Cached-colour opt1b sampler: Mochi2300084B,Soot457684B,Yarn388844B (24.5%,49.2%,49.8%lower); setStyle/regex samples removed,zero stillMISS. Remaining attribution in render/drawRecipe and begin; replace hot array iterators with indexed loops, preserve rendering order. No numeric/timing changes. Thirdsourceopt2artifact registered; all prior samples kept.
+
+### B-MX-003 attempt2 measured / attempt3
+Indexed loops opt2: isolated600frames Mochi495888B/Soot176076B/Yarn126336B,83.7%/80.4%/83.7% below original. Remaining dominant sampled path drawRecipe (numeric envelopes / property writes); zero remainsMISS. Third scoped attempt hoists target-shared alpha/size and quality density outside particle loop; identical math/order per particle, no timing/event changes. Preserve every sample; if nonzero markPARTIAL at attempt cap.
+
+MX validation queue consolidation05:53UTC: opt1b allocation and cinema1/2 sheet/cost receipts retained. Their pending cast wrappers3919/99502/5950 had no child and never acquired the timing lease; cancelled along with parents2951/97402/99045 before any sample. Current cinema3/opt3 verify changed source; all completed/failed samples remain immutable. Transfer milestone shots/layout/face/UI/rootgates/E2E to opt3 to avoid testing superseded source.
+
+### B-MX-007 cinema3 review at attempt cap
+Viewed all60cat peaks,26enemy peaks and all12cat five-frame strips. Rounded Inkcap cap and Velvet cloth separate more; duplicate B2impact ring removed. Five remaining flaws per320tile: Soot spark/wick small(x190–220/y100–138); Mochi lantern flat(x130–160/y105–140); passive footglows near-identical(x110–150/y120–147); team star/leaf residue busy(x55–165/y120–152); every foe pale-flat(x190–225/y90–140). Three cinematic attempts exhausted; beauty/uniquenessPARTIAL, M4 revisit prioritises monster material and weakest cue identities. Mean and full per-cue re-score inVFX-AUDIT-AFTER.md; no7.5claim.
+
+## B-M3-002 2026-11-09T06:00Z M3 offline boot S1
+Repro delivery1 shots on merge3 artifact a06523737fdb9e4f838a8011520f03618330b9f642a9738d7ac610f94c56939c: window.__depthReview absent after30s; shots empty, no captured pageerror. Paused own dependent delivery/coverage queues before they acquired a lease.
+Hypotheses: offline initialization exception before React, artifact decoder failure, slow initialization. Focused console/DOM/network diagnostic queued under shared lock; do not rerun full samples until attributed/fixed.
+
+### B-MX-003 attempt3 measured PARTIAL
+Opt3 isolated600frame samples Mochi220728B/Soot106500B/Yarn115280B,92.8%/88.2%/85.1% lower than original; zero-allocation stillMISS. Dominant remaining sampled path drawRecipe/place numeric property writes and harness. Three attempts reached; keep exact numbers and no zero claim. Native/cold regression samples queued.
+
+### B-M3-002 attribution / attempt1
+Boot DOM reports null.textContent before first asset. Published A loader now requires model-dictionary + {entry,modules,css}; B builder emits manifest + {js,css}. B-owned build now references its own matching IIFE loader, copied byte-for-byte from validated B #415 lineage with contract comments. No A loader/rules edits. Extend B build smoke check to reject visible loader errors and require model initialization; rebuild live artifact and rerun failed shot/boot gates.
+
+### B-M3-002 verification FIXED 2026-11-09T06:04:43.946845+00:00
+Corrected live artifact20b76874ec7e initializes model in normal/dev modes; no loader/browser errors, live probe absent in normal mode. Evidence /tmp/cardrpg-v5full-m3/merge4/smoke/smoke.json. Original failing merge3artifact and DOM/console receipt retained. Resumed registered coverage3/delivery2 on corrected payload; coverage2 never acquired lease or sampled. Root gates queued; this change alters packaging only.
+
+### Evidence packing correction 2026-11-09T06:13Z
+Raw CDP traces were included by the generic packer and exceeded the80MB evidence cap before staging. Exclude raw -trace.json files; retain originals in /tmp with SHA256 manifest, package extracted per-run summaries. Deduplicated identical previously packed receipts; current56.35MB. No measured sample deleted or repeated.
+
+## B-M3-003 2026-11-09T06:29Z M3 legacy fixture label width S3
+Repro delivery2 shots/collide, P5/1024: one secondary number stack unplaced; legacy status label "Brittle sugar" reserves142px. Other two targets render,0visible overlaps. Full failing receipt retained.
+Hypotheses: A catalog renamed status while stored fixture keeps subtitle (confirmed), changed stage layout, allocator drift. Source statusImpactLabels copies the old note without presentation-name normalization.
+Attempt1 prepared: map known cafe subtitles to the existing plain keyword (Shred) in B-only statusImpactLabels; keep unknown labels verbatim and source events/logs unchanged. Add explicit old/new-name lookup compatibility. Apply after immutable closure source checks finish; verify same cue windows at3widths plus parity/type/lint/unit. No rules edits.
+
+### B-M3 end-state probe attribution 2026-11-09T06:29Z
+Ten original coverage records retain a false `cleared` result based only on actionFrame identity. Focused Oven1 final-action replay: canvas connected but computed visibility hidden through all ancestors, scene suspended,0transient labels,exact final hash,0browser errors (end-state1/end-state.json). This verifies that one result screen, not all ten natural end states. Future natural records check hidden/detached/disposed/next-render separately; originals preserved and described as unverified by their narrower probe, not product leaks.
+
+## B-M3-004 2026-11-09T06:30Z M3 live overlay collision S3
+Visual review delivery2 P1/1440: A BattleSkillsV5 fallback panel x194–1430/y246–330 covers Kettle HP plate and window. It duplicates B badge rows; fixture-only checks never rendered this live-only sibling panel. Existing collider omitted it, so its PASS is incomplete for integration.
+Attempt1 prepared in B battle CSS only: lookV2 active hides duplicate unit-condition rows and moves its existing reaction ticker to a small reserved edge outside the arena. lookV2 OFF/A component unchanged. Extend collider to include the sibling strip versus labels/plates, plus exact registered shot times (P5/1024 narrow missinglabel was outside sampled60Hz instants). Preserve original receipts. Notify A via HEADS-UP; no A-owned edits.
+
+## B-M3-005 2026-11-09T06:32Z M3 live peak draw budget S2
+Repro delivery2 fixed51shots: peak152draws vs130 (and above conditional150), tris<=163043. Whole-cat gallery costs<=109 did not include live enemy roster+many statuses+multi-target pools.
+Hypotheses: more visible model materials, separate active status primitive pools, multi-target authored layer mix. Smallest diagnostic: record renderer call deltas with effects/status/model material categories separately on the failing livePshots. No draw gate increase; simplify secondary layers or batch materials only after attribution. Attempts0; original shots retained. Verify failing shots+changed-cuecasts/cold+parity/faces.
+
+## B-MX-008 2026-11-09T06:43Z MX/M3 root unit timeout S2
+Repro: nice10 pnpm test in B and integration worktrees during root closure checks. Same untouched StageLayout test `holds every boss-sensitive panel at the pre-request state, then releases with the confirmed banner` exceeded5000ms in both (5901/5635ms); remaining1800/1852web tests passed. Original logs preserved in opt3/delivery2.
+Hypotheses: concurrent jsdom CPU load (rank1; both suites created186/197environments), pre-existing async flake, B regression. Isolate only that unchanged test twice sequentially in each worktree; no timeout/test edits. Native casts recorded concurrently remain retained; any timing miss requires attribution, never replacement.
+
+### B-MX-008 isolated results FLAKY
+The unchanged StageLayout test passed twice sequentially in each worktree (four isolated runs, each <3s including process startup). Original full-suite timeout logs retained; no test/timeout changes. Root typecheck/lint/build passed. Full suite result is recorded as1800/1801 B and1852/1853 live plus2/2 isolated passes each, not a clean full-run claim.
+
+### B-M3-005 contact-pool first measurement 2026-11-09T07:16:07.877941+00:00
+Fix2 repeated the failing fixed pack after source1902d3cf7: peak146draws (152before),163043tris;51shots+1095cue-window frames at3widths remain0overlap/outside/unplaced;98face masks0offenders,contrast4.618. Source gates/parity pass. Conditional150exception is not accepted until queued casts/cold complete;130 remains a disclosed miss.
