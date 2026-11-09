@@ -1,8 +1,8 @@
 # Skills V5 lane A state
 Base: d22f47cb8 (A5 closing tip, DRAFT406; paused WIP c7b0c498f preserved).
 Runtime baseline: 0e1e15180108b443ce2e615ea54272b907cc8bb0.
-Phase: S4 published DRAFT412; S5 TRAIN balance next. User explicitly resumed2026-11-09.
-Branch: codex/cardrpg-v5a-s4-2026-11-09; S3 closing tip4cfab8846.
+Phase: S5 TRAIN closure after S7 DRAFT414; user resumed2026-11-09.
+Branch: codex/cardrpg-v5a-s5-2026-11-09 fast-forwarded from S4 to S7 closingab8bc377f.
 Done: git status/log recorded; handoff found under memory/; rules/outboxes read.
 Done: ON/OFF artifacts match 20,929,841 bytes and 9e25f238 / 9158b51e.
 Done: no live A5 job found; inherited recent commits are the documented paused WIP.
@@ -34,3 +34,23 @@ Done: S3 DRAFT411 on410, runtime053fe383d/evidence8a894a35f.
 S4: six first-attempt gates1785web/1260rules/421E2E/build PASS; both hashes exact. HUD spacing fix queued S7.
 Finder .DS_Store external drift observed; untouched/uncommitted; two JSON leftovers exact.
 Done: S4 DRAFT412 on411, runtimea7e372edd/fixture4a7c1e65f/evidence479d96468.
+S5 before metrics complete10500battles: original4500 share14.283/25.356%, normal12.036r, Mark0%; 180prefix separate.
+S5 before fourth-slot500 complete:13/384misses,worst41pp (A5:63/88.8); display correlations.442/.228/.139MISS.
+S5 coordinators4163/6688/10014 run bounded balance/economy/elites+bare; no duplicate samples.
+S5 isolated policy-horizon registered; new V5 premise, old Scent/pressure trials stay rejected.
+S7 runtime5a709205e; sixgates PASS1785web/1260rules/420+1E2E; closurePASS; DRAFT414 on412/evidencee7a78fd6f.
+S5 static display320-grid registered on V5 full500 fourth-slot receipts; zero new combat.
+S5 policy-horizon REJECTED: multi14.283→14.212%,normal12.036→12.383r; Mark0→33.311%.
+S5 Mark-strike successor registered (Black cup hit55→85); no production rules changed.
+S7 typecheck attempt1 union narrowing failed; corrected guard, original retained. Build path correction uses existing a5 Pillow venv.
+S5 Mark-strike REJECTED: multi16.206%,support27.500%,normal12.502>12.036; no adoption.
+S7 meta UI attempt1 used locked replay for placement; harness corrected to practice fixture, runtime unchanged.
+S5 full500 cats62.41–93.12%,all top picks; coherent21.67pp; named crew gaps MISS; display320fits all rejected.
+S8 home-session/report/register-home drafted, NOT RUN; preserves Home03 policy,110s slice targets, V5 counterfactuals.
+B lease granted by suspending own waiting queues, all resumed unchanged after B acquired; receipt/tmp/cardrpg-v5a-b-handoff.json.
+S7 no active validation job; meta/fallback UI PASS3widths; build20,958,952bytes/bca56f23612d.
+S7 UI reviewed4captures; combo contrast10.3748,fallback14.2011. Fallback only static shell readiness.
+S7 priority: same S5 queues resumed after isolated E2E PASS; receipt/tmp/cardrpg-v5a-s7-priority.json.
+S8 default build prepared/tmp/cardrpg-v5a-s8-default-dist; main ref verified340f88b9. No profiling/Home run yet.
+S6 register-acceptance/acceptance-series/numeric-gates drafted, NOT RUN. Missing A5 registration disclosed; exact PROMPT-A5 gates copied by future registration.
+S7 E2E420/421; legacy idle-clock test failed5s, isolated recovery PASS unchanged source; original retained.
