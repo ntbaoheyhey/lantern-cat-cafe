@@ -17,4 +17,4 @@ Inherited A4/A5 draft chain (preserved from A5-REPORT.md before its S6 refresh):
 
 |S8 cadence/startup|codex/cardrpg-v5a-s8-2026-11-09|[422](https://github.com/ntbaoheyhey/taskbar-hero/pull/422) on417|6772eb343 / c828691be; all observations and six source gates complete, pacing/cadence/performance misses retained|
 
-S6 paired acceptance and Z delivery follow S8. The acceptance block20001–20500 remains unused until its registration is written and source/tool/case hashes are checked. B presentation drafts are separately owned and are not implicitly integrated into this stack.
+S6 paired acceptance20001–20500 is running from registration3061b085a, committed before sampling. Both metric scopes are complete; remaining registered scopes and Z delivery are pending. B presentation drafts are separately owned and are not implicitly integrated into this stack.

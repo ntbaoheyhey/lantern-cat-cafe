@@ -1,9 +1,9 @@
 # Skills V5 lane A state
 Base: d22f47cb8 (A5 closing tip/DRAFT406); runtime baseline0e1e15180108b443ce2e615ea54272b907cc8bb0.
-Phase: S8 observations/source closure complete; pre-S6 repair revisit recorded; S8 DRAFT422 published; register S6 next.
-Branch: codex/cardrpg-v5a-s8-2026-11-09; baseS5 b21a91c3586a72f7fa46d6670c218d286b59dd90/DRAFT417.
+Phase: S6 paired acceptance running; original runner33012 retained, then Z/report delivery.
+Branch: codex/cardrpg-v5a-s6-2026-11-09; baseS8 1d7c6f68e/DRAFT422.
 Selected runtime: 6772eb34330881dd06b82e8016b0ab61b16daefe; no production changes in S8.
-Order: completed R1/S0/S1/S2/S3/S4/S7/S5 -> current S8 -> S6; never restart a completed phase.
+Order: completed R1/S0/S1/S2/S3/S4/S7/S5/S8 -> current S6; never restart a completed phase.
 User ADDENDUM-SKILLDESIGN.md saved; D1-D6/self-repair/weighted score apply through S6.
 Completed drafts:406A5,407S0,408S1,410S2,411S3,412S4,414S7,417S5,422S8; details STACK.md.
 R1: C1 administration closed; inherited1783web/1192rules/421E2E,165UIchecks not repeated without cause.
@@ -32,11 +32,11 @@ S8 registration:110slease targets,7shandoffs,Home03public-clickpolicy,naturalx1;
 S8 default candidate:/tmp/cardrpg-v5a-s8-selected-default-dist; originalmain340f88b9 reverified unchanged.
 S8 Home first30:deadtime+10.441%vsH0;466.403s losses;capnotice14.638min. Both cadence gatesMISS.
 S8 review: PRE-S6-REVISIT.md records every open group; earnedboss130.129s and fixedYarn280.037sMISS.
-Acceptance20001–20500 UNUSED; register both modes/source/tools/cases before first use.30001/40001 unused.
-S6 tools preflightPASS; once-onlyZ includes ready-scene fallback/HP-plate diagnostic; no samples yet.
-Next: publish S8draft+ledger/outbox; branch/register/run pairedS6 on20001–20500.
+Acceptance20001–20500 RUNNING pid33012/session30958; registration3061b085a; both modes;30001/40001 UNUSED.
+S6 probes both complete:multi32.660%,support29.793%,normal13.242r,ultimate77.667%; remaining matrices running.
+S6 D3:30/32,D4:10/12,D5PASS; Mochi2 .442%,Panko2 .353%; FRESH-EYES review and guide prepared.
 Then S6: all numeric scopes both modes,sixgates,offline skills-v5.html,Zpack,guide/playtest,fresh-eyes,report/outbox.
-B08:56read: separateDRAFT420/421;45/45natural cue coverage; retain narrow ending/performance limits.
+B10:06read: S8refresh separateDRAFT420; no runtime delta/newdesignREQUEST; retain presentation boundary.
 B request guardian underuse disclosureADOPTED; no unanswered designREQUEST. A130draw target unchanged.
 A owns no B renderer paths; no renderer integration implicit. Main docs/cardrpg3/index.html staysA4.
 Untouchable uncommitted:.DS_Store and a5/b1/display-context-40/{partial,results}.json; unchanged by A.
