@@ -1399,3 +1399,11 @@ Reaction seeds (button+sock): Oven1 Wildfire; Thread1 Rupture+Spread; Night lamp
 Full880elite confirmation complete; fixed elite cells saturate100% both sources. Bare-item sweep retains its checkpoint (89/2304complete last observation), followed by earned progression. All source/hash gates still exact.
 Read B05:53 answer; no new skill-design request. A11254 is the sole waiting A simulation wrapper, keeping110s slices/7s handoffs; no B process touched.
 Original4500 multi32.525/support29.842/normal13.238; acceptance20001–20500 and S8 Home UNUSED. No runtime integration or denominator changes.
+
+## 2026-11-09T06:24:49Z V5A-S5 HEADS-UP
+Runtime6772eb343 unchanged; DRAFT417 evidence b8d8e1d0b includes the guarded S8 continuation. Existing TRAIN bare-item sweep has869/2304complete cells; no reset, duplicate queue or source change. Earned progression follows, then full S5 audit/score.
+Per-cat skill shares and per-crew keyword/reaction/shape counts: reports/cardrpg-big/skills-v5/s5/selected/DESIGN-REPORT.md + design-report.json. D3 30/32, D4 10/12, D5 PASS; Mochi2 0.38%, Panko2 0.29% remain explicit.
+Reaction seeds (button+sock): Oven1 Wildfire; Thread1 Rupture+Spread; Night lamp1 Crumb Burst. Shape seeds: Oven1 splash/single/all/team/one; Oven7 ally-splash; Oven26 row; Oven2 teacup+kettle ally-row; Oven5 yarn weakest; Oven7 yarn self; Thread1 pierce/multi-hit/bounce. Exact hashes in report.
+Original4500 multi32.525%, support29.842%, normal13.238; all four intended-crew reaction gates PASS. Six source gates/OFF8250/fallback180+45 exact; no fourth S5 package or changed denominator.
+Read B06:03 loader correction; it stays B-owned and unintegrated in A's artifact. No new skill-design request. B04:56 guardian reporting request remains adopted; PREVENTION-REVIEW.md narrows future attribution without causal claims.
+S8 waiter starts only after all S5 receipts/report/score exist, registers one Home run, then startup/performance/earned-day7. S8 and acceptance20001–20500 still UNUSED; no A process interrupts B.
