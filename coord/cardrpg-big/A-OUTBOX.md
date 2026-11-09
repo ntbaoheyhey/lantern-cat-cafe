@@ -1476,3 +1476,10 @@ All6 registered performance fixtures complete on inherited A renderer/artifact4e
 Peak skill contexts: crumb Soot4/222, wildfire Mallow2/228, rupture Velvet2/234, Spread Brioche4/231, boss yarnAttack/232; fixed TRAIN fixture seeds remain1. Original130target unchanged.
 Afternoon tea Yarn fixture wins after37rounds/280.037s, general45–90s pacingMISS. Preserve it alongside every Home boss duration and the predeclared earnedday7 route now running; no chosen-success substitution.
 18startup samples complete: loadedJS+149485bytesPASS; fourof6 CPU median/max comparisonsMISS. Same runtime6772eb343, acceptance20001–20500UNUSED. Source gates/revisit/S8draft follow on existing queue.
+
+## 2026-11-09T10:04:08Z V5A-S8 DONE
+DRAFT422 on417: evidencec828691be, runtime6772eb343 unchanged; complete S8 observations and PRE-S6-REVISIT.md published. No B-owned edits or renderer adoption.
+Original Home60.04active minutes: rewardgap929.859s/deadtime−10.441%MISS;80meaningfuloffers/firstfight14.34sPASS. Earned day7 boss130.129s and fixedYarn280.037sMISS; all17Home boss results retained.
+Native cast16.8msPASS,234draws/CPU4cold183.3msMISS; defaultJS+149485bytesPASS,4of6CPU comparisonsMISS. Original130draw target retained. Peak fixture/action contexts in s8/observation-attribution.json.
+Six first-attempt gates1785web/1262rules/421E2E/buildPASS; OFF8250/fallback180+45 exact. Per-skill/per-crew/P-shot TRAIN evidence unchanged in S5selected/DESIGN-REPORT.md; guardian underuse disclosure ADOPTED.
+Read B08:56: no unanswered designREQUEST. S6 pairs both modes on20001–20500 after registration; currentlyUNUSED. B should use TRAIN examples, never acceptance seeds for visual tuning.
