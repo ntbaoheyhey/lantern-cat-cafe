@@ -401,3 +401,94 @@ Addendum received during S5. TRAIN remains 1–500. Existing baseline slices con
 - Ranked hypotheses (not isolated causal estimates): The exact numeric condition is not met in the retained rows; combat outcomes can alter earned progression; no individual causal contribution has yet been isolated.
 - Smallest next fix: Inspect the first failing registered row before proposing a narrowly scoped TRAIN change; retain the current threshold and all samples. Three S5 design packages are already retained; no fourth candidate is introduced by this report.
 - Verification/status: full affected matrices and both mode-compatibility checks are recorded in `reports/cardrpg-big/skills-v5/s5/selected/receipt-audit.json` and `reports/cardrpg-big/skills-v5/s5-selected/audit.json`; current gate remains **PARTIAL / MISS**. Passing source/hash checks do not override it.
+
+## S8-BOSS-REPORT-SCOPE — preserve every natural boss duration (FIXED reporting; measurements pending)
+- Reproduce: inspect `s8-report.mjs` and `delivery-report.mjs` before S8 aggregation. The report originally displayed the earned day7 pacing gate but omitted the durations already measured in the fixed performance fixtures and Home journey.
+- Measure/attribute: the raw fixtures and Home battles retain all durations; omission was in report selection, not simulation or sampling.
+- Ranked hypotheses: 1. Reporter focused on inherited A5 earned-day7 gate; 2. performance receipts were summarized only as frame/draw statistics.
+- Smallest fix: show all six natural fixture durations and every Home boss result, compare both boss pools separately with the original45–90s target, and include any miss in the Appendix pacing row. Keep the registered earned-day7 self-score component unchanged and identified.
+- Verification: reporter scripts pass syntax checks. The existing queue will aggregate these same receipts; no new battle, selected success, source-rule change or replacement sample. S8 source/hash closure remains required.
+
+## S8-ATTRIBUTION-PATHS — checkout prefixes looked like new modules (FIXED)
+- Reproduce: initial `observation-attribution.mjs` diagnostic compared literal manifest module IDs; retained output is `s8/observation-attribution-paths-attempt-1.json`. It counted686 additions/658 removals in the first config.
+- Attribute: baseline manifest IDs include the temporary checkout prefix; candidate IDs are repository relative. Raw loaded-byte and CPU gates were unaffected.
+- Ranked hypotheses: 1. Path normalization mismatch (confirmed by paired module names); 2. real changed module membership (evaluate after normalization).
+- Smallest fix: normalize only checkout prefixes, retaining repository/node_modules suffixes and virtual IDs; preserve all original chunk rows. Re-read the same18 observations and6 performance receipts. No browser or combat rerun.
+- Verification: diagnostic syntax and all source-receipt assertions pass after correction; before output retained. Shipping runtime, OFF/ON hashes and original startup/performance gates are unchanged; S8 closure remains required.
+
+## S8-GATE reward-cadence — PARTIAL
+- Reproduce: the single registered observation in `s8/home/metrics.json`; aggregate with `node tools/cardrpg-big/skills-v5/s8-report.mjs`. Unchanged gate: 30-minute reward gap <=300s.
+- Measure: before "Home03 723s"; observed "929.859s". Historical evidence is not substituted for current measurements.
+- Ranked hypotheses (not established causes): 1. Long loss/retry intervals; 2. fixed bot upgrade policy; 3. sparse visible rewards in the reached route.
+- Smallest next fix: Attribute the longest retained gap to its exact route and outcome before changing rewards. No second hour without a justified change. This report does not apply a runtime change or run a new sample.
+- Verification/status: S8 six source gates and OFF8250/fallback180+45 compatibility remain exact in `s8/audit.json`; all affected observations are retained in `s8/observations.json`. **PARTIAL / MISS**; revisit the original evidence before S6, without moving gates.
+
+## S8-GATE combat-dead-time — PARTIAL
+- Reproduce: the single registered observation in `s8/home/metrics.json`; aggregate with `node tools/cardrpg-big/skills-v5/s8-report.mjs`. Unchanged gate: combat walltime reduction >=40%.
+- Measure: before "Home03 2.0%"; observed "-10.440741855978247%". Historical evidence is not substituted for current measurements.
+- Ranked hypotheses (not established causes): 1. More actions from helpers and support; 2. repeated losses; 3. the natural playback clock.
+- Smallest next fix: Compare action counts and losses in the original timeline. Broad cooldown changes remain rejected; no unmeasured speed change. This report does not apply a runtime change or run a new sample.
+- Verification/status: S8 six source gates and OFF8250/fallback180+45 compatibility remain exact in `s8/audit.json`; all affected observations are retained in `s8/observations.json`. **PARTIAL / MISS**; revisit the original evidence before S6, without moving gates.
+
+## S8-GATE earned-boss — PARTIAL
+- Reproduce: the single registered observation in `s8/day7/checks.json`; aggregate with `node tools/cardrpg-big/skills-v5/s8-report.mjs`. Unchanged gate: earned day7 boss won in 45–90s.
+- Measure: before "A5 paired fixture 64.921s"; observed {"bossVictory":true,"boss45to90s":false}. Historical evidence is not substituted for current measurements.
+- Ranked hypotheses (not established causes): 1. Helper/sustain action count; 2. earned crew power; 3. route outcome before reaching the boss.
+- Smallest next fix: Inspect the fixed account route and actual boss actions; no best-account selection or rounds-to-seconds substitution. This report does not apply a runtime change or run a new sample.
+- Verification/status: S8 six source gates and OFF8250/fallback180+45 compatibility remain exact in `s8/audit.json`; all affected observations are retained in `s8/observations.json`. **PARTIAL / MISS**; revisit the original evidence before S6, without moving gates.
+
+## S8-GATE boss-pacing-fixed — PARTIAL
+- Reproduce: the single registered observation in `s8/observations.json`; aggregate with `node tools/cardrpg-big/skills-v5/s8-report.mjs`. Unchanged gate: every observed boss45–90s; fixed and Home pools reported separately.
+- Measure: before "General V5 boss target45–90s"; observed [{"case":"boss-native","cpu":1,"enemies":["yarn-giant"],"seconds":280.0368999999911,"result":"party","source":"reports/cardrpg-big/skills-v5/s8/performance/boss-native/checks.json"}]. Historical evidence is not substituted for current measurements.
+- Ranked hypotheses (not established causes): 1. Helper/sustain action count; 2. party kit and earned power; 3. first-use loading before playback.
+- Smallest next fix: Inspect the exact retained boss actions and report every loss. This additional report of the original general pacing target does not replace the earned-day7 gate or change the registered self-score. This report does not apply a runtime change or run a new sample.
+- Verification/status: S8 six source gates and OFF8250/fallback180+45 compatibility remain exact in `s8/audit.json`; all affected observations are retained in `s8/observations.json`. **PARTIAL / MISS**; revisit the original evidence before S6, without moving gates.
+
+## S8-GATE boss-pacing-home — PARTIAL
+- Reproduce: the single registered observation in `s8/observations.json`; aggregate with `node tools/cardrpg-big/skills-v5/s8-report.mjs`. Unchanged gate: every observed boss45–90s; fixed and Home pools reported separately.
+- Measure: before "General V5 boss target45–90s"; observed [{"index":3,"seed":3280124206,"enemies":["yarn-giant"],"seconds":68.174,"result":"enemy"},{"index":6,"seed":3057134794,"enemies":["yarn-giant"],"seconds":88.392,"result":"party"},{"index":9,"seed":3593217473,"enemies":["rain-spool"],"seconds":64.53,"result":"enemy"},{"index":12,"seed":2256061393,"enemies":["rain-spool"],"seconds":89.967,"result":"enemy"},{"index":15,"seed":30332408,"enemies":["rain-spool"],"seconds":81.018,"result":"enemy"},{"index":18,"seed":899726880,"enemies":["rain-spool"],"seconds":83.999,"result":"enemy"},{"index":21,"seed":188593055,"enemies":["rain-spool"],"seconds":78.715,"result":"enemy"},{"index":24,"seed":126583848,"enemies":["rain-spool"],"seconds":73.245,"result":"party"},{"index":27,"seed":3425957772,"enemies":["pantry-crown"],"seconds":98.922,"result":"party"},{"index":30,"seed":2542255639,"enemies":["yarn-giant"],"seconds":61.611,"result":"party"},{"index":33,"seed":1245215347,"enemies":["rain-spool"],"seconds":85.154,"result":"enemy"},{"index":36,"seed":3483962368,"enemies":["rain-spool"],"seconds":83.868,"result":"enemy"},{"index":39,"seed":3859915983,"enemies":["rain-spool"],"seconds":70.967,"result":"enemy"},{"index":42,"seed":511631122,"enemies":["rain-spool"],"seconds":62.32,"result":"enemy"},{"index":45,"seed":1732749953,"enemies":["rain-spool"],"seconds":68.855,"result":"enemy"},{"index":48,"seed":2868178150,"enemies":["rain-spool"],"seconds":69.705,"result":"enemy"},{"index":51,"seed":1281318595,"enemies":["rain-spool"],"seconds":81.589,"result":"enemy"}]. Historical evidence is not substituted for current measurements.
+- Ranked hypotheses (not established causes): 1. Helper/sustain action count; 2. party kit and earned power; 3. first-use loading before playback.
+- Smallest next fix: Inspect the exact retained boss actions and report every loss. This additional report of the original general pacing target does not replace the earned-day7 gate or change the registered self-score. This report does not apply a runtime change or run a new sample.
+- Verification/status: S8 six source gates and OFF8250/fallback180+45 compatibility remain exact in `s8/audit.json`; all affected observations are retained in `s8/observations.json`. **PARTIAL / MISS**; revisit the original evidence before S6, without moving gates.
+
+## S8-GATE draws — PARTIAL
+- Reproduce: the single registered observation in `s8/observations.json`; aggregate with `node tools/cardrpg-big/skills-v5/s8-report.mjs`. Unchanged gate: peak draw calls <=130.
+- Measure: before "Earlier B fixture evidence is a separate renderer"; observed 234. Historical evidence is not substituted for current measurements.
+- Ranked hypotheses (not established causes): 1. Helper count; 2. overlapping effects; 3. visible actor geometry.
+- Smallest next fix: Provide the exact peak fixture/action to lane B; do not omit helpers from the test. This report does not apply a runtime change or run a new sample.
+- Verification/status: S8 six source gates and OFF8250/fallback180+45 compatibility remain exact in `s8/audit.json`; all affected observations are retained in `s8/observations.json`. **PARTIAL / MISS**; revisit the original evidence before S6, without moving gates.
+
+## S8-GATE offline-cold — PARTIAL
+- Reproduce: the single registered observation in `s8/performance/opening-cpu4/checks.json`; aggregate with `node tools/cardrpg-big/skills-v5/s8-report.mjs`. Unchanged gate: offline CPU4 opening max <=120ms.
+- Measure: before "A4 166.6ms"; observed "183.29999999999995ms". Historical evidence is not substituted for current measurements.
+- Ranked hypotheses (not established causes): 1. Renderer compilation/upload; 2. JS decode/evaluation; 3. scheduler variance in the single observation.
+- Smallest next fix: Inspect original cold frames and retain the sample. A measured runtime change is required before any new profile. This report does not apply a runtime change or run a new sample.
+- Verification/status: S8 six source gates and OFF8250/fallback180+45 compatibility remain exact in `s8/audit.json`; all affected observations are retained in `s8/observations.json`. **PARTIAL / MISS**; revisit the original evidence before S6, without moving gates.
+
+## S8-GATE startup-1280-cpu1-max — PARTIAL
+- Reproduce: the single registered observation in `s8/startup/summary.json`; aggregate with `node tools/cardrpg-big/skills-v5/s8-report.mjs`. Unchanged gate: candidate task CPU max <= current main.
+- Measure: before 311.402; observed 318.32099999999997. Historical evidence is not substituted for current measurements.
+- Ranked hypotheses (not established causes): 1. Different loaded modules or evaluation; 2. native scheduling variance; 3. initialization work after the onboarding click.
+- Smallest next fix: Use all three original paired observations and their chunk membership. Do not reroll an outlier or claim statistical equivalence. This report does not apply a runtime change or run a new sample.
+- Verification/status: S8 six source gates and OFF8250/fallback180+45 compatibility remain exact in `s8/audit.json`; all affected observations are retained in `s8/observations.json`. **PARTIAL / MISS**; revisit the original evidence before S6, without moving gates.
+
+## S8-GATE startup-1280-cpu4-median — PARTIAL
+- Reproduce: the single registered observation in `s8/startup/summary.json`; aggregate with `node tools/cardrpg-big/skills-v5/s8-report.mjs`. Unchanged gate: candidate task CPU median <= current main.
+- Measure: before 1051.76; observed 1090.3229999999999. Historical evidence is not substituted for current measurements.
+- Ranked hypotheses (not established causes): 1. Different loaded modules or evaluation; 2. native scheduling variance; 3. initialization work after the onboarding click.
+- Smallest next fix: Use all three original paired observations and their chunk membership. Do not reroll an outlier or claim statistical equivalence. This report does not apply a runtime change or run a new sample.
+- Verification/status: S8 six source gates and OFF8250/fallback180+45 compatibility remain exact in `s8/audit.json`; all affected observations are retained in `s8/observations.json`. **PARTIAL / MISS**; revisit the original evidence before S6, without moving gates.
+
+## S8-GATE startup-1440-cpu1-median — PARTIAL
+- Reproduce: the single registered observation in `s8/startup/summary.json`; aggregate with `node tools/cardrpg-big/skills-v5/s8-report.mjs`. Unchanged gate: candidate task CPU median <= current main.
+- Measure: before 303.124; observed 303.649. Historical evidence is not substituted for current measurements.
+- Ranked hypotheses (not established causes): 1. Different loaded modules or evaluation; 2. native scheduling variance; 3. initialization work after the onboarding click.
+- Smallest next fix: Use all three original paired observations and their chunk membership. Do not reroll an outlier or claim statistical equivalence. This report does not apply a runtime change or run a new sample.
+- Verification/status: S8 six source gates and OFF8250/fallback180+45 compatibility remain exact in `s8/audit.json`; all affected observations are retained in `s8/observations.json`. **PARTIAL / MISS**; revisit the original evidence before S6, without moving gates.
+
+## S8-GATE startup-1440-cpu1-max — PARTIAL
+- Reproduce: the single registered observation in `s8/startup/summary.json`; aggregate with `node tools/cardrpg-big/skills-v5/s8-report.mjs`. Unchanged gate: candidate task CPU max <= current main.
+- Measure: before 305.74399999999997; observed 306.993. Historical evidence is not substituted for current measurements.
+- Ranked hypotheses (not established causes): 1. Different loaded modules or evaluation; 2. native scheduling variance; 3. initialization work after the onboarding click.
+- Smallest next fix: Use all three original paired observations and their chunk membership. Do not reroll an outlier or claim statistical equivalence. This report does not apply a runtime change or run a new sample.
+- Verification/status: S8 six source gates and OFF8250/fallback180+45 compatibility remain exact in `s8/audit.json`; all affected observations are retained in `s8/observations.json`. **PARTIAL / MISS**; revisit the original evidence before S6, without moving gates.
