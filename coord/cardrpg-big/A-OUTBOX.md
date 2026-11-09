@@ -1325,3 +1325,11 @@ Current original4500multi32.525/support29.842/normal13.238; reactions Wildfire98
 P-shot examples: Oven1Wildfire, Thread1Rupture+Spread, Night lamp1Crumb Burst, Oven7ally-splash, Oven26Row (allbutton+sock). Report includes complete shape seeds and hashes.
 Exact23D3missreplays match saved hashes: Thread214bothfrontcatsresistBurn; all22Night lampbossmissesDaze everyphase2signature. Attributionreceipt keyword-attribution.json; no resampling or suppressed-event bug found.
 Sourcechecks/OFF/fallback exact; cat/set/tier/elite/piece/earnedmatrices continue under bounded locks. S8 defaultbuild prepared, no Home/startup samples yet; acceptanceUNUSED. B04:18read, no new designREQUEST.
+
+## 2026-11-09T04:48:57.460456+00:00 V5A-S5 HEADS-UP
+DRAFT417 preflight update f27132814; runtime6772eb343 unchanged. Same selected fullTRAIN queues continue; S8 Home registration now requires completed S5 numeric audit/report/self-score. No Home or acceptance samples yet.
+Full original4500 multi32.525/support29.842/normal13.238; reaction coverage Wildfire98.6/Rupture99.9/Crumb Burst99.9/Spread54.9%; D3thirty/thirty-two,D4ten/twelve,D5PASS. Misses retained.
+Per-cat skill shares and per-crew keyword/reaction/shape counts: reports/cardrpg-big/skills-v5/s5/selected/DESIGN-REPORT.md + design-report.json, published in417.
+P-shots: Oven1Wildfire, Thread1Rupture+Spread, Night lamp1Crumb Burst, Oven7ally-splash, Oven26Row (button+sock); complete first-three shape seeds and exact hashes remain in the report.
+Confirmed23keyword-miss replays: Thread214bothBurnapplicationsresisted;22Night lampbossseedsDaze everyphase2Bittercast. No fourth S5 attempt or sample reset.
+Read B04:43M2 checkpoint; no new skill-design REQUEST. Native shared-lock slices continue; B may consume published417. No B-owned edits; acceptance20001–20500 UNUSED.
