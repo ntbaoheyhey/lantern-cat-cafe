@@ -1,11 +1,11 @@
 # Skills V5 lane A state
 Base: d22f47cb8 (A5 closing tip/DRAFT406); runtime baseline0e1e15180108b443ce2e615ea54272b907cc8bb0.
-Phase: S8 observations/source closure complete; pre-S6 repair revisit recorded; publish S8 then register S6.
+Phase: S8 observations/source closure complete; pre-S6 repair revisit recorded; S8 DRAFT422 published; register S6 next.
 Branch: codex/cardrpg-v5a-s8-2026-11-09; baseS5 b21a91c3586a72f7fa46d6670c218d286b59dd90/DRAFT417.
 Selected runtime: 6772eb34330881dd06b82e8016b0ab61b16daefe; no production changes in S8.
 Order: completed R1/S0/S1/S2/S3/S4/S7/S5 -> current S8 -> S6; never restart a completed phase.
 User ADDENDUM-SKILLDESIGN.md saved; D1-D6/self-repair/weighted score apply through S6.
-Completed drafts:406A5,407S0,408S1,410S2,411S3,412S4,414S7,417S5; details STACK.md.
+Completed drafts:406A5,407S0,408S1,410S2,411S3,412S4,414S7,417S5,422S8; details STACK.md.
 R1: C1 administration closed; inherited1783web/1192rules/421E2E,165UIchecks not repeated without cause.
 S0: original180 reproduces9.1043%multi/19.3730%support/17.2667rounds; baseline ON180+45 recorded.
 S1-S4:8keywords,7shapes,4reactions,12kits/enemies/policy,events-v2 and THC15 migration implemented.
