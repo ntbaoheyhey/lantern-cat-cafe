@@ -1,3 +1,4 @@
+import { beforeActionV5, consumeDazeV5, defenseV5, receivedV5, statusIdV5, statusRuleV5, tickStatusesV5, type StatusRuntimeV5 } from './skills-v5/statuses';
 import { clone } from '../internal';
 import { DEFAULT_PLAN, crewThresholds, enemyGuideV4, openingCrewBonus, validPlan } from './gameplay-v4';
 import { GEAR_BY_ID, SETS } from './equipment';
@@ -27,14 +28,15 @@ export function dispel(b: Battle, source: Actor, target: Actor, kind: 'buff' | '
   record(b, source, target, 'dispel', before - target.statuses.length, `Removed ${kind}s`);
 }
 export function applyStatus(b: Battle, source: Actor, target: Actor, id: StatusId, count = 1) {
-  const rule = STATUS_BY_ID[id];
+  if(b.initial.skillsV5)id=statusIdV5(id);
+  const rule = b.initial.skillsV5?statusRuleV5(id,STATUS_BY_ID[id]):STATUS_BY_ID[id];
   if (target.hp <= 0) return false;
   const control = id === 'drowsy' || id === 'hush';
   if (control && (target.bonuses.controlImmuneUntil ?? 0) >= b.round) {
     record(b, source, target, 'immune', 0, `${target.name} recovered control resistance`);
     return false;
   }
-  if (rule.kind === 'debuff' && roll(b) >= clamp(9000 + source.effectHit - target.effectResist, 1000, 9800)) {
+  if (rule.kind === 'debuff' && roll(b) >= clamp(9000 + source.effectHit - target.effectResist - (b.initial.skillsV5&&id==='drowsy'&&ENEMY_BY_ID[target.catalogId]?.tier==='boss'?3000:0), 1000, 9800)) {
     record(b, source, target, 'resist', 0, `${target.name} resisted ${rule.name}`);
     return false;
   }
@@ -47,10 +49,11 @@ export function applyStatus(b: Battle, source: Actor, target: Actor, id: StatusI
   status.stacks = Math.min(rule.cap, status.stacks + count);
   status.remaining = rule.duration + (id === 'steep' ? Math.min(2,source.bonuses.statusDuration??0) : 0) + (id === 'scald' && hasEffect(source,'long-scald') ? 1 : 0) + (id === 'scald' && source.side === 'party' ? boonValue(b,'scaldDuration') : 0) + (id === 'steep' && target.catalogId === 'marigold' ? 1 : 0);
   if(b.v4&&id==='scald')status.remaining=Math.min(4,status.remaining);
+  if(b.initial.skillsV5)status.remaining=rule.duration;
   if (control && ENEMY_BY_ID[target.catalogId]?.tier === 'boss') status.remaining = 1;
   status.source = source.id;
   status.appliedRound = b.round;
-  if (control) target.bonuses.controlImmuneUntil = b.round + 1;
+  if (control&&!b.initial.skillsV5) target.bonuses.controlImmuneUntil = b.round + 1;
   record(b, source, target, 'status', status.stacks, rule.name);
   if (source.side === 'party') {
     if (id === 'steep' && hasEffect(source,'steep-cozy')&&(!b.v4||!source.bonuses.steepCozyUsed)){if(b.v4)source.bonuses.steepCozyUsed=1;applyStatus(b,source,target,'cozy');}
@@ -65,14 +68,16 @@ export function applyStatus(b: Battle, source: Actor, target: Actor, id: StatusI
 function shield(b: Battle, source: Actor, target: Actor, amount: number) {
   if(amount<=0)return;
   amount*=1+(source.bonuses.shieldBp??0)/10000;
+  if(b.initial.skillsV5)amount=receivedV5(target,amount);
   const actual = Math.min(Math.round(amount), Math.max(0, Math.floor(target.maxHp * .6) - target.shield));
   target.shield += actual;
   record(b, source, target, 'shield', actual);
-  if (source.catalogId === 'mochi' && source.id !== target.id) source.shield = Math.min(Math.floor(source.maxHp * .6), source.shield + 12);
+  if (source.catalogId === 'mochi' && source.id !== target.id) source.shield = Math.min(Math.floor(source.maxHp * .6), source.shield + (b.initial.skillsV5?receivedV5(source,12):12));
 }
 function heal(b: Battle, source: Actor, target: Actor, amount: number) {
   if (target.hp <= 0 || amount<=0) return;
   amount*=1+(source.bonuses.healingBp??0)/10000;
+  if(b.initial.skillsV5)amount=receivedV5(target,amount);
   if (source.catalogId === 'cinnamon' && target.hp < target.maxHp / 2) shield(b, source, target, 15);
   const actual = Math.min(target.maxHp - target.hp, Math.round(amount));
   const overflow = Math.max(0, Math.round(amount) - actual);
@@ -135,7 +140,7 @@ function damage(b: Battle, source: Actor, target: Actor, power: number, pressure
   const marked = b.v4 && stacks(target,'scent') ? (hasEffect(source,'marked-break')?3:0)+boonValue(b,'markedDirect') : 0;
   const attack = source.attack * power / 100 + extraDamage + conditional + marked;
   const critical=(bonus.critBp??0)>0&&roll(b)<bonus.critBp! ? 1+(bonus.critDamageBp??5000)/10000 : 1;
-  const mitigation = 80 / (80 + target.defense);
+  const mitigation = 80 / (80 + (b.initial.skillsV5?defenseV5(target):target.defense));
   const cozy = 1 - stacks(target, 'cozy') * .1;
   const rattled = 1 - stacks(source, 'rattled') * .15;
   const scent = stacks(target, 'scent') ? 1.2 : 1;
@@ -177,7 +182,9 @@ function damage(b: Battle, source: Actor, target: Actor, power: number, pressure
   const reflect = stacks(target, 'riposte') * (16+(target.bonuses.counterPower??0)+(hasEffect(target,'counter-plus')?(b.v4?3:8):0)) + (target.catalogId === 'kettle-knight' && target.shield > 0 ? 12 : 0);
   if (reflect && source.hp > 0) loseHp(b, target, source, reflect, 'reflect');
 }
+const statusRuntimeV5:StatusRuntimeV5={heal,loseHp,record,rule:id=>STATUS_BY_ID[id],isBoss:actor=>ENEMY_BY_ID[actor.catalogId]?.tier==='boss'};
 export function tickStatuses(b: Battle, actor: Actor) {
+  if(b.initial.skillsV5)return tickStatusesV5(b,[actor],statusRuntimeV5);
   if (actor.hp <= 0) return;
   for (const s of [...actor.statuses]) {
     const rule = STATUS_BY_ID[s.id], source = b.actors.find(a => a.id === s.source) ?? actor;
@@ -205,7 +212,9 @@ function enemyActor(id: string, index: number, chapter: number, tutorial = false
   return { ...actorBase(), id:`foe-${index}-${id}`,catalogId:id,name:e.name,side:'enemy',role:e.role,row:e.row,flavour:e.flavour,hp:Math.round(stats.hp*scale),maxHp:Math.round(stats.hp*scale),attack:Math.round(stats.attack*scale*(tutorial ? 1 : [2.7, 1.95, 1.6][chapter - 1]!)),defense:stats.defense,initiative:5-index%3,effectHit:0,effectResist:e.tier==='boss'?1200:500,breakCap:e.breakCap,skills:[] };
 }
 export function createBattle(setup: BattleSetup): Battle {
+  if(setup.skillsV5&&!setup.gameplayV4)throw Error('Skills V5 requires automatic Gameplay V4');
   const initial = clone(setup);
+  if(!initial.skillsV5)delete initial.skillsV5;
   if(setup.gameplayV4) {
     if(setup.plan && !validPlan(setup.plan)) throw Error('Invalid standing plan');
     initial.plan = clone(setup.plan ?? DEFAULT_PLAN);
@@ -398,7 +407,8 @@ function finishAction(b: Battle, actor: Actor) {
   b.queue=b.queue.filter(id=>id!==actor.id&&b.actors.some(a=>a.id===id&&a.hp>0));
   checkResult(b);
   if (!b.result && !b.queue.length) {
-    for (const a of b.actors) {tickStatuses(b,a);if(b.v4){checkResult(b);if(b.result)break;}}
+    if(b.initial.skillsV5)tickStatusesV5(b,b.actors,statusRuntimeV5);
+    else for (const a of b.actors) {tickStatuses(b,a);if(b.v4){checkResult(b);if(b.result)break;}}
     checkResult(b);
     if (!b.result) beginRound(b);
   }
@@ -422,7 +432,10 @@ function actionDescription(b: Battle, actor: Actor, target: Actor, skill: Skill)
 }
 export function act(b: Battle, choice: Choice): boolean {
   if (!legalChoices(b).some(c=>c.actorId===choice.actorId&&c.skillId===choice.skillId&&c.targetId===choice.targetId)) return false;
-  const actor=currentActor(b)!, skill=skillById(choice.skillId)!, target=b.actors.find(a=>a.id===choice.targetId)!;
+  const actor=currentActor(b)!;
+  if(b.initial.skillsV5&&!beforeActionV5(b,actor,statusRuntimeV5)){b.choices.push({...choice});record(b,actor,actor,'action',0,'Bleed prevented the action',choice.skillId);finishAction(b,actor);return true;}
+  let skill=skillById(choice.skillId)!, target=b.actors.find(a=>a.id===choice.targetId)!;
+  if(b.initial.skillsV5&&consumeDazeV5(b,actor,statusRuntimeV5)){const basic=skillById(actor.skills[0]!)!;skill={...basic,effects:basic.effects.map(e=>({...e,...(e.power!==undefined?{power:e.power*.5}:{})}))};target=targets(b,actor,skill)[0]??target;}
   const description = actionDescription(b, actor, target, skill);
   b.choices.push({...choice});
   actor.bonuses.healProc=0;actor.bonuses.cleanseProc=0;
@@ -482,6 +495,8 @@ function spawnThread(b: Battle, source: Actor) {
 export function enemyAct(b: Battle): boolean {
   const actor=currentActor(b);
   if (!actor||actor.side!=='enemy'||b.result) return false;
+  if(b.initial.skillsV5&&!beforeActionV5(b,actor,statusRuntimeV5)){record(b,actor,actor,'enemy-action',0,'Bleed prevented the action');finishAction(b,actor);return true;}
+  const dazed=b.initial.skillsV5&&consumeDazeV5(b,actor,statusRuntimeV5);
   const intent=b.intents.find(i=>i.actorId===actor.id)!;
   const spec=ENEMY_BY_ID[actor.catalogId]!;
   const party=living(b,'party');
@@ -491,7 +506,7 @@ export function enemyAct(b: Battle): boolean {
   const target=shelter??reachable.find(a=>a.id===intent.targetId)??weakest(reachable);
   if (!target) {checkResult(b);return false;}
   shield(b,actor,actor,stacks(actor,'glaze')*20);
-  const impaired=intent.interrupted||stacks(actor,'drowsy')>0;
+  const impaired=intent.interrupted||stacks(actor,'drowsy')>0||!!dazed;
   const quiet=stacks(actor,'hush')>0;
   const signature=intent.signature&&!impaired;
   const creditSuppression = () => {
@@ -499,8 +514,8 @@ export function enemyAct(b: Battle): boolean {
     const controller=b.actors.find(a=>a.id===actor.statuses.find(s=>s.id===(impaired?'drowsy':'hush'))?.source);
     if(controller?.bonuses.crewSuppress&&!controller.bonuses.crewSuppressed){controller.bonuses.crewSuppressed=1;heal(b,controller,controller,controller.bonuses.crewSuppress);}
   };
-  if(b.v4&&impaired) creditSuppression();
-  if (impaired) damage(b,actor,target,40,0,b.v4&&spec.mechanic!=='steal');
+  if(b.v4&&impaired&&!b.initial.skillsV5) creditSuppression();
+  if (impaired) damage(b,actor,target,b.initial.skillsV5?(spec.tier==='boss'?100:50):40,0,b.v4&&spec.mechanic!=='steal');
   else if (b.v4&&signature&&quiet&&['heal','shield'].includes(spec.mechanic)) {
     // Suppression spends the committed utility turn; it does not replace it with a hit.
     creditSuppression();
