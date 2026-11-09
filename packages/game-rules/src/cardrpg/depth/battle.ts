@@ -59,6 +59,7 @@ export function applyStatus(b: Battle, source: Actor, target: Actor, id: StatusI
   status.appliedRound = b.round;
   if (control&&!b.initial.skillsV5) target.bonuses.controlImmuneUntil = b.round + 1;
   record(b, source, target, 'status', status.stacks, rule.name);
+  if(b.initial.skillsV5)emitGameplayEvent(b,{kind:'status-applied',statusId:id,stacks:status.stacks,sourceId:source.id,actorId:source.id,targetId:target.id,text:`${target.name}: ${rule.name} ×${status.stacks}.`});
   if (source.side === 'party') {
     if (id === 'steep' && hasEffect(source,'steep-cozy')&&(!b.v4||!source.bonuses.steepCozyUsed)){if(b.v4)source.bonuses.steepCozyUsed=1;applyStatus(b,source,target,'cozy');}
     if(id==='scald'&&(!b.v4||source.bonuses.wickRound!==b.round)){if(b.v4)source.bonuses.wickRound=b.round;if(hasEffect(source,'unique:warmwick'))gearGrant(b,source,source,'unique:warmwick','heal',b.v4?4:6);if(b.v4&&hasEffect(source,'scald-charge'))gearGrant(b,source,source,'scald-charge','heal',6);}
@@ -448,6 +449,7 @@ function actionDescription(b: Battle, actor: Actor, target: Actor, skill: Skill)
 export function act(b: Battle, choice: Choice): boolean {
   if (!legalChoices(b).some(c=>c.actorId===choice.actorId&&c.skillId===choice.skillId&&c.targetId===choice.targetId)) return false;
   const actor=currentActor(b)!;
+  if(b.initial.skillsV5)b.procRounds.v5ActionSequence=(b.procRounds.v5ActionSequence??0)+1;
   if(b.initial.skillsV5&&!beforeActionV5(b,actor,statusRuntimeV5)){b.choices.push({...choice});record(b,actor,actor,'action',0,'Bleed prevented the action',choice.skillId);finishAction(b,actor);return true;}
   let skill=skillById(choice.skillId,b.initial.skillsV5)!, target=b.actors.find(a=>a.id===choice.targetId)!;
   if(b.initial.skillsV5&&consumeDazeV5(b,actor,statusRuntimeV5)){const basic=skillById(actor.skills[0]!,true)!;skill={...basic,effects:basic.effects.map(e=>({...e,...(e.power!==undefined?{power:e.power*.5}:{})}))};target=targets(b,actor,skill)[0]??target;}
@@ -513,6 +515,7 @@ function spawnThread(b: Battle, source: Actor) {
 export function enemyAct(b: Battle): boolean {
   const actor=currentActor(b);
   if (!actor||actor.side!=='enemy'||b.result) return false;
+  if(b.initial.skillsV5)b.procRounds.v5ActionSequence=(b.procRounds.v5ActionSequence??0)+1;
   if(b.initial.skillsV5&&!beforeActionV5(b,actor,statusRuntimeV5)){record(b,actor,actor,'enemy-action',0,'Bleed prevented the action');finishAction(b,actor);return true;}
   const dazed=b.initial.skillsV5&&consumeDazeV5(b,actor,statusRuntimeV5);
   const intent=b.intents.find(i=>i.actorId===actor.id)!;

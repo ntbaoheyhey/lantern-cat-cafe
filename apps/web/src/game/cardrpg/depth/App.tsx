@@ -1,3 +1,4 @@
+import { BattleSkillsV5 } from './SkillsV5';
 import { DiscoveryCelebrationV4 } from './JourneyV4';
 import { showReviewTools } from "./player-mode";
 import { lazy, Suspense, useEffect, useLayoutEffect, useRef, useState, useSyncExternalStore, type CSSProperties } from 'react';
@@ -35,9 +36,9 @@ const navigation: [Screen, string, string][] = [
   ['journal', '▤', 'Collection journal'], ['inventory', '◇', 'Equipment'], ['gacha', '✉', 'Invitations'], ['codex', '▤', 'Field guide'],
   ['relics', '◈', 'Fuji Relics'], ['save', '⚙', 'Save & settings'], ['evidence', '↔', 'Before / after'],
 ];
-export default function DepthApp({ offline = false, gameplayV4 = false }: { offline?: boolean; gameplayV4?: boolean }) {
+export default function DepthApp({ offline = false, gameplayV4 = false, skillsV5 = false }: { offline?: boolean; gameplayV4?: boolean; skillsV5?: boolean }) {
   const lookV2 = useSyncExternalStore(subscribeLookV2, isLookV2, () => false);
-  const [m] = useState(() => new DepthModel(offline, gameplayV4));
+  const [m] = useState(() => new DepthModel(offline, gameplayV4, skillsV5));
   useSyncExternalStore(m.subscribe, m.snapshot);
   const reviewTools = showReviewTools(activeGameplayV4(m.state));
   const app = useRef<HTMLDivElement>(null);
@@ -81,6 +82,7 @@ export default function DepthApp({ offline = false, gameplayV4 = false }: { offl
         {m.screen === 'codex' && <Codex v4={activeGameplayV4(m.state)} />}{m.screen === 'relics' && <Relics m={m} />}{m.screen === 'save' && <SaveSettings m={m} />}{m.screen === 'evidence' && <Evidence />}</Suspense>
       </div></main></div></div>
     <DiscoveryCelebrationV4 m={m}/>
+    {m.showBattle&&m.visualBattle?.initial.skillsV5&&<BattleSkillsV5 battle={m.visualBattle}/>}
     {m.sceneStarted && <div className="dp-battle-shell"><Suspense fallback={<p role="status">Preparing the battle…</p>}><BattleView m={m} /></Suspense></div>}
     {offline && reviewTools && m.labPerformance && <Suspense fallback={null}><FrameOverlay m={m} /></Suspense>}
   </div></CompanionPreviewProvider>;

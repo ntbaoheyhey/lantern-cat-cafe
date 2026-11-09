@@ -2,16 +2,16 @@ import type { Battle, BattleEvent } from '@taskbar-hero/game-rules/src/cardrpg/d
 import type { TurnEvent, TurnEventKind } from '@taskbar-hero/game-rules/src/squad/turn/types';
 import { createActionPlan, EFFECT_REGISTRY } from '../../squad/turn3d/effects';
 
-const damageKinds = new Set(['damage', 'dot', 'detonate', 'shared', 'reflect']);
+const damageKinds = new Set(['reaction-damage','damage', 'dot', 'detonate', 'shared', 'reflect']);
 const eventTypes: Record<string, TurnEventKind> = {
-  damage: 'damage', dot: 'damage', detonate: 'damage', shared: 'damage', reflect: 'damage',
+  'reaction-damage':'damage', damage: 'damage', dot: 'damage', detonate: 'damage', shared: 'damage', reflect: 'damage',
   heal: 'heal', revive: 'heal', survive: 'heal', shield: 'shield', defeat: 'death',
   status: 'status_apply', expire: 'status_expire', phase: 'boss_phase', summon: 'spawn',
 };
 
 /** Copy only presentation-owned mutable fields. Rules keep their authoritative battle. */
 export function snapshotBattle(battle: Battle): Battle {
-  return { ...battle, actors: structuredClone(battle.actors), intents: structuredClone(battle.intents),
+  return { ...battle, ...(battle.initial.skillsV5&&battle.v4?{v4:{...battle.v4,events:[...battle.v4.events]}}:{}), actors: structuredClone(battle.actors), intents: structuredClone(battle.intents),
     queue: [...battle.queue], acted: [...battle.acted], log: [...battle.log] };
 }
 
@@ -36,6 +36,7 @@ export function splitPresentation(before: Battle, after: Battle, skillId: string
   impact.queue = [...before.queue];
   impact.intents = structuredClone(before.intents);
   impact.log = [...before.log, ...actionLog];
+  if(after.initial.skillsV5&&impact.v4)impact.v4.events=impact.v4.events.filter(e=>e.version===1||e.logIndex<=before.log.length||e.logIndex<=impact.log.length&&e.stage!=='round-end');
   for (const actor of impact.actors) {
     const previous = before.actors.find(candidate => candidate.id === actor.id);
     if (!previous) continue;

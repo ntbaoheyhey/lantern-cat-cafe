@@ -9,7 +9,7 @@ const out=`reports/cardrpg-big/skills-v5/${phase}/gates`;await mkdir(out,{recurs
 const steps=[['typecheck',['typecheck']],['lint',['lint']],['web-unit',['--filter','@taskbar-hero/web','test']],['rules',['--filter','@taskbar-hero/game-rules','test']],['e2e',['--filter','@taskbar-hero/web','test:e2e','--workers=4']],['build',['build']]];
 const rows=JSON.parse(await readFile(`${out}/checks.json`,'utf8').catch(e=>{if(e.code==='ENOENT')return '[]';throw e;}));
 const head=execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim();
-const sourcePaths=[...new Set(execFileSync('git',['ls-files','-co','--exclude-standard','apps/web/src','packages','apps/web/e2e','apps/web/tests'],{encoding:'utf8'}).trim().split('\n'))].filter(p=>/\.(ts|tsx|css|json)$/.test(p)).sort();
+const sourcePaths=[...new Set(execFileSync('git',['ls-files','-co','--exclude-standard','apps/web/src','packages','apps/web/e2e','apps/web/tests'],{encoding:'utf8'}).trim().split('\n'))].filter(p=>/\.(ts|tsx|css|json)$/.test(p)&&!p.includes('/skills-v5/fixtures/')).sort();
 const sourceHashes=async()=>Object.fromEntries(await Promise.all(sourcePaths.map(async p=>[p,createHash('sha256').update(await readFile(p)).digest('hex')])));
 const sources=await sourceHashes(),sourceDigest=createHash('sha256').update(JSON.stringify(sources)).digest('hex');
 await writeFile(`${out}/source-${sourceDigest}.json`,JSON.stringify(sources,null,2));
