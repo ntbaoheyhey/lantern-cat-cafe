@@ -1,5 +1,5 @@
 # Skills V5 full run
-NOW MX closure complete; draft PR being published; M3 contact batching verified 146draws (152before), perf/E2E/startup pending; M4 candidates remain in /tmp.
+NOW M4 attempt1: directional monster material, boss-only scale/framing, passive and Soot identity revisit. M3 fix2 perf/E2E/startup still queued; never modify live source during checks.
 BASE #415 f9924699cab2fa5b8029baa1158f789ee44ddfda; fullPROMPT/RULES apply, no agents/models/desktop/Docker.
 DONE V0#409,V01#413,V3#415; never redo completed samples.
 DONE M1#416 source54d3e29b2; M2#418 tip58adf21de,source2e6ee6425; fullmilestone reports underfull/m1,m2.
@@ -44,3 +44,4 @@ RESUMED 2026-11-09T07:05:38Z: re-read full prompt/rules/state/open FIXLOG/outbox
 LATEST M3fix2:51shots+1095frames0overlap/outside/unplaced;98face masks0offenders;contrast4.618;12UIcasesPASS;146draws/163043tris. Conditional150ceiling awaitsperf,130targetstillMISS.
 
 DONE MX closure:421/421E2E,root type/lint/buildPASS,StageLayoutflake2/2isolated;startup0Three/model andbytes/memberssameM2;fixture20sclipcaptured,sampledreviewrecorded. Selfscore7.01/beauty6.233PARTIAL.
+DONE MX draft#419 tip3a8ed4c08; M4 branch stacked onMX. M4 started2026-11-09T07:19Z,df152GiBfree; attempt1source gates then locked immutable probes.

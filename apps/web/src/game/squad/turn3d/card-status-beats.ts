@@ -1,4 +1,4 @@
-import type { VisualStatusId } from './card-status-data';
+import { STATUS_IDENTITIES, type VisualStatusId } from './card-status-data';
 import type { ReactionBeat, LandingBeat } from './card-v5-events';
 import { STATUSES } from '@taskbar-hero/game-rules/src/cardrpg/depth/catalog';
 import type { BattleEvent } from '@taskbar-hero/game-rules/src/cardrpg/depth/contract';
@@ -9,6 +9,13 @@ export interface StatusBeat { kind:'apply'|'tick'|'expire'|'burst'; statusId:Vis
 export interface StatusPresentation { offsets:Map<string,number>; beats:StatusBeat[]; kinds:Map<number,string>; bursts:string[]; reactions?:ReactionBeat[]; landings?:LandingBeat[]; tickIds?:Map<number,string>; bitterTargets?:Set<string> }
 const types:Record<string,string> = { damage:'damage',dot:'damage',detonate:'damage',shared:'damage',reflect:'damage',heal:'heal',revive:'heal',survive:'heal',shield:'shield',defeat:'death',status:'status_apply',expire:'status_expire',phase:'boss_phase',summon:'spawn' };
 const byName = new Map(STATUSES.map(status => [status.name,status.id]));
+// Older fixture logs keep cafe subtitles even when the live catalogue uses
+// plain keyword names. This is a presentation lookup; source logs stay exact.
+for (const [id, identity] of Object.entries(STATUS_IDENTITIES)) {
+  if (!byName.has(identity.subtitle)) byName.set(identity.subtitle, id as VisualStatusId);
+}
+const statusWords = new Map(Object.values(STATUS_IDENTITIES).flatMap(identity =>
+  [[identity.subtitle, identity.name], [identity.name, identity.name]]));
 function matches(event:TurnEvent, log:BattleEvent|undefined) {
   return log && types[log.kind] === event.type && log.actorId === event.actorId && event.targetIds.includes(log.targetId)
     && log.amount === event.amount && (log.text === event.note || event.note === 'Clutch heal');
@@ -54,7 +61,7 @@ export function statusImpactLabels(plan:EffectPlan, targetId:string, presentatio
     const dot=presentation.kinds.get(e.seq)==='dot',numeric=['damage','heal','shield'].includes(e.type);
     const existing=numeric?labels.find(x=>x.type===e.type&&x.dot===dot&&x.statusId===presentation.tickIds?.get(e.seq)&&Math.sign(x.amount)===Math.sign(e.amount)):undefined;
     if(existing){existing.amount+=e.amount;existing.hits++;}
-    else labels.push({...e,hits:1,dot,statusId:presentation.tickIds?.get(e.seq),bitter:e.type==='heal'&&presentation.bitterTargets?.has(targetId)});
+    else labels.push({...e,note:(e.type==='status_apply'||e.type==='status_expire')?(statusWords.get(e.note ?? '')??e.note):e.note,hits:1,dot,statusId:presentation.tickIds?.get(e.seq),bitter:e.type==='heal'&&presentation.bitterTargets?.has(targetId)});
   }
   return labels;
 }

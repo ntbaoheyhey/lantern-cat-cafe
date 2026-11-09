@@ -347,3 +347,7 @@
 .dp-v5look .dp-feel-lab .dp-lab-gallery{position:absolute;top:80px;bottom:110px;right:0;width:272px;max-height:none;padding:9px;overflow:auto;margin:0;border-radius:8px}
 .dp-v5look .dp-feel-lab:has(.dp-lab-gallery)>button{display:none}
 .dp-v5look .dp-lab-gallery .dp-lab-header h2{display:none}
+/* lookV2 owns status badges and an in-flow footer ticker. The sibling rules
+   fallback remains unchanged when lookV2 is off. */
+.dp-app[data-look-v2="true"]:has(.dp-v5look:not(.dp-hidden))>.dp-v5-status-strip{display:none}
+.dp-v5look .dp-action-caption .dp-v5-combo-ticker{max-width:48%;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;color:#f4db95}

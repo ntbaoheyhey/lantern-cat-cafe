@@ -12,10 +12,11 @@ try{for(const [width,height]of [[1024,600],[1280,720],[1440,900]]){
  const page=await browser.newPage({viewport:{width,height},deviceScaleFactor:1});page.on('pageerror',e=>result.errors.push(String(e)));await open(page,artifact);
  for(const row of cases){await apply(page,row);
   await page.evaluate(fn=>{window.__v5Audit=eval('('+fn+')')},audit.toString());
-  const frames=await page.evaluate(async()=>{
+  const frames=await page.evaluate(async fixedAt=>{
    const m=window.__depthReview,plan=m.plan,start=plan.beats[2].start-100,stop=Math.min(plan.duration-1,start+1000),frames=[];
-   for(let t=start;t<=stop;t+=1000/60){m.animationAt=t;m.notify(false);await new Promise(requestAnimationFrame);const s=window.__depthScene;s.render({...s.view(),fixedTime:3.2,paused:true},0);s.dirty=false;await new Promise(requestAnimationFrame);frames.push(window.__v5Audit());}
+   const times=[];for(let t=start;t<=stop;t+=1000/60)times.push(t);if(Number.isFinite(fixedAt)&&!times.some(t=>Math.abs(t-fixedAt)<.01))times.push(fixedAt);times.sort((a,b)=>a-b);
+   for(const t of times){m.animationAt=t;m.notify(false);await new Promise(requestAnimationFrame);const s=window.__depthScene;s.render({...s.view(),fixedTime:3.2,paused:true},0);s.dirty=false;await new Promise(requestAnimationFrame);frames.push(window.__v5Audit());}
    return frames;
-  });result.rows.push({id:row.id,width,frames});console.log(JSON.stringify({id:row.id,width,frames:frames.length,overlaps:frames.reduce((n,f)=>n+f.overlaps.length,0),unplaced:frames.filter(f=>f.unplaced.length).length}));
+  },row.frame?.at);result.rows.push({id:row.id,width,frames});console.log(JSON.stringify({id:row.id,width,frames:frames.length,overlaps:frames.reduce((n,f)=>n+f.overlaps.length,0),unplaced:frames.filter(f=>f.unplaced.length).length}));
  }await page.close();
 }}finally{await browser.close();await writeFile(out+'/collisions.json.gz',gzipSync(JSON.stringify(result)))}

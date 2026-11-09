@@ -7,12 +7,14 @@ export function styleReadableEnemy(model: T.Object3D, id: string) {
   model.traverse(node => {
     if (!(node instanceof T.Mesh)) return;
     const eye = /eye/.test(node.name);
+    const trim = /handle|cuff|spindle|needle|crown|helm/.test(node.name);
+    const ceramic = /teacup|kettle/.test(id);
     const materials = Array.isArray(node.material) ? node.material : [node.material];
     for (const material of materials) {
       if (!(material instanceof T.MeshStandardMaterial)) continue;
-      material.color.set(eye ? '#ffe0b2' : '#ddb0c8');
+      material.color.set(eye ? '#ffe0b2' : trim ? '#cfa68a' : '#ddb0c8');
       if(!eye){material.emissive.set('#d294aa');material.emissiveIntensity=.78;}
-      material.roughness = eye ? .34 : .84;
+      material.roughness = eye ? .34 : ceramic ? .48 : .84;
       if (eye) { material.emissive.set('#ff9d48'); material.emissiveIntensity = .22; }
       if (!material.userData.b2Enemy) {
         material.userData.b2Enemy = true;
@@ -22,10 +24,13 @@ export function styleReadableEnemy(model: T.Object3D, id: string) {
           shader.fragmentShader = shader.fragmentShader.replace('#include <emissivemap_fragment>', `
             #include <emissivemap_fragment>
             float foeRim = pow(1. - abs(dot(normal, normalize(vViewPosition))), 2.5);
-            totalEmissiveRadiance += vec3(.48,.10,.17) * foeRim;
+            // Broad authored key-to-shadow relief retains a bright readable contour.
+            float foeKey = smoothstep(-.35, .8, dot(normal, normalize(vec3(-.6,.85,1.0))));
+            totalEmissiveRadiance *= .42 + .68 * foeKey;
+            totalEmissiveRadiance += vec3(.26,.10,.17) * foeRim;
           `);
         };
-        material.customProgramCacheKey = () => `${key}-readable-plum-rim-2`;
+        material.customProgramCacheKey = () => `${key}-readable-plum-relief-3`;
       }
     }
     if (eye) node.scale.multiply(new T.Vector3(1.14,1.2,1.04));

@@ -192,3 +192,6 @@ The unchanged StageLayout test passed twice sequentially in each worktree (four 
 
 ### B-M3-005 contact-pool first measurement 2026-11-09T07:16:07.877941+00:00
 Fix2 repeated the failing fixed pack after source1902d3cf7: peak146draws (152before),163043tris;51shots+1095cue-window frames at3widths remain0overlap/outside/unplaced;98face masks0offenders,contrast4.618. Source gates/parity pass. Conditional150exception is not accepted until queued casts/cold complete;130 remains a disclosed miss.
+
+## B-M4-001 2026-11-09T07:19Z M4 material/boss/identity revisit S3
+Fresh review M3fix2 key8shots×2widths: opponents remain uniformly pink (1440 x800–1300/y300–680); boss hierarchy below2x; passive footglows repeat; Soot wick small; greenhouse ground bright. Revisit worst3 within M4: directional normal-key emission and warm trim, boss-only scale/aim, smaller footglow plus off-body passive motifs/Soot wick. Source label/contact fixes from M3 carried unchanged. Register attempt1; retain pre-change artifacts. Check same13enemy denominator,9readabilityshots,51fixedshots/3width collisions/faces/contrast,14changedcuescost/casts andcold; parity/rootgates. No inferred pass.
