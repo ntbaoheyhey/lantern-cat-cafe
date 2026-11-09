@@ -198,3 +198,9 @@ Fresh review M3fix2 key8shots×2widths: opponents remain uniformly pink (1440 x8
 
 ### M4 legacy-type compatibility correction
 First B-only root type/lint caught visual alias lookup inferred as old rules StatusId (without snag/bitter); same runtime code typed clean on liveS5. Declare the presentation Map<string,VisualStatusId> explicitly. No runtime/event change. Preserve failedlogs; rerun only type/lint after source group completes. This is a transplant compatibility fix, not changed rules.
+
+### B-M3-005 conditional draw allowance / measured perf
+M3 fix2 crowded first/repeat P4/P8/P15 at1280/1440native and1440CPU4:18windows,max16.8msnative/66.6msCPU4,147drawspeak (fixedstill146),163043tris fixedpack. Sixcoldframes33.3/33.4/33.3native,183.4/183.4/183.3CPU4;readymax10294.3ms. Accept the prompt-authorised150 ceiling because Yarn plus4BindingThreads adds44modeldraws before pooling and further material merging risks visible identity; contactpool reduces the failing152still to146. Original130 target remainsMISS/PARTIAL. No timing sample replaced. E2E/startup remainpending.
+
+### B-M4-001 attempt1 observed / attempt2
+All9P1/P5/P15 boundsinside,contrast.239–.358 PASS. Original13opponent denominator:Yarn2.041/Pantry2.069 PASS2;Kettle1.517MISS because gallery Kettle has view.boss=false. Viewed1440P1,1024P15,Kettle/Pantry: largeYarnreadable, opponents stillpale with weak relief. Attempt2 increases authorednormal contrast and gives soloKettle the intendedbossframing. Full enemyroster prevents zoom when a pair loses its otherfoe. Originalattempt1 retained; targetedroster/readability/face/layout and parity/sourcegates next.

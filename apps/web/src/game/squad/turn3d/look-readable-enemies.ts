@@ -26,11 +26,11 @@ export function styleReadableEnemy(model: T.Object3D, id: string) {
             float foeRim = pow(1. - abs(dot(normal, normalize(vViewPosition))), 2.5);
             // Broad authored key-to-shadow relief retains a bright readable contour.
             float foeKey = smoothstep(-.35, .8, dot(normal, normalize(vec3(-.6,.85,1.0))));
-            totalEmissiveRadiance *= .42 + .68 * foeKey;
+            totalEmissiveRadiance *= .15 + .95 * foeKey;
             totalEmissiveRadiance += vec3(.26,.10,.17) * foeRim;
           `);
         };
-        material.customProgramCacheKey = () => `${key}-readable-plum-relief-3`;
+        material.customProgramCacheKey = () => `${key}-readable-plum-relief-4`;
       }
     }
     if (eye) node.scale.multiply(new T.Vector3(1.14,1.2,1.04));
