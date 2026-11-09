@@ -1,5 +1,5 @@
-Đã dựng nhiều lớp cho 48 kỹ năng chủ động, trong đó có 12 tuyệt kỹ; 12 nội tại ghi riêng.
-360 cửa sổ tung chiêu đạt tối đa 16,8 ms; CPU4 mở lạnh tối đa 183,3 ms.
-Tự chấm hình ảnh 6,233/10, chưa đạt 7,5; cấp phát bộ nhớ giảm 85–93% nhưng chưa bằng 0.
-18 trận thật khớp hàm băm; 38/45 ô được bộ đo quan sát, phần còn lại ghi rõ chưa xác minh.
-Tiếp tục bản tích hợp và demo; ưu tiên độ nổi khối của quái, tỉ lệ trùm và các hiệu ứng còn giống nhau.
+18 trận thật khớp hàm băm; bộ đo ban đầu xác nhận 38/45 ô, phần bổ sung đang chạy.
+Các nhãn và số tránh va chạm ở ba độ rộng; bản sửa mới giữ rõ hồi máu bị Bitter giảm.
+Tuyệt kỹ và kỹ năng có thêm lớp hiệu ứng; tự chấm hình ảnh vẫn chưa đạt 7,5.
+Yarn và Pantry vượt tỉ lệ 2×; Kettle đạt 1,997×, không cắt chân nhưng vẫn thiếu ngưỡng.
+Đang đóng gói demo đầy đủ/bản nhẹ và bốn clip; startup OFF lệch 3 byte đang được truy nguyên.

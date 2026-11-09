@@ -266,3 +266,9 @@ B-M4-003 source verification: B root typecheck/lint/unit1813web/parity/offline+p
 
 ## B-M4-004 2026-11-09T07:53Z M4 focused trigger probe S4
 Repro live-pilot/trigger-cases.log: helper assumed nonexistent SKILL_BY_ID export; product type/lint/1865webunits/adapter18passed. Use published skillById lookup (read-only), retain failed helper receipt, rerun extraction only. No product/runtime change.
+
+### B-M4-001 attempt3 / B-M4-002 verification
+Third Kettle roster framing has0vertex bounds offenders; ratios Yarn2.04055/Pantry2.06854/Kettle1.99709. Retain safe framing and report Kettle ratio PARTIAL at3attempt cap, without rounding it toPASS. Viewed Kettle1280 and Yarn1024: feet stay inside; pale-flat material remainsPARTIAL. Boss subtitle reservation:51stills+1290cueframes0overlap/outside/unplaced;90face masks0offenders;contrast4.618. Changed14identitycues84castwindowsmax16.8ms,draws101/tris103677/programs52fixed.
+
+## B-M4-005 2026-11-09T07:59Z M3/M4 OFF startup comparison S2
+Cross-directory A baseline3,119,399B vs live3,119,396B (11scripts each),0Three/models/errors. Module records expose canonical /private/tmp versus worktree paths plus symlink-resolved dependency roots; index+3B/web3-6B while other bytecounts match. Hypotheses: path-dependent bundler naming/order, actual startup change, nondeterminism. Keep original pair. Attribute with a fixed physical source directory, baseline then B-owned overlay only, exact dependency/cwd/config; no product change or relaxed bytes gate. Paired build/browser queued.
