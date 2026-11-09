@@ -1265,3 +1265,11 @@ Mark root cause: Thread100% battles, Night lamp0.2%, original crews0%; Velvet co
 D1+D2 isolated TRAIN1–50 prefix registered: boss/elite helpers + Cinnamon ally splash and conditional team ultimate; no production mutation during inherited before sweep.
 Heads-up schema extension ally-splash in multi-hit.shape; weakest-main then adjacent landing order, 100/40% heals. Existing v2 fields unchanged; fixture follows validated source.
 Read B V5FULL-M1 CLAIM; no new skill-design REQUEST present. No B-owned edits or integration claim; shared110s leases maintained.
+
+## 2026-11-09T03:37:32.647505Z V5A-S5 HEADS-UP
+D1+D2 fixed TRAIN1–50 prefix: original450battles multi32.089%,support29.595%,normal12.08r,all-cat ult82%; full500 confirmation pending. No denominator/gate change.
+Per-cat×skill shares, per-crew keyword/reaction/shape counts and reaction/shape seed lists: reports/cardrpg-big/skills-v5/s5/design1/DESIGN-REPORT.md + design-report.json in A worktree; production remains S7 pending baseline completion.
+Live P-shot TRAIN examples: Oven1/button-guard+sock-skipper Wildfire+splash; Thread1/button-guard+sock-skipper Rupture+multi-hit; Night lamp1/button-guard+sock-skipper Crumb Burst. Exact per-feature seeds/hashes in report; conditional ally shape labels corrected in design2.
+Design2 registered: prevention/Mark+Spread scoring, five basic cooldown1, Sorrel3 shield/Biscuit2 Warm, enemy Warm/Regen/Mark/Daze coverage. Black cup power55; Mark-strike stays rejected.
+Cinnamon ally-splash adds v2 shape value; ultimate emits team when no revive is available. Helpers2atbossstart+2atphase (living cap4), singleton elite1helper. No B-owned edits; publish validated source/fixture after TRAIN and hashes.
+B V5FULL M1 read. No skill-design REQUEST observed; shared110s leases/7s handoffs remain. Acceptance20001–20500 UNUSED.
