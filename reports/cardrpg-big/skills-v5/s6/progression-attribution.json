@@ -1,0 +1,433 @@
+{
+  "sources": [
+    {
+      "mode": "on",
+      "scope": "economy",
+      "path": "reports/cardrpg-big/skills-v5/s6/on/economy/results.json",
+      "sha256": "8f8b6d79caca1ba9b98cfc32d0c7244f675c458081ee18847b70d2e835cd718f"
+    },
+    {
+      "mode": "on",
+      "scope": "day7",
+      "path": "reports/cardrpg-big/skills-v5/s6/on/day7/results.json",
+      "sha256": "5281a5de6edc1c0897814414f8cdd62341d17c9d9bbfc6da9841b6a030caa796"
+    },
+    {
+      "mode": "off",
+      "scope": "economy",
+      "path": "reports/cardrpg-big/skills-v5/s6/off/economy/results.json",
+      "sha256": "416866c312f87e04bc41550a5fa0cb05195e695e47aecad72a5f6ff1ce3a0b85"
+    },
+    {
+      "mode": "off",
+      "scope": "day7",
+      "path": "reports/cardrpg-big/skills-v5/s6/off/day7/results.json",
+      "sha256": "7d23a9558b34b47acd0021d06f00bf2d40e9dac6c0dd4f745bf466954e3c6610"
+    }
+  ],
+  "modes": {
+    "on": {
+      "ratios": {
+        "paidPulls": 1.2993039443155452,
+        "fish": 1.2583780904611832,
+        "threads": 1.4613712132193073,
+        "stamps": 1.306732630673263,
+        "essence": 3.3134962805526036
+      },
+      "cohorts": [
+        {
+          "style": "casual",
+          "accounts": 30,
+          "chapters": {
+            "1": 0,
+            "2": 24,
+            "3": 6
+          },
+          "firstWins": 10,
+          "firstWinRate": 0.3333333333333333,
+          "firstWilson": [
+            0.19230498083676134,
+            0.5121994835545616
+          ],
+          "twoAttemptWins": 15,
+          "twoAttemptWinRate": 0.5,
+          "twoAttemptWilson": [
+            0.33154125640533766,
+            0.6684587435946623
+          ],
+          "losses": 20,
+          "availableAdvice": 19,
+          "allLossesHaveAdvice": false,
+          "retryWinsWithAdvice": 5,
+          "retryWinsWithoutAdvice": 7
+        },
+        {
+          "style": "regular",
+          "accounts": 30,
+          "chapters": {
+            "1": 0,
+            "2": 12,
+            "3": 18
+          },
+          "firstWins": 10,
+          "firstWinRate": 0.3333333333333333,
+          "firstWilson": [
+            0.19230498083676134,
+            0.5121994835545616
+          ],
+          "twoAttemptWins": 20,
+          "twoAttemptWinRate": 0.6666666666666666,
+          "twoAttemptWilson": [
+            0.4878005164454384,
+            0.8076950191632386
+          ],
+          "losses": 20,
+          "availableAdvice": 20,
+          "allLossesHaveAdvice": true,
+          "retryWinsWithAdvice": 10,
+          "retryWinsWithoutAdvice": 6
+        },
+        {
+          "style": "heavy",
+          "accounts": 30,
+          "chapters": {
+            "1": 0,
+            "2": 3,
+            "3": 27
+          },
+          "firstWins": 16,
+          "firstWinRate": 0.5333333333333333,
+          "firstWilson": [
+            0.36142299619873297,
+            0.6976761109230025
+          ],
+          "twoAttemptWins": 25,
+          "twoAttemptWinRate": 0.8333333333333334,
+          "twoAttemptWilson": [
+            0.6643564949358398,
+            0.9266345762815145
+          ],
+          "losses": 14,
+          "availableAdvice": 13,
+          "allLossesHaveAdvice": false,
+          "retryWinsWithAdvice": 9,
+          "retryWinsWithoutAdvice": 5
+        }
+      ],
+      "gates": {
+        "casualFirstTwoAtLeast50": true,
+        "regularFirstTwoAtLeast70": false,
+        "heavyFirstAtMost95": true,
+        "everyLossHasAvailableImprovement": false
+      },
+      "missingAdvice": [
+        {
+          "style": "casual",
+          "index": 1,
+          "rootSeed": 20002,
+          "routeSeed": 75435,
+          "chapter": 2,
+          "band": 6,
+          "levels": [
+            7,
+            7,
+            6
+          ],
+          "inputSaveSha256": "828f1894acace6c32c17906f2654da24d562e4fc25f53328930db73042f17619",
+          "reason": "No currently available build change improved the registered ten-seed forecast.",
+          "lastEncounter": {
+            "node": "6-0",
+            "kind": "boss",
+            "result": "enemy",
+            "round": 15,
+            "actions": 34,
+            "firstFallen": {
+              "id": "mochi",
+              "name": "Mochi",
+              "round": 6
+            },
+            "party": [
+              {
+                "id": "mochi",
+                "hp": 0,
+                "maxHp": 722
+              },
+              {
+                "id": "soot",
+                "hp": 0,
+                "maxHp": 558
+              },
+              {
+                "id": "clover",
+                "hp": 0,
+                "maxHp": 449
+              }
+            ],
+            "enemy": [
+              {
+                "id": "rain-spool",
+                "hp": 435,
+                "maxHp": 1253
+              },
+              {
+                "id": "binding-thread",
+                "hp": 0,
+                "maxHp": 126
+              },
+              {
+                "id": "binding-thread",
+                "hp": 0,
+                "maxHp": 126
+              },
+              {
+                "id": "binding-thread",
+                "hp": 67,
+                "maxHp": 126
+              },
+              {
+                "id": "binding-thread",
+                "hp": 74,
+                "maxHp": 126
+              }
+            ]
+          }
+        },
+        {
+          "style": "heavy",
+          "index": 20,
+          "rootSeed": 20021,
+          "routeSeed": 75454,
+          "chapter": 3,
+          "band": 6,
+          "levels": [
+            7,
+            7,
+            6
+          ],
+          "inputSaveSha256": "a3f6d685f5834325b3d452b60e1e3911901121abb412d03fd4879d04bc3f9a23",
+          "reason": "No currently available build change improved the registered ten-seed forecast.",
+          "lastEncounter": {
+            "node": "6-0",
+            "kind": "boss",
+            "result": "enemy",
+            "round": 15,
+            "actions": 38,
+            "firstFallen": {
+              "id": "mochi",
+              "name": "Mochi",
+              "round": 10
+            },
+            "party": [
+              {
+                "id": "mochi",
+                "hp": 0,
+                "maxHp": 716
+              },
+              {
+                "id": "soot",
+                "hp": 0,
+                "maxHp": 547
+              },
+              {
+                "id": "clover",
+                "hp": 0,
+                "maxHp": 450
+              }
+            ],
+            "enemy": [
+              {
+                "id": "pantry-crown",
+                "hp": 127,
+                "maxHp": 1213
+              },
+              {
+                "id": "binding-thread",
+                "hp": 0,
+                "maxHp": 144
+              },
+              {
+                "id": "binding-thread",
+                "hp": 0,
+                "maxHp": 144
+              },
+              {
+                "id": "binding-thread",
+                "hp": 0,
+                "maxHp": 144
+              },
+              {
+                "id": "binding-thread",
+                "hp": 0,
+                "maxHp": 144
+              },
+              {
+                "id": "binding-thread",
+                "hp": 46,
+                "maxHp": 144
+              },
+              {
+                "id": "binding-thread",
+                "hp": 0,
+                "maxHp": 144
+              },
+              {
+                "id": "binding-thread",
+                "hp": 144,
+                "maxHp": 144
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "off": {
+      "ratios": {
+        "paidPulls": 1.2222626409603492,
+        "fish": 1.1715844284651624,
+        "threads": 1.3567212235041588,
+        "stamps": 1.225972453458453,
+        "essence": 2.254005934718101
+      },
+      "cohorts": [
+        {
+          "style": "casual",
+          "accounts": 30,
+          "chapters": {
+            "1": 10,
+            "2": 19,
+            "3": 1
+          },
+          "firstWins": 13,
+          "firstWinRate": 0.43333333333333335,
+          "firstWilson": [
+            0.2737748557646652,
+            0.6080269299918639
+          ],
+          "twoAttemptWins": 20,
+          "twoAttemptWinRate": 0.6666666666666666,
+          "twoAttemptWilson": [
+            0.4878005164454384,
+            0.8076950191632386
+          ],
+          "losses": 17,
+          "availableAdvice": 16,
+          "allLossesHaveAdvice": false,
+          "retryWinsWithAdvice": 7,
+          "retryWinsWithoutAdvice": 4
+        },
+        {
+          "style": "regular",
+          "accounts": 30,
+          "chapters": {
+            "1": 6,
+            "2": 8,
+            "3": 16
+          },
+          "firstWins": 20,
+          "firstWinRate": 0.6666666666666666,
+          "firstWilson": [
+            0.4878005164454384,
+            0.8076950191632386
+          ],
+          "twoAttemptWins": 24,
+          "twoAttemptWinRate": 0.8,
+          "twoAttemptWilson": [
+            0.6269430358685175,
+            0.9049489282271013
+          ],
+          "losses": 10,
+          "availableAdvice": 10,
+          "allLossesHaveAdvice": true,
+          "retryWinsWithAdvice": 4,
+          "retryWinsWithoutAdvice": 5
+        },
+        {
+          "style": "heavy",
+          "accounts": 30,
+          "chapters": {
+            "1": 0,
+            "2": 1,
+            "3": 29
+          },
+          "firstWins": 29,
+          "firstWinRate": 0.9666666666666667,
+          "firstWilson": [
+            0.8332960900859082,
+            0.9940914096183874
+          ],
+          "twoAttemptWins": 29,
+          "twoAttemptWinRate": 0.9666666666666667,
+          "twoAttemptWilson": [
+            0.8332960900859082,
+            0.9940914096183874
+          ],
+          "losses": 1,
+          "availableAdvice": 1,
+          "allLossesHaveAdvice": true,
+          "retryWinsWithAdvice": 0,
+          "retryWinsWithoutAdvice": 0
+        }
+      ],
+      "gates": {
+        "casualFirstTwoAtLeast50": true,
+        "regularFirstTwoAtLeast70": true,
+        "heavyFirstAtMost95": false,
+        "everyLossHasAvailableImprovement": false
+      },
+      "missingAdvice": [
+        {
+          "style": "casual",
+          "index": 1,
+          "rootSeed": 20002,
+          "routeSeed": 75435,
+          "chapter": 2,
+          "band": 6,
+          "levels": [
+            7,
+            7,
+            6
+          ],
+          "inputSaveSha256": "29c93ac9b324939c899183b3398cbd4e95cdbb8182961f0da4debf481b0c1724",
+          "reason": "No currently available build change improved the registered ten-seed forecast.",
+          "lastEncounter": {
+            "node": "6-0",
+            "kind": "boss",
+            "result": "enemy",
+            "round": 12,
+            "actions": 34,
+            "firstFallen": {
+              "id": "mochi",
+              "name": "Mochi",
+              "round": 10
+            },
+            "party": [
+              {
+                "id": "mochi",
+                "hp": 0,
+                "maxHp": 722
+              },
+              {
+                "id": "soot",
+                "hp": 0,
+                "maxHp": 558
+              },
+              {
+                "id": "clover",
+                "hp": 0,
+                "maxHp": 449
+              }
+            ],
+            "enemy": [
+              {
+                "id": "rain-spool",
+                "hp": 89,
+                "maxHp": 1253
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "method": "Same registered account roots and public-command policy in both configurations. Earned states can differ. Read-only receipt review; no replay, retune or elapsed-time claim."
+}

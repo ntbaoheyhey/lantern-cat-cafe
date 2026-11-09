@@ -1,0 +1,25 @@
+{
+  "startedAt": "2026-11-09T10:20:10.326647+00:00",
+  "pid": 37211,
+  "acceptancePid": 33012,
+  "status": "STOPPED: inspect original failure; no automatic retry",
+  "steps": [
+    {
+      "step": "prepare",
+      "startedAt": "2026-11-09T12:54:13.379007+00:00",
+      "endedAt": "2026-11-09T12:58:31.569729+00:00",
+      "code": 1,
+      "log": "reports/cardrpg-big/skills-v5/s6/prepare-continuation-1.log"
+    }
+  ],
+  "resumedDelivery": {
+    "status": "COMPLETE with PARTIAL acceptance; published DRAFT424",
+    "sourceGateRecovery": "Original full E2E 420PASS/1FAIL retained; isolated unchanged test1/1PASS. No runtime edit.",
+    "captures": 126,
+    "guideCaptures": 21,
+    "review": "reports/cardrpg-big/skills-v5/s6/visual-review/review.json",
+    "audit": "reports/cardrpg-big/skills-v5/s6/delivery-audit.json",
+    "score": 6.158402777777777,
+    "draft": "https://github.com/ntbaoheyhey/taskbar-hero/pull/424"
+  }
+}

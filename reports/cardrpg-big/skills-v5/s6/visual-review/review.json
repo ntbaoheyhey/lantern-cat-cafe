@@ -1,0 +1,79 @@
+{
+  "at": "2026-11-09T13:27:55.706155+00:00",
+  "scope": "One-agent self-review of all eight contact sheets (126 artifact captures + 21 guide captures); six full-size inspections. Not an independent reviewer, human recognition test, continuous animation review or timing sample.",
+  "status": "PARTIAL",
+  "manifestSha256": "51ed104b1cacf0d07f21ebb0a2f7d8f69d12e4cb785397112cf5b21e7ce5b02c",
+  "artifactSha256": "4e310b07f9dfb005abdff830d498e8d0f6615553e1710a2ce12eeedad3a3638e",
+  "reviewedContactSheets": [
+    "reports/cardrpg-big/skills-v5/s6/visual-review/z-1280-look-off.jpg",
+    "reports/cardrpg-big/skills-v5/s6/visual-review/z-1280-look-on.jpg",
+    "reports/cardrpg-big/skills-v5/s6/visual-review/z-1440-look-off.jpg",
+    "reports/cardrpg-big/skills-v5/s6/visual-review/z-1440-look-on.jpg",
+    "reports/cardrpg-big/skills-v5/s6/visual-review/z-1024-look-off.jpg",
+    "reports/cardrpg-big/skills-v5/s6/visual-review/z-1024-look-on.jpg",
+    "reports/cardrpg-big/skills-v5/s6/visual-review/v5-guide.jpg",
+    "reports/cardrpg-big/skills-v5/s6/visual-review/a5-guide.jpg"
+  ],
+  "fullSizeInspections": [
+    "reports/cardrpg-big/skills-v5/s6/z/1280-look-on/automatic-battle.png",
+    "reports/cardrpg-big/skills-v5/s6/z/1024-look-on/automatic-battle.png",
+    "reports/cardrpg-big/skills-v5/s6/z/1440-look-on/guide.png",
+    "reports/cardrpg-big/skills-v5/s6/z/1280-look-off/companions.png",
+    "reports/cardrpg-big/skills-v5/s6/z/1024-look-on/night-route.png",
+    "reports/cardrpg-big/skills-v5/s6/z/1440-look-on/reaction-explanation.png"
+  ],
+  "findings": [
+    {
+      "id": "Z-CONTRAST",
+      "status": "PARTIAL",
+      "evidence": "s6/z/summary.json",
+      "measured": "Look V2 ON min 6.2448:1, zero scan failures; OFF min 1.6214:1, 27 flagged text nodes per width (81 across all three widths). The scan includes rendered below-fold content, so the smallest ratio is not necessarily in the visible screenshot.",
+      "attribution": "Legacy-look card text meets a pale gradient; no claim of pixel contrast at every location.",
+      "next": "Adjust A-owned legacy-look card text/backplate and verify the same three widths on a future artifact."
+    },
+    {
+      "id": "Z-OVERLAP",
+      "status": "PARTIAL",
+      "evidence": "s6/z/1280-look-on/checks.json",
+      "measured": "Six enemy-plate overlaps across four of six ready-scene captures: Button Guard at 1280 in both looks; Button Guard and Sock Skipper at 1024 in both looks. Zero in the two 1440 captures.",
+      "attribution": "The A-owned fallback strip uses a fixed offset inside the battle region without reserving renderer plate space.",
+      "next": "Reserve space for the fallback outside the arena; verify ready-scene rectangles. B owns its separate rendering integration."
+    },
+    {
+      "id": "Z-FIELD-GUIDE",
+      "status": "PARTIAL",
+      "evidence": "s6/z/1440-look-on/guide.png",
+      "measured": "In-game Field guide still labels Cozy, Scald, Tangle, Steep, Scented, Rattled and Drowsy, including old Tangle/Rattled rules and cap values. The Companions glossary and standalone V5 guide use the eight V5 display names.",
+      "attribution": "Pages.tsx Codex reads R.STATUSES and statusDescriptionV4 with only a v4 prop; it has no skillsV5 path.",
+      "next": "Add an A-owned skillsV5-gated Codex vocabulary/description path. Current playtest instructions point to the correct glossary; source remains unchanged."
+    },
+    {
+      "id": "Z-ROUTE-COVERAGE",
+      "status": "PARTIAL",
+      "evidence": "s6/z/1024-look-on/night-route.png",
+      "measured": "All six night-route captures have screen=prepare and visibly show Prepare. Current settled route-map screenshot coverage is NOT VERIFIED, despite 126 retained captures.",
+      "attribution": "The prepared practice state survives the imported save; Night route resolves to the pending Prepare screen. The harness asserted readiness, not the requested map identity.",
+      "next": "Future route fixture must clear the pending tutorial and assert screen identity. No repeated screenshot pack or replacement of these samples."
+    },
+    {
+      "id": "Z-MINIATURE",
+      "status": "NOT VERIFIED",
+      "evidence": "s6/z/1440-look-on/fresh-home.png",
+      "measured": "Home/Companions captures include Preparing miniatures. The battle capture explicitly waits for scene readiness; the meta captures do not wait for miniature readiness.",
+      "attribution": "These are real sampled transitions, not proof of a persistent missing model.",
+      "next": "Use a future settled-miniature check if assessing appearance or loading, separate from this retained pack."
+    }
+  ],
+  "positiveObservations": [
+    "Default Look V2 measured minimum contrast 6.2448:1; all captured pages report zero horizontal overflow.",
+    "Prepare exposes shapes and crew hints; the labelled reaction Result names Brioche triggering Rupture twice.",
+    "Static V5 and refreshed A5 guide checks report no remote requests or errors; minimum contrast 7.3332:1 and 7.2106:1 respectively.",
+    "Public captures exclude review controls; the separate actual dev=1 load includes them."
+  ],
+  "limitations": [
+    "Image counts establish completeness of files, not coverage of every intended screen or every state.",
+    "Six combat captures are ready scenes, not full-battle collision coverage.",
+    "Guide contact sheets show selected viewports; parsed guide content checks cover all eight keywords and twelve kits.",
+    "No production source, acceptance seed, threshold or sample changed during this review."
+  ]
+}

@@ -14,7 +14,7 @@ Inherited A4/A5 draft chain (preserved from A5-REPORT.md before its S6 refresh):
 |S4 events/fixture|codex/cardrpg-v5a-s4-2026-11-09|[412](https://github.com/ntbaoheyhey/taskbar-hero/pull/412) on411|a7e372edd / 479d96468|
 |S7 copy/meta|codex/cardrpg-v5a-s7-2026-11-09|[414](https://github.com/ntbaoheyhey/taskbar-hero/pull/414) on412|5a709205e / e7a78fd6f|
 |S5 design/TRAIN|codex/cardrpg-v5a-s5-2026-11-09|[417](https://github.com/ntbaoheyhey/taskbar-hero/pull/417) on414|6772eb343 / b21a91c35; full TRAIN complete, 22 PASS / 20 MISS, score 6.28/10|
-
 |S8 cadence/startup|codex/cardrpg-v5a-s8-2026-11-09|[422](https://github.com/ntbaoheyhey/taskbar-hero/pull/422) on417|6772eb343 / c828691be; all observations and six source gates complete, pacing/cadence/performance misses retained|
+|S6 paired acceptance/delivery|codex/cardrpg-v5a-s6-2026-11-09|[424](https://github.com/ntbaoheyhey/taskbar-hero/pull/424) on422|6772eb343 / a09f558f7; all20paired scopes,147 reviewed captures,21PASS/21MISS,score6.16/10 PARTIAL|
 
-S6 paired acceptance and Z delivery follow S8. The acceptance block20001–20500 remains unused until its registration is written and source/tool/case hashes are checked. B presentation drafts are separately owned and are not implicitly integrated into this stack.
+S6 registration3061b085a preceded sampling20001–20500. Both configs and all20scopes are complete; source/hash closure and delivery integrity pass with original failures retained. The once-only screenshot pack has documented contrast/overlap/copy issues and a route-map coverage gap. B presentation drafts remain separately owned and are not implicitly integrated.

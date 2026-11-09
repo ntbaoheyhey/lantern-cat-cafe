@@ -1,0 +1,6482 @@
+{
+  "version": "0.7.0",
+  "seed": 3779215858,
+  "rng": 3285961720,
+  "chapter": 3,
+  "actors": [
+    {
+      "shield": 0,
+      "charge": 0,
+      "break": 0,
+      "statuses": [],
+      "cooldowns": {
+        "mochi-1": 0,
+        "mochi-4": 0
+      },
+      "passiveUsed": false,
+      "phase": 1,
+      "equipment": [
+        "rainlace-charm-rare",
+        "hearthloom-weapon-rare",
+        "moonwick-outfit-epic",
+        "hearthloom-relic-epic"
+      ],
+      "setEffects": [
+        "defend-shield"
+      ],
+      "bonuses": {
+        "effectHitBp": 87,
+        "hp": 10,
+        "defense": 2,
+        "effectResistBp": 50,
+        "attack": 3,
+        "critBp": 800,
+        "critDamageBp": 5000,
+        "healingBp": 400,
+        "shieldBp": 0,
+        "healProc": 0,
+        "cleanseProc": 0,
+        "attackCount": 6,
+        "breakShieldRound": 6,
+        "markShieldRound": 6,
+        "uniqueUltimateUsed": 1,
+        "controlImmuneUntil": 8
+      },
+      "turns": 7,
+      "id": "mochi",
+      "catalogId": "mochi",
+      "name": "Mochi",
+      "side": "party",
+      "role": "guardian",
+      "row": "front",
+      "flavour": "hearth",
+      "hp": 0,
+      "maxHp": 734,
+      "attack": 64,
+      "defense": 44,
+      "initiative": 9,
+      "effectHit": 87,
+      "effectResist": 50,
+      "breakCap": 6,
+      "skills": [
+        "mochi-1",
+        "mochi-2",
+        "mochi-3",
+        "mochi-4"
+      ]
+    },
+    {
+      "shield": 0,
+      "charge": 0,
+      "break": 0,
+      "statuses": [
+        {
+          "id": "steep",
+          "stacks": 2,
+          "remaining": 1,
+          "source": "clover",
+          "appliedRound": 12
+        }
+      ],
+      "cooldowns": {
+        "soot-2": 0,
+        "soot-1": 1,
+        "soot-4": 2,
+        "soot-3": 0
+      },
+      "passiveUsed": false,
+      "phase": 1,
+      "equipment": [
+        "crumbweave-charm-rare",
+        "moonwick-relic-rare",
+        "hearthloom-weapon-rare",
+        "rainlace-outfit-epic"
+      ],
+      "setEffects": [],
+      "bonuses": {
+        "healingBp": 507,
+        "attack": 1,
+        "hp": 3,
+        "shieldBp": 111,
+        "frontDamage": 2,
+        "critBp": 1200,
+        "critDamageBp": 5000,
+        "healProc": 0,
+        "cleanseProc": 0,
+        "attackCount": 14,
+        "breakShieldRound": 6,
+        "markShieldRound": 6,
+        "uniqueUltimateUsed": 1,
+        "controlImmuneUntil": 11
+      },
+      "turns": 14,
+      "id": "soot",
+      "catalogId": "soot",
+      "name": "Soot",
+      "side": "party",
+      "role": "hexer",
+      "row": "rear",
+      "flavour": "moon",
+      "hp": 0,
+      "maxHp": 565,
+      "attack": 76,
+      "defense": 30,
+      "initiative": 8,
+      "effectHit": 0,
+      "effectResist": 0,
+      "breakCap": 6,
+      "skills": [
+        "soot-1",
+        "soot-2",
+        "soot-3",
+        "soot-4"
+      ]
+    },
+    {
+      "shield": 0,
+      "charge": 0,
+      "break": 0,
+      "statuses": [
+        {
+          "id": "steep",
+          "stacks": 2,
+          "remaining": 1,
+          "source": "clover",
+          "appliedRound": 12
+        }
+      ],
+      "cooldowns": {
+        "clover-2": 0,
+        "clover-1": 0,
+        "clover-4": 0
+      },
+      "passiveUsed": true,
+      "phase": 1,
+      "equipment": [
+        "mossbrew-charm-common",
+        "bellsteel-relic-rare",
+        "mossbrew-weapon-rare",
+        "mossbrew-outfit-rare"
+      ],
+      "setEffects": [
+        "healing-cleanse"
+      ],
+      "bonuses": {
+        "hp": 6,
+        "critBp": 531,
+        "effectResistBp": 32,
+        "critDamageBp": 5000,
+        "healingBp": 400,
+        "shieldBp": 0,
+        "healProc": 1,
+        "cleanseProc": 0,
+        "setCleanseTurn": 11,
+        "attackCount": 2,
+        "uniqueUltimateUsed": 1,
+        "controlImmuneUntil": 11,
+        "sproutUsed": 1
+      },
+      "turns": 12,
+      "id": "clover",
+      "catalogId": "clover",
+      "name": "Clover",
+      "side": "party",
+      "role": "healer",
+      "row": "rear",
+      "flavour": "garden",
+      "hp": 0,
+      "maxHp": 456,
+      "attack": 45,
+      "defense": 25,
+      "initiative": 7,
+      "effectHit": 0,
+      "effectResist": 32,
+      "breakCap": 6,
+      "skills": [
+        "clover-1",
+        "clover-2",
+        "clover-3",
+        "clover-4"
+      ]
+    },
+    {
+      "shield": 0,
+      "charge": 0,
+      "break": 0,
+      "statuses": [],
+      "cooldowns": {},
+      "passiveUsed": false,
+      "phase": 2,
+      "equipment": [],
+      "setEffects": [],
+      "bonuses": {
+        "v5ReactionRound": 11,
+        "controlImmuneUntil": 13,
+        "v5Helpers": 1
+      },
+      "turns": 14,
+      "id": "foe-0-pantry-crown",
+      "catalogId": "pantry-crown",
+      "name": "Pantry Crown",
+      "side": "enemy",
+      "role": "yarn",
+      "row": "rear",
+      "flavour": "tide",
+      "hp": 225,
+      "maxHp": 1213,
+      "attack": 274,
+      "defense": 25,
+      "initiative": 5,
+      "effectHit": 0,
+      "effectResist": 1200,
+      "breakCap": 9,
+      "skills": []
+    },
+    {
+      "shield": 0,
+      "charge": 0,
+      "break": 0,
+      "statuses": [
+        {
+          "id": "drowsy",
+          "stacks": 1,
+          "remaining": 1,
+          "source": "soot",
+          "appliedRound": 3
+        }
+      ],
+      "cooldowns": {},
+      "passiveUsed": false,
+      "phase": 1,
+      "equipment": [],
+      "setEffects": [],
+      "bonuses": {},
+      "turns": 2,
+      "id": "foe-1-binding-thread",
+      "catalogId": "binding-thread",
+      "name": "Binding Thread",
+      "side": "enemy",
+      "role": "thread",
+      "row": "rear",
+      "flavour": "moon",
+      "hp": 0,
+      "maxHp": 144,
+      "attack": 23,
+      "defense": 0,
+      "initiative": 4,
+      "effectHit": 0,
+      "effectResist": 500,
+      "breakCap": 2,
+      "skills": [],
+      "linkedBossId": "foe-0-pantry-crown"
+    },
+    {
+      "shield": 0,
+      "charge": 0,
+      "break": 0,
+      "statuses": [],
+      "cooldowns": {},
+      "passiveUsed": false,
+      "phase": 1,
+      "equipment": [],
+      "setEffects": [],
+      "bonuses": {
+        "controlImmuneUntil": 4
+      },
+      "turns": 3,
+      "id": "foe-2-binding-thread",
+      "catalogId": "binding-thread",
+      "name": "Binding Thread",
+      "side": "enemy",
+      "role": "thread",
+      "row": "rear",
+      "flavour": "moon",
+      "hp": 0,
+      "maxHp": 144,
+      "attack": 23,
+      "defense": 0,
+      "initiative": 3,
+      "effectHit": 0,
+      "effectResist": 500,
+      "breakCap": 2,
+      "skills": [],
+      "linkedBossId": "foe-0-pantry-crown"
+    },
+    {
+      "shield": 0,
+      "charge": 0,
+      "break": 0,
+      "statuses": [],
+      "cooldowns": {},
+      "passiveUsed": false,
+      "phase": 1,
+      "equipment": [],
+      "setEffects": [],
+      "bonuses": {
+        "controlImmuneUntil": 13
+      },
+      "turns": 6,
+      "id": "foe-6-binding-thread",
+      "catalogId": "binding-thread",
+      "name": "Binding Thread",
+      "side": "enemy",
+      "role": "thread",
+      "row": "rear",
+      "flavour": "moon",
+      "hp": 0,
+      "maxHp": 144,
+      "attack": 23,
+      "defense": 0,
+      "initiative": 5,
+      "effectHit": 0,
+      "effectResist": 500,
+      "breakCap": 2,
+      "skills": [],
+      "linkedBossId": "foe-0-pantry-crown"
+    },
+    {
+      "shield": 0,
+      "charge": 0,
+      "break": 0,
+      "statuses": [],
+      "cooldowns": {},
+      "passiveUsed": false,
+      "phase": 1,
+      "equipment": [],
+      "setEffects": [],
+      "bonuses": {
+        "controlImmuneUntil": 13
+      },
+      "turns": 5,
+      "id": "foe-7-binding-thread",
+      "catalogId": "binding-thread",
+      "name": "Binding Thread",
+      "side": "enemy",
+      "role": "thread",
+      "row": "rear",
+      "flavour": "moon",
+      "hp": 0,
+      "maxHp": 144,
+      "attack": 23,
+      "defense": 0,
+      "initiative": 4,
+      "effectHit": 0,
+      "effectResist": 500,
+      "breakCap": 2,
+      "skills": [],
+      "linkedBossId": "foe-0-pantry-crown"
+    }
+  ],
+  "round": 14,
+  "queue": [],
+  "acted": [
+    "soot",
+    "foe-0-pantry-crown"
+  ],
+  "energy": 0,
+  "maxEnergy": 0,
+  "intents": [
+    {
+      "actorId": "foe-0-pantry-crown",
+      "targetId": "soot",
+      "label": "Pantry Crown · basic pressure",
+      "counter": "Cleanse Hush and focus the leader; linked threads leave with it.",
+      "power": 100,
+      "signature": false,
+      "interrupted": false
+    },
+    {
+      "actorId": "foe-6-binding-thread",
+      "targetId": "soot",
+      "label": "Binding Thread · basic pressure",
+      "counter": "Defeat the thread to release its knot or Cleanse.",
+      "power": 100,
+      "signature": false,
+      "interrupted": false
+    }
+  ],
+  "log": [
+    {
+      "round": 1,
+      "actorId": "mochi",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "shield",
+      "amount": 6,
+      "text": ""
+    },
+    {
+      "round": 1,
+      "actorId": "mochi",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "mochi-1",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "splash"
+    },
+    {
+      "round": 1,
+      "actorId": "mochi",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 44,
+      "text": ""
+    },
+    {
+      "round": 1,
+      "actorId": "mochi",
+      "targetId": "foe-1-binding-thread",
+      "skillId": "mochi-1",
+      "kind": "multi-hit",
+      "amount": 1,
+      "text": "splash"
+    },
+    {
+      "round": 1,
+      "actorId": "mochi",
+      "targetId": "foe-1-binding-thread",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 21,
+      "text": ""
+    },
+    {
+      "round": 1,
+      "actorId": "mochi",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "shield",
+      "amount": 18,
+      "text": ""
+    },
+    {
+      "round": 1,
+      "actorId": "mochi",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "mochi-1",
+      "kind": "action",
+      "amount": 0,
+      "text": "Mochi pressures a foe, Pantry Crown (HP 100%) · Door knock"
+    },
+    {
+      "round": 1,
+      "actorId": "soot",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "soot-2",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "single"
+    },
+    {
+      "round": 1,
+      "actorId": "soot",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 33,
+      "text": ""
+    },
+    {
+      "round": 1,
+      "actorId": "soot",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Mark"
+    },
+    {
+      "round": 1,
+      "actorId": "soot",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "soot-2",
+      "kind": "action",
+      "amount": 0,
+      "text": "Soot pressures a foe, Pantry Crown (HP 96%) · Black cup"
+    },
+    {
+      "round": 1,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "clover-2",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "ally-row"
+    },
+    {
+      "round": 1,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 1,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "dispel",
+      "amount": 0,
+      "text": "Removed debuffs"
+    },
+    {
+      "round": 1,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Regen"
+    },
+    {
+      "round": 1,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "clover-2",
+      "kind": "multi-hit",
+      "amount": 1,
+      "text": "ally-row"
+    },
+    {
+      "round": 1,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 1,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Regen"
+    },
+    {
+      "round": 1,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "clover-2",
+      "kind": "action",
+      "amount": 0,
+      "text": "Clover heals Clover (HP 100%) · Patient steep"
+    },
+    {
+      "round": 1,
+      "actorId": "foe-0-pantry-crown",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "absorbed",
+      "amount": 24,
+      "text": "Shield absorbed direct damage"
+    },
+    {
+      "round": 1,
+      "actorId": "foe-0-pantry-crown",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 145,
+      "text": ""
+    },
+    {
+      "round": 1,
+      "actorId": "foe-0-pantry-crown",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "enemy-action",
+      "amount": 0,
+      "text": "Pantry Crown · basic pressure"
+    },
+    {
+      "round": 1,
+      "actorId": "foe-1-binding-thread",
+      "targetId": "mochi",
+      "skillId": "binding-thread",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "single"
+    },
+    {
+      "round": 1,
+      "actorId": "foe-1-binding-thread",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 7,
+      "text": ""
+    },
+    {
+      "round": 1,
+      "actorId": "foe-1-binding-thread",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Shred"
+    },
+    {
+      "round": 1,
+      "actorId": "foe-1-binding-thread",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "enemy-action",
+      "amount": 0,
+      "text": "Binding Thread · basic pressure"
+    },
+    {
+      "round": 1,
+      "actorId": "foe-2-binding-thread",
+      "targetId": "mochi",
+      "skillId": "binding-thread",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "single"
+    },
+    {
+      "round": 1,
+      "actorId": "foe-2-binding-thread",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 7,
+      "text": ""
+    },
+    {
+      "round": 1,
+      "actorId": "foe-2-binding-thread",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "status",
+      "amount": 2,
+      "text": "Shred"
+    },
+    {
+      "round": 1,
+      "actorId": "foe-2-binding-thread",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "enemy-action",
+      "amount": 0,
+      "text": "Binding Thread · basic pressure"
+    },
+    {
+      "round": 1,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 1,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "steep",
+      "kind": "status-tick",
+      "amount": 0,
+      "text": "Regen"
+    },
+    {
+      "round": 1,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 1,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "steep",
+      "kind": "status-tick",
+      "amount": 0,
+      "text": "Regen"
+    },
+    {
+      "round": 2,
+      "actorId": "mochi",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "shield",
+      "amount": 6,
+      "text": ""
+    },
+    {
+      "round": 2,
+      "actorId": "mochi",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "mochi-1",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "splash"
+    },
+    {
+      "round": 2,
+      "actorId": "mochi",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 53,
+      "text": ""
+    },
+    {
+      "round": 2,
+      "actorId": "mochi",
+      "targetId": "foe-1-binding-thread",
+      "skillId": "mochi-1",
+      "kind": "multi-hit",
+      "amount": 1,
+      "text": "splash"
+    },
+    {
+      "round": 2,
+      "actorId": "mochi",
+      "targetId": "foe-1-binding-thread",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 24,
+      "text": ""
+    },
+    {
+      "round": 2,
+      "actorId": "mochi",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "shield",
+      "amount": 18,
+      "text": ""
+    },
+    {
+      "round": 2,
+      "actorId": "mochi",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "mochi-1",
+      "kind": "action",
+      "amount": 0,
+      "text": "Mochi pressures a foe, Pantry Crown (HP 94%) · Door knock"
+    },
+    {
+      "round": 2,
+      "actorId": "soot",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "soot-1",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "pierce"
+    },
+    {
+      "round": 2,
+      "actorId": "soot",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 62,
+      "text": ""
+    },
+    {
+      "round": 2,
+      "actorId": "soot",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Crumb trail"
+    },
+    {
+      "round": 2,
+      "actorId": "soot",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "soot-1",
+      "kind": "action",
+      "amount": 0,
+      "text": "Soot pressures a foe, Pantry Crown (HP 89%) · Cocoa spark"
+    },
+    {
+      "round": 2,
+      "actorId": "clover",
+      "targetId": "mochi",
+      "skillId": "clover-2",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "ally-row"
+    },
+    {
+      "round": 2,
+      "actorId": "clover",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 36,
+      "text": ""
+    },
+    {
+      "round": 2,
+      "actorId": "clover",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Regen"
+    },
+    {
+      "round": 2,
+      "actorId": "clover",
+      "targetId": "mochi",
+      "skillId": "clover-2",
+      "kind": "action",
+      "amount": 0,
+      "text": "Clover heals Mochi (HP 78%) · Patient steep"
+    },
+    {
+      "round": 2,
+      "actorId": "foe-0-pantry-crown",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "absorbed",
+      "amount": 24,
+      "text": "Shield absorbed direct damage"
+    },
+    {
+      "round": 2,
+      "actorId": "foe-0-pantry-crown",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 166,
+      "text": ""
+    },
+    {
+      "round": 2,
+      "actorId": "foe-0-pantry-crown",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "enemy-action",
+      "amount": 0,
+      "text": "Pantry Crown · basic pressure"
+    },
+    {
+      "round": 2,
+      "actorId": "foe-1-binding-thread",
+      "targetId": "mochi",
+      "skillId": "binding-thread",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "single"
+    },
+    {
+      "round": 2,
+      "actorId": "foe-1-binding-thread",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 7,
+      "text": ""
+    },
+    {
+      "round": 2,
+      "actorId": "foe-1-binding-thread",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Shred"
+    },
+    {
+      "round": 2,
+      "actorId": "foe-1-binding-thread",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "enemy-action",
+      "amount": 0,
+      "text": "Binding Thread · basic pressure"
+    },
+    {
+      "round": 2,
+      "actorId": "foe-2-binding-thread",
+      "targetId": "mochi",
+      "skillId": "binding-thread",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "single"
+    },
+    {
+      "round": 2,
+      "actorId": "foe-2-binding-thread",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 7,
+      "text": ""
+    },
+    {
+      "round": 2,
+      "actorId": "foe-2-binding-thread",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "status",
+      "amount": 2,
+      "text": "Shred"
+    },
+    {
+      "round": 2,
+      "actorId": "foe-2-binding-thread",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "enemy-action",
+      "amount": 0,
+      "text": "Binding Thread · basic pressure"
+    },
+    {
+      "round": 2,
+      "actorId": "clover",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 19,
+      "text": ""
+    },
+    {
+      "round": 2,
+      "actorId": "clover",
+      "targetId": "mochi",
+      "skillId": "steep",
+      "kind": "status-tick",
+      "amount": 19,
+      "text": "Regen"
+    },
+    {
+      "round": 2,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 2,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "steep",
+      "kind": "status-tick",
+      "amount": 0,
+      "text": "Regen"
+    },
+    {
+      "round": 2,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 2,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "steep",
+      "kind": "status-tick",
+      "amount": 0,
+      "text": "Regen"
+    },
+    {
+      "round": 2,
+      "actorId": "foe-0-pantry-crown",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "",
+      "kind": "expire",
+      "amount": 0,
+      "text": "Mark"
+    },
+    {
+      "round": 3,
+      "actorId": "mochi",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "shield",
+      "amount": 6,
+      "text": ""
+    },
+    {
+      "round": 3,
+      "actorId": "mochi",
+      "targetId": "mochi",
+      "skillId": "mochi-4",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "team"
+    },
+    {
+      "round": 3,
+      "actorId": "mochi",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "dispel",
+      "amount": 1,
+      "text": "Removed debuffs"
+    },
+    {
+      "round": 3,
+      "actorId": "mochi",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "shield",
+      "amount": 130,
+      "text": ""
+    },
+    {
+      "round": 3,
+      "actorId": "mochi",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "status",
+      "amount": 2,
+      "text": "Warm"
+    },
+    {
+      "round": 3,
+      "actorId": "mochi",
+      "targetId": "soot",
+      "skillId": "mochi-4",
+      "kind": "multi-hit",
+      "amount": 1,
+      "text": "team"
+    },
+    {
+      "round": 3,
+      "actorId": "mochi",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "dispel",
+      "amount": 0,
+      "text": "Removed debuffs"
+    },
+    {
+      "round": 3,
+      "actorId": "mochi",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "shield",
+      "amount": 130,
+      "text": ""
+    },
+    {
+      "round": 3,
+      "actorId": "mochi",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "status",
+      "amount": 2,
+      "text": "Warm"
+    },
+    {
+      "round": 3,
+      "actorId": "mochi",
+      "targetId": "clover",
+      "skillId": "mochi-4",
+      "kind": "multi-hit",
+      "amount": 2,
+      "text": "team"
+    },
+    {
+      "round": 3,
+      "actorId": "mochi",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "dispel",
+      "amount": 0,
+      "text": "Removed debuffs"
+    },
+    {
+      "round": 3,
+      "actorId": "mochi",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "shield",
+      "amount": 130,
+      "text": ""
+    },
+    {
+      "round": 3,
+      "actorId": "mochi",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "status",
+      "amount": 2,
+      "text": "Warm"
+    },
+    {
+      "round": 3,
+      "actorId": "mochi",
+      "targetId": "clover",
+      "skillId": "mochi-4",
+      "kind": "action",
+      "amount": 0,
+      "text": "Mochi supports the team (lowest HP 61%) · Last light shelter"
+    },
+    {
+      "round": 3,
+      "actorId": "soot",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "soot-4",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "all"
+    },
+    {
+      "round": 3,
+      "actorId": "soot",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 41,
+      "text": ""
+    },
+    {
+      "round": 3,
+      "actorId": "soot",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "",
+      "kind": "detonate",
+      "amount": 50,
+      "text": ""
+    },
+    {
+      "round": 3,
+      "actorId": "soot",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "shield",
+      "amount": 6,
+      "text": ""
+    },
+    {
+      "round": 3,
+      "actorId": "soot",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "crumb-burst",
+      "kind": "reaction",
+      "amount": 1,
+      "text": "Crumb Burst"
+    },
+    {
+      "round": 3,
+      "actorId": "soot",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Daze"
+    },
+    {
+      "round": 3,
+      "actorId": "soot",
+      "targetId": "foe-1-binding-thread",
+      "skillId": "soot-4",
+      "kind": "multi-hit",
+      "amount": 1,
+      "text": "all"
+    },
+    {
+      "round": 3,
+      "actorId": "soot",
+      "targetId": "foe-1-binding-thread",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 92,
+      "text": ""
+    },
+    {
+      "round": 3,
+      "actorId": "soot",
+      "targetId": "foe-1-binding-thread",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Daze"
+    },
+    {
+      "round": 3,
+      "actorId": "soot",
+      "targetId": "foe-2-binding-thread",
+      "skillId": "soot-4",
+      "kind": "multi-hit",
+      "amount": 2,
+      "text": "all"
+    },
+    {
+      "round": 3,
+      "actorId": "soot",
+      "targetId": "foe-2-binding-thread",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 61,
+      "text": ""
+    },
+    {
+      "round": 3,
+      "actorId": "soot",
+      "targetId": "foe-2-binding-thread",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Daze"
+    },
+    {
+      "round": 3,
+      "actorId": "soot",
+      "targetId": "foe-1-binding-thread",
+      "skillId": "soot-4",
+      "kind": "action",
+      "amount": 0,
+      "text": "Soot focuses the weakest reachable foe, Binding Thread (HP 69%) · Midnight service"
+    },
+    {
+      "round": 3,
+      "actorId": "clover",
+      "targetId": "foe-1-binding-thread",
+      "skillId": "clover-1",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "single"
+    },
+    {
+      "round": 3,
+      "actorId": "clover",
+      "targetId": "foe-1-binding-thread",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 7,
+      "text": ""
+    },
+    {
+      "round": 3,
+      "actorId": "clover",
+      "targetId": "foe-1-binding-thread",
+      "skillId": "",
+      "kind": "defeat",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 3,
+      "actorId": "clover",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 19,
+      "text": ""
+    },
+    {
+      "round": 3,
+      "actorId": "clover",
+      "targetId": "foe-1-binding-thread",
+      "skillId": "clover-1",
+      "kind": "action",
+      "amount": 0,
+      "text": "Clover focuses the weakest reachable foe, Binding Thread (HP 5%) · Leaf tap"
+    },
+    {
+      "round": 3,
+      "actorId": "foe-0-pantry-crown",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "",
+      "kind": "suppressed",
+      "amount": 1,
+      "text": "Daze spent the next action"
+    },
+    {
+      "round": 3,
+      "actorId": "foe-0-pantry-crown",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "absorbed",
+      "amount": 146,
+      "text": "Shield absorbed direct damage"
+    },
+    {
+      "round": 3,
+      "actorId": "foe-0-pantry-crown",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 3,
+      "actorId": "foe-0-pantry-crown",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "enemy-action",
+      "amount": 0,
+      "text": "Drowsy intent · softened basic"
+    },
+    {
+      "round": 3,
+      "actorId": "foe-2-binding-thread",
+      "targetId": "foe-2-binding-thread",
+      "skillId": "",
+      "kind": "suppressed",
+      "amount": 1,
+      "text": "Daze spent the next action"
+    },
+    {
+      "round": 3,
+      "actorId": "foe-2-binding-thread",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "absorbed",
+      "amount": 6,
+      "text": "Shield absorbed direct damage"
+    },
+    {
+      "round": 3,
+      "actorId": "foe-2-binding-thread",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 3,
+      "actorId": "foe-2-binding-thread",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "enemy-action",
+      "amount": 0,
+      "text": "Drowsy intent · softened basic"
+    },
+    {
+      "round": 3,
+      "actorId": "clover",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 19,
+      "text": ""
+    },
+    {
+      "round": 3,
+      "actorId": "clover",
+      "targetId": "mochi",
+      "skillId": "steep",
+      "kind": "status-tick",
+      "amount": 19,
+      "text": "Regen"
+    },
+    {
+      "round": 3,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 3,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "steep",
+      "kind": "status-tick",
+      "amount": 0,
+      "text": "Regen"
+    },
+    {
+      "round": 3,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 3,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "steep",
+      "kind": "status-tick",
+      "amount": 0,
+      "text": "Regen"
+    },
+    {
+      "round": 3,
+      "actorId": "soot",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "expire",
+      "amount": 0,
+      "text": "Regen"
+    },
+    {
+      "round": 3,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "expire",
+      "amount": 0,
+      "text": "Regen"
+    },
+    {
+      "round": 4,
+      "actorId": "mochi",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "shield",
+      "amount": 6,
+      "text": ""
+    },
+    {
+      "round": 4,
+      "actorId": "mochi",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "mochi-1",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "splash"
+    },
+    {
+      "round": 4,
+      "actorId": "mochi",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 43,
+      "text": ""
+    },
+    {
+      "round": 4,
+      "actorId": "mochi",
+      "targetId": "foe-2-binding-thread",
+      "skillId": "mochi-1",
+      "kind": "multi-hit",
+      "amount": 1,
+      "text": "splash"
+    },
+    {
+      "round": 4,
+      "actorId": "mochi",
+      "targetId": "foe-2-binding-thread",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 23,
+      "text": ""
+    },
+    {
+      "round": 4,
+      "actorId": "mochi",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "shield",
+      "amount": 18,
+      "text": ""
+    },
+    {
+      "round": 4,
+      "actorId": "mochi",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "mochi-1",
+      "kind": "action",
+      "amount": 0,
+      "text": "Mochi pressures a foe, Pantry Crown (HP 77%) · Door knock"
+    },
+    {
+      "round": 4,
+      "actorId": "soot",
+      "targetId": "foe-2-binding-thread",
+      "skillId": "soot-1",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "pierce"
+    },
+    {
+      "round": 4,
+      "actorId": "soot",
+      "targetId": "foe-2-binding-thread",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 60,
+      "text": ""
+    },
+    {
+      "round": 4,
+      "actorId": "soot",
+      "targetId": "foe-2-binding-thread",
+      "skillId": "",
+      "kind": "defeat",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 4,
+      "actorId": "soot",
+      "targetId": "foe-2-binding-thread",
+      "skillId": "soot-1",
+      "kind": "action",
+      "amount": 0,
+      "text": "Soot focuses the weakest reachable foe, Binding Thread (HP 42%) · Cocoa spark"
+    },
+    {
+      "round": 4,
+      "actorId": "clover",
+      "targetId": "mochi",
+      "skillId": "clover-4",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "team"
+    },
+    {
+      "round": 4,
+      "actorId": "clover",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 94,
+      "text": ""
+    },
+    {
+      "round": 4,
+      "actorId": "clover",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Second sprout"
+    },
+    {
+      "round": 4,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "clover-4",
+      "kind": "multi-hit",
+      "amount": 1,
+      "text": "team"
+    },
+    {
+      "round": 4,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 4,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Second sprout"
+    },
+    {
+      "round": 4,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "clover-4",
+      "kind": "multi-hit",
+      "amount": 2,
+      "text": "team"
+    },
+    {
+      "round": 4,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 4,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Second sprout"
+    },
+    {
+      "round": 4,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "clover-4",
+      "kind": "action",
+      "amount": 0,
+      "text": "Clover supports the team (lowest HP 66%) · Greenhouse morning"
+    },
+    {
+      "round": 4,
+      "actorId": "foe-0-pantry-crown",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "absorbed",
+      "amount": 32,
+      "text": "Shield absorbed direct damage"
+    },
+    {
+      "round": 4,
+      "actorId": "foe-0-pantry-crown",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 112,
+      "text": ""
+    },
+    {
+      "round": 4,
+      "actorId": "foe-0-pantry-crown",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "enemy-action",
+      "amount": 0,
+      "text": "Pantry Crown · basic pressure"
+    },
+    {
+      "round": 4,
+      "actorId": "clover",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 19,
+      "text": ""
+    },
+    {
+      "round": 4,
+      "actorId": "clover",
+      "targetId": "mochi",
+      "skillId": "steep",
+      "kind": "status-tick",
+      "amount": 19,
+      "text": "Regen"
+    },
+    {
+      "round": 4,
+      "actorId": "mochi",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "expire",
+      "amount": 0,
+      "text": "Regen"
+    },
+    {
+      "round": 4,
+      "actorId": "mochi",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "expire",
+      "amount": 0,
+      "text": "Warm"
+    },
+    {
+      "round": 4,
+      "actorId": "soot",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "expire",
+      "amount": 0,
+      "text": "Warm"
+    },
+    {
+      "round": 4,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "expire",
+      "amount": 0,
+      "text": "Warm"
+    },
+    {
+      "round": 5,
+      "actorId": "mochi",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "shield",
+      "amount": 6,
+      "text": ""
+    },
+    {
+      "round": 5,
+      "actorId": "mochi",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "mochi-1",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "splash"
+    },
+    {
+      "round": 5,
+      "actorId": "mochi",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 66,
+      "text": ""
+    },
+    {
+      "round": 5,
+      "actorId": "mochi",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "shield",
+      "amount": 18,
+      "text": ""
+    },
+    {
+      "round": 5,
+      "actorId": "mochi",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "mochi-1",
+      "kind": "action",
+      "amount": 0,
+      "text": "Mochi focuses the weakest reachable foe, Pantry Crown (HP 73%) · Door knock"
+    },
+    {
+      "round": 5,
+      "actorId": "soot",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "soot-2",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "single"
+    },
+    {
+      "round": 5,
+      "actorId": "soot",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 34,
+      "text": ""
+    },
+    {
+      "round": 5,
+      "actorId": "soot",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Mark"
+    },
+    {
+      "round": 5,
+      "actorId": "soot",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "soot-2",
+      "kind": "action",
+      "amount": 0,
+      "text": "Soot focuses the weakest reachable foe, Pantry Crown (HP 68%) · Black cup"
+    },
+    {
+      "round": 5,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "clover-2",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "ally-row"
+    },
+    {
+      "round": 5,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 5,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Regen"
+    },
+    {
+      "round": 5,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "clover-2",
+      "kind": "multi-hit",
+      "amount": 1,
+      "text": "ally-row"
+    },
+    {
+      "round": 5,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 5,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Regen"
+    },
+    {
+      "round": 5,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "clover-2",
+      "kind": "action",
+      "amount": 0,
+      "text": "Clover heals Clover (HP 100%) · Patient steep"
+    },
+    {
+      "round": 5,
+      "actorId": "foe-0-pantry-crown",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "absorbed",
+      "amount": 24,
+      "text": "Shield absorbed direct damage"
+    },
+    {
+      "round": 5,
+      "actorId": "foe-0-pantry-crown",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 157,
+      "text": ""
+    },
+    {
+      "round": 5,
+      "actorId": "foe-0-pantry-crown",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "enemy-action",
+      "amount": 0,
+      "text": "Pantry Crown · basic pressure"
+    },
+    {
+      "round": 5,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 5,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "steep",
+      "kind": "status-tick",
+      "amount": 0,
+      "text": "Regen"
+    },
+    {
+      "round": 5,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 5,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "steep",
+      "kind": "status-tick",
+      "amount": 0,
+      "text": "Regen"
+    },
+    {
+      "round": 6,
+      "actorId": "mochi",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "shield",
+      "amount": 6,
+      "text": ""
+    },
+    {
+      "round": 6,
+      "actorId": "mochi",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "mochi-1",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "splash"
+    },
+    {
+      "round": 6,
+      "actorId": "mochi",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 54,
+      "text": ""
+    },
+    {
+      "round": 6,
+      "actorId": "mochi",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "shield",
+      "amount": 18,
+      "text": ""
+    },
+    {
+      "round": 6,
+      "actorId": "mochi",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "mochi-1",
+      "kind": "action",
+      "amount": 0,
+      "text": "Mochi focuses the weakest reachable foe, Pantry Crown (HP 65%) · Door knock"
+    },
+    {
+      "round": 6,
+      "actorId": "soot",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "soot-1",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "pierce"
+    },
+    {
+      "round": 6,
+      "actorId": "soot",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 57,
+      "text": ""
+    },
+    {
+      "round": 6,
+      "actorId": "soot",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Crumb trail"
+    },
+    {
+      "round": 6,
+      "actorId": "soot",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "soot-1",
+      "kind": "action",
+      "amount": 0,
+      "text": "Soot focuses the weakest reachable foe, Pantry Crown (HP 60%) · Cocoa spark"
+    },
+    {
+      "round": 6,
+      "actorId": "clover",
+      "targetId": "mochi",
+      "skillId": "clover-2",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "ally-row"
+    },
+    {
+      "round": 6,
+      "actorId": "clover",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 36,
+      "text": ""
+    },
+    {
+      "round": 6,
+      "actorId": "clover",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Regen"
+    },
+    {
+      "round": 6,
+      "actorId": "clover",
+      "targetId": "mochi",
+      "skillId": "clover-2",
+      "kind": "action",
+      "amount": 0,
+      "text": "Clover heals Mochi (HP 45%) · Patient steep"
+    },
+    {
+      "round": 6,
+      "actorId": "foe-0-pantry-crown",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "absorbed",
+      "amount": 24,
+      "text": "Shield absorbed direct damage"
+    },
+    {
+      "round": 6,
+      "actorId": "foe-0-pantry-crown",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 303,
+      "text": ""
+    },
+    {
+      "round": 6,
+      "actorId": "foe-0-pantry-crown",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Daze"
+    },
+    {
+      "round": 6,
+      "actorId": "foe-0-pantry-crown",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "strip-shield",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 6,
+      "actorId": "foe-0-pantry-crown",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "enemy-action",
+      "amount": 0,
+      "text": "Empty banquet removes shield and applies Hush; the closing phase also summons."
+    },
+    {
+      "round": 6,
+      "actorId": "clover",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 19,
+      "text": ""
+    },
+    {
+      "round": 6,
+      "actorId": "clover",
+      "targetId": "mochi",
+      "skillId": "steep",
+      "kind": "status-tick",
+      "amount": 19,
+      "text": "Regen"
+    },
+    {
+      "round": 6,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 6,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "steep",
+      "kind": "status-tick",
+      "amount": 0,
+      "text": "Regen"
+    },
+    {
+      "round": 6,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 6,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "steep",
+      "kind": "status-tick",
+      "amount": 0,
+      "text": "Regen"
+    },
+    {
+      "round": 6,
+      "actorId": "mochi",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "expire",
+      "amount": 0,
+      "text": "Second sprout"
+    },
+    {
+      "round": 6,
+      "actorId": "soot",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "expire",
+      "amount": 0,
+      "text": "Second sprout"
+    },
+    {
+      "round": 6,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "expire",
+      "amount": 0,
+      "text": "Second sprout"
+    },
+    {
+      "round": 6,
+      "actorId": "foe-0-pantry-crown",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "",
+      "kind": "expire",
+      "amount": 0,
+      "text": "Mark"
+    },
+    {
+      "round": 7,
+      "actorId": "mochi",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "shield",
+      "amount": 6,
+      "text": ""
+    },
+    {
+      "round": 7,
+      "actorId": "mochi",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "suppressed",
+      "amount": 1,
+      "text": "Daze spent the next action"
+    },
+    {
+      "round": 7,
+      "actorId": "mochi",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "mochi-1",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "splash"
+    },
+    {
+      "round": 7,
+      "actorId": "mochi",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 21,
+      "text": ""
+    },
+    {
+      "round": 7,
+      "actorId": "mochi",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "shield",
+      "amount": 9,
+      "text": ""
+    },
+    {
+      "round": 7,
+      "actorId": "mochi",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "mochi-1",
+      "kind": "action",
+      "amount": 0,
+      "text": "Mochi focuses the weakest reachable foe, Pantry Crown (HP 56%) · Door knock"
+    },
+    {
+      "round": 7,
+      "actorId": "soot",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "soot-3",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "single"
+    },
+    {
+      "round": 7,
+      "actorId": "soot",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 61,
+      "text": ""
+    },
+    {
+      "round": 7,
+      "actorId": "foe-0-pantry-crown",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "",
+      "kind": "phase",
+      "amount": 2,
+      "text": "Pantry Crown: closing phase. The next signature reaches both rows."
+    },
+    {
+      "round": 7,
+      "actorId": "foe-0-pantry-crown",
+      "targetId": "foe-6-binding-thread",
+      "skillId": "",
+      "kind": "summon",
+      "amount": 0,
+      "text": "Binding Thread joins next round"
+    },
+    {
+      "round": 7,
+      "actorId": "foe-0-pantry-crown",
+      "targetId": "foe-7-binding-thread",
+      "skillId": "",
+      "kind": "summon",
+      "amount": 0,
+      "text": "Binding Thread joins next round"
+    },
+    {
+      "round": 7,
+      "actorId": "soot",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "",
+      "kind": "detonate",
+      "amount": 60,
+      "text": ""
+    },
+    {
+      "round": 7,
+      "actorId": "soot",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "shield",
+      "amount": 6,
+      "text": ""
+    },
+    {
+      "round": 7,
+      "actorId": "soot",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "crumb-burst",
+      "kind": "reaction",
+      "amount": 1,
+      "text": "Crumb Burst"
+    },
+    {
+      "round": 7,
+      "actorId": "soot",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "soot-3",
+      "kind": "action",
+      "amount": 0,
+      "text": "Soot focuses the weakest reachable foe, Pantry Crown (HP 54%) · Lantern wick"
+    },
+    {
+      "round": 7,
+      "actorId": "clover",
+      "targetId": "mochi",
+      "skillId": "clover-2",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "ally-row"
+    },
+    {
+      "round": 7,
+      "actorId": "clover",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 36,
+      "text": ""
+    },
+    {
+      "round": 7,
+      "actorId": "clover",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "status",
+      "amount": 2,
+      "text": "Regen"
+    },
+    {
+      "round": 7,
+      "actorId": "clover",
+      "targetId": "mochi",
+      "skillId": "clover-2",
+      "kind": "action",
+      "amount": 0,
+      "text": "Clover heals Mochi (HP 11%) · Patient steep"
+    },
+    {
+      "round": 7,
+      "actorId": "foe-0-pantry-crown",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "absorbed",
+      "amount": 15,
+      "text": "Shield absorbed direct damage"
+    },
+    {
+      "round": 7,
+      "actorId": "foe-0-pantry-crown",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 120,
+      "text": ""
+    },
+    {
+      "round": 7,
+      "actorId": "foe-0-pantry-crown",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "defeat",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 7,
+      "actorId": "foe-0-pantry-crown",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "enemy-action",
+      "amount": 0,
+      "text": "Pantry Crown · basic pressure"
+    },
+    {
+      "round": 7,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 7,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "steep",
+      "kind": "status-tick",
+      "amount": 0,
+      "text": "Regen"
+    },
+    {
+      "round": 7,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 7,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "steep",
+      "kind": "status-tick",
+      "amount": 0,
+      "text": "Regen"
+    },
+    {
+      "round": 7,
+      "actorId": "soot",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "expire",
+      "amount": 0,
+      "text": "Regen"
+    },
+    {
+      "round": 7,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "expire",
+      "amount": 0,
+      "text": "Regen"
+    },
+    {
+      "round": 8,
+      "actorId": "soot",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "soot-4",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "all"
+    },
+    {
+      "round": 8,
+      "actorId": "soot",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 46,
+      "text": ""
+    },
+    {
+      "round": 8,
+      "actorId": "soot",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "",
+      "kind": "resist",
+      "amount": 0,
+      "text": "Pantry Crown resisted Daze"
+    },
+    {
+      "round": 8,
+      "actorId": "soot",
+      "targetId": "foe-6-binding-thread",
+      "skillId": "soot-4",
+      "kind": "multi-hit",
+      "amount": 1,
+      "text": "all"
+    },
+    {
+      "round": 8,
+      "actorId": "soot",
+      "targetId": "foe-6-binding-thread",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 59,
+      "text": ""
+    },
+    {
+      "round": 8,
+      "actorId": "soot",
+      "targetId": "foe-6-binding-thread",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Daze"
+    },
+    {
+      "round": 8,
+      "actorId": "soot",
+      "targetId": "foe-7-binding-thread",
+      "skillId": "soot-4",
+      "kind": "multi-hit",
+      "amount": 2,
+      "text": "all"
+    },
+    {
+      "round": 8,
+      "actorId": "soot",
+      "targetId": "foe-7-binding-thread",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 56,
+      "text": ""
+    },
+    {
+      "round": 8,
+      "actorId": "soot",
+      "targetId": "foe-7-binding-thread",
+      "skillId": "",
+      "kind": "resist",
+      "amount": 0,
+      "text": "Binding Thread resisted Daze"
+    },
+    {
+      "round": 8,
+      "actorId": "soot",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "soot-4",
+      "kind": "action",
+      "amount": 0,
+      "text": "Soot pressures a foe, Pantry Crown (HP 44%) · Midnight service"
+    },
+    {
+      "round": 8,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "clover-2",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "ally-row"
+    },
+    {
+      "round": 8,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 8,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Regen"
+    },
+    {
+      "round": 8,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "clover-2",
+      "kind": "multi-hit",
+      "amount": 1,
+      "text": "ally-row"
+    },
+    {
+      "round": 8,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 8,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Regen"
+    },
+    {
+      "round": 8,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "clover-2",
+      "kind": "action",
+      "amount": 0,
+      "text": "Clover heals Clover (HP 100%) · Patient steep"
+    },
+    {
+      "round": 8,
+      "actorId": "foe-0-pantry-crown",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "absorbed",
+      "amount": 130,
+      "text": "Shield absorbed direct damage"
+    },
+    {
+      "round": 8,
+      "actorId": "foe-0-pantry-crown",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 68,
+      "text": ""
+    },
+    {
+      "round": 8,
+      "actorId": "foe-0-pantry-crown",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "enemy-action",
+      "amount": 0,
+      "text": "Pantry Crown · basic pressure"
+    },
+    {
+      "round": 8,
+      "actorId": "foe-6-binding-thread",
+      "targetId": "foe-6-binding-thread",
+      "skillId": "",
+      "kind": "suppressed",
+      "amount": 1,
+      "text": "Daze spent the next action"
+    },
+    {
+      "round": 8,
+      "actorId": "foe-6-binding-thread",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "absorbed",
+      "amount": 9,
+      "text": "Shield absorbed direct damage"
+    },
+    {
+      "round": 8,
+      "actorId": "foe-6-binding-thread",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 8,
+      "actorId": "foe-6-binding-thread",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "enemy-action",
+      "amount": 0,
+      "text": "Drowsy intent · softened basic"
+    },
+    {
+      "round": 8,
+      "actorId": "foe-7-binding-thread",
+      "targetId": "soot",
+      "skillId": "binding-thread",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "single"
+    },
+    {
+      "round": 8,
+      "actorId": "foe-7-binding-thread",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "absorbed",
+      "amount": 8,
+      "text": "Shield absorbed direct damage"
+    },
+    {
+      "round": 8,
+      "actorId": "foe-7-binding-thread",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 8,
+      "actorId": "foe-7-binding-thread",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Shred"
+    },
+    {
+      "round": 8,
+      "actorId": "foe-7-binding-thread",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "enemy-action",
+      "amount": 0,
+      "text": "Binding Thread · basic pressure"
+    },
+    {
+      "round": 8,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 8,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "steep",
+      "kind": "status-tick",
+      "amount": 0,
+      "text": "Regen"
+    },
+    {
+      "round": 8,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 19,
+      "text": ""
+    },
+    {
+      "round": 8,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "steep",
+      "kind": "status-tick",
+      "amount": 19,
+      "text": "Regen"
+    },
+    {
+      "round": 9,
+      "actorId": "soot",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "soot-3",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "single"
+    },
+    {
+      "round": 9,
+      "actorId": "soot",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 57,
+      "text": ""
+    },
+    {
+      "round": 9,
+      "actorId": "soot",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "soot-3",
+      "kind": "action",
+      "amount": 0,
+      "text": "Soot pressures a foe, Pantry Crown (HP 40%) · Lantern wick"
+    },
+    {
+      "round": 9,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "clover-4",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "team"
+    },
+    {
+      "round": 9,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 9,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Second sprout"
+    },
+    {
+      "round": 9,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "clover-4",
+      "kind": "multi-hit",
+      "amount": 1,
+      "text": "team"
+    },
+    {
+      "round": 9,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 49,
+      "text": ""
+    },
+    {
+      "round": 9,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Second sprout"
+    },
+    {
+      "round": 9,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "clover-4",
+      "kind": "action",
+      "amount": 0,
+      "text": "Clover supports the team (lowest HP 89%) · Greenhouse morning"
+    },
+    {
+      "round": 9,
+      "actorId": "foe-0-pantry-crown",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "absorbed",
+      "amount": 125,
+      "text": "Shield absorbed direct damage"
+    },
+    {
+      "round": 9,
+      "actorId": "foe-0-pantry-crown",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 245,
+      "text": ""
+    },
+    {
+      "round": 9,
+      "actorId": "foe-0-pantry-crown",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Daze"
+    },
+    {
+      "round": 9,
+      "actorId": "foe-0-pantry-crown",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 389,
+      "text": ""
+    },
+    {
+      "round": 9,
+      "actorId": "foe-0-pantry-crown",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Daze"
+    },
+    {
+      "round": 9,
+      "actorId": "foe-0-pantry-crown",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "strip-shield",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 9,
+      "actorId": "foe-0-pantry-crown",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "enemy-action",
+      "amount": 0,
+      "text": "Empty banquet removes shield and applies Hush; the closing phase also summons."
+    },
+    {
+      "round": 9,
+      "actorId": "foe-6-binding-thread",
+      "targetId": "clover",
+      "skillId": "binding-thread",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "single"
+    },
+    {
+      "round": 9,
+      "actorId": "foe-6-binding-thread",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 8,
+      "text": ""
+    },
+    {
+      "round": 9,
+      "actorId": "foe-6-binding-thread",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Shred"
+    },
+    {
+      "round": 9,
+      "actorId": "foe-6-binding-thread",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Daze"
+    },
+    {
+      "round": 9,
+      "actorId": "foe-6-binding-thread",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "enemy-action",
+      "amount": 0,
+      "text": "Knots apply Shred; every third turn Dazes the weakest cat."
+    },
+    {
+      "round": 9,
+      "actorId": "foe-7-binding-thread",
+      "targetId": "clover",
+      "skillId": "binding-thread",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "single"
+    },
+    {
+      "round": 9,
+      "actorId": "foe-7-binding-thread",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 9,
+      "text": ""
+    },
+    {
+      "round": 9,
+      "actorId": "foe-7-binding-thread",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "status",
+      "amount": 2,
+      "text": "Shred"
+    },
+    {
+      "round": 9,
+      "actorId": "foe-7-binding-thread",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Daze"
+    },
+    {
+      "round": 9,
+      "actorId": "foe-7-binding-thread",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "enemy-action",
+      "amount": 0,
+      "text": "Knots apply Shred; every third turn Dazes the weakest cat."
+    },
+    {
+      "round": 9,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 19,
+      "text": ""
+    },
+    {
+      "round": 9,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "steep",
+      "kind": "status-tick",
+      "amount": 19,
+      "text": "Regen"
+    },
+    {
+      "round": 9,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 19,
+      "text": ""
+    },
+    {
+      "round": 9,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "steep",
+      "kind": "status-tick",
+      "amount": 19,
+      "text": "Regen"
+    },
+    {
+      "round": 9,
+      "actorId": "mochi",
+      "targetId": "mochi",
+      "skillId": "",
+      "kind": "expire",
+      "amount": 0,
+      "text": "Regen"
+    },
+    {
+      "round": 10,
+      "actorId": "soot",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "suppressed",
+      "amount": 1,
+      "text": "Daze spent the next action"
+    },
+    {
+      "round": 10,
+      "actorId": "soot",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "soot-1",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "pierce"
+    },
+    {
+      "round": 10,
+      "actorId": "soot",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 23,
+      "text": ""
+    },
+    {
+      "round": 10,
+      "actorId": "soot",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Crumb trail"
+    },
+    {
+      "round": 10,
+      "actorId": "soot",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "soot-1",
+      "kind": "action",
+      "amount": 0,
+      "text": "Soot pressures a foe, Pantry Crown (HP 36%) · Cocoa spark"
+    },
+    {
+      "round": 10,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "suppressed",
+      "amount": 1,
+      "text": "Daze spent the next action"
+    },
+    {
+      "round": 10,
+      "actorId": "clover",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "clover-1",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "single"
+    },
+    {
+      "round": 10,
+      "actorId": "clover",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 13,
+      "text": ""
+    },
+    {
+      "round": 10,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 9,
+      "text": ""
+    },
+    {
+      "round": 10,
+      "actorId": "clover",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "clover-1",
+      "kind": "action",
+      "amount": 0,
+      "text": "Clover pressures a foe, Pantry Crown (HP 34%) · Leaf tap"
+    },
+    {
+      "round": 10,
+      "actorId": "foe-0-pantry-crown",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 196,
+      "text": ""
+    },
+    {
+      "round": 10,
+      "actorId": "foe-0-pantry-crown",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "enemy-action",
+      "amount": 0,
+      "text": "Pantry Crown · basic pressure"
+    },
+    {
+      "round": 10,
+      "actorId": "foe-6-binding-thread",
+      "targetId": "clover",
+      "skillId": "binding-thread",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "single"
+    },
+    {
+      "round": 10,
+      "actorId": "foe-6-binding-thread",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 9,
+      "text": ""
+    },
+    {
+      "round": 10,
+      "actorId": "foe-6-binding-thread",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Shred"
+    },
+    {
+      "round": 10,
+      "actorId": "foe-6-binding-thread",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "enemy-action",
+      "amount": 0,
+      "text": "Binding Thread · basic pressure"
+    },
+    {
+      "round": 10,
+      "actorId": "foe-7-binding-thread",
+      "targetId": "clover",
+      "skillId": "binding-thread",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "single"
+    },
+    {
+      "round": 10,
+      "actorId": "foe-7-binding-thread",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 9,
+      "text": ""
+    },
+    {
+      "round": 10,
+      "actorId": "foe-7-binding-thread",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "status",
+      "amount": 2,
+      "text": "Shred"
+    },
+    {
+      "round": 10,
+      "actorId": "foe-7-binding-thread",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "enemy-action",
+      "amount": 0,
+      "text": "Binding Thread · basic pressure"
+    },
+    {
+      "round": 10,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 19,
+      "text": ""
+    },
+    {
+      "round": 10,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "steep",
+      "kind": "status-tick",
+      "amount": 19,
+      "text": "Regen"
+    },
+    {
+      "round": 10,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 19,
+      "text": ""
+    },
+    {
+      "round": 10,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "steep",
+      "kind": "status-tick",
+      "amount": 19,
+      "text": "Regen"
+    },
+    {
+      "round": 10,
+      "actorId": "soot",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "expire",
+      "amount": 0,
+      "text": "Regen"
+    },
+    {
+      "round": 10,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "expire",
+      "amount": 0,
+      "text": "Regen"
+    },
+    {
+      "round": 11,
+      "actorId": "soot",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "soot-3",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "single"
+    },
+    {
+      "round": 11,
+      "actorId": "soot",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 64,
+      "text": ""
+    },
+    {
+      "round": 11,
+      "actorId": "soot",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "",
+      "kind": "detonate",
+      "amount": 60,
+      "text": ""
+    },
+    {
+      "round": 11,
+      "actorId": "soot",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "shield",
+      "amount": 6,
+      "text": ""
+    },
+    {
+      "round": 11,
+      "actorId": "soot",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "crumb-burst",
+      "kind": "reaction",
+      "amount": 1,
+      "text": "Crumb Burst"
+    },
+    {
+      "round": 11,
+      "actorId": "soot",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "soot-3",
+      "kind": "action",
+      "amount": 0,
+      "text": "Soot pressures a foe, Pantry Crown (HP 33%) · Lantern wick"
+    },
+    {
+      "round": 11,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "clover-2",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "ally-row"
+    },
+    {
+      "round": 11,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 36,
+      "text": ""
+    },
+    {
+      "round": 11,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Regen"
+    },
+    {
+      "round": 11,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "clover-2",
+      "kind": "multi-hit",
+      "amount": 1,
+      "text": "ally-row"
+    },
+    {
+      "round": 11,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 36,
+      "text": ""
+    },
+    {
+      "round": 11,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Regen"
+    },
+    {
+      "round": 11,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "clover-2",
+      "kind": "action",
+      "amount": 0,
+      "text": "Clover heals Clover (HP 17%) · Patient steep"
+    },
+    {
+      "round": 11,
+      "actorId": "foe-0-pantry-crown",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 115,
+      "text": ""
+    },
+    {
+      "round": 11,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "survive",
+      "amount": 114,
+      "text": "Second sprout"
+    },
+    {
+      "round": 11,
+      "actorId": "foe-0-pantry-crown",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "enemy-action",
+      "amount": 0,
+      "text": "Pantry Crown · basic pressure"
+    },
+    {
+      "round": 11,
+      "actorId": "foe-6-binding-thread",
+      "targetId": "clover",
+      "skillId": "binding-thread",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "single"
+    },
+    {
+      "round": 11,
+      "actorId": "foe-6-binding-thread",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 9,
+      "text": ""
+    },
+    {
+      "round": 11,
+      "actorId": "foe-6-binding-thread",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Shred"
+    },
+    {
+      "round": 11,
+      "actorId": "foe-6-binding-thread",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "enemy-action",
+      "amount": 0,
+      "text": "Binding Thread · basic pressure"
+    },
+    {
+      "round": 11,
+      "actorId": "foe-7-binding-thread",
+      "targetId": "clover",
+      "skillId": "binding-thread",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "single"
+    },
+    {
+      "round": 11,
+      "actorId": "foe-7-binding-thread",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 9,
+      "text": ""
+    },
+    {
+      "round": 11,
+      "actorId": "foe-7-binding-thread",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "resist",
+      "amount": 0,
+      "text": "Clover resisted Shred"
+    },
+    {
+      "round": 11,
+      "actorId": "foe-7-binding-thread",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "enemy-action",
+      "amount": 0,
+      "text": "Binding Thread · basic pressure"
+    },
+    {
+      "round": 11,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 19,
+      "text": ""
+    },
+    {
+      "round": 11,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "steep",
+      "kind": "status-tick",
+      "amount": 19,
+      "text": "Regen"
+    },
+    {
+      "round": 11,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 19,
+      "text": ""
+    },
+    {
+      "round": 11,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "steep",
+      "kind": "status-tick",
+      "amount": 19,
+      "text": "Regen"
+    },
+    {
+      "round": 11,
+      "actorId": "soot",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "expire",
+      "amount": 0,
+      "text": "Second sprout"
+    },
+    {
+      "round": 12,
+      "actorId": "soot",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "soot-4",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "all"
+    },
+    {
+      "round": 12,
+      "actorId": "soot",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 46,
+      "text": ""
+    },
+    {
+      "round": 12,
+      "actorId": "soot",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Daze"
+    },
+    {
+      "round": 12,
+      "actorId": "soot",
+      "targetId": "foe-6-binding-thread",
+      "skillId": "soot-4",
+      "kind": "multi-hit",
+      "amount": 1,
+      "text": "all"
+    },
+    {
+      "round": 12,
+      "actorId": "soot",
+      "targetId": "foe-6-binding-thread",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 57,
+      "text": ""
+    },
+    {
+      "round": 12,
+      "actorId": "soot",
+      "targetId": "foe-6-binding-thread",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Daze"
+    },
+    {
+      "round": 12,
+      "actorId": "soot",
+      "targetId": "foe-7-binding-thread",
+      "skillId": "soot-4",
+      "kind": "multi-hit",
+      "amount": 2,
+      "text": "all"
+    },
+    {
+      "round": 12,
+      "actorId": "soot",
+      "targetId": "foe-7-binding-thread",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 59,
+      "text": ""
+    },
+    {
+      "round": 12,
+      "actorId": "soot",
+      "targetId": "foe-7-binding-thread",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Daze"
+    },
+    {
+      "round": 12,
+      "actorId": "soot",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "soot-4",
+      "kind": "action",
+      "amount": 0,
+      "text": "Soot pressures a foe, Pantry Crown (HP 22%) · Midnight service"
+    },
+    {
+      "round": 12,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "clover-2",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "ally-row"
+    },
+    {
+      "round": 12,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 36,
+      "text": ""
+    },
+    {
+      "round": 12,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "status",
+      "amount": 2,
+      "text": "Regen"
+    },
+    {
+      "round": 12,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "clover-2",
+      "kind": "multi-hit",
+      "amount": 1,
+      "text": "ally-row"
+    },
+    {
+      "round": 12,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 36,
+      "text": ""
+    },
+    {
+      "round": 12,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "status",
+      "amount": 2,
+      "text": "Regen"
+    },
+    {
+      "round": 12,
+      "actorId": "clover",
+      "targetId": "clover",
+      "skillId": "clover-2",
+      "kind": "action",
+      "amount": 0,
+      "text": "Clover heals Clover (HP 25%) · Patient steep"
+    },
+    {
+      "round": 12,
+      "actorId": "foe-0-pantry-crown",
+      "targetId": "foe-0-pantry-crown",
+      "skillId": "",
+      "kind": "suppressed",
+      "amount": 1,
+      "text": "Daze spent the next action"
+    },
+    {
+      "round": 12,
+      "actorId": "foe-0-pantry-crown",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 151,
+      "text": ""
+    },
+    {
+      "round": 12,
+      "actorId": "foe-0-pantry-crown",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "defeat",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 12,
+      "actorId": "foe-0-pantry-crown",
+      "targetId": "clover",
+      "skillId": "",
+      "kind": "enemy-action",
+      "amount": 0,
+      "text": "Drowsy intent · softened basic"
+    },
+    {
+      "round": 12,
+      "actorId": "foe-6-binding-thread",
+      "targetId": "foe-6-binding-thread",
+      "skillId": "",
+      "kind": "suppressed",
+      "amount": 1,
+      "text": "Daze spent the next action"
+    },
+    {
+      "round": 12,
+      "actorId": "foe-6-binding-thread",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "absorbed",
+      "amount": 6,
+      "text": "Shield absorbed direct damage"
+    },
+    {
+      "round": 12,
+      "actorId": "foe-6-binding-thread",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 2,
+      "text": ""
+    },
+    {
+      "round": 12,
+      "actorId": "foe-6-binding-thread",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "enemy-action",
+      "amount": 0,
+      "text": "Drowsy intent · softened basic"
+    },
+    {
+      "round": 12,
+      "actorId": "foe-7-binding-thread",
+      "targetId": "foe-7-binding-thread",
+      "skillId": "",
+      "kind": "suppressed",
+      "amount": 1,
+      "text": "Daze spent the next action"
+    },
+    {
+      "round": 12,
+      "actorId": "foe-7-binding-thread",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 8,
+      "text": ""
+    },
+    {
+      "round": 12,
+      "actorId": "foe-7-binding-thread",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "enemy-action",
+      "amount": 0,
+      "text": "Drowsy intent · softened basic"
+    },
+    {
+      "round": 12,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 37,
+      "text": ""
+    },
+    {
+      "round": 12,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "steep",
+      "kind": "status-tick",
+      "amount": 37,
+      "text": "Regen"
+    },
+    {
+      "round": 13,
+      "actorId": "soot",
+      "targetId": "foe-7-binding-thread",
+      "skillId": "soot-1",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "pierce"
+    },
+    {
+      "round": 13,
+      "actorId": "soot",
+      "targetId": "foe-7-binding-thread",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 29,
+      "text": ""
+    },
+    {
+      "round": 13,
+      "actorId": "soot",
+      "targetId": "foe-7-binding-thread",
+      "skillId": "",
+      "kind": "defeat",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 13,
+      "actorId": "soot",
+      "targetId": "foe-7-binding-thread",
+      "skillId": "soot-1",
+      "kind": "action",
+      "amount": 0,
+      "text": "Soot pressures a foe, Binding Thread (HP 20%) · Cocoa spark"
+    },
+    {
+      "round": 13,
+      "actorId": "foe-0-pantry-crown",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 194,
+      "text": ""
+    },
+    {
+      "round": 13,
+      "actorId": "foe-0-pantry-crown",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "enemy-action",
+      "amount": 0,
+      "text": "Pantry Crown · basic pressure"
+    },
+    {
+      "round": 13,
+      "actorId": "foe-6-binding-thread",
+      "targetId": "soot",
+      "skillId": "binding-thread",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "single"
+    },
+    {
+      "round": 13,
+      "actorId": "foe-6-binding-thread",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 8,
+      "text": ""
+    },
+    {
+      "round": 13,
+      "actorId": "foe-6-binding-thread",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "status",
+      "amount": 1,
+      "text": "Shred"
+    },
+    {
+      "round": 13,
+      "actorId": "foe-6-binding-thread",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "enemy-action",
+      "amount": 0,
+      "text": "Binding Thread · basic pressure"
+    },
+    {
+      "round": 13,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "heal",
+      "amount": 37,
+      "text": ""
+    },
+    {
+      "round": 13,
+      "actorId": "clover",
+      "targetId": "soot",
+      "skillId": "steep",
+      "kind": "status-tick",
+      "amount": 37,
+      "text": "Regen"
+    },
+    {
+      "round": 14,
+      "actorId": "soot",
+      "targetId": "foe-6-binding-thread",
+      "skillId": "soot-1",
+      "kind": "multi-hit",
+      "amount": 0,
+      "text": "pierce"
+    },
+    {
+      "round": 14,
+      "actorId": "soot",
+      "targetId": "foe-6-binding-thread",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 28,
+      "text": ""
+    },
+    {
+      "round": 14,
+      "actorId": "soot",
+      "targetId": "foe-6-binding-thread",
+      "skillId": "",
+      "kind": "defeat",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 14,
+      "actorId": "foe-6-binding-thread",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "dispel",
+      "amount": 1,
+      "text": "Binding Thread defeated; knot released."
+    },
+    {
+      "round": 14,
+      "actorId": "soot",
+      "targetId": "foe-6-binding-thread",
+      "skillId": "soot-1",
+      "kind": "action",
+      "amount": 0,
+      "text": "Soot focuses the weakest reachable foe, Binding Thread (HP 19%) · Cocoa spark"
+    },
+    {
+      "round": 14,
+      "actorId": "foe-0-pantry-crown",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "damage",
+      "amount": 115,
+      "text": ""
+    },
+    {
+      "round": 14,
+      "actorId": "foe-0-pantry-crown",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "defeat",
+      "amount": 0,
+      "text": ""
+    },
+    {
+      "round": 14,
+      "actorId": "foe-0-pantry-crown",
+      "targetId": "soot",
+      "skillId": "",
+      "kind": "enemy-action",
+      "amount": 0,
+      "text": "Pantry Crown · basic pressure"
+    }
+  ],
+  "choices": [
+    {
+      "actorId": "mochi",
+      "skillId": "mochi-1",
+      "targetId": "foe-0-pantry-crown"
+    },
+    {
+      "actorId": "soot",
+      "skillId": "soot-2",
+      "targetId": "foe-0-pantry-crown"
+    },
+    {
+      "actorId": "clover",
+      "skillId": "clover-2",
+      "targetId": "clover"
+    },
+    {
+      "actorId": "mochi",
+      "skillId": "mochi-1",
+      "targetId": "foe-0-pantry-crown"
+    },
+    {
+      "actorId": "soot",
+      "skillId": "soot-1",
+      "targetId": "foe-0-pantry-crown"
+    },
+    {
+      "actorId": "clover",
+      "skillId": "clover-2",
+      "targetId": "mochi"
+    },
+    {
+      "actorId": "mochi",
+      "skillId": "mochi-4",
+      "targetId": "clover"
+    },
+    {
+      "actorId": "soot",
+      "skillId": "soot-4",
+      "targetId": "foe-1-binding-thread"
+    },
+    {
+      "actorId": "clover",
+      "skillId": "clover-1",
+      "targetId": "foe-1-binding-thread"
+    },
+    {
+      "actorId": "mochi",
+      "skillId": "mochi-1",
+      "targetId": "foe-0-pantry-crown"
+    },
+    {
+      "actorId": "soot",
+      "skillId": "soot-1",
+      "targetId": "foe-2-binding-thread"
+    },
+    {
+      "actorId": "clover",
+      "skillId": "clover-4",
+      "targetId": "clover"
+    },
+    {
+      "actorId": "mochi",
+      "skillId": "mochi-1",
+      "targetId": "foe-0-pantry-crown"
+    },
+    {
+      "actorId": "soot",
+      "skillId": "soot-2",
+      "targetId": "foe-0-pantry-crown"
+    },
+    {
+      "actorId": "clover",
+      "skillId": "clover-2",
+      "targetId": "clover"
+    },
+    {
+      "actorId": "mochi",
+      "skillId": "mochi-1",
+      "targetId": "foe-0-pantry-crown"
+    },
+    {
+      "actorId": "soot",
+      "skillId": "soot-1",
+      "targetId": "foe-0-pantry-crown"
+    },
+    {
+      "actorId": "clover",
+      "skillId": "clover-2",
+      "targetId": "mochi"
+    },
+    {
+      "actorId": "mochi",
+      "skillId": "defend",
+      "targetId": "mochi"
+    },
+    {
+      "actorId": "soot",
+      "skillId": "soot-3",
+      "targetId": "foe-0-pantry-crown"
+    },
+    {
+      "actorId": "clover",
+      "skillId": "clover-2",
+      "targetId": "mochi"
+    },
+    {
+      "actorId": "soot",
+      "skillId": "soot-4",
+      "targetId": "foe-0-pantry-crown"
+    },
+    {
+      "actorId": "clover",
+      "skillId": "clover-2",
+      "targetId": "clover"
+    },
+    {
+      "actorId": "soot",
+      "skillId": "soot-3",
+      "targetId": "foe-0-pantry-crown"
+    },
+    {
+      "actorId": "clover",
+      "skillId": "clover-4",
+      "targetId": "clover"
+    },
+    {
+      "actorId": "soot",
+      "skillId": "soot-1",
+      "targetId": "foe-0-pantry-crown"
+    },
+    {
+      "actorId": "clover",
+      "skillId": "clover-2",
+      "targetId": "clover"
+    },
+    {
+      "actorId": "soot",
+      "skillId": "soot-3",
+      "targetId": "foe-0-pantry-crown"
+    },
+    {
+      "actorId": "clover",
+      "skillId": "clover-2",
+      "targetId": "clover"
+    },
+    {
+      "actorId": "soot",
+      "skillId": "soot-4",
+      "targetId": "foe-0-pantry-crown"
+    },
+    {
+      "actorId": "clover",
+      "skillId": "clover-2",
+      "targetId": "clover"
+    },
+    {
+      "actorId": "soot",
+      "skillId": "soot-1",
+      "targetId": "foe-7-binding-thread"
+    },
+    {
+      "actorId": "soot",
+      "skillId": "soot-1",
+      "targetId": "foe-6-binding-thread"
+    }
+  ],
+  "result": "enemy",
+  "firstDeath": "guardian",
+  "procRounds": {
+    "v5ActionSequence": 63
+  },
+  "boons": {
+    "flow-2": 1,
+    "trail-1": 2,
+    "flow-1": 1
+  },
+  "mutator": "",
+  "initial": {
+    "skillsV5": true,
+    "seed": 3779215858,
+    "chapter": 3,
+    "cats": [
+      {
+        "id": "mochi",
+        "stats": {
+          "hp": 734,
+          "attack": 64,
+          "defense": 44,
+          "critBp": 800,
+          "critDamageBp": 5000,
+          "effectHitBp": 87,
+          "effectResistBp": 50,
+          "healingBp": 400,
+          "shieldBp": 0,
+          "initiative": 8
+        },
+        "skills": [
+          "mochi-1",
+          "mochi-2",
+          "mochi-3",
+          "mochi-4"
+        ],
+        "row": "front",
+        "equipment": [
+          "rainlace-charm-rare",
+          "hearthloom-weapon-rare",
+          "moonwick-outfit-epic",
+          "hearthloom-relic-epic"
+        ],
+        "effects": [
+          "defend-shield"
+        ],
+        "bonuses": {
+          "effectHitBp": 87,
+          "hp": 10,
+          "defense": 2,
+          "effectResistBp": 50,
+          "attack": 3
+        }
+      },
+      {
+        "id": "soot",
+        "stats": {
+          "hp": 565,
+          "attack": 76,
+          "defense": 30,
+          "critBp": 1200,
+          "critDamageBp": 5000,
+          "effectHitBp": 0,
+          "effectResistBp": 0,
+          "healingBp": 507,
+          "shieldBp": 111,
+          "initiative": 6
+        },
+        "skills": [
+          "soot-1",
+          "soot-2",
+          "soot-3",
+          "soot-4"
+        ],
+        "row": "rear",
+        "equipment": [
+          "crumbweave-charm-rare",
+          "moonwick-relic-rare",
+          "hearthloom-weapon-rare",
+          "rainlace-outfit-epic"
+        ],
+        "effects": [],
+        "bonuses": {
+          "healingBp": 107,
+          "attack": 1,
+          "hp": 3,
+          "shieldBp": 111,
+          "frontDamage": 2
+        }
+      },
+      {
+        "id": "clover",
+        "stats": {
+          "hp": 456,
+          "attack": 45,
+          "defense": 25,
+          "critBp": 531,
+          "critDamageBp": 5000,
+          "effectHitBp": 0,
+          "effectResistBp": 32,
+          "healingBp": 400,
+          "shieldBp": 0,
+          "initiative": 4
+        },
+        "skills": [
+          "clover-1",
+          "clover-2",
+          "clover-3",
+          "clover-4"
+        ],
+        "row": "rear",
+        "equipment": [
+          "mossbrew-charm-common",
+          "bellsteel-relic-rare",
+          "mossbrew-weapon-rare",
+          "mossbrew-outfit-rare"
+        ],
+        "effects": [
+          "healing-cleanse"
+        ],
+        "bonuses": {
+          "hp": 6,
+          "critBp": 31,
+          "effectResistBp": 32
+        }
+      }
+    ],
+    "enemies": [
+      "pantry-crown"
+    ],
+    "hp": {
+      "mochi": 734,
+      "soot": 565,
+      "clover": 456
+    },
+    "boons": {
+      "flow-2": 1,
+      "trail-1": 2,
+      "flow-1": 1
+    },
+    "upgrades": {},
+    "mutator": "",
+    "gameplayV4": true,
+    "challengeLevel": 6,
+    "enemyStats": {
+      "button-guard": {
+        "hp": 136,
+        "attack": 22,
+        "defense": 18
+      },
+      "sock-skipper": {
+        "hp": 199,
+        "attack": 25,
+        "defense": 8
+      },
+      "spool-ram": {
+        "hp": 358,
+        "attack": 34,
+        "defense": 16
+      },
+      "needle-moth": {
+        "hp": 187,
+        "attack": 19,
+        "defense": 6
+      },
+      "teacup-healer": {
+        "hp": 217,
+        "attack": 16,
+        "defense": 10
+      },
+      "kettle-knight": {
+        "hp": 406,
+        "attack": 28,
+        "defense": 35
+      },
+      "yarn-giant": {
+        "hp": 978,
+        "attack": 123,
+        "defense": 22
+      },
+      "binding-thread": {
+        "hp": 109,
+        "attack": 11,
+        "defense": 0
+      },
+      "practice-cushion": {
+        "hp": 65,
+        "attack": 16,
+        "defense": 0
+      },
+      "pollen-scout": {
+        "hp": 322,
+        "attack": 25,
+        "defense": 10
+      },
+      "rain-spool": {
+        "hp": 1253,
+        "attack": 136,
+        "defense": 24
+      },
+      "crumb-sentinel": {
+        "hp": 430,
+        "attack": 31,
+        "defense": 22
+      },
+      "pantry-crown": {
+        "hp": 1213,
+        "attack": 171,
+        "defense": 25
+      }
+    },
+    "plan": {
+      "focus": "finish",
+      "care": "steady"
+    }
+  },
+  "v4": {
+    "version": 1,
+    "plan": {
+      "focus": "finish",
+      "care": "steady"
+    },
+    "events": [
+      {
+        "kind": "crew-active",
+        "crew": "door",
+        "marks": 3,
+        "contributors": [
+          "mochi",
+          "clover"
+        ],
+        "threshold": 2,
+        "text": "Door team: +3% maximum HP.",
+        "sequence": 0,
+        "round": 0,
+        "version": 2,
+        "actionId": 0,
+        "stage": "setup",
+        "logIndex": 0
+      },
+      {
+        "kind": "crew-active",
+        "crew": "kettle",
+        "marks": 3,
+        "contributors": [
+          "mochi",
+          "clover"
+        ],
+        "threshold": 2,
+        "text": "Kettle team: +4% healing.",
+        "sequence": 1,
+        "round": 0,
+        "version": 2,
+        "actionId": 0,
+        "stage": "setup",
+        "logIndex": 0
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "mochi",
+        "targetId": "foe-0-pantry-crown",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Mochi pressures a foe, Pantry Crown (HP 100%) · Door knock",
+        "text": "finish/steady plan: Mochi pressures a foe, Pantry Crown (HP 100%) · Door knock",
+        "sequence": 2,
+        "round": 1,
+        "version": 2,
+        "actionId": 1,
+        "stage": "action",
+        "logIndex": 1
+      },
+      {
+        "kind": "multi-hit",
+        "actorId": "mochi",
+        "skillId": "mochi-1",
+        "shape": "splash",
+        "targets": [
+          "foe-0-pantry-crown",
+          "foe-1-binding-thread"
+        ],
+        "text": "Mochi: Door knock reaches 2 landings.",
+        "sequence": 3,
+        "round": 1,
+        "version": 2,
+        "actionId": 1,
+        "stage": "action",
+        "logIndex": 5
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "soot",
+        "targetId": "foe-0-pantry-crown",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Soot pressures a foe, Pantry Crown (HP 96%) · Black cup",
+        "text": "finish/steady plan: Soot pressures a foe, Pantry Crown (HP 96%) · Black cup",
+        "sequence": 4,
+        "round": 1,
+        "version": 2,
+        "actionId": 2,
+        "stage": "action",
+        "logIndex": 7
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "scent",
+        "stacks": 1,
+        "sourceId": "soot",
+        "actorId": "soot",
+        "targetId": "foe-0-pantry-crown",
+        "text": "Pantry Crown: Mark ×1.",
+        "sequence": 5,
+        "round": 1,
+        "version": 2,
+        "actionId": 2,
+        "stage": "action",
+        "logIndex": 10
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "clover",
+        "targetId": "clover",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Clover heals Clover (HP 100%) · Patient steep",
+        "text": "finish/steady plan: Clover heals Clover (HP 100%) · Patient steep",
+        "sequence": 6,
+        "round": 1,
+        "version": 2,
+        "actionId": 3,
+        "stage": "action",
+        "logIndex": 11
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "steep",
+        "stacks": 1,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "soot",
+        "text": "Soot: Regen ×1.",
+        "sequence": 7,
+        "round": 1,
+        "version": 2,
+        "actionId": 3,
+        "stage": "action",
+        "logIndex": 15
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "steep",
+        "stacks": 1,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "clover",
+        "text": "Clover: Regen ×1.",
+        "sequence": 8,
+        "round": 1,
+        "version": 2,
+        "actionId": 3,
+        "stage": "action",
+        "logIndex": 18
+      },
+      {
+        "kind": "multi-hit",
+        "actorId": "clover",
+        "skillId": "clover-2",
+        "shape": "ally-row",
+        "targets": [
+          "soot",
+          "clover"
+        ],
+        "text": "Clover: Patient steep reaches 2 landings.",
+        "sequence": 9,
+        "round": 1,
+        "version": 2,
+        "actionId": 3,
+        "stage": "action",
+        "logIndex": 18
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "brittle",
+        "stacks": 1,
+        "sourceId": "foe-1-binding-thread",
+        "actorId": "foe-1-binding-thread",
+        "targetId": "mochi",
+        "text": "Mochi: Shred ×1.",
+        "sequence": 10,
+        "round": 1,
+        "version": 2,
+        "actionId": 5,
+        "stage": "action",
+        "logIndex": 25
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "brittle",
+        "stacks": 2,
+        "sourceId": "foe-2-binding-thread",
+        "actorId": "foe-2-binding-thread",
+        "targetId": "mochi",
+        "text": "Mochi: Shred ×2.",
+        "sequence": 11,
+        "round": 1,
+        "version": 2,
+        "actionId": 6,
+        "stage": "action",
+        "logIndex": 29
+      },
+      {
+        "kind": "status-tick",
+        "statusId": "steep",
+        "amount": 0,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "soot",
+        "text": "Soot: Regen 0.",
+        "sequence": 12,
+        "round": 1,
+        "version": 2,
+        "actionId": 6,
+        "stage": "round-end",
+        "logIndex": 32
+      },
+      {
+        "kind": "status-tick",
+        "statusId": "steep",
+        "amount": 0,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "clover",
+        "text": "Clover: Regen 0.",
+        "sequence": 13,
+        "round": 1,
+        "version": 2,
+        "actionId": 6,
+        "stage": "round-end",
+        "logIndex": 34
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "mochi",
+        "targetId": "foe-0-pantry-crown",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Mochi pressures a foe, Pantry Crown (HP 94%) · Door knock",
+        "text": "finish/steady plan: Mochi pressures a foe, Pantry Crown (HP 94%) · Door knock",
+        "sequence": 14,
+        "round": 2,
+        "version": 2,
+        "actionId": 7,
+        "stage": "action",
+        "logIndex": 35
+      },
+      {
+        "kind": "multi-hit",
+        "actorId": "mochi",
+        "skillId": "mochi-1",
+        "shape": "splash",
+        "targets": [
+          "foe-0-pantry-crown",
+          "foe-1-binding-thread"
+        ],
+        "text": "Mochi: Door knock reaches 2 landings.",
+        "sequence": 15,
+        "round": 2,
+        "version": 2,
+        "actionId": 7,
+        "stage": "action",
+        "logIndex": 39
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "soot",
+        "targetId": "foe-0-pantry-crown",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Soot pressures a foe, Pantry Crown (HP 89%) · Cocoa spark",
+        "text": "finish/steady plan: Soot pressures a foe, Pantry Crown (HP 89%) · Cocoa spark",
+        "sequence": 16,
+        "round": 2,
+        "version": 2,
+        "actionId": 8,
+        "stage": "action",
+        "logIndex": 41
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "crumb",
+        "stacks": 1,
+        "sourceId": "soot",
+        "actorId": "soot",
+        "targetId": "foe-0-pantry-crown",
+        "text": "Pantry Crown: Crumb trail ×1.",
+        "sequence": 17,
+        "round": 2,
+        "version": 2,
+        "actionId": 8,
+        "stage": "action",
+        "logIndex": 44
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "clover",
+        "targetId": "mochi",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Clover heals Mochi (HP 78%) · Patient steep",
+        "text": "finish/steady plan: Clover heals Mochi (HP 78%) · Patient steep",
+        "sequence": 18,
+        "round": 2,
+        "version": 2,
+        "actionId": 9,
+        "stage": "action",
+        "logIndex": 45
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "steep",
+        "stacks": 1,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "mochi",
+        "text": "Mochi: Regen ×1.",
+        "sequence": 19,
+        "round": 2,
+        "version": 2,
+        "actionId": 9,
+        "stage": "action",
+        "logIndex": 48
+      },
+      {
+        "kind": "multi-hit",
+        "actorId": "clover",
+        "skillId": "clover-2",
+        "shape": "ally-row",
+        "targets": [
+          "mochi"
+        ],
+        "text": "Clover: Patient steep reaches 1 landings.",
+        "sequence": 20,
+        "round": 2,
+        "version": 2,
+        "actionId": 9,
+        "stage": "action",
+        "logIndex": 48
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "brittle",
+        "stacks": 1,
+        "sourceId": "foe-1-binding-thread",
+        "actorId": "foe-1-binding-thread",
+        "targetId": "mochi",
+        "text": "Mochi: Shred ×1.",
+        "sequence": 21,
+        "round": 2,
+        "version": 2,
+        "actionId": 11,
+        "stage": "action",
+        "logIndex": 55
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "brittle",
+        "stacks": 2,
+        "sourceId": "foe-2-binding-thread",
+        "actorId": "foe-2-binding-thread",
+        "targetId": "mochi",
+        "text": "Mochi: Shred ×2.",
+        "sequence": 22,
+        "round": 2,
+        "version": 2,
+        "actionId": 12,
+        "stage": "action",
+        "logIndex": 59
+      },
+      {
+        "kind": "status-tick",
+        "statusId": "steep",
+        "amount": 19,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "mochi",
+        "text": "Mochi: Regen 19.",
+        "sequence": 23,
+        "round": 2,
+        "version": 2,
+        "actionId": 12,
+        "stage": "round-end",
+        "logIndex": 62
+      },
+      {
+        "kind": "status-tick",
+        "statusId": "steep",
+        "amount": 0,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "soot",
+        "text": "Soot: Regen 0.",
+        "sequence": 24,
+        "round": 2,
+        "version": 2,
+        "actionId": 12,
+        "stage": "round-end",
+        "logIndex": 64
+      },
+      {
+        "kind": "status-tick",
+        "statusId": "steep",
+        "amount": 0,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "clover",
+        "text": "Clover: Regen 0.",
+        "sequence": 25,
+        "round": 2,
+        "version": 2,
+        "actionId": 12,
+        "stage": "round-end",
+        "logIndex": 66
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "mochi",
+        "targetId": "clover",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Mochi supports the team (lowest HP 61%) · Last light shelter",
+        "text": "finish/steady plan: Mochi supports the team (lowest HP 61%) · Last light shelter",
+        "sequence": 26,
+        "round": 3,
+        "version": 2,
+        "actionId": 13,
+        "stage": "action",
+        "logIndex": 68
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "cozy",
+        "stacks": 2,
+        "sourceId": "mochi",
+        "actorId": "mochi",
+        "targetId": "mochi",
+        "text": "Mochi: Warm ×2.",
+        "sequence": 27,
+        "round": 3,
+        "version": 2,
+        "actionId": 13,
+        "stage": "action",
+        "logIndex": 72
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "cozy",
+        "stacks": 2,
+        "sourceId": "mochi",
+        "actorId": "mochi",
+        "targetId": "soot",
+        "text": "Soot: Warm ×2.",
+        "sequence": 28,
+        "round": 3,
+        "version": 2,
+        "actionId": 13,
+        "stage": "action",
+        "logIndex": 76
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "cozy",
+        "stacks": 2,
+        "sourceId": "mochi",
+        "actorId": "mochi",
+        "targetId": "clover",
+        "text": "Clover: Warm ×2.",
+        "sequence": 29,
+        "round": 3,
+        "version": 2,
+        "actionId": 13,
+        "stage": "action",
+        "logIndex": 80
+      },
+      {
+        "kind": "multi-hit",
+        "actorId": "mochi",
+        "skillId": "mochi-4",
+        "shape": "team",
+        "targets": [
+          "mochi",
+          "soot",
+          "clover"
+        ],
+        "text": "Mochi: Last light shelter reaches 3 landings.",
+        "sequence": 30,
+        "round": 3,
+        "version": 2,
+        "actionId": 13,
+        "stage": "action",
+        "logIndex": 80
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "soot",
+        "targetId": "foe-1-binding-thread",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Soot focuses the weakest reachable foe, Binding Thread (HP 69%) · Midnight service",
+        "text": "finish/steady plan: Soot focuses the weakest reachable foe, Binding Thread (HP 69%) · Midnight service",
+        "sequence": 31,
+        "round": 3,
+        "version": 2,
+        "actionId": 14,
+        "stage": "action",
+        "logIndex": 81
+      },
+      {
+        "kind": "reaction",
+        "reactionId": "crumb-burst",
+        "primerIds": [
+          "crumb"
+        ],
+        "targets": [
+          "foe-0-pantry-crown"
+        ],
+        "actorId": "soot",
+        "sourceId": "soot",
+        "targetId": "foe-0-pantry-crown",
+        "text": "Soot → Crumb Burst.",
+        "sequence": 32,
+        "round": 3,
+        "version": 2,
+        "actionId": 14,
+        "stage": "action",
+        "logIndex": 86
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "drowsy",
+        "stacks": 1,
+        "sourceId": "soot",
+        "actorId": "soot",
+        "targetId": "foe-0-pantry-crown",
+        "text": "Pantry Crown: Daze ×1.",
+        "sequence": 33,
+        "round": 3,
+        "version": 2,
+        "actionId": 14,
+        "stage": "action",
+        "logIndex": 87
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "drowsy",
+        "stacks": 1,
+        "sourceId": "soot",
+        "actorId": "soot",
+        "targetId": "foe-1-binding-thread",
+        "text": "Binding Thread: Daze ×1.",
+        "sequence": 34,
+        "round": 3,
+        "version": 2,
+        "actionId": 14,
+        "stage": "action",
+        "logIndex": 90
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "drowsy",
+        "stacks": 1,
+        "sourceId": "soot",
+        "actorId": "soot",
+        "targetId": "foe-2-binding-thread",
+        "text": "Binding Thread: Daze ×1.",
+        "sequence": 35,
+        "round": 3,
+        "version": 2,
+        "actionId": 14,
+        "stage": "action",
+        "logIndex": 93
+      },
+      {
+        "kind": "multi-hit",
+        "actorId": "soot",
+        "skillId": "soot-4",
+        "shape": "all",
+        "targets": [
+          "foe-0-pantry-crown",
+          "foe-1-binding-thread",
+          "foe-2-binding-thread"
+        ],
+        "text": "Soot: Midnight service reaches 3 landings.",
+        "sequence": 36,
+        "round": 3,
+        "version": 2,
+        "actionId": 14,
+        "stage": "action",
+        "logIndex": 93
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "clover",
+        "targetId": "foe-1-binding-thread",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Clover focuses the weakest reachable foe, Binding Thread (HP 5%) · Leaf tap",
+        "text": "finish/steady plan: Clover focuses the weakest reachable foe, Binding Thread (HP 5%) · Leaf tap",
+        "sequence": 37,
+        "round": 3,
+        "version": 2,
+        "actionId": 15,
+        "stage": "action",
+        "logIndex": 94
+      },
+      {
+        "kind": "status-tick",
+        "statusId": "steep",
+        "amount": 19,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "mochi",
+        "text": "Mochi: Regen 19.",
+        "sequence": 38,
+        "round": 3,
+        "version": 2,
+        "actionId": 17,
+        "stage": "round-end",
+        "logIndex": 109
+      },
+      {
+        "kind": "status-tick",
+        "statusId": "steep",
+        "amount": 0,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "soot",
+        "text": "Soot: Regen 0.",
+        "sequence": 39,
+        "round": 3,
+        "version": 2,
+        "actionId": 17,
+        "stage": "round-end",
+        "logIndex": 111
+      },
+      {
+        "kind": "status-tick",
+        "statusId": "steep",
+        "amount": 0,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "clover",
+        "text": "Clover: Regen 0.",
+        "sequence": 40,
+        "round": 3,
+        "version": 2,
+        "actionId": 17,
+        "stage": "round-end",
+        "logIndex": 113
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "mochi",
+        "targetId": "foe-0-pantry-crown",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Mochi pressures a foe, Pantry Crown (HP 77%) · Door knock",
+        "text": "finish/steady plan: Mochi pressures a foe, Pantry Crown (HP 77%) · Door knock",
+        "sequence": 41,
+        "round": 4,
+        "version": 2,
+        "actionId": 18,
+        "stage": "action",
+        "logIndex": 116
+      },
+      {
+        "kind": "multi-hit",
+        "actorId": "mochi",
+        "skillId": "mochi-1",
+        "shape": "splash",
+        "targets": [
+          "foe-0-pantry-crown",
+          "foe-2-binding-thread"
+        ],
+        "text": "Mochi: Door knock reaches 2 landings.",
+        "sequence": 42,
+        "round": 4,
+        "version": 2,
+        "actionId": 18,
+        "stage": "action",
+        "logIndex": 120
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "soot",
+        "targetId": "foe-2-binding-thread",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Soot focuses the weakest reachable foe, Binding Thread (HP 42%) · Cocoa spark",
+        "text": "finish/steady plan: Soot focuses the weakest reachable foe, Binding Thread (HP 42%) · Cocoa spark",
+        "sequence": 43,
+        "round": 4,
+        "version": 2,
+        "actionId": 19,
+        "stage": "action",
+        "logIndex": 122
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "clover",
+        "targetId": "clover",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Clover supports the team (lowest HP 66%) · Greenhouse morning",
+        "text": "finish/steady plan: Clover supports the team (lowest HP 66%) · Greenhouse morning",
+        "sequence": 44,
+        "round": 4,
+        "version": 2,
+        "actionId": 20,
+        "stage": "action",
+        "logIndex": 126
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "sprout",
+        "stacks": 1,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "mochi",
+        "text": "Mochi: Second sprout ×1.",
+        "sequence": 45,
+        "round": 4,
+        "version": 2,
+        "actionId": 20,
+        "stage": "action",
+        "logIndex": 129
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "sprout",
+        "stacks": 1,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "soot",
+        "text": "Soot: Second sprout ×1.",
+        "sequence": 46,
+        "round": 4,
+        "version": 2,
+        "actionId": 20,
+        "stage": "action",
+        "logIndex": 132
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "sprout",
+        "stacks": 1,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "clover",
+        "text": "Clover: Second sprout ×1.",
+        "sequence": 47,
+        "round": 4,
+        "version": 2,
+        "actionId": 20,
+        "stage": "action",
+        "logIndex": 135
+      },
+      {
+        "kind": "multi-hit",
+        "actorId": "clover",
+        "skillId": "clover-4",
+        "shape": "team",
+        "targets": [
+          "mochi",
+          "soot",
+          "clover"
+        ],
+        "text": "Clover: Greenhouse morning reaches 3 landings.",
+        "sequence": 48,
+        "round": 4,
+        "version": 2,
+        "actionId": 20,
+        "stage": "action",
+        "logIndex": 135
+      },
+      {
+        "kind": "status-tick",
+        "statusId": "steep",
+        "amount": 19,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "mochi",
+        "text": "Mochi: Regen 19.",
+        "sequence": 49,
+        "round": 4,
+        "version": 2,
+        "actionId": 21,
+        "stage": "round-end",
+        "logIndex": 141
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "mochi",
+        "targetId": "foe-0-pantry-crown",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Mochi focuses the weakest reachable foe, Pantry Crown (HP 73%) · Door knock",
+        "text": "finish/steady plan: Mochi focuses the weakest reachable foe, Pantry Crown (HP 73%) · Door knock",
+        "sequence": 50,
+        "round": 5,
+        "version": 2,
+        "actionId": 22,
+        "stage": "action",
+        "logIndex": 146
+      },
+      {
+        "kind": "multi-hit",
+        "actorId": "mochi",
+        "skillId": "mochi-1",
+        "shape": "splash",
+        "targets": [
+          "foe-0-pantry-crown"
+        ],
+        "text": "Mochi: Door knock reaches 1 landings.",
+        "sequence": 51,
+        "round": 5,
+        "version": 2,
+        "actionId": 22,
+        "stage": "action",
+        "logIndex": 148
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "soot",
+        "targetId": "foe-0-pantry-crown",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Soot focuses the weakest reachable foe, Pantry Crown (HP 68%) · Black cup",
+        "text": "finish/steady plan: Soot focuses the weakest reachable foe, Pantry Crown (HP 68%) · Black cup",
+        "sequence": 52,
+        "round": 5,
+        "version": 2,
+        "actionId": 23,
+        "stage": "action",
+        "logIndex": 150
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "scent",
+        "stacks": 1,
+        "sourceId": "soot",
+        "actorId": "soot",
+        "targetId": "foe-0-pantry-crown",
+        "text": "Pantry Crown: Mark ×1.",
+        "sequence": 53,
+        "round": 5,
+        "version": 2,
+        "actionId": 23,
+        "stage": "action",
+        "logIndex": 153
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "clover",
+        "targetId": "clover",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Clover heals Clover (HP 100%) · Patient steep",
+        "text": "finish/steady plan: Clover heals Clover (HP 100%) · Patient steep",
+        "sequence": 54,
+        "round": 5,
+        "version": 2,
+        "actionId": 24,
+        "stage": "action",
+        "logIndex": 154
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "steep",
+        "stacks": 1,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "soot",
+        "text": "Soot: Regen ×1.",
+        "sequence": 55,
+        "round": 5,
+        "version": 2,
+        "actionId": 24,
+        "stage": "action",
+        "logIndex": 157
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "steep",
+        "stacks": 1,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "clover",
+        "text": "Clover: Regen ×1.",
+        "sequence": 56,
+        "round": 5,
+        "version": 2,
+        "actionId": 24,
+        "stage": "action",
+        "logIndex": 160
+      },
+      {
+        "kind": "multi-hit",
+        "actorId": "clover",
+        "skillId": "clover-2",
+        "shape": "ally-row",
+        "targets": [
+          "soot",
+          "clover"
+        ],
+        "text": "Clover: Patient steep reaches 2 landings.",
+        "sequence": 57,
+        "round": 5,
+        "version": 2,
+        "actionId": 24,
+        "stage": "action",
+        "logIndex": 160
+      },
+      {
+        "kind": "status-tick",
+        "statusId": "steep",
+        "amount": 0,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "soot",
+        "text": "Soot: Regen 0.",
+        "sequence": 58,
+        "round": 5,
+        "version": 2,
+        "actionId": 25,
+        "stage": "round-end",
+        "logIndex": 166
+      },
+      {
+        "kind": "status-tick",
+        "statusId": "steep",
+        "amount": 0,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "clover",
+        "text": "Clover: Regen 0.",
+        "sequence": 59,
+        "round": 5,
+        "version": 2,
+        "actionId": 25,
+        "stage": "round-end",
+        "logIndex": 168
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "mochi",
+        "targetId": "foe-0-pantry-crown",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Mochi focuses the weakest reachable foe, Pantry Crown (HP 65%) · Door knock",
+        "text": "finish/steady plan: Mochi focuses the weakest reachable foe, Pantry Crown (HP 65%) · Door knock",
+        "sequence": 60,
+        "round": 6,
+        "version": 2,
+        "actionId": 26,
+        "stage": "action",
+        "logIndex": 169
+      },
+      {
+        "kind": "multi-hit",
+        "actorId": "mochi",
+        "skillId": "mochi-1",
+        "shape": "splash",
+        "targets": [
+          "foe-0-pantry-crown"
+        ],
+        "text": "Mochi: Door knock reaches 1 landings.",
+        "sequence": 61,
+        "round": 6,
+        "version": 2,
+        "actionId": 26,
+        "stage": "action",
+        "logIndex": 171
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "soot",
+        "targetId": "foe-0-pantry-crown",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Soot focuses the weakest reachable foe, Pantry Crown (HP 60%) · Cocoa spark",
+        "text": "finish/steady plan: Soot focuses the weakest reachable foe, Pantry Crown (HP 60%) · Cocoa spark",
+        "sequence": 62,
+        "round": 6,
+        "version": 2,
+        "actionId": 27,
+        "stage": "action",
+        "logIndex": 173
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "crumb",
+        "stacks": 1,
+        "sourceId": "soot",
+        "actorId": "soot",
+        "targetId": "foe-0-pantry-crown",
+        "text": "Pantry Crown: Crumb trail ×1.",
+        "sequence": 63,
+        "round": 6,
+        "version": 2,
+        "actionId": 27,
+        "stage": "action",
+        "logIndex": 176
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "clover",
+        "targetId": "mochi",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Clover heals Mochi (HP 45%) · Patient steep",
+        "text": "finish/steady plan: Clover heals Mochi (HP 45%) · Patient steep",
+        "sequence": 64,
+        "round": 6,
+        "version": 2,
+        "actionId": 28,
+        "stage": "action",
+        "logIndex": 177
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "steep",
+        "stacks": 1,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "mochi",
+        "text": "Mochi: Regen ×1.",
+        "sequence": 65,
+        "round": 6,
+        "version": 2,
+        "actionId": 28,
+        "stage": "action",
+        "logIndex": 180
+      },
+      {
+        "kind": "multi-hit",
+        "actorId": "clover",
+        "skillId": "clover-2",
+        "shape": "ally-row",
+        "targets": [
+          "mochi"
+        ],
+        "text": "Clover: Patient steep reaches 1 landings.",
+        "sequence": 66,
+        "round": 6,
+        "version": 2,
+        "actionId": 28,
+        "stage": "action",
+        "logIndex": 180
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "drowsy",
+        "stacks": 1,
+        "sourceId": "foe-0-pantry-crown",
+        "actorId": "foe-0-pantry-crown",
+        "targetId": "mochi",
+        "text": "Mochi: Daze ×1.",
+        "sequence": 67,
+        "round": 6,
+        "version": 2,
+        "actionId": 29,
+        "stage": "action",
+        "logIndex": 184
+      },
+      {
+        "kind": "status-tick",
+        "statusId": "steep",
+        "amount": 19,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "mochi",
+        "text": "Mochi: Regen 19.",
+        "sequence": 68,
+        "round": 6,
+        "version": 2,
+        "actionId": 29,
+        "stage": "round-end",
+        "logIndex": 188
+      },
+      {
+        "kind": "status-tick",
+        "statusId": "steep",
+        "amount": 0,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "soot",
+        "text": "Soot: Regen 0.",
+        "sequence": 69,
+        "round": 6,
+        "version": 2,
+        "actionId": 29,
+        "stage": "round-end",
+        "logIndex": 190
+      },
+      {
+        "kind": "status-tick",
+        "statusId": "steep",
+        "amount": 0,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "clover",
+        "text": "Clover: Regen 0.",
+        "sequence": 70,
+        "round": 6,
+        "version": 2,
+        "actionId": 29,
+        "stage": "round-end",
+        "logIndex": 192
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "mochi",
+        "targetId": "foe-0-pantry-crown",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Mochi focuses the weakest reachable foe, Pantry Crown (HP 56%) · Door knock",
+        "text": "finish/steady plan: Mochi focuses the weakest reachable foe, Pantry Crown (HP 56%) · Door knock",
+        "sequence": 71,
+        "round": 7,
+        "version": 2,
+        "actionId": 30,
+        "stage": "action",
+        "logIndex": 198
+      },
+      {
+        "kind": "multi-hit",
+        "actorId": "mochi",
+        "skillId": "mochi-1",
+        "shape": "splash",
+        "targets": [
+          "foe-0-pantry-crown"
+        ],
+        "text": "Mochi: Door knock reaches 1 landings.",
+        "sequence": 72,
+        "round": 7,
+        "version": 2,
+        "actionId": 30,
+        "stage": "action",
+        "logIndex": 200
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "soot",
+        "targetId": "foe-0-pantry-crown",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Soot focuses the weakest reachable foe, Pantry Crown (HP 54%) · Lantern wick",
+        "text": "finish/steady plan: Soot focuses the weakest reachable foe, Pantry Crown (HP 54%) · Lantern wick",
+        "sequence": 73,
+        "round": 7,
+        "version": 2,
+        "actionId": 31,
+        "stage": "action",
+        "logIndex": 202
+      },
+      {
+        "kind": "boss-phase",
+        "actorId": "foe-0-pantry-crown",
+        "bossId": "pantry-crown",
+        "from": 1,
+        "to": 2,
+        "threshold": 0.5,
+        "text": "Pantry Crown: closing phase. The next signature reaches both rows.",
+        "sequence": 74,
+        "round": 7,
+        "version": 2,
+        "actionId": 31,
+        "stage": "action",
+        "logIndex": 205
+      },
+      {
+        "kind": "reaction",
+        "reactionId": "crumb-burst",
+        "primerIds": [
+          "crumb"
+        ],
+        "targets": [
+          "foe-0-pantry-crown"
+        ],
+        "actorId": "soot",
+        "sourceId": "soot",
+        "targetId": "foe-0-pantry-crown",
+        "text": "Soot → Crumb Burst.",
+        "sequence": 75,
+        "round": 7,
+        "version": 2,
+        "actionId": 31,
+        "stage": "action",
+        "logIndex": 210
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "clover",
+        "targetId": "mochi",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Clover heals Mochi (HP 11%) · Patient steep",
+        "text": "finish/steady plan: Clover heals Mochi (HP 11%) · Patient steep",
+        "sequence": 76,
+        "round": 7,
+        "version": 2,
+        "actionId": 32,
+        "stage": "action",
+        "logIndex": 211
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "steep",
+        "stacks": 2,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "mochi",
+        "text": "Mochi: Regen ×2.",
+        "sequence": 77,
+        "round": 7,
+        "version": 2,
+        "actionId": 32,
+        "stage": "action",
+        "logIndex": 214
+      },
+      {
+        "kind": "multi-hit",
+        "actorId": "clover",
+        "skillId": "clover-2",
+        "shape": "ally-row",
+        "targets": [
+          "mochi"
+        ],
+        "text": "Clover: Patient steep reaches 1 landings.",
+        "sequence": 78,
+        "round": 7,
+        "version": 2,
+        "actionId": 32,
+        "stage": "action",
+        "logIndex": 214
+      },
+      {
+        "kind": "status-tick",
+        "statusId": "steep",
+        "amount": 0,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "soot",
+        "text": "Soot: Regen 0.",
+        "sequence": 79,
+        "round": 7,
+        "version": 2,
+        "actionId": 33,
+        "stage": "round-end",
+        "logIndex": 221
+      },
+      {
+        "kind": "status-tick",
+        "statusId": "steep",
+        "amount": 0,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "clover",
+        "text": "Clover: Regen 0.",
+        "sequence": 80,
+        "round": 7,
+        "version": 2,
+        "actionId": 33,
+        "stage": "round-end",
+        "logIndex": 223
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "soot",
+        "targetId": "foe-0-pantry-crown",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Soot pressures a foe, Pantry Crown (HP 44%) · Midnight service",
+        "text": "finish/steady plan: Soot pressures a foe, Pantry Crown (HP 44%) · Midnight service",
+        "sequence": 81,
+        "round": 8,
+        "version": 2,
+        "actionId": 34,
+        "stage": "action",
+        "logIndex": 225
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "drowsy",
+        "stacks": 1,
+        "sourceId": "soot",
+        "actorId": "soot",
+        "targetId": "foe-6-binding-thread",
+        "text": "Binding Thread: Daze ×1.",
+        "sequence": 82,
+        "round": 8,
+        "version": 2,
+        "actionId": 34,
+        "stage": "action",
+        "logIndex": 231
+      },
+      {
+        "kind": "multi-hit",
+        "actorId": "soot",
+        "skillId": "soot-4",
+        "shape": "all",
+        "targets": [
+          "foe-0-pantry-crown",
+          "foe-6-binding-thread",
+          "foe-7-binding-thread"
+        ],
+        "text": "Soot: Midnight service reaches 3 landings.",
+        "sequence": 83,
+        "round": 8,
+        "version": 2,
+        "actionId": 34,
+        "stage": "action",
+        "logIndex": 234
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "clover",
+        "targetId": "clover",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Clover heals Clover (HP 100%) · Patient steep",
+        "text": "finish/steady plan: Clover heals Clover (HP 100%) · Patient steep",
+        "sequence": 84,
+        "round": 8,
+        "version": 2,
+        "actionId": 35,
+        "stage": "action",
+        "logIndex": 235
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "steep",
+        "stacks": 1,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "soot",
+        "text": "Soot: Regen ×1.",
+        "sequence": 85,
+        "round": 8,
+        "version": 2,
+        "actionId": 35,
+        "stage": "action",
+        "logIndex": 238
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "steep",
+        "stacks": 1,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "clover",
+        "text": "Clover: Regen ×1.",
+        "sequence": 86,
+        "round": 8,
+        "version": 2,
+        "actionId": 35,
+        "stage": "action",
+        "logIndex": 241
+      },
+      {
+        "kind": "multi-hit",
+        "actorId": "clover",
+        "skillId": "clover-2",
+        "shape": "ally-row",
+        "targets": [
+          "soot",
+          "clover"
+        ],
+        "text": "Clover: Patient steep reaches 2 landings.",
+        "sequence": 87,
+        "round": 8,
+        "version": 2,
+        "actionId": 35,
+        "stage": "action",
+        "logIndex": 241
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "brittle",
+        "stacks": 1,
+        "sourceId": "foe-7-binding-thread",
+        "actorId": "foe-7-binding-thread",
+        "targetId": "soot",
+        "text": "Soot: Shred ×1.",
+        "sequence": 88,
+        "round": 8,
+        "version": 2,
+        "actionId": 38,
+        "stage": "action",
+        "logIndex": 253
+      },
+      {
+        "kind": "status-tick",
+        "statusId": "steep",
+        "amount": 0,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "soot",
+        "text": "Soot: Regen 0.",
+        "sequence": 89,
+        "round": 8,
+        "version": 2,
+        "actionId": 38,
+        "stage": "round-end",
+        "logIndex": 256
+      },
+      {
+        "kind": "status-tick",
+        "statusId": "steep",
+        "amount": 19,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "clover",
+        "text": "Clover: Regen 19.",
+        "sequence": 90,
+        "round": 8,
+        "version": 2,
+        "actionId": 38,
+        "stage": "round-end",
+        "logIndex": 258
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "soot",
+        "targetId": "foe-0-pantry-crown",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Soot pressures a foe, Pantry Crown (HP 40%) · Lantern wick",
+        "text": "finish/steady plan: Soot pressures a foe, Pantry Crown (HP 40%) · Lantern wick",
+        "sequence": 91,
+        "round": 9,
+        "version": 2,
+        "actionId": 39,
+        "stage": "action",
+        "logIndex": 258
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "clover",
+        "targetId": "clover",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Clover supports the team (lowest HP 89%) · Greenhouse morning",
+        "text": "finish/steady plan: Clover supports the team (lowest HP 89%) · Greenhouse morning",
+        "sequence": 92,
+        "round": 9,
+        "version": 2,
+        "actionId": 40,
+        "stage": "action",
+        "logIndex": 261
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "sprout",
+        "stacks": 1,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "soot",
+        "text": "Soot: Second sprout ×1.",
+        "sequence": 93,
+        "round": 9,
+        "version": 2,
+        "actionId": 40,
+        "stage": "action",
+        "logIndex": 264
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "sprout",
+        "stacks": 1,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "clover",
+        "text": "Clover: Second sprout ×1.",
+        "sequence": 94,
+        "round": 9,
+        "version": 2,
+        "actionId": 40,
+        "stage": "action",
+        "logIndex": 267
+      },
+      {
+        "kind": "multi-hit",
+        "actorId": "clover",
+        "skillId": "clover-4",
+        "shape": "team",
+        "targets": [
+          "soot",
+          "clover"
+        ],
+        "text": "Clover: Greenhouse morning reaches 2 landings.",
+        "sequence": 95,
+        "round": 9,
+        "version": 2,
+        "actionId": 40,
+        "stage": "action",
+        "logIndex": 267
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "drowsy",
+        "stacks": 1,
+        "sourceId": "foe-0-pantry-crown",
+        "actorId": "foe-0-pantry-crown",
+        "targetId": "soot",
+        "text": "Soot: Daze ×1.",
+        "sequence": 96,
+        "round": 9,
+        "version": 2,
+        "actionId": 41,
+        "stage": "action",
+        "logIndex": 271
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "drowsy",
+        "stacks": 1,
+        "sourceId": "foe-0-pantry-crown",
+        "actorId": "foe-0-pantry-crown",
+        "targetId": "clover",
+        "text": "Clover: Daze ×1.",
+        "sequence": 97,
+        "round": 9,
+        "version": 2,
+        "actionId": 41,
+        "stage": "action",
+        "logIndex": 273
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "brittle",
+        "stacks": 1,
+        "sourceId": "foe-6-binding-thread",
+        "actorId": "foe-6-binding-thread",
+        "targetId": "clover",
+        "text": "Clover: Shred ×1.",
+        "sequence": 98,
+        "round": 9,
+        "version": 2,
+        "actionId": 42,
+        "stage": "action",
+        "logIndex": 278
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "drowsy",
+        "stacks": 1,
+        "sourceId": "foe-6-binding-thread",
+        "actorId": "foe-6-binding-thread",
+        "targetId": "clover",
+        "text": "Clover: Daze ×1.",
+        "sequence": 99,
+        "round": 9,
+        "version": 2,
+        "actionId": 42,
+        "stage": "action",
+        "logIndex": 279
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "brittle",
+        "stacks": 2,
+        "sourceId": "foe-7-binding-thread",
+        "actorId": "foe-7-binding-thread",
+        "targetId": "clover",
+        "text": "Clover: Shred ×2.",
+        "sequence": 100,
+        "round": 9,
+        "version": 2,
+        "actionId": 43,
+        "stage": "action",
+        "logIndex": 283
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "drowsy",
+        "stacks": 1,
+        "sourceId": "foe-7-binding-thread",
+        "actorId": "foe-7-binding-thread",
+        "targetId": "clover",
+        "text": "Clover: Daze ×1.",
+        "sequence": 101,
+        "round": 9,
+        "version": 2,
+        "actionId": 43,
+        "stage": "action",
+        "logIndex": 284
+      },
+      {
+        "kind": "status-tick",
+        "statusId": "steep",
+        "amount": 19,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "soot",
+        "text": "Soot: Regen 19.",
+        "sequence": 102,
+        "round": 9,
+        "version": 2,
+        "actionId": 43,
+        "stage": "round-end",
+        "logIndex": 287
+      },
+      {
+        "kind": "status-tick",
+        "statusId": "steep",
+        "amount": 19,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "clover",
+        "text": "Clover: Regen 19.",
+        "sequence": 103,
+        "round": 9,
+        "version": 2,
+        "actionId": 43,
+        "stage": "round-end",
+        "logIndex": 289
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "soot",
+        "targetId": "foe-0-pantry-crown",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Soot pressures a foe, Pantry Crown (HP 36%) · Cocoa spark",
+        "text": "finish/steady plan: Soot pressures a foe, Pantry Crown (HP 36%) · Cocoa spark",
+        "sequence": 104,
+        "round": 10,
+        "version": 2,
+        "actionId": 44,
+        "stage": "action",
+        "logIndex": 291
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "crumb",
+        "stacks": 1,
+        "sourceId": "soot",
+        "actorId": "soot",
+        "targetId": "foe-0-pantry-crown",
+        "text": "Pantry Crown: Crumb trail ×1.",
+        "sequence": 105,
+        "round": 10,
+        "version": 2,
+        "actionId": 44,
+        "stage": "action",
+        "logIndex": 294
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "clover",
+        "targetId": "foe-0-pantry-crown",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Clover pressures a foe, Pantry Crown (HP 34%) · Leaf tap",
+        "text": "finish/steady plan: Clover pressures a foe, Pantry Crown (HP 34%) · Leaf tap",
+        "sequence": 106,
+        "round": 10,
+        "version": 2,
+        "actionId": 45,
+        "stage": "action",
+        "logIndex": 296
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "brittle",
+        "stacks": 1,
+        "sourceId": "foe-6-binding-thread",
+        "actorId": "foe-6-binding-thread",
+        "targetId": "clover",
+        "text": "Clover: Shred ×1.",
+        "sequence": 107,
+        "round": 10,
+        "version": 2,
+        "actionId": 47,
+        "stage": "action",
+        "logIndex": 305
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "brittle",
+        "stacks": 2,
+        "sourceId": "foe-7-binding-thread",
+        "actorId": "foe-7-binding-thread",
+        "targetId": "clover",
+        "text": "Clover: Shred ×2.",
+        "sequence": 108,
+        "round": 10,
+        "version": 2,
+        "actionId": 48,
+        "stage": "action",
+        "logIndex": 309
+      },
+      {
+        "kind": "status-tick",
+        "statusId": "steep",
+        "amount": 19,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "soot",
+        "text": "Soot: Regen 19.",
+        "sequence": 109,
+        "round": 10,
+        "version": 2,
+        "actionId": 48,
+        "stage": "round-end",
+        "logIndex": 312
+      },
+      {
+        "kind": "status-tick",
+        "statusId": "steep",
+        "amount": 19,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "clover",
+        "text": "Clover: Regen 19.",
+        "sequence": 110,
+        "round": 10,
+        "version": 2,
+        "actionId": 48,
+        "stage": "round-end",
+        "logIndex": 314
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "soot",
+        "targetId": "foe-0-pantry-crown",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Soot pressures a foe, Pantry Crown (HP 33%) · Lantern wick",
+        "text": "finish/steady plan: Soot pressures a foe, Pantry Crown (HP 33%) · Lantern wick",
+        "sequence": 111,
+        "round": 11,
+        "version": 2,
+        "actionId": 49,
+        "stage": "action",
+        "logIndex": 316
+      },
+      {
+        "kind": "reaction",
+        "reactionId": "crumb-burst",
+        "primerIds": [
+          "crumb"
+        ],
+        "targets": [
+          "foe-0-pantry-crown"
+        ],
+        "actorId": "soot",
+        "sourceId": "soot",
+        "targetId": "foe-0-pantry-crown",
+        "text": "Soot → Crumb Burst.",
+        "sequence": 112,
+        "round": 11,
+        "version": 2,
+        "actionId": 49,
+        "stage": "action",
+        "logIndex": 321
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "clover",
+        "targetId": "clover",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Clover heals Clover (HP 17%) · Patient steep",
+        "text": "finish/steady plan: Clover heals Clover (HP 17%) · Patient steep",
+        "sequence": 113,
+        "round": 11,
+        "version": 2,
+        "actionId": 50,
+        "stage": "action",
+        "logIndex": 322
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "steep",
+        "stacks": 1,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "soot",
+        "text": "Soot: Regen ×1.",
+        "sequence": 114,
+        "round": 11,
+        "version": 2,
+        "actionId": 50,
+        "stage": "action",
+        "logIndex": 325
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "steep",
+        "stacks": 1,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "clover",
+        "text": "Clover: Regen ×1.",
+        "sequence": 115,
+        "round": 11,
+        "version": 2,
+        "actionId": 50,
+        "stage": "action",
+        "logIndex": 328
+      },
+      {
+        "kind": "multi-hit",
+        "actorId": "clover",
+        "skillId": "clover-2",
+        "shape": "ally-row",
+        "targets": [
+          "soot",
+          "clover"
+        ],
+        "text": "Clover: Patient steep reaches 2 landings.",
+        "sequence": 116,
+        "round": 11,
+        "version": 2,
+        "actionId": 50,
+        "stage": "action",
+        "logIndex": 328
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "brittle",
+        "stacks": 1,
+        "sourceId": "foe-6-binding-thread",
+        "actorId": "foe-6-binding-thread",
+        "targetId": "clover",
+        "text": "Clover: Shred ×1.",
+        "sequence": 117,
+        "round": 11,
+        "version": 2,
+        "actionId": 52,
+        "stage": "action",
+        "logIndex": 335
+      },
+      {
+        "kind": "status-tick",
+        "statusId": "steep",
+        "amount": 19,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "soot",
+        "text": "Soot: Regen 19.",
+        "sequence": 118,
+        "round": 11,
+        "version": 2,
+        "actionId": 53,
+        "stage": "round-end",
+        "logIndex": 342
+      },
+      {
+        "kind": "status-tick",
+        "statusId": "steep",
+        "amount": 19,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "clover",
+        "text": "Clover: Regen 19.",
+        "sequence": 119,
+        "round": 11,
+        "version": 2,
+        "actionId": 53,
+        "stage": "round-end",
+        "logIndex": 344
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "soot",
+        "targetId": "foe-0-pantry-crown",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Soot pressures a foe, Pantry Crown (HP 22%) · Midnight service",
+        "text": "finish/steady plan: Soot pressures a foe, Pantry Crown (HP 22%) · Midnight service",
+        "sequence": 120,
+        "round": 12,
+        "version": 2,
+        "actionId": 54,
+        "stage": "action",
+        "logIndex": 345
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "drowsy",
+        "stacks": 1,
+        "sourceId": "soot",
+        "actorId": "soot",
+        "targetId": "foe-0-pantry-crown",
+        "text": "Pantry Crown: Daze ×1.",
+        "sequence": 121,
+        "round": 12,
+        "version": 2,
+        "actionId": 54,
+        "stage": "action",
+        "logIndex": 348
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "drowsy",
+        "stacks": 1,
+        "sourceId": "soot",
+        "actorId": "soot",
+        "targetId": "foe-6-binding-thread",
+        "text": "Binding Thread: Daze ×1.",
+        "sequence": 122,
+        "round": 12,
+        "version": 2,
+        "actionId": 54,
+        "stage": "action",
+        "logIndex": 351
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "drowsy",
+        "stacks": 1,
+        "sourceId": "soot",
+        "actorId": "soot",
+        "targetId": "foe-7-binding-thread",
+        "text": "Binding Thread: Daze ×1.",
+        "sequence": 123,
+        "round": 12,
+        "version": 2,
+        "actionId": 54,
+        "stage": "action",
+        "logIndex": 354
+      },
+      {
+        "kind": "multi-hit",
+        "actorId": "soot",
+        "skillId": "soot-4",
+        "shape": "all",
+        "targets": [
+          "foe-0-pantry-crown",
+          "foe-6-binding-thread",
+          "foe-7-binding-thread"
+        ],
+        "text": "Soot: Midnight service reaches 3 landings.",
+        "sequence": 124,
+        "round": 12,
+        "version": 2,
+        "actionId": 54,
+        "stage": "action",
+        "logIndex": 354
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "clover",
+        "targetId": "clover",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Clover heals Clover (HP 25%) · Patient steep",
+        "text": "finish/steady plan: Clover heals Clover (HP 25%) · Patient steep",
+        "sequence": 125,
+        "round": 12,
+        "version": 2,
+        "actionId": 55,
+        "stage": "action",
+        "logIndex": 355
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "steep",
+        "stacks": 2,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "soot",
+        "text": "Soot: Regen ×2.",
+        "sequence": 126,
+        "round": 12,
+        "version": 2,
+        "actionId": 55,
+        "stage": "action",
+        "logIndex": 358
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "steep",
+        "stacks": 2,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "clover",
+        "text": "Clover: Regen ×2.",
+        "sequence": 127,
+        "round": 12,
+        "version": 2,
+        "actionId": 55,
+        "stage": "action",
+        "logIndex": 361
+      },
+      {
+        "kind": "multi-hit",
+        "actorId": "clover",
+        "skillId": "clover-2",
+        "shape": "ally-row",
+        "targets": [
+          "soot",
+          "clover"
+        ],
+        "text": "Clover: Patient steep reaches 2 landings.",
+        "sequence": 128,
+        "round": 12,
+        "version": 2,
+        "actionId": 55,
+        "stage": "action",
+        "logIndex": 361
+      },
+      {
+        "kind": "status-tick",
+        "statusId": "steep",
+        "amount": 37,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "soot",
+        "text": "Soot: Regen 37.",
+        "sequence": 129,
+        "round": 12,
+        "version": 2,
+        "actionId": 58,
+        "stage": "round-end",
+        "logIndex": 375
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "soot",
+        "targetId": "foe-7-binding-thread",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Soot pressures a foe, Binding Thread (HP 20%) · Cocoa spark",
+        "text": "finish/steady plan: Soot pressures a foe, Binding Thread (HP 20%) · Cocoa spark",
+        "sequence": 130,
+        "round": 13,
+        "version": 2,
+        "actionId": 59,
+        "stage": "action",
+        "logIndex": 375
+      },
+      {
+        "kind": "status-applied",
+        "statusId": "brittle",
+        "stacks": 1,
+        "sourceId": "foe-6-binding-thread",
+        "actorId": "foe-6-binding-thread",
+        "targetId": "soot",
+        "text": "Soot: Shred ×1.",
+        "sequence": 131,
+        "round": 13,
+        "version": 2,
+        "actionId": 61,
+        "stage": "action",
+        "logIndex": 384
+      },
+      {
+        "kind": "status-tick",
+        "statusId": "steep",
+        "amount": 37,
+        "sourceId": "clover",
+        "actorId": "clover",
+        "targetId": "soot",
+        "text": "Soot: Regen 37.",
+        "sequence": 132,
+        "round": 13,
+        "version": 2,
+        "actionId": 61,
+        "stage": "round-end",
+        "logIndex": 387
+      },
+      {
+        "kind": "plan-target",
+        "actorId": "soot",
+        "targetId": "foe-6-binding-thread",
+        "plan": {
+          "focus": "finish",
+          "care": "steady"
+        },
+        "reason": "Soot focuses the weakest reachable foe, Binding Thread (HP 19%) · Cocoa spark",
+        "text": "finish/steady plan: Soot focuses the weakest reachable foe, Binding Thread (HP 19%) · Cocoa spark",
+        "sequence": 133,
+        "round": 14,
+        "version": 2,
+        "actionId": 62,
+        "stage": "action",
+        "logIndex": 387
+      }
+    ],
+    "committed": true
+  }
+}
