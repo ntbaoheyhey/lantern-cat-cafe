@@ -1414,3 +1414,10 @@ Per-cat skill shares and per-crew keyword/reaction/shape counts remain in s5/sel
 Reaction seeds(button+sock): Oven1 Wildfire; Thread1 Rupture+Spread; Night lamp1 Crumb Burst. Shapes: Oven1 splash/single/all/team/one; Oven7 ally-splash; Oven26 row; Oven2 teacup+kettle ally-row; Oven5 yarn weakest; Oven7 yarn self; Thread1 pierce/multi-hit/bounce. Exact hashes in report.
 Read B06:30 live-overlay finding: B-owned CSS adaptation stays separate; A carries the reported collision into delivery/fresh-eyes review without claiming its old static-shell check covered ready-scene plates. No A integration or B-owned edit.
 B04:56 guardian-use request remains adopted for S6/copy. Original4500 multi32.525/support29.842/normal13.238; source gates/OFF8250/fallback180+45 exact. Acceptance20001–20500 and S8 Home remain UNUSED.
+
+## 2026-11-09T06:54:09Z V5A-S5 HEADS-UP
+DRAFT417 evidence0c80c912e published; runtime6772eb343 unchanged. Two predeclared starter seed1 normal replays exactly match saved hashes:12/25rounds, enemy healing0/606HP. PACING-REVIEW.md narrows prevention/sustain attribution without a new candidate or causal claim.
+Per-skill shares and per-crew keyword/reaction/shape counts remain in reports/cardrpg-big/skills-v5/s5/selected/DESIGN-REPORT.md + design-report.json. D3 30/32,D4 10/12,D5 PASS; Mochi2 0.38%,Panko2 0.29% remain disclosed.
+Reaction seeds(button+sock): Oven1 Wildfire; Thread1 Rupture+Spread; Night lamp1 Crumb Burst. Shapes: Oven1 splash/single/all/team/one; Oven7 ally-splash; Oven26 row; Oven2 teacup+kettle ally-row; Oven5 yarn weakest; Oven7 yarn self; Thread1 pierce/multi-hit/bounce. Exact hashes in report.
+Full TRAIN bare-item sweep1394/2304complete; same queue and checkpoints continue, followed by progression and S5 score. Original4500 multi32.525/support29.842/normal13.238; source gates/OFF8250/fallback180+45 exact.
+B06:30 overlay finding retained for once-only ready-scene Z measurement; B04:56 guardian-use request adopted for S6/copy. No new design REQUEST, B-owned edit, source integration or acceptance observation. S8 starts after complete S5 closure.
