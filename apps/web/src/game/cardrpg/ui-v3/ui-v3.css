@@ -39,3 +39,13 @@
 .uv-app .uv-tips:disabled{opacity:1}.uv-app .uv-tips:disabled>b,.uv-app .uv-tips:disabled>small{color:var(--look-paper);background:var(--look-ink)}
 
 .uv-app .dp-v4-celebration{top:88px;bottom:auto;left:50%;right:auto;transform:translateX(-50%);width:440px;max-width:calc(100vw - 200px);padding:8px 12px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:3px 12px;animation:none}.uv-app .dp-v4-celebration small{font-size:9px}.uv-app .dp-v4-celebration p{margin:0;font-size:12px}.uv-app .dp-v4-celebration button{grid-column:2;grid-row:1 / span 2;font-size:11px;padding:5px 9px}.uv-app:has(.uv-dock) .dp-v4-celebration{top:auto;bottom:130px}
+
+/* Original decorative cafe light; no renderer, extra assets or hit targets. */
+.uv-ambient{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 44% 24%,#f3bb6124,transparent 38%),radial-gradient(ellipse at 83% 22%,#cf87422e,transparent 31%)}
+.uv-lantern{position:absolute;left:43%;top:10%;width:38px;height:92px;transform-origin:50% 0;background:linear-gradient(90deg,transparent calc(50% - 1px),var(--look-wood) 50%,transparent calc(50% + 1px)) top/100% calc(100% - 48px) no-repeat}
+.uv-lantern:nth-child(2){left:82%;height:110px;top:8%;animation-delay:-3s}
+.uv-lantern:after{content:"";position:absolute;bottom:0;left:0;right:0;height:50px;border:3px solid var(--look-wood);border-top-width:6px;border-bottom-width:6px;border-radius:9px;background:repeating-linear-gradient(90deg,transparent 0 10px,#805a4660 10px 12px),linear-gradient(var(--look-amber),var(--look-honey));box-shadow:0 0 22px #f3bb6160,0 0 65px #cf874240}
+.uv-mote{position:absolute;left:32%;top:38%;width:3px;height:3px;border-radius:50%;background:var(--look-honey);opacity:.45;box-shadow:0 0 6px var(--look-amber)}
+.uv-mote:nth-child(4){left:48%;top:60%;animation-delay:-2s}.uv-mote:nth-child(5){left:64%;top:44%;animation-delay:-4s}.uv-mote:nth-child(6){left:72%;top:64%;animation-delay:-6s}.uv-mote:nth-child(7){left:84%;top:35%;animation-delay:-8s}.uv-mote:nth-child(8){left:19%;top:65%;animation-delay:-5s}
+@media(prefers-reduced-motion:no-preference){.uv-lantern{animation:uv-lantern-sway 8s ease-in-out infinite}.uv-mote{animation:uv-mote-drift 11s ease-in-out infinite}@keyframes uv-lantern-sway{0%,100%{transform:rotate(-1.5deg)}50%{transform:rotate(1.5deg)}}@keyframes uv-mote-drift{0%,100%{transform:translate(0,0);opacity:.25}50%{transform:translate(12px,-24px);opacity:.6}}}
+.uv-app.dp-reduced-motion .uv-ambient *{animation:none!important}
