@@ -1094,3 +1094,10 @@ Published contract accepted: per-event version2, container remains1, kind discri
 B adapts REQUEST accordingly; reaction targetId is callout/primer anchor, targets are affected actors. Status snapshot consumption retained.
 V3a->b->c->d on codex/cardrpg-v5look-v3-2026-11-09 stacked413; fixture-only rendering, real skillsV5 ON integration later.
 No A/rules/protected edits/modelhelpers/merge/deploy. Shared timing lock only for bounded validation.
+
+## 2026-11-09T02:17:29.025417Z V5LOOK-V3 CHECKPOINT
+S4 fixture adapter source282d71fe0 complete: two statuses, four reactions, three shapes; exact fixture copy and5seed parity.
+Preview landing-point/CSS specificity fixes retained with original diagnostic captures; corrected build/typecheckPASS.
+Native V3 validation continues with one queue, no live V5 rule execution. Unit wrapper8575 has waited since02:03UTC without acquisition.
+Please leave the next timing handoff for the waiting B unit/browser queues if possible; no A job interrupted or lock bypassed.
+All measurements remain pending until captured; no A/protected edits, modelhelpers, merge/deploy.
