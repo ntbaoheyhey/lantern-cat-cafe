@@ -23,5 +23,8 @@ assert.equal(fallback.battleSha256,baseline.onBattleSha256);assert.equal(fallbac
 const leftovers=await json('reports/cardrpg-big/skills-v5/s1/untouchable-hashes.json');
 for(const [path,hash]of Object.entries(leftovers))assert.equal(sha(await readFile(path)),hash,path);
 const scope=JSON.parse(execFileSync(process.execPath,['tools/cardrpg-big/skills-v5/scope.mjs'],{encoding:'utf8'}));
-const receipt={status:'PASS',head:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),sourceDigest:gates[0].sourceDigest,gates,off,fallback,scope,untouchableFiles:'unchanged',compatibilitySeeds:'TRAIN only; no acceptance sampling in this verifier'};
+const fixturePath='packages/game-rules/src/cardrpg/depth/skills-v5/fixtures/events-v2.json';
+const fixtureBytes=await readFile(fixturePath).catch(e=>{if(e.code==='ENOENT')return null;throw e;});
+const generatedFixture=fixtureBytes?{path:fixturePath,sha256:sha(fixtureBytes),note:'Generated presentation evidence, excluded from runtime source digest; generator asserts exact replay and event validation for all five examples.'}:null;
+const receipt={generatedFixture,status:'PASS',head:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),sourceDigest:gates[0].sourceDigest,gates,off,fallback,scope,untouchableFiles:'unchanged',compatibilitySeeds:'TRAIN only; no acceptance sampling in this verifier'};
 await writeFile(`${out}/audit.json`,JSON.stringify(receipt,null,2)+'\n');console.log(JSON.stringify({status:'PASS',head:receipt.head,sourceDigest:receipt.sourceDigest,gates:gates.length,offRoutes:off.routes}));
