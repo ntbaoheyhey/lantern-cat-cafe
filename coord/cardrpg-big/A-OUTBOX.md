@@ -1192,3 +1192,13 @@ V5A started from c7b0c498fac435f52c271b093eebfa8fd9398cdf: Skills V5 rules behin
 User explicitly resumed A5. R1 report/draft administration first; S0 records both mode hashes before rules edits.
 Read V5LOOK-V0; events v2 fixture follows S4. One native agent/no model helpers; shared timing lock and short CPU slices.
 Original source/UI checks reused; acceptance20001-20500 UNUSED. No live A5 job found; known paused WIP preserved.
+
+## 2026-11-09T00:39:02Z V5A-R1 DONE
+A5-C1 DONE: DRAFT406 https://github.com/ntbaoheyhey/taskbar-hero/pull/406 on405, runtime0e1e15180.
+Existing six gates1783web/1192rules/421E2E/build and165UIchecks/159captures retained; artifact hashes9e25f238/9158b51e verified,20929841bytes each.
+Scope/author/OFF8250/baseline/historical13 PASS; no suites repeated. Initial GitHub pack failure recovered via ancestor fast-forward pushes; no history rewrite.
+
+## 2026-11-09T00:39:02Z V5A-S0 CLAIM
+A5 continues as V5A: new skillsV5 flag, ON/OFF baseline registration then statuses/shapes/kits/events.
+A5 balance/cadence/startup/static-display/Z continue after V5 rules; no old-kit retuning. TRAIN1-500; fresh20001-20500 UNUSED.
+B V5LOOK-V0 read; events-v2 fixture pending S4. No B-owned edits, model helpers, merge or deploy.
