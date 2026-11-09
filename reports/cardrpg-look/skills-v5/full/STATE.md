@@ -1,5 +1,5 @@
 # Skills V5 full run
-NOW MX verification and M3 natural coverage; Oven6+Thread4battles complete. Continue existing immutable queues, do not repeat samples.
+NOW MX closure complete; draft PR being published; M3 contact batching verified 146draws (152before), perf/E2E/startup pending; M4 candidates remain in /tmp.
 BASE #415 f9924699cab2fa5b8029baa1158f789ee44ddfda; fullPROMPT/RULES apply, no agents/models/desktop/Docker.
 DONE V0#409,V01#413,V3#415; never redo completed samples.
 DONE M1#416 source54d3e29b2; M2#418 tip58adf21de,source2e6ee6425; fullmilestone reports underfull/m1,m2.
@@ -17,8 +17,6 @@ OPEN B-M2-002 PARTIAL after3attempts:bossratio1.517–1.843vs2,flatpalemonsterma
 FIXED B-M1-002 M2:all1176frames0overlap/outside/unplaced.
 OPEN B-MX-003 allocation:originalisolated600framesMochi3.05MB/Soot.90MB/Yarn.77MB. CachedCSScolours/reusedtargetslots inopt1b;samplepending;zeroNOTclaimed.
 OPEN B-MX-007 cinema3thirdattempt:remove duplicateB2impactringforauthoredrecipes,roundinkcap,clothveil,widerneedles;review/faces/cost/casts pending;oldercinema1/2immutable.
-QUEUES current: cinema3 casts/ultimatefaces/Low-cost; /tmp/cardrpg-v5full-close/{mx,m3}.json macroqueues PID18885/18886 group pending opt3/delivery2 checks; coverage3 Night/Tea remain. Completed/failed samples preserved.
-QUEUES no-model FIFO scheduler /tmp/cardrpg-v5full-mx/fair-queue2.py PID16545 controls only own B waiters, never A. B releases with6.5s handoff; resumes oldest waiter after A releases. Process-specific receipts under /tmp/cardrpg-v5full-{mx,m3}.
 EVIDENCE 56.35MB packaged;80MB cap. Raw CDP traces retained /tmp with hashes, extracted summaries in repo. <=4deliveryvideos; old clips remain immutable git history when replaced.
 DECISION M4stricter31.5MB overrides33MBgeneral; no generative tools or added dependencies.
 NEXT close MX checks/report/self-score/draftPR; M3 remaining12livebattles and delivery gates, draft integrationpreview; M4 monster shading/boss revisit/demo/lean/clips; M5report+ledger+DONE.
@@ -31,3 +29,18 @@ LATEST M3bootFIXED viaB-ownedIIFEloader; corrected20b76874ec7eartifact dev+norma
 LATEST Oven+Thread10/18naturalbattles exacthashes; nextNightlamp/Afternoontea. Render submission+canvas frames recorded; pixelvisibility requiresvisualreview.
 M4 review target: uniform.78emission makes everymonsterpink-flat; prepare directional shading within B-owned look-readable-enemies, preserve stage/face checks. Not yet changed.
 M4PREP /tmp/cardrpg-v5full-m4-prep/{PLAN.md,LiveGuide.tsx,live-guide.css,live-gallery.mjs,natural-video.mjs}; prepared only, NOT applied to product. Before#395artifact /tmp/cardrpg-v5full-before395.html.
+
+LATEST M3delivery2:51shots,1unplacedP5/1024;1077windowframes0reportedoverlaps but probeomittedAstrip,sointegrationlayoutPARTIAL.98facemasks0offenders;12UIcasesPASS.
+OPEN B-M3-003/004/005:legacylabel142px,liveAstripoverplate,peak152drawsvs130(P4).Preparedlabel/ticker/probefixes;drawattributionqueued-session12597.
+QUEUES inherited no-model FIFO16545; MX parent18885 continues; M3 parent18886 paused before superseded E2E, child23592 current immutable casts/cold finishes; diagnosis25053 queued.
+SOURCE root gates done: type/lint/buildPASS; StageLayout timeout once bothworktrees,2/2isolatedPASS each; logs preserved. NewM3fix1source gates running.
+LATEST natural coverage18/18 exact hashes,1687plans,0errors,38/45requestedcells. All4reactions captured; Night/Tea8endingsclear, originalOven/Thread10unverified bynarrowprobe.
+LATEST A06:36evidenceb3471813a runtime6772eb343 unchanged; noS6. M4preparedonly; do not repeat finishedsamples.
+SOURCE live352c5e955 label/ticker/colliderfix; fix1artifact 2600ba196eb56070dd2b1d0038fcc2316218520aae3092221742371dbacc81ec 28108545bytes; type/lint/1854unit/5seed/live18parityPASS, browserqueued.
+
+LATEST MXopt3cold3native33.3/33.4/33.3 CPU4150.1/183.3/183.3PASS220. E2E/startup/video pending; liveM3fix2shadowbatching attempt1onintegration only,web1856PASS.
+
+RESUMED 2026-11-09T07:05:38Z: re-read full prompt/rules/state/open FIXLOG/outboxes; no completed sample repeated. A0c80c912e evidence, runtime6772eb343 unchanged.
+LATEST M3fix2:51shots+1095frames0overlap/outside/unplaced;98face masks0offenders;contrast4.618;12UIcasesPASS;146draws/163043tris. Conditional150ceiling awaitsperf,130targetstillMISS.
+
+DONE MX closure:421/421E2E,root type/lint/buildPASS,StageLayoutflake2/2isolated;startup0Three/model andbytes/memberssameM2;fixture20sclipcaptured,sampledreviewrecorded. Selfscore7.01/beauty6.233PARTIAL.
