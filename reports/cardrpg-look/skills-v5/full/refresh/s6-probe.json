@@ -1,0 +1,101 @@
+{
+  "date": "2026-11-09T10:22:48.564489+00:00",
+  "phase": "S6 published probe, not closure",
+  "previousPublishedA": "1d7c6f68e26c3c9f45a4502c6f762dfa19ec1433",
+  "publishedA": "5846724874c92efb45da9be22edd7eee06042730",
+  "runtime": "6772eb34330881dd06b82e8016b0ab61b16daefe",
+  "changedFileCount": 34,
+  "changedFiles": [
+    "docs/cardrpg3/skills-v5-guide.html",
+    "reports/cardrpg-big/skills-v5/FRESH-EYES.md",
+    "reports/cardrpg-big/skills-v5/REGISTERED-METHOD.json",
+    "reports/cardrpg-big/skills-v5/REGISTERED-METHOD.md",
+    "reports/cardrpg-big/skills-v5/STACK.md",
+    "reports/cardrpg-big/skills-v5/STATE.md",
+    "reports/cardrpg-big/skills-v5/s6/PROBE-CHECKPOINT.md",
+    "reports/cardrpg-big/skills-v5/s6/continuation.json",
+    "reports/cardrpg-big/skills-v5/s6/fresh-eyes/journey-01.jpg",
+    "reports/cardrpg-big/skills-v5/s6/fresh-eyes/journey-02.jpg",
+    "reports/cardrpg-big/skills-v5/s6/fresh-eyes/journey-03.jpg",
+    "reports/cardrpg-big/skills-v5/s6/fresh-eyes/journey-04.jpg",
+    "reports/cardrpg-big/skills-v5/s6/fresh-eyes/journey-05.jpg",
+    "reports/cardrpg-big/skills-v5/s6/fresh-eyes/review-manifest.json",
+    "reports/cardrpg-big/skills-v5/s6/off/DESIGN-REPORT.md",
+    "reports/cardrpg-big/skills-v5/s6/off/design-report.json",
+    "reports/cardrpg-big/skills-v5/s6/off/metrics/REGISTERED-METHOD.json",
+    "reports/cardrpg-big/skills-v5/s6/off/metrics/coordinator-1.log",
+    "reports/cardrpg-big/skills-v5/s6/off/metrics/partial.json",
+    "reports/cardrpg-big/skills-v5/s6/off/metrics/plan.json",
+    "reports/cardrpg-big/skills-v5/s6/off/metrics/registration.log",
+    "reports/cardrpg-big/skills-v5/s6/off/metrics/results.json",
+    "reports/cardrpg-big/skills-v5/s6/off/metrics/slice-1.json",
+    "reports/cardrpg-big/skills-v5/s6/off/metrics/slice-1.log",
+    "reports/cardrpg-big/skills-v5/s6/on/DESIGN-REPORT.md",
+    "reports/cardrpg-big/skills-v5/s6/on/design-report.json",
+    "reports/cardrpg-big/skills-v5/s6/on/metrics/REGISTERED-METHOD.json",
+    "reports/cardrpg-big/skills-v5/s6/on/metrics/coordinator-1.log",
+    "reports/cardrpg-big/skills-v5/s6/on/metrics/partial.json",
+    "reports/cardrpg-big/skills-v5/s6/on/metrics/plan.json",
+    "reports/cardrpg-big/skills-v5/s6/on/metrics/registration.log",
+    "reports/cardrpg-big/skills-v5/s6/on/metrics/results.json",
+    "reports/cardrpg-big/skills-v5/s6/on/metrics/slice-1.json",
+    "reports/cardrpg-big/skills-v5/s6/on/metrics/slice-1.log"
+  ],
+  "productionAndBToolTrees": [
+    {
+      "path": "apps",
+      "old": "369ead7062439c4e3571d87d82f97933019ae200",
+      "new": "369ead7062439c4e3571d87d82f97933019ae200",
+      "exact": true
+    },
+    {
+      "path": "packages",
+      "old": "9add5821ff4df265ff00b2e24e699281c1e10e66",
+      "new": "9add5821ff4df265ff00b2e24e699281c1e10e66",
+      "exact": true
+    },
+    {
+      "path": "assets",
+      "old": "2c4a55ae1eca9eff654bc36901e5759d0312c20f",
+      "new": "2c4a55ae1eca9eff654bc36901e5759d0312c20f",
+      "exact": true
+    },
+    {
+      "path": "contracts",
+      "old": "b1b2700c65b000ea0df7e10ae5f17ebbb0099766",
+      "new": "b1b2700c65b000ea0df7e10ae5f17ebbb0099766",
+      "exact": true
+    },
+    {
+      "path": "supabase",
+      "old": "68918c1172630cadc2d3c4735d973aacd6bb947a",
+      "new": "68918c1172630cadc2d3c4735d973aacd6bb947a",
+      "exact": true
+    },
+    {
+      "path": ".github",
+      "old": "0b427a5fae22a9145b82f1b5a25b13f083209a27",
+      "new": "0b427a5fae22a9145b82f1b5a25b13f083209a27",
+      "exact": true
+    },
+    {
+      "path": "package.json",
+      "old": "c67af7a758edf1520d93fc6b591b7a3416175470",
+      "new": "c67af7a758edf1520d93fc6b591b7a3416175470",
+      "exact": true
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "old": "7d297f65f8021b0a6395e0f615cdc383d6c8461b",
+      "new": "7d297f65f8021b0a6395e0f615cdc383d6c8461b",
+      "exact": true
+    },
+    {
+      "path": "tools/cardrpg-look",
+      "old": "1b9095a98208877e3cf84e7bb5f083bed617e472",
+      "new": "1b9095a98208877e3cf84e7bb5f083bed617e472",
+      "exact": true
+    }
+  ],
+  "verification": "No production or B build delta. Existing M4 receipts reused; B did not execute acceptance seeds or use results for tuning. Guardian underuse disclosure remains acknowledged; source S5 TRAIN examples unchanged."
+}
