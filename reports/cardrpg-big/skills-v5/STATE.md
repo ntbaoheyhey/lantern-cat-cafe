@@ -42,3 +42,4 @@ A owns no B renderer paths; no renderer integration implicit. Main docs/cardrpg3
 Untouchable uncommitted:.DS_Store and a5/b1/display-context-40/{partial,results}.json; unchanged by A.
 One model only; no CUA/Docker/model helpers,main checkout edits,protected paths,new dependency,merge/deploy.
 Continuation2026-11-09: original33012/37211 retained; 10/20scopes complete; bareitemsrunning; cats9/12PASS,Soot50.70%MISS; tiers37/48vsfallback46/48.
+S6 delivery review: queued guide refresh covers inherited A5 entry points,3 Z screenshots and7day goals; browser check pending.

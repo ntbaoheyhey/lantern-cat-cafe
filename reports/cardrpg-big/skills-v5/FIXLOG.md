@@ -532,3 +532,10 @@ Addendum received during S5. TRAIN remains 1–500. Existing baseline slices con
 - Ranked hypotheses (not isolated causes): 1. Helper/enemy pressure dominates low-level item benefits; 2. nonlinear kit survival changes narrow the value of adjacent tiers; 3. route encounters and boss-only bands respond differently to equipment scaling.
 - Smallest next fix: on TRAIN isolate one level1 chapter2 adjacent-tier pair with identical seeds and first-divergence evidence before changing a V5-only term. Keep all48 comparisons, all33 bands and the2pp/15pp gates.
 - Verification/status:210 complete500-outcome cells per mode retained; registered runtime/tools unchanged; S8 OFF/fallback receipts remain exact for current production. Full S6 closure remains queued. Overall tier and band gates stay PARTIAL/MISS; retuning requires registered30001–30500.
+
+## S6-INHERITED-GUIDE — PARTIAL pending delivery check
+- Reproduce: A5/PLAYTEST-KIT.md still opened only source27f192301; gameplay-v4.html had no A5 section. The new standalone V5 guide did not itself refresh those inherited entry points.
+- Attribution/hypothesis1: the delivery builder covered the new guide while omitting the older entry points requested by A5 Z.
+- Smallest fix: link the older kit to the current V5 kit and retain its historical protocol. Extend the queued guide build with an A5/Skills V5 section, three once-only Z screenshots, historical A4/current V5 comparisons with sample caveats, and the original seven-day progression table. Do not change the game artifact, A4 index, rules or acceptance samples.
+- Preflight attempt1: the historical guide has no header element; the insertion assertion caught that before any build. Attempt2 anchors to its observed section#prepare. No artifact or sample was produced by the failed preflight.
+- Verification: syntax checks now; three-width offline guide/link/image checks run after the existing delivery queue produces its registered Z pack. Runtime and acceptance tools remain unchanged. Mark FIXED only after those checks and image review; current status PARTIAL.

@@ -6,6 +6,10 @@ Ghi lại chỗ không hiểu, lúc muốn dừng, và lựa chọn thật sự 
 Cuối buổi trả lời tám câu bên dưới; gửi câu trả lời cùng tên bản game và ảnh nếu tiện.
 Các báo cáo tự động là số liệu tham khảo, chưa thay thế buổi thử với người thật này.
 
+Current test: use the [Skills V5 playtest kit](../skills-v5/PLAYTEST-KIT.md) and [separate offline demo](../../../docs/cardrpg3/skills-v5.html). It adds the keyword-recognition questions and identifies the current presentation limits. The A5 script below is retained as historical evidence.
+
+## Historical A5 protocol
+
 Open the [reviewed A5 preview](e2-star-plans/prototype-on/index.html) in a desktop browser. This is source `27f192301`, SHA-256 `2c3186275e052a423c55830cd6b7b20d2c8af5769b8854c184e2399a5576bc86`, 20,929,441 bytes. Its [source and UI checks](e2-star-plans/audit.json) pass; balance and 30-minute reward pacing are still under review. Record this version before starting. The public `docs/cardrpg3/index.html` is still A4. Start a fresh save in a separate browser profile so your existing game is safe. Desktop sizes: 1280×720, 1440×900, or 1024×600.
 
 ## Play for 15 minutes
