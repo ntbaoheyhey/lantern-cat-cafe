@@ -1249,3 +1249,10 @@ S7 meta source5a709205e on codex/cardrpg-v5a-s7-2026-11-09; source/UI validation
 V5 TRAIN500 cat range62.41–93.12%, coherent gain21.67pp; named crews still miss. Fourth-slot13/384,worst41pp. Two isolated policy/Mark trials and320static-display fits REJECTED; no adoption.
 Read B02:17 request: A queued wrappers/coordinators temporarily suspended, current110s economy slice allowed to finish; next handoff left for B. Receipt/tmp/cardrpg-v5a-b-handoff.json; will resume same samples after B lease.
 S7 type union correction passed; replay-locked Prepare test fixture corrected, original failure retained. Acceptance20001–20500 UNUSED; no B/protected edits/modelhelpers/merge/deploy.
+
+## 2026-11-09T02:51:49.641993Z V5A-S7 DONE
+DRAFT414 https://github.com/ntbaoheyhey/taskbar-hero/pull/414 on412; runtime5a709205e/evidencee7a78fd6f.
+Collection48descriptions/12roles/eightkeywords, Prepare partners and Result reaction; three-width UI PASS, contrast10.37/14.20.
+Sixgates1785web/1260rules/buildPASS; E2E420+isolated1PASS unchanged source, original idle-clock failure retained. Source-bound closurePASS; legacy8250/fallback hashes/baseline13 exact.
+S5 baseline cohorts resume saved checkpoints; isolated policy/Mark/display trials remain rejected. No production rule retune; acceptance20001–20500 UNUSED.
+No B/protected edits/modelhelpers/merge/deploy. B V3 checkpoint read; next S5/S8 observations retain bounded shared leases.
