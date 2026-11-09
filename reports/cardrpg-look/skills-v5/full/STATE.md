@@ -1,5 +1,5 @@
 # Skills V5 full run
-NOW M4: immutable boss-plate/Kettle checks queued; non-periodic trigger annotation source gates running. M3 E2E passed, startup closure queued before integration merge.
+NOW M4 delivery: full30.074MB/lean21.811MB built from live7c326fc81; immutable locked validation/films queued. M3 byte attribution is PARTIAL(+3B preload map); no source fix adopted.
 BASE #415 f9924699cab2fa5b8029baa1158f789ee44ddfda; full/PROMPT.txt and RULES.md apply. One agent, no model helpers, native/headless.
 WORKTREES B=/Users/bao/taskbar-hero-cardrpg-b2 branch codex/cardrpg-v5full-m4-2026-11-09; live=/Users/bao/taskbar-hero-cardrpg-v5live branch codex/cardrpg-v5live-2026-11-09.
 PROTECTED all A-owned/rules/manifests/default flags; draft PR only; never A folder. Sync B-OUTBOX append only.
@@ -31,3 +31,7 @@ VIDEO before20scomplete /tmp/cardrpg-v5full-m4/before seed791576452;afterreusesi
 EVIDENCE B~56MB/live~63MB;cap80MB inclfourclips. Rawtracesretained/tmpwithhashes. No duplicateunchangedstrips;DPR2onlyM4key8.
 NEXT M3startup/report/draft;mergeBinto livekeepingAownedfiles;refreshfixedliveplanssamepin;livepilot51shots/layout/faces/UI+triggerdelta;full/leanbuild31.5MB;casts/cold/OFF/E2E,6SSIM,films;M4reportPR;S6refresh;M5<=90lines+ledger+BOUTBOXDONE.
 STOP onlyM5delivered,20Nov12UTC,orunfixable/unrevertibleS1withM5PARTIAL. No handoff.
+RESUME08:07UTC: livepilot51shots+1194cueframes0overlap/unplaced,faces/UI/contrastPASS;trigger24samples0missing/uncleared/overlap/unplaced;casts pending. Reused all completed samples.
+OPEN B-M4-004 S2 PARTIAL: same-pathOFFindex28182→28185B due lazy preload graph;10otherssame. Three diagnostics temporary only,no repo source edits. Pairedbrowser pending.
+NEXT consume own queuedBclosure/trigger/natural5/offpair/delivery gates+fourfilms;pack<=80MB;M3draft,M4report/draft;refreshAuntilS6DONE;M5report/ledger/BOUTBOX.
+OPEN B-M4-005 attempt1: fresh-eyeP15bossbannerhidesplatename;scene reservesbanner,colliderextended. Olddeliverybrowserqueue cancelledunsampled;rootgates/repairedpilotnext. #420draftcreated.

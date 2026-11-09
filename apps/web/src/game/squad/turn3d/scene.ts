@@ -59,6 +59,7 @@ export interface SceneView {
   cardNumberWidths?: Record<string,number>;
   cardNumberRows?: Record<string, number>;
   cardMoment?: boolean;
+  cardBossCue?: boolean;
   rows?: Record<string, string>;
   chapter?: number;
   models?: Record<string,string>; warmModelIds?: string[];
@@ -665,6 +666,8 @@ export class TurnScene {
     if(this.lookStageEnabled&&frame){
       const bursts=view.cardPresentation?.bursts??[],reactions=view.cardPresentation?.reactions;
       if(view.cardMoment)words.push({x:12,y:8,width:132,height:108});
+      // Reserve the phase/finish banner for its full action, including wrapped text.
+      if(view.cardBossCue)words.push({x:this.width*.175,y:4,width:this.width*.55,height:40});
       for(const anchor of [...projected].filter(a=>view.cardNumberRows?.[a.id]||bursts.includes(a.id)).sort((a,b)=>a.y-b.y)){
         const reaction=reactions?.find(r=>r.targetId===anchor.id)?.id??'crumb-burst';
         const first=bursts.find(id=>(reactions?.find(r=>r.targetId===id)?.id??'crumb-burst')===reaction);
