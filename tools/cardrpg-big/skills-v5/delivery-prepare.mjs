@@ -22,6 +22,7 @@ async function run(id,args,env={}){
  assert.equal(code,0,'Keep original failures. Inspect before correcting or resuming.');
 }
 for(const mode of ['on','off'])if(!await optional(`${out}/${mode}/receipt-audit.json`))await run('numeric-'+mode,['tools/cardrpg-big/skills-v5/finish-numeric.mjs',out+'/'+mode]);
+for(const scope of ['pieces','elites'])if(!await optional(`${out}/${scope}-attribution.json`))await run('paired-'+scope,['tools/cardrpg-big/skills-v5/paired-remaining-review.mjs',scope]);
 await run('source-gates',['tools/cardrpg-big/skills-v5/validate.mjs','s6']);
 await run('compatibility',['tools/cardrpg-big/skills-v5/reuse-compat.mjs','s8','s6']);
 await run('closure',['tools/cardrpg-big/skills-v5/close.mjs','s6']);
