@@ -1,60 +1,42 @@
 # Skills V5 lane A state
-Base: d22f47cb8 (A5 closing tip, DRAFT406; paused WIP c7b0c498f preserved).
-Runtime baseline: 0e1e15180108b443ce2e615ea54272b907cc8bb0.
-Phase: S5 full TRAIN complete; entering S8 cadence/startup/static-display observations before S6.
-Branch: codex/cardrpg-v5a-s5-2026-11-09 DRAFT417on414; selected6772eb343/evidencece538d379, S7baseab8bc377f.
-Done: git status/log recorded; handoff found under memory/; rules/outboxes read.
-Done: ON/OFF artifacts match 20,929,841 bytes and 9e25f238 / 9158b51e.
-Done: no live A5 job found; inherited recent commits are the documented paused WIP.
-Done: scope/author/OFF source receipts PASS; DRAFT406 on405. Ledger4eccf552f/outboxa8d17c456 published.
-Done: S0 reproduces9.1043%/19.3730%/17.2667rounds; ON180battles+45routes hashed.
-Done: OFF source-bound8250/baseline13 exact; pnpm frozen install PASS.
-Done: S0 DRAFT407 on406, source655a28523.
-Done: S1 31 focused status/save tests PASS; test-fixture resistance and TS findLast failures retained.
-Done: S1 OFF8250 exact; ON180battles+45routes exact; baseline13/scope PASS.
-Runtime S1: 423e430f6; source-bound audit PASS. No live A validation job.
-Done: S1 type/lint/web1783/rules1223/build PASS (+2 expected fail/11 skips); E2E420+isolated1 PASS.
-Original E2E Home timing5.28s>5s retained; isolated recovery unchanged source.
-Done: S1 DRAFT408 on407, runtime423e430f6/evidencee8b8254c8.
-S2 applied from staged resolver; lethal unmarked Wildfire edge added before tests.
-Done: S2 12 focused/six gates PASS incl first-attempt E2E421; OFF8250 + fallback exact; audit PASS.
-Done: S2 DRAFT410 on408; runtime8412383c2/evidencedabd2a4e5.
-Done: S3 17focused, type/lint/web1783/rules1252PASS; original Bitter fixture failure retained.
-Done: S3 E2E420+isolated1PASS; buildPASS. Original clock failure retained; closurePASS.
-S3 OFF8250/fallback180battles45routes exact; baseline13/scope/leftoversPASS.
-S4 v2 events, THC15 migration, explicit demo opt-in and fallback strip applied.
-Spec amendment authorised: Cinnamon ally splash and no-casualty team ultimate; boss adds; D3–D5 measured on TRAIN. Gates unchanged.
-Next phases: S0 -> S1 -> S2 -> S3 -> S4 -> S5 -> S8 -> S6; S7 after S3.
-Acceptance: 20001-20500 UNUSED; TRAIN 1-500 only.
-Open: fourth-slot 63/384, worst88.8pp; cats/sets/bands; cadence723s/deadtime2%; startup/static display/Z.
-B:08:08 read: DRAFT420 separate integration preview,147 draws/+3B default entry. A keeps130 target/own artifact; guardian disclosure adopted, ready-scene overlay queued.
-Untouchable: .DS_Store and display-context-40/{partial,results}.json preserved uncommitted.
-No model helpers, CUA, Docker, main checkout edits, merge or deploy.
-Done: S3 DRAFT411 on410, runtime053fe383d/evidence8a894a35f.
-S4: six first-attempt gates1785web/1260rules/421E2E/build PASS; both hashes exact. HUD spacing fix queued S7.
-Finder .DS_Store external drift observed; untouched/uncommitted; two JSON leftovers exact.
-Done: S4 DRAFT412 on411, runtimea7e372edd/fixture4a7c1e65f/evidence479d96468.
-S5 before metrics complete10500battles: original4500 share14.283/25.356%, normal12.036r, Mark0%; 180prefix separate.
-S5 before fourth-slot500 complete:13/384misses,worst41pp (A5:63/88.8); display correlations.442/.228/.139MISS.
-S5 continuation: inherited own10014 bare sweep; fallback tiers23/24,0reversals,0bandmisses complete. No duplicate jobs.
-S5 earned day7PASS: casual28/30two-attempt,regular29/30,heavy23/30first;21/21losses have advice.
-S5 editionsPASS1500pairs/500capacity races,0pp gain;90earned45day accounts complete; rules unchanged.
-S5 isolated policy-horizon registered; new V5 premise, old Scent/pressure trials stay rejected.
-S7 runtime5a709205e; sixgates PASS1785web/1260rules/420+1E2E; closurePASS; DRAFT414 on412/evidencee7a78fd6f.
-S5 static display320-grid registered on V5 full500 fourth-slot receipts; zero new combat.
-S5 policy-horizon REJECTED: multi14.283→14.212%,normal12.036→12.383r; Mark0→33.311%.
-S5 Mark-strike successor registered (Black cup hit55→85); no production rules changed.
-S7 typecheck attempt1 union narrowing failed; corrected guard, original retained. Build path correction uses existing a5 Pillow venv.
-S5 Mark-strike REJECTED: multi16.206%,support27.500%,normal12.502>12.036; no adoption.
-S7 meta UI attempt1 used locked replay for placement; harness corrected to practice fixture, runtime unchanged.
-S5 full500 cats62.41–93.12%,all top picks; coherent21.67pp; named crew gaps MISS; display320fits all rejected.
-S8 home-session/report/register-home drafted, NOT RUN; preserves Home03 policy,110s slice targets, V5 counterfactuals.
-B lease granted by suspending own waiting queues, all resumed unchanged after B acquired; receipt/tmp/cardrpg-v5a-b-handoff.json.
-S7 no active validation job; meta/fallback UI PASS3widths; build20,958,952bytes/bca56f23612d.
-S7 UI reviewed4captures; combo contrast10.3748,fallback14.2011. Fallback only static shell readiness.
-S7 priority: same S5 queues resumed after isolated E2E PASS; receipt/tmp/cardrpg-v5a-s7-priority.json.
-S5 self-score 6.281/10 (PARTIAL); first S8 review items: Fight pacing; Balance gates. Full receipt audit PASS; numeric misses retained.
-S6 tools preflightPASS; ready-scene fallback/HP-plate diagnostic added to same Z capture after B06:30. No samples; missing A5 registration handled with exact PROMPT-A5 gates.
-S5 addendum: design1multi32.089/support29.595/normal12.08; design2b32.940/30.045/17.967REJECTED. Design3full500:multi32.525/support29.842/normal13.238,D4ten/twelve,D3thirty/thirty-two,D5PASS; A5matrices running. FIXLOG active, acceptance UNUSED.
-S5 selected4505cells complete; fourthslot35/384,worst47pp; bare33/2304,worst51pp (before321/47.6). Cats51.05–79.17%,tiers19/24,bands13/33miss; 90 earned accounts complete; same queue51634 runs day7/editions; source/hash checks PASS.
-S5 diagnostics:23D3+18D4+2starter pacing replays exact; guardians legal but skipped, starter12/25r with0/606enemy heal. PACING-REVIEW.md; full500 queues continue unchanged.
+Base: d22f47cb8 (A5 closing tip/DRAFT406); runtime baseline0e1e15180108b443ce2e615ea54272b907cc8bb0.
+Phase: S8 single prospective Home, then startup/performance/day7 and six source gates; S6 follows.
+Branch: codex/cardrpg-v5a-s8-2026-11-09; baseS5 b21a91c3586a72f7fa46d6670c218d286b59dd90/DRAFT417.
+Selected runtime: 6772eb34330881dd06b82e8016b0ab61b16daefe; no production changes in S8.
+Order: completed R1/S0/S1/S2/S3/S4/S7/S5 -> current S8 -> S6; never restart a completed phase.
+User ADDENDUM-SKILLDESIGN.md saved; D1-D6/self-repair/weighted score apply through S6.
+Completed drafts:406A5,407S0,408S1,410S2,411S3,412S4,414S7,417S5; details STACK.md.
+R1: C1 administration closed; inherited1783web/1192rules/421E2E,165UIchecks not repeated without cause.
+S0: original180 reproduces9.1043%multi/19.3730%support/17.2667rounds; baseline ON180+45 recorded.
+S1-S4:8keywords,7shapes,4reactions,12kits/enemies/policy,events-v2 and THC15 migration implemented.
+S7: plain copy/shape/crew hints/reaction result and HUD fallback; three-width meta UI/contrastPASS.
+S5: three design packages retained; design2b17.967rounds REJECTED, design3 selected for richer play.
+D1: existing Binding Threads on lone bosses/elites and phase changes; D2: Cinnamon splash/team fallback.
+S5 complete:4,505combat cells×500,28,500probe rows,90earned accounts×45days,90day7checks,1,500edition pairs.
+S5 original4500:multi32.525%PASS,support29.842%MISS,normal13.238rMISS,all-cat ultimate78.7%MISS.
+S5 D3:30/32crew-keywordPASS; ThreadBurn499/1500,NightlampBitter478/1500MISS; all intended reactionsPASS.
+S5 D4:10/12catsPASS; Mochi2 .384%,Panko2 .286%MISS and basics>60%; D5 distinct same-role patternsPASS.
+S5 A5:fourthslot35/384miss,worst47pp; bare33/2304miss,worst51pp; display.43/.37/.15MISS.
+S5 cats51.04–79.17%,sets72.92–94.40%,coherent29.4pp,named-boss crew gapsMISS; elite fixtures saturated.
+S5 tiers19/24,0reversals,band13/33miss; combined44/48 cannot pass (maximum43). Reference median34%MISS.
+S5 economy essence3.079646xMISS; day7advice50/51lossesMISS; casual19/30,regular21/30two-attemptPASS.
+S5 numeric22PASS/20MISS; receipt auditPASS; self-score6.281/10. S8 first priorities:pacing,balance.
+S5 exact replays:23keyword+18guardian+2starter; all saved hashes match. Attribution is not causal proof.
+Rejected: policy-horizon,Mark-strike(Blackcup55→85),broad cooldowns,320displayfits,A5pressure/reply trials.
+Compatibility: OFF8250 digest47477251... exact; A5fallback180battles/45routes exact; baseline13 exact.
+Source gates/current compatibility: s5-selected/audit.json; corrected failures retained in FIXLOG.md.
+S8 artifact: /tmp/cardrpg-v5a-s5-tip-artifact/index.html;20,961,816bytes/SHA4e310b07f9dfb005abdff830d498e8d0f6615553e1710a2ce12eeedad3a3638e.
+S8 existing owned processes:transition13818 -> s8-series94866 -> Home94867; continuation.json proves ownership.
+S8 Home started08:15:56UTC; one persistent browser/fresh save,60active minutes; no replacement/restart.
+S8 registration:110slease targets,7shandoffs,Home03public-clickpolicy,naturalx1; real wall-time cafes.
+S8 default candidate:/tmp/cardrpg-v5a-s8-selected-default-dist; originalmain340f88b9 reverified unchanged.
+S8 TRAIN revisit: s8/TRAIN-REVIEW.md; complete PRE-S6-REVISIT.md awaits elapsed/startup observations.
+Acceptance20001–20500 UNUSED; register both modes/source/tools/cases before first use.30001/40001 unused.
+S6 tools preflightPASS; once-onlyZ includes ready-scene fallback/HP-plate diagnostic; no samples yet.
+Next: finish existing S8 queue,review observations/FIXLOG,publish S8draft+ledger; branch/register/run pairedS6.
+Then S6: all numeric scopes both modes,sixgates,offline skills-v5.html,Zpack,guide/playtest,fresh-eyes,report/outbox.
+B08:17read: separateDRAFT420 integration;45/45natural cue coverage; retain original narrow ending limitations.
+B request guardian underuse disclosureADOPTED; no unanswered designREQUEST. A130draw target unchanged.
+A owns no B renderer paths; no renderer integration implicit. Main docs/cardrpg3/index.html staysA4.
+Untouchable uncommitted:.DS_Store and a5/b1/display-context-40/{partial,results}.json; unchanged by A.
+One model only; no CUA/Docker/model helpers,main checkout edits,protected paths,new dependency,merge/deploy.

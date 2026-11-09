@@ -11,6 +11,6 @@ All changes are draft-only. No merge, deployment, or main-branch push is authori
 |S3 kits/enemies|codex/cardrpg-v5a-s3-2026-11-09|[411](https://github.com/ntbaoheyhey/taskbar-hero/pull/411) on410|053fe383d / 8a894a35f|
 |S4 events/fixture|codex/cardrpg-v5a-s4-2026-11-09|[412](https://github.com/ntbaoheyhey/taskbar-hero/pull/412) on411|a7e372edd / 479d96468|
 |S7 copy/meta|codex/cardrpg-v5a-s7-2026-11-09|[414](https://github.com/ntbaoheyhey/taskbar-hero/pull/414) on412|5a709205e / e7a78fd6f|
-|S5 design/TRAIN|codex/cardrpg-v5a-s5-2026-11-09|[417](https://github.com/ntbaoheyhey/taskbar-hero/pull/417) on414|6772eb343 / ce538d379; full TRAIN confirmation running|
+|S5 design/TRAIN|codex/cardrpg-v5a-s5-2026-11-09|[417](https://github.com/ntbaoheyhey/taskbar-hero/pull/417) on414|6772eb343 / b21a91c35; full TRAIN complete, 22 PASS / 20 MISS, score 6.28/10|
 
 S8 cadence/startup follows S5; S6 paired acceptance and Z delivery follow S8. The acceptance block20001–20500 remains unused until its registration is written and source/tool/case hashes are checked. B presentation drafts are separately owned and are not implicitly integrated into this stack.
