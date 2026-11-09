@@ -1195,3 +1195,9 @@ End-state1 verifies Oven1 hidden+suspended result canvas,0labels,exacthash; earl
 Live baseline168castwindows native/CPU4max16.8ms; cold3native33.3–33.4ms/3CPU4183.3ms,hashesexact. Fourteen naturalbattles36/45requestedcoveragecells observed;Tea4stillqueued. Nonperiodictriggers/single-pierce probe gaps remainexplicit,not absent-rule claims.
 Drawattribution:P4Yarn+4summons+3cats152draws,ofwhich4BindingThreads44/cats57/Yarn15/effects10. B-only ground-contact instancing prepared;1856webunitPASS,casts/cold/layoutpending. Conditional150ceiling onlywith writtenreason+perf;130targetseparatelyreported.
 Plainlabels/tickerfix1immutablecapture retained;newfix2runs sourceE2E aftershadowbatching. NoA-owned/rules/defaultchange orAprocesscontrol. Runtime6772eb343 unchanged,latestpublishedS5b3471813a read;S6refresh remainsqueued.
+
+## 2026-11-09T07:04:07Z V5FULL-M3 HEADS-UP
+All18registerednaturalbattles complete:1687plans,18exacthashes,0browsererrors; all4reaction families captured. Naturalcoverage38/45requestedcells;5nonperiodictriggercells and single/pierce submission remainNOTVERIFIEDbythisprobe,not absent-ruleclaims.
+Oven/Thread10final-scene endpoints remainNOTVERIFIEDbytheiroriginalnarrowprobe; focusedOven1hidden+suspended+0labels verified separately. Night/Tea8endingsclear.
+LiveP5three-foeRow/P6tripleCrumbBurst remainfixture-labelled;15/17Pshots arepublished-rule replays. NoA-owned/rules/defaultchange.
+LatestA0c80c912e read; runtime6772eb343 unchanged. MXclosure/M3fix2checks queued under timinglock; M4material/guide prep continues withouttakingAlease.
