@@ -1,11 +1,11 @@
 # Skills V5 lane A state
 Base: d22f47cb8 (A5 closing tip/DRAFT406); runtime baseline0e1e15180108b443ce2e615ea54272b907cc8bb0.
-Phase: S6 acceptance and delivery reviewed PARTIAL; integrity audit PASS, draft publication closing.
+Phase: S6 delivered PARTIAL in DRAFT424 on422; acceptance,147-image review and delivery integrity complete.
 Branch: codex/cardrpg-v5a-s6-2026-11-09; baseS8 1d7c6f68e/DRAFT422.
 Selected runtime: 6772eb34330881dd06b82e8016b0ab61b16daefe; no production changes in S8.
-Order: completed R1/S0/S1/S2/S3/S4/S7/S5/S8 -> current S6; never restart a completed phase.
+Order: R1/S0/S1/S2/S3/S4/S7/S5/S8/S6 completed; retain PARTIAL gates, never restart completed sampling.
 User ADDENDUM-SKILLDESIGN.md saved; D1-D6/self-repair/weighted score apply through S6.
-Completed drafts:406A5,407S0,408S1,410S2,411S3,412S4,414S7,417S5,422S8; details STACK.md.
+Completed drafts:406A5,407S0,408S1,410S2,411S3,412S4,414S7,417S5,422S8,424S6; STACK.md.
 R1: C1 administration closed; inherited1783web/1192rules/421E2E,165UIchecks not repeated without cause.
 S0: original180 reproduces9.1043%multi/19.3730%support/17.2667rounds; baseline ON180+45 recorded.
 S1-S4:8keywords,7shapes,4reactions,12kits/enemies/policy,events-v2 and THC15 migration implemented.
@@ -35,7 +35,7 @@ S8 review: PRE-S6-REVISIT.md records every open group; earnedboss130.129s and fi
 Acceptance20001–20500 COMPLETE,20/20 scopes; registration3061b085a; both modes;30001/40001 UNUSED.
 S6 paired20/20 complete:multi32.660%,support29.793%,normal13.242r,ultimate77.667%; numeric21PASS/21MISS.
 S6 D3:30/32,D4:10/12,D5PASS; Mochi2 .442%,Panko2 .353%; fourthslot38/384,worst48.4pp (fallback58/87.4).
-Next S6: delivery integrity audit, draft on422, A-OUTBOX DONE and ledger mirror; no new runtime/samples.
+Next design candidate: pacing then balance onTRAIN; new30001–30500 registration before any acceptance retune.
 B10:23read: S6probe refresh separateDRAFT420; no acceptance visual tuning/newdesignREQUEST.
 B request guardian underuse disclosureADOPTED; no unanswered designREQUEST. A130draw target unchanged.
 A owns no B renderer paths; no renderer integration implicit. Main docs/cardrpg3/index.html staysA4.
@@ -48,3 +48,4 @@ S6 review:6plate overlaps at1280/1024;Fieldguide legacy copyMISS;6route-labelled
 S6 all70registered source/tool hashes exact; paired reviews complete; unchanged artifact4e310b07 (20,961,816bytes).
 S6 score6.16/10:variety7.14,balance5.00,pacing2.59,compatibility10;next priorities pacing/balance.
 S6 guide/PLAYTEST-KIT/FRESH-EYES refreshed; delivery review and every open miss linked in FIXLOG.md.
+Publication: DRAFT424 https://github.com/ntbaoheyhey/taskbar-hero/pull/424; delivery evidencea09f558f7.
