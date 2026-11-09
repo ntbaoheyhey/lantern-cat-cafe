@@ -1,0 +1,147 @@
+TASKBAR HERO - CODEX "LANE U / UI V3": TURN THE GAME SHELL FROM A MENU INTO A GAME ("LIVING CAFE HUB"). FRESH SESSION, NO MEMORY. THIS MESSAGE IS THE USER'S EXPLICIT INSTRUCTION TO RUN NOW, UNATTENDED, UNTIL THE STOP CONDITION IN SECTION 12. Do not ask questions; decide, record the decision, continue. (2026-11-09)
+
+REFERENCE (read first, in this order):
+- docs/proposals/ui-v3/index.html  (the APPROVED proposal; you add it to the repo in U0 from /Users/bao/taskbar-hero-ui-v3-src/index.html if not yet in git; online copy https://claude.ai/artifact/DRvtvt9Nn6jduXfqVemQdg). The user approved OPTION A "Quán cà phê sống / Living Cafe Hub" on 9 Nov 2026 13:49 UTC. Options B and C are rejected; do not build them.
+- apps/web/src/game/cardrpg/depth/App.tsx (the `navigation` array: 11 side-nav items = the thing the user hates), Pages.tsx, HomeV4.tsx, CafeV4.tsx, Invitations.tsx, PreparationV4.tsx, RunMap.tsx, TeamCollection.tsx, EquipmentV4.tsx, player-mode.ts (showReviewTools), look-meta.css, meta.css, depth.css, ../look-tokens.css
+- reports/cardrpg-big/skills-v5/V5A-REPORT.md and s6/visual-review/REVIEW.md (lane A S6: 147 captures; known UI defects: legacy Field guide wording, 6 enemy HP-plate overlaps at 1280/1024, legacy-look contrast 1.62:1, route-map screenshot never settled)
+- reports/cardrpg-look/art-rebuild/{ART-DIRECTION.md,STATE.md} if they exist (lane B art rebuild: new cats/monsters/VFX behind lookArt 'v3'), apps/web/src/game/cardrpg/depth/preview-runtime.ts, CompanionPreview.tsx, chapter-stage.ts, look-portraits.ts
+- reports/demo-integrate/{STATE.md,LANE-FEEDBACK.md} on branch codex/cardrpg-demo-integrate-2026-11-09 if it exists (read with git show)
+- reports/ui-redesign/index.html (#239, the OLD approved left-nav design. It is now REPLACED by this prompt. Do not follow it.)
+
+0. WHY THIS LANE EXISTS (read twice)
+The user (solo builder, contest Demo Day 30 Nov 2026) opened lane A's offline demo docs/cardrpg3/skills-v5.html and said, in Vietnamese: the UI is hard to look at and hard to understand. The side tab bar has far too many items and is really ugly. It looks like a menu, not a game. Study games like OMG3Q and Danh Tướng 3Q for layout and effects.
+That demo is a REAL build of the game code, not a mock. So the shell you see there IS what ships. Your job is to replace the shell with a game-like one, with no gameplay rule changes.
+Learn LAYOUT PRINCIPLES ONLY from the genre (full-screen living home scene, thin top HUD, a dock of 5 or fewer icon buttons with red dots, ONE big always-visible fight button, a left column of time-limited event bubbles, an idle reward chest inside the scene, 4-corner battle HUD, ultimate-name banner, a rarity tease in the gacha reveal). NEVER copy, trace, describe-to-generate or download any art, icon, UI frame, text, name or sound from OMG3Q, Danh Tướng 3Q or any other game. Never put reference images into any tool. All content stays original (cozy cat cafe, "The Lantern").
+
+1. HARD RULES
+- No subagents, no helper agents, no parallel `codex exec`, nothing else that makes model requests (the Codex account allows max 4 threads that send requests). Local tools with NO model requests are fine: tests, Playwright, axe, image tools, three.js scripts.
+- No screen control or desktop automation of the user's apps. Playwright headless only.
+- No merge, no deploy, no push to main, no Vercel or Supabase changes, no secrets. Draft PRs only.
+- Repo ntbaoheyhey/taskbar-hero (private). Main checkout /Users/bao/taskbar-hero: never checkout, reset, stash or commit there. Only `git -C /Users/bao/taskbar-hero worktree add ...` and `fetch`.
+- NEVER write, checkout, reset, build or run servers in other worktrees: /Users/bao/taskbar-hero-cardrpg-a4, -b2, -v5live, -sync, -look, -portrait-prep, /Users/bao/taskbar-hero-demo, -demo-2. Never push to other lanes' branches (codex/cardrpg-v5a-*, codex/cardrpg-v5full-*, codex/cardrpg-v5live-*, codex/cardrpg-art-*, codex/cardrpg-demo-integrate-*), never push to ai/codex-cardrpg-big-sync, and never edit or comment on their PRs.
+- Your worktree: /Users/bao/taskbar-hero-ui-v3 (if it exists and is not a clean worktree of your branch, use /Users/bao/taskbar-hero-ui-v3-2 and record which). Your ports: 5950-5953 only. Your temp: /tmp/ui-v3-*. Never kill processes you did not start. Never touch other lanes' /tmp folders.
+- Heavy work (static builds, full E2E, perf measurement) takes /tmp/cardrpg-big-locks/timing.lock using the lock-file protocol of tools/cardrpg-big/with-timing-lock.mjs (from your own worktree copy). Windows of 20 minutes or less, 6.5 s handoff. If the lock is held, wait in a shell loop (no model calls), check every 30 s for up to 40 min, and meanwhile do light work.
+- `df -h ~` first and before every static build. If under 15 GB free, delete only YOUR outputs and caches (your node_modules/.vite, dist, playwright-report, /tmp/ui-v3-*).
+- Keep tool output small (`| tail -n 40`, grep). Evidence budget for reports/ui-v3/: 35 MB or less (WebP review shots, at most 3 clips of 30 s or less).
+- No gameplay rule, number, balance, drop-rate or save-format change. The simulation compatibility hashes must stay exact (section 8, gate G9).
+- Feature flag: `uiV3`. Default OFF in the product build. Turn it on with `?ui=v3`, or with the demo build flag (section 9). The old shell must still work with the flag off. Tests for both.
+- Dev and review tools (Feel lab, Review studio, Mechanics lab, Frame meter, Look A/B, Before/after, Look atelier) are visible ONLY with `?dev=1`, in both shells.
+
+2. OWNERSHIP (from now on)
+Lane A finished Skills V5 S6 (#424). From this prompt on, YOU (lane U) own the PLAYER-FACING SHELL and META SCREEN PRESENTATION:
+  apps/web/src/game/cardrpg/depth/App.tsx (shell/navigation parts), a NEW folder apps/web/src/game/cardrpg/ui-v3/** (put almost all new code here), the presentation (JSX/CSS) of Home/Cafe/Team/Collection/Journal/Equipment/Invitations/Codex/Relics/Save/Prepare/Result/RunMap screens, meta.css, look-meta.css, depth.css, invitations.css, docs/proposals/ui-v3/**, docs/ui-v3/**, reports/ui-v3/**, tools/ui-v3/**.
+Lane A keeps: packages/game-rules/**, tools/cardrpg-big/**, model.ts, the DepthModel API and all game logic. Call the model; never change what it computes. If you need data the model does not expose, add a pure read-only selector in ui-v3/ that derives it from model state.
+Lane B keeps: Battle.tsx, apps/web/src/game/squad/turn3d/**, card-effects*.ts, card-staging.ts, chapter-stage.ts, look-*.json, look assets, tools/cardrpg-look/**, docs/cardrpg-look/**, reports/cardrpg-look/**. You may IMPORT and REUSE B's public renderer and asset APIs (preview-runtime, CompanionPreview, chapter-stage, look-portraits, icons, card frames). Never edit them. If you need a change inside a B file, make the smallest possible change in its own commit titled `ui-seam: <what>`, log it in reports/ui-v3/B-REQUESTS.md, and prefer an overlay in your own files instead.
+Demo-integrate session: owns docs/demo-build/** and tools/demo-integrate/**. You never edit those. You tell it what to merge through reports/ui-v3/HANDOFF.md (section 10).
+
+3. BASE AND BRANCHES
+- `git fetch origin`. BASE = codex/cardrpg-v5a-s6-2026-11-09 (#424). If a newer pushed lane A branch that descends from it AND has a PR exists, use the newest one and record it.
+- Then merge (with `git merge --no-ff`, never rebase) lane B's newest PUBLISHED integration tip, so the shell can use B's renderer and assets: the newest pushed codex/cardrpg-v5live-* or codex/cardrpg-v5full-* branch with a PR (at writing: #420 integration, #421 M4). If an art-rebuild branch codex/cardrpg-art-r<N>-2026-11-09 exists with a PR AND its STATE/report marks the milestone PASS, merge it too. Art stays behind lookArt. Conflict rules: A paths take A's version, B paths take B's version, lockfile regenerate (`CI=true pnpm install`) and record. If a conflict can't be solved in 2 tries, skip that tip, record it, continue on the previous base.
+- Phase branches, stacked: codex/cardrpg-ui-v3-u<N>-2026-11-09, each with ONE draft PR on the previous one. The first PR's base is the BASE branch. Titles "UI v3 U<N>: <what> (draft, not for merge)".
+
+4. TARGET DESIGN (build this; numbers are defaults you may tune within the gates)
+In-game copy stays ENGLISH (international judges). Short, friendly, game words, never spec words. The proposal shows Vietnamese labels only for the user; the English labels are given here.
+
+4.1 HOME = "Living Cafe" (full window, no side nav)
+- Full-bleed scene of the cafe interior. Preferred: B's 3D toon renderer (reuse preview-runtime / chapter-stage) showing the current crew (3-5 cats) idling at tables, with a soft warm key light and lanterns. Cats are big: each 8-14% of the frame height. If the 3D home costs too much (gates G6/G7), use the FALLBACK: a pre-rendered or static backdrop (art2 backdrops or B's poster renders) plus B's portraits or turntable sprites with a gentle idle bob. Choose by measurement and record the choice.
+- Scene hotspots (pill labels with a small pointer, hover glow, keyboard-focusable): "Recruit counter" opens Recruit, "Notice board" opens Today's tasks, the idle reward chest "Night tips 3/8 h" collects the existing idle/cafe-service rewards that the model already has. Hotspots never cover cats' faces.
+- TOP HUD (height about 6.5% of the frame, gradient to transparent): left = avatar ring + level badge + cafe name + team power. Right = 2-3 currency chips (only currencies the player has unlocked), a "Relic · Fuji" chip in iris color (ALWAYS visible on every non-battle screen; it opens the Relic tab in Bag; this protects the contest's Avalanche Integration score), and a ≡ menu button (Settings, Save/export, Field guide, Credits; `?dev=1` adds dev tools here).
+- LEFT EVENT COLUMN: at most 3 bubbles, shown only when they hold something actionable (Today's tasks, Free recruit ready, Journal milestone ready). Red dot means claimable now. No bubble when nothing is waiting.
+- BOTTOM DOCK: exactly 5 icon buttons with labels: Cats, Team, Bag, Recruit, Events. Red dot rules: Cats = new cat or level-up affordable. Bag = new item or a better item for a crew member. Recruit = free or affordable pull. Events = claimable reward. Team = never dots. If "Events" has no content in the current build, fold it into the left column and show 4 dock buttons. Never more than 5.
+- PRIMARY BUTTON, bottom right, always the largest element in the HUD: "Night Patrol" with a subline "Chapter 2 · Stop 7 · Boss" (from the model's current route node). It opens Prepare for the next node. Gentle glow pulse, off under prefers-reduced-motion.
+- Total fixed click targets on Home outside the scene (HUD + column + dock + primary) ≤ 10, and of these, navigation destinations ≤ 6.
+
+4.2 WHERE THE 11 OLD ITEMS GO (nothing may be lost; gate G2)
+Cafe → Home itself. Night route → Night Patrol button (the route map opens from Prepare's "Route" tab and from a small map icon next to the subline). Companions + Collection journal → Cats (tabs: My cats, Journal). Team & cards → Team (also reachable from Prepare). Equipment → Bag (tabs: Gear, Materials, Relics). Invitations → Recruit (and the Recruit counter hotspot). Fuji Relics → the Relic chip on the HUD + the Relics tab in Bag (keep all wallet/Fuji read-only behaviour and copy exactly as it is; no chain calls change). Field guide → "?" buttons in Prepare and in battle + ≡ menu. Save & settings → ≡ menu. Before/after → only with ?dev=1.
+
+4.3 SCREENS AS SHEETS, NOT PAGES
+- Dock destinations open as large sheets over the dimmed, still-living Home scene (about 86% of the width, rounded, a game frame using look tokens; close with ✕, Esc, or a click on the dim area). The HUD stays visible above the sheet. No long scrolling article pages: each sheet has tabs, a grid of big cards (portrait first, name, rarity frame, 1-2 key numbers) and a detail panel on the right. Long explanations move into "?" popovers.
+- Copy pass: every heading at most 4 words, every button a verb ("Equip", "Recruit ×1", "Fight"). Remove spec wording (percent tables, "comparisons", "odds" walls) from the default view; keep odds behind an "Odds" link (legal/transparency, must stay reachable).
+- Fix the S6 defect: the in-game Field guide must use Skills V5 names and rules when skillsV5 is on (Burn, Bleed, Bitter, Mark, Shred, Daze, Regen, Warm, plus reactions). Read the same source the Companions glossary uses.
+
+4.4 PREPARE (pre-battle) AND RESULT
+- Prepare = one screen: the enemy preview on the right (portraits, the boss's key trait as icons), your crew slots on the left as big portrait cards (click a slot, then click a cat; drag optional), a "Recommended crew" button, and one big "Fight" button. Remove <select> dropdowns from the default view.
+- Result = Victory/Defeat banner, stars, rewards flying into the HUD chips, MVP cat portrait, ONE "why" line and ONE "try this" suggestion from the model's existing data, then "Next" (returns Home with the chest/red dots updated). Keep detailed stats behind "Details".
+
+4.5 BATTLE HUD (the 4 corners; your overlay, B owns the 3D)
+- Hide ALL shell UI during battle (no dock, no HUD chips, no side column).
+- Top-left: wave and round "Wave 3/3 · Round 6". Top-centre: boss name + big HP bar (only for boss or elite). Top-right: speed x1/x2 (x3 if the model allows it), Auto (on, as battles are auto), Skip (only where the model already allows skip), "?".
+- Bottom-centre: one card per cat: portrait, HP bar, ultimate charge bar; the card glows when the ultimate is ready.
+- Enemy HP plates and status icons sit above each enemy, with space RESERVED so the fallback strip never overlaps them (fixes the 6 S6 overlaps; gate G5).
+- Ultimate banner: when a cat casts an ultimate, a skewed honey band crosses the middle for about 0.8 s with the skill name + cat name (setting: banners on/off). Reaction callouts ("Wildfire!", "Rupture!", "Crumb burst!", "Spread!", using V5 reaction display names) pop near the target. Damage numbers are big, coloured by type (normal, crit, Burn, Bleed, heal). Read all of this from the battle event stream lane A emits. Unknown event kinds are ignored, never fatal.
+- Build this as ui-v3/BattleHudV3.tsx mounted by the shell around B's Battle. If B's battle already draws an element (e.g. its own portrait HUD), do NOT draw it twice: detect it and hide yours or ask B (B-REQUESTS.md). One visual source per element.
+
+4.6 RECRUIT REVEAL (4 beats, under 4 s total, skippable from the 2nd pull, "Skip all" for ×10)
+1 Letter: an invitation envelope drops onto the counter and shakes. 2 Seal: the wax seal glows in the rarity colour (common teal, rare sky, epic iris, legendary honey); legendary adds an extra beat and a light screen shake (off under reduced motion). 3 Burst: light burst plus particles (CSS/canvas; reuse B's VFX if available). 4 Reveal: the large portrait or 3D preview, the name, a rarity frame and "New!" for first copies. A ×10 summary grid sorts by rarity. Odds link visible. The pull logic and odds are UNCHANGED.
+
+4.7 LOOK
+Use look tokens only (night/ink/panel/raised, cream/paper, honey/amber, coral, mint, iris, sky, wood). Display font Baloo 2, body Be Vietnam Pro (bundle locally as woff2 subsets if the offline build forbids external fonts; record the byte cost) or keep the current faces if size gates fail. Icons: B's icon set first; otherwise simple original SVG icons drawn by you. Buttons look pressable (bottom shadow, pressed state). Every interactive element has a visible focus ring.
+
+5. PHASES (do them in order; each phase ends with gates, commit, push, draft PR, STATE.md update; then continue WITHOUT asking)
+U0 Setup: worktree, base merges (section 3), add docs/proposals/ui-v3/index.html (from the user's copy if missing), reports/ui-v3/{STATE.md,FIXLOG.md,B-REQUESTS.md,HANDOFF.md}. Capture BEFORE shots (Home, each old nav page, Prepare, battle mid-cast, Result, Recruit) at 1280x720 and 1440x900, both looks, into reports/ui-v3/before/. Run G1 and record the baseline E2E count and the sim compatibility hashes.
+U1 Shell + flag: `uiV3` flag plumbing, the new shell component, HUD, dock, ≡ menu, event column, sheet container, `?dev=1` gating. Old shell unchanged when off.
+U2 Home scene: the 3D living cafe (or fallback by measurement), hotspots, chest, primary button. Perf gates G6/G7.
+U3 Sheets: Cats (My cats + Journal), Team, Bag (Gear, Materials, Relics), Recruit shell, Events/tasks; the copy pass; the Field guide V5 fix; mapping complete (G2).
+U4 Prepare + Result redesign.
+U5 Battle HUD overlay + overlap fix + banners/callouts/damage colours.
+U6 Recruit 4-beat reveal.
+U7 Polish and juice: hover/press states, reward-fly to HUD, red-dot correctness, sound hooks only if a sound system already exists (no new audio assets required), reduced motion, keyboard path through everything.
+U8 Static demo + handoff: build docs/ui-v3/index.html (offline single file with uiV3 ON and the demo profile; size gate G8), AFTER shots matching U0, a before/after page docs/ui-v3/before-after.html, the Vietnamese guide docs/ui-v3/HUONG-DAN.md (how to open, what changed, 10 lines), HANDOFF.md for demo-integrate.
+U9 Report + self-score + fresh-eyes, then SYNC MODE (section 11).
+
+6. TESTS YOU ADD (unit + Playwright; real clicks; fresh profile)
+- reachability.spec: from Home with uiV3 on, every destination in the 4.2 table opens within 2 clicks, and each shows the same model data as the old page (compare key values, e.g. cat count, item count, relic count, pity counter).
+- first-five-seconds.spec: on a fresh profile, the largest visible interactive element on Home is the primary button; it is above the fold at 1024x600, 1280x720 and 1440x900; Home → Prepare → Fight reaches battle in ≤ 2 clicks after the existing tutorial; first fight still won in 25 s or less (inherited gate).
+- nav-load.spec: counts fixed navigation destinations on Home (≤ 6) and asserts no element of the old side nav renders when uiV3 is on.
+- relic-chip.spec: the Relic chip is visible on Home and every sheet; it opens the Relics tab; the wallet-off state still explains read-only Fuji Relics.
+- battle-hud.spec: no overlap between enemy plates, the fallback strip and HUD cards in ready-scene and mid-cast captures at 1024/1280/1440 (rectangle intersection = 0); the banner appears on an ultimate event; unknown events don't crash.
+- recruit-reveal.spec: 4 beats in order, total ≤ 4 s, skip works from the 2nd pull, odds link reachable, pulls/odds identical to flag-off (same seed → same results).
+- dev-gating.spec: no dev tool visible without ?dev=1 in either shell.
+- flag-off.spec: the old shell still renders and the existing E2E still passes.
+
+7. GATES (all must pass, or be recorded PARTIAL after the repair loop)
+G1 `pnpm -r typecheck`, lint, unit tests of touched packages, `pnpm build`. Known flaky: resize-burst.spec.ts (rerun once, record).
+G2 Reachability: 11/11 old destinations reachable within 2 clicks, data parity PASS.
+G3 Nav load: Home navigation destinations ≤ 6; no side nav when uiV3 is on.
+G4 Contrast and accessibility: axe has 0 serious/critical issues on Home, every sheet, Prepare, Result and Recruit; text contrast ≥ 4.5:1 (≥ 3:1 for large text) in BOTH looks. This fixes the legacy-look 1.62:1 issue for every screen you own.
+G5 Battle overlap = 0 at 1024/1280/1440, both looks.
+G6 Home performance at 1280x720, CPU throttle 4: cold Home interactive ≤ lane A's last recorded cold value (183.3 ms) + 40 ms; steady 60 s idle with no long task > 50 ms after warm-up; Home draw calls ≤ 90. If the 3D home fails after the repair loop, switch to the fallback home and re-measure (record both).
+G7 Bundle: default loaded JS gzip delta vs BASE ≤ +60 KB, with the uiV3 code lazy-loaded when the flag is off.
+G8 Static demo docs/ui-v3/index.html ≤ 40 MB (the demo cap set for lane B's art). Record size + sha256.
+G9 Rules untouched: sim compatibility hashes (OFF/fallback battles/fallback routes listed in V5A-REPORT.md) EXACT; baseline-v1 and the historical sims exact; the save migration tests pass.
+G10 Existing E2E: same pass count as BASE or better. New failures are fixed or proven to come from a lane tip.
+G11 No horizontal overflow and no clipped text at 1024x600, 1280x720, 1440x900, 1920x1080.
+G12 Visual review: AFTER shots for every screen in U0's list; a contact sheet before/after; a screenshot-backed self-review that answers "does it look like a game at first glance?" with specific evidence.
+
+8. REPAIR LOOP (for every failed gate, test or bug you notice)
+FIND (reproduce with an exact command or Playwright step) → DIAGNOSE (root cause; which lane owns it) → FIX (smallest change in your scope; ui-seam rules for B files; never change rules or numbers) → RE-VERIFY (rerun the exact failing check plus G1) → log one line in FIXLOG.md. At most 3 attempts per issue; then record PARTIAL with evidence, add it to B-REQUESTS.md or HANDOFF.md if another lane owns it, and move on. Never stop silently. Never skip, disable or quarantine a test to get green. Never edit a test's expected value to match a wrong result.
+
+9. DEMO FLAG
+Add a build-time flag (e.g. VITE_UI_V3=1, or the existing demo build options) so the static demo and the demo-integrate session can turn uiV3 on without URL params. The product default stays off. Document it in HANDOFF.md.
+
+10. HANDOFF TO DEMO-INTEGRATE (no model calls between sessions)
+reports/ui-v3/HANDOFF.md: the newest UI v3 branch + PR + sha, how to enable it, which files it touches, the known conflicts with lane B (and how to resolve them: B paths take B's version, your overlay adapts), and the "demo checklist" (Home, Night Patrol, Prepare, battle, Result, Recruit). The demo-integrate session reads it with git show; you never edit their branch.
+
+11. SELF-SCORE (strict, screenshot-backed; target ≥ 8.5; write it in the report)
+| Line | Weight | How measured |
+| First 5 seconds clarity | 25% | first-five-seconds.spec + Home shot: primary action obvious, ≤ 6 nav targets |
+| Game feel, not app | 20% | before/after contact sheet; full-bleed scene, big cats, sheets not pages, juice present |
+| Navigation load and parity | 15% | G2 + G3 |
+| Battle readability | 15% | G5 + banner/callout/damage colours visible in mid-cast shots |
+| Performance and size | 15% | G6, G7, G8 |
+| Compatibility with lanes and honesty | 10% | G9, G10, ui-seam count, report accuracy |
+Below 8.5 after U9: pick the 2 lowest lines and run ONE more improvement pass (U7-style) for them, then re-score. Report the final score as is, even if still below.
+Fresh-eyes pass (last, before every publish): open the static demo as a brand-new player at 1280x720 and list the 3 things that would embarrass you in front of a judge. Fix any within your scope that take under 30 minutes, and list the rest with their owner lane.
+
+12. SYNC MODE AND STOP CONDITION
+After the U9 publish, wait for new lane tips with a shell loop (no model calls; `git fetch` + `git ls-remote` every 10 min). When a new PUBLISHED lane A tip (descendant of BASE with a PR) or a new lane B integration/art tip (with a PR and PASS state) appears: wait 15 more minutes, then merge it (section 3 rules), rerun G1, G2, G5, G9, G10 and the specs, rebuild the static demo, update shots that changed, the report, HANDOFF.md and the PR body, and push. If a refresh fails its gates after the repair loop: `git reset --hard` YOUR branch back to the last good refresh commit (your own branch only), record the failing tip, and keep waiting.
+STOP at the first of: (a) 20 Nov 2026 18:00 UTC; (b) a file STOP-UI exists in your worktree root (the user creates it); (c) both lane A's next report and lane B's ART-REPORT.md exist and you published one refresh including both. On stop: final refresh if pending, final report, final chat message (section 13).
+
+13. REPORTING
+- reports/ui-v3/UI-V3-REPORT.md: status DONE/PARTIAL/BLOCKED; base and merged tips (sha + PR); phases U0-U9 with one line of evidence each; the gate table; perf and size numbers before/after; the 3D vs fallback home decision with numbers; ui-seams list; self-score table; fresh-eyes list; items needing the user. Plain, short, verified. Never claim human enjoyment or recognition; bot results are proxies.
+- reports/ui-v3/STATUS-VI.md: 8-12 lines in Vietnamese for the user: what changed, how to open the demo, the score, what is still missing.
+- Copy the report to branch ai/codex-ui-ledger under reports/ui-v3/ (pull --rebase, retry). ALWAYS push the report, even when BLOCKED.
+- Push with `git push -u origin <branch>`, retrying 4 times (2/4/8/16 s) on network errors.
+- Final chat message (Vietnamese, under 12 lines): newest PR link, static demo path + size, score, top 3 gaps, and the one command to open the demo.
+
+START NOW with U0. Do not ask questions.
