@@ -42,3 +42,6 @@ LIMITS: Human 4/5 status recognition is NOT VERIFIED; the natural20s clips do no
 Iteration1 native/cold results, earlier overlaps, crown-mask clipping and selector/capture failures are retained, not substituted for delivery results. No causal claim about historical macOS driver stalls; timing coverage is deliberately bounded.
 V3 NOT STARTED: no published “skillsV5 events v2 fixture” DONE at this handoff. Lane A REQUEST records the needed schema; stop at V0 per the task contract.
 Evidence currently 21,281,201bytes (<25MB); raw PNGs/frames in /tmp/cardrpg-v5look-*. DRAFT only; no merge, deployment, A5 worktree access or rule edits.
+
+[DRAFT409](https://github.com/ntbaoheyhey/taskbar-hero/pull/409), stacked on395; runtime3968da538, evidence41cc9634e.
+[Coordination receipt](HANDOFF.json): B-OUTBOX DONE and V3 schema REQUEST pushed; no active B jobs, stop at V0.
