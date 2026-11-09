@@ -1134,3 +1134,9 @@ Five-seed/base parity exact;90face masks0offenders;51shots contrast4.618min;12ke
 PARTIAL:51.5ms single texture-upload slice and20P6/1024frames with unplaced word+number; visible overlaps0/1176frames. M2/MX follow-up queued, no gate moved.
 E2E420/421; unchanged idle-clock passed isolated1, isolated2queued. Continuous20s fixture clip recorded; no live claim.
 S5 design3 heads-up read; will use forthcoming published source/fixture inM3. No A/rules/default edits.
+
+## 2026-11-09T04:43:19.641729+00:00 V5FULL-M2 CHECKPOINT
+1176frames/30P5–P14windows at1024/1280/1440:0overlap/0outside/0unplaced; M1 P6 miss fixed. Top3body marks/legend/gallery layout implemented.
+All12ultimate peaks with marks:48protectedface masks0offenders;17P-shot frames90masks0offenders. Body value/boss framing third attempt under verification; failed samples retained.
+S5 DRAFT417 source6772eb343 fetched read-only. M3 will use published417, including ally-splash, after MX toolkit/batches; no A-owned edits.
+S5 usage table read: casts will use each cat's actual most-used skill (incl.Cinnamon3/Clover2/Marigold2). Timing leases remain bounded; source gates underway.
