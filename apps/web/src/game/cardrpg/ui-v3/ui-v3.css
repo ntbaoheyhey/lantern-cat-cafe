@@ -37,3 +37,5 @@
 @media(prefers-reduced-motion:reduce){.uv-reward-fly>span{animation:none;transform:translate(var(--fly-x),var(--fly-y))}}
 
 .uv-app .uv-tips:disabled{opacity:1}.uv-app .uv-tips:disabled>b,.uv-app .uv-tips:disabled>small{color:var(--look-paper);background:var(--look-ink)}
+
+.uv-app .dp-v4-celebration{top:88px;bottom:auto;left:50%;right:auto;transform:translateX(-50%);width:440px;max-width:calc(100vw - 200px);padding:8px 12px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:3px 12px;animation:none}.uv-app .dp-v4-celebration small{font-size:9px}.uv-app .dp-v4-celebration p{margin:0;font-size:12px}.uv-app .dp-v4-celebration button{grid-column:2;grid-row:1 / span 2;font-size:11px;padding:5px 9px}.uv-app:has(.uv-dock) .dp-v4-celebration{top:auto;bottom:130px}

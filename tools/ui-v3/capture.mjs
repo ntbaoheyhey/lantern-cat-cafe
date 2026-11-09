@@ -11,6 +11,7 @@ for(const [width,height] of [[1280,720],[1440,900]])for(const look of ['on','off
  await page.goto(`${entry}?look=${look}${phase==='before'?'':'&ui=v3'}`);
  await page.waitForFunction(()=>!!window.__depthReview);
  async function shot(name){
+  if(phase!=='before'){const ready={home:'.uv-patrol',team:'.uv-team-seats',collection:'.uv-cat-grid',inventory:'.uv-gear-grid',gacha:'.uv-recruit-stage',prepare:'.uv-fight',result:'.uv-result-title',map:'.dp-map',battle:'.uv-battle-cat'}[name];if(ready)await page.locator(ready).first().waitFor();await page.waitForFunction(()=>!Array.from(document.querySelectorAll('.uv-sheet-content p')).some(e=>/^Opening(?:…| the .*…)$/.test(e.textContent??'')));}
   await page.waitForTimeout(180);
   await page.evaluate(()=>document.fonts.ready);
   const png=`/tmp/ui-v3-${phase}-${width}-${look}-${name}.png`,out=`${dir}/${width}-${look}-${name}.webp`;
@@ -27,7 +28,7 @@ for(const [width,height] of [[1280,720],[1440,900]])for(const look of ['on','off
  }
  await page.evaluate(()=>window.__depthReview.tutorial());await page.waitForSelector('.dp-fight, .uv-fight');await shot('prepare');
  await page.evaluate(()=>window.__depthReview.fight());await page.waitForFunction(()=>window.__depthReview.sceneReady||!!window.__depthReview.sceneError,{},{timeout:45000});
- await page.waitForFunction(()=>!!window.__depthReview.plan,{},{timeout:20000});await page.evaluate(()=>{window.__depthReview.paused=true;window.__depthReview.notify(false)});await shot('battle');
+ await page.waitForFunction(()=>!!window.__depthReview.plan,{},{timeout:20000});await page.evaluate(()=>{const m=window.__depthReview;m.paused=true;if(m.plan)m.animationAt=m.plan.duration*.45;m.notify(false)});await shot('battle');
  await page.evaluate(()=>window.__depthReview.skip());await page.waitForFunction(()=>window.__depthReview.screen==='result');await shot('result');
  // Reviewer-only comparison has its own explicit dev URL.
  await page.goto(`${entry}?look=${look}${phase==='before'?'':'&ui=v3'}&dev=1`);await page.waitForFunction(()=>!!window.__depthReview);await page.evaluate(()=>window.__depthReview.go('evidence'));await page.waitForTimeout(250);await shot('evidence');
