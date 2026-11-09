@@ -1,0 +1,288 @@
+TASKBAR HERO - CODEX LANE B "SKILLS V5 LOOK - FULL RUN": FROM FIXTURE TO LIVE BATTLES, SELF-TESTING AND SELF-REPAIRING, UNTIL THE DEMO IS READY (2026-11-09). ONE LONG AUTONOMOUS RUN. FRESH SESSION OR THE SAME LANE B SESSION, NO MEMORY ASSUMED. THIS MESSAGE IS THE USER'S EXPLICIT INSTRUCTION TO RUN NOW, UNATTENDED, UNTIL SECTION 10 SAYS STOP. IT REPLACES the short fix prompts V0FIX and V3.1 (V3.1 content is folded into milestone M1). Do NOT stop to ask the user anything: decide by this prompt, record the decision, continue.
+
+REFERENCE (read in S-0): reports/cardrpg-look/skills-v5/{PROMPT.txt,SPEC.md,STATE.md,V0-REPORT.md (incl. V0.1),V3-REPORT.md,INTEGRATION.md,v3/FIXTURE.json,v3/perf/cold-analysis.json} on branch codex/cardrpg-v5look-v3-2026-11-09 (draft #415, stacked #413 -> #409 -> #395); reports/cardrpg-look/b2/B2-REPORT.md + INTEGRATION.md (branch codex/cardrpg-b2-v6-2026-11-08); docs/design/cardrpg/LOOK-BIBLE.md; docs/cardrpg-look/{b2.html,v5-v0.html,v5.html}; coord/cardrpg-big/{A-OUTBOX.md,B-OUTBOX.md} (branch ai/codex-cardrpg-big-sync); lane A drafts: #412 (V5A S4 events v2 fixture) and any later codex/cardrpg-v5a-* branch; APPENDIX = user-approved Skills V5 spec.
+
+==================================================================
+0. MISSION AND WHY LANE B MATTERS
+==================================================================
+"The Lantern" is a cozy cat-cafe card RPG for an Avalanche hackathon (Demo Day 30 Nov; planning deadline 21 Nov UTC+7 = 20 Nov 17:00 UTC). Battles are FULLY AUTOMATIC and round-based; the player only watches (speed, pause, skip, camera, sound). Judges see the game mostly through the battle screen, so lane B (everything the viewer SEES in battle) decides a large part of "Creativity", "UI/UX + Demo" and the pitch video.
+The user ALSO said (9 Nov): skill effects are still simple and not truly beautiful. So this run has TWO equal goals: (1) make Skills V5 readable, (2) make every skill effect genuinely beautiful and optimised (milestone MX, the largest block of work).
+The user said the battle felt monotonous: one hit on one target, one heal on one ally, no burn/bleed/heal reduction. The approved fix is Skills V5 (APPENDIX): lane A builds the rules (8 core keywords incl. new Bleed and Bitter, 7 target shapes incl. Splash and Multi-hit, 4 reactions, new kits) behind flag `skillsV5`; lane B makes all of it readable and exciting on screen.
+Done so far by lane B: V0 (#409) badges/tooltips/marks for 16 statuses, 70 ms multi-target stagger, Crumb Burst word; V0.1 (#413) anchored words, closer Mark/Daze, countable Burn flames, framed badges (warm/teal/honey rims), faster crumb puffs, Warm/Glaze 76%; V3 (#415, PARTIAL) Bleed/Bitter looks, 4 reactions, Splash/Multi-hit/Bounce from lane A's S4 FIXTURE. Everything so far is checked on fixtures or old battles, NOT on live skillsV5 battles.
+END STATE you drive toward, without new prompts: a live chapter-1 battle with gameplayV4 + skillsV5 + lookV2 ON in which a stranger, within 20 seconds, can say what is on each unit, sees multi-target hits spread, sees each combo named where it happens, sees every skill (not only ultimates) as a layered, polished effect with its own identity, sees ultimates land with a cinematic "wow" beat, and sees no freeze, at 1280x720 and 1440x900 on an M-series Mac, packaged as an offline demo + a 30 s pitch clip, with an honest report.
+
+==================================================================
+1. HARD RULES (non-negotiable; everything else is your judgement)
+==================================================================
+ - ONE model-driven agent: you. NO subagents, workers, helper agents, parallel `codex exec`, schedulers that call models, or any process that makes model requests (account cap 4; lane A runs too). Local no-model tools are encouraged: Playwright, node/python, Blender headless, gltf-transform, toktx, ffmpeg, numpy/PIL/opencv. No generative-model calls of any kind.
+ - Native macOS only: NO Docker. NO desktop/screen control; everything headless.
+ - Repo ntbaoheyhey/taskbar-hero (private). Main checkout /Users/bao/taskbar-hero: never checkout/reset/stash there. Your worktree: /Users/bao/taskbar-hero-cardrpg-b2 (record `git status`/`git log -3` first; never discard work; commit leftovers to wip/b-leftover-<UTC date>). For integration (M3) create ONE extra worktree /Users/bao/taskbar-hero-cardrpg-v5live yourself. Never touch /Users/bao/taskbar-hero-cardrpg-a4 (lane A's), the sync worktree except fetch/pull + your own B-OUTBOX file, or any other lane's folder.
+ - DRAFT PRs ONLY. Never merge, never auto-merge, never deploy, never push main, no Vercel, no secrets, no live Supabase, no wallets, no on-chain actions.
+ - PROTECTED, zero changes by you: packages/game-rules/** (all rules incl. config.ts, skills-v5, events), contracts/**, supabase/**, wallet/SIWE/auth, Relic/Fuji paths, .github/**, package.json/lockfiles (no new runtime dependency; dev tools outside the repo, e.g. ~/tools/cardrpg-look).
+ - SCOPE: presentation only. You never change battle outcomes, numbers, events or rules. Proof: for every seed you test, the battle log/digest with lookV2 ON equals lookV2 OFF, and on B-only branches equals the base before your change.
+ - Flags: your work stays behind `lookV2`. lookV2 OFF: visuals and startup bundle unchanged (chunk byte counts + module membership, 0 Three/model modules at startup). You never flip `skillsV5` or `gameplayV4` defaults; in demos you may set them ON via the existing demo/dev configuration only.
+ - ORIGINAL ART ONLY (procedural/code/Blender parameters you author); record tool + params + seed per new/changed asset in assets/provenance/look.md. Never import external models/textures/HDRIs/fonts beyond what the repo already ships; never trace or compare with other games' art.
+ - Desktop only: 1280x720 and 1440x900 primary; 1024x600 must not break; text contrast >= 4.5:1; reduced-motion: statuses stay visible as static marks/badges, no flashing/shake.
+ - Honesty: claim only what you measured or looked at; NOT VERIFIED / PARTIAL are respected outcomes; self-grades are self-grades, not user review; never write "final", "frozen" or "done for good". Never move a gate because it failed; never re-run a sample to replace a bad one (re-measure AFTER a fix is fine, keep all samples).
+ - Kill only PIDs you started, never by name (an unrelated Python runner lives on this Mac). `df -h` at start of each milestone; temp dirs /tmp/cardrpg-v5full-*; clean only your own. Ports 5920-5923.
+ - Evidence budget: reports/cardrpg-look/skills-v5/ <= 80 MB total for this whole run (gzip JSON, WebP shots at DPR1 for review, DPR2 only for the final pack, <= 4 videos of <= 30 s). No 860-case matrix, no 2,211-pair matrix, no 20-replay lifecycle runs.
+
+==================================================================
+2. LANE SPLIT, SYNC, WAITING WITHOUT MODEL CALLS
+==================================================================
+YOU own: apps/web/src/game/squad/turn3d/**, card-effects*.ts, card-staging.ts, apps/web/src/game/cardrpg/depth/Battle.tsx (incl. battle HUD), chapter-stage.ts, battle/turn3d CSS, look-tokens.json, look-assets.json + model/texture/portrait/icon/flipbook assets, assets/provenance/look.md, tools/cardrpg-look/**, docs/cardrpg-look/**, reports/cardrpg-look/**, docs/design/cardrpg/LOOK-BIBLE.md.
+LANE A owns (never edit): packages/game-rules/**, all meta screens and CSS (Hub, Collection, Team, Equipment, Inventory, Invitations, CompanionPreview, Pages, RunMap, Journal, Encounter/Prepare/Result, Home, Advice...), App.tsx, depth.css, shared.tsx, tools/cardrpg-big/**, docs/cardrpg3/**, other docs/design/cardrpg/**, reports/cardrpg-big/**.
+If a fix needs an A-owned file: post a REQUEST (what, why, exact suggested diff or schema, repro seed) and continue with a B-side fallback. Never block on A.
+Contracts to keep: events-v4 container version 1 with per-event version 2 (your V3 adaptation; keep the legacy fallback for unknown/malformed versions, never crash); earned-reveal API (SceneView.earnedReveal / playEntrance); boss phase cue <= 400 ms and finish <= 800 ms inside the action clock; ?dev=1 gating for every B dev tool.
+Sync: branch ai/codex-cardrpg-big-sync (worktree /Users/bao/taskbar-hero-cardrpg-sync, fetch/pull only), folder coord/cardrpg-big/. You write ONLY B-OUTBOX.md, append-only, `## <UTC> V5FULL-<milestone> <TYPE>` (CLAIM / DONE / REQUEST / ANSWER / HEADS-UP / CHECKPOINT; max 8 lines). First entry: "V5FULL started from <sha> (#415 tip): M1 stabilise, M2 readability, MX skill VFX beauty + optimisation, M3 live skillsV5 integration, M4 demo, M5 report; presentation only". Push with `git pull --rebase`, retries 2/4/8/16 s.
+Heavy-work lock: browser timing/profiling/cold runs and CPU/GPU-heavy renders take /tmp/cardrpg-big-locks/timing.lock (tools/cardrpg-big/with-timing-lock.mjs, read-only use; atomic mkdir fallback), windows <= 20 min, 6.5 s handoff; non-timing work runs `nice -n 10`.
+WAITING (whenever you need something from lane A): write and use tools/cardrpg-look/skills-v5/wait-outbox.sh <regex> : loop { pull sync worktree (retries); if A-OUTBOX.md has a NEW entry (after your recorded last-read line) matching <regex> -> print it, exit 0; else sleep 300 }, run in foreground chunks `timeout 1200`, and between chunks only update STATE.md "waiting for <what> since <UTC>, last check <UTC>". While waiting you may ONLY do queued B-side work from section 5 (never idle-loop the model). Caps per wait are given in each milestone.
+Branches: one draft PR per milestone, stacked: codex/cardrpg-v5full-m1-2026-11-09 on #415, m2 on m1, ... (use actual UTC date if later). Integration branch (M3) is separate: codex/cardrpg-v5live-<UTC date>, draft PR marked "INTEGRATION PREVIEW - not for merge".
+
+==================================================================
+3. SETUP (S-0, <= 40 min) AND ANTI-FORGET
+==================================================================
+ - Save this prompt verbatim to reports/cardrpg-look/skills-v5/full/PROMPT.txt (+ wc -c, sha256). Write full/RULES.md (<= 30 lines: section 1 + ownership + sync + lock + gates). Keep full/STATE.md (<= 70 lines): NOW (milestone, step), DONE list with PR/SHA, OPEN ISSUES (id, gate, status, attempts), WAITING, NEXT, numbers so far. Keep full/FIXLOG.md (append-only issue log, section 7 format). Keep full/STATUS-VI.md: 5 Vietnamese lines for the user, updated at every milestone end.
+ - After any context compaction, restart or crash: re-read PROMPT.txt, RULES.md, STATE.md, FIXLOG.md (open issues), the last 20 lines of both outboxes; continue from STATE.md NOW. Never redo a finished milestone; never re-run completed samples just to "refresh" them.
+ - Tool check: node, pnpm (repo version), Playwright browsers, ffmpeg, python3 + PIL/numpy, Blender (optional). Build the #415 tip and confirm it matches V3-REPORT (demo SHA e4491ebf... or record the difference).
+ - Read A-OUTBOX fully once; note lane A's newest published phase/branch and any REQUEST addressed to B (answer them in M1 or M3).
+
+==================================================================
+4. FIXED TEST ASSETS (define once in S-0, reuse in every milestone)
+==================================================================
+SHOT PACK (tools/cardrpg-look/skills-v5/full/shots.mjs; deterministic seed/time, camera preset B; 1440x900 DPR1 review + 1280x720 + 1024x600 layout; 1440 DPR2 only in M4):
+ P1 Burn stack 5 on a regular foe + Burn on a cat; P2 Mark + Daze; P3 Regen + Warm; P4 all-statuses overflow (+N); P5 Row hit on 3 foes; P6 Crumb Burst on 3 foes; P7 Bleed; P8 Bitter (struck heal); P9 Wildfire; P10 Rupture; P11 Spread; P12 Splash; P13 Multi-hit; P14 Bounce; P15 Yarn Giant phase cue; P16 one ultimate impact frame (Mochi) and P17 Clover greenhouse peak.
+ Fixture mode uses lane A's published fixture; LIVE mode (from M3) uses real battles with skillsV5 ON at the seeds you register in full/LIVE-SEEDS.md (pick from lane A's probe: crews Oven = Mallow/Cinnamon/Mochi, Thread = Velvet/Biscuit/Brioche, Night lamp = Soot/Marigold/Inkcap, Afternoon tea = Clover/Sorrel/Panko; encounters chapter-1 pairs, a 3-foe wave, Yarn Giant; for each P-shot record the seed+round+action that shows it).
+PROBES:
+ - parity.mjs: 5 seeds 7, 17, 71, 1808, 20261108 (plus the live seeds from M3): full battle JSON + log hash with lookV2 ON vs OFF (and vs base on B-only branches).
+ - casts.mjs: first + repeat cast windows for the 12 ultimates + 12 most-used skills + every reaction cue, 1280 native, 1440 native, 1440 CPU4.
+ - cold.mjs: page load -> battle ready, 3 fresh runs native + 3 CPU4, longest frame and long-animation-frame attribution.
+ - collide.mjs: per frame of each P-shot cue window, bounding boxes of badges, plates, reaction words, floating numbers, moment card, HUD; report overlaps (must include floating numbers - V3 missed this).
+ - faces.mjs (existing protected-face check), contrast.mjs, draws/tris peak, startup audit (lookV2 OFF), demo bytes.
+ - vfxsheet.mjs: for every one of the 48 cat skills + 12 ultimates + enemy/boss attacks, capture a 5-frame strip (anticipation, release/travel, impact peak, secondary, afterglow) at x0.25 on a fixed stage; output per-cat contact sheets and one 60-tile peak sheet (uniqueness check).
+ - vfxcost.mjs: per skill cue: draws, tris, particles alive, additive overdraw estimate (screen fraction covered by additive layers x layer count at peak), JS heap delta per cast (0 allocations after warm-up target), program count before/after.
+ - coverage.mjs (from M3): for live battles, which keywords/reactions/shapes appeared, with seed+round, and whether each was rendered (event received -> cue started -> cue visible >= 1 frame -> cleared).
+
+==================================================================
+5. MILESTONES (run in order; each ends with gates + self-score + draft PR + B-OUTBOX CHECKPOINT + STATUS-VI.md, then CONTINUE to the next without asking)
+==================================================================
+M1 STABILISE WHAT EXISTS (target <= 5 h)
+ 1.1 CPU4 cold miss (V3 483.4 ms vs V0.1 199.9 ms). Your trace: one ~486 ms setTimeout callback during scene preparation before ready (6235-6719 ms), nested GPU WaitForToken 172 ms. Attribute with performance.mark/measure per prewarm group (status marks, reaction cues, shape cues, callout text/canvas, number atlas, B2 pools). Then: split prewarm into a time-budgeted queue of <= 40 ms slices across frames/idle callbacks, keeping first-round needs (status marks, multi-target stagger) before "battle ready" and deferring reaction/shape cues to idle slices after ready with a measured synchronous fallback on first use. Gate: CPU4 cold max <= 220 ms over 3 runs; load->ready <= +300 ms vs V0.1; native cast <= 16.8 ms incl. first reaction cue.
+ 1.2 One per-target text lane: reaction word above, floating numbers below it (or delayed 120 ms and offset), status tick numbers in their own style (Burn orange italic, Bleed small red, Regen green), clamped inside the stage, never over plates/HUD/moment card. When the same reaction hits 3 targets at once: full word on the first, a small "x3" chip on the others. Gate: collide.mjs = 0 overlaps on P5-P14 at 1024/1280/1440.
+ 1.3 Restyle the legacy large row-hit numbers (busy in V0/V0.1 reports) to the same number family, smaller for secondary targets.
+ 1.4 Answer any lane A REQUEST to B in B-OUTBOX.
+M2 READABILITY OF THE WHOLE BATTLE LANGUAGE (target <= 8 h)
+ 2.1 Status priority on body: when a unit has > 3 active marks, show the top 3 by priority (debuff with highest stacks, then control, then buffs) on the body and keep the rest in badges/+N; busy-ness check on P4.
+ 2.2 Close the open B2 misses: opponent vs floor luminance separation (measured 0.009-0.039, target >= 0.18 in P1/P5/P15 via rim/value/mat contrast, not by darkening the stage); boss height vs tallest regular (measured 1.52-1.66x, target >= 2.0x without exceeding the HUD-safe zone; adjust scale/camera framing for boss encounters only); preview Sorrel hiding Soot; gallery controls overlapping the greenhouse tip at 1024/1280; large +42 labels crowding the rear ally at 1024.
+ 2.3 Make the 4 reactions feel distinct in MOTION, not only words: Crumb Burst (crumb explosion), Wildfire (fire wave travelling to neighbours), Rupture (thread snap + Bleed drops consumed into one hit), Spread (debuff icons flying on an arc). Each <= 600 ms inside the action clock. Look frame by frame (x0.25 capture) and fix any that read the same.
+ 2.4 Ultimates with statuses: re-check the 12 ultimate peaks with V5 marks present; marks must not hide the ultimate and the ultimate must not hide faces/badges.
+ 2.5 A one-time, closable in-battle legend: first time a keyword appears in a session, a small chip "Burn: loses HP each round" near the badge row for 2 s (lookV2 only, off under ?dev=1 harness and when the player disabled hints; text from lane A descriptions if published, else your SPEC text). Must not cover the stage centre.
+MX SKILL VFX BEAUTY + OPTIMISATION (largest block, target ~20-25 h; runs after M2, and you may interleave it while waiting for lane A in M3; it must reach at least MX3 before M4)
+ Why: the user finds skill effects simple and not beautiful. Today most skills are one or two flat layers (a ring, a shape, a flash). Goal: every skill reads like a small authored animation with depth, motion and identity, inside the existing action clock and perf gates.
+ MX0 AUDIT (<= 2 h): run vfxsheet.mjs on all 48 cat skills, 12 ultimates and enemy/boss attacks. Score each 1-10 on five sub-scores: SHAPE (clear silhouette that says what it does: splash cone, row sweep, bounce arcs, three quick strikes, team wave), LAYERS (count and depth: core + secondary + particles + light/ground), MOTION (anticipation/impact/follow-through timing, easing, hit-stop feel), IDENTITY (cat/element palette and motif per LOOK-BIBLE, not interchangeable), CLARITY (does not hide faces/badges/numbers, works at x2/x4 speed). Write full/VFX-AUDIT.md with the table and the worst 50% list. This ordering decides MX2 batches (worst first, but each batch keeps whole cats).
+ MX1 VFX TOOLKIT (<= 6 h): upgrade the shared effect system once, then reuse everywhere:
+  - Flipbook atlases rendered by you in Blender headless or procedurally (smoke, steam, flame, ember, sparkle, crumb dust, yarn fibre, leaf/petal, ink splash, tea droplet, frost/glass shard), 8x8 or 6x6 frames, packed in <= 2 atlases of <= 1024x1024 (KTX2/WebP), +<= 2.5 MB total. (This supersedes the APPENDIX "no texture > 256 px" line for VFX atlases only.)
+  - GPU-instanced particle emitters with curves over life (size, colour, alpha), velocity + gravity + simple curl/turbulence, inherit caster velocity, burst + rate modes; soft particles (depth fade) so sprites never cut hard into floor/units; tapered ribbon trails with gradient for projectiles and slashes; shockwave rings and a cheap screen-space distortion pass (single extra full-screen pass, tier-gated); fading ground decals (scorch, frost, crumbs, leaves); emissive fresnel/rim pulse on the caster and the hit target; a fixed pool of <= 2 short dynamic point lights that light floor and nearby units at impact.
+  - Timing helpers: anticipation -> release -> impact -> follow-through -> afterglow envelopes, micro hit-stop (40-60 ms visual freeze of the target pose only, inside the cue budget, never the action clock), camera micro-push for ultimates only (<= 6%, eased; off under reduced-motion and at speed >= 4x).
+  - Speed scaling: at x2/x4 durations scale and particle counts drop by tier, never dropping the impact frame.
+  - Everything precompiled/prewarmed through the M1 time-sliced queue (<= 40 ms slices); fixed program count (record before/after).
+ MX2 ALL 48 CAT SKILLS, BATCHES OF 3 CATS (<= 10 h): rebuild each skill with >= 4 layers (core shape + secondary + particles + light/ground), the V5 shape visible in the motion (Splash cone with smaller neighbour hits, Multi-hit three distinct strikes, Bounce arcs with a travelling spark, Row sweep across the row, All as a wave across the mat, Weakest/Row/Team ally variants), and the status it applies arriving as part of the effect (Burn embers ride the strike into the target, Bleed yarn slashes, Bitter tea drop, Mark reticle snap, Shred shard burst, Daze sleepy puff, Regen steam, Warm blanket wrap). Per batch: before/after 5-frame strips, uniqueness check on the 12-tile batch sheet, quality loop (5 flaws, fix worst 3, >= 2 rounds), vfxcost.mjs, casts.mjs on the changed cues, parity.
+ MX3 ULTIMATES AS SHORT CINEMATICS (<= 5 h): all 12 ultimates: anticipation 150-250 ms (gather, caster pose, rim pulse, camera micro-push), impact (2-3 flash frames, shockwave + distortion, pooled light lighting the floor and units, decal), afterglow 0.4-0.8 s (lingering particles, settling motif). Each has ONE signature motif nobody else uses (e.g. Mochi lantern-light shelter, Soot midnight crumb constellation, Clover greenhouse of honey glass, Mallow closing-blaze wave, ...; design your own within LOOK-BIBLE). With Skills V5 statuses present, marks must not hide the ultimate and the ultimate must not hide faces/badges. Fit inside the existing action timing.
+ MX4 ENEMY AND BOSS ATTACKS (<= 3 h): chapter-1 enemies now apply Burn/Bleed/Bitter and have Row/Multi-hit/All attacks (APPENDIX enemy table): give each a hostile-palette effect (plum/warm red, LOOK-BIBLE hostile rim) clearly different from the cats', with telegraph for charge attacks (Spool Ram charge glow) and a Yarn Giant phase-2 All attack with a big readable wave.
+ MX5 OPTIMISATION PASS (<= 3 h, and continuously): quality tiers High/Balanced/Low chosen from a short measured warm-up (frame time), particle caps per tier, instancing everywhere, atlas batching, overdraw cap (additive screen coverage x layers at peak <= 2.5 on High, <= 1.5 on Low), zero per-cast heap allocations after warm-up (vfxcost heap delta), fixed program count, light pool <= 2. Re-run casts + cold + draws: all section 6 thresholds must hold with the richer effects. If a skill cannot meet budget, simplify its secondary layers, never the impact frame.
+ SKILL DESIGN FEEDBACK TO LANE A (data, not edits): from live battles in M3 (or A's probe output), list skills that are < 2% of uses, skills whose shape never shows (e.g. a Splash that always has no neighbour), and kits that look identical in play; post one consolidated B-OUTBOX REQUEST to A per refresh with seeds and suggested fixes (e.g. "Cinnamon has no multi-target skill in play", "Mark applied 0% of actions"). You do not change rules.
+M3 LIVE SKILLSV5 INTEGRATION (start as soon as lane A has published rules you can run; target <= 10 h, then repeat 3.5 on every new A phase)
+ 3.0 Trigger: A-OUTBOX shows a published V5A branch with skillsV5 rules runnable (S3 or S4 DONE or later; #412 already qualifies if it contains runnable rules - check). If not yet, wait with wait-outbox.sh 'V5A-S[3-9].*DONE' (cap 24 h; while waiting do queued M2 work).
+ 3.1 Create /Users/bao/taskbar-hero-cardrpg-v5live from lane A's newest published V5A branch; merge your newest milestone branch into it (no rebase of either lane). Conflicts: A-owned files take A's version, B-owned take yours; any other conflict -> stop that merge, REQUEST to A, continue M2/M4 work, retry after A answers.
+ 3.2 Run live battles with gameplayV4 + skillsV5 + lookV2 ON on LIVE-SEEDS. Fill coverage.mjs table: 8 keywords x (apply, tick/trigger, expire/cleanse), 7 signature statuses, 4 reactions, 7 shapes, enemy-applied statuses on cats. Every cell needs a live seed+round where the event was received AND rendered; cells never seen live -> list them (rules may not produce them; tell A via HEADS-UP with your seed list, do not fake them).
+ 3.3 Desync/timing: action clock, phase cues and finish cue unchanged; reaction and multi-target cues finish inside their action; no cue left on screen after its status/target is gone (defeated target, cleansed status, consumed Bleed/crumb).
+ 3.4 Re-run the shot pack in LIVE mode (replace fixture P-shots by live frames where coverage exists), casts, cold, collide, faces, parity (lookV2 ON vs OFF on the integration branch).
+ 3.5 When lane A publishes a newer V5A phase (S5 balance, S6 acceptance, copy changes), refresh the integration branch (new merge commit), re-run 3.2-3.4 delta only, update the PR. Keep doing this until lane A posts S6 DONE or 19 Nov 18:00 UTC, whichever first.
+M4 DEMO, PITCH CLIP, LEAN PACK (target <= 5 h; start by 19 Nov 18:00 UTC at the latest even if M3/MX are still refreshing)
+ - docs/cardrpg-look/v5-live.html: offline build of the integration branch with gameplayV4 + skillsV5 + lookV2 ON (via tools/cardrpg-look/build.mjs; may call but not edit lane A's build), guide panel with the P-shot gallery (live frames), a "fixture vs live" note, REFERENCE lines with repo paths. If M3 never got runnable A rules, build from the newest fixture branch and label it FIXTURE PREVIEW.
+ - Size: report bytes per asset class; must stay <= 31.5 MB; also deliver the lean pack option (as in B2) with its total and SSIM on 6 shots.
+ - Videos: (a) 20 s natural before (#395 base) / after (live) at 1440x900, same seed, no cuts; (b) one 30 s pitch clip choosing the live seed where a combo crew shows >= 2 different reactions, >= 2 multi-target hits and >= 1 ultimate, natural speed, no cuts, no edits beyond trimming start/end; (c) one 20 s "skill reel" in the guide panel cycling the 12 ultimates at natural speed (gallery mode, labelled).
+M5 FINAL REPORT (ALWAYS deliver, even PARTIAL; by 20 Nov 12:00 UTC at the latest)
+ reports/cardrpg-look/skills-v5/full/V5FULL-REPORT.md (<= 90 lines): first 5 lines Vietnamese for the user; rubric table (section 8) with scores and evidence links; P-shot before/after table (key 8 shots); VFX audit before/after (MX0 table re-scored) + 60-tile peak sheet; coverage table; perf table (cast/cold/draws/bytes); FIXLOG summary (issues found by you, fixed / PARTIAL with cause); open REQUESTs to A; what the user should watch (links to clip + demo); honest misses. Update the ledger copy reports/cardrpg-look/CARDRPG-LOOK-REPORT.md on ai/codex-ui-ledger with a "Skills V5" section. B-OUTBOX DONE.
+
+==================================================================
+6. GATES PER MILESTONE (small and fixed)
+==================================================================
+ Every change set: typecheck, lint, unit (filter output, e.g. `| tail -n 40`).
+ MX batches: vfxcost.mjs + casts on changed cues + parity + faces + uniqueness sheet by eye.
+ Every milestone end: build; E2E full suite; parity.mjs; shot pack (1440 DPR1 + 1024 layout); collide.mjs; faces.mjs; contrast.mjs; casts.mjs (M1, M2 end, M3 end); cold.mjs 3+3 (M1, M3 end, M4); draws/tris peak; startup audit lookV2 OFF; evidence size.
+ Thresholds: parity exact; MX: every rebuilt skill >= 4 layers and MX0 average sub-score >= 7.5 after MX3 (from about 4-5 today), no two of the 60 peak tiles read the same; zero per-cast heap allocations after warm-up;  native cast max <= 16.8 ms (first + repeat, all cues); 1440 CPU4 cast <= 100 ms; CPU4 cold <= 220 ms; load->ready <= +1.5 s vs B2; peak draws <= 130 (raise to <= 150 only with a written reason and a perf check); tris <= 180k; faces 0 offenders; overlaps 0; contrast >= 4.5:1; demo <= 33 MB (MX atlases included; report bytes per class; lean pack must still exist); lookV2 OFF startup unchanged; reduced-motion matrix PASS; keyboard tooltip/Escape PASS.
+ Flaky tests (known: idle-clock timeout, ERR_SOCKET_NOT_CONNECTED, font ECONNRESET): rerun the failing test isolated twice; if both pass, record as flaky with logs and continue; never edit or skip tests. A test that fails twice isolated is a real failure -> section 7.
+
+==================================================================
+7. SELF-REPAIR LOOP (how you handle EVERY failure or flaw without a new prompt)
+==================================================================
+For each failed gate, regression, crash, visual flaw you notice, or lane A change that breaks your view, open an issue in FIXLOG.md: `## <id> <UTC> <milestone> <gate/area> <severity S1 crash/desync, S2 gate miss, S3 visible flaw, S4 polish>` and then:
+ 1. REPRODUCE: smallest command/seed/shot that shows it; save the exact command.
+ 2. MEASURE / ATTRIBUTE: numbers or trace or annotated frame; name the code path.
+ 3. HYPOTHESES: up to 3 causes, ranked; pick the cheapest test that separates them.
+ 4. FIX: smallest change in B-owned files; if the cause is in A-owned code -> REQUEST to A with repro + expected/actual + suggested fix, add a B-side fallback (plain rendering, legacy path) so the demo never crashes, mark the issue WAITING-A and continue.
+ 5. VERIFY: re-run the failing gate AND parity AND the gates of the area touched (perf change -> casts+cold; layout change -> collide at 3 widths; art change -> faces+contrast). A fix that regresses another gate is reverted.
+ 6. RECORD: before/after numbers, files, commit; status FIXED / PARTIAL / WAITING-A / WONTFIX(reason).
+ Budget: max 3 fix attempts per issue per milestone, max ~2 h on one S2/S3 issue; then mark PARTIAL with the best result and attribution, move on, and revisit open issues once at the end of M2 and M4. S1 issues (crash, desync, outcome change, broken lookV2 OFF) block the milestone PR until fixed or the offending change is reverted.
+ After fixing, ask "why did my checks not catch this?" and extend the relevant probe (as collide.mjs must now include floating numbers).
+FRESH-EYES REVIEW at every milestone end (quality loop): open the 8 key P-shots at 1440 and 1024 and the latest 20 s clip; as a stranger, write 5 concrete flaws with pixel regions; fix the worst 3 through the loop above; re-capture. Metrics support your eye, never replace it.
+
+==================================================================
+8. SELF-SCORE RUBRIC (score at every milestone end; target weighted >= 8.0 by M4; each line needs its evidence link)
+==================================================================
+| Criterion | Weight | 10 = | 6 = | <= 4 = |
+| Skill VFX beauty (48 skills + 12 ultimates + enemy attacks) | 22% | layered, authored, unique per cat, MX0 average >= 8.5, ultimates cinematic | MX0 average ~6.5, some flat skills | mostly 1-2 flat layers |
+| Status readability (what is on each unit) | 15% | every P-shot readable at 1280 in 1 s; badges+marks agree; 0 overlaps | readable with effort; minor overlaps | needs tooltip to know |
+| Combo/reaction legibility | 12% | each reaction distinct in motion + word at its target, numbers readable | distinct words, similar motion | words only / collisions |
+| Multi-target clarity | 8% | splash/row/multi/bounce order visible at x1 | visible at x0.5 | looks like one hit |
+| Unit & monster readability | 8% | luminance sep >= 0.18, boss >= 2x, hostile read instant | one of the two met | neither |
+| Performance with rich VFX | 15% | cast <= 16.8 ms, CPU4 cold <= 220 ms, draws <= 130, 0 per-cast alloc | one miss <= +25% | freeze visible in clip |
+| Live integration correctness | 15% | all coverage cells live+rendered, 0 desync, parity exact | >= 80% cells, 0 desync | fixture only or desync |
+| Size, startup, compatibility | 5% | <= 33 MB, lookV2 OFF unchanged, reduced-motion PASS | one soft miss | broken OFF |
+Write the table with scores, weighted total, and one sentence per line. If the total is < 8.0 at a milestone end, the two lowest lines become the first work items of the next milestone (through section 7), unless the next milestone is M5.
+
+==================================================================
+9. DECISIONS YOU MAKE YOURSELF (record in STATE.md, do not ask)
+==================================================================
+ - Exact colours/shapes/timings within the APPENDIX visual table and LOOK-BIBLE.
+ - Which live seeds become P-shots; which flaky tests are flaky (by the isolated-rerun rule).
+ - Order of fixes inside a milestone (S1 > S2 > S3 > S4).
+ - Whether to raise draws above 130 (written reason + perf check).
+ - Lane A schema differences: adapt to A's published schema, note it in B-OUTBOX ANSWER.
+ Things that are NOT yours: rules/numbers/kits, meta screens, merging, deploying, flipping default flags. For those: REQUEST/HEADS-UP and continue.
+
+==================================================================
+10. STOP CONDITIONS
+==================================================================
+ Milestone order: M1 -> M2 -> MX (MX0-MX5) -> M3 (start as soon as A is runnable; interleave MX batches while waiting) -> M4 -> M5.
+ Stop only when (a) M5 is delivered, or (b) 20 Nov 12:00 UTC is reached (then deliver M5 with what you have), or (c) an S1 issue you cannot fix or revert (deliver M5 as PARTIAL describing it). Waiting for lane A is never a reason to stop before its cap; when a cap expires, record it and continue with the next milestone using the best available input (fixture instead of live, labelled).
+
+==================================================================
+APPENDIX: USER-APPROVED SKILLS V5 SPEC (rules are lane A's; you use names, visual table and acceptance)
+==================================================================
+# Skills V5 spec (user-approved direction, 2026-11-09)
+
+Approved by the user on 9 Nov 2026 (option B, "Skills V5 full"). Source doc (Vietnamese): https://claude.ai/artifact/TnU4qQmkEd6wz6FzuUJCnG
+Both lane prompts (A rules, B look) embed this file verbatim; copy it to docs/design/cardrpg/SKILLS-V5.md (lane A) when you start.
+
+## Why
+Rules already have 16 statuses and 16 mechanics, but a local 180-battle probe (A5 source 27f192301, gameplayV4 ON, policy `auto`, crews Mochi/Soot/Clover, Panko/Mallow/Cinnamon, Biscuit/Inkcap/Sorrel x encounters [button-guard,sock-skipper], [teacup-healer,kettle-knight], [yarn-giant] x seeds 1-20, base stats, no gear) measured:
+- only 9.1% of party damage actions hit more than one foe; 19.4% of support actions touch more than one ally;
+- the 8 most used skills are single-target basics (~50% of actions); each ultimate is 2-3% of actions;
+- enemies apply only Tangle to cats, so cleanse is almost unused (Clearleaf rinse 0.1%);
+- average fight 17.3 rounds;
+- lane B shows 3D cues for 6/16 statuses (feet level, 35-50% opacity) and no status badges in the lookV2 HUD.
+The user sees "one hit, one heal" and wants burn, bleed, heal reduction, AoE, combos.
+
+## 8 core keywords (display name / internal id / rule)
+Display name is plain English; the cafe name stays as subtitle in tooltips (e.g. "Burn - Scald"). Internal ids are kept so saves, text and art keep working.
+
+| Display | Internal id | Rule | Stacks / duration | Counter |
+|---|---|---|---|---|
+| Burn | scald | Round end: lose 12 HP per stack, bypasses shield | max 5, 3 rounds, new stack refreshes duration | Regen removes 1 stack per heal; Cleanse |
+| Bleed | snag (NEW) | Each time the bearer takes its own action: lose 8 HP per stack; blocked by shield | max 5, 3 rounds | Shield, Cleanse |
+| Bitter | bitter (NEW) | Healing and shields received -50% | 1, 2 rounds | Cleanse |
+| Mark | scent | +20% direct damage taken; targetable through the front row | 1, 2 rounds | Cleanse |
+| Shred | brittle (absorbs tangle) | -8% defense and -15 shield per direct hit, per stack | max 3, 2 rounds | Cleanse |
+| Daze | drowsy (absorbs hush, rattled) | Next action becomes a half-power basic; bosses only lose their signature | 1, 1 round, then 1 round immune | effect resist |
+| Regen | steep | Round end: heal 18 per stack | max 3, 3 rounds | Bitter halves it |
+| Warm | cozy | -10% direct damage per stack (not Burn) | max 3, 2 rounds | dispel |
+
+Signature statuses keep their current rules, get their own icon, and are NOT part of the core vocabulary: crumb, riposte, link, sprout, decoy, glaze, shelter. Shield stays a number bar. Total ids: 18 (16 old + snag + bitter); old ids tangle/hush/rattled keep loading (mapped) when skillsV5 is OFF.
+
+## Global rules
+1. Same status: add stacks up to cap and refresh duration; all sources share one slot.
+2. Fixed round-end order: Regen -> Burn -> expiry. Bleed resolves just before the bearer's action.
+3. Hit chance uses existing effectHit vs effectResist. Bosses +30% resist vs Daze only.
+4. Length caps: total damage-over-time on a boss <= 6% max HP per round; each target triggers at most 1 reaction per round.
+5. Reactions are one level deep: reaction damage never triggers another reaction.
+6. Enemies apply statuses to cats too (Burn, Bleed, Bitter).
+7. At most 4 badges visible per unit, rest as "+N".
+
+## 7 target shapes
+| Shape | Rule | Power per target |
+|---|---|---|
+| Single | 1 foe, respects front row | 100% |
+| Pierce | 1 foe in any row | 100% |
+| Row | a whole row | 60% |
+| Splash (NEW) | main + adjacent foes | 100% / 40% |
+| Bounce | 3 different foes | 100 / 70 / 50% |
+| All | every foe | 55-65% |
+| Multi-hit (NEW) | 3 hits, each picks a seeded random foe | 40% each |
+Ally side adds "Weakest" and "Row" next to "One" and "Team".
+
+## 4 reactions (primer -> trigger)
+| Name | Condition | Result |
+|---|---|---|
+| Crumb Burst | crumb -> detonate | existing rule, now announced and shown |
+| Wildfire | target has >= 3 Burn -> hit by Splash/Row/All | each adjacent foe gains 1 Burn |
+| Rupture | Bleed + Shred on target -> direct hit | consume all Bleed, deal 12 per stack now, bypassing shield |
+| Spread | Marked target is defeated | its debuffs jump to the nearest foe at 50% stacks (round up) |
+
+## Kits (keep skill names; change shape/side effects only)
+| Cat | Basic | Skill 2 | Skill 3 | Ultimate | Combo role |
+|---|---|---|---|---|---|
+| Mochi | Door knock: Splash 100/40 + 18 self shield | Warm welcome: shield Weakest + Warm | Apron crossing: keep | Last light shelter: team shield + remove 1 debuff each | protects primers |
+| Soot | Cocoa spark: Pierce + crumb | Black cup: Mark | Lantern wick: Crumb Burst | Midnight service: All + detonate + Daze | primes + triggers Crumb Burst |
+| Clover | Leaf tap: Single + heal 18 to Weakest | Patient steep: Regen to a Row | Clearleaf rinse: Cleanse team + heal 45 | Greenhouse morning: keep | answers enemy Burn/Bleed |
+| Panko | Pan reply: Single + Riposte + 1 Shred | Bread cover: keep | Crust return: keep | Oven door: keep | primes Shred for Rupture |
+| Mallow | Whisk flare: Splash + 1 Burn on main | Split ember: Row + 1 Burn | Burnt sugar: Single, +30% per Burn on target | Closing blaze: All + 3 Burn | primes + triggers Wildfire |
+| Sorrel | Moon spoon: Single + Bitter | Cold brew: Pierce + Daze | Decanted moon: keep | Shared pot: team heal + glaze | anti-healer |
+| Biscuit | Rolling pin: Multi-hit 3x40% + 1 Bleed per hit | Sideboard step: keep | Last crumb: Pierce, triggers Rupture | Bakers procession: Bounce 3 + Shred | primes + triggers Rupture |
+| Inkcap | Ink thread: Pierce + Shred | Quiet spores: Pierce + Daze | Paper decoy: keep | Dreaming canopy: All + Daze + 2 Shred | locks boss signatures |
+| Cinnamon | Spice pinch: Single + drain + 1 Burn | Comfort cup: heal Weakest 80 + Warm, cooldown 1 | Clean apron: keep | Second serving: keep | sustains Burn crews |
+| Brioche | Bell patrol: Single + glaze | Borrowed blanket: keep | Starched collar: dispel + Shred, triggers Rupture | Constellation apron: keep | front-row Rupture trigger |
+| Velvet | Silk nick: Pierce + Mark + 2 Bleed | Candle bounce: Bounce 3 | Stolen flame: dispel + hit | Velvet curtain: keep | primes Spread |
+| Marigold | Seed stitch: keep | Garden bell: Regen team | Spring pruning: 2 Burn + 2 crumb | First tea blossom: keep | double primer |
+
+Target crews (design goal, matches A5 gate ">= 4 distinct crews within 5 pp of best"):
+Oven (Mallow, Cinnamon, Mochi) Burn/Wildfire vs crowds; Thread (Velvet, Biscuit, Brioche) Bleed/Shred/Rupture vs shields; Night lamp (Soot, Marigold, Inkcap) crumb/Daze/Crumb Burst vs signature bosses; Afternoon tea (Clover, Sorrel, Panko) Bitter + sustain vs healers.
+
+## Chapter-1 enemies
+| Enemy | New mechanic | Counter |
+|---|---|---|
+| Button Guard | shields its whole row | Shred, Burn |
+| Sock Skipper | hits rear cats + 1 Bleed | shield the rear |
+| Spool Ram | charges 1 round, then Row hit | Daze during charge |
+| Needle Moth | Multi-hit 3x random cats | Warm, team shield |
+| Teacup Healer | heals Weakest foe every 2 rounds | Bitter, Mark |
+| Kettle Knight | below 50% HP its basic adds 1 Burn to the front row | Cleanse |
+| Yarn Giant | phase 1 Row + Shred; phase 2 All + Bitter on cats | Cleanse, Daze its signature |
+Chapters 2-3 enemies: after 21 Nov.
+
+## Visual language (lane B)
+| Status | Colour | On body (while active) | On apply | On tick / trigger | Number |
+|---|---|---|---|---|---|
+| Burn | #efaa73 | 1-5 small flames round shoulders, count = stacks | ember dart from caster | 200 ms flare | orange italic |
+| Bleed | #d9616b | red yarn scratch marks on body | crossed slash | drops when bearer acts | small red |
+| Bitter | #8d7aa6 | violet smoke ring at feet | bitter tea drop | heal numbers struck through + "-50%" | grey |
+| Mark | #f4db95 | spinning cup-saucer above head | shrinking reticle | ring flash when hit | - |
+| Shred | #9fd3e0 | cracks on shield/body | shards burst | shield shards fall | blue |
+| Daze | #c19ada | 3 small stars/clouds circling head | sleepy cloud drops | "DAZED" text when it bites | - |
+| Regen | #a3dba3 | slow tea leaves falling | steam rises | leaf flash | green |
+| Warm | #efbc73 | thin honey shield halo | knitted blanket wraps | halo flash on block | - |
+Signature statuses: distinct small icon + existing cue. Opacity 60-80%, body height, never covers faces (LOOK-BIBLE protected-face rule).
+Reaction callouts: big word 400-600 ms above target ("CRUMB BURST!", "WILDFIRE!", "RUPTURE!", "SPREAD!") + own effect (crumb explosion, fire wave to neighbours, snapping thread, debuffs flying on an arc). Multi-target hits land staggered 60-90 ms per target.
+HUD: per unit a 16 px badge row (icon + stacks + rounds-left ring), max 4 + "+N", tooltip on hover/focus; a small combo ticker at the screen edge ("Mallow -> Wildfire x3").
+Budget: reuse B2 pools; peak draws <= 130 (now 115); no new texture > 256 px; demo +<= 1.5 MB; native cast window stays <= 16.8 ms.
+
+## Acceptance (same 180-battle probe + lane A sims)
+| Metric | Now | Target |
+|---|---|---|
+| Damage actions hitting > 1 foe | 9.1% | >= 30% |
+| Support actions touching > 1 ally | 19.4% | >= 35% |
+| Reactions per battle | ~4.8 detonate, unannounced | >= 2 announced; each reaction in >= 40% of its crew's battles |
+| Ultimates | 2-3% of actions | >= 1 per cat per normal battle |
+| Normal fight length | 17.3 rounds | 8-12 rounds; boss stays 45-90 s |
+| Keyword coverage | cleanse 0.1% | each keyword >= 1 per 3 battles; cleanse >= 3% of support actions |
+| Crew diversity | not measured | 4 crews above within 5 pp of best per boss/elite; cats 55-75% |
+| Performance | cast 16.8 ms, 115 draws | cast <= 16.8 ms, <= 130 draws, demo +<= 1.5 MB |
+| Readability | not measured | viewer names "what is on this unit" >= 4/5 after 2 fights (playtest kit) |
+| Compatibility | - | skillsV5 OFF: OFF digest 47477251... and A5 hashes byte-identical; old saves load |
+
+## Schedule (UTC, planned)
+V0 lane B now (9-11 Nov): badges + VFX for the 16 existing statuses + Crumb Burst callout, reading actor.statuses only.
+A5 paused 9 Nov with a handoff. Lane A now: R1 A5 wrap-up (reports, draft PR on #405), then V1 -> 16 Nov: rules behind `skillsV5`, events-v4 v2, policy. V2 lane A 16-19 Nov: balance on TRAIN together with A5's open B1/B2 gates, then ONE combined acceptance on the still-unused block 20001-20500 (registered first; 30001-30500 only for a retune).
+V3 lane B 14-19 Nov: Bleed/Bitter VFX, 4 reactions, multi-target stagger from A's v2 fixture. V4 19-21 Nov: integrate into demo-build, 20 s before/after video, user review before 21 Nov.
+Fallback D if S1-S3 are not done by 14 Nov: V0 + snag/bitter/splash + retarget ~12 skills, no reactions.

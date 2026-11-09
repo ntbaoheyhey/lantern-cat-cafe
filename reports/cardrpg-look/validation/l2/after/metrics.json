@@ -1,0 +1,4757 @@
+{
+  "method": "Laplacian/Canny/3-value/quantized-palette; crops include occluders/background. No invented perceptual pass. Texel density requires separate mesh UV analysis.",
+  "rows": [
+    {
+      "file": "1280x720-stage-1-close.png",
+      "kind": "stage",
+      "whole": {
+        "laplacianVariance": 1028.8723296405994,
+        "edgeContinuity": 0.9902134709556344,
+        "meanLuminance": 0.2050565576491013,
+        "meanSaturation": 0.41059741157747826,
+        "valueBins": [
+          0.8411187065972222,
+          0.128291015625,
+          0.03059027777777778
+        ],
+        "palette": [
+          {
+            "hex": "#103030",
+            "fraction": 0.3697805447048611
+          },
+          {
+            "hex": "#301030",
+            "fraction": 0.30794596354166665
+          },
+          {
+            "hex": "#303030",
+            "fraction": 0.07786512586805555
+          },
+          {
+            "hex": "#705050",
+            "fraction": 0.03540988498263889
+          },
+          {
+            "hex": "#303050",
+            "fraction": 0.03265407986111111
+          },
+          {
+            "hex": "#907050",
+            "fraction": 0.028350694444444446
+          }
+        ],
+        "darkStrokeWidthStd": 63.8299446105957,
+        "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness."
+      },
+      "subjects": [
+        {
+          "laplacianVariance": 1837.1113709131898,
+          "edgeContinuity": 0.9777571825764597,
+          "meanLuminance": 0.46726474912059,
+          "meanSaturation": 0.4105007545769766,
+          "valueBins": [
+            0.36079100867833264,
+            0.3357518850476597,
+            0.3034571062740077
+          ],
+          "palette": [
+            {
+              "hex": "#d0b090",
+              "fraction": 0.10250391236306729
+            },
+            {
+              "hex": "#307050",
+              "fraction": 0.09546165884194054
+            },
+            {
+              "hex": "#105050",
+              "fraction": 0.0695689287238583
+            },
+            {
+              "hex": "#d0b070",
+              "fraction": 0.06558543178261488
+            },
+            {
+              "hex": "#505030",
+              "fraction": 0.06480295916915635
+            },
+            {
+              "hex": "#303030",
+              "fraction": 0.0643761559254517
+            }
+          ],
+          "darkStrokeWidthStd": 7.556641101837158,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "mochi",
+          "box": [
+            1195.6131641718412,
+            917.6420708645926,
+            1294.5666193914012,
+            1059.9118720296688
+          ],
+          "pixels": [
+            142,
+            99
+          ],
+          "backgroundLuminanceSeparation": 0.1960647307640413,
+          "subjectBackgroundContrast": 1.6104131991250366,
+          "subjectBackgroundSaturationRatio": 0.9101037919004331
+        },
+        {
+          "laplacianVariance": 981.2577544001865,
+          "edgeContinuity": 0.9752136752136752,
+          "meanLuminance": 0.3587335490080124,
+          "meanSaturation": 0.31336069850767034,
+          "valueBins": [
+            0.3881726788882318,
+            0.5669426374926079,
+            0.04488468361916026
+          ],
+          "palette": [
+            {
+              "hex": "#705050",
+              "fraction": 0.18013010053222944
+            },
+            {
+              "hex": "#307050",
+              "fraction": 0.15227675931401538
+            },
+            {
+              "hex": "#305050",
+              "fraction": 0.09231224127735067
+            },
+            {
+              "hex": "#303030",
+              "fraction": 0.0742755765819042
+            },
+            {
+              "hex": "#505050",
+              "fraction": 0.06167947959787108
+            },
+            {
+              "hex": "#705070",
+              "fraction": 0.054287403903015966
+            }
+          ],
+          "darkStrokeWidthStd": 2.1952767372131348,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "soot",
+          "box": [
+            913.7194327215735,
+            1016.8989907355751,
+            1008.6250363535215,
+            1194.254905793201
+          ],
+          "pixels": [
+            178,
+            95
+          ],
+          "backgroundLuminanceSeparation": 0.08753353065146369,
+          "subjectBackgroundContrast": 1.272520316466162,
+          "subjectBackgroundSaturationRatio": 0.6947386984423205
+        },
+        {
+          "laplacianVariance": 1425.474414860302,
+          "edgeContinuity": 0.9889036839769196,
+          "meanLuminance": 0.5209260258639643,
+          "meanSaturation": 0.3654686594311527,
+          "valueBins": [
+            0.09957951070336392,
+            0.6032110091743119,
+            0.2972094801223242
+          ],
+          "palette": [
+            {
+              "hex": "#307050",
+              "fraction": 0.1692150866462793
+            },
+            {
+              "hex": "#d0b090",
+              "fraction": 0.16851427115188583
+            },
+            {
+              "hex": "#507050",
+              "fraction": 0.08103975535168195
+            },
+            {
+              "hex": "#b09070",
+              "fraction": 0.06148063200815494
+            },
+            {
+              "hex": "#b0b070",
+              "fraction": 0.04956676860346585
+            },
+            {
+              "hex": "#d0d0b0",
+              "fraction": 0.04561671763506626
+            }
+          ],
+          "darkStrokeWidthStd": 1.190878987312317,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "clover",
+          "box": [
+            991.9800216477311,
+            978.4917703770295,
+            1100.6654549747423,
+            1122.915416055323
+          ],
+          "pixels": [
+            144,
+            109
+          ],
+          "backgroundLuminanceSeparation": 0.24972600750741558,
+          "subjectBackgroundContrast": 1.7774781856650046,
+          "subjectBackgroundSaturationRatio": 0.8102650459481399
+        },
+        {
+          "laplacianVariance": 1625.1652065093865,
+          "edgeContinuity": 0.9599483204134367,
+          "meanLuminance": 0.4044411041727615,
+          "meanSaturation": 0.3983304246068175,
+          "valueBins": [
+            0.3187274909963986,
+            0.6364259989710169,
+            0.04484651003258446
+          ],
+          "palette": [
+            {
+              "hex": "#907050",
+              "fraction": 0.2239753044074773
+            },
+            {
+              "hex": "#705050",
+              "fraction": 0.12039101354827646
+            },
+            {
+              "hex": "#505050",
+              "fraction": 0.11541759560967244
+            },
+            {
+              "hex": "#305030",
+              "fraction": 0.1004973417938604
+            },
+            {
+              "hex": "#505030",
+              "fraction": 0.039015606242496996
+            },
+            {
+              "hex": "#707050",
+              "fraction": 0.03378494254844795
+            }
+          ],
+          "darkStrokeWidthStd": 0.6496373414993286,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "button-guard",
+          "box": [
+            1627.7980285832273,
+            935.4329610460481,
+            1725.1794567153406,
+            1054.8092816503065
+          ],
+          "pixels": [
+            119,
+            98
+          ],
+          "backgroundLuminanceSeparation": 0.1332410858162128,
+          "subjectBackgroundContrast": 1.414822783939907,
+          "subjectBackgroundSaturationRatio": 0.8831214701116816
+        }
+      ],
+      "background": {
+        "luminance": 0.2712000183565487,
+        "saturation": 0.4510482850750347,
+        "mask": "canvas excluding projected subject bounds"
+      },
+      "ssim": 0.8893007178767048,
+      "meanAbsolutePixelDifference": 8.144804958767361
+    },
+    {
+      "file": "1280x720-stage-1-wide.png",
+      "kind": "stage",
+      "whole": {
+        "laplacianVariance": 1028.4429014721973,
+        "edgeContinuity": 0.9910524516579718,
+        "meanLuminance": 0.2017178276909722,
+        "meanSaturation": 0.4138337790628404,
+        "valueBins": [
+          0.8507937282986111,
+          0.11889512803819445,
+          0.030311143663194446
+        ],
+        "palette": [
+          {
+            "hex": "#103030",
+            "fraction": 0.38739637586805553
+          },
+          {
+            "hex": "#301030",
+            "fraction": 0.30794569227430557
+          },
+          {
+            "hex": "#303030",
+            "fraction": 0.07674099392361111
+          },
+          {
+            "hex": "#705050",
+            "fraction": 0.03730631510416667
+          },
+          {
+            "hex": "#303050",
+            "fraction": 0.032654351128472224
+          },
+          {
+            "hex": "#907050",
+            "fraction": 0.023221842447916665
+          }
+        ],
+        "darkStrokeWidthStd": 68.84329223632812,
+        "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness."
+      },
+      "subjects": [
+        {
+          "laplacianVariance": 2010.287506084252,
+          "edgeContinuity": 0.9835718071012188,
+          "meanLuminance": 0.4667520378938092,
+          "meanSaturation": 0.4098703596607182,
+          "valueBins": [
+            0.3590238764044944,
+            0.339624297752809,
+            0.30135182584269665
+          ],
+          "palette": [
+            {
+              "hex": "#d0b090",
+              "fraction": 0.10437148876404495
+            },
+            {
+              "hex": "#307050",
+              "fraction": 0.09339887640449439
+            },
+            {
+              "hex": "#303030",
+              "fraction": 0.06873244382022473
+            },
+            {
+              "hex": "#105050",
+              "fraction": 0.06759129213483146
+            },
+            {
+              "hex": "#505030",
+              "fraction": 0.06601123595505617
+            },
+            {
+              "hex": "#d0b070",
+              "fraction": 0.0643433988764045
+            }
+          ],
+          "darkStrokeWidthStd": 6.3307623863220215,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "mochi",
+          "box": [
+            1222.8408141833936,
+            925.8545600522426,
+            1311.7555130763315,
+            1053.6911929831806
+          ],
+          "pixels": [
+            128,
+            89
+          ],
+          "backgroundLuminanceSeparation": 0.2060276742306062,
+          "subjectBackgroundContrast": 1.6630560661600438,
+          "subjectBackgroundSaturationRatio": 0.8876311997787655
+        },
+        {
+          "laplacianVariance": 1068.3329052098015,
+          "edgeContinuity": 0.9776119402985075,
+          "meanLuminance": 0.3600351098634052,
+          "meanSaturation": 0.31134701457349495,
+          "valueBins": [
+            0.37891231964483907,
+            0.5786163522012578,
+            0.042471328153903073
+          ],
+          "palette": [
+            {
+              "hex": "#705050",
+              "fraction": 0.18120606733259342
+            },
+            {
+              "hex": "#307050",
+              "fraction": 0.17114317425083242
+            },
+            {
+              "hex": "#303030",
+              "fraction": 0.06999630040695523
+            },
+            {
+              "hex": "#305050",
+              "fraction": 0.06970033296337402
+            },
+            {
+              "hex": "#505050",
+              "fraction": 0.06400295967443581
+            },
+            {
+              "hex": "#707070",
+              "fraction": 0.05645578986311506
+            }
+          ],
+          "darkStrokeWidthStd": 1.9114543199539185,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "soot",
+          "box": [
+            969.5449975179358,
+            1015.0419373276181,
+            1054.822496433599,
+            1174.4052233214268
+          ],
+          "pixels": [
+            159,
+            85
+          ],
+          "backgroundLuminanceSeparation": 0.0993107462002022,
+          "subjectBackgroundContrast": 1.3196104258752173,
+          "subjectBackgroundSaturationRatio": 0.6742652099121635
+        },
+        {
+          "laplacianVariance": 1647.4286385295577,
+          "edgeContinuity": 0.969488188976378,
+          "meanLuminance": 0.5204928125096192,
+          "meanSaturation": 0.3647846831040108,
+          "valueBins": [
+            0.09929356357927786,
+            0.606828885400314,
+            0.2938775510204082
+          ],
+          "palette": [
+            {
+              "hex": "#307050",
+              "fraction": 0.16766091051805337
+            },
+            {
+              "hex": "#d0b090",
+              "fraction": 0.1653061224489796
+            },
+            {
+              "hex": "#507050",
+              "fraction": 0.07700156985871272
+            },
+            {
+              "hex": "#b09070",
+              "fraction": 0.06350078492935636
+            },
+            {
+              "hex": "#b0b070",
+              "fraction": 0.04725274725274725
+            },
+            {
+              "hex": "#d0d0b0",
+              "fraction": 0.04450549450549451
+            }
+          ],
+          "darkStrokeWidthStd": 1.0588452816009521,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "clover",
+          "box": [
+            1039.8661064081061,
+            980.531101643128,
+            1137.525481281653,
+            1110.3030731221743
+          ],
+          "pixels": [
+            130,
+            98
+          ],
+          "backgroundLuminanceSeparation": 0.2597684488464162,
+          "subjectBackgroundContrast": 1.8360092713166891,
+          "subjectBackgroundSaturationRatio": 0.7899919042512851
+        },
+        {
+          "laplacianVariance": 1875.1310082585435,
+          "edgeContinuity": 0.9709513435003632,
+          "meanLuminance": 0.4051068873696776,
+          "meanSaturation": 0.3973885424753128,
+          "valueBins": [
+            0.3159855257556407,
+            0.640485312899106,
+            0.0435291613452533
+          ],
+          "palette": [
+            {
+              "hex": "#907050",
+              "fraction": 0.22307364836100468
+            },
+            {
+              "hex": "#705050",
+              "fraction": 0.11717752234993614
+            },
+            {
+              "hex": "#505050",
+              "fraction": 0.11707109408258834
+            },
+            {
+              "hex": "#305030",
+              "fraction": 0.0998297147722435
+            },
+            {
+              "hex": "#505030",
+              "fraction": 0.041081311196253724
+            },
+            {
+              "hex": "#905030",
+              "fraction": 0.035014899957428694
+            }
+          ],
+          "darkStrokeWidthStd": 0.46153372526168823,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "button-guard",
+          "box": [
+            1611.1808372776825,
+            941.840577316739,
+            1698.6829900920452,
+            1049.1062567002755
+          ],
+          "pixels": [
+            108,
+            87
+          ],
+          "backgroundLuminanceSeparation": 0.14438252370647459,
+          "subjectBackgroundContrast": 1.4646643153575565,
+          "subjectBackgroundSaturationRatio": 0.8606000907889089
+        }
+      ],
+      "background": {
+        "luminance": 0.260724363663203,
+        "saturation": 0.4617574954134948,
+        "mask": "canvas excluding projected subject bounds"
+      },
+      "ssim": 0.8946043880342507,
+      "meanAbsolutePixelDifference": 7.781061288339121
+    },
+    {
+      "file": "1280x720-stage-1-far.png",
+      "kind": "stage",
+      "whole": {
+        "laplacianVariance": 1018.4387396883443,
+        "edgeContinuity": 0.9913752843519787,
+        "meanLuminance": 0.19988622514978213,
+        "meanSaturation": 0.41736516416462416,
+        "valueBins": [
+          0.8582297092013889,
+          0.11070855034722223,
+          0.03106174045138889
+        ],
+        "palette": [
+          {
+            "hex": "#103030",
+            "fraction": 0.40374593098958333
+          },
+          {
+            "hex": "#301030",
+            "fraction": 0.30795057508680557
+          },
+          {
+            "hex": "#303030",
+            "fraction": 0.07378173828125
+          },
+          {
+            "hex": "#705050",
+            "fraction": 0.03819580078125
+          },
+          {
+            "hex": "#303050",
+            "fraction": 0.032661675347222224
+          },
+          {
+            "hex": "#907050",
+            "fraction": 0.019402940538194444
+          }
+        ],
+        "darkStrokeWidthStd": 74.49810791015625,
+        "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness."
+      },
+      "subjects": [
+        {
+          "laplacianVariance": 2376.353264033164,
+          "edgeContinuity": 0.9757311761045426,
+          "meanLuminance": 0.46693154454764363,
+          "meanSaturation": 0.4095356037151703,
+          "valueBins": [
+            0.3581140350877193,
+            0.3430921052631579,
+            0.2987938596491228
+          ],
+          "palette": [
+            {
+              "hex": "#d0b090",
+              "fraction": 0.10570175438596491
+            },
+            {
+              "hex": "#307050",
+              "fraction": 0.09035087719298246
+            },
+            {
+              "hex": "#303030",
+              "fraction": 0.07313596491228071
+            },
+            {
+              "hex": "#105050",
+              "fraction": 0.06973684210526315
+            },
+            {
+              "hex": "#d0b070",
+              "fraction": 0.0650219298245614
+            },
+            {
+              "hex": "#505030",
+              "fraction": 0.06414473684210527
+            }
+          ],
+          "darkStrokeWidthStd": 6.4245924949646,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "mochi",
+          "box": [
+            1247.8963140084957,
+            933.4118784883733,
+            1327.573122107362,
+            1047.9667833225903
+          ],
+          "pixels": [
+            114,
+            80
+          ],
+          "backgroundLuminanceSeparation": 0.2109439884584169,
+          "subjectBackgroundContrast": 1.6893874742961938,
+          "subjectBackgroundSaturationRatio": 0.8651189628758957
+        },
+        {
+          "laplacianVariance": 1236.602643432805,
+          "edgeContinuity": 0.970723306544202,
+          "meanLuminance": 0.3612896907014554,
+          "meanSaturation": 0.3118838380870466,
+          "valueBins": [
+            0.3718100081736445,
+            0.5860503133230406,
+            0.04213967850331487
+          ],
+          "palette": [
+            {
+              "hex": "#307050",
+              "fraction": 0.18545091272364
+            },
+            {
+              "hex": "#705050",
+              "fraction": 0.18408863863409317
+            },
+            {
+              "hex": "#303030",
+              "fraction": 0.06865861411315957
+            },
+            {
+              "hex": "#505050",
+              "fraction": 0.06266460811915357
+            },
+            {
+              "hex": "#707070",
+              "fraction": 0.05521750976296431
+            },
+            {
+              "hex": "#305050",
+              "fraction": 0.053764417400781035
+            }
+          ],
+          "darkStrokeWidthStd": 1.7831748723983765,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "soot",
+          "box": [
+            1020.9169458277609,
+            1013.3330347481253,
+            1097.3344448560824,
+            1156.1390962230969
+          ],
+          "pixels": [
+            143,
+            77
+          ],
+          "backgroundLuminanceSeparation": 0.10530213461222865,
+          "subjectBackgroundContrast": 1.344138617785889,
+          "subjectBackgroundSaturationRatio": 0.6588355691078706
+        },
+        {
+          "laplacianVariance": 1849.4014970970582,
+          "edgeContinuity": 0.970314318975553,
+          "meanLuminance": 0.5205363728563526,
+          "meanSaturation": 0.3641649763353617,
+          "valueBins": [
+            0.0980603448275862,
+            0.6108934169278997,
+            0.2910462382445141
+          ],
+          "palette": [
+            {
+              "hex": "#d0b090",
+              "fraction": 0.16682993730407525
+            },
+            {
+              "hex": "#307050",
+              "fraction": 0.16193181818181818
+            },
+            {
+              "hex": "#507050",
+              "fraction": 0.08434561128526646
+            },
+            {
+              "hex": "#b09070",
+              "fraction": 0.062108150470219434
+            },
+            {
+              "hex": "#b0b070",
+              "fraction": 0.05172413793103448
+            },
+            {
+              "hex": "#d0d0b0",
+              "fraction": 0.04320141065830721
+            }
+          ],
+          "darkStrokeWidthStd": 0.9066436886787415,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "clover",
+          "box": [
+            1083.9319654825886,
+            982.4077404334523,
+            1171.4449117978447,
+            1098.6969096809094
+          ],
+          "pixels": [
+            116,
+            88
+          ],
+          "backgroundLuminanceSeparation": 0.2645488167671258,
+          "subjectBackgroundContrast": 1.8645737759674867,
+          "subjectBackgroundSaturationRatio": 0.7692762821717595
+        },
+        {
+          "laplacianVariance": 2168.6905439492593,
+          "edgeContinuity": 0.9611307420494699,
+          "meanLuminance": 0.4040353272110532,
+          "meanSaturation": 0.39659913543476466,
+          "valueBins": [
+            0.31988396624472576,
+            0.6393723628691983,
+            0.04074367088607595
+          ],
+          "palette": [
+            {
+              "hex": "#907050",
+              "fraction": 0.21809071729957805
+            },
+            {
+              "hex": "#705050",
+              "fraction": 0.12104430379746836
+            },
+            {
+              "hex": "#505050",
+              "fraction": 0.11458333333333333
+            },
+            {
+              "hex": "#305030",
+              "fraction": 0.09836497890295359
+            },
+            {
+              "hex": "#505030",
+              "fraction": 0.0446993670886076
+            },
+            {
+              "hex": "#707050",
+              "fraction": 0.034282700421940926
+            }
+          ],
+          "darkStrokeWidthStd": 0.4199732840061188,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "button-guard",
+          "box": [
+            1595.8893217163645,
+            947.7370108422726,
+            1674.3003417707937,
+            1043.858204056091
+          ],
+          "pixels": [
+            96,
+            79
+          ],
+          "backgroundLuminanceSeparation": 0.14804777112182643,
+          "subjectBackgroundContrast": 1.4838359213492176,
+          "subjectBackgroundSaturationRatio": 0.837791463336185
+        }
+      ],
+      "background": {
+        "luminance": 0.25598755608922674,
+        "saturation": 0.4733864604629174,
+        "mask": "canvas excluding projected subject bounds"
+      },
+      "ssim": 0.8944454866296283,
+      "meanAbsolutePixelDifference": 8.174886067708334
+    },
+    {
+      "file": "1280x720-stage-2-close.png",
+      "kind": "stage",
+      "whole": {
+        "laplacianVariance": 1022.5949001701148,
+        "edgeContinuity": 0.990118665239115,
+        "meanLuminance": 0.2047502861604711,
+        "meanSaturation": 0.4070339594822304,
+        "valueBins": [
+          0.86853271484375,
+          0.10117594401041667,
+          0.030291341145833334
+        ],
+        "palette": [
+          {
+            "hex": "#103030",
+            "fraction": 0.33347547743055556
+          },
+          {
+            "hex": "#301030",
+            "fraction": 0.30794487847222224
+          },
+          {
+            "hex": "#303030",
+            "fraction": 0.06867865668402778
+          },
+          {
+            "hex": "#105030",
+            "fraction": 0.04293402777777778
+          },
+          {
+            "hex": "#505030",
+            "fraction": 0.03840060763888889
+          },
+          {
+            "hex": "#303050",
+            "fraction": 0.032585991753472224
+          }
+        ],
+        "darkStrokeWidthStd": 63.7484130859375,
+        "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness."
+      },
+      "subjects": [
+        {
+          "laplacianVariance": 1918.6158049853866,
+          "edgeContinuity": 0.9667274384685506,
+          "meanLuminance": 0.46272975543895184,
+          "meanSaturation": 0.42470298120670946,
+          "valueBins": [
+            0.43811352966282546,
+            0.25821596244131456,
+            0.30367050789586003
+          ],
+          "palette": [
+            {
+              "hex": "#505030",
+              "fraction": 0.11609048228766539
+            },
+            {
+              "hex": "#307050",
+              "fraction": 0.10997296912789871
+            },
+            {
+              "hex": "#d0b090",
+              "fraction": 0.09802247830416845
+            },
+            {
+              "hex": "#105050",
+              "fraction": 0.07454829990041258
+            },
+            {
+              "hex": "#d0d090",
+              "fraction": 0.06266894295063309
+            },
+            {
+              "hex": "#d0b070",
+              "fraction": 0.05669369753876796
+            }
+          ],
+          "darkStrokeWidthStd": 7.69296932220459,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "mochi",
+          "box": [
+            1195.6131641718412,
+            917.6420708645926,
+            1294.5666193914012,
+            1059.9118720296688
+          ],
+          "pixels": [
+            142,
+            99
+          ],
+          "backgroundLuminanceSeparation": 0.1921273928768389,
+          "subjectBackgroundContrast": 1.5992700469873065,
+          "subjectBackgroundSaturationRatio": 0.9698665115133163
+        },
+        {
+          "laplacianVariance": 994.9473494280955,
+          "edgeContinuity": 0.975556525534701,
+          "meanLuminance": 0.3491524912744518,
+          "meanSaturation": 0.3146788650409898,
+          "valueBins": [
+            0.49934949733885275,
+            0.45700768775872264,
+            0.0436428149024246
+          ],
+          "palette": [
+            {
+              "hex": "#505030",
+              "fraction": 0.18497930218805442
+            },
+            {
+              "hex": "#307050",
+              "fraction": 0.15612063867534004
+            },
+            {
+              "hex": "#305050",
+              "fraction": 0.10337078651685393
+            },
+            {
+              "hex": "#303030",
+              "fraction": 0.08373743347131875
+            },
+            {
+              "hex": "#505050",
+              "fraction": 0.07900650502661147
+            },
+            {
+              "hex": "#707070",
+              "fraction": 0.06262566528681254
+            }
+          ],
+          "darkStrokeWidthStd": 2.305004358291626,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "soot",
+          "box": [
+            913.7194327215735,
+            1016.8989907355751,
+            1008.6250363535215,
+            1194.254905793201
+          ],
+          "pixels": [
+            178,
+            95
+          ],
+          "backgroundLuminanceSeparation": 0.07855012871233885,
+          "subjectBackgroundContrast": 1.2450079534180623,
+          "subjectBackgroundSaturationRatio": 0.7186116099706176
+        },
+        {
+          "laplacianVariance": 1485.9624672420223,
+          "edgeContinuity": 0.9823428079242033,
+          "meanLuminance": 0.5127983150446723,
+          "meanSaturation": 0.3781632887609682,
+          "valueBins": [
+            0.18851936799184504,
+            0.5149719673802242,
+            0.2965086646279307
+          ],
+          "palette": [
+            {
+              "hex": "#307050",
+              "fraction": 0.22432466870540266
+            },
+            {
+              "hex": "#d0b090",
+              "fraction": 0.14952854230377166
+            },
+            {
+              "hex": "#b0b070",
+              "fraction": 0.05542813455657492
+            },
+            {
+              "hex": "#909050",
+              "fraction": 0.052816004077471966
+            },
+            {
+              "hex": "#b09070",
+              "fraction": 0.04988532110091743
+            },
+            {
+              "hex": "#d0d0b0",
+              "fraction": 0.04956676860346585
+            }
+          ],
+          "darkStrokeWidthStd": 1.2633960247039795,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "clover",
+          "box": [
+            991.9800216477311,
+            978.4917703770295,
+            1100.6654549747423,
+            1122.915416055323
+          ],
+          "pixels": [
+            144,
+            109
+          ],
+          "backgroundLuminanceSeparation": 0.24219595248255937,
+          "subjectBackgroundContrast": 1.7554403234805758,
+          "subjectBackgroundSaturationRatio": 0.863586849828331
+        },
+        {
+          "laplacianVariance": 1622.7201771464888,
+          "edgeContinuity": 0.9505208333333334,
+          "meanLuminance": 0.3927823230132389,
+          "meanSaturation": 0.39271742310369523,
+          "valueBins": [
+            0.38518264448636597,
+            0.5675698850968959,
+            0.04724747041673812
+          ],
+          "palette": [
+            {
+              "hex": "#505030",
+              "fraction": 0.22851997942033955
+            },
+            {
+              "hex": "#707050",
+              "fraction": 0.20819756474018178
+            },
+            {
+              "hex": "#305030",
+              "fraction": 0.10152632481564054
+            },
+            {
+              "hex": "#b07030",
+              "fraction": 0.042188303892985765
+            },
+            {
+              "hex": "#907050",
+              "fraction": 0.03935860058309038
+            },
+            {
+              "hex": "#905030",
+              "fraction": 0.03610015434745327
+            }
+          ],
+          "darkStrokeWidthStd": 0.6857364773750305,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "button-guard",
+          "box": [
+            1627.7980285832273,
+            935.4329610460481,
+            1725.1794567153406,
+            1054.8092816503065
+          ],
+          "pixels": [
+            119,
+            98
+          ],
+          "backgroundLuminanceSeparation": 0.12217996045112595,
+          "subjectBackgroundContrast": 1.3810950096397216,
+          "subjectBackgroundSaturationRatio": 0.8968231776331659
+        }
+      ],
+      "background": {
+        "luminance": 0.27060236256211295,
+        "saturation": 0.43789838721622704,
+        "mask": "canvas excluding projected subject bounds"
+      },
+      "ssim": 0.8892317398780873,
+      "meanAbsolutePixelDifference": 8.54572021484375
+    },
+    {
+      "file": "1280x720-stage-2-wide.png",
+      "kind": "stage",
+      "whole": {
+        "laplacianVariance": 1022.7190961336563,
+        "edgeContinuity": 0.9909363974801687,
+        "meanLuminance": 0.2023598037088099,
+        "meanSaturation": 0.4089039202920752,
+        "valueBins": [
+          0.87714111328125,
+          0.09284044053819444,
+          0.030018446180555554
+        ],
+        "palette": [
+          {
+            "hex": "#103030",
+            "fraction": 0.33895887586805556
+          },
+          {
+            "hex": "#301030",
+            "fraction": 0.30794487847222224
+          },
+          {
+            "hex": "#303030",
+            "fraction": 0.0683984375
+          },
+          {
+            "hex": "#105030",
+            "fraction": 0.0540576171875
+          },
+          {
+            "hex": "#505030",
+            "fraction": 0.03711561414930555
+          },
+          {
+            "hex": "#303050",
+            "fraction": 0.03258463541666667
+          }
+        ],
+        "darkStrokeWidthStd": 68.75423431396484,
+        "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness."
+      },
+      "subjects": [
+        {
+          "laplacianVariance": 2087.8708352694653,
+          "edgeContinuity": 0.9853172522286313,
+          "meanLuminance": 0.46228760464860097,
+          "meanSaturation": 0.4240461142322097,
+          "valueBins": [
+            0.43477879213483145,
+            0.26299157303370785,
+            0.30222963483146065
+          ],
+          "palette": [
+            {
+              "hex": "#505030",
+              "fraction": 0.11622191011235955
+            },
+            {
+              "hex": "#307050",
+              "fraction": 0.1094627808988764
+            },
+            {
+              "hex": "#d0b090",
+              "fraction": 0.09919241573033707
+            },
+            {
+              "hex": "#105050",
+              "fraction": 0.0721558988764045
+            },
+            {
+              "hex": "#d0d090",
+              "fraction": 0.061007724719101125
+            },
+            {
+              "hex": "#103030",
+              "fraction": 0.05758426966292135
+            }
+          ],
+          "darkStrokeWidthStd": 6.985903263092041,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "mochi",
+          "box": [
+            1222.8408141833936,
+            925.8545600522426,
+            1311.7555130763315,
+            1053.6911929831806
+          ],
+          "pixels": [
+            128,
+            89
+          ],
+          "backgroundLuminanceSeparation": 0.19883976631347622,
+          "subjectBackgroundContrast": 1.6343631762452466,
+          "subjectBackgroundSaturationRatio": 0.9552164286289831
+        },
+        {
+          "laplacianVariance": 1066.4229621901045,
+          "edgeContinuity": 0.9722507708119219,
+          "meanLuminance": 0.3505029270309678,
+          "meanSaturation": 0.31279174192799575,
+          "valueBins": [
+            0.48990011098779135,
+            0.4682944876063633,
+            0.041805401405845356
+          ],
+          "palette": [
+            {
+              "hex": "#505030",
+              "fraction": 0.18224195338512764
+            },
+            {
+              "hex": "#307050",
+              "fraction": 0.1608583055863855
+            },
+            {
+              "hex": "#305050",
+              "fraction": 0.09589345172031076
+            },
+            {
+              "hex": "#505050",
+              "fraction": 0.08198298187199408
+            },
+            {
+              "hex": "#303030",
+              "fraction": 0.07917129115797263
+            },
+            {
+              "hex": "#707070",
+              "fraction": 0.06511283758786533
+            }
+          ],
+          "darkStrokeWidthStd": 1.9743962287902832,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "soot",
+          "box": [
+            969.5449975179358,
+            1015.0419373276181,
+            1054.822496433599,
+            1174.4052233214268
+          ],
+          "pixels": [
+            159,
+            85
+          ],
+          "backgroundLuminanceSeparation": 0.08705508869584305,
+          "subjectBackgroundContrast": 1.2777338939653735,
+          "subjectBackgroundSaturationRatio": 0.7046021661348917
+        },
+        {
+          "laplacianVariance": 1685.1081084249906,
+          "edgeContinuity": 0.9676591375770021,
+          "meanLuminance": 0.5125207005879274,
+          "meanSaturation": 0.37750330901591406,
+          "valueBins": [
+            0.18877551020408162,
+            0.5175039246467817,
+            0.2937205651491366
+          ],
+          "palette": [
+            {
+              "hex": "#307050",
+              "fraction": 0.2208006279434851
+            },
+            {
+              "hex": "#d0b090",
+              "fraction": 0.14701726844583987
+            },
+            {
+              "hex": "#b0b070",
+              "fraction": 0.05416012558869702
+            },
+            {
+              "hex": "#909050",
+              "fraction": 0.053139717425431714
+            },
+            {
+              "hex": "#b09070",
+              "fraction": 0.051491365777080064
+            },
+            {
+              "hex": "#505030",
+              "fraction": 0.0489010989010989
+            }
+          ],
+          "darkStrokeWidthStd": 1.1345815658569336,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "clover",
+          "box": [
+            1039.8661064081061,
+            980.531101643128,
+            1137.525481281653,
+            1110.3030731221743
+          ],
+          "pixels": [
+            130,
+            98
+          ],
+          "backgroundLuminanceSeparation": 0.24907286225280267,
+          "subjectBackgroundContrast": 1.7946230019506624,
+          "subjectBackgroundSaturationRatio": 0.850372991359001
+        },
+        {
+          "laplacianVariance": 1906.4950117243263,
+          "edgeContinuity": 0.9672727272727273,
+          "meanLuminance": 0.3934461055601466,
+          "meanSaturation": 0.3922261454603127,
+          "valueBins": [
+            0.3847381864623244,
+            0.569710515112814,
+            0.04555129842486164
+          ],
+          "palette": [
+            {
+              "hex": "#505030",
+              "fraction": 0.22935291613452533
+            },
+            {
+              "hex": "#707050",
+              "fraction": 0.20849297573435505
+            },
+            {
+              "hex": "#305030",
+              "fraction": 0.10163899531715624
+            },
+            {
+              "hex": "#b07030",
+              "fraction": 0.04257130693912303
+            },
+            {
+              "hex": "#907050",
+              "fraction": 0.037462750106428265
+            },
+            {
+              "hex": "#905030",
+              "fraction": 0.035334184759472115
+            }
+          ],
+          "darkStrokeWidthStd": 0.4682898223400116,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "button-guard",
+          "box": [
+            1611.1808372776825,
+            941.840577316739,
+            1698.6829900920452,
+            1049.1062567002755
+          ],
+          "pixels": [
+            108,
+            87
+          ],
+          "backgroundLuminanceSeparation": 0.12999826722502184,
+          "subjectBackgroundContrast": 1.414736524952625,
+          "subjectBackgroundSaturationRatio": 0.8835380051999389
+        }
+      ],
+      "background": {
+        "luminance": 0.26344783833512475,
+        "saturation": 0.44392673903320606,
+        "mask": "canvas excluding projected subject bounds"
+      },
+      "ssim": 0.8944643339942128,
+      "meanAbsolutePixelDifference": 8.280208062065972
+    },
+    {
+      "file": "1280x720-stage-2-far.png",
+      "kind": "stage",
+      "whole": {
+        "laplacianVariance": 1012.6919314201141,
+        "edgeContinuity": 0.9913024836921569,
+        "meanLuminance": 0.20135463899101308,
+        "meanSaturation": 0.4109186144726988,
+        "valueBins": [
+          0.8831458875868056,
+          0.08610866970486111,
+          0.030745442708333334
+        ],
+        "palette": [
+          {
+            "hex": "#103030",
+            "fraction": 0.34342610677083335
+          },
+          {
+            "hex": "#301030",
+            "fraction": 0.30794487847222224
+          },
+          {
+            "hex": "#303030",
+            "fraction": 0.06661810980902778
+          },
+          {
+            "hex": "#105030",
+            "fraction": 0.0650735134548611
+          },
+          {
+            "hex": "#505030",
+            "fraction": 0.03552354600694444
+          },
+          {
+            "hex": "#303050",
+            "fraction": 0.03258626302083333
+          }
+        ],
+        "darkStrokeWidthStd": 74.4161605834961,
+        "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness."
+      },
+      "subjects": [
+        {
+          "laplacianVariance": 2462.674695867959,
+          "edgeContinuity": 0.9778051787916153,
+          "meanLuminance": 0.46252106983144137,
+          "meanSaturation": 0.42345330237358103,
+          "valueBins": [
+            0.43201754385964913,
+            0.268859649122807,
+            0.29912280701754385
+          ],
+          "palette": [
+            {
+              "hex": "#505030",
+              "fraction": 0.11853070175438596
+            },
+            {
+              "hex": "#307050",
+              "fraction": 0.1081140350877193
+            },
+            {
+              "hex": "#d0b090",
+              "fraction": 0.09846491228070176
+            },
+            {
+              "hex": "#105050",
+              "fraction": 0.07324561403508772
+            },
+            {
+              "hex": "#d0d090",
+              "fraction": 0.060526315789473685
+            },
+            {
+              "hex": "#d0b070",
+              "fraction": 0.056140350877192984
+            }
+          ],
+          "darkStrokeWidthStd": 6.452846527099609,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "mochi",
+          "box": [
+            1247.8963140084957,
+            933.4118784883733,
+            1327.573122107362,
+            1047.9667833225903
+          ],
+          "pixels": [
+            114,
+            80
+          ],
+          "backgroundLuminanceSeparation": 0.20096769155670313,
+          "subjectBackgroundContrast": 1.645050593479629,
+          "subjectBackgroundSaturationRatio": 0.9402691452490655
+        },
+        {
+          "laplacianVariance": 1229.363019391586,
+          "edgeContinuity": 0.970913321698662,
+          "meanLuminance": 0.35161629814036227,
+          "meanSaturation": 0.3133326566481647,
+          "valueBins": [
+            0.4885114885114885,
+            0.46962128780310597,
+            0.041867223685405505
+          ],
+          "palette": [
+            {
+              "hex": "#505030",
+              "fraction": 0.18599582235945872
+            },
+            {
+              "hex": "#307050",
+              "fraction": 0.17101080737444374
+            },
+            {
+              "hex": "#305050",
+              "fraction": 0.0855508128235401
+            },
+            {
+              "hex": "#505050",
+              "fraction": 0.07973844337480701
+            },
+            {
+              "hex": "#303030",
+              "fraction": 0.07683225865044047
+            },
+            {
+              "hex": "#707070",
+              "fraction": 0.06402688220870038
+            }
+          ],
+          "darkStrokeWidthStd": 1.7935186624526978,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "soot",
+          "box": [
+            1020.9169458277609,
+            1013.3330347481253,
+            1097.3344448560824,
+            1156.1390962230969
+          ],
+          "pixels": [
+            143,
+            77
+          ],
+          "backgroundLuminanceSeparation": 0.09006291986562404,
+          "subjectBackgroundContrast": 1.2890770126273627,
+          "subjectBackgroundSaturationRatio": 0.6957485691899747
+        },
+        {
+          "laplacianVariance": 1882.5676748762878,
+          "edgeContinuity": 0.9713617767387492,
+          "meanLuminance": 0.5125338066260987,
+          "meanSaturation": 0.37659621058454734,
+          "valueBins": [
+            0.18524686520376177,
+            0.5234130094043887,
+            0.2913401253918495
+          ],
+          "palette": [
+            {
+              "hex": "#307050",
+              "fraction": 0.21835815047021945
+            },
+            {
+              "hex": "#d0b090",
+              "fraction": 0.14674764890282133
+            },
+            {
+              "hex": "#b0b070",
+              "fraction": 0.05818965517241379
+            },
+            {
+              "hex": "#909050",
+              "fraction": 0.05270376175548589
+            },
+            {
+              "hex": "#505030",
+              "fraction": 0.05074451410658307
+            },
+            {
+              "hex": "#b09070",
+              "fraction": 0.04966692789968652
+            }
+          ],
+          "darkStrokeWidthStd": 0.9492999315261841,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "clover",
+          "box": [
+            1083.9319654825886,
+            982.4077404334523,
+            1171.4449117978447,
+            1098.6969096809094
+          ],
+          "pixels": [
+            116,
+            88
+          ],
+          "backgroundLuminanceSeparation": 0.2509804283513605,
+          "subjectBackgroundContrast": 1.8055776180030298,
+          "subjectBackgroundSaturationRatio": 0.8362239591603704
+        },
+        {
+          "laplacianVariance": 2201.48724489654,
+          "edgeContinuity": 0.9581105169340464,
+          "meanLuminance": 0.3924934847356664,
+          "meanSaturation": 0.3912555845122859,
+          "valueBins": [
+            0.3895042194092827,
+            0.5665875527426161,
+            0.043908227848101264
+          ],
+          "palette": [
+            {
+              "hex": "#505030",
+              "fraction": 0.2332542194092827
+            },
+            {
+              "hex": "#707050",
+              "fraction": 0.20345464135021096
+            },
+            {
+              "hex": "#305030",
+              "fraction": 0.10100210970464135
+            },
+            {
+              "hex": "#b07030",
+              "fraction": 0.042457805907173
+            },
+            {
+              "hex": "#907050",
+              "fraction": 0.03916139240506329
+            },
+            {
+              "hex": "#905030",
+              "fraction": 0.035205696202531646
+            }
+          ],
+          "darkStrokeWidthStd": 0.4095553457736969,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "button-guard",
+          "box": [
+            1595.8893217163645,
+            947.7370108422726,
+            1674.3003417707937,
+            1043.858204056091
+          ],
+          "pixels": [
+            96,
+            79
+          ],
+          "backgroundLuminanceSeparation": 0.13094010646092819,
+          "subjectBackgroundContrast": 1.420281452847739,
+          "subjectBackgroundSaturationRatio": 0.8687747904224226
+        }
+      ],
+      "background": {
+        "luminance": 0.26155337827473824,
+        "saturation": 0.45035328928230817,
+        "mask": "canvas excluding projected subject bounds"
+      },
+      "ssim": 0.8949960073155804,
+      "meanAbsolutePixelDifference": 8.519059244791666
+    },
+    {
+      "file": "1280x720-stage-3-close.png",
+      "kind": "stage",
+      "whole": {
+        "laplacianVariance": 1019.7725754088303,
+        "edgeContinuity": 0.9918109743375756,
+        "meanLuminance": 0.19747679547079247,
+        "meanSaturation": 0.38356525735294117,
+        "valueBins": [
+          0.8888066948784722,
+          0.08110161675347222,
+          0.030091688368055557
+        ],
+        "palette": [
+          {
+            "hex": "#301030",
+            "fraction": 0.3082584635416667
+          },
+          {
+            "hex": "#103030",
+            "fraction": 0.2786227756076389
+          },
+          {
+            "hex": "#303050",
+            "fraction": 0.10704671223958333
+          },
+          {
+            "hex": "#303030",
+            "fraction": 0.09877522786458333
+          },
+          {
+            "hex": "#505050",
+            "fraction": 0.029646809895833334
+          },
+          {
+            "hex": "#705050",
+            "fraction": 0.0272119140625
+          }
+        ],
+        "darkStrokeWidthStd": 63.78669357299805,
+        "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness."
+      },
+      "subjects": [
+        {
+          "laplacianVariance": 1977.8719039333034,
+          "edgeContinuity": 0.9761793554413826,
+          "meanLuminance": 0.4522133793053429,
+          "meanSaturation": 0.38857450506166336,
+          "valueBins": [
+            0.5041257646891449,
+            0.19846350832266324,
+            0.29741072698819176
+          ],
+          "palette": [
+            {
+              "hex": "#d0b090",
+              "fraction": 0.12220799544743206
+            },
+            {
+              "hex": "#105050",
+              "fraction": 0.07661118224498506
+            },
+            {
+              "hex": "#305050",
+              "fraction": 0.06458955754730403
+            },
+            {
+              "hex": "#305070",
+              "fraction": 0.0594679186228482
+            },
+            {
+              "hex": "#b09070",
+              "fraction": 0.0594679186228482
+            },
+            {
+              "hex": "#505050",
+              "fraction": 0.05804524114383269
+            }
+          ],
+          "darkStrokeWidthStd": 8.136862754821777,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "mochi",
+          "box": [
+            1195.6131641718412,
+            917.6420708645926,
+            1294.5666193914012,
+            1059.9118720296688
+          ],
+          "pixels": [
+            142,
+            99
+          ],
+          "backgroundLuminanceSeparation": 0.20715474630638198,
+          "subjectBackgroundContrast": 1.7020799364549064,
+          "subjectBackgroundSaturationRatio": 1.0947388634099389
+        },
+        {
+          "laplacianVariance": 994.4578267314944,
+          "edgeContinuity": 0.9739413680781759,
+          "meanLuminance": 0.33393930960911866,
+          "meanSaturation": 0.2947607286557438,
+          "valueBins": [
+            0.6862803075103489,
+            0.27102306327616793,
+            0.04269662921348315
+          ],
+          "palette": [
+            {
+              "hex": "#505050",
+              "fraction": 0.17681845062093435
+            },
+            {
+              "hex": "#305050",
+              "fraction": 0.14157303370786517
+            },
+            {
+              "hex": "#305070",
+              "fraction": 0.11472501478415138
+            },
+            {
+              "hex": "#705070",
+              "fraction": 0.08385570668243643
+            },
+            {
+              "hex": "#705050",
+              "fraction": 0.08190419869899468
+            },
+            {
+              "hex": "#303030",
+              "fraction": 0.07463039621525724
+            }
+          ],
+          "darkStrokeWidthStd": 2.623116970062256,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "soot",
+          "box": [
+            913.7194327215735,
+            1016.8989907355751,
+            1008.6250363535215,
+            1194.254905793201
+          ],
+          "pixels": [
+            178,
+            95
+          ],
+          "backgroundLuminanceSeparation": 0.08888067661015775,
+          "subjectBackgroundContrast": 1.3012305578277072,
+          "subjectBackgroundSaturationRatio": 0.8304354013531252
+        },
+        {
+          "laplacianVariance": 1506.2758646443488,
+          "edgeContinuity": 0.9870362092087618,
+          "meanLuminance": 0.49843921768503524,
+          "meanSaturation": 0.34068727389018805,
+          "valueBins": [
+            0.3375382262996942,
+            0.372579001019368,
+            0.2898827726809378
+          ],
+          "palette": [
+            {
+              "hex": "#d0b090",
+              "fraction": 0.18221202854230378
+            },
+            {
+              "hex": "#305070",
+              "fraction": 0.1819571865443425
+            },
+            {
+              "hex": "#b09070",
+              "fraction": 0.06364678899082568
+            },
+            {
+              "hex": "#305050",
+              "fraction": 0.05823139653414883
+            },
+            {
+              "hex": "#907070",
+              "fraction": 0.05217889908256881
+            },
+            {
+              "hex": "#d0d0b0",
+              "fraction": 0.05115953109072375
+            }
+          ],
+          "darkStrokeWidthStd": 1.4310539960861206,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "clover",
+          "box": [
+            991.9800216477311,
+            978.4917703770295,
+            1100.6654549747423,
+            1122.915416055323
+          ],
+          "pixels": [
+            144,
+            109
+          ],
+          "backgroundLuminanceSeparation": 0.25338058468607433,
+          "subjectBackgroundContrast": 1.8587465552548894,
+          "subjectBackgroundSaturationRatio": 0.9598251921792681
+        },
+        {
+          "laplacianVariance": 1568.3997762639856,
+          "edgeContinuity": 0.9590643274853801,
+          "meanLuminance": 0.3717547523210965,
+          "meanSaturation": 0.32946523147073953,
+          "valueBins": [
+            0.4467501286228777,
+            0.5175784599554107,
+            0.03567141142171154
+          ],
+          "palette": [
+            {
+              "hex": "#505050",
+              "fraction": 0.1994512090550506
+            },
+            {
+              "hex": "#905070",
+              "fraction": 0.09818212999485508
+            },
+            {
+              "hex": "#705050",
+              "fraction": 0.08523409363745499
+            },
+            {
+              "hex": "#303030",
+              "fraction": 0.06285371291373693
+            },
+            {
+              "hex": "#503050",
+              "fraction": 0.05299262562167724
+            },
+            {
+              "hex": "#305030",
+              "fraction": 0.05187789401474876
+            }
+          ],
+          "darkStrokeWidthStd": 2.6632769107818604,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "button-guard",
+          "box": [
+            1627.7980285832273,
+            935.4329610460481,
+            1725.1794567153406,
+            1054.8092816503065
+          ],
+          "pixels": [
+            119,
+            98
+          ],
+          "backgroundLuminanceSeparation": 0.1266961193221356,
+          "subjectBackgroundContrast": 1.4293930261738241,
+          "subjectBackgroundSaturationRatio": 0.928209103621282
+        }
+      ],
+      "background": {
+        "luminance": 0.2450586329989609,
+        "saturation": 0.3549472098316808,
+        "mask": "canvas excluding projected subject bounds"
+      },
+      "ssim": 0.8874376679818626,
+      "meanAbsolutePixelDifference": 9.060591905381944
+    },
+    {
+      "file": "1280x720-stage-3-wide.png",
+      "kind": "stage",
+      "whole": {
+        "laplacianVariance": 1020.4789095017118,
+        "edgeContinuity": 0.9919080514887687,
+        "meanLuminance": 0.1949316055198121,
+        "meanSaturation": 0.3858700991030093,
+        "valueBins": [
+          0.8981100802951388,
+          0.07210991753472222,
+          0.02978000217013889
+        ],
+        "palette": [
+          {
+            "hex": "#301030",
+            "fraction": 0.30821234809027775
+          },
+          {
+            "hex": "#103030",
+            "fraction": 0.2781719292534722
+          },
+          {
+            "hex": "#303050",
+            "fraction": 0.12169867621527777
+          },
+          {
+            "hex": "#303030",
+            "fraction": 0.10118299696180555
+          },
+          {
+            "hex": "#505050",
+            "fraction": 0.029344618055555556
+          },
+          {
+            "hex": "#705050",
+            "fraction": 0.026506890190972222
+          }
+        ],
+        "darkStrokeWidthStd": 68.82042694091797,
+        "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness."
+      },
+      "subjects": [
+        {
+          "laplacianVariance": 2173.313790792228,
+          "edgeContinuity": 0.9756756756756757,
+          "meanLuminance": 0.45166749283983254,
+          "meanSaturation": 0.38773167272526987,
+          "valueBins": [
+            0.5021067415730337,
+            0.2032127808988764,
+            0.2946804775280899
+          ],
+          "palette": [
+            {
+              "hex": "#d0b090",
+              "fraction": 0.12219101123595505
+            },
+            {
+              "hex": "#105050",
+              "fraction": 0.07470154494382023
+            },
+            {
+              "hex": "#305050",
+              "fraction": 0.06706460674157304
+            },
+            {
+              "hex": "#b09070",
+              "fraction": 0.062412219101123594
+            },
+            {
+              "hex": "#505050",
+              "fraction": 0.0585498595505618
+            },
+            {
+              "hex": "#d0b070",
+              "fraction": 0.05723314606741573
+            }
+          ],
+          "darkStrokeWidthStd": 7.292666912078857,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "mochi",
+          "box": [
+            1222.8408141833936,
+            925.8545600522426,
+            1311.7555130763315,
+            1053.6911929831806
+          ],
+          "pixels": [
+            128,
+            89
+          ],
+          "backgroundLuminanceSeparation": 0.2141942937908105,
+          "subjectBackgroundContrast": 1.7450930886753189,
+          "subjectBackgroundSaturationRatio": 1.0680425589447629
+        },
+        {
+          "laplacianVariance": 1078.5543399264927,
+          "edgeContinuity": 0.9742240925828511,
+          "meanLuminance": 0.3353522955612137,
+          "meanSaturation": 0.2928922838095653,
+          "valueBins": [
+            0.6804291527931927,
+            0.2792452830188679,
+            0.040325564187939325
+          ],
+          "palette": [
+            {
+              "hex": "#505050",
+              "fraction": 0.17402885682574917
+            },
+            {
+              "hex": "#305050",
+              "fraction": 0.13370329263780983
+            },
+            {
+              "hex": "#305070",
+              "fraction": 0.11957084720680725
+            },
+            {
+              "hex": "#705050",
+              "fraction": 0.08694043655197928
+            },
+            {
+              "hex": "#705070",
+              "fraction": 0.08079911209766925
+            },
+            {
+              "hex": "#303030",
+              "fraction": 0.07199408065112838
+            }
+          ],
+          "darkStrokeWidthStd": 2.321134328842163,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "soot",
+          "box": [
+            969.5449975179358,
+            1015.0419373276181,
+            1054.822496433599,
+            1174.4052233214268
+          ],
+          "pixels": [
+            159,
+            85
+          ],
+          "backgroundLuminanceSeparation": 0.09787909651219168,
+          "subjectBackgroundContrast": 1.3404807712022595,
+          "subjectBackgroundSaturationRatio": 0.8067987381489873
+        },
+        {
+          "laplacianVariance": 1737.0684249597673,
+          "edgeContinuity": 0.9703433922996878,
+          "meanLuminance": 0.4979939668174962,
+          "meanSaturation": 0.33909748514790533,
+          "valueBins": [
+            0.33430141287284143,
+            0.37982731554160126,
+            0.2858712715855573
+          ],
+          "palette": [
+            {
+              "hex": "#305070",
+              "fraction": 0.1795133437990581
+            },
+            {
+              "hex": "#d0b090",
+              "fraction": 0.1793563579277865
+            },
+            {
+              "hex": "#b09070",
+              "fraction": 0.06444270015698587
+            },
+            {
+              "hex": "#305050",
+              "fraction": 0.05729984301412873
+            },
+            {
+              "hex": "#907070",
+              "fraction": 0.053218210361067504
+            },
+            {
+              "hex": "#d0d0b0",
+              "fraction": 0.05
+            }
+          ],
+          "darkStrokeWidthStd": 1.2932407855987549,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "clover",
+          "box": [
+            1039.8661064081061,
+            980.531101643128,
+            1137.525481281653,
+            1110.3030731221743
+          ],
+          "pixels": [
+            130,
+            98
+          ],
+          "backgroundLuminanceSeparation": 0.26052076776847416,
+          "subjectBackgroundContrast": 1.9062436729068726,
+          "subjectBackgroundSaturationRatio": 0.9340752155311314
+        },
+        {
+          "laplacianVariance": 1814.3838000296673,
+          "edgeContinuity": 0.9714703730797366,
+          "meanLuminance": 0.3724772326981027,
+          "meanSaturation": 0.32864798537550394,
+          "valueBins": [
+            0.4444444444444444,
+            0.5213920817369093,
+            0.034163473818646234
+          ],
+          "palette": [
+            {
+              "hex": "#505050",
+              "fraction": 0.1965730097914006
+            },
+            {
+              "hex": "#905070",
+              "fraction": 0.10100042571306939
+            },
+            {
+              "hex": "#705050",
+              "fraction": 0.08407833120476799
+            },
+            {
+              "hex": "#303030",
+              "fraction": 0.06460195828011919
+            },
+            {
+              "hex": "#503050",
+              "fraction": 0.05608769689229459
+            },
+            {
+              "hex": "#305030",
+              "fraction": 0.05108556832694764
+            }
+          ],
+          "darkStrokeWidthStd": 2.9845032691955566,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "button-guard",
+          "box": [
+            1611.1808372776825,
+            941.840577316739,
+            1698.6829900920452,
+            1049.1062567002755
+          ],
+          "pixels": [
+            108,
+            87
+          ],
+          "backgroundLuminanceSeparation": 0.13500403364908065,
+          "subjectBackgroundContrast": 1.4696230260618444,
+          "subjectBackgroundSaturationRatio": 0.9052911071858837
+        }
+      ],
+      "background": {
+        "luminance": 0.23747319904902203,
+        "saturation": 0.36303017092160894,
+        "mask": "canvas excluding projected subject bounds"
+      },
+      "ssim": 0.8925483161290586,
+      "meanAbsolutePixelDifference": 8.831132269965277
+    },
+    {
+      "file": "1280x720-stage-3-far.png",
+      "kind": "stage",
+      "whole": {
+        "laplacianVariance": 1010.7604128654267,
+        "edgeContinuity": 0.9918576966515064,
+        "meanLuminance": 0.19375296479268792,
+        "meanSaturation": 0.38791185087316177,
+        "valueBins": [
+          0.9034573025173611,
+          0.06600070529513889,
+          0.0305419921875
+        ],
+        "palette": [
+          {
+            "hex": "#301030",
+            "fraction": 0.30826009114583336
+          },
+          {
+            "hex": "#103030",
+            "fraction": 0.2769270833333333
+          },
+          {
+            "hex": "#303050",
+            "fraction": 0.13647976345486112
+          },
+          {
+            "hex": "#303030",
+            "fraction": 0.10036376953125
+          },
+          {
+            "hex": "#705050",
+            "fraction": 0.027676052517361112
+          },
+          {
+            "hex": "#505050",
+            "fraction": 0.027201334635416668
+          }
+        ],
+        "darkStrokeWidthStd": 74.49492645263672,
+        "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness."
+      },
+      "subjects": [
+        {
+          "laplacianVariance": 2570.3728214330376,
+          "edgeContinuity": 0.9730392156862745,
+          "meanLuminance": 0.4519186446508428,
+          "meanSaturation": 0.3868261953904369,
+          "valueBins": [
+            0.5009868421052631,
+            0.2075657894736842,
+            0.2914473684210526
+          ],
+          "palette": [
+            {
+              "hex": "#d0b090",
+              "fraction": 0.12302631578947368
+            },
+            {
+              "hex": "#105050",
+              "fraction": 0.07609649122807018
+            },
+            {
+              "hex": "#305050",
+              "fraction": 0.06754385964912281
+            },
+            {
+              "hex": "#505050",
+              "fraction": 0.06491228070175438
+            },
+            {
+              "hex": "#b09070",
+              "fraction": 0.06381578947368421
+            },
+            {
+              "hex": "#d0b070",
+              "fraction": 0.055592105263157894
+            }
+          ],
+          "darkStrokeWidthStd": 6.564646244049072,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "mochi",
+          "box": [
+            1247.8963140084957,
+            933.4118784883733,
+            1327.573122107362,
+            1047.9667833225903
+          ],
+          "pixels": [
+            114,
+            80
+          ],
+          "backgroundLuminanceSeparation": 0.2168593769942492,
+          "subjectBackgroundContrast": 1.7607518912715943,
+          "subjectBackgroundSaturationRatio": 1.0456241680840233
+        },
+        {
+          "laplacianVariance": 1237.330665173698,
+          "edgeContinuity": 0.9711302211302212,
+          "meanLuminance": 0.33636986899018984,
+          "meanSaturation": 0.29216772532280555,
+          "valueBins": [
+            0.6759604032331306,
+            0.2833530106257379,
+            0.040686586141131596
+          ],
+          "palette": [
+            {
+              "hex": "#505050",
+              "fraction": 0.17382617382617382
+            },
+            {
+              "hex": "#305050",
+              "fraction": 0.13150485877758605
+            },
+            {
+              "hex": "#305070",
+              "fraction": 0.12115157569703024
+            },
+            {
+              "hex": "#705050",
+              "fraction": 0.08573244936881301
+            },
+            {
+              "hex": "#705070",
+              "fraction": 0.07883026064844247
+            },
+            {
+              "hex": "#303030",
+              "fraction": 0.07165561711016256
+            }
+          ],
+          "darkStrokeWidthStd": 2.056239366531372,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "soot",
+          "box": [
+            1020.9169458277609,
+            1013.3330347481253,
+            1097.3344448560824,
+            1156.1390962230969
+          ],
+          "pixels": [
+            143,
+            77
+          ],
+          "backgroundLuminanceSeparation": 0.10131060133359623,
+          "subjectBackgroundContrast": 1.3554018859532169,
+          "subjectBackgroundSaturationRatio": 0.7897542575246508
+        },
+        {
+          "laplacianVariance": 1936.721272444978,
+          "edgeContinuity": 0.9703264094955489,
+          "meanLuminance": 0.4980407523510972,
+          "meanSaturation": 0.33786879955744054,
+          "valueBins": [
+            0.3309169278996865,
+            0.3850901253918495,
+            0.2839929467084639
+          ],
+          "palette": [
+            {
+              "hex": "#d0b090",
+              "fraction": 0.17976097178683387
+            },
+            {
+              "hex": "#305070",
+              "fraction": 0.17623432601880878
+            },
+            {
+              "hex": "#b09070",
+              "fraction": 0.06357758620689655
+            },
+            {
+              "hex": "#305050",
+              "fraction": 0.05672021943573668
+            },
+            {
+              "hex": "#907070",
+              "fraction": 0.05358542319749216
+            },
+            {
+              "hex": "#d0d0b0",
+              "fraction": 0.04898119122257053
+            }
+          ],
+          "darkStrokeWidthStd": 1.0882935523986816,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "clover",
+          "box": [
+            1083.9319654825886,
+            982.4077404334523,
+            1171.4449117978447,
+            1098.6969096809094
+          ],
+          "pixels": [
+            116,
+            88
+          ],
+          "backgroundLuminanceSeparation": 0.26298148469450355,
+          "subjectBackgroundContrast": 1.92255020107367,
+          "subjectBackgroundSaturationRatio": 0.9132881554265346
+        },
+        {
+          "laplacianVariance": 2086.9676974948093,
+          "edgeContinuity": 0.9524663677130045,
+          "meanLuminance": 0.3715205385951849,
+          "meanSaturation": 0.3275476751882187,
+          "valueBins": [
+            0.4520042194092827,
+            0.5164820675105485,
+            0.03151371308016877
+          ],
+          "palette": [
+            {
+              "hex": "#505050",
+              "fraction": 0.201081223628692
+            },
+            {
+              "hex": "#905070",
+              "fraction": 0.0982331223628692
+            },
+            {
+              "hex": "#705050",
+              "fraction": 0.08267405063291139
+            },
+            {
+              "hex": "#303030",
+              "fraction": 0.06210443037974683
+            },
+            {
+              "hex": "#503050",
+              "fraction": 0.05603902953586498
+            },
+            {
+              "hex": "#305030",
+              "fraction": 0.05221518987341772
+            }
+          ],
+          "darkStrokeWidthStd": 2.818936347961426,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "button-guard",
+          "box": [
+            1595.8893217163645,
+            947.7370108422726,
+            1674.3003417707937,
+            1043.858204056091
+          ],
+          "pixels": [
+            96,
+            79
+          ],
+          "backgroundLuminanceSeparation": 0.1364612709385913,
+          "subjectBackgroundContrast": 1.4787119256300905,
+          "subjectBackgroundSaturationRatio": 0.8853892767806183
+        }
+      ],
+      "background": {
+        "luminance": 0.2350592676565936,
+        "saturation": 0.3699476419899972,
+        "mask": "canvas excluding projected subject bounds"
+      },
+      "ssim": 0.8929328527704156,
+      "meanAbsolutePixelDifference": 9.090893464265045
+    },
+    {
+      "file": "1440x900-stage-1-close.png",
+      "kind": "stage",
+      "whole": {
+        "laplacianVariance": 788.5971084072338,
+        "edgeContinuity": 0.9912447746001246,
+        "meanLuminance": 0.23880308566327765,
+        "meanSaturation": 0.39847588583272814,
+        "valueBins": [
+          0.7215775462962963,
+          0.25241550925925926,
+          0.026006944444444444
+        ],
+        "palette": [
+          {
+            "hex": "#103030",
+            "fraction": 0.27134992283950615
+          },
+          {
+            "hex": "#301030",
+            "fraction": 0.20423572530864198
+          },
+          {
+            "hex": "#303030",
+            "fraction": 0.09585956790123457
+          },
+          {
+            "hex": "#705050",
+            "fraction": 0.07365933641975309
+          },
+          {
+            "hex": "#907050",
+            "fraction": 0.06019020061728395
+          },
+          {
+            "hex": "#307050",
+            "fraction": 0.038412615740740744
+          }
+        ],
+        "darkStrokeWidthStd": 63.55183029174805,
+        "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness."
+      },
+      "subjects": [
+        {
+          "laplacianVariance": 1480.6998323479045,
+          "edgeContinuity": 0.9735731734399289,
+          "meanLuminance": 0.46593247611317584,
+          "meanSaturation": 0.41517203734556035,
+          "valueBins": [
+            0.3708061002178649,
+            0.3121036068748487,
+            0.31709029290728635
+          ],
+          "palette": [
+            {
+              "hex": "#307050",
+              "fraction": 0.10987654320987654
+            },
+            {
+              "hex": "#d0b090",
+              "fraction": 0.10065359477124183
+            },
+            {
+              "hex": "#505030",
+              "fraction": 0.07162914548535464
+            },
+            {
+              "hex": "#105050",
+              "fraction": 0.07114500121036069
+            },
+            {
+              "hex": "#303030",
+              "fraction": 0.06146211571048173
+            },
+            {
+              "hex": "#d0b070",
+              "fraction": 0.05480513192931494
+            }
+          ],
+          "darkStrokeWidthStd": 11.674952507019043,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "mochi",
+          "box": [
+            1164.7084409479858,
+            976.8117881348544,
+            1334.0479190976325,
+            1219.8375959919517
+          ],
+          "pixels": [
+            243,
+            170
+          ],
+          "backgroundLuminanceSeparation": 0.15649805666549949,
+          "subjectBackgroundContrast": 1.4354008636846234,
+          "subjectBackgroundSaturationRatio": 1.0778442673968036
+        },
+        {
+          "laplacianVariance": 1066.8656987572538,
+          "edgeContinuity": 0.9868108108108108,
+          "meanLuminance": 0.35566253066846265,
+          "meanSaturation": 0.317760025821028,
+          "valueBins": [
+            0.4250702848062584,
+            0.5201075663121868,
+            0.05482214888155482
+          ],
+          "palette": [
+            {
+              "hex": "#705050",
+              "fraction": 0.16509799128060954
+            },
+            {
+              "hex": "#307050",
+              "fraction": 0.1534857189422646
+            },
+            {
+              "hex": "#305050",
+              "fraction": 0.10797376033899686
+            },
+            {
+              "hex": "#303030",
+              "fraction": 0.08112292710752557
+            },
+            {
+              "hex": "#505050",
+              "fraction": 0.061606160616061605
+            },
+            {
+              "hex": "#705070",
+              "fraction": 0.05522959703377745
+            }
+          ],
+          "darkStrokeWidthStd": 3.5573923587799072,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "soot",
+          "box": [
+            682.3024726922237,
+            1146.3628308685393,
+            844.7148448206353,
+            1449.3228700486231
+          ],
+          "pixels": [
+            303,
+            162
+          ],
+          "backgroundLuminanceSeparation": 0.046228111220786294,
+          "subjectBackgroundContrast": 1.1286134791760416,
+          "subjectBackgroundSaturationRatio": 0.8249491570502511
+        },
+        {
+          "laplacianVariance": 1215.1654824203742,
+          "edgeContinuity": 0.9851441241685144,
+          "meanLuminance": 0.5197974257397008,
+          "meanSaturation": 0.3708389350254925,
+          "valueBins": [
+            0.11969439728353141,
+            0.5705454703756911,
+            0.3097601323407775
+          ],
+          "palette": [
+            {
+              "hex": "#307050",
+              "fraction": 0.1838404945365896
+            },
+            {
+              "hex": "#d0b090",
+              "fraction": 0.16845152583692483
+            },
+            {
+              "hex": "#507050",
+              "fraction": 0.07659657829437116
+            },
+            {
+              "hex": "#b09070",
+              "fraction": 0.06236123808280005
+            },
+            {
+              "hex": "#d0d0b0",
+              "fraction": 0.053524008532497495
+            },
+            {
+              "hex": "#b0b070",
+              "fraction": 0.04573157459405337
+            }
+          ],
+          "darkStrokeWidthStd": 2.2451717853546143,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "clover",
+          "box": [
+            816.230158784987,
+            1080.755473026302,
+            1002.2240133828639,
+            1327.4604861577207
+          ],
+          "pixels": [
+            247,
+            186
+          ],
+          "backgroundLuminanceSeparation": 0.21036300629202442,
+          "subjectBackgroundContrast": 1.5852611628437756,
+          "subjectBackgroundSaturationRatio": 0.9627493768615125
+        },
+        {
+          "laplacianVariance": 1128.6265088250059,
+          "edgeContinuity": 0.964712578258395,
+          "meanLuminance": 0.4030934580305073,
+          "meanSaturation": 0.3996791085912277,
+          "valueBins": [
+            0.32571462319867706,
+            0.6244684620836286,
+            0.049816914717694304
+          ],
+          "palette": [
+            {
+              "hex": "#907050",
+              "fraction": 0.226169383416017
+            },
+            {
+              "hex": "#705050",
+              "fraction": 0.11882825419324357
+            },
+            {
+              "hex": "#505050",
+              "fraction": 0.1132471060713442
+            },
+            {
+              "hex": "#305030",
+              "fraction": 0.10663241200094496
+            },
+            {
+              "hex": "#505030",
+              "fraction": 0.03951098511693834
+            },
+            {
+              "hex": "#905030",
+              "fraction": 0.033752657689581855
+            }
+          ],
+          "darkStrokeWidthStd": 1.0503182411193848,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "button-guard",
+          "box": [
+            1904.308278479818,
+            1007.2022534580499,
+            2070.9575398398174,
+            1211.1213319713847
+          ],
+          "pixels": [
+            204,
+            166
+          ],
+          "backgroundLuminanceSeparation": 0.09365903858283092,
+          "subjectBackgroundContrast": 1.2605733717064487,
+          "subjectBackgroundSaturationRatio": 1.0376224727166732
+        }
+      ],
+      "background": {
+        "luminance": 0.30943441944767636,
+        "saturation": 0.38518740592115297,
+        "mask": "canvas excluding projected subject bounds"
+      },
+      "ssim": 0.7683316431447911,
+      "meanAbsolutePixelDifference": 18.147007265946502
+    },
+    {
+      "file": "1440x900-stage-1-wide.png",
+      "kind": "stage",
+      "whole": {
+        "laplacianVariance": 788.9155964473573,
+        "edgeContinuity": 0.9901901444641124,
+        "meanLuminance": 0.23660229741587993,
+        "meanSaturation": 0.40360550941055434,
+        "valueBins": [
+          0.7300368441358025,
+          0.24152970679012345,
+          0.028433449074074073
+        ],
+        "palette": [
+          {
+            "hex": "#103030",
+            "fraction": 0.29825308641975307
+          },
+          {
+            "hex": "#301030",
+            "fraction": 0.2042349537037037
+          },
+          {
+            "hex": "#303030",
+            "fraction": 0.08951697530864197
+          },
+          {
+            "hex": "#705050",
+            "fraction": 0.07831385030864198
+          },
+          {
+            "hex": "#907050",
+            "fraction": 0.05066859567901234
+          },
+          {
+            "hex": "#307050",
+            "fraction": 0.03195042438271605
+          }
+        ],
+        "darkStrokeWidthStd": 67.86688232421875,
+        "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness."
+      },
+      "subjects": [
+        {
+          "laplacianVariance": 1677.8261937893792,
+          "edgeContinuity": 0.9742017879948914,
+          "meanLuminance": 0.46593602593645,
+          "meanSaturation": 0.41513882409488667,
+          "valueBins": [
+            0.3703136265320836,
+            0.3149182888728671,
+            0.3147680845950493
+          ],
+          "palette": [
+            {
+              "hex": "#307050",
+              "fraction": 0.11106104301850517
+            },
+            {
+              "hex": "#d0b090",
+              "fraction": 0.10006608988223985
+            },
+            {
+              "hex": "#105050",
+              "fraction": 0.07071617399663542
+            },
+            {
+              "hex": "#505030",
+              "fraction": 0.07017543859649122
+            },
+            {
+              "hex": "#303030",
+              "fraction": 0.06627012737322759
+            },
+            {
+              "hex": "#d0b070",
+              "fraction": 0.056807257870704155
+            }
+          ],
+          "darkStrokeWidthStd": 10.757281303405762,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "mochi",
+          "box": [
+            1211.3032367938422,
+            990.8403929617534,
+            1363.4633475949743,
+            1209.211408717406
+          ],
+          "pixels": [
+            219,
+            152
+          ],
+          "backgroundLuminanceSeparation": 0.15981241252853462,
+          "subjectBackgroundContrast": 1.448755450387617,
+          "subjectBackgroundSaturationRatio": 1.0466420998678108
+        },
+        {
+          "laplacianVariance": 1196.469448441348,
+          "edgeContinuity": 0.978955007256894,
+          "meanLuminance": 0.3585383387843453,
+          "meanSaturation": 0.3170671975478346,
+          "valueBins": [
+            0.40184327155519745,
+            0.5442939161966156,
+            0.053862812248186946
+          ],
+          "palette": [
+            {
+              "hex": "#705050",
+              "fraction": 0.1720134971796938
+            },
+            {
+              "hex": "#307050",
+              "fraction": 0.17103142626913778
+            },
+            {
+              "hex": "#305050",
+              "fraction": 0.08682514101531023
+            },
+            {
+              "hex": "#303030",
+              "fraction": 0.07569500402900886
+            },
+            {
+              "hex": "#505050",
+              "fraction": 0.06048549556809025
+            },
+            {
+              "hex": "#705070",
+              "fraction": 0.05401390008058018
+            }
+          ],
+          "darkStrokeWidthStd": 3.066317081451416,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "soot",
+          "box": [
+            777.837004448085,
+            1143.1906052731802,
+            923.7727591141942,
+            1415.415568014705
+          ],
+          "pixels": [
+            272,
+            146
+          ],
+          "backgroundLuminanceSeparation": 0.05241472537642994,
+          "subjectBackgroundContrast": 1.147181269095999,
+          "subjectBackgroundSaturationRatio": 0.7993853096351609
+        },
+        {
+          "laplacianVariance": 1328.4649886649418,
+          "edgeContinuity": 0.9895541401273885,
+          "meanLuminance": 0.5208531034816181,
+          "meanSaturation": 0.3702578340789807,
+          "valueBins": [
+            0.11109003712032947,
+            0.5792939008860107,
+            0.30961606199365976
+          ],
+          "palette": [
+            {
+              "hex": "#307050",
+              "fraction": 0.1815644728642263
+            },
+            {
+              "hex": "#d0b090",
+              "fraction": 0.1678272414447124
+            },
+            {
+              "hex": "#507050",
+              "fraction": 0.07768174059121576
+            },
+            {
+              "hex": "#b09070",
+              "fraction": 0.06359227246863738
+            },
+            {
+              "hex": "#d0d0b0",
+              "fraction": 0.05299807624569865
+            },
+            {
+              "hex": "#b0b070",
+              "fraction": 0.045926247053404506
+            }
+          ],
+          "darkStrokeWidthStd": 2.00635027885437,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "clover",
+          "box": [
+            898.1778238357851,
+            1084.2390663424744,
+            1065.302736662863,
+            1305.9160346634592
+          ],
+          "pixels": [
+            221,
+            167
+          ],
+          "backgroundLuminanceSeparation": 0.21472949007370268,
+          "subjectBackgroundContrast": 1.6029633587586474,
+          "subjectBackgroundSaturationRatio": 0.9334887860653481
+        },
+        {
+          "laplacianVariance": 1214.6304055062856,
+          "edgeContinuity": 0.9643095396931287,
+          "meanLuminance": 0.4032346869531055,
+          "meanSaturation": 0.3993774063359406,
+          "valueBins": [
+            0.3250273224043716,
+            0.6254280510018215,
+            0.04954462659380692
+          ],
+          "palette": [
+            {
+              "hex": "#907050",
+              "fraction": 0.2253551912568306
+            },
+            {
+              "hex": "#705050",
+              "fraction": 0.11948998178506376
+            },
+            {
+              "hex": "#505050",
+              "fraction": 0.11489981785063752
+            },
+            {
+              "hex": "#305030",
+              "fraction": 0.10557377049180328
+            },
+            {
+              "hex": "#505030",
+              "fraction": 0.03963570127504554
+            },
+            {
+              "hex": "#905030",
+              "fraction": 0.033187613843351546
+            }
+          ],
+          "darkStrokeWidthStd": 0.977654755115509,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "button-guard",
+          "box": [
+            1875.8712067499816,
+            1018.1477675999869,
+            2025.6140213053434,
+            1201.379403365592
+          ],
+          "pixels": [
+            183,
+            150
+          ],
+          "backgroundLuminanceSeparation": 0.09711107354519011,
+          "subjectBackgroundContrast": 1.2726892289334264,
+          "subjectBackgroundSaturationRatio": 1.0069046375476243
+        }
+      ],
+      "background": {
+        "luminance": 0.3061236134079154,
+        "saturation": 0.39663875946449895,
+        "mask": "canvas excluding projected subject bounds"
+      },
+      "ssim": 0.7821091304189872,
+      "meanAbsolutePixelDifference": 17.469020897633744
+    },
+    {
+      "file": "1440x900-stage-1-far.png",
+      "kind": "stage",
+      "whole": {
+        "laplacianVariance": 784.8177125739004,
+        "edgeContinuity": 0.9888976591172285,
+        "meanLuminance": 0.23116548656499636,
+        "meanSaturation": 0.4088871837932704,
+        "valueBins": [
+          0.7434164737654321,
+          0.2294375,
+          0.0271460262345679
+        ],
+        "palette": [
+          {
+            "hex": "#103030",
+            "fraction": 0.32567399691358023
+          },
+          {
+            "hex": "#301030",
+            "fraction": 0.20423321759259258
+          },
+          {
+            "hex": "#303030",
+            "fraction": 0.08682310956790124
+          },
+          {
+            "hex": "#705050",
+            "fraction": 0.08460609567901235
+          },
+          {
+            "hex": "#907050",
+            "fraction": 0.04114930555555556
+          },
+          {
+            "hex": "#101010",
+            "fraction": 0.028426311728395062
+          }
+        ],
+        "darkStrokeWidthStd": 75.97686004638672,
+        "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness."
+      },
+      "subjects": [
+        {
+          "laplacianVariance": 1918.6607141449767,
+          "edgeContinuity": 0.97036158861885,
+          "meanLuminance": 0.4662376715392039,
+          "meanSaturation": 0.4148256361368077,
+          "valueBins": [
+            0.3717361944777911,
+            0.3137379951980792,
+            0.31452581032412963
+          ],
+          "palette": [
+            {
+              "hex": "#307050",
+              "fraction": 0.10901860744297719
+            },
+            {
+              "hex": "#d0b090",
+              "fraction": 0.1015531212484994
+            },
+            {
+              "hex": "#105050",
+              "fraction": 0.0704906962785114
+            },
+            {
+              "hex": "#505030",
+              "fraction": 0.06989045618247298
+            },
+            {
+              "hex": "#303030",
+              "fraction": 0.06835234093637454
+            },
+            {
+              "hex": "#d0b070",
+              "fraction": 0.05732292917166867
+            }
+          ],
+          "darkStrokeWidthStd": 9.735456466674805,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "mochi",
+          "box": [
+            1254.1808225814952,
+            1003.7498326540388,
+            1390.53209070199,
+            1199.4329506688441
+          ],
+          "pixels": [
+            196,
+            136
+          ],
+          "backgroundLuminanceSeparation": 0.17072467562745341,
+          "subjectBackgroundContrast": 1.4941194040384498,
+          "subjectBackgroundSaturationRatio": 1.0163243182422907
+        },
+        {
+          "laplacianVariance": 1353.3834222098208,
+          "edgeContinuity": 0.9768623024830699,
+          "meanLuminance": 0.36060347302479995,
+          "meanSaturation": 0.31659980222848744,
+          "valueBins": [
+            0.39037667375797774,
+            0.5548742335127018,
+            0.054749092729320485
+          ],
+          "palette": [
+            {
+              "hex": "#307050",
+              "fraction": 0.19309222875735202
+            },
+            {
+              "hex": "#705050",
+              "fraction": 0.1735702665498686
+            },
+            {
+              "hex": "#303030",
+              "fraction": 0.07311350269052684
+            },
+            {
+              "hex": "#305050",
+              "fraction": 0.06206982855712677
+            },
+            {
+              "hex": "#505050",
+              "fraction": 0.05947315730196471
+            },
+            {
+              "hex": "#707070",
+              "fraction": 0.05603178575897885
+            }
+          ],
+          "darkStrokeWidthStd": 2.5281741619110107,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "soot",
+          "box": [
+            865.7500429469853,
+            1140.2714514785641,
+            996.5236412841481,
+            1384.2133012079823
+          ],
+          "pixels": [
+            244,
+            131
+          ],
+          "backgroundLuminanceSeparation": 0.06509047711304944,
+          "subjectBackgroundContrast": 1.1883879271785036,
+          "subjectBackgroundSaturationRatio": 0.7756706676860102
+        },
+        {
+          "laplacianVariance": 1552.0875659638225,
+          "edgeContinuity": 0.9790770994554313,
+          "meanLuminance": 0.5203476204552173,
+          "meanSaturation": 0.370502315499064,
+          "valueBins": [
+            0.10790619765494137,
+            0.5858291457286432,
+            0.3062646566164154
+          ],
+          "palette": [
+            {
+              "hex": "#307050",
+              "fraction": 0.1820435510887772
+            },
+            {
+              "hex": "#d0b090",
+              "fraction": 0.16670016750418762
+            },
+            {
+              "hex": "#507050",
+              "fraction": 0.0788609715242881
+            },
+            {
+              "hex": "#b09070",
+              "fraction": 0.063785594639866
+            },
+            {
+              "hex": "#d0d0b0",
+              "fraction": 0.05172529313232831
+            },
+            {
+              "hex": "#b0b070",
+              "fraction": 0.04582914572864322
+            }
+          ],
+          "darkStrokeWidthStd": 1.7727413177490234,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "clover",
+          "box": [
+            973.5879200606389,
+            1087.444747761438,
+            1123.3492055810073,
+            1286.0903427503727
+          ],
+          "pixels": [
+            199,
+            150
+          ],
+          "backgroundLuminanceSeparation": 0.2248346245434668,
+          "subjectBackgroundContrast": 1.6507269688949506,
+          "subjectBackgroundSaturationRatio": 0.9077320213705201
+        },
+        {
+          "laplacianVariance": 1411.5983689503119,
+          "edgeContinuity": 0.9623824451410659,
+          "meanLuminance": 0.4034410087296659,
+          "meanSaturation": 0.39942075847448555,
+          "valueBins": [
+            0.3250364033491081,
+            0.6250910083727703,
+            0.049872588278121584
+          ],
+          "palette": [
+            {
+              "hex": "#907050",
+              "fraction": 0.2247906807426283
+            },
+            {
+              "hex": "#705050",
+              "fraction": 0.1196305060065526
+            },
+            {
+              "hex": "#505050",
+              "fraction": 0.11594466690935566
+            },
+            {
+              "hex": "#305030",
+              "fraction": 0.10493265380414998
+            },
+            {
+              "hex": "#505030",
+              "fraction": 0.0390425919184565
+            },
+            {
+              "hex": "#905030",
+              "fraction": 0.03362759373862395
+            }
+          ],
+          "darkStrokeWidthStd": 0.8571617603302002,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "button-guard",
+          "box": [
+            1849.7027696850482,
+            1028.2200774597286,
+            1983.8878892216712,
+            1192.4146601587772
+          ],
+          "pixels": [
+            164,
+            134
+          ],
+          "backgroundLuminanceSeparation": 0.10792801281791536,
+          "subjectBackgroundContrast": 1.3123703423459125,
+          "subjectBackgroundSaturationRatio": 0.9785823119054354
+        }
+      ],
+      "background": {
+        "luminance": 0.2955129959117505,
+        "saturation": 0.40816265899672555,
+        "mask": "canvas excluding projected subject bounds"
+      },
+      "ssim": 0.7975288185498042,
+      "meanAbsolutePixelDifference": 16.1542243441358
+    },
+    {
+      "file": "1440x900-stage-2-close.png",
+      "kind": "stage",
+      "whole": {
+        "laplacianVariance": 781.0293499195782,
+        "edgeContinuity": 0.9919703806548652,
+        "meanLuminance": 0.23190524161825224,
+        "meanSaturation": 0.4015780485959816,
+        "valueBins": [
+          0.7817802854938272,
+          0.19292862654320989,
+          0.025291087962962963
+        ],
+        "palette": [
+          {
+            "hex": "#103030",
+            "fraction": 0.27862808641975306
+          },
+          {
+            "hex": "#301030",
+            "fraction": 0.20422993827160493
+          },
+          {
+            "hex": "#505030",
+            "fraction": 0.0935733024691358
+          },
+          {
+            "hex": "#303030",
+            "fraction": 0.0761820987654321
+          },
+          {
+            "hex": "#707050",
+            "fraction": 0.0478809799382716
+          },
+          {
+            "hex": "#307050",
+            "fraction": 0.04115451388888889
+          }
+        ],
+        "darkStrokeWidthStd": 63.42692184448242,
+        "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness."
+      },
+      "subjects": [
+        {
+          "laplacianVariance": 1538.9951472599644,
+          "edgeContinuity": 0.9719337016574585,
+          "meanLuminance": 0.46140211979248247,
+          "meanSaturation": 0.4300234003066247,
+          "valueBins": [
+            0.45637860082304527,
+            0.22568385378842895,
+            0.31793754538852576
+          ],
+          "palette": [
+            {
+              "hex": "#307050",
+              "fraction": 0.12469135802469136
+            },
+            {
+              "hex": "#505030",
+              "fraction": 0.12139917695473251
+            },
+            {
+              "hex": "#d0b090",
+              "fraction": 0.09508593560881143
+            },
+            {
+              "hex": "#105050",
+              "fraction": 0.07574437182280319
+            },
+            {
+              "hex": "#d0d090",
+              "fraction": 0.062260953764221735
+            },
+            {
+              "hex": "#103030",
+              "fraction": 0.057637375938029534
+            }
+          ],
+          "darkStrokeWidthStd": 12.882833480834961,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "mochi",
+          "box": [
+            1164.7084409479858,
+            976.8117881348544,
+            1334.0479190976325,
+            1219.8375959919517
+          ],
+          "pixels": [
+            243,
+            170
+          ],
+          "backgroundLuminanceSeparation": 0.16712258160150706,
+          "subjectBackgroundContrast": 1.4854269948183865,
+          "subjectBackgroundSaturationRatio": 1.097097173666509
+        },
+        {
+          "laplacianVariance": 1078.9489434428478,
+          "edgeContinuity": 0.9857574449719465,
+          "meanLuminance": 0.34626733552077066,
+          "meanSaturation": 0.3195937821814135,
+          "valueBins": [
+            0.5599967404147822,
+            0.3855885588558856,
+            0.054414700729332195
+          ],
+          "palette": [
+            {
+              "hex": "#505030",
+              "fraction": 0.18426842684268427
+            },
+            {
+              "hex": "#307050",
+              "fraction": 0.1533634844965978
+            },
+            {
+              "hex": "#305050",
+              "fraction": 0.1189341156337856
+            },
+            {
+              "hex": "#303030",
+              "fraction": 0.0900052968259789
+            },
+            {
+              "hex": "#505050",
+              "fraction": 0.0796561137595241
+            },
+            {
+              "hex": "#705070",
+              "fraction": 0.05659454834372326
+            }
+          ],
+          "darkStrokeWidthStd": 3.7596099376678467,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "soot",
+          "box": [
+            682.3024726922237,
+            1146.3628308685393,
+            844.7148448206353,
+            1449.3228700486231
+          ],
+          "pixels": [
+            303,
+            162
+          ],
+          "backgroundLuminanceSeparation": 0.05198779732979525,
+          "subjectBackgroundContrast": 1.1510046098091287,
+          "subjectBackgroundSaturationRatio": 0.8153636171952688
+        },
+        {
+          "laplacianVariance": 1260.9279745702272,
+          "edgeContinuity": 0.9845083071396498,
+          "meanLuminance": 0.5118529672110018,
+          "meanSaturation": 0.3842507304606576,
+          "valueBins": [
+            0.21231117495973184,
+            0.4769491968133734,
+            0.31073962822689477
+          ],
+          "palette": [
+            {
+              "hex": "#307050",
+              "fraction": 0.23769100169779286
+            },
+            {
+              "hex": "#d0b090",
+              "fraction": 0.148752775238344
+            },
+            {
+              "hex": "#d0d0b0",
+              "fraction": 0.05750729180270776
+            },
+            {
+              "hex": "#909050",
+              "fraction": 0.05265334552261547
+            },
+            {
+              "hex": "#b0b070",
+              "fraction": 0.05119498498106308
+            },
+            {
+              "hex": "#509070",
+              "fraction": 0.05102085237908668
+            }
+          ],
+          "darkStrokeWidthStd": 2.352628469467163,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "clover",
+          "box": [
+            816.230158784987,
+            1080.755473026302,
+            1002.2240133828639,
+            1327.4604861577207
+          ],
+          "pixels": [
+            247,
+            186
+          ],
+          "backgroundLuminanceSeparation": 0.2175734290200264,
+          "subjectBackgroundContrast": 1.6319673546771643,
+          "subjectBackgroundSaturationRatio": 0.9803196525284177
+        },
+        {
+          "laplacianVariance": 1140.8261959331048,
+          "edgeContinuity": 0.9687150837988827,
+          "meanLuminance": 0.39139835003219337,
+          "meanSaturation": 0.3943563180055864,
+          "valueBins": [
+            0.3922749822820695,
+            0.5552504134183794,
+            0.05247460429955115
+          ],
+          "palette": [
+            {
+              "hex": "#505030",
+              "fraction": 0.22959484998818805
+            },
+            {
+              "hex": "#707050",
+              "fraction": 0.2124970470115757
+            },
+            {
+              "hex": "#305030",
+              "fraction": 0.1053921568627451
+            },
+            {
+              "hex": "#b07030",
+              "fraction": 0.04172572643515238
+            },
+            {
+              "hex": "#907050",
+              "fraction": 0.03886132766359556
+            },
+            {
+              "hex": "#905030",
+              "fraction": 0.0372371840302386
+            }
+          ],
+          "darkStrokeWidthStd": 1.0926991701126099,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "button-guard",
+          "box": [
+            1904.308278479818,
+            1007.2022534580499,
+            2070.9575398398174,
+            1211.1213319713847
+          ],
+          "pixels": [
+            204,
+            166
+          ],
+          "backgroundLuminanceSeparation": 0.09711881184121796,
+          "subjectBackgroundContrast": 1.2820928956496542,
+          "subjectBackgroundSaturationRatio": 1.0061015321328195
+        }
+      ],
+      "background": {
+        "luminance": 0.2942795381909754,
+        "saturation": 0.3919647325947277,
+        "mask": "canvas excluding projected subject bounds"
+      },
+      "ssim": 0.7702047655742646,
+      "meanAbsolutePixelDifference": 18.073601208847737
+    },
+    {
+      "file": "1440x900-stage-2-wide.png",
+      "kind": "stage",
+      "whole": {
+        "laplacianVariance": 781.6224591016775,
+        "edgeContinuity": 0.9902888359388621,
+        "meanLuminance": 0.23101676273904623,
+        "meanSaturation": 0.4039179239288308,
+        "valueBins": [
+          0.7899116512345679,
+          0.18262422839506173,
+          0.02746412037037037
+        ],
+        "palette": [
+          {
+            "hex": "#103030",
+            "fraction": 0.2901934799382716
+          },
+          {
+            "hex": "#301030",
+            "fraction": 0.2042283950617284
+          },
+          {
+            "hex": "#505030",
+            "fraction": 0.0955
+          },
+          {
+            "hex": "#303030",
+            "fraction": 0.07296431327160494
+          },
+          {
+            "hex": "#707050",
+            "fraction": 0.04007175925925926
+          },
+          {
+            "hex": "#307050",
+            "fraction": 0.035133487654320984
+          }
+        ],
+        "darkStrokeWidthStd": 67.73207092285156,
+        "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness."
+      },
+      "subjects": [
+        {
+          "laplacianVariance": 1744.61430943253,
+          "edgeContinuity": 0.9708663429593662,
+          "meanLuminance": 0.46144474131878177,
+          "meanSaturation": 0.43002565842486956,
+          "valueBins": [
+            0.45439798125450614,
+            0.22987262677241047,
+            0.3157293919730834
+          ],
+          "palette": [
+            {
+              "hex": "#307050",
+              "fraction": 0.1241888968997837
+            },
+            {
+              "hex": "#505030",
+              "fraction": 0.11845109348714251
+            },
+            {
+              "hex": "#d0b090",
+              "fraction": 0.09417808219178082
+            },
+            {
+              "hex": "#105050",
+              "fraction": 0.0753124248978611
+            },
+            {
+              "hex": "#d0d090",
+              "fraction": 0.061884162460946884
+            },
+            {
+              "hex": "#103030",
+              "fraction": 0.057227829848594085
+            }
+          ],
+          "darkStrokeWidthStd": 11.85917854309082,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "mochi",
+          "box": [
+            1211.3032367938422,
+            990.8403929617534,
+            1363.4633475949743,
+            1209.211408717406
+          ],
+          "pixels": [
+            219,
+            152
+          ],
+          "backgroundLuminanceSeparation": 0.1674132018284702,
+          "subjectBackgroundContrast": 1.4866216686891431,
+          "subjectBackgroundSaturationRatio": 1.0829340997730916
+        },
+        {
+          "laplacianVariance": 1210.2954056772976,
+          "edgeContinuity": 0.9789731051344743,
+          "meanLuminance": 0.34901664533661975,
+          "meanSaturation": 0.31886316774896906,
+          "valueBins": [
+            0.5325846091861403,
+            0.4141569298952458,
+            0.05325846091861402
+          ],
+          "palette": [
+            {
+              "hex": "#505030",
+              "fraction": 0.18619057211925866
+            },
+            {
+              "hex": "#307050",
+              "fraction": 0.1644842868654311
+            },
+            {
+              "hex": "#305050",
+              "fraction": 0.10714645447219984
+            },
+            {
+              "hex": "#303030",
+              "fraction": 0.08491136180499598
+            },
+            {
+              "hex": "#505050",
+              "fraction": 0.07788577759871072
+            },
+            {
+              "hex": "#707070",
+              "fraction": 0.061517929089444
+            }
+          ],
+          "darkStrokeWidthStd": 3.157963275909424,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "soot",
+          "box": [
+            777.837004448085,
+            1143.1906052731802,
+            923.7727591141942,
+            1415.415568014705
+          ],
+          "pixels": [
+            272,
+            146
+          ],
+          "backgroundLuminanceSeparation": 0.05498510584630817,
+          "subjectBackgroundContrast": 1.1598257704156123,
+          "subjectBackgroundSaturationRatio": 0.802993474347195
+        },
+        {
+          "laplacianVariance": 1380.272636311956,
+          "edgeContinuity": 0.9898554400202891,
+          "meanLuminance": 0.5129248556387359,
+          "meanSaturation": 0.3835897010875773,
+          "valueBins": [
+            0.20706099113989215,
+            0.4828623296393638,
+            0.31007667922074406
+          ],
+          "palette": [
+            {
+              "hex": "#307050",
+              "fraction": 0.2380307258785596
+            },
+            {
+              "hex": "#d0b090",
+              "fraction": 0.14861679356219687
+            },
+            {
+              "hex": "#d0d0b0",
+              "fraction": 0.05722491668247216
+            },
+            {
+              "hex": "#909050",
+              "fraction": 0.05297098111469369
+            },
+            {
+              "hex": "#b0b070",
+              "fraction": 0.05223941257755981
+            },
+            {
+              "hex": "#d0d090",
+              "fraction": 0.05096594142032677
+            }
+          ],
+          "darkStrokeWidthStd": 2.1050121784210205,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "clover",
+          "box": [
+            898.1778238357851,
+            1084.2390663424744,
+            1065.302736662863,
+            1305.9160346634592
+          ],
+          "pixels": [
+            221,
+            167
+          ],
+          "backgroundLuminanceSeparation": 0.21889331614842433,
+          "subjectBackgroundContrast": 1.6362594443309426,
+          "subjectBackgroundSaturationRatio": 0.9659943761287919
+        },
+        {
+          "laplacianVariance": 1228.662177684878,
+          "edgeContinuity": 0.9680957128614157,
+          "meanLuminance": 0.39150998249937496,
+          "meanSaturation": 0.39387820993606915,
+          "valueBins": [
+            0.3930418943533698,
+            0.5548269581056466,
+            0.05213114754098361
+          ],
+          "palette": [
+            {
+              "hex": "#505030",
+              "fraction": 0.23271402550091075
+            },
+            {
+              "hex": "#707050",
+              "fraction": 0.21060109289617487
+            },
+            {
+              "hex": "#305030",
+              "fraction": 0.10531876138433516
+            },
+            {
+              "hex": "#b07030",
+              "fraction": 0.04138433515482696
+            },
+            {
+              "hex": "#907050",
+              "fraction": 0.03876138433515483
+            },
+            {
+              "hex": "#905030",
+              "fraction": 0.036757741347905284
+            }
+          ],
+          "darkStrokeWidthStd": 1.02360999584198,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "button-guard",
+          "box": [
+            1875.8712067499816,
+            1018.1477675999869,
+            2025.6140213053434,
+            1201.379403365592
+          ],
+          "pixels": [
+            183,
+            150
+          ],
+          "backgroundLuminanceSeparation": 0.09747844300906339,
+          "subjectBackgroundContrast": 1.2833415888365332,
+          "subjectBackgroundSaturationRatio": 0.9919039395456819
+        }
+      ],
+      "background": {
+        "luminance": 0.2940315394903116,
+        "saturation": 0.3970930996770471,
+        "mask": "canvas excluding projected subject bounds"
+      },
+      "ssim": 0.783584535965184,
+      "meanAbsolutePixelDifference": 17.62845601851852
+    },
+    {
+      "file": "1440x900-stage-2-far.png",
+      "kind": "stage",
+      "whole": {
+        "laplacianVariance": 777.0689278516772,
+        "edgeContinuity": 0.9892184072567741,
+        "meanLuminance": 0.226976258775115,
+        "meanSaturation": 0.407281336238199,
+        "valueBins": [
+          0.8008863811728395,
+          0.17296469907407408,
+          0.02614891975308642
+        ],
+        "palette": [
+          {
+            "hex": "#103030",
+            "fraction": 0.3001375385802469
+          },
+          {
+            "hex": "#301030",
+            "fraction": 0.2042283950617284
+          },
+          {
+            "hex": "#505030",
+            "fraction": 0.08995408950617284
+          },
+          {
+            "hex": "#303030",
+            "fraction": 0.07136516203703704
+          },
+          {
+            "hex": "#105030",
+            "fraction": 0.03465605709876543
+          },
+          {
+            "hex": "#707050",
+            "fraction": 0.03325347222222222
+          }
+        ],
+        "darkStrokeWidthStd": 75.79048919677734,
+        "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness."
+      },
+      "subjects": [
+        {
+          "laplacianVariance": 1993.1366208022823,
+          "edgeContinuity": 0.9686204854943754,
+          "meanLuminance": 0.4617970717698844,
+          "meanSaturation": 0.4296393557422969,
+          "valueBins": [
+            0.45479441776710683,
+            0.22951680672268907,
+            0.3156887755102041
+          ],
+          "palette": [
+            {
+              "hex": "#307050",
+              "fraction": 0.12207382953181273
+            },
+            {
+              "hex": "#505030",
+              "fraction": 0.11783463385354141
+            },
+            {
+              "hex": "#d0b090",
+              "fraction": 0.09588835534213686
+            },
+            {
+              "hex": "#105050",
+              "fraction": 0.07506752701080432
+            },
+            {
+              "hex": "#d0d090",
+              "fraction": 0.06313775510204081
+            },
+            {
+              "hex": "#103030",
+              "fraction": 0.05931122448979592
+            }
+          ],
+          "darkStrokeWidthStd": 10.74130916595459,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "mochi",
+          "box": [
+            1254.1808225814952,
+            1003.7498326540388,
+            1390.53209070199,
+            1199.4329506688441
+          ],
+          "pixels": [
+            196,
+            136
+          ],
+          "backgroundLuminanceSeparation": 0.17521373403500617,
+          "subjectBackgroundContrast": 1.5205656798525764,
+          "subjectBackgroundSaturationRatio": 1.0624868232439728
+        },
+        {
+          "laplacianVariance": 1367.4960354832924,
+          "edgeContinuity": 0.9767050238563009,
+          "meanLuminance": 0.35103277952402334,
+          "meanSaturation": 0.31854856321204494,
+          "valueBins": [
+            0.5135777749968715,
+            0.43261168814916784,
+            0.05381053685396071
+          ],
+          "palette": [
+            {
+              "hex": "#505030",
+              "fraction": 0.18564635214616443
+            },
+            {
+              "hex": "#307050",
+              "fraction": 0.17663621574271055
+            },
+            {
+              "hex": "#305050",
+              "fraction": 0.09488799899887373
+            },
+            {
+              "hex": "#303030",
+              "fraction": 0.08174821674383681
+            },
+            {
+              "hex": "#505050",
+              "fraction": 0.07846327118007759
+            },
+            {
+              "hex": "#707070",
+              "fraction": 0.06566762607933925
+            }
+          ],
+          "darkStrokeWidthStd": 2.624577760696411,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "soot",
+          "box": [
+            865.7500429469853,
+            1140.2714514785641,
+            996.5236412841481,
+            1384.2133012079823
+          ],
+          "pixels": [
+            244,
+            131
+          ],
+          "backgroundLuminanceSeparation": 0.06444944178914513,
+          "subjectBackgroundContrast": 1.191481379389942,
+          "subjectBackgroundSaturationRatio": 0.7877622160366199
+        },
+        {
+          "laplacianVariance": 1606.7704137662067,
+          "edgeContinuity": 0.9785445056538127,
+          "meanLuminance": 0.5123582618977239,
+          "meanSaturation": 0.3837254245081617,
+          "valueBins": [
+            0.20773869346733667,
+            0.48525963149078727,
+            0.30700167504187603
+          ],
+          "palette": [
+            {
+              "hex": "#307050",
+              "fraction": 0.24040201005025125
+            },
+            {
+              "hex": "#d0b090",
+              "fraction": 0.14680067001675043
+            },
+            {
+              "hex": "#d0d0b0",
+              "fraction": 0.05574539363484087
+            },
+            {
+              "hex": "#909050",
+              "fraction": 0.05370184254606365
+            },
+            {
+              "hex": "#b0b070",
+              "fraction": 0.05289782244556114
+            },
+            {
+              "hex": "#d0d090",
+              "fraction": 0.050887772194304855
+            }
+          ],
+          "darkStrokeWidthStd": 1.8658404350280762,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "clover",
+          "box": [
+            973.5879200606389,
+            1087.444747761438,
+            1123.3492055810073,
+            1286.0903427503727
+          ],
+          "pixels": [
+            199,
+            150
+          ],
+          "backgroundLuminanceSeparation": 0.22577492416284572,
+          "subjectBackgroundContrast": 1.6707846136480036,
+          "subjectBackgroundSaturationRatio": 0.9489428792649227
+        },
+        {
+          "laplacianVariance": 1428.513762471576,
+          "edgeContinuity": 0.964327258627375,
+          "meanLuminance": 0.3917917585672784,
+          "meanSaturation": 0.39409195057710017,
+          "valueBins": [
+            0.3917910447761194,
+            0.556152165999272,
+            0.052056789224608664
+          ],
+          "palette": [
+            {
+              "hex": "#505030",
+              "fraction": 0.23107025846377865
+            },
+            {
+              "hex": "#707050",
+              "fraction": 0.21041135784492174
+            },
+            {
+              "hex": "#305030",
+              "fraction": 0.1053421914816163
+            },
+            {
+              "hex": "#b07030",
+              "fraction": 0.041272297051328725
+            },
+            {
+              "hex": "#907050",
+              "fraction": 0.037995995631598105
+            },
+            {
+              "hex": "#905030",
+              "fraction": 0.03676738259919913
+            }
+          ],
+          "darkStrokeWidthStd": 0.8742135167121887,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "button-guard",
+          "box": [
+            1849.7027696850482,
+            1028.2200774597286,
+            1983.8878892216712,
+            1192.4146601587772
+          ],
+          "pixels": [
+            164,
+            134
+          ],
+          "backgroundLuminanceSeparation": 0.10520842083240017,
+          "subjectBackgroundContrast": 1.3125776265112425,
+          "subjectBackgroundSaturationRatio": 0.9745790254974591
+        }
+      ],
+      "background": {
+        "luminance": 0.2865833377348782,
+        "saturation": 0.40437146733785073,
+        "mask": "canvas excluding projected subject bounds"
+      },
+      "ssim": 0.7985145350399613,
+      "meanAbsolutePixelDifference": 16.577379822530865
+    },
+    {
+      "file": "1440x900-stage-3-close.png",
+      "kind": "stage",
+      "whole": {
+        "laplacianVariance": 777.1303769257524,
+        "edgeContinuity": 0.992294009537936,
+        "meanLuminance": 0.22165041984386347,
+        "meanSaturation": 0.36613762633139674,
+        "valueBins": [
+          0.8357947530864197,
+          0.13961631944444444,
+          0.024588927469135803
+        ],
+        "palette": [
+          {
+            "hex": "#103030",
+            "fraction": 0.2555625
+          },
+          {
+            "hex": "#301030",
+            "fraction": 0.2048611111111111
+          },
+          {
+            "hex": "#303030",
+            "fraction": 0.09756095679012346
+          },
+          {
+            "hex": "#505050",
+            "fraction": 0.07145235339506173
+          },
+          {
+            "hex": "#303050",
+            "fraction": 0.05080671296296296
+          },
+          {
+            "hex": "#705050",
+            "fraction": 0.04891898148148148
+          }
+        ],
+        "darkStrokeWidthStd": 63.399906158447266,
+        "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness."
+      },
+      "subjects": [
+        {
+          "laplacianVariance": 1627.9377841445503,
+          "edgeContinuity": 0.9746111619396157,
+          "meanLuminance": 0.4504607439683692,
+          "meanSaturation": 0.39550609689530614,
+          "valueBins": [
+            0.5285160977971436,
+            0.16148632292423143,
+            0.30999757927862504
+          ],
+          "palette": [
+            {
+              "hex": "#d0b090",
+              "fraction": 0.11895424836601307
+            },
+            {
+              "hex": "#105050",
+              "fraction": 0.07818930041152264
+            },
+            {
+              "hex": "#305070",
+              "fraction": 0.07441297506656984
+            },
+            {
+              "hex": "#305050",
+              "fraction": 0.06744129750665698
+            },
+            {
+              "hex": "#b09070",
+              "fraction": 0.056233357540547084
+            },
+            {
+              "hex": "#505050",
+              "fraction": 0.055265068990559184
+            }
+          ],
+          "darkStrokeWidthStd": 13.573943138122559,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "mochi",
+          "box": [
+            1164.7084409479858,
+            976.8117881348544,
+            1334.0479190976325,
+            1219.8375959919517
+          ],
+          "pixels": [
+            243,
+            170
+          ],
+          "backgroundLuminanceSeparation": 0.17853909430610299,
+          "subjectBackgroundContrast": 1.5546041855010733,
+          "subjectBackgroundSaturationRatio": 1.261430768753255
+        },
+        {
+          "laplacianVariance": 1094.900576985215,
+          "edgeContinuity": 0.9848888888888889,
+          "meanLuminance": 0.33120477625104555,
+          "meanSaturation": 0.3013469756561713,
+          "valueBins": [
+            0.7086745711608198,
+            0.2382553070121827,
+            0.05307012182699752
+          ],
+          "palette": [
+            {
+              "hex": "#505050",
+              "fraction": 0.1905635007945239
+            },
+            {
+              "hex": "#305050",
+              "fraction": 0.16043270993766043
+            },
+            {
+              "hex": "#305070",
+              "fraction": 0.10866642219777534
+            },
+            {
+              "hex": "#303030",
+              "fraction": 0.08244713360224912
+            },
+            {
+              "hex": "#705070",
+              "fraction": 0.08167298211302612
+            },
+            {
+              "hex": "#705050",
+              "fraction": 0.06447867008923115
+            }
+          ],
+          "darkStrokeWidthStd": 4.347345352172852,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "soot",
+          "box": [
+            682.3024726922237,
+            1146.3628308685393,
+            844.7148448206353,
+            1449.3228700486231
+          ],
+          "pixels": [
+            303,
+            162
+          ],
+          "backgroundLuminanceSeparation": 0.05928312658877932,
+          "subjectBackgroundContrast": 1.184153897853637,
+          "subjectBackgroundSaturationRatio": 0.9611188048614479
+        },
+        {
+          "laplacianVariance": 1308.2343898813417,
+          "edgeContinuity": 0.9821266968325791,
+          "meanLuminance": 0.49719928195909424,
+          "meanSaturation": 0.34982352002226164,
+          "valueBins": [
+            0.3607809847198642,
+            0.3378172478342258,
+            0.3014017674459101
+          ],
+          "palette": [
+            {
+              "hex": "#305070",
+              "fraction": 0.18560358713160072
+            },
+            {
+              "hex": "#d0b090",
+              "fraction": 0.1819468024900962
+            },
+            {
+              "hex": "#305050",
+              "fraction": 0.07387575638848984
+            },
+            {
+              "hex": "#b09070",
+              "fraction": 0.06325366766792913
+            },
+            {
+              "hex": "#d0d0b0",
+              "fraction": 0.05879151974228375
+            },
+            {
+              "hex": "#907070",
+              "fraction": 0.05228331374341561
+            }
+          ],
+          "darkStrokeWidthStd": 2.779473304748535,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "clover",
+          "box": [
+            816.230158784987,
+            1080.755473026302,
+            1002.2240133828639,
+            1327.4604861577207
+          ],
+          "pixels": [
+            247,
+            186
+          ],
+          "backgroundLuminanceSeparation": 0.225277632296828,
+          "subjectBackgroundContrast": 1.6997902518615038,
+          "subjectBackgroundSaturationRatio": 1.1157303395665765
+        },
+        {
+          "laplacianVariance": 1088.9018901921593,
+          "edgeContinuity": 0.9669097027481772,
+          "meanLuminance": 0.37042147830074623,
+          "meanSaturation": 0.3316516353765697,
+          "valueBins": [
+            0.45180722891566266,
+            0.507057642334042,
+            0.0411351287502953
+          ],
+          "palette": [
+            {
+              "hex": "#505050",
+              "fraction": 0.19938577840774865
+            },
+            {
+              "hex": "#905070",
+              "fraction": 0.10214386959603118
+            },
+            {
+              "hex": "#705050",
+              "fraction": 0.08008504606661943
+            },
+            {
+              "hex": "#303030",
+              "fraction": 0.06357784077486417
+            },
+            {
+              "hex": "#305030",
+              "fraction": 0.057081266241436335
+            },
+            {
+              "hex": "#503050",
+              "fraction": 0.05209071580439405
+            }
+          ],
+          "darkStrokeWidthStd": 1.3511147499084473,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "button-guard",
+          "box": [
+            1904.308278479818,
+            1007.2022534580499,
+            2070.9575398398174,
+            1211.1213319713847
+          ],
+          "pixels": [
+            204,
+            166
+          ],
+          "backgroundLuminanceSeparation": 0.09849982863848,
+          "subjectBackgroundContrast": 1.3059745398975742,
+          "subjectBackgroundSaturationRatio": 1.0577727642011114
+        }
+      ],
+      "background": {
+        "luminance": 0.27192164966226623,
+        "saturation": 0.31353769599754383,
+        "mask": "canvas excluding projected subject bounds"
+      },
+      "ssim": 0.7681911718788427,
+      "meanAbsolutePixelDifference": 18.693231159979423
+    },
+    {
+      "file": "1440x900-stage-3-wide.png",
+      "kind": "stage",
+      "whole": {
+        "laplacianVariance": 777.8723155831597,
+        "edgeContinuity": 0.9912767080395424,
+        "meanLuminance": 0.2205172075465989,
+        "meanSaturation": 0.36860493297627694,
+        "valueBins": [
+          0.8457878086419753,
+          0.12748900462962964,
+          0.026723186728395062
+        ],
+        "palette": [
+          {
+            "hex": "#103030",
+            "fraction": 0.25202334104938273
+          },
+          {
+            "hex": "#301030",
+            "fraction": 0.20485648148148147
+          },
+          {
+            "hex": "#303030",
+            "fraction": 0.09823476080246914
+          },
+          {
+            "hex": "#303050",
+            "fraction": 0.0732860725308642
+          },
+          {
+            "hex": "#505050",
+            "fraction": 0.06913097993827161
+          },
+          {
+            "hex": "#705050",
+            "fraction": 0.05237924382716049
+          }
+        ],
+        "darkStrokeWidthStd": 67.6592025756836,
+        "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness."
+      },
+      "subjects": [
+        {
+          "laplacianVariance": 1820.3188062946572,
+          "edgeContinuity": 0.9775077559462254,
+          "meanLuminance": 0.45069588758358425,
+          "meanSaturation": 0.39562958564824635,
+          "valueBins": [
+            0.5256248497957222,
+            0.1656452775775054,
+            0.30872987262677243
+          ],
+          "palette": [
+            {
+              "hex": "#d0b090",
+              "fraction": 0.11869142033165105
+            },
+            {
+              "hex": "#105050",
+              "fraction": 0.07882720499879836
+            },
+            {
+              "hex": "#305070",
+              "fraction": 0.0726988704638308
+            },
+            {
+              "hex": "#305050",
+              "fraction": 0.06840302811824081
+            },
+            {
+              "hex": "#b09070",
+              "fraction": 0.05734799327084835
+            },
+            {
+              "hex": "#505050",
+              "fraction": 0.053592886325402544
+            }
+          ],
+          "darkStrokeWidthStd": 12.344671249389648,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "mochi",
+          "box": [
+            1211.3032367938422,
+            990.8403929617534,
+            1363.4633475949743,
+            1209.211408717406
+          ],
+          "pixels": [
+            219,
+            152
+          ],
+          "backgroundLuminanceSeparation": 0.1794742371816283,
+          "subjectBackgroundContrast": 1.5587239744178076,
+          "subjectBackgroundSaturationRatio": 1.238069198224632
+        },
+        {
+          "laplacianVariance": 1222.4614871863628,
+          "edgeContinuity": 0.9741251848201085,
+          "meanLuminance": 0.33385898073975767,
+          "meanSaturation": 0.30021646047621303,
+          "valueBins": [
+            0.7027095084609186,
+            0.2453414585012087,
+            0.05194903303787268
+          ],
+          "palette": [
+            {
+              "hex": "#505050",
+              "fraction": 0.18243855761482675
+            },
+            {
+              "hex": "#305050",
+              "fraction": 0.1507101128122482
+            },
+            {
+              "hex": "#305070",
+              "fraction": 0.11724415793714746
+            },
+            {
+              "hex": "#705070",
+              "fraction": 0.08168815471394036
+            },
+            {
+              "hex": "#303030",
+              "fraction": 0.07735697018533441
+            },
+            {
+              "hex": "#705050",
+              "fraction": 0.07164081385979049
+            }
+          ],
+          "darkStrokeWidthStd": 3.7249317169189453,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "soot",
+          "box": [
+            777.837004448085,
+            1143.1906052731802,
+            923.7727591141942,
+            1415.415568014705
+          ],
+          "pixels": [
+            272,
+            146
+          ],
+          "backgroundLuminanceSeparation": 0.06263733033780172,
+          "subjectBackgroundContrast": 1.1949972246871325,
+          "subjectBackgroundSaturationRatio": 0.9394867471971367
+        },
+        {
+          "laplacianVariance": 1441.3309216696778,
+          "edgeContinuity": 0.9899562194179758,
+          "meanLuminance": 0.4983533066951006,
+          "meanSaturation": 0.3490691228668561,
+          "valueBins": [
+            0.3579266805755006,
+            0.340043894112228,
+            0.3020294253122714
+          ],
+          "palette": [
+            {
+              "hex": "#305070",
+              "fraction": 0.19194190803912536
+            },
+            {
+              "hex": "#d0b090",
+              "fraction": 0.1834611320345734
+            },
+            {
+              "hex": "#305050",
+              "fraction": 0.06646435635516297
+            },
+            {
+              "hex": "#b09070",
+              "fraction": 0.06389031890969193
+            },
+            {
+              "hex": "#d0d0b0",
+              "fraction": 0.0581732462676457
+            },
+            {
+              "hex": "#907070",
+              "fraction": 0.05226650770856477
+            }
+          ],
+          "darkStrokeWidthStd": 2.461221933364868,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "clover",
+          "box": [
+            898.1778238357851,
+            1084.2390663424744,
+            1065.302736662863,
+            1305.9160346634592
+          ],
+          "pixels": [
+            221,
+            167
+          ],
+          "backgroundLuminanceSeparation": 0.22713165629314463,
+          "subjectBackgroundContrast": 1.707087009885314,
+          "subjectBackgroundSaturationRatio": 1.0923645368043513
+        },
+        {
+          "laplacianVariance": 1165.5328712578923,
+          "edgeContinuity": 0.9623529411764706,
+          "meanLuminance": 0.3705295189113897,
+          "meanSaturation": 0.3311415407693132,
+          "valueBins": [
+            0.4520582877959927,
+            0.5073588342440801,
+            0.04058287795992714
+          ],
+          "palette": [
+            {
+              "hex": "#505050",
+              "fraction": 0.20105646630236795
+            },
+            {
+              "hex": "#905070",
+              "fraction": 0.10069216757741348
+            },
+            {
+              "hex": "#705050",
+              "fraction": 0.08058287795992713
+            },
+            {
+              "hex": "#303030",
+              "fraction": 0.06214936247723133
+            },
+            {
+              "hex": "#305030",
+              "fraction": 0.057049180327868855
+            },
+            {
+              "hex": "#503050",
+              "fraction": 0.05198542805100182
+            }
+          ],
+          "darkStrokeWidthStd": 1.3994033336639404,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "button-guard",
+          "box": [
+            1875.8712067499816,
+            1018.1477675999869,
+            2025.6140213053434,
+            1201.379403365592
+          ],
+          "pixels": [
+            183,
+            150
+          ],
+          "backgroundLuminanceSeparation": 0.09930786850943374,
+          "subjectBackgroundContrast": 1.3091568341833943,
+          "subjectBackgroundSaturationRatio": 1.0362625970132628
+        }
+      ],
+      "background": {
+        "luminance": 0.27122165040195595,
+        "saturation": 0.3195536939418021,
+        "mask": "canvas excluding projected subject bounds"
+      },
+      "ssim": 0.7813436593079822,
+      "meanAbsolutePixelDifference": 18.30094341563786
+    },
+    {
+      "file": "1440x900-stage-3-far.png",
+      "kind": "stage",
+      "whole": {
+        "laplacianVariance": 773.2457858763692,
+        "edgeContinuity": 0.989618699399321,
+        "meanLuminance": 0.21625219831759865,
+        "meanSaturation": 0.3723183301561365,
+        "valueBins": [
+          0.8581950231481481,
+          0.11640952932098765,
+          0.025395447530864198
+        ],
+        "palette": [
+          {
+            "hex": "#103030",
+            "fraction": 0.25136631944444443
+          },
+          {
+            "hex": "#301030",
+            "fraction": 0.20481230709876544
+          },
+          {
+            "hex": "#303030",
+            "fraction": 0.09871836419753087
+          },
+          {
+            "hex": "#303050",
+            "fraction": 0.0977434413580247
+          },
+          {
+            "hex": "#505050",
+            "fraction": 0.06603028549382715
+          },
+          {
+            "hex": "#705050",
+            "fraction": 0.05720987654320988
+          }
+        ],
+        "darkStrokeWidthStd": 75.75872802734375,
+        "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness."
+      },
+      "subjects": [
+        {
+          "laplacianVariance": 2073.6995714552327,
+          "edgeContinuity": 0.973918197984588,
+          "meanLuminance": 0.4510995574700468,
+          "meanSaturation": 0.39541860861991857,
+          "valueBins": [
+            0.5242722088835534,
+            0.16731692677070828,
+            0.3084108643457383
+          ],
+          "palette": [
+            {
+              "hex": "#d0b090",
+              "fraction": 0.11997298919567827
+            },
+            {
+              "hex": "#105050",
+              "fraction": 0.0779936974789916
+            },
+            {
+              "hex": "#305050",
+              "fraction": 0.07064075630252101
+            },
+            {
+              "hex": "#305070",
+              "fraction": 0.06944027611044418
+            },
+            {
+              "hex": "#b09070",
+              "fraction": 0.0585234093637455
+            },
+            {
+              "hex": "#503050",
+              "fraction": 0.053871548619447776
+            }
+          ],
+          "darkStrokeWidthStd": 11.135346412658691,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "mochi",
+          "box": [
+            1254.1808225814952,
+            1003.7498326540388,
+            1390.53209070199,
+            1199.4329506688441
+          ],
+          "pixels": [
+            196,
+            136
+          ],
+          "backgroundLuminanceSeparation": 0.18773765008483578,
+          "subjectBackgroundContrast": 1.5991080781048885,
+          "subjectBackgroundSaturationRatio": 1.2051926863048223
+        },
+        {
+          "laplacianVariance": 1377.7345575308248,
+          "edgeContinuity": 0.981764705882353,
+          "meanLuminance": 0.33581921818909016,
+          "meanSaturation": 0.29959022527794754,
+          "valueBins": [
+            0.6980665748967588,
+            0.2494055812789388,
+            0.05252784382430234
+          ],
+          "palette": [
+            {
+              "hex": "#505050",
+              "fraction": 0.1765736453510199
+            },
+            {
+              "hex": "#305050",
+              "fraction": 0.14356776373420096
+            },
+            {
+              "hex": "#305070",
+              "fraction": 0.12423351270178952
+            },
+            {
+              "hex": "#705070",
+              "fraction": 0.07896383431360281
+            },
+            {
+              "hex": "#705050",
+              "fraction": 0.07608559629583281
+            },
+            {
+              "hex": "#303030",
+              "fraction": 0.075334751595545
+            }
+          ],
+          "darkStrokeWidthStd": 3.287572145462036,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "soot",
+          "box": [
+            865.7500429469853,
+            1140.2714514785641,
+            996.5236412841481,
+            1384.2133012079823
+          ],
+          "pixels": [
+            244,
+            131
+          ],
+          "backgroundLuminanceSeparation": 0.07245731080387913,
+          "subjectBackgroundContrast": 1.2312256502664456,
+          "subjectBackgroundSaturationRatio": 0.9131182511960528
+        },
+        {
+          "laplacianVariance": 1678.8858955234014,
+          "edgeContinuity": 0.9806224310041104,
+          "meanLuminance": 0.4977530791210957,
+          "meanSaturation": 0.3491236575032023,
+          "valueBins": [
+            0.3588274706867672,
+            0.34227805695142377,
+            0.29889447236180905
+          ],
+          "palette": [
+            {
+              "hex": "#305070",
+              "fraction": 0.1952428810720268
+            },
+            {
+              "hex": "#d0b090",
+              "fraction": 0.18197654941373534
+            },
+            {
+              "hex": "#b09070",
+              "fraction": 0.06365159128978225
+            },
+            {
+              "hex": "#305050",
+              "fraction": 0.0636180904522613
+            },
+            {
+              "hex": "#d0d0b0",
+              "fraction": 0.0569179229480737
+            },
+            {
+              "hex": "#907070",
+              "fraction": 0.05336683417085427
+            }
+          ],
+          "darkStrokeWidthStd": 2.175687551498413,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "clover",
+          "box": [
+            973.5879200606389,
+            1087.444747761438,
+            1123.3492055810073,
+            1286.0903427503727
+          ],
+          "pixels": [
+            199,
+            150
+          ],
+          "backgroundLuminanceSeparation": 0.23439117173588464,
+          "subjectBackgroundContrast": 1.7479887191513397,
+          "subjectBackgroundSaturationRatio": 1.0640907369215147
+        },
+        {
+          "laplacianVariance": 1356.5237047470223,
+          "edgeContinuity": 0.9695906432748538,
+          "meanLuminance": 0.3708159346738331,
+          "meanSaturation": 0.33151459346024537,
+          "valueBins": [
+            0.4510374954495814,
+            0.508964324717874,
+            0.0399981798325446
+          ],
+          "palette": [
+            {
+              "hex": "#505050",
+              "fraction": 0.20140152894066254
+            },
+            {
+              "hex": "#905070",
+              "fraction": 0.10097378958864216
+            },
+            {
+              "hex": "#705050",
+              "fraction": 0.08008736803785949
+            },
+            {
+              "hex": "#303030",
+              "fraction": 0.06252275209319258
+            },
+            {
+              "hex": "#305030",
+              "fraction": 0.05624317437204223
+            },
+            {
+              "hex": "#503050",
+              "fraction": 0.052602839461230434
+            }
+          ],
+          "darkStrokeWidthStd": 1.393292784690857,
+          "outlineNote": "Dark-region distance transform proxy, not isolated silhouette thickness.",
+          "asset": "button-guard",
+          "box": [
+            1849.7027696850482,
+            1028.2200774597286,
+            1983.8878892216712,
+            1192.4146601587772
+          ],
+          "pixels": [
+            164,
+            134
+          ],
+          "backgroundLuminanceSeparation": 0.10745402728862208,
+          "subjectBackgroundContrast": 1.3429071139668884,
+          "subjectBackgroundSaturationRatio": 1.010420234991131
+        }
+      ],
+      "background": {
+        "luminance": 0.26336190738521104,
+        "saturation": 0.3280957585564933,
+        "mask": "canvas excluding projected subject bounds"
+      },
+      "ssim": 0.7961044104803588,
+      "meanAbsolutePixelDifference": 17.330860468106994
+    }
+  ]
+}

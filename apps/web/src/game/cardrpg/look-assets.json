@@ -1,15 +1,15 @@
 {
   "version": 2,
   "style": "Lantern atelier",
-  "complete": false,
-  "phase": "L1",
+  "complete": true,
+  "phase": "L5",
   "pathBase": "repository-root",
   "portraits": {
-    "mochi": {
-      "id": "mochi",
+    "biscuit": {
+      "id": "biscuit",
       "portrait": {
-        "1x": "assets/cardrpg-look/portraits/mochi-1x.webp",
-        "2x": "assets/cardrpg-look/portraits/mochi-2x.webp",
+        "1x": "assets/cardrpg-look/portraits/biscuit-1x.webp",
+        "2x": "assets/cardrpg-look/portraits/biscuit-2x.webp",
         "display": [
           256,
           320
@@ -24,19 +24,30 @@
             640
           ]
         ],
-        "renderSource": "assets/cardrpg-look/models/mochi.glb",
+        "renderSource": "assets/cardrpg-look/models/biscuit.glb",
+        "modelSha256": "ec179428ba21f52e20e8659067e28dbff939ecb92ccae95fe3fd2700454740f8",
         "sourceRender": [
           1024,
           1280
         ]
       },
-      "tier": "hero-slice-candidate"
+      "tier": "improved-roster-model",
+      "provenance": {
+        "round": 5,
+        "sourceRender": "reports/cardrpg-look/rounds/art/portraits/round-5/biscuit.png",
+        "sourceSha256": "adce29c7db648d9287290b73345656bc3c17d91b8d665846cacac637c18273e6",
+        "authorSha256": "1c32d882e41c679a9e8dbba605803f316808292adbbfecf54c924cff5f4d4f95",
+        "deliveredSha256": {
+          "1x": "902223907c568d239fecb0a82815156a17e646d7bff4818ed38ddb6505e75858",
+          "2x": "9749c245746dfa6d70973acf0656835beb845b7f4a6a7bf7a7133f1b875021ab"
+        }
+      }
     },
-    "soot": {
-      "id": "soot",
+    "brioche": {
+      "id": "brioche",
       "portrait": {
-        "1x": "assets/cardrpg-look/portraits/soot-1x.webp",
-        "2x": "assets/cardrpg-look/portraits/soot-2x.webp",
+        "1x": "assets/cardrpg-look/portraits/brioche-1x.webp",
+        "2x": "assets/cardrpg-look/portraits/brioche-2x.webp",
         "display": [
           256,
           320
@@ -51,13 +62,62 @@
             640
           ]
         ],
-        "renderSource": "assets/cardrpg-look/models/soot.glb",
+        "renderSource": "assets/cardrpg-look/models/brioche.glb",
+        "modelSha256": "bfac198f469ac311f2fdedfe1c66ad080dc7370f05e700e3fe66f426c6a2d9e7",
         "sourceRender": [
           1024,
           1280
         ]
       },
-      "tier": "hero-slice-candidate"
+      "tier": "improved-roster-model",
+      "provenance": {
+        "round": 5,
+        "sourceRender": "reports/cardrpg-look/rounds/art/portraits/round-5/brioche.png",
+        "sourceSha256": "035dcf3025e795403be9ec87d419da05ba4d32285c2618d628275eaf4271df86",
+        "authorSha256": "1c32d882e41c679a9e8dbba605803f316808292adbbfecf54c924cff5f4d4f95",
+        "deliveredSha256": {
+          "1x": "d2913f273d0e072722b9720b8b202e88c7f467de0d269164954b5968f234d1de",
+          "2x": "0735684fe133024fcb303f23ece5d74779c097befeb68aacb6947bfc9b561401"
+        }
+      }
+    },
+    "cinnamon": {
+      "id": "cinnamon",
+      "portrait": {
+        "1x": "assets/cardrpg-look/portraits/cinnamon-1x.webp",
+        "2x": "assets/cardrpg-look/portraits/cinnamon-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "renderSource": "assets/cardrpg-look/models/cinnamon.glb",
+        "modelSha256": "3d34ffbba7668f799ae67fda4a78a5016fe9cb111d064e3ec171784c3cb2b102",
+        "sourceRender": [
+          1024,
+          1280
+        ]
+      },
+      "tier": "improved-roster-model",
+      "provenance": {
+        "round": 4,
+        "sourceRender": "reports/cardrpg-look/rounds/art/portraits/round-4/cinnamon.png",
+        "sourceSha256": "ab77d092f6a2340466332ac1bc4cbfdce775b0780a29554ecc3212520e2d43ac",
+        "authorSha256": "1c32d882e41c679a9e8dbba605803f316808292adbbfecf54c924cff5f4d4f95",
+        "deliveredSha256": {
+          "1x": "0c4f5c5bc70eaf4d476ef993c58177de901574aab66c32f962ba33ac4ff5c3c5",
+          "2x": "6e4641dc738c9ca589c4e02158bfb8cd05e14521d8cd2be8272d74e5956072d2"
+        }
+      }
     },
     "clover": {
       "id": "clover",
@@ -79,15 +139,2822 @@
           ]
         ],
         "renderSource": "assets/cardrpg-look/models/clover.glb",
+        "modelSha256": "4aff6f5d562e34aa3b09f09e2aec1ebc9a12fbce0faa41931449c17a9e80ebfe",
         "sourceRender": [
           1024,
           1280
         ]
       },
-      "tier": "hero-slice-candidate"
+      "tier": "look-slice-model",
+      "provenance": {
+        "round": 3,
+        "sourceRender": "reports/cardrpg-look/rounds/art/portraits/round-3/clover.png",
+        "sourceSha256": "356a665d20e0603835516930863b346ca3b3d90d943241879bf49da0c25cebcf",
+        "authorSha256": "1c32d882e41c679a9e8dbba605803f316808292adbbfecf54c924cff5f4d4f95",
+        "deliveredSha256": {
+          "1x": "68f3ec9dd2837c74abfddde2547659921b17362c5f76cbaed6b672c61d28bf89",
+          "2x": "5bc8e2a04a6e590c14103d5e70a9880384845d8d35ce0c034c741ccca42a466b"
+        }
+      }
+    },
+    "inkcap": {
+      "id": "inkcap",
+      "portrait": {
+        "1x": "assets/cardrpg-look/portraits/inkcap-1x.webp",
+        "2x": "assets/cardrpg-look/portraits/inkcap-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "renderSource": "assets/cardrpg-look/models/inkcap.glb",
+        "modelSha256": "9b4250801b709235f41740caa6a3283d54f33ac98ded3f8d4a0498532d65a919",
+        "sourceRender": [
+          1024,
+          1280
+        ]
+      },
+      "tier": "improved-roster-model",
+      "provenance": {
+        "round": 5,
+        "sourceRender": "reports/cardrpg-look/rounds/art/portraits/round-5/inkcap.png",
+        "sourceSha256": "1c8d0169d496ccf25cadda281b76070e346afbf738f35b56eec0d7cf4122d85d",
+        "authorSha256": "1c32d882e41c679a9e8dbba605803f316808292adbbfecf54c924cff5f4d4f95",
+        "deliveredSha256": {
+          "1x": "16036b61efcc4820245785f6433b73f3605c282e284c1653aa06490555f5924a",
+          "2x": "bdcff935160430da31c8dc77d440d8a648d2f7ce5b3792e643c1f6f079794e35"
+        }
+      }
+    },
+    "mallow": {
+      "id": "mallow",
+      "portrait": {
+        "1x": "assets/cardrpg-look/portraits/mallow-1x.webp",
+        "2x": "assets/cardrpg-look/portraits/mallow-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "renderSource": "assets/cardrpg-look/models/mallow.glb",
+        "modelSha256": "341001f07f483b312d6014ccb370a5a97d4b02e4930fbec5b98c884260ab2bbc",
+        "sourceRender": [
+          1024,
+          1280
+        ]
+      },
+      "tier": "improved-roster-model",
+      "provenance": {
+        "round": 4,
+        "sourceRender": "reports/cardrpg-look/rounds/art/portraits/round-4/mallow.png",
+        "sourceSha256": "eabc11b388fbb4de66d04a67efb6fbbfc5fdfb4415c37c11549fc870cd7c996e",
+        "authorSha256": "1c32d882e41c679a9e8dbba605803f316808292adbbfecf54c924cff5f4d4f95",
+        "deliveredSha256": {
+          "1x": "f84a5a130ba8da19c00c6fe45fcc2a80997784560c3928e0449eb78372fd1d6d",
+          "2x": "f47cf2f9ce1b3ad69542f72909227dc0c55e35865df89adaed61b5a60c8d62ee"
+        }
+      }
+    },
+    "marigold": {
+      "id": "marigold",
+      "portrait": {
+        "1x": "assets/cardrpg-look/portraits/marigold-1x.webp",
+        "2x": "assets/cardrpg-look/portraits/marigold-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "renderSource": "assets/cardrpg-look/models/marigold.glb",
+        "modelSha256": "97d9058a3ebb0f0ad15c9bc2bd5297ea0254b71c1ea5e1b0e48ec24bd86966b7",
+        "sourceRender": [
+          1024,
+          1280
+        ]
+      },
+      "tier": "improved-roster-model",
+      "provenance": {
+        "round": 5,
+        "sourceRender": "reports/cardrpg-look/rounds/art/portraits/round-5/marigold.png",
+        "sourceSha256": "af252fb3f7524380fd4eda5d300fc63e7e609a5c2772dc68c35d33cd7333e33b",
+        "authorSha256": "1c32d882e41c679a9e8dbba605803f316808292adbbfecf54c924cff5f4d4f95",
+        "deliveredSha256": {
+          "1x": "ce8594062fb6f2212ade9c14e3282e34b7d08bbb3a86efc35ef182f258c968e2",
+          "2x": "3146a5a857b00b6542fcf6103ab0234e2f4d473decced5ef1721003d5d330f96"
+        }
+      }
+    },
+    "mochi": {
+      "id": "mochi",
+      "portrait": {
+        "1x": "assets/cardrpg-look/portraits/mochi-1x.webp",
+        "2x": "assets/cardrpg-look/portraits/mochi-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "renderSource": "assets/cardrpg-look/models/mochi.glb",
+        "modelSha256": "dd35be35301785e1de818618d32a95969902507ce13d008c7c458f990c956521",
+        "sourceRender": [
+          1024,
+          1280
+        ]
+      },
+      "tier": "look-slice-model",
+      "provenance": {
+        "round": 3,
+        "sourceRender": "reports/cardrpg-look/rounds/art/portraits/round-3/mochi.png",
+        "sourceSha256": "5d61b756d3745e7010a33549aa8020812d5240c26e29318026b77c0c6c499988",
+        "authorSha256": "1c32d882e41c679a9e8dbba605803f316808292adbbfecf54c924cff5f4d4f95",
+        "deliveredSha256": {
+          "1x": "18b9386e2883d7ac163e48280a1fa341661a59c719f0e835c4ce51cad966817e",
+          "2x": "e111159e391572d09645465dac2fb6377d7b5c3cd009c74894d1f6d29c43f59b"
+        }
+      }
+    },
+    "panko": {
+      "id": "panko",
+      "portrait": {
+        "1x": "assets/cardrpg-look/portraits/panko-1x.webp",
+        "2x": "assets/cardrpg-look/portraits/panko-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "renderSource": "assets/cardrpg-look/models/panko.glb",
+        "modelSha256": "e654b7fec46c8ad21e54689ff878d489a9b3f7f19c4569116b77b02385f2af5b",
+        "sourceRender": [
+          1024,
+          1280
+        ]
+      },
+      "tier": "improved-roster-model",
+      "provenance": {
+        "round": 4,
+        "sourceRender": "reports/cardrpg-look/rounds/art/portraits/round-4/panko.png",
+        "sourceSha256": "08ed250d93eb6a81d823c884a7bcade12a59c4d114054d26f565ec30263b7755",
+        "authorSha256": "1c32d882e41c679a9e8dbba605803f316808292adbbfecf54c924cff5f4d4f95",
+        "deliveredSha256": {
+          "1x": "2f7f915527181c629c7574ad851d3086881d49a11931d18a99b7d38528e6194c",
+          "2x": "5aa4e95e9a7d43ffd86027643bebbfa6c913040521a4311df70edfd46d2c5edc"
+        }
+      }
+    },
+    "soot": {
+      "id": "soot",
+      "portrait": {
+        "1x": "assets/cardrpg-look/portraits/soot-1x.webp",
+        "2x": "assets/cardrpg-look/portraits/soot-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "renderSource": "assets/cardrpg-look/models/soot.glb",
+        "modelSha256": "58a467b310da85518d55842a273efbc9dceedce5eda3146ccd628a7563a52cb2",
+        "sourceRender": [
+          1024,
+          1280
+        ]
+      },
+      "tier": "look-slice-model",
+      "provenance": {
+        "round": 3,
+        "sourceRender": "reports/cardrpg-look/rounds/art/portraits/round-3/soot.png",
+        "sourceSha256": "129dfb8995ee3b87c5e59385e679244af58ba210bd1a1b3ce0fda9bbe6f20e07",
+        "authorSha256": "1c32d882e41c679a9e8dbba605803f316808292adbbfecf54c924cff5f4d4f95",
+        "deliveredSha256": {
+          "1x": "fc5044eabf8555596ac814ad37db0bc963a7f4716a0e6ee0422e2964ab76e57e",
+          "2x": "d44204ad44a6d54ba39b8e4f59c3bafbe9267f3bc81c4eb65a32312ad27203e9"
+        }
+      }
+    },
+    "sorrel": {
+      "id": "sorrel",
+      "portrait": {
+        "1x": "assets/cardrpg-look/portraits/sorrel-1x.webp",
+        "2x": "assets/cardrpg-look/portraits/sorrel-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "renderSource": "assets/cardrpg-look/models/sorrel.glb",
+        "modelSha256": "f6fbb524839bd2babd92d930253a6f251062eee3141b66cc896ffcace959250b",
+        "sourceRender": [
+          1024,
+          1280
+        ]
+      },
+      "tier": "improved-roster-model",
+      "provenance": {
+        "round": 5,
+        "sourceRender": "reports/cardrpg-look/rounds/art/portraits/round-5/sorrel.png",
+        "sourceSha256": "c4f55f3f2b844c8b532f9cf33728742c6ae6dfd6c3400051c1d2717d456d39da",
+        "authorSha256": "1c32d882e41c679a9e8dbba605803f316808292adbbfecf54c924cff5f4d4f95",
+        "deliveredSha256": {
+          "1x": "e407c6b5acbf9e04cfcbeebe4bbaaa292a5f056d6956ef44fcb5e21c12f4914b",
+          "2x": "0fd9612f0a0c33999d0a4885f72d275854d5bf783f72b8b20d1d090d93c5d80a"
+        }
+      }
+    },
+    "velvet": {
+      "id": "velvet",
+      "portrait": {
+        "1x": "assets/cardrpg-look/portraits/velvet-1x.webp",
+        "2x": "assets/cardrpg-look/portraits/velvet-2x.webp",
+        "display": [
+          256,
+          320
+        ],
+        "sizes": [
+          [
+            256,
+            320
+          ],
+          [
+            512,
+            640
+          ]
+        ],
+        "renderSource": "assets/cardrpg-look/models/velvet.glb",
+        "modelSha256": "67b1907d745f25042ca3103d34d6994b60ffa3d57567e344507e336aaf1c792b",
+        "sourceRender": [
+          1024,
+          1280
+        ]
+      },
+      "tier": "improved-roster-model",
+      "provenance": {
+        "round": 5,
+        "sourceRender": "reports/cardrpg-look/rounds/art/portraits/round-5/velvet.png",
+        "sourceSha256": "6de49a1dec05f6bdeca0b22989269df3eba5aa1636f3b50f2800914b109b4f5b",
+        "authorSha256": "1c32d882e41c679a9e8dbba605803f316808292adbbfecf54c924cff5f4d4f95",
+        "deliveredSha256": {
+          "1x": "1508cfa986e14f79f0f1b2b3f3fa4f081abe1c11c616a0f7cf103f5a901fbbad",
+          "2x": "e40694257eab5d4047fc69925d17125e4224d038cf9281bba7b534bf4880eba8"
+        }
+      }
     }
   },
-  "frames": {},
-  "skills": {},
-  "note": "Original Blender game-model renders. Three-hero partial contract; nine cats, rarity plates and48icons followL6. Runtime game-model/visual acceptance is separate from image availability."
+  "frames": {
+    "common": {
+      "id": "common",
+      "plate1x": "assets/cardrpg-look/frames/common-1x.webp",
+      "plate2x": "assets/cardrpg-look/frames/common-2x.webp",
+      "display": [
+        256,
+        320
+      ],
+      "sizes": [
+        [
+          256,
+          320
+        ],
+        [
+          512,
+          640
+        ]
+      ],
+      "ornament": "single pearl",
+      "provenance": {
+        "round": 2,
+        "sourceRender": "reports/cardrpg-look/rounds/art/frames/round-2/common.png",
+        "sourceSha256": "5d49490eb42eee3f83dc7612b68bfc4dffa8ede02a62cf05a29a1862ab464e51",
+        "authorSha256": "6cebb59f1406757a586f094977299bb928e3e3bd255b84048a50065ddcb7b172",
+        "deliveredSha256": {
+          "1x": "bb1a8d409b8b6640232c67ee4ea7552fb864f3c96d773b9298f6e954228b4b45",
+          "2x": "67b5638508191a714f4e94ab56f841b111af884c1d2b8be2b97dccc0859ca56f"
+        }
+      }
+    },
+    "rare": {
+      "id": "rare",
+      "plate1x": "assets/cardrpg-look/frames/rare-1x.webp",
+      "plate2x": "assets/cardrpg-look/frames/rare-2x.webp",
+      "display": [
+        256,
+        320
+      ],
+      "sizes": [
+        [
+          256,
+          320
+        ],
+        [
+          512,
+          640
+        ]
+      ],
+      "ornament": "paired leaves",
+      "provenance": {
+        "round": 2,
+        "sourceRender": "reports/cardrpg-look/rounds/art/frames/round-2/rare.png",
+        "sourceSha256": "9875880aec3309c2092c0562f9774a0b813433d674a362655b275e7f3935333b",
+        "authorSha256": "6cebb59f1406757a586f094977299bb928e3e3bd255b84048a50065ddcb7b172",
+        "deliveredSha256": {
+          "1x": "3a9d41b9e62a09fdabccc186344df2b1fb5f3da26e8b0e7ac164e07866ea0517",
+          "2x": "2d6d24395bc08172436ba53af9c840495aa87ad56c590e703291afe2ad52ba4d"
+        }
+      }
+    },
+    "epic": {
+      "id": "epic",
+      "plate1x": "assets/cardrpg-look/frames/epic-1x.webp",
+      "plate2x": "assets/cardrpg-look/frames/epic-2x.webp",
+      "display": [
+        256,
+        320
+      ],
+      "sizes": [
+        [
+          256,
+          320
+        ],
+        [
+          512,
+          640
+        ]
+      ],
+      "ornament": "five-petal rosette",
+      "provenance": {
+        "round": 2,
+        "sourceRender": "reports/cardrpg-look/rounds/art/frames/round-2/epic.png",
+        "sourceSha256": "8ff74ece273f1ce2a5d95bee5cb99dc0969a25e55e2be94ee8c472a60381b559",
+        "authorSha256": "6cebb59f1406757a586f094977299bb928e3e3bd255b84048a50065ddcb7b172",
+        "deliveredSha256": {
+          "1x": "40a9635298c39eb12ae0da49faf79ffbee2a97a707c906bf908b5bcd78b111fc",
+          "2x": "b33ab4320ee72439c3872b353ef8df6dcab9bef4eb4485acf00ff56298753ec0"
+        }
+      }
+    },
+    "legendary": {
+      "id": "legendary",
+      "plate1x": "assets/cardrpg-look/frames/legendary-1x.webp",
+      "plate2x": "assets/cardrpg-look/frames/legendary-2x.webp",
+      "display": [
+        256,
+        320
+      ],
+      "sizes": [
+        [
+          256,
+          320
+        ],
+        [
+          512,
+          640
+        ]
+      ],
+      "ornament": "nine-ray sunburst",
+      "provenance": {
+        "round": 2,
+        "sourceRender": "reports/cardrpg-look/rounds/art/frames/round-2/legendary.png",
+        "sourceSha256": "e678477d8bc139a6a18ce17e7bb18cad81f083c40e860b6499afccb23addce19",
+        "authorSha256": "6cebb59f1406757a586f094977299bb928e3e3bd255b84048a50065ddcb7b172",
+        "deliveredSha256": {
+          "1x": "3cdf1d52d89bfc1bd696958fcafc9dc99b773641b91be671045083d3dd0a571f",
+          "2x": "c26d6a6812da234f02e1533869315b696644cb045528fec3c7641166e340737f"
+        }
+      }
+    }
+  },
+  "skills": {
+    "mochi-1": {
+      "id": "mochi-1",
+      "icon1x": "assets/cardrpg-look/icons/mochi-1-1x.webp",
+      "icon2x": "assets/cardrpg-look/icons/mochi-1-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "sizes": [
+        [
+          64,
+          64
+        ],
+        [
+          128,
+          128
+        ]
+      ],
+      "provenance": {
+        "round": 3,
+        "sourceRender": "reports/cardrpg-look/rounds/art/icons/round-3/mochi-1.png",
+        "sourceSha256": "ae4c853925fcf0b4774706e1ddac300adb5c543feecc1b9c5fc1dc8fdf0d989c",
+        "authorSha256": "07555fefaecc30b0c77c2e81d43e62945a992697a4db935375a66674bf88eb54",
+        "deliveredSha256": {
+          "1x": "db7813e8463e37476bf226de682a03eda9d93d2b31e3fe0bb7630a046b552953",
+          "2x": "b5b98ba1cfd9210d4e14a186f2c4b1a530554ea04362a434ccc87660ca831036"
+        }
+      },
+      "atlas": {
+        "1x": {
+          "rect": [
+            274,
+            206,
+            64,
+            64
+          ],
+          "padding": 2
+        },
+        "2x": {
+          "rect": [
+            548,
+            412,
+            128,
+            128
+          ],
+          "padding": 4
+        }
+      }
+    },
+    "mochi-2": {
+      "id": "mochi-2",
+      "icon1x": "assets/cardrpg-look/icons/mochi-2-1x.webp",
+      "icon2x": "assets/cardrpg-look/icons/mochi-2-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "sizes": [
+        [
+          64,
+          64
+        ],
+        [
+          128,
+          128
+        ]
+      ],
+      "provenance": {
+        "round": 3,
+        "sourceRender": "reports/cardrpg-look/rounds/art/icons/round-3/mochi-2.png",
+        "sourceSha256": "f8726486e6d85503af1836b33ec87c3076de6627e37e863b91b021edb6f40e77",
+        "authorSha256": "07555fefaecc30b0c77c2e81d43e62945a992697a4db935375a66674bf88eb54",
+        "deliveredSha256": {
+          "1x": "14033784a27dfe7c85a0d7d8125233a4b24bdf7439d7fe98a4b70fdd8d8f1840",
+          "2x": "22c820c8c19891ab602ffe7c81ad35dcb1b02240d4fdbcfda6e22a93ec2ac36e"
+        }
+      },
+      "atlas": {
+        "1x": {
+          "rect": [
+            342,
+            206,
+            64,
+            64
+          ],
+          "padding": 2
+        },
+        "2x": {
+          "rect": [
+            684,
+            412,
+            128,
+            128
+          ],
+          "padding": 4
+        }
+      }
+    },
+    "mochi-3": {
+      "id": "mochi-3",
+      "icon1x": "assets/cardrpg-look/icons/mochi-3-1x.webp",
+      "icon2x": "assets/cardrpg-look/icons/mochi-3-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "sizes": [
+        [
+          64,
+          64
+        ],
+        [
+          128,
+          128
+        ]
+      ],
+      "provenance": {
+        "round": 3,
+        "sourceRender": "reports/cardrpg-look/rounds/art/icons/round-3/mochi-3.png",
+        "sourceSha256": "e37ee12db1db9e27ae8ac88d6d57c4d5887549fc556a6f6273c5cf8de876a18c",
+        "authorSha256": "07555fefaecc30b0c77c2e81d43e62945a992697a4db935375a66674bf88eb54",
+        "deliveredSha256": {
+          "1x": "0c6c67eab38f25c707f0c66ae750e73c83820cd4be9717c388b310959105dc38",
+          "2x": "4da34dd590e4f9abb898e7b16ccfd1d9380bb4e148ce96360eaa634e195f7e06"
+        }
+      },
+      "atlas": {
+        "1x": {
+          "rect": [
+            410,
+            206,
+            64,
+            64
+          ],
+          "padding": 2
+        },
+        "2x": {
+          "rect": [
+            820,
+            412,
+            128,
+            128
+          ],
+          "padding": 4
+        }
+      }
+    },
+    "mochi-4": {
+      "id": "mochi-4",
+      "icon1x": "assets/cardrpg-look/icons/mochi-4-1x.webp",
+      "icon2x": "assets/cardrpg-look/icons/mochi-4-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "sizes": [
+        [
+          64,
+          64
+        ],
+        [
+          128,
+          128
+        ]
+      ],
+      "provenance": {
+        "round": 3,
+        "sourceRender": "reports/cardrpg-look/rounds/art/icons/round-3/mochi-4.png",
+        "sourceSha256": "a3ee03230d3af7fb7277e05edea3f0e1cc5b68d058ef5a8cfa00d28879ccd4e1",
+        "authorSha256": "07555fefaecc30b0c77c2e81d43e62945a992697a4db935375a66674bf88eb54",
+        "deliveredSha256": {
+          "1x": "2ea49b5774bdf9ba79ce7c3133af2794a6e82fe3c8c9e0cb47de7be68c0bd983",
+          "2x": "4d97510f374a4bb5fd70fb42aa23c822132ae08d402018203da719fd89c8c93c"
+        }
+      },
+      "atlas": {
+        "1x": {
+          "rect": [
+            478,
+            206,
+            64,
+            64
+          ],
+          "padding": 2
+        },
+        "2x": {
+          "rect": [
+            956,
+            412,
+            128,
+            128
+          ],
+          "padding": 4
+        }
+      }
+    },
+    "soot-1": {
+      "id": "soot-1",
+      "icon1x": "assets/cardrpg-look/icons/soot-1-1x.webp",
+      "icon2x": "assets/cardrpg-look/icons/soot-1-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "sizes": [
+        [
+          64,
+          64
+        ],
+        [
+          128,
+          128
+        ]
+      ],
+      "provenance": {
+        "round": 3,
+        "sourceRender": "reports/cardrpg-look/rounds/art/icons/round-3/soot-1.png",
+        "sourceSha256": "2baf686567ec6d5bbbfe142664f39f534c6e8a1b3bbcc358f1492c1855f2f253",
+        "authorSha256": "07555fefaecc30b0c77c2e81d43e62945a992697a4db935375a66674bf88eb54",
+        "deliveredSha256": {
+          "1x": "25ea366c501c5ecf49eea6230da97e557bac33f620d3b2f1f912aae686d1cff0",
+          "2x": "9887594a4ef46871ca17562809094145881af28c23f807d79075a299ca12be84"
+        }
+      },
+      "atlas": {
+        "1x": {
+          "rect": [
+            274,
+            274,
+            64,
+            64
+          ],
+          "padding": 2
+        },
+        "2x": {
+          "rect": [
+            548,
+            548,
+            128,
+            128
+          ],
+          "padding": 4
+        }
+      }
+    },
+    "soot-2": {
+      "id": "soot-2",
+      "icon1x": "assets/cardrpg-look/icons/soot-2-1x.webp",
+      "icon2x": "assets/cardrpg-look/icons/soot-2-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "sizes": [
+        [
+          64,
+          64
+        ],
+        [
+          128,
+          128
+        ]
+      ],
+      "provenance": {
+        "round": 3,
+        "sourceRender": "reports/cardrpg-look/rounds/art/icons/round-3/soot-2.png",
+        "sourceSha256": "de28dcc85286c096e5ce1637602188c6a01749f122175ec6753d56f313a4fd18",
+        "authorSha256": "07555fefaecc30b0c77c2e81d43e62945a992697a4db935375a66674bf88eb54",
+        "deliveredSha256": {
+          "1x": "8179fa0e92e10734d2807b555710e84e710f4af5c078c5bf1126c974868d3e19",
+          "2x": "a00e04cd81c3f912742865359d6ccf4cd3525b62d7b6bbbd9580acc7f29ee62a"
+        }
+      },
+      "atlas": {
+        "1x": {
+          "rect": [
+            342,
+            274,
+            64,
+            64
+          ],
+          "padding": 2
+        },
+        "2x": {
+          "rect": [
+            684,
+            548,
+            128,
+            128
+          ],
+          "padding": 4
+        }
+      }
+    },
+    "soot-3": {
+      "id": "soot-3",
+      "icon1x": "assets/cardrpg-look/icons/soot-3-1x.webp",
+      "icon2x": "assets/cardrpg-look/icons/soot-3-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "sizes": [
+        [
+          64,
+          64
+        ],
+        [
+          128,
+          128
+        ]
+      ],
+      "provenance": {
+        "round": 3,
+        "sourceRender": "reports/cardrpg-look/rounds/art/icons/round-3/soot-3.png",
+        "sourceSha256": "6fe3696d533a70dc5d7a90fe86de0d3996e5c66ae6de22c80caeffef0f1a3b7f",
+        "authorSha256": "07555fefaecc30b0c77c2e81d43e62945a992697a4db935375a66674bf88eb54",
+        "deliveredSha256": {
+          "1x": "4bc38cda1a59561627f4769b7fbfe87d0ee8c1966c0e48e5d85dfd766f2c8335",
+          "2x": "0802627ebb22eb9556ed970ecfcb786430c1b77a3f20c8f388dc18c889f2ba20"
+        }
+      },
+      "atlas": {
+        "1x": {
+          "rect": [
+            410,
+            274,
+            64,
+            64
+          ],
+          "padding": 2
+        },
+        "2x": {
+          "rect": [
+            820,
+            548,
+            128,
+            128
+          ],
+          "padding": 4
+        }
+      }
+    },
+    "soot-4": {
+      "id": "soot-4",
+      "icon1x": "assets/cardrpg-look/icons/soot-4-1x.webp",
+      "icon2x": "assets/cardrpg-look/icons/soot-4-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "sizes": [
+        [
+          64,
+          64
+        ],
+        [
+          128,
+          128
+        ]
+      ],
+      "provenance": {
+        "round": 3,
+        "sourceRender": "reports/cardrpg-look/rounds/art/icons/round-3/soot-4.png",
+        "sourceSha256": "e1f9273dcc2832858e6b35b29ce614a691683b0693f78b276f36bb23d47e2816",
+        "authorSha256": "07555fefaecc30b0c77c2e81d43e62945a992697a4db935375a66674bf88eb54",
+        "deliveredSha256": {
+          "1x": "3258c40c7362d98b405cc245f84a7771253c0f8affeb2b81101939b2ade5f048",
+          "2x": "2a32a433b2579acf95d01ec9fdaf3d3dc8360b3d47508b5a336fb068ed746b5b"
+        }
+      },
+      "atlas": {
+        "1x": {
+          "rect": [
+            478,
+            274,
+            64,
+            64
+          ],
+          "padding": 2
+        },
+        "2x": {
+          "rect": [
+            956,
+            548,
+            128,
+            128
+          ],
+          "padding": 4
+        }
+      }
+    },
+    "clover-1": {
+      "id": "clover-1",
+      "icon1x": "assets/cardrpg-look/icons/clover-1-1x.webp",
+      "icon2x": "assets/cardrpg-look/icons/clover-1-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "sizes": [
+        [
+          64,
+          64
+        ],
+        [
+          128,
+          128
+        ]
+      ],
+      "provenance": {
+        "round": 3,
+        "sourceRender": "reports/cardrpg-look/rounds/art/icons/round-3/clover-1.png",
+        "sourceSha256": "a6deee738738bd79abbabdcc879497d3c0f8d67bec716bcd44d0fe2ab0aa5a08",
+        "authorSha256": "07555fefaecc30b0c77c2e81d43e62945a992697a4db935375a66674bf88eb54",
+        "deliveredSha256": {
+          "1x": "6d0493e74b06e1c9956e7025c5e8282c7b4538a21e4668293ce35ee2587152f4",
+          "2x": "d856834984b3d0205072c0e92e599f882c1e3f127f05940421cac34829961eb3"
+        }
+      },
+      "atlas": {
+        "1x": {
+          "rect": [
+            274,
+            70,
+            64,
+            64
+          ],
+          "padding": 2
+        },
+        "2x": {
+          "rect": [
+            548,
+            140,
+            128,
+            128
+          ],
+          "padding": 4
+        }
+      }
+    },
+    "clover-2": {
+      "id": "clover-2",
+      "icon1x": "assets/cardrpg-look/icons/clover-2-1x.webp",
+      "icon2x": "assets/cardrpg-look/icons/clover-2-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "sizes": [
+        [
+          64,
+          64
+        ],
+        [
+          128,
+          128
+        ]
+      ],
+      "provenance": {
+        "round": 3,
+        "sourceRender": "reports/cardrpg-look/rounds/art/icons/round-3/clover-2.png",
+        "sourceSha256": "9de2fae28066dc23ba295655a72d34b3d750fa5f2e85661ab412d2440f8028e3",
+        "authorSha256": "07555fefaecc30b0c77c2e81d43e62945a992697a4db935375a66674bf88eb54",
+        "deliveredSha256": {
+          "1x": "b1ab15a766cbbfe7b9cabaa2d68bf5d6260fe856c519e9f220c5f4de632ff3b3",
+          "2x": "bb90be4ab87e7ed27f9bcca642a669656bc61fb3105f89e7e58cefccb2279cf1"
+        }
+      },
+      "atlas": {
+        "1x": {
+          "rect": [
+            342,
+            70,
+            64,
+            64
+          ],
+          "padding": 2
+        },
+        "2x": {
+          "rect": [
+            684,
+            140,
+            128,
+            128
+          ],
+          "padding": 4
+        }
+      }
+    },
+    "clover-3": {
+      "id": "clover-3",
+      "icon1x": "assets/cardrpg-look/icons/clover-3-1x.webp",
+      "icon2x": "assets/cardrpg-look/icons/clover-3-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "sizes": [
+        [
+          64,
+          64
+        ],
+        [
+          128,
+          128
+        ]
+      ],
+      "provenance": {
+        "round": 3,
+        "sourceRender": "reports/cardrpg-look/rounds/art/icons/round-3/clover-3.png",
+        "sourceSha256": "e9e7fef8288d5a3786c32ab5e5cfa98c5c623a347f83d43bab4d98776e694c3e",
+        "authorSha256": "07555fefaecc30b0c77c2e81d43e62945a992697a4db935375a66674bf88eb54",
+        "deliveredSha256": {
+          "1x": "695f80ff22d58cc8490a2ba04793bd29aac2f050edfa2ef0ed6177d8bab43926",
+          "2x": "95f90f3bdbcf3dce6bb87bb19a0e71fe0832426d74e984e0ab06d69d745bade7"
+        }
+      },
+      "atlas": {
+        "1x": {
+          "rect": [
+            410,
+            70,
+            64,
+            64
+          ],
+          "padding": 2
+        },
+        "2x": {
+          "rect": [
+            820,
+            140,
+            128,
+            128
+          ],
+          "padding": 4
+        }
+      }
+    },
+    "clover-4": {
+      "id": "clover-4",
+      "icon1x": "assets/cardrpg-look/icons/clover-4-1x.webp",
+      "icon2x": "assets/cardrpg-look/icons/clover-4-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "sizes": [
+        [
+          64,
+          64
+        ],
+        [
+          128,
+          128
+        ]
+      ],
+      "provenance": {
+        "round": 3,
+        "sourceRender": "reports/cardrpg-look/rounds/art/icons/round-3/clover-4.png",
+        "sourceSha256": "455843b9c30fa1b3be354511f43b9dc637edd32b1e51a2682f90199e30936e7e",
+        "authorSha256": "07555fefaecc30b0c77c2e81d43e62945a992697a4db935375a66674bf88eb54",
+        "deliveredSha256": {
+          "1x": "2f9037215d7cc713736f0c045b47e929976f4570907beacba4a91f79542fa335",
+          "2x": "544f538451c54365aea03d336468d840d4e6ee326ec14b97b58f388f6a516bf9"
+        }
+      },
+      "atlas": {
+        "1x": {
+          "rect": [
+            478,
+            70,
+            64,
+            64
+          ],
+          "padding": 2
+        },
+        "2x": {
+          "rect": [
+            956,
+            140,
+            128,
+            128
+          ],
+          "padding": 4
+        }
+      }
+    },
+    "panko-1": {
+      "id": "panko-1",
+      "icon1x": "assets/cardrpg-look/icons/panko-1-1x.webp",
+      "icon2x": "assets/cardrpg-look/icons/panko-1-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "sizes": [
+        [
+          64,
+          64
+        ],
+        [
+          128,
+          128
+        ]
+      ],
+      "provenance": {
+        "round": 3,
+        "sourceRender": "reports/cardrpg-look/rounds/art/icons/round-3/panko-1.png",
+        "sourceSha256": "56aa158adea9a92b76b44aa28c9fb254a3c168f0b72b09546ee8f320d351f1a6",
+        "authorSha256": "07555fefaecc30b0c77c2e81d43e62945a992697a4db935375a66674bf88eb54",
+        "deliveredSha256": {
+          "1x": "05e5e50bddad122d561ccaf4f9080b1f77a7344da7a3452e32847b883211a646",
+          "2x": "6b5321c87bc2eda23e9ac89d5e14552100b40ec1a6ef4abfa50732032ecabf3a"
+        }
+      },
+      "atlas": {
+        "1x": {
+          "rect": [
+            2,
+            274,
+            64,
+            64
+          ],
+          "padding": 2
+        },
+        "2x": {
+          "rect": [
+            4,
+            548,
+            128,
+            128
+          ],
+          "padding": 4
+        }
+      }
+    },
+    "panko-2": {
+      "id": "panko-2",
+      "icon1x": "assets/cardrpg-look/icons/panko-2-1x.webp",
+      "icon2x": "assets/cardrpg-look/icons/panko-2-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "sizes": [
+        [
+          64,
+          64
+        ],
+        [
+          128,
+          128
+        ]
+      ],
+      "provenance": {
+        "round": 3,
+        "sourceRender": "reports/cardrpg-look/rounds/art/icons/round-3/panko-2.png",
+        "sourceSha256": "c9bbe8a9c586fbde1d4fd223979c3d65f0f624eb7703a28a3f5f8b2cb189622e",
+        "authorSha256": "07555fefaecc30b0c77c2e81d43e62945a992697a4db935375a66674bf88eb54",
+        "deliveredSha256": {
+          "1x": "f609cc0959f94b8ae2001f9cb0be19a25f57c3cd018c2200f7b6ec56447190d7",
+          "2x": "e358893bc0907936daa46dd538c8761a06f546f4236f8d841b73d4758770dd7a"
+        }
+      },
+      "atlas": {
+        "1x": {
+          "rect": [
+            70,
+            274,
+            64,
+            64
+          ],
+          "padding": 2
+        },
+        "2x": {
+          "rect": [
+            140,
+            548,
+            128,
+            128
+          ],
+          "padding": 4
+        }
+      }
+    },
+    "panko-3": {
+      "id": "panko-3",
+      "icon1x": "assets/cardrpg-look/icons/panko-3-1x.webp",
+      "icon2x": "assets/cardrpg-look/icons/panko-3-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "sizes": [
+        [
+          64,
+          64
+        ],
+        [
+          128,
+          128
+        ]
+      ],
+      "provenance": {
+        "round": 3,
+        "sourceRender": "reports/cardrpg-look/rounds/art/icons/round-3/panko-3.png",
+        "sourceSha256": "5df51de2206d45a5ac7b33bc83d8451d5b81ec5daeceff98bf9887c15fb50dd3",
+        "authorSha256": "07555fefaecc30b0c77c2e81d43e62945a992697a4db935375a66674bf88eb54",
+        "deliveredSha256": {
+          "1x": "f4e209d067fb2e10e79ae485a81fa48fd41889cef67d7a303c2c2f55897e4e92",
+          "2x": "0f9256f7466f561b747058ceb65b5ee505e0626ead761a9f0ad805bb3d9aee38"
+        }
+      },
+      "atlas": {
+        "1x": {
+          "rect": [
+            138,
+            274,
+            64,
+            64
+          ],
+          "padding": 2
+        },
+        "2x": {
+          "rect": [
+            276,
+            548,
+            128,
+            128
+          ],
+          "padding": 4
+        }
+      }
+    },
+    "panko-4": {
+      "id": "panko-4",
+      "icon1x": "assets/cardrpg-look/icons/panko-4-1x.webp",
+      "icon2x": "assets/cardrpg-look/icons/panko-4-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "sizes": [
+        [
+          64,
+          64
+        ],
+        [
+          128,
+          128
+        ]
+      ],
+      "provenance": {
+        "round": 3,
+        "sourceRender": "reports/cardrpg-look/rounds/art/icons/round-3/panko-4.png",
+        "sourceSha256": "6b974ec0f76e0e8fbd339e477382d975c7f7c84d72e2ee2f34e9c3109d0fb656",
+        "authorSha256": "07555fefaecc30b0c77c2e81d43e62945a992697a4db935375a66674bf88eb54",
+        "deliveredSha256": {
+          "1x": "fc3fe9ba2c7897932e9ce0eb01e7a27312f29d842d39e6cf3cca136451468a10",
+          "2x": "7276fb44bdc4205f3df2e0a6f204ed7c732fb8193be1c7b9026737a217509dda"
+        }
+      },
+      "atlas": {
+        "1x": {
+          "rect": [
+            206,
+            274,
+            64,
+            64
+          ],
+          "padding": 2
+        },
+        "2x": {
+          "rect": [
+            412,
+            548,
+            128,
+            128
+          ],
+          "padding": 4
+        }
+      }
+    },
+    "mallow-1": {
+      "id": "mallow-1",
+      "icon1x": "assets/cardrpg-look/icons/mallow-1-1x.webp",
+      "icon2x": "assets/cardrpg-look/icons/mallow-1-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "sizes": [
+        [
+          64,
+          64
+        ],
+        [
+          128,
+          128
+        ]
+      ],
+      "provenance": {
+        "round": 3,
+        "sourceRender": "reports/cardrpg-look/rounds/art/icons/round-3/mallow-1.png",
+        "sourceSha256": "203fd96954e794f78f025f0a01057c5bfbf3fc8a11a497fcb615f4db42ba958d",
+        "authorSha256": "07555fefaecc30b0c77c2e81d43e62945a992697a4db935375a66674bf88eb54",
+        "deliveredSha256": {
+          "1x": "9871f63e54ded41cbdc577089251500cf1e2ac52944ebecf648575f666fc1299",
+          "2x": "489932d2c808e358d6dc2bafe990ed078b6453755d1467f66a73be6a1d1b85ef"
+        }
+      },
+      "atlas": {
+        "1x": {
+          "rect": [
+            274,
+            138,
+            64,
+            64
+          ],
+          "padding": 2
+        },
+        "2x": {
+          "rect": [
+            548,
+            276,
+            128,
+            128
+          ],
+          "padding": 4
+        }
+      }
+    },
+    "mallow-2": {
+      "id": "mallow-2",
+      "icon1x": "assets/cardrpg-look/icons/mallow-2-1x.webp",
+      "icon2x": "assets/cardrpg-look/icons/mallow-2-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "sizes": [
+        [
+          64,
+          64
+        ],
+        [
+          128,
+          128
+        ]
+      ],
+      "provenance": {
+        "round": 3,
+        "sourceRender": "reports/cardrpg-look/rounds/art/icons/round-3/mallow-2.png",
+        "sourceSha256": "040502155e3c952aaa3fa7136139ad83979da23f6dce18b8da5977ed001d09b5",
+        "authorSha256": "07555fefaecc30b0c77c2e81d43e62945a992697a4db935375a66674bf88eb54",
+        "deliveredSha256": {
+          "1x": "c5b9f4027c6af3abddf7835916488a98a5a7cc77ecfc0d8b7a3fec581f05377c",
+          "2x": "88eb3f50f2122ee96514f5a14805cbcd9053883f801766a15f3b246e8454235d"
+        }
+      },
+      "atlas": {
+        "1x": {
+          "rect": [
+            342,
+            138,
+            64,
+            64
+          ],
+          "padding": 2
+        },
+        "2x": {
+          "rect": [
+            684,
+            276,
+            128,
+            128
+          ],
+          "padding": 4
+        }
+      }
+    },
+    "mallow-3": {
+      "id": "mallow-3",
+      "icon1x": "assets/cardrpg-look/icons/mallow-3-1x.webp",
+      "icon2x": "assets/cardrpg-look/icons/mallow-3-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "sizes": [
+        [
+          64,
+          64
+        ],
+        [
+          128,
+          128
+        ]
+      ],
+      "provenance": {
+        "round": 3,
+        "sourceRender": "reports/cardrpg-look/rounds/art/icons/round-3/mallow-3.png",
+        "sourceSha256": "4d5a01998670ce23dbfc3e44cf02feb1ce4a720e6e2c82c157a380419126642d",
+        "authorSha256": "07555fefaecc30b0c77c2e81d43e62945a992697a4db935375a66674bf88eb54",
+        "deliveredSha256": {
+          "1x": "3a5fd26f7954f25640fa7b4327de6c1538f3e6ee1649882eb99640eeefdd4b7c",
+          "2x": "e9373b88c0ddd1332a315bbd8445c06a779fc1d8f28046bcb7d79937c0f4860e"
+        }
+      },
+      "atlas": {
+        "1x": {
+          "rect": [
+            410,
+            138,
+            64,
+            64
+          ],
+          "padding": 2
+        },
+        "2x": {
+          "rect": [
+            820,
+            276,
+            128,
+            128
+          ],
+          "padding": 4
+        }
+      }
+    },
+    "mallow-4": {
+      "id": "mallow-4",
+      "icon1x": "assets/cardrpg-look/icons/mallow-4-1x.webp",
+      "icon2x": "assets/cardrpg-look/icons/mallow-4-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "sizes": [
+        [
+          64,
+          64
+        ],
+        [
+          128,
+          128
+        ]
+      ],
+      "provenance": {
+        "round": 3,
+        "sourceRender": "reports/cardrpg-look/rounds/art/icons/round-3/mallow-4.png",
+        "sourceSha256": "26df0e4ecb3deb298e89f7831233b25af72c9a25dfe1a425311cb90052476b9d",
+        "authorSha256": "07555fefaecc30b0c77c2e81d43e62945a992697a4db935375a66674bf88eb54",
+        "deliveredSha256": {
+          "1x": "543cd6790808ab156795e69e0e1c74aa6f7dd844658f27610231c9f17962d77d",
+          "2x": "8de55550c94373ebfcde6c487c43ebb4ef0caa4d679d084673c0e2016af3e14c"
+        }
+      },
+      "atlas": {
+        "1x": {
+          "rect": [
+            478,
+            138,
+            64,
+            64
+          ],
+          "padding": 2
+        },
+        "2x": {
+          "rect": [
+            956,
+            276,
+            128,
+            128
+          ],
+          "padding": 4
+        }
+      }
+    },
+    "sorrel-1": {
+      "id": "sorrel-1",
+      "icon1x": "assets/cardrpg-look/icons/sorrel-1-1x.webp",
+      "icon2x": "assets/cardrpg-look/icons/sorrel-1-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "sizes": [
+        [
+          64,
+          64
+        ],
+        [
+          128,
+          128
+        ]
+      ],
+      "provenance": {
+        "round": 3,
+        "sourceRender": "reports/cardrpg-look/rounds/art/icons/round-3/sorrel-1.png",
+        "sourceSha256": "82492e1e2add33032a0a1c85d5c4ec793f92198850824526c33a8925ec290b20",
+        "authorSha256": "07555fefaecc30b0c77c2e81d43e62945a992697a4db935375a66674bf88eb54",
+        "deliveredSha256": {
+          "1x": "63dbcbefe73283901a769b4260bfff2f331455e5f2ff4ef022ccf909d82de5de",
+          "2x": "b24447ac40034fea7544ab9e809e1844716782454cc512c96337d7036c93e236"
+        }
+      },
+      "atlas": {
+        "1x": {
+          "rect": [
+            2,
+            342,
+            64,
+            64
+          ],
+          "padding": 2
+        },
+        "2x": {
+          "rect": [
+            4,
+            684,
+            128,
+            128
+          ],
+          "padding": 4
+        }
+      }
+    },
+    "sorrel-2": {
+      "id": "sorrel-2",
+      "icon1x": "assets/cardrpg-look/icons/sorrel-2-1x.webp",
+      "icon2x": "assets/cardrpg-look/icons/sorrel-2-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "sizes": [
+        [
+          64,
+          64
+        ],
+        [
+          128,
+          128
+        ]
+      ],
+      "provenance": {
+        "round": 3,
+        "sourceRender": "reports/cardrpg-look/rounds/art/icons/round-3/sorrel-2.png",
+        "sourceSha256": "42eff7d82e2cfa685045ead5863839e88ccedd27d74e5a0c086d62af684c27c4",
+        "authorSha256": "07555fefaecc30b0c77c2e81d43e62945a992697a4db935375a66674bf88eb54",
+        "deliveredSha256": {
+          "1x": "4c5e1497e03b05e8bfa5ecd74ed7f7127d99f07a5af163caaaa5d7b45740ed28",
+          "2x": "6b615575085439e3258d0f18a7a1dd8405fa0acdea56d057cb8e47420d6938e8"
+        }
+      },
+      "atlas": {
+        "1x": {
+          "rect": [
+            70,
+            342,
+            64,
+            64
+          ],
+          "padding": 2
+        },
+        "2x": {
+          "rect": [
+            140,
+            684,
+            128,
+            128
+          ],
+          "padding": 4
+        }
+      }
+    },
+    "sorrel-3": {
+      "id": "sorrel-3",
+      "icon1x": "assets/cardrpg-look/icons/sorrel-3-1x.webp",
+      "icon2x": "assets/cardrpg-look/icons/sorrel-3-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "sizes": [
+        [
+          64,
+          64
+        ],
+        [
+          128,
+          128
+        ]
+      ],
+      "provenance": {
+        "round": 3,
+        "sourceRender": "reports/cardrpg-look/rounds/art/icons/round-3/sorrel-3.png",
+        "sourceSha256": "1a0bfa21ff3ee6995a378946a212fb8a501220de5468ada37694eb9342fc5328",
+        "authorSha256": "07555fefaecc30b0c77c2e81d43e62945a992697a4db935375a66674bf88eb54",
+        "deliveredSha256": {
+          "1x": "6d35cca6b8672ac26c2e3af8f06949d207e2ce57524df1c7b295b8b4e4ec7813",
+          "2x": "6a961f02db6b5c7aaa4d5a61c63e03edb96ce2bb5f0d1bbcae638911473ad6e9"
+        }
+      },
+      "atlas": {
+        "1x": {
+          "rect": [
+            138,
+            342,
+            64,
+            64
+          ],
+          "padding": 2
+        },
+        "2x": {
+          "rect": [
+            276,
+            684,
+            128,
+            128
+          ],
+          "padding": 4
+        }
+      }
+    },
+    "sorrel-4": {
+      "id": "sorrel-4",
+      "icon1x": "assets/cardrpg-look/icons/sorrel-4-1x.webp",
+      "icon2x": "assets/cardrpg-look/icons/sorrel-4-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "sizes": [
+        [
+          64,
+          64
+        ],
+        [
+          128,
+          128
+        ]
+      ],
+      "provenance": {
+        "round": 3,
+        "sourceRender": "reports/cardrpg-look/rounds/art/icons/round-3/sorrel-4.png",
+        "sourceSha256": "04c27f57cea636fbf9ca3eb8efcfe7773df26ac8938ea4785ae5ac905049938d",
+        "authorSha256": "07555fefaecc30b0c77c2e81d43e62945a992697a4db935375a66674bf88eb54",
+        "deliveredSha256": {
+          "1x": "d7600a93eb176f19d276ff3c1f37b359ed58006bc5f05e5320bd2a1793d770a8",
+          "2x": "9290303b84b8a7d97f97242afb609de4101750a34a4d6df37c990dbb140a6c23"
+        }
+      },
+      "atlas": {
+        "1x": {
+          "rect": [
+            206,
+            342,
+            64,
+            64
+          ],
+          "padding": 2
+        },
+        "2x": {
+          "rect": [
+            412,
+            684,
+            128,
+            128
+          ],
+          "padding": 4
+        }
+      }
+    },
+    "biscuit-1": {
+      "id": "biscuit-1",
+      "icon1x": "assets/cardrpg-look/icons/biscuit-1-1x.webp",
+      "icon2x": "assets/cardrpg-look/icons/biscuit-1-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "sizes": [
+        [
+          64,
+          64
+        ],
+        [
+          128,
+          128
+        ]
+      ],
+      "provenance": {
+        "round": 3,
+        "sourceRender": "reports/cardrpg-look/rounds/art/icons/round-3/biscuit-1.png",
+        "sourceSha256": "0944af682d324a763001bc6e462b8079c5871eef08f4757b7edf94b12e54ed2e",
+        "authorSha256": "07555fefaecc30b0c77c2e81d43e62945a992697a4db935375a66674bf88eb54",
+        "deliveredSha256": {
+          "1x": "3a7b8eb46c7bd070f05fd091e5e396e062d9b88e1573e8e68a56e200945ba9ec",
+          "2x": "dc55a3f3f11414ff4ae864dd4f65cfa0293d8ff1bc18ec8812560e7fcf4ccfe8"
+        }
+      },
+      "atlas": {
+        "1x": {
+          "rect": [
+            2,
+            2,
+            64,
+            64
+          ],
+          "padding": 2
+        },
+        "2x": {
+          "rect": [
+            4,
+            4,
+            128,
+            128
+          ],
+          "padding": 4
+        }
+      }
+    },
+    "biscuit-2": {
+      "id": "biscuit-2",
+      "icon1x": "assets/cardrpg-look/icons/biscuit-2-1x.webp",
+      "icon2x": "assets/cardrpg-look/icons/biscuit-2-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "sizes": [
+        [
+          64,
+          64
+        ],
+        [
+          128,
+          128
+        ]
+      ],
+      "provenance": {
+        "round": 3,
+        "sourceRender": "reports/cardrpg-look/rounds/art/icons/round-3/biscuit-2.png",
+        "sourceSha256": "80e2f5fc5895fde30d3747d6ec432f773d4e9380a6c08ec1c93c6bd08125cfae",
+        "authorSha256": "07555fefaecc30b0c77c2e81d43e62945a992697a4db935375a66674bf88eb54",
+        "deliveredSha256": {
+          "1x": "fd13992a4b6ddbfea1611811fe9e916d3e81c9f4b084b5cb282df01b61df9335",
+          "2x": "221c3def095a97671249be50d909cf2541ddee2a5aaa095bc7ecf6e427d05822"
+        }
+      },
+      "atlas": {
+        "1x": {
+          "rect": [
+            70,
+            2,
+            64,
+            64
+          ],
+          "padding": 2
+        },
+        "2x": {
+          "rect": [
+            140,
+            4,
+            128,
+            128
+          ],
+          "padding": 4
+        }
+      }
+    },
+    "biscuit-3": {
+      "id": "biscuit-3",
+      "icon1x": "assets/cardrpg-look/icons/biscuit-3-1x.webp",
+      "icon2x": "assets/cardrpg-look/icons/biscuit-3-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "sizes": [
+        [
+          64,
+          64
+        ],
+        [
+          128,
+          128
+        ]
+      ],
+      "provenance": {
+        "round": 3,
+        "sourceRender": "reports/cardrpg-look/rounds/art/icons/round-3/biscuit-3.png",
+        "sourceSha256": "4e76a9158b122f5ea46fe4e9144ea0d5e650df2b34a02129ba58c7b92797c966",
+        "authorSha256": "07555fefaecc30b0c77c2e81d43e62945a992697a4db935375a66674bf88eb54",
+        "deliveredSha256": {
+          "1x": "8d2db2704f1ab404342a436050b8b7684679e6645c97874face927eee4cffdd6",
+          "2x": "d6ac9d95224eec69b18512f489d4cbe7751b64f85e982349eff01043647f2975"
+        }
+      },
+      "atlas": {
+        "1x": {
+          "rect": [
+            138,
+            2,
+            64,
+            64
+          ],
+          "padding": 2
+        },
+        "2x": {
+          "rect": [
+            276,
+            4,
+            128,
+            128
+          ],
+          "padding": 4
+        }
+      }
+    },
+    "biscuit-4": {
+      "id": "biscuit-4",
+      "icon1x": "assets/cardrpg-look/icons/biscuit-4-1x.webp",
+      "icon2x": "assets/cardrpg-look/icons/biscuit-4-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "sizes": [
+        [
+          64,
+          64
+        ],
+        [
+          128,
+          128
+        ]
+      ],
+      "provenance": {
+        "round": 3,
+        "sourceRender": "reports/cardrpg-look/rounds/art/icons/round-3/biscuit-4.png",
+        "sourceSha256": "d50943c53f98a8b31563cf76c1f8eec18f424f48334fde40d585c99cb47dd208",
+        "authorSha256": "07555fefaecc30b0c77c2e81d43e62945a992697a4db935375a66674bf88eb54",
+        "deliveredSha256": {
+          "1x": "8b7627db0f8f9c9dc311ed8585f2bc1d207572fb2cfd9724eb02b2a422b09bd8",
+          "2x": "273ec4c3dcd49a9eb408a9b5d45b62223304bd551049c3bf3585d6709832a487"
+        }
+      },
+      "atlas": {
+        "1x": {
+          "rect": [
+            206,
+            2,
+            64,
+            64
+          ],
+          "padding": 2
+        },
+        "2x": {
+          "rect": [
+            412,
+            4,
+            128,
+            128
+          ],
+          "padding": 4
+        }
+      }
+    },
+    "inkcap-1": {
+      "id": "inkcap-1",
+      "icon1x": "assets/cardrpg-look/icons/inkcap-1-1x.webp",
+      "icon2x": "assets/cardrpg-look/icons/inkcap-1-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "sizes": [
+        [
+          64,
+          64
+        ],
+        [
+          128,
+          128
+        ]
+      ],
+      "provenance": {
+        "round": 3,
+        "sourceRender": "reports/cardrpg-look/rounds/art/icons/round-3/inkcap-1.png",
+        "sourceSha256": "2a18c0c88af7074657be82352f5231ff094edc81ed809d0c51c32845a9c91a6c",
+        "authorSha256": "07555fefaecc30b0c77c2e81d43e62945a992697a4db935375a66674bf88eb54",
+        "deliveredSha256": {
+          "1x": "a553c27872c54e55d748aac30b39a2f60bf52928737f489296ac100a6bf89d21",
+          "2x": "f66d21174f8e72e90924f860e4eb33383fe278fdb61781332e9576e3a635a551"
+        }
+      },
+      "atlas": {
+        "1x": {
+          "rect": [
+            2,
+            138,
+            64,
+            64
+          ],
+          "padding": 2
+        },
+        "2x": {
+          "rect": [
+            4,
+            276,
+            128,
+            128
+          ],
+          "padding": 4
+        }
+      }
+    },
+    "inkcap-2": {
+      "id": "inkcap-2",
+      "icon1x": "assets/cardrpg-look/icons/inkcap-2-1x.webp",
+      "icon2x": "assets/cardrpg-look/icons/inkcap-2-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "sizes": [
+        [
+          64,
+          64
+        ],
+        [
+          128,
+          128
+        ]
+      ],
+      "provenance": {
+        "round": 3,
+        "sourceRender": "reports/cardrpg-look/rounds/art/icons/round-3/inkcap-2.png",
+        "sourceSha256": "542eff8707a09bd6c32fe50f5eeb349469480793cd93acd75b53d26e7fec8775",
+        "authorSha256": "07555fefaecc30b0c77c2e81d43e62945a992697a4db935375a66674bf88eb54",
+        "deliveredSha256": {
+          "1x": "e741ae16baf0122c0c0d66005c5065f83b2d31219dc772706943508ca9478ba6",
+          "2x": "c9362f948dca9106dfe22e51b74794e1b21eb01b35af3a117ee7f1d6fd97aa61"
+        }
+      },
+      "atlas": {
+        "1x": {
+          "rect": [
+            70,
+            138,
+            64,
+            64
+          ],
+          "padding": 2
+        },
+        "2x": {
+          "rect": [
+            140,
+            276,
+            128,
+            128
+          ],
+          "padding": 4
+        }
+      }
+    },
+    "inkcap-3": {
+      "id": "inkcap-3",
+      "icon1x": "assets/cardrpg-look/icons/inkcap-3-1x.webp",
+      "icon2x": "assets/cardrpg-look/icons/inkcap-3-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "sizes": [
+        [
+          64,
+          64
+        ],
+        [
+          128,
+          128
+        ]
+      ],
+      "provenance": {
+        "round": 3,
+        "sourceRender": "reports/cardrpg-look/rounds/art/icons/round-3/inkcap-3.png",
+        "sourceSha256": "1672e328f2b67648f12869866f9339a849b6ce1bab317e9ce252910c39c99eaa",
+        "authorSha256": "07555fefaecc30b0c77c2e81d43e62945a992697a4db935375a66674bf88eb54",
+        "deliveredSha256": {
+          "1x": "57519b9ed6587f0125efb4238f9ca2bf5bdf1d9f977aa8d392c7e566c8f9331a",
+          "2x": "dbf873da3fce27685c3df22dcf4d95c40a25fa4e0293099af85d64e0a2b3b03e"
+        }
+      },
+      "atlas": {
+        "1x": {
+          "rect": [
+            138,
+            138,
+            64,
+            64
+          ],
+          "padding": 2
+        },
+        "2x": {
+          "rect": [
+            276,
+            276,
+            128,
+            128
+          ],
+          "padding": 4
+        }
+      }
+    },
+    "inkcap-4": {
+      "id": "inkcap-4",
+      "icon1x": "assets/cardrpg-look/icons/inkcap-4-1x.webp",
+      "icon2x": "assets/cardrpg-look/icons/inkcap-4-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "sizes": [
+        [
+          64,
+          64
+        ],
+        [
+          128,
+          128
+        ]
+      ],
+      "provenance": {
+        "round": 3,
+        "sourceRender": "reports/cardrpg-look/rounds/art/icons/round-3/inkcap-4.png",
+        "sourceSha256": "3ec81d3c96caa03fad1bcfe61129f0188e2bb2c66effe77b232e87bce0d39dcf",
+        "authorSha256": "07555fefaecc30b0c77c2e81d43e62945a992697a4db935375a66674bf88eb54",
+        "deliveredSha256": {
+          "1x": "bfb8e13e130b9ad8b0409ded72a584373017f57e58a2873af3c8a7ba8e210675",
+          "2x": "420b088efffeac14af106c550f3676aad81eb3d7f980fcc107c491a231c80299"
+        }
+      },
+      "atlas": {
+        "1x": {
+          "rect": [
+            206,
+            138,
+            64,
+            64
+          ],
+          "padding": 2
+        },
+        "2x": {
+          "rect": [
+            412,
+            276,
+            128,
+            128
+          ],
+          "padding": 4
+        }
+      }
+    },
+    "cinnamon-1": {
+      "id": "cinnamon-1",
+      "icon1x": "assets/cardrpg-look/icons/cinnamon-1-1x.webp",
+      "icon2x": "assets/cardrpg-look/icons/cinnamon-1-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "sizes": [
+        [
+          64,
+          64
+        ],
+        [
+          128,
+          128
+        ]
+      ],
+      "provenance": {
+        "round": 3,
+        "sourceRender": "reports/cardrpg-look/rounds/art/icons/round-3/cinnamon-1.png",
+        "sourceSha256": "81b0edb1a0a35f3d3692667f8bdd45513d90c0303592843f88375078141b974b",
+        "authorSha256": "07555fefaecc30b0c77c2e81d43e62945a992697a4db935375a66674bf88eb54",
+        "deliveredSha256": {
+          "1x": "81e1ac6613ce891b224f8e5b5301ff1a2950bf3c701e67b34c35907b5058a9e3",
+          "2x": "47d5947cf80a1ed4966cef14a5e21411dda0699b22909bcdbebd3a2f221ee4a7"
+        }
+      },
+      "atlas": {
+        "1x": {
+          "rect": [
+            2,
+            70,
+            64,
+            64
+          ],
+          "padding": 2
+        },
+        "2x": {
+          "rect": [
+            4,
+            140,
+            128,
+            128
+          ],
+          "padding": 4
+        }
+      }
+    },
+    "cinnamon-2": {
+      "id": "cinnamon-2",
+      "icon1x": "assets/cardrpg-look/icons/cinnamon-2-1x.webp",
+      "icon2x": "assets/cardrpg-look/icons/cinnamon-2-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "sizes": [
+        [
+          64,
+          64
+        ],
+        [
+          128,
+          128
+        ]
+      ],
+      "provenance": {
+        "round": 3,
+        "sourceRender": "reports/cardrpg-look/rounds/art/icons/round-3/cinnamon-2.png",
+        "sourceSha256": "d4a602f9006a1778c031b26e94e43089468ce2b6be05c1c9ae9897ce8099b14e",
+        "authorSha256": "07555fefaecc30b0c77c2e81d43e62945a992697a4db935375a66674bf88eb54",
+        "deliveredSha256": {
+          "1x": "4cfd8278687d3fec7ab6ac9246583c0a468c15fcdb436026134b1ca11180c81f",
+          "2x": "726eeb158f45dedf664facc2d68ae9c5ad2ae065747e521f6ef3f1181ec7e4cc"
+        }
+      },
+      "atlas": {
+        "1x": {
+          "rect": [
+            70,
+            70,
+            64,
+            64
+          ],
+          "padding": 2
+        },
+        "2x": {
+          "rect": [
+            140,
+            140,
+            128,
+            128
+          ],
+          "padding": 4
+        }
+      }
+    },
+    "cinnamon-3": {
+      "id": "cinnamon-3",
+      "icon1x": "assets/cardrpg-look/icons/cinnamon-3-1x.webp",
+      "icon2x": "assets/cardrpg-look/icons/cinnamon-3-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "sizes": [
+        [
+          64,
+          64
+        ],
+        [
+          128,
+          128
+        ]
+      ],
+      "provenance": {
+        "round": 3,
+        "sourceRender": "reports/cardrpg-look/rounds/art/icons/round-3/cinnamon-3.png",
+        "sourceSha256": "59440bbb84dcc236e6674343882d4a79dba21b9005d892fd18301809b43ac66a",
+        "authorSha256": "07555fefaecc30b0c77c2e81d43e62945a992697a4db935375a66674bf88eb54",
+        "deliveredSha256": {
+          "1x": "f2630c915f97f5c790437aa4a5525207637b9d4beca3728896dfa7806e7e2baf",
+          "2x": "6bcf8d0bec8a81af1ee44949802a49eca3bfaacf2d18b864487cb50e2fc71f09"
+        }
+      },
+      "atlas": {
+        "1x": {
+          "rect": [
+            138,
+            70,
+            64,
+            64
+          ],
+          "padding": 2
+        },
+        "2x": {
+          "rect": [
+            276,
+            140,
+            128,
+            128
+          ],
+          "padding": 4
+        }
+      }
+    },
+    "cinnamon-4": {
+      "id": "cinnamon-4",
+      "icon1x": "assets/cardrpg-look/icons/cinnamon-4-1x.webp",
+      "icon2x": "assets/cardrpg-look/icons/cinnamon-4-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "sizes": [
+        [
+          64,
+          64
+        ],
+        [
+          128,
+          128
+        ]
+      ],
+      "provenance": {
+        "round": 3,
+        "sourceRender": "reports/cardrpg-look/rounds/art/icons/round-3/cinnamon-4.png",
+        "sourceSha256": "37a9b464244e87d2256eed745f468248841275067f896b24f3a9f949e7df4a31",
+        "authorSha256": "07555fefaecc30b0c77c2e81d43e62945a992697a4db935375a66674bf88eb54",
+        "deliveredSha256": {
+          "1x": "89af838be8f75f9ff478b2eb747207481835ed7fe00237efe8eaed36dec54567",
+          "2x": "87434b1528c4d97d1eec6b35cf31749b51969777a3874af5e6267f80d7a9d9d3"
+        }
+      },
+      "atlas": {
+        "1x": {
+          "rect": [
+            206,
+            70,
+            64,
+            64
+          ],
+          "padding": 2
+        },
+        "2x": {
+          "rect": [
+            412,
+            140,
+            128,
+            128
+          ],
+          "padding": 4
+        }
+      }
+    },
+    "brioche-1": {
+      "id": "brioche-1",
+      "icon1x": "assets/cardrpg-look/icons/brioche-1-1x.webp",
+      "icon2x": "assets/cardrpg-look/icons/brioche-1-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "sizes": [
+        [
+          64,
+          64
+        ],
+        [
+          128,
+          128
+        ]
+      ],
+      "provenance": {
+        "round": 3,
+        "sourceRender": "reports/cardrpg-look/rounds/art/icons/round-3/brioche-1.png",
+        "sourceSha256": "83b4c65354ce498640ea3d5e6269a21cc73137d17a48b577a0fa90265f843b4b",
+        "authorSha256": "07555fefaecc30b0c77c2e81d43e62945a992697a4db935375a66674bf88eb54",
+        "deliveredSha256": {
+          "1x": "b73005a04faa972edc59192f4ec6c9f5871f213455a05b0941de3278ef2f52f6",
+          "2x": "4057f5a712d0fbf984d05a707456be748b9b5da0266df4647c3a3d03c8bef3f3"
+        }
+      },
+      "atlas": {
+        "1x": {
+          "rect": [
+            274,
+            2,
+            64,
+            64
+          ],
+          "padding": 2
+        },
+        "2x": {
+          "rect": [
+            548,
+            4,
+            128,
+            128
+          ],
+          "padding": 4
+        }
+      }
+    },
+    "brioche-2": {
+      "id": "brioche-2",
+      "icon1x": "assets/cardrpg-look/icons/brioche-2-1x.webp",
+      "icon2x": "assets/cardrpg-look/icons/brioche-2-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "sizes": [
+        [
+          64,
+          64
+        ],
+        [
+          128,
+          128
+        ]
+      ],
+      "provenance": {
+        "round": 3,
+        "sourceRender": "reports/cardrpg-look/rounds/art/icons/round-3/brioche-2.png",
+        "sourceSha256": "fc944432479797896780a8519c3c184d8bac8603d48afce4580ff43b3476bc68",
+        "authorSha256": "07555fefaecc30b0c77c2e81d43e62945a992697a4db935375a66674bf88eb54",
+        "deliveredSha256": {
+          "1x": "997fc45321b94cfaa3b8901760fe389181c71843e8f1624d54a8e095dc5ab840",
+          "2x": "820ce20f35cb57635ee8599ef5369863c095f3ab888d44630211036ed2f3e71c"
+        }
+      },
+      "atlas": {
+        "1x": {
+          "rect": [
+            342,
+            2,
+            64,
+            64
+          ],
+          "padding": 2
+        },
+        "2x": {
+          "rect": [
+            684,
+            4,
+            128,
+            128
+          ],
+          "padding": 4
+        }
+      }
+    },
+    "brioche-3": {
+      "id": "brioche-3",
+      "icon1x": "assets/cardrpg-look/icons/brioche-3-1x.webp",
+      "icon2x": "assets/cardrpg-look/icons/brioche-3-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "sizes": [
+        [
+          64,
+          64
+        ],
+        [
+          128,
+          128
+        ]
+      ],
+      "provenance": {
+        "round": 3,
+        "sourceRender": "reports/cardrpg-look/rounds/art/icons/round-3/brioche-3.png",
+        "sourceSha256": "00f59b898d1f181a3037f5a31467327f85c45bbeb50204ff3081e20e85354911",
+        "authorSha256": "07555fefaecc30b0c77c2e81d43e62945a992697a4db935375a66674bf88eb54",
+        "deliveredSha256": {
+          "1x": "34def84cafe5b9913c6e28cf10ba8534b515d317d36db9d2fed191e857b2a996",
+          "2x": "1a59da8dd48c7a939e1ee74f38a86e1d380a6bfbfac554b6910505da9ff2c555"
+        }
+      },
+      "atlas": {
+        "1x": {
+          "rect": [
+            410,
+            2,
+            64,
+            64
+          ],
+          "padding": 2
+        },
+        "2x": {
+          "rect": [
+            820,
+            4,
+            128,
+            128
+          ],
+          "padding": 4
+        }
+      }
+    },
+    "brioche-4": {
+      "id": "brioche-4",
+      "icon1x": "assets/cardrpg-look/icons/brioche-4-1x.webp",
+      "icon2x": "assets/cardrpg-look/icons/brioche-4-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "sizes": [
+        [
+          64,
+          64
+        ],
+        [
+          128,
+          128
+        ]
+      ],
+      "provenance": {
+        "round": 3,
+        "sourceRender": "reports/cardrpg-look/rounds/art/icons/round-3/brioche-4.png",
+        "sourceSha256": "7d7d185d8a682e542f84729529da645b8c8431275477874c3e79e2f1c96e442c",
+        "authorSha256": "07555fefaecc30b0c77c2e81d43e62945a992697a4db935375a66674bf88eb54",
+        "deliveredSha256": {
+          "1x": "1473ae4fc9d9acba510bae420fcac4515ed92de2b66c7dd918a53c56962c6bf3",
+          "2x": "e296967b6ec52d685d1e8b9242254540968f6cd16f43e013ea79190a69819beb"
+        }
+      },
+      "atlas": {
+        "1x": {
+          "rect": [
+            478,
+            2,
+            64,
+            64
+          ],
+          "padding": 2
+        },
+        "2x": {
+          "rect": [
+            956,
+            4,
+            128,
+            128
+          ],
+          "padding": 4
+        }
+      }
+    },
+    "velvet-1": {
+      "id": "velvet-1",
+      "icon1x": "assets/cardrpg-look/icons/velvet-1-1x.webp",
+      "icon2x": "assets/cardrpg-look/icons/velvet-1-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "sizes": [
+        [
+          64,
+          64
+        ],
+        [
+          128,
+          128
+        ]
+      ],
+      "provenance": {
+        "round": 3,
+        "sourceRender": "reports/cardrpg-look/rounds/art/icons/round-3/velvet-1.png",
+        "sourceSha256": "5595aa7ede3d667dbb0988c9204cfebae14f77d7d85e42adc58751967ed388d1",
+        "authorSha256": "07555fefaecc30b0c77c2e81d43e62945a992697a4db935375a66674bf88eb54",
+        "deliveredSha256": {
+          "1x": "cba4234ee53aaedc36a647ce310a618fb217399d4ad48c7764a28ed7a937d176",
+          "2x": "4ff3d7c82b7ceadc7377f620e40f8c3edb70d7adb108c8c4f65c40f57f192dc6"
+        }
+      },
+      "atlas": {
+        "1x": {
+          "rect": [
+            274,
+            342,
+            64,
+            64
+          ],
+          "padding": 2
+        },
+        "2x": {
+          "rect": [
+            548,
+            684,
+            128,
+            128
+          ],
+          "padding": 4
+        }
+      }
+    },
+    "velvet-2": {
+      "id": "velvet-2",
+      "icon1x": "assets/cardrpg-look/icons/velvet-2-1x.webp",
+      "icon2x": "assets/cardrpg-look/icons/velvet-2-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "sizes": [
+        [
+          64,
+          64
+        ],
+        [
+          128,
+          128
+        ]
+      ],
+      "provenance": {
+        "round": 3,
+        "sourceRender": "reports/cardrpg-look/rounds/art/icons/round-3/velvet-2.png",
+        "sourceSha256": "8a8a3cb91c929e1921d05a08ce1048e061c749330bb73443f92a282581b7ec9c",
+        "authorSha256": "07555fefaecc30b0c77c2e81d43e62945a992697a4db935375a66674bf88eb54",
+        "deliveredSha256": {
+          "1x": "f8aaeb1a4ce2e091de54c519ba559d9165fbd5e7aa0e032b23287da0fd0c2cdd",
+          "2x": "2c72240a87a7e1df7da806848a987d29ccf503c94c41a3c321ddabfe4f30a9d1"
+        }
+      },
+      "atlas": {
+        "1x": {
+          "rect": [
+            342,
+            342,
+            64,
+            64
+          ],
+          "padding": 2
+        },
+        "2x": {
+          "rect": [
+            684,
+            684,
+            128,
+            128
+          ],
+          "padding": 4
+        }
+      }
+    },
+    "velvet-3": {
+      "id": "velvet-3",
+      "icon1x": "assets/cardrpg-look/icons/velvet-3-1x.webp",
+      "icon2x": "assets/cardrpg-look/icons/velvet-3-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "sizes": [
+        [
+          64,
+          64
+        ],
+        [
+          128,
+          128
+        ]
+      ],
+      "provenance": {
+        "round": 3,
+        "sourceRender": "reports/cardrpg-look/rounds/art/icons/round-3/velvet-3.png",
+        "sourceSha256": "0dd4518034c6dc0109a3946e37131d2ac9f68cf02d557bae41bcea5f76c9b473",
+        "authorSha256": "07555fefaecc30b0c77c2e81d43e62945a992697a4db935375a66674bf88eb54",
+        "deliveredSha256": {
+          "1x": "0a1b0c6ec3ceeddc4be7c78df0ad0a24e3dac2bac335c0e6ab7704806a11569e",
+          "2x": "6e609bcff804664ecaf6ea9c251bf0e3c06706a12816c65e7eb2d165b9727b0c"
+        }
+      },
+      "atlas": {
+        "1x": {
+          "rect": [
+            410,
+            342,
+            64,
+            64
+          ],
+          "padding": 2
+        },
+        "2x": {
+          "rect": [
+            820,
+            684,
+            128,
+            128
+          ],
+          "padding": 4
+        }
+      }
+    },
+    "velvet-4": {
+      "id": "velvet-4",
+      "icon1x": "assets/cardrpg-look/icons/velvet-4-1x.webp",
+      "icon2x": "assets/cardrpg-look/icons/velvet-4-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "sizes": [
+        [
+          64,
+          64
+        ],
+        [
+          128,
+          128
+        ]
+      ],
+      "provenance": {
+        "round": 3,
+        "sourceRender": "reports/cardrpg-look/rounds/art/icons/round-3/velvet-4.png",
+        "sourceSha256": "bfa1fef8016dd903d41d4a3b32c3f4018a52a7295a4e7f3e8617f99f2c257e61",
+        "authorSha256": "07555fefaecc30b0c77c2e81d43e62945a992697a4db935375a66674bf88eb54",
+        "deliveredSha256": {
+          "1x": "49279af060db7148d71a6baf042bc2a8a1a9c63a195042e0cdf0eb7b39f32d76",
+          "2x": "0c924773d5376f592747f9f38b5cc0f2be47476324201d4b872486baa3a4d2c7"
+        }
+      },
+      "atlas": {
+        "1x": {
+          "rect": [
+            478,
+            342,
+            64,
+            64
+          ],
+          "padding": 2
+        },
+        "2x": {
+          "rect": [
+            956,
+            684,
+            128,
+            128
+          ],
+          "padding": 4
+        }
+      }
+    },
+    "marigold-1": {
+      "id": "marigold-1",
+      "icon1x": "assets/cardrpg-look/icons/marigold-1-1x.webp",
+      "icon2x": "assets/cardrpg-look/icons/marigold-1-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "sizes": [
+        [
+          64,
+          64
+        ],
+        [
+          128,
+          128
+        ]
+      ],
+      "provenance": {
+        "round": 3,
+        "sourceRender": "reports/cardrpg-look/rounds/art/icons/round-3/marigold-1.png",
+        "sourceSha256": "37ebe13c753dea9d06816c8bbcf162a90d1e2393e646ea90fd48ca780f71c3eb",
+        "authorSha256": "07555fefaecc30b0c77c2e81d43e62945a992697a4db935375a66674bf88eb54",
+        "deliveredSha256": {
+          "1x": "4b091731cc9333229a3ddcdc44eceaf4476adb3d3a65027980063b26141e1bb3",
+          "2x": "2adc081dcbafe175ab42fd679e9ec6a7a29770b193d6fba75ea63175aec8b0f6"
+        }
+      },
+      "atlas": {
+        "1x": {
+          "rect": [
+            2,
+            206,
+            64,
+            64
+          ],
+          "padding": 2
+        },
+        "2x": {
+          "rect": [
+            4,
+            412,
+            128,
+            128
+          ],
+          "padding": 4
+        }
+      }
+    },
+    "marigold-2": {
+      "id": "marigold-2",
+      "icon1x": "assets/cardrpg-look/icons/marigold-2-1x.webp",
+      "icon2x": "assets/cardrpg-look/icons/marigold-2-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "sizes": [
+        [
+          64,
+          64
+        ],
+        [
+          128,
+          128
+        ]
+      ],
+      "provenance": {
+        "round": 3,
+        "sourceRender": "reports/cardrpg-look/rounds/art/icons/round-3/marigold-2.png",
+        "sourceSha256": "d16c494cad98ac50c0fab7f28c1e96e02dc7fb74ef62c61b853fcb860c1d813a",
+        "authorSha256": "07555fefaecc30b0c77c2e81d43e62945a992697a4db935375a66674bf88eb54",
+        "deliveredSha256": {
+          "1x": "3ea778db482a816f9d1bf86d6526696ea9b1b39729698426975c71d7b5af15f6",
+          "2x": "d1adb5f0ffd114a7a989add5bd784262fc38c520341e98667125a2bbad09133d"
+        }
+      },
+      "atlas": {
+        "1x": {
+          "rect": [
+            70,
+            206,
+            64,
+            64
+          ],
+          "padding": 2
+        },
+        "2x": {
+          "rect": [
+            140,
+            412,
+            128,
+            128
+          ],
+          "padding": 4
+        }
+      }
+    },
+    "marigold-3": {
+      "id": "marigold-3",
+      "icon1x": "assets/cardrpg-look/icons/marigold-3-1x.webp",
+      "icon2x": "assets/cardrpg-look/icons/marigold-3-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "sizes": [
+        [
+          64,
+          64
+        ],
+        [
+          128,
+          128
+        ]
+      ],
+      "provenance": {
+        "round": 3,
+        "sourceRender": "reports/cardrpg-look/rounds/art/icons/round-3/marigold-3.png",
+        "sourceSha256": "cc8f9b18953db5bccbc3a55452824a55655e3004e40f7101fbac1b34448daf06",
+        "authorSha256": "07555fefaecc30b0c77c2e81d43e62945a992697a4db935375a66674bf88eb54",
+        "deliveredSha256": {
+          "1x": "5da06c4c363d7f9c5f718d2ad5e1221d7aaec95ce484d89778defd037b9ecc94",
+          "2x": "925f55995fe1e0a19b12854ed8006c26ee52cc483e1d6b0b2495d63badb0de54"
+        }
+      },
+      "atlas": {
+        "1x": {
+          "rect": [
+            138,
+            206,
+            64,
+            64
+          ],
+          "padding": 2
+        },
+        "2x": {
+          "rect": [
+            276,
+            412,
+            128,
+            128
+          ],
+          "padding": 4
+        }
+      }
+    },
+    "marigold-4": {
+      "id": "marigold-4",
+      "icon1x": "assets/cardrpg-look/icons/marigold-4-1x.webp",
+      "icon2x": "assets/cardrpg-look/icons/marigold-4-2x.webp",
+      "display": [
+        64,
+        64
+      ],
+      "sizes": [
+        [
+          64,
+          64
+        ],
+        [
+          128,
+          128
+        ]
+      ],
+      "provenance": {
+        "round": 3,
+        "sourceRender": "reports/cardrpg-look/rounds/art/icons/round-3/marigold-4.png",
+        "sourceSha256": "2128835b22418426dacd96624e5d6bceb4637bc6371f9413d057cec9341c27b4",
+        "authorSha256": "07555fefaecc30b0c77c2e81d43e62945a992697a4db935375a66674bf88eb54",
+        "deliveredSha256": {
+          "1x": "4def3cfd681f51264c3d1d1cd99aa5149f47cd60ce70a55c1cb30d2cb16c8273",
+          "2x": "dced84a92a89bf774358fdbb3431d38e041ebc60503bbbff23d8879c348117cc"
+        }
+      },
+      "atlas": {
+        "1x": {
+          "rect": [
+            206,
+            206,
+            64,
+            64
+          ],
+          "padding": 2
+        },
+        "2x": {
+          "rect": [
+            412,
+            412,
+            128,
+            128
+          ],
+          "padding": 4
+        }
+      }
+    }
+  },
+  "atlases": {
+    "skills1x": {
+      "file": "assets/cardrpg-look/icons/skills-atlas-1x.webp",
+      "size": [
+        544,
+        408
+      ],
+      "sha256": "5f970b06e163b307528e6aee0d6f0328ef7e4abf144cbf19f3083a6cb7bd4083"
+    },
+    "skills2x": {
+      "file": "assets/cardrpg-look/icons/skills-atlas-2x.webp",
+      "size": [
+        1088,
+        816
+      ],
+      "sha256": "ee774f74440f48498c5af07ef73f3ca6fe3725c2734c31d9b53f1ef52140c0ff"
+    }
+  },
+  "note": "Complete 12-portrait/48-skill/4-plate contract. Three look-slice heroes and 9 improved roster models; 0 inherited roster portraits still await L5. Portrait selection does not imply runtime/performance acceptance. Lane A owns card-screen adapters."
 }

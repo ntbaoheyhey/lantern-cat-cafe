@@ -1,0 +1,7 @@
+# Sock R5 / Rain R4 fresh runtime review
+
+Artifact c3ef2e7a75eb5bdaa2c9039b3b4394b02d11bdbe2233eb39358b657bcacb3c86. Sock basic: personally viewed all six samples. The kicking leg remains joined at the hip at36%, correcting the detached upper leg in the earlier pilot. Patch, short stitches and eyes remain seated. A full-resolution36% check and special-action review follow; no continuous collision guarantee or phase acceptance.
+
+Continuation: personally viewed all six Sock special samples and all twelve Rain basic/special samples. Sock's cuff, heel patch and hands remain attached through the sampled kick; the two pupils remain visible. Rain's glaze cap, face medallion, end rings and winding remain attached. Rain special54% visibly clips the lower right boot (bottom projected bound1.028766), so this artifact is rejected for gallery framing. The fresh framing-pilot-2 uses the widened Look-only camera; this historical miss stays recorded. Remaining art limits: Sock's broad toe blend, simple boot facets and raised eye rims; Rain's repetitive winding and broad cyan specular cap. These samples do not establish continuous collision freedom.
+
+Full-resolution follow-up: personally viewed Sock basic36% (original2140x900). The upper kicking leg remains joined to the toe/body, the heel patch and short stitches are seated, and both pupils remain visible. Faceted cuff and boot edges remain visible.

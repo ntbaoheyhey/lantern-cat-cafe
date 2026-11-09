@@ -1,0 +1,270 @@
+{
+  "at": "2026-11-07T07:01:59.164Z",
+  "source": "176493daf1026d7ebcea7453e3f31ca3a734da33",
+  "artifactSha256": "eadac6b2394d5c4d378afab38dacf1364004e5cdcdf416ab408282b29ac56fb0",
+  "bytes": 20287129,
+  "verifiedInputs": 1263,
+  "receipts": {
+    "captures": {
+      "path": "reports/cardrpg-look/validation/l1/after/captures.json",
+      "rows": 6,
+      "sha256": "8b6c09e7034ae048ed0e0dd91d8d49bb815d746f83d0e3c02ebdebd4bbf1a1d7"
+    },
+    "poses": {
+      "path": "reports/cardrpg-look/validation/l1/poses/poses.json",
+      "rows": 72,
+      "sha256": "b7062050712acda5d663906618cd8022c92e1a2687356083e90be241042a018d"
+    },
+    "ab": {
+      "path": "reports/cardrpg-look/validation/l1/ab/checks.json",
+      "rows": 6,
+      "sha256": "52f0a2e2c7f46ccffdc870903426e8098530a7f922f11c52b6cc08c8c805cc19"
+    }
+  },
+  "gates": [
+    {
+      "name": "typecheck",
+      "code": 0,
+      "startedAt": "2026-11-07T05:56:03.791Z",
+      "endedAt": "2026-11-07T05:56:13.159Z",
+      "log": "reports/cardrpg-look/validation/l1-publish/typecheck-resume.log",
+      "sha256": "1b8aa470e522ca5610124a627deafb870c5c8407d30d09d4c09486f163a298c4"
+    },
+    {
+      "name": "lint",
+      "code": 0,
+      "startedAt": "2026-11-07T05:57:19.721Z",
+      "endedAt": "2026-11-07T05:57:29.367Z",
+      "log": "reports/cardrpg-look/validation/l1-publish/lint-resume.log",
+      "sha256": "421d2d313b129fadd56d04a3126764ce994826b2de3d874169a98faf9a156f4f"
+    },
+    {
+      "name": "unit",
+      "code": 0,
+      "startedAt": "2026-11-07T06:51:46.452Z",
+      "endedAt": "2026-11-07T06:52:46.824Z",
+      "log": "reports/cardrpg-look/validation/l1-publish/unit-resume2.log",
+      "sha256": "241cfb669078de8c1720bfea0c34a068755c6791a1e5e99e24e06fecc814809c"
+    },
+    {
+      "name": "build",
+      "code": 0,
+      "startedAt": "2026-11-07T06:52:53.330Z",
+      "endedAt": "2026-11-07T06:53:04.520Z",
+      "log": "reports/cardrpg-look/validation/l1-publish/build-resume2.log",
+      "sha256": "cd6702405f12422522ed0718438d942d2c54cc55e2e2e5c5b80346fe2daedc8f"
+    },
+    {
+      "name": "e2e",
+      "code": 0,
+      "startedAt": "2026-11-07T06:58:07.484Z",
+      "endedAt": "2026-11-07T07:00:05.041Z",
+      "log": "reports/cardrpg-look/validation/l1-publish/e2e-resume3.log",
+      "priorAttempt": "reports/cardrpg-look/validation/attempts/l1-publish-network-failure-20261107/source-gates.json",
+      "sha256": "09d86a1176e6bb027de93556325e37b994a943ba6040ac2a1f7760b40ff940d6"
+    }
+  ],
+  "performance": {
+    "artifact": "eadac6b2394d5c4d378afab38dacf1364004e5cdcdf416ab408282b29ac56fb0",
+    "coldRuns": 7,
+    "castWindows": 24,
+    "coldInteractiveMs": [
+      894.3000000007451,
+      881.8999999985099,
+      882.6999999992549,
+      894.2999999970198,
+      1627.7999999970198,
+      1662.5999999977648,
+      879.6000000014901
+    ],
+    "battleReadyMs": [
+      6776.70000000298,
+      6857.800000000745,
+      6798,
+      6806,
+      8970.29999999702,
+      9098.89999999851,
+      6781
+    ],
+    "coldMaxMs": 133.30000000000018,
+    "castMaxMs": 16.80000000000109,
+    "castP95MaxMs": 16.800000000000182,
+    "castWithin20Min": 1,
+    "errors": []
+  },
+  "startup": {
+    "scripts": 11,
+    "bytes": 3522504,
+    "modules": 686,
+    "threeAndModelModules": 0,
+    "baselineBytes": 3522500,
+    "byteDelta": 4,
+    "strictByteEquality": false,
+    "deltaEvidence": "reports/cardrpg-look/validation/l1/flag-off/startup-diff.json"
+  },
+  "heroes": [
+    {
+      "id": "mochi",
+      "triangles": 11750,
+      "drawMeshes": 17,
+      "modelSha256": "dd35be35301785e1de818618d32a95969902507ce13d008c7c458f990c956521",
+      "portrait": {
+        "cat": "mochi",
+        "source": "assets/cardrpg-look/models/mochi.glb",
+        "sha256": "dd35be35301785e1de818618d32a95969902507ce13d008c7c458f990c956521",
+        "renderer": "4.5.3 LTS",
+        "samples": 64,
+        "frames": 1,
+        "resolution": [
+          1024,
+          1280
+        ],
+        "display": [
+          256,
+          320
+        ],
+        "delivered": [
+          512,
+          640
+        ],
+        "supersampling": 4,
+        "fps": null,
+        "original": true
+      },
+      "turntable": {
+        "cat": "mochi",
+        "source": "assets/cardrpg-look/models/mochi.glb",
+        "sha256": "dd35be35301785e1de818618d32a95969902507ce13d008c7c458f990c956521",
+        "renderer": "4.5.3 LTS",
+        "samples": 16,
+        "frames": 48,
+        "resolution": [
+          384,
+          480
+        ],
+        "display": [
+          256,
+          320
+        ],
+        "delivered": [
+          384,
+          480
+        ],
+        "supersampling": 1.5,
+        "fps": 12,
+        "original": true
+      }
+    },
+    {
+      "id": "soot",
+      "triangles": 11764,
+      "drawMeshes": 17,
+      "modelSha256": "58a467b310da85518d55842a273efbc9dceedce5eda3146ccd628a7563a52cb2",
+      "portrait": {
+        "cat": "soot",
+        "source": "assets/cardrpg-look/models/soot.glb",
+        "sha256": "58a467b310da85518d55842a273efbc9dceedce5eda3146ccd628a7563a52cb2",
+        "renderer": "4.5.3 LTS",
+        "samples": 64,
+        "frames": 1,
+        "resolution": [
+          1024,
+          1280
+        ],
+        "display": [
+          256,
+          320
+        ],
+        "delivered": [
+          512,
+          640
+        ],
+        "supersampling": 4,
+        "fps": null,
+        "original": true
+      },
+      "turntable": {
+        "cat": "soot",
+        "source": "assets/cardrpg-look/models/soot.glb",
+        "sha256": "58a467b310da85518d55842a273efbc9dceedce5eda3146ccd628a7563a52cb2",
+        "renderer": "4.5.3 LTS",
+        "samples": 16,
+        "frames": 48,
+        "resolution": [
+          384,
+          480
+        ],
+        "display": [
+          256,
+          320
+        ],
+        "delivered": [
+          384,
+          480
+        ],
+        "supersampling": 1.5,
+        "fps": 12,
+        "original": true
+      }
+    },
+    {
+      "id": "clover",
+      "triangles": 11744,
+      "drawMeshes": 17,
+      "modelSha256": "4aff6f5d562e34aa3b09f09e2aec1ebc9a12fbce0faa41931449c17a9e80ebfe",
+      "portrait": {
+        "cat": "clover",
+        "source": "assets/cardrpg-look/models/clover.glb",
+        "sha256": "4aff6f5d562e34aa3b09f09e2aec1ebc9a12fbce0faa41931449c17a9e80ebfe",
+        "renderer": "4.5.3 LTS",
+        "samples": 64,
+        "frames": 1,
+        "resolution": [
+          1024,
+          1280
+        ],
+        "display": [
+          256,
+          320
+        ],
+        "delivered": [
+          512,
+          640
+        ],
+        "supersampling": 4,
+        "fps": null,
+        "original": true
+      },
+      "turntable": {
+        "cat": "clover",
+        "source": "assets/cardrpg-look/models/clover.glb",
+        "sha256": "4aff6f5d562e34aa3b09f09e2aec1ebc9a12fbce0faa41931449c17a9e80ebfe",
+        "renderer": "4.5.3 LTS",
+        "samples": 16,
+        "frames": 48,
+        "resolution": [
+          384,
+          480
+        ],
+        "display": [
+          256,
+          320
+        ],
+        "delivered": [
+          384,
+          480
+        ],
+        "supersampling": 1.5,
+        "fps": 12,
+        "original": true
+      }
+    }
+  ],
+  "protectedChanges": [],
+  "limitations": [
+    "Strict default startup byte parity misses by 4 bytes; loaded module graph unchanged.",
+    "Sampled motion review is separate from exhaustive collision proof.",
+    "Stage, post, remaining units and VFX remain inherited at L1.",
+    "Final lifecycle/throttle/matrix gates remain unrun."
+  ]
+}

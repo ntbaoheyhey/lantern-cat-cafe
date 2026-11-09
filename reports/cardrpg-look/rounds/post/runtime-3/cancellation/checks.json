@@ -1,0 +1,79 @@
+{
+  "sha256": "cee6234f273a7bcb465ae437172198289ee4b2e687ed9fad664d8263a11a8241",
+  "method": "Independent real TurnScene instances; cancel at six loading boundaries, wait for asynchronous cleanup, count owned resource dispose events. Not a heap/lifecycle or timing acceptance.",
+  "rows": [
+    {
+      "look": true,
+      "boundary": "immediate",
+      "atBoundary": true,
+      "resources": 0,
+      "released": 0,
+      "unreleased": [],
+      "rendererDisposed": 1,
+      "contextLost": 1,
+      "canvasRemoved": true,
+      "failures": []
+    },
+    {
+      "look": true,
+      "boundary": "post",
+      "atBoundary": true,
+      "resources": 21,
+      "released": 21,
+      "unreleased": [],
+      "rendererDisposed": 1,
+      "contextLost": 1,
+      "canvasRemoved": true,
+      "failures": []
+    },
+    {
+      "look": true,
+      "boundary": "stage",
+      "atBoundary": true,
+      "resources": 167,
+      "released": 167,
+      "unreleased": [],
+      "rendererDisposed": 1,
+      "contextLost": 1,
+      "canvasRemoved": true,
+      "failures": []
+    },
+    {
+      "look": false,
+      "boundary": "immediate",
+      "atBoundary": true,
+      "resources": 0,
+      "released": 0,
+      "unreleased": [],
+      "rendererDisposed": 1,
+      "contextLost": 1,
+      "canvasRemoved": true,
+      "failures": []
+    },
+    {
+      "look": false,
+      "boundary": "stage",
+      "atBoundary": true,
+      "resources": 186,
+      "released": 186,
+      "unreleased": [],
+      "rendererDisposed": 1,
+      "contextLost": 1,
+      "canvasRemoved": true,
+      "failures": []
+    },
+    {
+      "look": false,
+      "boundary": "decorating",
+      "atBoundary": true,
+      "resources": 294,
+      "released": 294,
+      "unreleased": [],
+      "rendererDisposed": 1,
+      "contextLost": 1,
+      "canvasRemoved": true,
+      "failures": []
+    }
+  ],
+  "errors": []
+}

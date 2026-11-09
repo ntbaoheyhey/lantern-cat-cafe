@@ -1,0 +1,76 @@
+{
+  "quality": 80,
+  "size": 512,
+  "detail": 256,
+  "scriptSha256": "83322913d3e0e418622cd6233ac08b3f0a7b4b2ef3801d28b2c21885dcb74251",
+  "method": "From raw GLB: resize textures, optionally resize normal/metallic-roughness separately, encode WebP, then meshopt high. No geometry simplification. Preview GLB retains uncompressed geometry for studio comparison.",
+  "rows": [
+    {
+      "owner": "sock-skipper",
+      "input": "assets/cardrpg-look/models/sock-skipper.glb",
+      "output": "reports/cardrpg-look/validation/l5/compression/sock-r5-512-256-q80/sock-skipper.glb",
+      "preview": "reports/cardrpg-look/validation/l5/compression/sock-r5-512-256-q80/sock-skipper-preview.glb",
+      "parameters": [
+        [
+          "resize",
+          "assets/cardrpg-look/models/sock-skipper.glb",
+          "reports/cardrpg-look/validation/l5/compression/sock-r5-512-256-q80/sock-skipper-resized.glb",
+          "--width",
+          "512",
+          "--height",
+          "512"
+        ],
+        [
+          "resize",
+          "reports/cardrpg-look/validation/l5/compression/sock-r5-512-256-q80/sock-skipper-resized.glb",
+          "reports/cardrpg-look/validation/l5/compression/sock-r5-512-256-q80/sock-skipper-normal-sized.glb",
+          "--width",
+          "256",
+          "--height",
+          "256",
+          "--pattern",
+          "*normal"
+        ],
+        [
+          "resize",
+          "reports/cardrpg-look/validation/l5/compression/sock-r5-512-256-q80/sock-skipper-normal-sized.glb",
+          "reports/cardrpg-look/validation/l5/compression/sock-r5-512-256-q80/sock-skipper-material-sized.glb",
+          "--width",
+          "256",
+          "--height",
+          "256",
+          "--pattern",
+          "*roughness"
+        ],
+        [
+          "webp",
+          "reports/cardrpg-look/validation/l5/compression/sock-r5-512-256-q80/sock-skipper-material-sized.glb",
+          "reports/cardrpg-look/validation/l5/compression/sock-r5-512-256-q80/sock-skipper-preview.glb",
+          "--quality",
+          "80",
+          "--effort",
+          "100",
+          "--lossless",
+          "false",
+          "--near-lossless",
+          "false"
+        ],
+        [
+          "meshopt",
+          "reports/cardrpg-look/validation/l5/compression/sock-r5-512-256-q80/sock-skipper-preview.glb",
+          "reports/cardrpg-look/validation/l5/compression/sock-r5-512-256-q80/sock-skipper.glb",
+          "--level",
+          "high"
+        ]
+      ],
+      "before": 2732276,
+      "after": 144180,
+      "gzipBefore": 2605166,
+      "gzipAfter": 112536,
+      "sourceSha256": "9ad61bafc5b4222e65a294812ec8c2b2b5c70824f9fbe14884cb4e3e216b3524",
+      "sha256": "b111ced4b354b0d8527f18b7091bec7a70a6e39f2718b8b8dace113fd199bc6b",
+      "previewSha256": "b2e0af228255193444e366ff38182807e48479c9cf2f3e951580eaf9aeff8e03"
+    }
+  ],
+  "status": "Visual comparison required"
+}

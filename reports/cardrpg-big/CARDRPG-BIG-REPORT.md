@@ -1,10 +1,10 @@
-Báo cáo tiến độ mới nhất: [A5 checkpoint](a5/A5-REPORT.md). A5 đã cải thiện luồng mở đầu và ngày7; cân bằng, nhịp30phút, startup và nghiệm thu mới vẫn còn mở. Phần A4 bên dưới được giữ nguyên làm mốc lịch sử; không phải số đo của mã A5 hiện tại.
+Đã triển khai Skills V5: Burn, Bleed, Bitter, nhiều mục tiêu và bốn phản ứng; trận đấu vẫn tự động.
+Đã đo chung bản V5 và bản dự phòng trên khối hạt giống mới 20001–20500; mọi lần thử đều được giữ lại.
+Kết quả là PARTIAL: các ô MISS bên dưới vẫn chưa đạt, không được thay bằng kết quả kiểm thử mã nguồn.
+Bản demo offline riêng giữ nguyên bản A4; hình ảnh mới của lane B chưa được tích hợp.
+Mọi PR vẫn là draft, chưa merge hay deploy; nhận diện trạng thái và mức độ vui của người thật chưa được xác minh.
 
-Bản thử nghiệm có đội hình, chiến thuật trước trận, trang bị và vật phẩm dùng giữa các trận.
-Cafe, nhiệm vụ, bộ sưu tập và đổi thưởng bằng dấu mời đã thành các vòng chơi có phần thưởng.
-P6 đã đo train/heldout tách biệt; các mục cân bằng chưa đạt vẫn ghi MISS, không coi kiểm thử chức năng là cân bằng đạt.
-Demo chạy offline; kết quả browser và bảng số liệu bên dưới gắn với đúng SHA của bản thử nghiệm.
-Đây là bản nháp để đánh giá; còn lệch cân bằng, chi phí tải trang và yêu cầu trình diễn cho Lane B.
+Current: [Skills V5 acceptance](skills-v5/V5A-REPORT.md), registered20001–20500 in both modes, 21PASS/21MISS and self-score6.16/10. [STATE](skills-v5/STATE.md), [draft stack](skills-v5/STACK.md), [offline demo](../../docs/cardrpg3/skills-v5.html), [current guide](../../docs/cardrpg3/skills-v5-guide.html). Runtime6772eb343 remains unchanged after registration; original source/hash checks and every miss are retained. A5 gates continue in this report; the A4 section below is historical.
 
 # A4 gameplay delivery
 REFERENCE: [Gameplay v4](../../docs/design/cardrpg/GAMEPLAY-V4.md); [research](../../docs/design/cardrpg/RESEARCH-GAMEPLAY-V4.md); [NFT boundary](../../docs/design/cardrpg/NFT-VALUE-SPEC.md).
@@ -86,3 +86,5 @@ Informed Home03 evidence published as [DRAFT405](https://github.com/ntbaoheyhey/
 A5 C1 decisions: runtime0e1e15180108b443ce2e615ea54272b907cc8bb0; six source gates1783web/1192rules/421E2E/build PASS and integrated165checks/159captures, scopedcontrast6.192688:1. Existing source-bound auditPASS; no checks repeated. [Reviewed ON preview](a5/c1-decisions/artifact-on/index.html)20,929,841bytes/SHA9e25f238ea96ea4df2f59f2a2a77df6ccf29b7eb5733ae8cbb349a14b6c1bb98; OFF same size/SHA9158b51e0d2e182ed4cd2de8cf0e62434fd3d7a689e8808421b7d4910cc7c584. OFF8250/baseline/historical13 exact. A5 open gates continue inside Skills V5 (reports/cardrpg-big/skills-v5/). Main offline index stays A4; fresh20001-20500 UNUSED.
 
 C1 decisions published as [DRAFT406](https://github.com/ntbaoheyhey/taskbar-hero/pull/406), stacked on405. A5 continues as V5A after explicit user resume.
+
+Skills V5 S8 [DRAFT422](https://github.com/ntbaoheyhey/taskbar-hero/pull/422), unchanged runtime6772eb343/evidencec828691be: original60.04active-minute Home complete; rewardgap929.859s and dead-time reduction−10.441%MISS. Earned day7 boss130.129s and fixedYarn280.037sMISS. Native16.8msPASS,234draws/CPU4cold183.3msMISS; defaultJS+149485bytesPASS,4/6CPUmedian/max comparisonsMISS. Six first-attempt gates1785web/1262rules/421E2E/buildPASS; OFF8250/fallback180+45 exact. [S8 report](skills-v5/S8-REPORT.md), [pre-S6 repair revisit](skills-v5/PRE-S6-REVISIT.md). S6 paired20001–20500 registration follows before first use.

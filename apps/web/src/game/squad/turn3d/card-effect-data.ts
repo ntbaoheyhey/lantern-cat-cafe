@@ -1,3 +1,4 @@
+export { CARD_STATUS_LOOKS } from './card-status-looks';
 import { BOSS_EFFECTS } from './card-boss-effects';
 import { ENEMY_BATCH4_EFFECTS } from './card-enemy-batch4-effects';
 import { ENEMY_BATCH3_EFFECTS } from './card-enemy-batch3-effects';
@@ -10,7 +11,7 @@ import type { Direction } from './effect-direction';
 import type { CardEffectPrimitive } from './card-effect-primitives';
 
 export type CardEffectMotion = 'hold' | 'expand' | 'orbit' | 'projectile' | 'burst'
-  | 'fall' | 'rise' | 'cross' | 'pour' | 'sweep' | 'pulse';
+  | 'fall' | 'rise' | 'cross' | 'pour' | 'sweep' | 'pulse' | 'emit' | 'shrink';
 export type CardEffectAnchor = 'caster' | 'target' | 'all-targets';
 export interface CardEffectLayer {
   primitive: CardEffectPrimitive;
@@ -28,9 +29,12 @@ export interface CardEffectLayer {
   ground: boolean;
   accent: boolean;
   opacity: number;
+  spriteRow?: number;
+  emitter?: {mode: 'burst' | 'rate';life: number;velocity: [number,number,number];gravity: number;curl: number;inherit: number};
 }
 export interface CardEffectRecipe {
   name: string;
+  authored?: boolean;
   color: string;
   accent: string;
   element: string;
@@ -56,7 +60,7 @@ function recipe(name: string, color: string, accent: string, element: string,
 }
 
 /** Existing rule statuses receive small foot-level cues with protected faces. */
-export const CARD_STATUS_LOOKS: Record<string, { color: string; layer: CardEffectLayer }> = {
+export const LEGACY_CARD_STATUS_LOOKS: Record<string, { color: string; layer: CardEffectLayer }> = {
   scald: { color: '#efaa73', layer: layer('flame', 'rise', 'target', { count: 3, size: .24, spread: .46, height: .08, opacity: .5 }) },
   tangle: { color: '#c19ada', layer: layer('knot', 'orbit', 'target', { count: 2, size: .35, spread: .48, height: .13, opacity: .5 }) },
   decoy: { color: '#efbc73', layer: layer('knock-ring', 'pulse', 'target', { size: .95, height: .06, ground: true, opacity: .45 }) },

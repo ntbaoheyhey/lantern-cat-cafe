@@ -1,0 +1,9 @@
+
+> @taskbar-hero/web@0.0.0 typecheck /Users/bao/taskbar-hero-cardrpg-b2/apps/web
+> tsc --noEmit
+
+src/game/squad/turn3d/look-full-recipes.ts(43,85): error TS2345: Argument of type '"shrink"' is not assignable to parameter of type 'CardEffectMotion'.
+src/game/squad/turn3d/look-full-recipes.ts(47,50): error TS2345: Argument of type '"shrink"' is not assignable to parameter of type 'CardEffectMotion'.
+/Users/bao/taskbar-hero-cardrpg-b2/apps/web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/web@0.0.0 typecheck: `tsc --noEmit`
+Exit status 2

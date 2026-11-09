@@ -1,0 +1,90 @@
+{
+  "label": "M4 retained E2E isolated failures",
+  "root": "/tmp/cardrpg-v5full-m4/b-e2e-isolated",
+  "cwd": "/Users/bao/taskbar-hero-cardrpg-b2",
+  "env": {},
+  "groups": [
+    {
+      "name": "two unchanged runs per failure",
+      "lock": true,
+      "jobs": [
+        {
+          "name": "idle-1",
+          "args": [
+            "pnpm",
+            "--filter",
+            "@taskbar-hero/web",
+            "test:e2e",
+            "e2e/qa/s3-walkthrough.spec.ts",
+            "--grep",
+            "idle loop accrues fish and XP",
+            "--workers=1"
+          ],
+          "env": {
+            "E2E_PORT_CLASSIC": "5920",
+            "E2E_PORT_V2": "5921",
+            "E2E_PORT_SERVER": "5922",
+            "E2E_PORT_API": "5923"
+          }
+        },
+        {
+          "name": "idle-2",
+          "args": [
+            "pnpm",
+            "--filter",
+            "@taskbar-hero/web",
+            "test:e2e",
+            "e2e/qa/s3-walkthrough.spec.ts",
+            "--grep",
+            "idle loop accrues fish and XP",
+            "--workers=1"
+          ],
+          "env": {
+            "E2E_PORT_CLASSIC": "5920",
+            "E2E_PORT_V2": "5921",
+            "E2E_PORT_SERVER": "5922",
+            "E2E_PORT_API": "5923"
+          }
+        },
+        {
+          "name": "squad-1",
+          "args": [
+            "pnpm",
+            "--filter",
+            "@taskbar-hero/web",
+            "test:e2e",
+            "e2e/ui/squad.spec.ts",
+            "--grep",
+            "a local fight never writes storage",
+            "--workers=1"
+          ],
+          "env": {
+            "E2E_PORT_CLASSIC": "5920",
+            "E2E_PORT_V2": "5921",
+            "E2E_PORT_SERVER": "5922",
+            "E2E_PORT_API": "5923"
+          }
+        },
+        {
+          "name": "squad-2",
+          "args": [
+            "pnpm",
+            "--filter",
+            "@taskbar-hero/web",
+            "test:e2e",
+            "e2e/ui/squad.spec.ts",
+            "--grep",
+            "a local fight never writes storage",
+            "--workers=1"
+          ],
+          "env": {
+            "E2E_PORT_CLASSIC": "5920",
+            "E2E_PORT_V2": "5921",
+            "E2E_PORT_SERVER": "5922",
+            "E2E_PORT_API": "5923"
+          }
+        }
+      ]
+    }
+  ]
+}

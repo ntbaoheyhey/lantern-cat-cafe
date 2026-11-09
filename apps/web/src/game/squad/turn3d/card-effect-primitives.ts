@@ -14,7 +14,8 @@ export const CARD_EFFECT_PRIMITIVES = [
   'wreath', 'greenhouse', 'sprout', 'button', 'seam', 'sock', 'spool', 'needle',
   'wing', 'knot', 'yarn-fan', 'cushion', 'shield-facet', 'petal', 'crescent', 'bubble',
 ] as const;
-export type CardEffectPrimitive = typeof CARD_EFFECT_PRIMITIVES[number];
+export const LOOK_PARTICLE_PRIMITIVES=['soft-particle','motif-particle'] as const;
+export type CardEffectPrimitive = typeof CARD_EFFECT_PRIMITIVES[number] | typeof LOOK_PARTICLE_PRIMITIVES[number];
 type Point = [number, number, number?];
 
 /** Original cafe silhouettes, authored in local XY with a small physical depth. */
@@ -56,6 +57,8 @@ export function createCardPrimitive(kind: CardEffectPrimitive): T.BufferGeometry
       y + (px * Math.sin(angle) + py * Math.cos(angle)) * size]));
   };
   const builders: Record<Exclude<CardEffectPrimitive, RosterPrimitive | Batch2Primitive | Batch3Primitive>, () => void> = {
+    'soft-particle'() {parts.push(new T.PlaneGeometry(1,1));},
+    'motif-particle'() {parts.push(new T.PlaneGeometry(1,1));},
     door() {
       path([[-.46, -.58], [-.46, .5], [0, .68], [.46, .5], [.46, -.58]], .055);
       path([[-.31, -.52], [-.31, .39], [.10, .48], [.10, -.44]], .032);

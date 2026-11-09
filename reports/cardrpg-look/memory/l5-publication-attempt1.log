@@ -1,0 +1,38 @@
+remote: 
+remote: Create a pull request for 'ai/codex-cardrpg-look-l5-2026-11-07' on GitHub by visiting:        
+remote:      https://github.com/ntbaoheyhey/taskbar-hero/pull/new/ai/codex-cardrpg-look-l5-2026-11-07        
+remote: 
+To https://github.com/ntbaoheyhey/taskbar-hero
+ * [new branch]        c5048bee0bb03c41f2f05f941ae7fef179281896 -> ai/codex-cardrpg-look-l5-2026-11-07
+To https://github.com/ntbaoheyhey/taskbar-hero
+   c5048bee..23f26a8b  23f26a8b7a7f43a27eff96fd16eca5a0d7f32c44 -> ai/codex-cardrpg-look-l5-2026-11-07
+{"batch": 1, "commit": "23f26a8b7a7f43a27eff96fd16eca5a0d7f32c44", "changedFiles": 175, "inputBytes": 47306240}
+To https://github.com/ntbaoheyhey/taskbar-hero
+   23f26a8b..06ba5836  06ba5836755b3929bbfa515bed2506853388a7a5 -> ai/codex-cardrpg-look-l5-2026-11-07
+{"batch": 2, "commit": "06ba5836755b3929bbfa515bed2506853388a7a5", "changedFiles": 241, "inputBytes": 47568588}
+To https://github.com/ntbaoheyhey/taskbar-hero
+   06ba5836..6bb95195  6bb951957c25f899de51a4bafde4490498b8e6ce -> ai/codex-cardrpg-look-l5-2026-11-07
+{"batch": 3, "commit": "6bb951957c25f899de51a4bafde4490498b8e6ce", "changedFiles": 224, "inputBytes": 47939772}
+To https://github.com/ntbaoheyhey/taskbar-hero
+   6bb95195..8a455c56  8a455c56f0c913c6678e6ed7cf3c55d9743cf56a -> ai/codex-cardrpg-look-l5-2026-11-07
+{"batch": 4, "commit": "8a455c56f0c913c6678e6ed7cf3c55d9743cf56a", "changedFiles": 118, "inputBytes": 47841570}
+To https://github.com/ntbaoheyhey/taskbar-hero
+   8a455c56..c1e8ed15  c1e8ed15e5f68df2beb0213b2458ecd11eed9d47 -> ai/codex-cardrpg-look-l5-2026-11-07
+{"batch": 5, "commit": "c1e8ed15e5f68df2beb0213b2458ecd11eed9d47", "changedFiles": 215, "inputBytes": 47748707}
+To https://github.com/ntbaoheyhey/taskbar-hero
+   c1e8ed15..91e3e3d9  91e3e3d95ba0d3f3a2c7e1f4344c69be296369b7 -> ai/codex-cardrpg-look-l5-2026-11-07
+{"batch": 6, "commit": "91e3e3d95ba0d3f3a2c7e1f4344c69be296369b7", "changedFiles": 249, "inputBytes": 46557560}
+The following paths are ignored by one of your .gitignore files:
+reports/cardrpg-look/validation/l5/attempts/e2e-1/test-results
+hint: Use -f if you really want to add them.
+hint: Disable this message with "git config set advice.addIgnoredFile false"
+Traceback (most recent call last):
+  File "/Users/bao/taskbar-hero-cardrpg-look/reports/cardrpg-look/memory/l5-publish.py", line 59, in <module>
+    git('add','--pathspec-from-file='+str(pathspec))
+  File "/Users/bao/taskbar-hero-cardrpg-look/reports/cardrpg-look/memory/l5-publish.py", line 13, in git
+    return subprocess.check_output(['git',*args],cwd=root,text=True).strip()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 424, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 528, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['git', 'add', '--pathspec-from-file=/tmp/cardrpg-look-l5-publish-batch-7.txt']' returned non-zero exit status 1.

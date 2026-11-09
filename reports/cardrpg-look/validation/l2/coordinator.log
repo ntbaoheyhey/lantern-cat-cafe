@@ -1,0 +1,87 @@
+{"lock":"acquired","lane":"B-LOOK","pid":23437,"startedAt":"2026-11-07T08:19:06.901Z","task":"LOOK capture inventory"}
+{"lock":"released","task":"LOOK capture inventory"}
+{"lock":"acquired","lane":"B-LOOK","pid":23437,"startedAt":"2026-11-07T08:19:22.819Z","task":"LOOK stills 1-6/18"}
+{"capture":"1280x720-stage-1-close.png","bytes":1568535}
+{"capture":"1280x720-stage-1-wide.png","bytes":1507209}
+{"capture":"1280x720-stage-1-far.png","bytes":1446454}
+{"capture":"1280x720-stage-2-close.png","bytes":1567430}
+{"capture":"1280x720-stage-2-wide.png","bytes":1505762}
+{"capture":"1280x720-stage-2-far.png","bytes":1444471}
+{"lock":"released","task":"LOOK stills 1-6/18"}
+{"lock":"acquired","lane":"B-LOOK","pid":23437,"startedAt":"2026-11-07T08:20:34.411Z","task":"LOOK stills 7-12/18"}
+{"capture":"1280x720-stage-3-close.png","bytes":1567016}
+{"capture":"1280x720-stage-3-wide.png","bytes":1505141}
+{"capture":"1280x720-stage-3-far.png","bytes":1444379}
+{"capture":"1440x900-stage-1-close.png","bytes":3327959}
+{"capture":"1440x900-stage-1-wide.png","bytes":3209771}
+{"capture":"1440x900-stage-1-far.png","bytes":3104510}
+{"lock":"released","task":"LOOK stills 7-12/18"}
+{"lock":"acquired","lane":"B-LOOK","pid":23437,"startedAt":"2026-11-07T08:21:04.613Z","task":"LOOK stills 13-18/18"}
+{"capture":"1440x900-stage-2-close.png","bytes":3334542}
+{"capture":"1440x900-stage-2-wide.png","bytes":3215796}
+{"capture":"1440x900-stage-2-far.png","bytes":3110022}
+{"capture":"1440x900-stage-3-close.png","bytes":3326584}
+{"capture":"1440x900-stage-3-wide.png","bytes":3207777}
+{"capture":"1440x900-stage-3-far.png","bytes":3103252}
+{"lock":"released","task":"LOOK stills 13-18/18"}
+{"lock":"acquired","lane":"B-LOOK","pid":25898,"startedAt":"2026-11-07T08:23:29.038Z","task":"LOOK L2 battle 1024"}
+{"width":1024,"cameras":3,"disposal":{"expected":20,"actual":20,"oldDisposed":true},"errors":[]}
+{"lock":"released","task":"LOOK L2 battle 1024"}
+{"lock":"acquired","lane":"B-LOOK","pid":25898,"startedAt":"2026-11-07T08:23:43.853Z","task":"LOOK L2 battle 1280"}
+{"width":1280,"cameras":3,"disposal":{"expected":20,"actual":20,"oldDisposed":true},"errors":[]}
+{"lock":"released","task":"LOOK L2 battle 1280"}
+{"lock":"acquired","lane":"B-LOOK","pid":25898,"startedAt":"2026-11-07T08:23:59.136Z","task":"LOOK L2 battle 1440"}
+{"width":1440,"cameras":3,"disposal":{"expected":20,"actual":20,"oldDisposed":true},"errors":[]}
+{"lock":"released","task":"LOOK L2 battle 1440"}
+{"lock":"acquired","lane":"B-LOOK","pid":27757,"startedAt":"2026-11-07T08:24:15.278Z","task":"LOOK A/B 1024"}
+{"width":1024,"height":600,"toggles":2,"errors":[]}
+{"lock":"released","task":"LOOK A/B 1024"}
+{"lock":"acquired","lane":"B-LOOK","pid":27757,"startedAt":"2026-11-07T08:24:40.226Z","task":"LOOK A/B 1280"}
+{"width":1280,"height":720,"toggles":2,"errors":[]}
+{"lock":"released","task":"LOOK A/B 1280"}
+{"lock":"acquired","lane":"B-LOOK","pid":27757,"startedAt":"2026-11-07T08:25:53.188Z","task":"LOOK A/B 1440"}
+{"width":1440,"height":900,"toggles":2,"errors":[]}
+{"lock":"released","task":"LOOK A/B 1440"}
+{"lock":"acquired","lane":"B-LOOK","pid":29498,"startedAt":"2026-11-07T08:28:46.892Z","task":"LOOK l2 flag-off build"}
+{"prepared":true,"chunks":30,"directory":"/tmp/cardrpg-look-l2-flag-off"}
+{"lock":"released","task":"LOOK l2 flag-off build"}
+{"lock":"acquired","lane":"B-LOOK","pid":29498,"startedAt":"2026-11-07T08:29:02.327Z","task":"LOOK l2 flag-off browser"}
+{"scripts":11,"prohibitedModules":[],"modelRequests":[],"errors":[]}
+{"lock":"released","task":"LOOK l2 flag-off browser"}
+{"lock":"acquired","lane":"B-LOOK","pid":29498,"startedAt":"2026-11-07T08:29:14.893Z","task":"LOOK l2 cold batch1"}
+{"name":"1280x720-dpr1-cpu1","max":333.30000000000007,"p95":16.700000000000728,"above50":3,"stageFraction":0.7888888888888889,"errors":[]}
+{"name":"1280x720-dpr2-cpu1","max":249.99999999999994,"p95":16.800000000000182,"above50":3,"stageFraction":0.7888888888888889,"errors":[]}
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+page.waitForFunction: Timeout 30000ms exceeded.
+    at /Users/bao/taskbar-hero-cardrpg-look/tools/cardrpg-big2/measure.mjs:68:16 {
+  log: [],
+  name: 'TimeoutError'
+}
+
+Node.js v24.22.2
+{"lock":"released","task":"LOOK l2 cold batch1"}
+file:///Users/bao/taskbar-hero-cardrpg-look/tools/cardrpg-look/phase-measure.mjs:9
+ child.on('error',reject);child.on('close',code=>code===0?resolve():reject(Error(`${script}: ${code}`)));
+                                                                           ^
+
+Error: tools/cardrpg-big2/measure.mjs: 1
+    at ChildProcess.<anonymous> (file:///Users/bao/taskbar-hero-cardrpg-look/tools/cardrpg-look/phase-measure.mjs:9:76)
+    at ChildProcess.emit (node:events:514:28)
+    at maybeClose (node:internal/child_process:1172:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:335:5)
+
+Node.js v24.22.2
+file:///Users/bao/taskbar-hero-cardrpg-look/reports/cardrpg-look/memory/l2-finish-checks.mjs:3
+const run=(script,args=[],env={})=>new Promise((resolve,reject)=>{const child=spawn(process.execPath,[script,...args],{stdio:'inherit',env:{...process.env,...env}});child.on('error',reject);child.on('close',code=>code===0?resolve():reject(Error(`${script}: ${code}`)))});
+                                                                                                                                                                                                                                               ^
+
+Error: tools/cardrpg-look/phase-measure.mjs: 1
+    at ChildProcess.<anonymous> (file:///Users/bao/taskbar-hero-cardrpg-look/reports/cardrpg-look/memory/l2-finish-checks.mjs:3:240)
+    at ChildProcess.emit (node:events:514:28)
+    at maybeClose (node:internal/child_process:1172:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:335:5)
+
+Node.js v24.22.2

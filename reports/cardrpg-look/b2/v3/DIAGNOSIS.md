@@ -1,0 +1,11 @@
+# V3 trace diagnosis
+Historical closure is retained; no failed sample was removed or repeated to obtain a pass.
+| Window | Evidence / remaining cause | Response |
+| --- | --- | --- |
+| Panko-1 repeat CPU4, previously150ms | Prior closure correlated155ms main-thread work; retained perf-before traces and new CPU4 trace show Three program selection/texture upload during preparation. Current same-artifact casts16.8ms. | Existing compileAsync and texture/geometry prewarm retained; no unsupported attribution of the old spike to labels. |
+| Cinnamon4/Brioche4/Velvet4 CPU4 | New closure first/repeat16.8ms; whole-page133.3/116.7/183.4ms. Largest callbacks are React scheduler D (109/101/157ms); source-position lookup and CPU samples identify WebGLProgram.getParameters/texSubImage2D and renderer program acquisition during scene setup. | Loading remains explicit. V4 reduces mounted HUD text; native opening is separately checked. |
+| Clover1 historical633.3ms | Prior paired ABBA retained mixed83.3ms and other results; failure not reproduced in fresh baseline. | No claim to fix an unreproduced driver stall. Fixed material/light pools remain. |
+| Historical cold533–666.6ms | Closure trace-diagnosis shows538.84ms CommandBufferProxyImpl::WaitForToken nested GPU upload/flush. | Existing sliced texture uploads retained; fresh closure native16.8ms whole-page. |
+| Historical post-ready250–400ms | Closure trace-diagnosis records274.735ms CALayerTreeCoordinator::ApplyBackpressure during present. | macOS presentation backpressure remains an environmental risk; no software-only cure claimed. |
+| Repeated idle label layout | Source reran candidate search and hid/revealed every DOM plate at20Hz. | Collision-safe placement reuse; write visibility/transform only when changed. Cache invalidation tests cover moving faces and viewport/roster changes. |
+Fresh baseline:24 native actions ×first/repeat +4 CPU4 actions ×first/repeat, all56windows16.8ms maximum. One cold native +oneCPU4,16.8/150ms whole-page. V3 acceptance completed its registered 72 actions / 144 cast windows and six cold runs; exact results remain in perf/summary.json. The post-V5 delivery run also completed 144 windows and six cold samples; interrupted CPU4 continuation is disclosed in v5/perf/resume.json.

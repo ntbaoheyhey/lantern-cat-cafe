@@ -1,0 +1,115 @@
+{
+  "method": "Read-only paired case comparison. Same384 fixtures,500 direct seeds/cell,20001\u201320500; no replay, tuning or gate change. Each mode uses its complete production configuration.",
+  "sources": {
+    "on": {
+      "path": "reports/cardrpg-big/skills-v5/s6/on/equipped/results.json",
+      "sha256": "b04f893fe7df7d40af03d793dd5de2932d99fbd837382c7d6a245375e54b75da"
+    },
+    "off": {
+      "path": "reports/cardrpg-big/skills-v5/s6/off/equipped/results.json",
+      "sha256": "fd7b6176867fb2ef3d2318ed257b69afb7bf9e0eb8cf9f5f1517449b1640b810"
+    }
+  },
+  "unchangedGatePp": 12,
+  "transitions": {
+    "bothPass": 297,
+    "fallbackMissV5Pass": 49,
+    "fallbackPassV5Miss": 29,
+    "bothMiss": 9
+  },
+  "chapters": [
+    {
+      "chapter": 1,
+      "off": {
+        "cells": 128,
+        "misses": 22,
+        "worst": {
+          "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-weapon-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+          "templateId": "crumbweave-weapon-legendary",
+          "cardId": "soot",
+          "chapter": 1,
+          "n": 500,
+          "beforeWins": 189,
+          "wins": 419,
+          "gainPp": 46
+        }
+      },
+      "on": {
+        "cells": 128,
+        "misses": 27,
+        "worst": {
+          "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-charm-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":1}",
+          "templateId": "hearthloom-charm-legendary",
+          "cardId": "mochi",
+          "chapter": 1,
+          "n": 500,
+          "beforeWins": 232,
+          "wins": 474,
+          "gainPp": 48.4
+        }
+      }
+    },
+    {
+      "chapter": 2,
+      "off": {
+        "cells": 128,
+        "misses": 25,
+        "worst": {
+          "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-charm-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":2}",
+          "templateId": "bellsteel-charm-legendary",
+          "cardId": "mochi",
+          "chapter": 2,
+          "n": 500,
+          "beforeWins": 44,
+          "wins": 481,
+          "gainPp": 87.4
+        }
+      },
+      "on": {
+        "cells": 128,
+        "misses": 4,
+        "worst": {
+          "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-charm-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":2}",
+          "templateId": "bellsteel-charm-legendary",
+          "cardId": "mochi",
+          "chapter": 2,
+          "n": 500,
+          "beforeWins": 49,
+          "wins": 148,
+          "gainPp": 19.8
+        }
+      }
+    },
+    {
+      "chapter": 3,
+      "off": {
+        "cells": 128,
+        "misses": 11,
+        "worst": {
+          "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"moonwick-weapon-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+          "templateId": "moonwick-weapon-legendary",
+          "cardId": "soot",
+          "chapter": 3,
+          "n": 500,
+          "beforeWins": 367,
+          "wins": 494,
+          "gainPp": 25.4
+        }
+      },
+      "on": {
+        "cells": 128,
+        "misses": 7,
+        "worst": {
+          "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-charm-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+          "templateId": "bellsteel-charm-legendary",
+          "cardId": "mochi",
+          "chapter": 3,
+          "n": 500,
+          "beforeWins": 118,
+          "wins": 233,
+          "gainPp": 23
+        }
+      }
+    }
+  ]
+}

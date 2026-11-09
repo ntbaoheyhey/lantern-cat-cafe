@@ -1,0 +1,125 @@
+TASKBAR HERO - CODEX LANE B2 "READABLE BATTLE": BIG READABLE CATS AND MONSTERS, NO STUTTER, LIGHTER HUD, STRONGER SKILL EFFECTS (2026-11-08). FRESH SESSION, NO MEMORY. THIS MESSAGE IS THE USER'S EXPLICIT INSTRUCTION TO RUN NOW, UNATTENDED, UNTIL DONE.
+
+REFERENCE: reports/cardrpg-look/CARDRPG-LOOK-REPORT.md (branch ai/codex-ui-ledger); reports/cardrpg-look/closure/{REVIEW.md,CONTRACT.md,audit.json} and reports/cardrpg-look/closure/presentation/reviewed/*.png (branch codex/cardrpg-look-closure-2026-11-08, draft PR #380); docs/cardrpg-look/index.html (L7/closure demo); docs/design/cardrpg/LOOK-BIBLE.md; apps/web/src/game/cardrpg/look-assets.json; coord/cardrpg-big/A-OUTBOX.md + B-OUTBOX.md (branch ai/codex-cardrpg-big-sync).
+
+==================================================================
+0. WHY YOU EXIST (read twice)
+==================================================================
+The game: "The Lantern", a cozy cat-cafe CARD RPG. Battles are FULLY AUTOMATIC (the player only watches: speed, pause, skip, camera, sound). Lane B ("LOOK", phases L0-L7 + closure, draft PRs #361...#380) rebuilt the art: 12 sculpted Blender cats, 13 opponents, a night-cafe diorama stage, toon/rim lighting, post stack, 6 effect atlases, portraits and icons, behind flag `lookV2`. That art DIRECTION is approved by the user: keep the night cafe, the teal/honey palette and the toon diorama look. Do NOT restart the art.
+
+The user's reviewer read the closure screenshots (1280-cooldowns, 1280-boss-phase, 1440-earned, clover-runtime-1) and found the remaining problems are about what a VIEWER SEES, not about missing measurements. Overall ~6-6.5/10: "neat and warm, not yet eye-catching". In order of impact:
+ 1. FRAMING. Cats and monsters fill only ~10% of the battle viewport. Units stand small in the middle of big rugs; the enemy half is a mostly empty beige rug with 1-2 tiny opponents. The camera shows too much floor and shelf.
+ 2. MONSTERS DON'T READ. Button Guard, Sock Skipper, Teacup Healer etc. are small, low-contrast, similar in value to the floor; at a glance you cannot tell what they are or that they are hostile. Bosses do not feel big.
+ 3. STUTTER. A skill cast can freeze up to 633 ms (8/24 hero cast windows > 50 ms); cold open peak 666.6 ms; post-ready gaps up to 400 ms; gallery page 716.7 ms. A judge on a laptop WILL see this.
+ 4. TEXT-HEAVY HUD. The bottom bar is three columns of words ("Door knock Ready", "Last light shelter 2 turns" x4 per cat). It reads like a stat sheet, not a game. The boss-phase banner covers the top of the stage. The earned-cat badge says "Earned invitation 1: sorrel." (raw lowercase id).
+ 5. EFFECTS ARE WEAK. Clover's "Greenhouse morning" is a faint pale-green translucent arch; ultimates do not have a "wow" beat (anticipation -> impact -> afterglow).
+ 6. TOO MUCH MEASUREMENT. The previous lane produced ~1 GB of evidence and an 860-case matrix while the visible gain was small. This pass is the opposite: change what the viewer sees, check it with your own eyes, measure only the few numbers listed in section 6.
+
+Success = a 20-second clip of a chapter-1 fight where a stranger can name every unit's side, see big expressive cats and clearly hostile monsters, see each ultimate land, and see no freeze.
+
+==================================================================
+1. HARD RULES
+==================================================================
+ - ONE model-driven agent: you. NO subagents, workers, helper agents, parallel `codex exec`, schedulers, or any process that makes model requests (the account allows only 4 model-request threads total, and lane A may be running). Local tools with NO model requests are encouraged: Blender headless, three.js, gltf-transform, toktx, ffmpeg, Playwright, node/python scripts, numpy/opencv/PIL. No generative-model calls of any kind.
+ - Native macOS only: NO Docker. NO desktop/screen control (no CUA); everything headless.
+ - Repo ntbaoheyhey/taskbar-hero (private). Main checkout /Users/bao/taskbar-hero: never checkout/reset/stash there. The old lane B folder /Users/bao/taskbar-hero-cardrpg-look currently fails `git` ("not a git repository: .../.git/worktrees/taskbar-hero-cardrpg-look"); READ files there if useful, do not repair or delete it. Create YOUR worktree: `git -C /Users/bao/taskbar-hero fetch origin codex/cardrpg-look-closure-2026-11-08 && git -C /Users/bao/taskbar-hero worktree add /Users/bao/taskbar-hero-cardrpg-b2 -b codex/cardrpg-b2-v0-2026-11-08 origin/codex/cardrpg-look-closure-2026-11-08` (base = closure tip 0ce18c08 or newer; record the SHA). Never touch lane A worktrees (/Users/bao/taskbar-hero-cardrpg-a4*, -a5*, -big*, -sync except fetch, -portrait-prep, -delivery, -integration, -demo, ledger).
+ - DRAFT PRs ONLY. Never merge, never auto-merge, never deploy, never push main, no Vercel, no secrets, no live Supabase, no wallets, no on-chain actions.
+ - PROTECTED, zero changes: packages/game-rules/** (all rules, incl. config.ts and auto-extras), contracts/**, supabase/**, wallet/SIWE/auth, Relic/Fuji paths, .github/**, package.json/lockfiles (no new runtime dependency; dev tools install OUTSIDE the repo, e.g. ~/tools/cardrpg-look).
+ - SCOPE LOCK: presentation only. No combat rules, no balance numbers, no new currencies, no manual battle controls, no change to battle outcomes or event data. Battle logs/digests must be byte-identical before/after for the same seed (prove on 5 seeds).
+ - Everything new stays behind the existing flag `lookV2` (ON in your demo). `lookV2` OFF: visuals and default startup bundle unchanged (same check the closure used: chunk byte counts + module membership, 0 Three/model modules at startup).
+ - ORIGINAL ART ONLY: your own Blender/procedural/code parameters; record tool + params + seed per new/changed asset in assets/provenance/look.md. Never import external models/textures/HDRIs/brushes, never trace or compare with other games' art.
+ - Desktop only: 1280x720 and 1440x900 primary; 1024x600 must not break; text contrast >= 4.5:1; reduced-motion respected.
+ - Honesty: claim only what you measured or looked at; "NOT VERIFIED"/"PARTIAL" are fine; self-grades are self-grades; never write "final", "frozen" or "done for good".
+ - Kill only PIDs you started, never by name (an unrelated Python runner lives on this Mac). `df -h` first; clean only your own temp files (/tmp/cardrpg-b2-*). Ports 5920-5923.
+
+==================================================================
+2. LANE SPLIT WITH LANE A (lane A5 may still be running: read A-OUTBOX first, never block on A)
+==================================================================
+YOU own (same as lane B before): apps/web/src/game/squad/turn3d/**, card-effects*.ts, card-staging.ts, apps/web/src/game/cardrpg/depth/Battle.tsx (incl. BattleView HUD/bottom bar inside it), chapter-stage.ts, battle/turn3d CSS, look-tokens.json, look-assets.json + model/texture/portrait/icon/flipbook assets, assets/provenance/look.md, tools/cardrpg-look/**, docs/cardrpg-look/**, reports/cardrpg-look/**, docs/design/cardrpg/LOOK-BIBLE.md.
+LANE A owns (do NOT edit): packages/game-rules/** , all meta screens and CSS (Hub, Collection, TeamCollection, Equipment, Inventory, Invitations, CompanionPreview, Pages, RunMap, Journal, Encounter/Prepare/Result...), App.tsx (top bar and nav), depth.css, shared.tsx, tools/cardrpg-big/**, docs/cardrpg3/**, docs/design/cardrpg/** except LOOK-BIBLE.md, reports/cardrpg-big/**.
+Contracts you must keep:
+ - Battle data: BattleView reads events-v4 `version === 1` (published plan/events). A5 may add version 2; keep version 1 rendering, and if A-OUTBOX announces version 2, render it too (fallback = legacy view, never a crash).
+ - Earned reveal: `SceneView.earnedReveal?: unknown` / `scene.playEntrance(catId, receipt)` stays API-compatible (CONTRACT.md). You may restyle the badge and its copy (show the cat's display name, never the raw id), not the API.
+ - Developer tools: A5 hides dev buttons behind `?dev=1`. Any B-owned dev UI (Look atelier, Look: Atelier toggle, Feel lab, frame meter overlays rendered by B code) must render ONLY when `?dev=1` (use A's helper if A-OUTBOX names one, else a tiny local check in your files). If a B tool button lives in an A-owned file, post a REQUEST; do not edit it.
+ - Phase cues: boss-phase <= 400 ms and boss-finish <= 800 ms inside the action clock, unchanged.
+Sync: branch ai/codex-cardrpg-big-sync (worktree /Users/bao/taskbar-hero-cardrpg-sync: fetch/pull only, do not recreate), folder coord/cardrpg-big/. You write ONLY B-OUTBOX.md, append-only, entries `## <UTC> B2-<phase> <TYPE>` (CLAIM / DONE / REQUEST / ANSWER / HEADS-UP / CHECKPOINT, max 8 lines). First entry: "B2 started from closure <sha>: presentation-only pass (framing, monster readability, stutter, HUD, VFX) in B-owned files; no rules/meta edits". Push with `git pull --rebase`, up to 4 retries (2/4/8/16 s).
+Heavy-work lock: browser timing/profiling and CPU/GPU-saturating Blender renders take /tmp/cardrpg-big-locks/timing.lock (atomic mkdir; use tools/cardrpg-big/with-timing-lock.mjs if present, read-only use), windows <= 20 min, 6.5 s handoff; non-timing Blender work runs `nice -n 10` and pauses while the lock is held by A.
+Branches: stack one draft PR per phase on the previous one: codex/cardrpg-b2-<phase>-2026-11-08 (V0 base = closure branch). Do NOT rebase onto lane A's A5 stack; integration of A + B is a later, separate task. PR bodies short: before/after images + REFERENCE lines.
+
+==================================================================
+3. SETUP, RESUME AND ANTI-FORGET
+==================================================================
+ - Keep reports/cardrpg-look/b2/STATE.md (<= 60 lines): base SHA, current phase, done/next, numbers so far, open REQUESTs. Update it at every phase end and before any long run. After a context compaction or restart: re-read this prompt (save a copy at reports/cardrpg-look/b2/PROMPT.txt in V0), STATE.md, A-OUTBOX.md, then continue from STATE.md. Never redo a finished phase.
+ - Evidence budget: everything under reports/cardrpg-look/b2/ stays <= 60 MB total (PNG at DPR1 for review sheets; DPR2 only for the final 6-shot pack; videos <= 3 x 20 s, H.264). No per-frame JSON dumps in git; keep raw traces in /tmp/cardrpg-b2-* and commit only summaries.
+
+==================================================================
+4. PHASES (order = priority; if time runs short, ship in this order and always deliver V6)
+==================================================================
+V0 BASELINE (<= 45 min)
+ - Worktree, tool check (`blender --version`, gltf-transform, toktx, ffmpeg, node, python3 + numpy/PIL/cv2), build the closure app, confirm 5 gates still pass (typecheck, lint, unit, build, E2E count).
+ - "Six-shot pack" script tools/cardrpg-look/b2/shots.mjs: the SAME 6 frames used for every before/after in this pass, at 1280x720 DPR1 (review) and 1440x900 DPR2 (final only): (1) chapter-1 fight round 1, starter team vs 2 opponents; (2) same fight, mid-ultimate impact frame (Mochi); (3) Clover "Greenhouse morning" at peak; (4) a 3-opponent wave; (5) Yarn Giant boss phase cue; (6) earned-cat reveal. Plus the same 6 at 1024x600 for layout only. Deterministic seed/time, fixed camera preset B.
+ - Baseline numbers (one run each, lock held): unit screen coverage (see V1), cast hitch probe (see V3), cold open probe (see V3). Write reports/cardrpg-look/b2/BASELINE.md (<= 30 lines) + contact sheet.
+
+V1 CAMERA AND FRAMING (highest impact, ~3 h)
+ Goal: the fight fills the screen; cats and monsters are the subject, the cafe is the backdrop.
+ - Re-author camera presets A/B/C in B-owned staging: tighter FOV/closer dolly/lower angle so the two formations span ~70-80% of the viewport width; crop away empty floor and the upper shelf band; keep the night window and lamps as a soft backdrop (DOF/fog already exist: use them).
+ - Formation layout: bring the two sides closer together (reduce the empty gap between rugs), scale rugs down or replace each side's rug with a tighter "battle mat" that matches the unit footprint; front/back rows clearly staggered.
+ - Unit scale: target on 1280x720 preset B: each cat's bounding box >= 13% of viewport height (today ~7-9%), each regular opponent >= 12%, bosses >= 24%. Measure by projecting model bounds (tools/cardrpg-look/b2/coverage.mjs), report per unit.
+ - Fill the enemy half: opponents placed in a clear arc on their mat, mat colour/value distinct from the floor, a few enemy-side props (spilled yarn, sock pile, toppled cups) so it never reads as an empty beige rectangle. Enemy side must look different from the player side at thumbnail size.
+ - HUD-safe zone: nothing important hides under the top control bar, the bottom bar, the name plates or the boss banner at 1024/1280/1440. Name plates: smaller, anchored above heads, auto-dodge (reuse the existing label allocator).
+ - Camera life (subtle): slow idle drift + a short push-in on ultimates and boss phase, <= 6% zoom, eased, off under reduced-motion and at speed >= 4x.
+ - Quality loop per shot: capture -> LOOK at it yourself -> write 5 concrete flaws with regions -> fix worst 3 -> recapture; >= 3 rounds for shots 1, 2 and 4. Keep round sheets.
+
+V2 MONSTER AND BOSS READABILITY (~4 h)
+ Goal: every opponent is recognisable and clearly hostile in 1 second.
+ - For the 10 regular opponents + Yarn Giant, Kettle Knight, Pantry Crown: stronger silhouette (exaggerate the one thing it is: button, sock, teacup, spool, needle, crumb...), bigger read-shape, hostile cues that stay cozy (angry brows/eyes glow, warm-red/plum rim light vs the cats' honey rim, darker value than the floor), idle motion that shows character (bob, wobble, spin). Rebuild in Blender only where shape is the problem; otherwise material/rim/scale/idle changes.
+ - Bosses: >= 2x regular opponent height, own ground decal/shadow pool, entrance beat, phase cue that does NOT cover the stage (move the banner to a slim top-centre ribbon over the HUD-safe area, <= 2 lines, auto-hide within the existing 400 ms phase budget).
+ - Value/colour check (small script, no matrix): in shots 1/4/5, mean luminance contrast between each opponent and the floor behind it >= 0.18 (the old L3 Soot separation target); cats vs opponents distinguishable by hue family.
+ - Triangle budget per regular opponent <= 12k, boss <= 22k; peak scene still <= 150k tris / <= 250 draws.
+
+V3 STUTTER (~4 h, may run in parallel with V2 between lock windows)
+ Goal: no visible freeze from Hub-ready through a whole fight.
+ - Diagnose first with Chrome performance traces (Playwright CDP, lock held) on the slowest known windows: Panko-1 repeat (150 ms frame overlapping a 155 ms long task), Cinnamon-4 first, Brioche-4 and Velvet-4 at CPU4 Balanced 1440x900, the 633.3 ms hero cast, cold-open 666.6 ms, and the 400 ms post-ready gaps. Name the cause per window (shader/program compile, texture upload/KTX2 transcode, geometry upload, GC from allocations, label layout, React re-render, effect pool growth, macOS presentation backpressure). One short table, no 1 GB dumps.
+ - Fix the causes, typical ones: precompile every material/effect program for the roster in the encounter (renderer.compileAsync on a hidden warm-up pass with all effect atlases bound) during the existing loading time; upload textures/geometry for the encounter's units and effects before "ready"; pool and reuse effect meshes/lights (no per-cast allocation, no new lights that change the shader light count mid-fight: keep a fixed light pool); move KTX2 transcoding to the worker transcoder; throttle React HUD updates to cast boundaries; cache label layout.
+ - Targets (DPR1, default tier, M-series Mac, lock held): first AND repeat cast max frame <= 50 ms for the 12 ultimates + 12 most-used skills at 1280x720 native and 1440x900 native; <= 100 ms at CPU4 Balanced 1440x900; after Hub-ready no frame > 100 ms native; cold open (load -> Hub) max frame <= 150 ms native. If a target misses, say which cause remains.
+ - Loading may get slower if it removes in-fight freezes; report load-to-battle-ready before/after and keep it <= +1.5 s native.
+
+V4 LIGHTER BATTLE HUD (~3 h, inside Battle.tsx / B CSS)
+ Goal: the bottom bar shows state with pictures, words only on demand.
+ - Per cat card: L1 portrait (already in look-assets.json), HP bar with number, 4 skill ICONS (L6 icon set) with a radial cooldown ring + turns-left digit and a "ready" glow; skill names only in a tooltip (hover/focus) and in the battle log. Row ("Front row") becomes a tiny icon. Max 1 short text line per card.
+ - Top strip "Focus support . Protect the crew . Door team 3 marks . Kettle team 3 marks": condense into small chips with icons; full text in a tooltip.
+ - Damage/heal numbers float in the scene above the unit (reuse the existing floating numbers if present) instead of the bottom status line; the status line keeps only "Paused / x2 / Round N".
+ - Earned-cat reveal badge: cat portrait + display name + one warm line (e.g. "Sorrel joined your cafe!"), never a raw id, keep CONTRACT.md semantics (dedupe, clears on completion).
+ - Keyboard focus order and aria labels for every icon (name + state), contrast >= 4.5:1, 1024x600 no overflow or truncation of numbers.
+ - Bottom bar height <= 15% of viewport at 1280x720 (today ~19%), so the stage gets the space.
+
+V5 STRONGER SKILL EFFECTS (~4 h)
+ Goal: every ultimate has a readable "wow" beat; Clover's greenhouse looks like a solid magical greenhouse, not a pale shield.
+ - Structure for all 12 ultimates: anticipation (100-250 ms: gather glow, small camera push, caster pose), impact (2-3 flash frames, shockwave/distortion ring, short pooled point light that lights the floor and nearby units, screen-shake <= 4 px, off under reduced-motion), afterglow (0.4-0.8 s: lingering particles, decal, settle). Must fit existing action timing; never extend the action clock.
+ - Clover "Greenhouse morning": opaque-ish glass panels with honey frame ribs, light shafts through the panes, falling leaves/petals, growth animation from the ground up; readable at 1024x600; faces still visible (keep the face-mask check from closure).
+ - Upgrade the 12 most-used non-ultimate skills' impact frames with the same language (smaller scale).
+ - Colour-key per element/cat (keep LOOK-BIBLE), additive glow controlled so faces/text stay clear.
+ - Uniqueness: do not re-run the 2,211-pair matrix. Instead make one 12-ultimate contact sheet (peak frame each) and check by eye that no two ultimates read the same; fix pairs that do.
+ - Budgets: still <= 250 draws / 150k tris at peak; V3 cast targets must still hold (re-run the V3 probe on the changed effects only).
+
+V6 DEMO + REPORT (~2 h, ALWAYS deliver, even partial)
+ - Static offline demo docs/cardrpg-look/b2.html built by tools/cardrpg-look/build.mjs (may call but not edit lane A's tools/cardrpg-big/build.mjs): full game with lookV2 ON, a live "B2 before/after" toggle (closure vs B2 framing/HUD/VFX), the six-shot gallery, 12-ultimate gallery with x0.25 and effect-only, REFERENCE lines at the top with repo paths. Keep docs/cardrpg-look/index.html unchanged.
+ - Size: b2.html <= 31.5 MB (closure 31,494,758 bytes; must not grow). ALSO deliver a measured "lean asset pack" option for the later A+B merged demo: list bytes per B-owned asset class and a lean variant (e.g. portraits 1x only, shared atlas, recompressed KTX2/WebP) with its total B-owned bytes and SSIM vs full on the six shots; stretch goal B-owned embedded bytes <= 18 MB. Do not change lane A's demo.
+ - Video: one 20 s H.264 clip of shot-1's fight at 1440x900 (natural speed, no cuts) + before clip from closure, same seed.
+ - Report reports/cardrpg-look/b2/B2-REPORT.md (<= 80 lines) + update the ledger copy reports/cardrpg-look/CARDRPG-LOOK-REPORT.md on ai/codex-ui-ledger with a "B2" section. Start with a 5-line Vietnamese summary for the user. Then: six-shot before/after table (images), unit coverage table (before/after per unit), stutter table (cause -> fix -> before/after ms), HUD before/after, 12-ultimate sheet, size table, gates, misses (honest), and "what lane A must integrate" (assets, API, dev-tool gating, events-v4 version handling, lean pack).
+ - B-OUTBOX CHECKPOINT with branch/SHA/demo SHA-256 + bytes.
+
+==================================================================
+5. QUALITY LOOP (every visual phase)
+==================================================================
+Capture at the fixed shot -> LOOK at the image yourself (you can view images) -> write 5 concrete flaws with pixel regions -> fix the worst 3 -> recapture -> repeat. Stop a target when a round finds nothing you would be embarrassed by in a pitch video. Self-grade each of the six shots /10 before and after, as a self-grade, with one sentence why. Metrics support your eye, never replace it.
+
+==================================================================
+6. GATES (deliberately small; do NOT run the 860-case matrix, the 2,211-pair effect matrix or 20-replay lifecycle runs)
+==================================================================
+Per phase: typecheck, lint, unit, build; six-shot pack at 1280 DPR1 + 1024 layout check; battle digest identical on 5 seeds (scope lock).
+V3 and once after V5: cast hitch probe (12 ultimates + 12 skills, first + repeat, 1280 native, 1440 native, 1440 CPU4 Balanced), cold open 3 runs native + 3 CPU4, draws/tris peak.
+Once at the end (V6): full E2E suite, flag-off startup parity, one 5-battle lifecycle check (heap and GPU object counts reported, not proven flat), demo bytes, final six-shot pack 1440 DPR2.
+Missed gate: list it with the number and the remaining cause; never hide it, never move a gate because it failed, never retry a sample to get a pass (report all attempts).
+
+ORDER IF TIME RUNS SHORT: V0 -> V1 -> V3 -> V2 -> V4 -> V5 -> V6 (V6 always). The user judges by the first 20 seconds of a battle.

@@ -23,6 +23,22 @@ it('releases original hand props when a loaded miniature leaves', () => {
     expect(left.children.length + right.children.length).toBe(0);
   }
 });
+it('keeps sculpted model props without adding or disposing legacy duplicates', () => {
+  const model = new T.Group(), rig = new T.Group(), hand = new T.Group();
+  model.userData.lookV2 = true;
+  rig.name = 'guardian'; rig.userData.lookProps = true;
+  hand.name = 'guardian_armR'; rig.add(hand); model.add(rig);
+  const sculpted = new T.Mesh(new T.SphereGeometry(.1), new T.MeshStandardMaterial());
+  hand.add(sculpted);
+  let disposed = 0;
+  sculpted.geometry.addEventListener('dispose', () => disposed++);
+  const utensil = new CardUtensil(model, 'guardian', 'panko');
+  expect(hand.children).toEqual([sculpted]);
+  utensil.dispose(); utensil.dispose();
+  expect(hand.children).toEqual([sculpted]);
+  expect(disposed).toBe(0);
+  sculpted.geometry.dispose(); sculpted.material.dispose();
+});
 it('keeps invitation reveals bounded and completely still in reduced motion', () => {
   expect(cardEntrancePose(0, false).finished).toBe(false);
   expect(cardEntrancePose(CARD_ENTRANCE_SECONDS, false).finished).toBe(true);
