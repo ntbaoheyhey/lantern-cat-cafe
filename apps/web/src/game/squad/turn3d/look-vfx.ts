@@ -16,9 +16,9 @@ const familyFor:Partial<Record<CardEffectPrimitive,Family>>={
 const rowFor:Partial<Record<CardEffectPrimitive,number>>={'ink-stain':2,'ink-drop':2,steam:1,veil:7,flame:2,ember:3,spark:4,'spice-star':4,'crumb-crown':5,'seed-pod':7,constellation:4,comet:6,wave:6,leaf:1,petal:5,droplet:3,'shield-facet':4};
 const ribbons = new Set<CardEffectPrimitive>(['comet', 'wave', 'yarn-fan']);
 const paper = new Set<CardEffectPrimitive>(['apron', 'roof', 'leaf', 'petal', 'sock', 'wing',
-  'bread', 'crumb-crown', 'paper-cat', 'apron-cloth', 'blanket', 'collar', 'flower-bell']);
-const glass = new Set<CardEffectPrimitive>(['shield-facet', 'bubble', 'greenhouse', 'wave', 'droplet', 'veil', 'ink-cap']);
-const ceramic = new Set<CardEffectPrimitive>(['cup', 'teapot', 'oven', 'watering-can']);
+  'bread', 'crumb-crown', 'paper-cat', 'apron-cloth', 'blanket', 'collar', 'flower-bell', 'veil']);
+const glass = new Set<CardEffectPrimitive>(['shield-facet', 'bubble', 'greenhouse', 'wave', 'droplet']);
+const ceramic = new Set<CardEffectPrimitive>(['cup', 'teapot', 'oven', 'watering-can', 'ink-cap']);
 const metal = new Set<CardEffectPrimitive>(['pan', 'spoon', 'whisk', 'tray', 'needle', 'handle', 'shears', 'night-bell', 'serving-bell']);
 function refinePaper(source: T.BufferGeometry) {
   // Large cap triangles cannot follow a curved sheet, even with bent normals.
@@ -56,6 +56,13 @@ function craftedBody(kind: CardEffectPrimitive): T.BufferGeometry | undefined {
     const profile = [[0, -.39], [.20, -.39], [.31, -.25], [.40, .18], [.40, .24],
       [.35, .24], [.34, .17], [.25, -.23], [0, -.29]];
     return new T.LatheGeometry(profile.map(([r, y]) => new T.Vector2(r, y)), 24).rotateX(.20);
+  }
+  if (kind === 'ink-cap') {
+    // Rounded ink-spore canopy and stem, retaining the authored rim/spots.
+    const cap=new T.SphereGeometry(.6,20,10,0,Math.PI*2,0,Math.PI/2).scale(1,.85,.55);
+    const stem=new T.CylinderGeometry(.10,.14,.52,12).translate(0,-.26,0);
+    const parts=[cap.toNonIndexed(),stem.toNonIndexed()],body=mergeGeometries(parts);
+    for(const part of parts)part.dispose();cap.dispose();stem.dispose();return body;
   }
   if (kind === 'teapot') return new T.SphereGeometry(.43, 24, 16).scale(1, .65, .70).translate(0, -.015, .04);
   if (kind === 'watering-can') {
@@ -161,7 +168,7 @@ export class LookVfx {
         blending: T.CustomBlending, blendEquation: T.AddEquation, blendSrc: T.OneFactor,
         blendDst: T.OneMinusSrcAlphaFactor,
         uniforms: {...this.shared, atlas: {value: this.textures.get(family ?? 'v5-soft')}, atlasRow:{value:rowFor[kind]??0},
-          surfaceKind: {value: finish}, softVolume: {value: ['steam','veil','flame','ember','soft-particle','motif-particle','ink-drop','ink-stain'].includes(kind) ? 1 : 0}, flameVolume: {value: kind === 'flame'||kind==='ember' ? 1 : 0}, sceneDepth: this.depth,
+          surfaceKind: {value: finish}, softVolume: {value: ['steam','flame','ember','soft-particle','motif-particle','ink-drop','ink-stain'].includes(kind) ? 1 : 0}, flameVolume: {value: kind === 'flame'||kind==='ember' ? 1 : 0}, sceneDepth: this.depth,
           depthEnabled: this.depthEnabled, clipPlanes: this.clipPlanes}});
       this.materials.set(key, material);
     }
@@ -216,7 +223,7 @@ export class LookVfx {
     this.depth.value = texture;this.depthEnabled.value = texture ? 1 : 0;
     this.clipPlanes.value.set(camera.near, camera.far);
   }
-  begin() {for (const light of this.lights) light.intensity = 0;}
+  begin() {for (let i=0;i<this.lights.length;i++) this.lights[i]!.intensity = 0;}
   setLightsEnabled(enabled: boolean) {
     if (this.lightsEnabled === enabled) return;
     this.lightsEnabled = enabled;

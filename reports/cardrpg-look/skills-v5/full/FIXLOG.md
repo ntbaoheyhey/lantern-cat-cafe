@@ -148,3 +148,8 @@ MX5 colour API typecheck caught two legacy illuminate callers in unchanged tests
 
 ## B-M3-004 2026-11-09T05:44Z M3 coverage specificity S2
 Source review found pilot correlates any instance in a rendering lane with every concurrent semantic cue; this cannot prove each target's own mark. Preserve pilot diagnostic. Upgrade dev-only probe to exact layer-object identity+target x/z+nonzero instance alpha, and record transient clearing two frames after the plan ends. Actual canvas evidence remains required; submissions alone are not called pixel verification. No runtime/default rules changes. New full registration uses upgraded artifact, not a replacement pilot sample.
+### B-MX-007 attempt3 material/ground attribution
+Cinema2 review traced faint Inkcap/Velvet signatures to glass/soft opacity multiplied twice, and repeated circles to the universal B2 impact ring beneath an already-authored ground layer. Third scoped fix removes that duplicate ring for authored recipes only, gives ink-spore a rounded canopy/stem with ceramic depth, bends Velvet veil as cloth with preserved per-layer alpha, widens its three needles. Face masks still gate all fragments; no action clock/events changed. Register cinema3 fullcat sheet and changedInkcap/Velvetcost/casts/faces, plus final P-shot checks; earlier artifacts kept.
+
+### B-MX-003 attempt1 measured / attempt2
+Cached-colour opt1b sampler: Mochi2300084B,Soot457684B,Yarn388844B (24.5%,49.2%,49.8%lower); setStyle/regex samples removed,zero stillMISS. Remaining attribution in render/drawRecipe and begin; replace hot array iterators with indexed loops, preserve rendering order. No numeric/timing changes. Thirdsourceopt2artifact registered; all prior samples kept.

@@ -303,7 +303,7 @@ export class CardEffects {
     positions: Map<string, T.Vector3>, camera: T.Camera, quality: Quality, calm: boolean,
     statuses?: Record<string, readonly (string | {id:string;stacks:number})[]>, time = 0,
     presentation?: StatusPresentation, heights?: ReadonlyMap<string,number>, crowns?: ReadonlyMap<string,number>, playbackSpeed=1) {
-    for (const { mesh } of this.poolList) { mesh.count = 0; mesh.visible = false; }
+    for (let i=0;i<this.poolList.length;i++) { const mesh=this.poolList[i]!.mesh;mesh.count = 0; mesh.visible = false; }
     this.look?.begin();this.flash = 0;
     this.stats.instances = 0;
     this.stats.primitiveCalls = 0;
@@ -317,7 +317,8 @@ export class CardEffects {
     if (!this.atelier && frame && recipe) this.renderAction(frame, recipe, actors, positions, camera, quality, calm);
     this.flash = 0;
     if (statuses) {
-      for (const actor of actors) {
+      for (let actorIndex=0;actorIndex<actors.length;actorIndex++) {
+        const actor=actors[actorIndex]!;
         const position = positions.get(actor.id);
         const activeStatuses = statuses[actor.id];
         if (actor.hp <= 0 || !position || !activeStatuses) continue;
@@ -347,7 +348,8 @@ export class CardEffects {
       this.renderV5Cues(frame, positions, camera, calm, heights);
       if (recipe) this.renderAction(frame, recipe, actors, positions, camera, quality, calm);
     }
-    for (const { mesh, alpha, phase, flash, mark, tile } of this.poolList) {
+    for (let i=0;i<this.poolList.length;i++) {
+      const {mesh,alpha,phase,flash,mark,tile}=this.poolList[i]!;
       if (!mesh.count) continue;
       mesh.visible = true;
       mesh.instanceMatrix.needsUpdate = true;
@@ -367,7 +369,8 @@ export class CardEffects {
     if(this.atelier&&frame.plan===this.previousPlan&&frame.elapsed>this.previousElapsed){this.casterVelocity.copy(this.caster).sub(this.previousCaster).multiplyScalar(1000/(frame.elapsed-this.previousElapsed));this.casterVelocity.clampLength(0,3);}else this.casterVelocity.set(0,0,0);
     this.previousCaster.copy(this.caster);this.previousElapsed=frame.elapsed;this.previousPlan=frame.plan;
     let targetCount=0;
-    for (const id of frame.plan.targetIds) {
+    for (let targetIndex=0;targetIndex<frame.plan.targetIds.length;targetIndex++) {
+      const id=frame.plan.targetIds[targetIndex]!;
       let target:TurnActor|undefined;for(let i=0;i<actors.length;i++)if(actors[i]!.id===id){target=actors[i];break;}
       const position = positions.get(id);
       const appropriateSide = recipe.target === 'friendly' ? target?.side === actor?.side : target?.side !== actor?.side;
@@ -394,14 +397,16 @@ export class CardEffects {
       for (let i=0;i<(this.presentation ? this.targets.length : 1);i++) {
         const delay = this.presentation?.offsets.get(this.targetIds[i]!) ?? 0;
         const after = (frame.elapsed - frame.plan.beats[2]!.start - delay) / Math.min(500, frame.plan.duration-frame.plan.beats[2]!.start-delay);
-        if (after > 0 && after < 1) {
+        if (after > 0 && after < 1 && !recipe.authored) {
           this.setColor(this.baseColor,recipe.accent);
           this.focus.copy(this.presentation ? this.targets[i]! : recipe.target === 'friendly' ? this.caster : this.targets[0]!);
           this.place(recipe.ultimate ? READABLE_IMPACT : READABLE_SMALL_IMPACT, after, 0, 1, camera, calm);
         }
       }
     }
-    for (const id of frame.plan.presentationCues ?? NO_CUES) {
+    const cues=frame.plan.presentationCues??NO_CUES;
+    for (let cueIndex=0;cueIndex<cues.length;cueIndex++) {
+      const id=cues[cueIndex]!;
       const cue = CARD_EFFECT_RECIPES[id] ?? LAB_EFFECT_RECIPES[id];
       if (cue) {
         const target = positions.get(frame.plan.presentationCueTargets?.[id] ?? '');
@@ -413,7 +418,8 @@ export class CardEffects {
 
   private delayedProgress(frame:EffectFrame, delay:number) {
     const elapsed=frame.elapsed-delay;
-    for (const beat of frame.plan.beats) {
+    for (let i=0;i<frame.plan.beats.length;i++) {
+      const beat=frame.plan.beats[i]!;
       if (elapsed < beat.start+beat.duration && beat.duration>0) {
         const span=effectBeatSpans[beat.kind];
         return span[0]+(span[1]-span[0])*Math.max(0,(elapsed-beat.start)/beat.duration);
@@ -424,7 +430,8 @@ export class CardEffects {
 
   private renderStatusBeats(frame:EffectFrame, positions:Map<string,T.Vector3>, camera:T.Camera, calm:boolean, heights?:ReadonlyMap<string,number>) {
     if (!this.presentation) return;
-    for (const beat of this.presentation.beats) {
+    for (let i=0;i<this.presentation.beats.length;i++) {
+      const beat=this.presentation.beats[i]!;
       const progress=(frame.elapsed-beat.at)/beat.duration;
       if(progress<0||progress>=1)continue;
       const target=positions.get(beat.targetId),look=CARD_STATUS_LOOKS[beat.statusId];
@@ -442,7 +449,9 @@ export class CardEffects {
 
   private renderV5Cues(frame:EffectFrame, positions:Map<string,T.Vector3>, camera:T.Camera, calm:boolean, heights?:ReadonlyMap<string,number>) {
     if(calm||!this.presentation)return;
-    for(const reaction of this.presentation.reactions??NO_REACTIONS){
+    const reactions=this.presentation.reactions??NO_REACTIONS;
+    for(let reactionIndex=0;reactionIndex<reactions.length;reactionIndex++){
+      const reaction=reactions[reactionIndex]!;
       const progress=(frame.elapsed-reaction.at)/reaction.duration;
       if(progress<0||progress>=1)continue;
       const primer=positions.get(reaction.targetId);if(!primer)continue;
@@ -482,7 +491,9 @@ export class CardEffects {
       }
       this.alphaFactor=1;
     }
-    for(const landing of this.presentation.landings??NO_LANDINGS){
+    const landings=this.presentation.landings??NO_LANDINGS;
+    for(let landingIndex=0;landingIndex<landings.length;landingIndex++){
+      const landing=landings[landingIndex]!;
       const target=positions.get(landing.targetId),from=positions.get(landing.fromId);if(!target)continue;
       const progress=(frame.elapsed-landing.at)/landing.duration;
       this.focus.copy(target);this.caster.copy(from??target);this.setColor(this.baseColor,frame.plan.accent);this.accentColor.copy(this.baseColor);
@@ -504,7 +515,8 @@ export class CardEffects {
     camera: T.Camera, quality: Quality, calm: boolean, stagger = false) {
     this.setColor(this.baseColor,recipe.color);
     this.setColor(this.accentColor,recipe.accent);
-    for (const layer of recipe.layers) {
+    for (let layerIndex=0;layerIndex<recipe.layers.length;layerIndex++) {
+      const layer=recipe.layers[layerIndex]!;
       const shape=this.presentation?.landings?.[0]?.shape;
       if(stagger&&!recipe.authored&&(shape==='splash'||shape==='multi-hit'||shape==='bounce')&&layer.anchor!=='caster')continue;
       const landings=stagger&&recipe.authored&&layer.anchor!=='caster'?this.presentation?.landings:undefined;

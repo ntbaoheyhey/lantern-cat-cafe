@@ -107,7 +107,7 @@ export function fullRecipes(base:Record<string,Recipe>,cats:readonly string[]):R
     if(cat==='inkcap'){layers[3]!.size=1.6;layers[3]!.height=1.05;layers[3]!.offset=[.50,0,.40];layers[3]!.opacity=.88;layers[7]!.height=.6;layers[7]!.spread=1.1;}
     if(cat==='cinnamon'){layers[3]!.offset=[.95,0,.55];layers[3]!.size=1.15;layers[3]!.height=.45;}
     if(cat==='brioche'){layers[3]!.motion='orbit';layers[3]!.height=.85;layers[3]!.spread=.95;layers[7]!.size=.58;layers[7]!.opacity=.62;}
-    if(cat==='velvet'){layers[3]!.size=1.65;layers[3]!.height=.8;layers[3]!.offset=[.5,0,.4];layers[3]!.aspect=[1.2,1.25,1];layers[3]!.opacity=.66;layers[7]!.height=1.6;layers[7]!.spread=1.1;}
+    if(cat==='velvet'){layers[3]!.size=1.65;layers[3]!.height=.8;layers[3]!.offset=[.5,0,.4];layers[3]!.aspect=[1.2,1.25,1];layers[3]!.opacity=.66;layers[7]!.height=1.6;layers[7]!.spread=1.1;layers[7]!.aspect=[1,2.1,1];layers[7]!.size=.95;}
     if(cat==='marigold'){layers[4]!.primitive='petal';layers[4]!.count=4;layers[4]!.spread=.8;layers[4]!.size=.55;layers[3]!.offset=[.85,0,.4];}
 
    }
