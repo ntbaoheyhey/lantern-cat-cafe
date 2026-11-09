@@ -6,6 +6,7 @@ import {showReviewTools} from '../depth/player-mode';
 import {homeView} from './selectors';
 import {Icon,type IconName} from './Icon';
 import './ui-v3.css';
+import {HomeScene} from './HomeScene';
 const CafeBoard=lazy(()=>import('../depth/CafeV4').then(m=>({default:m.CafeBoardV4})));
 const FeelLab=lazy(()=>import('../depth/FeelLab').then(m=>({default:m.FeelLab})));
 const labels:Partial<Record<Screen,string>>={collection:'Cats',journal:'Cats',team:'Team',inventory:'Bag',relics:'Bag',gacha:'Recruit',codex:'Field guide',save:'Settings',evidence:'Before / after',map:'Night route',prepare:'Prepare',result:'Tonight’s story'};
@@ -23,7 +24,7 @@ export default function ShellV3({m,children}:{m:DepthModel;children:ReactNode}) 
  const patrol=()=>{setEvents(false);if(m.battle){go(m.battle.result?'result':'prepare');return;}if(m.state.tutorial<3){m.tutorial();return;}if(!m.state.run||m.state.run.complete)m.start(view.chapter,'campaign',1);const run=m.state.run;if(run&&!run.complete&&!run.rewardChoices.length){const next=R.availableNodes(run)[0];if(next)m.enter(next.id);}if(!m.battle)m.go('map');};
  if(m.showBattle)return null;
  return <div className="uv-shell" data-ui-v3="true">
-  <div className="uv-scene" aria-label="Living cafe"><div className="uv-welcome"><small>THE LANTERN</small><h1>Welcome home.</h1><p>Your evening crew is ready.</p></div></div>
+  <HomeScene m={m} onRecruit={()=>go('gacha')} onTasks={openEvents}/>
   <header className="uv-hud"><div className="uv-identity"><div className="uv-avatar"><img {...portraitProps(m.state.team[0]!)} alt=""/><span>Lv. {m.state.account.accountLevel}</span></div><div><b>The Lantern</b><small>Team power {view.power}</small></div></div>
    <div className="uv-currencies">{(['fish','stamps','threads'] as const).filter(id=>m.state.account.currencies[id]>0||id==='fish').slice(0,3).map(id=><span key={id} className="uv-currency" aria-label={`${id}: ${m.state.account.currencies[id]}`}><i aria-hidden="true">{id==='fish'?'◈':id==='stamps'?'✉':'⌁'}</i>{m.state.account.currencies[id].toLocaleString('en-US')}<small>{id}</small></span>)}</div>
    <button className="uv-relic" onClick={()=>go('relics')}><Icon name="relic"/>Relic · Fuji</button>
