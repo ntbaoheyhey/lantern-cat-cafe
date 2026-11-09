@@ -15,3 +15,37 @@ export function BattleSkillsV5({battle}:{battle:R.Battle}) {
     <p role="status">{latest?.text??'Watch for Burn, Bleed and prepared reactions.'}</p>
   </aside>;
 }
+
+export function CatKitV5({catId}:{catId:string}) {
+  const cat=R.CAT_BY_ID[catId]!;
+  const shapes=[...new Set(cat.skills.map(skill=>R.SHAPE_LABELS_V5[R.shapeV5(R.kitSkillV5(skill))].split(' · ')[0]))];
+  return <div className="dp-v5-kit" data-v5-kit={catId}>
+    <p><b>Combo role:</b> {R.COMBO_ROLES_V5[catId]}.</p>
+    <p><b>Reaches:</b> {shapes.join(' · ')}.</p>
+  </div>;
+}
+export function ComboHintsV5({cats}:{cats:string[]}) {
+  const hints=R.crewHintsV5(cats);
+  return hints.length?<aside className="dp-v5-combos" aria-label="Combo partners"><b>Your combo partners</b>{hints.map(hint=><p key={hint}>{hint}</p>)}</aside>:null;
+}
+export function KeywordGuideV5() {
+  return <details className="dp-v5-glossary"><summary>Eight battle keywords</summary>
+    <dl>{R.CORE_STATUS_RULES_V5.map(rule=><div key={rule.id}><dt>{rule.name} <small>· {R.STATUS_SUBTITLES_V5[rule.id]}</small></dt><dd>{rule.description}</dd></div>)}</dl>
+  </details>;
+}
+export function ReactionSummaryV5({battle}:{battle:R.Battle}) {
+  if(!battle.initial.skillsV5)return null;
+  const reactions=(battle.v4?.events??[]).filter(e=>e.kind==='reaction'&&battle.actors.some(a=>a.id===e.sourceId&&a.side==='party'));
+  const grouped=new Map<string,{name:string;actor:string;count:number;targets:Set<string>}>();
+  for(const event of reactions){
+    if(event.kind!=='reaction')continue;
+    const id=`${event.sourceId}/${event.reactionId}`,actor=battle.actors.find(a=>a.id===event.sourceId)!.name;
+    const row=grouped.get(id)??{name:R.REACTION_NAMES_V5[event.reactionId!],actor,count:0,targets:new Set<string>()};
+    row.count++;for(const target of event.targets??[])row.targets.add(target);grouped.set(id,row);
+  }
+  const moment=[...grouped.values()].sort((a,b)=>b.count-a.count||b.targets.size-a.targets.size||a.name.localeCompare(b.name))[0];
+  return moment?<section className="cr-panel dp-v5-reaction-summary" aria-label="Combo moments"><h2>Your combos at work</h2>
+    <p>{moment.actor} triggered <b>{moment.name}</b> {moment.count} {moment.count===1?'time':'times'}.</p>
+    <p>{moment.targets.size} {moment.targets.size===1?'foe was':'foes were'} affected across the battle.</p>
+  </section>:null;
+}

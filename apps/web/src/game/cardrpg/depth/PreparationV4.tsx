@@ -1,3 +1,4 @@
+import { CatKitV5, ComboHintsV5 } from './SkillsV5';
 import { useState } from 'react';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import { portraitProps } from './assets';
@@ -48,6 +49,7 @@ export function PreparationV4({ m }: { m: DepthModel }) {
         </section>)}
       </div>
       <p aria-live="polite">{name} selected. Keep at least one cat in front.</p>
+      {battle.initial.skillsV5&&<><CatKitV5 catId={selected}/><ComboHintsV5 cats={ids}/></>}
       <p data-companion-specialty={selected}><b>Best at:</b> {R.CAT_SPECIALTIES_V4[selected]}</p>
       <details><summary>Cover and crew changes</summary>
         <p>Front cats take ordinary single hits. Back cats receive 10% cover while a front cat lives.</p>

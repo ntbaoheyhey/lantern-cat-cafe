@@ -1,3 +1,4 @@
+import { CatKitV5, ComboHintsV5, KeywordGuideV5 } from './SkillsV5';
 import { ShiftLoadouts } from './EquipmentV4';
 import { useRef, useState } from 'react';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
@@ -25,6 +26,7 @@ export function Team({ m }: { m: DepthModel }) {
     if (!locked && state.team.includes(id)) update(state.team, { ...state.rows, [id]: row });
   };
   return <>
+    {R.skillsV5(state)&&<ComboHintsV5 cats={state.team}/>}
     <PageTitle eyebrow="Three companions · automatic battles" title="Build your evening shift." />
     <section className="cr-panel dp-team-heading">
       <div><small>TEAM POWER</small><strong>{challenge.teamPower}</strong></div>
@@ -131,6 +133,7 @@ export function Collection({ m }: { m: DepthModel }) {
       </div>
       <section className="cr-panel dp-detail" ref={detail}>
         <header><small>{CARD_BY_ID[cat.id]!.rarity} · {cat.role} · {v4 ? R.CAT_CREWS[cat.id]!.map(job => R.CREW_JOBS.find(c => c.id === job)!.name).join(' / ') : cat.flavour}</small><h2>{cat.name}</h2></header>
+        {R.skillsV5(m.state)&&<CatKitV5 catId={cat.id}/>}
         {v4 && <p data-companion-specialty={cat.id}><b>Best at:</b> {R.CAT_SPECIALTIES_V4[cat.id]}</p>}
         {owned ? <>
           <p>Level {owned.level} · {owned.stars} stars · {owned.shards} shards · Awakening {m.state.awakened[cat.id] ?? 0}/3</p>
@@ -150,8 +153,9 @@ export function Collection({ m }: { m: DepthModel }) {
         <p><b>{cat.passive.name}</b> · {v4 ? R.passiveDescriptionV4(cat.id) : cat.passive.description}</p>
         <div className="dp-preview-skills">{cat.skills.map(action => <button className="dp-skill-summary" key={action.id}
           aria-pressed={action.id === skill?.id} onClick={() => setPreview(action.id)}>
-          <img src={skillIcon(action.id)} alt="" /><span><b>{action.name}</b><small>{v4 ? R.skillDescriptionV4(action) : action.description}</small></span>
+          <img src={skillIcon(action.id)} alt="" /><span><b>{action.name}</b><small>{R.skillsV5(m.state) ? R.kitSkillV5(action).description : v4 ? R.skillDescriptionV4(action) : action.description}</small></span>
         </button>)}</div>
+        {R.skillsV5(m.state)&&<KeywordGuideV5/>}
         {skill && <p className="dp-preview-note">Looping preview · {skill.name}</p>}
         {owned && <>
           <Stats stats={R.depthStats(m.state, cat.id)} />
