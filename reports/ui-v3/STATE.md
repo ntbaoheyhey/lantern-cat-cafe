@@ -15,3 +15,5 @@ U0 complete:56 before WebP captures,0 browser errors;2.7MB evidence. Next U1 she
 
 U0 draft#428, headf2df22b20. U1 shell opt-in implemented; repairing keyboard return focus before publish.
 U1 shell tests2/2PASS after focus repair. G1 repair PASS (1867webtests). Legacy reviewer fixture now explicitly opts into dev=1, as required by this prompt. New shell lazy-loaded; old rail retained under ui=legacy. Proceed U2 after phase publication.
+U1 draft#429. U2:3D draws77–82 pass, CPU4 long-task/interactive gates fail in headless dev measurement. Selecting approved fallback stage poster + current-crew portraits; preserve failed trial and measure the fallback, then final offline G6 in U8.
+U2 fallback complete: cafe poster 50KB, current crew portraits, model-backed hotspots/tips. CPU4 idle60s has no long tasks; 0draws. Development cold-visible720–793ms remains above223.3ms; final offline G6 pending, no threshold moved. G1 PASS1867tests; browser6/6; product entry gzip186192B vs186195B baseline (−3B); protected231files exact. Next U3 sheets.

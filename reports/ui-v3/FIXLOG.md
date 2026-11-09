@@ -9,3 +9,7 @@ U0 in progress. No published Lane U milestone yet.
 
 - U1-DEV / FIXED pending G1: Utility.test expected legacy reviewer grants without dev=1. User section1 now explicitly forbids this. Kept all grant assertions; supplied the required dev=1 in that reviewer fixture. No test disabled or quarantined. Player gating remains tested separately.
 - U1-FOCUS verification: exact browser rerun2/2PASS (u1/shell-repair.log); initial failure retained.
+
+- U2-HOME-PERF / OPEN: CPU4 headless development-page 3D trial (tools/ui-v3/perf.mjs 3d) draws77–82 (PASS90) but cold long tasks4357–5196ms and steady855–885ms (MISS50); navigation→visible756–849ms. Renderer initialization/steady software-WebGL cost dominates. Smallest approved fix: use a B-stage poster plus B portraits; final production/offline timing remains mandatory. No timing denominator changed; development timings are not compared as production acceptance.
+- U2-POSTER / FIXED: stage-only render timed out at miniature preparation. Scene defaults preload generic actor rigs; the poster has no actors. Supplied public warmModelIds=[]; exact render completed (21 source-stage draws), cafe.webp 50KB. B source unchanged.
+- U2-HOME-PERF / PARTIAL until offline: fallback reduces draws to0 and steady maximum long task to0 (60s). Cold maximum task118–139ms, navigation→visible720–793ms on dev modules. G1 PASS1867, browser6/6; G7 loaded entry−3B; protected231sources exact. Offline cold acceptance stays223.3ms and must be rerun in U8.

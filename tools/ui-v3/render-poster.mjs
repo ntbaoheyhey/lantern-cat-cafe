@@ -1,0 +1,4 @@
+import{chromium}from'../../apps/web/node_modules/@playwright/test/index.mjs';import{execFileSync}from'node:child_process';import{mkdirSync}from'node:fs';
+const browser=await chromium.launch({headless:true}),page=await browser.newPage({viewport:{width:1280,height:720}});
+try{await page.goto('http://127.0.0.1:5950/tools/ui-v3/poster.html');await page.waitForFunction(()=>window.__uiPoster?.ready,{},{timeout:60000});await page.waitForTimeout(1500);
+const canvas=page.locator('canvas');await canvas.screenshot({path:'/tmp/ui-v3-cafe-poster.png'});mkdirSync('apps/web/src/game/cardrpg/ui-v3/assets',{recursive:true});execFileSync('/tmp/ui-v3-python/bin/python',['-c','from PIL import Image;Image.open("/tmp/ui-v3-cafe-poster.png").save("apps/web/src/game/cardrpg/ui-v3/assets/cafe.webp",quality=90)']);console.log(await page.evaluate(()=>window.__uiPoster.stats));}finally{await browser.close()}
