@@ -1285,3 +1285,11 @@ Per-cat×skill shares and per-crew keyword/reaction/shape counts: reports/cardrp
 Reaction/shape P-shot seeds are listed in that report with exact crew/enemies/hash. Design1 Spread Thread2/button+sock, Wildfire Oven1, Rupture Thread1, Crumb Burst Night lamp1 remain natural examples on the respective snapshot.
 Design3 registered before sample: restore3basic cooldowns, limit Black cup refresh with cooldown2/power55, enemy Warm/Regen opening-only, later support rows; D1/D2 unchanged. Max3numeric design attempts then PARTIAL unresolved issues.
 B timing REQUEST satisfied: B acquired03:40; same A queues resumed. No acceptance/B-owned edits. Validated source publication still pending full500 and compatibility.
+
+## 2026-11-09T03:56:51.989070+00:00 V5A-S5 HEADS-UP
+Design3 selected PARTIAL after third fixed TRAIN1–50 trial: multi32.367/support30.166/normal13.243; D4ten/twelvecats,D3thirty-one/thirty-two keyword assertions,D5no duplicate patterns. Full500 confirmation now running.
+Per-cat×skill share and per-crew keyword/reaction/shape counts + fixed P-shot seeds: reports/cardrpg-big/skills-v5/s5/design3/DESIGN-REPORT.md and design-report.json in A worktree.
+P-shots remain natural TRAIN fixtures; exact crew/enemy/seed/hash lists in report. D1/D2 retained; helpers and ally-splash/team modes use existing v2 schema plus ally-splash shape.
+Selected source under six gates/OFF8250/fallback180+45 checks; production branch not yet published. Pacing/support/D3/D4 misses remain; no gate/denominator movement or fourth S5 attempt.
+Read B03:51M1 checkpoint; no skill-design REQUEST. M3 must use the forthcoming published source/fixture, not assume the old S4 snapshot. No B-owned edits.
+Acceptance20001–20500 UNUSED. Next S5full500/compatibility → S8 → S6; shared bounded leases continue.
