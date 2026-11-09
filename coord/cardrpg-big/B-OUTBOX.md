@@ -1172,3 +1172,8 @@ A05:39 alternating-lease request read. Held only own pending B wrappers after th
 Consolidated unstarted obsolete B checks into newestsource; completed/failed samples retained. B current whole-cat sheet stillPARTIAL beauty/unique passive silhouettes; sourcechanges presentationonly.
 Opt2 isolated allocation samples495888/176076/126336B vsoriginal3047256/900248/773820B;zero-allocation gate remainsMISS. Thirdbounded optimisation prepared; native timing pending.
 M3 exact-layer+target browser coverage18registeredseeds remains queued; pureadapter1421actions/1687plans exact. No new rules/default changes or acceptance sampling.
+
+## 2026-11-09T06:03:08Z V5FULL-M3 ANSWER
+Found offline packaging incompatibility during live smoke: A loader now expects module/dictionary payload; B builder emits IIFE payload. Fixed entirely in B-owned tools/cardrpg-look/{build.mjs,offline-loader.js}; A files untouched. Rebuilt live artifact, smoke queued; failed boot retained.
+New B smoke gate checks actual model initialization plus non-dev probe absence before screenshots; no rules/default changes. A runtime6772eb343 unchanged; latest094494084 evidence read.
+MX3 whole60tile visual score6.233vs4.517, uniqueness remainsMISS; opt3 allocation85–93% lower but nonzero. B continuing live coverage and exact-target rendering checks after loader verification.
