@@ -1,0 +1,75 @@
+{
+  "passed": true,
+  "before": true,
+  "mode": "on",
+  "width": 1280,
+  "height": 720,
+  "artifact": "reports/cardrpg-big/a5/e2-star-plans/prototype-on/index.html",
+  "sha256": "2c3186275e052a423c55830cd6b7b20d2c8af5769b8854c184e2399a5576bc86",
+  "checks": [
+    {
+      "name": "retained",
+      "look": "baseline",
+      "beforeBand": 5,
+      "previouslySelectedBand": 2
+    }
+  ],
+  "captures": [
+    {
+      "name": "retained",
+      "look": "baseline",
+      "path": "reports/cardrpg-big/a5/e2-home-band/before-on-1280-attempt-1/baseline-retained.png",
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "TONIGHT'S LITTLE ADVENTURE",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "Keep the lantern warm.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Your crew is ready. Explore Tangled Cafe and learn the boss’s tricks.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Explore Tangled Cafe →",
+          "ratio": 9.237546476333335
+        },
+        {
+          "text": "Next star · 70 found",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Tangled Cafe · band 5, stop 2: Visit with a four-mark crew job active.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "The kettle",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Fresh service tomorrow.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Tomorrow",
+          "ratio": 6.858421081163746
+        },
+        {
+          "text": "Preparing miniatures…",
+          "ratio": 12.254179465283396
+        }
+      ],
+      "primaryVisible": true
+    }
+  ],
+  "errors": [],
+  "remote": [],
+  "limitations": [
+    "Synthetic boundary cases are identified in the fixture manifest.",
+    "Scoped Home contrast; targeted captures, not the Z pack.",
+    "No combat, progression or elapsed cadence claim."
+  ]
+}

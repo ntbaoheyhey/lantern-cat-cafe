@@ -1,5 +1,5 @@
 // REFERENCE: isolated result56 UI prototype; production source and elapsed artifacts stay unchanged.
-import {readFile,writeFile} from 'node:fs/promises';
+import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {resolve,dirname} from 'node:path';
 import {spawn} from 'node:child_process';
@@ -15,6 +15,7 @@ let source=await readFile(root+'/tools/cardrpg-big/build.mjs','utf8');
 source=source.replace(/from '([^']+)'/g,(whole,path)=>path.startsWith('.')?`from ${JSON.stringify(resolve(root+'/tools/cardrpg-big',path))}`:whole);
 const plugin=`{name:'a5-result56-isolated-overlay',enforce:'pre',resolveId(source,importer){if(!source.startsWith('.')||!importer)return;const base=resolve(importer.slice(0,importer.lastIndexOf('/')),source);for(const path of [base,base+'.ts',base+'.tsx'])if(overlay[path])return path;},load(id){const row=overlay[id];if(row)return readFileSync(row.path,'utf8');}}`;
 source=source.replace('const embeddedAssets = new Map();',`const overlay=${JSON.stringify(overlay)};\nconst embeddedAssets = new Map();`).replace('plugins: [{',`plugins: [${plugin}, {`);
+await mkdir('/tmp/cardrpg-a5-result-advice-56',{recursive:true});
 await writeFile('/tmp/cardrpg-a5-result-advice-56/sandbox-builder-'+mode+'.mjs',source);
 await writeFile('/tmp/cardrpg-a5-result-advice-56/overlay-'+mode+'.json',JSON.stringify({method:'Unadopted result56 UI overlay only; original source and elapsed artifacts unchanged.',inputs,overlay},null,2)+'\n');
 const child=spawn(process.execPath,['/tmp/cardrpg-a5-result-advice-56/sandbox-builder-'+mode+'.mjs'],{cwd:root,env:{...process.env,BIG_GAMEPLAY_V4:mode==='on'?'1':'0',BIG_OUTPUT_DIR:'/tmp/cardrpg-a5-result-advice-'+mode,BIG_PYTHON:'/tmp/cardrpg-a5-tools/bin/python'},stdio:'inherit'});

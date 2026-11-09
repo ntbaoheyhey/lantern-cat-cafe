@@ -1,0 +1,101 @@
+{
+  "passed": false,
+  "before": false,
+  "mode": "off",
+  "width": 1280,
+  "height": 720,
+  "artifact": "/tmp/cardrpg-a5-route-order-off/index.html",
+  "sha256": "62291bfa6609d6a452e3da8192c4de29600bedf4ec43b26c97ecc615ad4aa385",
+  "checks": [],
+  "captures": [
+    {
+      "path": "reports/cardrpg-big/a5/c1-route-order/off-1280-attempt-1/baseline-complete.png",
+      "name": "complete",
+      "look": "baseline",
+      "decisionVisible": true,
+      "box": {
+        "x": 393.109375,
+        "y": 362.296875,
+        "width": 113.5625,
+        "height": 40.140625
+      },
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "campaign · floor 1",
+          "ratio": 9.049339025684167
+        },
+        {
+          "text": "Midnight Pantry",
+          "ratio": 14.358253556218784
+        },
+        {
+          "text": "The lantern stays lit.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Chapter rewards and equipment are already in your account.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Equip your rewards",
+          "ratio": 9.237546476333335
+        },
+        {
+          "text": "Return to cafe",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Known about the boss: 2/3",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Opening pattern",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Empty Banquet removes shields and applies Hush.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Closing pattern",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Beat an elite to learn more.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Who it can reach",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Row attacks ignore cover",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Three goals at every stop",
+          "ratio": 8.214732745339752
+        },
+        {
+          "text": "Your charms of the night",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Charms last through this run. Their effects apply when the next encounter begins.",
+          "ratio": 11.756728459422893
+        }
+      ],
+      "activityBeforeMap": true,
+      "mapBeforeActivity": false,
+      "mapBeforeScouting": true
+    }
+  ],
+  "errors": [],
+  "remote": [],
+  "limitations": [
+    "Targeted saved-fixture UI checks, not elapsed cadence, balance or x1 timing.",
+    "OFF retains original DOM ordering, including its below-fold controls.",
+    "Scoped text contrast, not the Z screenshot pack."
+  ]
+}

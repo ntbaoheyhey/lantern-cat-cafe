@@ -1,0 +1,188 @@
+{
+  "passed": false,
+  "before": false,
+  "mode": "on",
+  "width": 1280,
+  "height": 720,
+  "artifact": "/tmp/cardrpg-a5-route-order-on/index.html",
+  "sha256": "0114965d0b86b3f371e3309239ac12b93c275b58e339de37317a70c9d7a03d92",
+  "checks": [
+    {
+      "mode": "on",
+      "width": 1280,
+      "look": "baseline",
+      "name": "complete",
+      "exactCommandState": true,
+      "input": "keyboard"
+    }
+  ],
+  "captures": [
+    {
+      "path": "reports/cardrpg-big/a5/c1-route-order/on-1280-attempt-1/baseline-complete.png",
+      "name": "complete",
+      "look": "baseline",
+      "decisionVisible": true,
+      "box": {
+        "x": 387.265625,
+        "y": 362.296875,
+        "width": 113.5625,
+        "height": 40.140625
+      },
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "campaign · floor 1",
+          "ratio": 9.049339025684167
+        },
+        {
+          "text": "Midnight Pantry",
+          "ratio": 14.358253556218784
+        },
+        {
+          "text": "The lantern stays lit.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Today’s supplies are gathered. Your stars and collected equipment are saved.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Review equipment",
+          "ratio": 9.237546476333335
+        },
+        {
+          "text": "Return to cafe",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Known about the boss: 2/3",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Opening pattern",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Empty Banquet removes shields and applies Hush.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Closing pattern",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Beat an elite to learn more.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Who it can reach",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Row attacks ignore cover",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Three goals at every stop",
+          "ratio": 8.214732745339752
+        },
+        {
+          "text": "Your charms of the night",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Charms last through this run. Their effects apply when the next encounter begins.",
+          "ratio": 11.756728459422893
+        }
+      ],
+      "activityBeforeMap": true,
+      "mapBeforeActivity": false,
+      "mapBeforeScouting": true
+    },
+    {
+      "path": "reports/cardrpg-big/a5/c1-route-order/on-1280-attempt-1/baseline-route.png",
+      "name": "route",
+      "look": "baseline",
+      "decisionVisible": true,
+      "box": {
+        "x": 221,
+        "y": 365.015625,
+        "width": 130.5625,
+        "height": 145.515625
+      },
+      "overflow": 0,
+      "contrast": [
+        {
+          "text": "campaign · floor 1",
+          "ratio": 9.049339025684167
+        },
+        {
+          "text": "Tangled Cafe",
+          "ratio": 14.358253556218784
+        },
+        {
+          "text": "Use tonic",
+          "ratio": 10.615526804635495
+        },
+        {
+          "text": "Choose",
+          "ratio": 6.192688133935581
+        },
+        {
+          "text": "Opening clue",
+          "ratio": 6.192688133935581
+        },
+        {
+          "text": "Known about the boss: 0/3",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Opening pattern",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Complete the first stop.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Closing pattern",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Beat an elite to learn more.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Who it can reach",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Visit a story stop to learn more.",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Three goals at every stop",
+          "ratio": 8.214732745339752
+        },
+        {
+          "text": "Your charms of the night",
+          "ratio": 11.756728459422893
+        },
+        {
+          "text": "Choose charms after encounters to build a plan for the boss.",
+          "ratio": 11.756728459422893
+        }
+      ],
+      "activityBeforeMap": false,
+      "mapBeforeActivity": false,
+      "mapBeforeScouting": true
+    }
+  ],
+  "errors": [],
+  "remote": [],
+  "limitations": [
+    "Targeted saved-fixture UI checks, not elapsed cadence, balance or x1 timing.",
+    "OFF retains original DOM ordering, including its below-fold controls.",
+    "Scoped text contrast, not the Z screenshot pack."
+  ]
+}

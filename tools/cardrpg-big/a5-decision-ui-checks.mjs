@@ -8,7 +8,7 @@ const root='reports/cardrpg-big/a5/c1-decisions',out=root+'/ui-checks';
 await mkdir(out,{recursive:true});
 const rows=JSON.parse(await readFile(out+'/checks.json','utf8').catch(e=>{if(e.code==='ENOENT')return '[]';throw e;}));
 const draft='tools/cardrpg-big/a5-drafts/decision-ui-57';
-const steps=[['supplement',[draft+'/supplement.mjs'],{}],
+const steps=[['supplement',[draft+'/supplement.mjs'],{}],['next-run-advice',[draft+'/next-run-advice.mjs'],{}],
  ...['on','off'].map(mode=>['build-'+mode,['tools/cardrpg-big/build.mjs'],{BIG_GAMEPLAY_V4:mode==='on'?'1':'0',BIG_OUTPUT_DIR:root+'/artifact-'+mode,BIG_PYTHON:'/tmp/cardrpg-a5-tools/bin/python'}]),
  ...['route','home','result'].flatMap(flow=>['on','off'].flatMap(mode=>[1280,1440,1024].map(width=>[`${flow}-${mode}-${width}`,[draft+'/'+flow+'-browser.mjs',mode,String(width)],{
   A5_DECISIONS_ARTIFACT:root+'/artifact-'+mode+'/index.html',A5_DECISIONS_OUTPUT:root+'/'+flow,

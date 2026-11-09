@@ -1,0 +1,18 @@
+{"lock":"acquired","lane":"A","pid":44390,"startedAt":"2026-11-09T00:21:03.439Z","task":"A5 decisions result-off-1280"}
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+locator.waitFor: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('button', { name: 'Apply and retry route', exact: true }) to be visible[22m
+
+    at /Users/bao/taskbar-hero-cardrpg-a4/tools/cardrpg-big/a5-drafts/decision-ui-57/result-browser.mjs:56:44 {
+  log: [
+    "  - waiting for getByRole('button', { name: 'Apply and retry route', exact: true }) to be visible"
+  ],
+  name: 'TimeoutError'
+}
+
+Node.js v24.22.2
+{"lock":"released","pid":44390,"task":"A5 decisions result-off-1280"}

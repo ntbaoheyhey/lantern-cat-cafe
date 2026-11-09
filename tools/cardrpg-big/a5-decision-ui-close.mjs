@@ -18,7 +18,7 @@ assert.equal(execFileSync('git',['diff','--name-only',source,'--','apps','packag
 const runs=await json(root+'/ui-checks/checks.json');
 for(const row of runs)assert.equal(sha(await readFile(row.log)),row.sha256,row.log);
 const requireRun=name=>{const row=runs.findLast(r=>r.name===name);assert.equal(row?.code,0,name);return row;};
-requireRun('supplement');
+requireRun('supplement');requireRun('next-run-advice');await json(root+'/off-preference-settled.json');
 const artifacts=[];
 for(const mode of ['on','off']){
  requireRun('build-'+mode);

@@ -53,13 +53,17 @@ try {
    await imported(f);
    if(mode==='off'){
     if(f.name==='off-preference-active-v4'){
-     await button('Apply and retry route').waitFor({timeout:30000});
+     await button('Open team preparation').waitFor({timeout:30000});
      const current=await read();assert.equal(current.state.gameplayV4,false);assert.equal(current.state.run.gameplayV4,true);assert.equal(current.state.run.complete,false);
      assert.equal(await page.locator('.dp-v4-result-decisions').count(),1);
-     assert.match(await button('Apply and retry route').getAttribute('class'),/cr-primary/);
+     assert.match(await button('Open team preparation').getAttribute('class'),/cr-primary/);
      assert(!/cr-primary/.test(await button('Continue to rewards').getAttribute('class')||''));
-     await capture(f.name+'-result','Apply and retry route','.dp-v4-advice');
-     checks.push({name:f.name,look,retainedActiveV4:true,nextRunPreference:false});continue;
+     assert.equal(await button('Apply and retry route').count(),0);
+     await capture(f.name+'-result','Open team preparation','.dp-v4-advice');
+     await button('Open team preparation').click();
+     const settled=await read();assert.equal(settled.screen,'team');assert.equal(settled.state.gameplayV4,false);assert.equal(settled.state.run.complete,true);
+     assert.deepEqual(JSON.parse(JSON.stringify(settled.state)),JSON.parse(await readFile('reports/cardrpg-big/a5/c1-decisions/off-preference-settled.json')));
+     checks.push({name:f.name,look,retainedActiveV4:true,nextRunPreference:false,exactPublicSettlement:true,teamFallback:true});continue;
     }
     assert.equal(await page.locator('.dp-v4-result-decisions').count(),0);
     if(f.name==='off')assert.equal(await page.locator('.dp-v4-advice').count(),0);

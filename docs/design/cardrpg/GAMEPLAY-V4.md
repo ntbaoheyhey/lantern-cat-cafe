@@ -270,3 +270,7 @@ No win percentage or precise extra survival-hit claim is justified. Contextual T
 
 ### A5 revision — Home star destination
 Home’s next-star hint and primary route use the same chapter and challenge band. Newly unlocked uncleared chapters retain priority; active routes are never replaced, and star records above the current crew ceiling are not advertised as available. The earned mismatch and corrected three-width checks are in `reports/cardrpg-big/a5/E2-HOME-STARS.md`. No balance or reward rule changes.
+
+### A5 revision — stable first-clear challenge and visible next decisions (2026-11-09)
+
+For a first chapter clear, Home starts at band1 or retains the last chosen band in that chapter, bounded by current team level. Raising a cat's level does not raise this default. Explicit band selection and active-route bands are preserved. The old strongest-available default cancelled some visible upgrade progress; the retained Home54 fixture demonstrates band2 becoming5 solely on returning Home. The training diagnostic is limited (22/400 improve;377/400 still lose), so difficulty and day7 gates remain unchanged. Pending route choices precede scouting/map context. A V4 loss places its available next-change action beside named contributions; tutorial, replay, victory and effective-OFF flows preserve their existing primary actions. A next-run OFF preference does not change the active V4 route mode. Evidence: reports/cardrpg-big/a5/c1-decisions/registration.json; integrated UI checks remain required before phase closure.
