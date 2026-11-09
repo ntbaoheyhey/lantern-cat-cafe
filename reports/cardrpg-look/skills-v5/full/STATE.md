@@ -1,5 +1,5 @@
 # Skills V5 full run
-NOW MX3 third material/ground fix preparing cinema3; MX5 opt1b measurements queued; M3 live adapter merged and browserpilot queued.
+NOW MX3 cinema3 whole86cue sheet captured/reviewing; MX5 opt3 third bounded allocation attempt prepared; M3 exact-target coverage2 queued.
 BASE #415 f9924699cab2fa5b8029baa1158f789ee44ddfda; fullPROMPT/RULES apply, no agents/models/desktop/Docker.
 DONE V0#409,V01#413,V3#415; never redo completed samples.
 DONE M1#416 source54d3e29b2; M2#418 tip58adf21de,source2e6ee6425; fullmilestone reports underfull/m1,m2.
@@ -27,3 +27,5 @@ DECISION M4stricter31.5MB overrides33MBgeneral;archiveoldvideo pathsbyimmutableg
 NEXT finishMX3/4/5checks+audit/selfscore,draftPR,checkpoint;mergeBtipintoM3(noArebase/edit);livecoverage/shots/casts/cold/collide/faces/parity;refreshAuntilS6DONEor19Nov18UTC;M4demo/lean/clips;M5<=90lines+ledger+DONE.
 WAITING nofixturewait:runnableS5available;latestA05:31timingrequestread,latestpublishedS5#417runtime6772eb343.
 STOP onlyM5delivered,20Nov12UTC,orunfixable/unrevertibleS1withM5PARTIAL. Continueautomatically.
+LATEST 05:51UTC: opt2 isolated600frame allocations495888/176076/126336B,zeroMISS. opt3 hoists target particle envelopes;type/lint/unit/build/parityPASS, browserpending.
+LATEST A4900 received nextlease afterBcinema3;handoff2.py resumes ownpausedBqueues afterA release. Source48c3f8ae2+opt3uncommitted.
