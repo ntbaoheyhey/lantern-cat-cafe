@@ -97,6 +97,7 @@ function validateEnemySnapshot(value: unknown): void {
   }
   if(value.challengeLevel!==undefined&&(!Number.isSafeInteger(value.challengeLevel)||Number(value.challengeLevel)<1||Number(value.challengeLevel)>50))fail();
   validateSupply(value.packedSupply);
+  if(value.skillsV5!==undefined&&(typeof value.skillsV5!=='boolean'||value.skillsV5&&!value.gameplayV4))fail();
   if(value.gameplayV4!==undefined&&typeof value.gameplayV4!=='boolean') fail();
   if(value.gameplayV4&&!validPlan(value.plan)) fail();
 }
@@ -107,6 +108,7 @@ export function validateDepth(value: unknown): asserts value is DepthAccount {
   example.equipment = {};
   shape(value, example);
   const state = value as DepthAccount;
+  if(state.skillsV5!==undefined&&typeof state.skillsV5!=='boolean')fail();
   if(state.gameplayV4 !== undefined && typeof state.gameplayV4 !== 'boolean') fail();
   if(state.gameplayV4 && !state.v4) fail();
   if(state.v4 && (state.v4.version!==1 || !validPlan(state.v4.plan))) fail();
@@ -179,6 +181,7 @@ export function validateDepth(value: unknown): asserts value is DepthAccount {
     for (const node of run.nodes) if (!Array.isArray(node.next) || !Array.isArray(node.enemies) || typeof node.id !== 'string') fail();
     if (run.battle && (!Array.isArray(run.battle.actors) || !Array.isArray(run.battle.queue)
       || !Array.isArray(run.battle.log) || !Array.isArray(run.battle.choices) || !record(run.battle.initial))) fail();
+    if(run.skillsV5!==undefined&&(typeof run.skillsV5!=='boolean'||run.skillsV5&&!run.gameplayV4))fail();
     if(run.gameplayV4!==undefined&&typeof run.gameplayV4!=='boolean') fail();
     if(run.battle?.initial.gameplayV4) {
       const v=run.battle.v4;
@@ -194,7 +197,7 @@ export function validateDepth(value: unknown): asserts value is DepthAccount {
 export function exportSave(state: DepthAccount): string {
   validateDepth(state);
   const payload = JSON.stringify(state);
-  return `THC${state.v4?.journey ? '13' : state.v4 ? '12' : '7'}.${saveChecksum(payload)}.${payload}`;
+  return `THC${(state.skillsV5||state.run?.skillsV5||state.lastBattle?.skillsV5) ? '14' : state.v4?.journey ? '13' : state.v4 ? '12' : '7'}.${saveChecksum(payload)}.${payload}`;
 }
 function migrateDepth(value: unknown): unknown {
   if (!record(value) || !['0.5.0', '0.6.0'].includes(String(value.version))) fail();
@@ -216,13 +219,13 @@ export function importSave(code: string, now = 0): DepthAccount {
     validateAccount(legacy);
     return migrateAccount(legacy, now);
   }
-  const match = /^THC(5|6|7|8|9|10|11|12|13)\.([a-f0-9]{8})\.([\s\S]+)$/.exec(trimmed);
+  const match = /^THC(5|6|7|8|9|10|11|12|13|14)\.([a-f0-9]{8})\.([\s\S]+)$/.exec(trimmed);
   if (!match || saveChecksum(match[3]!) !== match[2]) throw new Error('Save checksum failed. Copy the complete code again.');
   const parsed: unknown = JSON.parse(match[3]!);
   safeTree(parsed);
-  const state = ['7','8','9','10','11','12','13'].includes(match[1]!) ? parsed : migrateDepth(parsed);
+  const state = ['7','8','9','10','11','12','13','14'].includes(match[1]!) ? parsed : migrateDepth(parsed);
   validateDepth(state);
-  if (match[1] !== '13') initializeJourneyV4(state);
+  if (!['13','14'].includes(match[1]!)) initializeJourneyV4(state);
   validateDepth(state);
   return state;
 }

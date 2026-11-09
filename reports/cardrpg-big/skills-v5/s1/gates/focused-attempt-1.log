@@ -1,0 +1,36 @@
+{"lock":"acquired","lane":"A","pid":69994,"startedAt":"2026-11-09T00:49:06.599Z","task":"V5A S1 focused statuses"}
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-a4/packages/game-rules
+
+ ❯ src/cardrpg/depth/skills-v5/statuses.test.ts (31 tests | 1 failed) 68ms
+   ❯ Skills V5 core keywords (27)
+     × boss Daze loses the signature without reducing the basic; boss Daze resistance is higher 4ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/cardrpg/depth/skills-v5/statuses.test.ts > Skills V5 core keywords > boss Daze loses the signature without reducing the basic; boss Daze resistance is higher
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ land src/cardrpg/depth/skills-v5/statuses.test.ts:14:97
+
+ ❯ run src/cardrpg/depth/skills-v5/statuses.test.ts:81:173
+ ❯ src/cardrpg/depth/skills-v5/statuses.test.ts:82:10
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 30 passed (31)
+   Start at  07:49:11
+   Duration  257ms (tests 43%, transform 29%, import 25%, worker 2%)
+
+undefined
+/Users/bao/taskbar-hero-cardrpg-a4/packages/game-rules:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: vitest run src/cardrpg/depth/skills-v5/statuses.test.ts
+{"lock":"released","pid":69994,"task":"V5A S1 focused statuses"}

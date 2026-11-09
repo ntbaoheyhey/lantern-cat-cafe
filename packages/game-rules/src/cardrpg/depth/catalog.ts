@@ -1,3 +1,4 @@
+import { NEW_STATUS_RULES_V5 } from './skills-v5/statuses';
 import { CARDS as LEGACY_CARDS } from '../catalog';
 import type { Cat, CatRole, Effect, Enemy, Flavour, Row, Skill, SkillType, StatusRule, TargetRule } from './contract';
 
@@ -22,7 +23,7 @@ export const STATUSES: StatusRule[] = [
   { id: 'sprout', name: 'Second sprout', kind: 'buff', cap: 1, duration: 3, dispellable: false, tick: 'none', strength: 25, description: 'Consume to survive a fatal hit at 25% HP, once per battle per actor.' },
   { id: 'decoy', name: 'Yarn decoy', kind: 'buff', cap: 1, duration: 2, dispellable: true, tick: 'none', strength: 1, description: 'Absorbs the next direct hit entirely, then disappears. Scald passes through.' },
 ];
-export const STATUS_BY_ID = Object.fromEntries(STATUSES.map(s => [s.id, s])) as Record<StatusRule['id'], StatusRule>;
+export const STATUS_BY_ID = Object.fromEntries([...STATUSES, ...NEW_STATUS_RULES_V5].map(s => [s.id, s])) as Record<StatusRule['id'], StatusRule>;
 
 type SkillSpec = [string, SkillType, TargetRule, number, number, number, Effect[], string];
 const specs: Record<string, SkillSpec[]> = {

@@ -28,3 +28,5 @@ export * from './scouting-v4';
 
 export * from './journey-v4';
 export * from './stars-v4';
+
+export * from './skills-v5';
