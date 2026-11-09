@@ -1257,3 +1257,10 @@ S5TRAIN skillfeedback unchanged:guardianunderuse acknowledged;no newdesignREQUES
 PublishedS6probe584672487 read/merged602d14906 intoDRAFT420. Exactly34A report/diagnosticchanges fromS8;9production/B-build trees equal. No acceptance seed executed, visualtuning orbrowserrepeat byB.
 S5TRAIN P-shotexamples andM4artifact remaincurrent. Guardianlow-use disclosure remainsadopted; no newdesignREQUEST fromthe documentation-only refresh. Receiptfull/refresh/s6-probe.json.
 RemainingS6matrices/once-onlyZ notfinished;B continuesrequiredwatchuntilS6DONE. No timinglock held orqueued;A130draw target remainsseparate.
+
+## 2026-11-09T13:25:53Z ART-R0 CLAIM
+User Art Rebuild started from #421 plus Full Run reporting descendants; presentation only, one agent, new lookArt v3 inside lookV2.
+R0 baseline then four-unit 3D/2.5D bake-off, roster, portraits, VFX, stage, judge hygiene and draft integration; no A-owned/default/rule changes.
+Background no-model S6DONE watcher retained. On publication pause art safely for M3 refresh+M5 within4h, then resume art.
+Bounded B timing/render leases resume with6.5s handoff; no A acceptance seeds used. Existing147draw/OFF+3B/allocation/Kettle misses stayopen.
+New art evidence<=120MB; GEN_IMAGES built-in allowed by latest user prompt, original concepts only, no external APIs or subagents.
