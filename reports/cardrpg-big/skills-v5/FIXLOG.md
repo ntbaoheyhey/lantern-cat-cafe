@@ -1,5 +1,18 @@
 # Skills V5 repair log
 
+## S5-BARE-ATTRIBUTION-BITS — read-only diagnostic decoder (FIXED)
+- Reproduce: initial read-only aggregation of `s5/before/pieces/results.json` interpreted outcome bit 1 as the without-item result. Its assertion against the saved 321 misses failed (the inverted interpretation found 5). The command stopped before writing any report; simulations and existing summaries were untouched.
+- Ranked hypotheses: (1) reversed outcome bits, confirmed against `bare-matrix.mjs:128`; (2) incomplete cells, ruled out for all 2,304 rows; (3) source drift, not indicated by this arithmetic mismatch.
+- Smallest fix: decode bit 2 as without-item and bit 1 as with-item, matching the registered runner. Verify every pair of win counts and gain against each existing summary before writing the attribution file.
+- Verification: all 4,608 before/selected cells agree; counts are 321 → 33. No production rule changed; selected OFF8,250/fallback180+45 and affected full combat matrices remain bound to `s5-selected/audit.json`. FIXED; no battle sample or design attempt consumed.
+
+## S5-A5-BARE-ITEM — fewer failing cells, larger worst gain (PARTIAL)
+- Reproduce: completed `s5/{before,selected}/pieces/results.json`, 2,304 cells × TRAIN1–500 each. Read-only paired aggregation and receipt hashes: `s5/selected/bare-item-attribution.json`.
+- Measure: failed cells 321 → 33; worst gain 47.6 → 51 percentage points. The unchanged single-item gate is ≤12 points, so it remains MISS despite the lower failure count. Display share remains below 10%.
+- Ranked hypotheses: (1) survivability effects cross sharp win thresholds; (2) new helper/status pressure changes the benefit of particular carriers; (3) reference difficulty floors conceal effects in other cells. These hypotheses have not been isolated by ablation.
+- Smallest next fix: trace the retained worst cell and isolate one item effect on TRAIN. The three S5 design packages remain exhausted; no fourth package, new fixture or replacement denominator is introduced.
+- Verification/status: full affected combat matrices and exact OFF8,250/fallback180+45 checks are retained; progression continues on the same source. PARTIAL; revisit with complete progression evidence before S6.
+
 ## S5-GUARDIAN-ATTRIBUTION-HASH — diagnostic setup serialization (FIXED)
 - Reproduce: `node tools/cardrpg-big/skills-v5/diagnose-guardian-use.mjs`, first fixed replay `matched/oven/0/1`. Original script/log retained in `s5/selected/guardian-attribution-preflight/attempt-1.*`; no attribution result was emitted.
 - Measure: expected saved hash `dbebf34a9ce69484f307b5e70fda481a115ecc5a7d360e748f8def1f86d0750f`, diagnostic `5982589ca15638e39c8d12f215c8ffa15307d7882b91046da7edc353dbe9c49c`.

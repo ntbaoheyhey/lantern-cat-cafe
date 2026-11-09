@@ -27,7 +27,7 @@ Spec amendment authorised: Cinnamon ally splash and no-casualty team ultimate; b
 Next phases: S0 -> S1 -> S2 -> S3 -> S4 -> S5 -> S8 -> S6; S7 after S3.
 Acceptance: 20001-20500 UNUSED; TRAIN 1-500 only.
 Open: fourth-slot 63/384, worst88.8pp; cats/sets/bands; cadence723s/deadtime2%; startup/static display/Z.
-B:07:04M3 eighteen exact natural replays read;06:55 Yarn+4threads152draws separate. A keeps130gate/ownartifact; guardian disclosure adopted, overlay diagnostic queued.
+B:07:31 read: separate B artifact147 peak draws; A keeps130 target and own artifact. Guardian disclosure adopted; ready-scene overlay diagnostic queued.
 Untouchable: .DS_Store and display-context-40/{partial,results}.json preserved uncommitted.
 No model helpers, CUA, Docker, main checkout edits, merge or deploy.
 Done: S3 DRAFT411 on410, runtime053fe383d/evidence8a894a35f.
@@ -56,5 +56,5 @@ S7 priority: same S5 queues resumed after isolated E2E PASS; receipt/tmp/cardrpg
 S8 preflight: selected default build/tmp/cardrpg-v5a-s8-selected-default-dist; main340f88b9 rechecked. Home now requires complete S5 score/audit; no run yet.
 S6 tools preflightPASS; ready-scene fallback/HP-plate diagnostic added to same Z capture after B06:30. No samples; missing A5 registration handled with exact PROMPT-A5 gates.
 S5 addendum: design1multi32.089/support29.595/normal12.08; design2b32.940/30.045/17.967REJECTED. Design3full500:multi32.525/support29.842/normal13.238,D4ten/twelve,D3thirty/thirty-two,D5PASS; A5matrices running. FIXLOG active, acceptance UNUSED.
-S5 before4505cells complete; selected source/hashchecksPASS; fourthslot35/384,worst47ppMISS; teams663/sets64/tiers210/elites880 complete. Cats51.05–79.17%,tiers19/24,bands13/33miss; bare/progression queue51634 retained.
+S5 selected4505cells complete; fourthslot35/384,worst47pp; bare33/2304,worst51pp (before321/47.6). Cats51.05–79.17%,tiers19/24,bands13/33miss; same progression queue51634 continues; source/hash checks PASS.
 S5 diagnostics:23D3+18D4+2starter pacing replays exact; guardians legal but skipped, starter12/25r with0/606enemy heal. PACING-REVIEW.md; full500 queues continue unchanged.
