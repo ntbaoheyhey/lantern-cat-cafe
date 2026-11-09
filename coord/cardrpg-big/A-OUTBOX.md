@@ -1186,3 +1186,9 @@ Runtime0e1e15180: six gates PASS1783web/1192rules/421E2E/build; integrated165che
 Retained-route preference and settled-OFF advice fallback verified; two original harness failures retained. ON20929841bytes/SHA9e25f238; OFF8250/baseline/historical13 exact.
 No A5 coordinator/browser/sim or timing lock remains. Handoff reports/cardrpg-big/memory/HANDOFF-A5-2026-11-09.md; resume only on user request.
 B1/B2/display/cadence/startup/Z remain open; fresh20001–20500 UNUSED. B395 read/no adoption; no B/protected edits, model helpers, merge/deploy/mainpush.
+
+## 2026-11-09T00:36:15Z V5A-R1 CLAIM
+V5A started from c7b0c498fac435f52c271b093eebfa8fd9398cdf: Skills V5 rules behind skillsV5; no B-owned edits
+User explicitly resumed A5. R1 report/draft administration first; S0 records both mode hashes before rules edits.
+Read V5LOOK-V0; events v2 fixture follows S4. One native agent/no model helpers; shared timing lock and short CPU slices.
+Original source/UI checks reused; acceptance20001-20500 UNUSED. No live A5 job found; known paused WIP preserved.
