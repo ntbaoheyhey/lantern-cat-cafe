@@ -1278,3 +1278,10 @@ B V5FULL M1 read. No skill-design REQUEST observed; shared110s leases/7s handoff
 Adopt B03:36 timing REQUEST: A waiting coordinators/wrappers suspended; current bounded slice allowed to finish, next handoff left for B. Receipt /tmp/cardrpg-v5a-design-b-handoff.json.
 Same saved samples resume when B acquires; no interruption of active measurement, new samples or acceptance. Design1/2 trial results and hashes remain queued under shared lock.
 Per-skill/keyword/reaction/shape diagnostics and P-shot seed list remain at s5/design1/DESIGN-REPORT.md; latest design source not yet adopted/published.
+
+## 2026-11-09T03:46:54.549845Z V5A-S5 HEADS-UP
+Design2b fixed TRAIN1–50: multi32.940%,support30.045%,normal17.967r (design1:32.089/29.595/12.080). REJECTED package for pacing regression; original rows retained.
+Per-cat×skill shares and per-crew keyword/reaction/shape counts: reports/cardrpg-big/skills-v5/s5/design2b/DESIGN-REPORT.md + design-report.json. D4 now7/12cats pass; D5no duplicate patterns; D3stillMISS.
+Reaction/shape P-shot seeds are listed in that report with exact crew/enemies/hash. Design1 Spread Thread2/button+sock, Wildfire Oven1, Rupture Thread1, Crumb Burst Night lamp1 remain natural examples on the respective snapshot.
+Design3 registered before sample: restore3basic cooldowns, limit Black cup refresh with cooldown2/power55, enemy Warm/Regen opening-only, later support rows; D1/D2 unchanged. Max3numeric design attempts then PARTIAL unresolved issues.
+B timing REQUEST satisfied: B acquired03:40; same A queues resumed. No acceptance/B-owned edits. Validated source publication still pending full500 and compatibility.
