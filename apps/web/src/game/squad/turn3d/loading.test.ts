@@ -49,3 +49,18 @@ it('restores GL state when compilation fails or navigation cancels preparation',
     expect(f.renderer.setRenderTarget).toHaveBeenLastCalledWith(f.target);
   }
 });
+
+it('bounded LOOK compilation traverses only its flat batch, preserving nested visibility', async () => {
+  const f = fixture();
+  const counts:number[]=[];
+  f.renderer.compileAsync.mockImplementation(async (...args:unknown[]) => {
+    const [root,,target]=args as [T.Object3D,T.Camera,T.Scene];
+    let count=0;root.traverse(object=>{if(object instanceof T.Mesh)count++;});counts.push(count);
+    expect(target).toBe(f.scene);
+  });
+  await warmScene(f.renderer as unknown as T.WebGLRenderer,f.scene,f.camera,()=>false,()=>{},true);
+  expect(counts).toEqual([12,12,2,12,12,2]);
+  expect(f.rendered.size).toBe(26);
+  expect(f.group.visible).toBe(false);
+  expect(f.parent.visible).toBe(false);
+});

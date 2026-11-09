@@ -1,4 +1,5 @@
 import * as T from 'three';
+import { lookWarmQueue } from './look-warm-queue';
 
 /** A paint between loading units. setTimeout alone can run many independent
  * loaders before the next refresh; the RAF boundary gives progress a frame. */
@@ -9,7 +10,7 @@ export const loadingFrame = () => new Promise<void>(resolve => {
 /** Compile and initialize GL uniforms/attributes in bounded batches, preserving
  * the real fog, lighting and output target variants. No visible frame is shown. */
 export async function warmScene(renderer: T.WebGLRenderer, scene: T.Scene, camera: T.Camera,
-  cancelled: () => boolean, progress: (fraction: number) => void) {
+  cancelled: () => boolean, progress: (fraction: number) => void, bounded = false) {
   const visibility = new Map<T.Object3D, boolean>();
   const drawables: (T.Mesh | T.Line | T.Points | T.Sprite)[] = [];
   const textures = new Set<T.Texture>();
@@ -29,11 +30,13 @@ export async function warmScene(renderer: T.WebGLRenderer, scene: T.Scene, camer
   const target = new T.WebGLRenderTarget(2, 2, { type: T.HalfFloatType });
   const oldCulling = drawables.map(object => object.frustumCulled);
   try {
-    for (const texture of textures) {
-      if (cancelled()) return;
-      renderer.initTexture(texture);
-      await loadingFrame();
-    }
+    if (bounded) await Promise.all([...textures].map(texture =>
+      lookWarmQueue.enqueue('scene-texture', () => renderer.initTexture(texture), cancelled)));
+    else for (const texture of textures) {
+        if (cancelled()) return;
+        renderer.initTexture(texture);
+        await loadingFrame();
+      }
     for (const [variant, destination] of [null, target].entries()) {
       renderer.setRenderTarget(destination);
       renderer.setViewport(0, 0, 2, 2);
@@ -47,7 +50,14 @@ export async function warmScene(renderer: T.WebGLRenderer, scene: T.Scene, camer
             if (!parent.visible) { parent.visible = true; enabled.add(parent); }
           }
         }
-        await renderer.compileAsync(scene, camera);
+        // compileAsync uses traverse, NOT traverseVisible: visibility alone does
+        // not bound compiler work. Flat traversal also excludes descendants of
+        // a selected parent mesh. The original scene supplies fog and lights.
+        const compileRoot = bounded ? new T.Group() : scene;
+        if (bounded) compileRoot.traverse = visit => { for (const object of batch) visit(object); };
+        const start = performance.now();
+        await renderer.compileAsync(compileRoot, camera, scene);
+        if (bounded) performance.measure('look-prewarm:scene-compile', { start, detail: { count: batch.length } });
         if (cancelled()) return;
         renderer.render(scene, camera);
         for (const object of enabled) object.visible = false;

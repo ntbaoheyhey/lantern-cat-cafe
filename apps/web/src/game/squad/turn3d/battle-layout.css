@@ -331,3 +331,9 @@
 .dp-v5look .dp-number-bitter small{display:inline-block;text-decoration:none;font-size:14px;color:#f2dfd7}
 /* Keep Bitter's approved violet hue above 4.5:1 against its own backing. */
 .dp-v5look .dp-status-badges button.dp-status-badge[data-status="bitter"]{background:#08151a}
+
+/* V5 target lanes reserve the full lifetime; opacity cannot move a number into a plate. */
+.dp-v5look.dp-readable .dp-float-number{width:110px;flex-direction:column;align-items:center;gap:2px;font-size:18px;line-height:20px;animation:none}
+.dp-v5look.dp-readable .dp-float-number[data-secondary="true"]{font-size:16px}
+.dp-v5look.dp-readable .dp-float-number .dp-number{padding:1px 4px;white-space:nowrap}
+.dp-v5look .dp-combo-callout[data-compact="true"]{width:38px;font-size:14px;padding:6px 2px}
