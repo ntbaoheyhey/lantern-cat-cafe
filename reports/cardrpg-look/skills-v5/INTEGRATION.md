@@ -13,3 +13,12 @@ Base: `598fd8019e62b7203dcfac4033f74bb64ba0dac5`, the B2 V6 branch tip after the
 The offline demo's Status guide offers clearly labelled presentation previews. The six paired shots deliberately stage statuses and rule-resolved row/detonation actions; the videos use an ordinary chapter-1 battle at x1 with no injected actions. Human status-recognition acceptance is not measured.
 
 Measurements bind to the artifact SHA and source hashes in `RESULTS.json` and `source-audit.json`. Earlier overlap, crown clipping and harness failures are retained in iteration/diagnostic receipts and are not reported as passing delivery samples. No merge or deployment is part of this handoff.
+
+## V3 · Published S4 fixture adapter
+
+Lane A published the fixture in draft412 on `codex/cardrpg-v5a-s4-2026-11-09`; B fetched it read-only. The exact parsed object is archived in `tools/cardrpg-look/skills-v5/v3-source.json`, with source provenance in `v3/FIXTURE.json`. It supplies the two new status looks, four reactions and splash/multi-hit/bounce previews in `docs/cardrpg-look/v5.html`.
+
+- The discriminator is **per-event `version:2`**; the battle container remains `v4.version:1`. `kind`, `sequence`, `actionId`, `stage` and `logIndex` identify and order the event. `reaction.targetId` is the primer/callout anchor, while `targets` contains affected destinations. A repeated target in `multi-hit.targets` remains a separate 70ms landing; never deduplicate or reroll it.
+- `applyV5Presentation` accepts immutable before/after status snapshots. Consumed primers receive an expiry beat; Bitter labels use the before snapshot even when the action removes it. Unknown or malformed event versions return the legacy presentation. Reaction words last400–500ms within the existing action; no rule or action-clock changes.
+- `v5SourceForPlan` provides the versioned adapter boundary for later integration; live `skillsV5` ON gameplay has **not** been integrated or validated here. The fixture viewer renders the published snapshots and logs, and its film is explicitly labelled recorded playback. It does not call V5 combat resolution or adopt Lane A's rule files.
+- Keep `lookV2` as the outer gate and preserve earned-reveal/phase/finish APIs. The new SVG paths and pooled effect shapes have provenance in `assets/provenance/look.md`. For live adoption, pass the real action's before/after snapshots with the versioned events, then validate real battles in the later integration step.

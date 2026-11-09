@@ -1,0 +1,17 @@
+{"lock":"acquired","lane":"A","pid":9355,"startedAt":"2026-11-09T02:05:49.246Z","task":"V5LOOK V3 after"}
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: crumb-burst word
+    at file:///Users/bao/taskbar-hero-cardrpg-b2/tools/cardrpg-look/skills-v5/v3-check.mjs:41:75 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
+
+Node.js v24.22.2
+{"lock":"released","pid":9355,"task":"V5LOOK V3 after"}

@@ -1,6 +1,7 @@
-import { CARD_STATUS_LOOKS, CRUMB_BURST_LAYER } from './card-status-looks';
+import { CARD_STATUS_LOOKS, CRUMB_BURST_LAYER, V5_CUE_LAYERS } from './card-status-looks';
+import type { ReactionBeat, LandingBeat } from './card-v5-events';
 import type { StatusPresentation } from './card-status-beats';
-import type { StatusId } from '@taskbar-hero/game-rules/src/cardrpg/depth/contract';
+import type { VisualStatusId } from './card-status-data';
 import { isReadableBattle } from './look-b2';
 import { LookVfx } from './look-vfx';
 import { LAB_EFFECT_RECIPES } from './card-lab-effects';
@@ -44,6 +45,8 @@ const fragmentShader = `
 const READABLE_GATHER: CardEffectLayer = { primitive:'knock-ring',motion:'pulse',anchor:'caster',count:1,start:0,end:1,size:.9,height:.045,spread:0,turns:0,offset:[0,0,0],aspect:[1,1,1],opacity:.60,ground:true,accent:false };
 const READABLE_IMPACT: CardEffectLayer = {...READABLE_GATHER,motion:'expand',size:1.9,opacity:.85};
 const READABLE_SMALL_IMPACT: CardEffectLayer = {...READABLE_IMPACT,size:.75,opacity:.65};
+const NO_REACTIONS:readonly ReactionBeat[]=[];
+const NO_LANDINGS:readonly LandingBeat[]=[];
 const nextTask = () => new Promise<void>(resolve => setTimeout(resolve, 0));
 const ease = (value: number) => value * value * (3 - 2 * value);
 const effectBeatSpans = {
@@ -233,12 +236,12 @@ export class CardEffects {
         if (actor.hp <= 0 || !position || !activeStatuses) continue;
         for (const status of activeStatuses) {
           const id = typeof status === 'string' ? status : status.id;
-          const look = this.atelier ? CARD_STATUS_LOOKS[id as StatusId] : LEGACY_CARD_STATUS_LOOKS[id];
+          const look = this.atelier ? CARD_STATUS_LOOKS[id as VisualStatusId] : LEGACY_CARD_STATUS_LOOKS[id];
           if (!look) continue;
           this.focus.copy(position);
           this.statusHeight=heights?.get(actor.id)??1.6;
-          this.mark=this.atelier?(id==='scald'?1:'crown' in look&&look.crown?2:(id==='cozy'||id==='glaze')?3:4):0;
-          if (this.atelier) this.focus.y += 'crown' in look && look.crown ? crowns?.get(actor.id) ?? (heights?.get(actor.id) ?? 1.6) + .18 : (heights?.get(actor.id) ?? 1.6) * .42;
+          this.mark=this.atelier?(id==='scald'?1:'crown' in look&&look.crown?2:(id==='cozy'||id==='glaze')?3:id==='snag'?5:4):0;
+          if (this.atelier && id!=='bitter') this.focus.y += 'crown' in look && look.crown ? crowns?.get(actor.id) ?? (heights?.get(actor.id) ?? 1.6) + .18 : (heights?.get(actor.id) ?? 1.6) * .42;
           this.baseColor.set(look.color);
           this.accentColor.copy(this.baseColor);
           const phase = calm ? .5 : .5 + Math.sin(time * 2) * .22;
@@ -252,6 +255,7 @@ export class CardEffects {
     this.mark=0;
     if (this.atelier && frame) {
       this.renderStatusBeats(frame, positions, camera, calm, heights);
+      this.renderV5Cues(frame, positions, camera, calm, heights);
       if (recipe) this.renderAction(frame, recipe, actors, positions, camera, quality, calm);
     }
     for (const { mesh, alpha, phase, flash, mark } of this.pools.values()) {
@@ -341,11 +345,59 @@ export class CardEffects {
     }
   }
 
+  private renderV5Cues(frame:EffectFrame, positions:Map<string,T.Vector3>, camera:T.Camera, calm:boolean, heights?:ReadonlyMap<string,number>) {
+    if(calm||!this.presentation)return;
+    for(const reaction of this.presentation.reactions??NO_REACTIONS){
+      const progress=(frame.elapsed-reaction.at)/reaction.duration;
+      if(progress<0||progress>=1)continue;
+      const primer=positions.get(reaction.targetId);if(!primer)continue;
+      this.focus.copy(primer);this.focus.y+=(heights?.get(reaction.targetId)??1.6)*.35;
+      this.caster.copy(this.focus);this.flash=0;
+      if(reaction.id==='crumb-burst'){
+        this.baseColor.set('#e6c392');this.accentColor.copy(this.baseColor);
+        for(let i=0;i<CRUMB_BURST_LAYER.count;i++)this.place(CRUMB_BURST_LAYER,progress,i,CRUMB_BURST_LAYER.count,camera,false);
+      }else if(reaction.id==='rupture'){
+        this.baseColor.set('#d9616b');this.accentColor.copy(this.baseColor);
+        for(let i=0;i<2;i++)this.place(V5_CUE_LAYERS.thread,progress,i,2,camera,false);
+        for(let i=0;i<4;i++)this.place(V5_CUE_LAYERS.drops,progress,i,4,camera,false);
+      }else for(const id of reaction.targets){
+        const target=positions.get(id);if(!target)continue;
+        this.focus.copy(target);this.focus.y+=(heights?.get(id)??1.6)*.32;
+        if(reaction.id==='wildfire'){
+          this.baseColor.set('#efaa73');this.accentColor.copy(this.baseColor);
+          for(let i=0;i<3;i++)this.place(V5_CUE_LAYERS.fire,progress,i,3,camera,false);
+        }else for(const status of reaction.primerIds){
+          const look=CARD_STATUS_LOOKS[status];if(!look)continue;
+          this.baseColor.set(look.color);this.accentColor.copy(this.baseColor);
+          this.place(look.apply,progress,0,1,camera,false);
+        }
+      }
+    }
+    for(const landing of this.presentation.landings??NO_LANDINGS){
+      const target=positions.get(landing.targetId),from=positions.get(landing.fromId);if(!target)continue;
+      const progress=(frame.elapsed-landing.at)/landing.duration;
+      this.focus.copy(target);this.caster.copy(from??target);this.baseColor.set(frame.plan.accent);this.accentColor.copy(this.baseColor);
+      if(landing.shape==='bounce'){
+        const travel=(frame.elapsed-landing.at+70)/70;
+        if(travel>=0&&travel<1){this.focus.y+=.55;this.caster.y+=.55;this.place(V5_CUE_LAYERS.arc,travel,0,1,camera,false);this.focus.copy(target);}
+      }
+      if(progress<0||progress>=1)continue;
+      this.sizeFactor=landing.scale;
+      if(landing.shape==='multi-hit'){
+        this.focus.y+=(heights?.get(landing.targetId)??1.6)*.35;
+        for(let i=0;i<2;i++)this.place(V5_CUE_LAYERS.strike,progress,i,2,camera,false);
+      }else this.place(V5_CUE_LAYERS.splash,progress,0,1,camera,false);
+      this.sizeFactor=1;
+    }
+  }
+
   private drawRecipe(recipe: CardEffectRecipe, actionProgress: number,
     camera: T.Camera, quality: Quality, calm: boolean, stagger = false) {
     this.baseColor.set(recipe.color);
     this.accentColor.set(recipe.accent);
     for (const layer of recipe.layers) {
+      const shape=this.presentation?.landings?.[0]?.shape;
+      if(stagger&&(shape==='splash'||shape==='multi-hit'||shape==='bounce')&&layer.anchor!=='caster')continue;
       const anchors = layer.anchor === 'all-targets' ? this.targets.length : 1;
       const density = quality === 'low' ? .5 : quality === 'medium' ? .8 : 1;
       const count = Math.max(1, Math.ceil(layer.count * density));
@@ -461,6 +513,11 @@ export class CardEffects {
     }else if(persistent && this.mark===3){
       this.position.addScaledVector(this.forward,this.statusHeight*.22);
       size*=this.statusHeight/1.6;
+    }
+    if(persistent && this.mark===5){
+      this.position.copy(this.focus).addScaledVector(this.side,(index-1)*this.statusHeight*.15);
+      this.position.addScaledVector(this.forward,this.statusHeight*.38);
+      this.position.y+=this.statusHeight*.03;spin=-.65;size*=this.statusHeight/1.6;
     }
     size*=this.sizeFactor;
     this.position.x += layer.offset[0];

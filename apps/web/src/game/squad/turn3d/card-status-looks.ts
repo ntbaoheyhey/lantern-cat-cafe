@@ -1,12 +1,14 @@
 import type { CardEffectLayer } from './card-effect-data';
-import type { StatusId } from '@taskbar-hero/game-rules/src/cardrpg/depth/contract';
+import type { VisualStatusId } from './card-status-data';
 import { STATUS_IDENTITIES } from './card-status-data';
 
 function mark(primitive:CardEffectLayer['primitive'],motion:CardEffectLayer['motion'], options:Partial<CardEffectLayer>={}):CardEffectLayer {
   return {primitive,motion,anchor:'target',start:0,end:1,count:1,size:.36,spread:.46,height:0,turns:.35,offset:[0,0,0],aspect:[1,1,1],ground:false,accent:false,opacity:.74,...options};
 }
-const layers:Record<StatusId,CardEffectLayer>={
+const layers:Record<VisualStatusId,CardEffectLayer>={
   scald:mark('flame','hold',{size:.30,spread:0,opacity:.80}),
+  snag:mark('seam','hold',{count:3,size:.40,spread:.20,opacity:.78}),
+  bitter:mark('steam','orbit',{count:3,size:.34,spread:.58,height:.06,opacity:.76}),
   scent:mark('cup','orbit',{size:.40,spread:.10,turns:.16}),
   brittle:mark('seam','cross',{count:2,size:.52,spread:.30,turns:0}),
   tangle:mark('knot','orbit',{count:2,size:.30,spread:.46}),
@@ -24,10 +26,20 @@ const layers:Record<StatusId,CardEffectLayer>={
   shelter:mark('roof','hold',{size:.45}),
 };
 export const CARD_STATUS_LOOKS = Object.fromEntries(Object.entries(layers).map(([id,layer])=>[id,{
-  color:STATUS_IDENTITIES[id as StatusId].color,layer,
+  color:STATUS_IDENTITIES[id as VisualStatusId].color,layer,
   crown:['scent','drowsy','hush','rattled','shelter'].includes(id),
-  apply:{...layer,motion:'projectile' as const,count:1,size:.36,height:.50,opacity:.80},
-  tick:{...layer,motion:'expand' as const,count:1,size:.65,opacity:.80},
+  apply:{...layer,primitive:id==='snag'?'seam':id==='bitter'?'droplet':layer.primitive,motion:'projectile' as const,count:1,size:.36,height:.50,opacity:.80},
+  tick:{...layer,primitive:id==='snag'?'droplet':layer.primitive,motion:id==='snag'?'fall' as const:'expand' as const,count:id==='snag'?3:1,size:id==='snag'?.22:.65,height:id==='snag'?.6:layer.height,opacity:.80},
   expire:{...layer,motion:'fall' as const,count:1,size:.30,height:.28,opacity:.65},
-}])) as Record<StatusId,{color:string;layer:CardEffectLayer;crown:boolean;apply:CardEffectLayer;tick:CardEffectLayer;expire:CardEffectLayer}>;
+}])) as Record<VisualStatusId,{color:string;layer:CardEffectLayer;crown:boolean;apply:CardEffectLayer;tick:CardEffectLayer;expire:CardEffectLayer}>;
 export const CRUMB_BURST_LAYER=mark('button','burst',{count:9,size:.25,spread:1.0,height:.4,opacity:.80});
+
+// Reuse the prepared B2 primitive pools, with no new textures or lights.
+export const V5_CUE_LAYERS = {
+  fire:mark('flame','projectile',{size:.46,height:.28,opacity:.78}),
+  thread:mark('seam','burst',{count:2,size:.55,spread:.62,opacity:.78}),
+  drops:mark('droplet','fall',{count:4,size:.20,height:.65,spread:.48,opacity:.78}),
+  arc:mark('spark','projectile',{size:.28,height:.35,opacity:.78}),
+  strike:mark('seam','cross',{count:2,size:.55,spread:.32,opacity:.78}),
+  splash:mark('knock-ring','expand',{size:1.25,ground:true,height:.08,opacity:.76}),
+};
