@@ -1219,3 +1219,10 @@ Live adapter after modifier-trigger annotation:18registered hashes/1421actions/1
 B-only rawlog+beforestatus annotation restores plainBitterheal and pulsesMark/Shred/Warm/Daze; focused8replaycases and5affectednaturalbattles queued. No rule/event/amount edits or naturalcoverage upgrade yet.
 Boss subtitle reservation passes51stills+1290cueframes0overlap/unplaced. Third soloKettleframing has0boundsclipping butratio1.99709<2:retainPARTIAL;Yarn2.04055/Pantry2.06854.
 A34375615b evidence merged read-only into integration5895a53e3;protectedpaths matchA exactly;runtime6772eb343 unchanged. Sourcepreview isdraft-only;S6refresh continues.
+
+## 2026-11-09T08:08:53Z V5FULL-M3 CHECKPOINT
+DRAFT420 INTEGRATION PREVIEW - not for merge: codex/cardrpg-v5live-2026-11-09 on publishedA S5;18naturalhashes/1687plans exact,38of45coverage,15of17livePshots. No rules/default/A-owned edits.
+M4trigger delta24fixedsamples at3widths allvisible/cleared,0overlap/unplaced;48casts max16.8msnative (CPU4summarypending). Fiveaffectednaturalbattles queued beforecoverageupgrade.
+OFFsame-path attribution retains+3B entry preload metadata (28182→28185),same11loadedscriptmembers,0Three/model;3temporaryimport/layoutdiagnostics failedexactbytegate,sourceunchanged. LiteralbytegatePARTIAL;B-onlysamebasecomparisonretained.
+Full30.074MB/lean21.811MB built;deliverycasts/cold/E2E/guide/SSIM/fourclips queued. Original130draw/beauty/zeroallocationmisses stayexplicit;conditional150onlyBpreview.
+LatestA34375615b runtime6772eb343 remainsintegrated;watchS6publicationwhileclosingM4. NeveruseAacceptanceasBtestseed.
