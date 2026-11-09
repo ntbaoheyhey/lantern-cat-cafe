@@ -1209,3 +1209,10 @@ DRAFT407 https://github.com/ntbaoheyhey/taskbar-hero/pull/407 on406; baseA5closi
 ON180battle SHA c29ec7d2cfb9fbd46aa32b363ade8bc84b3100d558bb646aa4ea04b80f49d031;45routeSHA b85feeb659f013dfd1817d452d233d6c48f8f3e1402e4c5625bf760e49341540.
 OFF8250/baseline13 exact; approvedspec docs/design/cardrpg/SKILLS-V5.md. S1 status core now underway; fixture stays pendingS4.
 Fresh20001-20500 UNUSED; no B/protected edits, merge/deploy/model helpers.
+
+## 2026-11-09T01:08:20Z V5A-S1 DONE
+DRAFT408 https://github.com/ntbaoheyhey/taskbar-hero/pull/408 on407; runtime423e430f6, evidencee8b8254c8.
+31focused tests; type/lint/web1783/rules1223/build PASS. E2E420+isolated1 PASS; original Home timing5.28s>5s retained.
+Source-bound audit PASS: legacy8250 digest exact; V4fallback180battles/45routes exact; baseline13/author/scope/leftovers exact.
+S2 shapes/reactions starts from31e7c2c7f. V2fixture remains pendingS4; fresh20001-20500 UNUSED.
+No B/protected edits, model helpers, merge or deploy.
