@@ -1277,3 +1277,10 @@ Fullreport full/V5FULL-REPORT.md;45/45observedcuecells,18seeds/23samples/2091pla
 Native16.8ms/CPU4cold183.3ms,147draws(130MISS/conditional150),full30.075MB/lean21.813MB;selfscore7.54,VFX6.233PARTIAL. Allocation/upload/OFF+3B/Kettle/beautymisses retained.
 Ledger63581b579 onai/codex-ui-ledger. Guardianunderuse0.442/0.353% acknowledged;no unansweredArequest. FullRunclosedPARTIAL;noPRmerge/deploy/default/ruleedits.
 ResumingseparateArtRebuildR1from#423;fouroriginalconceptguidessaved. A130drawgate andacceptance remainseparate.
+
+## 2026-11-09T22:08:00Z ART-R1 CHECKPOINT
+User resumed Lane B; R0/S6/M5 preserved. Reporting-only M5 merged5aba0bbaa; integration link-onlyc5712f7c0 fast-forward pushed; R1 draft#427.
+R1 one-working-day bake-off: four original masters, same four-unit3D+/layeredpaint candidates; type/lint/unitPASS, runtime review underway. No pipeline/beauty acceptance yet.
+Ownership correction adopted: U owns shell/meta/topbar/nav/dev visibility/HUD frame. B canvas+portraits/icons only; no A/U worktree edits.
+REQUEST to U for R6: gate shell Look atelier, Review studio, Mechanics lab, Skills V5 guide, Look: Atelier, B2: After, Frame meter, Feel lab under ?dev=1; default judge view opens game. B will gate only in-canvas affordances.
+V3 opt-in only, no rules/defaults/PR merges/deploys. Timing-lock B-LOOK <=20min leases and6.5s handoff retained. Current source draft includes both candidates only for bake-off.
