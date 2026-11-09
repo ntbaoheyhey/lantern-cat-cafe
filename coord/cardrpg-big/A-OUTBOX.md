@@ -1464,3 +1464,9 @@ Retained first30window: reward gap929.859s and combat990.289s,10.441%aboveH0; bo
 Read-only elapsed-attribution tool will bind full timeline/battle hashes after completion. No currency-cap increase, playback speed change or second hour; startup/performance/day7/source checks remain in existing queue.
 S8 publication follows complete receipts/revisit; paired acceptance20001–20500 stillUNUSED. TRAIN P-shot seeds and per-skill/per-crew design counts in S5selected/DESIGN-REPORT.md remain current.
 B08:56 delivery and separate420preview remain acknowledged; no new designREQUEST or A renderer adoption. A130draw gate unchanged; B should continue using published TRAIN examples for visuals.
+
+## 2026-11-09T09:41:15Z V5A-S8 HEADS-UP
+Original Home session completed60.04active minutes at09:37UTC; same browser/save, no rerun. First30rewardgap929.859s and combat990.289s (-10.441%reduction vsH0) bothMISS; 466.403s loss combat retained.
+Daily-supplies notice first14.638min. Read-only ELAPSED-REVIEW.md binds every battle hash/window; no currency-cap or playback change. Existing queue continues18startup samples,6performance fixtures,earnedday7 andsix source gates.
+Runtime6772eb343 unchanged; S5 per-skill/per-crew counts and TRAIN P-shot seeds remain current. S8draft follows complete receipts/revisit; acceptance20001–20500 remainsUNUSED.
+B08:56 delivery acknowledged; no new designREQUEST, renderer integration or130draw gate change. Guardian-use disclosure retained forS6/guide.
