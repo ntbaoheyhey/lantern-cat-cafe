@@ -1,3 +1,4 @@
+import { LookEffectRim } from './look-effect-rim';
 import { targetTextLane } from './card-callout-layout';
 import type { StatusPresentation } from './card-status-beats';
 import { CARD_STATUS_LOOKS } from './card-status-looks';
@@ -120,6 +121,7 @@ export class TurnScene {
   private targetLines:T.Line<T.BufferGeometry,T.LineBasicMaterial>[]=[];
   private stage = new T.Group();
   private readonly lookStageEnabled: boolean;
+  private readonly effectRim?:LookEffectRim;
   private bossBackdrop!: T.Group;
   private bossAtmosphere?: CardBossAtmosphere;
   private cameraTarget = new T.Vector3(0,.65,0);
@@ -140,6 +142,7 @@ export class TurnScene {
 
   constructor(private host: HTMLElement, private view: ()=>SceneView, private onAnchors: (v:Anchor[])=>void, private onTarget:(id:string)=>void, private onFailure:(message:string)=>void) {
     this.lookStageEnabled = !!this.view().autoBattle && isLookV2();
+    if(this.lookStageEnabled)this.effectRim=new LookEffectRim();
     this.renderer = new T.WebGLRenderer({ antialias:true, alpha:false, powerPreference:'low-power', preserveDrawingBuffer:true });
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,2));
     this.renderer.outputColorSpace=T.SRGBColorSpace;
@@ -412,6 +415,7 @@ export class TurnScene {
       const height=new T.Box3().setFromObject(model).max.y;
       const materials:T.Material[]=[];model.traverse(o=>{if(o instanceof T.Mesh){o.material=Array.isArray(o.material)?o.material.map(m=>m.clone()):o.material.clone();materials.push(...(Array.isArray(o.material)?o.material:[o.material]));for(const m of Array.isArray(o.material)?o.material:[o.material])if(m instanceof T.MeshStandardMaterial){this.cardSurfaces?.apply(m);for(const tex of [m.map,m.normalMap,m.roughnessMap])if(tex){tex.anisotropy=Math.min(sourceView.autoBattle?16:8,this.renderer.capabilities.getMaxAnisotropy());tex.generateMipmaps=true;}}}});
       styleReadableEnemy(model,asset);
+      this.effectRim?.install(model);
       const mixer=new T.AnimationMixer(model);
       const clips=new Map([...gltf.animations,...cardClips].map(clip=>[clip.name,clip]));
       const actions=new Map([...clips].map(([name,clip])=>[name,mixer.clipAction(clip)]));
@@ -437,7 +441,7 @@ export class TurnScene {
   private loop=(now:number)=>{
     if(this.disposed||document.hidden)return;
     if(this.renderer.getPixelRatio()!==Math.min(window.devicePixelRatio||1,2))this.resizeToHost();
-    this.raf=requestAnimationFrame(this.loop);const view=this.view();if(!this.ready||view.suspended){this.last=now;this.renderAt=now;return}const raw=this.last?Math.min(100,now-this.last):0;this.last=now;this.post.setQuality(view.quality??'high');if(!view.model&&!view.paused&&view.fixedTime===undefined)this.post.observe(raw,view.autoQuality!==false);
+    this.raf=requestAnimationFrame(this.loop);const view=this.view();if(!this.ready||view.suspended){this.last=now;this.renderAt=now;return}const raw=this.last?Math.min(100,now-this.last):0;this.last=now;this.post.setQuality(view.quality??'high');if(!view.model&&!view.paused&&view.fixedTime===undefined){if(this.post instanceof LookPost)this.post.observeWarmup(raw,view.autoQuality!==false);else this.post.observe(raw,view.autoQuality!==false);}
     const frameBudget=view.fixedTime!==undefined||view.paused?Infinity:view.reducedMotion?50:16;
     if(!this.dirty&&now-this.renderAt<frameBudget)return;const delta=view.paused?0:Math.min(.1,(now-this.renderAt)/1000||raw/1000);this.renderAt=now;this.dirty=false;
     this.time=view.fixedTime??this.time+delta;this.render(view,delta);
@@ -460,6 +464,13 @@ export class TurnScene {
         p.base.set((a.slot - 1) * 2.1, 0, a.slot === 1 ? -.35 : .3);
         p.root.position.copy(p.base);
         p.model.rotation.y = (1 - a.slot) * .12;
+      }
+      if(this.effectRim){
+        const leadAt=frame?.plan.ultimate?Math.max(0,1-(frame.beat.duration-frame.elapsed)/200):frame?.progress??0;
+        const lead=frame&&source===p&&frame.beat.kind==='anticipation'?Math.sin(leadAt*Math.PI)*.42:0;
+        const after=frame?frame.elapsed-frame.plan.beats[2]!.start-(view.cardPresentation?.offsets.get(a.id)??0):-1;
+        const hit=targets.includes(p)&&after>=0&&after<180?Math.sin(after/180*Math.PI)*.7:0;
+        this.effectRim.update(p.model,view.reducedMotion?0:Math.max(lead,hit),cardRecipe?.accent??'#ffd395');
       }
       p.gear.update(a,view.appearance?.(a));p.gear.animate(view.reducedMotion?0:this.time);
       let clip=a.hp<=0?'KO':view.model?.clip??(a.id===view.currentId?'ready':'idle');let progress:number|undefined;
@@ -496,6 +507,7 @@ export class TurnScene {
           if(p.actions.has(reaction))clip=reaction;
         }
         progress=hitDelay?Math.min(1,hitAt/hitDuration):frame.beat.kind==='impact'?.45:frame.progress;
+        if(this.lookStageEnabled&&!view.reducedMotion&&hitAt>=0&&hitAt<50)progress=.45;
         if(hurt&&!view.reducedMotion){const recoil=Math.sin(frame.progress*Math.PI)*.16;p.root.position.x+=a.side==='party'?-recoil:recoil;}
       }
       if(frame&&!view.model&&!view.reducedMotion){
@@ -562,8 +574,8 @@ export class TurnScene {
     if(view.model){this.camera.position.set(0,3.7,11.3);this.cameraTarget.y=view.model.role==='yarn'?1.35:.94;this.camera.zoom=1.02;}
     if(view.camera==='overhead')this.camera.position.set(0,13,6);
 
-    if(frame&&!view.reducedMotion&&!view.model&&(!readable||(view.playbackSpeed??1)<4)){const push=view.autoBattle?Math.sin(frame.actionProgress*Math.PI)*(frame.plan.ultimate?1.2:frame.plan.events.some(event=>event.type==='death')?.9:.35):frame.camera||0;const crowded=view.actors.filter(a=>a.side==='enemy'&&a.hp>0).length>=5;this.camera.zoom+=push*(crowded?.025:.045);const focus=source?.base??this.zero;this.cameraTarget.x=focus.x*push*(crowded?.025:.06);const worldPerPixel=2*Math.tan(T.MathUtils.degToRad(this.camera.fov/2))*this.camera.position.distanceTo(this.cameraTarget)/(Math.max(1,this.height)*this.camera.zoom);const shake=readable?Math.min(frame.shake||0,worldPerPixel*2.5/.035):frame.shake||0;this.camera.position.x+=Math.sin(frame.elapsed*.13)*shake*.035;this.camera.position.y+=Math.cos(frame.elapsed*.17)*shake*.025;}
-    if(frame&&!view.reducedMotion&&!view.model&&(!readable||(view.playbackSpeed??1)<4)){const shot=cardRecipe?.shot??EFFECT_DIRECTION[frame.plan.skillId]?.shot,motion=frame.plan.ultimate?.22:.08,phase=Math.sin(frame.actionProgress*Math.PI);if(shot==='left'||shot==='right')this.camera.position.x+=phase*motion*(shot==='left'?-1:1);if(shot==='rise')this.camera.position.y+=phase*motion;}
+    if(frame&&!view.reducedMotion&&!view.model&&(!readable||(view.playbackSpeed??1)<4)){const push=view.autoBattle?Math.sin(frame.actionProgress*Math.PI)*(frame.plan.ultimate?1.2:readable?0:frame.plan.events.some(event=>event.type==='death')?.9:.35):frame.camera||0;const crowded=view.actors.filter(a=>a.side==='enemy'&&a.hp>0).length>=5;this.camera.zoom+=push*(crowded?.025:.045);const focus=source?.base??this.zero;this.cameraTarget.x=focus.x*push*(crowded?.025:.06);const worldPerPixel=2*Math.tan(T.MathUtils.degToRad(this.camera.fov/2))*this.camera.position.distanceTo(this.cameraTarget)/(Math.max(1,this.height)*this.camera.zoom);const shake=readable?Math.min(frame.shake||0,worldPerPixel*2.5/.035):frame.shake||0;this.camera.position.x+=Math.sin(frame.elapsed*.13)*shake*.035;this.camera.position.y+=Math.cos(frame.elapsed*.17)*shake*.025;}
+    if(frame&&!view.reducedMotion&&!view.model&&(!readable||(view.playbackSpeed??1)<4)){const shot=readable&&!frame.plan.ultimate?undefined:cardRecipe?.shot??EFFECT_DIRECTION[frame.plan.skillId]?.shot,motion=frame.plan.ultimate?.22:.08,phase=Math.sin(frame.actionProgress*Math.PI);if(shot==='left'||shot==='right')this.camera.position.x+=phase*motion*(shot==='left'?-1:1);if(shot==='rise')this.camera.position.y+=phase*motion;}
     if(readable&&!frame&&!view.reducedMotion&&!view.paused&&(view.playbackSpeed??1)<4){this.camera.position.x+=Math.sin(this.time*.21)*.045;this.cameraTarget.x+=Math.sin(this.time*.17)*.025;}
     if(frame?.plan.skillId==='victory'&&!view.reducedMotion){this.camera.position.x=Math.sin(frame.actionProgress*Math.PI)*1.25;this.camera.position.y+=Math.sin(frame.actionProgress*Math.PI)*.3;}
     if (this.entrance && !frame) this.camera.zoom += cardEntrancePose(this.time - this.entrance.startedAt, view.reducedMotion, this.entrance.duration).zoom;
@@ -606,9 +618,10 @@ export class TurnScene {
       const ratio=this.renderer.getPixelRatio();
       this.cardEffects.protect(view.effectOnly?0:protectedCount,this.width*ratio,this.height*ratio);
       this.post.protectFaces(this.cardEffects.protectedFaces,view.effectOnly?0:protectedCount);
+      this.effectRim?.protect(this.cardEffects.protectedFaces,view.effectOnly?0:protectedCount,this.width*ratio,this.height*ratio);
       if(this.lookStageEnabled)for(const a of view.actors){const p=this.puppets.get(a.id);if(p)this.statusHeights.set(a.id,p.height*p.root.scale.y);}
       this.cardEffects.render(frame,cardRecipe,view.actors,this.positions,this.camera,this.post.effectiveQuality,view.reducedMotion,
-        view.effectOnly?undefined:view.cardStatuses,this.time,view.cardPresentation,this.statusHeights,this.statusCrowns);
+        view.effectOnly?undefined:view.cardStatuses,this.time,view.cardPresentation,this.statusHeights,this.statusCrowns,view.playbackSpeed??1);
     }
     this.stats.particles=this.spells.count+(this.cardEffects?.stats.instances??0);
     const display=view.effectOnly?this.effectPreview:this.scene;
