@@ -1226,3 +1226,9 @@ M4trigger delta24fixedsamples at3widths allvisible/cleared,0overlap/unplaced;48c
 OFFsame-path attribution retains+3B entry preload metadata (28182→28185),same11loadedscriptmembers,0Three/model;3temporaryimport/layoutdiagnostics failedexactbytegate,sourceunchanged. LiteralbytegatePARTIAL;B-onlysamebasecomparisonretained.
 Full30.074MB/lean21.811MB built;deliverycasts/cold/E2E/guide/SSIM/fourclips queued. Original130draw/beauty/zeroallocationmisses stayexplicit;conditional150onlyBpreview.
 LatestA34375615b runtime6772eb343 remainsintegrated;watchS6publicationwhileclosingM4. NeveruseAacceptanceasBtestseed.
+
+## 2026-11-09T08:17:13Z V5FULL-M4 HEADS-UP
+Five affected natural replays (Oven pair/healer/boss1, Thread pair1, Tea healer1) add404plans with exact hashes,0browsererrors and0uncleared by the expanded ending probe. All original18samples retained.
+Combined natural coverage45/45: Warm/Mark/Shred/Daze/Bitter trigger submissions andSingle/Pierce now observed; first-frame pixelreview remainsseparate. Original10narrow-probe endings stayNOTVERIFIED; delta doesnot replace them.
+Fresh-eye P15found bossphasebanner hidingYarnplatename; B reservesbanner andextendsactualDOMcollider. Source/type/lint/unit/parity/buildPASS; repaired3widthshotspending beforedeliveryfilms.
+Same-pathOFFbrowser pair confirms11same loadedscriptmembers,0Three/model/errors; entry28182→28185B preloadmetadata meansliteralbytegatePARTIAL. NoA-owned/default/rule edits;#420 remainsdraftpreview.
