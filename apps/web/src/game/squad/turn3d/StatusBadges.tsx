@@ -29,13 +29,13 @@ export function StatusBadges({ statuses, name }: { statuses: readonly Status[]; 
   return <div className="dp-status-badges" aria-label={`${name} statuses`}>
     {sorted.slice(0,4).map(status => {
       const look = statusIdentity(status.id), rule = STATUS_BY_ID[status.id], text = statusDescription(status);
-      return <button type="button" key={status.id} className="dp-status-badge" data-status={status.id}
+      return <button type="button" key={status.id} className="dp-status-badge" data-status={status.id} data-status-family={look?.order === 0 ? 'debuff' : look?.order === 1 ? 'buff' : 'signature'}
         style={{ '--status-color':look?.color ?? '#fff0d2' } as CSSProperties}
         aria-label={text} {...events(status.id,text)}>
         <svg width="20" height="20" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-          <circle cx="16" cy="16" r="14" className="dp-status-ring-track" />
-          <circle cx="16" cy="16" r="14" pathLength="1" strokeDasharray={`${Math.min(1,status.remaining / Math.max(rule?.duration ?? 1,status.remaining))} 1`} transform="rotate(-90 16 16)" className="dp-status-ring" />
-          <path d={look?.path ?? 'M8 8H16V16H8Z'} transform="translate(3.2 3.2) scale(1.0667)" stroke="currentColor" strokeWidth="2.2" strokeLinejoin="round" strokeLinecap="round" />
+          <rect x="2" y="2" width="28" height="28" rx="5" className="dp-status-ring-track" />
+          <rect x="2" y="2" width="28" height="28" rx="5" pathLength="1" strokeDasharray={`${Math.min(1,status.remaining / Math.max(rule?.duration ?? 1,status.remaining))} 1`} className="dp-status-ring" />
+          <path d={look?.path ?? 'M8 8H16V16H8Z'} transform="translate(4 4)" stroke="currentColor" strokeWidth="2.2" strokeLinejoin="round" strokeLinecap="round" />
         </svg><b aria-hidden="true">{status.stacks}</b>
       </button>;
     })}

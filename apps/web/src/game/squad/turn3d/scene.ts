@@ -1,3 +1,4 @@
+import { targetCallout } from './card-callout-layout';
 import type { StatusPresentation } from './card-status-beats';
 import { CARD_STATUS_LOOKS } from './card-status-looks';
 import { readablePortrait, readableName } from './look-readable-assets';
@@ -572,11 +573,18 @@ export class TurnScene {
         if(!puppet.head||!mask)continue;
         puppet.head.getWorldPosition(this.facePoint);
         this.facePoint.y+=.20*puppet.root.scale.y;
-        if(this.lookStageEnabled)this.statusCrowns.set(puppet.root.userData.actorId,this.facePoint.y-puppet.root.position.y+.85*puppet.root.scale.y);
+        if(this.lookStageEnabled)this.statusCrowns.set(puppet.root.userData.actorId,puppet.height*puppet.root.scale.y*1.16);
         this.faceEdge.copy(this.facePoint);this.faceEdge.x+=.55*puppet.root.scale.x;
         this.facePoint.project(this.camera);this.faceEdge.project(this.camera);
         const radius=Math.max(.025,Math.abs(this.facePoint.x-this.faceEdge.x)*.5);
         mask.set(this.facePoint.x*.5+.5,this.facePoint.y*.5+.5,radius,radius*this.width/this.height);
+        // The circular safety margin extends above short monster heads. Keep
+        // it for every spell, but let crown marks occupy empty space ABOVE the
+        // entire model (ears included), never the face or body silhouette.
+        if(this.lookStageEnabled){
+          this.faceEdge.copy(puppet.root.position);this.faceEdge.y+=puppet.height*puppet.root.scale.y;this.faceEdge.project(this.camera);
+          this.cardEffects.protectedHeadTops[protectedCount]=this.faceEdge.y*.5+.5;
+        }
         protectedCount++;
       }
       const ratio=this.renderer.getPixelRatio();
@@ -605,13 +613,23 @@ export class TurnScene {
       const head=p.model.getObjectByName(`${a.role}_head`)??p.model,center=head.getWorldPosition(new T.Vector3());
       const top=screen(center.clone().add(new T.Vector3(0,.45,0))),foot=screen(p.root.position.clone());
       const aTop=p.root.position.clone().add(new T.Vector3(0,p.height*p.root.scale.y,0));
-      if(this.lookStageEnabled && view.cardStatuses?.[a.id]?.some(status=>CARD_STATUS_LOOKS[(typeof status==='string'?status:status.id) as keyof typeof CARD_STATUS_LOOKS]?.crown))aTop.y=p.root.position.y+(this.statusCrowns.get(a.id)??p.height*p.root.scale.y+.18)+.28;
+      if(this.lookStageEnabled && view.cardStatuses?.[a.id]?.some(status=>CARD_STATUS_LOOKS[(typeof status==='string'?status:status.id) as keyof typeof CARD_STATUS_LOOKS]?.crown))aTop.y=p.root.position.y+(this.statusCrowns.get(a.id)??p.height*p.root.scale.y+.18)+.18;
       const ideal=screen(aTop);ideal.y-=8;
       projected.push({id:a.id,x:top.x,y:top.y,labelX:ideal.x,labelY:ideal.y,footY:foot.y,visible:true});
       labels.push({id:a.id,x:ideal.x,y:ideal.y,height:view.autoBattle?(readable?(view.cardStatuses?.[a.id]?.length?54:30):48):a.side==='enemy'?a.statuses.length?41:29:a.statuses.length?30:18,head:screenBounds(p.model,this.camera,this.width,this.height)});
     }
     const obstacles = view.autoBattle ? view.actors.filter(actor => actor.side === 'party' && actor.hp > 0)
       .flatMap(actor => { const puppet = this.puppets.get(actor.id); return puppet ? [screenBounds(puppet.model,this.camera,this.width,this.height)] : []; }) : [];
+    // Reserve target-local reaction words before laying out HP cards, so a
+    // crowded card cannot evict a word to the far edge of the stage.
+    const words:LabelInput['head'][]=[];
+    if(this.lookStageEnabled&&view.cardPresentation?.bursts.length){
+      for(const anchor of [...projected].filter(a=>view.cardPresentation!.bursts.includes(a.id)).sort((a,b)=>a.y-b.y)){
+        const word=targetCallout(anchor.x,anchor.y,this.width,this.height,innerWidth<=1100?138:150,words);
+        if(word)words.push(word);
+      }
+      obstacles.push(...words);
+    }
     const placed=readable ? this.stableLabels.resolve(labels,this.width,this.height,138,obstacles)
       : layoutLabels(labels,this.width,this.height,view.autoBattle?138:90,obstacles);
     this.labelAudit.heads=[...labels.map(p=>p.head),...obstacles];this.labelAudit.cards=[...placed.values()];this.labelAudit.missing=labels.filter(p=>!placed.has(p.id)).map(p=>p.id);this.labelAudit.overlaps=this.labelAudit.cards.reduce((sum,c,i)=>sum+this.labelAudit.cards.slice(i+1).filter(x=>intersects(c,x,0)).length+this.labelAudit.heads.filter(h=>intersects(c,h,0)).length,0);

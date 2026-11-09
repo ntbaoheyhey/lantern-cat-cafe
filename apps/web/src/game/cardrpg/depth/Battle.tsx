@@ -1,3 +1,5 @@
+import { targetCallout } from '../../squad/turn3d/card-callout-layout';
+import type { Rect } from '../../squad/turn3d/label-layout';
 import { StatusBadges } from '../../squad/turn3d/StatusBadges';
 import { statusPresentation, statusImpactLabels } from '../../squad/turn3d/card-status-beats';
 import { useEffect, useMemo, useRef, useState, useSyncExternalStore, type CSSProperties } from 'react';
@@ -76,49 +78,36 @@ export function BattleView({ m }: { m: DepthModel }) {
     m.sceneReady = false;
     const currentAudio = m.audio;
     try {
-      const comboRects = Array.from({length:12}, () => ({x:0,y:0}));
+      const comboRects:Rect[]=[];
       const anchorPlates = (anchors: Anchor[]) => {
         const visible = new Set(anchors.filter(anchor => anchor.visible).map(anchor => anchor.id));
         for (const [id, plate] of plates.current) {
           if (!readable) plate.hidden = true;
           else if (plate.hidden === visible.has(id)) plate.hidden = !visible.has(id);
         }
-        let comboCount = 0;
-        for (const anchor of anchors) {
+        comboRects.length=0;
+        const stage=host.current!;
+        if(lookV2&&callouts.current.size){
+        const stageBox=stage.getBoundingClientRect();
+        for(const anchor of anchors){
+          const plate=plates.current.get(anchor.id);
+          if(plate&&anchor.visible)comboRects.push({x:anchor.labelX-69,y:anchor.labelY,width:138,height:plate.offsetHeight||56});
+        }
+        const moment=stage.parentElement?.querySelector('.dp-ultimate-moment');
+        if(moment){const box=moment.getBoundingClientRect();comboRects.push({x:box.left-stageBox.left,y:box.top-stageBox.top,width:box.width,height:box.height});}
+        }
+        for (const anchor of lookV2 ? [...anchors].sort((a,b)=>a.y-b.y) : anchors) {
           const number = numbers.current.get(anchor.id);
           if (number) number.style.transform = `translate(${Math.max(0, anchor.x - 70)}px, ${Math.max(30, anchor.y - 28)}px)`;
           const callout = callouts.current.get(anchor.id);
           if (callout) {
-            let x = Math.max(6, Math.min((host.current?.clientWidth ?? 600)-196, anchor.x-95));
-            let y = anchor.labelY-42;
-            // Place the word above nearby HP plates, then lift intersecting words.
-            for (const other of anchors) if (other.visible && x < other.labelX+69 && x+190 > other.labelX-69) y = Math.min(y,other.labelY-42);
-            for (let attempt=0;attempt<comboCount;attempt++) {
-              let moved = false;
-              for (let i=0;i<comboCount;i++) {
-                const previous=comboRects[i]!;
-                if(x < previous.x+198 && x+198 > previous.x && y < previous.y+42 && y+42 > previous.y) { y=previous.y-42;moved=true; }
-              }
-              if(!moved)break;
+            const placed=targetCallout(anchor.x,anchor.y,stage.clientWidth,stage.clientHeight,innerWidth<=1100?138:150,comboRects);
+            callout.dataset.placed=String(!!placed);
+            if(placed){
+              comboRects.push(placed);
+              const transform=`translate(${Math.round(placed.x)}px, ${Math.round(placed.y)}px)`;
+              if(callout.style.transform!==transform)callout.style.transform=transform;
             }
-            y=Math.max(8,y);
-            // Short arenas use a free slot above or beside the plates.
-            let found=false;
-            for(let row=0;row<4&&!found;row++)for(let col=0;col<8&&!found;col++) {
-              const candidateX=Math.max(6,x-col*198),candidateY=y+row*42;
-              let free=true;
-              for(const other of anchors)if(plates.current.has(other.id)&&other.visible
-                &&candidateX<other.labelX+73&&candidateX+194>other.labelX-69
-                &&candidateY<other.labelY+58&&candidateY+38>other.labelY)free=false;
-              for(let i=0;i<comboCount;i++) {
-                const previous=comboRects[i]!;
-                if(candidateX<previous.x+198&&candidateX+198>previous.x&&candidateY<previous.y+42&&candidateY+42>previous.y)free=false;
-              }
-              if(free){x=candidateX;y=candidateY;found=true;}
-            }
-            const saved=comboRects[comboCount++];if(saved){saved.x=x;saved.y=y;}
-            const transform=`translate(${Math.round(x)}px, ${Math.round(y)}px)`;
-            if(callout.style.transform!==transform)callout.style.transform=transform;
           }
           const plate = plates.current.get(anchor.id);
           if (!plate) continue;
@@ -151,7 +140,7 @@ export function BattleView({ m }: { m: DepthModel }) {
         }
         for (const [id,callout] of callouts.current) {
           const at = m.animationAt-impact-(presentation.offsets.get(id) ?? 0);
-          const hidden = at < 0 || at >= 500;
+          const hidden = at < 0 || at >= 500 || callout.dataset.placed === 'false';
           if(callout.hidden !== hidden)callout.hidden = hidden;
         }
       }

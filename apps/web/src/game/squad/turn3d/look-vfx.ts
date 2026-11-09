@@ -73,30 +73,34 @@ function craftedBody(kind: CardEffectPrimitive): T.BufferGeometry | undefined {
   }
   return undefined;
 }
-const vertex = `attribute float effectAlpha,effectPhase,effectPart,effectFlash;uniform float surfaceKind;varying vec3 effectColor,n,localPoint;varying vec2 texUV;varying float opacity,phase,part,viewDepth,flash;
-void main(){effectColor=instanceColor;opacity=effectAlpha;phase=effectPhase;part=effectPart;flash=effectFlash;texUV=uv;
+const vertex = `attribute float effectAlpha,effectPhase,effectPart,effectFlash,effectMark;uniform float surfaceKind;varying vec3 effectColor,n,localPoint;varying vec2 texUV;varying float opacity,phase,part,viewDepth,flash,mark;
+void main(){effectColor=instanceColor;opacity=effectAlpha;phase=effectPhase;part=effectPart;flash=effectFlash;mark=effectMark;texUV=uv;
  vec3 p=position;if(surfaceKind>5.5)p.y=(p.y+.75)*smoothstep(0.,.4,effectPhase)-.75;localPoint=p;if(effectPart>1.5&&effectPart<2.5){p.y+=sin(uv.x*8.-effectPhase*6.283)*.07*sin(uv.x*3.14159);}
  if(effectPart<.5&&surfaceKind>.5&&surfaceKind<1.5){p.z+=sin(p.x*4.8+effectPhase*.8)*.11*(.8+.2*cos(p.y*4.));}
  vec3 surfaceNormal=normal;
  if(effectPart<.5&&surfaceKind>.5&&surfaceKind<1.5){surfaceNormal.x-=cos(p.x*4.8+effectPhase*.8)*.528*(.8+.2*cos(p.y*4.))*normal.z;surfaceNormal.y+=sin(p.x*4.8+effectPhase*.8)*.088*sin(p.y*4.)*normal.z;}
  mat3 instanceNormal=mat3(instanceMatrix);surfaceNormal/=max(vec3(dot(instanceNormal[0],instanceNormal[0]),dot(instanceNormal[1],instanceNormal[1]),dot(instanceNormal[2],instanceNormal[2])),vec3(.000001));
  vec4 mv=modelViewMatrix*instanceMatrix*vec4(p,1.);viewDepth=-mv.z;n=normalize(normalMatrix*instanceNormal*surfaceNormal);gl_Position=projectionMatrix*mv;}`;
-const fragment = `varying vec3 effectColor,n,localPoint;varying vec2 texUV;varying float opacity,phase,part,viewDepth,flash;
-uniform sampler2D atlas,sceneDepth;uniform float surfaceKind,softVolume,flameVolume,depthEnabled,overdraw;uniform vec2 resolution,clipPlanes;uniform vec4 protectedFaces[12];uniform int protectedCount;
+const fragment = `varying vec3 effectColor,n,localPoint;varying vec2 texUV;varying float opacity,phase,part,viewDepth,flash,mark;
+uniform sampler2D atlas,sceneDepth;uniform float surfaceKind,softVolume,flameVolume,depthEnabled,overdraw;uniform vec2 resolution,clipPlanes;uniform vec4 protectedFaces[12];uniform int protectedCount;uniform float protectedHeadTops[12];
 float distanceAt(vec2 uv){float z=texture2D(sceneDepth,uv).r*2.-1.;return 2.*clipPlanes.x*clipPlanes.y/(clipPlanes.y+clipPlanes.x-z*(clipPlanes.y-clipPlanes.x));}
 void main(){vec2 screen=gl_FragCoord.xy/resolution;float faceFade=1.;
- for(int i=0;i<12;i++){if(i>=protectedCount)break;vec4 f=protectedFaces[i];vec2 q=(screen-f.xy)/max(f.zw,vec2(.00001));float radius=dot(q,q);if(radius<1.)discard;faceFade*=smoothstep(1.,1.6,radius);}
+ for(int i=0;i<12;i++){if(i>=protectedCount)break;if(mark>1.5&&mark<2.5&&screen.y>protectedHeadTops[i]+.008)continue;vec4 f=protectedFaces[i];vec2 q=(screen-f.xy)/max(f.zw,vec2(.00001));float radius=dot(q,q);if(radius<1.)discard;faceFade*=smoothstep(1.,1.6,radius);}
  float a=opacity*faceFade;vec3 c=effectColor;float additive=0.;
+ if(part>3.5){
+   if(mark<1.5||mark>2.5)discard;
+   float r=length((texUV-.5)*2.);a*=.72*(1.-smoothstep(.65,1.,r));c=vec3(.012,.026,.033);
+ }else
  if(part>.5&&part<1.5){float f=clamp(floor(phase*35.),0.,35.);vec2 cell=vec2(mod(f,6.),5.-floor(f/6.));vec2 uv=(cell+clamp(texUV,vec2(.5/256.),vec2(1.-.5/256.)))/6.;
   vec4 t=texture2D(atlas,uv);vec3 straight=t.rgb/max(t.a,.0001);vec3 linear=pow(straight,vec3(2.2));float light=mix(dot(linear,vec3(.2126,.7152,.0722)),max(linear.r,max(linear.g,linear.b)),flameVolume);
-  a*=mix(t.a*.52,sqrt(t.a)*.72,softVolume);c=mix(effectColor*.55,effectColor*1.75,clamp(light,0.,1.));
+  a*=mix(t.a*.52,sqrt(t.a)*.72,softVolume);if(mark>.5&&mark<1.5)a*=.32;c=mix(effectColor*.55,effectColor*1.75,clamp(light,0.,1.));
   c+=mix(effectColor,vec3(1.,.78,.4),.35)*pow(clamp(light,0.,1.),4.)*1.4*flameVolume;
  }else if(part>1.5&&part<2.5){float f=clamp(floor(phase*35.),0.,35.);vec2 cell=vec2(mod(f,6.),5.-floor(f/6.));vec4 silk=texture2D(atlas,(cell+clamp(texUV,vec2(.5/256.),vec2(1.-.5/256.)))/6.);float fibre=dot(silk.rgb,vec3(.2126,.7152,.0722));float edge=1.-abs(texUV.y*2.-1.);a*=pow(max(0.,edge),1.2)*sin(texUV.x*3.14159)*.7;c=mix(effectColor*.55,mix(effectColor,vec3(1.),.3)*3.2,pow(edge,7.)*.65);c*=.95+fibre*.15;additive=.35;
  }else{float light=.5+.5*dot(normalize(n),normalize(vec3(-.45,.75,.5)));float rim=pow(1.-abs(normalize(n).z),2.);
-  a*=mix(1.,mix(.38,.10,flameVolume),softVolume);
+  a*=mark>.5&&mark<2.5?1.:mix(1.,mix(.38,.10,flameVolume),softVolume);
   c=effectColor*(.42+light*.48)+mix(effectColor,vec3(.9),.18)*rim*.18;
   if(surfaceKind>.5&&surfaceKind<1.5){vec2 p=localPoint.xy*85.;float detail=1.-smoothstep(.5,2.,max(fwidth(p.x),fwidth(p.y)));float fibre=sin(p.x+sin(p.y*.35))*sin(p.y*1.4);c*=(.96+.04*fibre*detail)*(.94+.06*cos(localPoint.x*5.+phase*.8));}
-  if(surfaceKind>1.5&&surfaceKind<2.5){a*=.16+rim*.3;c*=.78;c+=mix(effectColor,vec3(1.),.25)*pow(rim,2.)*2.4;}
+  if(surfaceKind>1.5&&surfaceKind<2.5){a*=mark>2.5&&mark<3.5?1.:.16+rim*.3;c*=.78;c+=mix(effectColor,vec3(1.),.25)*pow(rim,2.)*2.4;}
   if(surfaceKind>2.5&&surfaceKind<4.5){float shine=pow(max(0.,dot(normalize(n),normalize(vec3(-.25,.42,.88)))),surfaceKind<3.5?14.:28.);c+=mix(effectColor,vec3(1.),surfaceKind<3.5?.65:.22)*shine*(surfaceKind<3.5?.8:2.2);}
   if(surfaceKind>4.5&&surfaceKind<5.5){float rib=.5+.5*cos(atan(localPoint.z,localPoint.x)*10.);c=effectColor*(1.1+light*.65)*(.82+.18*rib)+vec3(1.,.46,.08)*.32;}
   if(surfaceKind>5.5){
@@ -105,7 +109,7 @@ void main(){vec2 screen=gl_FragCoord.xy/resolution;float faceFade=1.;
   }
   c+=effectColor*pow(max(0.,sin(phase*3.14159)),8.)*.08+mix(effectColor,vec3(1.),.3)*flash*.36;
  }
- if(flameVolume>.5)c*=vec3(1.,.48,.18);
+ if(flameVolume>.5)c*=mark>.5&&mark<1.5?vec3(1.35,.85,.5):vec3(1.,.48,.18);
  if(depthEnabled>.5){float behind=distanceAt(screen)-viewDepth;if(behind<-.008)discard;a*=smoothstep(0.,part>.5?.24:.035,max(0.,behind));}
  if(a<.002)discard;
  // ONE blending: overdraw uses alpha zero so each fragment adds exactly1/255.
@@ -188,6 +192,11 @@ export class LookVfx {
       const foot = original.boundingBox!.min.y;
       original.scale(.82, 1.65, 1);
       original.translate(0, foot * (1 - 1.65), 0);
+    }
+    if(kind==='cup'||kind==='steam'||kind==='star'||kind==='roof'){
+      const backing=new T.PlaneGeometry(1.8,1.35).toNonIndexed();backing.translate(0,0,-.08);
+      backing.setAttribute('effectPart',new T.BufferAttribute(new Float32Array(backing.attributes.position!.count).fill(4),1));
+      const merged=mergeGeometries([original,backing],false)!;original.dispose();backing.dispose();original=merged;
     }
     if (!family) return original;
     let addition: T.BufferGeometry;
