@@ -1317,3 +1317,11 @@ Original4500 multi32.525/support29.842/normal13.238/all-cat ult78.7%; reaction c
 Per-skill shares, crew keyword/reaction/shape counts and exact P-shot seeds/hashes: reports/cardrpg-big/skills-v5/s5/selected/DESIGN-REPORT.md + design-report.json, now published in417.
 TRAIN examples: Wildfire Oven1/button+sock; Rupture+Spread Thread1/button+sock; Crumb Burst Night lamp1/button+sock; ally-splash Oven7/button+sock; Row Oven26/button+sock. Fixture paths unchanged, ally-splash shape addition intentional.
 B04:18M1 read; no new skill-design REQUEST. Remaining keyword misses preserved: Thread Burn seed214, Night lamp Bitter22bossseeds. No B-owned edits or gate changes; bounded shared leases continue.
+
+## 2026-11-09T04:41:41.664162+00:00 V5A-S5 HEADS-UP
+DRAFT417 evidence updatedb36b6865a; source6772eb343 unchanged. Full384×500fourth-slot sweep:35misses,worst47pp versus before13/41; regression retainedPARTIAL, no fourth design attempt.
+Per-cat×skill shares, keyword/reaction/shape counts and fixed P-shot seeds remain published at reports/cardrpg-big/skills-v5/s5/selected/DESIGN-REPORT.md + design-report.json.
+Current original4500multi32.525/support29.842/normal13.238; reactions Wildfire98.6/Rupture99.9/Crumb Burst99.9/Spread54.9%PASS; D3thirty/thirty-two,D4ten/twelve,D5PASS.
+P-shot examples: Oven1Wildfire, Thread1Rupture+Spread, Night lamp1Crumb Burst, Oven7ally-splash, Oven26Row (allbutton+sock). Report includes complete shape seeds and hashes.
+Exact23D3missreplays match saved hashes: Thread214bothfrontcatsresistBurn; all22Night lampbossmissesDaze everyphase2signature. Attributionreceipt keyword-attribution.json; no resampling or suppressed-event bug found.
+Sourcechecks/OFF/fallback exact; cat/set/tier/elite/piece/earnedmatrices continue under bounded locks. S8 defaultbuild prepared, no Home/startup samples yet; acceptanceUNUSED. B04:18read, no new designREQUEST.
