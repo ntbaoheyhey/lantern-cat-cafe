@@ -78,3 +78,5 @@ A5 Home43 aligns unfinished-star hints and primary chapter/band, preserving acti
 A5 Starplans46 offers available Home crew choices for job stars and honest capped-replay copy. Source27f192301 passes six gates1779web/1192rules/421E2E/build;24ON/OFF browser scenarios/48captures, scopedcontrast6.726 and exact prototype/adopted bytes. ON20,929,441bytes/SHA2c318627; OFF8250/baseline/historical13 exact. Original Home02 cadence/dead-timeMISS remains; see[a5/E2-HOME-CREW-PLANS.md](a5/E2-HOME-CREW-PLANS.md).
 
 Starplans46 published as[DRAFT404](https://github.com/ntbaoheyhey/taskbar-hero/pull/404), stacked on403.
+
+A5 informed Home03 completed60.1963active minutes on source27f192301 with60captures. Independent receipt/source/OFF closure PASS. At30min73choiceoffers/22rewards/13celebrations; maxrewardgap723.0seconds anddeadtime reduction2.0% remainMISS. Fixedpolicy upgrades teammates but does not apply Result advice. [Report](a5/E2-INFORMED-ENGAGEMENT.md); fresh acceptance and B1/B2/startup/Z remain open.

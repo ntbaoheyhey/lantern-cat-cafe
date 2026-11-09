@@ -1,0 +1,184 @@
+{
+  "status": "PASS: original journey evidence is complete; individual engagement targets retain their measured status",
+  "runtime": "27f192301ba0774beeabda86bea5c5af7beb3039",
+  "activeMinutes": 60.1963,
+  "engagementGates": {
+    "meaningfulChoices": "PASS",
+    "rewardCadence": "MISS",
+    "deadTimeReduction": "MISS",
+    "playerControls": "PASS"
+  },
+  "artifact": {
+    "path": "reports/cardrpg-big/a5/e2-star-plans/prototype-on/index.html",
+    "sha256": "2c3186275e052a423c55830cd6b7b20d2c8af5769b8854c184e2399a5576bc86",
+    "bytes": 20929441
+  },
+  "sourceGates": [
+    {
+      "name": "typecheck",
+      "attempt": 1,
+      "code": 0,
+      "head": "6768e87ead2cd248fccb8d9754793fc739cb9325",
+      "scope": "complete",
+      "command": [
+        "pnpm",
+        "typecheck"
+      ],
+      "started": "2026-11-08T23:21:55.136Z",
+      "ended": "2026-11-08T23:22:04.611Z",
+      "log": "reports/cardrpg-big/a5/e2-informed/gates/typecheck-attempt-1.log",
+      "sha256": "51a42e236a32504b0d88a3bf68105a49f4443b7656a01bba4c17d18c75eeb896",
+      "counts": []
+    },
+    {
+      "name": "lint",
+      "attempt": 1,
+      "code": 0,
+      "head": "6768e87ead2cd248fccb8d9754793fc739cb9325",
+      "scope": "complete",
+      "command": [
+        "pnpm",
+        "lint"
+      ],
+      "started": "2026-11-08T23:22:04.612Z",
+      "ended": "2026-11-08T23:22:13.659Z",
+      "log": "reports/cardrpg-big/a5/e2-informed/gates/lint-attempt-1.log",
+      "sha256": "a53f38f90231d3f94787cba09e842aed97ef41aed55d1a0351b112aabe7beea1",
+      "counts": []
+    },
+    {
+      "name": "web-unit",
+      "attempt": 1,
+      "code": 0,
+      "head": "6768e87ead2cd248fccb8d9754793fc739cb9325",
+      "scope": "complete",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@taskbar-hero/web",
+        "test"
+      ],
+      "started": "2026-11-08T23:22:13.659Z",
+      "ended": "2026-11-08T23:22:31.710Z",
+      "log": "reports/cardrpg-big/a5/e2-informed/gates/web-unit-attempt-1.log",
+      "sha256": "24b54b89d880fa9872dd39850d824b3bfa22cb02af83a87e1bb99409c4d3149e",
+      "counts": [
+        " Test Files  184 passed (184)",
+        "      Tests  1779 passed (1779)"
+      ]
+    },
+    {
+      "name": "rules",
+      "attempt": 1,
+      "code": 0,
+      "head": "6768e87ead2cd248fccb8d9754793fc739cb9325",
+      "scope": "complete",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@taskbar-hero/game-rules",
+        "test"
+      ],
+      "started": "2026-11-08T23:22:31.710Z",
+      "ended": "2026-11-08T23:22:56.612Z",
+      "log": "reports/cardrpg-big/a5/e2-informed/gates/rules-attempt-1.log",
+      "sha256": "792a8fd122b80dabab8843bcfb4b2e237f6578bfbdd305cc31868efa5234e240",
+      "counts": [
+        " Test Files  71 passed | 3 skipped (74)",
+        "      Tests  1192 passed | 2 expected fail | 11 skipped (1205)"
+      ]
+    },
+    {
+      "name": "e2e",
+      "attempt": 1,
+      "code": 0,
+      "head": "6768e87ead2cd248fccb8d9754793fc739cb9325",
+      "scope": "complete",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@taskbar-hero/web",
+        "test:e2e",
+        "--workers=4"
+      ],
+      "started": "2026-11-08T23:22:56.613Z",
+      "ended": "2026-11-08T23:25:02.381Z",
+      "log": "reports/cardrpg-big/a5/e2-informed/gates/e2e-attempt-1.log",
+      "sha256": "e76dc708f5515c2c0705d41376fb0c3fef2bdb2c1f51b0a4131f49585203db02",
+      "counts": [
+        "  421 passed (2.1m)"
+      ]
+    },
+    {
+      "name": "build",
+      "attempt": 1,
+      "code": 0,
+      "head": "6768e87ead2cd248fccb8d9754793fc739cb9325",
+      "scope": "complete",
+      "command": [
+        "pnpm",
+        "build"
+      ],
+      "started": "2026-11-08T23:25:02.382Z",
+      "ended": "2026-11-08T23:25:12.959Z",
+      "log": "reports/cardrpg-big/a5/e2-informed/gates/build-attempt-1.log",
+      "sha256": "da748cb9e1615134cb1cb4210f685fd6ce4fa64ed5e7e548164129743873ebc2",
+      "counts": []
+    }
+  ],
+  "captures": 60,
+  "off": {
+    "offBehavior": "PASS",
+    "sha256": "47477251b3d20ab602bee5c55a56cdd661e111b1386e298e0c9bc67737fecfa3",
+    "cells": 165,
+    "routes": 8250,
+    "reusedFrom": "reports/cardrpg-big/a5/e1-crew-advice-band/off",
+    "reason": "Exact source hashes and complete package diff verified; no repeat samples."
+  },
+  "scope": {
+    "protectedPaths": "PASS",
+    "baseline": "PASS",
+    "historicalSimFiles": 13
+  },
+  "receipts": [
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/REGISTERED-METHOD.json",
+      "sha256": "da66c9764d2b3aae291d81d08b4ae7781e55c98b0f169600369c7d801a82558d"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/metrics.json",
+      "sha256": "2a0852e666710d33c758f1ddf470843ac8f72276c61e8025e1265cea6b9fa800"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/audit.json",
+      "sha256": "b02d1886a43bf16fb0af48342899d99bda8b738d91a49c17095291d34b97782c"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/e2-informed/gates/checks.json",
+      "sha256": "c0c0f45b835af2c81b72a9e8132150b63d7e9c6eb953dcb72fb248f4cc622d16"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/e2-star-plans/adopted-on/manifest.json",
+      "sha256": "f8ab03515089615f569dc5d7c02b36fab1a1e1ddb2ce536199a4e28c8bf118f7"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/e1-crew-advice-band/off/checks.json",
+      "sha256": "b266e345cf77ddcfcdc0772a11a6e690e577fcf2168c09f2316c5fc4d4230e4d"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/e1-crew-advice-band/off/source.json",
+      "sha256": "f54e69f74bb6fa5de3a63298cef1c1218398f5e5498945401520ab83645f949c"
+    }
+  ],
+  "acceptanceSeedsUsed": false,
+  "limitations": [
+    "Choice offers differ in final HP, actions or result at seeds 1/2/3; these are not distinct strategy ideas or estimated causal win gains.",
+    "H0 and A5 use the same automated reading allowances. New opening, rewards, click controls and closed-details visibility are explicit protocol adaptations.",
+    "Historical H0 word counts include an imperfect closed-details visibility check. Use the separate paired C1 copy audit for before/after copy claims.",
+    "Noninteractive battle walltime is the registered dead-time proxy. Other elapsed time is not silently classified as dead time.",
+    "Discovery timestamps are DOM observation times; chronological reward sorting precedes gap calculation.",
+    "Browser lifecycle freezes at lock handoffs, but cafe service uses real walltime. This is not an isolated causal comparison of one mechanic.",
+    "The script records offered choices and takes a fixed policy. It does not prove that a new human understands each choice or follows advice.",
+    "Home primary chooses the route; the fixed policy reviews one affordable lowest-level teammate upgrade and chooses the first available named crew option. UI and policy changed together; this is not a causal comparison or human retention evidence."
+  ]
+}

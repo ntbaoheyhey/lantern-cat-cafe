@@ -12,9 +12,9 @@ Runtime source: `27f192301` (available Home star crews; combat unchanged). Six s
 |---|---|---|---|
 |First fight ≤25s|H0 original opening retained|12.775–12.999s; later anchored regression13.067–13.139s|PASS, three widths|
 |Place, equip and invite by3min; scouted map by5min|Developer controls and form preparation|Placement/invite/equip19.590–26.939s; map41.862–49.171s|PASS, automated clicks without reading time|
-|Meaningful choice offers,0–5/30/60min|17 /75 /98|15 /72 /98|PASS≥5at30min; Home02 fixed-policy proxy|
-|Rewards / celebrations,0–5/30/60min|8/18/18 rewards;4/6/6 celebrations|11/21/21 rewards;8/13/13 celebrations at5/30/60min; largest30min gap916.5s|MISS:≤300s target|
-|Combat dead time reduced ≥40%|128.642 /896.670 /1886.883s; max30min reward gap775.271s|120.5 /958.6 /2044.8s;30min increases6.9%|MISS:≥40%reduction|
+|Meaningful choice offers,0–5/30/60min|17 /75 /98|15 /73 /112|PASS≥5at30min; Home03 fixed-policy proxy|
+|Rewards / celebrations,0–5/30/60min|8/18/18 rewards;4/6/6 celebrations|10/22/23 rewards;9/13/14 celebrations at5/30/60min; largest30min gap723.0s|MISS:≤300s target|
+|Combat dead time reduced ≥40%|128.642 /896.670 /1886.883s; max30min reward gap775.271s|120.6 /878.9 /1776.5s;30min decreases2.0%|MISS:≥40%reduction|
 |Player controls, copy and navigation|Six visible developer buttons; verbose forms|dev=1 gating, keyboard/click placement, filtered equipment actions|C1 functional PASS; wording is not retention evidence|
 |Named result, available retry, forecast|Generic result advice|Named contributions; one available change;20-seed worker, CPU1 max56.8ms on boss route|E1 functional PASS; advice can worsen a retry|
 |Day7 real-click x1 boss|H0 defeat52.368s|Victory64.921s; same route loses with the old plan|PASS, one paired earned fixture on anchored source|
@@ -87,6 +87,4 @@ Remaining work: B1/B2 numeric closure and display calibration; fresh registered 
 
 [Home star crews](E2-HOME-CREW-PLANS.md): available one-seat swaps and capped-reward copy;8isolated units,24ON/OFF scenarios/48captures and six gatesPASS. Exact adopted/prototype ON20,929,441bytes/SHA2c318627, scopedcontrast6.726. Six targeted x1 continuations earn the event job star; original Home02 cadenceMISS remains.
 
-[Registered forecast precision50](b1/display-precision-50/RESULTS.md) keeps all384cases and exact1–50prefixes; unchanged20seed forecasts correlate0.850/0.691/0.733 against separateTRAIN51–500. Eachchapter meets0.6, but case averages do not validate per-item percentages or static utility scores. Full500piece results retain63misses/worst88.8pp; no runtime or fresh-acceptance change.
-
-[Duration52](b1/reply-duration-52/RESULTS.md): corrected reply policy with bossHP1.25/1.5/2 remains rejected: worst piece gains42/78/44pp; after-arm median17/20/27rounds. All384TRAIN50pairs perarm and original negative pairs retained. No adoption or fresh acceptance.
+[Registered forecast precision50](b1/display-precision-50/RESULTS.md) keeps all384cases and exact1–50prefixes; unchanged20seed forecasts correlate0.850/0.691/0.733 against separateTRAIN51–500. Eachchapter meets0.6, but case averages do not validate per-item percentages or static utility scores. Full500piece results retain63misses/worst88.8pp; no runtime or fresh-acceptance change. [Duration52](b1/reply-duration-52/RESULTS.md): corrected reply policy with bossHP1.25/1.5/2 remains rejected: worst piece gains42/78/44pp; after-arm median17/20/27rounds. All384TRAIN50pairs perarm and original negative pairs retained. No adoption or fresh acceptance. [Informed Home03](E2-INFORMED-ENGAGEMENT.md) completed60.1963active minutes,60captures; independent receipt/source closurePASS. Cadence/deadtimeMISS retained. Fixedpolicy upgrades teammates but does not follow Result advice; no causal UI benefit or human-retention claim. Original Home01/02 remain preserved.
