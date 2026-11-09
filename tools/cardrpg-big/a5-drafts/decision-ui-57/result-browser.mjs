@@ -52,6 +52,15 @@ try {
   for(const f of manifest.fixtures.filter(f=>mode==='off'?f.name.startsWith('off'):before?f.name==='original-loss':!f.name.startsWith('off'))){
    await imported(f);
    if(mode==='off'){
+    if(f.name==='off-preference-active-v4'){
+     await button('Apply and retry route').waitFor({timeout:30000});
+     const current=await read();assert.equal(current.state.gameplayV4,false);assert.equal(current.state.run.gameplayV4,true);assert.equal(current.state.run.complete,false);
+     assert.equal(await page.locator('.dp-v4-result-decisions').count(),1);
+     assert.match(await button('Apply and retry route').getAttribute('class'),/cr-primary/);
+     assert(!/cr-primary/.test(await button('Continue to rewards').getAttribute('class')||''));
+     await capture(f.name+'-result','Apply and retry route','.dp-v4-advice');
+     checks.push({name:f.name,look,retainedActiveV4:true,nextRunPreference:false});continue;
+    }
     assert.equal(await page.locator('.dp-v4-result-decisions').count(),0);
     if(f.name==='off')assert.equal(await page.locator('.dp-v4-advice').count(),0);
     assert.equal(await page.locator('.dp-v4-advice .cr-primary').count(),0);
