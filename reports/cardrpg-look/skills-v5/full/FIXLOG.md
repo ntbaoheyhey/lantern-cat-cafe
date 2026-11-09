@@ -207,3 +207,6 @@ All9P1/P5/P15 boundsinside,contrast.239–.358 PASS. Original13opponent denomina
 
 ## B-M4-002 2026-11-09T07:33Z M4 boss plate overlap S2
 Repro attempt1 fixedP15/1024 at896ms:Panko70pxnumericstack touchesYarnplate7×4px. Actualbossplateheight69.1875 versus hardcoded54px reservation; the phase subtitle adds15.1875px. The collider coveredP5–P14 only,so missedP15. Fixattempt1 reserves16additionalpx whenever bossPhases includes theactor; extendcollider throughP15. Originalfailedstill kept, narrow + full3widthlayout/parity/sourcegates queued. Bossgeometry stayssubjectto thisreservation check.
+
+### B-M4-001 attempt2 measured / attempt3
+Attempt2 thirteen-opponent roster: Yarn2.041/Pantry2.069 pass; Kettle1.611 misses2 and clips bottom at1.0205, Soot1.0299. P1/P5/P15 contrast.228–.342 passes. Viewed Kettle and Yarn stills: relief modest, Kettle camera aimed too high and size still insufficient. Third attempt lowers soloKettle aim2.60→2.05 and raises scale2.84→3.50; full roster denominator and3width feet/head bounds gate acceptance. If it still clips, revert only soloKettle framing and disclose ratio miss. Material look remains PARTIAL; no fourth polish attempt.

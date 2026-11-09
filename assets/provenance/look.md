@@ -137,3 +137,5 @@ V5FULL MX3 cinema3: original procedural ink-spore canopy SphereGeometry(r=.6,20x
 Original code-only parameters, deterministic seed0; no imported assets. Opponent view-normal relief: key smoothstep(-.35,.8,dot(normal,normalize(-.6,.85,1))), emission factor .42+.68*key, plum rim(.26,.10,.17), ceramic roughness.48. Boss-only authored scales Yarn1.94/Pantry2.12/Kettle2.84 with camera targets2.20/2.60. Passive side motifs offset(.75,0,.35),height.62,size.88; distinct crescent/spice-star/leaf/pour/orbit variants; Soot spark1.18 and wick offset(.72,0,.38). Three.js shader/recipe parameters only, no model requests.
 
 M4 relief attempt2 (2026-11-09, procedural/code, deterministic/no RNG): enemy normal-key emission envelope .15+.95*smoothstep(-.35,.8,dot(n,normalize(-.6,.85,1))); solo Kettle framing2.60/scale2.84 uses the complete enemy roster to prevent midbattle zoom on a surviving Kettle. No external asset or rule change.
+
+M4 Kettle framing attempt3 (2026-11-09, code, no RNG): solo showcase aim y2.05, scale3.50; same full enemy roster condition. Corrects observed feet clipping; all meshes and rules unchanged.

@@ -467,7 +467,7 @@ export class TurnScene {
     const targets=frame?frame.plan.targetIds.map(id=>this.puppets.get(id)).filter((p):p is Puppet=>!!p):[];
     for(const a of view.actors){const p=this.puppets.get(a.id);if(!p)continue;const slot=view.model?this.zero:view.autoBattle?cardFormation(a,view.rows?.[a.id]):formationPoint(a,view.boss);if(!view.autoBattle||a.hp>0)p.base.set(slot.x,slot.y,slot.z);if(this.lookStageEnabled&&view.galleryPreview&&a.side==='party'){const lane=a.slot%3;p.base.set([-1.35,-2.65,-3.65][lane]!,0,[.25,1.05,-.65][lane]!);}
       if(this.lookStageEnabled&&view.autoBattle&&bossFraming&&a.side==='party')p.base.z-=1.1;
-      p.root.position.copy(p.base);p.root.scale.setScalar(view.model?1:figureScale(a.role,a.side)*(isReadableBattle()&&view.autoBattle?(p.asset==='kettle-knight'?(bossFraming?2.84:2.1):a.role==='yarn'?(view.boss?(p.asset==='pantry-crown'?2.12:1.94):1.25):a.side==='party'?1.25:1.38):1));p.model.rotation.y=view.model?view.model.angle:view.autoBattle?cardBodyYaw(a.side,0,0):restYaw(a.side);
+      p.root.position.copy(p.base);p.root.scale.setScalar(view.model?1:figureScale(a.role,a.side)*(isReadableBattle()&&view.autoBattle?(p.asset==='kettle-knight'?(bossFraming?3.50:2.1):a.role==='yarn'?(view.boss?(p.asset==='pantry-crown'?2.12:1.94):1.25):a.side==='party'?1.25:1.38):1));p.model.rotation.y=view.model?view.model.angle:view.autoBattle?cardBodyYaw(a.side,0,0):restYaw(a.side);
       if (view.tableau) {
         p.base.set((a.slot - 1) * 2.1, 0, a.slot === 1 ? -.35 : .3);
         p.root.position.copy(p.base);
@@ -575,7 +575,7 @@ export class TurnScene {
     this.camera.position.set(0,7.2,11.6);this.cameraTarget.set(0,.7,0);this.camera.zoom=!view.autoBattle&&view.camera==='close'?1.05:1;
     if(this.lookStageEnabled&&!view.model){this.camera.position.set(0,6.4,12);this.cameraTarget.set(0,1.1,0);}
     const readable=isReadableBattle()&&view.autoBattle&&!view.model;
-    if(readable){this.camera.position.set(0,4.7,12);this.cameraTarget.set(0,bossFraming?(view.actors.some(a=>this.puppets.get(a.id)?.asset==='kettle-knight')?2.60:2.20):1.16,0);}
+    if(readable){this.camera.position.set(0,4.7,12);this.cameraTarget.set(0,bossFraming?(view.actors.some(a=>this.puppets.get(a.id)?.asset==='kettle-knight')?2.05:2.20):1.16,0);}
     const distance=this.camera.position.distanceTo(this.cameraTarget),frameHeight=view.model?(this.lookStageEnabled?(view.model.role==='yarn'?4.6:3.3):(view.model.role==='yarn'?3.3:2.25)):view.tableau?Math.max(4,7.5/this.camera.aspect):view.autoBattle?cardFrameHeight(this.camera.aspect,view.camera==='close'?'close':view.camera==='far'?'far':'wide'):stageHeight(this.camera.aspect);
     const readableBossFrame=readable&&bossFraming?1.25:1;
     this.camera.fov=T.MathUtils.radToDeg(2*Math.atan(frameHeight*readableBossFrame/2/distance));
