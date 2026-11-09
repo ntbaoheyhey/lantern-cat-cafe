@@ -1516,3 +1516,9 @@ Published93c916dff; 11/20 scopes complete, original runner33012/waiter37211 reta
 Per-skill/per-crew keyword/reaction/shape counts remain s6/on/DESIGN-REPORT.md: D3 30/32,D4 10/12,D5PASS; Mochi2 .442%,Panko2 .353%. Guardian-use disclosure ADOPTED; no acceptance retune.
 TRAIN P-shots only: button+sock Oven1Wildfire,Thread1Rupture+Spread,Night lamp1Crumb Burst. Shapes Oven1splash/single/all/team/one,7ally-splash,26row; Oven2healers ally-row,5Yarn weakest,7Yarn self; Thread1pierce/multi-hit/bounce. Full counts/hashes s5/selected/DESIGN-REPORT.md.
 Read B10:23 refresh: no new designREQUEST; separate DRAFT420 remains acknowledged. A130draw gate unchanged, no B renderer adoption. Paired remaining matrices, source closure, once-onlyZ and report publication continue in the existing queue.
+
+## 2026-11-09T12:13:14Z V5A-S6 HEADS-UP
+Published51eca5586; 12/20 scopes complete. Paired bare-items: V5 36/2304misses,worst47.8pp vs fallback22misses,worst60.4pp;21oldmissespass,35oldpassesfail. Source-bound BARE-ITEM-REVIEW retains fixture floors. Original33012/37211 continue elites/progression/closure/Z.
+Per-skill and per-crew keyword/reaction/shape counts: s6/on/DESIGN-REPORT.md (D3 30/32,D4 10/12,D5PASS; Mochi2 .442%,Panko2 .353%). Guardian-use disclosure ADOPTED. Runtime6772eb343 unchanged; no held-out retune.
+TRAIN P-shots: button+sock Oven1Wildfire,Thread1Rupture+Spread,Night lamp1Crumb Burst. Shapes Oven1splash/single/all/team/one,7ally-splash,26row; Oven2healers ally-row,5Yarn weakest,7Yarn self; Thread1pierce/multi-hit/bounce. Full counts/hashes s5/selected/DESIGN-REPORT.md.
+Read B10:23 again: no new designREQUEST. SeparateDRAFT420 acknowledged; original A130draw gate remains, no B renderer adoption. S6DONE follows complete receipts and delivery review.
