@@ -1,0 +1,26 @@
+{"lock":"acquired","lane":"B-LOOK","pid":38431,"startedAt":"2026-11-08T06:54:55.233Z","task":"LOOK closure registered Clover1 ABBA"}
+{"name":"1280x720-dpr1-cpu1-high-clover-1","max":116.70000000000005,"first":83.30000000000018,"repeat":16.80000000000109,"errors":[]}
+{"name":"1280x720-dpr1-cpu1-high-clover-1","max":699.9,"first":50,"repeat":183.39999999999964,"errors":[]}
+{"name":"1280x720-dpr1-cpu1-high-clover-1","max":66.7,"first":16.800000000000182,"repeat":16.80000000000109,"errors":[]}
+{"name":"1280x720-dpr1-cpu1-high-clover-1","max":416.6,"first":99.89999999999964,"repeat":16.80000000000109,"errors":[]}
+{"lock":"released","task":"LOOK closure registered Clover1 ABBA"}
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
++ actual - expected
+
++ undefined
+- true
+
+    at file:///Users/bao/taskbar-hero-cardrpg-look/reports/cardrpg-look/closure/paired-cast.mjs:35:53 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: undefined,
+  expected: true,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.22.2

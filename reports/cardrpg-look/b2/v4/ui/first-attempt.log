@@ -1,0 +1,22 @@
+{"lock":"acquired","lane":"B-LOOK","pid":1937,"startedAt":"2026-11-08T17:37:56.025Z","task":"B2 UI accessibility and live comparison"}
+{"lock":"released","task":"B2 UI accessibility and live comparison"}
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+9 !== 12
+
+    at file:///Users/bao/taskbar-hero-cardrpg-b2/tools/cardrpg-look/b2/ui-check.mjs:20:76
+    at async withTimingLock (file:///Users/bao/taskbar-hero-cardrpg-b2/tools/cardrpg-look/lock.mjs:45:16)
+    at async file:///Users/bao/taskbar-hero-cardrpg-b2/tools/cardrpg-look/b2/ui-check.mjs:8:1 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 9,
+  expected: 12,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.22.2

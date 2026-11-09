@@ -1,0 +1,172 @@
+{
+  "at": "2026-11-07T14:01:53.668Z",
+  "source": "71da901f0c2e8fedeb1477a4e78b93fbcbdcadb1",
+  "artifactSha256": "02ffd9cb351fba4984dffac98036a2853bde5fe06e0a1ce503ceccc53655cb70",
+  "bytes": 22578111,
+  "verifiedInputs": 1301,
+  "receipts": {
+    "functional": {
+      "path": "reports/cardrpg-look/validation/l3/functional/checks.json",
+      "rows": 3,
+      "sha256": "3aeba8bab1773477dfd0474dff790223f5f55f6a12c620204039f8abe72ef177"
+    },
+    "post": {
+      "path": "reports/cardrpg-look/validation/l3/post/checks.json",
+      "rows": 3,
+      "sha256": "0d80cb62fcfd01797d86a879e56a852451d12d835c4d62322eab3e4dcdda9726"
+    },
+    "cancellation": {
+      "path": "reports/cardrpg-look/validation/l3/cancellation/checks.json",
+      "rows": 6,
+      "sha256": "dc96380fad38108af262d6565035428f407e2885dce8090aea73b4b07e44c79a"
+    }
+  },
+  "gates": [
+    {
+      "name": "typecheck",
+      "code": 0,
+      "startedAt": "2026-11-07T13:43:28.239Z",
+      "endedAt": "2026-11-07T13:43:37.672Z",
+      "log": "reports/cardrpg-look/validation/l3/typecheck-resume.log",
+      "sha256": "1b8aa470e522ca5610124a627deafb870c5c8407d30d09d4c09486f163a298c4"
+    },
+    {
+      "name": "lint",
+      "code": 0,
+      "startedAt": "2026-11-07T13:43:44.178Z",
+      "endedAt": "2026-11-07T13:43:53.363Z",
+      "log": "reports/cardrpg-look/validation/l3/lint-resume.log",
+      "sha256": "5796692b3f0ff50a2460d8e3901fd0bc317b4bca62f336446fe196da96129446"
+    },
+    {
+      "name": "unit",
+      "code": 0,
+      "startedAt": "2026-11-07T13:43:59.873Z",
+      "endedAt": "2026-11-07T13:44:53.552Z",
+      "log": "reports/cardrpg-look/validation/l3/unit-resume.log",
+      "sha256": "d6c2cd0426928a1f179f73bfb5bd492c48ff6827af5e1f09601d4157f9d10080"
+    },
+    {
+      "name": "build",
+      "code": 0,
+      "startedAt": "2026-11-07T13:45:22.073Z",
+      "endedAt": "2026-11-07T13:45:33.368Z",
+      "log": "reports/cardrpg-look/validation/l3/build-resume.log",
+      "sha256": "597a405388473fb12fed402bf32e88acb56f41b971584d4f4b646c8d1b8ab7d9"
+    },
+    {
+      "name": "e2e",
+      "code": 0,
+      "startedAt": "2026-11-07T13:48:58.064Z",
+      "endedAt": "2026-11-07T13:50:32.296Z",
+      "log": "reports/cardrpg-look/validation/l3/e2e-resume.log",
+      "sha256": "1262b8903f9c0c81824fcdfc738f4c25ce58bcf4f0f4a1af0b8588da8ffbb8f2"
+    }
+  ],
+  "performance": {
+    "artifact": "02ffd9cb351fba4984dffac98036a2853bde5fe06e0a1ce503ceccc53655cb70",
+    "coldRuns": 7,
+    "castWindows": 24,
+    "coldInteractiveMs": [
+      918.6999999992549,
+      918.6999999992549,
+      917.2000000029802,
+      894.1999999992549,
+      1693.5,
+      1699.7000000029802,
+      899.6000000014901
+    ],
+    "battleReadyMs": [
+      6808.800000000745,
+      6757,
+      6742.900000002235,
+      7719,
+      8992.400000002235,
+      8832.400000002235,
+      6775.800000000745
+    ],
+    "coldMaxMs": 133.29999999999995,
+    "castMaxMs": 16.80000000000109,
+    "castP95MaxMs": 16.80000000000109,
+    "castWithin20Min": 1,
+    "errors": []
+  },
+  "startup": {
+    "scripts": 11,
+    "modules": 686,
+    "bytes": 3522544,
+    "baselineBytes": 3522500,
+    "threeAndModelModules": 0,
+    "byteDelta": 44
+  },
+  "author": {
+    "tool": "4.5.3 LTS",
+    "seed": 20261107,
+    "round": 4,
+    "triangles": 50272,
+    "drawMeshes": 4,
+    "atlas": 2048,
+    "samples": 24,
+    "baked": [
+      "color",
+      "ao",
+      "roughness",
+      "normal",
+      "irradiance"
+    ],
+    "sha256": "25fef39400e30b1a8847bcb4482dcf32fbc13edfe08f2bd8f0840a29ee60e6e5",
+    "bytes": 6027476,
+    "sourceSha256": "9e22199ffbeb6cec81d03a1a8377ca796002cd1762d4120a83d97c5a8f8b9f06"
+  },
+  "packing": {
+    "tool": "glTF-Transform4.5.1 / cwebp1.6.0",
+    "parameters": [
+      "--compress",
+      "meshopt",
+      "--flatten",
+      "false",
+      "--join",
+      "false",
+      "--instance",
+      "false",
+      "--palette",
+      "false",
+      "--simplify",
+      "false",
+      "--prune",
+      "false",
+      "--texture-compress",
+      "webp",
+      "--texture-size",
+      "2048"
+    ],
+    "irradianceQuality": 90,
+    "rows": [
+      {
+        "source": "assets/cardrpg-look/stage/cafe.glb",
+        "output": "assets/cardrpg-look/stage/game/cafe.glb",
+        "sourceSha256": "25fef39400e30b1a8847bcb4482dcf32fbc13edfe08f2bd8f0840a29ee60e6e5",
+        "sha256": "06257f9acccde9a53e40609a20e8088cdb0e18c5f9027332ea5b5068a402f922",
+        "before": 6027476,
+        "after": 1015272,
+        "gzipAfter": 746181
+      },
+      {
+        "source": "assets/cardrpg-look/stage/irradiance.png",
+        "output": "assets/cardrpg-look/stage/game/irradiance.webp",
+        "sourceSha256": "554460a0faad88a2c333c0eac705aa9e2729212a5e626766eeff79c76a56264a",
+        "sha256": "4c59451d18a55ba14944801daafb20e2fbd8e37b483dcd1eb86a5137e5469e9c",
+        "before": 3942787,
+        "after": 753106,
+        "gzipAfter": 752985
+      }
+    ]
+  },
+  "protectedChanges": [],
+  "limitations": [
+    "Depth AO is a compact analytic implementation, not GTAO; no TAA or full shadow maps.",
+    "Inner-face masks verify bloom/focus deltas; perceptual review remains separate.",
+    "Strict startup byte parity and cold peaks remain measured separately, not waived.",
+    "Final full matrix/lifecycle20/CPU4 Balanced+Low gates remain unrun."
+  ]
+}

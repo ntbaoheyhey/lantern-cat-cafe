@@ -1,0 +1,52 @@
+
+> taskbar-hero@0.0.0 test /Users/bao/taskbar-hero-cardrpg-look
+> node --test scripts/*.test.mjs && pnpm -r test
+
+✔ explicit root and nested index imports resolve to their exact files (7.830042ms)
+✔ directory aliases coexist with explicit indexes and ordinary modules (1.684292ms)
+✔ test modules, fixture folders and non-TypeScript files stay out of deployment maps (2.082167ms)
+✔ output order is stable regardless of file creation order (3.329042ms)
+✔ generation preserves auth mappings and ignores shared or non-function directories (3.83875ms)
+✔ auth health HTTP 200 exits correctly without leaking response data (22.457458ms)
+✔ auth health HTTP 429 exits correctly without leaking response data (13.927125ms)
+✔ auth health HTTP 500 exits correctly without leaking response data (11.63625ms)
+✔ auth health HTTP 502 exits correctly without leaking response data (13.244791ms)
+✔ auth health HTTP 503 exits correctly without leaking response data (12.009417ms)
+✔ auth health fails closed when the transport is unavailable (12.105541ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 143.601125
+Scope: 6 of 7 workspace projects
+packages/auth test$ vitest run
+packages/chain test$ vitest run
+packages/game-rules test$ vitest run
+supabase/tests test$ vitest run
+packages/chain test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-look/packages/chain
+packages/auth test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-look/packages/auth
+packages/game-rules test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-look/packages/game-rules
+supabase/tests test:  RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-look/supabase/tests
+packages/chain test:  Test Files  3 passed (3)
+packages/chain test:       Tests  32 passed (32)
+packages/chain test:    Start at  12:57:36
+packages/chain test:    Duration  482ms (import 65%, tests 23%, transform 6%, worker 5%)
+packages/chain test: Done
+packages/auth test:  Test Files  1 passed (1)
+packages/auth test:       Tests  24 passed (24)
+packages/auth test:    Start at  12:57:36
+packages/auth test:    Duration  673ms (import 70%, tests 26%, transform 3%, worker 1%)
+packages/auth test: Done
+supabase/tests test:  Test Files  34 passed (34)
+supabase/tests test:       Tests  581 passed (581)
+supabase/tests test:    Start at  12:57:36
+supabase/tests test:    Duration  12.00s (tests 83%, import 15%, transform 2%)
+supabase/tests test: Done
+packages/game-rules test: Failed
+ ELIFECYCLE  Test failed. See above for more details.
+/Users/bao/taskbar-hero-cardrpg-look/packages/game-rules:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/game-rules@0.0.0 test: `vitest run`
+Command failed with signal "SIGTERM"

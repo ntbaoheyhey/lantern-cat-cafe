@@ -1,0 +1,69 @@
+{
+  "source": "reports/cardrpg-look/validation/l5/compression/cushion-kettle-512-256-q80/kettle-knight-preview.glb",
+  "sourceSha256": "7ed9bddcd2f7f4c9a5bb33dad268cf8309b8543acc379a8903bfcfa2cc86f115",
+  "scriptSha256": "fcf28f65b2253c7db48aee79b6b1436477eea464875b24e85f3b9739359ba610",
+  "renderer": "4.5.3 LTS",
+  "seed": 20261107,
+  "samples": 40,
+  "size": [
+    512,
+    640
+  ],
+  "camera": {
+    "position": [
+      1.25,
+      -5.800000190734863,
+      1.8199999332427979
+    ],
+    "target": [
+      0.0,
+      0.0,
+      1.1699999570846558
+    ],
+    "orthoScale": 3.4000000953674316
+  },
+  "turntable": false,
+  "rows": [
+    {
+      "index": 0,
+      "yaw": 0,
+      "file": "000.png",
+      "projectedBounds": [
+        0.31845518946647644,
+        0.14203649759292603,
+        0.7509570717811584,
+        0.6183175444602966
+      ],
+      "sha256": "d885856d8e202810803dbf02c6adcaa23fdd449933547896ae24ccbd136c2c59",
+      "framingPass": true
+    },
+    {
+      "index": 1,
+      "yaw": 1.5707963267948966,
+      "file": "001.png",
+      "projectedBounds": [
+        0.32572469115257263,
+        0.14020474255084991,
+        0.6657221913337708,
+        0.6193581819534302
+      ],
+      "sha256": "bf2701a4521d0c5379ca34a6364cbc18e8c0426d5ef56c9f8b1102877e2239a5",
+      "framingPass": true
+    },
+    {
+      "index": 2,
+      "yaw": 3.141592653589793,
+      "file": "002.png",
+      "projectedBounds": [
+        0.24904291331768036,
+        0.14729022979736328,
+        0.681544840335846,
+        0.5979575514793396
+      ],
+      "sha256": "4f150ccf9b9f38ae6d31592793c87932c7b11c9bce7727f91bb98d9724d6b188",
+      "framingPass": true
+    }
+  ],
+  "original": true,
+  "method": "Fixed studio/camera/scale across before and after. Bounds are diagnostics, never used to reframe silently."
+}

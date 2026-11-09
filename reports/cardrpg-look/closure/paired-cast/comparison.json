@@ -1,0 +1,185 @@
+{
+  "plan": {
+    "registeredAt": "2026-11-08T06:54:55.220Z",
+    "reason": "New closure Clover1 High/DPR1 first-cast633.3ms gap, with cold trace showing GPU command waits/presentation backpressure. Separate source effect from current environment without discarding failures.",
+    "order": [
+      "before",
+      "after",
+      "after",
+      "before"
+    ],
+    "skill": "clover-1",
+    "config": [
+      1280,
+      720,
+      1,
+      1,
+      "high"
+    ],
+    "before": "39645d319c264bac0c1011d0e5370de335281ebf6e1df64de67978e34bcb4133",
+    "after": "7e092b1a18b2a4af1dcdcc51e6a24f38bc5e674580d2ecddca33c3de306aff34",
+    "method": "Exactly four fresh-context observations in registered ABBA order; first/repeat retained, CPU/GPU profile on. Same current harness, viewport, tier and machine under one shared-lock window. No confidence/causal root-cause or exclusive-device claim from two samples per artifact."
+  },
+  "observations": [
+    {
+      "order": 1,
+      "variant": "before",
+      "path": "reports/cardrpg-look/closure/paired-cast/1-before/summary.json",
+      "sha256": "f48a6e369cc425ca781ac1a6f362ec7a813e468bb3c66041fa2266be2da336e6",
+      "casts": [
+        {
+          "use": "first",
+          "frames": 60,
+          "max": 83.30000000000018,
+          "p95": 33.399999999999636,
+          "above25": 6,
+          "above50": 2,
+          "within20": 0.9,
+          "calls": 97,
+          "triangles": 101245,
+          "particles": 7
+        },
+        {
+          "use": "repeat",
+          "frames": 71,
+          "max": 16.80000000000109,
+          "p95": 16.799999999999272,
+          "above25": 0,
+          "above50": 0,
+          "within20": 1,
+          "calls": 97,
+          "triangles": 101245,
+          "particles": 7
+        }
+      ],
+      "pageOpen": {
+        "frames": 538,
+        "max": 116.70000000000005,
+        "p95": 16.800000000000182,
+        "above25": 13,
+        "above50": 5,
+        "within20": 0.9758364312267658
+      }
+    },
+    {
+      "order": 2,
+      "variant": "after",
+      "path": "reports/cardrpg-look/closure/paired-cast/2-after/summary.json",
+      "sha256": "54956e2ec0fd875a560d661da528eddbb40b304cb702c44ca2984091ca40e1e9",
+      "casts": [
+        {
+          "use": "first",
+          "frames": 68,
+          "max": 50,
+          "p95": 16.800000000000182,
+          "above25": 2,
+          "above50": 0,
+          "within20": 0.9705882352941176,
+          "calls": 97,
+          "triangles": 101245,
+          "particles": 7
+        },
+        {
+          "use": "repeat",
+          "frames": 61,
+          "max": 183.39999999999964,
+          "p95": 33.30000000000109,
+          "above25": 4,
+          "above50": 3,
+          "within20": 0.9344262295081968,
+          "calls": 97,
+          "triangles": 101245,
+          "particles": 7
+        }
+      ],
+      "pageOpen": {
+        "frames": 551,
+        "max": 699.9,
+        "p95": 16.799999999999997,
+        "above25": 10,
+        "above50": 4,
+        "within20": 0.9818511796733213
+      }
+    },
+    {
+      "order": 3,
+      "variant": "after",
+      "path": "reports/cardrpg-look/closure/paired-cast/3-after/summary.json",
+      "sha256": "5ea100fe8673e28aa83147cf3d0f9aad9cda48b4a13a1a31238f6fc994d587a0",
+      "casts": [
+        {
+          "use": "first",
+          "frames": 71,
+          "max": 16.800000000000182,
+          "p95": 16.700000000000728,
+          "above25": 0,
+          "above50": 0,
+          "within20": 1,
+          "calls": 97,
+          "triangles": 101245,
+          "particles": 7
+        },
+        {
+          "use": "repeat",
+          "frames": 71,
+          "max": 16.80000000000109,
+          "p95": 16.700000000000728,
+          "above25": 0,
+          "above50": 0,
+          "within20": 1,
+          "calls": 97,
+          "triangles": 101245,
+          "particles": 7
+        }
+      ],
+      "pageOpen": {
+        "frames": 557,
+        "max": 66.7,
+        "p95": 16.799999999999272,
+        "above25": 2,
+        "above50": 1,
+        "within20": 0.9964093357271095
+      }
+    },
+    {
+      "order": 4,
+      "variant": "before",
+      "path": "reports/cardrpg-look/closure/paired-cast/4-before/summary.json",
+      "sha256": "5e3dfaedd2db741c9fc1c8b043a0ffb004f649299486a0ce1e600a919c0008f2",
+      "casts": [
+        {
+          "use": "first",
+          "frames": 66,
+          "max": 99.89999999999964,
+          "p95": 16.800000000000182,
+          "above25": 1,
+          "above50": 1,
+          "within20": 0.9848484848484849,
+          "calls": 97,
+          "triangles": 101245,
+          "particles": 7
+        },
+        {
+          "use": "repeat",
+          "frames": 71,
+          "max": 16.80000000000109,
+          "p95": 16.800000000000182,
+          "above25": 0,
+          "above50": 0,
+          "within20": 1,
+          "calls": 97,
+          "triangles": 101245,
+          "particles": 7
+        }
+      ],
+      "pageOpen": {
+        "frames": 510,
+        "max": 416.6,
+        "p95": 16.799999999999272,
+        "above25": 6,
+        "above50": 2,
+        "within20": 0.9882352941176471
+      }
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "source": "reports/cardrpg-look/rounds/opponents/exports/boss-correction/round-3/models/yarn-giant.glb",
+  "sourceSha256": "289d51c01ae9b4628e9084b9592cf8c18970bc2b3b7fe03f9533108eb826af4d",
+  "scriptSha256": "fcf28f65b2253c7db48aee79b6b1436477eea464875b24e85f3b9739359ba610",
+  "renderer": "4.5.3 LTS",
+  "seed": 20261107,
+  "samples": 40,
+  "size": [
+    512,
+    640
+  ],
+  "camera": {
+    "position": [
+      1.25,
+      -5.800000190734863,
+      1.8199999332427979
+    ],
+    "target": [
+      0.0,
+      0.0,
+      1.1699999570846558
+    ],
+    "orthoScale": 3.4000000953674316
+  },
+  "turntable": false,
+  "rows": [
+    {
+      "index": 0,
+      "yaw": 0,
+      "file": "000.png",
+      "projectedBounds": [
+        0.047310397028923035,
+        0.15625974535942078,
+        0.9416517615318298,
+        0.8886027932167053
+      ],
+      "sha256": "abf55cbd2e43c25c99f15508287805671c2e74d04cc3d2458260be2b0e36482e",
+      "framingPass": true
+    },
+    {
+      "index": 1,
+      "yaw": 1.5707963267948966,
+      "file": "001.png",
+      "projectedBounds": [
+        0.15684768557548523,
+        0.1492590308189392,
+        0.8517025113105774,
+        0.908780574798584
+      ],
+      "sha256": "64ef180ea3757307f7ef9a04ea4b84a621ba0e217b4ff0bbef7755d86cc9560d",
+      "framingPass": true
+    },
+    {
+      "index": 2,
+      "yaw": 3.141592653589793,
+      "file": "002.png",
+      "projectedBounds": [
+        0.05834821239113808,
+        0.16369636356830597,
+        0.9526895880699158,
+        0.8877639770507812
+      ],
+      "sha256": "98e505c37dd8d3007120e59eeb668fb281856d4cb78c7e3cd99b62a9da84eca5",
+      "framingPass": true
+    }
+  ],
+  "original": true,
+  "method": "Fixed studio/camera/scale across before and after. Bounds are diagnostics, never used to reframe silently."
+}

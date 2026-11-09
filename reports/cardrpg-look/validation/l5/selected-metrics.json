@@ -1,0 +1,732 @@
+{
+  "at": "2026-11-07T20:25:24.282812+00:00",
+  "method": "Read exact final-round fixed-camera studio metrics. Sharpness/edges/saturation describe image structure and do not rank beauty. Runtime framing/performance are independent.",
+  "rows": [
+    {
+      "owner": "panko",
+      "kind": "cat",
+      "tier": "improved",
+      "triangles": 11769,
+      "rawSha256": "e654b7fec46c8ad21e54689ff878d489a9b3f7f19c4569116b77b02385f2af5b",
+      "packedBytes": 254100,
+      "round": 3,
+      "before": {
+        "interiorLaplacianVariance": 288.9402685213369,
+        "interiorEdgeContinuity": 0.9902316494557634,
+        "subjectLuminance": 0.6579099897337652,
+        "subjectSaturation": 0.30934243990483223,
+        "subjectValueBins": [
+          0.03334558407780165,
+          0.42399355422367974,
+          0.5426608616985186
+        ]
+      },
+      "after": {
+        "interiorLaplacianVariance": 315.01240412087816,
+        "interiorEdgeContinuity": 0.9884509624197984,
+        "subjectLuminance": 0.5384974471188912,
+        "subjectSaturation": 0.30326464004450343,
+        "subjectValueBins": [
+          0.15367086697351542,
+          0.5472270429336754,
+          0.2991020900928092
+        ]
+      },
+      "source": "reports/cardrpg-look/rounds/roster/panko/round-3/metrics.json",
+      "comparison": "reports/cardrpg-look/rounds/roster/panko/round-3/comparison.png"
+    },
+    {
+      "owner": "mallow",
+      "kind": "cat",
+      "tier": "improved",
+      "triangles": 11758,
+      "rawSha256": "341001f07f483b312d6014ccb370a5a97d4b02e4930fbec5b98c884260ab2bbc",
+      "packedBytes": 254736,
+      "round": 4,
+      "before": {
+        "interiorLaplacianVariance": 369.0023523354412,
+        "interiorEdgeContinuity": 0.966042966042966,
+        "subjectLuminance": 0.36678215355759364,
+        "subjectSaturation": 0.24789220306609744,
+        "subjectValueBins": [
+          0.5672606913482826,
+          0.4022489642927599,
+          0.030490344358957498
+        ]
+      },
+      "after": {
+        "interiorLaplacianVariance": 385.20245370453637,
+        "interiorEdgeContinuity": 0.9751077070368598,
+        "subjectLuminance": 0.5375405398727254,
+        "subjectSaturation": 0.22321313449196842,
+        "subjectValueBins": [
+          0.1111467522052927,
+          0.5997708786802612,
+          0.2890823691144461
+        ]
+      },
+      "source": "reports/cardrpg-look/rounds/roster/mallow/round-4/metrics.json",
+      "comparison": "reports/cardrpg-look/rounds/roster/mallow/round-4/comparison.png"
+    },
+    {
+      "owner": "cinnamon",
+      "kind": "cat",
+      "tier": "improved",
+      "triangles": 11751,
+      "rawSha256": "3d34ffbba7668f799ae67fda4a78a5016fe9cb111d064e3ec171784c3cb2b102",
+      "packedBytes": 256208,
+      "round": 3,
+      "before": {
+        "interiorLaplacianVariance": 278.0354933222099,
+        "interiorEdgeContinuity": 0.9853857726198152,
+        "subjectLuminance": 0.5563720560299211,
+        "subjectSaturation": 0.3294790930116599,
+        "subjectValueBins": [
+          0.08595134332646905,
+          0.6235932187155787,
+          0.2904554379579522
+        ]
+      },
+      "after": {
+        "interiorLaplacianVariance": 311.76963431254836,
+        "interiorEdgeContinuity": 0.9841661525807115,
+        "subjectLuminance": 0.49326201023579586,
+        "subjectSaturation": 0.4335561053502838,
+        "subjectValueBins": [
+          0.19083735539722668,
+          0.6399754845629357,
+          0.16918716003983758
+        ]
+      },
+      "source": "reports/cardrpg-look/rounds/roster/cinnamon/round-3/metrics.json",
+      "comparison": "reports/cardrpg-look/rounds/roster/cinnamon/round-3/comparison.png"
+    },
+    {
+      "owner": "biscuit",
+      "kind": "cat",
+      "tier": "improved",
+      "triangles": 11759,
+      "rawSha256": "ec179428ba21f52e20e8659067e28dbff939ecb92ccae95fe3fd2700454740f8",
+      "packedBytes": 261472,
+      "round": 2,
+      "before": {
+        "interiorLaplacianVariance": 241.15676705170983,
+        "interiorEdgeContinuity": 0.9966926529648004,
+        "subjectLuminance": 0.6338318319834958,
+        "subjectSaturation": 0.29299966942755873,
+        "subjectValueBins": [
+          0.05196300343428036,
+          0.5088491258195442,
+          0.43918787074617543
+        ]
+      },
+      "after": {
+        "interiorLaplacianVariance": 249.19039469390853,
+        "interiorEdgeContinuity": 0.9872004762613484,
+        "subjectLuminance": 0.5751053099043713,
+        "subjectSaturation": 0.31438424993742436,
+        "subjectValueBins": [
+          0.10149453958538579,
+          0.511790722535477,
+          0.38671473787913724
+        ]
+      },
+      "source": "reports/cardrpg-look/rounds/roster/biscuit/round-2/metrics.json",
+      "comparison": "reports/cardrpg-look/rounds/roster/biscuit/round-2/comparison.png"
+    },
+    {
+      "owner": "inkcap",
+      "kind": "cat",
+      "tier": "improved",
+      "triangles": 11756,
+      "rawSha256": "9b4250801b709235f41740caa6a3283d54f33ac98ded3f8d4a0498532d65a919",
+      "packedBytes": 238312,
+      "round": 2,
+      "before": {
+        "interiorLaplacianVariance": 249.46002677323008,
+        "interiorEdgeContinuity": 0.9823754789272031,
+        "subjectLuminance": 0.404084894047305,
+        "subjectSaturation": 0.18043524136111844,
+        "subjectValueBins": [
+          0.48619207772795214,
+          0.36988041853512704,
+          0.1439275037369208
+        ]
+      },
+      "after": {
+        "interiorLaplacianVariance": 408.07349806601894,
+        "interiorEdgeContinuity": 0.9732883817427386,
+        "subjectLuminance": 0.34138588031897843,
+        "subjectSaturation": 0.2046823591314979,
+        "subjectValueBins": [
+          0.5146465215920623,
+          0.43741120757695345,
+          0.047942270830984325
+        ]
+      },
+      "source": "reports/cardrpg-look/rounds/roster/inkcap/round-2/metrics.json",
+      "comparison": "reports/cardrpg-look/rounds/roster/inkcap/round-2/comparison.png"
+    },
+    {
+      "owner": "sorrel",
+      "kind": "cat",
+      "tier": "improved",
+      "triangles": 11759,
+      "rawSha256": "f6fbb524839bd2babd92d930253a6f251062eee3141b66cc896ffcace959250b",
+      "packedBytes": 258144,
+      "round": 2,
+      "before": {
+        "interiorLaplacianVariance": 232.52970122307403,
+        "interiorEdgeContinuity": 0.9955104430997462,
+        "subjectLuminance": 0.5852979073953183,
+        "subjectSaturation": 0.26353745231815584,
+        "subjectValueBins": [
+          0.051374316404510394,
+          0.6543634323173665,
+          0.29426225127812317
+        ]
+      },
+      "after": {
+        "interiorLaplacianVariance": 252.58320005028875,
+        "interiorEdgeContinuity": 0.9777556440903055,
+        "subjectLuminance": 0.5498605286944576,
+        "subjectSaturation": 0.2456794535752284,
+        "subjectValueBins": [
+          0.08466373569987522,
+          0.6867441779104617,
+          0.2285920863896631
+        ]
+      },
+      "source": "reports/cardrpg-look/rounds/roster/sorrel/round-2/metrics.json",
+      "comparison": "reports/cardrpg-look/rounds/roster/sorrel/round-2/comparison.png"
+    },
+    {
+      "owner": "brioche",
+      "kind": "cat",
+      "tier": "improved",
+      "triangles": 11744,
+      "rawSha256": "bfac198f469ac311f2fdedfe1c66ad080dc7370f05e700e3fe66f426c6a2d9e7",
+      "packedBytes": 259460,
+      "round": 2,
+      "before": {
+        "interiorLaplacianVariance": 207.68126632408783,
+        "interiorEdgeContinuity": 0.9928057553956835,
+        "subjectLuminance": 0.6863236075217704,
+        "subjectSaturation": 0.21337743201081935,
+        "subjectValueBins": [
+          0.03283405417709993,
+          0.23365353972228545,
+          0.7335124061006146
+        ]
+      },
+      "after": {
+        "interiorLaplacianVariance": 263.7638307626515,
+        "interiorEdgeContinuity": 0.9857488955394043,
+        "subjectLuminance": 0.6070180006039035,
+        "subjectSaturation": 0.28283424116989264,
+        "subjectValueBins": [
+          0.07752313972757771,
+          0.506679196475486,
+          0.4157976637969363
+        ]
+      },
+      "source": "reports/cardrpg-look/rounds/roster/brioche/round-2/metrics.json",
+      "comparison": "reports/cardrpg-look/rounds/roster/brioche/round-2/comparison.png"
+    },
+    {
+      "owner": "velvet",
+      "kind": "cat",
+      "tier": "improved",
+      "triangles": 11766,
+      "rawSha256": "67b1907d745f25042ca3103d34d6994b60ffa3d57567e344507e336aaf1c792b",
+      "packedBytes": 243108,
+      "round": 2,
+      "before": {
+        "interiorLaplacianVariance": 261.3970478294219,
+        "interiorEdgeContinuity": 0.9897377423033067,
+        "subjectLuminance": 0.33639226419919116,
+        "subjectSaturation": 0.2672891128221804,
+        "subjectValueBins": [
+          0.5603096656469704,
+          0.407650405195084,
+          0.03203992915794558
+        ]
+      },
+      "after": {
+        "interiorLaplacianVariance": 261.65195955002855,
+        "interiorEdgeContinuity": 0.9815789473684211,
+        "subjectLuminance": 0.46743728943632246,
+        "subjectSaturation": 0.16265518590998043,
+        "subjectValueBins": [
+          0.1889941291585127,
+          0.7513894324853229,
+          0.059616438356164383
+        ]
+      },
+      "source": "reports/cardrpg-look/rounds/roster/velvet/round-2/metrics.json",
+      "comparison": "reports/cardrpg-look/rounds/roster/velvet/round-2/comparison.png"
+    },
+    {
+      "owner": "marigold",
+      "kind": "cat",
+      "tier": "improved",
+      "triangles": 11750,
+      "rawSha256": "97d9058a3ebb0f0ad15c9bc2bd5297ea0254b71c1ea5e1b0e48ec24bd86966b7",
+      "packedBytes": 261776,
+      "round": 2,
+      "before": {
+        "interiorLaplacianVariance": 259.3953423733126,
+        "interiorEdgeContinuity": 0.9916713988264244,
+        "subjectLuminance": 0.5941577293260343,
+        "subjectSaturation": 0.3277830022584444,
+        "subjectValueBins": [
+          0.07457272960239705,
+          0.45838672159908533,
+          0.46704054879851764
+        ]
+      },
+      "after": {
+        "interiorLaplacianVariance": 254.73155134287146,
+        "interiorEdgeContinuity": 0.9817816890535742,
+        "subjectLuminance": 0.5348511874937368,
+        "subjectSaturation": 0.3916761751402082,
+        "subjectValueBins": [
+          0.1368501439229278,
+          0.6384186101157258,
+          0.22473124596134642
+        ]
+      },
+      "source": "reports/cardrpg-look/rounds/roster/marigold/round-2/metrics.json",
+      "comparison": "reports/cardrpg-look/rounds/roster/marigold/round-2/comparison.png"
+    },
+    {
+      "owner": "button-guard",
+      "kind": "opponent",
+      "tier": "improved",
+      "triangles": 7774,
+      "rawSha256": "0eda616ebad83a7d1a1c7b49f0810f34ea6a7b6256e840d0062d71a19426b80a",
+      "packedBytes": 143576,
+      "round": 3,
+      "before": {
+        "interiorLaplacianVariance": 420.92422504808076,
+        "interiorEdgeContinuity": 0.9889027604383409,
+        "subjectLuminance": 0.5470671062004075,
+        "subjectSaturation": 0.3287502553823557,
+        "subjectValueBins": [
+          0.08420163334272036,
+          0.7573319386893028,
+          0.15846642796797683
+        ]
+      },
+      "after": {
+        "interiorLaplacianVariance": 331.5037468694166,
+        "interiorEdgeContinuity": 0.9758281110116384,
+        "subjectLuminance": 0.4045487493376885,
+        "subjectSaturation": 0.21679660588581684,
+        "subjectValueBins": [
+          0.2608231009138296,
+          0.7063968070489193,
+          0.032780092037251095
+        ]
+      },
+      "source": "reports/cardrpg-look/rounds/opponents/button-guard/round-3/metrics.json",
+      "comparison": "reports/cardrpg-look/rounds/opponents/button-guard/round-3/comparison.png"
+    },
+    {
+      "owner": "sock-skipper",
+      "kind": "opponent",
+      "tier": "improved",
+      "triangles": 7784,
+      "rawSha256": "9ad61bafc5b4222e65a294812ec8c2b2b5c70824f9fbe14884cb4e3e216b3524",
+      "packedBytes": 144180,
+      "round": 5,
+      "before": {
+        "interiorLaplacianVariance": 243.4042816501042,
+        "interiorEdgeContinuity": 0.9923973644196655,
+        "subjectLuminance": 0.5551165994072569,
+        "subjectSaturation": 0.19717510478756153,
+        "subjectValueBins": [
+          0.09621097856391975,
+          0.6240458887517711,
+          0.27974313268430917
+        ]
+      },
+      "after": {
+        "interiorLaplacianVariance": 187.41529439344475,
+        "interiorEdgeContinuity": 0.9732142857142857,
+        "subjectLuminance": 0.4831801546690513,
+        "subjectSaturation": 0.2835670708245542,
+        "subjectValueBins": [
+          0.15793134283869045,
+          0.7666302349843509,
+          0.07543842217695862
+        ]
+      },
+      "source": "reports/cardrpg-look/rounds/opponents/sock-skipper/round-5/metrics.json",
+      "comparison": "reports/cardrpg-look/rounds/opponents/sock-skipper/round-5/comparison.png"
+    },
+    {
+      "owner": "spool-ram",
+      "kind": "opponent",
+      "tier": "improved",
+      "triangles": 7770,
+      "rawSha256": "54d7a09dd156177ab307099e52c45dd3fddfaa66b73006606c2b94e1e2e5fbf9",
+      "packedBytes": 177784,
+      "round": 3,
+      "before": {
+        "interiorLaplacianVariance": 274.9754409155029,
+        "interiorEdgeContinuity": 0.9935275080906149,
+        "subjectLuminance": 0.5250725878951332,
+        "subjectSaturation": 0.4780270265892396,
+        "subjectValueBins": [
+          0.17839993804213136,
+          0.5198136100784799,
+          0.3017864518793887
+        ]
+      },
+      "after": {
+        "interiorLaplacianVariance": 214.38311357516798,
+        "interiorEdgeContinuity": 0.9879623550010943,
+        "subjectLuminance": 0.4279730582066121,
+        "subjectSaturation": 0.3432126924496025,
+        "subjectValueBins": [
+          0.3685472780330728,
+          0.4429778955489216,
+          0.18847482641800556
+        ]
+      },
+      "source": "reports/cardrpg-look/rounds/opponents/spool-ram/round-3/metrics.json",
+      "comparison": "reports/cardrpg-look/rounds/opponents/spool-ram/round-3/comparison.png"
+    },
+    {
+      "owner": "needle-moth",
+      "kind": "opponent",
+      "tier": "improved",
+      "triangles": 7784,
+      "rawSha256": "39e7e8eb7b311d94a637f8e2652b6c724d2894f2041cf2b075cf8462b5ba5009",
+      "packedBytes": 149384,
+      "round": 2,
+      "before": {
+        "interiorLaplacianVariance": 317.96906383500306,
+        "interiorEdgeContinuity": 0.9909110124709364,
+        "subjectLuminance": 0.5128772065773901,
+        "subjectSaturation": 0.3262278033090534,
+        "subjectValueBins": [
+          0.1780821917808219,
+          0.5403081816681421,
+          0.28160962655103605
+        ]
+      },
+      "after": {
+        "interiorLaplacianVariance": 198.60067434556427,
+        "interiorEdgeContinuity": 0.9932073242764323,
+        "subjectLuminance": 0.42313058058424696,
+        "subjectSaturation": 0.27624764234536414,
+        "subjectValueBins": [
+          0.25282086116457225,
+          0.7193478999207518,
+          0.027831238914676027
+        ]
+      },
+      "source": "reports/cardrpg-look/rounds/opponents/needle-moth/round-2/metrics.json",
+      "comparison": "reports/cardrpg-look/rounds/opponents/needle-moth/round-2/comparison.png"
+    },
+    {
+      "owner": "teacup-healer",
+      "kind": "opponent",
+      "tier": "improved",
+      "triangles": 7783,
+      "rawSha256": "c6c25713995641313e488422335934f83338216825885ef9fc29cf375cefa803",
+      "packedBytes": 123692,
+      "round": 2,
+      "before": {
+        "interiorLaplacianVariance": 326.7819989130742,
+        "interiorEdgeContinuity": 0.9834368530020704,
+        "subjectLuminance": 0.6249710967880082,
+        "subjectSaturation": 0.236927638501715,
+        "subjectValueBins": [
+          0.10667861945316001,
+          0.28527769854529156,
+          0.6080436820015485
+        ]
+      },
+      "after": {
+        "interiorLaplacianVariance": 143.73442137572366,
+        "interiorEdgeContinuity": 0.968727789623312,
+        "subjectLuminance": 0.38634773308793635,
+        "subjectSaturation": 0.23669476032980163,
+        "subjectValueBins": [
+          0.35470373018209345,
+          0.6039572732242735,
+          0.041338996593633034
+        ]
+      },
+      "source": "reports/cardrpg-look/rounds/opponents/teacup-healer/round-2/metrics.json",
+      "comparison": "reports/cardrpg-look/rounds/opponents/teacup-healer/round-2/comparison.png"
+    },
+    {
+      "owner": "crumb-sentinel",
+      "kind": "opponent",
+      "tier": "improved",
+      "triangles": 7790,
+      "rawSha256": "3dff91badbcf83149374a4eed2ade822c6f88131c6b84397046303ad8644a069",
+      "packedBytes": 138788,
+      "round": 3,
+      "before": {
+        "interiorLaplacianVariance": 326.4785463063723,
+        "interiorEdgeContinuity": 0.983744732089103,
+        "subjectLuminance": 0.5725575131042515,
+        "subjectSaturation": 0.30193773053775963,
+        "subjectValueBins": [
+          0.0838180693069307,
+          0.6007735148514851,
+          0.31540841584158413
+        ]
+      },
+      "after": {
+        "interiorLaplacianVariance": 184.2875814842553,
+        "interiorEdgeContinuity": 0.9692144373673036,
+        "subjectLuminance": 0.39927645193211236,
+        "subjectSaturation": 0.47377224226824066,
+        "subjectValueBins": [
+          0.28973560748892885,
+          0.7027886175297058,
+          0.00747577498136537
+        ]
+      },
+      "source": "reports/cardrpg-look/rounds/opponents/crumb-sentinel/round-3/metrics.json",
+      "comparison": "reports/cardrpg-look/rounds/opponents/crumb-sentinel/round-3/comparison.png"
+    },
+    {
+      "owner": "pollen-scout",
+      "kind": "opponent",
+      "tier": "improved",
+      "triangles": 7780,
+      "rawSha256": "1fd258bf6d5efc7acf7b67be0a4c4664d1d942969a74379cb27bbe0bea2996c4",
+      "packedBytes": 173080,
+      "round": 2,
+      "before": {
+        "interiorLaplacianVariance": 234.3966979491983,
+        "interiorEdgeContinuity": 0.9875180028804609,
+        "subjectLuminance": 0.5758838034032906,
+        "subjectSaturation": 0.36284581178425,
+        "subjectValueBins": [
+          0.09129929940377565,
+          0.4096465707315164,
+          0.49905412986470793
+        ]
+      },
+      "after": {
+        "interiorLaplacianVariance": 191.03435617624473,
+        "interiorEdgeContinuity": 0.9869953942021132,
+        "subjectLuminance": 0.4112244058905757,
+        "subjectSaturation": 0.36706358071026685,
+        "subjectValueBins": [
+          0.28282428322024444,
+          0.6917082125951657,
+          0.02546750418458991
+        ]
+      },
+      "source": "reports/cardrpg-look/rounds/opponents/pollen-scout/round-2/metrics.json",
+      "comparison": "reports/cardrpg-look/rounds/opponents/pollen-scout/round-2/comparison.png"
+    },
+    {
+      "owner": "rain-spool",
+      "kind": "opponent",
+      "tier": "improved",
+      "triangles": 7756,
+      "rawSha256": "18711c7d32c9494cfad64202e55739718cebdf0d153c2bb66250a4218ed9f4c7",
+      "packedBytes": 203432,
+      "round": 4,
+      "before": {
+        "interiorLaplacianVariance": 250.89804223785168,
+        "interiorEdgeContinuity": 0.9888584474885844,
+        "subjectLuminance": 0.5142349550722094,
+        "subjectSaturation": 0.4752009185825509,
+        "subjectValueBins": [
+          0.18225571114353536,
+          0.5696008188331627,
+          0.2481434700233019
+        ]
+      },
+      "after": {
+        "interiorLaplacianVariance": 196.6673827599275,
+        "interiorEdgeContinuity": 0.9947916666666666,
+        "subjectLuminance": 0.3820105343766769,
+        "subjectSaturation": 0.27989713882575556,
+        "subjectValueBins": [
+          0.4348921013454287,
+          0.46818694085400636,
+          0.09692095780056488
+        ]
+      },
+      "source": "reports/cardrpg-look/rounds/opponents/rain-spool/round-4/metrics.json",
+      "comparison": "reports/cardrpg-look/rounds/opponents/rain-spool/round-4/comparison.png"
+    },
+    {
+      "owner": "binding-thread",
+      "kind": "opponent",
+      "tier": "improved",
+      "triangles": 7778,
+      "rawSha256": "5222c6b4212e3b5f9445f2e0580df06968df42fa61ae793ab912342d96094594",
+      "packedBytes": 193416,
+      "round": 2,
+      "before": {
+        "interiorLaplacianVariance": 261.10226999001634,
+        "interiorEdgeContinuity": 0.9365788298347476,
+        "subjectLuminance": 0.4022809955198889,
+        "subjectSaturation": 0.5526381044220967,
+        "subjectValueBins": [
+          0.3132565887126035,
+          0.6757264900880694,
+          0.01101692119932711
+        ]
+      },
+      "after": {
+        "interiorLaplacianVariance": 197.46063624017071,
+        "interiorEdgeContinuity": 0.9659239842726082,
+        "subjectLuminance": 0.4803668249470586,
+        "subjectSaturation": 0.30105459527415773,
+        "subjectValueBins": [
+          0.16932945655106263,
+          0.7986271394742364,
+          0.032043403974701
+        ]
+      },
+      "source": "reports/cardrpg-look/rounds/opponents/binding-thread/round-2/metrics.json",
+      "comparison": "reports/cardrpg-look/rounds/opponents/binding-thread/round-2/comparison.png"
+    },
+    {
+      "owner": "practice-cushion",
+      "kind": "opponent",
+      "tier": "improved",
+      "triangles": 7786,
+      "rawSha256": "4b0a57dea39f507d1494d17f3e47d0cd433dc4fe7c39eea5e0fc85396cbd8e31",
+      "packedBytes": 123088,
+      "round": 2,
+      "before": {
+        "interiorLaplacianVariance": 326.408772857889,
+        "interiorEdgeContinuity": 0.9978441638435479,
+        "subjectLuminance": 0.6468167000826517,
+        "subjectSaturation": 0.26663308309888517,
+        "subjectValueBins": [
+          0.04273358175788862,
+          0.36058596287306416,
+          0.5966804553690472
+        ]
+      },
+      "after": {
+        "interiorLaplacianVariance": 193.15745334248336,
+        "interiorEdgeContinuity": 0.9901925172539048,
+        "subjectLuminance": 0.4470381955115117,
+        "subjectSaturation": 0.177409092886421,
+        "subjectValueBins": [
+          0.19650397194589567,
+          0.7442746725828383,
+          0.059221355471266016
+        ]
+      },
+      "source": "reports/cardrpg-look/rounds/opponents/practice-cushion/round-2/metrics.json",
+      "comparison": "reports/cardrpg-look/rounds/opponents/practice-cushion/round-2/comparison.png"
+    },
+    {
+      "owner": "yarn-giant",
+      "kind": "opponent",
+      "tier": "improved",
+      "triangles": 19762,
+      "rawSha256": "e96057b943541efceb0043365e39d42d0840b08ab9f78da8f090159bec2484bc",
+      "packedBytes": 311540,
+      "round": 4,
+      "before": {
+        "interiorLaplacianVariance": 267.68797323334496,
+        "interiorEdgeContinuity": 0.9920124551546741,
+        "subjectLuminance": 0.3770214170629548,
+        "subjectSaturation": 0.5523759658871832,
+        "subjectValueBins": [
+          0.46182800203669927,
+          0.4643738761093888,
+          0.07379812185391195
+        ]
+      },
+      "after": {
+        "interiorLaplacianVariance": 198.5028248449996,
+        "interiorEdgeContinuity": 0.9916802079948002,
+        "subjectLuminance": 0.4159122790254082,
+        "subjectSaturation": 0.35252242362852243,
+        "subjectValueBins": [
+          0.25417343491424343,
+          0.7432565375551946,
+          0.0025700275305619745
+        ]
+      },
+      "source": "reports/cardrpg-look/rounds/opponents/yarn-giant/round-4/metrics.json",
+      "comparison": "reports/cardrpg-look/rounds/opponents/yarn-giant/round-4/comparison.png"
+    },
+    {
+      "owner": "kettle-knight",
+      "kind": "opponent",
+      "tier": "improved",
+      "triangles": 11884,
+      "rawSha256": "0dcb72b4b3a4b1b1ade676b9c98d8f640778626ce8540f9bb74f06d2a35e3c6d",
+      "packedBytes": 155000,
+      "round": 2,
+      "before": {
+        "interiorLaplacianVariance": 327.17586574342516,
+        "interiorEdgeContinuity": 0.9678419217357613,
+        "subjectLuminance": 0.4302132241758782,
+        "subjectSaturation": 0.2712489898961225,
+        "subjectValueBins": [
+          0.44544445516842,
+          0.32923945565099894,
+          0.22531608918058102
+        ]
+      },
+      "after": {
+        "interiorLaplacianVariance": 151.6546782761721,
+        "interiorEdgeContinuity": 0.9881019830028328,
+        "subjectLuminance": 0.37639435254322384,
+        "subjectSaturation": 0.27885500700176824,
+        "subjectValueBins": [
+          0.39638337414083014,
+          0.5980707395498392,
+          0.005545886309330659
+        ]
+      },
+      "source": "reports/cardrpg-look/rounds/opponents/kettle-knight/round-2/metrics.json",
+      "comparison": "reports/cardrpg-look/rounds/opponents/kettle-knight/round-2/comparison.png"
+    },
+    {
+      "owner": "pantry-crown",
+      "kind": "opponent",
+      "tier": "improved",
+      "triangles": 19548,
+      "rawSha256": "db7b781144219f8ab389cdcd8a3b36d39c4530b8f40c950403b0b08b43ec28aa",
+      "packedBytes": 232040,
+      "round": 3,
+      "before": {
+        "interiorLaplacianVariance": 296.3629859774968,
+        "interiorEdgeContinuity": 0.9878627968337731,
+        "subjectLuminance": 0.3930706120394042,
+        "subjectSaturation": 0.5506796995610073,
+        "subjectValueBins": [
+          0.4290847896059613,
+          0.49255574009024233,
+          0.07835947030379635
+        ]
+      },
+      "after": {
+        "interiorLaplacianVariance": 215.55678245781692,
+        "interiorEdgeContinuity": 0.9790631653655074,
+        "subjectLuminance": 0.3971214665252223,
+        "subjectSaturation": 0.29945735943965546,
+        "subjectValueBins": [
+          0.5112385047175445,
+          0.32689597515824675,
+          0.16186552012420877
+        ]
+      },
+      "source": "reports/cardrpg-look/rounds/opponents/pantry-crown/round-3/metrics.json",
+      "comparison": "reports/cardrpg-look/rounds/opponents/pantry-crown/round-3/comparison.png"
+    }
+  ]
+}

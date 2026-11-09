@@ -1,0 +1,5 @@
+# Look gallery framing correction — 36 sampled poses
+
+Artifact1171b9ecddafc0f8c015d79989cb1bbeedc85be382e2055dce6ad8d008215b26,31,367,423bytes. Personally viewed all six full-canvas sheets: basic/special for Pollen Scout, Yarn Giant and Rain Spool, six actual AnimationMixer samples per action. All36 meshes pass the one-percent projected margin; zero page errors. Pollen special18%, Yarn special54% and Rain special54% now retain complete boots inside the frame. Pollen's raised basket remains below/outside both pupils at54%.
+
+Only the Look gallery camera field changed: regular3.3/yarn4.6; classic framing remains2.25/3.3. The slightly smaller subjects are an explicit framing tradeoff. Visible art limits remain: raised eye rims, repeated yarn winding, rigid wing/basket shapes, broad Rain cap highlights and plain rear surfaces. These are improved-tier assets. This accepts the sampled framing correction, not continuous collision freedom, full phase gates or final performance. Earlier failed artifacts and exact bounds are retained.

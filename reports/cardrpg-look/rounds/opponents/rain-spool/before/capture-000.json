@@ -1,0 +1,69 @@
+{
+  "source": "assets/cardrpg2/models/rain-spool.glb",
+  "sourceSha256": "42cbebadd578bd1e01327e1e7977619c91f5a088796e92a83018fdc160ac1769",
+  "scriptSha256": "fcf28f65b2253c7db48aee79b6b1436477eea464875b24e85f3b9739359ba610",
+  "renderer": "4.5.3 LTS",
+  "seed": 20261107,
+  "samples": 40,
+  "size": [
+    512,
+    640
+  ],
+  "camera": {
+    "position": [
+      1.25,
+      -5.800000190734863,
+      1.7400000095367432
+    ],
+    "target": [
+      0.0,
+      0.0,
+      1.090000033378601
+    ],
+    "orthoScale": 2.6500000953674316
+  },
+  "turntable": false,
+  "rows": [
+    {
+      "index": 0,
+      "yaw": 0,
+      "file": "000.png",
+      "projectedBounds": [
+        0.03337789699435234,
+        0.0744166448712349,
+        0.8945148587226868,
+        0.6694774627685547
+      ],
+      "sha256": "a999ee991c8e2696cc95120fa439dc5ab4975f73f63cffc87b234591088fb5c7",
+      "framingPass": true
+    },
+    {
+      "index": 1,
+      "yaw": 1.5707963267948966,
+      "file": "001.png",
+      "projectedBounds": [
+        0.15469597280025482,
+        0.06831015646457672,
+        1.0782994031906128,
+        0.6742157936096191
+      ],
+      "sha256": "8fbf82739c91dde5e0bd604a850d1986024beed35173bbe3eebf8c14a1d2f588",
+      "framingPass": false
+    },
+    {
+      "index": 2,
+      "yaw": 3.141592653589793,
+      "file": "002.png",
+      "projectedBounds": [
+        0.10548514872789383,
+        0.08028686791658401,
+        0.9666220545768738,
+        0.690104067325592
+      ],
+      "sha256": "dd8498d6f2cb4e59dc19f1f4b9eb4d970448a9f2c4f363aa7a4e140c92db1b20",
+      "framingPass": true
+    }
+  ],
+  "original": true,
+  "method": "Fixed studio/camera/scale across before and after. Bounds are diagnostics, never used to reframe silently."
+}

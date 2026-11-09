@@ -1,0 +1,410 @@
+[
+  {
+    "id": "mochi",
+    "viewed": [
+      "256x320 on dark and light sheets"
+    ],
+    "flaws": [
+      {
+        "region1x": "top margin y0\u201365 (hat-dependent)",
+        "issue": "Unused framing space limits face size at real card scale."
+      },
+      {
+        "region1x": "face x70\u2013175/y100\u2013200 (hat-dependent)",
+        "issue": "Three-quarter camera compresses the far eye and face width."
+      },
+      {
+        "region1x": "under chin and torso x80\u2013180/y155\u2013260",
+        "issue": "Low fill leaves dense shadows beneath the chin and paws."
+      },
+      {
+        "region1x": "head and shield x45\u2013190/y75\u2013240",
+        "issue": "pale shield hotspot."
+      },
+      {
+        "region1x": "head and shield x45\u2013190/y75\u2013240",
+        "issue": "cramped mouth shadows."
+      }
+    ],
+    "round2Fixes": [
+      "Common minimum camera field 2.25 to1.85, protected bounds remain.",
+      "Camera moves closer to frontal while keeping all actual-model accessories.",
+      "Raise soft fill/bounce and use medium-high contrast; no model geometry editing."
+    ],
+    "modelLimit": null
+  },
+  {
+    "id": "soot",
+    "viewed": [
+      "256x320 on dark and light sheets"
+    ],
+    "flaws": [
+      {
+        "region1x": "top margin y0\u201365 (hat-dependent)",
+        "issue": "Unused framing space limits face size at real card scale."
+      },
+      {
+        "region1x": "face x70\u2013175/y100\u2013200 (hat-dependent)",
+        "issue": "Three-quarter camera compresses the far eye and face width."
+      },
+      {
+        "region1x": "under chin and torso x80\u2013180/y155\u2013260",
+        "issue": "Low fill leaves dense shadows beneath the chin and paws."
+      },
+      {
+        "region1x": "hat and face x85\u2013175/y35\u2013180",
+        "issue": "hat leaves the face small."
+      },
+      {
+        "region1x": "hat and face x85\u2013175/y35\u2013180",
+        "issue": "dark lower muzzle."
+      }
+    ],
+    "round2Fixes": [
+      "Common minimum camera field 2.25 to1.85, protected bounds remain.",
+      "Camera moves closer to frontal while keeping all actual-model accessories.",
+      "Raise soft fill/bounce and use medium-high contrast; no model geometry editing."
+    ],
+    "modelLimit": null
+  },
+  {
+    "id": "clover",
+    "viewed": [
+      "256x320 on dark and light sheets"
+    ],
+    "flaws": [
+      {
+        "region1x": "top margin y0\u201365 (hat-dependent)",
+        "issue": "Unused framing space limits face size at real card scale."
+      },
+      {
+        "region1x": "face x70\u2013175/y100\u2013200 (hat-dependent)",
+        "issue": "Three-quarter camera compresses the far eye and face width."
+      },
+      {
+        "region1x": "under chin and torso x80\u2013180/y155\u2013260",
+        "issue": "Low fill leaves dense shadows beneath the chin and paws."
+      },
+      {
+        "region1x": "face and belly x75\u2013175/y80\u2013235",
+        "issue": "face is small."
+      },
+      {
+        "region1x": "face and belly x75\u2013175/y80\u2013235",
+        "issue": "light belly competes with eye highlights."
+      }
+    ],
+    "round2Fixes": [
+      "Common minimum camera field 2.25 to1.85, protected bounds remain.",
+      "Camera moves closer to frontal while keeping all actual-model accessories.",
+      "Raise soft fill/bounce and use medium-high contrast; no model geometry editing."
+    ],
+    "modelLimit": null
+  },
+  {
+    "id": "panko",
+    "viewed": [
+      "256x320 on dark and light sheets"
+    ],
+    "flaws": [
+      {
+        "region1x": "top margin y0\u201365 (hat-dependent)",
+        "issue": "Unused framing space limits face size at real card scale."
+      },
+      {
+        "region1x": "face x70\u2013175/y100\u2013200 (hat-dependent)",
+        "issue": "Three-quarter camera compresses the far eye and face width."
+      },
+      {
+        "region1x": "under chin and torso x80\u2013180/y155\u2013260",
+        "issue": "Low fill leaves dense shadows beneath the chin and paws."
+      },
+      {
+        "region1x": "bread crown and chest x70\u2013185/y60\u2013245",
+        "issue": "thick crown crowds ears."
+      },
+      {
+        "region1x": "bread crown and chest x70\u2013185/y60\u2013245",
+        "issue": "chest reads as a flat polygon."
+      }
+    ],
+    "round2Fixes": [
+      "Common minimum camera field 2.25 to1.85, protected bounds remain.",
+      "Camera moves closer to frontal while keeping all actual-model accessories.",
+      "Raise soft fill/bounce and use medium-high contrast; no model geometry editing."
+    ],
+    "modelLimit": "Inherited GLB geometry remains unchanged; structural fixes belong to L5."
+  },
+  {
+    "id": "mallow",
+    "viewed": [
+      "256x320 on dark and light sheets"
+    ],
+    "flaws": [
+      {
+        "region1x": "top margin y0\u201365 (hat-dependent)",
+        "issue": "Unused framing space limits face size at real card scale."
+      },
+      {
+        "region1x": "face x70\u2013175/y100\u2013200 (hat-dependent)",
+        "issue": "Three-quarter camera compresses the far eye and face width."
+      },
+      {
+        "region1x": "under chin and torso x80\u2013180/y155\u2013260",
+        "issue": "Low fill leaves dense shadows beneath the chin and paws."
+      },
+      {
+        "region1x": "whisk and face x90\u2013170/y45\u2013195",
+        "issue": "thin whisk wires."
+      },
+      {
+        "region1x": "whisk and face x90\u2013170/y45\u2013195",
+        "issue": "face shadow under angular ears."
+      }
+    ],
+    "round2Fixes": [
+      "Common minimum camera field 2.25 to1.85, protected bounds remain.",
+      "Camera moves closer to frontal while keeping all actual-model accessories.",
+      "Raise soft fill/bounce and use medium-high contrast; no model geometry editing."
+    ],
+    "modelLimit": "Inherited GLB geometry remains unchanged; structural fixes belong to L5."
+  },
+  {
+    "id": "sorrel",
+    "viewed": [
+      "256x320 on dark and light sheets"
+    ],
+    "flaws": [
+      {
+        "region1x": "top margin y0\u201365 (hat-dependent)",
+        "issue": "Unused framing space limits face size at real card scale."
+      },
+      {
+        "region1x": "face x70\u2013175/y100\u2013200 (hat-dependent)",
+        "issue": "Three-quarter camera compresses the far eye and face width."
+      },
+      {
+        "region1x": "under chin and torso x80\u2013180/y155\u2013260",
+        "issue": "Low fill leaves dense shadows beneath the chin and paws."
+      },
+      {
+        "region1x": "hat and head x75\u2013180/y10\u2013200",
+        "issue": "tall rigid hat dominates."
+      },
+      {
+        "region1x": "hat and head x75\u2013180/y10\u2013200",
+        "issue": "forehead flap obscures left ear."
+      }
+    ],
+    "round2Fixes": [
+      "Common minimum camera field 2.25 to1.85, protected bounds remain.",
+      "Camera moves closer to frontal while keeping all actual-model accessories.",
+      "Raise soft fill/bounce and use medium-high contrast; no model geometry editing."
+    ],
+    "modelLimit": "Inherited GLB geometry remains unchanged; structural fixes belong to L5."
+  },
+  {
+    "id": "biscuit",
+    "viewed": [
+      "256x320 on dark and light sheets"
+    ],
+    "flaws": [
+      {
+        "region1x": "top margin y0\u201365 (hat-dependent)",
+        "issue": "Unused framing space limits face size at real card scale."
+      },
+      {
+        "region1x": "face x70\u2013175/y100\u2013200 (hat-dependent)",
+        "issue": "Three-quarter camera compresses the far eye and face width."
+      },
+      {
+        "region1x": "under chin and torso x80\u2013180/y155\u2013260",
+        "issue": "Low fill leaves dense shadows beneath the chin and paws."
+      },
+      {
+        "region1x": "ears and torso x45\u2013205/y55\u2013245",
+        "issue": "polygonal ears and rectangular bib."
+      },
+      {
+        "region1x": "ears and torso x45\u2013205/y55\u2013245",
+        "issue": "rolling pin looks cylindrical."
+      }
+    ],
+    "round2Fixes": [
+      "Common minimum camera field 2.25 to1.85, protected bounds remain.",
+      "Camera moves closer to frontal while keeping all actual-model accessories.",
+      "Raise soft fill/bounce and use medium-high contrast; no model geometry editing."
+    ],
+    "modelLimit": "Inherited GLB geometry remains unchanged; structural fixes belong to L5."
+  },
+  {
+    "id": "inkcap",
+    "viewed": [
+      "256x320 on dark and light sheets"
+    ],
+    "flaws": [
+      {
+        "region1x": "top margin y0\u201365 (hat-dependent)",
+        "issue": "Unused framing space limits face size at real card scale."
+      },
+      {
+        "region1x": "face x70\u2013175/y100\u2013200 (hat-dependent)",
+        "issue": "Three-quarter camera compresses the far eye and face width."
+      },
+      {
+        "region1x": "under chin and torso x80\u2013180/y155\u2013260",
+        "issue": "Low fill leaves dense shadows beneath the chin and paws."
+      },
+      {
+        "region1x": "hat and face x70\u2013185/y95\u2013195",
+        "issue": "cap broad pale reflection."
+      },
+      {
+        "region1x": "hat and face x70\u2013185/y95\u2013195",
+        "issue": "very dark cheek/neck."
+      }
+    ],
+    "round2Fixes": [
+      "Common minimum camera field 2.25 to1.85, protected bounds remain.",
+      "Camera moves closer to frontal while keeping all actual-model accessories.",
+      "Raise soft fill/bounce and use medium-high contrast; no model geometry editing."
+    ],
+    "modelLimit": "Inherited GLB geometry remains unchanged; structural fixes belong to L5."
+  },
+  {
+    "id": "cinnamon",
+    "viewed": [
+      "256x320 on dark and light sheets"
+    ],
+    "flaws": [
+      {
+        "region1x": "top margin y0\u201365 (hat-dependent)",
+        "issue": "Unused framing space limits face size at real card scale."
+      },
+      {
+        "region1x": "face x70\u2013175/y100\u2013200 (hat-dependent)",
+        "issue": "Three-quarter camera compresses the far eye and face width."
+      },
+      {
+        "region1x": "under chin and torso x80\u2013180/y155\u2013260",
+        "issue": "Low fill leaves dense shadows beneath the chin and paws."
+      },
+      {
+        "region1x": "arms and torso x60\u2013210/y130\u2013255",
+        "issue": "stiff tube sleeves."
+      },
+      {
+        "region1x": "arms and torso x60\u2013210/y130\u2013255",
+        "issue": "chest ornament looks like bars."
+      }
+    ],
+    "round2Fixes": [
+      "Common minimum camera field 2.25 to1.85, protected bounds remain.",
+      "Camera moves closer to frontal while keeping all actual-model accessories.",
+      "Raise soft fill/bounce and use medium-high contrast; no model geometry editing."
+    ],
+    "modelLimit": "Inherited GLB geometry remains unchanged; structural fixes belong to L5."
+  },
+  {
+    "id": "brioche",
+    "viewed": [
+      "256x320 on dark and light sheets"
+    ],
+    "flaws": [
+      {
+        "region1x": "top margin y0\u201365 (hat-dependent)",
+        "issue": "Unused framing space limits face size at real card scale."
+      },
+      {
+        "region1x": "face x70\u2013175/y100\u2013200 (hat-dependent)",
+        "issue": "Three-quarter camera compresses the far eye and face width."
+      },
+      {
+        "region1x": "under chin and torso x80\u2013180/y155\u2013260",
+        "issue": "Low fill leaves dense shadows beneath the chin and paws."
+      },
+      {
+        "region1x": "halo and face x75\u2013180/y15\u2013190",
+        "issue": "open halo silhouette."
+      },
+      {
+        "region1x": "halo and face x75\u2013180/y15\u2013190",
+        "issue": "narrow face under tall ears."
+      }
+    ],
+    "round2Fixes": [
+      "Common minimum camera field 2.25 to1.85, protected bounds remain.",
+      "Camera moves closer to frontal while keeping all actual-model accessories.",
+      "Raise soft fill/bounce and use medium-high contrast; no model geometry editing."
+    ],
+    "modelLimit": "Inherited GLB geometry remains unchanged; structural fixes belong to L5."
+  },
+  {
+    "id": "velvet",
+    "viewed": [
+      "256x320 on dark and light sheets"
+    ],
+    "flaws": [
+      {
+        "region1x": "top margin y0\u201365 (hat-dependent)",
+        "issue": "Unused framing space limits face size at real card scale."
+      },
+      {
+        "region1x": "face x70\u2013175/y100\u2013200 (hat-dependent)",
+        "issue": "Three-quarter camera compresses the far eye and face width."
+      },
+      {
+        "region1x": "under chin and torso x80\u2013180/y155\u2013260",
+        "issue": "Low fill leaves dense shadows beneath the chin and paws."
+      },
+      {
+        "region1x": "cape and face x75\u2013200/y70\u2013230",
+        "issue": "hard triangular cape."
+      },
+      {
+        "region1x": "cape and face x75\u2013200/y70\u2013230",
+        "issue": "cheek shadows merge into body."
+      }
+    ],
+    "round2Fixes": [
+      "Common minimum camera field 2.25 to1.85, protected bounds remain.",
+      "Camera moves closer to frontal while keeping all actual-model accessories.",
+      "Raise soft fill/bounce and use medium-high contrast; no model geometry editing."
+    ],
+    "modelLimit": "Inherited GLB geometry remains unchanged; structural fixes belong to L5."
+  },
+  {
+    "id": "marigold",
+    "viewed": [
+      "256x320 on dark and light sheets"
+    ],
+    "flaws": [
+      {
+        "region1x": "top margin y0\u201365 (hat-dependent)",
+        "issue": "Unused framing space limits face size at real card scale."
+      },
+      {
+        "region1x": "face x70\u2013175/y100\u2013200 (hat-dependent)",
+        "issue": "Three-quarter camera compresses the far eye and face width."
+      },
+      {
+        "region1x": "under chin and torso x80\u2013180/y155\u2013260",
+        "issue": "Low fill leaves dense shadows beneath the chin and paws."
+      },
+      {
+        "region1x": "crown and torso x70\u2013190/y70\u2013245",
+        "issue": "flat crown facets."
+      },
+      {
+        "region1x": "crown and torso x70\u2013190/y70\u2013245",
+        "issue": "broad featureless yellow chest."
+      }
+    ],
+    "round2Fixes": [
+      "Common minimum camera field 2.25 to1.85, protected bounds remain.",
+      "Camera moves closer to frontal while keeping all actual-model accessories.",
+      "Raise soft fill/bounce and use medium-high contrast; no model geometry editing."
+    ],
+    "modelLimit": "Inherited GLB geometry remains unchanged; structural fixes belong to L5."
+  }
+]
