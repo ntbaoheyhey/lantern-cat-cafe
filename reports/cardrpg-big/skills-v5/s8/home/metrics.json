@@ -1,0 +1,1595 @@
+{
+  "kind": "Automated engagement proxies, not a human playtest or fresh acceptance",
+  "runtime": "b21a91c3586a72f7fa46d6670c218d286b59dd90",
+  "artifactSha256": "4e310b07f9dfb005abdff830d498e8d0f6615553e1710a2ce12eeedad3a3638e",
+  "activeMinutes": 60.04026666666667,
+  "metrics": [
+    {
+      "minutes": 5,
+      "meaningfulOffers": 15,
+      "meaningfulCategories": [
+        "formation",
+        "focus",
+        "care"
+      ],
+      "counterfactualOffers": 23,
+      "rewardEvents": 12,
+      "celebrations": 9,
+      "discoveryCards": 5,
+      "battlesStarted": 5,
+      "battlesCompleted": 5,
+      "deadSeconds": 145.365,
+      "scriptedReadingSeconds": 130.585,
+      "otherElapsedSeconds": 24.049999999999983,
+      "deadReductionPercent": -12.999642418494748,
+      "rewardCadence": {
+        "maxGapSeconds": 84.564,
+        "gaps": [
+          {
+            "seconds": 26.734,
+            "from": "session start",
+            "to": "welcome invitation",
+            "startMs": 0,
+            "endMs": 26734
+          },
+          {
+            "seconds": 0.004,
+            "from": "welcome invitation",
+            "to": "invitation",
+            "startMs": 26734,
+            "endMs": 26738
+          },
+          {
+            "seconds": 2.956,
+            "from": "invitation",
+            "to": "A LITTLE MOMENT TO KEEP\n\nDoor team reached its 2-mark bonus.\n\nSkip celebration",
+            "startMs": 26738,
+            "endMs": 29694
+          },
+          {
+            "seconds": 1.203,
+            "from": "A LITTLE MOMENT TO KEEP\n\nDoor team reached its 2-mark bonus.\n\nSkip celebration",
+            "to": "A LITTLE MOMENT TO KEEP\n\nKettle team reached its 2-mark bonus.\n\nSkip celebration",
+            "startMs": 29694,
+            "endMs": 30897
+          },
+          {
+            "seconds": 2.365,
+            "from": "A LITTLE MOMENT TO KEEP\n\nKettle team reached its 2-mark bonus.\n\nSkip celebration",
+            "to": "tailor first Soot wand",
+            "startMs": 30897,
+            "endMs": 33262
+          },
+          {
+            "seconds": 5.021,
+            "from": "tailor first Soot wand",
+            "to": "earned invitation",
+            "startMs": 33262,
+            "endMs": 38283
+          },
+          {
+            "seconds": 0.001,
+            "from": "earned invitation",
+            "to": "invitation",
+            "startMs": 38283,
+            "endMs": 38284
+          },
+          {
+            "seconds": 44.491,
+            "from": "invitation",
+            "to": "A LITTLE MOMENT TO KEEP\n\n3 route stars. A little brighter every evening.\n\nSkip celebration",
+            "startMs": 38284,
+            "endMs": 82775
+          },
+          {
+            "seconds": 0.008,
+            "from": "A LITTLE MOMENT TO KEEP\n\n3 route stars. A little brighter every evening.\n\nSkip celebration",
+            "to": "settle encounter",
+            "startMs": 82775,
+            "endMs": 82783
+          },
+          {
+            "seconds": 25.29,
+            "from": "settle encounter",
+            "to": "A LITTLE MOMENT TO KEEP\n\n9 route stars. A little brighter every evening.\n\nSkip celebration",
+            "startMs": 82783,
+            "endMs": 108073
+          },
+          {
+            "seconds": 39.226,
+            "from": "A LITTLE MOMENT TO KEEP\n\n9 route stars. A little brighter every evening.\n\nSkip celebration",
+            "to": "settle encounter",
+            "startMs": 108073,
+            "endMs": 147299
+          },
+          {
+            "seconds": 84.564,
+            "from": "settle encounter",
+            "to": "settle encounter",
+            "startMs": 147299,
+            "endMs": 231863
+          },
+          {
+            "seconds": 0.351,
+            "from": "settle encounter",
+            "to": "Claim cafe service",
+            "startMs": 231863,
+            "endMs": 232214
+          },
+          {
+            "seconds": 0.045,
+            "from": "Claim cafe service",
+            "to": "Claim Warm the Kettle",
+            "startMs": 232214,
+            "endMs": 232259
+          },
+          {
+            "seconds": 0.055,
+            "from": "Claim Warm the Kettle",
+            "to": "Collect 3-star reward",
+            "startMs": 232259,
+            "endMs": 232314
+          },
+          {
+            "seconds": 0.046,
+            "from": "Collect 3-star reward",
+            "to": "Collect 9-star reward",
+            "startMs": 232314,
+            "endMs": 232360
+          },
+          {
+            "seconds": 1.052,
+            "from": "Collect 9-star reward",
+            "to": "invitation",
+            "startMs": 232360,
+            "endMs": 233412
+          },
+          {
+            "seconds": 11.168,
+            "from": "invitation",
+            "to": "earned invitation",
+            "startMs": 233412,
+            "endMs": 244580
+          },
+          {
+            "seconds": 0.004,
+            "from": "earned invitation",
+            "to": "invitation",
+            "startMs": 244580,
+            "endMs": 244584
+          },
+          {
+            "seconds": 13.675,
+            "from": "invitation",
+            "to": "A LITTLE MOMENT TO KEEP\n\nKettle team reached its 4-mark bonus.\n\nSkip celebration",
+            "startMs": 244584,
+            "endMs": 258259
+          },
+          {
+            "seconds": 37.553,
+            "from": "A LITTLE MOMENT TO KEEP\n\nKettle team reached its 4-mark bonus.\n\nSkip celebration",
+            "to": "settle encounter",
+            "startMs": 258259,
+            "endMs": 295812
+          },
+          {
+            "seconds": 4.188,
+            "from": "settle encounter",
+            "to": "window end",
+            "startMs": 295812,
+            "endMs": 300000
+          }
+        ],
+        "overFiveMinutes": []
+      },
+      "debugControlsMax": 0,
+      "seedLabelsMax": 0,
+      "overflowMax": 0,
+      "wordsMedian": 151,
+      "wordsMax": 517,
+      "wordCountsByScreen": {
+        "hub": {
+          "visits": 7,
+          "median": 143,
+          "max": 154
+        },
+        "prepare": {
+          "visits": 5,
+          "median": 364,
+          "max": 412
+        },
+        "map": {
+          "visits": 11,
+          "median": 131,
+          "max": 189
+        },
+        "result": {
+          "visits": 5,
+          "median": 136,
+          "max": 170
+        },
+        "gacha": {
+          "visits": 5,
+          "median": 193,
+          "max": 214
+        },
+        "inventory": {
+          "visits": 4,
+          "median": 490.5,
+          "max": 517
+        },
+        "collection": {
+          "visits": 3,
+          "median": 336,
+          "max": 337
+        },
+        "journal": {
+          "visits": 1,
+          "median": 3,
+          "max": 3
+        }
+      },
+      "before": {
+        "meaningfulOffers": 17,
+        "rewardEvents": 8,
+        "celebrations": 4,
+        "deadSeconds": 128.642,
+        "debugControlsMax": 6
+      }
+    },
+    {
+      "minutes": 30,
+      "meaningfulOffers": 80,
+      "meaningfulCategories": [
+        "formation",
+        "focus",
+        "care"
+      ],
+      "counterfactualOffers": 111,
+      "rewardEvents": 19,
+      "celebrations": 15,
+      "discoveryCards": 8,
+      "battlesStarted": 27,
+      "battlesCompleted": 26,
+      "deadSeconds": 990.2890000000001,
+      "scriptedReadingSeconds": 739.3899999999985,
+      "otherElapsedSeconds": 70.32100000000139,
+      "deadReductionPercent": -10.440741855978247,
+      "rewardCadence": {
+        "maxGapSeconds": 929.859,
+        "gaps": [
+          {
+            "seconds": 26.734,
+            "from": "session start",
+            "to": "welcome invitation",
+            "startMs": 0,
+            "endMs": 26734
+          },
+          {
+            "seconds": 0.004,
+            "from": "welcome invitation",
+            "to": "invitation",
+            "startMs": 26734,
+            "endMs": 26738
+          },
+          {
+            "seconds": 2.956,
+            "from": "invitation",
+            "to": "A LITTLE MOMENT TO KEEP\n\nDoor team reached its 2-mark bonus.\n\nSkip celebration",
+            "startMs": 26738,
+            "endMs": 29694
+          },
+          {
+            "seconds": 1.203,
+            "from": "A LITTLE MOMENT TO KEEP\n\nDoor team reached its 2-mark bonus.\n\nSkip celebration",
+            "to": "A LITTLE MOMENT TO KEEP\n\nKettle team reached its 2-mark bonus.\n\nSkip celebration",
+            "startMs": 29694,
+            "endMs": 30897
+          },
+          {
+            "seconds": 2.365,
+            "from": "A LITTLE MOMENT TO KEEP\n\nKettle team reached its 2-mark bonus.\n\nSkip celebration",
+            "to": "tailor first Soot wand",
+            "startMs": 30897,
+            "endMs": 33262
+          },
+          {
+            "seconds": 5.021,
+            "from": "tailor first Soot wand",
+            "to": "earned invitation",
+            "startMs": 33262,
+            "endMs": 38283
+          },
+          {
+            "seconds": 0.001,
+            "from": "earned invitation",
+            "to": "invitation",
+            "startMs": 38283,
+            "endMs": 38284
+          },
+          {
+            "seconds": 44.491,
+            "from": "invitation",
+            "to": "A LITTLE MOMENT TO KEEP\n\n3 route stars. A little brighter every evening.\n\nSkip celebration",
+            "startMs": 38284,
+            "endMs": 82775
+          },
+          {
+            "seconds": 0.008,
+            "from": "A LITTLE MOMENT TO KEEP\n\n3 route stars. A little brighter every evening.\n\nSkip celebration",
+            "to": "settle encounter",
+            "startMs": 82775,
+            "endMs": 82783
+          },
+          {
+            "seconds": 25.29,
+            "from": "settle encounter",
+            "to": "A LITTLE MOMENT TO KEEP\n\n9 route stars. A little brighter every evening.\n\nSkip celebration",
+            "startMs": 82783,
+            "endMs": 108073
+          },
+          {
+            "seconds": 39.226,
+            "from": "A LITTLE MOMENT TO KEEP\n\n9 route stars. A little brighter every evening.\n\nSkip celebration",
+            "to": "settle encounter",
+            "startMs": 108073,
+            "endMs": 147299
+          },
+          {
+            "seconds": 84.564,
+            "from": "settle encounter",
+            "to": "settle encounter",
+            "startMs": 147299,
+            "endMs": 231863
+          },
+          {
+            "seconds": 0.351,
+            "from": "settle encounter",
+            "to": "Claim cafe service",
+            "startMs": 231863,
+            "endMs": 232214
+          },
+          {
+            "seconds": 0.045,
+            "from": "Claim cafe service",
+            "to": "Claim Warm the Kettle",
+            "startMs": 232214,
+            "endMs": 232259
+          },
+          {
+            "seconds": 0.055,
+            "from": "Claim Warm the Kettle",
+            "to": "Collect 3-star reward",
+            "startMs": 232259,
+            "endMs": 232314
+          },
+          {
+            "seconds": 0.046,
+            "from": "Collect 3-star reward",
+            "to": "Collect 9-star reward",
+            "startMs": 232314,
+            "endMs": 232360
+          },
+          {
+            "seconds": 1.052,
+            "from": "Collect 9-star reward",
+            "to": "invitation",
+            "startMs": 232360,
+            "endMs": 233412
+          },
+          {
+            "seconds": 11.168,
+            "from": "invitation",
+            "to": "earned invitation",
+            "startMs": 233412,
+            "endMs": 244580
+          },
+          {
+            "seconds": 0.004,
+            "from": "earned invitation",
+            "to": "invitation",
+            "startMs": 244580,
+            "endMs": 244584
+          },
+          {
+            "seconds": 13.675,
+            "from": "invitation",
+            "to": "A LITTLE MOMENT TO KEEP\n\nKettle team reached its 4-mark bonus.\n\nSkip celebration",
+            "startMs": 244584,
+            "endMs": 258259
+          },
+          {
+            "seconds": 37.553,
+            "from": "A LITTLE MOMENT TO KEEP\n\nKettle team reached its 4-mark bonus.\n\nSkip celebration",
+            "to": "settle encounter",
+            "startMs": 258259,
+            "endMs": 295812
+          },
+          {
+            "seconds": 32.536,
+            "from": "settle encounter",
+            "to": "A LITTLE MOMENT TO KEEP\n\n18 route stars. A little brighter every evening.\n\nSkip celebration",
+            "startMs": 295812,
+            "endMs": 328348
+          },
+          {
+            "seconds": 25.012,
+            "from": "A LITTLE MOMENT TO KEEP\n\n18 route stars. A little brighter every evening.\n\nSkip celebration",
+            "to": "settle encounter",
+            "startMs": 328348,
+            "endMs": 353360
+          },
+          {
+            "seconds": 104.806,
+            "from": "settle encounter",
+            "to": "A LITTLE MOMENT TO KEEP\n\nThe nightglass needle · Hearthloom Apron: your first Legendary.\n\nSkip celebration",
+            "startMs": 353360,
+            "endMs": 458166
+          },
+          {
+            "seconds": 0.011,
+            "from": "A LITTLE MOMENT TO KEEP\n\nThe nightglass needle · Hearthloom Apron: your first Legendary.\n\nSkip celebration",
+            "to": "settle encounter",
+            "startMs": 458166,
+            "endMs": 458177
+          },
+          {
+            "seconds": 0.47,
+            "from": "settle encounter",
+            "to": "Collect 18-star reward",
+            "startMs": 458177,
+            "endMs": 458647
+          },
+          {
+            "seconds": 1.078,
+            "from": "Collect 18-star reward",
+            "to": "invitation",
+            "startMs": 458647,
+            "endMs": 459725
+          },
+          {
+            "seconds": 46.836,
+            "from": "invitation",
+            "to": "settle encounter",
+            "startMs": 459725,
+            "endMs": 506561
+          },
+          {
+            "seconds": 25.355,
+            "from": "settle encounter",
+            "to": "A LITTLE MOMENT TO KEEP\n\n30 route stars. A little brighter every evening.\n\nSkip celebration",
+            "startMs": 506561,
+            "endMs": 531916
+          },
+          {
+            "seconds": 111.419,
+            "from": "A LITTLE MOMENT TO KEEP\n\n30 route stars. A little brighter every evening.\n\nSkip celebration",
+            "to": "settle encounter",
+            "startMs": 531916,
+            "endMs": 643335
+          },
+          {
+            "seconds": 1.358,
+            "from": "settle encounter",
+            "to": "invitation",
+            "startMs": 643335,
+            "endMs": 644693
+          },
+          {
+            "seconds": 10.693,
+            "from": "invitation",
+            "to": "invitation",
+            "startMs": 644693,
+            "endMs": 655386
+          },
+          {
+            "seconds": 214.366,
+            "from": "invitation",
+            "to": "settle encounter",
+            "startMs": 655386,
+            "endMs": 869752
+          },
+          {
+            "seconds": 0.389,
+            "from": "settle encounter",
+            "to": "Claim cafe service",
+            "startMs": 869752,
+            "endMs": 870141
+          },
+          {
+            "seconds": 929.859,
+            "from": "Claim cafe service",
+            "to": "window end",
+            "startMs": 870141,
+            "endMs": 1800000
+          }
+        ],
+        "overFiveMinutes": [
+          {
+            "seconds": 929.859,
+            "from": "Claim cafe service",
+            "to": "window end",
+            "startMs": 870141,
+            "endMs": 1800000
+          }
+        ]
+      },
+      "debugControlsMax": 0,
+      "seedLabelsMax": 0,
+      "overflowMax": 0,
+      "wordsMedian": 159,
+      "wordsMax": 542,
+      "wordCountsByScreen": {
+        "hub": {
+          "visits": 26,
+          "median": 148,
+          "max": 154
+        },
+        "prepare": {
+          "visits": 27,
+          "median": 354,
+          "max": 412
+        },
+        "map": {
+          "visits": 61,
+          "median": 131,
+          "max": 191
+        },
+        "result": {
+          "visits": 26,
+          "median": 136,
+          "max": 170
+        },
+        "gacha": {
+          "visits": 8,
+          "median": 207,
+          "max": 245
+        },
+        "inventory": {
+          "visits": 16,
+          "median": 505.5,
+          "max": 542
+        },
+        "collection": {
+          "visits": 15,
+          "median": 337,
+          "max": 342
+        },
+        "journal": {
+          "visits": 5,
+          "median": 323,
+          "max": 323
+        }
+      },
+      "before": {
+        "meaningfulOffers": 75,
+        "rewardEvents": 18,
+        "celebrations": 6,
+        "deadSeconds": 896.67,
+        "debugControlsMax": 6
+      }
+    },
+    {
+      "minutes": 60,
+      "meaningfulOffers": 121,
+      "meaningfulCategories": [
+        "formation",
+        "focus",
+        "care"
+      ],
+      "counterfactualOffers": 171,
+      "rewardEvents": 19,
+      "celebrations": 16,
+      "discoveryCards": 9,
+      "battlesStarted": 54,
+      "battlesCompleted": 54,
+      "deadSeconds": 2037.837,
+      "scriptedReadingSeconds": 1441.0479999999911,
+      "otherElapsedSeconds": 121.11500000000888,
+      "deadReductionPercent": -8.000178071454336,
+      "rewardCadence": {
+        "maxGapSeconds": 1489.966,
+        "gaps": [
+          {
+            "seconds": 26.734,
+            "from": "session start",
+            "to": "welcome invitation",
+            "startMs": 0,
+            "endMs": 26734
+          },
+          {
+            "seconds": 0.004,
+            "from": "welcome invitation",
+            "to": "invitation",
+            "startMs": 26734,
+            "endMs": 26738
+          },
+          {
+            "seconds": 2.956,
+            "from": "invitation",
+            "to": "A LITTLE MOMENT TO KEEP\n\nDoor team reached its 2-mark bonus.\n\nSkip celebration",
+            "startMs": 26738,
+            "endMs": 29694
+          },
+          {
+            "seconds": 1.203,
+            "from": "A LITTLE MOMENT TO KEEP\n\nDoor team reached its 2-mark bonus.\n\nSkip celebration",
+            "to": "A LITTLE MOMENT TO KEEP\n\nKettle team reached its 2-mark bonus.\n\nSkip celebration",
+            "startMs": 29694,
+            "endMs": 30897
+          },
+          {
+            "seconds": 2.365,
+            "from": "A LITTLE MOMENT TO KEEP\n\nKettle team reached its 2-mark bonus.\n\nSkip celebration",
+            "to": "tailor first Soot wand",
+            "startMs": 30897,
+            "endMs": 33262
+          },
+          {
+            "seconds": 5.021,
+            "from": "tailor first Soot wand",
+            "to": "earned invitation",
+            "startMs": 33262,
+            "endMs": 38283
+          },
+          {
+            "seconds": 0.001,
+            "from": "earned invitation",
+            "to": "invitation",
+            "startMs": 38283,
+            "endMs": 38284
+          },
+          {
+            "seconds": 44.491,
+            "from": "invitation",
+            "to": "A LITTLE MOMENT TO KEEP\n\n3 route stars. A little brighter every evening.\n\nSkip celebration",
+            "startMs": 38284,
+            "endMs": 82775
+          },
+          {
+            "seconds": 0.008,
+            "from": "A LITTLE MOMENT TO KEEP\n\n3 route stars. A little brighter every evening.\n\nSkip celebration",
+            "to": "settle encounter",
+            "startMs": 82775,
+            "endMs": 82783
+          },
+          {
+            "seconds": 25.29,
+            "from": "settle encounter",
+            "to": "A LITTLE MOMENT TO KEEP\n\n9 route stars. A little brighter every evening.\n\nSkip celebration",
+            "startMs": 82783,
+            "endMs": 108073
+          },
+          {
+            "seconds": 39.226,
+            "from": "A LITTLE MOMENT TO KEEP\n\n9 route stars. A little brighter every evening.\n\nSkip celebration",
+            "to": "settle encounter",
+            "startMs": 108073,
+            "endMs": 147299
+          },
+          {
+            "seconds": 84.564,
+            "from": "settle encounter",
+            "to": "settle encounter",
+            "startMs": 147299,
+            "endMs": 231863
+          },
+          {
+            "seconds": 0.351,
+            "from": "settle encounter",
+            "to": "Claim cafe service",
+            "startMs": 231863,
+            "endMs": 232214
+          },
+          {
+            "seconds": 0.045,
+            "from": "Claim cafe service",
+            "to": "Claim Warm the Kettle",
+            "startMs": 232214,
+            "endMs": 232259
+          },
+          {
+            "seconds": 0.055,
+            "from": "Claim Warm the Kettle",
+            "to": "Collect 3-star reward",
+            "startMs": 232259,
+            "endMs": 232314
+          },
+          {
+            "seconds": 0.046,
+            "from": "Collect 3-star reward",
+            "to": "Collect 9-star reward",
+            "startMs": 232314,
+            "endMs": 232360
+          },
+          {
+            "seconds": 1.052,
+            "from": "Collect 9-star reward",
+            "to": "invitation",
+            "startMs": 232360,
+            "endMs": 233412
+          },
+          {
+            "seconds": 11.168,
+            "from": "invitation",
+            "to": "earned invitation",
+            "startMs": 233412,
+            "endMs": 244580
+          },
+          {
+            "seconds": 0.004,
+            "from": "earned invitation",
+            "to": "invitation",
+            "startMs": 244580,
+            "endMs": 244584
+          },
+          {
+            "seconds": 13.675,
+            "from": "invitation",
+            "to": "A LITTLE MOMENT TO KEEP\n\nKettle team reached its 4-mark bonus.\n\nSkip celebration",
+            "startMs": 244584,
+            "endMs": 258259
+          },
+          {
+            "seconds": 37.553,
+            "from": "A LITTLE MOMENT TO KEEP\n\nKettle team reached its 4-mark bonus.\n\nSkip celebration",
+            "to": "settle encounter",
+            "startMs": 258259,
+            "endMs": 295812
+          },
+          {
+            "seconds": 32.536,
+            "from": "settle encounter",
+            "to": "A LITTLE MOMENT TO KEEP\n\n18 route stars. A little brighter every evening.\n\nSkip celebration",
+            "startMs": 295812,
+            "endMs": 328348
+          },
+          {
+            "seconds": 25.012,
+            "from": "A LITTLE MOMENT TO KEEP\n\n18 route stars. A little brighter every evening.\n\nSkip celebration",
+            "to": "settle encounter",
+            "startMs": 328348,
+            "endMs": 353360
+          },
+          {
+            "seconds": 104.806,
+            "from": "settle encounter",
+            "to": "A LITTLE MOMENT TO KEEP\n\nThe nightglass needle · Hearthloom Apron: your first Legendary.\n\nSkip celebration",
+            "startMs": 353360,
+            "endMs": 458166
+          },
+          {
+            "seconds": 0.011,
+            "from": "A LITTLE MOMENT TO KEEP\n\nThe nightglass needle · Hearthloom Apron: your first Legendary.\n\nSkip celebration",
+            "to": "settle encounter",
+            "startMs": 458166,
+            "endMs": 458177
+          },
+          {
+            "seconds": 0.47,
+            "from": "settle encounter",
+            "to": "Collect 18-star reward",
+            "startMs": 458177,
+            "endMs": 458647
+          },
+          {
+            "seconds": 1.078,
+            "from": "Collect 18-star reward",
+            "to": "invitation",
+            "startMs": 458647,
+            "endMs": 459725
+          },
+          {
+            "seconds": 46.836,
+            "from": "invitation",
+            "to": "settle encounter",
+            "startMs": 459725,
+            "endMs": 506561
+          },
+          {
+            "seconds": 25.355,
+            "from": "settle encounter",
+            "to": "A LITTLE MOMENT TO KEEP\n\n30 route stars. A little brighter every evening.\n\nSkip celebration",
+            "startMs": 506561,
+            "endMs": 531916
+          },
+          {
+            "seconds": 111.419,
+            "from": "A LITTLE MOMENT TO KEEP\n\n30 route stars. A little brighter every evening.\n\nSkip celebration",
+            "to": "settle encounter",
+            "startMs": 531916,
+            "endMs": 643335
+          },
+          {
+            "seconds": 1.358,
+            "from": "settle encounter",
+            "to": "invitation",
+            "startMs": 643335,
+            "endMs": 644693
+          },
+          {
+            "seconds": 10.693,
+            "from": "invitation",
+            "to": "invitation",
+            "startMs": 644693,
+            "endMs": 655386
+          },
+          {
+            "seconds": 214.366,
+            "from": "invitation",
+            "to": "settle encounter",
+            "startMs": 655386,
+            "endMs": 869752
+          },
+          {
+            "seconds": 0.389,
+            "from": "settle encounter",
+            "to": "Claim cafe service",
+            "startMs": 869752,
+            "endMs": 870141
+          },
+          {
+            "seconds": 1239.893,
+            "from": "Claim cafe service",
+            "to": "A LITTLE MOMENT TO KEEP\n\n60 route stars. A little brighter every evening.\n\nSkip celebration",
+            "startMs": 870141,
+            "endMs": 2110034
+          },
+          {
+            "seconds": 1489.966,
+            "from": "A LITTLE MOMENT TO KEEP\n\n60 route stars. A little brighter every evening.\n\nSkip celebration",
+            "to": "window end",
+            "startMs": 2110034,
+            "endMs": 3600000
+          }
+        ],
+        "overFiveMinutes": [
+          {
+            "seconds": 1239.893,
+            "from": "Claim cafe service",
+            "to": "A LITTLE MOMENT TO KEEP\n\n60 route stars. A little brighter every evening.\n\nSkip celebration",
+            "startMs": 870141,
+            "endMs": 2110034
+          },
+          {
+            "seconds": 1489.966,
+            "from": "A LITTLE MOMENT TO KEEP\n\n60 route stars. A little brighter every evening.\n\nSkip celebration",
+            "to": "window end",
+            "startMs": 2110034,
+            "endMs": 3600000
+          }
+        ]
+      },
+      "debugControlsMax": 0,
+      "seedLabelsMax": 0,
+      "overflowMax": 0,
+      "wordsMedian": 165,
+      "wordsMax": 542,
+      "wordCountsByScreen": {
+        "hub": {
+          "visits": 51,
+          "median": 141,
+          "max": 154
+        },
+        "prepare": {
+          "visits": 54,
+          "median": 354.5,
+          "max": 412
+        },
+        "map": {
+          "visits": 125,
+          "median": 131,
+          "max": 193
+        },
+        "result": {
+          "visits": 54,
+          "median": 136,
+          "max": 170
+        },
+        "gacha": {
+          "visits": 8,
+          "median": 207,
+          "max": 245
+        },
+        "inventory": {
+          "visits": 32,
+          "median": 507,
+          "max": 542
+        },
+        "collection": {
+          "visits": 31,
+          "median": 326,
+          "max": 342
+        },
+        "journal": {
+          "visits": 11,
+          "median": 323,
+          "max": 325
+        }
+      },
+      "before": {
+        "meaningfulOffers": 98,
+        "rewardEvents": 18,
+        "celebrations": 6,
+        "deadSeconds": 1886.8830000000003,
+        "debugControlsMax": 6
+      }
+    }
+  ],
+  "gates": {
+    "meaningfulChoices": "PASS",
+    "rewardCadence": "MISS",
+    "deadTimeReduction": "MISS",
+    "playerControls": "PASS"
+  },
+  "leases": [
+    {
+      "number": 1,
+      "startMs": 0,
+      "endMs": 111681,
+      "durationMs": 111681,
+      "wallStart": "2026-11-09T08:15:55.687Z",
+      "wallEnd": "2026-11-09T08:17:47.368Z"
+    },
+    {
+      "number": 2,
+      "startMs": 111681,
+      "endMs": 231867,
+      "durationMs": 120186,
+      "wallStart": "2026-11-09T08:20:02.735Z",
+      "wallEnd": "2026-11-09T08:22:02.921Z"
+    },
+    {
+      "number": 3,
+      "startMs": 231867,
+      "endMs": 353364,
+      "durationMs": 121497,
+      "wallStart": "2026-11-09T08:31:12.782Z",
+      "wallEnd": "2026-11-09T08:33:14.279Z"
+    },
+    {
+      "number": 4,
+      "startMs": 353364,
+      "endMs": 469893,
+      "durationMs": 116529,
+      "wallStart": "2026-11-09T08:35:07.753Z",
+      "wallEnd": "2026-11-09T08:37:04.282Z"
+    },
+    {
+      "number": 5,
+      "startMs": 469893,
+      "endMs": 643343,
+      "durationMs": 173450,
+      "wallStart": "2026-11-09T08:37:49.561Z",
+      "wallEnd": "2026-11-09T08:40:43.011Z"
+    },
+    {
+      "number": 6,
+      "startMs": 643343,
+      "endMs": 763616,
+      "durationMs": 120273,
+      "wallStart": "2026-11-09T08:41:36.320Z",
+      "wallEnd": "2026-11-09T08:43:36.593Z"
+    },
+    {
+      "number": 7,
+      "startMs": 763616,
+      "endMs": 878324,
+      "durationMs": 114708,
+      "wallStart": "2026-11-09T08:45:20.101Z",
+      "wallEnd": "2026-11-09T08:47:14.809Z"
+    },
+    {
+      "number": 8,
+      "startMs": 878325,
+      "endMs": 991944,
+      "durationMs": 113619,
+      "wallStart": "2026-11-09T08:49:10.256Z",
+      "wallEnd": "2026-11-09T08:51:03.875Z"
+    },
+    {
+      "number": 9,
+      "startMs": 991944,
+      "endMs": 1102521,
+      "durationMs": 110577,
+      "wallStart": "2026-11-09T08:51:11.113Z",
+      "wallEnd": "2026-11-09T08:53:01.690Z"
+    },
+    {
+      "number": 10,
+      "startMs": 1102521,
+      "endMs": 1298291,
+      "durationMs": 195770,
+      "wallStart": "2026-11-09T08:53:08.916Z",
+      "wallEnd": "2026-11-09T08:56:24.686Z"
+    },
+    {
+      "number": 11,
+      "startMs": 1298291,
+      "endMs": 1415846,
+      "durationMs": 117555,
+      "wallStart": "2026-11-09T08:56:31.938Z",
+      "wallEnd": "2026-11-09T08:58:29.493Z"
+    },
+    {
+      "number": 12,
+      "startMs": 1415846,
+      "endMs": 1527826,
+      "durationMs": 111980,
+      "wallStart": "2026-11-09T08:58:36.749Z",
+      "wallEnd": "2026-11-09T09:00:28.729Z"
+    },
+    {
+      "number": 13,
+      "startMs": 1527826,
+      "endMs": 1708474,
+      "durationMs": 180648,
+      "wallStart": "2026-11-09T09:00:36.053Z",
+      "wallEnd": "2026-11-09T09:03:36.701Z"
+    },
+    {
+      "number": 14,
+      "startMs": 1708474,
+      "endMs": 1818982,
+      "durationMs": 110508,
+      "wallStart": "2026-11-09T09:03:43.965Z",
+      "wallEnd": "2026-11-09T09:05:34.473Z"
+    },
+    {
+      "number": 15,
+      "startMs": 1818982,
+      "endMs": 1930446,
+      "durationMs": 111464,
+      "wallStart": "2026-11-09T09:05:41.720Z",
+      "wallEnd": "2026-11-09T09:07:33.184Z"
+    },
+    {
+      "number": 16,
+      "startMs": 1930446,
+      "endMs": 2110075,
+      "durationMs": 179629,
+      "wallStart": "2026-11-09T09:07:40.445Z",
+      "wallEnd": "2026-11-09T09:10:40.074Z"
+    },
+    {
+      "number": 17,
+      "startMs": 2110075,
+      "endMs": 2222527,
+      "durationMs": 112452,
+      "wallStart": "2026-11-09T09:10:47.357Z",
+      "wallEnd": "2026-11-09T09:12:39.809Z"
+    },
+    {
+      "number": 18,
+      "startMs": 2222527,
+      "endMs": 2333602,
+      "durationMs": 111075,
+      "wallStart": "2026-11-09T09:12:47.072Z",
+      "wallEnd": "2026-11-09T09:14:38.147Z"
+    },
+    {
+      "number": 19,
+      "startMs": 2333602,
+      "endMs": 2522622,
+      "durationMs": 189020,
+      "wallStart": "2026-11-09T09:14:45.457Z",
+      "wallEnd": "2026-11-09T09:17:54.477Z"
+    },
+    {
+      "number": 20,
+      "startMs": 2522622,
+      "endMs": 2635795,
+      "durationMs": 113173,
+      "wallStart": "2026-11-09T09:18:01.762Z",
+      "wallEnd": "2026-11-09T09:19:54.935Z"
+    },
+    {
+      "number": 21,
+      "startMs": 2635795,
+      "endMs": 2760604,
+      "durationMs": 124809,
+      "wallStart": "2026-11-09T09:20:02.262Z",
+      "wallEnd": "2026-11-09T09:22:07.071Z"
+    },
+    {
+      "number": 22,
+      "startMs": 2760604,
+      "endMs": 2899488,
+      "durationMs": 138884,
+      "wallStart": "2026-11-09T09:22:14.352Z",
+      "wallEnd": "2026-11-09T09:24:33.236Z"
+    },
+    {
+      "number": 23,
+      "startMs": 2899488,
+      "endMs": 3010966,
+      "durationMs": 111478,
+      "wallStart": "2026-11-09T09:24:40.522Z",
+      "wallEnd": "2026-11-09T09:26:32.000Z"
+    },
+    {
+      "number": 24,
+      "startMs": 3010966,
+      "endMs": 3139869,
+      "durationMs": 128903,
+      "wallStart": "2026-11-09T09:26:39.328Z",
+      "wallEnd": "2026-11-09T09:28:48.231Z"
+    },
+    {
+      "number": 25,
+      "startMs": 3139869,
+      "endMs": 3286039,
+      "durationMs": 146170,
+      "wallStart": "2026-11-09T09:28:55.542Z",
+      "wallEnd": "2026-11-09T09:31:21.712Z"
+    },
+    {
+      "number": 26,
+      "startMs": 3286039,
+      "endMs": 3396815,
+      "durationMs": 110776,
+      "wallStart": "2026-11-09T09:31:29.028Z",
+      "wallEnd": "2026-11-09T09:33:19.804Z"
+    },
+    {
+      "number": 27,
+      "startMs": 3396815,
+      "endMs": 3539302,
+      "durationMs": 142487,
+      "wallStart": "2026-11-09T09:33:27.090Z",
+      "wallEnd": "2026-11-09T09:35:49.577Z"
+    },
+    {
+      "number": 28,
+      "startMs": 3539302,
+      "endMs": 3602416,
+      "durationMs": 63114,
+      "wallStart": "2026-11-09T09:35:56.896Z",
+      "wallEnd": "2026-11-09T09:37:00.010Z"
+    }
+  ],
+  "captures": [
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/000-fresh-save.png",
+      "label": "fresh-save",
+      "atMs": 2344
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/001-prepare.png",
+      "label": "prepare",
+      "atMs": 2624
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/002-result.png",
+      "label": "result",
+      "atMs": 20567
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/003-welcome.png",
+      "label": "welcome",
+      "atMs": 28367
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/004-opening-equipment-compare.png",
+      "label": "opening-equipment-compare",
+      "atMs": 33409
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/005-earned-invitation.png",
+      "label": "earned-invitation",
+      "atMs": 39910
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/006-level-up.png",
+      "label": "level-up",
+      "atMs": 47608
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/007-journal.png",
+      "label": "journal",
+      "atMs": 47717
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/008-cafe.png",
+      "label": "cafe",
+      "atMs": 47932
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/009-prepare.png",
+      "label": "prepare",
+      "atMs": 51797
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/010-result.png",
+      "label": "result",
+      "atMs": 77737
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/011-reward-choice.png",
+      "label": "reward-choice",
+      "atMs": 82955
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/012-lease-checkpoint.png",
+      "label": "lease-checkpoint",
+      "atMs": 111681
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/013-prepare.png",
+      "label": "prepare",
+      "atMs": 119071
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/014-result.png",
+      "label": "result",
+      "atMs": 142250
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/015-reward-choice.png",
+      "label": "reward-choice",
+      "atMs": 147518
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/016-prepare.png",
+      "label": "prepare",
+      "atMs": 154821
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/017-result.png",
+      "label": "result",
+      "atMs": 226807
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/018-lease-checkpoint.png",
+      "label": "lease-checkpoint",
+      "atMs": 231867
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/019-earned-invitation.png",
+      "label": "earned-invitation",
+      "atMs": 235028
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/020-level-up.png",
+      "label": "level-up",
+      "atMs": 243151
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/021-cafe.png",
+      "label": "cafe",
+      "atMs": 243394
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/022-earned-invitation.png",
+      "label": "earned-invitation",
+      "atMs": 246239
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/023-level-up.png",
+      "label": "level-up",
+      "atMs": 254337
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/024-cafe.png",
+      "label": "cafe",
+      "atMs": 254611
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/025-chosen-star-crew.png",
+      "label": "chosen-star-crew",
+      "atMs": 258440
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/026-prepare.png",
+      "label": "prepare",
+      "atMs": 265771
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/027-result.png",
+      "label": "result",
+      "atMs": 290751
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/028-minute-5-choose-1-0.png",
+      "label": "minute-5-choose 1-0",
+      "atMs": 303133
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/029-prepare.png",
+      "label": "prepare",
+      "atMs": 332117
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/030-result.png",
+      "label": "result",
+      "atMs": 348301
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/031-lease-checkpoint.png",
+      "label": "lease-checkpoint",
+      "atMs": 353364
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/032-prepare.png",
+      "label": "prepare",
+      "atMs": 360823
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/033-result.png",
+      "label": "result",
+      "atMs": 453101
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/034-earned-invitation.png",
+      "label": "earned-invitation",
+      "atMs": 461348
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/035-lease-checkpoint.png",
+      "label": "lease-checkpoint",
+      "atMs": 469893
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/036-prepare.png",
+      "label": "prepare",
+      "atMs": 473720
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/037-result.png",
+      "label": "result",
+      "atMs": 501494
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/038-prepare.png",
+      "label": "prepare",
+      "atMs": 542986
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/039-result.png",
+      "label": "result",
+      "atMs": 557472
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/040-prepare.png",
+      "label": "prepare",
+      "atMs": 569933
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/041-minute-10-result.png",
+      "label": "minute-10-result",
+      "atMs": 638261
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/042-lease-checkpoint.png",
+      "label": "lease-checkpoint",
+      "atMs": 643343
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/043-earned-invitation.png",
+      "label": "earned-invitation",
+      "atMs": 646311
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/044-earned-invitation.png",
+      "label": "earned-invitation",
+      "atMs": 657015
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/045-prepare.png",
+      "label": "prepare",
+      "atMs": 669170
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/046-result.png",
+      "label": "result",
+      "atMs": 699612
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/047-prepare.png",
+      "label": "prepare",
+      "atMs": 741154
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/048-result.png",
+      "label": "result",
+      "atMs": 758548
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/049-lease-checkpoint.png",
+      "label": "lease-checkpoint",
+      "atMs": 763616
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/050-lease-checkpoint.png",
+      "label": "lease-checkpoint",
+      "atMs": 878325
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/051-minute-15-result.png",
+      "label": "minute-15-result",
+      "atMs": 921860
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/052-lease-checkpoint.png",
+      "label": "lease-checkpoint",
+      "atMs": 991944
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/053-lease-checkpoint.png",
+      "label": "lease-checkpoint",
+      "atMs": 1102521
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/054-minute-20-choose-first-offered-boon.png",
+      "label": "minute-20-choose first offered boon",
+      "atMs": 1201822
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/055-lease-checkpoint.png",
+      "label": "lease-checkpoint",
+      "atMs": 1298291
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/056-lease-checkpoint.png",
+      "label": "lease-checkpoint",
+      "atMs": 1415846
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/057-minute-25-result.png",
+      "label": "minute-25-result",
+      "atMs": 1505699
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/058-lease-checkpoint.png",
+      "label": "lease-checkpoint",
+      "atMs": 1527826
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/059-lease-checkpoint.png",
+      "label": "lease-checkpoint",
+      "atMs": 1708474
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/060-minute-30-result.png",
+      "label": "minute-30-result",
+      "atMs": 1810180
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/061-lease-checkpoint.png",
+      "label": "lease-checkpoint",
+      "atMs": 1818982
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/062-lease-checkpoint.png",
+      "label": "lease-checkpoint",
+      "atMs": 1930446
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/063-minute-35-result.png",
+      "label": "minute-35-result",
+      "atMs": 2104963
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/064-lease-checkpoint.png",
+      "label": "lease-checkpoint",
+      "atMs": 2110075
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/065-lease-checkpoint.png",
+      "label": "lease-checkpoint",
+      "atMs": 2222527
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/066-lease-checkpoint.png",
+      "label": "lease-checkpoint",
+      "atMs": 2333602
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/067-minute-40-choose-5-0.png",
+      "label": "minute-40-choose 5-0",
+      "atMs": 2401429
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/068-lease-checkpoint.png",
+      "label": "lease-checkpoint",
+      "atMs": 2522622
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/069-lease-checkpoint.png",
+      "label": "lease-checkpoint",
+      "atMs": 2635795
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/070-minute-45-result.png",
+      "label": "minute-45-result",
+      "atMs": 2710503
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/071-lease-checkpoint.png",
+      "label": "lease-checkpoint",
+      "atMs": 2760604
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/072-lease-checkpoint.png",
+      "label": "lease-checkpoint",
+      "atMs": 2899488
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/073-minute-50-settle-encounter.png",
+      "label": "minute-50-settle encounter",
+      "atMs": 3003570
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/074-lease-checkpoint.png",
+      "label": "lease-checkpoint",
+      "atMs": 3010966
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/075-lease-checkpoint.png",
+      "label": "lease-checkpoint",
+      "atMs": 3139869
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/076-lease-checkpoint.png",
+      "label": "lease-checkpoint",
+      "atMs": 3286039
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/077-minute-55-Fight.png",
+      "label": "minute-55-Fight",
+      "atMs": 3303303
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/078-lease-checkpoint.png",
+      "label": "lease-checkpoint",
+      "atMs": 3396815
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/079-lease-checkpoint.png",
+      "label": "lease-checkpoint",
+      "atMs": 3539302
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/080-minute-60-choose-first-offered-boon.png",
+      "label": "minute-60-choose first offered boon",
+      "atMs": 3602374
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/081-lease-checkpoint.png",
+      "label": "lease-checkpoint",
+      "atMs": 3602416
+    }
+  ],
+  "files": [
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/REGISTERED-METHOD.json",
+      "sha256": "881afafa8586f9bb5ea52851fef1a51520727f0baea886ff1e488010e29b4fd4"
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/REGISTERED-METHOD.md",
+      "sha256": "d670ac855ae48d9fe69b7d81dfd57758b132d17e5e78a8eb49592c30d53ed242"
+    },
+    {
+      "path": "reports/cardrpg-big/skills-v5/s8/home/session/timeline.json",
+      "sha256": "f33c9bc3f5648cdd51cebc24c60acb93d99dd4ca725c11d046a3e037bc644d70"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/h0/metrics.json",
+      "sha256": "1123035431cc90db3ce7a7aee54ff9cecd54353820c5769c510412ac37cd3a30"
+    },
+    {
+      "path": "tools/cardrpg-big/skills-v5/home-session.mjs",
+      "sha256": "d7022e238b0811a49647894a4e791babd80d8e7ddb7f32c35182faac9e67c266"
+    }
+  ],
+  "limitations": [
+    "Choice offers differ in final HP, actions or result at seeds 1/2/3; these are not distinct strategy ideas or estimated causal win gains.",
+    "H0 and A5 use the same automated reading allowances. New opening, rewards, click controls and closed-details visibility are explicit protocol adaptations.",
+    "Historical H0 word counts include an imperfect closed-details visibility check. Use the separate paired C1 copy audit for before/after copy claims.",
+    "Noninteractive battle walltime is the registered dead-time proxy. Other elapsed time is not silently classified as dead time.",
+    "Discovery timestamps are DOM observation times; chronological reward sorting precedes gap calculation.",
+    "Browser lifecycle freezes at lock handoffs, but cafe service uses real walltime. This is not an isolated causal comparison of one mechanic.",
+    "The script records offered choices and takes a fixed policy. It does not prove that a new human understands each choice or follows advice.",
+    "Home primary chooses the route; the fixed policy reviews one affordable lowest-level teammate upgrade and chooses the first available named crew option. UI and policy changed together; this is not a causal comparison or human retention evidence."
+  ]
+}
