@@ -6,7 +6,7 @@ Tự chấm 7,54/10; mỹ thuật 6,233/10, chiều sâu và độ riêng còn h
 
 # Skills V5 full run — presentation delivery
 Presentation-only, one agent, native/headless. Runtime rules/default flags/protected files unchanged; draft PRs only, no merge or deployment. Catalog correction: 48 active cat skills include 12 ultimates; the 60-cat sheet adds 12 passives, plus 26 enemy attack cues.
-Read [M4 report](m4/REPORT.md), [repair log](FIXLOG.md), [registered live seeds](LIVE-SEEDS.md), and [M3 preview](m3/REPORT.md). Stack: #409→#413→#415→#416→#418→#419→#421→M5 draft (branch `codex/cardrpg-v5full-m5-2026-11-09`); integration [#420](https://github.com/ntbaoheyhey/taskbar-hero/pull/420) stays **INTEGRATION PREVIEW — not for merge**.
+Read [M4 report](m4/REPORT.md), [repair log](FIXLOG.md), [registered live seeds](LIVE-SEEDS.md), and [M3 preview](m3/REPORT.md). Stack: #409→#413→#415→#416→#418→#419→#421→[#425](https://github.com/ntbaoheyhey/taskbar-hero/pull/425); integration [#420](https://github.com/ntbaoheyhey/taskbar-hero/pull/420) stays **INTEGRATION PREVIEW — not for merge**.
 Watch [30 s pitch](m4/videos/pitch-30s.mp4), [20 s natural before](m4/videos/before-20s.mp4) / [after](m4/videos/after-20s.mp4), and [20 s labelled skill reel](m4/videos/skill-reel-20s.mp4). Open [offline demo](../../../../docs/cardrpg-look/v5-live.html) or [lean demo](../../../../docs/cardrpg-look/v5-live-lean.html); guide has 17 examples and explicit fixture labels.
 
 | Self-score criterion | Weight | Score / 10 | Evidence and practical limit |
