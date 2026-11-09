@@ -1,3 +1,11 @@
+# Current import status — 2026-11-09 23:17 UTC
+
+Source conversion, local simplify/rig/pack and diagnostic runtime import are complete. Earlier plan below is historical; do not reconnect fal or submit the same source again.
+See [automation guide](../AUTOMATION.md), [packed rig](image-to-3d/automated-packed.json), [poses](image-to-3d/packed-motion/contact-sheet.webp) and [natural film](image-to-3d/film/mochi-generated-20s.mp4).
+Skeleton-safe cloning/disposal and rig-specific clip caching exist in preserved local WIP. Source-based rig14joints/22gameclips still fails high cast/victory deformation (B-R1-008,3attempts). Actual surface separation/retopology is needed before further skinning. Four-unit comparison/roster acceptance remains pending.
+
+---
+
 # Direct image-to-3D import — prepared, not executed
 
 The user authorized external conversion of the original Mochi PNG. Preserve its SHA256 `678241f78c41b3ee88d71498cd4eb50847866021565df8a46c61c1efc6b9fdd8`. No new concept, surrogate primitive model or painted plane satisfies this step.

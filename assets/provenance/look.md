@@ -177,3 +177,11 @@ Result: six original provider JPEG previews, byte-for-byte preserved with SHA256
 - Provider/model: official Microsoft TRELLIS.2 / microsoft/TRELLIS.2-4B, existing signed-in Hugging Face session. Image-only conditioning; no new text prompt. Seed20261109, resolution1024, randomize OFF, extraction100000faces, texture2048. Other controls remained at provider defaults.
 - Original exported mesh: assets/source/look-v3/image-to3d/mochi-source.glb; SHA256eb84d0f8ca114736806432a18c0abd7249f3fb451c642c53fb28a1a85c0912a6; 5369360bytes,96900triangles,2embeddedWebPtextures,0skins,0animations. No post-processing of this source.
 - Browser automation receipt, exact exported download URL and structural/topological inspection are under reports/cardrpg-look/art-rebuild/r1/image-to-3d/browser-*.json. Old quota failure retained separately; this successful export does not imply rig or runtime acceptance.
+
+## R1 Mochi local rig prototype — 2026-11-09T23:18:08.774376+00:00
+- Derived only from the authorized TRELLIS sourceeb84d0f8, original Mochi concept678241f7. No new image/model generation or external asset.
+- Local meshoptimizer1.3.0 simplifyWithAttributes: targetratio.23,combinederror.006,normalweights.1,UVweights1,Permissive;96,900→21,938tri,observederror.004799698. Blender collapse failure retained, not selected.
+- Authored NumPy/Pillow rig revision3: normalizedheight1.55,14namedjoints,top4normalizedweights/vertex,blink morph from measured eye positions. Original texture retained; no invented replacement face.
+- glTF-Transform packing exact flags/recipe hashes in art-rebuild/r1/image-to-3d/automated-pipeline.json; meshopt and WebP1024,no additional simplification.
+- Source-only output assets/source/look-v3/image-to3d/mochi-rig-prototype.glb;626020B,SHA256c035cd84f28d5198905799b73786eee9a268fbc14dc1465327c2c433daaeee29.14joints,2textures,0embeddedclips;22gameclips drive local runtime.
+- Not accepted for production: fused shoulder/apron/door stretching at cast/victory after3attempts. All failed review sheets retained. Automation and file-size success do not assert visual acceptance.

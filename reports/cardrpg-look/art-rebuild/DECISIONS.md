@@ -45,3 +45,9 @@
 - Exact seed20261109/resolution1024/decimation100000/texture2048 retained. Export succeeded; source5369360B,96900tri,2embeddedtextures,0skins,0animations, SHAeb84d0f8ca114736806432a18c0abd7249f3fb451c642c53fb28a1a85c0912a6.
 - Browser file-download helpers timed out; fetched the exact observed generated-file URL using urllib, without accessing browser cookies or credentials. No plugin connection or purchase needed. Original failure receipts retained.
 - Conversion is complete; rig, geometry repair, animation and runtime quality remain separate unverified work. Raw model retained outside demo/git.
+
+## Automated local stages — 2026-11-09T23:18:08.774376+00:00
+- Reuse completed source conversion; no further external inference. Package inspect/simplify/authored-rig/pack/inspect as one resumable local command, hashes and exclusive output lock.
+- Known deformation does not become an accepted asset merely because scripts succeed: always qualityPARTIAL/runtimeAcceptedfalse; explicit preview-only install.
+- B-R1-008 is at3attempt cap. Preserve failed diagnostics and current viable source/neutral poses; no fourth weight-mask adjustment or roster expansion. Real surface separation remains next repair approach.
+- Publish source prototype, tools/evidence/reports; preserve dirty candidate renderer and local preview unchanged, without accepting or discarding it. No claim that22game clips are embedded in GLB.

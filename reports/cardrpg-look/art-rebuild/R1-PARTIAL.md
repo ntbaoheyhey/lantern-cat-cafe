@@ -1,3 +1,18 @@
+Đã tự động hoá Mochi từ ảnh gốc thành model 3D, giảm lưới, gắn xương và đóng gói.
+Bản thử nghiệm còn 626.020 byte, 21.938 tam giác, 14 xương; game điều khiển 22 clip.
+Đã có clip trận thật 20 giây và 11 tư thế kiểm tra; lỗi kéo méo khi giơ tay cao còn tồn tại.
+Công cụ chạy lại tái sử dụng đủ năm bước và kiểm tra hash; không cần bạn tải file hay kết nối fal.
+R1 vẫn PARTIAL; chưa nhân rộng đội hình, chưa chốt pipeline hoặc công nhận chất lượng 8.5.
+
+## Latest automated rig checkpoint
+
+The source-only statements below are historical. The current result is an animated3D prototype with a known failed deformation gate.
+See [AUTOMATION](AUTOMATION.md), [current report](ART-REPORT.md), [pose sheet](r1/image-to-3d/packed-motion/contact-sheet.webp), and [battle film](r1/image-to-3d/film/mochi-generated-20s.mp4).
+Actual source conversion is complete; local pipeline outputs626,020B/21,938tri/14bones.22clips are supplied by the game, not embedded in GLB.
+No new external request. B-R1-008 remains PARTIAL after3attempts; no pipeline accepted or roster rollout.
+
+---
+
 R1 PARTIAL: đã tự động chuyển ảnh Mochi thành mesh 3D và tải GLB về máy.
 File 5,37 MB có 96.900 tam giác và hai texture; không phải ảnh billboard.
 Bước xuất trên phiên đăng nhập thành công; lỗi quota cũ vẫn được giữ nguyên.

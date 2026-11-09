@@ -1,3 +1,15 @@
+# Latest automation checkpoint — 2026-11-09T23:18:08.774376+00:00
+
+User asked “bạn có thể tự động hoá nó không?”. Browser image→GLB already succeeded; do not resubmit. Local pipeline now complete and replayable from any cwd with prepare-mochi.mjs. See AUTOMATION.md.
+Actual source5,369,360B/96,900tri → packed626,020B/21,938tri/14joints/2textures, SHA256c035cd84f28d5198905799b73786eee9a268fbc14dc1465327c2c433daaeee29. Source-only prototype committed under assets/source/look-v3/image-to3d/mochi-rig-prototype.glb. GLB has0embedded clips; game supplies22.
+Existing local runtime implements per-actor skeleton cloning/disposal, rig-specific clip cache and painted-eye morph. Packed diagnostic11poses and natural20sfilm exist; no console errors, high cast/victory deformation FAIL. B-R1-008 at3attempt cap: no fourth weight-mask tweak in R1. Surface separation/retopology needed; do not expand this rig to roster.
+Runner explicitly reports PARTIAL quality/runtimeAccepted=false; only --install-preview exists, no unqualified --install. Resumes5/5steps with exact hashes; recipe/output change and concurrent output rejected. Successful automation is not beauty acceptance.
+Current receipts r1/image-to-3d/automated-*.json, automation-validation.json, packed-motion, film. Failedrig1–4evidence preserved. No repeat source inference, render or parity required for byte-identical runner output.
+Local preview docs/cardrpg-look/v5-art-mochi-preview.html is30,537,821B,SHA2562e01ef24500869db5c8ee79cbde3f547f0cb28c907aff2dd660fe75304aaba27. It remains localWIP, not production. Runtime/candidate files already dirty at entry remain unaccepted and must be preserved. Source tools/report/evidence only published at this checkpoint.
+R1notcomplete; no four-unit decision or score. Original R0/S6/M5/housekeeping done. Latest Aoutbox stillS6DONE; U absent. User direct-image override remains; no fal or further permission needed for Mochi. No current provider/browser/render work running. Pending R2/R4/R5/R3/R6/R7/R8 not silently waived.
+
+---
+
 # Latest continuation checkpoint — 2026-11-09T22:52 UTC
 
 The user asked to automate the already signed-in TRELLIS browser workflow. This is now successful: original Mochi PNG -> Generate -> Extract GLB -> local download. Do not submit inference again for this source.

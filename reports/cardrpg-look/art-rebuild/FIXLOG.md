@@ -25,3 +25,22 @@ Verification: preview hashes match source; fal installed:false. Rig, motion, per
 
 ### B-R1-006 follow-up 2026-11-09T22:53:33.409814+00:00
 User explicitly requested automation of the already signed-in browser workflow. One new Generate and Extract succeeded. Downloaded raw GLB via exact visible link; structure96900tri/2textures/0skins/0clips. Prior quota failure unchanged. Export blocker RESOLVED for Mochi; rig/runtime still NOT VERIFIED. Browser download timeout retained in browser-automation.json.
+
+## B-R1-007 2026-11-09T23:04Z generated source simplification S2
+Repro: rig1-motion/contact-sheet.webp and rig1-battle/generated-1440-mochi.webp. Actual browser renderer has no errors but the face/shield become broken triangles with distorted texture even at rest.
+Measured: Blender collapse ratio16000/96900 produced23622tri and removed most head vertices (head weight>0.05 only1307 of35655 exported vertices). Original six-angle source is intact. Type/lint/1815unit PASS cannot detect this appearance failure.
+Hypotheses: aggressive simplification/UV collapse (first test), skin bind error, incorrect accessor layout. Attempt1: use untouched generated source geometry with the same rig and exact comparison shots, separating geometry loss from skin binding. Preserve rig1 failures. Next optimization must use bounded geometric/attribute error and pass the same visual comparison.
+
+Follow-up: untouched source rig2-motion restores the face/texture, isolating simplification as the cause. Attempt2: meshoptimizer1.3.0 simplifyWithAttributes, target.23/error.006, normals weights.1/UVweights1, Permissive;21938tri (measured combined error.0047997). rig4-motion retains readable face/silhouette but fine fur has small angular losses. Conservative unaccepted review copy retained. Default CLI simplify with locked borders retained91026tri and was not selected. No claimed numeric error bound on perceived beauty.
+
+## B-R1-008 2026-11-09T23:05Z fused source arm and shield deformation S2
+Repro: rig2-motion cast/victory poses (22 real runtime clips,14bones). Original source mesh is fused; broad arm masks drag apron, soft shield weights bend the door.
+Attempt1: original spatial masks on untouched geometry. Body/head/tail move, but high arm poses tear cloth/door.
+Attempt2: exclude dark cloth by sampled source texture; move shoulders outside torso scaling, rigid shield mask. rig3-motion: texture variations cause uneven forearm weights; shield mask also picks up foot. Failure preserved.
+Attempt3: smooth forearm capsule, measured shield rear/lower planes excluding foot. rig4-motion: neutral/side/back/hurt remain readable, high cast/victory still stretch connecting surface triangles. PARTIAL at3attempt cap; no further mask tweaks this milestone. Need actual separated surface/retopology and reweighting at next milestone, not generic automatic-skin acceptance. Do not expand this rig to the roster or call the pipeline accepted.
+Probe extension: generated-motion.mjs captures rest/anticipation/impact/guard/cast/hurt/victory/tail/blink/side/back using actual game renderer and mixer. Distinguishes no-console-error from deformation acceptance.
+
+### Automation validation — 2026-11-09T23:18:08.774376+00:00
+No fourth B-R1-008 geometry/weight fix. The exact packed model SHA c035cd84 was reproduced by the new runner; existing packed-motion/film/parity evidence applies to these same bytes.
+Added guards after observing that --install and REVIEW_REQUIRED could be mistaken for production acceptance: renamed --install-preview, always qualityPARTIAL/runtimeAcceptedfalse, hash all stage outputs/sidecars, lock output, atomic manifest, persist spawn failures.
+Verification automation-validation.json:5stages reused with byte-exact outputs; recipe change, output mismatch, concurrent writer and unqualified production install all rejected. No new model request or visual/performance PASS inferred.

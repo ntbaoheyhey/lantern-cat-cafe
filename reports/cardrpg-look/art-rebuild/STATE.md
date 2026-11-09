@@ -1,5 +1,5 @@
 # Art rebuild state
-NOW R1 PARTIAL: signed-in TRELLIS browser conversion/export succeeded; original Mochi GLB downloaded and structurally inspected. Six-angle local neutral review completed under shared timing lock; rig/runtime unverified.
+NOW R1 PARTIAL: Mochi image→3D and local five-stage pipeline complete;626020B/21938tri/14joints. Game motion tested; cast/victory deformation FAIL after3attempts.
 PROMPT.txt is the verbatim 18883-byte user instruction; digest in PROMPT.sha256.
 B /Users/bao/taskbar-hero-cardrpg-b2, codex/cardrpg-art-r1-2026-11-09; R0draft#423, base #421 3e95a0121 plus Full Run reporting descendants.
 Preserved pre-existing waiting edit in wip/b-leftover-2026-11-09-art commit047601861; no discarded work.
@@ -22,8 +22,9 @@ OWNERSHIP override: U owns shell/meta/topbar/nav/HUD frame. B only canvas + port
 ORDER override R1 -> R2 -> R4 -> R5 -> R3 -> R6 -> R7 -> R8. No PR merges/deploys; only specifically requested M5 reporting merge completed.
 SYNC origin latest A S6DONE; U-OUTBOX absent at resume. No completed R0/S6/M5 probes repeated.
 VERIFIED resume housekeeping complete: R1 remote5aba0bbaa, #420 remotec5712f7c0; latest A S6DONE unchanged; U outbox absent. R0/S6/M5 not repeated.
-NEXT source geometry reviewed; simplify/rig Mochi, preserve rigid shield and facial texture, then battle motion. No more conversion submission needed. Fal connection is optional for this step.
+NEXT actual surface separation/retopology before new reweighting; B-R1-008 at3attempt cap this milestone. No more source inference or mask tweaks. No roster rollout accepted.
 EVIDENCE r1/image-to-3d/{receipt,manifest}.json + six exact provider previews retained; R1-PARTIAL.md distinguishes preview from model. No pipeline accepted.
-BLOCKERS generated-rig clone and clip-cache integration still require fixes before runtime acceptance. Source is 96900 triangles / 2 textures / no skin or animation.
+LOCAL runtime skeleton-safe clones, disposal, per-rig clip cache and blink morph implemented;22game clips/11pose diagnostics/20sfilm. Source GLB has0clips, packed rig1skin. Deformation remains the blocker.
 
 BROWSER 2026-11-09T22:53:33.409814+00:00 original PNG -> Generate -> Extract completed; source ~/art/look-v3/image-to3d/mochi/browser-20261109/mochi-source.glb,5369360B,SHAeb84d0f8. No credentials read/purchase/new concept.
+AUTOMATION prepare-mochi.mjs tested new run+resume;5/5hashes exact,626020B output matches reviewed model. Explicit preview-only install; qualityPARTIAL/runtimeAcceptedfalse. Automation report and receipts prepared for draft427.

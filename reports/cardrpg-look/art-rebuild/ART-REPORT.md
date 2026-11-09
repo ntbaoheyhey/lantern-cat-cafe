@@ -1,44 +1,46 @@
-R1 PARTIAL: đã tự động chuyển trực tiếp ảnh Mochi thành mesh 3D và tải GLB.
-Xuất thành công trên phiên TRELLIS đã đăng nhập; file 5,37 MB, 96.900 tam giác, hai texture.
-Đã xem sáu góc và bản không texture trong Blender; hình khối đầy đủ, chưa có xương/animation.
-Không cần kết nối fal cho bước Mochi này; tiếp theo xử lý mesh, rig và thử chuyển động trong trận.
-Báo cáo này giữ trạng thái thật; chưa hoàn tất R1–R8 hoặc đạt mục tiêu 8.5.
+Đã tự động hoá Mochi từ ảnh gốc thành model 3D, giảm lưới, gắn xương và đóng gói.
+Bản thử nghiệm còn 626.020 byte, 21.938 tam giác, 14 xương; game điều khiển 22 clip.
+Đã có clip trận thật 20 giây và 11 tư thế kiểm tra; lỗi kéo méo khi giơ tay cao còn tồn tại.
+Công cụ chạy lại tái sử dụng đủ năm bước và kiểm tra hash; không cần bạn tải file hay kết nối fal.
+R1 vẫn PARTIAL; chưa nhân rộng đội hình, chưa chốt pipeline hoặc công nhận chất lượng 8.5.
 
 # Art Rebuild — interim PARTIAL report
 
-Draft [#427](https://github.com/ntbaoheyhey/taskbar-hero/pull/427); current step and full receipt in [R1-PARTIAL](R1-PARTIAL.md). This is an interim source-model delivery, not R8 completion.
+Draft [#427](https://github.com/ntbaoheyhey/taskbar-hero/pull/427). This is an automation/prototype checkpoint, not R8 completion.
 
-## Evidence and decision
+## Result and decision
 
-- R0 complete, weighted baseline5.9966/10; retained [baseline report](r0/REPORT.md). No R0/S6/M5 work repeated.
-- Four original concepts: Mochi, Soot, Button Guard, Yarn Giant. Local procedural and layered-paint candidates remain unaccepted; user rejected stiffness/pasted appearance and requests direct image-to-3D.
-- Current decision: investigate direct reconstruction from our Mochi PNG. No final pipeline decision and no four-unit comparative score yet.
-- [Exported source GLB](../../../assets/source/look-v3/image-to3d/mochi-source.glb), [browser receipt](r1/image-to-3d/browser-automation.json), [six-angle neutral review](r1/image-to-3d/browser-review/contact-sheet.webp). Original quota failure and preview manifest retained unchanged.
-- No generated mesh/rig has entered the game. Front/side/back mesh inspection completed; real-battle motion, retopology and skinning remain pending.
-- New concept art:4built-in-generated masters with full prompts/hashes in assets/provenance/look.md. External image-to-3D: two completed generation previews (original export failed, user-requested signed-in export succeeded); one exported source model. No new concept images generated in this continuation.
+- Original Mochi image → official TRELLIS.2 → exported textured mesh succeeded through the existing signed-in browser session. No further inference or connection is needed for this source.
+- Local five-stage automation: inspect source → attribute-aware simplify → authored skin → meshopt/WebP pack → inspect output. One command and details: [AUTOMATION](AUTOMATION.md).
+- Source96,900 triangles/5,369,360B becomes21,938 triangles/626,020B,14joints,2textures. Packed SHA256 `c035cd84f28d5198905799b73786eee9a268fbc14dc1465327c2c433daaeee29`.
+- [Source-only rig prototype](../../../assets/source/look-v3/image-to3d/mochi-rig-prototype.glb). File has0embedded animations;22game-authored clips drive it in the local preview.
+- [11-pose review](r1/image-to-3d/packed-motion/contact-sheet.webp), [20s natural battle](r1/image-to-3d/film/mochi-generated-20s.mp4), [recording receipt](r1/image-to-3d/film/mochi-generated.json). Clip has no observed ultimate; cast/victory diagnostics expose deformation separately.
+- User rejected pasted/stiff2.5D and loose primitives. Direct reconstruction preserves Mochi's real volume and painted identity better, but fused arm/apron/shield stretches in high poses. No pipeline accepted, no roster rollout, no comparative beauty score fabricated.
+- B-R1-008 reached3repair attempts. Retain failures; actual surface separation/retopology is required before revisiting. No fourth mask adjustment this milestone.
+- R0/S6/M5 complete and unchanged. R0 score5.9966/10; target≥8.5 stays. Four concepts retained; Soot/ButtonGuard/YarnGiant direct meshes not built.
 
-## Gates
+## Validation and limits
 
-| Gate | Retained result / current reconstruction |
+| Gate | Observed result |
 |---|---|
-| Beauty rubric | R0=5.9966/10; direct reconstruction NOT VERIFIED; target≥8.5 unchanged |
-| Battle/VFX/lineups before-after | R0 retained; reconstructed model after-shots unavailable |
-| Parity | Earlier local candidates:5seeds exact,68plan immutability checks; reconstructed runtime NOT RUN |
-| Rig and motion | NOT RUN: exported mesh has0skins/0animations |
-| Faces/contrast/collision/perf | New reconstructed runtime NOT RUN |
-| Demo bytes | Retained full30,075,127B; lean21,812,603B; caps40MB/26MB unchanged |
-| Native cast/CPU4cold/draws | Inherited16.8ms/183.3ms/147draws; no new acceptance sample |
-| Evidence/source masters | Approximately7.9MB/13.3MB after source/review; caps120MB/60MB |
-| Python inspection tooling | Syntax PASS; valid existing GLB inspected; malformed GLB rejected;7evidence hashes verified |
-| Source/E2E | No runtime changes published in this checkpoint; prior candidate receipts do not accept reconstruction |
+| Automation | Five stages complete; rerun reuses5/5 with identical hashes; conflicting recipe/output and concurrent writer rejected |
+| Geometry |21,938tri;23,635vertices before packing;14joints; maximum normalized weight error1.19e-7 |
+| Runtime diagnostic |11poses,22clips,0console errors; pose quality PARTIAL despite technical success |
+| Parity |5Bseeds byte-exact across OFF/v2/sculpt/painted/generated;85retained live-plan immutability checks; full A live simulation not repeated |
+| Local source checks | Type/lint/unit PASS;1,815web tests; [receipt](r1/image-to-3d/automation-source-checks.json); not visual acceptance |
+| Local preview |30,537,821B <40MB; retained live demo30,075,127B; retained lean21,812,603B <26MB |
+| Performance | Isolated pose23,846tri/11draws only; no new battle cast/cold acceptance sample |
+| Faces/contrast/collision/startup/E2E | New generated pipeline NOT VERIFIED; prior R0 results are not substituted |
+| Evidence/source |11,629,797B/13,938,633B;2clips, within120MB/60MB/6clip caps |
+| Beauty | Deformation FAIL in cast/victory; source silhouette and face improved; no accepted weighted score |
 
-## Open work
+## Scope and remaining work
 
-- B-R1-006 export quota: resolved for Mochi via the authorized signed-in workflow. Fal remains unconnected but is no longer required for this step; no paid plan submitted.
-- B-R1-005 stiff2.5D and B-R1-004 toy-like procedural result remain open. Source-image appeal cannot pass runtime gates.
-- Skeleton-safe cloning and per-rig clip cache are required before introducing the new skinned actor; identified, not implemented.
-- Next: inspected GLB→cleanup/rig→continuous battle-motion review→four-unit decision. Then R2→R4→R5→R3→R6→R7→R8.
-- Ownership: canvas and image assets only; shell request already in B-OUTBOX for U. No edits in A/U worktrees, no default flag changes, PR merge or deployment.
-- Housekeeping completed previously: M5 reporting5aba0bbaa, integration link-onlyc5712f7c0, R1draft427. See current HANDOFF.md for preserved local WIP.
+- Published source rig, automation scripts, provenance, failed/successful diagnostics and report; unaccepted runtime/candidate files and30.54MBpreview remain local WIP, preserved for continuation.
+- Prototype installation requires explicit `--install-preview`; unqualified `--install` is rejected. Tool always reports runtimeAccepted=false/qualityStatus=PARTIAL. It is specific to the inspected Mochi source hash, not a universal autorigger.
+- No new concept image, external request, credentials, purchase, default flag edit, A/U worktree edit, PR merge or manual deployment action in this continuation.
+- Original simplification failure B-R1-007 retained; attribute-aware simplification restores readable face/texture. All B-R1-008 failures retained.
+- Current four-unit R1 decision and R2→R4→R5→R3→R6→R7→R8 remain pending. Next production work must separate fused surfaces before reweighting; do not replace the user's direct-image requirement with rejected billboards.
+- Full Run upload/allocations/OFF+3B/draws/Kettle misses stay open. Shell hygiene request is already in B-OUTBOX for U.
 
-Look first at the Blender six-angle contact sheet in R1-PARTIAL.md, then the exported source GLB. They demonstrate promising volume, not animation or an accepted runtime asset.
+Look first at the motion contact sheet, especially cast/victory, then the battle clip. These show an actual animated3D prototype and its remaining limitations.
