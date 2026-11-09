@@ -204,3 +204,6 @@ M3 fix2 crowded first/repeat P4/P8/P15 at1280/1440native and1440CPU4:18windows,m
 
 ### B-M4-001 attempt1 observed / attempt2
 All9P1/P5/P15 boundsinside,contrast.239–.358 PASS. Original13opponent denominator:Yarn2.041/Pantry2.069 PASS2;Kettle1.517MISS because gallery Kettle has view.boss=false. Viewed1440P1,1024P15,Kettle/Pantry: largeYarnreadable, opponents stillpale with weak relief. Attempt2 increases authorednormal contrast and gives soloKettle the intendedbossframing. Full enemyroster prevents zoom when a pair loses its otherfoe. Originalattempt1 retained; targetedroster/readability/face/layout and parity/sourcegates next.
+
+## B-M4-002 2026-11-09T07:33Z M4 boss plate overlap S2
+Repro attempt1 fixedP15/1024 at896ms:Panko70pxnumericstack touchesYarnplate7×4px. Actualbossplateheight69.1875 versus hardcoded54px reservation; the phase subtitle adds15.1875px. The collider coveredP5–P14 only,so missedP15. Fixattempt1 reserves16additionalpx whenever bossPhases includes theactor; extendcollider throughP15. Originalfailedstill kept, narrow + full3widthlayout/parity/sourcegates queued. Bossgeometry stayssubjectto thisreservation check.

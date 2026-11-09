@@ -655,7 +655,7 @@ export class TurnScene {
       if(this.lookStageEnabled && view.cardStatuses?.[a.id]?.some((status,index,list)=>showBodyMark(list,index)&&CARD_STATUS_LOOKS[(typeof status==='string'?status:status.id) as keyof typeof CARD_STATUS_LOOKS]?.crown))aTop.y=p.root.position.y+(this.statusCrowns.get(a.id)??p.height*p.root.scale.y+.18)+.18;
       const ideal=screen(aTop);ideal.y-=8;
       projected.push({id:a.id,x:top.x,y:top.y,labelX:ideal.x,labelY:ideal.y,footY:foot.y,visible:true});
-      labels.push({id:a.id,x:ideal.x,y:ideal.y,height:view.autoBattle?(readable?(view.cardStatuses?.[a.id]?.length?54:30):48):a.side==='enemy'?a.statuses.length?41:29:a.statuses.length?30:18,head:screenBounds(p.model,this.camera,this.width,this.height)});
+      labels.push({id:a.id,x:ideal.x,y:ideal.y,height:view.autoBattle?(readable?((view.cardStatuses?.[a.id]?.length?54:30)+(view.bossPhases?.[a.id]!==undefined?16:0)):48):a.side==='enemy'?a.statuses.length?41:29:a.statuses.length?30:18,head:screenBounds(p.model,this.camera,this.width,this.height)});
     }
     const obstacles = view.autoBattle ? view.actors.filter(actor => actor.side === 'party' && actor.hp > 0)
       .flatMap(actor => { const puppet = this.puppets.get(actor.id); return puppet ? [screenBounds(puppet.model,this.camera,this.width,this.height)] : []; }) : [];
