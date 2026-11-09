@@ -39,3 +39,6 @@ Weighted self-score **7.31/10**, provisional untilOFFbyte attribution;monsterdep
 ### Additive M4 follow-up, 2026-11-09
 The original M3 measurements above remain unchanged. Five trigger-repair replays add404plans: the combined23samples/18unique seeds now observe45/45cells,exacthashes,0browsererrors. [Updated matrix](../m4/coverage/COVERAGE.md) preserves both artifact hashes and every original sample;ten original narrow ending probes remainNOTVERIFIED.
 Paired same-directory OFFstartup confirms the same11loadedmembers and0Three/model/errors,with literal entry28182→28185B duepreloadmetadata;bytegate remainsPARTIAL. M4 nativecasts16.8ms/CPU466.7ms,coldCPU4max183.3ms. Guide/package/film verification is recorded in[the M4 report](../m4/REPORT.md),not substituted for original M3 samples. Published A evidenceb21a91c35 leaves runtime6772eb343 unchanged.
+
+### Published S8 refresh, 2026-11-09
+Merged A draft#422 head1d7c6f68e as9a50068af. All218 changed files are A reports/diagnostics;9production/B-build trees are byte-exact against publishedS5. [Delta receipt](../refresh/s8.json) retains tree hashes. M4 coverage/parity/layout/cast/cold receipts apply unchanged; no repeated browser sample or acceptance seed. A234draw/120mscold gates and pacing misses remain separate from Bpreview evidence. Await S6 publication.
