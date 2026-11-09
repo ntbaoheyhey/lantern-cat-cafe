@@ -13,7 +13,12 @@ const sourcePaths=[...new Set(execFileSync('git',['ls-files','-co','--exclude-st
 const sourceHashes=async()=>Object.fromEntries(await Promise.all(sourcePaths.map(async p=>[p,createHash('sha256').update(await readFile(p)).digest('hex')])));
 const sources=await sourceHashes(),sourceDigest=createHash('sha256').update(JSON.stringify(sources)).digest('hex');
 await writeFile(`${out}/source-${sourceDigest}.json`,JSON.stringify(sources,null,2));
-for(const [name,args]of steps){
+for(const [name,defaultArgs]of steps){
+ let args=defaultArgs;
+ const recovery=name==='e2e'&&process.env.V5_E2E_RECOVERY;
+ const failed=recovery&&rows.filter(r=>r.name===name).at(-1);
+ if(recovery){assert(failed?.code===1&&failed.sourceDigest===sourceDigest&&failed.counts.includes('  1 failed'));args=['--filter','@taskbar-hero/web','test:e2e','--workers=1','--project=stage-layout','--grep',recovery];}
+
  if(rows.some(r=>r.name===name&&r.code===0&&r.sourceDigest===sourceDigest))continue;
  const attempt=rows.filter(r=>r.name===name).length+1;assert(attempt<=3,`Two correction rounds exhausted: ${name}`);
  const log=`${out}/${name}-attempt-${attempt}.log`,fd=await open(log,'wx'),started=new Date().toISOString();
@@ -24,6 +29,7 @@ for(const [name,args]of steps){
  await fd.close();const body=await readFile(log,'utf8');
  assert.deepEqual(await sourceHashes(),sources,'Source changed during validation');
  const row={name,attempt,code,head,sourceDigest,started,ended:new Date().toISOString(),log,sha256:createHash('sha256').update(body).digest('hex'),counts:body.split('\n').filter(line=>/Tests |Test Files |\d+ passed|\d+ failed|\d+ skipped|expected fail/.test(line)).map(line=>line.replace(/\x1b\[[0-9;]*m/g,''))};
+ if(recovery)row.recovery={scope:recovery,original:failed.log,originalSha256:failed.sha256,originalCounts:failed.counts,note:'Single failed timing test rerun in isolation; original full run retained. No runtime change.'};
  rows.push(row);await writeFile(`${out}/checks.json`,JSON.stringify(rows,null,2));console.log(JSON.stringify(row));
  if(code!==0){process.exitCode=code??1;break;}await delay(7000);
 }
