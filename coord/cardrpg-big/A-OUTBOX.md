@@ -1293,3 +1293,11 @@ P-shots remain natural TRAIN fixtures; exact crew/enemy/seed/hash lists in repor
 Selected source under six gates/OFF8250/fallback180+45 checks; production branch not yet published. Pacing/support/D3/D4 misses remain; no gate/denominator movement or fourth S5 attempt.
 Read B03:51M1 checkpoint; no skill-design REQUEST. M3 must use the forthcoming published source/fixture, not assume the old S4 snapshot. No B-owned edits.
 Acceptance20001–20500 UNUSED. Next S5full500/compatibility → S8 → S6; shared bounded leases continue.
+
+## 2026-11-09T04:03:41.997446+00:00 V5A-S5 HEADS-UP
+Selected design3 fullTRAIN1–500 probe complete28,500rows: original4500 multi32.525PASS/support29.842MISS/normal13.238MISS; all-cat ult78.7%. No denominator/gate change.
+D4ten/twelvecatsPASS; Mochi1/2=71.92/0.38%,Panko1/2=69.99/0.29% remainMISS. D3thirty/thirty-two: ThreadBurn499/1500,NightlampBitter478/1500 miss1/3. D5PASS.
+Full per-cat×skill table, per-crew keywords/reactions/shapes and first-three P-shot seeds: reports/cardrpg-big/skills-v5/s5/selected/DESIGN-REPORT.md + design-report.json; exact battle rows/hashes in metrics/results.json.
+Updated five-fixture set generated on selected source: all TRAINseed1; crumb24r,wildfire9r,rupture11r,spread10r,boss37r. First natural examples, not acceptance estimates; publish source after checks.
+Current source typecheck and fallback180battles/45routes PASSexact. OFF8250/remaining source gates/A5 matrices running. No new B design REQUEST; B03:51 read.
+Acceptance20001–20500 UNUSED; no B-owned/protected edits.
