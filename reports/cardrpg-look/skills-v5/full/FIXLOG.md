@@ -145,3 +145,6 @@ Viewed12ultimate peak tiles: Clover glass strongly distinct; Mallow flame readab
 Isolated600frame sampler after1200warmframes: Mochi3047256B/Soot900248B/Yarn773820B, including repeated CSS Color.setStyle regex allocations and target-array reset. Cache parsed recipe/status colours during preparation, reuse target slots and pass cached colours to pooled lights. Sampling includes JS numeric boxing; zero remains unproven until measured. Repro allocation.mjs on immutable cinema2; newopt1artifact+allocation/casts/cold pending. Prior sample retained.
 
 MX5 colour API typecheck caught two legacy illuminate callers in unchanged tests. Optional cached colours preserve the six-argument API; renderer supplies prepared colours. opt1 typecheck failure retained, opt1b verifies.
+
+## B-M3-004 2026-11-09T05:44Z M3 coverage specificity S2
+Source review found pilot correlates any instance in a rendering lane with every concurrent semantic cue; this cannot prove each target's own mark. Preserve pilot diagnostic. Upgrade dev-only probe to exact layer-object identity+target x/z+nonzero instance alpha, and record transient clearing two frames after the plan ends. Actual canvas evidence remains required; submissions alone are not called pixel verification. No runtime/default rules changes. New full registration uses upgraded artifact, not a replacement pilot sample.
