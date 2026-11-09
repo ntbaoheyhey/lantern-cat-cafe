@@ -64,6 +64,7 @@ interface PrimitivePool {
   alpha: T.InstancedBufferAttribute;
   phase?: T.InstancedBufferAttribute;
   flash?: T.InstancedBufferAttribute;
+  mark?: T.InstancedBufferAttribute;
 }
 
 /** Pooled geometry compositions. No geometry/material/particle creation during playback. */
@@ -72,12 +73,19 @@ export class CardEffects {
   readonly recipes = CARD_EFFECT_RECIPES;
   readonly ready: Promise<void>;
   readonly stats = { instances: 0, primitiveCalls: 0, truncated: 0 };
+  readonly protectedHeadTops = new Float32Array(CARD_EFFECT_BUDGET.protectedFaces);
   readonly protectedFaces = Array.from({ length: CARD_EFFECT_BUDGET.protectedFaces }, () => new T.Vector4());
   private material: T.ShaderMaterial;
   private pools = new Map<CardEffectPrimitive, PrimitivePool>();
   private disposed = false;
   private look?: LookVfx;
   private flash = 0;
+  private mark = 0;
+  private statusHeight = 1.6;
+  private side = new T.Vector3();
+  private forward = new T.Vector3();
+  private sizeFactor = 1;
+  private alphaFactor = 1;
   private position = new T.Vector3();
   private caster = new T.Vector3();
   private focus = new T.Vector3();
@@ -103,6 +111,7 @@ export class CardEffects {
         resolution: { value: this.resolution },
         protectedFaces: { value: this.protectedFaces },
         protectedCount: { value: 0 },
+        protectedHeadTops: { value: this.protectedHeadTops },
         overdraw: { value: 0 },
       },
     });
@@ -128,6 +137,8 @@ export class CardEffects {
       const flash = this.look ? new T.InstancedBufferAttribute(new Float32Array(CARD_EFFECT_BUDGET.perPrimitive), 1) : undefined;
       if (flash) {flash.setUsage(T.DynamicDrawUsage);geometry.setAttribute('effectFlash', flash);}
       if (phase) {phase.setUsage(T.DynamicDrawUsage);geometry.setAttribute('effectPhase', phase);}
+      const mark = this.look ? new T.InstancedBufferAttribute(new Float32Array(CARD_EFFECT_BUDGET.perPrimitive), 1) : undefined;
+      if(mark){mark.setUsage(T.DynamicDrawUsage);geometry.setAttribute('effectMark',mark);}
       const alpha = new T.InstancedBufferAttribute(new Float32Array(CARD_EFFECT_BUDGET.perPrimitive), 1);
       alpha.setUsage(T.DynamicDrawUsage);
       geometry.setAttribute('effectAlpha', alpha);
@@ -140,7 +151,7 @@ export class CardEffects {
       mesh.count = 0;
       mesh.visible = false;
       this.root.add(mesh);
-      this.pools.set(primitive, { mesh, alpha, phase, flash });
+      this.pools.set(primitive, { mesh, alpha, phase, flash, mark });
     }
   }
 
@@ -160,7 +171,7 @@ export class CardEffects {
     this.transform.updateMatrix();
     try {
       renderer.setRenderTarget(target);
-      for (const { mesh, alpha, phase, flash } of this.pools.values()) {
+      for (const { mesh, alpha, phase, flash, mark } of this.pools.values()) {
         if (this.disposed) break;
         mesh.visible = true;
         mesh.count = 1;
@@ -170,6 +181,7 @@ export class CardEffects {
         if (phase) {phase.setX(0, .5);phase.needsUpdate = true;}
         mesh.instanceMatrix.needsUpdate = true;
         alpha.needsUpdate = true;
+        if(mark)mark.needsUpdate = true;
         for (const destination of [target, null]) {
           renderer.setRenderTarget(destination);
           await renderer.compileAsync(scene, camera);
@@ -208,6 +220,9 @@ export class CardEffects {
     this.stats.primitiveCalls = 0;
     this.stats.truncated = 0;
     if (this.disposed) return;
+    this.mark=0;this.sizeFactor=1;this.alphaFactor=1;
+    this.side.set(1,0,0).applyQuaternion(camera.quaternion);
+    this.forward.set(0,0,1).applyQuaternion(camera.quaternion);
     this.actionFrame = frame; this.presentation = this.atelier ? presentation : undefined;
     if (!this.atelier && frame && recipe) this.renderAction(frame, recipe, actors, positions, camera, quality, calm);
     this.flash = 0;
@@ -221,6 +236,8 @@ export class CardEffects {
           const look = this.atelier ? CARD_STATUS_LOOKS[id as StatusId] : LEGACY_CARD_STATUS_LOOKS[id];
           if (!look) continue;
           this.focus.copy(position);
+          this.statusHeight=heights?.get(actor.id)??1.6;
+          this.mark=this.atelier?(id==='scald'?1:'crown' in look&&look.crown?2:(id==='cozy'||id==='glaze')?3:4):0;
           if (this.atelier) this.focus.y += 'crown' in look && look.crown ? crowns?.get(actor.id) ?? (heights?.get(actor.id) ?? 1.6) + .18 : (heights?.get(actor.id) ?? 1.6) * .42;
           this.baseColor.set(look.color);
           this.accentColor.copy(this.baseColor);
@@ -232,16 +249,18 @@ export class CardEffects {
         }
       }
     }
+    this.mark=0;
     if (this.atelier && frame) {
       this.renderStatusBeats(frame, positions, camera, calm, heights);
       if (recipe) this.renderAction(frame, recipe, actors, positions, camera, quality, calm);
     }
-    for (const { mesh, alpha, phase, flash } of this.pools.values()) {
+    for (const { mesh, alpha, phase, flash, mark } of this.pools.values()) {
       if (!mesh.count) continue;
       mesh.visible = true;
       mesh.instanceMatrix.needsUpdate = true;
       mesh.instanceColor!.needsUpdate = true;
       alpha.needsUpdate = true;
+      if(mark)mark.needsUpdate = true;
       if (phase) phase.needsUpdate = true;
       if (flash) flash.needsUpdate = true;
     }
@@ -337,7 +356,13 @@ export class CardEffects {
         if (progress < 0 || progress > 1) continue;
         this.focus.copy(layer.anchor === 'caster' ? this.caster : this.targets[target]!);
         for (let index = 0; index < count; index++) {
+          // Midnight service's lavender lanterns used to hide bodies throughout recovery.
+          const burst = this.atelier && this.presentation?.bursts.includes(this.targetIds[target]!) && layer.primitive === 'lantern';
+          const age = this.actionFrame ? this.actionFrame.elapsed-this.actionFrame.plan.beats[2]!.start-delay : 0;
+          this.alphaFactor=burst ? .42*Math.max(.12,1-Math.max(0,age)/180) : 1;
+          this.sizeFactor=burst ? .62 : 1;
           this.place(layer, progress, index, count, camera, calm);
+          this.alphaFactor=1;this.sizeFactor=1;
         }
       }
     }
@@ -422,6 +447,22 @@ export class CardEffects {
         spin = Math.sin(phase * Math.PI) * .2;
         break;
     }
+    if(persistent && this.mark===1){
+      // Alternate shoulders/sides in camera space. No flame is behind the torso;
+      // each additional stack adds a distinct lower flame on the next side.
+      const side=index%2===0?-1:1, row=Math.floor(index/2);
+      this.position.copy(this.focus).addScaledVector(this.side,side*this.statusHeight*(.33+row*.07));
+      this.position.y+=this.statusHeight*(.16-row*.20);
+      this.position.addScaledVector(this.forward,this.statusHeight*.34);
+      size=layer.size*(this.statusHeight/1.6);
+      spin=0;
+    }else if(persistent && this.mark===2){
+      this.position.y=this.focus.y;
+    }else if(persistent && this.mark===3){
+      this.position.addScaledVector(this.forward,this.statusHeight*.22);
+      size*=this.statusHeight/1.6;
+    }
+    size*=this.sizeFactor;
     this.position.x += layer.offset[0];
     this.position.y += layer.offset[1];
     this.position.z += layer.offset[2];
@@ -436,8 +477,9 @@ export class CardEffects {
     pool.mesh.setMatrixAt(instance, this.transform.matrix);
     pool.mesh.setColorAt(instance, layer.accent ? this.accentColor : this.baseColor);
     const fade = persistent ? 1 : Math.min(1, phase * 12) * Math.min(1, (1 - phase) * 5);
-    pool.alpha.setX(instance, fade * layer.opacity);
+    pool.alpha.setX(instance, fade * layer.opacity * this.alphaFactor);
     pool.phase?.setX(instance, phase);
+    pool.mark?.setX(instance, this.mark);
     pool.flash?.setX(instance, this.flash);
     this.stats.instances++;
   }

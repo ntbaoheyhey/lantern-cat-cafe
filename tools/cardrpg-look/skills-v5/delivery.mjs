@@ -5,12 +5,12 @@ import {createHash} from 'node:crypto';
 import {createRequire} from 'node:module';
 import assert from 'node:assert/strict';
 const sharp=createRequire('/Users/bao/tools/cardrpg-look/npm/package.json')('sharp');
-const out='reports/cardrpg-look/skills-v5',raw='/tmp/cardrpg-v5look-off';await mkdir(raw,{recursive:true});
-const fixture=JSON.parse(await readFile(`${out}/fixtures.json`));
+const out=process.env.V5_OUT||'reports/cardrpg-look/skills-v5',raw=process.env.V5_RAW||'/tmp/cardrpg-v5look-off';await mkdir(raw,{recursive:true});
+const fixture=JSON.parse(await readFile('reports/cardrpg-look/skills-v5/fixtures.json'));
 const browser=await chromium.launch({channel:'chromium',args:['--use-angle=metal']});
 const receipt={method:'Same fixed-time fixture, lookV2 OFF, battle surface normalized to1440x900. Raw canvas pixels exclude the differing standalone-demo chrome; party HUD uses rendered DOM pixels.',guide:[],off:[],errors:[]};
 try{
- for(const [side,file]of [['before','/tmp/cardrpg-v5look-before.html'],['after','docs/cardrpg-look/v5-v0.html']]){
+ for(const [side,file]of [['before',process.env.V5_BEFORE||'/tmp/cardrpg-v5look-before.html'],['after','docs/cardrpg-look/v5-v0.html']]){
   const page=await browser.newPage({viewport:{width:1440,height:900},deviceScaleFactor:1});page.on('pageerror',e=>receipt.errors.push(String(e)));
   await page.goto('file://'+resolve(file));await page.waitForFunction(()=>window.__depthReview);
   await page.evaluate(f=>{window.__LOOK_V2__=false;document.documentElement.dataset.lookV2='false';window.dispatchEvent(new CustomEvent('lantern-look-v2',{detail:false}));const m=window.__depthReview;m.watchNow();m.paused=true;m.galleryBattle=structuredClone(f.base);for(const a of m.galleryBattle.actors)a.statuses=[{id:'scald',stacks:2,remaining:2,source:a.id,appliedRound:1}];m.camera='wide';m.plan=null;m.notify(false)},fixture);

@@ -1,27 +1,24 @@
 # Skills V5 look state
-Base: 598fd8019e62b7203dcfac4033f74bb64ba0dac5 (B2 V6 branch tip; report checkpoint f4cd0da0b).
-Branch: codex/cardrpg-v5look-v0-2026-11-09. Runtime checkpoint: 3968da538.
-Phase: V0a/V0b/V0c implemented; V0d delivered in DRAFT409 on395; V3 deferred.
-Preserved pre-existing Finder metadata on wip/b2-leftover-2026-11-09; never discarded.
-Done: 16 badges/original SVGs, duration rings/tooltips, pooled body/apply/tick/expiry looks.
-Done: 70ms target stagger, 500ms Crumb Burst, distinct DoT numbers; action-clock delta0ms.
-Done: three-size badge/callout/HP overlap checks0; contrast7.00076; reduced-motion/focus PASS.
-Done: 80 protected-face samples0offenders; Mark/Daze crowns visible on Mochi/Button Guard.
-Demo: docs/cardrpg-look/v5-v0.html; 29,130,876bytes (B2 delta-681,986).
-Artifact SHA256: f801aeda2cda851b42cf95b54f8e68a1430c30446c93294e7c19b8bc6da258e9.
-Parity: full battle/log hashes exact for7,17,71,1808,20261108; rules/protected diff0.
-Performance:16native windows max16.8ms; CPU4cold233.4ms vs266.6baseline (-12.45%).
-Peak draws128/130; triangles175937. Same-initial natural chapter1 x1 clips20.000s H.264/1440x900.
-Gates: typecheck/lint/unit1782web+1020rules/build PASS; E2E420/421 then isolated failed-test retryPASS.
-Original idle-clock failure and all earlier harness/layout/crown failures retained; cause unproven.
-OFF: canvas/HUD fixed-frame pixels exact;11startup scripts/3522500bytes, sizes/modules exact,0Three/model.
-OFF content hashes8/11exact; entry reference names normalize equal (no binary-parity claim).
-Evidence about21.3MB/25MB. Human recognition NOT VERIFIED; warm/glaze subtle, dense effects busy.
-Source/art inputs match build receipt; QA delivery selector correction explicitly recorded.
-No B browser/probe/queue remains. Original queue70133 exited; resume76589 completed all unrun steps.
-Draft: https://github.com/ntbaoheyhey/taskbar-hero/pull/409 (evidence41cc9634e).
-B-OUTBOX DONE + V5LOOK-V3 REQUEST pushed at11a88e275bea05185bf0d52ad1c5c03dfc6940dc.
-Next: STOP at V0; no fixture polling. Resume V3 only after A publishes the requested v2 fixture.
-A-OUTBOX read2026-11-09T01:08Z: V5A-S0 DONE, S1 underway; no skillsV5 events v2 fixture DONE.
-V3 not started. Open REQUEST: v2fixture needed before Bleed/Bitter/reactions/targets[] rendering.
-Report: V0-REPORT.md; integration: INTEGRATION.md; raw numbers: RESULTS.json.
+Base V0: 2504e7df354543c51444a6e855eb6af0c6f5def9; draft409 on395.
+Branch: codex/cardrpg-v5look-v01-2026-11-09; runtime e5cd2827873efa9a28307c53d29fd8a6a8d3acb2.
+V0.1 started2026-11-09T01:15:45Z; all F1-F6 and requested evidence complete within3h.
+One agent; no model helpers; no A worktree or protected/rules edits; draft PRs only.
+Inherited v01/digests-before preserved on wip/b2-leftover-2026-11-09 at2c7747c40.
+Five-seed battle/log parity PASS; protected/rules diff0.
+Overlaps0 at1024/1280/1440, contrast7.00; faces0/80. Crown bypass covers empty air above complete model only.
+Typecheck/lint/unit1783web+1020rules/build/E2E421 PASS first run. Idle-clock test unchanged.
+Native16casts max16.8ms; peak128draws/176533tris; CPU4cold199.9ms vs233.4 PASS.
+OFF pixels exact; startup11chunks/3522500bytes/same sizes+modules/0Three.
+Demo9793d01f0f91/29132360bytes; six source-bound DPR1 shots, face sheet and natural20s H264 after clip.
+Thumbnail ffmpeg failure retained; Pillow recovery from original completed clip, no recapture. Initial hash not saved, not claimed.
+Evidence24.95MB total/3.75MB additional; receipt JSON losslessly gzipped, startup PNGs losslessWebP.
+No active B job or timing lease. Draft publication/B-OUTBOX DONE next.
+User follow-up supersedes V0 STOP: native fixture wait then V3 automatically.
+Wait script: tools/cardrpg-look/skills-v5/wait-fixture.sh; timeout1200 chunks; V5_WAIT_SINCE persists; total36h.
+While waiting: no browser/lock/other file changes; only single STATE waiting line between chunks.
+A V5A-S4 DONE events v2 fixture observed2026-11-09T01:51Z; polling script will confirm after V0.1 publication.
+Then read published branch via git fetch/git show only; no checkout or A-owned edits.
+V3 branch codex/cardrpg-v5look-v3-2026-11-09 on V0.1; V3a->b->c->d; docs/cardrpg-look/v5.html.
+V3 remains fixture presentation only; real skillsV5 ON integration later. Schema differences require B-OUTBOX ANSWER.
+After V3 report/demo/draft/B-OUTBOX DONE, stop. If fixture wait36h expires, append V3 NOT STARTED and stop.
+Full constraints: PROMPT.txt plus user V0.1 follow-up in current chat.
