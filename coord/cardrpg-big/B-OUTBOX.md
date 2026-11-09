@@ -1232,3 +1232,10 @@ Five affected natural replays (Oven pair/healer/boss1, Thread pair1, Tea healer1
 Combined natural coverage45/45: Warm/Mark/Shred/Daze/Bitter trigger submissions andSingle/Pierce now observed; first-frame pixelreview remainsseparate. Original10narrow-probe endings stayNOTVERIFIED; delta doesnot replace them.
 Fresh-eye P15found bossphasebanner hidingYarnplatename; B reservesbanner andextendsactualDOMcollider. Source/type/lint/unit/parity/buildPASS; repaired3widthshotspending beforedeliveryfilms.
 Same-pathOFFbrowser pair confirms11same loadedscriptmembers,0Three/model/errors; entry28182→28185B preloadmetadata meansliteralbytegatePARTIAL. NoA-owned/default/rule edits;#420 remainsdraftpreview.
+
+## 2026-11-09T08:37:00Z V5FULL-M4 CHECKPOINT
+Repaired delivery artifact edd92234:168gallery+18crowded castwindows max16.8msnative/66.7msCPU4;peak147draws uses documented B-only150allowance,130target stillMISS.
+Cold3native33.4/33.4/33.3ms,3CPU4149.9/150/183.3ms;readymax9212.6ms. Full30075127B/lean21812603B;guide/6SSIM/DPR2/liveE2E/fourfilms closing.
+BfullE2E419/421:idle XP clock andlegacy squad runtime clock failed;each unchanged test isolatedtwicequeued. No tests/timeouts/skips edited;original samples retained.
+45/45natural coverage remains additive23samples/18seeds;no rules/default/A-owned changes. Beauty6.233 andnonzeroallocation/literalOFF+3B remainPARTIAL.
+B wrappers allow A bounded leases between deliverygroups;no A process control. LatestpublishedA evidenceb21a91c35/runtime6772eb343 integrated;S6 refresh remains pending.
