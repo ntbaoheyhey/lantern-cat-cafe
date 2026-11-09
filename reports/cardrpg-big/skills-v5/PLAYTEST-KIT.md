@@ -23,7 +23,7 @@ Please answer these eight questions:
 3. Did you see Crumb Burst, Wildfire, Rupture or Spread? Which cat caused it, and why? If Cinnamon used Second serving without a fallen ally, could you tell what it did?
 4. What did your first equipment change do? Was that visible in the next result?
 5. After a loss, what specific change did the game offer? Was it available to you?
-6. Where did you wait too long, lose track of the next step, or struggle to read?
+6. Where did you wait too long, lose track of the next step, or struggle to read? Did any companion repeat one move too often?
 7. Rate 1–10: would you return tomorrow, did choices matter, did you understand the outcome, and was anything exciting? Give one reason for each.
 8. What is the single change you most want before playing again?
 

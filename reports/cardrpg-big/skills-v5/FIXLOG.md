@@ -169,3 +169,9 @@ Addendum received during S5. TRAIN remains 1–500. Existing baseline slices con
 - Attribution: skill availability is ruled out in this fixed replay set; the automatic evaluator ranks other legal choices higher. Ranked unresolved causes: (1) immediate damage/removal value outweighs preventive support; (2) shield value is capped and discounted; (3) existing support companions already supply protection. The individual score contributions have not been causally ablated.
 - Smallest next candidate: value the distinct prevention window of these later skills, or a targeted basic cooldown with paired pacing checks. Broad cooldown changes already regressed normal rounds17.967 and stay REJECTED. Three S5 design packages are exhausted; no fourth numeric attempt.
 - Verification: source hashes and every replay hash match the selected build. OFF8250 and fallback180+45 remain exact in `s5-selected/audit.json`; affected full A5 matrices continue on that same source. Retain PARTIAL and revisit with the completed balance evidence before S6.
+
+## S5-GATE-REPORTER-SYNTAX — report-only template escaping (FIXED)
+- Reproduce: `node --check tools/cardrpg-big/skills-v5/record-gate-misses.mjs`; original script/log retained under `s5/gate-reporter-preflight/attempt-1.*`. Double-escaped Markdown backticks terminated the JavaScript template. No reporting or sample execution occurred.
+- Smallest fix: use ordinary escaped backticks. Re-run parser preflight before using the reporter. Production rules, registered matrices and OFF/ON receipts are unchanged; this tool only appends measured misses after receipt closure.
+
+- S5-GATE-REPORTER-SYNTAX verification: parser correction passes (`s5/gate-reporter-preflight/correction-1.log`). S8 observation-miss reporter also parses. Both tools read completed receipts only; no samples or runtime changes. The prepared S8 display table now reads selected TRAIN correlations, preserving the before values separately.

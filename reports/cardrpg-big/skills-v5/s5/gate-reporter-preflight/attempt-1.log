@@ -1,0 +1,8 @@
+/Users/bao/taskbar-hero-cardrpg-a4/tools/cardrpg-big/skills-v5/record-gate-misses.mjs:39
+ const entry=`\n${title}\n- Reproduce: fixed ${phase==='s5'?'TRAIN1–500':'acceptance20001–20500'}, \\`node tools/cardrpg-big/skills-v5/numeric-gates.mjs ${current}\\`; registered cases and saved outcomes: \\`${row.source}\\`. Gate unchanged: ${row.target}.\n- Measure: before ${format(old)}; after ${format(row)}. ${old?.status==='PASS'?'Regression from an earlier PASS.':'Original MISS is retained.'} Full per-skill/per-crew details remain in \\`${current}/DESIGN-REPORT.md\\`.\n- Ranked hypotheses (not isolated causal estimates): ${hypotheses}\n- Smallest next fix: ${next} ${phase==='s5'?'Three S5 design packages are already retained; no fourth candidate is introduced by this report.':'No retune after seeing this acceptance block. A future changed candidate requires TRAIN work and registered30001–30500.'}\n- Verification/status: full affected matrices and both mode-compatibility checks are recorded in \\`${current}/receipt-audit.json\\` and \\`${root}/${phase==='s5'?'s5-selected':'s6'}/audit.json\\`; current gate remains **PARTIAL / MISS**. Passing source/hash checks do not override it.\n`;
+                                                                                                      ^^^^
+
+SyntaxError: Unexpected identifier 'node'
+    at checkSyntax (node:internal/main/check_syntax:84:5)
+
+Node.js v24.22.2
