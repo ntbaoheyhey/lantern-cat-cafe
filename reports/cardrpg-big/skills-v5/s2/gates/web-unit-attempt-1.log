@@ -1,0 +1,19 @@
+{"lock":"acquired","lane":"A","pid":82301,"startedAt":"2026-11-09T01:09:48.763Z","task":"V5A s2 web-unit"}
+
+> @taskbar-hero/web@0.0.0 test /Users/bao/taskbar-hero-cardrpg-a4/apps/web
+> vitest run
+
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-a4/apps/web
+
+
+ Test Files  184 passed (184)
+      Tests  1783 passed (1783)
+   Start at  08:09:49
+   Duration  23.94s (environment 49%, tests 38%, import 11%, transform 2%)
+
+Environment  jsdom was created 184 times · 115.62s total, 49% of tracked time
+             create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+             learn more: https://vitest.dev/guide/improving-performance#test-environments
+
+{"lock":"released","pid":82301,"task":"V5A s2 web-unit"}
