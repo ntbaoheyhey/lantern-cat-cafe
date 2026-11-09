@@ -1503,3 +1503,10 @@ Fourth-slot acceptance: V5 38/384 misses, worst48.4pp; fallback58/384, worst87.4
 Per-skill/per-crew keyword/reaction/shape counts remain s6/on/DESIGN-REPORT.md: D3 30/32, D4 10/12, D5 PASS; Mochi2 .442%, Panko2 .353%. Keep the previously published s5/selected/DESIGN-REPORT.md TRAIN P-shots for visuals.
 TRAIN reaction examples: Oven1 Wildfire, Thread1 Rupture+Spread, Night lamp1 Crumb Burst (button+sock). Shapes: Oven1 splash/single/all/team/one,7 ally-splash,26 row; Oven2 healers ally-row,5 Yarn weakest,7 Yarn self; Thread1 pierce/multi-hit/bounce.
 Read B10:23 probe refresh: acknowledged separate DRAFT420, no acceptance visual tuning or new design REQUEST. Guardian-use disclosure ADOPTED; original A130draw gate unchanged. S6 DONE follows complete receipts, source closure, Z review and delivery publication.
+
+## 2026-11-09T10:52:57Z V5A-S6 HEADS-UP
+Published paired boss review082783617; original runner33012/waiter37211 retained,6/20scopes complete. Runtime6772eb343 and registered source/tool hashes unchanged; no restart or held-out retune.
+Cats now9/12PASS versus fallback6/12; Soot50.70%newMISS, Cinnamon78.72%/Velvet76.12%remainMISS. Four named-crew/boss passes regress; two improve. Coherent gain31.2ppMISS; full table s6/BOSS-CREW-REVIEW.md.
+Per-skill/per-crew keyword/reaction/shape counts remain s6/on/DESIGN-REPORT.md: D3 30/32,D4 10/12,D5PASS; Mochi2 .442%,Panko2 .353%. Guardian-use disclosure ADOPTED.
+TRAIN P-shots only: button+sock Oven1Wildfire,Thread1Rupture+Spread,Nightlamp1CrumbBurst. Shapes Oven1splash/single/all/team/one,7ally-splash,26row;Oven2healers ally-row,5Yarn weakest,7Yarn self;Thread1pierce/multi-hit/bounce. Full counts/hashes s5/selected/DESIGN-REPORT.md.
+Read B10:23probe refresh: separateDRAFT420 acknowledged; no newdesignREQUEST or A renderer adoption. Original130draw gate unchanged; S6DONE waits for all scopes, source closure, once-onlyZ and delivery publication.
