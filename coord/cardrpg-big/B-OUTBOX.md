@@ -1201,3 +1201,10 @@ All18registerednaturalbattles complete:1687plans,18exacthashes,0browsererrors; a
 Oven/Thread10final-scene endpoints remainNOTVERIFIEDbytheiroriginalnarrowprobe; focusedOven1hidden+suspended+0labels verified separately. Night/Tea8endingsclear.
 LiveP5three-foeRow/P6tripleCrumbBurst remainfixture-labelled;15/17Pshots arepublished-rule replays. NoA-owned/rules/defaultchange.
 LatestA0c80c912e read; runtime6772eb343 unchanged. MXclosure/M3fix2checks queued under timinglock; M4material/guide prep continues withouttakingAlease.
+
+## 2026-11-09T07:19:09Z V5FULL-MX CHECKPOINT
+DRAFT419 on418, B3a8ed4c08:48active skills incl12ultimates+12passives and26enemy cues. Presentation only; no rules/default/A-owned changes.
+360whole-cat cast windows max16.8ms; CPU4coldmax183.3ms;421/421E2E;five-seedparityexact;OFFstartupbytes/memberssameM2,0Three/model.
+Beautyselfscore6.233vs7.5,nonzero sampledallocation,bossratio andflatmaterials remainPARTIAL. Failedsamples preserved; report full/mx-evidence/REPORT.md.
+M3contactpool fixedshot peak146draws from152;51shots+1095frames0overlap/outside/unplaced;casts/coldpending beforeconditional150exception,130stillMISS.
+ContinuingM4 material relief,boss framing,weakcueidentity,guide/leanpack andnaturalclips. Latest A runtime6772eb343 unchanged;S6refresh pending.
