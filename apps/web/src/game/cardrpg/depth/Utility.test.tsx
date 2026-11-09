@@ -23,7 +23,8 @@ it('keeps reviewer shortcuts reachable under explicit dev=1', () => {
   fireEvent.click(screen.getByRole('button', { name: 'Advance fixture day' }));
   expect(m.state.account.day).toBe(day + 1);
 });
-it('preserves the legacy offline shortcut panel with GameplayV4 off', () => {
+it('preserves the legacy offline shortcut panel with explicit dev=1', () => {
+  window.history.replaceState(null, '', '?dev=1');
   const m = new DepthModel(true, false);
   render(<SaveSettings m={m} />);
   for (const name of grants) expect(screen.getByRole('button', { name })).toBeTruthy();

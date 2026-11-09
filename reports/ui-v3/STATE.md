@@ -12,3 +12,6 @@ Decision: navigation gate counts distinct primary destinations (Cats, Team, Bag,
 U0 G1 PASS: typecheck, lint, 1865 web tests, build. Published baseline E2E421/421 (#420 M4 delivery2); current complete run scheduled at U9. Protected rules/model231 files byte-identical to S6; exact three hashes in compatibility.json.
 
 U0 complete:56 before WebP captures,0 browser errors;2.7MB evidence. Next U1 shell/flag.
+
+U0 draft#428, headf2df22b20. U1 shell opt-in implemented; repairing keyboard return focus before publish.
+U1 shell tests2/2PASS after focus repair. G1 repair PASS (1867webtests). Legacy reviewer fixture now explicitly opts into dev=1, as required by this prompt. New shell lazy-loaded; old rail retained under ui=legacy. Proceed U2 after phase publication.

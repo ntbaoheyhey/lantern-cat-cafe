@@ -1,4 +1,4 @@
-/** Review controls are opt-in for Gameplay v4; historical mode keeps its shell. */
-export function showReviewTools(v4: boolean, search = typeof location === 'undefined' ? '' : location.search): boolean {
-  return !v4 || new URLSearchParams(search).get('dev') === '1';
+/** Player shells expose review tools only through an explicit dev=1. */
+export function showReviewTools(_v4: boolean, search = typeof location === 'undefined' ? '' : location.search): boolean {
+  return new URLSearchParams(search).get('dev') === '1';
 }

@@ -7,8 +7,9 @@ describe('Gameplay v4 review tools', () => {
     expect(showReviewTools(true, '?dev=1')).toBe(true);
     expect(showReviewTools(true, '?theme=classic&dev=1')).toBe(true);
   });
-  it('keeps the historical shell available with Gameplay v4 off', () => {
-    expect(showReviewTools(false, '')).toBe(true);
-    expect(showReviewTools(false, '?dev=0')).toBe(true);
+  it('requires explicit opt-in in the historical shell too', () => {
+    expect(showReviewTools(false, '')).toBe(false);
+    expect(showReviewTools(false, '?dev=0')).toBe(false);
+    expect(showReviewTools(false, '?dev=1')).toBe(true);
   });
 });

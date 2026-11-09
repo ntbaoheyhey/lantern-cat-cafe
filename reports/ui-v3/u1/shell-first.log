@@ -1,0 +1,51 @@
+{"lock":"acquired","lane":"U","pid":27424,"startedAt":"2026-11-09T22:13:11.611Z","task":"ui-v3-u1-shell"}
+
+Running 2 tests using 1 worker
+
+(node:27444) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 ../../tools/ui-v3/specs/shell.spec.ts:2:5 › v3 shell has five dock buttons, six primary destinations and no rail (16.1s)
+(node:27530) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  2 ../../tools/ui-v3/specs/shell.spec.ts:10:5 › legacy opt-out still renders the original rail (485ms)
+
+
+  1) ../../tools/ui-v3/specs/shell.spec.ts:2:5 › v3 shell has five dock buttons, six primary destinations and no rail 
+
+    Error: expect(locator).toBeFocused() failed
+
+    Locator:  getByRole('button', { name: 'Cats', exact: true })
+    Expected: focused
+    Received: inactive
+    Timeout:  15000ms
+
+    Call log:
+      - Expect "toBeFocused" getByRole('button', { name: 'Cats', exact: true }) with timeout 15000ms
+      - waiting for getByRole('button', { name: 'Cats', exact: true })
+        34 × locator resolved to <button data-home-destination="Cats">…</button>
+           - unexpected value "inactive"
+
+
+       5 |  await expect(page.getByRole('button',{name:'Night Patrol'})).toBeVisible();
+       6 |  await page.getByRole('button',{name:'Cats',exact:true}).click();await expect(page.getByRole('dialog',{name:'Cats'})).toBeVisible();
+    >  7 |  await page.keyboard.press('Escape');await expect(page.getByRole('dialog')).toHaveCount(0);await expect(page.getByRole('button',{name:'Cats',exact:true})).toBeFocused();
+         |                                                                                                                                                            ^
+       8 |  await page.getByRole('button',{name:'Relic · Fuji',exact:true}).click();await expect(page.getByRole('dialog',{name:'Bag'})).toBeVisible();await expect(page.locator('.uv-tabs button[aria-current]')).toHaveText('Relics');
+       9 | });
+      10 | test('legacy opt-out still renders the original rail',async({page})=>{await page.goto('?ui=legacy');await expect(page.getByRole('navigation',{name:'Cafe screens'})).toBeVisible();await expect(page.locator('.uv-shell')).toHaveCount(0)});
+        at /Users/bao/taskbar-hero-ui-v3/tools/ui-v3/specs/shell.spec.ts:7:156
+
+    Error Context: ../../reports/ui-v3/test-results/shell-v3-shell-has-five-do-3b21c-ry-destinations-and-no-rail/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../reports/ui-v3/test-results/shell-v3-shell-has-five-do-3b21c-ry-destinations-and-no-rail/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace ../../reports/ui-v3/test-results/shell-v3-shell-has-five-do-3b21c-ry-destinations-and-no-rail/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    ../../tools/ui-v3/specs/shell.spec.ts:2:5 › v3 shell has five dock buttons, six primary destinations and no rail 
+  1 passed (17.3s)
+{"lock":"released","pid":27424,"task":"ui-v3-u1-shell"}
