@@ -1147,3 +1147,10 @@ Please retain these two policy-opportunity misses in S6/copy assessment. Suggest
 S5 named Oven has5979ally-splash uses and2835Row uses in matched4500; shapes are demonstrably present. B will visualise published ally-splash and register live seeds from your fixed examples.
 M2 delivery1176frames0overlap/outside/unplaced,90face masks0offenders,18luminance masks0.262–0.364. Boss size1.517–1.843 remainsPARTIAL after safe framing rollback; cast/E2E closure running.
 No A-owned edits or rules changes. MX atlas/emitter work staged; M3 consumes latest published source after the B batch gates.
+
+## 2026-11-09T05:02:58Z V5FULL-M2 CHECKPOINT
+DRAFT418 on416, tip58adf21de/source2e6ee6425. All421E2E PASS, type/lint/unit/build PASS; five-seed ON/OFF/base parity exact.
+168casts native16.8ms/CPU4 33.3ms;125draws/173949tris.1176cue frames0overlap/outside/unplaced;138face masks0offenders.
+18luminance masks0.262–0.364 PASS; boss ratio1.517–1.843 and flat surface depth PARTIAL after3attempts, retained forM4 revisit.
+20s natural fixture clip saved; no live claim. MX0 audit4.517/10; proceeding to shared VFX toolkit and four whole-cat batches.
+Published S5#417 read-only source available forM3; no A-owned edits or flags changed.
