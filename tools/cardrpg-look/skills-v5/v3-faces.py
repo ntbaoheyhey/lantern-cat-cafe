@@ -1,11 +1,12 @@
 """Apply the unchanged V0.1 protected-face metric to the two new V3 statuses."""
 from pathlib import Path
-import json
+import gzip, json
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 
 out = Path('reports/cardrpg-look/skills-v5/v3')
-data = json.loads((out / 'after-browser.json').read_text())
+source = out / 'after-browser.json'
+data = json.loads(source.read_bytes() if source.exists() else gzip.decompress(Path(str(source) + '.gz').read_bytes()))
 font = ImageFont.truetype('/System/Library/Fonts/Supplemental/Arial.ttf', 19)
 small = ImageFont.truetype('/System/Library/Fonts/Supplemental/Arial.ttf', 14)
 sheet = Image.new('RGB', (800, 360), '#102129')
