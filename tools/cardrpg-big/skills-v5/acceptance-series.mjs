@@ -7,6 +7,7 @@ import assert from 'node:assert/strict';
 const root='reports/cardrpg-big/skills-v5',out=root+'/s6',json=async p=>JSON.parse(await readFile(p,'utf8'));
 const reg=await json(root+'/REGISTERED-METHOD.json'),sha=b=>createHash('sha256').update(b).digest('hex');
 assert.equal(reg.block,'20001–20500');
+assert.equal(sha(await readFile(root+'/PRE-S6-REVISIT.md')),reg.repairReviewSha256,'Pre-S6 repair review changed after registration');
 for(const [p,h]of Object.entries({...reg.source,...reg.tools}))assert.equal(sha(await readFile(p)),h,p);
 const run=async(args,env,log)=>{const fd=await open(log,'wx');try{return await new Promise((done,reject)=>{const c=spawn(process.execPath,args,{env:{...process.env,...env},stdio:['ignore',fd.fd,fd.fd]});c.on('error',reject);c.on('close',done);});}finally{await fd.close();}};
 for(const scope of reg.scopes)for(const mode of ['on','off']){

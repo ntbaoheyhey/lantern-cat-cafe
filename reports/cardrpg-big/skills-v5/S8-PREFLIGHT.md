@@ -11,6 +11,7 @@ The user addendum is already saved verbatim in `ADDENDUM-SKILLDESIGN.md` and rec
 - Home remains one fresh save and one persistent browser for 60 active minutes, with the inherited Home03 public-click policy, natural x1 battles, bounded shared-lock leases and retained handoff times. No second hour is preauthorised by this document.
 - Startup uses the exact checked main and selected builds, three fixed alternating observations per configuration. Every sample is retained.
 - S6 registration binds both modes, all cases, tools, rule bytes and the TRAIN-selected crew before the first seed in 20001–20500. The source A5 registration file is absent; its exact prompt gate text is copied and that absence disclosed. No fabricated historical registration.
+- S6 registration now requires the completed S8 report and `PRE-S6-REVISIT.md`; it records the review hash, checked before the acceptance runner starts. The review must be written from completed S8 observations. This is a local evidence prerequisite, not an approval request or a new sample.
 - The existing 23 keyword-attribution replays reproduce their saved hashes. They are diagnosis of TRAIN observations, not new samples or a fourth S5 design attempt.
 
 After S5 reports its self-score, make its two weakest lines the first S8 review items. Revisit every open repair once before S6; retain failures and do not alter gates, sample blocks or denominators. Lane B's latest M2 checkpoint consumes published DRAFT417; it contains no new skill-design REQUEST.
