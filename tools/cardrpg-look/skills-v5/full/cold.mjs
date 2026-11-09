@@ -5,6 +5,8 @@ import { createHash } from 'node:crypto';
 import { gzipSync } from 'node:zlib';
 
 const baseline = process.argv.includes('--baseline');
+const live = process.env.V5_LIVE === '1';
+const liveSetup = live ? JSON.parse(await readFile(process.env.V5_REGISTRATION))[0].setup : null;
 const output = process.env.BIG_OUT || `reports/cardrpg-big/${baseline ? 'baseline' : 'performance'}`;
 const file = resolve(process.env.BIG_ARTIFACT || (baseline ? 'docs/cardrpg2/index.html' : 'docs/cardrpg3b/index.html'));
 const artifactBytes = await readFile(file);
@@ -61,7 +63,7 @@ try {
       await page.screenshot({ path: `${output}/${name}-${label}.png` });
       await mark(`capture-${label}-end`);
     };
-    await page.goto('file://' + snapshotFile);
+    await page.goto('file://' + snapshotFile + (live ? '?dev=1' : ''));
     await page.getByRole('heading', { name: 'A small light. A brave little team.' }).waitFor({ timeout: 60000 });
     await mark('hub-interactive');
     await capture('hub');
@@ -71,6 +73,10 @@ try {
       await capture('map');
       await page.locator('.dp-node:enabled').first().click();
       await mark('fight-click');
+    } else if (live) {
+      await page.waitForFunction(() => window.__depthReview && window.__v5LiveStart);
+      await page.evaluate(setup => { window.__v5LiveStart(setup, 1); const m=window.__depthReview; m.paused=false; m.notify(false); }, liveSetup);
+      await mark('live-registered-start');
     } else {
       await page.getByRole('button', { name: 'Watch a battle now' }).click();
       await mark('fight-click');
@@ -129,5 +135,5 @@ try {
 } finally {
   await browser.close();
   await rm(snapshotDirectory, { recursive: true, force: true });
-  await writeFile(`${output}/summary.json`, JSON.stringify({ date: new Date().toISOString(), artifact: file, sha256: createHash('sha256').update(artifactBytes).digest('hex'), captureScreenshots, method: 'Inherited full-page harness with each scenario traced. Fresh file URL, fresh browser context, cache disabled, RAF and trace begin before navigation. Real mouse clicks. CPU throttle affects CPU only. Raw load frames are retained.', rows }, null, 2));
+  await writeFile(`${output}/summary.json`, JSON.stringify({ date: new Date().toISOString(), artifact: file, sha256: createHash('sha256').update(artifactBytes).digest('hex'), captureScreenshots, liveRegisteredStart: live, method: (live ? 'Dev-gated registered real battle start; no menu-click time included. ' : '') + 'Inherited full-page harness with each scenario traced. Fresh file URL, fresh browser context, cache disabled, RAF and trace begin before navigation. Real mouse clicks. CPU throttle affects CPU only. Raw load frames are retained.', rows }, null, 2));
 }
