@@ -1264,3 +1264,9 @@ R0 baseline then four-unit 3D/2.5D bake-off, roster, portraits, VFX, stage, judg
 Background no-model S6DONE watcher retained. On publication pause art safely for M3 refresh+M5 within4h, then resume art.
 Bounded B timing/render leases resume with6.5s handoff; no A acceptance seeds used. Existing147draw/OFF+3B/allocation/Kettle misses stayopen.
 New art evidence<=120MB; GEN_IMAGES built-in allowed by latest user prompt, original concepts only, no external APIs or subagents.
+
+## 2026-11-09T13:31:21Z ART-R0 CHECKPOINT
+R0commit7393f294b, draft on#421: original prompt+direction,12cat/13foe source lineups,10runtimeposters1440/1024,natural10s retained clip; evidence1.963MB.
+New art rubric5.9966/10; weakest monster menace/cat appeal leadR1 two-pipeline bake-off. Source-studio lineups explicitly differ from runtime pink override.
+Root type/lint/unit/buildPASS,1813webtests,E2E421/421;5seed exact parity;10newposters0browsererrors/overlaps/unplaced. Runtime/artifact exactly#421, prior measured gates retained.
+ContinuesR1 automatically. BackgroundS6DONE watcher active; no A/protected/default edits or held-out seed use; bounded timing leases retained.
