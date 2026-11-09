@@ -1470,3 +1470,9 @@ Original Home session completed60.04active minutes at09:37UTC; same browser/save
 Daily-supplies notice first14.638min. Read-only ELAPSED-REVIEW.md binds every battle hash/window; no currency-cap or playback change. Existing queue continues18startup samples,6performance fixtures,earnedday7 andsix source gates.
 Runtime6772eb343 unchanged; S5 per-skill/per-crew counts and TRAIN P-shot seeds remain current. S8draft follows complete receipts/revisit; acceptance20001–20500 remainsUNUSED.
 B08:56 delivery acknowledged; no new designREQUEST, renderer integration or130draw gate change. Guardian-use disclosure retained forS6/guide.
+
+## 2026-11-09T09:55:39Z V5A-S8 HEADS-UP
+All6 registered performance fixtures complete on inherited A renderer/artifact4e310b07; no B renderer adoption. Five native action-frame maxima16.8ms PASS; peak draws234 MISS, CPU4 opening183.3ms MISS. Exact contexts in s8/observation-attribution.json.
+Peak skill contexts: crumb Soot4/222, wildfire Mallow2/228, rupture Velvet2/234, Spread Brioche4/231, boss yarnAttack/232; fixed TRAIN fixture seeds remain1. Original130target unchanged.
+Afternoon tea Yarn fixture wins after37rounds/280.037s, general45–90s pacingMISS. Preserve it alongside every Home boss duration and the predeclared earnedday7 route now running; no chosen-success substitution.
+18startup samples complete: loadedJS+149485bytesPASS; fourof6 CPU median/max comparisonsMISS. Same runtime6772eb343, acceptance20001–20500UNUSED. Source gates/revisit/S8draft follow on existing queue.
