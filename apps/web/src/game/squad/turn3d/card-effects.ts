@@ -2,6 +2,8 @@ import { CARD_STATUS_LOOKS, CRUMB_BURST_LAYER, V5_CUE_LAYERS } from './card-stat
 import type { ReactionBeat, LandingBeat } from './card-v5-events';
 import type { StatusPresentation } from './card-status-beats';
 import type { VisualStatusId } from './card-status-data';
+import { lookWarmQueue } from './look-warm-queue';
+import { loadingFrame } from './loading';
 import { isReadableBattle } from './look-b2';
 import { LookVfx } from './look-vfx';
 import { LAB_EFFECT_RECIPES } from './card-lab-effects';
@@ -81,6 +83,14 @@ export class CardEffects {
   private material: T.ShaderMaterial;
   private pools = new Map<CardEffectPrimitive, PrimitivePool>();
   private disposed = false;
+  private deferred:PrimitivePool[]=[];
+  private deferredRenderer?:T.WebGLRenderer;
+  private deferredCamera?:T.Camera;
+  private warmed=new Set<PrimitivePool>();
+  private compiled=new Set<T.Material>();
+  private deferScene=new T.Scene();
+  private deferredTarget=new T.WebGLRenderTarget(1,1);
+  private deferredViewport=new T.Vector4();
   private look?: LookVfx;
   private flash = 0;
   private mark = 0;
@@ -131,9 +141,15 @@ export class CardEffects {
       await this.look.prepare(() => this.disposed);
       if (this.disposed) return;
     }
-    for (const primitive of CARD_EFFECT_PRIMITIVES) {
-      await nextTask();
-      if (this.disposed) return;
+    if(this.atelier) {
+      await Promise.all(CARD_EFFECT_PRIMITIVES.map(primitive =>
+        lookWarmQueue.enqueue(`geometry:${primitive}`,()=>this.createPool(primitive),()=>this.disposed)));
+    } else for(const primitive of CARD_EFFECT_PRIMITIVES) {
+      await nextTask();if(this.disposed)return;this.createPool(primitive);
+    }
+  }
+
+  private createPool(primitive:CardEffectPrimitive) {
       const base = createCardPrimitive(primitive);
       const geometry = this.look?.geometry(base, primitive) ?? base;
       const phase = this.look ? new T.InstancedBufferAttribute(new Float32Array(CARD_EFFECT_BUDGET.perPrimitive), 1) : undefined;
@@ -155,7 +171,6 @@ export class CardEffects {
       mesh.visible = false;
       this.root.add(mesh);
       this.pools.set(primitive, { mesh, alpha, phase, flash, mark });
-    }
   }
 
   async warm(renderer: T.WebGLRenderer, camera: T.Camera) {
@@ -174,7 +189,13 @@ export class CardEffects {
     this.transform.updateMatrix();
     try {
       renderer.setRenderTarget(target);
-      for (const { mesh, alpha, phase, flash, mark } of this.pools.values()) {
+      const essentials=new Set(Object.values(CARD_STATUS_LOOKS).flatMap(s=>[s.layer.primitive,s.apply.primitive,s.tick.primitive]));
+      essentials.add('knock-ring');
+      for (const pool of this.pools.values()) {
+        const { mesh, alpha, phase, flash, mark }=pool;
+        if(this.atelier&&!essentials.has(mesh.name as CardEffectPrimitive)){
+          this.deferred.push(pool);continue;
+        }
         if (this.disposed) break;
         mesh.visible = true;
         mesh.count = 1;
@@ -187,21 +208,54 @@ export class CardEffects {
         if(mark)mark.needsUpdate = true;
         for (const destination of [target, null]) {
           renderer.setRenderTarget(destination);
-          await renderer.compileAsync(scene, camera);
+          const start = performance.now();
+          await renderer.compileAsync(this.atelier ? mesh : scene, camera, scene);
+          if (this.atelier) performance.measure(`look-prewarm:pool:${mesh.name}`, { start });
           if (this.disposed) break;
           renderer.render(scene, camera);
-          await nextTask();
+          await (this.atelier ? loadingFrame() : nextTask());
         }
+        this.warmed.add(pool);this.compiled.add(mesh.material);
         mesh.visible = false;
         mesh.count = 0;
-        await nextTask();
+        await (this.atelier ? loadingFrame() : nextTask());
       }
+      if(this.atelier)for(const {mesh} of this.deferred){
+        if(this.compiled.has(mesh.material))continue;
+        for(const destination of [target,null]){
+          renderer.setRenderTarget(destination);
+          await renderer.compileAsync(mesh,camera,scene);
+          await loadingFrame();if(this.disposed)return;
+        }
+        this.compiled.add(mesh.material);
+      }
+      this.deferredRenderer=renderer;this.deferredCamera=camera;
     } finally {
       renderer.setRenderTarget(previous);
       target.dispose();
       this.root.removeFromParent();
       if (parent && !this.disposed) parent.add(this.root);
     }
+  }
+
+  /** Optional reaction/shape and gallery geometry uploads run after Ready.
+   * Shared family shaders, statuses and stagger impacts are already warm. */
+  warmDeferred(){
+    for(const pool of this.deferred)void lookWarmQueue.enqueue(`deferred:${pool.mesh.name}`,()=>this.warmOne(pool),()=>this.disposed).catch(()=>undefined);
+  }
+  private warmOne(pool:PrimitivePool){
+    if(this.warmed.has(pool)||this.disposed||!this.deferredRenderer||!this.deferredCamera)return;
+    const renderer=this.deferredRenderer,mesh=pool.mesh,parent=mesh.parent;
+    const target=renderer.getRenderTarget(),viewport=renderer.getViewport(this.deferredViewport);
+    const count=mesh.count,visible=mesh.visible;
+    // Empty pools contain no live instances. First-use fallback runs before
+    // the first instance is written, so its scratch matrix cannot erase a hit.
+    this.deferScene.add(mesh);mesh.visible=true;mesh.count=1;
+    this.transform.position.set(0,0,0);this.transform.rotation.set(0,0,0);this.transform.scale.setScalar(1);this.transform.updateMatrix();
+    mesh.setMatrixAt(0,this.transform.matrix);mesh.instanceMatrix.needsUpdate=true;
+    pool.alpha.setX(0,0);pool.alpha.needsUpdate=true;
+    try{renderer.setRenderTarget(this.deferredTarget);renderer.setViewport(0,0,1,1);renderer.render(this.deferScene,this.deferredCamera);this.warmed.add(pool);}
+    finally{mesh.count=count;mesh.visible=visible;if(parent)parent.add(mesh);renderer.setRenderTarget(target);renderer.setViewport(viewport);}
   }
 
   get impactCenter() {return this.look?.impact;}
@@ -423,6 +477,10 @@ export class CardEffects {
   private place(layer: CardEffectLayer, progress: number, index: number, count: number,
     camera: T.Camera, calm: boolean, persistent = false) {
     const pool = this.pools.get(layer.primitive);
+    if(pool&&this.atelier&&!this.warmed.has(pool)&&this.deferredRenderer){
+      const start=performance.now();this.warmOne(pool);
+      performance.measure(`look-prewarm:first-use:${layer.primitive}`,{start});
+    }
     if (!pool) return;
     const newPrimitive = pool.mesh.count === 0;
     if (this.stats.instances >= (this.atelier ? CARD_EFFECT_BUDGET.lookInstances : CARD_EFFECT_BUDGET.instances) || pool.mesh.count >= CARD_EFFECT_BUDGET.perPrimitive
@@ -542,7 +600,7 @@ export class CardEffects {
   }
 
   dispose() {
-    this.disposed = true;
+    this.disposed = true;this.deferredTarget.dispose();
     this.root.removeFromParent();
     for (const { mesh } of this.pools.values()) {
       mesh.geometry.dispose();

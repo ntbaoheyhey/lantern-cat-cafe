@@ -1,6 +1,4 @@
 import { applyV5Presentation, v5SourceForPlan, REACTION_WORDS } from '../../squad/turn3d/card-v5-events';
-import { targetCallout } from '../../squad/turn3d/card-callout-layout';
-import type { Rect } from '../../squad/turn3d/label-layout';
 import { StatusBadges } from '../../squad/turn3d/StatusBadges';
 import { statusPresentation, statusImpactLabels } from '../../squad/turn3d/card-status-beats';
 import { useEffect, useMemo, useRef, useState, useSyncExternalStore, type CSSProperties } from 'react';
@@ -58,6 +56,12 @@ export function BattleView({ m }: { m: DepthModel }) {
     history.events = m.plan ? v4?.events.filter(event => event.sequence > history.sequence) ?? [] : [];
     history.sequence = v4?.events.at(-1)?.sequence ?? -1; history.plan = m.plan;
   }
+  const results = useMemo(() => m.plan ? m.plan.targetIds.map(id => ({
+    id, name: battle.actors.find(candidate => candidate.id === id)?.name ?? id,
+    labels: (statusView ? statusImpactLabels(m.plan!,id,statusView) : impactLabels(m.plan!.events, id)).filter(event =>
+      ['damage', 'heal', 'shield', 'death', 'status_apply'].includes(event.type)
+      && (event.amount > 0 || event.type === 'death')),
+  })).filter(result => result.labels.length) : [], [m.plan, battle.actors, statusView]);
   // Resolve costume metadata when React receives a battle snapshot. The GPU
   // loop otherwise repeats catalog filters and object copies for every cat.
   const actors = project(battle);
@@ -68,6 +72,8 @@ export function BattleView({ m }: { m: DepthModel }) {
     autoBattle: true, effectOnly: !!m.galleryBattle && m.galleryEffectOnly,
     cardStatuses: Object.fromEntries(battle.actors.map(actor => [actor.id, lookV2 ? actor.statuses : actor.statuses.map(status => status.id)])),
     cardPresentation: statusView,
+    cardNumberRows: lookV2 ? Object.fromEntries(results.map(r=>[r.id,r.labels.length])) : undefined,
+    cardMoment: !!m.plan?.ultimate && battle.actors.find(a=>a.id===m.plan?.actorId)?.side==='party' && !m.galleryEffectOnly,
     rows: Object.fromEntries(battle.actors.map(actor => [actor.id, actor.row])),
     chapter: battle.chapter, camera: m.camera, playbackSpeed: m.state.settings.speed,
     bossPhases: Object.fromEntries(battle.actors.filter(a => R.ENEMY_BY_ID[a.catalogId]?.tier === 'boss').map(a => [a.id, a.phase])),
@@ -79,37 +85,27 @@ export function BattleView({ m }: { m: DepthModel }) {
     m.sceneReady = false;
     const currentAudio = m.audio;
     try {
-      const comboRects:Rect[]=[];
       const anchorPlates = (anchors: Anchor[]) => {
         const visible = new Set(anchors.filter(anchor => anchor.visible).map(anchor => anchor.id));
         for (const [id, plate] of plates.current) {
           if (!readable) plate.hidden = true;
           else if (plate.hidden === visible.has(id)) plate.hidden = !visible.has(id);
         }
-        comboRects.length=0;
-        const stage=host.current!;
-        if(lookV2&&callouts.current.size){
-        const stageBox=stage.getBoundingClientRect();
-        for(const anchor of anchors){
-          const plate=plates.current.get(anchor.id);
-          if(plate&&anchor.visible)comboRects.push({x:anchor.labelX-69,y:anchor.labelY,width:138,height:plate.offsetHeight||56});
-        }
-        const moment=stage.parentElement?.querySelector('.dp-ultimate-moment');
-        if(moment){const box=moment.getBoundingClientRect();comboRects.push({x:box.left-stageBox.left,y:box.top-stageBox.top,width:box.width,height:box.height});}
-        }
         for (const anchor of lookV2 ? [...anchors].sort((a,b)=>a.y-b.y) : anchors) {
           const number = numbers.current.get(anchor.id);
-          if (number) number.style.transform = `translate(${Math.max(0, anchor.x - 70)}px, ${Math.max(30, anchor.y - 28)}px)`;
           const callout = callouts.current.get(anchor.id);
-          if (callout) {
-            const placed=targetCallout(anchor.x,anchor.y,stage.clientWidth,stage.clientHeight,innerWidth<=1100?138:150,comboRects);
-            callout.dataset.placed=String(!!placed);
+          if(lookV2 && (callout||number)) {
+            // Hidden labels still reserve space for the whole cue window, so
+            // staggered hits never shuffle their neighbours while appearing.
+            const wordWidth=callout ? (callout.dataset.compact==='true'?38:innerWidth<=1100?138:150) : 0;
+            const numberWidth=number?110:0;
+            const placed=anchor.textLane;
+            for(const element of [callout,number])if(element)element.dataset.placed=String(!!placed);
             if(placed){
-              comboRects.push(placed);
-              const transform=`translate(${Math.round(placed.x)}px, ${Math.round(placed.y)}px)`;
-              if(callout.style.transform!==transform)callout.style.transform=transform;
+              if(callout)callout.style.transform=`translate(${Math.round(placed.x+(placed.width-wordWidth)/2)}px, ${Math.round(placed.y)}px)`;
+              if(number)number.style.transform=`translate(${Math.round(placed.x+(placed.width-numberWidth)/2)}px, ${Math.round(placed.y+(wordWidth?34:0))}px)`;
             }
-          }
+          } else if(number) number.style.transform=`translate(${Math.max(0,anchor.x-70)}px, ${Math.max(30,anchor.y-28)}px)`;
           const plate = plates.current.get(anchor.id);
           if (!plate) continue;
           const transform = `translate(${Math.round(anchor.labelX - 69)}px, ${Math.round(anchor.labelY)}px)`;
@@ -136,7 +132,7 @@ export function BattleView({ m }: { m: DepthModel }) {
       if (lookV2 && m.plan && statusViewRef.current) {
         const presentation = statusViewRef.current, impact = m.plan.beats[2]!.start;
         for (const [id,number] of numbers.current) {
-          const hidden = m.animationAt < impact + (presentation.offsets.get(id) ?? 0);
+          const hidden = m.animationAt < impact + (presentation.offsets.get(id) ?? 0) || number.dataset.placed==='false';
           if(number.hidden !== hidden)number.hidden = hidden;
         }
         for (const [id,callout] of callouts.current) {
@@ -178,12 +174,6 @@ export function BattleView({ m }: { m: DepthModel }) {
   }, [m]);
   const actor = battle.actors.find(candidate => candidate.id === m.plan?.actorId) ?? R.currentActor(battle);
   const action = [...(m.battle?.log ?? battle.log)].reverse().find(event => event.kind === 'action' || event.kind === 'enemy-action');
-  const results = useMemo(() => m.plan ? m.plan.targetIds.map(id => ({
-    id, name: battle.actors.find(candidate => candidate.id === id)?.name ?? id,
-    labels: (statusView ? statusImpactLabels(m.plan!,id,statusView) : impactLabels(m.plan!.events, id)).filter(event =>
-      ['damage', 'heal', 'shield', 'death', 'status_apply'].includes(event.type)
-      && (event.amount > 0 || event.type === 'death')),
-  })).filter(result => result.labels.length) : [], [m.plan, battle.actors, statusView]);
   const lowHealth = battle.actors.some(candidate => candidate.side === 'party' && candidate.hp > 0 && candidate.hp / candidate.maxHp <= .25);
   return <section className={`dp-battle ${lookV2 ? 'dp-v5look' : ''} ${m.state.settings.reducedMotion ? 'dp-calm' : ''} ${readable ? 'dp-readable' : ''} ${v4 ? 'dp-battle-v4' : ''} ${m.showBattle ? '' : 'dp-hidden'}`} aria-hidden={!m.showBattle} inert={!m.showBattle}>
     <header className="dp-battle-top"><div><small>{m.replay ? 'Recorded replay' : m.tutorialBattle ? 'Practice table' : R.CHAPTERS[battle.chapter - 1]!.name}</small><h1>Round {battle.round}</h1></div>
@@ -203,11 +193,16 @@ export function BattleView({ m }: { m: DepthModel }) {
       </span>)}<small>Actions are automatic</small></div>}
     {m.offline && new URLSearchParams(window.location.search).get('dev') === '1' && <FeelLab m={m} />}
     <div className={`dp-arena chapter-${battle.chapter} ${lowHealth ? 'dp-low-health' : ''} ${m.galleryBattle && m.galleryEffectOnly ? 'dp-effect-only' : ''}`}><div className="dp-canvas" ref={host} />
-      {readable && m.impactVisible && results.map(result => <div className="dp-float-number" key={`${m.plan?.skillId}-${result.id}`} ref={element => { if (element) numbers.current.set(result.id, element); else numbers.current.delete(result.id); }} aria-label={`${result.name} ${result.labels.map(label => `${label.type} ${label.amount}`).join(', ')}`}>
+      {readable && m.impactVisible && results.map((result,resultIndex) => <div data-secondary={lookV2 && resultIndex>0} data-number-target={result.id} className="dp-float-number" key={`${m.plan?.skillId}-${result.id}`} ref={element => { if (element) numbers.current.set(result.id, element); else numbers.current.delete(result.id); }} aria-label={`${result.name} ${result.labels.map(label => `${label.type} ${label.amount}`).join(', ')}`}>
         {result.labels.map((event, index) => <span className={`dp-number dp-number-${event.type} ${lookV2 && 'dot' in event && event.dot ? 'dp-number-dot' : ''} ${lookV2 && 'statusId' in event && event.statusId==='snag' ? 'dp-number-bleed' : ''} ${lookV2 && 'bitter' in event && event.bitter ? 'dp-number-bitter' : ''}`} key={index}>{event.type === 'death' ? 'KO' : event.type === 'status_apply' ? event.note : `${event.type === 'heal' ? '+' : event.type === 'shield' ? '◇' : '−'}${event.amount}`}{lookV2 && 'bitter' in event && event.bitter===true && <small> −50%</small>}</span>)}
       </div>)}
-      {lookV2 && statusView?.bursts.map(id => <div key={`${m.plan?.id}-${id}`} className="dp-combo-callout" data-combo-target={id} role="status" hidden
-        ref={element => { if(element)callouts.current.set(id,element);else callouts.current.delete(id); }}>{REACTION_WORDS[statusView.reactions?.find(r=>r.targetId===id)?.id??'crumb-burst']}</div>)}
+      {lookV2 && statusView?.bursts.map((id,index) => {
+        const reactionId=statusView.reactions?.find(r=>r.targetId===id)?.id??'crumb-burst';
+        const group=statusView.bursts.filter(target=>(statusView.reactions?.find(r=>r.targetId===target)?.id??'crumb-burst')===reactionId);
+        const compact=group.length>1&&group[0]!==id;
+        return <div key={`${m.plan?.id}-${id}`} className="dp-combo-callout" data-combo-target={id} data-compact={compact} data-order={index} role="status" aria-label={`${REACTION_WORDS[reactionId]} target ${index+1}`} hidden
+          ref={element => { if(element)callouts.current.set(id,element);else callouts.current.delete(id); }}>{compact?`×${group.length}`:REACTION_WORDS[reactionId]}</div>;
+      })}
       {v4 && <div className="dp-v4-boss-cue" ref={bossCue} role="status" aria-label="Boss event" hidden />}
       {m.plan?.ultimate && actor?.side === 'party' && !m.galleryEffectOnly && <aside className={`dp-ultimate-moment dp-ultimate-${actor.catalogId}`} aria-label={`${actor.name} ultimate`}>
         <img src={readable ? readablePortrait(actor.catalogId) ?? portrait(actor.catalogId) : portrait(actor.catalogId)} alt="" /><div><strong>{actor.name}</strong><span>{m.plan.name}</span></div>

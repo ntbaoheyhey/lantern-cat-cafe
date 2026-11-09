@@ -1,4 +1,4 @@
-import { targetCallout } from './card-callout-layout';
+import { targetTextLane } from './card-callout-layout';
 import type { StatusPresentation } from './card-status-beats';
 import { CARD_STATUS_LOOKS } from './card-status-looks';
 import { readablePortrait, readableName } from './look-readable-assets';
@@ -52,6 +52,8 @@ export interface SceneView {
   effectOnly?: boolean;
   cardStatuses?: Record<string, readonly (string | {id:string;stacks:number})[]>;
   cardPresentation?: StatusPresentation;
+  cardNumberRows?: Record<string, number>;
+  cardMoment?: boolean;
   rows?: Record<string, string>;
   chapter?: number;
   models?: Record<string,string>; warmModelIds?: string[];
@@ -61,7 +63,7 @@ export interface SceneView {
   boss: boolean; model?: { role: TurnActor['role']; clip: string; angle: number };
   modelProgress?:number; quality?:Quality; autoQuality?:boolean; fixedTime?: number; camera?: 'wide' | 'close' | 'overhead' | 'far';
 }
-export interface Anchor { id: string; x: number; y: number; labelX: number; labelY: number; footY: number; visible: boolean }
+export interface Anchor { id: string; x: number; y: number; labelX: number; labelY: number; footY: number; visible: boolean; textLane?: LabelInput['head'] }
 interface Puppet { bossPhase:number; phaseAt:number; enteredAt:number; utensil?:CardUtensil; face?:CardFace|CardEnemyExpression; head?:T.Object3D; headRest:T.Quaternion; headPose:T.Quaternion; gaze:{yaw:number;pitch:number}; asset:string; height:number; baseColors:T.Color[]; gear:GearAttachments; root: T.Group; model: T.Group; mixer: T.AnimationMixer; actions: Map<string,T.AnimationAction>; clip: string; base: T.Vector3; shadow: T.Mesh; role: string; materials: T.Material[]; guard:T.Mesh; snare:T.Group }
 const GOLD = '#f5cb7b', VIOLET = '#c3a4ff', TEAL = '#8adcc2';
 const roleColor = (role: string) => role === 'guardian' ? GOLD : role === 'witch' ? VIOLET : role === 'alchemist' ? TEAL : '#f1a295';
@@ -276,17 +278,24 @@ export class TurnScene {
       // Direct-to-canvas and HDR-to-post use different tone-mapping programs.
       // Prepare both while loading so adaptive quality never links at a hit.
       await warmScene(this.renderer,this.scene,this.camera,()=>this.disposed,
-        fraction=>{this.loading.completed=3+fraction;});
+        fraction=>{this.loading.completed=3+fraction;},this.lookStageEnabled);
       if(this.disposed)return;
       this.scene.remove(warm);
       this.loading.completed=4;this.loading.label='Preparing skill effects';
-      await this.spells.warm(this.renderer,this.camera,this.scene);if(this.disposed)return;
-      await this.cardEffects?.warm(this.renderer,this.camera);if(this.disposed)return;
+      const b2Start=performance.now();
+      await this.spells.warm(this.renderer,this.camera,this.scene);
+      if(this.lookStageEnabled)performance.measure('look-prewarm:B2-pools',{start:b2Start});if(this.disposed)return;
+      const effectsStart=performance.now();
+      await this.cardEffects?.warm(this.renderer,this.camera);
+      if(this.lookStageEnabled)performance.measure('look-prewarm:status-reaction-shape-pools',{start:effectsStart});if(this.disposed)return;
       this.loading.label='Preparing the final lighting';
-      await this.post.warm(()=>this.disposed);if(this.disposed)return;
+      const postStart=performance.now();
+      await this.post.warm(()=>this.disposed);
+      if(this.lookStageEnabled)performance.measure('look-prewarm:post',{start:postStart});if(this.disposed)return;
       await loadingFrame();
       this.loading.completed=5;this.loading.label='Ready';
       this.scene.remove(warm);this.render(initial);this.ready=true;this.host.dataset.ready='true';this.dirty=true;
+      if(this.lookStageEnabled)this.cardEffects?.warmDeferred();
     }catch(error){this.scene.remove(warm);if(!this.disposed)this.onFailure(`Models could not prepare: ${String(error).slice(0,100)}`)}
   }
   private makeContact():T.Texture {
@@ -624,10 +633,16 @@ export class TurnScene {
     // Reserve target-local reaction words before laying out HP cards, so a
     // crowded card cannot evict a word to the far edge of the stage.
     const words:LabelInput['head'][]=[];
-    if(this.lookStageEnabled&&view.cardPresentation?.bursts.length){
-      for(const anchor of [...projected].filter(a=>view.cardPresentation!.bursts.includes(a.id)).sort((a,b)=>a.y-b.y)){
-        const word=targetCallout(anchor.x,anchor.y,this.width,this.height,innerWidth<=1100?138:150,words);
-        if(word)words.push(word);
+    if(this.lookStageEnabled&&frame){
+      const bursts=view.cardPresentation?.bursts??[],reactions=view.cardPresentation?.reactions;
+      if(view.cardMoment)words.push({x:12,y:8,width:132,height:108});
+      for(const anchor of [...projected].filter(a=>view.cardNumberRows?.[a.id]||bursts.includes(a.id)).sort((a,b)=>a.y-b.y)){
+        const reaction=reactions?.find(r=>r.targetId===anchor.id)?.id??'crumb-burst';
+        const first=bursts.find(id=>(reactions?.find(r=>r.targetId===id)?.id??'crumb-burst')===reaction);
+        const wordWidth=bursts.includes(anchor.id)?(first!==anchor.id?38:innerWidth<=1100?138:150):0;
+        const count=view.cardNumberRows?.[anchor.id]??0;
+        const lane=targetTextLane(anchor.x,anchor.y,this.width,this.height,wordWidth,count?110:0,count?count*24-2:0,words);
+        if(lane){words.push(lane);anchor.textLane=lane;}
       }
       obstacles.push(...words);
     }
