@@ -8,7 +8,7 @@ import {open,apply,audit} from './harness.mjs';
 const sharp=createRequire('/Users/bao/tools/cardrpg-look/npm/package.json')('sharp');
 const artifact=resolve(process.env.V5_ARTIFACT),out=process.env.V5_OUT;
 await mkdir(out+'/shots',{recursive:true});
-const rows=JSON.parse(await readFile('/tmp/cardrpg-v5full-m1/cases.json'));
+const rows=JSON.parse(await readFile(process.env.V5_CASES||'/tmp/cardrpg-v5full-m1/cases.json'));
 const result={sha256:createHash('sha256').update(await readFile(artifact)).digest('hex'),shots:[],errors:[]};
 const browser=await chromium.launch({channel:'chromium',args:['--use-angle=metal']});
 try{for(const [width,height]of JSON.parse(process.env.V5_SIZES||'[[1440,900],[1280,720],[1024,600]]')){

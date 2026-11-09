@@ -88,3 +88,6 @@ Repro integration preflight pnpm --filter @taskbar-hero/web test:11existing fixt
 
 ### M3 pure adapter verification
 Registered18live setups,1421resolved actions/1687presentation plans:0missing/extrav2events,0cue-clock overruns; all18fullbattle digests match step replay and lookON/OFF. Published fixture scaffold fix restores1848unitPASS. This is pure adapter evidence, NOT browser/live-visible coverage. New boundary tests cover repeated-log matching,Clutch heal,ally-splash scaling,before snapshots and malformedv2boss envelopes.
+
+## B-M3-003 2026-11-09T05:31Z M3 live shot selection S3
+First live selection16/17 had P5 row3 on cats from Spoolcharge, whereas fixed P5 asks3foes. Tighten predicate to enemy targetside; retain live-cases1 diagnostic. P6threeCrumbBurst also notseen in18registeredseeds; keep labelledfixture instead of inventingevents. Rule-generated screenshots are replayframes, naturalbrowsercoverage remains distinct.

@@ -5,7 +5,7 @@ import {gzipSync} from 'node:zlib';
 import {createHash} from 'node:crypto';
 import {open,apply,audit} from './harness.mjs';
 const artifact=resolve(process.env.V5_ARTIFACT),out=process.env.V5_OUT;await mkdir(out,{recursive:true});
-const cases=JSON.parse(await readFile('/tmp/cardrpg-v5full-m1/cases.json')).filter(r=>Number(r.id.slice(1))>=5&&Number(r.id.slice(1))<=14);
+const cases=JSON.parse(await readFile(process.env.V5_CASES||'/tmp/cardrpg-v5full-m1/cases.json')).filter(r=>Number(r.id.slice(1))>=5&&Number(r.id.slice(1))<=14);
 const result={sha256:createHash('sha256').update(await readFile(artifact)).digest('hex'),method:'Every 60Hz cue-window frame, actual DOM words/numbers/badges/plates/moment/HUD; frozen animation clock, no timing claims.',rows:[],errors:[]};
 const browser=await chromium.launch({channel:'chromium',args:['--use-angle=metal']});
 try{for(const [width,height]of [[1024,600],[1280,720],[1440,900]]){
