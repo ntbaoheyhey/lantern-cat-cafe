@@ -3,9 +3,7 @@ Boss ngày 7 thắng sau một gợi ý cụ thể trong ca chơi đã ghi hình
 Hush đã được sửa để không biến lượt hồi máu thành đòn đánh hoặc ghi nhận hồi máu không có thật.
 Cân bằng trang bị, một số mèo, nhịp thưởng 30 phút và hiệu năng khởi động vẫn còn thiếu hoặc chưa đạt.
 Đây là báo cáo tiến độ A5, chưa phải nghiệm thu; mọi PR vẫn là draft, chưa merge hay deploy.
-
 # A5 checkpoint — acceptance remains open
-
 Runtime source: `27f192301` (available Home star crews; combat unchanged). Six source checks and the exact OFF digest pass; [source-bound closure](e2-star-plans/audit.json). Hush correction remains unchanged. This report separates historical evidence from current-source TRAIN diagnostics. Bots are proxies, not a human playtest. Fresh acceptance seeds20001–20500 remain UNUSED; old10001–10500 are contaminated.
 
 ## Play experience and progression
@@ -14,9 +12,9 @@ Runtime source: `27f192301` (available Home star crews; combat unchanged). Six s
 |---|---|---|---|
 |First fight ≤25s|H0 original opening retained|12.775–12.999s; later anchored regression13.067–13.139s|PASS, three widths|
 |Place, equip and invite by3min; scouted map by5min|Developer controls and form preparation|Placement/invite/equip19.590–26.939s; map41.862–49.171s|PASS, automated clicks without reading time|
-|Meaningful choice offers,0–5/30/60min|17 /75 /98|15 /72 /98|PASS≥5at30min; Home02 fixed-policy proxy|
-|Rewards / celebrations,0–5/30/60min|8/18/18 rewards;4/6/6 celebrations|11/21/21 rewards;8/13/13 celebrations at5/30/60min; largest30min gap916.5s|MISS:≤300s target|
-|Combat dead time reduced ≥40%|128.642 /896.670 /1886.883s; max30min reward gap775.271s|120.5 /958.6 /2044.8s;30min increases6.9%|MISS:≥40%reduction|
+|Meaningful choice offers,0–5/30/60min|17 /75 /98|15 /73 /112|PASS≥5at30min; Home03 fixed-policy proxy|
+|Rewards / celebrations,0–5/30/60min|8/18/18 rewards;4/6/6 celebrations|10/22/23 rewards;9/13/14 celebrations at5/30/60min; largest30min gap723.0s|MISS:≤300s target|
+|Combat dead time reduced ≥40%|128.642 /896.670 /1886.883s; max30min reward gap775.271s|120.6 /878.9 /1776.5s;30min decreases2.0%|MISS:≥40%reduction|
 |Player controls, copy and navigation|Six visible developer buttons; verbose forms|dev=1 gating, keyboard/click placement, filtered equipment actions|C1 functional PASS; wording is not retention evidence|
 |Named result, available retry, forecast|Generic result advice|Named contributions; one available change;20-seed worker, CPU1 max56.8ms on boss route|E1 functional PASS; advice can worsen a retry|
 |Day7 real-click x1 boss|H0 defeat52.368s|Victory64.921s; same route loses with the old plan|PASS, one paired earned fixture on anchored source|
@@ -31,9 +29,9 @@ Evidence: [H0](H0-FIRST-SESSION.md), [C1](C1-PLAYER-SCREENS.md), [rewards and fi
 
 ## Balance — old acceptance versus current TRAIN, not paired acceptance
 
-|Gate|A4 heldout500|Current Hush22 TRAIN50|Status|
+|Gate|A4 heldout500|Current TRAIN (50 unless stated)|Status|
 |---|---:|---:|---|
-|Single piece ≤12pp including fourth slot|Worst93.4pp;31outliers|68/384fourth-slot misses; worst88pp|MISS; bare2304cells not rerun|
+|Single piece ≤12pp including fourth slot|Worst93.4pp;31outliers|63/384fourth-slot misses; worst88.8pp (500seeds)|MISS; bare2304cells not rerun|
 |Displayed share ≤10%|≤4.80%|≤4.51%|TRAIN PASS alone does not validate impact|
 |Display correlation ≥0.6 per chapter|Not registered in A4|0.644 /0.547 /0.432|MISS, chapters2/3|
 |Adjacent tiers ≥44/48; zero reversals|46/48;0reversals|23/24TRAIN steps;0reversals|PARTIAL; fresh half unmeasured|
@@ -49,7 +47,7 @@ Evidence: [H0](H0-FIRST-SESSION.md), [C1](C1-PLAYER-SCREENS.md), [rewards and fi
 
 [Hush correction](B2-HUSH-ATTRIBUTION.md):144controlled cases PASS;72OFF streams exact. All1,321TRAIN cells are paired with original current16. One Soot/Sorrel/Velvet team falls32→28wins out of50; all other outcome cells are exact. All90previously earned day7 wins/advice/costs remain unchanged, but seven post-route state hashes differ. This is a gameplay timing correction, not only copy.
 
-[Support trials](B2-SUPPORT-KITS.md): eligible gear plus Hush lifts bottom cats; adding rescue rest leaves Cinnamon79.76% and raises crew gain26→27.5pp. Neither the cooldown nor fixture revision is adopted. [Pressure spread](B1-PRESSURE-FOLLOWUP.md) reduces fourth-slot cliffs in500TRAIN seeds but fails other gates and adds predictability cost; rejected. All attempts and negative pairs remain retained.
+[Support trials](B2-SUPPORT-KITS.md): eligible gear plus Hush lifts bottom cats; adding rescue rest leaves Cinnamon79.76% and raises crew gain26→27.5pp. Neither the cooldown nor fixture revision is adopted. [Pressure spread](B1-PRESSURE-FOLLOWUP.md) reduces fourth-slot cliffs in500TRAIN seeds but fails other gates and adds predictability cost; rejected. All attempts and negative pairs remain retained. [Timing47](b1/threat-beats-47/RESULTS.md) and [delayed impact49](b1/impact-delay-49/RESULTS.md) also fail their fixed screens; neither is adopted.
 
 ## Size, compatibility and delivery
 
@@ -59,9 +57,9 @@ P1 default CPU median/max ms:1280CPU1 main295.7/368.1 versus candidate298.0/532.
 
 Latest Home crew source typecheck/lint/web1779/rules1192/E2E421/build PASS; original logs and two expected-failure/eleven skipped rule cases are retained. Latest OFF165cells/8250routes exact digest47477251b3d20ab602bee5c55a56cdd661e111b1386e298e0c9bc67737fecfa3. Baseline-v1 SHA9a5f6ebbb04af56c19f11cf43cf2763b35df2bde3b7a8dcd943060e878d793d3 and13historical sims unchanged. THC7/THC12 migrations and THC13 journal are covered by source tests.
 
-Reviewed preview: [B3 game](b3/closure/artifact/index.html), SHA60407a0bd423386c66d86f50b88d867a3a7fe89bee357836a3da1ae6796432a7. It predates the two Hush fixes. [Opening walkthrough](../../../docs/cardrpg3/a5-first-5-minutes.html) uses E3 screenshots/timeline. Public [game](../../../docs/cardrpg3/index.html) and [guide](../../../docs/cardrpg3/gameplay-v4.html) remain A4, SHA067d2062f6836a6d0bb9f6753ece1b2f3ca923688f241866a7f42806c8f7b6a1 /9dca8fe648d6e101de89ffa02099249327615648989b1207f7e7183c6c0d0482. Z will rebuild and replace them only after review.
+Reviewed preview: [current A5 game](e2-star-plans/prototype-on/index.html), source27f192301, SHA2c3186275e052a423c55830cd6b7b20d2c8af5769b8854c184e2399a5576bc86,20,929,441bytes. [Historical B3 preview](b3/closure/artifact/index.html) predates the Hush fixes. [Opening walkthrough](../../../docs/cardrpg3/a5-first-5-minutes.html) uses E3 screenshots/timeline. Public [game](../../../docs/cardrpg3/index.html) and [guide](../../../docs/cardrpg3/gameplay-v4.html) remain A4, SHA067d2062f6836a6d0bb9f6753ece1b2f3ca923688f241866a7f42806c8f7b6a1 /9dca8fe648d6e101de89ffa02099249327615648989b1207f7e7183c6c0d0482. Z will rebuild and replace them only after review.
 
-Draft stack: [376](https://github.com/ntbaoheyhey/taskbar-hero/pull/376) → [377](https://github.com/ntbaoheyhey/taskbar-hero/pull/377) → [379](https://github.com/ntbaoheyhey/taskbar-hero/pull/379) → [381](https://github.com/ntbaoheyhey/taskbar-hero/pull/381) → [382](https://github.com/ntbaoheyhey/taskbar-hero/pull/382) → [383](https://github.com/ntbaoheyhey/taskbar-hero/pull/383) → [384](https://github.com/ntbaoheyhey/taskbar-hero/pull/384) → [385](https://github.com/ntbaoheyhey/taskbar-hero/pull/385) → [386](https://github.com/ntbaoheyhey/taskbar-hero/pull/386) → [388](https://github.com/ntbaoheyhey/taskbar-hero/pull/388) → [394](https://github.com/ntbaoheyhey/taskbar-hero/pull/394) → [396](https://github.com/ntbaoheyhey/taskbar-hero/pull/396) → [397](https://github.com/ntbaoheyhey/taskbar-hero/pull/397) → [398](https://github.com/ntbaoheyhey/taskbar-hero/pull/398) → [399](https://github.com/ntbaoheyhey/taskbar-hero/pull/399) → [400](https://github.com/ntbaoheyhey/taskbar-hero/pull/400) → [401](https://github.com/ntbaoheyhey/taskbar-hero/pull/401) → [402](https://github.com/ntbaoheyhey/taskbar-hero/pull/402) → [403](https://github.com/ntbaoheyhey/taskbar-hero/pull/403) → [404](https://github.com/ntbaoheyhey/taskbar-hero/pull/404). Hush source closure and remote draft are verified.
+Draft stack: [376](https://github.com/ntbaoheyhey/taskbar-hero/pull/376) → [377](https://github.com/ntbaoheyhey/taskbar-hero/pull/377) → [379](https://github.com/ntbaoheyhey/taskbar-hero/pull/379) → [381](https://github.com/ntbaoheyhey/taskbar-hero/pull/381) → [382](https://github.com/ntbaoheyhey/taskbar-hero/pull/382) → [383](https://github.com/ntbaoheyhey/taskbar-hero/pull/383) → [384](https://github.com/ntbaoheyhey/taskbar-hero/pull/384) → [385](https://github.com/ntbaoheyhey/taskbar-hero/pull/385) → [386](https://github.com/ntbaoheyhey/taskbar-hero/pull/386) → [388](https://github.com/ntbaoheyhey/taskbar-hero/pull/388) → [394](https://github.com/ntbaoheyhey/taskbar-hero/pull/394) → [396](https://github.com/ntbaoheyhey/taskbar-hero/pull/396) → [397](https://github.com/ntbaoheyhey/taskbar-hero/pull/397) → [398](https://github.com/ntbaoheyhey/taskbar-hero/pull/398) → [399](https://github.com/ntbaoheyhey/taskbar-hero/pull/399) → [400](https://github.com/ntbaoheyhey/taskbar-hero/pull/400) → [401](https://github.com/ntbaoheyhey/taskbar-hero/pull/401) → [402](https://github.com/ntbaoheyhey/taskbar-hero/pull/402) → [403](https://github.com/ntbaoheyhey/taskbar-hero/pull/403) → [404](https://github.com/ntbaoheyhey/taskbar-hero/pull/404) → [405](https://github.com/ntbaoheyhey/taskbar-hero/pull/405). Hush source closure and remote draft are verified.
 
 B requests remain: automatic-action/crew/formation cues; phase≤400ms and finish≤800ms; exact v1 earned invitation and v2 discovery rendering. A forwards receipts and preserves dev gating; no B checkpoint is adopted. B2 V0–V6 is published through draft395; its separate renderer/performance receipts are not A5 integrated evidence. No B source adopted.
 
@@ -79,7 +77,7 @@ Remaining work: B1/B2 numeric closure and display calibration; fresh registered 
 
 [Reply-pressure39](b1/reply-pressure-39/RESULTS.md): all three arms rejected under the predeclared screen; worst piece gains32/50/44pp. The middle pressure restores average difficulty but retains99piece misses. No production adoption, extra acceptance samples or wider rerun. [Pressure strata42](b1/pressure-strata-42/RESULTS.md) reconstructs the old spread candidates without new battles: conditional gains still vary within the five registered pressure groups; smaller bins and multiple comparisons limit interpretation.
 
-[Equipment comparison](E1-EQUIPMENT-FORECAST.md): actual whole-crew equip/transfer against a selected boss and band;36browserchecks/24captures, worker stale-delivery/CSP fallback PASS. ON20,927,337bytes/SHA0a2c5f1d; CPU1max79.9ms. Contextual TRAIN correlations0.738/0.754/0.729 overlap seeds and do not close static-display or fresh acceptance gates.
+[Equipment comparison](E1-EQUIPMENT-FORECAST.md): actual whole-crew equip/transfer against a selected boss and band;36browserchecks/24captures, worker stale-delivery/CSP fallback PASS. ON20,927,337bytes/SHA0a2c5f1d; CPU1max79.9ms. Contextual TRAIN correlations0.738/0.754/0.729 overlap seeds and do not close static-display or fresh acceptance gates. Post-hoc [separate combat seeds48](b1/display-split-48/RESULTS.md) fall to0.439/0.620/0.688; chapter1 misses0.6. No additional battles.
 
 [Original Home02 journey](E2-HOME-ENGAGEMENT.md) completed60.78active minutes/58battles/60captures on immutable growth994d84056. Receipt auditPASS; cadence/dead-timeMISS remains. Home01 stays retained separately. No new human retention claim or acceptance sample.
 
@@ -88,3 +86,5 @@ Remaining work: B1/B2 numeric closure and display calibration; fresh registered 
 [Prepare layout](C1-PREPARE-LAYOUT.md): formation/Fight visible at3widths,18ON/OFF scenarios/18captures plus2before captures; native stale-worker/CSP checksPASS. Exact prototype/adoptedON20,927,769bytes/SHAe9c74c38. Original cadenceMISS unchanged.
 
 [Home star crews](E2-HOME-CREW-PLANS.md): available one-seat swaps and capped-reward copy;8isolated units,24ON/OFF scenarios/48captures and six gatesPASS. Exact adopted/prototype ON20,929,441bytes/SHA2c318627, scopedcontrast6.726. Six targeted x1 continuations earn the event job star; original Home02 cadenceMISS remains.
+
+[Registered forecast precision50](b1/display-precision-50/RESULTS.md) keeps all384cases and exact1–50prefixes; unchanged20seed forecasts correlate0.850/0.691/0.733 against separateTRAIN51–500. Eachchapter meets0.6, but case averages do not validate per-item percentages or static utility scores. Full500piece results retain63misses/worst88.8pp; no runtime or fresh-acceptance change. [Duration52](b1/reply-duration-52/RESULTS.md): corrected reply policy with bossHP1.25/1.5/2 remains rejected: worst piece gains42/78/44pp; after-arm median17/20/27rounds. All384TRAIN50pairs perarm and original negative pairs retained. No adoption or fresh acceptance. [Informed Home03](E2-INFORMED-ENGAGEMENT.md) completed60.1963active minutes,60captures; independent receipt/source closurePASS. Cadence/deadtimeMISS retained. Fixedpolicy upgrades teammates but does not follow Result advice; no causal UI benefit or human-retention claim. Original Home01/02 remain preserved.

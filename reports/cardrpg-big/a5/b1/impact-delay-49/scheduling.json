@@ -1,0 +1,29 @@
+[
+  {
+    "at": "2026-11-08T23:15:27.919113+00:00",
+    "kind": "waiting-for-frozen-boundary",
+    "homePid": 12101,
+    "diagnostics": [
+      17057,
+      17707,
+      18122
+    ],
+    "earliestCompletedLease": 3
+  },
+  {
+    "at": "2026-11-08T23:20:04.079577+00:00",
+    "kind": "paused-at-frozen-handoff",
+    "homePid": 12101
+  },
+  {
+    "at": "2026-11-08T23:29:59.672999+00:00",
+    "kind": "handoff-finished",
+    "reason": "diagnostics ended",
+    "remaining": []
+  },
+  {
+    "at": "2026-11-08T23:30:06.686385+00:00",
+    "kind": "resumed-original-home",
+    "homePid": 12101
+  }
+]

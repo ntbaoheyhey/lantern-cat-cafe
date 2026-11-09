@@ -1,0 +1,1319 @@
+{
+  "kind": "Automated engagement proxies, not a human playtest or fresh acceptance",
+  "runtime": "27f192301ba0774beeabda86bea5c5af7beb3039",
+  "artifactSha256": "2c3186275e052a423c55830cd6b7b20d2c8af5769b8854c184e2399a5576bc86",
+  "activeMinutes": 60.1963,
+  "metrics": [
+    {
+      "minutes": 5,
+      "meaningfulOffers": 15,
+      "meaningfulCategories": [
+        "formation",
+        "equipment",
+        "focus",
+        "care"
+      ],
+      "counterfactualOffers": 27,
+      "rewardEvents": 10,
+      "celebrations": 9,
+      "discoveryCards": 5,
+      "battlesStarted": 6,
+      "battlesCompleted": 6,
+      "deadSeconds": 120.565,
+      "scriptedReadingSeconds": 158.756,
+      "otherElapsedSeconds": 20.679000000000002,
+      "deadReductionPercent": 6.278664821753392,
+      "rewardCadence": {
+        "maxGapSeconds": 53.593,
+        "gaps": [
+          {
+            "seconds": 24.005,
+            "from": "session start",
+            "to": "welcome invitation",
+            "startMs": 0,
+            "endMs": 24005
+          },
+          {
+            "seconds": 0.003,
+            "from": "welcome invitation",
+            "to": "invitation",
+            "startMs": 24005,
+            "endMs": 24008
+          },
+          {
+            "seconds": 2.914,
+            "from": "invitation",
+            "to": "A LITTLE MOMENT TO KEEP\n\nDoor team reached its 2-mark bonus.\n\nSkip celebration",
+            "startMs": 24008,
+            "endMs": 26922
+          },
+          {
+            "seconds": 1.207,
+            "from": "A LITTLE MOMENT TO KEEP\n\nDoor team reached its 2-mark bonus.\n\nSkip celebration",
+            "to": "A LITTLE MOMENT TO KEEP\n\nKettle team reached its 2-mark bonus.\n\nSkip celebration",
+            "startMs": 26922,
+            "endMs": 28129
+          },
+          {
+            "seconds": 2.353,
+            "from": "A LITTLE MOMENT TO KEEP\n\nKettle team reached its 2-mark bonus.\n\nSkip celebration",
+            "to": "tailor first Soot wand",
+            "startMs": 28129,
+            "endMs": 30482
+          },
+          {
+            "seconds": 3.777,
+            "from": "tailor first Soot wand",
+            "to": "earned invitation",
+            "startMs": 30482,
+            "endMs": 34259
+          },
+          {
+            "seconds": 0.001,
+            "from": "earned invitation",
+            "to": "invitation",
+            "startMs": 34259,
+            "endMs": 34260
+          },
+          {
+            "seconds": 43.5,
+            "from": "invitation",
+            "to": "A LITTLE MOMENT TO KEEP\n\n3 route stars. A little brighter every evening.\n\nSkip celebration",
+            "startMs": 34260,
+            "endMs": 77760
+          },
+          {
+            "seconds": 0.016,
+            "from": "A LITTLE MOMENT TO KEEP\n\n3 route stars. A little brighter every evening.\n\nSkip celebration",
+            "to": "settle encounter",
+            "startMs": 77760,
+            "endMs": 77776
+          },
+          {
+            "seconds": 25.365,
+            "from": "settle encounter",
+            "to": "A LITTLE MOMENT TO KEEP\n\n9 route stars. A little brighter every evening.\n\nSkip celebration",
+            "startMs": 77776,
+            "endMs": 103141
+          },
+          {
+            "seconds": 34.784,
+            "from": "A LITTLE MOMENT TO KEEP\n\n9 route stars. A little brighter every evening.\n\nSkip celebration",
+            "to": "settle encounter",
+            "startMs": 103141,
+            "endMs": 137925
+          },
+          {
+            "seconds": 53.593,
+            "from": "settle encounter",
+            "to": "settle encounter",
+            "startMs": 137925,
+            "endMs": 191518
+          },
+          {
+            "seconds": 0.425,
+            "from": "settle encounter",
+            "to": "Collect 3-star reward",
+            "startMs": 191518,
+            "endMs": 191943
+          },
+          {
+            "seconds": 0.044,
+            "from": "Collect 3-star reward",
+            "to": "Collect 9-star reward",
+            "startMs": 191943,
+            "endMs": 191987
+          },
+          {
+            "seconds": 1,
+            "from": "Collect 9-star reward",
+            "to": "invitation",
+            "startMs": 191987,
+            "endMs": 192987
+          },
+          {
+            "seconds": 10.809,
+            "from": "invitation",
+            "to": "earned invitation",
+            "startMs": 192987,
+            "endMs": 203796
+          },
+          {
+            "seconds": 0.004,
+            "from": "earned invitation",
+            "to": "invitation",
+            "startMs": 203796,
+            "endMs": 203800
+          },
+          {
+            "seconds": 43.353,
+            "from": "invitation",
+            "to": "settle encounter",
+            "startMs": 203800,
+            "endMs": 247153
+          },
+          {
+            "seconds": 10.848,
+            "from": "settle encounter",
+            "to": "A LITTLE MOMENT TO KEEP\n\n18 route stars. A little brighter every evening.\n\nSkip celebration",
+            "startMs": 247153,
+            "endMs": 258001
+          },
+          {
+            "seconds": 41.999,
+            "from": "A LITTLE MOMENT TO KEEP\n\n18 route stars. A little brighter every evening.\n\nSkip celebration",
+            "to": "window end",
+            "startMs": 258001,
+            "endMs": 300000
+          }
+        ],
+        "overFiveMinutes": []
+      },
+      "debugControlsMax": 0,
+      "seedLabelsMax": 0,
+      "overflowMax": 0,
+      "wordsMedian": 134,
+      "wordsMax": 519,
+      "wordCountsByScreen": {
+        "hub": {
+          "visits": 7,
+          "median": 129,
+          "max": 141
+        },
+        "prepare": {
+          "visits": 6,
+          "median": 346.5,
+          "max": 350
+        },
+        "map": {
+          "visits": 12,
+          "median": 65.5,
+          "max": 189
+        },
+        "result": {
+          "visits": 6,
+          "median": 132,
+          "max": 148
+        },
+        "gacha": {
+          "visits": 5,
+          "median": 193,
+          "max": 216
+        },
+        "inventory": {
+          "visits": 4,
+          "median": 489.5,
+          "max": 519
+        },
+        "collection": {
+          "visits": 3,
+          "median": 314,
+          "max": 315
+        },
+        "journal": {
+          "visits": 1,
+          "median": 3,
+          "max": 3
+        }
+      },
+      "before": {
+        "meaningfulOffers": 17,
+        "rewardEvents": 8,
+        "celebrations": 4,
+        "deadSeconds": 128.642,
+        "debugControlsMax": 6
+      }
+    },
+    {
+      "minutes": 30,
+      "meaningfulOffers": 73,
+      "meaningfulCategories": [
+        "formation",
+        "equipment",
+        "focus",
+        "care"
+      ],
+      "counterfactualOffers": 107,
+      "rewardEvents": 22,
+      "celebrations": 13,
+      "discoveryCards": 6,
+      "battlesStarted": 32,
+      "battlesCompleted": 31,
+      "deadSeconds": 878.8640000000001,
+      "scriptedReadingSeconds": 844.9699999999982,
+      "otherElapsedSeconds": 76.16600000000165,
+      "deadReductionPercent": 1.9857918743796283,
+      "rewardCadence": {
+        "maxGapSeconds": 723.035,
+        "gaps": [
+          {
+            "seconds": 24.005,
+            "from": "session start",
+            "to": "welcome invitation",
+            "startMs": 0,
+            "endMs": 24005
+          },
+          {
+            "seconds": 0.003,
+            "from": "welcome invitation",
+            "to": "invitation",
+            "startMs": 24005,
+            "endMs": 24008
+          },
+          {
+            "seconds": 2.914,
+            "from": "invitation",
+            "to": "A LITTLE MOMENT TO KEEP\n\nDoor team reached its 2-mark bonus.\n\nSkip celebration",
+            "startMs": 24008,
+            "endMs": 26922
+          },
+          {
+            "seconds": 1.207,
+            "from": "A LITTLE MOMENT TO KEEP\n\nDoor team reached its 2-mark bonus.\n\nSkip celebration",
+            "to": "A LITTLE MOMENT TO KEEP\n\nKettle team reached its 2-mark bonus.\n\nSkip celebration",
+            "startMs": 26922,
+            "endMs": 28129
+          },
+          {
+            "seconds": 2.353,
+            "from": "A LITTLE MOMENT TO KEEP\n\nKettle team reached its 2-mark bonus.\n\nSkip celebration",
+            "to": "tailor first Soot wand",
+            "startMs": 28129,
+            "endMs": 30482
+          },
+          {
+            "seconds": 3.777,
+            "from": "tailor first Soot wand",
+            "to": "earned invitation",
+            "startMs": 30482,
+            "endMs": 34259
+          },
+          {
+            "seconds": 0.001,
+            "from": "earned invitation",
+            "to": "invitation",
+            "startMs": 34259,
+            "endMs": 34260
+          },
+          {
+            "seconds": 43.5,
+            "from": "invitation",
+            "to": "A LITTLE MOMENT TO KEEP\n\n3 route stars. A little brighter every evening.\n\nSkip celebration",
+            "startMs": 34260,
+            "endMs": 77760
+          },
+          {
+            "seconds": 0.016,
+            "from": "A LITTLE MOMENT TO KEEP\n\n3 route stars. A little brighter every evening.\n\nSkip celebration",
+            "to": "settle encounter",
+            "startMs": 77760,
+            "endMs": 77776
+          },
+          {
+            "seconds": 25.365,
+            "from": "settle encounter",
+            "to": "A LITTLE MOMENT TO KEEP\n\n9 route stars. A little brighter every evening.\n\nSkip celebration",
+            "startMs": 77776,
+            "endMs": 103141
+          },
+          {
+            "seconds": 34.784,
+            "from": "A LITTLE MOMENT TO KEEP\n\n9 route stars. A little brighter every evening.\n\nSkip celebration",
+            "to": "settle encounter",
+            "startMs": 103141,
+            "endMs": 137925
+          },
+          {
+            "seconds": 53.593,
+            "from": "settle encounter",
+            "to": "settle encounter",
+            "startMs": 137925,
+            "endMs": 191518
+          },
+          {
+            "seconds": 0.425,
+            "from": "settle encounter",
+            "to": "Collect 3-star reward",
+            "startMs": 191518,
+            "endMs": 191943
+          },
+          {
+            "seconds": 0.044,
+            "from": "Collect 3-star reward",
+            "to": "Collect 9-star reward",
+            "startMs": 191943,
+            "endMs": 191987
+          },
+          {
+            "seconds": 1,
+            "from": "Collect 9-star reward",
+            "to": "invitation",
+            "startMs": 191987,
+            "endMs": 192987
+          },
+          {
+            "seconds": 10.809,
+            "from": "invitation",
+            "to": "earned invitation",
+            "startMs": 192987,
+            "endMs": 203796
+          },
+          {
+            "seconds": 0.004,
+            "from": "earned invitation",
+            "to": "invitation",
+            "startMs": 203796,
+            "endMs": 203800
+          },
+          {
+            "seconds": 43.353,
+            "from": "invitation",
+            "to": "settle encounter",
+            "startMs": 203800,
+            "endMs": 247153
+          },
+          {
+            "seconds": 10.848,
+            "from": "settle encounter",
+            "to": "A LITTLE MOMENT TO KEEP\n\n18 route stars. A little brighter every evening.\n\nSkip celebration",
+            "startMs": 247153,
+            "endMs": 258001
+          },
+          {
+            "seconds": 46.419,
+            "from": "A LITTLE MOMENT TO KEEP\n\n18 route stars. A little brighter every evening.\n\nSkip celebration",
+            "to": "minute-5-settle encounter",
+            "startMs": 258001,
+            "endMs": 304420
+          },
+          {
+            "seconds": 63.131,
+            "from": "minute-5-settle encounter",
+            "to": "settle encounter",
+            "startMs": 304420,
+            "endMs": 367551
+          },
+          {
+            "seconds": 0.41,
+            "from": "settle encounter",
+            "to": "Collect 18-star reward",
+            "startMs": 367551,
+            "endMs": 367961
+          },
+          {
+            "seconds": 1.004,
+            "from": "Collect 18-star reward",
+            "to": "invitation",
+            "startMs": 367961,
+            "endMs": 368965
+          },
+          {
+            "seconds": 9.514,
+            "from": "invitation",
+            "to": "journal milestone",
+            "startMs": 368965,
+            "endMs": 378479
+          },
+          {
+            "seconds": 1.318,
+            "from": "journal milestone",
+            "to": "invitation",
+            "startMs": 378479,
+            "endMs": 379797
+          },
+          {
+            "seconds": 40.75,
+            "from": "invitation",
+            "to": "settle encounter",
+            "startMs": 379797,
+            "endMs": 420547
+          },
+          {
+            "seconds": 57.282,
+            "from": "settle encounter",
+            "to": "settle encounter",
+            "startMs": 420547,
+            "endMs": 477829
+          },
+          {
+            "seconds": 71.317,
+            "from": "settle encounter",
+            "to": "settle encounter",
+            "startMs": 477829,
+            "endMs": 549146
+          },
+          {
+            "seconds": 50.183,
+            "from": "settle encounter",
+            "to": "A LITTLE MOMENT TO KEEP\n\n30 route stars. A little brighter every evening.\n\nSkip celebration",
+            "startMs": 549146,
+            "endMs": 599329
+          },
+          {
+            "seconds": 122.822,
+            "from": "A LITTLE MOMENT TO KEEP\n\n30 route stars. A little brighter every evening.\n\nSkip celebration",
+            "to": "settle encounter",
+            "startMs": 599329,
+            "endMs": 722151
+          },
+          {
+            "seconds": 173.167,
+            "from": "settle encounter",
+            "to": "settle encounter",
+            "startMs": 722151,
+            "endMs": 895318
+          },
+          {
+            "seconds": 0.502,
+            "from": "settle encounter",
+            "to": "Claim cafe service",
+            "startMs": 895318,
+            "endMs": 895820
+          },
+          {
+            "seconds": 0.074,
+            "from": "Claim cafe service",
+            "to": "Claim Warm the Kettle",
+            "startMs": 895820,
+            "endMs": 895894
+          },
+          {
+            "seconds": 1.094,
+            "from": "Claim Warm the Kettle",
+            "to": "invitation",
+            "startMs": 895894,
+            "endMs": 896988
+          },
+          {
+            "seconds": 179.977,
+            "from": "invitation",
+            "to": "settle encounter",
+            "startMs": 896988,
+            "endMs": 1076965
+          },
+          {
+            "seconds": 723.035,
+            "from": "settle encounter",
+            "to": "window end",
+            "startMs": 1076965,
+            "endMs": 1800000
+          }
+        ],
+        "overFiveMinutes": [
+          {
+            "seconds": 723.035,
+            "from": "settle encounter",
+            "to": "window end",
+            "startMs": 1076965,
+            "endMs": 1800000
+          }
+        ]
+      },
+      "debugControlsMax": 0,
+      "seedLabelsMax": 0,
+      "overflowMax": 0,
+      "wordsMedian": 165,
+      "wordsMax": 565,
+      "wordCountsByScreen": {
+        "hub": {
+          "visits": 34,
+          "median": 135,
+          "max": 141
+        },
+        "prepare": {
+          "visits": 32,
+          "median": 343.5,
+          "max": 354
+        },
+        "map": {
+          "visits": 73,
+          "median": 131,
+          "max": 192
+        },
+        "result": {
+          "visits": 31,
+          "median": 136,
+          "max": 148
+        },
+        "gacha": {
+          "visits": 8,
+          "median": 209,
+          "max": 245
+        },
+        "inventory": {
+          "visits": 22,
+          "median": 530.5,
+          "max": 565
+        },
+        "collection": {
+          "visits": 21,
+          "median": 302,
+          "max": 318
+        },
+        "journal": {
+          "visits": 7,
+          "median": 286,
+          "max": 286
+        }
+      },
+      "before": {
+        "meaningfulOffers": 75,
+        "rewardEvents": 18,
+        "celebrations": 6,
+        "deadSeconds": 896.67,
+        "debugControlsMax": 6
+      }
+    },
+    {
+      "minutes": 60,
+      "meaningfulOffers": 112,
+      "meaningfulCategories": [
+        "formation",
+        "equipment",
+        "focus",
+        "care"
+      ],
+      "counterfactualOffers": 167,
+      "rewardEvents": 23,
+      "celebrations": 14,
+      "discoveryCards": 7,
+      "battlesStarted": 64,
+      "battlesCompleted": 63,
+      "deadSeconds": 1776.547,
+      "scriptedReadingSeconds": 1687.761999999993,
+      "otherElapsedSeconds": 135.69100000000708,
+      "deadReductionPercent": 5.847527377161182,
+      "rewardCadence": {
+        "maxGapSeconds": 1601.327,
+        "gaps": [
+          {
+            "seconds": 24.005,
+            "from": "session start",
+            "to": "welcome invitation",
+            "startMs": 0,
+            "endMs": 24005
+          },
+          {
+            "seconds": 0.003,
+            "from": "welcome invitation",
+            "to": "invitation",
+            "startMs": 24005,
+            "endMs": 24008
+          },
+          {
+            "seconds": 2.914,
+            "from": "invitation",
+            "to": "A LITTLE MOMENT TO KEEP\n\nDoor team reached its 2-mark bonus.\n\nSkip celebration",
+            "startMs": 24008,
+            "endMs": 26922
+          },
+          {
+            "seconds": 1.207,
+            "from": "A LITTLE MOMENT TO KEEP\n\nDoor team reached its 2-mark bonus.\n\nSkip celebration",
+            "to": "A LITTLE MOMENT TO KEEP\n\nKettle team reached its 2-mark bonus.\n\nSkip celebration",
+            "startMs": 26922,
+            "endMs": 28129
+          },
+          {
+            "seconds": 2.353,
+            "from": "A LITTLE MOMENT TO KEEP\n\nKettle team reached its 2-mark bonus.\n\nSkip celebration",
+            "to": "tailor first Soot wand",
+            "startMs": 28129,
+            "endMs": 30482
+          },
+          {
+            "seconds": 3.777,
+            "from": "tailor first Soot wand",
+            "to": "earned invitation",
+            "startMs": 30482,
+            "endMs": 34259
+          },
+          {
+            "seconds": 0.001,
+            "from": "earned invitation",
+            "to": "invitation",
+            "startMs": 34259,
+            "endMs": 34260
+          },
+          {
+            "seconds": 43.5,
+            "from": "invitation",
+            "to": "A LITTLE MOMENT TO KEEP\n\n3 route stars. A little brighter every evening.\n\nSkip celebration",
+            "startMs": 34260,
+            "endMs": 77760
+          },
+          {
+            "seconds": 0.016,
+            "from": "A LITTLE MOMENT TO KEEP\n\n3 route stars. A little brighter every evening.\n\nSkip celebration",
+            "to": "settle encounter",
+            "startMs": 77760,
+            "endMs": 77776
+          },
+          {
+            "seconds": 25.365,
+            "from": "settle encounter",
+            "to": "A LITTLE MOMENT TO KEEP\n\n9 route stars. A little brighter every evening.\n\nSkip celebration",
+            "startMs": 77776,
+            "endMs": 103141
+          },
+          {
+            "seconds": 34.784,
+            "from": "A LITTLE MOMENT TO KEEP\n\n9 route stars. A little brighter every evening.\n\nSkip celebration",
+            "to": "settle encounter",
+            "startMs": 103141,
+            "endMs": 137925
+          },
+          {
+            "seconds": 53.593,
+            "from": "settle encounter",
+            "to": "settle encounter",
+            "startMs": 137925,
+            "endMs": 191518
+          },
+          {
+            "seconds": 0.425,
+            "from": "settle encounter",
+            "to": "Collect 3-star reward",
+            "startMs": 191518,
+            "endMs": 191943
+          },
+          {
+            "seconds": 0.044,
+            "from": "Collect 3-star reward",
+            "to": "Collect 9-star reward",
+            "startMs": 191943,
+            "endMs": 191987
+          },
+          {
+            "seconds": 1,
+            "from": "Collect 9-star reward",
+            "to": "invitation",
+            "startMs": 191987,
+            "endMs": 192987
+          },
+          {
+            "seconds": 10.809,
+            "from": "invitation",
+            "to": "earned invitation",
+            "startMs": 192987,
+            "endMs": 203796
+          },
+          {
+            "seconds": 0.004,
+            "from": "earned invitation",
+            "to": "invitation",
+            "startMs": 203796,
+            "endMs": 203800
+          },
+          {
+            "seconds": 43.353,
+            "from": "invitation",
+            "to": "settle encounter",
+            "startMs": 203800,
+            "endMs": 247153
+          },
+          {
+            "seconds": 10.848,
+            "from": "settle encounter",
+            "to": "A LITTLE MOMENT TO KEEP\n\n18 route stars. A little brighter every evening.\n\nSkip celebration",
+            "startMs": 247153,
+            "endMs": 258001
+          },
+          {
+            "seconds": 46.419,
+            "from": "A LITTLE MOMENT TO KEEP\n\n18 route stars. A little brighter every evening.\n\nSkip celebration",
+            "to": "minute-5-settle encounter",
+            "startMs": 258001,
+            "endMs": 304420
+          },
+          {
+            "seconds": 63.131,
+            "from": "minute-5-settle encounter",
+            "to": "settle encounter",
+            "startMs": 304420,
+            "endMs": 367551
+          },
+          {
+            "seconds": 0.41,
+            "from": "settle encounter",
+            "to": "Collect 18-star reward",
+            "startMs": 367551,
+            "endMs": 367961
+          },
+          {
+            "seconds": 1.004,
+            "from": "Collect 18-star reward",
+            "to": "invitation",
+            "startMs": 367961,
+            "endMs": 368965
+          },
+          {
+            "seconds": 9.514,
+            "from": "invitation",
+            "to": "journal milestone",
+            "startMs": 368965,
+            "endMs": 378479
+          },
+          {
+            "seconds": 1.318,
+            "from": "journal milestone",
+            "to": "invitation",
+            "startMs": 378479,
+            "endMs": 379797
+          },
+          {
+            "seconds": 40.75,
+            "from": "invitation",
+            "to": "settle encounter",
+            "startMs": 379797,
+            "endMs": 420547
+          },
+          {
+            "seconds": 57.282,
+            "from": "settle encounter",
+            "to": "settle encounter",
+            "startMs": 420547,
+            "endMs": 477829
+          },
+          {
+            "seconds": 71.317,
+            "from": "settle encounter",
+            "to": "settle encounter",
+            "startMs": 477829,
+            "endMs": 549146
+          },
+          {
+            "seconds": 50.183,
+            "from": "settle encounter",
+            "to": "A LITTLE MOMENT TO KEEP\n\n30 route stars. A little brighter every evening.\n\nSkip celebration",
+            "startMs": 549146,
+            "endMs": 599329
+          },
+          {
+            "seconds": 122.822,
+            "from": "A LITTLE MOMENT TO KEEP\n\n30 route stars. A little brighter every evening.\n\nSkip celebration",
+            "to": "settle encounter",
+            "startMs": 599329,
+            "endMs": 722151
+          },
+          {
+            "seconds": 173.167,
+            "from": "settle encounter",
+            "to": "settle encounter",
+            "startMs": 722151,
+            "endMs": 895318
+          },
+          {
+            "seconds": 0.502,
+            "from": "settle encounter",
+            "to": "Claim cafe service",
+            "startMs": 895318,
+            "endMs": 895820
+          },
+          {
+            "seconds": 0.074,
+            "from": "Claim cafe service",
+            "to": "Claim Warm the Kettle",
+            "startMs": 895820,
+            "endMs": 895894
+          },
+          {
+            "seconds": 1.094,
+            "from": "Claim Warm the Kettle",
+            "to": "invitation",
+            "startMs": 895894,
+            "endMs": 896988
+          },
+          {
+            "seconds": 179.977,
+            "from": "invitation",
+            "to": "settle encounter",
+            "startMs": 896988,
+            "endMs": 1076965
+          },
+          {
+            "seconds": 858.934,
+            "from": "settle encounter",
+            "to": "Claim cafe service",
+            "startMs": 1076965,
+            "endMs": 1935899
+          },
+          {
+            "seconds": 62.774,
+            "from": "Claim cafe service",
+            "to": "A LITTLE MOMENT TO KEEP\n\n60 route stars. A little brighter every evening.\n\nSkip celebration",
+            "startMs": 1935899,
+            "endMs": 1998673
+          },
+          {
+            "seconds": 1601.327,
+            "from": "A LITTLE MOMENT TO KEEP\n\n60 route stars. A little brighter every evening.\n\nSkip celebration",
+            "to": "window end",
+            "startMs": 1998673,
+            "endMs": 3600000
+          }
+        ],
+        "overFiveMinutes": [
+          {
+            "seconds": 858.934,
+            "from": "settle encounter",
+            "to": "Claim cafe service",
+            "startMs": 1076965,
+            "endMs": 1935899
+          },
+          {
+            "seconds": 1601.327,
+            "from": "A LITTLE MOMENT TO KEEP\n\n60 route stars. A little brighter every evening.\n\nSkip celebration",
+            "to": "window end",
+            "startMs": 1998673,
+            "endMs": 3600000
+          }
+        ]
+      },
+      "debugControlsMax": 0,
+      "seedLabelsMax": 0,
+      "overflowMax": 0,
+      "wordsMedian": 165,
+      "wordsMax": 565,
+      "wordCountsByScreen": {
+        "hub": {
+          "visits": 64,
+          "median": 134,
+          "max": 141
+        },
+        "prepare": {
+          "visits": 64,
+          "median": 345,
+          "max": 358
+        },
+        "map": {
+          "visits": 147,
+          "median": 131,
+          "max": 194
+        },
+        "result": {
+          "visits": 63,
+          "median": 136,
+          "max": 152
+        },
+        "gacha": {
+          "visits": 8,
+          "median": 209,
+          "max": 245
+        },
+        "inventory": {
+          "visits": 42,
+          "median": 544.5,
+          "max": 565
+        },
+        "collection": {
+          "visits": 41,
+          "median": 302,
+          "max": 318
+        },
+        "journal": {
+          "visits": 14,
+          "median": 286,
+          "max": 296
+        }
+      },
+      "before": {
+        "meaningfulOffers": 98,
+        "rewardEvents": 18,
+        "celebrations": 6,
+        "deadSeconds": 1886.8830000000003,
+        "debugControlsMax": 6
+      }
+    }
+  ],
+  "gates": {
+    "meaningfulChoices": "PASS",
+    "rewardCadence": "MISS",
+    "deadTimeReduction": "MISS",
+    "playerControls": "PASS"
+  },
+  "leases": [
+    {
+      "number": 1,
+      "startMs": 0,
+      "endMs": 603039,
+      "durationMs": 603039,
+      "wallStart": "2026-11-08T22:48:24.882Z",
+      "wallEnd": "2026-11-08T22:58:27.921Z"
+    },
+    {
+      "number": 2,
+      "startMs": 603039,
+      "endMs": 1253642,
+      "durationMs": 650603,
+      "wallStart": "2026-11-08T22:58:35.101Z",
+      "wallEnd": "2026-11-08T23:09:25.704Z"
+    },
+    {
+      "number": 3,
+      "startMs": 1253642,
+      "endMs": 1882165,
+      "durationMs": 628523,
+      "wallStart": "2026-11-08T23:09:35.258Z",
+      "wallEnd": "2026-11-08T23:20:03.781Z"
+    },
+    {
+      "number": 4,
+      "startMs": 1882165,
+      "endMs": 2499900,
+      "durationMs": 617735,
+      "wallStart": "2026-11-08T23:30:06.762Z",
+      "wallEnd": "2026-11-08T23:40:24.497Z"
+    },
+    {
+      "number": 5,
+      "startMs": 2499900,
+      "endMs": 3120357,
+      "durationMs": 620457,
+      "wallStart": "2026-11-08T23:47:22.009Z",
+      "wallEnd": "2026-11-08T23:57:42.466Z"
+    },
+    {
+      "number": 6,
+      "startMs": 3120357,
+      "endMs": 3611778,
+      "durationMs": 491421,
+      "wallStart": "2026-11-08T23:57:51.708Z",
+      "wallEnd": "2026-11-09T00:06:03.129Z"
+    }
+  ],
+  "captures": [
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/000-fresh-save.png",
+      "label": "fresh-save",
+      "atMs": 945
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/001-prepare.png",
+      "label": "prepare",
+      "atMs": 1144
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/002-result.png",
+      "label": "result",
+      "atMs": 17914
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/003-welcome.png",
+      "label": "welcome",
+      "atMs": 25590
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/004-opening-equipment-compare.png",
+      "label": "opening-equipment-compare",
+      "atMs": 30548
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/005-earned-invitation.png",
+      "label": "earned-invitation",
+      "atMs": 35861
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/006-level-up.png",
+      "label": "level-up",
+      "atMs": 43554
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/007-journal.png",
+      "label": "journal",
+      "atMs": 43644
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/008-cafe.png",
+      "label": "cafe",
+      "atMs": 43774
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/009-prepare.png",
+      "label": "prepare",
+      "atMs": 47653
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/010-result.png",
+      "label": "result",
+      "atMs": 72701
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/011-reward-choice.png",
+      "label": "reward-choice",
+      "atMs": 77887
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/012-prepare.png",
+      "label": "prepare",
+      "atMs": 114096
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/013-result.png",
+      "label": "result",
+      "atMs": 132846
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/014-reward-choice.png",
+      "label": "reward-choice",
+      "atMs": 138029
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/015-prepare.png",
+      "label": "prepare",
+      "atMs": 145277
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/016-result.png",
+      "label": "result",
+      "atMs": 186456
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/017-earned-invitation.png",
+      "label": "earned-invitation",
+      "atMs": 194549
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/018-level-up.png",
+      "label": "level-up",
+      "atMs": 202505
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/019-cafe.png",
+      "label": "cafe",
+      "atMs": 202611
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/020-earned-invitation.png",
+      "label": "earned-invitation",
+      "atMs": 205418
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/021-level-up.png",
+      "label": "level-up",
+      "atMs": 213348
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/022-cafe.png",
+      "label": "cafe",
+      "atMs": 213459
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/023-prepare.png",
+      "label": "prepare",
+      "atMs": 217304
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/024-result.png",
+      "label": "result",
+      "atMs": 242075
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/025-prepare.png",
+      "label": "prepare",
+      "atMs": 283455
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/026-result.png",
+      "label": "result",
+      "atMs": 299337
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/027-minute-5-settle-encounter.png",
+      "label": "minute-5-settle encounter",
+      "atMs": 304480
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/028-prepare.png",
+      "label": "prepare",
+      "atMs": 311769
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/029-result.png",
+      "label": "result",
+      "atMs": 362468
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/030-earned-invitation.png",
+      "label": "earned-invitation",
+      "atMs": 370558
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/031-earned-invitation.png",
+      "label": "earned-invitation",
+      "atMs": 381393
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/032-prepare.png",
+      "label": "prepare",
+      "atMs": 393383
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/033-result.png",
+      "label": "result",
+      "atMs": 415468
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/034-prepare.png",
+      "label": "prepare",
+      "atMs": 456858
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/035-result.png",
+      "label": "result",
+      "atMs": 472748
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/036-prepare.png",
+      "label": "prepare",
+      "atMs": 485180
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/037-result.png",
+      "label": "result",
+      "atMs": 544058
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/038-prepare.png",
+      "label": "prepare",
+      "atMs": 569596
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/039-result.png",
+      "label": "result",
+      "atMs": 594291
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/040-minute-10-choose-first-offered-boon.png",
+      "label": "minute-10-choose first offered boon",
+      "atMs": 603033
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/041-lease-checkpoint.png",
+      "label": "lease-checkpoint",
+      "atMs": 603039
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/042-prepare.png",
+      "label": "prepare",
+      "atMs": 635983
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/043-result.png",
+      "label": "result",
+      "atMs": 655812
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/044-earned-invitation.png",
+      "label": "earned-invitation",
+      "atMs": 898591
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/045-minute-15-equip-Common-Hearthloom-Pan.png",
+      "label": "minute-15-equip Common Hearthloom Pan",
+      "atMs": 902772
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/046-minute-20-result.png",
+      "label": "minute-20-result",
+      "atMs": 1248536
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/047-lease-checkpoint.png",
+      "label": "lease-checkpoint",
+      "atMs": 1253642
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/048-minute-25-choose-5-0.png",
+      "label": "minute-25-choose 5-0",
+      "atMs": 1503496
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/049-minute-30-result.png",
+      "label": "minute-30-result",
+      "atMs": 1810693
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/050-lease-checkpoint.png",
+      "label": "lease-checkpoint",
+      "atMs": 1882165
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/051-minute-35-result.png",
+      "label": "minute-35-result",
+      "atMs": 2106589
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/052-minute-40-Fight.png",
+      "label": "minute-40-Fight",
+      "atMs": 2400766
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/053-lease-checkpoint.png",
+      "label": "lease-checkpoint",
+      "atMs": 2499900
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/054-minute-45-Fight.png",
+      "label": "minute-45-Fight",
+      "atMs": 2701337
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/055-minute-50-settle-encounter.png",
+      "label": "minute-50-settle encounter",
+      "atMs": 3003558
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/056-lease-checkpoint.png",
+      "label": "lease-checkpoint",
+      "atMs": 3120357
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/057-minute-55-result.png",
+      "label": "minute-55-result",
+      "atMs": 3319878
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/058-minute-60-result.png",
+      "label": "minute-60-result",
+      "atMs": 3606648
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/059-lease-checkpoint.png",
+      "label": "lease-checkpoint",
+      "atMs": 3611778
+    }
+  ],
+  "files": [
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/REGISTERED-METHOD.json",
+      "sha256": "da66c9764d2b3aae291d81d08b4ae7781e55c98b0f169600369c7d801a82558d"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/REGISTERED-METHOD.md",
+      "sha256": "6067eb791e028e92fa33f0b8283df28ee833a31f801e763f6f05ae77f00f35df"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/engagement/home-03/session/timeline.json",
+      "sha256": "84377fd00a1aa74cdf915736f3d705b3a8232a40b6fe4e7a86c8cf5aa1d9f83f"
+    },
+    {
+      "path": "reports/cardrpg-big/a5/h0/metrics.json",
+      "sha256": "1123035431cc90db3ce7a7aee54ff9cecd54353820c5769c510412ac37cd3a30"
+    },
+    {
+      "path": "tools/cardrpg-big/a5-engagement-informed-session.mjs",
+      "sha256": "3800317bb0ecac44afe28d65e857a1d9b116b15978c59a1e6a8cafc16310e240"
+    }
+  ],
+  "limitations": [
+    "Choice offers differ in final HP, actions or result at seeds 1/2/3; these are not distinct strategy ideas or estimated causal win gains.",
+    "H0 and A5 use the same automated reading allowances. New opening, rewards, click controls and closed-details visibility are explicit protocol adaptations.",
+    "Historical H0 word counts include an imperfect closed-details visibility check. Use the separate paired C1 copy audit for before/after copy claims.",
+    "Noninteractive battle walltime is the registered dead-time proxy. Other elapsed time is not silently classified as dead time.",
+    "Discovery timestamps are DOM observation times; chronological reward sorting precedes gap calculation.",
+    "Browser lifecycle freezes at lock handoffs, but cafe service uses real walltime. This is not an isolated causal comparison of one mechanic.",
+    "The script records offered choices and takes a fixed policy. It does not prove that a new human understands each choice or follows advice.",
+    "Home primary chooses the route; the fixed policy reviews one affordable lowest-level teammate upgrade and chooses the first available named crew option. UI and policy changed together; this is not a causal comparison or human retention evidence."
+  ]
+}

@@ -1,0 +1,62 @@
+import json, os, signal, subprocess, time
+from pathlib import Path
+from datetime import datetime, timezone
+
+root = Path('/Users/bao/taskbar-hero-cardrpg-a4')
+home_pid = 12101
+home_command = 'node tools/cardrpg-big/a5-engagement-informed-session.mjs'
+diagnostics = {
+    17057: 'node tools/cardrpg-big/a5-impact-delay-run.mjs',
+    17707: 'node tools/cardrpg-big/a5-threat-beats-run.mjs',
+    18122: 'node tools/cardrpg-big/a5-display-precision-run.mjs',
+}
+output = root/'reports/cardrpg-big/a5/b1/impact-delay-49/scheduling.json'
+log = root/'reports/cardrpg-big/a5/engagement/home-03/session-attempt-1.log'
+events = []
+
+def command(pid):
+    return subprocess.run(['ps', '-p', str(pid), '-o', 'command='], capture_output=True, text=True).stdout.strip()
+
+def record(kind, **data):
+    events.append(dict(at=datetime.now(timezone.utc).isoformat(), kind=kind, **data))
+    output.write_text(json.dumps(events, indent=2)+'\n')
+    print(json.dumps(events[-1]), flush=True)
+
+def has_home_lease():
+    rows = subprocess.check_output(['ps', '-axo', 'pid,ppid,command'], text=True).splitlines()[1:]
+    return any(len(parts := row.split(None, 2)) == 3 and parts[1] == str(home_pid)
+               and 'with-timing-lock.mjs A5 Home engagement03 lease' in parts[2] for row in rows)
+
+assert command(home_pid) == home_command
+assert all(command(pid) == expected for pid, expected in diagnostics.items())
+record('waiting-for-frozen-boundary', homePid=home_pid, diagnostics=list(diagnostics), earliestCompletedLease=3)
+paused = False
+try:
+    deadline = time.monotonic()+1000
+    while time.monotonic() < deadline:
+        if command(home_pid) != home_command:
+            record('original-home-ended-before-pause')
+            break
+        if '"leaseNumber":3,' not in log.read_text() or has_home_lease():
+            time.sleep(.5)
+            continue
+        os.kill(home_pid, signal.SIGSTOP)
+        paused = True
+        if has_home_lease():
+            os.kill(home_pid, signal.SIGCONT)
+            paused = False
+            time.sleep(.5)
+            continue
+        record('paused-at-frozen-handoff', homePid=home_pid)
+        bound = time.monotonic()+900
+        while time.monotonic() < bound and any(command(pid) == expected for pid, expected in diagnostics.items()):
+            time.sleep(2)
+        remaining = [pid for pid, expected in diagnostics.items() if command(pid) == expected]
+        record('handoff-finished', reason='15 minute watchdog' if remaining else 'diagnostics ended', remaining=remaining)
+        break
+finally:
+    if paused:
+        time.sleep(7)
+        if command(home_pid) == home_command:
+            os.kill(home_pid, signal.SIGCONT)
+            record('resumed-original-home', homePid=home_pid)

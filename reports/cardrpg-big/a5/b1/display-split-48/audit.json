@@ -1,0 +1,3194 @@
+{
+  "status": "PASS: original receipt reconstruction",
+  "analysis": "Post-hoc TRAIN analysis",
+  "forecastCombatSeeds": [
+    1,
+    20
+  ],
+  "comparisonCombatSeeds": [
+    21,
+    50
+  ],
+  "gearSeeds": [
+    21,
+    50
+  ],
+  "newCombatSamples": 0,
+  "acceptanceSeedsUsed": false,
+  "chapters": [
+    {
+      "chapter": 1,
+      "cases": 128,
+      "overlappingSpearman": 0.737898387043589,
+      "disjointCombatSpearman": 0.43896929015335984,
+      "meanAbsoluteErrorPp": 7.605468749999997,
+      "oppositeSigns": 19,
+      "predictedNegative": 19,
+      "observedNegative": 0,
+      "predictedTies": 29,
+      "observedTies": 36,
+      "bands": {
+        "Risky": {
+          "entries": 6720,
+          "wins": 1928,
+          "rate": 0.2869047619047619
+        },
+        "Even": {
+          "entries": 896,
+          "wins": 557,
+          "rate": 0.6216517857142857
+        },
+        "Favoured": {
+          "entries": 64,
+          "wins": 54,
+          "rate": 0.84375
+        }
+      }
+    },
+    {
+      "chapter": 2,
+      "cases": 128,
+      "overlappingSpearman": 0.7544450616368579,
+      "disjointCombatSpearman": 0.6201215142053454,
+      "meanAbsoluteErrorPp": 4.153645833333333,
+      "oppositeSigns": 17,
+      "predictedNegative": 12,
+      "observedNegative": 19,
+      "predictedTies": 7,
+      "observedTies": 56,
+      "bands": {
+        "Risky": {
+          "entries": 858,
+          "wins": 99,
+          "rate": 0.11538461538461539
+        },
+        "Even": {
+          "entries": 4548,
+          "wins": 2598,
+          "rate": 0.5712401055408971
+        },
+        "Favoured": {
+          "entries": 2274,
+          "wins": 1860,
+          "rate": 0.8179419525065963
+        }
+      }
+    },
+    {
+      "chapter": 3,
+      "cases": 128,
+      "overlappingSpearman": 0.7292684378253428,
+      "disjointCombatSpearman": 0.6877989151748642,
+      "meanAbsoluteErrorPp": 3.220052083333332,
+      "oppositeSigns": 7,
+      "predictedNegative": 23,
+      "observedNegative": 20,
+      "predictedTies": 28,
+      "observedTies": 61,
+      "bands": {
+        "Risky": {
+          "entries": 0,
+          "wins": 0,
+          "rate": null
+        },
+        "Even": {
+          "entries": 399,
+          "wins": 288,
+          "rate": 0.7218045112781954
+        },
+        "Favoured": {
+          "entries": 7281,
+          "wins": 6998,
+          "rate": 0.9611317126768301
+        }
+      }
+    }
+  ],
+  "cases": [
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-weapon-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 5.833333333333333,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-weapon-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 3.1666666666666665,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-weapon-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 15.0,
+      "observedGainPp": 3.3333333333333335,
+      "improved": 1,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-outfit-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 2.3333333333333335,
+      "observedGainPp": 3.3333333333333335,
+      "improved": 1,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-outfit-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 16.0,
+      "observedGainPp": 10.0,
+      "improved": 3,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-outfit-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.5,
+      "observedGainPp": 0.0,
+      "improved": 1,
+      "worsened": 1
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-charm-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 3.3333333333333335,
+      "improved": 1,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-charm-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 20.166666666666668,
+      "observedGainPp": 10.0,
+      "improved": 3,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-charm-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 5.166666666666667,
+      "observedGainPp": 3.3333333333333335,
+      "improved": 2,
+      "worsened": 1
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-relic-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 4.333333333333333,
+      "observedGainPp": 3.3333333333333335,
+      "improved": 1,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-relic-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 26.333333333333332,
+      "observedGainPp": 20.0,
+      "improved": 6,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-relic-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": -0.5,
+      "observedGainPp": 3.3333333333333335,
+      "improved": 1,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-weapon-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 6.5,
+      "observedGainPp": 3.3333333333333335,
+      "improved": 1,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-weapon-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 8.166666666666666,
+      "observedGainPp": 3.3333333333333335,
+      "improved": 1,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-weapon-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 17.666666666666668,
+      "observedGainPp": 3.3333333333333335,
+      "improved": 1,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-outfit-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 4.5,
+      "observedGainPp": 3.3333333333333335,
+      "improved": 1,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-outfit-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 30.166666666666668,
+      "observedGainPp": 16.666666666666664,
+      "improved": 5,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-outfit-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.8333333333333334,
+      "observedGainPp": -3.3333333333333335,
+      "improved": 1,
+      "worsened": 2
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-charm-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 3.3333333333333335,
+      "observedGainPp": 3.3333333333333335,
+      "improved": 1,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-charm-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 33.0,
+      "observedGainPp": 20.0,
+      "improved": 6,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-charm-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 5.166666666666667,
+      "observedGainPp": 0.0,
+      "improved": 2,
+      "worsened": 2
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-relic-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 4.5,
+      "observedGainPp": 6.666666666666667,
+      "improved": 2,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-relic-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 41.666666666666664,
+      "observedGainPp": 43.333333333333336,
+      "improved": 13,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-relic-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.16666666666666666,
+      "observedGainPp": 0.0,
+      "improved": 1,
+      "worsened": 1
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-weapon-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 7.333333333333333,
+      "observedGainPp": 10.0,
+      "improved": 4,
+      "worsened": 1
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-weapon-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 13.333333333333334,
+      "observedGainPp": 3.3333333333333335,
+      "improved": 1,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-weapon-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 19.333333333333332,
+      "observedGainPp": 3.3333333333333335,
+      "improved": 1,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-outfit-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 5.166666666666667,
+      "observedGainPp": 10.0,
+      "improved": 3,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-outfit-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 64.16666666666667,
+      "observedGainPp": 63.33333333333333,
+      "improved": 19,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-outfit-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.8333333333333334,
+      "observedGainPp": 0.0,
+      "improved": 1,
+      "worsened": 1
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-charm-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 5.333333333333333,
+      "observedGainPp": 10.0,
+      "improved": 3,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-charm-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 68.16666666666667,
+      "observedGainPp": 63.33333333333333,
+      "improved": 19,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-charm-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 4.833333333333333,
+      "observedGainPp": 0.0,
+      "improved": 2,
+      "worsened": 2
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-relic-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 4.666666666666667,
+      "observedGainPp": 10.0,
+      "improved": 3,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-relic-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 57.666666666666664,
+      "observedGainPp": 56.666666666666664,
+      "improved": 17,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-relic-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 3.3333333333333335,
+      "improved": 1,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-weapon-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 7.333333333333333,
+      "observedGainPp": 16.666666666666664,
+      "improved": 6,
+      "worsened": 1
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-weapon-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 13.5,
+      "observedGainPp": 10.0,
+      "improved": 3,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-weapon-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 17.5,
+      "observedGainPp": 10.0,
+      "improved": 3,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-outfit-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 16.5,
+      "observedGainPp": 16.666666666666664,
+      "improved": 5,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-outfit-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 86.0,
+      "observedGainPp": 80.0,
+      "improved": 24,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-outfit-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": -1.0,
+      "observedGainPp": 3.3333333333333335,
+      "improved": 1,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-charm-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 18.5,
+      "observedGainPp": 16.666666666666664,
+      "improved": 5,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-charm-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 88.83333333333333,
+      "observedGainPp": 83.33333333333334,
+      "improved": 25,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-charm-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 2.1666666666666665,
+      "observedGainPp": 6.666666666666667,
+      "improved": 2,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-relic-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 9.333333333333334,
+      "observedGainPp": 13.333333333333334,
+      "improved": 4,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-relic-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 76.5,
+      "observedGainPp": 73.33333333333333,
+      "improved": 22,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"hearthloom-relic-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 3.3333333333333335,
+      "improved": 1,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"moonwick-weapon-common\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 3.6666666666666665,
+      "observedGainPp": 16.666666666666664,
+      "improved": 5,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"moonwick-weapon-common\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": -2.1666666666666665,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"moonwick-weapon-common\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 24.166666666666668,
+      "observedGainPp": 13.333333333333334,
+      "improved": 4,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"moonwick-outfit-common\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"moonwick-outfit-common\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 1.1666666666666667,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"moonwick-outfit-common\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"moonwick-charm-common\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"moonwick-charm-common\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 1.1666666666666667,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"moonwick-charm-common\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.16666666666666666,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"moonwick-relic-common\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"moonwick-relic-common\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 1.5,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"moonwick-relic-common\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"moonwick-weapon-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 9.166666666666666,
+      "observedGainPp": 20.0,
+      "improved": 6,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"moonwick-weapon-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 0.5,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"moonwick-weapon-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 33.833333333333336,
+      "observedGainPp": 20.0,
+      "improved": 6,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"moonwick-outfit-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"moonwick-outfit-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 1.1666666666666667,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"moonwick-outfit-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"moonwick-charm-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"moonwick-charm-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 1.1666666666666667,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"moonwick-charm-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.16666666666666666,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"moonwick-relic-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 1.1666666666666667,
+      "observedGainPp": 0.0,
+      "improved": 1,
+      "worsened": 1
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"moonwick-relic-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 1.6666666666666667,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"moonwick-relic-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 2.8333333333333335,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"moonwick-weapon-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 10.333333333333334,
+      "observedGainPp": 26.666666666666668,
+      "improved": 8,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"moonwick-weapon-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 1.1666666666666667,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"moonwick-weapon-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 40.0,
+      "observedGainPp": 20.0,
+      "improved": 6,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"moonwick-outfit-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"moonwick-outfit-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 1.1666666666666667,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"moonwick-outfit-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"moonwick-charm-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": -0.16666666666666666,
+      "observedGainPp": 3.3333333333333335,
+      "improved": 1,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"moonwick-charm-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 1.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"moonwick-charm-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 1.5,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"moonwick-relic-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 0.16666666666666666,
+      "observedGainPp": 6.666666666666667,
+      "improved": 4,
+      "worsened": 2
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"moonwick-relic-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 2.6666666666666665,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"moonwick-relic-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 2.8333333333333335,
+      "observedGainPp": 3.3333333333333335,
+      "improved": 1,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"moonwick-weapon-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 17.0,
+      "observedGainPp": 46.666666666666664,
+      "improved": 14,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"moonwick-weapon-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 1.8333333333333333,
+      "observedGainPp": 3.3333333333333335,
+      "improved": 1,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"moonwick-weapon-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 40.666666666666664,
+      "observedGainPp": 26.666666666666668,
+      "improved": 8,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"moonwick-outfit-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 6.666666666666667,
+      "improved": 2,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"moonwick-outfit-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 0.5,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"moonwick-outfit-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"moonwick-charm-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 2.1666666666666665,
+      "observedGainPp": 3.3333333333333335,
+      "improved": 1,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"moonwick-charm-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 0.3333333333333333,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"moonwick-charm-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": -2.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"moonwick-relic-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 2.6666666666666665,
+      "observedGainPp": 23.333333333333332,
+      "improved": 7,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"moonwick-relic-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 2.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"moonwick-relic-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 3.6666666666666665,
+      "observedGainPp": 6.666666666666667,
+      "improved": 2,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"mossbrew-weapon-common\",\"cardId\":\"clover\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": -15.666666666666666,
+      "observedGainPp": 6.666666666666667,
+      "improved": 5,
+      "worsened": 3
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"mossbrew-weapon-common\",\"cardId\":\"clover\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": -5.5,
+      "observedGainPp": -16.666666666666664,
+      "improved": 5,
+      "worsened": 10
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"mossbrew-weapon-common\",\"cardId\":\"clover\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": -0.8333333333333334,
+      "observedGainPp": -6.666666666666667,
+      "improved": 0,
+      "worsened": 2
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"mossbrew-outfit-common\",\"cardId\":\"clover\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": -11.833333333333334,
+      "observedGainPp": 13.333333333333334,
+      "improved": 5,
+      "worsened": 1
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"mossbrew-outfit-common\",\"cardId\":\"clover\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 3.1666666666666665,
+      "observedGainPp": -10.0,
+      "improved": 6,
+      "worsened": 9
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"mossbrew-outfit-common\",\"cardId\":\"clover\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": -1.0,
+      "observedGainPp": -6.666666666666667,
+      "improved": 0,
+      "worsened": 2
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"mossbrew-charm-common\",\"cardId\":\"clover\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": -11.833333333333334,
+      "observedGainPp": 13.333333333333334,
+      "improved": 5,
+      "worsened": 1
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"mossbrew-charm-common\",\"cardId\":\"clover\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 3.1666666666666665,
+      "observedGainPp": -10.0,
+      "improved": 6,
+      "worsened": 9
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"mossbrew-charm-common\",\"cardId\":\"clover\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": -0.6666666666666666,
+      "observedGainPp": -6.666666666666667,
+      "improved": 0,
+      "worsened": 2
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"mossbrew-relic-common\",\"cardId\":\"clover\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": -11.833333333333334,
+      "observedGainPp": 13.333333333333334,
+      "improved": 5,
+      "worsened": 1
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"mossbrew-relic-common\",\"cardId\":\"clover\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 3.1666666666666665,
+      "observedGainPp": -10.0,
+      "improved": 6,
+      "worsened": 9
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"mossbrew-relic-common\",\"cardId\":\"clover\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": -1.0,
+      "observedGainPp": -6.666666666666667,
+      "improved": 0,
+      "worsened": 2
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"mossbrew-weapon-rare\",\"cardId\":\"clover\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": -8.0,
+      "observedGainPp": 6.666666666666667,
+      "improved": 5,
+      "worsened": 3
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"mossbrew-weapon-rare\",\"cardId\":\"clover\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": -5.5,
+      "observedGainPp": -10.0,
+      "improved": 5,
+      "worsened": 8
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"mossbrew-weapon-rare\",\"cardId\":\"clover\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": -0.8333333333333334,
+      "observedGainPp": -6.666666666666667,
+      "improved": 0,
+      "worsened": 2
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"mossbrew-outfit-rare\",\"cardId\":\"clover\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": -11.833333333333334,
+      "observedGainPp": 13.333333333333334,
+      "improved": 5,
+      "worsened": 1
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"mossbrew-outfit-rare\",\"cardId\":\"clover\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 3.1666666666666665,
+      "observedGainPp": -10.0,
+      "improved": 6,
+      "worsened": 9
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"mossbrew-outfit-rare\",\"cardId\":\"clover\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": -1.0,
+      "observedGainPp": -6.666666666666667,
+      "improved": 0,
+      "worsened": 2
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"mossbrew-charm-rare\",\"cardId\":\"clover\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": -11.833333333333334,
+      "observedGainPp": 13.333333333333334,
+      "improved": 5,
+      "worsened": 1
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"mossbrew-charm-rare\",\"cardId\":\"clover\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 3.1666666666666665,
+      "observedGainPp": -10.0,
+      "improved": 6,
+      "worsened": 9
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"mossbrew-charm-rare\",\"cardId\":\"clover\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": -0.6666666666666666,
+      "observedGainPp": -6.666666666666667,
+      "improved": 0,
+      "worsened": 2
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"mossbrew-relic-rare\",\"cardId\":\"clover\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": -11.833333333333334,
+      "observedGainPp": 13.333333333333334,
+      "improved": 5,
+      "worsened": 1
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"mossbrew-relic-rare\",\"cardId\":\"clover\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 3.1666666666666665,
+      "observedGainPp": -10.0,
+      "improved": 6,
+      "worsened": 9
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"mossbrew-relic-rare\",\"cardId\":\"clover\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": -1.0,
+      "observedGainPp": -6.666666666666667,
+      "improved": 0,
+      "worsened": 2
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"mossbrew-weapon-epic\",\"cardId\":\"clover\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": -8.333333333333334,
+      "observedGainPp": 20.0,
+      "improved": 7,
+      "worsened": 1
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"mossbrew-weapon-epic\",\"cardId\":\"clover\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": -0.5,
+      "observedGainPp": -10.0,
+      "improved": 5,
+      "worsened": 8
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"mossbrew-weapon-epic\",\"cardId\":\"clover\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": -0.6666666666666666,
+      "observedGainPp": -6.666666666666667,
+      "improved": 0,
+      "worsened": 2
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"mossbrew-outfit-epic\",\"cardId\":\"clover\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": -11.833333333333334,
+      "observedGainPp": 13.333333333333334,
+      "improved": 5,
+      "worsened": 1
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"mossbrew-outfit-epic\",\"cardId\":\"clover\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 3.1666666666666665,
+      "observedGainPp": -10.0,
+      "improved": 6,
+      "worsened": 9
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"mossbrew-outfit-epic\",\"cardId\":\"clover\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": -1.0,
+      "observedGainPp": -6.666666666666667,
+      "improved": 0,
+      "worsened": 2
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"mossbrew-charm-epic\",\"cardId\":\"clover\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": -11.833333333333334,
+      "observedGainPp": 13.333333333333334,
+      "improved": 5,
+      "worsened": 1
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"mossbrew-charm-epic\",\"cardId\":\"clover\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 3.1666666666666665,
+      "observedGainPp": -10.0,
+      "improved": 6,
+      "worsened": 9
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"mossbrew-charm-epic\",\"cardId\":\"clover\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": -0.6666666666666666,
+      "observedGainPp": -6.666666666666667,
+      "improved": 0,
+      "worsened": 2
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"mossbrew-relic-epic\",\"cardId\":\"clover\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": -11.833333333333334,
+      "observedGainPp": 13.333333333333334,
+      "improved": 5,
+      "worsened": 1
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"mossbrew-relic-epic\",\"cardId\":\"clover\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 3.1666666666666665,
+      "observedGainPp": -10.0,
+      "improved": 6,
+      "worsened": 9
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"mossbrew-relic-epic\",\"cardId\":\"clover\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": -1.0,
+      "observedGainPp": -6.666666666666667,
+      "improved": 0,
+      "worsened": 2
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"mossbrew-weapon-legendary\",\"cardId\":\"clover\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": -12.0,
+      "observedGainPp": 20.0,
+      "improved": 7,
+      "worsened": 1
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"mossbrew-weapon-legendary\",\"cardId\":\"clover\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 6.166666666666667,
+      "observedGainPp": 10.0,
+      "improved": 7,
+      "worsened": 4
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"mossbrew-weapon-legendary\",\"cardId\":\"clover\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": -0.3333333333333333,
+      "observedGainPp": -3.3333333333333335,
+      "improved": 0,
+      "worsened": 1
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"mossbrew-outfit-legendary\",\"cardId\":\"clover\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": -11.833333333333334,
+      "observedGainPp": 20.0,
+      "improved": 7,
+      "worsened": 1
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"mossbrew-outfit-legendary\",\"cardId\":\"clover\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 3.1666666666666665,
+      "observedGainPp": -10.0,
+      "improved": 6,
+      "worsened": 9
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"mossbrew-outfit-legendary\",\"cardId\":\"clover\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": -0.6666666666666666,
+      "observedGainPp": -6.666666666666667,
+      "improved": 0,
+      "worsened": 2
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"mossbrew-charm-legendary\",\"cardId\":\"clover\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": -10.166666666666666,
+      "observedGainPp": 13.333333333333334,
+      "improved": 5,
+      "worsened": 1
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"mossbrew-charm-legendary\",\"cardId\":\"clover\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 10.5,
+      "observedGainPp": 0.0,
+      "improved": 7,
+      "worsened": 7
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"mossbrew-charm-legendary\",\"cardId\":\"clover\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": -1.1666666666666667,
+      "observedGainPp": -3.3333333333333335,
+      "improved": 0,
+      "worsened": 1
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"mossbrew-relic-legendary\",\"cardId\":\"clover\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": -6.166666666666667,
+      "observedGainPp": 10.0,
+      "improved": 5,
+      "worsened": 2
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"mossbrew-relic-legendary\",\"cardId\":\"clover\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 17.333333333333332,
+      "observedGainPp": 6.666666666666667,
+      "improved": 8,
+      "worsened": 6
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"mossbrew-relic-legendary\",\"cardId\":\"clover\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.0,
+      "observedGainPp": -3.3333333333333335,
+      "improved": 0,
+      "worsened": 1
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"rainlace-weapon-common\",\"cardId\":\"clover\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 9.833333333333334,
+      "observedGainPp": 3.3333333333333335,
+      "improved": 1,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"rainlace-weapon-common\",\"cardId\":\"clover\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": -1.6666666666666667,
+      "observedGainPp": 0.0,
+      "improved": 1,
+      "worsened": 1
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"rainlace-weapon-common\",\"cardId\":\"clover\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.3333333333333333,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"rainlace-outfit-common\",\"cardId\":\"clover\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 3.3333333333333335,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"rainlace-outfit-common\",\"cardId\":\"clover\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"rainlace-outfit-common\",\"cardId\":\"clover\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"rainlace-charm-common\",\"cardId\":\"clover\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 3.1666666666666665,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"rainlace-charm-common\",\"cardId\":\"clover\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"rainlace-charm-common\",\"cardId\":\"clover\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.16666666666666666,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"rainlace-relic-common\",\"cardId\":\"clover\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 3.1666666666666665,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"rainlace-relic-common\",\"cardId\":\"clover\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"rainlace-relic-common\",\"cardId\":\"clover\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"rainlace-weapon-rare\",\"cardId\":\"clover\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 10.0,
+      "observedGainPp": 3.3333333333333335,
+      "improved": 1,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"rainlace-weapon-rare\",\"cardId\":\"clover\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": -1.6666666666666667,
+      "observedGainPp": 0.0,
+      "improved": 1,
+      "worsened": 1
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"rainlace-weapon-rare\",\"cardId\":\"clover\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.3333333333333333,
+      "observedGainPp": 3.3333333333333335,
+      "improved": 1,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"rainlace-outfit-rare\",\"cardId\":\"clover\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 3.3333333333333335,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"rainlace-outfit-rare\",\"cardId\":\"clover\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 0.3333333333333333,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"rainlace-outfit-rare\",\"cardId\":\"clover\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"rainlace-charm-rare\",\"cardId\":\"clover\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 3.1666666666666665,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"rainlace-charm-rare\",\"cardId\":\"clover\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 0.3333333333333333,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"rainlace-charm-rare\",\"cardId\":\"clover\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.16666666666666666,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"rainlace-relic-rare\",\"cardId\":\"clover\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 3.1666666666666665,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"rainlace-relic-rare\",\"cardId\":\"clover\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 0.3333333333333333,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"rainlace-relic-rare\",\"cardId\":\"clover\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"rainlace-weapon-epic\",\"cardId\":\"clover\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 10.666666666666666,
+      "observedGainPp": 6.666666666666667,
+      "improved": 2,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"rainlace-weapon-epic\",\"cardId\":\"clover\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": -1.6666666666666667,
+      "observedGainPp": 0.0,
+      "improved": 1,
+      "worsened": 1
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"rainlace-weapon-epic\",\"cardId\":\"clover\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.3333333333333333,
+      "observedGainPp": 3.3333333333333335,
+      "improved": 1,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"rainlace-outfit-epic\",\"cardId\":\"clover\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 7.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"rainlace-outfit-epic\",\"cardId\":\"clover\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 0.3333333333333333,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"rainlace-outfit-epic\",\"cardId\":\"clover\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"rainlace-charm-epic\",\"cardId\":\"clover\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 7.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"rainlace-charm-epic\",\"cardId\":\"clover\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 2.6666666666666665,
+      "observedGainPp": 3.3333333333333335,
+      "improved": 1,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"rainlace-charm-epic\",\"cardId\":\"clover\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.3333333333333333,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"rainlace-relic-epic\",\"cardId\":\"clover\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 7.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"rainlace-relic-epic\",\"cardId\":\"clover\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 2.6666666666666665,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"rainlace-relic-epic\",\"cardId\":\"clover\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.16666666666666666,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"rainlace-weapon-legendary\",\"cardId\":\"clover\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 11.5,
+      "observedGainPp": 6.666666666666667,
+      "improved": 2,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"rainlace-weapon-legendary\",\"cardId\":\"clover\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": -1.6666666666666667,
+      "observedGainPp": 0.0,
+      "improved": 1,
+      "worsened": 1
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"rainlace-weapon-legendary\",\"cardId\":\"clover\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.3333333333333333,
+      "observedGainPp": 3.3333333333333335,
+      "improved": 1,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"rainlace-outfit-legendary\",\"cardId\":\"clover\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 7.666666666666667,
+      "observedGainPp": 3.3333333333333335,
+      "improved": 1,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"rainlace-outfit-legendary\",\"cardId\":\"clover\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": -0.3333333333333333,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"rainlace-outfit-legendary\",\"cardId\":\"clover\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.0,
+      "observedGainPp": -3.3333333333333335,
+      "improved": 0,
+      "worsened": 1
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"rainlace-charm-legendary\",\"cardId\":\"clover\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 8.0,
+      "observedGainPp": 13.333333333333334,
+      "improved": 4,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"rainlace-charm-legendary\",\"cardId\":\"clover\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 2.6666666666666665,
+      "observedGainPp": 3.3333333333333335,
+      "improved": 1,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"rainlace-charm-legendary\",\"cardId\":\"clover\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.5,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"rainlace-relic-legendary\",\"cardId\":\"clover\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 9.0,
+      "observedGainPp": 10.0,
+      "improved": 3,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"rainlace-relic-legendary\",\"cardId\":\"clover\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 0.8333333333333334,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"rainlace-relic-legendary\",\"cardId\":\"clover\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.16666666666666666,
+      "observedGainPp": -3.3333333333333335,
+      "improved": 0,
+      "worsened": 1
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-weapon-common\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 26.166666666666668,
+      "observedGainPp": 13.333333333333334,
+      "improved": 4,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-weapon-common\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 4.333333333333333,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-weapon-common\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 1.5,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-outfit-common\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-outfit-common\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 0.0,
+      "observedGainPp": -3.3333333333333335,
+      "improved": 0,
+      "worsened": 1
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-outfit-common\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-charm-common\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-charm-common\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-charm-common\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-relic-common\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-relic-common\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 0.3333333333333333,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-relic-common\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-weapon-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 31.0,
+      "observedGainPp": 20.0,
+      "improved": 6,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-weapon-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 4.666666666666667,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-weapon-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 2.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-outfit-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-outfit-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 0.16666666666666666,
+      "observedGainPp": -3.3333333333333335,
+      "improved": 0,
+      "worsened": 1
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-outfit-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-charm-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-charm-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 0.16666666666666666,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-charm-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-relic-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-relic-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 0.5,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-relic-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-weapon-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 35.166666666666664,
+      "observedGainPp": 33.33333333333333,
+      "improved": 10,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-weapon-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 5.166666666666667,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-weapon-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 2.3333333333333335,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-outfit-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 0.5,
+      "observedGainPp": 10.0,
+      "improved": 3,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-outfit-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 0.0,
+      "observedGainPp": -3.3333333333333335,
+      "improved": 0,
+      "worsened": 1
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-outfit-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 1.1666666666666667,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-charm-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-charm-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 0.16666666666666666,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-charm-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-relic-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 9.0,
+      "observedGainPp": 23.333333333333332,
+      "improved": 7,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-relic-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 3.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-relic-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 1.5,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-weapon-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 42.833333333333336,
+      "observedGainPp": 50.0,
+      "improved": 15,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-weapon-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 5.333333333333333,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-weapon-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 4.5,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-outfit-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 0.5,
+      "observedGainPp": 10.0,
+      "improved": 3,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-outfit-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 0.16666666666666666,
+      "observedGainPp": -3.3333333333333335,
+      "improved": 0,
+      "worsened": 1
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-outfit-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 1.1666666666666667,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-charm-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 4.0,
+      "observedGainPp": 13.333333333333334,
+      "improved": 4,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-charm-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 1.1666666666666667,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-charm-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 1.6666666666666667,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-relic-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 6.333333333333333,
+      "observedGainPp": 20.0,
+      "improved": 6,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-relic-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 3.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"crumbweave-relic-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 1.5,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-weapon-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 9.333333333333334,
+      "observedGainPp": 3.3333333333333335,
+      "improved": 1,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-weapon-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 2.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-weapon-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 8.166666666666666,
+      "observedGainPp": 10.0,
+      "improved": 4,
+      "worsened": 1
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-outfit-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 5.0,
+      "observedGainPp": 3.3333333333333335,
+      "improved": 1,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-outfit-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 31.166666666666668,
+      "observedGainPp": 30.0,
+      "improved": 9,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-outfit-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.3333333333333333,
+      "observedGainPp": 3.3333333333333335,
+      "improved": 1,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-charm-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 4.666666666666667,
+      "observedGainPp": 6.666666666666667,
+      "improved": 2,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-charm-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 34.5,
+      "observedGainPp": 20.0,
+      "improved": 6,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-charm-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 1.3333333333333333,
+      "observedGainPp": 0.0,
+      "improved": 1,
+      "worsened": 1
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-relic-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 2.5,
+      "observedGainPp": 6.666666666666667,
+      "improved": 2,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-relic-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 47.166666666666664,
+      "observedGainPp": 53.333333333333336,
+      "improved": 16,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-relic-common\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": -3.1666666666666665,
+      "observedGainPp": -3.3333333333333335,
+      "improved": 0,
+      "worsened": 1
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-weapon-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 13.166666666666666,
+      "observedGainPp": 10.0,
+      "improved": 3,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-weapon-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 3.6666666666666665,
+      "observedGainPp": 6.666666666666667,
+      "improved": 2,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-weapon-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 8.166666666666666,
+      "observedGainPp": 13.333333333333334,
+      "improved": 4,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-outfit-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 5.0,
+      "observedGainPp": 10.0,
+      "improved": 3,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-outfit-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 50.666666666666664,
+      "observedGainPp": 56.666666666666664,
+      "improved": 17,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-outfit-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 3.3333333333333335,
+      "improved": 1,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-charm-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 5.0,
+      "observedGainPp": 6.666666666666667,
+      "improved": 2,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-charm-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 54.833333333333336,
+      "observedGainPp": 43.333333333333336,
+      "improved": 13,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-charm-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 1.1666666666666667,
+      "observedGainPp": 0.0,
+      "improved": 1,
+      "worsened": 1
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-relic-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 11.166666666666666,
+      "observedGainPp": 13.333333333333334,
+      "improved": 4,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-relic-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 61.0,
+      "observedGainPp": 70.0,
+      "improved": 21,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-relic-rare\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": -3.8333333333333335,
+      "observedGainPp": 3.3333333333333335,
+      "improved": 1,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-weapon-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 14.333333333333334,
+      "observedGainPp": 23.333333333333332,
+      "improved": 7,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-weapon-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 5.5,
+      "observedGainPp": 10.0,
+      "improved": 3,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-weapon-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 12.0,
+      "observedGainPp": 16.666666666666664,
+      "improved": 5,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-outfit-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 19.5,
+      "observedGainPp": 20.0,
+      "improved": 6,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-outfit-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 82.0,
+      "observedGainPp": 80.0,
+      "improved": 24,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-outfit-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": -0.8333333333333334,
+      "observedGainPp": 6.666666666666667,
+      "improved": 2,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-charm-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 19.666666666666668,
+      "observedGainPp": 23.333333333333332,
+      "improved": 7,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-charm-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 84.66666666666667,
+      "observedGainPp": 76.66666666666667,
+      "improved": 23,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-charm-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 3.3333333333333335,
+      "improved": 1,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-relic-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 13.333333333333334,
+      "observedGainPp": 26.666666666666668,
+      "improved": 8,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-relic-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 65.16666666666667,
+      "observedGainPp": 73.33333333333333,
+      "improved": 22,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-relic-epic\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": -0.6666666666666666,
+      "observedGainPp": 3.3333333333333335,
+      "improved": 1,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-weapon-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 14.0,
+      "observedGainPp": 26.666666666666668,
+      "improved": 8,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-weapon-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 8.0,
+      "observedGainPp": 13.333333333333334,
+      "improved": 4,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-weapon-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 13.333333333333334,
+      "observedGainPp": 16.666666666666664,
+      "improved": 5,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-outfit-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 20.166666666666668,
+      "observedGainPp": 23.333333333333332,
+      "improved": 7,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-outfit-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 85.33333333333333,
+      "observedGainPp": 86.66666666666667,
+      "improved": 26,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-outfit-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.3333333333333333,
+      "observedGainPp": 6.666666666666667,
+      "improved": 2,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-charm-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 19.833333333333332,
+      "observedGainPp": 23.333333333333332,
+      "improved": 7,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-charm-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 86.5,
+      "observedGainPp": 83.33333333333334,
+      "improved": 25,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-charm-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 1.3333333333333333,
+      "observedGainPp": 3.3333333333333335,
+      "improved": 1,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-relic-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 13.666666666666666,
+      "observedGainPp": 26.666666666666668,
+      "improved": 8,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-relic-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 66.5,
+      "observedGainPp": 80.0,
+      "improved": 24,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"bellsteel-relic-legendary\",\"cardId\":\"mochi\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.16666666666666666,
+      "observedGainPp": 3.3333333333333335,
+      "improved": 1,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-weapon-common\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 4.833333333333333,
+      "observedGainPp": 6.666666666666667,
+      "improved": 2,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-weapon-common\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 2.0,
+      "observedGainPp": -3.3333333333333335,
+      "improved": 0,
+      "worsened": 1
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-weapon-common\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 18.0,
+      "observedGainPp": 10.0,
+      "improved": 3,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-outfit-common\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-outfit-common\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 0.16666666666666666,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-outfit-common\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-charm-common\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-charm-common\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 0.16666666666666666,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-charm-common\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.3333333333333333,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-relic-common\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-relic-common\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 0.8333333333333334,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-relic-common\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-weapon-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 9.5,
+      "observedGainPp": 16.666666666666664,
+      "improved": 6,
+      "worsened": 1
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-weapon-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 3.1666666666666665,
+      "observedGainPp": -3.3333333333333335,
+      "improved": 0,
+      "worsened": 1
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-weapon-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 27.666666666666668,
+      "observedGainPp": 13.333333333333334,
+      "improved": 4,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-outfit-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-outfit-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 0.16666666666666666,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-outfit-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-charm-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-charm-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 0.16666666666666666,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-charm-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.3333333333333333,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-relic-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 2.1666666666666665,
+      "observedGainPp": 13.333333333333334,
+      "improved": 5,
+      "worsened": 1
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-relic-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 1.3333333333333333,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-relic-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.8333333333333334,
+      "observedGainPp": 3.3333333333333335,
+      "improved": 1,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-weapon-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 15.166666666666666,
+      "observedGainPp": 33.33333333333333,
+      "improved": 10,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-weapon-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 4.5,
+      "observedGainPp": 0.0,
+      "improved": 1,
+      "worsened": 1
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-weapon-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 29.0,
+      "observedGainPp": 16.666666666666664,
+      "improved": 5,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-outfit-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 6.666666666666667,
+      "improved": 2,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-outfit-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 0.16666666666666666,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-outfit-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-charm-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 3.5,
+      "observedGainPp": 6.666666666666667,
+      "improved": 2,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-charm-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 0.16666666666666666,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-charm-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.3333333333333333,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-relic-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 4.333333333333333,
+      "observedGainPp": 20.0,
+      "improved": 6,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-relic-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 3.6666666666666665,
+      "observedGainPp": 6.666666666666667,
+      "improved": 2,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-relic-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 1.1666666666666667,
+      "observedGainPp": 6.666666666666667,
+      "improved": 2,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-weapon-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 20.833333333333332,
+      "observedGainPp": 30.0,
+      "improved": 9,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-weapon-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 5.833333333333333,
+      "observedGainPp": 0.0,
+      "improved": 1,
+      "worsened": 1
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-weapon-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 29.166666666666668,
+      "observedGainPp": 16.666666666666664,
+      "improved": 5,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-outfit-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 1.5,
+      "observedGainPp": 6.666666666666667,
+      "improved": 2,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-outfit-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-outfit-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-charm-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 4.0,
+      "observedGainPp": 10.0,
+      "improved": 3,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-charm-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 0.16666666666666666,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-charm-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": -0.8333333333333334,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-relic-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 6.5,
+      "observedGainPp": 20.0,
+      "improved": 6,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-relic-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 3.6666666666666665,
+      "observedGainPp": 6.666666666666667,
+      "improved": 2,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"emberfelt-relic-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 1.1666666666666667,
+      "observedGainPp": 6.666666666666667,
+      "improved": 2,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"velvetrim-weapon-common\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 4.5,
+      "observedGainPp": 13.333333333333334,
+      "improved": 4,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"velvetrim-weapon-common\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": -4.166666666666667,
+      "observedGainPp": 6.666666666666667,
+      "improved": 2,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"velvetrim-weapon-common\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 18.333333333333332,
+      "observedGainPp": 23.333333333333332,
+      "improved": 8,
+      "worsened": 1
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"velvetrim-outfit-common\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"velvetrim-outfit-common\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 1.5,
+      "observedGainPp": 3.3333333333333335,
+      "improved": 1,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"velvetrim-outfit-common\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.16666666666666666,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"velvetrim-charm-common\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"velvetrim-charm-common\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 2.1666666666666665,
+      "observedGainPp": 3.3333333333333335,
+      "improved": 1,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"velvetrim-charm-common\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 7.166666666666667,
+      "observedGainPp": 6.666666666666667,
+      "improved": 2,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"velvetrim-relic-common\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"velvetrim-relic-common\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 1.5,
+      "observedGainPp": 3.3333333333333335,
+      "improved": 1,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"velvetrim-relic-common\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.5,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"velvetrim-weapon-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 4.5,
+      "observedGainPp": 16.666666666666664,
+      "improved": 5,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"velvetrim-weapon-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": -3.5,
+      "observedGainPp": 6.666666666666667,
+      "improved": 2,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"velvetrim-weapon-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 23.5,
+      "observedGainPp": 26.666666666666668,
+      "improved": 9,
+      "worsened": 1
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"velvetrim-outfit-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"velvetrim-outfit-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 1.8333333333333333,
+      "observedGainPp": 3.3333333333333335,
+      "improved": 1,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"velvetrim-outfit-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.16666666666666666,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"velvetrim-charm-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 6.666666666666667,
+      "improved": 2,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"velvetrim-charm-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 2.0,
+      "observedGainPp": 3.3333333333333335,
+      "improved": 1,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"velvetrim-charm-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 9.0,
+      "observedGainPp": 6.666666666666667,
+      "improved": 2,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"velvetrim-relic-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"velvetrim-relic-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 3.3333333333333335,
+      "observedGainPp": 3.3333333333333335,
+      "improved": 1,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"velvetrim-relic-rare\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.3333333333333333,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"velvetrim-weapon-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 6.166666666666667,
+      "observedGainPp": 20.0,
+      "improved": 6,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"velvetrim-weapon-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": -0.3333333333333333,
+      "observedGainPp": 6.666666666666667,
+      "improved": 2,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"velvetrim-weapon-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 28.166666666666668,
+      "observedGainPp": 26.666666666666668,
+      "improved": 9,
+      "worsened": 1
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"velvetrim-outfit-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"velvetrim-outfit-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 1.8333333333333333,
+      "observedGainPp": 3.3333333333333335,
+      "improved": 1,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"velvetrim-outfit-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.16666666666666666,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"velvetrim-charm-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": -0.3333333333333333,
+      "observedGainPp": 6.666666666666667,
+      "improved": 2,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"velvetrim-charm-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 3.1666666666666665,
+      "observedGainPp": 6.666666666666667,
+      "improved": 2,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"velvetrim-charm-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 9.166666666666666,
+      "observedGainPp": 10.0,
+      "improved": 3,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"velvetrim-relic-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 0.5,
+      "observedGainPp": 3.3333333333333335,
+      "improved": 1,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"velvetrim-relic-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 3.3333333333333335,
+      "observedGainPp": 3.3333333333333335,
+      "improved": 1,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"velvetrim-relic-epic\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.3333333333333333,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"velvetrim-weapon-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 10.833333333333334,
+      "observedGainPp": 23.333333333333332,
+      "improved": 7,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"velvetrim-weapon-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 2.3333333333333335,
+      "observedGainPp": 6.666666666666667,
+      "improved": 2,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"velvetrim-weapon-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 31.666666666666668,
+      "observedGainPp": 30.0,
+      "improved": 10,
+      "worsened": 1
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"velvetrim-outfit-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 0.0,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"velvetrim-outfit-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 1.8333333333333333,
+      "observedGainPp": 3.3333333333333335,
+      "improved": 1,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"velvetrim-outfit-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.16666666666666666,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"velvetrim-charm-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": -0.3333333333333333,
+      "observedGainPp": 6.666666666666667,
+      "improved": 2,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"velvetrim-charm-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 3.1666666666666665,
+      "observedGainPp": 6.666666666666667,
+      "improved": 2,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"velvetrim-charm-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 9.166666666666666,
+      "observedGainPp": 10.0,
+      "improved": 3,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"velvetrim-relic-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":1}",
+      "chapter": 1,
+      "predictedGainPp": 0.5,
+      "observedGainPp": 3.3333333333333335,
+      "improved": 1,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"velvetrim-relic-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":2}",
+      "chapter": 2,
+      "predictedGainPp": 3.3333333333333335,
+      "observedGainPp": 3.3333333333333335,
+      "improved": 1,
+      "worsened": 0
+    },
+    {
+      "key": "{\"kind\":\"pieces-equipped\",\"templateId\":\"velvetrim-relic-legendary\",\"cardId\":\"soot\",\"level\":6,\"chapter\":3}",
+      "chapter": 3,
+      "predictedGainPp": 0.3333333333333333,
+      "observedGainPp": 0.0,
+      "improved": 0,
+      "worsened": 0
+    }
+  ],
+  "receipts": {
+    "reports/cardrpg-big/a5/b1/display-context-40/REGISTERED-METHOD.json": "2e08459d1caec81ddf69c66b3f4fb2b2948c1768028abb60ea8b81dfd402312a",
+    "reports/cardrpg-big/a5/b1/display-context-40/results.json.gz": "e2f224c604e5068adaac3c087ccbd5f3b430266000605952f5f09bef4bf71315",
+    "reports/cardrpg-big/a5/b1/display-context-40/audit.json": "2c12bbc03eabdb3760365733e430f75377ac4d236bebcff6e4e5628a53840811",
+    "reports/cardrpg-big/a5/b2/hush-eligibility-22/balance/equipped/results.json": "0ccf444257cf8b7f94c446046a981840417684d4d4d7c05d3a1d96a92f96123c"
+  },
+  "limitations": [
+    "This split was selected after the original overlapping analysis; it is exploratory, not preregistered acceptance.",
+    "Only combat-seed ranges are disjoint. Builds, gear rolls, fixtures and previously inspected TRAIN outcomes are shared.",
+    "Thirty paired outcomes per case are noisy. Repeated bare builds and overlapping teams make aggregate entries dependent.",
+    "Band frequencies are descriptive counts, not calibrated player probabilities or a human playtest.",
+    "No static utility score, combat rule, fixture, numeric gate or UI is changed. Static display remains MISS."
+  ]
+}
