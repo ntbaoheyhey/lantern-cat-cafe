@@ -19,7 +19,8 @@ try{for(const [width,height]of [[1024,600],[1280,720],[1440,900]]){
   if(result.rows.some(r=>r.id===id&&r.width===width))continue;
   await apply(page,cases.find(r=>r.id===id));
   const bounds=await page.evaluate(coverage),contrast=await silhouetteContrast(page);
-  result.rows.push({id,width,...bounds,contrast,ui:await page.evaluate(audit)});
+  result.rows.push({id,width,...bounds,contrast,ui:await page.evaluate(audit),outside:bounds.units.filter(u=>u.box[0]<0||u.box[1]<0||u.box[2]>1||u.box[3]>1).map(u=>({id:u.id,box:u.box}))});
+  await sharp(await page.screenshot()).webp({quality:80}).toFile(`${out}/${width}-${id}.webp`);
  }
  // Existing receipt and gallery arrangement; read-only presentation probe.
  await apply(page,{gallery:'sorrel-1',progress:-1});

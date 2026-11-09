@@ -119,3 +119,6 @@ Tool: authored TypeScript/Three geometry and GLSL (no image/model generation); d
 - Tool: hand-authored TypeScript/SVG + `node tools/cardrpg-look/skills-v5/icons.mjs`; deterministic seed0, 24-unit grid,64px archive,2.2px rounded strokes; original `snag.svg` red yarn scratches/drop and `bitter.svg` violet tea/smoke/slash. No generative calls/imported art.
 - Bleed scratches/drop and Bitter low smoke ring reuse seam/droplet/steam pools; .76–.78 opacity, protected-face mask retained.
 - Crumb/Wildfire/Rupture/Spread use existing button/flame/seam/droplet/status-symbol primitives;<=500ms reaction window,70ms ordered landing offsets. No new texture, light or combat data.
+
+### Skills V5 full M2 · 2026-11-09
+Original Three/GLSL material adjustment, deterministic seed0: hostile body base#ddb0c8, emissive#d294aa at.78, rim RGB(.48,.10,.17) with exponent2.5; same original meshes/atlas/lighting, no stage darkening. Body statuses capped to highest-priority3; badges retain every status. Boss safe framing1.25,targetY2.0,Yarn multiplier1.75; larger third attempt was reverted for clipping and is not claimed accepted. Reaction500ms profiles: Wildfire3fronts+sparks, Rupture24%tension/76%snap+inward drops, Spread per-primer icons. No new art/dependency/model.

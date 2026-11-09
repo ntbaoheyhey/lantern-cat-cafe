@@ -1,3 +1,4 @@
+import { showBodyMark } from './card-status-priority';
 import { CARD_STATUS_LOOKS, CRUMB_BURST_LAYER, V5_CUE_LAYERS } from './card-status-looks';
 import type { ReactionBeat, LandingBeat } from './card-v5-events';
 import type { StatusPresentation } from './card-status-beats';
@@ -288,7 +289,9 @@ export class CardEffects {
         const position = positions.get(actor.id);
         const activeStatuses = statuses[actor.id];
         if (actor.hp <= 0 || !position || !activeStatuses) continue;
-        for (const status of activeStatuses) {
+        for (let statusIndex=0;statusIndex<activeStatuses.length;statusIndex++) {
+          if(this.atelier&&!showBodyMark(activeStatuses,statusIndex))continue;
+          const status=activeStatuses[statusIndex]!;
           const id = typeof status === 'string' ? status : status.id;
           const look = this.atelier ? CARD_STATUS_LOOKS[id as VisualStatusId] : LEGACY_CARD_STATUS_LOOKS[id];
           if (!look) continue;
@@ -412,20 +415,34 @@ export class CardEffects {
         for(let i=0;i<CRUMB_BURST_LAYER.count;i++)this.place(CRUMB_BURST_LAYER,progress,i,CRUMB_BURST_LAYER.count,camera,false);
       }else if(reaction.id==='rupture'){
         this.baseColor.set('#d9616b');this.accentColor.copy(this.baseColor);
-        for(let i=0;i<2;i++)this.place(V5_CUE_LAYERS.thread,progress,i,2,camera,false);
-        for(let i=0;i<4;i++)this.place(V5_CUE_LAYERS.drops,progress,i,4,camera,false);
-      }else for(const id of reaction.targets){
-        const target=positions.get(id);if(!target)continue;
+        if(progress<.24){
+          for(let i=0;i<2;i++)this.place(V5_CUE_LAYERS.tension,progress/.24,i,2,camera,false);
+        }else{
+          const snap=(progress-.24)/.76;
+          this.alphaFactor=1-snap*.72;
+          for(let i=0;i<2;i++)this.place(V5_CUE_LAYERS.thread,snap,i,2,camera,false);
+          for(let i=0;i<4;i++)this.place(V5_CUE_LAYERS.consumed,1-snap,i,4,camera,false);
+        }
+      }else for(let targetIndex=0;targetIndex<reaction.targets.length;targetIndex++){
+        const id=reaction.targets[targetIndex]!,target=positions.get(id);if(!target)continue;
+        const travel=Math.min(1,(progress-targetIndex*.10)/.78);if(travel<0)continue;
         this.focus.copy(target);this.focus.y+=(heights?.get(id)??1.6)*.32;
         if(reaction.id==='wildfire'){
+          // Low fire fronts cross the distance; a hot spark follows each front.
           this.baseColor.set('#efaa73');this.accentColor.copy(this.baseColor);
-          for(let i=0;i<3;i++)this.place(V5_CUE_LAYERS.fire,progress,i,3,camera,false);
-        }else for(const status of reaction.primerIds){
-          const look=CARD_STATUS_LOOKS[status];if(!look)continue;
+          for(let i=0;i<3;i++){
+            const front=Math.max(0,travel-i*.08);
+            this.place(V5_CUE_LAYERS.fire,front,i,3,camera,false);
+            this.place(V5_CUE_LAYERS.ember,Math.max(0,front-.10),i,3,camera,false);
+          }
+        }else for(let statusIndex=0;statusIndex<reaction.primerIds.length;statusIndex++){
+          const look=CARD_STATUS_LOOKS[reaction.primerIds[statusIndex]!];if(!look)continue;
+          const flight=Math.min(1,Math.max(0,travel-statusIndex*.06));
           this.baseColor.set(look.color);this.accentColor.copy(this.baseColor);
-          this.place(look.apply,progress,0,1,camera,false);
+          this.place(look.flight,flight,0,1,camera,false);
         }
       }
+      this.alphaFactor=1;
     }
     for(const landing of this.presentation.landings??NO_LANDINGS){
       const target=positions.get(landing.targetId),from=positions.get(landing.fromId);if(!target)continue;

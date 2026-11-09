@@ -29,14 +29,18 @@ export const CARD_STATUS_LOOKS = Object.fromEntries(Object.entries(layers).map((
   color:STATUS_IDENTITIES[id as VisualStatusId].color,layer,
   crown:['scent','drowsy','hush','rattled','shelter'].includes(id),
   apply:{...layer,primitive:id==='snag'?'seam':id==='bitter'?'droplet':layer.primitive,motion:'projectile' as const,count:1,size:.36,height:.50,opacity:.80},
+  flight:{...layer,motion:'projectile' as const,count:1,size:.34,height:.95,spread:.25,turns:.65,opacity:.80},
   tick:{...layer,primitive:id==='snag'?'droplet':layer.primitive,motion:id==='snag'?'fall' as const:'expand' as const,count:id==='snag'?3:1,size:id==='snag'?.22:.65,height:id==='snag'?.6:layer.height,opacity:.80},
   expire:{...layer,motion:'fall' as const,count:1,size:.30,height:.28,opacity:.65},
-}])) as Record<VisualStatusId,{color:string;layer:CardEffectLayer;crown:boolean;apply:CardEffectLayer;tick:CardEffectLayer;expire:CardEffectLayer}>;
+}])) as Record<VisualStatusId,{color:string;layer:CardEffectLayer;crown:boolean;apply:CardEffectLayer;flight:CardEffectLayer;tick:CardEffectLayer;expire:CardEffectLayer}>;
 export const CRUMB_BURST_LAYER=mark('button','burst',{count:9,size:.25,spread:1.0,height:.4,opacity:.80});
 
 // Reuse the prepared B2 primitive pools, with no new textures or lights.
 export const V5_CUE_LAYERS = {
-  fire:mark('flame','projectile',{size:.46,height:.28,opacity:.78}),
+  fire:mark('flame','projectile',{size:.48,height:.08,spread:.50,opacity:.78}),
+  ember:mark('spark','projectile',{size:.16,height:.30,spread:.48,opacity:.75}),
+  tension:mark('seam','hold',{size:.58,aspect:[1.8,.5,1],height:.2,spread:.18,opacity:.80}),
+  consumed:mark('droplet','burst',{count:4,size:.19,height:.28,spread:.95,opacity:.80}),
   thread:mark('seam','burst',{count:2,size:.55,spread:.62,opacity:.78}),
   drops:mark('droplet','fall',{count:4,size:.20,height:.65,spread:.48,opacity:.78}),
   arc:mark('spark','projectile',{size:.28,height:.35,opacity:.78}),

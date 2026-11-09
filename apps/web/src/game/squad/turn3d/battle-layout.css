@@ -337,3 +337,13 @@
 .dp-v5look.dp-readable .dp-float-number[data-secondary="true"]{font-size:16px}
 .dp-v5look.dp-readable .dp-float-number .dp-number{padding:1px 4px;white-space:nowrap}
 .dp-v5look .dp-combo-callout[data-compact="true"]{width:38px;font-size:14px;padding:6px 2px}
+
+/* Keyword hints sit at the badge-row edge; session-only, never in dev captures. */
+.dp-v5look .dp-party{position:relative}
+.dp-v5look .dp-status-legend{position:absolute;right:8px;bottom:calc(100% + 4px);z-index:8;display:flex;align-items:center;gap:8px;max-width:360px;padding:6px 9px;border:1px solid #80d8ca;border-radius:7px;background:#102129;color:#fff0d2;font:12px/1.3 system-ui;box-shadow:0 2px 8px #0005}
+.dp-v5look .dp-status-legend button{padding:0 3px;min-height:20px;color:#fff0d2;background:#102129;border:0;font-size:17px}
+.dp-v5look:has(.dp-lab-gallery) .dp-arena{margin-right:280px}
+.dp-v5look .dp-feel-lab:has(.dp-lab-gallery){position:static}
+.dp-v5look .dp-feel-lab .dp-lab-gallery{position:absolute;top:80px;bottom:110px;right:0;width:272px;max-height:none;padding:9px;overflow:auto;margin:0;border-radius:8px}
+.dp-v5look .dp-feel-lab:has(.dp-lab-gallery)>button{display:none}
+.dp-v5look .dp-lab-gallery .dp-lab-header h2{display:none}
