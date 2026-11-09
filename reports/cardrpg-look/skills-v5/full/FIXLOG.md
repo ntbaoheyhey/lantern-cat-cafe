@@ -192,3 +192,55 @@ The unchanged StageLayout test passed twice sequentially in each worktree (four 
 
 ### B-M3-005 contact-pool first measurement 2026-11-09T07:16:07.877941+00:00
 Fix2 repeated the failing fixed pack after source1902d3cf7: peak146draws (152before),163043tris;51shots+1095cue-window frames at3widths remain0overlap/outside/unplaced;98face masks0offenders,contrast4.618. Source gates/parity pass. Conditional150exception is not accepted until queued casts/cold complete;130 remains a disclosed miss.
+
+## B-M4-001 2026-11-09T07:19Z M4 material/boss/identity revisit S3
+Fresh review M3fix2 key8shots×2widths: opponents remain uniformly pink (1440 x800–1300/y300–680); boss hierarchy below2x; passive footglows repeat; Soot wick small; greenhouse ground bright. Revisit worst3 within M4: directional normal-key emission and warm trim, boss-only scale/aim, smaller footglow plus off-body passive motifs/Soot wick. Source label/contact fixes from M3 carried unchanged. Register attempt1; retain pre-change artifacts. Check same13enemy denominator,9readabilityshots,51fixedshots/3width collisions/faces/contrast,14changedcuescost/casts andcold; parity/rootgates. No inferred pass.
+
+### M4 legacy-type compatibility correction
+First B-only root type/lint caught visual alias lookup inferred as old rules StatusId (without snag/bitter); same runtime code typed clean on liveS5. Declare the presentation Map<string,VisualStatusId> explicitly. No runtime/event change. Preserve failedlogs; rerun only type/lint after source group completes. This is a transplant compatibility fix, not changed rules.
+
+### B-M3-005 conditional draw allowance / measured perf
+M3 fix2 crowded first/repeat P4/P8/P15 at1280/1440native and1440CPU4:18windows,max16.8msnative/66.6msCPU4,147drawspeak (fixedstill146),163043tris fixedpack. Sixcoldframes33.3/33.4/33.3native,183.4/183.4/183.3CPU4;readymax10294.3ms. Accept the prompt-authorised150 ceiling because Yarn plus4BindingThreads adds44modeldraws before pooling and further material merging risks visible identity; contactpool reduces the failing152still to146. Original130 target remainsMISS/PARTIAL. No timing sample replaced. E2E/startup remainpending.
+
+### B-M4-001 attempt1 observed / attempt2
+All9P1/P5/P15 boundsinside,contrast.239–.358 PASS. Original13opponent denominator:Yarn2.041/Pantry2.069 PASS2;Kettle1.517MISS because gallery Kettle has view.boss=false. Viewed1440P1,1024P15,Kettle/Pantry: largeYarnreadable, opponents stillpale with weak relief. Attempt2 increases authorednormal contrast and gives soloKettle the intendedbossframing. Full enemyroster prevents zoom when a pair loses its otherfoe. Originalattempt1 retained; targetedroster/readability/face/layout and parity/sourcegates next.
+
+## B-M4-002 2026-11-09T07:33Z M4 boss plate overlap S2
+Repro attempt1 fixedP15/1024 at896ms:Panko70pxnumericstack touchesYarnplate7×4px. Actualbossplateheight69.1875 versus hardcoded54px reservation; the phase subtitle adds15.1875px. The collider coveredP5–P14 only,so missedP15. Fixattempt1 reserves16additionalpx whenever bossPhases includes theactor; extendcollider throughP15. Originalfailedstill kept, narrow + full3widthlayout/parity/sourcegates queued. Bossgeometry stayssubjectto thisreservation check.
+
+### B-M4-001 attempt2 measured / attempt3
+Attempt2 thirteen-opponent roster: Yarn2.041/Pantry2.069 pass; Kettle1.611 misses2 and clips bottom at1.0205, Soot1.0299. P1/P5/P15 contrast.228–.342 passes. Viewed Kettle and Yarn stills: relief modest, Kettle camera aimed too high and size still insufficient. Third attempt lowers soloKettle aim2.60→2.05 and raises scale2.84→3.50; full roster denominator and3width feet/head bounds gate acceptance. If it still clips, revert only soloKettle framing and disclose ratio miss. Material look remains PARTIAL; no fourth polish attempt.
+
+## B-M4-003 2026-11-09T07:44Z M4 non-periodic status triggers S3
+The M3 natural matrix leaves five trigger cells unverified. Source attribution shows v5SourceForPlan returns undefined for a valid live action with no supported v2 cue, so Bitter on an otherwise plain heal loses its struck-number treatment; Mark/Shred/Warm/Daze have no dedicated trigger pulse. Rules logs already identify direct damage/heal/shield and explicit Daze suppression. Attempt1 annotates only that matched raw log window plus before-status snapshots, gated to published skillsV5; excludes reaction/DoT/reflect damage and future/malformed event modes. Reuses prepared tick geometry under a distinct presentation-only trigger kind, preserves raw logs/amounts/action clock; fixture/legacy fallback unchanged. Tests cover bare healing, status added after hit, direct-versus-derived damage and exact Daze suppression. New live focused trigger, parity,face/layout/cast checks pending.
+
+B-M4-003 source verification: B root typecheck/lint/unit1813web/parity/offline+productionbuild PASS in /tmp/cardrpg-v5full-m4/triggers. The B BattleView now supplies its pre-action visual snapshot too, matching the existing integration caller; this prevents freshly applied marks being misread as hit modifiers. Live source/render delta remains queued.
+
+## B-M4-004 2026-11-09T08:07:01Z M3/M4 OFF startup bytes S2
+Repro: same-directory A6772eb343 then B7c326fc81 overlay, `BIG_FLAG_OFF_SOURCE=/private/tmp/cardrpg-v5full-off-pair/source node tools/cardrpg-look/flag-off-check.mjs --prepare`. Entry28182→28185B; other10requested scripts unchanged, module membership unchanged. Browser pair queued, original cross-path receipt retained.
+Attribution: Vite automatic lazy chunk graph renames effects→card-effect-data and changes preload ordering/index lists. Only generated preload inventory differs in the startup entry after normalizing content hashes; no added executable feature code or Three/model startup member. Gate is stillMISS, not byte-identical.
+Hypotheses tested in temporary B-owned source overlay only: original Battle import order28140B; original scene/effect import order28140B; restore original dynamic model/decoder imports28197B. No diagnostic improves exact parity; source remains unchanged. No padded bundles, config/manifests/A-owned edits or replaced samples. Three scoped diagnostic attempts reached; PARTIAL. Original and diagnostic build inventories retained with hash receipts.
+Why earlier checks missed it: B-only comparisons used the preceding B milestone; M3 adds comparison to the published A baseline. Keep both comparisons and literal bytes in delivery, even though membership and0Three/model pass.
+
+## B-M4-005 2026-11-09T08:14Z M4 boss banner/plate S3
+Fresh-eyes repro livepilot P15 at1024: boss cue x365–733/y225–249 covers Yarn plate name;1440 also hides its header. Earlier collider included moment/HUD/words/numbers but omitted dp-v4-boss-cue, so its0overlap claim did not cover this banner.
+Attempt1: add optional lookV2-only SceneView reservation for the boss phase/finish action, matching banner55%width and a40px two-line allowance; feed it through the existing word/plate allocator. Keep phase<=400ms/finish<=800ms and all events unchanged. Add boss banner versusplates/moment/words/numbers to actual-DOM audit. Preserve pilot and package1; cancelled own pending delivery wrappers86154/86255 before any browser sample, active natural replay untouched.
+Verify originalP15 with expandedprobe, then same17pins/3widths+cuewindows,parity,sourcegates/build; deliverycasts/cold/E2E on repaired immutablepackage. No success claim yet.
+
+### B-M4-003 additive natural verification 2026-11-09T08:18Z
+Five repair-delta battles produce404plans,exact registered hashes,0browsererrors/uncleared. Together with original18samples,all45requested cells have observed submissions and frame evidence. Five previously missing modifier triggers plus single/pierce are covered. Original10narrow-probe end results remain unverified,not replaced. Viewed five trigger canvases: cues are present but small against pale Yarn; this proves neither universal visibility nor human recognition. Status/faces45masks0offenders,48casts native16.8/CPU450ms,24fixed3widthtrigger samples visible/cleared with0overlaps. FIXED within measured scope.
+### B-M4-004 paired browser verification
+Same-path publishedA/candidate productionOFF startup loads the same11script memberships with0Three/model/browsererrors. Entry28182→28185B persists; other10bytecounts exact. Literalbyte gate remainsPARTIAL; no extra source workaround.
+
+### B-M4-005 attempt1 verified 2026-11-09T08:23Z
+Bbc22a644f/live1eded4102: expanded actualDOM audit passes51fixedframes and1194cueframes at1024/1280/1440,0overlap/outside/unplaced,0browsererrors. Viewed P15name/banner at1024and1440: both visible and separate. Source/type/lint/unit/parity/build pass;faces98masks0offenders,contrast4.618,12UIcasespass. FIXED. Delivery2build SHAedd92234 starts casts/cold and browser closure; original pilot/package receipts retained.
+
+## B-M4-006 2026-11-09T08:35Z M4 E2E clocks S2
+Repro: B banner browser closure full unchanged421test suite, sourcebc22a644f/e2c16dd84:419pass; idle-loop XP stays0 after clock.fastForward and local squad runtime stays0.1s instead of3.x. Original full log retained in b-banner-browser/e2e.log.
+Hypotheses: clock/RAF scheduling under full-suite concurrency; unrelated legacy startup; look regression. Both paths are legacy and unchanged by M4. Cheapest discriminator: each failing test isolated twice sequentially with one worker, identical tests/timeouts, under shared timing lock. No skips or test edits. Attempts0; awaiting four isolated receipts before classification.
+
+### B-M4-006 isolated results FLAKY, 2026-11-09T08:42Z
+Both unchanged failing tests pass twice sequentially with one worker (idle2/2,squad2/2),under the shared lease. Retain full419/421and allfourisolated logs; classify as scheduling/clock flakes in this measured scope. No test,timeout,skip or runtime edits; no clean421full-run claim forB. Why not caught: full-suite concurrency exposes timing behavior absent from focused presentation probes.
+
+## B-M4-007 2026-11-09T08:44Z M4 evidence packing S2
+Repro: post-pack SHA256 verification found six missing canonical V0 images. Cause: Path.resolve followed existing iteration symlinks during duplicate-media removal. Restored exact canonical blobs from the current pre-pack HEAD,verified their originalSHA256; retained existing symlinks and all distinct samples. All56media/gzip aliases now verify byte-for-byte;no runtime change or sample rerun. EVIDENCE-ALIASES.json records the correction. FIXED. Future packing treats symlinks as aliases rather than independent media.

@@ -1,3 +1,4 @@
+import { LookContactPool } from './look-contact-pool';
 import { LookEffectRim } from './look-effect-rim';
 import { targetTextLane } from './card-callout-layout';
 import type { StatusPresentation } from './card-status-beats';
@@ -58,6 +59,7 @@ export interface SceneView {
   cardNumberWidths?: Record<string,number>;
   cardNumberRows?: Record<string, number>;
   cardMoment?: boolean;
+  cardBossCue?: boolean;
   rows?: Record<string, string>;
   chapter?: number;
   models?: Record<string,string>; warmModelIds?: string[];
@@ -126,6 +128,7 @@ export class TurnScene {
   private bossAtmosphere?: CardBossAtmosphere;
   private cameraTarget = new T.Vector3(0,.65,0);
   private blobMaterial!: T.MeshBasicMaterial;
+  private contactPool?: LookContactPool;
   private geometryOwned = new Set<T.BufferGeometry>();
   private materialOwned = new Set<T.Material>();
   private pick = (e: PointerEvent) => {
@@ -163,7 +166,7 @@ export class TurnScene {
     // Effect modules own their pools, including placeholders replaced at play.
     // Registering those here as well would dispose the same resources twice.
     const own=(o:T.Object3D)=>{
-      if(o===this.spells?.root||o===this.cardEffects?.root||o===this.bossAtmosphere?.root)return;
+      if(o===this.spells?.root||o===this.cardEffects?.root||o===this.bossAtmosphere?.root||o===this.contactPool?.root)return;
       if(o instanceof T.Mesh||o instanceof T.Line||o instanceof T.Points){this.geometryOwned.add(o.geometry);for(const material of Array.isArray(o.material)?o.material:[o.material])this.materialOwned.add(material);}
       if(o instanceof T.Sprite)this.materialOwned.add(o.material);
       for(const child of o.children)own(child);
@@ -177,6 +180,7 @@ export class TurnScene {
     this.glow=this.makeGlow();
     if(this.lookStageEnabled)this.contactTexture=this.makeContact();
     this.blobMaterial=new T.MeshBasicMaterial({map:this.contactTexture??this.glow,color:this.lookStageEnabled?'#172D36':'#151222',transparent:true,opacity:this.lookStageEnabled?.56:.45,depthWrite:false});
+    if(this.lookStageEnabled&&isReadableBattle()&&this.view().autoBattle){this.contactPool=new LookContactPool(this.blobMaterial);this.scene.add(this.contactPool.root);}
     this.scene.fog=new T.Fog('#252332',15,27);
     this.scene.add(new T.HemisphereLight('#f4e9e8','#675166',1.35));
     const key=new T.DirectionalLight('#ffe0ba',3.3); key.name='cafe-key'; key.position.set(-4,8,5); this.scene.add(key);
@@ -455,11 +459,16 @@ export class TurnScene {
     for(const [id,p] of this.puppets)if(!ids.has(id)||view.actors.find(a=>a.id===id)?.role!==p.role||(view.models?.[id]??p.role)!==p.asset){this.scene.remove(p.root);this.disposePuppet(p);this.puppets.delete(id);}
     this.stats.loaded=this.puppets.size;
     for(const a of view.actors)if(!this.puppets.has(a.id)&&!this.pending.has(a.id))void this.ensure(a,view.boss,view);
+    // A solo Kettle is the existing showcase boss case. Count the full roster,
+    // including defeated foes, so an ordinary pair never zooms when one dies.
+    let enemyCount=0, loneKettle=false;
+    if(isReadableBattle()&&view.autoBattle)for(const actor of view.actors)if(actor.side==='enemy'){enemyCount++;loneKettle=(view.models?.[actor.id]??this.puppets.get(actor.id)?.asset)==='kettle-knight';}
+    const bossFraming=view.boss||(enemyCount===1&&loneKettle);
     const frame=view.frame, cardRecipe=view.autoBattle?cardRecipeFor(frame,view.actors):undefined, source=frame?this.puppets.get(frame.plan.actorId):undefined;
     const targets=frame?frame.plan.targetIds.map(id=>this.puppets.get(id)).filter((p):p is Puppet=>!!p):[];
     for(const a of view.actors){const p=this.puppets.get(a.id);if(!p)continue;const slot=view.model?this.zero:view.autoBattle?cardFormation(a,view.rows?.[a.id]):formationPoint(a,view.boss);if(!view.autoBattle||a.hp>0)p.base.set(slot.x,slot.y,slot.z);if(this.lookStageEnabled&&view.galleryPreview&&a.side==='party'){const lane=a.slot%3;p.base.set([-1.35,-2.65,-3.65][lane]!,0,[.25,1.05,-.65][lane]!);}
-      if(this.lookStageEnabled&&view.autoBattle&&view.boss&&a.side==='party')p.base.z-=1.1;
-      p.root.position.copy(p.base);p.root.scale.setScalar(view.model?1:figureScale(a.role,a.side)*(isReadableBattle()&&view.autoBattle?(p.asset==='kettle-knight'?2.1:a.role==='yarn'?(view.boss?1.75:1.25):a.side==='party'?1.25:1.38):1));p.model.rotation.y=view.model?view.model.angle:view.autoBattle?cardBodyYaw(a.side,0,0):restYaw(a.side);
+      if(this.lookStageEnabled&&view.autoBattle&&bossFraming&&a.side==='party')p.base.z-=1.1;
+      p.root.position.copy(p.base);p.root.scale.setScalar(view.model?1:figureScale(a.role,a.side)*(isReadableBattle()&&view.autoBattle?(p.asset==='kettle-knight'?(bossFraming?3.50:2.1):a.role==='yarn'?(view.boss?(p.asset==='pantry-crown'?2.12:1.94):1.25):a.side==='party'?1.25:1.38):1));p.model.rotation.y=view.model?view.model.angle:view.autoBattle?cardBodyYaw(a.side,0,0):restYaw(a.side);
       if (view.tableau) {
         p.base.set((a.slot - 1) * 2.1, 0, a.slot === 1 ? -.35 : .3);
         p.root.position.copy(p.base);
@@ -567,9 +576,9 @@ export class TurnScene {
     this.camera.position.set(0,7.2,11.6);this.cameraTarget.set(0,.7,0);this.camera.zoom=!view.autoBattle&&view.camera==='close'?1.05:1;
     if(this.lookStageEnabled&&!view.model){this.camera.position.set(0,6.4,12);this.cameraTarget.set(0,1.1,0);}
     const readable=isReadableBattle()&&view.autoBattle&&!view.model;
-    if(readable){this.camera.position.set(0,4.7,12);this.cameraTarget.set(0,view.boss?2.0:1.16,0);}
+    if(readable){this.camera.position.set(0,4.7,12);this.cameraTarget.set(0,bossFraming?(view.actors.some(a=>this.puppets.get(a.id)?.asset==='kettle-knight')?2.05:2.20):1.16,0);}
     const distance=this.camera.position.distanceTo(this.cameraTarget),frameHeight=view.model?(this.lookStageEnabled?(view.model.role==='yarn'?4.6:3.3):(view.model.role==='yarn'?3.3:2.25)):view.tableau?Math.max(4,7.5/this.camera.aspect):view.autoBattle?cardFrameHeight(this.camera.aspect,view.camera==='close'?'close':view.camera==='far'?'far':'wide'):stageHeight(this.camera.aspect);
-    const readableBossFrame=readable&&view.boss?1.25:1;
+    const readableBossFrame=readable&&bossFraming?1.25:1;
     this.camera.fov=T.MathUtils.radToDeg(2*Math.atan(frameHeight*readableBossFrame/2/distance));
     if(view.model){this.camera.position.set(0,3.7,11.3);this.cameraTarget.y=view.model.role==='yarn'?1.35:.94;this.camera.zoom=1.02;}
     if(view.camera==='overhead')this.camera.position.set(0,13,6);
@@ -627,6 +636,7 @@ export class TurnScene {
     const display=view.effectOnly?this.effectPreview:this.scene;
     if(this.spells.root.parent!==display)display.add(this.spells.root);
     if(this.cardEffects&&!this.lookStageEnabled&&this.cardEffects.root.parent!==display)display.add(this.cardEffects.root);
+    if(this.contactPool){this.contactPool.begin();for(const p of this.puppets.values())this.contactPool.add(p.shadow,p.root.visible);this.contactPool.end();}
     this.renderer.info.reset();this.post.render(display,this.camera,(frame?.shake??0)*.35,frame?.progress??0,frame?.color??'#ffe6d2',view.reducedMotion);this.stats.quality=this.post.effectiveQuality;this.renderer.domElement.dataset.quality=this.stats.quality;this.stats.frames++;const info=this.renderer.info;Object.assign(this.stats,{calls:info.render.calls,triangles:info.render.triangles,geometries:info.memory.geometries,textures:info.memory.textures});
     if(this.stats.frames%60===1){const geometries=new Set<T.BufferGeometry>();const collect=(o:T.Object3D)=>{if(o instanceof T.Mesh||o instanceof T.Line||o instanceof T.Points)geometries.add(o.geometry);};this.scene.traverse(collect);if(this.lookStageEnabled)this.cardEffects?.root.traverse(collect);let bytes=64*64*4;for(const g of geometries){for(const attr of Object.values(g.attributes))bytes+=attr.array.byteLength;bytes+=g.index?.array.byteLength??0;}this.stats.estimatedGpuBytes=bytes;}
     // Labels are DOM overlays; do not traverse every mesh at the GPU cadence.
@@ -646,7 +656,7 @@ export class TurnScene {
       if(this.lookStageEnabled && view.cardStatuses?.[a.id]?.some((status,index,list)=>showBodyMark(list,index)&&CARD_STATUS_LOOKS[(typeof status==='string'?status:status.id) as keyof typeof CARD_STATUS_LOOKS]?.crown))aTop.y=p.root.position.y+(this.statusCrowns.get(a.id)??p.height*p.root.scale.y+.18)+.18;
       const ideal=screen(aTop);ideal.y-=8;
       projected.push({id:a.id,x:top.x,y:top.y,labelX:ideal.x,labelY:ideal.y,footY:foot.y,visible:true});
-      labels.push({id:a.id,x:ideal.x,y:ideal.y,height:view.autoBattle?(readable?(view.cardStatuses?.[a.id]?.length?54:30):48):a.side==='enemy'?a.statuses.length?41:29:a.statuses.length?30:18,head:screenBounds(p.model,this.camera,this.width,this.height)});
+      labels.push({id:a.id,x:ideal.x,y:ideal.y,height:view.autoBattle?(readable?((view.cardStatuses?.[a.id]?.length?54:30)+(view.bossPhases?.[a.id]!==undefined?16:0)):48):a.side==='enemy'?a.statuses.length?41:29:a.statuses.length?30:18,head:screenBounds(p.model,this.camera,this.width,this.height)});
     }
     const obstacles = view.autoBattle ? view.actors.filter(actor => actor.side === 'party' && actor.hp > 0)
       .flatMap(actor => { const puppet = this.puppets.get(actor.id); return puppet ? [screenBounds(puppet.model,this.camera,this.width,this.height)] : []; }) : [];
@@ -656,6 +666,8 @@ export class TurnScene {
     if(this.lookStageEnabled&&frame){
       const bursts=view.cardPresentation?.bursts??[],reactions=view.cardPresentation?.reactions;
       if(view.cardMoment)words.push({x:12,y:8,width:132,height:108});
+      // Reserve the phase/finish banner for its full action, including wrapped text.
+      if(view.cardBossCue)words.push({x:this.width*.175,y:4,width:this.width*.55,height:40});
       for(const anchor of [...projected].filter(a=>view.cardNumberRows?.[a.id]||bursts.includes(a.id)).sort((a,b)=>a.y-b.y)){
         const reaction=reactions?.find(r=>r.targetId===anchor.id)?.id??'crumb-burst';
         const first=bursts.find(id=>(reactions?.find(r=>r.targetId===id)?.id??'crumb-burst')===reaction);
@@ -701,6 +713,7 @@ export class TurnScene {
     this.stageTextures.forEach(texture => texture.dispose());
     this.glow?.dispose();
     this.contactTexture?.dispose();
+    this.contactPool?.dispose();
     this.blobMaterial?.dispose();
     this.spells?.dispose();
     this.cardEffects?.dispose();

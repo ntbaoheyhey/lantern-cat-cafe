@@ -1,0 +1,272 @@
+{
+  "method": "Uninterrupted natural automatic x1 battle; only start/end trim, no tick injection or fixture plans. CDP timestamps encoded at30fps; recording is not a performance sample.",
+  "name": "after",
+  "artifact": "/tmp/cardrpg-v5full-m4/delivery2/v5-live.html",
+  "artifactSha256": "edd92234d18c0fbf5821baa60716dfe4e148b3d286c9bbde250d89f65905709f",
+  "initial": {
+    "seed": 791576452,
+    "chapter": 1,
+    "cats": [
+      {
+        "id": "mochi",
+        "stats": {
+          "hp": 574,
+          "attack": 61,
+          "defense": 34,
+          "critBp": 800,
+          "critDamageBp": 5000,
+          "effectHitBp": 0,
+          "effectResistBp": 0,
+          "healingBp": 0,
+          "shieldBp": 0,
+          "initiative": 8
+        },
+        "skills": [
+          "mochi-1",
+          "mochi-2",
+          "mochi-3"
+        ],
+        "row": "front",
+        "equipment": [
+          "hearthloom-weapon-common",
+          "hearthloom-outfit-common"
+        ],
+        "effects": [
+          "defend-shield"
+        ],
+        "bonuses": {}
+      },
+      {
+        "id": "soot",
+        "stats": {
+          "hp": 449,
+          "attack": 74,
+          "defense": 22,
+          "critBp": 1200,
+          "critDamageBp": 5000,
+          "effectHitBp": 0,
+          "effectResistBp": 0,
+          "healingBp": 0,
+          "shieldBp": 0,
+          "initiative": 6
+        },
+        "skills": [
+          "soot-1",
+          "soot-2",
+          "soot-3"
+        ],
+        "row": "rear",
+        "equipment": [
+          "moonwick-weapon-common",
+          "moonwick-outfit-common"
+        ],
+        "effects": [
+          "marked-break"
+        ],
+        "bonuses": {}
+      },
+      {
+        "id": "clover",
+        "stats": {
+          "hp": 384,
+          "attack": 47,
+          "defense": 20,
+          "critBp": 500,
+          "critDamageBp": 5000,
+          "effectHitBp": 0,
+          "effectResistBp": 0,
+          "healingBp": 0,
+          "shieldBp": 0,
+          "initiative": 4
+        },
+        "skills": [
+          "clover-1",
+          "clover-2",
+          "clover-3"
+        ],
+        "row": "rear",
+        "equipment": [
+          "mossbrew-weapon-common",
+          "mossbrew-outfit-common"
+        ],
+        "effects": [
+          "healing-cleanse"
+        ],
+        "bonuses": {}
+      }
+    ],
+    "enemies": [
+      "teacup-healer",
+      "sock-skipper"
+    ],
+    "hp": {
+      "mochi": 574,
+      "soot": 449,
+      "clover": 384
+    },
+    "boons": {},
+    "upgrades": {},
+    "mutator": "",
+    "enemyStats": {
+      "button-guard": {
+        "hp": 480,
+        "attack": 19,
+        "defense": 18
+      },
+      "sock-skipper": {
+        "hp": 701,
+        "attack": 22,
+        "defense": 8
+      },
+      "spool-ram": {
+        "hp": 1050,
+        "attack": 30,
+        "defense": 16
+      },
+      "needle-moth": {
+        "hp": 659,
+        "attack": 17,
+        "defense": 6
+      },
+      "teacup-healer": {
+        "hp": 765,
+        "attack": 14,
+        "defense": 10
+      },
+      "kettle-knight": {
+        "hp": 1190,
+        "attack": 25,
+        "defense": 35
+      },
+      "yarn-giant": {
+        "hp": 2870,
+        "attack": 32,
+        "defense": 22
+      },
+      "binding-thread": {
+        "hp": 383,
+        "attack": 10,
+        "defense": 0
+      },
+      "practice-cushion": {
+        "hp": 230,
+        "attack": 14,
+        "defense": 0
+      },
+      "pollen-scout": {
+        "hp": 945,
+        "attack": 22,
+        "defense": 10
+      },
+      "rain-spool": {
+        "hp": 3675,
+        "attack": 58,
+        "defense": 24
+      },
+      "crumb-sentinel": {
+        "hp": 1260,
+        "attack": 27,
+        "defense": 22
+      },
+      "pantry-crown": {
+        "hp": 4270,
+        "attack": 60,
+        "defense": 25
+      }
+    },
+    "skillsV5": true,
+    "gameplayV4": true,
+    "plan": {
+      "focus": "finish",
+      "care": "steady"
+    }
+  },
+  "file": "/tmp/cardrpg-v5full-m4/delivery2/after/after-20s.mp4",
+  "sha256": "26a8551a7ce766ef412008baef75f4d8411263190ee3b9f8cde1c60022a6b4d1",
+  "bytes": 1313183,
+  "probe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 900,
+        "nb_frames": "600"
+      }
+    ],
+    "format": {
+      "duration": "20.000000"
+    }
+  },
+  "trimStart": 0,
+  "capturedFrames": 587,
+  "pitchAcceptance": null,
+  "features": {
+    "reactions": [
+      "crumb-burst"
+    ],
+    "multiTargets": 4,
+    "ultimates": 0,
+    "events": [
+      {
+        "kind": "multi-target",
+        "id": "splash",
+        "at": 0.8240999999940395
+      },
+      {
+        "kind": "multi-target",
+        "id": "splash",
+        "at": 7.58779999999702
+      },
+      {
+        "kind": "multi-target",
+        "id": "ally-row",
+        "at": 10.140099999994039
+      },
+      {
+        "kind": "multi-target",
+        "id": "splash",
+        "at": 14.321799999997019
+      },
+      {
+        "kind": "reaction",
+        "id": "crumb-burst",
+        "at": 15.6045
+      }
+    ]
+  },
+  "observation": {
+    "events": [
+      {
+        "kind": "multi-target",
+        "id": "splash",
+        "at": 0.8240999999940395
+      },
+      {
+        "kind": "multi-target",
+        "id": "splash",
+        "at": 7.58779999999702
+      },
+      {
+        "kind": "multi-target",
+        "id": "ally-row",
+        "at": 10.140099999994039
+      },
+      {
+        "kind": "multi-target",
+        "id": "splash",
+        "at": 14.321799999997019
+      },
+      {
+        "kind": "reaction",
+        "id": "crumb-burst",
+        "at": 15.6045
+      }
+    ],
+    "elapsed": 20.05629999999702,
+    "result": null,
+    "choices": 9
+  },
+  "errors": []
+}

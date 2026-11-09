@@ -1,46 +1,39 @@
-# Skills V5 full run
-NOW MX closure complete; draft PR being published; M3 contact batching verified 146draws (152before), perf/E2E/startup pending; M4 candidates remain in /tmp.
-BASE #415 f9924699cab2fa5b8029baa1158f789ee44ddfda; fullPROMPT/RULES apply, no agents/models/desktop/Docker.
-DONE V0#409,V01#413,V3#415; never redo completed samples.
-DONE M1#416 source54d3e29b2; M2#418 tip58adf21de,source2e6ee6425; fullmilestone reports underfull/m1,m2.
-DONE MX0 audit86cue strips/60cat tiles; mean4.517. 48active skills include12ultimates; add12passives for60tiles, no inventedskills.
-DONE MX toolkit772e2e9f3; refinement/cache ba56ad503; NO MX PR yet.
-DONE M3 publishedS5 source6772eb343/evidence6f2ed74b5 mergedM2, adapter0d0951a71, livecases8545a195b, mergedMX8ce502df9.
-WORKTREES B=/Users/bao/taskbar-hero-cardrpg-b2 branchcodex/cardrpg-v5full-mx-2026-11-09; integration=/Users/bao/taskbar-hero-cardrpg-v5live branchcodex/cardrpg-v5live-2026-11-09.
-PROTECTED allA-owned,rules,manifests; no flags/default changes; drafts only. B-OUTBOX append-only.
-NUMBERS batches1e/2b/3b:270casts(native1280/1440,CPU4),max16.8ms; cost45cues<=109draws,106660tris,programs50fixed,overdrawmax.947.
-NUMBERS M2:168casts native16.8/CPU433.3,125draws173949tris;1176frames0overlap/outside/unplaced;138facemasks0offenders;contrast4.618.
-NUMBERS M3:18registeredbattles/1421actions/1687plans,0missing/extrav2events,0clockoverruns;18hashesexactON/OFF+step. merge1receipt passes adapter/type/lint/unit/build.
-LIVE CASES /tmp/cardrpg-v5full-m3/live-cases2:15/17live; P5threefoeRow,P6threeCrumbBurst notseen and labelledfixture. Naturalbrowsercoverage separate, pending.
-OPEN B-M1-001 PARTIAL:CPU4cold166.6/200/183.3 PASS220,ready<=10216 PASS11035;singletexture51.5ms MISS40;MXcoldpending.
-OPEN B-M2-002 PARTIAL after3attempts:bossratio1.517–1.843vs2,flatpalemonstermaterials despite luminance.262–.364 PASS;revisitonceM4.
-FIXED B-M1-002 M2:all1176frames0overlap/outside/unplaced.
-OPEN B-MX-003 allocation:originalisolated600framesMochi3.05MB/Soot.90MB/Yarn.77MB. CachedCSScolours/reusedtargetslots inopt1b;samplepending;zeroNOTclaimed.
-OPEN B-MX-007 cinema3thirdattempt:remove duplicateB2impactringforauthoredrecipes,roundinkcap,clothveil,widerneedles;review/faces/cost/casts pending;oldercinema1/2immutable.
-EVIDENCE 56.35MB packaged;80MB cap. Raw CDP traces retained /tmp with hashes, extracted summaries in repo. <=4deliveryvideos; old clips remain immutable git history when replaced.
-DECISION M4stricter31.5MB overrides33MBgeneral; no generative tools or added dependencies.
-NEXT close MX checks/report/self-score/draftPR; M3 remaining12livebattles and delivery gates, draft integrationpreview; M4 monster shading/boss revisit/demo/lean/clips; M5report+ledger+DONE.
-WAITING A runtime6772eb343 unchanged, latestpublishedS5evidence59475c79f read; S6notpublished. M3refresh continues untilS6DONEor19Nov18UTC.
-STOP onlyM5delivered,20Nov12UTC,orunfixable/unrevertibleS1withM5PARTIAL.
-LATEST MX3audit6.233vs4.517, uniquenessMISS; all60cat+26enemy peaks reviewed, repeatedpassivefootglows/smallbasicimpacts remain.
-LATEST Opt3allocation220728/106500/115280B vs3047256/900248/773820B,zeroMISS at3attemptcap;18regressioncastsPASS16.8ms; opt3coldpending.
-LATEST all4wholecatbatches360castsPASS16.8ms;all4batches240facemasks0offenders. Opt2cold native33.4/33.3/33.3 CPU4183.4/150/150PASS220; notsubstituteopt3.
-LATEST M3bootFIXED viaB-ownedIIFEloader; corrected20b76874ec7eartifact dev+normal smokePASS; failure retained. Source103844e55 B/9ea3c4139 live.
-LATEST Oven+Thread10/18naturalbattles exacthashes; nextNightlamp/Afternoontea. Render submission+canvas frames recorded; pixelvisibility requiresvisualreview.
-M4 review target: uniform.78emission makes everymonsterpink-flat; prepare directional shading within B-owned look-readable-enemies, preserve stage/face checks. Not yet changed.
-M4PREP /tmp/cardrpg-v5full-m4-prep/{PLAN.md,LiveGuide.tsx,live-guide.css,live-gallery.mjs,natural-video.mjs}; prepared only, NOT applied to product. Before#395artifact /tmp/cardrpg-v5full-before395.html.
-
-LATEST M3delivery2:51shots,1unplacedP5/1024;1077windowframes0reportedoverlaps but probeomittedAstrip,sointegrationlayoutPARTIAL.98facemasks0offenders;12UIcasesPASS.
-OPEN B-M3-003/004/005:legacylabel142px,liveAstripoverplate,peak152drawsvs130(P4).Preparedlabel/ticker/probefixes;drawattributionqueued-session12597.
-QUEUES inherited no-model FIFO16545; MX parent18885 continues; M3 parent18886 paused before superseded E2E, child23592 current immutable casts/cold finishes; diagnosis25053 queued.
-SOURCE root gates done: type/lint/buildPASS; StageLayout timeout once bothworktrees,2/2isolatedPASS each; logs preserved. NewM3fix1source gates running.
-LATEST natural coverage18/18 exact hashes,1687plans,0errors,38/45requestedcells. All4reactions captured; Night/Tea8endingsclear, originalOven/Thread10unverified bynarrowprobe.
-LATEST A06:36evidenceb3471813a runtime6772eb343 unchanged; noS6. M4preparedonly; do not repeat finishedsamples.
-SOURCE live352c5e955 label/ticker/colliderfix; fix1artifact 2600ba196eb56070dd2b1d0038fcc2316218520aae3092221742371dbacc81ec 28108545bytes; type/lint/1854unit/5seed/live18parityPASS, browserqueued.
-
-LATEST MXopt3cold3native33.3/33.4/33.3 CPU4150.1/183.3/183.3PASS220. E2E/startup/video pending; liveM3fix2shadowbatching attempt1onintegration only,web1856PASS.
-
-RESUMED 2026-11-09T07:05:38Z: re-read full prompt/rules/state/open FIXLOG/outboxes; no completed sample repeated. A0c80c912e evidence, runtime6772eb343 unchanged.
-LATEST M3fix2:51shots+1095frames0overlap/outside/unplaced;98face masks0offenders;contrast4.618;12UIcasesPASS;146draws/163043tris. Conditional150ceiling awaitsperf,130targetstillMISS.
-
-DONE MX closure:421/421E2E,root type/lint/buildPASS,StageLayoutflake2/2isolated;startup0Three/model andbytes/memberssameM2;fixture20sclipcaptured,sampledreviewrecorded. Selfscore7.01/beauty6.233PARTIAL.
+# Skills V5 full-run state
+NOW mandatory M3 published-phase refresh after M4 draft#421. M5 prepared62lines, publish only after S6DONE or19Nov18UTC cap; no new browser/timing jobs queued.
+PROMPT full/PROMPT.txt and RULES.md apply; single agent, no model helpers/generation, headless native macOS.
+B /Users/bao/taskbar-hero-cardrpg-b2 branch codex/cardrpg-v5full-m4-2026-11-09, runtime bc22a644f, M4 delivery4dba130c9 (draft#421), next branch codex/cardrpg-v5full-m5-2026-11-09.
+LIVE /Users/bao/taskbar-hero-cardrpg-v5live branch codex/cardrpg-v5live-2026-11-09, current269a08e05; draft #420 INTEGRATION PREVIEW - not for merge.
+Only B-owned presentation/tools/assets/docs/reports; protected A rules/screens/defaults/manifests untouched. Never use A worktree.
+DONE V0#409, V01#413, V3#415 f9924699; M1#416, M2#418, MX#419 3a8ed4c08. Preserve completed/failed samples.
+DONE MX:48active cat skills including12ultimates,12passives,26enemy cues. Mean4.517→6.233; beauty7.5/uniqueness MISS after3attempts.
+DONE MX batches:360cast windows≤16.8ms;240face masks0;fixed50programs;≤109draws/106660tris/overdraw.947.
+OPEN B-M1-001 PARTIAL: cold/ready gates fixed; nonpreemptible upload slice44.3ms exceeds40 (MX opt3). No fourth attempt.
+OPEN B-MX-003 PARTIAL after3:600frame allocation samples220728/106500/115280B,85–93%lower but notzero.
+DONE M3: published A runtime6772eb343 andS5evidenceb21a91c35 integrated; malformed/unknown version fallback preserved.
+DONE M3 S1 offline boot repaired9ea3c4139/103844e55; matching B-owned IIFE loader, no A edits.
+LIVE registration18battles1421actions1687plans exactON/OFF/hashes;0missing/extrav2events/action-clock overruns/browsererrors.
+LIVE original18natural samples38/45cells;all4reactions,7signatures,3enemykeywords. Ten original narrow-probe endings remainNOTVERIFIED.
+DONE B-M4-003 trigger repair:5additive natural replays/404plans exact;combined23samples/18seeds2091plans observe45/45cells,0deltaerrors/uncleared.
+No human-recognition or pixel segmentation claim; exact layer/target/alpha submissions plus saved canvases and separate visual review.
+LIVE fixed15/17rule replay frames;P5threefoeRow andP6tripleCrumbBurst explicitlyFIXTURE. Keep existing seed/round/action/time pins.
+DONE B-M3-003/004 labels/sibling overlay andB-M3-005contactpool:152→147draws. Conditional150ceiling only for Bpreview;130targetstillMISS.
+DONE M4 B-M4-001 framing:all13roster bounds pass;Yarn2.04055/Pantry2.06854;Kettle1.99709<2 remainsPARTIAL. Relief stillpale after3attempts.
+DONE B-M4-002 subtitle andB-M4-005 phase-banner reservation:51fixed+1194cueframes0overlap/outside/unplaced at1024/1280/1440.
+DONE same banner source:98face masks0offenders,contrast4.618,12keyboard/Escape/reducedmotion cases PASS.
+DONE changed14cue M4 check:84first/repeat windows≤16.8ms allprofiles,≤101draws/103677tris,fixed52programs;all60peaks reviewed,beauty stays6.233.
+DONE delivery2:168gallerycasts native16.8/CPU433.2ms;18crowded native16.8/CPU466.7ms;147draws,163239tris.
+DONE delivery2 cold:3native33.4/33.4/33.3;3CPU4149.9/150/183.3ms;readymax9212.6ms. All6errors0.
+DONE full30075127B SHAedd92234d18c0fbf5821baa60716dfe4e148b3d286c9bbde250d89f65905709f;lean21812603B SHA662f3bb3caa2d3eb458b69315443d02311e382c5efe31f2cf72e92b90e18d980.
+DONE guide3widths17shots/2fixtures/Escape/devgate/nooverflow;lean6SSIMmin.994547;DPR2key8frames0overlap/unplaced.
+DONE source:root type/lint/build;B1813/live1865web units. Live E2E421/421. B419/421 +idle2/2+squad2/2unchangedisolatedPASS (B-M4-006FLAKY).
+OPEN B-M4-004 PARTIAL after3diagnostics:OFFentry28182→28185B preloadmetadata;other10bytecounts exact,same11loadedmembers,0Three/model/errors.
+Source lineage2 verifies2930source+291assets against committedliveced2555e0 usingexisting25fallback-model remaps; no runtime drift.
+DONE evidence packing:lossless gzip+identical media aliases. B-M4-007 symlink correction restored exact6blobs andretargeted2links;all56alias hashes verify. Distinct/failed samples retained.
+EVIDENCE M4packincluded,cap80MB and4clips≤30s; q64reviewencodes preserve dimensions/originalhashes. Distinct failedsamples retained.
+QUEUE allM4jobs complete; ownFIFO16545 stopped via its stopfile. No timinglock held orrequested. NeverkillA/unrelated PIDs.
+VIDEO before20s complete seed791576452. After usesexactinitialJSON withV4/V5ON;pitchpredeclaredThreadpair1;reelactualguide12ultimates1x. /tmp/cardrpg-v5full-m4/delivery2-queue.log.
+WAITING published A phase/S6 since 2026-11-09T08:57:30Z, last check 2026-11-09T08:57:30Z; lastreadline1452 (08:25S8Homeactive), runtime6772eb343/evidenceb21a91c35. SyncM4checkpoint08:56pushed.
+NEXT timeout1200 wait-outbox.sh withV5_LAST_READ_LINE1452; onnewpublishedphase fetch/read-only andmerge integration, deltaonlyverification. M5draft/report/ledger/BOUTBOXDONE afterrefreshcap.
+THEN continue M3 published-phase refresh untilS6DONEor19Nov18UTC; wait-outbox.sh withrecordedlastline,onlyqueuedBworkwhilewaiting. M5report≤90lines+ledger+BOUTBOXDONE.
+Prepared drafts/scripts /tmp/cardrpg-v5full-m4-prep/{M4-REPORT.md,V5FULL-REPORT.md,review-videos.py,sync-entry.py}; M5 placeholders mustbe resolved beforepublication.
+STOP only M5delivered,20Nov12UTC,orunfixable/unrevertibleS1withM5PARTIAL. No manualhandoff.

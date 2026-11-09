@@ -39,7 +39,7 @@ export function BattleView({ m }: { m: DepthModel }) {
   const plates = useRef(new Map<string, HTMLDivElement>());
   const numbers = useRef(new Map<string, HTMLDivElement>());
   const callouts = useRef(new Map<string, HTMLDivElement>());
-  const statusView = useMemo(() => lookV2 && m.plan ? applyV5Presentation(m.plan,statusPresentation(m.plan,m.battle?.log ?? []),v5SourceForPlan(m.plan,m.battle)) : undefined,[lookV2,m.plan,m.battle?.log.length]);
+  const statusView = useMemo(() => lookV2 && m.plan ? applyV5Presentation(m.plan,statusPresentation(m.plan,m.battle?.log ?? []),v5SourceForPlan(m.plan,m.battle,m.visualBattle ?? undefined)) : undefined,[lookV2,m.plan,m.battle?.log.length]);
   const statusViewRef = useRef(statusView); statusViewRef.current = statusView;
   const lastBattle = useRef(m.battle!);
   const view = useRef<SceneView | null>(null);
@@ -74,6 +74,7 @@ export function BattleView({ m }: { m: DepthModel }) {
     autoBattle: true, galleryPreview: !!m.galleryBattle, effectOnly: !!m.galleryBattle && m.galleryEffectOnly,
     cardStatuses: Object.fromEntries(battle.actors.map(actor => [actor.id, lookV2 ? actor.statuses : actor.statuses.map(status => status.id)])),
     cardPresentation: statusView,
+    cardBossCue: lookV2 && !m.galleryEffectOnly && history.events.some(event => event.kind === 'boss-phase' || event.kind === 'boss-finish'),
     cardNumberRows: lookV2 ? Object.fromEntries(results.map(r=>[r.id,r.labels.length])) : undefined,
     cardNumberWidths: lookV2 ? Object.fromEntries(results.map(r=>[r.id,r.width])) : undefined,
     cardMoment: !!m.plan?.ultimate && battle.actors.find(a=>a.id===m.plan?.actorId)?.side==='party' && !m.galleryEffectOnly,
@@ -242,7 +243,7 @@ export function BattleView({ m }: { m: DepthModel }) {
           return <span key={id} className={ready === 'Ready' ? 'is-ready' : ''} title={`${skill.name}: ${ready}`}><span className="dp-v4-skill-name">{skill.name}</span><b>{ready}</b></span>; })}
       </div> : <span className="dp-charge" style={{ '--charge': `${cat.charge}%` } as CSSProperties} title={`Ultimate charge ${cat.charge}/100`}><small>{cat.charge}</small></span>}
     </div>)}</div>
-    {readable ? <div className="dp-action-caption" role="status"><b>{m.paused ? 'Paused' : `${m.state.settings.speed}×`}</b><span>Round {battle.round}</span></div> : <>
+    {readable ? <div className="dp-action-caption" role="status"><b>{m.paused ? 'Paused' : `${m.state.settings.speed}×`}</b><span>Round {battle.round}</span>{lookV2 && v4 && <span className="dp-v5-combo-ticker" role="status">{v4.events.filter(event=>event.kind==='reaction').at(-1)?.text}</span>}</div> : <>
     <div className="dp-action-caption" role="status"><b>{m.paused ? 'Paused' : m.impactVisible && !m.galleryBattle && m.momentNote || actor?.name}</b>
       <div className="dp-skill-banner" ref={skillBanner} hidden={!m.plan || m.animationAt >= 600 || m.galleryEffectOnly}>
         {m.plan && <>{skillIcon(m.plan.skillId) && <img src={skillIcon(m.plan.skillId)} alt="" />}<strong>{m.plan.name}</strong></>}

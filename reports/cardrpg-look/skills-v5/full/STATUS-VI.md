@@ -1,5 +1,5 @@
-Đã dựng nhiều lớp cho 48 kỹ năng chủ động, trong đó có 12 tuyệt kỹ; 12 nội tại ghi riêng.
-360 cửa sổ tung chiêu đạt tối đa 16,8 ms; CPU4 mở lạnh tối đa 183,3 ms.
-Tự chấm hình ảnh 6,233/10, chưa đạt 7,5; cấp phát bộ nhớ giảm 85–93% nhưng chưa bằng 0.
-18 trận thật khớp hàm băm; 38/45 ô được bộ đo quan sát, phần còn lại ghi rõ chưa xác minh.
-Tiếp tục bản tích hợp và demo; ưu tiên độ nổi khối của quái, tỉ lệ trùm và các hiệu ứng còn giống nhau.
+Đã đóng gói demo thật 30,075 MB và bản nhẹ 21,813 MB; 421/421 E2E bản tích hợp đạt.
+18 hạt giống khớp kết quả; 45/45 ô được bộ đo ghi nhận, hai ảnh vẫn là fixture.
+Tung chiêu tối đa 16,8 ms; mở lạnh CPU4 tối đa 183,3 ms; 147 lượt vẽ chưa đạt 130.
+Đủ bốn phim; clip 30 giây có hai phản ứng, sáu đòn đa mục tiêu và ba tuyệt kỹ.
+Tự chấm 7,54/10, hình ảnh 6,233/10; tiếp tục cập nhật lane A tới S6 rồi giao báo cáo M5 PARTIAL.

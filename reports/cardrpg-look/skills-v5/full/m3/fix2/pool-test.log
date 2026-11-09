@@ -1,0 +1,17 @@
+
+> @taskbar-hero/web@0.0.0 test /Users/bao/taskbar-hero-cardrpg-v5live/apps/web
+> vitest run -- src/game/squad/turn3d/look-contact-pool.test.ts
+
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-v5live/apps/web
+
+
+ Test Files  198 passed (198)
+      Tests  1856 passed (1856)
+   Start at  13:54:29
+   Duration  27.75s (environment 51%, tests 37%, import 10%, transform 1%)
+
+Environment  jsdom was created 198 times · 142.74s total, 51% of tracked time
+             create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+             learn more: https://vitest.dev/guide/improving-performance#test-environments
+

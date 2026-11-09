@@ -21,15 +21,19 @@ export async function apply(page,row){
 }
 // Serializable browser function, also used on every rendered frame by collide.
 export function audit(){
- const visible=e=>!e.hidden&&getComputedStyle(e).display!=='none'&&Number(getComputedStyle(e).opacity)>0&&e.getBoundingClientRect().width>0;
+ const visible=e=>!e.hidden&&getComputedStyle(e).display!=='none'&&getComputedStyle(e).visibility!=='hidden'&&Number(getComputedStyle(e).opacity)>0&&e.getBoundingClientRect().width>0;
  const rect=e=>({name:e.dataset.numberTarget||e.dataset.comboTarget||e.textContent?.slice(0,45),...e.getBoundingClientRect().toJSON()});
  const all=s=>[...document.querySelectorAll(s)].filter(visible);
  const plates=all('.dp-world-plate'),badges=all('.dp-status-badge,.dp-status-more');
  const words=all('.dp-combo-callout'),numbers=all('.dp-float-number');
- const fixed=all('.dp-ultimate-moment,.dp-party,.dp-battle-top,.dp-roundbar');
+ const liveStrip=all('.dp-v5-status-strip');
+ const bossCues=all('.dp-v4-boss-cue');
+ const fixed=all('.dp-ultimate-moment,.dp-party,.dp-battle-top,.dp-roundbar,.dp-v5-status-strip,.dp-v4-boss-cue');
  const hit=(a,b)=>a.left<b.right-.5&&a.right>b.left+.5&&a.top<b.bottom-.5&&a.bottom>b.top+.5;
  const overlaps=[];const text=[...words,...numbers];
+ for(const cue of bossCues)for(const other of [...plates,...all('.dp-ultimate-moment')])if(hit(rect(cue),rect(other)))overlaps.push([rect(cue),rect(other)]);
  for(let i=0;i<text.length;i++)for(const b of [...text.slice(i+1),...plates,...fixed])if(hit(rect(text[i]),rect(b)))overlaps.push([rect(text[i]),rect(b)]);
+ for(const plate of plates)for(const strip of liveStrip)if(hit(rect(plate),rect(strip)))overlaps.push([rect(plate),rect(strip)]);
  for(let i=0;i<badges.length;i++)for(const b of [...badges.slice(i+1),...badges[i].closest('[data-hp-plate]').querySelectorAll('progress,.dp-party-health>span strong,.dp-world-plate>div>small')])if(hit(rect(badges[i]),rect(b)))overlaps.push([rect(badges[i]),rect(b)]);
  const stage=rect(document.querySelector('.dp-arena'));
  const outside=text.map(rect).filter(r=>r.left<stage.left-.5||r.right>stage.right+.5||r.top<stage.top-.5||r.bottom>stage.bottom+.5);
