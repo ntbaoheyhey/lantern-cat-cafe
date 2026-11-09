@@ -27,10 +27,11 @@ Compatibility: OFF8250 digest47477251... exact; A5fallback180battles/45routes ex
 Source gates/current compatibility: s5-selected/audit.json; corrected failures retained in FIXLOG.md.
 S8 artifact: /tmp/cardrpg-v5a-s5-tip-artifact/index.html;20,961,816bytes/SHA4e310b07f9dfb005abdff830d498e8d0f6615553e1710a2ce12eeedad3a3638e.
 S8 existing owned processes:transition13818 -> s8-series94866 -> Home94867; continuation.json proves ownership.
-S8 Home started08:15:56UTC; one persistent browser/fresh save,60active minutes; no replacement/restart.
+S8 Home started08:15:56UTC; same process/browser,44active minutes/39encounters at09:20UTC,0errors; target60.
 S8 registration:110slease targets,7shandoffs,Home03public-clickpolicy,naturalx1; real wall-time cafes.
 S8 default candidate:/tmp/cardrpg-v5a-s8-selected-default-dist; originalmain340f88b9 reverified unchanged.
-S8 TRAIN revisit: s8/TRAIN-REVIEW.md; complete PRE-S6-REVISIT.md awaits elapsed/startup observations.
+S8 first30 retained:rewardgap929.859s,combat990.289s(+10.441%vsH0),capnotice14.638min; completion pending.
+S8 review:TRAIN-REVIEW.md; run elapsed-attribution.mjs after Home metrics; PRE-S6-REVISIT awaits all observations.
 Acceptance20001–20500 UNUSED; register both modes/source/tools/cases before first use.30001/40001 unused.
 S6 tools preflightPASS; once-onlyZ includes ready-scene fallback/HP-plate diagnostic; no samples yet.
 Next: finish existing S8 queue,review observations/FIXLOG,publish S8draft+ledger; branch/register/run pairedS6.
