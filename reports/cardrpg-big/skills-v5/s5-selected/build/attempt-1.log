@@ -1,0 +1,375 @@
+{"lock":"acquired","lane":"A","pid":52817,"startedAt":"2026-11-09T04:00:23.160Z","task":"V5A selected offline build for S8"}
+[plugin rolldown:vite-resolve] Module "node:worker_threads" has been externalized for browser compatibility, imported by "/Users/bao/taskbar-hero-cardrpg-a4/node_modules/.pnpm/ox@0.14.57_typescript@5.9.3_zod@4.6.7/node_modules/ox/_esm/tempo/internal/virtualMasterPool.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[33m[INEFFECTIVE_DYNAMIC_IMPORT] [0mapps/web/src/game/cardrpg/depth/Pages.tsx is dynamically imported by apps/web/src/game/cardrpg/depth/App.tsx but also statically imported by apps/web/src/game/cardrpg/depth/App.tsx, dynamic import will not move module into another chunk.
+
+node:internal/child_process:1191
+    result.error = new ErrnoException(result.error, 'spawnSync ' + options.file);
+                   ^
+
+<ref *1> Error: spawnSync git ENOBUFS
+    at Object.spawnSync (node:internal/child_process:1191:20)
+    at spawnSync (node:child_process:929:24)
+    at execFileSync (node:child_process:972:15)
+    at file:///Users/bao/taskbar-hero-cardrpg-a4/tools/cardrpg-big/build.mjs:89:24 {
+  errno: -55,
+  code: 'ENOBUFS',
+  syscall: 'spawnSync git',
+  path: 'git',
+  spawnargs: [
+    'diff',
+    'HEAD',
+    '--',
+    'packages/game-rules/src',
+    'apps/web/src',
+    'assets',
+    'tools/cardrpg-depth',
+    'tools/cardrpg-big',
+    'tools/cardrpg-big2',
+    'tools/cardrpg-demo/verify-delivery.py',
+    'tools/visual-support.mjs',
+    'assets/cardrpg-look/game-models/clover.glb',
+    'assets/cardrpg-look/game-models/mochi.glb',
+    'assets/cardrpg-look/game-models/soot.glb',
+    'assets/cardrpg-look/portraits/clover-1x.webp',
+    'assets/cardrpg-look/portraits/clover-2x.webp',
+    'assets/cardrpg-look/portraits/mochi-1x.webp',
+    'assets/cardrpg-look/portraits/mochi-2x.webp',
+    'assets/cardrpg-look/portraits/soot-1x.webp',
+    'assets/cardrpg-look/portraits/soot-2x.webp',
+    'assets/cardrpg/portraits/biscuit.png',
+    'assets/cardrpg/portraits/brioche.png',
+    'assets/cardrpg/portraits/cinnamon.png',
+    'assets/cardrpg/portraits/clover.png',
+    'assets/cardrpg/portraits/inkcap.png',
+    'assets/cardrpg/portraits/mallow.png',
+    'assets/cardrpg/portraits/marigold.png',
+    'assets/cardrpg/portraits/mochi.png',
+    'assets/cardrpg/portraits/panko.png',
+    'assets/cardrpg/portraits/soot.png',
+    'assets/cardrpg/portraits/sorrel.png',
+    'assets/cardrpg/portraits/velvet.png',
+    'assets/cardrpg2/models/binding-thread.glb',
+    'assets/cardrpg2/models/biscuit.glb',
+    'assets/cardrpg2/models/brioche.glb',
+    'assets/cardrpg2/models/button-guard.glb',
+    'assets/cardrpg2/models/cinnamon.glb',
+    'assets/cardrpg2/models/clover.glb',
+    'assets/cardrpg2/models/crumb-sentinel.glb',
+    'assets/cardrpg2/models/inkcap.glb',
+    'assets/cardrpg2/models/kettle-knight.glb',
+    'assets/cardrpg2/models/mallow.glb',
+    'assets/cardrpg2/models/marigold.glb',
+    'assets/cardrpg2/models/mochi.glb',
+    'assets/cardrpg2/models/needle-moth.glb',
+    'assets/cardrpg2/models/panko.glb',
+    'assets/cardrpg2/models/pantry-crown.glb',
+    'assets/cardrpg2/models/pollen-scout.glb',
+    'assets/cardrpg2/models/practice-cushion.glb',
+    'assets/cardrpg2/models/rain-spool.glb',
+    'assets/cardrpg2/models/sock-skipper.glb',
+    'assets/cardrpg2/models/soot.glb',
+    'assets/cardrpg2/models/sorrel.glb',
+    'assets/cardrpg2/models/spool-ram.glb',
+    'assets/cardrpg2/models/teacup-healer.glb',
+    'assets/cardrpg2/models/velvet.glb',
+    'assets/cardrpg2/models/yarn-giant.glb',
+    'assets/cardrpg3/evidence/baseline-dpr1-enemy.webp',
+    'assets/cardrpg3/evidence/baseline-dpr1-hero-face.webp',
+    'assets/cardrpg3/evidence/baseline-dpr1-hud-text.webp',
+    'assets/cardrpg3/evidence/baseline-dpr1-portrait.webp',
+    'assets/cardrpg3/evidence/baseline-dpr1-skill-icon.webp',
+    'assets/cardrpg3/evidence/baseline-dpr2-enemy.webp',
+    'assets/cardrpg3/evidence/baseline-dpr2-hero-face.webp',
+    'assets/cardrpg3/evidence/baseline-dpr2-hud-text.webp',
+    'assets/cardrpg3/evidence/baseline-dpr2-portrait.webp',
+    'assets/cardrpg3/evidence/baseline-dpr2-skill-icon.webp',
+    'assets/cardrpg3/evidence/current-dpr1-enemy.webp',
+    'assets/cardrpg3/evidence/current-dpr1-hero-face.webp',
+    'assets/cardrpg3/evidence/current-dpr1-hud-text.webp',
+    'assets/cardrpg3/evidence/current-dpr1-portrait.webp',
+    'assets/cardrpg3/evidence/current-dpr1-skill-icon.webp',
+    'assets/cardrpg3/evidence/current-dpr2-enemy.webp',
+    'assets/cardrpg3/evidence/current-dpr2-hero-face.webp',
+    'assets/cardrpg3/evidence/current-dpr2-hud-text.webp',
+    'assets/cardrpg3/evidence/current-dpr2-portrait.webp',
+    'assets/cardrpg3/evidence/current-dpr2-skill-icon.webp',
+    'assets/cardrpg3/icons/biscuit-1.svg',
+    'assets/cardrpg3/icons/biscuit-2.svg',
+    'assets/cardrpg3/icons/biscuit-3.svg',
+    'assets/cardrpg3/icons/biscuit-4.svg',
+    'assets/cardrpg3/icons/brioche-1.svg',
+    'assets/cardrpg3/icons/brioche-2.svg',
+    'assets/cardrpg3/icons/brioche-3.svg',
+    'assets/cardrpg3/icons/brioche-4.svg',
+    'assets/cardrpg3/icons/cinnamon-1.svg',
+    'assets/cardrpg3/icons/cinnamon-2.svg',
+    'assets/cardrpg3/icons/cinnamon-3.svg',
+    'assets/cardrpg3/icons/cinnamon-4.svg',
+    'assets/cardrpg3/icons/clover-1.svg',
+    'assets/cardrpg3/icons/clover-2.svg',
+    'assets/cardrpg3/icons/clover-3.svg',
+    'assets/cardrpg3/icons/clover-4.svg',
+    'assets/cardrpg3/icons/inkcap-1.svg',
+    'assets/cardrpg3/icons/inkcap-2.svg',
+    'assets/cardrpg3/icons/inkcap-3.svg',
+    'assets/cardrpg3/icons/inkcap-4.svg',
+    'assets/cardrpg3/icons/mallow-1.svg',
+    'assets/cardrpg3/icons/mallow-2.svg',
+    'assets/cardrpg3/icons/mallow-3.svg',
+    ... 109 more items
+  ],
+  error: [Circular *1],
+  status: null,
+  signal: 'SIGTERM',
+  output: [
+    null,
+    'diff --git a/packages/game-rules/src/cardrpg/depth/battle.ts b/packages/game-rules/src/cardrpg/depth/battle.ts\n' +
+      'index a8f27a5d3..5320021fe 100644\n' +
+      '--- a/packages/game-rules/src/cardrpg/depth/battle.ts\n' +
+      '+++ b/packages/game-rules/src/cardrpg/depth/battle.ts\n' +
+      '@@ -1,5 +1,5 @@\n' +
+      "-import { kitSkillV5 } from './skills-v5/kits';\n" +
+      "-import { enemyActionV5, enemyIntentV5 } from './skills-v5/enemies';\n" +
+      "+import { kitSkillV5, situationalSkillV5 } from './skills-v5/kits';\n" +
+      "+import { enemyActionV5, enemyIntentV5, encounterEnemiesV5, phaseHelpersV5, releaseThreadV5 } from './skills-v5/enemies';\n" +
+      " import { executeShapeV5, shapeV5, weakestV5, type EffectV5, type ShapeV5 } from './skills-v5/shapes';\n" +
+      " import { crumbBurstV5, directReactionV5, spreadV5, type ReactionRuntimeV5 } from './skills-v5/reactions';\n" +
+      " import { beforeActionV5, consumeDazeV5, defenseV5, receivedV5, statusIdV5, statusRuleV5, tickStatusesV5, type StatusRuntimeV5 } from './skills-v5/statuses';\n" +
+      '@@ -104,11 +104,13 @@ function loseHp(b: Battle, source: Actor, target: Actor, amount: number, kind: s\n' +
+      '   if (target.hp === 0) {\n' +
+      "     if (target.side === 'party' && b.firstDeath === null) b.firstDeath = target.role;\n" +
+      "     record(b, source, target, 'defeat');\n" +
+      '+    if(b.initial.skillsV5)releaseThreadV5(b,target);\n' +
+      '     if(b.initial.skillsV5)spreadV5(b,source,target,reactionRuntimeV5);\n' +
+      "     if (source.catalogId === 'velvet') { if (b.v4) heal(b,source,source,6); else source.charge = Math.min(100, source.charge + 15); }\n" +
+      "     if (source.side === 'party' && source.hp > 0) heal(b,source,source,boonValue(b,'killHeal'));\n" +
+      '   }\n' +
+      '   phaseBossV4(b,target);\n' +
+      '+  if(b.initial.skillsV5)phaseHelpersV5(b,target,spawnThread);\n' +
+      '   return actual;\n' +
+      ' }\n' +
+      " function damage(b: Battle, source: Actor, target: Actor, power: number, pressure: number, cover = false, shape: ShapeV5 = 'single') {\n" +
+      '@@ -234,7 +236,7 @@ export function createBattle(setup: BattleSetup): Battle {\n' +
+      "     if (!cat || ![3, 4].includes(c.skills.length) || new Set(c.skills).size !== c.skills.length || c.skills.some(id => SKILLS[id]?.catId !== c.id)) throw Error('Invalid cat skill kit');\n" +
+      "     return { ...actorBase(),id:c.id,catalogId:c.id,name:cat.name,side:'party',role:cat.role,row:c.row,flavour:cat.flavour,hp:Math.min(c.stats.hp,setup.hp?.[c.id]??c.stats.hp),maxHp:c.stats.hp,attack:c.stats.attack,defense:c.stats.defense,initiative:9-index,effectHit:c.stats.effectHitBp,effectResist:c.stats.effectResistBp,breakCap:6,skills:[...c.skills],equipment:c.equipment??[],setEffects:c.effects??[],bonuses:{...c.bonuses,critBp:c.stats.critBp,critDamageBp:c.stats.critDamageBp,healingBp:c.stats.healingBp,shieldBp:c.stats.shieldBp} };\n" +
+      '   });\n' +
+      '-  actors.push(...setup.enemies.map((id,i) => enemyActor(id,i,setup.chapter,setup.tutorial,initial.enemyStats)));\n' +
+      '+  actors.push(...(setup.skillsV5?encounterEnemiesV5(setup.enemies):setup.enemies).map((id,i) => enemyActor(id,i,setup.chapter,setup.tutorial,initial.enemyStats)));\n' +
+      "   const b: Battle = {version:CONTRACT_VERSION,seed:setup.seed,rng:setup.seed,chapter:setup.chapter,actors,round:0,queue:[],acted:[],energy:0,maxEnergy:5,intents:[],log:[],choices:[],result:null,firstDeath:null,procRounds:{},boons:{...setup.boons},mutator:setup.mutator??'',initial};\n" +
+      '   if (setup.gameplayV4) {\n' +
+      '     b.v4={version:1,plan:clone(initial.plan!),events:[],committed:false};\n' +
+      '@@ -317,7 +319,7 @@ function checkResult(b: Battle) {\n' +
+      ' export function currentActor(b: Battle) { return b.actors.find(a => a.id === b.queue[0] && a.hp > 0); }\n' +
+      ' export function targets(b: Battle, actor: Actor, skill: Skill): Actor[] {\n' +
+      "   const foes=living(b,actor.side==='party'?'enemy':'party'), allies=living(b,actor.side);\n" +
+      "-  if(b.initial.skillsV5&&shapeV5(skill)==='weakest'){const target=weakestV5(allies);return target?[target]:[];}\n" +
+      "+  if(b.initial.skillsV5){skill=situationalSkillV5(b,actor,skill);if(['weakest','ally-splash'].includes(shapeV5(skill))){const target=weakestV5(allies);return target?[target]:[];}}\n" +
+      "   if (skill.target==='self') return [actor];\n" +
+      "   if (skill.target==='fallen') return b.actors.filter(a=>a.side===actor.side&&a.hp===0);\n" +
+      "   if (skill.target==='ally'||skill.target==='allies') return allies;\n" +
+      '@@ -336,7 +338,7 @@ export function legalChoices(b: Battle): Choice[] {\n' +
+      '   const actor=currentActor(b);\n' +
+      "   if (!actor||actor.side!=='party'||b.result) return [];\n" +
+      "   return [...actor.skills,'defend',...(b.v4?[]:['wait'])].flatMap(id=>{\n" +
+      '-    const skill=skillById(id,b.initial.skillsV5)!;\n' +
+      '+    const base=skillById(id,b.initial.skillsV5)!,skill=b.initial.skillsV5?situationalSkillV5(b,actor,base):base;\n' +
+      "     if ((!b.v4&&(energyCost(actor,skill)>b.energy || skill.charge>actor.charge)) || (b.v4&&skill.type==='ultimate'&&actor.turns<2) || (actor.cooldowns[id]??0)>0 || skill.effects.some(e=>e.kind==='revive')&&actor.passiveUsed) return [];\n" +
+      '     return targets(b,actor,skill).map(t=>({actorId:actor.id,skillId:id,targetId:t.id}));\n' +
+      '   });\n' +
+      '@@ -452,6 +454,7 @@ export function act(b: Battle, choice: Choice): boolean {\n' +
+      '   if(b.initial.skillsV5)b.procRounds.v5ActionSequence=(b.procRounds.v5ActionSequence??0)+1;\n' +
+      "   if(b.initial.skillsV5&&!beforeActionV5(b,actor,statusRuntimeV5)){b.choices.push({...choice});record(b,actor,actor,'action',0,'Bleed prevented the action',choice.skillId);finishAction(b,actor);return true;}\n" +
+      '   let skill=skillById(choice.skillId,b.initial.skillsV5)!, target=b.actors.find(a=>a.id===choice.targetId)!;\n' +
+      '+  if(b.initial.skillsV5)skill=situationalSkillV5(b,actor,skill);\n' +
+      '   if(b.initial.skillsV5&&consumeDazeV5(b,actor,statusRuntimeV5)){const basic=skillById(actor.skills[0]!,true)!;skill={...basic,effects:basic.effects.map(e=>({...e,...(e.power!==undefined?{power:e.power*.5}:{})}))};target=targets(b,actor,skill)[0]??target;}\n' +
+      '   const description = actionDescription(b, actor, target, skill);\n' +
+      '   b.choices.push({...choice});\n' +
+      '@@ -505,8 +508,8 @@ export function act(b: Battle, choice: Choice): boolean {\n' +
+      '   finishAction(b,actor);\n' +
+      '   return true;\n' +
+      ' }\n' +
+      '-function spawnThread(b: Battle, source: Actor) {\n' +
+      "-  if (living(b,'enemy').filter(a=>a.catalogId==='binding-thread').length>=2) return;\n" +
+      '+function spawnThread(b: Battle, source: Actor, limit=2) {\n' +
+      "+  if (living(b,'enemy').filter(a=>a.catalogId==='binding-thread').length>=limit) return;\n" +
+      "   const actor=enemyActor('binding-thread',b.actors.length,b.chapter,false,b.initial.enemyStats);\n" +
+      "   if(b.v4)actor.linkedBossId=ENEMY_BY_ID[source.catalogId]?.tier==='boss'?source.id:source.linkedBossId;\n" +
+      '   b.actors.push(actor);\n' +
+      'diff --git a/packages/game-rules/src/cardrpg/depth/skills-v5/enemies.ts b/packages/game-rules/src/cardrpg/depth/skills-v5/enemies.ts\n' +
+      'index 3d039838c..0bfd84cd1 100644\n' +
+      '--- a/packages/game-rules/src/cardrpg/depth/skills-v5/enemies.ts\n' +
+      '+++ b/packages/game-rules/src/cardrpg/depth/skills-v5/enemies.ts\n' +
+      '@@ -1,14 +1,37 @@\n' +
+      " import {emitGameplayEvent} from '../events-v4';\n" +
+      "+import {ENEMY_BY_ID} from '../catalog';\n" +
+      " import type {Actor,Battle,Intent,StatusId} from '../contract';\n" +
+      " import {landingsV5,weakestV5,type ShapeV5} from './shapes';\n" +
+      ' \n' +
+      '+/** Existing helpers make isolated boss/elite encounters readable combo opportunities. */\n' +
+      '+export function encounterEnemiesV5(ids:string[]):string[] {\n' +
+      "+  const tier=ids.length===1?ENEMY_BY_ID[ids[0]!]!.tier:'';\n" +
+      "+  return tier==='boss'?[...ids,'binding-thread','binding-thread']:tier==='elite'?[...ids,'binding-thread']:ids;\n" +
+      '+}\n' +
+      '+export function phaseHelpersV5(b:Battle,boss:Actor,spawn:(b:Battle,source:Actor,limit?:number)=>void):void {\n' +
+      "+  if(boss.hp<=0||boss.phase!==2||ENEMY_BY_ID[boss.catalogId]?.tier!=='boss'||boss.bonuses.v5Helpers)return;\n" +
+      '+  boss.bonuses.v5Helpers=1;\n' +
+      '+  spawn(b,boss,4);spawn(b,boss,4);\n' +
+      '+}\n' +
+      "+/** A defeated thread releases only its own knot; another source's Shred stays. */\n" +
+      '+export function releaseThreadV5(b:Battle,thread:Actor):void {\n' +
+      "+  if(thread.catalogId!=='binding-thread')return;\n" +
+      "+  for(const ally of b.actors.filter(a=>a.side==='party')){\n" +
+      "+    const removed=ally.statuses.filter(s=>s.source===thread.id&&['brittle','drowsy'].includes(s.id));\n" +
+      '+    if(!removed.length)continue;\n' +
+      '+    ally.statuses=ally.statuses.filter(s=>!removed.includes(s));\n' +
+      "+    b.log.push({round:b.round,actorId:thread.id,targetId:ally.id,skillId:'',kind:'dispel',amount:removed.length,text:'Binding Thread defeated; knot released.'});\n" +
+      '+  }\n' +
+      '+}\n' +
+      '+\n' +
+      ' export const ENEMY_MECHANICS_V5:Record<string,{mechanic:string;counter:string}>={\n' +
+      "-  'button-guard':{mechanic:'Shields its whole row.',counter:'Shred strips shields; Burn passes through.'},\n" +
+      "+  'button-guard':{mechanic:'Shields and Warms its whole row.',counter:'Shred strips shields; Burn passes through.'},\n" +
+      "   'sock-skipper':{mechanic:'Targets rear cats and applies Bleed.',counter:'Shield the rear before their next actions.'},\n" +
+      "   'spool-ram':{mechanic:'Charges for one turn, then hits a row.',counter:'Daze interrupts the charged action.'},\n" +
+      "   'needle-moth':{mechanic:'Three seeded hits on random cats.',counter:'Warm and team shields soften repeated hits.'},\n" +
+      "   'teacup-healer':{mechanic:'Heals its weakest ally every two rounds.',counter:'Bitter halves healing; Mark opens rear access.'},\n" +
+      "   'kettle-knight':{mechanic:'Below half HP, basics Burn the front row.',counter:'Cleanse or Regen removes Burn.'},\n" +
+      "+  'binding-thread':{mechanic:'Knots apply Shred; every third turn Dazes the weakest cat.',counter:'Defeat the thread to release its knot or Cleanse.'},\n" +
+      "   'yarn-giant':{mechanic:'Row + Shred signatures; closing phase All + Bitter.',counter:'Cleanse the crew; Daze stops its signature.'},\n" +
+      ' };\n' +
+      ' export function enemyIntentV5(b:Battle,actor:Actor,intent:Intent):Intent {\n' +
+      '@@ -33,6 +56,7 @@ export function enemyActionV5(b:Battle,actor:Actor,intent:Intent,target:Actor,io\n' +
+      "   const hit=(t:Actor,power=100,shape:ShapeV5='single')=>{targets.push(t.id);resolvedShape=shape;io.record(b,actor,t,'multi-hit',0,shape,actor.catalogId);io.damage(b,actor,t,power,0,shape==='single',shape);};\n" +
+      '   switch(actor.catalogId){\n' +
+      "     case 'button-guard':\n" +
+      "+      if(actor.turns===0)io.apply(b,actor,actor,'cozy');\n" +
+      '       if(intent.signature)for(const ally of foes().filter(a=>a.row===actor.row))io.shield(b,actor,ally,45);else hit(t'... 1103440 more characters,
+    ''
+  ],
+  pid: 53629,
+  stdout: 'diff --git a/packages/game-rules/src/cardrpg/depth/battle.ts b/packages/game-rules/src/cardrpg/depth/battle.ts\n' +
+    'index a8f27a5d3..5320021fe 100644\n' +
+    '--- a/packages/game-rules/src/cardrpg/depth/battle.ts\n' +
+    '+++ b/packages/game-rules/src/cardrpg/depth/battle.ts\n' +
+    '@@ -1,5 +1,5 @@\n' +
+    "-import { kitSkillV5 } from './skills-v5/kits';\n" +
+    "-import { enemyActionV5, enemyIntentV5 } from './skills-v5/enemies';\n" +
+    "+import { kitSkillV5, situationalSkillV5 } from './skills-v5/kits';\n" +
+    "+import { enemyActionV5, enemyIntentV5, encounterEnemiesV5, phaseHelpersV5, releaseThreadV5 } from './skills-v5/enemies';\n" +
+    " import { executeShapeV5, shapeV5, weakestV5, type EffectV5, type ShapeV5 } from './skills-v5/shapes';\n" +
+    " import { crumbBurstV5, directReactionV5, spreadV5, type ReactionRuntimeV5 } from './skills-v5/reactions';\n" +
+    " import { beforeActionV5, consumeDazeV5, defenseV5, receivedV5, statusIdV5, statusRuleV5, tickStatusesV5, type StatusRuntimeV5 } from './skills-v5/statuses';\n" +
+    '@@ -104,11 +104,13 @@ function loseHp(b: Battle, source: Actor, target: Actor, amount: number, kind: s\n' +
+    '   if (target.hp === 0) {\n' +
+    "     if (target.side === 'party' && b.firstDeath === null) b.firstDeath = target.role;\n" +
+    "     record(b, source, target, 'defeat');\n" +
+    '+    if(b.initial.skillsV5)releaseThreadV5(b,target);\n' +
+    '     if(b.initial.skillsV5)spreadV5(b,source,target,reactionRuntimeV5);\n' +
+    "     if (source.catalogId === 'velvet') { if (b.v4) heal(b,source,source,6); else source.charge = Math.min(100, source.charge + 15); }\n" +
+    "     if (source.side === 'party' && source.hp > 0) heal(b,source,source,boonValue(b,'killHeal'));\n" +
+    '   }\n' +
+    '   phaseBossV4(b,target);\n' +
+    '+  if(b.initial.skillsV5)phaseHelpersV5(b,target,spawnThread);\n' +
+    '   return actual;\n' +
+    ' }\n' +
+    " function damage(b: Battle, source: Actor, target: Actor, power: number, pressure: number, cover = false, shape: ShapeV5 = 'single') {\n" +
+    '@@ -234,7 +236,7 @@ export function createBattle(setup: BattleSetup): Battle {\n' +
+    "     if (!cat || ![3, 4].includes(c.skills.length) || new Set(c.skills).size !== c.skills.length || c.skills.some(id => SKILLS[id]?.catId !== c.id)) throw Error('Invalid cat skill kit');\n" +
+    "     return { ...actorBase(),id:c.id,catalogId:c.id,name:cat.name,side:'party',role:cat.role,row:c.row,flavour:cat.flavour,hp:Math.min(c.stats.hp,setup.hp?.[c.id]??c.stats.hp),maxHp:c.stats.hp,attack:c.stats.attack,defense:c.stats.defense,initiative:9-index,effectHit:c.stats.effectHitBp,effectResist:c.stats.effectResistBp,breakCap:6,skills:[...c.skills],equipment:c.equipment??[],setEffects:c.effects??[],bonuses:{...c.bonuses,critBp:c.stats.critBp,critDamageBp:c.stats.critDamageBp,healingBp:c.stats.healingBp,shieldBp:c.stats.shieldBp} };\n" +
+    '   });\n' +
+    '-  actors.push(...setup.enemies.map((id,i) => enemyActor(id,i,setup.chapter,setup.tutorial,initial.enemyStats)));\n' +
+    '+  actors.push(...(setup.skillsV5?encounterEnemiesV5(setup.enemies):setup.enemies).map((id,i) => enemyActor(id,i,setup.chapter,setup.tutorial,initial.enemyStats)));\n' +
+    "   const b: Battle = {version:CONTRACT_VERSION,seed:setup.seed,rng:setup.seed,chapter:setup.chapter,actors,round:0,queue:[],acted:[],energy:0,maxEnergy:5,intents:[],log:[],choices:[],result:null,firstDeath:null,procRounds:{},boons:{...setup.boons},mutator:setup.mutator??'',initial};\n" +
+    '   if (setup.gameplayV4) {\n' +
+    '     b.v4={version:1,plan:clone(initial.plan!),events:[],committed:false};\n' +
+    '@@ -317,7 +319,7 @@ function checkResult(b: Battle) {\n' +
+    ' export function currentActor(b: Battle) { return b.actors.find(a => a.id === b.queue[0] && a.hp > 0); }\n' +
+    ' export function targets(b: Battle, actor: Actor, skill: Skill): Actor[] {\n' +
+    "   const foes=living(b,actor.side==='party'?'enemy':'party'), allies=living(b,actor.side);\n" +
+    "-  if(b.initial.skillsV5&&shapeV5(skill)==='weakest'){const target=weakestV5(allies);return target?[target]:[];}\n" +
+    "+  if(b.initial.skillsV5){skill=situationalSkillV5(b,actor,skill);if(['weakest','ally-splash'].includes(shapeV5(skill))){const target=weakestV5(allies);return target?[target]:[];}}\n" +
+    "   if (skill.target==='self') return [actor];\n" +
+    "   if (skill.target==='fallen') return b.actors.filter(a=>a.side===actor.side&&a.hp===0);\n" +
+    "   if (skill.target==='ally'||skill.target==='allies') return allies;\n" +
+    '@@ -336,7 +338,7 @@ export function legalChoices(b: Battle): Choice[] {\n' +
+    '   const actor=currentActor(b);\n' +
+    "   if (!actor||actor.side!=='party'||b.result) return [];\n" +
+    "   return [...actor.skills,'defend',...(b.v4?[]:['wait'])].flatMap(id=>{\n" +
+    '-    const skill=skillById(id,b.initial.skillsV5)!;\n' +
+    '+    const base=skillById(id,b.initial.skillsV5)!,skill=b.initial.skillsV5?situationalSkillV5(b,actor,base):base;\n' +
+    "     if ((!b.v4&&(energyCost(actor,skill)>b.energy || skill.charge>actor.charge)) || (b.v4&&skill.type==='ultimate'&&actor.turns<2) || (actor.cooldowns[id]??0)>0 || skill.effects.some(e=>e.kind==='revive')&&actor.passiveUsed) return [];\n" +
+    '     return targets(b,actor,skill).map(t=>({actorId:actor.id,skillId:id,targetId:t.id}));\n' +
+    '   });\n' +
+    '@@ -452,6 +454,7 @@ export function act(b: Battle, choice: Choice): boolean {\n' +
+    '   if(b.initial.skillsV5)b.procRounds.v5ActionSequence=(b.procRounds.v5ActionSequence??0)+1;\n' +
+    "   if(b.initial.skillsV5&&!beforeActionV5(b,actor,statusRuntimeV5)){b.choices.push({...choice});record(b,actor,actor,'action',0,'Bleed prevented the action',choice.skillId);finishAction(b,actor);return true;}\n" +
+    '   let skill=skillById(choice.skillId,b.initial.skillsV5)!, target=b.actors.find(a=>a.id===choice.targetId)!;\n' +
+    '+  if(b.initial.skillsV5)skill=situationalSkillV5(b,actor,skill);\n' +
+    '   if(b.initial.skillsV5&&consumeDazeV5(b,actor,statusRuntimeV5)){const basic=skillById(actor.skills[0]!,true)!;skill={...basic,effects:basic.effects.map(e=>({...e,...(e.power!==undefined?{power:e.power*.5}:{})}))};target=targets(b,actor,skill)[0]??target;}\n' +
+    '   const description = actionDescription(b, actor, target, skill);\n' +
+    '   b.choices.push({...choice});\n' +
+    '@@ -505,8 +508,8 @@ export function act(b: Battle, choice: Choice): boolean {\n' +
+    '   finishAction(b,actor);\n' +
+    '   return true;\n' +
+    ' }\n' +
+    '-function spawnThread(b: Battle, source: Actor) {\n' +
+    "-  if (living(b,'enemy').filter(a=>a.catalogId==='binding-thread').length>=2) return;\n" +
+    '+function spawnThread(b: Battle, source: Actor, limit=2) {\n' +
+    "+  if (living(b,'enemy').filter(a=>a.catalogId==='binding-thread').length>=limit) return;\n" +
+    "   const actor=enemyActor('binding-thread',b.actors.length,b.chapter,false,b.initial.enemyStats);\n" +
+    "   if(b.v4)actor.linkedBossId=ENEMY_BY_ID[source.catalogId]?.tier==='boss'?source.id:source.linkedBossId;\n" +
+    '   b.actors.push(actor);\n' +
+    'diff --git a/packages/game-rules/src/cardrpg/depth/skills-v5/enemies.ts b/packages/game-rules/src/cardrpg/depth/skills-v5/enemies.ts\n' +
+    'index 3d039838c..0bfd84cd1 100644\n' +
+    '--- a/packages/game-rules/src/cardrpg/depth/skills-v5/enemies.ts\n' +
+    '+++ b/packages/game-rules/src/cardrpg/depth/skills-v5/enemies.ts\n' +
+    '@@ -1,14 +1,37 @@\n' +
+    " import {emitGameplayEvent} from '../events-v4';\n" +
+    "+import {ENEMY_BY_ID} from '../catalog';\n" +
+    " import type {Actor,Battle,Intent,StatusId} from '../contract';\n" +
+    " import {landingsV5,weakestV5,type ShapeV5} from './shapes';\n" +
+    ' \n' +
+    '+/** Existing helpers make isolated boss/elite encounters readable combo opportunities. */\n' +
+    '+export function encounterEnemiesV5(ids:string[]):string[] {\n' +
+    "+  const tier=ids.length===1?ENEMY_BY_ID[ids[0]!]!.tier:'';\n" +
+    "+  return tier==='boss'?[...ids,'binding-thread','binding-thread']:tier==='elite'?[...ids,'binding-thread']:ids;\n" +
+    '+}\n' +
+    '+export function phaseHelpersV5(b:Battle,boss:Actor,spawn:(b:Battle,source:Actor,limit?:number)=>void):void {\n' +
+    "+  if(boss.hp<=0||boss.phase!==2||ENEMY_BY_ID[boss.catalogId]?.tier!=='boss'||boss.bonuses.v5Helpers)return;\n" +
+    '+  boss.bonuses.v5Helpers=1;\n' +
+    '+  spawn(b,boss,4);spawn(b,boss,4);\n' +
+    '+}\n' +
+    "+/** A defeated thread releases only its own knot; another source's Shred stays. */\n" +
+    '+export function releaseThreadV5(b:Battle,thread:Actor):void {\n' +
+    "+  if(thread.catalogId!=='binding-thread')return;\n" +
+    "+  for(const ally of b.actors.filter(a=>a.side==='party')){\n" +
+    "+    const removed=ally.statuses.filter(s=>s.source===thread.id&&['brittle','drowsy'].includes(s.id));\n" +
+    '+    if(!removed.length)continue;\n' +
+    '+    ally.statuses=ally.statuses.filter(s=>!removed.includes(s));\n' +
+    "+    b.log.push({round:b.round,actorId:thread.id,targetId:ally.id,skillId:'',kind:'dispel',amount:removed.length,text:'Binding Thread defeated; knot released.'});\n" +
+    '+  }\n' +
+    '+}\n' +
+    '+\n' +
+    ' export const ENEMY_MECHANICS_V5:Record<string,{mechanic:string;counter:string}>={\n' +
+    "-  'button-guard':{mechanic:'Shields its whole row.',counter:'Shred strips shields; Burn passes through.'},\n" +
+    "+  'button-guard':{mechanic:'Shields and Warms its whole row.',counter:'Shred strips shields; Burn passes through.'},\n" +
+    "   'sock-skipper':{mechanic:'Targets rear cats and applies Bleed.',counter:'Shield the rear before their next actions.'},\n" +
+    "   'spool-ram':{mechanic:'Charges for one turn, then hits a row.',counter:'Daze interrupts the charged action.'},\n" +
+    "   'needle-moth':{mechanic:'Three seeded hits on random cats.',counter:'Warm and team shields soften repeated hits.'},\n" +
+    "   'teacup-healer':{mechanic:'Heals its weakest ally every two rounds.',counter:'Bitter halves healing; Mark opens rear access.'},\n" +
+    "   'kettle-knight':{mechanic:'Below half HP, basics Burn the front row.',counter:'Cleanse or Regen removes Burn.'},\n" +
+    "+  'binding-thread':{mechanic:'Knots apply Shred; every third turn Dazes the weakest cat.',counter:'Defeat the thread to release its knot or Cleanse.'},\n" +
+    "   'yarn-giant':{mechanic:'Row + Shred signatures; closing phase All + Bitter.',counter:'Cleanse the crew; Daze stops its signature.'},\n" +
+    ' };\n' +
+    ' export function enemyIntentV5(b:Battle,actor:Actor,intent:Intent):Intent {\n' +
+    '@@ -33,6 +56,7 @@ export function enemyActionV5(b:Battle,actor:Actor,intent:Intent,target:Actor,io\n' +
+    "   const hit=(t:Actor,power=100,shape:ShapeV5='single')=>{targets.push(t.id);resolvedShape=shape;io.record(b,actor,t,'multi-hit',0,shape,actor.catalogId);io.damage(b,actor,t,power,0,shape==='single',shape);};\n" +
+    '   switch(actor.catalogId){\n' +
+    "     case 'button-guard':\n" +
+    "+      if(actor.turns===0)io.apply(b,actor,actor,'cozy');\n" +
+    '       if(intent.signature)for(const ally of foes().filter(a=>a.row===actor.row))io.shield(b,actor,ally,45);else hit(t'... 1103440 more characters,
+  stderr: ''
+}
+
+Node.js v24.22.2
+{"lock":"released","pid":52817,"task":"V5A selected offline build for S8"}

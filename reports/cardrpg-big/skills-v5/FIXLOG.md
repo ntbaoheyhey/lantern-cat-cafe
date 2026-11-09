@@ -13,12 +13,12 @@ Addendum received during S5. TRAIN remains 1–500. Existing baseline slices con
 - Design2 registered before sampling: expected decoy/Link prevention, Mark two-round future hits and Spread payoff; cooldown1 on five dominant basics; Sorrel3 shield45 and Biscuit2 Warm. Enemy Guard Warm, Teacup Regen/Mark and Thread signature Daze supply keyword contexts without homogenising cat kits. Same fixed TRAIN1–50 prefix. Black cup power stays55.
 - Design2b measured: multi32.940%, support30.045%, normal17.967 rounds versus design1 32.089/29.595/12.080. Mark appears55.556% of original-pool battles, but normal pacing regresses severely. REJECTED as a package. Third candidate must remove the broad basic cooldown and enemy sustain changes before any selected full500 run; all samples retained.
 
-## S5-HARNESS-2 — isolated fallback source and shape labels (PARTIAL)
+## S5-HARNESS-2 — isolated fallback source and shape labels (FIXED)
 - Reproduce: `BIG_RULES_ROOT=/tmp/cardrpg-v5a-design1 node .../on.mjs s5-design1`. Routes used the snapshot but probe.mjs hardcoded cwd; original receipt does not establish candidate battle parity. No acceptance or balance sample affected.
 - Fix: probe accepts the same explicit BIG_RULES_ROOT as load.mjs; off runner hashes that source too. Corrected full fallback receipt is s5-design1-corrected; original retained. OFF8250 candidate run queued.
 - Design1 diagnostic shape labels came from static kits, so conditional Cinnamon4 was labelled fallen even when a team multi-hit event was emitted. Version2 diagnostic reads emitted shape first. Original design1 rows retained; use their action/balance counts, not conditional shape counts. No combat source or denominator change.
 
-## S5-POLICY-NULL — absent Mark duration (FIXED in design2b; verification pending)
+## S5-POLICY-NULL — absent Mark duration (FIXED)
 - Reproduce/attribute: design2 policy multiplied status count by `find(scent)!.remaining`; JavaScript evaluates that property even when count is zero. Static review found it before the waiting diagnostic acquired a lease.
 - Smallest fix: optional remaining defaults0. Original design2 source/registration retained; its waiting diagnostic/check wrappers cancelled before any samples, as recorded in design2/preflight-cancel.json. Design2b registers the corrected source and the same TRAIN1–50 cases. This is a runtime repair, not a new numeric trial or rerolled sample.
 - Re-run: deterministic checks + diagnostic + OFF/ON compatibility. No adoption before these pass.
@@ -74,7 +74,7 @@ Addendum received during S5. TRAIN remains 1–500. Existing baseline slices con
 
 - S5-BUILD-BUFFER correction completed: identical runtime builds20,961,816bytes/SHA4e310b07f9dfb005abdff830d498e8d0f6615553e1710a2ce12eeedad3a3638e. Attempt2 log preserved; OFF8250 and fallback180/45 exact.
 
-## S5-TEACUP-FIXTURE — opening Regen omitted from test (PARTIAL; correction queued)
+## S5-TEACUP-FIXTURE — opening Regen omitted from test (FIXED)
 - Reproduce: s5-selected/gates/rules-attempt-1.log;1261pass/1failure. Teacup fixture set round2 but left actor.turns0, so it incorrectly represented a second-turn healer as taking its opening action.
 - Attribution: stale test fixture after registered opening-only Regen design; measured battle rules are correct. Hypotheses ranked: (1) turns fixture mismatch confirmed; (2) repeat Regen regression ruled out by turns===0 guard; (3) heal target error ruled out by actual weakest-target event.
 - Smallest fix: exercise opening round1 (Regen+basic+Mark), advance turns1/round2 and assert weakest65 heal, then turns2/round3 basic+Mark without Regen. Runtime remains byte-identical.
@@ -83,3 +83,57 @@ Addendum received during S5. TRAIN remains 1–500. Existing baseline slices con
 ## S5-PATCH-WHITESPACE — preserved unified-diff context (FIXED scope attribution)
 - Precommit git diff --check flagged a single space on blank context lines inside four retained candidate.patch artifacts. These are required unified-diff context prefixes, not runtime trailing whitespace.
 - Preserve the registered patch bytes; check staged source/docs/tools with only *.patch excluded. No production rule or sample change. Compatibility receipts remain bound to unchanged rules.
+
+## S5-SUPPORT-SHARE — multi-ally below35% (PARTIAL, three design attempts used)
+- Reproduce: registered selected/metrics TRAIN1–500, original4,500 battles;29.8415% versus25.3558% before. Original180 prefix retained separately.
+- Ranked attribution: (1) Mochi2/Panko2 have very low use despite support needs; (2) Cinnamon3 remains one-patient Regen; (3) efficient single-target sustain competes with multi-ally casts. Hypotheses2–3 are not causal estimates.
+- Smallest attempted fixes: exact Cinnamon ally splash/team fallback, then later support-row effects and prevention scoring. Three registered design packages retained; no fourth S5 attempt. Current OFF8250/fallback hashes exact; full affected A5 matrices continue. Revisit pacing/support tradeoff before S6 without moving the35%gate.
+
+## S5-NORMAL-PACING — normal mean above12rounds (PARTIAL, three design attempts used)
+- Reproduce: same selected original4,500-battle receipt; normals13.2377 versus12.036before. Design2b17.967 was rejected; restoring three basic cooldowns and limiting opening enemy buffs reduced this to13.243 on its fixed prefix.
+- Ranked attribution: (1) prevention/Mark setup displaces immediate damage; (2) enemy Warm/Regen prolong relevant encounters; (3) support choices can outlive their useful window. Full current mean is observed; individual causal contributions are not isolated.
+- Smallest third package retained improved10/12skill diversity at explicit pacing cost. No source retune while selected matrices run. S8 natural x1 boss/opening evidence remains required; no rounds-to-seconds conversion is substituted. Both compatibility hashes exact.
+
+## S5-ULTIMATES — not every cat casts in every normal (PARTIAL)
+- Reproduce: selected metrics all-cat ultimate78.7% versus66.6667%before. Cinnamon fallback fixes the illegal/no-casualty action, but unconditional coverage still misses100%.
+- Ranked hypotheses: (1) short encounters finish before an individual legal ultimate is chosen; (2) current prevention/status value sometimes favors another skill; (3) losses suppress later actions. Exact per-battle action records are retained; no artificial casualties or forced action rotation.
+- D2 and three design packages are the attempted fixes. Keep this gate and its same normal-battle denominator. Current compatibility exact; S8 elapsed pacing first, then pre-S6 review.
+
+## S5-D3-COVERAGE — two of32crew-keyword assertions miss (PARTIAL)
+- Reproduce: selected/DESIGN-REPORT.md and design-report.json, TRAIN500. Thread Burn499/1500<500; Night lamp Bitter478/1500<500. Original-pool Mark is now55.5556%, from0%; Velvet basic was already correct.
+- Ranked attribution: (1) Thread sometimes prevents Kettle's low-HP Burn; (2) Night lamp's intended signature control prevents Yarn Bitter; (3) keyword availability depends on encounter mechanic. The displayed counts establish absence, not which causal mechanism dominates each seed.
+- Mark future-hit/Spread scoring, enemy counterplay contexts and opening-only buffs were tested in three design packages. Do not weaken control roles merely to manufacture status events. Revisit these specific missing seeds before S6; no threshold rounding from499to500. Current OFF/ON hashes exact.
+
+## S5-D4-DIVERSITY — Mochi and Panko basics dominate (PARTIAL)
+- Reproduce: selected/DESIGN-REPORT.md matched18,000battles; Mochi1/2=71.92/0.38%,Panko1/2=69.99/0.29%; ten cats pass all four5–60%shares. Defend stays in every cat denominator.
+- Ranked attribution: (1) basic damage plus free protection beats a pure shield at current pressure; (2) team ultimate crowds out smaller shield; (3) row support remains weak when allies occupy separate rows.
+- Tried targeted basic cooldowns (design2b rejected at17.967normal rounds), then later row-support shapes/prevention value (selecteddesign3). Three packages used. No arbitrary policy quota or gate change. Current compatibility exact; full A5 effects continue and pre-S6 revisit remains required.
+
+## S5-A5-ITEMS-DISPLAY — inherited item and score misses (PARTIAL)
+- Reproduce: before/numeric-gates.json: fourth-slot13/384misses,worst41pp; bare321/2304,worst47.6pp; display Spearman.442/.228/.139. Raw paired seeds remain in corresponding results.json.
+- Ranked attribution: (1) nonlinear set completion crossing encounter win boundaries; (2) burst/status utility absent from static display weighting; (3) saturation makes scalar power a poor predictor. No causal claim from correlations alone.
+- Existing pressure/reply trials and320display fits stayREJECTED. New V5 premise is remeasured on the same registered full500selected matrix before any conclusion. No display score or balance gate was changed; current OFF/ON exact. Revisit resulting misses before S6.
+
+## S5-A5-CATS-SETS-CREWS — inherited matched-power misses (PARTIAL)
+- Reproduce: before/numeric-gates.json cats62.41–93.12%,sets83.55–94.625%,named crews miss5pp gaps. Every cat has a top-pick cell; this does not satisfy its55–75%range.
+- Ranked hypotheses: (1) equal displayed power does not normalize status/shape value; (2) fixed encounters overreward some roles; (3) single-target bosses suppressed crowd kits. D1 specifically addresses hypothesis3 without changing fixtures.
+- Smallest approved fix is selected helper/kit design, followed by unchanged full500matrix. Prior fixture/cat/pressure rejections remain. Current OFF/ON hashes exact; selected results pending and pre-S6 revisit required.
+
+## S5-A5-TIERS-BANDS-CALIBRATION — inherited difficulty misses (PARTIAL)
+- Reproduce: before/numeric-gates.json TRAIN18/24tier improvements, reference matched median45.4% versus55–60%, intended-band spread misses. FallbackTRAIN23/24 remains separate; acceptance half is unused.
+- Ranked hypotheses: (1) encounter difficulty varies across chapters at the same display power; (2) gear-driven win thresholds saturate; (3) utility scales nonlinearly under V5. No fixture rescale was adopted to hide these outcomes.
+- Selected design is remeasured with all original tier/band cases and heldout gate44/48 unchanged. Current compatibility exact. Do not call18/24 or22/24 an acceptance pass; revisit before S6.
+
+## S5-REACTION-COVERAGE — Spread opportunities below40% before design (PARTIAL)
+- Reproduce: before/numeric-gates.json Spread25.9333%ofThreadbattles; other three reaction gates pass. Same first-three example seeds and every failed battle remain in receipts.
+- Ranked attribution: (1) singleton enemy has no spread recipient; (2) another skill may defeat a target before Mark; (3) role competition between rupture and spread. D1 and Mark/Spread policy address the first two without reintroducing Mark-strike power85.
+- Selected full500reaction coverage will be evaluated alongside unchanged A5 gates, not inferred from its five presentation fixtures. Current OFF/ON hashes exact; pre-S6 revisit required if still below40%.
+
+- Compatibility closure follow-up: design1 OFF8250 exact plus corrected candidate fallback180/45 exact; design2b OFF8250 and fallback180/45 exact. Current selected source has both exact receipts. Original misbound design1 fallback receipt remains retained and is not used as proof.
+- Committed source6772eb343 artifact matches successful precommit bytes exactly:20,961,816/SHA4e310b07f9dfb005abdff830d498e8d0f6615553e1710a2ce12eeedad3a3638e. Current fixture-only test correction does not alter shipped HTML.
+
+- S5-TEACUP-FIXTURE verification: full current rules1262PASS (+2expected failures/11skips), web1785PASS, type/lintPASS. Current production-rule OFF8250/fallback180/45 exact; test-only correction leaves artifact SHA unchanged. E2E/build phase checks continue.
+
+## S5-REACTION-COVERAGE — selected full TRAIN verification (FIXED)
+- Reproduce: selected/metrics/results.json, registered TRAIN1–500, intended named crews, unchanged three encounters. Wildfire98.6%, Rupture99.9%, Crumb Burst99.9%, Spread54.9%; all exceed40%.
+- D1 helpers restore Spread recipients; bounded future Mark/Spread scoring retains Black cup power55. Selected six source gates PASS and OFF8250/fallback180+45 exact in s5-selected/audit.json. Full A5 effects remain pending; reaction gate is FIXED independently.
