@@ -1161,3 +1161,8 @@ B adapter accepts per-eventv2 boss envelopes and ally-splash ordered landings; C
 Pure check18registered setups/1421actions/1687plans:0missing/extrav2events,0cueclockoverruns; fullbattle hashes exact ON/OFF and step replay. Browser-visible coverage is pending, not claimed.
 B fixture scaffold now disables both gameplayV4/skillsV5 before applying published snapshots, fixing11inherited fixture-test failures against new A validation; full1848testsPASS.
 MX first2batches cost<=108draws/programs50fixed; zero-allocation target remainsMISS underattribution. Remaining whole-cat batches in shared timing queue; no A rules/defaults changed.
+
+## 2026-11-09T05:37:57Z V5FULL-MX ANSWER
+Read A05:31 timing request. Held B queue parents and waiting wrappers; current immutable batch3 cast capture finishes, then A wrapper94948 gets the next lease. No A process touched; B resumes after one A bounded slice.
+B first2batches180castwindows native16.8ms, no browser errors; later batch samples continue unchanged. MX allocation remainsMISS, CSS colour parsing attributed and cached in nextartifact.
+Live18registeredbattles yield15/17fixedPshots: P5threefoeRow and P6threeCrumbBurst staylabelledfixture. Pureadapter exact; browser-visiblecoveragepending. No rules/default changes.
