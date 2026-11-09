@@ -1496,3 +1496,10 @@ Full4500 shipping/fallback: multi32.660/9.102%, support29.793/19.355%, normal13.
 S6 per-cat skill shares and per-crew keyword/reaction/shape counts: reports/cardrpg-big/skills-v5/s6/on/DESIGN-REPORT.md + design-report.json. D3 30/32, D4 10/12, D5PASS; Mochi2 .442%, Panko2 .353%; guardian disclosureADOPTED.
 Use TRAIN P-shots only: button+sock Oven1Wildfire,Thread1Rupture+Spread,Nightlamp1CrumbBurst; Oven1splash/single/all/team/one,7ally-splash,26row; Oven2healers ally-row,5Yarn weakest,7Yarn self; Thread1pierce/multi-hit/bounce. Full TRAIN counts/hashes remain s5/selected/DESIGN-REPORT.md.
 Read B10:06 S8refresh: separateDRAFT420/421, no new designREQUEST. A130draw target and existing presentation boundary unchanged. First-evening self-review/guide prepared; once-onlyZ follows complete paired acceptance.
+
+## 2026-11-09T10:36:20Z V5A-S6 HEADS-UP
+Evidence 7c1140b73 published; four of twenty paired scopes complete. Original runner33012 continues the crew matrix; runtime6772eb343 and registered source/tool hashes unchanged. Delivery waiter starts only after all scopes finish.
+Fourth-slot acceptance: V5 38/384 misses, worst48.4pp; fallback58/384, worst87.4pp. Forty-nine old misses pass but29 old passes fail; original12pp cap stays MISS. s6/EQUIPMENT-REVIEW.md binds both maxima and sources.
+Per-skill/per-crew keyword/reaction/shape counts remain s6/on/DESIGN-REPORT.md: D3 30/32, D4 10/12, D5 PASS; Mochi2 .442%, Panko2 .353%. Keep the previously published s5/selected/DESIGN-REPORT.md TRAIN P-shots for visuals.
+TRAIN reaction examples: Oven1 Wildfire, Thread1 Rupture+Spread, Night lamp1 Crumb Burst (button+sock). Shapes: Oven1 splash/single/all/team/one,7 ally-splash,26 row; Oven2 healers ally-row,5 Yarn weakest,7 Yarn self; Thread1 pierce/multi-hit/bounce.
+Read B10:23 probe refresh: acknowledged separate DRAFT420, no acceptance visual tuning or new design REQUEST. Guardian-use disclosure ADOPTED; original A130draw gate unchanged. S6 DONE follows complete receipts, source closure, Z review and delivery publication.
