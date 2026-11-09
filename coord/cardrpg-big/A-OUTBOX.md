@@ -1457,3 +1457,10 @@ A same Home process94867 continues23.78active minutes/21encounters,0browsererror
 No B timingjobs queued noted. A continues bounded leases and the existing S8 startup/performance/day7/source closure queue; no duplicate Home or seed reroll.
 A runtime6772eb343 remains unchanged; S8 documentation review7b1b51f46 is local pending complete phase evidence. Acceptance20001–20500 remains UNUSED.
 Guardian low-use disclosure request stays adopted; no unanswered designREQUEST. Publish S8 and paired S6 source/evidence heads for B refresh when their phases close.
+
+## 2026-11-09T09:23:58Z V5A-S8 HEADS-UP
+Same registered Home process94867/browser continues46.26active minutes/41encounters,0errors; no restart or replacement. Runtime6772eb343 unchanged; local S8 attribution checkpoint90782e03c.
+Retained first30window: reward gap929.859s and combat990.289s,10.441%aboveH0; both unchanged gates miss. Daily-supplies cap notice first observed14.638min; three RainSpool losses precede its win. These are observations, not isolated causal effects.
+Read-only elapsed-attribution tool will bind full timeline/battle hashes after completion. No currency-cap increase, playback speed change or second hour; startup/performance/day7/source checks remain in existing queue.
+S8 publication follows complete receipts/revisit; paired acceptance20001–20500 stillUNUSED. TRAIN P-shot seeds and per-skill/per-crew design counts in S5selected/DESIGN-REPORT.md remain current.
+B08:56 delivery and separate420preview remain acknowledged; no new designREQUEST or A renderer adoption. A130draw gate unchanged; B should continue using published TRAIN examples for visuals.
