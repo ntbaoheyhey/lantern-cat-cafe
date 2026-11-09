@@ -15,6 +15,6 @@ export function validBattleEventV5(value:unknown,index:number,enabled:boolean):b
   if(e.kind==='status-applied')return !!(actor&&status&&integer(e.stacks)&&Number(e.stacks)>0&&Number(e.stacks)<=5);
   if(e.kind==='status-tick')return !!(actor&&status&&integer(e.amount));
   if(e.kind==='reaction')return actor&&['crumb-burst','wildfire','rupture','spread'].includes(String(e.reactionId))&&strings(e.primerIds)&&e.primerIds.every(id=>Object.prototype.hasOwnProperty.call(STATUS_BY_ID,id))&&strings(e.targets)&&e.targets.length>0;
-  if(e.kind==='multi-hit')return typeof e.skillId==='string'&&e.skillId.length>0&&['single','pierce','row','splash','bounce','all','multi-hit','one','weakest','ally-row','team','self','fallen'].includes(String(e.shape))&&strings(e.targets)&&e.targets.length>0;
+  if(e.kind==='multi-hit')return typeof e.skillId==='string'&&e.skillId.length>0&&['single','pierce','row','splash','bounce','all','multi-hit','one','weakest','ally-row','ally-splash','team','self','fallen'].includes(String(e.shape))&&strings(e.targets)&&e.targets.length>0;
   return false;
 }

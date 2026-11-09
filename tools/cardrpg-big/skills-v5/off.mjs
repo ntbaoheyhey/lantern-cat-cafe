@@ -14,7 +14,7 @@ const paths = execFileSync('git', ['ls-files', '-co', '--exclude-standard',
   'packages/game-rules/src/cardrpg', 'packages/game-rules/src/rng.ts'], { encoding: 'utf8' }).trim().split('\n');
 const hashes = Object.fromEntries(await Promise.all([...new Set(paths)]
   .filter(path => path.endsWith('.ts') && !path.endsWith('.test.ts')).sort()
-  .map(async path => [path, sha(await readFile(path))])));
+  .map(async path => [path, sha(await readFile(`${process.env.BIG_RULES_ROOT||process.cwd()}/${path}`))])));
 const prior = await readFile(out + '/source.json', 'utf8').catch(error => {
   if (error.code === 'ENOENT') return null;
   throw error;
@@ -24,7 +24,7 @@ else await writeFile(out + '/source.json', JSON.stringify(hashes, null, 2));
 let slice = 1 + Math.max(0, ...(await readdir(out)).map(name => Number(name.match(/^slice-(\d+)\.log$/)?.[1] ?? 0)));
 let code;
 do {
-  for (const [path, hash] of Object.entries(hashes)) assert.equal(sha(await readFile(path)), hash, path);
+  for (const [path, hash] of Object.entries(hashes)) assert.equal(sha(await readFile(`${process.env.BIG_RULES_ROOT||process.cwd()}/${path}`)), hash, path);
   const fd = await open(`${out}/slice-${slice++}.log`, 'wx');
   try {
     code = await new Promise((done, reject) => {
@@ -38,4 +38,4 @@ do {
   if (code === 75) await delay(7000);
 } while (code === 75);
 assert.equal(code, 0);
-for (const [path, hash] of Object.entries(hashes)) assert.equal(sha(await readFile(path)), hash, path);
+for (const [path, hash] of Object.entries(hashes)) assert.equal(sha(await readFile(`${process.env.BIG_RULES_ROOT||process.cwd()}/${path}`)), hash, path);

@@ -1,0 +1,48 @@
+{"lock":"acquired","lane":"A","pid":56572,"startedAt":"2026-11-09T04:10:43.703Z","task":"V5A s5-selected rules"}
+
+> @taskbar-hero/game-rules@0.0.0 test /Users/bao/taskbar-hero-cardrpg-a4/packages/game-rules
+> vitest run
+
+
+ RUN  v5.0.5 /Users/bao/taskbar-hero-cardrpg-a4/packages/game-rules
+
+ ❯ src/cardrpg/depth/skills-v5/kits-enemies.test.ts (19 tests | 1 failed) 304ms
+   ❯ Skills V5 chapter-one enemies (8)
+     × Teacup heals its weakest ally every second round 5ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/cardrpg/depth/skills-v5/kits-enemies.test.ts > Skills V5 chapter-one enemies > Teacup heals its weakest ally every second round
+AssertionError: expected [ { kind: 'status', …(2) }, …(1) ] to deeply equal [ { kind: 'heal', …(2) } ]
+
+- Expected
++ Received
+
+  [
+    {
++     "kind": "status",
++     "status": "steep",
++     "target": "foe-0-teacup-healer",
++   },
++   {
+      "kind": "heal",
+      "power": 65,
+      "target": "foe-1-button-guard",
+    },
+  ]
+
+ ❯ src/cardrpg/depth/skills-v5/kits-enemies.test.ts:83:349
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 74 passed | 3 skipped (78)
+      Tests  1 failed | 1261 passed | 2 expected fail | 11 skipped (1275)
+   Start at  11:13:20
+   Duration  27.85s (tests 93%, import 5%, transform 2%, worker 1%)
+
+/Users/bao/taskbar-hero-cardrpg-a4/packages/game-rules:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/game-rules@0.0.0 test: `vitest run`
+Exit status 1
+{"lock":"released","pid":56572,"task":"V5A s5-selected rules"}

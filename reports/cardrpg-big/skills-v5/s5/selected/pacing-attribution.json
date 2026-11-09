@@ -1,0 +1,91 @@
+{
+  "at": "2026-11-09T05:37:27.237026+00:00",
+  "source": "reports/cardrpg-big/skills-v5/s5/selected/metrics/results.json",
+  "sourceSha256": "7843f6a5dd99dff524d088139761cab99059c09212fa69b24c89d9a7ba9c0fc9",
+  "sourceDigest": "1e7f8c1c6576f0a0bcab7bf36f0f00939bfcffc16f71d4ab784f70b476799959",
+  "summary": {
+    "battles": 4500,
+    "multiFoeShare": 32.52485261106589,
+    "multiAllyShare": 29.841532412734946,
+    "cleanseSupportShare": 13.138904871499808,
+    "rounds": 19.241555555555557,
+    "normalRounds": 13.237666666666666,
+    "reactionsPerBattle": 6.742,
+    "allCatsUltimateShare": 78.7,
+    "keywordBattles": {
+      "scald": 0.5384444444444444,
+      "snag": 0.5555555555555556,
+      "bitter": 0.5364444444444444,
+      "scent": 0.5555555555555556,
+      "brittle": 0.7777777777777778,
+      "drowsy": 0.7775555555555556,
+      "steep": 0.7777777777777778,
+      "cozy": 0.9853333333333333
+    },
+    "reactionBattleShare": {
+      "crumb-burst": 0.3308888888888889,
+      "wildfire": 0.3031111111111111,
+      "rupture": 0.3333333333333333,
+      "spread": 0.05511111111111111
+    }
+  },
+  "byCrew": {
+    "probe-starters": {
+      "battles": 1500,
+      "normalRounds": 18.212,
+      "multiFoeShare": 38.49488226410873,
+      "multiAllyShare": 35.52466579912457,
+      "allCatsUltimateShare": 100,
+      "reactionsPerBattle": 4.674666666666667
+    },
+    "probe-oven": {
+      "battles": 1500,
+      "normalRounds": 8.894,
+      "multiFoeShare": 29.048795552810375,
+      "multiAllyShare": 18.338520469236293,
+      "allCatsUltimateShare": 36.1,
+      "reactionsPerBattle": 6.092
+    },
+    "probe-thread": {
+      "battles": 1500,
+      "normalRounds": 12.607,
+      "multiFoeShare": 27.12838997596979,
+      "multiAllyShare": 28.769144773616546,
+      "allCatsUltimateShare": 100,
+      "reactionsPerBattle": 9.459333333333333
+    },
+    "oven": {
+      "battles": 1500,
+      "normalRounds": 9.148,
+      "multiFoeShare": 55.5292570677186,
+      "multiAllyShare": 13.279261144988455,
+      "allCatsUltimateShare": 49.6,
+      "reactionsPerBattle": 12.929333333333334
+    },
+    "thread": {
+      "battles": 1500,
+      "normalRounds": 7.857,
+      "multiFoeShare": 19.682971439290906,
+      "multiAllyShare": 20.790453251587476,
+      "allCatsUltimateShare": 99.3,
+      "reactionsPerBattle": 6.1033333333333335
+    },
+    "night-lamp": {
+      "battles": 1500,
+      "normalRounds": 13.866,
+      "multiFoeShare": 19.49985845050486,
+      "multiAllyShare": 58.1296947798802,
+      "allCatsUltimateShare": 98.9,
+      "reactionsPerBattle": 6.540666666666667
+    },
+    "afternoon-tea": {
+      "battles": 1500,
+      "normalRounds": 20.689,
+      "multiFoeShare": 0,
+      "multiAllyShare": 51.40732057883647,
+      "allCatsUltimateShare": 41.7,
+      "reactionsPerBattle": 0
+    }
+  },
+  "scope": "Existing full500 registered base-stat cohorts; original combined denominator remains the three probe crews. Breakdown describes variation, not a causal ablation or separate acceptance gate. No new battles."
+}

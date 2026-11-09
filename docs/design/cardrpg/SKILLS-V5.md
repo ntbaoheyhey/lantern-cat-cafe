@@ -123,3 +123,21 @@ V0 lane B now (9-11 Nov): badges + VFX for the 16 existing statuses + Crumb Burs
 A5 paused 9 Nov with a handoff. Lane A now: R1 A5 wrap-up (reports, draft PR on #405), then V1 -> 16 Nov: rules behind `skillsV5`, events-v4 v2, policy. V2 lane A 16-19 Nov: balance on TRAIN together with A5's open B1/B2 gates, then ONE combined acceptance on the still-unused block 20001-20500 (registered first; 30001-30500 only for a retune).
 V3 lane B 14-19 Nov: Bleed/Bitter VFX, 4 reactions, multi-target stagger from A's v2 fixture. V4 19-21 Nov: integrate into demo-build, 20 s before/after video, user review before 21 Nov.
 Fallback D if S1-S3 are not done by 14 Nov: V0 + snag/bitter/splash + retarget ~12 skills, no reactions.
+
+
+## User amendment — skill design optimisation, 2026-11-09
+
+Authority: `reports/cardrpg-big/skills-v5/ADDENDUM-SKILLDESIGN.md`, timestamp03:40UTC as supplied by the user. These amendments resolve design gaps; original acceptance gates and denominators are unchanged. All changes require skillsV5; fallback behavior stays byte-identical.
+
+- Cinnamon **Comfort cup** heals the weakest living ally80 and grants1Warm; adjacent living allies receive40% of that heal (base32). Warm remains on the main patient. New ally-splash landing order is weakest patient then adjacent formation neighbors. Bitter and normal heal modifiers apply per recipient.
+- Cinnamon **Second serving** revives a fallen ally at40%HP once per battle when available. With no available revive it heals every living ally35 and grants1Warm each. The old revive-only kit left a skill unused in healthy battles and had no multi-ally skill; the revised kit visibly sustains Burn crews without requiring artificial casualties.
+- Singleton bosses begin with two existing Binding Threads; singleton elites begin with an existing helper. Boss phase changes add one or two helpers; exact TRAIN-selected counts and caps are recorded with the candidate. Thread defeat frees its own knot; other sources remain. The existing boss-finish rule retires linked helpers. Enemy identities, automatic battle flow and 45–90s pacing gate remain.
+- Policy and cooldown tuning may improve shape, status/reaction and skill-use diversity within the existing combo roles. Black cup's rejected Mark-strike power trial stays rejected. Every named crew's eight keyword coverage, matched-power5–60%skill shares and distinct same-role top-two shape/status patterns are reported, including misses.
+
+Candidate-specific values and before/after results are in S5 registrations and FIXLOG.md. This amendment grants design authority; it is not evidence that pending candidates or numeric gates pass.
+
+### TRAIN design3 amendments (S5, 2026-11-09)
+
+Selected after three registered fixed-prefix candidates: Black cup cooldown2 (power55 unchanged); Ink thread and Silk nick cooldown1. Apron crossing shields its ally row55 and Links it, swapping only the main ally; Bread cover shields its row65; Decanted moon transfers to the main ally and shields its row45 with Glaze; Sideboard step adds shield65+Warm; Split ember power115 before the existing60%row multiplier. Automatic policy values actual pending prevention, future Mark hits and Spread. These remain provisional until fullTRAIN/compatibility checks; no rejected Mark-strike is restored.
+
+Existing Button Guard opens with Warm; Teacup Healer opens with Regen and Marks its ordinary attack target; Binding Thread applies Shred and Dazes on its signature. These provide opposing keyword contexts without making the cat kits identical. Opening buffs do not refresh on every action. Full before/after and unresolved gates are recorded in reports/cardrpg-big/skills-v5/s5/SELECTION.md.
