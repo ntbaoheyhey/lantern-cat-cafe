@@ -1202,3 +1202,10 @@ Scope/author/OFF8250/baseline/historical13 PASS; no suites repeated. Initial Git
 A5 continues as V5A: new skillsV5 flag, ON/OFF baseline registration then statuses/shapes/kits/events.
 A5 balance/cadence/startup/static-display/Z continue after V5 rules; no old-kit retuning. TRAIN1-500; fresh20001-20500 UNUSED.
 B V5LOOK-V0 read; events-v2 fixture pending S4. No B-owned edits, model helpers, merge or deploy.
+
+## 2026-11-09T00:45:55Z V5A-S0 DONE
+DRAFT407 https://github.com/ntbaoheyhey/taskbar-hero/pull/407 on406; baseA5closingd22f47cb8, S0source655a28523.
+180battle probe reproduces9.1043%multi-foe/19.3730%multi-ally/17.2667rounds/4.7778detonation records. Definition includes zero-amount heal/shield; positive-only14.1376% disclosed.
+ON180battle SHA c29ec7d2cfb9fbd46aa32b363ade8bc84b3100d558bb646aa4ea04b80f49d031;45routeSHA b85feeb659f013dfd1817d452d233d6c48f8f3e1402e4c5625bf760e49341540.
+OFF8250/baseline13 exact; approvedspec docs/design/cardrpg/SKILLS-V5.md. S1 status core now underway; fixture stays pendingS4.
+Fresh20001-20500 UNUSED; no B/protected edits, merge/deploy/model helpers.
