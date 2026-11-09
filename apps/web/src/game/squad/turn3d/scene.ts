@@ -1,3 +1,5 @@
+import type { StatusPresentation } from './card-status-beats';
+import { CARD_STATUS_LOOKS } from './card-status-looks';
 import { readablePortrait, readableName } from './look-readable-assets';
 import { styleReadableEnemy, isReadableBoss } from './look-readable-enemies';
 import { CardEnemyExpression } from './card-enemy-expression';
@@ -47,7 +49,8 @@ export interface SceneView {
   autoBattle?: boolean;
   tableau?: boolean;
   effectOnly?: boolean;
-  cardStatuses?: Record<string, readonly string[]>;
+  cardStatuses?: Record<string, readonly (string | {id:string;stacks:number})[]>;
+  cardPresentation?: StatusPresentation;
   rows?: Record<string, string>;
   chapter?: number;
   models?: Record<string,string>; warmModelIds?: string[];
@@ -78,6 +81,8 @@ export class TurnScene {
   readonly camera = new T.PerspectiveCamera(32,1,.1,80);
   readonly stats = { frames: 0, calls: 0, triangles: 0, geometries: 0, textures: 0, particles: 0, estimatedGpuBytes: 0, loaded: 0, hiddenFrames: 0,quality:'high' as Quality };
   readonly labelAudit:{heads:LabelInput['head'][];cards:LabelInput['head'][];missing:string[];overlaps:number}={heads:[],cards:[],missing:[],overlaps:0};
+  private statusHeights=new Map<string,number>();
+  private statusCrowns=new Map<string,number>();
   private positions=new Map<string,T.Vector3>();private scratch=new T.Vector3();private zero=new T.Vector3();private labelsAt=0;
   private stableLabels = new StableLabelLayout();
   private puppets = new Map<string,Puppet>();
@@ -463,7 +468,10 @@ export class TurnScene {
           p.root.position.z+=Math.sin(t*Math.PI)*direction.side;
         }
       }
-      if(frame&&targets.includes(p)&&(!view.autoBattle||source!==p)&&['impact','reaction'].includes(frame.beat.kind)&&a.hp>0){
+      const hitDelay=this.lookStageEnabled?view.cardPresentation?.offsets.get(a.id)??0:0;
+      const hitAt=frame ? frame.elapsed-frame.plan.beats[2]!.start-hitDelay : -1;
+      const hitDuration=frame ? frame.plan.beats[2]!.duration+frame.plan.beats[3]!.duration : 1;
+      if(frame&&targets.includes(p)&&(!view.autoBattle||source!==p)&&(hitDelay ? hitAt>=0&&hitAt<hitDuration : ['impact','reaction'].includes(frame.beat.kind))&&a.hp>0){
         const hurt=frame.plan.events.some(e=>e.type==='damage'&&e.targetIds.includes(a.id));
         clip=hurt?(frame.plan.ultimate?'heavy-hit':'hit'):'heal-receive';
         if(hurt&&view.autoBattle&&source){
@@ -472,7 +480,7 @@ export class TurnScene {
           const reaction=cardHitClip(frame.plan.ultimate,localDirection);
           if(p.actions.has(reaction))clip=reaction;
         }
-        progress=frame.beat.kind==='impact'?.45:frame.progress;
+        progress=hitDelay?Math.min(1,hitAt/hitDuration):frame.beat.kind==='impact'?.45:frame.progress;
         if(hurt&&!view.reducedMotion){const recoil=Math.sin(frame.progress*Math.PI)*.16;p.root.position.x+=a.side==='party'?-recoil:recoil;}
       }
       if(frame&&!view.model&&!view.reducedMotion){
@@ -564,6 +572,7 @@ export class TurnScene {
         if(!puppet.head||!mask)continue;
         puppet.head.getWorldPosition(this.facePoint);
         this.facePoint.y+=.20*puppet.root.scale.y;
+        if(this.lookStageEnabled)this.statusCrowns.set(puppet.root.userData.actorId,this.facePoint.y-puppet.root.position.y+.85*puppet.root.scale.y);
         this.faceEdge.copy(this.facePoint);this.faceEdge.x+=.55*puppet.root.scale.x;
         this.facePoint.project(this.camera);this.faceEdge.project(this.camera);
         const radius=Math.max(.025,Math.abs(this.facePoint.x-this.faceEdge.x)*.5);
@@ -573,8 +582,9 @@ export class TurnScene {
       const ratio=this.renderer.getPixelRatio();
       this.cardEffects.protect(view.effectOnly?0:protectedCount,this.width*ratio,this.height*ratio);
       this.post.protectFaces(this.cardEffects.protectedFaces,view.effectOnly?0:protectedCount);
+      if(this.lookStageEnabled)for(const a of view.actors){const p=this.puppets.get(a.id);if(p)this.statusHeights.set(a.id,p.height*p.root.scale.y);}
       this.cardEffects.render(frame,cardRecipe,view.actors,this.positions,this.camera,this.post.effectiveQuality,view.reducedMotion,
-        view.effectOnly?undefined:view.cardStatuses,this.time);
+        view.effectOnly?undefined:view.cardStatuses,this.time,view.cardPresentation,this.statusHeights,this.statusCrowns);
     }
     this.stats.particles=this.spells.count+(this.cardEffects?.stats.instances??0);
     const display=view.effectOnly?this.effectPreview:this.scene;
@@ -594,9 +604,11 @@ export class TurnScene {
       if(frame?.plan.ultimate&&['anticipation','travel','impact'].includes(frame.beat.kind)&&a.id!==frame.plan.actorId&&!frame.plan.targetIds.includes(a.id))continue;
       const head=p.model.getObjectByName(`${a.role}_head`)??p.model,center=head.getWorldPosition(new T.Vector3());
       const top=screen(center.clone().add(new T.Vector3(0,.45,0))),foot=screen(p.root.position.clone());
-      const aTop=p.root.position.clone().add(new T.Vector3(0,p.height*p.root.scale.y,0));const ideal=screen(aTop);ideal.y-=8;
+      const aTop=p.root.position.clone().add(new T.Vector3(0,p.height*p.root.scale.y,0));
+      if(this.lookStageEnabled && view.cardStatuses?.[a.id]?.some(status=>CARD_STATUS_LOOKS[(typeof status==='string'?status:status.id) as keyof typeof CARD_STATUS_LOOKS]?.crown))aTop.y=p.root.position.y+(this.statusCrowns.get(a.id)??p.height*p.root.scale.y+.18)+.28;
+      const ideal=screen(aTop);ideal.y-=8;
       projected.push({id:a.id,x:top.x,y:top.y,labelX:ideal.x,labelY:ideal.y,footY:foot.y,visible:true});
-      labels.push({id:a.id,x:ideal.x,y:ideal.y,height:view.autoBattle?(readable?30:48):a.side==='enemy'?a.statuses.length?41:29:a.statuses.length?30:18,head:screenBounds(p.model,this.camera,this.width,this.height)});
+      labels.push({id:a.id,x:ideal.x,y:ideal.y,height:view.autoBattle?(readable?(view.cardStatuses?.[a.id]?.length?54:30):48):a.side==='enemy'?a.statuses.length?41:29:a.statuses.length?30:18,head:screenBounds(p.model,this.camera,this.width,this.height)});
     }
     const obstacles = view.autoBattle ? view.actors.filter(actor => actor.side === 'party' && actor.hp > 0)
       .flatMap(actor => { const puppet = this.puppets.get(actor.id); return puppet ? [screenBounds(puppet.model,this.camera,this.width,this.height)] : []; }) : [];

@@ -297,3 +297,26 @@
 .dp-readable .dp-skill-state:focus-visible,.dp-readable .dp-row-icon:focus-visible,.dp-readable .dp-plan-chip:focus-visible{outline:2px solid #ffe2a2;outline-offset:3px}
 
 .dp-readable .dp-ultimate-moment>img{width:35px;height:46px;object-fit:cover;object-position:50% 25%;border-radius:5px}
+
+/* Skills V5 presentation, gated by lookV2. Badges occupy their own row. */
+.dp-v5look .dp-status-badges{display:flex;align-items:center;gap:2px;min-height:22px;height:22px;margin-top:2px;position:relative;pointer-events:auto}
+.dp-v5look .dp-status-badges:empty{display:none}
+.dp-v5look .dp-status-badge,.dp-v5look .dp-status-more{display:flex;align-items:center;justify-content:center;gap:0;min-width:0;min-height:0;height:22px;padding:0;border:0;border-radius:4px;background:#102129;color:var(--status-color,#fff0d2);cursor:help;flex:none;box-sizing:border-box}
+.dp-v5look .dp-status-badge{width:28px}.dp-v5look .dp-status-more{min-width:22px;font:700 10px/1 system-ui;color:#fff0d2}
+.dp-v5look .dp-status-badge svg{display:block;flex:none}.dp-v5look .dp-status-badge b{font:700 10px/1 system-ui;color:#fff0d2;margin-left:-1px;min-width:7px}
+.dp-status-ring-track{stroke:#496069;stroke-width:1.5}.dp-status-ring{stroke:currentColor;stroke-width:1.5;stroke-linecap:round}
+.dp-v5look .dp-status-badges button:hover{background:#102129;box-shadow:0 0 0 1px currentColor}
+.dp-v5look .dp-status-badges button:focus-visible{outline:2px solid #fff0d2;outline-offset:1px;background:#102129}
+.dp-status-tooltip{position:fixed;z-index:1000;width:264px;max-width:calc(100vw - 40px);max-height:calc(100vh - 40px);overflow:auto;white-space:pre-line;box-sizing:border-box;border:1px solid #b3c0ba;border-radius:8px;background:#102129;color:#fff0d2;padding:10px 12px;font:12px/1.45 system-ui;box-shadow:0 6px 20px #0008;pointer-events:none}
+.dp-v5look.dp-readable .dp-party{height:104px;min-height:104px;max-height:104px}
+.dp-v5look.dp-readable .dp-party-card{height:104px}
+.dp-v5look.dp-readable .dp-world-plate{max-height:none;min-height:32px;height:auto;overflow:visible}
+.dp-v5look .dp-world-plate:focus-within{z-index:12}
+.dp-v5look.dp-readable .dp-float-number[hidden],.dp-v5look .dp-combo-callout[hidden]{display:none}
+.dp-v5look.dp-readable .dp-float-number .dp-number-dot{font-style:italic;color:#efaa73}
+.dp-v5look .dp-combo-callout{position:absolute;left:0;top:0;width:190px;z-index:6;pointer-events:none;padding:6px 4px;box-sizing:border-box;border:1px solid #e6c392;border-radius:8px;background:#102129;color:#f4db95;text-align:center;font:900 19px/1.05 system-ui;letter-spacing:.4px;box-shadow:0 3px 12px #0007}
+.dp-v5look.dp-calm .dp-float-number{animation:none}
+@media(prefers-reduced-motion:reduce){.dp-v5look .dp-float-number{animation:none}}
+.dp-v5look .dp-status-badges .dp-status-badge{color:var(--status-color);background:#102129}
+.dp-v5look .dp-status-badges .dp-status-more{color:#fff0d2;background:#102129}
+.dp-status-tooltip{pointer-events:auto}
