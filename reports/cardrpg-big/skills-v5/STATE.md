@@ -35,7 +35,7 @@ S8 review: PRE-S6-REVISIT.md records every open group; earnedboss130.129s and fi
 Acceptance20001–20500 RUNNING pid33012/session30958; registration3061b085a; both modes;30001/40001 UNUSED.
 S6 probes both complete:multi32.660%,support29.793%,normal13.242r,ultimate77.667%; remaining matrices running.
 S6 D3:30/32,D4:10/12,D5PASS; Mochi2 .442%,Panko2 .353%; fourthslot38/384,worst48.4pp (fallback58/87.4).
-Then S6: waiter37211/session15857 closes/builds/Z/reports/guides after20scopes; run delivery-sheets.py,review147images,publish.
+Then S6: waiter37211/session15857 closes/builds/Z/reports/guides after20scopes; run delivery-sheets.py,review147images,audit-delivery.mjs,publish.
 B10:23read: S6probe refresh separateDRAFT420; no acceptance visual tuning/newdesignREQUEST.
 B request guardian underuse disclosureADOPTED; no unanswered designREQUEST. A130draw target unchanged.
 A owns no B renderer paths; no renderer integration implicit. Main docs/cardrpg3/index.html staysA4.
