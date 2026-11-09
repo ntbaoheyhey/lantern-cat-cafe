@@ -40,6 +40,18 @@ describe('lookV2 status vocabulary',()=>{
 });
 
 describe('presentation-only resolved log beats',()=>{
+  it('reads stored cafe subtitles while displaying the current keyword without changing the log',()=>{
+    const state=R.createDepthAccount(17),battle=R.createBattle({seed:17,chapter:1,cats:R.battleCats(state),enemies:['button-guard']});
+    const target=battle.actors.find(a=>a.side==='enemy')!;
+    battle.log=[{round:1,actorId:'cat-biscuit',targetId:target.id,skillId:'biscuit-4',kind:'status',amount:1,text:'Brittle sugar'}];
+    const plan=createCardActionPlan(presentationEvents(battle.log,battle,'biscuit-4'),'biscuit-4');
+    const original=JSON.stringify({log:battle.log,plan});
+    const view=statusPresentation(plan,battle.log);
+    expect(view.beats.some(beat=>beat.statusId==='brittle'&&beat.kind==='apply')).toBe(true);
+    expect(statusImpactLabels(plan,target.id,view).find(event=>event.type==='status_apply')?.note).toBe('Shred');
+    expect(JSON.stringify({log:battle.log,plan})).toBe(original);
+  });
+
   it.each([7,17,71,1808,20261108])('maps source logs, stacks and ordered targets without mutating seed %i',seed=>{
     const state=R.createDepthAccount(seed);
     const battle=R.createBattle({seed,chapter:1,cats:R.battleCats(state),enemies:['button-guard','sock-skipper']});

@@ -242,7 +242,7 @@ export function BattleView({ m }: { m: DepthModel }) {
           return <span key={id} className={ready === 'Ready' ? 'is-ready' : ''} title={`${skill.name}: ${ready}`}><span className="dp-v4-skill-name">{skill.name}</span><b>{ready}</b></span>; })}
       </div> : <span className="dp-charge" style={{ '--charge': `${cat.charge}%` } as CSSProperties} title={`Ultimate charge ${cat.charge}/100`}><small>{cat.charge}</small></span>}
     </div>)}</div>
-    {readable ? <div className="dp-action-caption" role="status"><b>{m.paused ? 'Paused' : `${m.state.settings.speed}×`}</b><span>Round {battle.round}</span></div> : <>
+    {readable ? <div className="dp-action-caption" role="status"><b>{m.paused ? 'Paused' : `${m.state.settings.speed}×`}</b><span>Round {battle.round}</span>{lookV2 && v4 && <span className="dp-v5-combo-ticker" role="status">{v4.events.filter(event=>event.kind==='reaction').at(-1)?.text}</span>}</div> : <>
     <div className="dp-action-caption" role="status"><b>{m.paused ? 'Paused' : m.impactVisible && !m.galleryBattle && m.momentNote || actor?.name}</b>
       <div className="dp-skill-banner" ref={skillBanner} hidden={!m.plan || m.animationAt >= 600 || m.galleryEffectOnly}>
         {m.plan && <>{skillIcon(m.plan.skillId) && <img src={skillIcon(m.plan.skillId)} alt="" />}<strong>{m.plan.name}</strong></>}

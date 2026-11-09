@@ -1,5 +1,5 @@
 # Skills V5 full run
-NOW MX verification continuing; M3 boot S1 attribution queued after empty delivery1 shots. Dependent live queues held.
+NOW MX closure gates running; M3 fix1 applied: plain status labels + in-flow reaction ticker + complete sibling-panel collision probe; source/parity/build queue39906, browserwaiter armed.
 BASE #415 f9924699cab2fa5b8029baa1158f789ee44ddfda; fullPROMPT/RULES apply, no agents/models/desktop/Docker.
 DONE V0#409,V01#413,V3#415; never redo completed samples.
 DONE M1#416 source54d3e29b2; M2#418 tip58adf21de,source2e6ee6425; fullmilestone reports underfull/m1,m2.
@@ -17,17 +17,23 @@ OPEN B-M2-002 PARTIAL after3attempts:bossratio1.517–1.843vs2,flatpalemonsterma
 FIXED B-M1-002 M2:all1176frames0overlap/outside/unplaced.
 OPEN B-MX-003 allocation:originalisolated600framesMochi3.05MB/Soot.90MB/Yarn.77MB. CachedCSScolours/reusedtargetslots inopt1b;samplepending;zeroNOTclaimed.
 OPEN B-MX-007 cinema3thirdattempt:remove duplicateB2impactringforauthoredrecipes,roundinkcap,clothveil,widerneedles;review/faces/cost/casts pending;oldercinema1/2immutable.
-QUEUES inherited /tmp/cardrpg-v5full-mx/{batch3b,batch4b,cinema1,cinema2}-queue.mjs;parents94094,96212,97402,99045. Existing samples finish, preserveall.
-QUEUES opt1b-verify.mjs PID/session1753:allocation,18regressioncasts,cold3+3,shots,collide,faces,UI,rootgates/E2E. Artefactba56ad503, visualchangescinema3notyetincluded.
-QUEUES cinema3-prepare.mjs session20121:type/lint/unit/build/parity; sourceuncommitted. Needcinema3sheetall60,changedInkcap/Velvetcost/casts/faces,finalshotchecks.
-QUEUES M3pilot wrapper96481 onpreflight2artifact; latestmerge1artifactready. Inspectpilot then registerremaining18battles, no repeatcompletedpilotwithoutcodefix.
-TIMING A05:31requestanswered; heldknownBwaitersandparents,letactivebatch3finish;A94948acquiredonelease,allBresumedafteritsrelease. Handoffscriptfinished. Do notinterruptA.
-EVIDENCE reports38MB beforeMXpack;budget80MB/<=4videos<=30s. Storegzreceipts/WebP,not30MBintermediateHTML. Preservefailedsamples.
-DECISION M4stricter31.5MB overrides33MBgeneral;archiveoldvideo pathsbyimmutablegitreferencebefore4deliveryvideos.
-NEXT finishMX3/4/5checks+audit/selfscore,draftPR,checkpoint;mergeBtipintoM3(noArebase/edit);livecoverage/shots/casts/cold/collide/faces/parity;refreshAuntilS6DONEor19Nov18UTC;M4demo/lean/clips;M5<=90lines+ledger+DONE.
-WAITING nofixturewait:runnableS5available;latestA05:31timingrequestread,latestpublishedS5#417runtime6772eb343.
-STOP onlyM5delivered,20Nov12UTC,orunfixable/unrevertibleS1withM5PARTIAL. Continueautomatically.
-LATEST 05:51UTC: opt2 isolated600frame allocations495888/176076/126336B,zeroMISS. opt3 hoists target particle envelopes;type/lint/unit/build/parityPASS, browserpending.
-LATEST A4900 received nextlease afterBcinema3;handoff2.py resumes ownpausedBqueues afterA release. Source48c3f8ae2+opt3uncommitted.
+EVIDENCE 56.35MB packaged;80MB cap. Raw CDP traces retained /tmp with hashes, extracted summaries in repo. <=4deliveryvideos; old clips remain immutable git history when replaced.
+DECISION M4stricter31.5MB overrides33MBgeneral; no generative tools or added dependencies.
+NEXT close MX checks/report/self-score/draftPR; M3 remaining12livebattles and delivery gates, draft integrationpreview; M4 monster shading/boss revisit/demo/lean/clips; M5report+ledger+DONE.
+WAITING A runtime6772eb343 unchanged, latestpublishedS5evidence59475c79f read; S6notpublished. M3refresh continues untilS6DONEor19Nov18UTC.
+STOP onlyM5delivered,20Nov12UTC,orunfixable/unrevertibleS1withM5PARTIAL.
+LATEST MX3audit6.233vs4.517, uniquenessMISS; all60cat+26enemy peaks reviewed, repeatedpassivefootglows/smallbasicimpacts remain.
+LATEST Opt3allocation220728/106500/115280B vs3047256/900248/773820B,zeroMISS at3attemptcap;18regressioncastsPASS16.8ms; opt3coldpending.
+LATEST all4wholecatbatches360castsPASS16.8ms;all4batches240facemasks0offenders. Opt2cold native33.4/33.3/33.3 CPU4183.4/150/150PASS220; notsubstituteopt3.
+LATEST M3bootFIXED viaB-ownedIIFEloader; corrected20b76874ec7eartifact dev+normal smokePASS; failure retained. Source103844e55 B/9ea3c4139 live.
+LATEST Oven+Thread10/18naturalbattles exacthashes; nextNightlamp/Afternoontea. Render submission+canvas frames recorded; pixelvisibility requiresvisualreview.
+M4 review target: uniform.78emission makes everymonsterpink-flat; prepare directional shading within B-owned look-readable-enemies, preserve stage/face checks. Not yet changed.
+M4PREP /tmp/cardrpg-v5full-m4-prep/{PLAN.md,LiveGuide.tsx,live-guide.css,live-gallery.mjs,natural-video.mjs}; prepared only, NOT applied to product. Before#395artifact /tmp/cardrpg-v5full-before395.html.
 
-LATEST 06:02UTC: MX3audit6.233vs4.517,uniquenessMISS. Opt3allocation220728/106500/115280B,zeroMISS at3attemptcap. M3merge3bootdiagnosticqueued;parents9870/6066+wrappers10508/6082held.
+LATEST M3delivery2:51shots,1unplacedP5/1024;1077windowframes0reportedoverlaps but probeomittedAstrip,sointegrationlayoutPARTIAL.98facemasks0offenders;12UIcasesPASS.
+OPEN B-M3-003/004/005:legacylabel142px,liveAstripoverplate,peak152drawsvs130(P4).Preparedlabel/ticker/probefixes;drawattributionqueued-session12597.
+QUEUES inherited no-model FIFO16545; MX parent18885 continues; M3 parent18886 paused before superseded E2E, child23592 current immutable casts/cold finishes; diagnosis25053 queued.
+SOURCE root gates done: type/lint/buildPASS; StageLayout timeout once bothworktrees,2/2isolatedPASS each; logs preserved. NewM3fix1source gates running.
+LATEST naturalcoverage14/18 hashesexact,all4reactions submitted; Night4endingsclear; olderOven/Thread10endingsremainunverified byoriginalprobe. Tea4pending.
+LATEST A06:36evidenceb3471813a runtime6772eb343 unchanged; noS6. M4preparedonly; do not repeat finishedsamples.
+LATEST M3fix1 typecheck/lint/all1854webunit/parity5seed/liveadapter18battles/buildPASS; no browserpassclaim yet. Registeredfix1artifact292? seebuildreceiptforactualhash.

@@ -182,3 +182,29 @@ B-M3-004 source attribution correction: A keeps the scene mounted after result w
 
 ### B-M3-004 focused verification FIXED (probe only)
 end-state1 shows result screen, suspended=true, computed canvas visibility:hidden throughout its battle ancestors, zero transient labels, and exact Oven1digest b131409c...; retained actionFrame is not visible. Width alone is insufficient because visibility:hidden preserves layout. Remaining Night/Tea probes inspect computed visibility; original10 narrower false clear results retained and not relabelled as passing natural samples. No product fix needed.
+
+## B-M3-003 2026-11-09T06:29Z M3 legacy fixture label width S3
+Repro delivery2 shots/collide, P5/1024: one secondary number stack unplaced; legacy status label "Brittle sugar" reserves142px. Other two targets render,0visible overlaps. Full failing receipt retained.
+Hypotheses: A catalog renamed status while stored fixture keeps subtitle (confirmed), changed stage layout, allocator drift. Source statusImpactLabels copies the old note without presentation-name normalization.
+Attempt1 prepared: map known cafe subtitles to the existing plain keyword (Shred) in B-only statusImpactLabels; keep unknown labels verbatim and source events/logs unchanged. Add explicit old/new-name lookup compatibility. Apply after immutable closure source checks finish; verify same cue windows at3widths plus parity/type/lint/unit. No rules edits.
+
+### B-M3 end-state probe attribution 2026-11-09T06:29Z
+Ten original coverage records retain a false `cleared` result based only on actionFrame identity. Focused Oven1 final-action replay: canvas connected but computed visibility hidden through all ancestors, scene suspended,0transient labels,exact final hash,0browser errors (end-state1/end-state.json). This verifies that one result screen, not all ten natural end states. Future natural records check hidden/detached/disposed/next-render separately; originals preserved and described as unverified by their narrower probe, not product leaks.
+
+## B-M3-004 2026-11-09T06:30Z M3 live overlay collision S3
+Visual review delivery2 P1/1440: A BattleSkillsV5 fallback panel x194–1430/y246–330 covers Kettle HP plate and window. It duplicates B badge rows; fixture-only checks never rendered this live-only sibling panel. Existing collider omitted it, so its PASS is incomplete for integration.
+Attempt1 prepared in B battle CSS only: lookV2 active hides duplicate unit-condition rows and moves its existing reaction ticker to a small reserved edge outside the arena. lookV2 OFF/A component unchanged. Extend collider to include the sibling strip versus labels/plates, plus exact registered shot times (P5/1024 narrow missinglabel was outside sampled60Hz instants). Preserve original receipts. Notify A via HEADS-UP; no A-owned edits.
+
+## B-M3-005 2026-11-09T06:32Z M3 live peak draw budget S2
+Repro delivery2 fixed51shots: peak152draws vs130 (and above conditional150), tris<=163043. Whole-cat gallery costs<=109 did not include live enemy roster+many statuses+multi-target pools.
+Hypotheses: more visible model materials, separate active status primitive pools, multi-target authored layer mix. Smallest diagnostic: record renderer call deltas with effects/status/model material categories separately on the failing livePshots. No draw gate increase; simplify secondary layers or batch materials only after attribution. Attempts0; original shots retained. Verify failing shots+changed-cuecasts/cold+parity/faces.
+
+## B-MX-008 2026-11-09T06:43Z MX/M3 root unit timeout S2
+Repro: nice10 pnpm test in B and integration worktrees during root closure checks. Same untouched StageLayout test `holds every boss-sensitive panel at the pre-request state, then releases with the confirmed banner` exceeded5000ms in both (5901/5635ms); remaining1800/1852web tests passed. Original logs preserved in opt3/delivery2.
+Hypotheses: concurrent jsdom CPU load (rank1; both suites created186/197environments), pre-existing async flake, B regression. Isolate only that unchanged test twice sequentially in each worktree; no timeout/test edits. Native casts recorded concurrently remain retained; any timing miss requires attribution, never replacement.
+
+### B-M3-003/004 attempt1 applied 2026-11-09T06:43Z
+B-only status lookup accepts stored cafe subtitles; displayed apply/expiry labels use the plain keyword, without changing plans/logs. A's duplicate strip is hidden only when the lookV2 battle is visible; its existing reaction text is shown in B's in-flow footer ticker. Collider now checks sibling strips against plates/text and includes the exact registered P-shot instant. Added one source-log immutability regression for Brittle sugar→Shred. Full layout/face/UI/parity and source gates queued on fix1 artifact; no pass claim yet.
+
+### B-MX-008 isolated results FLAKY
+The unchanged StageLayout test passed twice sequentially in each worktree (four isolated runs, each <3s including process startup). Original full-suite timeout logs retained; no test/timeout changes. Root typecheck/lint/build passed. Full suite result is recorded as1800/1801 B and1852/1853 live plus2/2 isolated passes each, not a clean full-run claim.
