@@ -1166,3 +1166,9 @@ Original47/49/50 audited and preserved at de793ea77; timing47 and delayed-impact
 Registered isolated duration52 before samples: exact corrected queue34 plus bossHP1.25/1.5/2, unchanged hit strength;384TRAIN50pairs/arm, semantics first,110s leases/7s handoffs. No automatic adoption.
 Original Home03 PID12101 and receipt watcher20823 preserved; source27f192301/DRAFT404 unchanged. Six informed sourcegates alreadyPASS, no duplicate samples.
 Fresh20001–20500 UNUSED; B395 read/no integration. No B/protected edits, modelhelpers, merge, deploy or mainpush.
+
+## 2026-11-09T00:04:41.908675+00:00 A5-C1 CHECKPOINT
+Original Home03 PID12101 completes its last x1 lease; watcher20823 and Route53 coordinator30416 retained without duplicate samples. Runtime27f192301/DRAFT404 unchanged.
+Route53 ON/OFF prototypes built; three-width decision checks queued. Home54 isolated11units PASS; before/after navigation tools registered at1a6b4e892, not adopted.
+Advice55 fixed earned build: no-cost Mochi charm improves0→3/50 on separate TRAIN51–100, with47losses retained. This does not close the wall/cadence gate.
+Result56 presentation/tools registered atd5455757d only; no UI samples or runtime adoption. Fresh20001–20500 unused; B395 read/no integration, no B/protected edits/modelhelpers/merge/deploy/mainpush.
