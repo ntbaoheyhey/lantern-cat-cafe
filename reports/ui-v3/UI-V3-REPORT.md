@@ -14,7 +14,7 @@ Base: Lane A S6 `1195b13fa` (#424), merged with published Lane B integration `c5
 | U5 | [24 battle captures](u5/), [browser checks](u5-final/browser.log), draft #433 |
 | U6 | [Four recruit beats](u6/), [checks](u6-gates/checks.txt), draft #434 |
 | U7 | [Fresh-eyes fixes](u7-close/FRESH-EYES.md), [36 browser checks](u7-final/browser.log), draft #435 |
-| U8 | [Offline receipt](u8-visual/offline.json), [56 settled captures](after/manifest.json), [fresh-eyes repair](u8-visual/FRESH-EYES.md) |
+| U8 | [Offline receipt](u8-visual/offline.json), [56 settled captures](after/manifest.json), [fresh-eyes repair](u8-visual/FRESH-EYES.md), draft #436 |
 | U9 | Pending final gates and self-score |
 
 | Gate | Current evidence | Status |

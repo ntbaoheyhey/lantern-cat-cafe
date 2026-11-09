@@ -1,6 +1,6 @@
 # Demo integration handoff
 
-Current milestone U8: branch `codex/cardrpg-ui-v3-u8-2026-11-09`; source `5a9d2ead6d174ad4461a89fe75ff32525cd1b907`. Draft PR publication is the final U8 step. U9 report/score/full existing E2E is next.
+Current milestone U8: branch `codex/cardrpg-ui-v3-u8-2026-11-09`; source `5a9d2ead6d174ad4461a89fe75ff32525cd1b907`. Draft PR [#436](https://github.com/ntbaoheyhey/taskbar-hero/pull/436), published head `d9264617b`. U9 report/score/full existing E2E is next.
 
 Enable with `?ui=v3` or `VITE_UI_V3=1`; product defaults OFF. `?ui=legacy` overrides the demo default. Review tools require `?dev=1` in either shell. Build the offline demo with `BIG_SKILLS_V5=1 node tools/ui-v3/build.mjs` under the shared timing lock. Open `docs/ui-v3/index.html` directly; no server/network needed. Build receipt: `docs/ui-v3/build.json` (31,202,110 B, runtimeDirty=false).
 

@@ -36,3 +36,5 @@ U8 verified: sourceb103d1c39, runtimeDirty=false, offline31201966B/SHA05f56593f7
 U8 resume: toast geometry3sizesPASS; capture readiness fixed; runtime5a9d2ead6, offline31202110B/SHAe5a63e7e26d7bfe860d60e6a62460a247491fe22c7befadbc7ceda91e6c2d0a6.56AFTERshots/0errors. G1PASS1867webtests. Full browser/axe/offline closure running; U0 Result capture readiness also being corrected from archived U0 source. Latest art3ef6f96a6 remainsPARTIAL, excluded.
 
 U8 complete: G1PASS,37/37newbrowser,24axe scans clean,56AFTERshots/0errors, corrected4originalU0Resultshots/0errors. Offline31,202,110B, naturalfight14.285s, CPU4interactive2,141.1–2,191.3ms(PARTIAL), idle0longtasks/draws0. Protectedsource/hashchecksPASS. PublishU8 then U9existingE2E/selfscore.
+
+U8 published draft#436, headd9264617b. ContinueU9 fulllegacyE2E then strictscore, requiredoneimprovementpass if<8.5, ledger+sync.
