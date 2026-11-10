@@ -280,9 +280,11 @@ async function bakeCardClips(model: T.Object3D, role: string, asset: string) {
         // local joint travel so the neck/tail seams stay overlapped; the full
         // root anticipation/lunge/recover and existing action timing remain.
         if (model.userData.lookRigid === true && joint !== 'motion') {
-          const limit = joint === 'head' ? .085 : joint.startsWith('tail') ? .12
-            : joint.startsWith('ear') ? .06 : .035;
-          for (let axis = 0; axis < 3; axis++) angles[axis] = Math.max(-limit, Math.min(limit, angles[axis]! * .2));
+          const family = joint === 'head' ? 'head' : joint.startsWith('tail') ? 'tail'
+            : joint.startsWith('ear') ? 'ear' : joint.startsWith('arm') ? 'arm' : 'foot';
+          const limits = model.userData.rigLimits as Record<string,number> | undefined;
+          const limit = limits?.[family] ?? (family === 'head' ? .085 : family === 'tail' ? .12 : family === 'ear' ? .06 : .035);
+          for (let axis = 0; axis < 3; axis++) angles[axis] = Math.max(-limit, Math.min(limit, angles[axis]! * (limits ? .45 : .2)));
         }
         const rotation = new T.Quaternion().setFromEuler(new T.Euler(...angles));
         const quaternion = node.quaternion.clone().multiply(rotation);

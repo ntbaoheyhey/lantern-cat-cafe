@@ -8,6 +8,8 @@ import { resolve } from 'node:path';
 import { open, apply } from '../skills-v5/full/harness.mjs';
 const sharp = createRequire('/Users/bao/tools/cardrpg-look/npm/package.json')('sharp');
 const artifact = resolve(process.env.ART_ARTIFACT), out = resolve(process.env.ART_OUT);
+const unit = process.env.ART_UNIT || 'mochi', role = process.env.ART_ROLE || 'guardian';
+const cue = process.env.ART_CUE || `${unit}-4`;
 await mkdir(out, { recursive: true });
 const receipt = { artifact: createHash('sha256').update(await readFile(artifact)).digest('hex'),
   method: 'Game renderer, authored real clip times, isolated diagnostic poses; not gameplay acceptance.', errors: [], poses: [] };
@@ -17,23 +19,24 @@ try {
   page.on('pageerror', e => receipt.errors.push(String(e)));
   page.on('console', m => { if (m.type() === 'error' || m.text().includes('PropertyBinding')) receipt.errors.push(m.text()); });
   await open(page, artifact);
-  await apply(page, { gallery: 'mochi-1', progress: -1 });
+  await apply(page, { gallery: process.env.ART_GALLERY || `${unit}-1`, progress: -1 });
   // Freeze only the diagnostic view; keep the model/controller data unchanged.
-  await page.evaluate(() => {
+  await page.evaluate(({unit,role}) => {
     const s = window.__depthScene;
     window.__rigView = { ...s.view(), frame: null, cardStatuses: {}, cardPresentation: undefined,
-      actors: s.view().actors.filter(a => s.puppets.get(a.id)?.asset === 'mochi'),
+      actors: s.view().actors.filter(a => s.puppets.get(a.id)?.asset === unit),
       currentId: null, targetIds: [], legalIds: [], galleryPreview: false,
-      fixedTime: 10, model: { role: 'guardian', clip: 'idle', angle: 0 }, modelProgress: 0, paused: true };
+      fixedTime: 10, model: { role, clip: 'idle', angle: 0 }, modelProgress: 0, paused: true };
     s.view = () => window.__rigView;
-  });
-  const poses = [['rest','idle',0], ['attack-anticipation','mochi-1',.22], ['attack-impact','mochi-1',.52],
-    ['guard','guard',.5], ['cast','mochi-4',.5], ['hurt','heavy-hit-front',.13], ['victory','victory',.40],
-    ['tail','idle-tail',.48], ['blink','idle',.2], ['side','idle',0], ['back','idle',0]];
+  },{unit,role});
+  const poses = [['rest','idle',0], ['attack-anticipation',`${unit}-1`,.22], ['attack-impact',`${unit}-1`,.52],
+    ['guard','guard',.5], ['cast',cue,.5], ['hurt','heavy-hit-front',.13], ['victory','victory',.40],
+    ['tail','idle-tail',.48], ['blink','idle',.2], ['side','idle',0], ['back','idle',0]]
+    .filter(p=>!process.env.ART_POSES || process.env.ART_POSES.split(',').includes(p[0]));
   for (const [label, clip, progress] of poses) {
-    const stats = await page.evaluate(({ label, clip, progress }) => {
+    const stats = await page.evaluate(({ label, clip, progress, role }) => {
       const s = window.__depthScene, v = window.__rigView;
-      v.model = { role: 'guardian', clip, angle: label === 'side' ? Math.PI / 2 : label === 'back' ? Math.PI : 0 };
+      v.model = { role, clip, angle: label === 'side' ? Math.PI / 2 : label === 'back' ? Math.PI : 0 };
       v.modelProgress = progress; v.fixedTime = label === 'blink' ? 3.97 : 10;
       s.render(v, 0); s.dirty = false;
       const p = [...s.puppets.values()][0];
@@ -42,7 +45,7 @@ try {
         bones: skin.map(m => m.skeleton.bones.length), clips: [...p.actions.keys()],
         triangles: s.stats.triangles, draws: s.stats.calls,
         rect: s.renderer.domElement.getBoundingClientRect().toJSON() };
-    }, { label, clip, progress });
+    }, { label, clip, progress, role });
     const r = stats.rect;
     const file = label + '.webp';
     await sharp(await page.screenshot({ clip: { x: r.x, y: r.y, width: r.width, height: r.height } }))

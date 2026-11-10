@@ -1,3 +1,13 @@
+Đang chạy liên tục theo NON-STOP-RUN; đây là checkpoint, chưa phải báo cáo kết thúc.
+Q1/Q2/Q4 đã xong; Soot đã chạy trong trận bằng nguồn 3D cũ và đã kiểm tra mặt/HUD.
+Button Guard bị quota miễn phí ở lần1; chờ các lượt thử giãn cách, không mua gói.
+Clover đã có concept mới; Q5 chuẩn bị nguồn trong lúc chờ Q3.
+R1 tổng thể, roster, VFX toàn bộ và R8 vẫn chưa hoàn tất.
+
+Current receipts: QUEUE.md, r1/roster/SOOT-REVIEW.md, r1/roster/soot-validation.json and AUTOMATION.md. Historical checkpoint below is retained as history.
+
+---
+
 Đã áp dụng hướng tạo ảnh gốc rồi chỉnh và dựng thành hiệu ứng trong trận, ưu tiên cả chiêu cuối.
 Bản thử bỏ các hình cửa/cốc/tất hiện thêm cạnh Mochi và phía địch; giữ nguyên model Mochi đã có.
 Ánh sáng ra từ khiên, tới mục tiêu đúng nhịp; đã sửa lỗi sáng muộn lúc va chạm.

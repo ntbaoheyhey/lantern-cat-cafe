@@ -1,3 +1,15 @@
+# General local unit runner — Q4 complete
+
+`node tools/cardrpg-look/art-rebuild/prepare-unit.mjs --id soot --source /Users/bao/art/look-v3/image-to3d/soot/browser-20261110/soot-source.glb --out /Users/bao/art/look-v3/image-to3d/soot/NEW_DIR [--install-preview]`
+
+Any unit id uses its original concept and authored configs/ID.json (or explicit --concept/--config). Upstream image-to-3D export is an explicit source input, never resubmitted by this local runner. It inspects, simplifies with UV bounds, applies optional palette/material cleanup, rigs semantic modules/sockets, packs meshopt/WebP, and inventories the result. Original source is untouched.
+
+Resume verifies hashes for source/concept/config/scripts and all stage outputs. Atomic manifest, one exclusive output lock, STOP-B checks before stages, no unqualified production install. Preview install retains a previous differing model. Structural success never sets runtimeAccepted=true: battle poses, faces/HP and visual review remain mandatory. Limits: rigid seams, per-unit authored proportions, expressions and inferred PBR need review.
+
+Validated on existing Soot source: first generic export exactly reproduced698912B earlier preview;5stages reused; concurrent lock, changed recipe/output and --install rejected. Final material recipe is automated3 (same source/geometry); resume also reuses5stages. See r1/roster/runner-validation.json and soot-pipeline.json.
+
+## Historical Mochi-specific runner
+
 # Mochi direct-image automation
 
 Status: local workflow complete; character quality PARTIAL. Existing source conversion already succeeded. Do not submit the same image again.

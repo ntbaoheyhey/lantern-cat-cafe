@@ -1,7 +1,7 @@
 # Lane B active state
 
 ACTIVE continuous run authorized by NON-STOP-RUN.txt; old pause and no-expansion notes are historical.
-Queue: QUEUE.md. Current Q3; Q1/Q2 complete. Deadline 2026-11-20 12:00 UTC.
+Queue: QUEUE.md. Current Q3 (Soot QA; Button quota-wait); Q4 local runner implemented during provider wait. Q1/Q2 complete. Deadline 2026-11-20 12:00 UTC.
 Worktree /Users/bao/taskbar-hero-cardrpg-b2; branch codex/cardrpg-art-r1-2026-11-09; draft #427.
 Integration /Users/bao/taskbar-hero-cardrpg-v5live; draft #420. Q10 authorizes new local merge commits only; no PR merge/deploy/force push.
 Only B canvas/assets/reports; U owns shell and battle HUD frame. Never edit A/U worktrees.
@@ -18,3 +18,5 @@ Disk187GiB free; evidence72MiB of120MB; masters14MiB in git. Large source output
 Shared /tmp/cardrpg-big-locks/timing.lock for browser/render <=20min,6.5s handoff;nice10 other heavy work;ports5920-5923.
 Entry untracked docs/cardrpg-look/v5-art-mochi-preview.html and tools/cardrpg-look/art-rebuild/segmentation-proxy.mjs preserved. Proxy is research only, not accepted art.
 Checkpoint/PARTIAL/report/push means continue. Check INBOX/STOP-B between items. True user-only blockers go NEEDS-USER.md and are skipped until all unblocked work ends.
+
+Q3 02:11UTC: Soot source6,496,740B exported, runtime698,912B/21,232tri; generated poses reviewed. Button attempt1 QUOTA_WAIT, daily ZeroGPU limit; retry2>=03:06UTC/retry3>=04:06UTC, no purchase. Yarn not submitted. Q4 prepare-unit.mjs reproduced Soot byte-exactly; validation underway.

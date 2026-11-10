@@ -6,7 +6,7 @@ Always take the top unfinished unblocked item. Check INBOX.md and root STOP-B be
 - [x] Q1 Housekeeping — 30 min. Archive old handoff; compact current handoff; read direction/state/rules and latest A/U outboxes; seed inbox. Done: current files consistent, status committed and pushed.
 - [x] Q2 Mochi B-R1-008 — <=5 h including fallback (one surface-separation attempt <=4 h). Separate arm/shield/apron, fill cuts, rigid-parent shield, verify cast/victory. Fallback: rigid-segment motion with reduced arm swing. Done: acceptable battle poses, checks and before/after evidence, issue logged.
 - [ ] Q3 R1 four-unit close — <=8 h; due 2026-11-11 06:00 UTC. Keep Mochi source; bring Soot, Button Guard, Yarn Giant through existing concepts -> image-to-3D or animated layered fallback -> runtime. Done: all four in real battle, rubric target 8.5/minimum cat appeal + monster menace 7.0 average, per-type pipeline decisions, phase film/parity.
-- [ ] Q4 General runner — 2 h. prepare-unit.mjs supports any unit id, resume/hashes/single output lock, simplify/rig/pack/preview. Done: exercise with an existing source without regenerating it.
+- [x] Q4 General runner — 2 h. prepare-unit.mjs supports any unit id, resume/hashes/single output lock, simplify/rig/pack/preview. Done: exercise with an existing source without regenerating it.
 - [ ] Q5 R2 full roster — batches ~6; due 2026-11-14 18:00 UTC. All playable cats -> enemies -> bosses, built-in original concept generation/provenance, cleanup/convert/rig/runtime. Done per batch: battle captures/face-HP check/commit/push; every unit mapped.
 - [ ] Q6 R4 VFX 2.0 — due 2026-11-16 18:00 UTC. Generated atlases/optional video flipbooks for every signature skill and ultimate; real sockets/targets/timing, bold charge/travel/impact/afterglow. Done: readable at 1x, no protected-region overlap, audit >=8.0, phase film/parity.
 - [ ] Q7 R5 stage/light/camera — due 2026-11-17 18:00 UTC. Cafe depth/warm faces/rich enemy side/less empty floor/night window. Done: real battle comparison, cast frame <=33 ms native, phase checks.
@@ -24,3 +24,7 @@ Free conversion failure: max 3 attempts over >=2 h, do other unblocked work betw
 Q1 result: old handoff archived in full; queue/inbox/current handoff/state created; A S6 DONE unchanged, U outbox absent;187GiB free,72MiB evidence. No runtime changes or repeated completed probes.
 
 Q2 result: Blender separation rejected for gaps; explicit rigid-module fallback accepted at1x. 608456B/21938tri/0skin; type/lint1818tests PASS;24face samples0offenders,0UI overlaps. Limited arm articulation remains known; does not block Q3.
+
+Q3 checkpoint 2026-11-10 02:10 UTC: Soot exported and rigid-module runtime preview exists; verifying battle/face gates. Button Guard attempt1 hit daily ZeroGPU quota; retry2 no earlier than03:06UTC, attempt3 no earlier than04:06UTC (respect any provider reset time). Yarn has not been submitted. While provider work waits, do Q4 then unblocked concept work; no Mochi source regeneration.
+
+Q4 DONE 02:16UTC during Q3 quota wait: generic runner validated on existing Soot source; resumable5stages/hash/lock/install guards. Q3 Soot checkpoint7.6appeal/6.3motion,698k-class asset,24faces0offenders; Button/Yarn remain provider-dependent. Q5 concept preparation starts while preserving Q3 priority when retry is due.
