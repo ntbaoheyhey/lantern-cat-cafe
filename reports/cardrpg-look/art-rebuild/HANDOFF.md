@@ -2,7 +2,7 @@
 
 ACTIVE — user explicitly resumed. Continue NON-STOP-RUN and QUEUE; checkpoints are not stops.
 Worktree /Users/bao/taskbar-hero-cardrpg-b2; branch codex/cardrpg-art-r1-2026-11-09; draft#427.
-Latest pushed a14ccfd23: full generated VFX roster, camera/key changes, portraits source delivery and verified checks.
+Latest pushed d54872201: sequential local roster queue; prior a14ccfd23 has VFX/camera/portraits;7c9dfb124 closes B hygiene.
 Do not redo R0/M5/S6, Q1/Q2/Q4, Mochi/Soot conversions, or completed VFX sources and phase checks.
 Latest INBOX: TRELLIS local-mps only, one model at a time. No browser generation. Internal chat browser for review only.
 External install ~/art/trellis-mac at d58628f4; Python3.11/Torch2.15/MPS/pipeline import pass. DINOv3 access confirmed.

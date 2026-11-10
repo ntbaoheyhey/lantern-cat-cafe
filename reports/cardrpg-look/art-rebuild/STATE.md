@@ -1,7 +1,7 @@
 # Lane B current state
 
 ACTIVE — continue NON-STOP-RUN and QUEUE, checkpoints are not stops.
-Worktree /Users/bao/taskbar-hero-cardrpg-b2; branch codex/cardrpg-art-r1-2026-11-09; draft #427; pushed a14ccfd23.
+Worktree /Users/bao/taskbar-hero-cardrpg-b2; branch codex/cardrpg-art-r1-2026-11-09; draft #427; pushed d54872201.
 Q1/Q2/Q4/Q9 DONE. Q3 four-unit close and Q5 runtime roster pending local TRELLIS smoke.
 Existing Mochi/Soot conversions and all25 original concept masters are preserved.
 Latest INBOX: local-mps only, alpha inputs, no RMBG, one inference at a time under timing lease.
