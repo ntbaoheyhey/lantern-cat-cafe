@@ -168,3 +168,6 @@ Không lỗi/gọi mạng; giới hạn ngày và khóa trong chuyến giữ ngu
 
 2026-11-10T22:23:44Z: Sổ đã duyệt36ảnh và12ảnh vé quà sau sửa; cả tám phần thưởng nhận đúng, chữ14px/nút40px vừa khung720p.
 Bốn trang mở trực tiếp, lịch sử cuộn riêng; giới hạn ngày/khóa trong chuyến/bàn phím đều đạt. Đang tích hợp Marigold mới và đóng gói demo.
+
+2026-11-10T22:28:23Z: Q26 hoàn tất: demo38,81MB có Sổ mới và Marigold;24ảnh offline đã duyệt, cả8quà nhận đúng ở hai kích thước.
+Không lỗi/gọi mạng; kiểm tra bàn phím, hạn mức và khóa trong chuyến đạt. Tiếp tục Cẩm nang: tìm nhanh và đọc từng ghi chú rõ hơn.
