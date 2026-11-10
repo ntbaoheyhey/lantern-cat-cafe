@@ -122,6 +122,13 @@ async function simulation(bundleUrl, mode) {
     for (const q of C.QUESTS) { const r = R.metaCommand(s, { type: 'claimQuest', questId: q.id }); if (r.ok) s = r.state; }
     for (const goal of R.STAR_REWARDS_V4) { const r = R.claimStarRewardV4(s, goal.id); if (r.ok) s = r.state; }
     for (const goal of R.MILESTONES_V4) { const r = R.claimMilestoneV4(s, goal.id); if (r.ok) s = r.state; }
+    if (R.gameplayA6(s)) {
+      const ms = Math.floor(now * 1000);
+      const login = R.claimDailyA6(s, ms, 'login'); if (login.ok) s = login.state;
+      for (const task of R.DAILY_TASKS_A6) { const r = R.claimDailyA6(s, ms, 'task', task.id); if (r.ok) s = r.state; }
+      for (const points of R.WEEKLY_CHESTS_A6) { const r = R.claimDailyA6(s, ms, 'weekly', points); if (r.ok) s = r.state; }
+      for (const floor of R.TOWER_CHESTS_A6) { const r = R.claimTowerChestA6(s, floor); if (r.ok) s = r.state; }
+    }
     return s;
   }
   const rewardState = s => ({ currency: Object.values(s.account.currencies).reduce((a, b) => a + b, 0), power: R.teamPowerV4(s), gear: s.gear.length, clears: s.cleared.length, stars: R.starCountV4(s), found: s.v4?.journey?.found.length ?? 0 });

@@ -85,7 +85,8 @@ if (!segment) {
       } else if (s.screen === 'hub') {
         const trainingKey = `${s.nextRunId}:${s.fish}`;
         if (s.eventsOpen) {
-          acted = await click(page.getByRole('button',{name:'Collect reward',exact:true}).and(page.locator(':not(:disabled)')), 'Collect daily reward');
+          acted = await click(page.locator('.a6-daily button:not(:disabled)').filter({hasText:/^Collect/}), 'Collect A6 cafe gift');
+          if(!acted) acted = await click(page.getByRole('button',{name:'Collect reward',exact:true}).and(page.locator(':not(:disabled)')), 'Collect daily reward');
           if (!acted) acted = await close();
         } else if (!s.active && s.idleReady) acted = await click(button(/^Collect Night tips/), 'Collect night tips');
         else if (!s.active && s.fastReady) acted = await click(button(/^Fast reward/), 'Fast reward');

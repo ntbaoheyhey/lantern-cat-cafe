@@ -8,7 +8,7 @@
 - pnpm: 10.28.0 (repository packageManager version)
 - Free disk at setup: 147 GiB (df -h ~); above 15 GB threshold.
 - Dependencies: pnpm install --frozen-lockfile completed without lockfile changes.
-- Scope: STEP 2 active; Q8 active; Q1 completed 2026-11-10 06:38 UTC.
+- Scope: STEP 2 active; Q9 active; Q1 completed 2026-11-10 06:38 UTC.
 - Delivery branch remains codex/cardrpg-a6-q0-2026-11-10; one draft PR #438 for the whole lane.
 
 ## Report skim (15 lines; existing claims, not re-verified)
@@ -97,3 +97,11 @@
 - Sim: 500 seeds in 212.14 s; normal 30.88 s, boss 79.38 s. Tower median 58.94 s/p90 104.65 on level-six fixtures; pacing remains partial for Q12.
 - OFF exact over 8,250 routes; A5 exact over forty-five; expected hashes unchanged. q7-compatibility.json.
 - Q8 next. The draft bundle has virtual-source typechecks only; apply then test. Full E2E/thirty-minute session next due Q9.
+
+## Q8 complete — 2026-11-10
+- Five daily activities, weekly chests at ten/twenty/thirty claims and seven calendar-safe login gifts; one actionable badge module for A6.
+- Typecheck/lint PASS; full web 1,887 PASS; rules 1,291 PASS plus existing expected failures/skips. Final six daily rules tests and rules typecheck PASS.
+- Three inspected WebPs. All daily actions fit 1280×720; real login claim/reload remains one-time, without overflow or page/console errors.
+- Sim: 500 seeds, 247.22 s. Pacing unchanged; Epic by day two 54.2%, pity budget by day six 0%. Current caps keep G5 partial for Q9/Q12.
+- OFF exact 8,250 routes and A5 exact forty-five; expected hashes unchanged. q8-compatibility.json.
+- Q9 next; full E2E and thirty-minute real-click session due. Fresh final seeds remain unused.

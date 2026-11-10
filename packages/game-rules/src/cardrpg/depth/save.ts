@@ -110,6 +110,16 @@ export function validateDepth(value: unknown): asserts value is DepthAccount {
   example.equipment = {};
   shape(value, example);
   const state = value as DepthAccount;
+  const dailyA6 = state.dailyA6;
+  if(dailyA6!==undefined){
+    if(!record(dailyA6)||!Number.isSafeInteger(dailyA6.day)||dailyA6.day<1||dailyA6.day>state.account.day
+      ||!Number.isSafeInteger(dailyA6.week)||dailyA6.week!==Math.floor((dailyA6.day-1)/7)
+      ||!Number.isInteger(dailyA6.weeklyPoints)||dailyA6.weeklyPoints<0||dailyA6.weeklyPoints>35
+      ||!Number.isSafeInteger(dailyA6.loginDay)||dailyA6.loginDay<0||dailyA6.loginDay>state.account.day
+      ||!Number.isInteger(dailyA6.loginGifts)||dailyA6.loginGifts<0||dailyA6.loginGifts>7)fail();
+    for(const tasks of [dailyA6.completed,dailyA6.claimed])if(!Array.isArray(tasks)||new Set(tasks).size!==tasks.length||tasks.some(t=>!['patrol','tips','recruit','train','gear'].includes(t)))fail();
+    if(dailyA6.claimed.some(t=>!dailyA6.completed.includes(t))||!Array.isArray(dailyA6.weeklyClaims)||new Set(dailyA6.weeklyClaims).size!==dailyA6.weeklyClaims.length||dailyA6.weeklyClaims.some(n=>![10,20,30].includes(n)||n>dailyA6.weeklyPoints))fail();
+  }
   const idleA6 = state.idle.a6;
   if (idleA6 !== undefined && (!record(idleA6) || !Number.isSafeInteger(idleA6.fastDay) || idleA6.fastDay < 0 || !Number.isInteger(idleA6.fastClaims) || idleA6.fastClaims < 0 || idleA6.fastClaims > 2)) fail();
   if(state.gameplayA6!==undefined&&(typeof state.gameplayA6!=='boolean'||state.gameplayA6&&(!state.skillsV5||!state.gameplayV4)))fail();

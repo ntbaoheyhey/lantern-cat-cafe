@@ -8,7 +8,7 @@
 - [x] Q5  Formation (by 13 Nov 18:00 UTC): front/back rows on the existing grid, enemy preview with power and threats, 3 suggested teams, saved teams per mode, bond lines visible. Click-to-place stays; keyboard OK.
 - [x] Q6  Campaign map + idle chest (by 14 Nov 18:00 UTC): chapter map inside the cafe theme (night street / rooftops), stages with 3 stars (win; no cat fallen; within N rounds), chapter boss node, star chests, idle chest in the cafe scene with claim animation, fast-reward button (limited per day).
 - [x] Q7  Yarn Tower (by 15 Nov 12:00 UTC): 30 floors, fixed lineups, milestone chests every 5 floors, uses the same battle and formation. Entry from the dock or the hub.
-- [ ] Q8  Daily loop + red dots (by 15 Nov 18:00 UTC): 5 daily tasks, weekly bar with 3 chests, 7-day login gifts, ONE badge module that computes every red dot (no ad-hoc badges); every red dot must lead to an action that is possible right now.
+- [x] Q8  Daily loop + red dots (by 15 Nov 18:00 UTC): 5 daily tasks, weekly bar with 3 chests, 7-day login gifts, ONE badge module that computes every red dot (no ad-hoc badges); every red dot must lead to an action that is possible right now.
 - [ ] Q9  Recruit upgrade (by 16 Nov 18:00 UTC): x1/x10, pity counter, rate table, 4-beat reveal (deal card backs, glow color tease, flip in rarity order, full splash for new Epic+), shards and star-up, NFT caps unchanged. Extend Lane U's reveal (#434), don't fork it.
 - [ ] Q10 Relic treasure slot (by 17 Nov 06:00 UTC): read-only Fuji Relics (existing chain package, RelicNFT 0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D) -> team-wide bonus, capped (+8% total max), "Relic Fuji" badge with explorer link; fixture in the offline demo. No contract or server change.
 - [ ] Q11 First 30 minutes (by 17 Nov 18:00 UTC): unlock order and celebrations (P11), hand pointer for the first 3 actions, chapter-1 difficulty curve, copy rewrite (short Vietnamese-friendly English UI text; keep i18n structure if present). G3 must pass here.
@@ -36,5 +36,6 @@
 - Q5 complete 2026-11-10 08:09 UTC: front/back rows, three suggestions, mode teams, forecast and bond links.
 - Q6 complete: campaign map, star chests, twelve-hour idle and two fast rewards; 421 E2E and thirty-minute session pass stability. Final bookkeeping fix rolls into Q7 sim.
 - Q7 complete: thirty fixed Tower floors, six milestone chests, shared formation/battle and exact OFF/A5. Tower pacing is partial for Q12.
-- Q8 active: five daily tasks, weekly bar, seven login gifts and one actionable badge selector.
+- Q8 complete: five daily tasks, weekly bar, seven login gifts and one actionable badge selector; exact OFF/A5.
+- Q9 active: extend RecruitV3 with the four-beat batch reveal and consistent earned-stamp pricing; full E2E and thirty-minute click session due.
 - Q14 integration merge conflicts with the fixed no-merge rule; prepare reviewable integration and skip any unauthorized merge while continuing other work.

@@ -1,21 +1,22 @@
 # Lane A6 active handoff
 
-- STEP 2 active; Q0–Q7 complete; continue Q8 without ending at checkpoints.
+- STEP 2 active; Q0–Q8 complete; continue Q9 without ending at checkpoints.
 - Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/cardrpg-a6-q0-2026-11-10; draft #438 against UI v3 U9.
 - TASK.md owns request; QUEUE.md owns order. Check INBOX and root STOP-A6 each item. Deadline 2026-11-20 12:00 UTC.
 - One agent; no model helpers/app control/other-worktree writes/merge/deploy/main push/force-push/secrets.
-- Q7 has thirty fixed floors, six milestone chests, isolated stars/rewards and the shared preparation/battle. Route tab returns to formation.
-- Q7 typecheck/lint PASS; rules 1,286 PASS; web 1,881 PASS plus two load timeouts passed isolated retry (24 tests). Final Tower/Campaign six tests PASS.
-- Three WebPs inspected including 1280×720; synthetic unlocked fixture. Headless click check has no overflow/page/console errors.
-- Q7 sim 500 seeds, 212.14 s: normal 30.88 s, boss 79.38 s, Tower median 58.94 s/p90 104.65 on level-six Epic fixtures. Tower pacing partial for Q12.
-- Q7 OFF digest exact over 8,250 routes; A5 exact over forty-five; q7-compatibility.json. Shared lock released, session 35831 finished successfully.
-- Q6 last full E2E: all 421 pass. Last thirty-minute click run: 29 wins/no losses/errors/stalls; normal 43.14 s/p90 63.61, boss 72.56/92.69.
-- Q8 draft bundle /tmp/cardrpg-a6-daily-staged.json includes rules, CSS, UI tests, sim claims and shared click-runner claims. Virtual-source web/rules typecheck passed; not applied or unit-tested yet.
-- Do not regenerate that bundle from daily-stage.py: daily-extra.py and later fixes have already changed it. Apply JSON paths directly, then inspect diff.
-- Q8 includes five task counters at transactDepth, weekly chests, seven login gifts, capped/calendar-aware claims and badges-a6.ts; keep OFF exact.
-- Q9 reveal-only draft /tmp/cardrpg-a6-recruit-staged.json extends RecruitV3 in place. Plan /tmp/cardrpg-a6-recruit-plan.md; not applied/tested, no economy changes yet.
+- Q7 committed/pushed 0bc95370a. Q8 is ready to commit/push now; PR metadata must then be updated before Q9.
+- Q8 five tasks observe successful transactions; weekly chests at 10/20/30 claims, seven calendar-aware login gifts, centralized badges. Daily tasks reset; login gifts retain place.
+- Q8 typecheck/lint PASS; web 1,887 PASS; rules 1,291 PASS plus two existing expected failures/eleven skips. Final six daily tests and rules typecheck PASS.
+- Three inspected WebPs, including small screen before/after claim. All five claim actions fit 1280×720; real click/reload resists duplicates; no errors/overflow.
+- Q8 sim 500 seeds, 247.22 s: normal 30.88 s, boss 79.38 s, Tower 58.94 s. Epic day two 54.2%, pity budget day six 0%; caps keep economy partial.
+- Q8 OFF exact 8,250 routes; A5 exact forty-five; q8-compatibility.json. Lock released, session 91474 completed successfully.
+- Q9 ready draft /tmp/cardrpg-a6-recruit-staged.json: same RecruitV3 four-beat 5.4 s batch, skip after first beat, visible odds, shared state-aware 60-stamp price, welcome credit, UI/rules tests and CSS. Not applied/tested.
+- Draft includes current final Q8 CSS and sim. Do not re-run recruit-stage.py or recruit-extra.py blindly; apply JSON and inspect diff. Pricing keeps OFF 150, pity/odds/draw/NFT caps unchanged.
+- Q9 needs full E2E + thirty-minute actual click session. Existing runner tools/cardrpg-a6/first-session.mjs has Q8 claim support.
+- Last full E2E Q6: all 421 pass. Last thirty-minute run: 29 wins/no losses/errors/stalls; normal 43.14 s/p90 63.61, boss 72.56/92.69.
 - Vite own PID 94188 on 5960, /tmp/cardrpg-a6-q6-vite.log. Use only 5960–5963 and /tmp/cardrpg-a6-*.
-- Heavy builds/E2E/perf take tools/cardrpg-big/with-timing-lock.mjs; leases ≤20 min. df before builds. Never delete another lane’s live lock or kill its PID.
-- Reports about 1.4 MB/60 MB; disk 192 GiB. Fresh 60001–60500 unused until Q15.
+- E2E helper /tmp/cardrpg-a6-q6-e2e.py sets all four allowed ports; stop only own Vite before it. Clone to Q9 filenames, use timing lock, df before build, timeout 19 min; restart own Vite afterward for clicks.
+- Heavy builds/E2E/perf use tools/cardrpg-big/with-timing-lock.mjs; leases ≤20 min. Never delete another lane’s live lock or kill its PID.
+- Reports 1.5 MB/60 MB; disk 192 GiB. Use cwebp for screenshots (Pillow/sharp absent here). Fresh 60001–60500 unused until Q15.
 - Next full E2E/thirty-minute session due Q9, then Q12/Q15.
 - Q14 merge conflicts with fixed no-merge rule; prepare reviewable integration, skip unauthorized merge and continue other work.

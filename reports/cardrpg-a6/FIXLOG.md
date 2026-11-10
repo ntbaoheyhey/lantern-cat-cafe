@@ -56,3 +56,7 @@
 - Full rules suite: 1,286 pass plus existing expected failures/skips. Two unrelated web layout tests timed out under concurrent host load; their isolated retry and the new Tower regression pass all twenty-four tests without changing timeouts.
 - A real click exposed the Route tab closing during unrelated account notifications. Reset it only on a changed screen/encounter, and provide an explicit return-to-formation action.
 - Q7 measurement: Tower median 58.94 s and per-floor medians 18.6–169.2 s miss the 20–50 s target on the fixed level-six fixture. Preserve fixed lineups and log this for Q12 balance; no earned-player pacing claim. The sim runtime is 212.14 s, still above three minutes.
+
+## Q8
+- Initial 1280×720 layout placed daily claim buttons below the fold. Moved the login action beside its heading and tightened small-height spacing; all five actions now fit and the real-click check asserts their bounds.
+- Daily progression is observed only after successful public transactions. The final test group covers all five activities, duplicate claims, caps, rollover, rollback and OFF preservation.

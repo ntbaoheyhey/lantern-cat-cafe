@@ -40,3 +40,6 @@ export * from './upgrades-a6';
 export * from './idle-a6';
 
 export * from './tower-a6';
+
+export * from './daily-state-a6';
+export * from './daily-a6';

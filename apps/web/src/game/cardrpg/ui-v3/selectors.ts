@@ -1,3 +1,4 @@
+import {badgesA6} from './badges-a6';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import {CARD_RPG_CONFIG,QUESTS} from '@taskbar-hero/game-rules/cardrpg';
 import {teamPower} from '../depth/meta-presentation';
@@ -5,6 +6,11 @@ export function homeView(state:R.DepthAccount, now:number) {
   const run=state.run&&!state.run.complete?state.run:null;
   const next=run?(run.battle?run.nodes.find(n=>n.id===run.current):R.availableNodes(run)[0]):undefined;
   const chapter=run?.chapter??Math.min(3,state.cleared.length+1);
+  if(R.gameplayA6(state)){
+    const badges=badgesA6(state,now);
+    return {power:teamPower(state),chapter,subline:state.tutorial<3?'Your first adventure':run?.towerA6?`Yarn Tower · Floor ${run.floor}`:`Chapter ${chapter} · Stop ${(next?.depth??0)+1} · ${next?.kind??'Battle'}`,
+      tasks:badges.events,milestones:0,free:badges.free,recruit:badges.recruit,shift:R.idleChestA6(state,now),cats:badges.cats,gear:badges.gear};
+  }
   const tasks=run?0:QUESTS.filter(q=>!R.boardPreviewV4(state,q.id).reason).length;
   const milestones=run?0:R.MILESTONES_V4.filter(x=>!R.milestonePreviewV4(state,x.id).reason).length;
   const available=state.account.daily.draws<CARD_RPG_CONFIG.maxDrawsPerDay;

@@ -1,3 +1,4 @@
+import type { DailyProgressA6 } from './daily-state-a6';
 import type { PackedSupplyV4 } from './items-v4';
 import type { AccountState, Slot, Rarity, Stats } from '../contract';
 import type { BattleV4State, GameplayV4State, StandingPlan } from './gameplay-v4';
@@ -77,6 +78,7 @@ export interface GearTemplate {
 export interface AffixRule { id: string; name: string; slots: Slot[]; stat: string; tiers: [number, number][]; description: string }
 export interface GearInstance { id: string; templateId: string; enhancement: number; tier: 1 | 2 | 3; affixes: string[]; rolls: Record<string, number> }
 export interface DepthAccount {
+  dailyA6?: DailyProgressA6;
   gameplayA6?: boolean; skillsV5?: boolean; gameplayV4?: boolean; v4?: GameplayV4State;
   version: typeof CONTRACT_VERSION; account: AccountState; team: string[]; rows: Record<string, Row>; skills: Record<string, string[]>;
   run: Run | null; nextRunId: number; cleared: number[]; towerBest: number; lastBattle: BattleSetup | null; lastChoices: Choice[];

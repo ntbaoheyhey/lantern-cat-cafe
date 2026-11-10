@@ -1,3 +1,4 @@
+import {DailyA6} from './DailyA6';
 import { TeamA6 } from './FormationA6';
 import { PowerA6, QuickUpgradeA6 } from './PowerA6';
 import { BondSummaryA6 } from './BondsA6';
@@ -62,5 +63,6 @@ export function BagSheet({m,materials=false}:{m:DepthModel;materials?:boolean}) 
 
 export function EventsSheet({m}:{m:DepthModel}) {
  const [more,setMore]=useState(false),active=!!m.state.run&&!m.state.run.complete;
+ if(R.gameplayA6(m.state))return <><DailyA6 m={m}/><details><summary>More cafe rewards</summary><Suspense fallback={<p>Opening…</p>}><FullBoard m={m}/></Suspense></details></>;
  return <>{R.MILESTONES_V4.some(x=>!R.milestonePreviewV4(m.state,x.id).reason)&&<button onClick={()=>m.go('journal')}>Collect journal rewards</button>}<div className="uv-task-grid">{QUESTS.map(q=>{const p=R.boardPreviewV4(m.state,q.id);return <article className="uv-detail" key={q.id}><small>{q.cadence}</small><h2>{q.name}</h2><p>{q.description}</p><progress aria-label={`${q.name} progress`} value={p.progress.progress} max={q.target}/><p>{p.progress.progress}/{q.target}</p><CostView cost={p.reward}/><button disabled={active||!!p.reason} onClick={()=>m.command({type:'claimQuest',questId:q.id})}>{p.progress.claimed?'Collected':'Collect reward'}</button></article>})}</div><button onClick={()=>setMore(!more)} aria-expanded={more}>Read cafe news</button>{more&&<Suspense fallback={<p>Opening…</p>}><FullBoard m={m}/></Suspense>}</>;
 }
