@@ -31,6 +31,7 @@ import type {ActorAppearance} from './appearance';
 import { loadModel } from './assets';
 import { animateIllustrated } from './look-puppet';
 import { PuppetNumbers } from './look-puppet-numbers';
+import { PUPPET_BOSS_ADD_LANES, updatePuppetBossAddLanes } from './look-puppet-formation';
 import { animatePainted, installPaintedMaterial } from './look-painted';
 import { cloneBattleModel, animateGeneratedFace, disposeGeneratedSkeletons } from './look-generated';
 import {screenBounds,auditBounds} from './scene-audit';
@@ -86,6 +87,7 @@ export class TurnScene {
   private cardSurfaces?: CardSurfaces;
   private cardEffects?: CardEffects;
   private puppetNumbers?: PuppetNumbers;
+  private puppetBossAddLanes=new Map<string,number>();
   readonly loading = { completed: 0, total: 5, label: 'Preparing the cafe' };
   private facePoint = new T.Vector3();
   private faceEdge = new T.Vector3();
@@ -475,6 +477,7 @@ export class TurnScene {
     if(isReadableBattle()&&view.autoBattle)for(const actor of view.actors)if(actor.side==='enemy'){enemyCount++;loneKettle=(view.models?.[actor.id]??this.puppets.get(actor.id)?.asset)==='kettle-knight';}
     const bossFraming=view.boss||(enemyCount===1&&loneKettle);
     const illustratedBattle=isReadableBattle()&&view.autoBattle&&artPipeline()==='puppet';
+    updatePuppetBossAddLanes(illustratedBattle&&bossFraming&&!view.model?view.actors.filter(a=>a.hp>0&&(view.models?.[a.id]??this.puppets.get(a.id)?.asset)==='binding-thread').map(a=>a.id):[],this.puppetBossAddLanes);
     const frame=view.frame, cardRecipe=view.autoBattle?cardRecipeFor(frame,view.actors):undefined, source=frame?this.puppets.get(frame.plan.actorId):undefined;
     const targets=frame?frame.plan.targetIds.map(id=>this.puppets.get(id)).filter((p):p is Puppet=>!!p):[];
     for(const a of view.actors){const p=this.puppets.get(a.id);if(!p)continue;const slot=view.model?this.zero:view.autoBattle?cardFormation(a,view.rows?.[a.id]):formationPoint(a,view.boss);if(!view.autoBattle||a.hp>0)p.base.set(slot.x,slot.y,slot.z);if(this.lookStageEnabled&&view.galleryPreview&&!illustratedBattle&&a.side==='party'){const lane=a.slot%3;p.base.set([-1.35,-2.65,-3.65][lane]!,0,[.25,1.05,-.65][lane]!);}
@@ -484,8 +487,10 @@ export class TurnScene {
       if(illustratedBattle&&!view.model&&bossFraming&&a.hp>0&&p.asset==='rain-spool')p.base.x+=.85;
       // Boss adds stand in distinct foreground lanes: a rear thread otherwise
       // disappears behind a wide boss even when all HP cards are collision-free.
-      if(illustratedBattle&&!view.model&&bossFraming&&a.hp>0&&p.asset==='binding-thread')
-        p.base.set(a.slot%2?2.85:4.15,0,a.slot%2?1.25:.15);
+      if(illustratedBattle&&!view.model&&bossFraming&&a.hp>0&&p.asset==='binding-thread'){
+        const lane=this.puppetBossAddLanes.get(a.id);
+        if(lane!==undefined){const [x,z]=PUPPET_BOSS_ADD_LANES[lane]!;p.base.set(x,0,z);}
+      }
       p.root.position.copy(p.base);p.root.scale.setScalar(view.model?1:figureScale(a.role,a.side)*(isReadableBattle()&&view.autoBattle?(p.asset==='kettle-knight'?(bossFraming?3.50:2.1):a.role==='yarn'?(view.boss?(p.asset==='pantry-crown'?2.12:1.94):1.25):a.side==='party'?1.25:1.38):1));p.model.rotation.y=view.model?view.model.angle:view.autoBattle?cardBodyYaw(a.side,0,0):restYaw(a.side);
       if(illustratedBattle&&!view.model&&p.model.userData.lookPuppet){
         // Normalize illustrated heights; native-era role compensation made Yarn dwarf cats.

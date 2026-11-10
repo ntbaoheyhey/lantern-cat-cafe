@@ -179,3 +179,17 @@ P5 review attempt1: solo Kettle retained elite-sized puppet despite existing bos
 
 ## B-PUPPET-007 — P6 impact flash obscured concept
 Pilot image review showed white silhouettes during impact AND recovery. Cause: held mixer progress fed sin(t*pi) flash across the whole reaction. Use elapsed local hit age and a45% tint decaying over the first24% of reaction; reduced motion stays0. One visual repair, saved final49+6cast audit verified restored colours and zero overlaps; resolved. Number fixture expected obsolete Cozy text; existing status vocabulary correctly maps it to Warm, corrected test expectation.
+
+## B-PUPPET-008 — current A6 shell in the disposable preview
+P7 source audit found that prior preview retained an earlier A6 UI: current art-a6 adapter/new HUD files and800/400/267ms cut-in were missing. Copy fetched A6-owned UI files and their published assets into the authorized disposable preview; preserve old preview files in work/preview-before-current-a6-shell. No B-published HUD/rules edits and no writes to A6 worktree. Earlier accepted art evidence stays historical; P7 controlled before/after pairs and P10films now use the current shell. This is a necessary integration correction, not a repeated roster review.
+
+## B-PUPPET-009 — P10 fixture counted enemy ultimates as cat showcase coverage
+Saved75s films had no cat ultimate because the setup used level1 starters (only skills1–3). Candidate selection counted all ultimate.cast events, including enemy rage casts; film logger intentionally counted cat skill4 only. Rules/replay resolution is not the cause. Attempt1: use explicit level6 showcase progression, derive unlocked kits through battleCats/availableSkills, require at least3cat ultimates in candidate selection and in captured film acceptance. Preserve both original films and fixtures under their original names; new attempts get distinct paths. No published gameplay rule or A6 model change.
+
+P13 capture harness repair: ready flag could refer to prior gallery before new asset arrived. Wait for Rain Spool and current actor IDs before reading its transform; reuse completed repair1 build. Runtime formation attempt1 remains unchanged.
+
+P13 wrapper repair: delivery-budget needs ART_ARTIFACT as well as receipt. Move export ahead of budget and resume there; reuse completed type/lint25tests, build and parity. No runtime change or repeated gate.
+
+2026-11-10T19:06:37.950652+00:00 P15 reproduction: full boss film90s shows four Binding Thread HPcards but only two silhouettes, due to P13slot parity reusing positions. Phase3 was outside earlier initial-state capture coverage. Smallest fix: explicit four-slot fan and actual phase3 capture; keep priorfilm as diagnostic.
+
+2026-11-10T19:17:28.571347+00:00 P15 attempt1: four unique bases still leave summons feet15px below canvas and two right faces57px apart. Three/four helpers reproduced for3bosses×2sizes. Repair2 moves only summoned lanes to(.40,1.15)/(1.60,1.35); initial pair/scales unchanged.
