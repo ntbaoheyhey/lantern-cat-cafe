@@ -481,7 +481,7 @@ export class TurnScene {
       if(illustratedBattle&&!view.model&&p.model.userData.lookPuppet){
         // Normalize illustrated heights; native-era role compensation made Yarn dwarf cats.
         const puppetHeight=(p.model.userData.paintedRig as {height:number}).height;
-        p.root.scale.setScalar((p.model.userData.paintedRig.boss?3.70:a.side==='party'?2.08:2.10)/puppetHeight);
+        p.root.scale.setScalar((p.model.userData.paintedRig.boss&&(p.asset!=='kettle-knight'||bossFraming)?3.70:a.side==='party'?2.08:2.10)/puppetHeight);
       }
       if (view.tableau) {
         p.base.set((a.slot - 1) * 2.1, 0, a.slot === 1 ? -.35 : .3);
@@ -581,7 +581,7 @@ export class TurnScene {
     const boss=view.actors.find(a=>a.hp>0&&(BOSS_STYLES[this.puppets.get(a.id)?.asset??'']||isReadableBattle()&&isReadableBoss(this.puppets.get(a.id)?.asset??'')));
     const bossPuppet=boss?this.puppets.get(boss.id):undefined;
     const bossCue=bossPuppet?bossPerformance(this.time-bossPuppet.enteredAt,this.time-bossPuppet.phaseAt,view.reducedMotion):null;
-    this.bossAtmosphere?.update(view.model?undefined:bossPuppet?.asset,bossPuppet?.base,bossPuppet?.bossPhase??1,bossCue?.progress??0,view.reducedMotion);
+    this.bossAtmosphere?.update(view.model?undefined:bossPuppet?.asset,bossPuppet?.base,bossPuppet?.bossPhase??1,bossCue?.progress??0,view.reducedMotion,illustratedBattle?this.time:undefined);
     for (const group of this.stage.children) {
       if (group.userData.chapter) group.visible = group.userData.chapter === view.chapter;
     }

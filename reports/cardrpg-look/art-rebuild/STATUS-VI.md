@@ -30,3 +30,9 @@ Tiếp tục P5 trong cùng lượt, không làm lại P1–P4.
 
 P5 đợt1 đã nhận sáu quái, 48 tư thế và không lỗi trang/đè mặt-HP; Kettle sửa tỉ lệ cảnh boss.
 Điểm tự đánh giá 7,6–7,9; bản chung A6 31,10 MB. Tiếp tục sáu quái còn lại và hiệu ứng idle/chuyển pha boss.
+
+Đã đọc lại RULES/QUEUE/HANDOFF sau bàn giao; hai addendum vẫn nguyên văn, không chèn trùng.
+P5 batch cuối đã qua kiểm tra tự động; đang duyệt ảnh trước khi chốt và tiếp tục P6 socket/VFX/số canvas.
+
+P5 hoàn tất: đủ 13 quái/boss từ concept gốc; 4 boss có nhịp thở, mắt sáng, hạt sáng và chuyển pha, reduced motion đạt.
+19 test, parity 5 seed và kiểm tra hai cỡ màn hình đều đạt; bản chung A6 32,96 MB. Tiếp tục P6 ngay.

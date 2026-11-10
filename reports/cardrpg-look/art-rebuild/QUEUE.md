@@ -8,7 +8,7 @@ Check STOP-B/INBOX and fetch/show A6-OUTBOX between items. Commit/push and updat
 - [x] P2 Pilot 3 units (6 h): Mochi, Soot, Yarn Giant as puppets in a real battle; side-by-side with concepts; all motions; score >= 7.5 each. Fix lowest issue first (max 3 rounds per issue).
 - [x] P3 Camera + composition (3 h): closer framing, cats/enemies placement, no empty floor, ult push-in, shake. Before/after pair. Tell A6 in B-OUTBOX.
 - [x] P4 All 12 cats (2 batches of 6; commit/push per batch): Mochi, Soot, Clover, Panko, Mallow, Cinnamon, Velvet, Biscuit, Brioche, Marigold, Sorrel, Inkcap (check the exact roster ids in the code). Done per batch: battle captures, contact sheets, face/HP check, scores >= 7.5.
-- [ ] P5 All enemies and bosses (batches of 6): all 13 enemy concepts mapped to every enemy/boss id in the rules; bosses with boss idle + phase flash. Done: every enemy id has a puppet or a documented fallback.
+- [x] P5 All enemies and bosses (batches of 6): all 13 enemy concepts mapped to every enemy/boss id in the rules; bosses with boss idle + phase flash. Done: every enemy id has a puppet or a documented fallback.
 - [ ] P6 VFX pass (6 h): every signature skill and ultimate on the puppets' real sockets/targets/timing; damage numbers; audit score >= 8.0 at x1 (reuse existing VFX masters where they fit).
 - [ ] P7 Stage + light (3 h): warm cafe, faces lit, richer enemy side, night window; cast frame <= 33 ms.
 - [ ] P8 Portraits/icons/card art (3 h): regenerate crops from the final puppet art where needed; one manifest; B-OUTBOX entry for A6.
@@ -35,3 +35,5 @@ P4 complete 2026-11-10T17:02:31.079205+00:00: all12cats in two published batches
 NON-STOP addendum recorded: continue the active item after checkpoints; only explicit stop/deadline/all-user-blocked gates apply. Full exact text in RULES.md and PROMPT.txt.
 
 P5 batch1 accepted 2026-11-10T17:13:18.731907+00:00: six enemies,48poses,zero page/faceHP/DOM overlap;18tests/parityPASS. Second six and boss performance remain active.
+
+P5 complete 2026-11-10T17:22:53.971881+00:00: all13enemy ids covered with original rigs/atlases; final7units56poses and4bosses×2sizes,0errors/overlaps;19tests and5seedparityPASS. Boss breathing/eye glow/motes/phase flash and reduced-motion verified. P6 next.

@@ -432,3 +432,6 @@ Velvet, Biscuit, Brioche, Marigold, Sorrel, Inkcap reuse their original concepts
 
 ## 2026-11-10 P5 batch1 illustrated enemies
 Button Guard, Sock Skipper, Spool Ram, Needle Moth, Teacup Healer, Kettle Knight reuse their original concepts and generation prompts above. No new inference. Authored polygons/pivots, Telea hidden fill, WebP93 via puppet/build.py; masters/receipts ~/art/look-v3/puppets/<id>. Final battle/concept + motion sheets p5/batch1-final. Kettle boss eye regions are authored from its original image.
+
+## 2026-11-10 illustrated puppet derivatives — P5 complete
+All13original enemy concepts reused; no model call. Final Binding Thread/Practice Cushion/Pollen Scout/Rain Spool/Crumb Sentinel/Pantry Crown plus Yarn eye metadata authored with existing cut/fill/pack tool. Exact per-unit config and rig source hashes retained; masters ~/art/look-v3/puppets. All13ruleids validated, actual battle/motion/phase evidence p5/. Native-era dirty acceptance notes remain outside this commit.

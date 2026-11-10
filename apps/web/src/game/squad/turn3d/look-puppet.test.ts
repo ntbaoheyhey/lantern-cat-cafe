@@ -2,7 +2,7 @@ import { afterEach, describe, expect, it } from 'vitest';
 import rig from '../../../../../../assets/cardrpg-look/v3-puppets/mochi.rig.json';
 import { parsePuppetRig, puppetMotion, puppetPhase, puppetPose } from './look-puppet-rig';
 import { artPipeline } from './look-art';
-import { CATS } from '../../../../../../packages/game-rules/src/cardrpg/depth/catalog';
+import { CATS, ENEMIES } from '../../../../../../packages/game-rules/src/cardrpg/depth/catalog';
 
 const deliveredRigs=Object.values(import.meta.glob('../../../../../../assets/cardrpg-look/v3-puppets/*.rig.json',{eager:true,import:'default'}));
 const deliveredAtlases=import.meta.glob('../../../../../../assets/cardrpg-look/v3-puppets/*.webp',{query:'?url',import:'default'});
@@ -15,6 +15,17 @@ describe('illustrated puppet contract and event motions',()=>{
       const r=parsed.get(cat.id);expect(r,cat.id).toBeDefined();
       expect(r!.boss,cat.id).toBe(false);
       expect(Object.keys(deliveredAtlases).some(path=>path.endsWith('/'+r!.atlas)),cat.id).toBe(true);
+    }
+  });
+  it('covers every rules enemy and boss with its concept rig, role and atlas',()=>{
+    const parsed=new Map(deliveredRigs.map(value=>{const r=parsePuppetRig(value);return[r.id,r];}));
+    for(const enemy of ENEMIES){
+      const r=parsed.get(enemy.id);expect(r,enemy.id).toBeDefined();
+      expect(r!.role,enemy.id).toBe(enemy.role);
+      expect(Object.keys(deliveredAtlases).some(path=>path.endsWith('/'+r!.atlas)),enemy.id).toBe(true);
+      if(enemy.tier==='boss'){
+        expect(r!.boss,enemy.id).toBe(true);expect(r!.eyeStyle,enemy.id).toBe('glow');expect(r!.eyes,enemy.id).toHaveLength(2);
+      }
     }
   });
   it('loads an authored atlas and rejects corrupt coordinates before rendering',()=>{

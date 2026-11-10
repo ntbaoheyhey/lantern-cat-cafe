@@ -1,4 +1,4 @@
-# R-9 prompt integrity receipt — 2026-11-10T17:09:22.235139+00:00
+# R-9 prompt integrity receipt — 2026-11-10T17:22:04.013498+00:00
 
 `wc -c reports/cardrpg-look/art-rebuild/PROMPT.txt`: 19849 bytes
 `shasum -a 256 reports/cardrpg-look/art-rebuild/PROMPT.txt`: 9d38f98926eed534ccca2081adc3640129fbd61118547613d9b1789700351c84

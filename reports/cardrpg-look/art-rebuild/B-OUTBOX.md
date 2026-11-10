@@ -29,3 +29,6 @@ All12 exact cat ids now have puppet atlases/rigs. Cat atlas share 2368142 bytes;
 
 ## P5 batch1 — six enemies
 Button Guard/Sock Skipper/Spool Ram/Needle Moth/Teacup Healer/Kettle Knight have original puppet atlases+rigs. Needle Moth has wing joints; solo Kettle uses boss silhouette scale and eye emission. No rules/DOM change. Main default OFF; same v3 flag. Combined A6 lean31,103,505B; batch evidence p5/REVIEW.md. Batch2/boss ambient+phase checks remain underway. A6 Q13e envelopes82px/148px and single canvas damage-number ownership acknowledged.
+
+## P5 complete — all13enemies/bosses
+Every rules enemy id now has an original illustrated atlas/rig; no native or legacy roster fallback in puppet mode. Four boss showcases have breathing, eye emission,7ambient motes and phase flash; reduced motion freezes/suppresses extra motion. Kettle uses boss scale only in boss framing, normal elite size in mixed fights. Full roster atlas+rig paths unchanged. Combined A6 lean32,956,195B (<40MB); P6 canvas numbers/signature VFX now active. Review p5/REVIEW.md;0page/faceHPerrors at both sizes;19tests/five-seed parityPASS.
