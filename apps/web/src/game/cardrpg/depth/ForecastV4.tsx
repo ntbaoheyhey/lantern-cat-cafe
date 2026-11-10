@@ -3,12 +3,13 @@ import type { BattleSetup } from '@taskbar-hero/game-rules/src/cardrpg/depth/con
 import type { ForecastV4 as Forecast } from '@taskbar-hero/game-rules/src/cardrpg/depth/forecast-v4';
 import { forecastKeyV4 } from '@taskbar-hero/game-rules/src/cardrpg/depth/forecast-key-v4';
 import ForecastWorker from './forecast-worker?worker&inline';
+import { CAT_BY_ID } from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import { forecastAdviceA6 } from '../ui-v3/guide-a6';
 
 // This module lifetime is the rules-build lifetime. Never persist forecasts into a save.
 const cache = new Map<string, Forecast>();
 type ForecastState = { key: string; result: Forecast; cached: boolean; elapsedMs: number };
-export function ForecastV4({ setup, label = "Rough forecast", unavailableMessage = "The forecast is unavailable. Read their plan below.", showChance = false }: { setup: BattleSetup; label?: string; unavailableMessage?: string; showChance?: boolean }) {
+export function ForecastV4({ setup, label = "Rough forecast", unavailableMessage = "The forecast is unavailable. Read their plan below.", showChance = false, compact = false }: { setup: BattleSetup; label?: string; unavailableMessage?: string; showChance?: boolean; compact?: boolean }) {
   const key = forecastKeyV4(setup);
   const [forecast, setForecast] = useState<ForecastState | null>(null);
   const [failedKey, setFailedKey] = useState<string | null>(null);
@@ -44,9 +45,9 @@ export function ForecastV4({ setup, label = "Rough forecast", unavailableMessage
   }, [key]);
   const current = forecast?.key === key ? forecast : null, failed = failedKey === key;
   return <section className="cr-panel dp-v4-forecast" aria-label={label} aria-live="polite"
-    data-forecast-ms={current?.elapsedMs} data-compute-ms={current?.result.computeMs} data-cache-hit={current?.cached}>
+    data-compact={compact} data-forecast-ms={current?.elapsedMs} data-compute-ms={current?.result.computeMs} data-cache-hit={current?.cached}>
     <small>ROUGH FORECAST</small><h2>{showChance&&!setup.gameplayA6&&current?`${current.result.band} · ${Math.round(current.result.wins/current.result.samples*100)}%`:current?.result.band ?? (failed ? 'Scout their plan' : 'Reading the matchup…')}</h2>
-    <p>{current ? setup.gameplayA6 ? forecastAdviceA6(setup.enemies, current.result.firstFallen) : current.result.risk : failed ? unavailableMessage : 'Checking your crew, gear and formation.'}</p>
+    {compact&&setup.gameplayA6&&current ? current.result.firstFallen&&<p>{CAT_BY_ID[current.result.firstFallen]?.name??current.result.firstFallen} often falls first.</p> : <p>{current ? setup.gameplayA6 ? forecastAdviceA6(setup.enemies, current.result.firstFallen) : current.result.risk : failed ? unavailableMessage : 'Checking your crew, gear and formation.'}</p>}
     <small>A forecast, never a promise.</small>
   </section>;
 }

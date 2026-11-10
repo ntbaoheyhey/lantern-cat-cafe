@@ -74,9 +74,13 @@ export function TeamA6({m}:{m:DepthModel}) {
 export function PrepareA6({m}:{m:DepthModel}) {
   useSyncExternalStore(m.subscribe,m.snapshot);
   const battle=m.battle!,enemies=battle.actors.filter(a=>a.side==='enemy');
+  const [chosen,setChosen]=useState<string|null>(null);
+  const selected=enemies.find(actor=>actor.id===chosen)??enemies.find(actor=>R.ENEMY_BY_ID[actor.catalogId]?.tier==='boss')??enemies[0]!;
+  const note=enemyGuideA6(selected.catalogId);
   return <><div className="uv-prepare-main"><div className="uv-prepare-grid a6-prepare-grid"><section aria-label="Your crew"><div className="uv-prepare-title"><h2>Your crew <PowerA6 value={battle.initial.cats.reduce((sum,cat)=>sum+R.powerScoreA6(cat.stats),0)}/></h2></div><FormationA6 m={m} preparing/></section>
-    <aside aria-label="Enemy preview"><h2>{m.tutorialBattle?'Practice table':'Tonight’s foes'}</h2><PowerA6 label="Recommended Power" value={enemies.reduce((sum,actor)=>sum+R.powerScoreA6(actor),0)}/>
-      <div className="uv-enemy-preview a6-foes">{enemies.map(actor=><article key={actor.id}><img {...portraitProps(actor.catalogId)} alt=""/><b>{actor.name}</b><PowerA6 value={R.powerScoreA6(actor)}/><small>{actor.row==='front'?'Front':'Back'} · {actor.maxHp} HP</small><p>{enemyGuideA6(actor.catalogId).counter}</p></article>)}</div>
-      <ForecastV4 setup={battle.initial} label="Matchup"/>
+    <aside aria-label="Enemy preview"><header className="a6-enemy-heading"><h2>{m.tutorialBattle?'Practice table':'Tonight’s foes'}</h2><PowerA6 label="Recommended Power" value={enemies.reduce((sum,actor)=>sum+R.powerScoreA6(actor),0)}/></header>
+      <div className="uv-enemy-preview a6-foes a6-foe-index" role="group" aria-label="Read an enemy note">{enemies.map(actor=><button key={actor.id} className="a6-foe-choice" aria-label={`Read ${actor.name} tactics`} aria-pressed={actor.id===selected.id} onClick={()=>setChosen(actor.id)}><img {...portraitProps(actor.catalogId)} alt=""/><b>{actor.name}</b><PowerA6 value={R.powerScoreA6(actor)}/><small>{actor.row==='front'?'Front':'Back'} · {actor.maxHp} HP</small></button>)}</div>
+      <section className="a6-foe-note" aria-label={`${selected.name} tactics`} aria-live="polite"><h3>{selected.name}</h3><p>{note.intent}</p><p className="a6-foe-counter"><strong>Try</strong> {note.counter}</p>{note.phases&&<small>{note.phases}</small>}</section>
+      <ForecastV4 setup={battle.initial} label="Matchup" compact/>
     </aside></div></div><footer className="uv-fight-bar"><span>{'Your cats fight automatically. Formation and upgrades shape the result.'}</span><button className="uv-fight" onClick={()=>m.fight()}>Fight <span aria-hidden="true">→</span></button></footer></>;
 }

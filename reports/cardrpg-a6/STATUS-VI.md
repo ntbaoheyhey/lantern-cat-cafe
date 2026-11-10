@@ -184,3 +184,6 @@ Mã sai không đổi tiến trình; bàn phím, âm thanh, tốc độ và xem 
 
 2026-11-10T22:49:00Z: Q28 hoàn tất: demo38,84MB,20ảnh nguồn và20ảnh offline đã duyệt; không lỗi hoặc gọi mạng.
 Chuyển mã lưu/đặt lại có xác nhận/hủy và toàn bộ tùy chọn hoạt động ở hai cỡ màn. Tiếp tục phần mô tả địch trên màn Chuẩn bị đang dùng chữ11px.
+
+2026-11-10T22:59:22Z: Q29 đã duyệt20ảnh hiện tại;13loại địch đọc/chọn đúng ở hai kích thước, chữ15px và toàn bộ thông tin vừa trên nút Fight.
+Đổi hàng/bàn phím/giảm chuyển động giữ nguyên seed và địch;8test/type/lint đã đạt. Đang tích hợp Velvet và đóng gói offline.

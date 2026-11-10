@@ -114,3 +114,5 @@ Q27: after Q26 source acceptance, retained guide720p view confirms a long catalo
 
 2026-11-10T22:46:55Z Q28: original letter/lantern desk reuses current save model and art manifest; bounded reset replaces only the letter body. Exact state and all preference values roundtrip; sound still needs an explicit click under the retained audio startup contract. No new storage or schema.
 2026-11-10T22:46:55Z Q29 scope from inspected q19/1280-prepare-earned: foe counter prose is11px in narrow cards and forecast repeats one foe mechanic. Next lowest Prepare7.9 gets selectable foe notes with15px mechanics/counter text and a compact forecast, retaining all enemy art/HP/row/Power and original calculation. No numerical tuning or new combat rule.
+
+2026-11-10T22:59:22Z Q29 source accepted:20current views,13notes/bothsizes and fixedseed/Fight checks;15pxselectedprose and compactforecast, original calculation retained. Q30 extends the existing readable-metadata/action-zone research: inspected q19/1280-team-suggested hides suggestion reasons and pushes crew below the fold. Bounded tools reuse existing commands and preserve the main formation table.

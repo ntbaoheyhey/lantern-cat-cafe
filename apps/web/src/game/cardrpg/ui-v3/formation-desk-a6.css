@@ -72,3 +72,56 @@
   .a6-formation-stage {gap:9px;padding:9px;}
  }
 }
+
+/* Foe cards keep all opponents visible; the chosen note uses readable type. */
+.uv-app[data-a6=true] {
+ .a6-prepare-grid .a6-foe-index {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:10px}
+ .a6-prepare-grid .a6-foe-index:has(>button:nth-child(3)) {grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+ .a6-foe-index>.a6-foe-choice {display:grid;justify-items:center;align-content:start;gap:4px;min-width:0;width:100%;padding:10px 7px;border:1px solid #b79a68;border-radius:13px;background:linear-gradient(#f8e8c7,#e5caa0);color:#674a2e;text-align:center;box-shadow:0 3px 0 #9f7b4540}
+ .a6-foe-index>.a6-foe-choice[aria-pressed=true] {border-color:#9a691e;background:linear-gradient(#fff2ca,#f2d58f);box-shadow:inset 0 0 0 2px #c28d3f,0 3px 0 #9f7b4540}
+ .a6-prepare-grid .a6-foe-choice>img {width:116px;height:112px!important;max-width:100%;object-fit:contain}
+ .a6-foe-choice>b {font-size:15px;line-height:1.25;min-height:19px}.a6-foe-choice>.a6-power {font-size:13px}.a6-foe-choice>small {font-size:13px;color:#866440}
+ .a6-foe-note {margin-top:12px;padding:13px 15px;border:1px solid #b9a073;border-left:4px solid #ad7c32;border-radius:4px 12px 12px 4px;background:linear-gradient(110deg,#fff7df,#f6e7c4)}
+ .a6-foe-note>h3 {font:700 20px/1.2 Georgia,serif;color:#68492d;margin:0 0 7px}
+ .a6-prepare-grid .a6-foe-note>p {font-size:15px;line-height:1.4;color:#705336;margin:6px 0}
+ .a6-foe-note .a6-foe-counter>strong {display:inline-block;color:#876023;font-size:12px;text-transform:uppercase;letter-spacing:.06em;margin-right:5px}
+ .a6-foe-note>small {display:block;font-size:13px;line-height:1.4;color:#886134;border-top:1px dashed #c3a36b;padding-top:7px;margin-top:8px}
+ .a6-prepare-grid .dp-v4-forecast[data-compact=true] {display:flex;flex-wrap:wrap;align-items:center;column-gap:12px;padding:10px 13px;margin-top:10px}
+ .a6-prepare-grid .dp-v4-forecast[data-compact=true]>h2 {font-size:22px;margin:0}.a6-prepare-grid .dp-v4-forecast[data-compact=true]>small:first-child {font-size:11px}
+ .a6-prepare-grid .dp-v4-forecast[data-compact=true]>p {width:100%;font-size:14px;line-height:1.35;margin:5px 0 0}
+ .a6-prepare-grid .dp-v4-forecast[data-compact=true]>small:last-child {width:100%;font-size:12px;margin-top:5px}
+ @media(max-height:780px) {
+  .a6-prepare-grid .a6-foe-index {margin-top:8px;gap:8px}.a6-foe-index>.a6-foe-choice {padding:7px 5px;gap:3px}
+  .a6-prepare-grid .a6-foe-choice>img {height:80px!important;width:96px}
+  .a6-foe-choice>b {font-size:14px}.a6-foe-choice>.a6-power,.a6-foe-choice>small {font-size:12px}
+  .a6-foe-note {margin-top:9px;padding:9px 11px}.a6-foe-note>h3 {font-size:18px;margin-bottom:5px}
+  .a6-prepare-grid .a6-foe-note>p {font-size:15px;line-height:1.35;margin:5px 0}
+  .a6-foe-note>small {font-size:12px;padding-top:5px;margin-top:5px}
+  .a6-prepare-grid .dp-v4-forecast[data-compact=true] {margin-top:8px;padding:8px 11px}.a6-prepare-grid .dp-v4-forecast[data-compact=true]>h2 {font-size:21px}
+ }
+}
+/* Keep the matchup and boss note above the stable Fight bar. */
+.uv-app[data-a6=true] {
+ .a6-enemy-heading {display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:43px}
+ .a6-enemy-heading>h2 {font-size:22px;line-height:1.2;margin:0}
+ .a6-enemy-heading>.a6-power {display:grid;justify-items:end;gap:1px;font-size:13px;margin:0}
+ .a6-enemy-heading>.a6-power>strong {font-size:18px}
+ .a6-prepare-grid .dp-v4-forecast[data-compact=true] {display:grid;grid-template-columns:auto 1fr;gap:4px 12px;margin-bottom:0}
+ .a6-prepare-grid .dp-v4-forecast[data-compact=true]>p {width:auto;margin:0}
+ .a6-prepare-grid .dp-v4-forecast[data-compact=true]>small:last-child {width:auto;margin:0;line-height:1.3}
+ .a6-prepare-grid .dp-v4-forecast[data-compact=true]:not(:has(>p))>small:last-child {grid-column:1/-1}
+ @media(max-height:780px) {
+  .a6-prepare-grid .uv-prepare-title h2 {display:flex;align-items:baseline;gap:10px}
+  .a6-formation[data-preparing=true] .a6-formation-stage {padding:8px}
+  .a6-formation[data-preparing=true] .a6-formation-row {padding:6px}
+  .a6-formation[data-preparing=true] .a6-formation-cat img {height:112px;width:112px}
+  .a6-formation[data-preparing=true] .a6-placement-hint {margin:5px 0}
+  .a6-formation[data-preparing=true] .a6-ready-pairs {margin:4px 0 0}
+  .a6-enemy-heading {min-height:28px}.a6-enemy-heading>h2 {font-size:20px}
+  .a6-enemy-heading>.a6-power {font-size:12px}.a6-enemy-heading>.a6-power>strong {font-size:16px}
+  .a6-prepare-grid .a6-foe-choice>img {height:72px!important}
+  .a6-foe-note {margin-top:7px}
+  .a6-prepare-grid .dp-v4-forecast[data-compact=true] {margin-top:6px;padding-block:6px}
+  .a6-foe-note>h3 {display:none}
+ }
+}
