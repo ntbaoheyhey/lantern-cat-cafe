@@ -1,5 +1,7 @@
-# Trạng thái lane A6 — Q0
-Đã tái sử dụng worktree sạch đúng nhánh A6; ổ đĩa còn 147 GiB, trên mức 15 GB.
-Đã cài dependency bằng pnpm install --frozen-lockfile, tạo đủ 9 tệp và ghi tóm tắt bàn giao 15 dòng.
-Đã thêm gameplayA6 mặc định tắt, chỉ bật với ?a6=1; chưa gắn hành vi gameplay.
-Typecheck, lint và 1.868 kiểm thử web đều đạt; Q0 sẵn sàng tạo draft PR, Q1–Q16 chờ STEP 2.
+# Trạng thái lane A6
+
+- Q0 và Q1 đã xong; đang làm Q2 trên draft PR #438.
+- Baseline 500 seed: trung bình thua 7,07 trận trong 30 phút; gợi ý hiện tại giúp thắng lại 17,59%.
+- Sim mất 8 phút 17 giây; đã ghi hạn chế tốc độ sau ba lần sửa, không kéo dài khâu đo.
+- Typecheck, lint, 1.868 test web và 1.262 test rules đạt; hai test dự kiến thất bại và 11 test bỏ qua có sẵn.
+- Q2 sẽ sửa nhịp đánh, nộ, tuyệt kỹ và nút điều khiển trận tự động; sản phẩm mặc định tắt A6.

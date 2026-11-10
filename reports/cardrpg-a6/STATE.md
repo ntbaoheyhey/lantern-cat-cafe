@@ -8,7 +8,8 @@
 - pnpm: 10.28.0 (repository packageManager version)
 - Free disk at setup: 147 GiB (df -h ~); above 15 GB threshold.
 - Dependencies: pnpm install --frozen-lockfile completed without lockfile changes.
-- Scope: Q0 only; await STEP 2 for Q1–Q16.
+- Scope: STEP 2 active; Q2 active; Q1 completed 2026-11-10 06:38 UTC.
+- Delivery branch remains codex/cardrpg-a6-q0-2026-11-10; one draft PR #438 for the whole lane.
 
 ## Report skim (15 lines; existing claims, not re-verified)
 1. Read the three skills-v5 reports and both ui-v3 reports from this worktree; no fallback git show was needed.
@@ -34,3 +35,10 @@
 - git diff --check: PASS; no dependency lockfile or prior rules/renderer changes.
 - gameplayA6: apps/web/src/game/cardrpg/gate.ts, OFF by default, ON only with ?a6=1; no behavior attached.
 - Delivery: draft-only PR against codex/cardrpg-ui-v3-u9-2026-11-09; no merge or deployment.
+
+## Q1 complete
+- One sim entry point added: tools/cardrpg-a6/sim.mjs. Up to twelve local CPU workers; no model requests.
+- Typecheck/lint PASS; web 1,868 PASS; rules 1,262 PASS, two existing expected failures and eleven existing skips.
+- BEFORE baseline complete: 500 seeds in 496.99 seconds; see BASELINE.md. Runtime over three minutes is a known issue after three repairs.
+- Mean first-session losses: 1.92 in ten minutes and 7.07 in thirty; existing hint retry win rate 17.59 percent.
+- Fresh seeds 60001–60500 remain unused.
