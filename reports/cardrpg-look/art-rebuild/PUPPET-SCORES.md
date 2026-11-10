@@ -8,7 +8,7 @@ Evidence uses A6 shell in a disposable merged preview; primary branch contains n
 | Mochi | 8.6 | 7.7 | 7.8 | 7.8 | p23/evidence/mochi-follow-through.webp; forward/up shield raise, head/paw/tail lag; tail partly obscured and lids still use sampled fur |
 | Soot | 8.6 | 7.7 | 7.7 | 7.7 | p12/soot-follow-through.webp and motion-review.json; authored lantern/head/tail lag accepted, other rigs unchanged |
 | Yarn Giant | 8.8 | 7.5 | 8.0 | 8.0 | p2/round1/yarn-giant-comparison.webp and yarn-giant-motion.webp; crown/yarn intact, P5 adds eye glow, breathing, ambient motes and phase flash |
-| Clover | 8.6 | 7.5 | 7.8 | 7.8 | p4/batch1-final/clover-comparison.webp and clover-motion.webp; green robe, teapot and tail stay clean; wrist motion restrained |
+| Clover | 8.6 | 7.7 | 7.8 | 7.8 | p24/evidence/clover-follow-through.webp; lift then tip the teapot at release, head/arm/tail response; tea remains painted in the rigid pot |
 | Panko | 8.6 | 7.5 | 7.8 | 7.8 | p4/batch1-final/panko-comparison.webp and panko-motion.webp; baker hat, loaf shield and roller retained; closed lid corrected |
 | Mallow | 8.6 | 7.5 | 7.8 | 7.8 | p4/batch1-final/mallow-comparison.webp and mallow-motion.webp; whisk/scarf silhouette retained; eyes fully close on defeat |
 | Cinnamon | 8.6 | 7.7 | 7.7 | 7.7 | p18/evidence/cinnamon-follow-through.webp; raised serving tray, restrained cup and delayed tail; gesture remains small |

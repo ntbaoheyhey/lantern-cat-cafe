@@ -37,6 +37,8 @@ Check STOP-B/INBOX and fetch/show A6-OUTBOX between items. Commit/push and updat
 
 - [x] P23 [auto] Lowest-motion continuation: Mochi raises its shield/lantern toward the enemy with a restrained free-paw brace, head response and delayed tail. Keep the source shield rigid and shoulder/feet clean; no invented separate lantern or apron mug. Original atlas/rig retained; two sizes, x1 basic/signature/ultimate/reduced, true socket/HP checks; max3repairs.
 
+- [x] P24 [auto] Lowest-motion continuation: Clover lifts its original glass teapot during charge, tips the spout at impact and settles with free-arm/head/tail response. Keep glass, sleeve, leaf collar and feet coherent; no new tea/prop parts. Original atlas/rig retained; refreshed A6 preview for paired two-size/basic/signature/ultimate/reduced/socket/HP checks; max3repairs.
+
 Research refinements 11/11: P6 uses the saved49+6cast audit and33tests; complete missing parity and visual acceptance. P7 records before/after plus representative cast timing. P8 reuses existing concepts/VFX and only exports missing formats. P10 adds representative x2/x3/reduced-motion readability checks alongside requested x1films. Completed P1–P5 are unchanged. Rationale in RESEARCH-PUPPET.md/DECISIONS.md.
 
 ## Completed history
@@ -90,3 +92,5 @@ P21 complete 2026-11-10T20:51:19.301203+00:00: repair3 clean knotted arms after 
 P22 complete 2026-11-10T20:58:14.081635+00:00: accepted firstcandidate/16pairedposes/8casts/27tests/type/lint/parityPASS; pillow spring/cleanface/plantedboots;38189302B; motion7.7/overall7.7.
 
 P23 complete 2026-11-10T21:02:30.587145+00:00: Mochi shieldforward/up/cleanoverlap;28tests/16pairedviews/12casts/type/lint/parityPASS;38189362B; motion7.7/overall7.8.
+
+P24 complete 2026-11-10T21:09:16.635786+00:00: Clover held teapot lift then release tip; 29tests/16pairedviews/12casts/type/lint/parityPASS; A65badf4428+B38193062B; motion7.7/overall7.8.
