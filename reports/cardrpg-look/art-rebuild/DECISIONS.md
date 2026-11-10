@@ -57,3 +57,6 @@
 - Known deformation does not become an accepted asset merely because scripts succeed: always qualityPARTIAL/runtimeAcceptedfalse; explicit preview-only install.
 - B-R1-008 is at3attempt cap. Preserve failed diagnostics and current viable source/neutral poses; no fourth weight-mask adjustment or roster expansion. Real surface separation remains next repair approach.
 - Publish source prototype, tools/evidence/reports; preserve dirty candidate renderer and local preview unchanged, without accepting or discarding it. No claim that22game clips are embedded in GLB.
+
+## 2026-11-10 continuous-run override
+NON-STOP-RUN.txt supersedes historical pause/deadlock notes. Q2 has one geometry-separation attempt then rigid-segment fallback. Known issues do not prevent Q3/roster. Free conversion applies to all units; quota failure gets three spaced attempts then animated layered fallback. Q10 explicitly authorizes integration branch merge commits, never PR merges. Existing sources and previous measurements are preserved.
