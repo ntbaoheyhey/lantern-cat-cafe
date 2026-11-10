@@ -22,6 +22,18 @@ class PartOverlapTests(unittest.TestCase):
         self.assertEqual(cfg['sockets']['mainHand'][0], 'armL')
         self.assertEqual(cfg['sockets']['offHand'][0], 'armR')
 
+    def test_mallow_whisk_and_mittens_exclude_scarf_and_tail(self):
+        cfg = json.loads((Path(__file__).parent/'configs/mallow.json').read_text())
+        owners = Image.new('L', (1115, 1200))
+        for i, (_, polygon, _) in reversed(list(enumerate(cfg['layers']))):
+            ImageDraw.Draw(owners).polygon([(round(x*1115), round(y*1200)) for x, y in polygon], fill=i+1)
+        for point, expected in [((.88,.185),'armR'),((.73,.57),'armR'),((.73,.425),'armR'),((.405,.55),'armL'),((.29,.6),'armL'),((.24,.43),'body'),((.15,.63),'tail'),((.215,.565),'tail')]:
+            index = owners.getpixel((round(point[0]*1115),round(point[1]*1200)))-1
+            actual = cfg['layers'][index][0] if index >= 0 else 'body'
+            self.assertEqual(actual, expected)
+        self.assertEqual(cfg['sockets']['mainHand'][0], 'armR')
+        self.assertEqual(cfg['sockets']['offHand'][0], 'armL')
+
     def test_joint_overlap_keeps_ink_but_not_the_distant_hand(self):
         alpha = np.zeros((80, 80), np.uint8)
         alpha[20:60, 20:45] = 255  # torso

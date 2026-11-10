@@ -84,3 +84,6 @@ HEAD matches fetched origin db0f7bdb43db7c0f1d4065aeb1b1f534362fde61. P21 accept
 
 ## Resume 2026-11-10T21:16:20.195487+00:00
 HEAD matches fetched origin dcb9418e872e53a09acd6fd3d61ede48d9d41146. P1–P24 complete. P25 saved roller polygon and original masters/config/atlas/rig already present; continue partition rebuild. No native runner or B lease; servers50023/5920 and92836/5922 retained,141GiB free. Dirty inventory RESUME-DIRTY-P25.txt; no work discarded.
+
+## Resume 2026-11-10T21:32:49.426551+00:00
+HEAD matches fetched origin fd11fd15f1fd42aba4b518f93935f94511a395bd. P25 published; P26 source1 built and lease released, no runtime gesture yet. No native runner; servers50023/5920 and92836/5922 retained,141GiB free. Dirty inventory RESUME-DIRTY-P26.txt; all earlier native work/GLBs preserved and excluded.

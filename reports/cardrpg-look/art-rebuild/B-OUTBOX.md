@@ -95,3 +95,6 @@ Clover raises the original glass teapot on charge and tips it at release, with r
 
 ## P25 — Panko whole roller and strike
 Repaired only Panko atlas/rig/config: full rolling pin+mitten in armL, coherent head/shoulder ownership; mainHand remains armL, offHand correctly follows loaf-shield armR. Bounded windup/down-forward tap with shield/head/tail recovery.30web+3pipeline tests/type/lint/parity,16pairedviews/12x1casts including reducedPASS;0page/socket/faceHP/bounds errors,p95<=16.8ms. A65badf4428+B38280606B/headroom1719394B; Bembedded23636972B. Existing portrait manifest/flags/events/HUD unchanged. Source/old masters preserved; evidence p25/REVIEW.md, motion7.7/overall7.8.
+
+## P26 — Mallow whole whisk flourish
+Only Mallow atlas/rig/config rebuilt: complete whisk/free mitten, measured cuff repairs, scarf kept on body. Bounded windup/forward sweep with delayed head/tail;31web+4pipeline tests,16pairedviews/12naturalcasts/type/lint/parityPASS;0page/socket/faceHP/bounds errors,p95<=16.8ms. A65badf4428+B38371818B/headroom1628182B; Bembedded23728100B. Main/offHand stay armR/armL; no manifest/HUD/event/flag change. Source/original/intermediate masters retained. Small96pixel tail-fringe fallback is invisible in acceptedx1; p26/REVIEW.md, motion7.7/overall7.8.

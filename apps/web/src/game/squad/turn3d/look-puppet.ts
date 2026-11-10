@@ -33,7 +33,7 @@ export async function loadPuppetModel(id:string){
     material.userData={lookPainted:true,lookPuppet:true,puppetPart:layer.part,puppetRect:layer.rect,puppetAtlas:layer.atlasRect,puppetEyes:data.eyes,puppetEyeStyle:data.eyeStyle};
     const mesh=new T.Mesh(geometry,material);mesh.name=`illustrated_${id}_${layer.part}`;
     mesh.position.set((x+w/2-px)*width,(py-y-h/2)*data.height,0);group.add(mesh);
-    if(['inkcap','sock-skipper','cinnamon','sorrel','mochi','clover','panko'].includes(id)&&layer.part==='tail'){
+    if(['inkcap','sock-skipper','cinnamon','sorrel','mochi','clover','panko','mallow'].includes(id)&&layer.part==='tail'){
       material.userData.puppetTailOrigin=[mesh.position.x,mesh.position.y];
       material.userData.puppetTailReach=Math.max(...[-1,1].flatMap(dx=>[-1,1].map(dy=>Math.hypot(mesh.position.x+dx*w*width/2,mesh.position.y+dy*h*data.height/2))));
     }

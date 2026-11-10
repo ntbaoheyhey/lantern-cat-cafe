@@ -10,7 +10,7 @@ Evidence uses A6 shell in a disposable merged preview; primary branch contains n
 | Yarn Giant | 8.8 | 7.5 | 8.0 | 8.0 | p2/round1/yarn-giant-comparison.webp and yarn-giant-motion.webp; crown/yarn intact, P5 adds eye glow, breathing, ambient motes and phase flash |
 | Clover | 8.6 | 7.7 | 7.8 | 7.8 | p24/evidence/clover-follow-through.webp; lift then tip the teapot at release, head/arm/tail response; tea remains painted in the rigid pot |
 | Panko | 8.6 | 7.7 | 7.8 | 7.8 | p25/evidence/panko-roller-strike.webp; whole roller/mitten windup and down-forward tap, loaf-shield brace; clean chin/shoulder partition, restrained rigid gesture |
-| Mallow | 8.6 | 7.5 | 7.8 | 7.8 | p4/batch1-final/mallow-comparison.webp and mallow-motion.webp; whisk/scarf silhouette retained; eyes fully close on defeat |
+| Mallow | 8.6 | 7.7 | 7.8 | 7.8 | p26/evidence/mallow-whisk-flourish.webp; whole whisk forward sweep, coherent scarf/free mitten and tail lag; tiny tail-fringe limit retained at the close source gap |
 | Cinnamon | 8.6 | 7.7 | 7.7 | 7.7 | p18/evidence/cinnamon-follow-through.webp; raised serving tray, restrained cup and delayed tail; gesture remains small |
 | Velvet | 8.6 | 7.5 | 7.9 | 7.9 | p4/batch2-final/velvet-comparison.webp and velvet-motion.webp; ribbon/staff/cape remain clean |
 | Biscuit | 8.6 | 7.5 | 7.8 | 7.8 | p4/batch2-final/biscuit-comparison.webp and biscuit-motion.webp; cookie shield and spatula retained |
