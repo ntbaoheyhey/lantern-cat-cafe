@@ -9,6 +9,7 @@ export function powerScore(stats: Pick<Stats, 'hp' | 'attack' | 'defense'>) {
 }
 
 export function teamPower(state: R.DepthAccount, team = state.team) {
+  if (R.gameplayA6(state)) return Math.round(R.teamPowerV4({...state,team}));
   return team.reduce((sum, id) => sum + powerScore(R.depthStats(state, id)), 0);
 }
 
@@ -20,9 +21,9 @@ export function nextChallenge(state: R.DepthAccount, selectedBand?: number) {
     : R.generateMap(state.account.seed, chapter.id)[0];
   const enemies = node?.enemies ?? chapter.pool.slice(0, 2);
   const battle = active?.battle ?? R.createBattle({ seed: state.account.seed, chapter: chapter.id,
-    cats: [], enemies,...(R.gameplayV4(state)?{gameplayV4:true,...((active?.challengeLevel??(active?undefined:selectedBand??Math.min(...state.team.map(id=>state.account.cards.find(c=>c.cardId===id)!.level))))!==undefined?{challengeLevel:active?.challengeLevel??selectedBand??Math.min(...state.team.map(id=>state.account.cards.find(c=>c.cardId===id)!.level))}:{})}:{}) });
+    cats: [], enemies,...(R.gameplayA6(state)?{gameplayA6:true,skillsV5:true}:{}),...(R.gameplayV4(state)?{gameplayV4:true,...((active?.challengeLevel??(active?undefined:selectedBand??Math.min(...state.team.map(id=>state.account.cards.find(c=>c.cardId===id)!.level))))!==undefined?{challengeLevel:active?.challengeLevel??selectedBand??Math.min(...state.team.map(id=>state.account.cards.find(c=>c.cardId===id)!.level))}:{})}:{}) });
   const enemyPower = Math.round(battle.actors.filter(actor => actor.side === 'enemy')
-    .reduce((sum, actor) => sum + powerScore(actor), 0));
+    .reduce((sum, actor) => sum + (R.gameplayA6(state)?R.powerScoreA6(actor):powerScore(actor)), 0));
   return { chapter, enemyPower, teamPower: teamPower(state), exact: !!active && !!(node || active.battle) };
 }
 

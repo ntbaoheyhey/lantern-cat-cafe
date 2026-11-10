@@ -34,3 +34,6 @@ export * from './skills-v5';
 export * from './gameplay-a6';
 
 export * from './bonds-a6';
+
+export * from './power-a6';
+export * from './upgrades-a6';

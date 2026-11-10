@@ -1,10 +1,9 @@
 # Trạng thái lane A6
-
-Q0–Q3 đã hoàn tất; checkpoint Q3 đưa vào draft #438, tiếp tục Q4 ngay.
-Đã có chín duyên sưu tầm, tám hợp kích, Sổ duyên và dấu hợp kích trên thẻ/đội hình.
-Typecheck/lint, kiểm tra luật/web và 421 E2E đã qua; digest OFF/A5 giữ nguyên.
-Lượt chơi thật đủ 30 phút: 29 trận thắng, không thua, không thao tác kẹt hay lỗi được ghi nhận.
-Trận thường trung vị 39,49 giây, p90 60,51 giây: còn chậm; boss trung vị 72,09 giây.
-Đường chơi chỉ tuần tra/luyện mèo chưa nhận Events/rương nghỉ; khoảng chững thưởng được báo riêng.
-Q4: thống nhất lực chiến, nâng cấp nhanh, tự trang bị và gợi ý sửa đội sau thua.
-Chưa merge/deploy; A6 vẫn tắt mặc định.
+- Q0–Q4 đã xong; Q4 đang đẩy lên draft #438, tiếp tục Q5 ngay.
+- Đã có Lực chiến chung, nâng cấp nhanh, tự trang bị và hiệu ứng tăng chỉ số.
+- Màn hình thua gợi ý cụ thể, mở đúng mèo hoặc trang bị cần nâng.
+- Typecheck, lint và kiểm thử web/rules đều qua; ba ảnh đã được xem.
+- OFF/A5 giữ nguyên hash; không thay dữ liệu kỳ vọng.
+- Mô phỏng: trận thường 30,88 giây, boss 79,38 giây; công cụ mất 235,92 giây.
+- Thắng sau gợi ý 68,77%, chưa đạt 80%; G2/G3/G5 còn phần cần xử lý ở Q11–Q12.
+- Q5: hàng trước/sau, ba đội gợi ý, đường nối duyên và đội lưu theo chế độ.

@@ -8,7 +8,7 @@
 - pnpm: 10.28.0 (repository packageManager version)
 - Free disk at setup: 147 GiB (df -h ~); above 15 GB threshold.
 - Dependencies: pnpm install --frozen-lockfile completed without lockfile changes.
-- Scope: STEP 2 active; Q4 active; Q1 completed 2026-11-10 06:38 UTC.
+- Scope: STEP 2 active; Q5 active; Q1 completed 2026-11-10 06:38 UTC.
 - Delivery branch remains codex/cardrpg-a6-q0-2026-11-10; one draft PR #438 for the whole lane.
 
 ## Report skim (15 lines; existing claims, not re-verified)
@@ -63,3 +63,12 @@
 - Page errors observed throughout and console errors in the second half: none. Tutorial and one lease-crossing fight excluded from timing statistics.
 - Patrol/training path skipped Events and idle claims; 809.67-second final account-reward gap is path-specific, not proof no rewards were available. Route points/boons remained visible.
 - Q4 is next; temporary source/test drafts exist under /tmp/cardrpg-a6-*-draft.* and are not yet applied or tested.
+
+## Q4 complete — 2026-11-10 08:04 UTC
+- Shared full-health Power on cats/team/foes/stages; real-cost quick upgrade, non-stealing auto-equip and count-up feedback.
+- Loss forecast exposed; bounded A6 candidates choose cheapest reliable improvement. Fallback opens the named cat or gear.
+- Typecheck/lint PASS; full web 1,874 PASS, rules 1,277 PASS plus two existing expected failures/eleven skips. Later focused web fifteen tests and rules ten tests pass.
+- Three inspected WebPs; browser click raised Power 7,503 to 7,537 and loss fallback opened Soot training. No page/console errors.
+- Final sim: 235.92 seconds; normal median 30.88 seconds, boss 79.38. G2/G3/G5 remain partial; hint retry 68.77 percent, worst six losses in thirty minutes.
+- OFF digest exact over 8,250 routes and A5 fallback exact over forty-five routes; q4-compatibility.json.
+- Q5 next; drafts under /tmp/cardrpg-a6-formation-* are not applied or tested yet. Full E2E/thirty-minute real-click run next due Q6.

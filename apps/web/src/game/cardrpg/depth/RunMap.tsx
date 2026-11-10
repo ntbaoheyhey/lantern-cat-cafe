@@ -1,3 +1,4 @@
+import { PowerA6 } from '../ui-v3/PowerA6';
 import { NodeStarsV4 } from './JourneyV4';
 import { showReviewTools } from "./player-mode";
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
@@ -9,6 +10,7 @@ const symbols = { battle: '⚔', elite: '✦', campfire: '♨', shop: '▧', eve
 export function RunMap({ m }: { m: DepthModel }) {
   const run = m.state.run;
   if (!run) return <section className="cr-panel"><h1>Choose an evening route.</h1><button onClick={() => m.go('hub')}>Back to cafe</button></section>;
+  const nodePower = (node: R.RunNode) => R.createBattle({seed:run.seed,chapter:run.chapter,cats:[],enemies:node.enemies,gameplayV4:true,skillsV5:true,gameplayA6:true,challengeLevel:run.challengeLevel,mutator:run.mutator}).actors.reduce((n,a)=>n+R.powerScoreA6(a),0);
   const current = run.nodes.find(n => n.id === run.current);
   const available = R.availableNodes(run).map(n => n.id);
   const event = R.EVENTS.find(e => e.id === current?.eventId);
@@ -25,7 +27,7 @@ export function RunMap({ m }: { m: DepthModel }) {
   </>;
   const map = <>
     <section className="dp-map" aria-label="Branching chapter route">{Array.from({ length: 7 }, (_, depth) => <div className="dp-map-column" key={depth}>{run.nodes.filter(n => n.depth === depth).map(node => <button key={node.id} className={`dp-node ${run.visited.includes(node.id) ? 'visited' : ''} ${node.id === run.current ? 'current' : ''}`} disabled={!available.includes(node.id)} onClick={() => m.enter(node.id)} title={node.enemies.map(id => R.ENEMY_BY_ID[id]!.name).join(' · ') || node.kind}>
-      <span>{symbols[node.kind]}</span><b>{node.kind}</b><small>{run.visited.includes(node.id) ? 'Visited' : node.id === run.current ? 'Here' : available.includes(node.id) ? 'Choose' : 'Ahead'}</small><NodeStarsV4 m={m} node={node}/>{run.gameplayV4 && R.nodeClueV4(node) && <small>{R.nodeClueV4(node) === 'opening' ? 'Opening clue' : R.nodeClueV4(node) === 'closing' ? 'Closing clue' : 'Reach clue'}</small>}</button>)}</div>)}</section>
+      <span>{symbols[node.kind]}</span><b>{node.kind}</b><small>{run.visited.includes(node.id) ? 'Visited' : node.id === run.current ? 'Here' : available.includes(node.id) ? 'Choose' : 'Ahead'}</small>{run.gameplayA6&&node.enemies.length>0&&<PowerA6 label="Rec." value={nodePower(node)}/>}<NodeStarsV4 m={m} node={node}/>{run.gameplayV4 && R.nodeClueV4(node) && <small>{R.nodeClueV4(node) === 'opening' ? 'Opening clue' : R.nodeClueV4(node) === 'closing' ? 'Closing clue' : 'Reach clue'}</small>}</button>)}</div>)}</section>
   </>;
   const activity = <>
     {run.complete ? <section className="cr-panel"><h2>{run.won ? 'The lantern stays lit.' : 'Every journey leaves a lesson.'}</h2><p>{R.gameplayV4(m.state) ? (dailySuppliesFullV4(m.state) ? 'Today’s supplies are gathered. Your stars and collected equipment are saved.' : 'Your earned supplies, stars and collected equipment are saved.') : run.won ? 'Chapter rewards and equipment are already in your account.' : (run.gameplayV4 ? 'Your rewards are safe. Bring a fresh plan next time.' : 'Your capped partial rewards and earned gear are already in your account.')}</p>{run.earnedItems.map((id, index) => <p key={index}>{R.GEAR_BY_ID[id]?.name??id}</p>)}<div className="cr-actions"><button className="cr-primary" onClick={() => m.go('inventory')}>{R.gameplayV4(m.state)&&!run.earnedItems.length?'Review equipment':'Equip your rewards'}</button><button onClick={() => m.go('hub')}>Return to cafe</button>{run.mode === 'tower' && run.won && <button onClick={() => m.apply(R.nextTowerFloor(m.state), 'Next Tower floor opened.')}>Climb to floor {run.floor + 1}</button>}</div></section>

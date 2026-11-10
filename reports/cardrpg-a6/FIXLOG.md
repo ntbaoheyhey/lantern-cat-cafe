@@ -31,3 +31,9 @@
 - First-session recorder: mark a fight crossing the two timing-lock leases so its duration is excluded instead of treating unobserved lock waiting as combat time. Console-error collection added for subsequent observer segments; the already-running first half records page errors only. No game state or clock is changed.
 - Q3 real-click scope: the patrol/training path does not yet claim Events or the idle chest. Report its account-reward gaps as path observations, not proof that no reward was available. Future scheduled browser sessions must follow actionable claim badges as those screens are completed. Victory route points remain visible rewards.
 - Final Q3 browser result: thirty active minutes, twenty-nine wins, no losses/stalls. Normal median 39.49 seconds and p90 60.51 miss browser G1; boss median 72.09 and p90 79.32 fit the target. Do not substitute the authored sim's 30.91-second normal median for this measured result.
+
+## Q4
+- Full-health Power normalizes battle actor stat aliases and ignores wounds, so roster and battle scores agree.
+- Screenshot review caught a stale cat-detail level after quick upgrade. The Cats sheet now subscribes directly to model revisions; a rendered regression checks the new level.
+- Loss fallback navigation names the target cat or equipment; it does not claim a predicted win when no forecast improvement qualifies.
+- Q4 sim: twelve-candidate advisor lowers runtime to 235.92 seconds but hint retry success is 68.77%, below Q3’s 71.31%. Keep it as a known issue for the scheduled first-session/balance pass; do not claim G3 complete.

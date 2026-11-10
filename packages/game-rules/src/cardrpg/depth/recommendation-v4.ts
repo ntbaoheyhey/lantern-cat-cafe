@@ -6,7 +6,8 @@ import { createBattle } from './battle';
 import { playBattle } from './policies';
 import { battleCats, configureTeam, metaCommand, requireHome, transactDepth } from './state';
 import { equipGear, GEAR_BY_ID } from './equipment';
-import { itemUtilityV4 } from './equipment-v4';
+import { gameplayA6 } from './gameplay-a6';
+import { itemUtilityV4, teamPowerV4 } from './equipment-v4';
 import { gameplayV4, validPlan, type StandingPlan } from './gameplay-v4';
 import type { BattleSetup, DepthAccount, Row, RuleResult } from './contract';
 
@@ -118,7 +119,14 @@ export function recommendBuildV4(state: DepthAccount, encounter: BattleSetup): B
   }
   const before = sample(setupFor(state, encounter)), expectedBuild = adviceBuildKeyV4(state);
   const options: BuildAdviceV4[] = [];
-  for (const { change, label } of changes) {
+  // A6 checks a small range of legal fixes. The legacy advisor remains exact.
+  const counts: Record<string, number> = {};
+  const limits: Record<string, number> = { row: 3, level: 3, plan: 2, equip: 2, cat: 2 };
+  const candidates = gameplayA6(state) ? changes.map(option => ({ ...option, applied: changeBuildV4(state, option.change) }))
+    .filter(option => option.applied.ok)
+    .sort((a, b) => teamPowerV4(b.applied.state) - teamPowerV4(a.applied.state) || a.label.localeCompare(b.label))
+    .filter(option => (counts[option.change.kind] = (counts[option.change.kind] ?? 0) + 1) <= limits[option.change.kind]!) : changes;
+  for (const { change, label } of candidates) {
     const applied = changeBuildV4(state, change);
     if (!applied.ok || adviceBuildKeyV4(applied.state) === expectedBuild) continue;
     const after = sample(setupFor(applied.state, encounter));
@@ -129,6 +137,11 @@ export function recommendBuildV4(state: DepthAccount, encounter: BattleSetup): B
       return spent > 0 ? [[id, spent]] : [];
     }));
     options.push({ change, label, cost, expectedBuild, before, after, samples: 10 });
+  }
+  if (gameplayA6(state)) {
+    const reliable = options.filter(option => option.after.wins >= 8);
+    const cost = (option: BuildAdviceV4) => Object.entries(option.cost).reduce((sum, [id, n]) => sum + n * (id === 'threads' ? 3 : id === 'essence' ? 20 : 1), 0);
+    if (reliable.length) return reliable.sort((a, b) => cost(a) - cost(b) || b.after.wins - a.after.wins || b.after.margin - a.after.margin || a.label.localeCompare(b.label))[0]!;
   }
   return options.sort((a, b) => b.after.wins - a.after.wins || b.after.margin - a.after.margin
     || Object.values(a.cost).reduce((n, v) => n + v, 0) - Object.values(b.cost).reduce((n, v) => n + v, 0)

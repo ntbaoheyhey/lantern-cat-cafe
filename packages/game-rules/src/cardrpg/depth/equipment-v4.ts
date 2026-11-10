@@ -1,3 +1,5 @@
+import { gameplayA6 } from './gameplay-a6';
+import { powerScoreA6 } from './power-a6';
 import { computeCardStats } from '../equipment';
 import { EQUIPMENT_SLOTS, RARITY_ORDER, type Stats } from '../contract';
 import { clone } from '../internal';
@@ -55,6 +57,7 @@ const EFFECT_VALUE:Record<string,number>={
 };
 export function powerV4(state:DepthAccount,cardId:string){
  const stats=crewStats(depthStats(state,cardId),state.team),{bonuses,effects}=equipmentEffects(state,cardId);
+ if(gameplayA6(state)){const total=powerScoreA6(stats);return {core:Math.round(rawPowerV4(stats)*10),utility:total-Math.round(rawPowerV4(stats)*10),total,reference:POWER_REFERENCE_V4};}
  let utility=effects.reduce((n,id)=>n+(EFFECT_VALUE[id]??0),0);
  for(const [key,value] of Object.entries(bonuses)){
   if(['openingShield','openingCharge','cleanseShield','breakShield','shieldFlat','healFlat','ultimateCharge'].includes(key))utility+=value/5;

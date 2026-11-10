@@ -70,3 +70,7 @@ html[data-look-v2="false"] .uv-home-crew img{transform:scale(1.3)}
 .uv-app .cr-portrait .a6-bond-icon{position:absolute;bottom:6px;right:6px;display:block;padding:3px 7px;background:var(--look-ink);color:var(--look-mint);border:1px solid var(--look-mint);border-radius:8px;font-size:10px}
 
 .uv-app button.a6-bond-tab[aria-current=page]{color:var(--look-cream)}
+
+.a6-power{position:relative;display:inline-block;white-space:nowrap;font-variant-numeric:tabular-nums}.a6-power b{color:var(--look-honey)}.a6-power em{display:inline-block;margin-left:8px;color:var(--look-mint);font-size:.85em;font-style:normal}.a6-power[data-gain=true]{animation:a6-power-flash .6s ease-out}.a6-quick-upgrade{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:12px 0;padding:16px 20px;border:1px solid var(--look-honey);border-radius:16px;background:var(--look-panel);color:var(--look-cream);flex-wrap:wrap}.a6-quick-upgrade h2{font-size:18px;margin:0 0 6px}.a6-quick-upgrade p{margin:4px 0}.a6-quick-upgrade small{color:var(--look-paper)}.uv-prepare-title h2>.a6-power{display:block;font-size:14px}.uv-app .dp-card-power .a6-power b{font-size:18px}
+@keyframes a6-power-flash{0%{filter:brightness(2);transform:scale(1.06)}100%{filter:none;transform:none}}
+@media(prefers-reduced-motion:reduce){.a6-power[data-gain=true]{animation:none}}

@@ -1,3 +1,4 @@
+import { PowerA6 } from './PowerA6';
 import {lazy,Suspense,useEffect,useMemo,useRef,useState,type ReactNode} from 'react';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import type {DepthModel,Screen} from '../depth/model';
@@ -37,7 +38,7 @@ export default function ShellV3({m,children}:{m:DepthModel;children:ReactNode}) 
  if(m.showBattle)return null;
  return <div className="uv-shell" data-ui-v3="true">
   <HomeScene m={m} onRecruit={()=>go('gacha')} onTasks={openEvents}/>
-  <RewardFly values={m.state.account.currencies}/><header className="uv-hud"><div className="uv-identity"><div className="uv-avatar"><img {...portraitProps(m.state.team[0]!)} alt=""/><span>Lv. {m.state.account.accountLevel}</span></div><div><b>The Lantern</b><small>Team power {view.power}</small></div></div>
+  <RewardFly values={m.state.account.currencies}/><header className="uv-hud"><div className="uv-identity"><div className="uv-avatar"><img {...portraitProps(m.state.team[0]!)} alt=""/><span>Lv. {m.state.account.accountLevel}</span></div><div><b>The Lantern</b><small>{R.gameplayA6(m.state)?<PowerA6 value={view.power} label="Team Power" reducedMotion={m.state.settings.reducedMotion}/>:<>Team power {view.power}</>}</small></div></div>
    <div className="uv-currencies">{(['fish','stamps','threads'] as const).filter(id=>m.state.account.currencies[id]>0||id==='fish').slice(0,3).map(id=><span key={id} data-currency={id} className="uv-currency" aria-label={`${id}: ${m.state.account.currencies[id]}`}><i aria-hidden="true">{id==='fish'?'◈':id==='stamps'?'✉':'⌁'}</i>{m.state.account.currencies[id].toLocaleString('en-US')}<small>{id}</small></span>)}</div>
    <button className="uv-relic" onClick={()=>go('relics')}><Icon name="relic"/>Relic · Fuji</button>
    <button className="uv-menu-button" aria-label="Open menu" aria-expanded={menu} onClick={()=>setMenu(!menu)}><Icon name="menu"/></button>

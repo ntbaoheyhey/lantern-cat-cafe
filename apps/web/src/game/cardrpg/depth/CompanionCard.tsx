@@ -5,6 +5,8 @@ import { portraitProps } from './assets';
 import { powerScore } from './meta-presentation';
 import type { DepthModel } from './model';
 
+import { PowerA6 } from '../ui-v3/PowerA6';
+
 const ROLE_ICONS = { guardian: '◈', hexer: '☾', healer: '♧', striker: '✧', controller: '⌘', witch: '✦' };
 
 export function CompanionCard({ id, m, onSelect, selected = false }: {
@@ -13,7 +15,7 @@ export function CompanionCard({ id, m, onSelect, selected = false }: {
   const card = CARD_BY_ID[id]!;
   const cat = R.CAT_BY_ID[id]!;
   const owned = m.state.account.cards.find(candidate => candidate.cardId === id);
-  const power = owned ? powerScore(R.depthStats(m.state, id)) : null;
+  const power = owned ? (R.gameplayA6(m.state)?R.powerV4(m.state,id).total:powerScore(R.depthStats(m.state, id))) : null;
   return <button className={`cr-cat-card dp-cat dp-card-${card.rarity} ${owned ? '' : 'locked'}`}
     style={rarityStyle(card.rarity)} aria-pressed={selected}
     aria-label={`${cat.name}, ${card.rarity}, ${owned ? `level ${owned.level}, power ${power}` : 'not collected'}`}
@@ -26,7 +28,7 @@ export function CompanionCard({ id, m, onSelect, selected = false }: {
     </div>
     <div className="cr-card-caption"><small>{cat.role} · {cat.flavour}</small><h3>{cat.name}</h3>
       <p>{owned ? <>Lv. {owned.level} <span className="dp-card-stars" aria-label={`${owned.stars} stars`}>{'★'.repeat(owned.stars)}</span></> : 'Invite to collect'}</p>
-      {owned && <strong className="dp-card-power">{power}<small> power</small></strong>}
+      {owned && <strong className="dp-card-power">{R.gameplayA6(m.state)?<PowerA6 value={power!} reducedMotion={m.state.settings.reducedMotion}/>:<>{power}<small> power</small></>}</strong>}
     </div>
   </button>;
 }
