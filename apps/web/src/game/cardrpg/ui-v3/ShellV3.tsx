@@ -1,3 +1,4 @@
+import type { EIP1193Provider } from 'viem';
 import { PowerA6 } from './PowerA6';
 import {lazy,Suspense,useEffect,useMemo,useRef,useState,type ReactNode} from 'react';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
@@ -27,6 +28,14 @@ export default function ShellV3({m,children}:{m:DepthModel;children:ReactNode}) 
  const [menu,setMenu]=useState(false),[events,setEvents]=useState(false),[bagTab,setBagTab]=useState('gear'),[route,setRoute]=useState(false);
  const view=useMemo(()=>homeView(m.state,m.cafeNow),[m,m.state,m.snapshot()]);
  const newItems=useNewDiscoveries(m);
+ const walletProvider=(window as unknown as {ethereum?:EIP1193Provider}).ethereum;
+ useEffect(()=>{
+  if(m.offline||!R.gameplayA6(m.state))return;
+  const provider=walletProvider;
+  const clear=()=>m.apply(R.acceptRelicSnapshot(m.state,43113,[]));
+  provider?.on?.('accountsChanged',clear);provider?.on?.('chainChanged',clear);provider?.on?.('disconnect',clear);
+  return()=>{provider?.removeListener?.('accountsChanged',clear);provider?.removeListener?.('chainChanged',clear);provider?.removeListener?.('disconnect',clear);};
+ },[m,walletProvider]);
  const dialog=useRef<HTMLElement>(null),returnFocus=useRef<HTMLElement|null>(null);
  const sheet=m.screen!=='hub'||events;
  const close=()=>{setEvents(false);setMenu(false);m.go('hub');requestAnimationFrame(()=>{const target=returnFocus.current;if(target?.isConnected)target.focus();else (document.querySelector<HTMLElement>(`[data-home-destination="${target?.dataset.homeDestination??''}"]`)??document.querySelector<HTMLElement>('.uv-menu-button'))?.focus();});};
@@ -41,7 +50,7 @@ export default function ShellV3({m,children}:{m:DepthModel;children:ReactNode}) 
   <HomeScene m={m} onRecruit={()=>go('gacha')} onTasks={openEvents}/>
   <RewardFly values={m.state.account.currencies}/><header className="uv-hud"><div className="uv-identity"><div className="uv-avatar"><img {...portraitProps(m.state.team[0]!)} alt=""/><span>Lv. {m.state.account.accountLevel}</span></div><div><b>The Lantern</b><small>{R.gameplayA6(m.state)?<PowerA6 value={view.power} label="Team Power" reducedMotion={m.state.settings.reducedMotion}/>:<>Team power {view.power}</>}</small></div></div>
    <div className="uv-currencies">{(['fish','stamps','threads'] as const).filter(id=>m.state.account.currencies[id]>0||id==='fish').slice(0,3).map(id=><span key={id} data-currency={id} className="uv-currency" aria-label={`${id}: ${m.state.account.currencies[id]}`}><i aria-hidden="true">{id==='fish'?'◈':id==='stamps'?'✉':'⌁'}</i>{m.state.account.currencies[id].toLocaleString('en-US')}<small>{id}</small></span>)}</div>
-   <button className="uv-relic" onClick={()=>go('relics')}><Icon name="relic"/>Relic · Fuji</button>
+   <button className="uv-relic" onClick={()=>go('relics')}><Icon name="relic"/>{R.gameplayA6(m.state)?`Relic Fuji · +${R.relicBonusA6(m.state)/100}%`:"Relic · Fuji"}</button>
    <button className="uv-menu-button" aria-label="Open menu" aria-expanded={menu} onClick={()=>setMenu(!menu)}><Icon name="menu"/></button>
   </header>
   {!sheet&&<><aside className="uv-events" aria-label="Ready to collect">{view.tasks>0&&<button onClick={openEvents}><Icon name="events"/><span>Today’s tasks</span><i className="uv-dot"/></button>}{view.tasks===0&&view.free&&<button onClick={()=>go('gacha')}><Icon name="recruit"/><span>Free recruit</span><i className="uv-dot"/></button>}{view.tasks===0&&!view.free&&view.milestones>0&&<button onClick={()=>go('journal')}><Icon name="cats"/><span>Journal reward</span><i className="uv-dot"/></button>}</aside>

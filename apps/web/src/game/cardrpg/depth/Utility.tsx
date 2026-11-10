@@ -1,3 +1,4 @@
+import { RelicA6 } from '../ui-v3/RelicA6';
 import { showReviewTools } from './player-mode';
 import { CollectibleDesigns } from './CollectibleDesigns';
 import { SharpnessEvidence } from './SharpnessEvidence';
@@ -9,7 +10,8 @@ import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import { PageTitle } from '../shared';
 import { readConnectedRelics } from './relic-reader';
 import type { DepthModel } from './model';
-export function Relics({ m }: { m: DepthModel }) {
+export function Relics({ m }: { m: DepthModel }) { return R.gameplayA6(m.state) ? <RelicA6 m={m}/> : <LegacyRelics m={m}/>; }
+function LegacyRelics({ m }: { m: DepthModel }) {
   const [reading, setReading] = useState(false);
   const read = async () => {
     setReading(true);

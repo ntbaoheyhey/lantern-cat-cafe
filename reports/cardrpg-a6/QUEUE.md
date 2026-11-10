@@ -10,7 +10,7 @@
 - [x] Q7  Yarn Tower (by 15 Nov 12:00 UTC): 30 floors, fixed lineups, milestone chests every 5 floors, uses the same battle and formation. Entry from the dock or the hub.
 - [x] Q8  Daily loop + red dots (by 15 Nov 18:00 UTC): 5 daily tasks, weekly bar with 3 chests, 7-day login gifts, ONE badge module that computes every red dot (no ad-hoc badges); every red dot must lead to an action that is possible right now.
 - [x] Q9  Recruit upgrade (by 16 Nov 18:00 UTC): x1/x10, pity counter, rate table, 4-beat reveal (deal card backs, glow color tease, flip in rarity order, full splash for new Epic+), shards and star-up, NFT caps unchanged. Extend Lane U's reveal (#434), don't fork it.
-- [ ] Q10 Relic treasure slot (by 17 Nov 06:00 UTC): read-only Fuji Relics (existing chain package, RelicNFT 0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D) -> team-wide bonus, capped (+8% total max), "Relic Fuji" badge with explorer link; fixture in the offline demo. No contract or server change.
+- [x] Q10 Relic treasure slot (by 17 Nov 06:00 UTC): read-only Fuji Relics (existing chain package, RelicNFT 0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D) -> team-wide bonus, capped (+8% total max), "Relic Fuji" badge with explorer link; fixture in the offline demo. No contract or server change.
 - [ ] Q11 First 30 minutes (by 17 Nov 18:00 UTC): unlock order and celebrations (P11), hand pointer for the first 3 actions, chapter-1 difficulty curve, copy rewrite (short Vietnamese-friendly English UI text; keep i18n structure if present). G3 must pass here.
 - [ ] Q12 Balance + economy pass (by 18 Nov 12:00 UTC): tune to G1-G5 with the sim. Then one real-click 30-minute run.
 - [ ] Q13 Screen polish vs section 6 (by 18 Nov 18:00 UTC): juice (P12), layout above the fold at 1280x720, contrast, empty states, loading states. G7.
@@ -39,3 +39,5 @@
 - Q8 complete: five daily tasks, weekly bar, seven login gifts and one actionable badge selector; exact OFF/A5.
 - Q9 complete: resumed 1,800.65-second browser run, twenty-eight wins and no losses/errors/stalls. Normal 43.71/59.73 seconds remains partial; Q10 is next. Prior interrupted observation is preserved separately.
 - Q14 integration merge conflicts with the fixed no-merge rule; prepare reviewable integration and skip any unauthorized merge while continuing other work.
+
+- Q10 complete: capped team treasure, offline fixture, read-only Fuji adapter and wallet guards; exact OFF/A5. Q11 is next.

@@ -1,8 +1,10 @@
 # Trạng thái lane A6
 
-- Đã tiếp tục và hoàn tất Q9; Q0–Q9 đã xong.
-- Lượt chơi mới đủ 30 phút: 28 thắng, không thua, không lỗi hoặc kẹt.
-- Trận thường trung vị 43,71 giây còn dài; boss 70,28 giây. Giữ việc chỉnh nhịp ở Q11–Q12.
-- Typecheck/lint, test, E2E, mô phỏng và OFF/A5 của mã Q9 vẫn hợp lệ.
-- Đang chuyển Q10: một slot Relic Fuji cho cả đội, bonus tối đa 8%, ví mẫu offline.
-- Chưa merge hoặc deploy; chỉ draft PR #438.
+- Đã hoàn tất Q0–Q10; chuyển ngay sang Q11.
+- Relic Fuji: một slot cho toàn đội, bonus tối đa 8%; không cộng dồn số lượng.
+- Demo có ví mẫu; không ví hoặc lỗi đọc Fuji vẫn chơi tiếp. Đổi ví tự xóa bonus cũ.
+- Typecheck/lint, 1.895 test web và 1.297 test rules đều qua; OFF/A5 giữ nguyên.
+- Đã xem ba ảnh; đủ nút chọn/tháo ở 1280×720, không lỗi trình duyệt.
+- Mô phỏng còn thiếu nhịp Tower, một phần ultimate và retry; xử lý Q11–Q12.
+- Q11: hướng dẫn ba hành động đầu và mở tính năng theo tiến độ.
+- Chưa merge/deploy; chỉ draft PR #438. Chưa dùng seed cuối.

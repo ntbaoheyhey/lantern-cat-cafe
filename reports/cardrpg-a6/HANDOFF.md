@@ -1,26 +1,22 @@
 # Lane A6 active handoff
 
-- RESUMED by explicit user message “tiếp tục nhé”; STOP-A6 removed. Do not stop at checkpoints.
-- Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/cardrpg-a6-q0-2026-11-10; draft #438, base UI v3 U9.
-- TASK.md owns STEP 2; QUEUE.md owns order. Q0–Q9 complete. Q10 is the first unfinished item; its source has NOT been applied.
+- RESUMED by explicit “tiếp tục nhé”; STOP-A6 absent. Continue checkpoints without ending turn.
+- Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/cardrpg-a6-q0-2026-11-10; draft #438 against UI v3 U9.
+- TASK.md is STEP 2. Q0–Q10 complete. Q11 is first unfinished; its source has NOT been applied.
 - One agent, no model helpers/app control/other-worktree writes/merge/deploy/main push/force-push/secrets.
-- Q9 source is committed in e435e6666. Four-beat x10 reveal: 5.417 seconds; skip after beat one; rarity order, Epic splash and matching star-up shards.
-- A6 price sixty earned stamps; OFF 150. Welcome credit follows the price. Odds, pity, daily/NFT caps unchanged.
-- Q9 types/lint PASS; web 1,890 PASS; rules 1,294 PASS plus expected failures/skips. Final web typecheck PASS.
-- E2E: 420/421 initially pass; unrelated v2 idle-clock case passes isolated retry. q9-e2e.json records both.
-- Sim: 500 dev seeds in 320.27 seconds. Both cohorts Epic day two / pity draw-budget day six 100%. G2/G3/Tower/runtime/browser pacing remain partial.
-- OFF exact 8,250 routes; A5 exact forty-five. q9-compatibility.json. Expected hashes unchanged.
-- Prior USER-INTERRUPTED session: 1,442.97 active seconds, twenty-two wins, no losses/errors/stalls. Preserved as q9-first-session-paused.json; NOT a thirty-minute check.
-- Ports 5960–5963; own /tmp/cardrpg-a6-* only; heavy builds/E2E/perf use timing.lock with lease <=20 min; df before builds. Never disturb another lane’s lock.
-- Drafts archived in resume-drafts.tar.gz; originals in /tmp. Archive refreshed with the latest Q10/Q11/Q13 refinements at the Q9 checkpoint.
-- Q10 relic-staged.json: repo-relative file entries; append its CSS fragment to ui-v3.css. Do not rerun old staging scripts.
-- Q10 reuses pinned-block Fuji reads; capped +8% team treasure, stale-read and wallet-change guards, including late-injected providers. Virtual types PASS; unit/UI tests pending.
-- Q10 harnesses: /tmp/cardrpg-a6-q10-screen.mjs and q10-checks.mjs (single sim + exact compatibility); q10-report.md is a pending-validation draft.
-- Q11 onboarding-staged.json includes Q10 overlap. Apply only after Q10 and preserve final Q10 fixes. Virtual types PASS; behavior pending. First-training unlock follows the whole owned roster.
-- Q11 q11-screen.mjs clicks actual tutorial/free-invite/level; no grants. No full E2E/session due again until Q12.
-- Q12 sim-optimized.json avoids repeated gear scoring/failed claims and separates actual Legendary from pity budget. performance-staged.json removes full-account copies from pure gear previews.
-- Q12 pace-staged.json includes optimized sim and a shared normal-animation budget; bosses/ultimates remain intact. Apply only if Q11 evidence warrants. No fresh seeds used before Q15.
-- Q13 polish-staged.json drafts cat Growth/Skills/Bonds/Gear panels; virtual types passed before the small skill-unlock-label addition; visual/behavior review pending.
-- Q14 build-draft.mjs/offline-draft.tsx reuse U’s offline loader/model dictionary; syntax checked only. Still need build, size/perf/offline checks and Vietnamese guide.
-- Q14 merge conflicts with fixed no-merge rule: prepare reviewable integration, skip unauthorized merge, continue other unblocked work. Recheck newest published B tip at Q14.
-- Q9 finished at 12:27 UTC: 1,800.65 seconds, 28 wins, zero losses/errors/stalls; normal median/p90 43.71/59.73, boss 70.28/107.60. Browser/recorder closed and lock released; Vite PID 37741 stays on 5960.
+- Q10: one Fuji team treasure, +2/4/6/8% HP/attack/defense. Ordinary gear retained; OFF lead-cat effect retained. Read-only adapter, timeout and stale-wallet guards.
+- Q10 typecheck/lint PASS; web 1,895 PASS; rules 1,297 PASS plus existing expected failures/skips.
+- Three inspected WebPs, including all controls at 1280×720. Offline prop fixture Power 7,503→8,035; gear unchanged; product no-wallet path playable; zero errors.
+- Sim 500 dev seeds: 336.69 s; normal 30.88 s, boss 79.38. G2/G3/Tower/runtime/browser pacing remain partial.
+- Q10 OFF exact 8,250 routes and A5 exact forty-five. q10-compatibility.json. Never update expected hashes.
+- Q9 full E2E passed with one unrelated isolated retry. Real-click 1,800.65 s: 28 wins, zero losses/errors/stalls. Normal 43.71/59.73 s, boss 70.28/107.60 s.
+- Next full E2E + thirty-minute session due Q12, then Q15. No fresh 60001–60500 used.
+- Own Vite PID 37741 on 5960. Ports 5960–5963; own /tmp/cardrpg-a6-* only. Heavy work uses timing.lock <=20 minutes, df before builds. Q10 lock released.
+- Drafts archived in resume-drafts.tar.gz; latest originals in /tmp. Do not rerun old staging scripts.
+- Q11 /tmp/cardrpg-a6-onboarding-staged.json includes Q10 overlap. Apply only its deltas and onboarding CSS; skip relic CSS and preserve final Q10 compact CSS. Relic tab now waits for its unlock.
+- Q11 /tmp/cardrpg-a6-q11-screen.mjs clicks actual tutorial/free-invite/level, no grants. q11-checks.mjs runs the single sim and exact checks.
+- Q12 sim-optimized.json avoids repeated gear scoring/failed claims and separates actual Legendary from pity budget. performance-staged.json removes full-account copies in pure previews.
+- Q12 pace-staged.json includes optimized sim and a shared normal-animation budget; bosses/ultimates intact. Apply after Q11 evidence warrants.
+- Q13 polish-staged.json drafts Growth/Skills/Bonds/Gear detail; virtual types passed before small skill-unlock-label addition; visual/behavior pending.
+- Q14 build-draft.mjs/offline-draft.tsx reuse U’s loader/model dictionary; syntax checked only. Need build/size/perf/offline checks and Vietnamese guide.
+- Q14 integration merge conflicts with fixed no-merge rule: prepare reviewable integration, skip unauthorized merge and continue unblocked work. Recheck latest published B tip then.

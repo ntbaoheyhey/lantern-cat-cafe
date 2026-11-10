@@ -8,7 +8,7 @@
 - pnpm: 10.28.0 (repository packageManager version)
 - Free disk at setup: 147 GiB (df -h ~); above 15 GB threshold.
 - Dependencies: pnpm install --frozen-lockfile completed without lockfile changes.
-- Scope: STEP 2 resumed by user; Q9 verification active; Q1 completed 2026-11-10 06:38 UTC.
+- Scope: STEP 2 active; Q0–Q10 complete; Q11 is next.
 - Delivery branch remains codex/cardrpg-a6-q0-2026-11-10; one draft PR #438 for the whole lane.
 
 ## Report skim (15 lines; existing claims, not re-verified)
@@ -133,3 +133,11 @@
 - Previous types/lint/unit/E2E/sim/OFF/A5 evidence remains valid: source was unchanged throughout this run.
 - The recorder/browser finished and released timing.lock; own Vite PID 37741 remains on 5960 for Q10.
 - Q10 next. Updated Q10–Q14 drafts are archived; none has been applied. Fresh final seeds remain unused.
+
+## Q10 complete — 2026-11-10 12:40 UTC
+- One read-only Fuji team treasure, two/eight percent by rarity and capped at eight; ordinary gear retained. Demo fixture only offline, wallet changes clear holdings and stale reads are ignored.
+- Typecheck/lint PASS; full web 1,895 and rules 1,297 PASS plus existing expected failures/skips.
+- Three inspected WebPs; all choices visible at 1280×720. Actual offline prop fixture raises Power 7,503→8,035, gear unchanged. Product-path no-wallet play passes, no console/page errors.
+- Sim: 500 dev seeds in 336.69 seconds; normal 30.88 seconds, boss 79.38. G2/G3/Tower/tool-runtime remain partial for Q11–Q12.
+- OFF exact over 8,250 routes; A5 exact forty-five. q10-compatibility.json; expected hashes unchanged.
+- Q11 next; staged onboarding must preserve the final compact Relic CSS. Full E2E/thirty-minute run next due Q12. No fresh final seeds used.

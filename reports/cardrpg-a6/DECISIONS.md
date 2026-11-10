@@ -34,3 +34,7 @@
 - Reuse existing V4 loadout slots for Campaign/Daily/Tower; keep saved gear restores at home and use only rows/plan during preparation.
 - Suggestions prioritize three play styles without running combat on the main thread; use the existing worker forecast for the matchup hint.
 - With only three owned cats, suggestions share the roster and change standing plans. With enough eligible cats, prefer different rosters.
+
+## Q10
+- One selected Fuji Relic adds two to eight percent to the active team’s HP, attack and defense; holdings and copies do not stack. A6 keeps ordinary cat gear; OFF keeps the existing lead-cat effect.
+- Reuse the existing read-only, pinned-block ABI adapter. Clear stale holdings on wallet/network changes and reject stale responses. Demo holdings require the offline component; the normal sandbox URL keeps product wallet behavior.
