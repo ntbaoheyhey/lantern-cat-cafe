@@ -32,3 +32,6 @@ Button Guard/Sock Skipper/Spool Ram/Needle Moth/Teacup Healer/Kettle Knight have
 
 ## P5 complete — all13enemies/bosses
 Every rules enemy id now has an original illustrated atlas/rig; no native or legacy roster fallback in puppet mode. Four boss showcases have breathing, eye emission,7ambient motes and phase flash; reduced motion freezes/suppresses extra motion. Kettle uses boss scale only in boss framing, normal elite size in mixed fights. Full roster atlas+rig paths unchanged. Combined A6 lean32,956,195B (<40MB); P6 canvas numbers/signature VFX now active. Review p5/REVIEW.md;0page/faceHPerrors at both sizes;19tests/five-seed parityPASS.
+
+## P6 complete — single-source canvas numbers and real sockets
+All25rigs publish authored mainHand sockets; no new event API. Canvas owns visible damage/crit/heal/shield/KO totals. Existing DOM number labels remain accessible and are hidden visually by one puppet-only battle-layout.css selector; do not add a second visible number layer. Inkcap decoy is now a small floor paper-cat cue. Hurt tint decays quickly, retaining source colours. Saved49+6cast audit/33tests plus new5seed parityPASS, zero socket/faceHP/number/UIerrors; warmed castp95/max16.8ms. Original VFX audit8.1self-review. Combined A6 lean32,957,799B. P7 stage/P8 unified portrait manifest remain underway; no rules/HUD markup changes.

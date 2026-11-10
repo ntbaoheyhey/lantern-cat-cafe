@@ -47,7 +47,7 @@ export function puppetPose(motion:PuppetMotion,time:number,progress:number,reduc
   const breathe=reduced?0:Math.sin(clock*2.25)*(motion==='boss-idle'?.014:.009);
   const blinkAt=(clock%(4.1+phase*.17));
   const blink=reduced?1:1-.98*Math.exp(-Math.pow((blinkAt-3.85)/.065,2));
-  return {gesture,breathe,hit:reduced?0:hit,flash:hit*.75,
+  return {gesture,breathe,hit:reduced?0:hit,flash:reduced?0:motion==='hurt'?.45*(1-ramp(t,0,.24)):0,
     head:reduced?0:motion==='hurt'?-.045*hit:motion==='defeat'?-.12:active?-.025*gesture:Math.sin(clock*1.15)*.013,
     tail:reduced?0:Math.sin(clock*1.45)*.065,
     wing:reduced?0:Math.sin(clock*1.55)*.055+gesture*.08,

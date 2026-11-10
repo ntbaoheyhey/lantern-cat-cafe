@@ -47,3 +47,7 @@ Không còn runner native;49chiêu và6mẫu màn hình nhỏ đã kiểm tra xo
 11/11: Đã kiểm tra lại Git/tiến trình/dung lượng; nhánh B bằng origin, không còn runner native.
 Giữ nguyên P1–P5 đã hoàn tất và toàn bộ thay đổi đang dở; tiếp tục duyệt hình P6 từ kết quả đã lưu.
 Prompt hiện tại được lưu nguyên văn; bổ sung nghiên cứu còn thiếu, không chạy lại các gate đã đạt.
+
+P6 hoàn tất: điểm phát chiêu theo đạo cụ thật, số sát thương/hồi máu chỉ vẽ một lần trên canvas; vẫn giữ nhãn đọc màn hình.
+Dùng lại49+6chiêu/33test đã đạt, bổ sung parity5seed đạt; điểm VFX tự đánh giá8,1, hiệu ứng lớn còn có thể mạnh hơn.
+Tiếp tục P7 sân quán/ánh sáng; nghiên cứu đã bổ sung, không mở lại P1–P5.

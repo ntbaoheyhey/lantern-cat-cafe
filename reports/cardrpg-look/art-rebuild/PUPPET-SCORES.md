@@ -40,3 +40,5 @@ P3 battle composition: normal 7.8, boss 8.0. Final captures `p3/final/` show pil
 P4 batch1 retains Mochi 7.8/Soot 7.6 after current runtime re-review. All six motion sheets show coherent layers; shared motions remain deliberately small. Final evidence p4/batch1-final, zero errors/face-HP overlaps.
 
 P5 final roster:25of25cat/enemy ids have concept puppets; four boss showcases/reduced-motion pass. Pilot battle row remains historical; current composition7.8–8.0.
+
+P6 current battle/VFX audit: readability8.4, style coherence8.3, timing8.1, spectacle7.5; combined8.1. This does not overwrite the unit-motion scores or the historical pilot battle. Evidence p6/REVIEW.md and the three overview sheets; shared envelope/gesture limits remain explicit.

@@ -64,4 +64,10 @@ describe('illustrated puppet contract and event motions',()=>{
     const p=puppetPose('attack',1,.52,true,puppetPhase('mochi'));
     expect([p.gesture,p.head,p.tail,p.wing,p.lean,p.prop,p.offhand,p.breathe]).toEqual([0,0,0,0,0,0,0,0]);
   });
+  it('flashes briefly at impact and restores concept colours through recovery',()=>{
+    expect(puppetPose('hurt',0,0,false).flash).toBe(.45);
+    expect(puppetPose('hurt',0,.3,false).flash).toBe(0);
+    expect(puppetPose('hurt',0,.7,false).flash).toBe(0);
+    expect(puppetPose('hurt',0,0,true).flash).toBe(0);
+  });
 });

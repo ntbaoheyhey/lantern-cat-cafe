@@ -60,7 +60,7 @@ export function statusImpactLabels(plan:EffectPlan, targetId:string, presentatio
     if(!e.targetIds.includes(targetId))continue;
     const dot=presentation.kinds.get(e.seq)==='dot',numeric=['damage','heal','shield'].includes(e.type);
     const existing=numeric?labels.find(x=>x.type===e.type&&x.dot===dot&&x.statusId===presentation.tickIds?.get(e.seq)&&Math.sign(x.amount)===Math.sign(e.amount)):undefined;
-    if(existing){existing.amount+=e.amount;existing.hits++;}
+    if(existing){existing.amount+=e.amount;existing.hits++;existing.critical ||= e.critical;}
     else labels.push({...e,note:(e.type==='status_apply'||e.type==='status_expire')?(statusWords.get(e.note ?? '')??e.note):e.note,hits:1,dot,statusId:presentation.tickIds?.get(e.seq),bitter:e.type==='heal'&&presentation.bitterTargets?.has(targetId)});
   }
   return labels;
