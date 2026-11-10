@@ -1,6 +1,6 @@
 # Lane B active queue
 
-Updated: 2026-11-10T08:54:00Z. ACTIVE — user explicitly resumed.
+Updated: 2026-11-10T10:59:36Z. PAUSED — explicit user stop. Do not run queue until resumed.
 Latest instruction: TRELLIS local-mps only; no browser/Space generation. Internal browser remains available for battle review.
 Always take the top unfinished unblocked item. Check INBOX.md and root STOP-B between items. Reports/checkpoints are not stops. After three failed repairs, use the documented fallback and continue. Only the hard stops in NON-STOP-RUN.txt apply.
 
@@ -66,4 +66,6 @@ Local TRELLIS override 2026-11-10T07:30:26.787573+00:00: user-authorized Apple S
 
 2026-11-10T10:18Z: Button attempt2 started10:17:22UTC under sole B lease26933; seed20262111/512/1024/50KpreUV, decoded checkpoint enabled. Matching before capture passed1shot/0overlap. While waiting, Q8 added25face crops at56/72/144px requested by A6,75files verified/reviewed; manifest prepared for U. Existing full card crops, source masters and Mochi/Soot preserved.
 
-2026-11-10T10:40Z: Button attempt2 timed out1082.781s, checkpoint retained. Export-only Blender recovery1 took10.488s; geometry guards passed but UV-area0.0016557failed texture quality. Fractional-margin recovery2 queued in helper8450; no third inference. Optional native Blender UV route prepared,8guard testsPASS; use only after actual source review.
+2026-11-10T10:40Z: Button attempt2 timed out1082.781s, checkpoint retained. Export-only Blender recovery1 took10.488s; geometry guards passed but UV-area0.0016557failed texture quality. Fractional-margin recovery2 queued in session77049/waiter34006 (old waiting wrapper31128 stopped before any child/output;250ms lock polling); no third inference. Optional native Blender UV route prepared,8guard testsPASS; use only after actual source review.
+
+2026-11-10T10:59:36Z USER PAUSE: stopped sole B export waiter34006 before any child/output and intake watcher57059. Recovery2 remains unstarted; resume from saved Button decoded checkpoint, never rerun completed inference. No Lane A process/lease touched. Q3/Q5–Q8/Q10/Q11 remain unfinished; eight local guards and runner plan/syntax passed.

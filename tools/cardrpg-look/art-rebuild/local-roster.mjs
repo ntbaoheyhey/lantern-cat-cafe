@@ -18,7 +18,16 @@ const read=async p=>JSON.parse(await readFile(p,'utf8'));
 const exists=p=>access(p).then(()=>true,()=>false);
 const hash=async p=>createHash('sha256').update(await readFile(p)).digest('hex');
 const save=async(p,v)=>{await writeFile(p+'.tmp',JSON.stringify(v,null,2)+'\n');await rename(p+'.tmp',p);};
-const pending=queue.rows.filter(r=>!['GENERATED_NOT_REVIEWED','FAILED_MAX_ATTEMPTS'].includes(r.status));
+// A recovered export is still review-required, but must never trigger another
+// inference merely because its original generation receipt records a timeout.
+for(const row of queue.rows.filter(r=>r.status==='RECOVERED_NOT_REVIEWED')){
+  const recovered=await read(row.recovery?.receipt);
+  if(recovered.status!=='EXPORTED_REVIEW_REQUIRED'||recovered.unit!==row.id
+      ||recovered.modelRequests!==0||recovered.modelSha256!==row.recovery.modelSha256
+      ||await hash(recovered.model)!==recovered.modelSha256)
+    throw Error('Recovered export changed; inspect before continuing '+row.id);
+}
+const pending=queue.rows.filter(r=>!['GENERATED_NOT_REVIEWED','RECOVERED_NOT_REVIEWED','FAILED_MAX_ATTEMPTS'].includes(r.status));
 if(args.plan){console.log(JSON.stringify({pending:pending.map(r=>r.id),preserved:queue.preserved,oneAtATime:true}));process.exit(0);}
 if(!args.submit||!args['smoke-review'])throw Error('Explicit --submit --smoke-review REVIEW.json required; --plan is read-only');
 const limit=Number(args.limit??pending.length);
@@ -70,7 +79,8 @@ try{
         'nice','-n','10',resolve(homedir(),'tools/cardrpg-look/venv/bin/python'),
         'tools/cardrpg-look/art-rebuild/image-to-3d.py','--backend','local-mps','--submit',
         '--id',row.id,'--seed',String(seed),'--pipeline-type',row.pipelineType,
-        '--texture-size',String(row.textureSize),'--source-faces',String(row.sourceFaces??100000),'--out',out];
+        '--texture-size',String(row.textureSize),'--source-faces',String(row.sourceFaces??100000),
+        '--uv-backend',row.uvBackend??'xatlas','--out',out];
       row.status='WAITING_LEASE_OR_GENERATING';await save(queuePath,queue);
       console.log(JSON.stringify({unit:row.id,attempt:n,seed,status:row.status}));
       const code=await new Promise((done,reject)=>{

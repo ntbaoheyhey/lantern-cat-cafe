@@ -102,6 +102,15 @@ try:
          positionsUnchanged=True, uniqueSurfaceCoverageUnchanged=True,
          bakerSha256=sha(args.trellis_root / 'backends/texture_baker.py'),
          exporterSha256=sha(__file__), unwrapSha256=sha(Path(__file__).with_name('unwrap-decoded.py')))
+    export_seconds = round(time.monotonic() - started, 3)
+    review_out = args.out / 'review'
+    with (args.out / 'review.log').open('w') as log:
+        subprocess.run([str(args.blender), '-b', '--threads', '4', '--python',
+                        str(Path(__file__).with_name('review-generated.py')), '--',
+                        '--model', str(model), '--out', str(review_out)],
+                       stdout=log, stderr=subprocess.STDOUT, check=True, timeout=300)
+    save(exportSeconds=export_seconds, reviewDirectory=str(review_out),
+         reviewStatus='CAPTURED_NOT_INSPECTED')
 except BaseException as error:
     save(status='FAILED', error=str(error), errorType=type(error).__name__)
     raise
