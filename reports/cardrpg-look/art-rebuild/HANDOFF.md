@@ -2,13 +2,13 @@
 
 ACTIVE — user explicitly resumed. Continue NON-STOP-RUN and QUEUE; checkpoints are not stops.
 Worktree /Users/bao/taskbar-hero-cardrpg-b2; branch codex/cardrpg-art-r1-2026-11-09; draft#427.
-Latest pusheda56f43b42: native timeout diagnosis, lossless orientation guards, final VFX evidence and byte-exact archive. Draft427 remains open.
+Latest pushed5f247d370: native timeout diagnosis, lossless orientation guards, final VFX evidence and byte-exact archive. Draft427 remains open.
 Do not redo R0/M5/S6, Q1/Q2/Q4, Mochi/Soot conversions, or completed VFX sources and phase checks.
 Latest INBOX: TRELLIS local-mps only, one model at a time. No browser generation. Internal chat browser for review only.
 External install ~/art/trellis-mac at d58628f4; Python3.11/Torch2.15/MPS/pipeline import pass. DINOv3 access confirmed.
 All19weight files cached16.18GB. Old smoke waiters80150/98355 stopped before inference; replacement smoke uses250ms atomic-lock polling (smoke-local.log). Do not duplicate.
 Smoke512 attempt2 EXPORTED in656.715s. UV-v/gutter repair reviewed: colour alignment and dark seams fixed; geometry remains coarser than old Mochi. Keep old Mochi/Soot.
-Button attempt1 timed out in xatlas at1081.178s; old runner14738/inference14759 stopped after terminal receipt. No GLB. Attempt2 RUNNING since10:17:22UTC: wrapper26933/inference26945, helper session97800. Before6114 completed. Newseed20262111/50Kpre-UV/512/1024; do not duplicate. Next source checkpoint preserves decoded data before UV. Inspect source/packed motion/battle before expansion.
+Button attempt2 timed out at1082.781s in xatlas; noGLB but immutable decoded checkpoint retained (280621faces/37319duplicates). Export-only recovery1 producedGLB in10.5s but UVarea0.0016557failed. Fractional-margin recovery2 queued in helper8450; original26945 ended. No third inference. Recovery scripts and optional --uv-backend blender have8guardsPASS; inspect source/packed motion/battle before expansion.
 Then Button/Yarn first, then remaining roster. Max3local attempts per unit with new seeds, alpha-only/noRMBG, shared lease, no overlapping B heavy jobs.
 Q3 four-unit decision and Q5 runtime still unfinished; all25original concept masters complete/provenanced.
 Q6 all12hero skill/ult/passive and13enemy families now wired; no duplicate enemy props.7.7auditPARTIAL: normal/passive uniqueness and large motif face clipping remain.

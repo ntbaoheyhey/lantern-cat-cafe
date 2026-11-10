@@ -150,6 +150,51 @@ def configure_export_checkpoint(trellis):
     return {'path': str(path), 'sha256': sha(path), 'purpose': 'decoded source checkpoint before UV; no inference changes'}
 
 
+def configure_blender_uv(trellis):
+    """Optional export route only; preserve inference and the historical xatlas path."""
+    path = trellis / 'generate.py'
+    body = path.read_text()
+    marker = '            # Lane B: bounded Blender UV export, same decoded surface'
+    original = '            new_verts, new_faces, uvs, vmapping = uv_unwrap(bake_verts, bake_faces)'
+    export = '            export_glb_with_texture(new_verts, new_faces, uvs, base_color_img, mr_img, glb_path)'
+    if marker not in body:
+        if body.count(original) != 1 or body.count(export) != 1:
+            raise ValueError('Upstream UV/export changed; inspect before enabling Blender')
+        replacement = marker + '''
+            new_normals = None
+            if os.environ.get('LANE_B_UV_SCRIPT'):
+                import subprocess
+                import trimesh
+                uv_path = args.output + ".uv.npz"
+                subprocess.run([os.environ['LANE_B_BLENDER'], '-b', '--threads', '4',
+                                '--python', os.environ['LANE_B_UV_SCRIPT'], '--',
+                                '--checkpoint', checkpoint, '--out', uv_path], check=True, timeout=240)
+                with np.load(uv_path, allow_pickle=False) as uv_data:
+                    new_verts, new_faces, uvs = uv_data['vertices'], uv_data['faces'], uv_data['uvs']
+                    vmapping, original_face = uv_data['original_vertex'], uv_data['original_face']
+                if not np.array_equal(new_verts, bake_verts[vmapping]) or not np.array_equal(vmapping[new_faces], bake_faces[original_face]):
+                    raise ValueError('UV export changed retained geometry')
+                source_mesh = trimesh.Trimesh(vertices=bake_verts, faces=bake_faces[original_face], process=False)
+                new_normals = source_mesh.vertex_normals[vmapping]
+            else:
+                new_verts, new_faces, uvs, vmapping = uv_unwrap(bake_verts, bake_faces)'''
+        body = body.replace(original, replacement).replace(export, export[:-1] + ', vertex_normals=new_normals)')
+        path.write_text(body)
+    baker = trellis / 'backends/texture_baker.py'
+    body = baker.read_text()
+    signature = 'def export_glb_with_texture(vertices, faces, uvs, base_color_img, mr_img=None, output_path="output.glb"):'
+    mesh = '    mesh = trimesh.Trimesh(vertices=vertices, faces=faces, process=False)'
+    new_signature = signature[:-2] + ', vertex_normals=None):'
+    if new_signature not in body:
+        if body.count(signature) != 1 or body.count(mesh) != 1:
+            raise ValueError('Upstream texture export changed; inspect before preserving UV-seam normals')
+        baker.write_text(body.replace(signature, new_signature).replace(mesh,
+            '    mesh = trimesh.Trimesh(vertices=vertices, faces=faces, vertex_normals=vertex_normals, process=False)'))
+    helper = Path(__file__).with_name('unwrap-decoded.py')
+    return {'path': str(path), 'sha256': sha(path), 'bakerSha256': sha(baker),
+            'helper': str(helper), 'helperSha256': sha(helper), 'purpose': 'bounded UV export; no inference changes'}
+
+
 def local_generate(args):
     if not re.fullmatch(r'[a-z][a-z0-9-]*', args.id):
         raise ValueError('Invalid unit id')
@@ -211,6 +256,10 @@ def local_generate(args):
                        textureGutterPatch=configure_texture_gutters(trellis),
                        exportCheckpointPatch=configure_export_checkpoint(trellis),
                        generateSha256=sha(trellis / 'generate.py'))
+        if args.uv_backend == 'blender':
+            receipt['blenderUvPatch'] = configure_blender_uv(trellis)
+            receipt['generateSha256'] = sha(trellis / 'generate.py')
+        receipt['uvBackend'] = args.uv_backend
 
         def save(status, **extra):
             receipt.update(status=status, elapsedSeconds=round(time.monotonic() - started, 3), **extra)
@@ -225,6 +274,11 @@ def local_generate(args):
         env = os.environ.copy()
         env['PYTHONUNBUFFERED'] = '1'
         env['HF_HUB_DISABLE_PROGRESS_BARS'] = '1'
+        env.pop('LANE_B_UV_SCRIPT', None)
+        env.pop('LANE_B_BLENDER', None)
+        if args.uv_backend == 'blender':
+            env['LANE_B_UV_SCRIPT'] = str(Path(__file__).with_name('unwrap-decoded.py'))
+            env['LANE_B_BLENDER'] = str(Path.home() / 'tools/cardrpg-look/Blender.app/Contents/MacOS/Blender')
         with (out / 'generation.log').open('w') as log:
             child = subprocess.Popen(command, cwd=trellis, env=env, stdout=log,
                                      stderr=subprocess.STDOUT, start_new_session=True)
@@ -291,6 +345,8 @@ def main():
     parser.add_argument('--seed', type=int)
     parser.add_argument('--pipeline-type', choices=['512', '1024', '1024_cascade'], default='1024')
     parser.add_argument('--texture-size', type=int, choices=[512, 1024, 2048], default=1024)
+    parser.add_argument('--uv-backend', choices=['xatlas', 'blender'], default='xatlas',
+                        help='Opt-in reviewed Blender export without changing inference')
     parser.add_argument('--source-faces', type=int, choices=[50000, 100000, 200000], default=100000,
                         help='Pre-UV source mesh budget; runtime packing is a separate reviewed step')
     parser.add_argument('--local-root', default=str(Path.home() / 'art/trellis-mac'))

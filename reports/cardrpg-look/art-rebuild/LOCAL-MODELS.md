@@ -35,3 +35,11 @@ KDTree export omits the (x,z,-y) rotation in upstream o_voxel.postprocess.py:313
 Native gutter repair: configure_texture_gutters patches only the external KDTree empty-texel filling, retaining all valid samples. pad-native-texture.py repairs the existing smoke without re-inference; it reconstructs UV occupancy and preserves occupied pixels. Source/raw/corrected variants are retained; export/patch hashes go in each receipt.
 
 Native exporter now saves an atomic external .decoded.npz immediately before UV (simplified geometry, voxel colours, origin/scale). This preserves model output for export-only repair; it does not alter inference. Its patch/hash is recorded in future receipts. Attempt1 did not have this checkpoint and cannot be claimed recoverable.
+
+## Export recovery from saved native data
+
+Button attempt2 timed out at1082.781s in xatlas. Its immutable decoded checkpoint retained280621triangles/voxel colours;37319faces are exact duplicates. `export-decoded.py` accepts only a terminal failed local receipt, removes exact duplicate faces, checks original positions and all unique face coverage, unwraps in Blender and uses the same KDTree colour baker. No model loading or new inference is involved.
+
+First recovery exported in10.488s but was rejected: scaled UV margin left only0.0016557atlas area. The second candidate uses fractional margin0.0001 and rejects UV coverage below0.15 before baking; it is still waiting for the shared lease. Every failed source stays external; no inbox/runtime replacement.
+
+`image-to-3d.py --uv-backend blender` is an explicit optional export route prepared for future generation. Historical xatlas remains default. It preserves decoded geometry, maps smooth source normals over UV seams, records helper/baker hashes and retains the pre-UV checkpoint. Eight local no-inference guards pass. Do not enable roster expansion before the Button visual review.

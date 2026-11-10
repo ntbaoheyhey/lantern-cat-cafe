@@ -16,6 +16,25 @@ spec.loader.exec_module(runner)
 
 
 class LocalMpsGuards(unittest.TestCase):
+    def test_blender_uv_export_preserves_inference_and_source_normals(self):
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td); (root/'backends').mkdir()
+            generate = root/'generate.py'; baker = root/'backends/texture_baker.py'
+            generate.write_text('def main():\n    infer_original()\n    if True:\n        if True:\n'
+                '            new_verts, new_faces, uvs, vmapping = uv_unwrap(bake_verts, bake_faces)\n'
+                '            export_glb_with_texture(new_verts, new_faces, uvs, base_color_img, mr_img, glb_path)\n')
+            baker.write_text('def export_glb_with_texture(vertices, faces, uvs, base_color_img, mr_img=None, output_path="output.glb"):\n'
+                '    mesh = trimesh.Trimesh(vertices=vertices, faces=faces, process=False)\n')
+            first = runner.configure_blender_uv(root)
+            self.assertEqual(runner.configure_blender_uv(root), first)
+            self.assertEqual(generate.read_text().count('infer_original()'), 1)
+            self.assertIn('vertex_normals=new_normals', generate.read_text())
+            self.assertIn('vertex_normals=vertex_normals', baker.read_text())
+            compile(generate.read_text(), str(generate), 'exec')
+            compile(baker.read_text(), str(baker), 'exec')
+            generate.write_text('unknown upstream\n')
+            with self.assertRaises(ValueError): runner.configure_blender_uv(root)
+
     def test_decoded_checkpoint_is_before_uv_without_changing_inference(self):
         with tempfile.TemporaryDirectory() as td:
             root = Path(td); path = root / 'generate.py'
