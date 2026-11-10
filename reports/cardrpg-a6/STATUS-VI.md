@@ -140,3 +140,7 @@ Typecheck/lint và3test qua; đang tích hợp B P21 rồi cập nhật demo off
 2026-11-10T21:12:15Z: Q21 hoàn tất: kỹ năng của12mèo rõ hơn,96lượt chọn đạt; nút xem chiêu vừa khung720p.
 Đã duyệt14ảnh offline, demo38,39MB tích hợp Mochi/Practice Cushion mới; không lỗi hoặc gọi mạng.
 Tiếp tục Q22: mở chiêu ngay trong bàn tập riêng, giữ nguyên kỹ năng đã chọn và trả tiêu điểm bàn phím khi đóng.
+
+2026-11-10T21:27:14Z: Q22 hoàn tất: xem ngay chiêu đang chọn, đóng bằngEscape trở lại đúng nút; chỉ số/trang bị vừa khung720p.
+Đã xem16ảnh nguồn và10ảnh offline;34test liên quan/typecheck/lint đạt, demo38,39MB có Clover mới và không lỗi/gọi mạng.
+Tiếp tục Q23: đưa quà mốc đang nhận được sang mục truy cập trực tiếp trong Daily, giữ nguyên điều kiện và phần thưởng.
