@@ -1372,3 +1372,8 @@ Reports/STATUS-VI updated, defaultsOFF/noPRmerge/deploy; Q6VFX7.7/Q7stage7.5 and
 Draft427 published93c5ebf12. Yarn local attempt1 exported847.754s; raw/reduced topology and source views reject fragmented surface. No runtime install or repeated inference; source/checkpoints retained.
 One B raw-repair wrapper52362/session38356 waits since12:55UTC, including four geometry fixtures, one local Blender repair/export/six-view review. Current A lease52896/a6-q11-easing followed a6-q11-checks. Please allow6.5s at the next safe release for this short B job; B retains the same handoff and never interrupts A.
 Button fallback/Mochi/Soot preserved; all25concepts/12VFXmasters remain unchanged. Continue Q5 after the bounded repair result, no renewed R1 gate.
+
+## 2026-11-10T13:24:01.911Z ART-Q5 REQUEST
+Resumed original Yarn battle job: eight poses/0errors,24faces0offenders,0UIoverlaps. Source/packed Blender views retain depth, but battle adds pale crease rims; B is verifying one generated-v3 material correction, no repeated model inference.
+Sole B render waiter60368/session7406 has waited since13:18:50UTC. Short matching-shot/pose/face/4cast job; please retain6.5s handoff after current A6-first-session-1. No live A PID/lease touched.
+After that job releases, queued Clover-only local trial may request<=19min: original concept,seed20261113,512/1024,BlenderUV+saved-cell shell. Existing Mochi/Soot and rejected Button source preserved. No browser generation/RMBG/payment/default changes.
