@@ -1,5 +1,9 @@
 - TASK.md exact latest user prompt: 24199 bytes; SHA-256 0123dfbf4f0fd156d585c1389d0c22282d5b3a603d51ad7965b14c198c9f31ee.
 
+- Resume audit 2026-11-10T20:22:47Z: git0/0 atfb148c0aa;142GiB; Vite91373/5960 retained, no stale A6 probe. Q18 code/tests/evidence/drafts preserved; final two embedded-guide captures accepted. B272a32893 pending integration.
+
+- Resume audit 2026-11-10T20:12:10Z: clean local/origin0ahead0behind atfb148c0aa;142GiB; Vite91373/5960 retained, no active heavy job/stale A6 process. Prompt matches attachment exactly; Q18 preserved drafts now applied. Accepted onboarding/final seed/run/E2E retained.
+
 - Resume audit 2026-11-10T19:58:54Z: local/origin0ahead0behind at83d0f0f41;143GiB; Vite91373/5960 retained. Q14 P15 gallery completed, Q17 gallery stopped at replay navigation; wrapper1485 exited and released lease. All dirty code/evidence preserved. Prompt exact and previous onboarding retained.
 
 - Resume audit 2026-11-10T19:43:53Z: local/origin0ahead0behind atb2ab7be48;145GiB; active Q15 run retained (Vite91373/5960, browser91649/5963, parent91637, lease95742/segment95743). No stale A6 processes. Prompt exact; accepted checks and off-app drafts preserved.

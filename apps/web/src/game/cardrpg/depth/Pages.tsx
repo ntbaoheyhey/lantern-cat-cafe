@@ -8,6 +8,8 @@ import type { DepthModel } from './model';
 import { CompanionPreview } from './CompanionPreview';
 import { nextChallenge } from './meta-presentation';
 import { portraitProps } from './assets';
+import { artPropsA6 } from '../ui-v3/art-a6';
+import { enemyGuideA6, guideTermsA6 } from '../ui-v3/guide-a6';
 export { Team, Collection } from './TeamCollection';
 export { Inventory } from './Equipment';
 export { Invitations } from './Invitations';
@@ -35,15 +37,16 @@ export function Hub({ m }: { m: DepthModel }) {
         {QUESTS.map(q => { const progress = m.state.account.quests[q.id]!; return <div className="cr-quest-mini" key={q.id}><span>{q.name}<small>{progress.progress}/{q.target} · <CostView cost={q.reward.currencies} /></small><progress aria-label={`${q.name} progress`} value={progress.progress} max={q.target} /></span><button disabled={progress.claimed || progress.progress < q.target || !!active} onClick={() => m.command({ type: 'claimQuest', questId: q.id })}>{progress.claimed ? 'Claimed' : 'Claim'}</button></div>; })}
       </section>}</div></>;
 }
-export function Codex({ v4 = false, skillsV5 = false }: { v4?: boolean; skillsV5?: boolean }) {
+export function Codex({ v4 = false, skillsV5 = false, a6 = false }: { v4?: boolean; skillsV5?: boolean; a6?: boolean }) {
   const [tab, setTab] = useState('keywords');
-  return <><PageTitle eyebrow="Intent, response, outcome" title="Know what matters." /><div className="cr-tabs">{['keywords', 'companions', 'enemies', 'charms', 'sets'].map(id => <button key={id} aria-pressed={tab === id} onClick={() => setTab(id)}>{id}</button>)}</div>
-    <p>{v4 ? 'Plan before the fight: crew jobs, rows and standing preferences guide automatic combat. Every unlocked skill joins the kit; ultimates open after two own turns.' : R.FLAVOUR_RULE}</p><div className="dp-codex-grid">
-      {tab === 'keywords' && (skillsV5 ? R.CORE_STATUS_RULES_V5 : R.STATUSES).map(status => <article className="cr-panel" key={status.id}><h2>{status.name}</h2><p>{skillsV5 ? status.description : v4 ? R.statusDescriptionV4(status.id) : status.description}</p><small>{status.kind} · cap {status.cap} · {status.duration} rounds · {status.dispellable ? 'Dispellable' : 'Protected from dispel'}</small></article>)}
+  const wording=(text:string)=>a6?guideTermsA6(text):text;
+  return <><PageTitle eyebrow="Intent, response, outcome" title="Know what matters." />{a6&&<header className="a6-guide-intro"><img {...artPropsA6('biscuit')} alt=""/><div><small>NOTES BEFORE NIGHT PATROL</small><h2>A little field wisdom.</h2><p>Choose your crew and formation before the fight. Unlocked ultimates cast automatically at 100 rage when the cat can act.</p></div></header>}<div className="cr-tabs">{['keywords', 'companions', 'enemies', 'charms', 'sets'].map(id => <button key={id} aria-pressed={tab === id} onClick={() => setTab(id)}>{id}</button>)}</div>
+    {!a6&&<p>{v4 ? 'Plan before the fight: crew jobs, rows and standing preferences guide automatic combat. Every unlocked skill joins the kit; ultimates open after two own turns.' : R.FLAVOUR_RULE}</p>}<div className={a6?'dp-codex-grid a6-field-notes':'dp-codex-grid'} data-page={tab}>
+      {tab === 'keywords' && (skillsV5 ? R.CORE_STATUS_RULES_V5 : R.STATUSES).map(status => <article className="cr-panel" key={status.id} data-kind={status.kind}><h2>{status.name}</h2><p>{skillsV5 ? status.description : v4 ? R.statusDescriptionV4(status.id) : status.description}</p><small>{status.kind} · cap {status.cap} · {status.duration} rounds · {status.dispellable ? 'Dispellable' : 'Protected from dispel'}</small></article>)}
       {tab === 'keywords' && skillsV5 && Object.entries(R.REACTION_NAMES_V5).map(([id,name])=><article className="cr-panel" key={id}><h2>{name}</h2><p>{R.CREWS_V5.filter(c=>c.reaction===id).flatMap(c=>R.crewHintsV5([...c.cats])).join(' ') || 'Defeat a Marked foe to carry half of each debuff stack to its nearest neighbour.'}</p></article>)}
-      {tab === 'companions' && R.CATS.map(cat => <article className="cr-panel" key={cat.id}><img className="dp-enemy-portrait" {...portraitProps(cat.id)} alt={cat.name} /><h2>{cat.name}</h2><small>{cat.role} · {cat.flavour}</small><p><b>{cat.passive.name}</b> · {v4 ? R.passiveDescriptionV4(cat.id) : cat.passive.description}</p></article>)}
-      {tab === 'enemies' && R.ENEMIES.map(enemy => <article className="cr-panel" key={enemy.id}><img className="dp-enemy-portrait" {...portraitProps(enemy.id)} alt={enemy.name} /><h2>{enemy.name}</h2><small>{enemy.tier} · {enemy.flavour} · {enemy.row}</small><p>{v4 ? R.enemyGuideV4(enemy.id).intent : enemy.intent}</p><p>{v4 ? R.enemyGuideV4(enemy.id).counter : enemy.counter}</p><small>{enemy.phases.join(' · ')}</small></article>)}
-      {tab === 'charms' && R.BOONS.map(boon => <article className="cr-panel" key={boon.id}><h2>{boon.name}</h2><small>{boon.archetype} · stack cap {boon.cap}</small><p>{R.boonForMode(boon.id, v4).description}</p></article>)}
-      {tab === 'sets' && R.SETS.map(original => { const set=R.setTextV4(original,v4); return <article className="cr-panel" key={set.id}><h2>{set.name}</h2><p>2 pieces · {set.two}</p><p>4 pieces · {set.four}</p></article>; })}
+      {tab === 'companions' && R.CATS.map(cat => <article className="cr-panel" key={cat.id}><img className="dp-enemy-portrait" {...(a6?artPropsA6(cat.id):portraitProps(cat.id))} alt={cat.name} /><h2>{cat.name}</h2><small>{cat.role} · {cat.flavour}</small><p><b>{cat.passive.name}</b> · {wording(v4 ? R.passiveDescriptionV4(cat.id) : cat.passive.description)}</p></article>)}
+      {tab === 'enemies' && R.ENEMIES.map(enemy => <article className="cr-panel" key={enemy.id}><img className="dp-enemy-portrait" {...(a6?artPropsA6(enemy.id):portraitProps(enemy.id))} alt={enemy.name} /><h2>{enemy.name}</h2><small>{enemy.tier} · {enemy.flavour} · {enemy.row}</small><p>{a6?enemyGuideA6(enemy.id).intent:v4 ? R.enemyGuideV4(enemy.id).intent : enemy.intent}</p><p>{a6?enemyGuideA6(enemy.id).counter:v4 ? R.enemyGuideV4(enemy.id).counter : enemy.counter}</p><small>{a6?enemyGuideA6(enemy.id).phases:enemy.phases.join(' · ')}</small></article>)}
+      {tab === 'charms' && R.BOONS.map(boon => <article className="cr-panel" key={boon.id}><h2>{boon.name}</h2><small>{boon.archetype} · stack cap {boon.cap}</small><p>{wording(R.boonForMode(boon.id, v4).description)}</p></article>)}
+      {tab === 'sets' && R.SETS.map(original => { const set=R.setTextV4(original,v4); return <article className="cr-panel" key={set.id}><h2>{set.name}</h2><p>2 pieces · {wording(set.two)}</p><p>4 pieces · {wording(set.four)}</p></article>; })}
     </div><p>Debuff success is 90% + Effect Hit − Effect Resist, bounded to 10–98%. Boss control lasts one round and grants a short control-resistance window.</p></>;
 }

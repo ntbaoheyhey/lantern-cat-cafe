@@ -87,3 +87,7 @@ Q13f: Existing route stays seven stops (early depths0–3, late4–5, guardian6)
 2026-11-10T19:55:00Z: Advance Q17 application during B’s live timing lease after the Q15 source freeze ended. Stopped only own pending wrapper777 after proving it had no child; no measurement lost. Journal uses existing claims/caps/discoveries, with three meaningful claim tests and both-size review already drafted. Combine affected battle and Journal checks before a single offline rebuild; Q16 reports the accepted result. R-6 waiting-work and section7 reorder authority apply; no accepted seeds/run/E2E repeated.
 
 2026-11-10T20:07:41Z: Q15 film review found startup white frames; trim existing recordings after rendered content, retaining original playback and raw files. Boss62s includes44.59s automatic battle plus setup/result, not a timing benchmark. B90fb3a46f publishes only reports/reviewtools; merge without repeating accepted application checks.
+
+Q18 visual review found guide advice still describing V4 effects/enemy cadence. A6 now uses existing V5 mechanic data, translates legacy status names only in presentation, and explains its66%/33% boss thresholds. Verified Button Guard Warm targets itself, so its guide wording is corrected without changing combat. Legacy mode keeps old descriptions.
+
+2026-11-10T20:22:47Z Q19[auto]: Q18 accepted; Prepare7.5 at720p is now the lowest A-owned screen. Use retained table/art-size drafts and every existing rule/action. Published B P14/P16 affects B-owned render motion only; merge before one combined offline rebuild.

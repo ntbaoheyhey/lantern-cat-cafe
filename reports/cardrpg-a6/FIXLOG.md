@@ -120,3 +120,7 @@
 2026-11-10T20:00:25Z Q17 capture harness: returning through a lazy guide can preserve an open details section; unconditional click closed it before replay lookup. Check details.open before opening; resumed only missing captures/navigation. No product edit; both sizes pass and prior receipts retained.
 
 2026-11-10T20:07:41Z: Film delivery resumed with the existing Pillow venv after the system Python lacked PIL. Original encodes were retained while creating storyboards. Visual review then found leading browser white frames; one recut removes them, with85s/62s real-speed clips and Sootultimate/Victory inspected. No new gameplay recording or measurement.
+
+Q18: first gallery completed8views, then the harness looked for Settings immediately after import. Existing restoreEncounter intentionally returns to the imported route/home; no product failure. Harness now opens Settings again, retains captured images and completes both transfers/reset confirmations.16views/0browser errors accepted. Inspecting guide exposed older V4 enemy/status/phase copy; current V5 mechanics and A6 phase prose are now used only in A6.
+
+Q18 render repair1: full guide and controls passed, but the embedded battle guide retained its dark panel while new field-note text was brown and card headings inherited cream. Inspected1440battle-guide exposed low contrast. Scoped parchment background/explicit card titles now match the A6 sheet, leaving legacy overlays unchanged. Retain successful pause/Escape/x3 receipts; recheck only embedded guide contrast at both sizes.

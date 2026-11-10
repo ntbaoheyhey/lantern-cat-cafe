@@ -1,0 +1,68 @@
+/* A6 field notes and the cafe's save desk; existing rules and actions are retained. */
+.uv-app[data-a6=true] {
+ .uv-battle-guide {background:linear-gradient(120deg,#fff4d8,#ecd8ae);color:#63452c;border:2px solid #e0bd7b;}
+ .uv-battle-guide>.cr-page-title {display:none;}
+ .uv-battle-guide>.cr-tabs {position:sticky;top:-22px;z-index:2;padding:9px 0;background:#f8eaca;}
+ .uv-battle-guide>.cr-tabs>button,.uv-battle-guide>button {background:linear-gradient(#fff0d0,#dac095);color:#573c29;border-color:#a8834e;box-shadow:0 3px 0 #8e6d42;}
+ .uv-battle-guide>.cr-tabs>[aria-pressed=true] {background:#b78c4f;color:#fff8e5;}
+ .uv-battle-guide>button {z-index:3;}
+ .uv-battle-guide>p {color:#705337;}
+ .a6-guide-intro {display:grid;grid-template-columns:116px minmax(0,1fr);align-items:center;gap:22px;max-width:850px;margin:0 0 15px;padding:0 5px;}
+ .a6-guide-intro>img {width:116px;height:128px;object-fit:contain;filter:drop-shadow(0 8px 5px #73553424);}
+ .a6-guide-intro small {font-size:10px;letter-spacing:2px;color:#896642;}
+ .a6-guide-intro h2 {margin:5px 0 7px;font:700 29px Georgia,serif;color:#63452c;}
+ .a6-guide-intro p {font-size:14px;line-height:1.5;margin:0;color:#725534;}
+ [data-screen=codex]>.cr-tabs {position:sticky;z-index:2;top:-18px;margin:0 0 15px;padding:8px 0 10px;background:linear-gradient(#f9eccb 90%,#f9eccb00);}
+ [data-screen=codex]>.cr-tabs>button {min-height:42px;}
+ .a6-field-notes {gap:14px;}
+ .a6-field-notes>.cr-panel {margin:0;position:relative;border-radius:3px 11px 11px 3px;border-left:4px solid #b59b6c;padding:17px 18px;background:linear-gradient(115deg,#fff4d8,#efdfb8);box-shadow:0 3px 0 #8a6b3b16;}
+ .a6-field-notes>.cr-panel[data-kind=debuff] {border-left-color:#aa6355;}
+ .a6-field-notes>.cr-panel[data-kind=buff] {border-left-color:#7b9663;}
+ .a6-field-notes h2 {margin:0 0 10px;font-size:22px;line-height:1.2;color:#63452c;}
+ .a6-field-notes p {margin:8px 0;font-size:14px;line-height:1.5;color:#705337;}
+ .a6-field-notes small {font-size:12px;line-height:1.4;color:#8a6d46;}
+ .a6-field-notes .dp-enemy-portrait {float:left;width:112px;height:154px;margin:0 14px 6px 0;object-fit:contain;border:0;background:radial-gradient(ellipse at 50% 70%,#d9c29c55,transparent 70%);}
+ .a6-field-notes[data-page=companions]>.cr-panel {min-height:188px;}
+ .a6-field-notes[data-page=enemies] {grid-template-columns:repeat(2,minmax(0,1fr));}
+ .a6-field-notes[data-page=enemies]>.cr-panel {min-height:210px;}
+ .a6-field-notes[data-page=enemies] .dp-enemy-portrait {width:138px;height:180px;}
+ .a6-settings-layout {display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:22px;align-items:start;}
+ .a6-settings-layout>.cr-panel {margin:0;padding:24px;border:1px solid #b99861;border-radius:12px;background:linear-gradient(120deg,#fff5dc,#ecd7ae);box-shadow:0 4px 0 #9b784425;}
+ .a6-settings-layout h2 {font-size:27px;line-height:1.18;margin:4px 0 13px;color:#63452d;}
+ .a6-settings-layout p {font-size:14px;line-height:1.5;color:#765734;}
+ .a6-settings-layout label {font-size:13px;color:#7a5c39;}
+ .a6-settings-layout textarea {margin:7px 0 13px;min-height:132px;resize:vertical;line-height:1.5;background:#fffae8;border:1px solid #ba9b68;box-shadow:inset 0 2px 4px #6b4f2a0c;}
+ .a6-settings-layout textarea::placeholder {color:#9b815d;}
+ .a6-settings-layout button,.a6-settings-layout select {min-height:42px;}
+ .a6-settings-layout .cr-actions {gap:9px;}
+ .a6-save-envelope {float:right;width:112px;height:85px;margin:-8px -2px 0 12px;transform:rotate(6deg);}
+ .a6-save-envelope svg {display:block;width:100%;height:100%;}
+ .a6-save-backup>label {display:block;clear:both;}
+ .a6-save-backup .a6-save-note {font-size:12px;margin:12px 0;}
+ .a6-save-reset {border-top:1px dashed #bb9b69;padding-top:12px;margin-top:15px;}
+ .a6-save-reset>summary {font-size:13px;color:#886545;cursor:pointer;}
+ .a6-comfort-panel>small {font-size:10px;letter-spacing:1.7px;color:#987244;}
+ .a6-comfort-panel>.dp-three {grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;margin:20px 0 18px;}
+ .a6-comfort-panel .dp-three>label {display:flex;flex-direction:column;gap:8px;}
+ .a6-comfort-panel .dp-three>label:has(input[type=checkbox]) {grid-column:1/-1;flex-direction:row;align-items:center;min-height:42px;padding:10px 12px;border:1px solid #c1a473;border-radius:7px;background:#fff5dd;}
+ .a6-comfort-panel input[type=checkbox] {width:20px;height:20px;min-height:0;flex:none;margin:0 8px 0 0;accent-color:#967440;}
+ .a6-comfort-panel .a6-replay-button {margin-top:16px;width:100%;}
+ .a6-comfort-panel>.a6-replay-button+small {display:block;margin-top:10px;font:12px/1.4 system-ui,sans-serif;letter-spacing:0;}
+ .a6-settings-layout>.dp-shortcuts {grid-column:1/-1;}
+ @media(max-height:760px) {
+  .a6-guide-intro {grid-template-columns:88px minmax(0,1fr);gap:18px;margin-bottom:9px;}
+  .a6-guide-intro>img {width:88px;height:96px;}
+  .a6-guide-intro h2 {font-size:25px;}
+  .a6-field-notes>.cr-panel {padding:14px 15px;}
+  .a6-settings-layout {gap:17px;}
+  .a6-settings-layout>.cr-panel {padding:20px;}
+  .a6-settings-layout h2 {font-size:25px;}
+  .a6-settings-layout textarea {min-height:112px;}
+  .a6-save-reset {margin-top:10px;padding-top:9px;}
+  .a6-comfort-panel>.dp-three {margin:15px 0;gap:12px;}
+ }
+ @media(max-width:900px) {
+  .a6-settings-layout {grid-template-columns:1fr;}
+  .a6-field-notes[data-page=enemies] {grid-template-columns:1fr;}
+ }
+}
