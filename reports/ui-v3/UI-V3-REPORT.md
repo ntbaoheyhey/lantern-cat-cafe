@@ -1,6 +1,6 @@
 # UI v3 · Living Cafe
 
-Status: **PARTIAL** — U0–U9 delivered; G6 cold-interactive remains below target and final self-score is **8.475/10** (target 8.5). The required single additional improvement pass is complete. Entering sync mode; no merge or deployment. Product defaults OFF.
+Status: **PARTIAL** — U0–U9 delivered; G6 cold-interactive exceeds its limit and final self-score is **8.475/10** (target 8.5). The required single additional improvement pass is complete. Sync refresh R1 published; watch continues; no merge or deployment. Product defaults OFF.
 
 Base: Lane A S6 `1195b13fa` ([#424](https://github.com/ntbaoheyhey/taskbar-hero/pull/424)), merged with published B integration `c5712f7c0` ([#420](https://github.com/ntbaoheyhey/taskbar-hero/pull/420)) by `d4a8dad8d`. U9 draft [#437](https://github.com/ntbaoheyhey/taskbar-hero/pull/437), published evidence commit `bc48c5da0`. Runtime source `1651d011d018343625f5a44d2ad9365c93fa40b4`; runtimeDirty=false. Art R1 `3ef6f96a6` ([#427](https://github.com/ntbaoheyhey/taskbar-hero/pull/427)) is PARTIAL and excluded. At 2026-11-10 00:04 UTC no newer published A descendant qualifies (S7/S8 are not descendants of S6).
 
@@ -58,3 +58,5 @@ Weighted score: **8.30 → 8.475/10** (8.48 rounded), still below 8.5. The [requ
 Fresh-eyes concerns: (1) noticeable offline cold start, owner U, PARTIAL after bounded repairs; (2) undersized legacy Home portraits, FIXED and [visually rechecked](after/1280-off-home.webp); (3) prototype battle art/flat stage, owner B, waiting for a published PASS tip. Current top gaps are cold start, inherited prototype art, and static Home depth. No user action is needed.
 
 Sync polls published A/B refs every ten minutes without model requests, waits fifteen minutes after a qualifying change, then returns the tip for merge and re-verification. Stop conditions: `STOP-UI`, 20 November 2026 18:00 UTC, or a published refresh incorporating both the next A report and B ART-REPORT. No stop condition has fired. See [STATE](STATE.md), [HANDOFF](HANDOFF.md), and [FIXLOG](FIXLOG.md).
+
+Latest sync R1: merged B M5 `440ec2890` (#425) via tree-identical merge `423585913`; required G1/G2/G5/G9/G10 plus all 37 specs pass again. Offline bytes/SHA unchanged; fresh fight 13.758 s and CPU4 interactive 1,357.2–1,376.0 ms. Source receipt `f13c622a16b441cc1a4912fa44dddcca364ca06b`. [Refresh evidence and fresh eyes](sync/r1/SUMMARY.md). No next A/art report pair has been published in a refresh; stop condition remains false.

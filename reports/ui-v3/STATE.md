@@ -48,3 +48,5 @@ U9 final: runtime1651d011d; G1PASS1867webtests; existing421/421, new37/37, final
 U9 published draft#437 https://github.com/ntbaoheyhey/taskbar-hero/pull/437, evidencebc48c5da0. Ledger publication and ten-minute shell watcher follow; no new accepted A/Btip.
 
 SYNC R1: settledpublishedM5 440ec2890/#425 supersedesM4; merged--no-ff as423585913e77de1cfc94bc398dee0222f8dce31d. Tree-identical merge: all Bcontent already present via integration but branch ancestry was divergent. Re-run mandatoryrefreshgates and rebuild anyway. Watcher now excludes tips already ancestors ofHEAD to avoid repeated branch-history refresh. Preserve initialU9receipts withphase-scopedE2Eoutput.
+
+SYNC R1 verified: G1PASS1867webtests;G2/G5all37specsPASS;G9hash/sourceexact;G10421/421;axe24clean;291assetsSHAexact. Artifact31203011B/SHAunchanged;runtimeDirtyfalse;sourcef13c622a16b441cc1a4912fa44dddcca364ca06b. Freshfight13.758s;cold1,357.2–1,376.0 msPARTIAL;score8.475unchanged. Twofresh1280Homecaptures reviewed; nochangedruntime/screens. Publishrefresh,ledger,andresume10minwatch;noneofstopconditionsmet.
