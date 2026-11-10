@@ -44,7 +44,7 @@ export function ForecastV4({ setup, label = "Rough forecast", unavailableMessage
   const current = forecast?.key === key ? forecast : null, failed = failedKey === key;
   return <section className="cr-panel dp-v4-forecast" aria-label={label} aria-live="polite"
     data-forecast-ms={current?.elapsedMs} data-compute-ms={current?.result.computeMs} data-cache-hit={current?.cached}>
-    <small>ROUGH FORECAST</small><h2>{showChance&&current?`${current.result.band} · ${Math.round(current.result.wins/current.result.samples*100)}%`:current?.result.band ?? (failed ? 'Scout their plan' : 'Reading the matchup…')}</h2>
+    <small>ROUGH FORECAST</small><h2>{showChance&&!setup.gameplayA6&&current?`${current.result.band} · ${Math.round(current.result.wins/current.result.samples*100)}%`:current?.result.band ?? (failed ? 'Scout their plan' : 'Reading the matchup…')}</h2>
     <p>{current?.result.risk ?? (failed ? unavailableMessage : 'Checking your crew, gear and formation.')}</p>
     <small>A forecast, never a promise.</small>
   </section>;

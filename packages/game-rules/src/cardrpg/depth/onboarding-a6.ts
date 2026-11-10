@@ -4,7 +4,8 @@ import type { DepthAccount } from './contract';
 export function patrolPressureA6(state: DepthAccount): number {
   const run = state.run;
   if (!run?.gameplayA6 || run.mode !== 'campaign') return 1;
-  return [1, .65, .75, .85][run.challengeLevel ?? 0] ?? 1;
+  const node = run.nodes.find(n => n.id === run.current);
+  return node?.kind === 'boss' ? (run.chapter===3?1.2:1.15) : node?.kind === 'elite' ? 1.04 : (node?.depth ?? 0) < 4 ? .72 : .98;
 }
 
 /** Shared Night Patrol defaults. Unfinished first clears keep their starting band. */

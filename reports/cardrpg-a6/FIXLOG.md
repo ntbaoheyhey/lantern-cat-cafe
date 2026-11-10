@@ -96,3 +96,11 @@
 
 - Q13e review: the default Playwright headless-shell captured shader loading before sceneReady. Switched this review to the published B harness configuration (Chromium channel + Metal) and explicitly waits for sceneReady. Captures now show actual puppets. This is a review environment repair, not a measured game performance improvement.
 - Q13e verification: initial test command incorrectly forwarded `--` and began the full web suite; stopped own process immediately, then reran only the three touched suites with `pnpm exec vitest run <files>` (20 pass). Fixed test fixture to use public finishMoment instead of private fields; types/lint pass.
+
+## Q13f resumed fallback — 2026-11-10T17:46:18Z
+- Saved baseline and attempts1–3 retained, not rerun. Third attempt: first loss486.17s,3.92mean losses/30min,max5,hint retry35.71%,normal win HP98%. Raising attack to hit a Power number created a shield-wash/Hush wall.
+- R-3 fallback: keep frozen content/HP and named mechanics, reduce later guardian strike budgets (Rain Spool78%,Pantry Crown90% of the third-pass attack). Power labels still use real stats. Do not change enemies when the player upgrades; do not force healer teams to finish injured. One verification pass follows; remaining numeric misses will be reported and Q13g continues.
+- Fallback100-seed result: first loss median725.79s,70%accounts1–3losses,mean2.9/max5; reward-gap median10s. Hint retry48.23%,normal HP98%,boss95.31s remain misses. No further Q13f numeric tuning after the repair cap. Browser confirmation and Q13g follow.
+- Recorder now takes one level per route instead of buying repeatedly to level8 before playing; follows real loss advice and captures both-size Prepare/Map/Loss. This is a documented observer policy change, not a combat grant. Existing sim counters remain distinct from browser evidence.
+
+- 2026-11-10T18:25:01Z Q13f browser finished:21wins/2losses,first loss395.62s,normalHP100%,0errors/stalls. Both cheap hints won next route; same-seed success still48.23% in development sim. Mark completed with explicit misses underR-3, no fourth balance loop. Inspected remaining3captures; route boon contrast/fold and truthful loss label already queuedQ14a.

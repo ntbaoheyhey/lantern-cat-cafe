@@ -59,7 +59,8 @@ async function simulation(bundleUrl, mode) {
       death = false;
       if (actor?.side === 'party' && event.skillId?.endsWith('-4') && !event.text.includes('prevented the action')) casts[actor.catalogId]++;
     }
-    return { rounds: b.round, seconds, win: b.result === 'party', casts };
+    const party=b.actors.filter(a=>a.side==='party');
+    return { rounds: b.round, seconds, win: b.result === 'party', casts, hpRemaining:party.reduce((n,a)=>n+a.hp,0)/Math.max(1,party.reduce((n,a)=>n+a.maxHp,0)), partyPower:b.initial.cats.reduce((n,c)=>n+R.powerScoreA6(c.stats),0), enemyPower:R.createBattle(b.initial).actors.filter(a=>a.side==='enemy').reduce((n,a)=>n+R.powerScoreA6(a),0) };
   }
   function fixture(team, seed, chapter = 3) {
     const s = state(seed);
@@ -163,7 +164,7 @@ async function simulation(bundleUrl, mode) {
       } else if (s.run.battle) {
         s = take(R.commitPreparation(s));
         const b = R.playBattle(s.run.battle, 'auto'), result = measure(b); seconds += result.seconds + 5; battles++;
-        if (seconds <= 1800) combat.push({ kind: b.initial.enemies.some(id => R.ENEMY_BY_ID[id].tier === 'boss') ? 'boss' : 'normal', ...result });
+        if (seconds <= 1800) combat.push({ kind: b.initial.enemies.some(id => R.ENEMY_BY_ID[id].tier === 'boss') ? 'boss' : 'normal', at:round(seconds), chapter:b.chapter, node:s.run.current, band:b.initial.challengeLevel, ...result });
         const pendingResult = s;
         s = take(R.finishEncounter(s)); kind = result.win ? 'Battle reward' : 'Defeat';
         if (!result.win && seconds <= 1800) {
@@ -304,7 +305,7 @@ if (!isMainThread) {
       tower: mode === 'a6' ? { medianSeconds: round(quantile(result.tower.map(r => r.seconds), .5)), p90Seconds: round(quantile(result.tower.map(r => r.seconds), .9)), floors: towerFloors } : null,
       pacing: pacing(earnedNormals, earnedBosses), fixedPacing: pacing(normals, bosses),
       ultimates: { normal: normalUlts, boss: bossUlts },
-      firstSession: { medianGap: round(quantile(result.session.flatMap(r => r.gaps), .5)), p90MaxGap: round(quantile(result.session.map(r => Math.max(...r.gaps)), .9)), meanLosses10: round(mean(result.session.map(r => r.losses10))), maxLosses10: Math.max(...result.session.map(r => r.losses10)), meanLosses30: round(mean(result.session.map(r => r.losses30))), maxLosses30: Math.max(...result.session.map(r => r.losses30)), hintRetries: result.session.reduce((n, r) => n + r.hints, 0), hintWinRate: result.session.some(r => r.hints) ? round(pct(result.session.reduce((n, r) => n + r.retryWins, 0), result.session.reduce((n, r) => n + r.hints, 0))) : null },
+      firstSession: { firstLossMedian:round(quantile(result.session.filter(r=>r.lossExamples.length).map(r=>r.lossExamples[0].at),.5)), noLossAccounts:result.session.filter(r=>!r.losses30).length, oneToThreeLossesPct:round(pct(result.session.filter(r=>r.losses30>=1&&r.losses30<=3).length,result.session.length)), normalWinHpMedian:round(quantile(earnedNormals.filter(r=>r.win).map(r=>r.hpRemaining),.5)), normalWinHpTargetPct:round(pct(earnedNormals.filter(r=>r.win&&r.hpRemaining>=.2&&r.hpRemaining<=.6).length,earnedNormals.filter(r=>r.win).length)), medianGap: round(quantile(result.session.flatMap(r => r.gaps), .5)), p90MaxGap: round(quantile(result.session.map(r => Math.max(...r.gaps)), .9)), meanLosses10: round(mean(result.session.map(r => r.losses10))), maxLosses10: Math.max(...result.session.map(r => r.losses10)), meanLosses30: round(mean(result.session.map(r => r.losses30))), maxLosses30: Math.max(...result.session.map(r => r.losses30)), hintRetries: result.session.reduce((n, r) => n + r.hints, 0), hintWinRate: result.session.some(r => r.hints) ? round(pct(result.session.reduce((n, r) => n + r.retryWins, 0), result.session.reduce((n, r) => n + r.hints, 0))) : null },
       variety: { teams: result.variety.length, nearBest, bestWinRate: round(best * 100), maxTop20CatPresence: maxPresence, top20 }, economy: economySummary,
       limitations: [...(mode === 'a6' ? ['Tower spreads 500 level-six, four-Epic fixture builds across thirty fixed floors; floor enemies and combat seeds remain fixed. Authored duration and per-floor summaries are separate from earned-player progress.'] : []), 'G1 uses naturally earned first-session encounters, excluding the tutorial. Seconds are authored x1 timelines, excluding browser overhead; Q15 real-click timing is separate.', 'G2 and G4 use level-six four-Epic fixtures with unlocked kits. New-player/economy accounts use earned public commands without fixture grants.', 'Visible route points, earned boon choices and selected boons count as rewards alongside account currency, gear and Power.', 'First-session defeats use the real recommendBuildV4/applyResultAdviceV4 hint. Same-seed retry is a counterfactual and grants no rewards.', `${result.variety.length} fixed candidate teams (the four V5 crews plus evenly spaced mixed squads) each use every seed. This is not an exhaustive ranking of all 220 teams; tied top-20 teams use lexical order.`, 'Economy uses four-minute check-ins (at most one completed patrol), two or five per day; unfinished routes carry into the next visit. Epic means Epic or better.'],
     };
@@ -320,7 +321,7 @@ if (!isMainThread) {
     const table = ['| Gate | Measured | Target |', '|---|---|---|', ...rows.map(row => `| ${row.join(' | ')} |`)].join('\n');
     const text = `# A6 ${mode === 'before' ? 'BEFORE baseline' : 'simulation'}\n\n${count} seeds (${first}–${first + count - 1}); ${summary.seconds} seconds.\n\n${table}\n\nWhat this means: this compact run exposes pacing, first-session and economy gaps for iteration; simulated time does not establish browser performance or human enjoyment.\n\n${summary.limitations.map(s => '- ' + s).join('\n')}\n`;
     await mkdir(dirname(output), { recursive: true });
-    await writeFile(output, JSON.stringify({ summary, lossExamples: result.session.slice().sort((a,b) => b.losses30-a.losses30 || a.seed-b.seed).flatMap(r => r.lossExamples.map(e => ({ seed:r.seed, ...e }))).slice(0,6), timeline: result.session.find(r => r.timeline)?.timeline }, null, 2) + '\n');
+    await writeFile(output, JSON.stringify({ summary, sampleCombat:result.session.find(r=>r.seed===first)?.combat, lossExamples: result.session.slice().sort((a,b) => b.losses30-a.losses30 || a.seed-b.seed).flatMap(r => r.lossExamples.map(e => ({ seed:r.seed, ...e }))).slice(0,6), timeline: result.session.find(r => r.timeline)?.timeline }, null, 2) + '\n');
     if (arg('report', '')) await writeFile(resolve(root, arg('report', '')), text);
     if (first === 60001 && output !== resolve(root, 'reports/cardrpg-a6/final-sim.json')) await writeFile(resolve(root, 'reports/cardrpg-a6/final-sim.json'), JSON.stringify(summary, null, 2) + '\n');
     console.log(`${count} seeds; ${summary.seconds}s; ${mode}\n${table}\nWhat this means: authored timing and real-rule bot results; browser timing remains a separate check.`);

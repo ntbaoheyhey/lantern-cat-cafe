@@ -1,4 +1,5 @@
-import { patrolPressureA6, patrolDefaultsA6 } from './onboarding-a6';
+import { patrolDefaultsA6 } from './onboarding-a6';
+import { powerScoreA6 } from './power-a6';
 import { startTowerFloorA6, TOWER_FLOORS_A6 } from './tower-a6';
 import { combatStarsV4, stopStarsV4 } from './stars-v4';
 import { recordNodeStarsV4 } from './journey-v4';
@@ -10,7 +11,7 @@ import { createBattle } from './battle';
 import { battleCats, defaultSkills, grantDepth, requireHome, transactDepth } from './state';
 import type { DepthAccount, NodeKind, RuleResult, Run, RunNode } from './contract';
 import type { Row } from './contract';
-import { CAT_BY_ID } from './catalog';
+import { CAT_BY_ID, ENEMY_BY_ID } from './catalog';
 import { DEFAULT_PLAN, validPlan, type StandingPlan } from './gameplay-v4';
 import { challengeStatsV4 } from './pacing-v4';
 export const CHAPTERS = [
@@ -47,6 +48,33 @@ export function availableNodes(run: Run) {
   const last=run.nodes.find(n=>n.id===run.visited.at(-1));
   return run.nodes.filter(n=>last?last.next.includes(n.id):n.depth===0);
 }
+/** Authored campaign pressure. No player stats/equipment or completion count enter this budget.
+ * Preserve the existing seven-stop route: early streets, late streets, then the guardian.
+ * Map, preparation and replay all consume this same frozen enemy snapshot. */
+export function campaignEnemyStatsA6(run: Run, node: RunNode) {
+  const stats = challengeStatsV4(run.challengeLevel ?? 1);
+  if (!run.gameplayA6 || run.mode !== 'campaign' || !node.enemies.length) return stats;
+  // Later guardians spend more of their fixed budget on endurance, avoiding a burst wall.
+  if(node.kind==='boss'&&run.chapter>1)for(const id of node.enemies)
+    if(ENEMY_BY_ID[id]!.tier==='boss')stats[id]!.hp=Math.round(stats[id]!.hp*1.3);
+  const enemies = createBattle({seed: 1, chapter: run.chapter, cats: [], enemies: node.enemies,
+    gameplayV4: true, skillsV5: true, gameplayA6: true, enemyStats: stats}).actors;
+  const expected = [7500, 7900, 8200][run.chapter - 1]!;
+  const ratio = node.kind === 'boss' ? (run.chapter===3?1.2:1.15) : node.kind === 'elite' ? 1.04 : node.depth < 4 ? .72 : .98;
+  const target = expected * ratio * (1 + ((run.challengeLevel ?? 1) - 1) * .012);
+  const attacks = enemies.reduce((n, actor) => n + actor.attack * 20, 0);
+  const other = enemies.reduce((n, actor) => n + powerScoreA6(actor) - actor.attack * 20, 0);
+  const multiplier = Math.max(.1, (target - other) / Math.max(1, attacks));
+  for (const value of Object.values(stats)) value.attack = Math.max(1, Math.round(value.attack * multiplier));
+  // Fallback after the three Q13f passes: shield-wash/Hush bosses need a smaller
+  // strike budget than the first guardian. Keep their fixed HP and mechanics;
+  // do not manufacture the requested Power ratio with an unfixable damage wall.
+  if (node.kind === 'boss' && run.chapter > 1) for (const id of node.enemies) {
+    if (ENEMY_BY_ID[id]!.tier === 'boss')
+      stats[id]!.attack = Math.max(1, Math.round(stats[id]!.attack * (run.chapter === 2 ? .78 : .9)));
+  }
+  return stats;
+}
 export function startRun(state: DepthAccount, chapter: number, seed: number, mode: Run['mode']='campaign', date='2026-11-06', challengeLevel?: number): RuleResult<DepthAccount> {
   if(state.gameplayA6&&mode==='tower')return startTowerFloorA6(state);
   return transactDepth(state,s=>{
@@ -57,6 +85,8 @@ export function startRun(state: DepthAccount, chapter: number, seed: number, mod
     const challenge=calendarChallenge(date),actualSeed=mode==='daily'?challenge.seed:seed;
     const cats=battleCats(s);
     s.run={id:s.nextRunId++,seed:actualSeed,chapter,mode,nodes:generateMap(actualSeed,chapter),visited:[],current:null,points:35,boons:{},hp:Object.fromEntries(cats.map(c=>[c.id,c.stats.hp])),upgrades:{},rewardChoices:[],battle:null,complete:false,won:false,floor:1,mutator:mode==='campaign'?'':challenge.mutator.id,supplies:1,earnedItems:[],date};
+    if(s.gameplayA6&&mode==='campaign')for(const node of s.run.nodes)
+      if(node.kind==='battle'&&node.depth>=4)node.enemies.push('binding-thread');
     if(s.gameplayV4){
       const ceiling=Math.min(...s.team.map(id=>s.account.cards.find(c=>c.cardId===id)!.level));
       const band=challengeLevel??defaultBand??ceiling;
@@ -72,7 +102,7 @@ export function enterNode(state: DepthAccount, id: string): RuleResult<DepthAcco
     run.current=id;
     if(node.enemies.length){
       const setup={...(run.gameplayA6?{gameplayA6:true}:{}),...(run.skillsV5?{skillsV5:true}:{}),seed:deriveSeed(run.seed,run.visited.length+run.floor*100),chapter:run.chapter,cats:battleCats(s),enemies:node.enemies,hp:run.hp,boons:run.boons,upgrades:run.upgrades,mutator:run.mutator,...(run.gameplayV4?{gameplayV4:true,...(run.challengeLevel!==undefined?{challengeLevel:run.challengeLevel,enemyStats:clone(run.towerA6?.enemyStats??challengeStatsV4(run.challengeLevel))}:{}),plan:clone(s.v4?.plan??DEFAULT_PLAN),...(run.packedSupply?{packedSupply:clone(run.packedSupply)}:{})}:{})};
-      if(patrolPressureA6(s)<1&&setup.enemyStats)for(const stats of Object.values(setup.enemyStats))stats.attack=Math.max(1,Math.round(stats.attack*patrolPressureA6(s)));
+      if(run.gameplayA6&&run.mode==='campaign')setup.enemyStats=campaignEnemyStatsA6(run,node);
       run.battle=createBattle(setup);s.lastBattle=clone(run.battle.initial);s.lastChoices=[];
     }
   });

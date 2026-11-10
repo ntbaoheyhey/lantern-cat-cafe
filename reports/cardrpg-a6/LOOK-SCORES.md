@@ -15,7 +15,7 @@ Agent visual review, not player testing. Both sizes inspected; no applicable Q13
 | Relic | 7.4 | 7.4 | 15: simple keepsake icons (7) | shots/q13b-rarity/*-relics |
 | Result / defeat | 8.0 | 8.0 | 08/20: simple reward icons (7.5) | shots/q13e-final/*-result and *-loss; retry/cafe visible at720p |
 | Recruit | 8.3 | 8.2 | 13: small duplicate labels (7.5) | shots/q13c-final; full-screen Epic/Legendary and ten-pull inspected |
-| Map | 8.1 | 8.0 | 13: compact power/chest labels (7.2) | shots/q13d-final; original winding street, stars, chests, guardian art |
+| Map | 8.1 | 8.0 | 13: route7.2; pending boon contrast6.0 | shots/q13d-final route accepted; new shots/q13f/*-map reveals pale boon titles and below-fold scenery; Q14a repair staged |
 | Normal battle | 8.1 | 8.0 | 13/18: small rage text (7.5) | shots/q13e-final/*-normal; original portraits and HP/rage trails |
 | Boss battle | 8.2 | 8.1 | 18: compact phase labels (7.5) | shots/q13e-final/*-boss; phase pips and Auto-next separation |
 | Ultimate | 8.3 | 8.2 | 19: restrained burst (8) | shots/q13e-final/*-ultimate; full-body art, 800ms/x1 |

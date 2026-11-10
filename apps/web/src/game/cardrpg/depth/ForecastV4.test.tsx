@@ -59,3 +59,11 @@ it('falls back when a worker cannot start or fails; old success is not shown', (
   expect(screen.getByText('The forecast is unavailable. Read their plan below.')).toBeTruthy();
   expect(worker.terminate).toHaveBeenCalled();
 });
+
+it('keeps A6 forecasts qualitative even when a caller requests a percentage', () => {
+  render(<ForecastV4 setup={{...setup(), skillsV5: true, gameplayA6: true}} showChance/>);
+  const worker = mock.workers[0]!;
+  act(() => worker.onmessage!({data: {key: worker.request!.key, result: {band: 'Favoured', risk: 'Watch the guardian.', samples: 20, wins: 20, firstFallen: null, computeMs: 1}}}));
+  expect(screen.getByRole('heading', {name: 'Favoured'})).toBeTruthy();
+  expect(screen.queryByText(/100%/)).toBeNull();
+});

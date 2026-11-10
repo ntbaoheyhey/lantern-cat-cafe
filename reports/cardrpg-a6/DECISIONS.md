@@ -60,3 +60,8 @@ Q13f: Existing route stays seven stops (early depths0–3, late4–5, guardian6)
 
 - 2026-11-10 resumed research gap: extended the three existing studies with source-scoped look/motion research; Q13a–e remain done. The campaign already has seven depths/nine nodes, so pressure bands map to that graph rather than adding ten fights. Power is not a win probability. Recovery and non-stuck play outrank forcing healer teams into an HP percentage.
 - Added Q14a[auto] to improve the existing lowest-scored Bag/Tower/Relic compositions without systems; Q13g/Q15 now explicitly separate wall time from authored timing and include reduced-motion/keyboard checks. Recheck research after Q13f/g/Q14.
+
+- 2026-11-10T18:00:52Z: While Q13f runs unchanged, reuse its existing browser for a read-only Q13g sceneReady observer. No second renderer or repeated earned run. Q14a drafts remain /tmp/cardrpg-a6-{KeepsakeArtA6,TowerSceneryA6,SheetsV3,RelicA6,TowerA6}.tsx and /tmp/cardrpg-a6-keepsakes-a6.css until timing completes.
+- Same live captures reveal pale boon titles and the loss MVP statistic labelled “Why”; include these two small readability repairs in Q14a without reopening completed screens or adding rules.
+
+- 2026-11-10T18:16:44Z: Route-choice cards will overlay the original street while a choice is pending; underlying map becomes inert. This keeps current actions and their scenery inside720p without shrinking the game or inventing a new system. Generic route behavior remains unchanged.

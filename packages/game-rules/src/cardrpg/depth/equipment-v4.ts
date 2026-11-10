@@ -34,6 +34,9 @@ export const rawPowerV4=(s:Pick<Stats,'hp'|'attack'|'defense'>)=>s.hp/5+2*s.atta
 export function nakedStatsV4(state:DepthAccount,cardId:string):Stats{
  const card=state.account.cards.find(c=>c.cardId===cardId)!;
  const stats=computeCardStats({...state.account,loadouts:{}},card.id),awakening=state.awakened[cardId]??0;
+ // Early A6 levels should change a rematch; the existing 1.2% curve barely moved team Power.
+ if(gameplayA6(state))for(const key of ['hp','attack','defense'] as const)
+  stats[key]=Math.round(stats[key]*(1+Math.min(9,card.level-1)*.04));
  stats.hp=Math.round(stats.hp*(1+awakening*.03));stats.attack=Math.round(stats.attack*(1+awakening*.03));return stats;
 }
 /** One shared common base across sets; full +12 main remains under 8% naked core. */

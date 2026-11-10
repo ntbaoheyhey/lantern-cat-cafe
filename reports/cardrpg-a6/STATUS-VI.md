@@ -40,3 +40,16 @@ Prompt mới đã lưu nguyên văn; bổ sung nghiên cứu look/feel còn thi�
 2026-11-10T17:42:55Z: Tiếp tục Q13f đúng kết quả lần ba, giữ toàn bộ sửa đổi và ảnh cũ; không làm lại Q0–Q13e.
 Nhánh trùng GitHub, không còn tiến trình A6 cũ; còn150GiB. Onboarding/test cũ đã xong nên không chạy lặp.
 Ba lần chỉnh vẫn làm boss gây thua sớm; đang chọn phương án đơn giản và bổ sung nghiên cứu look/feel còn thiếu.
+
+2026-11-10T17:55:31Z: Đã tiếp tục đúng lượt chơi Q13f đang chạy; E2E421/421 được giữ nguyên, không chạy lặp.
+Giữ toàn bộ sửa đổi chưa commit; Git trùng origin, còn150GiB. Đang hoàn thiện bản nháp demo khi chờ lượt chơi.
+
+2026-11-10T18:04:14Z: Lượt chơi thật thua boss chương 2 ở khoảng396giây, sớm hơn mục tiêu; gợi ý đổi Clover lên trước giúp thắng ngay lượt thử kế tiếp ở555giây.
+Không có lỗi hoặc kẹt thao tác; frame hiện16,7ms. Đang giữ bản chơi không đổi đến hết30phút và chuẩn bị các bản sửa giao diện/nhịp trận ở thư mục tạm.
+
+2026-11-10T18:10:19Z: Tiếp tục đúng lượt Q13f đang chạy ở phần hai; giữ tất cả sửa đổi và bản nháp, không chạy lại việc đã xong.
+Git trùng origin, còn150GiB; bản B mới494d2041b sẽ tích hợp ở Q14 sau khi đo xong.
+
+2026-11-10T18:25:01Z: Lượt Q13f đã xong30phút:21thắng/2thua,khônglỗi/kẹt; cả hai gợi ý miễn phí thắng ở tuyến kế tiếp.
+Thua đầu6,59phút và HP trận thường100% vẫn lệch mục tiêu; chốt phương án R-3 sau ba lượt sửa, ghi rõ giới hạn.
+Tiếp tục Q13g: nhịp thường41,16giây/boss95,26giây, khung hình16,7ms; giữ trận boss17vòng để so cùng đội/địch.

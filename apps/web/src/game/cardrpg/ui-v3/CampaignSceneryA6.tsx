@@ -64,7 +64,7 @@ export function CampaignSceneryA6({m}:{m:DepthModel}){
   }))}</svg>
   {nodes.map(node=>{
    const [x,y]=position(node),visited=run?.visited.includes(node.id),current=run?.current===node.id,open=available.includes(node.id),art=node.enemies[0];
-   const recommended=run&&node.enemies.length?R.createBattle({seed:run.seed,chapter:run.chapter,cats:[],enemies:node.enemies,gameplayV4:true,skillsV5:true,gameplayA6:true,challengeLevel:run.challengeLevel,mutator:run.mutator}).actors.reduce((n,a)=>n+R.powerScoreA6(a),0):undefined;
+   const recommended=run&&node.enemies.length?R.createBattle({seed:run.seed,chapter:run.chapter,cats:[],enemies:node.enemies,gameplayV4:true,skillsV5:true,gameplayA6:true,challengeLevel:run.challengeLevel,enemyStats:R.campaignEnemyStatsA6(run,node),mutator:run.mutator}).actors.reduce((n,a)=>n+R.powerScoreA6(a),0):undefined;
    return <button key={node.id} className="dp-node a6-scenic-stop" data-kind={node.kind} data-visited={visited} data-current={current} data-open={open} style={{'--stop-x':`${x/12}%`,'--stop-y':`${y/5}%`} as CSSProperties} aria-current={current?'step':undefined} disabled={!open} onClick={()=>m.enter(node.id)} title={node.enemies.map(id=>R.ENEMY_BY_ID[id]!.name).join(' · ')||labels[node.kind]}>
     <span className="a6-stop-medallion">{art?<img {...artPropsA6(art)} alt=""/>:<span aria-hidden="true">{symbols[node.kind]}</span>}</span>
     <b>{labels[node.kind]}</b><small>{open?'Go here':current?'You are here':visited?'Cleared':`Stop ${node.depth+1}`}</small>

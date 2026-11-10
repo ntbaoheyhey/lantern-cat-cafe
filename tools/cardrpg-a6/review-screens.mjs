@@ -4,13 +4,13 @@ import {writeFile,mkdir,access} from 'node:fs/promises';
 import {execFileSync} from 'node:child_process';
 import {resolve} from 'node:path';
 const root=process.cwd(),require=createRequire(resolve(root,'apps/web/package.json'));
-const {chromium}=require('@playwright/test');
+const {chromium,expect}=require('@playwright/test');
 const arg=(name,fallback)=>process.argv.find(v=>v.startsWith(`--${name}=`))?.split('=').slice(1).join('=')??fallback;
 const tag=arg('tag','quality'),names=arg('screens','home,collection,team,bonds,prepare,recruit').split(',');
 const sizes=arg('sizes','1440x900,1280x720').split(',').map(v=>v.split('x').map(Number));
 const output=resolve(root,'reports/cardrpg-a6/shots',tag),shots=[],errors=[];
 await mkdir(output,{recursive:true});
-const browser=await chromium.launch({headless:true});
+const browser=await chromium.launch({channel:'chromium',headless:true,args:['--use-angle=metal']});
 const lease=setTimeout(()=>{console.error('Screenshot review exceeded 19-minute lease.');process.exit(2);},19*60*1000);
 try {
  for(const [width,height] of sizes){
@@ -29,8 +29,9 @@ try {
     const label={skills:'Skills',bonds:'Bonds',gear:'Gear'}[name.slice(5)];
     await page.getByRole('complementary',{name:'Cat details'}).getByRole('button',{name:label,exact:true}).click();
    }else if(name.startsWith('map-')){
-    await page.evaluate(kind=>{const m=window.__depthReview;m.state.run=null;m.tutorialBattle=null;m.watching=false;m.plan=null;m.state.cleared=[];m.go('map');
+    await page.evaluate(async kind=>{const m=window.__depthReview;m.state.run=null;m.tutorialBattle=null;m.watching=false;m.plan=null;m.state.cleared=[];m.go('map');
      if(kind!=='choose'){m.start(1,'campaign',1);const run=m.state.run;
+      if(kind==='choice'){const R=await import('/@fs/Users/bao/taskbar-hero-cardrpg-a6/packages/game-rules/src/cardrpg/depth/index.ts');run.rewardChoices=['skill:mochi-1',...Object.keys(R.BOON_BY_ID).slice(0,2)];}
       if(kind==='progress'||kind==='boss'){
        run.visited=kind==='boss'?['0-0','1-0','2-0','3-0','4-0','5-0']:['0-0','1-0','2-0','3-0'];
        for(const id of run.visited){const node=run.nodes.find(n=>n.id===id),key=`${run.chapter}/${run.challengeLevel}/${id}/${node.kind}`;m.state.v4.journey.stars[key]={key,chapter:1,band:run.challengeLevel,nodeId:id,kind:node.kind,conditions:[true,true,true]};}
@@ -93,6 +94,17 @@ try {
    }));
    shots.push({name,width,height,file,...detail});
    if(detail.overflow||detail.broken.length)throw Error(JSON.stringify(detail));
+   if(name==='map-choice'){
+    const choice=page.locator('.a6-route-activity .dp-reward').first();
+    await expect(choice).toBeInViewport({ratio:1});await choice.focus();await page.keyboard.press('Enter');
+    await expect(page.locator('.a6-route-activity')).toHaveCount(0);
+    shots.at(-1).keyboardChoiceSettled=await page.evaluate(()=>window.__depthReview.state.run.rewardChoices.length===0);
+   }
+   if(name==='inventory'){
+    const equip=page.locator('.a6-gear-detail').getByRole('button',{name:'Equip',exact:true});
+    if(await equip.count()){await expect(equip).toBeInViewport({ratio:1});await equip.click();shots.at(-1).equipWorked=await page.evaluate(()=>!window.__depthReview.error);}
+   }
+   if(name==='tower')await expect(page.getByRole('button',{name:/^Climb floor/})).toBeInViewport({ratio:1});
   }
   await page.close();
  }

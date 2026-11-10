@@ -1,17 +1,14 @@
-# Lane A6 handoff — 2026-11-10T17:42:55Z
-NOW: New account session started 2026-11-10T17:42:55Z; resume Q13f fallback after saved attempt3; look research complete. No redo of Q0–Q13e.
-Branch: codex/cardrpg-a6-q0-2026-11-10; last pushed SHA: 17a5275474099f038ecab2b2e2ef57c881df4b02; draft PR #438.
-NEXT: 1. Finish the simplest Q13f fallback for the early boss wall; retain saved attempt evidence.
-NEXT: 2. Run touched tests/types/lint and inspect changed Prepare/forecast/loss screens.
-NEXT: 3. Full E2E + real-click30min under bounded leases; continue Q13g, then merge published B in Q14.
-RUNNING: No A6 server/probe/listener on5960–5963; no stale process to stop. No timing lease held.
-RUNNING: Recheck /tmp/cardrpg-big-locks/timing.lock before heavy work; leases<=19min. Own temp /tmp/cardrpg-a6-* only.
-DONE: Q0–Q12/onboarding already complete; web1905/types/lint and six onboarding captures already accepted, not repeated.
-DONE: Q13a cfdbf79e1; Q13b918102837; Q13c7971938db; Q13d fab2f7ea6; Q13e83b47add6.
-DONE: Fetched both lanes; local/origin0ahead/0behind;150GiB free; TASK byte-identical, receipt retained.
-KNOWN ISSUES: Preserved15tracked edits and untracked Q13 evidence; do not restore resume-drafts.tar.gz.
-KNOWN ISSUES: Q13f attempt3 first loss486s,mean3.92losses/30min,hint retry35.71%; normal wins98%HP. Numeric repair cap reached; fallback required.
-KNOWN ISSUES: Browser normal44s remains Q13g; final seeds60001–60500 unused.
-DECISIONS: One agent; fully auto; B canvas/art take B; merge commits allowed; no PR merge/deploy/main/force-push.
-DECISIONS: Existing completed queue rows stay ticked; prior onboarding and prompt receipt not repeated.
-DONE: RESEARCH-LOOK complete; remaining queue refined and Q14a weakest-screen finish added; no completed item reopened.
+# Lane A6 handoff — 2026-11-10T18:24:17Z
+NOW: Q13f complete with explicit R-3 misses; Q13g pacing implementation begins.
+Branch: codex/cardrpg-a6-q0-2026-11-10; last pushed67963ca8d; draft PR#438.
+NEXT: 1. Publish Q13f checkpoint and update draft PR438; preserve the completed browser evidence.
+NEXT: 2. Apply existing /tmp/cardrpg-a6-pacing-a6.ts/test.ts drafts; focused checks then saved boss replay and >=8normal browser fights.
+NEXT: 3. Q14 merge latest publishedB after committing A changes; build existing offline drafts. Q14a preserved UI drafts follow.
+RUNNING: Only Vite PID19458 on5960. Prior19482/19493/22347/42148 exited; no lock held by A6. Read live state before acting.
+DONE: Existing Q13f39focused tests/types/lint and421/421E2E retained.
+DONE: Browser1800.62s,21wins/2losses,first-loss395.62s,noerrors/stalls; normal16samples41.16s,boss6samples95.26s; frame16.7ms median/p95.
+DONE: Saved same-team boss fixture q13g-live-fixture.json,17rounds/baseline124.613s; observer normal12samples41.79s,boss5samples124.94s.
+KNOWN ISSUES: Q13f earliest-loss/HP/hint gates partial after3repairs; publish misses and proceed perR-3. Final60001–60500 still unused.
+DRAFTS: Q14 builder/offline/guide and /tmp/cardrpg-a6-q14-offline-check.mjs retained. Q14a KeepsakeArt/TowerScenery/Sheets/Relic/Tower/Encounter/RunMap/CSS drafts ready.
+DRAFTS: /tmp/cardrpg-a6-final-screens.mjs records continuous boss; review-screens.mjs adds keyboard controls; first-session supports final video.
+DECISIONS: One agent,no new systems,fully auto; Bcanvas/art takesB,A rules/HUD takesA. NoPRmerge/deploy/main/forcepush.

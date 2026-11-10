@@ -574,7 +574,10 @@ export function enemyAct(b: Battle): boolean {
     for (const t of affected) {
       if (signature&&spec.mechanic==='storm') t.shield=0;
       const wide=signature&&['charge','bind','storm','banquet','dot'].includes(spec.mechanic);
-      damage(b,actor,t,signature?intent.power:100,0,!!b.v4&&!wide&&spec.mechanic!=='steal');
+      // These legacy later-chapter signatures lacked the V5 row/all landing reduction.
+      // Keep their identities (shield wash / Hush) without an early, unfixable burst wall.
+      const landing=b.initial.gameplayA6&&wide?(spec.mechanic==='storm'?.65:spec.mechanic==='banquet'?.9:1):1;
+      damage(b,actor,t,(signature?intent.power:100)*landing,0,!!b.v4&&!wide&&spec.mechanic!=='steal');
       if (spec.status&&(signature||['dot','snare','bomb'].includes(spec.mechanic))) applyStatus(b,actor,t,spec.status);
       if (signature&&spec.mechanic==='bomb') {loseHp(b,actor,t,stacks(t,'crumb')*35,'detonate');t.statuses=t.statuses.filter(s=>s.id!=='crumb');}
     }

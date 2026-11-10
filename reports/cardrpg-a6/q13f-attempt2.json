@@ -1,0 +1,1240 @@
+{
+  "summary": {
+    "seeds": [
+      1,
+      12
+    ],
+    "count": 12,
+    "mode": "a6",
+    "seconds": 10.76,
+    "workSeconds": {
+      "tower": 0.159004125,
+      "pacing": 0.211350041,
+      "variety": 3.9897965829999995,
+      "economy": 12.016847667,
+      "session": 25.435810873999998
+    },
+    "tower": {
+      "medianSeconds": 30.89,
+      "p90Seconds": 32.89,
+      "floors": [
+        {
+          "floor": 1,
+          "count": 1,
+          "medianSeconds": 21.89,
+          "winRate": 100
+        },
+        {
+          "floor": 2,
+          "count": 1,
+          "medianSeconds": 30.89,
+          "winRate": 100
+        },
+        {
+          "floor": 3,
+          "count": 1,
+          "medianSeconds": 25.12,
+          "winRate": 100
+        },
+        {
+          "floor": 4,
+          "count": 1,
+          "medianSeconds": 31.81,
+          "winRate": 100
+        },
+        {
+          "floor": 5,
+          "count": 1,
+          "medianSeconds": 18.73,
+          "winRate": 100
+        },
+        {
+          "floor": 6,
+          "count": 1,
+          "medianSeconds": 31.04,
+          "winRate": 100
+        },
+        {
+          "floor": 7,
+          "count": 1,
+          "medianSeconds": 25.12,
+          "winRate": 100
+        },
+        {
+          "floor": 8,
+          "count": 1,
+          "medianSeconds": 32.89,
+          "winRate": 100
+        },
+        {
+          "floor": 9,
+          "count": 1,
+          "medianSeconds": 26.58,
+          "winRate": 100
+        },
+        {
+          "floor": 10,
+          "count": 1,
+          "medianSeconds": 18.39,
+          "winRate": 100
+        },
+        {
+          "floor": 11,
+          "count": 1,
+          "medianSeconds": 35.82,
+          "winRate": 100
+        },
+        {
+          "floor": 12,
+          "count": 1,
+          "medianSeconds": 31.04,
+          "winRate": 100
+        }
+      ]
+    },
+    "pacing": {
+      "normalRounds": 7,
+      "normalSeconds": 31.89,
+      "normalP90": 44.69,
+      "bossSeconds": 85.42,
+      "bossP90": 123.85,
+      "normalSamples": 178,
+      "bossSamples": 81
+    },
+    "fixedPacing": {
+      "normalRounds": 4,
+      "normalSeconds": 15.26,
+      "normalP90": 23.66,
+      "bossSeconds": 53.6,
+      "bossP90": 66.81,
+      "normalSamples": 12,
+      "bossSamples": 12
+    },
+    "ultimates": {
+      "normal": [
+        {
+          "id": "mochi",
+          "count": 12,
+          "rate": 16.67
+        },
+        {
+          "id": "soot",
+          "count": 10,
+          "rate": 10
+        },
+        {
+          "id": "clover",
+          "count": 3,
+          "rate": 33.33
+        },
+        {
+          "id": "panko",
+          "count": 2,
+          "rate": 100
+        },
+        {
+          "id": "mallow",
+          "count": 2,
+          "rate": 0
+        },
+        {
+          "id": "sorrel",
+          "count": 1,
+          "rate": 0
+        },
+        {
+          "id": "biscuit",
+          "count": 1,
+          "rate": 0
+        },
+        {
+          "id": "inkcap",
+          "count": 1,
+          "rate": 0
+        },
+        {
+          "id": "cinnamon",
+          "count": 1,
+          "rate": 0
+        },
+        {
+          "id": "brioche",
+          "count": 1,
+          "rate": 0
+        },
+        {
+          "id": "velvet",
+          "count": 1,
+          "rate": 0
+        },
+        {
+          "id": "marigold",
+          "count": 1,
+          "rate": 0
+        }
+      ],
+      "boss": [
+        {
+          "id": "mochi",
+          "count": 12,
+          "rate": 100
+        },
+        {
+          "id": "soot",
+          "count": 10,
+          "rate": 100
+        },
+        {
+          "id": "clover",
+          "count": 3,
+          "rate": 100
+        },
+        {
+          "id": "panko",
+          "count": 2,
+          "rate": 100
+        },
+        {
+          "id": "mallow",
+          "count": 2,
+          "rate": 100
+        },
+        {
+          "id": "sorrel",
+          "count": 1,
+          "rate": 100
+        },
+        {
+          "id": "biscuit",
+          "count": 1,
+          "rate": 100
+        },
+        {
+          "id": "inkcap",
+          "count": 1,
+          "rate": 100
+        },
+        {
+          "id": "cinnamon",
+          "count": 1,
+          "rate": 100
+        },
+        {
+          "id": "brioche",
+          "count": 1,
+          "rate": 100
+        },
+        {
+          "id": "velvet",
+          "count": 1,
+          "rate": 100
+        },
+        {
+          "id": "marigold",
+          "count": 1,
+          "rate": 100
+        }
+      ]
+    },
+    "firstSession": {
+      "firstLossMedian": 458.62,
+      "noLossAccounts": 0,
+      "oneToThreeLossesPct": 8.33,
+      "normalWinHpMedian": 0.98,
+      "normalWinHpTargetPct": 0,
+      "medianGap": 10,
+      "p90MaxGap": 232.15,
+      "meanLosses10": 0.92,
+      "maxLosses10": 1,
+      "meanLosses30": 4.75,
+      "maxLosses30": 7,
+      "hintRetries": 51,
+      "hintWinRate": 13.73
+    },
+    "variety": {
+      "teams": 32,
+      "nearBest": 30,
+      "bestWinRate": 100,
+      "maxTop20CatPresence": 40,
+      "top20": [
+        {
+          "team": [
+            "biscuit",
+            "brioche",
+            "marigold"
+          ],
+          "wins": 12,
+          "count": 12
+        },
+        {
+          "team": [
+            "biscuit",
+            "inkcap",
+            "cinnamon"
+          ],
+          "wins": 12,
+          "count": 12
+        },
+        {
+          "team": [
+            "cinnamon",
+            "brioche",
+            "velvet"
+          ],
+          "wins": 12,
+          "count": 12
+        },
+        {
+          "team": [
+            "clover",
+            "inkcap",
+            "velvet"
+          ],
+          "wins": 12,
+          "count": 12
+        },
+        {
+          "team": [
+            "clover",
+            "mallow",
+            "brioche"
+          ],
+          "wins": 12,
+          "count": 12
+        },
+        {
+          "team": [
+            "clover",
+            "panko",
+            "cinnamon"
+          ],
+          "wins": 12,
+          "count": 12
+        },
+        {
+          "team": [
+            "clover",
+            "sorrel",
+            "panko"
+          ],
+          "wins": 12,
+          "count": 12
+        },
+        {
+          "team": [
+            "mallow",
+            "cinnamon",
+            "mochi"
+          ],
+          "wins": 12,
+          "count": 12
+        },
+        {
+          "team": [
+            "mallow",
+            "inkcap",
+            "brioche"
+          ],
+          "wins": 12,
+          "count": 12
+        },
+        {
+          "team": [
+            "mallow",
+            "sorrel",
+            "velvet"
+          ],
+          "wins": 12,
+          "count": 12
+        },
+        {
+          "team": [
+            "mallow",
+            "velvet",
+            "marigold"
+          ],
+          "wins": 12,
+          "count": 12
+        },
+        {
+          "team": [
+            "mochi",
+            "biscuit",
+            "inkcap"
+          ],
+          "wins": 12,
+          "count": 12
+        },
+        {
+          "team": [
+            "mochi",
+            "clover",
+            "brioche"
+          ],
+          "wins": 12,
+          "count": 12
+        },
+        {
+          "team": [
+            "mochi",
+            "inkcap",
+            "marigold"
+          ],
+          "wins": 12,
+          "count": 12
+        },
+        {
+          "team": [
+            "mochi",
+            "mallow",
+            "velvet"
+          ],
+          "wins": 12,
+          "count": 12
+        },
+        {
+          "team": [
+            "mochi",
+            "panko",
+            "brioche"
+          ],
+          "wins": 12,
+          "count": 12
+        },
+        {
+          "team": [
+            "mochi",
+            "soot",
+            "clover"
+          ],
+          "wins": 12,
+          "count": 12
+        },
+        {
+          "team": [
+            "mochi",
+            "soot",
+            "velvet"
+          ],
+          "wins": 12,
+          "count": 12
+        },
+        {
+          "team": [
+            "panko",
+            "biscuit",
+            "velvet"
+          ],
+          "wins": 12,
+          "count": 12
+        },
+        {
+          "team": [
+            "panko",
+            "cinnamon",
+            "marigold"
+          ],
+          "wins": 12,
+          "count": 12
+        }
+      ]
+    },
+    "economy": [
+      {
+        "sessions": 2,
+        "progressEveryDay": 100,
+        "epicDay2": 100,
+        "pityDay6": 100,
+        "legendaryDay6": 100,
+        "medianDrawsDay7": 52,
+        "idleCap": 12
+      },
+      {
+        "sessions": 5,
+        "progressEveryDay": 100,
+        "epicDay2": 100,
+        "pityDay6": 100,
+        "legendaryDay6": 100,
+        "medianDrawsDay7": 52,
+        "idleCap": 12
+      }
+    ],
+    "limitations": [
+      "Tower spreads 500 level-six, four-Epic fixture builds across thirty fixed floors; floor enemies and combat seeds remain fixed. Authored duration and per-floor summaries are separate from earned-player progress.",
+      "G1 uses naturally earned first-session encounters, excluding the tutorial. Seconds are authored x1 timelines, excluding browser overhead; Q15 real-click timing is separate.",
+      "G2 and G4 use level-six four-Epic fixtures with unlocked kits. New-player/economy accounts use earned public commands without fixture grants.",
+      "Visible route points, earned boon choices and selected boons count as rewards alongside account currency, gear and Power.",
+      "First-session defeats use the real recommendBuildV4/applyResultAdviceV4 hint. Same-seed retry is a counterfactual and grants no rewards.",
+      "32 fixed candidate teams (the four V5 crews plus evenly spaced mixed squads) each use every seed. This is not an exhaustive ranking of all 220 teams; tied top-20 teams use lexical order.",
+      "Economy uses four-minute check-ins (at most one completed patrol), two or five per day; unfinished routes carry into the next visit. Epic means Epic or better."
+    ]
+  },
+  "sampleCombat": [
+    {
+      "kind": "normal",
+      "at": 64.05,
+      "chapter": 1,
+      "node": "0-0",
+      "band": 1,
+      "rounds": 7,
+      "seconds": 29.885999999999992,
+      "win": true,
+      "casts": {
+        "mochi": 0,
+        "soot": 0,
+        "clover": 0
+      },
+      "hpRemaining": 1,
+      "partyPower": 7600,
+      "enemyPower": 5382
+    },
+    {
+      "kind": "normal",
+      "at": 167.12,
+      "chapter": 1,
+      "node": "5-0",
+      "band": 1,
+      "rounds": 10,
+      "seconds": 48.07399999999998,
+      "win": true,
+      "casts": {
+        "mochi": 0,
+        "soot": 0,
+        "clover": 0
+      },
+      "hpRemaining": 1,
+      "partyPower": 7600,
+      "enemyPower": 7331
+    },
+    {
+      "kind": "boss",
+      "at": 253.05,
+      "chapter": 1,
+      "node": "6-0",
+      "band": 1,
+      "rounds": 10,
+      "seconds": 70.92900000000002,
+      "win": true,
+      "casts": {
+        "mochi": 0,
+        "soot": 0,
+        "clover": 0
+      },
+      "hpRemaining": 0.33060109289617484,
+      "partyPower": 7600,
+      "enemyPower": 8576
+    },
+    {
+      "kind": "normal",
+      "at": 299.86,
+      "chapter": 2,
+      "node": "0-0",
+      "band": 1,
+      "rounds": 7,
+      "seconds": 28.809999999999995,
+      "win": true,
+      "casts": {
+        "mochi": 0,
+        "soot": 0,
+        "clover": 0
+      },
+      "hpRemaining": 1,
+      "partyPower": 8025,
+      "enemyPower": 5678
+    },
+    {
+      "kind": "normal",
+      "at": 386.3,
+      "chapter": 2,
+      "node": "5-0",
+      "band": 1,
+      "rounds": 7,
+      "seconds": 31.439999999999994,
+      "win": true,
+      "casts": {
+        "mochi": 0,
+        "soot": 0,
+        "clover": 0
+      },
+      "hpRemaining": 1,
+      "partyPower": 8025,
+      "enemyPower": 7825
+    },
+    {
+      "kind": "boss",
+      "at": 493.83,
+      "chapter": 2,
+      "node": "6-0",
+      "band": 1,
+      "rounds": 13,
+      "seconds": 92.53100000000002,
+      "win": false,
+      "casts": {
+        "mochi": 0,
+        "soot": 0,
+        "clover": 0
+      },
+      "hpRemaining": 0,
+      "partyPower": 8025,
+      "enemyPower": 9002
+    },
+    {
+      "kind": "normal",
+      "at": 541.57,
+      "chapter": 2,
+      "node": "0-0",
+      "band": 1,
+      "rounds": 7,
+      "seconds": 29.73699999999999,
+      "win": true,
+      "casts": {
+        "mochi": 0,
+        "soot": 0,
+        "clover": 0
+      },
+      "hpRemaining": 1,
+      "partyPower": 8200,
+      "enemyPower": 5678
+    },
+    {
+      "kind": "normal",
+      "at": 623.07,
+      "chapter": 2,
+      "node": "5-0",
+      "band": 1,
+      "rounds": 6,
+      "seconds": 26.504999999999992,
+      "win": true,
+      "casts": {
+        "mochi": 0,
+        "soot": 0,
+        "clover": 0
+      },
+      "hpRemaining": 0.9490600363856883,
+      "partyPower": 8200,
+      "enemyPower": 7661
+    },
+    {
+      "kind": "boss",
+      "at": 730.84,
+      "chapter": 2,
+      "node": "6-0",
+      "band": 1,
+      "rounds": 13,
+      "seconds": 92.76400000000001,
+      "win": false,
+      "casts": {
+        "mochi": 0,
+        "soot": 0,
+        "clover": 0
+      },
+      "hpRemaining": 0,
+      "partyPower": 8200,
+      "enemyPower": 9002
+    },
+    {
+      "kind": "normal",
+      "at": 782.88,
+      "chapter": 2,
+      "node": "0-0",
+      "band": 1,
+      "rounds": 8,
+      "seconds": 34.04499999999999,
+      "win": true,
+      "casts": {
+        "mochi": 0,
+        "soot": 0,
+        "clover": 0
+      },
+      "hpRemaining": 1,
+      "partyPower": 8372,
+      "enemyPower": 5638
+    },
+    {
+      "kind": "normal",
+      "at": 891.22,
+      "chapter": 2,
+      "node": "5-0",
+      "band": 1,
+      "rounds": 10,
+      "seconds": 53.33599999999997,
+      "win": true,
+      "casts": {
+        "mochi": 0,
+        "soot": 0,
+        "clover": 0
+      },
+      "hpRemaining": 0.9784431137724551,
+      "partyPower": 8372,
+      "enemyPower": 7689
+    },
+    {
+      "kind": "boss",
+      "at": 995.77,
+      "chapter": 2,
+      "node": "6-0",
+      "band": 1,
+      "rounds": 13,
+      "seconds": 89.54800000000002,
+      "win": false,
+      "casts": {
+        "mochi": 0,
+        "soot": 0,
+        "clover": 0
+      },
+      "hpRemaining": 0,
+      "partyPower": 8372,
+      "enemyPower": 9002
+    },
+    {
+      "kind": "normal",
+      "at": 1034.41,
+      "chapter": 2,
+      "node": "0-0",
+      "band": 1,
+      "rounds": 5,
+      "seconds": 20.643999999999995,
+      "win": true,
+      "casts": {
+        "mochi": 0,
+        "soot": 0,
+        "clover": 0
+      },
+      "hpRemaining": 0.9013271783035199,
+      "partyPower": 8688,
+      "enemyPower": 5634
+    },
+    {
+      "kind": "normal",
+      "at": 1121.3,
+      "chapter": 2,
+      "node": "5-0",
+      "band": 1,
+      "rounds": 7,
+      "seconds": 31.891999999999985,
+      "win": true,
+      "casts": {
+        "mochi": 0,
+        "soot": 0,
+        "clover": 0
+      },
+      "hpRemaining": 1,
+      "partyPower": 8688,
+      "enemyPower": 7743
+    },
+    {
+      "kind": "boss",
+      "at": 1231.38,
+      "chapter": 2,
+      "node": "6-0",
+      "band": 1,
+      "rounds": 13,
+      "seconds": 95.07300000000002,
+      "win": true,
+      "casts": {
+        "mochi": 0,
+        "soot": 0,
+        "clover": 0
+      },
+      "hpRemaining": 0.3139065204847086,
+      "partyPower": 8688,
+      "enemyPower": 9002
+    },
+    {
+      "kind": "normal",
+      "at": 1279.89,
+      "chapter": 3,
+      "node": "0-0",
+      "band": 1,
+      "rounds": 7,
+      "seconds": 30.513999999999996,
+      "win": true,
+      "casts": {
+        "mochi": 0,
+        "soot": 0,
+        "clover": 0
+      },
+      "hpRemaining": 0.9954441913439636,
+      "partyPower": 8804,
+      "enemyPower": 5818
+    },
+    {
+      "kind": "normal",
+      "at": 1372.17,
+      "chapter": 3,
+      "node": "5-0",
+      "band": 1,
+      "rounds": 8,
+      "seconds": 37.27699999999999,
+      "win": true,
+      "casts": {
+        "mochi": 0,
+        "soot": 0,
+        "clover": 0
+      },
+      "hpRemaining": 0.8684510250569476,
+      "partyPower": 8804,
+      "enemyPower": 7981
+    },
+    {
+      "kind": "boss",
+      "at": 1481.52,
+      "chapter": 3,
+      "node": "6-0",
+      "band": 1,
+      "rounds": 13,
+      "seconds": 94.35300000000002,
+      "win": false,
+      "casts": {
+        "mochi": 0,
+        "soot": 0,
+        "clover": 0
+      },
+      "hpRemaining": 0,
+      "partyPower": 8804,
+      "enemyPower": 9429
+    },
+    {
+      "kind": "normal",
+      "at": 1526.03,
+      "chapter": 3,
+      "node": "0-0",
+      "band": 1,
+      "rounds": 6,
+      "seconds": 26.505999999999993,
+      "win": true,
+      "casts": {
+        "mochi": 0,
+        "soot": 0,
+        "clover": 0
+      },
+      "hpRemaining": 0.8972527472527473,
+      "partyPower": 9082,
+      "enemyPower": 5862
+    },
+    {
+      "kind": "normal",
+      "at": 1618.15,
+      "chapter": 3,
+      "node": "5-0",
+      "band": 1,
+      "rounds": 8,
+      "seconds": 37.125999999999976,
+      "win": true,
+      "casts": {
+        "mochi": 0,
+        "soot": 0,
+        "clover": 0
+      },
+      "hpRemaining": 0.8873626373626373,
+      "partyPower": 9082,
+      "enemyPower": 8101
+    },
+    {
+      "kind": "boss",
+      "at": 1735.03,
+      "chapter": 3,
+      "node": "6-0",
+      "band": 1,
+      "rounds": 14,
+      "seconds": 101.879,
+      "win": true,
+      "casts": {
+        "mochi": 0,
+        "soot": 0,
+        "clover": 0
+      },
+      "hpRemaining": 0.3274725274725275,
+      "partyPower": 9082,
+      "enemyPower": 9429
+    },
+    {
+      "kind": "normal",
+      "at": 1774.45,
+      "chapter": 3,
+      "node": "0-0",
+      "band": 1,
+      "rounds": 5,
+      "seconds": 21.420999999999996,
+      "win": true,
+      "casts": {
+        "mochi": 0,
+        "soot": 0,
+        "clover": 0
+      },
+      "hpRemaining": 0.8425624321389794,
+      "partyPower": 9166,
+      "enemyPower": 5930
+    }
+  ],
+  "lossExamples": [
+    {
+      "seed": 4,
+      "at": 441.24,
+      "chapter": 2,
+      "band": 1,
+      "enemies": [
+        "rain-spool"
+      ],
+      "levels": [
+        2,
+        1,
+        2
+      ],
+      "hint": "Place Clover in Front",
+      "retryWin": false
+    },
+    {
+      "seed": 4,
+      "at": 652.38,
+      "chapter": 2,
+      "band": 1,
+      "enemies": [
+        "rain-spool"
+      ],
+      "levels": [
+        2,
+        2,
+        2
+      ],
+      "hint": "Focus the boss · Protect",
+      "retryWin": false
+    },
+    {
+      "seed": 4,
+      "at": 869.52,
+      "chapter": 2,
+      "band": 1,
+      "enemies": [
+        "rain-spool"
+      ],
+      "levels": [
+        2,
+        2,
+        3
+      ],
+      "hint": "Place Mochi in Back",
+      "retryWin": false
+    },
+    {
+      "seed": 4,
+      "at": 1085.45,
+      "chapter": 2,
+      "band": 1,
+      "enemies": [
+        "rain-spool"
+      ],
+      "levels": [
+        3,
+        2,
+        3
+      ],
+      "hint": "Place Mochi in Front",
+      "retryWin": false
+    },
+    {
+      "seed": 4,
+      "at": 1309.7,
+      "chapter": 2,
+      "band": 1,
+      "enemies": [
+        "rain-spool"
+      ],
+      "levels": [
+        3,
+        3,
+        3
+      ],
+      "hint": "Place Mochi in Back",
+      "retryWin": false
+    },
+    {
+      "seed": 4,
+      "at": 1523.06,
+      "chapter": 2,
+      "band": 1,
+      "enemies": [
+        "rain-spool"
+      ],
+      "levels": [
+        3,
+        3,
+        4
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "at": 0,
+      "kind": "Fresh save"
+    },
+    {
+      "at": 16.16,
+      "kind": "Welcome invitation"
+    },
+    {
+      "at": 24.16,
+      "kind": "Raise Clover to level 2"
+    },
+    {
+      "at": 64.05,
+      "kind": "Battle reward"
+    },
+    {
+      "at": 69.05,
+      "kind": "Route choice"
+    },
+    {
+      "at": 79.05,
+      "kind": "Route choice"
+    },
+    {
+      "at": 89.05,
+      "kind": "Route choice"
+    },
+    {
+      "at": 99.05,
+      "kind": "Route choice"
+    },
+    {
+      "at": 109.05,
+      "kind": "Route choice"
+    },
+    {
+      "at": 167.12,
+      "kind": "Battle reward"
+    },
+    {
+      "at": 172.12,
+      "kind": "Route choice"
+    },
+    {
+      "at": 253.05,
+      "kind": "Battle reward"
+    },
+    {
+      "at": 261.05,
+      "kind": "Raise Mochi to level 2"
+    },
+    {
+      "at": 299.86,
+      "kind": "Battle reward"
+    },
+    {
+      "at": 304.86,
+      "kind": "Route choice"
+    },
+    {
+      "at": 314.86,
+      "kind": "Route choice"
+    },
+    {
+      "at": 324.86,
+      "kind": "Route choice"
+    },
+    {
+      "at": 334.86,
+      "kind": "Route choice"
+    },
+    {
+      "at": 344.86,
+      "kind": "Route choice"
+    },
+    {
+      "at": 386.3,
+      "kind": "Battle reward"
+    },
+    {
+      "at": 391.3,
+      "kind": "Route choice"
+    },
+    {
+      "at": 493.83,
+      "kind": "Give Mochi Rare Hearthloom Apron"
+    },
+    {
+      "at": 501.83,
+      "kind": "Raise Soot to level 2"
+    },
+    {
+      "at": 541.57,
+      "kind": "Battle reward"
+    },
+    {
+      "at": 546.57,
+      "kind": "Route choice"
+    },
+    {
+      "at": 566.57,
+      "kind": "Route choice"
+    },
+    {
+      "at": 576.57,
+      "kind": "Route choice"
+    },
+    {
+      "at": 623.07,
+      "kind": "Battle reward"
+    },
+    {
+      "at": 628.07,
+      "kind": "Route choice"
+    },
+    {
+      "at": 730.84,
+      "kind": "Place Soot in Front"
+    },
+    {
+      "at": 738.84,
+      "kind": "Raise Clover to level 3"
+    },
+    {
+      "at": 782.88,
+      "kind": "Battle reward"
+    },
+    {
+      "at": 787.88,
+      "kind": "Route choice"
+    },
+    {
+      "at": 807.88,
+      "kind": "Route choice"
+    },
+    {
+      "at": 817.88,
+      "kind": "Route choice"
+    },
+    {
+      "at": 891.22,
+      "kind": "Battle reward"
+    },
+    {
+      "at": 896.22,
+      "kind": "Route choice"
+    },
+    {
+      "at": 995.77,
+      "kind": "Raise Mochi to level 3"
+    },
+    {
+      "at": 1003.77,
+      "kind": "Raise Soot to level 3"
+    },
+    {
+      "at": 1034.41,
+      "kind": "Battle reward"
+    },
+    {
+      "at": 1039.41,
+      "kind": "Route choice"
+    },
+    {
+      "at": 1059.41,
+      "kind": "Route choice"
+    },
+    {
+      "at": 1069.41,
+      "kind": "Route choice"
+    },
+    {
+      "at": 1121.3,
+      "kind": "Battle reward"
+    },
+    {
+      "at": 1126.3,
+      "kind": "Route choice"
+    },
+    {
+      "at": 1231.38,
+      "kind": "Battle reward"
+    },
+    {
+      "at": 1239.38,
+      "kind": "Raise Clover to level 4"
+    },
+    {
+      "at": 1279.89,
+      "kind": "Battle reward"
+    },
+    {
+      "at": 1284.89,
+      "kind": "Route choice"
+    },
+    {
+      "at": 1294.89,
+      "kind": "Route choice"
+    },
+    {
+      "at": 1304.89,
+      "kind": "Route choice"
+    },
+    {
+      "at": 1314.89,
+      "kind": "Route choice"
+    },
+    {
+      "at": 1324.89,
+      "kind": "Route choice"
+    },
+    {
+      "at": 1372.17,
+      "kind": "Battle reward"
+    },
+    {
+      "at": 1377.17,
+      "kind": "Route choice"
+    },
+    {
+      "at": 1481.52,
+      "kind": "Raise Mochi to level 4"
+    },
+    {
+      "at": 1489.52,
+      "kind": "Raise Soot to level 4"
+    },
+    {
+      "at": 1526.03,
+      "kind": "Battle reward"
+    },
+    {
+      "at": 1531.03,
+      "kind": "Route choice"
+    },
+    {
+      "at": 1551.03,
+      "kind": "Route choice"
+    },
+    {
+      "at": 1561.03,
+      "kind": "Route choice"
+    },
+    {
+      "at": 1618.15,
+      "kind": "Battle reward"
+    },
+    {
+      "at": 1623.15,
+      "kind": "Route choice"
+    },
+    {
+      "at": 1735.03,
+      "kind": "Battle reward"
+    },
+    {
+      "at": 1743.03,
+      "kind": "Raise Clover to level 5"
+    },
+    {
+      "at": 1774.45,
+      "kind": "Battle reward"
+    },
+    {
+      "at": 1779.45,
+      "kind": "Route choice"
+    },
+    {
+      "at": 1799.45,
+      "kind": "Route choice"
+    }
+  ]
+}

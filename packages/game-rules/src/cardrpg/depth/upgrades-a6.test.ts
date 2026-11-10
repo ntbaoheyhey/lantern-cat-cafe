@@ -75,3 +75,14 @@ it('previews immutable gear and equips the same legal best item without consumin
   expect(equipped.state.account.currencies).toEqual(s.account.currencies);
   expect(R.teamPowerV4(s)).toBe(before);
 });
+
+
+it('makes an early A6 level visible in team Power while legacy stats stay unchanged', () => {
+  const state=account(), before=R.teamPowerV4(state);
+  const trained=R.metaCommand(state,{type:'level',cardId:state.account.cards[0]!.id});
+  expect(trained.ok).toBe(true);
+  expect(R.teamPowerV4(trained.state)-before).toBeGreaterThan(before*.01);
+  const legacy=R.setGameplayA6(trained.state,false);
+  const stats=R.depthStats(legacy,legacy.team[0]!);
+  expect(R.depthStats(trained.state,trained.state.team[0]!).hp).toBeGreaterThan(stats.hp);
+});
