@@ -18,6 +18,9 @@ parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--checkpoint', required=True, type=Path)
 parser.add_argument('--out', required=True, type=Path)
 parser.add_argument('--generation-receipt', required=True, type=Path)
+repair_group = parser.add_mutually_exclusive_group()
+repair_group.add_argument('--surface-checkpoint', type=Path, help='Explicit local geometry repair of the immutable checkpoint')
+repair_group.add_argument('--repair-surface', action='store_true', help='One bounded Blender remesh, export and views under this same lease')
 parser.add_argument('--trellis-root', type=Path, default=Path.home() / 'art/trellis-mac')
 parser.add_argument('--blender', type=Path, default=Path.home() / 'tools/cardrpg-look/Blender.app/Contents/MacOS/Blender')
 args = parser.parse_args()
@@ -46,8 +49,25 @@ def save(**values):
     (args.out / 'receipt.json').write_text(json.dumps(receipt, indent=2) + '\n')
 save()
 try:
-    with np.load(args.checkpoint, allow_pickle=False) as data:
+    if args.repair_surface:
+        args.surface_checkpoint = args.out / 'repaired-surface.npz'
+        with (args.out / 'repair.log').open('w') as log:
+            subprocess.run([str(args.blender), '-b', '--threads', '4', '--python',
+                            str(Path(__file__).with_name('repair-decoded.py')), '--',
+                            '--checkpoint', str(args.checkpoint), '--out', str(args.surface_checkpoint)],
+                           stdout=log, stderr=subprocess.STDOUT, check=True, timeout=240)
+    surface_checkpoint = args.surface_checkpoint or args.checkpoint
+    with np.load(surface_checkpoint, allow_pickle=False) as data:
         source = {k: data[k] for k in data.files}
+    if args.surface_checkpoint:
+        repair = json.loads(source['surface_repair'].item())
+        if repair.get('sourceCheckpointSha256') != receipt['checkpointSha256'] or repair.get('modelRequests') != 0:
+            raise ValueError('Repair must name this exact decoded checkpoint without inference')
+        with np.load(args.checkpoint, allow_pickle=False) as original:
+            for key in ('voxel_coords', 'voxel_attrs', 'origin', 'voxel_size', 'texture_size'):
+                if not np.array_equal(source[key], original[key]):
+                    raise ValueError('Surface repair changed decoded colour data')
+        save(surfaceRepair=repair, surfaceCheckpoint=str(surface_checkpoint), surfaceCheckpointSha256=sha(surface_checkpoint))
     required = {'vertices', 'faces', 'voxel_coords', 'voxel_attrs', 'origin', 'voxel_size', 'texture_size'}
     if not required.issubset(source) or not all(np.isfinite(source[k]).all() for k in required):
         raise ValueError('Incomplete or nonfinite decoded checkpoint')
@@ -57,7 +77,7 @@ try:
         raise ValueError('Invalid geometry indices or voxel size')
     uv_path = args.out / 'surface-uv.npz'
     command = [str(args.blender), '-b', '--threads', '4', '--python', str(Path(__file__).with_name('unwrap-decoded.py')),
-               '--', '--checkpoint', str(args.checkpoint), '--out', str(uv_path)]
+               '--', '--checkpoint', str(surface_checkpoint), '--out', str(uv_path)]
     with (args.out / 'uv.log').open('w') as log:
         subprocess.run(command, stdout=log, stderr=subprocess.STDOUT, check=True, timeout=240)
     with np.load(uv_path, allow_pickle=False) as uv:
@@ -99,7 +119,8 @@ try:
     orientation = module.orient(native, model, native_uv=True)
     save(status='EXPORTED_REVIEW_REQUIRED', model=str(model), modelSha256=sha(model), orientation=orientation,
          uvSha256=sha(uv_path), paddedTextureFraction=float(mask.mean()),
-         positionsUnchanged=True, uniqueSurfaceCoverageUnchanged=True,
+         positionsUnchanged=not bool(args.surface_checkpoint), uniqueSurfaceCoverageUnchanged=not bool(args.surface_checkpoint),
+         uvPositionsUnchanged=True, uvUniqueSurfaceCoverageUnchanged=True,
          bakerSha256=sha(args.trellis_root / 'backends/texture_baker.py'),
          exporterSha256=sha(__file__), unwrapSha256=sha(Path(__file__).with_name('unwrap-decoded.py')))
     export_seconds = round(time.monotonic() - started, 3)

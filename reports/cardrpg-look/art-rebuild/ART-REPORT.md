@@ -1,5 +1,5 @@
-Đã tạm dừng theo yêu cầu người dùng lúc 2026-11-10T10:59:36Z; đây là báo cáo PARTIAL, chưa kết thúc R8.
-TRELLIS local512 đã sửa UV/mép texture; Button lượt2 kẹt UV; đang sửa xuất từ mesh đã lưu, giữ Mochi/Soot cũ.
+Đã tiếp tục lúc 18:56 ngày 10/11 (giờ Việt Nam); báo cáo PARTIAL, chưa kết thúc R8.
+Button đã xuất được GLB nhưng lưới vỡ; đang sửa bề mặt local từ dữ liệu cũ, giữ nguyên Mochi/Soot.
 VFX12mèo/13nhóm địch đã nối vào trận; camera gần hơn và giữ vùng mặt rõ.
 E2E421/421qua; cast168lượt tối đa16,8ms; demo35,74MB.
 Roster3D chưa đầy đủ; một số hiệu ứng còn giống nhau, mục tiêu8,5 chưa đạt.
@@ -22,3 +22,5 @@ Draft [#427](https://github.com/ntbaoheyhey/taskbar-hero/pull/427). R0/M5/S6 and
 Evidence: r1/rigid1/REVIEW.md; r1/foes-fallback/REVIEW.md; r4/REVIEW.md; r5/REVIEW.md; r3/REVIEW.md. All failed attempts retained or archived with hashes. Continue QUEUE, do not stop at this checkpoint.
 
 Pause checkpoint: stopped own export waiter34006 and intake57059; A lease untouched. No source/runtime bytes changed this checkpoint. Recovery source-view capture and hash-verified recovery skip are saved; eight local guard tests, runner syntax/plan PASS. Resume at saved decoded Button export, then motion/battle review; do not regenerate existing sources.
+
+Current resume: recovery2 UVcoverage.34896 passes, but source/clay review rejects geometry with89796nonmanifold edges. B-LOCAL-009 one local voxel repair queued; no new inference/runtime install. Nine local guards pass, including raw checkpoint before destructive simplification. Earlier pause paragraph is historical.

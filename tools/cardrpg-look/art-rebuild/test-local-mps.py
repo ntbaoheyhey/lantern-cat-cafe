@@ -16,6 +16,21 @@ spec.loader.exec_module(runner)
 
 
 class LocalMpsGuards(unittest.TestCase):
+    def test_raw_checkpoint_precedes_destructive_simplification(self):
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td); script = root/'generate.py'
+            script.write_text('def main():\n    if True:\n        if True:\n'
+                '            # Simplify before UV unwrap — original\n'
+                '            bake_verts, bake_faces = simplify_original(verts, faces)\n')
+            first = runner.configure_raw_checkpoint(root)
+            self.assertEqual(runner.configure_raw_checkpoint(root), first)
+            text = script.read_text()
+            self.assertLess(text.index('vertices=verts, faces=faces'), text.index('simplify_original('))
+            self.assertEqual(text.count('simplify_original('), 1)
+            compile(text, str(script), 'exec')
+            script.write_text('unexpected upstream')
+            with self.assertRaises(ValueError): runner.configure_raw_checkpoint(root)
+
     def test_blender_uv_export_preserves_inference_and_source_normals(self):
         with tempfile.TemporaryDirectory() as td:
             root = Path(td); (root/'backends').mkdir()

@@ -127,6 +127,30 @@ def configure_texture_gutters(trellis):
     return {'path': str(path), 'sha256': sha(path), 'purpose': 'nearest valid texel gutters; authored texels unchanged'}
 
 
+def configure_raw_checkpoint(trellis):
+    """Save model output before destructive export simplification, without reruns."""
+    path = trellis / 'generate.py'
+    body = path.read_text()
+    marker = '            # Lane B: immutable raw surface before simplification'
+    anchor = '            # Simplify before UV unwrap'
+    if marker not in body:
+        if body.count(anchor) != 1:
+            raise ValueError('Upstream simplification stage changed; inspect before checkpointing raw surface')
+        start = body.index(anchor)
+        addition = marker + '''
+            raw_checkpoint = args.output + ".raw.npz"
+            np.savez(raw_checkpoint + ".tmp.npz", vertices=verts, faces=faces,
+                     voxel_coords=voxel_coords.numpy(), voxel_attrs=voxel_attrs.numpy(),
+                     origin=origin.numpy(), voxel_size=np.asarray(vs),
+                     texture_size=np.asarray(tex_size))
+            os.replace(raw_checkpoint + ".tmp.npz", raw_checkpoint)
+            print(f"  Raw checkpoint: {raw_checkpoint}; {len(faces):,} faces", flush=True)
+
+'''
+        path.write_text(body[:start] + addition + body[start:])
+    return {'path': str(path), 'sha256': sha(path), 'purpose': 'raw source before export simplification; no inference changes'}
+
+
 def configure_export_checkpoint(trellis):
     # Keep decoded geometry/voxel colour before the potentially slow UV stage.
     # An exporter failure can then be repaired without another model request.
@@ -254,6 +278,7 @@ def local_generate(args):
                        alphaOnlyPatch=disable_rmbg(trellis), decoderTracePatch=trace_decoders(trellis),
                        exportPatch=configure_export(trellis), sourceFaces=args.source_faces,
                        textureGutterPatch=configure_texture_gutters(trellis),
+                       rawCheckpointPatch=configure_raw_checkpoint(trellis),
                        exportCheckpointPatch=configure_export_checkpoint(trellis),
                        generateSha256=sha(trellis / 'generate.py'))
         if args.uv_backend == 'blender':
