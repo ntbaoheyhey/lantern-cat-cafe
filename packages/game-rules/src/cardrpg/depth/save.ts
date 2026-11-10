@@ -98,6 +98,7 @@ function validateEnemySnapshot(value: unknown): void {
   }
   if(value.challengeLevel!==undefined&&(!Number.isSafeInteger(value.challengeLevel)||Number(value.challengeLevel)<1||Number(value.challengeLevel)>50))fail();
   validateSupply(value.packedSupply);
+  if(value.gameplayA6!==undefined&&(typeof value.gameplayA6!=='boolean'||value.gameplayA6&&(!value.skillsV5||!value.gameplayV4)))fail();
   if(value.skillsV5!==undefined&&(typeof value.skillsV5!=='boolean'||value.skillsV5&&!value.gameplayV4))fail();
   if(value.gameplayV4!==undefined&&typeof value.gameplayV4!=='boolean') fail();
   if(value.gameplayV4&&!validPlan(value.plan)) fail();
@@ -109,6 +110,7 @@ export function validateDepth(value: unknown): asserts value is DepthAccount {
   example.equipment = {};
   shape(value, example);
   const state = value as DepthAccount;
+  if(state.gameplayA6!==undefined&&(typeof state.gameplayA6!=='boolean'||state.gameplayA6&&(!state.skillsV5||!state.gameplayV4)))fail();
   if(state.skillsV5!==undefined&&typeof state.skillsV5!=='boolean')fail();
   if(state.gameplayV4 !== undefined && typeof state.gameplayV4 !== 'boolean') fail();
   if(state.gameplayV4 && !state.v4) fail();
@@ -182,6 +184,7 @@ export function validateDepth(value: unknown): asserts value is DepthAccount {
     for (const node of run.nodes) if (!Array.isArray(node.next) || !Array.isArray(node.enemies) || typeof node.id !== 'string') fail();
     if (run.battle && (!Array.isArray(run.battle.actors) || !Array.isArray(run.battle.queue)
       || !Array.isArray(run.battle.log) || !Array.isArray(run.battle.choices) || !record(run.battle.initial))) fail();
+    if(run.gameplayA6!==undefined&&(typeof run.gameplayA6!=='boolean'||run.gameplayA6&&(!run.skillsV5||!run.gameplayV4)))fail();
     if(run.skillsV5!==undefined&&(typeof run.skillsV5!=='boolean'||run.skillsV5&&!run.gameplayV4))fail();
     if(run.gameplayV4!==undefined&&typeof run.gameplayV4!=='boolean') fail();
     if(run.battle?.initial.gameplayV4) {
@@ -192,7 +195,7 @@ export function validateDepth(value: unknown): asserts value is DepthAccount {
   }
   if (state.lastBattle) validateEnemySnapshot(state.lastBattle);
   if (state.run?.battle) validateEnemySnapshot(state.run.battle.initial);
-  if (![1, 2, 4].includes(state.settings.speed) || !['low', 'medium', 'high'].includes(state.settings.quality)) fail();
+  if (!(state.gameplayA6||state.run?.gameplayA6 ? [1, 2, 3, 4] : [1, 2, 4]).includes(state.settings.speed) || !['low', 'medium', 'high'].includes(state.settings.quality)) fail();
 }
 export function exportSave(state: DepthAccount): string {
   validateDepth(state);

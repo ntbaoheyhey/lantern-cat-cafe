@@ -30,3 +30,5 @@ export * from './journey-v4';
 export * from './stars-v4';
 
 export * from './skills-v5';
+
+export * from './gameplay-a6';

@@ -57,7 +57,7 @@ export function startRun(state: DepthAccount, chapter: number, seed: number, mod
       const ceiling=Math.min(...s.team.map(id=>s.account.cards.find(c=>c.cardId===id)!.level));
       const band=challengeLevel??ceiling;
       requireRule(integer(band,1,ceiling),'LOCKED','Choose a challenge band no higher than your lowest-level crew member.');
-      s.run.gameplayV4=true;s.run.challengeLevel=band;if(s.skillsV5)s.run.skillsV5=true;
+      s.run.gameplayV4=true;s.run.challengeLevel=band;if(s.skillsV5)s.run.skillsV5=true;if(s.gameplayA6)s.run.gameplayA6=true;
     }
   });
 }
@@ -67,7 +67,7 @@ export function enterNode(state: DepthAccount, id: string): RuleResult<DepthAcco
     const node=availableNodes(run).find(n=>n.id===id);requireRule(node,'NOT_READY','Choose a connected node on the map.');
     run.current=id;
     if(node.enemies.length){
-      const setup={...(run.skillsV5?{skillsV5:true}:{}),seed:deriveSeed(run.seed,run.visited.length+run.floor*100),chapter:run.chapter,cats:battleCats(s),enemies:node.enemies,hp:run.hp,boons:run.boons,upgrades:run.upgrades,mutator:run.mutator,...(run.gameplayV4?{gameplayV4:true,...(run.challengeLevel!==undefined?{challengeLevel:run.challengeLevel,enemyStats:challengeStatsV4(run.challengeLevel)}:{}),plan:clone(s.v4?.plan??DEFAULT_PLAN),...(run.packedSupply?{packedSupply:clone(run.packedSupply)}:{})}:{})};
+      const setup={...(run.gameplayA6?{gameplayA6:true}:{}),...(run.skillsV5?{skillsV5:true}:{}),seed:deriveSeed(run.seed,run.visited.length+run.floor*100),chapter:run.chapter,cats:battleCats(s),enemies:node.enemies,hp:run.hp,boons:run.boons,upgrades:run.upgrades,mutator:run.mutator,...(run.gameplayV4?{gameplayV4:true,...(run.challengeLevel!==undefined?{challengeLevel:run.challengeLevel,enemyStats:challengeStatsV4(run.challengeLevel)}:{}),plan:clone(s.v4?.plan??DEFAULT_PLAN),...(run.packedSupply?{packedSupply:clone(run.packedSupply)}:{})}:{})};
       run.battle=createBattle(setup);s.lastBattle=clone(run.battle.initial);s.lastChoices=[];
     }
   });

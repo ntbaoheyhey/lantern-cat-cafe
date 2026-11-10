@@ -1,3 +1,4 @@
+import {gameplayA6} from '../gate';
 import {uiV3Enabled} from '../ui-v3/flag';
 import { BattleSkillsV5 } from './SkillsV5';
 import { DiscoveryCelebrationV4 } from './JourneyV4';
@@ -40,9 +41,10 @@ const navigation: [Screen, string, string][] = [
   ['relics', '◈', 'Fuji Relics'], ['save', '⚙', 'Save & settings'], ['evidence', '↔', 'Before / after'],
 ];
 export default function DepthApp({ offline = false, gameplayV4 = false, skillsV5 = false }: { offline?: boolean; gameplayV4?: boolean; skillsV5?: boolean }) {
-  const uiV3 = uiV3Enabled();
+  const a6 = gameplayA6();
+  const uiV3 = uiV3Enabled() || a6;
   const lookV2 = useSyncExternalStore(subscribeLookV2, isLookV2, () => false);
-  const [m] = useState(() => new DepthModel(offline, gameplayV4, skillsV5));
+  const [m] = useState(() => new DepthModel(offline, gameplayV4 || a6, skillsV5 || a6, a6));
   useSyncExternalStore(m.subscribe, m.snapshot);
   const reviewTools = showReviewTools(activeGameplayV4(m.state));
   const app = useRef<HTMLDivElement>(null);
@@ -76,6 +78,10 @@ export default function DepthApp({ offline = false, gameplayV4 = false, skillsV5
     content.current?.scrollTo(0, 0);
     content.current?.querySelector<HTMLElement>('h1')?.focus({ preventScroll: true });
   }, [m.screen]);
+  useEffect(()=>{
+    if(!m.autoContinue||m.screen!=='result'||m.battle?.result!=='party')return;
+    const timer=window.setTimeout(()=>m.continueBattle(),2500);return()=>window.clearTimeout(timer);
+  },[m,m.screen,m.autoContinue]);
   const pageView = <Suspense fallback={<p role="status">Opening the table…</p>}>{m.screen === 'prepare' && m.battle && <Prepare m={m} />}{m.screen === 'result' && m.battle && <BattleResult m={m} />}
         {m.screen === 'journal' && <CollectionJournalV4 m={m} />}{m.screen === 'hub' && <Hub m={m} />}{m.screen === 'team' && <Team m={m} />}{m.screen === 'map' && <RunMap m={m} />}
         {m.screen === 'collection' && <Collection m={m} />}{m.screen === 'inventory' && <Inventory m={m} />}{m.screen === 'gacha' && <Invitations m={m} />}

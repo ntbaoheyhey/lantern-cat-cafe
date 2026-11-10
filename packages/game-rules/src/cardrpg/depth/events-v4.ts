@@ -18,7 +18,9 @@ export type SkillsEventPayloadV5 =
   | {kind:'status-tick';statusId:StatusId;amount:number;sourceId:string;targetId:string;text:string}
   | {kind:'reaction';reactionId:ReactionIdV5;primerIds:StatusId[];targets:string[];sourceId:string;targetId:string;text:string}
   | {kind:'multi-hit';skillId:string;shape:ShapeV5;targets:string[];text:string};
-export type GameplayEventPayload = LegacyGameplayEventPayload | SkillsEventPayloadV5;
+export type GameplayEventPayload = LegacyGameplayEventPayload | SkillsEventPayloadV5
+  | {kind:'rage.full';amount:number;text:string}
+  | {kind:'ultimate.cast';skillId:string;displayName:string;text:string};
 type EventIdentity = {sequence:number;round:number;actorId?:string;targetId?:string};
 export type EventContextV5 = {version:2;actionId:number;stage:'setup'|'action'|'round-end';logIndex:number};
 export type GameplayEventV4 = (LegacyGameplayEventPayload & EventIdentity & {version:1})

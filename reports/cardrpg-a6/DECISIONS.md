@@ -11,3 +11,9 @@
 - Define seven-day economy visits as four-minute check-ins with real commands; preserve unfinished patrols between visits.
 - Memoize the old fixed-seed advisor only when builds and legal level-up choices match; restore the real account's stale-click guard.
 - Authored animation time includes action anticipation and defeats. Browser overhead and human enjoyment require separate checks.
+
+## Q2
+- A6 opts into the existing V5 automatic rules and Living Cafe shell. Product default stays OFF. Committed routes retain their rules through save/import.
+- Keep rage capped at one hundred; one outgoing hit gain per action prevents multi-hit kits from flooding rage. Emit full/cast events rather than changing the canvas.
+- Three numeric tunes are enough for this checkpoint: G1 passes, G2 partial is explicit. Keep economy/first-session work at its queued priority.
+- Legacy hashes remain exact; no expected receipts were updated.

@@ -24,7 +24,7 @@ export default function BattleHudV3({m}:{m:DepthModel}) {
  useEffect(()=>{
   let frame=0;
   const paint=()=>{
-   if(banner.current)banner.current.hidden=!m.plan?.ultimate||m.animationAt>=800;
+   if(banner.current)banner.current.hidden=!m.plan?.ultimate||(m.a6Battle?m.playbackAt>=m.ultimateBannerUntil:m.animationAt>=800);
    for(const el of effects.current?.querySelectorAll<HTMLElement>('[data-reaction]')??[]){
     const at=Number(el.dataset.at),duration=Number(el.dataset.duration);
     const plate=Array.from(document.querySelectorAll<HTMLElement>('.dp-world-plate')).find(p=>p.dataset.actor===el.dataset.target);
@@ -43,15 +43,17 @@ export default function BattleHudV3({m}:{m:DepthModel}) {
  useEffect(()=>{const key=(e:KeyboardEvent)=>{if(e.key==='Escape'){if(help)closeHelp();else{setMore(false);setLog(false)}}};window.addEventListener('keydown',key);return()=>window.removeEventListener('keydown',key);});
  return <div className="uv-battle-hud" aria-label="Battle controls">
   <header className="uv-battle-top"><div className="uv-battle-round"><small>{m.tutorialBattle?'Practice table':R.CHAPTERS[battle.chapter-1]!.name}</small><b>Wave 1/1 · Round {battle.round}</b></div>
-   {boss&&<div className="uv-boss" aria-label={`${boss.name} boss health`}><b>{boss.name}</b><progress value={boss.hp} max={boss.maxHp}/><small>{boss.hp}/{boss.maxHp} · Phase {boss.phase}</small></div>}
-   <div className="uv-battle-actions"><button aria-label="Change playback speed" onClick={()=>{m.state.settings.speed=m.state.settings.speed===1?2:m.state.settings.speed===2?4:1;m.notify();}}>×{m.state.settings.speed}</button><button onClick={()=>{m.paused=!m.paused;m.notify(false)}}>{m.paused?'Resume auto':'Pause auto'}</button><button disabled={!!m.galleryBattle} onClick={()=>m.skip()}>Skip to result</button><button aria-label="Read battle guide" onClick={()=>{pausedBeforeHelp.current=m.paused;m.paused=true;m.notify(false);setHelp(true)}}>?</button><button aria-label="More battle options" aria-expanded={more} onClick={()=>setMore(!more)}>⋯</button></div>
+   {boss&&<div className="uv-boss" aria-label={`${boss.name} boss health`}><b>{boss.name}</b><progress value={boss.hp} max={boss.maxHp}/><small>{boss.hp}/{boss.maxHp} · Phase {m.a6Battle&&boss.bonuses.a6FirstPhase?(boss.phase===2?3:2):boss.phase}</small></div>}
+   <div className="uv-battle-actions"><button aria-label="Change playback speed" onClick={()=>m.cycleSpeed()}>×{m.state.settings.speed}</button><button onClick={()=>{m.paused=!m.paused;m.notify(false)}}>{m.paused?'Resume auto':'Pause auto'}</button><button disabled={!m.canSkip} title={m.canSkip?'Skip to result':'Earn three stars on this stage to skip it.'} onClick={()=>m.skip()}>{m.a6Battle&&!m.canSkip?'Skip · 3★ needed':'Skip to result'}</button><button aria-label="Read battle guide" onClick={()=>{pausedBeforeHelp.current=m.paused;m.paused=true;m.notify(false);setHelp(true)}}>?</button><button aria-label="More battle options" aria-expanded={more} onClick={()=>setMore(!more)}>⋯</button></div>
   </header>
+  {m.a6Battle&&<section className="uv-enemy-rage" aria-label="Enemy rage">{battle.actors.filter(a=>a.side==='enemy'&&a.hp>0).map(a=><div key={a.id}><small>{a.name}</small><progress value={a.charge} max={100} aria-label={`${a.name} rage: ${a.charge}/100`}/></div>)}</section>}
+  {m.a6Battle&&<label className="uv-auto-continue"><input type="checkbox" checked={m.autoContinue} onChange={e=>{m.autoContinue=e.target.checked;m.notify(false)}}/> Auto-continue · pause at rest stops</label>}
   {more&&<div className="uv-battle-menu"><button onClick={()=>{const next=!banners;setBanners(next);try{localStorage.setItem('lantern-ui-v3-banners',next?'on':'off')}catch{/* Session preference still works. */}}}>Turn banners {banners?'off':'on'}</button><button onClick={()=>{void m.audio.toggle().then(()=>{m.state.settings.sound=m.audio.enabled;m.notify()})}}>Turn sound {m.audio.enabled?'off':'on'}</button><button onClick={()=>{setLog(!log);setMore(false)}}>Read battle log</button><button onClick={()=>m.leave()}>Leave table</button></div>}
   <div className="uv-battle-party dp-v5look" aria-label="Crew health and ultimates">{battle.actors.filter(a=>a.side==='party').map(cat=>{
    const ult=R.CAT_BY_ID[cat.catalogId]?.skills.find(s=>s.type==='ultimate');
-   const readiness=ult?(battle.v4?skillReadinessV4(cat,ult):cat.charge>=100?'Ready':`${cat.charge}/100 charge`):'Unavailable';
+   const readiness=ult?(m.a6Battle?(!cat.skills.includes(ult.id)?'Unlocks at level 6':cat.charge>=100?'Ready':`${cat.charge}/100 rage`):battle.v4?skillReadinessV4(cat,ult):cat.charge>=100?'Ready':`${cat.charge}/100 charge`):'Unavailable';
    const ready=cat.hp>0&&readiness==='Ready';
-   const progress=battle.v4?(readiness==='Ready'?1:readiness==='Used this battle'?0:1-Math.min(1,(Number.parseInt(readiness)||0)/Math.max(2,ult?.cooldown??2))):cat.charge/100;
+   const progress=m.a6Battle?cat.charge/100:battle.v4?(readiness==='Ready'?1:readiness==='Used this battle'?0:1-Math.min(1,(Number.parseInt(readiness)||0)/Math.max(2,ult?.cooldown??2))):cat.charge/100;
    return <article key={cat.id} className="uv-battle-cat" data-actor={cat.id} data-ready={ready} data-fallen={cat.hp<=0}><img {...portraitProps(cat.catalogId)} alt=""/><div><b>{cat.name}</b><small>{cat.hp}/{cat.maxHp} HP</small><progress value={cat.hp} max={cat.maxHp} aria-label={`${cat.name} health`}/><progress className="uv-ult-charge" value={progress} max={1} aria-label={`${cat.name} ultimate: ${readiness}`}/><small className="uv-ult-label">{ready?'Ultimate ready':`Ultimate · ${readiness}`}</small></div><StatusBadges statuses={cat.statuses} name={cat.name}/></article>;
   })}</div>
   {banners&&plan?.ultimate&&caster?.side==='party'&&<aside ref={banner} className="uv-ultimate-banner" aria-label="Ultimate cast"><small>{caster.name}</small><b>{plan.name}</b></aside>}

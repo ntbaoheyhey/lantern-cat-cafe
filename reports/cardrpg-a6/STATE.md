@@ -8,7 +8,7 @@
 - pnpm: 10.28.0 (repository packageManager version)
 - Free disk at setup: 147 GiB (df -h ~); above 15 GB threshold.
 - Dependencies: pnpm install --frozen-lockfile completed without lockfile changes.
-- Scope: STEP 2 active; Q2 active; Q1 completed 2026-11-10 06:38 UTC.
+- Scope: STEP 2 active; Q3 active; Q1 completed 2026-11-10 06:38 UTC.
 - Delivery branch remains codex/cardrpg-a6-q0-2026-11-10; one draft PR #438 for the whole lane.
 
 ## Report skim (15 lines; existing claims, not re-verified)
@@ -42,3 +42,14 @@
 - BEFORE baseline complete: 500 seeds in 496.99 seconds; see BASELINE.md. Runtime over three minutes is a known issue after three repairs.
 - Mean first-session losses: 1.92 in ten minutes and 7.07 in thirty; existing hint retry win rate 17.59 percent.
 - Fresh seeds 60001–60500 remain unused.
+
+## Q2 complete — 2026-11-10 06:56 UTC
+- Flag-gated automatic rage/ultimates, boss phases, x1/x2/x3, three-star skip and optional auto-continue.
+- Final 500-seed sim: normal six rounds, median 32.17 seconds, p90 44.46; boss median 81.69 seconds, p90 95.11. G1 passes on authored timing.
+- G2 partial: normal ultimate range 48–79.17 percent; boss minimum 90 percent. Three numeric tuning attempts exhausted; remaining overflow goes to Q12.
+- G3 remains partial: early losses mean 0.29, thirty-minute losses mean 1.01/worst five; hint retry wins 63.82 percent.
+- Sim runtime 270.17 seconds; economy now dominates cost. Keep the existing measurement definitions.
+- Exact OFF digest PASS (8,250 routes); A5 fallback PASS (45 routes). q2-compatibility.json records both expected hashes unchanged.
+- Typecheck/lint and full touched-package suites pass; final Daze/save edge cases pass (five rules and two web tests).
+- Three WebP shots inspected. Forced full-rage fixture proves banner layout; natural-cast timing under concurrent CPU load is not a browser pacing claim.
+- Next: Q3 bonds/combos/book and the scheduled full E2E + thirty-minute real-click session.
