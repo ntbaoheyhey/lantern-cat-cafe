@@ -1,6 +1,7 @@
 # Lane B active queue
 
-Updated: 2026-11-10 01:52 UTC. Continuous run authorized by NON-STOP RUN prompt.
+Updated: 2026-11-10 02:37 UTC. PAUSED by latest user instruction; resume only when the user says to continue.
+The current pause overrides all historical continuous-run instructions below.
 Always take the top unfinished unblocked item. Check INBOX.md and root STOP-B between items. Reports/checkpoints are not stops. After three failed repairs, use the documented fallback and continue. Only the hard stops in NON-STOP-RUN.txt apply.
 
 - [x] Q1 Housekeeping — 30 min. Archive old handoff; compact current handoff; read direction/state/rules and latest A/U outboxes; seed inbox. Done: current files consistent, status committed and pushed.
@@ -28,3 +29,9 @@ Q2 result: Blender separation rejected for gaps; explicit rigid-module fallback 
 Q3 checkpoint 2026-11-10 02:10 UTC: Soot exported and rigid-module runtime preview exists; verifying battle/face gates. Button Guard attempt1 hit daily ZeroGPU quota; retry2 no earlier than03:06UTC, attempt3 no earlier than04:06UTC (respect any provider reset time). Yarn has not been submitted. While provider work waits, do Q4 then unblocked concept work; no Mochi source regeneration.
 
 Q4 DONE 02:16UTC during Q3 quota wait: generic runner validated on existing Soot source; resumable5stages/hash/lock/install guards. Q3 Soot checkpoint7.6appeal/6.3motion,698k-class asset,24faces0offenders; Button/Yarn remain provider-dependent. Q5 concept preparation starts while preserving Q3 priority when retry is due.
+
+Q5 concept prep during quota wait: Clover/Panko saved; remaining batch1 Mallow,Cinnamon,Velvet,Biscuit then batch2 Brioche,Marigold,Sorrel,Inkcap. All prompts written; one built-in call per unit. New concepts do not imply runtime acceptance.
+
+Q5 concept checkpoint 02:36UTC: all12cat concepts reviewed at equal displayed height; eight new originals saved after Clover/Panko. No earlier source regenerated. Enemy prompts authored from existing object identities. Runtime preparation remains unfinished; Q3 Button retry2 still not before03:06UTC.
+
+Pause checkpoint: user requested handoff and stop. All12cat concepts/provenance saved; enemy prompts only. No auto-retry while paused. Existing checkboxes retained honestly; Q3/Q5-Q11 incomplete.

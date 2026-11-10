@@ -1,8 +1,16 @@
-Đang chạy liên tục theo NON-STOP-RUN; đây là checkpoint, chưa phải báo cáo kết thúc.
-Q1/Q2/Q4 đã xong; Soot đã chạy trong trận bằng nguồn 3D cũ và đã kiểm tra mặt/HUD.
-Button Guard bị quota miễn phí ở lần1; chờ các lượt thử giãn cách, không mua gói.
-Clover đã có concept mới; Q5 chuẩn bị nguồn trong lúc chờ Q3.
-R1 tổng thể, roster, VFX toàn bộ và R8 vẫn chưa hoàn tất.
+Đã dừng theo yêu cầu của người dùng lúc 2026-11-10 02:37 UTC; chỉ tiếp tục khi được yêu cầu.
+Trạng thái PARTIAL: Q1/Q2/Q4 xong, Q3 và toàn bộ roster/VFX/R8 chưa xong.
+Đã có 12 concept mèo với provenance và ảnh đối chiếu; đây là nguồn art, chưa phải 12 runtime.
+Mochi/Soot giữ nguyên nguồn đã dựng; Button Guard quota lần1, Yarn chưa chuyển; không tự thử lại khi dừng.
+11 prompt quái đã viết; phần còn lại nằm trong QUEUE.md/HANDOFF.md, không có tác vụ nền mới.
+
+## Pause checkpoint — 2026-11-10 02:37 UTC
+
+- Cat concepts: retained the four completed sources, saved eight new built-in originals; source files and complete prompts/provenance are in assets/source/look-v3/concepts, tools/cardrpg-look/art-rebuild/prompts and assets/provenance/look.md.
+- Reviewed r2/concepts/cats-concepts.webp at equal displayed height; r2/concepts/CATS-REVIEW.md records five runtime risks. Concept-only approval; no new runtime score.
+- Source32MiB/60MB and report evidence74MiB/120MB. Large raw masters remain in ~/art/look-v3/concepts.
+- No renderer/gameplay changes in this checkpoint. No runtime type/lint/unit, face/HP, parity or performance rerun was required to save this pause; earlier runtime results below are historical, not validation of unbuilt cats.
+- Remaining work and the exact paused state are saved in HANDOFF.md, STATE.md and QUEUE.md. R8 completion is not claimed.
 
 Current receipts: QUEUE.md, r1/roster/SOOT-REVIEW.md, r1/roster/soot-validation.json and AUTOMATION.md. Historical checkpoint below is retained as history.
 
