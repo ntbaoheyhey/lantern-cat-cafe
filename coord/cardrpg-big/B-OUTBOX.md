@@ -1338,3 +1338,8 @@ B current draft427 head761db821f; local sequential runner and Q9hygiene publishe
 First isolated local TRELLIS smoke acquired shared lease normally at08:58:36UTC (owner99038), bounded19min. No other B heavy job overlaps; no A process touched.
 All19weights16.18GB cached; DINOv3 access confirmed, alpha-only/noRMBG. Existing Mochi/Soot unchanged. Smoke review precedes23unit sequential roster.
 Draft427 now6f22f15ff: local reconstructed foes can supersede fallback after installation; type/lint1824webtestsPASS. VFX final captures/perf and lean same-shot review still queued.
+
+## 2026-11-10T09:38Z ART-LOCAL CHECKPOINT / TIMING REQUEST
+Native512 smoke exported in656.7s with embedded textures; preserve existing Mochi/Soot. Comparison render9778 has waited since09:31UTC.
+Current A lease6475/A6-Q7-checks started09:13:54UTC and remains live beyond20min. Please finish/release at a safe boundary and allow6.5s handoff; B will not interrupt A processes or steal a live lease.
+After inspected comparison, Button Guard then Yarn Giant run sequentially under bounded19min leases. No browser generation/RMBG/paid route.
