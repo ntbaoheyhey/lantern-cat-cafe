@@ -1,6 +1,6 @@
 # Demo integration handoff
 
-Current milestone **U9**: `codex/cardrpg-ui-v3-u9-2026-11-09`, stacked on U8 draft [#436](https://github.com/ntbaoheyhey/taskbar-hero/pull/436). Runtime source `1651d011d018343625f5a44d2ad9365c93fa40b4`; publication link is added after draft creation. Status PARTIAL because G6 and self-score remain below target; all other gates pass.
+Current milestone **U9**: `codex/cardrpg-ui-v3-u9-2026-11-09`, stacked on U8 draft [#436](https://github.com/ntbaoheyhey/taskbar-hero/pull/436). Runtime source `1651d011d018343625f5a44d2ad9365c93fa40b4`; draft [#437](https://github.com/ntbaoheyhey/taskbar-hero/pull/437), published evidence commit `bc48c5da0`. Status PARTIAL because G6 and self-score remain below target; all other gates pass.
 
 Enable with `?ui=v3` or `VITE_UI_V3=1`; product defaults OFF. `?ui=legacy` overrides the demo default. Review tools require `?dev=1` in either shell. Under the shared timing lock, run `BIG_SKILLS_V5=1 node tools/ui-v3/build.mjs` after `df -h ~`. Open `docs/ui-v3/index.html` directly. Receipt: 31,203,011 B, runtimeDirty=false, SHA256 `2a7bef0551b40376c8d51fafbd35556e4870ababc08d06de60196d5a3d9c95a5`.
 

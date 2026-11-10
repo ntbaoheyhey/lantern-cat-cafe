@@ -9,4 +9,4 @@ Mở `docs/ui-v3/index.html`; bản offline 31.20 MB, không cần mạng.
 Trận tập tự kết thúc trong 13,983 giây; luật chơi, xác suất và định dạng lưu giữ nguyên.
 Tự chấm 8,475/10 sau một lượt cải thiện bắt buộc, còn dưới mục tiêu 8,5.
 Còn thiếu: mở lạnh 1,36 giây, mỹ thuật trận dạng mẫu, Home vẫn dùng nền tĩnh.
-Đang chuyển sang chế độ chờ bản A/B đủ điều kiện; không merge PR hay triển khai.
+Draft PR #437 đã xuất bản; đang chờ bản A/B đủ điều kiện, không merge hay triển khai.

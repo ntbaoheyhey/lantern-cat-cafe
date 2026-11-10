@@ -2,7 +2,7 @@
 
 Status: **PARTIAL** — U0–U9 delivered; G6 cold-interactive remains below target and final self-score is **8.475/10** (target 8.5). The required single additional improvement pass is complete. Entering sync mode; no merge or deployment. Product defaults OFF.
 
-Base: Lane A S6 `1195b13fa` ([#424](https://github.com/ntbaoheyhey/taskbar-hero/pull/424)), merged with published B integration `c5712f7c0` ([#420](https://github.com/ntbaoheyhey/taskbar-hero/pull/420)) by `d4a8dad8d`. Runtime source `1651d011d018343625f5a44d2ad9365c93fa40b4`; runtimeDirty=false. Art R1 `3ef6f96a6` ([#427](https://github.com/ntbaoheyhey/taskbar-hero/pull/427)) is PARTIAL and excluded. At 2026-11-10 00:04 UTC no newer published A descendant qualifies (S7/S8 are not descendants of S6).
+Base: Lane A S6 `1195b13fa` ([#424](https://github.com/ntbaoheyhey/taskbar-hero/pull/424)), merged with published B integration `c5712f7c0` ([#420](https://github.com/ntbaoheyhey/taskbar-hero/pull/420)) by `d4a8dad8d`. U9 draft [#437](https://github.com/ntbaoheyhey/taskbar-hero/pull/437), published evidence commit `bc48c5da0`. Runtime source `1651d011d018343625f5a44d2ad9365c93fa40b4`; runtimeDirty=false. Art R1 `3ef6f96a6` ([#427](https://github.com/ntbaoheyhey/taskbar-hero/pull/427)) is PARTIAL and excluded. At 2026-11-10 00:04 UTC no newer published A descendant qualifies (S7/S8 are not descendants of S6).
 
 | Phase | Evidence |
 |---|---|
