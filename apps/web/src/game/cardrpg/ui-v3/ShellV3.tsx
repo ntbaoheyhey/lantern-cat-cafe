@@ -11,6 +11,7 @@ import {Icon,type IconName} from './Icon';
 import './ui-v3.css';
 import './lantern-a6.css';
 import './keepsakes-a6.css';
+import './journal-a6.css';
 import {CountUpA6} from './CountUpA6';
 import {OpeningA6} from './OpeningA6';
 import {useNewDiscoveries} from './useNewDiscoveries';

@@ -104,3 +104,9 @@ Git trùng origin, còn145GiB; bản sửa lính phụ của B sẽ merge sau l�
 
 2026-11-10T19:51:42Z: Lượt Q15 đủ30phút:26thắng/2thua,khônglỗi/kẹt; thường31,12giây,boss90,35giây. Thua đầu5,38phút và đuôi boss184,7giây vẫn chưa đạt.
 Đã merge bản B sửa lính phụ qua daab97e4d; nhường lượt khóa B theo yêu cầu rồi kiểm tra ảnh/phim/demo A6.
+
+2026-11-10T19:58:54Z: Tiếp tục đúng kiểm tra tích hợp B và Nhật ký; giữ lượt chơi cuối30phút/500seed/E2E đã xong, không chạy lại.
+Nhánh trùng GitHub, còn143GiB; test liên quan đã qua, đang duyệt ảnh và sửa bộ kiểm tra điều hướng Nhật ký trước khi đóng gói demo.
+
+2026-11-10T20:03:14Z: Q14 và Nhật ký Q17 hoàn tất: ba lính phụ tách rõ, quà Nhật ký giữ đúng giới hạn và chỉ nhận một lần.
+Demo mới38,37MB mở trực tiếp ở cả hai cỡ màn, không gọi mạng/lỗi; đã xem24ảnh và giữ các test đã qua. Hai clip85giây/65giây đã cắt từ bản ghi có sẵn, đang duyệt khung hình trước khi chốt báo cáo.

@@ -1,0 +1,74 @@
+/* Original keepsake book. Claims and collection state remain in the existing rules. */
+.uv-app[data-a6=true] {
+ .a6-journal {position:relative;padding:20px 22px 18px;border:1px solid #bc9b66;border-left:11px solid #826043;border-radius:5px 17px 17px 5px;background:repeating-linear-gradient(0deg,transparent 0 31px,#a97d3e0b 31px 32px),linear-gradient(100deg,#efe0bb,#fff2d2 8%,#f1dfb7);box-shadow:inset 5px 0 12px #845e3e20,0 5px 0 #b49464;}
+ .a6-journal-intro {display:grid;grid-template-columns:270px minmax(0,1fr);gap:24px;align-items:center;min-height:170px;margin-bottom:22px;}
+ .a6-journal-photos {display:flex;justify-content:center;align-items:center;padding:9px 0 13px;}
+ .a6-journal-photos>div {position:relative;flex:0 0 98px;margin:0 -8px;padding:4px 4px 9px;background:#fff6de;border:1px solid #c4a374;box-shadow:0 5px 9px #61462c30;transform:rotate(-9deg);}
+ .a6-journal-photos>div:nth-child(2) {z-index:1;transform:translateY(10px) rotate(3deg);}
+ .a6-journal-photos>div:nth-child(3) {transform:rotate(11deg);}
+ .a6-journal-photos>div::before {content:"";position:absolute;z-index:2;top:-7px;left:28%;width:42%;height:17px;background:#bfa47785;clip-path:polygon(5% 0,95% 5%,100% 92%,0 100%);}
+ .a6-journal-photos img {display:block;width:100%;height:118px;object-fit:contain;background:radial-gradient(ellipse at 50% 70%,#ddd2aa,transparent 68%);}
+ .a6-journal-photos span {display:block;text-align:center;font:700 14px Georgia,serif;color:#6c4c33;}
+ .a6-journal-title>small {font-size:10px;letter-spacing:2px;color:#896b45;}
+ .a6-journal-title h2 {margin:3px 0 7px;font:700 clamp(23px,2.6vw,35px) Georgia,serif;color:#59402c;}
+ .a6-journal-title>p {margin:0 0 13px;font-size:14px;color:#725737;}
+ .a6-journal-counts {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:0;}
+ .a6-journal-counts>div {padding-left:12px;border-left:2px solid #b28b51;}
+ .a6-journal-counts dt {font-size:11px;color:#81603b;}
+ .a6-journal-counts dd {margin:4px 0 0;font:bold 24px Georgia,serif;color:#74542e;}
+ .a6-journal-counts dd small {font:12px system-ui,sans-serif;color:#96784f;}
+ .a6-journal-milestones {display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin:0 0 18px;align-items:stretch;}
+ .a6-journal-ticket {display:flex;flex-direction:column;position:relative;padding:12px;border:1px solid #b6945e;border-radius:8px;background:linear-gradient(135deg,#fff7df,#ecd5aa);box-shadow:0 4px 0 #a5865726;}
+ .a6-journal-ticket[data-status=ready] {border:2px solid #b48a3f;padding:11px;background:radial-gradient(ellipse at 80% 10%,#fffbe6,transparent 60%),linear-gradient(135deg,#fff1c8,#edce8d);box-shadow:0 0 0 3px #ffde8b50,0 5px 0 #a5865733;}
+ .a6-journal-ticket[data-status=collected] {background:linear-gradient(135deg,#edf0d1,#d9ddba);border-color:#8d9b69;}
+ .a6-journal-ticket-top {display:flex;align-items:center;justify-content:space-between;gap:4px;}
+ .a6-journal-stamp {width:49px;height:49px;color:#a27c48;flex:none;}
+ .a6-journal-ticket[data-status=collected] .a6-journal-stamp {color:#637b48;}
+ .a6-journal-ticket-top>span {font-size:10px;color:#80613e;text-align:right;}
+ .a6-journal-ticket h3 {min-height:44px;margin:5px 0 9px;font:700 19px/1.17 Georgia,serif;color:#65492c;}
+ .a6-journal-progress {display:flex;align-items:center;gap:8px;margin:0 0 11px;font-size:11px;color:#6d5335;}
+ .a6-journal-progress>span {white-space:nowrap;}
+ .a6-journal-progress progress {width:100%;min-width:0;height:6px;accent-color:#a98a45;}
+ .a6-journal-reward {display:flex;align-items:center;gap:6px;min-height:25px;font-size:14px;font-weight:700;color:#936c31;}
+ .a6-journal-currency,.a6-journal-currency>span {display:inline-flex;align-items:center;gap:6px;flex-wrap:wrap;font-size:14px;}
+ .a6-journal-currency i {font-style:normal;color:#a17a3b;}
+ .a6-journal-reason {min-height:43px;margin:8px 0 11px;font-size:11px;line-height:1.3;color:#7c603d;}
+ .a6-journal-ticket>button {margin-top:auto;min-height:40px;width:100%;font-size:12px;padding:7px 6px;}
+ .a6-journal-ticket[data-status=collected]>button {color:#52653a;background:#d7dfbd;border-color:#98a67b;opacity:1;box-shadow:none;}
+ .a6-journal-pages {padding:10px 2px;border-top:1px dashed #ad8957;color:#6f5235;}
+ .a6-journal-pages>summary {display:flex;justify-content:space-between;gap:12px;font:700 16px Georgia,serif;cursor:pointer;}
+ .a6-journal-pages>summary::before {content:"+";font:700 18px Georgia,serif;}
+ .a6-journal-pages[open]>summary::before {content:"−";}
+ .a6-journal-pages>summary>span {margin-left:auto;font:12px system-ui,sans-serif;color:#856745;}
+ .a6-journal-pages p {font-size:13px;line-height:1.5;}
+ .a6-journal-pages .dp-v4-discoveries {margin-top:14px;}
+ .a6-journal-chapters {display:flex;gap:15px;}
+ .a6-journal-chapters>p {flex:1;padding:10px;background:#e3cca455;border:1px solid #bd9b63;border-radius:6px;}
+ .a6-journal-chapters b,.a6-journal-chapters span {display:block;}
+ @media(max-height:760px) {
+  .a6-journal {padding:12px 16px;}
+  .a6-journal-intro {grid-template-columns:205px minmax(0,1fr);gap:20px;min-height:116px;margin-bottom:15px;}
+  .a6-journal-photos {padding:5px 0;}
+  .a6-journal-photos>div {flex-basis:78px;padding:3px 3px 5px;}
+  .a6-journal-photos img {height:82px;}
+  .a6-journal-photos span {font-size:12px;}
+  .a6-journal-title h2 {font-size:26px;margin-bottom:4px;}
+  .a6-journal-title>p {font-size:12px;margin-bottom:9px;}
+  .a6-journal-counts dd {font-size:21px;margin-top:2px;}
+  .a6-journal-counts dt {font-size:10px;}
+  .a6-journal-milestones {gap:9px;margin-bottom:12px;}
+  .a6-journal-ticket {padding:9px;}
+  .a6-journal-ticket[data-status=ready] {padding:8px;}
+  .a6-journal-stamp {width:35px;height:35px;}
+  .a6-journal-ticket h3 {font-size:17px;min-height:40px;margin:4px 0 8px;}
+  .a6-journal-reason {margin:5px 0 8px;min-height:40px;}
+  .a6-journal-ticket>button {min-height:40px;}
+  .a6-journal-pages {padding:9px 2px;}
+ }
+ @media(max-width:900px) {
+  .a6-journal-intro {grid-template-columns:1fr;}
+  .a6-journal-photos {display:none;}
+  .a6-journal-milestones {grid-template-columns:repeat(2,minmax(0,1fr));}
+  .a6-journal-pages>summary>span {display:none;}
+ }
+}

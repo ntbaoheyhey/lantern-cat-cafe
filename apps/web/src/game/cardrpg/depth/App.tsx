@@ -6,9 +6,10 @@ import { showReviewTools } from "./player-mode";
 import { lazy, Suspense, useEffect, useLayoutEffect, useRef, useState, useSyncExternalStore, type CSSProperties } from 'react';
 import { isLookV2, setLookV2, subscribeLookV2 } from '../../squad/turn3d/look-v2';
 import lookTokens from '../look-tokens.json';
+const JournalA6 = lazy(() => import('../ui-v3/JournalA6').then(m => ({default:m.JournalA6})));
 const CollectionJournalV4 = lazy(() => import('./CafeV4').then(m => ({default:m.CollectionJournalV4})));
 import { DepthModel, type Screen } from './model';
-import { gameplayV4 as activeGameplayV4 } from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
+import { gameplayV4 as activeGameplayV4, gameplayA6 as activeGameplayA6 } from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import { CompanionPreviewProvider } from './CompanionPreview';
 import { preloadPreviewModels } from './preview-runtime';
 const BattleView = lazy(() => import('./Battle').then(m => ({default:m.BattleView})));
@@ -86,7 +87,7 @@ export default function DepthApp({ offline = false, gameplayV4 = false, skillsV5
     const timer=window.setTimeout(()=>m.continueBattle(),2500);return()=>window.clearTimeout(timer);
   },[m,m.screen,m.autoContinue]);
   const pageView = <Suspense fallback={<p role="status">Opening the table…</p>}>{m.screen === 'prepare' && m.battle && <Prepare m={m} />}{m.screen === 'result' && m.battle && <BattleResult m={m} />}
-        {m.screen === 'journal' && <CollectionJournalV4 m={m} />}{m.screen === 'hub' && <Hub m={m} />}{m.screen === 'team' && <Team m={m} />}{m.screen === 'map' && <RunMap m={m} />}
+        {m.screen === 'journal' && (activeGameplayA6(m.state)?<JournalA6 m={m}/>:<CollectionJournalV4 m={m}/>)}{m.screen === 'hub' && <Hub m={m} />}{m.screen === 'team' && <Team m={m} />}{m.screen === 'map' && <RunMap m={m} />}
         {m.screen === 'collection' && <Collection m={m} />}{m.screen === 'inventory' && <Inventory m={m} />}{m.screen === 'gacha' && <Invitations m={m} />}
         {m.screen === 'codex' && <Codex v4={activeGameplayV4(m.state)} skillsV5={!!m.state.skillsV5} />}{m.screen === 'relics' && <Relics m={m} />}{m.screen === 'save' && <SaveSettings m={m} />}{m.screen === 'evidence' && <Evidence />}</Suspense>;
   if (uiV3) return <CompanionPreviewProvider m={m}><div ref={app} data-a6={a6} data-look-v2={lookV2} data-battle-active={m.showBattle} style={lookV2 ? rarityStyle : undefined} className={`cr-app dp-app uv-app ${m.state.settings.reducedMotion ? 'dp-reduced-motion' : ''}`}>

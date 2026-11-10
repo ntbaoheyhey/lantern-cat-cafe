@@ -116,3 +116,5 @@
 2026-11-10T19:15:22Z Q15 capture harness: Saved/Suggested summaries require distinct selection; resume keeps prior images. Map focus check used focus() after mouse input and therefore did not establish keyboard modality. Existing CSS has a focus-visible outline; focused verification now uses actual Tab/Shift+Tab and asserts focus before inspecting the ring. App source unchanged; failed receipt retained.
 
 2026-11-10T19:20:48Z Q15 E2E: full suite420/421, idle XP stayed0 after fake-clock jump before app readiness. Minimal test-only wait for visible Catstatus before advancing clock; three concurrent focused repeats pass. Preserve original failure in final-e2e.json. No gameplay changes;420passing cases not repeated.
+
+2026-11-10T20:00:25Z Q17 capture harness: returning through a lazy guide can preserve an open details section; unconditional click closed it before replay lookup. Check details.open before opening; resumed only missing captures/navigation. No product edit; both sizes pass and prior receipts retained.

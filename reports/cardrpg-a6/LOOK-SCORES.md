@@ -1,6 +1,6 @@
 # Inspected visual scores
 
-Agent visual review, not player testing. Both sizes inspected; no applicable Q13b row below 7. Q14 exposed a B-owned boss occlusion; the published P13 repair fixes two adds, while A6 phase 3 can show three live adds. That case remains provisional. Row applicability: 01–10 and 12–15 apply where their content exists; 11 only cafe, 16 Recruit, 17 Map, 18–19 Battle, 20 Result. Stars/level apply only owned cats; rarity applies to collectible cards/gear/relics. Other category rows are N/A.
+Agent visual review, not player testing. Both sizes inspected; no applicable Q13b row below 7. Q14 P15 now resolves the three-live-helper occlusion in A6; its affected captures are inspected. Row applicability: 01–10 and 12–15 apply where their content exists; 11 only cafe, 16 Recruit, 17 Map, 18–19 Battle, 20 Result. Stars/level apply only owned cats; rarity applies to collectible cards/gear/relics. Other category rows are N/A.
 
 | Screen | 1440×900 | 1280×720 | Lowest applicable row | Evidence / next fix |
 |---|---:|---:|---|---|
@@ -16,11 +16,11 @@ Agent visual review, not player testing. Both sizes inspected; no applicable Q13
 | Result / defeat | 8.0 | 8.0 | 08/20: simple reward icons (7.5) | shots/q14a/*-result and *-loss; truthful highlight label and clear720p action |
 | Recruit | 8.3 | 8.2 | 13: small duplicate labels (7.5) | shots/q13c-final; full-screen Epic/Legendary and ten-pull inspected |
 | Map | 8.1 | 8.0 | 13: compact route metadata (7.2) | shots/q13d-final route; q14a/*-map-choice repairs boon text/fold; keyboard settlement passes |
-| Journal | 7.3 | 7.1 | 07: plain milestone panels (7) | final-screens/*-journal; claim buttons fit, next visual polish candidate |
+| Journal | 8.0 | 7.8 | 13: compact ticket text (7.5) | shots/q17-journal/*; 12 inspected views, all five claims fit, keyboard settlement/navigation pass |
 | Field guide | 7.6 | 7.3 | 13: dense keyword cards (7) | final-screens/*-codex; secondary glossary scrolls |
 | Settings / save | 7.5 | 7.3 | 07: plain form surface (7) | final-screens/*-save; export/import and comfort controls visible |
 | Normal battle | 8.2 | 8.1 | 13/18: small rage text (7.5) | final-screens/*-normal-battle; integrated25puppets, current stage/portraits; inspected |
-| Boss battle (provisional Q14) | 7.8 | 7.7 | 02: third live add overlaps another (6.5) | final-screens/*-boss-adds-phase3; P13 fixes two adds; three-add case requested in A6-OUTBOX. Both phase labels now agree. |
+| Boss battle | 8.2 | 8.1 | 13: small floating labels (7.5) | shots/q14-p15/*-boss-adds-phase3; three helpers separated at both sizes, phase labels agree |
 | Ultimate | 8.3 | 8.2 | 19: restrained burst (8) | final-screens/*-ultimate +1440-ultimate-video; saved video holds readable art/skill name,800ms/x1 |
 
 Q13b rows 01/06/10:8 across screens; 03/04:8 on collectible frames; 05:8 on cat cards/seats; 08:8 on HUD/results (icons and count-up); 09:8 (shared badge selector unchanged); 11:8 (crew image bounds 35–36vh); 12:8 on loading/empty Bag. Remaining applicable rows are 7–8, with the lowest noted above. The rule difficulty and 100% forecast are explicitly Q13f work, not accepted by these visual scores.
