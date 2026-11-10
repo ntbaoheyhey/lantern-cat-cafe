@@ -2,7 +2,7 @@
 
 The Lantern now has a warm cafe with a large illustrated crew, collectible rarity frames, a ten-card recruit ceremony, a lantern-street campaign and fully automatic battles with portrait HP/rage cards and character cut-ins. Bonds, formation, Power upgrades, campaign stars, idle tips, thirty Tower floors, daily gifts and capped read-only Fuji Relics remain available. All 25 battle units use B’s illustrated puppets. The Journal now reads as a keepsake book, retaining every claim and daily cap.
 
-Open `docs/cardrpg-a6/index.html` directly; the ten-line [Vietnamese guide](../../docs/cardrpg-a6/CHAY-DEMO.md) gives a five-minute judging route. The **38,383,977-byte** artifact is below 40 MB. App opt-in: `?a6=1`. No deployment, PR merge or live contract change was made.
+Open `docs/cardrpg-a6/index.html` directly; the ten-line [Vietnamese guide](../../docs/cardrpg-a6/CHAY-DEMO.md) gives a five-minute judging route. The **38,386,037-byte** artifact is below 40 MB. App opt-in: `?a6=1`. No deployment, PR merge or live contract change was made.
 
 ## Before and after
 
@@ -13,7 +13,7 @@ Open `docs/cardrpg-a6/index.html` directly; the ten-line [Vietnamese guide](../.
 | Map | [Before / after](comparisons/map.webp) | Winding lantern street, landmarks and star chests |
 | Battle | [Before / after](comparisons/battle.webp) | Illustrated puppets, closer staging, HP/rage cards |
 
-These pair retained screenshots without altering their contents. Review galleries grant progression for coverage; earned progression is measured separately. [LOOK-SCORES](LOOK-SCORES.md) averages **8.00/10** across eighteen screens at both sizes (1440×900 and 1280×720), range **7.8–8.3**. All current applicable rows meet 7. Journal improved from 7.3/7.1 to **8.0/7.8**; P15 resolves the three-helper occlusion, bringing boss views to **8.2/8.1**. Field guide and Settings now score **8.0/7.8** and **7.9/7.8**, with current V5/rage/phase advice and verified x3/save transfer. Team and Prepare now score **8.1/7.9** and **8.0/7.9**. Bond Book’s visible album index and clear pair states score **8.1/7.9**. Scores are agent judgement, not player testing.
+These pair retained screenshots without altering their contents. Review galleries grant progression for coverage; earned progression is measured separately. [LOOK-SCORES](LOOK-SCORES.md) averages **8.00/10** across eighteen screens at both sizes (1440×900 and 1280×720), range **7.8–8.3**. All current applicable rows meet 7. Journal improved from 7.3/7.1 to **8.0/7.8**; P15 resolves the three-helper occlusion, bringing boss views to **8.2/8.1**. Field guide and Settings now score **8.0/7.8** and **7.9/7.8**, with current V5/rage/phase advice and verified x3/save transfer. Team and Prepare now score **8.1/7.9** and **8.0/7.9**. Bond Book’s visible album index and clear pair states score **8.1/7.9**. Cats now score **8.1/8.0**, with48effects selected atbothsizes (96checks) and locked/unlocked skill controls fitting the sheet. Scores are agent judgement, not player testing.
 
 ## Measurements and limits
 
@@ -30,7 +30,7 @@ Q13f used the prescribed three-attempt fallback. Enemy budgets stay fixed, so up
 
 ## Verification and self-review
 
-Final E2E was **420/421 initially**; a test-only readiness wait for idle accrual passed three focused repetitions. This is not a clean full-suite rerun. Current typecheck/lint, **3 Q20 UI tests, 24 current puppet tests, 12 Q19 UI tests, 13 Q18 web tests**, retained **19 earlier changed-area web tests** and **17 Journal rule tests** pass; earlier integration/phase/pacing checks are retained. The final gallery, actual-keyboard/reduced-motion checks and both-size offline checks report no browser errors, broken images, overflow or external requests.
+Final E2E was **420/421 initially**; a test-only readiness wait for idle accrual passed three focused repetitions. This is not a clean full-suite rerun. Current typecheck/lint, **2 Q21 UI tests, 3 Q20 UI tests, 26 current puppet tests, 12 Q19 UI tests, 13 Q18 web tests**, retained **19 earlier changed-area web tests** and **17 Journal rule tests** pass; earlier integration/phase/pacing checks are retained. The final gallery, actual-keyboard/reduced-motion checks and both-size offline checks report no browser errors, broken images, overflow or external requests.
 
 [First session, 85 s](clips/first-session.mp4) is earned UI play. [Boss, 62 s](clips/boss.mp4) is a continuous automatic review fixture, including its 44.59 s battle, setup and Victory screen. Both clips and the final cut-in frame are inspected. These are headless Chromium observations, not human enjoyment testing.
 
@@ -43,4 +43,4 @@ Final E2E was **420/421 initially**; a test-only readiness wait for idle accrual
 | Lane B art integration | 10% | 8.6 |
 | Stability | 5% | 9.0 |
 
-Weighted self-score: **7.64/10; target 8.5 not met**. The main limitations are early loss, unreliable advice recovery and long boss tails. Q14–Q20 source and offline delivery are complete through B P21. Sixteen album views and eight current offline album/Binding Thread views are inspected; previous Q19 tutorial and all twelve lazy-sheet checks are retained separately. Continue Cats’7.8 low and later B tips through the deadline. Receipts: [Q20](Q20.md), [Q19](Q19.md), [Q18](Q18.md), [Q14](Q14.md), [Q15](Q15.md), [Q17](Q17.md), [FIXLOG](FIXLOG.md).
+Weighted self-score: **7.64/10; target 8.5 not met**. The main limitations are early loss, unreliable advice recovery and long boss tails. Q14–Q21 source and offline delivery are complete through B P23. Thirty skill views and fourteen current offline skill/Mochi/Practice Cushion views are inspected; previous accepted galleries remain retained. Continue direct preview access and later B tips through the deadline. Receipts: [Q21](Q21.md), [Q20](Q20.md), [Q19](Q19.md), [Q18](Q18.md), [Q14](Q14.md), [Q15](Q15.md), [Q17](Q17.md), [FIXLOG](FIXLOG.md).

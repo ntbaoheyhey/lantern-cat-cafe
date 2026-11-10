@@ -136,3 +136,7 @@ Typecheck/lint và3test qua; đang tích hợp B P21 rồi cập nhật demo off
 
 2026-11-10T21:00:50Z: Q20 hoàn tất: album đã duyệt16ảnh, demo38,38MB tích hợp B P21 và8ảnh offline đạt, không lỗi/gọi mạng.
 27test/typecheck/lint qua; điểm album8,1/7,9. Tiếp tục Q21 làm kỹ năng mèo dễ đọc ở720p, giữ nguyên mọi luật và mô tả V5.
+
+2026-11-10T21:12:15Z: Q21 hoàn tất: kỹ năng của12mèo rõ hơn,96lượt chọn đạt; nút xem chiêu vừa khung720p.
+Đã duyệt14ảnh offline, demo38,39MB tích hợp Mochi/Practice Cushion mới; không lỗi hoặc gọi mạng.
+Tiếp tục Q22: mở chiêu ngay trong bàn tập riêng, giữ nguyên kỹ năng đã chọn và trả tiêu điểm bàn phím khi đóng.
