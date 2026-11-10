@@ -17,3 +17,5 @@ Sync mode begins after U9 publication. Remaining owner-U concern is cold packagi
 Latest sync R1: additionally merged M5 `440ec2890` (#425), merge `423585913`, tree-identical to prior U9. Source receipt `f13c622a16b441cc1a4912fa44dddcca364ca06b`; offline SHA/size unchanged. Required refresh gates and all37specs pass;421existingE2E/24axe/291assets exact. Natural fight13.758s; cold1,357.2–1,376.0 ms remainsPARTIAL. See [sync/r1](sync/r1/SUMMARY.md). ArtR1still excluded; no nextArefresh.
 
 Watcher repair after R1: accept milestone PASS declared in either art STATE or ART-REPORT, while explicit incomplete current status excludes stale PASS. Seven eligibility cases and G1 pass; [evidence](sync/watcher-repair/SUMMARY.md). Art R1 `8d12c87b2` is still PAUSED/PARTIAL. No runtime/demo changes; the existing integration checklist and SHA remain valid.
+
+Expected missing historical reports are now read quietly; real polling errors remain in `last-error.txt`. [Live poll, G1 and fresh-eyes verification](sync/watcher-quiet/SUMMARY.md) pass. This follow-up changes only watcher stdio handling and evidence.
