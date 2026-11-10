@@ -90,3 +90,6 @@ HEAD matches fetched origin fd11fd15f1fd42aba4b518f93935f94511a395bd. P25 publis
 
 ## Resume 2026-11-10T21:49:00.359577+00:00
 HEAD equals fetched origin e1baba87e0ee5b6a73a643e90ae8810eb2dbfaaf. P1–P26 complete; P27 source3 built, ownership-point test failed before capture. No native runner or B lease; servers50023/5920 and92836/5922 retained,141GiB free. Native dirty work and unreviewed GLBs preserved.
+
+## Resume 2026-11-10T22:05:47.947537+00:00
+HEAD matches fetched origin b9b9ec3be338f3a61a6e9bfff1e756ffe4aeba67. P1–P28 complete; Marigold source audit/plan retained. No native runner or B heavy job; servers50023/5920 and92836/5922 retained,140GiB free. Current inventory RESUME-DIRTY-P29.txt; native dirty work/GLBs preserved and excluded.

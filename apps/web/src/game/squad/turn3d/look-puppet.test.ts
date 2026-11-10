@@ -7,6 +7,7 @@ import cinnamonRig from '../../../../../../assets/cardrpg-look/v3-puppets/cinnam
 import threadRig from '../../../../../../assets/cardrpg-look/v3-puppets/binding-thread.rig.json';
 import cloverRig from '../../../../../../assets/cardrpg-look/v3-puppets/clover.rig.json';
 import cushionRig from '../../../../../../assets/cardrpg-look/v3-puppets/practice-cushion.rig.json';
+import marigoldRig from '../../../../../../assets/cardrpg-look/v3-puppets/marigold.rig.json';
 import briocheRig from '../../../../../../assets/cardrpg-look/v3-puppets/brioche.rig.json';
 import biscuitRig from '../../../../../../assets/cardrpg-look/v3-puppets/biscuit.rig.json';
 import sorrelRig from '../../../../../../assets/cardrpg-look/v3-puppets/sorrel.rig.json';
@@ -143,6 +144,30 @@ describe('illustrated puppet contract and event motions',()=>{
     expect(lifted.y).toBeGreaterThan(Number(y)+.04);
     expect(puppetPose('cast',3,.38,false,.4,'inkcap').tailBend).not.toBe(puppetPose('idle',3,0,false,.4,'inkcap').tailBend);
     expect(puppetPose('cast',3,.38,false,.4,'velvet').tailBend).toBe(0);
+  });
+
+  it('lifts Marigold real spout before pouring and keeps its free sleeve gesture bounded',()=>{
+    const spout=new Vector3(Number(marigoldRig.sockets.mainHand[1]),Number(marigoldRig.sockets.mainHand[2]),0);
+    const palm=new Vector3(Number(marigoldRig.sockets.offHand[1]),Number(marigoldRig.sockets.offHand[2]),0);
+    expect(marigoldRig.sockets.mainHand[0]).toBe('armR');expect(marigoldRig.sockets.offHand[0]).toBe('armL');
+    const held=puppetPose('cast',0,.28,false,0,'marigold');
+    const offered=palm.clone().applyMatrix4(new Matrix4().makeRotationZ(held.offhand)).sub(palm);
+    expect(offered.y).toBeGreaterThan(.012);expect(offered.x).toBeLessThan(-.015);
+    for(const motion of ['attack','cast','ultimate'] as const){
+      const windup=puppetPose(motion,0,.28,false,0,'marigold'),release=puppetPose(motion,0,.52,false,0,'marigold');
+      const start=spout.clone().applyMatrix4(new Matrix4().makeRotationZ(windup.prop));
+      const end=spout.clone().applyMatrix4(new Matrix4().makeRotationZ(release.prop));
+      expect(start.y-spout.y).toBeGreaterThan(.045);
+      expect(end.y-start.y).toBeLessThan(-.1);expect(end.x-start.x).toBeGreaterThan(.025);
+      for(let i=0;i<=60;i++){
+        const p=puppetPose(motion,3,i/60,false,.4,'marigold'),quiet=puppetPose(motion,3,i/60,true,.4,'marigold');
+        expect(Math.abs(p.prop)).toBeLessThan(.121);expect(Math.abs(p.offhand)).toBeLessThan(.081);
+        expect([quiet.prop,quiet.offhand,quiet.head,quiet.tail,quiet.tailBend,quiet.lean]).toEqual([0,0,0,0,0,0]);
+      }
+      const rest=puppetPose(motion,3,1,false,.4,'marigold'),idle=puppetPose('idle',3,0,false,.4,'marigold');
+      expect(rest.prop).toBeCloseTo(0,12);expect(rest.offhand).toBeCloseTo(0,12);
+      expect(rest.tail).toBeCloseTo(idle.tail,12);expect(rest.tailBend).toBeCloseTo(idle.tailBend,12);
+    }
   });
 
   it('swings Brioche basket without dragging it down and lifts the real free palm',()=>{

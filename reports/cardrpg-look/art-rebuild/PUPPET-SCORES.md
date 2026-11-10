@@ -15,7 +15,7 @@ Evidence uses A6 shell in a disposable merged preview; primary branch contains n
 | Velvet | 8.6 | 7.5 | 7.9 | 7.9 | p4/batch2-final/velvet-comparison.webp and velvet-motion.webp; ribbon/staff/cape remain clean |
 | Biscuit | 8.6 | 7.7 | 7.8 | 7.8 | p27/evidence/biscuit-spatula-flourish.webp; whole shield brace and short spatula windup/upward sweep; coherent rim/chin/shoulders, restrained rigid props |
 | Brioche | 8.6 | 7.7 | 7.8 | 7.8 | p28/evidence/brioche-basket-offering.webp; whole basket pendulum and open-palm lift, scarf/tail ownership restored; basket partly obscured by Mochi, rigid handle |
-| Marigold | 8.6 | 7.5 | 7.8 | 7.8 | p4/batch2-final/marigold-comparison.webp and marigold-motion.webp; petal collar and teapot remain readable |
+| Marigold | 8.6 | 7.7 | 7.8 | 7.8 | p29/evidence/marigold-pot-pour.webp; tall pot lift/held pour, actual spout socket, coherent cheek/collar/skirt; restrained free-paw fallback retains small sleeve fringe |
 | Sorrel | 8.6 | 7.7 | 7.7 | 7.7 | p19/evidence/sorrel-follow-through.webp; staff planted at its painted tip, open palm and delayed tail; restrained shoulder amplitude |
 | Inkcap | 8.6 | 7.7 | 7.8 | 7.8 | p16/evidence/inkcap-follow-through.webp; raised lantern/open offhand and subtle per-actor tail bend; tail remains partly obscured in this formation |
 | Button Guard | 8.6 | 7.5 | 7.8 | 7.8 | p5/batch1-final/button-guard-comparison.webp and button-guard-motion.webp; button shield/needle silhouette intact |

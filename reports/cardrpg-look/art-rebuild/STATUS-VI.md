@@ -141,3 +141,6 @@ Biscuit đã duyệt: khiên bánh quy đỡ về trước, xẻng gỗ lấy đ
 
 Brioche đã duyệt: giỏ đung đưa rồi trở lại, bàn tay trống đưa lên; khăn đầu/đuôi và váy trong quai giỏ thuộc đúng lớp.
 33test web và6test cắt lớp,16ảnh/12lượt chiêu/type/lint/parity đạt; bản chung38520550byte. Chuyển động7,5→7,7, tổng giữ7,8; tiếp tục Marigold.
+
+Marigold đã duyệt: nâng bình vàng rồi nghiêng vòi ở nhịp ra chiêu; má, cổ áo cánh hoa, đuôi và váy liền mạch ở x1.
+34 test web và7 test cắt lớp,16ảnh/12lượt chiêu/type/lint/parity đạt; bản chung 38,595,682byte. Giữ động tác tay trống nhỏ vì còn viền tay áo255pixel nguồn; chuyển động7,5→7,7, tổng7,8. Tiếp tục Button Guard.
