@@ -420,3 +420,6 @@ Use case: stylized-concept. Asset type: original game VFX component atlas for a 
 
 ## 2026-11-10 illustrated puppet derivatives — P1
 User retired native roster generation. Existing original Mochi concept and its recorded generation prompt are reused without any new model call. `tools/cardrpg-look/art-rebuild/puppet/build.py` applies authored semantic masks/pivots, OpenCV Telea fill only under foreground parts, and Pillow WebP93 atlas packing. Delivery `assets/cardrpg-look/v3-puppets/mochi.webp` (1024px,223130B) + mochi.rig.json; hidden parts/receipt outside git at ~/art/look-v3/puppets/mochi. Original pixels and all native-era sources remain preserved. Actual runtime review: reports/cardrpg-look/art-rebuild/p1; pipeline acceptance only, P2 motion/roster scoring remains pending.
+
+## 2026-11-10 illustrated puppet derivatives — P2
+Soot and Yarn Giant reuse the original concept PNGs and their recorded prompts. No new image or model generation. Authored cuts/pivots, Telea hidden fill and WebP packing use puppet/build.py; source/config/tool receipts in ~/art/look-v3/puppets. Delivered atlases and rigs are assets/cardrpg-look/v3-puppets/{soot,yarn-giant}.*. Actual A6-shell battle and eight-pose evidence in reports/cardrpg-look/art-rebuild/p2.

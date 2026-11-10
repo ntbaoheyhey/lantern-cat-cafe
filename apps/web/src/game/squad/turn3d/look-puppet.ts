@@ -66,11 +66,13 @@ export function installPuppetMaterial(material:T.MeshStandardMaterial){
         vec3 lidEmission=vec3(0.);float lidClosure=0.;
         for(int eye=0;eye<2;eye++){
           vec4 e=puppetEyes[eye];vec2 p=(sourceXY-e.xy)/e.zw;
-          float lid=(1.-smoothstep(.80,1.,length(p)))*smoothstep(puppetEyeOpen-.10,puppetEyeOpen+.03,abs(p.y));
-          vec2 furXY=vec2(sourceXY.x,e.y-e.w*1.25);
+          float lid=(1.-smoothstep(1.0,1.18,length(p)))*smoothstep(puppetEyeOpen*1.6-.16,puppetEyeOpen*1.6-.04,abs(p.y));
+          vec2 furXY=vec2(sourceXY.x,e.y-e.w*1.85);
           vec2 furLocal=(furXY-puppetRect.xy)/puppetRect.zw;
           vec2 furUV=vec2(puppetAtlas.x+furLocal.x*puppetAtlas.z,1.-puppetAtlas.y-furLocal.y*puppetAtlas.w);
           vec3 fur=texture2D(map,furUV).rgb;
+          float crease=(1.-smoothstep(.025,.07,abs(p.y-.12-.20*p.x*p.x)))*(1.-smoothstep(.7,.95,abs(p.x)))*(1.-smoothstep(.10,.4,puppetEyeOpen));
+          fur=mix(fur,fur*.22,crease);
           diffuseColor.rgb=mix(diffuseColor.rgb,fur*diffuse,lid);lidEmission+=fur*lid;lidClosure+=lid;
         }
       `).replace('#include <emissivemap_fragment>',`
@@ -83,7 +85,7 @@ export function installPuppetMaterial(material:T.MeshStandardMaterial){
       #include <opaque_fragment>
     `);
   };
-  material.customProgramCacheKey=()=>`puppet-v1-${eyes.length===2?'eyes':'plain'}`;
+  material.customProgramCacheKey=()=>`puppet-v2-${eyes.length===2?'eyes':'plain'}`;
 }
 const relative=new T.Quaternion();
 export function animateIllustrated(model:T.Object3D,camera:T.Camera,time:number,clip:string,progress:number|undefined,reduced:boolean,acting=false,ultimate=false,phaseFlash=0){

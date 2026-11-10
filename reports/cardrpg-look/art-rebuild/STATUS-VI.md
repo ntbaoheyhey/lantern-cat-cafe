@@ -9,3 +9,7 @@ Typecheck, lint và 7 test liên quan đều đạt; chuyển toàn bộ roster 
 
 P1 hoàn tất: Mochi chạy bằng puppet atlas 223 KB, 6 lớp có pivot và vùng bù kín; 8 trạng thái chuyển động.
 Ảnh battle và contact sheet đã xem; không lỗi trang/đè UI. Typecheck, lint, 20 test đạt; tiếp tục P2 Mochi/Soot/Yarn trong shell A6.
+
+P2 hoàn tất: Mochi/Soot/Yarn giữ đúng concept trong shell A6; 8 tư thế mỗi unit, không lỗi trang/đè mặt hoặc HP.
+Replay x1 75 giây đạt median 16,7 ms, p95 16,8 ms; 20 test và parity 5 seed đều đạt. Điểm 7,8/7,6/8,0 là tự đánh giá, chuyển động còn nhẹ.
+Tiếp tục P3: cân lại tỉ lệ boss/cat và bố cục; không thay DOM HUD của A6.

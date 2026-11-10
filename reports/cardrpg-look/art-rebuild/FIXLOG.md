@@ -162,3 +162,6 @@ B-LOCAL-014 continuation: Panko exported466.642s; safe successor changed shell o
 
 ## B-PUPPET-001 — hidden overlap visible over original pixels
 2026-11-10 P1 first reconstruction showed smeared seams: every part extended over both foreground and background neighbors. Restrict filled extension to pixels owned by foreground parts only. Rebuilt Mochi and visually verified exact clean rest reconstruction plus real8poses; one repair, resolved. P2 eyelid-expression issue remains open.
+
+## B-PUPPET-002 — P2 pilot review
+Lid coverage previously crossed open eyes and sampled the dark lash. Increased open-eye threshold, moved fur sample upward and added closed-eye crease; reviewed three motion sheets. Closed-eye texture remains approximate (PUPPET-SCORES), accepted as the simple x1 version. A6 boss replay correctly includes Binding Thread adds: harness now requires the three pilot identities without imposing an actor-count limit. Replay75s/0errors/0labeloverlaps; no rule change.

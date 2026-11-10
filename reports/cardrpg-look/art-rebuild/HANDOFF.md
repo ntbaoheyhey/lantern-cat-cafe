@@ -1,16 +1,16 @@
 # Lane B puppet handoff
 
-ACTIVE 2026-11-10T16:26:41.319246+00:00; P1 finished, P2 next. User PROMPT.txt supersedes native-era instructions.
-Branch codex/cardrpg-art-r1-2026-11-09; draft427; onboarding9feba11f4.
-Native runner already exited; no leases/process killed. Pre-existing dirty native work remains inventoried STATE.md.
-P1: tools/cardrpg-look/art-rebuild/puppet/build.py <id>; configs/; output assets/cardrpg-look/v3-puppets/*.webp + *.rig.json.
-Masters/parts/receipts ~/art/look-v3/puppets. Mochi223130B,1024atlas,6parts. Never regenerate original concepts.
-Runtime look-puppet.ts + look-puppet-rig.ts; integrated via existing look-painted/scene hooks and assets routing.
-Default classic OFF; lookV2+lookArt=v3 now defaults puppet; old generated/painted/sculpt opt-in retained for history.
-P1 captures reports/cardrpg-look/art-rebuild/p1; viewed actual battle and8poses,0errors/0UIoverlaps.
-Typecheck/lint20focusedtestsPASS; packing resume verified. P1 acceptance is pipeline only, not P2 >=7.5 score.
-Known P2 fix: sampled-fur eyelid shader makes defeat eyes striped; motion needs continuous x1 review.
-Next build Soot/Yarn; create disposable A6 preview after committing P1, merge B there only; never touch A6 worktree.
-A6 outbox fetched/read; latest framecost116.7ms observation retained, crop request already source-delivered.
-Heavy jobs under tools/cardrpg-look/skills-v5/full/run-lock.mjs,19min cap/nice10,6.5s fairness gap. Ports5920–5923.
-Read STOP-B/INBOX each item; evidence99MiB/120MBcap. No active stop.
+ACTIVE 2026-11-10T16:37:30.317365+00:00; P1/P2 complete, P3 camera/composition next. PROMPT.txt controls.
+Branch codex/cardrpg-art-r1-2026-11-09, draft #427; no native roster runner.
+P2 pilots Mochi/Soot/Yarn are illustrated WebP atlases + JSON rigs in assets/cardrpg-look/v3-puppets.
+P2 evidence p2/round1 (3 comparisons/8poses), p2/live2 (75s real x1 A6 replay), p2/parity.
+Visual scores 7.8/7.6/8.0 in PUPPET-SCORES.md; restrained motion and sampled closed eyelids noted.
+Web typecheck/lint and 20 focused tests PASS; five parity seeds exact, 102 plans immutable.
+Live median/p95 16.7/16.8ms; maximum216.6ms; no errors/faceHPoverlap. Not cast-only performance acceptance.
+Preview /Users/bao/.codex/worktrees/cardrpg-b-puppet-preview/taskbar-hero-cardrpg-b2 is a disposable merged A6 preview, with unstaged P2 asset/runtime copies; never push it.
+Preview artifact docs/cardrpg-look/v5-art-vfx-preview.html; build via LOOK_ART=v3 LOOK_LEAN=1 LOOK_OUTPUT and LOOK_RECEIPT.
+P3 should improve boss/cat height ratio and floor use; existing scene.ts/card-staging.ts own canvas placement/camera.
+Default classic stays OFF, lookV2+lookArt=v3 defaults puppet. Preserve all earlier diagnostics.
+Pre-existing native work inventoried STATE.md remains excluded from commits, including Clover/Yarn GLBs.
+One agent. A6 worktree read-only. Heavy jobs nice10 under run-lock.mjs; lease19min +6.5s fairness gap. Ports5920–5923.
+Check STOP-B/INBOX and fetch/show A6-OUTBOX between items. Evidence102MiB/120MBcap.
