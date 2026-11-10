@@ -1,8 +1,8 @@
-# R-9 prompt receipt — 2026-11-10T16:54:10Z
+# R-9 prompt receipt — 2026-11-10T17:08:49Z
 - Original attachment `wc -c`: 15237; `shasum -a 256`: 983341e0d8c47a62a6a267d553c78372251cfbab5170aee48451e3058b885629.
-- TASK.md (original + verbatim R-9) `wc -c`: 17582; `shasum -a 256`: 3206ffb2190fd95ee1948918f9bfe7cac923892cc16a6a12dfa2e3e8e4ceed8c.
-- Existing TASK already matched the original exactly; TASK still starts with those bytes; TASK.md is the only saved A6 prompt copy. Source attachment is unchanged.
-- Active: Q13c final browser verification. Q0–Q12/Q13a/Q13b complete. HANDOFF/RULES/QUEUE override historical state notes below.
+- TASK.md (original + verbatim R-9 + NON-STOP) `wc -c`: 19624; `shasum -a 256`: e21e358e8826ebef1d0e6d8d995438253e55589847183895b0920bf990b46de9.
+- Original prefix verified byte for byte. TASK.md is the only saved lane prompt copy; source unchanged.
+- Active Q13e; Q0–Q12/Q13a–d completed; current HANDOFF/QUEUE override historical notes below.
 
 # Lane A6 state
 

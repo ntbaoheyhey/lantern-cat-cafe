@@ -1,9 +1,9 @@
-# Lane A6 handoff — 2026-11-10T17:04:29Z
-NOW: Q13d complete; commit/push final map and start Q13e DOM battle HUD.
-Branch: codex/cardrpg-a6-q0-2026-11-10; last pushed SHA: 7971938db34bb9288d648f27d8b7aaefc3410970; draft PR #438.
-NEXT: 1. Push Q13d and update draft #438 description.
-NEXT: 2. Read RULES/QUEUE/HANDOFF, TASK0+4, INBOX and published B reports before Q13e.
-NEXT: 3. Add illustrated HUD cards, delayed HP trail, rage readiness, brief art cut-in and boss pips; keep combat automatic and canvas B-owned.
+# Lane A6 handoff — 2026-11-10T17:05:46Z
+NOW: Q13e DOM battle HUD, implementing portraits/HP trails/rage/cut-in/boss pips; Q13d pushed and draft PR updated.
+Branch: codex/cardrpg-a6-q0-2026-11-10; last pushed SHA: fab2f7ea64429d8e0fa44ef181b6a02c051161fe; draft PR #438.
+NEXT: 1. Implement HUD presentation and meaningful trail/timing/control tests; keep battle automatic.
+NEXT: 2. Merge published B puppets/framing as the battle visual dependency (allowed merge commit, B canvas takes B) before judging full battle.
+NEXT: 3. Inspect normal/boss/ultimate/results at both sizes; update Q13e evidence/scores and continue Q13f.
 RUNNING: Vite PID84939 port5960 /tmp/cardrpg-a6-vite.log; final screenshot PID99940 and controls PID99802 finished and released locks.
 RUNNING: No A6 timing lock held. Re-read live state before heavy job; lease<=20min via tools/cardrpg-big/with-timing-lock.mjs.
 DONE this session: onboarding, 1f3d82ed3.
@@ -11,8 +11,8 @@ DONE this session: Q13a original illustrated art, cfdbf79e1.
 DONE this session: Q13b warm screens, 918102837.
 DONE this session: R-9 verbatim prompt/rules checkpoint, 1b140a667.
 DONE this session: Q13c recruit ceremony, 7971938db.
-DONE this session: Q13d scenic map verified; commit pending (base 7971938db34bb9288d648f27d8b7aaefc3410970).
-KNOWN ISSUES: B P3 framing and P4 batch1 published; merge at Q14. No A6 integration yet.
+DONE this session: Q13d scenic map and draft PR description pushed, fab2f7ea64429d8e0fa44ef181b6a02c051161fe.
+KNOWN ISSUES: B P4 all12cats published, P5 enemies active; Q13e needs latest B framing for full-screen score.
 KNOWN ISSUES: first-session.mjs and with-timing-lock.mjs prior edits preserved for Q13f/Q15; never restore resume-drafts.tar.gz.
 KNOWN ISSUES: Q12 browser normal pacing and zero-loss curve still miss targets; Q13f/g queued.
 DECISIONS: No new systems; original SVG scenery and unified B art. RunMap scenic prop changes presentation only.

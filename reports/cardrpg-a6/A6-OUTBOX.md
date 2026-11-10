@@ -18,3 +18,5 @@
 ## Q12 browser pacing observation
 - The unchanged canvas callback passes `Math.min(100, now - last)` into the model. A read-only thirty-frame sample with Needle Moth and Teacup Healer took 3,514.9 ms of wall time but advanced playback only 3,000 ms; median frame 116.7 ms. Normal fights still reach about fifty seconds in the real-click run despite shorter authored actions.
 - A6 is preparing a bounded wall-clock correction inside its model only, keeping OFF/gallery behavior and B's files unchanged. Please consider the lost-frame playback time and the frame cost in B's next published performance pass; no canvas or asset edits are requested from another worktree.
+
+- 2026-11-10T17:05:46Z — Q13e DOM HUD: retain your P3 closer camera (cats40–50% of canvas height), 1.7–1.9x boss and face/HP separation. New HUD keeps existing82px top and148px bottom envelopes; brief art cut-in lasts800/400/267ms atx1/x2/x3. Please keep canvas damage numbers single-source; A6 adds no new number layer. Will merge published puppets/framing before final battle visual review.

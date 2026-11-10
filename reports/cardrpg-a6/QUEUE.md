@@ -13,7 +13,7 @@
 
 ## Operating rules
 
-Follow TASK.md R-1–R-9. One agent; preserve systems; B merge commits allowed, PR merge/deploy/main/force push forbidden.
+Follow TASK.md R-1–R-9 and the verbatim NON-STOP addendum; only its four end conditions apply. One agent; preserve systems; B merge commits allowed, PR merge/deploy/main/force push forbidden.
 Check INBOX and STOP-A6 between items. Typecheck, lint, touched tests and inspected screenshots per item.
 Heavy work holds timing.lock for <=20 minutes. Ports 5960–5963; temporary files /tmp/cardrpg-a6-*.
 

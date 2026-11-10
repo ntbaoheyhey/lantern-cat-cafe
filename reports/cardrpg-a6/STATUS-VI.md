@@ -25,3 +25,6 @@
 - 2026-11-10T16:57:02Z: Q13c xong: mở 10 thẻ, màu độ hiếm, tranh Epic/Legendary toàn màn hình, mảnh trùng tăng số. Bỏ qua bằng chuột/Escape giữ nguyên 10 phần thưởng; 720p vẫn thấy nút chính. Bắt đầu Q13d bản đồ phố đêm.
 
 - 2026-11-10T17:04:29Z: Q13d xong: phố đêm SVG gốc, đường uốn theo nhánh thật, sao đã đạt, rương mốc và boss lớn. Type/lint + 4 test đạt; bàn phím mở đúng Prepare, rương chỉ nhận một lần. Tiếp tục Q13e HUD battle.
+
+2026-11-10T17:08:49Z: Đã nhận quy tắc KHÔNG DỪNG và lưu nguyên văn vào TASK/RULES.
+Tiếp tục Q13e trong cùng lượt; chỉ dừng theo bốn điều kiện mới, không làm lại Q13d.
