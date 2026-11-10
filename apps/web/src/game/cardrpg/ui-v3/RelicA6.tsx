@@ -59,7 +59,7 @@ export function RelicA6({ m }: { m: DepthModel }) {
       <a href={`https://testnet.snowtrace.io/address/${R.FUJI_RELIC_ADDRESS}`} target="_blank" rel="noreferrer">Relic Fuji ↗</a>
     </div>
     <p className="a6-relic-status" role="status">{active ? 'Finish your route to change the keepsake.' : message || (m.offline ? 'A sample wallet is available for this demo.' : 'Read a wallet already connected to Avalanche Fuji.')}</p>
-    <div className="a6-relic-collection">{R.RELIC_EFFECTS.map(relic => <article key={relic.id} data-owned={m.state.relics.includes(relic.id)} data-selected={m.state.selectedRelic === relic.id}>
+    <div className="a6-relic-collection">{R.RELIC_EFFECTS.map(relic => <article key={relic.id} data-rarity={["common","rare","epic","legendary"][relic.rarity]} data-owned={m.state.relics.includes(relic.id)} data-selected={m.state.selectedRelic === relic.id}>
       <Icon name="relic"/><small>{['Common', 'Rare', 'Epic', 'Legendary'][relic.rarity]}</small><h3>{relic.name}</h3><strong>Team +{(relic.rarity + 1) * 2}%</strong>
       <button disabled={active || reading || !m.state.relics.includes(relic.id) || m.state.selectedRelic === relic.id} onClick={() => m.apply(R.selectRelic(m.state, relic.id), `${relic.name} now supports the whole team.`)}>{m.state.selectedRelic === relic.id ? 'Equipped' : m.state.relics.includes(relic.id) ? `Equip ${relic.name}` : 'Not in your wallet'}</button>
     </article>)}</div>

@@ -1,13 +1,11 @@
-# Lane A6 — 2026-11-10 16:28 UTC
-- New account onboarding pushed as 1f3d82ed3. Q0–Q12 and Q13a complete; Q13b look system is next.
-- Branch codex/cardrpg-a6-q0-2026-11-10; draft #438; worktree /Users/bao/taskbar-hero-cardrpg-a6.
-- TASK.md is the new quality prompt. B branch merge commits into A6 required at Q14; no PR merge/deploy/main/force push.
-- Art: 25 original concept illustrations + Q8 face crops, 3.86 MB; one assets/cardrpg-a6/illustrations/manifest.json and ui-v3/art-a6.ts.
-- Q13a web typecheck/lint and 33 touched tests pass; 12 browser captures at both sizes inspected; no browser errors/broken images/overflow.
-- Packaging dependency race and Vite cache restart resolved; see Q13a.md. UI is still visually unfinished and 720p needs layout work.
-- Preserved old CatDetails/loss work in Q13a; first-session.mjs and timing-lock wrapper edits remain uncommitted for later checkpoints.
-- A6 Vite runs on 5960 via exec session 41981; log /tmp/cardrpg-a6-vite.log. No review browser remains.
-- Heavy jobs: existing timing.lock wrapper, lease <=20 minutes, ports5960–5963 and /tmp/cardrpg-a6-* only; free disk188GiB.
-- B published onboarding now acknowledges illustrated 2.5D puppets; recheck published HANDOFF/STATUS/OUTBOX every item.
-- One agent. INBOX empty, no STOP-A6. Fresh final seeds60001–60500 unused.
-- Q13b targets: warm differentiated screens, large crew, ornate rarity cards, short headers, reachable 720p actions and non-obstructing celebrations.
+# Lane A6 — 2026-11-10 16:45 UTC
+- Q0–Q12 and Q13a/b complete. Q13c Recruit reveal is next; follow TASK.md/QUEUE.md continuously.
+- Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/cardrpg-a6-q0-2026-11-10; draft #438.
+- Q13b warm scoped tokens, original art, rarity frames, large crew, readable 720p actions, results/count-ups. LOOK-SCORES records self-review 7.3–8.0.
+- Web types/lint and 37 touched tests pass; earlier broad 1,905 tests pass. Browser receipts no errors/broken images/horizontal overflow.
+- Final evidence: shots/q13b, q13b-details, q13b-empty, q13b-rarity. Reviewer fixtures only.
+- Preserved uncommitted first-session.mjs and with-timing-lock.mjs edits for Q13f/Q15; no restore/archive.
+- Vite PID84939 port5960 active, log /tmp/cardrpg-a6-vite.log. No active review browser.
+- Heavy jobs use node tools/cardrpg-big/with-timing-lock.mjs TASK nice -n 10 node SCRIPT, <=20min; screenshot tool has19min cap. Free disk161GiB.
+- B published P2 pilots Mochi/Soot/Yarn; camera P3 next. Recheck published HANDOFF/STATUS/B-OUTBOX per item. Merge commits required at Q14; no PR merge/deploy/main/force push.
+- One agent. INBOX empty/no STOP-A6. Fresh Q15 seeds60001–60500 unused.

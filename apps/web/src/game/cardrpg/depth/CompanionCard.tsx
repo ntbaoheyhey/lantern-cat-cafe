@@ -18,10 +18,11 @@ export function CompanionCard({ id, m, onSelect, selected = false }: {
   const owned = m.state.account.cards.find(candidate => candidate.cardId === id);
   const power = owned ? (R.gameplayA6(m.state)?R.powerV4(m.state,id).total:powerScore(R.depthStats(m.state, id))) : null;
   return <button className={`cr-cat-card dp-cat dp-card-${card.rarity} ${owned ? '' : 'locked'}`}
-    style={rarityStyle(card.rarity)} aria-pressed={selected}
+    data-rarity={card.rarity} style={rarityStyle(card.rarity)} aria-pressed={selected}
     aria-label={`${cat.name}, ${card.rarity}, ${owned ? `level ${owned.level}, power ${power}` : 'not collected'}`}
     onClick={onSelect ?? (() => { m.cardId = id; m.go('collection'); })}>
     <div className="cr-portrait"><img {...(R.gameplayA6(m.state) ? artPropsA6(id) : portraitProps(id))} alt="" />
+      {R.gameplayA6(m.state)&&owned&&<span className="a6-level-badge">Lv. {owned.level}</span>}
       {!owned && <strong className="dp-question">?</strong>}
       <span className="dp-role" title={cat.role}>{ROLE_ICONS[cat.role]}</span>
       {R.gameplayA6(m.state)&&<span className="a6-bond-icon" title={R.PAIR_COMBOS_A6.filter(p=>p.cats.includes(id)).map(p=>p.name).join(' · ')}>∞ {R.activePairCombosA6(m.state.team).filter(p=>p.cats.includes(id)).length ? 'Combo ready' : 'Bonds'}</span>}

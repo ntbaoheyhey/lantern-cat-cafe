@@ -65,3 +65,6 @@ M apps/web/src/game/cardrpg/ui-v3/EncounterV3.tsx
 ## Q13a — 2026-11-10 16:28 UTC
 - 25 units adopted, 3.86 MB. Types/lint and 33 touched tests pass; 12 screenshots inspected, no browser errors.
 - Q13b next. Old code preserved; first-session/timing-lock edits remain. Vite5960 active. New prompt authorizes B merge commits.
+
+## Q13b — 2026-11-10 16:45 UTC
+- Look system complete; Q13c active. See Q13b.md and HANDOFF.md. Tests37/types/lint pass; visual scores7.3–8.0.

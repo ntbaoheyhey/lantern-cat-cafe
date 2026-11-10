@@ -16,7 +16,7 @@ export function BondBookA6({ m }: { m: DepthModel }) {
   const bonds = R.collectionBondsA6(m.state), owned = new Set(m.state.account.cards.map(card => card.cardId));
   const portraits = (cats: readonly string[]) => <div className="a6-bond-portraits">{cats.map(id => <button key={id} data-owned={owned.has(id)} onClick={() => { m.cardId = id; m.go('collection'); }} aria-label={`${R.CAT_BY_ID[id]!.name}: ${owned.has(id) ? 'owned' : 'missing'}`}><img {...portraitProps(id)} alt=""/><span>{R.CAT_BY_ID[id]!.name}</span><small>{owned.has(id) ? 'Owned' : 'Missing'}</small></button>)}</div>;
   return <>
-    <header className="a6-bond-intro"><span aria-hidden="true">∞</span><div><small>Every friendship matters</small><h2>Stronger, even from the bench</h2><p>{bonds.filter(bond => bond.active).length} / {bonds.length} collections complete · <b>All cats +{R.collectionBonusA6(m.state) / 100}% HP & attack</b></p></div></header>
+    <header className="a6-bond-intro"><img {...portraitProps('clover')} alt=""/><div><small>Every friendship matters</small><h2>Stronger, even from the bench</h2><p>{bonds.filter(bond => bond.active).length} / {bonds.length} collections complete · <b>All cats +{R.collectionBonusA6(m.state) / 100}% HP & attack</b></p></div><button className="cr-primary" onClick={() => m.go('team')}>Build a bonded team</button></header>
     <h2>Collection bonds</h2><p>Own every cat in a set: all owned cats gain +0.5% HP and attack. They can stay on the bench.</p>
     <div className="a6-bond-grid">{bonds.map(bond => <article key={bond.id} className="a6-bond-card" data-active={bond.active}>
       <header><h3>{bond.name}</h3><span>{bond.active ? '✓ Active' : `${bond.owned.length} / ${bond.cats.length}`}</span></header>{portraits(bond.cats)}
@@ -26,6 +26,5 @@ export function BondBookA6({ m }: { m: DepthModel }) {
     <div className="a6-bond-grid">{R.PAIR_COMBOS_A6.map(pair => <article key={pair.id} className="a6-bond-card" data-active={pair.cats.every(id => m.state.team.includes(id))}>
       <header><h3>{pair.name}</h3><span>{pair.cats.every(id => m.state.team.includes(id)) ? 'Ready' : 'Pair up'}</span></header>{portraits(pair.cats)}<p>{pair.description}</p>
     </article>)}</div>
-    <button className="cr-primary" onClick={() => m.go('team')}>Build a bonded team</button>
   </>;
 }

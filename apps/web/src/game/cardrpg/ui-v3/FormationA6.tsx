@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState, useSyncExternalStore, type RefObj
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import type { DepthModel } from '../depth/model';
 import {artPropsA6 as portraitProps} from './art-a6';
+import {CARD_BY_ID} from '@taskbar-hero/game-rules/cardrpg';
 import { ForecastV4 } from '../depth/ForecastV4';
 import { PowerA6, QuickUpgradeA6 } from './PowerA6';
 import { MODE_TEAMS_A6, suggestedTeamsA6 } from './formation-a6';
@@ -53,8 +54,8 @@ export function FormationA6({m,preparing=false}:{m:DepthModel;preparing?:boolean
       <small>Suggested {index+1}</small><b>{suggestion.name}</b><span>{suggestion.team.map(id=>R.CAT_BY_ID[id]!.name).join(' · ')}</span><PowerA6 value={suggestion.power}/><span>{suggestion.why}</span></button>)}</div></details>
     <div className="a6-formation-stage" ref={root}><BondLinesA6 host={root} ids={ids} rows={rows}/>{(['front','rear'] as const).map(row=><section className="a6-formation-row" key={row} aria-label={`${row==='front'?'Front':'Back'} row`}>
       <header><div><b>{row==='front'?'Front · protect':'Back · support'}</b><small>{row==='front'?'Takes ordinary hits':'Cover while the front holds'}</small></div><button disabled={locked||rows[selected]===row||(row==='rear'&&!ids.some(id=>id!==selected&&rows[id]==='front'))} onClick={()=>update(ids,{...rows,[selected]:row})} aria-label={`Place ${R.CAT_BY_ID[selected]!.name} ${row}`}>Place here</button></header>
-      <div className="a6-row-cats">{ids.filter(id=>rows[id]===row).map(id=><button key={id} data-seat={id} className="a6-formation-cat" disabled={locked} aria-pressed={selected===id} aria-label={`Select ${R.CAT_BY_ID[id]!.name} for placement`} onClick={()=>setPicked(id)}>
-        <img {...portraitProps(id)} alt=""/><div><b>{R.CAT_BY_ID[id]!.name}</b><PowerA6 value={battle?R.powerScoreA6(battle.initial.cats.find(c=>c.id===id)!.stats):R.powerV4(state,id).total}/><small>{R.CAT_BY_ID[id]!.role}</small></div></button>)}{!ids.some(id=>rows[id]===row)&&<p className="a6-empty-row">Choose a cat, then place it here.</p>}</div>
+      <div className="a6-row-cats">{ids.filter(id=>rows[id]===row).map(id=><button key={id} data-seat={id} className="a6-formation-cat" data-rarity={CARD_BY_ID[id]!.rarity} disabled={locked} aria-pressed={selected===id} aria-label={`Select ${R.CAT_BY_ID[id]!.name} for placement`} onClick={()=>setPicked(id)}>
+        <span className="a6-seat-level">Lv. {state.account.cards.find(c=>c.cardId===id)?.level??1}</span><span className="a6-seat-stars" aria-label={`${state.account.cards.find(c=>c.cardId===id)?.stars??1} stars`}>{"★".repeat(state.account.cards.find(c=>c.cardId===id)?.stars??1)}</span><img {...portraitProps(id)} alt=""/><div><b>{R.CAT_BY_ID[id]!.name}</b><PowerA6 value={battle?R.powerScoreA6(battle.initial.cats.find(c=>c.id===id)!.stats):R.powerV4(state,id).total}/><small>{R.CAT_BY_ID[id]!.role}</small></div></button>)}{!ids.some(id=>rows[id]===row)&&<p className="a6-empty-row">Choose a cat, then place it here.</p>}</div>
     </section>)}</div>
     <p className="a6-placement-hint" aria-live="polite">{R.CAT_BY_ID[selected]!.name} selected · click a row to place.{rosterLocked?' Crew locked; rows and plans stay available.':''}</p>
     {R.activePairCombosA6(ids).length>0&&<div className="a6-ready-pairs">{R.activePairCombosA6(ids).map(pair=><span key={pair.id}>∞ {pair.name} <small>{pair.cats.map(id=>R.CAT_BY_ID[id]!.name).join(' + ')}</small></span>)}</div>}

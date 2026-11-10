@@ -1,6 +1,7 @@
+import {CountUpA6,currencyIconA6} from './CountUpA6';
 import {useEffect,useRef,useState,type CSSProperties} from 'react';
 /** Currency deltas come from committed model state; this component never awards anything. */
-export function RewardFly({values}:{values:Record<string,number>}){
+export function RewardFly({values,reducedMotion=false}:{values:Record<string,number>;reducedMotion?:boolean}){
  const previous=useRef({...values}),origin=useRef({x:0,y:0});
  const [flecks,setFlecks]=useState<{id:string;amount:number;x:number;y:number;dx:number;dy:number}[]>([]);
  const key=JSON.stringify(values);
@@ -13,5 +14,5 @@ export function RewardFly({values}:{values:Record<string,number>}){
  // A primitive signature catches mutations on the existing state object as well as replacements.
  // eslint-disable-next-line react-hooks/exhaustive-deps
  },[key]);
- return <div className="uv-reward-fly" aria-hidden="true">{flecks.map(f=><span key={`${key}-${f.id}`} style={{left:f.x,top:f.y,'--fly-x':`${f.dx}px`,'--fly-y':`${f.dy}px`} as CSSProperties}>+{f.amount} {f.id}</span>)}</div>
+ return <div className="uv-reward-fly" aria-hidden="true">{flecks.map((f,index)=><span key={`${key}-${f.id}`} style={{left:f.x,top:f.y+index*36,'--fly-x':`${f.dx}px`,'--fly-y':`${f.dy-index*36}px`} as CSSProperties}>{currencyIconA6(f.id)} +<CountUpA6 value={f.amount} from={0} reducedMotion={reducedMotion}/> {f.id}</span>)}</div>
 }

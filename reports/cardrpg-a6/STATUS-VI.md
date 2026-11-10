@@ -15,3 +15,7 @@
 - Q13a xong: 12 mèo và 13 địch dùng tranh gốc B, tổng ảnh khoảng 3,86 MB; có đường lui về ảnh model cũ.
 - Đã xem 12 ảnh ở hai kích thước, không lỗi trình duyệt/ảnh vỡ; typecheck/lint và 33 test liên quan qua.
 - Đang làm Q13b: giao diện ấm, mèo lớn và thao tác chính nằm gọn trong màn 720p.
+
+- Q13b xong: giao diện giấy kem/gỗ ấm, mèo lớn, khung hiếm rõ; Team có cấp/sao, túi và Relic dùng cùng màu hiếm.
+- Đã xem hai kích thước; thao tác chính vừa 720p. Typecheck/lint và 37 test liên quan qua, ảnh không lỗi/không tràn ngang.
+- Điểm tự đánh giá 7,3–8,0; tiếp tục Q13c tuyển mèo, chưa coi độ khó/nhịp trận là hoàn tất.

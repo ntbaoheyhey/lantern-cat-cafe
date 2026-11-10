@@ -2,6 +2,7 @@ import {TowerA6} from './TowerA6';
 import { PrepareA6 } from './FormationA6';
 import { CampaignA6 } from './CampaignA6';
 import { PowerA6 } from './PowerA6';
+import { CountUpA6, currencyIconA6 } from './CountUpA6';
 import { AdviceV4 } from '../depth/AdviceV4';
 import {lazy,Suspense,useState} from 'react';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
@@ -41,9 +42,9 @@ export function ResultV3({m}:{m:DepthModel}) {
  const foe=battle.actors.find(a=>a.side==='enemy');
  const suggestion=foe?R.enemyGuideV4(foe.catalogId).counter:'Prepare your crew for the next stop.';
  const a6Loss=!!battle.initial.gameplayA6&&battle.result==='enemy'&&!m.tutorialBattle&&!m.replay;
- return <><div className="uv-result" data-a6-loss={a6Loss||undefined}><div className="uv-result-title"><small>{m.tutorialBattle?'PRACTICE COMPLETE':run?.towerA6?`YARN TOWER · FLOOR ${run.floor} · ${battle.round} ROUNDS`:`CHAPTER ${battle.chapter} · ${battle.round} ROUNDS`}</small><h2>{battle.result==='party'?'Victory':battle.result==='enemy'?'Defeat':'Replay complete'}</h2>{stars&&<div className="uv-result-stars" aria-label={`${stars.conditions.filter(Boolean).length} of 3 stars`}>{stars.conditions.map((on,i)=><span key={i} data-earned={on}>★</span>)}</div>}</div>
+ return <><div className="uv-result" data-a6-loss={a6Loss||undefined}><div className="uv-result-title"><small>{m.tutorialBattle?'PRACTICE COMPLETE':run?.towerA6?`YARN TOWER · FLOOR ${run.floor} · ${battle.round} ROUNDS`:`CHAPTER ${battle.chapter} · ${battle.round} ROUNDS`}</small><h2>{battle.result==='party'?'Victory':battle.result==='enemy'?'Defeat':'Replay complete'}</h2>{stars&&<div className="uv-result-stars" aria-label={`${stars.conditions.filter(Boolean).length} of 3 stars`}>{stars.conditions.map((on,i)=><span key={i} data-earned={on} style={{animationDelay:`${i*140}ms`}}>★</span>)}</div>}</div>
  {mvp&&<div className="uv-result-mvp"><img {...portraitProps(mvp.catalogId)} alt={mvp.name}/><div><small>TONIGHT’S STAR</small><h3>{mvp.name}</h3><p>{mvp.damage} damage · {mvp.healing} healing</p></div></div>}
- <div className="uv-result-rewards" aria-label="Encounter rewards">{rewards.map(r=><span key={r.id}>+{r.amount} {r.label}</span>)}{!rewards.length&&<span>{m.tutorialBattle?'A welcome invitation awaits':'Your encounter is recorded'}</span>}</div><p><b>Why:</b> {why}</p>{a6Loss?<AdviceV4 m={m}/>:<p><b>Try this:</b> {suggestion}</p>}
+ <div className="uv-result-rewards" aria-label="Encounter rewards">{rewards.map(r=><span key={r.id}><i aria-hidden="true">{currencyIconA6(r.id)}</i> +<CountUpA6 value={r.amount} from={0} reducedMotion={m.state.settings.reducedMotion}/> {r.label}</span>)}{!rewards.length&&<span>{m.tutorialBattle?'A welcome invitation awaits':'Your encounter is recorded'}</span>}</div><p><b>Why:</b> {why}</p>{a6Loss?<AdviceV4 m={m}/>:<p><b>Try this:</b> {suggestion}</p>}
  <div className="cr-actions"><button onClick={()=>setDetails(!details)} aria-expanded={details}>Read details</button><button className={a6Loss?undefined:"uv-fight"} onClick={()=>{m.finish();if(!m.error)m.go(run?.towerA6?'tower':'hub');}}>{a6Loss?(run?.towerA6?'Back to Tower':'Back to cafe'):'Next'} <span aria-hidden="true">→</span></button></div></div>{details&&<div className="uv-advanced"><Suspense fallback={<p>Opening…</p>}><FullResult m={m}/></Suspense></div>}</>;
 }
 
