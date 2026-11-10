@@ -9,6 +9,22 @@ from build import part_overlap, authored_mask
 
 
 class PartOverlapTests(unittest.TestCase):
+    def test_button_guard_needle_shield_chest_and_boots_keep_semantic_ownership(self):
+        cfg = json.loads((Path(__file__).parent/'configs/button-guard.json').read_text())
+        source = Image.open(Path(__file__).resolve().parents[4]/cfg['source']).convert('RGBA')
+        source.thumbnail((1200, 1200))
+        owners = np.zeros((source.height, source.width), np.uint8)
+        for i, (part, polygon, _) in reversed(list(enumerate(cfg['layers']))):
+            mask = authored_mask(source.size, polygon, cfg.get('holes', {}).get(part, ()))
+            owners[mask > 0] = i+1
+        for (x,y), expected in [((1093,83),'armR'),((1000,550),'armR'),((650,396),'body'),((380,397),'body'),((842,580),'body'),((192,686),'armL'),((345,775),'body'),((650,1090),'footR'),((350,1025),'footL'),((550,340),'head')]:
+            self.assertGreater(source.getpixel((x,y))[3],64,(x,y))
+            index = int(owners[y,x])-1
+            actual = cfg['layers'][index][0] if index >= 0 else 'body'
+            self.assertEqual(actual, expected, (x,y))
+        self.assertEqual(cfg['socketSources']['mainHand'][0], 'armR')
+        self.assertEqual(cfg['socketSources']['offHand'][0], 'armL')
+
     def test_panko_whole_roller_and_mitten_belong_to_one_moving_arm(self):
         cfg = json.loads((Path(__file__).parent/'configs/panko.json').read_text())
         owners = Image.new('L', (1081, 1200))

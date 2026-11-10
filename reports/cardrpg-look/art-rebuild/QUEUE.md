@@ -49,7 +49,9 @@ Check STOP-B/INBOX and fetch/show A6-OUTBOX between items. Commit/push and updat
 
 - [x] P29 [auto] Lowest-motion continuation: Marigold lifts/presents its original tall gold pot, tips the spout at release and settles with open-palm/head/tail response. Repair measured cheek/chin and tail fragments and inspect the petal collar first; preserve whole pot and skirt. Existing art only; both sizes/natural x1 basic-signature-ultimate/reduced/actual spout and palm/sockets/faceHP; max3 repairs.
 
-- [ ] P30 [auto] Lowest-motion continuation: Button Guard gives a deliberate needle lead with compact button-shield brace and planted boots. Repair inspected upper-chest/head, needle-arm chest strip, shield/belt and boot-edge ownership first; retain original six-part art. Both sizes/natural x1 basic-signature/reduced/actual needle and shield sockets/boot contacts/faceHP; max3 repairs.
+- [x] P30 [auto] Lowest-motion continuation: Button Guard gives a deliberate needle lead with compact button-shield brace and planted boots. Repair inspected upper-chest/head, needle-arm chest strip, shield/belt and boot-edge ownership first; retain original six-part art. Both sizes/natural x1 basic-signature/reduced/actual needle and shield sockets/boot contacts/faceHP; max3 repairs.
+
+- [ ] P31 [auto] Lowest-motion continuation: Velvet keeps its whole needle-staff/ribbon together, tilts around the painted floor contact, opens the free palm and recovers through head/tail. Repair measured needle-loop/head, shaft/cape, tail/cape and boot/cape ownership first; preserve original art/masters. Both sizes/natural x1 basic-signature-ultimate/reduced/true staff-tip drift/sockets/faceHP; max3 repairs.
 
 Research refinements 11/11: P6 uses the saved49+6cast audit and33tests; complete missing parity and visual acceptance. P7 records before/after plus representative cast timing. P8 reuses existing concepts/VFX and only exports missing formats. P10 adds representative x2/x3/reduced-motion readability checks alongside requested x1films. Completed P1–P5 are unchanged. Rationale in RESEARCH-PUPPET.md/DECISIONS.md.
 
@@ -116,3 +118,5 @@ P27 complete 2026-11-10T21:52:30.866530+00:00: retained source3/motion1, correct
 P28 complete 2026-11-10T22:02:01.585513+00:00: source2/motion1,33web+6pipeline tests/type/lint/parity,16views/12castsPASS;38520550B. Basket/palm movement, original scarf/tail restored; motion7.7/overall7.8.
 
 P29 complete 2026-11-10T22:18:02.839582+00:00: source3/motion1,34web+7pipeline tests/type/lint/parity,16pairedviews/12castsPASS;38595682B. Whole pot lift/pour, coherent cheek/collar/skirt; bounded free-paw fallback retains255source-pixel sleeve fringe; motion7.7/overall7.8.
+
+P30 complete 2026-11-10T22:31:06.754186+00:00: source2/motion1,35web+8pipeline tests/type/lint/parity,16pairedviews/8castsPASS;38625282B. Whole needle lead/shield brace/planted boots; corrected real tip/shield sockets; motion7.7/overall7.8.

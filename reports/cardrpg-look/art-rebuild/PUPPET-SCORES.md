@@ -18,7 +18,7 @@ Evidence uses A6 shell in a disposable merged preview; primary branch contains n
 | Marigold | 8.6 | 7.7 | 7.8 | 7.8 | p29/evidence/marigold-pot-pour.webp; tall pot lift/held pour, actual spout socket, coherent cheek/collar/skirt; restrained free-paw fallback retains small sleeve fringe |
 | Sorrel | 8.6 | 7.7 | 7.7 | 7.7 | p19/evidence/sorrel-follow-through.webp; staff planted at its painted tip, open palm and delayed tail; restrained shoulder amplitude |
 | Inkcap | 8.6 | 7.7 | 7.8 | 7.8 | p16/evidence/inkcap-follow-through.webp; raised lantern/open offhand and subtle per-actor tail bend; tail remains partly obscured in this formation |
-| Button Guard | 8.6 | 7.5 | 7.8 | 7.8 | p5/batch1-final/button-guard-comparison.webp and button-guard-motion.webp; button shield/needle silhouette intact |
+| Button Guard | 8.6 | 7.7 | 7.8 | 7.8 | p30/evidence/button-guard-needle-lead.webp; deliberate whole needle lead, compact shield brace and planted boots; real tip/shield sockets, restrained rigid limbs |
 | Sock Skipper | 8.6 | 7.7 | 7.7 | 7.7 | p17/evidence/sock-skipper-hop.webp; short anticipation/hop/landing, forward mitten and thread recovery; boot roll remains shared |
 | Spool Ram | 8.6 | 7.7 | 7.7 | 7.7 | p14/evidence/spool-ram-follow-through.webp; authored horn dip, planted hoof contacts and delayed tail recovery; no independent hoof roll |
 | Needle Moth | 8.6 | 7.5 | 7.8 | 7.8 | p5/batch1-final/needle-moth-comparison.webp and needle-moth-motion.webp; independent opposing wing pivots; needle stays readable |

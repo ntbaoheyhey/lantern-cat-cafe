@@ -7,6 +7,7 @@ import cinnamonRig from '../../../../../../assets/cardrpg-look/v3-puppets/cinnam
 import threadRig from '../../../../../../assets/cardrpg-look/v3-puppets/binding-thread.rig.json';
 import cloverRig from '../../../../../../assets/cardrpg-look/v3-puppets/clover.rig.json';
 import cushionRig from '../../../../../../assets/cardrpg-look/v3-puppets/practice-cushion.rig.json';
+import buttonRig from '../../../../../../assets/cardrpg-look/v3-puppets/button-guard.rig.json';
 import marigoldRig from '../../../../../../assets/cardrpg-look/v3-puppets/marigold.rig.json';
 import briocheRig from '../../../../../../assets/cardrpg-look/v3-puppets/brioche.rig.json';
 import biscuitRig from '../../../../../../assets/cardrpg-look/v3-puppets/biscuit.rig.json';
@@ -109,7 +110,7 @@ describe('illustrated puppet contract and event motions',()=>{
       expect([quiet.head,quiet.lean,quiet.prop,quiet.offhand,quiet.tail]).toEqual([0,0,0,0,0]);
     }
     expect([pose(1).head,pose(1).lean,pose(1).prop,pose(1).tail].every(v=>Math.abs(v)<1e-10)).toBe(true);
-    expect(puppetPose('attack',0,.52,false,0,'button-guard')).toEqual(puppetPose('attack',0,.52,false));
+    expect(puppetPose('attack',0,.52,false,0,'needle-moth')).toEqual(puppetPose('attack',0,.52,false));
   });
 
   it('keeps a foot contact fixed through body lean, breathing and leg rotation',()=>{
@@ -144,6 +145,33 @@ describe('illustrated puppet contract and event motions',()=>{
     expect(lifted.y).toBeGreaterThan(Number(y)+.04);
     expect(puppetPose('cast',3,.38,false,.4,'inkcap').tailBend).not.toBe(puppetPose('idle',3,0,false,.4,'inkcap').tailBend);
     expect(puppetPose('cast',3,.38,false,.4,'velvet').tailBend).toBe(0);
+  });
+
+  it('leads with Button Guard needle toward foes, braces its shield and plants both boots',()=>{
+    const tip=new Vector3(Number(buttonRig.sockets.mainHand[1]),Number(buttonRig.sockets.mainHand[2]),0);
+    const shield=new Vector3(Number(buttonRig.sockets.offHand[1]),Number(buttonRig.sockets.offHand[2]),0);
+    expect(buttonRig.sockets.mainHand[0]).toBe('armR');expect(buttonRig.sockets.offHand[0]).toBe('armL');
+    const windup=puppetPose('attack',0,.18,false,0,'button-guard'),strike=puppetPose('attack',0,.52,false,0,'button-guard');
+    const displaced=(point:Vector3,angle:number)=>point.clone().applyMatrix4(new Matrix4().makeRotationZ(angle)).sub(point);
+    expect(displaced(tip,windup.prop).x).toBeGreaterThan(.035);
+    expect(displaced(tip,strike.prop).x).toBeLessThan(-.13);
+    expect(displaced(shield,strike.offhand).x).toBeLessThan(-.035);
+    expect(displaced(shield,strike.offhand).y).toBeGreaterThan(.02);
+    for(const motion of ['attack','cast'] as const)for(let i=0;i<=60;i++){
+      const p=puppetPose(motion,3,i/60,false,.4,'button-guard'),quiet=puppetPose(motion,3,i/60,true,.4,'button-guard');
+      expect(p.feetPlant).toBe(true);expect(Math.abs(p.prop)).toBeLessThan(.265);expect(Math.abs(p.head)).toBeLessThan(.035);
+      for(const foot of buttonRig.layers.filter(l=>l.part.startsWith('foot'))){
+        const rest=[(foot.pivot[0]!-.5)*buttonRig.height*buttonRig.aspect,(1-foot.pivot[1]!)*buttonRig.height];
+        const contact=[(foot.rect[0]!+foot.rect[2]!/2-foot.pivot[0]!)*buttonRig.height*buttonRig.aspect,(foot.pivot[1]!-foot.rect[1]!-foot.rect[3]!)*buttonRig.height];
+        const scale=[1-p.breathe,1+p.breathe],rotation=p.gesture*(foot.part==='footL'?.025:-.025);
+        const [x,y]=plantedPuppetPivot(rest,contact,rotation,p.lean,scale);
+        const actual=new Vector3(contact[0]!,contact[1]!,0).applyMatrix4(new Matrix4().makeRotationZ(rotation)).add(new Vector3(x,y,0));
+        actual.applyMatrix4(new Matrix4().makeScale(scale[0]!,scale[1]!,1)).applyMatrix4(new Matrix4().makeRotationZ(p.lean));
+        expect(actual.distanceTo(new Vector3(rest[0]!+contact[0]!,rest[1]!+contact[1]!,0))).toBeLessThan(1e-10);
+      }
+      expect([quiet.prop,quiet.offhand,quiet.head,quiet.lean,quiet.feetPlant]).toEqual([0,0,0,0,false]);
+    }
+    for(const motion of ['attack','cast'] as const){const rest=puppetPose(motion,0,1,false,0,'button-guard');expect(rest.prop).toBeCloseTo(0,12);expect(rest.offhand).toBeCloseTo(0,12);}
   });
 
   it('lifts Marigold real spout before pouring and keeps its free sleeve gesture bounded',()=>{
@@ -319,7 +347,7 @@ describe('illustrated puppet contract and event motions',()=>{
         expect([quiet.prop,quiet.offhand,quiet.head,quiet.lean,quiet.feetPlant]).toEqual([0,0,0,0,false]);
       }
     }
-    expect(puppetPose('cast',0,.38,false,0,'button-guard').feetPlant).toBe(false);
+    expect(puppetPose('cast',0,.38,false,0,'needle-moth').feetPlant).toBe(false);
   });
 
   it('compresses and releases Practice Cushion with planted boots, a forward jab and an intact face seam',()=>{
