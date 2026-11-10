@@ -110,3 +110,5 @@
 - 2026-11-10T18:57:07Z Q14a visual repair: the new gear-card selector also matched the nested empty-state button, overriding its44px minimum with166/146px and pushing it below720p. Limit both viewport rules to direct gear-card buttons; add actual primary-action fold assertion to the existing capture tool.
 
 - 2026-11-10T19:05:24Z Q14 visual review found top boss Phase2 beside world label Phase1 at523/802HP. A6 first phase is a bonus flag; world label/scene bridge still read the legacy two-phase field. Use one displayedBossPhase adapter in both DOM labels and the existing scene input; no rules or B renderer change. Real threshold regression added; verification pending.
+
+- 2026-11-10T19:10:08Z Q14 B P13 improves the two-add view after merge7b23959ad. A6phase3 spawns a third live add; slot%2 places it over another. Confirmed from real automatic fixture, requestedB extension with exact reproducer/evidence. Keep bossvisibility provisional; continue independent Q15checks, no combat-rule workaround.

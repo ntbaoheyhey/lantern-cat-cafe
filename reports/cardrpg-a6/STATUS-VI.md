@@ -79,3 +79,6 @@ Giữ nguyên43test/typecheck/lint đã đạt và mọi sửa đổi dở dang;
 2026-11-10T19:09:26Z: Q14a hoàn tất: Túi, Quà hằng ngày, Tháp và Relic có bố cục riêng; nút chính vừa cả hai cỡ màn.
 Đã giữ và xem 18 ảnh kiểm chứng, thao tác bàn phím bản đồ/nhận quà đạt; không thay điều kiện phần thưởng. Điểm tự đánh giá 7,8–8,1.
 Bản sửa lính phụ của B đã merge vào A6; đang kiểm tra trường hợp ba lính cùng sống và đóng gói lại.
+
+2026-11-10T19:10:08Z: Bản B mới đã tách rõ hai lính phụ. Ở pha 3, game A6 sinh thêm lính thứ ba và vẫn có hai hình chồng nhau; đã gửi bằng chứng/cách tái hiện trong A6-OUTBOX.
+Đang tiếp tục các kiểm tra Q15 độc lập; không đổi luật đánh để che lỗi hình ảnh.

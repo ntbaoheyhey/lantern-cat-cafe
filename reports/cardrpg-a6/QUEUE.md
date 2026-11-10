@@ -12,6 +12,8 @@
 - [ ] Q15 Final check (by 19 Nov 18:00 UTC): fresh seeds 60001-60500 once with the sim, full E2E, one real-click 30-minute run, screenshots of every screen at 1440x900 and 1280x720, one 60-90 s clip of a first session and one of a boss fight with ultimates.
 - [ ] Q16 Report (by 20 Nov 06:00 UTC): reports/cardrpg-a6/A6-REPORT.md (<= 2 pages: what a player gets now, before/after screenshots of home/recruit/map/battle, LOOK-SCORES summary, difficulty numbers, known issues), STATUS-VI.md summary, PR #438 description. Then improve the lowest LOOK-SCORES row until 20 Nov 12:00 UTC.
 
+Q14 current integration: B P13 merged; two-add view repaired. Three-live-add phase3 overlaps remain B-owned, requested with exact A6 fixture in A6-OUTBOX; continue independent Q15 work while awaiting published repair.
+
 Q13f completed under R-3 fallback: browser21wins/2losses,0errors/stalls; earliest loss6.59min and full-health normal wins remain explicit misses (Q13f.md). No fourth numeric tuning loop.
 
 ## Research refinements (2026-11-10; accepted rows stay complete)
