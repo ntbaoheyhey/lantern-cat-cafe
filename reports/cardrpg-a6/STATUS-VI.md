@@ -200,3 +200,7 @@ Tiếp tục Bond Book: tăng chữ trạng thái/hiệu ứng và vùng chọn,
 
 2026-11-10T23:22:27Z: Bond Book đã duyệt16ảnh; cả17mục, phần thưởng bộ sưu tập và trạng thái hợp kích đúng ở hai cỡ màn.
 Nút chọn tối thiểu40px, ghi chú14px; bàn phím/hồ sơ/đội hình đạt, không đổi luật hay tài khoản. Đang đóng gói offline.
+
+2026-11-10T23:24:21Z: Q31 hoàn tất: demo38,92MB,16ảnh nguồn và16ảnh offline đã duyệt; không lỗi/gọi mạng.
+Cả17mục, phần thưởng bộ sưu tập, trạng thái hợp kích và bàn phím đạt; điểm Bond Book8,2/8,1.
+Tiếp tục bản đồ: tăng chữ nhãn/chest và nút dùng tonic, giữ nguyên tuyến đường và mọi phần thưởng.

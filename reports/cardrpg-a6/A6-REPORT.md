@@ -2,7 +2,7 @@
 
 The Lantern now has a warm cafe with a large illustrated crew, collectible rarity frames, a ten-card recruit ceremony, a lantern-street campaign and fully automatic battles with portrait HP/rage cards and character cut-ins. Bonds, formation, Power upgrades, campaign stars, idle tips, thirty Tower floors, daily gifts and capped read-only Fuji Relics remain available. All 25 battle units use B’s illustrated puppets. The Journal now opens four keepsake pages directly, with star gifts beside the notes and all claims/caps retained.
 
-Open `docs/cardrpg-a6/index.html` directly; the ten-line [Vietnamese guide](../../docs/cardrpg-a6/CHAY-DEMO.md) gives a five-minute judging route. The **38,920,437-byte** artifact is below 40 MB. App opt-in: `?a6=1`. No deployment, PR merge or live contract change was made.
+Open `docs/cardrpg-a6/index.html` directly; the ten-line [Vietnamese guide](../../docs/cardrpg-a6/CHAY-DEMO.md) gives a five-minute judging route. The **38,920,625-byte** artifact is below 40 MB. App opt-in: `?a6=1`. No deployment, PR merge or live contract change was made.
 
 ## Before and after
 
@@ -13,7 +13,7 @@ Open `docs/cardrpg-a6/index.html` directly; the ten-line [Vietnamese guide](../.
 | Map | [Before / after](comparisons/map.webp) | Winding lantern street, landmarks and star chests |
 | Battle | [Before / after](comparisons/battle.webp) | Illustrated puppets, closer staging, HP/rage cards |
 
-These pair retained screenshots without altering their contents. Review galleries grant progression for coverage; earned progression is measured separately. [LOOK-SCORES](LOOK-SCORES.md) averages **8.08/10** across eighteen screens at both sizes (1440×900 and1280×720), range **7.9–8.3**. All applicable rows meet7. Recent improvements include readable direct cat skills/previews, indexed Bond Book/Field guide, stable gear and gift actions, direct Journal pages, a contained save/reset desk, and selectable15px enemy tactics above Fight. Prepare now scores **8.1/8.0**; Team and Bond Book remain the lowest at720p (**7.9**). P15 resolves the three-helper occlusion; later B motion through P31 remains integrated. Scores are agent judgement, not player testing.
+These pair retained screenshots without altering their contents. Review galleries grant progression for coverage; earned progression is measured separately. [LOOK-SCORES](LOOK-SCORES.md) averages **8.09/10** across eighteen screens at both sizes (1440×900 and1280×720), range **8.0–8.3**. All applicable rows meet7. Recent improvements include readable direct cat skills/previews, indexed Bond Book/Field guide, stable gear and gift actions, direct Journal pages, a contained save/reset desk, and selectable15px enemy tactics above Fight. Prepare scores **8.1/8.0**, Team and Bond Book **8.2/8.1**. P15 resolves the three-helper occlusion; B motion through P33 remains integrated. Scores are agent judgement, not player testing.
 
 ## Measurements and limits
 
@@ -30,17 +30,17 @@ Q13f used the prescribed three-attempt fallback. Enemy budgets stay fixed, so up
 
 ## Verification and self-review
 
-Final E2E was **420/421 initially**; a test-only readiness wait for idle accrual passed three focused repetitions. This is not a clean full-suite rerun. Current typecheck/lint and44 Q30 Formation/Forecast/puppet tests pass. Retained **2 Q22 dialog tests, 2 Q21 UI tests, 3 Q20 UI tests, 39 current puppet tests, 5 Q28 Settings tests, 9 Q27 guide/HUD tests, 6 Q26 Journal/Journey tests, 6 Q25 Tower tests, 3 Q24 Bag tests, 7 Q23 Daily tests, 12 Q19 UI tests, 13 Q18 web tests**, retained **19 earlier changed-area web tests** and **17 Journal rule tests** pass; earlier integration/phase/pacing checks are retained. The final gallery, actual-keyboard/reduced-motion checks and both-size offline checks report no browser errors, broken images, overflow or external requests.
+Final E2E was **420/421 initially**; a test-only readiness wait for idle accrual passed three focused repetitions. This is not a clean full-suite rerun. Current typecheck/lint and3 Q31 Bond tests pass;44 Q30 Formation/Forecast/puppet tests remain accepted. Retained **2 Q22 dialog tests, 2 Q21 UI tests, 3 Q20 UI tests, 39 current puppet tests, 5 Q28 Settings tests, 9 Q27 guide/HUD tests, 6 Q26 Journal/Journey tests, 6 Q25 Tower tests, 3 Q24 Bag tests, 7 Q23 Daily tests, 12 Q19 UI tests, 13 Q18 web tests**, retained **19 earlier changed-area web tests** and **17 Journal rule tests** pass; earlier integration/phase/pacing checks are retained. The final gallery, actual-keyboard/reduced-motion checks and both-size offline checks report no browser errors, broken images, overflow or external requests.
 
 [First session, 85 s](clips/first-session.mp4) is earned UI play. [Boss, 62 s](clips/boss.mp4) is a continuous automatic review fixture, including its 44.59 s battle, setup and Victory screen. Both clips and the final cut-in frame are inspected. These are headless Chromium observations, not human enjoyment testing.
 
 | Self-review category | Weight | Score / 10 |
 |---|---:|---:|
-| Appearance | 30% | 8.08 |
+| Appearance | 30% | 8.09 |
 | First ten minutes: clarity and flow | 20% | 7.5 |
 | Battle readability, excitement and pacing | 20% | 7.8 |
 | Difficulty and upgrade pull | 15% | 5.8 |
 | Lane B art integration | 10% | 8.6 |
 | Stability | 5% | 9.0 |
 
-Weighted self-score: **7.66/10; target8.5 not met**. The main limitations remain early loss, unreliable advice recovery and long boss tails. Q14–Q30 source/offline delivery is complete through B P33. Q30 verifies all12cats, three saved modes, exact rows/plans, route/level locks, focus and seed/foes at both sizes;42source+42offlineviews include current Needle Moth/Teacup. Zero browser errors/network requests. Earlier accepted galleries/final checks remain retained. Next: Bond Book readability and later published B tips. Receipts: [Q30](Q30.md), [Q29](Q29.md), [Q28](Q28.md), [Q27](Q27.md), [Q26](Q26.md), [Q25](Q25.md), [Q24](Q24.md), [Q23](Q23.md), [Q22](Q22.md), [Q21](Q21.md), [Q20](Q20.md), [Q19](Q19.md), [Q18](Q18.md), [Q14](Q14.md), [Q15](Q15.md), [Q17](Q17.md), [FIXLOG](FIXLOG.md).
+Weighted self-score: **7.67/10; target8.5 not met**. The main limitations remain early loss, unreliable advice recovery and long boss tails. Q14–Q31 source/offline delivery is complete through B P33. Q31 adds40–44px Bond index controls and readable notes; all17entries, exact bonuses, ownership/team states and keyboard navigation pass at both sizes in16source+16offlineviews. Q30 retains all12cats/three saved modes/seed/foes and Needle Moth/Teacup views. Zero browser errors/network requests. Earlier accepted final checks remain retained. Next: route label readability and later published B tips. Receipts: [Q31](Q31.md), [Q30](Q30.md), [Q29](Q29.md), [Q28](Q28.md), [Q27](Q27.md), [Q26](Q26.md), [Q25](Q25.md), [Q24](Q24.md), [Q23](Q23.md), [Q22](Q22.md), [Q21](Q21.md), [Q20](Q20.md), [Q19](Q19.md), [Q18](Q18.md), [Q14](Q14.md), [Q15](Q15.md), [Q17](Q17.md), [FIXLOG](FIXLOG.md).

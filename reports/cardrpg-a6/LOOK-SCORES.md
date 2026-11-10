@@ -9,7 +9,7 @@ Agent visual review, not player testing. Both sizes inspected; no applicable Q13
 | Team | 8.2 | 8.1 | 13: compact secondary row labels (7.5) | shots/q30-formation + q30-layout-final + q30-offline; bounded tools with15px reasons, all12cats/three modes/exact plans/locks/focus, main art retained |
 | Prepare | 8.1 | 8.0 | 13: compact foe-card metadata (7.5) | shots/q29-prepare + q29-prepare-final;20current views, all13readable notes/keyboard/row/Fight, fixedseed and qualitativeforecast retained |
 | Bag / gear / empty | 8.1 | 8.0 | 13: compact cost labels (7.5) | shots/q24-bag/* + q24-details/*; 28 views, stable compare/enhance, transfer/cost/caps/locks/keyboard/workshop pass |
-| Bond Book | 8.1 | 7.9 | 13: compact index metadata (7.5) | shots/q20-bond-album/*; all17entries and primary action fit both sizes; ownership/readiness/profile/team/keyboard pass |
+| Bond Book | 8.2 | 8.1 | 13: secondary ownership labels (7.5) | shots/q31-bonds + q31-offline;16source/16offline views,40–44px index,14px notes,17entries/exactbonus/ownership/profile/team/keyboard pass |
 | Daily | 8.1 | 8.0 | 13: compact reward copy (7.5) | shots/q23-daily/* + q23-daily-cap/*; direct board/gifts sections, all14milestones fit, shared counts/three claims/caps/ribbon/keyboard pass |
 | Tower | 8.1 | 8.0 | 13: compact floor numbers (7.5) | shots/q25-tower/* + q25-climb-final/*; direct gifts, exact caps and current advice; replay/keyboard/return fit both sizes |
 | Relic | 8.1 | 8.0 | 07: simple drawn cup material (7.5) | shots/q14a/*-relics; selection actions fit720p |
