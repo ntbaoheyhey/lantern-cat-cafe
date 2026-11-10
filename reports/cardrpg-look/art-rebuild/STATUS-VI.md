@@ -174,3 +174,9 @@ Tiếp tục P35 từ đường cắt Crumb Sentinel đã lưu; P34 đã có tr�
 
 Crumb Sentinel đã duyệt: cả khiên đỡ về trước, nắm tay theo nhịp; giáp ngực/vạt áo liền và hai chân bám sàn.
 40 kiểm tra web,13 kiểm tra cắt lớp,16 ảnh/8 lượt chiêu/type/lint/parity đạt; bản chung 38,870,022 byte. Chuyển động7,5→7,7, tổng giữ7,8; tiếp tục Kettle Knight.
+
+Tiếp tục P36 từ bản cắt lớp thứ ba đã lưu; P35 đã khớp với GitHub.
+Đang kiểm tra viền áo/giày rồi hoàn thiện động tác nâng vòi, thu tay; không làm lại phần đã xong.
+
+Kettle Knight đã duyệt: nâng vòi trước rồi chúi nhẹ lúc phun, tay giáp thu theo nhịp; quai/thân/vạt áo liền và chân giữ sàn.
+41 kiểm tra web,14 kiểm tra cắt lớp,16 ảnh/8 lượt chiêu/12 mẫu đổi pha/type/lint/parity đạt; bản chung 38,874,898 byte. Chuyển động7,5→7,7, tổng giữ7,9; tiếp tục Yarn Giant.

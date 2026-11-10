@@ -125,3 +125,6 @@ Only Pollen Scout config/rig/atlas rebuilt; eight original layers. Whole basket/
 
 ## P35 — Crumb Sentinel shield brace
 Only Crumb Sentinel config/rig/atlas rebuilt; six original layers. Complete shield/gauntlet, coherent chest/tabard, quiet lid and planted boots. MainHand shield(1000,640), offHand fist(156,777), source1200×1097.40web+13source tests/type/lint/parity,16views/8casts pass;0page/socket/faceHP/bounds failures,p95<=16.8ms. Combined A64299ff326+B 38,870,022B; headroom 1,129,978B; Bembedded 24,199,928B. Both paired artifacts use the same refreshed disposable preview. No DOM/events/flags/portrait changes. Motion7.7/overall7.8; rigid shoulders retained; p35/REVIEW.md.
+
+## P36 — Kettle Knight spout lift
+Only Kettle config/rig/atlas rebuilt; six original layers,1536px atlas. Complete spout lift/release and delayed gauntlet brace; whole handle/chest rigid, quiet lid and planted boots. MainHand spout(124,481), offHand armR glove(1020,821), source1200×1128.41web+14source tests/type/lint/parity,16views/8casts/12boss-phase samples pass;0page/socket/faceHP/bounds failures,p95<=16.8ms. Combined A67607e3340+B 38,874,898B; headroom 1,125,102B; Bembedded 24,204,604B. Both pairs share current disposable preview; no DOM/events/flags/portrait changes. Motion7.7/overall7.9; bounded shoulder fringe retained; p36/REVIEW.md.

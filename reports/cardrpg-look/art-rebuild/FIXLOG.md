@@ -247,3 +247,7 @@ P30 evidence compression: the six actual native-Yarn PNGs pass lossless pixel/me
 
 2026-11-10T23:34:59.629397+00:00 P35 source1–3 retain complete shield/gauntlet, separate rigid chest/tabard and remove disconnected ownership components above25pixels. Source test initially chose transparent(840,540); original pixel inspection establishes opaque brass(845,540),alpha253. Sentinel corrected, no art weakening; type/lint40web tests already passed and are reused.
 P35 second new sentinel(791,790) was also transparent; verify every remaining selected source point and move this one3pixels to opaque boot rim(791,793). No source/motion changes; resume source gate then captures.
+
+2026-11-10T23:46:36.187385+00:00 P36 resumes saved source3 after three source rounds. A399pixel inner spout-shoulder fringe remains on body; keep bounded spout lift0.14rad/release0.055rad and quiet lid/torso, then judge real x1. No fourth source repair; complete original handle/spout/fingers and boots retained.
+
+2026-11-10T23:47:53.181015+00:00 P36 type/lint41web tests PASS; first source gate selected transparent handle sentinel(500,150). Inspect all selected source pixels, use opaque handle(500,180); no art/rig/runtime changes. Source test and capture continue; completed web gates retained. Initial wrapper path error occurred before work and was corrected to existing run-lock.mjs.

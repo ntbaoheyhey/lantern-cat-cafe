@@ -6,6 +6,8 @@ import {createRequire} from 'node:module';
 import {apply,audit} from '../../skills-v5/full/harness.mjs';
 const sharp=createRequire('/Users/bao/tools/cardrpg-look/npm/package.json')('sharp');
 const out=resolve(process.env.ART_OUT),artifact=resolve(process.env.ART_ARTIFACT);
+const bossIds=['kettle-knight','yarn-giant','rain-spool','pantry-crown'].filter(id=>!process.env.ART_UNITS||process.env.ART_UNITS.split(',').includes(id));
+if(!bossIds.length)throw Error('ART_UNITS must include a known boss.');
 await mkdir(out,{recursive:true});
 const browser=await chromium.launch({channel:'chromium',args:['--use-angle=metal']});
 const result={method:'Actual A6 canvas; explicit fixed-time phase transition and reduced-motion probes. No rule changes.',errors:[],rows:[]};
@@ -15,7 +17,7 @@ try {
  await page.goto('file://'+artifact+'?dev=1&a6=1');await page.waitForFunction(()=>window.__depthReview,null,{timeout:120000});
  await page.evaluate(()=>{const m=window.__depthReview;m.watchNow();m.paused=true;m.camera='wide';m.notify(false)});
  await page.waitForFunction(()=>window.__depthScene?.ready,null,{timeout:120000});
- for(const id of ['kettle-knight','yarn-giant','rain-spool','pantry-crown']){
+ for(const id of bossIds){
   await apply(page,{gallery:'enemy:'+id,progress:-1});
   await page.evaluate(async()=>{const m=window.__depthReview;m.plan=null;m.notify(false);await new Promise(requestAnimationFrame)});
   const tiles=[];
@@ -44,5 +46,5 @@ try {
  }
 }finally{await browser.close();await writeFile(out+'/boss-review.json',JSON.stringify(result,null,2)+'\n')}
 const failures=result.rows.filter(r=>r.ui.overlaps.length||r.samples.some(s=>s.faceHp||s.bounds.outside.length));
-console.log(JSON.stringify({bosses:4,viewports:result.rows.length,errors:result.errors,overlapFailures:failures.map(r=>[r.id,r.width])}));
+console.log(JSON.stringify({bosses:bossIds.length,viewports:result.rows.length,errors:result.errors,overlapFailures:failures.map(r=>[r.id,r.width])}));
 if(result.errors.length||failures.length)process.exitCode=1;

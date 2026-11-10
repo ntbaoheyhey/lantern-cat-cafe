@@ -11,6 +11,7 @@ import buttonRig from '../../../../../../assets/cardrpg-look/v3-puppets/button-g
 import marigoldRig from '../../../../../../assets/cardrpg-look/v3-puppets/marigold.rig.json';
 import briocheRig from '../../../../../../assets/cardrpg-look/v3-puppets/brioche.rig.json';
 import biscuitRig from '../../../../../../assets/cardrpg-look/v3-puppets/biscuit.rig.json';
+import kettleRig from '../../../../../../assets/cardrpg-look/v3-puppets/kettle-knight.rig.json';
 import crumbRig from '../../../../../../assets/cardrpg-look/v3-puppets/crumb-sentinel.rig.json';
 import pollenRig from '../../../../../../assets/cardrpg-look/v3-puppets/pollen-scout.rig.json';
 import teacupRig from '../../../../../../assets/cardrpg-look/v3-puppets/teacup-healer.rig.json';
@@ -534,6 +535,31 @@ it('braces Crumb Sentinel shield and jabs its gauntlet with a quiet chest and pl
       expect([quiet.head,quiet.prop,quiet.offhand,quiet.lean]).toEqual([0,0,0,0]);expect(quiet.feetPlant).toBe(false);
     }
     const end=puppetPose(motion,0,1,false,0,'crumb-sentinel');
+    expect(Math.max(Math.abs(end.head),Math.abs(end.prop),Math.abs(end.offhand),Math.abs(end.lean))).toBeLessThan(1e-10);
+  }
+});
+
+
+it('raises the complete Kettle spout before its release and follows with a planted gauntlet brace',()=>{
+  expect(kettleRig.sockets.mainHand[0]).toBe('armL');expect(kettleRig.sockets.offHand[0]).toBe('armR');
+  const spout=new Vector3(Number(kettleRig.sockets.mainHand[1]),Number(kettleRig.sockets.mainHand[2]),0);
+  const glove=new Vector3(Number(kettleRig.sockets.offHand[1]),Number(kettleRig.sockets.offHand[2]),0);
+  const travel=(point:Vector3,angle:number)=>point.clone().applyAxisAngle(new Vector3(0,0,1),angle).sub(point);
+  for(const motion of ['attack','cast','ultimate'] as const){
+    const charge=puppetPose(motion,0,.20,false,0,'kettle-knight');
+    const release=puppetPose(motion,0,.52,false,0,'kettle-knight');
+    expect(travel(spout,charge.offhand).y).toBeGreaterThan(.06);
+    expect(travel(spout,release.offhand).y).toBeGreaterThan(.025);
+    expect(travel(spout,charge.offhand).y).toBeGreaterThan(travel(spout,release.offhand).y);
+    const brace=puppetPose(motion,0,motion==='attack'?.52:.38,false,0,'kettle-knight');
+    expect(travel(glove,brace.prop).x).toBeLessThan(-.04);
+    for(let i=0;i<=60;i++){
+      const pose=puppetPose(motion,i/10,i/60,false,.4,'kettle-knight');expect(pose.feetPlant).toBe(true);
+      expect(Math.abs(pose.head)).toBeLessThan(.015);expect(Math.abs(pose.lean)).toBeLessThan(.01);
+      const quiet=puppetPose(motion,i/10,i/60,true,.4,'kettle-knight');
+      expect([quiet.head,quiet.prop,quiet.offhand,quiet.lean]).toEqual([0,0,0,0]);expect(quiet.feetPlant).toBe(false);
+    }
+    const end=puppetPose(motion,0,1,false,0,'kettle-knight');
     expect(Math.max(Math.abs(end.head),Math.abs(end.prop),Math.abs(end.offhand),Math.abs(end.lean))).toBeLessThan(1e-10);
   }
 });
