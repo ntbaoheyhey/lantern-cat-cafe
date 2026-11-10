@@ -107,3 +107,5 @@ P10 corrected setup remains the active item. Prepare P11 report and one P12 Soot
 2026-11-10T19:46:39.979853+00:00 P16 prepared while P10/P14 waits for shared timing: Inkcap is one of the remaining7.7overall/7.5motion rows. Existing tail mesh and lantern joint support a small original-motion improvement without another atlas or generation. Research remains applicable; add bounded lantern/tail review after P14, keeping its running-source snapshot unchanged.
 
 2026-11-10T20:07:29.667353+00:00 P14 accepted saved grounded horn-dip/secondary tail motion; do not rerun passed19tests/parity/budget. Keep whole-roster motion7.5 because one pilot does not establish roster quality. Compact derived evidence preserves originals locally and120MBcap. P16next.
+
+2026-11-10T20:15:17.001198+00:00 P16repair2 accepted from actual upward lantern silhouette; do not infer gesture direction from scalar angles alone. P17 adds original Sock Skipper anticipation/hop/mitten reach, matching its knit thief/Pocket skip cue and7.7overall/7.5motion gap. Existing art only; no runtimechange until new validation.

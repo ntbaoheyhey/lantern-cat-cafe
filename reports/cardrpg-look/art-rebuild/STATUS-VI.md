@@ -97,3 +97,6 @@ Phần yếu còn lại là chuyển động dùng chung và độ nổi bật u
 
 P14 đã duyệt từ ảnh/test lưu sẵn: Spool Ram cúi sừng rõ hơn, chân bám ổn định và đuôi theo sau; điểm chuyển động7,5→7,7.
 16khung so sánh/8lượt chiêu,19test/type/lint/parity đạt; bản chung38.176.310byte. Tiếp tục Inkcap, chưa tăng điểm toàn đội hình.
+
+Inkcap đã duyệt bản sửa2: đèn nâng đúng hướng khi chuẩn bị phép, tay còn lại mở rõ; chuyển động7,5→7,7, tổng7,7→7,8.
+22test và12lượt chiêu đạt, không lỗi shader/chồng HP; bản chung38.176.938byte. Tiếp tục Sock Skipper trong nhóm điểm thấp chưa được tinh chỉnh.

@@ -21,7 +21,9 @@ Check STOP-B/INBOX and fetch/show A6-OUTBOX between items. Commit/push and updat
 
 - [x] P14 [auto] Lowest-score motion continuation after report: Spool Ram (overall7.6/motion7.5) gets a forward horn dip, planted front legs and delayed tail recovery. Accept only from x1 before/after and reduced-motion/face/HP checks; preserve art/rig and scores of untouched units.
 
-- [ ] P16 [auto] Lowest-score motion continuation: Inkcap lantern lead, open offhand and soft tail follow-through on the existing mesh/atlas; preserve tail root and reduced motion. Accept from both sizes, natural x1 basic/signature/ultimate, sockets/face-HP and compact evidence; max3repairs, no score uplift from tests alone.
+- [x] P16 [auto] Lowest-score motion continuation: Inkcap lantern lead, open offhand and soft tail follow-through on the existing mesh/atlas; preserve tail root and reduced motion. Accept from both sizes, natural x1 basic/signature/ultimate, sockets/face-HP and compact evidence; max3repairs, no score uplift from tests alone.
+
+- [ ] P17 [auto] Lowest-score motion continuation: Sock Skipper gets a small anticipation/hop/landing, a forward mitten reach and loose-thread recovery, using existing art. Two sizes, natural x1 basic/signature and reduced motion; keep boot/knit seams, actual glove socket and HP clear. Max3repairs; no score uplift from technical gates alone.
 
 Research refinements 11/11: P6 uses the saved49+6cast audit and33tests; complete missing parity and visual acceptance. P7 records before/after plus representative cast timing. P8 reuses existing concepts/VFX and only exports missing formats. P10 adds representative x2/x3/reduced-motion readability checks alongside requested x1films. Completed P1–P5 are unchanged. Rationale in RESEARCH-PUPPET.md/DECISIONS.md.
 
@@ -66,3 +68,5 @@ P10 complete 2026-11-10T20:05:27.602413+00:00: retained85.49s/9ult normal; corre
 P11 complete 2026-11-10T20:06:26.833444+00:00: report includes all25units, acceptedfilms, R0comparison limits, provenance,38175926B combinedbudget and honest8.225selfscore below8.5. Continue P14/P16; report is not a stop.
 
 P14 complete 2026-11-10T20:07:29.667353+00:00: accepted saved16paired views/8naturalcasts, plantedhooves/horn dip/tail lag; type/lint19tests/parityPASS;38176310B. Spoolmotion7.5→7.7/overall7.6→7.7; no whole-roster score uplift. P16next.
+
+P16 complete 2026-11-10T20:15:17.001198+00:00: attempt2 raises lantern0.06946units,16pairedposes/12casts/22tests/type/lint/parityPASS;38176938B; motion7.7/overall7.8. Initial loweringgesture rejected; savedbefore reused. P17next.

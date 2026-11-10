@@ -33,6 +33,10 @@ export async function loadPuppetModel(id:string){
     material.userData={lookPainted:true,lookPuppet:true,puppetPart:layer.part,puppetRect:layer.rect,puppetAtlas:layer.atlasRect,puppetEyes:data.eyes,puppetEyeStyle:data.eyeStyle};
     const mesh=new T.Mesh(geometry,material);mesh.name=`illustrated_${id}_${layer.part}`;
     mesh.position.set((x+w/2-px)*width,(py-y-h/2)*data.height,0);group.add(mesh);
+    if(id==='inkcap'&&layer.part==='tail'){
+      material.userData.puppetTailOrigin=[mesh.position.x,mesh.position.y];
+      material.userData.puppetTailReach=Math.max(...[-1,1].flatMap(dx=>[-1,1].map(dy=>Math.hypot(mesh.position.x+dx*w*width/2,mesh.position.y+dy*h*data.height/2))));
+    }
   }
   for(const [name,[part,x,y]] of Object.entries(data.sockets)){
     const socket=new T.Group();socket.name=`${data.role}_socket_${name}`;socket.position.set(x,y,.06);
@@ -49,13 +53,28 @@ export async function loadPuppetModel(id:string){
 
 /** Clones get independent uniforms; shared atlas pixels never change. */
 export function installPuppetMaterial(material:T.MeshStandardMaterial){
-  const open={value:1},flash={value:0},glow={value:0};
-  material.userData.puppetEyeOpen=open;material.userData.puppetFlash=flash;material.userData.puppetGlow=glow;
+  const open={value:1},flash={value:0},glow={value:0},tailBend={value:0};
+  material.userData.puppetEyeOpen=open;material.userData.puppetFlash=flash;material.userData.puppetGlow=glow;material.userData.puppetTailBend=tailBend;
   const eyes=material.userData.puppetPart==='head'?material.userData.puppetEyes as number[][]:[];
   const eyeGlow=material.userData.puppetEyeStyle==='glow';
   material.onBeforeCompile=shader=>{
     shader.uniforms.puppetEyeOpen=open;shader.uniforms.puppetFlash=flash;shader.uniforms.puppetGlow=glow;
     shader.fragmentShader='uniform float puppetEyeOpen; uniform float puppetFlash; uniform float puppetGlow;\n'+shader.fragmentShader;
+    if(material.userData.puppetTailOrigin){
+      shader.uniforms.puppetTailBend=tailBend;
+      shader.uniforms.puppetTailOrigin={value:new T.Vector2(...material.userData.puppetTailOrigin as [number,number])};
+      shader.uniforms.puppetTailReach={value:material.userData.puppetTailReach as number};
+      shader.vertexShader='uniform float puppetTailBend; uniform vec2 puppetTailOrigin; uniform float puppetTailReach;\n'+shader.vertexShader;
+      shader.vertexShader=shader.vertexShader.replace('#include <begin_vertex>',`
+        #include <begin_vertex>
+        vec2 tailPoint=transformed.xy+puppetTailOrigin;
+        float tailWeight=clamp(length(tailPoint)/puppetTailReach,0.,1.);
+        tailWeight=tailWeight*tailWeight*(3.-2.*tailWeight);
+        float tailAngle=puppetTailBend*tailWeight;
+        float tc=cos(tailAngle),ts=sin(tailAngle);
+        transformed.xy=mat2(tc,ts,-ts,tc)*tailPoint-puppetTailOrigin;
+      `);
+    }
     if(eyes.length===2){
       shader.uniforms.puppetRect={value:new T.Vector4(...material.userData.puppetRect as [number,number,number,number])};
       shader.uniforms.puppetAtlas={value:new T.Vector4(...material.userData.puppetAtlas as [number,number,number,number])};
@@ -94,7 +113,7 @@ export function installPuppetMaterial(material:T.MeshStandardMaterial){
       #include <opaque_fragment>
     `);
   };
-  material.customProgramCacheKey=()=>`puppet-v4-${eyes.length===2?eyeGlow?'glow-eyes':'eyes':'plain'}`;
+  material.customProgramCacheKey=()=>`puppet-v5-${material.userData.puppetTailOrigin?'tail-flex':'rigid'}-${eyes.length===2?eyeGlow?'glow-eyes':'eyes':'plain'}`;
 }
 const relative=new T.Quaternion();
 export function animateIllustrated(model:T.Object3D,camera:T.Camera,time:number,clip:string,progress:number|undefined,reduced:boolean,acting=false,ultimate=false,phaseFlash=0){
@@ -126,6 +145,7 @@ export function animateIllustrated(model:T.Object3D,camera:T.Camera,time:number,
       if(material.userData.puppetEyeOpen)material.userData.puppetEyeOpen.value=pose.eyeOpen;
       if(material.userData.puppetFlash)material.userData.puppetFlash.value=reduced?0:Math.max(pose.flash,phaseFlash);
       if(material.userData.puppetGlow)material.userData.puppetGlow.value=pose.glow;
+      if(material.userData.puppetTailBend)material.userData.puppetTailBend.value=pose.tailBend;
     }
   }
 }

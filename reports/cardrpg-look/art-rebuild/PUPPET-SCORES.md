@@ -17,7 +17,7 @@ Evidence uses A6 shell in a disposable merged preview; primary branch contains n
 | Brioche | 8.6 | 7.5 | 7.8 | 7.8 | p4/batch2-final/brioche-comparison.webp and brioche-motion.webp; basket/skirt/tail retained |
 | Marigold | 8.6 | 7.5 | 7.8 | 7.8 | p4/batch2-final/marigold-comparison.webp and marigold-motion.webp; petal collar and teapot remain readable |
 | Sorrel | 8.6 | 7.5 | 7.7 | 7.7 | p4/batch2-final/sorrel-comparison.webp and sorrel-motion.webp; leaf hat/staff retained; eye ROI repaired |
-| Inkcap | 8.6 | 7.5 | 7.7 | 7.7 | p4/batch2-final/inkcap-comparison.webp and inkcap-motion.webp; mushroom hat/lantern retained; original paper-cat decoy cue completed in P6 |
+| Inkcap | 8.6 | 7.7 | 7.8 | 7.8 | p16/evidence/inkcap-follow-through.webp; raised lantern/open offhand and subtle per-actor tail bend; tail remains partly obscured in this formation |
 | Button Guard | 8.6 | 7.5 | 7.8 | 7.8 | p5/batch1-final/button-guard-comparison.webp and button-guard-motion.webp; button shield/needle silhouette intact |
 | Sock Skipper | 8.6 | 7.5 | 7.7 | 7.7 | p5/batch1-final/sock-skipper-comparison.webp and sock-skipper-motion.webp; knit body and loose thread preserved; compact arm gesture |
 | Spool Ram | 8.6 | 7.7 | 7.7 | 7.7 | p14/evidence/spool-ram-follow-through.webp; authored horn dip, planted hoof contacts and delayed tail recovery; no independent hoof roll |

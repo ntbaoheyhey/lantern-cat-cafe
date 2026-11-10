@@ -1,6 +1,7 @@
 import { afterEach, describe, expect, it } from 'vitest';
 import {Vector3,Matrix4} from 'three';
 import rig from '../../../../../../assets/cardrpg-look/v3-puppets/mochi.rig.json';
+import inkcapRig from '../../../../../../assets/cardrpg-look/v3-puppets/inkcap.rig.json';
 import { parsePuppetRig, puppetMotion, puppetPhase, puppetPose, plantedPuppetPivot } from './look-puppet-rig';
 import { artPipeline } from './look-art';
 import { CATS, ENEMIES } from '../../../../../../packages/game-rules/src/cardrpg/depth/catalog';
@@ -114,6 +115,26 @@ describe('illustrated puppet contract and event motions',()=>{
     expect(puppetPose('attack',1,.5,true,0,'spool-ram').plant).toBe(false);
     expect(puppetPose('idle',1,.5,false,0,'spool-ram').plant).toBe(false);
     expect(puppetPose('attack',1,.5,false,0,'soot').plant).toBe(false);
+  });
+
+  it('settles Inkcap lantern and tail to idle, with no added motion in reduced mode',()=>{
+    for(const motion of ['attack','cast','ultimate'] as const){
+      const idle=puppetPose('idle',3,0,false,.4,'inkcap');
+      const end=puppetPose(motion,3,1,false,.4,'inkcap');
+      expect(end.tailBend).toBeCloseTo(idle.tailBend,12);
+      expect(end.tail).toBeCloseTo(idle.tail,12);
+      expect(end.prop).toBeCloseTo(0,12);
+      for(const progress of [0,.18,.38,.52,.88,1]){
+        const quiet=puppetPose(motion,3,progress,true,.4,'inkcap');
+        expect([quiet.prop,quiet.offhand,quiet.head,quiet.tail,quiet.tailBend,quiet.lean]).toEqual([0,0,0,0,0,0]);
+      }
+    }
+    const [,x,y]=inkcapRig.sockets.mainHand;
+    const windup=puppetPose('cast',3,.38,false,.4,'inkcap');
+    const lifted=new Vector3(Number(x),Number(y),0).applyMatrix4(new Matrix4().makeRotationZ(windup.prop));
+    expect(lifted.y).toBeGreaterThan(Number(y)+.04);
+    expect(puppetPose('cast',3,.38,false,.4,'inkcap').tailBend).not.toBe(puppetPose('idle',3,0,false,.4,'inkcap').tailBend);
+    expect(puppetPose('cast',3,.38,false,.4,'clover').tailBend).toBe(0);
   });
 
 });

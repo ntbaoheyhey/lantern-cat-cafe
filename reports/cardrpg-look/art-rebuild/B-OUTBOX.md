@@ -65,3 +65,6 @@ ART-REPORT.md now records shipped25-unit coverage, accepted P10films, R0comparis
 
 ## P14 — Spool Ram planted horn dip
 Spool Ram alone gains an authored horn dip and delayed tail recovery. Counter-transforms keep four local hoof contacts stable as its body leans/breathes. Reduced motion remains still; other profiles, atlases/rigs, sockets, gameplay and HUD remain unchanged. Saved16views/8casts/19tests/type/lint/parityPASS;0socket/HP/boundsfailures; warm p95<=16.8ms. Actual combined A6+B38,176,310B/headroom1,823,690B; Bassetshare unchanged. Evidence p14/REVIEW.md and compact evidence/.
+
+## P16 — Inkcap authored lantern and per-actor tail
+Inkcap raises its right-hand lantern during casting and opens the offhand. A subtle tail bend uses independent per-actor material uniforms; cached geometry/atlases/rigs stay unchanged, no extra draw call. Attempt1 loweringgesture was rejected; attempt2 actualsocket lift0.06946 accepted at both sizes.16pairedviews/12casts/22tests/type/lint/parityPASS;0shader/page/socket/HP/boundsfailures, warm p95<=16.8ms. Actual combined38,176,938B/headroom1,823,062B; Bassetshare unchanged. No new HUD/event/flag contract. Evidence p16/REVIEW.md.
