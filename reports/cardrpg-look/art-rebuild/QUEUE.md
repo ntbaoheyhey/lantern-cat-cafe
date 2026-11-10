@@ -59,3 +59,5 @@ Local TRELLIS override 2026-11-10T07:30:26.787573+00:00: user-authorized Apple S
 2026-11-10T09:20Z: local1024 smoke1 timed out at1082.6s after sampling, noGLB. Smoke2 isolated512/texture1024 newseed20262109 queued; decoder tracing distinguishes slow decode from export. No change to existing Mochi/Soot or runtime acceptance.
 
 2026-11-10T09:45Z: smoke512 exported in656.7s. Inspection caught native UV-v inversion; corrected existing GLB without inference, then repaired black texture gutters. Padded comparison waits for shared lease; roster remains gated. Added root-prop guard for reconstructed units (7touchedtests/type/lintPASS). Draft cat configs prepared; no new runtime acceptance.
+
+2026-11-10T09:51:37.220827+00:00: resumed existing Button trial14738/14759, no duplicate. Smoke repaired render inspected in prior session; keep old Mochi/Soot. Follow current source -> packed motion -> battle review before next native unit.

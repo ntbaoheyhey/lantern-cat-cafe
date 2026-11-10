@@ -1,5 +1,5 @@
-Đang tiếp tục QUEUE; giữ nguyên Mochi/Soot cũ.
-TRELLIS local512 đã xuất GLB trong10phút57giây, không còn vướng đăng nhập/DINOv3.
-Đối chiếu phát hiện lỗi UV và mép texture; đang sửa trên GLB đã có, không chạy AI lại.
-Đã sửa điều kiện tránh gắn thêm đạo cụ vào model3D;7kiểm tra liên quan/type/lintqua.
-Button Guard/Yarn Giant sẽ chạy sau khi mesh thử nghiệm qua kiểm tra hình ảnh.
+Đã nối tiếp tiến trình cũ; không dựng lại Mochi/Soot.
+DINOv3 và weights đã sẵn sàng; TRELLIS chạy local, không dùng trình duyệt tạo model.
+Lỗi UV và mép texture đã sửa trên bản thử; mesh512 vẫn thô hơn Mochi cũ.
+Button Guard đang dựng từ concept gốc; sẽ kiểm tra mesh, chuyển động và trận thật trước khi mở rộng.
+QUEUE tiếp tục; báo cáo hiện PARTIAL, chưa đạt mục tiêu8,5.

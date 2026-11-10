@@ -7,7 +7,8 @@ Do not redo R0/M5/S6, Q1/Q2/Q4, Mochi/Soot conversions, or completed VFX sources
 Latest INBOX: TRELLIS local-mps only, one model at a time. No browser generation. Internal chat browser for review only.
 External install ~/art/trellis-mac at d58628f4; Python3.11/Torch2.15/MPS/pipeline import pass. DINOv3 access confirmed.
 All19weight files cached16.18GB. Old smoke waiters80150/98355 stopped before inference; replacement smoke uses250ms atomic-lock polling (smoke-local.log). Do not duplicate.
-Smoke512 attempt2 EXPORTED in656.715s. Raw review found UV-v inversion and dark gutter seams; UV corrected on the same mesh, nearest-texel gutter repair render pending under lease (smoke-review-padded.log). Do not start roster before inspected smoke approval. Preserve shipped Mochi/Soot.
+Smoke512 attempt2 EXPORTED in656.715s. UV-v/gutter repair reviewed: colour alignment and dark seams fixed; geometry remains coarser than old Mochi. Keep old Mochi/Soot.
+One Button Guard trial approved and RUNNING since09:48:40UTC: local-roster pid14738, inference14759, limit1. Do not duplicate. Log ~/art/look-v3/local-generation/outputs/button-guard/attempt-1/generation.log. Inspect source, packed motion and real battle before expanding.
 Then Button/Yarn first, then remaining roster. Max3local attempts per unit with new seeds, alpha-only/noRMBG, shared lease, no overlapping B heavy jobs.
 Q3 four-unit decision and Q5 runtime still unfinished; all25original concept masters complete/provenanced.
 Q6 all12hero skill/ult/passive and13enemy families now wired; no duplicate enemy props.7.7auditPARTIAL: normal/passive uniqueness and large motif face clipping remain.

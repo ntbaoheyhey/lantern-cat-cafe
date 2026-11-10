@@ -76,3 +76,8 @@ User asks for downloaded models to be processed locally without browser automati
 
 ## 2026-11-10 native export production budget
 Smoke512 completed geometry/texture decode in330.8s after model load, producing2.88Mtri. KDTree xatlas on the200K pre-bake surface then exceeded3minutes. Future roster calls use an explicit100K pre-UV source budget, matching the original accepted Mochi/Soot conversion class; final22K-class meshopt remains a separate reviewed operation. The ongoing200K smoke is preserved unchanged. Receipt records sourceFaces and exact exporter hash; actual first roster source must pass comparison before further units. No automatic runtime acceptance.
+
+## Native smoke repair and bounded opponent trial
+- Inspected repaired source views: UV-v alignment and nearest-texel gutter fill resolve misplaced colours and black webbing without another inference. Native512 remains visibly coarser (agent appeal6.9) than preserved Mochi8.2. Never replace existing Mochi/Soot.
+- Continue one Button Guard source trial at512geometry/1024texture/100Kpre-UV, fixedseed20261111. Review source, packed motion and identical battle shots before authorizing broader local conversion. The existing run14738/14759 is resumed, not duplicated.
+- Draft enemy role mappings use the existing original rigs; config files are preparation only, not runtime approval.

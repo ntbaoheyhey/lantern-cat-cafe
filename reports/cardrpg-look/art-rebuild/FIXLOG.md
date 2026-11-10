@@ -103,3 +103,5 @@ Attempt2: source baker averages unfilled pixels against black. Reconstruct occup
 
 ## B-LOCAL-005 generated models receive duplicate legacy props S2
 Repro: rigid-unit root is named after asset; CardUtensil only checks a role-named root for lookProps. Two new regression cases fail by adding extra props to reconstructed Panko/Button; Mallow case guards a third route. Attempt1: honor the existing model-root lookProps flag inside lookV2 as well as legacy role-root flags. All7touched tests/type/lint PASS. Real battle validation follows first native foe install; defaults and v2 routes unchanged.
+
+B-LOCAL-004 attempt2 verified: padded front/side/back restores coherent surface colour and removes dark webbing; occupied texels/geometry/UV/index bytes unchanged. UV/gutter bugs RESOLVED; small pale speckles and noisy512geometry remain separate quality limits. One Button trial approved; existing Mochi retained.

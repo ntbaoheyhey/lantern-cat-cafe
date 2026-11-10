@@ -4,7 +4,7 @@ Latest INBOX authorizes `shivampkumar/trellis-mac` on this Mac; it replaces the 
 
 - External install: `/Users/bao/art/trellis-mac`, commit `d58628f4f5b9c3de8274cb110074154f4b31cef2`.
 - Setup completed using Python3.11.17 / Torch2.15.0. MPS availability and pipeline import pass. The initial setup chose system Python3.9; its incomplete venv is preserved separately.
-- MetalToolchain download cannot run with only CommandLineTools selected. Optional native backends failed to compile; upstream selected `conv_none` + KDTree texture baker. Actual speed/quality still require the smoke run.
+- MetalToolchain download cannot run with only CommandLineTools selected. Optional native backends failed to compile; upstream selected `conv_none` + KDTree texture baker. The512 smoke exports in656.7s; its texture corrections passed the source comparison.
 - HF login and access to DINOv3 `model.safetensors` verified. No credential was read, printed or copied. All19 required files (16,180,031,168B) are now cached in the standard external HF cache; `~/art/look-v3/local-setup/weights.json` tracks files. No RMBG download.
 - All25 concept inputs are RGBA. `image-to-3d.py` validates meaningful alpha and patches the eager RMBG constructor to `None`; only the existing alpha preprocessing path is allowed. Patch/source hashes are recorded.
 
@@ -24,10 +24,12 @@ Successful standalone textured GLB files are atomically published to `/Users/bao
 
 Inspect a supplied GLB, author its unit geometry/rig config, then run `prepare-unit.mjs` for simplify/rig/pack/preview. Review motion in real battle, especially fused paws/props. No browser needed for any of these steps.
 
-Current status: SETUP PASS, WEIGHTS CACHED, smoke1024 attempt1 timed out after1082.6s; attempt2 uses512 geometry/1024texture and new seed20262109 under the same lease. SMOKE/ROSTER NOT YET VERIFIED. Four local guard tests pass (transparent input, no-RMBG patch, complete embedded export, explicit submission/preserved sources).
+Current status: SETUP PASS, WEIGHTS CACHED. Smoke1024 timed out after1082.6s; smoke512/texture1024 seed20262109 exported in656.715s. Native UV-v correction restores colour placement; nearest-texel gutters remove black padding contamination. The repaired source was reviewed; it remains coarser than the preserved original Mochi. One Button Guard trial is running; source/rig/battle approval is still required before broader conversion. Eight local guard tests pass.
 
 ## Sequential roster queue
 
 `local-roster.mjs --plan` lists pending conversions without starting inference. After inspecting the isolated smoke against the existing Mochi, record an external review JSON with `approvedForRoster:true`, `receipt` (absolute smoke receipt path), `modelSha256` and a written `comparison`. Then `node tools/cardrpg-look/art-rebuild/local-roster.mjs --submit --smoke-review <review.json>` processes the fixed-seed local queue one at a time, acquiring/releasing the shared lease per model. It preserves completed Mochi/Soot, limits each unit to three attempts, cools down after slow runs, honors STOP-B/deadline, and never accepts or installs runtime models automatically. Do not start it before smoke review.
 
-KDTree export omits the (x,z,-y) rotation in upstream o_voxel.postprocess.py:313. orient-local-glb.py applies that rigid basis conversion to positions/normals/tangents only, preserving native raw export and image/UV/index bytes. Guard test verifies bounds, untouched payload/source, and rejection of double conversion. Future local receipts include this correction; never apply it to Metal exports.
+KDTree export omits the (x,z,-y) rotation in upstream o_voxel.postprocess.py:313. orient-local-glb.py applies that rigid basis conversion to positions/normals/tangents and, with --native-uv, reverses the erroneous trimesh UV-v flip. Native raw export and image/index bytes are preserved. Guard test verifies bounds, untouched payload/source, and rejection of double conversion. Future local receipts include this correction; never apply it to Metal exports.
+
+Native gutter repair: configure_texture_gutters patches only the external KDTree empty-texel filling, retaining all valid samples. pad-native-texture.py repairs the existing smoke without re-inference; it reconstructs UV occupancy and preserves occupied pixels. Source/raw/corrected variants are retained; export/patch hashes go in each receipt.

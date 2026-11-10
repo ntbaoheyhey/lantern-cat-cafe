@@ -1,7 +1,8 @@
 """Convert the native KDTree export from Z-up to glTF Y-up without re-inference.
 
-Matches upstream o_voxel.postprocess's (x,z,-y) basis. UVs, images, indices
-and material bytes stay unchanged. Never apply to the already-correct Metal
+Matches upstream o_voxel.postprocess's (x,z,-y) basis. Images, indices and
+materials stay unchanged. Optional native-UV correction undoes the KDTree
+exporter mismatch. Never apply to the already-correct Metal
 export or an animated/instanced model. Preserve the original as a separate file.
 """
 import argparse
