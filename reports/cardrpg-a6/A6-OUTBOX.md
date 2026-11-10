@@ -20,3 +20,5 @@
 - A6 is preparing a bounded wall-clock correction inside its model only, keeping OFF/gallery behavior and B's files unchanged. Please consider the lost-frame playback time and the frame cost in B's next published performance pass; no canvas or asset edits are requested from another worktree.
 
 - 2026-11-10T17:05:46Z — Q13e DOM HUD: retain your P3 closer camera (cats40–50% of canvas height), 1.7–1.9x boss and face/HP separation. New HUD keeps existing82px top and148px bottom envelopes; brief art cut-in lasts800/400/267ms atx1/x2/x3. Please keep canvas damage numbers single-source; A6 adds no new number layer. Will merge published puppets/framing before final battle visual review.
+
+- 2026-11-10T18:55:15Z Q13g final: actual Chromium/Metal normal x1 median22.13s (10), boss sample77.33s (3 before boss-only second cap); same17-round boss124.613→88.49s with identical outcome. Frame median/p9516.7ms. A6 only shortened ordinary action plans; all ultimates/boss signatures and canvas ownership retained. Q14 now adopts published P5–P9.

@@ -60,3 +60,15 @@ Bản nháp Túi/Tháp/Relic được giữ và rà lại; phần thưởng trê
 2026-11-10T18:37:54Z: Tiếp tục đúng Q13g phần hai đang chạy, giữ bản đo và toàn bộ sửa đổi dở; Git trùng origin, còn148GiB.
 Không chạy lại onboarding/Q0–Q13f đã xong. Prompt hiện tại trùng tệp đã lưu nguyên văn.
 Bản nháp Quà hằng ngày sẽ giảm chữ nhỏ/thanh tiến độ dư, giữ nguyên quà và điều kiện nhận.
+
+2026-11-10T18:47:58Z: Q13g đủ10trận thường: trung vị22,13giây;3boss77,33giây;0lỗi/kẹt. Trận dài đối chiếu vẫn chờ lượt khóa B.
+Đã áp dụng bản nháp Túi/Tháp/Relic/Quà hằng ngày và sửa chữ lựa chọn/lý do thua; typecheck, lint và16test UI đạt.
+Checkpoint f3b7d3408 đã đẩy; chưa đánh dấu Q13g/Q14a xong trước khi xem kết quả đo và ảnh.
+
+2026-11-10T18:53:48Z: Tiếp tục đúng Q13g/Q14a đã lưu; boss đối chiếu đạt88,49giây, giữ nguyên thắng/thua và17vòng.
+Bộ ảnh dừng ở kiểm tra bàn phím lựa chọn bản đồ; đang xác định nguyên nhân rồi chụp tiếp phần thiếu, không đo lại phần đã đạt.
+Git trùng origin, còn147GiB; giữ toàn bộ bản nháp và Vite A6.
+
+2026-11-10T18:55:15Z: Q13g xong: thường trung vị22,13giây/10trận; boss đối chiếu88,49giây, giảm từ124,61giây và giữ nguyên kết quả.
+Khung hình trung vị/p9516,7ms; giữ nguyên tuyệt kỹ và chiêu đặc trưng boss. Lỗi kiểm tra bản đồ do bộ dữ liệu chụp thiếu nút hiện tại, đã sửa công cụ.
+Tiếp tục Q14 tích hợp tranh/hiệu ứng/sân mới của B, đồng thời hoàn tất các ảnh Q14a còn thiếu.
