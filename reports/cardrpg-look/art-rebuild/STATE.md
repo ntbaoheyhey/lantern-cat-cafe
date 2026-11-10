@@ -1,11 +1,11 @@
 # Lane B current state
 
 ACTIVE — continue NON-STOP-RUN and QUEUE, checkpoints are not stops.
-Worktree /Users/bao/taskbar-hero-cardrpg-b2; branch codex/cardrpg-art-r1-2026-11-09; draft #427; pushed7565392e9.
+Worktree /Users/bao/taskbar-hero-cardrpg-b2; branch codex/cardrpg-art-r1-2026-11-09; draft #427; pusheda56f43b42.
 Q1/Q2/Q4/Q9 DONE. Q3 four-unit close and Q5 runtime roster pending local TRELLIS smoke.
 Existing Mochi/Soot conversions and all25 original concept masters are preserved.
 Latest INBOX: local-mps only, alpha inputs, no RMBG, one inference at a time under timing lease.
-Smoke512 UV/gutter repair reviewed; native geometry remains coarser. Preserve old Mochi/Soot. One Button Guard trial RUNNING since09:48:40UTC (local-roster14738/inference14759,limit1); do not duplicate. Source/packed motion/real battle review required before expansion.
+Smoke512 UV/gutter repair reviewed; native geometry remains coarser. Preserve old Mochi/Soot. Button attempt1 timed out in xatlas1081.178s/noGLB. Automatic retry stopped. Attempt2 helper97800 waits for before capture6114, then newseed20262111/50K/512/1024 with decoded checkpoint. Do not duplicate. Inspect source/packed motion/battle before expansion.
 Q6 generated VFX12hero kits+13enemy families implemented; audit7.7PARTIAL. Third bounded repair has type/lint/10touchedtests/build/parity PASS; final shots/10casts/72facesPASS;1xfilm external, continuous review pending.
 Q7 closer camera/key checkpoint7.5;1440/1024posters/96facesPASS. Runtime roster coverage pending.
 Q8 source portraits/icons manifest prepared; final matching waits for roster.

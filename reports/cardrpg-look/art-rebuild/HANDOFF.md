@@ -2,13 +2,13 @@
 
 ACTIVE — user explicitly resumed. Continue NON-STOP-RUN and QUEUE; checkpoints are not stops.
 Worktree /Users/bao/taskbar-hero-cardrpg-b2; branch codex/cardrpg-art-r1-2026-11-09; draft#427.
-Latest pushed7565392e9: native timeout diagnosis, lossless orientation guards, final VFX evidence and byte-exact archive. Draft427 remains open.
+Latest pusheda56f43b42: native timeout diagnosis, lossless orientation guards, final VFX evidence and byte-exact archive. Draft427 remains open.
 Do not redo R0/M5/S6, Q1/Q2/Q4, Mochi/Soot conversions, or completed VFX sources and phase checks.
 Latest INBOX: TRELLIS local-mps only, one model at a time. No browser generation. Internal chat browser for review only.
 External install ~/art/trellis-mac at d58628f4; Python3.11/Torch2.15/MPS/pipeline import pass. DINOv3 access confirmed.
 All19weight files cached16.18GB. Old smoke waiters80150/98355 stopped before inference; replacement smoke uses250ms atomic-lock polling (smoke-local.log). Do not duplicate.
 Smoke512 attempt2 EXPORTED in656.715s. UV-v/gutter repair reviewed: colour alignment and dark seams fixed; geometry remains coarser than old Mochi. Keep old Mochi/Soot.
-One Button Guard trial approved and RUNNING since09:48:40UTC: local-roster pid14738, inference14759, limit1. Do not duplicate. Log ~/art/look-v3/local-generation/outputs/button-guard/attempt-1/generation.log. Inspect source, packed motion and real battle before expanding.
+Button attempt1 timed out in xatlas at1081.178s; old runner14738/inference14759 stopped after terminal receipt. No GLB. Attempt2 helper session97800 waits for matching before capture6114, then runs newseed20262111/50Kpre-UV/512/1024. Do not duplicate. Next source checkpoint preserves decoded data before UV. Inspect source/packed motion/battle before expansion.
 Then Button/Yarn first, then remaining roster. Max3local attempts per unit with new seeds, alpha-only/noRMBG, shared lease, no overlapping B heavy jobs.
 Q3 four-unit decision and Q5 runtime still unfinished; all25original concept masters complete/provenanced.
 Q6 all12hero skill/ult/passive and13enemy families now wired; no duplicate enemy props.7.7auditPARTIAL: normal/passive uniqueness and large motif face clipping remain.

@@ -24,7 +24,7 @@ Successful standalone textured GLB files are atomically published to `/Users/bao
 
 Inspect a supplied GLB, author its unit geometry/rig config, then run `prepare-unit.mjs` for simplify/rig/pack/preview. Review motion in real battle, especially fused paws/props. No browser needed for any of these steps.
 
-Current status: SETUP PASS, WEIGHTS CACHED. Smoke1024 timed out after1082.6s; smoke512/texture1024 seed20262109 exported in656.715s. Native UV-v correction restores colour placement; nearest-texel gutters remove black padding contamination. The repaired source was reviewed; it remains coarser than the preserved original Mochi. One Button Guard trial is running; source/rig/battle approval is still required before broader conversion. Eight local guard tests pass.
+Current status: SETUP PASS, WEIGHTS CACHED. Smoke1024 timed out after1082.6s; smoke512/texture1024 seed20262109 exported in656.715s. Native UV-v correction restores colour placement; nearest-texel gutters remove black padding contamination. The repaired source was reviewed; it remains coarser than the preserved original Mochi. Button attempt1 timed out in xatlas ComputeCharts at1081.178s after successful decoding; no GLB. Attempt2 uses a new seed and50Kpre-UV, with decoded checkpoint before UV for local re-export. Source/rig/battle approval is required before broader conversion. Nine local guard tests pass.
 
 ## Sequential roster queue
 
@@ -33,3 +33,5 @@ Current status: SETUP PASS, WEIGHTS CACHED. Smoke1024 timed out after1082.6s; sm
 KDTree export omits the (x,z,-y) rotation in upstream o_voxel.postprocess.py:313. orient-local-glb.py applies that rigid basis conversion to positions/normals/tangents and, with --native-uv, reverses the erroneous trimesh UV-v flip. Native raw export and image/index bytes are preserved. Guard test verifies bounds, untouched payload/source, and rejection of double conversion. Future local receipts include this correction; never apply it to Metal exports.
 
 Native gutter repair: configure_texture_gutters patches only the external KDTree empty-texel filling, retaining all valid samples. pad-native-texture.py repairs the existing smoke without re-inference; it reconstructs UV occupancy and preserves occupied pixels. Source/raw/corrected variants are retained; export/patch hashes go in each receipt.
+
+Native exporter now saves an atomic external .decoded.npz immediately before UV (simplified geometry, voxel colours, origin/scale). This preserves model output for export-only repair; it does not alter inference. Its patch/hash is recorded in future receipts. Attempt1 did not have this checkpoint and cannot be claimed recoverable.

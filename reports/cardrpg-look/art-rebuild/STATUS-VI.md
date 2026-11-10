@@ -1,5 +1,5 @@
-Đã nối tiếp tiến trình cũ; không dựng lại Mochi/Soot.
-DINOv3 và weights đã sẵn sàng; TRELLIS chạy local, không dùng trình duyệt tạo model.
-Lỗi UV và mép texture đã sửa trên bản thử; mesh512 vẫn thô hơn Mochi cũ.
-Button Guard đang dựng từ concept gốc; sẽ kiểm tra mesh, chuyển động và trận thật trước khi mở rộng.
-QUEUE tiếp tục; báo cáo hiện PARTIAL, chưa đạt mục tiêu8,5.
+Đang tiếp tục QUEUE; giữ nguyên Mochi/Soot và toàn bộ concept cũ.
+Button lượt1 dựng xong hình/màu nhưng hết18phút ở xatlas, chưa có GLB; lỗi và log đã lưu.
+Lượt2 dùng seed mới, lưới nguồn50K và lưu dữ liệu trước UV để tránh mất kết quả; chờ ảnh trước cùng góc máy.
+Đã sửa lớp phủ đỏ sai trên texture quái3D; kiểm tra mã qua, trận thật còn chờ.
+HF/DINOv3 sẵn sàng; không cần thao tác trình duyệt hay trả phí.

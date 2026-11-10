@@ -105,3 +105,10 @@ Attempt2: source baker averages unfilled pixels against black. Reconstruct occup
 Repro: rigid-unit root is named after asset; CardUtensil only checks a role-named root for lookProps. Two new regression cases fail by adding extra props to reconstructed Panko/Button; Mallow case guards a third route. Attempt1: honor the existing model-root lookProps flag inside lookV2 as well as legacy role-root flags. All7touched tests/type/lint PASS. Real battle validation follows first native foe install; defaults and v2 routes unchanged.
 
 B-LOCAL-004 attempt2 verified: padded front/side/back restores coherent surface colour and removes dark webbing; occupied texels/geometry/UV/index bytes unchanged. UV/gutter bugs RESOLVED; small pale speckles and noisy512geometry remain separate quality limits. One Button trial approved; existing Mochi retained.
+
+## B-LOCAL-006 reconstructed foe atlas multiplied by legacy red S2
+Repro: native-colour-before test passes a generated v3 Button material; styleReadableEnemy changes white albedo multiplier to782b42, suppressing authored brass/eye colours and changing roughness. One of three focused cases fails; v2/OFF pass. Attempt1: preserve generated-v3 atlas multiplier and authored roughness, retain existing enemy rim/key relief. Real Button battle check follows source export; no runtime approval from a material test alone.
+
+## B-LOCAL-007 Button native export exceeds lease S2
+Attempt1: seed20261111/512/1024texture/100Kpre-UV. Decode completed454.7s after model load,3,876,382tri; xatlas ComputeCharts remained active until1081.178s wrapper timeout. No GLB exported. CPU sample retained; automatic same-parameter retry stopped after terminal receipt, no inference interrupted early.
+Hypotheses: complex UV chart construction (confirmed sampled stack), excessive pre-UV surface count, thermal throttling (not established). Attempt2: newseed20262111/50Kpre-UV, same512/1024; preserve decoded source before UV so an export failure can be repaired without further inference. Source quality remains unverified.

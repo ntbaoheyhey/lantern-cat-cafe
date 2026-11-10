@@ -127,6 +127,29 @@ def configure_texture_gutters(trellis):
     return {'path': str(path), 'sha256': sha(path), 'purpose': 'nearest valid texel gutters; authored texels unchanged'}
 
 
+def configure_export_checkpoint(trellis):
+    # Keep decoded geometry/voxel colour before the potentially slow UV stage.
+    # An exporter failure can then be repaired without another model request.
+    path = trellis / 'generate.py'
+    body = path.read_text()
+    marker = '            # Lane B: preserve decoded source before UV export'
+    anchor = '            print("  UV unwrapping with xatlas...")'
+    if marker not in body:
+        if body.count(anchor) != 1:
+            raise ValueError('Upstream UV stage changed; inspect before checkpointing')
+        replacement = marker + '''
+            checkpoint = args.output + ".decoded.npz"
+            np.savez(checkpoint + ".tmp.npz", vertices=bake_verts, faces=bake_faces,
+                     voxel_coords=voxel_coords.numpy(), voxel_attrs=voxel_attrs.numpy(),
+                     origin=origin.numpy(), voxel_size=np.asarray(vs),
+                     texture_size=np.asarray(tex_size))
+            os.replace(checkpoint + ".tmp.npz", checkpoint)
+            print(f"  Decoded checkpoint: {checkpoint}; {len(bake_faces):,} faces", flush=True)
+'''
+        path.write_text(body.replace(anchor, replacement + anchor))
+    return {'path': str(path), 'sha256': sha(path), 'purpose': 'decoded source checkpoint before UV; no inference changes'}
+
+
 def local_generate(args):
     if not re.fullmatch(r'[a-z][a-z0-9-]*', args.id):
         raise ValueError('Invalid unit id')
@@ -186,6 +209,7 @@ def local_generate(args):
                        alphaOnlyPatch=disable_rmbg(trellis), decoderTracePatch=trace_decoders(trellis),
                        exportPatch=configure_export(trellis), sourceFaces=args.source_faces,
                        textureGutterPatch=configure_texture_gutters(trellis),
+                       exportCheckpointPatch=configure_export_checkpoint(trellis),
                        generateSha256=sha(trellis / 'generate.py'))
 
         def save(status, **extra):

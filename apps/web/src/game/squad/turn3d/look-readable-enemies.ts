@@ -8,6 +8,7 @@ export function styleReadableEnemy(model: T.Object3D, id: string) {
   // Painted rigs carry their authored palette; never tint their atlas pink.
   if (model.userData.lookPainted) return;
   const v3 = isLookArtV3();
+  const generated = v3 && model.userData.lookGenerated === true;
   model.traverse(node => {
     if (!(node instanceof T.Mesh)) return;
     const eye = /eye/.test(node.name);
@@ -16,9 +17,11 @@ export function styleReadableEnemy(model: T.Object3D, id: string) {
     const materials = Array.isArray(node.material) ? node.material : [node.material];
     for (const material of materials) {
       if (!(material instanceof T.MeshStandardMaterial)) continue;
-      material.color.set(v3 ? (eye ? '#fff0d2' : trim ? '#ba8143' : '#782b42') : (eye ? '#ffe0b2' : trim ? '#cfa68a' : '#ddb0c8'));
+      // Reconstructed foes already contain their crimson/brass/eye palette in
+      // the atlas. Multiplying it by red would erase brass and dim the eyes.
+      if (!generated) material.color.set(v3 ? (eye ? '#fff0d2' : trim ? '#ba8143' : '#782b42') : (eye ? '#ffe0b2' : trim ? '#cfa68a' : '#ddb0c8'));
       if(!eye){material.emissive.set(v3 ? '#641628' : '#d294aa');material.emissiveIntensity=v3 ? .12 : .78;}
-      material.roughness = eye ? .34 : ceramic ? .48 : .84;
+      if (!generated) material.roughness = eye ? .34 : ceramic ? .48 : .84;
       if (eye) { material.emissive.set('#ff9d48'); material.emissiveIntensity = v3 ? 1.6 : .22; }
       if (!material.userData.b2Enemy) {
         material.userData.b2Enemy = true;

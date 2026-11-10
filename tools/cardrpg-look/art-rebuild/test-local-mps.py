@@ -16,6 +16,20 @@ spec.loader.exec_module(runner)
 
 
 class LocalMpsGuards(unittest.TestCase):
+    def test_decoded_checkpoint_is_before_uv_without_changing_inference(self):
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td); path = root / 'generate.py'
+            anchor = '            print("  UV unwrapping with xatlas...")'
+            path.write_text('infer_original()\n' + anchor + '\nuv_original()\n')
+            first = runner.configure_export_checkpoint(root)
+            self.assertEqual(runner.configure_export_checkpoint(root), first)
+            body = path.read_text()
+            self.assertTrue(body.startswith('infer_original()\n'))
+            self.assertTrue(body.endswith('uv_original()\n'))
+            self.assertLess(body.index('os.replace('), body.index(anchor))
+            path.write_text('unknown upstream\n')
+            with self.assertRaises(ValueError): runner.configure_export_checkpoint(root)
+
     def test_native_gutters_patch_rejects_unknown_baker_and_is_idempotent(self):
         with tempfile.TemporaryDirectory() as td:
             root = Path(td); (root/'backends').mkdir()
