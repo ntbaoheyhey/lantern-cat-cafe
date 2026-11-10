@@ -1,11 +1,18 @@
-# Lane A6 — 2026-11-10 16:45 UTC
-- Q0–Q12 and Q13a/b complete. Q13c Recruit reveal is next; follow TASK.md/QUEUE.md continuously.
-- Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/cardrpg-a6-q0-2026-11-10; draft #438.
-- Q13b warm scoped tokens, original art, rarity frames, large crew, readable 720p actions, results/count-ups. LOOK-SCORES records self-review 7.3–8.0.
-- Web types/lint and 37 touched tests pass; earlier broad 1,905 tests pass. Browser receipts no errors/broken images/horizontal overflow.
-- Final evidence: shots/q13b, q13b-details, q13b-empty, q13b-rarity. Reviewer fixtures only.
-- Preserved uncommitted first-session.mjs and with-timing-lock.mjs edits for Q13f/Q15; no restore/archive.
-- Vite PID84939 port5960 active, log /tmp/cardrpg-a6-vite.log. No active review browser.
-- Heavy jobs use node tools/cardrpg-big/with-timing-lock.mjs TASK nice -n 10 node SCRIPT, <=20min; screenshot tool has19min cap. Free disk161GiB.
-- B published P2 pilots Mochi/Soot/Yarn; camera P3 next. Recheck published HANDOFF/STATUS/B-OUTBOX per item. Merge commits required at Q14; no PR merge/deploy/main/force push.
-- One agent. INBOX empty/no STOP-A6. Fresh Q15 seeds60001–60500 unused.
+# Lane A6 handoff — 2026-11-10T16:54:10Z
+NOW: Q13c Recruit reveal, final browser verification after Epic splash moved to body portal.
+Branch: codex/cardrpg-a6-q0-2026-11-10; last pushed SHA: 918102837bbe0b0a83ed009b74c309be9852389e; draft PR #438.
+NEXT: 1. Verify Epic artwork, skip and x10 ceremony at 1440x900/1280x720 (also reduced motion).
+NEXT: 2. Run touched Recruit tests + web typecheck/lint; update Q13c evidence/scores, tick only on pass, commit/push and update PR.
+NEXT: 3. Read rules/queue/TASK0+4/INBOX/B reports; start Q13d campaign map.
+RUNNING: Vite PID84939, port5960, log /tmp/cardrpg-a6-vite.log; no A6 review process found; no A6 timing lock held.
+RUNNING: Heavy jobs use node tools/cardrpg-big/with-timing-lock.mjs TASK nice -n 10 node SCRIPT, lease<=20min; read current lock before launching.
+DONE this session: onboarding preserved, 1f3d82ed3.
+DONE this session: Q13a original illustrated art, cfdbf79e1.
+DONE this session: Q13b warm screens and 720p layouts, 918102837.
+DONE this session: R-9 files saved; commit/push next (based on 918102837bbe0b0a83ed009b74c309be9852389e).
+KNOWN ISSUES: Q13c CSS/TSX/tests/review harness uncommitted; existing q13c screenshot directories require final review; last result not assumed.
+KNOWN ISSUES: preserved first-session.mjs and with-timing-lock.mjs edits for Q13f/Q15. Do not restore resume-drafts.tar.gz.
+KNOWN ISSUES: Q12 normal browser pacing and zero-loss curve still miss targets; Q13f/g queued.
+DECISIONS: Original attachment is immutable source; TASK.md is the saved prompt copy with verbatim R-9 appended.
+DECISIONS: Existing TASK matched the full original exactly; R-9 appended and no completed queue work restarted.
+DECISIONS: B merge commits allowed/required at Q14; no PR merge/deploy/main/force-push. One agent, original art only.

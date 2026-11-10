@@ -1,3 +1,9 @@
+# R-9 prompt receipt — 2026-11-10T16:54:10Z
+- Original attachment `wc -c`: 15237; `shasum -a 256`: 983341e0d8c47a62a6a267d553c78372251cfbab5170aee48451e3058b885629.
+- TASK.md (original + verbatim R-9) `wc -c`: 17582; `shasum -a 256`: 3206ffb2190fd95ee1948918f9bfe7cac923892cc16a6a12dfa2e3e8e4ceed8c.
+- Existing TASK already matched the original exactly; TASK still starts with those bytes; TASK.md is the only saved A6 prompt copy. Source attachment is unchanged.
+- Active: Q13c final browser verification. Q0–Q12/Q13a/Q13b complete. HANDOFF/RULES/QUEUE override historical state notes below.
+
 # Lane A6 state
 
 - Worktree: /Users/bao/taskbar-hero-cardrpg-a6 (reused existing clean worktree on the requested branch; fallback not needed).

@@ -19,3 +19,5 @@
 - Q13b xong: giao diện giấy kem/gỗ ấm, mèo lớn, khung hiếm rõ; Team có cấp/sao, túi và Relic dùng cùng màu hiếm.
 - Đã xem hai kích thước; thao tác chính vừa 720p. Typecheck/lint và 37 test liên quan qua, ảnh không lỗi/không tràn ngang.
 - Điểm tự đánh giá 7,3–8,0; tiếp tục Q13c tuyển mèo, chưa coi độ khó/nhịp trận là hoàn tất.
+
+- 2026-11-10T16:54:10Z: Đã lưu nguyên văn prompt và R-9; bổ sung RULES, viết lại HANDOFF. Tiếp tục kiểm tra Q13c, không làm lại Q0–Q13b.
