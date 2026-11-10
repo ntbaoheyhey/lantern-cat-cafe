@@ -10,6 +10,11 @@ test('Home fixed controls and claim dots reflect actionable model state',async({
 test('keyboard cycles a sheet and returns focus; reduced motion removes home animation',async({page})=>{
  await page.emulateMedia({reducedMotion:'reduce'});await page.goto('?ui=v3');const cats=page.getByRole('button',{name:'Cats',exact:true});await cats.focus();await page.keyboard.press('Enter');await expect(page.getByRole('dialog',{name:'Cats'})).toBeVisible();await page.keyboard.press('Shift+Tab');await expect(page.locator('.uv-sheet :focus')).toHaveCount(1);await page.keyboard.press('Escape');await expect(cats).toBeFocused();
  expect(await page.locator('.uv-home-crew figure').first().evaluate(e=>getComputedStyle(e).animationName)).toBe('none');
+ await expect(page.locator('.uv-lantern')).toHaveCount(2);
+ const motion=()=>page.locator('.uv-ambient *').evaluateAll(nodes=>nodes.map(e=>getComputedStyle(e).animationName));
+ expect((await motion()).every(name=>name==='none')).toBe(true);
+ await page.emulateMedia({reducedMotion:'no-preference'});await page.evaluate(()=>{const m=window.__depthReview!;m.state.settings.reducedMotion=true;m.notify()});
+ expect((await motion()).every(name=>name==='none')).toBe(true);
 });
 test('first real practice fight wins within 25 seconds using two clicks',async({page})=>{
  await page.goto('?ui=v3');await page.getByRole('button',{name:'Night Patrol'}).click();const started=Date.now();await page.getByRole('button',{name:'Fight',exact:true}).click();await expect(page.getByRole('heading',{name:'Victory',exact:true})).toBeVisible({timeout:25000});expect(Date.now()-started).toBeLessThanOrEqual(25000);await page.getByRole('button',{name:'Next',exact:true}).click();await expect(page.getByRole('button',{name:'Night Patrol'})).toBeVisible();

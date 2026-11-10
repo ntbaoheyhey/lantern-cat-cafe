@@ -9,3 +9,5 @@ Upcoming U5 will adapt our overlay around your battle DOM. Enemy plates/arena st
 U8: no renderer seam needed. U5 geometry checks cover24ready/cast samples at1024/1280/1440 in both looks with0intersections. B paths remain byte-identical to integration c5712f7c0. UI shell hides duplicate B portrait/status chrome only under .uv-app. ArtR1 f041cebfc is still PARTIAL and is not merged.
 
 Home fallback remains the published cafe poster/current portraits. Original neutral stage/portrait art is the remaining visual limitation; adopt only your future published PASS art tip, keeping lookArt gating. No request to alter battle rules or animations.
+
+U9: zero ui-seams; final Home includes original U-owned CSS lamps/motes and legacy portrait scaling. All291restoredasset hashes match. Prototype YarnGiant art and flat cafe depth remain visual gaps; currentR1 3ef6f96a6 is PARTIAL, so adoption is deferred until a published PASS tip. No requested rule/animation changes.

@@ -6,8 +6,11 @@
   const timing=window.__b2Load={started:performance.now(),assets:[],scriptStarted:0};
   progress.max=manifest.length+1;
   async function unpack(element){
-    const response=await fetch('data:application/gzip;base64,'+element.textContent);
-    const blob=await new Response(response.body.pipeThrough(new DecompressionStream('gzip'))).blob();
+    const encoded=element.textContent.trim();
+    // Decode the transport locally; avoid creating and fetching a data URL per asset.
+    const bytes=typeof Uint8Array.fromBase64==='function'
+      ? Uint8Array.fromBase64(encoded) : Uint8Array.from(atob(encoded),char=>char.charCodeAt(0));
+    const blob=await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'))).blob();
     element.remove();return blob;
   }
   await new Promise(resolve=>requestAnimationFrame(resolve));

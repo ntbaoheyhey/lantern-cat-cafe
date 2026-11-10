@@ -12,6 +12,7 @@ export function HomeScene({m,onRecruit,onTasks}:{m:DepthModel;onRecruit:()=>void
  const hours=Math.min(8,Math.max(0,(m.cafeNow-m.state.idle.lastAt)/3600000));
  return <div className="uv-scene" aria-label="Living cafe">
   <img className="uv-cafe-poster" src={cafePoster} alt="Lantern-lit cafe, ready for the evening shift"/>
+  <div className="uv-ambient" aria-hidden="true"><i className="uv-lantern"/><i className="uv-lantern"/>{[0,1,2,3,4,5].map(i=><i className="uv-mote" key={i}/>)}</div>
   <div className="uv-home-crew" aria-label="Your current crew">{m.state.team.map((id,index)=><figure key={id} style={{animationDelay:`${index*-.8}s`}}><img {...portraitProps(id)} alt={R.CAT_BY_ID[id]!.name}/><figcaption>{R.CAT_BY_ID[id]!.name}</figcaption></figure>)}</div>
   <div className="uv-scene-vignette"/>
   <div className="uv-home-title"><small>THE EVENING SHIFT</small><h1>Your evening crew</h1></div>

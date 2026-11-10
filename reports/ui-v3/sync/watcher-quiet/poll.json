@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "command": "node tools/ui-v3/sync-watch.mjs",
+  "stdoutBytes": 0,
+  "stderrBytes": 0,
+  "heartbeat": {
+    "at": "2026-11-10T02:02:29.630Z",
+    "accepted": {
+      "A": "1195b13fa",
+      "B": "440ec28902cac31f8f76634e908856c942dd41df",
+      "art": null,
+      "publishedBoth": false,
+      "note": "U9 R1 merges published M5 ancestry. Runtime/artifact unchanged. A remains S6; art R1 PARTIAL excluded. No stop condition met.",
+      "BIntegration": "c5712f7c0f7196a3a2276662743d8fc115eb2362"
+    },
+    "noNewPublishedTip": true
+  },
+  "note": "Stopped only the smoke child after its first successful live poll; no STOP-UI file was created."
+}
