@@ -1,6 +1,6 @@
 # Lane U · Living Cafe
 
-NOW U9 PUBLISHED · SYNC MODE: draft #437; evidence bc48c5da0; runtime1651d011d. Status PARTIAL (G6 and8.475/10score); all other gates PASS. Stop condition not reached.
+NOW STOPPED BY USER — 2026-11-10 02:36 UTC: handoff saved; watcher terminated. Draft #437; latest code a89a78ce0; runtime1651d011d. Status PARTIAL (G6 and 8.475/10 score); all other gates PASS. Resume only after a new user instruction.
 
 2026-11-10: resumed clean existing U0 worktree /Users/bao/taskbar-hero-ui-v3.
 BASE origin/codex/cardrpg-v5a-s6-2026-11-09 1195b13fa (#424).
@@ -58,3 +58,5 @@ SYNC watcher repair verified: seven eligibility checks PASS; G1 typecheck/lint/1
 SYNC watcher correction published as a221b0b28 on draft #437; report ledger cee88007d. Successful ten-minute polls found no qualifying tips. A historical R0 missing report produced an expected-but-misleading stderr diagnostic; capture Git stdio explicitly and verify the quiet poll plus G1. Only our own watcher process was stopped for this repair; game and demo remain unchanged.
 
 SYNC optional-report diagnostic FIXED: real poll succeeded with zero stdout/stderr bytes; seven eligibility cases and G1 PASS (1,867 web tests) after shared-lock handoff. Two fresh offline 1280 Home captures reviewed, zero browser errors; game/demo source and SHA unchanged. Evidence: sync/watcher-quiet/SUMMARY.md. Publish the quiet-read fix and ledger; resume the ten-minute watcher. Stop conditions remain false.
+
+STOP 2026-11-10 02:36 UTC: user explicitly requested “lưu handoff và dừng”. Stopped our watcher PID 32417 (exit 143); no watcher remains. Last completed poll at 02:33:59 UTC found no qualifying tips. Old pending/ready M4/M5 entries are already ancestors of HEAD, so no refresh is pending. Saved sync/STOPPED.json and updated HANDOFF/report/STATUS-VI. Latest implementation a89a78ce0, prior ledger 343ef5690; documentation-only stop publication follows. Do not resume automatically. No new game changes, builds, screenshots or gate claims in this stop handoff.
