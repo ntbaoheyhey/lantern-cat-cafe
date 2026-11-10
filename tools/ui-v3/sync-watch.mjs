@@ -5,7 +5,7 @@ import {setTimeout as sleep} from 'node:timers/promises';
 import {publishedArtPass} from './published-art-status.mjs';
 const root=process.cwd(),out='reports/ui-v3/sync';mkdirSync(out,{recursive:true});
 const deadline=Date.parse('2026-11-20T18:00:00Z'),baseline='1195b13fa';
-const git=(...args)=>execFileSync('git',args,{cwd:root,encoding:'utf8',maxBuffer:4*1024*1024}).trim();
+const git=(...args)=>execFileSync('git',args,{cwd:root,encoding:'utf8',stdio:'pipe',maxBuffer:4*1024*1024}).trim();
 const stateFile=out+'/accepted.json';
 const accepted=existsSync(stateFile)?JSON.parse(readFileSync(stateFile,'utf8')):{A:baseline,B:'c5712f7c0',art:null};
 function stop(){return existsSync('STOP-UI')?'STOP-UI':Date.now()>=deadline?'deadline':accepted.publishedBoth?'both-lane-refresh':null}
