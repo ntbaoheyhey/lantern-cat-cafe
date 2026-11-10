@@ -121,3 +121,5 @@ P18 accepted distinct servingtray/cup movement, no whole-roster uplift. P19 [aut
 2026-11-10T20:41:44.434379+00:00 P21 [auto]: after P19 acceptance, Binding Thread is a lowest unrefined motion7.5/overall7.7 row and appears repeatedly in boss encounters. Author a forward knot reach with arm lag and two planted feet, using only its six existing rigid layers. Keep the painted thin arms and metal rims intact; no invented tail/tassels or mesh bend. P15 stable helper positions remain unchanged.
 
 2026-11-10T20:55:15.142911+00:00 P22 resumes saved plan after published P21: Practice Cushion remains overall7.7/motion7.5. Use whole-pillow squash and planted boots, not new tassel bones; limit differential head rotation because its face crosses the head/body seam. No atlas rebuild or re-review of accepted units.
+
+2026-11-10T21:00:05.500823+00:00 P23 selects Mochi from remaining motion7.5 rows: central starting hero, shield shared motion currently tips inward/down. Raise the existing shield/lantern part together; source mug is attached to apron, so no imaginary prop articulation. Tail uses existing per-actor shader and held-prop action timing.

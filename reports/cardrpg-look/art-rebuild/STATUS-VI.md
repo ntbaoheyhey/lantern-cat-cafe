@@ -120,3 +120,6 @@ Binding Thread đã duyệt bản sửa3: tay vươn rõ hơn, hai chân bám s�
 
 Practice Cushion đã duyệt: nén nhẹ rồi bật lại, tay găng đấm rõ hơn; đường chỉ và mặt liền, hai chân bám sàn.
 27test cùng16ảnh/8lượt chiêu/type/lint/parity đạt; chuyển động7,5→7,7, tổng giữ7,7. Bản chung38.189.302byte; tiếp tục Mochi nâng khiên.
+
+Mochi đã duyệt: đưa khiên và đèn lên phía trước, tay còn lại giữ thế đỡ; vai, viền khiên và chân vẫn liền.
+28test cùng16ảnh/12lượt chiêu/type/lint/parity đạt; chuyển động7,5→7,7, tổng giữ7,8. Bản chung38.189.362byte; tiếp tục nhịp nâng rồi rót trà của Clover.

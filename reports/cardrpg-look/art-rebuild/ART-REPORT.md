@@ -29,7 +29,7 @@ The accepted boss film is an uninterrupted **136.933333 seconds at x1**, with **
 
 The initial level-1 clips, the old boss excerpt and the first complete boss film are retained as diagnostics. Reviewing the latter revealed that two late summons shared existing helper positions. P15 corrects that issue with stable actor-ID lanes. The initial pair, surviving helpers, boss scale, cat scale and gameplay slots remain unchanged.
 
-The saved speed audit covers Mochi/Soot ultimates and Rain Spool at x1/x2/x3 plus reduced motion. Every beat and the canvas number cue remains sampled, with no face/HP overlap. Recording a film is not a frame-time benchmark. Full 1440×900 masters remain outside Git; the repository carries compact viewing proxies and contact sheets. Selected art-rebuild evidence is 119.72 MB, below its 120 MB budget. The normal film is an excerpt; the boss film includes the complete outcome.
+The saved speed audit covers Mochi/Soot ultimates and Rain Spool at x1/x2/x3 plus reduced motion. Every beat and the canvas number cue remains sampled, with no face/HP overlap. Recording a film is not a frame-time benchmark. Full 1440×900 masters remain outside Git; the repository carries compact viewing proxies and contact sheets. Selected art-rebuild evidence is 119.74 MB, below its 120 MB budget. The normal film is an excerpt; the boss film includes the complete outcome.
 
 ## Validation and budget
 
@@ -51,6 +51,8 @@ P20 closes A6's boss-atmosphere disposal report: each geometry/material/instance
 
 P19 reuses16paired Sorrel views,12natural x1 casts,25focused tests and exact parity. The staff pivots at its source-painted contact with drift below1e-15; shoulders and wrist remain continuous. Motion7.7/overall7.7, with no whole-roster uplift.
 
+P23 gives Mochi a forward/up shield raise with head/paw/tail response.28focused tests,16pairedviews/12natural x1casts and parity pass; no asset or draw-call increase, motion7.7/overall7.8.
+
 P22 adds restrained whole-pillow compression/release and a mitten jab for Practice Cushion. Its broad face seam remains coherent and both boot contacts stay planted;27focused tests,16pairedviews/8natural x1casts and parity pass. Original rig/atlas and whole-roster score remain unchanged.
 
 P21 adds a forward knot reach and planted feet for Binding Thread, with corrected original arm partitions and opt-in opaque-alpha overlap. Two pipeline regression tests and26webtests pass;16pairedviews/8x1casts show clean arms without old floating fragments. Other atlas/rig assets remain unchanged.
@@ -63,6 +65,6 @@ P21 adds a forward knot reach and planted feet for Binding Thread, with correcte
 - Canvas owns visible damage/crit/heal/shield/KO totals; the DOM labels remain accessible. A6 retains its top/bottom HUD envelopes and cut-in overlay.
 - Original provenance: `assets/provenance/look.md`, concept receipts and per-unit puppet receipts. No other game's art, rig or animation was copied or used as a generation reference. This continuation used local scripts and the existing original assets, with no new image generation, paid service or account.
 
-Evidence: [roster scores](PUPPET-SCORES.md), [VFX](p6/REVIEW.md), [stage](p7/REVIEW.md), [portraits](p8/REVIEW.md), [budget](p15/budget/budget.json), [Soot motion](p12/REVIEW.md), [Spool Ram motion](p14/REVIEW.md), [Inkcap motion](p16/REVIEW.md), [Sock Skipper motion](p17/REVIEW.md), [Cinnamon motion](p18/REVIEW.md), [Sorrel motion](p19/REVIEW.md), [Binding Thread motion](p21/REVIEW.md), [Practice Cushion motion](p22/REVIEW.md), [initial boss composition](p13/REVIEW.md), [phase-three formation](p15/REVIEW.md), [films](p10/REVIEW.md), and [A6 handoff](B-OUTBOX.md).
+Evidence: [roster scores](PUPPET-SCORES.md), [VFX](p6/REVIEW.md), [stage](p7/REVIEW.md), [portraits](p8/REVIEW.md), [budget](p15/budget/budget.json), [Soot motion](p12/REVIEW.md), [Spool Ram motion](p14/REVIEW.md), [Inkcap motion](p16/REVIEW.md), [Sock Skipper motion](p17/REVIEW.md), [Cinnamon motion](p18/REVIEW.md), [Sorrel motion](p19/REVIEW.md), [Binding Thread motion](p21/REVIEW.md), [Practice Cushion motion](p22/REVIEW.md), [Mochi motion](p23/REVIEW.md), [initial boss composition](p13/REVIEW.md), [phase-three formation](p15/REVIEW.md), [films](p10/REVIEW.md), and [A6 handoff](B-OUTBOX.md).
 
 No user-only blocker is known. Motion refinement continues after the core report; completion of this report is not a stop under the user's non-stop instruction.

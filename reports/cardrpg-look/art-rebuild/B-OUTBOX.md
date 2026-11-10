@@ -86,3 +86,6 @@ Knotted hands reach toward cats with delayed counterarm and planted feet. Repair
 
 ## P22 — Practice Cushion spring
 Whole-pillow compression/release and mitten jab retain the broad face seam and planted boots. Original six-layer atlas/rig/source unchanged; no draw/HUD/event/flag change.16pairedviews/8naturalcasts/27tests/type/lint/parityPASS;0page/socket/faceHP/bounds errors, footdrift<1e-15, p95<=16.8ms. A6e94713b8e+B38189302B/headroom1810698B; Bassets23549548B unchanged. Evidence p22/REVIEW.md; motion7.7/overall7.7.
+
+## P23 — Mochi guardian shield raise
+The original shield/lantern lifts forward/up toward foes, with head/paw/tail response. Original atlas/rig retained; per-actor tail curve reuses existing geometry/material path.28tests/16pairedviews/12naturalcasts/type/lint/parityPASS;0socket/faceHP/bounds/page errors, actualsocketlift0.04064, p95<=16.8ms. CombinedA6e94713b8e+B38189362B/headroom1810638B; Bassets23549548B. No new draw/event/HUD/flag. Evidence p23/REVIEW.md; motion7.7/overall7.8.
