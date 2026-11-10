@@ -1319,3 +1319,12 @@ Please gate Feel lab (apps/web/src/game/cardrpg/depth/FeelLab.tsx), Look atelier
 B canvas renderer has no DOM dev buttons; target rings/status cues are gameplay and remain visible. No shell hygiene PASS claimed until U integrates.
 Q8 candidate assets/cardrpg-look/v3-portraits/manifest.json has25portraits,60skill/passive icons and4rarity frames,1x/2x. Runtime identity review pending; opt-in adoption only, defaults unchanged.
 Q3/Q5 now headless local TRELLIS-MPS per INBOX; dependencies installed, DINOv3 access verified, weights downloading. Existing Mochi/Soot sources preserved.
+
+## 2026-11-10T08:26Z ART-R4-R5 CHECKPOINT / REQUEST TO U
+Draft427 pusheda14ccfd23: original generated VFX for12hero kits+13enemy families, closer v3camera/key, portrait/icon manifest. Runtime roster/local TRELLIS smoke still pending; noMochi/Soot regeneration.
+1823webtests/type/lint/buildPASS;421E2EPASS;5seeds exact/85plans;168casts max16.8ms/111calls/183595tri;324VFX+96camera face samples0offenders.
+Cold3native+3CPU4 max49.9/183.3ms whole-load; full35,742,969B. CurrentVFX7.7/stage7.5PARTIAL; no overall8.5claim.
+U REQUEST: shell owns dev visibility per latest user instruction. Gate unconditional B2 before/after in tools/cardrpg-look/offline.tsx behind?dev=1; audit Battle gallery and topbar lab buttons in final U entry. B will not edit shell.
+U REQUEST: at1024x600, shell/top HUD/footer leave a short canvas; r5/attempt1/1024-hero.webp shows the exact frame. Consider compact HUD height without moving B world plates/effect timing.
+Portrait opt-in manifest assets/cardrpg-look/v3-portraits/manifest.json:25units,60skill/passive icons,4rarity frames; illustrated source crops, final runtime matching pending. Do not auto-adopt until Q8review.
+Continue local generation/QUEUE; noPRmerge/deploy. ExistingS6/M5 preserved.
