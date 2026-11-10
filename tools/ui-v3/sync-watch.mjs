@@ -15,6 +15,9 @@ function candidates(){
  const found=[];
  for(const ref of refs){
   const kind=ref.branch.includes('-v5a-')?'A':ref.branch.includes('-art-')?'art':'B';
+  // Multiple published B branches can diverge while already being merged here.
+  // The accepted per-kind tip alone cannot represent that integration history.
+  try{git('merge-base','--is-ancestor',ref.sha,'HEAD');continue}catch{/* Not yet integrated. */}
   if(ref.sha.startsWith(accepted[kind]??'INVALID'))continue;
   if(accepted[kind]){try{git('merge-base','--is-ancestor',ref.sha,accepted[kind]);continue}catch{/* A new descendant or divergent tip needs review. */}}
   try{git('merge-base','--is-ancestor',baseline,ref.sha)}catch{if(kind==='A')continue}
