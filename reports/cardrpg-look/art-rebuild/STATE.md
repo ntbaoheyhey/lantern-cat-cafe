@@ -1,3 +1,11 @@
+# R-9 prompt integrity receipt — 2026-11-10T16:54:23.983927+00:00
+
+`wc -c reports/cardrpg-look/art-rebuild/PROMPT.txt`: 17807 bytes
+`shasum -a 256 reports/cardrpg-look/art-rebuild/PROMPT.txt`: d89d2eba427bf0eb8d59255cf4fb9897a09081255678ffb6c4d3cf0c07e3e05c
+Original prompt prefix: 15239 bytes; SHA-256 825549b5639507ca17efb64368161d805c3f4673b73d77b02916efdb1910c962.
+Verified byte-for-byte against the supplied attachment; full original retained, followed by the exact R-9 addendum.
+No separate saved copy of this controlling prompt was found; older superseded prompts stay preserved.
+
 # Lane B current state
 
 Onboarded 2026-11-10T16:19:01.983778+00:00. HEAD456934fba, existing branch retained.
