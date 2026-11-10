@@ -29,7 +29,7 @@ export async function loadPuppetModel(id:string){
     geometry.computeVertexNormals();
     const material=new T.MeshStandardMaterial({map:texture,emissiveMap:texture,emissive:0xffffff,
       emissiveIntensity:.72,color:0x858585,roughness:1,metalness:0,transparent:true,alphaTest:.035,depthWrite:true,side:T.DoubleSide});
-    material.userData={lookPainted:true,lookPuppet:true,puppetPart:layer.part,puppetRect:layer.rect,puppetAtlas:layer.atlasRect,puppetEyes:data.eyes};
+    material.userData={lookPainted:true,lookPuppet:true,puppetPart:layer.part,puppetRect:layer.rect,puppetAtlas:layer.atlasRect,puppetEyes:data.eyes,puppetEyeStyle:data.eyeStyle};
     const mesh=new T.Mesh(geometry,material);mesh.name=`illustrated_${id}_${layer.part}`;
     mesh.position.set((x+w/2-px)*width,(py-y-h/2)*data.height,0);group.add(mesh);
   }
@@ -51,6 +51,7 @@ export function installPuppetMaterial(material:T.MeshStandardMaterial){
   const open={value:1},flash={value:0},glow={value:0};
   material.userData.puppetEyeOpen=open;material.userData.puppetFlash=flash;material.userData.puppetGlow=glow;
   const eyes=material.userData.puppetPart==='head'?material.userData.puppetEyes as number[][]:[];
+  const eyeGlow=material.userData.puppetEyeStyle==='glow';
   material.onBeforeCompile=shader=>{
     shader.uniforms.puppetEyeOpen=open;shader.uniforms.puppetFlash=flash;shader.uniforms.puppetGlow=glow;
     shader.fragmentShader='uniform float puppetEyeOpen; uniform float puppetFlash; uniform float puppetGlow;\n'+shader.fragmentShader;
@@ -80,12 +81,19 @@ export function installPuppetMaterial(material:T.MeshStandardMaterial){
         totalEmissiveRadiance=totalEmissiveRadiance*(1.-lidClosure)+lidEmission*emissive;
       `);
     }
+    if(eyeGlow&&eyes.length===2){
+      shader.fragmentShader=shader.fragmentShader.replace('float lid=(1.', 'float lid=0.*(1.').replace('lidEmission+=fur*lid;lidClosure+=lid;', `lidEmission+=fur*lid;lidClosure+=lid;
+          float eyeMask=1.-smoothstep(.65,1.1,length(p));
+          float eyeStrength=max(0.,puppetGlow)*9.;
+          diffuseColor.rgb*=1.-eyeMask*(1.-puppetEyeOpen)*.6;
+          lidEmission+=texture2D(map,vMapUv).rgb*eyeMask*eyeStrength;`);
+    }
     shader.fragmentShader=shader.fragmentShader.replace('#include <opaque_fragment>',`
       outgoingLight=mix(outgoingLight*(1.+puppetGlow),vec3(1.),puppetFlash);
       #include <opaque_fragment>
     `);
   };
-  material.customProgramCacheKey=()=>`puppet-v3-${eyes.length===2?'eyes':'plain'}`;
+  material.customProgramCacheKey=()=>`puppet-v4-${eyes.length===2?eyeGlow?'glow-eyes':'eyes':'plain'}`;
 }
 const relative=new T.Quaternion();
 export function animateIllustrated(model:T.Object3D,camera:T.Camera,time:number,clip:string,progress:number|undefined,reduced:boolean,acting=false,ultimate=false,phaseFlash=0){
@@ -103,6 +111,7 @@ export function animateIllustrated(model:T.Object3D,camera:T.Camera,time:number,
     const part=layer.name.slice(7);
     if(part==='head')layer.rotation.z=pose.head;
     if(part==='tail')layer.rotation.z=pose.tail;
+    if(part==='wingL'||part==='wingR')layer.rotation.z=pose.wing*(part==='wingL'?1:-1);
     if(part==='armR'||part==='prop')layer.rotation.z=pose.prop;
     if(part==='armL')layer.rotation.z=pose.offhand;
     if(part==='footL'||part==='footR')layer.rotation.z=pose.gesture*(part==='footL'?.025:-.025);

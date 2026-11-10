@@ -51,6 +51,6 @@ describe('illustrated puppet contract and event motions',()=>{
   it('desynchronizes actors and disables movement for reduced motion',()=>{
     expect(puppetPhase('cat-1')).not.toBe(puppetPhase('cat-2'));
     const p=puppetPose('attack',1,.52,true,puppetPhase('mochi'));
-    expect([p.gesture,p.head,p.tail,p.lean,p.prop,p.offhand,p.breathe]).toEqual([0,0,0,0,0,0,0]);
+    expect([p.gesture,p.head,p.tail,p.wing,p.lean,p.prop,p.offhand,p.breathe]).toEqual([0,0,0,0,0,0,0,0]);
   });
 });
