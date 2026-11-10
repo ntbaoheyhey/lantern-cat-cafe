@@ -42,6 +42,17 @@ def layout(parts, size, scale):
     return result
 
 
+def authored_mask(size, polygon, holes=()):
+    """Exclude open prop interiors so visible cloth stays with the torso."""
+    w, h = size
+    mask = Image.new('L', size)
+    draw = ImageDraw.Draw(mask)
+    draw.polygon([(round(x*w), round(y*h)) for x, y in polygon], fill=255)
+    for hole in holes:
+        draw.polygon([(round(x*w), round(y*h)) for x, y in hole], fill=0)
+    return np.array(mask)
+
+
 def part_overlap(mask, alpha, front, kernel, opaque_only=False):
     """Fill behind joints from owned ink; transparent canvas cannot seed overlap."""
     visible = np.minimum(mask, alpha)
@@ -76,9 +87,7 @@ def build(unit, force=False):
     owned = np.zeros((h, w), np.uint8)
     masks = []
     for part, poly, pivot in cfg['layers']:
-        m = Image.new('L', (w, h))
-        ImageDraw.Draw(m).polygon([(round(x*w), round(y*h)) for x, y in poly], fill=255)
-        m = np.array(m)
+        m = authored_mask((w, h), poly, cfg.get('holes', {}).get(part, ()))
         mask = np.minimum(m, 255-owned)
         front = owned.copy()
         owned = np.maximum(owned, m)

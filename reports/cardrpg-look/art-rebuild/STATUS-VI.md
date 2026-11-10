@@ -138,3 +138,6 @@ Mallow đã duyệt: phới liền khối lấy đà/vung tới, khăn giữ tr�
 
 Biscuit đã duyệt: khiên bánh quy đỡ về trước, xẻng gỗ lấy đà/vung lên rồi hạ; viền khiên, cằm và vai liền nhau.
 32test web và5test cắt lớp,16ảnh/12lượt chiêu/type/lint/parity đạt; bản chung38447646byte. Chuyển động7,5→7,7, tổng giữ7,8; tiếp tục Brioche.
+
+Brioche đã duyệt: giỏ đung đưa rồi trở lại, bàn tay trống đưa lên; khăn đầu/đuôi và váy trong quai giỏ thuộc đúng lớp.
+33test web và6test cắt lớp,16ảnh/12lượt chiêu/type/lint/parity đạt; bản chung38520550byte. Chuyển động7,5→7,7, tổng giữ7,8; tiếp tục Marigold.
