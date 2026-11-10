@@ -180,6 +180,10 @@ export function validateDepth(value: unknown): asserts value is DepthAccount {
     const run = state.run;
     if(run.challengeLevel!==undefined&&(!Number.isSafeInteger(run.challengeLevel)||run.challengeLevel<1||run.challengeLevel>50))fail();
     validateSupply(run.packedSupply);
+    if(run.towerA6!==undefined){
+      if(!record(run.towerA6)||!run.gameplayA6||run.mode!=='tower'||!Number.isInteger(run.floor)||run.floor<1||run.floor>30)fail();
+      validateEnemySnapshot({enemyStats:run.towerA6.enemyStats});
+    }
     if (!record(run) || !Array.isArray(run.nodes) || !Array.isArray(run.visited) || !Array.isArray(run.rewardChoices)
       || !record(run.hp) || !record(run.boons) || !record(run.upgrades) || ![1, 2, 3].includes(run.chapter)
       || !['campaign', 'daily', 'tower'].includes(run.mode) || typeof run.complete !== 'boolean') fail();

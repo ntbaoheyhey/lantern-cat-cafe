@@ -218,6 +218,12 @@ async function simulation(bundleUrl, mode) {
   return { async job(job) {
     const seeds = Array.from({ length: job.count }, (_, i) => job.first + i);
     if (job.kind === 'session') return seeds.map(firstSession);
+    if (job.kind === 'tower') return seeds.map(seed => {
+      const { s } = fixture(['mochi', 'soot', 'clover'], seed);
+      const floor = 1 + (seed - 1) % 30; s.towerBest = floor - 1;
+      const entered = take(R.enterNode(take(R.startTowerFloorA6(s, floor)), '0-0'));
+      return { seed, floor, ...measure(R.playBattle(entered.run.battle, 'auto')) };
+    });
     if (job.kind === 'economy') return seeds.flatMap(seed => [economy(seed, 2), economy(seed, 5)]);
     if (job.kind === 'variety') return job.teams.map(team => {
       let wins = 0;
@@ -257,8 +263,8 @@ if (!isMainThread) {
     ].map(([name, file]) => `export * as ${name} from ${JSON.stringify(resolve(root, file))};`).join('\n'));
     await build({ configFile: false, root, envDir: false, publicDir: false, logLevel: 'silent', build: { emptyOutDir: false, outDir: temp, minify: false, lib: { entry, formats: ['es'], fileName: () => 'rules.mjs' } } });
     const bundleUrl = pathToFileURL(resolve(temp, 'rules.mjs')).href;
-    const sim = await simulation(bundleUrl, mode), jobs = [], result = { pacing: [], session: [], economy: [], variety: [] }, workSeconds = {};
-    for (let offset = 0; offset < count; offset += 5) for (const kind of ['pacing', 'session', 'economy']) jobs.push({ kind, first: first + offset, count: Math.min(5, count - offset) });
+    const sim = await simulation(bundleUrl, mode), jobs = [], result = { pacing: [], session: [], economy: [], variety: [], tower: [] }, workSeconds = {};
+    for (let offset = 0; offset < count; offset += 5) for (const kind of ['pacing', 'session', 'economy', ...(mode === 'a6' ? ['tower'] : [])]) jobs.push({ kind, first: first + offset, count: Math.min(5, count - offset) });
     for (let offset = 0; offset < sim.varietyTeams.length; offset += 5) jobs.push({ kind: 'variety', teams: sim.varietyTeams.slice(offset, offset + 5), first, count });
     const totalJobs = jobs.length; let finished = 0;
     const work = Promise.all(Array.from({ length: Math.min(12, availableParallelism()) }, () => new Promise((done, reject) => {
@@ -278,17 +284,23 @@ if (!isMainThread) {
     const best = result.variety[0].wins / count, nearBest = result.variety.filter(r => r.wins / count >= best - .05).length;
     const top20 = result.variety.slice(0, 20), maxPresence = Math.max(...sim.teams.flat().map(id => pct(top20.filter(r => r.team.includes(id)).length, top20.length)));
     const economySummary = [2, 5].map(sessions => { const rows = result.economy.filter(r => r.sessionsPerDay === sessions); return { sessions, progressEveryDay: pct(rows.filter(r => r.days.every(d => d.progress)).length, rows.length), epicDay2: pct(rows.filter(r => r.firstEpic && r.firstEpic <= 2).length, rows.length), pityDay6: pct(rows.filter(r => r.pityDay && r.pityDay <= 6).length, rows.length), medianDrawsDay7: quantile(rows.map(r => r.days.at(-1).paidDraws), .5), idleCap: rows[0].idleCap }; });
+    const towerFloors = Array.from({ length: 30 }, (_, i) => {
+      const rows = result.tower.filter(r => r.floor === i + 1);
+      return { floor: i + 1, count: rows.length, medianSeconds: round(quantile(rows.map(r => r.seconds), .5)), winRate: round(pct(rows.filter(r => r.win).length, rows.length)) };
+    }).filter(r => r.count);
     const summary = {
       seeds: [first, first + count - 1], count, mode, seconds: round((performance.now() - started) / 1000), workSeconds,
+      tower: mode === 'a6' ? { medianSeconds: round(quantile(result.tower.map(r => r.seconds), .5)), p90Seconds: round(quantile(result.tower.map(r => r.seconds), .9)), floors: towerFloors } : null,
       pacing: pacing(earnedNormals, earnedBosses), fixedPacing: pacing(normals, bosses),
       ultimates: { normal: normalUlts, boss: bossUlts },
       firstSession: { medianGap: round(quantile(result.session.flatMap(r => r.gaps), .5)), p90MaxGap: round(quantile(result.session.map(r => Math.max(...r.gaps)), .9)), meanLosses10: round(mean(result.session.map(r => r.losses10))), maxLosses10: Math.max(...result.session.map(r => r.losses10)), meanLosses30: round(mean(result.session.map(r => r.losses30))), maxLosses30: Math.max(...result.session.map(r => r.losses30)), hintRetries: result.session.reduce((n, r) => n + r.hints, 0), hintWinRate: round(pct(result.session.reduce((n, r) => n + r.retryWins, 0), result.session.reduce((n, r) => n + r.hints, 0))) },
       variety: { teams: result.variety.length, nearBest, bestWinRate: round(best * 100), maxTop20CatPresence: maxPresence, top20 }, economy: economySummary,
-      limitations: ['G1 uses naturally earned first-session encounters, excluding the tutorial. Seconds are authored x1 timelines, excluding browser overhead; Q15 real-click timing is separate.', 'G2 and G4 use level-six four-Epic fixtures with unlocked kits. New-player/economy accounts use earned public commands without fixture grants.', 'First-session defeats use the real recommendBuildV4/applyResultAdviceV4 hint. Same-seed retry is a counterfactual and grants no rewards.', `${result.variety.length} fixed candidate teams (the four V5 crews plus evenly spaced mixed squads) each use every seed. This is not an exhaustive ranking of all 220 teams; tied top-20 teams use lexical order.`, 'Economy uses four-minute check-ins (at most one completed patrol), two or five per day; unfinished routes carry into the next visit. Epic means Epic or better.'],
+      limitations: [...(mode === 'a6' ? ['Tower spreads 500 level-six, four-Epic fixture builds across thirty fixed floors; floor enemies and combat seeds remain fixed. Authored duration and per-floor summaries are separate from earned-player progress.'] : []), 'G1 uses naturally earned first-session encounters, excluding the tutorial. Seconds are authored x1 timelines, excluding browser overhead; Q15 real-click timing is separate.', 'G2 and G4 use level-six four-Epic fixtures with unlocked kits. New-player/economy accounts use earned public commands without fixture grants.', 'First-session defeats use the real recommendBuildV4/applyResultAdviceV4 hint. Same-seed retry is a counterfactual and grants no rewards.', `${result.variety.length} fixed candidate teams (the four V5 crews plus evenly spaced mixed squads) each use every seed. This is not an exhaustive ranking of all 220 teams; tied top-20 teams use lexical order.`, 'Economy uses four-minute check-ins (at most one completed patrol), two or five per day; unfinished routes carry into the next visit. Epic means Epic or better.'],
     };
     const rows = [
       ['G1 normal', `${summary.pacing.normalRounds} rounds; median ${summary.pacing.normalSeconds} seconds; 90th percentile ${summary.pacing.normalP90} seconds`, '6–10 rounds; median 20–35 seconds; 90th percentile ≤45 seconds'],
       ['G1 boss', `median ${summary.pacing.bossSeconds} seconds; 90th percentile ${summary.pacing.bossP90} seconds`, 'median 45–90 seconds; 90th percentile ≤110 seconds'],
+      ...(summary.tower ? [['G1 Tower', `median ${summary.tower.medianSeconds} seconds; 90th percentile ${summary.tower.p90Seconds}; floor medians ${Math.min(...towerFloors.map(f => f.medianSeconds))}–${Math.max(...towerFloors.map(f => f.medianSeconds))} seconds`, '20–50 seconds per floor']] : []),
       ['G2 ultimates', `normal ${Math.min(...normalUlts.map(r => r.rate))}–${Math.max(...normalUlts.map(r => r.rate))} percent; boss minimum ${Math.min(...bossUlts.map(r => r.rate))} percent`, 'each cat 35–70 percent normal; ≥90 percent boss'],
       ['G3 first session', `median gap ${summary.firstSession.medianGap} seconds; losses by 10 minutes: mean ${summary.firstSession.meanLosses10}, worst ${summary.firstSession.maxLosses10}; by 30 minutes: mean ${summary.firstSession.meanLosses30}, worst ${summary.firstSession.maxLosses30}; hint retry wins ${summary.firstSession.hintWinRate} percent`, 'gap ≤90 seconds; zero early losses; ≤2 total losses; retry wins ≥80 percent'],
       ['G4 variety', `${nearBest} of ${result.variety.length} tested teams within five percentage points; highest top-20 cat presence ${maxPresence} percent`, '≥4 teams; no cat above 70 percent'],

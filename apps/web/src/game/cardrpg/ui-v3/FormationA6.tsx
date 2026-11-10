@@ -34,7 +34,7 @@ export function FormationA6({m,preparing=false}:{m:DepthModel;preparing?:boolean
   const [picked,setPicked]=useState(ids[0]!),[mode,setMode]=useState<R.Run['mode']>(state.run?.mode??'campaign');
   const selected=ids.includes(picked)?picked:ids[0]!;
   const locked=preparing?!!battle?.v4?.committed||!!m.replay||m.watching:!!state.run&&!state.run.complete;
-  const rosterLocked=locked||preparing&&!!state.run&&(state.run.visited.length>0||state.run.floor>1);
+  const rosterLocked=locked||preparing&&!!state.run&&(state.run.visited.length>0||state.run.floor>1&&!state.run.towerA6);
   const root=useRef<HTMLDivElement>(null);
   const suggestions=useMemo(()=>suggestedTeamsA6(state,preparing?state.run?.challengeLevel??1:1),[state,preparing]);
   const modeInfo=MODE_TEAMS_A6.find(item=>item.id===mode)!;

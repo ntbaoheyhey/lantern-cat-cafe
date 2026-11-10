@@ -49,3 +49,10 @@
 - Avoided cloning the entire account for same-day idle previews. The final sim is rerunning after the service fix; the first Q6 table is superseded.
 - Q6 checkpoint: the final service-task fix has twenty-one passing focused tests. A repeated full sim waited behind another lane; retained the completed 500-seed table with its scope stated and deferred the rerun to Q7 so evidence work does not block new gameplay.
 - Q6 browser normal median 43.14 s/p90 63.61 remains above target; 963.12-second trailing account-reward gap excludes route points/boons. Keep both for Q11/Q12.
+
+## Q7
+- Added explicit milestone chest labels and a model subscription so a claim updates immediately. The first screen test exposed concatenated accessible names.
+- Kept the preparation Route tab on the active Tower floor, including replaying an earlier floor; a rendered regression passes.
+- Full rules suite: 1,286 pass plus existing expected failures/skips. Two unrelated web layout tests timed out under concurrent host load; their isolated retry and the new Tower regression pass all twenty-four tests without changing timeouts.
+- A real click exposed the Route tab closing during unrelated account notifications. Reset it only on a changed screen/encounter, and provide an explicit return-to-formation action.
+- Q7 measurement: Tower median 58.94 s and per-floor medians 18.6–169.2 s miss the 20–50 s target on the fixed level-six fixture. Preserve fixed lineups and log this for Q12 balance; no earned-player pacing claim. The sim runtime is 212.14 s, still above three minutes.

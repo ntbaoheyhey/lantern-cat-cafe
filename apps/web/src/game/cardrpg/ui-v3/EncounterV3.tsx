@@ -1,3 +1,4 @@
+import {TowerA6} from './TowerA6';
 import { PrepareA6 } from './FormationA6';
 import { CampaignA6 } from './CampaignA6';
 import { PowerA6 } from './PowerA6';
@@ -34,19 +35,19 @@ export function PrepareV3({m}:{m:DepthModel}) {
 export function ResultV3({m}:{m:DepthModel}) {
  const battle=m.battle!,summary=summarizeBattle(battle),[details,setDetails]=useState(false),mvp=summary.mvp;
  const outcome=battle.v4?R.outcomeV4(battle):null,run=m.state.run,node=run?.nodes.find(n=>n.id===run.current);
- const stars=run&&node&&!m.tutorialBattle&&!m.replay?R.combatStarsV4(run,node,battle):null;
+ const stars=run&&node&&!run.towerA6&&!m.tutorialBattle&&!m.replay?R.combatStarsV4(run,node,battle):null;
  const rewards=!m.tutorialBattle&&!m.replay?resultRewards(m.state):[];
  const why=outcome?.causes[0]?.text??`${battle.round} rounds played.`;
  const foe=battle.actors.find(a=>a.side==='enemy');
  const suggestion=foe?R.enemyGuideV4(foe.catalogId).counter:'Prepare your crew for the next stop.';
- return <><div className="uv-result"><div className="uv-result-title"><small>{m.tutorialBattle?'PRACTICE COMPLETE':`CHAPTER ${battle.chapter} · ${battle.round} ROUNDS`}</small><h2>{battle.result==='party'?'Victory':battle.result==='enemy'?'Defeat':'Replay complete'}</h2>{stars&&<div className="uv-result-stars" aria-label={`${stars.conditions.filter(Boolean).length} of 3 stars`}>{stars.conditions.map((on,i)=><span key={i} data-earned={on}>★</span>)}</div>}</div>
+ return <><div className="uv-result"><div className="uv-result-title"><small>{m.tutorialBattle?'PRACTICE COMPLETE':run?.towerA6?`YARN TOWER · FLOOR ${run.floor} · ${battle.round} ROUNDS`:`CHAPTER ${battle.chapter} · ${battle.round} ROUNDS`}</small><h2>{battle.result==='party'?'Victory':battle.result==='enemy'?'Defeat':'Replay complete'}</h2>{stars&&<div className="uv-result-stars" aria-label={`${stars.conditions.filter(Boolean).length} of 3 stars`}>{stars.conditions.map((on,i)=><span key={i} data-earned={on}>★</span>)}</div>}</div>
  {mvp&&<div className="uv-result-mvp"><img {...portraitProps(mvp.catalogId)} alt={mvp.name}/><div><small>TONIGHT’S STAR</small><h3>{mvp.name}</h3><p>{mvp.damage} damage · {mvp.healing} healing</p></div></div>}
  <div className="uv-result-rewards" aria-label="Encounter rewards">{rewards.map(r=><span key={r.id}>+{r.amount} {r.label}</span>)}{!rewards.length&&<span>{m.tutorialBattle?'A welcome invitation awaits':'Your encounter is recorded'}</span>}</div><p><b>Why:</b> {why}</p>{battle.initial.gameplayA6&&battle.result==='enemy'&&!m.tutorialBattle&&!m.replay?<AdviceV4 m={m}/>:<p><b>Try this:</b> {suggestion}</p>}
- <div className="cr-actions"><button onClick={()=>setDetails(!details)} aria-expanded={details}>Read details</button><button className="uv-fight" onClick={()=>{m.finish();if(!m.error)m.go('hub');}}>Next <span aria-hidden="true">→</span></button></div></div>{details&&<div className="uv-advanced"><Suspense fallback={<p>Opening…</p>}><FullResult m={m}/></Suspense></div>}</>;
+ <div className="cr-actions"><button onClick={()=>setDetails(!details)} aria-expanded={details}>Read details</button><button className="uv-fight" onClick={()=>{m.finish();if(!m.error)m.go(run?.towerA6?'tower':'hub');}}>Next <span aria-hidden="true">→</span></button></div></div>{details&&<div className="uv-advanced"><Suspense fallback={<p>Opening…</p>}><FullResult m={m}/></Suspense></div>}</>;
 }
 
-export function RouteV3({m}:{m:DepthModel}) {
+export function RouteV3({m,onReturn}:{m:DepthModel;onReturn?:()=>void}) {
  const defaults=patrolDefaults(m.state),[chosen,setChosen]=useState<number|null>(null),band=Math.min(chosen??defaults.band,defaults.ceiling);
- if(R.gameplayA6(m.state))return <CampaignA6 m={m}/>;
+ if(R.gameplayA6(m.state))return m.state.run?.towerA6&&!m.state.run.complete?<TowerA6 m={m} onReturn={onReturn}/>:<CampaignA6 m={m}/>;
  return <section aria-label="Route preview"><details className="uv-route-options" open={!m.state.run}><summary>Choose a route</summary><label>Challenge band <select value={band} aria-label="Challenge band" disabled={defaults.active} onChange={e=>setChosen(Number(e.target.value))}>{Array.from({length:defaults.ceiling},(_,i)=><option key={i} value={i+1}>Band {i+1}</option>)}</select></label><div className="uv-task-grid">{R.CHAPTERS.map(c=><button key={c.id} disabled={defaults.active||c.id>1&&!m.state.cleared.includes(c.id-1)} onClick={()=>{m.start(c.id,'campaign',band);}}><b>Explore {c.name}</b><small>{c.reward}</small></button>)}</div><div className="cr-actions"><button disabled={defaults.active} onClick={()=>m.start(Math.min(3,m.state.cleared.length+1),'daily')}>Start daily challenge</button><button disabled={defaults.active||!m.state.cleared.includes(3)} onClick={()=>m.start(1,'tower')}>Climb Tower · {m.state.towerBest}</button></div></details><Suspense fallback={<p>Opening the route…</p>}><RunMap m={m}/></Suspense></section>;
 }

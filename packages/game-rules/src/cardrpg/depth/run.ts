@@ -1,3 +1,4 @@
+import { startTowerFloorA6, TOWER_FLOORS_A6 } from './tower-a6';
 import { combatStarsV4, stopStarsV4 } from './stars-v4';
 import { recordNodeStarsV4 } from './journey-v4';
 import { Rng, deriveSeed } from '../../rng';
@@ -46,6 +47,7 @@ export function availableNodes(run: Run) {
   return run.nodes.filter(n=>last?last.next.includes(n.id):n.depth===0);
 }
 export function startRun(state: DepthAccount, chapter: number, seed: number, mode: Run['mode']='campaign', date='2026-11-06', challengeLevel?: number): RuleResult<DepthAccount> {
+  if(state.gameplayA6&&mode==='tower')return startTowerFloorA6(state);
   return transactDepth(state,s=>{
     requireHome(s);requireRule(integer(chapter,1,3)&&integer(seed,0,0xffffffff),'INVALID_AMOUNT','Invalid chapter or seed.');
     requireRule(chapter===1||s.cleared.includes(chapter-1),'LOCKED','Clear the preceding chapter first.');
@@ -67,7 +69,7 @@ export function enterNode(state: DepthAccount, id: string): RuleResult<DepthAcco
     const node=availableNodes(run).find(n=>n.id===id);requireRule(node,'NOT_READY','Choose a connected node on the map.');
     run.current=id;
     if(node.enemies.length){
-      const setup={...(run.gameplayA6?{gameplayA6:true}:{}),...(run.skillsV5?{skillsV5:true}:{}),seed:deriveSeed(run.seed,run.visited.length+run.floor*100),chapter:run.chapter,cats:battleCats(s),enemies:node.enemies,hp:run.hp,boons:run.boons,upgrades:run.upgrades,mutator:run.mutator,...(run.gameplayV4?{gameplayV4:true,...(run.challengeLevel!==undefined?{challengeLevel:run.challengeLevel,enemyStats:challengeStatsV4(run.challengeLevel)}:{}),plan:clone(s.v4?.plan??DEFAULT_PLAN),...(run.packedSupply?{packedSupply:clone(run.packedSupply)}:{})}:{})};
+      const setup={...(run.gameplayA6?{gameplayA6:true}:{}),...(run.skillsV5?{skillsV5:true}:{}),seed:deriveSeed(run.seed,run.visited.length+run.floor*100),chapter:run.chapter,cats:battleCats(s),enemies:node.enemies,hp:run.hp,boons:run.boons,upgrades:run.upgrades,mutator:run.mutator,...(run.gameplayV4?{gameplayV4:true,...(run.challengeLevel!==undefined?{challengeLevel:run.challengeLevel,enemyStats:clone(run.towerA6?.enemyStats??challengeStatsV4(run.challengeLevel))}:{}),plan:clone(s.v4?.plan??DEFAULT_PLAN),...(run.packedSupply?{packedSupply:clone(run.packedSupply)}:{})}:{})};
       run.battle=createBattle(setup);s.lastBattle=clone(run.battle.initial);s.lastChoices=[];
     }
   });
@@ -81,7 +83,7 @@ export function configurePreparation(state: DepthAccount, team: string[], rows: 
     requireRule(team.length===3&&new Set(team).size===3&&team.every(id=>s.account.cards.some(c=>c.cardId===id)),'INVALID_TEAM','Choose three collected companions.');
     requireRule(team.every(id=>['front','rear'].includes(rows[id]!))&&team.some(id=>rows[id]==='front'&&(run.hp[id]??1)>0),'INVALID_TEAM','Keep at least one living companion in front.');
     const changed=team.some((id,i)=>id!==s.team[i]);
-    requireRule(!changed||run.visited.length===0&&run.floor===1,'NOT_READY','The roster stays together after the first stop; change rows or plans here.');
+    requireRule(!changed||run.visited.length===0&&(run.floor===1||!!run.towerA6),'NOT_READY','The roster stays together after the first stop; change rows or plans here.');
     requireRule(!battle.initial.packedSupply||team.includes(battle.initial.packedSupply.catId),'INVALID_TEAM','Keep the companion with the packed supply for this encounter.');
     s.team=[...team]; s.rows={...s.rows,...rows};
     for(const id of team) s.skills[id]??=CAT_BY_ID[id]!.skills.slice(0,3).map(skill=>skill.id);
@@ -119,8 +121,8 @@ export function rewardOptions(run: Run, skillIds: string[]): string[] {
 function settleRun(s: DepthAccount, won: boolean) {
   const run=s.run!;requireRule(!s.claimedRuns.includes(run.id),'ALREADY_CLAIMED','Run already settled.');
   run.complete=true;run.won=won;s.claimedRuns.push(run.id);
-  const challengeId=run.mode==='daily'?`daily-${run.date}`:run.mode==='tower'?`tower-${run.date}`:'';
-  const rewarded=s.account.daily.battles<6&&(!challengeId||!s.challengeClaims.includes(challengeId));
+  const challengeId=run.mode==='daily'?`daily-${run.date}`:run.mode==='tower'?(run.towerA6?`a6-tower-floor-${run.floor}`:`tower-${run.date}`):'';
+  const rewarded=(!run.towerA6||won)&&s.account.daily.battles<6&&(!challengeId||!s.challengeClaims.includes(challengeId));
   if(rewarded){
     if(run.gameplayV4&&s.v4?.journal)s.v4.journal.rewardedRoutes++;
     s.account.daily.battles++;progress(s.account,'battles');
@@ -130,14 +132,14 @@ function settleRun(s: DepthAccount, won: boolean) {
     if(challengeId)s.challengeClaims.push(challengeId);
   }
   if(won){
-    if(rewarded){progress(s.account,'wins');progress(s.account,'bossWins');}
+    if(rewarded){progress(s.account,'wins');if(!run.towerA6||run.floor%5===0)progress(s.account,'bossWins');}
     const sealKey=`depth-seal-${s.account.day}`;
     if(rewarded&&!s.account.inventory.stacks[sealKey]){s.seals++;s.account.inventory.stacks[sealKey]=1;}
     if(run.mode==='campaign'&&!s.cleared.includes(run.chapter)){
       s.cleared.push(run.chapter);s.materials+=60+run.chapter*20;s.account.chapter=Math.max(s.account.chapter,run.chapter+1);
       grantDepth(s,{fish:120,stamps:80,essence:4});
     }
-    if(run.visited.filter(id=>run.nodes.find(n=>n.id===id)?.kind==='elite').length>=2&&!s.masteries.includes(run.chapter))s.masteries.push(run.chapter);
+    if(!run.towerA6&&run.visited.filter(id=>run.nodes.find(n=>n.id===id)?.kind==='elite').length>=2&&!s.masteries.includes(run.chapter))s.masteries.push(run.chapter);
     if(run.mode==='tower')s.towerBest=Math.max(s.towerBest,run.floor);
   }
 }
@@ -145,14 +147,14 @@ export function finishEncounter(state: DepthAccount): RuleResult<DepthAccount> {
   return transactDepth(state,s=>{
     const run=s.run,b=run?.battle;requireRule(run&&b?.result,'NOT_READY','Finish the encounter.');
     const node=run.nodes.find(n=>n.id===run.current);requireRule(node,'NOT_READY','Encounter node missing.');
-    recordNodeStarsV4(s, combatStarsV4(run, node, b));
+    if(!run.towerA6)recordNodeStarsV4(s, combatStarsV4(run, node, b));
     if(run.gameplayV4)delete run.packedSupply;
     run.hp=Object.fromEntries(b.actors.filter(a=>a.side==='party').map(a=>[a.catalogId,a.hp]));s.lastChoices=clone(b.choices);run.battle=null;
     if(b.result==='enemy'){settleRun(s,false);return;}
-    run.points+=node.kind==='elite'?65:node.kind==='boss'?100:35;
+    if(!run.towerA6)run.points+=node.kind==='elite'?65:node.kind==='boss'?100:35;
     const drop=dropGear(s,node.kind as 'battle'|'elite'|'boss',deriveSeed(run.seed,run.visited.length+999),run.chapter);
     if(drop)run.earnedItems.push(drop);
-    if(node.kind==='boss'){finishNode(run);settleRun(s,true);return;}
+    if(node.kind==='boss'||run.towerA6){finishNode(run);settleRun(s,true);return;}
     run.rewardChoices=rewardOptions(run,s.team.flatMap(id=>defaultSkills(s,id)));
   });
 }
@@ -212,6 +214,11 @@ export function abandonRun(state: DepthAccount): RuleResult<DepthAccount> {
   });
 }
 export function nextTowerFloor(state: DepthAccount): RuleResult<DepthAccount> {
+  if(state.run?.towerA6){
+    const old=state.run;
+    if(!old.complete||!old.won||old.floor>=TOWER_FLOORS_A6)return {ok:false,state,error:old.floor>=TOWER_FLOORS_A6?'All thirty floors are complete.':'Clear this floor first.'};
+    return startTowerFloorA6(state,old.floor+1);
+  }
   return transactDepth(state,s=>{
     const old=s.run;requireRule(old?.mode==='tower'&&old.complete&&old.won,'NOT_READY','Clear a Tower floor first.');
     const floor=old.floor+1,seed=deriveSeed(old.seed,floor),chapter=(floor-1)%3+1;

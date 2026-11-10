@@ -60,6 +60,7 @@ export type NodeKind = 'battle' | 'elite' | 'campfire' | 'shop' | 'event' | 'tre
 export interface RunNode { id: string; depth: number; lane: number; kind: NodeKind; next: string[]; enemies: string[]; eventId?: string }
 export interface Boon { id: string; name: string; archetype: string; description: string; cap: number; trigger: string; value: number }
 export interface Run {
+  towerA6?: { enemyStats: NonNullable<BattleSetup['enemyStats']> };
   challengeLevel?: number;
   packedSupply?: PackedSupplyV4;
   gameplayA6?: boolean; skillsV5?: boolean; gameplayV4?: boolean;

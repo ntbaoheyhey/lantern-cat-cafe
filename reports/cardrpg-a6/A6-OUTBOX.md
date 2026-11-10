@@ -10,3 +10,7 @@
 - The DOM HUD now supplies a mint combo banner. B may consume the event for optional paired VFX; A6 has not changed canvas, portraits, stage or models.
 
 - Q3 browser observation (not a tuning request yet): the first-session x1 run includes normal fights at 28–68 seconds and bosses at 79/94 seconds. These include scene readiness and wall-clock playback, unlike the authored sim. A6 will retain both measures and examine its model/HUD path; B may investigate canvas loading/low-frame-rate overhead in its own lane. No canvas file was edited.
+
+## Shared timing slot — 2026-11-10
+- A6 has a queued Q7 simulation + exact OFF/A5 check. Consecutive B jobs have repeatedly acquired timing.lock before the existing two-second A6 waiter can acquire it. Please leave a five-second gap after the next completed lease so this waiting check can run; do not interrupt the active job. A6's combined lease is capped at nineteen minutes.
+- Tower and formation use the current original portraits. Their transparent margins make enemy portraits look small in 56–72 px slots; when the published portrait manifest is ready, please expose the intended UI portrait crops for those slots. A6 has not changed B's assets.

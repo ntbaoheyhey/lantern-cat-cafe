@@ -8,7 +8,7 @@
 - pnpm: 10.28.0 (repository packageManager version)
 - Free disk at setup: 147 GiB (df -h ~); above 15 GB threshold.
 - Dependencies: pnpm install --frozen-lockfile completed without lockfile changes.
-- Scope: STEP 2 active; Q7 active; Q1 completed 2026-11-10 06:38 UTC.
+- Scope: STEP 2 active; Q8 active; Q1 completed 2026-11-10 06:38 UTC.
 - Delivery branch remains codex/cardrpg-a6-q0-2026-11-10; one draft PR #438 for the whole lane.
 
 ## Report skim (15 lines; existing claims, not re-verified)
@@ -89,3 +89,11 @@
 - Completed 500-seed sim: 253.89 s, authored normal 30.88 s, boss 79.38 s, idle cap 12 h. G2/G3/G5 partial.
 - Final passive-service bookkeeping fix passed twenty-one tests; its queued sim rerun was deferred after a long shared-lock wait. Q7 sim will include it.
 - Q7 next; Q8 drafts remain outside the worktree. No fresh seeds used.
+
+## Q7 complete — 2026-11-10
+- Thirty fixed Tower floors, six milestone chests and shared preparation/battle; route tab returns correctly to formation.
+- Typecheck/lint PASS; rules 1,286 PASS; web 1,881 PASS plus two unrelated timeouts passed isolated retry (24 tests). Final Tower/Campaign six tests PASS.
+- Three inspected WebPs, including 1280×720; synthetic unlocked fixtures. Real-click path passes without page/console errors or overflow.
+- Sim: 500 seeds in 212.14 s; normal 30.88 s, boss 79.38 s. Tower median 58.94 s/p90 104.65 on level-six fixtures; pacing remains partial for Q12.
+- OFF exact over 8,250 routes; A5 exact over forty-five; expected hashes unchanged. q7-compatibility.json.
+- Q8 next. The draft bundle has virtual-source typechecks only; apply then test. Full E2E/thirty-minute session next due Q9.

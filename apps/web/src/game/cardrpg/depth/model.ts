@@ -9,7 +9,7 @@ import { createCardActionPlan } from './card-action-plan';
 import { snapshotBattle, splitPresentation } from './battle-presentation';
 import { readTeamPresets, TEAM_PRESETS_KEY, type TeamPreset } from './meta-presentation';
 
-export type Screen = 'bonds' | 'journal' | 'hub' | 'team' | 'collection' | 'inventory' | 'gacha' | 'map' | 'codex' | 'relics' | 'save' | 'evidence' | 'prepare' | 'result';
+export type Screen = 'tower' | 'bonds' | 'journal' | 'hub' | 'team' | 'collection' | 'inventory' | 'gacha' | 'map' | 'codex' | 'relics' | 'save' | 'evidence' | 'prepare' | 'result';
 export class DepthModel {
   state: R.DepthAccount;
   screen: Screen = 'hub';
@@ -348,7 +348,8 @@ export class DepthModel {
     const run = this.state.run;
     if (!run || !this.apply(R.applyResultAdviceV4(this.state, advice), advice.label)) return;
     this.plan = null; this.watching = false; this.paused = false;
-    this.start(run.chapter, run.mode, run.challengeLevel);
+    if(run.towerA6){if(!this.apply(R.startTowerFloorA6(this.state,run.floor),'Try the same Tower floor with your upgrade.'))return;this.go('map');}
+    else this.start(run.chapter, run.mode, run.challengeLevel);
     if (this.state.run && !this.state.run.complete) {
       const first = R.availableNodes(this.state.run)[0];
       if (first) this.enter(first.id);
