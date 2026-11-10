@@ -1,0 +1,52 @@
+import {useEffect,useRef,useState} from 'react';
+import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
+import type {DepthModel} from '../depth/model';
+import {showReviewTools} from '../depth/player-mode';
+import {artPropsA6} from './art-a6';
+
+function DeskLamp({lit}:{lit:boolean}) {
+ return <svg className="a6-desk-lamp" viewBox="0 0 150 160" fill="none" aria-hidden="true" data-lit={lit}>
+  <ellipse cx="77" cy="143" rx="55" ry="10" fill="#6b4e3020"/>
+  <path d="M48 141h56l-9-10H58Z" fill="#9b7748" stroke="#745535" strokeWidth="3"/>
+  <path d="M77 130V93" stroke="#8f6b3f" strokeWidth="7"/>
+  <path d="m41 91 8-61 28-10 28 10 8 61-36 13Z" fill={lit?'#f1cb77':'#e7d3a7'} stroke="#8c693e" strokeWidth="3"/>
+  <path d="M49 32h56M43 84h68M77 23v73" stroke="#b38e53" strokeWidth="3"/>
+  <path d="M68 20v-8a9 9 0 0 1 18 0v8" stroke="#8c693e" strokeWidth="3"/>
+  <path d="m61 60 7 8 9-18 9 18 7-8" stroke={lit?'#fff7d5':'#a98c5d'} strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
+ </svg>;
+}
+export function SettingsA6({m}:{m:DepthModel}) {
+ const [code,setCode]=useState(''),[feedback,setFeedback]=useState(''),[failed,setFailed]=useState(false);
+ const [resetPage,setResetPage]=useState(false),[confirmReset,setConfirmReset]=useState(false);
+ const codeBox=useRef<HTMLTextAreaElement>(null),restart=useRef<HTMLButtonElement>(null),resetTitle=useRef<HTMLHeadingElement>(null);
+ useEffect(()=>{if(resetPage)resetTitle.current?.focus();},[resetPage]);
+ const cancelReset=()=>{setConfirmReset(false);setResetPage(false);requestAnimationFrame(()=>restart.current?.focus());};
+ const exportCode=()=>{setCode(R.exportSave(m.state));setFailed(false);setFeedback('Code ready. Select it, then copy it somewhere safe.');};
+ const importCode=()=>{m.import(code);setFailed(m.error);setFeedback(m.error?m.notice.replace(/^Error:\s*/,''):'Your saved evening is restored.');};
+ return <div className="a6-settings-desk">
+  <section className="a6-save-letter" aria-label="Save and restore progress">
+   <header className="a6-save-heading"><img {...artPropsA6(m.state.team[0]??'mochi')} alt=""/><div><small>A PLACE KEPT FOR YOU</small><h2>Keep this evening.</h2><p>{m.offline?'Export a code to keep this cafe after closing the demo.':'Keep a copy of your cafe, or bring a saved evening here.'}</p><span className="a6-save-state">{m.saveStatus}</span></div></header>
+   {resetPage?<section className="a6-reset-page" aria-label="Start again">
+    <small>A FRESH BEGINNING</small><h3 ref={resetTitle} tabIndex={-1}>{confirmReset?'Ready to start over?':'Open a new cafe?'}</h3>
+    <p>{m.offline?'This replaces the progress in this open demo.':'This replaces the progress saved in this browser.'} Keep an exported code if you want to return to this evening.</p>
+    <p className="a6-reset-account">Account level {m.state.account.accountLevel} · {m.state.account.cards.length} companions</p>
+    <div className="cr-actions"><button className="a6-reset-confirm" onClick={()=>{if(confirmReset)m.reset();else setConfirmReset(true);}}>{confirmReset?'Confirm reset account':'Reset account'}</button><button className="cr-primary" onClick={cancelReset}>Keep this account</button></div>
+   </section>:<>
+    <div className="a6-code-caption"><label htmlFor="a6-save-code">Save code</label><small>Lv. {m.state.account.accountLevel} · {m.state.account.cards.length}/{R.CATS.length} cats</small></div>
+    <textarea id="a6-save-code" ref={codeBox} aria-label="Save code" value={code} placeholder="Export your evening here, or paste a saved code." spellCheck={false} onChange={e=>{setCode(e.target.value);setFeedback('');setFailed(false);}}/>
+    <div className="a6-save-actions"><button className="cr-primary" onClick={exportCode}>Export save code</button><button disabled={!code.trim()} onClick={()=>{codeBox.current?.focus();codeBox.current?.select();setFailed(false);setFeedback('Whole code selected. Use Copy to keep it.');}}>Select save code</button><button disabled={!code.trim()} onClick={importCode}>Import save code</button></div>
+    <p className="a6-save-feedback" role="status" data-error={failed}>{feedback||'To continue later, paste your whole code and choose Import.'}</p>
+    <footer className="a6-save-footer"><span>Your progress travels with the code.</span><button ref={restart} onClick={()=>{setConfirmReset(false);setResetPage(true);}}>Start again</button></footer>
+   </>}
+  </section>
+  <section className="a6-comfort-desk" aria-label="Comfort and playback">
+   <header><div><small>MAKE YOURSELF AT HOME</small><h2>Settle in.</h2><p>A softer evening, at your pace.</p></div><DeskLamp lit={m.audio.enabled}/></header>
+   <div className="a6-sound-row"><span>Battle sounds</span><button aria-pressed={m.audio.enabled} onClick={()=>{void m.audio.toggle().then(()=>{m.state.settings.sound=m.audio.enabled;m.notify();});}}>Sound {m.audio.enabled?'on':'off'}</button></div>
+   <div className="a6-comfort-options"><label>Quality<select value={m.state.settings.quality} onChange={e=>{m.state.settings.quality=e.target.value as R.DepthAccount['settings']['quality'];m.notify();}}>{['low','medium','high'].map(q=><option key={q}>{q}</option>)}</select></label><label>Playback speed<select value={m.state.settings.speed} onChange={e=>{m.state.settings.speed=Number(e.target.value);m.notify();}}>{[1,2,3].map(n=><option key={n} value={n}>{n}×</option>)}</select></label></div>
+   <label className="a6-comfort-motion"><input type="checkbox" checked={m.state.settings.reducedMotion} onChange={e=>{m.state.settings.reducedMotion=e.target.checked;m.notify();}}/><span>Reduced motion<small>Keep the action with gentler movement.</small></span></label>
+   <p className="a6-playback-note">Your crew fights automatically. Space pauses the battle.</p>
+   <div className="a6-settings-replay"><button disabled={!m.state.lastBattle} onClick={()=>m.replayLast()}>Replay last battle</button><small>{m.state.lastBattle?'Return to your latest battle memory.':'Finish a battle to leave a memory here.'}</small></div>
+  </section>
+  {m.offline&&showReviewTools(R.gameplayV4(m.state))&&<section className="cr-panel dp-shortcuts"><h2>Demo shortcuts</h2><p>Reviewer-granted progress lets you inspect the later systems.</p><div className="cr-actions"><button onClick={()=>m.shortcut('unlock')}>Unlock all cats and build materials</button><button onClick={()=>m.shortcut('stamps')}>Add 1500 demo stamps</button><button onClick={()=>m.shortcut('chapter')}>Unlock chapters and Tower</button><button onClick={()=>m.command({type:'advanceLocalDay'})}>Advance fixture day</button></div></section>}
+ </div>;
+}

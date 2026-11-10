@@ -178,3 +178,6 @@ Tìm theo tên/hiệu ứng, xóa tìm kiếm, bàn phím và trạng thái tạ
 2026-11-10T22:40:23Z: Q27 hoàn tất: demo38,84MB có Cẩm nang tìm kiếm và Button Guard mới;30ảnh offline đã duyệt.
 75ghi chú/bàn phím/trạng thái tạm dừng đều đạt ở hai cỡ màn;39test puppet/typecheck/lint qua, không lỗi hoặc gọi mạng.
 Tiếp tục Cài đặt: chọn mã lưu trực tiếp, phản hồi rõ và xác nhận đặt lại nằm trọn trên trang.
+
+2026-11-10T22:46:55Z: Cài đặt đã duyệt20ảnh ở hai cỡ màn; chọn toàn bộ mã lưu, khôi phục đúng tài khoản/tùy chọn và hủy đặt lại đều đạt.
+Mã sai không đổi tiến trình; bàn phím, âm thanh, tốc độ và xem lại trận hoạt động, không lỗi trình duyệt. Đang đóng gói offline.

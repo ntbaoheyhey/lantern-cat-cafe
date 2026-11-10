@@ -58,3 +58,20 @@ it('uses current enemy mechanics and phase advice only in the A6 field guide',()
  expect(screen.getByText('Every third round restores 65 HP to the most injured foe.')).toBeTruthy();
  expect(screen.queryByText(/66% HP: woolguard shield/)).toBeNull();
 });
+
+it('selects the exported account and preserves progress after a bad import or cancelled reset',()=>{
+ const m=new DepthModel(true,true,true,true);m.state.account.currencies.stamps=777;
+ const before=JSON.stringify(m.state);render(<Settings m={m}/>);
+ fireEvent.click(screen.getByRole('button',{name:'Export save code'}));
+ const box=screen.getByRole('textbox',{name:'Save code'}) as HTMLTextAreaElement;
+ const exported=box.value;fireEvent.click(screen.getByRole('button',{name:'Select save code'}));
+ expect(document.activeElement).toBe(box);expect(box.selectionStart).toBe(0);expect(box.selectionEnd).toBe(exported.length);
+ expect(JSON.stringify(m.state)).toBe(before);
+ fireEvent.change(box,{target:{value:'broken cafe code'}});fireEvent.click(screen.getByRole('button',{name:'Import save code'}));
+ expect(m.error).toBe(true);expect(JSON.stringify(m.state)).toBe(before);expect(screen.getByRole('status').textContent).toBeTruthy();
+ fireEvent.change(box,{target:{value:exported}});fireEvent.click(screen.getByRole('button',{name:'Start again'}));
+ expect(JSON.stringify(m.state)).toBe(before);fireEvent.click(screen.getByRole('button',{name:'Reset account'}));
+ expect(JSON.stringify(m.state)).toBe(before);expect(screen.getByRole('button',{name:'Confirm reset account'})).toBeTruthy();
+ fireEvent.click(screen.getByRole('button',{name:'Keep this account'}));
+ expect(JSON.stringify(m.state)).toBe(before);expect((screen.getByRole('textbox',{name:'Save code'}) as HTMLTextAreaElement).value).toBe(exported);
+});
