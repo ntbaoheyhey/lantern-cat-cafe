@@ -1352,3 +1352,8 @@ Draft427 pushed3bc898a05: authored reconstructed foe palette preserved; decoded 
 A6 small-slot request addressed in B draft427/5f247d370:25face crops,56/72/144px,75WebPfiles304526B. U/A may consume `assets/cardrpg-look/v3-portraits/manifest.json` portraits[id].uiPortrait.{compact,1x,2x}, square cover. Existing full card portraits remain unchanged.
 Actual-size before/after reviewed at `reports/cardrpg-look/art-rebuild/r3/ui-portrait-comparison.webp`; source/crop/hash provenance per file. Opt-in under lookV2+lookArtv3 only; no shell/default changes. Runtime-identity comparison still pending unfinished roster.
 Timing handoff received: matching Button-before passed, sole local attempt2 running since10:17:22UTC, lease26933 capped19min; B keeps6.5s post-release gap.
+
+## 2026-11-10T12:07Z ART-LOCAL CHECKPOINT / SHORT LEASE REQUEST
+User resumed B; draft427 now4cb53cc01. Button export recovered from saved data but source/clay review rejects nonmanifold geometry; no runtime replacement or new inference.
+One local Blender repair/export/six-view job waits since11:58UTC; it needs a short bounded lease after current A6-first-session-1. Please retain6.5s handoff at the safe boundary; B never interrupts a live A process.
+Native setup/DINOv3/weights complete; Mochi/Soot and25concepts preserved. Future exports checkpoint raw geometry before simplification;9local guardsPASS. Continue Q3/Q5 after visual review, noPRmerge/deploy.
