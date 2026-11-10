@@ -142,6 +142,27 @@ describe('illustrated puppet contract and event motions',()=>{
     expect(puppetPose('cast',3,.38,false,.4,'clover').tailBend).toBe(0);
   });
 
+  it("raises Mochi's real shield socket toward foes with bounded, quiet follow-through",()=>{
+    const [,x,y]=rig.sockets.mainHand;
+    const held=puppetPose('cast',0,.38,false,0,'mochi');
+    const shield=new Vector3(Number(x),Number(y),0).applyMatrix4(new Matrix4().makeRotationZ(held.prop));
+    expect(shield.x).toBeGreaterThan(Number(x)+.04);
+    expect(shield.y).toBeGreaterThan(Number(y)+.035);
+    for(const motion of ['attack','cast','ultimate'] as const){
+      for(let i=0;i<=60;i++){
+        const p=puppetPose(motion,3,i/60,false,.4,'mochi'),quiet=puppetPose(motion,3,i/60,true,.4,'mochi');
+        expect(Math.abs(p.prop)).toBeLessThan(.21);
+        expect([quiet.prop,quiet.offhand,quiet.head,quiet.tail,quiet.tailBend,quiet.lean]).toEqual([0,0,0,0,0,0]);
+      }
+      const end=puppetPose(motion,3,1,false,.4,'mochi'),idle=puppetPose('idle',3,0,false,.4,'mochi');
+      expect(end.prop).toBeCloseTo(0,12);
+      expect(end.tail).toBeCloseTo(idle.tail,12);
+      expect(end.tailBend).toBeCloseTo(idle.tailBend,12);
+    }
+    expect(puppetPose('cast',0,.38,false,0,'clover').prop).toBeLessThan(0);
+    expect(puppetPose('cast',0,.38,false,0,'clover').tailBend).toBe(0);
+  });
+
   it("reaches Binding Thread's actual knot toward the party and settles with accessible quiet poses",()=>{
     const [,x,y]=threadRig.sockets.mainHand;
     const pose=puppetPose('cast',0,.38,false,0,'binding-thread');
