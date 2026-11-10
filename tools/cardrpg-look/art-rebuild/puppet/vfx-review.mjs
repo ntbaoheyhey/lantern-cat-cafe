@@ -19,7 +19,9 @@ try{
  await page.evaluate(()=>{const m=window.__depthReview;m.watchNow();m.paused=true;m.camera='wide';m.notify(false)});
  await page.waitForFunction(()=>window.__depthScene?.ready,null,{timeout:120000});
  for(const id of ids){
-  await apply(page,{gallery:id,progress:0});const tiles=[],samples=[];
+  await apply(page,{gallery:id,progress:0});
+  if(process.env.ART_A6_HUD==='1')await page.evaluate(()=>{const m=window.__depthReview;m.galleryBattle.initial.gameplayA6=true;m.notify(false);});
+  const tiles=[],samples=[];
   for(const [i,[label,kind,fraction]] of [['charge','anticipation',.85],['travel','travel',.5],['impact','impact',.65],['afterglow','reaction',.35]].entries()){
    const state=await page.evaluate(async({kind,fraction})=>{
     const m=window.__depthReview,s=window.__depthScene,b=m.plan.beats.find(b=>b.kind===kind);m.animationAt=b.start+b.duration*fraction;m.notify(false);await new Promise(requestAnimationFrame);
@@ -27,10 +29,10 @@ try{
     const source=s.puppets.get(m.plan.actorId),socket=source.model.getObjectByName(`${source.role}_socket_mainHand`),v=s.effectProp.clone();socket.getWorldPosition(v);
     const actual=s.cardEffects.propOrigin,canvas=s.puppetNumbers.canvas,drawn=s.puppetNumbers.drawn,host=canvas.getBoundingClientRect();
     const boxes=drawn.map(r=>({...r,left:r.x+host.x,right:r.x+r.width+host.x,top:r.y+host.y,bottom:r.y+r.height+host.y}));
-    const fixed=[...document.querySelectorAll('.dp-world-plate,.dp-party,.dp-battle-top,.dp-ultimate-moment,.dp-v4-boss-cue,.dp-combo-callout')].filter(e=>!e.hidden&&getComputedStyle(e).display!=='none'&&Number(getComputedStyle(e).opacity)>0).map(e=>e.getBoundingClientRect());
+    const fixed=[...document.querySelectorAll('.dp-world-plate,.dp-party,.dp-battle-top,.dp-ultimate-moment,.dp-v4-boss-cue,.dp-combo-callout,.uv-battle-top,.uv-battle-party,.uv-enemy-rage,.a6-ultimate-cutin,.a6-combo-banner')].filter(e=>!e.hidden&&getComputedStyle(e).display!=='none'&&Number(getComputedStyle(e).opacity)>0).map(e=>e.getBoundingClientRect());
     const hit=(a,b)=>a.left<b.right-.5&&a.right>b.left+.5&&a.top<b.bottom-.5&&a.bottom>b.top+.5;
     const overlap=boxes.flatMap((a,i)=>[...boxes.slice(i+1),...fixed].filter(b=>hit(a,b)).map(()=>a.text));
-    const dom=[...document.querySelectorAll('.dp-float-number')];
+    const dom=[...document.querySelectorAll('.dp-float-number,.uv-float-number')];
     const pixels=canvas.getContext('2d').getImageData(0,0,canvas.width,canvas.height).data;let ink=0;for(let i=3;i<pixels.length;i+=4)if(pixels[i])ink++;
     return {source:source.asset,puppet:source.model.userData.lookPuppet,socket:v.toArray(),emission:actual?.toArray(),error:actual?actual.distanceTo(v):null,stats:s.stats,faceHp:s.labelAudit.overlaps,canvasNumbers:canvas.dataset.puppetNumbers==='true',numbers:s.puppetNumbers.rows,drawn,ink,overlap,duplicate:dom.filter(e=>Number(getComputedStyle(e).opacity)>0).length,accessible:dom.every(e=>!!e.getAttribute('aria-label')&&!e.hidden),frame:{elapsed:m.animationAt,beat:b.kind,ultimate:m.plan.ultimate}};
    },{kind,fraction});
@@ -39,10 +41,10 @@ try{
    tiles.push({input:Buffer.from(`<svg width="720" height="30"><text x="12" y="22" fill="#fff0d2" font-size="17">${id} · ${label}</text></svg>`),left:i%2*720,top:Math.floor(i/2)*480});
   }
   await sharp({create:{width:1440,height:960,channels:3,background:'#173039'}}).composite(tiles).webp({quality:86}).toFile(out+'/'+id.replaceAll(':','-')+'.webp');
-  await page.evaluate(id=>{const m=window.__depthReview;m.gallerySpeed=1;m.state.settings.speed=1;m.inspect(id,0,true);window.__castFrames=[];let previous=performance.now();function sample(now){window.__castFrames.push(now-previous);previous=now;if(window.__depthReview.plan)requestAnimationFrame(sample)}requestAnimationFrame(sample);},id);
+  await page.evaluate(({id,a6})=>{const m=window.__depthReview;m.gallerySpeed=1;m.state.settings.speed=1;m.inspect(id,0,true);if(a6)m.galleryBattle.initial.gameplayA6=true;window.__castFrames=[];let previous=performance.now();function sample(now){window.__castFrames.push(now-previous);previous=now;if(window.__depthReview.plan)requestAnimationFrame(sample)}requestAnimationFrame(sample);},{id,a6:process.env.ART_A6_HUD==='1'});
   await page.waitForFunction(()=>!window.__depthReview.plan,null,{timeout:20000});
   const timing=await page.evaluate(()=>{const a=window.__castFrames.slice(1).sort((a,b)=>a-b);return{samples:a.length,median:a[Math.floor(a.length*.5)],p95:a[Math.floor(a.length*.95)],max:a.at(-1)}});
-  const reduced=await page.evaluate(async id=>{const m=window.__depthReview,s=window.__depthScene;m.inspect(id,.7);m.state.settings.reducedMotion=true;m.notify(false);await new Promise(requestAnimationFrame);s.render({...s.view(),fixedTime:20,paused:true},0);const a=JSON.stringify(s.puppetNumbers.drawn);s.render({...s.view(),fixedTime:30,paused:true},0);const same=a===JSON.stringify(s.puppetNumbers.drawn);m.state.settings.reducedMotion=false;return same;},id);
+  const reduced=await page.evaluate(async ({id,a6})=>{const m=window.__depthReview,s=window.__depthScene;m.inspect(id,.7);if(a6)m.galleryBattle.initial.gameplayA6=true;m.state.settings.reducedMotion=true;m.notify(false);await new Promise(requestAnimationFrame);s.render({...s.view(),fixedTime:20,paused:true},0);const a=JSON.stringify(s.puppetNumbers.drawn);s.render({...s.view(),fixedTime:30,paused:true},0);const same=a===JSON.stringify(s.puppetNumbers.drawn);m.state.settings.reducedMotion=false;return same;},{id,a6:process.env.ART_A6_HUD==='1'});
   result.rows.push({id,samples,timing,reduced});await writeFile(out+'/vfx-review.json',JSON.stringify(result,null,2)+'\n');
  }
 }finally{await browser.close();await writeFile(out+'/vfx-review.json',JSON.stringify(result,null,2)+'\n')}

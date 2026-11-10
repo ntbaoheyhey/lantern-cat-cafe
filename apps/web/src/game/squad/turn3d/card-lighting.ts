@@ -1,6 +1,6 @@
 import * as T from 'three';
 import { isLookV2 } from './look-v2';
-import { isLookArtV3 } from './look-art';
+import { artPipeline, isLookArtV3 } from './look-art';
 import tokens from '../../cardrpg/look-tokens.json';
 export const CARD_LIGHTING = [
   { key: '#ffe0ba', rim: '#bdd2ff', fog: '#282330', exposure: 1.04 },
@@ -20,10 +20,17 @@ export function applyCardLighting(scene: T.Scene, renderer: T.WebGLRenderer, cha
         light.color.set(color); light.intensity = spec.intensity;
         light.position.fromArray(spec.position);
         if(isLookArtV3()&&name==='cafe-key')light.position.set(-3.8,6,5.5);
+        if(artPipeline()==='puppet'&&name==='cafe-rim')light.position.set(3.2,4.8,-3.5);
       }
     }
     let fill = scene.getObjectByName('atelier-fill');
     if(!fill){fill=new T.DirectionalLight(tokens.lighting.fill.color,tokens.lighting.fill.intensity);fill.name='atelier-fill';fill.position.fromArray(tokens.lighting.fill.position);scene.add(fill);}
+    if(fill instanceof T.DirectionalLight){
+      const puppet=artPipeline()==='puppet';
+      fill.color.set(puppet?'#e5d5ba':tokens.lighting.fill.color);
+      fill.intensity=puppet?.78:tokens.lighting.fill.intensity;
+      fill.position.fromArray(tokens.lighting.fill.position);
+    }
     scene.traverse(object => {
       if (object instanceof T.HemisphereLight) {
         object.color.set(tokens.lighting.bounce.sky);

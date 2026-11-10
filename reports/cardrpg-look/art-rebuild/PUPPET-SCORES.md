@@ -42,3 +42,5 @@ P4 batch1 retains Mochi 7.8/Soot 7.6 after current runtime re-review. All six mo
 P5 final roster:25of25cat/enemy ids have concept puppets; four boss showcases/reduced-motion pass. Pilot battle row remains historical; current composition7.8–8.0.
 
 P6 current battle/VFX audit: readability8.4, style coherence8.3, timing8.1, spectacle7.5; combined8.1. This does not overwrite the unit-motion scores or the historical pilot battle. Evidence p6/REVIEW.md and the three overview sheets; shared envelope/gesture limits remain explicit.
+
+P7 cafe stage/composition8.0 self-review: current A6 controlled pairs preserve clear faces with warm fill, night crescent and enemy accents. No per-unit motion score change. Evidence p7/REVIEW.md; Rain Spool proximity remains P13.

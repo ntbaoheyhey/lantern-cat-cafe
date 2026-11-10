@@ -57,3 +57,6 @@ HEAD equals fetched origin at 443edb96d5f50a1be05cf57c03e1d3d389effd28. P1–P5 
 
 ## Resume 2026-11-10T18:07:15.616549+00:00
 HEAD matches origin 494d2041bd66de863788de224596493a9f7ce573. P1–P6 remain complete. P7 baseline6screens/0errors already saved; final job not yet started. P8 export25units/60skills complete. No native runner;150GiB free. Dirty inventory RESUME-DIRTY-P7.txt retained. A6 owns timing.lock; queue B final validation without interrupting A6.
+
+## Resume 2026-11-10T18:28:04.499869+00:00
+HEAD equals fetched origin cd301f3af27779f96ae5eb59bfa645e00bbd50d6. P7 saved6screens/5casts/19tests/parityPASS; films now present, inspect before any new capture. No native runner; servers5920/5922 preserved,148GiB free. Dirty inventory RESUME-DIRTY-P7-FINAL.txt; no work discarded.

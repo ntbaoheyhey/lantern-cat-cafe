@@ -10,7 +10,7 @@ Check STOP-B/INBOX and fetch/show A6-OUTBOX between items. Commit/push and updat
 - [x] P4 All 12 cats (2 batches of 6; commit/push per batch): Mochi, Soot, Clover, Panko, Mallow, Cinnamon, Velvet, Biscuit, Brioche, Marigold, Sorrel, Inkcap (check the exact roster ids in the code). Done per batch: battle captures, contact sheets, face/HP check, scores >= 7.5.
 - [x] P5 All enemies and bosses (batches of 6): all 13 enemy concepts mapped to every enemy/boss id in the rules; bosses with boss idle + phase flash. Done: every enemy id has a puppet or a documented fallback.
 - [x] P6 VFX pass (6 h): every signature skill and ultimate on the puppets' real sockets/targets/timing; damage numbers; audit score >= 8.0 at x1 (reuse existing VFX masters where they fit).
-- [ ] P7 Stage + light (3 h): warm cafe, faces lit, richer enemy side, night window; cast frame <= 33 ms.
+- [x] P7 Stage + light (3 h): warm cafe, faces lit, richer enemy side, night window; cast frame <= 33 ms.
 - [x] P8 Portraits/icons/card art (3 h): regenerate crops from the final puppet art where needed; one manifest; B-OUTBOX entry for A6.
 - [ ] P9 Publish for A6 (1 h, repeat after each big batch): push, update #427, write B-OUTBOX.md (what changed, manifest paths, flags, known issues). Make sure the demo size stays <= 40 MB together with A6 (WebP atlases; report your share in B-OUTBOX).
 - [ ] P10 Films (by 19 Nov 12:00 UTC): in the throwaway A6 preview (section 2), one 60-90 s x1 battle with several ultimates and one boss fight; R0 vs now comparison posters.
@@ -47,3 +47,5 @@ P5 complete 2026-11-10T17:22:53.971881+00:00: all13enemy ids covered with origin
 P6 complete 2026-11-10T17:50:04.179396+00:00: saved49+6casts/33tests reused and visually reviewed, exact sockets0error, canvas numbers/accessibility/reducedPASS; new5seed parityPASS. VFX audit8.1 self-review; P7 stage next.
 
 P8 complete 2026-11-10T18:09:14.154961+00:00: accepted saved25unit formats/60skills, source/path checks and prior format-sheet review; UI crops/icons preserved,4full-body card fixes. Completed while P7 waits for A6 lease; P7 remains top unfinished.
+
+P7 complete 2026-11-10T18:29:55.894769+00:00: saved6current-HUD captures/5casts accepted; warm fill, night crescent, enemy accents;19tests/parityPASS; warmedp95/max16.8ms. Stage8.0 self-review; P9 budget next.

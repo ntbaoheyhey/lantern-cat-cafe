@@ -57,3 +57,6 @@ P8 đã xuất đủ25unit/60icon, giữ nguyên kết quả; P7 xếp hàng ch�
 
 P8 hoàn tất từ bản xuất đã lưu:25nhân vật đủ portrait/icon/card,60icon kỹ năng; bốn card đã giữ trọn hình gốc.
 Manifest v4 sẵn cho A6; crop nhỏ và icon cũ giữ nguyên. P7 vẫn chờ khóa đo, chưa đánh dấu hoàn tất.
+
+P7 hoàn tất từ kết quả đã lưu: sân quán ấm hơn, có trăng đêm và chi tiết phía địch; giữ rõ mặt/đạo cụ gốc.
+6ảnh trong HUD A6 hiện tại,5chiêu,19test và parity đều đạt; khung hình đã làm nóng tối đa16,8ms. Chuyển sang P9 dung lượng.

@@ -28,7 +28,7 @@ export function audit(){
  const words=all('.dp-combo-callout'),numbers=all('.dp-float-number');
  const liveStrip=all('.dp-v5-status-strip');
  const bossCues=all('.dp-v4-boss-cue');
- const fixed=all('.dp-ultimate-moment,.dp-party,.dp-battle-top,.dp-roundbar,.dp-v5-status-strip,.dp-v4-boss-cue');
+ const fixed=all('.dp-ultimate-moment,.dp-party,.dp-battle-top,.dp-roundbar,.dp-v5-status-strip,.dp-v4-boss-cue,.uv-battle-top,.uv-battle-party,.uv-enemy-rage,.a6-ultimate-cutin,.a6-combo-banner');
  const hit=(a,b)=>a.left<b.right-.5&&a.right>b.left+.5&&a.top<b.bottom-.5&&a.bottom>b.top+.5;
  const overlaps=[];const text=[...words,...numbers];
  for(const cue of bossCues)for(const other of [...plates,...all('.dp-ultimate-moment')])if(hit(rect(cue),rect(other)))overlaps.push([rect(cue),rect(other)]);
