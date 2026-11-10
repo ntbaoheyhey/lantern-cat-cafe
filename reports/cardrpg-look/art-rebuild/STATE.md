@@ -69,3 +69,6 @@ HEAD equals fetched origin ba680a44c124ba6713cba82ad26f9f098139af42. P15 attempt
 
 ## Resume 2026-11-10T19:41:03.237172+00:00
 HEAD matches fetched origin4815b7f3b. P10/P14 combined wrapper96380 still waiting, no native runner; servers5920/5922 retained,145GiB free. Dirty inventory RESUME-DIRTY-P10-P14.txt. No prior work repeated or discarded.
+
+## Resume 2026-11-10T20:01:11.470499+00:00
+HEAD matches origin fc4284033d64cb334142054d15906477afcb2782. P10 terminal-loading candidate rejected; visible-result capture fix already present, distinct retry next. P14 saved16views/8casts/19tests/parity/budget passed, visual review pending. No native runner; servers5920/5922 retained;143GiB free. Dirty inventory RESUME-DIRTY-P10-RESULT.txt.
