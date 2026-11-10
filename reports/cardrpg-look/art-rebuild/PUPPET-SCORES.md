@@ -19,7 +19,7 @@ Evidence uses A6 shell in a disposable merged preview; primary branch contains n
 | Sorrel | 8.6 | 7.5 | 7.7 | 7.7 | p4/batch2-final/sorrel-comparison.webp and sorrel-motion.webp; leaf hat/staff retained; eye ROI repaired |
 | Inkcap | 8.6 | 7.7 | 7.8 | 7.8 | p16/evidence/inkcap-follow-through.webp; raised lantern/open offhand and subtle per-actor tail bend; tail remains partly obscured in this formation |
 | Button Guard | 8.6 | 7.5 | 7.8 | 7.8 | p5/batch1-final/button-guard-comparison.webp and button-guard-motion.webp; button shield/needle silhouette intact |
-| Sock Skipper | 8.6 | 7.5 | 7.7 | 7.7 | p5/batch1-final/sock-skipper-comparison.webp and sock-skipper-motion.webp; knit body and loose thread preserved; compact arm gesture |
+| Sock Skipper | 8.6 | 7.7 | 7.7 | 7.7 | p17/evidence/sock-skipper-hop.webp; short anticipation/hop/landing, forward mitten and thread recovery; boot roll remains shared |
 | Spool Ram | 8.6 | 7.7 | 7.7 | 7.7 | p14/evidence/spool-ram-follow-through.webp; authored horn dip, planted hoof contacts and delayed tail recovery; no independent hoof roll |
 | Needle Moth | 8.6 | 7.5 | 7.8 | 7.8 | p5/batch1-final/needle-moth-comparison.webp and needle-moth-motion.webp; independent opposing wing pivots; needle stays readable |
 | Teacup Healer | 8.6 | 7.5 | 7.8 | 7.8 | p5/batch1-final/teacup-healer-comparison.webp and teacup-healer-motion.webp; cup/lid/spoon retained; short elbow motion |

@@ -2,6 +2,7 @@ import { afterEach, describe, expect, it } from 'vitest';
 import {Vector3,Matrix4} from 'three';
 import rig from '../../../../../../assets/cardrpg-look/v3-puppets/mochi.rig.json';
 import inkcapRig from '../../../../../../assets/cardrpg-look/v3-puppets/inkcap.rig.json';
+import sockRig from '../../../../../../assets/cardrpg-look/v3-puppets/sock-skipper.rig.json';
 import { parsePuppetRig, puppetMotion, puppetPhase, puppetPose, plantedPuppetPivot } from './look-puppet-rig';
 import { artPipeline } from './look-art';
 import { CATS, ENEMIES } from '../../../../../../packages/game-rules/src/cardrpg/depth/catalog';
@@ -135,6 +136,25 @@ describe('illustrated puppet contract and event motions',()=>{
     expect(lifted.y).toBeGreaterThan(Number(y)+.04);
     expect(puppetPose('cast',3,.38,false,.4,'inkcap').tailBend).not.toBe(puppetPose('idle',3,0,false,.4,'inkcap').tailBend);
     expect(puppetPose('cast',3,.38,false,.4,'clover').tailBend).toBe(0);
+  });
+
+  it('gives Sock Skipper a bounded hop, a forward mitten and an exact quiet landing',()=>{
+    const pose=(t:number,reduced=false)=>puppetPose('attack',0,t,reduced,0,'sock-skipper');
+    expect(pose(.16).hopSquash).toBeGreaterThan(.03);
+    expect(pose(.42).hopLift).toBeGreaterThan(.10);
+    expect(pose(.70).hopSquash).toBeGreaterThan(.02);
+    for(let i=0;i<=100;i++){
+      const p=pose(i/100),quiet=pose(i/100,true);
+      expect(p.hopLift).toBeGreaterThanOrEqual(0);
+      expect(p.hopLift).toBeLessThanOrEqual(.11);
+      expect(Math.abs(p.hopSquash)).toBeLessThanOrEqual(.035);
+      expect([quiet.hopLift,quiet.hopSquash,quiet.prop,quiet.offhand,quiet.tailBend]).toEqual([0,0,0,0,0]);
+    }
+    for(const t of [0,1])expect([pose(t).hopLift,pose(t).hopSquash]).toEqual([0,0]);
+    const [,x,y]=sockRig.sockets.mainHand;
+    const reach=new Vector3(Number(x),Number(y),0).applyMatrix4(new Matrix4().makeRotationZ(pose(.52).offhand));
+    expect(reach.x).toBeLessThan(Number(x)-.03);
+    for(const id of ['inkcap','soot','spool-ram','clover'])expect(puppetPose('attack',0,.42,false,0,id).hopLift).toBe(0);
   });
 
 });

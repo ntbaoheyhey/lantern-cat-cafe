@@ -100,3 +100,6 @@ P14 đã duyệt từ ảnh/test lưu sẵn: Spool Ram cúi sừng rõ hơn, ch�
 
 Inkcap đã duyệt bản sửa2: đèn nâng đúng hướng khi chuẩn bị phép, tay còn lại mở rõ; chuyển động7,5→7,7, tổng7,7→7,8.
 22test và12lượt chiêu đạt, không lỗi shader/chồng HP; bản chung38.176.938byte. Tiếp tục Sock Skipper trong nhóm điểm thấp chưa được tinh chỉnh.
+
+Sock Skipper đã duyệt từ ảnh lưu sẵn: lấy đà, bật nhẹ rồi tiếp đất; tay hướng về đối thủ, giày và đường may vẫn liền.
+23test/type/lint/parity cùng8lượt chiêu đã đạt; chuyển động7,5→7,7, tổng giữ7,7. Tiếp tục Cinnamon, không chạy lại phần đã xong.

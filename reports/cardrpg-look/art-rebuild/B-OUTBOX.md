@@ -68,3 +68,6 @@ Spool Ram alone gains an authored horn dip and delayed tail recovery. Counter-tr
 
 ## P16 — Inkcap authored lantern and per-actor tail
 Inkcap raises its right-hand lantern during casting and opens the offhand. A subtle tail bend uses independent per-actor material uniforms; cached geometry/atlases/rigs stay unchanged, no extra draw call. Attempt1 loweringgesture was rejected; attempt2 actualsocket lift0.06946 accepted at both sizes.16pairedviews/12casts/22tests/type/lint/parityPASS;0shader/page/socket/HP/boundsfailures, warm p95<=16.8ms. Actual combined38,176,938B/headroom1,823,062B; Bassetshare unchanged. No new HUD/event/flag contract. Evidence p16/REVIEW.md.
+
+## P17 — Sock Skipper anticipation and small hop
+Sock Skipper compresses, hops up to0.11local units, reaches the front mitten and settles with loose-thread follow-through. Existing atlas/rig/geometry/floor shadow retained; reduced motion stays still. Saved16views/8casts/23tests/type/lint/parityPASS;0page/socket/HP/boundsfailures, warm p95<=16.8ms. Actual combined38,177,170B/headroom1,822,830B; Bassetshare unchanged. No new HUD/event/flag contract. Evidence p17/REVIEW.md.

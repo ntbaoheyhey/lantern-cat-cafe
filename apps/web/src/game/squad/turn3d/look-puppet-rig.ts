@@ -43,6 +43,8 @@ function authoredGesture(motion:PuppetMotion,t:number) {
 // Individual prop/body gestures use the same action clock and delayed recovery.
 // Unlisted rigs retain their accepted shared motion.
 const sootGesture={prop:.265,offhand:.15,head:.035,lean:.032,tailFollow:.085,clothFollow:.035,lag:.06};
+// The knit thief reaches with the left mitten and recoils through loose thread.
+const sockSkipperGesture={prop:-.12,offhand:-.25,head:.045,lean:.035,tailFollow:.12,clothFollow:0,lag:.075};
 // Lantern leads; the open offhand, head and tail follow.
 const inkcapGesture={prop:-.245,offhand:-.185,head:.042,lean:.028,tailFollow:.075,clothFollow:0,lag:.07};
 // Left-facing horns dip into the strike; front legs brace instead of swinging.
@@ -59,17 +61,20 @@ export function puppetPose(motion:PuppetMotion,time:number,progress:number,reduc
   // A held raised-prop silhouette before the ultimate release, then overshoot.
   const magic=ramp(t,0,.20)-1.23*ramp(t,.43,.66)+.23*ramp(t,.66,1);
   const gesture=reduced?0:active?authoredGesture(motion,t):0;
-  const profile=id==='soot'?sootGesture:id==='spool-ram'?spoolRamGesture:id==='inkcap'?inkcapGesture:undefined;
+  const profile=id==='soot'?sootGesture:id==='spool-ram'?spoolRamGesture:id==='inkcap'?inkcapGesture:id==='sock-skipper'?sockSkipperGesture:undefined;
   const follow=reduced||!active||!profile?0:authoredGesture(motion,Math.max(0,t-profile.lag))*(1-ramp(t,.93,1));
+  const skip=id==='sock-skipper'&&active&&!reduced;
+  const skipAir=skip?ramp(t,.18,.38)-ramp(t,.48,.70):0;
+  const skipSquash=skip?.035*(ramp(t,0,.16)-ramp(t,.20,.34))-.02*skipAir+.025*(ramp(t,.55,.70)-ramp(t,.70,.94)):0;
   const hit=motion==='hurt'?Math.sin(t*Math.PI):0;
   const clock=time+phase;
   const breathe=reduced?0:Math.sin(clock*2.25)*(motion==='boss-idle'?.014:.009);
   const blinkAt=(clock%(4.1+phase*.17));
   const blink=reduced?1:1-.98*Math.exp(-Math.pow((blinkAt-3.85)/.065,2));
-  return {gesture,breathe,plant:id==='spool-ram'&&active&&!reduced,hit:reduced?0:hit,flash:reduced?0:motion==='hurt'?.45*(1-ramp(t,0,.24)):0,
+  return {gesture,breathe,hopLift:skipAir*.11,hopSquash:skipSquash,plant:id==='spool-ram'&&active&&!reduced,hit:reduced?0:hit,flash:reduced?0:motion==='hurt'?.45*(1-ramp(t,0,.24)):0,
     head:reduced?0:motion==='hurt'?-.045*hit:motion==='defeat'?-.12:active?-(profile?.head??.025)*gesture-.012*follow:Math.sin(clock*1.15)*.013,
     tail:reduced?0:Math.sin(clock*1.45)*.065-(profile?.tailFollow??0)*follow,
-    tailBend:reduced||id!=='inkcap'?0:Math.sin(clock*1.45-.3)*.018-follow*.045,
+    tailBend:reduced||!['inkcap','sock-skipper'].includes(id)?0:Math.sin(clock*1.45-.3)*(id==='sock-skipper'?.024:.018)-follow*(id==='sock-skipper'?.055:.045),
     cloth:reduced?0:Math.sin(clock*1.45)*.065*.3-(profile?.clothFollow??0)*follow,
     wing:reduced?0:Math.sin(clock*1.55)*.055+gesture*.08,
     prop:reduced?0:active?-(profile?.prop??.20)*gesture:motion==='victory'?-.17:Math.sin(clock*1.8)*.017,

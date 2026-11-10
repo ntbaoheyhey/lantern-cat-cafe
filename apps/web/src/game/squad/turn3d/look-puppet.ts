@@ -33,7 +33,7 @@ export async function loadPuppetModel(id:string){
     material.userData={lookPainted:true,lookPuppet:true,puppetPart:layer.part,puppetRect:layer.rect,puppetAtlas:layer.atlasRect,puppetEyes:data.eyes,puppetEyeStyle:data.eyeStyle};
     const mesh=new T.Mesh(geometry,material);mesh.name=`illustrated_${id}_${layer.part}`;
     mesh.position.set((x+w/2-px)*width,(py-y-h/2)*data.height,0);group.add(mesh);
-    if(id==='inkcap'&&layer.part==='tail'){
+    if((id==='inkcap'||id==='sock-skipper')&&layer.part==='tail'){
       material.userData.puppetTailOrigin=[mesh.position.x,mesh.position.y];
       material.userData.puppetTailReach=Math.max(...[-1,1].flatMap(dx=>[-1,1].map(dy=>Math.hypot(mesh.position.x+dx*w*width/2,mesh.position.y+dy*h*data.height/2))));
     }
@@ -123,8 +123,8 @@ export function animateIllustrated(model:T.Object3D,camera:T.Camera,time:number,
   const data=model.userData.paintedRig as PuppetRig,rig=model.children[0]!;
   const phase=puppetPhase(model.userData.puppetActorId??data.id);
   const pose=puppetPose(puppetMotion(clip,acting,ultimate,data.boss),time,progress??.5,reduced,phase,data.id);
-  rig.scale.set(1-pose.breathe+pose.hit*.025,1+pose.breathe-pose.hit*.035-pose.collapse,1);rig.rotation.set(0,0,pose.lean);
-  rig.position.y=(rig.userData.restY as number)-pose.collapse*.3;
+  rig.scale.set(1-pose.breathe+pose.hit*.025+pose.hopSquash*.6,1+pose.breathe-pose.hit*.035-pose.collapse-pose.hopSquash,1);rig.rotation.set(0,0,pose.lean);
+  rig.position.y=(rig.userData.restY as number)-pose.collapse*.3+pose.hopLift;
   for(const layer of rig.children){
     if(!layer.name.startsWith('puppet_'))continue;
     layer.position.fromArray(layer.userData.puppetRest as number[]);layer.rotation.set(0,0,0);
