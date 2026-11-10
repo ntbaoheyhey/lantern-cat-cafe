@@ -94,3 +94,6 @@ Giữ phim thường85,49giây/9ultimate và hai poster; bản1440×900 lưu ngo
 
 P11 đã tổng hợp25nhân vật, phim đã duyệt, ngân sách38,18MB và nguồn ảnh. Điểm tự chấm8,23/10, vẫn dưới mục tiêu8,5.
 Phần yếu còn lại là chuyển động dùng chung và độ nổi bật ultimate; tiếp tục Spool Ram rồi Inkcap theo hàng đợi.
+
+P14 đã duyệt từ ảnh/test lưu sẵn: Spool Ram cúi sừng rõ hơn, chân bám ổn định và đuôi theo sau; điểm chuyển động7,5→7,7.
+16khung so sánh/8lượt chiêu,19test/type/lint/parity đạt; bản chung38.176.310byte. Tiếp tục Inkcap, chưa tăng điểm toàn đội hình.

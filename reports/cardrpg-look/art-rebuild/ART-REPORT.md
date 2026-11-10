@@ -10,16 +10,16 @@ These scores are Lane B visual judgments, not user acceptance or an independent 
 
 | Rubric | Weight | Score | Evidence and limitation |
 | --- | ---: | ---: | --- |
-| Concept match and battle appearance | 35% | 8.2 | Every unit retains its concept. Unit fidelity is 8.6–8.8; battle appearance is 7.6–8.0. |
-| Motion | 20% | 7.5 | Eight semantic motions per unit; shared rigid-part gestures remain restrained. Soot's authored lantern/tail follow-through scores 7.7. |
+| Concept match and battle appearance | 35% | 8.2 | Every unit retains its concept. Unit fidelity is 8.6–8.8; battle appearance is 7.7–8.0. |
+| Motion | 20% | 7.5 | Eight semantic motions per unit; shared rigid-part gestures remain restrained. Soot's lantern/tail and Spool Ram's planted horn-dip refinements each score 7.7. |
 | VFX at x1 | 15% | 8.1 | 49+6 cast audit, original motifs and real moving prop sockets. Spectacle (7.5) still trails readability. |
 | Camera, composition and stage | 15% | 8.1 | Closer framing, warm/cool cafe light, Rain Spool spacing and clear three/four-helper phase-three formations. |
 | Roster coverage | 10% | 10.0 | All 25 current rules IDs have a valid original rig and atlas. |
 | Performance and size | 5% | 8.5 | Warmed cast p95/max 16.8 ms; current combined artifact 38.18 MB. Cold loading is not included in the timing claim. |
 
-The weighted score is **8.225/10 (8.23 rounded)**, below the 8.5 target. The next specific refinement is Spool Ram (overall 7.6, motion 7.5): a horn dip, firmer leg contact and delayed tail recovery. Shared gestures, sampled eyelid closure and understated ultimate spectacle remain quality limits. No score is raised merely because a test passed.
+The weighted score is **8.225/10 (8.23 rounded)**, below the 8.5 target. Spool Ram now has a clearer horn dip, planted hoof contacts and delayed tail recovery (motion 7.7, overall 7.7). Inkcap (overall 7.7, motion 7.5) is the next bounded refinement. Shared gestures, sampled eyelid closure and understated ultimate spectacle remain quality limits. No score is raised merely because a test passed.
 
-R0's weighted 5.9966 used a different rubric and is not directly comparable. Comparable observations are cat appeal 5.0 → about 7.8 battle appearance; foes 4.0 → 7.6–8.0; motion 5.5 → 7.5; VFX 6.233 → 8.1; stage 6.5 → 8.0. The two comparison posters preserve the historical R0 images. They do not claim the same HUD, camera or exact action frame.
+R0's weighted 5.9966 used a different rubric and is not directly comparable. Comparable observations are cat appeal 5.0 → about 7.8 battle appearance; foes 4.0 → 7.7–8.0; motion 5.5 → 7.5; VFX 6.233 → 8.1; stage 6.5 → 8.0. The two comparison posters preserve the historical R0 images. They do not claim the same HUD, camera or exact action frame.
 
 ## Films
 
@@ -29,7 +29,7 @@ The accepted boss film is an uninterrupted **136.933333 seconds at x1**, with **
 
 The initial level-1 clips, the old boss excerpt and the first complete boss film are retained as diagnostics. Reviewing the latter revealed that two late summons shared existing helper positions. P15 corrects that issue with stable actor-ID lanes. The initial pair, surviving helpers, boss scale, cat scale and gameplay slots remain unchanged.
 
-The saved speed audit covers Mochi/Soot ultimates and Rain Spool at x1/x2/x3 plus reduced motion. Every beat and the canvas number cue remains sampled, with no face/HP overlap. Recording a film is not a frame-time benchmark. Full 1440×900 masters remain outside Git; the repository carries compact viewing proxies and contact sheets. Selected art-rebuild evidence is 119.45 MB, below its 120 MB budget. The normal film is an excerpt; the boss film includes the complete outcome.
+The saved speed audit covers Mochi/Soot ultimates and Rain Spool at x1/x2/x3 plus reduced motion. Every beat and the canvas number cue remains sampled, with no face/HP overlap. Recording a film is not a frame-time benchmark. Full 1440×900 masters remain outside Git; the repository carries compact viewing proxies and contact sheets. Selected art-rebuild evidence is 119.61 MB, below its 120 MB budget. The normal film is an excerpt; the boss film includes the complete outcome.
 
 ## Validation and budget
 
@@ -37,7 +37,9 @@ Accepted prior work was reused on resume. The roster has valid rig/atlas coverag
 
 P15 adds six focused tests and 12 actual rules-resolved phase-three views: Yarn Giant, Rain Spool and Pantry Crown, with three/four live helpers at both 1440×900 and 1280×720. There are no page errors, missing live labels, out-of-canvas units or face/HP collisions. Manual review confirms the helper and boss faces remain identifiable. Five rules seeds match the retained baseline across six art modes; 102 resolved plans remain unmodified. Static views are not playback/performance evidence, and deliberate melee contact is not treated as a silhouette-separation failure.
 
-The actual combined A6 `15f5653d0711284b45b6495b40e0ab33b5b5029a` + B artifact is **38,175,926 bytes**, below the **40,000,000-byte** limit with **1,824,074 bytes** headroom. B's embedded asset share is **23,545,868 bytes**, including retained classic/diagnostic assets. Optional portrait variants overlap imported assets and are not added to this measured artifact. A6 should rerun the existing size guard when changing its selected imports. Film masters and intermediate captures are outside the game artifact.
+The actual combined A6 `15f5653d0711284b45b6495b40e0ab33b5b5029a` + B artifact is **38,176,310 bytes**, below the **40,000,000-byte** limit with **1,823,690 bytes** headroom. B's embedded asset share is **23,545,868 bytes**, including retained classic/diagnostic assets. Optional portrait variants overlap imported assets and are not added to this measured artifact. A6 should rerun the existing size guard when changing its selected imports. Film masters and intermediate captures are outside the game artifact.
+
+P14 adds a manually reviewed 16-pose comparison, eight natural x1 casts including reduced motion, 19 focused tests and exact rules parity. Main-hand socket error is zero; local planted-hoof drift is below 5e-16 world units. The existing atlas and rig remain unchanged. Warmed p95 stays at most 16.8 ms. This improves one unit, without changing the overall motion score.
 
 ## Integration and provenance
 
@@ -47,6 +49,6 @@ The actual combined A6 `15f5653d0711284b45b6495b40e0ab33b5b5029a` + B artifact i
 - Canvas owns visible damage/crit/heal/shield/KO totals; the DOM labels remain accessible. A6 retains its top/bottom HUD envelopes and cut-in overlay.
 - Original provenance: `assets/provenance/look.md`, concept receipts and per-unit puppet receipts. No other game's art, rig or animation was copied or used as a generation reference. This continuation used local scripts and the existing original assets, with no new image generation, paid service or account.
 
-Evidence: [roster scores](PUPPET-SCORES.md), [VFX](p6/REVIEW.md), [stage](p7/REVIEW.md), [portraits](p8/REVIEW.md), [budget](p15/budget/budget.json), [Soot motion](p12/REVIEW.md), [initial boss composition](p13/REVIEW.md), [phase-three formation](p15/REVIEW.md), [films](p10/REVIEW.md), and [A6 handoff](B-OUTBOX.md).
+Evidence: [roster scores](PUPPET-SCORES.md), [VFX](p6/REVIEW.md), [stage](p7/REVIEW.md), [portraits](p8/REVIEW.md), [budget](p15/budget/budget.json), [Soot motion](p12/REVIEW.md), [Spool Ram motion](p14/REVIEW.md), [initial boss composition](p13/REVIEW.md), [phase-three formation](p15/REVIEW.md), [films](p10/REVIEW.md), and [A6 handoff](B-OUTBOX.md).
 
 No user-only blocker is known. Motion refinement continues after the core report; completion of this report is not a stop under the user's non-stop instruction.

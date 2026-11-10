@@ -40,23 +40,31 @@ function authoredGesture(motion:PuppetMotion,t:number) {
   const magic=ramp(t,0,.20)-1.23*ramp(t,.43,.66)+.23*ramp(t,.66,1);
   return motion==='attack'?strike:magic;
 }
-// Soot's lantern leads; head and long tail follow a few frames later. Other
-// accepted rigs retain their existing gestures until their own visual review.
+// Individual prop/body gestures use the same action clock and delayed recovery.
+// Unlisted rigs retain their accepted shared motion.
 const sootGesture={prop:.265,offhand:.15,head:.035,lean:.032,tailFollow:.085,clothFollow:.035,lag:.06};
+// Left-facing horns dip into the strike; front legs brace instead of swinging.
+const spoolRamGesture={prop:.085,offhand:.07,head:-.075,lean:-.05,tailFollow:.095,clothFollow:0,lag:.065};
+/** Counter-transform a planted local foot contact while the body leans/breathes. */
+export function plantedPuppetPivot(rest:readonly number[],contact:readonly number[],rotation:number,lean:number,scale:readonly number[]):[number,number] {
+  const x=rest[0]!+contact[0]!,y=rest[1]!+contact[1]!;
+  const c=Math.cos(lean),s=Math.sin(lean),cr=Math.cos(rotation),sr=Math.sin(rotation);
+  return [(c*x+s*y)/scale[0]!-(cr*contact[0]!-sr*contact[1]!),(-s*x+c*y)/scale[1]!-(sr*contact[0]!+cr*contact[1]!)];
+}
 export function puppetPose(motion:PuppetMotion,time:number,progress:number,reduced:boolean,phase=0,id='') {
   const t=Math.max(0,Math.min(1,progress));
   const active=motion==='attack'||motion==='cast'||motion==='ultimate';
   // A held raised-prop silhouette before the ultimate release, then overshoot.
   const magic=ramp(t,0,.20)-1.23*ramp(t,.43,.66)+.23*ramp(t,.66,1);
   const gesture=reduced?0:active?authoredGesture(motion,t):0;
-  const profile=id==='soot'?sootGesture:undefined;
+  const profile=id==='soot'?sootGesture:id==='spool-ram'?spoolRamGesture:undefined;
   const follow=reduced||!active||!profile?0:authoredGesture(motion,Math.max(0,t-profile.lag))*(1-ramp(t,.93,1));
   const hit=motion==='hurt'?Math.sin(t*Math.PI):0;
   const clock=time+phase;
   const breathe=reduced?0:Math.sin(clock*2.25)*(motion==='boss-idle'?.014:.009);
   const blinkAt=(clock%(4.1+phase*.17));
   const blink=reduced?1:1-.98*Math.exp(-Math.pow((blinkAt-3.85)/.065,2));
-  return {gesture,breathe,hit:reduced?0:hit,flash:reduced?0:motion==='hurt'?.45*(1-ramp(t,0,.24)):0,
+  return {gesture,breathe,plant:id==='spool-ram'&&active&&!reduced,hit:reduced?0:hit,flash:reduced?0:motion==='hurt'?.45*(1-ramp(t,0,.24)):0,
     head:reduced?0:motion==='hurt'?-.045*hit:motion==='defeat'?-.12:active?-(profile?.head??.025)*gesture-.012*follow:Math.sin(clock*1.15)*.013,
     tail:reduced?0:Math.sin(clock*1.45)*.065-(profile?.tailFollow??0)*follow,
     cloth:reduced?0:Math.sin(clock*1.45)*.065*.3-(profile?.clothFollow??0)*follow,

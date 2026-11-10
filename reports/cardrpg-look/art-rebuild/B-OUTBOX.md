@@ -62,3 +62,6 @@ Complete boss x1 film136.933333s/13catultimates now reaches an actual visible Vi
 
 ## P11 core report
 ART-REPORT.md now records shipped25-unit coverage, accepted P10films, R0comparison limitations, original provenance, tests and actual38,175,926B combinedbudget. Weighted self-score8.225 remains below8.5target; shared motion/spectacle are explicit limits. Further bounded motion work continues; no new integration flag/event/asset contract.
+
+## P14 — Spool Ram planted horn dip
+Spool Ram alone gains an authored horn dip and delayed tail recovery. Counter-transforms keep four local hoof contacts stable as its body leans/breathes. Reduced motion remains still; other profiles, atlases/rigs, sockets, gameplay and HUD remain unchanged. Saved16views/8casts/19tests/type/lint/parityPASS;0socket/HP/boundsfailures; warm p95<=16.8ms. Actual combined A6+B38,176,310B/headroom1,823,690B; Bassetshare unchanged. Evidence p14/REVIEW.md and compact evidence/.

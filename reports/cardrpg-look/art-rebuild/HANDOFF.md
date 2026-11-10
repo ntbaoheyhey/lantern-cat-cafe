@@ -1,15 +1,14 @@
 # Lane B puppet handoff
-NOW: P11 report complete/publishing; P14 saved acceptance is next, then P16 Inkcap.
-Updated: 2026-11-10T20:05:27.602413+00:00; branch codex/cardrpg-art-r1-2026-11-09; last pushed 90fb3a46f010f9ee6a4c7d94447ee032e880d541; draft #427.
-NEXT 1: Publish P11 report and update draft427; motion/spectacle remain below target.
-NEXT 2: Publish saved P14 evidence and work/p14-review-note.md; no gate reruns.
-NEXT 3: Apply prepared P16 Inkcap candidate only after P14 publishes; validate two sizes/real x1/reduced/parity/budget.
-RUNNING: No B heavy job; both film wrappers finished/released lease. Python50023/5920 and92836/5922 retained.
+NOW: P14 accepted/publishing; P16 Inkcap candidate next. Core P1–P11 report delivered; continue lowest-score motion.
+Updated: 2026-11-10T20:07:29.667353+00:00; branch codex/cardrpg-art-r1-2026-11-09; last pushed 9ab2a9a43232da1469f30288c746c116205dd4a1; draft #427.
+NEXT 1: Publish P14 runtime/compactevidence and update draft427; do not repeat saved gates.
+NEXT 2: Apply prepared work/p16-look-puppet-rig.ts and p16-look-puppet.ts; add independent-uniform regression checks.
+NEXT 3: Build/review against immutable v5-p14.html: bothsizes/realx1/reduced/socket/faceHP/parity/budget, max3repairs.
+RUNNING: No B heavy job; servers50023/5920 and92836/5922 retained; read live lease before starting.
 DONE retained: P1–P9; P12 296c8c036; P13 ba680a44c; P15 4815b7f3b.
-DONE this session: P10 corrected136.93s/13ult completeboss, visibleVictory1.8s,0errors/HPoverlap; normal85.49s retained.
-DONE previous session: P14 type/lint19tests,16paired stills/8casts,parityPASS,38176310B; reviewed now but publish after P11.
-KNOWN ISSUES: Historical final-boss loading-only clip rejected/preserved; native-era dirty files/GLBs excluded.
-KNOWN ISSUES: Motion7.5overall and spectacle7.5 remain quality gaps; evidence must stay<=120MB.
-DECISIONS: One agent;25originalpuppets/defaultOFF/lookV2+lookArt=v3; no A6merge into B; draft only.
-DECISIONS: Preview /Users/bao/.codex/worktrees/cardrpg-b-puppet-preview/taskbar-hero-cardrpg-b2; A615f5653d receipt in p15.
-DONE this session: P10 90fb3a46f010f9ee6a4c7d94447ee032e880d541; P11 report8.225selfscore ready; no user-only blocker.
+DONE this session: P10 90fb3a46f complete136.93s/13ults/Victory1.8s; P11 9ab2a9a43232da1469f30288c746c116205dd4a1 honest8.225report.
+DONE this session: P14 saved16views/8casts/19tests/parity/38176310B accepted; motion7.7, otherunits unchanged.
+KNOWN ISSUES: Shared motion7.5/spectacle7.5; original closed-eyelid limitation remains. Evidence about119.61MB/120MB.
+KNOWN ISSUES: native-era dirtyfiles/GLBs excluded; old rejected films preserved; no user-only blocker.
+DECISIONS: One agent;all25originalpuppets/defaultOFF/lookV2+lookArt=v3;draftonly;noA6mergeintoB.
+DECISIONS: Preview /Users/bao/.codex/worktrees/cardrpg-b-puppet-preview/taskbar-hero-cardrpg-b2; A615f5653dreceipt in p15.

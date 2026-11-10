@@ -1,6 +1,6 @@
 /** Camera-facing, jointed concept art in the existing lit cafe and event clock. */
 import * as T from 'three';
-import { parsePuppetRig, puppetMotion, puppetPhase, puppetPose, type PuppetRig } from './look-puppet-rig';
+import { parsePuppetRig, puppetMotion, puppetPhase, puppetPose, plantedPuppetPivot, type PuppetRig } from './look-puppet-rig';
 const raw=import.meta.glob('../../../../../../assets/cardrpg-look/v3-puppets/*.rig.json',{eager:true,import:'default'});
 const files=import.meta.glob('../../../../../../assets/cardrpg-look/v3-puppets/*.webp',{eager:true,query:'?url',import:'default'}) as Record<string,string>;
 const rigs=new Map(Object.values(raw).map(value=>{const rig=parsePuppetRig(value);return[rig.id,rig] as const;}));
@@ -19,7 +19,8 @@ export async function loadPuppetModel(id:string){
   for(const layer of data.layers){
     const [x,y,w,h]=layer.rect,[px,py]=layer.pivot,[ax,ay,aw,ah]=layer.atlasRect;
     const group=new T.Group();group.name=`puppet_${layer.part}`;
-    group.position.set((px-.5)*width,(1-py)*data.height,layer.depth);group.userData.puppetRest=group.position.toArray();rig.add(group);
+    group.position.set((px-.5)*width,(1-py)*data.height,layer.depth);group.userData.puppetRest=group.position.toArray();
+    group.userData.puppetContact=[(x+w/2-px)*width,(py-y-h)*data.height];rig.add(group);
     const geometry=new T.PlaneGeometry(w*width,h*data.height,4,4),pos=geometry.attributes.position!,uv=geometry.attributes.uv!;
     for(let i=0;i<pos.count;i++){
       const u=uv.getX(i),v=uv.getY(i);
@@ -116,6 +117,10 @@ export function animateIllustrated(model:T.Object3D,camera:T.Camera,time:number,
     if(part==='armL')layer.rotation.z=pose.offhand;
     if(part==='footL'||part==='footR')layer.rotation.z=pose.gesture*(part==='footL'?.025:-.025);
     if(part==='cape'||part==='scarf')layer.rotation.z=pose.cloth;
+    if(pose.plant&&['armR','armL','footR','footL'].includes(part)){
+      const [x,y]=plantedPuppetPivot(layer.userData.puppetRest,layer.userData.puppetContact,layer.rotation.z,pose.lean,[rig.scale.x,rig.scale.y]);
+      layer.position.x=x;layer.position.y=y;
+    }
     for(const mesh of layer.children)if(mesh instanceof T.Mesh){
       const material=mesh.material as T.MeshStandardMaterial;
       if(material.userData.puppetEyeOpen)material.userData.puppetEyeOpen.value=pose.eyeOpen;

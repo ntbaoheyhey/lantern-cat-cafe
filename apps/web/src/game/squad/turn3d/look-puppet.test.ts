@@ -1,6 +1,7 @@
 import { afterEach, describe, expect, it } from 'vitest';
+import {Vector3,Matrix4} from 'three';
 import rig from '../../../../../../assets/cardrpg-look/v3-puppets/mochi.rig.json';
-import { parsePuppetRig, puppetMotion, puppetPhase, puppetPose } from './look-puppet-rig';
+import { parsePuppetRig, puppetMotion, puppetPhase, puppetPose, plantedPuppetPivot } from './look-puppet-rig';
 import { artPipeline } from './look-art';
 import { CATS, ENEMIES } from '../../../../../../packages/game-rules/src/cardrpg/depth/catalog';
 
@@ -85,4 +86,34 @@ describe('illustrated puppet contract and event motions',()=>{
     }
     expect(puppetPose('cast',0,.3,false,0,'clover')).toEqual(puppetPose('cast',0,.3,false));
   });
+  it('plants Spool Ram into a horn dip and lets its tail recover after the body',()=>{
+    const pose=(t:number,reduced=false)=>puppetPose('attack',0,t,reduced,0,'spool-ram');
+    expect(pose(.52).head).toBeGreaterThan(.06);
+    expect(pose(.52).lean).toBeGreaterThan(.04);
+    expect(Math.abs(pose(.52).prop)).toBeLessThan(.12);
+    expect(pose(.04).tail).toBe(0);
+    expect(pose(.52).tail).toBeLessThan(-.07);
+    for(let i=0;i<=100;i++){
+      const p=pose(i/100),quiet=pose(i/100,true);
+      expect(Math.max(Math.abs(p.head),Math.abs(p.lean),Math.abs(p.prop),Math.abs(p.offhand),Math.abs(p.tail))).toBeLessThan(.12);
+      expect([quiet.head,quiet.lean,quiet.prop,quiet.offhand,quiet.tail]).toEqual([0,0,0,0,0]);
+    }
+    expect([pose(1).head,pose(1).lean,pose(1).prop,pose(1).tail].every(v=>Math.abs(v)<1e-10)).toBe(true);
+    expect(puppetPose('attack',0,.52,false,0,'button-guard')).toEqual(puppetPose('attack',0,.52,false));
+  });
+
+  it('keeps a foot contact fixed through body lean, breathing and leg rotation',()=>{
+    const rest:[number,number]=[-.8,.7],contact:[number,number]=[.1,-.6];
+    for(const [rotation,lean,sx,sy] of [[-.12,.06,.991,1.009],[.08,-.03,1.009,.991],[0,0,1,1]]){
+      const [x,y]=plantedPuppetPivot(rest,contact,rotation!,lean!,[sx!,sy!]);
+      const point=new Vector3(...contact,0).applyMatrix4(new Matrix4().makeRotationZ(rotation!)).add(new Vector3(x,y,0));
+      point.applyMatrix4(new Matrix4().makeScale(sx!,sy!,1)).applyMatrix4(new Matrix4().makeRotationZ(lean!));
+      expect(point.x).toBeCloseTo(rest[0]+contact[0],10);
+      expect(point.y).toBeCloseTo(rest[1]+contact[1],10);
+    }
+    expect(puppetPose('attack',1,.5,true,0,'spool-ram').plant).toBe(false);
+    expect(puppetPose('idle',1,.5,false,0,'spool-ram').plant).toBe(false);
+    expect(puppetPose('attack',1,.5,false,0,'soot').plant).toBe(false);
+  });
+
 });

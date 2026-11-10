@@ -19,7 +19,7 @@ Check STOP-B/INBOX and fetch/show A6-OUTBOX between items. Commit/push and updat
 - [x] P10 Films (by 19 Nov 12:00 UTC): in the throwaway A6 preview (section 2), one 60-90 s x1 battle with several ultimates and one boss fight; R0 vs now comparison posters.
 - [x] P11 Report (by 20 Nov 12:00 UTC): ART-REPORT.md (scores vs R0, PUPPET-SCORES summary, what shipped, known issues, provenance), STATUS-VI.md summary, #427 description. Then improve the lowest-scored unit until the deadline.
 
-- [ ] P14 [auto] Lowest-score motion continuation after report: Spool Ram (overall7.6/motion7.5) gets a forward horn dip, planted front legs and delayed tail recovery. Accept only from x1 before/after and reduced-motion/face/HP checks; preserve art/rig and scores of untouched units.
+- [x] P14 [auto] Lowest-score motion continuation after report: Spool Ram (overall7.6/motion7.5) gets a forward horn dip, planted front legs and delayed tail recovery. Accept only from x1 before/after and reduced-motion/face/HP checks; preserve art/rig and scores of untouched units.
 
 - [ ] P16 [auto] Lowest-score motion continuation: Inkcap lantern lead, open offhand and soft tail follow-through on the existing mesh/atlas; preserve tail root and reduced motion. Accept from both sizes, natural x1 basic/signature/ultimate, sockets/face-HP and compact evidence; max3repairs, no score uplift from tests alone.
 
@@ -64,3 +64,5 @@ P15 complete 2026-11-10T19:21:37.791752+00:00:12actual phase3 views with3/4helpe
 P10 complete 2026-11-10T20:05:27.602413+00:00: retained85.49s/9ult normal; corrected136.93s/13ult boss through visible Victory1.8s; four/three helpers clear,0page/faceHPerrors; saved12speed checks/posters reused. P11 report next.
 
 P11 complete 2026-11-10T20:06:26.833444+00:00: report includes all25units, acceptedfilms, R0comparison limits, provenance,38175926B combinedbudget and honest8.225selfscore below8.5. Continue P14/P16; report is not a stop.
+
+P14 complete 2026-11-10T20:07:29.667353+00:00: accepted saved16paired views/8naturalcasts, plantedhooves/horn dip/tail lag; type/lint19tests/parityPASS;38176310B. Spoolmotion7.5→7.7/overall7.6→7.7; no whole-roster score uplift. P16next.
