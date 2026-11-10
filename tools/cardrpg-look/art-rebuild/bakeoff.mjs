@@ -20,13 +20,14 @@ try{
   await page.waitForFunction(()=>window.__depthReview,null,{timeout:120000});
   await page.evaluate(()=>{const m=window.__depthReview;m.watchNow();m.paused=true;m.camera='wide';m.notify(false)});
   await page.waitForFunction(()=>window.__depthScene?.ready,null,{timeout:120000});
+  const actions=await page.evaluate(()=>window.__depthReview.galleryActions.map(a=>a.id));
   for(const id of (process.env.ART_SHOTS||'mochi,soot,button-guard,yarn-giant,P15,P16').split(',')){
-   const row=cases.find(r=>r.id===id)??{gallery:['mochi','soot'].includes(id)?id+'-1':'enemy:'+id,progress:-1};
+   const row=cases.find(r=>r.id===id)??{gallery:actions.includes(id+'-1')?id+'-1':'enemy:'+id,progress:-1};
    await apply(page,row);
    if(row.gallery)await page.evaluate(()=>{const m=window.__depthReview;m.plan=null;m.notify(false)});
    await page.evaluate(async()=>{await new Promise(requestAnimationFrame);const s=window.__depthScene;s.render({...s.view(),fixedTime:3.2,paused:true},0);s.dirty=false;await new Promise(requestAnimationFrame)});
    const file=`${variant}-${width}-${id}.webp`;await sharp(await page.screenshot()).webp({quality:86}).toFile(out+'/'+file);
-   result.shots.push({variant,width,id,file,...await page.evaluate(audit),actors:await page.evaluate(()=>[...window.__depthScene.puppets].map(([id,p])=>({id,asset:p.asset,painted:!!p.model.userData.lookPainted,height:p.height,position:p.root.position.toArray(),scale:p.root.scale.toArray()})))});
+   result.shots.push({variant,width,id,file,...await page.evaluate(audit),actors:await page.evaluate(()=>[...window.__depthScene.puppets].map(([id,p])=>({id,asset:p.asset,painted:!!p.model.userData.lookPainted,generated:!!p.model.userData.lookGenerated,rigVersion:p.model.userData.rigVersion,height:p.height,position:p.root.position.toArray(),scale:p.root.scale.toArray()})))});
   }
   await page.close();
  }

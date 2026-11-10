@@ -70,7 +70,7 @@ try{
         'nice','-n','10',resolve(homedir(),'tools/cardrpg-look/venv/bin/python'),
         'tools/cardrpg-look/art-rebuild/image-to-3d.py','--backend','local-mps','--submit',
         '--id',row.id,'--seed',String(seed),'--pipeline-type',row.pipelineType,
-        '--texture-size',String(row.textureSize),'--out',out];
+        '--texture-size',String(row.textureSize),'--source-faces',String(row.sourceFaces??100000),'--out',out];
       row.status='WAITING_LEASE_OR_GENERATING';await save(queuePath,queue);
       console.log(JSON.stringify({unit:row.id,attempt:n,seed,status:row.status}));
       const code=await new Promise((done,reject)=>{

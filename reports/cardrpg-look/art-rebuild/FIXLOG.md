@@ -93,3 +93,13 @@ B-LOCAL-001 verification: unchanged first smoke acquired atomically at08:58:36.9
 
 ## B-LOCAL-003 native 1024 exceeds bounded lease S2
 First isolated smoke finished sparse/shape/texture sampling but produced no GLB by1082.6s; wrapper stopped its own inference and released the lease. No watchdog error or export error was observed. Hypotheses: slow pure-PyTorch decoder (primary), memory pressure, texture export. Attempt2:512 geometry/1024texture, new seed20262109, exact same original input, decoder-stage logging only. Existing Mochi/Soot untouched. Do not infer visual acceptance before actual export/comparison.
+
+
+B-LOCAL-003 follow-up: second isolated512 smoke exported in656.715s,1mesh/2embeddedtextures,11,096,572B. Export timeout resolved at512; visual quality is separate. Existing Mochi/Soot unchanged.
+
+## B-LOCAL-004 native texture orientation and gutters S2
+Repro: native-smoke/raw-front.webp has random surface colour; neutral clay retains recognizable geometry. Native KDTree rasterizer writes v directly to image rows, while trimesh GLB export flips v. Attempt1: undo that UV-v flip and Z-up basis on the same raw GLB; face/outfit colours align, with dark seam cracks remaining. No new inference.
+Attempt2: source baker averages unfilled pixels against black. Reconstruct occupied UV coverage45.17%, extend nearest occupied texels into empty gutters; occupied texels and geometry/UV/index bytes remain unchanged. Future native runs patch gutter fill before export. Padded source render is waiting for shared lease. No roster approval yet. Seven prior source guards plus one new gutter patch guard PASS; no runtime inference accepted.
+
+## B-LOCAL-005 generated models receive duplicate legacy props S2
+Repro: rigid-unit root is named after asset; CardUtensil only checks a role-named root for lookProps. Two new regression cases fail by adding extra props to reconstructed Panko/Button; Mallow case guards a third route. Attempt1: honor the existing model-root lookProps flag inside lookV2 as well as legacy role-root flags. All7touched tests/type/lint PASS. Real battle validation follows first native foe install; defaults and v2 routes unchanged.

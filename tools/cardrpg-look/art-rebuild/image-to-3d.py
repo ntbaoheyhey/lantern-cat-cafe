@@ -89,6 +89,44 @@ def trace_decoders(trellis):
     return {'path': str(path), 'sha256': sha(path), 'purpose': 'stage logging only'}
 
 
+def configure_export(trellis):
+    path = trellis / 'generate.py'
+    body = path.read_text()
+    marker = '    args = parser.parse_args()'
+    option = '    parser.add_argument("--max-faces", type=int, choices=[50000,100000,200000], default=200000)\n'
+    if option not in body:
+        if body.count(marker) != 1 or body.count('min(200000,') != 2:
+            raise ValueError('Upstream export changed; inspect before configuring source size')
+        body = body.replace(marker, option + marker).replace('min(200000,', 'min(args.max_faces,')
+        path.write_text(body)
+    return {'path': str(path), 'sha256': sha(path), 'purpose': 'bounded pre-UV source face count'}
+
+
+def configure_texture_gutters(trellis):
+    path = trellis / 'backends/texture_baker.py'
+    body = path.read_text()
+    marker = '    # Lane B: nearest valid texel gutters; never average with empty black pixels'
+    start = '    # Fill holes via iterative dilation'
+    end = '    # Gamma correction: linear -> sRGB'
+    if marker not in body:
+        if body.count(start) != 1 or body.count(end) != 1:
+            raise ValueError('Upstream texture baker changed; inspect before patching gutters')
+        first, last = body.index(start), body.index(end)
+        replacement = marker + '''
+    from scipy.ndimage import distance_transform_edt
+    if not valid_mask.any():
+        raise ValueError("No valid voxel texels to pad")
+    nearest = distance_transform_edt(~valid_mask, return_distances=False, return_indices=True)
+    for channel in (base_color, metallic, roughness):
+        channel[~valid_mask] = channel[nearest[0, ~valid_mask], nearest[1, ~valid_mask]]
+    current_mask = np.ones_like(valid_mask)
+
+'''
+        body = body[:first] + replacement + body[last:]
+        path.write_text(body)
+    return {'path': str(path), 'sha256': sha(path), 'purpose': 'nearest valid texel gutters; authored texels unchanged'}
+
+
 def local_generate(args):
     if not re.fullmatch(r'[a-z][a-z0-9-]*', args.id):
         raise ValueError('Invalid unit id')
@@ -146,6 +184,8 @@ def local_generate(args):
                        trellisCommit=subprocess.check_output(['git', '-C', str(trellis), 'rev-parse', 'HEAD'], text=True).strip(),
                        upstreamCommit=subprocess.check_output(['git', '-C', str(trellis / 'TRELLIS.2'), 'rev-parse', 'HEAD'], text=True).strip(),
                        alphaOnlyPatch=disable_rmbg(trellis), decoderTracePatch=trace_decoders(trellis),
+                       exportPatch=configure_export(trellis), sourceFaces=args.source_faces,
+                       textureGutterPatch=configure_texture_gutters(trellis),
                        generateSha256=sha(trellis / 'generate.py'))
 
         def save(status, **extra):
@@ -155,7 +195,8 @@ def local_generate(args):
 
         command = [str(python), '-u', str(trellis / 'generate.py'), str(source),
                    '--output', str(out / args.id), '--seed', str(args.seed),
-                   '--pipeline-type', args.pipeline_type, '--texture-size', str(args.texture_size)]
+                   '--pipeline-type', args.pipeline_type, '--texture-size', str(args.texture_size),
+                   '--max-faces', str(args.source_faces)]
         save('GENERATING', command=command)
         env = os.environ.copy()
         env['PYTHONUNBUFFERED'] = '1'
@@ -184,7 +225,7 @@ def local_generate(args):
             model.rename(native)
             orientation = subprocess.check_output([
                 sys.executable, str(Path(__file__).with_name('orient-local-glb.py')),
-                str(native), str(model)], text=True)
+                str(native), str(model), '--native-uv'], text=True)
             receipt['orientation'] = json.loads(orientation)
             structure = validate_glb(model)
         model_hash = sha(model)
@@ -226,6 +267,8 @@ def main():
     parser.add_argument('--seed', type=int)
     parser.add_argument('--pipeline-type', choices=['512', '1024', '1024_cascade'], default='1024')
     parser.add_argument('--texture-size', type=int, choices=[512, 1024, 2048], default=1024)
+    parser.add_argument('--source-faces', type=int, choices=[50000, 100000, 200000], default=100000,
+                        help='Pre-UV source mesh budget; runtime packing is a separate reviewed step')
     parser.add_argument('--local-root', default=str(Path.home() / 'art/trellis-mac'))
     parser.add_argument('--smoke', action='store_true', help='Isolated comparison; never publish into inbox')
     parser.add_argument('--timeout', type=int, default=1080)

@@ -1,12 +1,12 @@
 # Lane B current state
 
 ACTIVE — continue NON-STOP-RUN and QUEUE, checkpoints are not stops.
-Worktree /Users/bao/taskbar-hero-cardrpg-b2; branch codex/cardrpg-art-r1-2026-11-09; draft #427; pushed6f22f15ff.
+Worktree /Users/bao/taskbar-hero-cardrpg-b2; branch codex/cardrpg-art-r1-2026-11-09; draft #427; pushed7565392e9.
 Q1/Q2/Q4/Q9 DONE. Q3 four-unit close and Q5 runtime roster pending local TRELLIS smoke.
 Existing Mochi/Soot conversions and all25 original concept masters are preserved.
 Latest INBOX: local-mps only, alpha inputs, no RMBG, one inference at a time under timing lease.
-Smoke1024 attempt1 ended at1082.6s timeout after texture sampling; noGLB. Attempt2 queued under lease:512geometry/1024texture,seed20262109; log~/art/look-v3/local-setup/smoke-local-512.log. Preserve shipped Mochi/Soot.
-Q6 generated VFX12hero kits+13enemy families implemented; audit7.7PARTIAL. Third bounded repair has type/lint/10touchedtests/build/parity PASS; final shots/casts/film await shared timing lock.
+Smoke512 attempt2 EXPORTED in656.715s. Raw review found UV-v inversion and dark gutter seams; UV corrected on the same mesh, nearest-texel gutter repair render pending under lease (smoke-review-padded.log). Do not start roster before inspected smoke approval. Preserve shipped Mochi/Soot.
+Q6 generated VFX12hero kits+13enemy families implemented; audit7.7PARTIAL. Third bounded repair has type/lint/10touchedtests/build/parity PASS; final shots/10casts/72facesPASS;1xfilm external, continuous review pending.
 Q7 closer camera/key checkpoint7.5;1440/1024posters/96facesPASS. Runtime roster coverage pending.
 Q8 source portraits/icons manifest prepared; final matching waits for roster.
 Q9 normal/dev hygiene verified; shell Battle gallery/B2toggle requests posted for U. No shell edits.

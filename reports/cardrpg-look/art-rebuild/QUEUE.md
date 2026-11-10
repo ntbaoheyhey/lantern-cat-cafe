@@ -57,3 +57,5 @@ Local TRELLIS override 2026-11-10T07:30:26.787573+00:00: user-authorized Apple S
 2026-11-10T08:58:37Z: first isolated native smoke is RUNNING after shared lease acquisition. All19weights cached16.18GB. Existing Mochi/Soot sources preserved; no RMBG. Local-foe routing/type/lint1824webtests published6f22f15ff. Await actual smoke mesh comparison before sequential roster.
 
 2026-11-10T09:20Z: local1024 smoke1 timed out at1082.6s after sampling, noGLB. Smoke2 isolated512/texture1024 newseed20262109 queued; decoder tracing distinguishes slow decode from export. No change to existing Mochi/Soot or runtime acceptance.
+
+2026-11-10T09:45Z: smoke512 exported in656.7s. Inspection caught native UV-v inversion; corrected existing GLB without inference, then repaired black texture gutters. Padded comparison waits for shared lease; roster remains gated. Added root-prop guard for reconstructed units (7touchedtests/type/lintPASS). Draft cat configs prepared; no new runtime acceptance.

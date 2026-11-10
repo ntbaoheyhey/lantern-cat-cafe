@@ -1,5 +1,5 @@
-Đang tiếp tục QUEUE, không làm lại Mochi/Soot đã có.
-DINOv3 đã được cấp quyền; tải đủ19tệp weights.
-Smoke1024 chạm giới hạn18phút trước xuấtGLB; đang thử512/texture1024 có log từng bước.
-VFX đã qua sửa lần3; đang chốt sheet/film và đối chiếu bản lean25,22MB.
-Roster3D vẫn chưa hoàn tất; các checkpoint không phải điểm dừng.
+Đang tiếp tục QUEUE; giữ nguyên Mochi/Soot cũ.
+TRELLIS local512 đã xuất GLB trong10phút57giây, không còn vướng đăng nhập/DINOv3.
+Đối chiếu phát hiện lỗi UV và mép texture; đang sửa trên GLB đã có, không chạy AI lại.
+Đã sửa điều kiện tránh gắn thêm đạo cụ vào model3D;7kiểm tra liên quan/type/lintqua.
+Button Guard/Yarn Giant sẽ chạy sau khi mesh thử nghiệm qua kiểm tra hình ảnh.

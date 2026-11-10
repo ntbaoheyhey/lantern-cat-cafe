@@ -12,6 +12,32 @@ spec.loader.exec_module(module)
 
 
 class Orientation(unittest.TestCase):
+    def test_native_uv_rows_match_exported_image_and_preserve_payload(self):
+        with tempfile.TemporaryDirectory() as td:
+            source, target = Path(td)/'native.glb', Path(td)/'corrected.glb'
+            payload = struct.pack('<ffff', .25, .75, .75, .25) + b'original PNG bytes!!'
+            payload += b'\0' * (-len(payload) % 4)
+            doc = {'asset': {'version': '2.0'}, 'buffers': [{'byteLength': len(payload)}],
+                   'bufferViews': [{'buffer': 0, 'byteLength': 16}],
+                   'accessors': [{'bufferView': 0, 'componentType': 5126, 'type': 'VEC2', 'count': 2,
+                                  'min': [.25, .25], 'max': [.75, .75]}],
+                   'meshes': [{'primitives': [{'attributes': {'TEXCOORD_0': 0}},
+                                              {'attributes': {'TEXCOORD_0': 0}}]}]}
+            chunk = json.dumps(doc).encode(); chunk += b' '*(-len(chunk) % 4)
+            source.write_bytes(struct.pack('<IIIII', 0x46546C67, 2, 28+len(chunk)+len(payload), len(chunk), 0x4E4F534A)
+                               + chunk + struct.pack('<II', len(payload), 0x004E4942) + payload)
+            before = source.read_bytes()
+            receipt = module.orient(source, target, native_uv=True)
+            raw = target.read_bytes(); size = struct.unpack_from('<I', raw, 12)[0]
+            binary = raw[28+size:]
+            # The source exporter stored bottom-origin v=.75 for image row .25.
+            # Both primitives sharing the accessor must be corrected only once.
+            self.assertEqual(struct.unpack_from('<ffff', binary), (.25, .25, .75, .75))
+            self.assertEqual(binary[16:], payload[16:])
+            self.assertEqual(receipt['correctedUVAccessors'], 1)
+            self.assertEqual(source.read_bytes(), before)
+            with self.assertRaises(ValueError): module.orient(target, Path(td)/'double.glb', True)
+
     def test_basis_preserves_uv_texture_and_refuses_second_conversion(self):
         with tempfile.TemporaryDirectory() as td:
             source, target = Path(td)/'source.glb', Path(td)/'target.glb'

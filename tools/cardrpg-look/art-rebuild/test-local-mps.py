@@ -16,6 +16,18 @@ spec.loader.exec_module(runner)
 
 
 class LocalMpsGuards(unittest.TestCase):
+    def test_native_gutters_patch_rejects_unknown_baker_and_is_idempotent(self):
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td); (root/'backends').mkdir()
+            path = root/'backends/texture_baker.py'
+            path.write_text('    # Fill holes via iterative dilation\n    old_blur()\n    # Gamma correction: linear -> sRGB\n    gamma()\n')
+            first = runner.configure_texture_gutters(root)
+            self.assertEqual(runner.configure_texture_gutters(root), first)
+            self.assertNotIn('old_blur()', path.read_text())
+            self.assertIn('gamma()', path.read_text())
+            path.write_text('unknown upstream\n')
+            with self.assertRaises(ValueError): runner.configure_texture_gutters(root)
+
     def test_opaque_input_cannot_trigger_background_model(self):
         with tempfile.TemporaryDirectory() as td:
             p = Path(td) / 'input.png'
@@ -55,6 +67,17 @@ class LocalMpsGuards(unittest.TestCase):
             p.write_bytes(p.read_bytes()[:-1])
             with self.assertRaises(ValueError):
                 runner.validate_glb(p)
+
+    def test_native_export_patch_preserves_default_and_is_idempotent(self):
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td); script = root / 'generate.py'
+            script.write_text('    args = parser.parse_args()\n    a = min(200000, a)\n    b = min(200000, b)\n')
+            first = runner.configure_export(root)
+            self.assertEqual(runner.configure_export(root), first)
+            self.assertIn('default=200000', script.read_text())
+            self.assertEqual(script.read_text().count('min(args.max_faces,'), 2)
+            script.write_text('unrecognized upstream\n')
+            with self.assertRaises(ValueError): runner.configure_export(root)
 
     def test_explicit_submission_and_completed_sources_are_guarded(self):
         for extra in [[], ['--backend', 'hf-space', '--submit'], ['--backend', 'local-mps', '--submit', '--id', 'mochi', '--seed', '1']]:

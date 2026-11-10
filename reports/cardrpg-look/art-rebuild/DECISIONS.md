@@ -73,3 +73,6 @@ User asks for downloaded models to be processed locally without browser automati
 - All25 original concepts are RGBA with transparent backgrounds. Upstream still eagerly constructs RMBG: local wrapper removes precisely that constructor and validates alpha before any inference. Record the patch/source hashes; never download/use RMBG.
 - Setup first selected system Python3.9; terminate only own setup/pip and preserve its incomplete venv, recreate using installed3.11, rerun setup. MetalToolchain unavailable with current CommandLineTools; allow upstream Python fallback.
 - Smoke Mochi only into a scratch output; never publish it into inbox or replace existing source. Future local roster output goes atomically into inbox, retains receipts and must pass runtime review.
+
+## 2026-11-10 native export production budget
+Smoke512 completed geometry/texture decode in330.8s after model load, producing2.88Mtri. KDTree xatlas on the200K pre-bake surface then exceeded3minutes. Future roster calls use an explicit100K pre-UV source budget, matching the original accepted Mochi/Soot conversion class; final22K-class meshopt remains a separate reviewed operation. The ongoing200K smoke is preserved unchanged. Receipt records sourceFaces and exact exporter hash; actual first roster source must pass comparison before further units. No automatic runtime acceptance.

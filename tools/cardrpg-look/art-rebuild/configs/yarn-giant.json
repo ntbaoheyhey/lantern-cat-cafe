@@ -1,0 +1,30 @@
+{
+  "id": "yarn-giant",
+  "role": "yarn",
+  "height": 2.35,
+  "neck": 0.68,
+  "arms": {
+    "x": 0.32,
+    "bottom": 0.17,
+    "top": 0.67
+  },
+  "feet": 0.12,
+  "rigLimits": {
+    "head": 0.055,
+    "tail": 0,
+    "ear": 0,
+    "arm": 0.08,
+    "foot": 0.035
+  },
+  "material": {
+    "metallic": 0,
+    "roughness": 0.88,
+    "discardGeneratedPBR": true,
+    "toon": true
+  },
+  "ratio": 0.22,
+  "error": 0.006,
+  "textureSize": 1024,
+  "reviewStatus": "DRAFT: source bounds and motion must be reviewed before install",
+  "design": "Use original dark-red/brass albedo; restrained rigid head, arm and foot modules, no skin stretching."
+}

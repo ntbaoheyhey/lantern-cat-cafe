@@ -10,6 +10,7 @@ const sharp = createRequire('/Users/bao/tools/cardrpg-look/npm/package.json')('s
 const artifact = resolve(process.env.ART_ARTIFACT), out = resolve(process.env.ART_OUT);
 const unit = process.env.ART_UNIT || 'mochi', role = process.env.ART_ROLE || 'guardian';
 const cue = process.env.ART_CUE || `${unit}-4`;
+const attack = process.env.ART_ATTACK || (cue.startsWith('enemy:') ? `${cue}:basic` : `${unit}-1`);
 await mkdir(out, { recursive: true });
 const receipt = { artifact: createHash('sha256').update(await readFile(artifact)).digest('hex'),
   method: 'Game renderer, authored real clip times, isolated diagnostic poses; not gameplay acceptance.', errors: [], poses: [] };
@@ -29,7 +30,7 @@ try {
       fixedTime: 10, model: { role, clip: 'idle', angle: 0 }, modelProgress: 0, paused: true };
     s.view = () => window.__rigView;
   },{unit,role});
-  const poses = [['rest','idle',0], ['attack-anticipation',`${unit}-1`,.22], ['attack-impact',`${unit}-1`,.52],
+  const poses = [['rest','idle',0], ['attack-anticipation',attack,.22], ['attack-impact',attack,.52],
     ['guard','guard',.5], ['cast',cue,.5], ['hurt','heavy-hit-front',.13], ['victory','victory',.40],
     ['tail','idle-tail',.48], ['blink','idle',.2], ['side','idle',0], ['back','idle',0]]
     .filter(p=>!process.env.ART_POSES || process.env.ART_POSES.split(',').includes(p[0]));
@@ -40,6 +41,8 @@ try {
       v.modelProgress = progress; v.fixedTime = label === 'blink' ? 3.97 : 10;
       s.render(v, 0); s.dirty = false;
       const p = [...s.puppets.values()][0];
+      if (!p.model.userData.lookGenerated) throw Error('Diagnostic requires the reconstructed model, not a fallback');
+      if (!p.actions.has(clip)) throw Error(`Requested diagnostic clip is absent: ${clip}`);
       const skin = []; p.model.traverse(o => { if (o.isSkinnedMesh) skin.push(o); });
       return { generated: p.model.userData.lookGenerated, rig: p.model.userData.rigVersion,
         bones: skin.map(m => m.skeleton.bones.length), clips: [...p.actions.keys()],

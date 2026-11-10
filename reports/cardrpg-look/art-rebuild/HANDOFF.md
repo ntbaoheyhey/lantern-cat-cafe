@@ -2,12 +2,12 @@
 
 ACTIVE — user explicitly resumed. Continue NON-STOP-RUN and QUEUE; checkpoints are not stops.
 Worktree /Users/bao/taskbar-hero-cardrpg-b2; branch codex/cardrpg-art-r1-2026-11-09; draft#427.
-Latest pushed6f22f15ff: local-foe routing, bounded VFX/lean repair and source checks. Draft427 description updated.
+Latest pushed7565392e9: native timeout diagnosis, lossless orientation guards, final VFX evidence and byte-exact archive. Draft427 remains open.
 Do not redo R0/M5/S6, Q1/Q2/Q4, Mochi/Soot conversions, or completed VFX sources and phase checks.
 Latest INBOX: TRELLIS local-mps only, one model at a time. No browser generation. Internal chat browser for review only.
 External install ~/art/trellis-mac at d58628f4; Python3.11/Torch2.15/MPS/pipeline import pass. DINOv3 access confirmed.
 All19weight files cached16.18GB. Old smoke waiters80150/98355 stopped before inference; replacement smoke uses250ms atomic-lock polling (smoke-local.log). Do not duplicate.
-Smoke1024 attempt1 ended at1082.6s timeout after texture sampling; noGLB. Attempt2 queued under lease:512geometry/1024texture,seed20262109; log~/art/look-v3/local-setup/smoke-local-512.log. Preserve shipped Mochi/Soot.
+Smoke512 attempt2 EXPORTED in656.715s. Raw review found UV-v inversion and dark gutter seams; UV corrected on the same mesh, nearest-texel gutter repair render pending under lease (smoke-review-padded.log). Do not start roster before inspected smoke approval. Preserve shipped Mochi/Soot.
 Then Button/Yarn first, then remaining roster. Max3local attempts per unit with new seeds, alpha-only/noRMBG, shared lease, no overlapping B heavy jobs.
 Q3 four-unit decision and Q5 runtime still unfinished; all25original concept masters complete/provenanced.
 Q6 all12hero skill/ult/passive and13enemy families now wired; no duplicate enemy props.7.7auditPARTIAL: normal/passive uniqueness and large motif face clipping remain.
