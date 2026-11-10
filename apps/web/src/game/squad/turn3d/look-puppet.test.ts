@@ -11,6 +11,8 @@ import buttonRig from '../../../../../../assets/cardrpg-look/v3-puppets/button-g
 import marigoldRig from '../../../../../../assets/cardrpg-look/v3-puppets/marigold.rig.json';
 import briocheRig from '../../../../../../assets/cardrpg-look/v3-puppets/brioche.rig.json';
 import biscuitRig from '../../../../../../assets/cardrpg-look/v3-puppets/biscuit.rig.json';
+import teacupRig from '../../../../../../assets/cardrpg-look/v3-puppets/teacup-healer.rig.json';
+import needleMothRig from '../../../../../../assets/cardrpg-look/v3-puppets/needle-moth.rig.json';
 import velvetRig from '../../../../../../assets/cardrpg-look/v3-puppets/velvet.rig.json';
 import sorrelRig from '../../../../../../assets/cardrpg-look/v3-puppets/sorrel.rig.json';
 import { parsePuppetRig, puppetMotion, puppetPhase, puppetPose, plantedPuppetPivot, SORREL_STAFF_CONTACT, VELVET_STAFF_CONTACT } from './look-puppet-rig';
@@ -96,7 +98,7 @@ describe('illustrated puppet contract and event motions',()=>{
         expect([quiet.prop,quiet.tail,quiet.cloth,quiet.head,quiet.lean]).toEqual([0,0,0,0,0]);
       }
     }
-    expect(puppetPose('cast',0,.3,false,0,'needle-moth')).toEqual(puppetPose('cast',0,.3,false));
+    expect(puppetPose('cast',0,.3,false,0,'pollen-scout')).toEqual(puppetPose('cast',0,.3,false));
   });
   it('plants Spool Ram into a horn dip and lets its tail recover after the body',()=>{
     const pose=(t:number,reduced=false)=>puppetPose('attack',0,t,reduced,0,'spool-ram');
@@ -111,7 +113,7 @@ describe('illustrated puppet contract and event motions',()=>{
       expect([quiet.head,quiet.lean,quiet.prop,quiet.offhand,quiet.tail]).toEqual([0,0,0,0,0]);
     }
     expect([pose(1).head,pose(1).lean,pose(1).prop,pose(1).tail].every(v=>Math.abs(v)<1e-10)).toBe(true);
-    expect(puppetPose('attack',0,.52,false,0,'needle-moth')).toEqual(puppetPose('attack',0,.52,false));
+    expect(puppetPose('attack',0,.52,false,0,'pollen-scout')).toEqual(puppetPose('attack',0,.52,false));
   });
 
   it('keeps a foot contact fixed through body lean, breathing and leg rotation',()=>{
@@ -348,7 +350,7 @@ describe('illustrated puppet contract and event motions',()=>{
         expect([quiet.prop,quiet.offhand,quiet.head,quiet.lean,quiet.feetPlant]).toEqual([0,0,0,0,false]);
       }
     }
-    expect(puppetPose('cast',0,.38,false,0,'needle-moth').feetPlant).toBe(false);
+    expect(puppetPose('cast',0,.38,false,0,'pollen-scout').feetPlant).toBe(false);
   });
 
   it('compresses and releases Practice Cushion with planted boots, a forward jab and an intact face seam',()=>{
@@ -455,4 +457,42 @@ describe('illustrated puppet contract and event motions',()=>{
     for(const id of ['inkcap','soot','spool-ram','clover'])expect(puppetPose('attack',0,.42,false,0,id).hopLift).toBe(0);
   });
 
+});
+
+
+it('draws Needle Moth wings before its whole needle leads, with quiet planted recovery',()=>{
+  expect(needleMothRig.sockets.mainHand[0]).toBe('armL');
+  const needle=new Vector3(Number(needleMothRig.sockets.mainHand[1]),Number(needleMothRig.sockets.mainHand[2]),0);
+  for(const motion of ['attack','cast','ultimate'] as const){
+    const draw=puppetPose(motion,0,.22,false,0,'needle-moth');
+    const release=puppetPose(motion,0,.54,false,0,'needle-moth');
+    expect(draw.wing).toBeGreaterThan(.02);expect(release.wing).toBeLessThan(-.01);
+    const lead=puppetPose(motion,0,motion==='attack'?.52:.38,false,0,'needle-moth');
+    expect(needle.clone().applyAxisAngle(new Vector3(0,0,1),lead.offhand).x-needle.x).toBeLessThan(-.065);
+    for(let i=0;i<=60;i++){
+      const pose=puppetPose(motion,i/10,i/60,false,.4,'needle-moth');expect(pose.feetPlant).toBe(true);
+      expect(Math.abs(pose.wing)).toBeLessThan(.038);expect(Math.abs(pose.head)).toBeLessThan(.035);
+      const quiet=puppetPose(motion,i/10,i/60,true,.4,'needle-moth');expect(quiet.wing).toBe(0);expect(quiet.offhand).toBe(0);expect(quiet.feetPlant).toBe(false);
+    }
+    const end=puppetPose(motion,0,1,false,0,'needle-moth');expect(end.wing).toBeCloseTo(0,12);expect(end.offhand).toBeCloseTo(0,12);
+  }
+});
+
+
+it('blesses with Teacup Healer whole spoon and open palm while its ceramic body stays quiet',()=>{
+  expect(teacupRig.sockets.mainHand[0]).toBe('armL');expect(teacupRig.sockets.offHand[0]).toBe('armR');
+  const spoon=new Vector3(Number(teacupRig.sockets.mainHand[1]),Number(teacupRig.sockets.mainHand[2]),0);
+  const palm=new Vector3(Number(teacupRig.sockets.offHand[1]),Number(teacupRig.sockets.offHand[2]),0);
+  for(const motion of ['attack','cast','ultimate'] as const){
+    const lead=puppetPose(motion,0,motion==='attack'?.52:.38,false,0,'teacup-healer');
+    expect(spoon.clone().applyAxisAngle(new Vector3(0,0,1),lead.offhand).x-spoon.x).toBeLessThan(-.06);
+    expect(palm.clone().applyAxisAngle(new Vector3(0,0,1),lead.prop).y-palm.y).toBeGreaterThan(.04);
+    for(let i=0;i<=60;i++){
+      const pose=puppetPose(motion,i/10,i/60,false,.4,'teacup-healer');expect(pose.feetPlant).toBe(true);
+      expect(Math.abs(pose.head)).toBeLessThan(.025);expect(Math.abs(pose.lean)).toBeLessThan(.008);
+      const quiet=puppetPose(motion,i/10,i/60,true,.4,'teacup-healer');
+      expect(quiet.head).toBe(0);expect(quiet.prop).toBe(0);expect(quiet.offhand).toBe(0);expect(quiet.feetPlant).toBe(false);
+    }
+    const end=puppetPose(motion,0,1,false,0,'teacup-healer');expect(end.head).toBeCloseTo(0,12);expect(end.prop).toBeCloseTo(0,12);expect(end.offhand).toBeCloseTo(0,12);
+  }
 });

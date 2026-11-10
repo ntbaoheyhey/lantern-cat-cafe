@@ -99,3 +99,9 @@ HEAD matches origin 68a73a4377f5be12804fce9e2ccdca7291164459. P29 complete/publi
 
 ## Resume 2026-11-10T22:39:53.928164+00:00
 HEAD equals fetched origin 7e7f7c9d869787394dbd4cf7e33d9a2cd9e35b89; P1–P30 retained as complete. P31 source1 built and lease released; observed narrow staff/ribbon ghosts remain in body. No native runner; servers50023/5920 and92836/5922 retained,140GiB free. Dirty inventory RESUME-DIRTY-P31.txt; native work and unreviewed GLBs excluded.
+
+## Resume 2026-11-10T22:54:22.688701+00:00
+HEAD matches fetched origin 32d28dc556e581dad66852ed88845a78f3f3d985. P1–P31 complete. P32 source1 polygons and ownership audit saved; atlas not rebuilt. No native runner or B heavy lease; servers50023/5920 and92836/5922 retained;140GiB free. Dirty inventory RESUME-DIRTY-P32.txt; native dirty work/GLBs preserved and excluded.
+
+## Resume 2026-11-10T23:07:50.222689+00:00
+HEAD matches fetched origin 9a20d42a27f656f123e72d4bc47d77b7dff90e7a; P1–P32 remain complete. P33 source1 polygons/ownership audit and original assets already saved; atlas not rebuilt. No native runner or B heavy lease; servers50023/5920 and92836/5922 retained;139GiB free. Inventory RESUME-DIRTY-P33.txt; native dirty work/GLBs preserved/excluded.

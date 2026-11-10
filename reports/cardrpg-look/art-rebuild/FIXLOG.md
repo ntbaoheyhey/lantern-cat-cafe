@@ -238,3 +238,7 @@ P30 socket audit corrects the preparation note: old needle source(.94,.08) has a
 P30 evidence compression: the six actual native-Yarn PNGs pass lossless pixel/metadata equality, saving121772B. Extra old .png paths include JPEG-encoded images despite their extension; both PNG refilter and IDAT-only attempts rejected them before writing. Preserve those files unchanged; use value-preserving JSON whitespace compaction for the small remaining budget gap.
 
 2026-11-10T22:45:58.308705+00:00 P31 source ownership rounds1–3 remove split needle/ribbon and cape/boot/tail fragments. Round3 retains57pixel source fringe on body; bounded staff tilt0.042rad is visually clean at both battle sizes. Simplest accepted fallback; no fourth repair. A newly authored source test initially picked transparent ribbon point(935,770); measured opaque(900,700) replaces it.
+
+2026-11-10T23:01:19.948566+00:00 P32 source1–3 repair full needle/wing/abdomen/boot ownership and move pivots onto painted joints. Tiny edge/antialias fringe retained after third pass; bounded wings0.026draw/−0.018release and0.14needle motion are coherent in both-size x1 review. No fourth repair.
+
+2026-11-10T23:13:12.274298+00:00 P33 source1–3 repair whole spoon/finial, brass shoulders, cup handle and saucer/feet. One opaque component per part at audit threshold; retained restrained rigid arms/head after paired x1 review. Source test transparent sentinel corrected to verified brass; no art change or extra source round. Missing wrapper label failed before any job; corrected bounded lease completed.
