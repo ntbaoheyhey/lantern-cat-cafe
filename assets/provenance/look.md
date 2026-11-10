@@ -438,3 +438,6 @@ All13original enemy concepts reused; no model call. Final Binding Thread/Practic
 
 ## 2026-11-10 Binding Thread puppet overlap repair — P21
 Original concept, source pixels and original generation provenance retained; no new image/model generation. Authored arm polygons now include the complete original knots and a measured2292pixel right-arm strip. `tools/cardrpg-look/art-rebuild/puppet/build.py` uses opt-in owned-alpha overlap for this unit to prevent duplicate limb fill; six parts,1024px WebP93 atlas. Current and prior masters/receipts are retained in ~/art/look-v3/puppets and puppets-history. Evidence and build receipt: reports/cardrpg-look/art-rebuild/p21/REVIEW.md and rig-build.json.
+
+## 2026-11-10 Panko whole rolling-pin puppet repair — P25
+Same original concept/pixels/generation prompt retained; no new image or model generation. Authored armL takes both roller handles, barrel and mitten before head; head takes measured disconnected cheek/shoulder strips. Existing owned-alpha hidden fill, OpenCV Telea and Pillow WebP93 in puppet/build.py; seven layers,1024px,275544B. Actual loaf-shield offHand socket corrected. Original/intermediate configs/rigs/atlases/masters are ~/art/look-v3/p25; accepted receipt/evidence reports/cardrpg-look/art-rebuild/p25. Portrait pixels unchanged.

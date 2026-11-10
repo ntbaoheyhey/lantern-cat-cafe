@@ -1,11 +1,27 @@
 """Regression: a transparent polygon surround must not duplicate a whole limb."""
 import unittest
+import json
+from pathlib import Path
+from PIL import Image, ImageDraw
 import cv2
 import numpy as np
 from build import part_overlap
 
 
 class PartOverlapTests(unittest.TestCase):
+    def test_panko_whole_roller_and_mitten_belong_to_one_moving_arm(self):
+        cfg = json.loads((Path(__file__).parent/'configs/panko.json').read_text())
+        owners = Image.new('L', (1081, 1200))
+        # Frontmost authored partition wins, just as at runtime packing.
+        for i, (_, polygon, _) in reversed(list(enumerate(cfg['layers']))):
+            ImageDraw.Draw(owners).polygon([(round(x*1081), round(y*1200)) for x, y in polygon], fill=i+1)
+        for point in [(.493,.376), (.427,.472), (.308,.551), (.300,.640)]:
+            index = owners.getpixel((round(point[0]*1081),round(point[1]*1200)))-1
+            self.assertGreaterEqual(index, 0)
+            self.assertEqual(cfg['layers'][index][0], 'armL')
+        self.assertEqual(cfg['sockets']['mainHand'][0], 'armL')
+        self.assertEqual(cfg['sockets']['offHand'][0], 'armR')
+
     def test_joint_overlap_keeps_ink_but_not_the_distant_hand(self):
         alpha = np.zeros((80, 80), np.uint8)
         alpha[20:60, 20:45] = 255  # torso

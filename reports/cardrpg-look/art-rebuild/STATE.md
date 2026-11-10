@@ -81,3 +81,6 @@ HEAD equals fetched origin e88d971754522b58034b35a589597b76b2023cb0. P19 attempt
 
 ## Resume 2026-11-10T20:55:15.142911+00:00
 HEAD matches fetched origin db0f7bdb43db7c0f1d4065aeb1b1f534362fde61. P21 accepted/pushed and draft427 updated; stale handoff corrected. P22 prepared plan retained. No native runner or B lease; servers50023/5920 and92836/5922 retained;141GiB free. Native dirty changes/GLBs preserved and excluded; current inventory RESUME-DIRTY-P22.txt.
+
+## Resume 2026-11-10T21:16:20.195487+00:00
+HEAD matches fetched origin dcb9418e872e53a09acd6fd3d61ede48d9d41146. P1–P24 complete. P25 saved roller polygon and original masters/config/atlas/rig already present; continue partition rebuild. No native runner or B lease; servers50023/5920 and92836/5922 retained,141GiB free. Dirty inventory RESUME-DIRTY-P25.txt; no work discarded.
