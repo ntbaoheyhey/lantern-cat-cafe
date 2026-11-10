@@ -168,3 +168,9 @@ Tiếp tục P34 từ đường cắt đã lưu; đã tách áo lá khỏi cánh
 
 Pollen Scout đã duyệt: đưa cả giỏ về trước, tay trống đối nhịp, cánh khép nhẹ rồi hồi; áo lá/quai giỏ liền và chân bám sàn.
 39 kiểm tra web,12 kiểm tra cắt lớp,16 ảnh/8 lượt chiêu/type/lint/parity đạt; bản chung 38,775,934 byte. Chuyển động7,5→7,7, tổng giữ7,8; tiếp tục Crumb Sentinel.
+
+Tiếp tục P35 từ đường cắt Crumb Sentinel đã lưu; P34 đã có trên PR #427.
+Đang kiểm tra phần khiên/nắm tay, giáp ngực và giày; giữ nguyên mọi phần đã hoàn tất.
+
+Crumb Sentinel đã duyệt: cả khiên đỡ về trước, nắm tay theo nhịp; giáp ngực/vạt áo liền và hai chân bám sàn.
+40 kiểm tra web,13 kiểm tra cắt lớp,16 ảnh/8 lượt chiêu/type/lint/parity đạt; bản chung 38,870,022 byte. Chuyển động7,5→7,7, tổng giữ7,8; tiếp tục Kettle Knight.

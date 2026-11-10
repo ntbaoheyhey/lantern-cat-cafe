@@ -11,6 +11,7 @@ import buttonRig from '../../../../../../assets/cardrpg-look/v3-puppets/button-g
 import marigoldRig from '../../../../../../assets/cardrpg-look/v3-puppets/marigold.rig.json';
 import briocheRig from '../../../../../../assets/cardrpg-look/v3-puppets/brioche.rig.json';
 import biscuitRig from '../../../../../../assets/cardrpg-look/v3-puppets/biscuit.rig.json';
+import crumbRig from '../../../../../../assets/cardrpg-look/v3-puppets/crumb-sentinel.rig.json';
 import pollenRig from '../../../../../../assets/cardrpg-look/v3-puppets/pollen-scout.rig.json';
 import teacupRig from '../../../../../../assets/cardrpg-look/v3-puppets/teacup-healer.rig.json';
 import needleMothRig from '../../../../../../assets/cardrpg-look/v3-puppets/needle-moth.rig.json';
@@ -99,7 +100,7 @@ describe('illustrated puppet contract and event motions',()=>{
         expect([quiet.prop,quiet.tail,quiet.cloth,quiet.head,quiet.lean]).toEqual([0,0,0,0,0]);
       }
     }
-    expect(puppetPose('cast',0,.3,false,0,'crumb-sentinel')).toEqual(puppetPose('cast',0,.3,false));
+    expect(puppetPose('cast',0,.3,false,0,'kettle-golem')).toEqual(puppetPose('cast',0,.3,false));
   });
   it('plants Spool Ram into a horn dip and lets its tail recover after the body',()=>{
     const pose=(t:number,reduced=false)=>puppetPose('attack',0,t,reduced,0,'spool-ram');
@@ -114,7 +115,7 @@ describe('illustrated puppet contract and event motions',()=>{
       expect([quiet.head,quiet.lean,quiet.prop,quiet.offhand,quiet.tail]).toEqual([0,0,0,0,0]);
     }
     expect([pose(1).head,pose(1).lean,pose(1).prop,pose(1).tail].every(v=>Math.abs(v)<1e-10)).toBe(true);
-    expect(puppetPose('attack',0,.52,false,0,'crumb-sentinel')).toEqual(puppetPose('attack',0,.52,false));
+    expect(puppetPose('attack',0,.52,false,0,'kettle-golem')).toEqual(puppetPose('attack',0,.52,false));
   });
 
   it('keeps a foot contact fixed through body lean, breathing and leg rotation',()=>{
@@ -351,7 +352,7 @@ describe('illustrated puppet contract and event motions',()=>{
         expect([quiet.prop,quiet.offhand,quiet.head,quiet.lean,quiet.feetPlant]).toEqual([0,0,0,0,false]);
       }
     }
-    expect(puppetPose('cast',0,.38,false,0,'crumb-sentinel').feetPlant).toBe(false);
+    expect(puppetPose('cast',0,.38,false,0,'kettle-golem').feetPlant).toBe(false);
   });
 
   it('compresses and releases Practice Cushion with planted boots, a forward jab and an intact face seam',()=>{
@@ -514,5 +515,25 @@ it('presents Pollen Scout basket toward foes with quiet wings and planted boots'
       expect([quiet.head,quiet.prop,quiet.offhand,quiet.wing,quiet.lean]).toEqual([0,0,0,0,0]);expect(quiet.feetPlant).toBe(false);
     }
     const end=puppetPose(motion,0,1,false,0,'pollen-scout');expect(end.head).toBeCloseTo(0,12);expect(end.prop).toBeCloseTo(0,12);expect(end.offhand).toBeCloseTo(0,12);expect(end.wing).toBeCloseTo(0,12);
+  }
+});
+
+
+it('braces Crumb Sentinel shield and jabs its gauntlet with a quiet chest and planted boots',()=>{
+  expect(crumbRig.sockets.mainHand[0]).toBe('armR');expect(crumbRig.sockets.offHand[0]).toBe('armL');
+  const shield=new Vector3(Number(crumbRig.sockets.mainHand[1]),Number(crumbRig.sockets.mainHand[2]),0);
+  const fist=new Vector3(Number(crumbRig.sockets.offHand[1]),Number(crumbRig.sockets.offHand[2]),0);
+  for(const motion of ['attack','cast','ultimate'] as const){
+    const lead=puppetPose(motion,0,motion==='attack'?.52:.38,false,0,'crumb-sentinel');
+    expect(shield.clone().applyAxisAngle(new Vector3(0,0,1),lead.prop).x-shield.x).toBeLessThan(-.04);
+    expect(fist.clone().applyAxisAngle(new Vector3(0,0,1),lead.offhand).x-fist.x).toBeLessThan(-.04);
+    for(let i=0;i<=60;i++){
+      const pose=puppetPose(motion,i/10,i/60,false,.4,'crumb-sentinel');expect(pose.feetPlant).toBe(true);
+      expect(Math.abs(pose.head)).toBeLessThan(.02);expect(Math.abs(pose.lean)).toBeLessThan(.01);
+      const quiet=puppetPose(motion,i/10,i/60,true,.4,'crumb-sentinel');
+      expect([quiet.head,quiet.prop,quiet.offhand,quiet.lean]).toEqual([0,0,0,0]);expect(quiet.feetPlant).toBe(false);
+    }
+    const end=puppetPose(motion,0,1,false,0,'crumb-sentinel');
+    expect(Math.max(Math.abs(end.head),Math.abs(end.prop),Math.abs(end.offhand),Math.abs(end.lean))).toBeLessThan(1e-10);
   }
 });
