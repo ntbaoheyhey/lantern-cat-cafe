@@ -11,7 +11,7 @@ Evidence uses A6 shell in a disposable merged preview; primary branch contains n
 | Clover | 8.6 | 7.5 | 7.8 | 7.8 | p4/batch1-final/clover-comparison.webp and clover-motion.webp; green robe, teapot and tail stay clean; wrist motion restrained |
 | Panko | 8.6 | 7.5 | 7.8 | 7.8 | p4/batch1-final/panko-comparison.webp and panko-motion.webp; baker hat, loaf shield and roller retained; closed lid corrected |
 | Mallow | 8.6 | 7.5 | 7.8 | 7.8 | p4/batch1-final/mallow-comparison.webp and mallow-motion.webp; whisk/scarf silhouette retained; eyes fully close on defeat |
-| Cinnamon | 8.6 | 7.5 | 7.7 | 7.7 | p4/batch1-final/cinnamon-comparison.webp and cinnamon-motion.webp; fine tea props retained; lid no longer samples forehead stripe |
+| Cinnamon | 8.6 | 7.7 | 7.7 | 7.7 | p18/evidence/cinnamon-follow-through.webp; raised serving tray, restrained cup and delayed tail; gesture remains small |
 | Velvet | 8.6 | 7.5 | 7.9 | 7.9 | p4/batch2-final/velvet-comparison.webp and velvet-motion.webp; ribbon/staff/cape remain clean |
 | Biscuit | 8.6 | 7.5 | 7.8 | 7.8 | p4/batch2-final/biscuit-comparison.webp and biscuit-motion.webp; cookie shield and spatula retained |
 | Brioche | 8.6 | 7.5 | 7.8 | 7.8 | p4/batch2-final/brioche-comparison.webp and brioche-motion.webp; basket/skirt/tail retained |

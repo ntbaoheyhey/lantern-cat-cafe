@@ -3,6 +3,7 @@ import {Vector3,Matrix4} from 'three';
 import rig from '../../../../../../assets/cardrpg-look/v3-puppets/mochi.rig.json';
 import inkcapRig from '../../../../../../assets/cardrpg-look/v3-puppets/inkcap.rig.json';
 import sockRig from '../../../../../../assets/cardrpg-look/v3-puppets/sock-skipper.rig.json';
+import cinnamonRig from '../../../../../../assets/cardrpg-look/v3-puppets/cinnamon.rig.json';
 import { parsePuppetRig, puppetMotion, puppetPhase, puppetPose, plantedPuppetPivot } from './look-puppet-rig';
 import { artPipeline } from './look-art';
 import { CATS, ENEMIES } from '../../../../../../packages/game-rules/src/cardrpg/depth/catalog';
@@ -136,6 +137,23 @@ describe('illustrated puppet contract and event motions',()=>{
     expect(lifted.y).toBeGreaterThan(Number(y)+.04);
     expect(puppetPose('cast',3,.38,false,.4,'inkcap').tailBend).not.toBe(puppetPose('idle',3,0,false,.4,'inkcap').tailBend);
     expect(puppetPose('cast',3,.38,false,.4,'clover').tailBend).toBe(0);
+  });
+
+  it('raises Cinnamon\'s actual serving tray and returns its tail to the current idle pose',()=>{
+    const pose=puppetPose('cast',3,.38,false,.4,'cinnamon');
+    const [,x,y]=cinnamonRig.sockets.mainHand;
+    expect(cinnamonRig.sockets.mainHand[0]).toBe('armL');
+    const tray=new Vector3(Number(x),Number(y),0).applyMatrix4(new Matrix4().makeRotationZ(pose.offhand));
+    expect(tray.y).toBeGreaterThan(Number(y)+.03);
+    expect(Math.abs(pose.prop)).toBeLessThan(Math.abs(pose.offhand)/2);
+    for(const motion of ['attack','cast','ultimate'] as const){
+      const end=puppetPose(motion,3,1,false,.4,'cinnamon'),idle=puppetPose('idle',3,0,false,.4,'cinnamon');
+      expect(end.tailBend).toBeCloseTo(idle.tailBend,12);
+      expect(end.tail).toBeCloseTo(idle.tail,12);
+      const quiet=puppetPose(motion,3,.38,true,.4,'cinnamon');
+      expect([quiet.prop,quiet.offhand,quiet.tail,quiet.tailBend,quiet.lean]).toEqual([0,0,0,0,0]);
+      expect(end.hopLift).toBe(0);
+    }
   });
 
   it('gives Sock Skipper a bounded hop, a forward mitten and an exact quiet landing',()=>{

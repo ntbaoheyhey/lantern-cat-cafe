@@ -17,8 +17,16 @@ it('keeps boss introductions and phase changes inside existing presentation budg
  for(const [age,phase]of [[.2,-100],[20,.1],[1,0]])expect(bossPerformance(age!,phase!,true)).toBeNull();
 });
 it('uses one instanced boss draw, allocates no new objects while updating, and releases resources',()=>{
- const fx=new CardBossAtmosphere();let geometries=0,materials=0;
- for(const node of fx.root.children){const mesh=node as T.InstancedMesh<T.BufferGeometry,T.MeshBasicMaterial>;mesh.geometry.addEventListener('dispose',()=>geometries++);mesh.material.addEventListener('dispose',()=>materials++);}
+ const fx=new CardBossAtmosphere(),scene=new T.Scene();scene.add(fx.root);
+ const releases=fx.root.children.map(node=>{
+  const mesh=node as T.InstancedMesh<T.BufferGeometry,T.MeshBasicMaterial>;
+  const count={geometry:0,material:0,instances:0};
+  mesh.geometry.addEventListener('dispose',()=>count.geometry++);
+  mesh.material.addEventListener('dispose',()=>count.material++);
+  mesh.addEventListener('dispose',()=>count.instances++);
+  return count;
+ });
+ expect(fx.root.getObjectByName('illustrated-boss-embers')).toBeDefined();
  const objects=fx.root.children.map(node=>node.uuid),point=new T.Vector3(2,0,0);
  for(const asset of Object.keys(BOSS_STYLES))for(let i=0;i<60;i++){
   fx.update(asset,point,i>30?2:1,i/60,false);
@@ -26,5 +34,8 @@ it('uses one instanced boss draw, allocates no new objects while updating, and r
   expect(fx.root.children.map(o=>o.uuid)).toEqual(objects);
  }
  fx.update(undefined,undefined,1,0,false);expect(fx.root.children.every(o=>!o.visible)).toBe(true);
- fx.dispose();fx.dispose();expect(geometries).toBe(3);expect(materials).toBe(3);
+ fx.dispose();expect(fx.root.parent).toBeNull();
+ for(const count of releases)expect(count).toEqual({geometry:1,material:1,instances:1});
+ fx.dispose();expect(fx.root.parent).toBeNull();
+ for(const count of releases)expect(count).toEqual({geometry:1,material:1,instances:1});
 });
