@@ -78,3 +78,6 @@ HEAD equals fetched origin 272a328935c799b6bea77c4ec6c8f2faa2ec4ded. P1–P16 ac
 
 ## Resume 2026-11-10T20:38:55.010222+00:00
 HEAD equals fetched origin e88d971754522b58034b35a589597b76b2023cb0. P19 attempt1 completed and lease released; 16pairedviews/12casts/25tests/parity/budgetPASS retained. No native runner; static servers50023/5920 and92836/5922 retained;142GiB free. Dirty inventory RESUME-DIRTY-P19.txt; no completed work repeated or discarded.
+
+## Resume 2026-11-10T20:55:15.142911+00:00
+HEAD matches fetched origin db0f7bdb43db7c0f1d4065aeb1b1f534362fde61. P21 accepted/pushed and draft427 updated; stale handoff corrected. P22 prepared plan retained. No native runner or B lease; servers50023/5920 and92836/5922 retained;141GiB free. Native dirty changes/GLBs preserved and excluded; current inventory RESUME-DIRTY-P22.txt.

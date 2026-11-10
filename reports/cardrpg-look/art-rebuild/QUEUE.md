@@ -33,6 +33,8 @@ Check STOP-B/INBOX and fetch/show A6-OUTBOX between items. Commit/push and updat
 
 - [x] P21 [auto] Lowest-score motion continuation: Binding Thread leads a snare with its knotted main hand, delayed opposite arm and a slight spool lean; plant both feet and preserve thin shoulder joins/metal rims. Both sizes, natural x1 basic/signature, reduced motion, actual main-hand socket and face/HP checks. Existing art/formation retained; max3 repairs.
 
+- [x] P22 [auto] Lowest-score motion continuation: Practice Cushion compresses before a quick mitten jab, springs back and settles, with both boots planted. Keep the broad face/head overlap, stitched diamond pattern and corner tassels coherent; existing six-layer rig/atlas unchanged. Two sizes, natural x1 basic/signature, reduced motion, hand socket/foot-contact/HP checks; max3 repairs.
+
 Research refinements 11/11: P6 uses the saved49+6cast audit and33tests; complete missing parity and visual acceptance. P7 records before/after plus representative cast timing. P8 reuses existing concepts/VFX and only exports missing formats. P10 adds representative x2/x3/reduced-motion readability checks alongside requested x1films. Completed P1–P5 are unchanged. Rationale in RESEARCH-PUPPET.md/DECISIONS.md.
 
 ## Completed history
@@ -82,3 +84,5 @@ P16 complete 2026-11-10T20:15:17.001198+00:00: attempt2 raises lantern0.06946uni
 P19 complete 2026-11-10T20:38:55.010222+00:00: accepted saved16pairedposes/12casts/25tests/type/lint/parity; paintedstafftip drift<1e-15, clean shoulders;38185390B. Motion7.5→7.7/overall7.7; no whole-roster uplift.
 
 P21 complete 2026-11-10T20:51:19.301203+00:00: repair3 clean knotted arms after opaque-overlap/source-partition fix;26web+2pipeline tests,16pairedposes/8casts/type/lint/parityPASS;38189058B. Motion7.7/overall7.7.
+
+P22 complete 2026-11-10T20:58:14.081635+00:00: accepted firstcandidate/16pairedposes/8casts/27tests/type/lint/parityPASS; pillow spring/cleanface/plantedboots;38189302B; motion7.7/overall7.7.

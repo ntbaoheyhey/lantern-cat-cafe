@@ -123,7 +123,8 @@ export function animateIllustrated(model:T.Object3D,camera:T.Camera,time:number,
   const data=model.userData.paintedRig as PuppetRig,rig=model.children[0]!;
   const phase=puppetPhase(model.userData.puppetActorId??data.id);
   const pose=puppetPose(puppetMotion(clip,acting,ultimate,data.boss),time,progress??.5,reduced,phase,data.id);
-  rig.scale.set(1-pose.breathe+pose.hit*.025+pose.hopSquash*.6,1+pose.breathe-pose.hit*.035-pose.collapse-pose.hopSquash,1);rig.rotation.set(0,0,pose.lean);
+  const squash=pose.hopSquash+pose.bodySquash;
+  rig.scale.set(1-pose.breathe+pose.hit*.025+squash*.6,1+pose.breathe-pose.hit*.035-pose.collapse-squash,1);rig.rotation.set(0,0,pose.lean);
   rig.position.y=(rig.userData.restY as number)-pose.collapse*.3+pose.hopLift;
   for(const layer of rig.children){
     if(!layer.name.startsWith('puppet_'))continue;
