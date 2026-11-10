@@ -120,7 +120,7 @@ def build(unit, force=False):
     OUT.mkdir(parents=True, exist_ok=True)
     atlas.save(atlas_path, 'WEBP', quality=93, method=6, alpha_quality=100)
     rig = dict(version=1, id=unit, role=cfg['role'], boss=cfg.get('boss', False),
-        height=cfg['height'], aspect=w/h, face=cfg['face'], eyes=cfg.get('eyes', []),
+        height=cfg['height'], aspect=w/h, face=cfg['face'], eyes=cfg.get('eyes', []), eyeStyle=cfg.get('eyeStyle', 'lid'),
         atlas=f'{unit}.webp', atlasSize=[size, size], layers=rows,
         sockets=cfg.get('sockets', {'mainHand':['armR',0,-.06], 'offHand':['armL',0,-.06]}),
         provenance=dict(source=cfg['source'], method='Authored polygons; OpenCV Telea hidden overlap fill; Pillow WebP93',

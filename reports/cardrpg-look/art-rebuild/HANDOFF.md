@@ -1,10 +1,10 @@
 # Lane B puppet handoff
-NOW: P5 first six enemy review completed (18tests/parity PASS, zero errors/overlaps); visual inspection pending. Second six configs authored, not built.
-Updated: 2026-11-10T17:04:22.761035+00:00; branch codex/cardrpg-art-r1-2026-11-09; last pushed 6d85461a121553e537f4d40f2a7ab5de3d2f5c11; draft PR #427 https://github.com/ntbaoheyhey/taskbar-hero/pull/427.
+NOW: P5 batch1 accepted and being published; batch2 builds and boss eye/ambient/phase audit next.
+Updated: 2026-11-10T17:13:18.731907+00:00; branch codex/cardrpg-art-r1-2026-11-09; last pushed f49f130baf09e234e69d203d2d14ced4b686f12f; draft PR #427 https://github.com/ntbaoheyhey/taskbar-hero/pull/427.
 NEXT 1: Read RULES/QUEUE/HANDOFF and PROMPT0/4; fetch/read A6-OUTBOX and check INBOX/STOP-B.
 NEXT 2: Inspect existing batch1 comparisons/motion sheets, publish batch1, then build the six remaining enemies.
 NEXT 3: Remaining6enemies plus existing Yarn boss motion/phase checks; publish P5 then P6 VFX.
-RUNNING: No active review job or B lock; batch1 log work/p5-batch1-review.log completed and released timing.lock.
+RUNNING: Batch1 repair complete, timing.lock released; no active heavy job. Logs work/p5-batch1-review.log and work/p5-batch1-repair.log.
 RUNNING: Inherited servers were PID50023 port5920 /tmp and PID92836 port5922 film-review; re-read live system before use. No A6 processes/ports touched.
 DONE this session: onboarding/native runner retired — 9feba11f4.
 DONE this session: P1 pipeline/semantic motions — 8549e7f73.
@@ -22,3 +22,5 @@ DECISIONS: Disposable preview /Users/bao/.codex/worktrees/cardrpg-b-puppet-previ
 DECISIONS: Artifact preview/docs/cardrpg-look/v5-p4-preview.html; receipt /tmp/cardrpg-v5-p4-batch2-repair-build.json. Build LOOK_ART=v3 LOOK_LEAN=1 LOOK_OUTPUT containing v5 and explicit LOOK_RECEIPT.
 DECISIONS: Build ID via /Users/bao/tools/cardrpg-look/venv/bin/python tools/cardrpg-look/art-rebuild/puppet/build.py; masters ~/art/look-v3/puppets; assets v3-puppets.
 DECISIONS: Review puppet/review.mjs ART_A6=1; heavy nice10 under skills-v5/full/run-lock.mjs (19min cap +6.5s fairness); ports5920–5923.
+DONE this session: exact NON-STOP addendum pushed — f49f130baf09e234e69d203d2d14ced4b686f12f.
+DECISIONS: P5 batch1 final captures p5/batch1-final; combined A6lean31,103,505B; evidence ~104.4MB.

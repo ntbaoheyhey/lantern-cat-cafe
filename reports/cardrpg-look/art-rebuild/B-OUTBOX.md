@@ -26,3 +26,6 @@ Mochi/Soot/Clover/Panko/Mallow/Cinnamon accepted; new four atlases/rigs in exist
 
 ## P4 complete — all12cats
 All12 exact cat ids now have puppet atlases/rigs. Cat atlas share 2368142 bytes; combined disposable A6 lean29,291,511bytes. No new event/DOM/rules change. Every playable cat covered by automated delivery check; two batches96poses0page/faceHPerrors. Evidence p4/REVIEW.md. P5 enemies/bosses begins next. Known: restrained shared gestures; Inkcap decoy status cue is still the existing canvas knot pending P6.
+
+## P5 batch1 — six enemies
+Button Guard/Sock Skipper/Spool Ram/Needle Moth/Teacup Healer/Kettle Knight have original puppet atlases+rigs. Needle Moth has wing joints; solo Kettle uses boss silhouette scale and eye emission. No rules/DOM change. Main default OFF; same v3 flag. Combined A6 lean31,103,505B; batch evidence p5/REVIEW.md. Batch2/boss ambient+phase checks remain underway. A6 Q13e envelopes82px/148px and single canvas damage-number ownership acknowledged.

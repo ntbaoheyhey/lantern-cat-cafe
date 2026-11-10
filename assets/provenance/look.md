@@ -429,3 +429,6 @@ Clover, Panko, Mallow and Cinnamon reuse the original concept sources and genera
 
 ## 2026-11-10 P4 batch2 illustrated cats
 Velvet, Biscuit, Brioche, Marigold, Sorrel, Inkcap reuse their original concepts and prompts above. No new model call; same authored polygon/pivot/hidden-fill/WebP93 pipeline. Configs tools/cardrpg-look/art-rebuild/puppet/configs; atlases/rigs assets/cardrpg-look/v3-puppets; receipts ~/art/look-v3/puppets/<id>. Final evidence p4/batch2-final; Sorrel eye ROI corrected from its original concept.
+
+## 2026-11-10 P5 batch1 illustrated enemies
+Button Guard, Sock Skipper, Spool Ram, Needle Moth, Teacup Healer, Kettle Knight reuse their original concepts and generation prompts above. No new inference. Authored polygons/pivots, Telea hidden fill, WebP93 via puppet/build.py; masters/receipts ~/art/look-v3/puppets/<id>. Final battle/concept + motion sheets p5/batch1-final. Kettle boss eye regions are authored from its original image.

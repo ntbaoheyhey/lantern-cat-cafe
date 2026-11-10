@@ -174,3 +174,5 @@ P4 first-batch motion review exposed Panko hat and Cinnamon forehead stripes ins
 
 ## B-PUPPET-005 — Sorrel eye ROI and A6 badge audit
 P4 batch2 first sheet left part of Sorrel left iris visible at defeat. Corrected both ellipse coordinates from source overlay; final two-unit recapture closes cleanly. Inkcap audit crashed because its status badge lives in A6 .uv-battle-cat, not legacy [data-hp-plate]. Harness now accepts and checks both parent types, still fails unknown card markup. No game DOM changes. Six final units0errors/faceHP;18testsPASS. One fix each.
+
+P5 review attempt1: solo Kettle retained elite-sized puppet despite existing boss showcase. Set illustrated rig boss flag; add authored eye-emission metadata for boss idle. Rules tier remains unchanged. Recheck affected battle/motions.

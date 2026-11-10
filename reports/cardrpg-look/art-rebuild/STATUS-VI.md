@@ -27,3 +27,6 @@ Tiếp tục sáu mèo còn lại ngay; giữ nguyên toàn bộ nguồn native 
 11/11: Đã ghi nguyên văn NON-STOP vào RULES/PROMPT; giữ R-9 và xác minh lại bản gốc.
 P5 đợt1 đã có kết quả: 18 test và parity đạt, không lỗi trang/đè HP; đang xem ảnh trước khi nhận batch.
 Tiếp tục P5 trong cùng lượt, không làm lại P1–P4.
+
+P5 đợt1 đã nhận sáu quái, 48 tư thế và không lỗi trang/đè mặt-HP; Kettle sửa tỉ lệ cảnh boss.
+Điểm tự đánh giá 7,6–7,9; bản chung A6 31,10 MB. Tiếp tục sáu quái còn lại và hiệu ứng idle/chuyển pha boss.

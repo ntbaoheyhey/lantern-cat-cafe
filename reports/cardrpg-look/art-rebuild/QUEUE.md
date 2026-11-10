@@ -33,3 +33,5 @@ P4 batch1 complete 2026-11-10T16:56:32.276421+00:00: six cats accepted,0page/fac
 P4 complete 2026-11-10T17:02:31.079205+00:00: all12cats in two published batches,96poses,0page/faceHPerrors; exact playable roster coverage test. Scores7.6–7.9; atlas share2368142B; combinedA6preview29.29MB. P5 next.
 
 NON-STOP addendum recorded: continue the active item after checkpoints; only explicit stop/deadline/all-user-blocked gates apply. Full exact text in RULES.md and PROMPT.txt.
+
+P5 batch1 accepted 2026-11-10T17:13:18.731907+00:00: six enemies,48poses,zero page/faceHP/DOM overlap;18tests/parityPASS. Second six and boss performance remain active.
