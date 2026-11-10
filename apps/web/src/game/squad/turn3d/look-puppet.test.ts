@@ -91,7 +91,7 @@ describe('illustrated puppet contract and event motions',()=>{
         expect([quiet.prop,quiet.tail,quiet.cloth,quiet.head,quiet.lean]).toEqual([0,0,0,0,0]);
       }
     }
-    expect(puppetPose('cast',0,.3,false,0,'mallow')).toEqual(puppetPose('cast',0,.3,false));
+    expect(puppetPose('cast',0,.3,false,0,'velvet')).toEqual(puppetPose('cast',0,.3,false));
   });
   it('plants Spool Ram into a horn dip and lets its tail recover after the body',()=>{
     const pose=(t:number,reduced=false)=>puppetPose('attack',0,t,reduced,0,'spool-ram');
@@ -140,7 +140,29 @@ describe('illustrated puppet contract and event motions',()=>{
     const lifted=new Vector3(Number(x),Number(y),0).applyMatrix4(new Matrix4().makeRotationZ(windup.prop));
     expect(lifted.y).toBeGreaterThan(Number(y)+.04);
     expect(puppetPose('cast',3,.38,false,.4,'inkcap').tailBend).not.toBe(puppetPose('idle',3,0,false,.4,'inkcap').tailBend);
-    expect(puppetPose('cast',3,.38,false,.4,'mallow').tailBend).toBe(0);
+    expect(puppetPose('cast',3,.38,false,.4,'velvet').tailBend).toBe(0);
+  });
+
+  it('sweeps Mallow complete whisk forward from a held windup and returns to a quiet pose',()=>{
+    // Original top wire at UV(.88,.185), relative to the right shoulder(.73,.46).
+    const tip=new Vector3((.88-.73)*1.9*1115/1200,(.46-.185)*1.9,0);
+    for(const motion of ['attack','cast','ultimate'] as const){
+      const windup=puppetPose(motion,0,.28,false,0,'mallow'),strike=puppetPose(motion,0,.52,false,0,'mallow');
+      const raised=tip.clone().applyMatrix4(new Matrix4().makeRotationZ(windup.prop));
+      const hit=tip.clone().applyMatrix4(new Matrix4().makeRotationZ(strike.prop));
+      expect(hit.x).toBeGreaterThan(raised.x+.12);
+      expect(hit.y).toBeLessThan(raised.y-.05);
+      for(let i=0;i<=60;i++){
+        const p=puppetPose(motion,3,i/60,false,.4,'mallow'),quiet=puppetPose(motion,3,i/60,true,.4,'mallow');
+        expect(Math.abs(p.prop)).toBeLessThanOrEqual(.161);
+        expect(Math.abs(p.offhand)).toBeLessThan(.14);
+        expect([quiet.prop,quiet.offhand,quiet.head,quiet.tail,quiet.tailBend,quiet.lean]).toEqual([0,0,0,0,0,0]);
+      }
+      const end=puppetPose(motion,3,1,false,.4,'mallow'),idle=puppetPose('idle',3,0,false,.4,'mallow');
+      expect(end.prop).toBeCloseTo(0,12);
+      expect(end.tail).toBeCloseTo(idle.tail,12);
+      expect(end.tailBend).toBeCloseTo(idle.tailBend,12);
+    }
   });
 
   it('strikes down and forward with Panko whole roller, with a still reduced-motion pose',()=>{
@@ -204,7 +226,7 @@ describe('illustrated puppet contract and event motions',()=>{
       expect(end.tailBend).toBeCloseTo(idle.tailBend,12);
     }
     expect(puppetPose('cast',0,.38,false,0,'panko').prop).toBeLessThan(0);
-    expect(puppetPose('cast',0,.38,false,0,'mallow').tailBend).toBe(0);
+    expect(puppetPose('cast',0,.38,false,0,'velvet').tailBend).toBe(0);
   });
 
   it("reaches Binding Thread's actual knot toward the party and settles with accessible quiet poses",()=>{

@@ -41,7 +41,9 @@ Check STOP-B/INBOX and fetch/show A6-OUTBOX between items. Commit/push and updat
 
 - [x] P25 [auto] Lowest-motion continuation: repair Panko rolling-pin ownership (currently split across head/body/armL), preserve original source/old masters, then author a small roller strike with loaf-shield brace and head/tail recovery. Keep whole utensil/mitten, chin/hat and shoulder overlap coherent; rebuild only this rig/atlas with owned-alpha fill. Both sizes/x1 basic-signature-ultimate/reduced/socket/HP/source-partition checks; max3repairs.
 
-- [ ] P26 [auto] Lowest-motion continuation: Mallow leads with a bounded whisk flourish, with free mitten/head/tail recovery. Inspect original arm/scarf ownership first; keep the whole whisk and scarf coherent, use the existing atlas/rig. Both sizes/x1 basic-signature-ultimate/reduced/true tip/socket/faceHP checks; max3repairs.
+- [x] P26 [auto] Lowest-motion continuation: Mallow leads with a bounded whisk flourish, with free mitten/head/tail recovery. Repair observed split whisk loop and arm-owned scarf/tail patches first; preserve original rig/atlas/masters, rebuild only Mallow with owned-alpha overlap. Keep complete whisk, scarf and tail coherent. Both sizes/x1 basic-signature-ultimate/reduced/true tip/socket/faceHP checks; max3repairs.
+
+- [ ] P27 [auto] Lowest-motion continuation: Biscuit braces the cookie shield and gives its original wooden spatula a small windup/tap, with head/tail recovery. Inspect complete prop/arm/chin ownership first; correct offHand to the real shield armR. Preserve original art/masters; rebuild only if a visible split requires it. Both sizes/x1 basic-signature-ultimate/reduced/real tip/both sockets/faceHP; max3 repairs.
 
 Research refinements 11/11: P6 uses the saved49+6cast audit and33tests; complete missing parity and visual acceptance. P7 records before/after plus representative cast timing. P8 reuses existing concepts/VFX and only exports missing formats. P10 adds representative x2/x3/reduced-motion readability checks alongside requested x1films. Completed P1–P5 are unchanged. Rationale in RESEARCH-PUPPET.md/DECISIONS.md.
 
@@ -100,3 +102,5 @@ P23 complete 2026-11-10T21:02:30.587145+00:00: Mochi shieldforward/up/cleanoverl
 P24 complete 2026-11-10T21:09:16.635786+00:00: Clover held teapot lift then release tip; 29tests/16pairedviews/12casts/type/lint/parityPASS; A65badf4428+B38193062B; motion7.7/overall7.8.
 
 P25 complete 2026-11-10T21:24:22.860137+00:00: whole roller/mitten partition and chin repair accepted;30web+3pipeline tests,16pairedviews/12casts/type/lint/parityPASS;38280606B. Motion7.7/overall7.8; original/source1 masters retained.
+
+P26 complete 2026-11-10T21:39:06.117265+00:00: source3/motion1 accepted,31web+4pipeline tests/type/lint/parity,16pairedviews/12castsPASS;38371818B. Whisk/mitten/scarf coherent atx1; small96pixel tail-fringe limit recorded, motion7.7/overall7.8.

@@ -132,3 +132,6 @@ Giữ nguyên bản gốc và bản sao rig/atlas Panko; kiểm tra lớp cán b
 
 Panko đã duyệt: cả cây cán bột và găng tay cùng lấy đà/vung xuống; khiên ổ bánh giữ thế đỡ, cằm/vai không còn mảnh rời.
 30test web và3test cắt ảnh cùng16ảnh/12lượt chiêu đạt; bản chung38.280.606byte. Chuyển động7,5→7,7, tổng giữ7,8; tiếp tục Mallow.
+
+Mallow đã duyệt: phới liền khối lấy đà/vung tới, khăn giữ trên thân, tay và đuôi hồi nhịp; không lộ mảnh rời ở x1.
+31test web và4test cắt lớp,16ảnh/12lượt chiêu/type/lint/parity đạt; bản chung38371818byte. Chuyển động7,5→7,7, tổng giữ7,8; tiếp tục Biscuit.

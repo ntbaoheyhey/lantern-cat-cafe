@@ -160,6 +160,8 @@ Do not edit the shell helper during the active five-cat inference batch: its rec
 
 B-LOCAL-014 continuation: Panko exported466.642s; safe successor changed shell orientation after terminal receipt and before Mallow. All3shellfixturesPASS. Existing Clover/Yarn winding correction+pack completed; verification build wrote HTML then failed because the new receipt directory was absent. Preserve original log; builder now creates both output/receipt parents. Resume from build only, no correction/packing/inference repeated. Panko existing source also corrected; signed volume-.01004084 to+.01004084, source/UV/images preserved; source views queued.
 
+B-LOCAL-014 VERIFIED: identical FrontSide battle shows continuous Clover face/collar/apron and Yarn outer crown/thread/arm surfaces.16poses0errors,48faces0offenders,0UIoverlap,4casts16.8ms/78draws/189046tri. Fix accepted; r2/outward1/REVIEW.md records five flaws/limits. B-LOCAL-012 pale relief resolved by generated material/toonfalse; coarse Yarn source remainsPARTIAL. Panko corrected from saved source only; Mallow exported476.830s with fixed helper. No repeat inference.
+
 ## B-PUPPET-001 — hidden overlap visible over original pixels
 2026-11-10 P1 first reconstruction showed smeared seams: every part extended over both foreground and background neighbors. Restrict filled extension to pixels owned by foreground parts only. Rebuilt Mochi and visually verified exact clean rest reconstruction plus real8poses; one repair, resolved. P2 eyelid-expression issue remains open.
 
@@ -208,3 +210,9 @@ P20 A6 disposal report resolved: reproduced expected3/received5, added idempoten
 
 ## B-PUPPET-P25 — whole rolling pin and detached chin fringe
 2026-11-10T21:20:31.576953+00:00 Source attempt1 moves both pin ends/barrel/mitten to armL. Opaque ownership audit reveals two disconnected body strips (about2422+123pixels) under the old chin boundary. Repair2 assigns these cheek/upper-shoulder pixels to head behind armL, keeping source pixels and all other parts. Original and attempt1 masters/config/atlas/rig archived in ~/art/look-v3/p25. First validation caught an old shared-motion sentinel using Panko; change sentinel to still-shared Mallow, preserving its assertion. No visual-motion acceptance yet.
+
+2026-11-10T21:26:40.137682+00:00 P25 resolved: source2 body is one connected component, coherent full pin/chin in16pairedframes; all30web+3pipeline tests and12casts pass. Accepted/pushedfd11fd15f1fd42aba4b518f93935f94511a395bd; original/source1 preserved.
+
+2026-11-10T21:33:18.585713+00:00 P26 source1 complete whisk/free mitten retained, but owned-alpha audit found detached cuff fragments in body (1293pixels right,543pixels left) and a186pixel mitten fringe. Repair2 expands only those sleeve/mitten borders; source1 and original masters/rig/atlas/config preserved in ~/art/look-v3/p26. No motion accepted yet.
+
+2026-11-10T21:35:58.736528+00:00 P26 source2 cuff repairs are correct and body is connected, but a magnified original-art crop proves the isolated armL fringe is tail fur, not mitten. Repair3 restores it to tail by following the actual transparent gap; original/source1/source2 preserved. Keep the already bounded whisk gesture; reuse saved before captures and passing type/lint/motion tests.
