@@ -5,7 +5,7 @@ Agent visual review, not player testing. Both sizes inspected; no applicable Q13
 | Screen | 1440×900 | 1280×720 | Lowest applicable row | Evidence / next fix |
 |---|---:|---:|---|---|
 | Cafe / top HUD / dock | 8 | 8 | 07/15: scene finish (7) | shots/q13b-details/*-home |
-| Cats / Growth / Skills / Bonds / Gear | 8 | 7.8 | 13: dense skill copy (7) | shots/q13b-details/*-cats-* and *-collection |
+| Cats / Growth / Skills / Bonds / Gear | 8.1 | 8.0 | 13: compact collection-card metadata (7.5) | shots/q21-cat-skills/*; all48effects/12cats readable atbothsizes, locked/unlocked and sheet bounds verified |
 | Team | 8.1 | 7.9 | 13: compact suggested-team copy (7.5) | shots/q19-formation-final/*-team; row art, keyboard moves, save/replace pass |
 | Prepare | 8.0 | 7.9 | 13: compact three-foe advice (7.5) | shots/q19-formation-final/*-prepare; 128px art, 40px placement, three foes/forecast/Fight fit720p |
 | Bag / gear / empty | 7.9 | 7.8 | 13: small gear metadata (7.5) | shots/q14a/*-inventory; q14a-empty both sizes; primary actions fit |
