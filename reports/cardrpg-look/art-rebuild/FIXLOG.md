@@ -69,3 +69,6 @@ Repro: Button/Yarn travel or recovery switches clip to step/idle, bypassing atta
 
 ## B-R1-012 Button Guard export failure — 2026-11-10
 Attempt1 daily quota at02:05UTC. Attempt2 in internal browser after user preference change: original concept/seed20261111,1024,100k/2048 preserved; Generate produced preview; Extract displayed Error/Empty value with no download. No specific quota cause exposed for attempt2. Keep preview for one final extract attempt, then use authorized animated fallback and continue. No paid route or credential access.
+
+## B-R1-014 Q3 full E2E idle clock flake — 2026-11-10
+Full suite420PASS/1FAIL: s3-walkthrough idle XP remains0 after fastForward60s. Known inherited clock timing case; unchanged isolated run repeated twice gives2PASS. Original and isolated logs retained in r1/phase-checks. No test/code modification or skip; handled by explicit flake rule. Other phase checks remain attached to unchanged runtime78c02c3db.

@@ -4,9 +4,14 @@ Never modifies source masters. Output is a six-layer rig, not a flat sprite.
 """
 from pathlib import Path
 from PIL import Image, ImageDraw, ImageFilter
-import numpy as np, json, hashlib
+import numpy as np, json, hashlib, argparse
 ROOT=Path(__file__).resolve().parents[3]
-OUT=ROOT/'assets/cardrpg-look/v3-painted';OUT.mkdir(parents=True,exist_ok=True)
+parser=argparse.ArgumentParser()
+parser.add_argument('--config',type=Path,help='Reviewed per-unit semantic polygons')
+parser.add_argument('--out',type=Path,default=ROOT/'assets/cardrpg-look/v3-painted')
+args=parser.parse_args()
+if (ROOT/'STOP-B').exists():raise RuntimeError('STOP-B requested')
+OUT=args.out;OUT.mkdir(parents=True,exist_ok=True)
 # Normalized polygons, listed front-to-back; remaining pixels form the body.
 CONFIG={
 'mochi':dict(role='guardian',height=1.90,face=[.49,.30],layers=[
@@ -33,6 +38,7 @@ CONFIG={
  ('armL',[(0,.24),(.25,.25),(.29,.52),(.23,.92),(0,.94)],[.20,.38]),
  ('footL',[(.18,.80),(.49,.80),(.49,1),(.18,1)],[.36,.85]),
  ('footR',[(.49,.80),(.76,.80),(.76,1),(.49,1)],[.63,.85])])}
+if args.config:CONFIG=json.loads(args.config.read_text())
 rows={}
 for name,cfg in CONFIG.items():
  source=ROOT/f'assets/source/look-v3/concepts/{name}.png'
@@ -57,5 +63,6 @@ for name,cfg in CONFIG.items():
   dest=OUT/f'{name}-{part}.webp';layer.save(dest,'WEBP',quality=89,method=6,alpha_quality=100)
   result.append(dict(part=part,pivot=pivot,rect=[bounds[0]/w,bounds[1]/h,(bounds[2]-bounds[0])/w,(bounds[3]-bounds[1])/h],file=dest.name,depth=index*.012,sha256=hashlib.sha256(dest.read_bytes()).hexdigest()))
  rows[name]=dict(role=cfg['role'],height=cfg['height'],aspect=w/h,face=cfg['face'],layers=result,sourceSha256=hashlib.sha256(source.read_bytes()).hexdigest())
+ if cfg.get('eyes'):rows[name]['eyes']=cfg['eyes']
 (OUT/'rigs.json').write_text(json.dumps(rows,indent=2)+'\n')
 print(json.dumps({n:len(c['layers']) for n,c in rows.items()}))

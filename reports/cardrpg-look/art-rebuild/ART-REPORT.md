@@ -58,8 +58,10 @@ Draft [#427](https://github.com/ntbaoheyhey/taskbar-hero/pull/427). This is a VF
 ## Scope and next work
 
 - R0/S6/M5 and requested housekeeping complete; do not repeat. Fourconcept masters remain style anchors. User rejects stiff/pasted2.5D and loose primitive approximation, prefers direct image-derived3D and generation-led VFX.
-- R1decision/full four-unit acceptance and R2/R4/R5/R3/R6/R7/R8 remain pending; model deformation must be addressed with the existing source before roster expansion.
+- R1final four-unit decision and R2/R4/R5/R3/R6/R7/R8 remain pending. Mochi uses the user-authorized rigid-module fallback; limited independent arm movement is a known issue, not a roster blocker.
 - Original Full Run upload/allocations/OFF+3B/draws/Kettle misses remain open. No default flags, rules, A/U worktrees, shell, PR merge or deploy changed. Shell hygiene request already sent to U through B-OUTBOX.
 - No further source conversion is needed for Mochi. Continue from current prototype and generated light; never restart because a remote download URL expires.
 
 Active resume checkpoint 2026-11-10T06:07:08.127885+00:00: internal-browser fallback review and 12s motion film;1822tests/type/lint/buildPASS;5seedexact;96total face samples0offenders,0UI overlaps;demo31777616B. Q3 and Q5 remain PARTIAL; no overall8.5 or full-roster acceptance claimed.
+
+06:35UTC progress:25concept sources complete; Q3full E2E420PASS/1clockflake+2unchangedisolatedPASS. Soot/Clover VFX sources packed; further original VFX sources prepared while provider conversions wait. Source art is not a runtime quality claim.

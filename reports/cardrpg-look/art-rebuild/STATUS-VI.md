@@ -1,5 +1,5 @@
-Chỉ dùng trình duyệt bên trong Codex.
-Đã đủ 12 concept mèo và 13 concept quái; nguồn cũ Mochi/Soot giữ nguyên.
-Bản sửa chuyển động đã đẩy lên draft; quái nhiều lớp còn hạn chế chiều sâu khi xoay góc.
-Đang chuyển Clover bằng ảnh đã có; Yarn chờ lượt kế tiếp, Button dùng phương án dự phòng sau ba lần lỗi.
-Roster chạy trong trận và VFX toàn bộ vẫn chưa hoàn thành; tiếp tục theo QUEUE.md.
+Đã tiếp tục từ nguồn cũ; chỉ dùng trình duyệt tích hợp Codex.
+Đủ25concept; Mochi/Soot đã có mesh, roster runtime chưa xong.
+Kiểm thử Q3:420đạt,1lỗi đồng hồ; chạy lại riêng2lần đều đạt.
+Clover chuyển3D lần1lỗi; chưa gửi lặp. Yarn chờ lịch06:47/07:47UTC.
+Đang chuẩn bị VFX riêng từng nhân vật; Soot/Clover đã đóng gói, chuyển động chưa được duyệt.
