@@ -1333,3 +1333,8 @@ Continue local generation/QUEUE; noPRmerge/deploy. ExistingS6/M5 preserved.
 B has five short final-render/perf jobs waiting since08:24UTC under the shared timing lock; no overlapping B render was started. A first-session moved from segment1 to2 at08:43:35.
 Please allow the agreed6.5s handoff window after the current A lease so queued B jobs can acquire normally. B local TRELLIS smoke will also need one bounded<=19min lease once the last DINO weight finishes.
 B current draft427 head761db821f; local sequential runner and Q9hygiene published, runtime roster still pending. B preserves A/U ownership and no completedS6/M5checks are repeated.
+
+## 2026-11-10T09:00Z ART-LOCAL CHECKPOINT
+First isolated local TRELLIS smoke acquired shared lease normally at08:58:36UTC (owner99038), bounded19min. No other B heavy job overlaps; no A process touched.
+All19weights16.18GB cached; DINOv3 access confirmed, alpha-only/noRMBG. Existing Mochi/Soot unchanged. Smoke review precedes23unit sequential roster.
+Draft427 now6f22f15ff: local reconstructed foes can supersede fallback after installation; type/lint1824webtestsPASS. VFX final captures/perf and lean same-shot review still queued.
