@@ -2,9 +2,21 @@ import { afterEach, describe, expect, it } from 'vitest';
 import rig from '../../../../../../assets/cardrpg-look/v3-puppets/mochi.rig.json';
 import { parsePuppetRig, puppetMotion, puppetPhase, puppetPose } from './look-puppet-rig';
 import { artPipeline } from './look-art';
+import { CATS } from '../../../../../../packages/game-rules/src/cardrpg/depth/catalog';
+
+const deliveredRigs=Object.values(import.meta.glob('../../../../../../assets/cardrpg-look/v3-puppets/*.rig.json',{eager:true,import:'default'}));
+const deliveredAtlases=import.meta.glob('../../../../../../assets/cardrpg-look/v3-puppets/*.webp',{query:'?url',import:'default'});
 
 afterEach(()=>{delete window.__LOOK_V2__;delete window.__LOOK_ART__;delete window.__LOOK_ART_PIPELINE__;});
 describe('illustrated puppet contract and event motions',()=>{
+  it('covers every playable cat with a valid rig and delivered atlas',()=>{
+    const parsed=new Map(deliveredRigs.map(value=>{const r=parsePuppetRig(value);return[r.id,r];}));
+    for(const cat of CATS){
+      const r=parsed.get(cat.id);expect(r,cat.id).toBeDefined();
+      expect(r!.boss,cat.id).toBe(false);
+      expect(Object.keys(deliveredAtlases).some(path=>path.endsWith('/'+r!.atlas)),cat.id).toBe(true);
+    }
+  });
   it('loads an authored atlas and rejects corrupt coordinates before rendering',()=>{
     expect(parsePuppetRig(rig).layers.map(l=>l.part)).toContain('head');
     const broken=structuredClone(rig);broken.layers[0]!.atlasRect=[.9,0,.4,1];

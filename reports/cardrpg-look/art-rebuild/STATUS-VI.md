@@ -20,3 +20,6 @@ Cả hai cỡ màn hình không tràn model/đè mặt-HP/UI; đã kiểm tra zo
 10/11: Đã lưu nguyên văn prompt + R-9, kiểm tra số byte/SHA và đẩy lên nhánh B.
 P4 đợt 1: sáu mèo đạt 7,6–7,8; sửa mí mắt Panko/Cinnamon, không lỗi trang hay đè mặt/thanh máu.
 Tiếp tục sáu mèo còn lại ngay; giữ nguyên toàn bộ nguồn native cũ.
+
+11/11: Hoàn tất P4: đủ 12 mèo dạng puppet2.5D từ concept gốc, không còn mèo dùng fallback.
+Đợt2 sửa vùng mắt Sorrel và bộ kiểm tra badge A6;18test,5seed parity và48tư thế đều đạt. Preview chung29,29MB; chuyển ngay sang P5 quái/boss.

@@ -34,7 +34,11 @@ export function audit(){
  for(const cue of bossCues)for(const other of [...plates,...all('.dp-ultimate-moment')])if(hit(rect(cue),rect(other)))overlaps.push([rect(cue),rect(other)]);
  for(let i=0;i<text.length;i++)for(const b of [...text.slice(i+1),...plates,...fixed])if(hit(rect(text[i]),rect(b)))overlaps.push([rect(text[i]),rect(b)]);
  for(const plate of plates)for(const strip of liveStrip)if(hit(rect(plate),rect(strip)))overlaps.push([rect(plate),rect(strip)]);
- for(let i=0;i<badges.length;i++)for(const b of [...badges.slice(i+1),...badges[i].closest('[data-hp-plate]').querySelectorAll('progress,.dp-party-health>span strong,.dp-world-plate>div>small')])if(hit(rect(badges[i]),rect(b)))overlaps.push([rect(badges[i]),rect(b)]);
+ for(let i=0;i<badges.length;i++){
+  const card=badges[i].closest('[data-hp-plate],.uv-battle-cat');
+  if(!card)throw Error('Status badge has no recognized battle card');
+  for(const b of [...badges.slice(i+1),...card.querySelectorAll('progress,.dp-party-health>span strong,.dp-world-plate>div>small')])if(hit(rect(badges[i]),rect(b)))overlaps.push([rect(badges[i]),rect(b)]);
+ }
  const stage=rect(document.querySelector('.dp-arena'));
  const outside=text.map(rect).filter(r=>r.left<stage.left-.5||r.right>stage.right+.5||r.top<stage.top-.5||r.bottom>stage.bottom+.5);
  const lum=color=>{const rgb=color.match(/[\d.]+/g).slice(0,3).map(Number).map(n=>n/255<=.04045?n/255/12.92:((n/255+.055)/1.055)**2.4);return rgb[0]*.2126+rgb[1]*.7152+rgb[2]*.0722};

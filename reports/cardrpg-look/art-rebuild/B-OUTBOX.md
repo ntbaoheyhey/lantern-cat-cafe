@@ -23,3 +23,6 @@ Evidence: p3/final and p3/comparison.webp. Combined local A6 lean preview 26.71 
 
 ## P4 batch1 — six cats
 Mochi/Soot/Clover/Panko/Mallow/Cinnamon accepted; new four atlases/rigs in existing v3-puppets path. Shared closed eyelid fix samples cheek instead of hat/forehead. No integration API or DOM changes. Six cat atlas bytes 1223816; combined A6 lean artifact 27,766,291 bytes. Review p4/REVIEW.md; final six comparisons/8pose sheets and five-seed parity PASS. Remaining six cats then enemies continue; R-9 memory files now active.
+
+## P4 complete — all12cats
+All12 exact cat ids now have puppet atlases/rigs. Cat atlas share 2368142 bytes; combined disposable A6 lean29,291,511bytes. No new event/DOM/rules change. Every playable cat covered by automated delivery check; two batches96poses0page/faceHPerrors. Evidence p4/REVIEW.md. P5 enemies/bosses begins next. Known: restrained shared gestures; Inkcap decoy status cue is still the existing canvas knot pending P6.

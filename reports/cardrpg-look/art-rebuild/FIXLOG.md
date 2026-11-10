@@ -171,3 +171,6 @@ P3 gallery override masked real formation and rear-row lateral offsets hid Clove
 
 ## B-PUPPET-004 — cheek-sampled closed eyelids
 P4 first-batch motion review exposed Panko hat and Cinnamon forehead stripes inside closed eyes. Sample a fixed cheek point below each eye; defeat now closes fully. Re-captured six units and inspected final sheets,0page/faceHPerrors. One correction; no source art regenerated.
+
+## B-PUPPET-005 — Sorrel eye ROI and A6 badge audit
+P4 batch2 first sheet left part of Sorrel left iris visible at defeat. Corrected both ellipse coordinates from source overlay; final two-unit recapture closes cleanly. Inkcap audit crashed because its status badge lives in A6 .uv-battle-cat, not legacy [data-hp-plate]. Harness now accepts and checks both parent types, still fails unknown card markup. No game DOM changes. Six final units0errors/faceHP;18testsPASS. One fix each.
