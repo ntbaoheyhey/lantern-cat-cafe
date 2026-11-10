@@ -1,15 +1,19 @@
-Đã tự động hoá Mochi từ ảnh gốc thành model 3D, giảm lưới, gắn xương và đóng gói.
-Bản thử nghiệm còn 626.020 byte, 21.938 tam giác, 14 xương; game điều khiển 22 clip.
-Đã có clip trận thật 20 giây và 11 tư thế kiểm tra; lỗi kéo méo khi giơ tay cao còn tồn tại.
-Công cụ chạy lại tái sử dụng đủ năm bước và kiểm tra hash; không cần bạn tải file hay kết nối fal.
-R1 vẫn PARTIAL; chưa nhân rộng đội hình, chưa chốt pipeline hoặc công nhận chất lượng 8.5.
+Đang tiếp tục R1 từ model và ảnh gốc đã có; không tạo lại Mochi/Soot.
+Mochi dùng 5 khối cứng có chuyển động đầu/tai/đuôi và chớp mắt; không còn lỗi kéo méo tạp dề.
+Soot đã vào trận; Button/Yarn đang dùng bản nhiều lớp có chuyển động trong lúc kiểm tra nguồn 3D local.
+Button có dữ liệu mesh/texture đã lưu; một bước sửa bề mặt đang chờ tài nguyên, chưa được chấp nhận.
+R1 vẫn PARTIAL: chờ kiểm tra Button/Yarn, chốt pipeline và rubric; mục tiêu 8,5 chưa đạt.
 
-## Latest automated rig checkpoint
+## Current four-unit checkpoint — 2026-11-10
 
-The source-only statements below are historical. The current result is an animated3D prototype with a known failed deformation gate.
-See [AUTOMATION](AUTOMATION.md), [current report](ART-REPORT.md), [pose sheet](r1/image-to-3d/packed-motion/contact-sheet.webp), and [battle film](r1/image-to-3d/film/mochi-generated-20s.mp4).
-Actual source conversion is complete; local pipeline outputs626,020B/21,938tri/14bones.22clips are supplied by the game, not embedded in GLB.
-No new external request. B-R1-008 remains PARTIAL after3attempts; no pipeline accepted or roster rollout.
+- Draft #427. Q1/Q2/Q4 complete; historical R0/M5/S6 and source conversions are preserved.
+- Mochi: original image-derived mesh, 608456B,21938tri, five rigid modules, no skin. The game supplies motion; limited independent arm reach remains. See [rigid review](r1/rigid1/REVIEW.md).
+- Soot: original conversion retained; matte/plum material correction, restrained rigid modules. Appeal7.6/animation6.3 agent assessment; warm baked forehead remains. See [Soot review](r1/roster/SOOT-REVIEW.md).
+- Button/Yarn: articulated layer fallback already reviewed at1x; continuous action gestures and moving protected-face anchors,96face samples with0offenders/overlaps. This is not full3D. See [fallback review](r1/foes-fallback/REVIEW.md).
+- Local TRELLIS setup/weights/DINO access are complete. Smoke512 exported and received UV/gutter repairs, but does not replace superior existing Mochi. Button attempts1/2 timed out during xatlas; saved decoded mesh permits export-only repair without new inference.
+- Button export2 recovered textures but actual source/clay review rejected shattered topology. One voxel remesh/export/six-view review is waiting under the shared lease. Button is held out of the inference queue until this source review; no third inference has started.
+- Phase checks:1822webtests/type/lint,5seed parity and96faces passed at78c02c3db. Full E2E420PASS/1clockflake; two unchanged isolated reruns pass. Later R4/R5 E2E421PASS is recorded in ART-REPORT. Do not rerun unchanged checks.
+- Q3 final four-unit rubric/decision and Q5 runtime roster remain unfinished. Continue QUEUE; a checkpoint is not a stop. Earlier notes below are preserved history and do not override this section.
 
 ---
 
