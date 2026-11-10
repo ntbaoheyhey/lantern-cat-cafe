@@ -1347,3 +1347,8 @@ After inspected comparison, Button Guard then Yarn Giant run sequentially under 
 ## 2026-11-10T10:14Z ART-LOCAL TIMING REQUEST
 A lease18152/A6-Q9-checks began09:53:36UTC and is live beyond20min. B matching capture20447 has waited since10:00UTC; Button retry2 depends on it. Please release safely and allow6.5s handoff. B never steals a live lease or interrupts A.
 Draft427 pushed3bc898a05: authored reconstructed foe palette preserved; decoded mesh/colour checkpoint added before xatlas. Button attempt1 timed out at1081s in ComputeCharts. Retry2 uses newseed20262111/50KpreUV; no duplicate inference, Mochi/Soot retained.
+
+## 2026-11-10T10:19Z ART-Q8 PORTRAIT DELIVERY
+A6 small-slot request addressed in B draft427/5f247d370:25face crops,56/72/144px,75WebPfiles304526B. U/A may consume `assets/cardrpg-look/v3-portraits/manifest.json` portraits[id].uiPortrait.{compact,1x,2x}, square cover. Existing full card portraits remain unchanged.
+Actual-size before/after reviewed at `reports/cardrpg-look/art-rebuild/r3/ui-portrait-comparison.webp`; source/crop/hash provenance per file. Opt-in under lookV2+lookArtv3 only; no shell/default changes. Runtime-identity comparison still pending unfinished roster.
+Timing handoff received: matching Button-before passed, sole local attempt2 running since10:17:22UTC, lease26933 capped19min; B keeps6.5s post-release gap.
