@@ -9,6 +9,22 @@ from build import part_overlap, authored_mask
 
 
 class PartOverlapTests(unittest.TestCase):
+    def test_yarn_whole_crown_knuckles_necklace_and_feet_keep_their_owners(self):
+        cfg = json.loads((Path(__file__).parent/'configs/yarn-giant.json').read_text())
+        source = Image.open(Path(__file__).resolve().parents[4]/cfg['source']).convert('RGBA')
+        source.thumbnail((1200, 1200))
+        owners = np.zeros((source.height, source.width), np.uint8)
+        for i, (part, polygon, _) in reversed(list(enumerate(cfg['layers']))):
+            mask = authored_mask(source.size, polygon, cfg.get('holes', {}).get(part, ()))
+            owners[mask > 0] = i+1
+        for (x,y), expected in [((480, 35), 'head'), ((390, 330), 'head'), ((550, 315), 'head'), ((840, 210), 'head'), ((380, 490), 'body'), ((515, 556), 'body'), ((815, 340), 'body'), ((190, 456), 'body'), ((520, 720), 'body'), ((134, 823), 'armL'), ((220, 600), 'armL'), ((60, 965), 'armL'), ((1021, 818), 'armR'), ((970, 640), 'armR'), ((1100, 1000), 'armR'), ((970, 975), 'armR'), ((400, 990), 'footL'), ((265, 990), 'footL'), ((750, 1000), 'footR'), ((850, 956), 'footR')]:
+            self.assertGreater(source.getpixel((x,y))[3],64,(x,y))
+            index = int(owners[y,x])-1
+            actual = cfg['layers'][index][0] if index >= 0 else 'body'
+            self.assertEqual(actual, expected, (x,y))
+        self.assertEqual(cfg['socketSources']['mainHand'][0], 'armR')
+        self.assertEqual(cfg['socketSources']['offHand'][0], 'armL')
+
     def test_kettle_handle_chest_spout_fingers_and_boots_keep_their_owners(self):
         cfg = json.loads((Path(__file__).parent/'configs/kettle-knight.json').read_text())
         source = Image.open(Path(__file__).resolve().parents[4]/cfg['source']).convert('RGBA')
