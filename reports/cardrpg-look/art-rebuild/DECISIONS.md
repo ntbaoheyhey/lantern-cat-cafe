@@ -110,4 +110,8 @@ P10 corrected setup remains the active item. Prepare P11 report and one P12 Soot
 
 2026-11-10T20:15:17.001198+00:00 P16repair2 accepted from actual upward lantern silhouette; do not infer gesture direction from scalar angles alone. P17 adds original Sock Skipper anticipation/hop/mitten reach, matching its knit thief/Pocket skip cue and7.7overall/7.5motion gap. Existing art only; no runtimechange until new validation.
 
-P17 accepted saved x1 Sock Skipper evidence: soft-knit squash/hop/recovery improves character while retaining clean overlaps. No blanket score uplift. P18 [auto] chooses Cinnamon from remaining motion7.5/overall7.7 ties; its asymmetric teapot/cup requires an authored hand direction and delayed recovery. Existing art only; max3 repairs, two sizes/naturalcasts/reducedmotion.
+P17 accepted saved x1 Sock Skipper evidence: soft-knit squash/hop/recovery improves character while retaining clean overlaps. No blanket score uplift. P18 [auto] chooses Cinnamon from remaining motion7.5/overall7.7 ties; its asymmetric serving-tray/cup requires an authored hand direction and delayed recovery. Existing art only; max3 repairs, two sizes/naturalcasts/reducedmotion.
+
+P18 evidence budget: remove only JSON whitespace from three clean historical review receipts (430,268B saved), preserving every parsed value and every image. Formatted originals remain outside Git under ~/art/look-v3/evidence-original-json; p18/evidence-budget.json records exact paths/bytes. This is storage compaction, not repeated acceptance work.
+
+P18 accepted distinct servingtray/cup movement, no whole-roster uplift. P19 [auto] Sorrel uses a small staff tilt around the painted floor tip so its long prop remains grounded; inspect authored source coordinates before writing the constraint. Existing shared rigid parts remain; do not deform the leaf hat/face.

@@ -103,3 +103,6 @@ Inkcap đã duyệt bản sửa2: đèn nâng đúng hướng khi chuẩn bị p
 
 Sock Skipper đã duyệt từ ảnh lưu sẵn: lấy đà, bật nhẹ rồi tiếp đất; tay hướng về đối thủ, giày và đường may vẫn liền.
 23test/type/lint/parity cùng8lượt chiêu đã đạt; chuyển động7,5→7,7, tổng giữ7,7. Tiếp tục Cinnamon, không chạy lại phần đã xong.
+
+Cinnamon đã duyệt: nâng khay ở tay trái, nhấc chén nhẹ và có nhịp đầu/đuôi theo sau; cổ tay, tay áo và mặt đều rõ.
+24test và12lượt chiêu/type/lint/parity đạt; bản chung A6mới38,185MB. Điểm chuyển động7,5→7,7; tiếp tục Sorrel với gậy chạm sàn.

@@ -25,7 +25,9 @@ Check STOP-B/INBOX and fetch/show A6-OUTBOX between items. Commit/push and updat
 
 - [x] P17 [auto] Lowest-score motion continuation: Sock Skipper gets a small anticipation/hop/landing, a forward mitten reach and loose-thread recovery, using existing art. Two sizes, natural x1 basic/signature and reduced motion; keep boot/knit seams, actual glove socket and HP clear. Max3repairs; no score uplift from technical gates alone.
 
-- [ ] P18 [auto] Lowest-score motion continuation: Cinnamon raises its left-hand teapot with a restrained right-cup countergesture, delayed head/tail recovery and clean wrist/robe overlap. Reuse original rig/atlas; compare both sizes and natural x1 basic/signature/ultimate plus reduced motion, real main-hand socket and HP checks. Max3 repairs; scores only from visible improvement.
+- [x] P18 [auto] Lowest-score motion continuation: Cinnamon raises its left-hand serving tray with a restrained right-cup countergesture, delayed head/tail recovery and clean wrist/robe overlap. Reuse original rig/atlas; compare both sizes and natural x1 basic/signature/ultimate plus reduced motion, real main-hand socket and HP checks. Max3 repairs; scores only from visible improvement.
+
+- [ ] P19 [auto] Lowest-score motion continuation: Sorrel staff tilts around its painted floor contact, with an open palm, slight head response and delayed tail; keep the long staff rigid and shoulder seams clean. Both sizes/natural x1 basic/signature/ultimate/reduced, true tip drift/socket/HP checks; max3 repairs.
 
 Research refinements 11/11: P6 uses the saved49+6cast audit and33tests; complete missing parity and visual acceptance. P7 records before/after plus representative cast timing. P8 reuses existing concepts/VFX and only exports missing formats. P10 adds representative x2/x3/reduced-motion readability checks alongside requested x1films. Completed P1–P5 are unchanged. Rationale in RESEARCH-PUPPET.md/DECISIONS.md.
 

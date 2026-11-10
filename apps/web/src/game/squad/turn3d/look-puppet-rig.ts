@@ -47,6 +47,8 @@ const sootGesture={prop:.265,offhand:.15,head:.035,lean:.032,tailFollow:.085,clo
 const sockSkipperGesture={prop:-.12,offhand:-.25,head:.045,lean:.035,tailFollow:.12,clothFollow:0,lag:.075};
 // Lantern leads; the open offhand, head and tail follow.
 const inkcapGesture={prop:-.245,offhand:-.185,head:.042,lean:.028,tailFollow:.075,clothFollow:0,lag:.07};
+// Present the left serving tray while the right cup rises only slightly.
+const cinnamonGesture={prop:-.105,offhand:-.245,head:.038,lean:.020,tailFollow:.105,clothFollow:0,lag:.085};
 // Left-facing horns dip into the strike; front legs brace instead of swinging.
 const spoolRamGesture={prop:.085,offhand:.07,head:-.075,lean:-.05,tailFollow:.095,clothFollow:0,lag:.065};
 /** Counter-transform a planted local foot contact while the body leans/breathes. */
@@ -61,7 +63,7 @@ export function puppetPose(motion:PuppetMotion,time:number,progress:number,reduc
   // A held raised-prop silhouette before the ultimate release, then overshoot.
   const magic=ramp(t,0,.20)-1.23*ramp(t,.43,.66)+.23*ramp(t,.66,1);
   const gesture=reduced?0:active?authoredGesture(motion,t):0;
-  const profile=id==='soot'?sootGesture:id==='spool-ram'?spoolRamGesture:id==='inkcap'?inkcapGesture:id==='sock-skipper'?sockSkipperGesture:undefined;
+  const profile=id==='soot'?sootGesture:id==='spool-ram'?spoolRamGesture:id==='inkcap'?inkcapGesture:id==='sock-skipper'?sockSkipperGesture:id==='cinnamon'?cinnamonGesture:undefined;
   const follow=reduced||!active||!profile?0:authoredGesture(motion,Math.max(0,t-profile.lag))*(1-ramp(t,.93,1));
   const skip=id==='sock-skipper'&&active&&!reduced;
   const skipAir=skip?ramp(t,.18,.38)-ramp(t,.48,.70):0;
@@ -74,7 +76,7 @@ export function puppetPose(motion:PuppetMotion,time:number,progress:number,reduc
   return {gesture,breathe,hopLift:skipAir*.11,hopSquash:skipSquash,plant:id==='spool-ram'&&active&&!reduced,hit:reduced?0:hit,flash:reduced?0:motion==='hurt'?.45*(1-ramp(t,0,.24)):0,
     head:reduced?0:motion==='hurt'?-.045*hit:motion==='defeat'?-.12:active?-(profile?.head??.025)*gesture-.012*follow:Math.sin(clock*1.15)*.013,
     tail:reduced?0:Math.sin(clock*1.45)*.065-(profile?.tailFollow??0)*follow,
-    tailBend:reduced||!['inkcap','sock-skipper'].includes(id)?0:Math.sin(clock*1.45-.3)*(id==='sock-skipper'?.024:.018)-follow*(id==='sock-skipper'?.055:.045),
+    tailBend:reduced||!['inkcap','sock-skipper','cinnamon'].includes(id)?0:Math.sin(clock*1.45-.3)*(id==='sock-skipper'?.024:.018)-follow*(id==='sock-skipper'?.055:id==='cinnamon'?.035:.045),
     cloth:reduced?0:Math.sin(clock*1.45)*.065*.3-(profile?.clothFollow??0)*follow,
     wing:reduced?0:Math.sin(clock*1.55)*.055+gesture*.08,
     prop:reduced?0:active?-(profile?.prop??.20)*gesture:motion==='victory'?-.17:Math.sin(clock*1.8)*.017,
