@@ -2,7 +2,7 @@
 
 ACTIVE — continue NON-STOP-RUN/QUEUE; user resumed, no current pause.
 Worktree /Users/bao/taskbar-hero-cardrpg-b2; branch codex/cardrpg-art-r1-2026-11-09; draft#427.
-Latest pushed418a4f7ac; Q3 pilot closed PARTIAL, Q5 roster continues.
+Latest pushed74c6a9555; Q3 pilot closed PARTIAL, Q5 roster continues.
 Do not redo R0/M5/S6, Q1/Q2/Q3/Q4/Q9, Mochi/Soot conversions,25original concepts,12VFXmasters or completed phase checks.
 Latest INBOX: TRELLIS local-mps only, one model at a time; alpha-only/noRMBG. No browser generation; internal browser for review only.
 External ~/art/trellis-mac d58628f4; Python3.11/Torch2.15/MPS/import/DINO access pass;19weight files cached16.18GB. No setup/smoke repeat.
@@ -16,8 +16,9 @@ Source1 front/side/clay REJECTED: fragmented triangles hide eyes. Raw topology h
 RAW repair1 completed: distance PASS but source views still fragmented, REJECTED. Four closest-surface fixtures PASS, unchanged .015bound.
 Local shell repair2 from saved native cells (no inference) restores continuous yarn/eyes/crown; source front/side/clay inspected. Raw-shell2/export/source.glb SHA8fbe4de9; drift.006801/.002699p95,100Ksource.
 Packed-shell2 is1.298MB/61068tri; battle job36525 FINISHED:8poses/0errors,1shot/0UIoverlap,24faces0offenders. Visual review finds pale crease contours from old enemy relief; source and packed Blender views are coherent. Preview file installed locally but NOT accepted.
-Current B-LOCAL-012 material fix skips old relief for generated-v3 foes only; type/lint/5testsPASS. Waiting job7406/owner60368 runs /tmp/cardrpg-v5full-yarn-material-verify.mjs; log /tmp/cardrpg-v5full-yarn-material1.log. Includes same shot/8poses/faces/4casts. No other render waiter.
-Successor session28970 (/tmp/cardrpg-v5full-clover-after-material.mjs) waits for60368 to exit successfully, then runs local-roster limit1: Clover only,512/1024,seed20261113,BlenderUV+voxel-shell. No inference running yet. Do not launch duplicate Clover or repeat completed source.
+Current B-LOCAL-012 material fix skips old relief for generated-v3 foes only; type/lint/5testsPASS. Waiting job50443/owner64400 runs /tmp/cardrpg-v5full-yarn-material-verify.mjs; log /tmp/cardrpg-v5full-yarn-material1.log. Includes same shot/8poses/faces/4casts. No other render waiter.
+Successor session31093/owner64547 (/tmp/cardrpg-v5full-clover-after-material.mjs) waits for64400 to exit successfully, then runs local-roster limit1: Clover only,512/1024,seed20261113,BlenderUV+voxel-shell. No inference running yet. Do not launch duplicate Clover or repeat completed source.
+Source-review successor session59663/owner64637 follows64547 and renders existing exported Clover only.
 No model inference currently; successor may start after material job. Inspect material1/motion before accepting Yarn; fallback if rejected.10nativeguards/2shellguardsPASS.
 local-roster sourceReviewPending excludes Button and active Yarn from duplicate inference. Smoke review saved at ~/art/look-v3/local-generation/smoke/mochi/roster-review.json, trial authorization only. It also supports per-row uvBackend and hash-verified recovered entries. Intake watcher remains stopped pending usable source.
 Q3 bounded close documented in R1-DECISION.md: all4play, appeal/menace7.75>=7.0, pilotweighted7.71<8.5; PARTIAL quality. Q5 roster active; Yarn trial continues there. Known limits do not block queue.

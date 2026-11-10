@@ -7,6 +7,7 @@ import {fileURLToPath} from 'node:url';
 import {homedir} from 'node:os';
 import {createHash} from 'node:crypto';
 import {setTimeout as delay} from 'node:timers/promises';
+import {retainedDecode} from './local-source-state.mjs';
 
 const {values:args}=parseArgs({options:{submit:{type:'boolean'},plan:{type:'boolean'},
   'smoke-review':{type:'string'},limit:{type:'string'}}});
@@ -94,10 +95,18 @@ try{
       if(!await exists(path))throw Error(`Runner stopped before receipt (${row.id}, exit ${code}); inspect shared setup before retrying`);
       const receipt=await read(path);row.attempts.push(receipt);
       success=receipt.status==='GENERATED_NOT_REVIEWED'?receipt:null;
+      const checkpoint=await retainedDecode(out,row.id,receipt);
+      if(checkpoint){
+        row.sourceReviewPending=true;row.retainedCheckpoint=checkpoint;
+        row.reviewReason='Export failed after decode; inspect or repair saved source before any new inference';
+        row.status='DECODED_REPAIR_REQUIRED';await save(queuePath,queue);
+        if(receipt.elapsedSeconds>900)await cooldown(120);
+        break;
+      }
       row.status=success?'GENERATED_NOT_REVIEWED':'RETRY_PENDING';await save(queuePath,queue);
       if(receipt.elapsedSeconds>900)await cooldown(120);
     }
-    row.status=success?'GENERATED_NOT_REVIEWED':row.attempts.length>=queue.maxAttempts?'FAILED_MAX_ATTEMPTS':'INTERRUPTED';
+    row.status=success?'GENERATED_NOT_REVIEWED':row.sourceReviewPending?'DECODED_REPAIR_REQUIRED':row.attempts.length>=queue.maxAttempts?'FAILED_MAX_ATTEMPTS':'INTERRUPTED';
     row.runtimeAccepted=false;await save(queuePath,queue);count++;
     console.log(JSON.stringify({unit:row.id,status:row.status,attempts:row.attempts.length,runtimeAccepted:false}));
   }
