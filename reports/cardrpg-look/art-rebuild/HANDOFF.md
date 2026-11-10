@@ -1,6 +1,6 @@
-# Active VFX pilot continuation — 2026-11-10 UTC
+# Latest VFX pilot checkpoint — 2026-11-10 UTC
 
-Later user corrections resume the VFX pilot: both Mochi right hand/shield and enemy side looked incongruous; user now explicitly prefers prompt -> generated original image/video -> cleanup -> runtime art, including ultimate effects. Preserve existing Mochi source, rig, source textures and all prior work. No regeneration, new external job or new model connection required.
+Published73e680435 on draft427; B-OUTBOX d3f833a3e. Later user corrections resume the VFX pilot: both Mochi right hand/shield and enemy side looked incongruous; user now explicitly prefers prompt -> generated original image/video -> cleanup -> runtime art, including ultimate effects. Preserve existing Mochi source, rig, source textures and all prior work. No regeneration, new external job or new model connection required.
 
 Latest pilot removes duplicate door/roof/cup/sock/bow/button props, uses one generated RGBA four-component light atlas and anchors Mochi charge/release to the shield socket. It is animated runtime light, not generated video. Found B-R1-010: actor impact hold froze light at alpha0; v3 pilot light now samples unheld elapsed impact time. Pose/action clocks unchanged. New after-impact evidence is authoritative for this patch; after/after3/film/film3 remain retained earlier iterations.
 

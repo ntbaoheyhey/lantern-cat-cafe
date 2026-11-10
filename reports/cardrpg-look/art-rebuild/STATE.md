@@ -1,5 +1,5 @@
 # Art rebuild state
-NOW R1 VFX pilot resumed by later user visual corrections and generation-led workflow preference. Reuse completed Mochi source/rig; no new inference. Pilot impact-light fix verified; report/preview ready for publication.
+NOW R1 VFX pilot resumed by later user visual corrections and generation-led workflow preference. Reuse completed Mochi source/rig; no new inference. Pilot impact-light fix verified; published73e680435 on draft427; B-OUTBOX d3f833a3e pushed.
 PROMPT.txt is the verbatim 18883-byte user instruction; digest in PROMPT.sha256.
 B /Users/bao/taskbar-hero-cardrpg-b2, codex/cardrpg-art-r1-2026-11-09; R0draft#423, base #421 3e95a0121 plus Full Run reporting descendants.
 Preserved pre-existing waiting edit in wip/b-leftover-2026-11-09-art commit047601861; no discarded work.
