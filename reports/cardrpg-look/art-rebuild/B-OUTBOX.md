@@ -47,3 +47,6 @@ Current A6 shell50illustrations plus B P7: **38,140,486B**,40,000,000B limit,1,8
 
 ## P12 — Soot motion pilot
 Soot alone gains authored lantern/head/tail follow-through in look-puppet-rig.ts; other profiles and all atlases unchanged. Reduced motion remains static. Saved21tests/12x1casts/five-seed parityPASS, warm p95 16.8ms. P13 still in progress: boss films exposed one Binding Thread behind another, so do not infer enemy-face visibility from the existing HP-label audit.
+
+## P13 — broad boss and live add composition
+Rain Spool moves0.85world units right only in illustrated boss framing. Both Binding Threads occupy distinct foreground lanes, so the rear add no longer disappears behind the boss/other add. Boss/cat scales, camera, rule slots and targeting stay unchanged; model sockets/shadows move together.20before/after views cover Rain idle/impact plus Rain/Yarn/Pantry live adds at two actual canvas sizes,0bounds/HP/UIerrors; both add faces manually verified. Type/lint25tests and5seed/six-mode parityPASS. CurrentA6 b9a266c86f70c9cbf4bc75b80c39917fbc9835f7+B actual38,152,962B,headroom1,847,038B. Basset share unchanged23,545,868B. P10 full boss-result film uses this current preview; existing85s normal film is retained.

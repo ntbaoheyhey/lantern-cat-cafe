@@ -66,3 +66,6 @@ P9 đã đo trên bản chung A6 hiện tại:38,14MB/40MB, còn1,86MB; phần �
 
 P12 đã nhận từ kết quả lưu: Soot có đèn dẫn động tác, đầu/đuôi theo sau;21test và12lượt chiêu x1/reduced đạt.
 Phim thường85,5giây/9ultimate giữ nguyên. Phim boss cho thấy một Binding Thread bị che; xử lý P13 rồi quay thêm tới kết quả trận.
+
+P13 hoàn tất: Rain Spool tách khỏi mặt Mochi; cả hai Binding Thread đọc rõ trước ba boss ở1440×900 và1280×720.
+25test/type/lint/parity đạt; bản chung A6 mới38,15MB/40MB. Phim boss đầy đủ đang quay; phim thường đã nhận giữ nguyên.

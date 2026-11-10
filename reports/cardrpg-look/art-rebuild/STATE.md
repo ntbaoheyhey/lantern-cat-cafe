@@ -60,3 +60,6 @@ HEAD matches origin 494d2041bd66de863788de224596493a9f7ce573. P1–P6 remain com
 
 ## Resume 2026-11-10T18:28:04.499869+00:00
 HEAD equals fetched origin cd301f3af27779f96ae5eb59bfa645e00bbd50d6. P7 saved6screens/5casts/19tests/parityPASS; films now present, inspect before any new capture. No native runner; servers5920/5922 preserved,148GiB free. Dirty inventory RESUME-DIRTY-P7-FINAL.txt; no work discarded.
+
+## Resume 2026-11-10T18:51:22.048419+00:00
+HEAD matches fetched origin e83b9e2a1a7b25a8d68c34439ed1eb177359ca6c. P1–P9 done; P10 corrected85.5s films9/6catultimates complete, review remains. P12/P13 saved21tests/parity/budget and visual evidence available, unaccepted. No native runner or live B heavy job;147GiB free. Preserved dirty inventory RESUME-DIRTY-P10.txt.
