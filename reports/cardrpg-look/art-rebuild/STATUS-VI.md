@@ -106,3 +106,8 @@ Sock Skipper đã duyệt từ ảnh lưu sẵn: lấy đà, bật nhẹ rồi t
 
 Cinnamon đã duyệt: nâng khay ở tay trái, nhấc chén nhẹ và có nhịp đầu/đuôi theo sau; cổ tay, tay áo và mặt đều rõ.
 24test và12lượt chiêu/type/lint/parity đạt; bản chung A6mới38,185MB. Điểm chuyển động7,5→7,7; tiếp tục Sorrel với gậy chạm sàn.
+
+A6 vừa báo lỗi dọn tài nguyên hiệu ứng boss khi gọi dispose lần hai. Đưa sửa nhỏ này lên trước Sorrel để tránh giải phóng lặp; phần chuyển động đã duyệt giữ nguyên.
+
+Đã sửa lỗi dọn tài nguyên boss: mỗi geometry/material/mesh chỉ được giải phóng một lần dù gọi dispose hai lần.
+4test tập trung cùng type/lint đạt; đang đẩy bản sửa cho A6 rồi tiếp tục Sorrel.

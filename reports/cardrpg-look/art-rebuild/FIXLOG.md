@@ -199,3 +199,5 @@ P13 wrapper repair: delivery-budget needs ART_ARTIFACT as well as receipt. Move 
 2026-11-10T20:12:29.387312+00:00 P16attempt1 passed22tests/16views/12casts, but visualreview shows the right-hand lantern lowers at windup; shared rotation sign did not match this art. Repair2 reverses Inkcap prop/offhand signs only and asserts authoredsocket lift>.04worldunits. Reuse saved before frames/casts; other units unchanged.
 
 P18 preview build repair1: latest fetched A6 snapshot included GuideA6/SettingsA6/style imports; four journal-only files were insufficient. Refreshed all changed A6-owned cardrpg files from pinnede94713b8e into disposable preview. Reuse passed type/lint24tests; rebuild only. No A6-owned B source changed.
+
+P20 A6 disposal report resolved: reproduced expected3/received5, added idempotent lifetimeguard to CardBossAtmosphere. Test counts actual geometry/material/InstancedMesh once after each of two calls, verifies rootdetach. Type/lint4focusedtestsPASS; live drawing unchanged.

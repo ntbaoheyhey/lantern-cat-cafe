@@ -16,6 +16,7 @@ export function bossPerformance(age:number,phaseAge:number,reduced:boolean){
 }
 /** One active instanced draw replaces seven continuously drawn generic rings. */
 export class CardBossAtmosphere{
+ private disposed=false;
  private motes:T.InstancedMesh<T.BufferGeometry,T.MeshBasicMaterial>;
  readonly root=new T.Group();private meshes=new Map<string,T.InstancedMesh<T.BufferGeometry,T.MeshBasicMaterial>>();private transform=new T.Object3D();
  constructor(){
@@ -50,5 +51,11 @@ export class CardBossAtmosphere{
    mesh.instanceMatrix.needsUpdate=true;
   }
  }
- dispose(){this.motes.geometry.dispose();this.motes.material.dispose();this.motes.dispose();for(const mesh of this.meshes.values()){mesh.geometry.dispose();mesh.material.dispose();mesh.dispose();}this.root.removeFromParent();this.meshes.clear();}
+ dispose(){
+  if(this.disposed)return;
+  this.disposed=true;
+  this.motes.geometry.dispose();this.motes.material.dispose();this.motes.dispose();
+  for(const mesh of this.meshes.values()){mesh.geometry.dispose();mesh.material.dispose();mesh.dispose();}
+  this.root.removeFromParent();this.meshes.clear();
+ }
 }

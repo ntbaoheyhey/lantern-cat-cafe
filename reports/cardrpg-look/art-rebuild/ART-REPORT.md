@@ -29,7 +29,7 @@ The accepted boss film is an uninterrupted **136.933333 seconds at x1**, with **
 
 The initial level-1 clips, the old boss excerpt and the first complete boss film are retained as diagnostics. Reviewing the latter revealed that two late summons shared existing helper positions. P15 corrects that issue with stable actor-ID lanes. The initial pair, surviving helpers, boss scale, cat scale and gameplay slots remain unchanged.
 
-The saved speed audit covers Mochi/Soot ultimates and Rain Spool at x1/x2/x3 plus reduced motion. Every beat and the canvas number cue remains sampled, with no face/HP overlap. Recording a film is not a frame-time benchmark. Full 1440×900 masters remain outside Git; the repository carries compact viewing proxies and contact sheets. Selected art-rebuild evidence is 119.75 MB, below its 120 MB budget. The normal film is an excerpt; the boss film includes the complete outcome.
+The saved speed audit covers Mochi/Soot ultimates and Rain Spool at x1/x2/x3 plus reduced motion. Every beat and the canvas number cue remains sampled, with no face/HP overlap. Recording a film is not a frame-time benchmark. Full 1440×900 masters remain outside Git; the repository carries compact viewing proxies and contact sheets. Selected art-rebuild evidence is 119.80 MB, below its 120 MB budget. The normal film is an excerpt; the boss film includes the complete outcome.
 
 ## Validation and budget
 
@@ -46,6 +46,8 @@ P16 adds 16 paired Inkcap poses, 12 natural casts including reduced motion, 22 f
 P17 reuses the saved 16 Sock Skipper poses, eight natural x1 casts including reduced motion, 23 focused tests and exact parity. The accepted hop is bounded at 0.11 local units; boot/knit seams remain clean and the glove socket stays aligned. No additional draw call or asset is introduced.
 
 P18 adds16paired Cinnamon views,12natural casts,24focused tests and exact parity. Its actual left serving-tray socket lifts0.0380645local units; both sleeves/robe remain clean. The paired artifacts share the latest pinned A6 shell, with unchanged atlases/rigs/draw calls.
+
+P20 closes A6's boss-atmosphere disposal report: each geometry/material/instanced mesh releases exactly once, including motes, even on a second disposal. The existing test now observes each actual resource; four focused tests and typecheck/lint pass. Live drawing is unchanged.
 
 ## Integration and provenance
 

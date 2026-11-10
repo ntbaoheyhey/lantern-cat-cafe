@@ -74,3 +74,6 @@ Sock Skipper compresses, hops up to0.11local units, reaches the front mitten and
 
 ## P18 — Cinnamon serving tray/cup
 Left servingtray lifts with a restrained rightcup countergesture and delayed head/tail. Original atlas/rig/geometry retained; no new draw/event/HUD/flag.16pairedviews/12casts/24tests/type/lint/parityPASS;0page/socket/HP/boundsfailures, p95<=16.8ms. Pinned A6e94713b8e+B combined38,185,046B/headroom1,814,954B; Bassetshare23,545,868B unchanged. Evidence p18/REVIEW.md; motion7.7, overall7.7.
+
+## P20 — A6 boss disposal regression resolved
+Reproduced expected3/received5. `CardBossAtmosphere.dispose()` now has a lifetime guard; every owned geometry/material/InstancedMesh releases once, including motes. Existingtest checks each resource after first AND second calls plus rootdetachment;4focusedboss/materialtests and type/lintPASS. No live render/rules/HUD/art change; previousvisuals/parity retained. Next P19 combined build includes the fix.

@@ -115,3 +115,5 @@ P17 accepted saved x1 Sock Skipper evidence: soft-knit squash/hop/recovery impro
 P18 evidence budget: remove only JSON whitespace from three clean historical review receipts (430,268B saved), preserving every parsed value and every image. Formatted originals remain outside Git under ~/art/look-v3/evidence-original-json; p18/evidence-budget.json records exact paths/bytes. This is storage compaction, not repeated acceptance work.
 
 P18 accepted distinct servingtray/cup movement, no whole-roster uplift. P19 [auto] Sorrel uses a small staff tilt around the painted floor tip so its long prop remains grounded; inspect authored source coordinates before writing the constraint. Existing shared rigid parts remain; do not deform the leaf hat/face.
+
+2026-11-10T20:29:00.440293+00:00 Fetched A6 reports a concrete B-owned boss disposal regression. P20 inserted before P19 to fix repeated cleanup before further motion work. P19 prepared plan stays untouched; no accepted unit is re-reviewed.
