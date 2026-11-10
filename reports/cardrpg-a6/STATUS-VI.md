@@ -75,3 +75,7 @@ Tiếp tục Q14 tích hợp tranh/hiệu ứng/sân mới của B, đồng th�
 
 2026-11-10T19:02:53Z: Tiếp tục đúng Q14; demo38,37MB đã qua kiểm tra file offline ở hai cỡ màn, không gọi mạng/lỗi.
 Giữ nguyên43test/typecheck/lint đã đạt và mọi sửa đổi dở dang; đang duyệt ảnh battle đã lưu trước khi chốt Q14/Q14a và chạy Q15.
+
+2026-11-10T19:09:26Z: Q14a hoàn tất: Túi, Quà hằng ngày, Tháp và Relic có bố cục riêng; nút chính vừa cả hai cỡ màn.
+Đã giữ và xem 18 ảnh kiểm chứng, thao tác bàn phím bản đồ/nhận quà đạt; không thay điều kiện phần thưởng. Điểm tự đánh giá 7,8–8,1.
+Bản sửa lính phụ của B đã merge vào A6; đang kiểm tra trường hợp ba lính cùng sống và đóng gói lại.
