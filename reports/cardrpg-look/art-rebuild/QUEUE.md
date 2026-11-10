@@ -55,7 +55,9 @@ Check STOP-B/INBOX and fetch/show A6-OUTBOX between items. Commit/push and updat
 
 - [x] P32 [auto] Lowest-motion continuation: Needle Moth prepares with a restrained wing draw, then leads its needle and settles through head/wing lag. Inspect full needle, antennae, wing-root and sleeve ownership first; preserve original art/masters and rebuild only if required. Two sizes/natural x1 basic-signature/reduced/true needle socket/faceHP; max3 repairs.
 
-- [ ] P33 [auto] Lowest-motion continuation: Teacup Healer leads a small spoon blessing with open-palm rise and delayed lid/face response. Repair observed spoon-finial, cup-handle, shoulder and saucer/foot ownership first; keep the ceramic bowl/handle/saucer rigid and preserve all original assets. Both sizes/natural x1 basic-signature/reduced/actual spoon and palm sockets/faceHP; max3 repairs.
+- [x] P33 [auto] Lowest-motion continuation: Teacup Healer leads a small spoon blessing with open-palm rise and delayed lid/face response. Repair observed spoon-finial, cup-handle, shoulder and saucer/foot ownership first; keep the ceramic bowl/handle/saucer rigid and preserve all original assets. Both sizes/natural x1 basic-signature/reduced/actual spoon and palm sockets/faceHP; max3 repairs.
+
+- [ ] P34 [auto] Lowest-motion continuation: Pollen Scout presents its pollen basket with a restrained wing draw/settle and hanging-hand countergesture. Repair observed wing pieces on head/arms/body, leaf pieces on arms and split boots; keep complete basket and preserve its open handle. Original eight parts/assets retained. Both sizes/natural x1 basic-signature/reduced/real pollen and fingertip sockets/faceHP; max3 repairs.
 
 Research refinements 11/11: P6 uses the saved49+6cast audit and33tests; complete missing parity and visual acceptance. P7 records before/after plus representative cast timing. P8 reuses existing concepts/VFX and only exports missing formats. P10 adds representative x2/x3/reduced-motion readability checks alongside requested x1films. Completed P1–P5 are unchanged. Rationale in RESEARCH-PUPPET.md/DECISIONS.md.
 
@@ -128,3 +130,5 @@ P30 complete 2026-11-10T22:31:06.754186+00:00: source2/motion1,35web+8pipeline t
 P31 complete 2026-11-10T22:45:58.308705+00:00: source3/motion1,36web+9pipeline tests/type/lint/parity,16views/12castsPASS;38654958B. Planted whole needle/ribbon, open palm and tail lag; motion7.7/overall7.9.
 
 P32 complete 2026-11-10T23:01:19.948566+00:00: source3/motion1,37web+10pipeline tests/type/lint/parity,16views/8castsPASS;38676830B. Whole needle lead, restrained wing draw, coherent abdomen and planted boots; motion7.7/overall7.8.
+
+P33 complete 2026-11-10T23:13:12.274298+00:00: source3/motion1,38web+11pipeline tests/type/lint/parity,16views/8castsPASS;38700642B. Whole spoon blessing/open palm, coherent ceramic bowl/handle/saucer and planted boots; motion7.7/overall7.8.

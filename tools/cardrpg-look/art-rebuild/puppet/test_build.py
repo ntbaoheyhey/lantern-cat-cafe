@@ -9,6 +9,22 @@ from build import part_overlap, authored_mask
 
 
 class PartOverlapTests(unittest.TestCase):
+    def test_teacup_spoon_palm_handle_and_saucer_stay_with_their_rigid_parts(self):
+        cfg = json.loads((Path(__file__).parent/'configs/teacup-healer.json').read_text())
+        source = Image.open(Path(__file__).resolve().parents[4]/cfg['source']).convert('RGBA')
+        source.thumbnail((1200, 1200))
+        owners = np.zeros((source.height, source.width), np.uint8)
+        for i, (part, polygon, _) in reversed(list(enumerate(cfg['layers']))):
+            mask = authored_mask(source.size, polygon, cfg.get('holes', {}).get(part, ()))
+            owners[mask > 0] = i+1
+        for (x,y), expected in [((145,251),'armL'),((149,419),'armL'),((220,957),'armL'),((300,610),'armL'),((1015,492),'armR'),((885,613),'armR'),((846,280),'body'),((850,474),'body'),((500,740),'body'),((430,775),'body'),((670,775),'body'),((510,369),'body'),((510,328),'head'),((510,110),'head'),((416,950),'footL'),((650,950),'footR')]:
+            self.assertGreater(source.getpixel((x,y))[3],64,(x,y))
+            index = int(owners[y,x])-1
+            actual = cfg['layers'][index][0] if index >= 0 else 'body'
+            self.assertEqual(actual, expected, (x,y))
+        self.assertEqual(cfg['socketSources']['mainHand'][0], 'armL')
+        self.assertEqual(cfg['socketSources']['offHand'][0], 'armR')
+
     def test_needle_moth_whole_needle_wings_and_abdomen_keep_semantic_ownership(self):
         cfg = json.loads((Path(__file__).parent/'configs/needle-moth.json').read_text())
         source = Image.open(Path(__file__).resolve().parents[4]/cfg['source']).convert('RGBA')

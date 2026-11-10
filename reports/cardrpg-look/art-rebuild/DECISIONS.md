@@ -157,3 +157,7 @@ P18 accepted distinct servingtray/cup movement, no whole-roster uplift. P19 [aut
 2026-11-10T22:45:58.308705+00:00 P31 source3/motion1 accepted from two-size/x1 review. Seventeen units now have authored motion; whole-roster motion7.5/weighted8.225 unchanged. Reuse original art and shared renderer; P32 Needle Moth selected from remaining motion7.5 group after source inspection, with bounded wing/needle motion.
 
 2026-11-10T23:01:19.948566+00:00 P32 accepted source3/motion1 from paired A6 views and natural x1 casts. Eighteen units now have authored motion; no whole-roster score uplift. P33 Teacup Healer selected from motion7.5 group; source audit prepared while P32 capture ran, no duplicated accepted work.
+
+2026-11-10T23:09:25.998139+00:00 P33 source2/3 extends transparent surrounds around the complete spoon and brass arms while preserving ceramic bowl/handle/saucer ownership. Original six layers remain; pivots at painted shoulders, spoon-bowl/palm sockets, bounded lid response and planted boots. Original/source1/source2 archives retained; no generation.
+
+2026-11-10T23:13:12.274298+00:00 P33 source3/motion1 accepted from paired A6 views/natural x1 casts. Nineteen units have authored motion, with no whole-roster score uplift. Research recheck selects P34 Pollen Scout from remaining motion7.5 group: complete wings/basket/leaf/boots ownership before more visible wing/basket gestures. Prepared original audit in work while P33 ran.
