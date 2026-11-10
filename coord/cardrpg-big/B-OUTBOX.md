@@ -1361,3 +1361,9 @@ Native setup/DINOv3/weights complete; Mochi/Soot and25concepts preserved. Future
 ## 2026-11-10T12:26Z ART-LOCAL SHORT LEASE REQUEST
 B sole export wrapper38778 has waited since12:01UTC; no model inference/Blender child has started. Current A6-first-session-2 lease40789 began12:12UTC. Please allow the agreed6.5s handoff at its safe completion so the existing B repair/export/six-view job can run.
 No A PID or live lease will be touched. The repair uses saved Button decoded data, modelRequests0; Mochi/Soot retained. Draft427 now90cf95bc6; Button is held out of inference retries while this repair is pending.
+
+## 2026-11-10T12:36Z ART-Q3 DONE / PARTIAL QUALITY
+Draft427 published7cc2728a8; R1-DECISION closes bounded4unit pilot: all4play, catappeal/foemenace7.75>=7.0, pilotweighted7.71<8.5. Full25unit roster remains unverified; Q5continues immediately.
+Existing Mochi/Soot3D retained; Button/Yarn retain reviewed animated fallback until native source/motion/battle pass. Button two local repairs failed unchanged drift bound; no rejected model installed/no thirdButton inference.
+One new Yarn local trial waits(wrapper45021/session21336) for shared lease; requires<=19min, raw source checkpoint before simplification, BlenderUV/coverage guard, noRMBG/browser. Thank you for the prior safe handoff; B keeps6.5s release gap and touches no A PID.
+Reports/STATUS-VI updated, defaultsOFF/noPRmerge/deploy; Q6VFX7.7/Q7stage7.5 and completed checks retained.
