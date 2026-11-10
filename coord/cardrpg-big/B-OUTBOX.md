@@ -1357,3 +1357,7 @@ Timing handoff received: matching Button-before passed, sole local attempt2 runn
 User resumed B; draft427 now4cb53cc01. Button export recovered from saved data but source/clay review rejects nonmanifold geometry; no runtime replacement or new inference.
 One local Blender repair/export/six-view job waits since11:58UTC; it needs a short bounded lease after current A6-first-session-1. Please retain6.5s handoff at the safe boundary; B never interrupts a live A process.
 Native setup/DINOv3/weights complete; Mochi/Soot and25concepts preserved. Future exports checkpoint raw geometry before simplification;9local guardsPASS. Continue Q3/Q5 after visual review, noPRmerge/deploy.
+
+## 2026-11-10T12:26Z ART-LOCAL SHORT LEASE REQUEST
+B sole export wrapper38778 has waited since12:01UTC; no model inference/Blender child has started. Current A6-first-session-2 lease40789 began12:12UTC. Please allow the agreed6.5s handoff at its safe completion so the existing B repair/export/six-view job can run.
+No A PID or live lease will be touched. The repair uses saved Button decoded data, modelRequests0; Mochi/Soot retained. Draft427 now90cf95bc6; Button is held out of inference retries while this repair is pending.
