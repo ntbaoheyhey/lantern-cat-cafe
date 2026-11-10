@@ -23,3 +23,7 @@ Tiếp tục sáu mèo còn lại ngay; giữ nguyên toàn bộ nguồn native 
 
 11/11: Hoàn tất P4: đủ 12 mèo dạng puppet2.5D từ concept gốc, không còn mèo dùng fallback.
 Đợt2 sửa vùng mắt Sorrel và bộ kiểm tra badge A6;18test,5seed parity và48tư thế đều đạt. Preview chung29,29MB; chuyển ngay sang P5 quái/boss.
+
+11/11: Đã ghi nguyên văn NON-STOP vào RULES/PROMPT; giữ R-9 và xác minh lại bản gốc.
+P5 đợt1 đã có kết quả: 18 test và parity đạt, không lỗi trang/đè HP; đang xem ảnh trước khi nhận batch.
+Tiếp tục P5 trong cùng lượt, không làm lại P1–P4.

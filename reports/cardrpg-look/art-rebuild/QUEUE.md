@@ -31,3 +31,5 @@ P3 complete 2026-11-10T16:46:06.885541+00:00: puppet-only framing/normalized hei
 P4 batch1 complete 2026-11-10T16:56:32.276421+00:00: six cats accepted,0page/faceHPerrors; corrected closed lids; type/lint17testsPASS; five-seed parityPASS. Batch2 remains top unfinished work.
 
 P4 complete 2026-11-10T17:02:31.079205+00:00: all12cats in two published batches,96poses,0page/faceHPerrors; exact playable roster coverage test. Scores7.6–7.9; atlas share2368142B; combinedA6preview29.29MB. P5 next.
+
+NON-STOP addendum recorded: continue the active item after checkpoints; only explicit stop/deadline/all-user-blocked gates apply. Full exact text in RULES.md and PROMPT.txt.
