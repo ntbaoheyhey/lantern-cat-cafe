@@ -1,4 +1,5 @@
 import {GearArtA6} from './KeepsakeArtA6';
+import {BagA6} from './BagA6';
 import {CatDetailsA6} from './CatDetailsA6';
 import {CatPreviewA6} from './CatPreviewA6';
 import {DailyA6} from './DailyA6';
@@ -59,6 +60,7 @@ export function BagSheet({m,materials=false}:{m:DepthModel;materials?:boolean}) 
  const item=state.gear.find(i=>i.id===m.itemId)??state.gear[0],spec=item?R.GEAR_BY_ID[item.templateId]:undefined;
  const comparison=item?gearComparison(state,cardId,item.id):null,preview=item?R.enhancementPreview(item,state,cardId):undefined;
  if(materials)return <Suspense fallback={<p>Opening…</p>}><FullInventory m={m} initialCategory="Materials"/></Suspense>;
+ if(R.gameplayA6(state))return <BagA6 m={m}/>;
  return <><div className={`uv-section-tools ${R.gameplayA6(state)?'a6-bag-tools':''}`}><span data-gear-count={state.gear.length}>{state.gear.length} pieces</span><label>Equip for <select aria-label="Equip for" value={cardId} onChange={e=>{m.cardId=e.target.value;m.notify(false);}}>{state.account.cards.map(c=><option value={c.cardId} key={c.id}>{R.CAT_BY_ID[c.cardId]!.name}</option>)}</select></label><button onClick={()=>setAdvanced(!advanced)} aria-expanded={advanced}>Open workshop</button></div>
  {R.gameplayA6(state)&&<QuickUpgradeA6 m={m}/>}<div className={`uv-card-workspace ${R.gameplayA6(state)?'a6-bag-workspace':''}`}><div className="uv-gear-grid">{state.gear.map(g=>{const s=R.GEAR_BY_ID[g.templateId]!;return <button key={g.id} data-rarity={s.rarity} style={rarityStyle(s.rarity)} aria-pressed={item?.id===g.id} onClick={()=>{m.itemId=g.id;m.notify(false);}}>{R.gameplayA6(state)?<GearArtA6 slot={s.slot} setId={s.setId}/>:<ItemIcon slot={s.slot}/>}<b>{s.name}</b><small>{s.rarity} · +{g.enhancement}</small></button>})}{!state.gear.length&&<div className="a6-empty-state"><img {...portraitProps('panko')} alt=""/><h2>A shelf for your treasures</h2><p>Find your first gear on Night Patrol.</p><button className="cr-primary" onClick={()=>m.go('hub')}>Back to the cafe</button></div>}</div>
  {item&&spec&&<aside className="uv-detail a6-gear-detail">{R.gameplayA6(state)?<div className="a6-gear-showcase"><GearArtA6 slot={spec.slot} setId={spec.setId}/><img className="a6-gear-companion" {...portraitProps(cardId)} alt=""/></div>:<><img className="a6-gear-companion" {...portraitProps(cardId)} alt=""/><ItemIcon slot={spec.slot}/></>}<small>{spec.rarity} · {spec.slot}</small><h2>{spec.name}</h2><p>{R.gameplayV4(state)?R.gearStoryV4(spec.id):spec.story}</p><p>For {R.CAT_BY_ID[cardId]!.name}</p>{comparison?.error&&<p>{comparison.error}</p>}

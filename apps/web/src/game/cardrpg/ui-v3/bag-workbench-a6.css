@@ -1,0 +1,80 @@
+/* A compact illustrated shelf beside a stable comparison and mending desk. */
+.uv-app[data-a6=true] {
+ .uv-sheet-content:has(>.a6-inventory),.uv-sheet-content:has(>.a6-inventory-workshop) {display:flex;flex-direction:column;overflow:hidden;padding-top:12px!important;padding-bottom:14px!important}
+ .a6-inventory {display:flex;flex-direction:column;flex:1;min-height:0;gap:10px}
+ .a6-inventory-tools {display:flex;align-items:center;gap:12px;flex:none}
+ .a6-inventory-tools h2 {margin:0 auto 0 0;font:700 24px Georgia,serif;color:#62452e}
+ .a6-inventory-tools h2 span {font:14px system-ui,sans-serif;color:#78603f;margin-left:12px}
+ .a6-inventory-tools label {display:flex;flex-direction:row;align-items:center;gap:10px;font-size:14px;color:#63472e}
+ .a6-inventory-tools select,.a6-inventory-tools>button {min-height:40px;font-size:14px}
+ .a6-inventory>.a6-quick-upgrade {margin:0;flex:none;padding:9px 12px}
+ .a6-inventory-desk {display:grid;grid-template-columns:minmax(0,1.08fr) minmax(430px,1fr);gap:16px;flex:1;min-height:0}
+ .a6-inventory-shelf {display:flex;flex-direction:column;min-height:0;border:1px solid #a57e50;border-radius:14px;padding:10px;background:repeating-linear-gradient(0deg,#845b3e12 0 2px,transparent 2px 48px),linear-gradient(105deg,#e5c89e,#c7a16f);box-shadow:inset 0 0 0 3px #fff0cc44}
+ .a6-inventory-shelf>nav {display:flex;gap:6px;padding:0 0 10px;flex:none}
+ .a6-inventory-shelf>nav button {flex:1;min-height:40px;font-size:13px;padding:5px 8px;white-space:nowrap;background:#f5e2b9;color:#6b4d30;border-radius:8px}
+ .a6-inventory-shelf>nav button[aria-pressed=true] {background:#795331;color:#fff0cc;border-color:#795331}
+ .a6-inventory-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-content:start;gap:10px;overflow:auto;min-height:0;padding:3px 5px 8px;scrollbar-width:thin;scrollbar-color:#8f693e #dbc096;scroll-padding:8px}
+ .a6-inventory-grid>button {position:relative;display:flex;flex-direction:column;align-items:center;gap:4px;min-height:182px;padding:7px 8px 11px;border:2px solid var(--rarity,#b59f7b);border-bottom-width:4px;border-radius:12px;background:radial-gradient(ellipse at 45% 24%,#fff8df,var(--a6-wash,#ead8b9));box-shadow:inset 0 0 0 2px #fff6db99,0 3px 4px #704a3022;color:#513c29;text-align:center}
+ .a6-inventory-grid>button[aria-pressed=true] {outline:2px solid #83552f;outline-offset:1px;box-shadow:inset 0 0 0 2px #fff1bd,0 0 0 4px #fff0bb88}
+ .a6-inventory-rank {display:flex;justify-content:space-between;align-items:center;align-self:stretch;font-size:12px;text-transform:capitalize;color:#725334}
+ .a6-inventory-rank b {font-size:14px}
+ .a6-inventory-grid .a6-gear-art {width:104px;height:85px}
+ .a6-inventory-grid>button>b {font-size:14px;line-height:1.2;margin-top:auto}
+ .a6-inventory-grid>button>small {font-size:12px;color:#675033;line-height:1.2}
+ .a6-inventory-grid>.a6-empty-state {grid-column:1/-1;min-height:260px;padding:14px}
+ .a6-inventory-grid .a6-empty-state img {height:145px}
+ .a6-inventory-detail {display:grid;grid-template-rows:auto auto minmax(0,1fr) auto;min-height:0;padding:12px 14px;border:2px solid #ad8247;border-radius:14px;background:radial-gradient(ellipse at 50% 10%,#fff9df,#ecd2a7);box-shadow:inset 0 0 0 3px #fff7db77,0 4px 0 #9d754633}
+ .a6-inventory-hero {display:flex;align-items:center;gap:9px;padding-bottom:9px;border-bottom:3px solid #b79159;min-width:0}
+ .a6-inventory-hero>.a6-gear-art {width:100px;height:106px;transform:rotate(-5deg)}
+ .a6-inventory-hero>div {flex:1;min-width:0}
+ .a6-inventory-hero small {font-size:12px;text-transform:capitalize;color:#806039}
+ .a6-inventory-hero h2 {font:700 23px/1.12 Georgia,serif;color:#523822;margin:5px 0}
+ .a6-inventory-hero p,.a6-inventory-hero span {font-size:14px;line-height:1.3;margin:4px 0;color:#654b30}
+ .a6-inventory-hero>img {width:64px;height:96px;object-fit:contain;align-self:flex-end}
+ .a6-inventory-pages {display:flex;gap:7px;margin:8px 0}
+ .a6-inventory-pages button {flex:1;font-size:14px;min-height:40px;padding:6px 9px;border-radius:8px}
+ .a6-inventory-pages button[aria-pressed=true] {background:#795331;color:#fff0cc;border-color:#795331}
+ .a6-inventory-reading {min-height:0;overflow:auto;scrollbar-width:thin;padding:2px 3px 4px}
+ .a6-inventory-power {display:flex;justify-content:space-between;gap:10px;font-size:14px;color:#64492e}
+ .a6-inventory-power b {font-size:18px;color:#895b23;white-space:nowrap}
+ .a6-inventory-stats {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:9px 0}
+ .a6-inventory-stats>div {padding:7px 8px;border:1px solid #b89e6c;border-radius:7px;background:#fff5db88}
+ .a6-inventory-stats dt {font-size:12px;color:#775b3b}
+ .a6-inventory-stats dd {font-size:16px;font-weight:700;white-space:nowrap;margin:3px 0 0;color:#5a402a}
+ .a6-inventory-stats [data-change="1"] {color:#4b6b35}.a6-inventory-stats [data-change="-1"] {color:#a34a36}
+ .a6-inventory-reading .a6-inventory-note {font-size:14px;line-height:1.35;margin:7px 0;color:#715337}
+ .a6-inventory-reading .dp-v4-utility h3 {font:700 19px Georgia,serif;margin:0 0 6px;color:#62462d}
+ .a6-inventory-reading p,.a6-inventory-reading details {font-size:14px;line-height:1.4;color:#674d33;margin:7px 0}
+ .a6-inventory-reading summary {color:#8c5e26}
+ .a6-inventory-set h3 {font:700 19px Georgia,serif;margin:0 0 5px;color:#62462d}
+ .a6-inventory-set {padding:0 0 5px;border-bottom:1px solid #bfa578}
+ .a6-inventory-reading .dp-v4-utility {padding:8px 0 0;border:0;border-top:1px solid #bfa578;border-radius:0;background:none}
+ .a6-inventory-actions {display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.4fr);gap:10px;border-top:1px solid #b99662;padding-top:9px;margin-top:5px;align-items:end}
+ .a6-inventory-actions>div {display:flex;flex-direction:column;gap:6px}
+ .a6-inventory-actions small {font-size:12px;color:#6e5235}
+ .a6-inventory-actions button {min-height:40px;font-size:14px;padding:7px 10px}
+ .a6-inventory-cost {display:flex;justify-content:space-between;gap:8px;align-items:center;font-size:13px;color:#6e5235;flex-wrap:wrap}
+ .a6-inventory-cost .cr-cost {margin:0;font-size:12px}
+ .a6-inventory-welcome {display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:#f3dfb8;border:1px dashed #b18c58;border-radius:14px;padding:20px;color:#694b30}
+ .a6-inventory-welcome img {width:170px;height:195px;object-fit:contain}.a6-inventory-welcome h2 {font:24px Georgia,serif;max-width:310px;margin:12px 0}
+ .a6-inventory-workshop {display:flex;flex-direction:column;flex:1;min-height:0}
+ .a6-inventory-workshop>header {display:flex;gap:16px;align-items:center;margin-bottom:10px;flex:none}
+ .a6-inventory-workshop>header button {min-height:40px}.a6-inventory-workshop>header p {font-size:14px;margin:0}
+ .a6-inventory-workshop>div {min-height:0;overflow:auto;padding:4px 6px 16px;scrollbar-width:thin}
+ @media(max-height:780px) {
+  .a6-inventory {gap:8px}.a6-inventory-tools h2 {font-size:21px}.a6-inventory-tools h2 span {margin-left:8px}
+  .a6-inventory>.a6-quick-upgrade {padding:7px 10px}.a6-inventory-desk {gap:12px;grid-template-columns:minmax(0,1.05fr) minmax(445px,1fr)}
+  .a6-inventory-shelf {padding:8px}.a6-inventory-shelf>nav {padding-bottom:7px;gap:5px}
+  .a6-inventory-grid {gap:8px}.a6-inventory-grid>button {min-height:151px;padding:5px 7px 8px;gap:2px}.a6-inventory-grid .a6-gear-art {height:64px;width:78px}
+  .a6-inventory-detail {padding:8px 10px}.a6-inventory-hero {padding-bottom:5px;gap:7px}.a6-inventory-hero>.a6-gear-art {width:78px;height:82px}
+  .a6-inventory-hero>img {width:52px;height:78px}.a6-inventory-hero h2 {font-size:21px;margin:3px 0}.a6-inventory-hero p,.a6-inventory-hero span {font-size:13px;margin:2px 0}
+  .a6-inventory-pages {margin:6px 0}.a6-inventory-pages button {min-height:36px}
+  .a6-inventory-stats {margin:6px 0;gap:6px}.a6-inventory-stats>div {padding:5px 6px}.a6-inventory-stats dd {font-size:15px}
+  .a6-inventory-actions {padding-top:7px;gap:8px}.a6-inventory-actions>div {gap:4px}.a6-inventory-cost {gap:3px 6px;font-size:12px}
+ }
+ @media(max-width:1000px) {
+  .uv-sheet-content:has(>.a6-inventory) {overflow:auto}.a6-inventory {flex:none}
+  .a6-inventory-desk {grid-template-columns:minmax(0,1fr)}.a6-inventory-shelf {max-height:380px}.a6-inventory-detail {min-height:410px}
+  .a6-inventory-tools {flex-wrap:wrap}.a6-inventory-tools h2 {width:100%}
+ }
+}
