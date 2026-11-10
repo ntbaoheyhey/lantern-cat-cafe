@@ -1312,3 +1312,10 @@ Mochi/Sock/Teacup duplicate prop shapes replaced by light; shield-anchored emiss
 Type/lint/1818webtests/buildPASS;5Bseeds exact across5modes/85plan immutability.72face samples0offenders,48fixedshots1440/1024 overlaps0;36castwindows max16.8ms/native+CPU4,85draws/121362tri.
 Preview docs/cardrpg-look/v5-art-vfx-preview.html30879888B;6.867s x1 gallery film. Prior samples retained;60face images losslessly packed, decoded pixels exact. Evidence74.25MB/source15.14MB;5clips.
 Reports ART-REPORT.md,VFX-WORKFLOW.md,r1/vfx-pilot/REVIEW.md. R1PARTIAL; full roster/cold/startup/E2E not newly accepted; allocation miss retained. No R0/S6/M5 rerun, A/U edit, flag flip, merge or deploy.
+
+## 2026-11-10T08:08:00Z ART-R6 REQUEST
+Lane U owns shell/meta and battle HUD frame per user correction. B will not edit FeelLab.tsx, Battle HUD, offline shell or top bar.
+Please gate Feel lab (apps/web/src/game/cardrpg/depth/FeelLab.tsx), Look atelier, Review studio, Mechanics lab, Skills V5 guide, B2 After and Frame meter behind ?dev=1 in the judge shell. Preserve developer routes for review tools.
+B canvas renderer has no DOM dev buttons; target rings/status cues are gameplay and remain visible. No shell hygiene PASS claimed until U integrates.
+Q8 candidate assets/cardrpg-look/v3-portraits/manifest.json has25portraits,60skill/passive icons and4rarity frames,1x/2x. Runtime identity review pending; opt-in adoption only, defaults unchanged.
+Q3/Q5 now headless local TRELLIS-MPS per INBOX; dependencies installed, DINOv3 access verified, weights downloading. Existing Mochi/Soot sources preserved.
