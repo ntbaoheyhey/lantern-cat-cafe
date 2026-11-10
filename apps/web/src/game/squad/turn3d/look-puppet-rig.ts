@@ -42,6 +42,8 @@ function authoredGesture(motion:PuppetMotion,t:number) {
 }
 // Individual prop/body gestures use the same action clock and delayed recovery.
 // Unlisted rigs retain their accepted shared motion.
+// Basket swings under the wrist while the free palm offers forward/up.
+const briocheGesture={prop:-.13,offhand:.10,head:.016,lean:.010,tailFollow:.065,clothFollow:0,lag:.08};
 // Cookie shield braces forward while the short wooden spatula sweeps up.
 const biscuitGesture={prop:-.15,offhand:.15,head:.022,lean:.012,tailFollow:.08,clothFollow:0,lag:.075};
 // Whole whisk winds back, sweeps forward and settles; the scarf stays on the torso.
@@ -81,12 +83,13 @@ export function puppetPose(motion:PuppetMotion,time:number,progress:number,reduc
   // A held raised-prop silhouette before the ultimate release, then overshoot.
   const magic=ramp(t,0,.20)-1.23*ramp(t,.43,.66)+.23*ramp(t,.66,1);
   const gesture=reduced?0:active?authoredGesture(motion,t):0;
-  const profile=id==='biscuit'?biscuitGesture:id==='mallow'?mallowGesture:id==='panko'?pankoGesture:id==='clover'?cloverGesture:id==='mochi'?mochiGesture:id==='soot'?sootGesture:id==='spool-ram'?spoolRamGesture:id==='inkcap'?inkcapGesture:id==='sock-skipper'?sockSkipperGesture:id==='cinnamon'?cinnamonGesture:id==='sorrel'?sorrelGesture:id==='binding-thread'?threadGesture:id==='practice-cushion'?cushionGesture:undefined;
+  const profile=id==='brioche'?briocheGesture:id==='biscuit'?biscuitGesture:id==='mallow'?mallowGesture:id==='panko'?pankoGesture:id==='clover'?cloverGesture:id==='mochi'?mochiGesture:id==='soot'?sootGesture:id==='spool-ram'?spoolRamGesture:id==='inkcap'?inkcapGesture:id==='sock-skipper'?sockSkipperGesture:id==='cinnamon'?cinnamonGesture:id==='sorrel'?sorrelGesture:id==='binding-thread'?threadGesture:id==='practice-cushion'?cushionGesture:undefined;
   const follow=reduced||!active||!profile?0:authoredGesture(motion,Math.max(0,t-profile.lag))*(1-ramp(t,.93,1));
   const cloverPour=reduced||!active||id!=='clover'?0:.15*ramp(t,0,.20)-.37*ramp(t,.30,.52)+.255*ramp(t,.54,.80)-.035*ramp(t,.80,1);
   const pankoRoller=reduced||!active||id!=='panko'?0:.12*ramp(t,0,.20)-.30*ramp(t,.27,.52)+.205*ramp(t,.54,.80)-.025*ramp(t,.80,1);
   const mallowWhisk=reduced||!active||id!=='mallow'?0:.09*ramp(t,0,.20)-.25*ramp(t,.28,.52)+.185*ramp(t,.54,.80)-.025*ramp(t,.80,1);
   const biscuitSpatula=reduced||!active||id!=='biscuit'?0:.09*ramp(t,0,.20)-.24*ramp(t,.28,.52)+.18*ramp(t,.54,.80)-.03*ramp(t,.80,1);
+  const briocheBasket=reduced||!active||id!=='brioche'?0:-.08*ramp(t,0,.20)+.185*ramp(t,.28,.52)-.13*ramp(t,.54,.80)+.025*ramp(t,.80,1);
   const thread=id==='binding-thread'&&active&&!reduced;
   const cushion=id==='practice-cushion'&&active&&!reduced;
   const bodySquash=cushion?.028*(ramp(t,0,.18)-ramp(t,.20,.38))-.018*(ramp(t,.25,.46)-ramp(t,.48,.70))+.009*(ramp(t,.55,.71)-ramp(t,.71,1)):0;
@@ -101,11 +104,11 @@ export function puppetPose(motion:PuppetMotion,time:number,progress:number,reduc
   return {gesture,breathe,bodySquash,feetPlant:thread||cushion,hopLift:skipAir*.11,hopSquash:skipSquash,plant:id==='spool-ram'&&active&&!reduced,staffPlant:id==='sorrel'&&(active||motion==='idle')&&!reduced,hit:reduced?0:hit,flash:reduced?0:motion==='hurt'?.45*(1-ramp(t,0,.24)):0,
     head:reduced?0:motion==='hurt'?-.045*hit:motion==='defeat'?-.12:active?-(profile?.head??.025)*gesture-(cushion?.001:.012)*follow:Math.sin(clock*1.15)*.013,
     tail:reduced?0:Math.sin(clock*1.45)*.065-(profile?.tailFollow??0)*follow,
-    tailBend:reduced||!['inkcap','sock-skipper','cinnamon','sorrel','mochi','clover','panko','mallow','biscuit'].includes(id)?0:Math.sin(clock*1.45-.3)*(id==='sock-skipper'?.024:.018)-follow*(id==='sock-skipper'?.055:id==='cinnamon'||id==='sorrel'||id==='mochi'||id==='clover'?.035:.045),
+    tailBend:reduced||!['inkcap','sock-skipper','cinnamon','sorrel','mochi','clover','panko','mallow','biscuit','brioche'].includes(id)?0:Math.sin(clock*1.45-.3)*(id==='sock-skipper'?.024:.018)-follow*(id==='sock-skipper'?.055:id==='cinnamon'||id==='sorrel'||id==='mochi'||id==='clover'?.035:.045),
     cloth:reduced?0:Math.sin(clock*1.45)*.065*.3-(profile?.clothFollow??0)*follow,
     wing:reduced?0:Math.sin(clock*1.55)*.055+gesture*.08,
     prop:reduced?0:active?id==='mallow'?mallowWhisk:id==='clover'?cloverPour:-(profile?.prop??.20)*gesture-(thread?.045*follow:0):motion==='victory'?-.17:Math.sin(clock*1.8)*.017,
-    offhand:reduced?0:active?id==='biscuit'?biscuitSpatula:id==='panko'?pankoRoller:(profile?.offhand??.12)*(thread?.55*gesture+.45*follow:gesture):motion==='victory'?.14:-Math.sin(clock*1.8)*.012,
+    offhand:reduced?0:active?id==='brioche'?briocheBasket:id==='biscuit'?biscuitSpatula:id==='panko'?pankoRoller:(profile?.offhand??.12)*(thread?.55*gesture+.45*follow:gesture):motion==='victory'?.14:-Math.sin(clock*1.8)*.012,
     lean:reduced?0:motion==='defeat'?-.18:motion==='hurt'?-.045*hit:active?-(profile?.lean??.025)*gesture:Math.sin(clock*.9)*.005,
     eyeOpen:motion==='defeat'?0:blink*(motion==='hurt'?.50:motion==='victory'?.72:1),
     glow:motion==='ultimate'||motion==='cast'?Math.max(0,magic)*.16:motion==='boss-idle'?.035+(reduced?0:.02*Math.sin(clock*2)):0,

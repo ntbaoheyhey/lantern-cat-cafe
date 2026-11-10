@@ -5,7 +5,7 @@ from pathlib import Path
 from PIL import Image, ImageDraw
 import cv2
 import numpy as np
-from build import part_overlap
+from build import part_overlap, authored_mask
 
 
 class PartOverlapTests(unittest.TestCase):
@@ -49,6 +49,21 @@ class PartOverlapTests(unittest.TestCase):
             self.assertEqual(cfg['layers'][index][0], expected)
         self.assertEqual(cfg['sockets']['mainHand'][0], 'armL')
         self.assertEqual(cfg['sockets']['offHand'][0], 'armR')
+
+    def test_brioche_open_basket_keeps_visible_skirt_on_body_and_tail_on_tail(self):
+        cfg = json.loads((Path(__file__).parent/'configs/brioche.json').read_text())
+        source = Image.open(Path(__file__).resolve().parents[4]/cfg['source']).convert('RGBA')
+        source.thumbnail((1200, 1200))
+        owners = np.zeros((source.height, source.width), np.uint8)
+        for i, (part, polygon, _) in reversed(list(enumerate(cfg['layers']))):
+            mask = authored_mask(source.size, polygon, cfg.get('holes', {}).get(part, ()))
+            owners[mask > 0] = i+1
+        for (x,y), expected in [((220,480),'head'),((820,740),'tail'),((320,670),'armL'),((293,789),'armL'),((250,860),'armL'),((250,780),'body'),((340,760),'body')]:
+            self.assertGreater(source.getpixel((x,y))[3],64)
+            index = int(owners[y,x])-1
+            actual = cfg['layers'][index][0] if index >= 0 else 'body'
+            self.assertEqual(actual, expected, (x,y))
+        self.assertEqual(cfg['socketSources']['offHand'][0], 'armR')
 
     def test_joint_overlap_keeps_ink_but_not_the_distant_hand(self):
         alpha = np.zeros((80, 80), np.uint8)

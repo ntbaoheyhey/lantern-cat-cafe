@@ -101,3 +101,6 @@ Only Mallow atlas/rig/config rebuilt: complete whisk/free mitten, measured cuff 
 
 ## P27 — Biscuit shield and spatula
 Only Biscuit atlas/rig/config rebuilt: whole shield rim/spatula; actual offHand corrected from armL to shield armR. MainHand stays spatula armL. Bounded shield brace/upward spatula sweep/head-tail recovery;32web+5pipeline tests,16views/12casts/type/lint/parityPASS,zero page/socket/faceHP/bounds errors,p95<=16.8ms. P27 A65badf4428+B38447646B/headroom1552354B/Bembedded23803824B. No HUD/events/flags/manifest change; all old masters preserved. Review p27/REVIEW.md; motion7.7/overall7.8.
+
+## P28 — Brioche basket offering
+Only Brioche atlas/rig/config rebuilt: whole basket/puff sleeve, scarf and tail ownership repaired. Offline builder supports opt-in interior holes for visible skirt in basket loop; other configs/masks unchanged. MainHand remains armL; offHand remains armR, positioned at actual palmUV(.79,.568).33web+6pipeline tests,16views/12casts/type/lint/parityPASS;zero page/socket/faceHP/bounds errors,p95<=16.8ms. A65badf4428+B38520550B/headroom1479450B/Bembedded23876668B. No DOM/event/flag/manifest changes; original/source1 preserved. Review p28/REVIEW.md; motion7.7/overall7.8.
