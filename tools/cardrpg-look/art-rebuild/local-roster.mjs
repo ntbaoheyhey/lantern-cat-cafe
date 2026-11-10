@@ -27,8 +27,8 @@ for(const row of queue.rows.filter(r=>r.status==='RECOVERED_NOT_REVIEWED')){
       ||await hash(recovered.model)!==recovered.modelSha256)
     throw Error('Recovered export changed; inspect before continuing '+row.id);
 }
-const pending=queue.rows.filter(r=>!['GENERATED_NOT_REVIEWED','RECOVERED_NOT_REVIEWED','FAILED_MAX_ATTEMPTS'].includes(r.status));
-if(args.plan){console.log(JSON.stringify({pending:pending.map(r=>r.id),preserved:queue.preserved,oneAtATime:true}));process.exit(0);}
+const pending=queue.rows.filter(r=>!r.sourceReviewPending&&!['GENERATED_NOT_REVIEWED','RECOVERED_NOT_REVIEWED','FAILED_MAX_ATTEMPTS'].includes(r.status));
+if(args.plan){console.log(JSON.stringify({pending:pending.map(r=>r.id),heldForSourceReview:queue.rows.filter(r=>r.sourceReviewPending).map(r=>r.id),preserved:queue.preserved,oneAtATime:true}));process.exit(0);}
 if(!args.submit||!args['smoke-review'])throw Error('Explicit --submit --smoke-review REVIEW.json required; --plan is read-only');
 const limit=Number(args.limit??pending.length);
 if(!Number.isInteger(limit)||limit<1||limit>25)throw Error('limit must be 1..25');

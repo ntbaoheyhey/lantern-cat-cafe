@@ -73,3 +73,5 @@ Local TRELLIS override 2026-11-10T07:30:26.787573+00:00: user-authorized Apple S
 2026-11-10T11:56Z RESUME: shared lease free; start only existing fractional-margin Button export recovery2. No old source generation/setup repeated.
 
 2026-11-10T12:01:44Z: existing Button export2 succeeded10.559s; source/clay review REJECTED shattered nonmanifold mesh. One local remesh/export repair queued under shared lease(session21467), no new inference. Raw checkpoint guard added for future exports;9local guardsPASS. Continue top Q3 source/motion/battle review; no runtime acceptance.
+
+2026-11-10T12:17:59.810662+00:00 continuation: resumed sole Button repair waiter38778/session21467, still awaiting shared lease. No inference duplicated. Queue now records both terminal Button attempts and sourceReviewPending; read-only plan holds Button and preserves Mochi/Soot. Source repair -> source views -> packed motion -> same battle remains next.
