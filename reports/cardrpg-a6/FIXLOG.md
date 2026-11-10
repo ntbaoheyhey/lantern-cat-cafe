@@ -173,3 +173,5 @@ Q32 presentation attempt1: initial gallery had no clipping, but larger first sta
 2026-11-10T23:47:11Z Q33 presentation repair1: source1440 all10states/control checks pass;720p full12hour amounts wrap to a second line, extending the corner6.36px into the map shortcut. Keep13–14pxlabels/42pxfast action and reduce only720p tip illustration101→85px. Retain1440 acceptance and resume affected720p states plus earned Tower layout.
 
 - 2026-11-10T23:50:13Z Q33 saved-image review exposed discovery toast stretched from top86px to legacy bottom130px, covering the tip box after a claim. Clear bottom to auto in the A6 home rule; preserve content/dismissal/timers. Recheck affected current images before acceptance.
+
+- 2026-11-10T23:52:43Z Q33 check invocation used pnpm test -- files, which forwarded a literal -- and unexpectedly ran2000web tests (all pass). Corrected future focused calls to pnpm exec vitest run files. No second full-suite run. Shared origin ref advanced to published BP36 before merge:96531256b includes bothP35/P36; package will inspect both units.
