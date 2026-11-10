@@ -1,8 +1,8 @@
 # Lane B current state
 
-ACTIVE — user resumed at 2026-11-10T11:56Z. Resume existing Button export, no regeneration.
-Worktree /Users/bao/taskbar-hero-cardrpg-b2; branch codex/cardrpg-art-r1-2026-11-09; draft #427; prior pushed b0286b8ca, pause changes preserved in following commit.
-Q1/Q2/Q4/Q9 DONE. Q3 four-unit close and Q5 runtime roster pending one native Yarn trial; smoke complete, Button repaired-source rejected.
+ACTIVE — user resumed; Q3 bounded close delivered, Q5 roster continuing with native Yarn attempt1. No source regeneration.
+Worktree /Users/bao/taskbar-hero-cardrpg-b2; branch codex/cardrpg-art-r1-2026-11-09; draft #427; prior pushed684a5736c; current Q3 decision checkpoint follows.
+Q1/Q2/Q3/Q4/Q9 DONE (Q3 bounded PARTIAL quality, pilot7.71; see R1-DECISION). Q5 roster active: one native Yarn trial queued; Button repaired-source rejected, reviewed fallback retained.
 Existing Mochi/Soot conversions and all25 original concept masters are preserved.
 Latest INBOX: local-mps only, alpha inputs, no RMBG, one inference at a time under timing lease.
 Smoke512 remains coarser; Mochi/Soot preserved. Button native attempts1/2 timed out; recovery2 exports but source has shattered nonmanifold geometry. B-LOCAL-009 both local repairs failed drift; keep animated Button fallback, no third Button inference/runtime install. Yarn native attempt1 queued session21336 with BlenderUV/raw checkpoint. Nine local guards pass; future generation saves raw geometry before simplification.

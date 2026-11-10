@@ -2,8 +2,8 @@
 
 ACTIVE — continue NON-STOP-RUN/QUEUE; user resumed, no current pause.
 Worktree /Users/bao/taskbar-hero-cardrpg-b2; branch codex/cardrpg-art-r1-2026-11-09; draft#427.
-Latest pushed90cf95bc6; current changes preserve rejected Button surface repairs and next Yarn trial.
-Do not redo R0/M5/S6, Q1/Q2/Q4/Q9, Mochi/Soot conversions,25original concepts,12VFXmasters or completed phase checks.
+Latest pushed684a5736c; current Q3 decision closes the bounded pilot and continues Yarn under Q5.
+Do not redo R0/M5/S6, Q1/Q2/Q3/Q4/Q9, Mochi/Soot conversions,25original concepts,12VFXmasters or completed phase checks.
 Latest INBOX: TRELLIS local-mps only, one model at a time; alpha-only/noRMBG. No browser generation; internal browser for review only.
 External ~/art/trellis-mac d58628f4; Python3.11/Torch2.15/MPS/import/DINO access pass;19weight files cached16.18GB. No setup/smoke repeat.
 Smoke512 exported656.715s; UV-v/gutters repaired but visually coarser, so old Mochi/Soot retained.
@@ -15,7 +15,7 @@ CURRENT: one Yarn Giant native attempt1 queued in session21336. Log /tmp/cardrpg
 Prior repair sessions21467/5874 finished failed. No B inference child started as of12:32Z; A lease44581/a6-q10-checks started12:31UTC. Only one B heavy waiter.
 Check current Yarn session/log first. On export inspect source six views, then prepare-unit/packed motion/same battle/face checks before broader native roster. If export fails, use RAW checkpoint for local recovery; preserve failure. Max3native attempts/unit, newseeds, no overlapping B heavy jobs.
 local-roster sourceReviewPending excludes Button and active Yarn from duplicate inference. It also supports per-row uvBackend and hash-verified recovered entries. Intake watcher remains stopped pending usable source.
-Q3 four-unit decision and Q5 runtime roster unfinished; Button/Yarn animated fallback already works in battle. Q3 minimum7.0 cat appeal+foe menace, target8.5; known issues do not block queue.
+Q3 bounded close documented in R1-DECISION.md: all4play, appeal/menace7.75>=7.0, pilotweighted7.71<8.5; PARTIAL quality. Q5 roster active; Yarn trial continues there. Known limits do not block queue.
 Q6 all12hero skill/ult/passive and13enemy families wired; audit7.7PARTIAL. Normal/passive similarity and large-motif face clipping remain; bounded3repairs already used.
 Q7 camera/key checkpoint7.5;1440/1024posters/96facesPASS. Full roster coverage pending.
 Q8 portraits/icons source manifest assets/cardrpg-look/v3-portraits/manifest.json;25face crops56/72/144px delivered forU/A. Compare runtime identities before closing.

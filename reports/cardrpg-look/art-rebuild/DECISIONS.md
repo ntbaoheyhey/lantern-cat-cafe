@@ -81,3 +81,6 @@ Smoke512 completed geometry/texture decode in330.8s after model load, producing2
 - Inspected repaired source views: UV-v alignment and nearest-texel gutter fill resolve misplaced colours and black webbing without another inference. Native512 remains visibly coarser (agent appeal6.9) than preserved Mochi8.2. Never replace existing Mochi/Soot.
 - Continue one Button Guard source trial at512geometry/1024texture/100Kpre-UV, fixedseed20261111. Review source, packed motion and identical battle shots before authorizing broader local conversion. The existing run14738/14759 is resumed, not duplicated.
 - Draft enemy role mappings use the existing original rigs; config files are preparation only, not runtime approval.
+
+## 2026-11-10T12:35Z Q3 bounded production decision
+See R1-DECISION.md: cats use original-image3D with rigid semantic modules; foes prefer the same native3D route but retain reviewed articulated fallback per failed unit until source/motion/battle passes. Four-unit appeal/menace7.75 exceeds7.0 minimum; pilotweighted7.71 is not full-roster acceptance. Close Q3 timebox with PARTIAL quality and continue Q5; the new Yarn trial does not reopen completed conversions. Button damaged mesh remains rejected.

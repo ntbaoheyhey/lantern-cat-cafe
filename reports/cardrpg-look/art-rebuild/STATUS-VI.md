@@ -1,5 +1,5 @@
-Button: hai lần vá mesh đều không đạt; giữ bản chuyển động đã kiểm tra trong trận.
-Không chạy lại Button/Mochi/Soot; mọi nguồn và bằng chứng lỗi được giữ nguyên.
-Đang chờ một lượt TRELLIS local cho Yarn Giant, dùng ảnh gốc đã có.
-Lượt mới lưu mesh thô trước khi giảm lưới và kiểm tra UV để tránh mất dữ liệu sửa.
-Roster vẫn PARTIAL; tiếp tục kiểm tra hình khối, chuyển động rồi ảnh trận thực tế.
+Đã chốt thử nghiệm 4 nhân vật ở mức PARTIAL; cả 4 đã chơi được trong trận.
+Điểm hình ảnh mèo/quái trung bình 7,75 vượt ngưỡng đi tiếp 7,0; chưa đạt mục tiêu 8,5.
+Ưu tiên ảnh gốc → mesh 3D; chỉ giữ bản chuyển động nhiều lớp ở đơn vị có nguồn 3D chưa đạt.
+Đang tiếp tục roster với một lượt Yarn local; không tạo lại Mochi/Soot/Button.
+Chuyển động tay, độ sâu của quái dự phòng và sự đồng bộ toàn roster vẫn cần cải thiện.
