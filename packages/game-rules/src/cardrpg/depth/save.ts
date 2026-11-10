@@ -110,6 +110,8 @@ export function validateDepth(value: unknown): asserts value is DepthAccount {
   example.equipment = {};
   shape(value, example);
   const state = value as DepthAccount;
+  const idleA6 = state.idle.a6;
+  if (idleA6 !== undefined && (!record(idleA6) || !Number.isSafeInteger(idleA6.fastDay) || idleA6.fastDay < 0 || !Number.isInteger(idleA6.fastClaims) || idleA6.fastClaims < 0 || idleA6.fastClaims > 2)) fail();
   if(state.gameplayA6!==undefined&&(typeof state.gameplayA6!=='boolean'||state.gameplayA6&&(!state.skillsV5||!state.gameplayV4)))fail();
   if(state.skillsV5!==undefined&&typeof state.skillsV5!=='boolean')fail();
   if(state.gameplayV4 !== undefined && typeof state.gameplayV4 !== 'boolean') fail();

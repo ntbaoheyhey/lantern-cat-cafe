@@ -41,3 +41,11 @@
 ## Q5
 - Initial preparation layout pushed the back row below the fold. Collapsed save/suggestion selectors and compact row cards expose both rows and Fight at 1280×720. Supporting details still scroll; retain for Q13.
 - Initial bond links missed ancestor refs during the child layout effect. Drawing after refs attach fixes first-mount links; screenshots and the browser check confirm the path exists.
+
+## Q6
+- Screenshot review collapsed inactive chapter choices and tightened stage cards; the full branching map fits at 1280 by 720.
+- Fixed the home map tab remaining selected after entering an encounter; the browser path and a rendered regression now reach Prepare/Fight.
+- Preserved the daily service quest on passive idle claims. Fast rewards do not bypass its ten-minute wait. Twenty-one related rules tests pass.
+- Avoided cloning the entire account for same-day idle previews. The final sim is rerunning after the service fix; the first Q6 table is superseded.
+- Q6 checkpoint: the final service-task fix has twenty-one passing focused tests. A repeated full sim waited behind another lane; retained the completed 500-seed table with its scope stated and deferred the rerun to Q7 so evidence work does not block new gameplay.
+- Q6 browser normal median 43.14 s/p90 63.61 remains above target; 963.12-second trailing account-reward gap excludes route points/boons. Keep both for Q11/Q12.

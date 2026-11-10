@@ -8,7 +8,7 @@
 - pnpm: 10.28.0 (repository packageManager version)
 - Free disk at setup: 147 GiB (df -h ~); above 15 GB threshold.
 - Dependencies: pnpm install --frozen-lockfile completed without lockfile changes.
-- Scope: STEP 2 active; Q6 active; Q1 completed 2026-11-10 06:38 UTC.
+- Scope: STEP 2 active; Q7 active; Q1 completed 2026-11-10 06:38 UTC.
 - Delivery branch remains codex/cardrpg-a6-q0-2026-11-10; one draft PR #438 for the whole lane.
 
 ## Report skim (15 lines; existing claims, not re-verified)
@@ -79,3 +79,13 @@
 - Typecheck/lint PASS; full web 1,878 PASS; three final formation tests PASS. No rules bytes changed, so Q4 sim/OFF/A5 evidence remains applicable.
 - Three inspected WebPs include 1280×720. Both rows/Fight visible, no horizontal overflow or page/console errors. Extra bond/plan details still scroll on small height.
 - Q6 is next; full E2E and thirty-minute real-click first session required at its checkpoint.
+
+## Q6 complete — 2026-11-10
+- Campaign map reuses journey stars/rewards; full map fits 1280×720. Twelve-hour stage-scaled tips and two capped fast rewards/day.
+- Typecheck/lint PASS; full web 1,880 and rules 1,281 PASS; focused screen three and final rules twenty-one PASS. All 421 existing E2E PASS.
+- OFF digest exact over 8,250 routes; A5 fallback exact over forty-five; expected hashes unchanged.
+- Three inspected WebPs, no overflow/page/console errors. Thirty-minute session: 1,801.71 seconds, 29 wins, zero losses/stalls/errors.
+- Browser normal median 43.14 s/p90 63.61 misses G1; boss 72.56/92.69 fits. Account-reward trailing gap 963.12 s excludes visible route rewards.
+- Completed 500-seed sim: 253.89 s, authored normal 30.88 s, boss 79.38 s, idle cap 12 h. G2/G3/G5 partial.
+- Final passive-service bookkeeping fix passed twenty-one tests; its queued sim rerun was deferred after a long shared-lock wait. Q7 sim will include it.
+- Q7 next; Q8 drafts remain outside the worktree. No fresh seeds used.

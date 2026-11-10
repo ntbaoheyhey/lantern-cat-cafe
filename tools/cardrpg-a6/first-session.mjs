@@ -61,6 +61,7 @@ if (!segment) {
           currencies: m.state.account.currencies, team: m.state.team,
           cards: m.state.account.cards.map(c => ({ id: c.cardId, level: c.level, stars: c.stars })),
           selected: m.cardId, nextRunId: m.state.nextRunId, active: !!r && !r.complete,
+          idleReady: !!document.querySelector('.a6-idle .uv-tips:not(:disabled)'), fastReady: !!document.querySelector('.a6-fast-reward:not(:disabled)'), eventsOpen: !!document.querySelector('[data-screen="events"]'),
           route: r ? { id: r.id, complete: r.complete, current: r.current, visited: r.visited.length, rewards: r.rewardChoices.length, kind: r.nodes.find(n => n.id === r.current)?.kind } : null,
           battle: b ? { seed: b.seed, result: b.result, round: b.round, boss: r?.nodes.find(n => n.id === r.current)?.kind === 'boss', combos: b.v4?.events.filter(e => e.kind === 'bond.combo').length ?? 0 } : null,
           notice: m.notice, error: m.error, cleared: m.state.cleared };
@@ -83,7 +84,13 @@ if (!segment) {
         acted = await click(button(/^Next/), 'Next result');
       } else if (s.screen === 'hub') {
         const trainingKey = `${s.nextRunId}:${s.fish}`;
-        if (!s.freeInvite) acted = await click(button('Recruit'), 'Open recruit');
+        if (s.eventsOpen) {
+          acted = await click(page.getByRole('button',{name:'Collect reward',exact:true}).and(page.locator(':not(:disabled)')), 'Collect daily reward');
+          if (!acted) acted = await close();
+        } else if (!s.active && s.idleReady) acted = await click(button(/^Collect Night tips/), 'Collect night tips');
+        else if (!s.active && s.fastReady) acted = await click(button(/^Fast reward/), 'Fast reward');
+        else if (!s.active && await page.locator('.uv-events button').filter({hasText:'Today’s tasks'}).count()) acted = await click(button('Today’s tasks'), 'Open daily tasks');
+        else if (!s.freeInvite) acted = await click(button('Recruit'), 'Open recruit');
         else if (!report.sawBook) acted = await click(button('Cats'), 'Open cats');
         else if (!s.active && !report.trainingKeys.includes(trainingKey)) { report.trainingKeys.push(trainingKey); acted = await click(button('Cats'), 'Train cats'); }
         else acted = await click(button(/^Night Patrol/), 'Night Patrol');

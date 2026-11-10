@@ -81,7 +81,7 @@ export interface DepthAccount {
   run: Run | null; nextRunId: number; cleared: number[]; towerBest: number; lastBattle: BattleSetup | null; lastChoices: Choice[];
   gear: GearInstance[]; equipment: Record<string, Partial<Record<Slot, string>>>; awakened: Record<string, number>;
   materials: number; seals: number; masteries: number[]; challengeClaims: string[]; claimedRuns: number[];
-  idle: { lastAt: number; dayKey?: number; receiptIds: string[] }; tutorial: number; freeInvite: boolean;
+  idle: { lastAt: number; dayKey?: number; receiptIds: string[]; a6?: { fastDay: number; fastClaims: number } }; tutorial: number; freeInvite: boolean;
   settings: { sound: boolean; speed: number; reducedMotion: boolean; quality: 'low' | 'medium' | 'high' };
   relics: number[]; selectedRelic: number | null; designClaims: string[];
 }

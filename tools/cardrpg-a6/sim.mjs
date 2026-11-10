@@ -213,7 +213,7 @@ async function simulation(bundleUrl, mode) {
       }
       days.push({ day, progress: progressed(before, rewardState(s)), chapter: s.cleared.length, power: round(R.teamPowerV4(s)), paidDraws });
     }
-    return { seed, sessionsPerDay, days, firstEpic, firstLegendary, pityDay, idleCap: R.idlePreview(s, 8 * 86400000).capHours };
+    return { seed, sessionsPerDay, days, firstEpic, firstLegendary, pityDay, idleCap: R.cafeShiftV4(s, 8 * 86400000).capHours };
   }
   return { async job(job) {
     const seeds = Array.from({ length: job.count }, (_, i) => job.first + i);

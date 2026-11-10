@@ -1,4 +1,5 @@
 import { PrepareA6 } from './FormationA6';
+import { CampaignA6 } from './CampaignA6';
 import { PowerA6 } from './PowerA6';
 import { AdviceV4 } from '../depth/AdviceV4';
 import {lazy,Suspense,useState} from 'react';
@@ -46,5 +47,6 @@ export function ResultV3({m}:{m:DepthModel}) {
 
 export function RouteV3({m}:{m:DepthModel}) {
  const defaults=patrolDefaults(m.state),[chosen,setChosen]=useState<number|null>(null),band=Math.min(chosen??defaults.band,defaults.ceiling);
+ if(R.gameplayA6(m.state))return <CampaignA6 m={m}/>;
  return <section aria-label="Route preview"><details className="uv-route-options" open={!m.state.run}><summary>Choose a route</summary><label>Challenge band <select value={band} aria-label="Challenge band" disabled={defaults.active} onChange={e=>setChosen(Number(e.target.value))}>{Array.from({length:defaults.ceiling},(_,i)=><option key={i} value={i+1}>Band {i+1}</option>)}</select></label><div className="uv-task-grid">{R.CHAPTERS.map(c=><button key={c.id} disabled={defaults.active||c.id>1&&!m.state.cleared.includes(c.id-1)} onClick={()=>{m.start(c.id,'campaign',band);}}><b>Explore {c.name}</b><small>{c.reward}</small></button>)}</div><div className="cr-actions"><button disabled={defaults.active} onClick={()=>m.start(Math.min(3,m.state.cleared.length+1),'daily')}>Start daily challenge</button><button disabled={defaults.active||!m.state.cleared.includes(3)} onClick={()=>m.start(1,'tower')}>Climb Tower · {m.state.towerBest}</button></div></details><Suspense fallback={<p>Opening the route…</p>}><RunMap m={m}/></Suspense></section>;
 }

@@ -37,3 +37,4 @@ export * from './bonds-a6';
 
 export * from './power-a6';
 export * from './upgrades-a6';
+export * from './idle-a6';
