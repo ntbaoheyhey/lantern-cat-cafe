@@ -29,6 +29,7 @@ import { StableLabelLayout } from './look-label-layout';
 import {GearAttachments,GearResources} from './gear-visuals';
 import type {ActorAppearance} from './appearance';
 import { loadModel } from './assets';
+import { animateIllustrated } from './look-puppet';
 import { animatePainted, installPaintedMaterial } from './look-painted';
 import { cloneBattleModel, animateGeneratedFace, disposeGeneratedSkeletons } from './look-generated';
 import {screenBounds,auditBounds} from './scene-audit';
@@ -552,6 +553,11 @@ export class TurnScene {
       if(view.autoBattle && p.head) p.headPose.copy(p.head.quaternion);
       p.face?.animate(cardExpression(clip, !!frame && source === p), this.time, p.gaze.yaw, view.reducedMotion);
       animatePainted(p.model,this.camera,this.time,clip,progress,view.reducedMotion,!!frame&&source===p);
+      p.model.userData.puppetActorId=a.id;
+      const puppetActing=!!frame&&source===p&&a.hp>0;
+      animateIllustrated(p.model,this.camera,this.time,puppetActing?(frame.plan.presentationId??frame.plan.skillId):clip,
+        view.model?view.modelProgress:puppetActing?frame.actionProgress:progress,view.reducedMotion,puppetActing,puppetActing&&frame.plan.ultimate,
+        Math.max(0,1-(this.time-p.phaseAt)/.35)*.65);
       animateGeneratedFace(p.model,clip,this.time,view.reducedMotion);
       const involved=!frame||source===p||frame.plan.targetIds.includes(a.id);
       p.materials.forEach((m,i)=>{if(m instanceof T.MeshStandardMaterial)m.color.copy(p.baseColors[i]!).multiplyScalar(involved?1:.7)});

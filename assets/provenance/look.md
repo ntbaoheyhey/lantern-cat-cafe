@@ -417,3 +417,6 @@ Use case: stylized-concept. Asset type: original game VFX component atlas for a 
 
 ## 2026-11-10 small-slot portrait derivatives
 25 original concept masters reused; no image/model generation. Authored face ROI -> original alpha composited on cafe colour -> Lanczos56/72/144px -> WebP92. Exporter `tools/cardrpg-look/art-rebuild/pack-ui-portraits.py`;75per-asset hashes, source hashes and exact crop rectangles in `assets/cardrpg-look/v3-portraits/manifest.json`, portraits.*.uiPortrait.provenance. Original card portraits unchanged; default loading unchanged. Visual comparison: `reports/cardrpg-look/art-rebuild/r3/ui-portrait-comparison.webp`.
+
+## 2026-11-10 illustrated puppet derivatives — P1
+User retired native roster generation. Existing original Mochi concept and its recorded generation prompt are reused without any new model call. `tools/cardrpg-look/art-rebuild/puppet/build.py` applies authored semantic masks/pivots, OpenCV Telea fill only under foreground parts, and Pillow WebP93 atlas packing. Delivery `assets/cardrpg-look/v3-puppets/mochi.webp` (1024px,223130B) + mochi.rig.json; hidden parts/receipt outside git at ~/art/look-v3/puppets/mochi. Original pixels and all native-era sources remain preserved. Actual runtime review: reports/cardrpg-look/art-rebuild/p1; pipeline acceptance only, P2 motion/roster scoring remains pending.

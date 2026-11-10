@@ -1,93 +1,25 @@
-# Lane B active queue
+# Lane B illustrated puppet queue
 
-Updated: 2026-11-10T11:56Z. ACTIVE — user explicitly resumed.
-Latest instruction: TRELLIS local-mps only; no browser/Space generation. Internal browser remains available for battle review.
-Always take the top unfinished unblocked item. Check INBOX.md and root STOP-B between items. Reports/checkpoints are not stops. After three failed repairs, use the documented fallback and continue. Only the hard stops in NON-STOP-RUN.txt apply.
+ACTIVE — 2026-11-10. PROMPT.txt supersedes all older native-roster queues and pauses.
+One agent; no native roster inference; preserve all sources. Default OFF; demo/look mode ON.
+Check STOP-B/INBOX and fetch/show A6-OUTBOX between items. Commit/push and update draft #427 per completed item.
 
-- [x] Q1 Housekeeping — 30 min. Archive old handoff; compact current handoff; read direction/state/rules and latest A/U outboxes; seed inbox. Done: current files consistent, status committed and pushed.
-- [x] Q2 Mochi B-R1-008 — <=5 h including fallback (one surface-separation attempt <=4 h). Separate arm/shield/apron, fill cuts, rigid-parent shield, verify cast/victory. Fallback: rigid-segment motion with reduced arm swing. Done: acceptable battle poses, checks and before/after evidence, issue logged.
-- [x] Q3 R1 four-unit close — <=8 h; due 2026-11-11 06:00 UTC. Keep Mochi source; bring Soot, Button Guard, Yarn Giant through existing concepts -> image-to-3D or animated layered fallback -> runtime. Done: all four in real battle, rubric target 8.5/minimum cat appeal + monster menace 7.0 average, per-type pipeline decisions, phase film/parity.
-- [x] Q4 General runner — 2 h. prepare-unit.mjs supports any unit id, resume/hashes/single output lock, simplify/rig/pack/preview. Done: exercise with an existing source without regenerating it.
-- [ ] Q5 R2 full roster — batches ~6; due 2026-11-14 18:00 UTC. All playable cats -> enemies -> bosses, built-in original concept generation/provenance, cleanup/convert/rig/runtime. Done per batch: battle captures/face-HP check/commit/push; every unit mapped.
-- [ ] Q6 R4 VFX 2.0 — due 2026-11-16 18:00 UTC. Generated atlases/optional video flipbooks for every signature skill and ultimate; real sockets/targets/timing, bold charge/travel/impact/afterglow. Done: readable at 1x, no protected-region overlap, audit >=8.0, phase film/parity.
-- [ ] Q7 R5 stage/light/camera — due 2026-11-17 18:00 UTC. Cafe depth/warm faces/rich enemy side/less empty floor/night window. Done: real battle comparison, cast frame <=33 ms native, phase checks.
-- [ ] Q8 R3 portraits/icons — due 2026-11-18 12:00 UTC. Every unit portrait matching runtime and skill/ult icons; image files + Lane U manifest. Done: complete manifest and visual review; no shell edits.
-- [x] Q9 R6 in-canvas hygiene — 2 h. Hide B dev affordances unless ?dev=1; shell requests to B-OUTBOX. Done: normal/dev screenshots, flags default OFF.
-- [ ] Q10 R7 integration/films — due 2026-11-19 18:00 UTC. Merge B into integration #420 by new merge commits (A files take A), no PR merge/deploy/force-push; offline demo <=40 MB; 60-90 s 1x battle several ults + boss; R0 comparison posters. Done: checks/artifacts/PR draft descriptions pushed.
-- [ ] Q11 R8 report — due 2026-11-20 12:00 UTC. ART-REPORT.md: scores vs R0, shipped/known issues/provenance; STATUS-VI; update #427/#420. Done: report committed/pushed. If time remains, improve lowest rubric row until deadline (log bounded follow-up items).
+- [x] P1 Puppet pipeline (6 h): tools/cardrpg-look/art-rebuild/puppet/ — cut/fill/pivot/pack script per unit id (resumable, one command), runtime puppet renderer + motion set in the canvas, behind the existing look flag (default OFF; ON in the demo/look mode). Done: unit tests for rig loading/motion selection, one unit animates in battle.
+- [ ] P2 Pilot 3 units (6 h): Mochi, Soot, Yarn Giant as puppets in a real battle; side-by-side with concepts; all motions; score >= 7.5 each. Fix lowest issue first (max 3 rounds per issue).
+- [ ] P3 Camera + composition (3 h): closer framing, cats/enemies placement, no empty floor, ult push-in, shake. Before/after pair. Tell A6 in B-OUTBOX.
+- [ ] P4 All 12 cats (2 batches of 6; commit/push per batch): Mochi, Soot, Clover, Panko, Mallow, Cinnamon, Velvet, Biscuit, Brioche, Marigold, Sorrel, Inkcap (check the exact roster ids in the code). Done per batch: battle captures, contact sheets, face/HP check, scores >= 7.5.
+- [ ] P5 All enemies and bosses (batches of 6): all 13 enemy concepts mapped to every enemy/boss id in the rules; bosses with boss idle + phase flash. Done: every enemy id has a puppet or a documented fallback.
+- [ ] P6 VFX pass (6 h): every signature skill and ultimate on the puppets' real sockets/targets/timing; damage numbers; audit score >= 8.0 at x1 (reuse existing VFX masters where they fit).
+- [ ] P7 Stage + light (3 h): warm cafe, faces lit, richer enemy side, night window; cast frame <= 33 ms.
+- [ ] P8 Portraits/icons/card art (3 h): regenerate crops from the final puppet art where needed; one manifest; B-OUTBOX entry for A6.
+- [ ] P9 Publish for A6 (1 h, repeat after each big batch): push, update #427, write B-OUTBOX.md (what changed, manifest paths, flags, known issues). Make sure the demo size stays <= 40 MB together with A6 (WebP atlases; report your share in B-OUTBOX).
+- [ ] P10 Films (by 19 Nov 12:00 UTC): in the throwaway A6 preview (section 2), one 60-90 s x1 battle with several ultimates and one boss fight; R0 vs now comparison posters.
+- [ ] P11 Report (by 20 Nov 12:00 UTC): ART-REPORT.md (scores vs R0, PUPPET-SCORES summary, what shipped, known issues, provenance), STATUS-VI.md summary, #427 description. Then improve the lowest-scored unit until the deadline.
 
-## Run constraints
-One agent. No paid services/new accounts/credentials. Preserve existing masters, Mochi source and completed R0/M5/S6/housekeeping. Flags default OFF; lookArt v3 demo only. B-owned canvas/assets/reports only; never edit A/U worktrees. timing.lock lease <=20 min for rendering; nice 10 heavy tools; ports 5920-5923. Evidence <=120 MB in art-rebuild; large masters in ~/art/look-v3. Per-item typecheck/lint/touched tests and one 1440x900 before/after pair + touched face/HP check; full parity/film once per phase.
+## Completed history
 
-## Provider fallback
-Free conversion failure: max 3 attempts over >=2 h, do other unblocked work between attempts. Then animated layered 2.5D with rim/normal light. Never pay. True user-only blocker: exact ask in NEEDS-USER.md, BLOCKED-USER here, skip and continue all other items.
+- [x] New-session onboarding: 9feba11f4; no live native runner/lease; type/lint and7touchedtestsPASS.
+- [x] R0 baseline, M5, Q1–Q4, Q9; original12cat+13enemy concepts,12VFXmasters, Q8 source crops.
+- Native-era progress and pre-existing uncommitted queue notes preserved in QUEUE-NATIVE-ARCHIVE.md; no native model acceptance implied.
 
-Q1 result: old handoff archived in full; queue/inbox/current handoff/state created; A S6 DONE unchanged, U outbox absent;187GiB free,72MiB evidence. No runtime changes or repeated completed probes.
-
-Q2 result: Blender separation rejected for gaps; explicit rigid-module fallback accepted at1x. 608456B/21938tri/0skin; type/lint1818tests PASS;24face samples0offenders,0UI overlaps. Limited arm articulation remains known; does not block Q3.
-
-Q3 checkpoint 2026-11-10 02:10 UTC: Soot exported and rigid-module runtime preview exists; verifying battle/face gates. Button Guard attempt1 hit daily ZeroGPU quota; retry2 no earlier than03:06UTC, attempt3 no earlier than04:06UTC (respect any provider reset time). Yarn has not been submitted. While provider work waits, do Q4 then unblocked concept work; no Mochi source regeneration.
-
-Q4 DONE 02:16UTC during Q3 quota wait: generic runner validated on existing Soot source; resumable5stages/hash/lock/install guards. Q3 Soot checkpoint7.6appeal/6.3motion,698k-class asset,24faces0offenders; Button/Yarn remain provider-dependent. Q5 concept preparation starts while preserving Q3 priority when retry is due.
-
-Q5 concept prep during quota wait: Clover/Panko saved; remaining batch1 Mallow,Cinnamon,Velvet,Biscuit then batch2 Brioche,Marigold,Sorrel,Inkcap. All prompts written; one built-in call per unit. New concepts do not imply runtime acceptance.
-
-Q5 concept checkpoint 02:36UTC: all12cat concepts reviewed at equal displayed height; eight new originals saved after Clover/Panko. No earlier source regenerated. Enemy prompts authored from existing object identities. Runtime preparation remains unfinished; Q3 Button retry2 still not before03:06UTC.
-
-Pause checkpoint: user requested handoff and stop. All12cat concepts/provenance saved; enemy prompts only. No auto-retry while paused. Existing checkboxes retained honestly; Q3/Q5-Q11 incomplete.
-
-Q3 provider update: Button final extraction also failed (resumed-session summary); no further retry. Layered fallback being articulated and reviewed. Yarn first Generate returned Error at05:50UTC; next attempt>=06:47UTC, final>=07:47UTC. Never duplicate or bypass provider quotas.
-
-Q3 motion checkpoint 2026-11-10T06:07:08.127885+00:00: action-owned gesture, contact shadow, moving face anchor verified; film and review in foes-fallback. Q3 final decision awaits remaining Yarn provider attempts. Q5 first enemy concepts Sock Skipper, Teacup Healer, Spool Ram, Needle Moth stored/provenanced; continue remaining originals.
-
-Q5 source checkpoint 2026-11-10T06:20:06.703306+00:00: all12cats/13enemies original concepts now reviewed and provenanced. Runtime not complete. Clover first conversion submitted in internal browser, receipt records timing. Q3 Yarn retry remains06:47UTC; no source regeneration.
-
-Q3/Q5 resume06:30UTC: Clover attempt1 error confirmed; no mesh/no duplicate job. Q3 full E2E running in isolated headless test browser. Preparing Q6 original VFX sources while spaced conversions wait; original character masters untouched.
-
-User question06:40UTC: local GLB route implemented and validated; inbox~/art/look-v3/inbox, intake watcher active in this run (owner~/art/look-v3/local-intake/.running/owner.json). User may supply original concept-derived meshes; all cleanup/rig/packing local. Stop watcher on user pause. Official TRELLIS2 requires CUDA/Linux not available on this M3Pro. No new remote job pending. Panko/Mallow first attempts failed; receipts retained.
-
-Local TRELLIS override 2026-11-10T07:30:26.787573+00:00: user-authorized Apple Silicon port cloned at d58628f4f5b9c3de8274cb110074154f4b31cef2; HF login and DINOv3 weight access verified. Q3/Q5 now use local-mps, one model at a time, fixed recorded seeds and maximum two retries with new seeds. No more Space retries. One isolated Mochi smoke is explicitly requested; preserve shipped Mochi/Soot sources. Setup initially picked system Python3.9; interrupted and recreated only that external venv using Python3.11. Setup retry and weights cache in progress; no RMBG download. Continue independent work while downloads finish.
-
-2026-11-10T08:06:48.659084+00:00: resumed existing VFX work without regeneration. Q6 all12hero masters packed; all hero skills/ultimates and13enemy families wired in v3. Mallow/Cinnamon impact repair and face checks pass; cast/film pending. Q8 source portraits/icons generated locally and reviewed, runtime identity pending. Q3/Q5 local generation still waits for model weights; do not rerun completed setup. Three superseded clips archived byte-exact outside repo (EVIDENCE-ARCHIVE.json), keeping evidence below cap.
-
-2026-11-10T08:28Z: Q9 B-owned FeelLab normal/dev gate verified; shellBattleGallery/B2toggle requests pushed toU. R4finalattempt3 under verification. Full35.74MB, firstlean27.48MBMISS; lean-only384pxVFXatlas packaging in progress, fullsource remains512px. No new model generation; weights continue downloading.
-
-2026-11-10 local automation checkpoint: Q9 committed/pushed7c9dfb124. Sequential local-roster.mjs prepared with fixed-seed23unit queue, explicit smoke-review gate, receipts/retry cap/cooldown and STOP-B/deadline handling. Read-only --plan verifies23pending units; no inference launched by this addition. Existing smoke waiter80150/download73736 retained. Final VFX repair and lean comparison still await shared timing lease.
-
-2026-11-10T08:58:37Z: first isolated native smoke is RUNNING after shared lease acquisition. All19weights cached16.18GB. Existing Mochi/Soot sources preserved; no RMBG. Local-foe routing/type/lint1824webtests published6f22f15ff. Await actual smoke mesh comparison before sequential roster.
-
-2026-11-10T09:20Z: local1024 smoke1 timed out at1082.6s after sampling, noGLB. Smoke2 isolated512/texture1024 newseed20262109 queued; decoder tracing distinguishes slow decode from export. No change to existing Mochi/Soot or runtime acceptance.
-
-2026-11-10T09:45Z: smoke512 exported in656.7s. Inspection caught native UV-v inversion; corrected existing GLB without inference, then repaired black texture gutters. Padded comparison waits for shared lease; roster remains gated. Added root-prop guard for reconstructed units (7touchedtests/type/lintPASS). Draft cat configs prepared; no new runtime acceptance.
-
-2026-11-10T09:51:37.220827+00:00: resumed existing Button trial14738/14759, no duplicate. Smoke repaired render inspected in prior session; keep old Mochi/Soot. Follow current source -> packed motion -> battle review before next native unit.
-
-2026-11-10T10:07Z: Button native attempt1 decoded mesh/texture but timed out in xatlas ComputeCharts at1081.178s. Preserved receipt/stack/log; stopped automatic identical retry. Preparing newseed20262111/50Kpre-UV plus decoded checkpoint (no inference algorithm change), after2minute cooldown and pending matching before capture. Keep animated fallback until source/motion/battle verified.
-
-2026-11-10T10:18Z: Button attempt2 started10:17:22UTC under sole B lease26933; seed20262111/512/1024/50KpreUV, decoded checkpoint enabled. Matching before capture passed1shot/0overlap. While waiting, Q8 added25face crops at56/72/144px requested by A6,75files verified/reviewed; manifest prepared for U. Existing full card crops, source masters and Mochi/Soot preserved.
-
-2026-11-10T10:40Z: Button attempt2 timed out1082.781s, checkpoint retained. Export-only Blender recovery1 took10.488s; geometry guards passed but UV-area0.0016557failed texture quality. Fractional-margin recovery2 queued in session77049/waiter34006 (old waiting wrapper31128 stopped before any child/output;250ms lock polling); no third inference. Optional native Blender UV route prepared,8guard testsPASS; use only after actual source review.
-
-2026-11-10T10:59:36Z USER PAUSE: stopped sole B export waiter34006 before any child/output and intake watcher57059. Recovery2 remains unstarted; resume from saved Button decoded checkpoint, never rerun completed inference. No Lane A process/lease touched. Q3/Q5–Q8/Q10/Q11 remain unfinished; eight local guards and runner plan/syntax passed.
-
-2026-11-10T11:56Z RESUME: shared lease free; start only existing fractional-margin Button export recovery2. No old source generation/setup repeated.
-
-2026-11-10T12:01:44Z: existing Button export2 succeeded10.559s; source/clay review REJECTED shattered nonmanifold mesh. One local remesh/export repair queued under shared lease(session21467), no new inference. Raw checkpoint guard added for future exports;9local guardsPASS. Continue top Q3 source/motion/battle review; no runtime acceptance.
-
-2026-11-10T12:17:59.810662+00:00 continuation: resumed sole Button repair waiter38778/session21467, still awaiting shared lease. No inference duplicated. Queue now records both terminal Button attempts and sourceReviewPending; read-only plan holds Button and preserves Mochi/Soot. Source repair -> source views -> packed motion -> same battle remains next.
-
-2026-11-10T12:28:18Z: Button surface-recovery1failed drift bound, noGLB. Finer repair2 running under sole B lease44093/session5874; same saved input and .015 bound, no inference. Read current HANDOFF before resuming; old session21467 finished.
-
-2026-11-10T12:31Z: Button surface-repair2 failed unchanged drift bound; bounded repair branch PARTIAL, articulated fallback retained. Native Yarn attempt1 queued(session21336), original master/seed20261112,512/1024,100KpreUV, BlenderUV+raw checkpoint. Only this one B heavy waiter remains. Button source stays excluded from inference retries. Q3 final decision awaits Yarn, no completed conversion repeated.
-
-2026-11-10T12:35Z Q3 bounded close: all4 already play with reviewed rigid/layered fallbacks; pilot appeal/menace7.75>=7.0, weighted pilot7.71 (not full roster). R1-DECISION.md records pipeline/known limits/evidence. Native Yarn trial continues as Q5; source quality refinement no longer blocks later phases.
-
-2026-11-10T12:56Z Q5: resumed original Yarn attempt1, exported847.754s. Six-view source REJECTED (fragmented topology already in raw checkpoint); no runtime replacement. One local raw-checkpoint repair queued session38356, no new inference. Source diagnostic distinguishes raw/reduced damage; closest-surface drift fixture queued. Keep working after bounded outcome.
-
-2026-11-10T13:11:57.335502+00:00 Q5: resumed existing Yarn raw repair; numerical PASS but visual REJECT. Second local shell repair from same saved voxel data passes .015 bound and source views; packed candidate pending matching battle/motion/faces(session36525). No new inference.
-
-2026-11-10T13:25Z Q5 continuation: original Yarn battle job finished;8poses/0errors,24faces0offenders,0UIoverlap. Packed source looks coherent in Blender but old enemy additive relief creates pale thread creases in battle. One material-only correction waits in7406/owner60368; type/lint/5touchedtestsPASS. Clover-only local trial sequenced after it(session28970), original concept/seed20261113,512/1024,BlenderUV+saved-cell shell.10nativeguardsPASS; no completed inference repeated. Exact diagnostic PNGs archived externally; evidence97.51MB.
-
-2026-11-10T13:34Z continuation: no completed source repeated. Added retained-decode guard (2filesystem fixtures PASS) so exporter failures require source repair instead of fresh inference. Existing Yarn material job was still unstarted; own idle waiter replaced at100ms polling after A reacquired without handoff. Replacement50443/64400, sequenced Clover31093/64547, source review after it. Same artifacts/commands, no live lease interrupted.
-
-2026-11-10T14:28:19.830994+00:00 Q5: Clover source exported410.598s and8motionposes verified. Material2 preserves Yarn dark values;48faces0offenders,4casts16.8ms/189052peaktri. Source-vs-packed Blender comparison isolates native inward winding hidden by two-sided previews; new regression fails correctly. One no-inference outward correction/packing/battle verification waits(session95761). Sequential five-cat batch36696 starts Panko, then Mallow/Cinnamon/Velvet/Biscuit; no duplicate source requests. Shell prevention edit deferred until those helper hashes are no longer in use.
+P1 complete 2026-11-10T16:26:41.319246+00:00: one-command resumable authored cut/hidden fill/1024atlas + validated rig; opt-in runtime and8semanticmotions. Mochi real battle +8pose contact sheet,0pageerrors/0UIoverlaps. type/lint20touchedtestsPASS. P2 remains visual/motion acceptance.

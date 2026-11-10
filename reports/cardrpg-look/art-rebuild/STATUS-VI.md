@@ -6,3 +6,6 @@ Bộ dựng bề mặt đã sửa để các model mới quay mặt ra ngoài; c
 Đã tiếp quản phiên mới, giữ toàn bộ công việc cũ và hai GLB chưa duyệt ngoài commit.
 Runner native đã kết thúc trước khi vào phiên; không còn lease/lock, không đụng tiến trình A6.
 Typecheck, lint và 7 test liên quan đều đạt; chuyển toàn bộ roster sang puppet 2.5D từ concept gốc.
+
+P1 hoàn tất: Mochi chạy bằng puppet atlas 223 KB, 6 lớp có pivot và vùng bù kín; 8 trạng thái chuyển động.
+Ảnh battle và contact sheet đã xem; không lỗi trang/đè UI. Typecheck, lint, 20 test đạt; tiếp tục P2 Mochi/Soot/Yarn trong shell A6.

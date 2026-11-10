@@ -15,7 +15,7 @@ const outputPath = process.env.LOOK_OUTPUT || 'docs/cardrpg-look/index.html';
 const receiptPath = process.env.LOOK_RECEIPT || 'docs/cardrpg-look/build.json';
 const readableDemo = outputPath.includes('b2') || outputPath.includes('v5');
 const artDemo = process.env.LOOK_ART === 'v3';
-const artBootstrap = artDemo ? `window.__LOOK_ART__=new URLSearchParams(location.search).get('lookArt')==='v2'?'v2':'v3';window.__LOOK_ART_PIPELINE__=['sculpt','painted'].includes(new URLSearchParams(location.search).get('artPipeline'))?new URLSearchParams(location.search).get('artPipeline'):'generated';` : '';
+const artBootstrap = artDemo ? `window.__LOOK_ART__=new URLSearchParams(location.search).get('lookArt')==='v2'?'v2':'v3';window.__LOOK_ART_PIPELINE__=['sculpt','painted','generated','puppet'].includes(new URLSearchParams(location.search).get('artPipeline'))?new URLSearchParams(location.search).get('artPipeline'):'puppet';` : '';
 const lean = process.env.LOOK_LEAN === '1';
 // Both streams decode to identical bytes. Different asset classes favour
 // different DEFLATE hash-table sizes; keep the smaller stream per payload.
@@ -102,6 +102,7 @@ const assetClasses = {};
 for (const [path, asset] of assetEntries) {
   const category = path.includes('cardrpg-look/v3-generated/') ? 'reconstructed-models'
     : path.includes('cardrpg-look/v3-sculpt/') ? 'bakeoff-models'
+    : path.includes('cardrpg-look/v3-puppets/') ? 'illustrated-puppets'
     : path.includes('cardrpg-look/v3-painted/') ? 'painted-fallbacks'
     : path.includes('cardrpg-look/v3-vfx/') ? 'painted-vfx'
     : path.includes('cardrpg-look/stage/') ? 'atelier-stage'

@@ -1,16 +1,16 @@
-# Lane B current handoff
+# Lane B puppet handoff
 
-Session started 2026-11-10T16:19:01.983778+00:00. ACTIVE: user's new illustrated 2.5D puppet prompt supersedes native-roster instructions.
-Worktree /Users/bao/taskbar-hero-cardrpg-b2; branch codex/cardrpg-art-r1-2026-11-09; draft #427.
-Starting HEAD 456934fba; fetched B and A6. All pre-existing dirty work preserved and inventoried in STATE.md.
-Native runner already finished/exited before onboarding: former PID73035 absent; no local-roster/generate.py/TRELLIS/Blender process.
-No .roster-running/.running lock or timing.lock remains; no process killed and no A6 process touched.
-Preview HTTP servers PID50023/5920 and PID92836/5922 retained. Disk188GiB free.
-Onboarding PASS: web typecheck, lint, two touched test files/seven tests; logs /tmp/cardrpg-b-onboard-*.log.
-Existing layered fallback: apps/web/src/game/squad/turn3d/look-painted.ts; source cutter tools/cardrpg-look/art-rebuild/pack-painted.py.
-Routing assets.ts; animation/material hooks scene.ts. Build puppet pipeline on this foundation.
-Viewed r2/concepts cats/enemies, native Yarn after2, Button export2: preserve concepts, native results remain unaccepted.
-Read latest A6-OUTBOX: shared lease fairness, rage/ultimate/combo events,56–72px UI crops, canvas frame cost.
-Next: replace PROMPT/QUEUE per new request; P1 pipeline then P2 Mochi/Soot/Yarn. Never merge A6 into published B.
-Heavy work uses tools/cardrpg-look/lock.mjs (<20min;6.5s fairness gap), nice10; ports5920–5923.
-Check STOP-B/INBOX and fetched A6 outbox between items; no active pause.
+ACTIVE 2026-11-10T16:26:41.319246+00:00; P1 finished, P2 next. User PROMPT.txt supersedes native-era instructions.
+Branch codex/cardrpg-art-r1-2026-11-09; draft427; onboarding9feba11f4.
+Native runner already exited; no leases/process killed. Pre-existing dirty native work remains inventoried STATE.md.
+P1: tools/cardrpg-look/art-rebuild/puppet/build.py <id>; configs/; output assets/cardrpg-look/v3-puppets/*.webp + *.rig.json.
+Masters/parts/receipts ~/art/look-v3/puppets. Mochi223130B,1024atlas,6parts. Never regenerate original concepts.
+Runtime look-puppet.ts + look-puppet-rig.ts; integrated via existing look-painted/scene hooks and assets routing.
+Default classic OFF; lookV2+lookArt=v3 now defaults puppet; old generated/painted/sculpt opt-in retained for history.
+P1 captures reports/cardrpg-look/art-rebuild/p1; viewed actual battle and8poses,0errors/0UIoverlaps.
+Typecheck/lint20focusedtestsPASS; packing resume verified. P1 acceptance is pipeline only, not P2 >=7.5 score.
+Known P2 fix: sampled-fur eyelid shader makes defeat eyes striped; motion needs continuous x1 review.
+Next build Soot/Yarn; create disposable A6 preview after committing P1, merge B there only; never touch A6 worktree.
+A6 outbox fetched/read; latest framecost116.7ms observation retained, crop request already source-delivered.
+Heavy jobs under tools/cardrpg-look/skills-v5/full/run-lock.mjs,19min cap/nice10,6.5s fairness gap. Ports5920–5923.
+Read STOP-B/INBOX each item; evidence99MiB/120MBcap. No active stop.

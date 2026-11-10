@@ -1,5 +1,6 @@
 /** Six articulated paint layers in the existing 3D cafe. Source/provenance in v3-painted. */
 import * as T from 'three';
+import { installPuppetMaterial } from './look-puppet';
 import rigs from '../../../../../../assets/cardrpg-look/v3-painted/rigs.json';
 const files = import.meta.glob('../../../../../../assets/cardrpg-look/v3-painted/*.webp', { eager: true, query: '?url', import: 'default' }) as Record<string,string>;
 const urls = Object.fromEntries(Object.entries(files).map(([path,url])=>[path.split('/').at(-1)!,url]));
@@ -43,6 +44,7 @@ const relative=new T.Quaternion();
 const eyeSets:Record<string,number[][]>={mochi:[[.423,.302,.075,.058],[.640,.312,.054,.055]],soot:[[.489,.272,.069,.047],[.670,.251,.045,.05]]};
 /** Install after cloning: uniforms belong to this actor, never to the cached template. */
 export function installPaintedMaterial(material:T.MeshStandardMaterial) {
+  if(material.userData.lookPuppet){installPuppetMaterial(material);return;}
   if(!material.userData.lookPainted || material.userData.paintPart!=='head')return;
   const eyes=eyeSets[material.userData.paintId as string];if(!eyes)return;
   const rect=material.userData.paintRect as number[];
@@ -78,7 +80,7 @@ export function installPaintedMaterial(material:T.MeshStandardMaterial) {
 
 /** Same event clock/root travel as 3D; bounded cutout motion, no per-frame allocations. */
 export function animatePainted(model:T.Object3D,camera:T.Camera,time:number,clip:string,progress:number|undefined,reduced:boolean,acting=false) {
-  if(!model.userData.lookPainted)return;
+  if(!model.userData.lookPainted||model.userData.lookPuppet)return;
   // Face the active camera in both axes; root travel still follows battle formations.
   model.parent!.getWorldQuaternion(relative).invert();model.quaternion.copy(relative).multiply(camera.quaternion);
   // The event owns the whole gesture: travel/recovery clips can be step/idle.

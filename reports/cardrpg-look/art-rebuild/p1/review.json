@@ -1,0 +1,305 @@
+{
+  "method": "Actual battle at x1 plus isolated labelled motion poses; no native-model acceptance.",
+  "errors": [],
+  "units": [
+    {
+      "unit": "mochi",
+      "asset": "mochi",
+      "role": "guardian",
+      "stats": {
+        "frames": 8,
+        "calls": 86,
+        "triangles": 72494,
+        "geometries": 508,
+        "textures": 108,
+        "particles": 0,
+        "estimatedGpuBytes": 6258722,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "parts": [
+        "puppet_body",
+        "puppet_feet",
+        "puppet_tail",
+        "puppet_armL",
+        "puppet_armR",
+        "puppet_head"
+      ],
+      "ui": {
+        "at": 0,
+        "words": [],
+        "numbers": [],
+        "badges": 0,
+        "overlaps": [],
+        "outside": [],
+        "unplaced": [],
+        "unplacedDetails": [],
+        "contrast": null,
+        "overflow": false,
+        "stats": {
+          "frames": 8,
+          "calls": 86,
+          "triangles": 72494,
+          "geometries": 508,
+          "textures": 108,
+          "particles": 0,
+          "estimatedGpuBytes": 6258722,
+          "loaded": 4,
+          "hiddenFrames": 0,
+          "quality": "medium"
+        }
+      },
+      "poses": [
+        {
+          "label": "idle",
+          "clip": "idle",
+          "progress": 0,
+          "angles": [
+            [
+              "puppet_body",
+              0
+            ],
+            [
+              "puppet_feet",
+              0
+            ],
+            [
+              "puppet_tail",
+              -0.05750043600675974
+            ],
+            [
+              "puppet_armL",
+              -0.010922881533711118
+            ],
+            [
+              "puppet_armR",
+              0.015474082172757418
+            ],
+            [
+              "puppet_head",
+              0.00888722063511799
+            ]
+          ]
+        },
+        {
+          "label": "anticipation",
+          "clip": "mochi-1",
+          "progress": 0.22,
+          "angles": [
+            [
+              "puppet_body",
+              0
+            ],
+            [
+              "puppet_feet",
+              0
+            ],
+            [
+              "puppet_tail",
+              -0.05750043600675974
+            ],
+            [
+              "puppet_armL",
+              -0.0456
+            ],
+            [
+              "puppet_armR",
+              0.07600000000000001
+            ],
+            [
+              "puppet_head",
+              0.009500000000000001
+            ]
+          ]
+        },
+        {
+          "label": "impact",
+          "clip": "mochi-1",
+          "progress": 0.52,
+          "angles": [
+            [
+              "puppet_body",
+              0
+            ],
+            [
+              "puppet_feet",
+              0
+            ],
+            [
+              "puppet_tail",
+              -0.05750043600675974
+            ],
+            [
+              "puppet_armL",
+              0.1368
+            ],
+            [
+              "puppet_armR",
+              -0.22800000000000004
+            ],
+            [
+              "puppet_head",
+              -0.028500000000000004
+            ]
+          ]
+        },
+        {
+          "label": "cast",
+          "clip": "mochi-2",
+          "progress": 0.3,
+          "angles": [
+            [
+              "puppet_body",
+              0
+            ],
+            [
+              "puppet_feet",
+              0
+            ],
+            [
+              "puppet_tail",
+              -0.05750043600675974
+            ],
+            [
+              "puppet_armL",
+              0.12
+            ],
+            [
+              "puppet_armR",
+              -0.2
+            ],
+            [
+              "puppet_head",
+              -0.025
+            ]
+          ]
+        },
+        {
+          "label": "ultimate hold",
+          "clip": "mochi-4",
+          "progress": 0.34,
+          "angles": [
+            [
+              "puppet_body",
+              0
+            ],
+            [
+              "puppet_feet",
+              0
+            ],
+            [
+              "puppet_tail",
+              -0.05750043600675974
+            ],
+            [
+              "puppet_armL",
+              0.12
+            ],
+            [
+              "puppet_armR",
+              -0.2
+            ],
+            [
+              "puppet_head",
+              -0.025
+            ]
+          ]
+        },
+        {
+          "label": "hurt",
+          "clip": "heavy-hit",
+          "progress": 0.45,
+          "angles": [
+            [
+              "puppet_body",
+              0
+            ],
+            [
+              "puppet_feet",
+              0
+            ],
+            [
+              "puppet_tail",
+              -0.05750043600675974
+            ],
+            [
+              "puppet_armL",
+              -0.010922881533711118
+            ],
+            [
+              "puppet_armR",
+              0.015474082172757418
+            ],
+            [
+              "puppet_head",
+              -0.0444459753267812
+            ]
+          ]
+        },
+        {
+          "label": "victory",
+          "clip": "victory",
+          "progress": 0.5,
+          "angles": [
+            [
+              "puppet_body",
+              0
+            ],
+            [
+              "puppet_feet",
+              0
+            ],
+            [
+              "puppet_tail",
+              -0.05750043600675974
+            ],
+            [
+              "puppet_armL",
+              0.14
+            ],
+            [
+              "puppet_armR",
+              -0.17
+            ],
+            [
+              "puppet_head",
+              0.00888722063511799
+            ]
+          ]
+        },
+        {
+          "label": "defeat",
+          "clip": "KO",
+          "progress": 1,
+          "angles": [
+            [
+              "puppet_body",
+              0
+            ],
+            [
+              "puppet_feet",
+              0
+            ],
+            [
+              "puppet_tail",
+              -0.05750043600675974
+            ],
+            [
+              "puppet_armL",
+              -0.010922881533711118
+            ],
+            [
+              "puppet_armR",
+              0.015474082172757418
+            ],
+            [
+              "puppet_head",
+              -0.12
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

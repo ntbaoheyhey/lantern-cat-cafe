@@ -2,6 +2,7 @@ import { GLTFLoader, type GLTF } from 'three/addons/loaders/GLTFLoader.js';
 import { isLookV2 } from './look-v2';
 import { lookModelSources } from './look-models';
 import { artPipeline } from './look-art';
+import { hasPuppetModel, loadPuppetModel } from './look-puppet';
 import { hasPaintedModel, loadPaintedModel } from './look-painted';
 const artFiles = import.meta.glob('../../../../../../assets/cardrpg-look/v3-sculpt/*.glb', { eager:true, query:'?url', import:'default' }) as Record<string,string>;
 const artSources = Object.fromEntries(Object.entries(artFiles).map(([path,url])=>[path.split('/').at(-1)!.replace(/\.glb$/,''),url]));
@@ -36,10 +37,11 @@ export function loadModel(role: string): Promise<ModelAsset> {
     : loader.loadAsync(sources.get(role) ?? `${import.meta.env.BASE_URL}art/turn3d/${role}.glb`);
   const result = prepare.then(async () => {
     if (!look) return original();
+    if(pipeline==='puppet' && hasPuppetModel(role))return loadPuppetModel(role);
     const generated = pipeline === 'generated' && generatedSources[role];
     // Reviewed local reconstructions take precedence as each unit is installed.
     // Until then, preserve the articulated fallback for provider-blocked foes.
-    if(hasPaintedModel(role) && (pipeline==='painted' || (pipeline==='generated' && !generated && ['button-guard','yarn-giant'].includes(role)))) return loadPaintedModel(role);
+    if(hasPaintedModel(role) && (pipeline==='painted' || pipeline==='puppet' || (pipeline==='generated' && !generated && ['button-guard','yarn-giant'].includes(role)))) return loadPaintedModel(role);
     const url = generated || (pipeline==='sculpt' ? artSources[role] ?? lookModelSources[role] : lookModelSources[role]);
     if (!url) return original();
     const model = await loader.loadAsync(url);
