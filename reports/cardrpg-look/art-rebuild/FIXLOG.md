@@ -165,3 +165,6 @@ B-LOCAL-014 continuation: Panko exported466.642s; safe successor changed shell o
 
 ## B-PUPPET-002 — P2 pilot review
 Lid coverage previously crossed open eyes and sampled the dark lash. Increased open-eye threshold, moved fur sample upward and added closed-eye crease; reviewed three motion sheets. Closed-eye texture remains approximate (PUPPET-SCORES), accepted as the simple x1 version. A6 boss replay correctly includes Binding Thread adds: harness now requires the three pilot identities without imposing an actor-count limit. Replay75s/0errors/0labeloverlaps; no rule change.
+
+## B-PUPPET-003 — compact framing and rear-row occlusion
+P3 gallery override masked real formation and rear-row lateral offsets hid Clover behind Soot. After three bounded layout rounds, use the simplest row-independent lateral fan plus row depth, normalize puppet heights, and keep minimum frame height4.25. Final four A6 captures show all party faces/0outside/0labeloverlaps. Wrong-shell baseline excluded and harness now asserts A6/v3/puppet. Existing camera push/shake/reduced behavior reverified.

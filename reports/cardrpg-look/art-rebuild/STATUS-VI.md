@@ -13,3 +13,6 @@ P1 hoàn tất: Mochi chạy bằng puppet atlas 223 KB, 6 lớp có pivot và v
 P2 hoàn tất: Mochi/Soot/Yarn giữ đúng concept trong shell A6; 8 tư thế mỗi unit, không lỗi trang/đè mặt hoặc HP.
 Replay x1 75 giây đạt median 16,7 ms, p95 16,8 ms; 20 test và parity 5 seed đều đạt. Điểm 7,8/7,6/8,0 là tự đánh giá, chuyển động còn nhẹ.
 Tiếp tục P3: cân lại tỉ lệ boss/cat và bố cục; không thay DOM HUD của A6.
+
+P3 đã xong: camera gần/thấp hơn, cat chiếm 40–48% canvas; boss khoảng 1,7–1,9 lần cat.
+Cả hai cỡ màn hình không tràn model/đè mặt-HP/UI; đã kiểm tra zoom ultimate, rung impact và reduced motion. Tiếp tục P4 nhóm 6 cat đầu.

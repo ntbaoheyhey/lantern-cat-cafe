@@ -12,3 +12,5 @@ Evidence uses A6 shell in a disposable merged preview; primary branch contains n
 
 All other units pending P4/P5. No scores inferred from successful generation.
 P2 acceptance covers coherent pilot reconstruction and all eight semantic motions. P3 improves framing; P6 improves cast spectacle.
+
+P3 battle composition: normal 7.8, boss 8.0. Final captures `p3/final/` show pilots at 40–48% of canvas height with all party faces visible. Legacy Clover remains until P4; no new per-unit score inferred from camera-only work.

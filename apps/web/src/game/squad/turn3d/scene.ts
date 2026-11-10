@@ -1,5 +1,5 @@
 import { LookContactPool } from './look-contact-pool';
-import { isLookArtV3 } from './look-art';
+import { artPipeline, isLookArtV3 } from './look-art';
 import { LookEffectRim } from './look-effect-rim';
 import { targetTextLane } from './card-callout-layout';
 import type { StatusPresentation } from './card-status-beats';
@@ -472,11 +472,17 @@ export class TurnScene {
     let enemyCount=0, loneKettle=false;
     if(isReadableBattle()&&view.autoBattle)for(const actor of view.actors)if(actor.side==='enemy'){enemyCount++;loneKettle=(view.models?.[actor.id]??this.puppets.get(actor.id)?.asset)==='kettle-knight';}
     const bossFraming=view.boss||(enemyCount===1&&loneKettle);
+    const illustratedBattle=isReadableBattle()&&view.autoBattle&&artPipeline()==='puppet';
     const frame=view.frame, cardRecipe=view.autoBattle?cardRecipeFor(frame,view.actors):undefined, source=frame?this.puppets.get(frame.plan.actorId):undefined;
     const targets=frame?frame.plan.targetIds.map(id=>this.puppets.get(id)).filter((p):p is Puppet=>!!p):[];
-    for(const a of view.actors){const p=this.puppets.get(a.id);if(!p)continue;const slot=view.model?this.zero:view.autoBattle?cardFormation(a,view.rows?.[a.id]):formationPoint(a,view.boss);if(!view.autoBattle||a.hp>0)p.base.set(slot.x,slot.y,slot.z);if(this.lookStageEnabled&&view.galleryPreview&&a.side==='party'){const lane=a.slot%3;p.base.set([-1.35,-2.65,-3.65][lane]!,0,[.25,1.05,-.65][lane]!);}
-      if(this.lookStageEnabled&&view.autoBattle&&bossFraming&&a.side==='party')p.base.z-=1.1;
+    for(const a of view.actors){const p=this.puppets.get(a.id);if(!p)continue;const slot=view.model?this.zero:view.autoBattle?cardFormation(a,view.rows?.[a.id]):formationPoint(a,view.boss);if(!view.autoBattle||a.hp>0)p.base.set(slot.x,slot.y,slot.z);if(this.lookStageEnabled&&view.galleryPreview&&!illustratedBattle&&a.side==='party'){const lane=a.slot%3;p.base.set([-1.35,-2.65,-3.65][lane]!,0,[.25,1.05,-.65][lane]!);}
+      if(this.lookStageEnabled&&view.autoBattle&&bossFraming&&a.side==='party')p.base.z-=illustratedBattle?.10:1.1;
       p.root.position.copy(p.base);p.root.scale.setScalar(view.model?1:figureScale(a.role,a.side)*(isReadableBattle()&&view.autoBattle?(p.asset==='kettle-knight'?(bossFraming?3.50:2.1):a.role==='yarn'?(view.boss?(p.asset==='pantry-crown'?2.12:1.94):1.25):a.side==='party'?1.25:1.38):1));p.model.rotation.y=view.model?view.model.angle:view.autoBattle?cardBodyYaw(a.side,0,0):restYaw(a.side);
+      if(illustratedBattle&&!view.model&&p.model.userData.lookPuppet){
+        // Normalize illustrated heights; native-era role compensation made Yarn dwarf cats.
+        const puppetHeight=(p.model.userData.paintedRig as {height:number}).height;
+        p.root.scale.setScalar((p.model.userData.paintedRig.boss?3.70:a.side==='party'?2.08:2.10)/puppetHeight);
+      }
       if (view.tableau) {
         p.base.set((a.slot - 1) * 2.1, 0, a.slot === 1 ? -.35 : .3);
         p.root.position.copy(p.base);
@@ -593,8 +599,9 @@ export class TurnScene {
     const readable=isReadableBattle()&&view.autoBattle&&!view.model;
     if(readable){this.camera.position.set(0,4.7,12);this.cameraTarget.set(0,bossFraming?(view.actors.some(a=>this.puppets.get(a.id)?.asset==='kettle-knight')?2.05:2.20):1.16,0);}
     if(readable&&isLookArtV3()){this.camera.position.y=4.25;if(!bossFraming)this.cameraTarget.y=1.28;}
+    if(illustratedBattle&&!view.model){this.camera.position.y=3.75;this.cameraTarget.y=bossFraming?1.80:1.38;}
     const distance=this.camera.position.distanceTo(this.cameraTarget),frameHeight=view.model?(this.lookStageEnabled?(view.model.role==='yarn'?4.6:3.3):(view.model.role==='yarn'?3.3:2.25)):view.tableau?Math.max(4,7.5/this.camera.aspect):view.autoBattle?cardFrameHeight(this.camera.aspect,view.camera==='close'?'close':view.camera==='far'?'far':'wide'):stageHeight(this.camera.aspect);
-    const readableBossFrame=readable&&bossFraming?1.25:1;
+    const readableBossFrame=readable&&bossFraming?(illustratedBattle?1.08:1.25):1;
     this.camera.fov=T.MathUtils.radToDeg(2*Math.atan(frameHeight*readableBossFrame/2/distance));
     if(view.model){this.camera.position.set(0,3.7,11.3);this.cameraTarget.y=view.model.role==='yarn'?1.35:.94;this.camera.zoom=1.02;}
     if(view.camera==='overhead')this.camera.position.set(0,13,6);
