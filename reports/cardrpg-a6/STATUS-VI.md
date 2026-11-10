@@ -1,10 +1,10 @@
 # Trạng thái lane A6
 
-- Q0–Q8 đã xong; đang làm Q9: tuyển mộ và hiệu ứng mở thẻ.
-- Có năm nhiệm vụ ngày, ba rương tuần, bảy quà đăng nhập và chấm đỏ dẫn tới việc làm được ngay.
-- Typecheck, lint, 1.887 test web và 1.291 test rules đạt; sáu test nhiệm vụ cuối cũng đạt.
-- Màn 1280×720 thấy đủ năm nút nhận quà; tải lại không nhận lặp quà đăng nhập.
-- A6 tắt khớp 8.250 tuyến; A5 khớp 45 tuyến, không đổi digest chuẩn.
-- Kinh tế còn thiếu: Epic ngày hai 54,2%, ngân sách pity ngày sáu 0%; sẽ chỉnh ở Q9/Q12.
-- Tháp, nộ, nhịp trình duyệt và gợi ý sau thua còn khoảng cách đã ghi rõ.
-- Q9 sẽ chạy E2E và phiên click thật 30 phút. Draft #438; không merge hay deploy.
+- ĐÃ DỪNG theo yêu cầu: “dừng và lưu handoff”. Đã tạo STOP-A6.
+- Q0–Q8 hoàn tất; Q9 còn dở, chưa bắt đầu Q10.
+- Q9: reveal x10 5,42 giây; typecheck/lint, 1.890 test web và 1.294 test luật đạt.
+- E2E đạt sau một ca idle v2 chạy lại riêng; mô phỏng và đối chiếu OFF/A5 đã lưu.
+- Lượt click dừng ở 24.05 phút: 22 thắng, không thua, không lỗi, không kẹt thao tác.
+- Chưa đủ kiểm tra 30 phút; trung vị trận thường 42.45 giây vẫn vượt mục tiêu.
+- Đã đóng trình duyệt kiểm tra, nhả khóa và dừng server Vite của lane A6.
+- Handoff và bản nháp Q10–Q12 đã lưu; chỉ tiếp tục khi người dùng yêu cầu.

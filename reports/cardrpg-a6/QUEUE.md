@@ -37,5 +37,5 @@
 - Q6 complete: campaign map, star chests, twelve-hour idle and two fast rewards; 421 E2E and thirty-minute session pass stability. Final bookkeeping fix rolls into Q7 sim.
 - Q7 complete: thirty fixed Tower floors, six milestone chests, shared formation/battle and exact OFF/A5. Tower pacing is partial for Q12.
 - Q8 complete: five daily tasks, weekly bar, seven login gifts and one actionable badge selector; exact OFF/A5.
-- Q9 active: extend RecruitV3 with the four-beat batch reveal and consistent earned-stamp pricing; full E2E and thirty-minute click session due.
+- Q9 PAUSED by user: recruitment implementation/tests/E2E/sim pass as documented; real-click run stopped at 24.05 minutes. Q9 stays unchecked; a full thirty-minute session remains. Do not resume without user instruction.
 - Q14 integration merge conflicts with the fixed no-merge rule; prepare reviewable integration and skip any unauthorized merge while continuing other work.

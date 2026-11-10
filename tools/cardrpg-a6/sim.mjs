@@ -209,7 +209,7 @@ async function simulation(bundleUrl, mode) {
           } else { s = resolveStop(s); elapsed += 5; }
         }
         s = claims(s, now + elapsed);
-        while (s.account.currencies.stamps >= 150) {
+        while (s.account.currencies.stamps >= R.invitationBannerV4('standard', s).cost.stamps) {
           const r = R.metaCommand(s, { type: 'pull', bannerId: 'standard', seed: seed + day * 9349 + paidDraws * 97 });
           if (!r.ok) break; s = r.state; paidDraws++;
           const rarity = s.account.history.at(-1).rarity;

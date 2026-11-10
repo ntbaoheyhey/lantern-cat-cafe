@@ -62,12 +62,12 @@ if (!segment) {
           cards: m.state.account.cards.map(c => ({ id: c.cardId, level: c.level, stars: c.stars })),
           selected: m.cardId, nextRunId: m.state.nextRunId, active: !!r && !r.complete,
           idleReady: !!document.querySelector('.a6-idle .uv-tips:not(:disabled)'), fastReady: !!document.querySelector('.a6-fast-reward:not(:disabled)'), eventsOpen: !!document.querySelector('[data-screen="events"]'),
-          route: r ? { id: r.id, complete: r.complete, current: r.current, visited: r.visited.length, rewards: r.rewardChoices.length, kind: r.nodes.find(n => n.id === r.current)?.kind } : null,
+          route: r ? { id: r.id, points: r.points, complete: r.complete, current: r.current, visited: r.visited.length, rewards: r.rewardChoices.length, kind: r.nodes.find(n => n.id === r.current)?.kind } : null,
           battle: b ? { seed: b.seed, result: b.result, round: b.round, boss: r?.nodes.find(n => n.id === r.current)?.kind === 'boss', combos: b.v4?.events.filter(e => e.kind === 'bond.combo').length ?? 0 } : null,
           notice: m.notice, error: m.error, cleared: m.state.cleared };
       });
       if (!s) { await page.waitForTimeout(1000); continue; }
-      if (prior && (s.cards.length > prior.cards.length || s.cards.some(c => c.level > (prior.cards.find(p => p.id === c.id)?.level ?? 0) || c.stars > (prior.cards.find(p => p.id === c.id)?.stars ?? 0)) || Object.entries(s.currencies).some(([key, value]) => value > prior.currencies[key]) || s.cleared.length > prior.cleared.length)) {
+      if (prior && (s.cards.length > prior.cards.length || s.cards.some(c => c.level > (prior.cards.find(p => p.id === c.id)?.level ?? 0) || c.stars > (prior.cards.find(p => p.id === c.id)?.stars ?? 0)) || Object.entries(s.currencies).some(([key, value]) => value > prior.currencies[key]) || s.cleared.length > prior.cleared.length || s.route?.id === prior.route?.id && ((s.route?.points ?? 0) > (prior.route?.points ?? 0) || (s.route?.rewards ?? 0) > (prior.route?.rewards ?? 0)))) {
         report.rewards.push({ at: seconds(), gap: seconds() - report.lastReward, screen: s.screen }); report.lastReward = seconds();
       }
       prior = s;
@@ -134,7 +134,27 @@ if (!segment) {
   }
   report.activeSeconds = seconds();
   report.liveEncounter = liveEncounter;
+  report.latest = prior;
   report.endedAt = new Date().toISOString();
+  const quantile = (values, q) => {
+    const sorted = values.slice().sort((a,b) => a-b);
+    return sorted.length ? Math.round(sorted[Math.min(sorted.length-1,Math.floor(sorted.length*q))]*100)/100 : null;
+  };
+  const encounters = report.encounters.filter(e => !e.tutorial);
+  const duration = boss => {
+    const times = encounters.filter(e => !!e.boss === boss && !e.crossedLease).map(e => e.seconds);
+    return { samples: times.length, medianSeconds: quantile(times,.5), p90Seconds: quantile(times,.9) };
+  };
+  const losses = encounters.filter(e => e.result === 'enemy');
+  const trailingGap = Math.max(0, report.activeSeconds-report.lastReward);
+  const gaps = [...report.rewards.map(r => r.gap),trailingGap];
+  report.summary = { activeSeconds: Math.round(report.activeSeconds*100)/100, encounters: encounters.length,
+    wins: encounters.filter(e => e.result === 'party').length, losses: losses.length,
+    losses10: losses.filter(e => e.at+e.seconds<=600).length, losses30: losses.filter(e => e.at+e.seconds<=1800).length,
+    normal: duration(false), boss: duration(true),
+    visibleRewards: { count: report.rewards.length, medianGap: quantile(gaps,.5), maxGap: Math.round(Math.max(...gaps)*100)/100, trailingGap: Math.round(trailingGap*100)/100 },
+    errors: report.errors.length, stalls: report.stalls.length };
+  if(segment === 2) console.log(JSON.stringify({ summary: report.summary }));
   await writeFile(output, JSON.stringify(report, null, 2) + '\n');
   // Exit disconnects this observer; the parent retains the browser and page.
   process.exit(0);

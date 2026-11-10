@@ -60,3 +60,7 @@
 ## Q8
 - Initial 1280×720 layout placed daily claim buttons below the fold. Moved the login action beside its heading and tightened small-height spacing; all five actions now fit and the real-click check asserts their bounds.
 - Daily progression is observed only after successful public transactions. The final test group covers all five activities, duplicate claims, caps, rollover, rollback and OFF preservation.
+
+## Q9 validation
+- The full E2E run passed 420 cases; existing v2 idle-clock XP accrual timed out. The isolated retry passed in 9.8 seconds after the shared lock became available. No unrelated product code was changed.
+- The first-session recorder now counts visible route points and boon offers, and carries its final observation into the next lease to avoid duplicate reward signals.

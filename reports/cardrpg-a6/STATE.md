@@ -8,7 +8,7 @@
 - pnpm: 10.28.0 (repository packageManager version)
 - Free disk at setup: 147 GiB (df -h ~); above 15 GB threshold.
 - Dependencies: pnpm install --frozen-lockfile completed without lockfile changes.
-- Scope: STEP 2 active; Q9 active; Q1 completed 2026-11-10 06:38 UTC.
+- Scope: STEP 2 PAUSED by user; Q9 incomplete; Q1 completed 2026-11-10 06:38 UTC.
 - Delivery branch remains codex/cardrpg-a6-q0-2026-11-10; one draft PR #438 for the whole lane.
 
 ## Report skim (15 lines; existing claims, not re-verified)
@@ -105,3 +105,20 @@
 - Sim: 500 seeds, 247.22 s. Pacing unchanged; Epic by day two 54.2%, pity budget by day six 0%. Current caps keep G5 partial for Q9/Q12.
 - OFF exact 8,250 routes and A5 exact forty-five; expected hashes unchanged. q8-compatibility.json.
 - Q9 next; full E2E and thirty-minute real-click session due. Fresh final seeds remain unused.
+
+## Q9 in progress — 2026-11-10 10:09 UTC
+- Four-beat x10 reveal measured at 5.417 seconds; skip after first beat, rarity glow and new-Epic portrait inspected. Rates and next action fit 1280×720.
+- A6 earned-stamp price sixty; OFF 150. Welcome credit follows the price; pity, odds, shards and caps stay unchanged.
+- Full web 1,890 PASS; rules 1,294 PASS plus existing expected failures/skips. Typecheck/lint PASS; final web typecheck PASS.
+- Owned matching shards now display beside the star requirement; the rendered test verifies the actual ten-shard star-up.
+- Sim finished in 320.27 seconds: Epic by day two and pity budget by day six are 100% for both cohorts. OFF and A5 remain exact.
+- Full E2E: 420/421 pass; existing v2 idle-clock XP test timed out. Isolated retry awaits the shared lock; the automatic watcher starts the thirty-minute click run only on retry success.
+- Q10/Q11 drafts are outside the worktree; see HANDOFF.md. No fresh final seeds used.
+
+## User pause — 2026-11-10 11:00 UTC
+- Explicit request: dừng và lưu handoff. STOP-A6 created. No Q10 source applied.
+- Q9 real-click session stopped cleanly at 1442.97 active seconds: 22 wins, zero losses/errors/stalls. Thirty-minute requirement NOT complete.
+- Normal median/p90 42.45/57.72 seconds; boss 70.48/106.05 seconds. These are partial-run observations.
+- Existing Q9 types/lint/unit tests, full E2E plus isolated retry, sim and exact OFF/A5 remain recorded.
+- Browser closed, timing lock released, own Vite stopped. Drafts and harnesses archived in resume-drafts.tar.gz; not applied or behavior-tested.
+- Resume only after explicit user instruction; first unfinished queue item remains Q9.
