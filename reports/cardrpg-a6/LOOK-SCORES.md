@@ -13,11 +13,11 @@ Agent visual review, not player testing. Both sizes inspected; no applicable Q13
 | Daily | 7.5 | 7.3 | 13: dense rewards at 720p (7) | shots/q13b/*-daily |
 | Tower | 7.4 | 7.3 | 15: floor grid remains simple (7) | shots/q13b/*-tower |
 | Relic | 7.4 | 7.4 | 15: simple keepsake icons (7) | shots/q13b-rarity/*-relics |
-| Result / defeat | 7.8 | 7.6 | 15/20: ceremony room for polish (7) | shots/q13b/*-result and *-loss |
+| Result / defeat | 8.0 | 8.0 | 08/20: simple reward icons (7.5) | shots/q13e-final/*-result and *-loss; retry/cafe visible at720p |
 | Recruit | 8.3 | 8.2 | 13: small duplicate labels (7.5) | shots/q13c-final; full-screen Epic/Legendary and ten-pull inspected |
 | Map | 8.1 | 8.0 | 13: compact power/chest labels (7.2) | shots/q13d-final; original winding street, stars, chests, guardian art |
-| Normal battle | 4 | pending | 18: HUD identity (4) | Q13e + B camera queued |
-| Boss battle | pending | pending | pending | Q13e capture required |
-| Ultimate | 4 | pending | 19: cut-in (3) | Q13e queued |
+| Normal battle | 8.1 | 8.0 | 13/18: small rage text (7.5) | shots/q13e-final/*-normal; original portraits and HP/rage trails |
+| Boss battle | 8.2 | 8.1 | 18: compact phase labels (7.5) | shots/q13e-final/*-boss; phase pips and Auto-next separation |
+| Ultimate | 8.3 | 8.2 | 19: restrained burst (8) | shots/q13e-final/*-ultimate; full-body art, 800ms/x1 |
 
 Q13b rows 01/06/10:8 across screens; 03/04:8 on collectible frames; 05:8 on cat cards/seats; 08:8 on HUD/results (icons and count-up); 09:8 (shared badge selector unchanged); 11:8 (crew image bounds 35–36vh); 12:8 on loading/empty Bag. Remaining applicable rows are 7–8, with the lowest noted above. The rule difficulty and 100% forecast are explicitly Q13f work, not accepted by these visual scores.

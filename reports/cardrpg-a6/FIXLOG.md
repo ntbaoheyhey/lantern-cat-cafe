@@ -93,3 +93,6 @@
 - Q13c: Epic splash initially inherited the sheet transform and overlapped HUD; app-root portal restores full viewport. Mouse/Escape skip and focus trap checked in real browser at both sizes.
 
 - Q13d: annotated vector-building tuples for strict types; corrected inherited pale run-stat text on parchment after inspecting both resolutions. Real graph/reward controls verified unchanged.
+
+- Q13e review: the default Playwright headless-shell captured shader loading before sceneReady. Switched this review to the published B harness configuration (Chromium channel + Metal) and explicitly waits for sceneReady. Captures now show actual puppets. This is a review environment repair, not a measured game performance improvement.
+- Q13e verification: initial test command incorrectly forwarded `--` and began the full web suite; stopped own process immediately, then reran only the three touched suites with `pnpm exec vitest run <files>` (20 pass). Fixed test fixture to use public finishMoment instead of private fields; types/lint pass.

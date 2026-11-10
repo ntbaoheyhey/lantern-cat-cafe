@@ -51,3 +51,7 @@
 - Missing manifest entry/file or runtime image failure falls back to the previous model portrait. Canvas, models, VFX, camera, rules, seeds and earned rewards remain owned by their existing implementations.
 
 - Q13d scenery is original inline SVG in CampaignSceneryA6.tsx. Node placement is presentation only; edges/availability/stars/rewards use existing run state. Cat/enemy art still uses the unified original B manifest.
+
+- Q13e: merge commits b9c1497d6 (B published P4 cats/P3 framing) and 00b04f8ee (B530bce90a P5 batch1 enemies). B owns all canvas files; A6 adds DOM HUD only. A6's opt-in App enables existing v3 puppet flags, preserving the main default OFF and the A6 shell.
+- Q13e: gameplay playbackAt is wall time, so ultimate overlay lifetime is800/speed ms; the existing two-per-ten-second banner cap stays. Health trails are presentation only and never change combat HP. No manual cast control or second damage-number layer.
+- Q13e: browser review uses Chromium channel with Metal, matching B's published harness. The default headless shell stalled shader compilation; that run is not pacing evidence. Q13f/g must report the browser/backend used.

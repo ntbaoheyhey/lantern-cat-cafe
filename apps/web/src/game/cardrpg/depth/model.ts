@@ -292,7 +292,7 @@ export class DepthModel {
     this.plan = paceActionA6(createCardActionPlan(events, identity), battle.initial);
     if(this.a6Battle && this.plan.ultimate && actor.side==='party'){
       this.ultimateBannersAt=this.ultimateBannersAt.filter(at=>this.playbackAt-at<10000);
-      if(this.ultimateBannersAt.length<2){this.ultimateBannersAt.push(this.playbackAt);this.ultimateBannerUntil=this.playbackAt+1400;}
+      if(this.ultimateBannersAt.length<2){this.ultimateBannersAt.push(this.playbackAt);this.ultimateBannerUntil=this.playbackAt+800/this.state.settings.speed;}
       else this.ultimateBannerUntil=0;
     }
     const actionEvents = battle.log.slice(before);

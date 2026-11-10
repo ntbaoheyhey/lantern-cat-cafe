@@ -67,13 +67,16 @@ export default function DepthApp({ offline = false, gameplayV4 = false, skillsV5
   }, []);
   useEffect(() => {
     document.body.classList.add('cardrpg-entry');
+    // A6 is an explicit opt-in; its illustrated DOM and B's puppets share one art direction.
+    const previousArt=window.__LOOK_ART__;
+    if(a6){window.__LOOK_ART__='v3';setLookV2(true);}
     if (offline || import.meta.env.DEV) window.__depthReview = m;
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       m.state.settings.reducedMotion = true;
       m.notify(false);
     }
-    return () => { document.body.classList.remove('cardrpg-entry'); delete window.__depthReview; m.audio.dispose(); setLookV2(false); };
-  }, [m, offline]);
+    return () => { document.body.classList.remove('cardrpg-entry'); delete window.__depthReview; m.audio.dispose(); if(a6)window.__LOOK_ART__=previousArt; setLookV2(false); };
+  }, [m, offline, a6]);
   useEffect(() => {
     content.current?.scrollTo(0, 0);
     content.current?.querySelector<HTMLElement>('h1')?.focus({ preventScroll: true });

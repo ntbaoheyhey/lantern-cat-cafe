@@ -1,3 +1,4 @@
+import {artPropsA6} from '../ui-v3/art-a6';
 import { applyV5Presentation, v5SourceForPlan, REACTION_WORDS } from '../../squad/turn3d/card-v5-events';
 import { numberLaneWidth } from '../../squad/turn3d/card-number-lane';
 import { StatusLegend } from '../../squad/turn3d/StatusLegend';
@@ -147,8 +148,9 @@ export function BattleView({ m }: { m: DepthModel }) {
         }
       }
       const loading = scene.current?.loading;
-      if (loading && loadingText.current && loadingText.current.textContent !== loading.label) {
-        loadingText.current.textContent = loading.label;
+      const loadingLabel=m.a6Battle?'Lighting the lanterns…':loading?.label;
+      if (loading && loadingText.current && loadingText.current.textContent !== loadingLabel) {
+        loadingText.current.textContent = loadingLabel??'';
       }
       if (loading && loadingProgress.current && loadingProgress.current.value !== loading.completed) {
         loadingProgress.current.max = loading.total;
@@ -212,7 +214,7 @@ export function BattleView({ m }: { m: DepthModel }) {
         <img src={readable ? readablePortrait(actor.catalogId) ?? portrait(actor.catalogId) : portrait(actor.catalogId)} alt="" /><div><strong>{actor.name}</strong><span>{m.plan.name}</span></div>
         <button onClick={() => m.finishMoment()}>Skip moment</button>
       </aside>}
-      {!m.sceneReady && !m.sceneError && <div className="dp-loading" role="status"><span ref={loadingText}>Preparing the cafe miniatures…</span><progress ref={loadingProgress} max={5} value={0} aria-label="Battle preparation" /></div>}
+      {!m.sceneReady && !m.sceneError && <div className="dp-loading" data-a6={m.a6Battle} role="status">{m.a6Battle&&<img {...artPropsA6('mochi')} alt=""/>}<span ref={loadingText}>{m.a6Battle?'Lighting the lanterns…':'Preparing the cafe miniatures…'}</span><progress ref={loadingProgress} max={5} value={0} aria-label="Battle preparation" /></div>}
       {m.sceneError && <div className="dp-loading" role="status">{m.sceneError}</div>}
       {battle.actors.filter(candidate => candidate.side === 'enemy' && candidate.hp > 0).map(enemy => {
         const intent = battle.intents.find(candidate => candidate.actorId === enemy.id);
