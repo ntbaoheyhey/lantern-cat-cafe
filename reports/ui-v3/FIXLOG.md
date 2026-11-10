@@ -77,3 +77,12 @@ U0 in progress. No published Lane U milestone yet.
 - U8-BASELINE-CAPTURE / attempt2 diagnosis: archived server lacked read-only report assets imported by original Battle and blocked symlinked assets. Supply existing reports and explicit fs allow-list limited to own source/temp. Original source remains unchanged. The diagnostic retry did not alter its renderer.
 
 - U8-BASELINE-CAPTURE / FIXED: corrected archive dependencies/allow-list; four original-U0 Result captures now wait for Victory,0browsererrors (u8-visual/baseline-archive-verify.log). Original unsettled images retained; baseline runtime was not edited. Rebuilt56paircontactpage. Two setup fixes, then successful verification; failed diagnostic runs retained.
+
+- U9-SCORE / one additional pass: preliminary8.30/10; weakest gamefeel7.5 and performance7.0. Hypotheses ranked:1flat poster lacks local warmth/motion;2data-URL fetch per291transportitems adds avoidable decoding overhead;3full31MB packaging imposes an irreducible parse cost. Smallest owned changes: original CSS lanterns/motes (no assets/hit targets; both reduced-motion settings), native base64 byte decode before gzip. Preserve prior artifact and all measurements; require all decoded asset SHA256 values exact, G1,37UIchecks,axe/offline/perf and updatedshots. Gate remains223.3ms.
+
+- U9-G10 / PASS: complete existing suite421/421, no retries or skips, matching published baseline (u9/existing-e2e.json). Source08057b245; further changes only lazyuiV3 and its offline builder. No product/default logic changes.
+
+- U9-FRESH-EYES / attempt1: final legacy-look Home screenshot shows the smaller old portrait art inside the same boxes, making cats visibly undersized. Apply1.3xvisualscale only to legacy Home images (same layout/focus/hit targets, no B asset edit). Preserve first-passshots and rerun first-five/polish+G1, offline acceptance and affected shots before publish. This completes the same required single improvement pass.
+
+- U9-G6 / PARTIAL after the single score-improvement pass: native base64 transport reduced CPU4 startup from2,141.1–2,191.3ms to1,358.6–1,358.9ms (~37%). Literal223.3ms gate unchanged. All291assets exact; G1PASS;37UIchecks plus16affected rechecks;axe24clean;offline13.983s. No further packaging attempt this phase.
+- U9-FRESH-EYES / FIXED: Home-only legacy1.3xportraitscale verified in final1280-off-home.webp;16/16affectedchecks, G1,24axe scans,56captures/0errors and offline/assetparity PASS. Final score8.475/10 remains below8.5 and is reported as is.

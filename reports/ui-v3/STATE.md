@@ -38,3 +38,7 @@ U8 resume: toast geometry3sizesPASS; capture readiness fixed; runtime5a9d2ead6, 
 U8 complete: G1PASS,37/37newbrowser,24axe scans clean,56AFTERshots/0errors, corrected4originalU0Resultshots/0errors. Offline31,202,110B, naturalfight14.285s, CPU4interactive2,141.1–2,191.3ms(PARTIAL), idle0longtasks/draws0. Protectedsource/hashchecksPASS. PublishU8 then U9existingE2E/selfscore.
 
 U8 published draft#436, headd9264617b. ContinueU9 fulllegacyE2E then strictscore, requiredoneimprovementpass if<8.5, ledger+sync.
+
+U9 preliminary visualscore8.30/10 (u9/SCORE-BEFORE.md), compatibilityprovisionalpending421E2E. One mandatedimprovementpass selected: fallbackwarmth/originalambientlamps and nativebase64transport. FreezeapplicationuntilE2Efinishes, then G1+UI/offline/assetparityverification. U8reportledgerpushed eed4bddf4 via cleanown/tmp/ui-v3-ledger; unrelatedexistingledgerworktree leftunchanged.
+
+U9 final: runtime1651d011d; G1PASS1867webtests; existing421/421, new37/37, finalaffected16/16;axe24clean;56finalshots/0errors;291assetSHAexact;G9source/hashPASS;25savechecks. Offline31,203,011B/SHA2a7bef0551b40376c8d51fafbd35556e4870ababc08d06de60196d5a3d9c95a5; naturalfight13.983s. G6PARTIAL1358.6–1358.9ms vs223.3ms, idle0longtasks/draws0;G7+53B. Selfscore8.475/10 after exactlyoneadditionalpass; no further improvement cycle. FinallegacyHomeimage inspected;portraitissueFIXED. PublishU9, ledger, then sync. No STOP-UI;deadline not reached;both-lane-refresh false.
