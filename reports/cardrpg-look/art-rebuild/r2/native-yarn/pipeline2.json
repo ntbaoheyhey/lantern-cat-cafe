@@ -1,0 +1,134 @@
+{
+  "identity": {
+    "id": "yarn-giant",
+    "source": "/Users/bao/art/look-v3/local-generation/outputs/yarn-giant/raw-shell2/export/source.glb",
+    "sourceSha256": "8fbe4de9285ddfb7f0da6a8aeeb6d691608b0826e090003b690cd0bb66cfcb59",
+    "concept": "/Users/bao/taskbar-hero-cardrpg-b2/assets/source/look-v3/concepts/yarn-giant.png",
+    "conceptSha256": "227e47d33b48776cebe5b255e3f202d4821d15a8264be4f90fbbac39e21883db",
+    "config": "/Users/bao/taskbar-hero-cardrpg-b2/tools/cardrpg-look/art-rebuild/configs/yarn-giant.json",
+    "configSha256": "f3c6dfdebdbf3eebff3ba3bb5b1a74b52f2c2f5178ca08b28b1ad3ea65f891d0",
+    "recipeHashes": {
+      "prepare-unit.mjs": "83e8078c8aaac0e0683845e15b93f309f0ec6a3991110a6f5d15f0c19605e050",
+      "simplify-textured.mjs": "55f829f62a56bd1c7eff18aafbd289cf5c47bc01bcc7498f9e78e8329172b92d",
+      "rig-unit.mjs": "844d3835464181a7f278d3a36f4b87c81021872b23b45e529fb61ad0330b9a44",
+      "inspect-glb.py": "52741f64f63a60124858f3cb9942af4a954a00fbecfdeafd7f4cabba5b809984"
+    }
+  },
+  "startedAt": "2026-11-10T13:09:46.433Z",
+  "steps": [
+    {
+      "id": "source",
+      "command": "/Users/bao/tools/cardrpg-look/venv/bin/python",
+      "argv": [
+        "/Users/bao/taskbar-hero-cardrpg-b2/tools/cardrpg-look/art-rebuild/inspect-glb.py",
+        "/Users/bao/art/look-v3/local-generation/outputs/yarn-giant/raw-shell2/export/source.glb",
+        "--out",
+        "/Users/bao/art/look-v3/local-generation/outputs/yarn-giant/packed-shell2/source.json"
+      ],
+      "status": "DONE",
+      "startedAt": "2026-11-10T13:09:46.433Z",
+      "exitCode": 0,
+      "finishedAt": "2026-11-10T13:09:46.499Z",
+      "outputs": {
+        "/Users/bao/art/look-v3/local-generation/outputs/yarn-giant/packed-shell2/source.json": "fdbca7d2149b7961bbf227381b3129b3596bc1842de906bca6f920df4967948d"
+      }
+    },
+    {
+      "id": "simplify",
+      "command": "/opt/homebrew/Cellar/node@24/24.22.2/bin/node",
+      "argv": [
+        "/Users/bao/taskbar-hero-cardrpg-b2/tools/cardrpg-look/art-rebuild/simplify-textured.mjs",
+        "/Users/bao/art/look-v3/local-generation/outputs/yarn-giant/raw-shell2/export/source.glb",
+        "/Users/bao/art/look-v3/local-generation/outputs/yarn-giant/packed-shell2/surface.glb",
+        "0.22",
+        "0.006"
+      ],
+      "status": "DONE",
+      "startedAt": "2026-11-10T13:09:46.501Z",
+      "exitCode": 0,
+      "finishedAt": "2026-11-10T13:09:47.533Z",
+      "outputs": {
+        "/Users/bao/art/look-v3/local-generation/outputs/yarn-giant/packed-shell2/surface.glb": "a3f69ce663b55319247529cbaf5d3f777c934e54e3f85d47c356116cc7ba15ac",
+        "/Users/bao/art/look-v3/local-generation/outputs/yarn-giant/packed-shell2/surface.json": "98e24c48a1722d6d2c8f25dfdf098e3340046096b70d7fa98b08bbf4ed315186"
+      }
+    },
+    {
+      "id": "rig",
+      "command": "/opt/homebrew/Cellar/node@24/24.22.2/bin/node",
+      "argv": [
+        "/Users/bao/taskbar-hero-cardrpg-b2/tools/cardrpg-look/art-rebuild/rig-unit.mjs",
+        "/Users/bao/art/look-v3/local-generation/outputs/yarn-giant/packed-shell2/surface.glb",
+        "/Users/bao/art/look-v3/local-generation/outputs/yarn-giant/packed-shell2/rig.glb",
+        "/Users/bao/taskbar-hero-cardrpg-b2/tools/cardrpg-look/art-rebuild/configs/yarn-giant.json"
+      ],
+      "status": "DONE",
+      "startedAt": "2026-11-10T13:09:47.540Z",
+      "exitCode": 0,
+      "finishedAt": "2026-11-10T13:09:47.906Z",
+      "outputs": {
+        "/Users/bao/art/look-v3/local-generation/outputs/yarn-giant/packed-shell2/rig.glb": "26bddf77557913fda92fd078fc0a1db7ac9b69d925bb22bf67204d39fb86cea0",
+        "/Users/bao/art/look-v3/local-generation/outputs/yarn-giant/packed-shell2/rig.json": "f25d7ad23aa2ae5e158b7df98171e183c161d05f34f25bbb984bf17dae52faba"
+      }
+    },
+    {
+      "id": "pack",
+      "command": "/Users/bao/tools/cardrpg-look/npm/node_modules/.bin/gltf-transform",
+      "argv": [
+        "optimize",
+        "/Users/bao/art/look-v3/local-generation/outputs/yarn-giant/packed-shell2/rig.glb",
+        "/Users/bao/art/look-v3/local-generation/outputs/yarn-giant/packed-shell2/yarn-giant.glb",
+        "--compress",
+        "meshopt",
+        "--flatten",
+        "false",
+        "--join",
+        "false",
+        "--instance",
+        "false",
+        "--palette",
+        "false",
+        "--simplify",
+        "false",
+        "--prune",
+        "false",
+        "--texture-compress",
+        "webp",
+        "--texture-size",
+        "1024"
+      ],
+      "status": "DONE",
+      "startedAt": "2026-11-10T13:09:47.912Z",
+      "exitCode": 0,
+      "finishedAt": "2026-11-10T13:09:48.487Z",
+      "outputs": {
+        "/Users/bao/art/look-v3/local-generation/outputs/yarn-giant/packed-shell2/yarn-giant.glb": "1bf429655d57b2ed40a10e53424a03c84f20357795c0aa54c9fd97d7dbf95440"
+      }
+    },
+    {
+      "id": "inspect",
+      "command": "/Users/bao/tools/cardrpg-look/venv/bin/python",
+      "argv": [
+        "/Users/bao/taskbar-hero-cardrpg-b2/tools/cardrpg-look/art-rebuild/inspect-glb.py",
+        "/Users/bao/art/look-v3/local-generation/outputs/yarn-giant/packed-shell2/yarn-giant.glb",
+        "--out",
+        "/Users/bao/art/look-v3/local-generation/outputs/yarn-giant/packed-shell2/packed.json"
+      ],
+      "status": "DONE",
+      "startedAt": "2026-11-10T13:09:48.489Z",
+      "exitCode": 0,
+      "finishedAt": "2026-11-10T13:09:48.545Z",
+      "outputs": {
+        "/Users/bao/art/look-v3/local-generation/outputs/yarn-giant/packed-shell2/packed.json": "0a1751c36cec20c0d589a8b4b3fa7bbb6ca40fc56095d20f496cd0faadb5bb69"
+      }
+    }
+  ],
+  "runtimeAccepted": false,
+  "qualityStatus": "REVIEW_REQUIRED",
+  "toolchain": {
+    "node": "v24.22.2",
+    "platform": "darwin",
+    "architecture": "arm64"
+  },
+  "status": "LOCAL_STAGES_COMPLETE",
+  "finishedAt": "2026-11-10T13:09:48.546Z"
+}

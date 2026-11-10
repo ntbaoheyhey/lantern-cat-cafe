@@ -83,3 +83,5 @@ Local TRELLIS override 2026-11-10T07:30:26.787573+00:00: user-authorized Apple S
 2026-11-10T12:35Z Q3 bounded close: all4 already play with reviewed rigid/layered fallbacks; pilot appeal/menace7.75>=7.0, weighted pilot7.71 (not full roster). R1-DECISION.md records pipeline/known limits/evidence. Native Yarn trial continues as Q5; source quality refinement no longer blocks later phases.
 
 2026-11-10T12:56Z Q5: resumed original Yarn attempt1, exported847.754s. Six-view source REJECTED (fragmented topology already in raw checkpoint); no runtime replacement. One local raw-checkpoint repair queued session38356, no new inference. Source diagnostic distinguishes raw/reduced damage; closest-surface drift fixture queued. Keep working after bounded outcome.
+
+2026-11-10T13:11:57.335502+00:00 Q5: resumed existing Yarn raw repair; numerical PASS but visual REJECT. Second local shell repair from same saved voxel data passes .015 bound and source views; packed candidate pending matching battle/motion/faces(session36525). No new inference.

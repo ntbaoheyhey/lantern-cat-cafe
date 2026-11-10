@@ -9,3 +9,8 @@ Raw checkpoint:7,453,860unique triangles,620,120boundary edges,921,309nonmanifol
 Bounded local repair1 is queued from the raw checkpoint without inference: Blender voxel.002,volume preservation,smooth.1x1,100Ktarget. Export/poses remain unaccepted until inspection.
 
 The previous repair diagnostic measured nearest vertex, confounding geometry drift with tessellation density. The corrected diagnostic measures closest triangle surface in both directions and retains the same.015p95 bound. Four fixtures cover an unchanged plane, real.02 displacement, reversed winding and a point outside the surface. Execution waits for the same shared lease as the repair. Earlier Button failures remain preserved, not retroactively accepted.
+
+## Source recovery continuation
+First raw repair exported158.992s, drift passes but actual front/side/clay remain fragmented; source rejected. Four closest-surface fixtures pass without changing .015 bound.
+Second local attempt uses the already decoded voxel cells to construct an oriented shell before reducing it to100K. Geometry distance .006801/.002699p95; source front/side/clay now show continuous yarn bundles and readable eyes/crown. No inference or new image. Full source/failed files stay external; representative images and receipts are in repair1/ and shell2/.
+Source review allows packing, not runtime acceptance. Known imperfections: small voids between threads, broad soft surface texture, low eye luminance. Packed candidate1.298MB/61068tri, rigid modules; matching battle/pose/face review queued under shared lease.
