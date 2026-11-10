@@ -1,10 +1,8 @@
-# R-9 prompt integrity receipt — 2026-11-10T17:22:04.013498+00:00
+# R-9 prompt integrity receipt — 2026-11-10T17:43:05.816261+00:00
 
-`wc -c reports/cardrpg-look/art-rebuild/PROMPT.txt`: 19849 bytes
-`shasum -a 256 reports/cardrpg-look/art-rebuild/PROMPT.txt`: 9d38f98926eed534ccca2081adc3640129fbd61118547613d9b1789700351c84
-Original prompt prefix: 15239 bytes; SHA-256 825549b5639507ca17efb64368161d805c3f4673b73d77b02916efdb1910c962.
-Verified byte-for-byte against supplied attachment; exact R-9 and NON-STOP addenda retained.
-No separate saved copy of the controlling prompt found; older superseded prompts preserved.
+`wc -c reports/cardrpg-look/art-rebuild/PROMPT.txt`: 24774 bytes
+`shasum -a 256 reports/cardrpg-look/art-rebuild/PROMPT.txt`: 57f6e9ac2db941235c94746f73d1e4e2d25eaf6d06dd9ebbe420d2e4bc9bef03
+Exact current attachment copied byte for byte; older prompts/addenda remain preserved.
 
 # Lane B current state
 
@@ -49,3 +47,10 @@ Typecheck/lint/seven touched web tests PASS. No new mesh accepted.
 Unreviewed Clover/Yarn GLBs stay uncommitted. Existing preview HTML and segmentation proxy are unrelated retained work.
 Native batch output folders include Panko/Mallow/Cinnamon/Velvet/Biscuit; do not restart inference.
 Current instructions and active progress: PROMPT.txt, QUEUE.md, HANDOFF.md.
+
+## Resume 2026-11-10T17:39:56.755618+00:00
+HEAD equals fetched origin at 443edb96d. P1–P5 done; P6 final49+6 casts and33tests completed in previous session; visual acceptance remains. No native runner/lease; ports5920/5922 owned by saved Python static servers. Disk151GiB free.
+Full current dirty inventory saved in RESUME-DIRTY-2026-11-10.txt; all changes retained, unreviewed GLBs excluded.
+
+## Resume 2026-11-10T17:43:05.816261+00:00
+HEAD equals fetched origin at 443edb96d5f50a1be05cf57c03e1d3d389effd28. P1–P5 done; P6 final49+6cast audit and33tests reused, visual review pending. No native runner; current servers50023/5920 and92836/5922. Disk151GiB free. Full dirty inventory RESUME-DIRTY-2026-11-11.txt; no work discarded.

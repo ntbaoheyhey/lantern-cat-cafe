@@ -36,3 +36,14 @@ P5 batch cuối đã qua kiểm tra tự động; đang duyệt ảnh trước k
 
 P5 hoàn tất: đủ 13 quái/boss từ concept gốc; 4 boss có nhịp thở, mắt sáng, hạt sáng và chuyển pha, reduced motion đạt.
 19 test, parity 5 seed và kiểm tra hai cỡ màn hình đều đạt; bản chung A6 32,96 MB. Tiếp tục P6 ngay.
+
+Đã đối chiếu hồ sơ sau bàn giao: prompt gốc và hai addendum nguyên văn, đã push; không ghi trùng hoặc làm lại mục đã tick.
+Tiếp tục P6 lượt duyệt cuối; P7/P8 đã chuẩn bị, bốn crop card cần khung toàn thân.
+
+11/11: Tiếp tục đúng P6 đang dở; P1–P5 giữ nguyên hoàn tất, toàn bộ thay đổi chưa commit được bảo toàn.
+Không còn runner native;49chiêu và6mẫu màn hình nhỏ đã kiểm tra xong ở phiên trước,33test đạt.
+Đang duyệt ảnh P6 và bổ sung nghiên cứu còn thiếu; prompt mới được lưu nguyên văn, bản cũ giữ trong archive.
+
+11/11: Đã kiểm tra lại Git/tiến trình/dung lượng; nhánh B bằng origin, không còn runner native.
+Giữ nguyên P1–P5 đã hoàn tất và toàn bộ thay đổi đang dở; tiếp tục duyệt hình P6 từ kết quả đã lưu.
+Prompt hiện tại được lưu nguyên văn; bổ sung nghiên cứu còn thiếu, không chạy lại các gate đã đạt.
