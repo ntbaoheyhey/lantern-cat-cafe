@@ -1,0 +1,66 @@
+{"lock":"acquired","lane":"U","pid":58252,"startedAt":"2026-11-09T23:07:52.557Z","task":"U6-verified"}
+
+Running 3 tests using 1 worker
+
+(node:58278) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 ../../tools/ui-v3/specs/recruit-reveal.spec.ts:3:5 › recruit has four beats under four seconds, saved parity, second-pull skip and odds (4.6s)
+  ✓  2 ../../tools/ui-v3/specs/recruit-reveal.spec.ts:17:5 › ten recruits keep legacy results, odds and pity; summary sorts rarity (6.2s)
+  ✓  3 ../../tools/ui-v3/specs/recruit-reveal.spec.ts:30:5 › reduced-motion recruit goes straight to saved results (1.6s)
+
+  3 passed (12.8s)
+typecheck 0
+lint 2
+apps/web lint: ../../tools/cardrpg-big2/MechanicsLab.tsx(1,59): error TS2307: Cannot find module 'react' or its corresponding type declarations.
+apps/web lint: ../../tools/cardrpg-big2/MechanicsLab.tsx(3,54): error TS2307: Cannot find module '@taskbar-hero/game-rules/src/cardrpg/depth/auto-extras/index' or its corresponding type declarations.
+apps/web lint: ../../tools/cardrpg-big2/MechanicsLab.tsx(19,10): error TS2875: This JSX tag requires the module path 'react/jsx-runtime' to exist, but none could be found. Make sure you have types for the appropriate package installed.
+apps/web lint: ../../tools/cardrpg-big2/MechanicsLab.tsx(22,243): error TS7006: Parameter 'e' implicitly has an 'any' type.
+apps/web lint: ../../tools/cardrpg-big2/MechanicsLab.tsx(22,362): error TS7006: Parameter 'e' implicitly has an 'any' type.
+apps/web lint: ../../tools/cardrpg-big2/MechanicsLab.tsx(22,397): error TS7006: Parameter 'e' implicitly has an 'any' type.
+apps/web lint: ../../tools/cardrpg-big2/MechanicsLab.tsx(22,399): error TS7006: Parameter 'i' implicitly has an 'any' type.
+apps/web lint: ../../tools/cardrpg-big2/MechanicsLab.tsx(34,107): error TS7006: Parameter 'n' implicitly has an 'any' type.
+apps/web lint: ../../tools/cardrpg-big2/MechanicsLab.tsx(39,38): error TS7006: Parameter 'c' implicitly has an 'any' type.
+apps/web lint: ../../tools/cardrpg-big2/MechanicsLab.tsx(40,18): error TS7006: Parameter 'h' implicitly has an 'any' type.
+apps/web lint: ../../tools/cardrpg-big2/ReviewStudio.tsx(2,67): error TS2307: Cannot find module 'react' or its corresponding type declarations.
+apps/web lint: ../../tools/cardrpg-big2/ReviewStudio.tsx(30,48): error TS7006: Parameter 'a' implicitly has an 'any' type.
+apps/web lint: ../../tools/cardrpg-big2/ReviewStudio.tsx(30,94): error TS7006: Parameter 'a' implicitly has an 'any' type.
+apps/web lint: ../../tools/cardrpg-big2/ReviewStudio.tsx(31,9): error TS2875: This JSX tag requires the module path 'react/jsx-runtime' to exist, but none could be found. Make sure you have types for the appropriate package installed.
+apps/web lint: ../../tools/cardrpg-big2/ReviewStudio.tsx(33,72): error TS7006: Parameter 'a' implicitly has an 'any' type.
+apps/web lint: ../../tools/cardrpg-big2/ReviewStudio.tsx(34,151): error TS7006: Parameter 'a' implicitly has an 'any' type.
+apps/web lint: ../../tools/cardrpg-big2/ReviewStudio.tsx(34,212): error TS2322: Type 'unknown' is not assignable to type 'Key | null | undefined'.
+apps/web lint: ../../tools/cardrpg-big2/ReviewStudio.tsx(34,221): error TS2322: Type 'unknown' is not assignable to type 'string | number | readonly string[] | undefined'.
+apps/web lint: ../../tools/cardrpg-big2/ReviewStudio.tsx(34,255): error TS7006: Parameter 'a' implicitly has an 'any' type.
+apps/web lint: ../../tools/cardrpg-big2/ReviewStudio.tsx(35,126): error TS7006: Parameter 'a' implicitly has an 'any' type.
+apps/web lint: ../../tools/cardrpg-big2/ReviewStudio.tsx(60,304): error TS7006: Parameter 'value' implicitly has an 'any' type.
+apps/web lint: Failed
+/Users/bao/taskbar-hero-ui-v3/apps/web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/web@0.0.0 lint: `tsc --noEmit`
+Exit status 2
+test 0
+build 2
+apps/web build: ../../tools/cardrpg-big2/MechanicsLab.tsx(1,59): error TS2307: Cannot find module 'react' or its corresponding type declarations.
+apps/web build: ../../tools/cardrpg-big2/MechanicsLab.tsx(3,54): error TS2307: Cannot find module '@taskbar-hero/game-rules/src/cardrpg/depth/auto-extras/index' or its corresponding type declarations.
+apps/web build: ../../tools/cardrpg-big2/MechanicsLab.tsx(19,10): error TS2875: This JSX tag requires the module path 'react/jsx-runtime' to exist, but none could be found. Make sure you have types for the appropriate package installed.
+apps/web build: ../../tools/cardrpg-big2/MechanicsLab.tsx(22,243): error TS7006: Parameter 'e' implicitly has an 'any' type.
+apps/web build: ../../tools/cardrpg-big2/MechanicsLab.tsx(22,362): error TS7006: Parameter 'e' implicitly has an 'any' type.
+apps/web build: ../../tools/cardrpg-big2/MechanicsLab.tsx(22,397): error TS7006: Parameter 'e' implicitly has an 'any' type.
+apps/web build: ../../tools/cardrpg-big2/MechanicsLab.tsx(22,399): error TS7006: Parameter 'i' implicitly has an 'any' type.
+apps/web build: ../../tools/cardrpg-big2/MechanicsLab.tsx(34,107): error TS7006: Parameter 'n' implicitly has an 'any' type.
+apps/web build: ../../tools/cardrpg-big2/MechanicsLab.tsx(39,38): error TS7006: Parameter 'c' implicitly has an 'any' type.
+apps/web build: ../../tools/cardrpg-big2/MechanicsLab.tsx(40,18): error TS7006: Parameter 'h' implicitly has an 'any' type.
+apps/web build: ../../tools/cardrpg-big2/ReviewStudio.tsx(2,67): error TS2307: Cannot find module 'react' or its corresponding type declarations.
+apps/web build: ../../tools/cardrpg-big2/ReviewStudio.tsx(30,48): error TS7006: Parameter 'a' implicitly has an 'any' type.
+apps/web build: ../../tools/cardrpg-big2/ReviewStudio.tsx(30,94): error TS7006: Parameter 'a' implicitly has an 'any' type.
+apps/web build: ../../tools/cardrpg-big2/ReviewStudio.tsx(31,9): error TS2875: This JSX tag requires the module path 'react/jsx-runtime' to exist, but none could be found. Make sure you have types for the appropriate package installed.
+apps/web build: ../../tools/cardrpg-big2/ReviewStudio.tsx(33,72): error TS7006: Parameter 'a' implicitly has an 'any' type.
+apps/web build: ../../tools/cardrpg-big2/ReviewStudio.tsx(34,151): error TS7006: Parameter 'a' implicitly has an 'any' type.
+apps/web build: ../../tools/cardrpg-big2/ReviewStudio.tsx(34,212): error TS2322: Type 'unknown' is not assignable to type 'Key | null | undefined'.
+apps/web build: ../../tools/cardrpg-big2/ReviewStudio.tsx(34,221): error TS2322: Type 'unknown' is not assignable to type 'string | number | readonly string[] | undefined'.
+apps/web build: ../../tools/cardrpg-big2/ReviewStudio.tsx(34,255): error TS7006: Parameter 'a' implicitly has an 'any' type.
+apps/web build: ../../tools/cardrpg-big2/ReviewStudio.tsx(35,126): error TS7006: Parameter 'a' implicitly has an 'any' type.
+apps/web build: ../../tools/cardrpg-big2/ReviewStudio.tsx(60,304): error TS7006: Parameter 'value' implicitly has an 'any' type.
+apps/web build: Failed
+/Users/bao/taskbar-hero-ui-v3/apps/web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @taskbar-hero/web@0.0.0 build: `tsc --noEmit && vite build`
+Exit status 2
+{"lock":"released","pid":58252,"task":"U6-verified"}

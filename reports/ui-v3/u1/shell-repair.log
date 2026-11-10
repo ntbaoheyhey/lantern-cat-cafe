@@ -1,0 +1,11 @@
+{"lock":"acquired","lane":"U","pid":27912,"startedAt":"2026-11-09T22:14:12.688Z","task":"ui-v3-u1-shell-repair"}
+
+Running 2 tests using 1 worker
+
+(node:28614) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 ../../tools/ui-v3/specs/shell.spec.ts:2:5 › v3 shell has five dock buttons, six primary destinations and no rail (831ms)
+  ✓  2 ../../tools/ui-v3/specs/shell.spec.ts:10:5 › legacy opt-out still renders the original rail (524ms)
+
+  2 passed (1.7s)
+{"lock":"released","pid":27912,"task":"ui-v3-u1-shell-repair"}

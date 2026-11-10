@@ -1,0 +1,14 @@
+{"lock":"acquired","lane":"U","pid":75535,"startedAt":"2026-11-09T23:47:43.955Z","task":"U8-baseline-readiness-final"}
+{"pageError":"Failed to fetch dynamically imported module: http://127.0.0.1:5951/apps/web/src/game/cardrpg/depth/Battle.tsx"}
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+page.waitForFunction: Timeout 30000ms exceeded.
+    at /private/tmp/ui-v3-baseline-result.mjs:9:220 {
+  log: [],
+  name: 'TimeoutError'
+}
+
+Node.js v24.22.2
+{"lock":"released","pid":75535,"task":"U8-baseline-readiness-final"}

@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "method": "Byte-for-byte source identity against S6 plus every recorded production source hash; reuse complete measured receipts, no new acceptance sample.",
+  "base": "1195b13fa",
+  "files": 231,
+  "recordedProductionFiles": 53,
+  "measuredOffRoutes": 8250,
+  "measuredFallbackRoutes": 45,
+  "baselineAndHistorical": "PASS",
+  "receiptSources": [
+    "reports/cardrpg-big/skills-v5/s6/off/checks.json",
+    "reports/cardrpg-big/skills-v5/s6/fallback-checks.json"
+  ],
+  "off": "47477251b3d20ab602bee5c55a56cdd661e111b1386e298e0c9bc67737fecfa3",
+  "fallbackBattles": "c29ec7d2cfb9fbd46aa32b363ade8bc84b3100d558bb646aa4ea04b80f49d031",
+  "fallbackRoutes": "b85feeb659f013dfd1817d452d233d6c48f8f3e1402e4c5625bf760e49341540",
+  "reportSha256": "f6e2ff3c10b8f53192a843313ea535622b45019da8c729233e7f99c50a0cc7a6"
+}

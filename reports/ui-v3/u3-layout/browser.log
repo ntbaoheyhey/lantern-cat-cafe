@@ -1,0 +1,24 @@
+{"lock":"acquired","lane":"U","pid":39544,"startedAt":"2026-11-09T22:35:24.176Z","task":"u3-layout-repair"}
+typecheck 0
+lint 0
+test 0
+build 0
+
+Running 11 tests using 1 worker
+
+(node:40631) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 ../../tools/ui-v3/specs/dev-gating.spec.ts:2:37 › review tools require dev=1 in v3 (2.2s)
+  ✓   2 ../../tools/ui-v3/specs/dev-gating.spec.ts:2:37 › review tools require dev=1 in legacy (1.2s)
+  ✓   3 ../../tools/ui-v3/specs/first-five-seconds.spec.ts:2:68 › primary action is largest and visible 1024 (1.2s)
+  ✓   4 ../../tools/ui-v3/specs/first-five-seconds.spec.ts:2:68 › primary action is largest and visible 1280 (1.7s)
+  ✓   5 ../../tools/ui-v3/specs/first-five-seconds.spec.ts:2:68 › primary action is largest and visible 1440 (1.6s)
+  ✓   6 ../../tools/ui-v3/specs/first-five-seconds.spec.ts:7:5 › fallback uses current crew, no home canvas, and model-backed tips (905ms)
+  ✓   7 ../../tools/ui-v3/specs/reachability.spec.ts:2:5 › all old destinations retain model data within two clicks (2.4s)
+  ✓   8 ../../tools/ui-v3/specs/reachability.spec.ts:10:5 › Field guide uses the shared eight V5 names (1.2s)
+  ✓   9 ../../tools/ui-v3/specs/relic-chip.spec.ts:2:5 › Relic chip persists across sheets and preserves read-only Fuji copy (1.4s)
+  ✓  10 ../../tools/ui-v3/specs/shell.spec.ts:2:5 › v3 shell has five dock buttons, six primary destinations and no rail (911ms)
+  ✓  11 ../../tools/ui-v3/specs/shell.spec.ts:10:5 › legacy opt-out still renders the original rail (490ms)
+
+  11 passed (15.7s)
+{"lock":"released","pid":39544,"task":"u3-layout-repair"}

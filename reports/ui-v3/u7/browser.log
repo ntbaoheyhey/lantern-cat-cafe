@@ -1,0 +1,108 @@
+{"lock":"acquired","lane":"U","pid":60802,"startedAt":"2026-11-09T23:11:30.348Z","task":"U7-browser"}
+
+Running 23 tests using 1 worker
+
+(node:61878) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 ../../tools/ui-v3/specs/dev-gating.spec.ts:2:37 › review tools require dev=1 in v3 (2.1s)
+  ✓   2 ../../tools/ui-v3/specs/dev-gating.spec.ts:2:37 › review tools require dev=1 in legacy (987ms)
+  ✓   3 ../../tools/ui-v3/specs/first-five-seconds.spec.ts:2:68 › primary action is largest and visible 1024 (1.5s)
+  ✓   4 ../../tools/ui-v3/specs/first-five-seconds.spec.ts:2:68 › primary action is largest and visible 1280 (1.5s)
+  ✓   5 ../../tools/ui-v3/specs/first-five-seconds.spec.ts:2:68 › primary action is largest and visible 1440 (1.5s)
+  ✓   6 ../../tools/ui-v3/specs/first-five-seconds.spec.ts:7:5 › fallback uses current crew, no home canvas, and model-backed tips (829ms)
+  ✘   7 ../../tools/ui-v3/specs/polish.spec.ts:2:5 › Home fixed controls and claim dots reflect actionable model state (15.9s)
+(node:61946) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   8 ../../tools/ui-v3/specs/polish.spec.ts:10:5 › keyboard cycles a sheet and returns focus; reduced motion removes home animation (795ms)
+  ✘   9 ../../tools/ui-v3/specs/polish.spec.ts:14:5 › first real practice fight wins within 25 seconds using two clicks (27.4s)
+(node:62073) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  10 ../../tools/ui-v3/specs/polish.spec.ts:17:110 › no overflow or clipped controls on 1024 (2.5s)
+  ✓  11 ../../tools/ui-v3/specs/polish.spec.ts:17:110 › no overflow or clipped controls on 1280 (2.5s)
+  ✓  12 ../../tools/ui-v3/specs/polish.spec.ts:17:110 › no overflow or clipped controls on 1440 (2.4s)
+  ✓  13 ../../tools/ui-v3/specs/polish.spec.ts:17:110 › no overflow or clipped controls on 1920 (2.5s)
+  ✓  14 ../../tools/ui-v3/specs/polish.spec.ts:17:110 › no overflow or clipped controls off 1024 (2.6s)
+  ✓  15 ../../tools/ui-v3/specs/polish.spec.ts:17:110 › no overflow or clipped controls off 1280 (2.4s)
+  ✓  16 ../../tools/ui-v3/specs/polish.spec.ts:17:110 › no overflow or clipped controls off 1440 (2.4s)
+  ✓  17 ../../tools/ui-v3/specs/polish.spec.ts:17:110 › no overflow or clipped controls off 1920 (2.4s)
+  ✓  18 ../../tools/ui-v3/specs/polish.spec.ts:24:5 › collecting Night tips shows committed currency feedback (798ms)
+  ✓  19 ../../tools/ui-v3/specs/recruit-reveal.spec.ts:3:5 › recruit has four beats under four seconds, saved parity, second-pull skip and odds (4.6s)
+  ✓  20 ../../tools/ui-v3/specs/recruit-reveal.spec.ts:17:5 › ten recruits keep legacy results, odds and pity; summary sorts rarity (3.4s)
+  ✓  21 ../../tools/ui-v3/specs/recruit-reveal.spec.ts:30:5 › reduced-motion recruit goes straight to saved results (1.6s)
+  ✓  22 ../../tools/ui-v3/specs/shell.spec.ts:2:5 › v3 shell has five dock buttons, six primary destinations and no rail (801ms)
+  ✓  23 ../../tools/ui-v3/specs/shell.spec.ts:10:5 › legacy opt-out still renders the original rail (448ms)
+
+
+  1) ../../tools/ui-v3/specs/polish.spec.ts:2:5 › Home fixed controls and claim dots reflect actionable model state 
+
+    Error: expect(locator).toHaveCount(expected) failed
+
+    Locator:  locator('[data-home-destination="Recruit"] .uv-dot')
+    Expected: 0
+    Received: 1
+    Timeout:  15000ms
+
+    Call log:
+      - Expect "toHaveCount" locator('[data-home-destination="Recruit"] .uv-dot') with timeout 15000ms
+      - waiting for locator('[data-home-destination="Recruit"] .uv-dot')
+        34 × locator resolved to 1 element
+           - unexpected value "1"
+
+
+      3 |  await page.goto('?ui=v3');await page.locator('.uv-shell').waitFor();
+      4 |  await page.evaluate(()=>{const m=window.__depthReview!;m.state.freeInvite=true;m.state.account.currencies.stamps=1;for(const q of Object.values(m.state.account.quests)){q.progress=999;q.claimed=false}m.notify(false)});
+    > 5 |  await expect(page.locator('[data-home-destination="Recruit"] .uv-dot')).toHaveCount(0);await expect(page.locator('[data-home-destination="Team"] .uv-dot')).toHaveCount(0);
+        |                                                                          ^
+      6 |  expect(await page.locator('.uv-hud button,.uv-events button,.uv-dock button').count()).toBeLessThanOrEqual(10);
+      7 |  await page.evaluate(()=>{const m=window.__depthReview!;m.start(1,'campaign',1);m.go('hub')});
+      8 |  await expect(page.locator('.uv-events button')).toHaveCount(0);await expect(page.locator('.uv-dock .uv-dot')).toHaveCount(0);
+        at /Users/bao/taskbar-hero-ui-v3/tools/ui-v3/specs/polish.spec.ts:5:74
+
+    Error Context: ../../reports/ui-v3/test-results/polish-Home-fixed-controls-ecfa8-lect-actionable-model-state/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../reports/ui-v3/test-results/polish-Home-fixed-controls-ecfa8-lect-actionable-model-state/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace ../../reports/ui-v3/test-results/polish-Home-fixed-controls-ecfa8-lect-actionable-model-state/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) ../../tools/ui-v3/specs/polish.spec.ts:14:5 › first real practice fight wins within 25 seconds using two clicks 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: 'Victory', exact: true })
+    Expected: visible
+    Timeout: 25000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('heading', { name: 'Victory', exact: true }) with timeout 25000ms
+      - waiting for getByRole('heading', { name: 'Victory', exact: true })
+
+
+      13 | });
+      14 | test('first real practice fight wins within 25 seconds using two clicks',async({page})=>{
+    > 15 |  await page.goto('?ui=v3');await page.getByRole('button',{name:'Night Patrol'}).click();const started=Date.now();await page.getByRole('button',{name:'Fight',exact:true}).click();await expect(page.getByRole('heading',{name:'Victory',exact:true})).toBeVisible({timeout:25000});expect(Date.now()-started).toBeLessThanOrEqual(25000);await page.getByRole('button',{name:'Next',exact:true}).click();await expect(page.getByRole('button',{name:'Night Patrol'})).toBeVisible();
+         |                                                                                                                                                                                                                                                       ^
+      16 | });
+      17 | for(const look of ['on','off'])for(const [width,height]of [[1024,600],[1280,720],[1440,900],[1920,1080]])test(`no overflow or clipped controls ${look} ${width}`,async({page})=>{
+      18 |  await page.setViewportSize({width:width!,height:height!});await page.goto(`?ui=v3&look=${look}`);await page.locator('.uv-shell').waitFor();
+        at /Users/bao/taskbar-hero-ui-v3/tools/ui-v3/specs/polish.spec.ts:15:247
+
+    Error Context: ../../reports/ui-v3/test-results/polish-first-real-practice-bf2ce-25-seconds-using-two-clicks/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../reports/ui-v3/test-results/polish-first-real-practice-bf2ce-25-seconds-using-two-clicks/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace ../../reports/ui-v3/test-results/polish-first-real-practice-bf2ce-25-seconds-using-two-clicks/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2 failed
+    ../../tools/ui-v3/specs/polish.spec.ts:2:5 › Home fixed controls and claim dots reflect actionable model state 
+    ../../tools/ui-v3/specs/polish.spec.ts:14:5 › first real practice fight wins within 25 seconds using two clicks 
+  21 passed (1.4m)
+{"lock":"released","pid":60802,"task":"U7-browser"}

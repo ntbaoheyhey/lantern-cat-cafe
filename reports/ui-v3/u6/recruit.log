@@ -1,0 +1,55 @@
+{"lock":"acquired","lane":"U","pid":54272,"startedAt":"2026-11-09T23:02:38.525Z","task":"U6-recruit"}
+
+Running 3 tests using 1 worker
+
+(node:56009) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 ../../tools/ui-v3/specs/recruit-reveal.spec.ts:3:5 › recruit has four beats under four seconds, saved parity, second-pull skip and odds (1.0s)
+(node:56015) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  2 ../../tools/ui-v3/specs/recruit-reveal.spec.ts:17:5 › ten recruits keep legacy results, odds and pity; summary sorts rarity (1.0m)
+(node:56315) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  3 ../../tools/ui-v3/specs/recruit-reveal.spec.ts:30:5 › reduced-motion recruit goes straight to saved results (1.7s)
+
+
+  1) ../../tools/ui-v3/specs/recruit-reveal.spec.ts:3:5 › recruit has four beats under four seconds, saved parity, second-pull skip and odds 
+
+    Error: page.evaluate: TypeError: Failed to execute 'observe' on 'MutationObserver': parameter 1 is not of type 'Node'.
+        at eval (eval at evaluate (:370:30), <anonymous>:11:8)
+        at UtilityScript.evaluate (<anonymous>:372:16)
+        at UtilityScript.<anonymous> (<anonymous>:1:44)
+        at eval (eval at evaluate (:370:30), <anonymous>:11:8)
+        at UtilityScript.evaluate (<anonymous>:372:16)
+        at UtilityScript.<anonymous> (<anonymous>:1:44)
+        at /Users/bao/taskbar-hero-ui-v3/tools/ui-v3/specs/recruit-reveal.spec.ts:7:13
+
+    Error Context: ../../reports/ui-v3/test-results/recruit-reveal-recruit-has-83652-y-second-pull-skip-and-odds/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../reports/ui-v3/test-results/recruit-reveal-recruit-has-83652-y-second-pull-skip-and-odds/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace ../../reports/ui-v3/test-results/recruit-reveal-recruit-has-83652-y-second-pull-skip-and-odds/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) ../../tools/ui-v3/specs/recruit-reveal.spec.ts:17:5 › ten recruits keep legacy results, odds and pity; summary sorts rarity 
+
+    Test timeout of 60000ms exceeded.
+
+    Error Context: ../../reports/ui-v3/test-results/recruit-reveal-ten-recruit-ff5a6-d-pity-summary-sorts-rarity/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../reports/ui-v3/test-results/recruit-reveal-ten-recruit-ff5a6-d-pity-summary-sorts-rarity/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace ../../reports/ui-v3/test-results/recruit-reveal-ten-recruit-ff5a6-d-pity-summary-sorts-rarity/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2 failed
+    ../../tools/ui-v3/specs/recruit-reveal.spec.ts:3:5 › recruit has four beats under four seconds, saved parity, second-pull skip and odds 
+    ../../tools/ui-v3/specs/recruit-reveal.spec.ts:17:5 › ten recruits keep legacy results, odds and pity; summary sorts rarity 
+  1 passed (1.1m)
+{"lock":"released","pid":54272,"task":"U6-recruit"}
