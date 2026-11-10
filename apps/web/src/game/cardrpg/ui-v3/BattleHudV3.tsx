@@ -1,7 +1,7 @@
 import {lazy,Suspense,useEffect,useMemo,useRef,useState} from 'react';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import type {DepthModel} from '../depth/model';
-import {portraitProps} from '../depth/assets';
+import {artPropsA6 as portraitProps} from './art-a6';
 import {skillReadinessV4} from '../../squad/turn3d/card-v4-presentation';
 import {applyV5Presentation,REACTION_WORDS,v5SourceForPlan} from '../../squad/turn3d/card-v5-events';
 import {statusImpactLabels,statusPresentation} from '../../squad/turn3d/card-status-beats';

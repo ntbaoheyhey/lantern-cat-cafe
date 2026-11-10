@@ -1,4 +1,23 @@
-# Lane A6 queue
+# Lane A6 quality queue
+
+- [x] Q13a Onboard art (2 h): copy concept art/portraits into the app (WebP, lean sizes), one art manifest used by every screen, fallbacks to the old model render if a unit has no art yet. Done: every cat card, team slot, Bond Book entry, recruit result and enemy preview shows the 2D art.
+- [ ] Q13b Look system (6 h): LOOK-CHECKLIST.md, design tokens (palette, frames per rarity, buttons, panels, popups, motion timings) in one place, then restyle: cafe home, top HUD, dock, Cats, Team/formation, Prepare, Bag/gear, Daily, Tower, Relic, result screens. Done: LOOK-SCORES.md all >= 7 on these screens.
+- [ ] Q13c Recruit reveal (4 h): card backs deal in, glow colour tease per rarity, flip in rarity order, Epic+ full-screen splash with the concept art, rarity colour burst and particles (DOM/CSS or small canvas inside the DOM layer), name plate, stars, "New!" stamp; x10 summary grid with rarity frames; duplicate -> shards shown with count-up. Respect reduced motion. Done: score >= 8 and a 10-pull feels exciting in a real click run.
+- [ ] Q13d Campaign map (4 h): illustrated night-street route (painted/generated ORIGINAL background or layered CSS/SVG scenery), nodes on a winding path, current node pulses, stars under cleared nodes, chapter boss node larger with its art, chest milestones along the path. Keep all existing route/star logic. Done: score >= 8.
+- [ ] Q13e Battle HUD (4 h): portrait cards with 2D art, HP bar with delayed damage trail, rage bar that fills visibly and glows when full, ultimate cut-in (full-body art slides in, skill name, 0.6-0.9 s at x1, shorter at x2/x3, skipped by "skip"), boss HP bar at top with phase pips, clean result screen (stars earned one by one, rewards with icons, Next / Retry / Upgrade hint). Write the camera/scale request to A6-OUTBOX. Done: score >= 8 on normal, boss and ultimate screenshots.
+- [ ] Q13f Difficulty curve (3 h): Recommended Power near the player's: stages 1-1..1-4 at 0.6-0.8x of a new player's expected power, 1-5..1-9 at 0.9-1.05x, chapter boss 1.1-1.2x; later chapters keep a similar saw-tooth. Normal wins end with 20-60% team HP left. Forecast labels only Favoured / Even / Risky (never "100%"). First real loss for a new player between minute 12 and 20; the loss screen names one cheap fix; the retry after that fix wins within 2 tries. Bot target: 1-3 losses in the first 30 minutes, no stuck player, reward gap median <= 60 s. Then one real-click 30-minute run to confirm.
+- [ ] Q13g Pacing in the browser (3 h): normal battle 20-35 s at x1 measured in the real browser (median of >= 8 fights), boss 45-90 s. If animation beats cause it, shorten ordinary beats (keep ultimates/boss beats); if canvas frame time causes it, measure and write the numbers in A6-OUTBOX for B, keep the A-side fix, move on.
+- [ ] Q14 Integration (4 h, repeat whenever B publishes a new tip): `git merge --no-ff origin/codex/cardrpg-art-r1-2026-11-09` into your branch (merge commits only; A-owned rules/screens/HUD take A; B-owned canvas/art/VFX/camera take B; B's old left-nav shell must never show in your build). Wire B's puppet units and VFX; re-check LOOK-SCORES on battle screens. Build the offline demo docs/cardrpg-a6/index.html (<= 40 MB) and docs/cardrpg-a6/CHAY-DEMO.md (Vietnamese, 10 lines: how to open, what to click in 5 minutes for judges). Merge again after B's final tip (B's report is due 20 Nov 12:00 UTC; take whatever is published by 19 Nov 18:00 UTC for the final demo, and re-merge later tips if time remains).
+- [ ] Q15 Final check (by 19 Nov 18:00 UTC): fresh seeds 60001-60500 once with the sim, full E2E, one real-click 30-minute run, screenshots of every screen at 1440x900 and 1280x720, one 60-90 s clip of a first session and one of a boss fight with ultimates.
+- [ ] Q16 Report (by 20 Nov 06:00 UTC): reports/cardrpg-a6/A6-REPORT.md (<= 2 pages: what a player gets now, before/after screenshots of home/recruit/map/battle, LOOK-SCORES summary, difficulty numbers, known issues), STATUS-VI.md summary, PR #438 description. Then improve the lowest LOOK-SCORES row until 20 Nov 12:00 UTC.
+
+## Operating rules
+
+Follow TASK.md R-1–R-8. One agent; preserve systems; B merge commits allowed, PR merge/deploy/main/force push forbidden.
+Check INBOX and STOP-A6 between items. Typecheck, lint, touched tests and inspected screenshots per item.
+Heavy work holds timing.lock for <=20 minutes. Ports 5960–5963; temporary files /tmp/cardrpg-a6-*.
+
+## Completed history
 
 - [x] Q0 Setup — draft #438; completed in STEP 1.
 - [x] Q1  Sim tool (3 h): tools/cardrpg-a6/sim.mjs per R-8, plus the new-player bot (plays the real rules with the real economy, follows hints). Record BEFORE numbers for G1-G5 in reports/cardrpg-a6/BASELINE.md (one table).
@@ -13,35 +32,3 @@
 - [x] Q10 Relic treasure slot (by 17 Nov 06:00 UTC): read-only Fuji Relics (existing chain package, RelicNFT 0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D) -> team-wide bonus, capped (+8% total max), "Relic Fuji" badge with explorer link; fixture in the offline demo. No contract or server change.
 - [x] Q11 First 30 minutes (by 17 Nov 18:00 UTC): unlock order and celebrations (P11), hand pointer for the first 3 actions, chapter-1 difficulty curve, copy rewrite (short Vietnamese-friendly English UI text; keep i18n structure if present). G3 must pass here.
 - [x] Q12 Balance + economy pass (by 18 Nov 12:00 UTC): tune to G1-G5 with the sim. Then one real-click 30-minute run.
-- [ ] Q13 Screen polish vs section 6 (by 18 Nov 18:00 UTC): juice (P12), layout above the fold at 1280x720, contrast, empty states, loading states. G7.
-- [ ] Q14 Integration (by 19 Nov 12:00 UTC): merge the newest PUBLISHED lane B tip (draft #427 branch or newer, check B's STATE/A-OUTBOX) with merge commits only; A-owned rules/screens take A, B-owned canvas/art takes B. Build offline demo docs/cardrpg-a6/index.html (<= 40 MB) and docs/cardrpg-a6/CHAY-DEMO.md (Vietnamese, 10 lines: how to open, what to click in 5 minutes for judges).
-- [ ] Q15 Final check (by 19 Nov 18:00 UTC): fresh seeds 60001-60500 once, full E2E, real-click 30-minute run, screenshots of every screen at 1440x900 and 1280x720, one 60-90 s clip of a first session and one of a boss with ultimates.
-- [ ] Q16 Report (by 20 Nov 06:00 UTC): reports/cardrpg-a6/A6-REPORT.md (<= 2 pages: what a player now gets, gates table with BEFORE/AFTER, self-score, known issues), STATUS-VI.md summary, PR description. Then loop: improve the lowest self-score row until 2026-11-20 12:00 UTC.
-
-## Operating rules
-- Work the first unfinished item; update INBOX, status, state, handoff and draft #438 at each checkpoint, then continue.
-- One agent; no model requests, app control, other-worktree writes, merge/deploy/main push/force-push/secrets.
-- Use only tools/cardrpg-a6/sim.mjs for simulations; dev seeds 1–500, fresh 60001–60500 once at Q15.
-- Per item: typecheck/lint/touched-package unit tests; simulation + existing exact OFF/fallback check for rules changes; inspect 1–3 screen captures.
-- Full E2E + real-click 30-minute session every third item and Q15; no acceptance ceremony.
-- Three repairs maximum per failing gate, then fallback and continue; reports budget 60 MB.
-- Heavy builds/E2E/perf use timing.lock lease ≤20 minutes; check disk before builds; own ports 5960–5963 and /tmp/cardrpg-a6-* only.
-- Stop only for explicit pause/STOP-A6, deadline 2026-11-20 12:00 UTC, or no unblocked work remains.
-
-## Current item
-- Q1 completed 2026-11-10 06:38 UTC; baseline 500 seeds in 496.99 seconds (runtime known issue).
-- Q2 completed 2026-11-10 06:56 UTC; G1 passes, G2 partial after three tunes (see Q2.md).
-- Q3 completed 2026-11-10 07:50 UTC: nine collections, eight combos, Bond Book; exact OFF/A5 and all 421 E2E tests pass. Thirty-minute browser run complete; normal browser pacing still partial.
-- Q4 complete 2026-11-10 08:04 UTC: shared Power, quick upgrades/auto-equip, visible loss advice, exact OFF/A5.
-- Q5 complete 2026-11-10 08:09 UTC: front/back rows, three suggestions, mode teams, forecast and bond links.
-- Q6 complete: campaign map, star chests, twelve-hour idle and two fast rewards; 421 E2E and thirty-minute session pass stability. Final bookkeeping fix rolls into Q7 sim.
-- Q7 complete: thirty fixed Tower floors, six milestone chests, shared formation/battle and exact OFF/A5. Tower pacing is partial for Q12.
-- Q8 complete: five daily tasks, weekly bar, seven login gifts and one actionable badge selector; exact OFF/A5.
-- Q9 complete: resumed 1,800.65-second browser run, twenty-eight wins and no losses/errors/stalls. Normal 43.71/59.73 seconds remains partial; Q10 is next. Prior interrupted observation is preserved separately.
-- Q14 integration merge conflicts with the fixed no-merge rule; prepare reviewable integration and skip any unauthorized merge while continuing other work.
-
-- Q10 complete: capped team treasure, offline fixture, read-only Fuji adapter and wallet guards; exact OFF/A5. Q11 is next.
-
-- Q11 complete: guided unlocks, entry-band pressure ramp, sequenced celebrations; 500 seeds in 72.64 s, zero first-session losses, exact OFF/A5. Q12 is next; retry advice unobserved in the zero-loss final cohort.
-
-- Q12 complete with known browser pacing gap: normal44.09/46.45 s after third repair; simulated G1–G5 recorded in Q12-SIM.md. Required thirty-minute run complete, plus separate ten-minute probe. Q13 is next.

@@ -81,4 +81,11 @@
 - Full E2E passes all 421 cases without retries. Browser timing remains in progress; first normal 47.34 seconds, next normal 23.97 and first boss 57.47. Preserve all observations in the final summary.
 - The complete Q12 browser run had thirty-one wins/no losses/errors/stalls; normal 37.64/50.8 s still missed. Third repair: A6 model uses bounded elapsed frame time instead of the canvas-clipped delta; B-owned source is unchanged. Five clock regressions and a separate shorter browser probe are pending.
 
-- Final clock regression checks pass. Separate ten-minute browser probe: nine wins, no losses/errors/stalls; normal44.09/46.45 s (six samples), boss69.21/92.9 (three). The clock tracks elapsed time, but normal browser pacing remains PARTIAL after three repairs; keep the existing escalation fallback and lane-B performance request, then continue Q13.
+- Final clock regression checks pass. Separate ten-minute browser probe: nine wins, no losses/errors/stalls; normal 44.09/46.45 s (six samples), boss 69.21/92.9 (three). The clock tracks elapsed time, but normal browser pacing remains PARTIAL after three repairs; keep the existing escalation fallback and lane-B performance request, then continue Q13.
+
+## Q13
+- Cats details now use four panels; the defeat advice action is primary. Typecheck/lint and 1,905 web tests pass; visual review waits for timing.lock.
+- Consecutive B jobs repeatedly acquired the lock during the existing two-second waiter gap. Added an opt-in CARDRPG_TIMING_POLL_MS (100–2,000 ms, default unchanged) to the existing lock tool. A6 uses 100 ms while waiting, never steals a live lock, and keeps leases below twenty minutes.
+- A 100 ms waiter also missed an immediate B-to-B handoff. The existing lock tool now wakes on parent-directory changes as well as its bounded polling fallback; atomic mkdir/live-owner checks remain unchanged. A6 batches sequential review commands within one nineteen-minute lease.
+
+- Q13a packaging: first checks raced an unfinished manifest; waited for packaging, reran types/lint/33 touched tests successfully, restarted only own Vite to clear failed resolution cache. Twelve captures then passed.

@@ -43,3 +43,9 @@
 - Early campaign bands one/two/three use 65/75/85 percent enemy attack; replays retain the same band pressure. Other modes and bands four and up are unchanged.
 - Feature celebrations queue behind existing discoveries. Onboarding points to actual buttons and leaves normal play fully automatic.
 - Zero observed defeats means hint retry rate is unobserved, not zero percent. The sim and report now show that distinction, and actual Legendary receipt is separate from pity budget.
+
+## Q13a — original painted unit art
+- Use the 25 original alpha concept masters published on origin/codex/cardrpg-art-r1-2026-11-09, under assets/source/look-v3/concepts/*.png. Read-only local counterparts: /Users/bao/taskbar-hero-cardrpg-b2/assets/source/look-v3/concepts/; masters: /Users/bao/art/look-v3/.
+- Q8 face crops come from assets/cardrpg-look/v3-portraits/manifest.json on that published branch. Source identity and intended crop reviewed; these are DOM illustrations, not a claim that canvas puppets are accepted.
+- tools/cardrpg-a6/pack-art.py packages alpha art at <=768×896, WebP86, and the existing 144px face crops. Runtime uses one manifest and the art-a6 helper across all v3 DOM views. Shared legacy cards retain their classic path outside A6.
+- Missing manifest entry/file or runtime image failure falls back to the previous model portrait. Canvas, models, VFX, camera, rules, seeds and earned rewards remain owned by their existing implementations.

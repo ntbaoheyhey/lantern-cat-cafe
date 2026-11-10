@@ -1,6 +1,6 @@
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import type { DepthModel } from '../depth/model';
-import { portraitProps } from '../depth/assets';
+import {artPropsA6 as portraitProps} from './art-a6';
 
 export function BondSummaryA6({ m, catId }: { m: DepthModel; catId?: string }) {
   const pairs = catId ? R.PAIR_COMBOS_A6.filter(pair => pair.cats.includes(catId)) : R.activePairCombosA6(m.state.team);

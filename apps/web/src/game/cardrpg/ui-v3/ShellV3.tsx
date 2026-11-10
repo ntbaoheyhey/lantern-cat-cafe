@@ -4,7 +4,7 @@ import { PowerA6 } from './PowerA6';
 import {lazy,Suspense,useEffect,useMemo,useRef,useState,type ReactNode} from 'react';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import type {DepthModel,Screen} from '../depth/model';
-import {portraitProps} from '../depth/assets';
+import {artPropsA6 as portraitProps} from './art-a6';
 import {showReviewTools} from '../depth/player-mode';
 import {homeView,patrolDefaults} from './selectors';
 import {Icon,type IconName} from './Icon';

@@ -1,7 +1,7 @@
 import {useEffect,useState} from 'react';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import type {DepthModel} from '../depth/model';
-import {portraitProps} from '../depth/assets';
+import {artPropsA6 as portraitProps} from './art-a6';
 import cafePoster from './assets/cafe.webp';
 import {Icon} from './Icon';
 import {IdleChestA6} from './IdleChestA6';

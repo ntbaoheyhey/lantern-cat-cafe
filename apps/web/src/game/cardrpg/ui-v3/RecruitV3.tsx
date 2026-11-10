@@ -3,7 +3,7 @@ import {BANNERS,CARD_RPG_CONFIG,emptyPity,getBannerOdds,getDrawPool,type GachaRe
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import {firstInvitation} from '@taskbar-hero/game-rules/src/cardrpg/depth/onboarding';
 import type {DepthModel} from '../depth/model';
-import {portraitProps} from '../depth/assets';
+import {artPropsA6 as portraitProps} from './art-a6';
 import {SelectorV4} from '../depth/SelectorV4';
 import {ItemIcon} from '../shared';
 

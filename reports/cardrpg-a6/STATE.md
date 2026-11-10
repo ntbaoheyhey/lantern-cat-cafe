@@ -61,3 +61,7 @@ M apps/web/src/game/cardrpg/ui-v3/EncounterV3.tsx
 - Web-filtered typecheck/lint pass; 213 files / 1,905 web tests pass in 33.24 seconds.
 - Logs: /tmp/cardrpg-a6-onboarding-typecheck.log, -lint.log, -web.log.
 - Six prior screenshots inspected. New prompt permits B merge commits; earlier contrary notes superseded.
+
+## Q13a — 2026-11-10 16:28 UTC
+- 25 units adopted, 3.86 MB. Types/lint and 33 touched tests pass; 12 screenshots inspected, no browser errors.
+- Q13b next. Old code preserved; first-session/timing-lock edits remain. Vite5960 active. New prompt authorizes B merge commits.

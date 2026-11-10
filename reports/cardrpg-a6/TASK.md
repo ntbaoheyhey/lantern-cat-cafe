@@ -1,127 +1,84 @@
-LANE A6 "TOP-GAME GAMEPLAY + GAME SCREENS" — STEP 2 OF 2: NON-STOP RUN — written 2026-11-10 06:00 UTC
-STEP 1 (Q0 setup) is DONE in this session: worktree /Users/bao/taskbar-hero-cardrpg-a6 (or -a6-2, see reports/cardrpg-a6/STATE.md), lane files, gameplayA6 flag, draft PR. Do NOT redo it. Read reports/cardrpg-a6/STATE.md first, fill QUEUE.md with Q1-Q16 below, then start Q1.
-REFERENCE (read in this order, skim, do not re-verify):
-- reports/cardrpg-big/skills-v5/{V5A-REPORT.md,S6-SELF-SCORE.md,FRESH-EYES.md,PRE-S6-REVISIT.md,STATE.md} on branch codex/cardrpg-v5a-s6-2026-11-09 (draft #424, tip 1195b13fa)
-- reports/ui-v3/{UI-V3-REPORT.md,HANDOFF.md,STATE.md} on branch codex/cardrpg-ui-v3-u9-2026-11-09 (draft #437, tip c95097eed) = YOUR BASE
-- reports/cardrpg-big/a5/A5-REPORT.md, docs/design/cardrpg/RESEARCH.md + RESEARCH-GAMEPLAY-V4.md + RESEARCH-ADDENDUM-AUTO.md (old research; do not redo it)
-- reports/cardrpg-look/art-rebuild/{STATE.md,HANDOFF.md} on draft #427 (lane B, read-only)
-- packages/game-rules/src/cardrpg/** (rules), apps/web/src/game/cardrpg/** (screens), packages/game-rules/src/config.ts
+LANE A6 — NEW CODEX ACCOUNT — ONE PROMPT: ONBOARD, THEN NON-STOP QUALITY RUN — written 2026-11-10 16:40 UTC
+You are a brand-new Codex session with no memory. The previous Lane A6 session (another account) ran out of tokens mid-run. All its work is on THIS Mac, in local files and on GitHub. Nothing must be redone.
 
-You are Lane A6 for Taskbar Hero's cat card RPG (UniHack Avalanche, Demo Day 30 Nov 2026). You own GAMEPLAY RULES and the GAME SCREENS around battle (formation, cats, bonds, gear, recruit, map, tower, quests, Relic). Goal in the user's words (Vietnamese): "gameplay và giao diện thật sự bắt kịp với những game hàng đầu" = gameplay and UI that truly match top games of the genre (OMG3Q, Danh Tướng 3Q, AFK Arena/AFK Journey, Idle Heroes).
-This prompt is the user's explicit instruction to run NOW, unattended and continuously, until a hard stop in section 1 R-6. It replaces every earlier lane A prompt (RULES-A, ADDENDUM, A5) and every earlier pause/stop note.
+Project: Taskbar Hero, a cat card RPG (auto battles) for the UniHack Avalanche hackathon, Demo Day 30 Nov 2026. Repo ntbaoheyhey/taskbar-hero (private).
+Your lane: A6 = gameplay rules + all game screens around battle (cafe home, team/formation, cats, bonds, recruit, map, tower, daily, Relic) + the DOM battle HUD. Lane B (another Codex session) owns the battle canvas: cat/enemy art, animation, VFX, camera, stage, portraits/icons.
+
+WHERE EVERYTHING IS
+- Your worktree: /Users/bao/taskbar-hero-cardrpg-a6 (if missing, check `git -C /Users/bao/taskbar-hero worktree list`).
+- Your branch: codex/cardrpg-a6-q0-2026-11-10 (last pushed tip 2f8c1985c, "A6 Q12"). Draft PR #438 (base: codex/cardrpg-ui-v3-u9-2026-11-09, draft #437).
+- Your lane files: reports/cardrpg-a6/ — QUEUE.md (work queue), HANDOFF.md (current state), STATE.md, STATUS-VI.md (Vietnamese status for the user), INBOX.md (user corrections), NEEDS-USER.md, FIXLOG.md, DECISIONS.md, A6-OUTBOX.md (requests to lane B), Q1.md..Q12.md (per-item results).
+- Main checkout /Users/bao/taskbar-hero: only `fetch` and `worktree add` there; never checkout/reset/stash/commit in it.
+- Lane B (read only for you): worktree /Users/bao/taskbar-hero-cardrpg-b2, branch codex/cardrpg-art-r1-2026-11-09, draft PR #427, files reports/cardrpg-look/art-rebuild/.
+- Done already: Q0-Q12 (sim tool, rage/ultimates, bonds, Power, formation, campaign stars, Yarn Tower, daily, recruit x10 + pity, Fuji Relic slot, first 30 minutes, balance). Q13+ not done. Partly staged Q13/Q14 drafts may exist under /tmp/cardrpg-a6-* (inspect before using; never restore reports/cardrpg-a6/resume-drafts.tar.gz).
+
+RULES (always)
+One agent only: no subagents, helpers or parallel codex runs (the account allows few threads). Local scripts/tests/Playwright are fine. No PR merge, no deploy, no push to main, no force-push, no secrets. Draft PRs only. Never write in other worktrees. Original art/text only. Keep tool output small (| tail -n 40).
+
+PART 1: ONBOARD NOW (about 30 min), in order
+1. cd /Users/bao/taskbar-hero-cardrpg-a6; `git status --short | head -30`; `git log --oneline -3`; `git fetch origin codex/cardrpg-a6-q0-2026-11-10 codex/cardrpg-art-r1-2026-11-09`. If local is behind/ahead of origin, write it in STATE.md (do not force anything). Keep uncommitted work; list it.
+2. Find leftover processes from the old session: `lsof -iTCP:5960-5963 -sTCP:LISTEN`; `pgrep -fl cardrpg-a6 | head`. Stop only your own lane's stale Vite/probe processes (ports 5960-5963, /tmp/cardrpg-a6-*). Never touch lane B processes or ports 5920-5923, and never pkill broadly.
+3. `df -h ~ | tail -1`.
+4. Read, short: reports/cardrpg-a6/HANDOFF.md, QUEUE.md, STATUS-VI.md, INBOX.md, Q12.md. Then look at these screenshots yourself: reports/cardrpg-a6/shots/q6-home.webp, q6-map.webp, q5-prepare.webp, q9-splash.webp, q12-normal.webp, q12-ultimate.webp.
+5. Run typecheck + lint + web unit tests once (filtered). Note the result.
+6. Rewrite HANDOFF.md as one short section (<= 40 lines): "New account session started <UTC time>", what is done, git state, processes found/stopped, test result. Add 3 Vietnamese lines to STATUS-VI.md. Commit "A6: new-session onboarding check" and push.
+7. Do NOT end your turn. Continue straight into PART 2 below.
+
+PART 2 (after PART 1, same turn). This prompt replaces every earlier lane A prompt, queue order and pause note. Paste this into reports/cardrpg-a6/TASK.md (overwrite) as your first action, then rewrite QUEUE.md from section 4 (keep the ticked Q0-Q12 lines as history at the bottom), then start the first unfinished item.
 
 =====================================================================
-0. WHY THIS PROMPT EXISTS (read once)
+0. WHY THE DIRECTION CHANGED (read once)
 =====================================================================
-The last lane A run (Skills V5, S0-S8-S6) ended PARTIAL at 6.16/10 with 21 of 42 gates missed. Your own files show why:
-- Most effort went into measurement ceremony: registered seed blocks, 4,505 combat cells x 500, 28,500 probe rows, paired acceptance, hash receipts, a rule that retuning "requires TRAIN". The game itself barely got more fun. That ceremony is now BANNED (section 1 R-8).
-- Fight pacing scored 2.59/10: normal fights 13.2 rounds (target 8-12), earned boss 130 s, fixed Yarn Giant 280 s. First 30 minutes: 15.5-minute reward gap and repeated route losses.
-- Every cat's ultimate fires in ~78% of normal fights, so ultimates feel ordinary.
-- One team is clearly best; off-meta crews lag; elite fixtures saturated.
-- The run stopped at every milestone and wrote reports nobody can read ("multi32.525%PASS").
-- 100+ one-off tools in tools/cardrpg-big/ (a4-p1-sim, a4-p2-sim, ...). Do not add more of those.
-What already works and must be KEPT: Skills V5 rules (8 keywords, 7 target shapes, 4 crew reactions, 12 distinct cat kits, Binding Threads, Cinnamon support), events-v2 contract, A5 fallback, gear/sets/gacha/NFT caps, Lane U's "Living Cafe" shell (cafe hub, top HUD, 5-button dock, Night Patrol button, readable battle HUD, recruit reveal, claim badges; #428-#437, 8.475/10), dev tools only with ?dev=1, battles FULLY AUTO (user decision; never add manual targeting).
+The user (Vietnamese, 10 Nov): quality matters, not time; Codex follows our direction, so the direction must be right. Q0-Q12 built all the systems, but a review of your own screenshots found the game does NOT look or feel like a top idle hero battler (AFK Arena/AFK Journey, Idle Heroes, OMG3Q, Danh Tướng 3Q are the genre bar; never copy their art, layouts, names or text):
+1. Every screen is the same dark-teal modal panel. It reads like a web dashboard, not a game.
+2. Recruit reveal: a small low-poly model on a dark panel, rarity "epic" in tiny grey text. No rarity colour, burst or big art. This is the moment players remember and it is the weakest screen.
+3. The campaign "map" is a grid of grey boxes.
+4. Difficulty: Team Power 7,503 vs Recommended 2,878 (2.6x), forecast "Favoured 100%", 0 losses in 30 minutes. No tension, no reason to upgrade.
+5. Battle: units are tiny on a huge empty carpet; the ultimate is only a text banner; HUD cards are plain; normal battle takes about 44 s in the browser (target 20-35 s).
+6. Q14: the previous session read "no merge" as forbidding merging lane B. Wrong. "No merge" means no PR merge into main. MERGE COMMITS of lane B's published branch into your branch are ALLOWED and REQUIRED.
+Meanwhile lane B's 2D concept art (12 cats, 13 enemies) is excellent, and the user has decided (10 Nov 16:09 UTC) that lane B turns those concepts into illustrated 2.5D animated puppets for every unit. So the whole game should look like those concepts.
+So: NO NEW SYSTEMS. Every remaining hour goes into look, feel and difficulty. Keep all Q1-Q12 rules and features working.
 
 =====================================================================
 1. RUN-FOREVER RULES (highest priority)
 =====================================================================
-R-1 WORK QUEUE. First action: fill reports/cardrpg-a6/QUEUE.md (created in STEP 1) from section 5, in order, each item with its time budget and done-check. Always work the top unfinished item. When an item is done: tick it, commit, push, update the draft PR, update STATUS-VI.md, and IMMEDIATELY start the next item in the same turn. Never end your turn while QUEUE.md has unfinished items, except for an R-6 hard stop.
-R-2 CHECKPOINTS ARE NOT STOPS. A commit, push, PR update, report, PARTIAL result or self-score is never a reason to end the turn or ask the user anything. Do not write "next steps for the user" and stop.
-R-3 REPAIR CAP = SWITCH, NOT STOP. For any failed gate: reproduce -> measure -> smallest fix -> re-verify, max 3 attempts. After the 3rd failure take the FALLBACK in section 4 (or, if none, the simplest version that plays well), log it in FIXLOG.md as a known issue, and move on. A known issue never blocks later items.
-R-4 USER MESSAGES. The user may write to reports/cardrpg-a6/INBOX.md; check it between every queue item. A correction from INBOX or chat goes into QUEUE.md at the right priority, gets a 1-3 line Vietnamese answer in STATUS-VI.md (and briefly in chat if it came by chat), then you keep working the queue in the same turn. Only the words "dừng", "stop", "pause", "khoan", or a STOP-A6 file in the worktree root pause you. A question is not a pause: answer and continue.
-R-5 CONTEXT HYGIENE. Keep tool output small (| tail -n 40, grep). When compacted or lost: re-read QUEUE.md, STATE.md, HANDOFF.md (one section, <= 60 lines, rewrite it, never stack), then continue the top unfinished item.
-R-6 HARD STOPS (the only ones): (a) QUEUE.md done and the Q16 report pushed, then keep improving the lowest rubric row until (b); (b) 2026-11-20 12:00 UTC: write the report with what exists, push, stop; (c) STOP-A6 file or an explicit pause word; (d) a true user-only blocker (payment, a login only the user can do, merge, deploy, live DB/contract change, disk still full after cleanup): write the exact ask in reports/cardrpg-a6/NEEDS-USER.md, push, mark the item BLOCKED-USER, SKIP it and keep working every other item. End the turn for (d) only if no unblocked item remains.
-R-7 TIME BOXES. Each item has a budget. When it is spent: ship the best version that passes the minimum gates, log the rest, move on. A complete, consistent game beats one perfect system.
-R-8 EVIDENCE DIET (replaces the old ceremony).
-  - ONE simulation tool: tools/cardrpg-a6/sim.mjs (reuse existing rule/sim code; no new per-phase sim scripts). It prints one compact table (pacing, ultimate rate, team variety, first-session timeline, 7-day economy) in under 3 minutes on 500 seeds.
-  - Tune freely on dev seeds 1-500. ONCE at the very end (Q15) confirm on fresh seeds 60001-60500. No registration files, no paired acceptance, no per-change hashes, no "TRAIN before retune" rule.
-  - Per item: typecheck + lint + unit tests of touched packages, the sim table if rules changed, and 1-3 screenshots at 1440x900 of the touched screens that you actually look at. Full E2E + one real-click 30-minute Playwright first-session run: once per 3 items and at Q15, not per fix.
-  - Compatibility: with the A6 flag OFF, the legacy OFF digest and A5 fallback hashes must stay exact (one existing check, run per rules change). Do not re-hash unchanged bytes.
-  - Evidence budget for reports/cardrpg-a6/: 60 MB (WebP shots, at most 4 clips of 30 s).
-  - Reports are short, plain English sentences with numbers in words a judge can read. Every report table has a "what this means" line.
+R-1 QUEUE. Always work the top unfinished item of QUEUE.md. When done: tick, commit, push, update draft #438 description, update STATUS-VI.md (Vietnamese, short), and IMMEDIATELY start the next item in the same turn. Never end the turn while unfinished items exist, except an R-6 stop.
+R-2 Checkpoints, pushes, PARTIAL results and self-scores are not stops. Never end with "next steps for the user".
+R-3 Failed gate: reproduce -> measure -> smallest fix -> re-verify, max 3 attempts, then take the simplest version that looks and plays well, log it in FIXLOG.md, move on.
+R-4 Check reports/cardrpg-a6/INBOX.md between items. A correction goes into QUEUE.md, gets 1-3 Vietnamese lines in STATUS-VI.md, and you continue. Only "dừng", "stop", "pause", "khoan" or a STOP-A6 file in the worktree root pause you. A question is not a pause.
+R-5 Context: keep output small. If lost or compacted: re-read TASK.md section 4, QUEUE.md, HANDOFF.md (one section <= 60 lines, rewrite it each item), continue.
+R-6 Hard stops only: (a) queue done and report pushed, then keep improving the lowest-scored screen until (b); (b) 2026-11-20 12:00 UTC: push the report with what exists and stop; (c) STOP-A6 or pause word; (d) true user-only blocker (payment, a login only the user can do, PR merge, deploy, live DB/contract change, disk full after cleanup): write the exact ask in NEEDS-USER.md, mark BLOCKED-USER, skip it, keep working everything else.
+R-7 One agent only: no subagents/helpers/parallel codex or anything else making model requests. Local tools fine. No PR merge, deploy, push to main, force-push, secrets. Draft PRs only. Never write in lane B's worktree. Ports 5960-5963 and /tmp/cardrpg-a6-* only. Heavy builds/E2E: check disk first; use the existing shared timing.lock lease (<= 20 min) as HANDOFF/STATE describe, so you do not slow lane B's renders.
+R-8 Evidence diet: per item typecheck + lint + touched tests, plus 1440x900 screenshots of the touched screens that you LOOK AT yourself. Full E2E and one real-click 30-minute session after Q13f and at Q15. No hash ceremonies, no seed registries, no new one-off sim tools (use tools/cardrpg-a6/sim.mjs).
 
 =====================================================================
-2. THE DIRECTION (approved option B "top-game cat battler", 10 Nov)
+2. ART SOURCE AND OWNERSHIP
 =====================================================================
-Principles learned from top games (LAYOUT AND SYSTEM PRINCIPLES ONLY, never their art, names, text, icons or audio):
-P1 Short fights: normal 20-35 s at x1, boss 45-90 s at x1, speed x1/x2/x3, skip for already 3-starred stages, auto-continue toggle (AFK/Idle Heroes).
-P2 Rage bar (nộ): every unit fills energy from acting, hitting and being hit; the ultimate fires when full, with a big name banner/cut-in. Ultimates are the highlight, not the routine (OMG3Q/Danh Tướng 3Q).
-P3 Bonds (duyên): (a) collection bonds: owning a named set of cats gives the whole roster a small stat bonus even if they do not fight (OMG3Q); (b) pair combos (hợp kích): two bonded cats in the same team trigger one combo attack per battle (Danh Tướng 3Q). Build these on top of Skills V5 crew reactions, do not replace them.
-P4 One Power number (Lực chiến): every cat, team and enemy shows it; every upgrade makes it visibly jump; every stage shows recommended power (all top games).
-P5 Formation before fight: front/back rows, enemy lineup preview with power, 3 suggested teams ("Đội gợi ý"), saved teams per mode (Danh Tướng 3Q, AFK).
-P6 Campaign map with 3 stars per stage, chapter boss, star chests, plus an idle chest that fills with time based on the highest stage cleared (AFK).
-P7 A second mode: "Tháp Len" (Yarn Tower), 30 fixed floors, milestone chest every 5 floors (OMG3Q tower).
-P8 Daily loop: 5 daily tasks + weekly bar, 7-day login gifts, red dots that always point to the next useful thing (all top games).
-P9 Recruit (chiêu mộ) x1/x10 with a visible pity counter, rate table and a 4-beat reveal that escalates by rarity; duplicates -> shards -> star-up. (Danh Tướng 3Q was criticised for a flat pull reveal: ours must thrill.)
-P10 Treasure slot (bảo vật): a team-wide stat bonus slot (OMG3Q). Ours = the player's Fuji Relic NFTs, read-only, capped so it is a bonus, never pay-to-win. This is our Avalanche hook.
-P11 Unlock cadence: features open one by one in the first 30 minutes with a small celebration and a hand pointer, no walls of text.
-P12 Juice: numbers count up, rewards fly to the HUD, buttons press, power-up flash, short synth sounds (existing audio code).
-
-Fixed product rules: battles stay fully auto. Original art only. No fungible token, no mainnet, no real money, no new contract or server changes (Relic read is read-only client side; offline demo uses a mock wallet fixture). Off-chain gacha with the existing NFT caps.
+- Lane B: worktree /Users/bao/taskbar-hero-cardrpg-b2 (read only), branch codex/cardrpg-art-r1-2026-11-09, draft #427. Read B's HANDOFF.md, STATUS-VI.md and B-OUTBOX (if present) under reports/cardrpg-look/art-rebuild/ each item via `git fetch` + `git show origin/<branch>:<path>`.
+- 2D art you may use now: B's concept PNGs (r2/concepts/ and the masters in ~/art/look-v3, read only; copy what you need into your branch as WebP, record source path in DECISIONS.md) and B's Q8 portrait/icon/face-crop manifest. When B publishes puppet atlases, merge B's branch and use them.
+- You own: all DOM screens and the DOM battle HUD (portrait cards, HP/rage bars, ultimate cut-in overlay, boss bar, speed/skip, result screen). B owns: everything drawn in the canvas (units, animation, VFX, damage numbers, camera, stage). Before adding damage numbers, check whether B's canvas already draws them; never duplicate. Ask B for things in A6-OUTBOX.md (e.g. "closer camera: units fill 40-50% of battle height").
 
 =====================================================================
-3. TARGETS AND SELF-SCORE (target 8.5/10)
+3. LOOK TARGET (write this as reports/cardrpg-a6/LOOK-CHECKLIST.md first, 20 concrete rows, then score every screen against it)
 =====================================================================
-Gates (sim on 500 seeds unless stated):
-G1 Pacing: normal fight median 6-10 rounds and 20-35 s at x1; p90 <= 45 s. Boss median 45-90 s at x1, p90 <= 110 s. Tower floors 20-50 s.
-G2 Ultimates: each cat's ultimate fires in 35-70% of normal fights and in >= 90% of boss fights; at most 2 ultimate banners per 10 s.
-G3 First session (scripted new-player bot + one real-click run): a reward, unlock or visible power jump at least every 90 s (median) in the first 30 min; 0 losses in the first 10 min; <= 2 losses in the first 30 min; every loss shows one concrete hint ("Nâng Mochi lên cấp 8", "Thử đội gợi ý 2") and following it wins the retry >= 80%.
-G4 Variety: at the chapter-3 boss, >= 4 distinct teams within 5 pp win rate of the best team; no single cat in > 70% of the top-20 teams.
-G5 Economy: 7-day sim for casual (2 sessions/day) and regular (5/day) players: progress every day, first Epic by day 2, first Legendary pity reachable by day 6 for regular; idle chest cap 12 h.
-G6 Recruit: pity shown and correct; x10 reveal <= 8 s, skippable after beat 1; rarity tease visible.
-G7 UI parity checklist (section 6): >= 18/20 items PASS in screenshots at 1440x900 and 1280x720.
-G8 Stability: typecheck, lint, all web + rules tests, existing E2E, flag-OFF compatibility exact, offline demo <= 40 MB, cold start not worse than #437 by more than 10%, no console errors.
-Self-score rows: Battle pacing and ultimates 20%, First 30 minutes 20%, Top-game feature parity (P1-P12 working) 20%, Screen clarity and juice 15%, Balance and economy 15%, Stability 10%. Score each 0-10 from your own screenshots and sim table, with one sentence of evidence each. Be strict.
+Must include at least: warm lantern palette (cream, amber, warm wood, soft night-blue accents) instead of dark-teal panels; big character art on every cat card and screen header; ornate card frames by rarity (Common grey, Rare blue, Epic purple, Legendary gold with animated shine); stars and level badges on cards; chunky primary buttons with glow and press animation; currency/reward popups with icons and count-up; red dots only where an action is possible now; screen transitions (slide/fade, 150-250 ms); the cafe home shows the crew BIG (each cat >= 25% of screen height) with idle motion; empty states and loading states drawn, not blank; text short and readable at 1280x720; nothing important below the fold at 1280x720.
+Scoring: per screen at 1440x900 and 1280x720, score 1-10 for "a player would believe this is a real commercial game". Not done while any LOOK-CHECKLIST row on that screen is below 7. Fix the lowest row first. Put scores in reports/cardrpg-a6/LOOK-SCORES.md (one table, update in place).
 
 =====================================================================
-4. KNOWN RISKS AND FALLBACKS
+4. QUEUE (write into QUEUE.md in this order; budgets are guides, quality wins)
 =====================================================================
-Pacing won't converge (G1) after 3 tuning attempts -> FALLBACK: escalation rule: from round 7 every unit deals +20% per round, cumulative (bosses from round 10), shown as a "Cafe closing!" banner. Guarantees the cap.
-Boss too long or trivial -> cut HP to a 70 s median and add one phase mechanic per boss at 66%/33% HP (summon adds, Binding Threads, shield) so short still feels epic.
-Ultimate rate wrong (G2) -> per-cat rage gain multiplier table; last resort: fixed rage cost per cat.
-Variety (G4) fails -> bonds give off-meta pairs a catch-up bonus; then nerf the top cat by 5% steps (max 3). Then accept and log.
-Bot first session fails G3 -> reorder unlocks and stage difficulty of chapter 1 first, not the core numbers.
-Recruit reveal heavy (perf) -> CSS/DOM-only reveal with 2D portraits from lane B manifest or existing portraits.
-Relic read fails (no wallet, RPC down, offline) -> fixture Relics in demo; product shows an empty slot with "Kết nối ví để dùng Relic Fuji". Never block gameplay on chain.
-Flag-OFF digest breaks -> move the new code behind the flag until it is exact again. Never update the digest.
-Lane B art not ready -> use current portraits/models; emit events so B can render later.
+- [ ] Q13a Onboard art (2 h): copy concept art/portraits into the app (WebP, lean sizes), one art manifest used by every screen, fallbacks to the old model render if a unit has no art yet. Done: every cat card, team slot, Bond Book entry, recruit result and enemy preview shows the 2D art.
+- [ ] Q13b Look system (6 h): LOOK-CHECKLIST.md, design tokens (palette, frames per rarity, buttons, panels, popups, motion timings) in one place, then restyle: cafe home, top HUD, dock, Cats, Team/formation, Prepare, Bag/gear, Daily, Tower, Relic, result screens. Done: LOOK-SCORES.md all >= 7 on these screens.
+- [ ] Q13c Recruit reveal (4 h): card backs deal in, glow colour tease per rarity, flip in rarity order, Epic+ full-screen splash with the concept art, rarity colour burst and particles (DOM/CSS or small canvas inside the DOM layer), name plate, stars, "New!" stamp; x10 summary grid with rarity frames; duplicate -> shards shown with count-up. Respect reduced motion. Done: score >= 8 and a 10-pull feels exciting in a real click run.
+- [ ] Q13d Campaign map (4 h): illustrated night-street route (painted/generated ORIGINAL background or layered CSS/SVG scenery), nodes on a winding path, current node pulses, stars under cleared nodes, chapter boss node larger with its art, chest milestones along the path. Keep all existing route/star logic. Done: score >= 8.
+- [ ] Q13e Battle HUD (4 h): portrait cards with 2D art, HP bar with delayed damage trail, rage bar that fills visibly and glows when full, ultimate cut-in (full-body art slides in, skill name, 0.6-0.9 s at x1, shorter at x2/x3, skipped by "skip"), boss HP bar at top with phase pips, clean result screen (stars earned one by one, rewards with icons, Next / Retry / Upgrade hint). Write the camera/scale request to A6-OUTBOX. Done: score >= 8 on normal, boss and ultimate screenshots.
+- [ ] Q13f Difficulty curve (3 h): Recommended Power near the player's: stages 1-1..1-4 at 0.6-0.8x of a new player's expected power, 1-5..1-9 at 0.9-1.05x, chapter boss 1.1-1.2x; later chapters keep a similar saw-tooth. Normal wins end with 20-60% team HP left. Forecast labels only Favoured / Even / Risky (never "100%"). First real loss for a new player between minute 12 and 20; the loss screen names one cheap fix; the retry after that fix wins within 2 tries. Bot target: 1-3 losses in the first 30 minutes, no stuck player, reward gap median <= 60 s. Then one real-click 30-minute run to confirm.
+- [ ] Q13g Pacing in the browser (3 h): normal battle 20-35 s at x1 measured in the real browser (median of >= 8 fights), boss 45-90 s. If animation beats cause it, shorten ordinary beats (keep ultimates/boss beats); if canvas frame time causes it, measure and write the numbers in A6-OUTBOX for B, keep the A-side fix, move on.
+- [ ] Q14 Integration (4 h, repeat whenever B publishes a new tip): `git merge --no-ff origin/codex/cardrpg-art-r1-2026-11-09` into your branch (merge commits only; A-owned rules/screens/HUD take A; B-owned canvas/art/VFX/camera take B; B's old left-nav shell must never show in your build). Wire B's puppet units and VFX; re-check LOOK-SCORES on battle screens. Build the offline demo docs/cardrpg-a6/index.html (<= 40 MB) and docs/cardrpg-a6/CHAY-DEMO.md (Vietnamese, 10 lines: how to open, what to click in 5 minutes for judges). Merge again after B's final tip (B's report is due 20 Nov 12:00 UTC; take whatever is published by 19 Nov 18:00 UTC for the final demo, and re-merge later tips if time remains).
+- [ ] Q15 Final check (by 19 Nov 18:00 UTC): fresh seeds 60001-60500 once with the sim, full E2E, one real-click 30-minute run, screenshots of every screen at 1440x900 and 1280x720, one 60-90 s clip of a first session and one of a boss fight with ultimates.
+- [ ] Q16 Report (by 20 Nov 06:00 UTC): reports/cardrpg-a6/A6-REPORT.md (<= 2 pages: what a player gets now, before/after screenshots of home/recruit/map/battle, LOOK-SCORES summary, difficulty numbers, known issues), STATUS-VI.md summary, PR #438 description. Then improve the lowest LOOK-SCORES row until 20 Nov 12:00 UTC.
 
 =====================================================================
-5. THE QUEUE (seed QUEUE.md with this; budgets are wall-clock)
+5. SELF-SCORE (in A6-REPORT.md; target 8.5)
 =====================================================================
-Q0  Setup: DONE in STEP 1 (keep the worktree, branch naming codex/cardrpg-a6-qN-2026-11-10 stacked or one branch + one draft PR, as recorded in STATE.md).
-Q1  Sim tool (3 h): tools/cardrpg-a6/sim.mjs per R-8, plus the new-player bot (plays the real rules with the real economy, follows hints). Record BEFORE numbers for G1-G5 in reports/cardrpg-a6/BASELINE.md (one table).
-Q2  Pacing + rage + ultimate banner (by 11 Nov 18:00 UTC): rage rules (P2), damage/HP retune toward G1, boss phases, speed x1/x2/x3, skip for 3-star stages, auto-continue. Emit events-v2 `rage.full`, `ultimate.cast` (with display name) and a DOM fallback banner in the battle HUD. G1+G2.
-Q3  Bonds (by 12 Nov 18:00 UTC): 8-10 collection bonds and 6-8 pair combos (hợp kích) using existing kits and crew reactions; events `bond.combo`; Bond Book screen (who you own, what is missing, current bonus); bond icons on cat cards and in formation.
-Q4  Power + upgrade loop (by 13 Nov 06:00 UTC): one power formula, shown on cats, team, enemy, stages; "Nâng cấp nhanh" one-tap best upgrade and auto-equip best gear; level/star/gear upgrade feedback (power count-up + flash); loss hint engine (G3) that names the cheapest fix.
-Q5  Formation (by 13 Nov 18:00 UTC): front/back rows on the existing grid, enemy preview with power and threats, 3 suggested teams, saved teams per mode, bond lines visible. Click-to-place stays; keyboard OK.
-Q6  Campaign map + idle chest (by 14 Nov 18:00 UTC): chapter map inside the cafe theme (night street / rooftops), stages with 3 stars (win; no cat fallen; within N rounds), chapter boss node, star chests, idle chest in the cafe scene with claim animation, fast-reward button (limited per day).
-Q7  Yarn Tower (by 15 Nov 12:00 UTC): 30 floors, fixed lineups, milestone chests every 5 floors, uses the same battle and formation. Entry from the dock or the hub.
-Q8  Daily loop + red dots (by 15 Nov 18:00 UTC): 5 daily tasks, weekly bar with 3 chests, 7-day login gifts, ONE badge module that computes every red dot (no ad-hoc badges); every red dot must lead to an action that is possible right now.
-Q9  Recruit upgrade (by 16 Nov 18:00 UTC): x1/x10, pity counter, rate table, 4-beat reveal (deal card backs, glow color tease, flip in rarity order, full splash for new Epic+), shards and star-up, NFT caps unchanged. Extend Lane U's reveal (#434), don't fork it.
-Q10 Relic treasure slot (by 17 Nov 06:00 UTC): read-only Fuji Relics (existing chain package, RelicNFT 0xB1a1edb7A75Db6e7067E747ddee32B39c2296f2D) -> team-wide bonus, capped (+8% total max), "Relic Fuji" badge with explorer link; fixture in the offline demo. No contract or server change.
-Q11 First 30 minutes (by 17 Nov 18:00 UTC): unlock order and celebrations (P11), hand pointer for the first 3 actions, chapter-1 difficulty curve, copy rewrite (short Vietnamese-friendly English UI text; keep i18n structure if present). G3 must pass here.
-Q12 Balance + economy pass (by 18 Nov 12:00 UTC): tune to G1-G5 with the sim. Then one real-click 30-minute run.
-Q13 Screen polish vs section 6 (by 18 Nov 18:00 UTC): juice (P12), layout above the fold at 1280x720, contrast, empty states, loading states. G7.
-Q14 Integration (by 19 Nov 12:00 UTC): merge the newest PUBLISHED lane B tip (draft #427 branch or newer, check B's STATE/A-OUTBOX) with merge commits only; A-owned rules/screens take A, B-owned canvas/art takes B. Build offline demo docs/cardrpg-a6/index.html (<= 40 MB) and docs/cardrpg-a6/CHAY-DEMO.md (Vietnamese, 10 lines: how to open, what to click in 5 minutes for judges).
-Q15 Final check (by 19 Nov 18:00 UTC): fresh seeds 60001-60500 once, full E2E, real-click 30-minute run, screenshots of every screen at 1440x900 and 1280x720, one 60-90 s clip of a first session and one of a boss with ultimates.
-Q16 Report (by 20 Nov 06:00 UTC): reports/cardrpg-a6/A6-REPORT.md (<= 2 pages: what a player now gets, gates table with BEFORE/AFTER, self-score, known issues), STATUS-VI.md summary, PR description. Then loop: improve the lowest self-score row until 2026-11-20 12:00 UTC.
-
-=====================================================================
-6. TOP-GAME UI CHECKLIST (G7; check from your own screenshots)
-=====================================================================
-1 Home shows the team's Power and the next goal in 2 s. 2 One obvious big fight button. 3 Top HUD: currencies + Power, nothing else. 4 Dock <= 5 icons with red dots that are true. 5 Idle chest visible in the hub and shows fill level. 6 Formation shows both sides' power and a win-chance hint. 7 Suggested teams one tap away. 8 Battle HUD: HP + rage bar per unit, speed and skip, no overlaps with faces/HP. 9 Ultimate banner readable at 1x. 10 Bond combo has its own banner color. 11 Result screen: stars, rewards flying in, one "why" line, one next-action button. 12 Loss screen: one concrete fix button that goes to the right screen. 13 Map: clear current stage, stars, locked/unlocked states. 14 Tower: floor number and next milestone chest. 15 Recruit: pity counter and rates visible, reveal escalates. 16 Cat detail: big portrait, Power, skills with icons, bonds, gear slots. 17 Upgrade gives a count-up + flash. 18 Daily tasks show progress bars and claim states. 19 Relic slot shows "Relic Fuji" and the bonus. 20 No dev buttons, no raw ids, no spec-like text without ?dev=1.
-
-=====================================================================
-7. FIXED CONSTRAINTS
-=====================================================================
-- One agent only. No subagents, helper agents, parallel `codex exec` or anything else that makes model requests (account max 4 model threads across all lanes). Local no-model tools (tests, Playwright headless, sharp, ffmpeg, your scripts) are fine. No screen control of the user's apps.
-- Image generation: allowed only for small UI art (icons, chest, map backdrop) with the built-in image tool, your own prompts, no reference images, provenance per asset in reports/cardrpg-a6/ASSETS.md. Units, VFX, stage and portraits are lane B's.
-- No merge, no deploy, no push to main, no force-push, no Vercel/Supabase/contract changes, no secrets. Draft PRs only. Main checkout /Users/bao/taskbar-hero: only `fetch` and `worktree add`.
-- Ownership: A6 = rules (packages/game-rules/src/cardrpg/**), meta screens and the DOM battle HUD; Lane U is stopped by the user, so A6 may extend U's shell/dock/HUD code, keeping U's look tokens and layout. Lane B (/Users/bao/taskbar-hero-cardrpg-b2, draft #427) owns the battle canvas, unit models, VFX, stage, camera, portraits/icons: never edit B's files or worktree; write requests to A6-OUTBOX.md (B reads it). Never write, build or run servers in other worktrees (-a4, -b2, -ui-v3, -look, -demo, -v5live, -sync).
-- Ports 5960-5963 only. Temp /tmp/cardrpg-a6-*. Kill only your own PIDs. Heavy builds/E2E/perf take /tmp/cardrpg-big-locks/timing.lock via tools/cardrpg-big/with-timing-lock.mjs (lease <= 20 min). `df -h ~` before every build; under 15 GB free -> delete only your own outputs and caches.
-- Flag `gameplayA6` OFF in product; flag-OFF behavior and hashes stay exact. Battle outcomes are deterministic for a seed.
-- Original content only. Never copy names, art, text, icons or audio from OMG3Q, Danh Tướng 3Q, AFK or any game.
-- Status for the user in Vietnamese (STATUS-VI.md, <= 15 lines, updated after every queue item). Code, docs and commits in English.
-
-START NOW with Q1 and keep going through the queue without ending your turn.
+Looks like a real game (LOOK-SCORES average) 30; first 10 minutes fun and clear 20; battle readability and excitement (HUD, cut-in, pacing) 20; difficulty curve and upgrade pull 15; integration with lane B art 10; stability (tests, E2E, no console errors) 5.

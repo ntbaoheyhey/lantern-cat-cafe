@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState, useSyncExternalStore, type RefObject } from 'react';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import type { DepthModel } from '../depth/model';
-import { portraitProps } from '../depth/assets';
+import {artPropsA6 as portraitProps} from './art-a6';
 import { ForecastV4 } from '../depth/ForecastV4';
 import { PowerA6, QuickUpgradeA6 } from './PowerA6';
 import { MODE_TEAMS_A6, suggestedTeamsA6 } from './formation-a6';

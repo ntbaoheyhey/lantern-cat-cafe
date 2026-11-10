@@ -1,13 +1,13 @@
-# New account session started 2026-11-10 16:19 UTC
-
-- Worktree: /Users/bao/taskbar-hero-cardrpg-a6; branch codex/cardrpg-a6-q0-2026-11-10; draft #438.
-- Q0–Q12 complete. Existing Q13 Cats tabs/loss hierarchy and review-script edits preserved; quality queue Q13a–Q16 next.
-- Initial HEAD 2f8c1985c equals origin: 0 ahead / 0 behind. No reset, stash, or checkout.
-- Existing changed files enumerated in STATE.md. Prior reports copied to /tmp/cardrpg-a6-onboarding-*.
-- Stopped only stale A6 Vite PID 59966 on 5960. No A6 probe found. B ports/processes untouched.
-- Free disk 188 GiB. Heavy work: tools/cardrpg-big/with-timing-lock.mjs, leases <=20 minutes; own ports 5960–5963.
-- Web-filtered typecheck/lint pass; 213 web test files / 1,905 tests pass in 33.24 seconds.
-- Inspected q6-home/map, q5-prepare, q9-splash, q12-normal/ultimate; four screenshots live at report root.
-- New prompt supersedes old notes: published B merge commits required at Q14; PR merges/deploy/main/force push forbidden.
-- One agent. No STOP-A6. INBOX empty. Continue directly to TASK replacement, quality queue, Q13a art.
-- B published report still describes native models. Use concepts now; recheck published branch each item.
+# Lane A6 — 2026-11-10 16:28 UTC
+- New account onboarding pushed as 1f3d82ed3. Q0–Q12 and Q13a complete; Q13b look system is next.
+- Branch codex/cardrpg-a6-q0-2026-11-10; draft #438; worktree /Users/bao/taskbar-hero-cardrpg-a6.
+- TASK.md is the new quality prompt. B branch merge commits into A6 required at Q14; no PR merge/deploy/main/force push.
+- Art: 25 original concept illustrations + Q8 face crops, 3.86 MB; one assets/cardrpg-a6/illustrations/manifest.json and ui-v3/art-a6.ts.
+- Q13a web typecheck/lint and 33 touched tests pass; 12 browser captures at both sizes inspected; no browser errors/broken images/overflow.
+- Packaging dependency race and Vite cache restart resolved; see Q13a.md. UI is still visually unfinished and 720p needs layout work.
+- Preserved old CatDetails/loss work in Q13a; first-session.mjs and timing-lock wrapper edits remain uncommitted for later checkpoints.
+- A6 Vite runs on 5960 via exec session 41981; log /tmp/cardrpg-a6-vite.log. No review browser remains.
+- Heavy jobs: existing timing.lock wrapper, lease <=20 minutes, ports5960–5963 and /tmp/cardrpg-a6-* only; free disk188GiB.
+- B published onboarding now acknowledges illustrated 2.5D puppets; recheck published HANDOFF/STATUS/OUTBOX every item.
+- One agent. INBOX empty, no STOP-A6. Fresh final seeds60001–60500 unused.
+- Q13b targets: warm differentiated screens, large crew, ornate rarity cards, short headers, reachable 720p actions and non-obstructing celebrations.

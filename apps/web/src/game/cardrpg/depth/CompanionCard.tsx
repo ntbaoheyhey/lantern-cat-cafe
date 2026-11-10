@@ -5,6 +5,7 @@ import { portraitProps } from './assets';
 import { powerScore } from './meta-presentation';
 import type { DepthModel } from './model';
 
+import { artPropsA6 } from '../ui-v3/art-a6';
 import { PowerA6 } from '../ui-v3/PowerA6';
 
 const ROLE_ICONS = { guardian: '◈', hexer: '☾', healer: '♧', striker: '✧', controller: '⌘', witch: '✦' };
@@ -20,7 +21,7 @@ export function CompanionCard({ id, m, onSelect, selected = false }: {
     style={rarityStyle(card.rarity)} aria-pressed={selected}
     aria-label={`${cat.name}, ${card.rarity}, ${owned ? `level ${owned.level}, power ${power}` : 'not collected'}`}
     onClick={onSelect ?? (() => { m.cardId = id; m.go('collection'); })}>
-    <div className="cr-portrait"><img {...portraitProps(id)} alt="" />
+    <div className="cr-portrait"><img {...(R.gameplayA6(m.state) ? artPropsA6(id) : portraitProps(id))} alt="" />
       {!owned && <strong className="dp-question">?</strong>}
       <span className="dp-role" title={cat.role}>{ROLE_ICONS[cat.role]}</span>
       {R.gameplayA6(m.state)&&<span className="a6-bond-icon" title={R.PAIR_COMBOS_A6.filter(p=>p.cats.includes(id)).map(p=>p.name).join(' · ')}>∞ {R.activePairCombosA6(m.state.team).filter(p=>p.cats.includes(id)).length ? 'Combo ready' : 'Bonds'}</span>}
