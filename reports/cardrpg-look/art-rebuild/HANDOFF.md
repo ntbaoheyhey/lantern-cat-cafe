@@ -25,3 +25,5 @@ Q10 alone permits integration merge commits into #420; keep A-owned files from A
 Evidence80MiB/120MB; source51MiB/60MB. New large masters should remain outside git if cap is reached.
 Preserve unrelated docs/cardrpg-look/v5-art-mochi-preview.html and tools/cardrpg-look/art-rebuild/segmentation-proxy.mjs.
 Report deadline20Nov12UTC. Checkpoints/reports are not stops.
+
+Local GLB inbox available:~/art/look-v3/inbox; watcher pid in~/art/look-v3/local-intake/.running/owner.json. Stop on pause. Local intake guards passed; see LOCAL-MODELS.md. No remote job running; Panko/Mallow attempt1 failed. VFX sources now Mochi+Soot+Clover+Panko+Mallow+Cinnamon; new sources not wired into runtime yet.

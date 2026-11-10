@@ -1,0 +1,47 @@
+{
+  "id": "cinnamon",
+  "createdAt": "2026-11-10T06:42:06.068Z",
+  "tool": "built-in image_gen",
+  "model": "not exposed",
+  "seed": "not exposed",
+  "parameters": {
+    "transparent_background": true,
+    "references": []
+  },
+  "prompt": "Use case: stylized-concept. Asset type: original game VFX component atlas for a premium painted cozy night-cafe RPG. One square RGBA sheet with EXACTLY FOUR separate luminous sprites in an equal 2 by 2 grid. Genuine transparent background, no visible grid or labels. Each component completely contained inside its quadrant with generous 15 percent transparent margin on every side. Spice steward healing magic in cinnamon #B8653B, warm caramel #D79A5C, apricot #F2BE8D, ivory #FFF0D2. TOP LEFT: a softly glowing caramel spiral surrounded by floating spice dust. TOP RIGHT: a graceful curved stream of apricot steam with an ivory leading edge and cinnamon sparks. BOTTOM LEFT: two ascending interlocking spirals of golden steam forming an open luminous helix with clear negative space. BOTTOM RIGHT: an airy radial puff of spice-gold motes, fine cream rays and small curling vapor tails. Shared painterly dimensional light, crisp bright ivory cores, restrained feathered glow, upper-left warm lighting, layered depth and rich material-like wisps. Reusable independently moving light components, NOT animation frames or a scene. No characters, faces, physical props, cup, lantern, door, weapon, text, symbols, scenery, floor, border, rectangular background or watermark. No reference images. Original design.\n",
+  "master": "/Users/bao/art/look-v3/vfx/cinnamon-light-master.png",
+  "sourceSha256": "54aae0e13a5020caa164c7220b2d28fc90b604fca9b3fa19c0eedb4099075b08",
+  "sourceSize": [
+    1254,
+    1254
+  ],
+  "output": "assets/cardrpg-look/v3-vfx/cinnamon-light.webp",
+  "sha256": "4ed61e6f82ba7980e9390a6b8eeee33f96a53f6fa0697e2395ef9219cd60c322",
+  "bytes": 264990,
+  "components": [
+    {
+      "tile": 0,
+      "visiblePixels": 148459,
+      "transparentPixels": 244670
+    },
+    {
+      "tile": 1,
+      "visiblePixels": 94217,
+      "transparentPixels": 298912
+    },
+    {
+      "tile": 2,
+      "visiblePixels": 99112,
+      "transparentPixels": 294017
+    },
+    {
+      "tile": 3,
+      "visiblePixels": 134100,
+      "transparentPixels": 259029
+    }
+  ],
+  "postprocess": "Original alpha retained; alpha<6 removed;24px smooth edge taper;464px components with24px gutters;1024RGBA WebP94 alpha100",
+  "review": "Apricot spice spiral and vertical double-helix steam distinguish healing from Panko shield and Mallow flame. Four clean components, no physical cups or bells; runtime pending.",
+  "runtimeAccepted": false,
+  "temporalFrames": false
+}

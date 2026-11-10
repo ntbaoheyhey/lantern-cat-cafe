@@ -63,3 +63,6 @@ NON-STOP-RUN.txt supersedes historical pause/deadlock notes. Q2 has one geometry
 
 ## 2026-11-10T05:16:59.510589+00:00 resume and browser preference
 User explicitly resumed. Use internal chat browser only for provider workflow; do not operate native personal browsers. The approved original-asset conversion remains in scope; no payment/new account/credential access.
+
+## 2026-11-10 local model intake
+User asks for downloaded models to be processed locally without browser automation. Added a GLB inbox/intake, preserving successful Mochi/Soot sources. All post-export stages are local. Official TRELLIS.2 requirements verified:Linux+NVIDIA24GBVRAM+CUDA; current M3Pro36GB cannot run that official CUDA implementation directly. No AI weights downloaded or paid backend started. See LOCAL-MODELS.md. This is an additional input route; source quality/rig review remains mandatory.

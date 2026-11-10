@@ -43,3 +43,5 @@ Q3 motion checkpoint 2026-11-10T06:07:08.127885+00:00: action-owned gesture, con
 Q5 source checkpoint 2026-11-10T06:20:06.703306+00:00: all12cats/13enemies original concepts now reviewed and provenanced. Runtime not complete. Clover first conversion submitted in internal browser, receipt records timing. Q3 Yarn retry remains06:47UTC; no source regeneration.
 
 Q3/Q5 resume06:30UTC: Clover attempt1 error confirmed; no mesh/no duplicate job. Q3 full E2E running in isolated headless test browser. Preparing Q6 original VFX sources while spaced conversions wait; original character masters untouched.
+
+User question06:40UTC: local GLB route implemented and validated; inbox~/art/look-v3/inbox, intake watcher active in this run (owner~/art/look-v3/local-intake/.running/owner.json). User may supply original concept-derived meshes; all cleanup/rig/packing local. Stop watcher on user pause. Official TRELLIS2 requires CUDA/Linux not available on this M3Pro. No new remote job pending. Panko/Mallow first attempts failed; receipts retained.
