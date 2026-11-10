@@ -13,11 +13,11 @@ Score each applicable row 1–10 at 1440×900 and 1280×720 from inspected brows
 | 07 | Panels use depth, materials and purposeful composition rather than identical dashboard boxes. |
 | 08 | Currency/reward feedback has icons, visible amounts and a short count-up. |
 | 09 | Red dots only point to a currently possible action, using the shared badge selector. |
-| 10 | Screen entrances slide/fade in 150–250 ms; reduced motion has an immediate equivalent. |
+| 10 | Screen entrances slide/fade in 150–250 ms; reduced motion has an immediate/static or <=100ms fade equivalent with identical reward state. |
 | 11 | Cafe crew silhouettes are each at least 25% of viewport height with gentle idle motion. |
 | 12 | Empty/loading states contain a drawn cue and one clear action or status, without blank spaces. |
-| 13 | Labels are short; important body text stays readable at 1280×720. |
-| 14 | Primary actions and essential state fit above the fold at 1280×720, with no horizontal overflow. |
+| 13 | Labels are short; important body text aims for at least14px and stays readable at 1280×720. |
+| 14 | Primary actions and essential state fit above the fold at 1280×720, with no horizontal overflow; primary hit areas aim for>=40px and visible keyboard focus. |
 | 15 | Layout, scenery and focal point give each screen its own identity. |
 | 16 | Recruitment visibly deals, teases rarity, flips, celebrates Epic+, and resolves duplicates into shards. |
 | 17 | Campaign is a scenic winding route with pulsing current stop, cleared stars, boss art and milestone chests. |

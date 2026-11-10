@@ -55,3 +55,8 @@
 - Q13e: merge commits b9c1497d6 (B published P4 cats/P3 framing) and 00b04f8ee (B530bce90a P5 batch1 enemies). B owns all canvas files; A6 adds DOM HUD only. A6's opt-in App enables existing v3 puppet flags, preserving the main default OFF and the A6 shell.
 - Q13e: gameplay playbackAt is wall time, so ultimate overlay lifetime is800/speed ms; the existing two-per-ten-second banner cap stays. Health trails are presentation only and never change combat HP. No manual cast control or second damage-number layer.
 - Q13e: browser review uses Chromium channel with Metal, matching B's published harness. The default headless shell stalled shader compilation; that run is not pacing evidence. Q13f/g must report the browser/backend used.
+
+Q13f: Existing route stays seven stops (early depths0–3, late4–5, guardian6); no artificial ten-stage subsystem. Fixed expected crew7500/7900/8200 and band budget are independent of equipped Power. Map/Prepare share exact enemy stats. A6 early levels gain4% per level (nine steps capped) in addition to existing growth; preserves legacy OFF. Late street adds one existing Binding Thread.
+
+- 2026-11-10 resumed research gap: extended the three existing studies with source-scoped look/motion research; Q13a–e remain done. The campaign already has seven depths/nine nodes, so pressure bands map to that graph rather than adding ten fights. Power is not a win probability. Recovery and non-stuck play outrank forcing healer teams into an HP percentage.
+- Added Q14a[auto] to improve the existing lowest-scored Bag/Tower/Relic compositions without systems; Q13g/Q15 now explicitly separate wall time from authored timing and include reduced-motion/keyboard checks. Recheck research after Q13f/g/Q14.
