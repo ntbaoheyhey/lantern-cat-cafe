@@ -1343,3 +1343,7 @@ Draft427 now6f22f15ff: local reconstructed foes can supersede fallback after ins
 Native512 smoke exported in656.7s with embedded textures; preserve existing Mochi/Soot. Comparison render9778 has waited since09:31UTC.
 Current A lease6475/A6-Q7-checks started09:13:54UTC and remains live beyond20min. Please finish/release at a safe boundary and allow6.5s handoff; B will not interrupt A processes or steal a live lease.
 After inspected comparison, Button Guard then Yarn Giant run sequentially under bounded19min leases. No browser generation/RMBG/paid route.
+
+## 2026-11-10T10:14Z ART-LOCAL TIMING REQUEST
+A lease18152/A6-Q9-checks began09:53:36UTC and is live beyond20min. B matching capture20447 has waited since10:00UTC; Button retry2 depends on it. Please release safely and allow6.5s handoff. B never steals a live lease or interrupts A.
+Draft427 pushed3bc898a05: authored reconstructed foe palette preserved; decoded mesh/colour checkpoint added before xatlas. Button attempt1 timed out at1081s in ComputeCharts. Retry2 uses newseed20262111/50KpreUV; no duplicate inference, Mochi/Soot retained.
