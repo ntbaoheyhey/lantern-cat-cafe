@@ -1,5 +1,5 @@
 Đã tiếp tục lúc 18:56 ngày 10/11 (giờ Việt Nam); báo cáo PARTIAL, chưa kết thúc R8.
-Button đã xuất được GLB nhưng lưới vỡ; đang sửa bề mặt local từ dữ liệu cũ, giữ nguyên Mochi/Soot.
+Button sửa mesh không đạt; giữ bản chuyển động dự phòng. Đang thử Yarn local; Mochi/Soot giữ nguyên.
 VFX12mèo/13nhóm địch đã nối vào trận; camera gần hơn và giữ vùng mặt rõ.
 E2E421/421qua; cast168lượt tối đa16,8ms; demo35,74MB.
 Roster3D chưa đầy đủ; một số hiệu ứng còn giống nhau, mục tiêu8,5 chưa đạt.
@@ -23,4 +23,4 @@ Evidence: r1/rigid1/REVIEW.md; r1/foes-fallback/REVIEW.md; r4/REVIEW.md; r5/REVI
 
 Pause checkpoint: stopped own export waiter34006 and intake57059; A lease untouched. No source/runtime bytes changed this checkpoint. Recovery source-view capture and hash-verified recovery skip are saved; eight local guard tests, runner syntax/plan PASS. Resume at saved decoded Button export, then motion/battle review; do not regenerate existing sources.
 
-Current resume: recovery2 UVcoverage.34896 passes, but source/clay review rejects geometry with89796nonmanifold edges. B-LOCAL-009 one local voxel repair queued; no new inference/runtime install. Nine local guards pass, including raw checkpoint before destructive simplification. Earlier pause paragraph is historical.
+Current continuation: export2 UVcoverage.34896 passes but source/clay review rejects89796nonmanifold edges. Both local voxel repairs failed unchanged.015p95 drift bound; retain animated Button fallback, no third Button inference. One new Yarn trial queued with raw geometry checkpoint/BlenderUV. Nine native guards pass; no new runtime install. Earlier pause paragraph is historical.

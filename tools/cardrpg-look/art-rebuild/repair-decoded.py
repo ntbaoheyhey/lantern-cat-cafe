@@ -11,7 +11,12 @@ from mathutils.kdtree import KDTree
 p = argparse.ArgumentParser()
 p.add_argument('--checkpoint', type=Path, required=True)
 p.add_argument('--out', type=Path, required=True)
+p.add_argument('--voxel', type=float, default=.003)
+p.add_argument('--smooth', type=float, default=.25)
+p.add_argument('--iterations', type=int, default=2)
 args = p.parse_args(sys.argv[sys.argv.index('--') + 1:])
+if not .001 <= args.voxel <= .003 or not 0 <= args.smooth <= .25 or not 0 <= args.iterations <= 2:
+    raise ValueError('Surface repair parameters exceed bounded local range')
 if args.out.exists():
     raise ValueError('Preserve existing repair output')
 with np.load(args.checkpoint, allow_pickle=False) as data:
@@ -25,12 +30,12 @@ obj = bpy.data.objects.new('Native surface repair', mesh)
 bpy.context.collection.objects.link(obj)
 bpy.context.view_layer.objects.active = obj
 obj.select_set(True)
-obj.data.remesh_voxel_size = .003
+obj.data.remesh_voxel_size = args.voxel
 obj.data.use_remesh_preserve_volume = True
 bpy.ops.object.voxel_remesh()
 smooth = obj.modifiers.new('Bounded surface relaxation', 'SMOOTH')
-smooth.factor = .25
-smooth.iterations = 2
+smooth.factor = args.smooth
+smooth.iterations = args.iterations
 bpy.ops.object.modifier_apply(modifier=smooth.name)
 obj.data.calc_loop_triangles()
 triangles = len(obj.data.loop_triangles)
@@ -51,16 +56,18 @@ def sample_distances(a, b):
     return {'samples': len(sample), 'p95': float(np.quantile(distances, .95)), 'max': float(distances.max())}
 before_after = sample_distances(vertices, out_vertices)
 after_before = sample_distances(out_vertices, vertices)
-if max(before_after['p95'], after_before['p95']) > .015:
-    raise ValueError('Surface drift exceeds source-scale review bound')
+within_bound = max(before_after['p95'], after_before['p95']) <= .015
 repair = {'sourceCheckpointSha256': hashlib.sha256(args.checkpoint.read_bytes()).hexdigest(),
-          'method': 'Blender voxel .003, volume preserved, smooth .25 x2, source target100K',
+          'method': f'Blender voxel {args.voxel}, volume preserved, smooth {args.smooth} x{args.iterations}, source target100K',
           'tool': bpy.app.version_string, 'trianglesBefore': len(faces), 'trianglesAfter': len(out_faces),
           'beforeToAfterSampledVertexDistance': before_after,
           'afterToBeforeSampledVertexDistance': after_before,
-          'geometryChanged': True, 'runtimeAccepted': False, 'modelRequests': 0}
+          'geometryChanged': True, 'runtimeAccepted': False, 'modelRequests': 0,
+          'surfaceDriftBound': .015, 'surfaceDriftPass': within_bound}
 source.update(vertices=out_vertices, faces=out_faces, surface_repair=np.asarray(json.dumps(repair)))
 args.out.parent.mkdir(parents=True, exist_ok=True)
 np.savez(args.out, **source)
 args.out.with_suffix('.json').write_text(json.dumps(repair, indent=2)+'\n')
 print(json.dumps(repair))
+if not within_bound:
+    raise ValueError('Surface drift exceeds source-scale review bound; diagnostics preserved, source rejected')

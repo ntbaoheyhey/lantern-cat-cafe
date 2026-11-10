@@ -125,3 +125,7 @@ Repro: export2/front,three-quarter,geometry show shattered triangular patches an
 Attempt1: local Blender voxel remesh.003, preserve volume, two.25smooth steps,100Ksource target; retain original colour voxel data. Record two-direction sampled vertex distances, compare the same six source views before any runtime install. Queued under shared lease; no third inference.
 
 B-LOCAL-009 continuation: corrected stale local queue that listed only attempt1/INTERRUPTED while attempt2 had an active decoded-source repair. sourceReviewPending now excludes Button from automated inference; plan confirms held Button, Yarn first, Mochi/Soot preserved. Both original terminal receipts retained. No model request or runtime change.
+
+B-LOCAL-009 attempt1 result12:27UTC: source-scale drift guard rejected voxel.003/smooth.25x2 after21.7s; no GLB/runtime install. Blender returned0 despite Python exception, obscuring the cause as missing output. Attempt2 uses finer voxel.0015/smooth.12x1 with the same .015p95 bound, saves distances/geometry before rejection, and explicit --python-exit-code1. Export refuses a failed surfaceDriftPass record. One replacement wrapper/session5874, no duplicate inference.
+
+B-LOCAL-009 attempt2 rejected:98.78s,p95.024344/.017910>.015,754242tri despite100Ktarget. PARTIAL; stop destructive repair, retain reviewed animated Button fallback. Preserve original decoded data and both failed receipts; no third Button inference. New Yarn native trial uses raw checkpoint and Blender UV/area guard, not a repeated Button model.

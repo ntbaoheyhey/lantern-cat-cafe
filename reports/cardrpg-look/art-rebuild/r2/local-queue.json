@@ -14,7 +14,7 @@
       "source": "assets/source/look-v3/concepts/button-guard.png",
       "pipelineType": "512",
       "textureSize": 1024,
-      "status": "SURFACE_REPAIR_WAITING",
+      "status": "REJECTED_SOURCE_FALLBACK",
       "attempts": [
         {
           "status": "INTERRUPTED",
@@ -161,8 +161,8 @@
       "sourceFaces": 100000,
       "runtimeAccepted": false,
       "sourceReviewPending": true,
-      "reviewReason": "Existing decoded checkpoint is being repaired under the sole live export wrapper. No new inference before source, motion and battle review.",
-      "surfaceRepairDirectory": "/Users/bao/art/look-v3/local-generation/outputs/button-guard/surface-recovery1"
+      "reviewReason": "Two bounded voxel repairs failed unchanged drift guard; retain reviewed animated fallback. No third Button inference. Original decoded input and failed repairs preserved.",
+      "surfaceRepairDirectory": "/Users/bao/art/look-v3/local-generation/outputs/button-guard/surface-recovery2"
     },
     {
       "id": "yarn-giant",
@@ -170,9 +170,12 @@
       "source": "assets/source/look-v3/concepts/yarn-giant.png",
       "pipelineType": "512",
       "textureSize": 1024,
-      "status": "PENDING",
+      "status": "WAITING_LEASE_OR_GENERATING",
       "attempts": [],
-      "sourceFaces": 100000
+      "sourceFaces": 100000,
+      "uvBackend": "blender",
+      "sourceReviewPending": true,
+      "reviewReason": "One new native source trial, raw pre-simplification checkpoint and bounded Blender UV; review before further native units."
     },
     {
       "id": "clover",

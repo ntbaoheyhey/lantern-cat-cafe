@@ -191,13 +191,18 @@ def configure_blender_uv(trellis):
                 import trimesh
                 uv_path = args.output + ".uv.npz"
                 subprocess.run([os.environ['LANE_B_BLENDER'], '-b', '--threads', '4',
-                                '--python', os.environ['LANE_B_UV_SCRIPT'], '--',
+                                '--python-exit-code', '1', '--python', os.environ['LANE_B_UV_SCRIPT'], '--',
                                 '--checkpoint', checkpoint, '--out', uv_path], check=True, timeout=240)
                 with np.load(uv_path, allow_pickle=False) as uv_data:
                     new_verts, new_faces, uvs = uv_data['vertices'], uv_data['faces'], uv_data['uvs']
                     vmapping, original_face = uv_data['original_vertex'], uv_data['original_face']
                 if not np.array_equal(new_verts, bake_verts[vmapping]) or not np.array_equal(vmapping[new_faces], bake_faces[original_face]):
                     raise ValueError('UV export changed retained geometry')
+                tri_uv = uvs[new_faces]
+                du, dv = tri_uv[:, 1] - tri_uv[:, 0], tri_uv[:, 2] - tri_uv[:, 0]
+                uv_area = float(np.abs(du[:, 0] * dv[:, 1] - du[:, 1] * dv[:, 0]).sum() * .5)
+                if not .15 <= uv_area <= 1.01:
+                    raise ValueError(f'UV atlas area {uv_area:.5f} is unusable; preserve checkpoint')
                 source_mesh = trimesh.Trimesh(vertices=bake_verts, faces=bake_faces[original_face], process=False)
                 new_normals = source_mesh.vertex_normals[vmapping]
             else:

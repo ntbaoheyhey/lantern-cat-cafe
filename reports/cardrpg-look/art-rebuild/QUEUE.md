@@ -75,3 +75,7 @@ Local TRELLIS override 2026-11-10T07:30:26.787573+00:00: user-authorized Apple S
 2026-11-10T12:01:44Z: existing Button export2 succeeded10.559s; source/clay review REJECTED shattered nonmanifold mesh. One local remesh/export repair queued under shared lease(session21467), no new inference. Raw checkpoint guard added for future exports;9local guardsPASS. Continue top Q3 source/motion/battle review; no runtime acceptance.
 
 2026-11-10T12:17:59.810662+00:00 continuation: resumed sole Button repair waiter38778/session21467, still awaiting shared lease. No inference duplicated. Queue now records both terminal Button attempts and sourceReviewPending; read-only plan holds Button and preserves Mochi/Soot. Source repair -> source views -> packed motion -> same battle remains next.
+
+2026-11-10T12:28:18Z: Button surface-recovery1failed drift bound, noGLB. Finer repair2 running under sole B lease44093/session5874; same saved input and .015 bound, no inference. Read current HANDOFF before resuming; old session21467 finished.
+
+2026-11-10T12:31Z: Button surface-repair2 failed unchanged drift bound; bounded repair branch PARTIAL, articulated fallback retained. Native Yarn attempt1 queued(session21336), original master/seed20261112,512/1024,100KpreUV, BlenderUV+raw checkpoint. Only this one B heavy waiter remains. Button source stays excluded from inference retries. Q3 final decision awaits Yarn, no completed conversion repeated.

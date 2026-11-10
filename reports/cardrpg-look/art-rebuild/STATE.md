@@ -2,10 +2,10 @@
 
 ACTIVE — user resumed at 2026-11-10T11:56Z. Resume existing Button export, no regeneration.
 Worktree /Users/bao/taskbar-hero-cardrpg-b2; branch codex/cardrpg-art-r1-2026-11-09; draft #427; prior pushed b0286b8ca, pause changes preserved in following commit.
-Q1/Q2/Q4/Q9 DONE. Q3 four-unit close and Q5 runtime roster pending Button surface repair/review; smoke already completed.
+Q1/Q2/Q4/Q9 DONE. Q3 four-unit close and Q5 runtime roster pending one native Yarn trial; smoke complete, Button repaired-source rejected.
 Existing Mochi/Soot conversions and all25 original concept masters are preserved.
 Latest INBOX: local-mps only, alpha inputs, no RMBG, one inference at a time under timing lease.
-Smoke512 remains coarser; Mochi/Soot preserved. Button native attempts1/2 timed out; recovery2 exports but source has shattered nonmanifold geometry. B-LOCAL-009 local remesh/export/review queued as session21467; no third inference, no runtime install. Nine local guards pass; future generation saves raw geometry before simplification.
+Smoke512 remains coarser; Mochi/Soot preserved. Button native attempts1/2 timed out; recovery2 exports but source has shattered nonmanifold geometry. B-LOCAL-009 both local repairs failed drift; keep animated Button fallback, no third Button inference/runtime install. Yarn native attempt1 queued session21336 with BlenderUV/raw checkpoint. Nine local guards pass; future generation saves raw geometry before simplification.
 Q6 generated VFX12hero kits+13enemy families implemented; audit7.7PARTIAL. Third bounded repair has type/lint/10touchedtests/build/parity PASS; final shots/10casts/72facesPASS;1xfilm external, continuous review pending.
 Q7 closer camera/key checkpoint7.5;1440/1024posters/96facesPASS. Runtime roster coverage pending.
 Q8 source portraits/icons manifest prepared; final matching waits for roster.

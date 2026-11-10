@@ -21,6 +21,9 @@ parser.add_argument('--generation-receipt', required=True, type=Path)
 repair_group = parser.add_mutually_exclusive_group()
 repair_group.add_argument('--surface-checkpoint', type=Path, help='Explicit local geometry repair of the immutable checkpoint')
 repair_group.add_argument('--repair-surface', action='store_true', help='One bounded Blender remesh, export and views under this same lease')
+parser.add_argument('--surface-voxel', type=float, default=.003)
+parser.add_argument('--surface-smooth', type=float, default=.25)
+parser.add_argument('--surface-iterations', type=int, default=2)
 parser.add_argument('--trellis-root', type=Path, default=Path.home() / 'art/trellis-mac')
 parser.add_argument('--blender', type=Path, default=Path.home() / 'tools/cardrpg-look/Blender.app/Contents/MacOS/Blender')
 args = parser.parse_args()
@@ -52,9 +55,11 @@ try:
     if args.repair_surface:
         args.surface_checkpoint = args.out / 'repaired-surface.npz'
         with (args.out / 'repair.log').open('w') as log:
-            subprocess.run([str(args.blender), '-b', '--threads', '4', '--python',
+            subprocess.run([str(args.blender), '-b', '--threads', '4', '--python-exit-code', '1', '--python',
                             str(Path(__file__).with_name('repair-decoded.py')), '--',
-                            '--checkpoint', str(args.checkpoint), '--out', str(args.surface_checkpoint)],
+                            '--checkpoint', str(args.checkpoint), '--out', str(args.surface_checkpoint),
+                            '--voxel', str(args.surface_voxel), '--smooth', str(args.surface_smooth),
+                            '--iterations', str(args.surface_iterations)],
                            stdout=log, stderr=subprocess.STDOUT, check=True, timeout=240)
     surface_checkpoint = args.surface_checkpoint or args.checkpoint
     with np.load(surface_checkpoint, allow_pickle=False) as data:
@@ -63,6 +68,8 @@ try:
         repair = json.loads(source['surface_repair'].item())
         if repair.get('sourceCheckpointSha256') != receipt['checkpointSha256'] or repair.get('modelRequests') != 0:
             raise ValueError('Repair must name this exact decoded checkpoint without inference')
+        if repair.get('surfaceDriftPass') is not True:
+            raise ValueError('Surface repair failed its recorded drift bound; preserve diagnostics, do not export')
         with np.load(args.checkpoint, allow_pickle=False) as original:
             for key in ('voxel_coords', 'voxel_attrs', 'origin', 'voxel_size', 'texture_size'):
                 if not np.array_equal(source[key], original[key]):
@@ -76,7 +83,7 @@ try:
     if source['faces'].min() < 0 or source['faces'].max() >= len(source['vertices']) or source['voxel_size'].item() <= 0:
         raise ValueError('Invalid geometry indices or voxel size')
     uv_path = args.out / 'surface-uv.npz'
-    command = [str(args.blender), '-b', '--threads', '4', '--python', str(Path(__file__).with_name('unwrap-decoded.py')),
+    command = [str(args.blender), '-b', '--threads', '4', '--python-exit-code', '1', '--python', str(Path(__file__).with_name('unwrap-decoded.py')),
                '--', '--checkpoint', str(surface_checkpoint), '--out', str(uv_path)]
     with (args.out / 'uv.log').open('w') as log:
         subprocess.run(command, stdout=log, stderr=subprocess.STDOUT, check=True, timeout=240)
