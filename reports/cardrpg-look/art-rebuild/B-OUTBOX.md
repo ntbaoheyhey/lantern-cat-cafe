@@ -89,3 +89,6 @@ Whole-pillow compression/release and mitten jab retain the broad face seam and p
 
 ## P23 — Mochi guardian shield raise
 The original shield/lantern lifts forward/up toward foes, with head/paw/tail response. Original atlas/rig retained; per-actor tail curve reuses existing geometry/material path.28tests/16pairedviews/12naturalcasts/type/lint/parityPASS;0socket/faceHP/bounds/page errors, actualsocketlift0.04064, p95<=16.8ms. CombinedA6e94713b8e+B38189362B/headroom1810638B; Bassets23549548B. No new draw/event/HUD/flag. Evidence p23/REVIEW.md; motion7.7/overall7.8.
+
+## P24 — Clover lift-then-pour
+Clover raises the original glass teapot on charge and tips it at release, with restrained arm/head/tail response. Original atlas/rig and draw count stay unchanged. 29 tests, 16 paired views, 12 natural x1 casts, type/lint and parity pass; zero page/socket/faceHP/bounds errors, p95 <=16.8 ms. Both controlled artifacts use current A6 5badf4428c41c694d2ff0ac936b7ba27b33c22d9; combined delivery 38,193,062 B, headroom 1,806,938 B; B assets 23,549,548 B. No event/HUD/flag change. Evidence p24/REVIEW.md; motion7.7/overall7.8. Earlier prose short A6 ref e94713b8e was a typo; p18/preview-source.json has the authoritative full previous SHA.

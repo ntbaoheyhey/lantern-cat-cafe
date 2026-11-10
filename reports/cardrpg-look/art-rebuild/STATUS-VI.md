@@ -123,3 +123,6 @@ Practice Cushion đã duyệt: nén nhẹ rồi bật lại, tay găng đấm r�
 
 Mochi đã duyệt: đưa khiên và đèn lên phía trước, tay còn lại giữ thế đỡ; vai, viền khiên và chân vẫn liền.
 28test cùng16ảnh/12lượt chiêu/type/lint/parity đạt; chuyển động7,5→7,7, tổng giữ7,8. Bản chung38.189.362byte; tiếp tục nhịp nâng rồi rót trà của Clover.
+
+Clover đã duyệt: nâng ấm trà lúc chuẩn bị, nghiêng vòi ở nhịp ra chiêu rồi trở lại; tay áo, cổ lá và chân đều liền.
+29 test cùng16ảnh/12lượt chiêu/type/lint/parity đạt trên giao diện A6 mới; chuyển động7,5→7,7, tổng giữ7,8. Tiếp tục Panko: sửa cây cán bột đang bị chia lớp trước khi thêm động tác.
