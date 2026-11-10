@@ -31,11 +31,13 @@ export function BondBookA6({m}:{m:DepthModel}) {
   }));
   const selected=entries.find(entry=>entry.id===selection[section])??entries[0]!;
   return <div className="a6-bond-book">
-    <header className="a6-bond-overview"><div><small>THE FRIENDSHIP ALBUM</small><h2>Every friendship matters</h2></div><p><b>All cats +{R.collectionBonusA6(m.state)/100}% HP & attack</b><span>{bonds.filter(bond=>bond.active).length} / {bonds.length} collections complete · {activePairs.length} {activePairs.length===1?'pair':'pairs'} ready</span></p></header>
-    <nav className="a6-bond-sections" aria-label="Bond Book sections">
-      <button aria-pressed={section==='collections'} onClick={()=>setSection('collections')}>Collection bonds <span>{bonds.length}</span></button>
-      <button aria-pressed={section==='pairs'} onClick={()=>setSection('pairs')}>Pair combos <span>{R.PAIR_COMBOS_A6.length}</span></button>
-    </nav>
+    <header className="a6-bond-overview">
+      <nav className="a6-bond-sections" aria-label="Bond Book sections">
+        <button aria-pressed={section==='collections'} onClick={()=>setSection('collections')}>Collection bonds <span>{bonds.length}</span></button>
+        <button aria-pressed={section==='pairs'} onClick={()=>setSection('pairs')}>Pair combos <span>{R.PAIR_COMBOS_A6.length}</span></button>
+      </nav>
+      <p><b>All cats +{R.collectionBonusA6(m.state)/100}% HP & attack</b><span>{bonds.filter(bond=>bond.active).length} / {bonds.length} collections complete · {activePairs.length} {activePairs.length===1?'pair':'pairs'} ready</span></p>
+    </header>
     <div className="a6-bond-album">
       <nav className="a6-bond-index" aria-label={section==='collections'?'Collection bonds index':'Pair combos index'}>
         <small>{section==='collections'?'COLLECT TOGETHER':'FIGHT TOGETHER'}</small>

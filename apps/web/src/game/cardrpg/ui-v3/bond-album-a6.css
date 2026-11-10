@@ -79,3 +79,37 @@
   .a6-bond-page>footer {flex-wrap:wrap;}
  }
 }
+
+/* Give existing album notes and readiness labels room to be read. */
+.uv-app[data-a6=true] {
+ .a6-bond-overview {align-items:end;margin-bottom:0;min-height:50px;flex-shrink:0}
+ .a6-bond-overview>p {padding:0 0 10px;font-size:15px}
+ .a6-bond-overview>p>span {font-size:13px}
+ .a6-bond-sections {padding-left:16px}
+ .a6-bond-sections>button {min-height:44px;font-size:15px}
+ .a6-bond-sections>button>span {font-size:13px}
+ .a6-bond-album {grid-template-columns:320px minmax(0,1fr);background:linear-gradient(90deg,#f3e6c6 0 315px,#c9ad7c 320px,#fff2d5 332px,#f4e3be)}
+ .a6-bond-index>small {font-size:12px;letter-spacing:1px}
+ .a6-bond-index>button {min-height:44px;font-size:15px}
+ .a6-bond-index>button>small {font-size:13px;color:#795a37}
+ .a6-bond-index>button>i {font-size:13px}
+ .a6-bond-page>header small {font-size:12px;letter-spacing:1px}
+ .a6-bond-stamp {font-size:14px}
+ .a6-bond-note>b {font-size:16px;line-height:1.35}
+ .a6-bond-note>p {font-size:14px;line-height:1.4}
+ .a6-bond-cast small {font-size:13px}.a6-bond-level {font-size:12px}
+ .a6-bond-page>footer>small {font-size:13px}.a6-bond-page>footer>button {font-size:14px}
+ @media(max-height:760px) {
+  .a6-bond-overview {min-height:48px}.a6-bond-overview>p {font-size:14px;padding-bottom:8px}
+  .a6-bond-album {grid-template-columns:300px minmax(0,1fr);background:linear-gradient(90deg,#f3e6c6 0 295px,#c9ad7c 300px,#fff2d5 312px,#f4e3be)}
+  .a6-bond-index {padding:10px;gap:2px}.a6-bond-index>small {margin-bottom:2px}
+  .a6-bond-index>button {min-height:40px;padding:6px;font-size:14px}
+  .a6-bond-page {padding:13px 21px}.a6-bond-page h3 {font-size:27px}
+  .a6-bond-cast {max-height:222px;min-height:145px}
+  .a6-bond-note>b {font-size:15px}.a6-bond-note>p {font-size:14px}
+ }
+ @media(max-width:900px) {
+  .a6-bond-overview {align-items:stretch;flex-direction:column;gap:8px}.a6-bond-overview>p {max-width:none;text-align:left;order:-1}
+  .a6-bond-album {grid-template-columns:250px minmax(0,1fr);background:#fff0d0}
+ }
+}

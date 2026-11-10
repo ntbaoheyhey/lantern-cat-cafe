@@ -197,3 +197,6 @@ Lưu/đổi ba chế độ,12mèo,bàn phím và khóa trong chuyến đạt;8te
 2026-11-10T23:19:24Z: Q30 hoàn tất: demo38,92MB có công cụ Đội hình và Needle Moth/Teacup mới;42ảnh offline đã duyệt.
 Lưu/đổi ba chế độ,12mèo,khóa trong chuyến và bàn phím đạt ở hai cỡ màn;44test/type/lint giữ nguyên đạt, không lỗi/gọi mạng.
 Tiếp tục Bond Book: tăng chữ trạng thái/hiệu ứng và vùng chọn, giữ nguyên các luật hợp kích.
+
+2026-11-10T23:22:27Z: Bond Book đã duyệt16ảnh; cả17mục, phần thưởng bộ sưu tập và trạng thái hợp kích đúng ở hai cỡ màn.
+Nút chọn tối thiểu40px, ghi chú14px; bàn phím/hồ sơ/đội hình đạt, không đổi luật hay tài khoản. Đang đóng gói offline.
