@@ -4,7 +4,7 @@ Updated: 2026-11-10 01:52 UTC. Continuous run authorized by NON-STOP RUN prompt.
 Always take the top unfinished unblocked item. Check INBOX.md and root STOP-B between items. Reports/checkpoints are not stops. After three failed repairs, use the documented fallback and continue. Only the hard stops in NON-STOP-RUN.txt apply.
 
 - [x] Q1 Housekeeping — 30 min. Archive old handoff; compact current handoff; read direction/state/rules and latest A/U outboxes; seed inbox. Done: current files consistent, status committed and pushed.
-- [ ] Q2 Mochi B-R1-008 — <=5 h including fallback (one surface-separation attempt <=4 h). Separate arm/shield/apron, fill cuts, rigid-parent shield, verify cast/victory. Fallback: rigid-segment motion with reduced arm swing. Done: acceptable battle poses, checks and before/after evidence, issue logged.
+- [x] Q2 Mochi B-R1-008 — <=5 h including fallback (one surface-separation attempt <=4 h). Separate arm/shield/apron, fill cuts, rigid-parent shield, verify cast/victory. Fallback: rigid-segment motion with reduced arm swing. Done: acceptable battle poses, checks and before/after evidence, issue logged.
 - [ ] Q3 R1 four-unit close — <=8 h; due 2026-11-11 06:00 UTC. Keep Mochi source; bring Soot, Button Guard, Yarn Giant through existing concepts -> image-to-3D or animated layered fallback -> runtime. Done: all four in real battle, rubric target 8.5/minimum cat appeal + monster menace 7.0 average, per-type pipeline decisions, phase film/parity.
 - [ ] Q4 General runner — 2 h. prepare-unit.mjs supports any unit id, resume/hashes/single output lock, simplify/rig/pack/preview. Done: exercise with an existing source without regenerating it.
 - [ ] Q5 R2 full roster — batches ~6; due 2026-11-14 18:00 UTC. All playable cats -> enemies -> bosses, built-in original concept generation/provenance, cleanup/convert/rig/runtime. Done per batch: battle captures/face-HP check/commit/push; every unit mapped.
@@ -22,3 +22,5 @@ One agent. No paid services/new accounts/credentials. Preserve existing masters,
 Free conversion failure: max 3 attempts over >=2 h, do other unblocked work between attempts. Then animated layered 2.5D with rim/normal light. Never pay. True user-only blocker: exact ask in NEEDS-USER.md, BLOCKED-USER here, skip and continue all other items.
 
 Q1 result: old handoff archived in full; queue/inbox/current handoff/state created; A S6 DONE unchanged, U outbox absent;187GiB free,72MiB evidence. No runtime changes or repeated completed probes.
+
+Q2 result: Blender separation rejected for gaps; explicit rigid-module fallback accepted at1x. 608456B/21938tri/0skin; type/lint1818tests PASS;24face samples0offenders,0UI overlaps. Limited arm articulation remains known; does not block Q3.

@@ -8,7 +8,7 @@ Branch: codex/cardrpg-art-r1-2026-11-09; draft PR #427.
 Deadline: 2026-11-20 12:00 UTC.
 
 Read QUEUE.md, STATE.md and INBOX.md, then continue top unfinished unblocked item.
-Current item: Q2 actual Mochi surface separation; Q1 complete.
+Current item: Q3 other three concept masters -> runtime; Q1/Q2 complete.
 Keep all existing concepts, Mochi source/runner/rig/clips and published VFX pilot.
 Do not redo R0, M5, S6 or completed R1 housekeeping.
 User prefers generated concepts/video -> cleaned runtime assets and effects.

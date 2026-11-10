@@ -12,7 +12,7 @@ const cases=JSON.parse(gunzipSync(await readFile('reports/cardrpg-look/skills-v5
 const result={artifactSha256:createHash('sha256').update(await readFile(artifact)).digest('hex'),shots:[],errors:[],method:'Identical fixed P15/P16 live replay plus four labelled gallery stills. Pipeline only changes; fixed time3.2, cameraB, DPR1.'};
 const browser=await chromium.launch({channel:'chromium',args:['--use-angle=metal']});
 try{
- for(const variant of (process.env.ART_VARIANTS||'v2,sculpt,painted').split(','))for(const [width,height] of [[1440,900],[1024,600]]){
+ for(const variant of (process.env.ART_VARIANTS||'v2,sculpt,painted').split(','))for(const [width,height] of (process.env.ART_WIDTH==='1440'?[[1440,900]]:[[1440,900],[1024,600]])){
   const page=await browser.newPage({viewport:{width,height},deviceScaleFactor:1});
   page.on('console',m=>{if(m.type()==='error')result.errors.push({variant,width,error:m.text()})});
   page.on('pageerror',e=>result.errors.push({variant,width,error:String(e)}));
@@ -20,7 +20,7 @@ try{
   await page.waitForFunction(()=>window.__depthReview,null,{timeout:120000});
   await page.evaluate(()=>{const m=window.__depthReview;m.watchNow();m.paused=true;m.camera='wide';m.notify(false)});
   await page.waitForFunction(()=>window.__depthScene?.ready,null,{timeout:120000});
-  for(const id of ['mochi','soot','button-guard','yarn-giant','P15','P16']){
+  for(const id of (process.env.ART_SHOTS||'mochi,soot,button-guard,yarn-giant,P15,P16').split(',')){
    const row=cases.find(r=>r.id===id)??{gallery:['mochi','soot'].includes(id)?id+'-1':'enemy:'+id,progress:-1};
    await apply(page,row);
    if(row.gallery)await page.evaluate(()=>{const m=window.__depthReview;m.plan=null;m.notify(false)});

@@ -46,6 +46,7 @@ export function loadModel(role: string): Promise<ModelAsset> {
       model.scene.userData.lookGenerated = true;
       model.scene.traverse(node => {
         if (node.userData.rigVersion) model.scene.userData.rigVersion = node.userData.rigVersion;
+        if (node.userData.lookRigid) model.scene.userData.lookRigid = true;
       });
       model.scene.userData.lookProps = true;
     }
