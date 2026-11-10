@@ -29,15 +29,35 @@
 15. One future tool can reuse tools/cardrpg-big/skills-v5/load.mjs and matrix.mjs patterns with createBattle/playBattle, replayBattle, seeded RNG and playRun; no sims ran in Q0.
 
 ## Current checkpoint — Q12 complete; Q13 active
-- Last pushed: bd742838e11b2ed57b08119d6bdc177ab8f36a6e (Q11), draft PR #438. Q0–Q11 evidence remains in the individual Q reports and git history.
+- Last pushed: 2f8c1985c (Q12), draft PR #438. Q0–Q11 evidence remains in the individual Q reports and git history.
 - Q12 development sim: 500 seeds in 65.56 s; normal six rounds, median/p90 24.35/33.59 s; boss 76.91/85.25 s; Tower floor medians 26.05–47.99 s.
 - Normal ultimate rates 50.4–69.17 percent; boss minimum 91.2 percent. Twenty-four of thirty-two candidate teams within five percentage points of best; top-twenty maximum cat presence fifty percent.
 - Earned bot has zero losses and ten-second median reward gap; no losses means hint retries unobserved. Both seven-day cohorts progress daily, get Epic by day two and Legendary by day six; idle cap twelve hours.
 - Before the clock repair, workspace typecheck/lint pass; web 1,900 and rules 1,303 pass plus existing expected failures/skips. Exact OFF 8,250 routes and A5 forty-five pass with unchanged expected digests. Full E2E 421/421 pass.
 - Full Q12 real-click run: 1,801.75 active seconds, thirty-one wins, zero losses/errors/stalls. Reward gap median6.66 s/max102.37; browser normal21 samples37.64/50.8 s, boss9 samples64.69/97.07 s. Tutorial and lease-crossing encounter excluded from timing.
-- Third repair verified: bounded elapsed-frame clock for A6 only. Types/lint and1,905 web tests pass; seven clock/pacing regressions pass. Separate ten-minute probe: nine wins, no losses/errors/stalls; normal44.09/46.45 s (six samples), boss69.21/92.9 (three). Browser normal pacing remains PARTIAL after three repairs. Q12 complete with this known issue.
-- Q13 Cats/loss polish and Q14 offline build/check/guide are staged under /tmp/cardrpg-a6-* only. No Q13 source changes applied.
+- Third repair verified: bounded elapsed-frame clock for A6 only. Types/lint and 1,905 web tests pass; seven clock/pacing regressions pass. Separate ten-minute probe: nine wins, no losses/errors/stalls; normal 44.09/46.45 s (six samples), boss 69.21/92.9 (three). Browser normal pacing remains PARTIAL after three repairs. Q12 complete with this known issue.
+- Q13 Cats Growth/Skills/Bonds/Gear panels and loss action hierarchy are applied. Workspace typecheck/lint and 1,905 web tests pass. Three screenshots wait for the shared timing lock; final reviewer gallery is staged under /tmp/cardrpg-a6-final-screens.mjs. Q14 builder/check remain staged.
 - Q14 B merge conflicts with the fixed no-merge rule; preserve that boundary and continue the offline demo. Latest inspected published B head95a6c369ecdb9d6cda716d3ecaf8b25c62c2670a is PARTIAL; recheck at Q14.
 - Fresh final seeds60001–60500 remain unused. Q15 final checks and Q16 report remain queued.
 - Free disk at resume:190GiB; reports2.5MB of60MB. Own ports5960–5963; heavy timing leases<=20min. No model helpers, other-worktree writes, merge, deployment or main push.
 - Read HANDOFF.md for running sessions and exact continuation commands; INBOX currently empty.
+
+## New account onboarding — 2026-11-10 16:19 UTC
+- Initial HEAD 2f8c1985c equals origin: 0 ahead / 0 behind.
+- Existing code/tool/evidence edits preserved (prior HANDOFF/STATE/STATUS edits also retained in onboarding backup):
+M apps/web/src/game/cardrpg/ui-v3/EncounterV3.tsx
+ M apps/web/src/game/cardrpg/ui-v3/SheetsV3.tsx
+ M apps/web/src/game/cardrpg/ui-v3/ui-v3.css
+ M reports/cardrpg-a6/FIXLOG.md
+ M tools/cardrpg-a6/first-session.mjs
+ M tools/cardrpg-big/with-timing-lock.mjs
+?? apps/web/src/game/cardrpg/ui-v3/CatDetailsA6.tsx
+?? reports/cardrpg-a6/Q13.md
+?? reports/cardrpg-a6/q13-cats-growth.webp
+?? reports/cardrpg-a6/q13-cats-skills-small.webp
+?? reports/cardrpg-a6/q13-loss-small.webp
+?? reports/cardrpg-a6/q13-screens.json
+- Stopped only stale A6 Vite PID 59966 on 5960. No A6 probe. Free disk 188 GiB.
+- Web-filtered typecheck/lint pass; 213 files / 1,905 web tests pass in 33.24 seconds.
+- Logs: /tmp/cardrpg-a6-onboarding-typecheck.log, -lint.log, -web.log.
+- Six prior screenshots inspected. New prompt permits B merge commits; earlier contrary notes superseded.
