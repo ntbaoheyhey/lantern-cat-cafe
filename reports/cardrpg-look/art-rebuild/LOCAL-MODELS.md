@@ -5,7 +5,7 @@ Latest INBOX authorizes `shivampkumar/trellis-mac` on this Mac; it replaces the 
 - External install: `/Users/bao/art/trellis-mac`, commit `d58628f4f5b9c3de8274cb110074154f4b31cef2`.
 - Setup completed using Python3.11.17 / Torch2.15.0. MPS availability and pipeline import pass. The initial setup chose system Python3.9; its incomplete venv is preserved separately.
 - MetalToolchain download cannot run with only CommandLineTools selected. Optional native backends failed to compile; upstream selected `conv_none` + KDTree texture baker. Actual speed/quality still require the smoke run.
-- HF login and access to DINOv3 `model.safetensors` verified. No credential was read, printed or copied. Weights are downloading to the standard external HF cache; `~/art/look-v3/local-setup/weights.json` tracks files. No RMBG download.
+- HF login and access to DINOv3 `model.safetensors` verified. No credential was read, printed or copied. All19 required files (16,180,031,168B) are now cached in the standard external HF cache; `~/art/look-v3/local-setup/weights.json` tracks files. No RMBG download.
 - All25 concept inputs are RGBA. `image-to-3d.py` validates meaningful alpha and patches the eager RMBG constructor to `None`; only the existing alpha preprocessing path is allowed. Patch/source hashes are recorded.
 
 ## Explicit generation
@@ -24,7 +24,7 @@ Successful standalone textured GLB files are atomically published to `/Users/bao
 
 Inspect a supplied GLB, author its unit geometry/rig config, then run `prepare-unit.mjs` for simplify/rig/pack/preview. Review motion in real battle, especially fused paws/props. No browser needed for any of these steps.
 
-Current status: SETUP PASS, WEIGHTS DOWNLOADING, SMOKE/ROSTER NOT YET VERIFIED. Four local guard tests pass (transparent input, no-RMBG patch, complete embedded export, explicit submission/preserved sources).
+Current status: SETUP PASS, WEIGHTS CACHED, isolated smoke waiting for shared timing lease; SMOKE/ROSTER NOT YET VERIFIED. Four local guard tests pass (transparent input, no-RMBG patch, complete embedded export, explicit submission/preserved sources).
 
 ## Sequential roster queue
 

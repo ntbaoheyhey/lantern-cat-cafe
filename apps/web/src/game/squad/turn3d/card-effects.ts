@@ -1,6 +1,6 @@
 import { fullRecipes, fullEnemyRecipes } from './look-full-recipes';
 import { isLookArtV3 } from './look-art';
-import { artEffectRecipes, artLightBeatProgress } from './look-art-effects';
+import { artEffectRecipes, artLightBeatProgress, artImpactScale } from './look-art-effects';
 import { showBodyMark } from './card-status-priority';
 import { CARD_STATUS_LOOKS, CRUMB_BURST_LAYER, V5_CUE_LAYERS } from './card-status-looks';
 import type { ReactionBeat, LandingBeat } from './card-v5-events';
@@ -600,7 +600,7 @@ export class CardEffects {
       case 'shrink':
         size*=1.25-travel*.95;break;
       case 'expand':
-        size *= .45 + travel * .9;
+        size *= layer.primitive==='painted-light'&&!layer.ground ? artImpactScale(phase) : .45 + travel * .9;
         this.position.x += Math.cos(angle) * radius * (count > 1 ? .4 : 0);
         this.position.z += Math.sin(angle) * radius * (count > 1 ? .4 : 0);
         break;

@@ -36,9 +36,10 @@ export function loadModel(role: string): Promise<ModelAsset> {
     : loader.loadAsync(sources.get(role) ?? `${import.meta.env.BASE_URL}art/turn3d/${role}.glb`);
   const result = prepare.then(async () => {
     if (!look) return original();
-    // Keep reconstructed cats; provider-blocked foes use articulated paint.
-    if(hasPaintedModel(role) && (pipeline==='painted' || (pipeline==='generated' && ['button-guard','yarn-giant'].includes(role)))) return loadPaintedModel(role);
     const generated = pipeline === 'generated' && generatedSources[role];
+    // Reviewed local reconstructions take precedence as each unit is installed.
+    // Until then, preserve the articulated fallback for provider-blocked foes.
+    if(hasPaintedModel(role) && (pipeline==='painted' || (pipeline==='generated' && !generated && ['button-guard','yarn-giant'].includes(role)))) return loadPaintedModel(role);
     const url = generated || (pipeline==='sculpt' ? artSources[role] ?? lookModelSources[role] : lookModelSources[role]);
     if (!url) return original();
     const model = await loader.loadAsync(url);

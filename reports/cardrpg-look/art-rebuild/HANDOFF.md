@@ -6,8 +6,8 @@ Latest pushed d54872201: sequential local roster queue; prior a14ccfd23 has VFX/
 Do not redo R0/M5/S6, Q1/Q2/Q4, Mochi/Soot conversions, or completed VFX sources and phase checks.
 Latest INBOX: TRELLIS local-mps only, one model at a time. No browser generation. Internal chat browser for review only.
 External install ~/art/trellis-mac at d58628f4; Python3.11/Torch2.15/MPS/pipeline import pass. DINOv3 access confirmed.
-Weights downloader pid73736; smoke waiter80150 already running (smoke-wait.json). Do not duplicate either.
-Run isolated Mochi smoke after weights CACHED using LOCAL-MODELS.md command; do not overwrite shipped Mochi/Soot.
+All19weight files cached16.18GB. Old smoke waiters80150/98355 stopped before inference; replacement smoke uses250ms atomic-lock polling (smoke-local.log). Do not duplicate.
+Isolated first Mochi smoke is queued; inspect smoke-local.log and /tmp/trellis-smoke/mochi-attempt1 before any new command; preserve shipped Mochi/Soot.
 Then Button/Yarn first, then remaining roster. Max3local attempts per unit with new seeds, alpha-only/noRMBG, shared lease, no overlapping B heavy jobs.
 Q3 four-unit decision and Q5 runtime still unfinished; all25original concept masters complete/provenanced.
 Q6 all12hero skill/ult/passive and13enemy families now wired; no duplicate enemy props.7.7auditPARTIAL: normal/passive uniqueness and large motif face clipping remain.

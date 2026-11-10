@@ -1,7 +1,7 @@
 import {expect,it} from 'vitest';
 import {CARD_EFFECT_RECIPES} from './card-effect-data';
 import {fullRecipes,fullEnemyRecipes} from './look-full-recipes';
-import {artEffectRecipes,artLightBeatProgress,ART_LIGHT_UNITS} from './look-art-effects';
+import {artEffectRecipes,artLightBeatProgress,artImpactScale,ART_LIGHT_UNITS} from './look-art-effects';
 import type {EffectFrame} from './effects';
 
 it('keeps legacy art and battle timing intact while replacing pilot props',()=>{
@@ -61,4 +61,12 @@ it('shows impact light while the actor pose is held, without mutating the action
  expect(lightProgress).toBeGreaterThan(1/12); // Fully visible before the pose releases.
  expect(JSON.stringify(frame)).toBe(before);
  expect(artLightBeatProgress({...frame,beat:{...frame.beat,kind:'travel'},progress:.3})).toBe(.3);
+});
+
+it('keeps the airborne hit readable at landing instead of saving most scale for recovery',()=>{
+ // At20% of the impact beat, an expand hit has barely begun its layer lifetime.
+ const layerProgress=(.52+.08*.2-.52)/(.74-.52);
+ const impact=artImpactScale(layerProgress);
+ expect(impact).toBeGreaterThanOrEqual(.9);
+ expect(artImpactScale(.8)/impact).toBeLessThan(1.4);
 });

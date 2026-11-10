@@ -17,6 +17,12 @@ const light=(tile:number,motion:Layer['motion'],anchor:Layer['anchor'],o:Partial
  accent:false,opacity:.72,...o,
 });
 export const ART_LIGHT_UNITS=['mochi','soot','clover','panko','mallow','cinnamon','velvet','biscuit','brioche','marigold','sorrel','inkcap'] as const;
+// A hit starts at full readable scale; the wider ground ring carries expansion.
+// Reusing a slowly expanding ring for the airborne hit made recovery dominate.
+export function artImpactScale(progress:number):number{
+ const p=Math.max(0,Math.min(1,progress));
+ return .9+.35*p*(2-p);
+}
 const profiles:Record<string,{color:string;accent:string;motion:Layer['motion'];size:number;aspect:[number,number,number];height:number;turns:number}>={
  soot:{color:'#ac80dc',accent:'#f3bb61',motion:'orbit',size:2.15,aspect:[1.1,.95,1],height:.6,turns:.42},
  clover:{color:'#87cdb0',accent:'#e9f4c0',motion:'hold',size:2.05,aspect:[.9,1.1,1],height:.68,turns:.12},
@@ -77,7 +83,7 @@ export function artEffectRecipes(base:Record<string,Recipe>):Record<string,Recip
    const layers:Layer[]=[
     light(first,'pulse','caster',{start:.08,end:.34,size:ultimate?.58:.4,height:0,offset:[0,0,0],propOrigin:true,opacity:.62}),
     light(first+1,'projectile',target,{start:.34,end:.52,size:ultimate?.94:suffix==='1'?.66:.8,height:.46,propOrigin:true,opacity:.82,turns:profile.turns*.2}),
-    light(first+impact,ultimate?profile.motion:support?'hold':'expand',target,{start:.52,end:ultimate?.88:support?.86:.74,size,height:profile.height,aspect:profile.aspect,opacity:ultimate?.75:.78,turns:profile.turns,spread:profile.motion==='orbit'?.14:.3}),
+    light(first+impact,ultimate?profile.motion:support?'hold':suffix==='2'?'fall':suffix==='3'?'cross':'expand',target,{start:.52,end:ultimate?.88:support?.86:.74,size,height:profile.height,aspect:profile.aspect,opacity:ultimate?.75:.78,turns:profile.turns,spread:profile.motion==='orbit'?.14:.3}),
     light(first,'expand',target,{start:.52,end:.9,size:ultimate?1.9:1.0,height:.035,ground:true,opacity:.22}),
     light(first+3,'emit',target,{start:.54,end:.96,count:ultimate?10:5,size:ultimate?.22:.16,height:.34,spread:.5,opacity:.72,
      emitter:{mode:'burst',life:.8,velocity:[.7,.8,.5],gravity:-1.2,curl:.2,inherit:0}}),
@@ -85,7 +91,12 @@ export function artEffectRecipes(base:Record<string,Recipe>):Record<string,Recip
    if(suffix==='2')layers.push(light(first+1,'rise',target,{start:.54,end:.88,count:2,size:.55,spread:.4,height:.2,turns:-profile.turns,opacity:.58}));
    if(suffix==='3')layers.push(light(first+1,'cross',target,{start:.52,end:.82,count:2,size:.72,spread:.55,height:.45,opacity:.7}));
    if(ultimate)layers.push(light(first+1,owner==='velvet'?'cross':'orbit',target,{start:.54,end:.92,count:2,size:.88,spread:.7,height:.24,turns:profile.turns,opacity:.65}));
-   if(passive){layers.splice(1,1);for(const layer of layers){layer.size*=.55;layer.opacity*=.65;}}
+   if(passive){
+    layers.splice(1,1);
+    // Passive activation is a small paired halo, distinct from a cast projectile.
+    layers[1]={...layers[1]!,spriteRow:first,motion:'orbit',count:2,size:.7,spread:.22,height:.5,turns:.5};
+    for(const layer of layers){layer.size*=.55;layer.opacity*=.65;}
+   }
    result[id]={...old,authored:true,color:profile.color,accent:profile.accent,layers};
   }
  }

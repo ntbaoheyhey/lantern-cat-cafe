@@ -74,7 +74,7 @@ try{
       row.status='WAITING_LEASE_OR_GENERATING';await save(queuePath,queue);
       console.log(JSON.stringify({unit:row.id,attempt:n,seed,status:row.status}));
       const code=await new Promise((done,reject)=>{
-        child=spawn(process.execPath,command,{cwd:root,stdio:'inherit'});
+        child=spawn(process.execPath,command,{cwd:root,stdio:'inherit',env:{...process.env,LOOK_LOCK_POLL_MS:'250'}});
         const timer=setInterval(()=>{void shouldStop().then(stop=>{if(stop)void stopOwnedChild();});},2000);
         child.once('error',e=>{clearInterval(timer);reject(e);});
         child.once('close',code=>{clearInterval(timer);done(code);});

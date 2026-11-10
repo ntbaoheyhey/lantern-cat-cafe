@@ -1,6 +1,6 @@
 # Lane B active queue
 
-Updated: 2026-11-10T05:16:59.510589+00:00. ACTIVE — user explicitly resumed.
+Updated: 2026-11-10T08:54:00Z. ACTIVE — user explicitly resumed.
 Latest instruction: TRELLIS local-mps only; no browser/Space generation. Internal browser remains available for battle review.
 Always take the top unfinished unblocked item. Check INBOX.md and root STOP-B between items. Reports/checkpoints are not stops. After three failed repairs, use the documented fallback and continue. Only the hard stops in NON-STOP-RUN.txt apply.
 

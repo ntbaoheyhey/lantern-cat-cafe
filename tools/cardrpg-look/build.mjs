@@ -74,6 +74,17 @@ for (const row of imagePacking) {
 }
 const leanChanges=[];
 if (lean) for (const [key,asset] of embeddedAssets) {
+  if (key==='assets/cardrpg-look/v3-vfx/roster-light.webp') {
+    const {createRequire}=await import('node:module');
+    const sharp=createRequire('/Users/bao/tools/cardrpg-look/npm/package.json')('sharp');
+    // Keep every component and its alpha/gutter; only the lean atlas resolution
+    // changes. Full demo and original source remain at512px per component.
+    const bytes=await sharp(asset.bytes).resize({width:3072,withoutEnlargement:true}).webp({quality:88,alphaQuality:100,effort:6}).toBuffer();
+    if(gzip(bytes).length<gzip(asset.bytes).length){
+      leanChanges.push({key,before:asset.bytes.length,after:bytes.length,method:'WebPq88,384px per component,alpha100'});
+      embeddedAssets.set(key,{mime:'image/webp',bytes});
+    }
+  }
   if (key.startsWith('assets/cardrpg-look/portraits/') && key.endsWith('-2x.webp')) {
     const smaller=embeddedAssets.get(key.replace('-2x.webp','-1x.webp'));
     if(smaller){leanChanges.push({key,before:asset.bytes.length,after:smaller.bytes.length,method:'existing1x'});embeddedAssets.set(key,smaller);}
