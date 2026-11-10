@@ -135,3 +135,6 @@ Panko đã duyệt: cả cây cán bột và găng tay cùng lấy đà/vung xu�
 
 Mallow đã duyệt: phới liền khối lấy đà/vung tới, khăn giữ trên thân, tay và đuôi hồi nhịp; không lộ mảnh rời ở x1.
 31test web và4test cắt lớp,16ảnh/12lượt chiêu/type/lint/parity đạt; bản chung38371818byte. Chuyển động7,5→7,7, tổng giữ7,8; tiếp tục Biscuit.
+
+Biscuit đã duyệt: khiên bánh quy đỡ về trước, xẻng gỗ lấy đà/vung lên rồi hạ; viền khiên, cằm và vai liền nhau.
+32test web và5test cắt lớp,16ảnh/12lượt chiêu/type/lint/parity đạt; bản chung38447646byte. Chuyển động7,5→7,7, tổng giữ7,8; tiếp tục Brioche.

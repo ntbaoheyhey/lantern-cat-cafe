@@ -98,3 +98,6 @@ Repaired only Panko atlas/rig/config: full rolling pin+mitten in armL, coherent 
 
 ## P26 — Mallow whole whisk flourish
 Only Mallow atlas/rig/config rebuilt: complete whisk/free mitten, measured cuff repairs, scarf kept on body. Bounded windup/forward sweep with delayed head/tail;31web+4pipeline tests,16pairedviews/12naturalcasts/type/lint/parityPASS;0page/socket/faceHP/bounds errors,p95<=16.8ms. A65badf4428+B38371818B/headroom1628182B; Bembedded23728100B. Main/offHand stay armR/armL; no manifest/HUD/event/flag change. Source/original/intermediate masters retained. Small96pixel tail-fringe fallback is invisible in acceptedx1; p26/REVIEW.md, motion7.7/overall7.8.
+
+## P27 — Biscuit shield and spatula
+Only Biscuit atlas/rig/config rebuilt: whole shield rim/spatula; actual offHand corrected from armL to shield armR. MainHand stays spatula armL. Bounded shield brace/upward spatula sweep/head-tail recovery;32web+5pipeline tests,16views/12casts/type/lint/parityPASS,zero page/socket/faceHP/bounds errors,p95<=16.8ms. P27 A65badf4428+B38447646B/headroom1552354B/Bembedded23803824B. No HUD/events/flags/manifest change; all old masters preserved. Review p27/REVIEW.md; motion7.7/overall7.8.
