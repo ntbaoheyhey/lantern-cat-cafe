@@ -146,3 +146,5 @@ Visual inspection of that initial preview also found the shell h2 colour overrid
 
 Q22 visual repair2: all16views and keyboard/account/preview checks passed, but Stats inherited pale labels and squeezed gear below the notes column. Opening Stats now uses that existing notes area, with an explicit Back to skill choices disclosure and13px brown labels. No rule/renderer change. Keep12unaffected views and recapture only stats/reduced views atbothsizes.
 Q22 stats-only harness initially counted the intentionally hidden skill buttons as clipped actions. Filter the audit to rendered controls, and read actual dt labels (the shared Stats component uses dt/dd, not spans). Set13px directly on dt/dd; retain earlier keyboard and main preview receipts.
+
+- Q23 offline fixture clock: saved earned state had a newer watermark than the fixed offline cafe clock, so daily readiness correctly appeared locked. resetCafeClock after fixture injection aligned the review clock; login/task/all3weekly public claims pass at both sizes. Test-data repair only; no source/reward change.
