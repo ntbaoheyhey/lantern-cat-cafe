@@ -1,0 +1,83 @@
+{
+  "status": "EXPORTED_REVIEW_REQUIRED",
+  "checkpoint": "/Users/bao/art/look-v3/local-generation/outputs/yarn-giant/attempt-1/yarn-giant.raw.npz",
+  "checkpointSha256": "062ecd9c574acb8ce01aabd3927cdcd3dff18d5dee899337c66785786aa30530",
+  "generationReceipt": "/Users/bao/art/look-v3/local-generation/outputs/yarn-giant/attempt-1/receipt.json",
+  "generationReceiptSha256": "58dc5d18b87a39cfaf293e01efd115888e2825deab71dec0abe433ea9d111588",
+  "unit": "yarn-giant",
+  "seed": 20261112,
+  "sourceSha256": "227e47d33b48776cebe5b255e3f202d4821d15a8264be4f90fbbac39e21883db",
+  "modelRequests": 0,
+  "runtimeAccepted": false,
+  "uvMethod": "Blender Smart UV Project 66deg, fractional margin .0001, area .25",
+  "elapsedSeconds": 31.791,
+  "surfaceRepair": {
+    "sourceCheckpointSha256": "062ecd9c574acb8ce01aabd3927cdcd3dff18d5dee899337c66785786aa30530",
+    "method": "native occupancy closing1/fill/sigma.65, marching cubes, Blender100K",
+    "tool": "4.5.3 LTS",
+    "shell": {
+      "gridShape": [
+        518,
+        329,
+        448
+      ],
+      "occupiedCells": 3420054,
+      "filledCells": 4167121,
+      "closeCells": 1,
+      "sigmaCells": 0.65,
+      "checkpointSha256": "062ecd9c574acb8ce01aabd3927cdcd3dff18d5dee899337c66785786aa30530",
+      "modelRequests": 0,
+      "runtimeAccepted": false
+    },
+    "trianglesBefore": 7453860,
+    "trianglesAfter": 100000,
+    "beforeToAfterSampledSurfaceDistance": {
+      "method": "sampled points to closest triangle surface (BVHTree)",
+      "samples": 20001,
+      "p95": 0.006801022216677666,
+      "max": 0.01753663830459118
+    },
+    "afterToBeforeSampledSurfaceDistance": {
+      "method": "sampled points to closest triangle surface (BVHTree)",
+      "samples": 22477,
+      "p95": 0.0026989673264324666,
+      "max": 0.004033117089420557
+    },
+    "geometryChanged": true,
+    "runtimeAccepted": false,
+    "modelRequests": 0,
+    "surfaceDriftBound": 0.015,
+    "surfaceDriftPass": true
+  },
+  "surfaceCheckpoint": "/Users/bao/art/look-v3/local-generation/outputs/yarn-giant/raw-shell2/repaired-surface.npz",
+  "surfaceCheckpointSha256": "9cdf0c49e906a9f753b1d3889575578eb2d3bfc9d0e88786aa6ee4dfbfa1114b",
+  "uvSeconds": 1.24,
+  "sourceTriangles": 100000,
+  "exportedTriangles": 99975,
+  "duplicateFacesRemoved": 25,
+  "uvArea": 0.2859383225440979,
+  "model": "/Users/bao/art/look-v3/local-generation/outputs/yarn-giant/raw-shell2/export/source.glb",
+  "modelSha256": "8fbe4de9285ddfb7f0da6a8aeeb6d691608b0826e090003b690cd0bb66cfcb59",
+  "orientation": {
+    "source": "/Users/bao/art/look-v3/local-generation/outputs/yarn-giant/raw-shell2/export/source.native-z-up.glb",
+    "sourceSha256": "0a68c888bd6db812dcefbe2fdb50092a1b0bd6d2ac23fae37da2c95dc2193fb7",
+    "output": "/Users/bao/art/look-v3/local-generation/outputs/yarn-giant/raw-shell2/export/source.glb",
+    "sha256": "8fbe4de9285ddfb7f0da6a8aeeb6d691608b0826e090003b690cd0bb66cfcb59",
+    "basis": "x,z,-y",
+    "geometryAccessors": 2,
+    "correctedUVAccessors": 1,
+    "method": "Rigid basis rotation; native UV-v correction when requested; images/indices unchanged"
+  },
+  "uvSha256": "3f8fb4be773df4c3184d2438df3643dfb7b521195e1e346b4c72ce5dad31e475",
+  "paddedTextureFraction": 1.0,
+  "positionsUnchanged": false,
+  "uniqueSurfaceCoverageUnchanged": false,
+  "uvPositionsUnchanged": true,
+  "uvUniqueSurfaceCoverageUnchanged": true,
+  "bakerSha256": "ed5b5bbe1e967f5bac1df215e80edae54a6cafe96ed3ac0a343842028af6ea66",
+  "exporterSha256": "c955a5edf5ceeb456935b2b110f6644b26f3b1226a6c35aa20961570a2f81d29",
+  "unwrapSha256": "ae2a76fabd10315cfaa34dd32a092d44abf5fc782e1f7b256a06fe135b91dfa7",
+  "exportSeconds": 5.837,
+  "reviewDirectory": "/Users/bao/art/look-v3/local-generation/outputs/yarn-giant/raw-shell2/export/review",
+  "reviewStatus": "CAPTURED_NOT_INSPECTED"
+}

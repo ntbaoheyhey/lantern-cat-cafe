@@ -1,0 +1,444 @@
+"""Explicit local TRELLIS generation. The historical Space backend defaults OFF.
+
+Run with the existing art Python environment (Pillow); weights/deps stay outside git.
+Use the shared timing lease and only one inference process. No automatic rig acceptance.
+"""
+import argparse
+import hashlib
+import json
+import os
+import re
+import shutil
+import signal
+import struct
+import subprocess
+import sys
+import time
+from datetime import datetime, timezone
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[3]
+LOCAL = Path.home() / 'art/look-v3/local-generation'
+
+
+def sha(path):
+    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+
+def write_json(path, value):
+    path = Path(path)
+    temp = path.with_suffix(path.suffix + '.tmp')
+    temp.write_text(json.dumps(value, indent=2, ensure_ascii=False) + '\n')
+    temp.replace(path)
+
+
+def validate_alpha(source):
+    from PIL import Image
+    with Image.open(source) as im:
+        if im.format != 'PNG' or im.mode != 'RGBA':
+            raise ValueError('Use an RGBA PNG with its background already removed')
+        lo, hi = im.getchannel('A').getextrema()
+        if lo >= 255 or hi <= 204:
+            raise ValueError('Input must have transparency and an opaque foreground')
+        return {'size': list(im.size), 'alphaRange': [lo, hi]}
+
+
+def disable_rmbg(trellis):
+    # Upstream constructs RMBG even when the image has alpha. Suppress that load;
+    # preprocessing still uses the original alpha/crop path. Never fetch its weights.
+    path = trellis / 'TRELLIS.2/trellis2/pipelines/trellis2_image_to_3d.py'
+    old = "pipeline.rembg_model = getattr(rembg, args['rembg_model']['name'])(**args['rembg_model']['args'])"
+    new = 'pipeline.rembg_model = None  # Lane B: prevalidated alpha only; no RMBG weights'
+    body = path.read_text()
+    if new not in body:
+        if body.count(old) != 1:
+            raise ValueError('Upstream RMBG loader changed; inspect before patching')
+        path.write_text(body.replace(old, new))
+    return {'path': str(path), 'sha256': sha(path), 'replacement': new}
+
+
+def validate_glb(path):
+    data = path.read_bytes()
+    if len(data) < 20 or struct.unpack_from('<III', data) != (0x46546C67, 2, len(data)):
+        raise ValueError('Missing or truncated GLB2 export')
+    size, kind = struct.unpack_from('<II', data, 12)
+    if kind != 0x4E4F534A or size > len(data) - 20:
+        raise ValueError('Invalid GLB JSON chunk')
+    doc = json.loads(data[20:20 + size])
+    if not doc.get('meshes') or not doc.get('images'):
+        raise ValueError('A textured mesh is required')
+    for row in doc.get('buffers', []) + doc.get('images', []):
+        if row.get('uri') and not row['uri'].startswith('data:'):
+            raise ValueError('Export must embed all textures and buffers')
+    return {'meshes': len(doc['meshes']), 'images': len(doc['images']), 'bytes': len(data)}
+
+
+def trace_decoders(trellis):
+    # Timings only: preserve model operations and sampler settings.
+    path = trellis / 'TRELLIS.2/trellis2/pipelines/trellis2_image_to_3d.py'
+    body = path.read_text()
+    old = ('        meshes, subs = self.decode_shape_slat(shape_slat, resolution)\n'
+           '        tex_voxels = self.decode_tex_slat(tex_slat, subs)')
+    new = ('        print("Lane B: decode shape started", flush=True)\n' + old.split('\n')[0] + '\n'
+           '        print("Lane B: decode shape complete; decode texture started", flush=True)\n' + old.split('\n')[1] + '\n'
+           '        print("Lane B: decode texture complete", flush=True)')
+    if new not in body:
+        if body.count(old) != 1:
+            raise ValueError('Upstream decoder changed; inspect before tracing')
+        path.write_text(body.replace(old, new))
+    return {'path': str(path), 'sha256': sha(path), 'purpose': 'stage logging only'}
+
+
+def configure_export(trellis):
+    path = trellis / 'generate.py'
+    body = path.read_text()
+    marker = '    args = parser.parse_args()'
+    option = '    parser.add_argument("--max-faces", type=int, choices=[50000,100000,200000], default=200000)\n'
+    if option not in body:
+        if body.count(marker) != 1 or body.count('min(200000,') != 2:
+            raise ValueError('Upstream export changed; inspect before configuring source size')
+        body = body.replace(marker, option + marker).replace('min(200000,', 'min(args.max_faces,')
+        path.write_text(body)
+    return {'path': str(path), 'sha256': sha(path), 'purpose': 'bounded pre-UV source face count'}
+
+
+def configure_texture_gutters(trellis):
+    path = trellis / 'backends/texture_baker.py'
+    body = path.read_text()
+    marker = '    # Lane B: nearest valid texel gutters; never average with empty black pixels'
+    start = '    # Fill holes via iterative dilation'
+    end = '    # Gamma correction: linear -> sRGB'
+    if marker not in body:
+        if body.count(start) != 1 or body.count(end) != 1:
+            raise ValueError('Upstream texture baker changed; inspect before patching gutters')
+        first, last = body.index(start), body.index(end)
+        replacement = marker + '''
+    from scipy.ndimage import distance_transform_edt
+    if not valid_mask.any():
+        raise ValueError("No valid voxel texels to pad")
+    nearest = distance_transform_edt(~valid_mask, return_distances=False, return_indices=True)
+    for channel in (base_color, metallic, roughness):
+        channel[~valid_mask] = channel[nearest[0, ~valid_mask], nearest[1, ~valid_mask]]
+    current_mask = np.ones_like(valid_mask)
+
+'''
+        body = body[:first] + replacement + body[last:]
+        path.write_text(body)
+    return {'path': str(path), 'sha256': sha(path), 'purpose': 'nearest valid texel gutters; authored texels unchanged'}
+
+
+def configure_raw_checkpoint(trellis):
+    """Save model output before destructive export simplification, without reruns."""
+    path = trellis / 'generate.py'
+    body = path.read_text()
+    marker = '            # Lane B: immutable raw surface before simplification'
+    anchor = '            # Simplify before UV unwrap'
+    if marker not in body:
+        if body.count(anchor) != 1:
+            raise ValueError('Upstream simplification stage changed; inspect before checkpointing raw surface')
+        start = body.index(anchor)
+        addition = marker + '''
+            raw_checkpoint = args.output + ".raw.npz"
+            np.savez(raw_checkpoint + ".tmp.npz", vertices=verts, faces=faces,
+                     voxel_coords=voxel_coords.numpy(), voxel_attrs=voxel_attrs.numpy(),
+                     origin=origin.numpy(), voxel_size=np.asarray(vs),
+                     texture_size=np.asarray(tex_size))
+            os.replace(raw_checkpoint + ".tmp.npz", raw_checkpoint)
+            print(f"  Raw checkpoint: {raw_checkpoint}; {len(faces):,} faces", flush=True)
+
+'''
+        path.write_text(body[:start] + addition + body[start:])
+    return {'path': str(path), 'sha256': sha(path), 'purpose': 'raw source before export simplification; no inference changes'}
+
+
+def configure_export_checkpoint(trellis):
+    # Keep decoded geometry/voxel colour before the potentially slow UV stage.
+    # An exporter failure can then be repaired without another model request.
+    path = trellis / 'generate.py'
+    body = path.read_text()
+    marker = '            # Lane B: preserve decoded source before UV export'
+    anchor = '            print("  UV unwrapping with xatlas...")'
+    if marker not in body:
+        if body.count(anchor) != 1:
+            raise ValueError('Upstream UV stage changed; inspect before checkpointing')
+        replacement = marker + '''
+            checkpoint = args.output + ".decoded.npz"
+            np.savez(checkpoint + ".tmp.npz", vertices=bake_verts, faces=bake_faces,
+                     voxel_coords=voxel_coords.numpy(), voxel_attrs=voxel_attrs.numpy(),
+                     origin=origin.numpy(), voxel_size=np.asarray(vs),
+                     texture_size=np.asarray(tex_size))
+            os.replace(checkpoint + ".tmp.npz", checkpoint)
+            print(f"  Decoded checkpoint: {checkpoint}; {len(bake_faces):,} faces", flush=True)
+'''
+        path.write_text(body.replace(anchor, replacement + anchor))
+    return {'path': str(path), 'sha256': sha(path), 'purpose': 'decoded source checkpoint before UV; no inference changes'}
+
+
+def configure_blender_uv(trellis):
+    """Optional export route only; preserve inference and the historical xatlas path."""
+    path = trellis / 'generate.py'
+    body = path.read_text()
+    marker = '            # Lane B: bounded Blender UV export, same decoded surface'
+    original = '            new_verts, new_faces, uvs, vmapping = uv_unwrap(bake_verts, bake_faces)'
+    export = '            export_glb_with_texture(new_verts, new_faces, uvs, base_color_img, mr_img, glb_path)'
+    if marker not in body:
+        if body.count(original) != 1 or body.count(export) != 1:
+            raise ValueError('Upstream UV/export changed; inspect before enabling Blender')
+        replacement = marker + '''
+            new_normals = None
+            if os.environ.get('LANE_B_UV_SCRIPT'):
+                import subprocess
+                import trimesh
+                uv_path = args.output + ".uv.npz"
+                subprocess.run([os.environ['LANE_B_BLENDER'], '-b', '--threads', '4',
+                                '--python-exit-code', '1', '--python', os.environ['LANE_B_UV_SCRIPT'], '--',
+                                '--checkpoint', checkpoint, '--out', uv_path], check=True, timeout=240)
+                with np.load(uv_path, allow_pickle=False) as uv_data:
+                    new_verts, new_faces, uvs = uv_data['vertices'], uv_data['faces'], uv_data['uvs']
+                    vmapping, original_face = uv_data['original_vertex'], uv_data['original_face']
+                if not np.array_equal(new_verts, bake_verts[vmapping]) or not np.array_equal(vmapping[new_faces], bake_faces[original_face]):
+                    raise ValueError('UV export changed retained geometry')
+                tri_uv = uvs[new_faces]
+                du, dv = tri_uv[:, 1] - tri_uv[:, 0], tri_uv[:, 2] - tri_uv[:, 0]
+                uv_area = float(np.abs(du[:, 0] * dv[:, 1] - du[:, 1] * dv[:, 0]).sum() * .5)
+                if not .15 <= uv_area <= 1.01:
+                    raise ValueError(f'UV atlas area {uv_area:.5f} is unusable; preserve checkpoint')
+                source_mesh = trimesh.Trimesh(vertices=bake_verts, faces=bake_faces[original_face], process=False)
+                new_normals = source_mesh.vertex_normals[vmapping]
+            else:
+                new_verts, new_faces, uvs, vmapping = uv_unwrap(bake_verts, bake_faces)'''
+        body = body.replace(original, replacement).replace(export, export[:-1] + ', vertex_normals=new_normals)')
+        path.write_text(body)
+    baker = trellis / 'backends/texture_baker.py'
+    body = baker.read_text()
+    signature = 'def export_glb_with_texture(vertices, faces, uvs, base_color_img, mr_img=None, output_path="output.glb"):'
+    mesh = '    mesh = trimesh.Trimesh(vertices=vertices, faces=faces, process=False)'
+    new_signature = signature[:-2] + ', vertex_normals=None):'
+    if new_signature not in body:
+        if body.count(signature) != 1 or body.count(mesh) != 1:
+            raise ValueError('Upstream texture export changed; inspect before preserving UV-seam normals')
+        baker.write_text(body.replace(signature, new_signature).replace(mesh,
+            '    mesh = trimesh.Trimesh(vertices=vertices, faces=faces, vertex_normals=vertex_normals, process=False)'))
+    helper = Path(__file__).with_name('unwrap-decoded.py')
+    return {'path': str(path), 'sha256': sha(path), 'bakerSha256': sha(baker),
+            'helper': str(helper), 'helperSha256': sha(helper), 'purpose': 'bounded UV export; no inference changes'}
+
+
+def configure_voxel_shell(trellis):
+    """Opt-in post-decoder cleanup; source checkpoint and model calls unchanged."""
+    path = trellis / 'generate.py'
+    body = path.read_text()
+    marker = '            # Lane B: optional coherent shell from saved native cells'
+    anchor = '            # Simplify before UV unwrap'
+    if marker not in body:
+        if body.count(anchor) != 1 or 'raw_checkpoint = args.output' not in body:
+            raise ValueError('Raw export changed; inspect before enabling shell cleanup')
+        addition = marker + '''
+            if os.environ.get('LANE_B_SHELL_SCRIPT'):
+                import importlib.util
+                from pathlib import Path
+                shell_spec = importlib.util.spec_from_file_location('lane_b_shell', os.environ['LANE_B_SHELL_SCRIPT'])
+                shell_module = importlib.util.module_from_spec(shell_spec)
+                shell_spec.loader.exec_module(shell_module)
+                shell_path = shell_module.recover_checkpoint(Path(raw_checkpoint),
+                    Path(args.output + '.shell'), Path(os.environ['LANE_B_BLENDER']))
+                with np.load(shell_path, allow_pickle=False) as repaired:
+                    if not __import__('json').loads(repaired['surface_repair'].item())['surfaceDriftPass']:
+                        raise ValueError('Reject shell exceeding original surface drift bound')
+                    verts, faces = repaired['vertices'], repaired['faces']
+                print(f"  Reviewed-distance shell: {shell_path}; {len(faces):,} faces", flush=True)
+
+'''
+        at = body.index(anchor)
+        path.write_text(body[:at] + addition + body[at:])
+    scripts = ['repair-voxel-shell.py', 'finish-voxel-shell.py', 'surface-distance.py']
+    return {'path': str(path), 'sha256': sha(path),
+            'helpers': {name: sha(Path(__file__).with_name(name)) for name in scripts},
+            'purpose': 'opt-in saved-cell surface cleanup; unchanged inference and .015p95 drift guard'}
+
+
+def local_generate(args):
+    if not re.fullmatch(r'[a-z][a-z0-9-]*', args.id):
+        raise ValueError('Invalid unit id')
+    if args.id in ('mochi', 'soot') and not args.smoke:
+        raise ValueError('Preserve completed Mochi/Soot conversions; only isolated --smoke is allowed')
+    if args.seed is None:
+        raise ValueError('A fixed --seed is required')
+    if args.surface_backend == 'voxel-shell' and args.uv_backend != 'blender':
+        raise ValueError('Voxel-shell cleanup requires the bounded Blender UV route')
+    if (ROOT / 'STOP-B').exists():
+        raise InterruptedError('STOP-B requested')
+    source = ROOT / f'assets/source/look-v3/concepts/{args.id}.png'
+    alpha = validate_alpha(source)
+    trellis = Path(args.local_root).expanduser().resolve()
+    python = trellis / '.venv/bin/python'
+    if not python.is_file():
+        raise ValueError('Local TRELLIS environment is not installed')
+    # Loading this port outside a lease can collide with other lanes' perf jobs.
+    lease = json.loads(Path('/tmp/cardrpg-big-locks/timing.lock/owner.json').read_text())
+    if lease.get('lane') != 'B-LOOK' or lease.get('pid') != os.getppid():
+        raise ValueError('Run through tools/cardrpg-look/skills-v5/full/run-lock.mjs')
+    os.kill(lease['pid'], 0)
+    out = Path(args.out).expanduser().resolve()
+    LOCAL.mkdir(parents=True, exist_ok=True)
+    lock = LOCAL / '.running'
+    lock.mkdir()  # Exclusive across all units; never delete another process's lock.
+    started = time.monotonic()
+    receipt = None
+    child = None
+    stopped = False
+
+    def stop_handler(_signal, _frame):
+        nonlocal stopped
+        stopped = True
+
+    for sig in (signal.SIGINT, signal.SIGTERM):
+        signal.signal(sig, stop_handler)
+
+    try:
+        write_json(lock / 'owner.json', {'pid': os.getpid(), 'unit': args.id})
+        ledger_dir = LOCAL / ('smoke' if args.smoke else 'roster') / args.id
+        ledger_dir.mkdir(parents=True, exist_ok=True)
+        previous = [json.loads(p.read_text()) for p in sorted(ledger_dir.glob('attempt-*.json'))]
+        if len(previous) >= 3:
+            raise ValueError('Two retries exhausted; record failed and continue the queue')
+        if any(p['seed'] == args.seed for p in previous):
+            raise ValueError('A retry needs a new recorded seed')
+        if any(p.get('status') == 'GENERATED_NOT_REVIEWED' for p in previous):
+            raise ValueError('Successful conversion already exists; reuse it')
+        out.mkdir(parents=True, exist_ok=False)
+        ledger_path = ledger_dir / f'attempt-{len(previous) + 1}.json'
+        receipt = dict(status='PREPARING', provider='trellis-mac (local)', backend='local-mps',
+                       id=args.id, seed=args.seed, attempt=len(previous) + 1, smoke=args.smoke,
+                       pipelineType=args.pipeline_type, textureSize=args.texture_size,
+                       source=str(source.relative_to(ROOT)), sourceSha256=sha(source), alpha=alpha,
+                       startedAt=datetime.now(timezone.utc).isoformat(), runtimeAccepted=False,
+                       trellisCommit=subprocess.check_output(['git', '-C', str(trellis), 'rev-parse', 'HEAD'], text=True).strip(),
+                       upstreamCommit=subprocess.check_output(['git', '-C', str(trellis / 'TRELLIS.2'), 'rev-parse', 'HEAD'], text=True).strip(),
+                       alphaOnlyPatch=disable_rmbg(trellis), decoderTracePatch=trace_decoders(trellis),
+                       exportPatch=configure_export(trellis), sourceFaces=args.source_faces,
+                       textureGutterPatch=configure_texture_gutters(trellis),
+                       rawCheckpointPatch=configure_raw_checkpoint(trellis),
+                       exportCheckpointPatch=configure_export_checkpoint(trellis),
+                       generateSha256=sha(trellis / 'generate.py'))
+        if args.uv_backend == 'blender':
+            receipt['blenderUvPatch'] = configure_blender_uv(trellis)
+            receipt['generateSha256'] = sha(trellis / 'generate.py')
+        receipt['uvBackend'] = args.uv_backend
+        if args.surface_backend == 'voxel-shell':
+            receipt['voxelShellPatch'] = configure_voxel_shell(trellis)
+            receipt['generateSha256'] = sha(trellis / 'generate.py')
+        receipt['surfaceBackend'] = args.surface_backend
+
+        def save(status, **extra):
+            receipt.update(status=status, elapsedSeconds=round(time.monotonic() - started, 3), **extra)
+            write_json(out / 'receipt.json', receipt)
+            write_json(ledger_path, receipt)
+
+        command = [str(python), '-u', str(trellis / 'generate.py'), str(source),
+                   '--output', str(out / args.id), '--seed', str(args.seed),
+                   '--pipeline-type', args.pipeline_type, '--texture-size', str(args.texture_size),
+                   '--max-faces', str(args.source_faces)]
+        save('GENERATING', command=command)
+        env = os.environ.copy()
+        env['PYTHONUNBUFFERED'] = '1'
+        env['HF_HUB_DISABLE_PROGRESS_BARS'] = '1'
+        env.pop('LANE_B_UV_SCRIPT', None)
+        env.pop('LANE_B_BLENDER', None)
+        env.pop('LANE_B_SHELL_SCRIPT', None)
+        if args.uv_backend == 'blender':
+            env['LANE_B_UV_SCRIPT'] = str(Path(__file__).with_name('unwrap-decoded.py'))
+            env['LANE_B_BLENDER'] = str(Path.home() / 'tools/cardrpg-look/Blender.app/Contents/MacOS/Blender')
+        if args.surface_backend == 'voxel-shell':
+            env['LANE_B_SHELL_SCRIPT'] = str(Path(__file__).with_name('repair-voxel-shell.py'))
+        with (out / 'generation.log').open('w') as log:
+            child = subprocess.Popen(command, cwd=trellis, env=env, stdout=log,
+                                     stderr=subprocess.STDOUT, start_new_session=True)
+            while child.poll() is None:
+                if stopped or (ROOT / 'STOP-B').exists() or time.monotonic() - started > args.timeout:
+                    os.killpg(child.pid, signal.SIGTERM)
+                    try:
+                        child.wait(timeout=10)
+                    except subprocess.TimeoutExpired:
+                        os.killpg(child.pid, signal.SIGKILL)
+                        child.wait()
+                    raise InterruptedError('Stopped by pause/STOP-B or bounded inference timeout')
+                time.sleep(2)
+        if child.returncode:
+            raise RuntimeError(f'Local generation exited {child.returncode}; see generation.log')
+        model = out / f'{args.id}.glb'
+        structure = validate_glb(model)
+        # The upstream Metal exporter rotates (x,z,-y), whereas the KDTree
+        # exporter writes native Z-up vertices directly. Preserve its raw bytes.
+        if 'Baking PBR textures via KDTree' in (out / 'generation.log').read_text():
+            native = out / f'{args.id}.native-z-up.glb'
+            model.rename(native)
+            orientation = subprocess.check_output([
+                sys.executable, str(Path(__file__).with_name('orient-local-glb.py')),
+                str(native), str(model), '--native-uv'], text=True)
+            receipt['orientation'] = json.loads(orientation)
+            structure = validate_glb(model)
+        model_hash = sha(model)
+        if args.surface_backend == 'voxel-shell':
+            diagnostic = out / f'{args.id}.shell/repaired-surface.json'
+            receipt['surfaceRepair'] = json.loads(diagnostic.read_text())
+            receipt['surfaceRepairReceipt'] = str(diagnostic)
+        save('GENERATED_NOT_REVIEWED', model=str(model), modelSha256=model_hash, structure=structure,
+             cooldownRecommendedSeconds=120 if time.monotonic() - started > 900 else 0)
+        if not args.smoke:
+            inbox = Path.home() / 'art/look-v3/inbox'
+            inbox.mkdir(parents=True, exist_ok=True)
+            destination = inbox / f'{args.id}.glb'
+            if destination.exists() and sha(destination) != model_hash:
+                raise FileExistsError('Inbox model differs; preserve it and inspect before replacement')
+            if not destination.exists():
+                temp = inbox / f'.{args.id}-{os.getpid()}.glb.tmp'
+                shutil.copyfile(model, temp)
+                # Exclusive link publishes a complete file without overwriting another writer.
+                os.link(temp, destination)
+                temp.unlink()
+            save('GENERATED_NOT_REVIEWED', inbox=str(destination))
+        print(json.dumps(receipt, ensure_ascii=False))
+    except BaseException as error:
+        if receipt is not None:
+            save('INTERRUPTED' if isinstance(error, (InterruptedError, KeyboardInterrupt)) else 'FAILED',
+                 error=str(error), errorType=type(error).__name__)
+        raise
+    finally:
+        if child is not None and child.poll() is None:
+            os.killpg(child.pid, signal.SIGTERM)
+            child.wait(timeout=10)
+        (lock / 'owner.json').unlink(missing_ok=True)
+        lock.rmdir()
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--backend', choices=['off', 'local-mps', 'hf-space'], default='off')
+    parser.add_argument('--submit', action='store_true')
+    parser.add_argument('--id', default='mochi')
+    parser.add_argument('--out', required=True)
+    parser.add_argument('--seed', type=int)
+    parser.add_argument('--pipeline-type', choices=['512', '1024', '1024_cascade'], default='1024')
+    parser.add_argument('--texture-size', type=int, choices=[512, 1024, 2048], default=1024)
+    parser.add_argument('--uv-backend', choices=['xatlas', 'blender'], default='xatlas',
+                        help='Opt-in reviewed Blender export without changing inference')
+    parser.add_argument('--surface-backend', choices=['native', 'voxel-shell'], default='native',
+                        help='Opt-in cleanup of saved native cells; never changes model sampling')
+    parser.add_argument('--source-faces', type=int, choices=[50000, 100000, 200000], default=100000,
+                        help='Pre-UV source mesh budget; runtime packing is a separate reviewed step')
+    parser.add_argument('--local-root', default=str(Path.home() / 'art/trellis-mac'))
+    parser.add_argument('--smoke', action='store_true', help='Isolated comparison; never publish into inbox')
+    parser.add_argument('--timeout', type=int, default=1080)
+    args = parser.parse_args()
+    if not args.submit or args.backend == 'off':
+        parser.error('Generation is OFF; choose --backend local-mps --submit explicitly')
+    if not 1 <= args.timeout <= 1080:
+        parser.error('Timeout must fit within the shared 19-minute timing lease')
+    if args.backend == 'hf-space':
+        parser.error('Historical Space implementation retained in image-to-3d-space.py; browser/Space generation disabled by current INBOX')
+    local_generate(args)
+
+
+if __name__ == '__main__':
+    main()

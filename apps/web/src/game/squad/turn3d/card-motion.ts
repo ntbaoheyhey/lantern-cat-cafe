@@ -276,6 +276,16 @@ async function bakeCardClips(model: T.Object3D, role: string, asset: string) {
           angles[0] = Math.max(-.90, angles[0] * .65);
           angles[2] = Math.abs(angles[2]) * .65;
         }
+        // Rigid generated modules keep their original painted surface. Bound
+        // local joint travel so the neck/tail seams stay overlapped; the full
+        // root anticipation/lunge/recover and existing action timing remain.
+        if (model.userData.lookRigid === true && joint !== 'motion') {
+          const family = joint === 'head' ? 'head' : joint.startsWith('tail') ? 'tail'
+            : joint.startsWith('ear') ? 'ear' : joint.startsWith('arm') ? 'arm' : 'foot';
+          const limits = model.userData.rigLimits as Record<string,number> | undefined;
+          const limit = limits?.[family] ?? (family === 'head' ? .085 : family === 'tail' ? .12 : family === 'ear' ? .06 : .035);
+          for (let axis = 0; axis < 3; axis++) angles[axis] = Math.max(-limit, Math.min(limit, angles[axis]! * (limits ? .45 : .2)));
+        }
         const rotation = new T.Quaternion().setFromEuler(new T.Euler(...angles));
         const quaternion = node.quaternion.clone().multiply(rotation);
         values.push(...quaternion.toArray());
@@ -300,7 +310,8 @@ async function bakeCardClips(model: T.Object3D, role: string, asset: string) {
     if (motion) tracks.push(new T.VectorKeyframeTrack(`${motion.name}.position`, times,
       poses.flatMap(pose => motion.position.toArray().map((value, axis) => value + pose.shift![axis]!))));
     if (body) tracks.push(new T.VectorKeyframeTrack(`${body.name}.scale`, times,
-      poses.flatMap(pose => body.scale.toArray().map((value, axis) => value * pose.stretch![axis]!))));
+      poses.flatMap(pose => body.scale.toArray().map((value, axis) => value
+        * (model.userData.lookRigid === true ? 1 + (pose.stretch![axis]! - 1) * .18 : pose.stretch![axis]!)))));
     clips.push(new T.AnimationClip(definition.id, definition.duration, tracks));
     // Cold opening remains measured. Yield between clips so this preparation can paint.
     await new Promise(resolve => setTimeout(resolve, 0));
@@ -310,7 +321,7 @@ async function bakeCardClips(model: T.Object3D, role: string, asset: string) {
 
 /** Bake once per asset, then let the existing mixer handle playback and blending. */
 export function createCardClips(model: T.Object3D, role: string, asset: string): Promise<T.AnimationClip[]> {
-  const key = `${asset}/${role}/${model.userData.lookV2 === true ? 'atelier' : 'classic'}`;
+  const key = `${asset}/${role}/${model.userData.lookV2 === true ? 'atelier' : 'classic'}/${model.userData.rigVersion ?? 'original'}`;
   const cached = clipCache.get(key);
   if (cached) return cached;
   const result = bakeCardClips(model, role, asset);

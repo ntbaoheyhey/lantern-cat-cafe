@@ -1,0 +1,7755 @@
+{
+  "loadToInteractiveMs": 1448.300000000745,
+  "battleReadyMs": 5892.700000001118,
+  "postInteractive": {
+    "count": 780,
+    "max": 33.399999999999864,
+    "p95": 16.700000000000728,
+    "above25": 2,
+    "above50": 0,
+    "within20": 0.9974358974358974
+  },
+  "postReady": {
+    "count": 515,
+    "max": 16.80000000000109,
+    "p95": 16.700000000000728,
+    "above25": 0,
+    "above50": 0,
+    "within20": 1
+  },
+  "width": 1440,
+  "height": 900,
+  "dpr": 1,
+  "throttle": 1,
+  "errors": [],
+  "prewarm": [
+    {
+      "name": "look-prewarm:geometry:painted-light",
+      "entryType": "measure",
+      "startTime": 1487.9000000003725,
+      "duration": 0.30000000074505806,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:queue-slice",
+      "entryType": "measure",
+      "startTime": 1487.9000000003725,
+      "duration": 0.40000000037252903,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:queue-slice",
+      "entryType": "measure",
+      "startTime": 1545.7000000011176,
+      "duration": 16.09999999962747,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:pan",
+      "entryType": "measure",
+      "startTime": 1545.800000000745,
+      "duration": 0.6999999992549419,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:bread",
+      "entryType": "measure",
+      "startTime": 1546.5,
+      "duration": 1.400000000372529,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:oven",
+      "entryType": "measure",
+      "startTime": 1547.9000000003725,
+      "duration": 0.599999999627471,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:whisk",
+      "entryType": "measure",
+      "startTime": 1548.5,
+      "duration": 0.599999999627471,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:spoon",
+      "entryType": "measure",
+      "startTime": 1549.0999999996275,
+      "duration": 0.30000000074505806,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:teapot",
+      "entryType": "measure",
+      "startTime": 1549.4000000003725,
+      "duration": 0.8000000007450581,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:roller",
+      "entryType": "measure",
+      "startTime": 1550.2000000011176,
+      "duration": 0.19999999925494194,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:crumb-crown",
+      "entryType": "measure",
+      "startTime": 1550.4000000003725,
+      "duration": 1.099999999627471,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:paper-cat",
+      "entryType": "measure",
+      "startTime": 1551.5,
+      "duration": 1.099999999627471,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:ink-cap",
+      "entryType": "measure",
+      "startTime": 1552.5999999996275,
+      "duration": 1,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:spice-star",
+      "entryType": "measure",
+      "startTime": 1553.5999999996275,
+      "duration": 0.30000000074505806,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:serving-bell",
+      "entryType": "measure",
+      "startTime": 1553.9000000003725,
+      "duration": 0.30000000074505806,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:apron-cloth",
+      "entryType": "measure",
+      "startTime": 1554.2000000011176,
+      "duration": 0.3999999985098839,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:night-bell",
+      "entryType": "measure",
+      "startTime": 1554.5999999996275,
+      "duration": 0.40000000037252903,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:blanket",
+      "entryType": "measure",
+      "startTime": 1555,
+      "duration": 0.599999999627471,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:collar",
+      "entryType": "measure",
+      "startTime": 1555.5999999996275,
+      "duration": 0.40000000037252903,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:constellation",
+      "entryType": "measure",
+      "startTime": 1556,
+      "duration": 0.30000000074505806,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:veil",
+      "entryType": "measure",
+      "startTime": 1556.300000000745,
+      "duration": 0.900000000372529,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:spindle",
+      "entryType": "measure",
+      "startTime": 1557.2000000011176,
+      "duration": 0.7999999988824129,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:seed-pod",
+      "entryType": "measure",
+      "startTime": 1558,
+      "duration": 0.40000000037252903,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:flower-bell",
+      "entryType": "measure",
+      "startTime": 1558.4000000003725,
+      "duration": 0.30000000074505806,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:shears",
+      "entryType": "measure",
+      "startTime": 1558.7000000011176,
+      "duration": 0.2999999988824129,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:watering-can",
+      "entryType": "measure",
+      "startTime": 1559,
+      "duration": 0.5,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:door",
+      "entryType": "measure",
+      "startTime": 1559.5,
+      "duration": 0.2000000011175871,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:knock-ring",
+      "entryType": "measure",
+      "startTime": 1559.7000000011176,
+      "duration": 0.2999999988824129,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:handle",
+      "entryType": "measure",
+      "startTime": 1560,
+      "duration": 0.30000000074505806,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:lantern",
+      "entryType": "measure",
+      "startTime": 1560.300000000745,
+      "duration": 0.40000000037252903,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:light-pool",
+      "entryType": "measure",
+      "startTime": 1560.7000000011176,
+      "duration": 0.599999999627471,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:apron",
+      "entryType": "measure",
+      "startTime": 1561.300000000745,
+      "duration": 0.40000000037252903,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:queue-slice",
+      "entryType": "measure",
+      "startTime": 1570.0999999996275,
+      "duration": 12.400000000372529,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:bow",
+      "entryType": "measure",
+      "startTime": 1570.2000000011176,
+      "duration": 0.2999999988824129,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:roof",
+      "entryType": "measure",
+      "startTime": 1570.5,
+      "duration": 0.5,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:window",
+      "entryType": "measure",
+      "startTime": 1571,
+      "duration": 0.30000000074505806,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:ember",
+      "entryType": "measure",
+      "startTime": 1571.300000000745,
+      "duration": 0.6999999992549419,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:spark",
+      "entryType": "measure",
+      "startTime": 1572,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:cup",
+      "entryType": "measure",
+      "startTime": 1572.2000000011176,
+      "duration": 0.5,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:steam",
+      "entryType": "measure",
+      "startTime": 1572.7000000011176,
+      "duration": 0.599999999627471,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:ink-drop",
+      "entryType": "measure",
+      "startTime": 1573.300000000745,
+      "duration": 0.19999999925494194,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:ink-stain",
+      "entryType": "measure",
+      "startTime": 1573.5,
+      "duration": 0.30000000074505806,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:wick",
+      "entryType": "measure",
+      "startTime": 1573.800000000745,
+      "duration": 0.19999999925494194,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:flame",
+      "entryType": "measure",
+      "startTime": 1574,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:tray",
+      "entryType": "measure",
+      "startTime": 1574.0999999996275,
+      "duration": 0.40000000037252903,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:star",
+      "entryType": "measure",
+      "startTime": 1574.5,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:comet",
+      "entryType": "measure",
+      "startTime": 1574.5999999996275,
+      "duration": 0.5,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:leaf",
+      "entryType": "measure",
+      "startTime": 1575.0999999996275,
+      "duration": 0.30000000074505806,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:stem",
+      "entryType": "measure",
+      "startTime": 1575.4000000003725,
+      "duration": 0.19999999925494194,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:droplet",
+      "entryType": "measure",
+      "startTime": 1575.5999999996275,
+      "duration": 0.10000000149011612,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:wave",
+      "entryType": "measure",
+      "startTime": 1575.7000000011176,
+      "duration": 0.2999999988824129,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:wreath",
+      "entryType": "measure",
+      "startTime": 1576,
+      "duration": 0.40000000037252903,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:greenhouse",
+      "entryType": "measure",
+      "startTime": 1576.4000000003725,
+      "duration": 1.400000000372529,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:sprout",
+      "entryType": "measure",
+      "startTime": 1577.800000000745,
+      "duration": 0.19999999925494194,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:button",
+      "entryType": "measure",
+      "startTime": 1578,
+      "duration": 0.40000000037252903,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:seam",
+      "entryType": "measure",
+      "startTime": 1578.4000000003725,
+      "duration": 0.5,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:sock",
+      "entryType": "measure",
+      "startTime": 1578.9000000003725,
+      "duration": 0.19999999925494194,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:spool",
+      "entryType": "measure",
+      "startTime": 1579.0999999996275,
+      "duration": 0.5,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:needle",
+      "entryType": "measure",
+      "startTime": 1579.5999999996275,
+      "duration": 0.10000000149011612,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:wing",
+      "entryType": "measure",
+      "startTime": 1579.7000000011176,
+      "duration": 0.2999999988824129,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:knot",
+      "entryType": "measure",
+      "startTime": 1580,
+      "duration": 0.900000000372529,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:yarn-fan",
+      "entryType": "measure",
+      "startTime": 1580.9000000003725,
+      "duration": 0.8000000007450581,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:cushion",
+      "entryType": "measure",
+      "startTime": 1581.7000000011176,
+      "duration": 0.19999999925494194,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:shield-facet",
+      "entryType": "measure",
+      "startTime": 1581.9000000003725,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:petal",
+      "entryType": "measure",
+      "startTime": 1582,
+      "duration": 0.2000000011175871,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:crescent",
+      "entryType": "measure",
+      "startTime": 1582.2000000011176,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:bubble",
+      "entryType": "measure",
+      "startTime": 1582.300000000745,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:soft-particle",
+      "entryType": "measure",
+      "startTime": 1582.4000000003725,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:motif-particle",
+      "entryType": "measure",
+      "startTime": 1582.5,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:painted-light",
+      "entryType": "measure",
+      "startTime": 1820.9000000003725,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:queue-slice",
+      "entryType": "measure",
+      "startTime": 1820.9000000003725,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:pan",
+      "entryType": "measure",
+      "startTime": 1834.9000000003725,
+      "duration": 0.30000000074505806,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:queue-slice",
+      "entryType": "measure",
+      "startTime": 1834.9000000003725,
+      "duration": 16.09999999962747,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:bread",
+      "entryType": "measure",
+      "startTime": 1835.2000000011176,
+      "duration": 0.8999999985098839,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:oven",
+      "entryType": "measure",
+      "startTime": 1836.0999999996275,
+      "duration": 0.7000000011175871,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:whisk",
+      "entryType": "measure",
+      "startTime": 1836.800000000745,
+      "duration": 0.40000000037252903,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:spoon",
+      "entryType": "measure",
+      "startTime": 1837.2000000011176,
+      "duration": 0.19999999925494194,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:teapot",
+      "entryType": "measure",
+      "startTime": 1837.4000000003725,
+      "duration": 0.40000000037252903,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:roller",
+      "entryType": "measure",
+      "startTime": 1837.800000000745,
+      "duration": 0.6999999992549419,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:crumb-crown",
+      "entryType": "measure",
+      "startTime": 1838.5,
+      "duration": 1.200000001117587,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:paper-cat",
+      "entryType": "measure",
+      "startTime": 1839.7000000011176,
+      "duration": 0.2999999988824129,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:ink-cap",
+      "entryType": "measure",
+      "startTime": 1840.0999999996275,
+      "duration": 0.40000000037252903,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:spice-star",
+      "entryType": "measure",
+      "startTime": 1840.5,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:serving-bell",
+      "entryType": "measure",
+      "startTime": 1840.7000000011176,
+      "duration": 0.19999999925494194,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:apron-cloth",
+      "entryType": "measure",
+      "startTime": 1840.9000000003725,
+      "duration": 0.599999999627471,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:night-bell",
+      "entryType": "measure",
+      "startTime": 1841.5,
+      "duration": 0.2000000011175871,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:blanket",
+      "entryType": "measure",
+      "startTime": 1841.7000000011176,
+      "duration": 0.599999999627471,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:collar",
+      "entryType": "measure",
+      "startTime": 1842.300000000745,
+      "duration": 0.5,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:constellation",
+      "entryType": "measure",
+      "startTime": 1842.800000000745,
+      "duration": 0.2999999988824129,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:veil",
+      "entryType": "measure",
+      "startTime": 1843.0999999996275,
+      "duration": 0.8000000007450581,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:spindle",
+      "entryType": "measure",
+      "startTime": 1843.9000000003725,
+      "duration": 0.40000000037252903,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:seed-pod",
+      "entryType": "measure",
+      "startTime": 1844.300000000745,
+      "duration": 0.19999999925494194,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:flower-bell",
+      "entryType": "measure",
+      "startTime": 1844.5,
+      "duration": 0.30000000074505806,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:shears",
+      "entryType": "measure",
+      "startTime": 1844.800000000745,
+      "duration": 0.19999999925494194,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:watering-can",
+      "entryType": "measure",
+      "startTime": 1845,
+      "duration": 1.099999999627471,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:door",
+      "entryType": "measure",
+      "startTime": 1846.0999999996275,
+      "duration": 0.2000000011175871,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:knock-ring",
+      "entryType": "measure",
+      "startTime": 1846.300000000745,
+      "duration": 0.19999999925494194,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:handle",
+      "entryType": "measure",
+      "startTime": 1846.5,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:lantern",
+      "entryType": "measure",
+      "startTime": 1846.5999999996275,
+      "duration": 0.40000000037252903,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:light-pool",
+      "entryType": "measure",
+      "startTime": 1847,
+      "duration": 0.5,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:apron",
+      "entryType": "measure",
+      "startTime": 1847.5,
+      "duration": 0.40000000037252903,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:bow",
+      "entryType": "measure",
+      "startTime": 1848,
+      "duration": 0.30000000074505806,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:roof",
+      "entryType": "measure",
+      "startTime": 1848.300000000745,
+      "duration": 0.2999999988824129,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:window",
+      "entryType": "measure",
+      "startTime": 1848.5999999996275,
+      "duration": 0.2000000011175871,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:ember",
+      "entryType": "measure",
+      "startTime": 1848.800000000745,
+      "duration": 0.40000000037252903,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:spark",
+      "entryType": "measure",
+      "startTime": 1849.2000000011176,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:cup",
+      "entryType": "measure",
+      "startTime": 1849.300000000745,
+      "duration": 0.40000000037252903,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:steam",
+      "entryType": "measure",
+      "startTime": 1849.7000000011176,
+      "duration": 0.19999999925494194,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:ink-drop",
+      "entryType": "measure",
+      "startTime": 1849.9000000003725,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:ink-stain",
+      "entryType": "measure",
+      "startTime": 1849.9000000003725,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:wick",
+      "entryType": "measure",
+      "startTime": 1850,
+      "duration": 0.30000000074505806,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:flame",
+      "entryType": "measure",
+      "startTime": 1850.300000000745,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:tray",
+      "entryType": "measure",
+      "startTime": 1850.4000000003725,
+      "duration": 0.19999999925494194,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:star",
+      "entryType": "measure",
+      "startTime": 1850.5999999996275,
+      "duration": 0.10000000149011612,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:comet",
+      "entryType": "measure",
+      "startTime": 1850.7000000011176,
+      "duration": 0.2999999988824129,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:leaf",
+      "entryType": "measure",
+      "startTime": 1851.7000000011176,
+      "duration": 0.2999999988824129,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:queue-slice",
+      "entryType": "measure",
+      "startTime": 1851.7000000011176,
+      "duration": 5.699999999254942,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:stem",
+      "entryType": "measure",
+      "startTime": 1852,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:droplet",
+      "entryType": "measure",
+      "startTime": 1852.0999999996275,
+      "duration": 0.2000000011175871,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:wave",
+      "entryType": "measure",
+      "startTime": 1852.300000000745,
+      "duration": 0.19999999925494194,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:wreath",
+      "entryType": "measure",
+      "startTime": 1852.5,
+      "duration": 0.40000000037252903,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:greenhouse",
+      "entryType": "measure",
+      "startTime": 1852.9000000003725,
+      "duration": 0.40000000037252903,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:sprout",
+      "entryType": "measure",
+      "startTime": 1853.300000000745,
+      "duration": 0.19999999925494194,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:button",
+      "entryType": "measure",
+      "startTime": 1853.5,
+      "duration": 0.40000000037252903,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:seam",
+      "entryType": "measure",
+      "startTime": 1853.9000000003725,
+      "duration": 0.40000000037252903,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:sock",
+      "entryType": "measure",
+      "startTime": 1854.300000000745,
+      "duration": 0.6999999992549419,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:spool",
+      "entryType": "measure",
+      "startTime": 1855,
+      "duration": 0.7000000011175871,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:needle",
+      "entryType": "measure",
+      "startTime": 1855.7000000011176,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:wing",
+      "entryType": "measure",
+      "startTime": 1855.800000000745,
+      "duration": 0.2999999988824129,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:knot",
+      "entryType": "measure",
+      "startTime": 1856.0999999996275,
+      "duration": 0.10000000149011612,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:yarn-fan",
+      "entryType": "measure",
+      "startTime": 1856.2000000011176,
+      "duration": 0.2999999988824129,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:cushion",
+      "entryType": "measure",
+      "startTime": 1856.5,
+      "duration": 0.2000000011175871,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:shield-facet",
+      "entryType": "measure",
+      "startTime": 1856.7000000011176,
+      "duration": 0.19999999925494194,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:petal",
+      "entryType": "measure",
+      "startTime": 1856.9000000003725,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:crescent",
+      "entryType": "measure",
+      "startTime": 1857,
+      "duration": 0.2000000011175871,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:bubble",
+      "entryType": "measure",
+      "startTime": 1857.2000000011176,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:soft-particle",
+      "entryType": "measure",
+      "startTime": 1857.300000000745,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:geometry:motif-particle",
+      "entryType": "measure",
+      "startTime": 1857.4000000003725,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 1918.0999999996275,
+      "duration": 0.2000000011175871,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:queue-slice",
+      "entryType": "measure",
+      "startTime": 1918.0999999996275,
+      "duration": 28.200000001117587,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 1918.300000000745,
+      "duration": 28,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 1947,
+      "duration": 27.59999999962747,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:queue-slice",
+      "entryType": "measure",
+      "startTime": 1947,
+      "duration": 27.59999999962747,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 1975.5,
+      "duration": 4,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:queue-slice",
+      "entryType": "measure",
+      "startTime": 1975.5,
+      "duration": 18.300000000745058,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 1979.5,
+      "duration": 4.5,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 1984,
+      "duration": 0.2000000011175871,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 1984.2000000011176,
+      "duration": 0.7999999988824129,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 1985,
+      "duration": 0.8000000007450581,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 1985.800000000745,
+      "duration": 0.5,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 1986.300000000745,
+      "duration": 7.5,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:queue-slice",
+      "entryType": "measure",
+      "startTime": 1995.9000000003725,
+      "duration": 4.099999999627471,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 1996,
+      "duration": 0.599999999627471,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 1996.5999999996275,
+      "duration": 3.300000000745058,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 2000,
+      "duration": 12.200000001117587,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 2018.5999999996275,
+      "duration": 0.7000000011175871,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 2035.2000000011176,
+      "duration": 10.799999998882413,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 2051.7000000011176,
+      "duration": 0.3999999985098839,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 2068.5,
+      "duration": 10.700000001117587,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 2085.0999999996275,
+      "duration": 1085.4000000003725,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2485.5999999996275,
+      "duration": 0.2000000011175871,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:queue-slice",
+      "entryType": "measure",
+      "startTime": 2485.5999999996275,
+      "duration": 31.200000001117587,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2485.800000000745,
+      "duration": 31,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2517.2000000011176,
+      "duration": 28.699999999254942,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:queue-slice",
+      "entryType": "measure",
+      "startTime": 2517.2000000011176,
+      "duration": 28.699999999254942,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2546.2000000011176,
+      "duration": 4.699999999254942,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:queue-slice",
+      "entryType": "measure",
+      "startTime": 2546.2000000011176,
+      "duration": 19,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2550.9000000003725,
+      "duration": 4.5,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2555.4000000003725,
+      "duration": 0.30000000074505806,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2555.7000000011176,
+      "duration": 0.599999999627471,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2556.300000000745,
+      "duration": 0.5,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2556.800000000745,
+      "duration": 0.40000000037252903,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2557.2000000011176,
+      "duration": 7.899999998509884,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2565.4000000003725,
+      "duration": 0.5,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:queue-slice",
+      "entryType": "measure",
+      "startTime": 2565.4000000003725,
+      "duration": 17.40000000037253,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2565.9000000003725,
+      "duration": 5,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2571,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2571.0999999996275,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2571.0999999996275,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2571.0999999996275,
+      "duration": 0.10000000149011612,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2571.300000000745,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2571.300000000745,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2571.300000000745,
+      "duration": 5.400000000372529,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2576.7000000011176,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2576.800000000745,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2576.800000000745,
+      "duration": 0.40000000037252903,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2577.2000000011176,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2577.300000000745,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2577.300000000745,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2577.4000000003725,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2577.4000000003725,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2577.5,
+      "duration": 3,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2580.5,
+      "duration": 0.7000000011175871,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2581.2000000011176,
+      "duration": 1.599999999627471,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2583,
+      "duration": 2,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:queue-slice",
+      "entryType": "measure",
+      "startTime": 2583,
+      "duration": 17.40000000037253,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2585,
+      "duration": 1,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2586,
+      "duration": 1.800000000745058,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2587.800000000745,
+      "duration": 0.19999999925494194,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2588,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2588,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2588.0999999996275,
+      "duration": 0.2000000011175871,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2588.300000000745,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2588.300000000745,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2588.300000000745,
+      "duration": 0.19999999925494194,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2588.5,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2588.5,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2588.5,
+      "duration": 0.2000000011175871,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2588.7000000011176,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2588.7000000011176,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2588.7000000011176,
+      "duration": 0.19999999925494194,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2588.9000000003725,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2589,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2589,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2589.2000000011176,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2589.2000000011176,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2589.300000000745,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2589.4000000003725,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2589.4000000003725,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2589.5,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2589.5999999996275,
+      "duration": 0.10000000149011612,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2589.7000000011176,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2589.7000000011176,
+      "duration": 0.2999999988824129,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2590,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2590,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2590,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2590.0999999996275,
+      "duration": 0.10000000149011612,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2590.2000000011176,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2590.2000000011176,
+      "duration": 2.299999998882413,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2592.5,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2592.5999999996275,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2592.5999999996275,
+      "duration": 7.800000000745058,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2600.7000000011176,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2600.7000000011176,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:queue-slice",
+      "entryType": "measure",
+      "startTime": 2600.7000000011176,
+      "duration": 12.299999998882413,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2600.800000000745,
+      "duration": 0.19999999925494194,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2601,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2601,
+      "duration": 0.2000000011175871,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2601.2000000011176,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2601.300000000745,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2601.300000000745,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2601.300000000745,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2601.4000000003725,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2601.4000000003725,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2601.5,
+      "duration": 2.599999999627471,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2604.0999999996275,
+      "duration": 0.7000000011175871,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2604.800000000745,
+      "duration": 0.6999999992549419,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2605.5,
+      "duration": 2.300000000745058,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2607.800000000745,
+      "duration": 2.400000000372529,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-texture",
+      "entryType": "measure",
+      "startTime": 2610.2000000011176,
+      "duration": 2.799999998882413,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 2613.0999999996275,
+      "duration": 11.5,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 2635.0999999996275,
+      "duration": 0.8000000007450581,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 2651.9000000003725,
+      "duration": 10.900000000372529,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 2668.300000000745,
+      "duration": 0.40000000037252903,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 2685.2000000011176,
+      "duration": 10.599999999627471,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 2701.9000000003725,
+      "duration": 22.90000000037253,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 2735.2000000011176,
+      "duration": 22.09999999962747,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 2768.4000000003725,
+      "duration": 23.09999999962747,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 2802.300000000745,
+      "duration": 0.5,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 2818.5999999996275,
+      "duration": 11.5,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 2835.2000000011176,
+      "duration": 11.599999999627471,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 2851.9000000003725,
+      "duration": 0.599999999627471,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 2868.7000000011176,
+      "duration": 11.699999999254942,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 2885.5999999996275,
+      "duration": 11.300000000745058,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 2902,
+      "duration": 0.30000000074505806,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 2918.5,
+      "duration": 0.30000000074505806,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 2935.2000000011176,
+      "duration": 12.099999999627471,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 2952,
+      "duration": 0.30000000074505806,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 2968.800000000745,
+      "duration": 0.2999999988824129,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 2985.2000000011176,
+      "duration": 0.19999999925494194,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3001.800000000745,
+      "duration": 0.40000000037252903,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3018.5999999996275,
+      "duration": 0.30000000074505806,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3035.2000000011176,
+      "duration": 0.2999999988824129,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3051.800000000745,
+      "duration": 0.2999999988824129,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3069.2000000011176,
+      "duration": 0.3999999985098839,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3085.2000000011176,
+      "duration": 12,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3102.4000000003725,
+      "duration": 0.30000000074505806,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3118.7000000011176,
+      "duration": 0.19999999925494194,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3135.300000000745,
+      "duration": 0.19999999925494194,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3152,
+      "duration": 0.30000000074505806,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3168.5999999996275,
+      "duration": 0.40000000037252903,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3185.300000000745,
+      "duration": 0.19999999925494194,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3186.0999999996275,
+      "duration": 22.100000001490116,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3201.9000000003725,
+      "duration": 11.300000000745058,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3218.5999999996275,
+      "duration": 23.100000001490116,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3221.5999999996275,
+      "duration": 0.2000000011175871,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3235.300000000745,
+      "duration": 0.2999999988824129,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3251.9000000003725,
+      "duration": 0.40000000037252903,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3252.800000000745,
+      "duration": 0.19999999925494194,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3268.800000000745,
+      "duration": 0.2999999988824129,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3269.7000000011176,
+      "duration": 11.5,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3285.2000000011176,
+      "duration": 0.3999999985098839,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3286.300000000745,
+      "duration": 11.299999998882413,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3302.0999999996275,
+      "duration": 11.5,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3303.5,
+      "duration": 13.200000001117587,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3319.2000000011176,
+      "duration": 0.599999999627471,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3322.5999999996275,
+      "duration": 11.100000001490116,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3335.2000000011176,
+      "duration": 10.899999998509884,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3335.800000000745,
+      "duration": 0.19999999925494194,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3352.2000000011176,
+      "duration": 11.399999998509884,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3353.4000000003725,
+      "duration": 0.30000000074505806,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3369,
+      "duration": 10.5,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3369.5,
+      "duration": 0.5,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3385.300000000745,
+      "duration": 932.2999999988824,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3385.800000000745,
+      "duration": 22.59999999962747,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3418.5,
+      "duration": 22,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3451.9000000003725,
+      "duration": 22.90000000037253,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3485.0999999996275,
+      "duration": 0.5,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3501.7000000011176,
+      "duration": 11.399999998509884,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3518.5,
+      "duration": 11.400000000372529,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3535.0999999996275,
+      "duration": 0.5,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3551.800000000745,
+      "duration": 11.099999999627471,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3568.4000000003725,
+      "duration": 11,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3585,
+      "duration": 0.2000000011175871,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3601.800000000745,
+      "duration": 0.2999999988824129,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3618.9000000003725,
+      "duration": 22.300000000745058,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3651.800000000745,
+      "duration": 0.2999999988824129,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3668.5,
+      "duration": 0.30000000074505806,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3685.0999999996275,
+      "duration": 0.30000000074505806,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3701.800000000745,
+      "duration": 0.2999999988824129,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3718.300000000745,
+      "duration": 0.2999999988824129,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3735.0999999996275,
+      "duration": 0.30000000074505806,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3751.800000000745,
+      "duration": 0.19999999925494194,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3768.4000000003725,
+      "duration": 0.30000000074505806,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3785,
+      "duration": 11.700000001117587,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3801.800000000745,
+      "duration": 0.2999999988824129,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3818.5999999996275,
+      "duration": 0.2000000011175871,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3835.0999999996275,
+      "duration": 0.30000000074505806,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3851.800000000745,
+      "duration": 0.40000000037252903,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3868.7000000011176,
+      "duration": 0.2999999988824129,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3885.0999999996275,
+      "duration": 0.30000000074505806,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3901.9000000003725,
+      "duration": 11.199999999254942,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3918.5,
+      "duration": 0.30000000074505806,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3935.2000000011176,
+      "duration": 0.2999999988824129,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3951.800000000745,
+      "duration": 0.2999999988824129,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3968.800000000745,
+      "duration": 0.40000000037252903,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 3985.0999999996275,
+      "duration": 0.5,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:B2-pools",
+      "entryType": "measure",
+      "startTime": 4002.2000000011176,
+      "duration": 185.2999999988824,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:status-reaction-shape-pools",
+      "entryType": "measure",
+      "startTime": 4187.5,
+      "duration": 1297.300000000745,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:vfx-atlas",
+      "entryType": "measure",
+      "startTime": 4201.5999999996275,
+      "duration": 0.7000000011175871,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:queue-slice",
+      "entryType": "measure",
+      "startTime": 4201.5999999996275,
+      "duration": 0.7000000011175871,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:vfx-atlas",
+      "entryType": "measure",
+      "startTime": 4218,
+      "duration": 0.7000000011175871,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:queue-slice",
+      "entryType": "measure",
+      "startTime": 4218,
+      "duration": 0.7000000011175871,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:vfx-atlas",
+      "entryType": "measure",
+      "startTime": 4234.700000001118,
+      "duration": 10.899999998509884,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:queue-slice",
+      "entryType": "measure",
+      "startTime": 4234.700000001118,
+      "duration": 10.899999998509884,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:painted-light",
+      "entryType": "measure",
+      "startTime": 4245.800000000745,
+      "duration": 10.299999998882413,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:painted-light",
+      "entryType": "measure",
+      "startTime": 4268,
+      "duration": 10.300000000745058,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:knock-ring",
+      "entryType": "measure",
+      "startTime": 4301.4000000003725,
+      "duration": 0.19999999925494194,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:knock-ring",
+      "entryType": "measure",
+      "startTime": 4319.0999999996275,
+      "duration": 0.10000000149011612,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 4319.4000000003725,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 4334.800000000745,
+      "duration": 10.5,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:bow",
+      "entryType": "measure",
+      "startTime": 4351.4000000003725,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 4351.5999999996275,
+      "duration": 12.600000001490116,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:bow",
+      "entryType": "measure",
+      "startTime": 4368.0999999996275,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 4368.200000001118,
+      "duration": 11.599999999627471,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 4384.800000000745,
+      "duration": 12.599999999627471,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:roof",
+      "entryType": "measure",
+      "startTime": 4401.4000000003725,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 4401.700000001118,
+      "duration": 0.2999999988824129,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:roof",
+      "entryType": "measure",
+      "startTime": 4418.0999999996275,
+      "duration": 0.10000000149011612,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 4418.300000000745,
+      "duration": 11.400000000372529,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 4435,
+      "duration": 11.300000000745058,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:cup",
+      "entryType": "measure",
+      "startTime": 4451.4000000003725,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 4451.800000000745,
+      "duration": 11.599999999627471,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:cup",
+      "entryType": "measure",
+      "startTime": 4468.300000000745,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 4468.5,
+      "duration": 11.099999999627471,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:scene-compile",
+      "entryType": "measure",
+      "startTime": 4484.800000000745,
+      "duration": 0.19999999925494194,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:steam",
+      "entryType": "measure",
+      "startTime": 4501.5,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:B2-pools",
+      "entryType": "measure",
+      "startTime": 4501.9000000003725,
+      "duration": 183.09999999962747,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:steam",
+      "entryType": "measure",
+      "startTime": 4518.0999999996275,
+      "duration": 0.10000000149011612,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:flame",
+      "entryType": "measure",
+      "startTime": 4551.4000000003725,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:flame",
+      "entryType": "measure",
+      "startTime": 4568.4000000003725,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:tray",
+      "entryType": "measure",
+      "startTime": 4601.4000000003725,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:tray",
+      "entryType": "measure",
+      "startTime": 4618.200000001118,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:star",
+      "entryType": "measure",
+      "startTime": 4651.4000000003725,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:star",
+      "entryType": "measure",
+      "startTime": 4668.200000001118,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:status-reaction-shape-pools",
+      "entryType": "measure",
+      "startTime": 4685,
+      "duration": 1289.4000000003725,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:vfx-atlas",
+      "entryType": "measure",
+      "startTime": 4685.300000000745,
+      "duration": 0.5,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:queue-slice",
+      "entryType": "measure",
+      "startTime": 4685.300000000745,
+      "duration": 0.5,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:leaf",
+      "entryType": "measure",
+      "startTime": 4701.5999999996275,
+      "duration": 0.10000000149011612,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:vfx-atlas",
+      "entryType": "measure",
+      "startTime": 4701.9000000003725,
+      "duration": 0.599999999627471,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:queue-slice",
+      "entryType": "measure",
+      "startTime": 4701.9000000003725,
+      "duration": 0.599999999627471,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:leaf",
+      "entryType": "measure",
+      "startTime": 4718.200000001118,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:vfx-atlas",
+      "entryType": "measure",
+      "startTime": 4718.4000000003725,
+      "duration": 11.400000000372529,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:queue-slice",
+      "entryType": "measure",
+      "startTime": 4718.4000000003725,
+      "duration": 11.5,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:painted-light",
+      "entryType": "measure",
+      "startTime": 4730.0999999996275,
+      "duration": 10.300000000745058,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:droplet",
+      "entryType": "measure",
+      "startTime": 4751.4000000003725,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:painted-light",
+      "entryType": "measure",
+      "startTime": 4751.700000001118,
+      "duration": 10.399999998509884,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:droplet",
+      "entryType": "measure",
+      "startTime": 4768.300000000745,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:knock-ring",
+      "entryType": "measure",
+      "startTime": 4784.9000000003725,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:sprout",
+      "entryType": "measure",
+      "startTime": 4801.800000000745,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:knock-ring",
+      "entryType": "measure",
+      "startTime": 4802.0999999996275,
+      "duration": 0.10000000149011612,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:sprout",
+      "entryType": "measure",
+      "startTime": 4818.0999999996275,
+      "duration": 0.10000000149011612,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:bow",
+      "entryType": "measure",
+      "startTime": 4834.800000000745,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:button",
+      "entryType": "measure",
+      "startTime": 4851.4000000003725,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:bow",
+      "entryType": "measure",
+      "startTime": 4851.5999999996275,
+      "duration": 0.10000000149011612,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:button",
+      "entryType": "measure",
+      "startTime": 4868.0999999996275,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:roof",
+      "entryType": "measure",
+      "startTime": 4884.9000000003725,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:seam",
+      "entryType": "measure",
+      "startTime": 4901.4000000003725,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:roof",
+      "entryType": "measure",
+      "startTime": 4901.5999999996275,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:seam",
+      "entryType": "measure",
+      "startTime": 4918,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:cup",
+      "entryType": "measure",
+      "startTime": 4934.800000000745,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:knot",
+      "entryType": "measure",
+      "startTime": 4951.5999999996275,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:cup",
+      "entryType": "measure",
+      "startTime": 4951.700000001118,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:knot",
+      "entryType": "measure",
+      "startTime": 4968,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:steam",
+      "entryType": "measure",
+      "startTime": 4984.800000000745,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:bubble",
+      "entryType": "measure",
+      "startTime": 5001.4000000003725,
+      "duration": 0.19999999925494194,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:steam",
+      "entryType": "measure",
+      "startTime": 5001.800000000745,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:bubble",
+      "entryType": "measure",
+      "startTime": 5018.0999999996275,
+      "duration": 0.10000000149011612,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:flame",
+      "entryType": "measure",
+      "startTime": 5034.800000000745,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:flame",
+      "entryType": "measure",
+      "startTime": 5051.9000000003725,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:tray",
+      "entryType": "measure",
+      "startTime": 5084.9000000003725,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:tray",
+      "entryType": "measure",
+      "startTime": 5101.4000000003725,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:star",
+      "entryType": "measure",
+      "startTime": 5134.800000000745,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:star",
+      "entryType": "measure",
+      "startTime": 5151.5,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:leaf",
+      "entryType": "measure",
+      "startTime": 5184.800000000745,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:leaf",
+      "entryType": "measure",
+      "startTime": 5201.5,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:droplet",
+      "entryType": "measure",
+      "startTime": 5234.9000000003725,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:droplet",
+      "entryType": "measure",
+      "startTime": 5251.5,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:sprout",
+      "entryType": "measure",
+      "startTime": 5284.9000000003725,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:sprout",
+      "entryType": "measure",
+      "startTime": 5301.5,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:button",
+      "entryType": "measure",
+      "startTime": 5334.800000000745,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:button",
+      "entryType": "measure",
+      "startTime": 5351.5,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:seam",
+      "entryType": "measure",
+      "startTime": 5384.800000000745,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:seam",
+      "entryType": "measure",
+      "startTime": 5401.5,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:knot",
+      "entryType": "measure",
+      "startTime": 5434.9000000003725,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:knot",
+      "entryType": "measure",
+      "startTime": 5451.5,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:post",
+      "entryType": "measure",
+      "startTime": 5484.800000000745,
+      "duration": 366.69999999925494,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:bubble",
+      "entryType": "measure",
+      "startTime": 5485,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:pool:bubble",
+      "entryType": "measure",
+      "startTime": 5501.9000000003725,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:pan",
+      "entryType": "measure",
+      "startTime": 5889.9000000003725,
+      "duration": 0.5,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:queue-slice",
+      "entryType": "measure",
+      "startTime": 5889.9000000003725,
+      "duration": 2.699999999254942,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:bread",
+      "entryType": "measure",
+      "startTime": 5890.4000000003725,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:oven",
+      "entryType": "measure",
+      "startTime": 5890.5,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:whisk",
+      "entryType": "measure",
+      "startTime": 5890.5999999996275,
+      "duration": 0.10000000149011612,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:spoon",
+      "entryType": "measure",
+      "startTime": 5890.700000001118,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:teapot",
+      "entryType": "measure",
+      "startTime": 5890.700000001118,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:roller",
+      "entryType": "measure",
+      "startTime": 5890.800000000745,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:crumb-crown",
+      "entryType": "measure",
+      "startTime": 5890.9000000003725,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:paper-cat",
+      "entryType": "measure",
+      "startTime": 5890.9000000003725,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:ink-cap",
+      "entryType": "measure",
+      "startTime": 5890.9000000003725,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:spice-star",
+      "entryType": "measure",
+      "startTime": 5891,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:serving-bell",
+      "entryType": "measure",
+      "startTime": 5891,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:apron-cloth",
+      "entryType": "measure",
+      "startTime": 5891.0999999996275,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:night-bell",
+      "entryType": "measure",
+      "startTime": 5891.0999999996275,
+      "duration": 0.10000000149011612,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:blanket",
+      "entryType": "measure",
+      "startTime": 5891.200000001118,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:collar",
+      "entryType": "measure",
+      "startTime": 5891.300000000745,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:constellation",
+      "entryType": "measure",
+      "startTime": 5891.300000000745,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:veil",
+      "entryType": "measure",
+      "startTime": 5891.300000000745,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:spindle",
+      "entryType": "measure",
+      "startTime": 5891.4000000003725,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:seed-pod",
+      "entryType": "measure",
+      "startTime": 5891.4000000003725,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:flower-bell",
+      "entryType": "measure",
+      "startTime": 5891.5,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:shears",
+      "entryType": "measure",
+      "startTime": 5891.5,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:watering-can",
+      "entryType": "measure",
+      "startTime": 5891.5,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:door",
+      "entryType": "measure",
+      "startTime": 5891.5999999996275,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:handle",
+      "entryType": "measure",
+      "startTime": 5891.5999999996275,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:lantern",
+      "entryType": "measure",
+      "startTime": 5891.5999999996275,
+      "duration": 0.10000000149011612,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:light-pool",
+      "entryType": "measure",
+      "startTime": 5891.800000000745,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:apron",
+      "entryType": "measure",
+      "startTime": 5891.800000000745,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:window",
+      "entryType": "measure",
+      "startTime": 5891.800000000745,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:ember",
+      "entryType": "measure",
+      "startTime": 5891.800000000745,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:spark",
+      "entryType": "measure",
+      "startTime": 5891.800000000745,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:ink-drop",
+      "entryType": "measure",
+      "startTime": 5891.9000000003725,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:ink-stain",
+      "entryType": "measure",
+      "startTime": 5891.9000000003725,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:wick",
+      "entryType": "measure",
+      "startTime": 5891.9000000003725,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:comet",
+      "entryType": "measure",
+      "startTime": 5891.9000000003725,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:stem",
+      "entryType": "measure",
+      "startTime": 5892,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:wave",
+      "entryType": "measure",
+      "startTime": 5892,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:wreath",
+      "entryType": "measure",
+      "startTime": 5892.0999999996275,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:greenhouse",
+      "entryType": "measure",
+      "startTime": 5892.0999999996275,
+      "duration": 0.10000000149011612,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:sock",
+      "entryType": "measure",
+      "startTime": 5892.200000001118,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:spool",
+      "entryType": "measure",
+      "startTime": 5892.200000001118,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:needle",
+      "entryType": "measure",
+      "startTime": 5892.200000001118,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:wing",
+      "entryType": "measure",
+      "startTime": 5892.200000001118,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:yarn-fan",
+      "entryType": "measure",
+      "startTime": 5892.300000000745,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:cushion",
+      "entryType": "measure",
+      "startTime": 5892.300000000745,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:shield-facet",
+      "entryType": "measure",
+      "startTime": 5892.4000000003725,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:petal",
+      "entryType": "measure",
+      "startTime": 5892.4000000003725,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:crescent",
+      "entryType": "measure",
+      "startTime": 5892.4000000003725,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:soft-particle",
+      "entryType": "measure",
+      "startTime": 5892.5,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:motif-particle",
+      "entryType": "measure",
+      "startTime": 5892.5999999996275,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:post",
+      "entryType": "measure",
+      "startTime": 5974.4000000003725,
+      "duration": 361.69999999925494,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:pan",
+      "entryType": "measure",
+      "startTime": 6369.300000000745,
+      "duration": 0.19999999925494194,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:queue-slice",
+      "entryType": "measure",
+      "startTime": 6369.300000000745,
+      "duration": 2.199999999254942,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:bread",
+      "entryType": "measure",
+      "startTime": 6369.5,
+      "duration": 0.2000000011175871,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:oven",
+      "entryType": "measure",
+      "startTime": 6369.700000001118,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:whisk",
+      "entryType": "measure",
+      "startTime": 6369.700000001118,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:spoon",
+      "entryType": "measure",
+      "startTime": 6369.800000000745,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:teapot",
+      "entryType": "measure",
+      "startTime": 6369.800000000745,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:roller",
+      "entryType": "measure",
+      "startTime": 6369.9000000003725,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:crumb-crown",
+      "entryType": "measure",
+      "startTime": 6369.9000000003725,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:paper-cat",
+      "entryType": "measure",
+      "startTime": 6370,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:ink-cap",
+      "entryType": "measure",
+      "startTime": 6370,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:spice-star",
+      "entryType": "measure",
+      "startTime": 6370.0999999996275,
+      "duration": 0.10000000149011612,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:serving-bell",
+      "entryType": "measure",
+      "startTime": 6370.200000001118,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:apron-cloth",
+      "entryType": "measure",
+      "startTime": 6370.200000001118,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:night-bell",
+      "entryType": "measure",
+      "startTime": 6370.200000001118,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:blanket",
+      "entryType": "measure",
+      "startTime": 6370.200000001118,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:collar",
+      "entryType": "measure",
+      "startTime": 6370.300000000745,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:constellation",
+      "entryType": "measure",
+      "startTime": 6370.300000000745,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:veil",
+      "entryType": "measure",
+      "startTime": 6370.4000000003725,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:spindle",
+      "entryType": "measure",
+      "startTime": 6370.4000000003725,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:seed-pod",
+      "entryType": "measure",
+      "startTime": 6370.5,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:flower-bell",
+      "entryType": "measure",
+      "startTime": 6370.5,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:shears",
+      "entryType": "measure",
+      "startTime": 6370.5,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:watering-can",
+      "entryType": "measure",
+      "startTime": 6370.5999999996275,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:door",
+      "entryType": "measure",
+      "startTime": 6370.5999999996275,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:handle",
+      "entryType": "measure",
+      "startTime": 6370.5999999996275,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:lantern",
+      "entryType": "measure",
+      "startTime": 6370.5999999996275,
+      "duration": 0.10000000149011612,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:light-pool",
+      "entryType": "measure",
+      "startTime": 6370.700000001118,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:apron",
+      "entryType": "measure",
+      "startTime": 6370.700000001118,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:window",
+      "entryType": "measure",
+      "startTime": 6370.800000000745,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:ember",
+      "entryType": "measure",
+      "startTime": 6370.800000000745,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:spark",
+      "entryType": "measure",
+      "startTime": 6370.800000000745,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:ink-drop",
+      "entryType": "measure",
+      "startTime": 6370.9000000003725,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:ink-stain",
+      "entryType": "measure",
+      "startTime": 6370.9000000003725,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:wick",
+      "entryType": "measure",
+      "startTime": 6370.9000000003725,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:comet",
+      "entryType": "measure",
+      "startTime": 6371,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:stem",
+      "entryType": "measure",
+      "startTime": 6371,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:wave",
+      "entryType": "measure",
+      "startTime": 6371,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:wreath",
+      "entryType": "measure",
+      "startTime": 6371.0999999996275,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:greenhouse",
+      "entryType": "measure",
+      "startTime": 6371.0999999996275,
+      "duration": 0.10000000149011612,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:sock",
+      "entryType": "measure",
+      "startTime": 6371.200000001118,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:spool",
+      "entryType": "measure",
+      "startTime": 6371.200000001118,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:needle",
+      "entryType": "measure",
+      "startTime": 6371.200000001118,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:wing",
+      "entryType": "measure",
+      "startTime": 6371.300000000745,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:yarn-fan",
+      "entryType": "measure",
+      "startTime": 6371.300000000745,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:cushion",
+      "entryType": "measure",
+      "startTime": 6371.300000000745,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:shield-facet",
+      "entryType": "measure",
+      "startTime": 6371.4000000003725,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:petal",
+      "entryType": "measure",
+      "startTime": 6371.4000000003725,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:crescent",
+      "entryType": "measure",
+      "startTime": 6371.4000000003725,
+      "duration": 0,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:soft-particle",
+      "entryType": "measure",
+      "startTime": 6371.4000000003725,
+      "duration": 0.09999999962747097,
+      "navigationId": 9214
+    },
+    {
+      "name": "look-prewarm:deferred:motif-particle",
+      "entryType": "measure",
+      "startTime": 6371.5,
+      "duration": 0,
+      "navigationId": 9214
+    }
+  ],
+  "frames": [
+    {
+      "at": 17.2,
+      "ms": 16.7
+    },
+    {
+      "at": 33.8,
+      "ms": 16.599999999999998
+    },
+    {
+      "at": 50.5,
+      "ms": 16.700000000000003
+    },
+    {
+      "at": 67.2,
+      "ms": 16.700000000000003
+    },
+    {
+      "at": 83.8,
+      "ms": 16.599999999999994
+    },
+    {
+      "at": 100.5,
+      "ms": 16.700000000000003
+    },
+    {
+      "at": 117.1,
+      "ms": 16.599999999999994
+    },
+    {
+      "at": 133.8,
+      "ms": 16.700000000000017
+    },
+    {
+      "at": 150.5,
+      "ms": 16.69999999999999
+    },
+    {
+      "at": 167.2,
+      "ms": 16.69999999999999
+    },
+    {
+      "at": 183.8,
+      "ms": 16.600000000000023
+    },
+    {
+      "at": 200.5,
+      "ms": 16.69999999999999
+    },
+    {
+      "at": 217.1,
+      "ms": 16.599999999999994
+    },
+    {
+      "at": 233.8,
+      "ms": 16.700000000000017
+    },
+    {
+      "at": 250.6,
+      "ms": 16.799999999999983
+    },
+    {
+      "at": 267.2,
+      "ms": 16.599999999999994
+    },
+    {
+      "at": 283.9,
+      "ms": 16.69999999999999
+    },
+    {
+      "at": 300.5,
+      "ms": 16.600000000000023
+    },
+    {
+      "at": 317.2,
+      "ms": 16.69999999999999
+    },
+    {
+      "at": 333.9,
+      "ms": 16.69999999999999
+    },
+    {
+      "at": 350.5,
+      "ms": 16.600000000000023
+    },
+    {
+      "at": 367.1,
+      "ms": 16.600000000000023
+    },
+    {
+      "at": 383.8,
+      "ms": 16.69999999999999
+    },
+    {
+      "at": 400.5,
+      "ms": 16.69999999999999
+    },
+    {
+      "at": 417.2,
+      "ms": 16.69999999999999
+    },
+    {
+      "at": 433.9,
+      "ms": 16.69999999999999
+    },
+    {
+      "at": 450.5,
+      "ms": 16.600000000000023
+    },
+    {
+      "at": 467.1,
+      "ms": 16.600000000000023
+    },
+    {
+      "at": 483.9,
+      "ms": 16.799999999999955
+    },
+    {
+      "at": 500.5,
+      "ms": 16.600000000000023
+    },
+    {
+      "at": 517.2,
+      "ms": 16.700000000000045
+    },
+    {
+      "at": 533.9,
+      "ms": 16.699999999999932
+    },
+    {
+      "at": 550.5,
+      "ms": 16.600000000000023
+    },
+    {
+      "at": 567.1,
+      "ms": 16.600000000000023
+    },
+    {
+      "at": 583.9,
+      "ms": 16.799999999999955
+    },
+    {
+      "at": 617.2,
+      "ms": 33.30000000000007
+    },
+    {
+      "at": 633.8,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 650.5,
+      "ms": 16.700000000000045
+    },
+    {
+      "at": 667.1,
+      "ms": 16.600000000000023
+    },
+    {
+      "at": 683.8,
+      "ms": 16.699999999999932
+    },
+    {
+      "at": 700.5,
+      "ms": 16.700000000000045
+    },
+    {
+      "at": 717.2,
+      "ms": 16.700000000000045
+    },
+    {
+      "at": 733.8,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 750.5,
+      "ms": 16.700000000000045
+    },
+    {
+      "at": 767.1,
+      "ms": 16.600000000000023
+    },
+    {
+      "at": 783.8,
+      "ms": 16.699999999999932
+    },
+    {
+      "at": 800.5,
+      "ms": 16.700000000000045
+    },
+    {
+      "at": 817.1,
+      "ms": 16.600000000000023
+    },
+    {
+      "at": 833.8,
+      "ms": 16.699999999999932
+    },
+    {
+      "at": 850.5,
+      "ms": 16.700000000000045
+    },
+    {
+      "at": 867.2,
+      "ms": 16.700000000000045
+    },
+    {
+      "at": 883.8,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 900.5,
+      "ms": 16.700000000000045
+    },
+    {
+      "at": 917.1,
+      "ms": 16.600000000000023
+    },
+    {
+      "at": 933.8,
+      "ms": 16.699999999999932
+    },
+    {
+      "at": 950.5,
+      "ms": 16.700000000000045
+    },
+    {
+      "at": 967.2,
+      "ms": 16.700000000000045
+    },
+    {
+      "at": 983.8,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 1000.5,
+      "ms": 16.700000000000045
+    },
+    {
+      "at": 1017.1,
+      "ms": 16.600000000000023
+    },
+    {
+      "at": 1033.8,
+      "ms": 16.699999999999932
+    },
+    {
+      "at": 1050.5,
+      "ms": 16.700000000000045
+    },
+    {
+      "at": 1067.1,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 1083.8,
+      "ms": 16.700000000000045
+    },
+    {
+      "at": 1100.5,
+      "ms": 16.700000000000045
+    },
+    {
+      "at": 1117.1,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 1133.8,
+      "ms": 16.700000000000045
+    },
+    {
+      "at": 1150.5,
+      "ms": 16.700000000000045
+    },
+    {
+      "at": 1167.1,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 1183.8,
+      "ms": 16.700000000000045
+    },
+    {
+      "at": 1200.4,
+      "ms": 16.600000000000136
+    },
+    {
+      "at": 1217.2,
+      "ms": 16.799999999999955
+    },
+    {
+      "at": 1233.8,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 1250.5,
+      "ms": 16.700000000000045
+    },
+    {
+      "at": 1267.1,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 1283.8,
+      "ms": 16.700000000000045
+    },
+    {
+      "at": 1300.5,
+      "ms": 16.700000000000045
+    },
+    {
+      "at": 1317.2,
+      "ms": 16.700000000000045
+    },
+    {
+      "at": 1333.8,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 1350.4,
+      "ms": 16.600000000000136
+    },
+    {
+      "at": 1367.1,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 1383.8,
+      "ms": 16.700000000000045
+    },
+    {
+      "at": 1400.4,
+      "ms": 16.600000000000136
+    },
+    {
+      "at": 1417.1,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 1433.8,
+      "ms": 16.700000000000045
+    },
+    {
+      "at": 1450.5,
+      "ms": 16.700000000000045
+    },
+    {
+      "at": 1467.1,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 1483.8,
+      "ms": 16.700000000000045
+    },
+    {
+      "at": 1500.4,
+      "ms": 16.600000000000136
+    },
+    {
+      "at": 1533.8,
+      "ms": 33.399999999999864
+    },
+    {
+      "at": 1550.5,
+      "ms": 16.700000000000045
+    },
+    {
+      "at": 1567.1,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 1583.8,
+      "ms": 16.700000000000045
+    },
+    {
+      "at": 1600.5,
+      "ms": 16.700000000000045
+    },
+    {
+      "at": 1617.1,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 1633.8,
+      "ms": 16.700000000000045
+    },
+    {
+      "at": 1650.5,
+      "ms": 16.700000000000045
+    },
+    {
+      "at": 1667.1,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 1683.8,
+      "ms": 16.700000000000045
+    },
+    {
+      "at": 1700.4,
+      "ms": 16.600000000000136
+    },
+    {
+      "at": 1717.1,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 1733.8,
+      "ms": 16.700000000000045
+    },
+    {
+      "at": 1750.4,
+      "ms": 16.600000000000136
+    },
+    {
+      "at": 1767.1,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 1783.8,
+      "ms": 16.700000000000045
+    },
+    {
+      "at": 1800.5,
+      "ms": 16.700000000000045
+    },
+    {
+      "at": 1817.1,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 1833.8,
+      "ms": 16.700000000000045
+    },
+    {
+      "at": 1850.4,
+      "ms": 16.600000000000136
+    },
+    {
+      "at": 1867.1,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 1883.7,
+      "ms": 16.600000000000136
+    },
+    {
+      "at": 1900.5,
+      "ms": 16.799999999999955
+    },
+    {
+      "at": 1917.2,
+      "ms": 16.700000000000045
+    },
+    {
+      "at": 1933.8,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 1950.4,
+      "ms": 16.600000000000136
+    },
+    {
+      "at": 1967.1,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 1983.8,
+      "ms": 16.700000000000045
+    },
+    {
+      "at": 2000.4,
+      "ms": 16.600000000000136
+    },
+    {
+      "at": 2017.1,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 2033.8,
+      "ms": 16.700000000000045
+    },
+    {
+      "at": 2050.4,
+      "ms": 16.600000000000136
+    },
+    {
+      "at": 2067.1,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 2083.7,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 2100.5,
+      "ms": 16.800000000000182
+    },
+    {
+      "at": 2117.1,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 2133.8,
+      "ms": 16.700000000000273
+    },
+    {
+      "at": 2150.5,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 2167.1,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 2183.8,
+      "ms": 16.700000000000273
+    },
+    {
+      "at": 2200.5,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 2217.1,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 2233.8,
+      "ms": 16.700000000000273
+    },
+    {
+      "at": 2250.5,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 2267.1,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 2283.8,
+      "ms": 16.700000000000273
+    },
+    {
+      "at": 2300.4,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 2317.1,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 2333.8,
+      "ms": 16.700000000000273
+    },
+    {
+      "at": 2350.4,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 2367.1,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 2383.7,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 2400.4,
+      "ms": 16.700000000000273
+    },
+    {
+      "at": 2417.1,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 2433.8,
+      "ms": 16.700000000000273
+    },
+    {
+      "at": 2450.5,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 2467.1,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 2483.8,
+      "ms": 16.700000000000273
+    },
+    {
+      "at": 2500.4,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 2517.1,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 2533.7,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 2550.4,
+      "ms": 16.700000000000273
+    },
+    {
+      "at": 2567.1,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 2600.4,
+      "ms": 33.30000000000018
+    },
+    {
+      "at": 2617,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 2633.7,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 2650.5,
+      "ms": 16.800000000000182
+    },
+    {
+      "at": 2667.1,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 2683.8,
+      "ms": 16.700000000000273
+    },
+    {
+      "at": 2700.4,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 2717.1,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 2733.7,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 2750.4,
+      "ms": 16.700000000000273
+    },
+    {
+      "at": 2767.1,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 2783.7,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 2800.4,
+      "ms": 16.700000000000273
+    },
+    {
+      "at": 2817.1,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 2833.7,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 2850.4,
+      "ms": 16.700000000000273
+    },
+    {
+      "at": 2867.1,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 2883.7,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 2900.4,
+      "ms": 16.700000000000273
+    },
+    {
+      "at": 2917,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 2933.7,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 2950.4,
+      "ms": 16.700000000000273
+    },
+    {
+      "at": 2967.1,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 2983.7,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 3000.4,
+      "ms": 16.700000000000273
+    },
+    {
+      "at": 3017.1,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 3033.7,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 3050.4,
+      "ms": 16.700000000000273
+    },
+    {
+      "at": 3067,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 3083.8,
+      "ms": 16.800000000000182
+    },
+    {
+      "at": 3100.4,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 3117.1,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 3133.8,
+      "ms": 16.700000000000273
+    },
+    {
+      "at": 3150.4,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 3167,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 3183.7,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 3200.4,
+      "ms": 16.700000000000273
+    },
+    {
+      "at": 3217,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 3233.8,
+      "ms": 16.800000000000182
+    },
+    {
+      "at": 3250.4,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 3267,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 3283.7,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 3300.4,
+      "ms": 16.700000000000273
+    },
+    {
+      "at": 3317.1,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 3333.8,
+      "ms": 16.700000000000273
+    },
+    {
+      "at": 3350.4,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 3367,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 3383.7,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 3400.4,
+      "ms": 16.700000000000273
+    },
+    {
+      "at": 3417,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 3433.7,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 3450.4,
+      "ms": 16.700000000000273
+    },
+    {
+      "at": 3467,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 3483.7,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 3500.3,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 3517.1,
+      "ms": 16.799999999999727
+    },
+    {
+      "at": 3533.7,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 3550.4,
+      "ms": 16.700000000000273
+    },
+    {
+      "at": 3567,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 3583.7,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 3600.3,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 3617,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 3633.7,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 3650.4,
+      "ms": 16.700000000000273
+    },
+    {
+      "at": 3667,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 3683.7,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 3700.3,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 3717,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 3733.7,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 3750.4,
+      "ms": 16.700000000000273
+    },
+    {
+      "at": 3767,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 3783.7,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 3800.3,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 3817.1,
+      "ms": 16.799999999999727
+    },
+    {
+      "at": 3833.7,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 3850.4,
+      "ms": 16.700000000000273
+    },
+    {
+      "at": 3867,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 3883.7,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 3900.4,
+      "ms": 16.700000000000273
+    },
+    {
+      "at": 3917,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 3933.7,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 3950.3,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 3967.1,
+      "ms": 16.799999999999727
+    },
+    {
+      "at": 3983.7,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 4000.4,
+      "ms": 16.700000000000273
+    },
+    {
+      "at": 4017.1,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 4033.7,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 4050.3,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 4067.1,
+      "ms": 16.799999999999727
+    },
+    {
+      "at": 4083.7,
+      "ms": 16.59999999999991
+    },
+    {
+      "at": 4100.4,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 4117,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 4133.7,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 4150.3,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 4167,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 4183.6,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 4200.4,
+      "ms": 16.799999999999272
+    },
+    {
+      "at": 4217,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 4233.7,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 4250.3,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 4267,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 4283.6,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 4300.4,
+      "ms": 16.799999999999272
+    },
+    {
+      "at": 4317.1,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 4333.6,
+      "ms": 16.5
+    },
+    {
+      "at": 4350.4,
+      "ms": 16.799999999999272
+    },
+    {
+      "at": 4367,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 4383.7,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 4400.4,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 4417,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 4433.7,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 4450.3,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 4467,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 4483.7,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 4500.3,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 4517,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 4533.7,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 4550.3,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 4567,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 4583.7,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 4600.3,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 4617,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 4633.7,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 4650.3,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 4667,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 4683.7,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 4700.3,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 4717,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 4733.7,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 4750.3,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 4767,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 4783.6,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 4800.3,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 4817,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 4833.7,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 4850.4,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 4867,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 4883.7,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 4900.3,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 4916.9,
+      "ms": 16.599999999999454
+    },
+    {
+      "at": 4933.6,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 4950.4,
+      "ms": 16.799999999999272
+    },
+    {
+      "at": 4967,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 4983.6,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 5000.3,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 5017,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 5033.6,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 5050.3,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 5067,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 5083.6,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 5100.3,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 5117,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 5133.7,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 5150.3,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 5167,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 5183.7,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 5200.4,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 5216.9,
+      "ms": 16.5
+    },
+    {
+      "at": 5233.6,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 5250.4,
+      "ms": 16.799999999999272
+    },
+    {
+      "at": 5267,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 5283.7,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 5300.4,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 5317,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 5333.7,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 5350.3,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 5367,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 5383.7,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 5400.3,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 5416.9,
+      "ms": 16.599999999999454
+    },
+    {
+      "at": 5433.6,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 5450.3,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 5466.9,
+      "ms": 16.599999999999454
+    },
+    {
+      "at": 5483.6,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 5500.3,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 5517,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 5533.7,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 5550.3,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 5567,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 5583.6,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 5600.3,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 5617,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 5633.6,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 5650.3,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 5666.9,
+      "ms": 16.599999999999454
+    },
+    {
+      "at": 5683.6,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 5700.3,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 5717,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 5733.6,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 5750.3,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 5766.9,
+      "ms": 16.599999999999454
+    },
+    {
+      "at": 5783.6,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 5800.3,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 5817,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 5833.6,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 5850.2,
+      "ms": 16.599999999999454
+    },
+    {
+      "at": 5866.9,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 5883.6,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 5900.3,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 5916.9,
+      "ms": 16.599999999999454
+    },
+    {
+      "at": 5933.6,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 5950.3,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 5966.9,
+      "ms": 16.599999999999454
+    },
+    {
+      "at": 5983.6,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 6000.3,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 6017,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 6033.6,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 6050.3,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 6067,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 6083.6,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 6100.3,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 6117,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 6133.7,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 6150.3,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 6166.9,
+      "ms": 16.599999999999454
+    },
+    {
+      "at": 6183.6,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 6200.3,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 6217,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 6233.6,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 6250.3,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 6266.9,
+      "ms": 16.599999999999454
+    },
+    {
+      "at": 6283.6,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 6300.3,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 6316.9,
+      "ms": 16.599999999999454
+    },
+    {
+      "at": 6333.6,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 6350.2,
+      "ms": 16.599999999999454
+    },
+    {
+      "at": 6366.9,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 6383.6,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 6400.2,
+      "ms": 16.599999999999454
+    },
+    {
+      "at": 6416.9,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 6433.6,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 6450.2,
+      "ms": 16.599999999999454
+    },
+    {
+      "at": 6466.9,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 6483.6,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 6500.2,
+      "ms": 16.599999999999454
+    },
+    {
+      "at": 6516.9,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 6533.6,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 6550.2,
+      "ms": 16.599999999999454
+    },
+    {
+      "at": 6567,
+      "ms": 16.800000000000182
+    },
+    {
+      "at": 6583.6,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 6600.2,
+      "ms": 16.599999999999454
+    },
+    {
+      "at": 6616.9,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 6633.6,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 6650.3,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 6667,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 6683.6,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 6700.3,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 6716.9,
+      "ms": 16.599999999999454
+    },
+    {
+      "at": 6733.6,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 6750.3,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 6766.9,
+      "ms": 16.599999999999454
+    },
+    {
+      "at": 6783.6,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 6800.2,
+      "ms": 16.599999999999454
+    },
+    {
+      "at": 6816.9,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 6833.6,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 6850.3,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 6866.9,
+      "ms": 16.599999999999454
+    },
+    {
+      "at": 6883.6,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 6900.3,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 6916.9,
+      "ms": 16.599999999999454
+    },
+    {
+      "at": 6933.6,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 6950.2,
+      "ms": 16.599999999999454
+    },
+    {
+      "at": 6966.9,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 6983.6,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 7000.3,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 7016.9,
+      "ms": 16.599999999999454
+    },
+    {
+      "at": 7033.6,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 7050.2,
+      "ms": 16.599999999999454
+    },
+    {
+      "at": 7066.9,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 7083.6,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 7100.3,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 7116.9,
+      "ms": 16.599999999999454
+    },
+    {
+      "at": 7133.5,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 7150.2,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 7166.9,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 7183.5,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 7200.2,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 7216.9,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 7233.6,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 7250.3,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 7266.9,
+      "ms": 16.599999999999454
+    },
+    {
+      "at": 7283.6,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 7300.2,
+      "ms": 16.599999999999454
+    },
+    {
+      "at": 7316.9,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 7333.6,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 7350.2,
+      "ms": 16.599999999999454
+    },
+    {
+      "at": 7366.9,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 7383.6,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 7400.2,
+      "ms": 16.599999999999454
+    },
+    {
+      "at": 7416.9,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 7433.6,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 7450.2,
+      "ms": 16.599999999999454
+    },
+    {
+      "at": 7466.9,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 7483.6,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 7500.2,
+      "ms": 16.599999999999454
+    },
+    {
+      "at": 7516.9,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 7533.5,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 7550.2,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 7566.9,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 7583.5,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 7600.3,
+      "ms": 16.800000000000182
+    },
+    {
+      "at": 7616.9,
+      "ms": 16.599999999999454
+    },
+    {
+      "at": 7633.6,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 7650.2,
+      "ms": 16.599999999999454
+    },
+    {
+      "at": 7666.9,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 7683.6,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 7700.2,
+      "ms": 16.599999999999454
+    },
+    {
+      "at": 7716.9,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 7733.6,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 7750.2,
+      "ms": 16.599999999999454
+    },
+    {
+      "at": 7766.9,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 7783.6,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 7800.2,
+      "ms": 16.599999999999454
+    },
+    {
+      "at": 7816.9,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 7833.6,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 7850.2,
+      "ms": 16.599999999999454
+    },
+    {
+      "at": 7866.8,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 7883.6,
+      "ms": 16.800000000000182
+    },
+    {
+      "at": 7900.2,
+      "ms": 16.599999999999454
+    },
+    {
+      "at": 7916.9,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 7933.6,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 7950.2,
+      "ms": 16.599999999999454
+    },
+    {
+      "at": 7966.9,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 7983.5,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 8000.2,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 8016.9,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 8033.6,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 8050.2,
+      "ms": 16.599999999999454
+    },
+    {
+      "at": 8066.8,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 8083.6,
+      "ms": 16.800000000000182
+    },
+    {
+      "at": 8100.2,
+      "ms": 16.599999999999454
+    },
+    {
+      "at": 8116.8,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 8133.5,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 8150.2,
+      "ms": 16.699999999999818
+    },
+    {
+      "at": 8166.8,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 8183.6,
+      "ms": 16.800000000000182
+    },
+    {
+      "at": 8200.2,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 8216.9,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 8233.5,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 8250.2,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 8266.8,
+      "ms": 16.599999999998545
+    },
+    {
+      "at": 8283.5,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 8300.2,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 8316.8,
+      "ms": 16.599999999998545
+    },
+    {
+      "at": 8333.5,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 8350.2,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 8366.9,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 8383.5,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 8400.1,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 8416.9,
+      "ms": 16.799999999999272
+    },
+    {
+      "at": 8433.5,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 8450.1,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 8466.9,
+      "ms": 16.799999999999272
+    },
+    {
+      "at": 8483.6,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 8500.2,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 8516.8,
+      "ms": 16.599999999998545
+    },
+    {
+      "at": 8533.5,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 8550.2,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 8566.8,
+      "ms": 16.599999999998545
+    },
+    {
+      "at": 8583.5,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 8600.2,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 8616.9,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 8633.5,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 8650.2,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 8666.8,
+      "ms": 16.599999999998545
+    },
+    {
+      "at": 8683.5,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 8700.2,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 8716.8,
+      "ms": 16.599999999998545
+    },
+    {
+      "at": 8733.5,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 8750.2,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 8766.8,
+      "ms": 16.599999999998545
+    },
+    {
+      "at": 8783.5,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 8800.2,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 8816.9,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 8833.5,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 8850.2,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 8866.9,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 8883.5,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 8900.1,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 8916.8,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 8933.5,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 8950.1,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 8966.9,
+      "ms": 16.799999999999272
+    },
+    {
+      "at": 8983.5,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 9000.1,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 9016.9,
+      "ms": 16.799999999999272
+    },
+    {
+      "at": 9033.5,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 9050.1,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 9066.8,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 9083.5,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 9100.2,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 9116.8,
+      "ms": 16.599999999998545
+    },
+    {
+      "at": 9133.5,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 9150.1,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 9166.8,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 9183.5,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 9200.2,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 9216.8,
+      "ms": 16.599999999998545
+    },
+    {
+      "at": 9233.5,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 9250.1,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 9266.8,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 9283.5,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 9300.2,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 9316.8,
+      "ms": 16.599999999998545
+    },
+    {
+      "at": 9333.5,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 9350.2,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 9366.8,
+      "ms": 16.599999999998545
+    },
+    {
+      "at": 9383.5,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 9400.2,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 9416.8,
+      "ms": 16.599999999998545
+    },
+    {
+      "at": 9433.5,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 9450.2,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 9466.8,
+      "ms": 16.599999999998545
+    },
+    {
+      "at": 9483.5,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 9500.1,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 9516.8,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 9533.5,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 9550.1,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 9566.8,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 9583.4,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 9600.2,
+      "ms": 16.80000000000109
+    },
+    {
+      "at": 9616.8,
+      "ms": 16.599999999998545
+    },
+    {
+      "at": 9633.5,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 9650.2,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 9666.8,
+      "ms": 16.599999999998545
+    },
+    {
+      "at": 9683.4,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 9700.2,
+      "ms": 16.80000000000109
+    },
+    {
+      "at": 9716.8,
+      "ms": 16.599999999998545
+    },
+    {
+      "at": 9733.5,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 9750.2,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 9766.8,
+      "ms": 16.599999999998545
+    },
+    {
+      "at": 9783.5,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 9800.2,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 9816.8,
+      "ms": 16.599999999998545
+    },
+    {
+      "at": 9833.5,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 9850.2,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 9866.8,
+      "ms": 16.599999999998545
+    },
+    {
+      "at": 9883.5,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 9900.1,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 9916.8,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 9933.5,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 9950.1,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 9966.8,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 9983.4,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 10000.1,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 10016.8,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 10033.5,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 10050.1,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 10066.7,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 10083.4,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 10100.1,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 10116.8,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 10133.5,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 10150.1,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 10166.8,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 10183.5,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 10200.2,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 10216.7,
+      "ms": 16.5
+    },
+    {
+      "at": 10233.4,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 10250.1,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 10266.8,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 10283.4,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 10300.1,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 10316.8,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 10333.4,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 10350.1,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 10366.8,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 10383.5,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 10400.1,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 10416.8,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 10433.4,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 10450.1,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 10466.8,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 10483.4,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 10500.1,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 10516.7,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 10533.4,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 10550.1,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 10566.7,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 10583.4,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 10600.1,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 10616.7,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 10633.4,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 10650,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 10666.7,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 10683.4,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 10700.1,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 10716.8,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 10733.4,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 10750.1,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 10766.8,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 10783.5,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 10800.1,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 10816.7,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 10833.4,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 10850.1,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 10866.7,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 10883.4,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 10900.1,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 10916.7,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 10933.4,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 10950.1,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 10966.7,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 10983.4,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 11000.1,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 11016.7,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 11033.4,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 11050.1,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 11066.7,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 11083.4,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 11100.1,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 11116.8,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 11133.4,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 11150.1,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 11166.7,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 11183.4,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 11200.1,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 11216.8,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 11233.4,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 11250,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 11266.7,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 11283.4,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 11300,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 11316.7,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 11333.4,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 11350.1,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 11366.7,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 11383.4,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 11400,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 11416.7,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 11433.4,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 11450.1,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 11466.8,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 11483.4,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 11500.1,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 11516.7,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 11533.4,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 11550.1,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 11566.8,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 11583.3,
+      "ms": 16.5
+    },
+    {
+      "at": 11600,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 11616.7,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 11633.4,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 11650,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 11666.7,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 11683.4,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 11700,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 11716.8,
+      "ms": 16.799999999999272
+    },
+    {
+      "at": 11733.4,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 11750,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 11766.8,
+      "ms": 16.799999999999272
+    },
+    {
+      "at": 11783.4,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 11800,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 11816.7,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 11833.4,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 11850.1,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 11866.7,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 11883.4,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 11900.1,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 11916.7,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 11933.4,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 11950,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 11966.7,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 11983.4,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 12000,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 12016.7,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 12033.3,
+      "ms": 16.599999999998545
+    },
+    {
+      "at": 12050.1,
+      "ms": 16.80000000000109
+    },
+    {
+      "at": 12066.8,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 12083.4,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 12100,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 12116.7,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 12133.4,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 12150,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 12166.7,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 12183.4,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 12200.1,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 12216.7,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 12233.4,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 12250,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 12266.7,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 12283.4,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 12300.1,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 12316.7,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 12333.4,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 12350,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 12366.7,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 12383.4,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 12400.1,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 12416.7,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 12433.4,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 12450,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 12466.7,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 12483.3,
+      "ms": 16.599999999998545
+    },
+    {
+      "at": 12500,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 12516.7,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 12533.4,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 12550,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 12566.7,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 12583.3,
+      "ms": 16.599999999998545
+    },
+    {
+      "at": 12600,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 12616.7,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 12633.4,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 12650.1,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 12666.7,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 12683.4,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 12700.1,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 12716.6,
+      "ms": 16.5
+    },
+    {
+      "at": 12733.3,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 12750,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 12766.7,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 12783.4,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 12800,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 12816.6,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 12833.3,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 12850,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 12866.7,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 12883.4,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 12900.1,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 12916.7,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 12933.3,
+      "ms": 16.599999999998545
+    },
+    {
+      "at": 12950,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 12966.7,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 12983.4,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 13000,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 13016.6,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 13033.3,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 13050,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 13066.6,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 13083.3,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 13100,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 13116.7,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 13133.3,
+      "ms": 16.599999999998545
+    },
+    {
+      "at": 13150,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 13166.6,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 13183.4,
+      "ms": 16.799999999999272
+    },
+    {
+      "at": 13200,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 13216.7,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 13233.3,
+      "ms": 16.599999999998545
+    },
+    {
+      "at": 13250,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 13266.7,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 13283.3,
+      "ms": 16.599999999998545
+    },
+    {
+      "at": 13300,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 13316.6,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 13333.3,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 13350,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 13366.6,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 13383.3,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 13399.9,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 13416.6,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 13433.3,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 13450,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 13466.7,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 13483.3,
+      "ms": 16.599999999998545
+    },
+    {
+      "at": 13500,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 13516.6,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 13533.3,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 13550,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 13566.6,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 13583.3,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 13600,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 13616.6,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 13633.3,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 13650,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 13666.6,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 13683.3,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 13700,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 13716.6,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 13733.3,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 13749.9,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 13766.6,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 13783.3,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 13799.9,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 13816.7,
+      "ms": 16.80000000000109
+    },
+    {
+      "at": 13833.3,
+      "ms": 16.599999999998545
+    },
+    {
+      "at": 13850,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 13866.6,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 13883.3,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 13899.9,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 13916.6,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 13933.3,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 13950,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 13966.6,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 13983.3,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 13999.9,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 14016.7,
+      "ms": 16.80000000000109
+    },
+    {
+      "at": 14033.3,
+      "ms": 16.599999999998545
+    },
+    {
+      "at": 14049.9,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 14066.7,
+      "ms": 16.80000000000109
+    },
+    {
+      "at": 14083.3,
+      "ms": 16.599999999998545
+    },
+    {
+      "at": 14100,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 14116.7,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 14133.3,
+      "ms": 16.599999999998545
+    },
+    {
+      "at": 14149.9,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 14166.6,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 14183.3,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 14199.9,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 14216.6,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 14233.3,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 14250,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 14266.7,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 14283.3,
+      "ms": 16.599999999998545
+    },
+    {
+      "at": 14299.9,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 14316.6,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 14333.3,
+      "ms": 16.69999999999891
+    },
+    {
+      "at": 14350,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 14366.6,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 14383.2,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 14400,
+      "ms": 16.799999999999272
+    },
+    {
+      "at": 14416.6,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 14433.2,
+      "ms": 16.600000000000364
+    },
+    {
+      "at": 14450,
+      "ms": 16.799999999999272
+    },
+    {
+      "at": 14466.7,
+      "ms": 16.700000000000728
+    },
+    {
+      "at": 14483.3,
+      "ms": 16.599999999998545
+    }
+  ],
+  "longTasks": [
+    {
+      "name": "self",
+      "entryType": "longtask",
+      "startTime": 568.5999999996275,
+      "duration": 54,
+      "navigationId": 9214,
+      "attribution": [
+        {
+          "name": "unknown",
+          "entryType": "taskattribution",
+          "startTime": 0,
+          "duration": 0,
+          "navigationId": 9214,
+          "containerType": "window",
+          "containerSrc": "",
+          "containerId": "",
+          "containerName": ""
+        }
+      ]
+    }
+  ],
+  "longFrames": [
+    {
+      "name": "long-animation-frame",
+      "entryType": "long-animation-frame",
+      "startTime": 568.4000000003725,
+      "duration": 55.40000000037253,
+      "navigationId": 9214,
+      "paintTime": 623.8000000007451,
+      "presentationTime": 628,
+      "renderStart": 623.5999999996275,
+      "styleAndLayoutStart": 623.5999999996275,
+      "firstUIEventTimestamp": 0,
+      "blockingDuration": 5.1,
+      "scripts": []
+    },
+    {
+      "name": "long-animation-frame",
+      "entryType": "long-animation-frame",
+      "startTime": 1487.2000000011176,
+      "duration": 53.59999999962747,
+      "navigationId": 9214,
+      "paintTime": 1540.800000000745,
+      "presentationTime": 1548,
+      "renderStart": 1513.2000000011176,
+      "styleAndLayoutStart": 1540.4000000003725,
+      "firstUIEventTimestamp": 1491,
+      "blockingDuration": 0,
+      "scripts": [
+        {
+          "name": "script",
+          "entryType": "script",
+          "startTime": 1492.800000000745,
+          "duration": 19.299999998882413,
+          "navigationId": 9214,
+          "invoker": "DIV#root.onclick",
+          "invokerType": "event-listener",
+          "windowAttribution": "self",
+          "executionStart": 1492.800000000745,
+          "forcedStyleAndLayoutDuration": 8,
+          "pauseDuration": 0,
+          "sourceURL": "blob:null/14a73950-d13a-4dbc-9ae3-2400f965bd19",
+          "sourceFunctionName": "bh",
+          "sourceCharPosition": 210840
+        }
+      ]
+    }
+  ],
+  "marks": [
+    {
+      "label": "hub-interactive",
+      "at": 1448.300000000745
+    },
+    {
+      "label": "fight-click",
+      "at": 1582.800000000745
+    },
+    {
+      "label": "scene-ready",
+      "at": 5892.700000001118
+    },
+    {
+      "label": "measurement-end",
+      "at": 14498.900000000373
+    }
+  ],
+  "snapshots": [
+    {
+      "at": 2033.8,
+      "frames": 0,
+      "calls": 0,
+      "triangles": 0,
+      "geometries": 0,
+      "textures": 1,
+      "particles": 0,
+      "estimatedGpuBytes": 0,
+      "loaded": 0,
+      "hiddenFrames": 0,
+      "quality": "high",
+      "heap": 60300000
+    },
+    {
+      "at": 3050.4,
+      "frames": 0,
+      "calls": 0,
+      "triangles": 0,
+      "geometries": 258,
+      "textures": 86,
+      "particles": 0,
+      "estimatedGpuBytes": 0,
+      "loaded": 5,
+      "hiddenFrames": 0,
+      "quality": "high",
+      "heap": 60300000
+    },
+    {
+      "at": 4050.3,
+      "frames": 0,
+      "calls": 0,
+      "triangles": 0,
+      "geometries": 422,
+      "textures": 87,
+      "particles": 0,
+      "estimatedGpuBytes": 0,
+      "loaded": 5,
+      "hiddenFrames": 0,
+      "quality": "high",
+      "heap": 60300000
+    },
+    {
+      "at": 5050.3,
+      "frames": 0,
+      "calls": 0,
+      "triangles": 0,
+      "geometries": 466,
+      "textures": 90,
+      "particles": 0,
+      "estimatedGpuBytes": 0,
+      "loaded": 5,
+      "hiddenFrames": 0,
+      "quality": "high",
+      "heap": 60300000
+    },
+    {
+      "at": 6050.3,
+      "frames": 11,
+      "calls": 85,
+      "triangles": 128097,
+      "geometries": 518,
+      "textures": 105,
+      "particles": 0,
+      "estimatedGpuBytes": 7275102,
+      "loaded": 5,
+      "hiddenFrames": 0,
+      "quality": "medium",
+      "heap": 60300000
+    },
+    {
+      "at": 7050.2,
+      "frames": 71,
+      "calls": 85,
+      "triangles": 128961,
+      "geometries": 518,
+      "textures": 105,
+      "particles": 3,
+      "estimatedGpuBytes": 7275102,
+      "loaded": 5,
+      "hiddenFrames": 0,
+      "quality": "medium",
+      "heap": 60300000
+    },
+    {
+      "at": 8050.2,
+      "frames": 131,
+      "calls": 84,
+      "triangles": 135809,
+      "geometries": 518,
+      "textures": 105,
+      "particles": 10,
+      "estimatedGpuBytes": 7275102,
+      "loaded": 5,
+      "hiddenFrames": 0,
+      "quality": "medium",
+      "heap": 60300000
+    },
+    {
+      "at": 9050.1,
+      "frames": 191,
+      "calls": 88,
+      "triangles": 133441,
+      "geometries": 518,
+      "textures": 105,
+      "particles": 5,
+      "estimatedGpuBytes": 7275102,
+      "loaded": 5,
+      "hiddenFrames": 0,
+      "quality": "medium",
+      "heap": 60300000
+    },
+    {
+      "at": 10050.1,
+      "frames": 251,
+      "calls": 85,
+      "triangles": 132833,
+      "geometries": 518,
+      "textures": 105,
+      "particles": 4,
+      "estimatedGpuBytes": 7275102,
+      "loaded": 5,
+      "hiddenFrames": 0,
+      "quality": "medium",
+      "heap": 60300000
+    },
+    {
+      "at": 11050.1,
+      "frames": 311,
+      "calls": 84,
+      "triangles": 132545,
+      "geometries": 518,
+      "textures": 105,
+      "particles": 3,
+      "estimatedGpuBytes": 7275102,
+      "loaded": 5,
+      "hiddenFrames": 0,
+      "quality": "medium",
+      "heap": 60300000
+    },
+    {
+      "at": 12050.1,
+      "frames": 371,
+      "calls": 82,
+      "triangles": 132609,
+      "geometries": 518,
+      "textures": 105,
+      "particles": 5,
+      "estimatedGpuBytes": 7275102,
+      "loaded": 5,
+      "hiddenFrames": 0,
+      "quality": "medium",
+      "heap": 60300000
+    },
+    {
+      "at": 13050,
+      "frames": 431,
+      "calls": 86,
+      "triangles": 132929,
+      "geometries": 518,
+      "textures": 105,
+      "particles": 5,
+      "estimatedGpuBytes": 7275102,
+      "loaded": 5,
+      "hiddenFrames": 0,
+      "quality": "medium",
+      "heap": 60300000
+    },
+    {
+      "at": 14049.9,
+      "frames": 491,
+      "calls": 83,
+      "triangles": 132321,
+      "geometries": 518,
+      "textures": 105,
+      "particles": 4,
+      "estimatedGpuBytes": 7275102,
+      "loaded": 5,
+      "hiddenFrames": 0,
+      "quality": "medium",
+      "heap": 60300000
+    }
+  ],
+  "last": 14483.3,
+  "stats": {
+    "frames": 518,
+    "calls": 82,
+    "triangles": 132321,
+    "geometries": 518,
+    "textures": 105,
+    "particles": 4,
+    "estimatedGpuBytes": 7275102,
+    "loaded": 5,
+    "hiddenFrames": 0,
+    "quality": "medium"
+  },
+  "labelAudit": {
+    "heads": [
+      {
+        "x": 727.4014995408988,
+        "y": 234.36383433493572,
+        "width": 162.04594059860824,
+        "height": 217.78514262460877
+      },
+      {
+        "x": 988.845794262942,
+        "y": 289.8946077389613,
+        "width": 136.90642718065442,
+        "height": 218.26505073665305
+      },
+      {
+        "x": 364.93411136128805,
+        "y": 239.79673131110658,
+        "width": 180.33886892716623,
+        "height": 221.37872477321864
+      },
+      {
+        "x": 71.05087623362265,
+        "y": 271.0825910904479,
+        "width": 196.41851781568738,
+        "height": 213.01317996743137
+      },
+      {
+        "x": 236.43261047189432,
+        "y": 242.16435989484575,
+        "width": 136.8838478978915,
+        "height": 175.26006594650306
+      },
+      {
+        "x": 724.2021778526854,
+        "y": 232.9414164372286,
+        "width": 150,
+        "height": 56
+      }
+    ],
+    "cards": [
+      {
+        "x": 732.8634756851927,
+        "y": 162.9531800906316,
+        "width": 138,
+        "height": 54
+      },
+      {
+        "x": 987.2681663004521,
+        "y": 244.5935214183143,
+        "width": 138,
+        "height": 30
+      }
+    ],
+    "missing": [],
+    "overlaps": 0
+  },
+  "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Pro, Unspecified Version)",
+  "pixelRatio": 1,
+  "canvas": {
+    "width": 1256,
+    "height": 608,
+    "cssWidth": 1256,
+    "cssHeight": 607.90625
+  },
+  "stageFraction": 0.6754513888888889,
+  "heap": 60300000,
+  "post": {
+    "width": 1256,
+    "height": 608,
+    "samples": 2
+  },
+  "result": null,
+  "actions": 5,
+  "audit": {
+    "width": 1256,
+    "height": 608,
+    "units": [
+      {
+        "id": "mochi",
+        "side": "party",
+        "role": "guardian",
+        "yaw": 0.4363323129985824,
+        "box": {
+          "x": 364.9232621960505,
+          "y": 239.73173951905724,
+          "width": 180.35399595572142,
+          "height": 221.41012946030608
+        }
+      },
+      {
+        "id": "soot",
+        "side": "party",
+        "role": "witch",
+        "yaw": 0.5585053606381855,
+        "box": {
+          "x": 73.67977674265352,
+          "y": 267.2280987927765,
+          "width": 201.61990691435062,
+          "height": 213.03657961595167
+        }
+      },
+      {
+        "id": "clover",
+        "side": "party",
+        "role": "alchemist",
+        "yaw": 0.4363323129985824,
+        "box": {
+          "x": 236.4107805205573,
+          "y": 242.101638782076,
+          "width": 136.90431760315346,
+          "height": 175.28890598856822
+        }
+      },
+      {
+        "id": "foe-0-teacup-healer",
+        "side": "enemy",
+        "role": "healer",
+        "yaw": -0.5585053606381855,
+        "box": {
+          "x": 727.4022106135435,
+          "y": 234.3169759953401,
+          "width": 162.07431782683602,
+          "height": 217.78611377110042
+        }
+      },
+      {
+        "id": "foe-1-sock-skipper",
+        "side": "enemy",
+        "role": "flanker",
+        "yaw": -0.4363323129985824,
+        "box": {
+          "x": 988.8484732963095,
+          "y": 289.82581302818784,
+          "width": 136.91812108277963,
+          "height": 218.2871581093146
+        }
+      }
+    ],
+    "overlaps": [
+      [
+        "mochi",
+        "clover"
+      ],
+      [
+        "soot",
+        "clover"
+      ]
+    ],
+    "outside": []
+  },
+  "max": 33.399999999999864,
+  "p95": 16.700000000000728,
+  "p99": 16.80000000000109,
+  "above25": 3,
+  "above50": 0,
+  "within20": 0.9965357967667436,
+  "hitchAttribution": [
+    {
+      "at": 617.2,
+      "ms": 33.30000000000007,
+      "evidence": [
+        {
+          "name": "RunTask",
+          "ms": 20.769
+        },
+        {
+          "name": "RunTask",
+          "ms": 20.422
+        },
+        {
+          "name": "RunTask",
+          "ms": 1.004
+        },
+        {
+          "name": "RunTask",
+          "ms": 0.032
+        },
+        {
+          "name": "RunTask",
+          "ms": 0.028
+        },
+        {
+          "name": "RunTask",
+          "ms": 0.027
+        }
+      ],
+      "attribution": "Overlapping trace events, inclusive durations"
+    },
+    {
+      "at": 1533.8,
+      "ms": 33.399999999999864,
+      "evidence": [
+        {
+          "name": "RunTask",
+          "ms": 28.795
+        },
+        {
+          "name": "RunTask",
+          "ms": 21.156
+        },
+        {
+          "name": "FunctionCall",
+          "ms": 18.101,
+          "function": ""
+        },
+        {
+          "name": "Layout",
+          "ms": 4.375
+        },
+        {
+          "name": "UpdateLayoutTree",
+          "ms": 2.374
+        },
+        {
+          "name": "RunTask",
+          "ms": 1.254
+        }
+      ],
+      "attribution": "Overlapping trace events, inclusive durations"
+    },
+    {
+      "at": 2600.4,
+      "ms": 33.30000000000018,
+      "evidence": [
+        {
+          "name": "RunTask",
+          "ms": 17.536
+        },
+        {
+          "name": "FunctionCall",
+          "ms": 17.514,
+          "function": ""
+        },
+        {
+          "name": "RunTask",
+          "ms": 17.375
+        },
+        {
+          "name": "FunctionCall",
+          "ms": 17.356,
+          "function": ""
+        },
+        {
+          "name": "RunTask",
+          "ms": 7.854
+        },
+        {
+          "name": "Scheduler::RunTask",
+          "ms": 7.851
+        }
+      ],
+      "attribution": "Overlapping trace events, inclusive durations"
+    }
+  ]
+}

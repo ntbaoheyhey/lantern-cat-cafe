@@ -1,0 +1,139 @@
+{
+  "identity": {
+    "id": "soot",
+    "source": "/Users/bao/art/look-v3/image-to3d/soot/browser-20261110/soot-source.glb",
+    "sourceSha256": "c287fdd01b264c5a69218bbdbc144deccdbee9cb5bcf01ab497a2c3a685789c2",
+    "concept": "/Users/bao/taskbar-hero-cardrpg-b2/assets/source/look-v3/concepts/soot.png",
+    "conceptSha256": "5f50d32658f429991a2903760fc58fed365acea4f73e79ab5b3aaa6cd99e1c84",
+    "config": "/Users/bao/taskbar-hero-cardrpg-b2/tools/cardrpg-look/art-rebuild/configs/soot.json",
+    "configSha256": "c555b7c1a9246282db7f1d3ca6b38f1904abeee31e0994d5969c626b40676c81",
+    "recipeHashes": {
+      "prepare-unit.mjs": "83e8078c8aaac0e0683845e15b93f309f0ec6a3991110a6f5d15f0c19605e050",
+      "simplify-textured.mjs": "55f829f62a56bd1c7eff18aafbd289cf5c47bc01bcc7498f9e78e8329172b92d",
+      "rig-unit.mjs": "844d3835464181a7f278d3a36f4b87c81021872b23b45e529fb61ad0330b9a44",
+      "inspect-glb.py": "52741f64f63a60124858f3cb9942af4a954a00fbecfdeafd7f4cabba5b809984"
+    }
+  },
+  "startedAt": "2026-11-10T02:15:27.663Z",
+  "steps": [
+    {
+      "id": "source",
+      "command": "/Users/bao/tools/cardrpg-look/venv/bin/python",
+      "argv": [
+        "/Users/bao/taskbar-hero-cardrpg-b2/tools/cardrpg-look/art-rebuild/inspect-glb.py",
+        "/Users/bao/art/look-v3/image-to3d/soot/browser-20261110/soot-source.glb",
+        "--out",
+        "/Users/bao/art/look-v3/image-to3d/soot/automated3/source.json"
+      ],
+      "status": "DONE",
+      "startedAt": "2026-11-10T02:15:27.663Z",
+      "exitCode": 0,
+      "finishedAt": "2026-11-10T02:15:27.699Z",
+      "outputs": {
+        "/Users/bao/art/look-v3/image-to3d/soot/automated3/source.json": "0ac888e7a0da6ec29b411e9d4441c98ca6bdb52f8ab7145037523ace235bd67a"
+      }
+    },
+    {
+      "id": "simplify",
+      "command": "/opt/homebrew/Cellar/node@24/24.22.2/bin/node",
+      "argv": [
+        "/Users/bao/taskbar-hero-cardrpg-b2/tools/cardrpg-look/art-rebuild/simplify-textured.mjs",
+        "/Users/bao/art/look-v3/image-to3d/soot/browser-20261110/soot-source.glb",
+        "/Users/bao/art/look-v3/image-to3d/soot/automated3/surface.glb",
+        "0.22",
+        "0.006"
+      ],
+      "status": "DONE",
+      "startedAt": "2026-11-10T02:15:27.700Z",
+      "exitCode": 0,
+      "finishedAt": "2026-11-10T02:15:28.161Z",
+      "outputs": {
+        "/Users/bao/art/look-v3/image-to3d/soot/automated3/surface.glb": "1f75d73f0484d1b4018d49943fb6e99e27ded450039ed74690dc8c7017d58a09",
+        "/Users/bao/art/look-v3/image-to3d/soot/automated3/surface.json": "65f1be4cb17377a88005c3b2ac17b657397fa3826dd7c6dec22bc3376d32526e"
+      }
+    },
+    {
+      "id": "rig",
+      "command": "/opt/homebrew/Cellar/node@24/24.22.2/bin/node",
+      "argv": [
+        "/Users/bao/taskbar-hero-cardrpg-b2/tools/cardrpg-look/art-rebuild/rig-unit.mjs",
+        "/Users/bao/art/look-v3/image-to3d/soot/automated3/surface.glb",
+        "/Users/bao/art/look-v3/image-to3d/soot/automated3/rig.glb",
+        "/Users/bao/taskbar-hero-cardrpg-b2/tools/cardrpg-look/art-rebuild/configs/soot.json"
+      ],
+      "status": "DONE",
+      "startedAt": "2026-11-10T02:15:28.163Z",
+      "exitCode": 0,
+      "finishedAt": "2026-11-10T02:15:28.724Z",
+      "outputs": {
+        "/Users/bao/art/look-v3/image-to3d/soot/automated3/rig.glb": "669f27514b3d49ded59dca8fd0cc3c736715f3e938d7d7ea44c6828b90a03018",
+        "/Users/bao/art/look-v3/image-to3d/soot/automated3/rig.json": "cab36ea262f17179d3bb5e089c684b2cf2ad61489416616bd9beb1facd2e8d4b"
+      }
+    },
+    {
+      "id": "pack",
+      "command": "/Users/bao/tools/cardrpg-look/npm/node_modules/.bin/gltf-transform",
+      "argv": [
+        "optimize",
+        "/Users/bao/art/look-v3/image-to3d/soot/automated3/rig.glb",
+        "/Users/bao/art/look-v3/image-to3d/soot/automated3/soot.glb",
+        "--compress",
+        "meshopt",
+        "--flatten",
+        "false",
+        "--join",
+        "false",
+        "--instance",
+        "false",
+        "--palette",
+        "false",
+        "--simplify",
+        "false",
+        "--prune",
+        "false",
+        "--texture-compress",
+        "webp",
+        "--texture-size",
+        "1024"
+      ],
+      "status": "DONE",
+      "startedAt": "2026-11-10T02:15:28.730Z",
+      "exitCode": 0,
+      "finishedAt": "2026-11-10T02:15:29.332Z",
+      "outputs": {
+        "/Users/bao/art/look-v3/image-to3d/soot/automated3/soot.glb": "8ece862a9e6eb0484715d12b481dd37ea39647d6356264b92cb68cc5c11aebba"
+      }
+    },
+    {
+      "id": "inspect",
+      "command": "/Users/bao/tools/cardrpg-look/venv/bin/python",
+      "argv": [
+        "/Users/bao/taskbar-hero-cardrpg-b2/tools/cardrpg-look/art-rebuild/inspect-glb.py",
+        "/Users/bao/art/look-v3/image-to3d/soot/automated3/soot.glb",
+        "--out",
+        "/Users/bao/art/look-v3/image-to3d/soot/automated3/packed.json"
+      ],
+      "status": "DONE",
+      "startedAt": "2026-11-10T02:15:29.333Z",
+      "exitCode": 0,
+      "finishedAt": "2026-11-10T02:15:29.362Z",
+      "outputs": {
+        "/Users/bao/art/look-v3/image-to3d/soot/automated3/packed.json": "36ed36c059b14f181bdd14c1e492ed9b5f59e8e4fa023fb632db136e7da2ba53"
+      }
+    }
+  ],
+  "runtimeAccepted": false,
+  "qualityStatus": "REVIEW_REQUIRED",
+  "toolchain": {
+    "node": "v24.22.2",
+    "platform": "darwin",
+    "architecture": "arm64"
+  },
+  "preview": {
+    "path": "/Users/bao/taskbar-hero-cardrpg-b2/assets/cardrpg-look/v3-generated/soot.glb",
+    "sha256": "8ece862a9e6eb0484715d12b481dd37ea39647d6356264b92cb68cc5c11aebba",
+    "installedAt": "2026-11-10T02:15:29.365Z"
+  },
+  "status": "LOCAL_STAGES_COMPLETE",
+  "finishedAt": "2026-11-10T02:16:21.655Z"
+}

@@ -1,0 +1,21 @@
+# Current import status — 2026-11-09 23:17 UTC
+
+Source conversion, local simplify/rig/pack and diagnostic runtime import are complete. Earlier plan below is historical; do not reconnect fal or submit the same source again.
+See [automation guide](../AUTOMATION.md), [packed rig](image-to-3d/automated-packed.json), [poses](image-to-3d/packed-motion/contact-sheet.webp) and [natural film](image-to-3d/film/mochi-generated-20s.mp4).
+Skeleton-safe cloning/disposal and rig-specific clip caching exist in preserved local WIP. Source-based rig14joints/22gameclips still fails high cast/victory deformation (B-R1-008,3attempts). Actual surface separation/retopology is needed before further skinning. Four-unit comparison/roster acceptance remains pending.
+
+---
+
+# Direct image-to-3D import — prepared, not executed
+
+The user authorized external conversion of the original Mochi PNG. Preserve its SHA256 `678241f78c41b3ee88d71498cd4eb50847866021565df8a46c61c1efc6b9fdd8`. No new concept, surrogate primitive model or painted plane satisfies this step.
+
+1. Once fal is connected, discover its actual tools and verify `tripo3d/p2/image-to-3d` is callable. The official route documentation supports single-image textured/PBR output; connector availability is still unverified. Submit the original PNG once, retain request ID, exact provider/model/version, parameters, timestamps and returned output hashes. Do not buy credits or upgrade a plan.
+2. Store raw GLB/textures outside git under `~/art/look-v3/image-to3d/mochi/`. Preserve every failed receipt and the original result. Run `inspect-glb.py MODEL --out RECEIPT` for geometry counts, UVs, materials, external resources, joints and clips. This inspection is structural only.
+3. Under the shared timing lock, run Blender with `review-generated.py --model MODEL --out REVIEW`. Inspect front, both sides, back and clay. Adjust the review yaw only after observing the actual orientation. Compare to our master: cream cheek silhouette, teal apron/eyes, rounded paws, shield thickness, connected tail; look for fused limbs, missing undersides, holes and rear texture seams.
+4. Clean and simplify a copy locally, retain UVs/texture, split shield/lantern from deforming cloth/body when possible, and rig from the actual geometry. Do not guess skin weights before the mesh exists. Use normalized world height compatible with Mochi, and authored pivots named `guardian_motion/body/head/armL/armR/footL/footR/tail/earL/earR` plus equipment sockets. Additional forearm/wrist/tail joints may refine motion without changing event clocks.
+5. Before importing a skinned GLB, replace the two plain `scene.clone(true)` sites for this new opt-in model with skeleton-aware cloning, and verify cloned actors do not share bones. `createCardClips` currently caches only asset/role/atelier: separate the new rig revision from v2 to prevent wrong rest transforms and missing joints. Preserve painted facial details rather than letting legacy eye geometry overwrite them. These changes are identified, NOT implemented or verified.
+6. Verify existing idle/attack/cast/hit/victory/defeat clips against actual deformation. Head, ears, arms, shield and tail must articulate independently; body bob alone does not pass. Retain foot contact, face anchors, props, statuses and exact action timing. Review a continuous real-battle clip and rotating geometry before any roster rollout.
+7. Re-run the same four-unit comparison and rubric only after all four comparable generated rigs exist. Review perf, faces, contrast, parity and file sizes. Do not infer a score from provider preview JPEGs. Keep default flags OFF and do not promote rejected candidates to the demo.
+
+Tools prepared: `tools/cardrpg-look/art-rebuild/{image-to-3d,inspect-glb,review-generated}.py`. The submission helper requires explicit `--submit` and unique output directory; it must not be rerun automatically after quota failure. No model conversion or rig job is currently running.

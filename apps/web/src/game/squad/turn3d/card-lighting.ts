@@ -1,5 +1,6 @@
 import * as T from 'three';
 import { isLookV2 } from './look-v2';
+import { isLookArtV3 } from './look-art';
 import tokens from '../../cardrpg/look-tokens.json';
 export const CARD_LIGHTING = [
   { key: '#ffe0ba', rim: '#bdd2ff', fog: '#282330', exposure: 1.04 },
@@ -18,6 +19,7 @@ export function applyCardLighting(scene: T.Scene, renderer: T.WebGLRenderer, cha
       if (light instanceof T.DirectionalLight) {
         light.color.set(color); light.intensity = spec.intensity;
         light.position.fromArray(spec.position);
+        if(isLookArtV3()&&name==='cafe-key')light.position.set(-3.8,6,5.5);
       }
     }
     let fill = scene.getObjectByName('atelier-fill');

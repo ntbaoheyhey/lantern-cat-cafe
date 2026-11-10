@@ -1,6 +1,6 @@
 // Dedicated LOOK artifact; does not edit or invoke the lane A output builder.
 import { readFileSync, writeFileSync, mkdirSync, unlinkSync, existsSync } from 'node:fs';
-import { resolve, relative, extname, basename } from 'node:path';
+import { resolve, relative, extname, basename, dirname } from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { gzipSync } from 'node:zlib';
@@ -14,6 +14,8 @@ const { build } = await import(requireWeb.resolve('vite'));
 const outputPath = process.env.LOOK_OUTPUT || 'docs/cardrpg-look/index.html';
 const receiptPath = process.env.LOOK_RECEIPT || 'docs/cardrpg-look/build.json';
 const readableDemo = outputPath.includes('b2') || outputPath.includes('v5');
+const artDemo = process.env.LOOK_ART === 'v3';
+const artBootstrap = artDemo ? `window.__LOOK_ART__=new URLSearchParams(location.search).get('lookArt')==='v2'?'v2':'v3';window.__LOOK_ART_PIPELINE__=['sculpt','painted','generated','puppet'].includes(new URLSearchParams(location.search).get('artPipeline'))?new URLSearchParams(location.search).get('artPipeline'):'puppet';` : '';
 const lean = process.env.LOOK_LEAN === '1';
 // Both streams decode to identical bytes. Different asset classes favour
 // different DEFLATE hash-table sizes; keep the smaller stream per payload.
@@ -72,6 +74,17 @@ for (const row of imagePacking) {
 }
 const leanChanges=[];
 if (lean) for (const [key,asset] of embeddedAssets) {
+  if (key==='assets/cardrpg-look/v3-vfx/roster-light.webp') {
+    const {createRequire}=await import('node:module');
+    const sharp=createRequire('/Users/bao/tools/cardrpg-look/npm/package.json')('sharp');
+    // Keep every component and its alpha/gutter; only the lean atlas resolution
+    // changes. Full demo and original source remain at512px per component.
+    const bytes=await sharp(asset.bytes).resize({width:3072,withoutEnlargement:true}).webp({quality:88,alphaQuality:100,effort:6}).toBuffer();
+    if(gzip(bytes).length<gzip(asset.bytes).length){
+      leanChanges.push({key,before:asset.bytes.length,after:bytes.length,method:'WebPq88,384px per component,alpha100'});
+      embeddedAssets.set(key,{mime:'image/webp',bytes});
+    }
+  }
   if (key.startsWith('assets/cardrpg-look/portraits/') && key.endsWith('-2x.webp')) {
     const smaller=embeddedAssets.get(key.replace('-2x.webp','-1x.webp'));
     if(smaller){leanChanges.push({key,before:asset.bytes.length,after:smaller.bytes.length,method:'existing1x'});embeddedAssets.set(key,smaller);}
@@ -87,7 +100,12 @@ if (lean) for (const [key,asset] of embeddedAssets) {
 const assetEntries = [...embeddedAssets].sort(([left], [right]) => left.localeCompare(right));
 const assetClasses = {};
 for (const [path, asset] of assetEntries) {
-  const category = path.includes('cardrpg-look/stage/') ? 'atelier-stage'
+  const category = path.includes('cardrpg-look/v3-generated/') ? 'reconstructed-models'
+    : path.includes('cardrpg-look/v3-sculpt/') ? 'bakeoff-models'
+    : path.includes('cardrpg-look/v3-puppets/') ? 'illustrated-puppets'
+    : path.includes('cardrpg-look/v3-painted/') ? 'painted-fallbacks'
+    : path.includes('cardrpg-look/v3-vfx/') ? 'painted-vfx'
+    : path.includes('cardrpg-look/stage/') ? 'atelier-stage'
     : path.includes('cardrpg-look/game-models/') ? 'atelier-models'
     : path.endsWith('.glb') ? 'classic-models'
     : path.includes('portrait') ? 'portraits'
@@ -105,14 +123,14 @@ const loader = readFileSync(resolve(root, 'tools/cardrpg-look/offline-loader.js'
 const evidence = readableDemo ? {tags:'',script:'',rows:[],files:[]} : evidencePayload(root);
 const gallery = await liveGallery(root, process.env.LOOK_LIVE_GALLERY);
 const showcase = outputPath.includes('v5') ? {script:'',bytes:0,files:[]} : readableDemo ? await b2Evidence(root) : await showcaseEvidence(root);
-const html = `<!doctype html>\n<!-- REFERENCE: reports/cardrpg-look/skills-v5/full/V5FULL-REPORT.md | reports/cardrpg-look/skills-v5/V0-REPORT.md | reports/cardrpg-look/skills-v5/SPEC.md | reports/cardrpg-look/b2/B2-REPORT.md | reports/cardrpg-look/b2/PROMPT.txt | docs/cardrpg-look/b2.html | docs/cardrpg2/index.html | tools/cardrpg-look/build.mjs | docs/design/cardrpg/LOOK-BIBLE.md | apps/web/src/game/cardrpg/depth | packages/game-rules/src/cardrpg/depth -->\n<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none';img-src data: blob:;style-src 'unsafe-inline';script-src 'unsafe-inline' 'wasm-unsafe-eval' blob:;connect-src data: blob:;media-src data: blob:"><script>window.__LOOK_PACKED__=true;${performanceMeter}</script><title>The Lantern · Lantern atelier</title><style>html,body{margin:0;background:#1d1b28;color:#f5ebdc}#loading{margin:0;padding:40px 40px 18px;font:18px system-ui}#opening-progress{display:block;width:min(420px,calc(100% - 80px));margin:0 40px;accent-color:#d8b98a}</style></head><body><div id="root"><p id="loading">Opening the cafe…</p><progress id="opening-progress" aria-label="Opening the cafe" value="0" max="1"></progress></div><script id="asset-manifest" type="application/json">${JSON.stringify(manifest).replace(/</g, '\\u003c')}</script>
+const html = `<!doctype html>\n<!-- REFERENCE: reports/cardrpg-look/skills-v5/full/V5FULL-REPORT.md | reports/cardrpg-look/skills-v5/V0-REPORT.md | reports/cardrpg-look/skills-v5/SPEC.md | reports/cardrpg-look/b2/B2-REPORT.md | reports/cardrpg-look/b2/PROMPT.txt | docs/cardrpg-look/b2.html | docs/cardrpg2/index.html | tools/cardrpg-look/build.mjs | docs/design/cardrpg/LOOK-BIBLE.md | apps/web/src/game/cardrpg/depth | packages/game-rules/src/cardrpg/depth -->\n<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none';img-src data: blob:;style-src 'unsafe-inline';script-src 'unsafe-inline' 'wasm-unsafe-eval' blob:;connect-src data: blob:;media-src data: blob:"><script>window.__LOOK_PACKED__=true;${artBootstrap}${performanceMeter}</script><title>The Lantern · Lantern atelier</title><style>html,body{margin:0;background:#1d1b28;color:#f5ebdc}#loading{margin:0;padding:40px 40px 18px;font:18px system-ui}#opening-progress{display:block;width:min(420px,calc(100% - 80px));margin:0 40px;accent-color:#d8b98a}</style></head><body><div id="root"><p id="loading">Opening the cafe…</p><progress id="opening-progress" aria-label="Opening the cafe" value="0" max="1"></progress></div><script id="asset-manifest" type="application/json">${JSON.stringify(manifest).replace(/</g, '\\u003c')}</script>
 ${assetTags}
 ${evidence.tags}
 <script>${evidence.script}</script>
 <script>${showcase.script}</script>
 <script>${gallery.script}</script>
 <script id="payload" type="application/octet-stream">${payload}</script><script>${loader}</script></body></html>`;
-mkdirSync(resolve(root, 'docs/cardrpg-look'), { recursive: true });
+mkdirSync(dirname(resolve(root, outputPath)), { recursive: true });
 writeFileSync(resolve(root, outputPath), html);
 const sourceRoots = ['packages/game-rules/src', 'apps/web/src', 'assets', 'tools/cardrpg-depth', 'tools/cardrpg-big', 'tools/cardrpg-big2', 'tools/cardrpg-look', 'tools/cardrpg-demo/verify-delivery.py', 'tools/visual-support.mjs'];
 const files = execFileSync('git', ['ls-files', '--cached', '--others', '--exclude-standard', ...sourceRoots], { cwd: root, encoding: 'utf8' }).trim().split('\n');
@@ -130,5 +148,6 @@ const receipt = { gallery: { bytes: gallery.bytes, files: gallery.files }, lean,
   sha256: createHash('sha256').update(html).digest('hex'), runtimeDirty, sourceRoots, sourceHashes: hashes,
   sourceAssetHashes, assetHashes,
   references: ['docs/cardrpg-look/index.html', 'tools/cardrpg-big/build.mjs', 'packages/game-rules/src/cardrpg/depth', 'apps/web/src/game/cardrpg/depth'] };
+mkdirSync(dirname(resolve(root, receiptPath)), { recursive: true });
 writeFileSync(resolve(root, receiptPath), JSON.stringify(receipt, null, 2));
 console.log(JSON.stringify({ head, dirty, bytes: receipt.bytes, sha256: receipt.sha256 }));

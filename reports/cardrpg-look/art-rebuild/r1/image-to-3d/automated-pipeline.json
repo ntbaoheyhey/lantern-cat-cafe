@@ -1,0 +1,143 @@
+{
+  "source": "/Users/bao/taskbar-hero-cardrpg-b2/assets/source/look-v3/image-to3d/mochi-source.glb",
+  "sourceSha256": "eb84d0f8ca114736806432a18c0abd7249f3fb451c642c53fb28a1a85c0912a6",
+  "recipeHashes": {
+    "prepare-mochi.mjs": "00b40d7fe3eedb4bd6b175984f573883c63217f91577cdcd0e3614f9b2469a49",
+    "simplify-textured.mjs": "55f829f62a56bd1c7eff18aafbd289cf5c47bc01bcc7498f9e78e8329172b92d",
+    "rig-generated.py": "49be30f93d9eea7a9bd19e388b26a4c98047ce8673cfac9f32b04020576ec630",
+    "inspect-glb.py": "52741f64f63a60124858f3cb9942af4a954a00fbecfdeafd7f4cabba5b809984"
+  },
+  "startedAt": "2026-11-09T23:16:02.119Z",
+  "steps": [
+    {
+      "id": "source",
+      "command": "/Users/bao/tools/cardrpg-look/venv/bin/python",
+      "args": [
+        "tools/cardrpg-look/art-rebuild/inspect-glb.py",
+        "/Users/bao/taskbar-hero-cardrpg-b2/assets/source/look-v3/image-to3d/mochi-source.glb",
+        "--out",
+        "/Users/bao/art/look-v3/image-to3d/mochi/pipeline2/source.json"
+      ],
+      "startedAt": "2026-11-09T23:16:02.120Z",
+      "output": "/Users/bao/art/look-v3/image-to3d/mochi/pipeline2/source.json",
+      "status": "DONE",
+      "finishedAt": "2026-11-09T23:16:02.179Z",
+      "exitCode": 0,
+      "sha256": "6bb89b080cbfd03248bdb2ad25728c91157da050de9df522a56bc64f435e6cde",
+      "outputs": {
+        "/Users/bao/art/look-v3/image-to3d/mochi/pipeline2/source.json": "6bb89b080cbfd03248bdb2ad25728c91157da050de9df522a56bc64f435e6cde"
+      }
+    },
+    {
+      "id": "simplify",
+      "command": "/opt/homebrew/Cellar/node@24/24.22.2/bin/node",
+      "args": [
+        "tools/cardrpg-look/art-rebuild/simplify-textured.mjs",
+        "/Users/bao/taskbar-hero-cardrpg-b2/assets/source/look-v3/image-to3d/mochi-source.glb",
+        "/Users/bao/art/look-v3/image-to3d/mochi/pipeline2/surface.glb",
+        ".23",
+        ".006"
+      ],
+      "startedAt": "2026-11-09T23:16:02.180Z",
+      "output": "/Users/bao/art/look-v3/image-to3d/mochi/pipeline2/surface.glb",
+      "status": "DONE",
+      "finishedAt": "2026-11-09T23:16:02.557Z",
+      "exitCode": 0,
+      "sha256": "b303f0df91ef03302304269fb183fd8c0affc4541149d4b0def56f0b044bfba1",
+      "outputs": {
+        "/Users/bao/art/look-v3/image-to3d/mochi/pipeline2/surface.glb": "b303f0df91ef03302304269fb183fd8c0affc4541149d4b0def56f0b044bfba1",
+        "/Users/bao/art/look-v3/image-to3d/mochi/pipeline2/surface.json": "30164b8a50077c03c0489f96865f54f64177db69af64c919711f81228e34cc6e"
+      }
+    },
+    {
+      "id": "rig",
+      "command": "/Users/bao/tools/cardrpg-look/venv/bin/python",
+      "args": [
+        "tools/cardrpg-look/art-rebuild/rig-generated.py",
+        "--source",
+        "/Users/bao/art/look-v3/image-to3d/mochi/pipeline2/surface.glb",
+        "--out",
+        "/Users/bao/art/look-v3/image-to3d/mochi/pipeline2/rig.glb",
+        "--revision",
+        "3"
+      ],
+      "startedAt": "2026-11-09T23:16:02.560Z",
+      "output": "/Users/bao/art/look-v3/image-to3d/mochi/pipeline2/rig.glb",
+      "status": "DONE",
+      "finishedAt": "2026-11-09T23:16:02.850Z",
+      "exitCode": 0,
+      "sha256": "30ac49158ea973651891a32163fc812af28390ce068a531c5706596b2579a8b5",
+      "outputs": {
+        "/Users/bao/art/look-v3/image-to3d/mochi/pipeline2/rig.glb": "30ac49158ea973651891a32163fc812af28390ce068a531c5706596b2579a8b5",
+        "/Users/bao/art/look-v3/image-to3d/mochi/pipeline2/rig.json": "253ad31382bcef113046dbde25bad1090812085b49d0f771f0065bf27ecd6855"
+      }
+    },
+    {
+      "id": "pack",
+      "command": "/Users/bao/tools/cardrpg-look/npm/node_modules/.bin/gltf-transform",
+      "args": [
+        "optimize",
+        "/Users/bao/art/look-v3/image-to3d/mochi/pipeline2/rig.glb",
+        "/Users/bao/art/look-v3/image-to3d/mochi/pipeline2/mochi.glb",
+        "--compress",
+        "meshopt",
+        "--flatten",
+        "false",
+        "--join",
+        "false",
+        "--instance",
+        "false",
+        "--palette",
+        "false",
+        "--simplify",
+        "false",
+        "--prune",
+        "false",
+        "--texture-compress",
+        "webp",
+        "--texture-size",
+        "1024"
+      ],
+      "startedAt": "2026-11-09T23:16:02.854Z",
+      "output": "/Users/bao/art/look-v3/image-to3d/mochi/pipeline2/mochi.glb",
+      "status": "DONE",
+      "finishedAt": "2026-11-09T23:16:03.408Z",
+      "exitCode": 0,
+      "sha256": "c035cd84f28d5198905799b73786eee9a268fbc14dc1465327c2c433daaeee29",
+      "outputs": {
+        "/Users/bao/art/look-v3/image-to3d/mochi/pipeline2/mochi.glb": "c035cd84f28d5198905799b73786eee9a268fbc14dc1465327c2c433daaeee29"
+      }
+    },
+    {
+      "id": "inspect",
+      "command": "/Users/bao/tools/cardrpg-look/venv/bin/python",
+      "args": [
+        "tools/cardrpg-look/art-rebuild/inspect-glb.py",
+        "/Users/bao/art/look-v3/image-to3d/mochi/pipeline2/mochi.glb",
+        "--out",
+        "/Users/bao/art/look-v3/image-to3d/mochi/pipeline2/packed.json"
+      ],
+      "startedAt": "2026-11-09T23:16:03.409Z",
+      "output": "/Users/bao/art/look-v3/image-to3d/mochi/pipeline2/packed.json",
+      "status": "DONE",
+      "finishedAt": "2026-11-09T23:16:03.439Z",
+      "exitCode": 0,
+      "sha256": "987e4803c783a25d771d7582cede1db14edbf0f1a2b386b9202437c405b2c32a",
+      "outputs": {
+        "/Users/bao/art/look-v3/image-to3d/mochi/pipeline2/packed.json": "987e4803c783a25d771d7582cede1db14edbf0f1a2b386b9202437c405b2c32a"
+      }
+    }
+  ],
+  "runtimeAccepted": false,
+  "qualityStatus": "PARTIAL",
+  "knownIssues": [
+    "B-R1-008: fused arm/apron/shield stretch in cast and victory; repair cap reached."
+  ],
+  "toolchain": {
+    "node": "v24.22.2",
+    "platform": "darwin",
+    "architecture": "arm64"
+  },
+  "status": "LOCAL_STAGES_COMPLETE",
+  "finishedAt": "2026-11-09T23:16:40.558Z"
+}

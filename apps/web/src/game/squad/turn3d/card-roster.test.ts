@@ -39,6 +39,20 @@ it('keeps sculpted model props without adding or disposing legacy duplicates', (
   expect(disposed).toBe(0);
   sculpted.geometry.dispose(); sculpted.material.dispose();
 });
+it.each([['button-guard','guard'],['mallow','witch'],['panko','guardian']])(
+  'keeps reconstructed %s props when the root is named after its asset', (asset, role) => {
+    const model = new T.Group(), rig = new T.Group(), hand = new T.Group();
+    model.userData = { lookV2: true, lookGenerated: true, lookProps: true };
+    rig.name = asset; hand.name = role + '_armR'; rig.add(hand); model.add(rig);
+    const original = new T.Mesh(new T.BoxGeometry(.1,.1,.1), new T.MeshStandardMaterial());
+    hand.add(original);
+    const utensil = new CardUtensil(model, role, asset);
+    expect(hand.children).toEqual([original]);
+    utensil.dispose();
+    expect(hand.children).toEqual([original]);
+    original.geometry.dispose(); original.material.dispose();
+  },
+);
 it('keeps invitation reveals bounded and completely still in reduced motion', () => {
   expect(cardEntrancePose(0, false).finished).toBe(false);
   expect(cardEntrancePose(CARD_ENTRANCE_SECONDS, false).finished).toBe(true);

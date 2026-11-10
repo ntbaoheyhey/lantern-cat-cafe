@@ -10,7 +10,8 @@ export class CardUtensil {
   constructor(model: T.Object3D, role: string, asset: string) {
     // Roster GLBs carry their own sculpted tools in the existing animated
     // sockets. Keep their lifetime with the model and skip legacy duplicates.
-    if (model.userData.lookV2 === true && model.getObjectByName(role)?.userData.lookProps === true) return;
+    if (model.userData.lookV2 === true && (model.userData.lookProps === true
+      || model.getObjectByName(role)?.userData.lookProps === true)) return;
     const authored = enemyAdornment(asset) ?? batch2Prop(asset) ?? batch3Prop(asset);
     if (authored) {
       const hand = model.getObjectByName(`${role}_${authored.hand}`);

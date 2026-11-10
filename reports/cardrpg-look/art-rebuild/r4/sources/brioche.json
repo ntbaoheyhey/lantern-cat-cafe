@@ -1,0 +1,47 @@
+{
+  "id": "brioche",
+  "createdAt": "2026-11-10T07:37:06.964Z",
+  "tool": "built-in image_gen",
+  "model": "not exposed",
+  "seed": "not exposed",
+  "parameters": {
+    "transparent_background": true,
+    "references": []
+  },
+  "prompt": "Use case: stylized-concept. Asset type: original game VFX component atlas for a premium painted cozy night-cafe RPG. One square RGBA sheet with EXACTLY FOUR separate luminous sprites in an equal 2 by 2 grid. Genuine transparent background, no visible grid or labels. Each component completely contained inside its quadrant with generous 15 percent transparent margin on every side. Braided bread host magic in warm bread gold #DAA05B, berry plum #8D4D65 and ivory #FFF0D2. TOP LEFT: a rounded warm golden light knot with three interwoven luminous strands. TOP RIGHT: a graceful left-to-right braided golden ribbon with tiny cream sparks. BOTTOM LEFT: a huge airy looping braid of warm golden energy forming three open interlocked loops, transparent inside. BOTTOM RIGHT: a warm fountain of softly curled golden light strands and delicate plum-tinted sparks. Shared painterly dimensional light, crisp bright ivory cores, restrained feathered glow, upper-left warm lighting, layered depth and rich material-like wisps. Reusable independently moving light components, NOT animation frames or a scene. No characters, faces, physical props, cup, lantern, door, weapon, text, symbols, scenery, floor, border, rectangular background or watermark. No reference images. Original design.\n",
+  "master": "/Users/bao/art/look-v3/vfx/brioche-light-master.png",
+  "sourceSha256": "310357c137b943ebfe1c752760bd70b6209c4d04f9df4ae930aa9e4b0bb32e2a",
+  "sourceSize": [
+    1254,
+    1254
+  ],
+  "output": "assets/cardrpg-look/v3-vfx/brioche-light.webp",
+  "sha256": "e435c14d128930d41ea6e79aec2c5a3389420717543c11473db850d02d47a98a",
+  "bytes": 310356,
+  "components": [
+    {
+      "tile": 0,
+      "visiblePixels": 182487,
+      "transparentPixels": 210642
+    },
+    {
+      "tile": 1,
+      "visiblePixels": 90357,
+      "transparentPixels": 302772
+    },
+    {
+      "tile": 2,
+      "visiblePixels": 209421,
+      "transparentPixels": 183708
+    },
+    {
+      "tile": 3,
+      "visiblePixels": 203551,
+      "transparentPixels": 189578
+    }
+  ],
+  "postprocess": "Original alpha retained; alpha<6 removed;24px smooth edge taper;464px components with24px gutters;1024RGBA WebP94 alpha100",
+  "review": "Four honey-plum braided energy components inspected; three-loop aura and rising afterglow distinct from crumb defender; no props/text; motion pending.",
+  "runtimeAccepted": false,
+  "temporalFrames": false
+}

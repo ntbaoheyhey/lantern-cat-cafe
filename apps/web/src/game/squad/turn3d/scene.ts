@@ -1,4 +1,5 @@
 import { LookContactPool } from './look-contact-pool';
+import { artPipeline, isLookArtV3 } from './look-art';
 import { LookEffectRim } from './look-effect-rim';
 import { targetTextLane } from './card-callout-layout';
 import type { StatusPresentation } from './card-status-beats';
@@ -28,6 +29,9 @@ import { StableLabelLayout } from './look-label-layout';
 import {GearAttachments,GearResources} from './gear-visuals';
 import type {ActorAppearance} from './appearance';
 import { loadModel } from './assets';
+import { animateIllustrated } from './look-puppet';
+import { animatePainted, installPaintedMaterial } from './look-painted';
+import { cloneBattleModel, animateGeneratedFace, disposeGeneratedSkeletons } from './look-generated';
 import {screenBounds,auditBounds} from './scene-audit';
 import {SKILL_MOTION,clipProgress,movementProgress} from './choreography';
 import {formationPoint,figureScale,restYaw,targetYaw,blendYaw,stageHeight} from './formation';
@@ -93,6 +97,7 @@ export class TurnScene {
   private statusHeights=new Map<string,number>();
   private statusCrowns=new Map<string,number>();
   private positions=new Map<string,T.Vector3>();private scratch=new T.Vector3();private zero=new T.Vector3();private labelsAt=0;
+  private effectProp=new T.Vector3();
   private stableLabels = new StableLabelLayout();
   private puppets = new Map<string,Puppet>();
   private gearResources = new GearResources();
@@ -249,7 +254,7 @@ export class TurnScene {
       await this.cardSurfaces?.ready;if(this.disposed)return;
       const warmMaterials=new Map<T.Material,T.Material>();
       for(const role of this.view().warmModelIds ?? ['guardian','witch','alchemist','guard','flanker','charger','ranger','healer','elite','yarn','thread','dummy']){
-        const gltf=await loadModel(role);if(this.disposed)return;const model=gltf.scene.clone(true);
+        const gltf=await loadModel(role);if(this.disposed)return;const model=cloneBattleModel(gltf.scene);
         if(this.lookStageEnabled){
           // Gallery actors may differ from the initial party. Warm their real
           // felt/atelier shader and utensils, including the direct Low variant.
@@ -261,7 +266,7 @@ export class TurnScene {
             if(o instanceof T.Mesh){
               const prepare=(source:T.Material)=>{
                 let material=warmMaterials.get(source);
-                if(!material){material=source.clone();if(material instanceof T.MeshStandardMaterial)this.cardSurfaces?.apply(material);warmMaterials.set(source,material);this.materialOwned.add(material);}
+                if(!material){material=source.clone();if(material instanceof T.MeshStandardMaterial){if(!material.userData.lookPainted)this.cardSurfaces?.apply(material);else installPaintedMaterial(material);}warmMaterials.set(source,material);this.materialOwned.add(material);}
                 return material;
               };
               o.material=Array.isArray(o.material)?o.material.map(prepare):prepare(o.material);
@@ -307,6 +312,7 @@ export class TurnScene {
       this.scene.remove(warm);this.render(initial);this.ready=true;this.host.dataset.ready='true';this.dirty=true;
       if(this.lookStageEnabled)this.cardEffects?.warmDeferred();
     }catch(error){this.scene.remove(warm);if(!this.disposed)this.onFailure(`Models could not prepare: ${String(error).slice(0,100)}`)}
+    finally{for(const model of warm.children)disposeGeneratedSkeletons(model);}
   }
   private makeContact():T.Texture {
     const c=document.createElement('canvas');c.width=c.height=128;const ctx=c.getContext('2d')!;
@@ -413,11 +419,11 @@ export class TurnScene {
       // warming. Resolve its actor against the same view that supplied it.
       const asset=sourceView.models?.[a.id]??a.role;
       const gltf=await loadModel(asset);if(this.disposed)return;
-      const model=gltf.scene.clone(true);const root=new T.Group();root.add(model);root.userData.actorId=a.id;
-      const cardClips=sourceView.autoBattle?await createCardClips(model,a.role,asset):[];
+      const model=cloneBattleModel(gltf.scene);const root=new T.Group();root.add(model);root.userData.actorId=a.id;
+      const cardClips=sourceView.autoBattle&&!model.userData.lookPainted?await createCardClips(model,a.role,asset):[];
       if(this.disposed)return;
       const height=new T.Box3().setFromObject(model).max.y;
-      const materials:T.Material[]=[];model.traverse(o=>{if(o instanceof T.Mesh){o.material=Array.isArray(o.material)?o.material.map(m=>m.clone()):o.material.clone();materials.push(...(Array.isArray(o.material)?o.material:[o.material]));for(const m of Array.isArray(o.material)?o.material:[o.material])if(m instanceof T.MeshStandardMaterial){this.cardSurfaces?.apply(m);for(const tex of [m.map,m.normalMap,m.roughnessMap])if(tex){tex.anisotropy=Math.min(sourceView.autoBattle?16:8,this.renderer.capabilities.getMaxAnisotropy());tex.generateMipmaps=true;}}}});
+      const materials:T.Material[]=[];model.traverse(o=>{if(o instanceof T.Mesh){o.material=Array.isArray(o.material)?o.material.map(m=>m.clone()):o.material.clone();materials.push(...(Array.isArray(o.material)?o.material:[o.material]));for(const m of Array.isArray(o.material)?o.material:[o.material])if(m instanceof T.MeshStandardMaterial){if(!m.userData.lookPainted)this.cardSurfaces?.apply(m);else installPaintedMaterial(m);for(const tex of [m.map,m.normalMap,m.roughnessMap])if(tex){tex.anisotropy=Math.min(sourceView.autoBattle?16:8,this.renderer.capabilities.getMaxAnisotropy());tex.generateMipmaps=true;}}}});
       styleReadableEnemy(model,asset);
       this.effectRim?.install(model);
       const mixer=new T.AnimationMixer(model);
@@ -426,12 +432,14 @@ export class TurnScene {
       const bossShadow=isReadableBattle()&&isReadableBoss(asset);
       const shadowMaterial=bossShadow?this.blobMaterial.clone():this.blobMaterial;
       if(bossShadow){shadowMaterial.color.set('#49293e');shadowMaterial.opacity=.78;materials.push(shadowMaterial);}
-      const shadow=new T.Mesh(new T.PlaneGeometry(bossShadow||a.role==='yarn'?3:1.65,bossShadow||a.role==='yarn'?2.4:1.35),shadowMaterial);shadow.rotation.x=-Math.PI/2;shadow.position.y=.026;root.add(shadow);
+      const paintRig=model.userData.paintedRig as {height:number;aspect:number}|undefined;
+      // A thin illustrated actor needs contact under its soles, not a deep sphere shadow.
+      const shadow=new T.Mesh(new T.PlaneGeometry(paintRig?paintRig.height*paintRig.aspect*.82:bossShadow||a.role==='yarn'?3:1.65,paintRig?.55:bossShadow||a.role==='yarn'?2.4:1.35),shadowMaterial);shadow.rotation.x=-Math.PI/2;shadow.position.y=.026;root.add(shadow);
       const guard=new T.Mesh(sourceView.autoBattle?cardShieldGeometry():new T.SphereGeometry(.9,18,10,0,Math.PI*2,0,Math.PI/2),new T.MeshBasicMaterial({color:GOLD,transparent:true,opacity:sourceView.autoBattle?.50:.12,depthWrite:false,side:T.DoubleSide}));guard.position.y=.09;guard.visible=false;root.add(guard);
       const snare=new T.Group();for(let i=0;i<2;i++){const thread=new T.Mesh(new T.TorusGeometry(.47+i*.08,.018,5,32),new T.MeshBasicMaterial({color:VIOLET,transparent:true,opacity:.85}));thread.rotation.x=Math.PI/2+i*.35;thread.position.y=.2+i*.22;snare.add(thread);}snare.visible=false;root.add(snare);
       const base=point(a,boss);root.position.copy(base);model.rotation.y=restYaw(a.side);this.scene.add(root);
       const head = model.getObjectByName(`${a.role}_head`);
-      const face = sourceView.autoBattle ? a.side === 'party' ? new CardFace(model, a.role, asset) : new CardEnemyExpression(model, a.role, asset) : undefined;
+      const face = sourceView.autoBattle && !model.userData.lookPainted && !model.userData.lookGenerated ? a.side === 'party' ? new CardFace(model, a.role, asset) : new CardEnemyExpression(model, a.role, asset) : undefined;
       const utensil = sourceView.autoBattle ? new CardUtensil(model, a.role, asset) : undefined;
       this.puppets.set(a.id,{bossPhase:sourceView.bossPhases?.[a.id]??1,phaseAt:-100,utensil,enteredAt:this.time,face,head,headRest:head?.quaternion.clone() ?? new T.Quaternion(),headPose:head?.quaternion.clone() ?? new T.Quaternion(),gaze:{yaw:0,pitch:0},asset,height,baseColors:materials.map(m=>m instanceof T.MeshStandardMaterial?m.color.clone():new T.Color()),gear:new GearAttachments(model,a.role,this.gearResources),root,model,mixer,actions,clip:'',base,shadow,role:a.role,materials,guard,snare});this.stats.loaded=this.puppets.size;this.dirty=true;
     }catch(error){if(!this.disposed)this.onFailure(`Model unavailable: ${a.name}. Turn controls remain available. ${String(error).slice(0,120)}`);}
@@ -464,11 +472,17 @@ export class TurnScene {
     let enemyCount=0, loneKettle=false;
     if(isReadableBattle()&&view.autoBattle)for(const actor of view.actors)if(actor.side==='enemy'){enemyCount++;loneKettle=(view.models?.[actor.id]??this.puppets.get(actor.id)?.asset)==='kettle-knight';}
     const bossFraming=view.boss||(enemyCount===1&&loneKettle);
+    const illustratedBattle=isReadableBattle()&&view.autoBattle&&artPipeline()==='puppet';
     const frame=view.frame, cardRecipe=view.autoBattle?cardRecipeFor(frame,view.actors):undefined, source=frame?this.puppets.get(frame.plan.actorId):undefined;
     const targets=frame?frame.plan.targetIds.map(id=>this.puppets.get(id)).filter((p):p is Puppet=>!!p):[];
-    for(const a of view.actors){const p=this.puppets.get(a.id);if(!p)continue;const slot=view.model?this.zero:view.autoBattle?cardFormation(a,view.rows?.[a.id]):formationPoint(a,view.boss);if(!view.autoBattle||a.hp>0)p.base.set(slot.x,slot.y,slot.z);if(this.lookStageEnabled&&view.galleryPreview&&a.side==='party'){const lane=a.slot%3;p.base.set([-1.35,-2.65,-3.65][lane]!,0,[.25,1.05,-.65][lane]!);}
-      if(this.lookStageEnabled&&view.autoBattle&&bossFraming&&a.side==='party')p.base.z-=1.1;
+    for(const a of view.actors){const p=this.puppets.get(a.id);if(!p)continue;const slot=view.model?this.zero:view.autoBattle?cardFormation(a,view.rows?.[a.id]):formationPoint(a,view.boss);if(!view.autoBattle||a.hp>0)p.base.set(slot.x,slot.y,slot.z);if(this.lookStageEnabled&&view.galleryPreview&&!illustratedBattle&&a.side==='party'){const lane=a.slot%3;p.base.set([-1.35,-2.65,-3.65][lane]!,0,[.25,1.05,-.65][lane]!);}
+      if(this.lookStageEnabled&&view.autoBattle&&bossFraming&&a.side==='party')p.base.z-=illustratedBattle?.10:1.1;
       p.root.position.copy(p.base);p.root.scale.setScalar(view.model?1:figureScale(a.role,a.side)*(isReadableBattle()&&view.autoBattle?(p.asset==='kettle-knight'?(bossFraming?3.50:2.1):a.role==='yarn'?(view.boss?(p.asset==='pantry-crown'?2.12:1.94):1.25):a.side==='party'?1.25:1.38):1));p.model.rotation.y=view.model?view.model.angle:view.autoBattle?cardBodyYaw(a.side,0,0):restYaw(a.side);
+      if(illustratedBattle&&!view.model&&p.model.userData.lookPuppet){
+        // Normalize illustrated heights; native-era role compensation made Yarn dwarf cats.
+        const puppetHeight=(p.model.userData.paintedRig as {height:number}).height;
+        p.root.scale.setScalar((p.model.userData.paintedRig.boss?3.70:a.side==='party'?2.08:2.10)/puppetHeight);
+      }
       if (view.tableau) {
         p.base.set((a.slot - 1) * 2.1, 0, a.slot === 1 ? -.35 : .3);
         p.root.position.copy(p.base);
@@ -544,6 +558,13 @@ export class TurnScene {
       this.animatePuppet(p,clip,view.fixedTime!==undefined?0:delta,view.fixedTime!==undefined?(view.modelProgress??progress??(clip==='idle'?.35:.45)):progress);
       if(view.autoBattle && p.head) p.headPose.copy(p.head.quaternion);
       p.face?.animate(cardExpression(clip, !!frame && source === p), this.time, p.gaze.yaw, view.reducedMotion);
+      animatePainted(p.model,this.camera,this.time,clip,progress,view.reducedMotion,!!frame&&source===p);
+      p.model.userData.puppetActorId=a.id;
+      const puppetActing=!!frame&&source===p&&a.hp>0;
+      animateIllustrated(p.model,this.camera,this.time,puppetActing?(frame.plan.presentationId??frame.plan.skillId):clip,
+        view.model?view.modelProgress:puppetActing?frame.actionProgress:progress,view.reducedMotion,puppetActing,puppetActing&&frame.plan.ultimate,
+        Math.max(0,1-(this.time-p.phaseAt)/.35)*.65);
+      animateGeneratedFace(p.model,clip,this.time,view.reducedMotion);
       const involved=!frame||source===p||frame.plan.targetIds.includes(a.id);
       p.materials.forEach((m,i)=>{if(m instanceof T.MeshStandardMaterial)m.color.copy(p.baseColors[i]!).multiplyScalar(involved?1:.7)});
       p.guard.visible=a.hp>0&&a.shield>0;p.snare.visible=a.hp>0&&a.statuses.some(s=>['snare','restrain'].includes(s.kind));
@@ -577,8 +598,10 @@ export class TurnScene {
     if(this.lookStageEnabled&&!view.model){this.camera.position.set(0,6.4,12);this.cameraTarget.set(0,1.1,0);}
     const readable=isReadableBattle()&&view.autoBattle&&!view.model;
     if(readable){this.camera.position.set(0,4.7,12);this.cameraTarget.set(0,bossFraming?(view.actors.some(a=>this.puppets.get(a.id)?.asset==='kettle-knight')?2.05:2.20):1.16,0);}
+    if(readable&&isLookArtV3()){this.camera.position.y=4.25;if(!bossFraming)this.cameraTarget.y=1.28;}
+    if(illustratedBattle&&!view.model){this.camera.position.y=3.75;this.cameraTarget.y=bossFraming?1.80:1.38;}
     const distance=this.camera.position.distanceTo(this.cameraTarget),frameHeight=view.model?(this.lookStageEnabled?(view.model.role==='yarn'?4.6:3.3):(view.model.role==='yarn'?3.3:2.25)):view.tableau?Math.max(4,7.5/this.camera.aspect):view.autoBattle?cardFrameHeight(this.camera.aspect,view.camera==='close'?'close':view.camera==='far'?'far':'wide'):stageHeight(this.camera.aspect);
-    const readableBossFrame=readable&&bossFraming?1.25:1;
+    const readableBossFrame=readable&&bossFraming?(illustratedBattle?1.08:1.25):1;
     this.camera.fov=T.MathUtils.radToDeg(2*Math.atan(frameHeight*readableBossFrame/2/distance));
     if(view.model){this.camera.position.set(0,3.7,11.3);this.cameraTarget.y=view.model.role==='yarn'?1.35:.94;this.camera.zoom=1.02;}
     if(view.camera==='overhead')this.camera.position.set(0,13,6);
@@ -629,8 +652,13 @@ export class TurnScene {
       this.post.protectFaces(this.cardEffects.protectedFaces,view.effectOnly?0:protectedCount);
       this.effectRim?.protect(this.cardEffects.protectedFaces,view.effectOnly?0:protectedCount,this.width*ratio,this.height*ratio);
       if(this.lookStageEnabled)for(const a of view.actors){const p=this.puppets.get(a.id);if(p)this.statusHeights.set(a.id,p.height*p.root.scale.y);}
+      const effectSocket=source&&isLookArtV3()?
+        source.model.getObjectByName(`${source.role}_shield`)
+          ??source.model.getObjectByName('socket_weapon')
+          ??source.model.getObjectByName(`${source.role}_${source.asset==='sorrel'?'armL':'armR'}`):undefined;
       this.cardEffects.render(frame,cardRecipe,view.actors,this.positions,this.camera,this.post.effectiveQuality,view.reducedMotion,
-        view.effectOnly?undefined:view.cardStatuses,this.time,view.cardPresentation,this.statusHeights,this.statusCrowns,view.playbackSpeed??1);
+        view.effectOnly?undefined:view.cardStatuses,this.time,view.cardPresentation,this.statusHeights,this.statusCrowns,view.playbackSpeed??1,
+        effectSocket?.localToWorld(this.effectProp.set(0,0,.12)));
     }
     this.stats.particles=this.spells.count+(this.cardEffects?.stats.instances??0);
     const display=view.effectOnly?this.effectPreview:this.scene;
@@ -688,7 +716,7 @@ export class TurnScene {
     const view=this.view();
     return auditBounds(view.actors.filter(a=>a.hp>0&&this.puppets.has(a.id)).map(a=>{const p=this.puppets.get(a.id)!;return {id:a.id,side:a.side,role:a.role,yaw:p.model.rotation.y,box:screenBounds(p.model,this.camera,this.width,this.height)}}),this.width,this.height);
   }
-  private disposePuppet(p:Puppet){p.utensil?.dispose();p.face?.dispose();p.gear.dispose();p.mixer.stopAllAction();p.mixer.uncacheRoot(p.model);p.materials.forEach(m=>m.dispose());p.shadow.geometry.dispose();p.guard.geometry.dispose();(p.guard.material as T.Material).dispose();p.snare.traverse(o=>{if(o instanceof T.Mesh){o.geometry.dispose();o.material.dispose();}});}
+  private disposePuppet(p:Puppet){p.utensil?.dispose();p.face?.dispose();p.gear.dispose();p.mixer.stopAllAction();p.mixer.uncacheRoot(p.model);disposeGeneratedSkeletons(p.model);p.materials.forEach(m=>m.dispose());p.shadow.geometry.dispose();p.guard.geometry.dispose();(p.guard.material as T.Material).dispose();p.snare.traverse(o=>{if(o instanceof T.Mesh){o.geometry.dispose();o.material.dispose();}});}
   dispose() {
     if (this.disposed) return;
     this.disposed = true;

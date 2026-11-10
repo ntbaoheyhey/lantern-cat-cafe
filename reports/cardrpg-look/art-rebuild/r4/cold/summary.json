@@ -1,0 +1,102 @@
+{
+  "artifactSha256": "0c6f88ebaaea68474b16ce0c51add8d8c6cd813388ace9c15291a0285659aa83",
+  "method": "Three native+three CPU4 cold loads; cache disabled,1440DPR1. Original traces retained outside git.",
+  "rows": [
+    {
+      "file": "run0-1440x900-dpr1-cpu1.json",
+      "throttle": 1,
+      "max": 49.89999999999998,
+      "postReady": {
+        "count": 515,
+        "max": 16.80000000000109,
+        "p95": 16.799999999999272,
+        "above25": 0,
+        "above50": 0,
+        "within20": 1
+      },
+      "battleReadyMs": 5901.9000000003725,
+      "loadToInteractiveMs": 1481.4000000003725,
+      "errors": []
+    },
+    {
+      "file": "run1-1440x900-dpr1-cpu1.json",
+      "throttle": 1,
+      "max": 33.40000000000009,
+      "postReady": {
+        "count": 515,
+        "max": 16.80000000000109,
+        "p95": 16.700000000000728,
+        "above25": 0,
+        "above50": 0,
+        "within20": 1
+      },
+      "battleReadyMs": 5816.199999999255,
+      "loadToInteractiveMs": 1429.300000000745,
+      "errors": []
+    },
+    {
+      "file": "run2-1440x900-dpr1-cpu1.json",
+      "throttle": 1,
+      "max": 33.399999999999864,
+      "postReady": {
+        "count": 515,
+        "max": 16.80000000000109,
+        "p95": 16.700000000000728,
+        "above25": 0,
+        "above50": 0,
+        "within20": 1
+      },
+      "battleReadyMs": 5892.700000001118,
+      "loadToInteractiveMs": 1448.300000000745,
+      "errors": []
+    },
+    {
+      "file": "run3-1440x900-dpr1-cpu4.json",
+      "throttle": 4,
+      "max": 183.29999999999973,
+      "postReady": {
+        "count": 516,
+        "max": 16.80000000000291,
+        "p95": 16.799999999999272,
+        "above25": 0,
+        "above50": 0,
+        "within20": 1
+      },
+      "battleReadyMs": 10169.799999998882,
+      "loadToInteractiveMs": 3912.7999999988824,
+      "errors": []
+    },
+    {
+      "file": "run4-1440x900-dpr1-cpu4.json",
+      "throttle": 4,
+      "max": 166.5999999999999,
+      "postReady": {
+        "count": 515,
+        "max": 16.80000000000291,
+        "p95": 16.700000000000728,
+        "above25": 0,
+        "above50": 0,
+        "within20": 1
+      },
+      "battleReadyMs": 9515.900000000373,
+      "loadToInteractiveMs": 3435.9000000003725,
+      "errors": []
+    },
+    {
+      "file": "run5-1440x900-dpr1-cpu4.json",
+      "throttle": 4,
+      "max": 150,
+      "postReady": {
+        "count": 515,
+        "max": 33.29999999999927,
+        "p95": 16.700000000000728,
+        "above25": 1,
+        "above50": 0,
+        "within20": 0.9980582524271845
+      },
+      "battleReadyMs": 9449.099999999627,
+      "loadToInteractiveMs": 3476.300000000745,
+      "errors": []
+    }
+  ]
+}

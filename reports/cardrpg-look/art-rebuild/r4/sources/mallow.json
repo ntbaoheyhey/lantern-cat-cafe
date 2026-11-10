@@ -1,0 +1,47 @@
+{
+  "id": "mallow",
+  "createdAt": "2026-11-10T06:37:38.294Z",
+  "tool": "built-in image_gen",
+  "model": "not exposed",
+  "seed": "not exposed",
+  "parameters": {
+    "transparent_background": true,
+    "references": []
+  },
+  "prompt": "Use case: stylized-concept. Asset type: original game VFX component atlas for a premium painted cozy night-cafe RPG. One square RGBA sheet with EXACTLY FOUR separate luminous sprites in an equal 2 by 2 grid. Genuine transparent background, no visible grid or labels. Each component completely contained inside its quadrant with generous 15 percent transparent margin on every side. Oven flame magic in deep ember #C94A35, coral #E78570, honey #F3BB61, ivory #FFF0D2. TOP LEFT: a compact coiling flame orb with a white-hot center and coral tongues. TOP RIGHT: a bold tapering left-to-right flame lance with two curling coral ribbons. BOTTOM LEFT: a tall sweeping fire blossom with three separated flame petals and an open center, rich dimensional coral folds. BOTTOM RIGHT: a sharp hot impact flare throwing tiny amber embers outward into delicate smoke. Shared painterly dimensional light, crisp bright ivory cores, restrained feathered glow, upper-left warm lighting, layered depth and rich material-like wisps. Reusable independently moving light components, NOT animation frames or a scene. No characters, faces, physical props, cup, lantern, door, weapon, text, symbols, scenery, floor, border, rectangular background or watermark. No reference images. Original design.\n",
+  "master": "/Users/bao/art/look-v3/vfx/mallow-light-master.png",
+  "sourceSha256": "fe883cf93c4ee0f4452ef0d95857edec1bb38d04242a54d125443004675457c2",
+  "sourceSize": [
+    1254,
+    1254
+  ],
+  "output": "assets/cardrpg-look/v3-vfx/mallow-light.webp",
+  "sha256": "55a23511a1fea1e047ae0172d2f8cf6dcdf8435cd3dcc55f0002a624d1af1c18",
+  "bytes": 223740,
+  "components": [
+    {
+      "tile": 0,
+      "visiblePixels": 109380,
+      "transparentPixels": 283749
+    },
+    {
+      "tile": 1,
+      "visiblePixels": 97889,
+      "transparentPixels": 295240
+    },
+    {
+      "tile": 2,
+      "visiblePixels": 124553,
+      "transparentPixels": 268576
+    },
+    {
+      "tile": 3,
+      "visiblePixels": 131029,
+      "transparentPixels": 262100
+    }
+  ],
+  "postprocess": "Original alpha retained; alpha<6 removed;24px smooth edge taper;464px components with24px gutters;1024RGBA WebP94 alpha100",
+  "review": "Coral flame charge, tapered lance, fire blossom and ember burst; distinct tall flame silhouette, clean open spaces. Preserve colored core and alpha; runtime motion pending.",
+  "runtimeAccepted": false,
+  "temporalFrames": false
+}
