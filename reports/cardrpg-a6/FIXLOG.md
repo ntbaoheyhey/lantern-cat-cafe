@@ -112,3 +112,5 @@
 - 2026-11-10T19:05:24Z Q14 visual review found top boss Phase2 beside world label Phase1 at523/802HP. A6 first phase is a bonus flag; world label/scene bridge still read the legacy two-phase field. Use one displayedBossPhase adapter in both DOM labels and the existing scene input; no rules or B renderer change. Real threshold regression added; verification pending.
 
 - 2026-11-10T19:10:08Z Q14 B P13 improves the two-add view after merge7b23959ad. A6phase3 spawns a third live add; slot%2 places it over another. Confirmed from real automatic fixture, requestedB extension with exact reproducer/evidence. Keep bossvisibility provisional; continue independent Q15checks, no combat-rule workaround.
+
+2026-11-10T19:15:22Z Q15 capture harness: Saved/Suggested summaries require distinct selection; resume keeps prior images. Map focus check used focus() after mouse input and therefore did not establish keyboard modality. Existing CSS has a focus-visible outline; focused verification now uses actual Tab/Shift+Tab and asserts focus before inspecting the ring. App source unchanged; failed receipt retained.

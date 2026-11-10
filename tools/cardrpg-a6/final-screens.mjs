@@ -1,21 +1,23 @@
 import {createRequire} from 'node:module';
-import {writeFile,mkdir} from 'node:fs/promises';
+import {writeFile,mkdir,readFile} from 'node:fs/promises';
 import {execFileSync} from 'node:child_process';
 const root=process.cwd();
 const part=process.argv.find(arg=>arg.startsWith('--part='))?.slice(7)??'all';
-if(!['all','battle','sheets','phase'].includes(part))throw Error('Use --part=all, battle, sheets or phase.');
+if(!['all','battle','sheets','phase','a11y'].includes(part))throw Error('Use --part=all, battle, sheets, phase or a11y.');
 const require=createRequire(root+'/apps/web/package.json');
 const {chromium,expect}=require('@playwright/test');
 const browser=await chromium.launch({channel:'chromium',headless:true,args:['--use-angle=metal']});
 const lease=setTimeout(()=>{console.error('Final gallery exceeded 19-minute lease.');void browser.close();},19*60*1000);
-const errors=[],shots=[],battles=[],accessibility=[];
+const resume=process.argv.includes('--resume');
+const saved=resume?await readFile(root+`/reports/cardrpg-a6/final-screens/${part}-partial.json`,'utf8').then(JSON.parse).catch(()=>null):null;
+const errors=saved?.errors??[],shots=saved?.shots??[],battles=saved?.battles??[],accessibility=saved?.accessibility??[];
 const stop=()=>{if(require('node:fs').existsSync(root+'/STOP-A6'))throw Error('STOP-A6 requested');};
 const output=root+'/reports/cardrpg-a6/final-screens';
 await mkdir(output,{recursive:true});
 try {
  for(const [width,height] of [[1440,900],[1280,720]]){
   stop();
-  const context=await browser.newContext({viewport:{width,height},...(width===1440&&part!=='sheets'&&part!=='phase'?{recordVideo:{dir:'/tmp/cardrpg-a6-final-boss-video',size:{width:1280,height:800}}}:{})}),page=await context.newPage();
+  const context=await browser.newContext({viewport:{width,height},...(width===1440&&['all','battle'].includes(part)?{recordVideo:{dir:'/tmp/cardrpg-a6-final-boss-video',size:{width:1280,height:800}}}:{})}),page=await context.newPage();
   const video=page.video(),videoStartedAt=Date.now();
   page.on('pageerror',e=>errors.push({width,error:e.message}));
   page.on('console',e=>{if(e.type()==='error')errors.push({width,error:e.text()});});
@@ -23,13 +25,26 @@ try {
   await page.getByRole('button',{name:'Cats',exact:true}).waitFor();
   await page.evaluate(()=>{const m=window.__depthReview;m.offline=true;m.state.tutorial=4;m.state.freeInvite=true;m.shortcut('unlock');m.shortcut('chapter');if(m.state.v4?.journey)m.state.v4.journey.pending=[];m.go('hub');});
   const shot=async (name,immediate=false)=>{
-   stop();if(!immediate)await page.waitForTimeout(350);
+   stop();if(resume&&shots.some(shot=>shot.name===name&&shot.width===width))return;
+   if(!immediate)await page.waitForTimeout(350);
    const tmp=`/tmp/cardrpg-a6-final-${width}-${name}.png`,file=`${width}-${name}.webp`;
    await page.screenshot({path:tmp});execFileSync('cwebp',['-quiet','-q','80',tmp,'-o',`${output}/${file}`]);
    shots.push({name,width,height,file,overflow:await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),broken:await page.locator('img').evaluateAll(images=>images.filter(i=>i.getClientRects().length&&!i.naturalWidth).length)});
    await writeFile(output+`/${part}-partial.json`,JSON.stringify({shots,battles,accessibility,errors},null,2)+'\n');
   };
   const go=async screen=>{await page.evaluate(screen=>window.__depthReview.go(screen),screen);await page.locator(`[data-screen="${screen}"]`).waitFor();await page.waitForTimeout(600);};
+  const checkMapAccessibility=async()=>{
+   await page.emulateMedia({reducedMotion:'reduce'});
+   const row={width,reducedMap:await page.locator('.a6-scenic').evaluate(el=>[...el.querySelectorAll('*')].every(n=>getComputedStyle(n).animationName==='none'))};
+   await page.emulateMedia({reducedMotion:'no-preference'});
+   const first=page.locator('.a6-chapters button:not(:disabled)').first();await first.focus();
+   // Real keyboard navigation establishes keyboard modality; focus() after mouse
+   // clicks alone intentionally does not activate Chromium's :focus-visible.
+   await page.keyboard.press('Tab');await page.keyboard.press('Shift+Tab');await expect(first).toBeFocused();
+   row.focusVisible=await first.evaluate(el=>el.matches(':focus-visible')&&getComputedStyle(el).outlineStyle!=='none');
+   accessibility.push(row);
+  };
+  if(part==='a11y'){await go('map');await checkMapAccessibility();await shot('map-keyboard');await context.close();continue;}
   if(part!=='battle'&&part!=='phase'){
   await shot('home');
   await page.getByRole('button',{name:'Events',exact:true}).click();await page.locator('[data-screen="events"]').waitFor();await shot('daily');
@@ -39,13 +54,9 @@ try {
   for(const tab of ['Skills','Bonds','Gear']){await detail.getByRole('button',{name:tab,exact:true}).click();await shot(`cats-${tab.toLowerCase()}`);}
   for(const screen of ['bonds','team','inventory','gacha','map','tower','journal','codex','save']){
    await go(screen);await shot(screen);
-   if(screen==='team'){await page.locator('.a6-team-picker summary').click();await shot('suggested-teams');}
+   if(screen==='team'){await page.locator('.a6-team-picker summary').filter({hasText:/^Suggested teams/}).click();await shot('suggested-teams');}
    if(screen==='map'){
-    await page.emulateMedia({reducedMotion:'reduce'});
-    accessibility.push({width,reducedMap:await page.locator('.a6-scenic').evaluate(el=>[...el.querySelectorAll('*')].every(n=>getComputedStyle(n).animationName==='none'))});
-    await page.emulateMedia({reducedMotion:'no-preference'});
-    const first=page.locator('.a6-chapters button:not(:disabled)').first();await first.focus();
-    accessibility.at(-1).focusVisible=await first.evaluate(el=>el.matches(':focus-visible')&&getComputedStyle(el).outlineStyle!=='none');
+    await checkMapAccessibility();
    }
   }
   await go('relics');await page.getByRole('button',{name:'Load demo relics',exact:true}).click();
@@ -80,7 +91,8 @@ try {
    const phaseNumber=Number(phase?.match(/Phase (\d)/)?.[1]);
    if(phaseNumber>=2&&!seen.phases.includes(phaseNumber)){
     await expect(page.locator('.dp-boss-phase')).toContainText(`Phase ${phaseNumber}`);
-    if(part==='phase'){await page.getByRole('button',{name:'Pause auto',exact:true}).click();await shot(`boss-phase${phaseNumber}`);await page.getByRole('button',{name:'Resume auto',exact:true}).click();}
+    if(part==='phase'){await page.waitForTimeout(500);await page.getByRole('button',{name:'Pause auto',exact:true}).click();await shot(`boss-phase${phaseNumber}`);await page.getByRole('button',{name:'Resume auto',exact:true}).click();}
+    if(part!=='phase'&&phaseNumber===3){await page.waitForTimeout(500);await shot('boss-adds-phase3',true);}
     seen.phases.push(phaseNumber);
     if(part==='phase'&&phaseNumber===3)break;
    }
@@ -89,6 +101,7 @@ try {
    for(const [key,selector] of [['ultimate','.a6-ultimate-cutin'],['combo','.a6-combo-banner']]){
     if(!seen[key]&&await page.locator(selector).isVisible()){
      seen[`${key}AtSeconds`]=(Date.now()-started)/1000;
+     if(key==='ultimate')await page.waitForTimeout(220);
      await shot(key,true);seen[key]=true;
     }
    }

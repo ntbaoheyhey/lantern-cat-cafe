@@ -82,3 +82,9 @@ Bản sửa lính phụ của B đã merge vào A6; đang kiểm tra trường h
 
 2026-11-10T19:10:08Z: Bản B mới đã tách rõ hai lính phụ. Ở pha 3, game A6 sinh thêm lính thứ ba và vẫn có hai hình chồng nhau; đã gửi bằng chứng/cách tái hiện trong A6-OUTBOX.
 Đang tiếp tục các kiểm tra Q15 độc lập; không đổi luật đánh để che lỗi hình ảnh.
+
+2026-11-10T19:12:54Z: Tiếp tục đúng Q14/Q15; bản B đã merge, demo38,37MB đã qua kiểm tra offline ở cả hai cỡ màn.
+Giữ lượt500seed cuối đang chạy và mọi thay đổi dở; không chạy lại phần đã đạt. Sửa bộ chụp ảnh đang chọn nhầm nút Saved/Suggested teams.
+
+2026-11-10T19:15:22Z: Bộ500seed cuối đã chạy đúng một lần: trận thường27,15giây/boss70,93giây theo timeline; thua đầu trung vị10,37phút, trung bình3,52lần thua và gợi ý thắng47,76% vẫn chưa đạt.
+Giữ nguyên số đo và nêu rõ giới hạn; tiếp tục kiểm tra E2E/lượt chơi thật, không chạy lại seed cuối để làm đẹp kết quả.
