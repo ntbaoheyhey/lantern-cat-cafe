@@ -53,3 +53,7 @@ Local TRELLIS override 2026-11-10T07:30:26.787573+00:00: user-authorized Apple S
 2026-11-10T08:28Z: Q9 B-owned FeelLab normal/dev gate verified; shellBattleGallery/B2toggle requests pushed toU. R4finalattempt3 under verification. Full35.74MB, firstlean27.48MBMISS; lean-only384pxVFXatlas packaging in progress, fullsource remains512px. No new model generation; weights continue downloading.
 
 2026-11-10 local automation checkpoint: Q9 committed/pushed7c9dfb124. Sequential local-roster.mjs prepared with fixed-seed23unit queue, explicit smoke-review gate, receipts/retry cap/cooldown and STOP-B/deadline handling. Read-only --plan verifies23pending units; no inference launched by this addition. Existing smoke waiter80150/download73736 retained. Final VFX repair and lean comparison still await shared timing lease.
+
+2026-11-10T08:58:37Z: first isolated native smoke is RUNNING after shared lease acquisition. All19weights cached16.18GB. Existing Mochi/Soot sources preserved; no RMBG. Local-foe routing/type/lint1824webtests published6f22f15ff. Await actual smoke mesh comparison before sequential roster.
+
+2026-11-10T09:20Z: local1024 smoke1 timed out at1082.6s after sampling, noGLB. Smoke2 isolated512/texture1024 newseed20262109 queued; decoder tracing distinguishes slow decode from export. No change to existing Mochi/Soot or runtime acceptance.

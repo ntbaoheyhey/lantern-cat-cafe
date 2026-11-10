@@ -88,3 +88,8 @@ Repro: five B render jobs waited from08:24 while A segmented work reacquired imm
 ## B-LOCAL-002 reconstructed foes hidden by fallback S2
 Repro: assets.ts returned the painted Button/Yarn model before checking generatedSources. Installing a reviewed native GLB could never display it under the generated pipeline.
 Attempt1: resolve the available generated asset first; use the articulated fallback only when no generated source is installed. Explicit painted/v2/OFF choices retain their existing routes. Typecheck/lint and1824webtests pass; actual local-foe screenshot awaits smoke/conversion. No runtime acceptance inferred yet.
+
+B-LOCAL-001 verification: unchanged first smoke acquired atomically at08:58:36.912UTC after A released, no owner interrupted and no duplicate inference. RESOLVED for this acquisition; other queued B probes retain normal2s polling.
+
+## B-LOCAL-003 native 1024 exceeds bounded lease S2
+First isolated smoke finished sparse/shape/texture sampling but produced no GLB by1082.6s; wrapper stopped its own inference and released the lease. No watchdog error or export error was observed. Hypotheses: slow pure-PyTorch decoder (primary), memory pressure, texture export. Attempt2:512 geometry/1024texture, new seed20262109, exact same original input, decoder-stage logging only. Existing Mochi/Soot untouched. Do not infer visual acceptance before actual export/comparison.

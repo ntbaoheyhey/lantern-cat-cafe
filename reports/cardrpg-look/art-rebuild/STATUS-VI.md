@@ -1,5 +1,5 @@
-Đang chạy tiếp QUEUE, giữ nguyên toàn bộ ảnh gốc và model Mochi/Soot đã hoàn thành.
-TRELLIS và DINOv3 đã tải xong16,18GB; bản thử local đang chờ lượt dùng tài nguyên chung.
-Hiệu ứng đã phủ12mèo/13nhóm địch; lần sửa cuối đang chờ kiểm tra hình và chuyển động.
-Bản đầy đủ35,74MB; bản gọn25,22MB đã dưới giới hạn26MB, chờ đối chiếu ảnh.
-Vệ sinh canvas xong; yêu cầu nút shell đã gửi Lane U. Roster3D và báo cáo cuối chưa hoàn tất.
+Đang tiếp tục QUEUE, không làm lại Mochi/Soot đã có.
+DINOv3 đã được cấp quyền; tải đủ19tệp weights.
+Smoke1024 chạm giới hạn18phút trước xuấtGLB; đang thử512/texture1024 có log từng bước.
+VFX đã qua sửa lần3; đang chốt sheet/film và đối chiếu bản lean25,22MB.
+Roster3D vẫn chưa hoàn tất; các checkpoint không phải điểm dừng.

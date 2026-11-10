@@ -100,7 +100,11 @@ if (lean) for (const [key,asset] of embeddedAssets) {
 const assetEntries = [...embeddedAssets].sort(([left], [right]) => left.localeCompare(right));
 const assetClasses = {};
 for (const [path, asset] of assetEntries) {
-  const category = path.includes('cardrpg-look/stage/') ? 'atelier-stage'
+  const category = path.includes('cardrpg-look/v3-generated/') ? 'reconstructed-models'
+    : path.includes('cardrpg-look/v3-sculpt/') ? 'bakeoff-models'
+    : path.includes('cardrpg-look/v3-painted/') ? 'painted-fallbacks'
+    : path.includes('cardrpg-look/v3-vfx/') ? 'painted-vfx'
+    : path.includes('cardrpg-look/stage/') ? 'atelier-stage'
     : path.includes('cardrpg-look/game-models/') ? 'atelier-models'
     : path.endsWith('.glb') ? 'classic-models'
     : path.includes('portrait') ? 'portraits'

@@ -73,6 +73,22 @@ def validate_glb(path):
     return {'meshes': len(doc['meshes']), 'images': len(doc['images']), 'bytes': len(data)}
 
 
+def trace_decoders(trellis):
+    # Timings only: preserve model operations and sampler settings.
+    path = trellis / 'TRELLIS.2/trellis2/pipelines/trellis2_image_to_3d.py'
+    body = path.read_text()
+    old = ('        meshes, subs = self.decode_shape_slat(shape_slat, resolution)\n'
+           '        tex_voxels = self.decode_tex_slat(tex_slat, subs)')
+    new = ('        print("Lane B: decode shape started", flush=True)\n' + old.split('\n')[0] + '\n'
+           '        print("Lane B: decode shape complete; decode texture started", flush=True)\n' + old.split('\n')[1] + '\n'
+           '        print("Lane B: decode texture complete", flush=True)')
+    if new not in body:
+        if body.count(old) != 1:
+            raise ValueError('Upstream decoder changed; inspect before tracing')
+        path.write_text(body.replace(old, new))
+    return {'path': str(path), 'sha256': sha(path), 'purpose': 'stage logging only'}
+
+
 def local_generate(args):
     if not re.fullmatch(r'[a-z][a-z0-9-]*', args.id):
         raise ValueError('Invalid unit id')
@@ -129,7 +145,8 @@ def local_generate(args):
                        startedAt=datetime.now(timezone.utc).isoformat(), runtimeAccepted=False,
                        trellisCommit=subprocess.check_output(['git', '-C', str(trellis), 'rev-parse', 'HEAD'], text=True).strip(),
                        upstreamCommit=subprocess.check_output(['git', '-C', str(trellis / 'TRELLIS.2'), 'rev-parse', 'HEAD'], text=True).strip(),
-                       alphaOnlyPatch=disable_rmbg(trellis), generateSha256=sha(trellis / 'generate.py'))
+                       alphaOnlyPatch=disable_rmbg(trellis), decoderTracePatch=trace_decoders(trellis),
+                       generateSha256=sha(trellis / 'generate.py'))
 
         def save(status, **extra):
             receipt.update(status=status, elapsedSeconds=round(time.monotonic() - started, 3), **extra)
@@ -160,6 +177,16 @@ def local_generate(args):
             raise RuntimeError(f'Local generation exited {child.returncode}; see generation.log')
         model = out / f'{args.id}.glb'
         structure = validate_glb(model)
+        # The upstream Metal exporter rotates (x,z,-y), whereas the KDTree
+        # exporter writes native Z-up vertices directly. Preserve its raw bytes.
+        if 'Baking PBR textures via KDTree' in (out / 'generation.log').read_text():
+            native = out / f'{args.id}.native-z-up.glb'
+            model.rename(native)
+            orientation = subprocess.check_output([
+                sys.executable, str(Path(__file__).with_name('orient-local-glb.py')),
+                str(native), str(model)], text=True)
+            receipt['orientation'] = json.loads(orientation)
+            structure = validate_glb(model)
         model_hash = sha(model)
         save('GENERATED_NOT_REVIEWED', model=str(model), modelSha256=model_hash, structure=structure,
              cooldownRecommendedSeconds=120 if time.monotonic() - started > 900 else 0)

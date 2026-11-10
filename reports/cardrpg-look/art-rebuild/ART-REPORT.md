@@ -1,5 +1,5 @@
 Đang chạy tiếp QUEUE, chưa phải báo cáo R8 hoàn thành.
-TRELLIS và DINOv3 đã tải đủ; bản thử local đang chờ khóa tài nguyên chung.
+TRELLIS và DINOv3 đã tải đủ; smoke1024 hết thời gian, đang thử512/texture1024.
 VFX12mèo/13nhóm địch đã nối vào trận; camera gần hơn và giữ vùng mặt rõ.
 E2E421/421qua; cast168lượt tối đa16,8ms; demo35,74MB.
 Roster3D chưa đầy đủ; một số hiệu ứng còn giống nhau, mục tiêu8,5 chưa đạt.
@@ -9,7 +9,7 @@ Roster3D chưa đầy đủ; một số hiệu ứng còn giống nhau, mục ti
 Draft [#427](https://github.com/ntbaoheyhey/taskbar-hero/pull/427). R0/M5/S6 and previous conversions are preserved. This is not R8 completion.
 
 - Q1/Q2/Q4 complete. Q3 native four-unit conversion decision pending; Q5 all25 original concepts complete, runtime roster incomplete. Q6 new generated VFX across all12hero skills/ultimates and13enemy families implemented, auditPARTIAL7.7/10. Q7 camera/key-light improvements verified, stage7.5. Q8 portraits/icons prepared with opt-in manifest, runtime matching pending. Q9 in-canvas hygiene complete; Q10–Q11 ongoing.
-- Latest INBOX replaces browser conversion with local Apple Silicon TRELLIS. Setup/import/MPS and DINOv3 access pass. All19weight files cached (16,180,031,168B); isolated first smoke waits for the existing shared lease and roster remains unverified. No RMBG weights; all inputs require alpha. See LOCAL-MODELS.md.
+- Latest INBOX replaces browser conversion with local Apple Silicon TRELLIS. Setup/import/MPS and DINOv3 access pass. All19weight files cached (16,180,031,168B); first1024 smoke timed out after1082.6s with noGLB; isolated512/texture1024 retry is queued and roster remains unverified. No RMBG weights; all inputs require alpha. See LOCAL-MODELS.md.
 - Mochi/Soot sources unchanged. Mochi rigid modules avoid stretching but limit independent hand motion; Soot retains a baked warm forehead. Button/Yarn use the documented articulated fallback pending native trial.
 - R4:168casts max16.8ms,111draws,183595tri;324face samples0offenders. Five rules seeds exact and85resolved plans unmutated.1823webtests/type/lint/buildPASS. Combined R4/R5 E2E421PASS.
 - R5:1440/1024 fixed posters0UI overlaps/outside/unplaced;96face samples0offenders. Six touched native casts max16.8ms,86draws,124592tri. Tests/checks are retained without needless reruns.

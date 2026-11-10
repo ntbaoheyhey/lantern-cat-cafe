@@ -2,12 +2,12 @@
 
 ACTIVE — user explicitly resumed. Continue NON-STOP-RUN and QUEUE; checkpoints are not stops.
 Worktree /Users/bao/taskbar-hero-cardrpg-b2; branch codex/cardrpg-art-r1-2026-11-09; draft#427.
-Latest pushed d54872201: sequential local roster queue; prior a14ccfd23 has VFX/camera/portraits;7c9dfb124 closes B hygiene.
+Latest pushed6f22f15ff: local-foe routing, bounded VFX/lean repair and source checks. Draft427 description updated.
 Do not redo R0/M5/S6, Q1/Q2/Q4, Mochi/Soot conversions, or completed VFX sources and phase checks.
 Latest INBOX: TRELLIS local-mps only, one model at a time. No browser generation. Internal chat browser for review only.
 External install ~/art/trellis-mac at d58628f4; Python3.11/Torch2.15/MPS/pipeline import pass. DINOv3 access confirmed.
 All19weight files cached16.18GB. Old smoke waiters80150/98355 stopped before inference; replacement smoke uses250ms atomic-lock polling (smoke-local.log). Do not duplicate.
-Isolated first Mochi smoke is queued; inspect smoke-local.log and /tmp/trellis-smoke/mochi-attempt1 before any new command; preserve shipped Mochi/Soot.
+Smoke1024 attempt1 ended at1082.6s timeout after texture sampling; noGLB. Attempt2 queued under lease:512geometry/1024texture,seed20262109; log~/art/look-v3/local-setup/smoke-local-512.log. Preserve shipped Mochi/Soot.
 Then Button/Yarn first, then remaining roster. Max3local attempts per unit with new seeds, alpha-only/noRMBG, shared lease, no overlapping B heavy jobs.
 Q3 four-unit decision and Q5 runtime still unfinished; all25original concept masters complete/provenanced.
 Q6 all12hero skill/ult/passive and13enemy families now wired; no duplicate enemy props.7.7auditPARTIAL: normal/passive uniqueness and large motif face clipping remain.
