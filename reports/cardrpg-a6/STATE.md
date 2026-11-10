@@ -1,8 +1,6 @@
-# R-9 prompt receipt — 2026-11-10T17:08:49Z
-- Original attachment `wc -c`: 15237; `shasum -a 256`: 983341e0d8c47a62a6a267d553c78372251cfbab5170aee48451e3058b885629.
-- TASK.md (original + verbatim R-9 + NON-STOP) `wc -c`: 19624; `shasum -a 256`: e21e358e8826ebef1d0e6d8d995438253e55589847183895b0920bf990b46de9.
-- Original prefix verified byte for byte. TASK.md is the only saved lane prompt copy; source unchanged.
-- Active Q13e; Q0–Q12/Q13a–d completed; current HANDOFF/QUEUE override historical notes below.
+- TASK.md exact latest user prompt: 24199 bytes; SHA-256 0123dfbf4f0fd156d585c1389d0c22282d5b3a603d51ad7965b14c198c9f31ee.
+- Resume 2026-11-10T17:39:26Z: Q13a–e done; Q13f attempt3 already exists; local/origin 0 ahead, 0 behind at 83b47add63c684fd7a13e8412934eee0af0799e1.
+- Prior onboarding/tests/screens already completed; not repeated. Disk151GiB. Preserved all 16 tracked edits and untracked Q13 evidence.
 
 # Lane A6 state
 

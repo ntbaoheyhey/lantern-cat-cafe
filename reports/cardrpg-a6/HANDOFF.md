@@ -1,18 +1,15 @@
-# Lane A6 handoff — 2026-11-10T17:24:32Z
-NOW: Q13e complete; Q13f difficulty baseline read, implementing fixed campaign curve next.
-Branch: codex/cardrpg-a6-q0-2026-11-10; last pushed SHA: 66203648c3c794a1e287a98217e26e737bbb64e5; draft PR #438.
-NEXT: 1. Push Q13e checkpoint/update draft description; retain pending Formation/first-session/sim/lock edits.
-NEXT: 2. Tune fixed campaign enemy snapshots; share map/Prepare numbers; remove percentage forecast.
-NEXT: 3. Run existing sim on dev seeds, max3 repair attempts; touched tests/screens, full E2E + real-click30min.
-RUNNING: Vite PID84939 port5960 /tmp/cardrpg-a6-vite.log; final review PID8059/8256 exited, timing.lock released.
-RUNNING: No A6 heavy job. Final log /tmp/cardrpg-a6-q13e-footer.log; script /tmp/cardrpg-a6-q13e-final-review.mjs.
-DONE this session: Q0–Q12 preserved; onboarding1f3d82ed3; Q13a cfdbf79e1; Q13b918102837.
-DONE this session: R-9 exact prompt/rules1b140a667; Q13c7971938db; Q13d fab2f7ea6.
-DONE this session: NON-STOP exact addendum pushed66203648c; RULES25lines, TASK receipt unchanged/verified.
-DONE this session: B puppet/framing b9c1497d6 and six-enemy batch00b04f8ee merge commits accepted.
-DONE this session: Q13e21focusedtests/types/lint +10inspected captures pass; current source base 00b04f8eeb776d814b14d3802416eedc5fbab145.
-KNOWN ISSUES: B remaining enemies P5 pending. Difficulty baseline12seeds:0losses,normalHPmedian1.0. Prior browser normal44s.
-KNOWN ISSUES: first-session/timing-lock inherited edits preserved for Q13f/Q15; never restore resume-drafts.tar.gz. Final seeds unused.
-DECISIONS: Fixed authored enemy power must not track the player's equipped Power. Preserve seven-stop branching route; early/late/boss curve maps to existing depths.
-DECISIONS: One agent, auto battles, no new systems, original art; B canvas takes B; draft only; no merge PR/deploy/main/force-push.
-DECISIONS: Read RULES/QUEUE/HANDOFF before git merge/push/branch; TASK0/4 each item; files win; push at least hourly.
+# Lane A6 handoff — 2026-11-10T17:39:26Z
+NOW: New account session started 2026-11-10T17:39:26Z; resume Q13f attempt3 result review, no redo of Q0–Q13e.
+Branch: codex/cardrpg-a6-q0-2026-11-10; last pushed SHA: 83b47add63c684fd7a13e8412934eee0af0799e1; draft PR #438.
+NEXT: 1. Fill missing RESEARCH-LOOK from existing research and primary web references; refine remaining checks only.
+NEXT: 2. Review saved Q13f attempt3; respect max3 repairs and document fallback/remaining limits.
+NEXT: 3. Touched tests/screens, full E2E + real-click30min; continue Q13g and Q14 published B integration.
+RUNNING: Old A6 Vite PID84939 port5960 found; stopping verified stale lane server. No A6 sim/probe active.
+RUNNING: No timing lease held; check live owner before heavy work, cap each lease19min; temp /tmp/cardrpg-a6-*.
+DONE: Q0–Q12 and onboarding already complete; prior web1905/types/lint passed, skip duplicate onboarding.
+DONE: Q13a cfdbf79e1; Q13b918102837; Q13c7971938db; Q13d fab2f7ea6; Q13e83b47add6.
+DONE: Resume git/process/disk audit; fetched both lanes, 0ahead/0behind; disk151GiB.
+KNOWN ISSUES: Preserved16tracked code/report/tool edits plus untracked Q13 review evidence. Never restore resume-drafts.tar.gz.
+KNOWN ISSUES: Q13f attempts1–3 exist; final seeds60001–60500 unused; normal browser44s remains Q13g.
+DECISIONS: Latest prompt replaced TASK verbatim; RULES already covers non-negotiables; completed queue rows retained.
+DECISIONS: One agent; fully auto; B canvas takes B; merge commits allowed; no PR merge/deploy/main/force-push.
