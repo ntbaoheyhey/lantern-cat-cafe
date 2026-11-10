@@ -25,3 +25,7 @@ Successful standalone textured GLB files are atomically published to `/Users/bao
 Inspect a supplied GLB, author its unit geometry/rig config, then run `prepare-unit.mjs` for simplify/rig/pack/preview. Review motion in real battle, especially fused paws/props. No browser needed for any of these steps.
 
 Current status: SETUP PASS, WEIGHTS DOWNLOADING, SMOKE/ROSTER NOT YET VERIFIED. Four local guard tests pass (transparent input, no-RMBG patch, complete embedded export, explicit submission/preserved sources).
+
+## Sequential roster queue
+
+`local-roster.mjs --plan` lists pending conversions without starting inference. After inspecting the isolated smoke against the existing Mochi, record an external review JSON with `approvedForRoster:true`, `receipt` (absolute smoke receipt path), `modelSha256` and a written `comparison`. Then `node tools/cardrpg-look/art-rebuild/local-roster.mjs --submit --smoke-review <review.json>` processes the fixed-seed local queue one at a time, acquiring/releasing the shared lease per model. It preserves completed Mochi/Soot, limits each unit to three attempts, cools down after slow runs, honors STOP-B/deadline, and never accepts or installs runtime models automatically. Do not start it before smoke review.
