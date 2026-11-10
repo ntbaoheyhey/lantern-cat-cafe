@@ -16,7 +16,7 @@ it('finishes ten committed draws in four batch beats under eight seconds',()=>{
  act(()=>vi.advanceTimersByTime(600));expect((screen.getByRole('button',{name:'Skip all'}) as HTMLButtonElement).disabled).toBe(false);
  act(()=>vi.advanceTimersByTime(900));
  expect(container.querySelectorAll('.a6-recruit-burst .a6-recruit-cards article')).toHaveLength(10);
- act(()=>vi.advanceTimersByTime(1400));expect(container.querySelector('.a6-recruit-highlight')).toBeTruthy();
+ act(()=>vi.advanceTimersByTime(1400));expect(document.querySelector('.a6-recruit-highlight')).toBeTruthy();
  act(()=>vi.advanceTimersByTime(2500));expect(screen.getByRole('heading',{name:'Welcome home'})).toBeTruthy();
  expect(m.state.account.daily.draws).toBe(10);
 });
@@ -35,4 +35,27 @@ it('shows duplicate shard ownership beside the real star-up requirement',()=>{
  card.shards=10;view.rerender(<CompanionGrowthV4 m={m} catId="clover" kind="ascend"/>);
  fireEvent.click(screen.getByRole('button',{name:'Add a star'}));
  expect(m.state.account.cards.find(c=>c.cardId==='clover')).toMatchObject({stars:2,shards:0});
+});
+
+it('reduced motion shows the same ten rewards without any ceremony timers',()=>{
+ const m=ready();m.state.settings.reducedMotion=true;
+ const {container}=render(<RecruitV3 m={m}/>);
+ fireEvent.click(screen.getByRole('button',{name:'Recruit ×10 · 600'}));
+ expect(screen.getByRole('heading',{name:'Welcome home'})).toBeTruthy();
+ expect(container.querySelectorAll('.uv-recruit-summary article')).toHaveLength(10);
+ expect(container.querySelector('[data-splash=true]')).toBeNull();
+ const saved=R.exportSave(m.state);act(()=>vi.advanceTimersByTime(10000));
+ expect(R.exportSave(m.state)).toBe(saved);
+});
+
+it('a guaranteed Legendary gets a full-screen highlight and skip never draws again',()=>{
+ const m=ready();m.state.account.pity['cats-standard']={sinceLegendary:23,totalPulls:23,featuredGuaranteed:false};
+ const {container}=render(<RecruitV3 m={m}/>);
+ fireEvent.click(screen.getByRole('button',{name:'Recruit ×10 · 600'}));
+ const saved=R.exportSave(m.state);
+ act(()=>vi.advanceTimersByTime(600));act(()=>vi.advanceTimersByTime(900));act(()=>vi.advanceTimersByTime(1400));
+ expect(document.querySelector('[data-splash=true][data-rarity=legendary]')).toBeTruthy();
+ fireEvent.click(screen.getByRole('button',{name:'Skip all'}));
+ expect(R.exportSave(m.state)).toBe(saved);
+ expect(container.querySelectorAll('.uv-recruit-summary article')).toHaveLength(10);
 });

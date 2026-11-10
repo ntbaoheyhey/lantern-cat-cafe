@@ -89,3 +89,5 @@
 - A 100 ms waiter also missed an immediate B-to-B handoff. The existing lock tool now wakes on parent-directory changes as well as its bounded polling fallback; atomic mkdir/live-owner checks remain unchanged. A6 batches sequential review commands within one nineteen-minute lease.
 
 - Q13a packaging: first checks raced an unfinished manifest; waited for packaging, reran types/lint/33 touched tests successfully, restarted only own Vite to clear failed resolution cache. Twelve captures then passed.
+
+- Q13c: Epic splash initially inherited the sheet transform and overlapped HUD; app-root portal restores full viewport. Mouse/Escape skip and focus trap checked in real browser at both sizes.

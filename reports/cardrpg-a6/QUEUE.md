@@ -2,7 +2,7 @@
 
 - [x] Q13a Onboard art (2 h): copy concept art/portraits into the app (WebP, lean sizes), one art manifest used by every screen, fallbacks to the old model render if a unit has no art yet. Done: every cat card, team slot, Bond Book entry, recruit result and enemy preview shows the 2D art.
 - [x] Q13b Look system (6 h): LOOK-CHECKLIST.md, design tokens (palette, frames per rarity, buttons, panels, popups, motion timings) in one place, then restyle: cafe home, top HUD, dock, Cats, Team/formation, Prepare, Bag/gear, Daily, Tower, Relic, result screens. Done: LOOK-SCORES.md all >= 7 on these screens.
-- [ ] Q13c Recruit reveal (4 h): card backs deal in, glow colour tease per rarity, flip in rarity order, Epic+ full-screen splash with the concept art, rarity colour burst and particles (DOM/CSS or small canvas inside the DOM layer), name plate, stars, "New!" stamp; x10 summary grid with rarity frames; duplicate -> shards shown with count-up. Respect reduced motion. Done: score >= 8 and a 10-pull feels exciting in a real click run.
+- [x] Q13c Recruit reveal (4 h): card backs deal in, glow colour tease per rarity, flip in rarity order, Epic+ full-screen splash with the concept art, rarity colour burst and particles (DOM/CSS or small canvas inside the DOM layer), name plate, stars, "New!" stamp; x10 summary grid with rarity frames; duplicate -> shards shown with count-up. Respect reduced motion. Done: score >= 8 and a 10-pull feels exciting in a real click run.
 - [ ] Q13d Campaign map (4 h): illustrated night-street route (painted/generated ORIGINAL background or layered CSS/SVG scenery), nodes on a winding path, current node pulses, stars under cleared nodes, chapter boss node larger with its art, chest milestones along the path. Keep all existing route/star logic. Done: score >= 8.
 - [ ] Q13e Battle HUD (4 h): portrait cards with 2D art, HP bar with delayed damage trail, rage bar that fills visibly and glows when full, ultimate cut-in (full-body art slides in, skill name, 0.6-0.9 s at x1, shorter at x2/x3, skipped by "skip"), boss HP bar at top with phase pips, clean result screen (stars earned one by one, rewards with icons, Next / Retry / Upgrade hint). Write the camera/scale request to A6-OUTBOX. Done: score >= 8 on normal, boss and ultimate screenshots.
 - [ ] Q13f Difficulty curve (3 h): Recommended Power near the player's: stages 1-1..1-4 at 0.6-0.8x of a new player's expected power, 1-5..1-9 at 0.9-1.05x, chapter boss 1.1-1.2x; later chapters keep a similar saw-tooth. Normal wins end with 20-60% team HP left. Forecast labels only Favoured / Even / Risky (never "100%"). First real loss for a new player between minute 12 and 20; the loss screen names one cheap fix; the retry after that fix wins within 2 tries. Bot target: 1-3 losses in the first 30 minutes, no stuck player, reward gap median <= 60 s. Then one real-click 30-minute run to confirm.
@@ -13,7 +13,7 @@
 
 ## Operating rules
 
-Follow TASK.md R-1–R-8. One agent; preserve systems; B merge commits allowed, PR merge/deploy/main/force push forbidden.
+Follow TASK.md R-1–R-9. One agent; preserve systems; B merge commits allowed, PR merge/deploy/main/force push forbidden.
 Check INBOX and STOP-A6 between items. Typecheck, lint, touched tests and inspected screenshots per item.
 Heavy work holds timing.lock for <=20 minutes. Ports 5960–5963; temporary files /tmp/cardrpg-a6-*.
 

@@ -74,3 +74,6 @@ M apps/web/src/game/cardrpg/ui-v3/EncounterV3.tsx
 
 ## Q13b — 2026-11-10 16:45 UTC
 - Look system complete; Q13c active. See Q13b.md and HANDOFF.md. Tests37/types/lint pass; visual scores7.3–8.0.
+
+## Q13c — 2026-11-10T16:57:02Z
+- Complete; 5 touched tests/types/lint pass, final16 screenshots and controls inspected; visual self-score8.3/8.2. Q13d next.

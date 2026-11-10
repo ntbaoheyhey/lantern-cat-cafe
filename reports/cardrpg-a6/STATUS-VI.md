@@ -21,3 +21,5 @@
 - Điểm tự đánh giá 7,3–8,0; tiếp tục Q13c tuyển mèo, chưa coi độ khó/nhịp trận là hoàn tất.
 
 - 2026-11-10T16:54:10Z: Đã lưu nguyên văn prompt và R-9; bổ sung RULES, viết lại HANDOFF. Tiếp tục kiểm tra Q13c, không làm lại Q0–Q13b.
+
+- 2026-11-10T16:57:02Z: Q13c xong: mở 10 thẻ, màu độ hiếm, tranh Epic/Legendary toàn màn hình, mảnh trùng tăng số. Bỏ qua bằng chuột/Escape giữ nguyên 10 phần thưởng; 720p vẫn thấy nút chính. Bắt đầu Q13d bản đồ phố đêm.
