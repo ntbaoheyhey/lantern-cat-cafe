@@ -3,6 +3,7 @@ import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import type {DepthModel} from '../depth/model';
 import {artPropsA6 as portraitProps} from './art-a6';
 import {PowerA6} from './PowerA6';
+import {TowerSceneryA6} from './TowerSceneryA6';
 import {Icon} from './Icon';
 
 export function TowerA6({m,onReturn}:{m:DepthModel;onReturn?:()=>void}) {
@@ -16,7 +17,7 @@ export function TowerA6({m,onReturn}:{m:DepthModel;onReturn?:()=>void}) {
  return <div className="a6-tower">
   <header className="a6-tower-heading"><div><small>ABOVE THE LANTERNS</small><h2>Yarn Tower</h2><p>{Math.min(30,m.state.towerBest)}/30 floors cleared · {next?`Next chest: floor ${next}`:'Every milestone collected'}</p></div><Icon name="chest"/></header>
   {locked?<p className="a6-tower-locked">Clear Tangled Cafe to open the tower. Your crew will climb together.</p>:null}
-  <div className="a6-tower-layout"><section aria-label="Thirty tower floors"><div className="a6-tower-floors">{Array.from({length:30},(_,i)=>i+1).map(f=><button key={f} disabled={locked||active||f>m.state.towerBest+1} aria-pressed={f===selected} aria-label={`Floor ${f}${f<=m.state.towerBest?' cleared':f>m.state.towerBest+1?' locked':''}`} onClick={()=>setSelected(f)}><b>{f}</b><span>{f%5===0?'♛':f<=m.state.towerBest?'✓':'⌁'}</span></button>)}</div></section>
+  <div className="a6-tower-layout"><section className="a6-tower-board" aria-label="Thirty tower floors"><TowerSceneryA6/><div className="a6-tower-floors">{Array.from({length:30},(_,i)=>i+1).map(f=><button key={f} data-cleared={f<=m.state.towerBest} data-milestone={f%5===0} style={{gridRow:6-Math.floor((f-1)/5),gridColumn:Math.floor((f-1)/5)%2===0?(f-1)%5+1:5-(f-1)%5}} disabled={locked||active||f>m.state.towerBest+1} aria-pressed={f===selected} aria-label={`Floor ${f}${f<=m.state.towerBest?' cleared':f>m.state.towerBest+1?' locked':''}`} onClick={()=>setSelected(f)}><b>{f}</b><span>{f%5===0?'♛':f<=m.state.towerBest?'✓':'⌁'}</span></button>)}</div></section>
    <aside className="a6-tower-preview"><small>{spec.boss?'MILESTONE GUARDIAN':'YOUR NEXT CLIMB'}</small><h2>Floor {selected}</h2><PowerA6 label="Your Power" value={R.teamPowerV4(m.state)}/><PowerA6 label="Recommended Power" value={foes.reduce((n,a)=>n+R.powerScoreA6(a),0)}/>
     <div className="a6-tower-enemies">{foes.map(a=><figure key={a.id}><img {...portraitProps(a.catalogId)} alt=""/><figcaption>{a.name}</figcaption></figure>)}</div>
     <p>{R.enemyGuideV4(spec.enemies[0]!).counter}</p><small>One automatic battle. Your crew starts each floor at full health.</small>

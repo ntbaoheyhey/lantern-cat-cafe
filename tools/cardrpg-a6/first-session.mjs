@@ -38,8 +38,8 @@ if (arg('pacing-fixture', '')) {
       m.plan=null;m.watching=false;m.tutorialBattle=null;m.replay=null;m.galleryBattle=null;
       m.state=fixture.state;m.state.run.battle=R.createBattle(fixture.initial);
       m.state.settings.speed=1;m.paused=false;m.autoContinue=false;m.go('prepare');
-      const probe={samples:[],last:0};window.__a6PacingFrames=probe;
-      const frame=time=>{if(m.showBattle&&m.sceneReady&&!m.paused){if(probe.last)probe.samples.push(time-probe.last);probe.last=time;}else probe.last=0;requestAnimationFrame(frame);};requestAnimationFrame(frame);
+      const probe={samples:[],last:0,actions:[],lastPlan:null};window.__a6PacingFrames=probe;
+      const frame=time=>{if(m.showBattle&&m.sceneReady&&!m.paused){if(probe.last)probe.samples.push(time-probe.last);probe.last=time;if(m.plan&&m.plan!==probe.lastPlan){probe.lastPlan=m.plan;probe.actions.push({identity:m.plan.presentationId??m.plan.skillId,duration:m.plan.duration,ultimate:m.plan.ultimate});}}else probe.last=0;requestAnimationFrame(frame);};requestAnimationFrame(frame);
     },{fixture,modulePath:`/@fs${root}/packages/game-rules/src/cardrpg/depth/index.ts`});
     await page.getByRole('button',{name:/^Fight/}).click();
     await page.waitForFunction(()=>window.__depthReview.sceneReady,null,{timeout:90000});
@@ -55,12 +55,14 @@ if (arg('pacing-fixture', '')) {
       await page.waitForTimeout(100);
     }
     report.seconds=(Date.now()-started)/1000;
-    const data=await page.evaluate(()=>({rounds:window.__depthReview.battle.round,result:window.__depthReview.battle.result,frames:window.__a6PacingFrames.samples}));
+    const data=await page.evaluate(()=>({rounds:window.__depthReview.battle.round,result:window.__depthReview.battle.result,hpRemaining:window.__depthReview.battle.actors.filter(a=>a.side==='party').reduce((sum,a)=>sum+a.hp,0)/Math.max(1,window.__depthReview.battle.actors.filter(a=>a.side==='party').reduce((sum,a)=>sum+a.maxHp,0)),frames:window.__a6PacingFrames.samples,actions:window.__a6PacingFrames.actions}));
     const sorted=data.frames.sort((a,b)=>a-b),q=p=>Math.round((sorted[Math.min(sorted.length-1,Math.floor(sorted.length*p))]??0)*100)/100;
-    Object.assign(report,{rounds:data.rounds,result:data.result,frameDelivery:{samples:sorted.length,medianMs:q(.5),p95Ms:q(.95)},ultimateSeen:ultimateShot});
+    const actionSummary=Object.values(data.actions.reduce((groups,a)=>{const group=groups[a.identity]??={identity:a.identity,count:0,milliseconds:0,ultimate:a.ultimate};group.count++;group.milliseconds+=a.duration;return groups;},{}));
+    const sameOutcome=fixture.baselineEncounter?data.rounds===fixture.baselineEncounter.rounds&&data.result===fixture.baselineEncounter.result&&Math.abs(data.hpRemaining-fixture.baselineEncounter.hpRemaining)<1e-8:null;
+    Object.assign(report,{rounds:data.rounds,result:data.result,hpRemaining:data.hpRemaining,sameOutcome,actionSummary,frameDelivery:{samples:sorted.length,medianMs:q(.5),p95Ms:q(.95)},ultimateSeen:ultimateShot});
     if(shotDirectory){await mkdir(resolve(root,shotDirectory),{recursive:true});for(const shot of temporaryShots)execFileSync('cwebp',['-quiet','-q','82',shot.path,'-o',resolve(root,shotDirectory,`1440-${shot.name}.webp`)]);}
     await writeFile(resolve(root,arg('pacing-out','reports/cardrpg-a6/q13g-fixture-pacing.json')),JSON.stringify(report,null,2)+'\n');
-    console.log(JSON.stringify(report));if(errors.length)process.exitCode=1;
+    console.log(JSON.stringify(report));if(errors.length||sameOutcome===false)process.exitCode=1;
   } finally {await browser.close();}
   process.exit(process.exitCode??0);
 }
@@ -186,7 +188,7 @@ if (!segment) {
         const m = window.__depthReview;
         if (!m) return null;
         const r = m.state.run, b = m.battle;
-        return { guide: document.querySelector('.uv-shell')?.dataset.a6Guide, unlock: document.querySelector('.a6-unlock-toast strong')?.textContent ?? '', screen: m.screen, watching: m.showBattle, tutorial: m.state.tutorial,
+        return { guide: document.querySelector('.uv-shell')?.dataset.a6Guide, unlock: document.querySelector('.a6-unlock-toast strong')?.textContent ?? '', screen: m.screen, watching: m.showBattle, sceneReady: m.sceneReady, paused: m.paused, speed: m.state.settings.speed, tutorial: m.state.tutorial,
           freeInvite: m.state.freeInvite, fish: m.state.account.currencies.fish,
           currencies: m.state.account.currencies, team: m.state.team,
           cards: m.state.account.cards.map(c => ({ id: c.cardId, level: c.level, stars: c.stars })),
@@ -203,7 +205,9 @@ if (!segment) {
       prior = s;
       let acted = false;
       if (s.watching) {
-        if (!liveEncounter) liveEncounter = { at: seconds(), seed: s.battle?.seed, tutorial: s.tutorial < 3, boss: s.battle?.boss, chapter:s.battle?.chapter, node:s.route?.current };
+        if (!liveEncounter) liveEncounter = { at: seconds(), seed: s.battle?.seed, tutorial: s.tutorial < 3, boss: s.battle?.boss, chapter:s.battle?.chapter, node:s.route?.current, readyAt:null, pausedDuring:false, speed:s.speed };
+        if (s.sceneReady && !s.paused && liveEncounter.readyAt === null) liveEncounter.readyAt = seconds();
+        liveEncounter.pausedDuring ||= s.paused;
         const combo = page.getByLabel('Bond combo', { exact: true });
         if (!report.comboScreenshot && await combo.isVisible().catch(() => false)) { await page.screenshot({ path: '/tmp/cardrpg-a6-first-combo.png' }); report.comboScreenshot = true; }
         acted = true;
@@ -211,7 +215,7 @@ if (!segment) {
         if (s.tutorial >= 3) await capture('prepare');
         acted = await click(button(/^Fight/), 'Fight');
       } else if (s.screen === 'result') {
-        if (liveEncounter) { report.encounters.push({ ...liveEncounter, seconds: seconds() - liveEncounter.at, result: s.battle?.result, rounds: s.battle?.round, combos: s.battle?.combos, hpRemaining:s.battle?.hpRemaining }); liveEncounter = null; }
+        if (liveEncounter) { report.encounters.push({ ...liveEncounter, seconds: seconds() - liveEncounter.at, playbackSeconds: liveEncounter.readyAt === null ? null : seconds() - liveEncounter.readyAt, result: s.battle?.result, rounds: s.battle?.round, combos: s.battle?.combos, hpRemaining:s.battle?.hpRemaining }); liveEncounter = null; }
         if (s.battle?.result === 'enemy') {
           const advice = page.locator('.dp-v4-advice'), fix = advice.getByRole('button').first();
           if (await fix.isVisible().catch(() => false)) {
@@ -306,7 +310,7 @@ if (!segment) {
   };
   const encounters = report.encounters.filter(e => !e.tutorial);
   const duration = boss => {
-    const times = encounters.filter(e => !!e.boss === boss && !e.crossedLease).map(e => e.seconds);
+    const times = encounters.filter(e => !!e.boss === boss && !e.crossedLease && !e.pausedDuring && e.speed === 1 && e.playbackSeconds !== null).map(e => e.playbackSeconds);
     return { samples: times.length, medianSeconds: quantile(times,.5), p90Seconds: quantile(times,.9) };
   };
   const losses = encounters.filter(e => e.result === 'enemy');
@@ -317,7 +321,7 @@ if (!segment) {
     wins: encounters.filter(e => e.result === 'party').length, losses: losses.length,
     firstLossSeconds: losses.length ? Math.round((losses[0].at+losses[0].seconds)*100)/100 : null,
     normalWinHpMedian: quantile(encounters.filter(e=>!e.boss&&e.result==='party').map(e=>e.hpRemaining),.5),
-    browser: 'Chromium with Metal ANGLE, headless, x1 UI clicks',
+    browser: 'Chromium with Metal ANGLE, headless, x1 UI clicks; durations begin after sceneReady',
     losses10: losses.filter(e => e.at+e.seconds<=600).length, losses30: losses.filter(e => e.at+e.seconds<=1800).length,
     normal: duration(false), boss: duration(true),
     frameDelivery: { samples: frames.length, medianMs: quantile(frames, .5), p95Ms: quantile(frames, .95) },

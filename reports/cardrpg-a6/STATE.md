@@ -1,7 +1,12 @@
+- TASK.md exact latest user prompt: 24199 bytes; SHA-256 0123dfbf4f0fd156d585c1389d0c22282d5b3a603d51ad7965b14c198c9f31ee.
+
+- Resume audit 2026-11-10T18:37:54Z: local/origin0ahead/0behind at98dc63f4e; Vite19458/5960 and active measurement56205/61513/61514 plus Chromium60498/5963 retained;148GiB free. TASK matches latest attachment exactly; prior onboarding/tests retained.
+
+Current authority: RULES.md / TASK.md / HANDOFF.md / QUEUE.md. Q0–Q13f are complete; Q13g runs now. Historical notes below about prohibiting B branch merges or zero losses are superseded. Published B merge commits are allowed and required; PR merges remain forbidden.
+
 - Resume audit 2026-11-10T18:24:17Z: local/origin0ahead/0behind67963ca8d; Vite19458 on5960 retained, prior browser/probes exited normally;150GiB free. Uncommitted Q13f code/evidence and Q13g/Q14 drafts preserved.
 - Resume audit 2026-11-10T18:10:19Z: local/origin0ahead/0behind at 67963ca8d; live A6 Vite19458/browser19493/session19482 retained;150GiB free.
 - Resume audit 2026-11-10T17:42:55Z: local/origin0ahead/0behind at 17a5275474099f038ecab2b2e2ef57c881df4b02; no A6 listeners/probes,150GiB free; all15tracked edits and existing untracked evidence preserved. TASK still exact 24199bytes SHA-256 0123dfbf4f0fd156d585c1389d0c22282d5b3a603d51ad7965b14c198c9f31ee.
-- TASK.md exact latest user prompt: 24199 bytes; SHA-256 0123dfbf4f0fd156d585c1389d0c22282d5b3a603d51ad7965b14c198c9f31ee.
 - Resume 2026-11-10T17:39:26Z: Q13a–e done; Q13f attempt3 already exists; local/origin 0 ahead, 0 behind at 83b47add63c684fd7a13e8412934eee0af0799e1.
 - Prior onboarding/tests/screens already completed; not repeated. Disk151GiB. Preserved all 16 tracked edits and untracked Q13 evidence.
 

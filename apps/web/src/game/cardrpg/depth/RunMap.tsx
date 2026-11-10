@@ -40,8 +40,10 @@ export function RunMap({ m, scenicMap }: { m: DepthModel; scenicMap?: ReactNode 
         {current.kind === 'treasure' && <><h2>Something tucked behind the cups</h2><div className="cr-actions"><button onClick={() => m.apply(R.resolveNode(m.state, 'points'))}>Take 70 run points</button><button onClick={() => m.apply(R.resolveNode(m.state, 'charm'))}>Take {R.BOON_BY_ID[R.shopStock(run)[0]!]!.name}</button></div></>}
       </section>}
   </>;
+  const pendingActivity = run.complete || run.rewardChoices.length > 0 || !!(current && !current.enemies.length);
+  const scenicStage = scenicMap ? <div className="a6-route-stage" data-activity={pendingActivity || undefined}><div inert={pendingActivity} aria-hidden={pendingActivity || undefined}>{map}</div>{pendingActivity && <div className="a6-route-activity">{activity}</div>}</div> : null;
   const charms = <>
     <section className="cr-panel"><h2>Your charms of the night</h2><div className="dp-combos">{Object.entries(run.boons).map(([id, count]) => <span className="active" title={R.boonForMode(id, !!run.gameplayV4).description} key={id}>{R.BOON_BY_ID[id]!.name} ×{count}</span>)}</div><p>{Object.keys(run.boons).length ? 'Charms last through this run. Their effects apply when the next encounter begins.' : 'Choose charms after encounters to build a plan for the boss.'}</p></section>
   </>;
-  return <>{!scenicMap&&heading}{stats}{R.gameplayV4(m.state) && run.gameplayV4 ? <>{activity}{map}{scenicMap?<details className="a6-route-notes"><summary>Boss clues & route goals</summary>{context}</details>:context}</> : <>{context}{map}{activity}</>}{scenicMap?<details className="a6-route-notes"><summary>Your charms of the night</summary>{charms}</details>:charms}</>;
+  return <>{!scenicMap&&heading}{stats}{R.gameplayV4(m.state) && run.gameplayV4 ? <>{scenicMap?scenicStage:<>{activity}{map}</>}{scenicMap?<details className="a6-route-notes"><summary>Boss clues & route goals</summary>{context}</details>:context}</> : <>{context}{map}{activity}</>}{scenicMap?<details className="a6-route-notes"><summary>Your charms of the night</summary>{charms}</details>:charms}</>;
 }

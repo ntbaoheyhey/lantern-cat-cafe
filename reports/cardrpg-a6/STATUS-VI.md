@@ -53,3 +53,10 @@ Git trùng origin, còn150GiB; bản B mới494d2041b sẽ tích hợp ở Q14 s
 2026-11-10T18:25:01Z: Lượt Q13f đã xong30phút:21thắng/2thua,khônglỗi/kẹt; cả hai gợi ý miễn phí thắng ở tuyến kế tiếp.
 Thua đầu6,59phút và HP trận thường100% vẫn lệch mục tiêu; chốt phương án R-3 sau ba lượt sửa, ghi rõ giới hạn.
 Tiếp tục Q13g: nhịp thường41,16giây/boss95,26giây, khung hình16,7ms; giữ trận boss17vòng để so cùng đội/địch.
+
+2026-11-10T18:29:25Z: Bản sửa nhịp đã qua typecheck, lint và 8 test; đang đo cùng trận boss 17 vòng, sau đó lấy ít nhất 8 trận thường bằng thao tác UI.
+Bản nháp Túi/Tháp/Relic được giữ và rà lại; phần thưởng trên bản đồ sẽ nằm trên cảnh phố để không đẩy nút chính khỏi màn 720p.
+
+2026-11-10T18:37:54Z: Tiếp tục đúng Q13g phần hai đang chạy, giữ bản đo và toàn bộ sửa đổi dở; Git trùng origin, còn148GiB.
+Không chạy lại onboarding/Q0–Q13f đã xong. Prompt hiện tại trùng tệp đã lưu nguyên văn.
+Bản nháp Quà hằng ngày sẽ giảm chữ nhỏ/thanh tiến độ dư, giữ nguyên quà và điều kiện nhận.

@@ -104,6 +104,12 @@ try {
     const equip=page.locator('.a6-gear-detail').getByRole('button',{name:'Equip',exact:true});
     if(await equip.count()){await expect(equip).toBeInViewport({ratio:1});await equip.click();shots.at(-1).equipWorked=await page.evaluate(()=>!window.__depthReview.error);}
    }
+   if(name==='daily'){
+    const login=page.getByRole('button',{name:'Collect login gift',exact:true});
+    await expect(login).toBeInViewport({ratio:1});await login.focus();await page.keyboard.press('Enter');
+    await expect(page.getByRole('button',{name:'Next gift tomorrow',exact:true})).toBeDisabled();
+    shots.at(-1).loginKeyboardClaimed=await page.evaluate(()=>window.__depthReview.state.dailyA6?.loginGifts===1);
+   }
    if(name==='tower')await expect(page.getByRole('button',{name:/^Climb floor/})).toBeInViewport({ratio:1});
   }
   await page.close();

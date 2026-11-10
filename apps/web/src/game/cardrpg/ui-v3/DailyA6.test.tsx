@@ -8,7 +8,8 @@ afterEach(cleanup);
 it('shows five activities, seven gifts and three weekly chests; claims the visible login reward once',()=>{
  const m=new DepthModel(true,true,true,true);m.state=R.setGameplayA6(R.createDepthAccount(11,0),true);Object.defineProperty(m,'cafeNow',{get:()=>0});
  render(<DailyA6 m={m}/>);
- expect(screen.getAllByRole('progressbar')).toHaveLength(6);
+ expect(screen.getAllByRole('progressbar')).toHaveLength(1);
+ expect(screen.getAllByText('In progress')).toHaveLength(5);
  expect(screen.getAllByText(/^Day [1-7]$/)).toHaveLength(7);
  expect(badgesA6(m.state,0).login).toBe(true);
  fireEvent.click(screen.getByRole('button',{name:'Collect login gift'}));

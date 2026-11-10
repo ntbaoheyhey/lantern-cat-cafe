@@ -65,3 +65,11 @@ Q13f: Existing route stays seven stops (early depths0–3, late4–5, guardian6)
 - Same live captures reveal pale boon titles and the loss MVP statistic labelled “Why”; include these two small readability repairs in Q14a without reopening completed screens or adding rules.
 
 - 2026-11-10T18:16:44Z: Route-choice cards will overlay the original street while a choice is pending; underlying map becomes inert. This keeps current actions and their scenery inside720p without shrinking the game or inventing a new system. Generic route behavior remains unchanged.
+
+- 2026-11-10T18:25:35Z Q13g: stable16.7ms frame delivery points to authored action duration. Use650/800ms ordinary normal caps and1050/1300ms boss ordinary caps; preserve all ultimates/boss signatures and event order. Reuse earned17-round fixture and existing first-session harness for after measurement.
+
+- 2026-11-10T18:28:34Z Q14 preparation: published B diff touches only B-owned renderer/art paths; no shared modified source file with A6 since common ancestor. Stage B v4 face-icon adoption in the existing artPropsA6 manifest adapter; retain transparent original full-body cutouts for cafe/recruit/cut-ins. New face icons come from assets/cardrpg-look/v3-portraits/manifest.json and matching *-face-72/144.webp. Do not apply until Q13g measurement finishes.
+
+- 2026-11-10T18:37:54Z Q14a: extend the existing weakest-screen pass to Daily (7.3 at720p): gift illustration and explicit task states replace redundant binary bars; no reward/eligibility changes. Existing draft retained.
+
+- 2026-11-10T18:46:07Z While Q13g waits for B P10 timing lease, apply already-preserved Q14a UI drafts. Cancelled only own pending63590 waiter (no child/browser, no sample lost); requeue identical boss candidate after static validation. Combat rules and ordinary pacing unchanged. Q14a verification remains pending; do not tick before viewing captures.
