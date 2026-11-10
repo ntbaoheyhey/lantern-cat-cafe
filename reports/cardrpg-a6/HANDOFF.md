@@ -1,30 +1,26 @@
-# Lane A6 paused handoff
+# Lane A6 active handoff
 
-- PAUSED by explicit user message: “dừng và lưu handoff”. STOP-A6 exists. Do not resume automatically.
+- RESUMED by explicit user message “tiếp tục nhé”; STOP-A6 removed. Do not stop at checkpoints.
 - Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/cardrpg-a6-q0-2026-11-10; draft #438, base UI v3 U9.
-- TASK.md owns STEP 2; QUEUE.md owns order. Q0–Q8 complete. Q9 remains unchecked; Q10 has NOT been applied.
-- One agent, no model helpers, no app control, no other-worktree writes, no merge/deploy/main push/force-push/secrets.
-- Q9 implemented: four batch beats, 5.417-second x10 reveal, skip after beat one, rarity order/Epic splash, matching shards shown at star-up.
-- A6 price sixty earned stamps; OFF 150. Welcome credit follows current price. Odds, pity, daily/NFT caps unchanged.
-- Q9 types/lint PASS; full web 1,890 PASS, rules 1,294 PASS plus existing expected failures/skips. Final web typecheck PASS.
-- Q9 sim: 500 seeds in 320.27 seconds. Both cohorts Epic day two and pity-budget day six 100%. Runtime/G2/G3/Tower/browser pacing remain partial.
-- OFF exact over 8,250 routes; A5 fallback exact over forty-five. q9-compatibility.json; no expected hashes changed.
-- E2E: 420/421 initially pass; unrelated v2 idle-clock test passes isolated retry without changes. q9-e2e.json records both.
-- USER-INTERRUPTED first session: 1,442.97 active seconds (24.05 minutes), twenty-two wins, zero losses/errors/stalls. NOT a completed thirty-minute check.
-- Partial pacing: normal median 42.45 seconds / p90 57.72; boss 70.48 / 106.05 seconds. Visible reward median gap 6.65 seconds, maximum 111.35 seconds. See Q9.md and q9-first-session.json.
-- Recorder/browser exited cleanly; own timing lock released. Vite PID 30940 stopped. No A6 server or browser should remain running.
-- On explicit resume, remove STOP-A6, restart own Vite on 5960, and finish Q9’s full fresh thirty-minute real-click session before ticking Q9.
-- First-session command: node tools/cardrpg-a6/first-session.mjs --out=reports/cardrpg-a6/q9-first-session.json. It obtains two fifteen-minute lock leases itself.
-- Ports 5960–5963 only; temp /tmp/cardrpg-a6-*; heavy builds/E2E/perf use timing.lock, lease <= twenty minutes; df before builds. Never touch another lane’s live lock.
-- Resume drafts are durably archived in reports/cardrpg-a6/resume-drafts.tar.gz. Extract into /tmp; every archived basename starts cardrpg-a6-. Originals also remain there.
-- Q10 /tmp/cardrpg-a6-relic-staged.json: repo-relative entries plus CSS fragment. Append CSS fragment to ui-v3.css; do not rerun old staging scripts.
-- Q10 includes capped team slot, existing pinned-block Fuji reader, wallet-change/stale-read guards and closed-sheet guard test. Virtual types PASS; actual tests/UI still pending.
-- Q10 UI harness q10-screen.mjs; timing-lock runner q10-checks.mjs (one sim + OFF/A5); report draft q10-report.md. All archived. Types/lint/full touched-package unit tests required.
-- Q11 onboarding-staged.json includes Q10 and correct Shell/index overlap. Rebase against final Q10, skip duplicate CSS. Virtual types PASS; actual tests pending.
-- Q11 q11-screen.mjs uses real tutorial/free-invite/level clicks with three shots; syntax checked only. No synthetic grants.
-- Q12 sim-optimized.json scores gear once, previews unavailable claims, counts route rewards, and separates actual Legendary from pity budget. Do not rerun old optimization script.
-- Q12 performance-staged.json avoids full-account copies for pure gear previews and commits only winning equips. Virtual types PASS; behavior test pending.
-- Q12 pace-staged.json includes optimized sim plus shared normal-animation budget/model/tests. Preserve bosses/ultimates; apply only if Q11 evidence warrants it. Virtual types PASS.
-- Read-only clock sample: 23.124 seconds wall, 23.116 seconds model. Do not assume dropped ticks. Q11 entry-band difficulty is intended to preserve upgrade benefits.
-- Fresh seeds 60001–60500 unused until Q15. Evidence budget sixty MB. Full E2E/session next scheduled checkpoint Q12 after Q9 completes.
-- Q14 merge conflicts with fixed no-merge rule: prepare reviewable integration, skip unauthorized merge, keep other work moving only after resume.
+- TASK.md owns STEP 2; QUEUE.md owns order. Q0–Q9 complete. Q10 is the first unfinished item; its source has NOT been applied.
+- One agent, no model helpers/app control/other-worktree writes/merge/deploy/main push/force-push/secrets.
+- Q9 source is committed in e435e6666. Four-beat x10 reveal: 5.417 seconds; skip after beat one; rarity order, Epic splash and matching star-up shards.
+- A6 price sixty earned stamps; OFF 150. Welcome credit follows the price. Odds, pity, daily/NFT caps unchanged.
+- Q9 types/lint PASS; web 1,890 PASS; rules 1,294 PASS plus expected failures/skips. Final web typecheck PASS.
+- E2E: 420/421 initially pass; unrelated v2 idle-clock case passes isolated retry. q9-e2e.json records both.
+- Sim: 500 dev seeds in 320.27 seconds. Both cohorts Epic day two / pity draw-budget day six 100%. G2/G3/Tower/runtime/browser pacing remain partial.
+- OFF exact 8,250 routes; A5 exact forty-five. q9-compatibility.json. Expected hashes unchanged.
+- Prior USER-INTERRUPTED session: 1,442.97 active seconds, twenty-two wins, no losses/errors/stalls. Preserved as q9-first-session-paused.json; NOT a thirty-minute check.
+- Ports 5960–5963; own /tmp/cardrpg-a6-* only; heavy builds/E2E/perf use timing.lock with lease <=20 min; df before builds. Never disturb another lane’s lock.
+- Drafts archived in resume-drafts.tar.gz; originals in /tmp. Archive refreshed with the latest Q10/Q11/Q13 refinements at the Q9 checkpoint.
+- Q10 relic-staged.json: repo-relative file entries; append its CSS fragment to ui-v3.css. Do not rerun old staging scripts.
+- Q10 reuses pinned-block Fuji reads; capped +8% team treasure, stale-read and wallet-change guards, including late-injected providers. Virtual types PASS; unit/UI tests pending.
+- Q10 harnesses: /tmp/cardrpg-a6-q10-screen.mjs and q10-checks.mjs (single sim + exact compatibility); q10-report.md is a pending-validation draft.
+- Q11 onboarding-staged.json includes Q10 overlap. Apply only after Q10 and preserve final Q10 fixes. Virtual types PASS; behavior pending. First-training unlock follows the whole owned roster.
+- Q11 q11-screen.mjs clicks actual tutorial/free-invite/level; no grants. No full E2E/session due again until Q12.
+- Q12 sim-optimized.json avoids repeated gear scoring/failed claims and separates actual Legendary from pity budget. performance-staged.json removes full-account copies from pure gear previews.
+- Q12 pace-staged.json includes optimized sim and a shared normal-animation budget; bosses/ultimates remain intact. Apply only if Q11 evidence warrants. No fresh seeds used before Q15.
+- Q13 polish-staged.json drafts cat Growth/Skills/Bonds/Gear panels; virtual types passed before the small skill-unlock-label addition; visual/behavior review pending.
+- Q14 build-draft.mjs/offline-draft.tsx reuse U’s offline loader/model dictionary; syntax checked only. Still need build, size/perf/offline checks and Vietnamese guide.
+- Q14 merge conflicts with fixed no-merge rule: prepare reviewable integration, skip unauthorized merge, continue other unblocked work. Recheck newest published B tip at Q14.
+- Q9 finished at 12:27 UTC: 1,800.65 seconds, 28 wins, zero losses/errors/stalls; normal median/p90 43.71/59.73, boss 70.28/107.60. Browser/recorder closed and lock released; Vite PID 37741 stays on 5960.

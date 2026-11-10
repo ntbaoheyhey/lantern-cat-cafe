@@ -8,7 +8,7 @@
 - pnpm: 10.28.0 (repository packageManager version)
 - Free disk at setup: 147 GiB (df -h ~); above 15 GB threshold.
 - Dependencies: pnpm install --frozen-lockfile completed without lockfile changes.
-- Scope: STEP 2 PAUSED by user; Q9 incomplete; Q1 completed 2026-11-10 06:38 UTC.
+- Scope: STEP 2 resumed by user; Q9 verification active; Q1 completed 2026-11-10 06:38 UTC.
 - Delivery branch remains codex/cardrpg-a6-q0-2026-11-10; one draft PR #438 for the whole lane.
 
 ## Report skim (15 lines; existing claims, not re-verified)
@@ -122,3 +122,14 @@
 - Existing Q9 types/lint/unit tests, full E2E plus isolated retry, sim and exact OFF/A5 remain recorded.
 - Browser closed, timing lock released, own Vite stopped. Drafts and harnesses archived in resume-drafts.tar.gz; not applied or behavior-tested.
 - Resume only after explicit user instruction; first unfinished queue item remains Q9.
+
+## User resume — 2026-11-10 11:56 UTC
+- Explicit request: tiếp tục nhé. STOP-A6 removed; finish Q9 before Q10.
+- Source unchanged since passing Q9 checks; only the interrupted thirty-minute browser run needs a fresh complete run.
+
+## Q9 complete — 2026-11-10 12:27 UTC
+- Fresh real-click run: 1,800.65 active seconds, twenty-eight wins, no losses, errors or stalls.
+- Normal median/p90 43.71/59.73 seconds; boss 70.28/107.60 seconds. Visible reward gap median 6.69 seconds, maximum 112.92 seconds. Browser normal pacing remains partial.
+- Previous types/lint/unit/E2E/sim/OFF/A5 evidence remains valid: source was unchanged throughout this run.
+- The recorder/browser finished and released timing.lock; own Vite PID 37741 remains on 5960 for Q10.
+- Q10 next. Updated Q10–Q14 drafts are archived; none has been applied. Fresh final seeds remain unused.
