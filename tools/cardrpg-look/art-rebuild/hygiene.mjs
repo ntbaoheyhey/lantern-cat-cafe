@@ -18,7 +18,8 @@ try{
   await page.getByRole('button',{name:'Pause',exact:true}).click();
   const affordances=[];
   for(const name of ['Feel lab','Look atelier','Review studio','Mechanics lab','Battle gallery','B2: After','Look: Atelier','Frame meter']){
-   const button=page.getByRole('button',{name,exact:true});
+   const accessibleName=name==='B2: After'?'B2 before/after':name==='Look: Atelier'?'Look A/B':name;
+   const button=page.getByRole('button',{name:accessibleName,exact:true});
    affordances.push({name,visible:await button.first().isVisible().catch(()=>false)});
   }
   const file=dev?'dev.webp':'normal.webp';

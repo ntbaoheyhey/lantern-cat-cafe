@@ -1,31 +1,25 @@
 # Current Lane B handoff
 
-ACTIVE after explicit user resume. Only hard stops in NON-STOP-RUN.txt apply.
-3D generation: local TRELLIS-MPS only per latest INBOX. Internal browser for review only. One agent.
-Worktree /Users/bao/taskbar-hero-cardrpg-b2; branch codex/cardrpg-art-r1-2026-11-09; draft #427.
-Runtime code78c02c3db; latest pushed61d847cb5: painted foes keep gesture across step/idle, soles/contact shadow and head protection anchor fixed.
-Do not redo R0/M5/S6, R1 housekeeping, Q1/Q2/Q4, Mochi/Soot source conversions.
-Q2 uses rigid modules after failed separation; independent arm movement remains limited.
-Q3 pending: Button exhausted three provider attempts and uses articulated layered fallback.
-Yarn first attempt errored; retry2 not before06:47UTC, retry3 not before07:47UTC. Respect quota reset notices.
-Q3 motion review: r1/foes-fallback/REVIEW.md + motion-after.webm (12s, internal browser).
-1822 tests/type/lint/build passed; five seeds exact; 48 face samples per1440/1024 no offenders/overlaps.
-Current full demo31777616B. Q3 E2E420PASS/1clockflake;2isolatedPASS. Final four-unit score still pending.
-Q5 sources now complete:12cat +13enemy concept masters reviewed, receipts/provenance retained.
-Sources assets/source/look-v3/concepts; original generated masters ~/art/look-v3/concepts.
-Enemy sheet/review r2/concepts/enemies-concepts.webp and ENEMIES-REVIEW.md.
-Q5 runtime still pending beyond Mochi/Soot and Button/Yarn fallback candidates.
-Clover attempt1 failed; retry2>=07:20UTC. Panko uploaded in tab1, not yet submitted.
-Conversions receipt r1/roster/conversions.json is authoritative for timing and attempts.
-Internal review tab2: http://127.0.0.1:5920/cardrpg-v5full-v5-q3-review.html?dev=1.
-Q6-Q11 unfinished; continue top unfinished unblocked queue item, check INBOX/STOP-B between items.
-Keep generated-source -> cleanup -> runtime workflow, including every ultimate; no Mochi regeneration.
-B edits only battle canvas/assets/reports. No A/U worktree edits, PR merges, deploys or force pushes.
-Q10 alone permits integration merge commits into #420; keep A-owned files from A.
-Evidence80MiB/120MB; source51MiB/60MB. New large masters should remain outside git if cap is reached.
+ACTIVE — user explicitly resumed. Continue NON-STOP-RUN and QUEUE; checkpoints are not stops.
+Worktree /Users/bao/taskbar-hero-cardrpg-b2; branch codex/cardrpg-art-r1-2026-11-09; draft#427.
+Latest pushed a14ccfd23: full generated VFX roster, camera/key changes, portraits source delivery and verified checks.
+Do not redo R0/M5/S6, Q1/Q2/Q4, Mochi/Soot conversions, or completed VFX sources and phase checks.
+Latest INBOX: TRELLIS local-mps only, one model at a time. No browser generation. Internal chat browser for review only.
+External install ~/art/trellis-mac at d58628f4; Python3.11/Torch2.15/MPS/pipeline import pass. DINOv3 access confirmed.
+Weights downloader pid73736; smoke waiter80150 already running (smoke-wait.json). Do not duplicate either.
+Run isolated Mochi smoke after weights CACHED using LOCAL-MODELS.md command; do not overwrite shipped Mochi/Soot.
+Then Button/Yarn first, then remaining roster. Max3local attempts per unit with new seeds, alpha-only/noRMBG, shared lease, no overlapping B heavy jobs.
+Q3 four-unit decision and Q5 runtime still unfinished; all25original concept masters complete/provenanced.
+Q6 all12hero skill/ult/passive and13enemy families now wired; no duplicate enemy props.7.7auditPARTIAL: normal/passive uniqueness and large motif face clipping remain.
+Q7 camera/key checkpoint score7.5;1440/1024posters/96facesPASS. Full roster coverage still pending.
+Q8 portrait/icon source pack exists in assets/cardrpg-look/v3-portraits/manifest.json; compare against new runtime before closing.
+Q9 DONE: r6/normal.webp,dev.webp,hygiene.json verify Feel lab gate; shell requests published to U.
+Q10 integration and films/Q11final report remain queued. Q10 permits only integration merge commits into#420, never PRmerge/deploy.
+R4 validation:1823webtests/type/lint/buildPASS;5rulesseeds exact/85plans;168casts max16.8ms,111calls,183595tri;324faces0offenders.
+R5 validation:8touchedtests/type/lintPASS,6nativecasts16.8ms; combined E2E421/421PASS. Do not rerun unchanged checks.
+Cold3native+3CPU4 complete: max49.9/183.3ms whole-load; original traces outside git (r4/cold/external-traces.json); summaries retained.
+Full repaired VFX35743045B; lean25223285B after lean-only384pxVFXatlas; matching posters pending. Evidence below120MB/source51MiB.
+R4film r4/film/roster-vfx-x1.mp4 exists with contact sheet; continuous internal-browser playback review still pending.
+Local intake watcher pid57059; stop only own processes on user pause. No remote job pending.
 Preserve unrelated docs/cardrpg-look/v5-art-mochi-preview.html and tools/cardrpg-look/art-rebuild/segmentation-proxy.mjs.
-Report deadline20Nov12UTC. Checkpoints/reports are not stops.
-
-Local GLB inbox available:~/art/look-v3/inbox; watcher pid in~/art/look-v3/local-intake/.running/owner.json. Stop on pause. Local intake guards passed; see LOCAL-MODELS.md. No remote job running; Panko/Mallow attempt1 failed. VFX sources now Mochi+Soot+Clover+Panko+Mallow+Cinnamon; new sources not wired into runtime yet.
-
-Latest local override: setup active outside repo at~/art/trellis-mac; weights downloader pid recorded in~/art/look-v3/local-setup/weights.json. Logs setup-attempt2.log/weights.log. DINOv3 access OK. Preserve existing sources; Mochi smoke isolated. image-to-3d.py local-mps is explicit-only, alpha-only, max3local attempts;4guard testsPASS.
+B owns canvas/assets/reports only; never edit A/U worktrees or shell. Check STOP-B/INBOX between items; report deadline20Nov12UTC.

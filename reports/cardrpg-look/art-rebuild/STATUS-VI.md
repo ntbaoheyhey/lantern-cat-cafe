@@ -1,5 +1,5 @@
-TRELLIS local đã cài xong; DINOv3 truy cập được, trọng số vẫn đang tải.
-VFX mới đã có cho12mèo và13nhóm địch; giữ nguyên Mochi/Soot và mọi concept cũ.
-168lượt cast tối đa16,8ms;324mẫu mặt VFX và96mẫu camera không phát hiện che mặt.
-E2E421/421qua; camera1440/1024 và nhãn không có chồng lấn trong mẫu đã kiểm tra.
-Một số chiêu thường còn giống nhau; tiếp tục kiểm tra và roster, chưa chấm toàn bộ đạt8,5.
+Đang chạy tiếp QUEUE, giữ nguyên toàn bộ ảnh gốc và model Mochi/Soot đã hoàn thành.
+TRELLIS local đã cài; quyền DINOv3 đã xác nhận, trọng số đang tải bằng tiến trình cũ.
+Hiệu ứng đã phủ12mèo/13nhóm địch; lần sửa cuối đang chờ kiểm tra hình và chuyển động.
+Bản đầy đủ35,74MB; bản gọn25,22MB đã dưới giới hạn26MB, chờ đối chiếu ảnh.
+Vệ sinh canvas xong; yêu cầu nút shell đã gửi Lane U. Roster3D và báo cáo cuối chưa hoàn tất.

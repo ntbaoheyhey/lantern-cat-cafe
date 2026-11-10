@@ -1,20 +1,20 @@
 # Lane B current state
 
-ACTIVE — latest explicit resume remains in force; TRELLIS local-mps only for generation; internal chat browser for review.
-Branch codex/cardrpg-art-r1-2026-11-09; draft #427; latest pushed61d847cb5.
-Q1/Q2/Q4 DONE. Q3 PARTIAL pending Yarn spaced conversion retries and final phase checks.
-Button fallback accepted within documented limits after three provider failures. Mochi/Soot source unchanged.
-Q3 gesture/contact fix verified at1x;1822tests/type/lint/buildPASS;5seedexact;96face samples0offenders/overlaps.
-Full demo31777616B; no new cold/native perf claim. R0 baseline5.9966 retained; overall8.5 target not reached.
-Q5 concept source set COMPLETE:12cats+13enemies, individual provenance and contact sheets. Runtime roster incomplete.
-Clover attempt1 failed; retry2>=07:20UTC. Panko uploaded in internal tab1, not submitted; see conversions.json.
-Yarn retry2>=06:47UTC, retry3>=07:47UTC. No Button retry, no Mochi re-generation.
-Q6-Q11 pending. ART-REPORT is interim PARTIAL; no final completion claim.
-Known issues: rigid articulation, Soot baked warm forehead, old foe VFX, limited fallback camera depth, inherited perf misses.
-Evidence80MiB/120MB; source51MiB/60MB. Continue QUEUE.md; STOP-B/INBOX checks between items.
-
-Current 2026-11-10T07:30:26.787573+00:00: local Apple Silicon setup/weights download active. DINOv3 access confirmed. Browser conversion schedules above are historical/superseded. See LOCAL-MODELS.md and QUEUE. Runtime unchanged; local-mps guards4PASS.
-
-2026-11-10T07:52:12.375863+00:00: resumed from completed12hero VFX sources. First roster atlas/runtime candidate48shots saved in r4/roster-attempt1; palette/height/enemy-prop repair in progress. Existing models preserved; local weights still downloading (no inference). CurrentHEAD3cf1196a2; uncommitted VFX changes from previous session retained.
-
-2026-11-10T08:19Z: inherited R4/R5 checks consumed without rerun. E2E421PASS, R4 casts168/max16.8ms/111calls/183595tri, faces324PASS; R5 faces48per1440/1024PASS and6casts16.8ms. Reviews written; VFX7.7 and stage7.5 remain PARTIAL. Cold3+3 currently running. Local weights downloading, no inference yet.
+ACTIVE — continue NON-STOP-RUN and QUEUE, checkpoints are not stops.
+Worktree /Users/bao/taskbar-hero-cardrpg-b2; branch codex/cardrpg-art-r1-2026-11-09; draft #427; pushed a14ccfd23.
+Q1/Q2/Q4/Q9 DONE. Q3 four-unit close and Q5 runtime roster pending local TRELLIS smoke.
+Existing Mochi/Soot conversions and all25 original concept masters are preserved.
+Latest INBOX: local-mps only, alpha inputs, no RMBG, one inference at a time under timing lease.
+Setup Python3.11/Torch2.15/MPS/import PASS; DINOv3 access confirmed. Weights downloading pid73736; waiter80150 already exists. Never launch duplicate smoke/download.
+Q6 generated VFX12hero kits+13enemy families implemented; audit7.7PARTIAL. Third bounded repair has type/lint/10touchedtests/build/parity PASS; final shots/casts/film await shared timing lock.
+Q7 closer camera/key checkpoint7.5;1440/1024posters/96facesPASS. Runtime roster coverage pending.
+Q8 source portraits/icons manifest prepared; final matching waits for roster.
+Q9 normal/dev hygiene verified; shell Battle gallery/B2toggle requests posted for U. No shell edits.
+Full demo35,743,045B; lean repaired25,223,285B<26MB (prior27,480,521Bmiss retained); same-shot comparison pending.
+Previously measured R4:168casts max16.8ms/111draws/183595tri;324face samples0offenders;5rulesseeds exact/85plans.
+R4/R5 E2E421PASS; cold3native+3CPU4 whole-load max49.9/183.3ms. Do not rerun unchanged checks.
+Known issues: limited rigid arm articulation, Soot warm baked highlight, VFX normal/passive similarity, protected motif splitting, inherited startup/heap misses.
+R0 baseline5.9966 preserved; overall8.5 not achieved. ART-REPORT is active PARTIAL, not R8 completion.
+Q10 integration/films and Q11report remain queued. No PRmerge/deploy/forcepush; flags default OFF.
+Preserve unrelated previewHTML and segmentation-proxy leftovers. Never edit A/U worktrees.
+Check INBOX/STOP-B between items; report deadline20Nov12UTC.
