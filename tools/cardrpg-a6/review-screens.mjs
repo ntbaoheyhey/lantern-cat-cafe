@@ -28,6 +28,18 @@ try {
     await page.evaluate(()=>window.__depthReview.go('collection'));
     const label={skills:'Skills',bonds:'Bonds',gear:'Gear'}[name.slice(5)];
     await page.getByRole('complementary',{name:'Cat details'}).getByRole('button',{name:label,exact:true}).click();
+   }else if(name.startsWith('map-')){
+    await page.evaluate(kind=>{const m=window.__depthReview;m.state.run=null;m.tutorialBattle=null;m.watching=false;m.plan=null;m.state.cleared=[];m.go('map');
+     if(kind!=='choose'){m.start(1,'campaign',1);const run=m.state.run;
+      if(kind==='progress'||kind==='boss'){
+       run.visited=kind==='boss'?['0-0','1-0','2-0','3-0','4-0','5-0']:['0-0','1-0','2-0','3-0'];
+       for(const id of run.visited){const node=run.nodes.find(n=>n.id===id),key=`${run.chapter}/${run.challengeLevel}/${id}/${node.kind}`;m.state.v4.journey.stars[key]={key,chapter:1,band:run.challengeLevel,nodeId:id,kind:node.kind,conditions:[true,true,true]};}
+      }
+     }
+     m.notify(false);
+    },name.slice(4));
+    await page.waitForTimeout(2200);
+    await page.evaluate(()=>{const m=window.__depthReview;m.error=false;m.notice='';m.notify(false);});
    }else if(name==='bag-empty'){
     await page.evaluate(()=>{const m=window.__depthReview;m.state.gear=[];m.itemId='';m.go('inventory');});
    }else if(name==='prepare')await page.evaluate(()=>{const m=window.__depthReview;m.state.run=null;m.start(1,'campaign',1);m.enter(m.state.run.nodes[0].id);});

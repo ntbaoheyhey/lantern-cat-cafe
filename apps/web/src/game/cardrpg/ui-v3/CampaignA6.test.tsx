@@ -44,3 +44,16 @@ it('opens preparation after choosing a stage from the home map button',async()=>
  expect(await screen.findByRole('button',{name:/^Fight/})).toBeTruthy();
  expect(m.screen).toBe('prepare');
 });
+
+it('the scenic route keeps branch availability and earned stars tied to real nodes',()=>{
+ const m=new DepthModel(true,true,true,true);m.start(1,'campaign',1);
+ const run=m.state.run!;run.visited=['0-0'];
+ const node=run.nodes[0]!,key=R.nodeStarKeyV4(run,node);
+ m.state.v4!.journey!.stars[key]={key,chapter:1,band:run.challengeLevel!,nodeId:node.id,kind:node.kind,conditions:[true,true,false]};
+ const {container}=render(<CampaignA6 m={m}/>);
+ expect(container.querySelectorAll('.a6-scenic-stop:not(:disabled)')).toHaveLength(2);
+ expect(container.querySelector('[data-visited=true] [aria-label="2 of 3 stars"]')).toBeTruthy();
+ expect((screen.getByRole('button',{name:/Chapter guardian/}) as HTMLButtonElement).disabled).toBe(true);
+ fireEvent.click(screen.getByRole('button',{name:/A little story/}));
+ expect(m.state.run?.current).toBe('1-0');
+});

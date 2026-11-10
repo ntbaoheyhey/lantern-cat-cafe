@@ -49,3 +49,5 @@
 - Q8 face crops come from assets/cardrpg-look/v3-portraits/manifest.json on that published branch. Source identity and intended crop reviewed; these are DOM illustrations, not a claim that canvas puppets are accepted.
 - tools/cardrpg-a6/pack-art.py packages alpha art at <=768×896, WebP86, and the existing 144px face crops. Runtime uses one manifest and the art-a6 helper across all v3 DOM views. Shared legacy cards retain their classic path outside A6.
 - Missing manifest entry/file or runtime image failure falls back to the previous model portrait. Canvas, models, VFX, camera, rules, seeds and earned rewards remain owned by their existing implementations.
+
+- Q13d scenery is original inline SVG in CampaignSceneryA6.tsx. Node placement is presentation only; edges/availability/stars/rewards use existing run state. Cat/enemy art still uses the unified original B manifest.

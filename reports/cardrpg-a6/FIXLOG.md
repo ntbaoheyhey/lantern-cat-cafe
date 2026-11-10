@@ -91,3 +91,5 @@
 - Q13a packaging: first checks raced an unfinished manifest; waited for packaging, reran types/lint/33 touched tests successfully, restarted only own Vite to clear failed resolution cache. Twelve captures then passed.
 
 - Q13c: Epic splash initially inherited the sheet transform and overlapped HUD; app-root portal restores full viewport. Mouse/Escape skip and focus trap checked in real browser at both sizes.
+
+- Q13d: annotated vector-building tuples for strict types; corrected inherited pale run-stat text on parchment after inspecting both resolutions. Real graph/reward controls verified unchanged.

@@ -15,7 +15,7 @@ Agent visual review, not player testing. Both sizes inspected; no applicable Q13
 | Relic | 7.4 | 7.4 | 15: simple keepsake icons (7) | shots/q13b-rarity/*-relics |
 | Result / defeat | 7.8 | 7.6 | 15/20: ceremony room for polish (7) | shots/q13b/*-result and *-loss |
 | Recruit | 8.3 | 8.2 | 13: small duplicate labels (7.5) | shots/q13c-final; full-screen Epic/Legendary and ten-pull inspected |
-| Map | 3 | pending | 17: scenic route (2) | Q13d queued |
+| Map | 8.1 | 8.0 | 13: compact power/chest labels (7.2) | shots/q13d-final; original winding street, stars, chests, guardian art |
 | Normal battle | 4 | pending | 18: HUD identity (4) | Q13e + B camera queued |
 | Boss battle | pending | pending | pending | Q13e capture required |
 | Ultimate | 4 | pending | 19: cut-in (3) | Q13e queued |

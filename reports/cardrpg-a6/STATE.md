@@ -77,3 +77,6 @@ M apps/web/src/game/cardrpg/ui-v3/EncounterV3.tsx
 
 ## Q13c — 2026-11-10T16:57:02Z
 - Complete; 5 touched tests/types/lint pass, final16 screenshots and controls inspected; visual self-score8.3/8.2. Q13d next.
+
+## Q13d — 2026-11-10T17:04:29Z
+- Complete; original scenic route, existing graph/reward rules retained. Types/lint/4 tests + both-size real-click controls pass; visual8.1/8.0. Q13e next.
