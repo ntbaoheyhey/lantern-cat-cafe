@@ -1,6 +1,6 @@
 /** Camera-facing, jointed concept art in the existing lit cafe and event clock. */
 import * as T from 'three';
-import { parsePuppetRig, puppetMotion, puppetPhase, puppetPose, plantedPuppetPivot, SORREL_STAFF_CONTACT, type PuppetRig } from './look-puppet-rig';
+import { parsePuppetRig, puppetMotion, puppetPhase, puppetPose, plantedPuppetPivot, SORREL_STAFF_CONTACT, VELVET_STAFF_CONTACT, type PuppetRig } from './look-puppet-rig';
 const raw=import.meta.glob('../../../../../../assets/cardrpg-look/v3-puppets/*.rig.json',{eager:true,import:'default'});
 const files=import.meta.glob('../../../../../../assets/cardrpg-look/v3-puppets/*.webp',{eager:true,query:'?url',import:'default'}) as Record<string,string>;
 const rigs=new Map(Object.values(raw).map(value=>{const rig=parsePuppetRig(value);return[rig.id,rig] as const;}));
@@ -33,7 +33,7 @@ export async function loadPuppetModel(id:string){
     material.userData={lookPainted:true,lookPuppet:true,puppetPart:layer.part,puppetRect:layer.rect,puppetAtlas:layer.atlasRect,puppetEyes:data.eyes,puppetEyeStyle:data.eyeStyle};
     const mesh=new T.Mesh(geometry,material);mesh.name=`illustrated_${id}_${layer.part}`;
     mesh.position.set((x+w/2-px)*width,(py-y-h/2)*data.height,0);group.add(mesh);
-    if(['inkcap','sock-skipper','cinnamon','sorrel','mochi','clover','panko','mallow','biscuit','brioche','marigold'].includes(id)&&layer.part==='tail'){
+    if(['inkcap','sock-skipper','cinnamon','sorrel','mochi','clover','panko','mallow','biscuit','brioche','marigold','velvet'].includes(id)&&layer.part==='tail'){
       material.userData.puppetTailOrigin=[mesh.position.x,mesh.position.y];
       material.userData.puppetTailReach=Math.max(...[-1,1].flatMap(dx=>[-1,1].map(dy=>Math.hypot(mesh.position.x+dx*w*width/2,mesh.position.y+dy*h*data.height/2))));
     }
@@ -137,7 +137,7 @@ export function animateIllustrated(model:T.Object3D,camera:T.Camera,time:number,
     if(part==='armL')layer.rotation.z=pose.offhand;
     if(part==='footL'||part==='footR')layer.rotation.z=pose.gesture*(part==='footL'?.025:-.025);
     if(part==='cape'||part==='scarf')layer.rotation.z=pose.cloth;
-    const contact=(pose.plant&&['armR','armL','footR','footL'].includes(part)||pose.feetPlant&&['footL','footR'].includes(part))?layer.userData.puppetContact:pose.staffPlant&&part==='armR'?SORREL_STAFF_CONTACT:undefined;
+    const contact=(pose.plant&&['armR','armL','footR','footL'].includes(part)||pose.feetPlant&&['footL','footR'].includes(part))?layer.userData.puppetContact:pose.staffPlant&&part==='armR'?(data.id==='velvet'?VELVET_STAFF_CONTACT:SORREL_STAFF_CONTACT):undefined;
     if(contact){
       const [x,y]=plantedPuppetPivot(layer.userData.puppetRest,contact,layer.rotation.z,pose.lean,[rig.scale.x,rig.scale.y]);
       layer.position.x=x;layer.position.y=y;

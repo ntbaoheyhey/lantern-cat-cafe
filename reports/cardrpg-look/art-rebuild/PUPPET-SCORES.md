@@ -12,7 +12,7 @@ Evidence uses A6 shell in a disposable merged preview; primary branch contains n
 | Panko | 8.6 | 7.7 | 7.8 | 7.8 | p25/evidence/panko-roller-strike.webp; whole roller/mitten windup and down-forward tap, loaf-shield brace; clean chin/shoulder partition, restrained rigid gesture |
 | Mallow | 8.6 | 7.7 | 7.8 | 7.8 | p26/evidence/mallow-whisk-flourish.webp; whole whisk forward sweep, coherent scarf/free mitten and tail lag; tiny tail-fringe limit retained at the close source gap |
 | Cinnamon | 8.6 | 7.7 | 7.7 | 7.7 | p18/evidence/cinnamon-follow-through.webp; raised serving tray, restrained cup and delayed tail; gesture remains small |
-| Velvet | 8.6 | 7.5 | 7.9 | 7.9 | p4/batch2-final/velvet-comparison.webp and velvet-motion.webp; ribbon/staff/cape remain clean |
+| Velvet | 8.6 | 7.7 | 7.9 | 7.9 | p31/evidence/velvet-follow-through.webp; whole needle/ribbon planted at true tip, open palm and head/tail lag; restrained rigid ribbon and subpixel source fringe |
 | Biscuit | 8.6 | 7.7 | 7.8 | 7.8 | p27/evidence/biscuit-spatula-flourish.webp; whole shield brace and short spatula windup/upward sweep; coherent rim/chin/shoulders, restrained rigid props |
 | Brioche | 8.6 | 7.7 | 7.8 | 7.8 | p28/evidence/brioche-basket-offering.webp; whole basket pendulum and open-palm lift, scarf/tail ownership restored; basket partly obscured by Mochi, rigid handle |
 | Marigold | 8.6 | 7.7 | 7.8 | 7.8 | p29/evidence/marigold-pot-pour.webp; tall pot lift/held pour, actual spout socket, coherent cheek/collar/skirt; restrained free-paw fallback retains small sleeve fringe |

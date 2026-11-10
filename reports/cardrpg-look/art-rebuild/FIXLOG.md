@@ -236,3 +236,5 @@ P20 A6 disposal report resolved: reproduced expected3/received5, added idempoten
 P30 socket audit corrects the preparation note: old needle source(.94,.08) has alpha0. First opaque tip is(1093,83), alpha>180 in1141x1200. Synchronize config/rig socket only; source2 raster unchanged and pipeline input receipt refreshed. OffHand is the opaque shield centre(192,686).
 
 P30 evidence compression: the six actual native-Yarn PNGs pass lossless pixel/metadata equality, saving121772B. Extra old .png paths include JPEG-encoded images despite their extension; both PNG refilter and IDAT-only attempts rejected them before writing. Preserve those files unchanged; use value-preserving JSON whitespace compaction for the small remaining budget gap.
+
+2026-11-10T22:45:58.308705+00:00 P31 source ownership rounds1–3 remove split needle/ribbon and cape/boot/tail fragments. Round3 retains57pixel source fringe on body; bounded staff tilt0.042rad is visually clean at both battle sizes. Simplest accepted fallback; no fourth repair. A newly authored source test initially picked transparent ribbon point(935,770); measured opaque(900,700) replaces it.

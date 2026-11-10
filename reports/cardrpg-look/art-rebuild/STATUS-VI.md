@@ -147,3 +147,9 @@ Marigold đã duyệt: nâng bình vàng rồi nghiêng vòi ở nhịp ra chiê
 
 Button Guard đã duyệt: kim lấy đà rồi đưa về phía đối thủ, khiên đỡ lên, hai giày bám sàn; giáp ngực/mũ/thắt lưng liền mạch.
 35 test web và8 test cắt lớp,16ảnh/8lượt chiêu/type/lint/parity đạt; bản chung 38,625,282byte. Đã đặt điểm phát đúng đầu kim và tâm khiên; chuyển động7,5→7,7, tổng7,8. Tiếp tục Velvet.
+
+Tiếp tục đúng Velvet từ bản cắt source1 đã lưu; P1–P30 giữ nguyên hoàn tất.
+Đang sửa nét kim/ruy-băng còn ở lớp áo trước khi thêm động tác; không chạy lại phần đã duyệt.
+
+Velvet đã duyệt: cả kim và ruy-băng nghiêng quanh điểm chạm sàn, tay trống mở ra, đầu/đuôi hồi nhịp; áo không kéo theo kim.
+36 kiểm tra web và9 kiểm tra cắt lớp,16ảnh/12lượt chiêu/type/lint/parity đạt; bản chung 38,654,958byte. Chuyển động7,5→7,7, tổng giữ7,9; tiếp tục Needle Moth.
