@@ -24,6 +24,8 @@
 
 - [ ] Q22 [auto] Direct cat skill preview: replace the observed below-fold advanced preview (1590px at720p) with a focused practice-table dialog using the existing CompanionPreview runtime. Preserve selected skill, all four previews, locked/unowned disclosure, miniature angle/rotation, equipped stats and account state. Restore focus/selection on close; verify Escape/Tab, reduced motion, long effects and both sizes. Use the retained Q22 drafts; no renderer or gameplay changes.
 
+- [ ] Q23 [auto] Daily earned-gift access: retained q14a/1280-daily shows claimable milestone gifts below the sheet, despite the earlier score describing them as optional history. Add direct Daily board / Ready gifts sections with a visible ready count, keeping all existing claim commands, weekly/login rules and red-dot eligibility. Preserve collected/empty states and return navigation. Verify stars/Tower/Journal claims, mixed and zero-ready states, keyboard and both sizes; no new rewards or progression rules.
+
 Q14 current published-tip integration and Q17 Journal are complete: P15 merge daab97e4d, twelve boss views plus twelve Journal views inspected, historical offline build 38,371,409 B passes its retained direct-file checks. Q15 final run is preserved in 83d0f0f41; 85 s / 62 s films and final cut-in are inspected; Q15/Q16 are complete with honest limits. Q19 now packages source through Bfa28d50cf/e149c775d in38,378,333B with inspected10integrated+12offlineviews and24loaded-sheet checks. Later B tips will be integrated again; accepted seeds/run/E2E are never repeated.
 
 Q13f completed under R-3 fallback: browser21wins/2losses,0errors/stalls; earliest loss6.59min and full-health normal wins remain explicit misses (Q13f.md). No fourth numeric tuning loop.

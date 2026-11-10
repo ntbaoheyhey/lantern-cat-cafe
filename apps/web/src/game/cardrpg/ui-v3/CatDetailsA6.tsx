@@ -11,7 +11,7 @@ import {BondSummaryA6} from './BondsA6';
 import {guideTermsA6} from './guide-a6';
 
 /** A compact companion sheet; all upgrades still use the shared commands. */
-export function CatDetailsA6({m,catId,onPreview}:{m:DepthModel;catId:string;onPreview:()=>void}) {
+export function CatDetailsA6({m,catId,onPreview}:{m:DepthModel;catId:string;onPreview:(skillId?:string)=>void}) {
  const [tab,setTab]=useState('growth'),cat=R.CAT_BY_ID[catId]!;
  const [skillId,setSkillId]=useState(cat.skills[0]!.id);
  const card=m.state.account.cards.find(c=>c.cardId===catId),locked=!!m.state.run&&!m.state.run.complete;
@@ -34,13 +34,13 @@ export function CatDetailsA6({m,catId,onPreview}:{m:DepthModel;catId:string;onPr
      <p>{R.kitSkillV5(selectedSkill).description}</p>
      {!availableSkills.has(selectedSkill.id)&&<small className="a6-cat-skill-unlock">{card?`Opens at level ${selectedSkill.unlockLevel} or ${selectedSkill.unlockStars} stars`:'Recruit this cat to unlock their skills.'}</small>}
     </section>
-    <button className="a6-cat-preview" onClick={onPreview}>Watch skill previews</button>
+    <button className="a6-cat-preview" onClick={()=>onPreview(selectedSkill.id)}>Watch skill previews</button>
    </div>}
    {tab==='bonds'&&<BondSummaryA6 m={m} catId={catId}/>}
    {tab==='gear'&&<><div className="a6-cat-gear">{EQUIPMENT_SLOTS.map(slot=>{
     const item=gear.find(g=>R.GEAR_BY_ID[g.templateId]!.slot===slot);
     return <button key={slot} disabled={!card} onClick={()=>{m.cardId=catId;if(item)m.itemId=item.id;m.go('inventory');}}><ItemIcon slot={slot}/><span><small>{slot}</small><b>{item?R.GEAR_BY_ID[item.templateId]!.name:'Empty slot'}</b>{item&&<small>+{item.enhancement}</small>}</span></button>;
-   })}</div><p>Gear earned on patrol stays with this cat.</p><button onClick={onPreview}>Inspect stats & previews</button></>}
+   })}</div><p>Gear earned on patrol stays with this cat.</p><button onClick={()=>onPreview()}>Inspect stats & previews</button></>}
   </section>
  </aside>;
 }

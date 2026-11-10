@@ -1,5 +1,6 @@
 import {GearArtA6} from './KeepsakeArtA6';
 import {CatDetailsA6} from './CatDetailsA6';
+import {CatPreviewA6} from './CatPreviewA6';
 import {DailyA6} from './DailyA6';
 import { TeamA6 } from './FormationA6';
 import { PowerA6, QuickUpgradeA6 } from './PowerA6';
@@ -23,18 +24,20 @@ const FullBoard=lazy(()=>import('../depth/CafeV4').then(m=>({default:m.CafeBoard
 export function CatsSheet({m}:{m:DepthModel}) {
  useSyncExternalStore(m.subscribe,m.snapshot);
  const [filter,setFilter]=useState('owned'),[advanced,setAdvanced]=useState(false);
+ const [preview,setPreview]=useState<{catId:string;skillId?:string}|null>(null);
  const cat=R.CAT_BY_ID[m.cardId]??R.CATS[0]!,owned=m.state.account.cards.find(c=>c.cardId===cat.id),locked=!!m.state.run&&!m.state.run.complete;
  const cats=R.CATS.filter(c=>filter==='all'||m.state.account.cards.some(o=>o.cardId===c.id));
  return <><div className="uv-section-tools"><span data-cat-count={m.state.account.cards.length}>{m.state.account.cards.length} / {R.CATS.length} cats</span><button aria-pressed={filter==='owned'} onClick={()=>setFilter('owned')}>Show my cats</button><button aria-pressed={filter==='all'} onClick={()=>setFilter('all')}>Discover all</button></div>
   {R.gameplayA6(m.state)&&<QuickUpgradeA6 m={m}/>}<div className={`uv-card-workspace ${R.gameplayA6(m.state)?'a6-cats-workspace':''}`}><div className="uv-cat-grid">{cats.map(c=><CompanionCard key={c.id} id={c.id} m={m} selected={cat.id===c.id} onSelect={()=>{m.cardId=c.id;setAdvanced(false);m.notify(false);}}/>)}</div>
-   {R.gameplayA6(m.state)?<CatDetailsA6 key={cat.id} m={m} catId={cat.id} onPreview={()=>setAdvanced(!advanced)}/>:<aside className="uv-detail" aria-label="Cat details"><img className="uv-feature-portrait" {...portraitProps(cat.id)} alt=""/><small>{CARD_BY_ID[cat.id]!.rarity} · {cat.role}</small><h2>{cat.name}</h2>
+   {R.gameplayA6(m.state)?<CatDetailsA6 key={cat.id} m={m} catId={cat.id} onPreview={skillId=>setPreview({catId:cat.id,skillId})}/>:<aside className="uv-detail" aria-label="Cat details"><img className="uv-feature-portrait" {...portraitProps(cat.id)} alt=""/><small>{CARD_BY_ID[cat.id]!.rarity} · {cat.role}</small><h2>{cat.name}</h2>
     {owned&&R.gameplayA6(m.state)&&<PowerA6 value={R.powerV4(m.state,cat.id).total} reducedMotion={m.state.settings.reducedMotion}/>}<p>{owned?`Level ${owned.level} · ${owned.stars} stars`:'A new friend to meet'}</p>{R.skillsV5(m.state)&&<CatKitV5 catId={cat.id}/>}
     {owned?<div className="cr-actions"><CompanionGrowthV4 m={m} catId={cat.id} kind="level"/><CompanionGrowthV4 m={m} catId={cat.id} kind="ascend"/><button disabled={locked||(m.state.awakened[cat.id]??0)>=3} onClick={()=>m.apply(R.awakenCat(m.state,cat.id),'Awakening raised HP and attack by 3%.')}>Awaken</button></div>:<button className="cr-primary" onClick={()=>m.go('gacha')}>Recruit</button>}
     <details><summary>Read skills</summary><p>{cat.passive.name} · {R.gameplayV4(m.state)?R.passiveDescriptionV4(cat.id):cat.passive.description}</p>{cat.skills.map(s=><div className="dp-skill-summary" key={s.id}><img src={skillIcon(s.id)} alt=""/><span><b>{s.name}</b><small>{R.skillsV5(m.state)?R.kitSkillV5(s).description:s.description}</small></span></div>)}<KeywordGuideV5/></details>
     {R.gameplayA6(m.state)&&<BondSummaryA6 m={m} catId={cat.id}/>}
     <button onClick={()=>setAdvanced(!advanced)} aria-expanded={advanced}>Inspect gear & previews</button>
    </aside>}
-  </div>{advanced&&<div className="uv-advanced"><Suspense fallback={<p>Opening…</p>}><FullCollection m={m}/></Suspense></div>}
+  </div>{preview&&<CatPreviewA6 m={m} catId={preview.catId} initialSkillId={preview.skillId} onClose={()=>setPreview(null)}/>}
+  {advanced&&<div className="uv-advanced"><Suspense fallback={<p>Opening…</p>}><FullCollection m={m}/></Suspense></div>}
  </>;
 }
 

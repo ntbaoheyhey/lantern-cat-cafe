@@ -16,7 +16,7 @@ it('browses all four exact current effects without changing the account or losin
  expect(screen.getByText('Opens at level 6 or 3 stars')).toBeTruthy();
  expect(screen.queryByText('Automatic at 100 rage')).toBeNull();
  expect(JSON.stringify(m.state)).toBe(before);
- fireEvent.click(screen.getByRole('button',{name:'Watch skill previews'}));expect(preview).toHaveBeenCalledOnce();
+ fireEvent.click(screen.getByRole('button',{name:'Watch skill previews'}));expect(preview).toHaveBeenCalledExactlyOnceWith(R.CAT_BY_ID.mochi!.skills.at(-1)!.id);
  fireEvent.click(screen.getByRole('button',{name:'Growth'}));expect(screen.getByRole('button',{name:'Level up'})).toBeTruthy();
 });
 it('uses either level or stars to disclose automatic ultimates, and keeps unowned cats recruitable',()=>{

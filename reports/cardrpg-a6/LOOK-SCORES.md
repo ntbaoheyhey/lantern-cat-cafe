@@ -5,12 +5,12 @@ Agent visual review, not player testing. Both sizes inspected; no applicable Q13
 | Screen | 1440×900 | 1280×720 | Lowest applicable row | Evidence / next fix |
 |---|---:|---:|---|---|
 | Cafe / top HUD / dock | 8 | 8 | 07/15: scene finish (7) | shots/q13b-details/*-home |
-| Cats / Growth / Skills / Bonds / Gear | 8.1 | 8.0 | 13: compact collection-card metadata (7.5) | shots/q21-cat-skills/*; all48effects/12cats readable atbothsizes, locked/unlocked and sheet bounds verified |
+| Cats / Growth / Skills / Bonds / Gear | 8.2 | 8.1 | 13: compact collection-card metadata (7.5) | shots/q21-cat-skills/* + q22-preview/*;16direct-preview views, selected skill/focus/miniature/gear/account preserved; current rule text retained |
 | Team | 8.1 | 7.9 | 13: compact suggested-team copy (7.5) | shots/q19-formation-final/*-team; row art, keyboard moves, save/replace pass |
 | Prepare | 8.0 | 7.9 | 13: compact three-foe advice (7.5) | shots/q19-formation-final/*-prepare; 128px art, 40px placement, three foes/forecast/Fight fit720p |
 | Bag / gear / empty | 7.9 | 7.8 | 13: small gear metadata (7.5) | shots/q14a/*-inventory; q14a-empty both sizes; primary actions fit |
 | Bond Book | 8.1 | 7.9 | 13: compact index metadata (7.5) | shots/q20-bond-album/*; all17entries and primary action fit both sizes; ownership/readiness/profile/team/keyboard pass |
-| Daily | 7.9 | 7.8 | 14: optional earned-chest history scrolls (7) | shots/q14a/*-daily; keyboard login claimed at both sizes |
+| Daily | 7.9 | 7.8 | 14: earned-gift access below fold (7; Q23) | shots/q14a/*-daily; keyboard login claimed; direct milestone access queued Q23 |
 | Tower | 8.0 | 7.8 | 13: compact floor/chest labels (7.5) | shots/q14a/*-tower; primary climb fits720p |
 | Relic | 8.1 | 8.0 | 07: simple drawn cup material (7.5) | shots/q14a/*-relics; selection actions fit720p |
 | Result / defeat | 8.0 | 8.0 | 08/20: simple reward icons (7.5) | shots/q14a/*-result and *-loss; truthful highlight label and clear720p action |
