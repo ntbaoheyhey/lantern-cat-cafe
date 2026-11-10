@@ -174,3 +174,7 @@ Không lỗi/gọi mạng; kiểm tra bàn phím, hạn mức và khóa trong ch
 
 2026-11-10T22:36:00Z: Cẩm nang đã duyệt36ảnh gốc và28ảnh sau sửa;75ghi chú/năm nhóm đều tra được ở hai cỡ màn.
 Tìm theo tên/hiệu ứng, xóa tìm kiếm, bàn phím và trạng thái tạm dừng trận đạt; chữ15–16px, typecheck/lint và9test liên quan qua. Đang đóng gói offline.
+
+2026-11-10T22:40:23Z: Q27 hoàn tất: demo38,84MB có Cẩm nang tìm kiếm và Button Guard mới;30ảnh offline đã duyệt.
+75ghi chú/bàn phím/trạng thái tạm dừng đều đạt ở hai cỡ màn;39test puppet/typecheck/lint qua, không lỗi hoặc gọi mạng.
+Tiếp tục Cài đặt: chọn mã lưu trực tiếp, phản hồi rõ và xác nhận đặt lại nằm trọn trên trang.
