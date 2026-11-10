@@ -72,3 +72,6 @@ Git trùng origin, còn147GiB; giữ toàn bộ bản nháp và Vite A6.
 2026-11-10T18:55:15Z: Q13g xong: thường trung vị22,13giây/10trận; boss đối chiếu88,49giây, giảm từ124,61giây và giữ nguyên kết quả.
 Khung hình trung vị/p9516,7ms; giữ nguyên tuyệt kỹ và chiêu đặc trưng boss. Lỗi kiểm tra bản đồ do bộ dữ liệu chụp thiếu nút hiện tại, đã sửa công cụ.
 Tiếp tục Q14 tích hợp tranh/hiệu ứng/sân mới của B, đồng thời hoàn tất các ảnh Q14a còn thiếu.
+
+2026-11-10T19:02:53Z: Tiếp tục đúng Q14; demo38,37MB đã qua kiểm tra file offline ở hai cỡ màn, không gọi mạng/lỗi.
+Giữ nguyên43test/typecheck/lint đã đạt và mọi sửa đổi dở dang; đang duyệt ảnh battle đã lưu trước khi chốt Q14/Q14a và chạy Q15.

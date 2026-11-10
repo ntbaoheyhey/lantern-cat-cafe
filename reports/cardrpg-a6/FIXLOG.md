@@ -104,3 +104,9 @@
 - Recorder now takes one level per route instead of buying repeatedly to level8 before playing; follows real loss advice and captures both-size Prepare/Map/Loss. This is a documented observer policy change, not a combat grant. Existing sim counters remain distinct from browser evidence.
 
 - 2026-11-10T18:25:01Z Q13f browser finished:21wins/2losses,first loss395.62s,normalHP100%,0errors/stalls. Both cheap hints won next route; same-seed success still48.23% in development sim. Mark completed with explicit misses underR-3, no fourth balance loop. Inspected remaining3captures; route boon contrast/fold and truthful loss label already queuedQ14a.
+
+- 2026-11-10T18:55:15Z Q14a review attempt1: saved first five1440px captures; keyboard route-choice assertion failed because reviewer fixture omitted run.current, which chooseReward requires. Set the fixture to its first node; production transaction unchanged. Resume with existing images retained and incremental review.json checkpoints.
+
+- 2026-11-10T18:57:07Z Q14a visual repair: the new gear-card selector also matched the nested empty-state button, overriding its44px minimum with166/146px and pushing it below720p. Limit both viewport rules to direct gear-card buttons; add actual primary-action fold assertion to the existing capture tool.
+
+- 2026-11-10T19:05:24Z Q14 visual review found top boss Phase2 beside world label Phase1 at523/802HP. A6 first phase is a bonus flag; world label/scene bridge still read the legacy two-phase field. Use one displayedBossPhase adapter in both DOM labels and the existing scene input; no rules or B renderer change. Real threshold regression added; verification pending.

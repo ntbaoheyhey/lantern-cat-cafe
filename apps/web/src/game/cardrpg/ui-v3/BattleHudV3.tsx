@@ -5,6 +5,7 @@ import './battle-a6.css';
 import {lazy,Suspense,useEffect,useMemo,useRef,useState} from 'react';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import type {DepthModel} from '../depth/model';
+import {displayedBossPhase} from '../depth/battle-presentation';
 import {artPropsA6 as portraitProps} from './art-a6';
 import {skillReadinessV4} from '../../squad/turn3d/card-v4-presentation';
 import {applyV5Presentation,REACTION_WORDS,v5SourceForPlan} from '../../squad/turn3d/card-v5-events';
@@ -20,7 +21,7 @@ export default function BattleHudV3({m}:{m:DepthModel}) {
  const [banners,setBanners]=useState(()=>{try{return localStorage.getItem('lantern-ui-v3-banners')!=='off'}catch{return true}});
  const pausedBeforeHelp=useRef(false);
  const boss=battle.actors.find(a=>a.side==='enemy'&&['boss','elite'].includes(R.ENEMY_BY_ID[a.catalogId]?.tier??''));
- const bossPhase=boss?(boss.bonuses.a6FirstPhase?(boss.phase===2?3:2):1):1;
+ const bossPhase=boss?displayedBossPhase(battle,boss):1;
  const caster=battle.actors.find(a=>a.id===plan?.actorId);
  const legacy=!isLookV2();
  const presentation=useMemo(()=>plan?applyV5Presentation(plan,statusPresentation(plan,m.battle?.log??[]),v5SourceForPlan(plan,m.battle,battle)):undefined,[plan,m.battle,battle]);

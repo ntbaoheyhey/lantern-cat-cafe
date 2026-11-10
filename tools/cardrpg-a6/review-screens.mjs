@@ -7,6 +7,7 @@ const root=process.cwd(),require=createRequire(resolve(root,'apps/web/package.js
 const {chromium,expect}=require('@playwright/test');
 const arg=(name,fallback)=>process.argv.find(v=>v.startsWith(`--${name}=`))?.split('=').slice(1).join('=')??fallback;
 const tag=arg('tag','quality'),names=arg('screens','home,collection,team,bonds,prepare,recruit').split(',');
+const reuseCaptures=process.argv.includes('--reuse-captures');
 const sizes=arg('sizes','1440x900,1280x720').split(',').map(v=>v.split('x').map(Number));
 const output=resolve(root,'reports/cardrpg-a6/shots',tag),shots=[],errors=[];
 await mkdir(output,{recursive:true});
@@ -31,7 +32,7 @@ try {
    }else if(name.startsWith('map-')){
     await page.evaluate(async kind=>{const m=window.__depthReview;m.state.run=null;m.tutorialBattle=null;m.watching=false;m.plan=null;m.state.cleared=[];m.go('map');
      if(kind!=='choose'){m.start(1,'campaign',1);const run=m.state.run;
-      if(kind==='choice'){const R=await import('/@fs/Users/bao/taskbar-hero-cardrpg-a6/packages/game-rules/src/cardrpg/depth/index.ts');run.rewardChoices=['skill:mochi-1',...Object.keys(R.BOON_BY_ID).slice(0,2)];}
+      if(kind==='choice'){const R=await import('/@fs/Users/bao/taskbar-hero-cardrpg-a6/packages/game-rules/src/cardrpg/depth/index.ts');run.current=run.nodes[0].id;run.rewardChoices=['skill:mochi-1',...Object.keys(R.BOON_BY_ID).slice(0,2)];}
       if(kind==='progress'||kind==='boss'){
        run.visited=kind==='boss'?['0-0','1-0','2-0','3-0','4-0','5-0']:['0-0','1-0','2-0','3-0'];
        for(const id of run.visited){const node=run.nodes.find(n=>n.id===id),key=`${run.chapter}/${run.challengeLevel}/${id}/${node.kind}`;m.state.v4.journey.stars[key]={key,chapter:1,band:run.challengeLevel,nodeId:id,kind:node.kind,conditions:[true,true,true]};}
@@ -81,8 +82,8 @@ try {
    await page.waitForTimeout(name.startsWith('recruit')?name==='recruit-burst'?1000:name==='recruit-letter'?400:name==='recruit-seal'?300:300:name==='home'?1500:600);
    await page.waitForFunction(()=>Array.from(document.images).filter(i=>i.getClientRects().length).every(i=>i.complete&&i.naturalWidth>0));
    const file=`${width}-${name}.webp`,tmp=`/tmp/cardrpg-a6-${tag}-${width}-${name}.png`;
-   await page.screenshot({path:tmp});
-   execFileSync('cwebp',['-quiet','-q','82',tmp,'-o',resolve(output,file)]);
+   const reusedCapture=reuseCaptures&&await access(resolve(output,file)).then(()=>true,()=>false);
+   if(!reusedCapture){await page.screenshot({path:tmp});execFileSync('cwebp',['-quiet','-q','82',tmp,'-o',resolve(output,file)]);}
    const detail=await page.evaluate(()=>({
     overflow:document.documentElement.scrollWidth>innerWidth,
     recruit:document.querySelector('.uv-recruit-stage')?{beat:document.querySelector('.uv-recruit-stage').getAttribute('data-beat'),rarity:document.querySelector('.uv-recruit-stage').getAttribute('data-rarity'),splash:document.querySelector('.uv-recruit-stage').getAttribute('data-splash'),draws:window.__depthReview.state.account.daily.draws,rewards:window.__depthReview.state.account.history.slice(-10).map(r=>({rarity:r.rarity,duplicate:r.duplicate,shards:r.shards}))}:undefined,
@@ -92,8 +93,10 @@ try {
     sheet:(()=>{const s=document.querySelector('.uv-sheet-content');return s?{height:s.clientHeight,content:s.scrollHeight}:null})(),
     broken:[...document.images].filter(i=>i.getClientRects().length&&!i.naturalWidth).map(i=>i.src),
    }));
-   shots.push({name,width,height,file,...detail});
+   shots.push({name,width,height,file,reusedCapture,...detail});
+   await writeFile(resolve(output,'review.json'),JSON.stringify({fixture:'Reviewer unlocks; no natural-progression claim.',shots,errors,complete:false},null,2)+'\n');
    if(detail.overflow||detail.broken.length)throw Error(JSON.stringify(detail));
+   if(detail.primaryActions.some(action=>!action.visible))throw Error(`Primary action below fold: ${JSON.stringify(detail.primaryActions)}`);
    if(name==='map-choice'){
     const choice=page.locator('.a6-route-activity .dp-reward').first();
     await expect(choice).toBeInViewport({ratio:1});await choice.focus();await page.keyboard.press('Enter');
@@ -111,10 +114,11 @@ try {
     shots.at(-1).loginKeyboardClaimed=await page.evaluate(()=>window.__depthReview.state.dailyA6?.loginGifts===1);
    }
    if(name==='tower')await expect(page.getByRole('button',{name:/^Climb floor/})).toBeInViewport({ratio:1});
+   await writeFile(resolve(output,'review.json'),JSON.stringify({fixture:'Reviewer unlocks; no natural-progression claim.',shots,errors,complete:false},null,2)+'\n');
   }
   await page.close();
  }
  if(errors.length)throw Error(JSON.stringify(errors));
- await writeFile(resolve(output,'review.json'),JSON.stringify({fixture:'Reviewer unlocks; no natural-progression claim.',shots,errors},null,2)+'\n');
+ await writeFile(resolve(output,'review.json'),JSON.stringify({fixture:'Reviewer unlocks; no natural-progression claim.',shots,errors,complete:true},null,2)+'\n');
  console.log(JSON.stringify({shots:shots.length,errors,output}));
 }finally{clearTimeout(lease);await browser.close();}

@@ -1,6 +1,6 @@
 import { expect, it } from 'vitest';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
-import { snapshotBattle, splitPresentation } from './battle-presentation';
+import { displayedBossPhase, snapshotBattle, splitPresentation } from './battle-presentation';
 import { DepthModel } from './model';
 import { galleryFixture, GALLERY_ACTIONS } from './feel-lab';
 
@@ -10,6 +10,19 @@ function encounter() {
   model.sceneReady = true;
   return model;
 }
+
+it('presents all three A6 boss phases from the real thresholds while retaining the two legacy phases', () => {
+  const battle = R.createBattle({ ...encounter().battle!.initial, enemies: ['yarn-giant'], gameplayV4: true, skillsV5: true, gameplayA6: true });
+  const boss = battle.actors.find(actor => actor.catalogId === 'yarn-giant')!;
+  expect(displayedBossPhase(battle, boss)).toBe(1);
+  boss.hp = Math.floor(boss.maxHp * .65); R.phaseBossA6(battle, boss);
+  expect(displayedBossPhase(battle, boss)).toBe(2);
+  expect(boss.phase).toBe(1);
+  boss.hp = Math.floor(boss.maxHp * .32); R.phaseBossA6(battle, boss);
+  expect(displayedBossPhase(battle, boss)).toBe(3);
+  battle.initial.gameplayA6 = false;
+  expect(displayedBossPhase(battle, boss)).toBe(2);
+});
 
 it('holds HP, KO, round and order until their presentation beat while rules resolve once', () => {
   const model = encounter();

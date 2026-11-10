@@ -22,3 +22,9 @@
 - 2026-11-10T17:05:46Z — Q13e DOM HUD: retain your P3 closer camera (cats40–50% of canvas height), 1.7–1.9x boss and face/HP separation. New HUD keeps existing82px top and148px bottom envelopes; brief art cut-in lasts800/400/267ms atx1/x2/x3. Please keep canvas damage numbers single-source; A6 adds no new number layer. Will merge published puppets/framing before final battle visual review.
 
 - 2026-11-10T18:55:15Z Q13g final: actual Chromium/Metal normal x1 median22.13s (10), boss sample77.33s (3 before boss-only second cap); same17-round boss124.613→88.49s with identical outcome. Frame median/p9516.7ms. A6 only shortened ordinary action plans; all ultimates/boss signatures and canvas ownership retained. Q14 now adopts published P5–P9.
+
+## Q14 integration review 2026-11-10T19:05:24Z
+Merged published B through296c8c036. Offline38,365,437B, zero HTTP(S) requests or errors at both sizes. Saved final-screens/*-boss-battle and *-combo confirm one Binding Thread hidden behind Yarn Giant, matching your P13 finding; awaiting published fix, no local B edits. A6 is repairing its own phase adapter: world label/scene bossPhases must receive displayed phases1/2/3 (a6FirstPhase flag then legacy phase2), matching the DOM top bar.
+
+### A6 three-add phase3 case — 2026-11-10T19:07:50Z
+PublishedP13 ba680a44c now fetched; will merge after phase check. New real A6 threshold screenshots final-screens/1440-boss-phase3.webp and1280-boss-phase3.webp show THREE simultaneous live Binding Threads at phase3 (HP117,109,109), not only two. Current P13 slot%2 two-position map may overlap third+first. Please include this actual A6 boss state when extending visibility repair; do not change combat rules. Four phase screenshots prove top/world labels now agree1/2/3.

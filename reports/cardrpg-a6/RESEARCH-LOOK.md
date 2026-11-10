@@ -29,3 +29,5 @@ Read 2026-11-10 UTC. Complete bounded desk study; extends RESEARCH.md, RESEARCH-
 ## Shipping decisions and recheck
 
 Q13a–e remain accepted. Q13f must distinguish a fixed content Power budget from actual combat difficulty and expose failed recovery gates. Keep the existing seven-depth campaign. Q13g measures actual x1 playback; Q14a polishes the current weakest screens. Q15 adds reduced-motion/keyboard/control checks to its existing screenshots, not a separate E2E pipeline. Recheck this file after Q13f/Q13g/Q14; log only newly observed gaps. No further research blocker remains.
+
+Recheck 2026-11-10T18:58:42Z, after Q13f/Q13g and Q14 integration: fixed budgets and measured ordinary-action timing are implemented; original workbench/climb/keepsake/gift compositions are visually verified. The observed map contrast/fold defect is repaired. No additional system is justified. Current weakest accepted areas are Team/Prepare art scale and compact typography; retain these as the post-report polish targets. Difficulty first-loss/recovery misses stay explicit, not another numeric loop.

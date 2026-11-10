@@ -5,7 +5,7 @@
  .a6-bag-tools>span {font:700 22px Georgia,serif;color:#63472e}
  .a6-bag-workspace {grid-template-columns:minmax(0,1.45fr) minmax(330px,1fr);gap:20px;align-items:start}
  .a6-bag-workspace>.uv-gear-grid {max-height:calc(100vh - 350px);overflow:auto;padding:8px 10px 14px;border:1px solid #a57e50;border-radius:14px;background:repeating-linear-gradient(0deg,#845b3e12 0 2px,transparent 2px 48px),linear-gradient(105deg,#e5c89e,#c7a16f);scrollbar-width:thin;scrollbar-color:#8f693e #dbc096;align-content:start;gap:12px}
- .a6-bag-workspace .uv-gear-grid button {position:relative;min-height:166px;gap:3px;padding:6px 9px 11px;background:radial-gradient(ellipse at 45% 24%,#fff6da,var(--a6-wash,#ead8b9));border-width:2px;border-bottom-width:5px;border-radius:13px;box-shadow:inset 0 0 0 2px #fff6db99,0 5px 5px #704a3022}
+ .a6-bag-workspace .uv-gear-grid>button {position:relative;min-height:166px;gap:3px;padding:6px 9px 11px;background:radial-gradient(ellipse at 45% 24%,#fff6da,var(--a6-wash,#ead8b9));border-width:2px;border-bottom-width:5px;border-radius:13px;box-shadow:inset 0 0 0 2px #fff6db99,0 5px 5px #704a3022}
  .a6-bag-workspace .uv-gear-grid button[aria-pressed=true] {outline:2px solid #8d632e;outline-offset:2px;box-shadow:0 0 0 5px #fff0bb88}
  .a6-bag-workspace .uv-gear-grid b {font-size:13px;line-height:1.25}
  .a6-bag-workspace .uv-gear-grid small {font-size:12px}
@@ -72,7 +72,7 @@
   .a6-bag-tools>span {font-size:19px}
   .a6-bag-workspace {gap:16px;grid-template-columns:minmax(0,1.5fr) minmax(330px,1fr)}
   .a6-bag-workspace>.uv-gear-grid,.a6-bag-workspace>.a6-gear-detail {max-height:calc(100vh - 345px)}
-  .a6-bag-workspace .uv-gear-grid button {min-height:146px;gap:1px}
+  .a6-bag-workspace .uv-gear-grid>button {min-height:146px;gap:1px}
   .a6-bag-workspace .a6-gear-art {height:82px;width:92px}
   .a6-bag-workspace .a6-gear-detail {padding:10px 14px}
   .a6-bag-workspace .a6-gear-detail h2 {font-size:23px}

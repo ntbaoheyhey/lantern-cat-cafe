@@ -73,3 +73,7 @@ Q13f: Existing route stays seven stops (early depths0–3, late4–5, guardian6)
 - 2026-11-10T18:37:54Z Q14a: extend the existing weakest-screen pass to Daily (7.3 at720p): gift illustration and explicit task states replace redundant binary bars; no reward/eligibility changes. Existing draft retained.
 
 - 2026-11-10T18:46:07Z While Q13g waits for B P10 timing lease, apply already-preserved Q14a UI drafts. Cancelled only own pending63590 waiter (no child/browser, no sample lost); requeue identical boss candidate after static validation. Combat rules and ordinary pacing unchanged. Q14a verification remains pending; do not tick before viewing captures.
+
+- 2026-11-10T18:57:07Z Q14 merged publishedB e83b9e2a1 with merge commitbe31fd412; all25puppets/P6single-source canvas numbers/P7stage/P8faces/P9budget retained. Adopted staged circle-face adapter only; A6 full-body alpha art and shell unchanged.
+
+- 2026-11-10T19:05:24Z Q14 phase mismatch is an A-owned presentation adapter defect, not a new rule: shared displayedBossPhase maps A6 bonus+phase to1/2/3 for HUD/world label/scene input. Current boss visibility remains pending B P13; accepted Q13e design is not reworked.
