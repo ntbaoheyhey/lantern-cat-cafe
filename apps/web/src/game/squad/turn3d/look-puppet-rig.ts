@@ -49,6 +49,8 @@ const sockSkipperGesture={prop:-.12,offhand:-.25,head:.045,lean:.035,tailFollow:
 const inkcapGesture={prop:-.245,offhand:-.185,head:.042,lean:.028,tailFollow:.075,clothFollow:0,lag:.07};
 // Present the left serving tray while the right cup rises only slightly.
 const cinnamonGesture={prop:-.105,offhand:-.245,head:.038,lean:.020,tailFollow:.105,clothFollow:0,lag:.085};
+// Long knotted arms reach forward on a planted spool, with a delayed counterarm.
+const threadGesture={prop:.33,offhand:-.26,head:.045,lean:-.035,tailFollow:0,clothFollow:0,lag:.085};
 // A long crook leans from its floor tip; the open palm carries the larger gesture.
 const sorrelGesture={prop:.055,offhand:-.23,head:.030,lean:.012,tailFollow:.11,clothFollow:0,lag:.07};
 // Painted staff tip at source UV(.72965116,.92708333), relative to armR's pivot.
@@ -67,8 +69,9 @@ export function puppetPose(motion:PuppetMotion,time:number,progress:number,reduc
   // A held raised-prop silhouette before the ultimate release, then overshoot.
   const magic=ramp(t,0,.20)-1.23*ramp(t,.43,.66)+.23*ramp(t,.66,1);
   const gesture=reduced?0:active?authoredGesture(motion,t):0;
-  const profile=id==='soot'?sootGesture:id==='spool-ram'?spoolRamGesture:id==='inkcap'?inkcapGesture:id==='sock-skipper'?sockSkipperGesture:id==='cinnamon'?cinnamonGesture:id==='sorrel'?sorrelGesture:undefined;
+  const profile=id==='soot'?sootGesture:id==='spool-ram'?spoolRamGesture:id==='inkcap'?inkcapGesture:id==='sock-skipper'?sockSkipperGesture:id==='cinnamon'?cinnamonGesture:id==='sorrel'?sorrelGesture:id==='binding-thread'?threadGesture:undefined;
   const follow=reduced||!active||!profile?0:authoredGesture(motion,Math.max(0,t-profile.lag))*(1-ramp(t,.93,1));
+  const thread=id==='binding-thread'&&active&&!reduced;
   const skip=id==='sock-skipper'&&active&&!reduced;
   const skipAir=skip?ramp(t,.18,.38)-ramp(t,.48,.70):0;
   const skipSquash=skip?.035*(ramp(t,0,.16)-ramp(t,.20,.34))-.02*skipAir+.025*(ramp(t,.55,.70)-ramp(t,.70,.94)):0;
@@ -77,14 +80,14 @@ export function puppetPose(motion:PuppetMotion,time:number,progress:number,reduc
   const breathe=reduced?0:Math.sin(clock*2.25)*(motion==='boss-idle'?.014:.009);
   const blinkAt=(clock%(4.1+phase*.17));
   const blink=reduced?1:1-.98*Math.exp(-Math.pow((blinkAt-3.85)/.065,2));
-  return {gesture,breathe,hopLift:skipAir*.11,hopSquash:skipSquash,plant:id==='spool-ram'&&active&&!reduced,staffPlant:id==='sorrel'&&(active||motion==='idle')&&!reduced,hit:reduced?0:hit,flash:reduced?0:motion==='hurt'?.45*(1-ramp(t,0,.24)):0,
+  return {gesture,breathe,feetPlant:thread,hopLift:skipAir*.11,hopSquash:skipSquash,plant:id==='spool-ram'&&active&&!reduced,staffPlant:id==='sorrel'&&(active||motion==='idle')&&!reduced,hit:reduced?0:hit,flash:reduced?0:motion==='hurt'?.45*(1-ramp(t,0,.24)):0,
     head:reduced?0:motion==='hurt'?-.045*hit:motion==='defeat'?-.12:active?-(profile?.head??.025)*gesture-.012*follow:Math.sin(clock*1.15)*.013,
     tail:reduced?0:Math.sin(clock*1.45)*.065-(profile?.tailFollow??0)*follow,
     tailBend:reduced||!['inkcap','sock-skipper','cinnamon','sorrel'].includes(id)?0:Math.sin(clock*1.45-.3)*(id==='sock-skipper'?.024:.018)-follow*(id==='sock-skipper'?.055:id==='cinnamon'||id==='sorrel'?.035:.045),
     cloth:reduced?0:Math.sin(clock*1.45)*.065*.3-(profile?.clothFollow??0)*follow,
     wing:reduced?0:Math.sin(clock*1.55)*.055+gesture*.08,
-    prop:reduced?0:active?-(profile?.prop??.20)*gesture:motion==='victory'?-.17:Math.sin(clock*1.8)*.017,
-    offhand:reduced?0:active?(profile?.offhand??.12)*gesture:motion==='victory'?.14:-Math.sin(clock*1.8)*.012,
+    prop:reduced?0:active?-(profile?.prop??.20)*gesture-(thread?.045*follow:0):motion==='victory'?-.17:Math.sin(clock*1.8)*.017,
+    offhand:reduced?0:active?(profile?.offhand??.12)*(thread?.55*gesture+.45*follow:gesture):motion==='victory'?.14:-Math.sin(clock*1.8)*.012,
     lean:reduced?0:motion==='defeat'?-.18:motion==='hurt'?-.045*hit:active?-(profile?.lean??.025)*gesture:Math.sin(clock*.9)*.005,
     eyeOpen:motion==='defeat'?0:blink*(motion==='hurt'?.50:motion==='victory'?.72:1),
     glow:motion==='ultimate'||motion==='cast'?Math.max(0,magic)*.16:motion==='boss-idle'?.035+(reduced?0:.02*Math.sin(clock*2)):0,

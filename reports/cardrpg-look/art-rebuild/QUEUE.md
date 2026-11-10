@@ -31,6 +31,8 @@ Check STOP-B/INBOX and fetch/show A6-OUTBOX between items. Commit/push and updat
 
 - [x] P19 [auto] Lowest-score motion continuation: Sorrel staff tilts around its painted floor contact, with an open palm, slight head response and delayed tail; keep the long staff rigid and shoulder seams clean. Both sizes/natural x1 basic/signature/ultimate/reduced, true tip drift/socket/HP checks; max3 repairs.
 
+- [x] P21 [auto] Lowest-score motion continuation: Binding Thread leads a snare with its knotted main hand, delayed opposite arm and a slight spool lean; plant both feet and preserve thin shoulder joins/metal rims. Both sizes, natural x1 basic/signature, reduced motion, actual main-hand socket and face/HP checks. Existing art/formation retained; max3 repairs.
+
 Research refinements 11/11: P6 uses the saved49+6cast audit and33tests; complete missing parity and visual acceptance. P7 records before/after plus representative cast timing. P8 reuses existing concepts/VFX and only exports missing formats. P10 adds representative x2/x3/reduced-motion readability checks alongside requested x1films. Completed P1–P5 are unchanged. Rationale in RESEARCH-PUPPET.md/DECISIONS.md.
 
 ## Completed history
@@ -78,3 +80,5 @@ P14 complete 2026-11-10T20:07:29.667353+00:00: accepted saved16paired views/8nat
 P16 complete 2026-11-10T20:15:17.001198+00:00: attempt2 raises lantern0.06946units,16pairedposes/12casts/22tests/type/lint/parityPASS;38176938B; motion7.7/overall7.8. Initial loweringgesture rejected; savedbefore reused. P17next.
 
 P19 complete 2026-11-10T20:38:55.010222+00:00: accepted saved16pairedposes/12casts/25tests/type/lint/parity; paintedstafftip drift<1e-15, clean shoulders;38185390B. Motion7.5→7.7/overall7.7; no whole-roster uplift.
+
+P21 complete 2026-11-10T20:51:19.301203+00:00: repair3 clean knotted arms after opaque-overlap/source-partition fix;26web+2pipeline tests,16pairedposes/8casts/type/lint/parityPASS;38189058B. Motion7.7/overall7.7.

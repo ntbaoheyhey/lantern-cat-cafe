@@ -42,6 +42,14 @@ def layout(parts, size, scale):
     return result
 
 
+def part_overlap(mask, alpha, front, kernel, opaque_only=False):
+    """Fill behind joints from owned ink; transparent canvas cannot seed overlap."""
+    visible = np.minimum(mask, alpha)
+    support = visible if opaque_only else mask
+    extended = np.minimum(np.maximum(mask, np.minimum(cv2.dilate(support, kernel), front)), alpha)
+    return visible, extended
+
+
 def build(unit, force=False):
     if (ROOT / 'STOP-B').exists():
         raise RuntimeError('STOP-B requested')
@@ -82,8 +90,7 @@ def build(unit, force=False):
     for depth, (part, mask, pivot, front) in enumerate(reversed(masks)):
         # Extend only behind adjacent original pixels, never outside the silhouette.
         # Fill hidden texels from this part, rather than duplicating a moving limb.
-        visible = np.minimum(mask, alpha)
-        extended = np.minimum(np.maximum(mask, np.minimum(cv2.dilate(mask, kernel), front)), alpha)
+        visible, extended = part_overlap(mask, alpha, front, kernel, cfg.get('overlapFromOpaque', False))
         if not np.any(visible):
             raise ValueError(f'{unit}/{part}: empty authored partition')
         missing = np.where((extended > 0) & (visible == 0), 255, 0).astype(np.uint8)

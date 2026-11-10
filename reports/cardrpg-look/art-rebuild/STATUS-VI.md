@@ -114,3 +114,6 @@ A6 vừa báo lỗi dọn tài nguyên hiệu ứng boss khi gọi dispose lần
 
 Tiếp tục từ P19 đã chạy xong; đã duyệt ảnh hai cỡ màn hình, gậy Sorrel giữ điểm chạm sàn và vai/cổ tay liền mạch.
 25test,12lượt chiêu và parity đã đạt; chuyển động7,5→7,7, tổng giữ7,7. Bản chung38.185.390byte; tiếp tục nhân vật còn điểm chuyển động thấp.
+
+Binding Thread đã duyệt bản sửa3: tay vươn rõ hơn, hai chân bám sàn; loại được nét tay cũ lộ sau vùng cắt.
+26test web và2test pipeline đạt;16ảnh/8lượt chiêu không lỗi, bản chung38.189.058byte. Tiếp tục Practice Cushion; chỉ Binding Thread dùng cách bù alpha mới.
