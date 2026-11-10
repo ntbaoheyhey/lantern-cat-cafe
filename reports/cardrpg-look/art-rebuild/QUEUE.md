@@ -1,7 +1,7 @@
 # Lane B active queue
 
-Updated: 2026-11-10 02:37 UTC. PAUSED by latest user instruction; resume only when the user says to continue.
-The current pause overrides all historical continuous-run instructions below.
+Updated: 2026-11-10T05:16:59.510589+00:00. ACTIVE — user explicitly resumed.
+Latest browser instruction: internal chat browser only; never operate user Safari/Chrome.
 Always take the top unfinished unblocked item. Check INBOX.md and root STOP-B between items. Reports/checkpoints are not stops. After three failed repairs, use the documented fallback and continue. Only the hard stops in NON-STOP-RUN.txt apply.
 
 - [x] Q1 Housekeeping — 30 min. Archive old handoff; compact current handoff; read direction/state/rules and latest A/U outboxes; seed inbox. Done: current files consistent, status committed and pushed.
@@ -35,3 +35,7 @@ Q5 concept prep during quota wait: Clover/Panko saved; remaining batch1 Mallow,C
 Q5 concept checkpoint 02:36UTC: all12cat concepts reviewed at equal displayed height; eight new originals saved after Clover/Panko. No earlier source regenerated. Enemy prompts authored from existing object identities. Runtime preparation remains unfinished; Q3 Button retry2 still not before03:06UTC.
 
 Pause checkpoint: user requested handoff and stop. All12cat concepts/provenance saved; enemy prompts only. No auto-retry while paused. Existing checkboxes retained honestly; Q3/Q5-Q11 incomplete.
+
+Q3 provider update: Button final extraction also failed (resumed-session summary); no further retry. Layered fallback being articulated and reviewed. Yarn first Generate returned Error at05:50UTC; next attempt>=06:47UTC, final>=07:47UTC. Never duplicate or bypass provider quotas.
+
+Q3 motion checkpoint 2026-11-10T06:07:08.127885+00:00: action-owned gesture, contact shadow, moving face anchor verified; film and review in foes-fallback. Q3 final decision awaits remaining Yarn provider attempts. Q5 first enemy concepts Sock Skipper, Teacup Healer, Spool Ram, Needle Moth stored/provenanced; continue remaining originals.

@@ -61,3 +61,5 @@ Draft [#427](https://github.com/ntbaoheyhey/taskbar-hero/pull/427). This is a VF
 - R1decision/full four-unit acceptance and R2/R4/R5/R3/R6/R7/R8 remain pending; model deformation must be addressed with the existing source before roster expansion.
 - Original Full Run upload/allocations/OFF+3B/draws/Kettle misses remain open. No default flags, rules, A/U worktrees, shell, PR merge or deploy changed. Shell hygiene request already sent to U through B-OUTBOX.
 - No further source conversion is needed for Mochi. Continue from current prototype and generated light; never restart because a remote download URL expires.
+
+Active resume checkpoint 2026-11-10T06:07:08.127885+00:00: internal-browser fallback review and 12s motion film;1822tests/type/lint/buildPASS;5seedexact;96total face samples0offenders,0UI overlaps;demo31777616B. Q3 and Q5 remain PARTIAL; no overall8.5 or full-roster acceptance claimed.

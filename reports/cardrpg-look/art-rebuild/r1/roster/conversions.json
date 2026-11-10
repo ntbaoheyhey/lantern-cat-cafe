@@ -18,19 +18,53 @@
     "glbSha256": "c287fdd01b264c5a69218bbdbc144deccdbee9cb5bcf01ab497a2c3a685789c2"
   },
   "button-guard": {
-    "status": "QUOTA_WAIT",
-    "submittedAt": "2026-11-10T02:05:43.967049+00:00",
-    "attempt": 1,
-    "provider": "official microsoft/TRELLIS.2 signed-in browser",
+    "status": "FALLBACK_LAYERED",
+    "submittedAt": "2026-11-10T05:16:59.510589+00:00",
+    "attempt": 3,
+    "provider": "official microsoft/TRELLIS.2 internal chat browser; new browser session per user preference",
     "source": "assets/source/look-v3/concepts/button-guard.png",
     "sourceSha256": "65f77cc29877516a96ead9fba818db3f7e7db2283f938cfacd71d99feaed64f2",
     "seed": 20261111,
     "resolution": 1024,
     "decimationTarget": 100000,
     "textureSize": 2048,
-    "observedAt": "2026-11-10T02:09:03.546317+00:00",
-    "error": "You've hit your daily ZeroGPU limit",
+    "observedAt": "2026-11-10T05:23:26.610099+00:00",
+    "error": "Extract tab displays Error and Empty value; no GLB link. No detailed provider reason exposed.",
     "nextAttemptNotBefore": "2026-11-10T03:06:00Z",
-    "notes": "Existing generate failed. Preserve signed-in session; no purchase/reupload/repeated generation this check. Remaining retries must span >=2h; continue Soot and Q4/Q5 meanwhile."
+    "notes": "Original concept unchanged. Uploaded by documented filechooser; no new account/payment/credentials. Source seed20261111/1024/100000/2048 preserved. Final extract also failed according to resumed session handoff. Prior tab no longer exists; no regeneration.",
+    "attempts": [
+      {
+        "status": "QUOTA_WAIT",
+        "submittedAt": "2026-11-10T02:05:43.967049+00:00",
+        "attempt": 1,
+        "provider": "official microsoft/TRELLIS.2 signed-in browser",
+        "source": "assets/source/look-v3/concepts/button-guard.png",
+        "sourceSha256": "65f77cc29877516a96ead9fba818db3f7e7db2283f938cfacd71d99feaed64f2",
+        "seed": 20261111,
+        "resolution": 1024,
+        "decimationTarget": 100000,
+        "textureSize": 2048,
+        "observedAt": "2026-11-10T02:09:03.546317+00:00",
+        "error": "You've hit your daily ZeroGPU limit",
+        "nextAttemptNotBefore": "2026-11-10T03:06:00Z",
+        "notes": "Existing generate failed. Preserve signed-in session; no purchase/reupload/repeated generation this check. Remaining retries must span >=2h; continue Soot and Q4/Q5 meanwhile."
+      }
+    ],
+    "nextAction": "No further provider retry; articulated layered fallback per NON-STOP-RUN",
+    "browser": "iab tab1"
+  },
+  "yarn-giant": {
+    "status": "PROVIDER_ERROR",
+    "attempt": 1,
+    "provider": "official microsoft/TRELLIS.2 internal chat browser",
+    "source": "assets/source/look-v3/concepts/yarn-giant.png",
+    "seed": 20261112,
+    "resolution": 1024,
+    "decimationTarget": 100000,
+    "textureSize": 2048,
+    "observedAt": "2026-11-10T05:48:26.744450+00:00",
+    "error": "Generate returned visible Error; no mesh or export link",
+    "nextAttemptNotBefore": "2026-11-10T06:47:00Z",
+    "nextAction": "Do other queue work; remaining attempts spaced across >=2h; layered candidate can be reviewed meanwhile"
   }
 }

@@ -9,12 +9,14 @@ export const hasPaintedModel = (id:string) => !!catalog[id];
 export async function loadPaintedModel(id:string) {
   const data=catalog[id]!;const model=new T.Group();model.userData={lookV2:true,lookPainted:true,paintedRig:data};
   const rig=new T.Group();rig.name=data.role;rig.userData.lookProps=true;model.add(rig);
+  const soles=data.layers.filter(layer=>/feet|foot/.test(layer.part));
+  if(soles.length)rig.position.y=-(1-Math.max(...soles.map(layer=>layer.rect[1]!+layer.rect[3]!)))*data.height;
   const width=data.height*data.aspect;
   const loader=new T.TextureLoader();
   await Promise.all(data.layers.map(async layer=>{
     const texture=await loader.loadAsync(urls[layer.file]!);texture.colorSpace=T.SRGBColorSpace;texture.anisotropy=8;
     const [x,y,w,h]=layer.rect as [number,number,number,number];const [px,py]=layer.pivot as [number,number];
-    const group=new T.Group();group.name=`paint_${layer.part}`;group.position.set((px-.5)*width,(1-py)*data.height,layer.depth);rig.add(group);
+    const group=new T.Group();group.name=`paint_${layer.part}`;group.position.set((px-.5)*width,(1-py)*data.height,layer.depth);group.userData.paintRest=group.position.toArray();rig.add(group);
     const geometry=new T.PlaneGeometry(w*width,h*data.height,8,8);
     // A gentle convex surface lets the lamp key and rim respond to scene light.
     const pos=geometry.attributes.position!;
@@ -31,7 +33,9 @@ export async function loadPaintedModel(id:string) {
   }
   const head=new T.Group();head.name=`${data.role}_head`;
   // Existing protected-face and effect anchors use the painted face centroid.
-  head.position.set((data.face[0]!-.5)*width,(1-data.face[1]!)*data.height-.20,.10);rig.add(head);
+  head.position.set((data.face[0]!-.5)*width,(1-data.face[1]!)*data.height-.20,.10);
+  const headLayer=rig.getObjectByName('paint_head');
+  if(headLayer){head.position.sub(headLayer.position);headLayer.add(head);}else rig.add(head);
   model.userData.paintMaterialReady=false;
   return {scene:model,animations:[] as T.AnimationClip[]};
 }
@@ -73,24 +77,33 @@ export function installPaintedMaterial(material:T.MeshStandardMaterial) {
 }
 
 /** Same event clock/root travel as 3D; bounded cutout motion, no per-frame allocations. */
-export function animatePainted(model:T.Object3D,camera:T.Camera,time:number,clip:string,progress:number|undefined,reduced:boolean) {
+export function animatePainted(model:T.Object3D,camera:T.Camera,time:number,clip:string,progress:number|undefined,reduced:boolean,acting=false) {
   if(!model.userData.lookPainted)return;
   // Face the active camera in both axes; root travel still follows battle formations.
   model.parent!.getWorldQuaternion(relative).invert();model.quaternion.copy(relative).multiply(camera.quaternion);
-  const attack=/attack|skill|cast|ultimate|special/.test(clip),hit=/hit|stagger/.test(clip),happy=/victory|heal/.test(clip);
-  const t=progress??.5,beat=Math.sin(Math.PI*Math.min(1,t));
-  const breathe=reduced?0:Math.sin(time*2.4)*.006;
+  // The event owns the whole gesture: travel/recovery clips can be step/idle.
+  const attack=acting||/attack|skill|cast|ultimate|special|button-guard|yarn-giant|telegraph/.test(clip),hit=/hit|stagger/.test(clip),happy=/victory|heal/.test(clip);
+  const t=Math.max(0,Math.min(1,progress??.5)),beat=Math.sin(Math.PI*t);
+  const strike=t<.30?-.45*Math.sin(t/.30*Math.PI/2):t<.55?-.45+1.45*Math.sin((t-.30)/.25*Math.PI/2):Math.cos((t-.55)/.45*Math.PI/2);
+  const breathe=reduced?0:Math.sin(time*2.4)*.012;
   const cycle=time%5.3,blink=reduced?1:1-.96*Math.exp(-Math.pow((cycle-4.85)/.065,2));
   const expression=hit?.45:happy?.62:clip==='KO'?.05:1;
   model.traverse(node=>{if(node instanceof T.Mesh){const m=node.material as T.MeshStandardMaterial;if(m.userData.paintEyeOpen)m.userData.paintEyeOpen.value=blink*expression;}});
-  const rig=model.children[0]!;rig.scale.set(1-breathe+(hit?.025*beat:0),1+breathe-(hit?.045*beat:0),1);
+  const rig=model.children[0]!;rig.scale.set(1-breathe+(hit?.04*beat:0),1+breathe-(hit?.06*beat:0),1);
+  rig.rotation.z=reduced?0:hit?-.07*beat:attack?-.035*strike:Math.sin(time*1.2)*.008;
   for(const layer of rig.children){
     if(!layer.name.startsWith('paint_'))continue;
-    const part=layer.name.slice(6);layer.rotation.set(0,0,0);
+    const part=layer.name.slice(6);layer.rotation.set(0,0,0);layer.scale.set(1,1,1);
+    const rest=layer.userData.paintRest as number[];layer.position.fromArray(rest);
     if(reduced)continue;
-    if(part==='head')layer.rotation.z=(hit?-.035*beat:attack?-.012*beat:Math.sin(time*1.2)*.006);
-    if(part==='tail')layer.rotation.z=Math.sin(time*1.5)*.022;
-    if(part==='armR')layer.rotation.z=attack?-.045*beat:happy?-.035:Math.sin(time*1.9)*.008;
-    if(part==='armL')layer.rotation.z=attack?.025*beat:happy?.035:-Math.sin(time*1.9)*.008;
+    if(part==='head')layer.rotation.z=hit?-.07*beat:attack?.035*strike:Math.sin(time*1.2)*.018;
+    if(part==='tail')layer.rotation.z=Math.sin(time*1.5)*.09;
+    if(part==='armR')layer.rotation.z=attack?-.18*strike:happy?-.16:Math.sin(time*1.9)*.028;
+    if(part==='armL')layer.rotation.z=attack?.13*strike:happy?.16:-Math.sin(time*1.9)*.028;
+    if(part==='footL'||part==='footR'){
+      const side=part==='footL'?1:-1;
+      layer.rotation.z=attack?side*.04*strike:Math.sin(time*1.2)*side*.008;
+      layer.position.y+=attack?Math.max(0,strike*side)*.025:0;
+    }
   }
 }

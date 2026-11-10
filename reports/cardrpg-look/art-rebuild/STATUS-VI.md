@@ -1,5 +1,5 @@
-Đã dừng theo yêu cầu của bạn (2026-11-10 02:37 UTC); chỉ tiếp tục khi bạn nói “tiếp tục”.
-Đã lưu đủ 12 concept mèo, prompt, provenance và ảnh đối chiếu cả dàn; không tạo lại Mochi.
-Mochi/Soot có runtime thử; 10 mèo còn lại mới có concept. 11 prompt quái đã viết, chưa tạo ảnh.
-Q1/Q2/Q4 xong; Q3, roster, VFX toàn bộ và các bước sau vẫn còn trong QUEUE.md.
-Đã lưu handoff hiện tại; không để tác vụ tạo ảnh/chuyển 3D hoặc lịch thử lại chạy nền.
+Đang tiếp tục Lane B; chỉ dùng trình duyệt bên trong Codex.
+Đã lưu clip 12 giây: Button/Yarn có lấy đà, vung tay và thu chiêu; chân bám sàn tốt hơn.
+1.822 test qua; 5 seed giữ nguyên; 48 mẫu mặt mỗi cỡ 1440/1024 không lỗi chồng lấn; demo 31,78 MB.
+Button đã dùng phương án nhiều lớp sau 3 lần chuyển 3D lỗi; Yarn còn chờ lượt kế tiếp lúc 06:47 UTC.
+Đang làm tiếp concept quái; Mochi/Soot và 12 concept mèo được giữ nguyên.

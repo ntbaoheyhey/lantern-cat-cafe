@@ -60,3 +60,6 @@
 
 ## 2026-11-10 continuous-run override
 NON-STOP-RUN.txt supersedes historical pause/deadlock notes. Q2 has one geometry-separation attempt then rigid-segment fallback. Known issues do not prevent Q3/roster. Free conversion applies to all units; quota failure gets three spaced attempts then animated layered fallback. Q10 explicitly authorizes integration branch merge commits, never PR merges. Existing sources and previous measurements are preserved.
+
+## 2026-11-10T05:16:59.510589+00:00 resume and browser preference
+User explicitly resumed. Use internal chat browser only for provider workflow; do not operate native personal browsers. The approved original-asset conversion remains in scope; no payment/new account/credential access.

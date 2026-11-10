@@ -430,7 +430,9 @@ export class TurnScene {
       const bossShadow=isReadableBattle()&&isReadableBoss(asset);
       const shadowMaterial=bossShadow?this.blobMaterial.clone():this.blobMaterial;
       if(bossShadow){shadowMaterial.color.set('#49293e');shadowMaterial.opacity=.78;materials.push(shadowMaterial);}
-      const shadow=new T.Mesh(new T.PlaneGeometry(bossShadow||a.role==='yarn'?3:1.65,bossShadow||a.role==='yarn'?2.4:1.35),shadowMaterial);shadow.rotation.x=-Math.PI/2;shadow.position.y=.026;root.add(shadow);
+      const paintRig=model.userData.paintedRig as {height:number;aspect:number}|undefined;
+      // A thin illustrated actor needs contact under its soles, not a deep sphere shadow.
+      const shadow=new T.Mesh(new T.PlaneGeometry(paintRig?paintRig.height*paintRig.aspect*.82:bossShadow||a.role==='yarn'?3:1.65,paintRig?.55:bossShadow||a.role==='yarn'?2.4:1.35),shadowMaterial);shadow.rotation.x=-Math.PI/2;shadow.position.y=.026;root.add(shadow);
       const guard=new T.Mesh(sourceView.autoBattle?cardShieldGeometry():new T.SphereGeometry(.9,18,10,0,Math.PI*2,0,Math.PI/2),new T.MeshBasicMaterial({color:GOLD,transparent:true,opacity:sourceView.autoBattle?.50:.12,depthWrite:false,side:T.DoubleSide}));guard.position.y=.09;guard.visible=false;root.add(guard);
       const snare=new T.Group();for(let i=0;i<2;i++){const thread=new T.Mesh(new T.TorusGeometry(.47+i*.08,.018,5,32),new T.MeshBasicMaterial({color:VIOLET,transparent:true,opacity:.85}));thread.rotation.x=Math.PI/2+i*.35;thread.position.y=.2+i*.22;snare.add(thread);}snare.visible=false;root.add(snare);
       const base=point(a,boss);root.position.copy(base);model.rotation.y=restYaw(a.side);this.scene.add(root);
@@ -548,7 +550,7 @@ export class TurnScene {
       this.animatePuppet(p,clip,view.fixedTime!==undefined?0:delta,view.fixedTime!==undefined?(view.modelProgress??progress??(clip==='idle'?.35:.45)):progress);
       if(view.autoBattle && p.head) p.headPose.copy(p.head.quaternion);
       p.face?.animate(cardExpression(clip, !!frame && source === p), this.time, p.gaze.yaw, view.reducedMotion);
-      animatePainted(p.model,this.camera,this.time,clip,progress,view.reducedMotion);
+      animatePainted(p.model,this.camera,this.time,clip,progress,view.reducedMotion,!!frame&&source===p);
       animateGeneratedFace(p.model,clip,this.time,view.reducedMotion);
       const involved=!frame||source===p||frame.plan.targetIds.includes(a.id);
       p.materials.forEach((m,i)=>{if(m instanceof T.MeshStandardMaterial)m.color.copy(p.baseColors[i]!).multiplyScalar(involved?1:.7)});
