@@ -144,3 +144,6 @@ Brioche đã duyệt: giỏ đung đưa rồi trở lại, bàn tay trống đư
 
 Marigold đã duyệt: nâng bình vàng rồi nghiêng vòi ở nhịp ra chiêu; má, cổ áo cánh hoa, đuôi và váy liền mạch ở x1.
 34 test web và7 test cắt lớp,16ảnh/12lượt chiêu/type/lint/parity đạt; bản chung 38,595,682byte. Giữ động tác tay trống nhỏ vì còn viền tay áo255pixel nguồn; chuyển động7,5→7,7, tổng7,8. Tiếp tục Button Guard.
+
+Button Guard đã duyệt: kim lấy đà rồi đưa về phía đối thủ, khiên đỡ lên, hai giày bám sàn; giáp ngực/mũ/thắt lưng liền mạch.
+35 test web và8 test cắt lớp,16ảnh/8lượt chiêu/type/lint/parity đạt; bản chung 38,625,282byte. Đã đặt điểm phát đúng đầu kim và tâm khiên; chuyển động7,5→7,7, tổng7,8. Tiếp tục Velvet.

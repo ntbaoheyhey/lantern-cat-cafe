@@ -230,3 +230,9 @@ P20 A6 disposal report resolved: reproduced expected3/received5, added idempoten
 2026-11-10T22:11:16.504319+00:00 P29 source2 has one connected component per part and preserves complete pot/palm, but visual source overlay shows an apron-edge strip following armL. Source3 moves that inner contour into the visible sleeve/apron gap and trims two tail/cloth corners. Source2 assets/masters retained; this is the final source repair for this item.
 
 2026-11-10T22:12:52.009515+00:00 P29 final source3 keeps255source-pixel lower-sleeve fringe on body after apron-strip removal. Per max3 source repairs, use the restrained<=.08rad offhand fallback and judge in realx1; pot motion remains independent. Pipeline test initially sampled transparent tail pixel(280,913); replaced with measured opaque tail-fringe pixel(280,909) without source/config change.
+
+2026-11-10T22:24:59.258600+00:00 P30 source1 has one connected component per part, but head still carries leather shoulder/red-collar wedges and needle arm retains a thin chest-rim strip. Source2 follows the helmet/dark-face contour and begins needle-arm cloth below its rigid shoulder cap; preserve full original needle. Source1 configs/rig/atlas/masters retained.
+
+P30 socket audit corrects the preparation note: old needle source(.94,.08) has alpha0. First opaque tip is(1093,83), alpha>180 in1141x1200. Synchronize config/rig socket only; source2 raster unchanged and pipeline input receipt refreshed. OffHand is the opaque shield centre(192,686).
+
+P30 evidence compression: the six actual native-Yarn PNGs pass lossless pixel/metadata equality, saving121772B. Extra old .png paths include JPEG-encoded images despite their extension; both PNG refilter and IDAT-only attempts rejected them before writing. Preserve those files unchanged; use value-preserving JSON whitespace compaction for the small remaining budget gap.
