@@ -1,7 +1,7 @@
 # Lane B current state
 
 ACTIVE — user resumed; Q3 bounded close delivered, Q5 roster continuing with native Yarn source review/repair. No source regeneration.
-Worktree /Users/bao/taskbar-hero-cardrpg-b2; branch codex/cardrpg-art-r1-2026-11-09; draft #427; latest pushed74c6a9555; current material correction awaits real-renderer verification.
+Worktree /Users/bao/taskbar-hero-cardrpg-b2; branch codex/cardrpg-art-r1-2026-11-09; draft #427; latest pushed95a6c369e; current material correction awaits real-renderer verification.
 Q1/Q2/Q3/Q4/Q9 DONE (Q3 bounded PARTIAL quality, pilot7.71; see R1-DECISION). Q5 roster active: Yarn attempt1 exported but source rejected; raw repair1 rejected visually; shell repair2 source approved, packed battle review completed:8poses/0errors,24faces0offenders,0UIoverlap; additive crease relief fails visual review; Button repaired-source rejected, reviewed fallback retained.
 Existing Mochi/Soot conversions and all25 original concept masters are preserved.
 Latest INBOX: local-mps only, alpha inputs, no RMBG, one inference at a time under timing lease.

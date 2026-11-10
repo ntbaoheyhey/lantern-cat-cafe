@@ -2,7 +2,7 @@
 
 ACTIVE — continue NON-STOP-RUN/QUEUE; user resumed, no current pause.
 Worktree /Users/bao/taskbar-hero-cardrpg-b2; branch codex/cardrpg-art-r1-2026-11-09; draft#427.
-Latest pushed74c6a9555; Q3 pilot closed PARTIAL, Q5 roster continues.
+Latest pushed95a6c369e; Q3 pilot closed PARTIAL, Q5 roster continues.
 Do not redo R0/M5/S6, Q1/Q2/Q3/Q4/Q9, Mochi/Soot conversions,25original concepts,12VFXmasters or completed phase checks.
 Latest INBOX: TRELLIS local-mps only, one model at a time; alpha-only/noRMBG. No browser generation; internal browser for review only.
 External ~/art/trellis-mac d58628f4; Python3.11/Torch2.15/MPS/import/DINO access pass;19weight files cached16.18GB. No setup/smoke repeat.

@@ -72,7 +72,17 @@ try{
       if(await exists(path))row.attempts.push(await read(path));
     }
     let success=row.attempts.find(r=>r.status==='GENERATED_NOT_REVIEWED');
-    while(!success&&row.attempts.length<queue.maxAttempts&&!await shouldStop()){
+    // Recover the same hold after a process interruption between receipt write
+    // and queue update. Completed decode data must survive a fresh session.
+    if(!success)for(const receipt of [...row.attempts].reverse()){
+      const checkpoint=await retainedDecode(external+`/outputs/${row.id}/attempt-${receipt.attempt}`,row.id,receipt);
+      if(checkpoint){
+        row.sourceReviewPending=true;row.retainedCheckpoint=checkpoint;
+        row.reviewReason='Retained decode recovered on resume; review saved source before another inference';
+        row.status='DECODED_REPAIR_REQUIRED';await save(queuePath,queue);break;
+      }
+    }
+    while(!success&&!row.sourceReviewPending&&row.attempts.length<queue.maxAttempts&&!await shouldStop()){
       const n=row.attempts.length+1,seed=row.seed+(n-1)*1000;
       const out=external+`/outputs/${row.id}/attempt-${n}`;
       await mkdir(dirname(out),{recursive:true});
