@@ -1,38 +1,27 @@
 # Current Lane B handoff
 
-Updated: 2026-11-10T05:16:59.510589+00:00.
-Status: ACTIVE after explicit user resume; prior pause no longer applies.
-Use the internal chat browser only, per latest user correction. Never operate native Safari/Chrome.
-Continue top unfinished unblocked queue item; checkpoints are not stops.
-
-Worktree: /Users/bao/taskbar-hero-cardrpg-b2
-Branch: codex/cardrpg-art-r1-2026-11-09; draft PR #427.
-Report deadline retained: 2026-11-20 12:00 UTC, subject to this explicit pause.
-
-Completed: Q1/Q2/Q4; R0/M5/S6 and R1 housekeeping must not be redone.
-Q2 Mochi uses reviewed rigid-module fallback after surface separation failed; independent arm motion remains limited.
-Mochi source and conversion unchanged; never regenerate or resubmit it.
-Soot source/export/runner/battle review retained from b2ab85e18; palette fix and rigid-motion limits remain recorded.
-Q3 unfinished: Button Guard attempt1 hit daily ZeroGPU limit; Yarn not submitted.
-Button attempt2 submitted in internal browser after more than2h; result pending.
-Keep max3attempts and obey any provider reset/quota notice; no payment or new account.
-
-Q5 concept sources: all12cats saved and visually reviewed;10cats after Mochi/Soot still have no runtime conversion.
-Preserved Clover/Panko from previous work; added Mallow,Cinnamon,Velvet,Biscuit,Brioche,Marigold,Sorrel,Inkcap.
-Source assets: assets/source/look-v3/concepts/; raw masters: ~/art/look-v3/concepts/.
-Prompts: tools/cardrpg-look/art-rebuild/prompts/; per-asset receipts: r2/concepts/*.json; provenance: assets/provenance/look.md.
-Equal-height concept sheet and review: r2/concepts/cats-concepts.webp and CATS-REVIEW.md.
-Eleven remaining enemy prompts are written, but NO new enemy concept was generated this session.
-No runtime renderer or gameplay change this session; no new runtime test/perf/parity PASS claimed.
-Evidence74MiB/120MB; source32MiB/60MB at pause.
-
-After compaction read QUEUE.md, STATE.md, INBOX.md and current user direction; take top unfinished unblocked item.
-Current order: Q3 provider retry/4unit review; Q5 enemy concepts during quota wait; roster; VFX; stage; portraits; hygiene; integration; report.
-Q6-Q11 remain unfinished. R8 not complete; ART-REPORT.md contains a PARTIAL pause checkpoint.
-Keep generated-image/video -> cleanup -> runtime workflow; both reported VFX areas matter (shield hand and enemies).
-One agent only; no paid services/new accounts/credentials/PR merges/deploys/force pushes.
-Only B canvas/assets/reports; never edit A/U worktrees. Integration merge commits allowed only by Q10.
-Preserve unrelated entry leftovers: docs/cardrpg-look/v5-art-mochi-preview.html and tools/cardrpg-look/art-rebuild/segmentation-proxy.mjs.
-Current external job: Button attempt2; internal browser tab1. See conversions.json; never duplicate a running job.
-
-Q3 provider update: Button final extraction also failed (resumed-session summary); no further retry. Layered fallback being articulated and reviewed. Yarn first Generate returned Error at05:50UTC; next attempt>=06:47UTC, final>=07:47UTC. Never duplicate or bypass provider quotas.
+ACTIVE after explicit user resume. Only hard stops in NON-STOP-RUN.txt apply.
+Use Codex internal browser only; never operate personal Safari/Chrome. One agent.
+Worktree /Users/bao/taskbar-hero-cardrpg-b2; branch codex/cardrpg-art-r1-2026-11-09; draft #427.
+Latest pushed code 78c02c3db: painted foes keep gesture across step/idle, soles/contact shadow and head protection anchor fixed.
+Do not redo R0/M5/S6, R1 housekeeping, Q1/Q2/Q4, Mochi/Soot source conversions.
+Q2 uses rigid modules after failed separation; independent arm movement remains limited.
+Q3 pending: Button exhausted three provider attempts and uses articulated layered fallback.
+Yarn first attempt errored; retry2 not before06:47UTC, retry3 not before07:47UTC. Respect quota reset notices.
+Q3 motion review: r1/foes-fallback/REVIEW.md + motion-after.webm (12s, internal browser).
+1822 tests/type/lint/build passed; five seeds exact; 48 face samples per1440/1024 no offenders/overlaps.
+Current full demo31777616B. Full Q3 E2E/final four-unit score still pending.
+Q5 sources now complete:12cat +13enemy concept masters reviewed, receipts/provenance retained.
+Sources assets/source/look-v3/concepts; original generated masters ~/art/look-v3/concepts.
+Enemy sheet/review r2/concepts/enemies-concepts.webp and ENEMIES-REVIEW.md.
+Q5 runtime still pending beyond Mochi/Soot and Button/Yarn fallback candidates.
+Current provider job CLOVER attempt1, internal tab1, seed20261113. Observe, never duplicate.
+Conversions receipt r1/roster/conversions.json is authoritative for timing and attempts.
+Internal review tab2: http://127.0.0.1:5920/cardrpg-v5full-v5-q3-review.html?dev=1.
+Q6-Q11 unfinished; continue top unfinished unblocked queue item, check INBOX/STOP-B between items.
+Keep generated-source -> cleanup -> runtime workflow, including every ultimate; no Mochi regeneration.
+B edits only battle canvas/assets/reports. No A/U worktree edits, PR merges, deploys or force pushes.
+Q10 alone permits integration merge commits into #420; keep A-owned files from A.
+Evidence80MiB/120MB; source51MiB/60MB. New large masters should remain outside git if cap is reached.
+Preserve unrelated docs/cardrpg-look/v5-art-mochi-preview.html and tools/cardrpg-look/art-rebuild/segmentation-proxy.mjs.
+Report deadline20Nov12UTC. Checkpoints/reports are not stops.

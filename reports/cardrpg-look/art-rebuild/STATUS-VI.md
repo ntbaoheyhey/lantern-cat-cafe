@@ -1,5 +1,5 @@
-Đang tiếp tục Lane B; chỉ dùng trình duyệt bên trong Codex.
-Đã lưu clip 12 giây: Button/Yarn có lấy đà, vung tay và thu chiêu; chân bám sàn tốt hơn.
-1.822 test qua; 5 seed giữ nguyên; 48 mẫu mặt mỗi cỡ 1440/1024 không lỗi chồng lấn; demo 31,78 MB.
-Button đã dùng phương án nhiều lớp sau 3 lần chuyển 3D lỗi; Yarn còn chờ lượt kế tiếp lúc 06:47 UTC.
-Đang làm tiếp concept quái; Mochi/Soot và 12 concept mèo được giữ nguyên.
+Chỉ dùng trình duyệt bên trong Codex.
+Đã đủ 12 concept mèo và 13 concept quái; nguồn cũ Mochi/Soot giữ nguyên.
+Bản sửa chuyển động đã đẩy lên draft; quái nhiều lớp còn hạn chế chiều sâu khi xoay góc.
+Đang chuyển Clover bằng ảnh đã có; Yarn chờ lượt kế tiếp, Button dùng phương án dự phòng sau ba lần lỗi.
+Roster chạy trong trận và VFX toàn bộ vẫn chưa hoàn thành; tiếp tục theo QUEUE.md.
