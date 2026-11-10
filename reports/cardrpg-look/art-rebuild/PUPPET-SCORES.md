@@ -16,7 +16,7 @@ Evidence uses A6 shell in a disposable merged preview; primary branch contains n
 | Biscuit | 8.6 | 7.5 | 7.8 | 7.8 | p4/batch2-final/biscuit-comparison.webp and biscuit-motion.webp; cookie shield and spatula retained |
 | Brioche | 8.6 | 7.5 | 7.8 | 7.8 | p4/batch2-final/brioche-comparison.webp and brioche-motion.webp; basket/skirt/tail retained |
 | Marigold | 8.6 | 7.5 | 7.8 | 7.8 | p4/batch2-final/marigold-comparison.webp and marigold-motion.webp; petal collar and teapot remain readable |
-| Sorrel | 8.6 | 7.5 | 7.7 | 7.7 | p4/batch2-final/sorrel-comparison.webp and sorrel-motion.webp; leaf hat/staff retained; eye ROI repaired |
+| Sorrel | 8.6 | 7.7 | 7.7 | 7.7 | p19/evidence/sorrel-follow-through.webp; staff planted at its painted tip, open palm and delayed tail; restrained shoulder amplitude |
 | Inkcap | 8.6 | 7.7 | 7.8 | 7.8 | p16/evidence/inkcap-follow-through.webp; raised lantern/open offhand and subtle per-actor tail bend; tail remains partly obscured in this formation |
 | Button Guard | 8.6 | 7.5 | 7.8 | 7.8 | p5/batch1-final/button-guard-comparison.webp and button-guard-motion.webp; button shield/needle silhouette intact |
 | Sock Skipper | 8.6 | 7.7 | 7.7 | 7.7 | p17/evidence/sock-skipper-hop.webp; short anticipation/hop/landing, forward mitten and thread recovery; boot roll remains shared |

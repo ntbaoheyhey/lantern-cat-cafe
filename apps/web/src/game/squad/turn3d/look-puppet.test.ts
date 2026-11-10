@@ -4,7 +4,8 @@ import rig from '../../../../../../assets/cardrpg-look/v3-puppets/mochi.rig.json
 import inkcapRig from '../../../../../../assets/cardrpg-look/v3-puppets/inkcap.rig.json';
 import sockRig from '../../../../../../assets/cardrpg-look/v3-puppets/sock-skipper.rig.json';
 import cinnamonRig from '../../../../../../assets/cardrpg-look/v3-puppets/cinnamon.rig.json';
-import { parsePuppetRig, puppetMotion, puppetPhase, puppetPose, plantedPuppetPivot } from './look-puppet-rig';
+import sorrelRig from '../../../../../../assets/cardrpg-look/v3-puppets/sorrel.rig.json';
+import { parsePuppetRig, puppetMotion, puppetPhase, puppetPose, plantedPuppetPivot, SORREL_STAFF_CONTACT } from './look-puppet-rig';
 import { artPipeline } from './look-art';
 import { CATS, ENEMIES } from '../../../../../../packages/game-rules/src/cardrpg/depth/catalog';
 
@@ -137,6 +138,23 @@ describe('illustrated puppet contract and event motions',()=>{
     expect(lifted.y).toBeGreaterThan(Number(y)+.04);
     expect(puppetPose('cast',3,.38,false,.4,'inkcap').tailBend).not.toBe(puppetPose('idle',3,0,false,.4,'inkcap').tailBend);
     expect(puppetPose('cast',3,.38,false,.4,'clover').tailBend).toBe(0);
+  });
+
+  it('anchors Sorrel\'s painted staff tip through breath and casting without a wide shoulder shift',()=>{
+    const arm=sorrelRig.layers.find(l=>l.part==='armR')!;
+    const rest=[(arm.pivot[0]!-.5)*sorrelRig.height*sorrelRig.aspect,(1-arm.pivot[1]!)*sorrelRig.height];
+    const target=new Vector3(rest[0]!+SORREL_STAFF_CONTACT[0],rest[1]!+SORREL_STAFF_CONTACT[1],0);
+    for(const motion of ['idle','attack','cast','ultimate'] as const)for(let i=0;i<=60;i++){
+      const p=puppetPose(motion,i/10,i/60,false,.4,'sorrel'),scale=[1-p.breathe,1+p.breathe];
+      expect(p.staffPlant).toBe(true);
+      const [x,y]=plantedPuppetPivot(rest,SORREL_STAFF_CONTACT,p.prop,p.lean,scale);
+      const actual=new Vector3(...SORREL_STAFF_CONTACT,0).applyMatrix4(new Matrix4().makeRotationZ(p.prop)).add(new Vector3(x,y,0));
+      actual.applyMatrix4(new Matrix4().makeScale(scale[0]!,scale[1]!,1)).applyMatrix4(new Matrix4().makeRotationZ(p.lean));
+      expect(actual.distanceTo(target)).toBeLessThan(1e-10);
+      expect(Math.hypot(x-rest[0]!,y-rest[1]!)).toBeLessThan(.1);
+      expect(puppetPose(motion,i/10,i/60,true,.4,'sorrel').staffPlant).toBe(false);
+    }
+    expect(puppetPose('cast',0,.38,false,0,'cinnamon').staffPlant).toBe(false);
   });
 
   it('raises Cinnamon\'s actual serving tray and returns its tail to the current idle pose',()=>{

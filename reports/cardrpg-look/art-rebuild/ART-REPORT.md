@@ -17,7 +17,7 @@ These scores are Lane B visual judgments, not user acceptance or an independent 
 | Roster coverage | 10% | 10.0 | All 25 current rules IDs have a valid original rig and atlas. |
 | Performance and size | 5% | 8.5 | Warmed cast p95/max 16.8 ms; current combined artifact 38.18 MB. Cold loading is not included in the timing claim. |
 
-The weighted score is **8.225/10 (8.23 rounded)**, below the 8.5 target. Spool Ram now has a clearer horn dip, planted hoof contacts and delayed tail recovery (motion 7.7, overall 7.7). Inkcap now raises its lantern with a clearer open offhand (motion 7.7, overall 7.8); Sock Skipper now has a short hop and forward mitten reach (motion 7.7, overall 7.7); Cinnamon now lifts its serving tray with a restrained cup gesture (motion7.7, overall7.7); Sorrel is the next unrefined7.7/7.5row. Shared gestures, sampled eyelid closure and understated ultimate spectacle remain quality limits. No score is raised merely because a test passed.
+The weighted score is **8.225/10 (8.23 rounded)**, below the 8.5 target. Spool Ram now has a clearer horn dip, planted hoof contacts and delayed tail recovery (motion 7.7, overall 7.7). Inkcap now raises its lantern with a clearer open offhand (motion 7.7, overall 7.8); Sock Skipper now has a short hop and forward mitten reach (motion 7.7, overall 7.7); Cinnamon now lifts its serving tray with a restrained cup gesture (motion7.7, overall7.7); Sorrel now tilts its staff around the painted floor tip (motion7.7, overall7.7). Binding Thread and Practice Cushion remain unrefined7.7/7.5rows. Shared gestures, sampled eyelid closure and understated ultimate spectacle remain quality limits. No score is raised merely because a test passed.
 
 R0's weighted 5.9966 used a different rubric and is not directly comparable. Comparable observations are cat appeal 5.0 → about 7.8 battle appearance; foes 4.0 → 7.7–8.0; motion 5.5 → 7.5; VFX 6.233 → 8.1; stage 6.5 → 8.0. The two comparison posters preserve the historical R0 images. They do not claim the same HUD, camera or exact action frame.
 
@@ -37,7 +37,7 @@ Accepted prior work was reused on resume. The roster has valid rig/atlas coverag
 
 P15 adds six focused tests and 12 actual rules-resolved phase-three views: Yarn Giant, Rain Spool and Pantry Crown, with three/four live helpers at both 1440×900 and 1280×720. There are no page errors, missing live labels, out-of-canvas units or face/HP collisions. Manual review confirms the helper and boss faces remain identifiable. Five rules seeds match the retained baseline across six art modes; 102 resolved plans remain unmodified. Static views are not playback/performance evidence, and deliberate melee contact is not treated as a silhouette-separation failure.
 
-The actual combined A6 `e94713b8be307350ab6035e7f9fec445992a86c6` + B artifact is **38,185,046 bytes**, below the **40,000,000-byte** limit with **1,814,954 bytes** headroom. B's embedded asset share is **23,545,868 bytes**, including retained classic/diagnostic assets. Optional portrait variants overlap imported assets and are not added to this measured artifact. A6 should rerun the existing size guard when changing its selected imports. Film masters and intermediate captures are outside the game artifact.
+The actual combined A6 `e94713b8be307350ab6035e7f9fec445992a86c6` + B artifact is **38,185,390 bytes**, below the **40,000,000-byte** limit with **1,814,610 bytes** headroom. B's embedded asset share is **23,545,868 bytes**, including retained classic/diagnostic assets. Optional portrait variants overlap imported assets and are not added to this measured artifact. A6 should rerun the existing size guard when changing its selected imports. Film masters and intermediate captures are outside the game artifact.
 
 P14 adds a manually reviewed 16-pose comparison, eight natural x1 casts including reduced motion, 19 focused tests and exact rules parity. Main-hand socket error is zero; local planted-hoof drift is below 5e-16 world units. The existing atlas and rig remain unchanged. Warmed p95 stays at most 16.8 ms. This improves one unit, without changing the overall motion score.
 
@@ -49,6 +49,8 @@ P18 adds16paired Cinnamon views,12natural casts,24focused tests and exact parity
 
 P20 closes A6's boss-atmosphere disposal report: each geometry/material/instanced mesh releases exactly once, including motes, even on a second disposal. The existing test now observes each actual resource; four focused tests and typecheck/lint pass. Live drawing is unchanged.
 
+P19 reuses16paired Sorrel views,12natural x1 casts,25focused tests and exact parity. The staff pivots at its source-painted contact with drift below1e-15; shoulders and wrist remain continuous. Motion7.7/overall7.7, with no whole-roster uplift.
+
 ## Integration and provenance
 
 - Runtime: `apps/web/src/game/squad/turn3d/look-puppet.ts`, `look-puppet-rig.ts` and `look-puppet-formation.ts`.
@@ -57,6 +59,6 @@ P20 closes A6's boss-atmosphere disposal report: each geometry/material/instance
 - Canvas owns visible damage/crit/heal/shield/KO totals; the DOM labels remain accessible. A6 retains its top/bottom HUD envelopes and cut-in overlay.
 - Original provenance: `assets/provenance/look.md`, concept receipts and per-unit puppet receipts. No other game's art, rig or animation was copied or used as a generation reference. This continuation used local scripts and the existing original assets, with no new image generation, paid service or account.
 
-Evidence: [roster scores](PUPPET-SCORES.md), [VFX](p6/REVIEW.md), [stage](p7/REVIEW.md), [portraits](p8/REVIEW.md), [budget](p15/budget/budget.json), [Soot motion](p12/REVIEW.md), [Spool Ram motion](p14/REVIEW.md), [Inkcap motion](p16/REVIEW.md), [Sock Skipper motion](p17/REVIEW.md), [Cinnamon motion](p18/REVIEW.md), [initial boss composition](p13/REVIEW.md), [phase-three formation](p15/REVIEW.md), [films](p10/REVIEW.md), and [A6 handoff](B-OUTBOX.md).
+Evidence: [roster scores](PUPPET-SCORES.md), [VFX](p6/REVIEW.md), [stage](p7/REVIEW.md), [portraits](p8/REVIEW.md), [budget](p15/budget/budget.json), [Soot motion](p12/REVIEW.md), [Spool Ram motion](p14/REVIEW.md), [Inkcap motion](p16/REVIEW.md), [Sock Skipper motion](p17/REVIEW.md), [Cinnamon motion](p18/REVIEW.md), [Sorrel motion](p19/REVIEW.md), [initial boss composition](p13/REVIEW.md), [phase-three formation](p15/REVIEW.md), [films](p10/REVIEW.md), and [A6 handoff](B-OUTBOX.md).
 
 No user-only blocker is known. Motion refinement continues after the core report; completion of this report is not a stop under the user's non-stop instruction.
