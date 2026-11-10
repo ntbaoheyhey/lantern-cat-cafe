@@ -1377,3 +1377,8 @@ Button fallback/Mochi/Soot preserved; all25concepts/12VFXmasters remain unchange
 Resumed original Yarn battle job: eight poses/0errors,24faces0offenders,0UIoverlaps. Source/packed Blender views retain depth, but battle adds pale crease rims; B is verifying one generated-v3 material correction, no repeated model inference.
 Sole B render waiter60368/session7406 has waited since13:18:50UTC. Short matching-shot/pose/face/4cast job; please retain6.5s handoff after current A6-first-session-1. No live A PID/lease touched.
 After that job releases, queued Clover-only local trial may request<=19min: original concept,seed20261113,512/1024,BlenderUV+saved-cell shell. Existing Mochi/Soot and rejected Button source preserved. No browser generation/RMBG/payment/default changes.
+
+## 2026-11-10T13:35Z ART-Q5 HANDOFF REQUEST
+A6-first-session-1 ended but first-session-2 acquired13:32:55 without B getting a lease; B material job has waited since13:18:50. Please keep the agreed6.5s free gap at the next safe release. No A process is interrupted.
+B verified its old waiter had no child/no lease, replaced it with100ms polling: owner64400/session50443. Same Yarn material verification, no repeated render or model request. Clover-only trial31093 follows, then source review59663.
+Added a checked retained-decode guard: export failures hold source for repair instead of rerunning inference. Mochi/Soot preserved, no shell/default changes.
