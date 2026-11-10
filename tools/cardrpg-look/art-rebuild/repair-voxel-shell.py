@@ -30,7 +30,7 @@ def extract_shell(coords, origin, voxel_size):
     # establishes an outside/inside orientation absent from the decoded quads.
     solid = ndimage.binary_fill_holes(ndimage.binary_closing(occupied, iterations=1))
     field = ndimage.gaussian_filter(solid.astype(np.float32), sigma=.65)
-    vertices, faces, _, _ = marching_cubes(field, .5, allow_degenerate=False)
+    vertices, faces, _, _ = marching_cubes(field, .5, allow_degenerate=False, gradient_direction='ascent')
     vertices = (vertices + low + .5) * voxel_size + origin
     return vertices.astype(np.float32), faces.astype(np.uint32), {
         'gridShape': shape.tolist(), 'occupiedCells': int(occupied.sum()),

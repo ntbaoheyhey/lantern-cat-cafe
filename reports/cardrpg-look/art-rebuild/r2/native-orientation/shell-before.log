@@ -1,0 +1,13 @@
+.F.
+======================================================================
+FAIL: test_every_disconnected_shell_faces_outward_for_runtime_culling (__main__.ShellRecovery.test_every_disconnected_shell_faces_outward_for_runtime_culling)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/bao/taskbar-hero-cardrpg-b2/tools/cardrpg-look/art-rebuild/test-voxel-shell.py", line 31, in test_every_disconnected_shell_faces_outward_for_runtime_culling
+    self.assertGreater(component.volume, 0, 'Blender two-sided preview must not hide inward faces')
+AssertionError: np.float64(-5.223493277029783e-06) not greater than 0 : Blender two-sided preview must not hide inward faces
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.013s
+
+FAILED (failures=1)

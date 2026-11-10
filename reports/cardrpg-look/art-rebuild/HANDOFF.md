@@ -1,35 +1,19 @@
 # Current Lane B handoff
 
-ACTIVE — continue NON-STOP-RUN/QUEUE; user resumed, no current pause.
-Worktree /Users/bao/taskbar-hero-cardrpg-b2; branch codex/cardrpg-art-r1-2026-11-09; draft#427.
-Latest pushed95a6c369e; Q3 pilot closed PARTIAL, Q5 roster continues.
-Do not redo R0/M5/S6, Q1/Q2/Q3/Q4/Q9, Mochi/Soot conversions,25original concepts,12VFXmasters or completed phase checks.
-Latest INBOX: TRELLIS local-mps only, one model at a time; alpha-only/noRMBG. No browser generation; internal browser for review only.
-External ~/art/trellis-mac d58628f4; Python3.11/Torch2.15/MPS/import/DINO access pass;19weight files cached16.18GB. No setup/smoke repeat.
-Smoke512 exported656.715s; UV-v/gutters repaired but visually coarser, so old Mochi/Soot retained.
-Button native attempts1/2 timed out in xatlas. Attempt2 saved decoded source/voxel colours outside git. No third Button inference.
-Export2 UVarea.34896 passed but actual source/clay review rejects shattered nonmanifold mesh. Never install/export2 as accepted.
-Local surface-repair1 .003voxel/.25smoothx2 failed drift after21.704s; noGLB. Surface-repair2 .0015/.12x1 failed98.78s: p95.024344/.017910>.015,754242tri. PARTIAL; retain already reviewed animated Button fallback.
-Original decoded input and failed repairs retained. Receipts/logs/distances in r2/native-button/surface-repairs. Blender now exits1 on script errors; exporter rejects surfaceDriftPass=false.
-CURRENT: Yarn native attempt1 completed847.754s; source108834832B fdee0c83 at ~/art/look-v3/local-generation/outputs/yarn-giant/attempt-1/yarn-giant.glb. No duplicate inference. Session21336 and source-review29044 finished. Raw and decoded checkpoints preserved.
-Source1 front/side/clay REJECTED: fragmented triangles hide eyes. Raw topology has921309nonmanifold edges before simplify; reduced surface adds80276duplicates. Evidence r2/native-yarn/source1. No runtime install.
-RAW repair1 completed: distance PASS but source views still fragmented, REJECTED. Four closest-surface fixtures PASS, unchanged .015bound.
-Local shell repair2 from saved native cells (no inference) restores continuous yarn/eyes/crown; source front/side/clay inspected. Raw-shell2/export/source.glb SHA8fbe4de9; drift.006801/.002699p95,100Ksource.
-Packed-shell2 is1.298MB/61068tri; battle job36525 FINISHED:8poses/0errors,1shot/0UIoverlap,24faces0offenders. Visual review finds pale crease contours from old enemy relief; source and packed Blender views are coherent. Preview file installed locally but NOT accepted.
-Current B-LOCAL-012 material fix skips old relief for generated-v3 foes only; type/lint/5testsPASS. Waiting job50443/owner64400 runs /tmp/cardrpg-v5full-yarn-material-verify.mjs; log /tmp/cardrpg-v5full-yarn-material1.log. Includes same shot/8poses/faces/4casts. No other render waiter.
-Successor session31093/owner64547 (/tmp/cardrpg-v5full-clover-after-material.mjs) waits for64400 to exit successfully, then runs local-roster limit1: Clover only,512/1024,seed20261113,BlenderUV+voxel-shell. No inference running yet. Do not launch duplicate Clover or repeat completed source.
-Source-review successor session59663/owner64637 follows64547 and renders existing exported Clover only.
-No model inference currently; successor may start after material job. Inspect material1/motion before accepting Yarn; fallback if rejected.10nativeguards/2shellguardsPASS.
-local-roster sourceReviewPending excludes Button and active Yarn from duplicate inference. Smoke review saved at ~/art/look-v3/local-generation/smoke/mochi/roster-review.json, trial authorization only. It also supports per-row uvBackend and hash-verified recovered entries. Intake watcher remains stopped pending usable source.
-Q3 bounded close documented in R1-DECISION.md: all4play, appeal/menace7.75>=7.0, pilotweighted7.71<8.5; PARTIAL quality. Q5 roster active; Yarn trial continues there. Known limits do not block queue.
-Q6 all12hero skill/ult/passive and13enemy families wired; audit7.7PARTIAL. Normal/passive similarity and large-motif face clipping remain; bounded3repairs already used.
-Q7 camera/key checkpoint7.5;1440/1024posters/96facesPASS. Full roster coverage pending.
-Q8 portraits/icons source manifest assets/cardrpg-look/v3-portraits/manifest.json;25face crops56/72/144px delivered forU/A. Compare runtime identities before closing.
-Q9 DONE: normal/dev FeelLab hygiene verified, shell requests sent viaB-OUTBOX; never edit shell/A/U worktrees.
-Q10 integration/films andQ11report queued. Q10 expressly permits new integration merge commits into#420 only; never PRmerge/deploy/forcepush/defaultflags.
-R4 validation retained:1823webtests/type/lint/build,5rulesseeds/85plans exact;168casts max16.8ms,111draws,183595tri;324faces0offenders.
-R5:8touchedtests/type/lint,6nativecasts16.8ms; combinedR4/R5 E2E421PASS. Cold3native+3CPU4 max49.9/183.3ms; traces outsidegit. Do not rerun unchanged checks.
-Full35743045B/lean25223285B; lean same-shot comparison pending. Evidence97.51MB/source51MiB; large masters outsidegit.
-R4film r4/film/roster-vfx-x1.mp4 exists; contact sheet viewed, continuous internal-browser review pending.
-Preserve unrelated docs/cardrpg-look/v5-art-mochi-preview.html and tools/cardrpg-look/art-rebuild/segmentation-proxy.mjs.
-Check STOP-B/INBOX between items. Report deadline20Nov12UTC. Commit/push checkpoints and immediately continue; no final reply while queue remains unless hard stop.
+ACTIVE — continue NON-STOP-RUN/QUEUE; no current user pause. Worktree /Users/bao/taskbar-hero-cardrpg-b2, branch codex/cardrpg-art-r1-2026-11-09, draft #427. Latest pushed 1bf6f4a8d. Integration #420 remote c5712f7c0 already pushed; no need to redo housekeeping.
+Do not redo R0/M5/S6/Q1–Q4/Q9, existing Mochi/Soot,25concepts,12VFXmasters or completed checks. Latest INBOX: local-mps only, one inference, alpha/noRMBG; browser only for internal review.
+Q5 active. Q3 pilot closed PARTIAL7.71. Existing Button fallback retained; no third inference. Yarn shell repair2 source exists; old material attempts1/2 and all rejected source data retained.
+Clover native attempt1 FINISHED410.598s; source ~/art/look-v3/local-generation/outputs/clover/attempt-1/clover.glb SHA8d6b7297. Source front/side/back inspected, no regeneration. Packed1 at same root, source/surface/rig/decoded-packed views are smooth in Blender.
+Real material2 battle and8poses each Clover/Yarn completed:0errors/UIoverlaps,48faces0offenders,4casts16.8ms/189052peaktri. Toon false preserves Yarn dark values, but triangular shards remained. UNACCEPTED preview GLBs installed locally, not yet committed.
+CURRENT DIAGNOSIS B-LOCAL-014: voxel shells are globally INWARD! Signed Clover/Yarn volumes-.0092167/-.0317162. Blender two-sided previews hid this; real FrontSide renderer exposes interior faces. Same-artifact no-mipmap diagnostic fails, DoubleSide restores coherent surfaces. Do NOT use DoubleSide as final workaround; reverse source winding/normals only. All geometry/UV/texture data preserved.
+New tools fix-inward-glb.py and test-inward-glb.py:2testsPASS, preserve/deny overwrite/repeat/outward source. test-voxel-shell.py now has outward-component regression, original helperFAIL retained at /tmp/cardrpg-v5full-winding-before.log.
+ACTIVE sequential five-cat runner session36696/PID73035: Panko FINISHED466.642s; Mallow currently generating, then Cinnamon/Velvet/Biscuit. Log /tmp/cardrpg-v5full-roster-cats-batch1.log. Each uses512/1024/blenderUV/voxel-shell, one inference under shared lock. Do not start duplicate or change local-queue.json while runner holds cached state.
+Source correction/packing completed for Clover/Yarn; original verification95761 failed at missing build receipt directory after HTML write. Preserved log. Resume session52255 via /tmp/cardrpg-v5full-winding-verify-resume.mjs; log /tmp/cardrpg-v5full-winding-verify-resume.log. It starts at build, never repeats conversion/packing. Outputs: ~/art/look-v3/local-generation/outputs/{clover,yarn-giant}/outward1; reports r2/outward1; artifact /tmp/cardrpg-v5full-v3-outward1.html. Starts only after shared lease is available. Inspect actual result before acceptance.
+Safe helper update73387 FINISHED after Panko receipt and before Mallow; marching-cubes orientation now ascent, all3shelltestsPASS. Mallow onward records corrected helper hash. Panko winding-only correction completed at outputs/panko/outward1/source.glb; source review queued session39482, log /tmp/cardrpg-v5full-panko-source-review.log. No queue edits while runner caches it.
+Current typecheck/lint and3touchedenemytestsPASS (logs /tmp/cardrpg-v5full-outward-*). Do not infer whole phasePASS from that. Native outward regression pending safe helper edit.
+Next: inspect corrected Clover/Yarn screenshots; if good update receipts/provenance/review/STATUS/report, commit/push and immediately continue5cat batch source review/pack/battle. Every remaining PENDING row now uses blenderUV+voxel-shell. Existing outputs remain sourceReviewRequired until viewed.
+Q6 VFX implemented/audit7.7PARTIAL;3repairsused. Q7stage7.5,fullrostercoveragepending. Q8portraits/icons manifest complete, runtime matchingpending. Q10integration/films/Q11reportremain. NativeVFXfilm external, continuous internal-browser reviewpending.
+Retained R4/R5 checks421E2E,5exactseeds/85plans,168casts<=16.8ms,324faces0offenders,cold3+3 max49.9/183.3ms. Do not repeat unchanged phase checks.
+Full material2 candidate37,822,713B; previous lean25,223,285B is before roster additions. R2/BUDGET plans packaging; no full-rostersizePASS. Evidence ~97MiB; keep source/diagnosticPNGs outsidegit.
+Preserve unrelated docs/cardrpg-look/v5-art-mochi-preview.html and tools/cardrpg-look/art-rebuild/segmentation-proxy.mjs. Never edit A/U worktrees or shell. Q10 permits integration branch merge commits only; no PRmerge/deploy/forcepush/default changes.
+Check STOP-B/INBOX between items; reportdeadline20Nov12UTC. Checkpoints are not stops; continue queue in same turn.

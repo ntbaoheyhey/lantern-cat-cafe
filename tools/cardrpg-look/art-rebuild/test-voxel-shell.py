@@ -24,6 +24,12 @@ class ShellRecovery(unittest.TestCase):
         self.assertTrue(mesh.is_winding_consistent)
         self.assertEqual(len(mesh.split()), 2)
 
+    def test_every_disconnected_shell_faces_outward_for_runtime_culling(self):
+        v, f, _ = shell.extract_shell(self.cells, np.zeros(3), 1 / 512)
+        mesh = trimesh.Trimesh(v, f, process=False)
+        for component in mesh.split():
+            self.assertGreater(component.volume, 0, 'Blender two-sided preview must not hide inward faces')
+
     def test_invalid_cell_grid_is_rejected(self):
         with self.assertRaises(ValueError):
             shell.extract_shell(self.cells + .1, np.zeros(3), 1 / 512)

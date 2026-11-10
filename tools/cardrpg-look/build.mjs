@@ -1,6 +1,6 @@
 // Dedicated LOOK artifact; does not edit or invoke the lane A output builder.
 import { readFileSync, writeFileSync, mkdirSync, unlinkSync, existsSync } from 'node:fs';
-import { resolve, relative, extname, basename } from 'node:path';
+import { resolve, relative, extname, basename, dirname } from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { gzipSync } from 'node:zlib';
@@ -129,7 +129,7 @@ ${evidence.tags}
 <script>${showcase.script}</script>
 <script>${gallery.script}</script>
 <script id="payload" type="application/octet-stream">${payload}</script><script>${loader}</script></body></html>`;
-mkdirSync(resolve(root, 'docs/cardrpg-look'), { recursive: true });
+mkdirSync(dirname(resolve(root, outputPath)), { recursive: true });
 writeFileSync(resolve(root, outputPath), html);
 const sourceRoots = ['packages/game-rules/src', 'apps/web/src', 'assets', 'tools/cardrpg-depth', 'tools/cardrpg-big', 'tools/cardrpg-big2', 'tools/cardrpg-look', 'tools/cardrpg-demo/verify-delivery.py', 'tools/visual-support.mjs'];
 const files = execFileSync('git', ['ls-files', '--cached', '--others', '--exclude-standard', ...sourceRoots], { cwd: root, encoding: 'utf8' }).trim().split('\n');
@@ -147,5 +147,6 @@ const receipt = { gallery: { bytes: gallery.bytes, files: gallery.files }, lean,
   sha256: createHash('sha256').update(html).digest('hex'), runtimeDirty, sourceRoots, sourceHashes: hashes,
   sourceAssetHashes, assetHashes,
   references: ['docs/cardrpg-look/index.html', 'tools/cardrpg-big/build.mjs', 'packages/game-rules/src/cardrpg/depth', 'apps/web/src/game/cardrpg/depth'] };
+mkdirSync(dirname(resolve(root, receiptPath)), { recursive: true });
 writeFileSync(resolve(root, receiptPath), JSON.stringify(receipt, null, 2));
 console.log(JSON.stringify({ head, dirty, bytes: receipt.bytes, sha256: receipt.sha256 }));
