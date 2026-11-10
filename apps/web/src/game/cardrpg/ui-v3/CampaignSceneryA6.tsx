@@ -74,7 +74,7 @@ export function CampaignSceneryA6({m}:{m:DepthModel}){
   })}
   <div className="a6-map-milestones" aria-label="Star chests">{R.STAR_REWARDS_V4.map((chest,i)=>{
    const p=R.starRewardPreviewV4(m.state,chest.id);
-   return <button key={chest.id} className="a6-map-chest" data-ready={!p.reason} data-claimed={p.claimed} style={{left:`${29+i*28}%`,top:`${i===0?13:i===1?84:83}%`}} disabled={!!p.reason} title={p.reason??chest.name} onClick={()=>m.apply(R.claimStarRewardV4(m.state,chest.id),'Star chest collected.')}>
+   return <button key={chest.id} className="a6-map-chest" data-ready={!p.reason} data-claimed={p.claimed} style={{left:`${[35,57,90][i]}%`,top:`${i===0?12:89}%`}} disabled={!!p.reason} title={p.reason??chest.name} onClick={()=>m.apply(R.claimStarRewardV4(m.state,chest.id),'Star chest collected.')}>
     <Icon name="chest"/><span><b>{p.claimed?'Collected':`${chest.target} stars`}</b><small>{p.claimed?'Thank you!':`${Math.min(stars,chest.target)}/${chest.target} · ${Object.entries(p.reward).map(([id,n])=>`${n} ${id}`).join(' · ')}`}</small></span>
    </button>;
   })}</div>

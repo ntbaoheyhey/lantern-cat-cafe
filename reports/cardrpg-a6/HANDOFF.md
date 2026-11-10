@@ -1,12 +1,13 @@
-# Lane A6 handoff — 2026-11-10T23:24:21Z
-NOW: Q31 complete; source6369ed7a6, offline38,920,625B accepted. Package/report commit and push now; Q32 route typography next.
-Branch: codex/cardrpg-a6-q0-2026-11-10; current6369ed7a6 / last pushed4b16b8c9d; draft438 update prepared throughQ31.
-NEXT: 1. Commit/push Q31 package and update draft438.
-NEXT: 2. Q32 compact chapter/star strip, enlarge route/chest metadata and40px tonic; graph/rewards unchanged.
-NEXT: 3. Scoped checks/both-size gallery, integrate later published B tips then package.
-RUNNING: Vite91373/5960 retained; no active heavy job or owned lease. Q31 log/tmp/cardrpg-a6-q31-package.log.
-DONE: Q31 all16source+16offlineviews inspected;3tests/types/lint;17entries/exactbonus/ownership/profile/team/keyboard/reducedmotion/account pass;0errors/network/layout.
-DONE: Q30 delivered4b16b8c9d;42source+42offlineviews,44tests/types/lint; BP32/P33 mergedf56885904. Q0–Q29complete.
+# Lane A6 handoff — 2026-11-10T23:33:31Z
+NOW: Q32 source accepted;30current views inspected,4Campaign tests/types/lint retained. Commit source then integrate published B P34 and package.
+Branch: codex/cardrpg-a6-q0-2026-11-10; confirmed pushed4299ff326; draft438 confirmed throughQ31.
+NEXT: 1. Commit Q32 source/evidence; fetch/read B and merge published tip, B-owned canvas takes B.
+NEXT: 2. Run changed-puppet checks/types/lint; build plus direct-file Q32 map/Pollen gallery under timing lease.
+NEXT: 3. Inspect offline evidence; finish/push/update438, then Q33 original readable cafe tip corner.
+RUNNING: Vite91373/5960 retained. No heavy job/lease. Completed Q31 push tree stopped after remote confirmation; draft updated successfully.
+DONE: Q32 source30views,3chapters/branches/choices/exacthealingtonic/3cappedclaims/keyboard/reducedmotion pass2sizes;0errors/overlap/clipping. Six initial captures retained.
+DONE: Q31 delivered4299ff326;16source+16offlineviews,3tests/types/lint;38920625B,0errors/network/layout.
+DONE: Q30 delivered4b16b8c9d;42source+42offlineviews,44tests/types/lint; B P32/P33 mergedf56885904. Q0–Q29complete.
 DONE: Q15 final85s/62sfilms,1800.70s26wins2losses;500seeds60001–60500 ONCE; E2E420/421+3focusedidlepasses retained.
-KNOWN: Target8.5unmet; earlyloss/recovery/HP/bosstail remain; no fourth numerical tuning loop. Map720p row13=7.2 next.
-DECISIONS: Oneagent/draftonly/originalart/fullyauto. Reuse existing state/commands/art; no new systems.
+KNOWN: Target8.5unmet; earlyloss/recovery/HP/bosstail retained under R-3. No fourth numeric tuning loop.
+DECISIONS: Oneagent/draftonly/originalart/fullyauto. Reuse state/commands/art; no new systems. Q33 drafted only after Q32 accepted; research recheck logged.

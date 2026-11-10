@@ -204,3 +204,10 @@ Nút chọn tối thiểu40px, ghi chú14px; bàn phím/hồ sơ/đội hình đ
 2026-11-10T23:24:21Z: Q31 hoàn tất: demo38,92MB,16ảnh nguồn và16ảnh offline đã duyệt; không lỗi/gọi mạng.
 Cả17mục, phần thưởng bộ sưu tập, trạng thái hợp kích và bàn phím đạt; điểm Bond Book8,2/8,1.
 Tiếp tục bản đồ: tăng chữ nhãn/chest và nút dùng tonic, giữ nguyên tuyến đường và mọi phần thưởng.
+
+2026-11-10T23:30:08Z: Tiếp tục đúng Q32: giữ sáu ảnh đầu và bốn test/type/lint đã đạt; kiểm tra tiếp rương và các lựa chọn còn thiếu.
+Q31 đã lên GitHub, nhánh local trùng origin; còn139GiB và giữ Vite A6. B vừa công bố Pollen mới, sẽ tích hợp sau phần nguồn bản đồ.
+Không chạy lại Q0–Q31 hay bộ kiểm tra cuối đã hoàn tất.
+
+2026-11-10T23:33:31Z: Bản đồ đã duyệt30ảnh hiện tại: nhãn13–15px, nút tonic40px, không đè vùng bấm hay vượt khung720p.
+Ba chương, lựa chọn trong chuyến, hồi máu/tonic và ba rương đúng hạn mức đạt; giữ bốn test/type/lint đã qua. Đang tích hợp Pollen mới và đóng gói offline.

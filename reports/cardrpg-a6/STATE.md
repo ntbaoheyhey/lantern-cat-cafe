@@ -1,6 +1,6 @@
 - TASK.md exact latest user prompt: 24199 bytes; SHA-256 0123dfbf4f0fd156d585c1389d0c22282d5b3a603d51ad7965b14c198c9f31ee.
 
-- Resume audit 2026-11-10T23:18:29Z new session (reasoning change) resumed at Q30 completed offline build/gallery awaiting visual inspection; local4ahead0behind f56885904,139GiB,Vite91373/5960 retained,no stale heavy job. All42offline captures and accepted44tests/types/lint preserved; no accepted final checks repeated.
+- Resume audit 2026-11-10T23:33:31Z: Q32 source accepted, HEAD/origin4299ff326 at resume,139GiB,Vite91373/5960 retained; no active heavy job. Four Campaign tests/types/lint and30currentviews accepted. B P34 pending merge/package.
 
 - Resume audit 2026-11-10T23:08:56Z: Q30 source and ten1440captures preserved;8tests/types/lint accepted;0ahead0behind df662f9c0,139GiB,Vite91373/5960 retained,no stale heavy job. Resume prepare layout and remaining gallery only.
 
