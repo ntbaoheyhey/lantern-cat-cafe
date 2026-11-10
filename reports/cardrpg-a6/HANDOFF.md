@@ -1,12 +1,12 @@
-# Lane A6 handoff — 2026-11-10T23:36:37Z
-NOW: Q32 complete/sourcecbc41a25e/Bmerge2e15aa1b2/offline38,995,761B accepted. Package/report commit and push now; Q33 cafe tip corner next.
-Branch: codex/cardrpg-a6-q0-2026-11-10; current2e15aa1b2 / last confirmed pushed4299ff326; draft438 body prepared throughQ32.
-NEXT: 1. Commit/push Q32 package and update draft438.
-NEXT: 2. Apply retained /tmp/cardrpg-a6-q33-IdleChestA6.tsx and -idle-a6.css; verify original tip art/state/amounts.
-NEXT: 3. Existing scoped checks and both-size public claim/cap/clock/keyboard gallery; later B integration and offline package.
-RUNNING: Vite91373/5960 retained; no active heavy job/lease. Q32 log/tmp/cardrpg-a6-q32-package.log.
-DONE: Q32 all30source+34offlineviews inspected;37puppet+4Campaign tests/types/lint;3chapters/branches/choices/exactclaims/healingtonic/keyboard/reducedmotion;0errors/network/overlap.
-DONE: Q31 delivered4299ff326;16source+16offlineviews,3tests/types/lint;38920625B. Q0–Q30complete.
+# Lane A6 handoff — 2026-11-10T23:52:08Z
+NOW: Q33 source accepted:22current pictures inspected, exact claims/caps/clocks pass. Merge BP35 and package next.
+Branch: codex/cardrpg-a6-q0-2026-11-10; source commit pending; last pushed7607e3340; draft438 throughQ32.
+NEXT: 1. Commit accepted Q33 source/evidence; merge published BP35.
+NEXT: 2. Current puppet tests/types/lint, build and Q33 direct-file gallery under timing lease.
+NEXT: 3. Inspect offline plus Crumb framing, complete/push/update438, improve next lowest result screen.
+RUNNING: Vite91373/5960; no heavy job or timing lease. Logs/tmp/cardrpg-a6-q33-{home-accepted,types,lint,tests,toast-tests}.log.
+DONE: Q33 22currentviews;4Campaign tests/types/lint retained; toast sizing repaired, allclaim/cap/clock/keyboard/reducedmotion checks pass.
+DONE: Q32 delivered7607e3340;30source+34offlineviews;37puppet+4Campaign tests;38995761B. Q0–Q32complete.
 DONE: Q15 final85s/62sfilms,1800.70s26wins2losses;500seeds60001–60500 ONCE; E2E420/421+3focusedidlepasses retained.
-KNOWN: Target8.5unmet; earlyloss/recovery/HP/bosstail retained under R-3. No fourth numeric tuning loop.
-DECISIONS: Oneagent/draftonly/originalart/fullyauto. Reuse state/commands/art; no new systems. Q33 follows inspected home8.0/row7; exact claims untouched.
+KNOWN: Target8.5unmet; earlyloss/recovery/HP/bosstail retained underR-3. No fourth numeric tuning loop.
+DECISIONS: Oneagent/draftonly/originalart/fullyauto; reuse commands/art, no new systems. Preserve accepted work.

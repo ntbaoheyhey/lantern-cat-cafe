@@ -169,3 +169,7 @@ Q30 gallery correction: retained1440prepare shows no content under Fight; the au
 Q30 presentation repair1:34source views/control checks pass, but visual review found Team pair badge6.74px beyond720p sheet and a clipped final disabled-roster label at1440. Reduce only table mat/padding/hint whitespace at720p (cat art unchanged), and locked-dialog roster art80→68px. Audit actual pair/content boundary and zero inner roster clipping; recapture eight affected views only.
 
 Q32 presentation attempt1: initial gallery had no clipping, but larger first star chest shared16px of the Tea Cart transparent hit box. Move that chest from37% to35% horizontal position; preserve every node/path/reward coordinate and command. Recheck affected route geometry with the remaining choice coverage.
+
+2026-11-10T23:47:11Z Q33 presentation repair1: source1440 all10states/control checks pass;720p full12hour amounts wrap to a second line, extending the corner6.36px into the map shortcut. Keep13–14pxlabels/42pxfast action and reduce only720p tip illustration101→85px. Retain1440 acceptance and resume affected720p states plus earned Tower layout.
+
+- 2026-11-10T23:50:13Z Q33 saved-image review exposed discovery toast stretched from top86px to legacy bottom130px, covering the tip box after a claim. Clear bottom to auto in the A6 home rule; preserve content/dismissal/timers. Recheck affected current images before acceptance.
