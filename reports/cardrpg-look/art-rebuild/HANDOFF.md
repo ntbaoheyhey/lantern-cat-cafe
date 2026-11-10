@@ -1,19 +1,16 @@
-# Current Lane B handoff
+# Lane B current handoff
 
-ACTIVE — continue NON-STOP-RUN/QUEUE; no current user pause. Worktree /Users/bao/taskbar-hero-cardrpg-b2, branch codex/cardrpg-art-r1-2026-11-09, draft #427. Latest pushed 1bf6f4a8d. Integration #420 remote c5712f7c0 already pushed; no need to redo housekeeping.
-Do not redo R0/M5/S6/Q1–Q4/Q9, existing Mochi/Soot,25concepts,12VFXmasters or completed checks. Latest INBOX: local-mps only, one inference, alpha/noRMBG; browser only for internal review.
-Q5 active. Q3 pilot closed PARTIAL7.71. Existing Button fallback retained; no third inference. Yarn shell repair2 source exists; old material attempts1/2 and all rejected source data retained.
-Clover native attempt1 FINISHED410.598s; source ~/art/look-v3/local-generation/outputs/clover/attempt-1/clover.glb SHA8d6b7297. Source front/side/back inspected, no regeneration. Packed1 at same root, source/surface/rig/decoded-packed views are smooth in Blender.
-Real material2 battle and8poses each Clover/Yarn completed:0errors/UIoverlaps,48faces0offenders,4casts16.8ms/189052peaktri. Toon false preserves Yarn dark values, but triangular shards remained. UNACCEPTED preview GLBs installed locally, not yet committed.
-CURRENT DIAGNOSIS B-LOCAL-014: voxel shells are globally INWARD! Signed Clover/Yarn volumes-.0092167/-.0317162. Blender two-sided previews hid this; real FrontSide renderer exposes interior faces. Same-artifact no-mipmap diagnostic fails, DoubleSide restores coherent surfaces. Do NOT use DoubleSide as final workaround; reverse source winding/normals only. All geometry/UV/texture data preserved.
-New tools fix-inward-glb.py and test-inward-glb.py:2testsPASS, preserve/deny overwrite/repeat/outward source. test-voxel-shell.py now has outward-component regression, original helperFAIL retained at /tmp/cardrpg-v5full-winding-before.log.
-ACTIVE sequential five-cat runner session36696/PID73035: Panko FINISHED466.642s; Mallow currently generating, then Cinnamon/Velvet/Biscuit. Log /tmp/cardrpg-v5full-roster-cats-batch1.log. Each uses512/1024/blenderUV/voxel-shell, one inference under shared lock. Do not start duplicate or change local-queue.json while runner holds cached state.
-Source correction/packing completed for Clover/Yarn; original verification95761 failed at missing build receipt directory after HTML write. Preserved log. Resume session52255 via /tmp/cardrpg-v5full-winding-verify-resume.mjs; log /tmp/cardrpg-v5full-winding-verify-resume.log. It starts at build, never repeats conversion/packing. Outputs: ~/art/look-v3/local-generation/outputs/{clover,yarn-giant}/outward1; reports r2/outward1; artifact /tmp/cardrpg-v5full-v3-outward1.html. Starts only after shared lease is available. Inspect actual result before acceptance.
-Safe helper update73387 FINISHED after Panko receipt and before Mallow; marching-cubes orientation now ascent, all3shelltestsPASS. Mallow onward records corrected helper hash. Panko winding-only correction completed at outputs/panko/outward1/source.glb; source review queued session39482, log /tmp/cardrpg-v5full-panko-source-review.log. No queue edits while runner caches it.
-Current typecheck/lint and3touchedenemytestsPASS (logs /tmp/cardrpg-v5full-outward-*). Do not infer whole phasePASS from that. Native outward regression pending safe helper edit.
-Next: inspect corrected Clover/Yarn screenshots; if good update receipts/provenance/review/STATUS/report, commit/push and immediately continue5cat batch source review/pack/battle. Every remaining PENDING row now uses blenderUV+voxel-shell. Existing outputs remain sourceReviewRequired until viewed.
-Q6 VFX implemented/audit7.7PARTIAL;3repairsused. Q7stage7.5,fullrostercoveragepending. Q8portraits/icons manifest complete, runtime matchingpending. Q10integration/films/Q11reportremain. NativeVFXfilm external, continuous internal-browser reviewpending.
-Retained R4/R5 checks421E2E,5exactseeds/85plans,168casts<=16.8ms,324faces0offenders,cold3+3 max49.9/183.3ms. Do not repeat unchanged phase checks.
-Full material2 candidate37,822,713B; previous lean25,223,285B is before roster additions. R2/BUDGET plans packaging; no full-rostersizePASS. Evidence ~97MiB; keep source/diagnosticPNGs outsidegit.
-Preserve unrelated docs/cardrpg-look/v5-art-mochi-preview.html and tools/cardrpg-look/art-rebuild/segmentation-proxy.mjs. Never edit A/U worktrees or shell. Q10 permits integration branch merge commits only; no PRmerge/deploy/forcepush/default changes.
-Check STOP-B/INBOX between items; reportdeadline20Nov12UTC. Checkpoints are not stops; continue queue in same turn.
+Session started 2026-11-10T16:19:01.983778+00:00. ACTIVE: user's new illustrated 2.5D puppet prompt supersedes native-roster instructions.
+Worktree /Users/bao/taskbar-hero-cardrpg-b2; branch codex/cardrpg-art-r1-2026-11-09; draft #427.
+Starting HEAD 456934fba; fetched B and A6. All pre-existing dirty work preserved and inventoried in STATE.md.
+Native runner already finished/exited before onboarding: former PID73035 absent; no local-roster/generate.py/TRELLIS/Blender process.
+No .roster-running/.running lock or timing.lock remains; no process killed and no A6 process touched.
+Preview HTTP servers PID50023/5920 and PID92836/5922 retained. Disk188GiB free.
+Onboarding PASS: web typecheck, lint, two touched test files/seven tests; logs /tmp/cardrpg-b-onboard-*.log.
+Existing layered fallback: apps/web/src/game/squad/turn3d/look-painted.ts; source cutter tools/cardrpg-look/art-rebuild/pack-painted.py.
+Routing assets.ts; animation/material hooks scene.ts. Build puppet pipeline on this foundation.
+Viewed r2/concepts cats/enemies, native Yarn after2, Button export2: preserve concepts, native results remain unaccepted.
+Read latest A6-OUTBOX: shared lease fairness, rage/ultimate/combo events,56–72px UI crops, canvas frame cost.
+Next: replace PROMPT/QUEUE per new request; P1 pipeline then P2 Mochi/Soot/Yarn. Never merge A6 into published B.
+Heavy work uses tools/cardrpg-look/lock.mjs (<20min;6.5s fairness gap), nice10; ports5920–5923.
+Check STOP-B/INBOX and fetched A6 outbox between items; no active pause.

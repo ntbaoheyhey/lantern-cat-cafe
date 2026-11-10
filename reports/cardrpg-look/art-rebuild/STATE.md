@@ -1,11 +1,43 @@
 # Lane B current state
 
-ACTIVE — user resumed. Q1/Q2/Q3/Q4/Q9 complete; Q5 roster active; Q6–Q8 implemented partial checkpoints; Q10–Q11 queued.
-Latest pushed1bf6f4a8d on draft427. Q3 pilot7.71/appeal+menace7.75; full8.5target not reached.
-Local Clover source finished410.598s, packed motion verified. Yarn material2 restores dark values. Both reveal inward native shell winding in FrontSide battle despite smooth two-sided Blender views. B-LOCAL-014 source winding correction/packing completed. Verification95761 stopped at missing receipt directory; directory fix and build-onward resume52255 queued. No inference/packing repeated.
-Five-cat runner36696: Panko source finished466.642s; Mallow active, then Cinnamon/Velvet/Biscuit. Successor73387 safely changed shell orientation between Panko/Mallow; all3shelltestsPASS, correct helper hashes recorded. No duplicate jobs. Read HANDOFF for PIDs/paths.
-Existing Mochi/Soot and25concepts/12VFXmasters retained. Button two native exports/local repairs rejected; animated fallback remains, no third inference.
-Current material2 checks48faces0offenders/0UIoverlap/4casts16.8ms,189052peaktri. Geometry acceptance remains pending corrected screenshot comparison. Two no-model winding testsPASS; new shell-orientation regression FAIL proves source bug.3webtests/type/lintPASS.
-Q6VFX7.7PARTIAL at3repaircap; Q7camera7.5; Q8all25portraitpairs/75facecrops/60iconpairs delivered, runtime identitypending. Q9normal/dev hygieneverified.
-Previous421E2E/5exactseeds/85plans/cold3+3 remain evidence for their recorded runtime. Current preview37,822,713B; oldlean25,223,285B not fullrosterPASS. Evidence~97MiB; large masters outsidegit.
-No shell/rules edits, noPRmerge/deploy/forcepush; flagsdefaultOFF. CheckINBOX/STOP-B betweenitems. ReportalwaysPARTIALuntilallphasesdelivered; deadline20Nov12UTC. Continue queue without ending at checkpoints.
+Onboarded 2026-11-10T16:19:01.983778+00:00. HEAD456934fba, existing branch retained.
+Native generation is retired for the roster; original source/receipts preserved. No active native runner or stale lease.
+Typecheck/lint/seven touched web tests PASS. No new mesh accepted.
+188GiB free. Evidence previously ~97MiB; cap120MB.
+
+## Pre-existing uncommitted work (preserved; not part of onboarding commit)
+
+```text
+ M apps/web/src/game/squad/turn3d/look-readable-enemies.test.ts
+ M apps/web/src/game/squad/turn3d/look-readable-enemies.ts
+ M assets/provenance/look.md
+ M reports/cardrpg-look/art-rebuild/FIXLOG.md
+ M reports/cardrpg-look/art-rebuild/QUEUE.md
+ M reports/cardrpg-look/art-rebuild/r2/local-queue.json
+ M tools/cardrpg-look/art-rebuild/configs/clover.json
+ M tools/cardrpg-look/art-rebuild/configs/yarn-giant.json
+?? assets/cardrpg-look/v3-generated/clover.glb
+?? assets/cardrpg-look/v3-generated/yarn-giant.glb
+?? docs/cardrpg-look/v5-art-mochi-preview.html
+?? reports/cardrpg-look/art-rebuild/r2/native-clover/
+?? reports/cardrpg-look/art-rebuild/r2/native-panko/
+?? reports/cardrpg-look/art-rebuild/r2/native-yarn/material-motion1/
+?? reports/cardrpg-look/art-rebuild/r2/native-yarn/material-motion2/
+?? reports/cardrpg-look/art-rebuild/r2/native-yarn/material1-build.json
+?? reports/cardrpg-look/art-rebuild/r2/native-yarn/material1-faces.json
+?? reports/cardrpg-look/art-rebuild/r2/native-yarn/material1/
+?? reports/cardrpg-look/art-rebuild/r2/native-yarn/material2-build.json
+?? reports/cardrpg-look/art-rebuild/r2/native-yarn/material2-casts/
+?? reports/cardrpg-look/art-rebuild/r2/native-yarn/material2-faces.json
+?? reports/cardrpg-look/art-rebuild/r2/native-yarn/material2/
+?? reports/cardrpg-look/art-rebuild/r2/native-yarn/outward1-pipeline.json
+?? reports/cardrpg-look/art-rebuild/r2/native-yarn/outward1-receipt.json
+?? reports/cardrpg-look/art-rebuild/r2/native-yarn/runtime-review.json
+?? reports/cardrpg-look/art-rebuild/r2/outward1/
+?? tools/cardrpg-look/art-rebuild/__pycache__/
+?? tools/cardrpg-look/art-rebuild/segmentation-proxy.mjs
+```
+
+Unreviewed Clover/Yarn GLBs stay uncommitted. Existing preview HTML and segmentation proxy are unrelated retained work.
+Native batch output folders include Panko/Mallow/Cinnamon/Velvet/Biscuit; do not restart inference.
+Current instructions and active progress: PROMPT.txt, QUEUE.md, HANDOFF.md.
