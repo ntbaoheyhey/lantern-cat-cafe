@@ -132,3 +132,7 @@ Q18 render repair1: full guide and controls passed, but the embedded battle guid
 2026-11-10T20:40:59Z Q14 motion harness used an enemy action ID for Inkcap (a cat). One1440SpoolRam view already passed and is retained. Resume with real gallery IDs inkcap-2/cinnamon-2; only missing views, no product fix. Q19 final20views/controls remain accepted.
 
 - 2026-11-10T20:46:21Z Q19 offline receipt: first harness waited only for the outer sheet, so six Team/guide/save captures show loading despite zero errors. Accepted tutorial/home/result/relic checks preserved. Repair readiness to require loaded content/buttons for all12lazy screens, then replace only those six captures; no app change or build rerun.
+
+- 2026-11-10T20:52:11Z Q20 selector repair: decorative index numbers are correctly aria-hidden; two new UI tests and the initial gallery asked for those numbers in accessible names. Changed selectors to the actual friendship names; application unchanged. Preserve first1440collection view and resume remaining gallery only.
+
+- 2026-11-10T20:53:24Z Q20 full-roster fixture: browser reviewer shortcut rejects grants unless offline mode is set; the fresh-to-full step omitted it, so Inkcap correctly stayed missing. Set reviewer offline before the existing unlock command; retain four accepted fresh1440 views/profile checks and resume full-roster/720p. No product change.

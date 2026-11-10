@@ -1,14 +1,12 @@
-# Lane A6 handoff — 2026-11-10T20:48:47Z
-NOW: Q19 complete; source/20formation+10integration+12offlineviews accepted. Q20Bond Book next; draftTSX/CSS ready in/tmp.
-Branch: codex/cardrpg-a6-q0-2026-11-10; HEADe149c775d; last pushed1200c0131; draft438. Q19delivery commit/push now.
-NEXT: 1. Commit/push Q19 package/evidence/report and update draft438.
-NEXT: 2. Re-read rules/queue/task0+4/Bpublishednotes; applyQ20draft album; focusedvalidation.
-NEXT: 3. InspectQ20fresh/full/missing/ready+keyboard/profile/team at2sizes; integrate futureB tip in next bounded package.
-RUNNING: Vite91373/5960 retained. A6leases40407/41515ended; no activeA6heavyjob. Logs/tmp/cardrpg-a6-q19-*.
-DONE: Q19source8fa1f9bc0; B P18/P20merge2b2fa7aa3; P19mergee149c775d; webtypes/lint27BtestsPASS.
-DONE: Q19 12UItests/20views retained; integrated10views0errors; offline38378333B,24loadedsheets/12finalviews0network/errors.
-DONE: Q0–Q18; final85s/62sclips; UI1800.70s26wins/2losses0errors; normal31.12s/boss90.35s/firstloss5.38min.
-DONE: Final500seeds60001–60500 once; FullE2E420/421+3focusedidle passes. Never repeat for bookkeeping.
-KNOWN: Target8.5unmet; earlyloss/recovery/HP/bosstail remain; nofourthnumerictuningloop. BondBook7.7nextlow.
-DECISIONS: Q19offlinecapture repairwaitsactualcontent/buttons; noappfix/buildrerun. BcanvascodeB/AownedpresentationA.
-DECISIONS: Oneagent/fullyauto/originalart/draftonly; noPRmerge/deploy/main/forcepush/secrets/otherworktreewrites.
+# Lane A6 handoff — 2026-11-10T20:58:01Z
+NOW: Q20 source accepted;16gallery views inspected, both-size navigation/ownership/ready states pass. Commit source then integrate published B P21 and package.
+Branch: codex/cardrpg-a6-q0-2026-11-10; HEAD / last pushed cca559f39; draft438.
+NEXT: 1. Commit verified Q20 source/evidence; merge --no-ff published Bdb0f7bdb4 after rules check.
+NEXT: 2. Focused renderer checks and changed-unit views; rebuild offline with shared timing lease<=20min.
+NEXT: 3. Verify direct-file album/affectedBscene; publish/tickQ20, update report/draft, continue weakest screen.
+RUNNING: Vite91373/5960 retained. No A6heavy job; B45168 timing.lock20:56; read live state before work.
+DONE: Q20 retained types/lint/3Bonds tests; all17entries, actualkeyboard/profile/team pass2sizes;0errors; scores8.1/7.9.
+DONE: Q19 delivery cca559f39; B P19/P20 through e149c775d;27renderer/12UI tests pass.
+DONE: Q0–Q19; final85s/62sfilms; UI1800.70s26wins/2losses0errors; final500seeds60001–60500 ONCE; fullE2E420/421+3focusedidlepasses. Never repeat accepted finalchecks.
+KNOWN: Target8.5 unmet; earlyloss/recovery/HP/bosstail remain; no fourth numerical tuning loop.
+DECISIONS: Oneagent/fullyauto/originalart/draftonly; no PRmerge/deploy/main/forcepush/secrets/otherworktreewrites.

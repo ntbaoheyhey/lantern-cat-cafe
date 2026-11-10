@@ -129,3 +129,7 @@ B đã sửa lỗi dọn tài nguyên; đang tích hợp rồi đóng gói demo,
 2026-11-10T20:48:47Z: Q19 đã xong: demo38,38MB có đội hình mới và chuyển động B mới nhất đã lấy, lỗi dọn tài nguyên đã sửa.
 Đã xem10ảnh tích hợp và12ảnh offline;24màn tải đủ ở hai cỡ, không lỗi/gọi mạng.27test B và12test UI đạt; giữ nguyên kiểm tra cuối cũ.
 Tiếp tục Q20 Bond Book: mở ngay bộ sưu tập/hợp kích và chọn từng nhóm trong album, giữ nguyên mọi luật thưởng.
+
+2026-11-10T20:58:01Z: Tiếp tục đúng Q20; đã duyệt đủ16ảnh ở hai cỡ màn và giữ nguyên các kiểm tra đã đạt.
+Album mở trực tiếp9bộ sưu tập/8hợp kích, phân biệt thiếu mèo/chưa xếp cùng đội/sẵn sàng; bàn phím/hồ sơ/lập đội đều đạt.
+Typecheck/lint và3test qua; đang tích hợp B P21 rồi cập nhật demo offline, không chạy lại kiểm tra cuối đã hoàn tất.
