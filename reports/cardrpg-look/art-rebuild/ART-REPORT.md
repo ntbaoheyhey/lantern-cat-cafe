@@ -44,3 +44,6 @@ Draft [#427](https://github.com/ntbaoheyhey/taskbar-hero/pull/427). This is an a
 - Full Run upload/allocations/OFF+3B/draws/Kettle misses stay open. Shell hygiene request is already in B-OUTBOX for U.
 
 Look first at the motion contact sheet, especially cast/victory, then the battle clip. These show an actual animated3D prototype and its remaining limitations.
+
+## Pause clarification — 2026-11-10T01:17:50.106927+00:00
+User paused after fal connection. Existing source,626020Bprototype and all earlier runtime evidence remain unchanged. Fal catalog/schema/pricing inspected only; no upload or generation/rigging/segmentation job submitted. A43292Bshape-only local proxy was prepared for possible part analysis; never installed. The current source does not need regeneration. Continue from B-R1-008 when resumed; do not restart R0/S6/M5 or Mochi conversion.

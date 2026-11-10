@@ -1,5 +1,5 @@
 # Art rebuild state
-NOW R1 PARTIAL: Mochi image→3D and local five-stage pipeline complete;626020B/21938tri/14joints. Game motion tested; cast/victory deformation FAIL after3attempts.
+NOW PAUSED by user “khoan…”: preserve completed Mochi pipeline. Fal discovery only; no upload/job submitted. No source rebuild needed.
 PROMPT.txt is the verbatim 18883-byte user instruction; digest in PROMPT.sha256.
 B /Users/bao/taskbar-hero-cardrpg-b2, codex/cardrpg-art-r1-2026-11-09; R0draft#423, base #421 3e95a0121 plus Full Run reporting descendants.
 Preserved pre-existing waiting edit in wip/b-leftover-2026-11-09-art commit047601861; no discarded work.

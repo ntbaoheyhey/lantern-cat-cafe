@@ -1,3 +1,14 @@
+# User pause — 2026-11-10T01:17:50.106927+00:00
+
+User: “khoan, bạn tiếp tục từ phần bạn đã làm cũ tại sao lại làm lại rồi?” Pause art/model actions while explaining the checkpoint. Do not infer permission to restart conversion.
+Existing Mochi source,626020B packed rig,22game clips,diagnostic poses and20sfilm remain unchanged. Continue from these artifacts when resumed.
+Fal is now connected. Only catalog/schema/pricing reads and a local untextured segmentation proxy were performed. NO upload completed, NO submit_job/run_model call, NO new source inference or rig result, NO paid job pending.
+Local research proxy /tmp/cardrpg-v5full-art-r1/fal/mochi-segmentation-proxy.glb is43292B/3856tri, derived from the existing source; not game art. Exporter tools/cardrpg-look/art-rebuild/segmentation-proxy.mjs remains untracked research. Preserve; do not promote it.
+Original TRELLIS download URL now403forHEAD/GET; the complete local source still exists. Do not regenerate Mochi or ask for it again solely because that URL expired.
+Actual unfinished issue remains B-R1-008: fused arm/apron/shield stretching. Three weight-mask repairs already exhausted inR1. Any later surface-separation work must retain the original model/textures and respect repair accounting. No roster acceptance yet.
+
+---
+
 # Latest automation checkpoint — 2026-11-09T23:18:08.774376+00:00
 
 User asked “bạn có thể tự động hoá nó không?”. Browser image→GLB already succeeded; do not resubmit. Local pipeline now complete and replayable from any cwd with prepare-mochi.mjs. See AUTOMATION.md.
