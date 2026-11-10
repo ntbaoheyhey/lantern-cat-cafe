@@ -4,7 +4,7 @@ import {writeFile,mkdir} from 'node:fs/promises';
 import {open,apply,audit} from '../skills-v5/full/harness.mjs';
 const out=process.env.V5_OUT;await mkdir(out,{recursive:true});const rows=[],errors=[];
 const browser=await chromium.launch({channel:'chromium',args:['--use-angle=metal']});
-try{const page=await browser.newPage({viewport:{width:1440,height:900},deviceScaleFactor:1});page.on('pageerror',e=>errors.push(String(e)));page.on('console',m=>{if(m.type()==='error'&&/WebGL|Shader|GLSL/.test(m.text()))errors.push(m.text())});await open(page,process.env.V5_ARTIFACT);
+try{const width=Number(process.env.V5_WIDTH||1440);const page=await browser.newPage({viewport:{width,height:width===1024?600:900},deviceScaleFactor:1});page.on('pageerror',e=>errors.push(String(e)));page.on('console',m=>{if(m.type()==='error'&&/WebGL|Shader|GLSL/.test(m.text()))errors.push(m.text())});await open(page,process.env.V5_ARTIFACT);
 for(const id of process.env.V5_IDS.split(','))for(const [label,beat,fraction] of [['landing',2,.2],['impact',2,.55],['afterglow',3,.5]]){
  await apply(page,{gallery:id,progress:0});
  await page.evaluate(({beat,fraction})=>{const m=window.__depthReview,b=m.plan.beats[beat];m.animationAt=b.start+b.duration*fraction;},{beat,fraction});

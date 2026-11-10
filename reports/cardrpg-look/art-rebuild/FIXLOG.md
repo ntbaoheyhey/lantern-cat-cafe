@@ -72,3 +72,10 @@ Attempt1 daily quota at02:05UTC. Attempt2 in internal browser after user prefere
 
 ## B-R1-014 Q3 full E2E idle clock flake — 2026-11-10
 Full suite420PASS/1FAIL: s3-walkthrough idle XP remains0 after fastForward60s. Known inherited clock timing case; unchanged isolated run repeated twice gives2PASS. Original and isolated logs retained in r1/phase-checks. No test/code modification or skip; handled by explicit flake rule. Other phase checks remain attached to unchanged runtime78c02c3db.
+
+## B-R4-001 first roster light review S3
+Repro: r4/roster-attempt1/sheet.webp at impact/recovery. Mallow/Cinnamon flame/spiral sits below torso; Velvet/Inkcap signature is short; shader collapses source two-tone hue; old non-pilot enemies still conjure duplicate physical props.
+Measure: 48 fixed real-renderer shots, 12 ultimates, no console errors; effects pool one call for most skills. Minimum 25% frame height is not established. Hypotheses: rise starts at35% scale, low authored center, uniform tint removes source hue (confirmed in shader).
+Attempt1: raise/scale four weak signature layers, retain38% source chroma in light shader, replace remaining enemy prop layers with original generated thread/steam/crack components and hostile palette. Targets/durations/clock unchanged. Same shots/face gates and x1 review pending. Keep all failed/source captures.
+
+B-R4-001 follow-up: roster-after shows retained violet/mint/fire source hues and removes enemy prop duplicates. Attempt2 replaces the slowly growing Mallow/Cinnamon rise motion with a stable upright impact shape at the same action time. fire-after shows the fire surrounding the target during impact; Cinnamon spiral surrounds its correct friendly target. 24 fire face samples and the full roster face diagnostic have zero offenders. Five retained seeds and85plans remain exact;1823web tests/type/lint/build pass. Full artifact35,742,905B. Cast and x1 film processes are under the shared lease; full phase acceptance still pending. Remaining flaws: late afterglow is stronger than the first hit, some basic/passive cues resemble each other, and protected-face clipping can split a large motif. No8.0 audit claim yet.

@@ -1,0 +1,6746 @@
+{
+  "artifactSha256": "27775b663df2419ad425b2acd784c3904a4d9a8604febf890213f49565f50646",
+  "shots": [
+    {
+      "id": "soot-4",
+      "progress": "charge",
+      "file": "soot-4-charge.webp",
+      "audit": {
+        "frames": 7,
+        "calls": 82,
+        "triangles": 115134,
+        "geometries": 510,
+        "textures": 105,
+        "particles": 3,
+        "estimatedGpuBytes": 7275102,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "effects": {
+        "instances": 3,
+        "primitiveCalls": 3,
+        "truncated": 0
+      },
+      "frame": {
+        "plan": {
+          "id": 1,
+          "actorId": "soot",
+          "skillId": "soot-4",
+          "targetIds": [
+            "foe-0-button-guard"
+          ],
+          "color": "#b396eb",
+          "accent": "#ffe5ad",
+          "shape": "storm",
+          "duration": 1712,
+          "ultimate": true,
+          "beats": [
+            {
+              "kind": "anticipation",
+              "start": 0,
+              "duration": 680,
+              "camera": 1.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "tray",
+              "soundCue": "soot-4.anticipation"
+            },
+            {
+              "kind": "travel",
+              "start": 680,
+              "duration": 250,
+              "camera": 0.8,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "star",
+              "soundCue": "soot-4.travel"
+            },
+            {
+              "kind": "impact",
+              "start": 930,
+              "duration": 110,
+              "camera": 0.8,
+              "shake": 1.1,
+              "flash": 0.055,
+              "clip": "attack",
+              "vfx": "lantern",
+              "soundCue": "soot-4.impact"
+            },
+            {
+              "kind": "reaction",
+              "start": 1040,
+              "duration": 392,
+              "camera": 0.2,
+              "shake": 0.22000000000000003,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "crescent",
+              "soundCue": "soot-4.reaction"
+            },
+            {
+              "kind": "residue",
+              "start": 1432,
+              "duration": 280,
+              "camera": 0.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "comet",
+              "soundCue": "soot-4.residue"
+            }
+          ],
+          "events": [
+            {
+              "version": 3,
+              "seq": 0,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 0,
+              "type": "action_start",
+              "actorId": "soot",
+              "skillId": "soot-4",
+              "targetIds": [
+                "foe-0-button-guard"
+              ],
+              "amount": 0
+            },
+            {
+              "version": 3,
+              "seq": 1,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 2,
+              "type": "damage",
+              "actorId": "soot",
+              "skillId": "soot-4",
+              "targetIds": [
+                "foe-0-button-guard"
+              ],
+              "amount": 42
+            }
+          ],
+          "name": "Midnight service",
+          "motifs": [
+            "tray",
+            "star",
+            "lantern",
+            "crescent",
+            "comet"
+          ],
+          "presentationId": "soot-4"
+        },
+        "beat": {
+          "kind": "anticipation",
+          "start": 0,
+          "duration": 680,
+          "camera": 1.2,
+          "shake": 0,
+          "flash": 0,
+          "clip": "attack",
+          "vfx": "tray",
+          "soundCue": "soot-4.anticipation"
+        },
+        "progress": 0.8200000000000001,
+        "actionProgress": 0.32570093457943927,
+        "elapsed": 557.6,
+        "color": "#b396eb",
+        "camera": 1.2,
+        "shake": 0,
+        "flash": 0,
+        "clip": "attack",
+        "intensity": 0.6750787564852976
+      },
+      "pools": [
+        {
+          "name": "knock-ring",
+          "count": 1
+        },
+        {
+          "name": "lantern",
+          "count": 1
+        },
+        {
+          "name": "ink-stain",
+          "count": 1
+        }
+      ],
+      "canvas": {
+        "x": 184,
+        "y": 202,
+        "width": 1256,
+        "height": 573,
+        "top": 202,
+        "right": 1440,
+        "bottom": 775,
+        "left": 184
+      },
+      "at": 557.6,
+      "words": [],
+      "numbers": [],
+      "badges": 0,
+      "overlaps": [],
+      "outside": [],
+      "unplaced": [],
+      "unplacedDetails": [],
+      "contrast": null,
+      "overflow": false,
+      "stats": {
+        "frames": 7,
+        "calls": 82,
+        "triangles": 115134,
+        "geometries": 510,
+        "textures": 105,
+        "particles": 3,
+        "estimatedGpuBytes": 7275102,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      }
+    },
+    {
+      "id": "soot-4",
+      "progress": "travel",
+      "file": "soot-4-travel.webp",
+      "audit": {
+        "frames": 11,
+        "calls": 79,
+        "triangles": 114244,
+        "geometries": 510,
+        "textures": 105,
+        "particles": 1,
+        "estimatedGpuBytes": 7275102,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "effects": {
+        "instances": 1,
+        "primitiveCalls": 1,
+        "truncated": 0
+      },
+      "frame": {
+        "plan": {
+          "id": 1,
+          "actorId": "soot",
+          "skillId": "soot-4",
+          "targetIds": [
+            "foe-0-button-guard"
+          ],
+          "color": "#b396eb",
+          "accent": "#ffe5ad",
+          "shape": "storm",
+          "duration": 1712,
+          "ultimate": true,
+          "beats": [
+            {
+              "kind": "anticipation",
+              "start": 0,
+              "duration": 680,
+              "camera": 1.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "tray",
+              "soundCue": "soot-4.anticipation"
+            },
+            {
+              "kind": "travel",
+              "start": 680,
+              "duration": 250,
+              "camera": 0.8,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "star",
+              "soundCue": "soot-4.travel"
+            },
+            {
+              "kind": "impact",
+              "start": 930,
+              "duration": 110,
+              "camera": 0.8,
+              "shake": 1.1,
+              "flash": 0.055,
+              "clip": "attack",
+              "vfx": "lantern",
+              "soundCue": "soot-4.impact"
+            },
+            {
+              "kind": "reaction",
+              "start": 1040,
+              "duration": 392,
+              "camera": 0.2,
+              "shake": 0.22000000000000003,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "crescent",
+              "soundCue": "soot-4.reaction"
+            },
+            {
+              "kind": "residue",
+              "start": 1432,
+              "duration": 280,
+              "camera": 0.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "comet",
+              "soundCue": "soot-4.residue"
+            }
+          ],
+          "events": [
+            {
+              "version": 3,
+              "seq": 0,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 0,
+              "type": "action_start",
+              "actorId": "soot",
+              "skillId": "soot-4",
+              "targetIds": [
+                "foe-0-button-guard"
+              ],
+              "amount": 0
+            },
+            {
+              "version": 3,
+              "seq": 1,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 2,
+              "type": "damage",
+              "actorId": "soot",
+              "skillId": "soot-4",
+              "targetIds": [
+                "foe-0-button-guard"
+              ],
+              "amount": 42
+            }
+          ],
+          "name": "Midnight service",
+          "motifs": [
+            "tray",
+            "star",
+            "lantern",
+            "crescent",
+            "comet"
+          ],
+          "presentationId": "soot-4"
+        },
+        "beat": {
+          "kind": "travel",
+          "start": 680,
+          "duration": 250,
+          "camera": 0.8,
+          "shake": 0,
+          "flash": 0,
+          "clip": "attack",
+          "vfx": "star",
+          "soundCue": "soot-4.travel"
+        },
+        "progress": 0.55,
+        "actionProgress": 0.4775116822429907,
+        "elapsed": 817.5,
+        "color": "#b396eb",
+        "camera": 0.8,
+        "shake": 0,
+        "flash": 0,
+        "clip": "attack",
+        "intensity": 0.9913818384165962
+      },
+      "pools": [
+        {
+          "name": "comet",
+          "count": 1
+        }
+      ],
+      "canvas": {
+        "x": 184,
+        "y": 202,
+        "width": 1256,
+        "height": 573,
+        "top": 202,
+        "right": 1440,
+        "bottom": 775,
+        "left": 184
+      },
+      "at": 817.5,
+      "words": [],
+      "numbers": [],
+      "badges": 0,
+      "overlaps": [],
+      "outside": [],
+      "unplaced": [],
+      "unplacedDetails": [],
+      "contrast": null,
+      "overflow": false,
+      "stats": {
+        "frames": 11,
+        "calls": 79,
+        "triangles": 114244,
+        "geometries": 510,
+        "textures": 105,
+        "particles": 1,
+        "estimatedGpuBytes": 7275102,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      }
+    },
+    {
+      "id": "soot-4",
+      "progress": "impact",
+      "file": "soot-4-impact.webp",
+      "audit": {
+        "frames": 15,
+        "calls": 83,
+        "triangles": 115322,
+        "geometries": 510,
+        "textures": 105,
+        "particles": 19,
+        "estimatedGpuBytes": 7275102,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "effects": {
+        "instances": 19,
+        "primitiveCalls": 5,
+        "truncated": 0
+      },
+      "frame": {
+        "plan": {
+          "id": 1,
+          "actorId": "soot",
+          "skillId": "soot-4",
+          "targetIds": [
+            "foe-0-button-guard"
+          ],
+          "color": "#b396eb",
+          "accent": "#ffe5ad",
+          "shape": "storm",
+          "duration": 1712,
+          "ultimate": true,
+          "beats": [
+            {
+              "kind": "anticipation",
+              "start": 0,
+              "duration": 680,
+              "camera": 1.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "tray",
+              "soundCue": "soot-4.anticipation"
+            },
+            {
+              "kind": "travel",
+              "start": 680,
+              "duration": 250,
+              "camera": 0.8,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "star",
+              "soundCue": "soot-4.travel"
+            },
+            {
+              "kind": "impact",
+              "start": 930,
+              "duration": 110,
+              "camera": 0.8,
+              "shake": 1.1,
+              "flash": 0.055,
+              "clip": "attack",
+              "vfx": "lantern",
+              "soundCue": "soot-4.impact"
+            },
+            {
+              "kind": "reaction",
+              "start": 1040,
+              "duration": 392,
+              "camera": 0.2,
+              "shake": 0.22000000000000003,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "crescent",
+              "soundCue": "soot-4.reaction"
+            },
+            {
+              "kind": "residue",
+              "start": 1432,
+              "duration": 280,
+              "camera": 0.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "comet",
+              "soundCue": "soot-4.residue"
+            }
+          ],
+          "events": [
+            {
+              "version": 3,
+              "seq": 0,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 0,
+              "type": "action_start",
+              "actorId": "soot",
+              "skillId": "soot-4",
+              "targetIds": [
+                "foe-0-button-guard"
+              ],
+              "amount": 0
+            },
+            {
+              "version": 3,
+              "seq": 1,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 2,
+              "type": "damage",
+              "actorId": "soot",
+              "skillId": "soot-4",
+              "targetIds": [
+                "foe-0-button-guard"
+              ],
+              "amount": 42
+            }
+          ],
+          "name": "Midnight service",
+          "motifs": [
+            "tray",
+            "star",
+            "lantern",
+            "crescent",
+            "comet"
+          ],
+          "presentationId": "soot-4"
+        },
+        "beat": {
+          "kind": "impact",
+          "start": 930,
+          "duration": 110,
+          "camera": 0.8,
+          "shake": 1.1,
+          "flash": 0.055,
+          "clip": "attack",
+          "vfx": "lantern",
+          "soundCue": "soot-4.impact"
+        },
+        "progress": 0,
+        "actionProgress": 0.5785630841121495,
+        "elapsed": 990.5,
+        "color": "#b396eb",
+        "camera": 0.8,
+        "shake": 1.1,
+        "flash": 0.055,
+        "clip": "attack",
+        "intensity": 1
+      },
+      "pools": [
+        {
+          "name": "constellation",
+          "count": 1
+        },
+        {
+          "name": "lantern",
+          "count": 1
+        },
+        {
+          "name": "ink-stain",
+          "count": 1
+        },
+        {
+          "name": "comet",
+          "count": 1
+        },
+        {
+          "name": "soft-particle",
+          "count": 15
+        }
+      ],
+      "canvas": {
+        "x": 184,
+        "y": 202,
+        "width": 1256,
+        "height": 573,
+        "top": 202,
+        "right": 1440,
+        "bottom": 775,
+        "left": 184
+      },
+      "at": 990.5,
+      "words": [],
+      "numbers": [
+        {
+          "name": "foe-0-button-guard",
+          "x": 962,
+          "y": 411,
+          "width": 60,
+          "height": 22,
+          "top": 411,
+          "right": 1022,
+          "bottom": 433,
+          "left": 962
+        }
+      ],
+      "badges": 0,
+      "overlaps": [],
+      "outside": [],
+      "unplaced": [],
+      "unplacedDetails": [],
+      "contrast": 12.152131470424939,
+      "overflow": false,
+      "stats": {
+        "frames": 15,
+        "calls": 83,
+        "triangles": 115322,
+        "geometries": 510,
+        "textures": 105,
+        "particles": 19,
+        "estimatedGpuBytes": 7275102,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      }
+    },
+    {
+      "id": "soot-4",
+      "progress": "recover",
+      "file": "soot-4-recover.webp",
+      "audit": {
+        "frames": 19,
+        "calls": 83,
+        "triangles": 114986,
+        "geometries": 510,
+        "textures": 105,
+        "particles": 20,
+        "estimatedGpuBytes": 7275102,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "effects": {
+        "instances": 20,
+        "primitiveCalls": 5,
+        "truncated": 0
+      },
+      "frame": {
+        "plan": {
+          "id": 1,
+          "actorId": "soot",
+          "skillId": "soot-4",
+          "targetIds": [
+            "foe-0-button-guard"
+          ],
+          "color": "#b396eb",
+          "accent": "#ffe5ad",
+          "shape": "storm",
+          "duration": 1712,
+          "ultimate": true,
+          "beats": [
+            {
+              "kind": "anticipation",
+              "start": 0,
+              "duration": 680,
+              "camera": 1.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "tray",
+              "soundCue": "soot-4.anticipation"
+            },
+            {
+              "kind": "travel",
+              "start": 680,
+              "duration": 250,
+              "camera": 0.8,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "star",
+              "soundCue": "soot-4.travel"
+            },
+            {
+              "kind": "impact",
+              "start": 930,
+              "duration": 110,
+              "camera": 0.8,
+              "shake": 1.1,
+              "flash": 0.055,
+              "clip": "attack",
+              "vfx": "lantern",
+              "soundCue": "soot-4.impact"
+            },
+            {
+              "kind": "reaction",
+              "start": 1040,
+              "duration": 392,
+              "camera": 0.2,
+              "shake": 0.22000000000000003,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "crescent",
+              "soundCue": "soot-4.reaction"
+            },
+            {
+              "kind": "residue",
+              "start": 1432,
+              "duration": 280,
+              "camera": 0.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "comet",
+              "soundCue": "soot-4.residue"
+            }
+          ],
+          "events": [
+            {
+              "version": 3,
+              "seq": 0,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 0,
+              "type": "action_start",
+              "actorId": "soot",
+              "skillId": "soot-4",
+              "targetIds": [
+                "foe-0-button-guard"
+              ],
+              "amount": 0
+            },
+            {
+              "version": 3,
+              "seq": 1,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 2,
+              "type": "damage",
+              "actorId": "soot",
+              "skillId": "soot-4",
+              "targetIds": [
+                "foe-0-button-guard"
+              ],
+              "amount": 42
+            }
+          ],
+          "name": "Midnight service",
+          "motifs": [
+            "tray",
+            "star",
+            "lantern",
+            "crescent",
+            "comet"
+          ],
+          "presentationId": "soot-4"
+        },
+        "beat": {
+          "kind": "reaction",
+          "start": 1040,
+          "duration": 392,
+          "camera": 0.2,
+          "shake": 0.22000000000000003,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "crescent",
+          "soundCue": "soot-4.reaction"
+        },
+        "progress": 0.5,
+        "actionProgress": 0.7219626168224299,
+        "elapsed": 1236,
+        "color": "#b396eb",
+        "camera": 0.2,
+        "shake": 0.11000000000000001,
+        "flash": 0,
+        "clip": "idle",
+        "intensity": 1
+      },
+      "pools": [
+        {
+          "name": "constellation",
+          "count": 1
+        },
+        {
+          "name": "lantern",
+          "count": 1
+        },
+        {
+          "name": "ink-stain",
+          "count": 1
+        },
+        {
+          "name": "soft-particle",
+          "count": 15
+        },
+        {
+          "name": "motif-particle",
+          "count": 2
+        }
+      ],
+      "canvas": {
+        "x": 184,
+        "y": 202,
+        "width": 1256,
+        "height": 573,
+        "top": 202,
+        "right": 1440,
+        "bottom": 775,
+        "left": 184
+      },
+      "at": 1236,
+      "words": [],
+      "numbers": [
+        {
+          "name": "foe-0-button-guard",
+          "x": 977,
+          "y": 411,
+          "width": 60,
+          "height": 22,
+          "top": 411,
+          "right": 1037,
+          "bottom": 433,
+          "left": 977
+        }
+      ],
+      "badges": 0,
+      "overlaps": [],
+      "outside": [],
+      "unplaced": [],
+      "unplacedDetails": [],
+      "contrast": 12.152131470424939,
+      "overflow": false,
+      "stats": {
+        "frames": 19,
+        "calls": 83,
+        "triangles": 114986,
+        "geometries": 510,
+        "textures": 105,
+        "particles": 20,
+        "estimatedGpuBytes": 7275102,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      }
+    },
+    {
+      "id": "clover-4",
+      "progress": "charge",
+      "file": "clover-4-charge.webp",
+      "audit": {
+        "frames": 23,
+        "calls": 87,
+        "triangles": 115420,
+        "geometries": 510,
+        "textures": 105,
+        "particles": 3,
+        "estimatedGpuBytes": 7275102,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "effects": {
+        "instances": 3,
+        "primitiveCalls": 3,
+        "truncated": 0
+      },
+      "frame": {
+        "plan": {
+          "id": 1,
+          "actorId": "clover",
+          "skillId": "clover-4",
+          "targetIds": [
+            "clover",
+            "mochi",
+            "soot"
+          ],
+          "color": "#91c990",
+          "accent": "#fff0b6",
+          "shape": "storm",
+          "duration": 1682,
+          "ultimate": true,
+          "beats": [
+            {
+              "kind": "anticipation",
+              "start": 0,
+              "duration": 670,
+              "camera": 1.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "stem",
+              "soundCue": "clover-4.anticipation"
+            },
+            {
+              "kind": "travel",
+              "start": 670,
+              "duration": 250,
+              "camera": 0.8,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "greenhouse",
+              "soundCue": "clover-4.travel"
+            },
+            {
+              "kind": "impact",
+              "start": 920,
+              "duration": 90,
+              "camera": 0.8,
+              "shake": 0,
+              "flash": 0.055,
+              "clip": "attack",
+              "vfx": "sprout",
+              "soundCue": "clover-4.impact"
+            },
+            {
+              "kind": "reaction",
+              "start": 1010,
+              "duration": 392,
+              "camera": 0.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "petal",
+              "soundCue": "clover-4.reaction"
+            },
+            {
+              "kind": "residue",
+              "start": 1402,
+              "duration": 280,
+              "camera": 0.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "window",
+              "soundCue": "clover-4.residue"
+            }
+          ],
+          "events": [
+            {
+              "version": 3,
+              "seq": 0,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 0,
+              "type": "action_start",
+              "actorId": "clover",
+              "skillId": "clover-4",
+              "targetIds": [
+                "clover",
+                "mochi",
+                "soot"
+              ],
+              "amount": 0
+            },
+            {
+              "version": 3,
+              "seq": 1,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 2,
+              "type": "heal",
+              "actorId": "clover",
+              "skillId": "clover-4",
+              "targetIds": [
+                "clover",
+                "mochi",
+                "soot"
+              ],
+              "amount": 42
+            }
+          ],
+          "name": "Greenhouse morning",
+          "motifs": [
+            "stem",
+            "greenhouse",
+            "sprout",
+            "petal",
+            "window"
+          ],
+          "presentationId": "clover-4"
+        },
+        "beat": {
+          "kind": "anticipation",
+          "start": 0,
+          "duration": 670,
+          "camera": 1.2,
+          "shake": 0,
+          "flash": 0,
+          "clip": "attack",
+          "vfx": "stem",
+          "soundCue": "clover-4.anticipation"
+        },
+        "progress": 0.82,
+        "actionProgress": 0.32663495838287754,
+        "elapsed": 549.4,
+        "color": "#91c990",
+        "camera": 1.2,
+        "shake": 0,
+        "flash": 0,
+        "clip": "attack",
+        "intensity": 0.6750787564852978
+      },
+      "pools": [
+        {
+          "name": "knock-ring",
+          "count": 1
+        },
+        {
+          "name": "wreath",
+          "count": 1
+        },
+        {
+          "name": "greenhouse",
+          "count": 1
+        }
+      ],
+      "canvas": {
+        "x": 184,
+        "y": 202,
+        "width": 1256,
+        "height": 573,
+        "top": 202,
+        "right": 1440,
+        "bottom": 775,
+        "left": 184
+      },
+      "at": 549.4,
+      "words": [],
+      "numbers": [],
+      "badges": 0,
+      "overlaps": [],
+      "outside": [],
+      "unplaced": [],
+      "unplacedDetails": [],
+      "contrast": null,
+      "overflow": false,
+      "stats": {
+        "frames": 23,
+        "calls": 87,
+        "triangles": 115420,
+        "geometries": 510,
+        "textures": 105,
+        "particles": 3,
+        "estimatedGpuBytes": 7275102,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      }
+    },
+    {
+      "id": "clover-4",
+      "progress": "travel",
+      "file": "clover-4-travel.webp",
+      "audit": {
+        "frames": 27,
+        "calls": 84,
+        "triangles": 116456,
+        "geometries": 510,
+        "textures": 105,
+        "particles": 6,
+        "estimatedGpuBytes": 7275102,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "effects": {
+        "instances": 6,
+        "primitiveCalls": 2,
+        "truncated": 0
+      },
+      "frame": {
+        "plan": {
+          "id": 1,
+          "actorId": "clover",
+          "skillId": "clover-4",
+          "targetIds": [
+            "clover",
+            "mochi",
+            "soot"
+          ],
+          "color": "#91c990",
+          "accent": "#fff0b6",
+          "shape": "storm",
+          "duration": 1682,
+          "ultimate": true,
+          "beats": [
+            {
+              "kind": "anticipation",
+              "start": 0,
+              "duration": 670,
+              "camera": 1.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "stem",
+              "soundCue": "clover-4.anticipation"
+            },
+            {
+              "kind": "travel",
+              "start": 670,
+              "duration": 250,
+              "camera": 0.8,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "greenhouse",
+              "soundCue": "clover-4.travel"
+            },
+            {
+              "kind": "impact",
+              "start": 920,
+              "duration": 90,
+              "camera": 0.8,
+              "shake": 0,
+              "flash": 0.055,
+              "clip": "attack",
+              "vfx": "sprout",
+              "soundCue": "clover-4.impact"
+            },
+            {
+              "kind": "reaction",
+              "start": 1010,
+              "duration": 392,
+              "camera": 0.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "petal",
+              "soundCue": "clover-4.reaction"
+            },
+            {
+              "kind": "residue",
+              "start": 1402,
+              "duration": 280,
+              "camera": 0.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "window",
+              "soundCue": "clover-4.residue"
+            }
+          ],
+          "events": [
+            {
+              "version": 3,
+              "seq": 0,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 0,
+              "type": "action_start",
+              "actorId": "clover",
+              "skillId": "clover-4",
+              "targetIds": [
+                "clover",
+                "mochi",
+                "soot"
+              ],
+              "amount": 0
+            },
+            {
+              "version": 3,
+              "seq": 1,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 2,
+              "type": "heal",
+              "actorId": "clover",
+              "skillId": "clover-4",
+              "targetIds": [
+                "clover",
+                "mochi",
+                "soot"
+              ],
+              "amount": 42
+            }
+          ],
+          "name": "Greenhouse morning",
+          "motifs": [
+            "stem",
+            "greenhouse",
+            "sprout",
+            "petal",
+            "window"
+          ],
+          "presentationId": "clover-4"
+        },
+        "beat": {
+          "kind": "travel",
+          "start": 670,
+          "duration": 250,
+          "camera": 0.8,
+          "shake": 0,
+          "flash": 0,
+          "clip": "attack",
+          "vfx": "greenhouse",
+          "soundCue": "clover-4.travel"
+        },
+        "progress": 0.55,
+        "actionProgress": 0.4800832342449465,
+        "elapsed": 807.5,
+        "color": "#91c990",
+        "camera": 0.8,
+        "shake": 0,
+        "flash": 0,
+        "clip": "attack",
+        "intensity": 0.9913818384165962
+      },
+      "pools": [
+        {
+          "name": "wave",
+          "count": 3
+        },
+        {
+          "name": "greenhouse",
+          "count": 3
+        }
+      ],
+      "canvas": {
+        "x": 184,
+        "y": 202,
+        "width": 1256,
+        "height": 573,
+        "top": 202,
+        "right": 1440,
+        "bottom": 775,
+        "left": 184
+      },
+      "at": 807.5,
+      "words": [],
+      "numbers": [],
+      "badges": 0,
+      "overlaps": [],
+      "outside": [],
+      "unplaced": [],
+      "unplacedDetails": [],
+      "contrast": null,
+      "overflow": false,
+      "stats": {
+        "frames": 27,
+        "calls": 84,
+        "triangles": 116456,
+        "geometries": 510,
+        "textures": 105,
+        "particles": 6,
+        "estimatedGpuBytes": 7275102,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      }
+    },
+    {
+      "id": "clover-4",
+      "progress": "impact",
+      "file": "clover-4-impact.webp",
+      "audit": {
+        "frames": 31,
+        "calls": 86,
+        "triangles": 117470,
+        "geometries": 510,
+        "textures": 105,
+        "particles": 54,
+        "estimatedGpuBytes": 7275102,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "effects": {
+        "instances": 54,
+        "primitiveCalls": 4,
+        "truncated": 0
+      },
+      "frame": {
+        "plan": {
+          "id": 1,
+          "actorId": "clover",
+          "skillId": "clover-4",
+          "targetIds": [
+            "clover",
+            "mochi",
+            "soot"
+          ],
+          "color": "#91c990",
+          "accent": "#fff0b6",
+          "shape": "storm",
+          "duration": 1682,
+          "ultimate": true,
+          "beats": [
+            {
+              "kind": "anticipation",
+              "start": 0,
+              "duration": 670,
+              "camera": 1.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "stem",
+              "soundCue": "clover-4.anticipation"
+            },
+            {
+              "kind": "travel",
+              "start": 670,
+              "duration": 250,
+              "camera": 0.8,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "greenhouse",
+              "soundCue": "clover-4.travel"
+            },
+            {
+              "kind": "impact",
+              "start": 920,
+              "duration": 90,
+              "camera": 0.8,
+              "shake": 0,
+              "flash": 0.055,
+              "clip": "attack",
+              "vfx": "sprout",
+              "soundCue": "clover-4.impact"
+            },
+            {
+              "kind": "reaction",
+              "start": 1010,
+              "duration": 392,
+              "camera": 0.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "petal",
+              "soundCue": "clover-4.reaction"
+            },
+            {
+              "kind": "residue",
+              "start": 1402,
+              "duration": 280,
+              "camera": 0.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "window",
+              "soundCue": "clover-4.residue"
+            }
+          ],
+          "events": [
+            {
+              "version": 3,
+              "seq": 0,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 0,
+              "type": "action_start",
+              "actorId": "clover",
+              "skillId": "clover-4",
+              "targetIds": [
+                "clover",
+                "mochi",
+                "soot"
+              ],
+              "amount": 0
+            },
+            {
+              "version": 3,
+              "seq": 1,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 2,
+              "type": "heal",
+              "actorId": "clover",
+              "skillId": "clover-4",
+              "targetIds": [
+                "clover",
+                "mochi",
+                "soot"
+              ],
+              "amount": 42
+            }
+          ],
+          "name": "Greenhouse morning",
+          "motifs": [
+            "stem",
+            "greenhouse",
+            "sprout",
+            "petal",
+            "window"
+          ],
+          "presentationId": "clover-4"
+        },
+        "beat": {
+          "kind": "impact",
+          "start": 920,
+          "duration": 90,
+          "camera": 0.8,
+          "shake": 0,
+          "flash": 0.055,
+          "clip": "attack",
+          "vfx": "sprout",
+          "soundCue": "clover-4.impact"
+        },
+        "progress": 0,
+        "actionProgress": 0.5763971462544589,
+        "elapsed": 969.5,
+        "color": "#91c990",
+        "camera": 0.8,
+        "shake": 0,
+        "flash": 0.055,
+        "clip": "attack",
+        "intensity": 1
+      },
+      "pools": [
+        {
+          "name": "wave",
+          "count": 3
+        },
+        {
+          "name": "wreath",
+          "count": 3
+        },
+        {
+          "name": "greenhouse",
+          "count": 3
+        },
+        {
+          "name": "motif-particle",
+          "count": 45
+        }
+      ],
+      "canvas": {
+        "x": 184,
+        "y": 202,
+        "width": 1256,
+        "height": 573,
+        "top": 202,
+        "right": 1440,
+        "bottom": 775,
+        "left": 184
+      },
+      "at": 969.5,
+      "words": [],
+      "numbers": [
+        {
+          "name": "clover",
+          "x": 622,
+          "y": 417,
+          "width": 60,
+          "height": 22,
+          "top": 417,
+          "right": 682,
+          "bottom": 439,
+          "left": 622
+        },
+        {
+          "name": "mochi",
+          "x": 433,
+          "y": 449,
+          "width": 60,
+          "height": 22,
+          "top": 449,
+          "right": 493,
+          "bottom": 471,
+          "left": 433
+        },
+        {
+          "name": "soot",
+          "x": 360,
+          "y": 399,
+          "width": 60,
+          "height": 22,
+          "top": 399,
+          "right": 420,
+          "bottom": 421,
+          "left": 360
+        }
+      ],
+      "badges": 0,
+      "overlaps": [],
+      "outside": [],
+      "unplaced": [],
+      "unplacedDetails": [],
+      "contrast": 13.143807524794996,
+      "overflow": false,
+      "stats": {
+        "frames": 31,
+        "calls": 86,
+        "triangles": 117470,
+        "geometries": 510,
+        "textures": 105,
+        "particles": 54,
+        "estimatedGpuBytes": 7275102,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      }
+    },
+    {
+      "id": "clover-4",
+      "progress": "recover",
+      "file": "clover-4-recover.webp",
+      "audit": {
+        "frames": 35,
+        "calls": 85,
+        "triangles": 116570,
+        "geometries": 510,
+        "textures": 105,
+        "particles": 57,
+        "estimatedGpuBytes": 7275102,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "effects": {
+        "instances": 57,
+        "primitiveCalls": 3,
+        "truncated": 0
+      },
+      "frame": {
+        "plan": {
+          "id": 1,
+          "actorId": "clover",
+          "skillId": "clover-4",
+          "targetIds": [
+            "clover",
+            "mochi",
+            "soot"
+          ],
+          "color": "#91c990",
+          "accent": "#fff0b6",
+          "shape": "storm",
+          "duration": 1682,
+          "ultimate": true,
+          "beats": [
+            {
+              "kind": "anticipation",
+              "start": 0,
+              "duration": 670,
+              "camera": 1.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "stem",
+              "soundCue": "clover-4.anticipation"
+            },
+            {
+              "kind": "travel",
+              "start": 670,
+              "duration": 250,
+              "camera": 0.8,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "greenhouse",
+              "soundCue": "clover-4.travel"
+            },
+            {
+              "kind": "impact",
+              "start": 920,
+              "duration": 90,
+              "camera": 0.8,
+              "shake": 0,
+              "flash": 0.055,
+              "clip": "attack",
+              "vfx": "sprout",
+              "soundCue": "clover-4.impact"
+            },
+            {
+              "kind": "reaction",
+              "start": 1010,
+              "duration": 392,
+              "camera": 0.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "petal",
+              "soundCue": "clover-4.reaction"
+            },
+            {
+              "kind": "residue",
+              "start": 1402,
+              "duration": 280,
+              "camera": 0.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "window",
+              "soundCue": "clover-4.residue"
+            }
+          ],
+          "events": [
+            {
+              "version": 3,
+              "seq": 0,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 0,
+              "type": "action_start",
+              "actorId": "clover",
+              "skillId": "clover-4",
+              "targetIds": [
+                "clover",
+                "mochi",
+                "soot"
+              ],
+              "amount": 0
+            },
+            {
+              "version": 3,
+              "seq": 1,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 2,
+              "type": "heal",
+              "actorId": "clover",
+              "skillId": "clover-4",
+              "targetIds": [
+                "clover",
+                "mochi",
+                "soot"
+              ],
+              "amount": 42
+            }
+          ],
+          "name": "Greenhouse morning",
+          "motifs": [
+            "stem",
+            "greenhouse",
+            "sprout",
+            "petal",
+            "window"
+          ],
+          "presentationId": "clover-4"
+        },
+        "beat": {
+          "kind": "reaction",
+          "start": 1010,
+          "duration": 392,
+          "camera": 0.2,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "petal",
+          "soundCue": "clover-4.reaction"
+        },
+        "progress": 0.5,
+        "actionProgress": 0.7170035671819263,
+        "elapsed": 1206,
+        "color": "#91c990",
+        "camera": 0.2,
+        "shake": 0,
+        "flash": 0,
+        "clip": "idle",
+        "intensity": 1
+      },
+      "pools": [
+        {
+          "name": "wreath",
+          "count": 3
+        },
+        {
+          "name": "greenhouse",
+          "count": 3
+        },
+        {
+          "name": "motif-particle",
+          "count": 51
+        }
+      ],
+      "canvas": {
+        "x": 184,
+        "y": 202,
+        "width": 1256,
+        "height": 573,
+        "top": 202,
+        "right": 1440,
+        "bottom": 775,
+        "left": 184
+      },
+      "at": 1206,
+      "words": [],
+      "numbers": [
+        {
+          "name": "clover",
+          "x": 621,
+          "y": 420,
+          "width": 60,
+          "height": 22,
+          "top": 420,
+          "right": 681,
+          "bottom": 442,
+          "left": 621
+        },
+        {
+          "name": "mochi",
+          "x": 434,
+          "y": 449,
+          "width": 60,
+          "height": 22,
+          "top": 449,
+          "right": 494,
+          "bottom": 471,
+          "left": 434
+        },
+        {
+          "name": "soot",
+          "x": 362,
+          "y": 400,
+          "width": 60,
+          "height": 22,
+          "top": 400,
+          "right": 422,
+          "bottom": 422,
+          "left": 362
+        }
+      ],
+      "badges": 0,
+      "overlaps": [],
+      "outside": [],
+      "unplaced": [],
+      "unplacedDetails": [],
+      "contrast": 13.143807524794996,
+      "overflow": false,
+      "stats": {
+        "frames": 35,
+        "calls": 85,
+        "triangles": 116570,
+        "geometries": 510,
+        "textures": 105,
+        "particles": 57,
+        "estimatedGpuBytes": 7275102,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      }
+    },
+    {
+      "id": "mallow-4",
+      "progress": "charge",
+      "file": "mallow-4-charge.webp",
+      "audit": {
+        "frames": 40,
+        "calls": 79,
+        "triangles": 112710,
+        "geometries": 507,
+        "textures": 105,
+        "particles": 3,
+        "estimatedGpuBytes": 7275102,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "effects": {
+        "instances": 3,
+        "primitiveCalls": 3,
+        "truncated": 0
+      },
+      "frame": {
+        "plan": {
+          "id": 1,
+          "actorId": "mallow",
+          "skillId": "mallow-4",
+          "targetIds": [
+            "foe-0-button-guard"
+          ],
+          "color": "#f79070",
+          "accent": "#fff1b2",
+          "shape": "storm",
+          "duration": 1697,
+          "ultimate": true,
+          "beats": [
+            {
+              "kind": "anticipation",
+              "start": 0,
+              "duration": 670,
+              "camera": 1.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "whisk",
+              "soundCue": "mallow-4.anticipation"
+            },
+            {
+              "kind": "travel",
+              "start": 670,
+              "duration": 250,
+              "camera": 0.8,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "oven",
+              "soundCue": "mallow-4.travel"
+            },
+            {
+              "kind": "impact",
+              "start": 920,
+              "duration": 105,
+              "camera": 0.8,
+              "shake": 1,
+              "flash": 0.055,
+              "clip": "attack",
+              "vfx": "flame",
+              "soundCue": "mallow-4.impact"
+            },
+            {
+              "kind": "reaction",
+              "start": 1025,
+              "duration": 392,
+              "camera": 0.2,
+              "shake": 0.2,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "ember",
+              "soundCue": "mallow-4.reaction"
+            },
+            {
+              "kind": "residue",
+              "start": 1417,
+              "duration": 280,
+              "camera": 0.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "wick",
+              "soundCue": "mallow-4.residue"
+            }
+          ],
+          "events": [
+            {
+              "version": 3,
+              "seq": 0,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 0,
+              "type": "action_start",
+              "actorId": "mallow",
+              "skillId": "mallow-4",
+              "targetIds": [
+                "foe-0-button-guard"
+              ],
+              "amount": 0
+            },
+            {
+              "version": 3,
+              "seq": 1,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 2,
+              "type": "damage",
+              "actorId": "mallow",
+              "skillId": "mallow-4",
+              "targetIds": [
+                "foe-0-button-guard"
+              ],
+              "amount": 42
+            }
+          ],
+          "name": "Closing blaze",
+          "motifs": [
+            "whisk",
+            "oven",
+            "flame",
+            "ember",
+            "wick"
+          ],
+          "presentationId": "mallow-4"
+        },
+        "beat": {
+          "kind": "anticipation",
+          "start": 0,
+          "duration": 670,
+          "camera": 1.2,
+          "shake": 0,
+          "flash": 0,
+          "clip": "attack",
+          "vfx": "whisk",
+          "soundCue": "mallow-4.anticipation"
+        },
+        "progress": 0.82,
+        "actionProgress": 0.3237477902180318,
+        "elapsed": 549.4,
+        "color": "#f79070",
+        "camera": 1.2,
+        "shake": 0,
+        "flash": 0,
+        "clip": "attack",
+        "intensity": 0.6750787564852978
+      },
+      "pools": [
+        {
+          "name": "knock-ring",
+          "count": 1
+        },
+        {
+          "name": "flame",
+          "count": 1
+        },
+        {
+          "name": "ink-stain",
+          "count": 1
+        }
+      ],
+      "canvas": {
+        "x": 184,
+        "y": 202,
+        "width": 1256,
+        "height": 573,
+        "top": 202,
+        "right": 1440,
+        "bottom": 775,
+        "left": 184
+      },
+      "at": 549.4,
+      "words": [],
+      "numbers": [],
+      "badges": 0,
+      "overlaps": [],
+      "outside": [],
+      "unplaced": [],
+      "unplacedDetails": [],
+      "contrast": null,
+      "overflow": false,
+      "stats": {
+        "frames": 40,
+        "calls": 79,
+        "triangles": 112710,
+        "geometries": 507,
+        "textures": 105,
+        "particles": 3,
+        "estimatedGpuBytes": 7275102,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      }
+    },
+    {
+      "id": "mallow-4",
+      "progress": "travel",
+      "file": "mallow-4-travel.webp",
+      "audit": {
+        "frames": 44,
+        "calls": 77,
+        "triangles": 112600,
+        "geometries": 507,
+        "textures": 105,
+        "particles": 4,
+        "estimatedGpuBytes": 7275102,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "effects": {
+        "instances": 4,
+        "primitiveCalls": 2,
+        "truncated": 0
+      },
+      "frame": {
+        "plan": {
+          "id": 1,
+          "actorId": "mallow",
+          "skillId": "mallow-4",
+          "targetIds": [
+            "foe-0-button-guard"
+          ],
+          "color": "#f79070",
+          "accent": "#fff1b2",
+          "shape": "storm",
+          "duration": 1697,
+          "ultimate": true,
+          "beats": [
+            {
+              "kind": "anticipation",
+              "start": 0,
+              "duration": 670,
+              "camera": 1.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "whisk",
+              "soundCue": "mallow-4.anticipation"
+            },
+            {
+              "kind": "travel",
+              "start": 670,
+              "duration": 250,
+              "camera": 0.8,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "oven",
+              "soundCue": "mallow-4.travel"
+            },
+            {
+              "kind": "impact",
+              "start": 920,
+              "duration": 105,
+              "camera": 0.8,
+              "shake": 1,
+              "flash": 0.055,
+              "clip": "attack",
+              "vfx": "flame",
+              "soundCue": "mallow-4.impact"
+            },
+            {
+              "kind": "reaction",
+              "start": 1025,
+              "duration": 392,
+              "camera": 0.2,
+              "shake": 0.2,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "ember",
+              "soundCue": "mallow-4.reaction"
+            },
+            {
+              "kind": "residue",
+              "start": 1417,
+              "duration": 280,
+              "camera": 0.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "wick",
+              "soundCue": "mallow-4.residue"
+            }
+          ],
+          "events": [
+            {
+              "version": 3,
+              "seq": 0,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 0,
+              "type": "action_start",
+              "actorId": "mallow",
+              "skillId": "mallow-4",
+              "targetIds": [
+                "foe-0-button-guard"
+              ],
+              "amount": 0
+            },
+            {
+              "version": 3,
+              "seq": 1,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 2,
+              "type": "damage",
+              "actorId": "mallow",
+              "skillId": "mallow-4",
+              "targetIds": [
+                "foe-0-button-guard"
+              ],
+              "amount": 42
+            }
+          ],
+          "name": "Closing blaze",
+          "motifs": [
+            "whisk",
+            "oven",
+            "flame",
+            "ember",
+            "wick"
+          ],
+          "presentationId": "mallow-4"
+        },
+        "beat": {
+          "kind": "travel",
+          "start": 670,
+          "duration": 250,
+          "camera": 0.8,
+          "shake": 0,
+          "flash": 0,
+          "clip": "attack",
+          "vfx": "oven",
+          "soundCue": "mallow-4.travel"
+        },
+        "progress": 0.55,
+        "actionProgress": 0.47583971714790807,
+        "elapsed": 807.5,
+        "color": "#f79070",
+        "camera": 0.8,
+        "shake": 0,
+        "flash": 0,
+        "clip": "attack",
+        "intensity": 0.9913818384165962
+      },
+      "pools": [
+        {
+          "name": "flame",
+          "count": 3
+        },
+        {
+          "name": "comet",
+          "count": 1
+        }
+      ],
+      "canvas": {
+        "x": 184,
+        "y": 202,
+        "width": 1256,
+        "height": 573,
+        "top": 202,
+        "right": 1440,
+        "bottom": 775,
+        "left": 184
+      },
+      "at": 807.5,
+      "words": [],
+      "numbers": [],
+      "badges": 0,
+      "overlaps": [],
+      "outside": [],
+      "unplaced": [],
+      "unplacedDetails": [],
+      "contrast": null,
+      "overflow": false,
+      "stats": {
+        "frames": 44,
+        "calls": 77,
+        "triangles": 112600,
+        "geometries": 507,
+        "textures": 105,
+        "particles": 4,
+        "estimatedGpuBytes": 7275102,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      }
+    },
+    {
+      "id": "mallow-4",
+      "progress": "impact",
+      "file": "mallow-4-impact.webp",
+      "audit": {
+        "frames": 48,
+        "calls": 79,
+        "triangles": 112756,
+        "geometries": 507,
+        "textures": 105,
+        "particles": 20,
+        "estimatedGpuBytes": 7275102,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "effects": {
+        "instances": 20,
+        "primitiveCalls": 4,
+        "truncated": 0
+      },
+      "frame": {
+        "plan": {
+          "id": 1,
+          "actorId": "mallow",
+          "skillId": "mallow-4",
+          "targetIds": [
+            "foe-0-button-guard"
+          ],
+          "color": "#f79070",
+          "accent": "#fff1b2",
+          "shape": "storm",
+          "duration": 1697,
+          "ultimate": true,
+          "beats": [
+            {
+              "kind": "anticipation",
+              "start": 0,
+              "duration": 670,
+              "camera": 1.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "whisk",
+              "soundCue": "mallow-4.anticipation"
+            },
+            {
+              "kind": "travel",
+              "start": 670,
+              "duration": 250,
+              "camera": 0.8,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "oven",
+              "soundCue": "mallow-4.travel"
+            },
+            {
+              "kind": "impact",
+              "start": 920,
+              "duration": 105,
+              "camera": 0.8,
+              "shake": 1,
+              "flash": 0.055,
+              "clip": "attack",
+              "vfx": "flame",
+              "soundCue": "mallow-4.impact"
+            },
+            {
+              "kind": "reaction",
+              "start": 1025,
+              "duration": 392,
+              "camera": 0.2,
+              "shake": 0.2,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "ember",
+              "soundCue": "mallow-4.reaction"
+            },
+            {
+              "kind": "residue",
+              "start": 1417,
+              "duration": 280,
+              "camera": 0.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "wick",
+              "soundCue": "mallow-4.residue"
+            }
+          ],
+          "events": [
+            {
+              "version": 3,
+              "seq": 0,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 0,
+              "type": "action_start",
+              "actorId": "mallow",
+              "skillId": "mallow-4",
+              "targetIds": [
+                "foe-0-button-guard"
+              ],
+              "amount": 0
+            },
+            {
+              "version": 3,
+              "seq": 1,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 2,
+              "type": "damage",
+              "actorId": "mallow",
+              "skillId": "mallow-4",
+              "targetIds": [
+                "foe-0-button-guard"
+              ],
+              "amount": 42
+            }
+          ],
+          "name": "Closing blaze",
+          "motifs": [
+            "whisk",
+            "oven",
+            "flame",
+            "ember",
+            "wick"
+          ],
+          "presentationId": "mallow-4"
+        },
+        "beat": {
+          "kind": "impact",
+          "start": 920,
+          "duration": 105,
+          "camera": 0.8,
+          "shake": 1,
+          "flash": 0.055,
+          "clip": "attack",
+          "vfx": "flame",
+          "soundCue": "mallow-4.impact"
+        },
+        "progress": 0,
+        "actionProgress": 0.576163818503241,
+        "elapsed": 977.75,
+        "color": "#f79070",
+        "camera": 0.8,
+        "shake": 1,
+        "flash": 0.055,
+        "clip": "attack",
+        "intensity": 1
+      },
+      "pools": [
+        {
+          "name": "flame",
+          "count": 3
+        },
+        {
+          "name": "ink-stain",
+          "count": 1
+        },
+        {
+          "name": "comet",
+          "count": 1
+        },
+        {
+          "name": "soft-particle",
+          "count": 15
+        }
+      ],
+      "canvas": {
+        "x": 184,
+        "y": 202,
+        "width": 1256,
+        "height": 573,
+        "top": 202,
+        "right": 1440,
+        "bottom": 775,
+        "left": 184
+      },
+      "at": 977.75,
+      "words": [],
+      "numbers": [
+        {
+          "name": "foe-0-button-guard",
+          "x": 965,
+          "y": 412,
+          "width": 60,
+          "height": 22,
+          "top": 412,
+          "right": 1025,
+          "bottom": 434,
+          "left": 965
+        }
+      ],
+      "badges": 0,
+      "overlaps": [],
+      "outside": [],
+      "unplaced": [],
+      "unplacedDetails": [],
+      "contrast": 12.152131470424939,
+      "overflow": false,
+      "stats": {
+        "frames": 48,
+        "calls": 79,
+        "triangles": 112756,
+        "geometries": 507,
+        "textures": 105,
+        "particles": 20,
+        "estimatedGpuBytes": 7275102,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      }
+    },
+    {
+      "id": "mallow-4",
+      "progress": "recover",
+      "file": "mallow-4-recover.webp",
+      "audit": {
+        "frames": 52,
+        "calls": 79,
+        "triangles": 112420,
+        "geometries": 507,
+        "textures": 105,
+        "particles": 21,
+        "estimatedGpuBytes": 7275102,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "effects": {
+        "instances": 21,
+        "primitiveCalls": 4,
+        "truncated": 0
+      },
+      "frame": {
+        "plan": {
+          "id": 1,
+          "actorId": "mallow",
+          "skillId": "mallow-4",
+          "targetIds": [
+            "foe-0-button-guard"
+          ],
+          "color": "#f79070",
+          "accent": "#fff1b2",
+          "shape": "storm",
+          "duration": 1697,
+          "ultimate": true,
+          "beats": [
+            {
+              "kind": "anticipation",
+              "start": 0,
+              "duration": 670,
+              "camera": 1.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "whisk",
+              "soundCue": "mallow-4.anticipation"
+            },
+            {
+              "kind": "travel",
+              "start": 670,
+              "duration": 250,
+              "camera": 0.8,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "oven",
+              "soundCue": "mallow-4.travel"
+            },
+            {
+              "kind": "impact",
+              "start": 920,
+              "duration": 105,
+              "camera": 0.8,
+              "shake": 1,
+              "flash": 0.055,
+              "clip": "attack",
+              "vfx": "flame",
+              "soundCue": "mallow-4.impact"
+            },
+            {
+              "kind": "reaction",
+              "start": 1025,
+              "duration": 392,
+              "camera": 0.2,
+              "shake": 0.2,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "ember",
+              "soundCue": "mallow-4.reaction"
+            },
+            {
+              "kind": "residue",
+              "start": 1417,
+              "duration": 280,
+              "camera": 0.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "wick",
+              "soundCue": "mallow-4.residue"
+            }
+          ],
+          "events": [
+            {
+              "version": 3,
+              "seq": 0,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 0,
+              "type": "action_start",
+              "actorId": "mallow",
+              "skillId": "mallow-4",
+              "targetIds": [
+                "foe-0-button-guard"
+              ],
+              "amount": 0
+            },
+            {
+              "version": 3,
+              "seq": 1,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 2,
+              "type": "damage",
+              "actorId": "mallow",
+              "skillId": "mallow-4",
+              "targetIds": [
+                "foe-0-button-guard"
+              ],
+              "amount": 42
+            }
+          ],
+          "name": "Closing blaze",
+          "motifs": [
+            "whisk",
+            "oven",
+            "flame",
+            "ember",
+            "wick"
+          ],
+          "presentationId": "mallow-4"
+        },
+        "beat": {
+          "kind": "reaction",
+          "start": 1025,
+          "duration": 392,
+          "camera": 0.2,
+          "shake": 0.2,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "ember",
+          "soundCue": "mallow-4.reaction"
+        },
+        "progress": 0.5,
+        "actionProgress": 0.7195050088391278,
+        "elapsed": 1221,
+        "color": "#f79070",
+        "camera": 0.2,
+        "shake": 0.1,
+        "flash": 0,
+        "clip": "idle",
+        "intensity": 1
+      },
+      "pools": [
+        {
+          "name": "flame",
+          "count": 3
+        },
+        {
+          "name": "ink-stain",
+          "count": 1
+        },
+        {
+          "name": "soft-particle",
+          "count": 15
+        },
+        {
+          "name": "motif-particle",
+          "count": 2
+        }
+      ],
+      "canvas": {
+        "x": 184,
+        "y": 202,
+        "width": 1256,
+        "height": 573,
+        "top": 202,
+        "right": 1440,
+        "bottom": 775,
+        "left": 184
+      },
+      "at": 1221,
+      "words": [],
+      "numbers": [
+        {
+          "name": "foe-0-button-guard",
+          "x": 979,
+          "y": 413,
+          "width": 60,
+          "height": 22,
+          "top": 413,
+          "right": 1039,
+          "bottom": 435,
+          "left": 979
+        }
+      ],
+      "badges": 0,
+      "overlaps": [],
+      "outside": [],
+      "unplaced": [],
+      "unplacedDetails": [],
+      "contrast": 12.152131470424939,
+      "overflow": false,
+      "stats": {
+        "frames": 52,
+        "calls": 79,
+        "triangles": 112420,
+        "geometries": 507,
+        "textures": 105,
+        "particles": 21,
+        "estimatedGpuBytes": 7275102,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      }
+    },
+    {
+      "id": "cinnamon-4",
+      "progress": "charge",
+      "file": "cinnamon-4-charge.webp",
+      "audit": {
+        "frames": 57,
+        "calls": 80,
+        "triangles": 113883,
+        "geometries": 507,
+        "textures": 105,
+        "particles": 3,
+        "estimatedGpuBytes": 7275102,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "effects": {
+        "instances": 3,
+        "primitiveCalls": 3,
+        "truncated": 0
+      },
+      "frame": {
+        "plan": {
+          "id": 1,
+          "actorId": "cinnamon",
+          "skillId": "cinnamon-4",
+          "targetIds": [
+            "cinnamon"
+          ],
+          "color": "#e6b27a",
+          "accent": "#fff7d5",
+          "shape": "storm",
+          "duration": 1697,
+          "ultimate": true,
+          "beats": [
+            {
+              "kind": "anticipation",
+              "start": 0,
+              "duration": 670,
+              "camera": 1.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "spice-star",
+              "soundCue": "cinnamon-4.anticipation"
+            },
+            {
+              "kind": "travel",
+              "start": 670,
+              "duration": 250,
+              "camera": 0.8,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "serving-bell",
+              "soundCue": "cinnamon-4.travel"
+            },
+            {
+              "kind": "impact",
+              "start": 920,
+              "duration": 110,
+              "camera": 0.8,
+              "shake": 0,
+              "flash": 0.055,
+              "clip": "attack",
+              "vfx": "apron-cloth",
+              "soundCue": "cinnamon-4.impact"
+            },
+            {
+              "kind": "reaction",
+              "start": 1030,
+              "duration": 392,
+              "camera": 0.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "spice-star",
+              "soundCue": "cinnamon-4.reaction"
+            },
+            {
+              "kind": "residue",
+              "start": 1422,
+              "duration": 275,
+              "camera": 0.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "sprout",
+              "soundCue": "cinnamon-4.residue"
+            }
+          ],
+          "events": [
+            {
+              "version": 3,
+              "seq": 0,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 0,
+              "type": "action_start",
+              "actorId": "cinnamon",
+              "skillId": "cinnamon-4",
+              "targetIds": [
+                "cinnamon"
+              ],
+              "amount": 0
+            },
+            {
+              "version": 3,
+              "seq": 1,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 2,
+              "type": "shield",
+              "actorId": "cinnamon",
+              "skillId": "cinnamon-4",
+              "targetIds": [
+                "cinnamon"
+              ],
+              "amount": 42
+            }
+          ],
+          "name": "Second serving",
+          "motifs": [
+            "spice-star",
+            "serving-bell",
+            "apron-cloth",
+            "spice-star",
+            "sprout"
+          ],
+          "presentationId": "cinnamon-4"
+        },
+        "beat": {
+          "kind": "anticipation",
+          "start": 0,
+          "duration": 670,
+          "camera": 1.2,
+          "shake": 0,
+          "flash": 0,
+          "clip": "attack",
+          "vfx": "spice-star",
+          "soundCue": "cinnamon-4.anticipation"
+        },
+        "progress": 0.82,
+        "actionProgress": 0.3237477902180318,
+        "elapsed": 549.4,
+        "color": "#e6b27a",
+        "camera": 1.2,
+        "shake": 0,
+        "flash": 0,
+        "clip": "attack",
+        "intensity": 0.6750787564852978
+      },
+      "pools": [
+        {
+          "name": "knock-ring",
+          "count": 1
+        },
+        {
+          "name": "serving-bell",
+          "count": 1
+        },
+        {
+          "name": "light-pool",
+          "count": 1
+        }
+      ],
+      "canvas": {
+        "x": 184,
+        "y": 202,
+        "width": 1256,
+        "height": 573,
+        "top": 202,
+        "right": 1440,
+        "bottom": 775,
+        "left": 184
+      },
+      "at": 549.4,
+      "words": [],
+      "numbers": [],
+      "badges": 0,
+      "overlaps": [],
+      "outside": [],
+      "unplaced": [],
+      "unplacedDetails": [],
+      "contrast": null,
+      "overflow": false,
+      "stats": {
+        "frames": 57,
+        "calls": 80,
+        "triangles": 113883,
+        "geometries": 507,
+        "textures": 105,
+        "particles": 3,
+        "estimatedGpuBytes": 7275102,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      }
+    },
+    {
+      "id": "cinnamon-4",
+      "progress": "travel",
+      "file": "cinnamon-4-travel.webp",
+      "audit": {
+        "frames": 61,
+        "calls": 78,
+        "triangles": 112407,
+        "geometries": 507,
+        "textures": 105,
+        "particles": 1,
+        "estimatedGpuBytes": 6790482,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "effects": {
+        "instances": 1,
+        "primitiveCalls": 1,
+        "truncated": 0
+      },
+      "frame": {
+        "plan": {
+          "id": 1,
+          "actorId": "cinnamon",
+          "skillId": "cinnamon-4",
+          "targetIds": [
+            "cinnamon"
+          ],
+          "color": "#e6b27a",
+          "accent": "#fff7d5",
+          "shape": "storm",
+          "duration": 1697,
+          "ultimate": true,
+          "beats": [
+            {
+              "kind": "anticipation",
+              "start": 0,
+              "duration": 670,
+              "camera": 1.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "spice-star",
+              "soundCue": "cinnamon-4.anticipation"
+            },
+            {
+              "kind": "travel",
+              "start": 670,
+              "duration": 250,
+              "camera": 0.8,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "serving-bell",
+              "soundCue": "cinnamon-4.travel"
+            },
+            {
+              "kind": "impact",
+              "start": 920,
+              "duration": 110,
+              "camera": 0.8,
+              "shake": 0,
+              "flash": 0.055,
+              "clip": "attack",
+              "vfx": "apron-cloth",
+              "soundCue": "cinnamon-4.impact"
+            },
+            {
+              "kind": "reaction",
+              "start": 1030,
+              "duration": 392,
+              "camera": 0.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "spice-star",
+              "soundCue": "cinnamon-4.reaction"
+            },
+            {
+              "kind": "residue",
+              "start": 1422,
+              "duration": 275,
+              "camera": 0.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "sprout",
+              "soundCue": "cinnamon-4.residue"
+            }
+          ],
+          "events": [
+            {
+              "version": 3,
+              "seq": 0,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 0,
+              "type": "action_start",
+              "actorId": "cinnamon",
+              "skillId": "cinnamon-4",
+              "targetIds": [
+                "cinnamon"
+              ],
+              "amount": 0
+            },
+            {
+              "version": 3,
+              "seq": 1,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 2,
+              "type": "shield",
+              "actorId": "cinnamon",
+              "skillId": "cinnamon-4",
+              "targetIds": [
+                "cinnamon"
+              ],
+              "amount": 42
+            }
+          ],
+          "name": "Second serving",
+          "motifs": [
+            "spice-star",
+            "serving-bell",
+            "apron-cloth",
+            "spice-star",
+            "sprout"
+          ],
+          "presentationId": "cinnamon-4"
+        },
+        "beat": {
+          "kind": "travel",
+          "start": 670,
+          "duration": 250,
+          "camera": 0.8,
+          "shake": 0,
+          "flash": 0,
+          "clip": "attack",
+          "vfx": "serving-bell",
+          "soundCue": "cinnamon-4.travel"
+        },
+        "progress": 0.55,
+        "actionProgress": 0.47583971714790807,
+        "elapsed": 807.5,
+        "color": "#e6b27a",
+        "camera": 0.8,
+        "shake": 0,
+        "flash": 0,
+        "clip": "attack",
+        "intensity": 0.9913818384165962
+      },
+      "pools": [
+        {
+          "name": "comet",
+          "count": 1
+        }
+      ],
+      "canvas": {
+        "x": 184,
+        "y": 202,
+        "width": 1256,
+        "height": 573,
+        "top": 202,
+        "right": 1440,
+        "bottom": 775,
+        "left": 184
+      },
+      "at": 807.5,
+      "words": [],
+      "numbers": [],
+      "badges": 0,
+      "overlaps": [],
+      "outside": [],
+      "unplaced": [],
+      "unplacedDetails": [],
+      "contrast": null,
+      "overflow": false,
+      "stats": {
+        "frames": 61,
+        "calls": 78,
+        "triangles": 112407,
+        "geometries": 507,
+        "textures": 105,
+        "particles": 1,
+        "estimatedGpuBytes": 6790482,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      }
+    },
+    {
+      "id": "cinnamon-4",
+      "progress": "impact",
+      "file": "cinnamon-4-impact.webp",
+      "audit": {
+        "frames": 65,
+        "calls": 82,
+        "triangles": 114693,
+        "geometries": 507,
+        "textures": 105,
+        "particles": 22,
+        "estimatedGpuBytes": 6790482,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "effects": {
+        "instances": 22,
+        "primitiveCalls": 5,
+        "truncated": 0
+      },
+      "frame": {
+        "plan": {
+          "id": 1,
+          "actorId": "cinnamon",
+          "skillId": "cinnamon-4",
+          "targetIds": [
+            "cinnamon"
+          ],
+          "color": "#e6b27a",
+          "accent": "#fff7d5",
+          "shape": "storm",
+          "duration": 1697,
+          "ultimate": true,
+          "beats": [
+            {
+              "kind": "anticipation",
+              "start": 0,
+              "duration": 670,
+              "camera": 1.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "spice-star",
+              "soundCue": "cinnamon-4.anticipation"
+            },
+            {
+              "kind": "travel",
+              "start": 670,
+              "duration": 250,
+              "camera": 0.8,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "serving-bell",
+              "soundCue": "cinnamon-4.travel"
+            },
+            {
+              "kind": "impact",
+              "start": 920,
+              "duration": 110,
+              "camera": 0.8,
+              "shake": 0,
+              "flash": 0.055,
+              "clip": "attack",
+              "vfx": "apron-cloth",
+              "soundCue": "cinnamon-4.impact"
+            },
+            {
+              "kind": "reaction",
+              "start": 1030,
+              "duration": 392,
+              "camera": 0.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "spice-star",
+              "soundCue": "cinnamon-4.reaction"
+            },
+            {
+              "kind": "residue",
+              "start": 1422,
+              "duration": 275,
+              "camera": 0.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "sprout",
+              "soundCue": "cinnamon-4.residue"
+            }
+          ],
+          "events": [
+            {
+              "version": 3,
+              "seq": 0,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 0,
+              "type": "action_start",
+              "actorId": "cinnamon",
+              "skillId": "cinnamon-4",
+              "targetIds": [
+                "cinnamon"
+              ],
+              "amount": 0
+            },
+            {
+              "version": 3,
+              "seq": 1,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 2,
+              "type": "shield",
+              "actorId": "cinnamon",
+              "skillId": "cinnamon-4",
+              "targetIds": [
+                "cinnamon"
+              ],
+              "amount": 42
+            }
+          ],
+          "name": "Second serving",
+          "motifs": [
+            "spice-star",
+            "serving-bell",
+            "apron-cloth",
+            "spice-star",
+            "sprout"
+          ],
+          "presentationId": "cinnamon-4"
+        },
+        "beat": {
+          "kind": "impact",
+          "start": 920,
+          "duration": 110,
+          "camera": 0.8,
+          "shake": 0,
+          "flash": 0.055,
+          "clip": "attack",
+          "vfx": "apron-cloth",
+          "soundCue": "cinnamon-4.impact"
+        },
+        "progress": 0,
+        "actionProgress": 0.5777843252799058,
+        "elapsed": 980.5,
+        "color": "#e6b27a",
+        "camera": 0.8,
+        "shake": 0,
+        "flash": 0.055,
+        "clip": "attack",
+        "intensity": 1
+      },
+      "pools": [
+        {
+          "name": "spice-star",
+          "count": 4
+        },
+        {
+          "name": "serving-bell",
+          "count": 1
+        },
+        {
+          "name": "light-pool",
+          "count": 1
+        },
+        {
+          "name": "comet",
+          "count": 1
+        },
+        {
+          "name": "soft-particle",
+          "count": 15
+        }
+      ],
+      "canvas": {
+        "x": 184,
+        "y": 202,
+        "width": 1256,
+        "height": 573,
+        "top": 202,
+        "right": 1440,
+        "bottom": 775,
+        "left": 184
+      },
+      "at": 980.5,
+      "words": [],
+      "numbers": [
+        {
+          "name": "cinnamon",
+          "x": 622,
+          "y": 420,
+          "width": 60,
+          "height": 22,
+          "top": 420,
+          "right": 682,
+          "bottom": 442,
+          "left": 622
+        }
+      ],
+      "badges": 0,
+      "overlaps": [],
+      "outside": [],
+      "unplaced": [],
+      "unplacedDetails": [],
+      "contrast": 11.416828380541036,
+      "overflow": false,
+      "stats": {
+        "frames": 65,
+        "calls": 82,
+        "triangles": 114693,
+        "geometries": 507,
+        "textures": 105,
+        "particles": 22,
+        "estimatedGpuBytes": 6790482,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      }
+    },
+    {
+      "id": "cinnamon-4",
+      "progress": "recover",
+      "file": "cinnamon-4-recover.webp",
+      "audit": {
+        "frames": 69,
+        "calls": 82,
+        "triangles": 114357,
+        "geometries": 507,
+        "textures": 105,
+        "particles": 23,
+        "estimatedGpuBytes": 6790482,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "effects": {
+        "instances": 23,
+        "primitiveCalls": 5,
+        "truncated": 0
+      },
+      "frame": {
+        "plan": {
+          "id": 1,
+          "actorId": "cinnamon",
+          "skillId": "cinnamon-4",
+          "targetIds": [
+            "cinnamon"
+          ],
+          "color": "#e6b27a",
+          "accent": "#fff7d5",
+          "shape": "storm",
+          "duration": 1697,
+          "ultimate": true,
+          "beats": [
+            {
+              "kind": "anticipation",
+              "start": 0,
+              "duration": 670,
+              "camera": 1.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "spice-star",
+              "soundCue": "cinnamon-4.anticipation"
+            },
+            {
+              "kind": "travel",
+              "start": 670,
+              "duration": 250,
+              "camera": 0.8,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "serving-bell",
+              "soundCue": "cinnamon-4.travel"
+            },
+            {
+              "kind": "impact",
+              "start": 920,
+              "duration": 110,
+              "camera": 0.8,
+              "shake": 0,
+              "flash": 0.055,
+              "clip": "attack",
+              "vfx": "apron-cloth",
+              "soundCue": "cinnamon-4.impact"
+            },
+            {
+              "kind": "reaction",
+              "start": 1030,
+              "duration": 392,
+              "camera": 0.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "spice-star",
+              "soundCue": "cinnamon-4.reaction"
+            },
+            {
+              "kind": "residue",
+              "start": 1422,
+              "duration": 275,
+              "camera": 0.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "sprout",
+              "soundCue": "cinnamon-4.residue"
+            }
+          ],
+          "events": [
+            {
+              "version": 3,
+              "seq": 0,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 0,
+              "type": "action_start",
+              "actorId": "cinnamon",
+              "skillId": "cinnamon-4",
+              "targetIds": [
+                "cinnamon"
+              ],
+              "amount": 0
+            },
+            {
+              "version": 3,
+              "seq": 1,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 2,
+              "type": "shield",
+              "actorId": "cinnamon",
+              "skillId": "cinnamon-4",
+              "targetIds": [
+                "cinnamon"
+              ],
+              "amount": 42
+            }
+          ],
+          "name": "Second serving",
+          "motifs": [
+            "spice-star",
+            "serving-bell",
+            "apron-cloth",
+            "spice-star",
+            "sprout"
+          ],
+          "presentationId": "cinnamon-4"
+        },
+        "beat": {
+          "kind": "reaction",
+          "start": 1030,
+          "duration": 392,
+          "camera": 0.2,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "spice-star",
+          "soundCue": "cinnamon-4.reaction"
+        },
+        "progress": 0.5,
+        "actionProgress": 0.7224513847967,
+        "elapsed": 1226,
+        "color": "#e6b27a",
+        "camera": 0.2,
+        "shake": 0,
+        "flash": 0,
+        "clip": "idle",
+        "intensity": 1
+      },
+      "pools": [
+        {
+          "name": "spice-star",
+          "count": 4
+        },
+        {
+          "name": "serving-bell",
+          "count": 1
+        },
+        {
+          "name": "light-pool",
+          "count": 1
+        },
+        {
+          "name": "soft-particle",
+          "count": 15
+        },
+        {
+          "name": "motif-particle",
+          "count": 2
+        }
+      ],
+      "canvas": {
+        "x": 184,
+        "y": 202,
+        "width": 1256,
+        "height": 573,
+        "top": 202,
+        "right": 1440,
+        "bottom": 775,
+        "left": 184
+      },
+      "at": 1226,
+      "words": [],
+      "numbers": [
+        {
+          "name": "cinnamon",
+          "x": 621,
+          "y": 420,
+          "width": 60,
+          "height": 22,
+          "top": 420,
+          "right": 681,
+          "bottom": 442,
+          "left": 621
+        }
+      ],
+      "badges": 0,
+      "overlaps": [],
+      "outside": [],
+      "unplaced": [],
+      "unplacedDetails": [],
+      "contrast": 11.416828380541036,
+      "overflow": false,
+      "stats": {
+        "frames": 69,
+        "calls": 82,
+        "triangles": 114357,
+        "geometries": 507,
+        "textures": 105,
+        "particles": 23,
+        "estimatedGpuBytes": 6790482,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      }
+    },
+    {
+      "id": "velvet-4",
+      "progress": "charge",
+      "file": "velvet-4-charge.webp",
+      "audit": {
+        "frames": 74,
+        "calls": 79,
+        "triangles": 113298,
+        "geometries": 507,
+        "textures": 105,
+        "particles": 3,
+        "estimatedGpuBytes": 6790482,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "effects": {
+        "instances": 3,
+        "primitiveCalls": 3,
+        "truncated": 0
+      },
+      "frame": {
+        "plan": {
+          "id": 1,
+          "actorId": "velvet",
+          "skillId": "velvet-4",
+          "targetIds": [
+            "foe-0-button-guard"
+          ],
+          "color": "#ac8bc6",
+          "accent": "#f8d9ee",
+          "shape": "storm",
+          "duration": 1697,
+          "ultimate": true,
+          "beats": [
+            {
+              "kind": "anticipation",
+              "start": 0,
+              "duration": 670,
+              "camera": 1.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "spindle",
+              "soundCue": "velvet-4.anticipation"
+            },
+            {
+              "kind": "travel",
+              "start": 670,
+              "duration": 250,
+              "camera": 0.8,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "veil",
+              "soundCue": "velvet-4.travel"
+            },
+            {
+              "kind": "impact",
+              "start": 920,
+              "duration": 105,
+              "camera": 0.8,
+              "shake": 1,
+              "flash": 0.055,
+              "clip": "attack",
+              "vfx": "spindle",
+              "soundCue": "velvet-4.impact"
+            },
+            {
+              "kind": "reaction",
+              "start": 1025,
+              "duration": 392,
+              "camera": 0.2,
+              "shake": 0.2,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "paper-cat",
+              "soundCue": "velvet-4.reaction"
+            },
+            {
+              "kind": "residue",
+              "start": 1417,
+              "duration": 280,
+              "camera": 0.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "constellation",
+              "soundCue": "velvet-4.residue"
+            }
+          ],
+          "events": [
+            {
+              "version": 3,
+              "seq": 0,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 0,
+              "type": "action_start",
+              "actorId": "velvet",
+              "skillId": "velvet-4",
+              "targetIds": [
+                "foe-0-button-guard"
+              ],
+              "amount": 0
+            },
+            {
+              "version": 3,
+              "seq": 1,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 2,
+              "type": "damage",
+              "actorId": "velvet",
+              "skillId": "velvet-4",
+              "targetIds": [
+                "foe-0-button-guard"
+              ],
+              "amount": 42
+            }
+          ],
+          "name": "Velvet curtain",
+          "motifs": [
+            "spindle",
+            "veil",
+            "spindle",
+            "paper-cat",
+            "constellation"
+          ],
+          "presentationId": "velvet-4"
+        },
+        "beat": {
+          "kind": "anticipation",
+          "start": 0,
+          "duration": 670,
+          "camera": 1.2,
+          "shake": 0,
+          "flash": 0,
+          "clip": "attack",
+          "vfx": "spindle",
+          "soundCue": "velvet-4.anticipation"
+        },
+        "progress": 0.82,
+        "actionProgress": 0.3237477902180318,
+        "elapsed": 549.4,
+        "color": "#ac8bc6",
+        "camera": 1.2,
+        "shake": 0,
+        "flash": 0,
+        "clip": "attack",
+        "intensity": 0.6750787564852978
+      },
+      "pools": [
+        {
+          "name": "knock-ring",
+          "count": 1
+        },
+        {
+          "name": "veil",
+          "count": 1
+        },
+        {
+          "name": "crescent",
+          "count": 1
+        }
+      ],
+      "canvas": {
+        "x": 184,
+        "y": 202,
+        "width": 1256,
+        "height": 573,
+        "top": 202,
+        "right": 1440,
+        "bottom": 775,
+        "left": 184
+      },
+      "at": 549.4,
+      "words": [],
+      "numbers": [],
+      "badges": 0,
+      "overlaps": [],
+      "outside": [],
+      "unplaced": [],
+      "unplacedDetails": [],
+      "contrast": null,
+      "overflow": false,
+      "stats": {
+        "frames": 74,
+        "calls": 79,
+        "triangles": 113298,
+        "geometries": 507,
+        "textures": 105,
+        "particles": 3,
+        "estimatedGpuBytes": 6790482,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      }
+    },
+    {
+      "id": "velvet-4",
+      "progress": "travel",
+      "file": "velvet-4-travel.webp",
+      "audit": {
+        "frames": 78,
+        "calls": 76,
+        "triangles": 112506,
+        "geometries": 507,
+        "textures": 105,
+        "particles": 1,
+        "estimatedGpuBytes": 6790482,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "effects": {
+        "instances": 1,
+        "primitiveCalls": 1,
+        "truncated": 0
+      },
+      "frame": {
+        "plan": {
+          "id": 1,
+          "actorId": "velvet",
+          "skillId": "velvet-4",
+          "targetIds": [
+            "foe-0-button-guard"
+          ],
+          "color": "#ac8bc6",
+          "accent": "#f8d9ee",
+          "shape": "storm",
+          "duration": 1697,
+          "ultimate": true,
+          "beats": [
+            {
+              "kind": "anticipation",
+              "start": 0,
+              "duration": 670,
+              "camera": 1.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "spindle",
+              "soundCue": "velvet-4.anticipation"
+            },
+            {
+              "kind": "travel",
+              "start": 670,
+              "duration": 250,
+              "camera": 0.8,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "veil",
+              "soundCue": "velvet-4.travel"
+            },
+            {
+              "kind": "impact",
+              "start": 920,
+              "duration": 105,
+              "camera": 0.8,
+              "shake": 1,
+              "flash": 0.055,
+              "clip": "attack",
+              "vfx": "spindle",
+              "soundCue": "velvet-4.impact"
+            },
+            {
+              "kind": "reaction",
+              "start": 1025,
+              "duration": 392,
+              "camera": 0.2,
+              "shake": 0.2,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "paper-cat",
+              "soundCue": "velvet-4.reaction"
+            },
+            {
+              "kind": "residue",
+              "start": 1417,
+              "duration": 280,
+              "camera": 0.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "constellation",
+              "soundCue": "velvet-4.residue"
+            }
+          ],
+          "events": [
+            {
+              "version": 3,
+              "seq": 0,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 0,
+              "type": "action_start",
+              "actorId": "velvet",
+              "skillId": "velvet-4",
+              "targetIds": [
+                "foe-0-button-guard"
+              ],
+              "amount": 0
+            },
+            {
+              "version": 3,
+              "seq": 1,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 2,
+              "type": "damage",
+              "actorId": "velvet",
+              "skillId": "velvet-4",
+              "targetIds": [
+                "foe-0-button-guard"
+              ],
+              "amount": 42
+            }
+          ],
+          "name": "Velvet curtain",
+          "motifs": [
+            "spindle",
+            "veil",
+            "spindle",
+            "paper-cat",
+            "constellation"
+          ],
+          "presentationId": "velvet-4"
+        },
+        "beat": {
+          "kind": "travel",
+          "start": 670,
+          "duration": 250,
+          "camera": 0.8,
+          "shake": 0,
+          "flash": 0,
+          "clip": "attack",
+          "vfx": "veil",
+          "soundCue": "velvet-4.travel"
+        },
+        "progress": 0.55,
+        "actionProgress": 0.47583971714790807,
+        "elapsed": 807.5,
+        "color": "#ac8bc6",
+        "camera": 0.8,
+        "shake": 0,
+        "flash": 0,
+        "clip": "attack",
+        "intensity": 0.9913818384165962
+      },
+      "pools": [
+        {
+          "name": "yarn-fan",
+          "count": 1
+        }
+      ],
+      "canvas": {
+        "x": 184,
+        "y": 202,
+        "width": 1256,
+        "height": 573,
+        "top": 202,
+        "right": 1440,
+        "bottom": 775,
+        "left": 184
+      },
+      "at": 807.5,
+      "words": [],
+      "numbers": [],
+      "badges": 0,
+      "overlaps": [],
+      "outside": [],
+      "unplaced": [],
+      "unplacedDetails": [],
+      "contrast": null,
+      "overflow": false,
+      "stats": {
+        "frames": 78,
+        "calls": 76,
+        "triangles": 112506,
+        "geometries": 507,
+        "textures": 105,
+        "particles": 1,
+        "estimatedGpuBytes": 6790482,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      }
+    },
+    {
+      "id": "velvet-4",
+      "progress": "impact",
+      "file": "velvet-4-impact.webp",
+      "audit": {
+        "frames": 82,
+        "calls": 80,
+        "triangles": 114132,
+        "geometries": 507,
+        "textures": 105,
+        "particles": 21,
+        "estimatedGpuBytes": 6790482,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "effects": {
+        "instances": 21,
+        "primitiveCalls": 5,
+        "truncated": 0
+      },
+      "frame": {
+        "plan": {
+          "id": 1,
+          "actorId": "velvet",
+          "skillId": "velvet-4",
+          "targetIds": [
+            "foe-0-button-guard"
+          ],
+          "color": "#ac8bc6",
+          "accent": "#f8d9ee",
+          "shape": "storm",
+          "duration": 1697,
+          "ultimate": true,
+          "beats": [
+            {
+              "kind": "anticipation",
+              "start": 0,
+              "duration": 670,
+              "camera": 1.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "spindle",
+              "soundCue": "velvet-4.anticipation"
+            },
+            {
+              "kind": "travel",
+              "start": 670,
+              "duration": 250,
+              "camera": 0.8,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "veil",
+              "soundCue": "velvet-4.travel"
+            },
+            {
+              "kind": "impact",
+              "start": 920,
+              "duration": 105,
+              "camera": 0.8,
+              "shake": 1,
+              "flash": 0.055,
+              "clip": "attack",
+              "vfx": "spindle",
+              "soundCue": "velvet-4.impact"
+            },
+            {
+              "kind": "reaction",
+              "start": 1025,
+              "duration": 392,
+              "camera": 0.2,
+              "shake": 0.2,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "paper-cat",
+              "soundCue": "velvet-4.reaction"
+            },
+            {
+              "kind": "residue",
+              "start": 1417,
+              "duration": 280,
+              "camera": 0.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "constellation",
+              "soundCue": "velvet-4.residue"
+            }
+          ],
+          "events": [
+            {
+              "version": 3,
+              "seq": 0,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 0,
+              "type": "action_start",
+              "actorId": "velvet",
+              "skillId": "velvet-4",
+              "targetIds": [
+                "foe-0-button-guard"
+              ],
+              "amount": 0
+            },
+            {
+              "version": 3,
+              "seq": 1,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 2,
+              "type": "damage",
+              "actorId": "velvet",
+              "skillId": "velvet-4",
+              "targetIds": [
+                "foe-0-button-guard"
+              ],
+              "amount": 42
+            }
+          ],
+          "name": "Velvet curtain",
+          "motifs": [
+            "spindle",
+            "veil",
+            "spindle",
+            "paper-cat",
+            "constellation"
+          ],
+          "presentationId": "velvet-4"
+        },
+        "beat": {
+          "kind": "impact",
+          "start": 920,
+          "duration": 105,
+          "camera": 0.8,
+          "shake": 1,
+          "flash": 0.055,
+          "clip": "attack",
+          "vfx": "spindle",
+          "soundCue": "velvet-4.impact"
+        },
+        "progress": 0,
+        "actionProgress": 0.576163818503241,
+        "elapsed": 977.75,
+        "color": "#ac8bc6",
+        "camera": 0.8,
+        "shake": 1,
+        "flash": 0.055,
+        "clip": "attack",
+        "intensity": 1
+      },
+      "pools": [
+        {
+          "name": "veil",
+          "count": 1
+        },
+        {
+          "name": "needle",
+          "count": 3
+        },
+        {
+          "name": "yarn-fan",
+          "count": 1
+        },
+        {
+          "name": "crescent",
+          "count": 1
+        },
+        {
+          "name": "motif-particle",
+          "count": 15
+        }
+      ],
+      "canvas": {
+        "x": 184,
+        "y": 202,
+        "width": 1256,
+        "height": 573,
+        "top": 202,
+        "right": 1440,
+        "bottom": 775,
+        "left": 184
+      },
+      "at": 977.75,
+      "words": [],
+      "numbers": [
+        {
+          "name": "foe-0-button-guard",
+          "x": 964,
+          "y": 412,
+          "width": 60,
+          "height": 22,
+          "top": 412,
+          "right": 1024,
+          "bottom": 434,
+          "left": 964
+        }
+      ],
+      "badges": 0,
+      "overlaps": [],
+      "outside": [],
+      "unplaced": [],
+      "unplacedDetails": [],
+      "contrast": 12.152131470424939,
+      "overflow": false,
+      "stats": {
+        "frames": 82,
+        "calls": 80,
+        "triangles": 114132,
+        "geometries": 507,
+        "textures": 105,
+        "particles": 21,
+        "estimatedGpuBytes": 6790482,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      }
+    },
+    {
+      "id": "velvet-4",
+      "progress": "recover",
+      "file": "velvet-4-recover.webp",
+      "audit": {
+        "frames": 86,
+        "calls": 79,
+        "triangles": 113712,
+        "geometries": 507,
+        "textures": 105,
+        "particles": 22,
+        "estimatedGpuBytes": 6790482,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "effects": {
+        "instances": 22,
+        "primitiveCalls": 4,
+        "truncated": 0
+      },
+      "frame": {
+        "plan": {
+          "id": 1,
+          "actorId": "velvet",
+          "skillId": "velvet-4",
+          "targetIds": [
+            "foe-0-button-guard"
+          ],
+          "color": "#ac8bc6",
+          "accent": "#f8d9ee",
+          "shape": "storm",
+          "duration": 1697,
+          "ultimate": true,
+          "beats": [
+            {
+              "kind": "anticipation",
+              "start": 0,
+              "duration": 670,
+              "camera": 1.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "spindle",
+              "soundCue": "velvet-4.anticipation"
+            },
+            {
+              "kind": "travel",
+              "start": 670,
+              "duration": 250,
+              "camera": 0.8,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "veil",
+              "soundCue": "velvet-4.travel"
+            },
+            {
+              "kind": "impact",
+              "start": 920,
+              "duration": 105,
+              "camera": 0.8,
+              "shake": 1,
+              "flash": 0.055,
+              "clip": "attack",
+              "vfx": "spindle",
+              "soundCue": "velvet-4.impact"
+            },
+            {
+              "kind": "reaction",
+              "start": 1025,
+              "duration": 392,
+              "camera": 0.2,
+              "shake": 0.2,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "paper-cat",
+              "soundCue": "velvet-4.reaction"
+            },
+            {
+              "kind": "residue",
+              "start": 1417,
+              "duration": 280,
+              "camera": 0.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "constellation",
+              "soundCue": "velvet-4.residue"
+            }
+          ],
+          "events": [
+            {
+              "version": 3,
+              "seq": 0,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 0,
+              "type": "action_start",
+              "actorId": "velvet",
+              "skillId": "velvet-4",
+              "targetIds": [
+                "foe-0-button-guard"
+              ],
+              "amount": 0
+            },
+            {
+              "version": 3,
+              "seq": 1,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 2,
+              "type": "damage",
+              "actorId": "velvet",
+              "skillId": "velvet-4",
+              "targetIds": [
+                "foe-0-button-guard"
+              ],
+              "amount": 42
+            }
+          ],
+          "name": "Velvet curtain",
+          "motifs": [
+            "spindle",
+            "veil",
+            "spindle",
+            "paper-cat",
+            "constellation"
+          ],
+          "presentationId": "velvet-4"
+        },
+        "beat": {
+          "kind": "reaction",
+          "start": 1025,
+          "duration": 392,
+          "camera": 0.2,
+          "shake": 0.2,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "paper-cat",
+          "soundCue": "velvet-4.reaction"
+        },
+        "progress": 0.5,
+        "actionProgress": 0.7195050088391278,
+        "elapsed": 1221,
+        "color": "#ac8bc6",
+        "camera": 0.2,
+        "shake": 0.1,
+        "flash": 0,
+        "clip": "idle",
+        "intensity": 1
+      },
+      "pools": [
+        {
+          "name": "veil",
+          "count": 1
+        },
+        {
+          "name": "needle",
+          "count": 3
+        },
+        {
+          "name": "crescent",
+          "count": 1
+        },
+        {
+          "name": "motif-particle",
+          "count": 17
+        }
+      ],
+      "canvas": {
+        "x": 184,
+        "y": 202,
+        "width": 1256,
+        "height": 573,
+        "top": 202,
+        "right": 1440,
+        "bottom": 775,
+        "left": 184
+      },
+      "at": 1221,
+      "words": [],
+      "numbers": [
+        {
+          "name": "foe-0-button-guard",
+          "x": 978,
+          "y": 412,
+          "width": 60,
+          "height": 22,
+          "top": 412,
+          "right": 1038,
+          "bottom": 434,
+          "left": 978
+        }
+      ],
+      "badges": 0,
+      "overlaps": [],
+      "outside": [],
+      "unplaced": [],
+      "unplacedDetails": [],
+      "contrast": 12.152131470424939,
+      "overflow": false,
+      "stats": {
+        "frames": 86,
+        "calls": 79,
+        "triangles": 113712,
+        "geometries": 507,
+        "textures": 105,
+        "particles": 22,
+        "estimatedGpuBytes": 6790482,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      }
+    },
+    {
+      "id": "inkcap-4",
+      "progress": "charge",
+      "file": "inkcap-4-charge.webp",
+      "audit": {
+        "frames": 91,
+        "calls": 80,
+        "triangles": 113892,
+        "geometries": 507,
+        "textures": 105,
+        "particles": 4,
+        "estimatedGpuBytes": 6790482,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "effects": {
+        "instances": 4,
+        "primitiveCalls": 4,
+        "truncated": 0
+      },
+      "frame": {
+        "plan": {
+          "id": 1,
+          "actorId": "inkcap",
+          "skillId": "inkcap-4",
+          "targetIds": [
+            "foe-0-button-guard"
+          ],
+          "color": "#a694cf",
+          "accent": "#eae3ff",
+          "shape": "storm",
+          "duration": 1697,
+          "ultimate": true,
+          "beats": [
+            {
+              "kind": "anticipation",
+              "start": 0,
+              "duration": 670,
+              "camera": 1.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "paper-cat",
+              "soundCue": "inkcap-4.anticipation"
+            },
+            {
+              "kind": "travel",
+              "start": 670,
+              "duration": 250,
+              "camera": 0.8,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "ink-cap",
+              "soundCue": "inkcap-4.travel"
+            },
+            {
+              "kind": "impact",
+              "start": 920,
+              "duration": 110,
+              "camera": 0.8,
+              "shake": 0.9,
+              "flash": 0.055,
+              "clip": "attack",
+              "vfx": "crescent",
+              "soundCue": "inkcap-4.impact"
+            },
+            {
+              "kind": "reaction",
+              "start": 1030,
+              "duration": 392,
+              "camera": 0.2,
+              "shake": 0.18000000000000002,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "paper-cat",
+              "soundCue": "inkcap-4.reaction"
+            },
+            {
+              "kind": "residue",
+              "start": 1422,
+              "duration": 275,
+              "camera": 0.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "yarn-fan",
+              "soundCue": "inkcap-4.residue"
+            }
+          ],
+          "events": [
+            {
+              "version": 3,
+              "seq": 0,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 0,
+              "type": "action_start",
+              "actorId": "inkcap",
+              "skillId": "inkcap-4",
+              "targetIds": [
+                "foe-0-button-guard"
+              ],
+              "amount": 0
+            },
+            {
+              "version": 3,
+              "seq": 1,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 2,
+              "type": "damage",
+              "actorId": "inkcap",
+              "skillId": "inkcap-4",
+              "targetIds": [
+                "foe-0-button-guard"
+              ],
+              "amount": 42
+            }
+          ],
+          "name": "Dreaming canopy",
+          "motifs": [
+            "paper-cat",
+            "ink-cap",
+            "crescent",
+            "paper-cat",
+            "yarn-fan"
+          ],
+          "presentationId": "inkcap-4"
+        },
+        "beat": {
+          "kind": "anticipation",
+          "start": 0,
+          "duration": 670,
+          "camera": 1.2,
+          "shake": 0,
+          "flash": 0,
+          "clip": "attack",
+          "vfx": "paper-cat",
+          "soundCue": "inkcap-4.anticipation"
+        },
+        "progress": 0.82,
+        "actionProgress": 0.3237477902180318,
+        "elapsed": 549.4,
+        "color": "#a694cf",
+        "camera": 1.2,
+        "shake": 0,
+        "flash": 0,
+        "clip": "attack",
+        "intensity": 0.6750787564852978
+      },
+      "pools": [
+        {
+          "name": "knock-ring",
+          "count": 1
+        },
+        {
+          "name": "knot",
+          "count": 1
+        },
+        {
+          "name": "ink-cap",
+          "count": 1
+        },
+        {
+          "name": "ink-stain",
+          "count": 1
+        }
+      ],
+      "canvas": {
+        "x": 184,
+        "y": 202,
+        "width": 1256,
+        "height": 573,
+        "top": 202,
+        "right": 1440,
+        "bottom": 775,
+        "left": 184
+      },
+      "at": 549.4,
+      "words": [],
+      "numbers": [],
+      "badges": 1,
+      "overlaps": [],
+      "outside": [],
+      "unplaced": [],
+      "unplacedDetails": [],
+      "contrast": 9.897586152042836,
+      "overflow": false,
+      "stats": {
+        "frames": 91,
+        "calls": 80,
+        "triangles": 113892,
+        "geometries": 507,
+        "textures": 105,
+        "particles": 4,
+        "estimatedGpuBytes": 6790482,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      }
+    },
+    {
+      "id": "inkcap-4",
+      "progress": "travel",
+      "file": "inkcap-4-travel.webp",
+      "audit": {
+        "frames": 95,
+        "calls": 77,
+        "triangles": 112738,
+        "geometries": 507,
+        "textures": 105,
+        "particles": 2,
+        "estimatedGpuBytes": 6790482,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "effects": {
+        "instances": 2,
+        "primitiveCalls": 2,
+        "truncated": 0
+      },
+      "frame": {
+        "plan": {
+          "id": 1,
+          "actorId": "inkcap",
+          "skillId": "inkcap-4",
+          "targetIds": [
+            "foe-0-button-guard"
+          ],
+          "color": "#a694cf",
+          "accent": "#eae3ff",
+          "shape": "storm",
+          "duration": 1697,
+          "ultimate": true,
+          "beats": [
+            {
+              "kind": "anticipation",
+              "start": 0,
+              "duration": 670,
+              "camera": 1.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "paper-cat",
+              "soundCue": "inkcap-4.anticipation"
+            },
+            {
+              "kind": "travel",
+              "start": 670,
+              "duration": 250,
+              "camera": 0.8,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "ink-cap",
+              "soundCue": "inkcap-4.travel"
+            },
+            {
+              "kind": "impact",
+              "start": 920,
+              "duration": 110,
+              "camera": 0.8,
+              "shake": 0.9,
+              "flash": 0.055,
+              "clip": "attack",
+              "vfx": "crescent",
+              "soundCue": "inkcap-4.impact"
+            },
+            {
+              "kind": "reaction",
+              "start": 1030,
+              "duration": 392,
+              "camera": 0.2,
+              "shake": 0.18000000000000002,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "paper-cat",
+              "soundCue": "inkcap-4.reaction"
+            },
+            {
+              "kind": "residue",
+              "start": 1422,
+              "duration": 275,
+              "camera": 0.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "yarn-fan",
+              "soundCue": "inkcap-4.residue"
+            }
+          ],
+          "events": [
+            {
+              "version": 3,
+              "seq": 0,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 0,
+              "type": "action_start",
+              "actorId": "inkcap",
+              "skillId": "inkcap-4",
+              "targetIds": [
+                "foe-0-button-guard"
+              ],
+              "amount": 0
+            },
+            {
+              "version": 3,
+              "seq": 1,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 2,
+              "type": "damage",
+              "actorId": "inkcap",
+              "skillId": "inkcap-4",
+              "targetIds": [
+                "foe-0-button-guard"
+              ],
+              "amount": 42
+            }
+          ],
+          "name": "Dreaming canopy",
+          "motifs": [
+            "paper-cat",
+            "ink-cap",
+            "crescent",
+            "paper-cat",
+            "yarn-fan"
+          ],
+          "presentationId": "inkcap-4"
+        },
+        "beat": {
+          "kind": "travel",
+          "start": 670,
+          "duration": 250,
+          "camera": 0.8,
+          "shake": 0,
+          "flash": 0,
+          "clip": "attack",
+          "vfx": "ink-cap",
+          "soundCue": "inkcap-4.travel"
+        },
+        "progress": 0.55,
+        "actionProgress": 0.47583971714790807,
+        "elapsed": 807.5,
+        "color": "#a694cf",
+        "camera": 0.8,
+        "shake": 0,
+        "flash": 0,
+        "clip": "attack",
+        "intensity": 0.9913818384165962
+      },
+      "pools": [
+        {
+          "name": "knot",
+          "count": 1
+        },
+        {
+          "name": "yarn-fan",
+          "count": 1
+        }
+      ],
+      "canvas": {
+        "x": 184,
+        "y": 202,
+        "width": 1256,
+        "height": 573,
+        "top": 202,
+        "right": 1440,
+        "bottom": 775,
+        "left": 184
+      },
+      "at": 807.5,
+      "words": [],
+      "numbers": [],
+      "badges": 1,
+      "overlaps": [],
+      "outside": [],
+      "unplaced": [],
+      "unplacedDetails": [],
+      "contrast": 9.897586152042836,
+      "overflow": false,
+      "stats": {
+        "frames": 95,
+        "calls": 77,
+        "triangles": 112738,
+        "geometries": 507,
+        "textures": 105,
+        "particles": 2,
+        "estimatedGpuBytes": 6790482,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      }
+    },
+    {
+      "id": "inkcap-4",
+      "progress": "impact",
+      "file": "inkcap-4-impact.webp",
+      "audit": {
+        "frames": 99,
+        "calls": 81,
+        "triangles": 114646,
+        "geometries": 507,
+        "textures": 105,
+        "particles": 21,
+        "estimatedGpuBytes": 6790482,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "effects": {
+        "instances": 21,
+        "primitiveCalls": 6,
+        "truncated": 0
+      },
+      "frame": {
+        "plan": {
+          "id": 1,
+          "actorId": "inkcap",
+          "skillId": "inkcap-4",
+          "targetIds": [
+            "foe-0-button-guard"
+          ],
+          "color": "#a694cf",
+          "accent": "#eae3ff",
+          "shape": "storm",
+          "duration": 1697,
+          "ultimate": true,
+          "beats": [
+            {
+              "kind": "anticipation",
+              "start": 0,
+              "duration": 670,
+              "camera": 1.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "paper-cat",
+              "soundCue": "inkcap-4.anticipation"
+            },
+            {
+              "kind": "travel",
+              "start": 670,
+              "duration": 250,
+              "camera": 0.8,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "ink-cap",
+              "soundCue": "inkcap-4.travel"
+            },
+            {
+              "kind": "impact",
+              "start": 920,
+              "duration": 110,
+              "camera": 0.8,
+              "shake": 0.9,
+              "flash": 0.055,
+              "clip": "attack",
+              "vfx": "crescent",
+              "soundCue": "inkcap-4.impact"
+            },
+            {
+              "kind": "reaction",
+              "start": 1030,
+              "duration": 392,
+              "camera": 0.2,
+              "shake": 0.18000000000000002,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "paper-cat",
+              "soundCue": "inkcap-4.reaction"
+            },
+            {
+              "kind": "residue",
+              "start": 1422,
+              "duration": 275,
+              "camera": 0.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "yarn-fan",
+              "soundCue": "inkcap-4.residue"
+            }
+          ],
+          "events": [
+            {
+              "version": 3,
+              "seq": 0,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 0,
+              "type": "action_start",
+              "actorId": "inkcap",
+              "skillId": "inkcap-4",
+              "targetIds": [
+                "foe-0-button-guard"
+              ],
+              "amount": 0
+            },
+            {
+              "version": 3,
+              "seq": 1,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 2,
+              "type": "damage",
+              "actorId": "inkcap",
+              "skillId": "inkcap-4",
+              "targetIds": [
+                "foe-0-button-guard"
+              ],
+              "amount": 42
+            }
+          ],
+          "name": "Dreaming canopy",
+          "motifs": [
+            "paper-cat",
+            "ink-cap",
+            "crescent",
+            "paper-cat",
+            "yarn-fan"
+          ],
+          "presentationId": "inkcap-4"
+        },
+        "beat": {
+          "kind": "impact",
+          "start": 920,
+          "duration": 110,
+          "camera": 0.8,
+          "shake": 0.9,
+          "flash": 0.055,
+          "clip": "attack",
+          "vfx": "crescent",
+          "soundCue": "inkcap-4.impact"
+        },
+        "progress": 0,
+        "actionProgress": 0.5777843252799058,
+        "elapsed": 980.5,
+        "color": "#a694cf",
+        "camera": 0.8,
+        "shake": 0.9,
+        "flash": 0.055,
+        "clip": "attack",
+        "intensity": 1
+      },
+      "pools": [
+        {
+          "name": "knot",
+          "count": 1
+        },
+        {
+          "name": "paper-cat",
+          "count": 2
+        },
+        {
+          "name": "ink-cap",
+          "count": 1
+        },
+        {
+          "name": "ink-stain",
+          "count": 1
+        },
+        {
+          "name": "yarn-fan",
+          "count": 1
+        },
+        {
+          "name": "motif-particle",
+          "count": 15
+        }
+      ],
+      "canvas": {
+        "x": 184,
+        "y": 202,
+        "width": 1256,
+        "height": 573,
+        "top": 202,
+        "right": 1440,
+        "bottom": 775,
+        "left": 184
+      },
+      "at": 980.5,
+      "words": [],
+      "numbers": [
+        {
+          "name": "foe-0-button-guard",
+          "x": 964,
+          "y": 412,
+          "width": 60,
+          "height": 22,
+          "top": 412,
+          "right": 1024,
+          "bottom": 434,
+          "left": 964
+        }
+      ],
+      "badges": 1,
+      "overlaps": [],
+      "outside": [],
+      "unplaced": [],
+      "unplacedDetails": [],
+      "contrast": 9.897586152042836,
+      "overflow": false,
+      "stats": {
+        "frames": 99,
+        "calls": 81,
+        "triangles": 114646,
+        "geometries": 507,
+        "textures": 105,
+        "particles": 21,
+        "estimatedGpuBytes": 6790482,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      }
+    },
+    {
+      "id": "inkcap-4",
+      "progress": "recover",
+      "file": "inkcap-4-recover.webp",
+      "audit": {
+        "frames": 103,
+        "calls": 80,
+        "triangles": 114226,
+        "geometries": 507,
+        "textures": 105,
+        "particles": 22,
+        "estimatedGpuBytes": 6790482,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "effects": {
+        "instances": 22,
+        "primitiveCalls": 5,
+        "truncated": 0
+      },
+      "frame": {
+        "plan": {
+          "id": 1,
+          "actorId": "inkcap",
+          "skillId": "inkcap-4",
+          "targetIds": [
+            "foe-0-button-guard"
+          ],
+          "color": "#a694cf",
+          "accent": "#eae3ff",
+          "shape": "storm",
+          "duration": 1697,
+          "ultimate": true,
+          "beats": [
+            {
+              "kind": "anticipation",
+              "start": 0,
+              "duration": 670,
+              "camera": 1.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "paper-cat",
+              "soundCue": "inkcap-4.anticipation"
+            },
+            {
+              "kind": "travel",
+              "start": 670,
+              "duration": 250,
+              "camera": 0.8,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "ink-cap",
+              "soundCue": "inkcap-4.travel"
+            },
+            {
+              "kind": "impact",
+              "start": 920,
+              "duration": 110,
+              "camera": 0.8,
+              "shake": 0.9,
+              "flash": 0.055,
+              "clip": "attack",
+              "vfx": "crescent",
+              "soundCue": "inkcap-4.impact"
+            },
+            {
+              "kind": "reaction",
+              "start": 1030,
+              "duration": 392,
+              "camera": 0.2,
+              "shake": 0.18000000000000002,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "paper-cat",
+              "soundCue": "inkcap-4.reaction"
+            },
+            {
+              "kind": "residue",
+              "start": 1422,
+              "duration": 275,
+              "camera": 0.2,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "yarn-fan",
+              "soundCue": "inkcap-4.residue"
+            }
+          ],
+          "events": [
+            {
+              "version": 3,
+              "seq": 0,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 0,
+              "type": "action_start",
+              "actorId": "inkcap",
+              "skillId": "inkcap-4",
+              "targetIds": [
+                "foe-0-button-guard"
+              ],
+              "amount": 0
+            },
+            {
+              "version": 3,
+              "seq": 1,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 2,
+              "type": "damage",
+              "actorId": "inkcap",
+              "skillId": "inkcap-4",
+              "targetIds": [
+                "foe-0-button-guard"
+              ],
+              "amount": 42
+            }
+          ],
+          "name": "Dreaming canopy",
+          "motifs": [
+            "paper-cat",
+            "ink-cap",
+            "crescent",
+            "paper-cat",
+            "yarn-fan"
+          ],
+          "presentationId": "inkcap-4"
+        },
+        "beat": {
+          "kind": "reaction",
+          "start": 1030,
+          "duration": 392,
+          "camera": 0.2,
+          "shake": 0.18000000000000002,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "paper-cat",
+          "soundCue": "inkcap-4.reaction"
+        },
+        "progress": 0.5,
+        "actionProgress": 0.7224513847967,
+        "elapsed": 1226,
+        "color": "#a694cf",
+        "camera": 0.2,
+        "shake": 0.09000000000000001,
+        "flash": 0,
+        "clip": "idle",
+        "intensity": 1
+      },
+      "pools": [
+        {
+          "name": "knot",
+          "count": 1
+        },
+        {
+          "name": "paper-cat",
+          "count": 2
+        },
+        {
+          "name": "ink-cap",
+          "count": 1
+        },
+        {
+          "name": "ink-stain",
+          "count": 1
+        },
+        {
+          "name": "motif-particle",
+          "count": 17
+        }
+      ],
+      "canvas": {
+        "x": 184,
+        "y": 202,
+        "width": 1256,
+        "height": 573,
+        "top": 202,
+        "right": 1440,
+        "bottom": 775,
+        "left": 184
+      },
+      "at": 1226,
+      "words": [],
+      "numbers": [
+        {
+          "name": "foe-0-button-guard",
+          "x": 978,
+          "y": 412,
+          "width": 60,
+          "height": 22,
+          "top": 412,
+          "right": 1038,
+          "bottom": 434,
+          "left": 978
+        }
+      ],
+      "badges": 1,
+      "overlaps": [],
+      "outside": [],
+      "unplaced": [],
+      "unplacedDetails": [],
+      "contrast": 9.897586152042836,
+      "overflow": false,
+      "stats": {
+        "frames": 103,
+        "calls": 80,
+        "triangles": 114226,
+        "geometries": 507,
+        "textures": 105,
+        "particles": 22,
+        "estimatedGpuBytes": 6790482,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      }
+    },
+    {
+      "id": "enemy:button-guard",
+      "progress": "charge",
+      "file": "enemy-button-guard-charge.webp",
+      "audit": {
+        "frames": 108,
+        "calls": 80,
+        "triangles": 114708,
+        "geometries": 507,
+        "textures": 105,
+        "particles": 2,
+        "estimatedGpuBytes": 6790482,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "effects": {
+        "instances": 2,
+        "primitiveCalls": 2,
+        "truncated": 0
+      },
+      "frame": {
+        "plan": {
+          "id": 1,
+          "actorId": "foe-0-button-guard",
+          "skillId": "guardAttack",
+          "targetIds": [
+            "foe-0-button-guard"
+          ],
+          "color": "#d8bc8a",
+          "accent": "#f7e6af",
+          "shape": "slash",
+          "duration": 1189,
+          "ultimate": false,
+          "beats": [
+            {
+              "kind": "anticipation",
+              "start": 0,
+              "duration": 600,
+              "camera": 0.12,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "collar",
+              "soundCue": "guardAttack.anticipation"
+            },
+            {
+              "kind": "travel",
+              "start": 600,
+              "duration": 146,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "step",
+              "vfx": "button",
+              "soundCue": "guardAttack.travel"
+            },
+            {
+              "kind": "impact",
+              "start": 746,
+              "duration": 85,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0.025,
+              "clip": "attack",
+              "vfx": "shield-facet",
+              "soundCue": "guardAttack.impact"
+            },
+            {
+              "kind": "reaction",
+              "start": 831,
+              "duration": 175,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "seam",
+              "soundCue": "guardAttack.reaction"
+            },
+            {
+              "kind": "residue",
+              "start": 1006,
+              "duration": 183,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "glow",
+              "soundCue": "guardAttack.residue"
+            }
+          ],
+          "events": [
+            {
+              "version": 3,
+              "seq": 0,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 0,
+              "type": "action_start",
+              "actorId": "foe-0-button-guard",
+              "skillId": "guardAttack",
+              "targetIds": [
+                "foe-0-button-guard"
+              ],
+              "amount": 0
+            },
+            {
+              "version": 3,
+              "seq": 1,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 2,
+              "type": "shield",
+              "actorId": "foe-0-button-guard",
+              "skillId": "guardAttack",
+              "targetIds": [
+                "foe-0-button-guard"
+              ],
+              "amount": 42
+            }
+          ],
+          "name": "Button barricade",
+          "motifs": [
+            "collar",
+            "button",
+            "shield-facet",
+            "seam"
+          ],
+          "presentationId": "enemy:button-guard"
+        },
+        "beat": {
+          "kind": "anticipation",
+          "start": 0,
+          "duration": 600,
+          "camera": 0.12,
+          "shake": 0,
+          "flash": 0,
+          "clip": "attack",
+          "vfx": "collar",
+          "soundCue": "guardAttack.anticipation"
+        },
+        "progress": 0.82,
+        "actionProgress": 0.4137931034482758,
+        "elapsed": 491.99999999999994,
+        "color": "#d8bc8a",
+        "camera": 0.12,
+        "shake": 0,
+        "flash": 0,
+        "clip": "attack",
+        "intensity": 0.6750787564852978
+      },
+      "pools": [
+        {
+          "name": "knock-ring",
+          "count": 1
+        },
+        {
+          "name": "collar",
+          "count": 1
+        }
+      ],
+      "canvas": {
+        "x": 184,
+        "y": 202,
+        "width": 1256,
+        "height": 573,
+        "top": 202,
+        "right": 1440,
+        "bottom": 775,
+        "left": 184
+      },
+      "at": 491.99999999999994,
+      "words": [],
+      "numbers": [],
+      "badges": 0,
+      "overlaps": [],
+      "outside": [],
+      "unplaced": [],
+      "unplacedDetails": [],
+      "contrast": null,
+      "overflow": false,
+      "stats": {
+        "frames": 108,
+        "calls": 80,
+        "triangles": 114708,
+        "geometries": 507,
+        "textures": 105,
+        "particles": 2,
+        "estimatedGpuBytes": 6790482,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      }
+    },
+    {
+      "id": "enemy:button-guard",
+      "progress": "travel",
+      "file": "enemy-button-guard-travel.webp",
+      "audit": {
+        "frames": 112,
+        "calls": 80,
+        "triangles": 118868,
+        "geometries": 507,
+        "textures": 105,
+        "particles": 4,
+        "estimatedGpuBytes": 6790482,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "effects": {
+        "instances": 4,
+        "primitiveCalls": 2,
+        "truncated": 0
+      },
+      "frame": {
+        "plan": {
+          "id": 1,
+          "actorId": "foe-0-button-guard",
+          "skillId": "guardAttack",
+          "targetIds": [
+            "foe-0-button-guard"
+          ],
+          "color": "#d8bc8a",
+          "accent": "#f7e6af",
+          "shape": "slash",
+          "duration": 1189,
+          "ultimate": false,
+          "beats": [
+            {
+              "kind": "anticipation",
+              "start": 0,
+              "duration": 600,
+              "camera": 0.12,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "collar",
+              "soundCue": "guardAttack.anticipation"
+            },
+            {
+              "kind": "travel",
+              "start": 600,
+              "duration": 146,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "step",
+              "vfx": "button",
+              "soundCue": "guardAttack.travel"
+            },
+            {
+              "kind": "impact",
+              "start": 746,
+              "duration": 85,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0.025,
+              "clip": "attack",
+              "vfx": "shield-facet",
+              "soundCue": "guardAttack.impact"
+            },
+            {
+              "kind": "reaction",
+              "start": 831,
+              "duration": 175,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "seam",
+              "soundCue": "guardAttack.reaction"
+            },
+            {
+              "kind": "residue",
+              "start": 1006,
+              "duration": 183,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "glow",
+              "soundCue": "guardAttack.residue"
+            }
+          ],
+          "events": [
+            {
+              "version": 3,
+              "seq": 0,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 0,
+              "type": "action_start",
+              "actorId": "foe-0-button-guard",
+              "skillId": "guardAttack",
+              "targetIds": [
+                "foe-0-button-guard"
+              ],
+              "amount": 0
+            },
+            {
+              "version": 3,
+              "seq": 1,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 2,
+              "type": "shield",
+              "actorId": "foe-0-button-guard",
+              "skillId": "guardAttack",
+              "targetIds": [
+                "foe-0-button-guard"
+              ],
+              "amount": 42
+            }
+          ],
+          "name": "Button barricade",
+          "motifs": [
+            "collar",
+            "button",
+            "shield-facet",
+            "seam"
+          ],
+          "presentationId": "enemy:button-guard"
+        },
+        "beat": {
+          "kind": "travel",
+          "start": 600,
+          "duration": 146,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "step",
+          "vfx": "button",
+          "soundCue": "guardAttack.travel"
+        },
+        "progress": 0.5499999999999997,
+        "actionProgress": 0.572161480235492,
+        "elapsed": 680.3,
+        "color": "#d8bc8a",
+        "camera": 0,
+        "shake": 0,
+        "flash": 0,
+        "clip": "step",
+        "intensity": 0.9913818384165964
+      },
+      "pools": [
+        {
+          "name": "button",
+          "count": 3
+        },
+        {
+          "name": "collar",
+          "count": 1
+        }
+      ],
+      "canvas": {
+        "x": 184,
+        "y": 202,
+        "width": 1256,
+        "height": 573,
+        "top": 202,
+        "right": 1440,
+        "bottom": 775,
+        "left": 184
+      },
+      "at": 680.3,
+      "words": [],
+      "numbers": [],
+      "badges": 0,
+      "overlaps": [],
+      "outside": [],
+      "unplaced": [],
+      "unplacedDetails": [],
+      "contrast": null,
+      "overflow": false,
+      "stats": {
+        "frames": 112,
+        "calls": 80,
+        "triangles": 118868,
+        "geometries": 507,
+        "textures": 105,
+        "particles": 4,
+        "estimatedGpuBytes": 6790482,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      }
+    },
+    {
+      "id": "enemy:button-guard",
+      "progress": "impact",
+      "file": "enemy-button-guard-impact.webp",
+      "audit": {
+        "frames": 116,
+        "calls": 82,
+        "triangles": 119000,
+        "geometries": 507,
+        "textures": 105,
+        "particles": 11,
+        "estimatedGpuBytes": 6790482,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "effects": {
+        "instances": 11,
+        "primitiveCalls": 4,
+        "truncated": 0
+      },
+      "frame": {
+        "plan": {
+          "id": 1,
+          "actorId": "foe-0-button-guard",
+          "skillId": "guardAttack",
+          "targetIds": [
+            "foe-0-button-guard"
+          ],
+          "color": "#d8bc8a",
+          "accent": "#f7e6af",
+          "shape": "slash",
+          "duration": 1189,
+          "ultimate": false,
+          "beats": [
+            {
+              "kind": "anticipation",
+              "start": 0,
+              "duration": 600,
+              "camera": 0.12,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "collar",
+              "soundCue": "guardAttack.anticipation"
+            },
+            {
+              "kind": "travel",
+              "start": 600,
+              "duration": 146,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "step",
+              "vfx": "button",
+              "soundCue": "guardAttack.travel"
+            },
+            {
+              "kind": "impact",
+              "start": 746,
+              "duration": 85,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0.025,
+              "clip": "attack",
+              "vfx": "shield-facet",
+              "soundCue": "guardAttack.impact"
+            },
+            {
+              "kind": "reaction",
+              "start": 831,
+              "duration": 175,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "seam",
+              "soundCue": "guardAttack.reaction"
+            },
+            {
+              "kind": "residue",
+              "start": 1006,
+              "duration": 183,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "glow",
+              "soundCue": "guardAttack.residue"
+            }
+          ],
+          "events": [
+            {
+              "version": 3,
+              "seq": 0,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 0,
+              "type": "action_start",
+              "actorId": "foe-0-button-guard",
+              "skillId": "guardAttack",
+              "targetIds": [
+                "foe-0-button-guard"
+              ],
+              "amount": 0
+            },
+            {
+              "version": 3,
+              "seq": 1,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 2,
+              "type": "shield",
+              "actorId": "foe-0-button-guard",
+              "skillId": "guardAttack",
+              "targetIds": [
+                "foe-0-button-guard"
+              ],
+              "amount": 42
+            }
+          ],
+          "name": "Button barricade",
+          "motifs": [
+            "collar",
+            "button",
+            "shield-facet",
+            "seam"
+          ],
+          "presentationId": "enemy:button-guard"
+        },
+        "beat": {
+          "kind": "impact",
+          "start": 746,
+          "duration": 85,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0.025,
+          "clip": "attack",
+          "vfx": "shield-facet",
+          "soundCue": "guardAttack.impact"
+        },
+        "progress": 0,
+        "actionProgress": 0.6667367535744323,
+        "elapsed": 792.75,
+        "color": "#d8bc8a",
+        "camera": 0,
+        "shake": 0,
+        "flash": 0.025,
+        "clip": "attack",
+        "intensity": 1
+      },
+      "pools": [
+        {
+          "name": "button",
+          "count": 3
+        },
+        {
+          "name": "seam",
+          "count": 1
+        },
+        {
+          "name": "shield-facet",
+          "count": 2
+        },
+        {
+          "name": "soft-particle",
+          "count": 5
+        }
+      ],
+      "canvas": {
+        "x": 184,
+        "y": 202,
+        "width": 1256,
+        "height": 573,
+        "top": 202,
+        "right": 1440,
+        "bottom": 775,
+        "left": 184
+      },
+      "at": 792.75,
+      "words": [],
+      "numbers": [
+        {
+          "name": "foe-0-button-guard",
+          "x": 940,
+          "y": 406,
+          "width": 60,
+          "height": 22,
+          "top": 406,
+          "right": 1000,
+          "bottom": 428,
+          "left": 940
+        }
+      ],
+      "badges": 0,
+      "overlaps": [],
+      "outside": [],
+      "unplaced": [],
+      "unplacedDetails": [],
+      "contrast": 11.416828380541036,
+      "overflow": false,
+      "stats": {
+        "frames": 116,
+        "calls": 82,
+        "triangles": 119000,
+        "geometries": 507,
+        "textures": 105,
+        "particles": 11,
+        "estimatedGpuBytes": 6790482,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      }
+    },
+    {
+      "id": "enemy:button-guard",
+      "progress": "recover",
+      "file": "enemy-button-guard-recover.webp",
+      "audit": {
+        "frames": 120,
+        "calls": 82,
+        "triangles": 120554,
+        "geometries": 507,
+        "textures": 105,
+        "particles": 20,
+        "estimatedGpuBytes": 6790482,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "effects": {
+        "instances": 20,
+        "primitiveCalls": 4,
+        "truncated": 0
+      },
+      "frame": {
+        "plan": {
+          "id": 1,
+          "actorId": "foe-0-button-guard",
+          "skillId": "guardAttack",
+          "targetIds": [
+            "foe-0-button-guard"
+          ],
+          "color": "#d8bc8a",
+          "accent": "#f7e6af",
+          "shape": "slash",
+          "duration": 1189,
+          "ultimate": false,
+          "beats": [
+            {
+              "kind": "anticipation",
+              "start": 0,
+              "duration": 600,
+              "camera": 0.12,
+              "shake": 0,
+              "flash": 0,
+              "clip": "attack",
+              "vfx": "collar",
+              "soundCue": "guardAttack.anticipation"
+            },
+            {
+              "kind": "travel",
+              "start": 600,
+              "duration": 146,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "step",
+              "vfx": "button",
+              "soundCue": "guardAttack.travel"
+            },
+            {
+              "kind": "impact",
+              "start": 746,
+              "duration": 85,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0.025,
+              "clip": "attack",
+              "vfx": "shield-facet",
+              "soundCue": "guardAttack.impact"
+            },
+            {
+              "kind": "reaction",
+              "start": 831,
+              "duration": 175,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "seam",
+              "soundCue": "guardAttack.reaction"
+            },
+            {
+              "kind": "residue",
+              "start": 1006,
+              "duration": 183,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "glow",
+              "soundCue": "guardAttack.residue"
+            }
+          ],
+          "events": [
+            {
+              "version": 3,
+              "seq": 0,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 0,
+              "type": "action_start",
+              "actorId": "foe-0-button-guard",
+              "skillId": "guardAttack",
+              "targetIds": [
+                "foe-0-button-guard"
+              ],
+              "amount": 0
+            },
+            {
+              "version": 3,
+              "seq": 1,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 2,
+              "type": "shield",
+              "actorId": "foe-0-button-guard",
+              "skillId": "guardAttack",
+              "targetIds": [
+                "foe-0-button-guard"
+              ],
+              "amount": 42
+            }
+          ],
+          "name": "Button barricade",
+          "motifs": [
+            "collar",
+            "button",
+            "shield-facet",
+            "seam"
+          ],
+          "presentationId": "enemy:button-guard"
+        },
+        "beat": {
+          "kind": "reaction",
+          "start": 831,
+          "duration": 175,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "seam",
+          "soundCue": "guardAttack.reaction"
+        },
+        "progress": 0.5,
+        "actionProgress": 0.7724978973927671,
+        "elapsed": 918.5,
+        "color": "#d8bc8a",
+        "camera": 0,
+        "shake": 0,
+        "flash": 0,
+        "clip": "idle",
+        "intensity": 1
+      },
+      "pools": [
+        {
+          "name": "button",
+          "count": 3
+        },
+        {
+          "name": "seam",
+          "count": 5
+        },
+        {
+          "name": "shield-facet",
+          "count": 2
+        },
+        {
+          "name": "soft-particle",
+          "count": 10
+        }
+      ],
+      "canvas": {
+        "x": 184,
+        "y": 202,
+        "width": 1256,
+        "height": 573,
+        "top": 202,
+        "right": 1440,
+        "bottom": 775,
+        "left": 184
+      },
+      "at": 918.5,
+      "words": [],
+      "numbers": [
+        {
+          "name": "foe-0-button-guard",
+          "x": 940,
+          "y": 406,
+          "width": 60,
+          "height": 22,
+          "top": 406,
+          "right": 1000,
+          "bottom": 428,
+          "left": 940
+        }
+      ],
+      "badges": 0,
+      "overlaps": [],
+      "outside": [],
+      "unplaced": [],
+      "unplacedDetails": [],
+      "contrast": 11.416828380541036,
+      "overflow": false,
+      "stats": {
+        "frames": 120,
+        "calls": 82,
+        "triangles": 120554,
+        "geometries": 507,
+        "textures": 105,
+        "particles": 20,
+        "estimatedGpuBytes": 6790482,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      }
+    },
+    {
+      "id": "enemy:yarn-giant",
+      "progress": "charge",
+      "file": "enemy-yarn-giant-charge.webp",
+      "audit": {
+        "frames": 125,
+        "calls": 85,
+        "triangles": 119334,
+        "geometries": 507,
+        "textures": 105,
+        "particles": 4,
+        "estimatedGpuBytes": 6936684,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "effects": {
+        "instances": 4,
+        "primitiveCalls": 3,
+        "truncated": 0
+      },
+      "frame": {
+        "plan": {
+          "id": 1,
+          "actorId": "foe-0-yarn-giant",
+          "skillId": "yarnAttack",
+          "targetIds": [
+            "mochi"
+          ],
+          "color": "#c38b91",
+          "accent": "#f5cb91",
+          "shape": "sweep",
+          "duration": 1164,
+          "ultimate": false,
+          "beats": [
+            {
+              "kind": "anticipation",
+              "start": 0,
+              "duration": 600,
+              "camera": 0.12,
+              "shake": 0,
+              "flash": 0,
+              "clip": "telegraph",
+              "vfx": "spool",
+              "soundCue": "yarnAttack.anticipation"
+            },
+            {
+              "kind": "travel",
+              "start": 600,
+              "duration": 146,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "telegraph",
+              "vfx": "seam",
+              "soundCue": "yarnAttack.travel"
+            },
+            {
+              "kind": "impact",
+              "start": 746,
+              "duration": 100,
+              "camera": 0,
+              "shake": 0.8,
+              "flash": 0.025,
+              "clip": "telegraph",
+              "vfx": "yarn-fan",
+              "soundCue": "yarnAttack.impact"
+            },
+            {
+              "kind": "reaction",
+              "start": 846,
+              "duration": 161,
+              "camera": 0,
+              "shake": 0.16000000000000003,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "spool",
+              "soundCue": "yarnAttack.reaction"
+            },
+            {
+              "kind": "residue",
+              "start": 1007,
+              "duration": 157,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "knot",
+              "soundCue": "yarnAttack.residue"
+            }
+          ],
+          "events": [
+            {
+              "version": 3,
+              "seq": 0,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 0,
+              "type": "action_start",
+              "actorId": "foe-0-yarn-giant",
+              "skillId": "yarnAttack",
+              "targetIds": [
+                "mochi"
+              ],
+              "amount": 0
+            },
+            {
+              "version": 3,
+              "seq": 1,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 2,
+              "type": "damage",
+              "actorId": "foe-0-yarn-giant",
+              "skillId": "yarnAttack",
+              "targetIds": [
+                "mochi"
+              ],
+              "amount": 42
+            }
+          ],
+          "name": "Loomfall",
+          "motifs": [
+            "spool",
+            "seam",
+            "yarn-fan",
+            "spool",
+            "knot",
+            "veil"
+          ],
+          "presentationId": "enemy:yarn-giant"
+        },
+        "beat": {
+          "kind": "anticipation",
+          "start": 0,
+          "duration": 600,
+          "camera": 0.12,
+          "shake": 0,
+          "flash": 0,
+          "clip": "telegraph",
+          "vfx": "spool",
+          "soundCue": "yarnAttack.anticipation"
+        },
+        "progress": 0.82,
+        "actionProgress": 0.42268041237113396,
+        "elapsed": 491.99999999999994,
+        "color": "#c38b91",
+        "camera": 0.12,
+        "shake": 0,
+        "flash": 0,
+        "clip": "telegraph",
+        "intensity": 0.6750787564852978
+      },
+      "pools": [
+        {
+          "name": "knock-ring",
+          "count": 1
+        },
+        {
+          "name": "seam",
+          "count": 1
+        },
+        {
+          "name": "spool",
+          "count": 2
+        }
+      ],
+      "canvas": {
+        "x": 184,
+        "y": 202,
+        "width": 1256,
+        "height": 573,
+        "top": 202,
+        "right": 1440,
+        "bottom": 775,
+        "left": 184
+      },
+      "at": 491.99999999999994,
+      "words": [],
+      "numbers": [],
+      "badges": 0,
+      "overlaps": [],
+      "outside": [],
+      "unplaced": [],
+      "unplacedDetails": [],
+      "contrast": null,
+      "overflow": false,
+      "stats": {
+        "frames": 125,
+        "calls": 85,
+        "triangles": 119334,
+        "geometries": 507,
+        "textures": 105,
+        "particles": 4,
+        "estimatedGpuBytes": 6936684,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      }
+    },
+    {
+      "id": "enemy:yarn-giant",
+      "progress": "travel",
+      "file": "enemy-yarn-giant-travel.webp",
+      "audit": {
+        "frames": 129,
+        "calls": 83,
+        "triangles": 119348,
+        "geometries": 507,
+        "textures": 105,
+        "particles": 4,
+        "estimatedGpuBytes": 6936684,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "effects": {
+        "instances": 4,
+        "primitiveCalls": 2,
+        "truncated": 0
+      },
+      "frame": {
+        "plan": {
+          "id": 1,
+          "actorId": "foe-0-yarn-giant",
+          "skillId": "yarnAttack",
+          "targetIds": [
+            "mochi"
+          ],
+          "color": "#c38b91",
+          "accent": "#f5cb91",
+          "shape": "sweep",
+          "duration": 1164,
+          "ultimate": false,
+          "beats": [
+            {
+              "kind": "anticipation",
+              "start": 0,
+              "duration": 600,
+              "camera": 0.12,
+              "shake": 0,
+              "flash": 0,
+              "clip": "telegraph",
+              "vfx": "spool",
+              "soundCue": "yarnAttack.anticipation"
+            },
+            {
+              "kind": "travel",
+              "start": 600,
+              "duration": 146,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "telegraph",
+              "vfx": "seam",
+              "soundCue": "yarnAttack.travel"
+            },
+            {
+              "kind": "impact",
+              "start": 746,
+              "duration": 100,
+              "camera": 0,
+              "shake": 0.8,
+              "flash": 0.025,
+              "clip": "telegraph",
+              "vfx": "yarn-fan",
+              "soundCue": "yarnAttack.impact"
+            },
+            {
+              "kind": "reaction",
+              "start": 846,
+              "duration": 161,
+              "camera": 0,
+              "shake": 0.16000000000000003,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "spool",
+              "soundCue": "yarnAttack.reaction"
+            },
+            {
+              "kind": "residue",
+              "start": 1007,
+              "duration": 157,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "knot",
+              "soundCue": "yarnAttack.residue"
+            }
+          ],
+          "events": [
+            {
+              "version": 3,
+              "seq": 0,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 0,
+              "type": "action_start",
+              "actorId": "foe-0-yarn-giant",
+              "skillId": "yarnAttack",
+              "targetIds": [
+                "mochi"
+              ],
+              "amount": 0
+            },
+            {
+              "version": 3,
+              "seq": 1,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 2,
+              "type": "damage",
+              "actorId": "foe-0-yarn-giant",
+              "skillId": "yarnAttack",
+              "targetIds": [
+                "mochi"
+              ],
+              "amount": 42
+            }
+          ],
+          "name": "Loomfall",
+          "motifs": [
+            "spool",
+            "seam",
+            "yarn-fan",
+            "spool",
+            "knot",
+            "veil"
+          ],
+          "presentationId": "enemy:yarn-giant"
+        },
+        "beat": {
+          "kind": "travel",
+          "start": 600,
+          "duration": 146,
+          "camera": 0,
+          "shake": 0,
+          "flash": 0,
+          "clip": "telegraph",
+          "vfx": "seam",
+          "soundCue": "yarnAttack.travel"
+        },
+        "progress": 0.5499999999999997,
+        "actionProgress": 0.5844501718213058,
+        "elapsed": 680.3,
+        "color": "#c38b91",
+        "camera": 0,
+        "shake": 0,
+        "flash": 0,
+        "clip": "telegraph",
+        "intensity": 0.9913818384165964
+      },
+      "pools": [
+        {
+          "name": "spool",
+          "count": 2
+        },
+        {
+          "name": "yarn-fan",
+          "count": 2
+        }
+      ],
+      "canvas": {
+        "x": 184,
+        "y": 202,
+        "width": 1256,
+        "height": 573,
+        "top": 202,
+        "right": 1440,
+        "bottom": 775,
+        "left": 184
+      },
+      "at": 680.3,
+      "words": [],
+      "numbers": [],
+      "badges": 0,
+      "overlaps": [],
+      "outside": [],
+      "unplaced": [],
+      "unplacedDetails": [],
+      "contrast": null,
+      "overflow": false,
+      "stats": {
+        "frames": 129,
+        "calls": 83,
+        "triangles": 119348,
+        "geometries": 507,
+        "textures": 105,
+        "particles": 4,
+        "estimatedGpuBytes": 6936684,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      }
+    },
+    {
+      "id": "enemy:yarn-giant",
+      "progress": "impact",
+      "file": "enemy-yarn-giant-impact.webp",
+      "audit": {
+        "frames": 133,
+        "calls": 84,
+        "triangles": 119358,
+        "geometries": 507,
+        "textures": 105,
+        "particles": 9,
+        "estimatedGpuBytes": 6936684,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "effects": {
+        "instances": 9,
+        "primitiveCalls": 3,
+        "truncated": 0
+      },
+      "frame": {
+        "plan": {
+          "id": 1,
+          "actorId": "foe-0-yarn-giant",
+          "skillId": "yarnAttack",
+          "targetIds": [
+            "mochi"
+          ],
+          "color": "#c38b91",
+          "accent": "#f5cb91",
+          "shape": "sweep",
+          "duration": 1164,
+          "ultimate": false,
+          "beats": [
+            {
+              "kind": "anticipation",
+              "start": 0,
+              "duration": 600,
+              "camera": 0.12,
+              "shake": 0,
+              "flash": 0,
+              "clip": "telegraph",
+              "vfx": "spool",
+              "soundCue": "yarnAttack.anticipation"
+            },
+            {
+              "kind": "travel",
+              "start": 600,
+              "duration": 146,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "telegraph",
+              "vfx": "seam",
+              "soundCue": "yarnAttack.travel"
+            },
+            {
+              "kind": "impact",
+              "start": 746,
+              "duration": 100,
+              "camera": 0,
+              "shake": 0.8,
+              "flash": 0.025,
+              "clip": "telegraph",
+              "vfx": "yarn-fan",
+              "soundCue": "yarnAttack.impact"
+            },
+            {
+              "kind": "reaction",
+              "start": 846,
+              "duration": 161,
+              "camera": 0,
+              "shake": 0.16000000000000003,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "spool",
+              "soundCue": "yarnAttack.reaction"
+            },
+            {
+              "kind": "residue",
+              "start": 1007,
+              "duration": 157,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "knot",
+              "soundCue": "yarnAttack.residue"
+            }
+          ],
+          "events": [
+            {
+              "version": 3,
+              "seq": 0,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 0,
+              "type": "action_start",
+              "actorId": "foe-0-yarn-giant",
+              "skillId": "yarnAttack",
+              "targetIds": [
+                "mochi"
+              ],
+              "amount": 0
+            },
+            {
+              "version": 3,
+              "seq": 1,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 2,
+              "type": "damage",
+              "actorId": "foe-0-yarn-giant",
+              "skillId": "yarnAttack",
+              "targetIds": [
+                "mochi"
+              ],
+              "amount": 42
+            }
+          ],
+          "name": "Loomfall",
+          "motifs": [
+            "spool",
+            "seam",
+            "yarn-fan",
+            "spool",
+            "knot",
+            "veil"
+          ],
+          "presentationId": "enemy:yarn-giant"
+        },
+        "beat": {
+          "kind": "impact",
+          "start": 746,
+          "duration": 100,
+          "camera": 0,
+          "shake": 0.8,
+          "flash": 0.025,
+          "clip": "telegraph",
+          "vfx": "yarn-fan",
+          "soundCue": "yarnAttack.impact"
+        },
+        "progress": 0,
+        "actionProgress": 0.6881443298969072,
+        "elapsed": 801,
+        "color": "#c38b91",
+        "camera": 0,
+        "shake": 0.8,
+        "flash": 0.025,
+        "clip": "telegraph",
+        "intensity": 1
+      },
+      "pools": [
+        {
+          "name": "spool",
+          "count": 2
+        },
+        {
+          "name": "yarn-fan",
+          "count": 2
+        },
+        {
+          "name": "motif-particle",
+          "count": 5
+        }
+      ],
+      "canvas": {
+        "x": 184,
+        "y": 202,
+        "width": 1256,
+        "height": 573,
+        "top": 202,
+        "right": 1440,
+        "bottom": 775,
+        "left": 184
+      },
+      "at": 801,
+      "words": [],
+      "numbers": [
+        {
+          "name": "mochi",
+          "x": 663,
+          "y": 498,
+          "width": 60,
+          "height": 22,
+          "top": 498,
+          "right": 723,
+          "bottom": 520,
+          "left": 663
+        }
+      ],
+      "badges": 0,
+      "overlaps": [],
+      "outside": [],
+      "unplaced": [],
+      "unplacedDetails": [],
+      "contrast": 12.152131470424939,
+      "overflow": false,
+      "stats": {
+        "frames": 133,
+        "calls": 84,
+        "triangles": 119358,
+        "geometries": 507,
+        "textures": 105,
+        "particles": 9,
+        "estimatedGpuBytes": 6936684,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      }
+    },
+    {
+      "id": "enemy:yarn-giant",
+      "progress": "recover",
+      "file": "enemy-yarn-giant-recover.webp",
+      "audit": {
+        "frames": 137,
+        "calls": 86,
+        "triangles": 120912,
+        "geometries": 507,
+        "textures": 105,
+        "particles": 19,
+        "estimatedGpuBytes": 6936684,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      },
+      "effects": {
+        "instances": 19,
+        "primitiveCalls": 5,
+        "truncated": 0
+      },
+      "frame": {
+        "plan": {
+          "id": 1,
+          "actorId": "foe-0-yarn-giant",
+          "skillId": "yarnAttack",
+          "targetIds": [
+            "mochi"
+          ],
+          "color": "#c38b91",
+          "accent": "#f5cb91",
+          "shape": "sweep",
+          "duration": 1164,
+          "ultimate": false,
+          "beats": [
+            {
+              "kind": "anticipation",
+              "start": 0,
+              "duration": 600,
+              "camera": 0.12,
+              "shake": 0,
+              "flash": 0,
+              "clip": "telegraph",
+              "vfx": "spool",
+              "soundCue": "yarnAttack.anticipation"
+            },
+            {
+              "kind": "travel",
+              "start": 600,
+              "duration": 146,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "telegraph",
+              "vfx": "seam",
+              "soundCue": "yarnAttack.travel"
+            },
+            {
+              "kind": "impact",
+              "start": 746,
+              "duration": 100,
+              "camera": 0,
+              "shake": 0.8,
+              "flash": 0.025,
+              "clip": "telegraph",
+              "vfx": "yarn-fan",
+              "soundCue": "yarnAttack.impact"
+            },
+            {
+              "kind": "reaction",
+              "start": 846,
+              "duration": 161,
+              "camera": 0,
+              "shake": 0.16000000000000003,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "spool",
+              "soundCue": "yarnAttack.reaction"
+            },
+            {
+              "kind": "residue",
+              "start": 1007,
+              "duration": 157,
+              "camera": 0,
+              "shake": 0,
+              "flash": 0,
+              "clip": "idle",
+              "vfx": "knot",
+              "soundCue": "yarnAttack.residue"
+            }
+          ],
+          "events": [
+            {
+              "version": 3,
+              "seq": 0,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 0,
+              "type": "action_start",
+              "actorId": "foe-0-yarn-giant",
+              "skillId": "yarnAttack",
+              "targetIds": [
+                "mochi"
+              ],
+              "amount": 0
+            },
+            {
+              "version": 3,
+              "seq": 1,
+              "turn": 1,
+              "round": 1,
+              "actionId": 1,
+              "beat": 2,
+              "type": "damage",
+              "actorId": "foe-0-yarn-giant",
+              "skillId": "yarnAttack",
+              "targetIds": [
+                "mochi"
+              ],
+              "amount": 42
+            }
+          ],
+          "name": "Loomfall",
+          "motifs": [
+            "spool",
+            "seam",
+            "yarn-fan",
+            "spool",
+            "knot",
+            "veil"
+          ],
+          "presentationId": "enemy:yarn-giant"
+        },
+        "beat": {
+          "kind": "reaction",
+          "start": 846,
+          "duration": 161,
+          "camera": 0,
+          "shake": 0.16000000000000003,
+          "flash": 0,
+          "clip": "idle",
+          "vfx": "spool",
+          "soundCue": "yarnAttack.reaction"
+        },
+        "progress": 0.5,
+        "actionProgress": 0.7959621993127147,
+        "elapsed": 926.5,
+        "color": "#c38b91",
+        "camera": 0,
+        "shake": 0.08000000000000002,
+        "flash": 0,
+        "clip": "idle",
+        "intensity": 1
+      },
+      "pools": [
+        {
+          "name": "knot",
+          "count": 4
+        },
+        {
+          "name": "veil",
+          "count": 1
+        },
+        {
+          "name": "spool",
+          "count": 2
+        },
+        {
+          "name": "yarn-fan",
+          "count": 2
+        },
+        {
+          "name": "motif-particle",
+          "count": 10
+        }
+      ],
+      "canvas": {
+        "x": 184,
+        "y": 202,
+        "width": 1256,
+        "height": 573,
+        "top": 202,
+        "right": 1440,
+        "bottom": 775,
+        "left": 184
+      },
+      "at": 926.5,
+      "words": [],
+      "numbers": [
+        {
+          "name": "mochi",
+          "x": 649,
+          "y": 498,
+          "width": 60,
+          "height": 22,
+          "top": 498,
+          "right": 709,
+          "bottom": 520,
+          "left": 649
+        }
+      ],
+      "badges": 0,
+      "overlaps": [],
+      "outside": [],
+      "unplaced": [],
+      "unplacedDetails": [],
+      "contrast": 12.152131470424939,
+      "overflow": false,
+      "stats": {
+        "frames": 137,
+        "calls": 86,
+        "triangles": 120912,
+        "geometries": 507,
+        "textures": 105,
+        "particles": 19,
+        "estimatedGpuBytes": 6936684,
+        "loaded": 4,
+        "hiddenFrames": 0,
+        "quality": "medium"
+      }
+    }
+  ],
+  "errors": []
+}

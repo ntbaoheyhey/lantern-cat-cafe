@@ -12,7 +12,7 @@ const browser=await chromium.launch({channel:'chromium',args:['--use-angle=metal
 try{
  const page=await browser.newPage({viewport:{width:1440,height:900},deviceScaleFactor:1});
  page.on('pageerror',e=>errors.push(String(e)));await open(page,artifact);
- const ids=['mochi-1','mochi-4','enemy:sock-skipper','enemy:teacup-healer'];
+ const ids=(process.env.ART_IDS||'mochi-1,mochi-4,enemy:sock-skipper,enemy:teacup-healer').split(',');
  for(const id of ids)await apply(page,{gallery:id,progress:0});
  await apply(page,{gallery:ids[0],progress:0});
  const cdp=await page.context().newCDPSession(page);
@@ -25,9 +25,9 @@ try{
  }
  await cdp.send('Page.stopScreencast');await Promise.all(writes);
  await writeFile(raw+'/frames.txt',frames.map((f,i)=>`file '${f.path}'\nduration ${Math.max(.001,i+1<frames.length?frames[i+1].at-f.at:.034)}`).join('\n')+`\nfile '${frames.at(-1).path}'\n`);
- const file=out+'/mochi-vfx-gallery.mp4';
+ const file=out+'/'+(process.env.ART_FILM_NAME||'mochi-vfx-gallery.mp4');
  execFileSync('ffmpeg',['-hide_banner','-loglevel','error','-y','-f','concat','-safe','0','-i',raw+'/frames.txt','-vf','fps=30,format=yuv420p','-c:v','libx264','-preset','fast','-crf','24','-movflags','+faststart',file]);
  const bytes=await readFile(file),hash=b=>createHash('sha256').update(b).digest('hex');
- const result={method:'Four continuous native x1 gallery cues in the game renderer; actor arrangements change between cues. No injected animation ticks during playback. This is not a natural-battle/performance sample.',artifact,artifactSha256:hash(await readFile(artifact)),file,sha256:hash(bytes),bytes:bytes.length,frames:frames.length,seen,errors};
+ const result={method:'Selected continuous native x1 gallery cues in the game renderer; actor arrangements change between cues. No injected animation ticks during playback. This is not a natural-battle/performance sample.',artifact,artifactSha256:hash(await readFile(artifact)),file,sha256:hash(bytes),bytes:bytes.length,frames:frames.length,seen,errors};
  await writeFile(out+'/film.json',JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify({file,frames:frames.length,seen,errors}));
 }finally{await browser.close()}

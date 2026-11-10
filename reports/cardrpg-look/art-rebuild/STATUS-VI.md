@@ -1,6 +1,5 @@
-Đã đọc INBOX mới và chuyển sang TRELLIS chạy local trên Mac.
-Đăng nhập HF và quyền tải trọng số DINOv3 đã xác nhận hoạt động.
-Đang cài môi trường Python3.11 và tải trọng số; chưa có model local mới.
-25concept có nền trong suốt; đã chặn tải/dùng RMBG trong luồng mới.
-Mochi/Soot cũ giữ nguyên; smoke Mochi chỉ để đối chiếu trong thư mục riêng.
-QUEUE tiếp tục; không dùng trình duyệt để tạo3D.
+TRELLIS local đã cài xong; DINOv3 truy cập được, trọng số vẫn đang tải.
+VFX mới đã có cho12mèo và13nhóm địch; giữ nguyên Mochi/Soot và mọi concept cũ.
+168lượt cast tối đa16,8ms;324mẫu mặt VFX và96mẫu camera không phát hiện che mặt.
+E2E421/421qua; camera1440/1024 và nhãn không có chồng lấn trong mẫu đã kiểm tra.
+Một số chiêu thường còn giống nhau; tiếp tục kiểm tra và roster, chưa chấm toàn bộ đạt8,5.

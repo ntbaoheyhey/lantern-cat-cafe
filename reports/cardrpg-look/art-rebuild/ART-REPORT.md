@@ -1,22 +1,22 @@
-Đã tiếp tục theo NONSTOP và INBOX mới: chuyển tạo3D sang TRELLIS local trên Mac.
-Cài đặt Python3.11/MPS đã qua kiểm tra; HF/DINOv3 truy cập được, đang tải trọng số.
-Mochi/Soot giữ nguyên; smoke local chỉ đối chiếu, chưa có model mới được duyệt.
-25concept đã hoàn tất; roster runtime và toàn bộ VFX vẫn PARTIAL.
-Tiếp tục QUEUE; mục tiêu8.5 và báo cáo R8 chưa hoàn thành.
+Đang chạy tiếp QUEUE, chưa phải báo cáo R8 hoàn thành.
+TRELLIS đã cài local; DINOv3 được truy cập, đang tải trọng số.
+VFX12mèo/13nhóm địch đã nối vào trận; camera gần hơn và giữ vùng mặt rõ.
+E2E421/421qua; cast168lượt tối đa16,8ms; demo35,74MB.
+Roster3D chưa đầy đủ; một số hiệu ứng còn giống nhau, mục tiêu8,5 chưa đạt.
 
 # Art Rebuild — active PARTIAL checkpoint
 
-Draft [#427](https://github.com/ntbaoheyhey/taskbar-hero/pull/427). This is not R8 completion.
+Draft [#427](https://github.com/ntbaoheyhey/taskbar-hero/pull/427). R0/M5/S6 and previous conversions are preserved. This is not R8 completion.
 
-- Q1/Q2/Q4 complete. Q3 four-unit decision pending; Q5 concepts complete (12cats,13enemies), runtime roster incomplete. Q6–Q11 remain queued.
-- Latest INBOX replaces Space retries with headless Apple Silicon TRELLIS. Setup/import/MPS checks pass; optional Metal compiler backends unavailable, pure-Python fallback selected. Weight cache and isolated smoke pending; see [local workflow](LOCAL-MODELS.md).
-- Four no-inference local backend guard tests pass. No new runtime acceptance or performance claim from tooling installation.
-- Existing Mochi/Soot conversions retained. Mochi uses rigid modules after failed surface separation; independent hand motion remains limited. Button/Yarn layered fallback remains opt-in runtime while native conversion is evaluated.
-- Latest runtime78c02c3db:1822web tests/type/lint/buildPASS;5seedexact;96face samples0offenders/0overlaps. Full E2E420PASS/1inherited clock flake;2unchanged isolatedPASS.
-- Latest full demo31,777,616B<40MB. No new native/cold performance sampling; inherited upload/draw/heap/OFF+3B/Kettle misses retained.
-- R0 baseline5.9966. Mochi VFX pilot7.7; Soot appeal7.6/motion6.3. No accepted full-roster weighted score; target8.5 remains.
-- Original generated VFX components exist for Mochi,Soot,Clover,Panko,Mallow,Cinnamon; only the Mochi pilot is wired/reviewed. Each source has prompt/hash/provenance. No generated video claimed.
-- Evidence about80MiB/120MB; concept masters about51MiB/60MB. New large masters and all AI weights/dependencies stay outside git.
-- Flags default OFF; B owns canvas/assets only. No shell/rules/A/U edits, PR merge, deployment or payment.
+- Q1/Q2/Q4 complete. Q3 native four-unit conversion decision pending; Q5 all25 original concepts complete, runtime roster incomplete. Q6 new generated VFX across all12hero skills/ultimates and13enemy families implemented, auditPARTIAL7.7/10. Q7 camera/key-light improvements verified, stage7.5. Q8 portraits/icons prepared with opt-in manifest, runtime matching pending. Q9–Q11 ongoing.
+- Latest INBOX replaces browser conversion with local Apple Silicon TRELLIS. Setup/import/MPS and DINOv3 access pass. Weights still downloading; isolated smoke and roster remain unverified. No RMBG weights; all inputs require alpha. See LOCAL-MODELS.md.
+- Mochi/Soot sources unchanged. Mochi rigid modules avoid stretching but limit independent hand motion; Soot retains a baked warm forehead. Button/Yarn use the documented articulated fallback pending native trial.
+- R4:168casts max16.8ms,111draws,183595tri;324face samples0offenders. Five rules seeds exact and85resolved plans unmutated.1823webtests/type/lint/buildPASS. Combined R4/R5 E2E421PASS.
+- R5:1440/1024 fixed posters0UI overlaps/outside/unplaced;96face samples0offenders. Six touched native casts max16.8ms,86draws,124592tri. Tests/checks are retained without needless reruns.
+- Cold3native+3CPU4 whole-load maxima49.9/183.3ms. Battle-ready5.82–5.90s native,9.45–10.17s CPU4. Native post-ready16.8ms; one CPU4 frame33.3ms. Heap/startup delta gates remain unclaimed.
+- Full artifact35,742,969B<40MB; lean/new roster bytes pending. Evidence103.4MB/120MB; large traces/masters outside git with archive receipts.
+- R0 weighted5.9966. Full-roster weighted target8.5 is not reached. Current VFX7.7 and stage7.5 are agent assessments, not human acceptance. Normal/passive uniqueness and large-motif face clipping remain known issues.
+- All25concepts and12VFXmasters original built-in generation; local deterministic packing. No generated video claimed.25portrait pairs+60icon pairs+4rarity frame pairs prepared from those masters, not all matched to runtime yet.
+- Flags default OFF; v3 demo only. B-owned canvas/assets/reports only; no shell/rules/A/U edits, PR merge, deployment or payment.
 
-Evidence: [Mochi rigid review](r1/rigid1/REVIEW.md), [foe motion review](r1/foes-fallback/REVIEW.md), [Soot review](r1/roster/SOOT-REVIEW.md), [VFX pilot](r1/vfx-pilot/REVIEW.md). Historical detailed checkpoint retained in [previous report](r1/ART-REPORT-before-local-mps.md).
+Evidence: r1/rigid1/REVIEW.md; r1/foes-fallback/REVIEW.md; r4/REVIEW.md; r5/REVIEW.md; r3/REVIEW.md. All failed attempts retained or archived with hashes. Continue QUEUE, do not stop at this checkpoint.

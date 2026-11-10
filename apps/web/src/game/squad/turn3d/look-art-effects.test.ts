@@ -1,7 +1,7 @@
 import {expect,it} from 'vitest';
 import {CARD_EFFECT_RECIPES} from './card-effect-data';
 import {fullRecipes,fullEnemyRecipes} from './look-full-recipes';
-import {artEffectRecipes,artLightBeatProgress} from './look-art-effects';
+import {artEffectRecipes,artLightBeatProgress,ART_LIGHT_UNITS} from './look-art-effects';
 import type {EffectFrame} from './effects';
 
 it('keeps legacy art and battle timing intact while replacing pilot props',()=>{
@@ -15,7 +15,28 @@ it('keeps legacy art and battle timing intact while replacing pilot props',()=>{
   for(const l of a.layers){expect(l.start).toBeLessThan(l.end);expect(l.end).toBeLessThanOrEqual(1);}
  }
  expect(JSON.stringify(base)).toBe(original);
- expect(art['soot-1']).toBe(base['soot-1']);
+ for(const id of Object.keys(base).filter(id=>id.startsWith('enemy:'))){
+  const old=base[id]!,recipe=art[id]!;
+  expect(recipe.target,id).toBe(old.target);expect(recipe.durations,id).toEqual(old.durations);
+  expect(recipe.layers.some(l=>['door','roof','lantern','sock','cup','bow','button','bread','cushion','tray','needle'].includes(l.primitive)),id).toBe(false);
+ }
+});
+
+it('preserves all hero kit targets and clocks while sourcing distinct generated components',()=>{
+ const base=fullRecipes(CARD_EFFECT_RECIPES,[...ART_LIGHT_UNITS]);
+ const before=JSON.stringify(base),art=artEffectRecipes(base),ultimates=new Set<string>();
+ for(const [index,owner] of ART_LIGHT_UNITS.entries())for(const suffix of ['1','2','3','4','passive']){
+  const id=`${owner}-${suffix}`,recipe=art[id]!,old=base[id]!;
+  expect(recipe.target,id).toBe(old.target);expect(recipe.durations,id).toEqual(old.durations);
+  expect(recipe.ultimate,id).toBe(old.ultimate);expect(recipe.layers.every(l=>l.primitive==='painted-light'),id).toBe(true);
+  expect(recipe.layers.every(l=>l.start<l.end&&l.end<=1&&l.spriteRow!>=index*4&&l.spriteRow!<index*4+4),id).toBe(true);
+  if(suffix!=='passive'){
+   const charge=recipe.layers.find(l=>l.anchor==='caster'&&l.propOrigin)!,travel=recipe.layers.find(l=>l.motion==='projectile')!;
+   expect(charge.end,id).toBe(travel.start);expect(travel.end,id).toBe(.52);expect(travel.propOrigin,id).toBe(true);
+  }
+  if(recipe.ultimate)ultimates.add(JSON.stringify(recipe.layers));
+ }
+ expect(ultimates.size).toBe(12);expect(JSON.stringify(base)).toBe(before);
 });
 
 it('connects Mochi release and impact at the existing landing beat',()=>{

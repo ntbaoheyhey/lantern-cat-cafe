@@ -14,3 +14,7 @@ Known issues: rigid articulation, Soot baked warm forehead, old foe VFX, limited
 Evidence80MiB/120MB; source51MiB/60MB. Continue QUEUE.md; STOP-B/INBOX checks between items.
 
 Current 2026-11-10T07:30:26.787573+00:00: local Apple Silicon setup/weights download active. DINOv3 access confirmed. Browser conversion schedules above are historical/superseded. See LOCAL-MODELS.md and QUEUE. Runtime unchanged; local-mps guards4PASS.
+
+2026-11-10T07:52:12.375863+00:00: resumed from completed12hero VFX sources. First roster atlas/runtime candidate48shots saved in r4/roster-attempt1; palette/height/enemy-prop repair in progress. Existing models preserved; local weights still downloading (no inference). CurrentHEAD3cf1196a2; uncommitted VFX changes from previous session retained.
+
+2026-11-10T08:19Z: inherited R4/R5 checks consumed without rerun. E2E421PASS, R4 casts168/max16.8ms/111calls/183595tri, faces324PASS; R5 faces48per1440/1024PASS and6casts16.8ms. Reviews written; VFX7.7 and stage7.5 remain PARTIAL. Cold3+3 currently running. Local weights downloading, no inference yet.

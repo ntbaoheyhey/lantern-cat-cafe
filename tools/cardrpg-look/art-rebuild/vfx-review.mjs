@@ -16,7 +16,7 @@ try{
  page.on('pageerror',e=>receipt.errors.push(String(e)));
  page.on('console',m=>{if(m.type()==='error')receipt.errors.push(m.text())});
  await open(page,artifact);
- for(const id of ['mochi-1','mochi-2','mochi-3','mochi-4','enemy:sock-skipper','enemy:teacup-healer']){
+ for(const id of (process.env.ART_IDS||'mochi-1,mochi-2,mochi-3,mochi-4,enemy:sock-skipper,enemy:teacup-healer').split(',')){
   for(const [progress,beat,fraction] of [['charge',0,.82],['travel',1,.55],['impact',2,.55],['recover',3,.5]]){
    await apply(page,{gallery:id,progress:0});
    await page.evaluate(async({beat,fraction})=>{const m=window.__depthReview,b=m.plan.beats[beat];m.animationAt=b.start+b.duration*fraction;m.notify(false);await new Promise(requestAnimationFrame);const s=window.__depthScene;s.render({...s.view(),fixedTime:3.2,paused:true},0);s.dirty=false;await new Promise(requestAnimationFrame)},{beat,fraction});

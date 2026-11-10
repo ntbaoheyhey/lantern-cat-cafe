@@ -1,0 +1,47 @@
+{
+  "id": "biscuit",
+  "createdAt": "2026-11-10T07:35:43.824Z",
+  "tool": "built-in image_gen",
+  "model": "not exposed",
+  "seed": "not exposed",
+  "parameters": {
+    "transparent_background": true,
+    "references": []
+  },
+  "prompt": "Use case: stylized-concept. Asset type: original game VFX component atlas for a premium painted cozy night-cafe RPG. One square RGBA sheet with EXACTLY FOUR separate luminous sprites in an equal 2 by 2 grid. Genuine transparent background, no visible grid or labels. Each component completely contained inside its quadrant with generous 15 percent transparent margin on every side. Cookie defender magic in toasted honey #CC8A42, warm brass #F3BB61 and cream #FFF0D2. TOP LEFT: a compact amber glow with delicate crumbs orbiting a creamy core. TOP RIGHT: a strong horizontal golden sweep with a scalloped bright edge and tapered flour wisps. BOTTOM LEFT: a broad upright ring of scalloped warm light with an open center and layered faceted golden rim. BOTTOM RIGHT: a broad impact burst of amber crumb facets, small flour clouds and ivory rays. Shared painterly dimensional light, crisp bright ivory cores, restrained feathered glow, upper-left warm lighting, layered depth and rich material-like wisps. Reusable independently moving light components, NOT animation frames or a scene. No characters, faces, physical props, cup, lantern, door, weapon, text, symbols, scenery, floor, border, rectangular background or watermark. No reference images. Original design.\n",
+  "master": "/Users/bao/art/look-v3/vfx/biscuit-light-master.png",
+  "sourceSha256": "bf565cea388fd98745990c661ea6745f6f0a55c6bd26b8aa709a3ce48be370a9",
+  "sourceSize": [
+    1254,
+    1254
+  ],
+  "output": "assets/cardrpg-look/v3-vfx/biscuit-light.webp",
+  "sha256": "81bbcbbf6a14922f0ba7bb4999f9bd91f0801af9625c6944d3c1b05e7f325ff5",
+  "bytes": 236900,
+  "components": [
+    {
+      "tile": 0,
+      "visiblePixels": 90770,
+      "transparentPixels": 302359
+    },
+    {
+      "tile": 1,
+      "visiblePixels": 113325,
+      "transparentPixels": 279804
+    },
+    {
+      "tile": 2,
+      "visiblePixels": 143584,
+      "transparentPixels": 249545
+    },
+    {
+      "tile": 3,
+      "visiblePixels": 187597,
+      "transparentPixels": 205532
+    }
+  ],
+  "postprocess": "Original alpha retained; alpha<6 removed;24px smooth edge taper;464px components with24px gutters;1024RGBA WebP94 alpha100",
+  "review": "Four distinct honey/crumb components inspected; open scalloped ring, broad sweep and flour impact; no text or character; runtime motion pending.",
+  "runtimeAccepted": false,
+  "temporalFrames": false
+}

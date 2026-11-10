@@ -1,6 +1,7 @@
 import * as T from 'three';
 import { isReadableBattle } from './look-b2';
 import { isLookV2 } from './look-v2';
+import { isLookArtV3 } from './look-art';
 import type { TurnActor } from '@taskbar-hero/game-rules/src/squad/turn/types';
 import type { Position } from './formation';
 
@@ -33,7 +34,7 @@ export function cardFormation(actor: Pick<TurnActor, 'side' | 'slot' | 'role'>, 
 
 export function cardFrameHeight(aspect: number, preset: CardCamera) {
   if (isReadableBattle()) {
-    const widths = { close: 9.6, wide: 10.6, far: 12.0 };
+    const widths = isLookArtV3() ? { close: 9.2, wide: 9.9, far: 11.5 } : { close: 9.6, wide: 10.6, far: 12.0 };
     return Math.max(3.8, widths.wide / aspect) * widths[preset] / widths.wide;
   }
   if (isLookV2()) {

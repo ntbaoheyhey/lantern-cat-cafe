@@ -10,10 +10,10 @@ import { lookWarmQueue } from './look-warm-queue';
 
 const sources = import.meta.glob('../../../../../../assets/cardrpg-look/flipbooks/{v5-soft,v5-motifs}.webp', {eager:true,query:'?url',import:'default'}) as Record<string,string>;
 const families=['v5-soft','v5-motifs'] as const;
-const paintedSources=import.meta.glob('../../../../../../assets/cardrpg-look/v3-vfx/mochi-light.webp',{eager:true,query:'?url',import:'default'}) as Record<string,string>;
-type Family=typeof families[number]|'mochi-light';
+const paintedSources=import.meta.glob('../../../../../../assets/cardrpg-look/v3-vfx/roster-light.webp',{eager:true,query:'?url',import:'default'}) as Record<string,string>;
+type Family=typeof families[number]|'roster-light';
 const familyFor:Partial<Record<CardEffectPrimitive,Family>>={
- 'painted-light':'mochi-light',
+ 'painted-light':'roster-light',
  'soft-particle':'v5-soft','motif-particle':'v5-motifs','ink-stain':'v5-motifs','ink-drop':'v5-motifs',steam:'v5-soft',veil:'v5-soft',flame:'v5-soft',ember:'v5-soft',spark:'v5-soft','spice-star':'v5-soft',seam:'v5-motifs',knot:'v5-motifs',spool:'v5-motifs',spindle:'v5-motifs','crumb-crown':'v5-soft','seed-pod':'v5-motifs',constellation:'v5-soft',comet:'v5-soft',wave:'v5-soft','yarn-fan':'v5-motifs',leaf:'v5-motifs',petal:'v5-motifs',droplet:'v5-motifs','shield-facet':'v5-motifs',
 };
 const rowFor:Partial<Record<CardEffectPrimitive,number>>={'ink-stain':2,'ink-drop':2,steam:1,veil:7,flame:2,ember:3,spark:4,'spice-star':4,'crumb-crown':5,'seed-pod':7,constellation:4,comet:6,wave:6,leaf:1,petal:5,droplet:3,'shield-facet':4};
@@ -94,10 +94,12 @@ void main(){vec2 screen=gl_FragCoord.xy/resolution;float faceFade=1.;
  for(int i=0;i<12;i++){if(i>=protectedCount)break;if(mark>1.5&&mark<2.5&&screen.y>protectedHeadTops[i]+.008)continue;vec4 f=protectedFaces[i];vec2 q=(screen-f.xy)/max(f.zw,vec2(.00001));float radius=dot(q,q);if(radius<1.)discard;faceFade*=smoothstep(1.,1.6,radius);}
  float a=opacity*faceFade;vec3 c=effectColor;float additive=0.;
  if(surfaceKind>6.5){
-   float cell=clamp(floor(tile+.5),0.,3.);vec2 grid=vec2(mod(cell,2.),1.-floor(cell/2.));
-   vec4 t=texture2D(atlas,(grid+clamp(texUV,vec2(.001),vec2(.999)))/2.);
+   float cell=clamp(floor(tile+.5),0.,47.);vec2 grid=vec2(mod(cell,8.),5.-floor(cell/8.));
+   vec4 t=texture2D(atlas,(grid+clamp(texUV,vec2(.001),vec2(.999)))/vec2(8.,6.));
    vec3 linear=pow(max(t.rgb,vec3(0.)),vec3(2.2));float energy=dot(linear,vec3(.2126,.7152,.0722));
-   a*=pow(t.a,1.35)*smoothstep(.04,.5,energy);c=effectColor*(.5+energy*1.5)+vec3(1.,.8,.4)*pow(energy,6.)*1.1;additive=.65;
+   a*=pow(t.a,1.25)*smoothstep(.025,.4,energy);
+   vec3 sourceHue=linear/max(max(linear.r,linear.g),max(linear.b,.001));
+   c=mix(effectColor,sourceHue,.38)*(.5+energy*1.5)+vec3(1.,.88,.65)*pow(energy,6.)*.8;additive=.65;
  }else if(part>3.5){
    if(mark<1.5||mark>2.5)discard;
    float r=length((texUV-.5)*2.);a*=.72*(1.-smoothstep(.65,1.,r));c=vec3(.012,.026,.033);
@@ -153,9 +155,9 @@ export class LookVfx {
     });
   }
   async prepare(cancelled: () => boolean) {
-    const active:Family[]=isLookArtV3()?[...families,'mochi-light']:[...families];
+    const active:Family[]=isLookArtV3()?[...families,'roster-light']:[...families];
     for (const family of active) {
-      const url = Object.entries(family==='mochi-light'?paintedSources:sources).find(([path]) => path.endsWith(`/${family}.webp`))?.[1];
+      const url = Object.entries(family==='roster-light'?paintedSources:sources).find(([path]) => path.endsWith(`/${family}.webp`))?.[1];
       if (!url) throw Error(`Missing original ${family} atlas`);
       const bitmap = await new T.ImageBitmapLoader().setOptions({ imageOrientation: 'flipY',
         premultiplyAlpha: 'none', colorSpaceConversion: 'none' }).loadAsync(url);

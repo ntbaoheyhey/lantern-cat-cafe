@@ -1,0 +1,47 @@
+{
+  "id": "sorrel",
+  "createdAt": "2026-11-10T07:39:48.338Z",
+  "tool": "built-in image_gen",
+  "model": "not exposed",
+  "seed": "not exposed",
+  "parameters": {
+    "transparent_background": true,
+    "references": []
+  },
+  "prompt": "Use case: stylized-concept. Asset type: original game VFX component atlas for a premium painted cozy night-cafe RPG. One square RGBA sheet with EXACTLY FOUR separate luminous sprites in an equal 2 by 2 grid. Genuine transparent background, no visible grid or labels. Each component completely contained inside its quadrant with generous 15 percent transparent margin on every side. Herbal forager magic in forest teal #3B7669, sage #9CCBB1, pale lime #D4E3A0 and honey #F3BB61. TOP LEFT: a curled fern-green light bud with a small luminous ivory heart. TOP RIGHT: a sharp sweeping leaf-light crescent with a gold leading tip and thin teal wake. BOTTOM LEFT: three tall curling fern fronds made of luminous sage light forming an open asymmetric spiral with clear transparent gaps. BOTTOM RIGHT: a fresh luminous burst of slender herb-leaf strokes, dew and tiny honey motes. Shared painterly dimensional light, crisp bright ivory cores, restrained feathered glow, upper-left warm lighting, layered depth and rich material-like wisps. Reusable independently moving light components, NOT animation frames or a scene. No characters, faces, physical props, cup, lantern, door, weapon, text, symbols, scenery, floor, border, rectangular background or watermark. No reference images. Original design.\n",
+  "master": "/Users/bao/art/look-v3/vfx/sorrel-light-master.png",
+  "sourceSha256": "196ffff6845156093ee6087800bb5833cc154263a0c2c06548612ca8df060a51",
+  "sourceSize": [
+    1254,
+    1254
+  ],
+  "output": "assets/cardrpg-look/v3-vfx/sorrel-light.webp",
+  "sha256": "18e166d47d652ca332709b960e4ba3461025f745fa038fb1aa3fdde231dd01a8",
+  "bytes": 265922,
+  "components": [
+    {
+      "tile": 0,
+      "visiblePixels": 82118,
+      "transparentPixels": 311011
+    },
+    {
+      "tile": 1,
+      "visiblePixels": 76301,
+      "transparentPixels": 316828
+    },
+    {
+      "tile": 2,
+      "visiblePixels": 101271,
+      "transparentPixels": 291858
+    },
+    {
+      "tile": 3,
+      "visiblePixels": 108736,
+      "transparentPixels": 284393
+    }
+  ],
+  "postprocess": "Original alpha retained; alpha<6 removed;24px smooth edge taper;464px components with24px gutters;1024RGBA WebP94 alpha100",
+  "review": "Four sage fern-light components inspected; asymmetric rising fronds and dew burst; leaf forms must remain emissive in runtime to avoid physical prop appearance; motion pending.",
+  "runtimeAccepted": false,
+  "temporalFrames": false
+}

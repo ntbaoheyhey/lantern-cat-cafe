@@ -1,4 +1,5 @@
 import { LookContactPool } from './look-contact-pool';
+import { isLookArtV3 } from './look-art';
 import { LookEffectRim } from './look-effect-rim';
 import { targetTextLane } from './card-callout-layout';
 import type { StatusPresentation } from './card-status-beats';
@@ -585,6 +586,7 @@ export class TurnScene {
     if(this.lookStageEnabled&&!view.model){this.camera.position.set(0,6.4,12);this.cameraTarget.set(0,1.1,0);}
     const readable=isReadableBattle()&&view.autoBattle&&!view.model;
     if(readable){this.camera.position.set(0,4.7,12);this.cameraTarget.set(0,bossFraming?(view.actors.some(a=>this.puppets.get(a.id)?.asset==='kettle-knight')?2.05:2.20):1.16,0);}
+    if(readable&&isLookArtV3()){this.camera.position.y=4.25;if(!bossFraming)this.cameraTarget.y=1.28;}
     const distance=this.camera.position.distanceTo(this.cameraTarget),frameHeight=view.model?(this.lookStageEnabled?(view.model.role==='yarn'?4.6:3.3):(view.model.role==='yarn'?3.3:2.25)):view.tableau?Math.max(4,7.5/this.camera.aspect):view.autoBattle?cardFrameHeight(this.camera.aspect,view.camera==='close'?'close':view.camera==='far'?'far':'wide'):stageHeight(this.camera.aspect);
     const readableBossFrame=readable&&bossFraming?1.25:1;
     this.camera.fov=T.MathUtils.radToDeg(2*Math.atan(frameHeight*readableBossFrame/2/distance));
@@ -637,7 +639,10 @@ export class TurnScene {
       this.post.protectFaces(this.cardEffects.protectedFaces,view.effectOnly?0:protectedCount);
       this.effectRim?.protect(this.cardEffects.protectedFaces,view.effectOnly?0:protectedCount,this.width*ratio,this.height*ratio);
       if(this.lookStageEnabled)for(const a of view.actors){const p=this.puppets.get(a.id);if(p)this.statusHeights.set(a.id,p.height*p.root.scale.y);}
-      const effectSocket=source?.model.userData.lookGenerated?source.model.getObjectByName(`${source.role}_shield`):undefined;
+      const effectSocket=source&&isLookArtV3()?
+        source.model.getObjectByName(`${source.role}_shield`)
+          ??source.model.getObjectByName('socket_weapon')
+          ??source.model.getObjectByName(`${source.role}_${source.asset==='sorrel'?'armL':'armR'}`):undefined;
       this.cardEffects.render(frame,cardRecipe,view.actors,this.positions,this.camera,this.post.effectiveQuality,view.reducedMotion,
         view.effectOnly?undefined:view.cardStatuses,this.time,view.cardPresentation,this.statusHeights,this.statusCrowns,view.playbackSpeed??1,
         effectSocket?.localToWorld(this.effectProp.set(0,0,.12)));
