@@ -1,9 +1,9 @@
 # Trạng thái lane A6
-- Q0–Q4 đã xong; Q4 đang đẩy lên draft #438, tiếp tục Q5 ngay.
-- Đã có Lực chiến chung, nâng cấp nhanh, tự trang bị và hiệu ứng tăng chỉ số.
-- Màn hình thua gợi ý cụ thể, mở đúng mèo hoặc trang bị cần nâng.
-- Typecheck, lint và kiểm thử web/rules đều qua; ba ảnh đã được xem.
-- OFF/A5 giữ nguyên hash; không thay dữ liệu kỳ vọng.
-- Mô phỏng: trận thường 30,88 giây, boss 79,38 giây; công cụ mất 235,92 giây.
-- Thắng sau gợi ý 68,77%, chưa đạt 80%; G2/G3/G5 còn phần cần xử lý ở Q11–Q12.
-- Q5: hàng trước/sau, ba đội gợi ý, đường nối duyên và đội lưu theo chế độ.
+- Q0–Q5 đã xong; đang đẩy Q5 lên draft #438 rồi chuyển Q6.
+- Đội hình có hàng trước/sau, đường nối duyên, ba gợi ý và đội lưu riêng theo chế độ.
+- Đã thử Enter để đặt Soot lên trước, lưu Campaign/Tower và tải lại đúng đội.
+- Lực chiến đối thủ, điểm nguy hiểm và dự báo trận được hiển thị trước Fight.
+- Typecheck/lint và 1.878 kiểm thử web qua; ba ảnh đã xem, gồm 1280×720.
+- Hai hàng và Fight đều thấy được; chi tiết phụ còn cần cuộn ở chiều cao nhỏ.
+- Q5 không đổi rules; bằng chứng OFF/A5 và mô phỏng Q4 giữ nguyên.
+- Tiếp tục Q6: bản đồ, rương sao, rương treo máy; sau đó E2E và lượt chơi thật 30 phút.

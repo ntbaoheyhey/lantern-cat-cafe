@@ -1,3 +1,4 @@
+import { TeamA6 } from './FormationA6';
 import { PowerA6, QuickUpgradeA6 } from './PowerA6';
 import { BondSummaryA6 } from './BondsA6';
 import {lazy, Suspense, useState,useSyncExternalStore} from 'react';
@@ -36,6 +37,7 @@ export function CatsSheet({m}:{m:DepthModel}) {
 export function TeamSheet({m}:{m:DepthModel}) {
  const state=m.state,locked=!!state.run&&!state.run.complete;
  const [seat,setSeat]=useState(0);
+ if(R.gameplayA6(state))return <TeamA6 m={m}/>;
  const selected=state.team[seat]??state.team[0]!;
  const update=(team=state.team,rows=state.rows)=>m.apply(R.configureTeam(state,team,rows,state.skills),'Your crew is ready.');
  return <><div className="uv-section-tools"><b>{R.gameplayA6(state)?<PowerA6 value={teamPower(state)} label="Team Power" reducedMotion={state.settings.reducedMotion}/>:<>Team power {teamPower(state)}</>}</b><button disabled={locked} onClick={()=>{const team=bestRoleTeam(state);update(team,{...state.rows,...Object.fromEntries(team.map(id=>[id,R.CAT_BY_ID[id]!.row]))});}}>Use recommended crew</button><small>{locked?'Crew set for this route':'Choose a seat, then a cat'}</small></div>

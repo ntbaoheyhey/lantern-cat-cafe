@@ -29,3 +29,8 @@
 - Quick upgrade compares real legal transactions by Power gain per weighted material cost; previews never spend.
 - Auto-equip may use reserve gear but never removes an active teammate’s item.
 - The A6 loss advisor checks at most twelve legal changes and prefers cheap options reaching eight wins in ten forecast fights. Generic fallback claims no win guarantee.
+
+## Q5
+- Reuse existing V4 loadout slots for Campaign/Daily/Tower; keep saved gear restores at home and use only rows/plan during preparation.
+- Suggestions prioritize three play styles without running combat on the main thread; use the existing worker forecast for the matchup hint.
+- With only three owned cats, suggestions share the roster and change standing plans. With enough eligible cats, prefer different rosters.

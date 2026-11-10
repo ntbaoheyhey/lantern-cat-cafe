@@ -37,3 +37,7 @@
 - Screenshot review caught a stale cat-detail level after quick upgrade. The Cats sheet now subscribes directly to model revisions; a rendered regression checks the new level.
 - Loss fallback navigation names the target cat or equipment; it does not claim a predicted win when no forecast improvement qualifies.
 - Q4 sim: twelve-candidate advisor lowers runtime to 235.92 seconds but hint retry success is 68.77%, below Q3’s 71.31%. Keep it as a known issue for the scheduled first-session/balance pass; do not claim G3 complete.
+
+## Q5
+- Initial preparation layout pushed the back row below the fold. Collapsed save/suggestion selectors and compact row cards expose both rows and Fight at 1280×720. Supporting details still scroll; retain for Q13.
+- Initial bond links missed ancestor refs during the child layout effect. Drawing after refs attach fixes first-mount links; screenshots and the browser check confirm the path exists.

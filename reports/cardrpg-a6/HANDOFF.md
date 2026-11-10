@@ -1,6 +1,6 @@
 # Lane A6 active handoff
 
-- STEP 2 active; Q0–Q4 complete; continue Q5 without ending at checkpoints.
+- STEP 2 active; Q0–Q5 complete; continue Q6 without ending at checkpoints.
 - Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/cardrpg-a6-q0-2026-11-10; draft #438 against UI v3 U9.
 - TASK.md owns full request; QUEUE.md owns order. Check INBOX and root STOP-A6 each item. Deadline 2026-11-20 12:00 UTC.
 - One agent; no model helpers/app control/other-worktree writes/merge/deploy/main push/force-push/secrets.
@@ -10,11 +10,13 @@
 - Q4 sim: 235.92 seconds; normal median 30.88 seconds, boss 79.38. G2/G3/G5 partial; hint wins 68.77%, worst six losses in thirty minutes.
 - Exact OFF 8,250 routes and A5 forty-five routes pass; q4-compatibility.json. Expected hashes unchanged.
 - Q3 E2E all 421 pass; thirty-minute browser run twenty-nine wins/no losses. Normal browser median 39.49 seconds misses G1. Next full E2E/thirty-minute run due Q6.
-- Q5 drafts: /tmp/cardrpg-a6-formation-helpers-draft.ts, -formation-ui-draft.tsx, -formation-test-draft.tsx, -formation-css-draft.txt. Not applied/tested.
-- Q5 destinations ui-v3/formation-a6.ts, FormationA6.tsx, FormationA6.test.tsx; CSS appended to ui-v3.css.
-- Integrate PrepareA6 only for A6 in EncounterV3, TeamA6 only for A6 in SheetsV3; extend existing ForecastV4 with optional showChance boolean, default OFF.
-- Suggestions use owned cats/valid rows; mode saves reuse existing V4 three loadout slots. No rules source change expected, so no extra sim/compat run needed for Q5 UI-only work.
-- Q5 drafts require review: RefObject type import, ResizeObserver mock, pair IDs; test keyboard placement and seed/foe preservation.
+- Q5 complete: ui-v3/FormationA6.tsx and formation-a6.ts; PrepareA6/TeamA6 opt-in screens, existing ForecastV4 optional chance.
+- Owned/eligible suggestions, mode slots, keyboard placement, locked committed formation and unchanged battle seed/foes tested.
+- Full web 1,878 PASS; final focused formation three PASS; typecheck/lint PASS. No rules changes in Q5.
+- Three final WebPs inspected including 1280×720; no console/page errors or horizontal overflow. Extra bond/plan detail still scrolls.
+- Q6 active. Existing stars-v4 already implements win/no fallen/round-budget stars. journey-v4 stores badges/rewards.
+- Inspect bridge.ts/meta-v4 for existing idle service, HomeScene.tsx for eight-hour chest display; need A6 twelve-hour cap/stage scaling/limited fast reward.
+- Keep E2E + thirty-minute click run at Q6; first-session.mjs currently skips Events/idle, should follow useful claims.
 - Vite remains own PID 69135/69147 on 5960, log /tmp/cardrpg-a6-q3-vite.log.
 - Timing lease released after Q4; heavy builds/E2E/perf via tools/cardrpg-big/with-timing-lock.mjs, lease ≤20 minutes, df before builds.
 - Existing compatibility loader accepts BIG_RULES_TMP_PREFIX=/tmp/cardrpg-a6-compat-. OFF checkpoint exit75 every two minutes; rerun until checks.json exists.

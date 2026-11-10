@@ -8,7 +8,7 @@
 - pnpm: 10.28.0 (repository packageManager version)
 - Free disk at setup: 147 GiB (df -h ~); above 15 GB threshold.
 - Dependencies: pnpm install --frozen-lockfile completed without lockfile changes.
-- Scope: STEP 2 active; Q5 active; Q1 completed 2026-11-10 06:38 UTC.
+- Scope: STEP 2 active; Q6 active; Q1 completed 2026-11-10 06:38 UTC.
 - Delivery branch remains codex/cardrpg-a6-q0-2026-11-10; one draft PR #438 for the whole lane.
 
 ## Report skim (15 lines; existing claims, not re-verified)
@@ -72,3 +72,10 @@
 - Final sim: 235.92 seconds; normal median 30.88 seconds, boss 79.38. G2/G3/G5 remain partial; hint retry 68.77 percent, worst six losses in thirty minutes.
 - OFF digest exact over 8,250 routes and A5 fallback exact over forty-five routes; q4-compatibility.json.
 - Q5 next; drafts under /tmp/cardrpg-a6-formation-* are not applied or tested yet. Full E2E/thirty-minute real-click run next due Q6.
+
+## Q5 complete — 2026-11-10 08:09 UTC
+- Front/back formation, visible bond lines, three owned/eligible suggestions and Campaign/Daily/Tower saved teams reuse existing rules.
+- Enemy Power/threats and existing forecast are visible before Fight. Keyboard Enter placement and per-mode restore exercised in Chromium.
+- Typecheck/lint PASS; full web 1,878 PASS; three final formation tests PASS. No rules bytes changed, so Q4 sim/OFF/A5 evidence remains applicable.
+- Three inspected WebPs include 1280×720. Both rows/Fight visible, no horizontal overflow or page/console errors. Extra bond/plan details still scroll on small height.
+- Q6 is next; full E2E and thirty-minute real-click first session required at its checkpoint.

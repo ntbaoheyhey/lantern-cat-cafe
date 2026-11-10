@@ -1,3 +1,4 @@
+import { PrepareA6 } from './FormationA6';
 import { PowerA6 } from './PowerA6';
 import { AdviceV4 } from '../depth/AdviceV4';
 import {lazy,Suspense,useState} from 'react';
@@ -15,6 +16,7 @@ const RunMap=lazy(()=>import('../depth/RunMap').then(m=>({default:m.RunMap})));
 
 export function PrepareV3({m}:{m:DepthModel}) {
  const battle=m.battle!,[seat,setSeat]=useState(0),[picking,setPicking]=useState(false);
+ if(battle.initial.gameplayA6)return <PrepareA6 m={m}/>;
  if(!battle.v4)return <Suspense fallback={<p>Opening…</p>}><FullPrepare m={m}/></Suspense>;
  const cats=battle.initial.cats,ids=cats.map(c=>c.id),rows=Object.fromEntries(cats.map(c=>[c.id,c.row])),selected=ids[seat]??ids[0]!;
  const locked=battle.v4.committed||!!m.replay,rosterLocked=locked||!!m.state.run&&(m.state.run.visited.length>0||m.state.run.floor>1);
