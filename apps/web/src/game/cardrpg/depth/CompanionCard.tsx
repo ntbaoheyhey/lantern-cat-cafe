@@ -21,6 +21,7 @@ export function CompanionCard({ id, m, onSelect, selected = false }: {
     <div className="cr-portrait"><img {...portraitProps(id)} alt="" />
       {!owned && <strong className="dp-question">?</strong>}
       <span className="dp-role" title={cat.role}>{ROLE_ICONS[cat.role]}</span>
+      {R.gameplayA6(m.state)&&<span className="a6-bond-icon" title={R.PAIR_COMBOS_A6.filter(p=>p.cats.includes(id)).map(p=>p.name).join(' · ')}>∞ {R.activePairCombosA6(m.state.team).filter(p=>p.cats.includes(id)).length ? 'Combo ready' : 'Bonds'}</span>}
       <span className="dp-card-rarity">{card.rarity}</span>
     </div>
     <div className="cr-card-caption"><small>{cat.role} · {cat.flavour}</small><h3>{cat.name}</h3>

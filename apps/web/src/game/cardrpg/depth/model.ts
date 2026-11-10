@@ -9,7 +9,7 @@ import { createCardActionPlan } from './card-action-plan';
 import { snapshotBattle, splitPresentation } from './battle-presentation';
 import { readTeamPresets, TEAM_PRESETS_KEY, type TeamPreset } from './meta-presentation';
 
-export type Screen = 'journal' | 'hub' | 'team' | 'collection' | 'inventory' | 'gacha' | 'map' | 'codex' | 'relics' | 'save' | 'evidence' | 'prepare' | 'result';
+export type Screen = 'bonds' | 'journal' | 'hub' | 'team' | 'collection' | 'inventory' | 'gacha' | 'map' | 'codex' | 'relics' | 'save' | 'evidence' | 'prepare' | 'result';
 export class DepthModel {
   state: R.DepthAccount;
   screen: Screen = 'hub';
@@ -39,6 +39,8 @@ export class DepthModel {
   animationAt = 0;
   playbackAt = 0;
   ultimateBannerUntil = 0;
+  comboBanner = '';
+  comboBannerUntil = 0;
   private ultimateBannersAt: number[] = [];
   autoContinue = false;
   momentNote = '';
@@ -181,6 +183,7 @@ export class DepthModel {
       if (this.tutorialBattle) this.tutorialBattle.v4!.committed = true;
       else if (!this.apply(R.commitPreparation(this.state), 'Preparation committed. Your crew follows its standing plan.')) return;
     }
+    this.comboBanner = ''; this.comboBannerUntil = 0;
     this.watching = true; this.paused = false; this.sceneStarted = true; this.screen = 'map';
     this.notify();
   }
@@ -291,6 +294,8 @@ export class DepthModel {
       else this.ultimateBannerUntil=0;
     }
     const actionEvents = battle.log.slice(before);
+    const combos = actionEvents.filter(event => event.kind === 'bond.combo');
+    if (combos.length) { this.comboBanner = combos.map(event => event.text).join(' · '); this.comboBannerUntil = this.playbackAt + 1800; }
     const mochiShield = actor.catalogId === 'mochi' && actor.shield > shieldBefore
       && actionEvents.some(event => event.kind === 'shield' && event.targetId !== actor.id);
     const sootDetonation = actor.catalogId === 'soot'

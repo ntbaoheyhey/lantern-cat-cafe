@@ -1,18 +1,28 @@
 # Lane A6 active handoff
 
-- STEP 2 active; Q0–Q2 complete, start Q3 immediately.
-- Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/cardrpg-a6-q0-2026-11-10; draft #438.
-- Full task TASK.md; QUEUE.md owns sequence; hard deadline 2026-11-20 12:00 UTC.
-- Q2 implementation in gameplay-a6.ts, battle/run/events/save/policies; model/App/BattleHudV3.
-- Rage/automatic ultimates; two boss phases; x1/x2/x3; earned three-star skip; optional auto-continue.
-- Final 500-seed q2-sim.json/Q2.md: normal six rounds/32.17 seconds, boss 81.69; G1 passes authored timing. G2 partial (48–79.17% normal, >=90% boss), no more Q2 numeric tuning.
-- G3 partial: mean 1.01 losses/30 min, worst five; hint retry 63.82%. Q4/Q11/Q12 are next fixes.
-- Exact legacy OFF 8,250 routes PASS; A5 fallback 45 routes PASS; q2-compatibility.json. No need to re-hash unchanged bytes.
-- Typecheck/lint and full suites pass; final five rules/two web edge tests pass. Three WebP screenshots inspected.
-- Sim tools/cardrpg-a6/sim.mjs only; count=500, --mode=a6, --out=reports/cardrpg-a6/...; fresh seeds untouched. Runtime 270 seconds known issue; seven-day economy now dominates.
-- Own Vite session 38876 on 5960. Browser URL /?demo=1&squad=1&cardrpg2=1&a6=1. Node createRequire apps/web/package.json supplies Playwright. cwebp exists; sharp/PIL do not.
-- Natural-cast screenshot timed out under simultaneous CPU simulation; forced full-rage fixture proves only layout. Check isolated playback in Q3 real-click run.
-- Q3 needs 8–10 collection bonds, 6–8 once-per-battle pair combos, events-v2 bond.combo, Bond Book and cat/formation icons.
-- At Q3 checkpoint full E2E + real-click thirty-minute run are due; hold timing.lock in leases <=20 minutes.
-- One agent; no helper models or user-app control; no other-worktree writes, merge/deploy. Q14 merge conflicts with fixed no-merge constraint; defer that mutation.
-- Ports 5960–5963, own temp prefix; check disk before builds; INBOX/STOP-A6 between items.
+- STEP 2 active; Q0–Q3 complete; immediately continue Q4. Do not redo setup or end the turn at checkpoints.
+- Worktree /Users/bao/taskbar-hero-cardrpg-a6; branch codex/cardrpg-a6-q0-2026-11-10; one draft PR #438 against UI v3 U9.
+- TASK.md is full user request; QUEUE.md owns order. Hard deadline 2026-11-20 12:00 UTC. Check INBOX and root STOP-A6 between items.
+- One agent, no model helpers/app control/other-worktree writes/merge/deploy/main push/force-push/secrets.
+- Q3: nine collection bonds (+0.5% HP/attack each), eight once-per-battle pairs from round three while both alive; existing crew reactions kept.
+- Q3 rules/UI and tests complete; retaliation guard prevents later combos after a contributor dies. Three final WebPs inspected.
+- Final Q3 sim q3-sim.json: six rounds/30.91 seconds normal authored median; boss 79.82 seconds. Normal ultimate range 41.6–76.67%, boss min 89.17%; G2/G3/G5 partial.
+- Sim runtime 258.39 seconds; existing runtime repair cap exhausted. No new per-phase sim scripts.
+- Typecheck/lint/full rules PASS (1,272 plus two expected failures/eleven skips). Web four timeouts under load passed isolated thirty-test retry; final thirteen UI/model tests pass.
+- Exact OFF 8,250-route digest and A5 forty-five-route fallback PASS; q3-compatibility.json. No expected hash changed.
+- Full E2E PASS: all 421 tests. First-session COMPLETE: 1,800.90 active seconds, twenty-nine wins, no losses/stalls.
+- Browser normal median 39.49 seconds/p90 60.51 miss G1; boss median 72.09/p90 79.32 pass. Tutorial and one lease-crossing fight excluded.
+- First-session path skips Events/idle claims; last account reward at 991 seconds, final gap 809.67 seconds, while route points/boons remain visible. Do not claim no reward was available.
+- First-session tool now observes console errors as well as page errors; Q3 first half only had page-error observation. None observed. Later scheduled sessions should follow actionable claim badges.
+- Own Vite server remains on 5960, session 8784, PID 69135/69147, /tmp/cardrpg-a6-q3-vite.log. Browser/first-session parent closed; timing lock released.
+- Compatibility session 77581 completed; log /tmp/cardrpg-a6-q3-compat-final.log. All current Q3 results ready for commit/push/PR update.
+- Q4 draft files prepared without loading into Q3: /tmp/cardrpg-a6-power-draft.ts; /tmp/cardrpg-a6-upgrades-draft.ts; /tmp/cardrpg-a6-power-ui-draft.tsx; /tmp/cardrpg-a6-upgrades-test-draft.ts; /tmp/cardrpg-a6-power-ui-test-draft.tsx.
+- Drafts are NOT tested. Intended destinations: rules depth/power-a6.ts, upgrades-a6.ts, upgrades-a6.test.ts and UI ui-v3/PowerA6.tsx, PowerA6.test.tsx.
+- Q4 integration: gate powerV4 to pure powerScoreA6 (stats, ten-times scale) so OFF math stays exact; meta-presentation/CompanionCard/Prepare/Route/HUD share it. Add exports.
+- PowerA6 count-up and QuickUpgradeA6 use real transaction previews, stale-click guard and non-stealing auto-equip. Place on cat/team screens, show cat/team/enemy/stage Power.
+- Surface AdviceV4 on A6 losses; prefer cheapest qualifying fix for A6. Existing recommendBuildV4 simulates many candidates and dominates sim runtime; bound A6 candidates without touching fallback behavior.
+- Q4 tests must verify roster/battle score consistency, real prices/no preview spending, stale repeats, route locks, no teammate gear stealing and rendered action behavior.
+- Run typecheck/lint/web+rules tests; one final sim and exact OFF/A5 check for rules change; inspect 1–3 screenshots. Next full E2E + thirty-minute browser run due Q6.
+- Reused compatibility loader supports BIG_RULES_TMP_PREFIX=/tmp/cardrpg-a6-compat-. OFF checks checkpoint exit 75 every two minutes; repeat until checks.json exists.
+- Fresh seeds 60001–60500 unused until Q15. Q14 merge conflicts with no-merge constraint; skip unauthorized merge, continue other work.
+- Reports 672 KB; disk last 215 GiB. Ports 5960–5963, temp /tmp/cardrpg-a6-* only; heavy builds/E2E/perf use timing.lock leases ≤20 minutes.

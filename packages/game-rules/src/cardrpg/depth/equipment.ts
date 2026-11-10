@@ -1,3 +1,4 @@
+import { collectionBonusA6 } from './bonds-a6';
 import { Rng, deriveSeed } from '../../rng';
 import { ITEMS as LEGACY_ITEMS } from '../catalog';
 import { CARD_RPG_CONFIG } from '../config';
@@ -98,6 +99,11 @@ export function depthStats(state:DepthAccount,cardId:string):Stats {
   for(const item of items){const template=GEAR_BY_ID[item.templateId]!;stats[template.main]+=v4?gearMainV4(state,cardId,item):Math.round(template.value*(1+item.enhancement*.06));}
   for(const key of Object.keys(stats) as Array<keyof Stats>)stats[key]=Math.min(CARD_RPG_CONFIG.statCaps[key],stats[key]+(bonus[key]??0));
   const awakening=v4?0:state.awakened[cardId]??0;stats.hp=Math.round(stats.hp*(1+awakening*.03));stats.attack=Math.round(stats.attack*(1+awakening*.03));
+  const collection = collectionBonusA6(state);
+  if (collection) {
+    stats.hp = Math.min(CARD_RPG_CONFIG.statCaps.hp, Math.round(stats.hp * (1 + collection / 10000)));
+    stats.attack = Math.min(CARD_RPG_CONFIG.statCaps.attack, Math.round(stats.attack * (1 + collection / 10000)));
+  }
   return stats;
 }
 export function equipGear(state:DepthAccount,cardId:string,instanceId:string|null,slot?:Slot){

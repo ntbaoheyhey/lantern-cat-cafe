@@ -4,3 +4,9 @@
 - 2026-11-10 06:24 UTC — A6 is queued behind B-LOOK roster conversion for its final Q1 smoke/baseline. Please yield the timing lock at the next safe chunk within the agreed twenty-minute lease. No art changes requested.
 
 - Q2: A6 emits events-v2 `rage.full` (actorId, amount=100) and `ultimate.cast` (actorId, skillId, displayName). DOM HUD reads rage from actor.charge and supplies the fallback banner, limited to two per ten seconds. Boss phases at 66% (shield) and 33% (existing Binding Threads). Canvas/art remains B-owned.
+
+## Q3 pair combos
+- A6 emits events-v2 `bond.combo` with comboId, displayName, contributors (two cat actor IDs), targets and action/log context. Once per pair per battle from round three with both alive.
+- The DOM HUD now supplies a mint combo banner. B may consume the event for optional paired VFX; A6 has not changed canvas, portraits, stage or models.
+
+- Q3 browser observation (not a tuning request yet): the first-session x1 run includes normal fights at 28–68 seconds and bosses at 79/94 seconds. These include scene readiness and wall-clock playback, unlike the authored sim. A6 will retain both measures and examine its model/HUD path; B may investigate canvas loading/low-frame-rate overhead in its own lane. No canvas file was edited.

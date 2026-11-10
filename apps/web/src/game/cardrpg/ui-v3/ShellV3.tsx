@@ -9,6 +9,7 @@ import './ui-v3.css';
 import {useNewDiscoveries} from './useNewDiscoveries';
 import {RewardFly} from './RewardFly';
 import {HomeScene} from './HomeScene';
+const BondBook=lazy(()=>import('./BondsA6').then(m=>({default:m.BondBookA6})));
 const CatsSheet=lazy(()=>import('./SheetsV3').then(m=>({default:m.CatsSheet})));
 const TeamSheet=lazy(()=>import('./SheetsV3').then(m=>({default:m.TeamSheet})));
 const BagSheet=lazy(()=>import('./SheetsV3').then(m=>({default:m.BagSheet})));
@@ -18,7 +19,7 @@ const Prepare=lazy(()=>import('./EncounterV3').then(m=>({default:m.PrepareV3})))
 const Result=lazy(()=>import('./EncounterV3').then(m=>({default:m.ResultV3})));
 const Recruit=lazy(()=>import('./RecruitV3'));
 const FeelLab=lazy(()=>import('../depth/FeelLab').then(m=>({default:m.FeelLab})));
-const labels:Partial<Record<Screen,string>>={collection:'Cats',journal:'Cats',team:'Team',inventory:'Bag',relics:'Bag',gacha:'Recruit',codex:'Field guide',save:'Settings',evidence:'Before / after',map:'Night route',prepare:'Prepare',result:'Tonight’s story'};
+const labels:Partial<Record<Screen,string>>={bonds:'Bond Book',collection:'Cats',journal:'Cats',team:'Team',inventory:'Bag',relics:'Bag',gacha:'Recruit',codex:'Field guide',save:'Settings',evidence:'Before / after',map:'Night route',prepare:'Prepare',result:'Tonight’s story'};
 const dock:[Screen,string,IconName][]=[['collection','Cats','cats'],['team','Team','team'],['inventory','Bag','bag'],['gacha','Recruit','recruit']];
 export default function ShellV3({m,children}:{m:DepthModel;children:ReactNode}) {
  const [menu,setMenu]=useState(false),[events,setEvents]=useState(false),[bagTab,setBagTab]=useState('gear'),[route,setRoute]=useState(false);
@@ -48,9 +49,9 @@ export default function ShellV3({m,children}:{m:DepthModel;children:ReactNode}) 
   {sheet&&<><button className="uv-dim" tabIndex={-1} aria-label="Close sheet" onClick={close}/><section className="uv-sheet" role="dialog" aria-label={events?'Events':labels[m.screen]} ref={dialog} tabIndex={-1}>
    <header className="uv-sheet-heading"><h1>{events?'Events':labels[m.screen]}</h1><button className="uv-close" aria-label="Close" onClick={close}><Icon name="close"/></button></header>
    {m.screen==='prepare'&&<nav className="uv-tabs" aria-label="Patrol tabs"><button aria-current={!route?'page':undefined} onClick={()=>setRoute(false)}>Prepare</button><button aria-current={route?'page':undefined} onClick={()=>setRoute(true)}>Route</button><button onClick={()=>go('codex')} aria-label="Read Field guide">?</button></nav>}
-   {['collection','journal'].includes(m.screen)&&<nav className="uv-tabs" aria-label="Cats tabs"><button aria-current={m.screen==='collection'?'page':undefined} onClick={()=>go('collection')}>My cats</button><button aria-current={m.screen==='journal'?'page':undefined} onClick={()=>go('journal')}>Journal</button></nav>}
+   {['collection','journal','bonds'].includes(m.screen)&&<nav className="uv-tabs" aria-label="Cats tabs"><button aria-current={m.screen==='collection'?'page':undefined} onClick={()=>go('collection')}>My cats</button><button aria-current={m.screen==='journal'?'page':undefined} onClick={()=>go('journal')}>Journal</button>{R.gameplayA6(m.state)&&<button className="a6-bond-tab" aria-current={m.screen==='bonds'?'page':undefined} onClick={()=>go('bonds')}>Bond Book</button>}</nav>}
    {['inventory','relics'].includes(m.screen)&&<nav className="uv-tabs" aria-label="Bag tabs"><button aria-current={m.screen==='inventory'&&bagTab==='gear'?'page':undefined} onClick={()=>{setBagTab('gear');go('inventory')}}>Gear</button><button aria-current={m.screen==='inventory'&&bagTab==='materials'?'page':undefined} onClick={()=>{setBagTab('materials');go('inventory')}}>Materials</button><button onClick={()=>go('relics')} aria-current={m.screen==='relics'?'page':undefined}>Relics</button></nav>}
-   <main className="uv-sheet-content cr-content" id="depth-main" data-screen={events?'events':m.screen}><Suspense fallback={<p role="status">Opening…</p>}>{events?<EventsSheet m={m}/>:m.screen==='prepare'&&route?<RouteMap m={m}/>:m.screen==='prepare'?<Prepare m={m}/>:m.screen==='result'?<Result m={m}/>:m.screen==='map'?<RouteMap m={m}/>:m.screen==='gacha'?<Recruit m={m}/>:m.screen==='collection'?<CatsSheet m={m}/>:m.screen==='team'?<TeamSheet m={m}/>:m.screen==='inventory'?<BagSheet key={bagTab} m={m} materials={bagTab==='materials'}/>:m.screen==='evidence'&&!showReviewTools(true)?null:children}</Suspense></main>
+   <main className="uv-sheet-content cr-content" id="depth-main" data-screen={events?'events':m.screen}><Suspense fallback={<p role="status">Opening…</p>}>{events?<EventsSheet m={m}/>:m.screen==='bonds'&&R.gameplayA6(m.state)?<BondBook m={m}/>:m.screen==='prepare'&&route?<RouteMap m={m}/>:m.screen==='prepare'?<Prepare m={m}/>:m.screen==='result'?<Result m={m}/>:m.screen==='map'?<RouteMap m={m}/>:m.screen==='gacha'?<Recruit m={m}/>:m.screen==='collection'?<CatsSheet m={m}/>:m.screen==='team'?<TeamSheet m={m}/>:m.screen==='inventory'?<BagSheet key={bagTab} m={m} materials={bagTab==='materials'}/>:m.screen==='evidence'&&!showReviewTools(true)?null:children}</Suspense></main>
   </section></>}
   <div className={`uv-notice ${m.error?'uv-error':''}`} role={m.error?'alert':'status'}>{m.error?m.notice:''}</div>
  </div>;

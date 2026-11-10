@@ -11,7 +11,7 @@ const Guide=lazy(()=>import('../depth/Pages').then(m=>({default:m.Codex})));
 
 /** Presentation only: the existing model remains the sole combat clock. */
 export default function BattleHudV3({m}:{m:DepthModel}) {
- const battle=m.visualBattle!,plan=m.plan,banner=useRef<HTMLElement>(null),effects=useRef<HTMLDivElement>(null);
+ const battle=m.visualBattle!,plan=m.plan,banner=useRef<HTMLElement>(null),comboBanner=useRef<HTMLElement>(null),effects=useRef<HTMLDivElement>(null);
  const [help,setHelp]=useState(false),[more,setMore]=useState(false),[log,setLog]=useState(false);
  const [banners,setBanners]=useState(()=>{try{return localStorage.getItem('lantern-ui-v3-banners')!=='off'}catch{return true}});
  const pausedBeforeHelp=useRef(false);
@@ -24,6 +24,7 @@ export default function BattleHudV3({m}:{m:DepthModel}) {
  useEffect(()=>{
   let frame=0;
   const paint=()=>{
+   if(comboBanner.current)comboBanner.current.hidden=m.playbackAt>=m.comboBannerUntil;
    if(banner.current)banner.current.hidden=!m.plan?.ultimate||(m.a6Battle?m.playbackAt>=m.ultimateBannerUntil:m.animationAt>=800);
    for(const el of effects.current?.querySelectorAll<HTMLElement>('[data-reaction]')??[]){
     const at=Number(el.dataset.at),duration=Number(el.dataset.duration);
@@ -57,6 +58,7 @@ export default function BattleHudV3({m}:{m:DepthModel}) {
    return <article key={cat.id} className="uv-battle-cat" data-actor={cat.id} data-ready={ready} data-fallen={cat.hp<=0}><img {...portraitProps(cat.catalogId)} alt=""/><div><b>{cat.name}</b><small>{cat.hp}/{cat.maxHp} HP</small><progress value={cat.hp} max={cat.maxHp} aria-label={`${cat.name} health`}/><progress className="uv-ult-charge" value={progress} max={1} aria-label={`${cat.name} ultimate: ${readiness}`}/><small className="uv-ult-label">{ready?'Ultimate ready':`Ultimate · ${readiness}`}</small></div><StatusBadges statuses={cat.statuses} name={cat.name}/></article>;
   })}</div>
   {banners&&plan?.ultimate&&caster?.side==='party'&&<aside ref={banner} className="uv-ultimate-banner" aria-label="Ultimate cast"><small>{caster.name}</small><b>{plan.name}</b></aside>}
+  {banners&&m.a6Battle&&m.comboBanner&&<aside ref={comboBanner} className="a6-combo-banner" aria-label="Bond combo"><small>Bond combo · together as one</small><b>{m.comboBanner}</b></aside>}
   <div ref={effects}>{reactions.map((r,i)=><div key={`${plan?.id}-${i}`} className="uv-reaction" data-reaction={r.id} data-target={r.targetId} data-at={r.at} data-duration={r.duration} hidden>{REACTION_WORDS[r.id]}</div>)}{numbers.map(n=><div className="uv-float-number" data-number data-target={n.id} data-at={n.at} key={n.id} hidden>{n.labels.map((e,i)=><span key={i} className={`uv-damage-${e.type} ${e.dot?'uv-dot-damage':''} ${e.statusId==='snag'?'uv-bleed-damage':''} ${e.critical?'uv-critical':''}`}>{e.type==='heal'?'+':e.type==='shield'?'◇':'−'}{e.amount}</span>)}</div>)}</div>
   {help&&<section className="uv-battle-guide" role="dialog" aria-label="Battle guide" onKeyDown={e=>{if(e.key==='Escape'){e.stopPropagation();closeHelp()}}}><button autoFocus onClick={closeHelp}>Close guide</button><Suspense fallback={<p>Opening…</p>}><Guide v4={!!battle.v4} skillsV5={!!battle.initial.skillsV5}/></Suspense></section>}
   {log&&<section className="uv-battle-guide" role="dialog" aria-label="Battle log"><button onClick={()=>setLog(false)}>Close log</button>{battle.log.slice(-100).reverse().map((e,i)=><p key={i}>Round {e.round} · {e.text||`${e.kind} ${e.amount}`}</p>)}</section>}

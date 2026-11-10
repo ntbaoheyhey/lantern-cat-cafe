@@ -3,7 +3,7 @@
 - [x] Q0 Setup — draft #438; completed in STEP 1.
 - [x] Q1  Sim tool (3 h): tools/cardrpg-a6/sim.mjs per R-8, plus the new-player bot (plays the real rules with the real economy, follows hints). Record BEFORE numbers for G1-G5 in reports/cardrpg-a6/BASELINE.md (one table).
 - [x] Q2  Pacing + rage + ultimate banner (by 11 Nov 18:00 UTC): rage rules (P2), damage/HP retune toward G1, boss phases, speed x1/x2/x3, skip for 3-star stages, auto-continue. Emit events-v2 `rage.full`, `ultimate.cast` (with display name) and a DOM fallback banner in the battle HUD. G1+G2.
-- [ ] Q3  Bonds (by 12 Nov 18:00 UTC): 8-10 collection bonds and 6-8 pair combos (hợp kích) using existing kits and crew reactions; events `bond.combo`; Bond Book screen (who you own, what is missing, current bonus); bond icons on cat cards and in formation.
+- [x] Q3  Bonds (by 12 Nov 18:00 UTC): 8-10 collection bonds and 6-8 pair combos (hợp kích) using existing kits and crew reactions; events `bond.combo`; Bond Book screen (who you own, what is missing, current bonus); bond icons on cat cards and in formation.
 - [ ] Q4  Power + upgrade loop (by 13 Nov 06:00 UTC): one power formula, shown on cats, team, enemy, stages; "Nâng cấp nhanh" one-tap best upgrade and auto-equip best gear; level/star/gear upgrade feedback (power count-up + flash); loss hint engine (G3) that names the cheapest fix.
 - [ ] Q5  Formation (by 13 Nov 18:00 UTC): front/back rows on the existing grid, enemy preview with power and threats, 3 suggested teams, saved teams per mode, bond lines visible. Click-to-place stays; keyboard OK.
 - [ ] Q6  Campaign map + idle chest (by 14 Nov 18:00 UTC): chapter map inside the cafe theme (night street / rooftops), stages with 3 stars (win; no cat fallen; within N rounds), chapter boss node, star chests, idle chest in the cafe scene with claim animation, fast-reward button (limited per day).
@@ -31,5 +31,6 @@
 ## Current item
 - Q1 completed 2026-11-10 06:38 UTC; baseline 500 seeds in 496.99 seconds (runtime known issue).
 - Q2 completed 2026-11-10 06:56 UTC; G1 passes, G2 partial after three tunes (see Q2.md).
-- Q3 active: collection bonds, pair combos, Bond Book, cat/formation icons. Full E2E + real-click thirty-minute run due at this checkpoint.
+- Q3 completed 2026-11-10 07:50 UTC: nine collections, eight combos, Bond Book; exact OFF/A5 and all 421 E2E tests pass. Thirty-minute browser run complete; normal browser pacing still partial.
+- Q4 active: shared Power, quick upgrades/auto-equip, feedback and concrete loss advice.
 - Q14 integration merge conflicts with the fixed no-merge rule; prepare reviewable integration and skip any unauthorized merge while continuing other work.

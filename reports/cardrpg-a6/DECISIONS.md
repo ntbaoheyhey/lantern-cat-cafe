@@ -17,3 +17,9 @@
 - Keep rage capped at one hundred; one outgoing hit gain per action prevents multi-hit kits from flooding rage. Emit full/cast events rather than changing the canvas.
 - Three numeric tunes are enough for this checkpoint: G1 passes, G2 partial is explicit. Keep economy/first-session work at its queued priority.
 - Legacy hashes remain exact; no expected receipts were updated.
+
+## Q3 bonds
+- Collection ownership grants half a percent HP and attack per completed set; nine sets cap the bonus at 4.5 percent. Equipped and benched cats contribute equally.
+- Eight authored pairs trigger after a partner acts from round three, once per pair, requiring both alive. Existing V5 status and damage functions resolve the combo; no second combat engine.
+- Events-v2 carries the pair name/contributors for future B-owned effects. A6 owns the mint DOM announcement and Bond Book only.
+- The reusable first-session harness clicks real UI and observes the review hook without mutating it. One browser stays alive across two fifteen-minute timing-lock leases.

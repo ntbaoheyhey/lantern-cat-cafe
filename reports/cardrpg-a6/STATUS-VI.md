@@ -1,9 +1,10 @@
 # Trạng thái lane A6
 
-- Q0–Q2 đã xong; bắt đầu Q3 duyên, hợp kích và Sổ duyên trên draft #438.
-- Đã có nộ, tuyệt kỹ tự động, hai pha boss, ×1/×2/×3, bỏ qua màn ba sao và tự tiếp trận.
-- Sim 500 seed: trận thường 6 vòng, trung vị 32,17 giây; boss 81,69 giây. Nhịp đánh đạt mục tiêu.
-- Tuyệt kỹ trận thường còn 48–79,17%; phần vượt mục tiêu đã ghi lại để xử lý ở Q12.
-- Trung bình 1,01 trận thua/30 phút, tệ nhất 5; gợi ý thắng lại 63,82%. Q4/Q11 tiếp tục sửa.
-- Digest OFF (8.250 tuyến) và A5 fallback (45 tuyến) giữ nguyên; typecheck/lint và test đạt.
-- Đã xem ba ảnh HUD/tuyệt kỹ ở hai độ phân giải. Q3 sẽ chạy E2E và chơi bằng click thật 30 phút.
+Q0–Q3 đã hoàn tất; checkpoint Q3 đưa vào draft #438, tiếp tục Q4 ngay.
+Đã có chín duyên sưu tầm, tám hợp kích, Sổ duyên và dấu hợp kích trên thẻ/đội hình.
+Typecheck/lint, kiểm tra luật/web và 421 E2E đã qua; digest OFF/A5 giữ nguyên.
+Lượt chơi thật đủ 30 phút: 29 trận thắng, không thua, không thao tác kẹt hay lỗi được ghi nhận.
+Trận thường trung vị 39,49 giây, p90 60,51 giây: còn chậm; boss trung vị 72,09 giây.
+Đường chơi chỉ tuần tra/luyện mèo chưa nhận Events/rương nghỉ; khoảng chững thưởng được báo riêng.
+Q4: thống nhất lực chiến, nâng cấp nhanh, tự trang bị và gợi ý sửa đội sau thua.
+Chưa merge/deploy; A6 vẫn tắt mặc định.

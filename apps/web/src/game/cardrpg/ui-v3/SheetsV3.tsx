@@ -1,3 +1,4 @@
+import { BondSummaryA6 } from './BondsA6';
 import {lazy, Suspense, useState} from 'react';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import {CARD_BY_ID, QUESTS} from '@taskbar-hero/game-rules/cardrpg';
@@ -23,6 +24,7 @@ export function CatsSheet({m}:{m:DepthModel}) {
     <p>{owned?`Level ${owned.level} · ${owned.stars} stars`:'A new friend to meet'}</p>{R.skillsV5(m.state)&&<CatKitV5 catId={cat.id}/>}
     {owned?<div className="cr-actions"><CompanionGrowthV4 m={m} catId={cat.id} kind="level"/><CompanionGrowthV4 m={m} catId={cat.id} kind="ascend"/><button disabled={locked||(m.state.awakened[cat.id]??0)>=3} onClick={()=>m.apply(R.awakenCat(m.state,cat.id),'Awakening raised HP and attack by 3%.')}>Awaken</button></div>:<button className="cr-primary" onClick={()=>m.go('gacha')}>Recruit</button>}
     <details><summary>Read skills</summary><p>{cat.passive.name} · {R.gameplayV4(m.state)?R.passiveDescriptionV4(cat.id):cat.passive.description}</p>{cat.skills.map(s=><div className="dp-skill-summary" key={s.id}><img src={skillIcon(s.id)} alt=""/><span><b>{s.name}</b><small>{R.skillsV5(m.state)?R.kitSkillV5(s).description:s.description}</small></span></div>)}<KeywordGuideV5/></details>
+    {R.gameplayA6(m.state)&&<BondSummaryA6 m={m} catId={cat.id}/>}
     <button onClick={()=>setAdvanced(!advanced)} aria-expanded={advanced}>Inspect gear & previews</button>
    </aside>
   </div>{advanced&&<div className="uv-advanced"><Suspense fallback={<p>Opening…</p>}><FullCollection m={m}/></Suspense></div>}
@@ -37,7 +39,7 @@ export function TeamSheet({m}:{m:DepthModel}) {
  return <><div className="uv-section-tools"><b>Team power {teamPower(state)}</b><button disabled={locked} onClick={()=>{const team=bestRoleTeam(state);update(team,{...state.rows,...Object.fromEntries(team.map(id=>[id,R.CAT_BY_ID[id]!.row]))});}}>Use recommended crew</button><small>{locked?'Crew set for this route':'Choose a seat, then a cat'}</small></div>
  <div className="uv-card-workspace"><section><div className="uv-team-seats" aria-label="Crew seats">{state.team.map((id,i)=><div key={i}><CompanionCard id={id} m={m} selected={i===seat} onSelect={()=>setSeat(i)}/><div className="uv-row-buttons">{(['front','rear'] as const).map(row=><button key={row} disabled={locked} aria-pressed={state.rows[id]===row} onClick={()=>update(state.team,{...state.rows,[id]:row})}>{row==='front'?'Place front':'Place back'}</button>)}</div></div>)}</div>
  <h2>Choose a companion</h2><div className="uv-roster" aria-label={`Replace ${R.CAT_BY_ID[selected]!.name}`}>{state.account.cards.map(c=><button key={c.id} disabled={locked||state.team.includes(c.cardId)} onClick={()=>update(state.team.map((id,i)=>i===seat?c.cardId:id),{...state.rows,[c.cardId]:state.rows[selected]!})}><img {...portraitProps(c.cardId)} alt=""/><b>{R.CAT_BY_ID[c.cardId]!.name}</b><small>Lv. {c.level}</small></button>)}</div></section>
- <aside className="uv-detail"><h2>Better together</h2><ComboHintsV5 cats={state.team}/>{R.crewThresholds(state.team).filter(c=>c.marks>0).map(c=><div key={c.id}><h3>{c.name}</h3><p>{c.marks}/4 marks · {c.description}</p></div>)}<details><summary>Save or load shifts</summary><ShiftLoadouts m={m}/></details></aside></div></>;
+ <aside className="uv-detail"><h2>Better together</h2>{R.gameplayA6(state)&&<BondSummaryA6 m={m}/>}<ComboHintsV5 cats={state.team}/>{R.crewThresholds(state.team).filter(c=>c.marks>0).map(c=><div key={c.id}><h3>{c.name}</h3><p>{c.marks}/4 marks · {c.description}</p></div>)}<details><summary>Save or load shifts</summary><ShiftLoadouts m={m}/></details></aside></div></>;
 }
 
 export function BagSheet({m,materials=false}:{m:DepthModel;materials?:boolean}) {

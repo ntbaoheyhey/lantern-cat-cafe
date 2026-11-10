@@ -1,3 +1,4 @@
+import { triggerPairCombosA6 } from './bonds-a6';
 import { gainRageA6, hitRageA6, phaseBossA6, prepareBattleA6 } from './gameplay-a6';
 import { kitSkillV5, situationalSkillV5 } from './skills-v5/kits';
 import { enemyActionV5, enemyIntentV5, encounterEnemiesV5, phaseHelpersV5, releaseThreadV5 } from './skills-v5/enemies';
@@ -513,6 +514,7 @@ export function act(b: Battle, choice: Choice): boolean {
       }
     }
   }
+  triggerPairCombosA6(b, actor, { damage, apply: applyStatus, shield, heal });
   record(b,actor,target,'action',0,description,skill.id);
   finishAction(b,actor);
   return true;

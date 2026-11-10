@@ -8,7 +8,7 @@
 - pnpm: 10.28.0 (repository packageManager version)
 - Free disk at setup: 147 GiB (df -h ~); above 15 GB threshold.
 - Dependencies: pnpm install --frozen-lockfile completed without lockfile changes.
-- Scope: STEP 2 active; Q3 active; Q1 completed 2026-11-10 06:38 UTC.
+- Scope: STEP 2 active; Q4 active; Q1 completed 2026-11-10 06:38 UTC.
 - Delivery branch remains codex/cardrpg-a6-q0-2026-11-10; one draft PR #438 for the whole lane.
 
 ## Report skim (15 lines; existing claims, not re-verified)
@@ -53,3 +53,13 @@
 - Typecheck/lint and full touched-package suites pass; final Daze/save edge cases pass (five rules and two web tests).
 - Three WebP shots inspected. Forced full-rage fixture proves banner layout; natural-cast timing under concurrent CPU load is not a browser pacing claim.
 - Next: Q3 bonds/combos/book and the scheduled full E2E + thirty-minute real-click session.
+
+## Q3 complete — 2026-11-10 07:50 UTC
+- Nine collection bonds, eight automatic pair combos, Bond Book and cat/formation badges. Three inspected WebP screenshots; no B-owned canvas/art edits.
+- Final 500-seed sim: normal six rounds/30.91 seconds authored median; boss 79.82 seconds. G2/G3/G5 remain partial; 258.39-second sim runtime remains a known issue.
+- Typecheck/lint and touched tests pass; four concurrent-load web timeouts passed isolated retry. Existing E2E: all 421 pass.
+- Legacy OFF digest exact over 8,250 routes; A5 fallback exact over forty-five routes. q3-compatibility.json retains expected digests.
+- Real-click run: 1,800.90 active seconds, twenty-nine wins, no losses or stalls. Normal median 39.49 seconds/p90 60.51; boss median 72.09/p90 79.32. Browser G1 normal pacing misses.
+- Page errors observed throughout and console errors in the second half: none. Tutorial and one lease-crossing fight excluded from timing statistics.
+- Patrol/training path skipped Events and idle claims; 809.67-second final account-reward gap is path-specific, not proof no rewards were available. Route points/boons remained visible.
+- Q4 is next; temporary source/test drafts exist under /tmp/cardrpg-a6-*-draft.* and are not yet applied or tested.

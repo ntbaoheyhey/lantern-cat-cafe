@@ -21,3 +21,13 @@
 - Third tune result: G1 passes on 500 seeds; G2 normal ultimate range is 42.4–78.33 percent, so a few cats still exceed seventy percent. Accept the per-cat table fallback and log the remaining overflow for Q12 rather than adding a fourth numeric tune.
 - Final check reruns 500 seeds only because the enemy-cast correctness repair changed a corner case after the third tune was bundled.
 - Inspected a third HUD shot at 1280 by 720. Natural ultimate capture timed out while the 500-seed CPU run was active (no console error; combat still advanced); the inspected full-rage fixture establishes banner layout only. Browser pacing is not claimed from authored sim seconds. Recheck isolated playback at the scheduled Q3/Q15 real-click runs.
+
+## Q3
+- Corrected low-contrast Bond Book cards to use Living Cafe tokens; moved hidden card bond text into a readable portrait badge.
+- Four unrelated web tests timed out under concurrent simulation. Isolated retry passed all thirty tests in their three files; no timeout thresholds or assertions changed.
+- Q3 sim keeps G1 pacing and G4 variety passing. G2 remains partial (boss minimum 89.17 percent); worst-case early losses and economy remain Q4/Q11/Q12 work.
+- Simulator runtime is 341.79 seconds under shared host load. The existing Q1 runtime repair cap remains exhausted; no new measurement pipeline was added.
+- A focused retaliation test reproduced a second combo firing after its shared triggering cat fell. Rechecking living contributors between combos fixed it; all six bond tests pass. Re-running the single sim and compatibility check against the final rules.
+- First-session recorder: mark a fight crossing the two timing-lock leases so its duration is excluded instead of treating unobserved lock waiting as combat time. Console-error collection added for subsequent observer segments; the already-running first half records page errors only. No game state or clock is changed.
+- Q3 real-click scope: the patrol/training path does not yet claim Events or the idle chest. Report its account-reward gaps as path observations, not proof that no reward was available. Future scheduled browser sessions must follow actionable claim badges as those screens are completed. Victory route points remain visible rewards.
+- Final Q3 browser result: thirty active minutes, twenty-nine wins, no losses/stalls. Normal median 39.49 seconds and p90 60.51 miss browser G1; boss median 72.09 and p90 79.32 fit the target. Do not substitute the authored sim's 30.91-second normal median for this measured result.
