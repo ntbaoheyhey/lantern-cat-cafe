@@ -1,7 +1,7 @@
 # Current Lane B handoff
 
 ACTIVE after explicit user resume. Only hard stops in NON-STOP-RUN.txt apply.
-Use Codex internal browser only; never operate personal Safari/Chrome. One agent.
+3D generation: local TRELLIS-MPS only per latest INBOX. Internal browser for review only. One agent.
 Worktree /Users/bao/taskbar-hero-cardrpg-b2; branch codex/cardrpg-art-r1-2026-11-09; draft #427.
 Runtime code78c02c3db; latest pushed61d847cb5: painted foes keep gesture across step/idle, soles/contact shadow and head protection anchor fixed.
 Do not redo R0/M5/S6, R1 housekeeping, Q1/Q2/Q4, Mochi/Soot source conversions.
@@ -27,3 +27,5 @@ Preserve unrelated docs/cardrpg-look/v5-art-mochi-preview.html and tools/cardrpg
 Report deadline20Nov12UTC. Checkpoints/reports are not stops.
 
 Local GLB inbox available:~/art/look-v3/inbox; watcher pid in~/art/look-v3/local-intake/.running/owner.json. Stop on pause. Local intake guards passed; see LOCAL-MODELS.md. No remote job running; Panko/Mallow attempt1 failed. VFX sources now Mochi+Soot+Clover+Panko+Mallow+Cinnamon; new sources not wired into runtime yet.
+
+Latest local override: setup active outside repo at~/art/trellis-mac; weights downloader pid recorded in~/art/look-v3/local-setup/weights.json. Logs setup-attempt2.log/weights.log. DINOv3 access OK. Preserve existing sources; Mochi smoke isolated. image-to-3d.py local-mps is explicit-only, alpha-only, max3local attempts;4guard testsPASS.

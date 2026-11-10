@@ -1,0 +1,32 @@
+{
+  "status": "SETUP_PASS_SMOKE_PENDING",
+  "at": "2026-11-10T07:32:03.942849+00:00",
+  "trellisCommit": "d58628f4f5b9c3de8274cb110074154f4b31cef2",
+  "python": "3.11.17",
+  "torch": "2.15.0",
+  "mpsAvailable": true,
+  "pipelineImport": "PASS",
+  "hfAuth": "PASS",
+  "dinoWeightAccess": "PASS",
+  "credentialsRead": false,
+  "rmbgDownloads": false,
+  "backends": {
+    "sparseConv": "none",
+    "textureBake": "KDTree"
+  },
+  "metalToolchain": "Unavailable: active developer directory is CommandLineTools",
+  "setupAttempts": [
+    {
+      "attempt": 1,
+      "status": "INTERRUPTED_WRONG_PYTHON39",
+      "log": "/Users/bao/art/look-v3/local-setup/setup-attempt1.log"
+    },
+    {
+      "attempt": 2,
+      "status": "COMPLETE_PYTHON311",
+      "log": "/Users/bao/art/look-v3/local-setup/setup-attempt2.log"
+    }
+  ],
+  "localGuardTests": 4,
+  "runtimeChanged": false
+}

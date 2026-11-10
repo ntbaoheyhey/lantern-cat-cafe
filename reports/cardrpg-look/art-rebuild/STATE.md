@@ -1,6 +1,6 @@
 # Lane B current state
 
-ACTIVE — latest explicit resume remains in force; internal chat browser only.
+ACTIVE — latest explicit resume remains in force; TRELLIS local-mps only for generation; internal chat browser for review.
 Branch codex/cardrpg-art-r1-2026-11-09; draft #427; latest pushed61d847cb5.
 Q1/Q2/Q4 DONE. Q3 PARTIAL pending Yarn spaced conversion retries and final phase checks.
 Button fallback accepted within documented limits after three provider failures. Mochi/Soot source unchanged.
@@ -12,3 +12,5 @@ Yarn retry2>=06:47UTC, retry3>=07:47UTC. No Button retry, no Mochi re-generation
 Q6-Q11 pending. ART-REPORT is interim PARTIAL; no final completion claim.
 Known issues: rigid articulation, Soot baked warm forehead, old foe VFX, limited fallback camera depth, inherited perf misses.
 Evidence80MiB/120MB; source51MiB/60MB. Continue QUEUE.md; STOP-B/INBOX checks between items.
+
+Current 2026-11-10T07:30:26.787573+00:00: local Apple Silicon setup/weights download active. DINOv3 access confirmed. Browser conversion schedules above are historical/superseded. See LOCAL-MODELS.md and QUEUE. Runtime unchanged; local-mps guards4PASS.

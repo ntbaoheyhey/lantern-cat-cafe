@@ -1,7 +1,7 @@
 # Lane B active queue
 
 Updated: 2026-11-10T05:16:59.510589+00:00. ACTIVE — user explicitly resumed.
-Latest browser instruction: internal chat browser only; never operate user Safari/Chrome.
+Latest instruction: TRELLIS local-mps only; no browser/Space generation. Internal browser remains available for battle review.
 Always take the top unfinished unblocked item. Check INBOX.md and root STOP-B between items. Reports/checkpoints are not stops. After three failed repairs, use the documented fallback and continue. Only the hard stops in NON-STOP-RUN.txt apply.
 
 - [x] Q1 Housekeeping — 30 min. Archive old handoff; compact current handoff; read direction/state/rules and latest A/U outboxes; seed inbox. Done: current files consistent, status committed and pushed.
@@ -45,3 +45,5 @@ Q5 source checkpoint 2026-11-10T06:20:06.703306+00:00: all12cats/13enemies origi
 Q3/Q5 resume06:30UTC: Clover attempt1 error confirmed; no mesh/no duplicate job. Q3 full E2E running in isolated headless test browser. Preparing Q6 original VFX sources while spaced conversions wait; original character masters untouched.
 
 User question06:40UTC: local GLB route implemented and validated; inbox~/art/look-v3/inbox, intake watcher active in this run (owner~/art/look-v3/local-intake/.running/owner.json). User may supply original concept-derived meshes; all cleanup/rig/packing local. Stop watcher on user pause. Official TRELLIS2 requires CUDA/Linux not available on this M3Pro. No new remote job pending. Panko/Mallow first attempts failed; receipts retained.
+
+Local TRELLIS override 2026-11-10T07:30:26.787573+00:00: user-authorized Apple Silicon port cloned at d58628f4f5b9c3de8274cb110074154f4b31cef2; HF login and DINOv3 weight access verified. Q3/Q5 now use local-mps, one model at a time, fixed recorded seeds and maximum two retries with new seeds. No more Space retries. One isolated Mochi smoke is explicitly requested; preserve shipped Mochi/Soot sources. Setup initially picked system Python3.9; interrupted and recreated only that external venv using Python3.11. Setup retry and weights cache in progress; no RMBG download. Continue independent work while downloads finish.

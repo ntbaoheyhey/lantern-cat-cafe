@@ -66,3 +66,10 @@ User explicitly resumed. Use internal chat browser only for provider workflow; d
 
 ## 2026-11-10 local model intake
 User asks for downloaded models to be processed locally without browser automation. Added a GLB inbox/intake, preserving successful Mochi/Soot sources. All post-export stages are local. Official TRELLIS.2 requirements verified:Linux+NVIDIA24GBVRAM+CUDA; current M3Pro36GB cannot run that official CUDA implementation directly. No AI weights downloaded or paid backend started. See LOCAL-MODELS.md. This is an additional input route; source quality/rig review remains mandatory.
+
+## 2026-11-10T07:30:26.787573+00:00 user-authorized native TRELLIS port
+- INBOX supersedes the historical browser route. Clone/install outside git; model generation headless on MPS. Official CUDA-only limitation does not apply to this third-party Apple Silicon port.
+- HF standard auth whoami succeeds; DINOv3 model.safetensors metadata access succeeds. Do not read/copy/print credentials.
+- All25 original concepts are RGBA with transparent backgrounds. Upstream still eagerly constructs RMBG: local wrapper removes precisely that constructor and validates alpha before any inference. Record the patch/source hashes; never download/use RMBG.
+- Setup first selected system Python3.9; terminate only own setup/pip and preserve its incomplete venv, recreate using installed3.11, rerun setup. MetalToolchain unavailable with current CommandLineTools; allow upstream Python fallback.
+- Smoke Mochi only into a scratch output; never publish it into inbox or replace existing source. Future local roster output goes atomically into inbox, retains receipts and must pass runtime review.
