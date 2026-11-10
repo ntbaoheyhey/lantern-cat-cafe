@@ -34,8 +34,13 @@ lease = json.loads(Path('/tmp/cardrpg-big-locks/timing.lock/owner.json').read_te
 if lease.get('lane') != 'B-LOOK' or lease.get('pid') != os.getppid():
     raise ValueError('Run through the shared run-lock.mjs')
 generation = json.loads(args.generation_receipt.read_text())
-if generation.get('status') not in ('INTERRUPTED', 'FAILED'):
-    raise ValueError('Only recover a terminal failed export; preserve any successful or active generation')
+if generation.get('status') not in ('INTERRUPTED', 'FAILED', 'GENERATED_NOT_REVIEWED'):
+    raise ValueError('Only recover terminal exports; preserve any active generation')
+if generation.get('status') == 'GENERATED_NOT_REVIEWED':
+    if not (args.repair_surface or args.surface_checkpoint):
+        raise ValueError('A complete native export requires explicit local surface repair, never duplicate export')
+    if hashlib.sha256(Path(generation['model']).read_bytes()).hexdigest() != generation['modelSha256']:
+        raise ValueError('Preserve the exact unaccepted original export before repair')
 if generation.get('backend') != 'local-mps' or generation.get('runtimeAccepted') is not False:
     raise ValueError('Expected an unaccepted native generation receipt')
 if args.checkpoint.resolve().parent != args.generation_receipt.resolve().parent:

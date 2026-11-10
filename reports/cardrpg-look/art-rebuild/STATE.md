@@ -1,11 +1,11 @@
 # Lane B current state
 
-ACTIVE — user resumed; Q3 bounded close delivered, Q5 roster continuing with native Yarn attempt1. No source regeneration.
-Worktree /Users/bao/taskbar-hero-cardrpg-b2; branch codex/cardrpg-art-r1-2026-11-09; draft #427; prior pushed684a5736c; current Q3 decision checkpoint follows.
-Q1/Q2/Q3/Q4/Q9 DONE (Q3 bounded PARTIAL quality, pilot7.71; see R1-DECISION). Q5 roster active: one native Yarn trial queued; Button repaired-source rejected, reviewed fallback retained.
+ACTIVE — user resumed; Q3 bounded close delivered, Q5 roster continuing with native Yarn source review/repair. No source regeneration.
+Worktree /Users/bao/taskbar-hero-cardrpg-b2; branch codex/cardrpg-art-r1-2026-11-09; draft #427; prior pushed7cc2728a8; current native source checkpoint follows.
+Q1/Q2/Q3/Q4/Q9 DONE (Q3 bounded PARTIAL quality, pilot7.71; see R1-DECISION). Q5 roster active: Yarn attempt1 exported but source rejected; one raw-checkpoint repair queued(session38356); Button repaired-source rejected, reviewed fallback retained.
 Existing Mochi/Soot conversions and all25 original concept masters are preserved.
 Latest INBOX: local-mps only, alpha inputs, no RMBG, one inference at a time under timing lease.
-Smoke512 remains coarser; Mochi/Soot preserved. Button native attempts1/2 timed out; recovery2 exports but source has shattered nonmanifold geometry. B-LOCAL-009 both local repairs failed drift; keep animated Button fallback, no third Button inference/runtime install. Yarn native attempt1 queued session21336 with BlenderUV/raw checkpoint. Nine local guards pass; future generation saves raw geometry before simplification.
+Smoke512 remains coarser; Mochi/Soot preserved. Button native attempts1/2 timed out; recovery2 exports but source has shattered nonmanifold geometry. B-LOCAL-009 both local repairs failed drift; keep animated Button fallback, no third Button inference/runtime install. Yarn native attempt1 exported847.754s; raw mesh already nonmanifold, source rejected. Local raw-repair1 queued38356 with corrected closest-surface diagnostic; no new inference. Nine local guards pass; future generation saves raw geometry before simplification.
 Q6 generated VFX12hero kits+13enemy families implemented; audit7.7PARTIAL. Third bounded repair has type/lint/10touchedtests/build/parity PASS; final shots/10casts/72facesPASS;1xfilm external, continuous review pending.
 Q7 closer camera/key checkpoint7.5;1440/1024posters/96facesPASS. Runtime roster coverage pending.
 Q8 source portraits/icons manifest prepared; final matching waits for roster.

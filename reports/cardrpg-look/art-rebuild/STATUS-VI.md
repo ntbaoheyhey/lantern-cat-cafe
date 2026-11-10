@@ -1,5 +1,4 @@
-Đã chốt thử nghiệm 4 nhân vật ở mức PARTIAL; cả 4 đã chơi được trong trận.
-Điểm hình ảnh mèo/quái trung bình 7,75 vượt ngưỡng đi tiếp 7,0; chưa đạt mục tiêu 8,5.
-Ưu tiên ảnh gốc → mesh 3D; chỉ giữ bản chuyển động nhiều lớp ở đơn vị có nguồn 3D chưa đạt.
-Đang tiếp tục roster với một lượt Yarn local; không tạo lại Mochi/Soot/Button.
-Chuyển động tay, độ sâu của quái dự phòng và sự đồng bộ toàn roster vẫn cần cải thiện.
+Yarn đã xuất được model local sau 14 phút, nhưng mesh vỡ bề mặt nên chưa đưa vào trận.
+Đã lưu mesh thô; đang sửa local từ chính dữ liệu này, không chạy lại model.
+Mochi/Soot và bản quái dự phòng đã kiểm tra được giữ nguyên.
+R1 đã chốt PARTIAL; đang tiếp tục Q5 roster, rồi VFX/stage/portraits/integration.

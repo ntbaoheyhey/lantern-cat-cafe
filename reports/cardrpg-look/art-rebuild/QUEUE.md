@@ -81,3 +81,5 @@ Local TRELLIS override 2026-11-10T07:30:26.787573+00:00: user-authorized Apple S
 2026-11-10T12:31Z: Button surface-repair2 failed unchanged drift bound; bounded repair branch PARTIAL, articulated fallback retained. Native Yarn attempt1 queued(session21336), original master/seed20261112,512/1024,100KpreUV, BlenderUV+raw checkpoint. Only this one B heavy waiter remains. Button source stays excluded from inference retries. Q3 final decision awaits Yarn, no completed conversion repeated.
 
 2026-11-10T12:35Z Q3 bounded close: all4 already play with reviewed rigid/layered fallbacks; pilot appeal/menace7.75>=7.0, weighted pilot7.71 (not full roster). R1-DECISION.md records pipeline/known limits/evidence. Native Yarn trial continues as Q5; source quality refinement no longer blocks later phases.
+
+2026-11-10T12:56Z Q5: resumed original Yarn attempt1, exported847.754s. Six-view source REJECTED (fragmented topology already in raw checkpoint); no runtime replacement. One local raw-checkpoint repair queued session38356, no new inference. Source diagnostic distinguishes raw/reduced damage; closest-surface drift fixture queued. Keep working after bounded outcome.

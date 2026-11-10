@@ -1,12 +1,15 @@
 """One bounded local surface repair; preserve original decoded data and colours."""
 import argparse
 import hashlib
+import importlib.util
 import json
 from pathlib import Path
 import sys
 import bpy
 import numpy as np
-from mathutils.kdtree import KDTree
+spec = importlib.util.spec_from_file_location('surface_distance', Path(__file__).with_name('surface-distance.py'))
+surface_distance = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(surface_distance)
 
 p = argparse.ArgumentParser()
 p.add_argument('--checkpoint', type=Path, required=True)
@@ -46,22 +49,14 @@ if triangles > 100000:
 obj.data.calc_loop_triangles()
 out_vertices = np.asarray([v.co[:] for v in obj.data.vertices], dtype=np.float32)
 out_faces = np.asarray([t.vertices[:] for t in obj.data.loop_triangles], dtype=np.uint32)
-def sample_distances(a, b):
-    tree = KDTree(len(b))
-    for i, value in enumerate(b):
-        tree.insert(value, i)
-    tree.balance()
-    sample = a[::max(1, len(a)//20000)]
-    distances = np.asarray([tree.find(v)[2] for v in sample])
-    return {'samples': len(sample), 'p95': float(np.quantile(distances, .95)), 'max': float(distances.max())}
-before_after = sample_distances(vertices, out_vertices)
-after_before = sample_distances(out_vertices, vertices)
+before_after = surface_distance.sample_surface_distances(vertices, out_vertices, out_faces)
+after_before = surface_distance.sample_surface_distances(out_vertices, vertices, faces)
 within_bound = max(before_after['p95'], after_before['p95']) <= .015
 repair = {'sourceCheckpointSha256': hashlib.sha256(args.checkpoint.read_bytes()).hexdigest(),
           'method': f'Blender voxel {args.voxel}, volume preserved, smooth {args.smooth} x{args.iterations}, source target100K',
           'tool': bpy.app.version_string, 'trianglesBefore': len(faces), 'trianglesAfter': len(out_faces),
-          'beforeToAfterSampledVertexDistance': before_after,
-          'afterToBeforeSampledVertexDistance': after_before,
+          'beforeToAfterSampledSurfaceDistance': before_after,
+          'afterToBeforeSampledSurfaceDistance': after_before,
           'geometryChanged': True, 'runtimeAccepted': False, 'modelRequests': 0,
           'surfaceDriftBound': .015, 'surfaceDriftPass': within_bound}
 source.update(vertices=out_vertices, faces=out_faces, surface_repair=np.asarray(json.dumps(repair)))
