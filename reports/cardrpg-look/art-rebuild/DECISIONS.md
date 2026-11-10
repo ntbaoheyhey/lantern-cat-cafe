@@ -95,3 +95,9 @@ The P7 GPU/E2E lease is queued behind A6. Per NON-STOP rule4, accept and publish
 P10 corrected setup remains the active item. Prepare P11 report and one P12 Soot motion pilot while A6 owns GPU timing; the P10 artifact is immutable so film validation does not silently include unaccepted motion. Soot adds bounded prop lift and3–5frame head/tail follow-through without recutting its atlas. No P12 completion claim before naturalx1 visual/overlap/reduced-motion review.
 
 2026-11-10T18:54:16.068996+00:00 P12/P13 now precede final P10/P11 closure: saved Soot pilot can ship immediately; boss film exposed a hidden Binding Thread that label-overlap tests missed. Preserve both85.5sfilms, retain normal acceptance, fix composition then add a complete boss-result film. This extends the missing acceptance evidence rather than repeating completed work.
+
+2026-11-10T19:04:38.287212+00:00 Research recheck after P12/P13: the shared rigid-part gestures remain the weakest category. Add P14 for Spool Ram, the lowest remaining overall row7.6 after Soot pilot. Use its existing head/leg/tail joints, no new image or atlas. Prepared while P10film runs; execute after P11 publication.
+
+2026-11-10T19:06:37.950652+00:00 Full boss film reached victory134.32s/13catultimates but phase3 revealed two extra summoned Binding Threads sharing the initial lanes. P13 accepted initial two adds only; keep its completed scope and add P15 before film acceptance. Use actual phase3 rules state and four distinct placements, no new art.
+
+2026-11-10T19:21:37.791752+00:00 P15 accepted attempt2: stable live actor lanes, not rule-slot modulo; four helpers separated across foreground, all boss/cat scales unchanged. Actual3/4states and two sizes required; bounds and label audit alone do not prove visibility. Selected compact evidence preserves120MB Git cap.

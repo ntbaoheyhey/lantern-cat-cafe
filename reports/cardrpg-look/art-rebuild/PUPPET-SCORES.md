@@ -46,3 +46,5 @@ P6 current battle/VFX audit: readability8.4, style coherence8.3, timing8.1, spec
 P7 cafe stage/composition8.0 self-review: current A6 controlled pairs preserve clear faces with warm fill, night crescent and enemy accents. No per-unit motion score change. Evidence p7/REVIEW.md; Rain Spool proximity remains P13.
 
 P13 boss composition8.2 for covered Rain Spool/Yarn Giant/Pantry Crown fights: both add faces visible, scale unchanged, actual two-viewport audit. Wider stage/composition category remains8.1; no roster-wide motion score uplift.
+
+P15 extends the P13 composition acceptance to actual phase3 with three/four Binding Threads in all three covered boss fights at both sizes. All helper and boss faces are visible, with no out-of-canvas feet. No per-unit motion or whole-roster score change; evidence p15/REVIEW.md.

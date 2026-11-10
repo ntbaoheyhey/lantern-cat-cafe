@@ -15,9 +15,11 @@ Check STOP-B/INBOX and fetch/show A6-OUTBOX between items. Commit/push and updat
 - [x] P9 Publish for A6 (1 h, repeat after each big batch): push, update #427, write B-OUTBOX.md (what changed, manifest paths, flags, known issues). Make sure the demo size stays <= 40 MB together with A6 (WebP atlases; report your share in B-OUTBOX).
 - [x] P12 [auto] Individual motion polish after core delivery: improve the lowest motion score with authored tail/cloth lag and a clearer anticipation/settle pilot; compare at x1, retain clean overlap and reduced motion. Extend only accepted improvements to relevant rigs.
 - [x] P13 [auto] Broad-boss composition: inspect Rain Spool impact proximity to party faces and improve lateral spacing without shrinking accepted cat/boss scale; two viewports, same HUD envelopes; also both Binding Thread faces visible in Rain Spool/Yarn Giant/Pantry Crown fights, verified canvas dimensions.
+- [x] P15 [auto] Phase3 summoned-add composition: extend the accepted initial two-add formation to all four Binding Threads; keep every face identifiable at both sizes, retain boss/cat scale; inspect actual phase3 in current A6 before final film acceptance.
 - [ ] P10 Films (by 19 Nov 12:00 UTC): in the throwaway A6 preview (section 2), one 60-90 s x1 battle with several ultimates and one boss fight; R0 vs now comparison posters.
 - [ ] P11 Report (by 20 Nov 12:00 UTC): ART-REPORT.md (scores vs R0, PUPPET-SCORES summary, what shipped, known issues, provenance), STATUS-VI.md summary, #427 description. Then improve the lowest-scored unit until the deadline.
 
+- [ ] P14 [auto] Lowest-score motion continuation after report: Spool Ram (overall7.6/motion7.5) gets a forward horn dip, planted front legs and delayed tail recovery. Accept only from x1 before/after and reduced-motion/face/HP checks; preserve art/rig and scores of untouched units.
 
 
 Research refinements 11/11: P6 uses the saved49+6cast audit and33tests; complete missing parity and visual acceptance. P7 records before/after plus representative cast timing. P8 reuses existing concepts/VFX and only exports missing formats. P10 adds representative x2/x3/reduced-motion readability checks alongside requested x1films. Completed P1–P5 are unchanged. Rationale in RESEARCH-PUPPET.md/DECISIONS.md.
@@ -55,3 +57,5 @@ P9 complete 2026-11-10T18:31:20.425804+00:00: current A6+B P7 actual38,140,486B,
 P12 complete 2026-11-10T18:54:16.068996+00:00: saved controlled Soot pilot accepted; head/lantern/tail delayed follow-through,8paired poses/12x1casts incl reduced,21tests/parityPASS. Reordered prepared P12/P13 before P10/P11: boss film reveals hidden Binding Thread, so close composition and then capture the complete boss outcome; accepted normal film is retained.
 
 P13 complete 2026-11-10T19:03:20.254644+00:00:20correct-viewport before/after views, both add faces visible across3bosses,0bounds/HP/UIerrors;25tests/type/lint/parityPASS; latestA6combined38,152,962B. P10 complete boss film running, normal85.49s accepted.
+
+P15 complete 2026-11-10T19:21:37.791752+00:00:12actual phase3 views with3/4helpers across3bosses×2sizes; stable survivor lanes,0page/bounds/HPerrors; type/lint6tests/parityPASS; combined38,175,926B. Final boss film P10 next.
