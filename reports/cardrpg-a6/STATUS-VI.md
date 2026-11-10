@@ -110,3 +110,6 @@ Nhánh trùng GitHub, còn143GiB; test liên quan đã qua, đang duyệt ảnh 
 
 2026-11-10T20:03:14Z: Q14 và Nhật ký Q17 hoàn tất: ba lính phụ tách rõ, quà Nhật ký giữ đúng giới hạn và chỉ nhận một lần.
 Demo mới38,37MB mở trực tiếp ở cả hai cỡ màn, không gọi mạng/lỗi; đã xem24ảnh và giữ các test đã qua. Hai clip85giây/65giây đã cắt từ bản ghi có sẵn, đang duyệt khung hình trước khi chốt báo cáo.
+
+2026-11-10T20:07:41Z: Q15/Q16 đã chốt: clip đầu phiên85giây và boss62giây đã xem, báo cáo giữ nguyên mọi số đo chưa đạt.
+Tự đánh giá7,61/10, chưa đạt8,5; điểm yếu là thua sớm, gợi ý phục hồi và đuôi trận boss. Tiếp tục Q18 Cẩm nang/Cài đặt, không chạy lại500seed hay lượt30phút.

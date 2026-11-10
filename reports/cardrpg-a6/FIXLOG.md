@@ -118,3 +118,5 @@
 2026-11-10T19:20:48Z Q15 E2E: full suite420/421, idle XP stayed0 after fake-clock jump before app readiness. Minimal test-only wait for visible Catstatus before advancing clock; three concurrent focused repeats pass. Preserve original failure in final-e2e.json. No gameplay changes;420passing cases not repeated.
 
 2026-11-10T20:00:25Z Q17 capture harness: returning through a lazy guide can preserve an open details section; unconditional click closed it before replay lookup. Check details.open before opening; resumed only missing captures/navigation. No product edit; both sizes pass and prior receipts retained.
+
+2026-11-10T20:07:41Z: Film delivery resumed with the existing Pillow venv after the system Python lacked PIL. Original encodes were retained while creating storyboards. Visual review then found leading browser white frames; one recut removes them, with85s/62s real-speed clips and Sootultimate/Victory inspected. No new gameplay recording or measurement.
