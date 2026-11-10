@@ -25,7 +25,7 @@ Evidence uses A6 shell in a disposable merged preview; primary branch contains n
 | Teacup Healer | 8.6 | 7.5 | 7.8 | 7.8 | p5/batch1-final/teacup-healer-comparison.webp and teacup-healer-motion.webp; cup/lid/spoon retained; short elbow motion |
 | Kettle Knight | 8.6 | 7.5 | 7.9 | 7.9 | p5/batch1-final/kettle-knight-comparison.webp and kettle-knight-motion.webp; boss showcase scale repaired; original eyes emit |
 | Binding Thread | 8.6 | 7.7 | 7.7 | 7.7 | p21/evidence/binding-thread-reach.webp; forward knot reach, arm lag and planted feet; duplicate limb fill removed, rigid-arm limit remains |
-| Practice Cushion | 8.6 | 7.5 | 7.7 | 7.7 | p5/batch2/practice-cushion-comparison.webp and practice-cushion-motion.webp; tassels and cushion face intact |
+| Practice Cushion | 8.6 | 7.7 | 7.7 | 7.7 | p22/evidence/practice-cushion-spring.webp; small compression/release, mitten jab and planted boots; broad face seam intact, tassels remain rigid |
 | Pollen Scout | 8.6 | 7.5 | 7.8 | 7.8 | p5/batch2/pollen-scout-comparison.webp and pollen-scout-motion.webp; independent wing joints |
 | Rain Spool | 8.6 | 7.5 | 8.0 | 8.0 | p13/repair1/rain-spool-spacing.webp; party gap restored and both adds visible; accepted scale and motion unchanged |
 | Crumb Sentinel | 8.6 | 7.5 | 7.8 | 7.8 | p5/batch2/crumb-sentinel-comparison.webp and crumb-sentinel-motion.webp; ornate armour retained |

@@ -117,3 +117,6 @@ Tiếp tục từ P19 đã chạy xong; đã duyệt ảnh hai cỡ màn hình, 
 
 Binding Thread đã duyệt bản sửa3: tay vươn rõ hơn, hai chân bám sàn; loại được nét tay cũ lộ sau vùng cắt.
 26test web và2test pipeline đạt;16ảnh/8lượt chiêu không lỗi, bản chung38.189.058byte. Tiếp tục Practice Cushion; chỉ Binding Thread dùng cách bù alpha mới.
+
+Practice Cushion đã duyệt: nén nhẹ rồi bật lại, tay găng đấm rõ hơn; đường chỉ và mặt liền, hai chân bám sàn.
+27test cùng16ảnh/8lượt chiêu/type/lint/parity đạt; chuyển động7,5→7,7, tổng giữ7,7. Bản chung38.189.302byte; tiếp tục Mochi nâng khiên.

@@ -5,6 +5,7 @@ import inkcapRig from '../../../../../../assets/cardrpg-look/v3-puppets/inkcap.r
 import sockRig from '../../../../../../assets/cardrpg-look/v3-puppets/sock-skipper.rig.json';
 import cinnamonRig from '../../../../../../assets/cardrpg-look/v3-puppets/cinnamon.rig.json';
 import threadRig from '../../../../../../assets/cardrpg-look/v3-puppets/binding-thread.rig.json';
+import cushionRig from '../../../../../../assets/cardrpg-look/v3-puppets/practice-cushion.rig.json';
 import sorrelRig from '../../../../../../assets/cardrpg-look/v3-puppets/sorrel.rig.json';
 import { parsePuppetRig, puppetMotion, puppetPhase, puppetPose, plantedPuppetPivot, SORREL_STAFF_CONTACT } from './look-puppet-rig';
 import { artPipeline } from './look-art';
@@ -156,6 +157,34 @@ describe('illustrated puppet contract and event motions',()=>{
       }
     }
     expect(puppetPose('cast',0,.38,false,0,'button-guard').feetPlant).toBe(false);
+  });
+
+  it('compresses and releases Practice Cushion with planted boots, a forward jab and an intact face seam',()=>{
+    const pose=(t:number,reduced=false)=>puppetPose('attack',0,t,reduced,0,'practice-cushion');
+    expect(pose(.18).bodySquash).toBeGreaterThan(.025);
+    expect(pose(.48).bodySquash).toBeLessThan(-.015);
+    const [,x,y]=cushionRig.sockets.mainHand;
+    const hand=new Vector3(Number(x),Number(y),0).applyMatrix4(new Matrix4().makeRotationZ(pose(.52).prop));
+    expect(hand.x).toBeLessThan(Number(x)-.05);
+    for(let i=0;i<=100;i++){
+      const p=pose(i/100),quiet=pose(i/100,true);
+      expect(Math.abs(p.bodySquash)).toBeLessThanOrEqual(.028);
+      expect(Math.abs(p.head)).toBeLessThan(.004);
+      expect(p.feetPlant).toBe(true);
+      expect(p.hopLift).toBe(0);
+      for(const foot of cushionRig.layers.filter(l=>l.part.startsWith('foot'))){
+        const rest=[(foot.pivot[0]!-.5)*cushionRig.height*cushionRig.aspect,(1-foot.pivot[1]!)*cushionRig.height];
+        const contact=[(foot.rect[0]!+foot.rect[2]!/2-foot.pivot[0]!)*cushionRig.height*cushionRig.aspect,(foot.pivot[1]!-foot.rect[1]!-foot.rect[3]!)*cushionRig.height];
+        const scale=[1+p.bodySquash*.6,1-p.bodySquash],rotation=p.gesture*(foot.part==='footL'?.025:-.025);
+        const [px,py]=plantedPuppetPivot(rest,contact,rotation,p.lean,scale);
+        const actual=new Vector3(contact[0]!,contact[1]!,0).applyMatrix4(new Matrix4().makeRotationZ(rotation)).add(new Vector3(px,py,0));
+        actual.applyMatrix4(new Matrix4().makeScale(scale[0]!,scale[1]!,1)).applyMatrix4(new Matrix4().makeRotationZ(p.lean));
+        expect(actual.distanceTo(new Vector3(rest[0]!+contact[0]!,rest[1]!+contact[1]!,0))).toBeLessThan(1e-10);
+      }
+      expect([quiet.bodySquash,quiet.hopLift,quiet.prop,quiet.offhand,quiet.head,quiet.lean,quiet.feetPlant]).toEqual([0,0,0,0,0,0,false]);
+    }
+    for(const t of [0,1])expect(pose(t).bodySquash).toBe(0);
+    for(const id of ['binding-thread','sock-skipper','mochi'])expect(puppetPose('attack',0,.18,false,0,id).bodySquash).toBe(0);
   });
 
   it('anchors Sorrel\'s painted staff tip through breath and casting without a wide shoulder shift',()=>{

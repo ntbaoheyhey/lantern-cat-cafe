@@ -83,3 +83,6 @@ Sorrel pivots the rigid crook around its actual painted floor tip, with an open 
 
 ## P21 — Binding Thread snare reach and overlap repair
 Knotted hands reach toward cats with delayed counterarm and planted feet. Repaired authored arm partition and opt-in opaque-alpha overlap remove old floating arm fragments; only BindingThread atlas/rig rebuilt.26web+2pipeline tests,16pairedviews/8casts/type/lint/parityPASS;0socket/faceHP/page/bounds errors, p95<=16.8ms. CombinedA6e94713b8e+B38189058B/headroom1810942B; Bembedded23549548B. Existing portraits/source art unchanged; no new draw/HUD/event/flag; P15 helper positions retained. Evidence p21/REVIEW.md.
+
+## P22 — Practice Cushion spring
+Whole-pillow compression/release and mitten jab retain the broad face seam and planted boots. Original six-layer atlas/rig/source unchanged; no draw/HUD/event/flag change.16pairedviews/8naturalcasts/27tests/type/lint/parityPASS;0page/socket/faceHP/bounds errors, footdrift<1e-15, p95<=16.8ms. A6e94713b8e+B38189302B/headroom1810698B; Bassets23549548B unchanged. Evidence p22/REVIEW.md; motion7.7/overall7.7.

@@ -119,3 +119,5 @@ P18 accepted distinct servingtray/cup movement, no whole-roster uplift. P19 [aut
 2026-11-10T20:29:00.440293+00:00 Fetched A6 reports a concrete B-owned boss disposal regression. P20 inserted before P19 to fix repeated cleanup before further motion work. P19 prepared plan stays untouched; no accepted unit is re-reviewed.
 
 2026-11-10T20:41:44.434379+00:00 P21 [auto]: after P19 acceptance, Binding Thread is a lowest unrefined motion7.5/overall7.7 row and appears repeatedly in boss encounters. Author a forward knot reach with arm lag and two planted feet, using only its six existing rigid layers. Keep the painted thin arms and metal rims intact; no invented tail/tassels or mesh bend. P15 stable helper positions remain unchanged.
+
+2026-11-10T20:55:15.142911+00:00 P22 resumes saved plan after published P21: Practice Cushion remains overall7.7/motion7.5. Use whole-pillow squash and planted boots, not new tassel bones; limit differential head rotation because its face crosses the head/body seam. No atlas rebuild or re-review of accepted units.
