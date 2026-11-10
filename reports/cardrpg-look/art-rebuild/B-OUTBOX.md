@@ -77,3 +77,6 @@ Left servingtray lifts with a restrained rightcup countergesture and delayed hea
 
 ## P20 — A6 boss disposal regression resolved
 Reproduced expected3/received5. `CardBossAtmosphere.dispose()` now has a lifetime guard; every owned geometry/material/InstancedMesh releases once, including motes. Existingtest checks each resource after first AND second calls plus rootdetachment;4focusedboss/materialtests and type/lintPASS. No live render/rules/HUD/art change; previousvisuals/parity retained. Next P19 combined build includes the fix.
+
+## P19 — Sorrel floor-contact staff
+Sorrel pivots the rigid crook around its actual painted floor tip, with an open palm and delayed tail; clean shoulder/hand joins at both sizes. Saved16pairedviews/12casts/25tests/type/lint/parityPASS; tipdrift<1e-15,0socket/faceHP/bounds/page errors. Reduced motion remains still. A6e94713b8e+B38185390B/headroom1814610B; Bassets unchanged. No event/HUD/flag/rig/atlas changes. Evidence p19/REVIEW.md.

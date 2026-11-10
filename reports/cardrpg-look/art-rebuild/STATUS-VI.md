@@ -111,3 +111,6 @@ A6 vừa báo lỗi dọn tài nguyên hiệu ứng boss khi gọi dispose lần
 
 Đã sửa lỗi dọn tài nguyên boss: mỗi geometry/material/mesh chỉ được giải phóng một lần dù gọi dispose hai lần.
 4test tập trung cùng type/lint đạt; đang đẩy bản sửa cho A6 rồi tiếp tục Sorrel.
+
+Tiếp tục từ P19 đã chạy xong; đã duyệt ảnh hai cỡ màn hình, gậy Sorrel giữ điểm chạm sàn và vai/cổ tay liền mạch.
+25test,12lượt chiêu và parity đã đạt; chuyển động7,5→7,7, tổng giữ7,7. Bản chung38.185.390byte; tiếp tục nhân vật còn điểm chuyển động thấp.
