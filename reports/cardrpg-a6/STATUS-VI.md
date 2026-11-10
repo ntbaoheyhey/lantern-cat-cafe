@@ -95,3 +95,12 @@ Giữ nguyên số đo và nêu rõ giới hạn; tiếp tục kiểm tra E2E/l�
 2026-11-10T19:28:59Z: Tiếp tục đúng lượt UI/video Q15 đang chạy; giữ nguyên app, không chạy lại 500 seed hay bộ ảnh đã đạt.
 Git trùng origin, còn145GiB; toàn bộ sửa đổi dở được giữ. B đã công bố sửa ba/bốn lính phụ, sẽ tích hợp sau lượt đo.
 Đang hoàn thiện bằng chứng trước/sau và bản nháp Nhật ký trong thư mục tạm.
+
+2026-11-10T19:38:18Z: Đã đẩy b2ab7be48 gồm E2E và bốn ảnh trước/sau; lượt UI đang phần hai, chưa đổi mã ứng dụng.
+Thêm Q18 sau Nhật ký: sửa lời giải thích tuyệt kỹ theo rage và đồng bộ Cài đặt x3; giữ các chế độ cũ.
+
+2026-11-10T19:43:53Z: Tiếp tục đúng phần hai lượt Q15 đang chạy; giữ nguyên app và mọi bản nháp, không chạy lại seed/E2E/bộ ảnh đã đạt.
+Git trùng origin, còn145GiB; bản sửa lính phụ của B sẽ merge sau lượt đo. Đang rà bản nháp Nhật ký/Cẩm nang/Cài đặt.
+
+2026-11-10T19:51:42Z: Lượt Q15 đủ30phút:26thắng/2thua,khônglỗi/kẹt; thường31,12giây,boss90,35giây. Thua đầu5,38phút và đuôi boss184,7giây vẫn chưa đạt.
+Đã merge bản B sửa lính phụ qua daab97e4d; nhường lượt khóa B theo yêu cầu rồi kiểm tra ảnh/phim/demo A6.

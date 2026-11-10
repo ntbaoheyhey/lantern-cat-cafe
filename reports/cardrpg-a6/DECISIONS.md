@@ -81,3 +81,5 @@ Q13f: Existing route stays seven stops (early depths0–3, late4–5, guardian6)
 - 2026-11-10T19:21:42Z: Final gallery adds Journal/Field guide/Settings to LOOK-SCORES. Journal is the lowest A-owned surface at 7.3/7.1; add Q17 after Q16 under the requested continuing quality pass. Prepare an original scrapbook using existing cat art and rule previews off the live app while Q15 measures. No new rewards or mechanics.
 
 2026-11-10T19:35:56Z Q18[auto]: retained720p gallery exposes Field guide/Settings7.3 lows; code inspection finds legacy two-turn ultimate text and Settings[1,2,4] despite A6rage100/[1,2,3]. Add presentation/copy parity polish afterQ17, no rules or new systems; drafts only during frozenQ15.
+
+2026-11-10T19:50:24Z: B published request for5s acquisition gap after Q15segment2; honor it before the next A6 lease. Latest published B fc4284033 contains4815b7f3 P15 helper fix plus continuation notes; merge after source freeze ends. B P14 prototype remains unpublished and is not imported.

@@ -24,15 +24,15 @@ These are retained screenshots, paired without changing their contents. Review g
 | Final simulation recovery | **47.76%** same-seed hint recovery over 1,698 retries; normal-win HP median **98%** | Recovery and 20–60% HP targets missed |
 | Browser pacing, Q13g | 10 normals: **22.13 s** median; 3 bosses: **77.33 s** | p90: 44.16 / 84.52 s; tutorial/lease crossings excluded |
 | Same boss before / after pacing fix | **124.61 → 88.49 s**, unchanged 17 rounds, winner and HP | Paired fixture, not a population estimate |
-| Final 30-minute UI run | In progress; retained browser/account and recording | Headless Chromium, real UI clicks, x1; no granted progress |
+| Final 30-minute UI run | **26 wins / 2 losses**, zero errors/stalls; first loss **5.38 min** | Normal18samples **31.12s** median; boss9samples **90.35s**, p90184.70s |
 
-Q13f ended under the prescribed three-attempt fallback. Enemy budgets remain fixed; upgrades do not strengthen opponents. Earlier real UI play recorded 21 wins / 2 losses and two successful next-route fixes, but first loss at 6.59 minutes. The current misses remain explicit. The fresh final seed block is not being repeated to improve its reported result.
+Q13f ended under the prescribed three-attempt fallback. Enemy budgets remain fixed; upgrades do not strengthen opponents. The final earned run has two successful next-route fixes after free formation changes, but first loss at5.38minutes. It is automated real UI play in headlessChromium atx1, not a human enjoyment study. Its58visible rewards have6.31s median/189.95s maximum gap; normal-win HP99% still misses the target. The current misses remain explicit. The fresh final seed block is not being repeated to improve its reported result.
 
 ## Verification and remaining work
 
 Full final E2E: **420/421 initially**. The failing idle test advanced its fake clock before the UI timer mounted; a test-only readiness wait passed three concurrent repetitions. This is not represented as a clean 421-test rerun. Integration has 43 passing focused tests; phase/HUD verification has 14; pacing has 8, with typecheck/lint passing for their changes.
 
-The final 36-screen gallery and keyboard/reduced-motion checks at both sizes are inspected: no browser errors, broken images or horizontal overflow. The offline file passes at both sizes with HTTP(S) blocked and zero network attempts. Final UI results and two 60–90-second clips are pending. B P15 is published; its merge, affected visual review and offline rebuild follow the frozen run.
+The final 36-screen gallery and keyboard/reduced-motion checks at both sizes are inspected: no browser errors, broken images or horizontal overflow. The offline file passes at both sizes with HTTP(S) blocked and zero network attempts. Final UI results are preserved; two60–90-second clips are pending. B P15 is merged through daab97e4d; its affected visual review and offline rebuild are queued behind B’s existing lease.
 
 | Self-review category | Weight | Score / 10 |
 |---|---:|---:|
