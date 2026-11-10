@@ -2,7 +2,7 @@
 
 The Lantern now has a warm cafe with a large illustrated crew, collectible rarity frames, a ten-card recruit ceremony, a lantern-street campaign and fully automatic battles with portrait HP/rage cards and character cut-ins. Bonds, formation, Power upgrades, campaign stars, idle tips, thirty Tower floors, daily gifts and capped read-only Fuji Relics remain available. All 25 battle units use B’s illustrated puppets. The Journal now reads as a keepsake book, retaining every claim and daily cap.
 
-Open `docs/cardrpg-a6/index.html` directly; the ten-line [Vietnamese guide](../../docs/cardrpg-a6/CHAY-DEMO.md) gives a five-minute judging route. The **38,371,409-byte** artifact is below 40 MB. App opt-in: `?a6=1`. No deployment, PR merge or live contract change was made.
+Open `docs/cardrpg-a6/index.html` directly; the ten-line [Vietnamese guide](../../docs/cardrpg-a6/CHAY-DEMO.md) gives a five-minute judging route. The **38,378,333-byte** artifact is below 40 MB. App opt-in: `?a6=1`. No deployment, PR merge or live contract change was made.
 
 ## Before and after
 
@@ -30,17 +30,17 @@ Q13f used the prescribed three-attempt fallback. Enemy budgets stay fixed, so up
 
 ## Verification and self-review
 
-Final E2E was **420/421 initially**; a test-only readiness wait for idle accrual passed three focused repetitions. This is not a clean full-suite rerun. Current typecheck/lint, **13 Q18 web tests**, retained **19 earlier changed-area web tests** and **17 Journal rule tests** pass; earlier integration/phase/pacing checks are retained. The final gallery, actual-keyboard/reduced-motion checks and both-size offline checks report no browser errors, broken images, overflow or external requests.
+Final E2E was **420/421 initially**; a test-only readiness wait for idle accrual passed three focused repetitions. This is not a clean full-suite rerun. Current typecheck/lint, **12 Q19 UI tests, 27 current renderer tests, 13 Q18 web tests**, retained **19 earlier changed-area web tests** and **17 Journal rule tests** pass; earlier integration/phase/pacing checks are retained. The final gallery, actual-keyboard/reduced-motion checks and both-size offline checks report no browser errors, broken images, overflow or external requests.
 
 [First session, 85 s](clips/first-session.mp4) is earned UI play. [Boss, 62 s](clips/boss.mp4) is a continuous automatic review fixture, including its 44.59 s battle, setup and Victory screen. Both clips and the final cut-in frame are inspected. These are headless Chromium observations, not human enjoyment testing.
 
 | Self-review category | Weight | Score / 10 |
 |---|---:|---:|
-| Appearance | 30% | 7.95 |
+| Appearance | 30% | 7.99 |
 | First ten minutes: clarity and flow | 20% | 7.5 |
 | Battle readability, excitement and pacing | 20% | 7.8 |
 | Difficulty and upgrade pull | 15% | 5.8 |
 | Lane B art integration | 10% | 8.6 |
 | Stability | 5% | 9.0 |
 
-Weighted self-score: **7.63/10; target 8.5 not met**. The main limitations are early loss, unreliable advice recovery and long boss tails. Q14–Q18 source delivery is complete; continue the weakest-screen work and integrate later published B tips through the deadline. Q18 awaits the next offline package. Receipts: [Q18](Q18.md), [Q14](Q14.md), [Q15](Q15.md), [Q17](Q17.md), [FIXLOG](FIXLOG.md).
+Weighted self-score: **7.64/10; target 8.5 not met**. The main limitations are early loss, unreliable advice recovery and long boss tails. Q14–Q19 source and offline delivery are complete through B P19/P20. Ten changed-unit and twelve offline views are inspected; all twelve lazy sheets load at both sizes. Continue Bond Book’s7.7 low and later B tips through the deadline. Receipts: [Q19](Q19.md), [Q18](Q18.md), [Q14](Q14.md), [Q15](Q15.md), [Q17](Q17.md), [FIXLOG](FIXLOG.md).

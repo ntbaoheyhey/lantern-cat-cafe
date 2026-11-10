@@ -91,3 +91,5 @@ Q13f: Existing route stays seven stops (early depths0–3, late4–5, guardian6)
 Q18 visual review found guide advice still describing V4 effects/enemy cadence. A6 now uses existing V5 mechanic data, translates legacy status names only in presentation, and explains its66%/33% boss thresholds. Verified Button Guard Warm targets itself, so its guide wording is corrected without changing combat. Legacy mode keeps old descriptions.
 
 2026-11-10T20:22:47Z Q19[auto]: Q18 accepted; Prepare7.5 at720p is now the lowest A-owned screen. Use retained table/art-size drafts and every existing rule/action. Published B P14/P16 affects B-owned render motion only; merge before one combined offline rebuild.
+
+- 2026-11-10T20:48:47Z Q20: replace the tall nine-collection-then-eight-pair grid with an original indexed album. This makes every existing friendship and Pair section directly reachable at720p while giving selected cats more art space; no mechanics, rewards, sorting or readiness rule change. Q19 accepted package freezes publishedBfa28d50cf; later tips belong to the next bounded integration.
