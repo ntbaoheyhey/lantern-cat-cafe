@@ -65,6 +65,22 @@ class PartOverlapTests(unittest.TestCase):
             self.assertEqual(actual, expected, (x,y))
         self.assertEqual(cfg['socketSources']['offHand'][0], 'armR')
 
+    def test_marigold_keeps_pot_cheeks_tail_and_skirt_with_their_semantic_parts(self):
+        cfg = json.loads((Path(__file__).parent/'configs/marigold.json').read_text())
+        source = Image.open(Path(__file__).resolve().parents[4]/cfg['source']).convert('RGBA')
+        source.thumbnail((1200, 1200))
+        owners = np.zeros((source.height, source.width), np.uint8)
+        for i, (part, polygon, _) in reversed(list(enumerate(cfg['layers']))):
+            mask = authored_mask(source.size, polygon, cfg.get('holes', {}).get(part, ()))
+            owners[mask > 0] = i+1
+        for (x,y), expected in [((325,386),'head'),((382,430),'head'),((400,470),'body'),((550,494),'body'),((1015,461),'armR'),((903,435),'armR'),((858,480),'armR'),((263,730),'armL'),((220,650),'tail'),((280,909),'tail'),((340,926),'body'),((430,989),'body'),((650,1012),'body')]:
+            self.assertGreater(source.getpixel((x,y))[3],64,(x,y))
+            index = int(owners[y,x])-1
+            actual = cfg['layers'][index][0] if index >= 0 else 'body'
+            self.assertEqual(actual, expected, (x,y))
+        self.assertEqual(cfg['socketSources']['mainHand'][0], 'armR')
+        self.assertEqual(cfg['socketSources']['offHand'][0], 'armL')
+
     def test_joint_overlap_keeps_ink_but_not_the_distant_hand(self):
         alpha = np.zeros((80, 80), np.uint8)
         alpha[20:60, 20:45] = 255  # torso

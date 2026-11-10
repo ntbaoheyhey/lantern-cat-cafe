@@ -104,3 +104,6 @@ Only Biscuit atlas/rig/config rebuilt: whole shield rim/spatula; actual offHand 
 
 ## P28 — Brioche basket offering
 Only Brioche atlas/rig/config rebuilt: whole basket/puff sleeve, scarf and tail ownership repaired. Offline builder supports opt-in interior holes for visible skirt in basket loop; other configs/masks unchanged. MainHand remains armL; offHand remains armR, positioned at actual palmUV(.79,.568).33web+6pipeline tests,16views/12casts/type/lint/parityPASS;zero page/socket/faceHP/bounds errors,p95<=16.8ms. A65badf4428+B38520550B/headroom1479450B/Bembedded23876668B. No DOM/event/flag/manifest changes; original/source1 preserved. Review p28/REVIEW.md; motion7.7/overall7.8.
+
+## P29 — Marigold gold-pot pour
+Only Marigold atlas/rig/config rebuilt: cheek/collar/tail/palm/skirt ownership repaired; original tall pot lifts and tips at release. MainHand remains armR, now at actual spout source(1015,461); offHand remains armL at palm(263,730).34web+7pipeline tests,16pairedviews/12naturalx1casts/type/lint/parityPASS;0page/socket/faceHP/bounds errors,p95<=16.8ms. A65badf4428+B38595682B/headroom1404318B/Bembedded23951572B. No DOM/events/flags/manifest changes. Small lower-sleeve fringe uses bounded free-paw fallback; original/intermediate masters retained. Review p29/REVIEW.md; motion7.7/overall7.8.
