@@ -1,5 +1,4 @@
-Đang tiếp tục QUEUE; giữ nguyên Mochi/Soot và toàn bộ concept cũ.
-Button lượt1 dựng xong hình/màu nhưng hết18phút ở xatlas, chưa có GLB; lỗi và log đã lưu.
-Lượt2 dùng seed mới, lưới nguồn50K và lưu dữ liệu trước UV để tránh mất kết quả; chờ ảnh trước cùng góc máy.
-Đã sửa lớp phủ đỏ sai trên texture quái3D; kiểm tra mã qua, trận thật còn chờ.
-HF/DINOv3 sẵn sàng; không cần thao tác trình duyệt hay trả phí.
+Đang tiếp tục QUEUE; Button lượt2 chạy local từ10:17UTC, có lưu mesh/màu trước UV.
+Ảnh trước cùng góc máy đã chụp; giữ nguyên Mochi/Soot đã hoàn thành.
+Đã thêm crop cận mặt25nhân vật ở56/72/144px, kiểm tra75ảnh và manifest; không sửa shell.
+Còn: kiểm tra Button trong trận, Yarn và roster3D; hoàn thiện phim/tích hợp/báo cáo.
