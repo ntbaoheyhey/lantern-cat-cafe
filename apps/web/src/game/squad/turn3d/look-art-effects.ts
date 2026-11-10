@@ -107,8 +107,8 @@ export function artEffectRecipes(base:Record<string,Recipe>):Record<string,Recip
   const sock=owner==='sock-skipper',target=old.layers.some(l=>l.anchor==='all-targets')?'all-targets':'target';
   const support=old.target==='friendly';
   result[id]={...old,color:sock?'#a93c53':support?'#75ac9b':'#8f394c',accent:sock?'#e6a972':'#cde9cf',layers:[
-   light(0,'pulse','caster',{start:.12,end:.34,size:.38,height:.4,opacity:.4}),
-   light(1,'projectile',target,{start:.34,end:.52,size:.64,height:.4,opacity:.65}),
+   light(0,'pulse','caster',{start:.12,end:.34,size:.38,height:0,propOrigin:true,opacity:.4}),
+   light(1,'projectile',target,{start:.34,end:.52,size:.64,height:.4,propOrigin:true,opacity:.65}),
    light(support?0:3,'expand',target,{start:.52,end:.72,size:.85,height:.42,opacity:.65}),
    light(3,'emit',target,{start:.54,end:.94,count:6,size:.15,height:.3,opacity:.6,
     emitter:{mode:'burst',life:.8,velocity:[.5,.7,.4],gravity:-1,curl:.15,inherit:0}}),

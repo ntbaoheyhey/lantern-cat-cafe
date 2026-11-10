@@ -1,5 +1,5 @@
 import { fullRecipes, fullEnemyRecipes } from './look-full-recipes';
-import { isLookArtV3 } from './look-art';
+import { artPipeline, isLookArtV3 } from './look-art';
 import { artEffectRecipes, artLightBeatProgress, artImpactScale } from './look-art-effects';
 import { showBodyMark } from './card-status-priority';
 import { CARD_STATUS_LOOKS, CRUMB_BURST_LAYER, V5_CUE_LAYERS } from './card-status-looks';
@@ -21,6 +21,7 @@ import { LOOK_PARTICLE_PRIMITIVES, CARD_EFFECT_PRIMITIVES, createCardPrimitive, 
 export const FULL_VFX_CATS:readonly string[]=['soot','velvet','cinnamon','sorrel','inkcap','brioche','panko','mallow','clover','marigold','mochi','biscuit']; // batches enabled after individual review
 const FULL_RECIPES=fullEnemyRecipes(fullRecipes(CARD_EFFECT_RECIPES,FULL_VFX_CATS));
 const ART_RECIPES=artEffectRecipes(FULL_RECIPES);
+const PUPPET_DECOY={...CARD_STATUS_LOOKS.decoy,layer:{...CARD_STATUS_LOOKS.decoy.layer,primitive:'paper-cat' as const,size:.34,opacity:.34,offset:[0,0,0] as [number,number,number]}};
 export const CARD_EFFECT_BUDGET = { instances: 96, primitiveCalls: 8, lookInstances: 256, lookPrimitiveCalls: 16, perPrimitive: 64, protectedFaces: 12 };
 const vertexShader = `
   attribute float effectAlpha;
@@ -231,6 +232,7 @@ export class CardEffects {
       const essentials=new Set(Object.values(CARD_STATUS_LOOKS).flatMap(s=>[s.layer.primitive,s.apply.primitive,s.tick.primitive]));
       essentials.add('knock-ring');
       if(isLookArtV3())essentials.add('painted-light');
+      if(artPipeline()==='puppet')essentials.add('paper-cat');
       for (const pool of this.poolList) {
         const { mesh, alpha, phase, flash, mark }=pool;
         if(this.atelier&&!essentials.has(mesh.name as CardEffectPrimitive)){
@@ -335,11 +337,12 @@ export class CardEffects {
           if(this.atelier&&!showBodyMark(activeStatuses,statusIndex))continue;
           const status=activeStatuses[statusIndex]!;
           const id = typeof status === 'string' ? status : status.id;
-          const look = this.atelier ? CARD_STATUS_LOOKS[id as VisualStatusId] : LEGACY_CARD_STATUS_LOOKS[id];
+          const puppetDecoy=this.atelier&&artPipeline()==='puppet'&&id==='decoy';
+          const look = puppetDecoy?PUPPET_DECOY:this.atelier ? CARD_STATUS_LOOKS[id as VisualStatusId] : LEGACY_CARD_STATUS_LOOKS[id];
           if (!look) continue;
           this.focus.copy(position);
           this.statusHeight=heights?.get(actor.id)??1.6;
-          this.mark=this.atelier?(id==='scald'?1:'crown' in look&&look.crown?2:(id==='cozy'||id==='glaze')?3:id==='snag'?5:4):0;
+          this.mark=this.atelier?(puppetDecoy?6:id==='scald'?1:'crown' in look&&look.crown?2:(id==='cozy'||id==='glaze')?3:id==='snag'?5:4):0;
           if (this.atelier && id!=='bitter') this.focus.y += 'crown' in look && look.crown ? crowns?.get(actor.id) ?? (heights?.get(actor.id) ?? 1.6) + .18 : (heights?.get(actor.id) ?? 1.6) * .42;
           this.setColor(this.baseColor,look.color);
           this.accentColor.copy(this.baseColor);
@@ -670,6 +673,11 @@ export class CardEffects {
       this.position.copy(this.focus).addScaledVector(this.side,(index-1)*this.statusHeight*.15);
       this.position.addScaledVector(this.forward,this.statusHeight*.38);
       this.position.y+=this.statusHeight*.03;spin=-.65;size*=this.statusHeight/1.6;
+    }
+    if(persistent && this.mark===6){
+      this.position.copy(this.focus).addScaledVector(this.side,-this.statusHeight*.40);
+      this.position.addScaledVector(this.forward,this.statusHeight*.12);
+      this.position.y=.20;spin=0;
     }
     size*=this.sizeFactor;
     this.position.x += layer.offset[0];

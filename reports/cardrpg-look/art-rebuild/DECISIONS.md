@@ -84,3 +84,14 @@ Smoke512 completed geometry/texture decode in330.8s after model load, producing2
 
 ## 2026-11-10T12:35Z Q3 bounded production decision
 See R1-DECISION.md: cats use original-image3D with rigid semantic modules; foes prefer the same native3D route but retain reviewed articulated fallback per failed unit until source/motion/battle passes. Four-unit appeal/menace7.75 exceeds7.0 minimum; pilotweighted7.71 is not full-roster acceptance. Close Q3 timebox with PARTIAL quality and continue Q5; the new Yarn trial does not reopen completed conversions. Button damaged mesh remains rejected.
+
+## 11/11 research completion and bounded refinements
+Filled the missing RESEARCH-PUPPET.md from existing direction plus primary technical docs, using only textual technique research. Keep the current lightweight three.js atlas/rig pipeline: a runtime migration or full mesh-deformation rewrite would repeat accepted work. P1–P5 remain ticked. Refine P7/P8/P10 acceptance around actual stage timing, reuse of source pixels and fast-speed readability. Add P12 individual follow-through and P13 Rain Spool crowding after core films/report because motion is the lowest recorded score and the broad boss already has a visible proximity limitation. These are improvements within the fixed deadline, not reasons to reopen the roster.
+
+## 2026-11-10T18:09:14.154961+00:00 P8 while P7 waits
+The P7 GPU/E2E lease is queued behind A6. Per NON-STOP rule4, accept and publish the already exported/reviewed P8 derivatives independently. No P7 acceptance is inferred. P9 budget and P10 films still depend on the final stage artifact.
+
+## 2026-11-10T18:37:13.050170+00:00 Useful work while the film lease waits
+P10 corrected setup remains the active item. Prepare P11 report and one P12 Soot motion pilot while A6 owns GPU timing; the P10 artifact is immutable so film validation does not silently include unaccepted motion. Soot adds bounded prop lift and3–5frame head/tail follow-through without recutting its atlas. No P12 completion claim before naturalx1 visual/overlap/reduced-motion review.
+
+2026-11-10T18:54:16.068996+00:00 P12/P13 now precede final P10/P11 closure: saved Soot pilot can ship immediately; boss film exposed a hidden Binding Thread that label-overlap tests missed. Preserve both85.5sfilms, retain normal acceptance, fix composition then add a complete boss-result film. This extends the missing acceptance evidence rather than repeating completed work.

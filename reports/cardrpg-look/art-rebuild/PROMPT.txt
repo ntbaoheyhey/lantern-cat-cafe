@@ -1,5 +1,13 @@
-LANE B — NEW CODEX ACCOUNT — ONE PROMPT: ONBOARD, THEN NON-STOP 2.5D PUPPET ART RUN — written 2026-11-10 16:40 UTC
-You are a brand-new Codex session with no memory. The previous Lane B session (another account) ran out of tokens mid-run. All its work is on THIS Mac (M3 Pro, 36 GB), in local files and on GitHub. Nothing must be redone.
+LANE B — FULL PROMPT (fresh session, resumes previous work) — written 2026-11-10 17:45 UTC
+
+RESUME RULE — READ FIRST (the user's explicit instruction): DO NOT REDO WHAT IS ALREADY DONE.
+Before any work, inspect local state and continue exactly where the previous session stopped:
+- git: `git status --short | head`, `git log --oneline -15`, compare with origin (fetch first). Uncommitted work from the previous session is valuable: inspect it, finish or commit it; never discard, reset or stash it away.
+- Lane files in reports/cardrpg-look/art-rebuild/: RULES.md, HANDOFF.md, QUEUE.md, PROGRESS.log, STATUS-VI.md, INBOX.md, NEEDS-USER.md, DECISIONS.md, FIXLOG.md, RESEARCH-PUPPET.md, PUPPET-SCORES.md, B-OUTBOX.md, PROMPT.txt (any that exist).
+- Running processes and leftovers in /tmp from the previous session (your lane's ports/paths only).
+Anything that is ticked, logged as done, committed, or already written (research file, checklist, rules, handoff) is DONE: do not repeat it, do not re-measure it, do not rewrite it from scratch; only extend or fix it. If a research file already exists, do not redo research; only fill gaps it lists. A half-finished step: continue from its last saved state. Write one line in PROGRESS.log: "<UTC> new session (reasoning change) resumed at <item/step>".
+
+You are a brand-new Codex session with no memory. Earlier sessions (one ran out of tokens; the latest one, started 10 Nov ~16:45 UTC with an earlier version of this prompt, was stopped by the user only to change reasoning level). All its work is on THIS Mac (M3 Pro, 36 GB), in local files and on GitHub. Nothing must be redone.
 
 Project: Taskbar Hero, a cat card RPG (auto battles) for the UniHack Avalanche hackathon, Demo Day 30 Nov 2026. Repo ntbaoheyhey/taskbar-hero (private).
 Your lane: B = battle canvas art: cats, enemies, bosses, their animation, skill/ultimate VFX, camera, cafe stage/light, plus portraits/icons as image files. Lane A6 (another Codex session) owns rules, all game screens and the DOM battle HUD, and will merge your branch into its own.
@@ -26,8 +34,9 @@ PART 1: ONBOARD NOW (about 30 min), in order
 5. Run typecheck + lint + touched web tests once (filtered).
 6. Move HANDOFF.md content to HANDOFF-ARCHIVE.md; write a new HANDOFF.md (<= 40 lines): new session start time, git state, runner stopped (PID) or finished, test result, location of the 2.5D fallback code. Add 3 Vietnamese lines to STATUS-VI.md. Commit "Lane B: new-session onboarding, stop native roster runner" and push.
 7. Do NOT end your turn. Continue straight into PART 2 below.
+(Steps 1-6: skip any part HANDOFF.md/PROGRESS.log show was already done this evening, except the git/process/disk checks, which are always re-done because they are cheap.)
 
-PART 2 (after PART 1, same turn). This prompt replaces every earlier lane B prompt (ART-REBUILD, RESUME, NONSTOP, TRELLIS inbox notes), queue order and pause note. Save it as reports/cardrpg-look/art-rebuild/PROMPT.txt (overwrite; update PROMPT.sha256), rewrite QUEUE.md from section 4 (keep finished items as history at the bottom), then start the first unfinished item.
+PART 2 (after PART 1, same turn). This prompt replaces every earlier lane B prompt (ART-REBUILD, RESUME, NONSTOP, TRELLIS inbox notes), queue order and pause note. Save this prompt word for word to reports/cardrpg-look/art-rebuild/PROMPT.txt (overwrite; R-9). QUEUE.md: if it already contains the P1+ items from the previous session (ticked items, [auto] items, notes), KEEP it and only add rows from section 4 that are missing; never untick or redo a ticked item. If it does not, write it from section 4 (keep older ticked items as history at the bottom). Then continue the first unfinished item.
 
 =====================================================================
 0. WHY THE DIRECTION CHANGED (read once)
@@ -45,10 +54,18 @@ R-1 QUEUE. Always work the top unfinished item of QUEUE.md. When done: tick, com
 R-2 Checkpoints, pushes, PARTIAL results and self-scores are not stops. Never end with "next steps for the user".
 R-3 Failed gate: reproduce -> measure -> smallest fix -> re-verify, max 3 attempts, then take the simplest version that looks good in the real battle at x1, log it in FIXLOG.md, move on. A known issue on one unit never blocks other units.
 R-4 Check reports/cardrpg-look/art-rebuild/INBOX.md between items. A correction goes into QUEUE.md, gets 1-3 Vietnamese lines in STATUS-VI.md, and you continue. Only "dừng", "stop", "pause", "khoan" or a STOP-B file in the worktree root pause you. A question is not a pause.
-R-5 Context: keep output small. If lost or compacted: re-read PROMPT.txt section 4, QUEUE.md, HANDOFF.md (one section <= 60 lines, rewrite each item), continue.
+R-5 Context: keep output small (| tail -n 40, grep). See R-9. If lost or compacted: re-read PROMPT.txt section 4, QUEUE.md, HANDOFF.md (one section <= 60 lines, rewrite each item), continue.
 R-6 Hard stops only: (a) queue done and report pushed, then keep improving the lowest-scored unit/screen until (b); (b) 2026-11-20 12:00 UTC: push the report with what exists and stop; (c) STOP-B or pause word; (d) true user-only blocker (payment, a login only the user can do, PR merge, deploy, disk full after cleanup): exact ask in NEEDS-USER.md, mark BLOCKED-USER, skip, keep working everything else.
 R-7 One agent only: no subagents/helpers/parallel codex runs. The built-in Codex image generation stays ALLOWED for original art (user-approved): your own prompts only, never reference images from other games, record tool + prompt + date per asset in the existing provenance files. Local tools fine (Python/PIL, ImageMagick, Blender, three.js, Playwright). No paid services or new accounts. No PR merge, deploy, push to main, force-push, secrets. Draft PRs only. Never write in lane A6's worktree. Ports 5920-5923 only. Heavy renders/E2E use the shared timing.lock lease (<= 20 min) as HANDOFF/STATE describe; nice 10 for heavy tools. Large masters stay in ~/art/look-v3 (outside git); evidence in git <= 120 MB.
 R-8 Evidence diet: per unit one 1440x900 battle screenshot next to its concept, a motion contact sheet, face/HP-bar overlap check; typecheck + lint + touched tests. Full parity/E2E once per batch. No hash ceremonies.
+
+R-9 ANTI-FORGET (your context WILL be compacted; the files are your memory; if memory and files disagree, the files win):
+ a) Before PART 2 work: save THIS WHOLE PROMPT word for word to reports/cardrpg-look/art-rebuild/PROMPT.txt (no summary), record `wc -c` + `shasum -a 256` at the top of reports/cardrpg-look/art-rebuild/STATE.md, commit + push.
+ b) Write reports/cardrpg-look/art-rebuild/RULES.md (<= 30 lines): the non-negotiables from this prompt: one agent/no model-calling helpers; draft PRs only, no PR merge/deploy/main push/force-push/secrets; never write in the other lane's worktree; original art only; ALL units are 2.5D puppets from the concepts, no native image-to-3D roster; built-in image generation allowed with provenance, never reference art from other games; you never merge A6 into your published branch; hard stops R-6 only; deadline 2026-11-20 12:00 UTC.
+ c) Keep reports/cardrpg-look/art-rebuild/HANDOFF.md as ONE section (<= 60 lines), rewritten (never appended) after every queue item and before any long job: NOW (item + step, branch, last pushed SHA, PR), NEXT (3 concrete actions), RUNNING (PIDs, ports, log paths, locks held), DONE this session (one line each with SHA), KNOWN ISSUES, DECISIONS (one line each). Add one line per finished step to reports/cardrpg-look/art-rebuild/PROGRESS.log (UTC time, item, result, SHA).
+ d) RE-READ reports/cardrpg-look/art-rebuild/RULES.md, QUEUE.md and HANDOFF.md: at the start of every queue item; right after any compaction/summary or when you feel unsure; before any git merge/push/branch command; and at least every 2 hours. Re-read section 0 and section 4 of reports/cardrpg-look/art-rebuild/PROMPT.txt at the start of each queue item.
+ e) Never rely on remembered paths, PIDs, SHAs or numbers: read them from files or the system. Commit + push lane files at least every 60 minutes, even mid-item, so a crash or account switch loses nothing.
+ f) If a new session starts with no memory: read reports/cardrpg-look/art-rebuild/RULES.md, HANDOFF.md, QUEUE.md, then reports/cardrpg-look/art-rebuild/PROMPT.txt, then continue the top unfinished item. Never redo ticked items.
 
 =====================================================================
 2. WHERE THINGS ARE / OWNERSHIP
@@ -89,19 +106,9 @@ Scoring: per unit and per battle screenshot score 1-10 for "looks like the conce
 =====================================================================
 Units match concepts and look like a real game 35; motion quality (anticipation, impact, idle life) 20; VFX readability and wow at x1 15; camera/composition/stage 15; roster coverage (every unit id) 10; performance and size budget 5.
 
-ADDENDUM FROM THE USER (10 Nov): ANTI-FORGET RULE R-9. This is not a pause and not a new task. Do NOT restart, do NOT redo finished work. At the next safe point (within 10 minutes), do steps a-c below, append this whole addendum word for word to the end of reports/cardrpg-look/art-rebuild/PROMPT.txt (and to the saved prompt copy if different), commit + push, then keep working the current queue item in the same turn.
-
-R-9 ANTI-FORGET (your context WILL be compacted; the files are your memory; if memory and files disagree, the files win):
- a) Make sure the full original prompt is saved word for word in reports/cardrpg-look/art-rebuild/PROMPT.txt (no summary), record `wc -c` + `shasum -a 256` at the top of reports/cardrpg-look/art-rebuild/STATE.md, commit + push.
- b) Write reports/cardrpg-look/art-rebuild/RULES.md (<= 30 lines): the non-negotiables from this prompt: one agent/no model-calling helpers; draft PRs only, no PR merge/deploy/main push/force-push/secrets; never write in the other lane's worktree; original art only; ALL units are 2.5D puppets from the concepts, no native image-to-3D roster; built-in image generation allowed with provenance, never reference art from other games; you never merge A6 into your published branch; hard stops R-6 only; deadline 2026-11-20 12:00 UTC.
- c) Keep reports/cardrpg-look/art-rebuild/HANDOFF.md as ONE section (<= 60 lines), rewritten (never appended) after every queue item and before any long job: NOW (item + step, branch, last pushed SHA, PR), NEXT (3 concrete actions), RUNNING (PIDs, ports, log paths, locks held), DONE this session (one line each with SHA), KNOWN ISSUES, DECISIONS (one line each). Add one line per finished step to reports/cardrpg-look/art-rebuild/PROGRESS.log (UTC time, item, result, SHA).
- d) RE-READ reports/cardrpg-look/art-rebuild/RULES.md, QUEUE.md and HANDOFF.md: at the start of every queue item; right after any compaction/summary or when you feel unsure; before any git merge/push/branch command; and at least every 2 hours. Re-read section 0 and section 4 of reports/cardrpg-look/art-rebuild/PROMPT.txt at the start of each queue item.
- e) Never rely on remembered paths, PIDs, SHAs or numbers: read them from files or the system. Commit + push lane files at least every 60 minutes, even mid-item, so a crash or account switch loses nothing.
- f) If a new session starts with no memory: read reports/cardrpg-look/art-rebuild/RULES.md, HANDOFF.md, QUEUE.md, then reports/cardrpg-look/art-rebuild/PROMPT.txt, then continue the top unfinished item. Never redo ticked items.
-
-ADDENDUM FROM THE USER (10 Nov): DO NOT STOP UNTIL THE WORK IS DONE. This is not a pause and not a new task. Append it word for word to your RULES.md and to your saved prompt file (TASK.md for A6, PROMPT.txt for B), commit + push, then keep working the current queue item in the same turn.
-
-NON-STOP RULE (overrides any habit of ending a turn):
+=====================================================================
+6. NON-STOP RULE (overrides any habit of ending a turn)
+=====================================================================
 1. You may end your turn ONLY in these cases:
    a) Every QUEUE.md item is ticked, the final report is pushed, AND the lowest self-score row has been improved until the deadline 2026-11-20 12:00 UTC.
    b) The deadline 2026-11-20 12:00 UTC is reached (push the report with what exists, then stop).
@@ -112,3 +119,18 @@ NON-STOP RULE (overrides any habit of ending a turn):
 4. While waiting for a long job (render, build, E2E, lock): work on another unblocked item or on the lowest-scored screen/unit; do not idle and do not end the turn.
 5. Before you are about to end a turn, check this list: open QUEUE.md; if any item is unticked and not BLOCKED-USER, do not end the turn, start that item instead.
 6. User messages: answer in 1-3 Vietnamese lines in STATUS-VI.md (and briefly in chat), add any correction to QUEUE.md, then continue working in the same turn.
+
+=====================================================================
+7. YOUR OWN RESEARCH AND JUDGMENT
+=====================================================================
+CONTEXT (so you understand why): Taskbar Hero is a cat-themed auto-battle hero collector built for the UniHack Avalanche hackathon; Demo Day 30 Nov 2026; judges score creativity, impact, UI/UX + demo. The user works alone and wants the battles to look like a top commercial idle hero battler. Native image-to-3D failed (shattered meshes), so the user chose (10 Nov) ILLUSTRATED 2.5D PUPPETS from our original 2D concepts for every unit, in the existing 3D cafe stage. Lane B (you) owns canvas art, animation, VFX, camera, stage, portraits/icons; lane A6 owns screens, DOM HUD and rules and will merge your branch. The current queue (P1-P11) is a direction written by a reviewer, not a ceiling. You are a strong reasoning model: the user wants you to think and research yourself, and to improve the plan where you see better options.
+
+R1 RESEARCH (skip if RESEARCH-PUPPET.md already exists and is complete; else time box 3 h total, do it before the next queue item):
+- Read your existing ART-DIRECTION.md, VFX-WORKFLOW.md, R1-DECISION.md first; do not redo what they already settle.
+- Research, using web search if your tools allow, otherwise your own knowledge: how top games with 2D/2.5D animated characters get their look (Spine/DragonBones-style cutout rigging as used in AFK Arena, Cookie Run: Kingdom, Idle Heroes, Darkest Dungeon, Hollow Knight style layering): part cutting and overlap painting, pivot placement, mesh deformation vs rigid parts, secondary motion (tail/ear/cloth lag), squash and stretch, anticipation/impact frames, hit-stop, timing in frames at 60 fps; 2D sprites in a 3D scene (billboards, sorting, contact shadows, rim/normal-map lighting for sprites, depth parallax); VFX for auto battlers (charge, trail, impact, afterglow, screen shake, hit numbers, ultimate camera push-in), readability at x1/x2/x3; three.js techniques and performance (atlases, instancing, KTX2/WebP, draw-call budget). Also free/open tools that run locally on this Mac for cutting/inpainting/rigging (no paid services, no new accounts).
+- Write reports/cardrpg-look/art-rebuild/RESEARCH-PUPPET.md (<= 3 pages): per topic the 3-5 techniques that matter most, why, and concrete numbers for OUR pipeline (frame counts, easing curves, hit-stop ms, part list, atlas sizes, light setup). Describe techniques in words only.
+- Then update QUEUE.md: refine P1-P11 done-checks and add new items you judge worth it (mark them [auto], within the 20 Nov deadline). Record each change and the reason in DECISIONS.md.
+
+JUDGMENT AUTHORITY: you may reorder, merge, split or replace queue items and change targets when your research shows a better way to reach "every unit looks like its concept and like a top game". Write why in DECISIONS.md. Keep these fixed: 2.5D puppets for all units (no native image-to-3D roster); one consistent style; one agent, no subagents/helpers/parallel codex; no paid services/new accounts; draft PRs only, no PR merge/deploy/main push/force-push/secrets; never write in lane A6's worktree; demo size <= 40 MB together with A6; deadline 2026-11-20 12:00 UTC; NON-STOP and ANTI-FORGET rules.
+ORIGINAL ONLY: never copy, trace, screenshot into the repo, or feed into any generator another game's art, rigs, effects or animations. Built-in image generation stays allowed for our own original pieces with provenance. Learn techniques; build our own.
+After every batch spend <= 30 min re-checking RESEARCH-PUPPET.md against what you built and log gaps as new [auto] items. Research never replaces shipping: if a research step runs over its time box, write what you have and continue the queue.

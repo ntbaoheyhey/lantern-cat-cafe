@@ -176,3 +176,6 @@ P4 first-batch motion review exposed Panko hat and Cinnamon forehead stripes ins
 P4 batch2 first sheet left part of Sorrel left iris visible at defeat. Corrected both ellipse coordinates from source overlay; final two-unit recapture closes cleanly. Inkcap audit crashed because its status badge lives in A6 .uv-battle-cat, not legacy [data-hp-plate]. Harness now accepts and checks both parent types, still fails unknown card markup. No game DOM changes. Six final units0errors/faceHP;18testsPASS. One fix each.
 
 P5 review attempt1: solo Kettle retained elite-sized puppet despite existing boss showcase. Set illustrated rig boss flag; add authored eye-emission metadata for boss idle. Rules tier remains unchanged. Recheck affected battle/motions.
+
+## B-PUPPET-007 — P6 impact flash obscured concept
+Pilot image review showed white silhouettes during impact AND recovery. Cause: held mixer progress fed sin(t*pi) flash across the whole reaction. Use elapsed local hit age and a45% tint decaying over the first24% of reaction; reduced motion stays0. One visual repair, saved final49+6cast audit verified restored colours and zero overlaps; resolved. Number fixture expected obsolete Cozy text; existing status vocabulary correctly maps it to Warm, corrected test expectation.

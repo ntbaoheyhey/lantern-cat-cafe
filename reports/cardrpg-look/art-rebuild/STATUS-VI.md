@@ -30,3 +30,39 @@ Tiếp tục P5 trong cùng lượt, không làm lại P1–P4.
 
 P5 đợt1 đã nhận sáu quái, 48 tư thế và không lỗi trang/đè mặt-HP; Kettle sửa tỉ lệ cảnh boss.
 Điểm tự đánh giá 7,6–7,9; bản chung A6 31,10 MB. Tiếp tục sáu quái còn lại và hiệu ứng idle/chuyển pha boss.
+
+Đã đọc lại RULES/QUEUE/HANDOFF sau bàn giao; hai addendum vẫn nguyên văn, không chèn trùng.
+P5 batch cuối đã qua kiểm tra tự động; đang duyệt ảnh trước khi chốt và tiếp tục P6 socket/VFX/số canvas.
+
+P5 hoàn tất: đủ 13 quái/boss từ concept gốc; 4 boss có nhịp thở, mắt sáng, hạt sáng và chuyển pha, reduced motion đạt.
+19 test, parity 5 seed và kiểm tra hai cỡ màn hình đều đạt; bản chung A6 32,96 MB. Tiếp tục P6 ngay.
+
+Đã đối chiếu hồ sơ sau bàn giao: prompt gốc và hai addendum nguyên văn, đã push; không ghi trùng hoặc làm lại mục đã tick.
+Tiếp tục P6 lượt duyệt cuối; P7/P8 đã chuẩn bị, bốn crop card cần khung toàn thân.
+
+11/11: Tiếp tục đúng P6 đang dở; P1–P5 giữ nguyên hoàn tất, toàn bộ thay đổi chưa commit được bảo toàn.
+Không còn runner native;49chiêu và6mẫu màn hình nhỏ đã kiểm tra xong ở phiên trước,33test đạt.
+Đang duyệt ảnh P6 và bổ sung nghiên cứu còn thiếu; prompt mới được lưu nguyên văn, bản cũ giữ trong archive.
+
+11/11: Đã kiểm tra lại Git/tiến trình/dung lượng; nhánh B bằng origin, không còn runner native.
+Giữ nguyên P1–P5 đã hoàn tất và toàn bộ thay đổi đang dở; tiếp tục duyệt hình P6 từ kết quả đã lưu.
+Prompt hiện tại được lưu nguyên văn; bổ sung nghiên cứu còn thiếu, không chạy lại các gate đã đạt.
+
+P6 hoàn tất: điểm phát chiêu theo đạo cụ thật, số sát thương/hồi máu chỉ vẽ một lần trên canvas; vẫn giữ nhãn đọc màn hình.
+Dùng lại49+6chiêu/33test đã đạt, bổ sung parity5seed đạt; điểm VFX tự đánh giá8,1, hiệu ứng lớn còn có thể mạnh hơn.
+Tiếp tục P7 sân quán/ánh sáng; nghiên cứu đã bổ sung, không mở lại P1–P5.
+
+Tiếp tục đúng P7: baseline đã chụp, bản sân mới chưa chạy kiểm tra; không chạy lại P1–P6.
+P8 đã xuất đủ25unit/60icon, giữ nguyên kết quả; P7 xếp hàng chờ khóa A6, đồng thời chuẩn bị replay P10.
+
+P8 hoàn tất từ bản xuất đã lưu:25nhân vật đủ portrait/icon/card,60icon kỹ năng; bốn card đã giữ trọn hình gốc.
+Manifest v4 sẵn cho A6; crop nhỏ và icon cũ giữ nguyên. P7 vẫn chờ khóa đo, chưa đánh dấu hoàn tất.
+
+P7 hoàn tất từ kết quả đã lưu: sân quán ấm hơn, có trăng đêm và chi tiết phía địch; giữ rõ mặt/đạo cụ gốc.
+6ảnh trong HUD A6 hiện tại,5chiêu,19test và parity đều đạt; khung hình đã làm nóng tối đa16,8ms. Chuyển sang P9 dung lượng.
+
+P9 đã đo trên bản chung A6 hiện tại:38,14MB/40MB, còn1,86MB; phần ảnh/tài nguyên B nhúng là23,55MB.
+Đã công bố manifest và cách tích hợp cho A6; phim P10 đầu chưa có ultimate nên chưa nhận, đang sửa replay và giữ nguyên bản quay cũ.
+
+P12 đã nhận từ kết quả lưu: Soot có đèn dẫn động tác, đầu/đuôi theo sau;21test và12lượt chiêu x1/reduced đạt.
+Phim thường85,5giây/9ultimate giữ nguyên. Phim boss cho thấy một Binding Thread bị che; xử lý P13 rồi quay thêm tới kết quả trận.

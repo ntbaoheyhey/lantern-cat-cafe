@@ -30,6 +30,7 @@ import {GearAttachments,GearResources} from './gear-visuals';
 import type {ActorAppearance} from './appearance';
 import { loadModel } from './assets';
 import { animateIllustrated } from './look-puppet';
+import { PuppetNumbers } from './look-puppet-numbers';
 import { animatePainted, installPaintedMaterial } from './look-painted';
 import { cloneBattleModel, animateGeneratedFace, disposeGeneratedSkeletons } from './look-generated';
 import {screenBounds,auditBounds} from './scene-audit';
@@ -84,6 +85,7 @@ const point=(a:TurnActor,boss:boolean)=>{const p=formationPoint(a,boss);return n
 export class TurnScene {
   private cardSurfaces?: CardSurfaces;
   private cardEffects?: CardEffects;
+  private puppetNumbers?: PuppetNumbers;
   readonly loading = { completed: 0, total: 5, label: 'Preparing the cafe' };
   private facePoint = new T.Vector3();
   private faceEdge = new T.Vector3();
@@ -481,7 +483,7 @@ export class TurnScene {
       if(illustratedBattle&&!view.model&&p.model.userData.lookPuppet){
         // Normalize illustrated heights; native-era role compensation made Yarn dwarf cats.
         const puppetHeight=(p.model.userData.paintedRig as {height:number}).height;
-        p.root.scale.setScalar((p.model.userData.paintedRig.boss?3.70:a.side==='party'?2.08:2.10)/puppetHeight);
+        p.root.scale.setScalar((p.model.userData.paintedRig.boss&&(p.asset!=='kettle-knight'||bossFraming)?3.70:a.side==='party'?2.08:2.10)/puppetHeight);
       }
       if (view.tableau) {
         p.base.set((a.slot - 1) * 2.1, 0, a.slot === 1 ? -.35 : .3);
@@ -561,8 +563,10 @@ export class TurnScene {
       animatePainted(p.model,this.camera,this.time,clip,progress,view.reducedMotion,!!frame&&source===p);
       p.model.userData.puppetActorId=a.id;
       const puppetActing=!!frame&&source===p&&a.hp>0;
+      // Use elapsed hit age for a brief flash, independent of the held mixer pose.
+      const puppetHurt=!!frame&&targets.includes(p)&&source!==p&&/hit|hurt|stagger/.test(clip);
       animateIllustrated(p.model,this.camera,this.time,puppetActing?(frame.plan.presentationId??frame.plan.skillId):clip,
-        view.model?view.modelProgress:puppetActing?frame.actionProgress:progress,view.reducedMotion,puppetActing,puppetActing&&frame.plan.ultimate,
+        view.model?view.modelProgress:puppetActing?frame.actionProgress:puppetHurt?Math.max(0,Math.min(1,hitAt/hitDuration)):progress,view.reducedMotion,puppetActing,puppetActing&&frame.plan.ultimate,
         Math.max(0,1-(this.time-p.phaseAt)/.35)*.65);
       animateGeneratedFace(p.model,clip,this.time,view.reducedMotion);
       const involved=!frame||source===p||frame.plan.targetIds.includes(a.id);
@@ -581,7 +585,7 @@ export class TurnScene {
     const boss=view.actors.find(a=>a.hp>0&&(BOSS_STYLES[this.puppets.get(a.id)?.asset??'']||isReadableBattle()&&isReadableBoss(this.puppets.get(a.id)?.asset??'')));
     const bossPuppet=boss?this.puppets.get(boss.id):undefined;
     const bossCue=bossPuppet?bossPerformance(this.time-bossPuppet.enteredAt,this.time-bossPuppet.phaseAt,view.reducedMotion):null;
-    this.bossAtmosphere?.update(view.model?undefined:bossPuppet?.asset,bossPuppet?.base,bossPuppet?.bossPhase??1,bossCue?.progress??0,view.reducedMotion);
+    this.bossAtmosphere?.update(view.model?undefined:bossPuppet?.asset,bossPuppet?.base,bossPuppet?.bossPhase??1,bossCue?.progress??0,view.reducedMotion,illustratedBattle?this.time:undefined);
     for (const group of this.stage.children) {
       if (group.userData.chapter) group.visible = group.userData.chapter === view.chapter;
     }
@@ -653,12 +657,13 @@ export class TurnScene {
       this.effectRim?.protect(this.cardEffects.protectedFaces,view.effectOnly?0:protectedCount,this.width*ratio,this.height*ratio);
       if(this.lookStageEnabled)for(const a of view.actors){const p=this.puppets.get(a.id);if(p)this.statusHeights.set(a.id,p.height*p.root.scale.y);}
       const effectSocket=source&&isLookArtV3()?
-        source.model.getObjectByName(`${source.role}_shield`)
+        source.model.getObjectByName(`${source.role}_socket_mainHand`)
+          ??source.model.getObjectByName(`${source.role}_shield`)
           ??source.model.getObjectByName('socket_weapon')
           ??source.model.getObjectByName(`${source.role}_${source.asset==='sorrel'?'armL':'armR'}`):undefined;
       this.cardEffects.render(frame,cardRecipe,view.actors,this.positions,this.camera,this.post.effectiveQuality,view.reducedMotion,
         view.effectOnly?undefined:view.cardStatuses,this.time,view.cardPresentation,this.statusHeights,this.statusCrowns,view.playbackSpeed??1,
-        effectSocket?.localToWorld(this.effectProp.set(0,0,.12)));
+        effectSocket?.localToWorld(this.effectProp.set(0,0,source?.model.userData.lookPuppet?0:.12)));
     }
     this.stats.particles=this.spells.count+(this.cardEffects?.stats.instances??0);
     const display=view.effectOnly?this.effectPreview:this.scene;
@@ -667,12 +672,14 @@ export class TurnScene {
     if(this.contactPool){this.contactPool.begin();for(const p of this.puppets.values())this.contactPool.add(p.shadow,p.root.visible);this.contactPool.end();}
     this.renderer.info.reset();this.post.render(display,this.camera,(frame?.shake??0)*.35,frame?.progress??0,frame?.color??'#ffe6d2',view.reducedMotion);this.stats.quality=this.post.effectiveQuality;this.renderer.domElement.dataset.quality=this.stats.quality;this.stats.frames++;const info=this.renderer.info;Object.assign(this.stats,{calls:info.render.calls,triangles:info.render.triangles,geometries:info.memory.geometries,textures:info.memory.textures});
     if(this.stats.frames%60===1){const geometries=new Set<T.BufferGeometry>();const collect=(o:T.Object3D)=>{if(o instanceof T.Mesh||o instanceof T.Line||o instanceof T.Points)geometries.add(o.geometry);};this.scene.traverse(collect);if(this.lookStageEnabled)this.cardEffects?.root.traverse(collect);let bytes=64*64*4;for(const g of geometries){for(const attr of Object.values(g.attributes))bytes+=attr.array.byteLength;bytes+=g.index?.array.byteLength??0;}this.stats.estimatedGpuBytes=bytes;}
-    // Labels are DOM overlays; do not traverse every mesh at the GPU cadence.
+    if(illustratedBattle&&!this.puppetNumbers)this.puppetNumbers=new PuppetNumbers(this.host);
+    this.puppetNumbers?.render(frame,view.cardPresentation,this.width,this.height,view.reducedMotion,!!illustratedBattle);
+    // Projection/HP reservations update at20Hz; canvas text animates every frame.
     const now=performance.now();if(view.fixedTime===undefined&&now-this.labelsAt<50)return;this.labelsAt=now;
     const projected:Anchor[]=[],labels:LabelInput[]=[];
     const screen=(v:T.Vector3)=>{v.project(this.camera);return {x:(v.x*.5+.5)*this.width,y:(-v.y*.5+.5)*this.height}};
     for(const a of view.actors){const p=this.puppets.get(a.id);if(!p)continue;
-      if(a.hp<=0){if(this.lookStageEnabled&&view.cardPresentation?.bursts.includes(a.id)){const top=screen(p.root.position.clone().add(new T.Vector3(0,p.height*p.root.scale.y,0)));projected.push({id:a.id,x:top.x,y:top.y,labelX:top.x,labelY:top.y,footY:0,visible:false});}continue;}
+      if(a.hp<=0){if(this.lookStageEnabled&&(view.cardPresentation?.bursts.includes(a.id)||illustratedBattle&&view.cardNumberRows?.[a.id])){const top=screen(p.root.position.clone().add(new T.Vector3(0,p.height*p.root.scale.y,0)));projected.push({id:a.id,x:top.x,y:top.y,labelX:top.x,labelY:top.y,footY:0,visible:false});}continue;}
       if(view.autoBattle&&a.side==='party'){
         if(readable){const top=screen(p.root.position.clone().add(new T.Vector3(0,p.height*p.root.scale.y,0)));projected.push({id:a.id,x:top.x,y:top.y,labelX:top.x,labelY:top.y,footY:0,visible:false});}
         continue;
@@ -701,7 +708,7 @@ export class TurnScene {
         const first=bursts.find(id=>(reactions?.find(r=>r.targetId===id)?.id??'crumb-burst')===reaction);
         const wordWidth=bursts.includes(anchor.id)?(first!==anchor.id?38:innerWidth<=1100?138:150):0;
         const count=view.cardNumberRows?.[anchor.id]??0;
-        const lane=targetTextLane(anchor.x,anchor.y,this.width,this.height,wordWidth,count?(view.cardNumberWidths?.[anchor.id]??60):0,count?count*24-2:0,words);
+        const lane=targetTextLane(anchor.x,anchor.y,this.width,this.height,wordWidth,count?(view.cardNumberWidths?.[anchor.id]??60):0,count?(illustratedBattle?count*34+4:count*24-2):0,words);
         if(lane){words.push(lane);anchor.textLane=lane;}
       }
       obstacles.push(...words);
@@ -711,6 +718,8 @@ export class TurnScene {
     this.labelAudit.heads=[...labels.map(p=>p.head),...obstacles];this.labelAudit.cards=[...placed.values()];this.labelAudit.missing=labels.filter(p=>!placed.has(p.id)).map(p=>p.id);this.labelAudit.overlaps=this.labelAudit.cards.reduce((sum,c,i)=>sum+this.labelAudit.cards.slice(i+1).filter(x=>intersects(c,x,0)).length+this.labelAudit.heads.filter(h=>intersects(c,h,0)).length,0);
     for(const a of projected){const box=placed.get(a.id);if(box){a.labelX=box.x+box.width/2;a.labelY=box.y}else a.visible=false;}
     this.onAnchors(projected);
+    this.puppetNumbers?.setAnchors(projected);
+    this.puppetNumbers?.render(frame,view.cardPresentation,this.width,this.height,view.reducedMotion,!!illustratedBattle);
   }
   audit(){
     const view=this.view();
@@ -745,6 +754,7 @@ export class TurnScene {
     this.blobMaterial?.dispose();
     this.spells?.dispose();
     this.cardEffects?.dispose();
+    this.puppetNumbers?.dispose();
     this.cardSurfaces?.dispose();
     this.bossAtmosphere?.dispose();
     this.post?.dispose();

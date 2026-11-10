@@ -2,7 +2,7 @@ import { afterEach, describe, expect, it } from 'vitest';
 import rig from '../../../../../../assets/cardrpg-look/v3-puppets/mochi.rig.json';
 import { parsePuppetRig, puppetMotion, puppetPhase, puppetPose } from './look-puppet-rig';
 import { artPipeline } from './look-art';
-import { CATS } from '../../../../../../packages/game-rules/src/cardrpg/depth/catalog';
+import { CATS, ENEMIES } from '../../../../../../packages/game-rules/src/cardrpg/depth/catalog';
 
 const deliveredRigs=Object.values(import.meta.glob('../../../../../../assets/cardrpg-look/v3-puppets/*.rig.json',{eager:true,import:'default'}));
 const deliveredAtlases=import.meta.glob('../../../../../../assets/cardrpg-look/v3-puppets/*.webp',{query:'?url',import:'default'});
@@ -15,6 +15,17 @@ describe('illustrated puppet contract and event motions',()=>{
       const r=parsed.get(cat.id);expect(r,cat.id).toBeDefined();
       expect(r!.boss,cat.id).toBe(false);
       expect(Object.keys(deliveredAtlases).some(path=>path.endsWith('/'+r!.atlas)),cat.id).toBe(true);
+    }
+  });
+  it('covers every rules enemy and boss with its concept rig, role and atlas',()=>{
+    const parsed=new Map(deliveredRigs.map(value=>{const r=parsePuppetRig(value);return[r.id,r];}));
+    for(const enemy of ENEMIES){
+      const r=parsed.get(enemy.id);expect(r,enemy.id).toBeDefined();
+      expect(r!.role,enemy.id).toBe(enemy.role);
+      expect(Object.keys(deliveredAtlases).some(path=>path.endsWith('/'+r!.atlas)),enemy.id).toBe(true);
+      if(enemy.tier==='boss'){
+        expect(r!.boss,enemy.id).toBe(true);expect(r!.eyeStyle,enemy.id).toBe('glow');expect(r!.eyes,enemy.id).toHaveLength(2);
+      }
     }
   });
   it('loads an authored atlas and rejects corrupt coordinates before rendering',()=>{
@@ -52,5 +63,26 @@ describe('illustrated puppet contract and event motions',()=>{
     expect(puppetPhase('cat-1')).not.toBe(puppetPhase('cat-2'));
     const p=puppetPose('attack',1,.52,true,puppetPhase('mochi'));
     expect([p.gesture,p.head,p.tail,p.wing,p.lean,p.prop,p.offhand,p.breathe]).toEqual([0,0,0,0,0,0,0,0]);
+  });
+  it('flashes briefly at impact and restores concept colours through recovery',()=>{
+    expect(puppetPose('hurt',0,0,false).flash).toBe(.45);
+    expect(puppetPose('hurt',0,.3,false).flash).toBe(0);
+    expect(puppetPose('hurt',0,.7,false).flash).toBe(0);
+    expect(puppetPose('hurt',0,0,true).flash).toBe(0);
+  });
+  it('gives Soot delayed tail follow-through with bounded joints and an exact settle',()=>{
+    for(const motion of ['attack','cast','ultimate'] as const){
+      const pose=(t:number,reduced=false)=>puppetPose(motion,0,t,reduced,0,'soot');
+      expect(pose(.04).tail).toBe(0);
+      expect(Math.abs(pose(.52).tail)).toBeGreaterThan(.02);
+      expect([pose(1).tail,pose(1).cloth,pose(1).prop,pose(1).head].every(v=>Math.abs(v)<1e-10)).toBe(true);
+      for(let i=0;i<=100;i++){
+        const p=pose(i/100),quiet=pose(i/100,true);
+        expect(Math.abs(p.prop)).toBeLessThan(.32);
+        expect(Math.abs(p.tail)).toBeLessThan(.1);
+        expect([quiet.prop,quiet.tail,quiet.cloth,quiet.head,quiet.lean]).toEqual([0,0,0,0,0]);
+      }
+    }
+    expect(puppetPose('cast',0,.3,false,0,'clover')).toEqual(puppetPose('cast',0,.3,false));
   });
 });
