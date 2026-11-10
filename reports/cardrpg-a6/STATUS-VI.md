@@ -211,3 +211,7 @@ Không chạy lại Q0–Q31 hay bộ kiểm tra cuối đã hoàn tất.
 
 2026-11-10T23:33:31Z: Bản đồ đã duyệt30ảnh hiện tại: nhãn13–15px, nút tonic40px, không đè vùng bấm hay vượt khung720p.
 Ba chương, lựa chọn trong chuyến, hồi máu/tonic và ba rương đúng hạn mức đạt; giữ bốn test/type/lint đã qua. Đang tích hợp Pollen mới và đóng gói offline.
+
+2026-11-10T23:36:37Z: Q32 hoàn tất: demo38,996MB có bản đồ dễ đọc và Pollen mới;30ảnh nguồn hiện tại cùng34ảnh offline đã duyệt.
+Ba chương/các lựa chọn/tonic/ba rương đúng hạn mức đều đạt ở hai cỡ màn;41test liên quan/type/lint giữ nguyên đạt, không lỗi/gọi mạng.
+Tiếp tục góc tiền tip trong quán: rương gỗ nguyên bản, chữ rõ và nút nhận nhanh lớn hơn; giữ nguyên thời gian và giới hạn thưởng.

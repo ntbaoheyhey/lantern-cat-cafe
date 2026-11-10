@@ -15,7 +15,7 @@ Agent visual review, not player testing. Both sizes inspected; no applicable Q13
 | Relic | 8.1 | 8.0 | 07: simple drawn cup material (7.5) | shots/q14a/*-relics; selection actions fit720p |
 | Result / defeat | 8.0 | 8.0 | 08/20: simple reward icons (7.5) | shots/q14a/*-result and *-loss; truthful highlight label and clear720p action |
 | Recruit | 8.3 | 8.2 | 13: small duplicate labels (7.5) | shots/q13c-final; full-screen Epic/Legendary and ten-pull inspected |
-| Map | 8.1 | 8.0 | 13: compact route metadata (7.2) | shots/q13d-final route; q14a/*-map-choice repairs boon text/fold; keyboard settlement passes |
+| Map | 8.2 | 8.1 | 13: secondary route labels (7.5) | shots/q32-map-final + q32-offline;30source/34offlineviews,13–15pxlabels/40pxtonic,threechapters/allchoices/exactcappedclaims/keyboard/reducedmotion; no overlap |
 | Journal | 8.1 | 8.0 | 13: compact collection metadata (7.5) | shots/q26-journal/* + q26-keepsakes-final/*;48views, direct pages, eight exact claims/caps/route locks/keyboard, no book overflow |
 | Field guide | 8.1 | 8.0 | 13: compact index metadata (7.5) | shots/q27-guide + q27-guide-final;64views, all75entries/search/keyboard/pause/focus/current prose,15–16px body |
 | Settings / save | 8.1 | 8.0 | 13: secondary account/status labels (7.5) | shots/q28-settings;20views, exact save roundtrip/select/invalid/reset-cancel/focus/comfort/replay, controls inside both sizes |
