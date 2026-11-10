@@ -19,7 +19,7 @@ export default function BattleHudV3({m}:{m:DepthModel}) {
  const battle=m.visualBattle!,plan=m.plan,banner=useRef<HTMLElement>(null),comboBanner=useRef<HTMLElement>(null),effects=useRef<HTMLDivElement>(null);
  const [help,setHelp]=useState(false),[more,setMore]=useState(false),[log,setLog]=useState(false);
  const [banners,setBanners]=useState(()=>{try{return localStorage.getItem('lantern-ui-v3-banners')!=='off'}catch{return true}});
- const pausedBeforeHelp=useRef(false);
+ const pausedBeforeHelp=useRef(false),helpButton=useRef<HTMLButtonElement>(null);
  const boss=battle.actors.find(a=>a.side==='enemy'&&['boss','elite'].includes(R.ENEMY_BY_ID[a.catalogId]?.tier??''));
  const bossPhase=boss?displayedBossPhase(battle,boss):1;
  const caster=battle.actors.find(a=>a.id===plan?.actorId);
@@ -46,12 +46,12 @@ export default function BattleHudV3({m}:{m:DepthModel}) {
    frame=requestAnimationFrame(paint);
   };paint();return()=>cancelAnimationFrame(frame);
  },[m,plan]);
- const closeHelp=()=>{setHelp(false);m.paused=pausedBeforeHelp.current;m.notify(false);};
+ const closeHelp=()=>{setHelp(false);m.paused=pausedBeforeHelp.current;m.notify(false);helpButton.current?.focus();};
  useEffect(()=>{const key=(e:KeyboardEvent)=>{if(e.key==='Escape'){if(help)closeHelp();else{setMore(false);setLog(false)}}};window.addEventListener('keydown',key);return()=>window.removeEventListener('keydown',key);});
  return <div className="uv-battle-hud" data-a6={m.a6Battle} aria-label="Battle controls">
   <header className="uv-battle-top"><div className="uv-battle-round"><small>{m.tutorialBattle?'Practice table':R.CHAPTERS[battle.chapter-1]!.name}</small><b>Wave 1/1 · Round {battle.round}</b></div>
    {boss&&<div className="uv-boss" aria-label={`${boss.name} boss health`}><b>{m.a6Battle&&<span aria-hidden="true">♛ </span>}{boss.name}</b>{m.a6Battle?<HealthMeterA6 hp={boss.hp} maxHp={boss.maxHp} name={boss.name} reduced={m.state.settings.reducedMotion}/>:<progress value={boss.hp} max={boss.maxHp}/>}<small>{boss.hp}/{boss.maxHp} · Phase {m.a6Battle?bossPhase:boss.phase}</small>{m.a6Battle&&<span className="a6-boss-phases" aria-label={`Phase ${bossPhase} of 3`}>{[1,2,3].map(p=><i key={p} data-active={p<=bossPhase}>◆</i>)}</span>}</div>}
-   <div className="uv-battle-actions">{m.a6Battle&&<label className="uv-auto-continue" title="Auto-continue battles; pause at rest stops"><input type="checkbox" checked={m.autoContinue} onChange={e=>{m.autoContinue=e.target.checked;m.notify(false)}}/> Auto-next</label>}<button aria-label="Change playback speed" onClick={()=>m.cycleSpeed()}>×{m.state.settings.speed}</button><button onClick={()=>{m.paused=!m.paused;m.notify(false)}}>{m.paused?'Resume auto':'Pause auto'}</button><button disabled={!m.canSkip} title={m.canSkip?'Skip to result':'Earn three stars on this stage to skip it.'} onClick={()=>m.skip()}>{m.a6Battle&&!m.canSkip?'Skip · 3★ needed':'Skip to result'}</button><button aria-label="Read battle guide" onClick={()=>{pausedBeforeHelp.current=m.paused;m.paused=true;m.notify(false);setHelp(true)}}>?</button><button aria-label="More battle options" aria-expanded={more} onClick={()=>setMore(!more)}>⋯</button></div>
+   <div className="uv-battle-actions">{m.a6Battle&&<label className="uv-auto-continue" title="Auto-continue battles; pause at rest stops"><input type="checkbox" checked={m.autoContinue} onChange={e=>{m.autoContinue=e.target.checked;m.notify(false)}}/> Auto-next</label>}<button aria-label="Change playback speed" onClick={()=>m.cycleSpeed()}>×{m.state.settings.speed}</button><button onClick={()=>{m.paused=!m.paused;m.notify(false)}}>{m.paused?'Resume auto':'Pause auto'}</button><button disabled={!m.canSkip} title={m.canSkip?'Skip to result':'Earn three stars on this stage to skip it.'} onClick={()=>m.skip()}>{m.a6Battle&&!m.canSkip?'Skip · 3★ needed':'Skip to result'}</button><button ref={helpButton} aria-label="Read battle guide" onClick={()=>{pausedBeforeHelp.current=m.paused;m.paused=true;m.notify(false);setHelp(true)}}>?</button><button aria-label="More battle options" aria-expanded={more} onClick={()=>setMore(!more)}>⋯</button></div>
   </header>
   {m.a6Battle&&<section className="uv-enemy-rage" aria-label="Enemy rage">{battle.actors.filter(a=>a.side==='enemy'&&a.hp>0).map(a=><div key={a.id}><small>{a.name}</small><RageMeterA6 value={a.charge} ready={a.charge>=100} label={`${a.name} rage: ${a.charge}/100`}/></div>)}</section>}
 
@@ -68,7 +68,16 @@ export default function BattleHudV3({m}:{m:DepthModel}) {
   {banners&&plan?.ultimate&&caster?.side==='party'&&<aside key={plan.id} ref={banner} hidden={m.a6Battle?m.playbackAt>=m.ultimateBannerUntil:m.animationAt>=800} className={`uv-ultimate-banner ${m.a6Battle?'a6-ultimate-cutin':''}`} style={{'--cutin-enter':`${180/m.state.settings.speed}ms`} as CSSProperties} aria-label="Ultimate cast">{m.a6Battle&&<><span className="a6-cutin-rays" aria-hidden="true"/><img {...portraitProps(caster.catalogId)} alt=""/></>}<div><small>{m.a6Battle?'ULTIMATE · ':''}{caster.name}</small><b>{plan.name}</b>{m.a6Battle&&<span className="a6-cutin-flourish" aria-hidden="true">✦ ━━━━━ ✦</span>}</div></aside>}
   {banners&&m.a6Battle&&m.comboBanner&&<aside ref={comboBanner} className="a6-combo-banner" aria-label="Bond combo"><small>Bond combo · together as one</small><b>{m.comboBanner}</b></aside>}
   <div ref={effects}>{reactions.map((r,i)=><div key={`${plan?.id}-${i}`} className="uv-reaction" data-reaction={r.id} data-target={r.targetId} data-at={r.at} data-duration={r.duration} hidden>{REACTION_WORDS[r.id]}</div>)}{numbers.map(n=><div className="uv-float-number" data-number data-target={n.id} data-at={n.at} key={n.id} hidden>{n.labels.map((e,i)=><span key={i} className={`uv-damage-${e.type} ${e.dot?'uv-dot-damage':''} ${e.statusId==='snag'?'uv-bleed-damage':''} ${e.critical?'uv-critical':''}`}>{e.type==='heal'?'+':e.type==='shield'?'◇':'−'}{e.amount}</span>)}</div>)}</div>
-  {help&&<section className="uv-battle-guide" role="dialog" aria-label="Battle guide" onKeyDown={e=>{if(e.key==='Escape'){e.stopPropagation();closeHelp()}}}><button autoFocus onClick={closeHelp}>Close guide</button><Suspense fallback={<p>Opening…</p>}><Guide v4={!!battle.v4} skillsV5={!!battle.initial.skillsV5} a6={m.a6Battle}/></Suspense></section>}
+  {help&&<section className="uv-battle-guide" role="dialog" aria-modal="true" aria-label="Battle guide" onKeyDown={e=>{
+   e.stopPropagation();
+   if(e.key==='Escape'){e.preventDefault();closeHelp();}
+   if(e.key==='Tab'){
+    const controls=[...e.currentTarget.querySelectorAll<HTMLElement>('button:not(:disabled),input:not(:disabled),select:not(:disabled),[tabindex="0"]')].filter(el=>el.getClientRects().length);
+    const first=controls[0],last=controls.at(-1);
+    if(e.shiftKey&&document.activeElement===first){e.preventDefault();last?.focus();}
+    else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first?.focus();}
+   }
+  }}><button autoFocus onClick={closeHelp}>Close guide</button><Suspense fallback={<p>Opening…</p>}><Guide v4={!!battle.v4} skillsV5={!!battle.initial.skillsV5} a6={m.a6Battle}/></Suspense></section>}
   {log&&<section className="uv-battle-guide" role="dialog" aria-label="Battle log"><button onClick={()=>setLog(false)}>Close log</button>{battle.log.slice(-100).reverse().map((e,i)=><p key={i}>Round {e.round} · {e.text||`${e.kind} ${e.amount}`}</p>)}</section>}
  </div>;
 }

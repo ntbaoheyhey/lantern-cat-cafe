@@ -17,7 +17,7 @@ Agent visual review, not player testing. Both sizes inspected; no applicable Q13
 | Recruit | 8.3 | 8.2 | 13: small duplicate labels (7.5) | shots/q13c-final; full-screen Epic/Legendary and ten-pull inspected |
 | Map | 8.1 | 8.0 | 13: compact route metadata (7.2) | shots/q13d-final route; q14a/*-map-choice repairs boon text/fold; keyboard settlement passes |
 | Journal | 8.1 | 8.0 | 13: compact collection metadata (7.5) | shots/q26-journal/* + q26-keepsakes-final/*;48views, direct pages, eight exact claims/caps/route locks/keyboard, no book overflow |
-| Field guide | 8.0 | 7.8 | 13: optional glossary scrolls (7.5) | shots/q18-guide-current and q18-battle-guide-final; V5/rage/phases and embedded contrast verified |
+| Field guide | 8.1 | 8.0 | 13: compact index metadata (7.5) | shots/q27-guide + q27-guide-final;64views, all75entries/search/keyboard/pause/focus/current prose,15–16px body |
 | Settings / save | 7.9 | 7.8 | 07: restrained envelope detail (7.5) | shots/q18-guide-settings; actual x3/save transfer/reset cancel pass both sizes |
 | Normal battle | 8.2 | 8.1 | 13/18: small rage text (7.5) | final-screens/*-normal-battle; integrated25puppets, current stage/portraits; inspected |
 | Boss battle | 8.2 | 8.1 | 13: small floating labels (7.5) | shots/q14-p15/*-boss-adds-phase3; three helpers separated at both sizes, phase labels agree |

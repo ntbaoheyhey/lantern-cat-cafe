@@ -48,10 +48,13 @@ it('explains the A6 rage trigger while leaving the earlier ultimate rule in lega
 it('uses current enemy mechanics and phase advice only in the A6 field guide',()=>{
  const view=render(<Codex v4 skillsV5 a6/>);
  fireEvent.click(screen.getByRole('button',{name:'enemies'}));
+ fireEvent.click(screen.getByRole('button',{name:'Teacup Healer'}));
  expect(screen.getByText('Heals its weakest ally every two rounds.')).toBeTruthy();
  expect(screen.queryByText('Every third round restores 65 HP to the most injured foe.')).toBeNull();
- expect(screen.getAllByText(/66% HP: woolguard shield/)).toHaveLength(3);
+ fireEvent.click(screen.getByRole('button',{name:'Yarn Giant'}));
+ expect(screen.getByText(/66% HP: woolguard shield/)).toBeTruthy();
  view.rerender(<Codex v4 skillsV5/>);
+ fireEvent.click(screen.getByRole('button',{name:'enemies'}));
  expect(screen.getByText('Every third round restores 65 HP to the most injured foe.')).toBeTruthy();
  expect(screen.queryByText(/66% HP: woolguard shield/)).toBeNull();
 });

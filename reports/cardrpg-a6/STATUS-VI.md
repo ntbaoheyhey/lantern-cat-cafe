@@ -171,3 +171,6 @@ Bốn trang mở trực tiếp, lịch sử cuộn riêng; giới hạn ngày/kh
 
 2026-11-10T22:28:23Z: Q26 hoàn tất: demo38,81MB có Sổ mới và Marigold;24ảnh offline đã duyệt, cả8quà nhận đúng ở hai kích thước.
 Không lỗi/gọi mạng; kiểm tra bàn phím, hạn mức và khóa trong chuyến đạt. Tiếp tục Cẩm nang: tìm nhanh và đọc từng ghi chú rõ hơn.
+
+2026-11-10T22:36:00Z: Cẩm nang đã duyệt36ảnh gốc và28ảnh sau sửa;75ghi chú/năm nhóm đều tra được ở hai cỡ màn.
+Tìm theo tên/hiệu ứng, xóa tìm kiếm, bàn phím và trạng thái tạm dừng trận đạt; chữ15–16px, typecheck/lint và9test liên quan qua. Đang đóng gói offline.

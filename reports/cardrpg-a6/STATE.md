@@ -1,5 +1,7 @@
 - TASK.md exact latest user prompt: 24199 bytes; SHA-256 0123dfbf4f0fd156d585c1389d0c22282d5b3a603d51ad7965b14c198c9f31ee.
 
+- Resume audit 2026-11-10T22:32:56Z: Q27 source and36captures retained; git0ahead0behind33232330e;140GiB;Vite91373/5960 retained, no stale A6 heavy job. Inspect existing captures and logs before package; Q0–Q26 and accepted final checks not repeated.
+
 - Resume audit 2026-11-10T22:20:14Z: git0ahead0behind fe6952b55;140GiB; Vite91373/5960 retained; no stale heavy job. Q26 source/checks/36captures preserved; continue visual inspection and package, not accepted final checks.
 
 - Resume audit 2026-11-10T22:06:16Z: git0ahead0behind at2719e2427,140GiB; Vite91373/5960 retained, no stale A6heavy job. Q25 code/24captures/6tests/types/lint preserved; continue inspection and package, prior accepted checks not repeated.

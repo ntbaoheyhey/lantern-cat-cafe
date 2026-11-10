@@ -66,3 +66,62 @@
   .a6-field-notes[data-page=enemies] {grid-template-columns:1fr;}
  }
 }
+
+/* Original indexed field notebook; the catalogue and battle rules stay unchanged. */
+.uv-app[data-a6=true] {
+ .uv-sheet-content:has(>.a6-field-guide) {display:flex;flex-direction:column;overflow:hidden}
+ .a6-field-guide {display:flex;flex-direction:column;flex:1;min-height:0}
+ .a6-guide-chapters {display:flex;gap:8px;flex:none;margin:0 0 14px}
+ .a6-guide-chapters>button {text-transform:capitalize;font-size:15px;min-height:44px;padding:8px 22px}
+ .a6-guide-chapters>button[aria-pressed=true] {background:#765335;color:#fff4d7;border-color:#765335}
+ .a6-guide-book {display:grid;grid-template-columns:280px minmax(0,1fr);flex:1;min-height:0;border:1px solid #b99a65;border-left:8px solid #83603e;border-radius:5px 14px 14px 5px;background:linear-gradient(100deg,#e8d6ad,#fff3d1 32%,#f4e4bc);box-shadow:0 5px 0 #a88a5733}
+ .a6-guide-finder {display:flex;flex-direction:column;min-height:0;padding:18px 14px;border-right:1px dashed #bc9c6c;background:#dcc79833}
+ .a6-guide-finder>label {margin:0;font-size:14px;color:#705234}
+ .a6-guide-finder input {margin-top:8px;min-height:42px;font-size:14px;background:#fff9e7;color:#624a31;border-color:#b89b6b}
+ .a6-guide-finder>p {margin:9px 0;font-size:12px;color:#866641}
+ .a6-guide-index {display:flex;flex-direction:column;gap:7px;min-height:0;overflow:auto;padding:3px 8px 5px 3px;scrollbar-gutter:stable;overscroll-behavior:contain}
+ .a6-guide-index>button {display:flex;align-items:center;gap:8px;flex:none;min-height:44px;padding:8px 11px;text-align:left;font-size:14px;line-height:1.3;box-shadow:0 2px 0 #af8b5755;background:#f6e6c3;color:#654a2f;border-color:#c4a779}
+ .a6-guide-index>button[aria-pressed=true] {background:#fff7db;border-color:#946b3f;box-shadow:inset 4px 0 #aa743b,0 2px 0 #a8845455;font-weight:700}
+ .a6-guide-index img {width:35px;height:42px;object-fit:contain;flex:none}
+ .a6-guide-page {display:grid;grid-template-columns:minmax(180px,.8fr) minmax(0,1.3fr);gap:24px;min-height:0;padding:25px 28px;color:#705133;align-items:center}
+ .a6-guide-illustration {align-self:stretch;min-height:0;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:15px;text-align:center;background:radial-gradient(ellipse at 50% 60%,#dfc39166,transparent 68%)}
+ .a6-guide-illustration>img {width:100%;height:270px;max-height:calc(100% - 45px);min-height:0;object-fit:contain;filter:drop-shadow(0 10px 5px #7b5c3324)}
+ .a6-guide-illustration>small {font-size:10px;line-height:1.5;letter-spacing:.13em;color:#947140;max-width:170px}
+ .a6-note-seal {width:190px;height:190px;max-width:100%;max-height:65%;color:#a17c43;flex:none}
+ .a6-note-seal[data-kind=debuff] {color:#a2634e}.a6-note-seal[data-kind=buff] {color:#7d8f52}
+ .a6-guide-writing {min-height:0;max-height:100%;overflow:auto;scrollbar-gutter:stable;padding:4px 9px 4px 3px;overscroll-behavior:contain}
+ .a6-guide-writing header {border-bottom:1px dashed #bda16e;padding-bottom:14px;margin-bottom:18px}
+ .a6-guide-writing header>small {text-transform:uppercase;font-size:11px;letter-spacing:.12em;color:#927044}
+ .a6-guide-writing h3,.a6-guide-no-match h3 {font:700 31px/1.15 Georgia,serif;color:#63462b;margin:8px 0 12px}
+ .a6-guide-writing header>p {font-size:13px;line-height:1.5;color:#896641;margin:0}
+ .a6-guide-writing>p {font-size:16px;line-height:1.6;margin:12px 0;color:#6f5234}
+ .a6-guide-no-match {grid-column:1/-1;text-align:center;color:#765638;font-size:15px}
+ .a6-guide-no-match>.a6-note-seal {height:120px}.a6-guide-no-match button {min-height:42px;font-size:14px}
+ .a6-guide-footnote {flex:none;font-size:13px;line-height:1.4;color:#7c603d;margin:14px 0 0}
+ .uv-battle-guide:has(>.a6-field-guide) {inset:64px 5% 24px;padding:18px;display:flex;flex-direction:column;overflow:hidden}
+ .uv-battle-guide:has(>.a6-field-guide)>button {position:absolute;right:18px;top:18px;min-height:42px;font-size:14px}
+ .uv-battle-guide>.a6-field-guide>.a6-guide-intro {padding-right:120px;max-width:none;flex:none}
+ .uv-battle-guide .a6-guide-chapters>button {background:linear-gradient(#fff0d0,#dac095);color:#573c29;border-color:#a8834e}
+ .uv-battle-guide .a6-guide-chapters>button[aria-pressed=true] {background:#765335;color:#fff4d7;border-color:#765335}
+ .uv-battle-guide .a6-guide-book {grid-template-columns:245px minmax(0,1fr)}
+ .uv-battle-guide .a6-guide-page {gap:18px;padding:20px}
+ @media(max-height:760px) {
+  .a6-guide-chapters {margin-bottom:10px}.a6-guide-chapters>button {min-height:40px;font-size:14px;padding:7px 20px}
+  .a6-guide-book {grid-template-columns:245px minmax(0,1fr)}
+  .a6-guide-finder {padding:12px 10px}.a6-guide-finder input {min-height:40px}
+  .a6-guide-index>button {min-height:40px;padding:7px 9px}.a6-guide-index img {height:34px;width:30px}
+  .a6-guide-page {grid-template-columns:minmax(150px,.75fr) minmax(0,1.3fr);gap:18px;padding:18px 22px}
+  .a6-guide-writing h3 {font-size:28px}.a6-guide-writing header {padding-bottom:10px;margin-bottom:12px}
+  .a6-guide-writing>p {font-size:15px;line-height:1.5;margin:10px 0}.a6-guide-writing header>p {font-size:13px}
+  .a6-guide-footnote {font-size:12px;margin-top:10px}
+  .a6-guide-illustration>img {height:220px}.a6-note-seal {width:165px;height:165px}
+  .uv-battle-guide .a6-guide-intro {grid-template-columns:70px minmax(0,1fr);gap:14px;margin-bottom:10px}
+  .uv-battle-guide .a6-guide-intro>img {height:80px;width:70px}.uv-battle-guide .a6-guide-intro h2 {font-size:23px}
+  .uv-battle-guide .a6-guide-intro p {font-size:13px;line-height:1.4}
+ }
+ @media(max-width:900px) {
+  .a6-guide-book,.uv-battle-guide .a6-guide-book {grid-template-columns:200px minmax(0,1fr)}
+  .a6-guide-page {grid-template-columns:1fr}.a6-guide-illustration {display:none}
+  .a6-guide-chapters {flex-wrap:wrap}.a6-guide-chapters>button {padding:7px 12px}
+ }
+}
