@@ -1,6 +1,6 @@
 # Lane U · Living Cafe
 
-NOW STOPPED BY USER — 2026-11-10 02:36 UTC: handoff saved; watcher terminated. Draft #437; latest code a89a78ce0; runtime1651d011d. Status PARTIAL (G6 and 8.475/10 score); all other gates PASS. Resume only after a new user instruction.
+NOW RESUMED — 2026-11-10 05:04 UTC by explicit user instruction: sync watcher running. Draft #437; latest code a89a78ce0; runtime1651d011d. Status PARTIAL (G6 and 8.475/10 score); all other gates PASS. Continue the registered sync workflow; no repeat of U0–U9.
 
 2026-11-10: resumed clean existing U0 worktree /Users/bao/taskbar-hero-ui-v3.
 BASE origin/codex/cardrpg-v5a-s6-2026-11-09 1195b13fa (#424).
@@ -60,3 +60,5 @@ SYNC watcher correction published as a221b0b28 on draft #437; report ledger cee8
 SYNC optional-report diagnostic FIXED: real poll succeeded with zero stdout/stderr bytes; seven eligibility cases and G1 PASS (1,867 web tests) after shared-lock handoff. Two fresh offline 1280 Home captures reviewed, zero browser errors; game/demo source and SHA unchanged. Evidence: sync/watcher-quiet/SUMMARY.md. Publish the quiet-read fix and ledger; resume the ten-minute watcher. Stop conditions remain false.
 
 STOP 2026-11-10 02:36 UTC: user explicitly requested “lưu handoff và dừng”. Stopped our watcher PID 32417 (exit 143); no watcher remains. Last completed poll at 02:33:59 UTC found no qualifying tips. Old pending/ready M4/M5 entries are already ancestors of HEAD, so no refresh is pending. Saved sync/STOPPED.json and updated HANDOFF/report/STATUS-VI. Latest implementation a89a78ce0, prior ledger 343ef5690; documentation-only stop publication follows. Do not resume automatically. No new game changes, builds, screenshots or gate claims in this stop handoff.
+
+RESUME 2026-11-10 05:04 UTC: user explicitly requested “tiếp tục công việc”, revoking the prior stop. Clean worktree at 4e79e7517; no STOP-UI file; deadline and both-lane-refresh conditions false. Restarted the existing watcher; first poll at 05:04:27 UTC found no qualifying tips. Latest inspected art R1 404af80f1 is PAUSED/PARTIAL and excluded. Seven eligibility checks pass; two fresh offline 1280 Home captures have zero browser errors and were visually reviewed; demo SHA unchanged. Evidence: sync/resume-20261110/. Prior temporary ledger checkout was removed externally; created isolated /tmp/ui-v3-ledger-resume-20261110 from origin/ai/codex-ui-ledger without touching the other ledger checkout. Publish resumed state and continue ten-minute polling/fifteen-minute settlement. No new runtime changes or G1/E2E rerun claimed.
