@@ -10,7 +10,7 @@ it('shows thirty fixed floors, the next chest and a clear chapter unlock',()=>{
  expect(screen.getByText('0/30 floors cleared · Next chest: floor 5')).toBeTruthy();
  expect(screen.getAllByRole('button',{name:/^Floor \d+(?: locked| cleared)?$/})).toHaveLength(30);
  expect((screen.getByRole('button',{name:/Climb floor 1/}) as HTMLButtonElement).disabled).toBe(true);
- expect(screen.getByText(/Clear Midnight Pantry to open the tower/)).toBeTruthy();
+ expect(screen.getByText(/Clear Tangled Cafe to open the tower/)).toBeTruthy();
 });
 it('starts the selected unlocked floor with the existing preparation and claims one milestone',()=>{
  const m=new DepthModel(true,true,true,true);m.state.cleared=[1,2,3];m.state.towerBest=5;

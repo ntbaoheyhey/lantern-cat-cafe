@@ -38,3 +38,8 @@
 ## Q10
 - One selected Fuji Relic adds two to eight percent to the active team’s HP, attack and defense; holdings and copies do not stack. A6 keeps ordinary cat gear; OFF keeps the existing lead-cat effect.
 - Reuse the existing read-only, pinned-block ABI adapter. Clear stale holdings on wallet/network changes and reject stale responses. Demo holdings require the offline component; the normal sandbox URL keeps product wallet behavior.
+
+## Q11
+- Early campaign bands one/two/three use 65/75/85 percent enemy attack; replays retain the same band pressure. Other modes and bands four and up are unchanged.
+- Feature celebrations queue behind existing discoveries. Onboarding points to actual buttons and leaves normal play fully automatic.
+- Zero observed defeats means hint retry rate is unobserved, not zero percent. The sim and report now show that distinction, and actual Legendary receipt is separate from pity budget.

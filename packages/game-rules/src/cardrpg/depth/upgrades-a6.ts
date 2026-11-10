@@ -60,14 +60,16 @@ export function autoEquipA6(state: DepthAccount): RuleResult<DepthAccount> {
   let next = state;
   for (const id of state.team) for (const slot of EQUIPMENT_SLOTS) {
     const teammateGear = new Set(state.team.filter(other => other !== id).flatMap(other => Object.values(next.equipment[other] ?? {})));
-    let best = next, score = teamPowerV4(next);
+    let best: string | undefined, score = teamPowerV4(next);
     for (const gear of next.gear.filter(item => GEAR_BY_ID[item.templateId]!.slot === slot && !teammateGear.has(item.id)).sort((a, b) => a.id.localeCompare(b.id))) {
-      const candidate = equipGear(next, id, gear.id);
-      if (!candidate.ok) continue;
-      const candidateScore = teamPowerV4(candidate.state);
-      if (candidateScore > score) { best = candidate.state; score = candidateScore; }
+      const preview = { ...next, equipment: { ...next.equipment, [id]: { ...next.equipment[id], [slot]: gear.id } } };
+      const candidateScore = teamPowerV4(preview);
+      if (candidateScore > score) { best = gear.id; score = candidateScore; }
     }
-    next = best;
+    if (best) {
+      const equipped = equipGear(next, id, best);
+      if (equipped.ok) next = equipped.state;
+    }
   }
   return next === state ? { ok: false, state, error: 'Your team already wears its strongest available gear.' } : { ok: true, state: next, error: '' };
 }

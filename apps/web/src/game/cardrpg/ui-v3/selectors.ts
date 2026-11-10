@@ -25,6 +25,7 @@ export function homeView(state:R.DepthAccount, now:number) {
 
 /** Same default route/band selection as HomeV4; derives state without changing it. */
 export function patrolDefaults(state:R.DepthAccount) {
+ if(R.gameplayA6(state))return R.patrolDefaultsA6(state);
  const active=!!state.run&&!state.run.complete;
  const ceiling=Math.min(...state.team.map(id=>state.account.cards.find(c=>c.cardId===id)!.level));
  const unlocked=R.CHAPTERS.filter(c=>c.id===1||state.cleared.includes(c.id-1));

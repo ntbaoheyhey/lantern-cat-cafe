@@ -56,7 +56,7 @@ if (!segment) {
         const m = window.__depthReview;
         if (!m) return null;
         const r = m.state.run, b = m.battle;
-        return { screen: m.screen, watching: m.showBattle, tutorial: m.state.tutorial,
+        return { guide: document.querySelector('.uv-shell')?.dataset.a6Guide, unlock: document.querySelector('.a6-unlock-toast strong')?.textContent ?? '', screen: m.screen, watching: m.showBattle, tutorial: m.state.tutorial,
           freeInvite: m.state.freeInvite, fish: m.state.account.currencies.fish,
           currencies: m.state.account.currencies, team: m.state.team,
           cards: m.state.account.cards.map(c => ({ id: c.cardId, level: c.level, stars: c.stars })),
@@ -67,7 +67,7 @@ if (!segment) {
           notice: m.notice, error: m.error, cleared: m.state.cleared };
       });
       if (!s) { await page.waitForTimeout(1000); continue; }
-      if (prior && (s.cards.length > prior.cards.length || s.cards.some(c => c.level > (prior.cards.find(p => p.id === c.id)?.level ?? 0) || c.stars > (prior.cards.find(p => p.id === c.id)?.stars ?? 0)) || Object.entries(s.currencies).some(([key, value]) => value > prior.currencies[key]) || s.cleared.length > prior.cleared.length || s.route?.id === prior.route?.id && ((s.route?.points ?? 0) > (prior.route?.points ?? 0) || (s.route?.rewards ?? 0) > (prior.route?.rewards ?? 0)))) {
+      if (prior && (s.cards.length > prior.cards.length || s.cards.some(c => c.level > (prior.cards.find(p => p.id === c.id)?.level ?? 0) || c.stars > (prior.cards.find(p => p.id === c.id)?.stars ?? 0)) || Object.entries(s.currencies).some(([key, value]) => value > prior.currencies[key]) || s.cleared.length > prior.cleared.length || s.unlock && s.unlock !== prior.unlock || s.route?.id === prior.route?.id && ((s.route?.points ?? 0) > (prior.route?.points ?? 0) || (s.route?.rewards ?? 0) > (prior.route?.rewards ?? 0)))) {
         report.rewards.push({ at: seconds(), gap: seconds() - report.lastReward, screen: s.screen }); report.lastReward = seconds();
       }
       prior = s;
@@ -84,7 +84,10 @@ if (!segment) {
         acted = await click(button(/^Next/), 'Next result');
       } else if (s.screen === 'hub') {
         const trainingKey = `${s.nextRunId}:${s.fish}`;
-        if (s.eventsOpen) {
+        if (s.guide === 'patrol') acted = await click(button(/^Night Patrol/), 'First patrol');
+        else if (s.guide === 'recruit') acted = await click(button('Recruit'), 'First friend');
+        else if (s.guide === 'upgrade') acted = await click(button('Cats'), 'First level');
+        else if (s.eventsOpen) {
           acted = await click(page.locator('.a6-daily button:not(:disabled)').filter({hasText:/^Collect/}), 'Collect A6 cafe gift');
           if(!acted) acted = await click(page.getByRole('button',{name:'Collect reward',exact:true}).and(page.locator(':not(:disabled)')), 'Collect daily reward');
           if (!acted) acted = await close();
@@ -101,7 +104,8 @@ if (!segment) {
         else if (await page.locator('[data-beat="idle"]').count()) acted = await close();
         else acted = true;
       } else if (s.screen === 'collection') {
-        if (!report.sawBook) acted = await click(button('Bond Book'), 'Read Bond Book');
+        if (s.guide === 'upgrade') acted = await click(button('Level up'), 'First cat level');
+        else if (!report.sawBook && await button('Bond Book').isVisible().catch(() => false)) acted = await click(button('Bond Book'), 'Read Bond Book');
         else {
           const candidate = s.cards.filter(c => s.team.includes(c.id)).sort((a, b) => a.level - b.level)[0];
           if (candidate && candidate.id !== s.selected && candidate.level < 8) acted = await click(page.locator('.uv-cat-grid button').filter({ hasText: new RegExp(candidate.id, 'i') }), 'Select lowest-level teammate');

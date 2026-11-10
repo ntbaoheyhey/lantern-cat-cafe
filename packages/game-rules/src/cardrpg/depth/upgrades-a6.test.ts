@@ -59,3 +59,19 @@ describe('A6 Power and useful upgrades', () => {
     expect(new Set(ids).size).toBe(ids.length);
   });
 });
+
+it('previews immutable gear and equips the same legal best item without consuming it', () => {
+  const s = R.setGameplayA6(R.createDepthAccount(31, 0), true);
+  const gear = R.makeGear(s, 'hearthloom-weapon-epic', 4);
+  s.gear.push(gear);
+  const frozen = (value: unknown): void => { if (value && typeof value === 'object') { Object.freeze(value); Object.values(value).forEach(frozen); } };
+  frozen(s);
+  const before = R.teamPowerV4(s), projected = R.itemUtilityV4(s, s.team[0]!, gear);
+  expect(projected).toBeGreaterThan(0);
+  const equipped = R.autoEquipA6(s);
+  expect(equipped.ok).toBe(true);
+  expect(R.teamPowerV4(equipped.state)).toBeGreaterThan(before);
+  expect(equipped.state.gear).toEqual(s.gear);
+  expect(equipped.state.account.currencies).toEqual(s.account.currencies);
+  expect(R.teamPowerV4(s)).toBe(before);
+});

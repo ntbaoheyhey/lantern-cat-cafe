@@ -1,3 +1,4 @@
+import { patrolPressureA6, patrolDefaultsA6 } from './onboarding-a6';
 import { startTowerFloorA6, TOWER_FLOORS_A6 } from './tower-a6';
 import { combatStarsV4, stopStarsV4 } from './stars-v4';
 import { recordNodeStarsV4 } from './journey-v4';
@@ -52,12 +53,13 @@ export function startRun(state: DepthAccount, chapter: number, seed: number, mod
     requireHome(s);requireRule(integer(chapter,1,3)&&integer(seed,0,0xffffffff),'INVALID_AMOUNT','Invalid chapter or seed.');
     requireRule(chapter===1||s.cleared.includes(chapter-1),'LOCKED','Clear the preceding chapter first.');
     requireRule(mode!=='tower'||s.cleared.includes(3),'LOCKED','Clear Midnight Pantry to open the Tower.');
+    const defaultBand=s.gameplayA6&&mode==='campaign'?patrolDefaultsA6(s).band:undefined;
     const challenge=calendarChallenge(date),actualSeed=mode==='daily'?challenge.seed:seed;
     const cats=battleCats(s);
     s.run={id:s.nextRunId++,seed:actualSeed,chapter,mode,nodes:generateMap(actualSeed,chapter),visited:[],current:null,points:35,boons:{},hp:Object.fromEntries(cats.map(c=>[c.id,c.stats.hp])),upgrades:{},rewardChoices:[],battle:null,complete:false,won:false,floor:1,mutator:mode==='campaign'?'':challenge.mutator.id,supplies:1,earnedItems:[],date};
     if(s.gameplayV4){
       const ceiling=Math.min(...s.team.map(id=>s.account.cards.find(c=>c.cardId===id)!.level));
-      const band=challengeLevel??ceiling;
+      const band=challengeLevel??defaultBand??ceiling;
       requireRule(integer(band,1,ceiling),'LOCKED','Choose a challenge band no higher than your lowest-level crew member.');
       s.run.gameplayV4=true;s.run.challengeLevel=band;if(s.skillsV5)s.run.skillsV5=true;if(s.gameplayA6)s.run.gameplayA6=true;
     }
@@ -70,6 +72,7 @@ export function enterNode(state: DepthAccount, id: string): RuleResult<DepthAcco
     run.current=id;
     if(node.enemies.length){
       const setup={...(run.gameplayA6?{gameplayA6:true}:{}),...(run.skillsV5?{skillsV5:true}:{}),seed:deriveSeed(run.seed,run.visited.length+run.floor*100),chapter:run.chapter,cats:battleCats(s),enemies:node.enemies,hp:run.hp,boons:run.boons,upgrades:run.upgrades,mutator:run.mutator,...(run.gameplayV4?{gameplayV4:true,...(run.challengeLevel!==undefined?{challengeLevel:run.challengeLevel,enemyStats:clone(run.towerA6?.enemyStats??challengeStatsV4(run.challengeLevel))}:{}),plan:clone(s.v4?.plan??DEFAULT_PLAN),...(run.packedSupply?{packedSupply:clone(run.packedSupply)}:{})}:{})};
+      if(patrolPressureA6(s)<1&&setup.enemyStats)for(const stats of Object.values(setup.enemyStats))stats.attack=Math.max(1,Math.round(stats.attack*patrolPressureA6(s)));
       run.battle=createBattle(setup);s.lastBattle=clone(run.battle.initial);s.lastChoices=[];
     }
   });

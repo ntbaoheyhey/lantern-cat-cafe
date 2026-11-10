@@ -64,3 +64,13 @@
 ## Q9 validation
 - The full E2E run passed 420 cases; existing v2 idle-clock XP accrual timed out. The isolated retry passed in 9.8 seconds after the shared lock became available. No unrelated product code was changed.
 - The first-session recorder now counts visible route points and boon offers, and carries its final observation into the next lease to avoid duplicate reward signals.
+
+## Q11
+- The hand glyph entered accessible button names. Rendered it as a decorative SVG background; the real-click harness now finds exact Recruit/Welcome/Level up labels.
+- Existing discovery and new unlock banners overlapped at 720-pixel height. Unlocks now wait in their queue until the existing discovery finishes; the queue test and inspected screenshot confirm the sequence.
+- Moved A6 cat growth before kit descriptions so the first level button is visible on the small screen. OFF order is retained.
+- One unrelated StageLayout test timed out in the full suite; its isolated file plus Q11 introduction/tower tests passed sixteen tests. No unrelated source changes.
+
+- Q11 first 500-seed pass: runtime 83.39 s, first-session losses up to one by ten minutes/four by thirty, hint retry 72.32%. Default bands alone were insufficient. Added explicit first-clear attack easing at entry band one; final measurements pending.
+- Q11 second pass: zero early losses, up to three by thirty minutes, hint retry 82.93%, runtime 87.87 s. Entry-only first-clear easing caused a replay difficulty jump. Final third pass keeps band-one easing on replay and tapers through bands two/three.
+- Q11 final third pass: zero losses at ten/thirty minutes, median reward gap ten seconds; runtime 72.64 s. Retry advice unobserved. G1 normal rounds five, Tower and G2 remain explicit Q12 gaps. Final full suites pass 1,898 web/1,303 rules.

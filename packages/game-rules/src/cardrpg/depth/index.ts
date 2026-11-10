@@ -45,3 +45,5 @@ export * from './daily-state-a6';
 export * from './daily-a6';
 
 export * from './relic-a6';
+
+export * from './onboarding-a6';

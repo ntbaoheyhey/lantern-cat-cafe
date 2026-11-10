@@ -141,3 +141,11 @@
 - Sim: 500 dev seeds in 336.69 seconds; normal 30.88 seconds, boss 79.38. G2/G3/Tower/tool-runtime remain partial for Q11–Q12.
 - OFF exact over 8,250 routes; A5 exact forty-five. q10-compatibility.json; expected hashes unchanged.
 - Q11 next; staged onboarding must preserve the final compact Relic CSS. Full E2E/thirty-minute run next due Q12. No fresh final seeds used.
+
+## Q11 complete — 2026-11-10 13:06 UTC
+- Guided first patrol, free friend and first level, staged unlocks and queued celebrations. Three inspected WebPs; actual clicks and entry preparation fit 1280×720 with no errors/overflow.
+- Early campaign bands use a gradual 65/75/85-percent attack ramp, including replay; higher bands and other modes unchanged. Committed foe stats survive preparation and replay.
+- Workspace typecheck/lint PASS; all 1,898 web and 1,303 rules tests PASS plus existing expected failures/skips.
+- 500 dev seeds in 72.64 s; reward gap median 10 s; zero losses by ten/thirty minutes. No final hint retries; prior diagnostic 82.93% of 164. Actual Legendary by day six in all seeds for both cohorts.
+- OFF exact 8,250 routes; A5 exact forty-five. q11-compatibility.json; expected hashes unchanged.
+- Q12 next: normal rounds five, browser normal pace, Tower and ultimate bounds remain partial. Full E2E and thirty-minute session due. Fresh final seeds unused.

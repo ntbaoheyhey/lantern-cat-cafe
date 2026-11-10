@@ -75,5 +75,5 @@ export function PrepareA6({m}:{m:DepthModel}) {
     <aside aria-label="Enemy preview"><h2>{m.tutorialBattle?'Practice table':'Tonight’s foes'}</h2><PowerA6 label="Recommended Power" value={enemies.reduce((sum,actor)=>sum+R.powerScoreA6(actor),0)}/>
       <div className="uv-enemy-preview a6-foes">{enemies.map(actor=><article key={actor.id}><img {...portraitProps(actor.catalogId)} alt=""/><b>{actor.name}</b><PowerA6 value={R.powerScoreA6(actor)}/><small>{actor.row==='front'?'Front':'Back'} · {actor.maxHp} HP</small><p>{R.enemyGuideV4(actor.catalogId).counter}</p></article>)}</div>
       <ForecastV4 setup={battle.initial} label="Win chance" showChance/>
-    </aside></div></div><footer className="uv-fight-bar"><span>Your cats fight automatically.</span><button className="uv-fight" onClick={()=>m.fight()}>Fight <span aria-hidden="true">→</span></button></footer></>;
+    </aside></div></div><footer className="uv-fight-bar"><span>{R.patrolPressureA6(m.state)<1?'Entry patrol · gentler foes. Fully automatic.':'Your cats fight automatically.'}</span><button className="uv-fight" onClick={()=>m.fight()}>Fight <span aria-hidden="true">→</span></button></footer></>;
 }

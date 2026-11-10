@@ -32,7 +32,7 @@ export function startTowerFloorA6(state: DepthAccount, floor = Math.min(TOWER_FL
   return transactDepth(state, s => {
     requireHome(s);
     requireRule(gameplayA6(s), 'NOT_READY', 'Open A6 first.');
-    requireRule(s.cleared.includes(3), 'LOCKED', 'Clear Midnight Pantry to open Yarn Tower.');
+    requireRule(s.cleared.includes(1), 'LOCKED', 'Clear Tangled Cafe to open Yarn Tower.');
     const f = towerFloorA6(floor);
     requireRule(floor <= s.towerBest + 1, 'LOCKED', 'Clear the preceding floor first.');
     const cats = battleCats(s);

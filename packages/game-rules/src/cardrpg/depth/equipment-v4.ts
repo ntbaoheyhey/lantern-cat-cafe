@@ -85,7 +85,9 @@ export function comparisonV4(state:DepthAccount,cardId:string,instanceId:string)
 export function gearCostV4(id:string){const g=GEAR_BY_ID[id]!;return g.rarity==='legendary'?{fish:500,threads:100,essence:20}:g.rarity==='epic'?{fish:120,threads:180,essence:5}:{fish:180,threads:30};}
 export function rarityMeaningV4(rarity:string){return ['One main stat; readily replaceable.','One affix refines a role.','Two affixes; plan a targeted source.','Three affixes and one bounded unique behavior.'][RARITY_ORDER.indexOf(rarity as typeof RARITY_ORDER[number])]??'Cosmetic edition; no combat power.';}
 export function itemUtilityV4(state:DepthAccount,cardId:string,item:GearInstance){
- const copy=clone(state);copy.equipment[cardId]={};const bare=powerV4(copy,cardId).total;
+ // A6 previews change only this loadout; avoid copying retained battle logs per item.
+ const copy=gameplayA6(state)?{...state,equipment:{...state.equipment,[cardId]:{}}}:clone(state);
+ copy.equipment[cardId]={};const bare=powerV4(copy,cardId).total;
  copy.equipment[cardId]={[GEAR_BY_ID[item.templateId]!.slot]:item.id};
  return powerV4(copy,cardId).total-bare;
 }

@@ -111,27 +111,28 @@ async function simulation(bundleUrl, mode) {
   function equip(s) {
     for (const id of s.team) for (const slot of C.EQUIPMENT_SLOTS) {
       const worn = new Set(Object.entries(s.equipment).filter(([cat]) => cat !== id).flatMap(([, slots]) => Object.values(slots)));
-      const best = s.gear.filter(g => R.GEAR_BY_ID[g.templateId].slot === slot && !worn.has(g.id)).sort((a, b) => R.itemUtilityV4(s, id, b) - R.itemUtilityV4(s, id, a))[0];
+      const best = s.gear.filter(g => R.GEAR_BY_ID[g.templateId].slot === slot && !worn.has(g.id)).map(item => ({ item, utility: R.itemUtilityV4(s, id, item) })).sort((a, b) => b.utility - a.utility)[0]?.item;
       if (best && s.equipment[id]?.[slot] !== best.id) s = take(R.equipGear(s, id, best.id));
     }
     return s;
   }
+  // Preview before a public claim: failed transactions otherwise clone the full retained route.
   function claims(s, now) {
     if (s.run && !s.run.complete) return s;
     const cafe = R.claimCafeShiftV4(s, Math.floor(now * 1000)); if (cafe.ok) s = cafe.state;
-    for (const q of C.QUESTS) { const r = R.metaCommand(s, { type: 'claimQuest', questId: q.id }); if (r.ok) s = r.state; }
-    for (const goal of R.STAR_REWARDS_V4) { const r = R.claimStarRewardV4(s, goal.id); if (r.ok) s = r.state; }
-    for (const goal of R.MILESTONES_V4) { const r = R.claimMilestoneV4(s, goal.id); if (r.ok) s = r.state; }
+    for (const q of C.QUESTS.filter(q => { const p=s.account.quests[q.id]; return p && !p.claimed && p.progress>=q.target; })) { const r = R.metaCommand(s, { type: 'claimQuest', questId: q.id }); if (r.ok) s = r.state; }
+    for (const goal of R.STAR_REWARDS_V4) { if(R.starRewardPreviewV4(s,goal.id).reason)continue; const r = R.claimStarRewardV4(s, goal.id); if (r.ok) s = r.state; }
+    for (const goal of R.MILESTONES_V4) { if(R.milestonePreviewV4(s,goal.id).reason)continue; const r = R.claimMilestoneV4(s, goal.id); if (r.ok) s = r.state; }
     if (R.gameplayA6(s)) {
       const ms = Math.floor(now * 1000);
-      const login = R.claimDailyA6(s, ms, 'login'); if (login.ok) s = login.state;
-      for (const task of R.DAILY_TASKS_A6) { const r = R.claimDailyA6(s, ms, 'task', task.id); if (r.ok) s = r.state; }
-      for (const points of R.WEEKLY_CHESTS_A6) { const r = R.claimDailyA6(s, ms, 'weekly', points); if (r.ok) s = r.state; }
-      for (const floor of R.TOWER_CHESTS_A6) { const r = R.claimTowerChestA6(s, floor); if (r.ok) s = r.state; }
+      if(!R.dailyBoardA6(s,ms).login.reason) { const login = R.claimDailyA6(s, ms, 'login'); if (login.ok) s = login.state; }
+      for (const task of R.DAILY_TASKS_A6) { if(R.dailyBoardA6(s,ms).tasks.find(t=>t.id===task.id).reason)continue; const r = R.claimDailyA6(s, ms, 'task', task.id); if (r.ok) s = r.state; }
+      for (const points of R.WEEKLY_CHESTS_A6) { if(R.dailyBoardA6(s,ms).weekly.find(w=>w.points===points).reason)continue; const r = R.claimDailyA6(s, ms, 'weekly', points); if (r.ok) s = r.state; }
+      for (const floor of R.TOWER_CHESTS_A6) { if(R.towerChestA6(s,floor).reason)continue; const r = R.claimTowerChestA6(s, floor); if (r.ok) s = r.state; }
     }
     return s;
   }
-  const rewardState = s => ({ currency: Object.values(s.account.currencies).reduce((a, b) => a + b, 0), power: R.teamPowerV4(s), gear: s.gear.length, clears: s.cleared.length, stars: R.starCountV4(s), found: s.v4?.journey?.found.length ?? 0 });
+  const rewardState = s => ({ currency: Object.values(s.account.currencies).reduce((a, b) => a + b, 0), power: R.teamPowerV4(s), gear: s.gear.length, clears: s.cleared.length, stars: R.starCountV4(s), found: s.v4?.journey?.found.length ?? 0, routePoints: s.run?.points ?? 0, routeChoices: s.run?.rewardChoices.length ?? 0, routeBoons: Object.values(s.run?.boons ?? {}).reduce((sum, n) => sum + n, 0) });
   const progressed = (before, after) => Object.keys(before).some(key => after[key] > before[key]);
   function resolveStop(s) {
     const run = s.run;
@@ -147,7 +148,7 @@ async function simulation(bundleUrl, mode) {
   }
   function firstSession(seed) {
     let s = state(seed), seconds = 5, losses10 = 0, losses30 = 0, hints = 0, retryWins = 0, battles = 0;
-    const timeline = [{ at: 0, kind: 'Fresh save' }], gaps = [], rewards = [0], combat = [];
+    const timeline = [{ at: 0, kind: 'Fresh save' }], gaps = [], rewards = [0], combat = [], lossExamples = [];
     // Exact public tutorial setup; presentation-only tutorial completion unlocks the welcome draw.
     const tutorial = battle({ seed: 7, chapter: 1, gameplayV4: true, skillsV5: true, ...flag(s), cats: R.battleCats(s), enemies: ['practice-cushion'], tutorial: true, enemyStats: { 'practice-cushion': { hp: 300, attack: 60, defense: 0 } } });
     seconds += measure(tutorial).seconds + 5; s.tutorial = 3;
@@ -167,13 +168,15 @@ async function simulation(bundleUrl, mode) {
         s = take(R.finishEncounter(s)); kind = result.win ? 'Battle reward' : 'Defeat';
         if (!result.win && seconds <= 1800) {
           losses30++; if (seconds <= 600) losses10++;
+          const example = { at: round(seconds), chapter: b.chapter, band: b.initial.challengeLevel, enemies: b.initial.enemies, levels: s.team.map(id => s.account.cards.find(c => c.cardId === id).level) };
+          lossExamples.push(example);
           const advice = adviceFor(s, b.initial);
           if (advice) {
             s = take(R.applyResultAdviceV4(pendingResult, advice));
             hints++; kind = advice.label;
             // Same enemy seed/lineup, full health after loss, same public equipped stats.
             const retry = battle({ ...b.initial, cats: R.battleCats(s), plan: s.v4.plan, hp: undefined });
-            retryWins += Number(retry.result === 'party');
+            retryWins += Number(retry.result === 'party'); example.hint = advice.label; example.retryWin = retry.result === 'party';
           }
         }
       } else { s = resolveStop(s); seconds += 5; }
@@ -182,7 +185,7 @@ async function simulation(bundleUrl, mode) {
     }
     rewards.push(1800);
     for (let i = 1; i < rewards.length; i++) gaps.push(rewards[i] - rewards[i - 1]);
-    return { seed, gaps, losses10, losses30, hints, retryWins, battles, combat, timeline: seed === 1 || seed === 60001 ? timeline : undefined };
+    return { seed, gaps, losses10, losses30, hints, retryWins, battles, combat, lossExamples, timeline: seed === 1 || seed === 60001 ? timeline : undefined };
   }
   function economy(seed, sessionsPerDay) {
     let s = take(onboarding.firstInvitation(state(seed), 4)), pityDay = null;
@@ -290,7 +293,7 @@ if (!isMainThread) {
     result.variety.sort((a, b) => b.wins / b.count - a.wins / a.count || a.team.join().localeCompare(b.team.join()));
     const best = result.variety[0].wins / count, nearBest = result.variety.filter(r => r.wins / count >= best - .05).length;
     const top20 = result.variety.slice(0, 20), maxPresence = Math.max(...sim.teams.flat().map(id => pct(top20.filter(r => r.team.includes(id)).length, top20.length)));
-    const economySummary = [2, 5].map(sessions => { const rows = result.economy.filter(r => r.sessionsPerDay === sessions); return { sessions, progressEveryDay: pct(rows.filter(r => r.days.every(d => d.progress)).length, rows.length), epicDay2: pct(rows.filter(r => r.firstEpic && r.firstEpic <= 2).length, rows.length), pityDay6: pct(rows.filter(r => r.pityDay && r.pityDay <= 6).length, rows.length), medianDrawsDay7: quantile(rows.map(r => r.days.at(-1).paidDraws), .5), idleCap: rows[0].idleCap }; });
+    const economySummary = [2, 5].map(sessions => { const rows = result.economy.filter(r => r.sessionsPerDay === sessions); return { sessions, progressEveryDay: pct(rows.filter(r => r.days.every(d => d.progress)).length, rows.length), epicDay2: pct(rows.filter(r => r.firstEpic && r.firstEpic <= 2).length, rows.length), pityDay6: pct(rows.filter(r => r.pityDay && r.pityDay <= 6).length, rows.length), legendaryDay6: pct(rows.filter(r => r.firstLegendary && r.firstLegendary <= 6).length, rows.length), medianDrawsDay7: quantile(rows.map(r => r.days.at(-1).paidDraws), .5), idleCap: rows[0].idleCap }; });
     const towerFloors = Array.from({ length: 30 }, (_, i) => {
       const rows = result.tower.filter(r => r.floor === i + 1);
       return { floor: i + 1, count: rows.length, medianSeconds: round(quantile(rows.map(r => r.seconds), .5)), winRate: round(pct(rows.filter(r => r.win).length, rows.length)) };
@@ -300,23 +303,23 @@ if (!isMainThread) {
       tower: mode === 'a6' ? { medianSeconds: round(quantile(result.tower.map(r => r.seconds), .5)), p90Seconds: round(quantile(result.tower.map(r => r.seconds), .9)), floors: towerFloors } : null,
       pacing: pacing(earnedNormals, earnedBosses), fixedPacing: pacing(normals, bosses),
       ultimates: { normal: normalUlts, boss: bossUlts },
-      firstSession: { medianGap: round(quantile(result.session.flatMap(r => r.gaps), .5)), p90MaxGap: round(quantile(result.session.map(r => Math.max(...r.gaps)), .9)), meanLosses10: round(mean(result.session.map(r => r.losses10))), maxLosses10: Math.max(...result.session.map(r => r.losses10)), meanLosses30: round(mean(result.session.map(r => r.losses30))), maxLosses30: Math.max(...result.session.map(r => r.losses30)), hintRetries: result.session.reduce((n, r) => n + r.hints, 0), hintWinRate: round(pct(result.session.reduce((n, r) => n + r.retryWins, 0), result.session.reduce((n, r) => n + r.hints, 0))) },
+      firstSession: { medianGap: round(quantile(result.session.flatMap(r => r.gaps), .5)), p90MaxGap: round(quantile(result.session.map(r => Math.max(...r.gaps)), .9)), meanLosses10: round(mean(result.session.map(r => r.losses10))), maxLosses10: Math.max(...result.session.map(r => r.losses10)), meanLosses30: round(mean(result.session.map(r => r.losses30))), maxLosses30: Math.max(...result.session.map(r => r.losses30)), hintRetries: result.session.reduce((n, r) => n + r.hints, 0), hintWinRate: result.session.some(r => r.hints) ? round(pct(result.session.reduce((n, r) => n + r.retryWins, 0), result.session.reduce((n, r) => n + r.hints, 0))) : null },
       variety: { teams: result.variety.length, nearBest, bestWinRate: round(best * 100), maxTop20CatPresence: maxPresence, top20 }, economy: economySummary,
-      limitations: [...(mode === 'a6' ? ['Tower spreads 500 level-six, four-Epic fixture builds across thirty fixed floors; floor enemies and combat seeds remain fixed. Authored duration and per-floor summaries are separate from earned-player progress.'] : []), 'G1 uses naturally earned first-session encounters, excluding the tutorial. Seconds are authored x1 timelines, excluding browser overhead; Q15 real-click timing is separate.', 'G2 and G4 use level-six four-Epic fixtures with unlocked kits. New-player/economy accounts use earned public commands without fixture grants.', 'First-session defeats use the real recommendBuildV4/applyResultAdviceV4 hint. Same-seed retry is a counterfactual and grants no rewards.', `${result.variety.length} fixed candidate teams (the four V5 crews plus evenly spaced mixed squads) each use every seed. This is not an exhaustive ranking of all 220 teams; tied top-20 teams use lexical order.`, 'Economy uses four-minute check-ins (at most one completed patrol), two or five per day; unfinished routes carry into the next visit. Epic means Epic or better.'],
+      limitations: [...(mode === 'a6' ? ['Tower spreads 500 level-six, four-Epic fixture builds across thirty fixed floors; floor enemies and combat seeds remain fixed. Authored duration and per-floor summaries are separate from earned-player progress.'] : []), 'G1 uses naturally earned first-session encounters, excluding the tutorial. Seconds are authored x1 timelines, excluding browser overhead; Q15 real-click timing is separate.', 'G2 and G4 use level-six four-Epic fixtures with unlocked kits. New-player/economy accounts use earned public commands without fixture grants.', 'Visible route points, earned boon choices and selected boons count as rewards alongside account currency, gear and Power.', 'First-session defeats use the real recommendBuildV4/applyResultAdviceV4 hint. Same-seed retry is a counterfactual and grants no rewards.', `${result.variety.length} fixed candidate teams (the four V5 crews plus evenly spaced mixed squads) each use every seed. This is not an exhaustive ranking of all 220 teams; tied top-20 teams use lexical order.`, 'Economy uses four-minute check-ins (at most one completed patrol), two or five per day; unfinished routes carry into the next visit. Epic means Epic or better.'],
     };
     const rows = [
       ['G1 normal', `${summary.pacing.normalRounds} rounds; median ${summary.pacing.normalSeconds} seconds; 90th percentile ${summary.pacing.normalP90} seconds`, '6–10 rounds; median 20–35 seconds; 90th percentile ≤45 seconds'],
       ['G1 boss', `median ${summary.pacing.bossSeconds} seconds; 90th percentile ${summary.pacing.bossP90} seconds`, 'median 45–90 seconds; 90th percentile ≤110 seconds'],
       ...(summary.tower ? [['G1 Tower', `median ${summary.tower.medianSeconds} seconds; 90th percentile ${summary.tower.p90Seconds}; floor medians ${Math.min(...towerFloors.map(f => f.medianSeconds))}–${Math.max(...towerFloors.map(f => f.medianSeconds))} seconds`, '20–50 seconds per floor']] : []),
       ['G2 ultimates', `normal ${Math.min(...normalUlts.map(r => r.rate))}–${Math.max(...normalUlts.map(r => r.rate))} percent; boss minimum ${Math.min(...bossUlts.map(r => r.rate))} percent`, 'each cat 35–70 percent normal; ≥90 percent boss'],
-      ['G3 first session', `median gap ${summary.firstSession.medianGap} seconds; losses by 10 minutes: mean ${summary.firstSession.meanLosses10}, worst ${summary.firstSession.maxLosses10}; by 30 minutes: mean ${summary.firstSession.meanLosses30}, worst ${summary.firstSession.maxLosses30}; hint retry wins ${summary.firstSession.hintWinRate} percent`, 'gap ≤90 seconds; zero early losses; ≤2 total losses; retry wins ≥80 percent'],
+      ['G3 first session', `median gap ${summary.firstSession.medianGap} seconds; losses by 10 minutes: mean ${summary.firstSession.meanLosses10}, worst ${summary.firstSession.maxLosses10}; by 30 minutes: mean ${summary.firstSession.meanLosses30}, worst ${summary.firstSession.maxLosses30}; ${summary.firstSession.hintWinRate === null ? "hint retry not observed (no losses)" : `hint retry wins ${summary.firstSession.hintWinRate} percent`}`, 'gap ≤90 seconds; zero early losses; ≤2 total losses; retry wins ≥80 percent'],
       ['G4 variety', `${nearBest} of ${result.variety.length} tested teams within five percentage points; highest top-20 cat presence ${maxPresence} percent`, '≥4 teams; no cat above 70 percent'],
-      ...economySummary.map(e => [`G5 ${e.sessions === 2 ? 'casual' : 'regular'}`, `daily progress ${round(e.progressEveryDay)} percent; Epic by day two ${round(e.epicDay2)} percent; pity budget by day six ${round(e.pityDay6)} percent; idle cap ${e.idleCap} hours`, 'daily progress; Epic by day two; regular pity by day six; idle cap 12 hours']),
+      ...economySummary.map(e => [`G5 ${e.sessions === 2 ? 'casual' : 'regular'}`, `daily progress ${round(e.progressEveryDay)} percent; Epic by day two ${round(e.epicDay2)} percent; pity budget by day six ${round(e.pityDay6)} percent; actual Legendary by day six ${round(e.legendaryDay6)} percent; idle cap ${e.idleCap} hours`, 'daily progress; Epic by day two; regular pity by day six; idle cap 12 hours']),
     ];
     const table = ['| Gate | Measured | Target |', '|---|---|---|', ...rows.map(row => `| ${row.join(' | ')} |`)].join('\n');
     const text = `# A6 ${mode === 'before' ? 'BEFORE baseline' : 'simulation'}\n\n${count} seeds (${first}–${first + count - 1}); ${summary.seconds} seconds.\n\n${table}\n\nWhat this means: this compact run exposes pacing, first-session and economy gaps for iteration; simulated time does not establish browser performance or human enjoyment.\n\n${summary.limitations.map(s => '- ' + s).join('\n')}\n`;
     await mkdir(dirname(output), { recursive: true });
-    await writeFile(output, JSON.stringify({ summary, timeline: result.session.find(r => r.timeline)?.timeline }, null, 2) + '\n');
+    await writeFile(output, JSON.stringify({ summary, lossExamples: result.session.slice().sort((a,b) => b.losses30-a.losses30 || a.seed-b.seed).flatMap(r => r.lossExamples.map(e => ({ seed:r.seed, ...e }))).slice(0,6), timeline: result.session.find(r => r.timeline)?.timeline }, null, 2) + '\n');
     if (arg('report', '')) await writeFile(resolve(root, arg('report', '')), text);
     if (first === 60001 && output !== resolve(root, 'reports/cardrpg-a6/final-sim.json')) await writeFile(resolve(root, 'reports/cardrpg-a6/final-sim.json'), JSON.stringify(summary, null, 2) + '\n');
     console.log(`${count} seeds; ${summary.seconds}s; ${mode}\n${table}\nWhat this means: authored timing and real-rule bot results; browser timing remains a separate check.`);
