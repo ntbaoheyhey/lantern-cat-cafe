@@ -12,7 +12,7 @@ Check STOP-B/INBOX and fetch/show A6-OUTBOX between items. Commit/push and updat
 - [x] P6 VFX pass (6 h): every signature skill and ultimate on the puppets' real sockets/targets/timing; damage numbers; audit score >= 8.0 at x1 (reuse existing VFX masters where they fit).
 - [x] P7 Stage + light (3 h): warm cafe, faces lit, richer enemy side, night window; cast frame <= 33 ms.
 - [x] P8 Portraits/icons/card art (3 h): regenerate crops from the final puppet art where needed; one manifest; B-OUTBOX entry for A6.
-- [ ] P9 Publish for A6 (1 h, repeat after each big batch): push, update #427, write B-OUTBOX.md (what changed, manifest paths, flags, known issues). Make sure the demo size stays <= 40 MB together with A6 (WebP atlases; report your share in B-OUTBOX).
+- [x] P9 Publish for A6 (1 h, repeat after each big batch): push, update #427, write B-OUTBOX.md (what changed, manifest paths, flags, known issues). Make sure the demo size stays <= 40 MB together with A6 (WebP atlases; report your share in B-OUTBOX).
 - [ ] P10 Films (by 19 Nov 12:00 UTC): in the throwaway A6 preview (section 2), one 60-90 s x1 battle with several ultimates and one boss fight; R0 vs now comparison posters.
 - [ ] P11 Report (by 20 Nov 12:00 UTC): ART-REPORT.md (scores vs R0, PUPPET-SCORES summary, what shipped, known issues, provenance), STATUS-VI.md summary, #427 description. Then improve the lowest-scored unit until the deadline.
 
@@ -49,3 +49,5 @@ P6 complete 2026-11-10T17:50:04.179396+00:00: saved49+6casts/33tests reused and 
 P8 complete 2026-11-10T18:09:14.154961+00:00: accepted saved25unit formats/60skills, source/path checks and prior format-sheet review; UI crops/icons preserved,4full-body card fixes. Completed while P7 waits for A6 lease; P7 remains top unfinished.
 
 P7 complete 2026-11-10T18:29:55.894769+00:00: saved6current-HUD captures/5casts accepted; warm fill, night crescent, enemy accents;19tests/parityPASS; warmedp95/max16.8ms. Stage8.0 self-review; P9 budget next.
+
+P9 complete 2026-11-10T18:31:20.425804+00:00: current A6+B P7 actual38,140,486B, headroom1,859,514B; Bembedded23,545,868B incl retained assets. Integration manifest/flags/ownership published; P10film correction next.

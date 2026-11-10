@@ -60,3 +60,6 @@ Manifest v4 sẵn cho A6; crop nhỏ và icon cũ giữ nguyên. P7 vẫn chờ 
 
 P7 hoàn tất từ kết quả đã lưu: sân quán ấm hơn, có trăng đêm và chi tiết phía địch; giữ rõ mặt/đạo cụ gốc.
 6ảnh trong HUD A6 hiện tại,5chiêu,19test và parity đều đạt; khung hình đã làm nóng tối đa16,8ms. Chuyển sang P9 dung lượng.
+
+P9 đã đo trên bản chung A6 hiện tại:38,14MB/40MB, còn1,86MB; phần ảnh/tài nguyên B nhúng là23,55MB.
+Đã công bố manifest và cách tích hợp cho A6; phim P10 đầu chưa có ultimate nên chưa nhận, đang sửa replay và giữ nguyên bản quay cũ.
