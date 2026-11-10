@@ -27,3 +27,5 @@ P1 complete 2026-11-10T16:26:41.319246+00:00: one-command resumable authored cut
 P2 complete 2026-11-10T16:37:30.317365+00:00: Mochi/Soot/Yarn original atlases in disposable A6 shell; 8 poses each, 75 s real x1 replay, 0 errors/overlaps. Median/p95 16.7/16.8 ms; five rules seeds exact across six art modes. Scores 7.8/7.6/8.0, with restrained-motion limits recorded. P3 next.
 
 P3 complete 2026-11-10T16:46:06.885541+00:00: puppet-only framing/normalized heights, all faces visible in simple fan; four A6 captures at both sizes, 0 outside/faceHP/UI errors; ultimate push/impact shake/reduced-motion verified. P4 first six-cat batch now active.
+
+P4 batch1 complete 2026-11-10T16:56:32.276421+00:00: six cats accepted,0page/faceHPerrors; corrected closed lids; type/lint17testsPASS; five-seed parityPASS. Batch2 remains top unfinished work.

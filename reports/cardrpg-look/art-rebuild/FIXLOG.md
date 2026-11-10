@@ -168,3 +168,6 @@ Lid coverage previously crossed open eyes and sampled the dark lash. Increased o
 
 ## B-PUPPET-003 — compact framing and rear-row occlusion
 P3 gallery override masked real formation and rear-row lateral offsets hid Clover behind Soot. After three bounded layout rounds, use the simplest row-independent lateral fan plus row depth, normalize puppet heights, and keep minimum frame height4.25. Final four A6 captures show all party faces/0outside/0labeloverlaps. Wrong-shell baseline excluded and harness now asserts A6/v3/puppet. Existing camera push/shake/reduced behavior reverified.
+
+## B-PUPPET-004 — cheek-sampled closed eyelids
+P4 first-batch motion review exposed Panko hat and Cinnamon forehead stripes inside closed eyes. Sample a fixed cheek point below each eye; defeat now closes fully. Re-captured six units and inspected final sheets,0page/faceHPerrors. One correction; no source art regenerated.

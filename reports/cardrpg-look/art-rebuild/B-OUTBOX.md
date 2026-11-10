@@ -20,3 +20,6 @@ P3 camera/composition is next. No DOM/rule changes or A6 merge on B branch. Full
 
 Puppet mode now uses a lower/closer camera, a 4.25-world-unit minimum canvas height, simple party fan (front/rear distinguished by depth), and normalized cat/enemy/boss height 2.08/2.10/3.70. No gallery-only placement override for puppets. Boss pilot cats now fill 40–44% of canvas and normal pilots 44–48% at 1440×900 and 1280×720; boss ratio about 1.7–1.9×. Existing 5.4% ultimate push-in and bounded impact shake remain, both suppressed for reduced motion. All final face/HP and DOM overlap checks pass. No DOM changes required.
 Evidence: p3/final and p3/comparison.webp. Combined local A6 lean preview 26.71 MB at three pilots; roster budget will be remeasured per batch. P4 cats next.
+
+## P4 batch1 — six cats
+Mochi/Soot/Clover/Panko/Mallow/Cinnamon accepted; new four atlases/rigs in existing v3-puppets path. Shared closed eyelid fix samples cheek instead of hat/forehead. No integration API or DOM changes. Six cat atlas bytes 1223816; combined A6 lean artifact 27,766,291 bytes. Review p4/REVIEW.md; final six comparisons/8pose sheets and five-seed parity PASS. Remaining six cats then enemies continue; R-9 memory files now active.

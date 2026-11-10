@@ -67,7 +67,7 @@ export function installPuppetMaterial(material:T.MeshStandardMaterial){
         for(int eye=0;eye<2;eye++){
           vec4 e=puppetEyes[eye];vec2 p=(sourceXY-e.xy)/e.zw;
           float lid=(1.-smoothstep(1.0,1.18,length(p)))*smoothstep(puppetEyeOpen*1.6-.16,puppetEyeOpen*1.6-.04,abs(p.y));
-          vec2 furXY=vec2(sourceXY.x,e.y-e.w*1.85);
+          vec2 furXY=vec2(e.x,e.y+e.w*1.25);
           vec2 furLocal=(furXY-puppetRect.xy)/puppetRect.zw;
           vec2 furUV=vec2(puppetAtlas.x+furLocal.x*puppetAtlas.z,1.-puppetAtlas.y-furLocal.y*puppetAtlas.w);
           vec3 fur=texture2D(map,furUV).rgb;
@@ -85,7 +85,7 @@ export function installPuppetMaterial(material:T.MeshStandardMaterial){
       #include <opaque_fragment>
     `);
   };
-  material.customProgramCacheKey=()=>`puppet-v2-${eyes.length===2?'eyes':'plain'}`;
+  material.customProgramCacheKey=()=>`puppet-v3-${eyes.length===2?'eyes':'plain'}`;
 }
 const relative=new T.Quaternion();
 export function animateIllustrated(model:T.Object3D,camera:T.Camera,time:number,clip:string,progress:number|undefined,reduced:boolean,acting=false,ultimate=false,phaseFlash=0){

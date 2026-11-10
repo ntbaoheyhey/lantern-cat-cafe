@@ -16,3 +16,7 @@ Tiếp tục P3: cân lại tỉ lệ boss/cat và bố cục; không thay DOM H
 
 P3 đã xong: camera gần/thấp hơn, cat chiếm 40–48% canvas; boss khoảng 1,7–1,9 lần cat.
 Cả hai cỡ màn hình không tràn model/đè mặt-HP/UI; đã kiểm tra zoom ultimate, rung impact và reduced motion. Tiếp tục P4 nhóm 6 cat đầu.
+
+10/11: Đã lưu nguyên văn prompt + R-9, kiểm tra số byte/SHA và đẩy lên nhánh B.
+P4 đợt 1: sáu mèo đạt 7,6–7,8; sửa mí mắt Panko/Cinnamon, không lỗi trang hay đè mặt/thanh máu.
+Tiếp tục sáu mèo còn lại ngay; giữ nguyên toàn bộ nguồn native cũ.

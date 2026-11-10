@@ -52,7 +52,7 @@ export function puppetPose(motion:PuppetMotion,time:number,progress:number,reduc
     prop:reduced?0:active?-.20*gesture:motion==='victory'?-.17:Math.sin(clock*1.8)*.017,
     offhand:reduced?0:active?.12*gesture:motion==='victory'?.14:-Math.sin(clock*1.8)*.012,
     lean:reduced?0:motion==='defeat'?-.18:motion==='hurt'?-.045*hit:active?-.025*gesture:Math.sin(clock*.9)*.005,
-    eyeOpen:blink*(motion==='hurt'?.50:motion==='victory'?.72:motion==='defeat'?.08:1),
+    eyeOpen:motion==='defeat'?0:blink*(motion==='hurt'?.50:motion==='victory'?.72:1),
     glow:motion==='ultimate'||motion==='cast'?Math.max(0,magic)*.16:motion==='boss-idle'?.035+.02*Math.sin(clock*2):0,
     collapse:motion==='defeat'?.12:0};
 }
