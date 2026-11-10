@@ -91,3 +91,6 @@ Spool Ram đã có kết quả kiểm tra lưu sẵn; sẽ duyệt hình ảnh, 
 
 P10 đã nhận: phim boss136,93giây/13ultimate hiện rõ bảng Victory và giữ1,8giây; bốn quái phụ rõ mặt, không lỗi trang/chồng nhãn HP.
 Giữ phim thường85,49giây/9ultimate và hai poster; bản1440×900 lưu ngoài Git, bản xem nhẹ nằm trong ngân sách bằng chứng. Báo cáo P11 tiếp tục ngay.
+
+P11 đã tổng hợp25nhân vật, phim đã duyệt, ngân sách38,18MB và nguồn ảnh. Điểm tự chấm8,23/10, vẫn dưới mục tiêu8,5.
+Phần yếu còn lại là chuyển động dùng chung và độ nổi bật ultimate; tiếp tục Spool Ram rồi Inkcap theo hàng đợi.

@@ -59,3 +59,6 @@ B full boss film has waited since19:23UTC across A6 first-session1 and immediate
 
 ## P10 films accepted
 Complete boss x1 film136.933333s/13catultimates now reaches an actual visible Victory panel held1.8s; all four phase3helpers are distinct. Normal85.4911s/9ult excerpt, two R0posters and12speed checks retained. Zero page/faceHPerrors; films are not timing benchmarks. Capture-only result-panel wait, no A6source change. Compact films/receipts: p10/delivery/manifest.json and p10/REVIEW.md. Full masters outside Git. P11 report follows.
+
+## P11 core report
+ART-REPORT.md now records shipped25-unit coverage, accepted P10films, R0comparison limitations, original provenance, tests and actual38,175,926B combinedbudget. Weighted self-score8.225 remains below8.5target; shared motion/spectacle are explicit limits. Further bounded motion work continues; no new integration flag/event/asset contract.

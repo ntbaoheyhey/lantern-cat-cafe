@@ -17,7 +17,7 @@ Check STOP-B/INBOX and fetch/show A6-OUTBOX between items. Commit/push and updat
 - [x] P13 [auto] Broad-boss composition: inspect Rain Spool impact proximity to party faces and improve lateral spacing without shrinking accepted cat/boss scale; two viewports, same HUD envelopes; also both Binding Thread faces visible in Rain Spool/Yarn Giant/Pantry Crown fights, verified canvas dimensions.
 - [x] P15 [auto] Phase3 summoned-add composition: extend the accepted initial two-add formation to all four Binding Threads; keep every face identifiable at both sizes, retain boss/cat scale; inspect actual phase3 in current A6 before final film acceptance.
 - [x] P10 Films (by 19 Nov 12:00 UTC): in the throwaway A6 preview (section 2), one 60-90 s x1 battle with several ultimates and one boss fight; R0 vs now comparison posters.
-- [ ] P11 Report (by 20 Nov 12:00 UTC): ART-REPORT.md (scores vs R0, PUPPET-SCORES summary, what shipped, known issues, provenance), STATUS-VI.md summary, #427 description. Then improve the lowest-scored unit until the deadline.
+- [x] P11 Report (by 20 Nov 12:00 UTC): ART-REPORT.md (scores vs R0, PUPPET-SCORES summary, what shipped, known issues, provenance), STATUS-VI.md summary, #427 description. Then improve the lowest-scored unit until the deadline.
 
 - [ ] P14 [auto] Lowest-score motion continuation after report: Spool Ram (overall7.6/motion7.5) gets a forward horn dip, planted front legs and delayed tail recovery. Accept only from x1 before/after and reduced-motion/face/HP checks; preserve art/rig and scores of untouched units.
 
@@ -62,3 +62,5 @@ P13 complete 2026-11-10T19:03:20.254644+00:00:20correct-viewport before/after vi
 P15 complete 2026-11-10T19:21:37.791752+00:00:12actual phase3 views with3/4helpers across3bosses×2sizes; stable survivor lanes,0page/bounds/HPerrors; type/lint6tests/parityPASS; combined38,175,926B. Final boss film P10 next.
 
 P10 complete 2026-11-10T20:05:27.602413+00:00: retained85.49s/9ult normal; corrected136.93s/13ult boss through visible Victory1.8s; four/three helpers clear,0page/faceHPerrors; saved12speed checks/posters reused. P11 report next.
+
+P11 complete 2026-11-10T20:06:26.833444+00:00: report includes all25units, acceptedfilms, R0comparison limits, provenance,38175926B combinedbudget and honest8.225selfscore below8.5. Continue P14/P16; report is not a stop.
