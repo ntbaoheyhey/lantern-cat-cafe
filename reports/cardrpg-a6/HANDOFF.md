@@ -1,12 +1,11 @@
-# Lane A6 handoff — 2026-11-10T22:59:22Z
-NOW: Q29 source accepted;20current views inspected, all13notes/controls2sizes,8tests/types/lint retained. Source commit then B P31 merge/package.
-Branch: codex/cardrpg-a6-q0-2026-11-10; last pushed8c7143ecf; draft438 throughQ28.
-NEXT: 1. Commit Q29 source/evidence, merge newest published B with ownership policy.
-NEXT: 2. Run touched integration checks, package current standalone and inspect offline notes/Velvet.
-NEXT: 3. Tick/push/update438; Q30 bounded formation tools from inspected720p evidence.
-RUNNING: Vite91373/5960; no A6 heavy lease. Probe93801 exited/released; logs/tmp/cardrpg-a6-q29-*.
-DONE: Q29source:20current views;10superseded720p retained;2presentationrepairs. Zero browser errors.
-DONE: Q0–Q28complete/pushed; Q28 38840733B/447assets/60chunks,20source+20offlineviews.
-DONE: Final85s/62sfilms; UI1800.70s26wins/2losses0errors;500seeds60001–60500 ONCE; fullE2E420/421+3focusedidlepasses.
-KNOWN: Target8.5unmet; earlyloss/recovery/HP/bosstail remain; no fourth numerical tuning loop.
-DECISIONS: Compactforecast retains band/firstfallen. Oneagent/originalart/draftonly/fullyauto; preserve accepted work.
+# Lane A6 handoff — 2026-11-10T23:02:17Z
+NOW: Q29 complete/package accepted. Commit/push/draft438 then Q30 bounded formation tools.
+Branch: codex/cardrpg-a6-q0-2026-11-10; current85b6ee9f8; last pushed8c7143ecf.
+NEXT: 1. Commit package/reports, push branch, update draft438 from prepared body.
+NEXT: 2. Read rules/queue/prompt0+4/INBOX/currentB; apply Q30 focused tools.
+NEXT: 3. Check current team/save/suggest/replace/plan locks, keyboard/focus and both sizes before package.
+RUNNING: Vite91373/5960 retained; package95243 released; no heavy A6 lease. Logs/tmp/cardrpg-a6-q29-*.
+DONE: Q29source470cb4c54/BP31merge85b6ee9f8;20current source+24offlineviews inspected;42tests/types/lint;38871577B/447assets/60chunks;0errors/network.
+DONE: Q0–Q28complete/pushed; final85s/62sfilms; UI1800.70s26wins/2losses0errors;500seeds60001–60500 ONCE; E2E420/421+3focusedidlepasses.
+KNOWN: Target8.5unmet; earlyloss/recovery/HP/bosstail remain; no fourth numerical tuning loop. Team/BondBook720p7.9 remain lowest.
+DECISIONS: Q30 existing tools become bounded/focused, no game rules. Oneagent/originalart/draftonly/fullyauto; preserve accepted work.

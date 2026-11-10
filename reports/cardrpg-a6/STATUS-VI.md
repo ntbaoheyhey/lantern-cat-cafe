@@ -187,3 +187,6 @@ Chuyển mã lưu/đặt lại có xác nhận/hủy và toàn bộ tùy chọn 
 
 2026-11-10T22:59:22Z: Q29 đã duyệt20ảnh hiện tại;13loại địch đọc/chọn đúng ở hai kích thước, chữ15px và toàn bộ thông tin vừa trên nút Fight.
 Đổi hàng/bàn phím/giảm chuyển động giữ nguyên seed và địch;8test/type/lint đã đạt. Đang tích hợp Velvet và đóng gói offline.
+
+2026-11-10T23:02:17Z: Q29 hoàn tất: demo38,87MB có ghi chú địch dễ đọc và Velvet mới;24ảnh offline đã duyệt,42test/type/lint đạt.
+13ghi chú,đổi hàng,bàn phím,Fight đều giữ đúng trận ở hai kích thước;không lỗi/gọi mạng. Tiếp tục công cụ chọn đội để đọc được lý do gợi ý và không đẩy đội hình xuống dưới màn hình.

@@ -39,3 +39,5 @@ Recheck 2026-11-10T21:12:15Z, after Q19/Q20/Q21: formation and friendship select
 Recheck 2026-11-10T21:47:35Z, after Q21/Q22/Q23: skill previews and Daily milestone claims now respond directly within the720p sheet. The next observed low is Bag7.9/7.8: enhancement and comparisons require extra scrolling. Q24 follows the existing stable action-zone and readable metadata guidance; no new mechanics or additional research needed.
 
 Recheck2026-11-10T22:25Z afterQ24/Q25/Q26: gear and reward actions now remain in stable visible areas. The next tied-low guide still forces catalogue scanning across a long sheet; Q27 applies the same existing readable metadata/direct access principle to lookup, with a large chosen note and bounded index. No new genre research or game system needed.
+
+Recheck2026-11-10T23:02:17Z, afterQ27/Q28/Q29: selected readable notes and bounded save controls now preserve the720p action zone. The inspected Team suggestions still hide why each team is recommended and push the crew below the fold. Q30 applies the same existing focused-interaction pattern to current formation commands, with keyboard return; no new research or rules needed.
