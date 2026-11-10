@@ -479,6 +479,13 @@ export class TurnScene {
     const targets=frame?frame.plan.targetIds.map(id=>this.puppets.get(id)).filter((p):p is Puppet=>!!p):[];
     for(const a of view.actors){const p=this.puppets.get(a.id);if(!p)continue;const slot=view.model?this.zero:view.autoBattle?cardFormation(a,view.rows?.[a.id]):formationPoint(a,view.boss);if(!view.autoBattle||a.hp>0)p.base.set(slot.x,slot.y,slot.z);if(this.lookStageEnabled&&view.galleryPreview&&!illustratedBattle&&a.side==='party'){const lane=a.slot%3;p.base.set([-1.35,-2.65,-3.65][lane]!,0,[.25,1.05,-.65][lane]!);}
       if(this.lookStageEnabled&&view.autoBattle&&bossFraming&&a.side==='party')p.base.z-=illustratedBattle?.10:1.1;
+      // Rain Spool's wide horns/cape need a clear lane beside the front cat.
+      // Keep its accepted height and camera; move its sockets/shadow together.
+      if(illustratedBattle&&!view.model&&bossFraming&&a.hp>0&&p.asset==='rain-spool')p.base.x+=.85;
+      // Boss adds stand in distinct foreground lanes: a rear thread otherwise
+      // disappears behind a wide boss even when all HP cards are collision-free.
+      if(illustratedBattle&&!view.model&&bossFraming&&a.hp>0&&p.asset==='binding-thread')
+        p.base.set(a.slot%2?2.85:4.15,0,a.slot%2?1.25:.15);
       p.root.position.copy(p.base);p.root.scale.setScalar(view.model?1:figureScale(a.role,a.side)*(isReadableBattle()&&view.autoBattle?(p.asset==='kettle-knight'?(bossFraming?3.50:2.1):a.role==='yarn'?(view.boss?(p.asset==='pantry-crown'?2.12:1.94):1.25):a.side==='party'?1.25:1.38):1));p.model.rotation.y=view.model?view.model.angle:view.autoBattle?cardBodyYaw(a.side,0,0):restYaw(a.side);
       if(illustratedBattle&&!view.model&&p.model.userData.lookPuppet){
         // Normalize illustrated heights; native-era role compensation made Yarn dwarf cats.

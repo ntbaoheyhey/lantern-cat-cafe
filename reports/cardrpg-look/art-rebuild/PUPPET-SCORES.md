@@ -17,7 +17,7 @@ Evidence uses A6 shell in a disposable merged preview; primary branch contains n
 | Brioche | 8.6 | 7.5 | 7.8 | 7.8 | p4/batch2-final/brioche-comparison.webp and brioche-motion.webp; basket/skirt/tail retained |
 | Marigold | 8.6 | 7.5 | 7.8 | 7.8 | p4/batch2-final/marigold-comparison.webp and marigold-motion.webp; petal collar and teapot remain readable |
 | Sorrel | 8.6 | 7.5 | 7.7 | 7.7 | p4/batch2-final/sorrel-comparison.webp and sorrel-motion.webp; leaf hat/staff retained; eye ROI repaired |
-| Inkcap | 8.6 | 7.5 | 7.7 | 7.7 | p4/batch2-final/inkcap-comparison.webp and inkcap-motion.webp; mushroom hat/lantern retained; decoy status cue awaits P6 |
+| Inkcap | 8.6 | 7.5 | 7.7 | 7.7 | p4/batch2-final/inkcap-comparison.webp and inkcap-motion.webp; mushroom hat/lantern retained; original paper-cat decoy cue completed in P6 |
 | Button Guard | 8.6 | 7.5 | 7.8 | 7.8 | p5/batch1-final/button-guard-comparison.webp and button-guard-motion.webp; button shield/needle silhouette intact |
 | Sock Skipper | 8.6 | 7.5 | 7.7 | 7.7 | p5/batch1-final/sock-skipper-comparison.webp and sock-skipper-motion.webp; knit body and loose thread preserved; compact arm gesture |
 | Spool Ram | 8.6 | 7.5 | 7.6 | 7.6 | p5/batch1-final/spool-ram-comparison.webp and spool-ram-motion.webp; horns and spool intact; limited front-hoof articulation |
@@ -27,7 +27,7 @@ Evidence uses A6 shell in a disposable merged preview; primary branch contains n
 | Binding Thread | 8.6 | 7.5 | 7.7 | 7.7 | p5/batch2/binding-thread-comparison.webp and binding-thread-motion.webp; thin thread silhouette retained |
 | Practice Cushion | 8.6 | 7.5 | 7.7 | 7.7 | p5/batch2/practice-cushion-comparison.webp and practice-cushion-motion.webp; tassels and cushion face intact |
 | Pollen Scout | 8.6 | 7.5 | 7.8 | 7.8 | p5/batch2/pollen-scout-comparison.webp and pollen-scout-motion.webp; independent wing joints |
-| Rain Spool | 8.6 | 7.5 | 7.8 | 7.8 | p5/batch2/rain-spool-comparison.webp and rain-spool-motion.webp; boss eye glow and cape; broad silhouette near party |
+| Rain Spool | 8.6 | 7.5 | 8.0 | 8.0 | p13/repair1/rain-spool-spacing.webp; party gap restored and both adds visible; accepted scale and motion unchanged |
 | Crumb Sentinel | 8.6 | 7.5 | 7.8 | 7.8 | p5/batch2/crumb-sentinel-comparison.webp and crumb-sentinel-motion.webp; ornate armour retained |
 | Pantry Crown | 8.6 | 7.5 | 8.0 | 8.0 | p5/batch2/pantry-crown-comparison.webp and pantry-crown-motion.webp; crown and pantry door clean; authored eye ROI |
 | Live pilot battle | — | 7.5 | 7.5 | 7.5 | p2/live2/battle-1440.webp + battle-1280.webp; boss dominates cats, Binding Thread is still legacy until P5 |
@@ -44,3 +44,5 @@ P5 final roster:25of25cat/enemy ids have concept puppets; four boss showcases/re
 P6 current battle/VFX audit: readability8.4, style coherence8.3, timing8.1, spectacle7.5; combined8.1. This does not overwrite the unit-motion scores or the historical pilot battle. Evidence p6/REVIEW.md and the three overview sheets; shared envelope/gesture limits remain explicit.
 
 P7 cafe stage/composition8.0 self-review: current A6 controlled pairs preserve clear faces with warm fill, night crescent and enemy accents. No per-unit motion score change. Evidence p7/REVIEW.md; Rain Spool proximity remains P13.
+
+P13 boss composition8.2 for covered Rain Spool/Yarn Giant/Pantry Crown fights: both add faces visible, scale unchanged, actual two-viewport audit. Wider stage/composition category remains8.1; no roster-wide motion score uplift.
