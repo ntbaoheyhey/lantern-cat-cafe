@@ -57,7 +57,9 @@ Check STOP-B/INBOX and fetch/show A6-OUTBOX between items. Commit/push and updat
 
 - [x] P33 [auto] Lowest-motion continuation: Teacup Healer leads a small spoon blessing with open-palm rise and delayed lid/face response. Repair observed spoon-finial, cup-handle, shoulder and saucer/foot ownership first; keep the ceramic bowl/handle/saucer rigid and preserve all original assets. Both sizes/natural x1 basic-signature/reduced/actual spoon and palm sockets/faceHP; max3 repairs.
 
-- [ ] P34 [auto] Lowest-motion continuation: Pollen Scout presents its pollen basket with a restrained wing draw/settle and hanging-hand countergesture. Repair observed wing pieces on head/arms/body, leaf pieces on arms and split boots; keep complete basket and preserve its open handle. Original eight parts/assets retained. Both sizes/natural x1 basic-signature/reduced/real pollen and fingertip sockets/faceHP; max3 repairs.
+- [x] P34 [auto] Lowest-motion continuation: Pollen Scout presents its pollen basket with a restrained wing draw/settle and hanging-hand countergesture. Repair observed wing pieces on head/arms/body, leaf pieces on arms and split boots; keep complete basket and preserve its open handle. Original eight parts/assets retained. Both sizes/natural x1 basic-signature/reduced/real pollen and fingertip sockets/faceHP; max3 repairs.
+
+- [ ] P35 [auto] Lowest-motion continuation: Crumb Sentinel braces its complete shield with a compact opposing gauntlet jab, quiet lid/face and planted boots. Repair observed shield rim/finger, shoulder/chest and boot/tabard ownership; preserve original six parts/assets. Both sizes/natural x1 basic-signature/reduced/real shield and fist sockets/faceHP; max3 repairs per issue.
 
 Research refinements 11/11: P6 uses the saved49+6cast audit and33tests; complete missing parity and visual acceptance. P7 records before/after plus representative cast timing. P8 reuses existing concepts/VFX and only exports missing formats. P10 adds representative x2/x3/reduced-motion readability checks alongside requested x1films. Completed P1–P5 are unchanged. Rationale in RESEARCH-PUPPET.md/DECISIONS.md.
 
@@ -132,3 +134,5 @@ P31 complete 2026-11-10T22:45:58.308705+00:00: source3/motion1,36web+9pipeline t
 P32 complete 2026-11-10T23:01:19.948566+00:00: source3/motion1,37web+10pipeline tests/type/lint/parity,16views/8castsPASS;38676830B. Whole needle lead, restrained wing draw, coherent abdomen and planted boots; motion7.7/overall7.8.
 
 P33 complete 2026-11-10T23:13:12.274298+00:00: source3/motion1,38web+11pipeline tests/type/lint/parity,16views/8castsPASS;38700642B. Whole spoon blessing/open palm, coherent ceramic bowl/handle/saucer and planted boots; motion7.7/overall7.8.
+
+P34 complete 2026-11-10T23:26:25.847495+00:00: source4/motion1,39web+12source tests/type/lint/parity,16views/8casts PASS;38775934B. Whole basket/handle, coherent leaf wings and planted boots; motion7.7/overall7.8.
