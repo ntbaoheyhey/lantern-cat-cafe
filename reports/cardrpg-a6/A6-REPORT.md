@@ -44,4 +44,3 @@ Final E2E was **420/421 initially**; a test-only readiness wait for idle accrual
 | Stability | 5% | 9.0 |
 
 Weighted self-score: **7.66/10; target8.5 not met**. The main limitations remain early loss, unreliable advice recovery and long boss tails. Q14–Q29 source/offline delivery is complete through B P31. Q29 verifies all13enemy notes, unchanged state/seed, keyboard/row/Fight/reduced-motion and current Velvet at both sizes;20current source+24offlineviews are inspected with zero browser errors/network requests. Earlier accepted galleries/final checks remain retained. Next: bounded formation tools and later published B tips. Receipts: [Q29](Q29.md), [Q28](Q28.md), [Q27](Q27.md), [Q26](Q26.md), [Q25](Q25.md), [Q24](Q24.md), [Q23](Q23.md), [Q22](Q22.md), [Q21](Q21.md), [Q20](Q20.md), [Q19](Q19.md), [Q18](Q18.md), [Q14](Q14.md), [Q15](Q15.md), [Q17](Q17.md), [FIXLOG](FIXLOG.md).
-

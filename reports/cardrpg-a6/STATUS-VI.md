@@ -190,3 +190,6 @@ Chuyển mã lưu/đặt lại có xác nhận/hủy và toàn bộ tùy chọn 
 
 2026-11-10T23:02:17Z: Q29 hoàn tất: demo38,87MB có ghi chú địch dễ đọc và Velvet mới;24ảnh offline đã duyệt,42test/type/lint đạt.
 13ghi chú,đổi hàng,bàn phím,Fight đều giữ đúng trận ở hai kích thước;không lỗi/gọi mạng. Tiếp tục công cụ chọn đội để đọc được lý do gợi ý và không đẩy đội hình xuống dưới màn hình.
+
+2026-11-10T23:13:58Z: Đội hình đã duyệt34ảnh và8ảnh sửa khoảng cách; lý do gợi ý15px, nhãn hợp kích nằm trọn720p.
+Lưu/đổi ba chế độ,12mèo,bàn phím và khóa trong chuyến đạt;8test/type/lint giữ nguyên đạt. Đang tích hợp Needle Moth mới và đóng gói offline.

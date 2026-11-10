@@ -6,6 +6,7 @@ import {CARD_BY_ID} from '@taskbar-hero/game-rules/cardrpg';
 import { enemyGuideA6 } from './guide-a6';
 import { ForecastV4 } from '../depth/ForecastV4';
 import { PowerA6, QuickUpgradeA6 } from './PowerA6';
+import { FormationToolA6, FormationTrioA6 } from './FormationToolA6';
 import { MODE_TEAMS_A6, suggestedTeamsA6 } from './formation-a6';
 
 function BondLinesA6({ host, ids, rows }: { host: RefObject<HTMLDivElement | null>; ids: string[]; rows: Record<string,R.Row> }) {
@@ -35,6 +36,7 @@ export function FormationA6({m,preparing=false}:{m:DepthModel;preparing?:boolean
   const plan=battle?.v4?.plan??state.v4!.plan;
   const [picked,setPicked]=useState(ids[0]!),[mode,setMode]=useState<R.Run['mode']>(state.run?.mode??'campaign');
   const selected=ids.includes(picked)?picked:ids[0]!;
+  const [tool,setTool]=useState<'saved'|'suggested'|'replace'|null>(null);
   const locked=preparing?!!battle?.v4?.committed||!!m.replay||m.watching:!!state.run&&!state.run.complete;
   const rosterLocked=locked||preparing&&!!state.run&&(state.run.visited.length>0||state.run.floor>1&&!state.run.towerA6);
   const root=useRef<HTMLDivElement>(null);
@@ -48,13 +50,34 @@ export function FormationA6({m,preparing=false}:{m:DepthModel;preparing?:boolean
     m.apply(result,'Formation ready.');
   };
   return <section className="a6-formation" aria-label="Formation" data-preparing={preparing}>
-    <details className="a6-team-picker"><summary>Saved teams</summary><div className="a6-mode-team"><label>Saved for <select aria-label="Team mode" value={mode} onChange={e=>setMode(e.target.value as R.Run['mode'])}>{MODE_TEAMS_A6.map(item=><option key={item.id} value={item.id}>{item.name}</option>)}</select></label>
-      <button disabled={preparing||locked} onClick={()=>m.apply(R.saveLoadoutV4(m.state,modeInfo.slot,`${modeInfo.name} team`),`${modeInfo.name} team saved.`)}>Save team</button>
-      <button disabled={!saved||rosterLocked} onClick={()=>{if(saved&&preparing)update(saved.team,{...rows,...saved.rows},saved.plan);else m.apply(R.applyLoadoutV4(m.state,modeInfo.slot),'Saved team restored.');}}>Use saved {modeInfo.name.toLowerCase()} team</button></div></details>
-    <details className="a6-team-picker"><summary>Suggested teams · 3 plans</summary><div className="a6-suggested" aria-label="Suggested teams">{suggestions.map((suggestion,index)=><button key={suggestion.name} disabled={rosterLocked} aria-label={`Use suggested team ${index+1}: ${suggestion.name}`} onClick={event=>{update(suggestion.team,{...rows,...suggestion.rows},suggestion.plan);event.currentTarget.closest('details')!.open=false;}}>
-      <small>Suggested {index+1}</small><b>{suggestion.name}</b><span>{suggestion.team.map(id=>R.CAT_BY_ID[id]!.name).join(' · ')}</span><PowerA6 value={suggestion.power}/><span>{suggestion.why}</span></button>)}</div></details>
-    <details className="a6-team-picker"><summary>Replace {R.CAT_BY_ID[selected]!.name} or change the plan</summary><div className="uv-roster">{state.account.cards.filter(c=>!ids.includes(c.cardId)).map(card=><button key={card.id} disabled={rosterLocked||preparing&&card.level<(state.run?.challengeLevel??1)} onClick={()=>{update(ids.map(id=>id===selected?card.cardId:id),{...rows,[card.cardId]:rows[selected]!});setPicked(card.cardId);}}><img {...portraitProps(card.cardId)} alt=""/><b>{R.CAT_BY_ID[card.cardId]!.name}</b><small>Level {card.level}</small></button>)}{state.account.cards.length===ids.length&&<p>Recruit more friends to build new teams.</p>}</div>
-      <div className="a6-mode-team"><label>Target <select aria-label="Formation focus" disabled={locked} value={plan.focus} onChange={e=>update(ids,rows,{...plan,focus:e.target.value as R.StandingPlan['focus']})}><option value="finish">Weak foes</option><option value="support">Their support</option><option value="leader">Their leader</option></select></label><label>Care <select aria-label="Formation care" disabled={locked} value={plan.care} onChange={e=>update(ids,rows,{...plan,care:e.target.value as R.StandingPlan['care']})}><option value="steady">Steady</option><option value="protect">Protect</option></select></label></div></details>
+    <div className="a6-formation-tools" role="group" aria-label="Formation tools">
+      <button aria-haspopup="dialog" onClick={()=>setTool('saved')}>Saved teams</button>
+      <button aria-haspopup="dialog" onClick={()=>setTool('suggested')}>Suggested teams · 3 plans</button>
+      <button aria-haspopup="dialog" onClick={()=>setTool('replace')}>Replace {R.CAT_BY_ID[selected]!.name} or change the plan</button>
+    </div>
+    {tool&&<FormationToolA6 title={tool==='saved'?'Saved teams':tool==='suggested'?'Suggested teams':`Replace ${R.CAT_BY_ID[selected]!.name} or change the plan`} catId={selected} onClose={()=>setTool(null)}>
+      {(locked||rosterLocked)&&<p className="a6-formation-lock">{locked?'This crew is committed to the current patrol. You can still inspect its plans.':'The patrol has begun. Keep this crew; rows and plans remain editable.'}</p>}
+      {tool==='saved'&&<section className="a6-saved-team-desk" aria-label="Saved team">
+        <div className="a6-saved-team-top"><label>Saved for <select aria-label="Team mode" value={mode} onChange={e=>setMode(e.target.value as R.Run['mode'])}>{MODE_TEAMS_A6.map(item=><option key={item.id} value={item.id}>{item.name}</option>)}</select></label><p>{saved?`${modeInfo.name} crew · saved rows and plan`:`No ${modeInfo.name.toLowerCase()} team saved yet. Your current crew is shown.`}</p></div>
+        <FormationTrioA6 ids={saved?.team??ids} rows={saved?.rows??rows}/>
+        {saved&&<p>Target: {saved.plan.focus==='leader'?'Their leader':saved.plan.focus==='support'?'Their support':'Weak foes'} · Care: {saved.plan.care==='protect'?'Protect':'Steady'}</p>}
+        <footer><p>{preparing?'Save a crew from the Team screen between patrols.':'Save your current crew, positions and plan for this mode.'}</p><button disabled={preparing||locked} onClick={()=>m.apply(R.saveLoadoutV4(m.state,modeInfo.slot,`${modeInfo.name} team`),`${modeInfo.name} team saved.`)}>Save team</button>
+          <button disabled={!saved||rosterLocked} onClick={()=>{if(saved&&preparing)update(saved.team,{...rows,...saved.rows},saved.plan);else m.apply(R.applyLoadoutV4(m.state,modeInfo.slot),'Saved team restored.');setTool(null);}}>Use saved {modeInfo.name.toLowerCase()} team</button></footer>
+      </section>}
+      {tool==='suggested'&&<section className="a6-suggestion-desk" aria-label="Suggested teams">
+        <p>Choose a crew and its standing plan. Your cats carry it out automatically.</p>
+        <div className="a6-team-suggestions">{suggestions.map((suggestion,index)=><button key={suggestion.name} disabled={rosterLocked} aria-label={`Use suggested team ${index+1}: ${suggestion.name}`} onClick={()=>{update(suggestion.team,{...rows,...suggestion.rows},suggestion.plan);setTool(null);}}>
+          <small>PLAN {index+1}</small><h3>{suggestion.name}</h3><FormationTrioA6 ids={suggestion.team} rows={suggestion.rows}/><PowerA6 value={suggestion.power}/><p>{suggestion.why}</p><strong>Use this team →</strong>
+        </button>)}</div>
+        {!suggestions.length&&<p className="a6-formation-empty">No full crew meets this route’s level requirement. Train three companions before trying a suggested team.</p>}
+      </section>}
+      {tool==='replace'&&<section className="a6-replacement-desk" aria-label="Companions and plan">
+        <p>Choose a friend for {R.CAT_BY_ID[selected]!.name}’s {rows[selected]==='front'?'front':'back'} seat.</p>
+        <div className="a6-replacement-cats">{state.account.cards.filter(c=>!ids.includes(c.cardId)).map(card=><button key={card.id} aria-label={`Replace ${R.CAT_BY_ID[selected]!.name} with ${R.CAT_BY_ID[card.cardId]!.name}`} disabled={rosterLocked||preparing&&card.level<(state.run?.challengeLevel??1)} onClick={()=>{update(ids.map(id=>id===selected?card.cardId:id),{...rows,[card.cardId]:rows[selected]!});setPicked(card.cardId);setTool(null);}}><img {...portraitProps(card.cardId)} alt=""/><b>{R.CAT_BY_ID[card.cardId]!.name}</b><small>Level {card.level}{preparing&&card.level<(state.run?.challengeLevel??1)?` · Needs ${state.run!.challengeLevel}`:''}</small></button>)}</div>
+        {state.account.cards.length===ids.length&&<p className="a6-formation-empty">Recruit more friends to build new teams. You can still choose your current crew’s plan below.</p>}
+        <footer><div><b>Standing plan</b><p>Applied automatically during the battle.</p></div><label>Target <select aria-label="Formation focus" disabled={locked} value={plan.focus} onChange={e=>update(ids,rows,{...plan,focus:e.target.value as R.StandingPlan['focus']})}><option value="finish">Weak foes</option><option value="support">Their support</option><option value="leader">Their leader</option></select></label><label>Care <select aria-label="Formation care" disabled={locked} value={plan.care} onChange={e=>update(ids,rows,{...plan,care:e.target.value as R.StandingPlan['care']})}><option value="steady">Steady</option><option value="protect">Protect</option></select></label></footer>
+      </section>}
+    </FormationToolA6>}
     <div className="a6-formation-stage" ref={root} style={{'--a6-front-seats':`${Math.max(1,ids.filter(id=>rows[id]==='front').length)}fr`,'--a6-back-seats':`${Math.max(1,ids.filter(id=>rows[id]==='rear').length)}fr`} as CSSProperties}><BondLinesA6 host={root} ids={ids} rows={rows}/>{(['front','rear'] as const).map(row=><section className="a6-formation-row" key={row} aria-label={`${row==='front'?'Front':'Back'} row`}>
       <header><div><b>{row==='front'?'Front · protect':'Back · support'}</b><small>{row==='front'?'Takes ordinary hits':'Cover while the front holds'}</small></div><button disabled={locked||rows[selected]===row||(row==='rear'&&!ids.some(id=>id!==selected&&rows[id]==='front'))} onClick={()=>update(ids,{...rows,[selected]:row})} aria-label={`Place ${R.CAT_BY_ID[selected]!.name} ${row}`}>Place here</button></header>
       <div className="a6-row-cats">{ids.filter(id=>rows[id]===row).map(id=><button key={id} data-seat={id} className="a6-formation-cat" data-rarity={CARD_BY_ID[id]!.rarity} disabled={locked} aria-pressed={selected===id} aria-label={`Select ${R.CAT_BY_ID[id]!.name} for placement`} onClick={()=>setPicked(id)}>

@@ -1,11 +1,12 @@
-# Lane A6 handoff — 2026-11-10T23:02:17Z
-NOW: Q29 complete/package accepted. Commit/push/draft438 then Q30 bounded formation tools.
-Branch: codex/cardrpg-a6-q0-2026-11-10; current85b6ee9f8; last pushed8c7143ecf.
-NEXT: 1. Commit package/reports, push branch, update draft438 from prepared body.
-NEXT: 2. Read rules/queue/prompt0+4/INBOX/currentB; apply Q30 focused tools.
-NEXT: 3. Check current team/save/suggest/replace/plan locks, keyboard/focus and both sizes before package.
-RUNNING: Vite91373/5960 retained; package95243 released; no heavy A6 lease. Logs/tmp/cardrpg-a6-q29-*.
-DONE: Q29source470cb4c54/BP31merge85b6ee9f8;20current source+24offlineviews inspected;42tests/types/lint;38871577B/447assets/60chunks;0errors/network.
-DONE: Q0–Q28complete/pushed; final85s/62sfilms; UI1800.70s26wins/2losses0errors;500seeds60001–60500 ONCE; E2E420/421+3focusedidlepasses.
-KNOWN: Target8.5unmet; earlyloss/recovery/HP/bosstail remain; no fourth numerical tuning loop. Team/BondBook720p7.9 remain lowest.
-DECISIONS: Q30 existing tools become bounded/focused, no game rules. Oneagent/originalart/draftonly/fullyauto; preserve accepted work.
+# Lane A6 handoff — 2026-11-10T23:13:58Z
+NOW: Q30 source accepted:34main+8layoutviews inspected, eighttests/types/lint pass. Commit and merge B P32 before offline package.
+Branch: codex/cardrpg-a6-q0-2026-11-10; current/last pushed df662f9c0; draft438 throughQ29.
+NEXT: 1. Commit source and retainedQ29 build.json; merge publishedB9a20d42a2 with merge commit.
+NEXT: 2. Build/check offline plus NeedleMoth views, update reports/draft438/push.
+NEXT: 3. Q31 BondBook readable index/notes drafts at/tmp/cardrpg-a6-q31-*; apply after Q30 acceptance.
+RUNNING: Vite91373/5960 retained; no heavy A6lease; layout99774 exited/released; logs/tmp/cardrpg-a6-q30-*.
+DONE: Q30 all12cats,three saved modes/suggestions,exactplan/rows,account/seedfoes,locks,keyboard/reducedmotion pass2sizes; one presentation repair.
+DONE: Q29source470cb4c54/BP31merge85b6ee9f8/packagedf662f9c0;20source+24offlineviews/42tests;38871577B;0errors/network.
+DONE: Q0–Q29complete/pushed; Q15final85s/62sfilms,1800.70s26wins2losses;500seeds60001–60500 ONCE; E2E420/421+3focusedidlepasses retained.
+KNOWN: Target8.5unmet; earlyloss/recovery/HP/bosstail remain; no fourth numerical tuning loop. BondBook720p7.9next.
+DECISIONS: Q30 native modal uses existing commands/art, maincatart unchanged. Oneagent/draftonly/originalart/fullyauto.
