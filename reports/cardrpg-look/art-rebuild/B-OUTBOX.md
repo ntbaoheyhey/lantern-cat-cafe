@@ -92,3 +92,6 @@ The original shield/lantern lifts forward/up toward foes, with head/paw/tail res
 
 ## P24 — Clover lift-then-pour
 Clover raises the original glass teapot on charge and tips it at release, with restrained arm/head/tail response. Original atlas/rig and draw count stay unchanged. 29 tests, 16 paired views, 12 natural x1 casts, type/lint and parity pass; zero page/socket/faceHP/bounds errors, p95 <=16.8 ms. Both controlled artifacts use current A6 5badf4428c41c694d2ff0ac936b7ba27b33c22d9; combined delivery 38,193,062 B, headroom 1,806,938 B; B assets 23,549,548 B. No event/HUD/flag change. Evidence p24/REVIEW.md; motion7.7/overall7.8. Earlier prose short A6 ref e94713b8e was a typo; p18/preview-source.json has the authoritative full previous SHA.
+
+## P25 — Panko whole roller and strike
+Repaired only Panko atlas/rig/config: full rolling pin+mitten in armL, coherent head/shoulder ownership; mainHand remains armL, offHand correctly follows loaf-shield armR. Bounded windup/down-forward tap with shield/head/tail recovery.30web+3pipeline tests/type/lint/parity,16pairedviews/12x1casts including reducedPASS;0page/socket/faceHP/bounds errors,p95<=16.8ms. A65badf4428+B38280606B/headroom1719394B; Bembedded23636972B. Existing portrait manifest/flags/events/HUD unchanged. Source/old masters preserved; evidence p25/REVIEW.md, motion7.7/overall7.8.

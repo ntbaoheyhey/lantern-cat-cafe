@@ -39,6 +39,10 @@ Check STOP-B/INBOX and fetch/show A6-OUTBOX between items. Commit/push and updat
 
 - [x] P24 [auto] Lowest-motion continuation: Clover lifts its original glass teapot during charge, tips the spout at impact and settles with free-arm/head/tail response. Keep glass, sleeve, leaf collar and feet coherent; no new tea/prop parts. Original atlas/rig retained; refreshed A6 preview for paired two-size/basic/signature/ultimate/reduced/socket/HP checks; max3repairs.
 
+- [x] P25 [auto] Lowest-motion continuation: repair Panko rolling-pin ownership (currently split across head/body/armL), preserve original source/old masters, then author a small roller strike with loaf-shield brace and head/tail recovery. Keep whole utensil/mitten, chin/hat and shoulder overlap coherent; rebuild only this rig/atlas with owned-alpha fill. Both sizes/x1 basic-signature-ultimate/reduced/socket/HP/source-partition checks; max3repairs.
+
+- [ ] P26 [auto] Lowest-motion continuation: Mallow leads with a bounded whisk flourish, with free mitten/head/tail recovery. Inspect original arm/scarf ownership first; keep the whole whisk and scarf coherent, use the existing atlas/rig. Both sizes/x1 basic-signature-ultimate/reduced/true tip/socket/faceHP checks; max3repairs.
+
 Research refinements 11/11: P6 uses the saved49+6cast audit and33tests; complete missing parity and visual acceptance. P7 records before/after plus representative cast timing. P8 reuses existing concepts/VFX and only exports missing formats. P10 adds representative x2/x3/reduced-motion readability checks alongside requested x1films. Completed P1–P5 are unchanged. Rationale in RESEARCH-PUPPET.md/DECISIONS.md.
 
 ## Completed history
@@ -94,3 +98,5 @@ P22 complete 2026-11-10T20:58:14.081635+00:00: accepted firstcandidate/16pairedp
 P23 complete 2026-11-10T21:02:30.587145+00:00: Mochi shieldforward/up/cleanoverlap;28tests/16pairedviews/12casts/type/lint/parityPASS;38189362B; motion7.7/overall7.8.
 
 P24 complete 2026-11-10T21:09:16.635786+00:00: Clover held teapot lift then release tip; 29tests/16pairedviews/12casts/type/lint/parityPASS; A65badf4428+B38193062B; motion7.7/overall7.8.
+
+P25 complete 2026-11-10T21:24:22.860137+00:00: whole roller/mitten partition and chin repair accepted;30web+3pipeline tests,16pairedviews/12casts/type/lint/parityPASS;38280606B. Motion7.7/overall7.8; original/source1 masters retained.

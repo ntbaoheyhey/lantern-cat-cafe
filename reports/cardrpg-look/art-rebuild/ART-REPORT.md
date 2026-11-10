@@ -11,13 +11,13 @@ These scores are Lane B visual judgments, not user acceptance or an independent 
 | Rubric | Weight | Score | Evidence and limitation |
 | --- | ---: | ---: | --- |
 | Concept match and battle appearance | 35% | 8.2 | Every unit retains its concept. Unit fidelity is 8.6–8.8; battle appearance is 7.7–8.0. |
-| Motion | 20% | 7.5 | Eight semantic motions per unit; ten units now have authored refinements scoring 7.7. Remaining shared rigid-part gestures stay restrained. |
+| Motion | 20% | 7.5 | Eight semantic motions per unit; eleven units now have authored refinements scoring 7.7. Remaining shared rigid-part gestures stay restrained. |
 | VFX at x1 | 15% | 8.1 | 49+6 cast audit, original motifs and real moving prop sockets. Spectacle (7.5) still trails readability. |
 | Camera, composition and stage | 15% | 8.1 | Closer framing, warm/cool cafe light, Rain Spool spacing and clear three/four-helper phase-three formations. |
 | Roster coverage | 10% | 10.0 | All 25 current rules IDs have a valid original rig and atlas. |
-| Performance and size | 5% | 8.5 | Warmed cast p95/max 16.8 ms; current combined artifact 38.19 MB. Cold loading is not included in the timing claim. |
+| Performance and size | 5% | 8.5 | Warmed cast p95/max 16.8 ms; current combined artifact 38.28 MB. Cold loading is not included in the timing claim. |
 
-The weighted score is **8.225/10 (8.23 rounded)**, below the 8.5 target. Ten units now have accepted authored motion at 7.7: Soot, Spool Ram, Inkcap, Sock Skipper, Cinnamon, Sorrel, Binding Thread, Practice Cushion, Mochi and Clover. The remaining shared gestures, sampled eyelid closure and understated ultimate spectacle still limit overall quality. These individual changes do not justify a whole-roster score increase; no score is raised merely because a test passed.
+The weighted score is **8.225/10 (8.23 rounded)**, below the 8.5 target. Eleven units now have accepted authored motion at 7.7: Soot, Spool Ram, Inkcap, Sock Skipper, Cinnamon, Sorrel, Binding Thread, Practice Cushion, Mochi, Clover and Panko. The remaining shared gestures, sampled eyelid closure and understated ultimate spectacle still limit overall quality. These individual changes do not justify a whole-roster score increase; no score is raised merely because a test passed.
 
 R0's weighted 5.9966 used a different rubric and is not directly comparable. Comparable observations are cat appeal 5.0 → about 7.8 battle appearance; foes 4.0 → 7.7–8.0; motion 5.5 → 7.5; VFX 6.233 → 8.1; stage 6.5 → 8.0. The two comparison posters preserve the historical R0 images. They do not claim the same HUD, camera or exact action frame.
 
@@ -50,6 +50,8 @@ P18 adds16paired Cinnamon views,12natural casts,24focused tests and exact parity
 P20 closes A6's boss-atmosphere disposal report: each geometry/material/instanced mesh releases exactly once, including motes, even on a second disposal. The existing test now observes each actual resource; four focused tests and typecheck/lint pass. Live drawing is unchanged.
 
 P19 reuses16paired Sorrel views,12natural x1 casts,25focused tests and exact parity. The staff pivots at its source-painted contact with drift below1e-15; shoulders and wrist remain continuous. Motion7.7/overall7.7, with no whole-roster uplift.
+
+P25 repairs Panko’s whole rolling-pin/mitten ownership and detached chin strips before adding a bounded baker strike and loaf-shield brace.30web+3pipeline tests,16pairedviews/12naturalcasts/type/lint/parityPASS; current combined artifact38280606B, headroom1719394B, Bembedded23636972B. Original and intermediate sources remain preserved; no whole-roster score uplift.
 
 P24 gives Clover a held teapot lift followed by a release-beat tip, with coherent glass/sleeve/collar overlap. 29 focused tests, 16 paired views, 12 natural x1 casts and parity pass in refreshed A6 5badf4428. The actual combined artifact is 38,193,062 bytes with 1,806,938 bytes headroom; B embedded assets remain 23,549,548 bytes.
 
