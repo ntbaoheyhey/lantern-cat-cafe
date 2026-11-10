@@ -1,3 +1,4 @@
+import { paceActionA6 } from './pacing-a6';
 import * as R from '@taskbar-hero/game-rules/src/cardrpg/depth/index';
 import { firstInvitation } from '@taskbar-hero/game-rules/src/cardrpg/depth/onboarding';
 import { CARDS, type Command } from '@taskbar-hero/game-rules/cardrpg';
@@ -38,6 +39,7 @@ export class DepthModel {
   plan: EffectPlan | null = null;
   animationAt = 0;
   playbackAt = 0;
+  private playbackFrameAt?: number;
   ultimateBannerUntil = 0;
   comboBanner = '';
   comboBannerUntil = 0;
@@ -287,7 +289,7 @@ export class DepthModel {
       && presentation.impact.actors.filter(target => target.side === 'enemy').every(target => target.hp <= 0);
     this.momentNote = savingHeal ? 'Clutch heal' : lastHit ? 'Last hit' : '';
     if (savingHeal) savingHeal.note = 'Clutch heal';
-    this.plan = createCardActionPlan(events, identity);
+    this.plan = paceActionA6(createCardActionPlan(events, identity), battle.initial);
     if(this.a6Battle && this.plan.ultimate && actor.side==='party'){
       this.ultimateBannersAt=this.ultimateBannersAt.filter(at=>this.playbackAt-at<10000);
       if(this.ultimateBannersAt.length<2){this.ultimateBannersAt.push(this.playbackAt);this.ultimateBannerUntil=this.playbackAt+1400;}
@@ -305,11 +307,17 @@ export class DepthModel {
     this.animationAt = 0;
     this.notify();
   }
-  tick(milliseconds: number) {
+  tick(milliseconds: number, now = performance.now()) {
+    const previousFrame = this.playbackFrameAt;
+    this.playbackFrameAt = now;
     if (this.paused || !this.showBattle) return;
-    this.playbackAt += milliseconds;
+    // The shared canvas caps its delta at 100 ms. Keep opted-in playback at
+    // wall-clock speed on slow frames, without catching up an inactive tab.
+    const elapsed = this.a6Battle && !this.galleryBattle && previousFrame !== undefined
+      ? Math.max(milliseconds, Math.min(250, Math.max(0, now - previousFrame))) : milliseconds;
+    this.playbackAt += elapsed;
     if (!this.plan) { if (this.battle?.result && !this.galleryBattle) this.showResult(); return; }
-    this.animationAt += milliseconds * (this.galleryBattle ? this.gallerySpeed : this.state.settings.speed);
+    this.animationAt += elapsed * (this.galleryBattle ? this.gallerySpeed : this.state.settings.speed);
     if (!this.galleryBattle && !this.impactApplied && this.impactVisible) {
       this.impactApplied = true;
       this.notify(false);

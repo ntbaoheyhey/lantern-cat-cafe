@@ -12,6 +12,10 @@ const { chromium } = require('@playwright/test');
 const arg = (key, fallback) => process.argv.find(a => a.startsWith(`--${key}=`))?.slice(key.length + 3) ?? fallback;
 const output = resolve(root, arg('out', 'reports/cardrpg-a6/first-session.json'));
 const segment = Number(arg('segment', 0));
+const segmentSeconds = Number(arg('segment-seconds', 900));
+if (!Number.isFinite(segmentSeconds) || segmentSeconds < 1 || segmentSeconds > 900) {
+  throw Error('Each timing-lock segment must last between one and nine hundred seconds.');
+}
 const stopped = async () => access(resolve(root, 'STOP-A6')).then(() => true, () => false);
 if (!segment) {
   const browser = await chromium.launch({ headless: true, args: ['--remote-debugging-port=5963'] });
@@ -20,7 +24,7 @@ if (!segment) {
   try {
     for (let i = 1; i <= 2; i++) {
       const code = await new Promise((done, reject) => {
-        const child = spawn(process.execPath, ['tools/cardrpg-big/with-timing-lock.mjs', `A6-first-session-${i}`, process.execPath, 'tools/cardrpg-a6/first-session.mjs', `--segment=${i}`, `--out=${output}`], { cwd: root, stdio: 'inherit' });
+        const child = spawn(process.execPath, ['tools/cardrpg-big/with-timing-lock.mjs', `A6-first-session-${i}`, process.execPath, 'tools/cardrpg-a6/first-session.mjs', `--segment=${i}`, `--segment-seconds=${segmentSeconds}`, `--out=${output}`], { cwd: root, stdio: 'inherit' });
         child.on('error', reject); child.on('close', done);
       });
       if (code || await stopped()) { process.exitCode = code || 0; break; }
@@ -50,7 +54,7 @@ if (!segment) {
   const button = name => page.getByRole('button', { name, exact: typeof name === 'string' });
   const close = () => click(button('Close'), 'Close sheet');
   let prior = report.latest, liveEncounter = report.liveEncounter, unhandled = 0, lastCheckpoint = baseSeconds;
-  while (Date.now() - started < 900000 && !await stopped()) {
+  while (Date.now() - started < segmentSeconds * 1000 && !await stopped()) {
     try {
       const s = await page.evaluate(() => {
         const m = window.__depthReview;

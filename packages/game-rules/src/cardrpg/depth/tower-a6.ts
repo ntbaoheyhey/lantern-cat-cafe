@@ -20,11 +20,17 @@ export function towerFloorA6(floor: number) {
   const enemies: string[] = boss ? [[ 'yarn-giant', 'rain-spool', 'pantry-crown' ][chapter - 1]!] : [...formations[chapter - 1]![(floor - 1) % 4]!];
   const level = 1 + Math.floor((floor - 1) / 3), seed = 670001 + floor * 97;
   const stats = challengeStatsV4(level);
-  // Milestones retain their phase mechanics but have a shorter Tower HP budget.
+  // Compact HP bands keep fixed floors brisk; attacks, defenses and mechanics carry the climb.
   const scale = 1 + (floor - 1) * .025;
-  const enemyStats: NonNullable<BattleSetup['enemyStats']> = Object.fromEntries(Object.entries(stats).map(([id, s]) => [id,
-    { hp: Math.max(1, Math.round(s.hp * scale * (enemies.includes(id) && boss ? .55 : 1))),
-      attack: Math.max(1, Math.round(s.attack * (1 + (floor - 1) * .015))), defense: s.defense }]));
+  const enemyStats: NonNullable<BattleSetup['enemyStats']> = Object.fromEntries(Object.entries(stats).map(([id, s]) => {
+    const active = enemies.includes(id);
+    const formationBudget = chapter > 1 && (enemies.includes('kettle-knight') || enemies.includes('teacup-healer')) ? .72 : 1;
+    const hp = !active ? s.hp : boss ? Math.min(s.hp * scale * .55, 450 + floor * 2) * (chapter === 2 ? 1.12 : 1)
+      : Math.max(225 + floor * 2, Math.min(s.hp * scale, 250 + floor * 2)) * formationBudget;
+    return [id, { hp: Math.max(1, Math.round(hp)),
+      attack: Math.max(1, Math.round(s.attack * (1 + (floor - 1) * .015))),
+      defense: active && !boss ? Math.min(s.defense, 25) : s.defense }];
+  }));
   const node: RunNode = {id:'0-0',depth:0,lane:0,kind:boss?'boss':'battle',next:[],enemies};
   return {floor, chapter, level, seed, boss, enemies, enemyStats, node};
 }

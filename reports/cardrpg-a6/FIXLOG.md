@@ -74,3 +74,11 @@
 - Q11 first 500-seed pass: runtime 83.39 s, first-session losses up to one by ten minutes/four by thirty, hint retry 72.32%. Default bands alone were insufficient. Added explicit first-clear attack easing at entry band one; final measurements pending.
 - Q11 second pass: zero early losses, up to three by thirty minutes, hint retry 82.93%, runtime 87.87 s. Entry-only first-clear easing caused a replay difficulty jump. Final third pass keeps band-one easing on replay and tapers through bands two/three.
 - Q11 final third pass: zero losses at ten/thirty minutes, median reward gap ten seconds; runtime 72.64 s. Retry advice unobserved. G1 normal rounds five, Tower and G2 remain explicit Q12 gaps. Final full suites pass 1,898 web/1,303 rules.
+
+## Q12
+- The first tune reached six normal rounds but left Clover at 72 percent ultimate use and Tower floor medians from 19.79 to 66.56 seconds. The second tune lowers Clover rage and the HP budget of later healing/tank formations, while slightly increasing the middle Tower boss HP.
+- The second 500-seed run takes 65.56 seconds: normal ultimate rates 50.4–69.17 percent, boss minimum 91.2 percent; all thirty Tower floor medians 26.05–47.99 seconds. No third repair or escalation fallback is needed for these simulated gates.
+- Full E2E passes all 421 cases without retries. Browser timing remains in progress; first normal 47.34 seconds, next normal 23.97 and first boss 57.47. Preserve all observations in the final summary.
+- The complete Q12 browser run had thirty-one wins/no losses/errors/stalls; normal 37.64/50.8 s still missed. Third repair: A6 model uses bounded elapsed frame time instead of the canvas-clipped delta; B-owned source is unchanged. Five clock regressions and a separate shorter browser probe are pending.
+
+- Final clock regression checks pass. Separate ten-minute browser probe: nine wins, no losses/errors/stalls; normal44.09/46.45 s (six samples), boss69.21/92.9 (three). The clock tracks elapsed time, but normal browser pacing remains PARTIAL after three repairs; keep the existing escalation fallback and lane-B performance request, then continue Q13.

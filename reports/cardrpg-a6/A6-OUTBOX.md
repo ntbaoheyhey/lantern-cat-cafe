@@ -14,3 +14,7 @@
 ## Shared timing slot — 2026-11-10
 - A6 has a queued Q7 simulation + exact OFF/A5 check. Consecutive B jobs have repeatedly acquired timing.lock before the existing two-second A6 waiter can acquire it. Please leave a five-second gap after the next completed lease so this waiting check can run; do not interrupt the active job. A6's combined lease is capped at nineteen minutes.
 - Tower and formation use the current original portraits. Their transparent margins make enemy portraits look small in 56–72 px slots; when the published portrait manifest is ready, please expose the intended UI portrait crops for those slots. A6 has not changed B's assets.
+
+## Q12 browser pacing observation
+- The unchanged canvas callback passes `Math.min(100, now - last)` into the model. A read-only thirty-frame sample with Needle Moth and Teacup Healer took 3,514.9 ms of wall time but advanced playback only 3,000 ms; median frame 116.7 ms. Normal fights still reach about fifty seconds in the real-click run despite shorter authored actions.
+- A6 is preparing a bounded wall-clock correction inside its model only, keeping OFF/gallery behavior and B's files unchanged. Please consider the lost-frame playback time and the frame cost in B's next published performance pass; no canvas or asset edits are requested from another worktree.

@@ -8,7 +8,7 @@
 - pnpm: 10.28.0 (repository packageManager version)
 - Free disk at setup: 147 GiB (df -h ~); above 15 GB threshold.
 - Dependencies: pnpm install --frozen-lockfile completed without lockfile changes.
-- Scope: STEP 2 active; Q0–Q10 complete; Q11 is next.
+- Scope: STEP 2 active; Q0–Q12 complete; Q13 is active.
 - Delivery branch remains codex/cardrpg-a6-q0-2026-11-10; one draft PR #438 for the whole lane.
 
 ## Report skim (15 lines; existing claims, not re-verified)
@@ -28,124 +28,16 @@
 14. Rules live in packages/game-rules/src/cardrpg; depth/index.ts exposes battle APIs, depth/skills-v5 holds V5 rules, and depth/run-bot.ts supplies playRun.
 15. One future tool can reuse tools/cardrpg-big/skills-v5/load.mjs and matrix.mjs patterns with createBattle/playBattle, replayBattle, seeded RNG and playRun; no sims ran in Q0.
 
-## Q0 verification — 2026-11-10
-- pnpm typecheck: PASS (exit 0).
-- pnpm lint: PASS (exit 0).
-- pnpm --filter @taskbar-hero/web test: PASS (201 files, 1,868 tests, exit 0; includes one new default-OFF/opt-in test).
-- git diff --check: PASS; no dependency lockfile or prior rules/renderer changes.
-- gameplayA6: apps/web/src/game/cardrpg/gate.ts, OFF by default, ON only with ?a6=1; no behavior attached.
-- Delivery: draft-only PR against codex/cardrpg-ui-v3-u9-2026-11-09; no merge or deployment.
-
-## Q1 complete
-- One sim entry point added: tools/cardrpg-a6/sim.mjs. Up to twelve local CPU workers; no model requests.
-- Typecheck/lint PASS; web 1,868 PASS; rules 1,262 PASS, two existing expected failures and eleven existing skips.
-- BEFORE baseline complete: 500 seeds in 496.99 seconds; see BASELINE.md. Runtime over three minutes is a known issue after three repairs.
-- Mean first-session losses: 1.92 in ten minutes and 7.07 in thirty; existing hint retry win rate 17.59 percent.
-- Fresh seeds 60001–60500 remain unused.
-
-## Q2 complete — 2026-11-10 06:56 UTC
-- Flag-gated automatic rage/ultimates, boss phases, x1/x2/x3, three-star skip and optional auto-continue.
-- Final 500-seed sim: normal six rounds, median 32.17 seconds, p90 44.46; boss median 81.69 seconds, p90 95.11. G1 passes on authored timing.
-- G2 partial: normal ultimate range 48–79.17 percent; boss minimum 90 percent. Three numeric tuning attempts exhausted; remaining overflow goes to Q12.
-- G3 remains partial: early losses mean 0.29, thirty-minute losses mean 1.01/worst five; hint retry wins 63.82 percent.
-- Sim runtime 270.17 seconds; economy now dominates cost. Keep the existing measurement definitions.
-- Exact OFF digest PASS (8,250 routes); A5 fallback PASS (45 routes). q2-compatibility.json records both expected hashes unchanged.
-- Typecheck/lint and full touched-package suites pass; final Daze/save edge cases pass (five rules and two web tests).
-- Three WebP shots inspected. Forced full-rage fixture proves banner layout; natural-cast timing under concurrent CPU load is not a browser pacing claim.
-- Next: Q3 bonds/combos/book and the scheduled full E2E + thirty-minute real-click session.
-
-## Q3 complete — 2026-11-10 07:50 UTC
-- Nine collection bonds, eight automatic pair combos, Bond Book and cat/formation badges. Three inspected WebP screenshots; no B-owned canvas/art edits.
-- Final 500-seed sim: normal six rounds/30.91 seconds authored median; boss 79.82 seconds. G2/G3/G5 remain partial; 258.39-second sim runtime remains a known issue.
-- Typecheck/lint and touched tests pass; four concurrent-load web timeouts passed isolated retry. Existing E2E: all 421 pass.
-- Legacy OFF digest exact over 8,250 routes; A5 fallback exact over forty-five routes. q3-compatibility.json retains expected digests.
-- Real-click run: 1,800.90 active seconds, twenty-nine wins, no losses or stalls. Normal median 39.49 seconds/p90 60.51; boss median 72.09/p90 79.32. Browser G1 normal pacing misses.
-- Page errors observed throughout and console errors in the second half: none. Tutorial and one lease-crossing fight excluded from timing statistics.
-- Patrol/training path skipped Events and idle claims; 809.67-second final account-reward gap is path-specific, not proof no rewards were available. Route points/boons remained visible.
-- Q4 is next; temporary source/test drafts exist under /tmp/cardrpg-a6-*-draft.* and are not yet applied or tested.
-
-## Q4 complete — 2026-11-10 08:04 UTC
-- Shared full-health Power on cats/team/foes/stages; real-cost quick upgrade, non-stealing auto-equip and count-up feedback.
-- Loss forecast exposed; bounded A6 candidates choose cheapest reliable improvement. Fallback opens the named cat or gear.
-- Typecheck/lint PASS; full web 1,874 PASS, rules 1,277 PASS plus two existing expected failures/eleven skips. Later focused web fifteen tests and rules ten tests pass.
-- Three inspected WebPs; browser click raised Power 7,503 to 7,537 and loss fallback opened Soot training. No page/console errors.
-- Final sim: 235.92 seconds; normal median 30.88 seconds, boss 79.38. G2/G3/G5 remain partial; hint retry 68.77 percent, worst six losses in thirty minutes.
-- OFF digest exact over 8,250 routes and A5 fallback exact over forty-five routes; q4-compatibility.json.
-- Q5 next; drafts under /tmp/cardrpg-a6-formation-* are not applied or tested yet. Full E2E/thirty-minute real-click run next due Q6.
-
-## Q5 complete — 2026-11-10 08:09 UTC
-- Front/back formation, visible bond lines, three owned/eligible suggestions and Campaign/Daily/Tower saved teams reuse existing rules.
-- Enemy Power/threats and existing forecast are visible before Fight. Keyboard Enter placement and per-mode restore exercised in Chromium.
-- Typecheck/lint PASS; full web 1,878 PASS; three final formation tests PASS. No rules bytes changed, so Q4 sim/OFF/A5 evidence remains applicable.
-- Three inspected WebPs include 1280×720. Both rows/Fight visible, no horizontal overflow or page/console errors. Extra bond/plan details still scroll on small height.
-- Q6 is next; full E2E and thirty-minute real-click first session required at its checkpoint.
-
-## Q6 complete — 2026-11-10
-- Campaign map reuses journey stars/rewards; full map fits 1280×720. Twelve-hour stage-scaled tips and two capped fast rewards/day.
-- Typecheck/lint PASS; full web 1,880 and rules 1,281 PASS; focused screen three and final rules twenty-one PASS. All 421 existing E2E PASS.
-- OFF digest exact over 8,250 routes; A5 fallback exact over forty-five; expected hashes unchanged.
-- Three inspected WebPs, no overflow/page/console errors. Thirty-minute session: 1,801.71 seconds, 29 wins, zero losses/stalls/errors.
-- Browser normal median 43.14 s/p90 63.61 misses G1; boss 72.56/92.69 fits. Account-reward trailing gap 963.12 s excludes visible route rewards.
-- Completed 500-seed sim: 253.89 s, authored normal 30.88 s, boss 79.38 s, idle cap 12 h. G2/G3/G5 partial.
-- Final passive-service bookkeeping fix passed twenty-one tests; its queued sim rerun was deferred after a long shared-lock wait. Q7 sim will include it.
-- Q7 next; Q8 drafts remain outside the worktree. No fresh seeds used.
-
-## Q7 complete — 2026-11-10
-- Thirty fixed Tower floors, six milestone chests and shared preparation/battle; route tab returns correctly to formation.
-- Typecheck/lint PASS; rules 1,286 PASS; web 1,881 PASS plus two unrelated timeouts passed isolated retry (24 tests). Final Tower/Campaign six tests PASS.
-- Three inspected WebPs, including 1280×720; synthetic unlocked fixtures. Real-click path passes without page/console errors or overflow.
-- Sim: 500 seeds in 212.14 s; normal 30.88 s, boss 79.38 s. Tower median 58.94 s/p90 104.65 on level-six fixtures; pacing remains partial for Q12.
-- OFF exact over 8,250 routes; A5 exact over forty-five; expected hashes unchanged. q7-compatibility.json.
-- Q8 next. The draft bundle has virtual-source typechecks only; apply then test. Full E2E/thirty-minute session next due Q9.
-
-## Q8 complete — 2026-11-10
-- Five daily activities, weekly chests at ten/twenty/thirty claims and seven calendar-safe login gifts; one actionable badge module for A6.
-- Typecheck/lint PASS; full web 1,887 PASS; rules 1,291 PASS plus existing expected failures/skips. Final six daily rules tests and rules typecheck PASS.
-- Three inspected WebPs. All daily actions fit 1280×720; real login claim/reload remains one-time, without overflow or page/console errors.
-- Sim: 500 seeds, 247.22 s. Pacing unchanged; Epic by day two 54.2%, pity budget by day six 0%. Current caps keep G5 partial for Q9/Q12.
-- OFF exact 8,250 routes and A5 exact forty-five; expected hashes unchanged. q8-compatibility.json.
-- Q9 next; full E2E and thirty-minute real-click session due. Fresh final seeds remain unused.
-
-## Q9 in progress — 2026-11-10 10:09 UTC
-- Four-beat x10 reveal measured at 5.417 seconds; skip after first beat, rarity glow and new-Epic portrait inspected. Rates and next action fit 1280×720.
-- A6 earned-stamp price sixty; OFF 150. Welcome credit follows the price; pity, odds, shards and caps stay unchanged.
-- Full web 1,890 PASS; rules 1,294 PASS plus existing expected failures/skips. Typecheck/lint PASS; final web typecheck PASS.
-- Owned matching shards now display beside the star requirement; the rendered test verifies the actual ten-shard star-up.
-- Sim finished in 320.27 seconds: Epic by day two and pity budget by day six are 100% for both cohorts. OFF and A5 remain exact.
-- Full E2E: 420/421 pass; existing v2 idle-clock XP test timed out. Isolated retry awaits the shared lock; the automatic watcher starts the thirty-minute click run only on retry success.
-- Q10/Q11 drafts are outside the worktree; see HANDOFF.md. No fresh final seeds used.
-
-## User pause — 2026-11-10 11:00 UTC
-- Explicit request: dừng và lưu handoff. STOP-A6 created. No Q10 source applied.
-- Q9 real-click session stopped cleanly at 1442.97 active seconds: 22 wins, zero losses/errors/stalls. Thirty-minute requirement NOT complete.
-- Normal median/p90 42.45/57.72 seconds; boss 70.48/106.05 seconds. These are partial-run observations.
-- Existing Q9 types/lint/unit tests, full E2E plus isolated retry, sim and exact OFF/A5 remain recorded.
-- Browser closed, timing lock released, own Vite stopped. Drafts and harnesses archived in resume-drafts.tar.gz; not applied or behavior-tested.
-- Resume only after explicit user instruction; first unfinished queue item remains Q9.
-
-## User resume — 2026-11-10 11:56 UTC
-- Explicit request: tiếp tục nhé. STOP-A6 removed; finish Q9 before Q10.
-- Source unchanged since passing Q9 checks; only the interrupted thirty-minute browser run needs a fresh complete run.
-
-## Q9 complete — 2026-11-10 12:27 UTC
-- Fresh real-click run: 1,800.65 active seconds, twenty-eight wins, no losses, errors or stalls.
-- Normal median/p90 43.71/59.73 seconds; boss 70.28/107.60 seconds. Visible reward gap median 6.69 seconds, maximum 112.92 seconds. Browser normal pacing remains partial.
-- Previous types/lint/unit/E2E/sim/OFF/A5 evidence remains valid: source was unchanged throughout this run.
-- The recorder/browser finished and released timing.lock; own Vite PID 37741 remains on 5960 for Q10.
-- Q10 next. Updated Q10–Q14 drafts are archived; none has been applied. Fresh final seeds remain unused.
-
-## Q10 complete — 2026-11-10 12:40 UTC
-- One read-only Fuji team treasure, two/eight percent by rarity and capped at eight; ordinary gear retained. Demo fixture only offline, wallet changes clear holdings and stale reads are ignored.
-- Typecheck/lint PASS; full web 1,895 and rules 1,297 PASS plus existing expected failures/skips.
-- Three inspected WebPs; all choices visible at 1280×720. Actual offline prop fixture raises Power 7,503→8,035, gear unchanged. Product-path no-wallet play passes, no console/page errors.
-- Sim: 500 dev seeds in 336.69 seconds; normal 30.88 seconds, boss 79.38. G2/G3/Tower/tool-runtime remain partial for Q11–Q12.
-- OFF exact over 8,250 routes; A5 exact forty-five. q10-compatibility.json; expected hashes unchanged.
-- Q11 next; staged onboarding must preserve the final compact Relic CSS. Full E2E/thirty-minute run next due Q12. No fresh final seeds used.
-
-## Q11 complete — 2026-11-10 13:06 UTC
-- Guided first patrol, free friend and first level, staged unlocks and queued celebrations. Three inspected WebPs; actual clicks and entry preparation fit 1280×720 with no errors/overflow.
-- Early campaign bands use a gradual 65/75/85-percent attack ramp, including replay; higher bands and other modes unchanged. Committed foe stats survive preparation and replay.
-- Workspace typecheck/lint PASS; all 1,898 web and 1,303 rules tests PASS plus existing expected failures/skips.
-- 500 dev seeds in 72.64 s; reward gap median 10 s; zero losses by ten/thirty minutes. No final hint retries; prior diagnostic 82.93% of 164. Actual Legendary by day six in all seeds for both cohorts.
-- OFF exact 8,250 routes; A5 exact forty-five. q11-compatibility.json; expected hashes unchanged.
-- Q12 next: normal rounds five, browser normal pace, Tower and ultimate bounds remain partial. Full E2E and thirty-minute session due. Fresh final seeds unused.
+## Current checkpoint — Q12 complete; Q13 active
+- Last pushed: bd742838e11b2ed57b08119d6bdc177ab8f36a6e (Q11), draft PR #438. Q0–Q11 evidence remains in the individual Q reports and git history.
+- Q12 development sim: 500 seeds in 65.56 s; normal six rounds, median/p90 24.35/33.59 s; boss 76.91/85.25 s; Tower floor medians 26.05–47.99 s.
+- Normal ultimate rates 50.4–69.17 percent; boss minimum 91.2 percent. Twenty-four of thirty-two candidate teams within five percentage points of best; top-twenty maximum cat presence fifty percent.
+- Earned bot has zero losses and ten-second median reward gap; no losses means hint retries unobserved. Both seven-day cohorts progress daily, get Epic by day two and Legendary by day six; idle cap twelve hours.
+- Before the clock repair, workspace typecheck/lint pass; web 1,900 and rules 1,303 pass plus existing expected failures/skips. Exact OFF 8,250 routes and A5 forty-five pass with unchanged expected digests. Full E2E 421/421 pass.
+- Full Q12 real-click run: 1,801.75 active seconds, thirty-one wins, zero losses/errors/stalls. Reward gap median6.66 s/max102.37; browser normal21 samples37.64/50.8 s, boss9 samples64.69/97.07 s. Tutorial and lease-crossing encounter excluded from timing.
+- Third repair verified: bounded elapsed-frame clock for A6 only. Types/lint and1,905 web tests pass; seven clock/pacing regressions pass. Separate ten-minute probe: nine wins, no losses/errors/stalls; normal44.09/46.45 s (six samples), boss69.21/92.9 (three). Browser normal pacing remains PARTIAL after three repairs. Q12 complete with this known issue.
+- Q13 Cats/loss polish and Q14 offline build/check/guide are staged under /tmp/cardrpg-a6-* only. No Q13 source changes applied.
+- Q14 B merge conflicts with the fixed no-merge rule; preserve that boundary and continue the offline demo. Latest inspected published B head95a6c369ecdb9d6cda716d3ecaf8b25c62c2670a is PARTIAL; recheck at Q14.
+- Fresh final seeds60001–60500 remain unused. Q15 final checks and Q16 report remain queued.
+- Free disk at resume:190GiB; reports2.5MB of60MB. Own ports5960–5963; heavy timing leases<=20min. No model helpers, other-worktree writes, merge, deployment or main push.
+- Read HANDOFF.md for running sessions and exact continuation commands; INBOX currently empty.

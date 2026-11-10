@@ -19,7 +19,7 @@ const take = result => { assert(result.ok, result.error); return result.state; }
 const allTeams = ids => ids.flatMap((a, i) => ids.slice(i + 1).flatMap((b, j) => ids.slice(i + j + 2).map(c => [a, b, c])));
 
 async function simulation(bundleUrl, mode) {
-  const { R, C, onboarding, presentation } = await import(bundleUrl);
+  const { R, C, onboarding, presentation, pacing } = await import(bundleUrl);
   assert(mode === 'before' || typeof R.setGameplayA6 === 'function', 'A6 rules are not connected yet; use --mode=before for Q1.');
   const state = seed => {
     let s = R.setSkillsV5(R.createDepthAccount(seed, 0), true);
@@ -36,13 +36,13 @@ async function simulation(bundleUrl, mode) {
   const durationCache = new Map();
   const adviceCache = new Map();
   let replayVerified = false;
-  const actionSeconds = (identity, death) => {
-    const key = `${identity}/${death}`;
+  const actionSeconds = (identity, death, setup) => {
+    const key = `${identity}/${death}/${!!setup.gameplayA6}/${setup.enemies.some(id => R.ENEMY_BY_ID[id]?.tier === 'boss')}`;
     if (!durationCache.has(key)) {
       const marker = { version: 3, seq: 0, turn: 0, round: 0, actionId: 0, beat: 0,
         type: 'action_start', actorId: 'sim', skillId: identity, targetIds: [], amount: 0 };
       const events = death ? [marker, { ...marker, type: 'death', beat: 2 }] : [marker];
-      durationCache.set(key, presentation.createCardActionPlan(events, identity).duration / 1000);
+      durationCache.set(key, pacing.paceActionA6(presentation.createCardActionPlan(events, identity), setup).duration / 1000);
     }
     return durationCache.get(key);
   };
@@ -55,7 +55,7 @@ async function simulation(bundleUrl, mode) {
       if (event.kind !== 'action' && event.kind !== 'enemy-action') continue;
       const actor = b.actors.find(a => a.id === event.actorId);
       const identity = actor?.side === 'enemy' ? `enemy:${actor.catalogId}${event.round % 3 === 0 ? '' : ':basic'}` : event.skillId;
-      seconds += actionSeconds(identity, death) + .08;
+      seconds += actionSeconds(identity, death, b.initial) + .08;
       death = false;
       if (actor?.side === 'party' && event.skillId?.endsWith('-4') && !event.text.includes('prevented the action')) casts[actor.catalogId]++;
     }
@@ -270,6 +270,7 @@ if (!isMainThread) {
       ['R', 'packages/game-rules/src/cardrpg/depth/index.ts'], ['C', 'packages/game-rules/src/cardrpg/index.ts'],
       ['onboarding', 'packages/game-rules/src/cardrpg/depth/onboarding.ts'],
       ['presentation', 'apps/web/src/game/cardrpg/depth/card-action-plan.ts'],
+      ['pacing', 'apps/web/src/game/cardrpg/depth/pacing-a6.ts'],
     ].map(([name, file]) => `export * as ${name} from ${JSON.stringify(resolve(root, file))};`).join('\n'));
     await build({ configFile: false, root, envDir: false, publicDir: false, logLevel: 'silent', build: { emptyOutDir: false, outDir: temp, minify: false, lib: { entry, formats: ['es'], fileName: () => 'rules.mjs' } } });
     const bundleUrl = pathToFileURL(resolve(temp, 'rules.mjs')).href;

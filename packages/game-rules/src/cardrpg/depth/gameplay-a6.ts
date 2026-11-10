@@ -16,8 +16,8 @@ export function setGameplayA6(state: DepthAccount, enabled: boolean): DepthAccou
 }
 export const RAGE_COST_A6 = 100;
 export const RAGE_GAIN_A6: Record<string, number> = {
-  mochi: .8, panko: .85, brioche: .85, mallow: 1, soot: .85, cinnamon: 1,
-  clover: .8, sorrel: .9, marigold: .85, velvet: 1, biscuit: .85, inkcap: .85,
+  mochi: .8, panko: .85, brioche: .85, mallow: 1, soot: .85, cinnamon: .85,
+  clover: .72, sorrel: .8, marigold: .9, velvet: 1, biscuit: .85, inkcap: .85,
 };
 export function gainRageA6(b: Battle, actor: Actor, amount: number): void {
   if (!b.initial.gameplayA6 || actor.hp <= 0) return;
@@ -61,7 +61,7 @@ export function prepareBattleA6(b: Battle): void {
     actor.charge = 15;
     if (actor.side !== 'enemy') continue;
     const boss = ENEMY_BY_ID[actor.catalogId]?.tier === 'boss';
-    const hpScale = boss ? .82 : 1.8;
+    const hpScale = boss ? .82 : 1.95;
     actor.maxHp = Math.round(actor.maxHp * hpScale); actor.hp = actor.maxHp;
     actor.attack = Math.max(1, Math.round(actor.attack * (b.chapter === 1 ? .65 : .85)));
   }
