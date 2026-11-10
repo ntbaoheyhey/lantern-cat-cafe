@@ -93,3 +93,5 @@ Q18 visual review found guide advice still describing V4 effects/enemy cadence. 
 2026-11-10T20:22:47Z Q19[auto]: Q18 accepted; Prepare7.5 at720p is now the lowest A-owned screen. Use retained table/art-size drafts and every existing rule/action. Published B P14/P16 affects B-owned render motion only; merge before one combined offline rebuild.
 
 - 2026-11-10T20:48:47Z Q20: replace the tall nine-collection-then-eight-pair grid with an original indexed album. This makes every existing friendship and Pair section directly reachable at720p while giving selected cats more art space; no mechanics, rewards, sorting or readiness rule change. Q19 accepted package freezes publishedBfa28d50cf; later tips belong to the next bounded integration.
+
+2026-11-10 Q21: After Q20, the remaining lowest A-owned screens tie at7.8. Retained 720p Cats/Skills evidence shows four simultaneous dense descriptions and no clear automatic-ultimate label. Use four direct choices with one readable detail to improve comprehension; keep exact rule-provided text and all current actions. No new system or numerical tuning.
