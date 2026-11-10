@@ -53,3 +53,6 @@ Rain Spool moves0.85world units right only in illustrated boss framing. Both Bin
 
 ## P15 — three/four live phase3 helpers (current)
 Stable actor-ID lanes replace slot modulo2 in illustrated boss fights. Both original lanes stay unchanged; two summoned lanes(.40,1.15)/(1.60,1.35) keep all four faces visible. Surviving helpers do not jump when another dies. Render-only look-puppet-formation.ts + scene.ts; no rules, DOM, camera or scale change.12actual phase3 views cover3bosses×3/4helpers×2sizes,0page/bounds/HPerrors; type/lint6tests and5seed/six-mode parityPASS. The A6 three-add report is covered. Source A615f5653d plus B actual38,175,926B (<40MB), asset share unchanged. Evidence p15/REVIEW.md; final boss film is now being corrected.
+
+## Shared timing request — 2026-11-10T19:37:20.315913+00:00
+B full boss film has waited since19:23UTC across A6 first-session1 and immediate first-session2. Please leave a5second acquisition gap after the current segment so the existing B waiter can run. B has combined the corrected film and prepared Spool Ram checks into one expected4–6minute lease (hard cap19minutes), then yields6.5seconds as usual. No A6 process was touched. P15 code is already published4815b7f3b.

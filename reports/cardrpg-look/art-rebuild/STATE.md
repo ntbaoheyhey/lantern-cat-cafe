@@ -66,3 +66,6 @@ HEAD matches fetched origin e83b9e2a1a7b25a8d68c34439ed1eb177359ca6c. P1–P9 do
 
 ## Resume 2026-11-10T19:14:06.320699+00:00
 HEAD equals fetched origin ba680a44c124ba6713cba82ad26f9f098139af42. P15 attempt1 wrapper84507 still queued; no native runner,145GiB free. Saved normal film and P1–P9/P12/P13 gates remain complete. Dirty inventory RESUME-DIRTY-P15.txt; native changes/GLBs preserved and excluded.
+
+## Resume 2026-11-10T19:41:03.237172+00:00
+HEAD matches fetched origin4815b7f3b. P10/P14 combined wrapper96380 still waiting, no native runner; servers5920/5922 retained,145GiB free. Dirty inventory RESUME-DIRTY-P10-P14.txt. No prior work repeated or discarded.
