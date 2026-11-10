@@ -1,0 +1,43 @@
+{
+  "at": "2026-11-10T02:36:39.283535+00:00",
+  "reason": "Explicit user request: lưu handoff và dừng",
+  "watcherPid": 32417,
+  "watcherExitCode": 143,
+  "latestCodeHead": "a89a78ce0b999452d256156dda04e69913181f18",
+  "lastHeartbeat": {
+    "at": "2026-11-10T02:33:59.545Z",
+    "accepted": {
+      "A": "1195b13fa",
+      "B": "440ec28902cac31f8f76634e908856c942dd41df",
+      "art": null,
+      "publishedBoth": false,
+      "note": "U9 R1 merges published M5 ancestry. Runtime/artifact unchanged. A remains S6; art R1 PARTIAL excluded. No stop condition met.",
+      "BIntegration": "c5712f7c0f7196a3a2276662743d8fc115eb2362"
+    },
+    "noNewPublishedTip": true
+  },
+  "pendingChecks": [
+    {
+      "file": "pending.json",
+      "sha": "3e95a0121ac6d06813e9386e86b85c7eea451440",
+      "alreadyIntegrated": true
+    },
+    {
+      "file": "pending.json",
+      "sha": "440ec28902cac31f8f76634e908856c942dd41df",
+      "alreadyIntegrated": true
+    },
+    {
+      "file": "ready.json",
+      "sha": "3e95a0121ac6d06813e9386e86b85c7eea451440",
+      "alreadyIntegrated": true
+    },
+    {
+      "file": "ready.json",
+      "sha": "440ec28902cac31f8f76634e908856c942dd41df",
+      "alreadyIntegrated": true
+    }
+  ],
+  "unmergedPendingTips": 0,
+  "resume": "Only after a new user instruction to resume; do not restart automatically."
+}
