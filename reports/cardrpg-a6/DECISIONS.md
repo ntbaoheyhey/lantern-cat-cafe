@@ -103,3 +103,5 @@ Q23[auto]: Retained1280-daily image visibly places “Your earned chests” at t
 2026-11-10T21:35:20Z Q23: separate daily/login/weekly board count from existing star/Tower/Journal ready count. Keep all14milestone tickets in place after claiming so keyboard position and collected history remain understandable; readiness is only badgesA6. Exact capped preview amounts and non-currency ribbon use current rule previews, with no new rules.
 
 - Q24: retained q14a/1280-inventory shows six of ten gear pieces, while comparison and enhancement sit below the visible fold. Improve that existing decision with a stable workbench and bounded shelf; expose exact current stats/costs/equipped ownership. Preserve commands/utility math/route locks and existing workshop. Q23 source and offline checks are complete and will not be repeated.
+
+2026-11-10T21:58:25Z Q25[auto]: Tower is one of the remaining7.8lows. Its retained720p screenshot clips chest controls, and code still shows V4 counter copy for V5 battles. Use separate Climb/Milestone gifts views and the existing current-enemy advice adapter, keeping every floor/claim and deterministic rule unchanged.

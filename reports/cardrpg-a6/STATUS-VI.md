@@ -155,3 +155,7 @@ Tiếp tục xem phần chữ/trang bị trong Bag đang có điểm thấp; gi�
 2026-11-10T21:55:15Z: Tiếp tục đúng Q24; đã duyệt nốt8ảnh chi tiết, giữ20ảnh và kiểm tra đã đạt.
 So sánh/chuyển đồ/chi phí cường hóa nằm gọn ở720p; phần hiệu ứng dài cuộn riêng, không che nút chính.
 Đang tích hợp Biscuit mới của B và đóng gói demo; không chạy lại kiểm tra cuối đã xong.
+
+2026-11-10T21:58:25Z: Q24 hoàn tất: demo38,65MB gồm Túi mới và Mallow/Biscuit mới,14ảnh offline đã duyệt; không lỗi/gọi mạng.
+Chuyển đồ bằng bàn phím, trừ đúng chi phí cường hóa và trở lại Workshop đều đạt;30test puppet/typecheck/lint qua.
+Tiếp tục Tháp: đưa quà mốc vào lối truy cập trực tiếp và sửa lời khuyên đang dùng mô tả chiến đấu cũ.
