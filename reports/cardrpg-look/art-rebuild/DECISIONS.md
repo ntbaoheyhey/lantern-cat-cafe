@@ -101,3 +101,7 @@ P10 corrected setup remains the active item. Prepare P11 report and one P12 Soot
 2026-11-10T19:06:37.950652+00:00 Full boss film reached victory134.32s/13catultimates but phase3 revealed two extra summoned Binding Threads sharing the initial lanes. P13 accepted initial two adds only; keep its completed scope and add P15 before film acceptance. Use actual phase3 rules state and four distinct placements, no new art.
 
 2026-11-10T19:21:37.791752+00:00 P15 accepted attempt2: stable live actor lanes, not rule-slot modulo; four helpers separated across foreground, all boss/cat scales unchanged. Actual3/4states and two sizes required; bounds and label audit alone do not prove visibility. Selected compact evidence preserves120MB Git cap.
+
+2026-11-10T19:37:20.315913+00:00 While P10 is lease-blocked, prepare P14 source and combine its checks after the immutable P15 film capture in one lease. This does not change the film artifact or prematurely accept P14; publish P10/P11 before accepting/publishing P14. Only the waiting B wrapper92330 was restarted with250ms lock polling after two A6 segments bypassed it; cap19min and post-lease6.5s gap remain.
+
+2026-11-10T19:46:39.979853+00:00 P16 prepared while P10/P14 waits for shared timing: Inkcap is one of the remaining7.7overall/7.5motion rows. Existing tail mesh and lantern joint support a small original-motion improvement without another atlas or generation. Research remains applicable; add bounded lantern/tail review after P14, keeping its running-source snapshot unchanged.
