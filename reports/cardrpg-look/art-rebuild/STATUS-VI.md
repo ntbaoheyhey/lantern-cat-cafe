@@ -153,3 +153,9 @@ Tiếp tục đúng Velvet từ bản cắt source1 đã lưu; P1–P30 giữ ng
 
 Velvet đã duyệt: cả kim và ruy-băng nghiêng quanh điểm chạm sàn, tay trống mở ra, đầu/đuôi hồi nhịp; áo không kéo theo kim.
 36 kiểm tra web và9 kiểm tra cắt lớp,16ảnh/12lượt chiêu/type/lint/parity đạt; bản chung 38,654,958byte. Chuyển động7,5→7,7, tổng giữ7,9; tiếp tục Needle Moth.
+
+Tiếp tục P32 từ đường cắt Needle Moth đã lưu; P1–P31 giữ nguyên hoàn tất.
+Đang sửa tay/kim, gốc cánh và bụng bị lẫn lớp trước khi thêm chuyển động.
+
+Needle Moth đã duyệt: khép cánh nhẹ rồi đưa cả cây kim về trước, đầu/cánh hồi nhịp; bụng/cổ áo liền và hai chân bám sàn.
+37 kiểm tra web và10 kiểm tra cắt lớp,16ảnh/8lượt chiêu/type/lint/parity đạt; bản chung 38,676,830byte. Chuyển động7,5→7,7, tổng giữ7,8; tiếp tục Teacup Healer.

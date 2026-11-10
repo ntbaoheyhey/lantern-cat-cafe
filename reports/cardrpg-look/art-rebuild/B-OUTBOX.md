@@ -113,3 +113,6 @@ Only Button Guard config/rig/atlas rebuilt: chest, shoulder, shield/belt and boo
 
 ## P31 — Velvet planted needle
 Only Velvet config/rig/atlas rebuilt. Whole needle/ribbon stays on armR, cape remains on body, and tail/boot edges are repaired. Planted staff tilt/open palm/head-tail lag; mainHand is the opaque loop top (849,268), offHand palm (251,649), contact (685,1084), source1108×1200.36web+9pipeline tests,16views/12x1casts/type/lint/parity pass;0page/socket/faceHP/bounds failures,p95<=16.8ms. Combined A65badf4428+B 38,654,958B; headroom 1,345,042B; Bembedded 24,010,680B. No DOM/events/flags/portrait changes. Motion7.7/overall7.9, rigid ribbon and tiny source fringe retained; p31/REVIEW.md.
+
+## P32 — Needle Moth wing draw and needle lead
+Only Needle Moth config/rig/atlas rebuilt; same eight layers. Needle/collar/wing/abdomen/boot ownership repaired and pivots corrected. MainHand on needle loop top(300,178), offHand palm(640,731), source1193×1200. Restrained wing draw, whole-needle lead, head lag and planted boots.37web+10pipeline tests,16views/8x1casts/type/lint/parity pass;0page/socket/faceHP/bounds failures,p95<=16.8ms. Combined A65badf4428+B 38,676,830B; headroom 1,323,170B; Bembedded 24,032,336B. No DOM/events/flags/portrait changes. Motion7.7/overall7.8; rigid wings and tiny source fringe retained; p32/REVIEW.md.

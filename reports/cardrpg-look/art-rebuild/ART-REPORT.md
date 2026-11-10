@@ -11,13 +11,13 @@ These scores are Lane B visual judgments, not user acceptance or an independent 
 | Rubric | Weight | Score | Evidence and limitation |
 | --- | ---: | ---: | --- |
 | Concept match and battle appearance | 35% | 8.2 | Every unit retains its concept. Unit fidelity is 8.6–8.8; battle appearance is 7.7–8.0. |
-| Motion | 20% | 7.5 | Eight semantic motions per unit; seventeen units now have authored refinements scoring 7.7. Remaining shared rigid-part gestures stay restrained. |
+| Motion | 20% | 7.5 | Eight semantic motions per unit; eighteen units now have authored refinements scoring 7.7. Remaining shared rigid-part gestures stay restrained. |
 | VFX at x1 | 15% | 8.1 | 49+6 cast audit, original motifs and real moving prop sockets. Spectacle (7.5) still trails readability. |
 | Camera, composition and stage | 15% | 8.1 | Closer framing, warm/cool cafe light, Rain Spool spacing and clear three/four-helper phase-three formations. |
 | Roster coverage | 10% | 10.0 | All 25 current rules IDs have a valid original rig and atlas. |
 | Performance and size | 5% | 8.5 | Warmed cast p95/max 16.8 ms; current combined artifact 38.63 MB. Cold loading is not included in the timing claim. |
 
-The weighted score is **8.225/10 (8.23 rounded)**, below the 8.5 target. Seventeen units now have accepted authored motion at 7.7: Soot, Spool Ram, Inkcap, Sock Skipper, Cinnamon, Sorrel, Binding Thread, Practice Cushion, Mochi, Clover, Panko, Mallow, Biscuit, Brioche, Marigold, Button Guard and Velvet. The remaining shared gestures, sampled eyelid closure and understated ultimate spectacle still limit overall quality. These individual changes do not justify a whole-roster score increase; no score is raised merely because a test passed.
+The weighted score is **8.225/10 (8.23 rounded)**, below the 8.5 target. Eighteen units now have accepted authored motion at 7.7: Soot, Spool Ram, Inkcap, Sock Skipper, Cinnamon, Sorrel, Binding Thread, Practice Cushion, Mochi, Clover, Panko, Mallow, Biscuit, Brioche, Marigold, Button Guard, Velvet and Needle Moth. The remaining shared gestures, sampled eyelid closure and understated ultimate spectacle still limit overall quality. These individual changes do not justify a whole-roster score increase; no score is raised merely because a test passed.
 
 R0's weighted 5.9966 used a different rubric and is not directly comparable. Comparable observations are cat appeal 5.0 → about 7.8 battle appearance; foes 4.0 → 7.7–8.0; motion 5.5 → 7.5; VFX 6.233 → 8.1; stage 6.5 → 8.0. The two comparison posters preserve the historical R0 images. They do not claim the same HUD, camera or exact action frame.
 
@@ -37,7 +37,7 @@ Accepted prior work was reused on resume. The roster has valid rig/atlas coverag
 
 P15 adds six focused tests and 12 actual rules-resolved phase-three views: Yarn Giant, Rain Spool and Pantry Crown, with three/four live helpers at both 1440×900 and 1280×720. There are no page errors, missing live labels, out-of-canvas units or face/HP collisions. Manual review confirms the helper and boss faces remain identifiable. Five rules seeds match the retained baseline across six art modes; 102 resolved plans remain unmodified. Static views are not playback/performance evidence, and deliberate melee contact is not treated as a silhouette-separation failure.
 
-The current actual combined A6 `5badf4428c41c694d2ff0ac936b7ba27b33c22d9` + B P31 artifact is **38,654,958 bytes**, below the **40,000,000-byte** limit with **1,345,042 bytes** headroom. B embedded assets occupy **24,010,680 bytes**, including retained classic/diagnostic assets. Optional portraits overlap imported assets and are not added to this measured artifact. Film masters and intermediate captures remain outside the game artifact.
+The current actual combined A6 `5badf4428c41c694d2ff0ac936b7ba27b33c22d9` + B P32 artifact is **38,676,830 bytes**, below the **40,000,000-byte** limit with **1,323,170 bytes** headroom. B embedded assets occupy **24,032,336 bytes**, including retained classic/diagnostic assets. Optional portraits overlap imported assets and are not added to this measured artifact. Film masters and intermediate captures remain outside the game artifact.
 
 P14 adds a manually reviewed 16-pose comparison, eight natural x1 casts including reduced motion, 19 focused tests and exact rules parity. Main-hand socket error is zero; local planted-hoof drift is below 5e-16 world units. The existing atlas and rig remain unchanged. Warmed p95 stays at most 16.8 ms. This improves one unit, without changing the overall motion score.
 
@@ -50,6 +50,8 @@ P18 adds16paired Cinnamon views,12natural casts,24focused tests and exact parity
 P20 closes A6's boss-atmosphere disposal report: each geometry/material/instanced mesh releases exactly once, including motes, even on a second disposal. The existing test now observes each actual resource; four focused tests and typecheck/lint pass. Live drawing is unchanged.
 
 P19 reuses16paired Sorrel views,12natural x1 casts,25focused tests and exact parity. The staff pivots at its source-painted contact with drift below1e-15; shoulders and wrist remain continuous. Motion7.7/overall7.7, with no whole-roster uplift.
+
+P32 repairs Needle Moth needle/wing/abdomen/boot ownership and painted joint pivots; bounded wing draw, complete needle lead and planted feet stay coherent at both battle sizes.37web+10pipeline tests,16views/8casts/type/lint/parity pass; motion7.7/overall7.8. Rigid wings and tiny source-edge fringes remain; p32/REVIEW.md.
 
 P31 repairs Velvet whole needle/ribbon ownership and cape/feet/tail borders, plants the actual tip and presents its open palm with delayed head/tail recovery.36web+9pipeline tests,16views/12casts/type/lint/parity pass; motion7.7/overall7.9. Tiny source fringe and rigid ribbon are retained; p31/REVIEW.md.
 
@@ -81,6 +83,6 @@ P21 adds a forward knot reach and planted feet for Binding Thread, with correcte
 - Canvas owns visible damage/crit/heal/shield/KO totals; the DOM labels remain accessible. A6 retains its top/bottom HUD envelopes and cut-in overlay.
 - Original provenance: `assets/provenance/look.md`, concept receipts and per-unit puppet receipts. No other game's art, rig or animation was copied or used as a generation reference. This continuation used local scripts and the existing original assets, with no new image generation, paid service or account.
 
-Evidence: [roster scores](PUPPET-SCORES.md), [VFX](p6/REVIEW.md), [stage](p7/REVIEW.md), [portraits](p8/REVIEW.md), [budget](p31/budget/budget.json), [Soot motion](p12/REVIEW.md), [Spool Ram motion](p14/REVIEW.md), [Inkcap motion](p16/REVIEW.md), [Sock Skipper motion](p17/REVIEW.md), [Cinnamon motion](p18/REVIEW.md), [Sorrel motion](p19/REVIEW.md), [Binding Thread motion](p21/REVIEW.md), [Practice Cushion motion](p22/REVIEW.md), [Mochi motion](p23/REVIEW.md), [Clover motion](p24/REVIEW.md), [Panko motion](p25/REVIEW.md), [Mallow motion](p26/REVIEW.md), [Biscuit motion](p27/REVIEW.md), [Brioche motion](p28/REVIEW.md), [Marigold motion](p29/REVIEW.md), [Button Guard motion](p30/REVIEW.md), [Velvet motion](p31/REVIEW.md), [initial boss composition](p13/REVIEW.md), [phase-three formation](p15/REVIEW.md), [films](p10/REVIEW.md), and [A6 handoff](B-OUTBOX.md).
+Evidence: [roster scores](PUPPET-SCORES.md), [VFX](p6/REVIEW.md), [stage](p7/REVIEW.md), [portraits](p8/REVIEW.md), [budget](p32/budget/budget.json), [Soot motion](p12/REVIEW.md), [Spool Ram motion](p14/REVIEW.md), [Inkcap motion](p16/REVIEW.md), [Sock Skipper motion](p17/REVIEW.md), [Cinnamon motion](p18/REVIEW.md), [Sorrel motion](p19/REVIEW.md), [Binding Thread motion](p21/REVIEW.md), [Practice Cushion motion](p22/REVIEW.md), [Mochi motion](p23/REVIEW.md), [Clover motion](p24/REVIEW.md), [Panko motion](p25/REVIEW.md), [Mallow motion](p26/REVIEW.md), [Biscuit motion](p27/REVIEW.md), [Brioche motion](p28/REVIEW.md), [Marigold motion](p29/REVIEW.md), [Button Guard motion](p30/REVIEW.md), [Velvet motion](p31/REVIEW.md), [Needle Moth motion](p32/REVIEW.md), [initial boss composition](p13/REVIEW.md), [phase-three formation](p15/REVIEW.md), [films](p10/REVIEW.md), and [A6 handoff](B-OUTBOX.md).
 
 No user-only blocker is known. Motion refinement continues after the core report; completion of this report is not a stop under the user's non-stop instruction.

@@ -21,7 +21,7 @@ Evidence uses A6 shell in a disposable merged preview; primary branch contains n
 | Button Guard | 8.6 | 7.7 | 7.8 | 7.8 | p30/evidence/button-guard-needle-lead.webp; deliberate whole needle lead, compact shield brace and planted boots; real tip/shield sockets, restrained rigid limbs |
 | Sock Skipper | 8.6 | 7.7 | 7.7 | 7.7 | p17/evidence/sock-skipper-hop.webp; short anticipation/hop/landing, forward mitten and thread recovery; boot roll remains shared |
 | Spool Ram | 8.6 | 7.7 | 7.7 | 7.7 | p14/evidence/spool-ram-follow-through.webp; authored horn dip, planted hoof contacts and delayed tail recovery; no independent hoof roll |
-| Needle Moth | 8.6 | 7.5 | 7.8 | 7.8 | p5/batch1-final/needle-moth-comparison.webp and needle-moth-motion.webp; independent opposing wing pivots; needle stays readable |
+| Needle Moth | 8.6 | 7.7 | 7.8 | 7.8 | p32/evidence/needle-moth-wing-needle.webp; whole needle lead, bounded wing draw/recovery, coherent abdomen and planted boots; rigid wings and tiny edge fringe retained |
 | Teacup Healer | 8.6 | 7.5 | 7.8 | 7.8 | p5/batch1-final/teacup-healer-comparison.webp and teacup-healer-motion.webp; cup/lid/spoon retained; short elbow motion |
 | Kettle Knight | 8.6 | 7.5 | 7.9 | 7.9 | p5/batch1-final/kettle-knight-comparison.webp and kettle-knight-motion.webp; boss showcase scale repaired; original eyes emit |
 | Binding Thread | 8.6 | 7.7 | 7.7 | 7.7 | p21/evidence/binding-thread-reach.webp; forward knot reach, arm lag and planted feet; duplicate limb fill removed, rigid-arm limit remains |

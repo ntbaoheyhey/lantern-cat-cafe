@@ -9,6 +9,22 @@ from build import part_overlap, authored_mask
 
 
 class PartOverlapTests(unittest.TestCase):
+    def test_needle_moth_whole_needle_wings_and_abdomen_keep_semantic_ownership(self):
+        cfg = json.loads((Path(__file__).parent/'configs/needle-moth.json').read_text())
+        source = Image.open(Path(__file__).resolve().parents[4]/cfg['source']).convert('RGBA')
+        source.thumbnail((1200, 1200))
+        owners = np.zeros((source.height, source.width), np.uint8)
+        for i, (part, polygon, _) in reversed(list(enumerate(cfg['layers']))):
+            mask = authored_mask(source.size, polygon, cfg.get('holes', {}).get(part, ()))
+            owners[mask > 0] = i+1
+        for (x,y), expected in [((300,178),'armL'),((336,600),'armL'),((383,1000),'armL'),((350,550),'armL'),((355,600),'wingL'),((400,600),'body'),((385,700),'body'),((480,395),'body'),((625,400),'wingR'),((880,700),'wingR'),((640,731),'armR'),((450,310),'head'),((610,110),'head'),((445,1090),'footL'),((575,1100),'footR')]:
+            self.assertGreater(source.getpixel((x,y))[3],64,(x,y))
+            index = int(owners[y,x])-1
+            actual = cfg['layers'][index][0] if index >= 0 else 'body'
+            self.assertEqual(actual, expected, (x,y))
+        self.assertEqual(cfg['socketSources']['mainHand'][0], 'armL')
+        self.assertEqual(cfg['socketSources']['offHand'][0], 'armR')
+
     def test_velvet_whole_staff_ribbon_and_palm_exclude_cape(self):
         cfg = json.loads((Path(__file__).parent/'configs/velvet.json').read_text())
         source = Image.open(Path(__file__).resolve().parents[4]/cfg['source']).convert('RGBA')
